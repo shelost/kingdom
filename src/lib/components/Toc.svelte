@@ -110,7 +110,7 @@
 		inset: 0 0 auto 0;
 		height: 2px;
 		z-index: 90;
-		background: linear-gradient(90deg, var(--rail-blue), var(--gold));
+		background: var(--gold);
 		transform-origin: 0 50%;
 		will-change: transform;
 	}

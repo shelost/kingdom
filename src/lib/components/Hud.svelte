@@ -1,5 +1,14 @@
 <script lang="ts">
-	import { reading, setLang, loadLang, type Lang } from '$lib/reading.svelte';
+	import {
+		reading,
+		setLang,
+		setMode,
+		loadLang,
+		loadMode,
+		type Lang,
+		type ReadMode
+	} from '$lib/reading.svelte';
+	import { music, TRACKS, initMusic, playTrack, toggleMute } from '$lib/music.svelte';
 	import { onMount } from 'svelte';
 
 	const LANGS: { id: Lang; label: string; hint: string }[] = [
@@ -8,17 +17,57 @@
 		{ id: 'ko', label: '한', hint: 'Korean dialogue only' }
 	];
 
-	onMount(loadLang);
+	const MODES: { id: ReadMode; label: string; hint: string }[] = [
+		{ id: 'chronicle', label: 'Chronicle', hint: 'Default reading layout' },
+		{ id: 'immersive', label: 'Immersive', hint: 'Speaker portrait like a game dialogue' }
+	];
+
+	onMount(() => {
+		loadLang();
+		loadMode();
+		return initMusic();
+	});
+
+	// follow the reader: whatever section they're in decides the track
+	$effect(() => {
+		playTrack(reading.music ? (TRACKS[reading.music] ?? null) : null);
+	});
+
+	let label = $derived(music.current ? music.current.title : 'no track');
 </script>
 
 <div class="hud">
 	<!-- ————— now playing ————— -->
-	<div class="music" class:on={!!reading.music} aria-live="polite">
+	<button
+		class="music"
+		class:on={!!music.current}
+		class:muted={music.muted}
+		aria-live="polite"
+		aria-pressed={!music.muted}
+		title={music.current
+			? (music.muted ? 'Play — ' : 'Mute — ') + music.current.credit
+			: 'No track in this section'}
+		onclick={toggleMute}
+	>
 		<span class="wave" aria-hidden="true">
 			<i style:--d="0ms"></i><i style:--d="180ms"></i><i style:--d="330ms"></i>
 			<i style:--d="90ms"></i><i style:--d="260ms"></i>
 		</span>
-		<span class="track">{reading.music ?? 'no track'}</span>
+		<span class="track">{label}</span>
+	</button>
+
+	<!-- ————— reading mode ————— -->
+	<div class="mode" role="group" aria-label="Reading mode">
+		{#each MODES as m (m.id)}
+			<button
+				class:active={reading.mode === m.id}
+				title={m.hint}
+				aria-pressed={reading.mode === m.id}
+				onclick={() => setMode(m.id)}
+			>
+				{m.label}
+			</button>
+		{/each}
 	</div>
 
 	<!-- ————— language ————— -->
@@ -50,6 +99,8 @@
 	/* ————— music tag ————— */
 	/* Always present in the corner; it just brightens when a track is playing. */
 	.music {
+		font: inherit;
+		cursor: pointer;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -93,6 +144,22 @@
 		animation-delay: var(--d);
 	}
 
+	/* muted: bars hold still and dim, so the state is readable at a glance */
+	.music.muted .wave i {
+		animation: none;
+		height: 26%;
+		background: var(--fg-faint);
+	}
+
+	.music.on.muted {
+		opacity: 0.72;
+	}
+
+	.music:hover {
+		opacity: 1;
+		border-color: rgba(216, 178, 106, 0.5);
+	}
+
 	@keyframes bounce {
 		0%,
 		100% {
@@ -113,7 +180,8 @@
 		text-overflow: ellipsis;
 	}
 
-	/* ————— language toggle ————— */
+	/* ————— mode / language toggles ————— */
+	.mode,
 	.lang {
 		display: flex;
 		gap: 1px;
@@ -124,6 +192,7 @@
 		backdrop-filter: blur(14px);
 	}
 
+	.mode button,
 	.lang button {
 		font: inherit;
 		font-size: 0.7rem;
@@ -139,13 +208,22 @@
 			color 0.25s var(--ease);
 	}
 
+	.mode button:hover,
 	.lang button:hover {
 		color: var(--fg);
 	}
 
+	.mode button.active,
 	.lang button.active {
 		color: #14140f;
 		background: var(--gold);
+	}
+
+	@media (max-width: 900px) {
+		.mode button {
+			padding: 0.22rem 0.45rem;
+			font-size: 0.65rem;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

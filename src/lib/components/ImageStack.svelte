@@ -6,21 +6,32 @@
 </script>
 
 <!--
-	Placeholder strips. When the real art is ready, replace the inner
-	<div class="ph"> with <img src="/images/{slot.id}.png" alt="..." />
-	— the aspect-ratio box stays the same.
+	Slots with a `src` render the real artwork; the rest stay as labelled
+	placeholders so the layout is already reserved for art still to come.
 -->
 <div class="stack">
 	{#each images as slot, i (slot.id)}
 		<figure
 			class="strip"
+			class:art={!!slot.src}
 			style:aspect-ratio={slot.ratio}
-			style:--tone={slot.tone ?? '#5b5b63'}
+			style:--tone={slot.tone ?? '#3a3a40'}
 			use:reveal={i * 70}
 		>
-			<div class="ph">
-				<span class="ph-id">{slot.id}</span>
-			</div>
+			{#if slot.src}
+				<!-- the first strip of an entry loads eagerly so the art is never
+				     waiting on an observer that may not fire -->
+				<img
+					src={slot.src}
+					alt={slot.alt ?? ''}
+					loading={i === 0 ? 'eager' : 'lazy'}
+					decoding="async"
+				/>
+			{:else}
+				<div class="ph">
+					<span class="ph-id">{slot.id}</span>
+				</div>
+			{/if}
 		</figure>
 	{/each}
 </div>
@@ -44,45 +55,19 @@
 		z-index: 2;
 	}
 
+	.strip img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
 	.ph {
 		width: 100%;
 		height: 100%;
 		display: grid;
 		place-items: center;
-		/* tones are authored bright — damped so they sit on the black page */
-		background:
-			linear-gradient(
-				135deg,
-				color-mix(in srgb, var(--tone) 62%, #000) 0%,
-				color-mix(in srgb, var(--tone) 44%, #000) 55%,
-				color-mix(in srgb, var(--tone) 22%, #000) 100%
-			);
-	}
-
-	/* a slow sheen so the placeholders read as "pending art", not broken */
-	.ph::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: linear-gradient(
-			105deg,
-			transparent 38%,
-			rgba(255, 255, 255, 0.06) 50%,
-			transparent 62%
-		);
-		background-size: 260% 100%;
-		animation: sheen 7s var(--ease) infinite;
-		pointer-events: none;
-	}
-
-	@keyframes sheen {
-		0%,
-		62% {
-			background-position: 130% 0;
-		}
-		100% {
-			background-position: -60% 0;
-		}
+		background: var(--tone);
 	}
 
 	.ph-id {
@@ -100,11 +85,5 @@
 
 	.strip:hover .ph-id {
 		color: rgba(255, 255, 255, 0.95);
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.ph::after {
-			animation: none;
-		}
 	}
 </style>

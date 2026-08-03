@@ -26,15 +26,24 @@
 </script>
 
 {#if block.kind === 'p'}
-	<Editable
-		value={block.html}
-		placeholder="Write, or ⋮⋮ to change type…"
-		single
-		class="bp"
-		oninput={(v) => set(() => (block.html = v))}
-		{onenter}
-		{ondeleteempty}
-	/>
+	<div class="p-cols">
+		<Editable
+			value={block.html}
+			placeholder="Write, or ⋮⋮ to change type…"
+			single
+			class="bp"
+			oninput={(v) => set(() => (block.html = v))}
+			{onenter}
+			{ondeleteempty}
+		/>
+		<Editable
+			value={block.ko ?? ''}
+			placeholder="한국어 번역…"
+			single
+			class="bp bko"
+			oninput={(v) => set(() => (block.ko = v || undefined))}
+		/>
+	</div>
 {:else if block.kind === 'cite'}
 	<div class="cite-row">
 		<span class="bullet">•</span>
@@ -263,6 +272,18 @@
 		padding: 2px 4px;
 	}
 
+	.p-cols {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+	}
+
+	.p-cols :global(.editable.bko) {
+		color: #787774;
+		border-left: 1px solid #ececea;
+		padding-left: 0.5rem;
+	}
+
 	.cite-row {
 		display: flex;
 		gap: 0.5rem;
@@ -318,7 +339,7 @@
 		font-size: 0.65rem;
 		font-weight: 700;
 		color: #fff;
-		background: linear-gradient(150deg, var(--k), color-mix(in srgb, var(--k) 45%, #000));
+		background: color-mix(in srgb, var(--k) 72%, #000);
 	}
 
 	/* inline flashback */

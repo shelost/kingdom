@@ -1,0 +1,10 @@
+<svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="48" height="32" fill="#FFCB51"/>
+<!-- heavenly door — a lintel between earth and the yellow sky -->
+<path d="M16 24V12.5C16 11.12 17.12 10 18.5 10H29.5C30.88 10 32 11.12 32 12.5V24" stroke="#C9961A" stroke-width="1.4" stroke-linecap="round"/>
+<path d="M14.5 10.2H33.5" stroke="#C9961A" stroke-width="1.6" stroke-linecap="round"/>
+<!-- stars of loyalty -->
+<path d="M24 5.2L24.55 6.85H26.3L24.9 7.9L25.4 9.55L24 8.5L22.6 9.55L23.1 7.9L21.7 6.85H23.45L24 5.2Z" fill="#E8B02E"/>
+<path d="M11 8L11.35 9.05H12.45L11.55 9.7L11.9 10.75L11 10.1L10.1 10.75L10.45 9.7L9.55 9.05H10.65L11 8Z" fill="#E8B02E"/>
+<path d="M37 9L37.35 10.05H38.45L37.55 10.7L37.9 11.75L37 11.1L36.1 11.75L36.45 10.7L35.55 10.05H36.65L37 9Z" fill="#E8B02E"/>
+</svg>

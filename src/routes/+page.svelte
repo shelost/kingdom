@@ -7,7 +7,13 @@
 	import Toc from '$lib/components/Toc.svelte';
 	import PersonLayer from '$lib/components/PersonLayer.svelte';
 	import Hud from '$lib/components/Hud.svelte';
+	import SpeakerPlate from '$lib/components/SpeakerPlate.svelte';
+	import StoryMap from '$lib/components/StoryMap.svelte';
+	import RelationChart from '$lib/components/RelationChart.svelte';
+	import { ENTRY_PLACE } from '$lib/places';
+	import { buildBeats } from '$lib/beats';
 	import { watchReading } from '$lib/reading.svelte';
+	import { flagOf, flagSrc } from '$lib/flags';
 	import { onMount } from 'svelte';
 	import type { Chapter } from '$lib/story';
 
@@ -42,6 +48,9 @@
 <Toc />
 <PersonLayer />
 <Hud />
+<SpeakerPlate />
+<RelationChart />
+<StoryMap />
 
 <main>
 	<!-- ————— cover ————— -->
@@ -52,7 +61,7 @@
 
 		<div class="blurb" use:reveal={240}>
 			<p>
-				<em>The King of Samhan</em> is a story set in 7th-century Korea, at the end of the Three
+				<em>The King of Samhan</em> is a story set in 7th-century Samhan, at the end of the Three
 				Kingdoms Period.
 			</p>
 			<p>
@@ -115,12 +124,9 @@
 					data-year={years[i]}
 					data-flash={entry.flash ? '1' : undefined}
 					data-music={entry.music ?? undefined}
+					data-place={ENTRY_PLACE[entry.title] ?? undefined}
 					style:--tone={entry.flashTone ?? '#8a8a94'}
 				>
-					<div class="images">
-						<ImageStack images={entry.images} />
-					</div>
-
 					<div class="meta">
 						<div class="meta-sticky" use:reveal>
 							<div class="year" class:long={entry.year.length > 4}>
@@ -133,7 +139,18 @@
 								{#if entry.badges}
 									<div class="badges">
 										{#each entry.badges as badge, j (j)}
-											<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
+											{@const flag = flagOf(badge)}
+											{#if flag}
+												<span
+													class="badge flag"
+													use:reveal={60 + j * 55}
+													title={flag}
+												>
+													<img src={flagSrc(flag)} alt="" />
+												</span>
+											{:else}
+												<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
+											{/if}
 										{/each}
 									</div>
 								{/if}
@@ -141,9 +158,18 @@
 						</div>
 					</div>
 
-					<div class="text" use:reveal={80}>
-						<Blocks blocks={entry.blocks} year={years[i]} />
-					</div>
+					<!-- each beat pairs a run of blocks with the art anchored to it,
+					     so text and image always start level and never overlap -->
+					{#each buildBeats(entry) as beat, bi (bi)}
+						<div class="text" class:first={bi === 0} use:reveal={80}>
+							<Blocks blocks={beat.blocks} year={years[i]} />
+						</div>
+						<div class="images" class:first={bi === 0}>
+							{#if beat.images.length}
+								<ImageStack images={beat.images} />
+							{/if}
+						</div>
+					{/each}
 				</article>
 			{/each}
 		</section>
@@ -343,23 +369,27 @@
 		position: relative;
 		display: grid;
 		grid-template-columns: 16rem minmax(0, 1fr) minmax(260px, 32%);
+		grid-auto-rows: min-content;
 		gap: 0 2.75rem;
 		padding: 0 0 4rem 3rem;
 		scroll-margin-top: 5rem;
 	}
 
-	/* The art column starts level with the prose and scrolls with it. */
+	/* Art sits in its own column, one row per beat, level with its text. */
 	.images {
 		grid-column: 3;
-		grid-row: 1;
 		align-self: start;
+	}
+
+	.images.first {
 		padding-top: 1.65rem;
 	}
 
 	/* Full-height column so the inner block has the whole entry to stick within */
+	/* the marker column spans every beat row of the entry */
 	.meta {
 		grid-column: 1;
-		grid-row: 1;
+		grid-row: 1 / -1;
 		height: 100%;
 	}
 
@@ -403,11 +433,7 @@
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
-		background: radial-gradient(
-			120% 60% at 50% 0%,
-			color-mix(in srgb, var(--tone) 11%, transparent),
-			transparent 70%
-		);
+		background: color-mix(in srgb, var(--tone) 7%, transparent);
 	}
 
 	.entry.flash > * {
@@ -466,15 +492,39 @@
 			background 0.3s var(--ease);
 	}
 
+	.badge.flag {
+		padding: 0;
+		overflow: hidden;
+		width: 2.1rem;
+		min-width: 2.1rem;
+		height: 1.4rem;
+		background: transparent;
+	}
+
+	.badge.flag img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
 	.badge:hover {
 		transform: translateY(-2px);
 		background: rgba(255, 255, 255, 0.12);
 	}
 
+	.badge.flag:hover {
+		background: transparent;
+		filter: brightness(1.08);
+	}
+
 	.text {
 		grid-column: 2;
-		grid-row: 1;
-		padding: 1.65rem 0 0;
+		padding: 0;
+	}
+
+	.text.first {
+		padding-top: 1.65rem;
 	}
 
 	.edit-link {

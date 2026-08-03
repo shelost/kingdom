@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { byId, ageAt, KINGDOMS, colorOf, type Person } from '$lib/people';
+	import { byId, ageAt, KINGDOMS, colorOf, hangulInitial, type Person } from '$lib/people';
+	import { BOND_LABEL } from '$lib/relations';
+	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
 
 	// hover card
 	let hovered = $state<Person | null>(null);
@@ -9,8 +11,7 @@
 	let y = $state(0);
 	let below = $state(false);
 
-	// side peek
-	let peeked = $state<Person | null>(null);
+	let peeked = $derived(profiles.peeked);
 
 	let hoverTimer: ReturnType<typeof setTimeout> | undefined;
 	let card: HTMLElement | undefined = $state();
@@ -59,12 +60,12 @@
 			const p = byId.get(el.dataset.person ?? '');
 			if (!p) return;
 			hovered = null;
-			peeked = p;
+			openProfile(p);
 		};
 
 		const key = (e: KeyboardEvent) => {
 			if (e.key === 'Escape') {
-				peeked = null;
+				closeProfile();
 				hovered = null;
 			}
 		};
@@ -88,6 +89,7 @@
 		if (p.born == null && p.died == null) return '';
 		return `${p.bornApprox ? 'c. ' : ''}${f(p.born)} – ${f(p.died)}`;
 	}
+
 </script>
 
 <!-- ————— floating preview ————— -->
@@ -103,38 +105,61 @@
 		role="tooltip"
 	>
 		<div class="card-top">
-			<span class="avatar" aria-hidden="true">{hovered.name.slice(0, 1)}</span>
+			<span class="avatar" aria-hidden="true">{hangulInitial(hovered)}</span>
 			<div class="card-id">
 				<span class="card-name">{hovered.name}</span>
 				<span class="card-sub">
 					{#if hovered.korean}<span class="ko">{hovered.korean}</span>{/if}
-					<span class="k-dot"></span>{k.label}
+					<span class="k-dot"></span>
+					{#if k.flag}<img class="card-flag" src={k.flag} alt="" />{/if}
+					{k.label}
 				</span>
 			</div>
-			{#if hovered.entity !== 'concept' && ageAt(hovered, hoverYear) != null}
+			{#if hovered.entity !== 'concept' && hovered.entity !== 'relationship' && hovered.entity !== 'place' && ageAt(hovered, hoverYear) != null}
 				<span class="card-age">{ageAt(hovered, hoverYear)}</span>
 			{/if}
 		</div>
 		{#if hovered.title}<p class="card-title">{hovered.title}</p>{/if}
 		<p class="card-line">{hovered.tagline}</p>
-		<p class="card-hint">{lifespan(hovered)} · click to open</p>
+		<p class="card-hint">
+			{#if hovered.entity === 'place'}
+				Place · click to open
+			{:else}
+				{lifespan(hovered)} · click to open
+			{/if}
+		</p>
 	</div>
 {/if}
 
 <!-- ————— notion-style side peek ————— -->
 {#if peeked}
 	{@const k = { ...KINGDOMS[peeked.kingdom], color: colorOf(peeked) }}
+	{@const isBond = peeked.entity === 'relationship'}
+	{@const isPlace = peeked.entity === 'place'}
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-	<div class="scrim" onclick={() => (peeked = null)}></div>
+	<div class="scrim" onclick={() => closeProfile()}></div>
 	<aside class="peek" style:--k={k.color} aria-label="{peeked.name} profile">
 		<header class="peek-head">
-			<button class="close" onclick={() => (peeked = null)} aria-label="Close">✕</button>
+			<button class="close" onclick={() => closeProfile()} aria-label="Close">✕</button>
 			{#if peeked.main}<span class="lead">Lead</span>{/if}
 			{#if peeked.entity === 'concept'}<span class="lead concept">Institution</span>{/if}
+			{#if isPlace}<span class="lead place">Place</span>{/if}
+			{#if isBond}<span class="lead bond">{peeked.bond ? BOND_LABEL[peeked.bond] : 'Bond'}</span>{/if}
 		</header>
 
 		<div class="peek-body">
-			<span class="peek-avatar" aria-hidden="true">{peeked.name.slice(0, 1)}</span>
+			{#if peeked.photo}
+				<figure class="peek-photo">
+					<img src={peeked.photo} alt={peeked.name} />
+					{#if peeked.photoCredit}<figcaption>{peeked.photoCredit}</figcaption>{/if}
+				</figure>
+			{:else if peeked.avatar}
+				<figure class="peek-portrait">
+					<img src={peeked.avatar} alt={peeked.name} />
+				</figure>
+			{:else}
+				<span class="peek-avatar" aria-hidden="true">{hangulInitial(peeked)}</span>
+			{/if}
 
 			<h2 class="peek-name">{peeked.name}</h2>
 			<p class="peek-native">
@@ -144,16 +169,46 @@
 
 			<dl class="props">
 				{#if peeked.title}
-					<div><dt>Role</dt><dd>{peeked.title}</dd></div>
+					<div>
+						<dt>{isBond ? 'Bond' : isPlace ? 'Type' : 'Role'}</dt>
+						<dd>{peeked.title}</dd>
+					</div>
 				{/if}
-				<div><dt>Kingdom</dt><dd><span class="pill">{k.label}</span></dd></div>
+				{#if isBond && peeked.between}
+					<div>
+						<dt>Between</dt>
+						<dd class="between">
+							{#each peeked.between as id, i (id)}
+								{@const other = byId.get(id)}
+								{#if i > 0}<span class="amp">·</span>{/if}
+								{#if other}
+									<button type="button" class="linkish" onclick={() => openProfile(other)}
+										>{other.name}</button
+									>
+								{/if}
+							{/each}
+						</dd>
+					</div>
+				{/if}
+				<div>
+					<dt>{isPlace ? 'Territory' : 'Kingdom'}</dt>
+					<dd>
+						<span class="pill">
+							{#if k.flag}<img class="pill-flag" src={k.flag} alt="" />{/if}
+							{k.label}
+						</span>
+					</dd>
+				</div>
+				{#if peeked.entity === 'nation' && k.icons}
+					<div><dt>Signs</dt><dd class="icons">{k.icons}</dd></div>
+				{/if}
 				{#if lifespan(peeked)}
 					<div>
-						<dt>{peeked.entity === 'concept' ? 'Active' : 'Lived'}</dt>
+						<dt>{peeked.entity === 'concept' || isBond ? 'Active' : 'Lived'}</dt>
 						<dd>{lifespan(peeked)}</dd>
 					</div>
 				{/if}
-				{#if peeked.entity !== 'concept' && peeked.born != null && peeked.died != null}
+				{#if peeked.entity !== 'concept' && peeked.entity !== 'relationship' && peeked.entity !== 'place' && peeked.born != null && peeked.died != null}
 					<div><dt>Age at death</dt><dd>{peeked.died - peeked.born}</dd></div>
 				{/if}
 				<div><dt>Identifier</dt><dd><code class="hex">{colorOf(peeked)}</code></dd></div>
@@ -162,7 +217,7 @@
 			<p class="tagline">{peeked.tagline}</p>
 
 			{#if peeked.arc}
-				<h3>Character arc</h3>
+				<h3>{isBond ? 'Story of the bond' : isPlace ? 'About this place' : 'Character arc'}</h3>
 				<p class="arc">{peeked.arc}</p>
 			{/if}
 
@@ -171,11 +226,13 @@
 				<ol class="timeline">
 					{#each peeked.events as ev, i (i)}
 						<li>
-							<span class="tl-year">{ev.year < 0 ? `${-ev.year} BCE` : ev.year}</span>
+							<span class="tl-year"
+								>{ev.year == null ? '—' : ev.year < 0 ? `${-ev.year} BCE` : ev.year}</span
+							>
 							<span class="tl-dot" aria-hidden="true"></span>
 							<span class="tl-text">
 								{ev.label}
-								{#if peeked.born != null && ev.year >= peeked.born}
+								{#if peeked.born != null && ev.year != null && ev.year >= peeked.born}
 									<span class="tl-age">age {ev.year - peeked.born}</span>
 								{/if}
 							</span>
@@ -233,7 +290,7 @@
 		font-family: var(--serif);
 		font-weight: 700;
 		color: #fff;
-		background: linear-gradient(150deg, var(--k), color-mix(in srgb, var(--k) 45%, #000));
+		background: color-mix(in srgb, var(--k) 72%, #000);
 	}
 
 	.card-id {
@@ -262,6 +319,13 @@
 		height: 5px;
 		border-radius: 50%;
 		background: var(--k);
+	}
+
+	.card-flag {
+		width: 0.95rem;
+		height: 0.64rem;
+		object-fit: cover;
+		border-radius: 1px;
 	}
 
 	.card-age {
@@ -372,6 +436,54 @@
 		border-color: var(--hairline);
 	}
 
+	.lead.place {
+		color: color-mix(in srgb, var(--k) 65%, #fff);
+		border-color: color-mix(in srgb, var(--k) 40%, transparent);
+	}
+
+	.lead.bond {
+		color: color-mix(in srgb, var(--k) 70%, #fff);
+		border-color: color-mix(in srgb, var(--k) 45%, transparent);
+	}
+
+	/* place art: fill the hero like a landscape, not a bust */
+	.peek:has(.lead.place) .peek-portrait {
+		height: 12.5rem;
+	}
+
+	.peek:has(.lead.place) .peek-portrait img {
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.between {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.between .amp {
+		opacity: 0.45;
+		margin: 0 0.1rem;
+	}
+
+	.linkish {
+		padding: 0;
+		border: none;
+		background: none;
+		color: color-mix(in srgb, var(--k) 55%, #fff);
+		font: inherit;
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
+		cursor: pointer;
+	}
+
+	.linkish:hover {
+		color: #fff;
+	}
+
 	.lead {
 		font-size: 0.62rem;
 		letter-spacing: 0.14em;
@@ -386,6 +498,45 @@
 		flex: 1;
 		overflow-y: auto;
 		padding: 1.6rem 1.8rem 4rem;
+	}
+
+	/* character art: full bleed at the top of the pane */
+	.peek-portrait {
+		margin: -1.6rem -1.8rem 1rem;
+		height: 15rem;
+		overflow: hidden;
+		background: color-mix(in srgb, var(--k) 16%, #0d0d0f);
+		border-bottom: 1px solid var(--hairline);
+	}
+
+	.peek-portrait img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: center top;
+	}
+
+	.peek-photo {
+		margin: 0 0 1.1rem;
+		border-radius: 10px;
+		overflow: hidden;
+		border: 1px solid var(--hairline);
+	}
+
+	.peek-photo img {
+		display: block;
+		width: 100%;
+		max-height: 15rem;
+		object-fit: cover;
+	}
+
+	.peek-photo figcaption {
+		padding: 0.4rem 0.6rem;
+		font-size: 0.62rem;
+		letter-spacing: 0.03em;
+		color: var(--fg-faint);
+		background: rgba(255, 255, 255, 0.03);
 	}
 
 	.peek-avatar {
@@ -448,13 +599,29 @@
 	}
 
 	.pill {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
 		font-size: 0.72rem;
-		padding: 0.1rem 0.5rem;
+		padding: 0.1rem 0.5rem 0.1rem 0.28rem;
 		border-radius: 999px;
 		color: color-mix(in srgb, var(--k) 70%, #fff);
 		background: color-mix(in srgb, var(--k) 22%, transparent);
 		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
+	}
+
+	.pill-flag {
+		width: 1.15rem;
+		height: 0.76rem;
+		object-fit: cover;
+		border-radius: 2px;
+		flex-shrink: 0;
+	}
+
+	.icons {
+		font-size: 0.78rem;
+		letter-spacing: 0.02em;
+		color: var(--fg-dim);
 	}
 
 	.tagline {

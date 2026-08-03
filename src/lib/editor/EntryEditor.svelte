@@ -155,7 +155,7 @@
 			<input
 				class="badges"
 				type="text"
-				placeholder="badges: 👑 🌙 唐"
+				placeholder="badges: 👑 flag:silla 🌙"
 				value={(entry.badges ?? []).join(' ')}
 				oninput={(e) =>
 					set(() => {
