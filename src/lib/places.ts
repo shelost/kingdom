@@ -204,9 +204,9 @@ export const PLACES: Record<string, Place> = {
 		title: 'Yushin’s cavern lake in the hills',
 		blurb:
 			'A bowl of black water under stone — the only room in Silla where no one asks Kim Yushin for a victory.',
-		arc: 'Between campaigns the marshal rides alone into the hills, strips at the rock lip, and bathes in cold steam. Narim, Golhwa and Hyullé are already waiting: mentors, tormentors, a comfort he will not name in any memorial. The lake does not require prayer. It requires honesty — about Baekje’s hurry, about Yeon’s door, about a queen whose title he still says even when naked. The histories keep the fortresses. This place keeps the man.',
+		arc: 'Between campaigns the marshal rides alone into the hills, strips at the rock lip, and bathes in cold steam. Narim, Golhwa and Hyullé are already waiting: mentors, tormentors, beautiful predators who give real counsel and would rather he never leave the water. He is always a guest here — charming, a little out of his depth — pulled back to queen and war the way shore pulls a swimmer. The lake does not require prayer. It requires honesty. The histories keep the fortresses. This place keeps the man.',
 		events: [
-			{ label: 'Yushin first finds the three in the steam between border campaigns.' },
+			{ label: 'Yushin first finds the three in the steam; Narim sends the younger two away and is caught kissing him.' },
 			{ year: 642, label: 'After Daeya he returns for quiet counsel before the road north.' },
 			{ year: 647, label: 'The night before Bidam, he washes his face here for the capital to watch.' },
 			{ year: 673, label: 'Old, between paperwork wars, he still takes the warm ledge Hyullé keeps.' }
@@ -481,6 +481,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'King Euija, the 31st Eraha': 'sabi',
 	'Jinheung’s Betrayal': 'gwansan',
 	'Daeya Fortress': 'daeya',
+	Steam: 'steam_cavern',
 	'Steam, Again': 'steam_cavern',
 	'Yeon’s Massacre': 'pyongyang',
 	'Chunchu & Gesomun': 'pyongyang',

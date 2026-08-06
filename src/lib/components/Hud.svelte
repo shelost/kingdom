@@ -17,9 +17,16 @@
 		{ id: 'ko', label: '한', hint: 'Korean dialogue only' }
 	];
 
-	const MODES: { id: ReadMode; label: string; hint: string }[] = [
-		{ id: 'chronicle', label: 'Chronicle', hint: 'Default reading layout' },
-		{ id: 'immersive', label: 'Immersive', hint: 'Speaker portrait like a game dialogue' }
+	/** `short` is what a phone shows — the full words do not fit beside the
+	    chapter bar without pushing the title under the toggles. */
+	const MODES: { id: ReadMode; label: string; short: string; hint: string }[] = [
+		{ id: 'chronicle', label: 'Chronicle', short: 'Read', hint: 'Default reading layout' },
+		{
+			id: 'immersive',
+			label: 'Immersive',
+			short: 'Scene',
+			hint: 'Speaker portrait like a game dialogue'
+		}
 	];
 
 	onMount(() => {
@@ -65,7 +72,8 @@
 				aria-pressed={reading.mode === m.id}
 				onclick={() => setMode(m.id)}
 			>
-				{m.label}
+				<span class="wide">{m.label}</span>
+				<span class="narrow">{m.short}</span>
 			</button>
 		{/each}
 	</div>
@@ -88,12 +96,16 @@
 <style>
 	.hud {
 		position: fixed;
-		top: 1rem;
-		right: 1.15rem;
+		top: max(1rem, env(safe-area-inset-top, 0px));
+		right: max(1.15rem, env(safe-area-inset-right, 0px));
 		z-index: 96;
 		display: flex;
 		align-items: center;
 		gap: 0.55rem;
+	}
+
+	.narrow {
+		display: none;
 	}
 
 	/* ————— music tag ————— */
@@ -108,7 +120,7 @@
 		white-space: nowrap;
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
-		background: rgba(22, 22, 25, 0.72);
+		background: var(--glass);
 		backdrop-filter: blur(14px);
 		opacity: 0.5;
 		transition:
@@ -188,7 +200,7 @@
 		padding: 2px;
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
-		background: rgba(22, 22, 25, 0.78);
+		background: var(--glass);
 		backdrop-filter: blur(14px);
 	}
 
@@ -233,9 +245,36 @@
 		}
 	}
 
+	/* ————— Phones: a compact strip that rides the chapter bar ————— */
 	@media (max-width: 700px) {
 		.track {
 			display: none;
+		}
+
+		.hud {
+			top: max(0.55rem, env(safe-area-inset-top, 0px));
+			right: max(0.7rem, env(safe-area-inset-right, 0px));
+			gap: 0.35rem;
+		}
+
+		.wide {
+			display: none;
+		}
+
+		.narrow {
+			display: inline;
+		}
+
+		/* thumb-sized rows, but no wider than the strip can afford */
+		.mode button,
+		.lang button {
+			min-height: 1.9rem;
+			padding: 0.3rem 0.5rem;
+			font-size: 0.68rem;
+		}
+
+		.music {
+			padding: 0.4rem 0.6rem;
 		}
 	}
 </style>

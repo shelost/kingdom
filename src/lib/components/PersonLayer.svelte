@@ -1,6 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { byId, ageAt, KINGDOMS, colorOf, hangulInitial, type Person } from '$lib/people';
+	import {
+		byId,
+		ageAt,
+		avatarOf,
+		isPlaceholderArt,
+		KINGDOMS,
+		colorOf,
+		hangulInitial,
+		type Person
+	} from '$lib/people';
 	import { BOND_LABEL } from '$lib/relations';
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
 
@@ -95,6 +104,7 @@
 <!-- ————— floating preview ————— -->
 {#if hovered}
 	{@const k = { ...KINGDOMS[hovered.kingdom], color: colorOf(hovered) }}
+	{@const art = avatarOf(hovered)}
 	<div
 		class="card"
 		class:below
@@ -105,7 +115,13 @@
 		role="tooltip"
 	>
 		<div class="card-top">
-			<span class="avatar" aria-hidden="true">{hangulInitial(hovered)}</span>
+			<span class="avatar" class:silhouette={isPlaceholderArt(art)} aria-hidden="true">
+				{#if art}
+					<img src={art} alt="" />
+				{:else}
+					{hangulInitial(hovered)}
+				{/if}
+			</span>
 			<div class="card-id">
 				<span class="card-name">{hovered.name}</span>
 				<span class="card-sub">
@@ -136,6 +152,7 @@
 	{@const k = { ...KINGDOMS[peeked.kingdom], color: colorOf(peeked) }}
 	{@const isBond = peeked.entity === 'relationship'}
 	{@const isPlace = peeked.entity === 'place'}
+	{@const art = avatarOf(peeked)}
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 	<div class="scrim" onclick={() => closeProfile()}></div>
 	<aside class="peek" style:--k={k.color} aria-label="{peeked.name} profile">
@@ -153,19 +170,32 @@
 					<img src={peeked.photo} alt={peeked.name} />
 					{#if peeked.photoCredit}<figcaption>{peeked.photoCredit}</figcaption>{/if}
 				</figure>
-			{:else if peeked.avatar}
-				<figure class="peek-portrait">
-					<img src={peeked.avatar} alt={peeked.name} />
-				</figure>
-			{:else}
-				<span class="peek-avatar" aria-hidden="true">{hangulInitial(peeked)}</span>
 			{/if}
 
-			<h2 class="peek-name">{peeked.name}</h2>
-			<p class="peek-native">
-				{#if peeked.hanja}<span class="hanja">{peeked.hanja}</span>{/if}
-				{#if peeked.korean}<span class="ko">{peeked.korean}</span>{/if}
-			</p>
+			<!-- The art stands on the right; the name, native script and defining
+			     line sit in front of it, lifted off the picture by a scrim. -->
+			<div class="hero" class:has-art={!!art} class:stand-in={isPlaceholderArt(art)}>
+				{#if art}
+					<figure class="hero-art" aria-hidden="true">
+						<img src={art} alt="" />
+					</figure>
+				{/if}
+				<div class="hero-id">
+					{#if !art && !peeked.photo}
+						<span class="peek-avatar" aria-hidden="true">{hangulInitial(peeked)}</span>
+					{/if}
+					<h2 class="peek-name">{peeked.name}</h2>
+					<p class="peek-native">
+						{#if peeked.hanja}<span class="hanja">{peeked.hanja}</span>{/if}
+						{#if peeked.korean}<span class="ko">{peeked.korean}</span>{/if}
+					</p>
+					{#if peeked.quote}
+						<figure class="defining">
+							<blockquote>{peeked.quote}</blockquote>
+						</figure>
+					{/if}
+				</div>
+			</div>
 
 			<dl class="props">
 				{#if peeked.title}
@@ -202,6 +232,12 @@
 				{#if peeked.entity === 'nation' && k.icons}
 					<div><dt>Signs</dt><dd class="icons">{k.icons}</dd></div>
 				{/if}
+				{#if peeked.blade}
+					<div><dt>Blade</dt><dd>{peeked.blade}</dd></div>
+				{/if}
+				{#if peeked.binyeo}
+					<div><dt>Binyeo</dt><dd>{peeked.binyeo}</dd></div>
+				{/if}
 				{#if lifespan(peeked)}
 					<div>
 						<dt>{peeked.entity === 'concept' || isBond ? 'Active' : 'Lived'}</dt>
@@ -215,6 +251,11 @@
 			</dl>
 
 			<p class="tagline">{peeked.tagline}</p>
+
+			{#if peeked.nature}
+				<h3>Nature</h3>
+				<p class="arc nature">{peeked.nature}</p>
+			{/if}
 
 			{#if peeked.arc}
 				<h3>{isBond ? 'Story of the bond' : isPlace ? 'About this place' : 'Character arc'}</h3>
@@ -251,7 +292,7 @@
 		z-index: 120;
 		width: 19rem;
 		transform: translate(-50%, -100%);
-		background: rgba(22, 22, 25, 0.96);
+		background: var(--glass);
 		backdrop-filter: blur(18px) saturate(150%);
 		border: 1px solid rgba(255, 255, 255, 0.11);
 		border-top: 2px solid var(--k);
@@ -286,11 +327,24 @@
 		flex-shrink: 0;
 		width: 2rem;
 		height: 2rem;
+		overflow: hidden;
 		border-radius: 8px;
 		font-family: var(--serif);
 		font-weight: 700;
 		color: #fff;
 		background: color-mix(in srgb, var(--k) 72%, #000);
+	}
+
+	/* standing busts have headroom — crop to the face, not empty sky */
+	.avatar img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 16%;
+	}
+
+	.avatar.silhouette img {
+		opacity: 0.62;
 	}
 
 	.card-id {
@@ -380,9 +434,9 @@
 		width: min(30rem, 92vw);
 		display: flex;
 		flex-direction: column;
-		background: #121215;
+		background: var(--panel);
 		border-left: 1px solid rgba(255, 255, 255, 0.1);
-		box-shadow: -30px 0 80px rgba(0, 0, 0, 0.6);
+		box-shadow: -30px 0 80px rgba(0, 0, 0, 0.55);
 		animation: slide 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}
 
@@ -447,11 +501,11 @@
 	}
 
 	/* place art: fill the hero like a landscape, not a bust */
-	.peek:has(.lead.place) .peek-portrait {
-		height: 12.5rem;
+	.peek:has(.lead.place) .hero.has-art {
+		min-height: 13.5rem;
 	}
 
-	.peek:has(.lead.place) .peek-portrait img {
+	.peek:has(.lead.place) .hero-art img {
 		object-fit: cover;
 		object-position: center;
 	}
@@ -500,21 +554,99 @@
 		padding: 1.6rem 1.8rem 4rem;
 	}
 
-	/* character art: full bleed at the top of the pane */
-	.peek-portrait {
-		margin: -1.6rem -1.8rem 1rem;
-		height: 15rem;
+	/* ————— hero: art on the right, identity in front of it ————— */
+	.hero {
+		position: relative;
+		margin: 0 0 1.3rem;
+	}
+
+	/* with art the hero bleeds to the pane edges and reserves the bust's height */
+	.hero.has-art {
+		margin: -1.6rem -1.8rem 1.4rem;
+		padding: 1.6rem 1.8rem 1.3rem;
+		display: flex;
+		align-items: flex-end;
+		min-height: 17.5rem;
 		overflow: hidden;
-		background: color-mix(in srgb, var(--k) 16%, #0d0d0f);
+		background: color-mix(in srgb, var(--k) 13%, var(--panel-sunken));
 		border-bottom: 1px solid var(--hairline);
 	}
 
-	.peek-portrait img {
+	/* a placeholder body: present, but visibly not a likeness */
+	.hero.stand-in .hero-art img {
+		opacity: 0.45;
+	}
+
+	.hero-art {
+		position: absolute;
+		inset: 0 0 0 auto;
+		z-index: 0;
+		width: min(22rem, 72%);
+		margin: 0;
+		pointer-events: none;
+	}
+
+	.hero-art img {
 		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
-		object-position: center top;
+		object-position: right center;
+		/* soft edge toward the name — keep the bust itself opaque */
+		-webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
+		mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
+	}
+
+	/* Panel wash only under the text column — do not grey out the portrait. */
+	.hero.has-art::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient(
+			100deg,
+			var(--panel) 0%,
+			color-mix(in srgb, var(--panel) 88%, transparent) 34%,
+			color-mix(in srgb, var(--panel) 35%, transparent) 52%,
+			transparent 68%
+		);
+	}
+
+	.hero-id {
+		position: relative;
+		z-index: 2;
+		max-width: 20rem;
+	}
+
+	/* ————— the line the character would answer everything with ————— */
+	.defining {
+		position: relative;
+		margin: 1rem 0 0;
+		padding-left: 1.2rem;
+	}
+
+	.defining::before {
+		content: '\201C';
+		position: absolute;
+		left: -0.05rem;
+		top: 0.62em;
+		font-family: var(--serif);
+		font-size: 2.2rem;
+		line-height: 0;
+		color: color-mix(in srgb, var(--k) 60%, var(--gold));
+	}
+
+	.defining blockquote {
+		margin: 0;
+		font-family: var(--serif);
+		font-size: 1.14rem;
+		font-style: italic;
+		font-weight: 500;
+		line-height: 1.45;
+		letter-spacing: var(--tracking-display);
+		color: #fffdf8;
+		text-shadow: 0 1px 14px rgba(0, 0, 0, 0.8);
 	}
 
 	.peek-photo {
@@ -558,7 +690,7 @@
 	}
 
 	.peek-native {
-		margin: 0.3rem 0 1.3rem;
+		margin: 0.3rem 0 0;
 		display: flex;
 		gap: 0.7rem;
 		font-family: 'Noto Serif KR', serif;
@@ -718,6 +850,21 @@
 		border-radius: 999px;
 		padding: 0 0.4rem;
 		white-space: nowrap;
+	}
+
+	/* narrow panel: the bust gives ground so the name and quote keep their width */
+	@media (max-width: 560px) {
+		.hero.has-art {
+			min-height: 14.5rem;
+		}
+
+		.hero-art {
+			width: 58%;
+		}
+
+		.defining blockquote {
+			font-size: 1.02rem;
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -147,18 +147,20 @@
 		}
 	}
 
-	/* ————— resting state: a small corner card ————— */
+	/* ————— resting state: a corner card —————
+	   Size and footing come from app.css (--map-w / --corner-*), which is also
+	   where immersive grows the card and lifts it clear of the dialogue box. */
 	.map {
 		position: fixed;
-		left: 1.15rem;
-		bottom: 1.15rem;
+		left: var(--corner-left);
+		bottom: var(--corner-bottom);
 		z-index: 90;
-		width: 9.5rem;
+		width: var(--map-w);
 		margin: 0;
 		padding: 0.4rem 0.4rem 0.1rem;
 		border: 1px solid var(--hairline);
 		border-radius: 10px;
-		background: rgba(16, 16, 18, 0.72);
+		background: var(--glass);
 		backdrop-filter: blur(14px);
 		opacity: 0.5;
 		/* animating left/bottom/width keeps the card anchored while it grows */
@@ -179,6 +181,26 @@
 
 	.map:hover {
 		opacity: 1;
+	}
+
+	/* Immersive: the map is part of the staging, standing over the speech —
+	   it never fades back into the page the way it does while reading. */
+	:global(html.is-immersive) .map {
+		opacity: 1;
+		border-color: rgba(255, 255, 255, 0.18);
+		box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+	}
+
+	:global(html.is-immersive) .map:not(.open) figcaption {
+		min-height: 2.2rem;
+	}
+
+	:global(html.is-immersive) .map:not(.open) .pl-name {
+		font-size: 0.78rem;
+	}
+
+	:global(html.is-immersive) .map:not(.open) .pl-ko {
+		font-size: 0.66rem;
 	}
 
 	/* ————— opened: centred like a modal ————— */
@@ -480,12 +502,6 @@
 	}
 
 	@media (max-width: 820px) {
-		.map {
-			width: 6.2rem;
-			left: 0.7rem;
-			bottom: 0.7rem;
-		}
-
 		.map.open {
 			width: 94vw;
 			padding: 0.6rem 0.6rem 0.2rem;

@@ -79,7 +79,11 @@
 				<div class="panel-part">{ch.part}</div>
 			{/if}
 			<button class="panel-item" class:active={active === ch.id} onclick={() => jump(ch.id)}>
-				<span class="pi-title">{ch.title}</span>
+				<span class="pi-title">
+					<span class="pi-num">{ci + 1}</span>
+					<span class="pi-dot" aria-hidden="true">·</span>
+					{ch.title}
+				</span>
 				{#if ch.korean}<span class="pi-ko">{ch.korean}</span>{/if}
 				{#if ch.range}<span class="pi-range">{ch.range}</span>{/if}
 			</button>
@@ -115,20 +119,22 @@
 		will-change: transform;
 	}
 
+	/* Left edge, just clear of the decorative rail. Above the floating corner
+	   cards so the opened panel is never punched through by the map. */
 	.toc {
 		position: fixed;
-		right: 0;
+		left: 0;
 		top: 50%;
 		transform: translateY(-50%);
-		z-index: 65;
-		padding: 1.5rem 1.1rem; /* generous hover target */
+		z-index: 92;
+		padding: 1.5rem 0.85rem 1.5rem calc(22px + 0.5rem); /* generous hover target */
 	}
 
 	/* ————— collapsed: notion-style dashes ————— */
 	.bars {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-end;
+		align-items: flex-start;
 		gap: 8px;
 		transition: opacity 220ms ease;
 	}
@@ -161,9 +167,9 @@
 	/* ————— expanded panel ————— */
 	.panel {
 		position: absolute;
-		right: 1.4rem;
+		left: calc(22px + 1rem);
 		top: 50%;
-		transform: translateY(-50%) translateX(10px) scale(0.98);
+		transform: translateY(-50%) translateX(-10px) scale(0.98);
 		width: 17.5rem;
 		max-height: 80vh;
 		overflow-y: auto;
@@ -235,6 +241,16 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+
+	.pi-num {
+		font-variant-numeric: tabular-nums;
+		color: var(--gold);
+	}
+
+	.pi-dot {
+		margin: 0 0.28em;
+		opacity: 0.45;
 	}
 
 	.pi-ko {

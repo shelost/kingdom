@@ -1,8 +1,18 @@
 <script lang="ts">
 	import type { Block } from '$lib/story';
-	import { linkPeople, byId, colorOf, hangulInitial } from '$lib/people';
-	import { reading, isKorean } from '$lib/reading.svelte';
+	import {
+		linkPeople,
+		avatarOf,
+		isPlaceholderArt,
+		byId,
+		colorOf,
+		hangulInitial,
+		type Person
+	} from '$lib/people';
+	import { reading, isKorean, activateDialogue } from '$lib/reading.svelte';
 	import Self from './Blocks.svelte';
+
+	type Dialogue = Extract<Block, { kind: 'dialogue' }>;
 
 	let { blocks, year = null }: { blocks: Block[]; year?: number | null } = $props();
 
@@ -35,6 +45,24 @@
 	let shown = $derived(blocks.filter(visible));
 </script>
 
+<!-- The body of one dialogue block: who is talking, then the lines themselves.
+     Shared by the plain rendering and the clickable immersive one. -->
+{#snippet utterance(block: Dialogue, p: Person | undefined)}
+	{#if p}
+		<span class="who">{p.name}</span>
+	{:else if block.speaker}
+		<span class="speaker">{block.speaker}</span>
+	{/if}
+	{#each { length: Math.max(block.lines.length, block.en?.length ?? 0) } as _, j (j)}
+		{#if block.lines[j] && reading.lang !== 'en'}
+			<span class="line ko">{@html block.lines[j]}</span>
+		{/if}
+		{#if block.en?.[j] && reading.lang !== 'ko'}
+			<span class="line en" class:solo={!block.lines[j]}>{@html block.en[j]}</span>
+		{/if}
+	{/each}
+{/snippet}
+
 <div class="prose">
 	{#each shown as block, i (i)}
 		{#if block.kind === 'p'}
@@ -49,15 +77,21 @@
 				data-speaker={p?.id ?? undefined}
 			>
 				{#if p}
+					{@const maidSeed =
+						p.id === 'courtmaid'
+							? (block.lines ?? block.en ?? []).join('\n')
+							: undefined}
+					{@const art = avatarOf(p, maidSeed)}
 					<button
 						type="button"
 						class="face person"
+						class:silhouette={isPlaceholderArt(art) && p.id !== 'courtmaid'}
 						data-person={p.id}
 						title={p.name}
 						aria-label={p.name}
 					>
-						{#if p.avatar}
-							<img src={p.avatar} alt="" />
+						{#if art}
+							<img src={art} alt="" />
 						{:else}
 							<span class="initial">{hangulInitial(p)}</span>
 						{/if}
@@ -65,21 +99,23 @@
 				{:else}
 					<span class="chip"></span>
 				{/if}
-				<div class="lines">
-					{#if p}
-						<span class="who">{p.name}</span>
-					{:else if block.speaker}
-						<span class="speaker">{block.speaker}</span>
-					{/if}
-					{#each { length: Math.max(block.lines.length, block.en?.length ?? 0) } as _, j (j)}
-						{#if block.lines[j] && reading.lang !== 'en'}
-							<span class="line ko">{@html block.lines[j]}</span>
-						{/if}
-						{#if block.en?.[j] && reading.lang !== 'ko'}
-							<span class="line en" class:solo={!block.lines[j]}>{@html block.en[j]}</span>
-						{/if}
-					{/each}
-				</div>
+				<!-- Immersive: the lines are a control — click one to put it on stage.
+				     Only speakers with a profile can hold the plate, so only those
+				     become clickable; everything else stays plain prose. -->
+				{#if p && reading.mode === 'immersive'}
+					<button
+						type="button"
+						class="lines pick"
+						title="Speak this line"
+						onclick={(e) => activateDialogue(e.currentTarget)}
+					>
+						{@render utterance(block, p)}
+					</button>
+				{:else}
+					<div class="lines">
+						{@render utterance(block, p)}
+					</div>
+				{/if}
 			</div>
 		{:else if block.kind === 'verse'}
 			<div class="verse" style:--vc={block.color}>
@@ -173,11 +209,12 @@
 
 <style>
 	.prose {
-		max-width: 46rem;
+		max-width: 42rem;
 	}
 
 	.prose p {
-		margin: 0 0 0.4rem;
+		margin: 0 0 1.35rem;
+		line-height: 1.82;
 		color: var(--fg);
 	}
 
@@ -203,8 +240,8 @@
 	.dialogue {
 		display: grid;
 		grid-template-columns: 1.75rem 1fr;
-		gap: 0.6rem;
-		margin: 0.9rem 0;
+		gap: 0.7rem;
+		margin: 1.25rem 0;
 		transition:
 			background 420ms var(--ease),
 			box-shadow 420ms var(--ease),
@@ -218,12 +255,13 @@
 		opacity: 0.62;
 	}
 
+	/* The lit wash is the whole cue — no edge rule, so the line reads as a
+	   raised piece of the page rather than a quoted block. */
 	:global(html.is-immersive) .dialogue:global(.is-speaking) {
 		margin-left: -0.55rem;
 		padding: 0.45rem 0.65rem 0.45rem 0.55rem;
-		border-radius: 4px;
+		border-radius: 6px;
 		background: color-mix(in srgb, var(--chip) 12%, rgba(255, 255, 255, 0.04));
-		box-shadow: inset 2px 0 0 var(--chip);
 		opacity: 1;
 	}
 
@@ -260,10 +298,17 @@
 		box-shadow: 0 0 0 3px color-mix(in srgb, var(--chip) 25%, transparent);
 	}
 
+	/* Standing busts have headroom — crop around the face, not the empty top. */
 	.face img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: 50% 16%;
+	}
+
+	/* a placeholder body, not a likeness — it sits back a little */
+	.face.silhouette img {
+		opacity: 0.62;
 	}
 
 	.initial {
@@ -278,6 +323,39 @@
 		flex-direction: column;
 		color: var(--fg-dim);
 		min-width: 0;
+	}
+
+	/* Immersive: the lines are the click target; the wash paints the whole
+	   `.dialogue` (same box as `.is-speaking`), not just the text column. */
+	.lines.pick {
+		align-items: flex-start;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		font: inherit;
+		letter-spacing: inherit;
+		text-align: left;
+		border: none;
+		border-radius: 2px;
+		background: transparent;
+		cursor: pointer;
+	}
+
+	/* Hover only where hovering exists — on a touch screen the state would
+	   stick to the last line tapped. Mirror the active wash on the parent. */
+	@media (hover: hover) {
+		:global(html.is-immersive) .dialogue:has(.lines.pick:hover):not(:global(.is-speaking)) {
+			margin-left: -0.55rem;
+			padding: 0.45rem 0.65rem 0.45rem 0.55rem;
+			border-radius: 6px;
+			background: color-mix(in srgb, var(--chip) 10%, rgba(255, 255, 255, 0.03));
+			opacity: 0.92;
+		}
+	}
+
+	.lines.pick:focus-visible {
+		outline: 1px solid color-mix(in srgb, var(--chip) 55%, #fff);
+		outline-offset: 0.35rem;
 	}
 
 	.line.ko {
@@ -650,5 +728,36 @@
 	.prose :global(.person:focus-visible) {
 		outline: 2px solid var(--gold);
 		outline-offset: 2px;
+	}
+
+	/* ————— Phones: targets a thumb can actually hit ————— */
+	@media (max-width: 820px) {
+		.dialogue {
+			grid-template-columns: 2.25rem 1fr;
+			gap: 0.8rem;
+			margin: 1.5rem 0;
+		}
+
+		.face {
+			width: 2.25rem;
+			height: 2.25rem;
+			margin-top: 0.1rem;
+		}
+
+		/* The line is already the full width of the column; only its height is
+		   short of a comfortable target, and padding-block grown against an
+		   equal negative margin-block adds it without moving any text. */
+		.lines.pick {
+			min-height: 2.75rem;
+			margin-block: -0.5rem;
+			padding-block: 0.5rem;
+			border-radius: 6px;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+		/* the chronicle either side of the live line still has to be readable */
+		:global(html.is-immersive) .dialogue:not(:global(.is-speaking)) {
+			opacity: 0.8;
+		}
 	}
 </style>

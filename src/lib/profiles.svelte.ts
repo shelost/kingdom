@@ -14,8 +14,9 @@ export function openProfile(id: string | Person | null | undefined) {
 		profiles.peeked = null;
 		return;
 	}
-	const p = typeof id === 'string' ? byId.get(id) : id;
-	profiles.peeked = p ?? null;
+	// Always resolve through byId so avatar/quote/events stay canonical.
+	const key = typeof id === 'string' ? id : id.id;
+	profiles.peeked = byId.get(key) ?? (typeof id === 'string' ? null : id);
 }
 
 export function closeProfile() {

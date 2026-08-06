@@ -28,6 +28,18 @@ export const reading = $state({
 	mode: 'chronicle' as ReadMode
 });
 
+/* The reading *band*: an element counts as "being read" while any part of it
+   sits in the upper-middle of the viewport. Shared with activateDialogue so a
+   clicked line lands exactly where the watcher would have picked it up. */
+const BAND_TOP = 0.18;
+const BAND_BOTTOM = 0.62;
+const BAND_MID = (BAND_TOP + BAND_BOTTOM) / 2;
+
+/** Hard cap on how long a clicked line may hold the stage while it travels. */
+const PIN_MS = 2000;
+/** How near the band's middle counts as "the glide has arrived", in viewports. */
+const PIN_SETTLED = 0.06;
+
 export function setLang(l: Lang) {
 	reading.lang = l;
 	try {
@@ -39,6 +51,7 @@ export function setLang(l: Lang) {
 
 export function setMode(m: ReadMode) {
 	reading.mode = m;
+	releaseDialogue();
 	try {
 		localStorage.setItem('kingdom:mode', m);
 	} catch {
@@ -68,6 +81,93 @@ export function loadMode() {
 	document.documentElement.classList.toggle('is-immersive', reading.mode === 'immersive');
 }
 
+/** entry id last seen by the speaker tracker — module-scoped so measure can close over it */
+let lastEntry: string | null = null;
+
+/** A clicked dialogue, held as the live one until the glide to it has settled. */
+let pinned: HTMLElement | null = null;
+let pinnedUntil = 0;
+
+const reduceMotion = () =>
+	typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/**
+ * The pinned dialogue, or null once it has expired / left the document.
+ * The pin is dropped the moment the glide arrives: from then on the scroll
+ * position picks this same block on its own.
+ */
+function pin(): HTMLElement | null {
+	if (!pinned) return null;
+	if (!pinned.isConnected || Date.now() > pinnedUntil) {
+		pinned = null;
+		return null;
+	}
+	const r = pinned.getBoundingClientRect();
+	const arrived =
+		Math.abs((r.top + r.bottom) / 2 - window.innerHeight * BAND_MID) <=
+		window.innerHeight * PIN_SETTLED;
+	if (!arrived) return pinned;
+	const settled = pinned;
+	pinned = null;
+	return settled;
+}
+
+/** Hand control back to the scroll position (called when the reader scrolls). */
+export function releaseDialogue() {
+	pinned = null;
+	pinnedUntil = 0;
+}
+
+/** The plain-text lines of one dialogue block, for the featured plate. */
+function readLines(el: HTMLElement | null, sel: string) {
+	return el
+		? [...el.querySelectorAll<HTMLElement>(sel)]
+				.map((n) => (n.textContent ?? '').trim())
+				.filter(Boolean)
+		: [];
+}
+
+function applyUtterance(el: HTMLElement | null, speaker: string | null) {
+	reading.speaker = speaker;
+	reading.linesKo = readLines(el, '.line.ko');
+	reading.linesEn = readLines(el, '.line.en');
+}
+
+/** Move the live-line marker onto `el` — only immersive mode wears it. */
+function markSpeaking(el: HTMLElement | null) {
+	for (const other of document.querySelectorAll<HTMLElement>('[data-speaker].is-speaking')) {
+		if (other !== el) other.classList.remove('is-speaking');
+	}
+	if (el && reading.mode === 'immersive') el.classList.add('is-speaking');
+}
+
+/**
+ * Make a clicked dialogue the live one and glide it into the reading band.
+ *
+ * The state is applied first so the plate answers the click immediately, and the
+ * block is pinned for the length of the scroll — otherwise the watcher would
+ * hand the stage to every line the viewport passes on the way there.
+ */
+export function activateDialogue(node: HTMLElement) {
+	if (reading.mode !== 'immersive') return;
+	const el = node.closest<HTMLElement>('[data-speaker]');
+	if (!el) return;
+
+	pinned = el;
+	pinnedUntil = Date.now() + PIN_MS;
+
+	lastEntry = el.closest<HTMLElement>('article.entry')?.id ?? lastEntry;
+	applyUtterance(el, el.dataset.speaker || null);
+	markSpeaking(el);
+
+	const r = el.getBoundingClientRect();
+	const top = window.scrollY + r.top + r.height / 2 - window.innerHeight * BAND_MID;
+	window.scrollTo({
+		top: Math.max(0, top),
+		behavior: reduceMotion() ? 'auto' : 'smooth'
+	});
+}
+
 /**
  * Watch the document for the element crossing the reading line and mirror its
  * mood into `reading`. Returns a teardown.
@@ -82,8 +182,8 @@ export function watchReading() {
 		// A reading *band* rather than a single line: an element counts as
 		// "being read" while any part of it sits in the upper-middle of the
 		// viewport, which is forgiving of short blocks and jump-scrolls.
-		const top = window.innerHeight * 0.18;
-		const bottom = window.innerHeight * 0.62;
+		const top = window.innerHeight * BAND_TOP;
+		const bottom = window.innerHeight * BAND_BOTTOM;
 		const inBand = (el: Element) => {
 			const r = el.getBoundingClientRect();
 			return r.top <= bottom && r.bottom >= top;
@@ -119,32 +219,19 @@ export function watchReading() {
 		const music = nearestInBand<HTMLElement>('[data-music]')?.dataset.music ?? null;
 		const place = nearestInBand<HTMLElement>('[data-place]')?.dataset.place ?? null;
 
-		// Immersive: whoever's dialogue sits in the band is "on stage".
+		// Immersive: whoever's dialogue sits in the band is "on stage" — unless a
+		// click pinned one, which holds the stage until the glide to it settles.
 		// Between lines we keep the last speaker so the plate doesn't flicker
 		// through narration — it only clears when the entry itself changes.
-		const dialogue = nearestInBand<HTMLElement>('[data-speaker]');
+		const dialogue = pin() ?? nearestInBand<HTMLElement>('[data-speaker]');
 		const entry = nearestInBand<HTMLElement>('article.entry');
 		const entryKey = entry?.id ?? null;
 		const nextSpeaker = dialogue?.dataset.speaker || null;
-
-		const readLines = (el: HTMLElement | null, sel: string) =>
-			el
-				? [...el.querySelectorAll<HTMLElement>(sel)]
-						.map((n) => (n.textContent ?? '').trim())
-						.filter(Boolean)
-				: [];
 
 		if (reading.flash !== flash) reading.flash = flash;
 		if (reading.music !== music) reading.music = music;
 		if (reading.place !== place) reading.place = place;
 
-		const applyUtterance = (el: HTMLElement | null, speaker: string | null) => {
-			reading.speaker = speaker;
-			reading.linesKo = readLines(el, '.line.ko');
-			reading.linesEn = readLines(el, '.line.en');
-		};
-
-		// stash entry key on the state object via a module var
 		if (entryKey !== lastEntry) {
 			lastEntry = entryKey;
 			applyUtterance(dialogue, nextSpeaker);
@@ -159,13 +246,7 @@ export function watchReading() {
 			}
 		}
 
-		// mark the live dialogue for styling
-		for (const el of document.querySelectorAll<HTMLElement>('[data-speaker].is-speaking')) {
-			el.classList.remove('is-speaking');
-		}
-		if (reading.mode === 'immersive' && dialogue) {
-			dialogue.classList.add('is-speaking');
-		}
+		markSpeaking(dialogue);
 
 		document.documentElement.classList.toggle('is-flash', flash);
 	};
@@ -183,19 +264,24 @@ export function watchReading() {
 	const first = setTimeout(measure, 60);
 	window.addEventListener('scroll', onScroll, { passive: true });
 	window.addEventListener('resize', onScroll);
+	// any hand-driven scroll wins over a pinned line
+	window.addEventListener('wheel', releaseDialogue, { passive: true });
+	window.addEventListener('touchstart', releaseDialogue, { passive: true });
+	window.addEventListener('keydown', releaseDialogue);
 
 	return () => {
 		clearTimeout(first);
 		clearTimeout(timer);
+		releaseDialogue();
 		window.removeEventListener('scroll', onScroll);
 		window.removeEventListener('resize', onScroll);
+		window.removeEventListener('wheel', releaseDialogue);
+		window.removeEventListener('touchstart', releaseDialogue);
+		window.removeEventListener('keydown', releaseDialogue);
 		document.documentElement.classList.remove('is-flash');
 		document.documentElement.classList.remove('is-immersive');
 	};
 }
-
-/** entry id last seen by the speaker tracker — module-scoped so measure can close over it */
-let lastEntry: string | null = null;
 
 /** Does this string carry Hangul or Han characters? */
 const KO_RE = /[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7A3\u4E00-\u9FFF\u3400-\u4DBF]/;
