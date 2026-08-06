@@ -6,7 +6,7 @@
  * `aliases` are the surface forms that appear in the prose.
  */
 
-import { RELATIONSHIPS } from '$lib/relations';
+import { RELATIONSHIPS, CHART_NODES } from '$lib/relations';
 import { PLACE_PROFILES } from '$lib/places';
 
 export interface LifeEvent {
@@ -29,11 +29,29 @@ export interface Person {
 	died?: number;
 	bornApprox?: boolean;
 	main?: boolean; // the three leads
+	/**
+	 * Which silhouette stands in when there is no portrait. Only needed for
+	 * people the relationship chart does not already place (see `avatarOf`);
+	 * on a `concept` it is also what marks the record as a body rather than
+	 * an institution.
+	 */
+	gender?: 'm' | 'f';
 	avatar?: string; // profile picture, e.g. "/people/chunchu.png"
 	photo?: string; // real photograph (nations), e.g. "/nations/silla.jpg"
 	photoCredit?: string;
 	tagline: string; // one line, shown in the hover card
+	/** Defining line shown large on the profile panel. */
+	quote?: string;
 	arc?: string; // character arc, shown in the panel
+	/** Temperament / philosophy — how they move through politics and love. */
+	nature?: string;
+	/**
+	 * Ring-pommel blade — unique for those who fight (or rarely do).
+	 * Decoration read character the way a crest does.
+	 */
+	blade?: string;
+	/** Unique binyeo — hairpin that hints at a woman’s station and nature. */
+	binyeo?: string;
 	events?: LifeEvent[];
 	aliases: string[];
 	/** For relationships: the two people this edge connects. */
@@ -52,19 +70,19 @@ export const KINGDOMS: Record<
 		label: 'Silla',
 		color: '#3E79E4',
 		flag: '/flag_silla.svg',
-		icons: 'white horse · blue · moon · love'
+		icons: 'crown · heavenly horse · blue · moon · love'
 	},
 	baekje: {
 		label: 'Baekje',
 		color: '#FFCB51',
 		flag: '/flag_baekje.svg',
-		icons: 'heavenly door · yellow · stars · loyalty'
+		icons: 'crown · heavenly deer · yellow · stars · loyalty'
 	},
 	goguryeo: {
 		label: 'Goguryeo',
 		color: '#C30000',
 		flag: '/flag_goguryeo.svg',
-		icons: 'three-legged crow · red · sun · will'
+		icons: 'crown · three-legged crow · red · sun · will'
 	},
 	tang: { label: 'Tang', color: '#b45309', flag: '/flag_tang.svg', icons: 'dragon · gold · empire' },
 	gaya: {
@@ -96,6 +114,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		title: 'Elder sister of Munhee',
 		tagline: 'Dreamed she drowned the capital, and sold the dream for a silk skirt.',
+		quote: 'I am the sister who watched the sewing and said nothing.',
 		events: [
 			{ year: 625, label: 'Sells the dream. Declines to sew a nobleman’s coat.' }
 		],
@@ -110,6 +129,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		title: 'Son of Heaven',
 		tagline: 'Crossed the sky every day of his life and stopped the chariot exactly once.',
+		quote: 'I stop the chariot once. That once is enough.',
 		events: [
 			{ label: 'Sees Yuhwa in the shallows of the Ubal and comes down.' },
 			{ label: 'Builds a copper room on the riverbank in an afternoon.' }
@@ -118,13 +138,19 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'yeontabal',
+		avatar: '/people/yeon_tabal.png',
 		name: 'Yeon Tabal',
 		korean: '연타발',
 		kingdom: 'goguryeo',
 		title: 'Chieftain of Jolbon',
-		tagline: 'The richest man on the river. Founded a kingdom with a ledger.',
+		tagline: 'Suspicious of an exile — until that exile split his arrow.',
+		quote: 'I thought the river would take him away. Instead it built a house.',
+		nature:
+			'Speaks the way later Yeons will speak — short, hot, no patience for a Go prince who arrives with nothing but a bow. The Yeon clan’s river wealth against the royal Go claim starts here, implied in every weighing look he gives Jumong.',
+		blade: 'Ring-pommel hunting sword — tiger-tooth guard, no court polish.',
 		events: [
-			{ label: 'Backs an exiled prince with salt, iron and his daughter.' }
+			{ label: 'Backs an exiled prince with salt, iron and his daughter.' },
+			{ label: 'The Yeon hall’s register — blunt, loyal, hard to buy — passes down the blood.' }
 		],
 		aliases: ['Yeon Tabal', 'Tabal']
 	},
@@ -135,6 +161,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		title: 'Servant, prisoner, and the quietest weapon in the war',
 		tagline: 'Sent back into Baekje as a household man, and spent eleven years being useful.',
+		quote: 'Usefulness is its own exile.',
 		events: [
 			{ year: 655, label: 'Returns to Sabi as steward to the minister Imja.' },
 			{ year: 660, label: 'Imja’s silence becomes Silla’s door.' }
@@ -149,39 +176,46 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		title: 'Jwapyeong of Baekje',
 		tagline: 'Was asked what becomes of his house when the country falls, and did not report the question.',
+		quote: 'I asked what becomes of my house. I did not report the answer.',
 		aliases: ['Imja']
 	},
 	{
 		id: 'ibiga',
+		avatar: '/people/ibiga.png',
 		name: 'Ibiga',
 		korean: '이비가',
 		kingdom: 'gaya',
 		title: 'Sky god of Gaya',
 		tagline: 'Came down to a mountain ridge and could not take his hands back.',
+		quote: 'I looked… and could not hold back.',
 		events: [{ label: 'Touches the Lady of the Right View; two sons are born of that night.' }],
 		aliases: ['Ibiga'],
 		chart: { x: 40, y: 520 }
 	},
 	{
 		id: 'jeonggyeon',
+		avatar: '/people/rightview.png',
 		name: 'Lady of the Right View',
 		korean: '정견모주',
 		hanja: '正見母主',
 		kingdom: 'gaya',
 		title: 'Mountain goddess of Gaya',
 		tagline: 'Let heaven kneel on her ridge — and kept him until morning.',
+		quote: 'Nights when heaven kneels on a mountain are not so common.',
 		events: [{ label: 'Mother of Suro and Ijinasi.' }],
 		aliases: ['Lady of the Right View', 'Jeonggyeonmoju', 'Jeonggyeon'],
 		chart: { x: 220, y: 520 }
 	},
 	{
 		id: 'suro',
+		avatar: '/people/suro.png',
 		name: 'King Suro',
 		korean: '수로왕',
 		hanja: '首露王',
 		kingdom: 'gaya',
 		title: 'Founder of Golden Gaya',
 		tagline: 'Came out of the first egg, and walked down to the beach himself.',
+		quote: '…Hungry… I can’t… speak…',
 		events: [
 			{ year: 42, label: 'Hatches from the box of six eggs; founds Golden Gaya.' },
 			{ year: 48, label: 'Meets a princess off a red-sailed ship and does not send a servant.' },
@@ -191,13 +225,32 @@ export const PEOPLE: Person[] = [
 		chart: { x: 40, y: 640 }
 	},
 	{
+		id: 'ijinasi',
+		avatar: '/people/ijinasi.png',
+		name: 'King Ijinasi',
+		korean: '이진아시왕',
+		hanja: '伊珍阿豉王',
+		kingdom: 'gaya',
+		title: 'Founder of Great Gaya',
+		gender: 'm',
+		tagline: 'The other egg — Suro’s brother, who walked a different valley.',
+		quote: 'Six eggs. Six thrones. I took the larger hill.',
+		nature: 'Twin-born of the mountain night with Suro; less charming, more territorial. Where Suro waits on a beach for a red sail, Ijinasi builds a court that will one day outlast Golden Gaya’s fame and still lose the war that matters.',
+		events: [
+			{ year: 42, label: 'Hatches among the six; founds Great Gaya.' }
+		],
+		aliases: ['King Ijinasi', 'Ijinasi', '이진아시']
+	},
+	{
 		id: 'heohwangok',
+		avatar: '/people/heo.png',
 		name: 'Queen Heo',
 		korean: '허황옥',
 		hanja: '許黃玉',
 		kingdom: 'gaya',
 		title: 'First queen of Golden Gaya',
 		tagline: 'Sailed in from a country nobody had heard of, and kept her own name.',
+		quote: 'If you are hungry… take me first.',
 		events: [
 			{ year: 48, label: 'Arrives by sea at sixteen; buries her silk trousers as an offering.' },
 			{ label: 'Mother of ten sons; two of them take her surname.' }
@@ -213,6 +266,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'other',
 		title: 'Heavenly prince who came down to farm',
 		tagline: 'Could not be a king until he had touched the bear-woman’s hand.',
+		quote: 'A king must first touch the earth.',
 		events: [{ label: 'Marries Ungnyeo under the sacred tree; fathers Dangun.' }],
 		aliases: ['Hwanung'],
 		chart: { x: 40, y: 760 }
@@ -225,6 +279,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'other',
 		title: 'The Bear-Woman',
 		tagline: 'Twenty-one days of garlic and mugwort — then she waited to be seen.',
+		quote: 'Twenty-one days — then I waited to be seen.',
 		events: [{ label: 'Becomes a woman; stands under the tree until heaven marries her.' }],
 		aliases: ['Ungnyeo', 'Bear-Woman', 'the Bear-Woman'],
 		chart: { x: 220, y: 760 }
@@ -232,6 +287,7 @@ export const PEOPLE: Person[] = [
 	// ————————————————————————— the three leads —————————————————————————
 	{
 		id: 'chunchu',
+		avatar: '/people/chunchu.png',
 		name: 'Kim Chunchu',
 		korean: '김춘추',
 		hanja: '金春秋',
@@ -240,12 +296,15 @@ export const PEOPLE: Person[] = [
 		born: 603,
 		died: 661,
 		main: true,
-		tagline: 'The diplomat who traded a kingdom’s independence for its survival.',
-		arc: 'Born a royal who could never be king — his father’s rank cost him the Sacred Bone — Chunchu spends his youth as the cleverest man in a room he is not allowed to rule. The murder of his daughter Gotaso at Daeya turns a political animal into a patient one: he walks into Goguryeo and is imprisoned, sails to Yamato and is refused, and finally kneels in Chang’an and gets what he wants. He becomes the first True Bone king of Silla and dies with Baekje destroyed and Goguryeo still standing — having bought unification at the price of inviting the Tang in, the charge his enemies fling at him to the very end.',
+		tagline: 'The wiliest mind in Samhan — multilingual, lethal, and barely acquainted with his own commoners.',
+		quote: 'I only have me and my goal. Nothing will get in my way.',
+		nature: 'The smartest and most wily: an opportunist who will say or become whatever the room requires, lethal when patient. Most steeped in Chinese letters, most international — he can meet Tang, Yamato, and Goryeo each in their own tongue, and sometimes still says Goguryeo because the chronicles taught him the older name. Also a sheltered ivory-tower elite: almost no opinion of commoners, almost no contact with them; Daeya’s resentment of the capital blindsides him completely. Reads international patterns decades ahead; packed with life-skills — geomancy, arms, charm. Best-looking of the leads, and the most social.',
+		arc: 'Born a royal barred from the throne by Bone Rank, Chunchu becomes the cleverest man in rooms he is not allowed to rule — steeped in Chinese letters, fluent in every tongue the peninsula and its neighbours speak, able to forecast an alliance’s betrayal a generation out. He is also sheltered: he does not know what Surabol looks like from Daeya until it kills his daughter. Gotaso’s death turns wit into patience. He kneels in Pyongyang, sails to Yamato, wins Chang’an, founds the Royal Secretariat, and dies the first True Bone king — Baekje gone, Goryeo standing, the Tang already inside the door he opened.',
+		blade: 'Ring-pommel court sword — imugi coiled on the grip; drawn rarely, remembered always.',
 		events: [
 			{ year: 632, label: 'Passed over for the throne; Dukman is crowned Queen Sunduk.' },
 			{ year: 642, label: 'His daughter Gotaso dies at Daeya Fortress. He swears revenge.' },
-			{ year: 642, label: 'Goes to Goguryeo for troops; Yeon imprisons him, then lets him go.' },
+			{ year: 642, label: 'Goes to Goryeo for troops; Yeon imprisons him, then lets him go.' },
 			{ year: 647, label: 'Survives Bidam’s rebellion at Queen Sunduk’s side.' },
 			{ year: 647, label: 'Sails to Yamato to ask for troops. Refused.' },
 			{ year: 648, label: 'Wins the Silla–Tang alliance from Emperor Taizong.' },
@@ -268,8 +327,11 @@ export const PEOPLE: Person[] = [
 		died: 665,
 		bornApprox: true,
 		main: true,
-		tagline: 'The frontier general who butchered a court to save a kingdom — and doomed it.',
-		arc: 'A commander of the Eastern march who despises the capital: its tribute, its committees, its willingness to buy another decade with gold. In 642 he answers the court’s plan to kill him by killing all of it — the king, the commanders, hundreds of officials — and rules through a puppet on the throne. For twenty years he is proved right: he breaks Tang army after Tang army, and Taizong dies having failed against him. But he builds nothing that can outlive him. He leaves three sons and no institution, and within a year of his death they are at each other’s throats and the eldest is guiding the Tang army to Pyongyang.',
+		tagline: 'A passionate patriot of the 겨레 who butchered a court to save a kingdom — and left it nothing that could outlive him.',
+		quote: 'No one is coming to save the 겨레. So I will.',
+		nature: 'The simplest and most passionate of the three: a true patriot of the common people who despises elites, committees, and tribute paid for another decade of quiet. He speaks often of 겨레 — the folk, the kin-nation — and builds loyalty by heat rather than by book. Everyone else says Goryeo; he alone insists on Goguryeo, the old full name, as if shortening it were already surrender. Implied blood of Yeon Tabal’s hall: same blunt register, same refusal to be bought by a Go king’s courtesy. Tries to import Tang Taoism to starve the Buddhist monk aristocracy of prestige — a policy that fails to prevent a monk from opening Pyongyang. Charisma of the populist strongman — both the shelter he gives the marches and the massacre he calls rescue.',
+		arc: 'A commander of the Eastern march who despises the capital: its tribute, its committees, its willingness to buy another decade with gold. The Yeon–Go rivalry that began when Tabal weighed an exile ends here as Yeon steel over a Go crown. In 642 he answers the court’s plan to kill him by killing all of it — the king, the commanders, hundreds of officials — and rules through a puppet on the throne. For twenty years he is proved right: he breaks Tang army after Tang army, and Taizong dies having failed against him. Once Gangnim almost collects him; Yeon walks away on will alone. But he builds nothing that can outlive him. He leaves three sons and no institution, and within a year of his death they are at each other’s throats and the eldest is guiding the Tang army to Pyongyang.',
+		blade: 'The Five Blades — five ring-pommels taken from the commanders, each stamped with a three-legged crow.',
 		events: [
 			{ year: 634, label: 'Defies the High Summit at Pyongyang; the court marks him a traitor.' },
 			{ year: 642, label: 'Massacres the court, kills King Yeongnyu, enthrones Bojang.' },
@@ -288,12 +350,32 @@ export const PEOPLE: Person[] = [
 		title: 'Warden of the northern border',
 		kingdom: 'goguryeo',
 		tagline: 'A Mohe boy Yeon pulled from the snow — and later, Dae Joyoung’s father.',
-		arc: 'Yeon finds him young on a northern raid and brings him to Pyongyang. He is raised in the commander’s shadow, then sent back to the cold marches he came from. He appears at court rarely. The border knows him better than the capital does.',
+		quote: 'He took me from the snow. I never asked him to be kind.',
+		arc: 'Yeon finds him young on a northern raid and brings him to Pyongyang. He is raised in the commander’s shadow, then sent back to the cold marches he came from. When Pyongyang falls he carries a broken piece of the crown into the Manchurian fields — and teaches his son the words Yeon would not let die.',
+		blade: 'Border sabre — plain ring pommel, notch from a Liao winter.',
 		events: [
 			{ label: 'Taken in by Yeon as a boy.' },
-			{ label: 'Posted to the northern border.' }
+			{ label: 'Posted to the northern border.' },
+			{ year: 668, label: 'Flees north with a shard of the Goryeo crown.' },
+			{ year: 698, label: 'His son founds Balhae on that shard’s memory.' }
 		],
 		aliases: ['Gulgul', 'Geolgeol']
+	},
+	{
+		id: 'daejoyoung',
+		name: 'Dae Joyoung',
+		korean: '대조영',
+		hanja: '大祚榮',
+		title: 'Founder of Balhae',
+		kingdom: 'goguryeo',
+		tagline: 'The boy who repeated what the fields would not forget.',
+		quote: 'Goguryeo never dies…!',
+		arc: 'Son of Gulgul. Runs through Manchurian millet with a crown-shard against his ribs and a sentence in his mouth that outlives every wall.',
+		events: [
+			{ year: 668, label: 'Flees the fall with his father and a piece of the crown.' },
+			{ year: 698, label: 'Founds Balhae — Goryeo’s afterlife under another name.' }
+		],
+		aliases: ['Dae Joyoung', 'Dae Jo-yeong', 'Joyoung', '대조영']
 	},
 	{
 		id: 'euija',
@@ -307,13 +389,16 @@ export const PEOPLE: Person[] = [
 		died: 660,
 		bornApprox: true,
 		main: true,
-		tagline: 'The “Zengzi of the East” who won everything, then stopped listening.',
-		arc: 'The model crown prince — dutiful enough that the court nicknamed him the Zengzi of the East — who understands earlier than anyone that a kingdom is a story its people agree on. He takes Daeya, humiliates Silla, purges the Great Clans that had ruled his father, and installs his own sons in their seats. Then the story eats him: with no rivals left to check him he seals himself in the palace, exiles the one man who tells him the truth, starves the other in prison, and reads the kingdom’s omens as slander. He dies a prisoner in Chang’an, screaming Chunchu’s name, asking someone in some later century to take his revenge for him.',
+		tagline: 'Realpolitik in a crown — cynical, calculating, and soft only for the boy he named.',
+		quote: 'Find what they fear. What they resent. Weave it into a story.',
+		nature: 'Palace-bred realpolitik: cynical, calculating, and liberal with appetite — a prince who learned early that people are clay shaped by their rooms. He disdains the common folk for how easily a story moves them, and insists they need both a narrative and a leader. His soft spot is Gyebek — whom he sees as unstained by politics, a victim of environment rather than a player — and he teaches Gyebek and Gesomun the dirty grammar of courts throughout their alliances. Most calculating of the three kings; closest in method to classic realpolitik, and the most openly sensual of the leads. Baekje’s eastward manners sit easy on him — the polished court that taught the islands how to look at a king.',
+		arc: 'Palace-raised into cynicism, Euija learns early that a kingdom is a story its people agree on — and that commoners will follow whoever narrates their fear. He is the most calculating of the age: he teaches Gyebek and Gesomun how courts actually work, keeps a soft spot for Gyebek as the one man unstained by the game, and indulges appetite the way only a prince who never had to wait can. He takes Daeya, humiliates Silla, purges the Great Clans, seats his own sons — then the story eats him. With no rivals left he seals the palace, exiles the truth-teller, starves the other, and dies in Chang’an screaming Chunchu’s name.',
+		blade: 'Ring-pommel tiger sword — gold tiger on the pommel; worn for ceremony more than blood.',
 		events: [
 			{ year: 632, label: 'Crown prince; slips out of the palace and names a nameless boy Gyebek.' },
 			{ year: 641, label: 'King Mu dies. Euija takes the throne vowing to finish his war.' },
 			{ year: 642, label: 'Takes Daeya Fortress, killing Chunchu’s daughter.' },
-			{ year: 642, label: 'Goes in disguise to Goguryeo to bargain with Yeon Gesomun.' },
+			{ year: 642, label: 'Goes in disguise to Goryeo to bargain with Yeon Gesomun.' },
 			{ year: 655, label: 'Purges the Ministers’ Assembly, seating 41 of his own sons.' },
 			{ year: 656, label: 'Imprisons Seongchung, who starves to death warning him.' },
 			{ year: 659, label: 'The nine omens. He calls them lies.' },
@@ -334,8 +419,11 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		born: 595,
 		died: 673,
-		tagline: 'Gaya’s last prince, made into Silla’s greatest sword.',
-		arc: 'Grandson of the prince who surrendered Golden Gaya, Yushin is a True Bone by grant rather than by blood — and never allowed to forget it. He answers by becoming indispensable: leader of the Hwarang, conqueror of forty fortresses, the one name that makes Yeon Gesomun open a prison door. He marries his sister to Chunchu and his loyalty to Dukman, and outlives almost everyone he swore it to.',
+		tagline: 'The peripheral patriot — Gaya’s son, Silla’s sword, Dukman’s quiet devotion.',
+		quote: 'Love is a kind of strategy. Strategy is a kind of love that does not ask to be thanked.',
+		nature: 'The patriotism paradox: a man of the periphery — Gaya’s last princely blood — who becomes Silla’s most loyal sword, the model old-stock soldier and general. Stoic, still human; the older brother everyone wants. Deeply romantic, and in love with Dukman in a way he never makes cheap. Lifelong sparring brother to Bidam at 108–108 — the confrontation at Radiance hurts because the score was always even, and the blood never was. Hwarang to the bone: elite-trained, beautiful in the way the order demands, with forms the yard still names after him.',
+		arc: 'Grandson of the prince who surrendered Golden Gaya, Yushin is True Bone by grant — forever the man from the edge who out-loves the centre. Bidam names him foreigner at Radiance; the cavern lake answers with his father and grandfather’s ghosts, who remind him that loyalty and love are the only soil that counts. He becomes the model soldier of old stock: stoic, human, the older brother the kingdom wants — and he loves Queen Dukman with a romantic constancy he never performs for the court. Leader of the Hwarang, conqueror of forty fortresses, the name that opens Yeon’s prison door; he marries his sister to Chunchu, holds Sunduk as she dies, faces Gyebek at the Yellow Mountain, and outlives almost everyone he swore himself to.',
+		blade: 'Ring-pommel dragon sword — coiled dragon on the pommel, Silla blue in the fuller.',
 		events: [
 			{ year: 632, label: 'Pledges himself to Queen Sunduk “until the end.”' },
 			{ year: 642, label: 'Marches on Baekje to avenge Daeya.' },
@@ -357,7 +445,10 @@ export const PEOPLE: Person[] = [
 		died: 647,
 		bornApprox: true,
 		tagline: 'The first queen — kindness and virtue, ruling a kingdom that doubted both.',
+		quote: 'Kindness is not weakness. It is the harder blade.',
+		nature: 'Queen who reads people the way others read stars. Soft power as the harder blade; holds Yushin’s devotion without making a spectacle of it. Their bond is romantic and physical in the refined register of the chronicle — never crude, never cold. The crown she wears is not only gold: it is the right to speak for the heavenly horse.',
 		arc: 'Chosen because the Sacred Bone line had run out of men, Dukman rules for fifteen years under a permanent question mark: whether a woman can govern at all. She answers it by outlasting it, and dies in the middle of a rebellion raised on exactly that slogan.',
+		binyeo: 'Silver moon binyeo — slender, unostentatious, sharp as kindness.',
 		events: [
 			{ year: 632, label: 'Crowned the first Queen of Silla.' },
 			{ year: 642, label: 'Loses Daeya; sends Chunchu abroad for help.' },
@@ -375,15 +466,21 @@ export const PEOPLE: Person[] = [
 		born: 600,
 		died: 654,
 		bornApprox: true,
-		tagline: 'The last of the Sacred Bone; with her the bloodline ends.',
+		tagline: 'The last Sacred Bone — Chunchu’s aunt on the throne, and a crown that no longer rules.',
+		quote: 'The bloodline ends with me. The country does not.',
+		nature: 'Sunduk’s cousin; Chunchu’s aunt in the way the house counts kin. She wears the crown; he wears the hours. A kind woman who knows she is a bridge, not a destination — and who lets the bridge do its work without making a speech about it.',
+		arc: 'Crowned after Bidam and Sunduk die in the same season. For seven years the Harmony Council still meets, and nothing of consequence leaves the room until Chunchu’s Secretariat has already sealed it. When she dies the Sacred Bone ends; the country continues under the nephew who had already been running it.',
+		binyeo: 'Jade lotus binyeo — Sacred Bone quiet, no need to shout.',
 		events: [
 			{ year: 647, label: 'Crowned after Sunduk’s death.' },
+			{ year: 651, label: 'Watches the Royal Secretariat make the Council ornamental.' },
 			{ year: 654, label: 'Dies; the Sacred Bone line is extinct.' }
 		],
 		aliases: ['Queen Jinduk', 'Princess Seungman', 'Kim Seungman', 'Jinduk', 'Seungman']
 	},
 	{
 		id: 'munhee',
+		avatar: '/people/munhee.png',
 		name: 'Munhee',
 		korean: '문희',
 		title: 'Queen Munmyung',
@@ -391,9 +488,16 @@ export const PEOPLE: Person[] = [
 		born: 610,
 		died: 681,
 		bornApprox: true,
-		tagline: 'Yushin’s sister, Chunchu’s wife — mother of the king who finishes it.',
+		tagline: 'Beginning and end — Yushin’s sister, Chunchu’s wife, mother of the king for all.',
+		quote: 'I sewed him into my life one stitch at a time.',
+		nature: 'The household half of Chunchu’s politics: she packs the bags for every country he tries to save them with. Their marriage is affectionate and hungry in equal measure — tasteful, never coy about wanting. Related to almost every Silla name that matters — sister of the marshal, wife of the diplomat-king, mother of Munmu, aunt-by-marriage to a generation of True Bone. The story opens on her hair and closes on her watching a son wear a broken northern crown.',
+		binyeo: 'Golden dragon binyeo — Yushin’s house in miniature, heavy enough to announce a noblewoman.',
 		events: [
-			{ year: 632, label: 'A young noblewoman with three small children.' },
+			{ year: 632, label: 'A young noblewoman with three small children — Bupmin among them.' },
+			{ year: 641, label: 'Buys a dream; sews a coat; marries Chunchu.' },
+			{ year: 642, label: 'Holds the house when Gotaso dies.' },
+			{ year: 654, label: 'Becomes queen consort under Muyeol.' },
+			{ year: 661, label: 'Pays the rest at Chunchu’s deathbed.' },
 			{ year: 676, label: 'Lives to see her son crowned King of Samhan.' }
 		],
 		aliases: ['Queen Munmyung', 'Munhee']
@@ -407,9 +511,14 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		born: 626,
 		died: 681,
-		tagline: 'The son who finished his father’s war — and then threw out the Tang.',
-		arc: 'Bupmin inherits a half-won war and the alliance that won it. He spends his reign discovering that the ally is the last enemy, and ends it as the first ruler of a single kingdom of Samhan.',
+		tagline: 'The audience’s eyes — a boy who wanted a king for all, and became one.',
+		quote: 'Not as revenge. As the country I wanted when I was six.',
+		nature: 'Unsung true main character: he does not bend the age the way Chunchu, Yeon, or Euija do, but he is the one the chronicle lets you stand beside — watching a sister die, watching a father invent a country, learning the war from the wrong end of the map, and finishing the sentence he stole as a child.',
+		arc: 'As a boy Bupmin takes the words “a king for all” into his own mouth. He watches Gotaso not come home. He grows up in Chunchu’s shadow and Munhee’s packing lists. He inherits a half-won war and an alliance that wants the peninsula as furniture. He commands, waits, and finally expels the Tang — the road his father cleared as far as Baekje, walked to the end of Samhan on his own feet.',
+		blade: 'Ring-pommel sea-dragon sword — forged for a king who asked to become a dragon in the strait.',
 		events: [
+			{ year: 632, label: 'At six, claims the dream of a king for all.' },
+			{ year: 642, label: 'Watches the house break when Gotaso dies.' },
 			{ year: 661, label: 'Takes the throne, vowing to unify Samhan.' },
 			{ year: 668, label: 'Pyongyang falls; Goguryeo ends.' },
 			{ year: 676, label: 'Expels the Tang; becomes King of Samhan.' }
@@ -417,7 +526,42 @@ export const PEOPLE: Person[] = [
 		aliases: ['King Munmu', 'Bupmin', 'Munmu']
 	},
 	{
+		id: 'jukji',
+		name: 'Kim Jukji',
+		korean: '김죽지',
+		hanja: '金竹旨',
+		title: 'First Chancellor (侍中) of the Royal Secretariat',
+		kingdom: 'silla',
+		born: 620,
+		bornApprox: true,
+		tagline: 'True Bone, young Hwarang, Chunchu’s confidante — the first 시중.',
+		quote: 'The Council still meets. The seals no longer wait for it.',
+		nature: 'Young enough to think a new office is elegant; old enough in the yard to know elegance is a weapon. Loyal to Chunchu the way a Hwarang is loyal to a form — precisely, without needing to be asked twice.',
+		blade: 'Ring-pommel bamboo sword — light, fast, named for the virtue of bending without breaking.',
+		events: [
+			{ year: 651, label: 'Named first 시중 of the Royal Secretariat.' },
+			{ year: 654, label: 'Keeps the seals moving under King Muyeol.' }
+		],
+		aliases: ['Kim Jukji', 'Jukji', '죽지', 'Chancellor Jukji', '侍中']
+	},
+	{
+		id: 'haesang',
+		name: 'Haesang',
+		korean: '해상',
+		title: 'Silla merchant of the southern roads',
+		kingdom: 'silla',
+		tagline: 'Brings the horizon home — spices, scriptures, and stories told without swagger.',
+		quote: 'I sell what the road allows. I tell what the road taught me.',
+		nature: 'A recurring face in Surabol markets and harbour inns: respectful of every shore he names — Funan’s harbours, the Ganges ports, Sogdian caravans, Persian glass. Never a lecture; always a tale with the salt still on it. Ordinary people like him. Nobles pretend they do not listen, and listen.',
+		events: [
+			{ label: 'Trades through Danghang toward the southern seas.' },
+			{ label: 'Carries news of India, the steppe roads, and the western markets — carefully, as guest.' }
+		],
+		aliases: ['Haesang', 'the merchant', 'Merchant Haesang', '해상']
+	},
+	{
 		id: 'bidam',
+		avatar: '/people/bidam.png',
 		name: 'Bidam',
 		korean: '비담',
 		title: 'High Councillor of Silla',
@@ -425,16 +569,21 @@ export const PEOPLE: Person[] = [
 		born: 605,
 		died: 647,
 		bornApprox: true,
-		tagline: 'The Hwarang who gave a boy his headband, and the queen a civil war.',
-		arc: 'Bidam’s quarrel is not with women ruling but with Silla ruling itself badly — and with the outsiders, Yushin above all, whom he thinks will sell it. He raises the banner “a woman cannot govern well,” and dies as the queen he rebelled against does.',
+		tagline: 'Oldest-hall Silla blood — from young liberal to nativist rebel, still tied 108–108 with Yushin.',
+		quote: 'I am a son of the sacred country.',
+		nature: 'Born to one of Surabol’s oldest houses; Yushin’s foil and brother-in-arms from the Hwarang yard, where their duel count never leaves 108–108. Begins as the young liberal who stands for Dukman against a unanimous room’s misogyny; hardens into a conservative, then a radical revolutionary nativist — opposing Chunchu’s centralising Secretariat and any cosying up to Tang. Loves the sacred country and increasingly hates the people and outsiders he thinks are selling it. The quarrel with Yushin is intimate because it is ancient: first blood versus assimilated Gaya steel. Hwarang-perfect: educated, beautiful, lethal — and certain the sacred country owes him the last word.',
+		arc: 'At thirteen he is the newest voice on the Harmony Council and the only one brave enough to force unanimity toward a clever woman. He and Kim Yushin spar to a lifelong draw — one hundred and eight apiece — old Surabol hall against Gaya grant-bone. Named High Councillor in 645, he alone vetoes Seungman as heir and opens a rift that will not close. By 647 he flies a burning kite over Radiance to claim heaven’s vote, then meets Yushin in the forms they learned as boys; Yushin destroys him, and the queen he once raised dies in the same season.',
+		blade: 'Ring-pommel heavenly-horse sword — white horse rearing on the pommel, old-hall steel.',
 		events: [
-			{ year: 645, label: 'Named High Councillor.' },
-			{ year: 647, label: 'Rebels at the Fortress of Radiance; is destroyed.' }
+			{ year: 632, label: 'As a young Hwarang, stands for Dukman in the unanimous Council.' },
+			{ year: 645, label: 'Named High Councillor; alone blocks Seungman as successor.' },
+			{ year: 647, label: 'Rebels at the Fortress of Radiance; is destroyed by Yushin.' }
 		],
 		aliases: ['Councillor Bidam', 'Bidam']
 	},
 	{
 		id: 'gotaso',
+		avatar: '/people/gotaso.png',
 		name: 'Gotaso',
 		korean: '고타소',
 		kingdom: 'silla',
@@ -442,6 +591,7 @@ export const PEOPLE: Person[] = [
 		died: 642,
 		bornApprox: true,
 		tagline: 'A love-obsessed girl of sixteen. Her father would burn kingdoms to bring her home.',
+		quote: 'Forever — you said so.',
 		arc: 'She falls the way teenagers fall — completely, loudly, without a second thought. When she is taken, Chunchu goes quiet. When she marries, she believes in forever. Daeya ends both.',
 		events: [
 			{ year: 641, label: 'Taken; rescued; marries Pumsuk; moves to Daeya.' },
@@ -451,6 +601,7 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'pumsuk',
+		avatar: '/people/pumsuk.png',
 		name: 'Kim Pumsuk',
 		korean: '김품석',
 		title: 'Guardian of Daeya Fortress',
@@ -459,6 +610,7 @@ export const PEOPLE: Person[] = [
 		died: 642,
 		bornApprox: true,
 		tagline: 'A Surabol noble boy — still startled by a woman who isn’t.',
+		quote: 'If this goes on… I will come apart.',
 		arc: 'Capital-bred, True Bone, given a fortress for his rank. Gotaso loves him with her whole chest. At Daeya he meets Geomil’s wife and discovers how little of the world Surabol prepared him for.',
 		events: [
 			{ year: 641, label: 'Marries Gotaso, swearing to protect her with his life.' },
@@ -473,6 +625,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		died: 660,
 		tagline: 'The officer whose grudge opened the gates of Daeya.',
+		quote: 'A grudge is a key. I opened the gate with mine.',
 		arc: 'Humiliated by Pumsuk over his own wife, Geomil betrays Daeya to Baekje — the small private injury that costs Silla a fortress, costs Chunchu a daughter, and starts a war. Muyeol executes him at Sabi eighteen years later.',
 		events: [
 			{ year: 642, label: 'Betrays Daeya Fortress with Mochuk.' },
@@ -487,6 +640,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		died: 660,
 		tagline: 'Geomil’s fellow traitor at Daeya.',
+		quote: 'Treason is only treason if you lose.',
 		aliases: ['Mochuk']
 	},
 	{
@@ -497,6 +651,7 @@ export const PEOPLE: Person[] = [
 		born: 629,
 		died: 694,
 		tagline: 'Chunchu’s second son; Silla’s long-serving hostage-diplomat in Tang.',
+		quote: 'A hostage’s job is to become useful.',
 		aliases: ['Kim Inmun', 'Inmun']
 	},
 	{
@@ -507,6 +662,7 @@ export const PEOPLE: Person[] = [
 		born: 605,
 		bornApprox: true,
 		tagline: 'Hwarang, councillor, and the man who stood aside for Chunchu.',
+		quote: 'I stood aside so a better man could sit.',
 		aliases: ['Alchun']
 	},
 
@@ -517,6 +673,7 @@ export const PEOPLE: Person[] = [
 		korean: '예씨부인',
 		kingdom: 'goguryeo',
 		tagline: 'Jumong’s first wife, who raised his heir alone in Buyeo.',
+		quote: 'I raised a king from a broken sword.',
 		aliases: ['Lady Ye']
 	},
 	{
@@ -527,6 +684,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		died: 18,
 		tagline: 'Found the broken sword under the pine, and took his father’s throne.',
+		quote: 'I found what my father left under the pine.',
 		events: [{ year: -19, label: 'Succeeds Jumong; Onjo and Biryu go south.' }],
 		aliases: ['King Yuri']
 	},
@@ -537,7 +695,9 @@ export const PEOPLE: Person[] = [
 		korean: '검일의 아내',
 		kingdom: 'silla',
 		tagline: 'A commoner woman at a border feast — and the spark that burns down three kingdoms.',
-		arc: 'She has no name in the histories and no rank worth recording, which is precisely the point. A drunk True Bone takes her because he can; her husband opens the gates of Daeya in return. Everything that follows — Gotaso’s death, Chunchu’s revenge, the Tang alliance, the fall of Baekje and Goguryeo — runs back through a woman the system did not consider a person.',
+		quote: 'Put the sound… into my mouth.',
+		arc: 'She has no name in the histories and no rank worth recording, which is precisely the point. A drunk True Bone takes her because he can; her husband opens the gates of Daeya in return. Everything that follows — Gotaso’s death, Chunchu’s revenge, the Tang alliance, the fall of Baekje and Goryeo — runs back through a woman the system did not consider a person.',
+		binyeo: 'Wooden nine-tailed-fox binyeo — cheap timber, carved clever; seduction without gold.',
 		events: [{ year: 642, label: 'Taken by Pumsuk at the Daeya feast; her husband betrays the fortress.' }],
 		aliases: ['Geomil’s wife', 'Gumil’s wife']
 	},
@@ -548,17 +708,31 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		died: 655,
 		tagline: 'Euija’s mother, and the Satek clan’s hold on the throne.',
+		quote: 'A mother’s mourning can still be a faction.',
 		arc: 'While she lived, the most powerful clan in Baekje had the king’s ear through his own mother. Her death in 655 releases Euija — and begins the purge that hollows out his court.',
 		events: [{ year: 655, label: 'Dies; Euija enters mourning, and the Satek fear what comes after.' }],
 		aliases: ['Queen Satek']
 	},
 	{
 		id: 'eldersatek',
+		avatar: '/people/satek_elder.png',
 		name: 'Elder Satek',
 		korean: '사택 원로',
 		kingdom: 'baekje',
 		tagline: 'The clan’s memory, and its instinct for survival.',
+		quote: 'Clan memory outlives kings.',
 		aliases: ['Elder Satek']
+	},
+	{
+		id: 'elderyunbi',
+		avatar: '/people/yunbi_elder.png',
+		name: 'Elder Yunbi',
+		korean: '연비 원로',
+		kingdom: 'baekje',
+		gender: 'm',
+		tagline: 'Four hundred years in, and still called a guest by the wrong houses.',
+		quote: 'We do not hold the sleeve. We hold the arm.',
+		aliases: ['Elder Yunbi', 'Yunbi', 'the Yunbi']
 	},
 	{
 		id: 'ministersatek',
@@ -566,17 +740,23 @@ export const PEOPLE: Person[] = [
 		korean: '사택 재상',
 		kingdom: 'baekje',
 		tagline: 'Prime Minister by clan right, not by merit.',
+		quote: 'I hold the seal. The seal holds me.',
 		aliases: ['Minister Satek']
 	},
 	{
 		id: 'sosuno',
+		avatar: '/people/sosuno.png',
+		gender: 'f',
 		name: 'Sosuno',
 		korean: '소서노',
 		kingdom: 'baekje',
 		tagline: 'Founded one kingdom with her husband, then walked south and founded another with her sons.',
-		arc: 'Daughter of the chieftain Yeon Tabal, she gives Jumong the tribes that make Goguryeo. When his first son arrives from Buyeo and takes the succession, she does not fight for it — she takes Onjo and Biryu south and builds Baekje instead.',
+		quote: 'The bow won me. The rest we carry together.',
+		nature: 'Love first, alliance second — hunger that founds kingdoms. With Jumong, desire is spoken in glances and grain porches, never as thesis.',
+		arc: 'Daughter of Yeon Tabal; she falls for Jumong before the alliance is spoken, and her father’s suspicion breaks on an archery contest. She gives Jumong the tribes that make Goryeo. When his first son arrives from Buyeo and takes the succession, she does not fight for it — she takes Onjo and Biryu south and builds Baekje instead.',
+		binyeo: 'Amber river binyeo — Tabal wealth worn as warmth, not display.',
 		events: [
-			{ year: -37, label: 'Helps Jumong found Goguryeo at Jolbon.' },
+			{ year: -37, label: 'Helps Jumong found Goryeo at Jolbon.' },
 			{ year: -18, label: 'Leads her sons south; Baekje is founded.' }
 		],
 		aliases: ['Sosuno']
@@ -588,6 +768,8 @@ export const PEOPLE: Person[] = [
 		korean: '유화부인',
 		kingdom: 'goguryeo',
 		tagline: 'A river god’s daughter, cast out for loving the sun.',
+		quote: 'Heaven left. I stayed with what he left in me.',
+		binyeo: 'River-pearl binyeo — cool to the touch, never quite dry.',
 		aliases: ['Lady Yuhwa', 'Yuhwa']
 	},
 	{
@@ -596,6 +778,7 @@ export const PEOPLE: Person[] = [
 		korean: '금와왕',
 		kingdom: 'other',
 		tagline: 'Took in the exiled Yuhwa, and raised the boy who would outgrow his kingdom.',
+		quote: 'I took in what heaven abandoned.',
 		aliases: ['King Geumwa', 'Geumwa']
 	},
 	{
@@ -605,6 +788,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'other',
 		died: 22,
 		tagline: 'Geumwa’s son, who could not bear being outshot by a foundling.',
+		quote: 'I could not bear being outshot by a foundling.',
 		aliases: ['Daeso']
 	},
 	{
@@ -613,6 +797,7 @@ export const PEOPLE: Person[] = [
 		korean: '요묘',
 		kingdom: 'goguryeo',
 		tagline: 'The general who opened Pyongyang’s gates alongside the monk Shinsung.',
+		quote: 'I opened what others would not.',
 		events: [{ year: 668, label: 'Opens the fortress gates to the Tang.' }],
 		aliases: ['Yomyo']
 	},
@@ -622,6 +807,7 @@ export const PEOPLE: Person[] = [
 		korean: '전령',
 		kingdom: 'other',
 		tagline: 'Whoever has to carry the news, and say it out loud.',
+		quote: 'Someone has to say it out loud.',
 		arc: 'Not one person but a role — the rider who reaches Surabol with Daeya’s fall, the man who bursts into Yeon’s quarters, the voice that must tell a king what he does not want to hear.',
 		aliases: ['The Herald']
 	},
@@ -631,6 +817,7 @@ export const PEOPLE: Person[] = [
 		korean: '문지기',
 		kingdom: 'goguryeo',
 		tagline: 'One of the two men outside Yeon’s door — comedy until the blood.',
+		quote: 'Nobody told us it would be funny until it wasn’t.',
 		aliases: ['Gate Guard', 'Goguryeo guard']
 	},
 	{
@@ -639,6 +826,7 @@ export const PEOPLE: Person[] = [
 		korean: '병졸',
 		kingdom: 'goguryeo',
 		tagline: 'The other man outside the door. Easily surprised.',
+		quote: 'I was easily surprised. Then I wasn’t.',
 		aliases: ['Junior Guard']
 	},
 	{
@@ -649,8 +837,9 @@ export const PEOPLE: Person[] = [
 		hanja: '奈林',
 		kingdom: 'silla',
 		entity: 'concept',
-		tagline: 'The eldest of the three — forest, patience, and the dry remark after Golhwa overreaches.',
-		arc: 'Yushin’s steam-cavern comfort is not a shrine; it is three women who already know when he will arrive undressed. Narim is the mature sister: she lets Golhwa tease, steadies Hyullé, and still delivers the advice he actually came for — then leaves before gratitude can become a habit.',
+		gender: 'f',
+		tagline: 'The eldest of the three — forest patience, dry counsel, and the hunger she usually hides.',
+		arc: 'Yushin’s steam-cavern comfort is not a shrine; it is three playful, slightly dangerous water-women who already know when he will arrive undressed. Narim is the mature sister: she lets Golhwa tease, steadies Hyullé, and still delivers the advice he actually came for — then, once, sends the younger two away and tries to keep him with her mouth instead of counsel, until they catch her at it.',
 		aliases: ['Narim', '나림', 'Forest Goddess']
 	},
 	{
@@ -661,8 +850,9 @@ export const PEOPLE: Person[] = [
 		hanja: '穴禮',
 		kingdom: 'silla',
 		entity: 'concept',
+		gender: 'f',
 		tagline: 'Quiet at the water’s edge — and secretly the one who loves him most.',
-		arc: 'She speaks least. When she does, it is almost apology. Of the three she is the shy one, which is why Yushin misses that she watches him longest after the others look away — and why Golhwa teases her for it when he has gone.',
+		arc: 'She speaks least. When she does, it is almost apology. Of the three she is the shy one — which is why Yushin misses that she watches him longest after the others look away, and why catching Narim with him hurts more than Golhwa’s loud jealousy: steam was supposed to be shared.',
 		aliases: ['Hyullé', 'Hyulle', 'Hyeolrye', '휠레', '혈례', 'Cavern Goddess']
 	},
 	{
@@ -673,8 +863,9 @@ export const PEOPLE: Person[] = [
 		hanja: '骨火',
 		kingdom: 'silla',
 		entity: 'concept',
+		gender: 'f',
 		tagline: 'Youngest — heat first, counsel second, never sorry for either.',
-		arc: 'She is the forward one: she names the queen to watch him flinch, mocks “Her Majesty” at a naked lake, and asks him to stay as if the war could wait. Under the mockery the counsel is sharp. She wants him in the water with them. She also wants him alive.',
+		arc: 'She is the forward one: she names the queen to watch him flinch, mocks “Her Majesty” at a naked lake, and asks him to stay as if the war could wait. Under the mockery the counsel is sharp. She wants him in the water with them — and hates most when Narim eats first. She also wants him alive.',
 		aliases: ['Golhwa', '골화', 'Fire Goddess']
 	},
 	{
@@ -685,6 +876,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		died: 642,
 		tagline: 'Named “bamboo” by his father — break, never bend.',
+		quote: 'I keep the records. Records keep the dead.',
 		arc: 'A local officer of Daeya, sahji rank. When Pumsuk chose surrender, Jukjuk refused: his father had named him after bamboo so that he would wither in the cold before bending. He held the ruined fortress with Yongseok and died fighting.',
 		events: [{ year: 642, label: 'Dies defending Daeya after Pumsuk’s surrender.' }],
 		aliases: ['Jukjuk']
@@ -696,6 +888,7 @@ export const PEOPLE: Person[] = [
 		hanja: '允忠',
 		kingdom: 'baekje',
 		tagline: 'The general Euija trusted with ten thousand men and Daeya.',
+		quote: 'Plain speech is also a weapon.',
 		events: [{ year: 642, label: 'Takes Daeya Fortress with 10,000 troops.' }],
 		aliases: ['Yunchung']
 	},
@@ -708,6 +901,7 @@ export const PEOPLE: Person[] = [
 		born: 645,
 		died: 660,
 		tagline: 'Sixteen at the Yellow Mountain — released once, and rode back.',
+		quote: 'Youth is not an excuse. It is a deadline.',
 		arc: 'Son of general Kim Pumil. Captured charging the Baekje line alone, Gyebek unstrapped his helmet, marvelled at his age, and sent him home. He rode straight back. The second time, Gyebek sent back only his head — and the sight of it broke Silla’s hesitation.',
 		events: [{ year: 660, label: 'Dies at Hwangsanbeol; the army charges in his name.' }],
 		aliases: ['Gwanchang']
@@ -719,6 +913,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		died: 660,
 		tagline: 'Yushin’s nephew, first to ride alone into the Baekje line.',
+		quote: 'I rode first. Someone has to.',
 		events: [{ year: 660, label: 'Dies at Hwangsanbeol before Gwanchang.' }],
 		aliases: ['Bangul', 'Banggul']
 	},
@@ -728,6 +923,7 @@ export const PEOPLE: Person[] = [
 		korean: '사택천복',
 		kingdom: 'baekje',
 		tagline: 'The young Satek who chose the king over his clan.',
+		quote: 'Say one name. I will go and bring him.',
 		aliases: ['Satek Chunbok', 'Chunbok']
 	},
 	{
@@ -737,6 +933,7 @@ export const PEOPLE: Person[] = [
 		hanja: '興首',
 		kingdom: 'baekje',
 		tagline: 'The exiled loyalist whose last advice arrived too late.',
+		quote: 'Warning a king is a temporary posting.',
 		arc: 'One of the three loyalists with Seongchung and Gyebek. Exiled, he sent the same counsel Seongchung had died giving — hold the Baek river and the Tanhyeon pass — and the court debated it until both had already been crossed.',
 		events: [{ year: 660, label: 'His warning is ignored; Sabi falls.' }],
 		aliases: ['Heungsu']
@@ -749,6 +946,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		died: 661,
 		tagline: 'The warrior-monk who raised the restoration at Juryu Fortress.',
+		quote: 'Restore first. Argue later.',
 		events: [{ year: 660, label: 'Rises with Boksin to restore Baekje.' },
 			{ year: 661, label: 'Killed by Boksin in the movement’s first fracture.' }],
 		aliases: ['Dochim']
@@ -762,6 +960,7 @@ export const PEOPLE: Person[] = [
 		born: 630,
 		died: 689,
 		tagline: 'Held Imjon Fortress for the restoration — then became a Tang general.',
+		quote: 'Black-tooth loyalty cuts both ways.',
 		arc: 'Rallied thirty thousand refugees at Imjon within ten days of Sabi’s fall. When the restoration ate itself he surrendered to the Tang, and spent the rest of his life winning their wars on the steppe — until a slander he did not survive.',
 		events: [
 			{ year: 660, label: 'Raises Imjon Fortress against the occupation.' },
@@ -779,6 +978,7 @@ export const PEOPLE: Person[] = [
 		born: 547,
 		died: 564,
 		tagline: 'The Hwarang ideal: conqueror of Gaya at fifteen, dead of grief at seventeen.',
+		quote: 'A Hwarang’s future is shorter than his song.',
 		events: [
 			{ year: 562, label: 'Leads the vanguard that takes Daegaya.' },
 			{ year: 564, label: 'Dies mourning his sworn friend Mugwanrang.' }
@@ -794,6 +994,7 @@ export const PEOPLE: Person[] = [
 		born: 580,
 		died: 643,
 		tagline: 'The minister who told the emperor the truth two hundred times and lived.',
+		quote: 'When I am gone, there will be no one left to tell you no.',
 		arc: 'The mirror the emperor said he lost when the minister died. His death in 643 removes the last voice against the Goguryeo war.',
 		events: [{ year: 643, label: 'Dies; the emperor mourns his living mirror.' }],
 		aliases: ['Wei Zheng', 'the imperial minister', 'The Imperial Minister', 'the minister']
@@ -804,13 +1005,16 @@ export const PEOPLE: Person[] = [
 		korean: '유씨',
 		hanja: '柳氏',
 		kingdom: 'tang',
+		gender: 'f',
 		tagline: 'Told a farmer the Son of Heaven was calling — and sent him to history.',
+		quote: 'Talent needs its hour. This is the hour.',
 		arc: 'Xue Rengui’s wife. When he meant to rebury his ancestors in quiet poverty, she named the hour: Taizong wanted fierce generals for Liaodong. Without her sentence there is no white coat, no ji, no eastern command.',
 		events: [{ year: 644, label: 'Urges Xue Rengui to answer the muster for Liaodong.' }],
 		aliases: ['Lady Liu', '柳氏', '유씨']
 	},
 	{
 		id: 'xuerengui',
+		avatar: '/people/xue_rengui.png',
 		name: 'Xue Rengui',
 		korean: '설인귀',
 		hanja: '薛仁貴',
@@ -819,6 +1023,7 @@ export const PEOPLE: Person[] = [
 		died: 683,
 		title: 'White Tiger II',
 		tagline: 'Farmer, white armour, fangtian ji — Tang’s unsung eastern blade.',
+		quote: 'I rejoice less in the east than in still having a road to walk.',
 		arc: 'Born poor at Longmen as Xue Li. His wife Liu sends him to Zhang Shigui’s muster when Taizong calls for Liaodong. At Stallion Mountain he wears white armour, wields the fangtian ji (the same heaven-halberd the storytellers give Lü Bu), and Taizong asks who the man in white is — then says gaining Xue matters more than gaining Liaodong. Captured once in the seventh invasion, he breaks a fortress cage before the Emperor arrives. Inherits the White Tiger title after Pang Xiaotai dies at the Snake River; as Protector-General of the East he takes Pyongyang in 668 and governs without spectacle. At Maeso in 675 he is Tang’s last great eastern commander — competent, sympathetic, and finally out of horses.',
 		events: [
 			{ year: 644, label: 'Answers Taizong’s muster at his wife’s urging.' },
@@ -832,23 +1037,26 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'sudingfang',
-		name: 'Red Fowl',
+		avatar: '/people/red_dragon.png',
+		name: 'Red Dragon',
 		korean: '소정방',
 		hanja: '蘇定方',
-		title: 'The Red Fowl',
+		title: 'The Red Dragon',
 		kingdom: 'tang',
 		born: 592,
 		died: 667,
-		tagline: 'The Red Fowl: took three kingdoms’ capitals in one career.',
+		tagline: 'The Red Dragon: took three kingdoms’ capitals in one career.',
+		quote: 'Three capitals. One career.',
 		arc: 'Breaker of the Western Turks, commander of the 660 seaborne invasion that ended Baekje in a single season. He failed only at Pyongyang — mired in snow at the Sasu while Yeon destroyed the supporting army.',
 		events: [
 			{ year: 660, label: 'Lands 130,000 men at the Geum estuary; Sabi falls.' },
 			{ year: 662, label: 'Winters outside Pyongyang, and withdraws.' }
 		],
-		aliases: ['Su Dingfang', 'Red Fowl', 'the Red Fowl']
+		aliases: ['Su Dingfang', 'Red Dragon', 'the Red Dragon', 'Red Fowl', 'the Red Fowl']
 	},
 	{
 		id: 'lishiji',
+		avatar: '/people/blue_dragon.png',
 		name: 'Blue Dragon',
 		korean: '이세적',
 		hanja: '李世勣',
@@ -857,33 +1065,38 @@ export const PEOPLE: Person[] = [
 		born: 594,
 		died: 669,
 		tagline: 'The Blue Dragon: the old marshal who finally took Pyongyang.',
+		quote: 'Siege is weather. Wait for the season.',
 		events: [
 			{ year: 645, label: 'Takes Liaodong Fortress under the emperor.' },
 			{ year: 668, label: 'Commands the final campaign; Pyongyang falls.' }
 		],
-		aliases: ['Li Shiji', 'Blue Dragon', 'the Blue Dragon']
+		aliases: ['Li Shiji', 'Li Ji', 'Blue Dragon', 'the Blue Dragon']
 	},
 	{
 		id: 'liurengui',
-		name: 'Black Tortoise',
+		avatar: '/people/black_dragon.png',
+		name: 'Black Dragon',
 		korean: '유인궤',
 		hanja: '劉仁軌',
-		title: 'The Black Tortoise',
+		title: 'The Black Dragon',
 		kingdom: 'tang',
 		born: 601,
 		died: 685,
-		tagline: 'The Black Tortoise: burned four hundred eastern ships at the White River.',
+		tagline: 'The Black Dragon: burned four hundred eastern ships at the White River.',
+		quote: 'Hold what the others break.',
 		events: [{ year: 663, label: 'Wins the naval battle of Baekgang.' }],
-		aliases: ['Liu Rengui', 'Black Tortoise', 'the Black Tortoise']
+		aliases: ['Liu Rengui', 'Black Dragon', 'the Black Dragon', 'Black Tortoise', 'the Black Tortoise']
 	},
 	{
 		id: 'pangxiaotai',
+		avatar: '/people/white_dragon.png',
 		name: 'White Tiger',
 		korean: '방효태',
 		title: 'The White Tiger',
 		kingdom: 'tang',
 		died: 662,
 		tagline: 'The White Tiger, drowned at the Snake River with his thirteen sons.',
+		quote: 'The first tiger dies loud. The second learns.',
 		events: [{ year: 662, label: 'His army is annihilated by Yeon at the Sasu.' }],
 		aliases: ['Pang Xiaotai', 'White Tiger', 'the White Tiger']
 	},
@@ -892,9 +1105,11 @@ export const PEOPLE: Person[] = [
 		name: 'The Eastern Empress',
 		korean: '사이메이 천황',
 		kingdom: 'yamato',
+		gender: 'f',
 		born: 594,
 		died: 661,
 		tagline: 'The empress who mobilised the East for Baekje — and died on the way.',
+		quote: 'The sea is also a border.',
 		events: [
 			{ year: 660, label: 'Orders the fleet raised to restore Baekje.' },
 			{ year: 661, label: 'Dies at Asakura palace, en route to the war.' }
@@ -909,6 +1124,7 @@ export const PEOPLE: Person[] = [
 		born: 626,
 		died: 672,
 		tagline: 'Sent forty thousand men to the White River and lost them.',
+		quote: 'An eastern prince learns by watching western fires.',
 		events: [
 			{ year: 661, label: 'Takes up his mother’s war for Baekje.' },
 			{ year: 663, label: 'The fleet burns at Baekgang; the East turns inward.' }
@@ -922,6 +1138,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'yamato',
 		died: 654,
 		tagline: 'Yamato’s scholar of the continent, Chunchu’s host in the East.',
+		quote: 'I guide a guest who will outgrow guidance.',
 		aliases: ['Takamuko no Kuromaro', 'Kuromaro', 'the eastern scholar', 'The Eastern Scholar']
 	},
 	{
@@ -931,6 +1148,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'yamato',
 		died: 663,
 		tagline: 'Died at the White River shouting Kudara’s name.',
+		quote: 'I die for a country that is not mine — and that is still loyalty.',
 		events: [{ year: 663, label: 'Falls at Baekgang crying “Long live Kudara!”' }],
 		aliases: ['Echi no Takutsu', 'Takutsu']
 	},
@@ -943,6 +1161,7 @@ export const PEOPLE: Person[] = [
 		born: 615,
 		died: 672,
 		tagline: 'The guardian of Bear Fortress who handed his king to the Tang.',
+		quote: 'I served. Serving is not the same as believing.',
 		arc: 'His tomb epitaph, dug up in Luoyang in 2006, confirmed what the histories implied: the man sheltering Euija at Ungjin surrendered him. He died a Tang general.',
 		events: [{ year: 660, label: 'Surrenders Euija at Bear Fortress.' }],
 		aliases: ['Ye Sikjin']
@@ -954,6 +1173,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		died: 647,
 		tagline: 'Bidam’s fellow conspirator at the Fortress of Radiance.',
+		quote: 'Rebellion needs two names. Mine is the quieter one.',
 		events: [{ year: 647, label: 'Rises with Bidam; dies with him.' }],
 		aliases: ['Yumjong', 'Yeomjong', 'Yumjang']
 	},
@@ -963,6 +1183,7 @@ export const PEOPLE: Person[] = [
 		korean: '연구세사',
 		kingdom: 'goguryeo',
 		tagline: 'Central Commander at the High Summit — Gesomun’s elder kinsman.',
+		quote: 'A Yeon name is already a warning.',
 		aliases: ['Yeon Gusesa']
 	},
 	{
@@ -971,14 +1192,19 @@ export const PEOPLE: Person[] = [
 		korean: '이가사',
 		kingdom: 'goguryeo',
 		tagline: 'The Summit voice that first called Yeon a traitor.',
+		quote: 'I carry messages that arrive too late.',
 		aliases: ['Lee Gaesa', 'Commander Lee']
 	},
 	{
 		id: 'dosuryu',
+		avatar: '/people/dosuryu.png',
 		name: 'Dosuryu',
 		korean: '도수류',
 		kingdom: 'goguryeo',
-		tagline: 'Yeon’s aide, brave enough to ask him why.',
+		tagline: 'Old Yeon friend — Grand Herald after the massacre, one of the few Yeon still hears.',
+		quote: 'If you stop listening, I am a herald, not a friend.',
+		arc: 'Survives by being useful and by being honest in a language Yeon still understands. After the massacre he becomes Grand Herald and stays close enough to say no. When Yeon stops listening, the title remains and the friendship does not.',
+		nature: 'An old friend of the Yeon house from before Gesomun’s fame. Named Grand Herald after the 642 banquet — a post invented so the 겨레 can be addressed by a voice that is not the puppet throne. Offers advice the younger Yeon actually takes, sometimes; the court learns to fear his door as well as the commander’s.',
 		aliases: ['Dosuryu']
 	},
 	{
@@ -987,6 +1213,7 @@ export const PEOPLE: Person[] = [
 		korean: '연정토',
 		kingdom: 'goguryeo',
 		tagline: 'Gesomun’s brother, who took twelve cities over to Silla.',
+		quote: 'I am the relative who keeps the seal warm.',
 		events: [{ year: 666, label: 'Surrenders his southern territory to Silla.' }],
 		aliases: ['Yeon Jungto', 'Jungto']
 	},
@@ -995,8 +1222,13 @@ export const PEOPLE: Person[] = [
 		name: 'Shinsung',
 		korean: '신성',
 		kingdom: 'goguryeo',
-		tagline: 'The monk who opened Pyongyang’s gates from within.',
-		events: [{ year: 668, label: 'Lets the Tang army into the fortress.' }],
+		tagline: 'Buddhist aristocracy’s quiet knife — the monk who opened Pyongyang from within.',
+		quote: 'A gate opens from the inside.',
+		arc: 'Yeon tried to import Tang Taoism partly to starve the monk houses of prestige. The houses waited. When the brothers tore the kingdom, Shinsung opened what no army had opened — and proved Yeon’s fear had been aimed at the right profession.',
+		events: [
+			{ label: 'Watches Yeon’s Taoist experiment cool the temple halls.' },
+			{ year: 668, label: 'Lets the Tang army into the fortress.' }
+		],
 		aliases: ['Shinsung']
 	},
 	{
@@ -1005,6 +1237,7 @@ export const PEOPLE: Person[] = [
 		korean: '유리도라',
 		kingdom: 'tamla',
 		tagline: 'King of the island of oranges, collector of stories and castaways.',
+		quote: 'Tamla tells stories until the mainland listens.',
 		aliases: ['Yuri Dora']
 	},
 	{
@@ -1016,6 +1249,7 @@ export const PEOPLE: Person[] = [
 		born: 567,
 		died: 632,
 		tagline: 'Fifty-three years on the throne, and only daughters.',
+		quote: 'A kingdom is a ledger. Keep it balanced.',
 		events: [{ year: 632, label: 'Dies; the Council must invent a queen.' }],
 		aliases: ['King Jinpyung', 'Jinpyung']
 	},
@@ -1026,6 +1260,7 @@ export const PEOPLE: Person[] = [
 		korean: '천명공주',
 		kingdom: 'silla',
 		tagline: 'Gave up her claim, and gave Silla its greatest king instead.',
+		quote: 'I gave up a throne for a marriage. I never asked for pity.',
 		events: [{ year: 603, label: 'Mother of Kim Chunchu.' }],
 		aliases: ['Princess Chunmyung', 'Chunmyung']
 	},
@@ -1034,7 +1269,9 @@ export const PEOPLE: Person[] = [
 		name: 'Princess Sunhwa',
 		korean: '선화공주',
 		kingdom: 'silla',
+		gender: 'f',
 		tagline: 'Married into Baekje — the legend Seodong sang into being.',
+		quote: 'A princess can still be a rumor.',
 		aliases: ['Princess Sunhwa', 'Princess Seonhwa', 'Sunhwa', 'Seonhwa']
 	},
 	{
@@ -1046,6 +1283,7 @@ export const PEOPLE: Person[] = [
 		born: 504,
 		died: 554,
 		tagline: 'The sage king of Sabi, killed by a slave’s hand at Gwansanseong.',
+		quote: 'I held Baekje when holding was the only victory.',
 		arc: 'Moved the capital to Sabi and rebuilt Baekje’s golden age; retook the Han valley with Silla, and lost it to Silla’s betrayal within a year. Riding at night to his son’s relief, he was caught by Kim Muryeok’s troops, and a stable-slave named Dodo took his head.',
 		events: [
 			{ year: 538, label: 'Moves the capital to Sabi.' },
@@ -1060,6 +1298,7 @@ export const PEOPLE: Person[] = [
 		korean: '도도',
 		kingdom: 'silla',
 		tagline: 'The slave who beheaded a king, as the rank system watched.',
+		quote: 'I am the name the record almost forgot.',
 		events: [{ year: 554, label: 'Kills King Seong at Gwansanseong.' }],
 		aliases: ['Dodo']
 	},
@@ -1073,9 +1312,12 @@ export const PEOPLE: Person[] = [
 		born: -58,
 		died: -19,
 		tagline: 'The archer who crossed the river on the backs of fish and turtles.',
-		arc: 'Born of a sunbeam and a river god’s daughter, hatched from an egg, hunted by his brothers. He fled south, and the river’s creatures bridged the water for him. At Jolbon he founded Goguryeo — every kingdom in this story claims a piece of his shadow.',
+		quote: 'From the first look — only you.',
+		nature: 'Exile who becomes a maker; with Sosuno the nights run longer than the war talk. Charm of the bow, appetite of a man who has been hungry in more than one sense. Go-clan founder — the royal line Yeon Tabal’s hall will spend centuries arguing with.',
+		arc: 'Born of a sunbeam and a river god’s daughter, hatched from an egg, hunted by his brothers. He fled south, and the river’s creatures bridged the water for him. At Jolbon he founded Goryeo — every kingdom in this story claims a piece of his shadow.',
+		blade: 'Ring-pommel crow bow-knife — three-legged crow scratched into the pommel by a river wife’s hand.',
 		events: [
-			{ year: -37, label: 'Founds Goguryeo at Jolbon.' },
+			{ year: -37, label: 'Founds Goryeo at Jolbon.' },
 			{ year: -19, label: 'Dies; his son Yuri succeeds him.' }
 		],
 		aliases: ['Jumong']
@@ -1088,6 +1330,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		died: 28,
 		tagline: 'Jumong’s son who went south and named a kingdom for a hundred crossings.',
+		quote: 'South is also a beginning.',
 		events: [{ year: -18, label: 'Founds Baekje at Wiryeseong.' }],
 		aliases: ['Onjo']
 	},
@@ -1097,6 +1340,7 @@ export const PEOPLE: Person[] = [
 		korean: '비류',
 		kingdom: 'baekje',
 		tagline: 'Chose the salt marshes of Michuhol, and regretted it.',
+		quote: 'I chose the wrong shore. That is also a story.',
 		aliases: ['Biryu']
 	},
 	{
@@ -1108,6 +1352,7 @@ export const PEOPLE: Person[] = [
 		born: -69,
 		died: 4,
 		tagline: 'Born from the egg a white horse left kneeling in the forest.',
+		quote: 'I hatched into a throne.',
 		events: [{ year: -57, label: 'Crowned first ruler of Seorabeol.' }],
 		aliases: ['Hyukgosé', 'Hyukgose', 'Hyeokgeose']
 	},
@@ -1118,6 +1363,7 @@ export const PEOPLE: Person[] = [
 		hanja: '檀君',
 		kingdom: 'other',
 		tagline: 'Son of heaven and the bear-woman; first king of the first Joseon.',
+		quote: 'Asadal is not a dream. It is a capital.',
 		aliases: ['Dangun']
 	},
 	{
@@ -1127,6 +1373,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'other',
 		died: -108,
 		tagline: 'The last king of Old Joseon, betrayed from inside his own walls.',
+		quote: 'Joseon ends when the last gate opens.',
 		events: [{ year: -108, label: 'Wanggeom falls to the Han; the Four Commanderies begin.' }],
 		aliases: ['King Ugeo', 'Ugeo']
 	},
@@ -1139,6 +1386,7 @@ export const PEOPLE: Person[] = [
 		born: 867,
 		died: 936,
 		tagline: 'Three centuries later, the man who calls himself Baekje’s revenge.',
+		quote: 'Later kingdoms still steal earlier tricks.',
 		events: [{ year: 900, label: 'Founds Later Baekje at Wansanju.' }],
 		aliases: ['Kyun Hwon']
 	},
@@ -1151,6 +1399,7 @@ export const PEOPLE: Person[] = [
 		born: 877,
 		died: 943,
 		tagline: 'The vision Yeon dies seeing: Goryeo, reborn under another man.',
+		quote: 'Unify first. Explain after.',
 		events: [{ year: 918, label: 'Founds Goryeo, heir to Goguryeo’s name.' }],
 		aliases: ['Wang Gun', 'Wang Geon']
 	},
@@ -1162,6 +1411,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		died: 375,
 		tagline: 'The Hurricane — Baekje at high tide, a king of Goguryeo dead at his feet.',
+		quote: 'Wealth is a kind of weather. Ride it.',
 		events: [
 			{ year: 371, label: 'Kills King Gogugwon at Pyongyang.' },
 			{ year: 372, label: 'Sends the Seven-Branched Sword to Wa.' }
@@ -1177,6 +1427,7 @@ export const PEOPLE: Person[] = [
 		born: 374,
 		died: 413,
 		tagline: 'The Conqueror — sixty-four fortresses, and a stele to list them.',
+		quote: 'Expand until the stele runs out of space.',
 		events: [
 			{ year: 391, label: 'Takes the throne at eighteen.' },
 			{ year: 400, label: 'Rescues Silla from Wa with fifty thousand riders.' },
@@ -1192,6 +1443,7 @@ export const PEOPLE: Person[] = [
 		born: 593,
 		died: 641,
 		tagline: 'Yamato’s king, watching the continent try a new fashion in queens.',
+		quote: 'An eastern king watches western weather.',
 		aliases: ['King Jomei', 'Jomei']
 	},
 	{
@@ -1200,6 +1452,7 @@ export const PEOPLE: Person[] = [
 		korean: '을제',
 		kingdom: 'silla',
 		tagline: 'The High Councillor who steadied Queen Sunduk’s first years.',
+		quote: 'I stand where the map is thin.',
 		aliases: ['Euljé']
 	},
 
@@ -1215,8 +1468,11 @@ export const PEOPLE: Person[] = [
 		born: 620,
 		died: 660,
 		bornApprox: true,
-		tagline: 'A nameless boy given a name, who gave it back at the Yellow Mountain.',
+		tagline: 'Focus without politics — Euija’s named boy, allergic to the game that raised him.',
+		quote: 'His Majesty gave me a name. Today I go to give it back.',
+		nature: 'Epitome of focus. Traumatic past, emotions suppressed or delayed, endlessly loyal, allergic to politics. He hears sentences at their exact width — misses jokes, misreads faces, trusts numbers because numbers do not lie. Euija’s soft spot and Euija’s pupil: taught the world’s dirt without ever learning to love the game. When the kingdom is already lost, focus is what remains — five thousand against the arithmetic of survival.',
 		arc: 'Found half-drowned by a prince and named after a turtle, Gyebek has no clan and therefore no ceiling and no floor — passed over for command, exiled to an island, recalled only when the kingdom is already lost. He hears every sentence at its exact width: he does not catch a joke, cannot read a face, counts what he can count because numbers do not lie to him, and keeps a promise past the point where keeping it makes sense. It is what makes him unbearable at court and unbreakable in a field. He answers with five thousand men against fifty thousand, killing his own family first so that nothing can be used against him.',
+		blade: 'Single-edged phoenix blade — curved like an eastern sword, phoenix on the ring pommel; one side only, as he is.',
 		events: [
 			{ year: 632, label: 'Named by the crown prince Euija.' },
 			{ year: 655, label: 'Exiled to Tamla; five years of stories, and the only place being exactly himself costs nothing.' },
@@ -1234,6 +1490,7 @@ export const PEOPLE: Person[] = [
 		died: 641,
 		bornApprox: true,
 		tagline: 'Euija’s father; spent a long reign grinding against Silla.',
+		quote: 'Finish what I started — or do not wear my name.',
 		aliases: ['King Mu', 'Seodong', '서동']
 	},
 	{
@@ -1243,6 +1500,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		died: 656,
 		tagline: 'Told the king the truth and starved in prison for it.',
+		quote: 'I told him. That was my only weapon.',
 		events: [{ year: 656, label: 'Dies imprisoned, leaving instructions on how to defend Baekje.' }],
 		aliases: ['Sungchung', 'Seongchung']
 	},
@@ -1255,6 +1513,7 @@ export const PEOPLE: Person[] = [
 		born: 624,
 		bornApprox: true,
 		tagline: 'Twenty years a guest in the East, then a king with no kingdom.',
+		quote: 'I came back to a country that only remembered my blood.',
 		events: [
 			{ year: 661, label: 'Returns from Yamato, crowned by the Restoration Society.' },
 			{ year: 663, label: 'Executes Boksin; loses everything at the White River.' }
@@ -1268,6 +1527,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		died: 663,
 		tagline: 'The Restoration’s best general, killed by the king he crowned.',
+		quote: 'In the end it is I who raise this country twice.',
 		aliases: ['Gwishil Bokshin', 'Boksin', 'Bokshin']
 	},
 
@@ -1282,6 +1542,7 @@ export const PEOPLE: Person[] = [
 		died: 642,
 		bornApprox: true,
 		tagline: 'Bought peace with tribute until his own commander cut him down.',
+		quote: 'I tried to keep a court alive. Courts do not forgive that.',
 		aliases: ['King Youngryu', 'Youngryu', 'Yeongnyu']
 	},
 	{
@@ -1292,6 +1553,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		died: 682,
 		tagline: 'A nephew put on a throne by the man who emptied it.',
+		quote: 'I wore the crown. Someone else wore the power.',
 		aliases: ['King Bojang', 'Bojang']
 	},
 	{
@@ -1303,6 +1565,7 @@ export const PEOPLE: Person[] = [
 		born: 610,
 		bornApprox: true,
 		tagline: 'Refused Yeon, refused the Emperor, and held the wall anyway.',
+		quote: 'You will never be crazier than we are.',
 		arc: 'The chronicles never recorded his name; the people of Ansi simply called him the chief. He refuses to bow to the man who butchered the court, flies the old colours over his wall — and then defends that man’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. Only centuries later did writers give him a name: Yang Manchun.',
 		events: [{ year: 645, label: 'Holds Ansi against Taizong through a summer-long siege.' }],
 		aliases: ['Commander Yang', 'Yang Manchun', 'the Guardian', 'Guardian']
@@ -1315,6 +1578,7 @@ export const PEOPLE: Person[] = [
 		born: 634,
 		died: 679,
 		tagline: 'Gesomun’s heir, who lost his brothers and guided the Tang home.',
+		quote: 'I am the elder.',
 		events: [
 			{ year: 665, label: 'Succeeds his father as Supreme Commander.' },
 			{ year: 666, label: 'Ousted by his brothers; defects to the Emperor.' }
@@ -1329,6 +1593,8 @@ export const PEOPLE: Person[] = [
 		born: 637,
 		bornApprox: true,
 		tagline: 'Took his brother’s title and made the last stand at Pyongyang.',
+		quote: 'Goguryeo never dies…!',
+		blade: 'Ring-pommel crow sword — younger brother of the Five Blades’ stamp.',
 		events: [{ year: 668, label: 'Defends Pyongyang until the gates are opened from within.' }],
 		aliases: ['Yeon Namgun', 'Namgun']
 	},
@@ -1340,6 +1606,7 @@ export const PEOPLE: Person[] = [
 		born: 639,
 		died: 701,
 		tagline: 'The youngest brother, who surrendered the city.',
+		quote: 'Watching is also a kind of loyalty.',
 		aliases: ['Yeon Namsan', 'Namsan']
 	},
 	{
@@ -1349,6 +1616,7 @@ export const PEOPLE: Person[] = [
 		title: '“The Defender”',
 		kingdom: 'goguryeo',
 		tagline: 'Drowned a Sui army at the Salsu and wrote its general a poem about it.',
+		quote: 'Know when to stop — and make them follow you into the water.',
 		events: [{ year: 612, label: 'Destroys the Sui host at the Great River.' }],
 		aliases: ['Ulchi Munduk', 'Munduk']
 	},
@@ -1365,6 +1633,7 @@ export const PEOPLE: Person[] = [
 		born: 598,
 		died: 649,
 		tagline: 'Khan of Heaven. Beat everyone except a fortress in Liaodong.',
+		quote: 'I am less happy about gaining Liaodong than about gaining you.',
 		arc: 'Murdered his brothers for the throne and then justified it by conquering the known world. Goguryeo is the one page he cannot write: he goes himself, is stopped at Ansi, and dies asking Chunchu to finish it for him.',
 		events: [
 			{ year: 626, label: 'Kills his brothers at the Xuanwu Gate and takes the throne.' },
@@ -1384,6 +1653,7 @@ export const PEOPLE: Person[] = [
 		born: 628,
 		died: 683,
 		tagline: 'The younger brother Chunchu found in Chang’an — then the emperor who kept the promise.',
+		quote: 'I inherited a war. I intend to finish it.',
 		arc: 'As crown prince he rides and drinks with Kim Chunchu like a man who has finally been allowed a friend outside the palace wall. When his father dies he becomes Gaozong; when Chunchu takes the Silla throne they write as brothers who ended up wearing the same kind of loneliness. He finishes the war Taizong could not — and then discovers his sworn friend’s kingdom will not hand him the peninsula.',
 		aliases: [
 			'Emperor Gaozong',
@@ -1396,6 +1666,32 @@ export const PEOPLE: Person[] = [
 			'Crown Prince'
 		]
 	},
+	{
+		id: 'wuzetian',
+		avatar: '/people/wu_zetian.png',
+		name: 'Wu Zetian',
+		korean: '무측천',
+		hanja: '武則天',
+		title: 'Empress of Tang',
+		kingdom: 'tang',
+		gender: 'f',
+		born: 624,
+		died: 705,
+		tagline: 'The concubine who outlasted an emperor — and then wore the throne.',
+		quote: 'I do not borrow a reign. I keep it.',
+		nature: 'First a young concubine in rooms that still smell of Taizong; then the growing weather around Gaozong. Influence accumulates the way ink accumulates — day by day, until the page is hers. Liberal with cruelty, precise with legitimacy. One of the few Tang figures the chronicle allows a personal name.',
+		arc: 'Seen beside both emperors: demure where Taizong’s court can hear, decisive where Gaozong’s body falters. The wars that finish Goryeo and sour the Silla alliance happen in a court she increasingly runs. After his death she founds her own Zhou — the only woman to take the imperial title in her own right.',
+		binyeo: 'Phoenix-cloud binyeo — gold thin as a threat.',
+		events: [
+			{ year: 640, label: 'Enters the palace as a young concubine under Taizong.' },
+			{ year: 649, label: 'Still present when Gaozong rises — influence already thickening.' },
+			{ year: 655, label: 'Named empress consort under Gaozong.' },
+			{ year: 660, label: 'Baekje falls while she consolidates the inner court.' },
+			{ year: 690, label: 'Takes the throne as emperor of her own Zhou.' }
+		],
+		aliases: ['Wu Zetian', 'Empress Wu', '무측천', '武則天', 'the Empress Wu']
+	},
+
 
 	// ————————————————————————— Gaya —————————————————————————
 	{
@@ -1403,9 +1699,24 @@ export const PEOPLE: Person[] = [
 		name: 'Kim Muryuk',
 		korean: '김무력',
 		kingdom: 'gaya',
-		tagline: 'Traded a kingdom for his descendants’ rank. His grandson was Yushin.',
+		tagline: 'Last prince of Golden Gaya — traded a kingdom so his blood could keep a sword.',
+		quote: 'A man’s loyalty is the only soil that counts.',
+		arc: 'He surrenders Geumgwan so his line may live as True Bone. At the cavern lake his ghost tells his grandson what the surrender was for: not blood purity — love kept, and a country kept with it.',
+		blade: 'Ring-pommel Gaya iron — egg-and-iron mark still visible under the Silla polish.',
 		events: [{ year: 532, label: 'Golden Gaya surrenders to Silla.' }],
 		aliases: ['Kim Muryuk', 'Muryuk']
+	},
+	{
+		id: 'seohyeon',
+		name: 'Kim Seohyeon',
+		korean: '김서현',
+		kingdom: 'silla',
+		tagline: 'Yushin’s father — Gaya blood that chose Silla every morning.',
+		quote: 'Love the country that let you keep your name.',
+		arc: 'Son of Muryuk; father of Yushin and Munhee. Loyal Silla patriot to the end — the middle generation that made the surrender into a household.',
+		blade: 'Ring-pommel plain sword — no crest louder than duty.',
+		events: [{ label: 'Raises Yushin to serve a queen he will never meet.' }],
+		aliases: ['Kim Seohyeon', 'Seohyeon', '서현']
 	},
 	{
 		id: 'jinheung',
@@ -1416,6 +1727,7 @@ export const PEOPLE: Person[] = [
 		born: 534,
 		died: 576,
 		tagline: 'The conqueror who betrayed an ally and doubled a kingdom.',
+		quote: 'I expanded until the map ran out of room for trust.',
 		events: [
 			{ year: 553, label: 'Seizes the Han River from his ally Baekje.' },
 			{ year: 554, label: 'Kills King Seong at Gwansanseong.' },
@@ -1434,6 +1746,7 @@ export const CONCEPTS: Person[] = [
 		name: 'The Divers',
 		korean: '해녀',
 		entity: 'concept',
+		gender: 'f',
 		kingdom: 'tamla',
 		title: 'The women who work the seafloor of Tamla',
 		tagline: 'Do not hold the breath. Push it out with singing.',
@@ -1444,9 +1757,11 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'courtmaid',
+		avatar: '/people/maid_1.png',
 		name: 'The Court Maids',
 		korean: '궁녀',
 		entity: 'concept',
+		gender: 'f',
 		kingdom: 'baekje',
 		title: 'Euija’s household',
 		tagline: 'Two at first. Hundreds by the end. They never stop suggesting.',
@@ -1462,6 +1777,7 @@ export const CONCEPTS: Person[] = [
 		name: 'The Shaman',
 		korean: '무당',
 		entity: 'concept',
+		gender: 'f',
 		kingdom: 'baekje',
 		title: 'Reader of the nine signs',
 		tagline: 'Told Euija what the turtle meant — and did not live to hear him deny it.',
@@ -1475,6 +1791,7 @@ export const CONCEPTS: Person[] = [
 		name: 'Seolmundae',
 		korean: '설문대할망',
 		entity: 'concept',
+		gender: 'f',
 		kingdom: 'tamla',
 		title: 'The Great Lady who made the island',
 		tagline: 'Piled the sea into a mountain, and drowned in a pot of porridge feeding her sons.',
@@ -1516,6 +1833,7 @@ export const CONCEPTS: Person[] = [
 		name: 'Gameunjang-agi',
 		korean: '가믄장아기',
 		entity: 'concept',
+		gender: 'f',
 		kingdom: 'tamla',
 		title: 'Goddess of fortune',
 		tagline: 'Said she lived on her own luck, and was thrown out of the house for it.',
@@ -1530,6 +1848,7 @@ export const CONCEPTS: Person[] = [
 		name: 'Baekjuto',
 		korean: '백주또',
 		entity: 'concept',
+		gender: 'f',
 		kingdom: 'tamla',
 		title: 'Goddess of farming, of the Songdang shrine',
 		tagline: 'Came across the sea, married a hunter, and divorced him over an ox.',
@@ -1540,6 +1859,7 @@ export const CONCEPTS: Person[] = [
 		name: 'Socheon-guk',
 		korean: '소천국',
 		entity: 'concept',
+		gender: 'm',
 		kingdom: 'tamla',
 		title: 'God of the hunt',
 		tagline: 'Ate the plough ox. Then ate somebody else’s.',
@@ -1550,13 +1870,19 @@ export const CONCEPTS: Person[] = [
 		name: 'Gangnim',
 		korean: '강림',
 		entity: 'concept',
+		gender: 'm',
 		kingdom: 'tamla',
 		title: 'The messenger who comes for you',
-		tagline: 'Went down to arrest the King of the Dead and was kept.',
+		tagline: 'Korean grim reaper — short talks at the threshold, then the underworld.',
+		quote: 'I am not early. Your list simply ended.',
+		nature: 'Appears just before death for a brief conversation — dry, curious, never cruel. A crow once scrambled his ledger, which is why hours are unclear. Impressed, once, by a man who refused him through sheer will; surprised, once, by five thousand who could already see him because they had finished arguing with life.',
+		arc: 'Sent down to arrest the King of the Dead and kept as the escort. Across Samhan he collects kings, rebels, and boys who thought the rear was safer. He does not argue with dedication — he tips his hat to it.',
 		events: [
-			{ label: 'A crow scrambles his list — which is why nobody knows their hour.' }
+			{ label: 'A crow scrambles his list — which is why nobody knows their hour.' },
+			{ label: 'Yeon Gesomun looks at him and walks away.' },
+			{ label: 'At Hwangsan, five thousand wave up at him.' }
 		],
-		aliases: ['Gangnim']
+		aliases: ['Gangnim', 'Kangrim', '강림', 'the reaper']
 	},
 	{
 		id: 'sanbangdeok',
@@ -1592,8 +1918,8 @@ export const CONCEPTS: Person[] = [
 		entity: 'concept',
 		kingdom: 'silla',
 		title: 'The ruling council of Silla’s nobles',
-		tagline: 'A council that decides by unanimity — and therefore decides very little.',
-		arc: 'Silla’s aristocratic assembly, which chooses kings and can veto them. It elevates Dukman in 632 and Chunchu in 654, and its power is exactly what Chunchu spends his reign engineering around: the Royal Secretariat of 651 exists so the king can act without asking it.',
+		tagline: 'Unanimity or nothing — one hand down stops a queen, an heir, or a war.',
+		arc: 'Silla’s aristocratic assembly decides by full agreement: a single objection is a veto. It crowns Dukman in 632 when Bidam forces the room; fails to name Seungman in 645 when Bidam alone withholds his hand; enthrones Chunchu in 654 when the holdout is laughed down. That physics is exactly what Chunchu builds the Royal Secretariat to route around.',
 		events: [
 			{ year: 632, label: 'Debates the succession and crowns Queen Sunduk.' },
 			{ year: 645, label: 'Selects Bidam as High Councillor.' },
@@ -1607,10 +1933,14 @@ export const CONCEPTS: Person[] = [
 		korean: '화랑',
 		hanja: '花郎',
 		entity: 'concept',
+		/* the one institution that speaks aloud in the chronicle, as a chorus of
+		   young noblemen — so it needs a body on the stage */
+		gender: 'm',
 		kingdom: 'silla',
 		title: 'The Flowering Knights',
-		tagline: 'An elite corps of young noblemen, sworn to five principles.',
-		arc: 'Silla’s training order for noble youth — part officer academy, part brotherhood, part cult. It produces Yushin, Bidam, Alchun and Pumsuk, which is to say it produces both the man who saves the throne and the man who rebels against it, and the boy who loses Daeya.',
+		tagline: 'Elite of the elite — trained, lettered, beautiful, and armed with forms no common soldier knows.',
+		nature: 'Alumni never stop saying the word. A Hwarang is expected to ride, recite, and look like the country worth dying for. Special forms — named cuts, paired drills, the 108 count — mark who trained in the yard and who merely wore a sword.',
+		arc: 'Silla’s training order for noble youth — part officer academy, part brotherhood, part cult. It produces Yushin, Bidam, Alchun and Pumsuk, which is to say it produces both the man who saves the throne and the man who rebels against it, and the boy who loses Daeya. When two of them meet between camps, the country watches a private language of steel.',
 		events: [
 			{ year: 576, label: 'Formalised under King Jinheung.' },
 			{ year: 632, label: 'The young knights pledge to Queen Sunduk.' },
@@ -1678,8 +2008,8 @@ export const CONCEPTS: Person[] = [
 		entity: 'concept',
 		kingdom: 'goguryeo',
 		title: 'Yeon Gesomun’s swords',
-		tagline: 'Five blades worn across the back — one for each commandery he replaced.',
-		arc: 'After the massacre of 642 Yeon takes a sword for each of the commanders he killed and wears them all. They are the whole argument of his rule in one image: authority is not granted, it is carried.',
+		tagline: 'Five ring-pommels across the back — each crow-stamped, each once a commander’s.',
+		arc: 'After the massacre of 642 Yeon takes a sword for each of the commanders he killed and wears them all. Every pommel carries the three-legged crow. They are the whole argument of his rule in one image: authority is not granted, it is carried — and the Yeon hall has always preferred carrying to asking.',
 		events: [{ year: 642, label: 'Taken at the banquet, after killing the other commanders.' }],
 		aliases: ['Five Blades']
 	},
@@ -1697,12 +2027,18 @@ export const CONCEPTS: Person[] = [
 		id: 'royalsecretariat',
 		name: 'The Royal Secretariat',
 		korean: '집사부',
+		hanja: '執事部',
 		entity: 'concept',
 		kingdom: 'silla',
 		title: 'Chunchu’s instrument of direct rule',
-		tagline: 'An office that reports to the king alone — the Harmony Council’s quiet defeat.',
-		events: [{ year: 651, label: 'Established by Chunchu.' }],
-		aliases: ['Royal Secretariat']
+		tagline: 'Petition, seal, courier — under a Chancellor (侍中) who does not wait for unanimity.',
+		nature: 'Copied from the heat Chunchu felt in Chang’an: one centre, one will. The Harmony Council still meets and is not abolished — it is merely ornamental. Enemies say he is in love with the emperor. Friends say he is in love with speed.',
+		arc: 'Founded in 651 with Kim Jukji as first 시중. The old halls keep their chairs; the seals stop asking those chairs for permission.',
+		events: [
+			{ year: 651, label: 'Established by Chunchu; Jukji named first Chancellor.' },
+			{ year: 654, label: 'Runs the kingdom under Muyeol while the Council adjourns on schedule.' }
+		],
+		aliases: ['Royal Secretariat', '執事部', '집사부']
 	},
 	{
 		id: 'sillatang',
@@ -1740,7 +2076,8 @@ export const NATIONS: Person[] = [
 		photo: '/nations/silla.jpg',
 		photoCredit: 'Cheomseongdae observatory, Gyeongju — built under Queen Seondeok (Wikimedia Commons)',
 		tagline: 'The smallest of the three — and the one left standing.',
-		arc: 'Founded, the legend says, when a white horse left an egg under a blue sky before the chiefs of six clans — a kingdom that would keep the moon on its banners and love as its quiet engine. Silla is the furthest from the West, the last to take Buddhism, the most rigid in caste — and the one that learns diplomacy because it cannot win alone. Under Queen Seondeok it survives; under Muyeol and Munmu it allies with the Tang to destroy Baekje and Goguryeo, then turns and expels the Tang itself. It rules the unified peninsula for two and a half more centuries.',
+		nature: 'Bone Rank sorts who may rule; the Harmony Council sorts who may act — and only when every noble agrees. Hwarang forge the boys who will either save the throne or rebel against it — elite of the elite, lettered and beautiful, with fighting forms the yards still name. Whoever wears the crown is understood to speak for the heavenly horse. Centralisation (Secretariat, Tang alliance) is always a fight with the old halls.',
+		arc: 'Founded, the legend says, when a white horse left an egg under a blue sky before the chiefs of six clans — a kingdom that would keep the moon on its banners and love as its quiet engine. Silla is the furthest from the West, the last to take Buddhism, the most rigid in caste — and the one that learns diplomacy because it cannot win alone. Under Queen Seondeok it survives; under Muyeol and Munmu it allies with the Tang to destroy Baekje and Goryeo, then turns and expels the Tang itself. It rules the unified peninsula for two and a half more centuries.',
 		events: [
 			{ year: -57, label: 'Founded at Seorabeol by Hyeokgeose, the legend says.' },
 			{ year: 532, label: 'Absorbs Golden Gaya.' },
@@ -1764,7 +2101,8 @@ export const NATIONS: Person[] = [
 		photo: '/nations/baekje.jpg',
 		photoCredit: 'Gilt-bronze Incense Burner of Baekje, National Treasure no. 287 (Wikimedia Commons)',
 		tagline: 'The most refined of the three — merchant, artist, and teacher of the East.',
-		arc: 'Founded by Onjo, a son of Jumong who came south when the throne of Goguryeo went to another brother — settling where a heavenly deer showed the door between earth and the yellow sky, under stars the court would later read for loyalty. Baekje is the kingdom of the sea lanes: it gives the East writing, Buddhism and temple architects, and fights Silla for three centuries over the Han valley. Its court is owned by eight great clans, and its last king breaks the clans only to find he has broken the kingdom. It falls in 660; its restoration army dies at the White River in 663.',
+		nature: 'Eight Great Clans and a Ministers’ Assembly that can move on a plurality — faster than Silla, bloodier in the street. Royal Buyeo sits above a permanent Satek–Yunbi knife-fight; kings who purge the chairs inherit the emptiness. Of the three, Baekje sits closest to the eastern islands in manners: polished courts, sea-lane taste, a habit of teaching neighbours how a capital should look. The crown binds the heavenly deer — lose the crown, and the deer’s door closes.',
+		arc: 'Founded by Onjo, a son of Jumong who came south when the throne of Goryeo went to another brother — settling where a heavenly deer showed the door between earth and the yellow sky, under stars the court would later read for loyalty. Baekje is the kingdom of the sea lanes: it gives the East writing, Buddhism and temple architects, and fights Silla for three centuries over the Han valley. Its court is owned by eight great clans, and its last king breaks the clans only to find he has broken the kingdom. It falls in 660; its restoration army dies at the White River in 663.',
 		events: [
 			{ year: -18, label: 'Founded at Wiryeseong by Onjo.' },
 			{ year: 371, label: 'Geunchogo kills the king of Goguryeo at Pyongyang.' },
@@ -1787,15 +2125,17 @@ export const NATIONS: Person[] = [
 		photo: '/nations/goguryeo.jpg',
 		photoCredit: 'The Gwanggaeto Stele at Ji’an — erected 414 (Wikimedia Commons)',
 		tagline: 'The shield of the peninsula: the kingdom that broke the Sui and stalled the Tang.',
-		arc: 'Founded by Jumong the archer under the three-legged crow of the sun — a red kingdom of will that would rather break than bend. Grown under Gwanggaeto into the great power of Northeast Asia, Goguryeo spends its final century as the wall between the peninsula and two western empires: it destroys the Sui invasions, turns back Taizong at Ansi, and breaks army after army. What no emperor could do, succession did: after Yeon Gesomun dies his sons turn on each other, and in 668 his eldest guides the Tang to Pyongyang.',
+		nature: 'High Summit of regional commands; kings who pay tribute for another decade of quiet. After 642, a Supreme Commander and a Grand Herald speak for the 겨레 over a nephew-king — force in place of committee. The common tongue of the age is Goryeo; Yeon alone says Goguryeo, as if the longer name were a wall. Cold marches, sealed capital, will recited until it becomes weather — and the crown that binds the three-legged crow. Yeon hall versus Go hall is the private war under the public one.',
+		arc: 'Founded by Jumong the archer under the three-legged crow of the sun — a red kingdom of will that would rather break than bend. Grown under Gwanggaeto into the great power of Northeast Asia, Goryeo spends its final century as the wall between the peninsula and two western empires: it destroys the Sui invasions, turns back Taizong at Ansi, and breaks army after army. What no emperor could do, succession did: after Yeon Gesomun dies his sons turn on each other, and in 668 his eldest guides the Tang army to Pyongyang. A shard of the crown walks north into the millet — and the sentence does not stop.',
 		events: [
 			{ year: -37, label: 'Founded at Jolbon by Jumong.' },
 			{ year: 413, label: 'Gwanggaeto dies; his stele lists his conquests.' },
 			{ year: 612, label: 'Destroys the Sui at the Salsu.' },
 			{ year: 645, label: 'Turns back Taizong at Ansi.' },
-			{ year: 668, label: 'Pyongyang falls to the Silla–Tang alliance.' }
+			{ year: 668, label: 'Pyongyang falls to the Silla–Tang alliance.' },
+			{ year: 698, label: 'Balhae rises — the sentence kept.' }
 		],
-		aliases: ['Goguryeo']
+		aliases: ['Goguryeo', 'Goryeo', '고려']
 	},
 	{
 		id: 'nation-tang',
@@ -1810,6 +2150,7 @@ export const NATIONS: Person[] = [
 		photo: '/nations/tang.jpg',
 		photoCredit: 'Giant Wild Goose Pagoda, Chang’an — built 652 for Xuanzang’s scriptures (Wikimedia Commons)',
 		tagline: 'The superpower next door — cosmopolitan, insatiable, and very patient.',
+		nature: 'An empire that renames ministries around a taboo personal name and ships titled beasts instead of introductions. Investiture, hostages, and protectorates are how it turns allies into furniture.',
 		arc: 'The dynasty that made Chang’an the largest city on earth. Under Taizong it subdues the steppe and calls its emperor Khan of Heaven; the one campaign it cannot finish is Goguryeo. Under Gaozong it succeeds at last — and then discovers its ally Silla will not hand over the peninsula it came for.',
 		events: [
 			{ year: 618, label: 'Founded from the wreck of the Sui.' },
@@ -1856,6 +2197,7 @@ const COLOR: Record<string, string> = {
 	// tang
 	taizong: '#c97a2e',
 	gaozong: '#b8935a',
+	wuzetian: '#e879a6',
 	// gaya
 	muryuk: '#9b6fd8',
 	gumil: '#6b7f9e',
@@ -1918,6 +2260,7 @@ const COLOR: Record<string, string> = {
 	gumilwife: '#c98fb0',
 	queensatek: '#d9b45e',
 	eldersatek: '#b8933f',
+	elderyunbi: '#7f9b6b',
 	ministersatek: '#c2a24a',
 	sosuno: '#e8a04a',
 	yuhwa: '#8fc4e0',
@@ -1933,6 +2276,7 @@ const COLOR: Record<string, string> = {
 	courtmaid: '#c9a0a8',
 	shaman: '#9f1239',
 	suro: '#e0a33c',
+	ijinasi: '#c084fc',
 	heohwangok: '#d98fa8',
 	ibiga: '#7c6cf0',
 	jeonggyeon: '#c084fc',
@@ -1947,6 +2291,10 @@ const COLOR: Record<string, string> = {
 	gangnim: '#5f5f6b',
 	sanbangdeok: '#8fb3a8',
 	herald: '#8d8d95',
+	seohyeon: '#7a8fc4',
+	daejoyoung: '#c45a4a',
+	jukji: '#6a9e7a',
+	haesang: '#c4a35a',
 	// relationships
 	'rel-gotaso-pumsuk': '#f472b6',
 	'rel-chunchu-munhee': '#e07fa8',
@@ -1992,6 +2340,62 @@ export function hangulInitial(p: Person): string {
 	const k = p.korean?.trim();
 	if (k) return [...k][0] ?? '·';
 	return '·';
+}
+
+/** Unpainted cast: a silhouette in the right shape rather than a bare initial. */
+const PLACEHOLDER: Record<'m' | 'f', string> = {
+	m: '/people/placeholder_m.png',
+	f: '/people/placeholder_f.png'
+};
+
+/** Three faces for Euija’s household — successive lines rotate by seed. */
+const COURT_MAIDS = [
+	'/people/maid_1.png',
+	'/people/maid_2.png',
+	'/people/maid_3.png'
+] as const;
+
+/** The relationship chart already carries a gender for everyone it plots. */
+const CHART_GENDER = new Map(CHART_NODES.map((n) => [n.id, n.gender]));
+
+/**
+ * Which silhouette this profile would stand in, or null when the record is not
+ * a body at all — a kingdom, a bond, a place, or an institution like the Bone
+ * Rank System. Those keep the initial tile, because a person-shaped shadow
+ * would read as a claim the story never makes.
+ */
+export function genderOf(p: Person): 'm' | 'f' | null {
+	if (p.gender) return p.gender;
+	const charted = CHART_GENDER.get(p.id);
+	if (charted) return charted;
+	return p.entity ? null : 'm';
+}
+
+function hashPick(seed: string, n: number): number {
+	let h = 0;
+	for (let i = 0; i < seed.length; i++) h = (Math.imul(31, h) + seed.charCodeAt(i)) | 0;
+	return Math.abs(h) % n;
+}
+
+/**
+ * The picture to show for a profile: its own portrait if it has been drawn,
+ * otherwise the gendered placeholder. Null means fall back to `hangulInitial`.
+ * Pass `seed` (e.g. the spoken line) so the court maids cycle faces instead of
+ * always showing the same woman.
+ */
+export function avatarOf(p: Person, seed?: string): string | null {
+	if (p.id === 'courtmaid') {
+		if (!seed) return COURT_MAIDS[0];
+		return COURT_MAIDS[hashPick(seed, COURT_MAIDS.length)];
+	}
+	if (p.avatar) return p.avatar;
+	const g = genderOf(p);
+	return g ? PLACEHOLDER[g] : null;
+}
+
+/** True when the art is a gendered stand-in, not a painted likeness. */
+export function isPlaceholderArt(src: string | null | undefined): boolean {
+	return !!src && (src.includes('/placeholder_m.') || src.includes('/placeholder_f.'));
 }
 
 export const byId = new Map(PROFILES.map((p) => [p.id, p]));

@@ -6,9 +6,14 @@
  * A watchdog guarantees the page can never be left invisible: if the observer
  * has not reported anything shortly after the first element is observed, the
  * effect is abandoned and everything is shown.
+ *
+ * Pass `{ y: 0 }` (fade only) on any `position: sticky` element — a transform
+ * creates a containing block and breaks stickiness for the whole animation.
  */
 
 type Item = { show: () => void };
+
+export type RevealParam = number | { delay?: number; y?: number };
 
 const pending = new Set<Item>();
 let observerAlive = false;
@@ -32,25 +37,35 @@ function armWatchdog() {
 	}, 1500);
 }
 
-export function reveal(node: HTMLElement, delay = 0) {
+function normalize(param: RevealParam = 0): { delay: number; y: number } {
+	if (typeof param === 'number') return { delay: param, y: 18 };
+	return { delay: param.delay ?? 0, y: param.y ?? 18 };
+}
+
+export function reveal(node: HTMLElement, param: RevealParam = 0) {
+	const { delay, y } = normalize(param);
 	const reduced =
 		typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 	// Nothing to animate — leave the element exactly as authored.
 	if (reduced || typeof IntersectionObserver === 'undefined') return {};
 
+	const ease = '750ms cubic-bezier(0.22,0.61,0.36,1)';
 	node.style.opacity = '0';
-	node.style.transform = 'translateY(18px)';
-	node.style.transition =
-		`opacity 750ms cubic-bezier(0.22,0.61,0.36,1) ${delay}ms,` +
-		`transform 750ms cubic-bezier(0.22,0.61,0.36,1) ${delay}ms`;
+	if (y === 0) {
+		node.style.transition = `opacity ${ease} ${delay}ms`;
+	} else {
+		node.style.transform = `translateY(${y}px)`;
+		node.style.transition =
+			`opacity ${ease} ${delay}ms,` + `transform ${ease} ${delay}ms`;
+	}
 
 	let shown = false;
 	const show = () => {
 		if (shown) return;
 		shown = true;
 		node.style.opacity = '';
-		node.style.transform = '';
+		if (y !== 0) node.style.transform = '';
 		// drop the inline transition once it has played, so hover styles are free
 		setTimeout(() => (node.style.transition = ''), 750 + delay);
 	};

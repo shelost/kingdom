@@ -342,17 +342,19 @@
 		background: rgba(0, 0, 0, 0.72);
 	}
 
+	/* Rides directly on top of the map card, so it follows the map wherever
+	   app.css puts it (immersive lifts the pair above the dialogue box). */
 	.chart {
 		position: fixed;
-		left: 1.15rem;
-		bottom: calc(1.15rem + 11.2rem);
+		left: var(--corner-left);
+		bottom: calc(var(--corner-bottom) + var(--map-stack));
 		z-index: 90;
-		width: 9.5rem;
+		width: var(--chart-w);
 		margin: 0;
 		padding: 0.4rem 0.4rem 0.1rem;
 		border: 1px solid var(--hairline);
 		border-radius: 6px;
-		background: rgba(30, 30, 30, 0.88);
+		background: var(--glass);
 		opacity: 0.55;
 		transition:
 			opacity 500ms var(--ease),
@@ -378,7 +380,7 @@
 		translate: -50% 50%;
 		padding: 0.65rem 0.65rem 0.12rem;
 		border-color: rgba(255, 255, 255, 0.12);
-		background: #1e1e1e;
+		background: var(--panel);
 		box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
 		display: flex;
 		flex-direction: column;
@@ -601,10 +603,10 @@
 	}
 
 	@media (max-width: 820px) {
-		.chart {
-			width: 6.2rem;
-			left: 0.7rem;
-			bottom: calc(0.7rem + 7.8rem);
+		/* Immersive lifts the map above the dialogue box, and one floating card
+		   is all a phone can carry; opened, the chart is a modal and still welcome. */
+		:global(html.is-immersive) .chart:not(.open) {
+			display: none;
 		}
 
 		.chart.open {

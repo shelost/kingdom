@@ -57,11 +57,12 @@
 	<header class="cover">
 		<div class="cover-mark" use:reveal aria-hidden="true"></div>
 		<h1 class="cover-title" use:reveal={80}>King for All</h1>
-		<p class="cover-ko" use:reveal={160}>A Fairy Story</p>
-
+		<p class="cover-ko" use:reveal={160}>삼한왕검</p>
+		<h2 class="cover-subtitle" use:reveal={160}>A Story Told In Parts</h2>
+		
 		<div class="blurb" use:reveal={240}>
 			<p>
-				<em>The King of Samhan</em> is a story set in 7th-century Samhan, at the end of the Three
+				<em>King for All</em> is a story set in 7th-century Samhan, at the end of the Three
 				Kingdoms Period.
 			</p>
 			<p>
@@ -92,7 +93,7 @@
 		</span>
 	</header>
 
-	{#each chapters as chapter (chapter.id)}
+	{#each chapters as chapter, ci (chapter.id)}
 		{#if chapter.part}
 			<section class="part-page" use:reveal>
 				<span class="part-eyebrow">{chapter.part}</span>
@@ -106,6 +107,7 @@
 			<header class="chapter-head">
 				<div class="chapter-title">
 					<h1>
+						<span class="num">{ci + 1}</span>
 						<span class="en">{chapter.title}</span>
 						{#if chapter.hanja}<span class="hanja">{chapter.hanja}</span>{/if}
 						{#if chapter.korean}<span class="ko">{chapter.korean}</span>{/if}
@@ -128,32 +130,44 @@
 					style:--tone={entry.flashTone ?? '#8a8a94'}
 				>
 					<div class="meta">
-						<div class="meta-sticky" use:reveal>
-							<div class="year" class:long={entry.year.length > 4}>
-								{entry.year}
-								{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
+						<div class="meta-sticky" use:reveal={{ y: 0 }}>
+							<div class="side-chrome">
+								<p class="chapter-label">
+									<span class="num">{ci + 1}</span>
+									<span class="dot" aria-hidden="true">·</span>
+									<span class="name">{chapter.title}</span>
+								</p>
+								<p class="story-index">
+									Story {i + 1} out of {chapter.entries.length}
+								</p>
 							</div>
-							<div class="episode">
-								<h2 style:color={entry.accent}>{entry.title}</h2>
-								{#if entry.subtitle}<p class="episode-ko">{entry.subtitle}</p>{/if}
-								{#if entry.badges}
-									<div class="badges">
-										{#each entry.badges as badge, j (j)}
-											{@const flag = flagOf(badge)}
-											{#if flag}
-												<span
-													class="badge flag"
-													use:reveal={60 + j * 55}
-													title={flag}
-												>
-													<img src={flagSrc(flag)} alt="" />
-												</span>
-											{:else}
-												<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
-											{/if}
-										{/each}
-									</div>
-								{/if}
+							<div class="meta-row">
+								<div class="year" class:long={entry.year.length > 4}>
+									{entry.year}
+									{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
+								</div>
+								<div class="episode">
+									<h2 style:color={entry.accent}>{entry.title}</h2>
+									{#if entry.subtitle}<p class="episode-ko">{entry.subtitle}</p>{/if}
+									{#if entry.badges}
+										<div class="badges">
+											{#each entry.badges as badge, j (j)}
+												{@const flag = flagOf(badge)}
+												{#if flag}
+													<span
+														class="badge flag"
+														use:reveal={60 + j * 55}
+														title={flag}
+													>
+														<img src={flagSrc(flag)} alt="" />
+													</span>
+												{:else}
+													<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
+												{/if}
+											{/each}
+										</div>
+									{/if}
+								</div>
 							</div>
 						</div>
 					</div>
@@ -207,12 +221,21 @@
 		letter-spacing: -3px;
 	}
 
+	.cover-subtitle {
+		margin: 0;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-size: 24px;
+		letter-spacing: -1px;
+		color: rgba(white, .3);
+	}
+
 	.cover-ko {
 		margin: 0.6rem 0 0;
 		font-family: var(--serif);
 		font-weight: 400;
-		font-size: clamp(1.15rem, 2.6vw, 1.9rem);
-		letter-spacing: 0.04em;
+		font-size: 24px;
+		letter-spacing: -.5px;
 		color: var(--fg);
 	}
 
@@ -222,10 +245,10 @@
 	}
 
 	.blurb p {
-		margin: 0 0 0.95rem;
+		margin: 0 0 1.15rem;
 		font-size: 0.9rem;
 		font-weight: 100 !important;
-		line-height: 1.5;
+		line-height: 1.72;
 		color: var(--fg-dim);
 	}
 
@@ -319,12 +342,8 @@
 		opacity: 0.75;
 	}
 
-	/* ————— Chapter header: sticks to the top while its chapter scrolls ————— */
+	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .meta) ————— */
 	.chapter-head {
-		position: sticky;
-		top: 0;
-		z-index: 40;
-
 		padding: 1.35rem 3rem 1.1rem;
 	}
 
@@ -332,7 +351,6 @@
 		display: flex;
 		align-items: center;
 		gap: 1.5rem;
-		background: #101010;
 	}
 
 	.chapter-title h1 {
@@ -347,6 +365,18 @@
 		align-items: baseline;
 		gap: 0.55em;
 		color: #fffdf8;
+	}
+
+	.chapter-title .num {
+		font-variant-numeric: tabular-nums;
+		color: var(--gold);
+		font-weight: 500;
+	}
+
+	.chapter-title .num::after {
+		content: ' ·';
+		color: var(--fg-faint);
+		font-weight: 400;
 	}
 
 	.chapter-title .hanja,
@@ -370,9 +400,9 @@
 		display: grid;
 		grid-template-columns: 16rem minmax(0, 1fr) minmax(260px, 32%);
 		grid-auto-rows: min-content;
-		gap: 0 2.75rem;
-		padding: 0 0 4rem 3rem;
-		scroll-margin-top: 5rem;
+		gap: 0 3.75rem;
+		padding: 0 0 7rem 3rem;
+		scroll-margin-top: 1.5rem;
 	}
 
 	/* Art sits in its own column, one row per beat, level with its text. */
@@ -382,7 +412,7 @@
 	}
 
 	.images.first {
-		padding-top: 1.65rem;
+		padding-top: 2.1rem;
 	}
 
 	/* Full-height column so the inner block has the whole entry to stick within */
@@ -393,12 +423,65 @@
 		height: 100%;
 	}
 
+	/* Side chrome only: chapter label + story counter + year/title stick here */
 	.meta-sticky {
 		position: sticky;
-		top: calc(var(--chapter-head-h) + 0.5rem);
+		top: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.85rem;
+		padding: 1.5rem 0 1rem;
+		background: linear-gradient(
+			to bottom,
+			var(--bg) 0%,
+			var(--bg) 72%,
+			transparent 100%
+		);
+	}
+
+	.side-chrome {
+		display: flex;
+		flex-direction: column;
+		gap: 0.28rem;
+		max-width: 14rem;
+	}
+
+	.chapter-label {
+		margin: 0;
+		font-family: var(--serif);
+		font-weight: 500;
+		font-size: 0.78rem;
+		line-height: 1.25;
+		letter-spacing: var(--tracking-micro);
+		color: var(--fg-dim);
+	}
+
+	.chapter-label .num {
+		font-variant-numeric: tabular-nums;
+		color: var(--gold);
+	}
+
+	.chapter-label .dot {
+		margin: 0 0.28em;
+		color: var(--fg-faint);
+	}
+
+	.chapter-label .name {
+		color: #fffdf8;
+	}
+
+	.story-index {
+		margin: 0;
+		font-size: 0.68rem;
+		font-weight: 500;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: var(--fg-faint);
+	}
+
+	.meta-row {
 		display: flex;
 		gap: 1.4rem;
-		padding: 1.5rem 0 1rem;
 	}
 
 	.year {
@@ -524,7 +607,7 @@
 	}
 
 	.text.first {
-		padding-top: 1.65rem;
+		padding-top: 2.1rem;
 	}
 
 	.edit-link {
@@ -536,7 +619,7 @@
 		letter-spacing: var(--tracking-micro);
 		text-decoration: none;
 		color: var(--fg-dim);
-		background: rgba(20, 20, 23, 0.8);
+		background: var(--glass);
 		backdrop-filter: blur(14px);
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
@@ -587,14 +670,10 @@
 			scroll-snap-align: start;
 		}
 
-		/* the chapter bar rides at the top of the feed */
+		/* Chapter opener scrolls away; sticky chrome lives in the side meta on desktop.
+		   Extra top padding clears the fixed HUD when the opener is in view. */
 		.chapter-head {
-			position: sticky;
-			top: 0;
-			padding: 0.75rem 1.4rem;
-			background: color-mix(in srgb, var(--bg) 88%, transparent);
-			backdrop-filter: blur(12px);
-			border-bottom: 1px solid var(--hairline);
+			padding: 2.9rem 1.4rem 0.35rem;
 		}
 
 		.chapter-title h1 {
@@ -613,9 +692,20 @@
 			display: flex;
 			flex-direction: column;
 			min-height: 100dvh;
-			padding: 0 0 3.5rem;
+			padding: 0 0 4.5rem;
 			scroll-snap-align: start;
 			scroll-snap-stop: always;
+		}
+
+		/* Immersive glides a tapped line into the reading band; snap points
+		   would drag that scroll back to the top of the entry. */
+		:global(html.is-immersive) main {
+			scroll-snap-type: none;
+		}
+
+		:global(html.is-immersive) .entry {
+			scroll-snap-align: none;
+			scroll-snap-stop: normal;
 		}
 
 		.entry.flash {
@@ -632,13 +722,22 @@
 		.meta {
 			order: 2;
 			height: auto;
-			padding: 1.1rem 1.4rem 0;
+			padding: 1.4rem 1.4rem 0;
 		}
 
 		.meta-sticky {
 			position: static;
 			padding: 0;
+			gap: 0.65rem;
+			background: none;
+		}
+
+		.meta-row {
 			gap: 1rem;
+		}
+
+		.side-chrome {
+			max-width: none;
 		}
 
 		.year {
@@ -647,7 +746,7 @@
 
 		.text {
 			order: 3;
-			padding: 1rem 1.4rem 0;
+			padding: 1.25rem 1.4rem 0;
 		}
 
 		.colophon {

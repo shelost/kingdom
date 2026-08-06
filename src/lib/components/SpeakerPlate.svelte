@@ -3,7 +3,15 @@
 	import { fade, fly } from 'svelte/transition';
 	import { prefersReducedMotion } from 'svelte/motion';
 	import { reading } from '$lib/reading.svelte';
-	import { byId, colorOf, hangulInitial, KINGDOMS, type Person } from '$lib/people';
+	import {
+		avatarOf,
+		isPlaceholderArt,
+		byId,
+		colorOf,
+		hangulInitial,
+		KINGDOMS,
+		type Person
+	} from '$lib/people';
 	import { openProfile } from '$lib/profiles.svelte';
 
 	/** Live speaker from reading state (null when not immersive / no speaker). */
@@ -112,6 +120,25 @@
 	let stageVisible = $derived(currentPerson !== null || previousPerson !== null);
 </script>
 
+<!-- One bust, used by both the outgoing and the incoming layer. -->
+{#snippet bust(p: Person)}
+	{@const art = avatarOf(p, p.id === 'courtmaid' ? textKo || textEn : undefined)}
+	<button
+		type="button"
+		class="portrait"
+		class:fallback={!art}
+		class:silhouette={isPlaceholderArt(art) && p.id !== 'courtmaid'}
+		onclick={() => openProfile(p.id)}
+		aria-label="Open profile for {p.name}"
+	>
+		{#if art}
+			<img src={art} alt="" />
+		{:else}
+			<span class="initial" aria-hidden="true">{hangulInitial(p)}</span>
+		{/if}
+	</button>
+{/snippet}
+
 {#if stageVisible}
 	<div
 		class="stage"
@@ -132,40 +159,20 @@
 						if (previousPerson?.id === outgoing.id) previousPerson = null;
 					}}
 				>
-					<button
-						type="button"
-						class="portrait"
-						class:fallback={!outgoing.avatar}
-						onclick={() => openProfile(outgoing)}
-						aria-label="Open profile for {outgoing.name}"
-					>
-						{#if outgoing.avatar}
-							<img src={outgoing.avatar} alt="" />
-						{:else}
-							<span class="initial" aria-hidden="true">{hangulInitial(outgoing)}</span>
-						{/if}
-					</button>
+					{@render bust(outgoing)}
 				</div>
 			{/if}
 
-			<!-- Incoming / current layer: flies in on speaker change -->
+			<!-- Incoming / current layer: flies in on speaker (or maid-face) change -->
 			{#if currentPerson}
-				{#key currentPerson.id}
+				{@const faceKey =
+					currentPerson.id === 'courtmaid'
+						? `${currentPerson.id}:${avatarOf(currentPerson, textKo || textEn)}`
+						: currentPerson.id}
+				{#key faceKey}
 					{@const incoming = currentPerson}
 					<div class="portrait-layer is-next" in:fly={portraitIn}>
-						<button
-							type="button"
-							class="portrait"
-							class:fallback={!incoming.avatar}
-							onclick={() => openProfile(incoming)}
-							aria-label="Open profile for {incoming.name}"
-						>
-							{#if incoming.avatar}
-								<img src={incoming.avatar} alt="" />
-							{:else}
-								<span class="initial" aria-hidden="true">{hangulInitial(incoming)}</span>
-							{/if}
-						</button>
+						{@render bust(incoming)}
 					</div>
 				{/key}
 			{/if}
@@ -177,7 +184,7 @@
 					<button
 						type="button"
 						class="name-tab"
-						onclick={() => openProfile(currentPerson)}
+						onclick={() => openProfile(currentPerson.id)}
 						aria-label="Open profile for {currentPerson.name}"
 						in:fade={nameIn}
 						out:fade={nameOut}
@@ -227,26 +234,34 @@
 		align-items: stretch;
 		justify-content: flex-end;
 		pointer-events: none;
-		padding: 0 1rem max(0.7rem, env(safe-area-inset-bottom, 0px)) 0.75rem;
+		padding-top: 0;
+		padding-right: max(1rem, env(safe-area-inset-right, 0px));
+		padding-bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
+		padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
 		gap: 0;
 	}
 
+	/* The bust stands on the right and *behind* the box: the negative margin
+	   pulls the frame up over its feet, so the text always reads on top.
+	   `--bust-h` is set in app.css, which also reserves the matching page
+	   padding, so the two can never drift apart. */
 	.portrait-slot {
 		position: relative;
-		z-index: 2;
+		z-index: 1;
 		display: block;
-		padding-left: 0.35rem;
-		margin-bottom: -0.55rem;
+		padding-right: 0.35rem;
+		margin-bottom: -2.4rem;
 		/* reserve height so in/out portraits can crossfade without layout jump */
-		height: 21rem;
+		height: var(--bust-h);
 		pointer-events: none;
 	}
 
 	.portrait-layer {
 		position: absolute;
-		left: 0.35rem;
+		left: auto;
+		right: 0.35rem;
 		bottom: 0;
-		height: 21rem;
+		height: var(--bust-h);
 		pointer-events: none;
 	}
 
@@ -265,11 +280,12 @@
 		margin: 0;
 		padding: 0;
 		width: auto;
-		height: 21rem;
+		height: var(--bust-h);
 		border: none;
 		background: transparent;
 		cursor: pointer;
 		isolation: isolate;
+		-webkit-tap-highlight-color: transparent;
 		filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.5));
 		transition: filter 280ms var(--ease, ease);
 	}
@@ -294,9 +310,15 @@
 		-webkit-user-drag: none;
 	}
 
+	/* A stand-in body is a stand-in: it holds the stage without pretending
+	   to be a likeness. */
+	.portrait.silhouette img {
+		opacity: 0.5;
+	}
+
 	.portrait.fallback {
-		width: 13rem;
-		height: 13rem;
+		width: min(13rem, var(--bust-h));
+		height: min(13rem, var(--bust-h));
 	}
 
 	.initial {
@@ -320,7 +342,7 @@
 
 	.box {
 		position: relative;
-		z-index: 1;
+		z-index: 3;
 		width: 100%;
 		margin-top: 0.55rem;
 		padding-top: 0.55rem;
@@ -338,10 +360,10 @@
 		align-items: flex-start;
 		gap: 0.02rem;
 		margin: 0;
-		padding: 0.22rem 0.7rem 0.28rem;
+		padding: 0.26rem 0.7rem 0.3rem;
 		border: 2px solid #e0c878;
 		border-radius: 3px;
-		background: #16141c;
+		background: var(--plate-ink);
 		box-shadow:
 			inset 0 0 0 1px #a8893a,
 			0 2px 8px rgba(0, 0, 0, 0.35);
@@ -380,15 +402,15 @@
 
 	.frame {
 		position: relative;
-		height: 6.5rem;
-		min-height: 6.5rem;
-		max-height: 6.5rem;
-		padding: 1.05rem 1.35rem 0.95rem 1.15rem;
+		height: 7rem;
+		min-height: 7rem;
+		max-height: 7rem;
+		padding: 1.1rem 1.35rem 1rem 1.15rem;
 		border: 3px solid #e0c878;
 		border-radius: 5px;
-		background: #141218;
+		background: var(--plate-ink);
 		box-shadow:
-			inset 0 0 0 2px #141218,
+			inset 0 0 0 2px var(--plate-ink),
 			inset 0 0 0 4px #c9a84c,
 			0 8px 28px rgba(0, 0, 0, 0.48);
 		box-sizing: border-box;
@@ -467,71 +489,121 @@
 		}
 	}
 
+	/* ————— Phones —————
+	   The text box owns the bottom of the screen and the bust shrinks to a
+	   marker beside the name tab: on a 6" screen a full-height portrait eats
+	   the half of the viewport the reader actually needs. Heights come from
+	   `--bust-h` (app.css), which also sets the page's reserved padding. */
 	@media (max-width: 700px) {
 		.stage {
-			padding: 0 0.55rem max(0.45rem, env(safe-area-inset-bottom, 0px)) 0.4rem;
+			padding-right: max(0.55rem, env(safe-area-inset-right, 0px));
+			padding-bottom: max(0.55rem, env(safe-area-inset-bottom, 0px));
+			padding-left: max(0.55rem, env(safe-area-inset-left, 0px));
 		}
 
 		.portrait-slot {
-			padding-left: 0.15rem;
-			margin-bottom: -0.4rem;
-			height: 13rem;
+			padding-right: 0;
+			margin-bottom: -0.5rem;
+			align-self: flex-end;
+			width: min(9rem, 40vw);
 		}
 
 		.portrait-layer {
-			left: 0.15rem;
-			height: 13rem;
+			right: 0;
 		}
 
 		.portrait {
-			height: 13rem;
+			filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
 		}
 
 		.portrait img {
-			max-width: min(14rem, 54vw);
-		}
-
-		.portrait.fallback {
-			width: 8.5rem;
-			height: 8.5rem;
+			max-width: min(8.5rem, 38vw);
 		}
 
 		.initial {
-			font-size: 2.5rem;
+			font-size: 1.7rem;
 		}
 
 		.box {
-			width: 100%;
-			margin-top: 0.4rem;
-			padding-top: 0.45rem;
+			margin-top: 0;
+			padding-top: 0.5rem;
 		}
 
+		/* the tab is also a link to the profile — give it a thumb-sized target */
 		.name-tab {
-			left: 0.65rem;
-			padding: 0.16rem 0.55rem 0.2rem;
+			left: 0.6rem;
+			padding: 0.34rem 0.75rem 0.38rem;
 		}
 
 		.name {
-			font-size: 0.8rem;
+			font-size: 0.9rem;
 		}
 
 		.korean {
-			font-size: 0.58rem;
+			font-size: 0.62rem;
 		}
 
+		/* Sized against the viewport rather than a fixed rem count, so a short
+		   screen (or landscape) never loses the page behind the box. */
 		.frame {
-			height: 5.5rem;
-			min-height: 5.5rem;
-			max-height: 5.5rem;
-			padding: 0.85rem 1.05rem 0.8rem 0.9rem;
+			height: auto;
+			min-height: 7rem;
+			max-height: min(30dvh, 11rem);
+			padding: 1.05rem 1.05rem 1.45rem 1rem;
+			border-width: 2px;
+			box-shadow:
+				inset 0 0 0 2px var(--plate-ink),
+				inset 0 0 0 3px #c9a84c,
+				0 -2px 26px rgba(0, 0, 0, 0.5);
+		}
+
+		.text {
+			padding-right: 0.5rem;
+			overscroll-behavior: contain;
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.utterance {
+			gap: 0.4rem;
 		}
 
 		.line {
-			font-size: 0.95rem;
+			font-size: 1.06rem;
+			font-weight: 500;
+			line-height: 1.6;
+			color: #faf6ee;
 		}
 
 		.line.en.quiet {
-			font-size: 0.84rem;
+			font-size: 0.95rem;
+			color: color-mix(in srgb, #faf6ee 78%, #8a8478);
+		}
+
+		.caret {
+			right: 0.75rem;
+			bottom: 0.45rem;
+			font-size: 0.72rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.portrait-slot {
+			width: min(7.75rem, 38vw);
+			margin-bottom: -0.35rem;
+		}
+
+		.portrait img {
+			max-width: min(7.25rem, 34vw);
+		}
+
+		.frame {
+			min-height: 6.5rem;
+			max-height: min(32dvh, 10rem);
+			padding: 1rem 0.95rem 1.4rem 0.9rem;
+		}
+
+		.line {
+			font-size: 1.04rem;
 		}
 	}
 </style>
