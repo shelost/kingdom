@@ -9,6 +9,7 @@
 		type ReadMode
 	} from '$lib/reading.svelte';
 	import { music, TRACKS, initMusic, playTrack, toggleMute } from '$lib/music.svelte';
+	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 
 	const LANGS: { id: Lang; label: string; hint: string }[] = [
@@ -20,12 +21,12 @@
 	/** `short` is what a phone shows — the full words do not fit beside the
 	    chapter bar without pushing the title under the toggles. */
 	const MODES: { id: ReadMode; label: string; short: string; hint: string }[] = [
-		{ id: 'chronicle', label: 'Chronicle', short: 'Read', hint: 'Default reading layout' },
+		{ id: 'chronicle', label: 'Chronicle', short: 'Read', hint: 'Scroll layout without the speaker plate' },
 		{
 			id: 'immersive',
 			label: 'Immersive',
 			short: 'Scene',
-			hint: 'Speaker portrait like a game dialogue'
+			hint: 'Speaker portrait like a game dialogue (default)'
 		}
 	];
 
@@ -91,6 +92,8 @@
 			</button>
 		{/each}
 	</div>
+
+	<a class="wiki" href={resolve('/wiki')} title="Open the encyclopedia">Wiki</a>
 </div>
 
 <style>
@@ -231,6 +234,26 @@
 		background: var(--gold);
 	}
 
+	.wiki {
+		font-size: 0.7rem;
+		letter-spacing: 0.06em;
+		text-decoration: none;
+		color: var(--fg-faint);
+		padding: 0.34rem 0.7rem;
+		border: 1px solid var(--hairline);
+		border-radius: 999px;
+		background: var(--glass);
+		backdrop-filter: blur(14px);
+		transition:
+			color 0.25s var(--ease),
+			border-color 0.25s var(--ease);
+	}
+
+	.wiki:hover {
+		color: var(--gold);
+		border-color: rgba(216, 178, 106, 0.45);
+	}
+
 	@media (max-width: 900px) {
 		.mode button {
 			padding: 0.22rem 0.45rem;
@@ -245,16 +268,21 @@
 		}
 	}
 
-	/* ————— Phones: a compact strip that rides the chapter bar ————— */
+	/* ————— Phones: a compact strip clear of the TOC toggle ————— */
 	@media (max-width: 700px) {
 		.track {
 			display: none;
 		}
 
 		.hud {
-			top: max(0.55rem, env(safe-area-inset-top, 0px));
-			right: max(0.7rem, env(safe-area-inset-right, 0px));
-			gap: 0.35rem;
+			top: max(0.45rem, env(safe-area-inset-top, 0px));
+			right: max(0.55rem, env(safe-area-inset-right, 0px));
+			left: max(3.4rem, calc(env(safe-area-inset-left, 0px) + 3.1rem));
+			justify-content: flex-end;
+			flex-wrap: wrap;
+			row-gap: 0.3rem;
+			gap: 0.3rem;
+			max-width: calc(100vw - 3.6rem - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
 		}
 
 		.wide {
@@ -265,16 +293,40 @@
 			display: inline;
 		}
 
-		/* thumb-sized rows, but no wider than the strip can afford */
 		.mode button,
 		.lang button {
-			min-height: 1.9rem;
-			padding: 0.3rem 0.5rem;
+			min-height: 2.75rem;
+			min-width: 2.5rem;
+			padding: 0.35rem 0.55rem;
 			font-size: 0.68rem;
 		}
 
 		.music {
-			padding: 0.4rem 0.6rem;
+			min-height: 2.75rem;
+			min-width: 2.75rem;
+			padding: 0.4rem 0.65rem;
+			justify-content: center;
+		}
+
+		.wiki {
+			min-height: 2.75rem;
+			display: inline-grid;
+			place-items: center;
+			padding: 0.35rem 0.65rem;
+			font-size: 0.68rem;
+		}
+	}
+
+	@media (max-width: 380px) {
+		.hud {
+			gap: 0.22rem;
+		}
+
+		.mode button,
+		.lang button {
+			min-width: 2.2rem;
+			padding: 0.3rem 0.4rem;
+			font-size: 0.64rem;
 		}
 	}
 </style>

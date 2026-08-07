@@ -1,79 +1,93 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
-	import type { ImageSlot } from '$lib/story';
+	import type { StackImage } from '$lib/story';
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
 
-	let { images }: { images: ImageSlot[] } = $props();
+	let { images }: { images: StackImage[] } = $props();
 
-	/** Immersive turns the column into a portrait reel with one frame on. */
+	/** Immersive keeps the portrait frame treatment; both modes show one live image. */
 	let immersive = $derived(reading.mode === 'immersive');
 
 	let live = $state(0);
 
-	/**
-	 * The reel is read the way the page reads dialogue: whichever frame sits in
-	 * the reading band is the one on air. Watched with an observer rather than a
-	 * scroll handler because every beat of every entry mounts one of these — a
-	 * listener each would be hundreds of them. As an attachment it re-arms by
-	 * itself when the reader switches modes.
-	 */
 	const BAND_MID = 0.4;
 
-	const watchReel: Attachment<HTMLElement> = (node) => {
-		if (!immersive || !images.length || typeof IntersectionObserver === 'undefined') return;
+	/**
+	 * Pick the image for the beat sitting in the reading band. Beats without art
+	 * keep the previous slot so the column never blanks mid-scroll.
+	 */
+	function indexForBeat(beat: number): number {
+		let match = -1;
+		let hold = 0;
+		for (let i = 0; i < images.length; i++) {
+			const bi = images[i].beatIndex ?? 0;
+			if (bi < beat) hold = i;
+			if (bi === beat && match < 0) match = i;
+		}
+		return match >= 0 ? match : hold;
+	}
 
-		const frames = [...node.querySelectorAll<HTMLElement>('.frame')];
-		if (!frames.length) return;
+	const watchLive: Attachment<HTMLElement> = (node) => {
+		if (!images.length || typeof IntersectionObserver === 'undefined') return;
 
-		// Crossings are rare, so re-measuring every frame on one is cheap — and
-		// it settles ties (two frames straddling the band) on real distance.
+		const article = node.closest<HTMLElement>('article.entry');
+		const beats = article
+			? [...article.querySelectorAll<HTMLElement>('[data-beat]')]
+			: [];
+
+		if (!beats.length) {
+			live = 0;
+			return;
+		}
+
 		const pick = () => {
 			const mid = window.innerHeight * BAND_MID;
-			let best = -1;
+			let bestBeat = -1;
 			let bestD = Infinity;
-			frames.forEach((f, i) => {
-				const r = f.getBoundingClientRect();
+			for (const el of beats) {
+				const r = el.getBoundingClientRect();
+				if (r.bottom < 0 || r.top > window.innerHeight) continue;
 				const d = Math.abs((r.top + r.bottom) / 2 - mid);
 				if (d < bestD) {
 					bestD = d;
-					best = i;
+					bestBeat = Number(el.dataset.beat);
 				}
-			});
-			if (best >= 0) live = best;
+			}
+			if (bestBeat >= 0) live = indexForBeat(bestBeat);
 		};
 
 		const io = new IntersectionObserver(pick, { rootMargin: '-35% 0px -55% 0px' });
-		for (const f of frames) io.observe(f);
+		for (const el of beats) io.observe(el);
 		pick();
 
 		return () => io.disconnect();
 	};
+
+	function cueText(slot: StackImage): string {
+		if (slot.prompt?.trim()) return slot.prompt.trim();
+		const alt = slot.alt?.trim();
+		if (alt) return alt;
+		return `Generate art for “${slot.id}”`;
+	}
 </script>
 
 <!--
-	Slots with a `src` render the real artwork; the rest stay as labelled
-	placeholders so the layout is already reserved for art still to come.
-	Chronicle keeps each slot at its authored ratio; immersive stands them all
-	up as portrait frames, one lit at a time.
+	Sticky single-frame stack: all slots occupy one viewport; IntersectionObserver
+	on entry beats picks which frame is live. Slots without `src` show id + prompt.
 -->
-<div class="stack" class:reel={immersive} {@attach watchReel}>
+<div class="stack" class:immersive {@attach watchLive}>
 	{#each images as slot, i (slot.id)}
 		<figure
 			class="frame"
 			class:art={!!slot.src}
-			class:live={immersive && i === live}
-			style:aspect-ratio={immersive ? '9 / 16' : slot.ratio}
+			class:live={i === live}
+			style:aspect-ratio={immersive ? '9 / 16' : (slot.ratio ?? 4 / 3)}
 			style:--tone={slot.tone ?? '#3a3a40'}
 			use:reveal={i * 70}
 		>
 			{#if slot.src}
-				<!-- The art is drawn as a wide strip, so a phone-shaped frame is
-				     filled the way a vertical feed does it: the picture whole in
-				     the middle, a blurred copy of itself holding the rest. -->
 				{#if immersive}
-					<!-- lazy even for the first frame: the sharp copy above it is
-					     already in flight, so this one lands from cache -->
 					<img
 						class="fill"
 						src={slot.src}
@@ -83,8 +97,6 @@
 						decoding="async"
 					/>
 				{/if}
-				<!-- the first frame of an entry loads eagerly so the art is never
-				     waiting on an observer that may not fire -->
 				<img
 					class="shot"
 					src={slot.src}
@@ -94,11 +106,14 @@
 				/>
 			{:else}
 				<div class="ph">
-					<span class="ph-id">{slot.id}</span>
+					<div class="cue">
+						<span class="cue-id">{slot.id}</span>
+						<p class="cue-prompt">{cueText(slot)}</p>
+					</div>
 				</div>
 			{/if}
 
-			{#if immersive && images.length > 1}
+			{#if images.length > 1}
 				<figcaption class="count" aria-hidden="true">{i + 1}/{images.length}</figcaption>
 			{/if}
 		</figure>
@@ -107,21 +122,35 @@
 
 <style>
 	.stack {
-		display: flex;
-		flex-direction: column;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		min-height: 12rem;
+		display: grid;
+		place-items: center;
 	}
 
 	.frame {
+		grid-area: 1 / 1;
 		position: relative;
 		margin: 0;
 		width: 100%;
+		max-height: 100%;
 		overflow: hidden;
-		transition: transform 0.6s var(--ease);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition:
+			opacity 480ms var(--ease),
+			visibility 0s linear 480ms;
 	}
 
-	.frame:hover {
-		transform: scale(1.012);
-		z-index: 2;
+	.frame.live {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		transition-delay: 0s;
+		z-index: 1;
 	}
 
 	.frame img {
@@ -134,77 +163,69 @@
 	.ph {
 		width: 100%;
 		height: 100%;
+		min-height: 10rem;
 		display: grid;
 		place-items: center;
-		background: var(--tone);
+		padding: 1.1rem;
+		background: color-mix(in srgb, var(--tone) 55%, #14141a);
 	}
 
-	.ph-id {
-		position: relative;
+	.cue {
+		max-width: 18rem;
+		text-align: left;
+	}
+
+	.cue-id {
+		display: inline-block;
 		font-size: 0.62rem;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		color: rgba(255, 255, 255, 0.62);
-		background: rgba(0, 0, 0, 0.34);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		padding: 0.2rem 0.6rem;
-		border-radius: 999px;
-		transition: color 0.35s var(--ease);
+		color: rgba(255, 255, 255, 0.7);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+		padding-bottom: 0.28rem;
+		margin-bottom: 0.55rem;
 	}
 
-	.frame:hover .ph-id {
-		color: rgba(255, 255, 255, 0.95);
+	.cue-prompt {
+		margin: 0;
+		font-family: var(--serif);
+		font-size: 0.78rem;
+		line-height: 1.45;
+		letter-spacing: var(--tracking-display);
+		color: rgba(255, 253, 248, 0.78);
+		white-space: pre-wrap;
+		user-select: text;
 	}
 
-	/* ————— Immersive: a vertical reel, one frame on air —————
-	   Phone-shaped frames scrolled one at a time. The lit frame is the one in
-	   the reading band; the rest stand back so the scene has a subject. The
-	   cue is `scale` rather than `transform`, which the reveal action owns. */
-	.reel {
-		align-items: center;
-		gap: 1.15rem;
-	}
-
-	.reel .frame {
+	/* Immersive: phone-shaped frame for the live slot */
+	.stack.immersive .frame {
 		display: grid;
 		place-items: center;
 		width: min(100%, calc(var(--reel-h, 58dvh) * 9 / 16));
+		max-height: calc(100vh - 3.5rem);
 		background: #14141a;
 		border-radius: 12px;
-		opacity: 0.4;
-		scale: 0.93;
-		filter: saturate(0.65);
 		box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
-		transition:
-			opacity 520ms var(--ease),
-			scale 520ms var(--ease),
-			filter 520ms var(--ease),
-			box-shadow 520ms var(--ease);
 	}
 
-	.reel .frame.live {
-		opacity: 1;
-		scale: 1;
-		filter: none;
+	.stack.immersive .frame.live {
 		box-shadow:
 			0 0 0 1px rgba(216, 178, 106, 0.32),
 			0 26px 64px rgba(0, 0, 0, 0.62);
 	}
 
-	/* both pictures share the single grid cell: backdrop under, art over */
-	.reel .fill,
-	.reel .shot,
-	.reel .ph {
+	.stack.immersive .fill,
+	.stack.immersive .shot,
+	.stack.immersive .ph {
 		grid-area: 1 / 1;
 	}
 
-	.reel .fill {
+	.stack.immersive .fill {
 		scale: 1.3;
 		filter: blur(30px) saturate(1.3) brightness(0.42);
 	}
 
-	/* the picture is the subject; the backdrop is only room around it */
-	.reel .shot {
+	.stack.immersive .shot {
 		z-index: 1;
 		height: auto;
 		max-height: 100%;
@@ -212,7 +233,6 @@
 		box-shadow: 0 0 46px 6px rgba(0, 0, 0, 0.55);
 	}
 
-	/* the reel's place marker: only the frame on air says where it is */
 	.count {
 		position: absolute;
 		z-index: 2;
@@ -232,13 +252,63 @@
 		transition: opacity 420ms var(--ease);
 	}
 
-	.reel .frame.live .count {
+	.frame.live .count {
 		opacity: 1;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.reel .frame {
+		.frame {
 			transition: none;
+		}
+	}
+
+	/* Narrow / portrait: cap the immersive reel so art leads the card without
+	   owning the whole first screenful. Chronicle keeps a calmer landscape. */
+	@media (max-width: 820px) {
+		.stack {
+			min-height: 0;
+			width: 100%;
+			padding: 0.65rem 1.1rem 0;
+		}
+
+		.stack:not(.immersive) .frame {
+			max-height: min(38dvh, 16rem);
+			border-radius: 8px;
+			overflow: hidden;
+		}
+
+		.stack.immersive .frame {
+			width: min(100%, calc(var(--reel-h, 34dvh) * 9 / 16), 13.5rem);
+			max-height: var(--reel-h, 34dvh);
+			margin-inline: auto;
+			border-radius: 10px;
+		}
+
+		.stack.immersive .shot {
+			max-height: 100%;
+		}
+
+		.cue {
+			max-width: 100%;
+		}
+
+		.cue-prompt {
+			font-size: 0.72rem;
+			display: -webkit-box;
+			-webkit-line-clamp: 5;
+			line-clamp: 5;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.stack {
+			padding: 0.5rem 0.9rem 0;
+		}
+
+		.stack.immersive .frame {
+			width: min(100%, calc(var(--reel-h, 32dvh) * 9 / 16), 12rem);
 		}
 	}
 </style>

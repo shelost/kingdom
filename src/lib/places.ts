@@ -34,7 +34,7 @@ export interface Place {
 	kind: PlaceKind;
 	/** whose land it is — drives the marker colour */
 	side: 'silla' | 'baekje' | 'goguryeo' | 'tang' | 'gaya' | 'yamato' | 'tamla' | 'other';
-	/** a royal capital: drawn with a gold ring and its Korean name shown */
+	/** a royal capital: drawn with a gold ring and its Hangul name shown */
 	capital?: boolean;
 	/** one line for the hover explainer / profile tagline */
 	blurb: string;
@@ -45,6 +45,8 @@ export interface Place {
 	title?: string;
 	events?: LifeEvent[];
 	aliases?: string[];
+	/** Lived-in epithets — mirrored onto the place profile’s sobriquets. */
+	sobriquets?: string[];
 	/** draw the label to the left of the marker, to avoid collisions */
 	labelLeft?: boolean;
 	/** sits outside the map frame; not drawn as a permanent marker */
@@ -64,7 +66,9 @@ export const PLACES: Record<string, Place> = {
 		side: 'goguryeo',
 		capital: true,
 		blurb:
-			'Goguryeo’s capital. Yeon Gesomun butchers the court here in 642; the walls hold every siege until they are opened from inside in 668.'
+			'Red Sun’s capital — Goguryeo’s seat. Yeon Gesomun butchers the court here in 642; the walls hold every siege until they are opened from inside in 668.',
+		sobriquets: ['City of the Red Sun'],
+		aliases: ['Pyongyang', '평양성', 'City of the Red Sun']
 	},
 	yodong: {
 		id: 'yodong',
@@ -87,7 +91,9 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'goguryeo',
 		blurb:
-			'The fortress that stopped an emperor. Its commander — unnamed in the histories — held out through the summer of 645 and handed Taizong the first defeat of his life.'
+			'The wall that stopped an emperor. Its commander — unnamed in the histories — held out through the summer of 645 and handed Taizong the first defeat of his life.',
+		sobriquets: ['Wall that Stopped an Emperor'],
+		aliases: ['Ansi', '안시성']
 	},
 	central: {
 		id: 'central',
@@ -188,7 +194,9 @@ export const PLACES: Record<string, Place> = {
 		side: 'silla',
 		capital: true,
 		blurb:
-			'Silla’s capital. Queen Sunduk is crowned here in 632, Bidam rebels at its Fortress of Radiance in 647, and Munmu is proclaimed King of Samhan here in 676.'
+			'Capital of the Divine Country. Queen Sunduk is crowned here in 632, Bidam rebels at its Fortress of Radiance in 647, and Munmu is proclaimed King of Samhan here in 676.',
+		sobriquets: ['Capital of the Divine Country'],
+		aliases: ['Surabol', '서라벌', 'Capital of the Divine Country']
 	},
 	steam_cavern: {
 		id: 'steam_cavern',
@@ -290,7 +298,9 @@ export const PLACES: Record<string, Place> = {
 		side: 'baekje',
 		capital: true,
 		blurb:
-			'Baekje’s last capital. Euija seats forty-one of his own sons in the Assembly here in 655, and the city falls to the Silla–Tang army in 660.'
+			'Capital of the Heavenly Deer. Euija seats forty-one of his own sons in the Assembly here in 655, and the city falls to the Silla–Tang army in 660.',
+		sobriquets: ['Capital of the Heavenly Deer'],
+		aliases: ['Sabi', '사비', 'Capital of the Heavenly Deer']
 	},
 	hwangsan: {
 		id: 'hwangsan',
@@ -301,7 +311,9 @@ export const PLACES: Record<string, Place> = {
 		kind: 'mountain',
 		side: 'baekje',
 		blurb:
-			'Hwangsanbeol. Gyebek met fifty thousand with five thousand here in 660, having killed his own family first so nothing could be used against him.'
+			'Field of the disputed blade — Hwangsanbeol, where Hundred-Victories Gyebek met fifty thousand with five thousand in 660, having killed his own family first so nothing could be used against him.',
+		sobriquets: ['Field of the Disputed Blade'],
+		aliases: ['Yellow Mountain', 'Hwangsanbeol', '황산벌', 'Field of the Disputed Blade']
 	},
 	baekgang: {
 		id: 'baekgang',
@@ -313,7 +325,9 @@ export const PLACES: Record<string, Place> = {
 		kind: 'river',
 		side: 'baekje',
 		blurb:
-			'The Baekgang. In the eighth month of 663 Tang, Silla, Baekje and Yamato fought here — the first time all four met in one battle — and four hundred eastern ships burned.'
+			'Mouth where four fleets burned — the Baekgang. In the eighth month of 663 Tang, Silla, Baekje and Yamato fought here — the first time all four met in one battle — and four hundred eastern ships burned.',
+		sobriquets: ['Mouth Where Four Fleets Burned'],
+		aliases: ['White River', 'Baekgang', '백강', 'Mouth Where Four Fleets Burned']
 	},
 	ungjin: {
 		id: 'ungjin',
@@ -496,6 +510,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Boiling River': 'gungnae',
 	'Jumong': 'jolbon',
 	'Ansi': 'ansi',
+	'The Flower Youth': 'surabol',
 	'The Harmony Council': 'surabol',
 	'Chunchu Goes to the East': 'asuka',
 	'Bidam’s Rebellion': 'surabol',
@@ -564,7 +579,8 @@ export function toPlacePerson(p: Place): Person {
 		tagline: p.blurb,
 		arc: p.arc,
 		events: p.events,
-		aliases
+		aliases,
+		sobriquets: p.sobriquets
 	};
 }
 

@@ -19,13 +19,22 @@ export const reading = $state({
 	music: null as string | null,
 	/** place id of the entry being read — drives the corner map */
 	place: null as string | null,
+	/** story year of the entry in the reading band — drives life-stage faces */
+	year: null as number | null,
 	/** person id of the dialogue currently in the reading band (immersive) */
 	speaker: null as string | null,
 	/** plain-text lines for the featured Pokémon-style dialogue box */
 	linesKo: [] as string[],
 	linesEn: [] as string[],
+	/** Tang / Chinese native + pinyin (subtitle layers) */
+	linesZh: [] as string[],
+	linesZhLatn: [] as string[],
+	/** Yamato / Japanese native + Hepburn romaji (subtitle layers) */
+	linesJa: [] as string[],
+	linesJaLatn: [] as string[],
 	lang: 'both' as Lang,
-	mode: 'chronicle' as ReadMode
+	/** Immersive by default; loadMode() restores a saved chronicle preference. */
+	mode: 'immersive' as ReadMode
 });
 
 /* The reading *band*: an element counts as "being read" while any part of it
@@ -131,6 +140,10 @@ function applyUtterance(el: HTMLElement | null, speaker: string | null) {
 	reading.speaker = speaker;
 	reading.linesKo = readLines(el, '.line.ko');
 	reading.linesEn = readLines(el, '.line.en');
+	reading.linesZh = readLines(el, '.line.zh');
+	reading.linesZhLatn = readLines(el, '.line.zh-latn');
+	reading.linesJa = readLines(el, '.line.ja');
+	reading.linesJaLatn = readLines(el, '.line.ja-latn');
 }
 
 /** Move the live-line marker onto `el` — only immersive mode wears it. */
@@ -227,10 +240,16 @@ export function watchReading() {
 		const entry = nearestInBand<HTMLElement>('article.entry');
 		const entryKey = entry?.id ?? null;
 		const nextSpeaker = dialogue?.dataset.speaker || null;
+		const yearRaw = entry?.dataset.year;
+		const year =
+			yearRaw != null && yearRaw !== '' && Number.isFinite(Number(yearRaw))
+				? Number(yearRaw)
+				: null;
 
 		if (reading.flash !== flash) reading.flash = flash;
 		if (reading.music !== music) reading.music = music;
 		if (reading.place !== place) reading.place = place;
+		if (reading.year !== year) reading.year = year;
 
 		if (entryKey !== lastEntry) {
 			lastEntry = entryKey;
@@ -238,9 +257,17 @@ export function watchReading() {
 		} else if (nextSpeaker) {
 			const ko = readLines(dialogue, '.line.ko');
 			const en = readLines(dialogue, '.line.en');
+			const zh = readLines(dialogue, '.line.zh');
+			const zhLatn = readLines(dialogue, '.line.zh-latn');
+			const ja = readLines(dialogue, '.line.ja');
+			const jaLatn = readLines(dialogue, '.line.ja-latn');
 			const sameLines =
 				ko.join('\0') === reading.linesKo.join('\0') &&
-				en.join('\0') === reading.linesEn.join('\0');
+				en.join('\0') === reading.linesEn.join('\0') &&
+				zh.join('\0') === reading.linesZh.join('\0') &&
+				zhLatn.join('\0') === reading.linesZhLatn.join('\0') &&
+				ja.join('\0') === reading.linesJa.join('\0') &&
+				jaLatn.join('\0') === reading.linesJaLatn.join('\0');
 			if (reading.speaker !== nextSpeaker || !sameLines) {
 				applyUtterance(dialogue, nextSpeaker);
 			}

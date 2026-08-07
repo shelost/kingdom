@@ -3,6 +3,7 @@
 	import {
 		linkPeople,
 		avatarOf,
+		nameOf,
 		isPlaceholderArt,
 		byId,
 		colorOf,
@@ -32,8 +33,7 @@
 			return reading.lang === 'en'
 				? !!b.en?.length || !b.lines.some((l) => isKorean(l))
 				: b.lines.some(Boolean);
-		// narration: visible in EN always (source is English), in KO when a
-		// translation exists or the source is already Korean
+		// narration + retrospective monologue: EN always; KO when translated
 		return reading.lang === 'en' ? true : !!b.ko || isKorean(b.html);
 	}
 
@@ -49,16 +49,36 @@
      Shared by the plain rendering and the clickable immersive one. -->
 {#snippet utterance(block: Dialogue, p: Person | undefined)}
 	{#if p}
-		<span class="who">{p.name}</span>
+		<span class="who">{nameOf(p, year)}</span>
 	{:else if block.speaker}
 		<span class="speaker">{block.speaker}</span>
 	{/if}
-	{#each { length: Math.max(block.lines.length, block.en?.length ?? 0) } as _, j (j)}
+	{#each {
+		length: Math.max(
+			block.lines.length,
+			block.en?.length ?? 0,
+			block.zh?.length ?? 0,
+			block.ja?.length ?? 0
+		)
+	} as _, j (j)}
 		{#if block.lines[j] && reading.lang !== 'en'}
 			<span class="line ko">{@html block.lines[j]}</span>
 		{/if}
 		{#if block.en?.[j] && reading.lang !== 'ko'}
 			<span class="line en" class:solo={!block.lines[j]}>{@html block.en[j]}</span>
+		{/if}
+		<!-- Native CN/JP subtitle + transcription: always shown when present -->
+		{#if block.zh?.[j]}
+			<span class="line zh">{@html block.zh[j]}</span>
+		{/if}
+		{#if block.zhLatn?.[j]}
+			<span class="line zh-latn">{block.zhLatn[j]}</span>
+		{/if}
+		{#if block.ja?.[j]}
+			<span class="line ja">{@html block.ja[j]}</span>
+		{/if}
+		{#if block.jaLatn?.[j]}
+			<span class="line ja-latn">{block.jaLatn[j]}</span>
 		{/if}
 	{/each}
 {/snippet}
@@ -81,14 +101,15 @@
 						p.id === 'courtmaid'
 							? (block.lines ?? block.en ?? []).join('\n')
 							: undefined}
-					{@const art = avatarOf(p, maidSeed)}
+					{@const art = avatarOf(p, maidSeed, year)}
+					{@const who = nameOf(p, year)}
 					<button
 						type="button"
 						class="face person"
 						class:silhouette={isPlaceholderArt(art) && p.id !== 'courtmaid'}
 						data-person={p.id}
-						title={p.name}
-						aria-label={p.name}
+						title={who}
+						aria-label={who}
 					>
 						{#if art}
 							<img src={art} alt="" />
@@ -170,6 +191,16 @@
 		{:else if block.kind === 'moral'}
 			<aside class="moral">
 				<span class="moral-label">{block.label ?? 'the warning'}</span>
+				<p>{@html linkPeople(prose(block), year)}</p>
+			</aside>
+		{:else if block.kind === 'monologue'}
+			{@const p = block.person ? byId.get(block.person) : undefined}
+			<aside
+				class="monologue"
+				style:--chip={p ? colorOf(p) : 'var(--fg-dim)'}
+				data-speaker={p?.id ?? undefined}
+			>
+				<span class="mono-label">{p ? `${nameOf(p, year)}, later` : 'later'}</span>
 				<p>{@html linkPeople(prose(block), year)}</p>
 			</aside>
 		{:else if block.kind === 'formation'}
@@ -378,6 +409,27 @@
 		margin-bottom: 0;
 	}
 
+	/* Tang / Yamato native speech — a subtitle under the reading language */
+	.line.zh,
+	.line.ja {
+		margin-top: 0.12rem;
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 0.94em;
+		letter-spacing: 0.06em;
+		line-height: 1.55;
+		color: color-mix(in srgb, var(--chip) 38%, var(--fg-dim));
+	}
+
+	.line.zh-latn,
+	.line.ja-latn {
+		font-size: 0.78em;
+		font-style: italic;
+		letter-spacing: 0.02em;
+		line-height: 1.45;
+		color: var(--fg-faint);
+		margin-bottom: 0.22rem;
+	}
+
 	.who {
 		font-size: 0.72rem;
 		font-weight: 600;
@@ -554,6 +606,35 @@
 		font-style: italic;
 		line-height: 1.6;
 		color: color-mix(in srgb, var(--fg) 78%, var(--fg-faint));
+	}
+
+	/* ————— retrospective interior (spoken from later) ————— */
+	.monologue {
+		position: relative;
+		margin: 1.55rem 0 1.4rem;
+		padding: 0.85rem 0 0.85rem 1.05rem;
+		border-left: 2px solid color-mix(in srgb, var(--chip) 55%, transparent);
+	}
+
+	.mono-label {
+		display: block;
+		margin-bottom: 0.35rem;
+		font-size: 0.62rem;
+		font-weight: 600;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: color-mix(in srgb, var(--chip) 55%, var(--fg-faint));
+	}
+
+	.monologue p {
+		margin: 0;
+		font-family: var(--serif);
+		font-size: 1.02em;
+		font-style: italic;
+		font-weight: 500;
+		line-height: 1.68;
+		letter-spacing: var(--tracking-display);
+		color: color-mix(in srgb, var(--chip) 28%, #fffdf8);
 	}
 
 	/* ————— battle formation ————— */

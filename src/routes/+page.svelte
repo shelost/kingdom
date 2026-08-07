@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
+	import { resolve } from '$app/paths';
 	import { chapters } from '$lib/story';
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
@@ -12,12 +13,16 @@
 	import RelationChart from '$lib/components/RelationChart.svelte';
 	import { ENTRY_PLACE } from '$lib/places';
 	import { buildBeats } from '$lib/beats';
-	import { watchReading } from '$lib/reading.svelte';
+	import { loadMode, watchReading } from '$lib/reading.svelte';
 	import { flagOf, flagSrc } from '$lib/flags';
 	import { onMount } from 'svelte';
-	import type { Chapter } from '$lib/story';
+	import type { Chapter, Entry, StackImage } from '$lib/story';
 
-	onMount(watchReading);
+	onMount(() => {
+		/* Sync saved mode (or immersive default) onto <html> before the watcher. */
+		loadMode();
+		return watchReading();
+	});
 
 	/**
 	 * The year each entry is "set in", used to derive ages in the prose.
@@ -34,7 +39,17 @@
 		});
 	}
 
+	/** Flatten beat-anchored images into one sticky stack, tagged with beatIndex. */
+	function stackImages(entry: Entry): StackImage[] {
+		return buildBeats(entry).flatMap((beat, bi) =>
+			beat.images.map((im) => ({ ...im, beatIndex: bi }))
+		);
+	}
+
 	const yearsByChapter = new Map(chapters.map((ch) => [ch.id, entryYears(ch)]));
+
+	/** TOC open — desktop main shifts by --toc-w; narrow keeps overlay. */
+	let tocOpen = $state(false);
 </script>
 
 <svelte:head>
@@ -45,14 +60,14 @@
 	/>
 </svelte:head>
 
-<Toc />
+<Toc bind:open={tocOpen} />
 <PersonLayer />
 <Hud />
 <SpeakerPlate />
 <RelationChart />
 <StoryMap />
 
-<main>
+<main class:toc-open={tocOpen}>
 	<!-- ————— cover ————— -->
 	<header class="cover">
 		<div class="cover-mark" use:reveal aria-hidden="true"></div>
@@ -119,6 +134,8 @@
 
 			{#each chapter.entries as entry, i (chapter.id + i)}
 				{@const years = yearsByChapter.get(chapter.id) ?? []}
+				{@const beats = buildBeats(entry)}
+				{@const images = stackImages(entry)}
 				<article
 					class="entry"
 					class:flash={entry.flash}
@@ -172,18 +189,22 @@
 						</div>
 					</div>
 
-					<!-- each beat pairs a run of blocks with the art anchored to it,
-					     so text and image always start level and never overlap -->
-					{#each buildBeats(entry) as beat, bi (bi)}
-						<div class="text" class:first={bi === 0} use:reveal={80}>
-							<Blocks blocks={beat.blocks} year={years[i]} />
-						</div>
-						<div class="images" class:first={bi === 0}>
-							{#if beat.images.length}
-								<ImageStack images={beat.images} />
-							{/if}
-						</div>
-					{/each}
+					<!-- text beats scroll; the image column sticks and swaps via IO -->
+					<div class="beats">
+						{#each beats as beat, bi (bi)}
+							<div class="text" class:first={bi === 0} data-beat={bi} use:reveal={80}>
+								<Blocks blocks={beat.blocks} year={years[i]} />
+							</div>
+						{/each}
+					</div>
+
+					{#if images.length}
+						<aside class="images-col">
+							<div class="images-sticky">
+								<ImageStack {images} />
+							</div>
+						</aside>
+					{/if}
 				</article>
 			{/each}
 		</section>
@@ -191,16 +212,31 @@
 
 	<footer class="colophon" use:reveal>
 		<p>— to be continued —</p>
+		<p class="colophon-links">
+			<a href={resolve('/wiki')}>Encyclopedia</a>
+		</p>
 	</footer>
 
 	{#if dev}
-		<a class="edit-link" href="/edit" title="Open the story editor">✎ Edit</a>
+		<a class="edit-link" href={resolve('/edit')} title="Open the story editor">✎ Edit</a>
 	{/if}
 </main>
 
 <style>
 	main {
 		padding-left: 22px; /* clear the fixed rail */
+		transition: padding-left 260ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+
+	/* Desktop: open TOC pushes the reading column (Notion-style), not overlay. */
+	main.toc-open {
+		padding-left: var(--toc-w);
+	}
+
+	@media (max-width: 1000px) {
+		main.toc-open {
+			padding-left: 22px;
+		}
 	}
 
 	/* ————— Cover ————— */
@@ -394,7 +430,7 @@
 		color: var(--fg-faint);
 		letter-spacing: 0.02em;
 	}
-	/* ————— Entry: (sticky) year + episode | text | images ————— */
+	/* ————— Entry: (sticky) year + episode | text beats | sticky images ————— */
 	.entry {
 		position: relative;
 		display: grid;
@@ -405,22 +441,35 @@
 		scroll-margin-top: 1.5rem;
 	}
 
-	/* Art sits in its own column, one row per beat, level with its text. */
-	.images {
-		grid-column: 3;
-		align-self: start;
-	}
-
-	.images.first {
-		padding-top: 2.1rem;
-	}
-
-	/* Full-height column so the inner block has the whole entry to stick within */
-	/* the marker column spans every beat row of the entry */
+	/* marker + art columns span the full entry so sticky inners can travel with it */
 	.meta {
 		grid-column: 1;
 		grid-row: 1 / -1;
 		height: 100%;
+	}
+
+	.beats {
+		grid-column: 2;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		min-width: 0;
+	}
+
+	.images-col {
+		grid-column: 3;
+		grid-row: 1 / -1;
+		align-self: stretch;
+		min-width: 0;
+	}
+
+	.images-sticky {
+		position: sticky;
+		top: 1.5rem;
+		height: calc(100vh - 3rem);
+		display: flex;
+		align-items: center;
+		padding-top: 2.1rem;
 	}
 
 	/* Side chrome only: chapter label + story counter + year/title stick here */
@@ -602,7 +651,6 @@
 	}
 
 	.text {
-		grid-column: 2;
 		padding: 0;
 	}
 
@@ -646,34 +694,70 @@
 		color: var(--fg-faint);
 	}
 
+	.colophon-links {
+		margin: 1.1rem 0 0;
+		font-style: normal;
+		font-size: 0.78rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+	}
+
+	.colophon-links a {
+		color: var(--fg-dim);
+		text-decoration: none;
+		border-bottom: 1px solid transparent;
+		transition:
+			color 0.25s var(--ease),
+			border-color 0.25s var(--ease);
+	}
+
+	.colophon-links a:hover {
+		color: var(--gold);
+		border-color: rgba(216, 178, 106, 0.45);
+	}
+
 	/* ————— Small screens: a TikTok-style snap feed ————— */
 	@media (max-width: 820px) {
-		main {
+		main,
+		main.toc-open {
 			padding-left: 0;
+			padding-right: 0;
+			overflow-x: clip;
 			/* each entry is a "card" the scroll settles onto */
 			scroll-snap-type: y proximity;
 		}
 
 		.cover {
 			min-height: 100dvh;
-			padding: 4.5rem 1.4rem 3rem;
+			padding: max(4.5rem, calc(env(safe-area-inset-top, 0px) + 3.4rem))
+				max(1.15rem, env(safe-area-inset-right, 0px)) 3rem
+				max(1.15rem, env(safe-area-inset-left, 0px));
 			scroll-snap-align: start;
+		}
+
+		.cover-title {
+			font-size: clamp(2.1rem, 9vw, 2.8rem);
+			letter-spacing: -0.04em;
 		}
 
 		.blurb {
 			margin-top: 2rem;
+			max-width: 36rem;
 		}
 
 		.part-page {
-			min-height: 78dvh;
-			padding: 4rem 1.4rem 3rem;
+			min-height: 72dvh;
+			padding: 3.5rem max(1.15rem, env(safe-area-inset-right, 0px)) 2.5rem
+				max(1.15rem, env(safe-area-inset-left, 0px));
 			scroll-snap-align: start;
 		}
 
 		/* Chapter opener scrolls away; sticky chrome lives in the side meta on desktop.
 		   Extra top padding clears the fixed HUD when the opener is in view. */
 		.chapter-head {
-			padding: 2.9rem 1.4rem 0.35rem;
+			padding: max(3.1rem, calc(env(safe-area-inset-top, 0px) + 2.6rem))
+				max(1.15rem, env(safe-area-inset-right, 0px)) 0.35rem
+				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
 		.chapter-title h1 {
@@ -687,18 +771,19 @@
 			display: none;
 		}
 
-		/* one entry = one full-height card: art, then title, then text */
+		/* one entry = one card: compact art, then title, then text */
 		.entry {
 			display: flex;
 			flex-direction: column;
-			min-height: 100dvh;
-			padding: 0 0 4.5rem;
+			min-height: 0;
+			padding: 0 0 3.5rem;
 			scroll-snap-align: start;
 			scroll-snap-stop: always;
 		}
 
 		/* Immersive glides a tapped line into the reading band; snap points
-		   would drag that scroll back to the top of the entry. */
+		   would drag that scroll back to the top of the entry. Extra foot room
+		   keeps the last lines above the speaker plate. */
 		:global(html.is-immersive) main {
 			scroll-snap-type: none;
 		}
@@ -706,23 +791,32 @@
 		:global(html.is-immersive) .entry {
 			scroll-snap-align: none;
 			scroll-snap-stop: normal;
+			padding-bottom: 1.25rem;
 		}
 
 		.entry.flash {
 			padding-top: 0;
 		}
 
-		/* art leads the card, full-bleed */
-		.images {
+		/* art leads the card, then title, then text — not sticky on narrow */
+		.images-col {
 			order: 1;
-			padding-top: 0;
 			margin: 0;
+			max-width: 100%;
+		}
+
+		.images-sticky {
+			position: static;
+			height: auto;
+			padding-top: 0;
+			display: block;
 		}
 
 		.meta {
 			order: 2;
 			height: auto;
-			padding: 1.4rem 1.4rem 0;
+			padding: 1.15rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
+				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
 		.meta-sticky {
@@ -733,7 +827,8 @@
 		}
 
 		.meta-row {
-			gap: 1rem;
+			gap: 0.85rem;
+			min-width: 0;
 		}
 
 		.side-chrome {
@@ -741,22 +836,59 @@
 		}
 
 		.year {
-			font-size: 1.9rem;
+			font-size: 1.75rem;
+			flex-shrink: 0;
+		}
+
+		.episode {
+			min-width: 0;
+		}
+
+		.episode h2 {
+			max-width: none;
+			font-size: 1.02rem;
+		}
+
+		.beats {
+			order: 3;
+			min-width: 0;
 		}
 
 		.text {
-			order: 3;
-			padding: 1.25rem 1.4rem 0;
+			padding: 1.1rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
+				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
 		.colophon {
-			padding: 4rem 1.4rem 6rem;
+			padding: 4rem 1.15rem max(6rem, calc(env(safe-area-inset-bottom, 0px) + 4rem));
 			scroll-snap-align: start;
 		}
 
 		.edit-link {
-			right: 0.9rem;
-			bottom: 0.9rem;
+			right: max(0.7rem, env(safe-area-inset-right, 0px));
+			bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
+			min-height: 2.75rem;
+			display: inline-grid;
+			place-items: center;
+		}
+
+		:global(html.is-immersive) .edit-link {
+			bottom: calc(var(--plate-h, 14rem) + 0.45rem);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.cover-ko,
+		.cover-subtitle {
+			font-size: 1.05rem;
+		}
+
+		.year {
+			font-size: 1.55rem;
+		}
+
+		.badges {
+			flex-wrap: wrap;
 		}
 	}
 

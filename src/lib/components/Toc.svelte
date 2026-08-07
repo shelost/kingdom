@@ -2,14 +2,20 @@
 	import { onMount } from 'svelte';
 	import { chapters } from '$lib/story';
 
+	/** Bound by the page so main can shift (Notion-style) when the TOC is open. */
+	let { open = $bindable(false) } = $props();
+
 	let active = $state(chapters[0]?.id);
 	let activeEntry = $state('');
-	let open = $state(false);
 	let progress = $state(0);
-
-	let activeIndex = $derived(chapters.findIndex((c) => c.id === active));
+	let narrow = $state(false);
 
 	onMount(() => {
+		const mq = window.matchMedia('(max-width: 1000px)');
+		const syncNarrow = () => (narrow = mq.matches);
+		syncNarrow();
+		mq.addEventListener('change', syncNarrow);
+
 		const io = new IntersectionObserver(
 			(entries) => {
 				for (const e of entries) if (e.isIntersecting) active = e.target.id;
@@ -42,37 +48,45 @@
 		onScroll();
 		window.addEventListener('scroll', onScroll, { passive: true });
 
+		const onKey = (e: KeyboardEvent) => {
+			if (e.key === 'Escape') open = false;
+		};
+		window.addEventListener('keydown', onKey);
+
 		return () => {
 			io.disconnect();
 			ioEntry.disconnect();
+			mq.removeEventListener('change', syncNarrow);
 			window.removeEventListener('scroll', onScroll);
+			window.removeEventListener('keydown', onKey);
 		};
 	});
 
 	function jump(id: string) {
-		open = false;
+		// keep open on desktop; close on narrow screens so content isn't covered
+		if (narrow) open = false;
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	}
+
+	function toggle() {
+		open = !open;
 	}
 </script>
 
 <div class="progress" style:transform="scaleX({progress})" aria-hidden="true"></div>
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<nav
-	class="toc"
-	class:open
-	aria-label="Table of contents"
-	onmouseenter={() => (open = true)}
-	onmouseleave={() => (open = false)}
-	onfocusin={() => (open = true)}
-	onfocusout={() => (open = false)}
+<button
+	class="toc-toggle"
+	type="button"
+	aria-expanded={open}
+	aria-controls="toc-panel"
+	aria-label={open ? 'Close table of contents' : 'Open table of contents'}
+	onclick={toggle}
 >
-	<div class="bars" aria-hidden="true">
-		{#each chapters as ch (ch.id)}
-			<span class="bar" class:part={!!ch.part} class:active={active === ch.id}></span>
-		{/each}
-	</div>
+	{open ? '✕' : '☰'}
+</button>
 
+<nav class="toc" class:open id="toc-panel" aria-label="Table of contents" aria-hidden={!open}>
 	<div class="panel">
 		{#each chapters as ch, ci (ch.id)}
 			{#if ch.part}
@@ -88,20 +102,17 @@
 				{#if ch.range}<span class="pi-range">{ch.range}</span>{/if}
 			</button>
 
-			<!-- entries unfold for the chapter you're reading -->
-			<div class="sub" class:expanded={activeIndex === ci}>
-				<div class="sub-inner">
-					{#each ch.entries as en, ei (ch.id + ei)}
-						<button
-							class="sub-item"
-							class:active={activeEntry === `${ch.id}-${ei}`}
-							onclick={() => jump(`${ch.id}-${ei}`)}
-						>
-							<span class="si-year">{en.year || '·'}</span>
-							<span class="si-title">{en.title || 'Untitled'}</span>
-						</button>
-					{/each}
-				</div>
+			<div class="sub">
+				{#each ch.entries as en, ei (ch.id + ei)}
+					<button
+						class="sub-item"
+						class:active={activeEntry === `${ch.id}-${ei}`}
+						onclick={() => jump(`${ch.id}-${ei}`)}
+					>
+						<span class="si-year">{en.year || '·'}</span>
+						<span class="si-title">{en.title || 'Untitled'}</span>
+					</button>
+				{/each}
 			</div>
 		{/each}
 	</div>
@@ -119,67 +130,47 @@
 		will-change: transform;
 	}
 
-	/* Left edge, just clear of the decorative rail. Above the floating corner
-	   cards so the opened panel is never punched through by the map. */
+	.toc-toggle {
+		position: fixed;
+		top: max(0.55rem, env(safe-area-inset-top, 0px));
+		left: max(calc(22px + 0.2rem), env(safe-area-inset-left, 0px));
+		z-index: 95;
+		width: 2.75rem;
+		height: 2.75rem;
+		display: grid;
+		place-items: center;
+		font-size: 1.1rem;
+		line-height: 1;
+		color: rgba(255, 253, 248, 0.92);
+		background: transparent;
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+		text-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.85),
+			0 0 12px rgba(0, 0, 0, 0.55);
+		transition:
+			color 150ms ease,
+			transform 180ms ease,
+			background 150ms ease;
+	}
+
+	.toc-toggle:hover {
+		color: #fff;
+		transform: scale(1.06);
+	}
+
 	.toc {
 		position: fixed;
 		left: 0;
-		top: 50%;
-		transform: translateY(-50%);
-		z-index: 92;
-		padding: 1.5rem 0.85rem 1.5rem calc(22px + 0.5rem); /* generous hover target */
-	}
-
-	/* ————— collapsed: notion-style dashes ————— */
-	.bars {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 8px;
-		transition: opacity 220ms ease;
-	}
-
-	.toc.open .bars {
-		opacity: 0;
-	}
-
-	.bar {
-		display: block;
-		height: 2px;
-		width: 14px;
-		border-radius: 2px;
-		background: rgba(255, 255, 255, 0.22);
-		transition:
-			background 250ms ease,
-			width 250ms cubic-bezier(0.22, 1, 0.36, 1);
-	}
-
-	.bar.part {
-		width: 22px;
-		background: rgba(255, 255, 255, 0.38);
-	}
-
-	.bar.active {
-		width: 26px;
-		background: #fff;
-	}
-
-	/* ————— expanded panel ————— */
-	.panel {
-		position: absolute;
-		left: calc(22px + 1rem);
-		top: 50%;
-		transform: translateY(-50%) translateX(-10px) scale(0.98);
-		width: 17.5rem;
-		max-height: 80vh;
-		overflow-y: auto;
-		overscroll-behavior: contain;
-		background: rgba(19, 19, 21, 0.92);
-		backdrop-filter: blur(20px) saturate(140%);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 12px;
-		box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
-		padding: 0.7rem;
+		top: 0;
+		bottom: 0;
+		z-index: 94;
+		width: min(var(--toc-w), 86vw);
+		padding: 3.6rem 0.5rem 1.5rem calc(22px + 0.35rem);
+		pointer-events: none;
+		transform: translateX(-12px);
 		opacity: 0;
 		visibility: hidden;
 		transition:
@@ -188,11 +179,22 @@
 			visibility 0s linear 260ms;
 	}
 
-	.toc.open .panel {
+	.toc.open {
+		pointer-events: auto;
 		opacity: 1;
 		visibility: visible;
-		transform: translateY(-50%) translateX(0) scale(1);
+		transform: translateX(0);
 		transition-delay: 0s;
+	}
+
+	.panel {
+		height: 100%;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		background: transparent;
+		padding: 0.2rem 0.4rem 1rem 0;
+		scrollbar-width: thin;
+		scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
 	}
 
 	.panel-part {
@@ -202,7 +204,10 @@
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--gold);
-		padding: 0.75rem 0.6rem 0.25rem;
+		padding: 0.95rem 0.35rem 0.3rem;
+		text-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.9),
+			0 0 14px rgba(0, 0, 0, 0.55);
 	}
 
 	.panel-item {
@@ -215,22 +220,21 @@
 		background: transparent;
 		border: none;
 		border-radius: 7px;
-		padding: 0.42rem 0.6rem;
+		padding: 0.42rem 0.45rem;
 		cursor: pointer;
-		color: rgba(255, 255, 255, 0.68);
-		transition:
-			background 150ms ease,
-			color 150ms ease;
+		color: rgba(255, 255, 255, 0.72);
+		text-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.9),
+			0 0 12px rgba(0, 0, 0, 0.5);
+		transition: color 150ms ease;
 	}
 
 	.panel-item:hover {
-		background: rgba(255, 255, 255, 0.06);
 		color: #fff;
 	}
 
 	.panel-item.active {
 		color: #fff;
-		background: rgba(255, 255, 255, 0.09);
 	}
 
 	.pi-title {
@@ -267,27 +271,10 @@
 		flex-shrink: 0;
 	}
 
-	/* ————— nested entries ————— */
 	.sub {
-		display: grid;
-		grid-template-rows: 0fr;
-		opacity: 0;
-		transition:
-			grid-template-rows 380ms cubic-bezier(0.22, 1, 0.36, 1),
-			opacity 260ms ease;
-	}
-
-	.sub.expanded {
-		grid-template-rows: 1fr;
-		opacity: 1;
-	}
-
-	.sub-inner {
-		min-height: 0;
-		overflow: hidden;
-		margin-left: 0.65rem;
-		border-left: 1px solid rgba(255, 255, 255, 0.09);
-		padding-left: 0.3rem;
+		margin-left: 0.55rem;
+		padding-left: 0.45rem;
+		border-left: 1px solid rgba(255, 255, 255, 0.14);
 	}
 
 	.sub-item {
@@ -301,22 +288,21 @@
 		background: transparent;
 		border: none;
 		border-radius: 6px;
-		padding: 0.22rem 0.5rem;
+		padding: 0.22rem 0.4rem;
 		cursor: pointer;
-		color: rgba(255, 255, 255, 0.4);
-		transition:
-			background 150ms ease,
-			color 150ms ease;
+		color: rgba(255, 255, 255, 0.45);
+		text-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.9),
+			0 0 10px rgba(0, 0, 0, 0.45);
+		transition: color 150ms ease;
 	}
 
 	.sub-item:hover {
-		background: rgba(255, 255, 255, 0.05);
-		color: rgba(255, 255, 255, 0.9);
+		color: rgba(255, 255, 255, 0.92);
 	}
 
 	.sub-item.active {
 		color: #fff;
-		background: rgba(59, 111, 212, 0.16);
 	}
 
 	.si-year {
@@ -334,9 +320,40 @@
 		letter-spacing: var(--tracking-display);
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 820px) {
+		.toc-toggle {
+			/* Top-left stays clear of Hud; size is thumb-friendly (≥44px). */
+			top: max(0.4rem, env(safe-area-inset-top, 0px));
+			left: max(0.35rem, env(safe-area-inset-left, 0px));
+			width: 2.75rem;
+			height: 2.75rem;
+			background: rgba(32, 32, 38, 0.55);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+		}
+
 		.toc {
-			display: none;
+			padding: max(3.6rem, calc(env(safe-area-inset-top, 0px) + 3rem)) 0.5rem
+				max(1.5rem, env(safe-area-inset-bottom, 0px)) max(0.55rem, env(safe-area-inset-left, 0px));
+			width: min(20rem, 92vw);
+			/* Dim the page behind so the open TOC reads as a sheet, not chrome. */
+			background: linear-gradient(
+				90deg,
+				rgba(20, 20, 26, 0.92) 0%,
+				rgba(20, 20, 26, 0.78) 72%,
+				transparent 100%
+			);
+		}
+
+		.panel-item {
+			min-height: 2.75rem;
+			padding: 0.55rem 0.5rem;
+		}
+
+		.sub-item {
+			min-height: 2.5rem;
+			padding: 0.45rem 0.45rem;
+			font-size: 0.8rem;
 		}
 	}
 </style>

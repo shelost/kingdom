@@ -1,43 +1,91 @@
 <script lang="ts">
 	import {
-		SvelteFlow,
-		Background,
-		Controls,
-		MiniMap,
-		Panel,
-		ConnectionMode,
-		type Node,
-		type Edge
-	} from '@xyflow/svelte';
-	import '@xyflow/svelte/dist/style.css';
+		forceSimulation,
+		forceLink,
+		forceManyBody,
+		forceCollide,
+		forceX,
+		forceY,
+		type Simulation,
+		type SimulationLinkDatum
+	} from 'd3-force';
+	import { drag } from 'd3-drag';
+	import { select, type Selection } from 'd3-selection';
+	import { zoom, zoomIdentity, type ZoomBehavior } from 'd3-zoom';
+	import type { Attachment } from 'svelte/attachments';
 
-	import { byId, colorOf, KINGDOMS, type Person } from '$lib/people';
+	import {
+		byId,
+		colorOf,
+		avatarOf,
+		hangulInitial,
+		KINGDOMS,
+		type Person
+	} from '$lib/people';
 	import {
 		CHART_NODES,
 		RELATIONSHIPS,
 		BOND_LABEL,
 		RANK_SIZE,
 		ERA_META,
-		ERA_SECTIONS,
 		type ChartEra
 	} from '$lib/relations';
-	import { runForceLayout } from '$lib/chart/force';
+	import { ERA_Y, KINGDOM_X } from '$lib/chart/force';
 	import { openProfile, closeProfile, profiles } from '$lib/profiles.svelte';
-	import PersonNode from '$lib/components/chart/PersonNode.svelte';
-	import FloatingEdge from '$lib/components/chart/FloatingEdge.svelte';
-	import SectionNode from '$lib/components/chart/SectionNode.svelte';
-	import FitViewWhenReady from '$lib/components/chart/FitViewWhenReady.svelte';
+
+	/** Portrait diameters — RANK_SIZE scaled up for readable faces. */
+	const PORTRAIT: Record<1 | 2 | 3, number> = {
+		1: 22,
+		2: 28,
+		3: 36
+	};
+
+	type GraphNode = {
+		id: string;
+		name: string;
+		korean?: string;
+		color: string;
+		avatar: string | null;
+		initial: string;
+		r: number;
+		era: ChartEra;
+		kingdom: Person['kingdom'];
+		x: number;
+		y: number;
+		vx?: number;
+		vy?: number;
+		fx?: number | null;
+		fy?: number | null;
+		index?: number;
+	};
+
+	type GraphLink = SimulationLinkDatum<GraphNode> & {
+		id: string;
+		color: string;
+		label: string;
+		thick: boolean;
+	};
 
 	let open = $state(false);
 	/** Filter by kingdom id; null = show all. */
 	let filter = $state<Person['kingdom'] | null>(null);
 	/** Filter by era band; null = show all. */
 	let eraFilter = $state<ChartEra | null>(null);
-	/** Remount + fitView token after layout settles. */
-	let flowKey = $state(0);
 
-	const nodeTypes = { person: PersonNode, section: SectionNode };
-	const edgeTypes = { floating: FloatingEdge };
+	/** Simulation nodes / links — mutated by d3-force; reassigned on rebuild. */
+	let nodes = $state.raw<GraphNode[]>([]);
+	let links = $state.raw<GraphLink[]>([]);
+	/** Bumped each tick so the SVG re-reads x/y. */
+	let tick = $state(0);
+	/** Viewport pan/zoom applied to the inner `<g>`. */
+	let view = $state({ x: 0, y: 0, k: 1 });
+
+	let svgEl: SVGSVGElement | null = $state(null);
+	let sim: Simulation<GraphNode, GraphLink> | null = null;
+	let zoomer: ZoomBehavior<SVGSVGElement, unknown> | null = null;
+	let svgSel: Selection<SVGSVGElement, unknown, null, undefined> | null = null;
+	/** Suppress click after a real drag. */
+	let didDrag = false;
 
 	const kingdomOrder: Person['kingdom'][] = [
 		'silla',
@@ -46,10 +94,22 @@
 		'tang',
 		'gaya',
 		'tamla',
+		'underworld',
+		'yamato',
 		'other'
 	];
 
 	const eraOrder: ChartEra[] = ['present', 'past', 'myth'];
+
+	const usedKingdoms = $derived(
+		kingdomOrder.filter((k) => CHART_NODES.some((n) => byId.get(n.id)?.kingdom === k))
+	);
+
+	const visibleEras = $derived.by(() => {
+		const eras = eraOrder.filter((e) => nodes.some((n) => n.era === e));
+		if (eraFilter) return eras.filter((e) => e === eraFilter);
+		return eras;
+	});
 
 	function filteredChart(kingdom: Person['kingdom'] | null, era: ChartEra | null) {
 		return CHART_NODES.filter(({ id, era: nodeEra }) => {
@@ -61,111 +121,137 @@
 		});
 	}
 
-	function buildGraph(kingdom: Person['kingdom'] | null, era: ChartEra | null): {
-		nodes: Node[];
-		edges: Edge[];
-	} {
+	function buildGraph(kingdom: Person['kingdom'] | null, era: ChartEra | null) {
 		const chart = filteredChart(kingdom, era);
-		const linkInputs = RELATIONSHIPS.flatMap((rel) => {
-			if (!rel.between) return [];
-			const [a, b] = rel.between;
-			if (!chart.some((n) => n.id === a) || !chart.some((n) => n.id === b)) return [];
-			return [{ source: a, target: b, rel }];
-		});
-
-		const positions = runForceLayout(
-			chart.map((n) => {
-				const p = byId.get(n.id)!;
-				return {
-					id: n.id,
-					era: n.era,
-					kingdom: p.kingdom,
-					r: RANK_SIZE[n.rank] / 2,
-					x: n.x,
-					y: n.y
-				};
-			}),
-			linkInputs.map(({ source, target }) => ({ source, target }))
-		);
-
-		const people: Node[] = chart.flatMap(({ id, rank, gender, era: nodeEra }) => {
+		const nextNodes: GraphNode[] = chart.flatMap(({ id, rank, era: nodeEra, x, y }) => {
 			const p = byId.get(id);
 			if (!p) return [];
-			const size = RANK_SIZE[rank];
-			const pos = positions.get(id) ?? { x: 0, y: 0 };
+			const diameter = PORTRAIT[rank] ?? RANK_SIZE[rank] * 2;
 			return [
 				{
 					id,
-					type: 'person',
-					position: { x: pos.x, y: pos.y },
-					data: {
-						label: p.name,
-						korean: p.korean,
-						color: colorOf(p),
-						kingdom: KINGDOMS[p.kingdom].label,
-						kingdomColor: KINGDOMS[p.kingdom].color,
-						size,
-						gender,
-						era: nodeEra
-					},
-					style: `width: ${size}px; height: ${size}px; background: transparent; border: none; padding: 0; border-radius: 50%; overflow: visible;`
-				} satisfies Node
+					name: p.name,
+					korean: p.korean,
+					color: colorOf(p),
+					avatar: avatarOf(p),
+					initial: hangulInitial(p),
+					r: diameter / 2,
+					era: nodeEra,
+					kingdom: p.kingdom,
+					x,
+					y
+				}
 			];
 		});
 
-		const sections: Node[] = ERA_SECTIONS.flatMap(({ era: e, x, y }) => {
-			if (era && e !== era) return [];
-			const hasPeople = chart.some((n) => n.era === e);
-			if (!hasPeople) return [];
-			const m = ERA_META[e];
+		const ids = new Set(nextNodes.map((n) => n.id));
+		const nextLinks: GraphLink[] = RELATIONSHIPS.flatMap((rel) => {
+			if (!rel.between) return [];
+			const [a, b] = rel.between;
+			if (!ids.has(a) || !ids.has(b)) return [];
+			const bond = rel.bond ?? 'love';
 			return [
 				{
-					id: `section-${e}`,
-					type: 'section',
-					position: { x, y: y - 40 },
-					data: { label: m.label, hint: m.hint },
-					draggable: false,
-					selectable: false,
-					connectable: false,
-					style: 'background: transparent; border: none; padding: 0; width: auto; height: auto;'
-				} satisfies Node
+					id: rel.id,
+					source: a,
+					target: b,
+					color: colorOf(rel),
+					label: BOND_LABEL[bond],
+					thick: bond === 'love' || bond === 'affair'
+				}
 			];
 		});
 
-		const edges: Edge[] = linkInputs.map(({ source, target, rel }) => {
-			const c = colorOf(rel);
-			return {
-				id: rel.id,
-				type: 'floating',
-				source,
-				target,
-				label: BOND_LABEL[rel.bond ?? 'love'],
-				style: `stroke: ${c}; stroke-width: ${rel.bond === 'love' || rel.bond === 'affair' ? 1.6 : 1.1}; opacity: 0.65;`,
-				animated: false
-			};
-		});
-
-		return { nodes: [...sections, ...people], edges };
+		return { nextNodes, nextLinks };
 	}
 
-	let nodes = $state.raw<Node[]>(buildGraph(null, null).nodes);
-	let edges = $state.raw<Edge[]>(buildGraph(null, null).edges);
+	function linkEnd(end: GraphLink['source'] | GraphLink['target']): GraphNode | null {
+		if (typeof end === 'object' && end) return end as GraphNode;
+		return nodes.find((n) => n.id === end) ?? null;
+	}
 
-	function applyFilters(k: Person['kingdom'] | null, e: ChartEra | null) {
-		filter = k;
-		eraFilter = e;
-		const g = buildGraph(k, e);
-		nodes = g.nodes;
-		edges = g.edges;
-		flowKey += 1;
+	function fitView(svg: SVGSVGElement, graphNodes: GraphNode[]) {
+		if (!zoomer || !svgSel || graphNodes.length === 0) return;
+		const w = svg.clientWidth || 1;
+		const h = svg.clientHeight || 1;
+		let minX = Infinity;
+		let minY = Infinity;
+		let maxX = -Infinity;
+		let maxY = -Infinity;
+		for (const n of graphNodes) {
+			minX = Math.min(minX, n.x - n.r - 40);
+			minY = Math.min(minY, n.y - n.r - 28);
+			maxX = Math.max(maxX, n.x + n.r + 40);
+			maxY = Math.max(maxY, n.y + n.r + 28);
+		}
+		const bw = Math.max(maxX - minX, 1);
+		const bh = Math.max(maxY - minY, 1);
+		const pad = 36;
+		const k = Math.min(1.4, Math.max(0.2, Math.min((w - pad * 2) / bw, (h - pad * 2) / bh)));
+		const tx = (w - k * (minX + maxX)) / 2;
+		const ty = (h - k * (minY + maxY)) / 2;
+		svgSel.call(zoomer.transform, zoomIdentity.translate(tx, ty).scale(k));
+	}
+
+	function startSimulation(kingdom: Person['kingdom'] | null, era: ChartEra | null) {
+		sim?.stop();
+		const { nextNodes, nextLinks } = buildGraph(kingdom, era);
+		nodes = nextNodes;
+		links = nextLinks;
+		tick++;
+
+		const simulation = forceSimulation<GraphNode, GraphLink>(nextNodes)
+			.force(
+				'link',
+				forceLink<GraphNode, GraphLink>(nextLinks)
+					.id((d) => d.id)
+					.distance(100)
+					.strength(0.42)
+			)
+			.force('charge', forceManyBody().strength(-200))
+			.force(
+				'collide',
+				forceCollide<GraphNode>()
+					.radius((d) => d.r + 26)
+					.strength(0.9)
+			)
+			.force(
+				'x',
+				forceX<GraphNode>((d) => KINGDOM_X[d.kingdom] ?? 520).strength(0.05)
+			)
+			.force(
+				'y',
+				forceY<GraphNode>((d) => ERA_Y[d.era]).strength(0.065)
+			)
+			.on('tick', () => {
+				tick++;
+			});
+
+		sim = simulation;
+
+		// Fit once the layout has settled a bit.
+		let fitted = false;
+		simulation.on('tick.fit', () => {
+			if (fitted || simulation.alpha() > 0.35) return;
+			fitted = true;
+			if (svgEl) fitView(svgEl, nextNodes);
+			simulation.on('tick.fit', null);
+		});
+	}
+
+	function stopSimulation() {
+		sim?.stop();
+		sim = null;
+		nodes = [];
+		links = [];
 	}
 
 	function setFilter(k: Person['kingdom'] | null) {
-		applyFilters(k, eraFilter);
+		filter = k;
 	}
 
 	function setEra(e: ChartEra | null) {
-		applyFilters(filter, e);
+		eraFilter = e;
 	}
 
 	function toggle() {
@@ -174,15 +260,8 @@
 			closeProfile();
 			filter = null;
 			eraFilter = null;
-			const g = buildGraph(null, null);
-			nodes = g.nodes;
-			edges = g.edges;
-			flowKey = 0;
-		} else {
-			const g = buildGraph(filter, eraFilter);
-			nodes = g.nodes;
-			edges = g.edges;
-			flowKey += 1;
+			stopSimulation();
+			view = { x: 0, y: 0, k: 1 };
 		}
 	}
 
@@ -211,9 +290,103 @@
 		};
 	});
 
-	const usedKingdoms = $derived(
-		kingdomOrder.filter((k) => CHART_NODES.some((n) => byId.get(n.id)?.kingdom === k))
-	);
+	/** d3-zoom on the SVG; restarts when the open chart mounts. */
+	const zoomAttach: Attachment<SVGSVGElement> = (svg) => {
+		svgEl = svg;
+		view = { x: 0, y: 0, k: 1 };
+		const z = zoom<SVGSVGElement, unknown>()
+			.scaleExtent([0.15, 1.8])
+			.filter((event) => {
+				// Let node drags own primary-button gestures on .node
+				if (event.type === 'wheel') return true;
+				const t = event.target as Element | null;
+				if (t?.closest?.('.node')) return false;
+				return !event.ctrlKey && !event.button;
+			})
+			.on('zoom', (event) => {
+				const t = event.transform;
+				view = { x: t.x, y: t.y, k: t.k };
+			});
+		zoomer = z;
+		svgSel = select(svg);
+		svgSel.call(z);
+		svgSel.on('dblclick.zoom', null);
+
+		return () => {
+			svgSel?.on('.zoom', null);
+			zoomer = null;
+			svgSel = null;
+			if (svgEl === svg) svgEl = null;
+		};
+	};
+
+	/** Pin node under the pointer while dragging; release on end. */
+	function nodeDrag(node: GraphNode): Attachment<SVGGElement> {
+		return (el) => {
+			const behavior = drag<SVGGElement, unknown>()
+				.container(() => (svgEl ?? el.ownerSVGElement) as SVGSVGElement)
+				.subject(() => {
+					const t = view;
+					return { x: node.x * t.k + t.x, y: node.y * t.k + t.y };
+				})
+				.on('start', (event) => {
+					didDrag = false;
+					if (!event.active) sim?.alphaTarget(0.25).restart();
+					node.fx = node.x;
+					node.fy = node.y;
+				})
+				.on('drag', (event) => {
+					didDrag = true;
+					const t = view;
+					node.fx = (event.x - t.x) / t.k;
+					node.fy = (event.y - t.y) / t.k;
+					tick++;
+				})
+				.on('end', (event) => {
+					if (!event.active) sim?.alphaTarget(0);
+					node.fx = null;
+					node.fy = null;
+				});
+
+			select(el).call(behavior);
+			return () => {
+				select(el).on('.drag', null);
+			};
+		};
+	}
+
+	function onNodeClick(id: string) {
+		if (didDrag) {
+			didDrag = false;
+			return;
+		}
+		openProfile(id);
+	}
+
+	function onLinkClick(id: string) {
+		openProfile(id);
+	}
+
+	function zoomBy(factor: number) {
+		if (!svgEl || !zoomer || !svgSel) return;
+		svgSel.call(zoomer.scaleBy, factor);
+	}
+
+	function zoomReset() {
+		if (svgEl) fitView(svgEl, nodes);
+	}
+
+	// Live simulation while the modal is open; rebuild when filters change.
+	$effect(() => {
+		if (!open || !svgEl) return;
+		const k = filter;
+		const e = eraFilter;
+		startSimulation(k, e);
+		return () => {
+			sim?.stop();
+			sim = null;
+		};
+	});
 </script>
 
 <svelte:window onkeydown={onKey} />
@@ -227,79 +400,152 @@
 	{#if open}
 		<div class="frame open-frame">
 			<div class="flow">
-				{#key flowKey}
-					<SvelteFlow
-						bind:nodes
-						bind:edges
-						{nodeTypes}
-						{edgeTypes}
-						fitView={false}
-						minZoom={0.15}
-						maxZoom={1.8}
-						colorMode="dark"
-						connectionMode={ConnectionMode.Loose}
-						nodesDraggable={true}
-						nodesConnectable={false}
-						elementsSelectable={true}
-						attributionPosition="bottom-left"
-						onnodeclick={({ node }) => {
-							if (node.type === 'person') openProfile(node.id);
-						}}
-						onedgeclick={({ edge }) => openProfile(edge.id)}
-					>
-						<FitViewWhenReady token={flowKey} />
-						<Background gap={28} size={1} bgColor="#1e1e1e" patternColor="rgba(255,255,255,0.04)" />
-						<Controls showLock={false} />
-						<MiniMap
-							pannable
-							zoomable
-							bgColor="#181818"
-							maskColor="rgba(0,0,0,0.55)"
-							nodeColor={(n) => (typeof n.data?.color === 'string' ? n.data.color : '#555')}
-							nodeStrokeColor="#1e1e1e"
-						/>
-						<Panel position="top-left" class="legend-panel">
-							<div class="legend">
-								<button
-									type="button"
-									class="tag era"
-									class:on={eraFilter === null}
-									onclick={() => setEra(null)}>All eras</button
-								>
-								{#each eraOrder as e (e)}
-									<button
-										type="button"
-										class="tag era"
-										class:on={eraFilter === e}
-										onclick={() => setEra(eraFilter === e ? null : e)}
+				<div class="legend-panel">
+					<div class="legend">
+						<button
+							type="button"
+							class="tag era"
+							class:on={eraFilter === null}
+							onclick={() => setEra(null)}>All eras</button
+						>
+						{#each eraOrder as e (e)}
+							<button
+								type="button"
+								class="tag era"
+								class:on={eraFilter === e}
+								onclick={() => setEra(eraFilter === e ? null : e)}
+							>
+								{ERA_META[e].label}
+							</button>
+						{/each}
+					</div>
+					<div class="legend">
+						<button
+							type="button"
+							class="tag"
+							class:on={filter === null}
+							onclick={() => setFilter(null)}>All</button
+						>
+						{#each usedKingdoms as k (k)}
+							<button
+								type="button"
+								class="tag"
+								class:on={filter === k}
+								style:--k={KINGDOMS[k].color}
+								onclick={() => setFilter(filter === k ? null : k)}
+							>
+								{KINGDOMS[k].label}
+							</button>
+						{/each}
+					</div>
+					<p class="legend-hint">
+						Larger circles = central figures · Present / Past / Myth are separate bands · Drag to
+						rearrange
+					</p>
+				</div>
+
+				<svg class="graph" {@attach zoomAttach} role="img" aria-label="Relationship force graph">
+					<!-- tick read keeps positions live -->
+					{#if tick >= 0}
+						<g class="viewport" transform="translate({view.x},{view.y}) scale({view.k})">
+							{#each visibleEras as era (era)}
+								<text class="era-label" x={24} y={ERA_Y[era] - 72}>{ERA_META[era].label}</text>
+								<text class="era-hint" x={24} y={ERA_Y[era] - 56}>{ERA_META[era].hint}</text>
+							{/each}
+
+							{#each links as l (l.id)}
+								{@const s = linkEnd(l.source)}
+								{@const t = linkEnd(l.target)}
+								{#if s && t}
+									<g
+										class="link"
+										role="button"
+										tabindex="0"
+										onclick={() => onLinkClick(l.id)}
+										onkeydown={(ev) => {
+											if (ev.key === 'Enter' || ev.key === ' ') {
+												ev.preventDefault();
+												onLinkClick(l.id);
+											}
+										}}
 									>
-										{ERA_META[e].label}
-									</button>
-								{/each}
-							</div>
-							<div class="legend">
-								<button
-									type="button"
-									class="tag"
-									class:on={filter === null}
-									onclick={() => setFilter(null)}>All</button
+										<title>{l.label}</title>
+										<line
+											class="hit"
+											x1={s.x}
+											y1={s.y}
+											x2={t.x}
+											y2={t.y}
+											stroke="transparent"
+											stroke-width="14"
+										/>
+										<line
+											class="bond"
+											x1={s.x}
+											y1={s.y}
+											x2={t.x}
+											y2={t.y}
+											stroke={l.color}
+											stroke-width={l.thick ? 1.6 : 1.1}
+											opacity="0.65"
+										/>
+									</g>
+								{/if}
+							{/each}
+
+							{#each nodes as n (n.id)}
+								<g
+									class="node"
+									transform="translate({n.x},{n.y})"
+									{@attach nodeDrag(n)}
+									onclick={() => onNodeClick(n.id)}
+									role="button"
+									tabindex="0"
+									onkeydown={(ev) => {
+										if (ev.key === 'Enter' || ev.key === ' ') {
+											ev.preventDefault();
+											onNodeClick(n.id);
+										}
+									}}
 								>
-								{#each usedKingdoms as k (k)}
-									<button
-										type="button"
-										class="tag"
-										class:on={filter === k}
-										style:--k={KINGDOMS[k].color}
-										onclick={() => setFilter(filter === k ? null : k)}
-									>
-										{KINGDOMS[k].label}
-									</button>
-								{/each}
-							</div>
-							<p class="legend-hint">Larger circles = central figures · Present / Past / Myth are separate bands</p>
-						</Panel>
-					</SvelteFlow>
-				{/key}
+									<title>{n.name}{n.korean ? ` · ${n.korean}` : ''}</title>
+									<defs>
+										<clipPath id="clip-{n.id}">
+											<circle r={n.r} />
+										</clipPath>
+									</defs>
+									<circle
+										class="ring"
+										r={n.r}
+										fill={n.color}
+										stroke="rgba(0,0,0,0.35)"
+										stroke-width="1.25"
+									/>
+									{#if n.avatar}
+										<image
+											href={n.avatar}
+											x={-n.r}
+											y={-n.r}
+											width={n.r * 2}
+											height={n.r * 2}
+											clip-path="url(#clip-{n.id})"
+											preserveAspectRatio="xMidYMid slice"
+										/>
+									{:else}
+										<text class="initial" text-anchor="middle" dy="0.35em">{n.initial}</text>
+									{/if}
+									<text class="label" text-anchor="middle" y={n.r + 12}>{n.name}</text>
+								</g>
+							{/each}
+						</g>
+					{/if}
+				</svg>
+
+				<div class="zoom-controls" aria-label="Zoom controls">
+					<button type="button" onclick={() => zoomBy(1.25)} aria-label="Zoom in">+</button>
+					<button type="button" onclick={() => zoomBy(1 / 1.25)} aria-label="Zoom out">−</button>
+					<button type="button" onclick={zoomReset} aria-label="Fit view">⊡</button>
+				</div>
 			</div>
 		</div>
 	{:else}
@@ -326,7 +572,7 @@
 			<span class="pl-ko">{tip.sub}</span>
 			<span class="pl-blurb">{tip.line}</span>
 		{:else if open}
-			<span class="pl-hint">Click a circle or a bond · Esc to close</span>
+			<span class="pl-hint">Click a circle or a bond · Drag nodes · Esc to close</span>
 		{:else}
 			<span class="pl-name">Relations</span>
 			<span class="pl-ko">인물 관계</span>
@@ -458,6 +704,7 @@
 	}
 
 	.flow {
+		position: relative;
 		width: 100%;
 		flex: 1;
 		min-height: min(72vh, 46rem);
@@ -465,50 +712,21 @@
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		background: #1e1e1e;
+		display: flex;
+		flex-direction: column;
 	}
 
-	.flow :global(.svelte-flow) {
-		background: #1e1e1e;
+	.legend-panel {
+		position: absolute;
+		top: 0.55rem;
+		left: 0.55rem;
+		z-index: 2;
+		pointer-events: none;
 	}
 
-	.flow :global(.svelte-flow__edge-path) {
-		cursor: pointer;
-	}
-
-	.flow :global(.svelte-flow__node) {
-		cursor: pointer;
-	}
-
-	.flow :global(.svelte-flow__node-section) {
-		cursor: default;
-	}
-
-	.flow :global(.svelte-flow__attribution) {
-		background: transparent;
-		opacity: 0.25;
-	}
-
-	.flow :global(.svelte-flow__controls) {
-		background: #252525;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 4px;
-		box-shadow: none;
-	}
-
-	.flow :global(.svelte-flow__controls-button) {
-		background: #252525;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-		fill: rgba(235, 235, 245, 0.7);
-	}
-
-	.flow :global(.svelte-flow__minimap) {
-		background: #181818;
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 4px;
-	}
-
-	.flow :global(.legend-panel) {
-		margin: 0.55rem;
+	.legend-panel .legend,
+	.legend-panel .tag {
+		pointer-events: auto;
 	}
 
 	.legend {
@@ -545,6 +763,100 @@
 		margin: 0.2rem 0 0;
 		font-size: 0.6rem;
 		color: rgba(235, 235, 245, 0.35);
+		max-width: min(70vw, 28rem);
+	}
+
+	.graph {
+		width: 100%;
+		flex: 1;
+		min-height: 0;
+		display: block;
+		cursor: grab;
+		touch-action: none;
+	}
+
+	.graph:active {
+		cursor: grabbing;
+	}
+
+	.era-label {
+		fill: rgba(235, 235, 245, 0.45);
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		pointer-events: none;
+	}
+
+	.era-hint {
+		fill: rgba(235, 235, 245, 0.22);
+		font-size: 10px;
+		pointer-events: none;
+	}
+
+	.link {
+		cursor: pointer;
+	}
+
+	.link:hover .bond {
+		opacity: 1;
+		stroke-width: 2.2;
+	}
+
+	.node {
+		cursor: pointer;
+	}
+
+	.node:focus-visible .ring {
+		stroke: #fff;
+		stroke-width: 2;
+	}
+
+	.initial {
+		fill: rgba(255, 255, 255, 0.92);
+		font-size: 11px;
+		font-weight: 600;
+		pointer-events: none;
+	}
+
+	.label {
+		fill: rgba(235, 235, 245, 0.78);
+		font-size: 10px;
+		font-weight: 550;
+		pointer-events: none;
+	}
+
+	.zoom-controls {
+		position: absolute;
+		bottom: 0.55rem;
+		right: 0.55rem;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 4px;
+		overflow: hidden;
+		background: #252525;
+	}
+
+	.zoom-controls button {
+		width: 1.7rem;
+		height: 1.7rem;
+		border: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+		background: #252525;
+		color: rgba(235, 235, 245, 0.7);
+		font-size: 0.95rem;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.zoom-controls button:last-child {
+		border-bottom: none;
+	}
+
+	.zoom-controls button:hover {
+		color: #fff;
+		background: #2e2e2e;
 	}
 
 	figcaption {

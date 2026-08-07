@@ -7,6 +7,8 @@ export interface ImageSlot {
 	tone?: string; // placeholder background hint, used until art exists
 	src?: string; // real artwork, e.g. "/img_04.png"
 	alt?: string;
+	/** Midjourney-style generation prompt — shown on empty slots for art direction. */
+	prompt?: string;
 	/**
 	 * Which beat this image belongs to: a fragment of the block it should
 	 * appear alongside. Images sharing an anchor stack together; images with
@@ -15,11 +17,28 @@ export interface ImageSlot {
 	at?: string;
 }
 
+/** ImageSlot plus the beat index it was flattened against for sticky stacks. */
+export type StackImage = ImageSlot & { beatIndex?: number };
+
 export type Block =
 	// `ko` is the Korean rendering of English narration
 	| { kind: 'p'; html: string; ko?: string }
-	// `en` is the English rendering of `lines`, index-for-index
-	| { kind: 'dialogue'; chip: string; lines: string[]; en?: string[]; speaker?: string; person?: string }
+	// `en` is the English rendering of `lines`, index-for-index.
+	// Tang / Chinese speech may add `zh` + `zhLatn` (pinyin); Yamato / Japanese
+	// speech may add `ja` + `jaLatn` (Hepburn romaji) — subtitle layers shown
+	// regardless of the reader's ko/en preference.
+	| {
+			kind: 'dialogue';
+			chip: string;
+			lines: string[];
+			en?: string[];
+			zh?: string[];
+			zhLatn?: string[];
+			ja?: string[];
+			jaLatn?: string[];
+			speaker?: string;
+			person?: string;
+	  }
 	| { kind: 'cite'; html: string; ko?: string } // "• 👑 King Mu (51) of Baekje"
 	| { kind: 'verse'; color: string; lines: string[] }
 	| { kind: 'table'; head: string[]; rows: string[][]; colors?: string[] }
@@ -35,6 +54,8 @@ export type Block =
 	  }
 	// The lesson a told story leaves behind — set apart, the way the islanders say it.
 	| { kind: 'moral'; label?: string; html: string; ko?: string }
+	// A character’s internal voice spoken from later — retrospective tense.
+	| { kind: 'monologue'; html: string; ko?: string; person?: string }
 	// A mini-flashback that interrupts an entry mid-scroll.
 	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] };
 

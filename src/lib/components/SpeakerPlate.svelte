@@ -5,6 +5,8 @@
 	import { reading } from '$lib/reading.svelte';
 	import {
 		avatarOf,
+		nameOf,
+		koreanOf,
 		isPlaceholderArt,
 		byId,
 		colorOf,
@@ -72,6 +74,10 @@
 
 	let linesKo = $derived(reading.linesKo);
 	let linesEn = $derived(reading.linesEn);
+	let linesZh = $derived(reading.linesZh);
+	let linesZhLatn = $derived(reading.linesZhLatn);
+	let linesJa = $derived(reading.linesJa);
+	let linesJaLatn = $derived(reading.linesJaLatn);
 
 	let showKo = $derived(reading.lang === 'ko' || reading.lang === 'both');
 	let showEn = $derived(reading.lang === 'en' || reading.lang === 'both');
@@ -89,14 +95,59 @@
 			.filter(Boolean)
 			.join(' ')
 	);
+	let textZh = $derived(
+		linesZh
+			.map((l) => l.trim())
+			.filter(Boolean)
+			.join(' ')
+	);
+	let textZhLatn = $derived(
+		linesZhLatn
+			.map((l) => l.trim())
+			.filter(Boolean)
+			.join(' ')
+	);
+	let textJa = $derived(
+		linesJa
+			.map((l) => l.trim())
+			.filter(Boolean)
+			.join(' ')
+	);
+	let textJaLatn = $derived(
+		linesJaLatn
+			.map((l) => l.trim())
+			.filter(Boolean)
+			.join(' ')
+	);
 
 	let hasKo = $derived(textKo.length > 0);
 	let hasEn = $derived(textEn.length > 0);
-	let empty = $derived((showKo ? !hasKo : true) && (showEn ? !hasEn : true));
+	let hasZh = $derived(textZh.length > 0);
+	let hasJa = $derived(textJa.length > 0);
+	let empty = $derived(
+		(showKo ? !hasKo : true) &&
+			(showEn ? !hasEn : true) &&
+			!hasZh &&
+			!hasJa
+	);
 
 	/** Remount dialogue text when the active utterance (or lang) changes. */
 	let utteranceKey = $derived(
-		[reading.speaker ?? '', reading.lang, textKo, '\u0001', textEn].join('\u0000')
+		[
+			reading.speaker ?? '',
+			reading.lang,
+			textKo,
+			'\u0001',
+			textEn,
+			'\u0001',
+			textZh,
+			'\u0001',
+			textZhLatn,
+			'\u0001',
+			textJa,
+			'\u0001',
+			textJaLatn
+		].join('\u0000')
 	);
 
 	let reduce = $derived(prefersReducedMotion.current);
@@ -122,14 +173,19 @@
 
 <!-- One bust, used by both the outgoing and the incoming layer. -->
 {#snippet bust(p: Person)}
-	{@const art = avatarOf(p, p.id === 'courtmaid' ? textKo || textEn : undefined)}
+	{@const art = avatarOf(
+		p,
+		p.id === 'courtmaid' ? textKo || textEn : undefined,
+		reading.year
+	)}
+	{@const who = nameOf(p, reading.year)}
 	<button
 		type="button"
 		class="portrait"
 		class:fallback={!art}
 		class:silhouette={isPlaceholderArt(art) && p.id !== 'courtmaid'}
-		onclick={() => openProfile(p.id)}
-		aria-label="Open profile for {p.name}"
+		onclick={() => openProfile(p.id, reading.year)}
+		aria-label="Open profile for {who}"
 	>
 		{#if art}
 			<img src={art} alt="" />
@@ -165,10 +221,7 @@
 
 			<!-- Incoming / current layer: flies in on speaker (or maid-face) change -->
 			{#if currentPerson}
-				{@const faceKey =
-					currentPerson.id === 'courtmaid'
-						? `${currentPerson.id}:${avatarOf(currentPerson, textKo || textEn)}`
-						: currentPerson.id}
+				{@const faceKey = `${currentPerson.id}:${avatarOf(currentPerson, textKo || textEn, reading.year)}:${nameOf(currentPerson, reading.year)}`}
 				{#key faceKey}
 					{@const incoming = currentPerson}
 					<div class="portrait-layer is-next" in:fly={portraitIn}>
@@ -180,18 +233,21 @@
 
 		<div class="box">
 			{#if currentPerson}
-				{#key currentPerson.id}
+				{@const person = currentPerson}
+				{@const who = nameOf(person, reading.year)}
+				{@const ko = koreanOf(person, reading.year)}
+				{#key `${person.id}:${who}`}
 					<button
 						type="button"
 						class="name-tab"
-						onclick={() => openProfile(currentPerson.id)}
-						aria-label="Open profile for {currentPerson.name}"
+						onclick={() => openProfile(person.id, reading.year)}
+						aria-label="Open profile for {who}"
 						in:fade={nameIn}
 						out:fade={nameOut}
 					>
-						<span class="name">{currentPerson.name}</span>
-						{#if currentPerson.korean}
-							<span class="korean">{currentPerson.korean}</span>
+						<span class="name">{who}</span>
+						{#if ko}
+							<span class="korean">{ko}</span>
 						{/if}
 					</button>
 				{/key}
@@ -211,6 +267,18 @@
 									<p class="line en" class:quiet={reading.lang === 'both' && hasKo}>
 										{textEn}
 									</p>
+								{/if}
+								{#if hasZh}
+									<p class="line zh">{textZh}</p>
+									{#if textZhLatn}
+										<p class="line zh-latn">{textZhLatn}</p>
+									{/if}
+								{/if}
+								{#if hasJa}
+									<p class="line ja">{textJa}</p>
+									{#if textJaLatn}
+										<p class="line ja-latn">{textJaLatn}</p>
+									{/if}
 								{/if}
 							{/if}
 						</div>
@@ -451,6 +519,24 @@
 		color: color-mix(in srgb, #f4efe4 72%, #8a8478);
 	}
 
+	.line.zh,
+	.line.ja {
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 0.95rem;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		color: color-mix(in srgb, var(--k) 42%, #f4efe4);
+	}
+
+	.line.zh-latn,
+	.line.ja-latn {
+		font-size: 0.78rem;
+		font-weight: 400;
+		font-style: italic;
+		letter-spacing: 0.02em;
+		color: color-mix(in srgb, #f4efe4 55%, #8a8478);
+	}
+
 	.line.ellipsis {
 		color: color-mix(in srgb, #f4efe4 55%, #8a8478);
 		letter-spacing: 0.12em;
@@ -493,19 +579,28 @@
 	   The text box owns the bottom of the screen and the bust shrinks to a
 	   marker beside the name tab: on a 6" screen a full-height portrait eats
 	   the half of the viewport the reader actually needs. Heights come from
-	   `--bust-h` (app.css), which also sets the page's reserved padding. */
+	   `--bust-h` / `--plate-box-h` (app.css), which also reserve page padding. */
 	@media (max-width: 700px) {
 		.stage {
+			/* Soft fade into the page so the plate doesn't hard-cut prose. */
+			padding-top: 1.6rem;
 			padding-right: max(0.55rem, env(safe-area-inset-right, 0px));
-			padding-bottom: max(0.55rem, env(safe-area-inset-bottom, 0px));
+			padding-bottom: max(0.45rem, env(safe-area-inset-bottom, 0px));
 			padding-left: max(0.55rem, env(safe-area-inset-left, 0px));
+			background: linear-gradient(
+				to top,
+				rgba(20, 20, 26, 0.92) 0%,
+				rgba(20, 20, 26, 0.72) 42%,
+				transparent 100%
+			);
 		}
 
 		.portrait-slot {
 			padding-right: 0;
-			margin-bottom: -0.5rem;
+			margin-bottom: -0.45rem;
 			align-self: flex-end;
-			width: min(9rem, 40vw);
+			width: min(8.5rem, 36vw);
+			flex-shrink: 0;
 		}
 
 		.portrait-layer {
@@ -517,39 +612,48 @@
 		}
 
 		.portrait img {
-			max-width: min(8.5rem, 38vw);
+			max-width: min(8rem, 34vw);
+		}
+
+		.portrait.fallback {
+			width: min(5.5rem, var(--bust-h));
+			height: min(5.5rem, var(--bust-h));
 		}
 
 		.initial {
-			font-size: 1.7rem;
+			font-size: 1.55rem;
 		}
 
 		.box {
 			margin-top: 0;
-			padding-top: 0.5rem;
+			padding-top: 0.45rem;
+			min-width: 0;
+			flex: 1 1 auto;
+			max-height: 100%;
 		}
 
 		/* the tab is also a link to the profile — give it a thumb-sized target */
 		.name-tab {
-			left: 0.6rem;
-			padding: 0.34rem 0.75rem 0.38rem;
+			left: 0.55rem;
+			min-height: 2.5rem;
+			padding: 0.38rem 0.8rem 0.4rem;
 		}
 
 		.name {
-			font-size: 0.9rem;
+			font-size: 0.88rem;
 		}
 
 		.korean {
-			font-size: 0.62rem;
+			font-size: 0.6rem;
 		}
 
-		/* Sized against the viewport rather than a fixed rem count, so a short
-		   screen (or landscape) never loses the page behind the box. */
+		/* Viewport-capped so multi-language lines scroll inside the frame
+		   instead of pushing the plate off-screen. */
 		.frame {
 			height: auto;
-			min-height: 7rem;
-			max-height: min(30dvh, 11rem);
-			padding: 1.05rem 1.05rem 1.45rem 1rem;
+			min-height: 6.25rem;
+			max-height: min(26dvh, 9.75rem);
+			padding: 1rem 1rem 1.35rem 0.95rem;
 			border-width: 2px;
 			box-shadow:
 				inset 0 0 0 2px var(--plate-ink),
@@ -564,46 +668,88 @@
 		}
 
 		.utterance {
-			gap: 0.4rem;
+			gap: 0.35rem;
 		}
 
 		.line {
-			font-size: 1.06rem;
+			font-size: 1.02rem;
 			font-weight: 500;
-			line-height: 1.6;
+			line-height: 1.55;
 			color: #faf6ee;
+			overflow-wrap: anywhere;
+			word-break: keep-all;
 		}
 
 		.line.en.quiet {
-			font-size: 0.95rem;
+			font-size: 0.9rem;
 			color: color-mix(in srgb, #faf6ee 78%, #8a8478);
 		}
 
-		.caret {
-			right: 0.75rem;
-			bottom: 0.45rem;
+		.line.zh,
+		.line.ja {
+			font-size: 0.88rem;
+		}
+
+		.line.zh-latn,
+		.line.ja-latn {
 			font-size: 0.72rem;
+		}
+
+		.caret {
+			right: 0.7rem;
+			bottom: 0.4rem;
+			font-size: 0.7rem;
 		}
 	}
 
 	@media (max-width: 480px) {
 		.portrait-slot {
-			width: min(7.75rem, 38vw);
-			margin-bottom: -0.35rem;
+			width: min(7.25rem, 34vw);
+			margin-bottom: -0.3rem;
 		}
 
 		.portrait img {
-			max-width: min(7.25rem, 34vw);
+			max-width: min(6.75rem, 32vw);
 		}
 
 		.frame {
-			min-height: 6.5rem;
-			max-height: min(32dvh, 10rem);
-			padding: 1rem 0.95rem 1.4rem 0.9rem;
+			min-height: 5.85rem;
+			max-height: min(28dvh, 9rem);
+			padding: 0.95rem 0.9rem 1.3rem 0.85rem;
 		}
 
 		.line {
-			font-size: 1.04rem;
+			font-size: 0.98rem;
+		}
+	}
+
+	@media (max-width: 900px) and (max-height: 480px) {
+		.stage {
+			padding-top: 0.6rem;
+			flex-direction: row;
+			align-items: flex-end;
+			gap: 0.4rem;
+		}
+
+		.portrait-slot {
+			width: min(5.5rem, 22vw);
+			margin-bottom: 0;
+			order: 2;
+		}
+
+		.box {
+			order: 1;
+			flex: 1;
+			padding-top: 0.35rem;
+		}
+
+		.frame {
+			min-height: 4.5rem;
+			max-height: min(40dvh, 6.5rem);
+		}
+
+		.name-tab {
+			display: none;
 		}
 	}
 </style>

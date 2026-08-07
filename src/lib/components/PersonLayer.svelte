@@ -4,6 +4,9 @@
 		byId,
 		ageAt,
 		avatarOf,
+		nameOf,
+		titleOf,
+		koreanOf,
 		isPlaceholderArt,
 		KINGDOMS,
 		colorOf,
@@ -12,6 +15,8 @@
 	} from '$lib/people';
 	import { BOND_LABEL } from '$lib/relations';
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
+	import { reading } from '$lib/reading.svelte';
+	import { resolve } from '$app/paths';
 
 	// hover card
 	let hovered = $state<Person | null>(null);
@@ -69,7 +74,7 @@
 			const p = byId.get(el.dataset.person ?? '');
 			if (!p) return;
 			hovered = null;
-			openProfile(p);
+			openProfile(p, yearOf(el) ?? reading.year);
 		};
 
 		const key = (e: KeyboardEvent) => {
@@ -104,7 +109,10 @@
 <!-- ————— floating preview ————— -->
 {#if hovered}
 	{@const k = { ...KINGDOMS[hovered.kingdom], color: colorOf(hovered) }}
-	{@const art = avatarOf(hovered)}
+	{@const art = avatarOf(hovered, undefined, hoverYear)}
+	{@const who = nameOf(hovered, hoverYear)}
+	{@const role = titleOf(hovered, hoverYear)}
+	{@const ko = koreanOf(hovered, hoverYear)}
 	<div
 		class="card"
 		class:below
@@ -123,9 +131,9 @@
 				{/if}
 			</span>
 			<div class="card-id">
-				<span class="card-name">{hovered.name}</span>
+				<span class="card-name">{who}</span>
 				<span class="card-sub">
-					{#if hovered.korean}<span class="ko">{hovered.korean}</span>{/if}
+					{#if ko}<span class="ko">{ko}</span>{/if}
 					<span class="k-dot"></span>
 					{#if k.flag}<img class="card-flag" src={k.flag} alt="" />{/if}
 					{k.label}
@@ -135,7 +143,7 @@
 				<span class="card-age">{ageAt(hovered, hoverYear)}</span>
 			{/if}
 		</div>
-		{#if hovered.title}<p class="card-title">{hovered.title}</p>{/if}
+		{#if role}<p class="card-title">{role}</p>{/if}
 		<p class="card-line">{hovered.tagline}</p>
 		<p class="card-hint">
 			{#if hovered.entity === 'place'}
@@ -147,27 +155,36 @@
 	</div>
 {/if}
 
-<!-- ————— notion-style side peek ————— -->
+<!-- ————— floating profile peek ————— -->
 {#if peeked}
 	{@const k = { ...KINGDOMS[peeked.kingdom], color: colorOf(peeked) }}
 	{@const isBond = peeked.entity === 'relationship'}
 	{@const isPlace = peeked.entity === 'place'}
-	{@const art = avatarOf(peeked)}
+	{@const stageYear = profiles.year}
+	{@const art = avatarOf(peeked, undefined, stageYear)}
+	{@const who = nameOf(peeked, stageYear)}
+	{@const role = titleOf(peeked, stageYear)}
+	{@const ko = koreanOf(peeked, stageYear)}
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 	<div class="scrim" onclick={() => closeProfile()}></div>
-	<aside class="peek" style:--k={k.color} aria-label="{peeked.name} profile">
+	<aside class="peek" style:--k={k.color} aria-label="{who} profile">
 		<header class="peek-head">
 			<button class="close" onclick={() => closeProfile()} aria-label="Close">✕</button>
 			{#if peeked.main}<span class="lead">Lead</span>{/if}
 			{#if peeked.entity === 'concept'}<span class="lead concept">Institution</span>{/if}
 			{#if isPlace}<span class="lead place">Place</span>{/if}
 			{#if isBond}<span class="lead bond">{peeked.bond ? BOND_LABEL[peeked.bond] : 'Bond'}</span>{/if}
+			<a
+				class="wiki-link"
+				href={resolve(`/wiki?id=${encodeURIComponent(peeked.id)}`)}
+				title="Open in encyclopedia">Wiki</a
+			>
 		</header>
 
 		<div class="peek-body">
 			{#if peeked.photo}
 				<figure class="peek-photo">
-					<img src={peeked.photo} alt={peeked.name} />
+					<img src={peeked.photo} alt={who} />
 					{#if peeked.photoCredit}<figcaption>{peeked.photoCredit}</figcaption>{/if}
 				</figure>
 			{/if}
@@ -184,10 +201,10 @@
 					{#if !art && !peeked.photo}
 						<span class="peek-avatar" aria-hidden="true">{hangulInitial(peeked)}</span>
 					{/if}
-					<h2 class="peek-name">{peeked.name}</h2>
+					<h2 class="peek-name">{who}</h2>
 					<p class="peek-native">
 						{#if peeked.hanja}<span class="hanja">{peeked.hanja}</span>{/if}
-						{#if peeked.korean}<span class="ko">{peeked.korean}</span>{/if}
+						{#if ko}<span class="ko">{ko}</span>{/if}
 					</p>
 					{#if peeked.quote}
 						<figure class="defining">
@@ -198,10 +215,10 @@
 			</div>
 
 			<dl class="props">
-				{#if peeked.title}
+				{#if role}
 					<div>
 						<dt>{isBond ? 'Bond' : isPlace ? 'Type' : 'Role'}</dt>
-						<dd>{peeked.title}</dd>
+						<dd>{role}</dd>
 					</div>
 				{/if}
 				{#if isBond && peeked.between}
@@ -212,8 +229,11 @@
 								{@const other = byId.get(id)}
 								{#if i > 0}<span class="amp">·</span>{/if}
 								{#if other}
-									<button type="button" class="linkish" onclick={() => openProfile(other)}
-										>{other.name}</button
+									<button
+										type="button"
+										class="linkish"
+										onclick={() => openProfile(other, stageYear)}
+										>{nameOf(other, stageYear)}</button
 									>
 								{/if}
 							{/each}
@@ -251,6 +271,14 @@
 			</dl>
 
 			<p class="tagline">{peeked.tagline}</p>
+
+			{#if peeked.sobriquets?.length}
+				<ul class="sobriquets">
+					{#each peeked.sobriquets as s (s)}
+						<li>{s}</li>
+					{/each}
+				</ul>
+			{/if}
 
 			{#if peeked.nature}
 				<h3>Nature</h3>
@@ -411,7 +439,7 @@
 		color: var(--fg-faint);
 	}
 
-	/* ————— side peek ————— */
+	/* ————— floating profile peek ————— */
 	.scrim {
 		position: fixed;
 		inset: 0;
@@ -429,29 +457,39 @@
 
 	.peek {
 		position: fixed;
-		inset: 0 0 0 auto;
+		top: 0.85rem;
+		right: 0.85rem;
+		bottom: 0.85rem;
 		z-index: 115;
-		width: min(30rem, 92vw);
+		width: min(30rem, calc(100vw - 1.7rem));
 		display: flex;
 		flex-direction: column;
+		overflow: hidden;
 		background: var(--panel);
-		border-left: 1px solid rgba(255, 255, 255, 0.1);
-		box-shadow: -30px 0 80px rgba(0, 0, 0, 0.55);
+		border: 1px solid rgba(255, 255, 255, 0.1);
+		border-top: 2px solid var(--k);
+		border-radius: 16px;
+		box-shadow:
+			0 28px 70px rgba(0, 0, 0, 0.55),
+			0 8px 24px rgba(0, 0, 0, 0.35);
 		animation: slide 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}
 
 	@keyframes slide {
 		from {
-			transform: translateX(100%);
+			opacity: 0.85;
+			transform: translateX(calc(100% + 1rem));
 		}
 	}
 
 	.peek-head {
 		display: flex;
 		align-items: center;
+		flex-shrink: 0;
 		gap: 0.6rem;
 		padding: 0.8rem 1rem;
 		border-bottom: 1px solid var(--hairline);
+		background: var(--panel);
 	}
 
 	.close {
@@ -548,8 +586,29 @@
 		padding: 0.15rem 0.55rem;
 	}
 
+	.wiki-link {
+		margin-left: auto;
+		font-size: 0.62rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: var(--fg-faint);
+		padding: 0.15rem 0.45rem;
+		border-radius: 6px;
+		transition:
+			color 0.2s var(--ease),
+			background 0.2s var(--ease);
+	}
+
+	.wiki-link:hover {
+		color: var(--gold);
+		background: rgba(216, 178, 106, 0.08);
+	}
+
 	.peek-body {
 		flex: 1;
+		min-height: 0;
+		overflow-x: hidden;
 		overflow-y: auto;
 		padding: 1.6rem 1.8rem 4rem;
 	}
@@ -560,7 +619,7 @@
 		margin: 0 0 1.3rem;
 	}
 
-	/* with art the hero bleeds to the pane edges and reserves the bust's height */
+	/* bleed to body edges (shell overflow clips to rounded frame) */
 	.hero.has-art {
 		margin: -1.6rem -1.8rem 1.4rem;
 		padding: 1.6rem 1.8rem 1.3rem;
@@ -765,6 +824,24 @@
 		color: color-mix(in srgb, var(--k) 45%, #fff);
 	}
 
+	.sobriquets {
+		list-style: none;
+		margin: -0.8rem 0 1.4rem;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+	}
+
+	.sobriquets li {
+		padding: 0.15rem 0.5rem;
+		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
+		border-radius: 999px;
+		font-size: 0.72rem;
+		font-style: italic;
+		color: var(--fg-dim);
+	}
+
 	h3 {
 		margin: 1.5rem 0 0.6rem;
 		font-size: 0.68rem;
@@ -852,14 +929,43 @@
 		white-space: nowrap;
 	}
 
-	/* narrow panel: the bust gives ground so the name and quote keep their width */
+	/* narrow panel: floating inset + bust gives ground for name/quote */
 	@media (max-width: 560px) {
+		.card {
+			width: min(19rem, calc(100vw - 1.5rem));
+		}
+
+		.peek {
+			top: max(0.35rem, env(safe-area-inset-top, 0px));
+			right: max(0.35rem, env(safe-area-inset-right, 0px));
+			bottom: max(0.35rem, env(safe-area-inset-bottom, 0px));
+			left: max(0.35rem, env(safe-area-inset-left, 0px));
+			width: auto;
+			border-radius: 14px;
+		}
+
+		.close {
+			width: 2.75rem;
+			height: 2.75rem;
+			font-size: 0.95rem;
+		}
+
+		.peek-body {
+			padding: 1.25rem 1.2rem max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
+		}
+
 		.hero.has-art {
-			min-height: 14.5rem;
+			min-height: 12.5rem;
+			margin: -1.25rem -1.2rem 1.15rem;
+			padding: 1.25rem 1.2rem 1.1rem;
 		}
 
 		.hero-art {
 			width: 58%;
+		}
+
+		.props > div {
+			grid-template-columns: 6.2rem 1fr;
 		}
 
 		.defining blockquote {

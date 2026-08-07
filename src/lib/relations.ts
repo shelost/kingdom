@@ -75,6 +75,7 @@ export const CHART_NODES: ChartNode[] = [
 	{ id: 'yangmanchun', x: 1560, y: 300, rank: 2, era: 'present', gender: 'm' },
 	{ id: 'namseng', x: 1280, y: 480, rank: 1, era: 'present', gender: 'm' },
 	{ id: 'namgun', x: 1480, y: 480, rank: 1, era: 'present', gender: 'm' },
+	{ id: 'namsan', x: 1380, y: 560, rank: 1, era: 'present', gender: 'm' },
 
 	// ——— PRESENT · Tang ———
 	{ id: 'taizong', x: 1780, y: 200, rank: 2, era: 'present', gender: 'm' },
@@ -87,6 +88,7 @@ export const CHART_NODES: ChartNode[] = [
 	{ id: 'onjo', x: 300, y: 1100, rank: 2, era: 'past', gender: 'm' },
 	{ id: 'biryu', x: 460, y: 1100, rank: 1, era: 'past', gender: 'm' },
 	{ id: 'haemosu', x: 720, y: 1100, rank: 2, era: 'past', gender: 'm' },
+	{ id: 'habek', x: 560, y: 1100, rank: 1, era: 'past', gender: 'm' },
 	{ id: 'yuhwa', x: 900, y: 1100, rank: 2, era: 'past', gender: 'f' },
 	{ id: 'jumong', x: 810, y: 1280, rank: 3, era: 'past', gender: 'm' },
 	{ id: 'ladyye', x: 640, y: 1280, rank: 1, era: 'past', gender: 'f' },
@@ -98,11 +100,14 @@ export const CHART_NODES: ChartNode[] = [
 	{ id: 'heohwangok', x: 1580, y: 1100, rank: 2, era: 'past', gender: 'f' },
 
 	// ——— MYTH ———
+	{ id: 'hwanin', x: 100, y: 1580, rank: 2, era: 'myth', gender: 'm' },
 	{ id: 'hwanung', x: 200, y: 1720, rank: 2, era: 'myth', gender: 'm' },
 	{ id: 'ungnyeo', x: 400, y: 1720, rank: 2, era: 'myth', gender: 'f' },
 	{ id: 'dangun', x: 300, y: 1900, rank: 2, era: 'myth', gender: 'm' },
 	{ id: 'ibiga', x: 760, y: 1720, rank: 2, era: 'myth', gender: 'm' },
 	{ id: 'jeonggyeon', x: 960, y: 1720, rank: 2, era: 'myth', gender: 'f' },
+	{ id: 'yumla', x: 1180, y: 1720, rank: 2, era: 'myth', gender: 'm' },
+	{ id: 'kangrim', x: 1180, y: 1900, rank: 1, era: 'myth', gender: 'm' },
 	{ id: 'jacheongbi', x: 1380, y: 1720, rank: 2, era: 'myth', gender: 'f' },
 	{ id: 'mundoryeong', x: 1580, y: 1720, rank: 1, era: 'myth', gender: 'm' },
 	{ id: 'sanbangdeok', x: 1480, y: 1900, rank: 1, era: 'myth', gender: 'f' }
@@ -221,7 +226,7 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['haemosu', 'yuhwa'],
 		title: 'Heaven stops the chariot',
 		tagline: 'She bathed naked in the Ubal; he came down the same afternoon.',
-		arc: 'The Son of Heaven crosses the sky every day and stops once. Yuhwa does not hide. He builds a copper room on the bank because waiting has become unbearable. Habek casts her out; Geumwa takes her in; Jumong is born of that heat.',
+		arc: 'The sun god crosses the sky every day and stops once. Yuhwa does not hide. He builds a copper room on the bank because waiting has become unbearable. Habek casts her out; Geumwa takes her in; Jumong is born of that heat.',
 		events: [{ label: 'The Ubal; the copper room; the egg.' }],
 		aliases: ['Haemosu & Yuhwa', 'Yuhwa & Haemosu']
 	},
@@ -452,10 +457,39 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'other',
 		bond: 'kin',
 		between: ['hwanung', 'dangun'],
-		title: 'Heaven and the first Joseon',
-		tagline: 'Son of a god and a bear-woman; first king of the first kingdom.',
+		title: 'Son of Heaven and Grandson of Heaven',
+		tagline: 'The mandate descends one generation, then stays to found a capital.',
+		arc: 'Hwanung brings heaven’s seals to earth; Dangun keeps the court at Asadal. Lord of Heaven, Son of Heaven, Grandson of Heaven — one line, three offices.',
 		events: [{ label: 'Asadal founded; fifteen hundred years.' }],
 		aliases: ['Hwanung & Dangun']
+	},
+	{
+		id: 'rel-yushin-munmu',
+		name: 'Yushin & Bupmin',
+		korean: '유신 · 법민',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'mentor',
+		between: ['yushin', 'munmu'],
+		title: 'Marshal and flower youth',
+		tagline: 'Uncle by marriage; head of the Hwarang by oath.',
+		arc: 'After Daeya, Yushin trains Bupmin among the Hwarang — horse, bow, the Five Principles — until “a king for all” starts to mean loyalty to a country, not only a childhood sentence. The boy who becomes Munmu still salutes the marshal who taught him the yard.',
+		events: [{ year: 643, label: 'Bupmin trains under Marshal Yushin.' }],
+		aliases: ['Yushin & Bupmin', 'Yushin & Munmu', 'Bupmin & Yushin']
+	},
+	{
+		id: 'rel-yumla-kangrim',
+		name: 'Yumla & Kangrim',
+		korean: '염라 · 강림',
+		entity: 'relationship',
+		kingdom: 'underworld',
+		bond: 'sworn',
+		between: ['yumla', 'kangrim'],
+		title: 'King and escort',
+		tagline: 'Heaven sent an arrest; His Majesty kept a messenger.',
+		arc: 'Kangrim was meant to bring King Yumla up. He stayed. The underworld kingdom runs on that loyalty the way Silla runs on the Hwarang — borders of the dead, minutes kept, one question at the threshold.',
+		events: [{ label: 'Kangrim stays; the crow scrambles the ledger.' }],
+		aliases: ['Yumla & Kangrim', 'Kangrim & Yumla']
 	},
 	{
 		id: 'rel-sunduk-bidam',

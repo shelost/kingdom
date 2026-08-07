@@ -1,0 +1,766 @@
+{
+  "samhan|0|52|0": {
+    "zh": "女主……東夷又在胡鬧了，是不是？武！備袞龍袍。",
+    "zhLatn": "Nǚzhǔ… Dōngyí yòu zài húnào le, shì bu shì? Wǔ! Bèi gǔnlóngpáo."
+  },
+  "samhan|0|58|0": {
+    "ja": "初めは朕の叔母上、今度は新羅まで……？流行か。",
+    "jaLatn": "Hajime wa chin no oba-ue, kondo wa Shiragi made…? Ryūkō ka."
+  },
+  "epilogue|0|0|0": {
+    "zh": "蓋蘇文……？",
+    "zhLatn": "Gài Sūwén…?"
+  },
+  "seventh-invasion|0|3|0": {
+    "zh": "陛下。臣死之後，再無人敢對陛下言「不可」矣。",
+    "zhLatn": "Bìxià. Chén sǐ zhī hòu, zài wú rén gǎn duì Bìxià yán “bùkě” yǐ."
+  },
+  "seventh-invasion|0|4|0": {
+    "zh": "不然朕何苦容忍你二十年。",
+    "zhLatn": "Bùrán zhèn hékǔ róngrěn nǐ èrshí nián."
+  },
+  "seventh-invasion|0|5|0": {
+    "zh": "以銅為鏡，可以正衣冠；",
+    "zhLatn": "Yǐ tóng wéi jìng, kěyǐ zhèng yīguān;"
+  },
+  "seventh-invasion|0|5|1": {
+    "zh": "以古為鏡，可以知興替；",
+    "zhLatn": "Yǐ gǔ wéi jìng, kěyǐ zhī xīngtì;"
+  },
+  "seventh-invasion|0|5|2": {
+    "zh": "以人為鏡，可以明得失。",
+    "zhLatn": "Yǐ rén wéi jìng, kěyǐ míng déshī."
+  },
+  "seventh-invasion|0|5|3": {
+    "zh": "……朕今日失一鏡矣。",
+    "zhLatn": "…Zhèn jīnrì shī yī jìng yǐ."
+  },
+  "seventh-invasion|0|6|0": {
+    "zh": "大唐尚屬幼朝。",
+    "zhLatn": "Dà Táng shàng shǔ yòu cháo."
+  },
+  "seventh-invasion|0|6|1": {
+    "zh": "不可再蹈隋之覆轍……！",
+    "zhLatn": "Bùkě zài dǎo Suí zhī fùzhé…!"
+  },
+  "seventh-invasion|0|6|2": {
+    "zh": "若欲成西土之夢。",
+    "zhLatn": "Ruò yù chéng xītǔ zhī mèng."
+  },
+  "seventh-invasion|0|7|0": {
+    "zh": "西土之夢？",
+    "zhLatn": "Xītǔ zhī mèng?"
+  },
+  "seventh-invasion|0|8|0": {
+    "zh": "中原王朝之偉大復興。",
+    "zhLatn": "Zhōngyuán wángcháo zhī wěidà fùxīng."
+  },
+  "seventh-invasion|0|8|1": {
+    "zh": "漢乃天下最盛之文明。",
+    "zhLatn": "Hàn nǎi tiānxià zuì shèng zhī wénmíng."
+  },
+  "seventh-invasion|0|8|2": {
+    "zh": "而後——",
+    "zhLatn": "Ér hòu——"
+  },
+  "seventh-invasion|0|8|3": {
+    "zh": "四百年。四百年為蠻夷所蹂躪！！",
+    "zhLatn": "Sìbǎi nián. Sìbǎi nián wéi mányí suǒ róulìn!!"
+  },
+  "seventh-invasion|0|8|4": {
+    "zh": "隋一統之，卻因那瘋子煬帝，不到三十年便亡。",
+    "zhLatn": "Suí yītǒng zhī, què yīn nà fēngzi Yángdì, bù dào sānshí nián biàn wáng."
+  },
+  "seventh-invasion|0|8|5": {
+    "zh": "而朕——秦王是也！",
+    "zhLatn": "Ér zhèn——Qín Wáng shì yě!"
+  },
+  "seventh-invasion|0|10|0": {
+    "zh": "天竺那邊——據說玄奘法師仍在西行！",
+    "zhLatn": "Tiānzhú nàbiān——jùshuō Xuánzàng fǎshī réng zài xīxíng!"
+  },
+  "seventh-invasion|0|10|1": {
+    "zh": "不過他寄回的奇談怪事——什麼飛猴之類，",
+    "zhLatn": "Bùguò tā jì huí de qítán guàishì——shénme fēihóu zhī lèi,"
+  },
+  "seventh-invasion|0|10|2": {
+    "zh": "西域則有新帝國……伊斯蘭？一種新的教法。",
+    "zhLatn": "Xīyù zé yǒu xīn dìguó… Yīsīlán? Yī zhǒng xīn de jiàofǎ."
+  },
+  "seventh-invasion|0|10|3": {
+    "zh": "波斯與大秦皆聞已亡，可見其勢不可輕。",
+    "zhLatn": "Bōsī yǔ Dàqín jiē wén yǐ wáng, kějiàn qí shì bùkě qīng."
+  },
+  "seventh-invasion|0|10|4": {
+    "zh": "海東則——高麗王為其臣所弒……",
+    "zhLatn": "Hǎidōng zé——Gāolí wáng wéi qí chén suǒ shì…"
+  },
+  "seventh-invasion|0|11|0": {
+    "zh": "且慢。",
+    "zhLatn": "Qiě màn."
+  },
+  "seventh-invasion|0|11|1": {
+    "zh": "蓋蘇文……？",
+    "zhLatn": "Gài Sūwén…?"
+  },
+  "seventh-invasion|0|12|0": {
+    "zh": "高麗王是朕所重之友。",
+    "zhLatn": "Gāolí wáng shì zhèn suǒ zhòng zhī yǒu."
+  },
+  "seventh-invasion|0|12|1": {
+    "zh": "其名……啊……",
+    "zhLatn": "Qí míng… ā…"
+  },
+  "seventh-invasion|0|12|2": {
+    "zh": "……榮留！榮留王！",
+    "zhLatn": "…Róngliú! Róngliú Wáng!"
+  },
+  "seventh-invasion|0|14|0": {
+    "zh": "已征六次——還要再去？",
+    "zhLatn": "Yǐ zhēng liù cì——hái yào zài qù?"
+  },
+  "seventh-invasion|0|15|0": {
+    "zh": "因為朕尚未親征。",
+    "zhLatn": "Yīnwèi zhèn shàngwèi qīnzhēng."
+  },
+  "seventh-invasion|0|15|1": {
+    "zh": "人生非理論，乃實踐。",
+    "zhLatn": "Rénshēng fēi lǐlùn, nǎi shíjiàn."
+  },
+  "seventh-invasion|2|3|0": {
+    "zh": "歷史？寫歷史的是朕。",
+    "zhLatn": "Lìshǐ? Xiě lìshǐ de shì zhèn."
+  },
+  "seventh-invasion|2|3|1": {
+    "zh": "你將湮滅，無名蠻夷，",
+    "zhLatn": "Nǐ jiāng yānmiè, wúmíng mányí,"
+  },
+  "seventh-invasion|2|3|2": {
+    "zh": "而朕將永為史上最偉大之皇帝。",
+    "zhLatn": "Ér zhèn jiāng yǒng wéi shǐshàng zuì wěidà zhī huángdì."
+  },
+  "seventh-invasion|2|3|3": {
+    "zh": "照華、夷——",
+    "zhLatn": "Zhào Huá、Yí——"
+  },
+  "seventh-invasion|2|3|4": {
+    "zh": "此即朕之力。",
+    "zhLatn": "Cǐ jí zhèn zhī lì."
+  },
+  "seventh-invasion|3|2|0": {
+    "zh": "你才具出眾。",
+    "zhLatn": "Nǐ cáijù chūzhòng."
+  },
+  "seventh-invasion|3|2|1": {
+    "zh": "才須遇時，方能發光。",
+    "zhLatn": "Cái xū yù shí, fāng néng fāguāng."
+  },
+  "seventh-invasion|3|2|2": {
+    "zh": "今天子欲擊遼東，求猛將。",
+    "zhLatn": "Jīn Tiānzǐ yù jī Liáodōng, qiú měngjiàng."
+  },
+  "seventh-invasion|3|2|3": {
+    "zh": "此機不常有。",
+    "zhLatn": "Cǐ jī bù cháng yǒu."
+  },
+  "seventh-invasion|3|2|4": {
+    "zh": "何不立功揚名？",
+    "zhLatn": "Hébù lìgōng yángmíng?"
+  },
+  "seventh-invasion|3|2|5": {
+    "zh": "待你富貴歸來再遷葬……亦不晚。",
+    "zhLatn": "Dài nǐ fùguì guīlái zài qiānzàng… yì bù wǎn."
+  },
+  "seventh-invasion|3|6|0": {
+    "zh": "……列祖列宗。再稍待片刻。",
+    "zhLatn": "…Lièzǔ lièzōng. Zài shāo dài piànkè."
+  },
+  "seventh-invasion|3|6|1": {
+    "zh": "直至我持此戟歸來。",
+    "zhLatn": "Zhízhì wǒ chí cǐ jǐ guīlái."
+  },
+  "seventh-invasion|3|9|0": {
+    "zh": "朕即是<b>先鋒</b>……！",
+    "zhLatn": "Zhèn jí shì xiānfēng…!"
+  },
+  "seventh-invasion|3|12|0": {
+    "zh": "讓路。",
+    "zhLatn": "Ràng lù."
+  },
+  "seventh-invasion|3|12|1": {
+    "zh": "若不讓——戟自會讓。",
+    "zhLatn": "Ruò bù ràng——jǐ zì huì ràng."
+  },
+  "seventh-invasion|3|14|0": {
+    "zh": "那白甲是何人。",
+    "zhLatn": "Nà báijiǎ shì hérén."
+  },
+  "seventh-invasion|3|14|1": {
+    "zh": "矛尖那漢子。",
+    "zhLatn": "Máojiān nà hànzi."
+  },
+  "seventh-invasion|3|15|0": {
+    "zh": "薛仁貴，陛下。",
+    "zhLatn": "Xuē Rénguì, Bìxià."
+  },
+  "seventh-invasion|3|15|1": {
+    "zh": "一介……曾為農夫之兵。",
+    "zhLatn": "Yī jiè… céng wéi nóngfū zhī bīng."
+  },
+  "seventh-invasion|3|17|0": {
+    "zh": "朕舊將皆老矣。",
+    "zhLatn": "Zhèn jiùjiàng jiē lǎo yǐ."
+  },
+  "seventh-invasion|3|17|1": {
+    "zh": "欲擇猛將托邊事——無有過於卿者。",
+    "zhLatn": "Yù zé měngjiàng tuō biānshì——wú yǒu guòyú qīng zhě."
+  },
+  "seventh-invasion|3|17|2": {
+    "zh": "朕得遼東之喜，不及得卿。",
+    "zhLatn": "Zhèn dé Liáodōng zhī xǐ, bùjí dé qīng."
+  },
+  "seventh-invasion|3|18|0": {
+    "zh": "農夫……安敢。",
+    "zhLatn": "Nóngfū… ān gǎn."
+  },
+  "seventh-invasion|3|18|1": {
+    "zh": "此戟不過略開陛下之路罷了。",
+    "zhLatn": "Cǐ jǐ bùguò lüè kāi Bìxià zhī lù bàle."
+  },
+  "seventh-invasion|3|21|0": {
+    "zh": "原來是淵蓋蘇文之子。",
+    "zhLatn": "Yuánlái shì Yuān Gàisūwén zhī zǐ."
+  },
+  "seventh-invasion|3|21|1": {
+    "zh": "爾父殺君。朕殺兄弟。",
+    "zhLatn": "Ěr fù shā jūn. Zhèn shā xiōngdì."
+  },
+  "seventh-invasion|3|21|2": {
+    "zh": "如此，朕與他倒有相通之處。",
+    "zhLatn": "Rúcǐ, zhèn yǔ tā dào yǒu xiāngtōng zhī chù."
+  },
+  "seventh-invasion|3|22|0": {
+    "zh": "朕有一議。",
+    "zhLatn": "Zhèn yǒu yī yì."
+  },
+  "seventh-invasion|3|22|1": {
+    "zh": "跪稱大唐臣子，朕賜爾二人官爵。",
+    "zhLatn": "Guì chēng Dà Táng chénzǐ, zhèn cì ěr èr rén guānjué."
+  },
+  "seventh-invasion|3|22|2": {
+    "zh": "長安宅第、絲綢、名號。高麗永不能予者。",
+    "zhLatn": "Cháng'ān zháidì、sīchóu、mínghào. Gāolí yǒng bùnéng yǔ zhě."
+  },
+  "seventh-invasion|3|26|0": {
+    "zh": "……你是兄長？",
+    "zhLatn": "…Nǐ shì xiōngzhǎng?"
+  },
+  "seventh-invasion|3|34|0": {
+    "zh": "……戟。",
+    "zhLatn": "…Jǐ."
+  },
+  "seventh-invasion|3|34|1": {
+    "zh": "戟在何處。",
+    "zhLatn": "Jǐ zài héchù."
+  },
+  "seventh-invasion|3|39|0": {
+    "zh": "……陛下駕到之前。",
+    "zhLatn": "…Bìxià jiàdào zhī qián."
+  },
+  "seventh-invasion|3|39|1": {
+    "zh": "我得出去。",
+    "zhLatn": "Wǒ děi chūqù."
+  },
+  "seventh-invasion|3|42|0": {
+    "zh": "……又是那身白衣。",
+    "zhLatn": "…Yòu shì nà shēn báiyī."
+  },
+  "seventh-invasion|3|42|1": {
+    "zh": "竟比朕先到。",
+    "zhLatn": "Jìng bǐ zhèn xiān dào."
+  },
+  "seventh-invasion|3|43|0": {
+    "zh": "不敢讓陛下久候。",
+    "zhLatn": "Bù gǎn ràng Bìxià jiǔ hòu."
+  },
+  "seventh-invasion|3|43|1": {
+    "zh": "那些鎖鏈……太無禮了。",
+    "zhLatn": "Nàxiē suǒliàn… tài wúlǐ le."
+  },
+  "seventh-invasion|6|16|0": {
+    "zh": "若魏徵在，朕或不至於此……",
+    "zhLatn": "Ruò Wèi Zhēng zài, zhèn huò bùzhìyúcǐ…"
+  },
+  "seventh-invasion|6|16|1": {
+    "zh": "朕以天下之兵，何以見辱於蕞爾蠻邦？",
+    "zhLatn": "Zhèn yǐ tiānxià zhī bīng, héyǐ jiànrǔ yú zuì'ěr mánbāng?"
+  },
+  "chunchu-era|2|6|0": {
+    "ja": "百済は我らが盟友。",
+    "jaLatn": "Kudara wa warera ga meiyū."
+  },
+  "chunchu-era|2|6|1": {
+    "ja": "恐れ多いが——新羅との和睦は拒む。",
+    "jaLatn": "Osore ōi ga——Shiragi to no waboku wa kobamu."
+  },
+  "chunchu-era|2|9|0": {
+    "ja": "そなた……我が言葉を見事に操るな。",
+    "jaLatn": "Sonata… waga kotoba o migoto ni ayatsuru na."
+  },
+  "chunchu-era|2|12|0": {
+    "ja": "春秋よ……本気で周り中へ物乞いに行くつもりか？",
+    "jaLatn": "Shunjū yo… honki de mawari-jū e monogoi ni iku tsumori ka?"
+  },
+  "chunchu-era|2|12|1": {
+    "ja": "新羅は往時ほどではないが、百済と高麗を自ら討つ力はある。",
+    "jaLatn": "Shiragi wa ōji hodo de wa nai ga, Kudara to Kōrai o mizukara utsu chikara wa aru."
+  },
+  "chunchu-era|5|3|0": {
+    "zh": "名叫<春秋>……？那你弟弟可叫<戰國>？",
+    "zhLatn": "Míng jiào Chūnqiū…? Nà nǐ dìdi kě jiào Zhànguó?"
+  },
+  "chunchu-era|5|7|0": {
+    "zh": "果然——咱們有相合之處。",
+    "zhLatn": "Guǒrán——zánmen yǒu xiānghé zhī chù."
+  },
+  "chunchu-era|5|9|0": {
+    "zh": "李世民。",
+    "zhLatn": "Lǐ Shìmín."
+  },
+  "chunchu-era|5|11|0": {
+    "zh": "你不是問了朕的名字嗎。",
+    "zhLatn": "Nǐ búshì wèn le zhèn de míngzi ma."
+  },
+  "chunchu-era|5|11|1": {
+    "zh": "那就是。",
+    "zhLatn": "Nà jiùshì."
+  },
+  "chunchu-era|5|11|2": {
+    "zh": "李世民。",
+    "zhLatn": "Lǐ Shìmín."
+  },
+  "chunchu-era|5|16|0": {
+    "zh": "春秋。如你這般的人老死邊陲，是浪費。",
+    "zhLatn": "Chūnqiū. Rú nǐ zhèbān de rén lǎosǐ biānchuí, shì làngfèi."
+  },
+  "chunchu-era|5|16|1": {
+    "zh": "來入朕宿衛。",
+    "zhLatn": "Lái rù zhèn sùwèi."
+  },
+  "chunchu-era|5|16|2": {
+    "zh": "長安宅第、官爵——兒子也一塊帶來。",
+    "zhLatn": "Cháng'ān zháidì、guānjué——érzi yě yīkuài dàilái."
+  },
+  "chunchu-era|5|18|0": {
+    "zh": "「榮幸之至」即是「不」。",
+    "zhLatn": "“Róngxìng zhī zhì” jí shì “bù”."
+  },
+  "chunchu-era|5|20|0": {
+    "zh": "朕識人。所以朕還活着。",
+    "zhLatn": "Zhèn shí rén. Suǒyǐ zhèn hái huózhe."
+  },
+  "chunchu-era|5|20|1": {
+    "zh": "也罷。兒子留下。那一樁可別說「不」。",
+    "zhLatn": "Yěbà. Érzi liúxià. Nà yī zhuāng kě bié shuō “bù”."
+  },
+  "chunchu-era|5|24|0": {
+    "zh": "若不然，便不再有用。",
+    "zhLatn": "Ruò bùrán, biàn bù zài yǒuyòng."
+  },
+  "chunchu-era|5|24|1": {
+    "zh": "有用者活得久。這不是殘忍，是治理。",
+    "zhLatn": "Yǒuyòng zhě huó de jiǔ. Zhè búshì cánrěn, shì zhìlǐ."
+  },
+  "chunchu-era|5|26|0": {
+    "zh": "那就別再把朝政嫁給滿屋的叔父。",
+    "zhLatn": "Nà jiù bié zài bǎ cháozhèng jià gěi mǎn wū de shūfù."
+  },
+  "chunchu-era|5|26|1": {
+    "zh": "王座不是筵席。是帶座位的刀刃。",
+    "zhLatn": "Wángzuò búshì yánxí. Shì dài zuòwèi de dāorèn."
+  },
+  "chunchu-era|5|26|2": {
+    "zh": "（笑，親昵而傲慢）",
+    "zhLatn": "(Xiào, qīnnì ér àomàn)"
+  },
+  "chunchu-era|5|26|3": {
+    "zh": "你這套蠻夷客氣，真是糟蹋了，春秋。",
+    "zhLatn": "Nǐ zhè tào mányí kèqi, zhēnshi zāotà le, Chūnqiū."
+  },
+  "chunchu-era|5|29|0": {
+    "zh": "父皇再把你留在那殿裡，你就要變成紀念碑了。",
+    "zhLatn": "Fùhuáng zài bǎ nǐ liú zài nà diàn lǐ, nǐ jiù yào biànchéng jìniànbēi le."
+  },
+  "chunchu-era|5|29|1": {
+    "zh": "擊毬。朕有唐杖尚未見過新羅揮法——它們快要受辱了，或者是你。",
+    "zhLatn": "Jīqiú. Zhèn yǒu Táng zhàng shàngwèi jiànguò Xīnluó huīfǎ——tāmen kuàiyào shòurǔ le, huòzhě shì nǐ."
+  },
+  "chunchu-era|5|31|0": {
+    "zh": "那就別倒下。",
+    "zhLatn": "Nà jiù bié dǎoxià."
+  },
+  "chunchu-era|5|31|1": {
+    "zh": "聽說你擅於在不便之時不死。",
+    "zhLatn": "Tīngshuō nǐ shànyú zài bùbiàn zhī shí bù sǐ."
+  },
+  "chunchu-era|5|33|0": {
+    "zh": "那杖……是從使團箱子裡拆出來的。",
+    "zhLatn": "Nà zhàng… shì cóng shǐtuán xiāngzi lǐ chāi chūlái de."
+  },
+  "chunchu-era|5|33|1": {
+    "zh": "宮裡有更好的。南方竹，三蒸。",
+    "zhLatn": "Gōng lǐ yǒu gèng hǎo de. Nánfāng zhú, sān zhēng."
+  },
+  "chunchu-era|5|35|0": {
+    "zh": "……公平。",
+    "zhLatn": "…Gōngpíng."
+  },
+  "chunchu-era|5|35|1": {
+    "zh": "那就再用你這姻緣打一輪。",
+    "zhLatn": "Nà jiù zài yòng nǐ zhè yīnyuán dǎ yī lún."
+  },
+  "chunchu-era|5|36|0": {
+    "zh": "待我為帝——",
+    "zhLatn": "Dài wǒ wéi dì——"
+  },
+  "chunchu-era|5|36|1": {
+    "zh": "不。聽起來像詛咒。待歲月稍善——",
+    "zhLatn": "Bù. Tīng qǐlái xiàng zǔzhòu. Dài suìyuè shāo shàn——"
+  },
+  "chunchu-era|5|36|2": {
+    "zh": "我仍要這個。一個不必靠我尊號也能站直的朋友。",
+    "zhLatn": "Wǒ réng yào zhège. Yīgè bùbì kào wǒ zūnhào yě néng zhàn zhí de péngyou."
+  },
+  "chunchu-era|5|38|0": {
+    "zh": "好。",
+    "zhLatn": "Hǎo."
+  },
+  "chunchu-era|5|38|1": {
+    "zh": "那麼——就做那不便的兄弟。",
+    "zhLatn": "Nàme——jiù zuò nà bùbiàn de xiōngdì."
+  },
+  "chunchu-era|5|41|0": {
+    "zh": "朕不是開玩笑，你這傢伙。",
+    "zhLatn": "Zhèn búshì kāi wánxiào, nǐ zhè jiāhuo."
+  },
+  "chunchu-era|5|43|0": {
+    "zh": "春秋。你長於三韓，所以——",
+    "zhLatn": "Chūnqiū. Nǐ zhǎng yú Sānhán, suǒyǐ——"
+  },
+  "chunchu-era|5|44|0": {
+    "zh": "春秋……只答應朕一件事。",
+    "zhLatn": "Chūnqiū… zhǐ dāyìng zhèn yī jiàn shì."
+  },
+  "chunchu-era|5|44|1": {
+    "zh": "替朕成此一大業……！",
+    "zhLatn": "Tì zhèn chéng cǐ yī dàyè…!"
+  },
+  "chunchu-era|5|44|2": {
+    "zh": "高麗是朕此生唯一之敗。",
+    "zhLatn": "Gāolí shì zhèn cǐshēng wéiyī zhī bài."
+  },
+  "chunchu-era|5|44|3": {
+    "zh": "百濟將是你此生唯一之敗。",
+    "zhLatn": "Bǎijì jiāng shì nǐ cǐshēng wéiyī zhī bài."
+  },
+  "chunchu-era|5|44|4": {
+    "zh": "朕——你們的國家——",
+    "zhLatn": "Zhèn——nǐmen de guójiā——"
+  },
+  "chunchu-era|5|46|0": {
+    "zh": "（唐廷，舉杯）",
+    "zhLatn": "(Táng tíng, jǔ bēi)"
+  },
+  "chunchu-era|5|46|1": {
+    "zh": "敬天可汗——連三韓也學會該向何方跪拜。",
+    "zhLatn": "Jìng Tiān Kèhán——lián Sānhán yě xuéhuì gāi xiàng héfāng guìbài."
+  },
+  "chunchu-era|5|47|0": {
+    "ja": "（倭の使者、慎重に微笑み）",
+    "jaLatn": "(Wa no shisha, shinchō ni hohoemi)"
+  },
+  "chunchu-era|5|47|1": {
+    "ja": "そして——帝国を動かすほど美しく泣く客人へ。",
+    "jaLatn": "Soshite——teikoku o ugokasu hodo utsukushiku naku kyaku-jin e."
+  },
+  "chunchu-era|5|47|2": {
+    "ja": "東国も、時を知る涙の値を知っております。",
+    "jaLatn": "Tōgoku mo, toki o shiru namida no ne o shitte orimasu."
+  },
+  "chunchu-era|5|49|0": {
+    "zh": "聽聽。連宴會戰也懂的蠻夷。",
+    "zhLatn": "Tīng ting. Lián yànhuì zhàn yě dǒng de mányí."
+  },
+  "chunchu-era|5|49|1": {
+    "zh": "治——把這人留在身邊。跪着還會開玩笑的，比老實將軍還稀罕。",
+    "zhLatn": "Zhì——bǎ zhè rén liú zài shēnbiān. Guìzhe hái huì kāi wánxiào de, bǐ lǎoshi jiāngjūn hái xīhan."
+  },
+  "chunchu-era|5|51|0": {
+    "zh": "（酒巡時，低聲，對春秋）",
+    "zhLatn": "(Jiǔ xún shí, dīshēng, duì Chūnqiū)"
+  },
+  "chunchu-era|5|51|1": {
+    "zh": "原來是真的。貴國以女子為君。",
+    "zhLatn": "Yuánlái shì zhēn de. Guìguó yǐ nǚzǐ wéi jūn."
+  },
+  "chunchu-era|5|51|2": {
+    "zh": "大膽。多麼……有教益。",
+    "zhLatn": "Dàdǎn. Duōme… yǒu jiàoyì."
+  },
+  "chunchu-era|5|53|0": {
+    "zh": "（笑——溫暖、精準，又稍近）",
+    "zhLatn": "(Xiào——wēnnuǎn、jīngzhǔn, yòu shāo jìn)"
+  },
+  "chunchu-era|5|53|1": {
+    "zh": "天之功，常在聪明人挪完椅子之後才被記上。",
+    "zhLatn": "Tiān zhī gōng, cháng zài cōngmíng rén nuó wán yǐzi zhīhòu cái bèi jì shàng."
+  },
+  "chunchu-era|5|53|2": {
+    "zh": "告訴我——她開口時，叔父們是否仍假裝那是男子之聲？",
+    "zhLatn": "Gàosu wǒ——tā kāikǒu shí, shūfùmen shìfǒu réng jiǎzhuāng nà shì nánzǐ zhī shēng?"
+  },
+  "chunchu-era|5|54|0": {
+    "zh": "女主……如畫。像用來嚇唬孩童的故事。",
+    "zhLatn": "Nǚzhǔ… rú huà. Xiàng yònglái xiàhu háitóng de gùshi."
+  },
+  "chunchu-era|5|55|0": {
+    "ja": "我が島にも女帝がおります。権力には袖が多い。",
+    "jaLatn": "Waga shima ni mo jotei ga orimasu. Kenryoku ni wa sode ga ōi."
+  },
+  "chunchu-era|5|55|1": {
+    "ja": "（武を見——目を逸らすのが遅すぎる）",
+    "jaLatn": "(Bu o mi——me o sorasu no ga oso-sugiru)"
+  },
+  "chunchu-era|5|56|0": {
+    "zh": "（只對春秋，似共享私密劇場般微笑）",
+    "zhLatn": "(Zhǐ duì Chūnqiū, sì gòngxiǎng sīmì jùchǎng bān wēixiào)"
+  },
+  "chunchu-era|5|56|1": {
+    "zh": "我喜歡帶危險消息卻仍有空與帝國調笑的男人。",
+    "zhLatn": "Wǒ xǐhuān dài wēixiǎn xiāoxi què réng yǒu kōng yǔ dìguó tiáoxiào de nánrén."
+  },
+  "chunchu-era|5|56|2": {
+    "zh": "再留一杯。還是新羅之淚必須按時表乾掉？",
+    "zhLatn": "Zài liú yī bēi. Háishì Xīnluó zhī lèi bìxū àn shíbiao gān diào?"
+  },
+  "chunchu-era|5|57|0": {
+    "zh": "他喜歡會哭的人。",
+    "zhLatn": "Tā xǐhuān huì kū de rén."
+  },
+  "chunchu-era|5|57|1": {
+    "zh": "記下了。",
+    "zhLatn": "Jìxià le."
+  },
+  "chunchu-era|6|2|0": {
+    "zh": "……父皇。",
+    "zhLatn": "…Fùhuáng."
+  },
+  "chunchu-era|6|2|1": {
+    "zh": "尚未——",
+    "zhLatn": "Shàngwèi——"
+  },
+  "chunchu-era|6|5|0": {
+    "zh": "朕受先帝遺詔。",
+    "zhLatn": "Zhèn shòu xiāndì yízhào."
+  },
+  "chunchu-era|6|5|1": {
+    "zh": "自今日起——",
+    "zhLatn": "Zì jīnrì qǐ——"
+  },
+  "chunchu-era|6|5|2": {
+    "zh": "……朕當聽之。",
+    "zhLatn": "…Zhèn dāng tīng zhī."
+  },
+  "chunchu-era|6|8|0": {
+    "zh": "大行皇帝廟號，定為太宗。",
+    "zhLatn": "Dàxíng huángdì miàohào, dìng wéi Tàizōng."
+  },
+  "chunchu-era|6|10|0": {
+    "zh": "春秋。",
+    "zhLatn": "Chūnqiū."
+  },
+  "chunchu-era|6|10|1": {
+    "zh": "你還在。",
+    "zhLatn": "Nǐ hái zài."
+  },
+  "chunchu-era|6|12|0": {
+    "zh": "那麼你為王時——",
+    "zhLatn": "Nàme nǐ wéi wáng shí——"
+  },
+  "chunchu-era|6|12|1": {
+    "zh": "仍如我們只剩塵土與馬時那樣寫信給我。",
+    "zhLatn": "Réng rú wǒmen zhǐ shèng chéntǔ yǔ mǎ shí nàyàng xiěxìn gěi wǒ."
+  },
+  "chunchu-era|6|12|2": {
+    "zh": "我需要有人記得——我的名字在成為年號之前叫治。",
+    "zhLatn": "Wǒ xūyào yǒu rén jìde——wǒ de míngzi zài chéngwéi niánhào zhīqián jiào Zhì."
+  },
+  "chunchu-era|6|18|0": {
+    "zh": "（輕聲，對無人）",
+    "zhLatn": "(Qīngshēng, duì wú rén)"
+  },
+  "chunchu-era|6|18|1": {
+    "zh": "原來帝國換主人是這樣。",
+    "zhLatn": "Yuánlái dìguó huàn zhǔrén shì zhèyàng."
+  },
+  "chunchu-era|6|18|2": {
+    "zh": "靜靜地。讓別人說第一句。",
+    "zhLatn": "Jìngjìng de. Ràng biérén shuō dì yī jù."
+  },
+  "chunchu-era|6|19|0": {
+    "zh": "武娘子——你原是先帝之人。",
+    "zhLatn": "Wǔ niángzi——nǐ yuán shì xiāndì zhī rén."
+  },
+  "chunchu-era|6|19|1": {
+    "zh": "留下。宮……尚未完工。",
+    "zhLatn": "Liúxià. Gōng… shàngwèi wángōng."
+  },
+  "chunchu-era|6|20|0": {
+    "zh": "謹遵陛下之命。",
+    "zhLatn": "Jǐn zūn Bìxià zhī mìng."
+  },
+  "chunchu-era|6|20|1": {
+    "zh": "（而房間已向她偏過一寸）",
+    "zhLatn": "(Ér fángjiān yǐ xiàng tā piān guò yī cùn)"
+  },
+  "chunchu-era|6|22|0": {
+    "zh": "你就是讓他笑的那個人。",
+    "zhLatn": "Nǐ jiùshì ràng tā xiào de nàge rén."
+  },
+  "chunchu-era|6|22|1": {
+    "zh": "也是——不肯留下的那個人。",
+    "zhLatn": "Yě shì——bù kěn liúxià de nàge rén."
+  },
+  "chunchu-era|6|24|0": {
+    "zh": "跪也是一種語言。",
+    "zhLatn": "Guì yě shì yī zhǒng yǔyán."
+  },
+  "chunchu-era|6|24|1": {
+    "zh": "你說得很流利。我還在學——它藏着什麼詞。",
+    "zhLatn": "Nǐ shuō de hěn liúlì. Wǒ hái zài xué——tā cángzhe shénme cí."
+  },
+  "chunchu-era|6|27|0": {
+    "zh": "轉告治。",
+    "zhLatn": "Zhuǎngào Zhì."
+  },
+  "chunchu-era|6|27|1": {
+    "zh": "天氣是從宮裡變的——不是從邊疆。",
+    "zhLatn": "Tiānqì shì cóng gōng lǐ biàn de——búshì cóng biānjiāng."
+  },
+  "chunchu-era|6|29|0": {
+    "zh": "你會試着轉告。",
+    "zhLatn": "Nǐ huì shìzhe zhuǎngào."
+  },
+  "chunchu-era|6|29|1": {
+    "zh": "那不是同一件事。",
+    "zhLatn": "Nà búshì tóng yī jiàn shì."
+  },
+  "chunchu-era|6|31|0": {
+    "zh": "（靠向他耳邊——仍在笑）",
+    "zhLatn": "(Kào xiàng tā ěrbiān——réng zài xiào)"
+  },
+  "chunchu-era|6|31|1": {
+    "zh": "……",
+    "zhLatn": "…"
+  },
+  "chunchu-era|8|23|0": {
+    "zh": "他成了王。",
+    "zhLatn": "Tā chéng le wáng."
+  },
+  "chunchu-era|8|23|1": {
+    "zh": "果然。",
+    "zhLatn": "Guǒrán."
+  },
+  "chunchu-era|8|23|2": {
+    "zh": "送他馬。並告訴他——這兒的塵土還容得下一個不便之人。",
+    "zhLatn": "Sòng tā mǎ. Bìng gàosu tā——zhèr de chéntǔ hái róng de xià yīgè bùbiàn zhī rén."
+  },
+  "fall-of-euija|1|19|0": {
+    "zh": "那麼……百濟？百濟又如何——",
+    "zhLatn": "Nàme… Bǎijì? Bǎijì yòu rúhé——"
+  },
+  "fall-of-euija|1|21|0": {
+    "zh": "？",
+    "zhLatn": "?"
+  },
+  "fall-of-euija|1|23|0": {
+    "zh": "那朕又何必存在？",
+    "zhLatn": "Nà zhèn yòu hébì cúnzài?"
+  },
+  "fall-of-baekje|1|26|0": {
+    "zh": "？",
+    "zhLatn": "?"
+  },
+  "fall-of-baekje|6|3|0": {
+    "zh": "朕已滅百濟，除爾國之憂；而高麗恃險，連穢貊為惡，失事大之禮，棄睦鄰之義。朕將發兵討之——歸告爾王出師，與我共滅此將亡之蠻夷。",
+    "zhLatn": "Zhèn yǐ miè Bǎijì, chú ěr guó zhī yōu; ér Gāolí shì xiǎn, lián Huìmò wéi è, shī shì dà zhī lǐ, qì mùlín zhī yì. Zhèn jiāng fābīng tǎo zhī——guī gào ěr wáng chūshī, yǔ wǒ gòng miè cǐ jiāng wáng zhī mányí."
+  },
+  "final-stand|2|4|0": {
+    "zh": "白虎……此名，我來接。",
+    "zhLatn": "Báihǔ… cǐ míng, wǒ lái jiē."
+  },
+  "final-stand|2|4|1": {
+    "zh": "死者之帳，由生者來償。",
+    "zhLatn": "Sǐzhě zhī zhàng, yóu shēngzhě lái cháng."
+  },
+  "final-stand|4|3|0": {
+    "ja": "百済万歳……！",
+    "jaLatn": "Kudara banzai…!"
+  },
+  "final-stand|4|6|0": {
+    "zh": "高麗蠻夷，終將下跪……",
+    "zhLatn": "Gāolí mányí, zhōng jiāng xiàguì…"
+  },
+  "final-stand|4|7|0": {
+    "ja": "百済は生き残らねばならない……。",
+    "jaLatn": "Kudara wa ikinokoraneba naranai…."
+  },
+  "final-stand|4|7|1": {
+    "ja": "百済は生きのこらねばならない……。",
+    "jaLatn": "Kudara wa ikinokoraneba naranai…."
+  },
+  "final-stand|6|1|0": {
+    "zh": "朕已滅百濟，除爾國之憂；而高麗恃險，連穢貊為惡，失事大之禮，棄睦鄰之義。朕將發兵討之——歸告爾王出師，與我共滅此將亡之蠻夷。",
+    "zhLatn": "Zhèn yǐ miè Bǎijì, chú ěr guó zhī yōu; ér Gāolí shì xiǎn, lián Huìmò wéi è, shī shì dà zhī lǐ, qì mùlín zhī yì. Zhèn jiāng fābīng tǎo zhī——guī gào ěr wáng chūshī, yǔ wǒ gòng miè cǐ jiāng wáng zhī mányí."
+  },
+  "final-stand|6|13|0": {
+    "zh": "……這臉在哪兒見過。",
+    "zhLatn": "…Zhè liǎn zài nǎr jiànguò."
+  },
+  "final-stand|7|3|0": {
+    "zh": "破城……如農事。",
+    "zhLatn": "Pòchéng… rú nóngshì."
+  },
+  "final-stand|7|3|1": {
+    "zh": "知時節，引水，收割。",
+    "zhLatn": "Zhī shíjié, yǐn shuǐ, shōugē."
+  },
+  "final-stand|7|3|2": {
+    "zh": "今日是收成之日。",
+    "zhLatn": "Jīnrì shì shōuchéng zhī rì."
+  },
+  "final-stand|7|11|0": {
+    "zh": "我……本不願與諸位為敵。",
+    "zhLatn": "Wǒ… běn bù yuàn yǔ zhūwèi wéi dí."
+  },
+  "final-stand|7|11|1": {
+    "zh": "但不能讓陛下之東空手而歸。",
+    "zhLatn": "Dàn bùnéng ràng Bìxià zhī dōng kōngshǒu ér guī."
+  },
+  "silla-tang-war|5|2|0": {
+    "zh": "新羅……曾與我并肩作戰之國。",
+    "zhLatn": "Xīnluó… céng yǔ wǒ bìngjiān zuòzhàn zhī guó."
+  },
+  "silla-tang-war|5|2|1": {
+    "zh": "而今，那國竟成我最後之對手。",
+    "zhLatn": "Ér jīn, nà guó jìng chéng wǒ zuìhòu zhī duìshǒu."
+  },
+  "silla-tang-war|5|8|0": {
+    "zh": "……馬沒了。",
+    "zhLatn": "…Mǎ méi le."
+  },
+  "silla-tang-war|5|8|1": {
+    "zh": "對農夫而言，失馬……如失田。",
+    "zhLatn": "Duì nóngfū éryán, shī mǎ… rú shī tián."
+  }
+}

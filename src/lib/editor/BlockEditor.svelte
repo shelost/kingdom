@@ -44,6 +44,43 @@
 			oninput={(v) => set(() => (block.ko = v || undefined))}
 		/>
 	</div>
+{:else if block.kind === 'monologue'}
+	{@const who = block.person ? byId.get(block.person) : undefined}
+	<div class="mono-edit">
+		<select
+			class="who-pick"
+			class:set={!!who}
+			style:--who={who ? colorOf(who) : '#666'}
+			onchange={(e) =>
+				set(() => {
+					const v = (e.currentTarget as HTMLSelectElement).value;
+					block.person = v || undefined;
+				})}
+		>
+			<option value="">— voice —</option>
+			{#each PROFILES as p (p.id)}
+				<option value={p.id} selected={block.person === p.id}>{p.name}</option>
+			{/each}
+		</select>
+		<div class="p-cols">
+			<Editable
+				value={block.html}
+				placeholder="Retrospective monologue (I did not know, then…)"
+				single
+				class="bp"
+				oninput={(v) => set(() => (block.html = v))}
+				{onenter}
+				{ondeleteempty}
+			/>
+			<Editable
+				value={block.ko ?? ''}
+				placeholder="한국어 번역…"
+				single
+				class="bp bko"
+				oninput={(v) => set(() => (block.ko = v || undefined))}
+			/>
+		</div>
+	</div>
 {:else if block.kind === 'cite'}
 	<div class="cite-row">
 		<span class="bullet">•</span>
@@ -112,6 +149,41 @@
 				oninput={(v) =>
 					set(() => (block.en = v.trim() ? v.split('\n') : undefined))}
 			/>
+			{#if who?.kingdom === 'tang'}
+				<Editable
+					plain
+					value={(block.zh ?? []).join('\n')}
+					placeholder={'Chinese — one line per row…'}
+					class="bdlg"
+					oninput={(v) =>
+						set(() => (block.zh = v.trim() ? v.split('\n') : undefined))}
+				/>
+				<Editable
+					plain
+					value={(block.zhLatn ?? []).join('\n')}
+					placeholder={'Pinyin — one line per row…'}
+					class="bdlg ben"
+					oninput={(v) =>
+						set(() => (block.zhLatn = v.trim() ? v.split('\n') : undefined))}
+				/>
+			{:else if who?.kingdom === 'yamato'}
+				<Editable
+					plain
+					value={(block.ja ?? []).join('\n')}
+					placeholder={'Japanese — one line per row…'}
+					class="bdlg"
+					oninput={(v) =>
+						set(() => (block.ja = v.trim() ? v.split('\n') : undefined))}
+				/>
+				<Editable
+					plain
+					value={(block.jaLatn ?? []).join('\n')}
+					placeholder={'Romaji — one line per row…'}
+					class="bdlg ben"
+					oninput={(v) =>
+						set(() => (block.jaLatn = v.trim() ? v.split('\n') : undefined))}
+				/>
+			{/if}
 		</div>
 	</div>
 {:else if block.kind === 'verse'}
@@ -276,6 +348,13 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 0.5rem;
+	}
+
+	.mono-edit {
+		display: grid;
+		gap: 0.4rem;
+		padding-left: 0.55rem;
+		border-left: 2px solid #d4a5c0;
 	}
 
 	.p-cols :global(.editable.bko) {

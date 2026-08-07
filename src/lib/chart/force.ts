@@ -26,19 +26,22 @@ type SimNode = {
 	index?: number;
 };
 
-const ERA_Y: Record<ChartEra, number> = {
+/** Soft vertical anchors for era bands (forceY targets). */
+export const ERA_Y: Record<ChartEra, number> = {
 	present: 220,
 	past: 620,
 	myth: 980
 };
 
-const KINGDOM_X: Partial<Record<Person['kingdom'], number>> = {
+/** Soft horizontal anchors by kingdom (forceX targets). */
+export const KINGDOM_X: Partial<Record<Person['kingdom'], number>> = {
 	silla: 200,
 	baekje: 520,
 	goguryeo: 860,
 	tang: 1120,
 	gaya: 520,
 	tamla: 860,
+	underworld: 200,
 	other: 200,
 	yamato: 1120
 };

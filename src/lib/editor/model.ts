@@ -14,6 +14,7 @@ export const BLOCK_KINDS = [
 	{ kind: 'verse', label: 'Verse', icon: '詩' },
 	{ kind: 'table', label: 'Table', icon: '▦' },
 	{ kind: 'hanja', label: 'Hanja', icon: '善' },
+	{ kind: 'monologue', label: 'Monologue', icon: '◎' },
 	{ kind: 'flashback', label: 'Flashback', icon: '⌛' }
 ] as const;
 
@@ -30,6 +31,8 @@ export function newBlock(kind: string): AnyBlock {
 			return { ...base, head: ['', ''], rows: [['', '']] };
 		case 'hanja':
 			return { ...base, chars: [{ char: '字', gloss: '' }] };
+		case 'monologue':
+			return { ...base, html: '', person: 'chunchu' };
 		case 'flashback':
 			return { ...base, year: '', title: '', blocks: [newBlock('p')] };
 		default:
@@ -58,7 +61,7 @@ export function turnInto(block: AnyBlock, kind: string): AnyBlock {
 	const text = textOf(block);
 	const nb = newBlock(kind);
 	nb.__id = block.__id;
-	if (kind === 'p' || kind === 'cite') nb.html = text.replace(/\n/g, ' ');
+	if (kind === 'p' || kind === 'cite' || kind === 'monologue') nb.html = text.replace(/\n/g, ' ');
 	else if (kind === 'dialogue' || kind === 'verse') nb.lines = text ? text.split('\n') : [''];
 	return nb;
 }
