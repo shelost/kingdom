@@ -5,10 +5,25 @@ export interface ImageSlot {
 	id: string; // slot name, e.g. "sunduk-crown"
 	ratio: number; // width / height of the strip
 	tone?: string; // placeholder background hint, used until art exists
-	src?: string; // real artwork, e.g. "/img_04.png"
+	src?: string; // final artwork, e.g. "/img_04.png" — kept as alternate / hover stack layer
+	/**
+	 * Machine-generated stand-in art, e.g. "/temp/steam_01.jpg".
+	 * Gallery (/images) prefers this when present; chronicle reading prefers
+	 * final `src` and only falls back to temp. Namespaced under /temp so every
+	 * provisional image is trivial to find and swap later.
+	 */
+	tempImage?: string;
 	alt?: string;
 	/** Midjourney-style generation prompt — shown on empty slots for art direction. */
 	prompt?: string;
+	/**
+	 * Optional input reference image paths/URLs used when generating temp art
+	 * (people / place avatars, etc.). The /images cues view surfaces these;
+	 * when omitted, nearby speakers and the entry place are inferred.
+	 */
+	refs?: string[];
+	/** Explicit placeholder flag — treated as temp cue art when set. */
+	isPlaceholder?: boolean;
 	/**
 	 * Which beat this image belongs to: a fragment of the block it should
 	 * appear alongside. Images sharing an anchor stack together; images with
@@ -56,6 +71,18 @@ export type Block =
 	| { kind: 'moral'; label?: string; html: string; ko?: string }
 	// A character’s internal voice spoken from later — retrospective tense.
 	| { kind: 'monologue'; html: string; ko?: string; person?: string }
+	// An animated explainer for an institution or concept — resolved through the
+	// registry in components/diagrams. `diagram` names the component; `step`
+	// picks the moment it depicts (each component documents its own steps).
+	| {
+			kind: 'diagram';
+			diagram: string;
+			step?: string;
+			realm?: string; // pantheon column filter when diagram is `pantheon`
+			title?: string; // small-caps heading above the drawing
+			caption?: string; // English caption under the drawing
+			ko?: string; // Korean caption
+	  }
 	// A mini-flashback that interrupts an entry mid-scroll.
 	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] };
 

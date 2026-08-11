@@ -3,14 +3,23 @@
 		reading,
 		setLang,
 		setMode,
+		setViewScope,
+		setImageLayout,
 		loadLang,
 		loadMode,
+		loadViewScope,
+		loadImageLayout,
 		type Lang,
-		type ReadMode
+		type ReadMode,
+		type ViewScope,
+		type ImageLayout
 	} from '$lib/reading.svelte';
 	import { music, TRACKS, initMusic, playTrack, toggleMute } from '$lib/music.svelte';
-	import { resolve } from '$app/paths';
+	import { speech, initSpeech, syncSpeech, toggleAutoSpeech } from '$lib/speech.svelte';
+	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { onMount } from 'svelte';
+	import SpeakIcon from './SpeakIcon.svelte';
+	import SiteNav from './SiteNav.svelte';
 
 	const LANGS: { id: Lang; label: string; hint: string }[] = [
 		{ id: 'both', label: 'A/한', hint: 'Show everything' },
@@ -21,19 +30,62 @@
 	/** `short` is what a phone shows — the full words do not fit beside the
 	    chapter bar without pushing the title under the toggles. */
 	const MODES: { id: ReadMode; label: string; short: string; hint: string }[] = [
-		{ id: 'chronicle', label: 'Chronicle', short: 'Read', hint: 'Scroll layout without the speaker plate' },
+		{ id: 'script', label: 'Script', short: 'Script', hint: 'Scroll layout without the speaker plate' },
 		{
-			id: 'immersive',
-			label: 'Immersive',
+			id: 'immersion',
+			label: 'Immersion',
 			short: 'Scene',
 			hint: 'Speaker portrait like a game dialogue (default)'
+		},
+		{
+			id: 'cinema',
+			label: 'Cinema',
+			short: 'Cine',
+			hint: 'Cinema layout — scene, script rail, character, active dialogue'
 		}
 	];
+
+	const SCOPES: { id: ViewScope; label: string; short: string; hint: string }[] = [
+		{ id: 'full', label: 'Full', short: 'Full', hint: 'Entire story as one continuous scroll' },
+		{
+			id: 'episodes',
+			label: 'Episodes',
+			short: 'Eps',
+			hint: 'One episode at a time with previous / next'
+		}
+	];
+
+	const IMAGE_LAYOUTS: { id: ImageLayout; label: string; short: string; hint: string }[] = [
+		{
+			id: 'side',
+			label: 'Side',
+			short: 'Side',
+			hint: 'Sticky images column beside the text'
+		},
+		{
+			id: 'inline',
+			label: 'Inline',
+			short: 'In',
+			hint: 'Images appear in the reading flow by beat'
+		}
+	];
+
+	/** User intent; visual open also requires the HUD to be on stage. */
+	let settingsWanted = $state(false);
+	let settingsRoot: HTMLDivElement | undefined;
+	let settingsOpen = $derived(settingsWanted && scriptUi.inScript);
 
 	onMount(() => {
 		loadLang();
 		loadMode();
-		return initMusic();
+		loadViewScope();
+		loadImageLayout();
+		const endMusic = initMusic();
+		const endSpeech = initSpeech();
+		return () => {
+			endMusic();
+			endSpeech();
+		};
 	});
 
 	// follow the reader: whatever section they're in decides the track
@@ -41,10 +93,48 @@
 		playTrack(reading.music ? (TRACKS[reading.music] ?? null) : null);
 	});
 
+	// the voice follows the reader the same way — and a new line cuts off the last
+	$effect(() => {
+		syncSpeech(scriptUi.inScript);
+	});
+
 	let label = $derived(music.current ? music.current.title : 'no track');
+
+	let voiceHint = $derived(
+		speech.error
+			? speech.error
+			: speech.auto
+				? 'Reading dialogue aloud — click to silence'
+				: 'Read each line of dialogue aloud as you reach it'
+	);
+
+	function closeSettings() {
+		settingsWanted = false;
+	}
+
+	function toggleSettings() {
+		settingsWanted = !settingsWanted;
+	}
+
+	function onWindowKeydown(e: KeyboardEvent) {
+		if (e.key === 'Escape' && settingsOpen) {
+			closeSettings();
+			e.stopPropagation();
+		}
+	}
+
+	function onWindowPointerDown(e: PointerEvent) {
+		if (!settingsOpen || !settingsRoot) return;
+		const target = e.target;
+		if (target instanceof Node && !settingsRoot.contains(target)) {
+			closeSettings();
+		}
+	}
 </script>
 
-<div class="hud">
+<svelte:window onkeydown={onWindowKeydown} onpointerdown={onWindowPointerDown} />
+
+<div class="hud" class:in={scriptUi.inScript} aria-hidden={!scriptUi.inScript}>
 	<!-- ————— now playing ————— -->
 	<button
 		class="music"
@@ -52,6 +142,7 @@
 		class:muted={music.muted}
 		aria-live="polite"
 		aria-pressed={!music.muted}
+		tabindex={scriptUi.inScript ? 0 : -1}
 		title={music.current
 			? (music.muted ? 'Play — ' : 'Mute — ') + music.current.credit
 			: 'No track in this section'}
@@ -64,36 +155,116 @@
 		<span class="track">{label}</span>
 	</button>
 
-	<!-- ————— reading mode ————— -->
-	<div class="mode" role="group" aria-label="Reading mode">
-		{#each MODES as m (m.id)}
-			<button
-				class:active={reading.mode === m.id}
-				title={m.hint}
-				aria-pressed={reading.mode === m.id}
-				onclick={() => setMode(m.id)}
-			>
-				<span class="wide">{m.label}</span>
-				<span class="narrow">{m.short}</span>
-			</button>
-		{/each}
-	</div>
+	<!-- ————— the voice —————
+	     Wears the player's pill (same corner, same weight): both are "what you
+	     are hearing", and the reader shouldn't have to learn two shapes. -->
+	<button
+		class="music voice"
+		class:on={speech.auto}
+		class:warn={!!speech.error}
+		aria-pressed={speech.auto}
+		tabindex={scriptUi.inScript ? 0 : -1}
+		title={voiceHint}
+		onclick={toggleAutoSpeech}
+	>
+		<SpeakIcon on={speech.playing} size={14} />
+		<span class="track">{speech.auto ? 'Voice on' : 'Voice off'}</span>
+	</button>
 
-	<!-- ————— language ————— -->
-	<div class="lang" role="group" aria-label="Language">
-		{#each LANGS as l (l.id)}
-			<button
-				class:active={reading.lang === l.id}
-				title={l.hint}
-				aria-pressed={reading.lang === l.id}
-				onclick={() => setLang(l.id)}
-			>
-				{l.label}
-			</button>
-		{/each}
-	</div>
+	<!-- ————— settings (mode / scope / images / lang / site nav) ————— -->
+	<div
+		class="settings"
+		class:open={settingsOpen}
+		bind:this={settingsRoot}
+	>
+		<button
+			type="button"
+			class="settings-toggle"
+			aria-expanded={settingsOpen}
+			aria-controls="hud-settings"
+			tabindex={scriptUi.inScript ? 0 : -1}
+			title={settingsOpen ? 'Close settings' : 'Open settings'}
+			aria-label={settingsOpen ? 'Close settings' : 'Open settings'}
+			onclick={toggleSettings}
+		>
+			<span class="material-symbols-outlined" aria-hidden="true">
+				{settingsOpen ? 'close' : 'tune'}
+			</span>
+		</button>
 
-	<a class="wiki" href={resolve('/wiki')} title="Open the encyclopedia">Wiki</a>
+		<div
+			id="hud-settings"
+			class="settings-tray"
+			role="region"
+			aria-label="Reading settings"
+			inert={!settingsOpen}
+		>
+			<div class="settings-tray-inner">
+				<!-- ————— reading mode ————— -->
+				<div class="mode pill-stagger" style:--i="0" role="group" aria-label="Reading mode">
+					{#each MODES as m (m.id)}
+						<button
+							class:active={reading.mode === m.id}
+							title={m.hint}
+							aria-pressed={reading.mode === m.id}
+							onclick={() => setMode(m.id)}
+						>
+							<span class="wide">{m.label}</span>
+							<span class="narrow">{m.short}</span>
+						</button>
+					{/each}
+				</div>
+
+				<!-- ————— view scope ————— -->
+				<div class="scope pill-stagger" style:--i="1" role="group" aria-label="View">
+					{#each SCOPES as s (s.id)}
+						<button
+							class:active={reading.viewScope === s.id}
+							title={s.hint}
+							aria-pressed={reading.viewScope === s.id}
+							onclick={() => setViewScope(s.id)}
+						>
+							<span class="wide">{s.label}</span>
+							<span class="narrow">{s.short}</span>
+						</button>
+					{/each}
+				</div>
+
+				<!-- ————— image layout ————— -->
+				<div class="images pill-stagger" style:--i="2" role="group" aria-label="Images">
+					{#each IMAGE_LAYOUTS as layout (layout.id)}
+						<button
+							class:active={reading.imageLayout === layout.id}
+							title={layout.hint}
+							aria-pressed={reading.imageLayout === layout.id}
+							onclick={() => setImageLayout(layout.id)}
+						>
+							<span class="wide">{layout.label}</span>
+							<span class="narrow">{layout.short}</span>
+						</button>
+					{/each}
+				</div>
+
+				<!-- ————— language ————— -->
+				<div class="lang pill-stagger" style:--i="3" role="group" aria-label="Language">
+					{#each LANGS as l (l.id)}
+						<button
+							class:active={reading.lang === l.id}
+							title={l.hint}
+							aria-pressed={reading.lang === l.id}
+							onclick={() => setLang(l.id)}
+						>
+							{l.label}
+						</button>
+					{/each}
+				</div>
+
+				<div class="nav-wrap pill-stagger" style:--i="4">
+					<SiteNav />
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>
@@ -104,7 +275,31 @@
 		z-index: 96;
 		display: flex;
 		align-items: center;
+		justify-content: flex-end;
 		gap: 0.55rem;
+		opacity: 0;
+		transform: translate3d(0, -0.85rem, 0);
+		pointer-events: none;
+		transition:
+			opacity 520ms var(--ease),
+			transform 560ms var(--ease);
+	}
+
+	.hud.in {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		pointer-events: auto;
+	}
+
+	/* Cinema: the corner steps almost all the way out of the picture and comes
+	   back on approach, so the panel is not framed by a dashboard. */
+	:global(html.is-cinema:not(.is-cinema-peek)) .hud.in {
+		opacity: 0.22;
+	}
+
+	:global(html.is-cinema) .hud.in:hover,
+	:global(html.is-cinema) .hud.in:focus-within {
+		opacity: 1;
 	}
 
 	.narrow {
@@ -129,6 +324,7 @@
 		transition:
 			opacity 420ms var(--ease),
 			border-color 420ms var(--ease);
+		flex-shrink: 0;
 	}
 
 	.music.on {
@@ -175,6 +371,23 @@
 		border-color: rgba(216, 178, 106, 0.5);
 	}
 
+	/* ————— voice pill ————— */
+	.voice {
+		color: var(--fg-faint);
+		gap: 0.45rem;
+	}
+
+	.voice.on {
+		color: var(--gold);
+	}
+
+	/* something is wrong with synthesis — the tooltip says what */
+	.voice.warn {
+		opacity: 1;
+		color: var(--fg-dim);
+		border-color: rgba(200, 96, 78, 0.45);
+	}
+
 	@keyframes bounce {
 		0%,
 		100% {
@@ -195,8 +408,97 @@
 		text-overflow: ellipsis;
 	}
 
-	/* ————— mode / language toggles ————— */
+	/* ————— settings shell ————— */
+	.settings {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+		gap: 0.45rem;
+		min-width: 0;
+		max-width: min(42rem, calc(100vw - 7.5rem));
+	}
+
+	.settings-toggle {
+		display: grid;
+		place-items: center;
+		flex-shrink: 0;
+		width: 1.9rem;
+		height: 1.9rem;
+		padding: 0;
+		color: var(--fg-faint);
+		border: 1px solid var(--hairline);
+		border-radius: 999px;
+		background: var(--glass);
+		backdrop-filter: blur(14px);
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+		transition:
+			color 0.25s var(--ease),
+			border-color 0.25s var(--ease),
+			background 0.25s var(--ease);
+	}
+
+	.settings-toggle:hover {
+		color: var(--gold);
+		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+	}
+
+	.settings.open .settings-toggle {
+		color: var(--on-gold);
+		background: var(--gold);
+		border-color: var(--gold);
+	}
+
+	.settings-toggle .material-symbols-outlined {
+		font-size: 1.05rem;
+		line-height: 1;
+	}
+
+	.settings-tray {
+		display: grid;
+		grid-template-columns: 0fr;
+		opacity: 0;
+		pointer-events: none;
+		transition:
+			grid-template-columns 420ms var(--ease),
+			opacity 280ms var(--ease);
+	}
+
+	.settings.open .settings-tray {
+		grid-template-columns: 1fr;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.settings-tray-inner {
+		min-width: 0;
+		overflow: hidden;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.45rem;
+	}
+
+	.pill-stagger {
+		opacity: 0;
+		transform: translate3d(0.4rem, 0, 0);
+		transition:
+			opacity 280ms var(--ease),
+			transform 360ms var(--ease);
+		transition-delay: 0ms;
+	}
+
+	.settings.open .pill-stagger {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		transition-delay: calc(50ms + var(--i, 0) * 45ms);
+	}
+
+	/* ————— mode / scope / images / language toggles ————— */
 	.mode,
+	.scope,
+	.images,
 	.lang {
 		display: flex;
 		gap: 1px;
@@ -205,9 +507,12 @@
 		border-radius: 999px;
 		background: var(--glass);
 		backdrop-filter: blur(14px);
+		flex-shrink: 0;
 	}
 
 	.mode button,
+	.scope button,
+	.images button,
 	.lang button {
 		font: inherit;
 		font-size: 0.7rem;
@@ -224,47 +529,66 @@
 	}
 
 	.mode button:hover,
+	.scope button:hover,
+	.images button:hover,
 	.lang button:hover {
 		color: var(--fg);
 	}
 
 	.mode button.active,
+	.scope button.active,
+	.images button.active,
 	.lang button.active {
-		color: #14140f;
+		color: var(--on-gold);
 		background: var(--gold);
 	}
 
-	.wiki {
-		font-size: 0.7rem;
-		letter-spacing: 0.06em;
-		text-decoration: none;
-		color: var(--fg-faint);
-		padding: 0.34rem 0.7rem;
-		border: 1px solid var(--hairline);
-		border-radius: 999px;
-		background: var(--glass);
-		backdrop-filter: blur(14px);
-		transition:
-			color 0.25s var(--ease),
-			border-color 0.25s var(--ease);
+	.nav-wrap {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
 	}
 
-	.wiki:hover {
-		color: var(--gold);
-		border-color: rgba(216, 178, 106, 0.45);
+	.nav-wrap :global(.site-nav) {
+		gap: 0.28rem;
 	}
 
-	@media (max-width: 900px) {
-		.mode button {
+	.nav-wrap :global(.site-nav a) {
+		padding: 0.3rem 0.55rem;
+		font-size: 0.65rem;
+	}
+
+	@media (max-width: 1100px) {
+		.mode button,
+		.scope button,
+		.images button {
 			padding: 0.22rem 0.45rem;
 			font-size: 0.65rem;
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
+		.hud {
+			transition: opacity 200ms ease;
+			transform: none;
+		}
+
 		.wave i {
 			animation: none;
 			height: 60%;
+		}
+
+		.settings-tray,
+		.pill-stagger {
+			transition: none;
+		}
+
+		.pill-stagger {
+			transform: none;
+		}
+
+		.settings.open .pill-stagger {
+			transition-delay: 0ms;
 		}
 	}
 
@@ -285,6 +609,15 @@
 			max-width: calc(100vw - 3.6rem - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px));
 		}
 
+		.settings {
+			max-width: 100%;
+		}
+
+		.settings-tray-inner {
+			gap: 0.3rem;
+			row-gap: 0.3rem;
+		}
+
 		.wide {
 			display: none;
 		}
@@ -294,6 +627,8 @@
 		}
 
 		.mode button,
+		.scope button,
+		.images button,
 		.lang button {
 			min-height: 2.75rem;
 			min-width: 2.5rem;
@@ -301,15 +636,20 @@
 			font-size: 0.68rem;
 		}
 
-		.music {
+		.music,
+		.settings-toggle {
 			min-height: 2.75rem;
 			min-width: 2.75rem;
+			width: auto;
+			height: auto;
 			padding: 0.4rem 0.65rem;
 			justify-content: center;
 		}
 
-		.wiki {
+		.nav-wrap :global(.site-nav a),
+		.nav-wrap :global(.site-nav .theme-toggle) {
 			min-height: 2.75rem;
+			min-width: 2.75rem;
 			display: inline-grid;
 			place-items: center;
 			padding: 0.35rem 0.65rem;
@@ -323,6 +663,8 @@
 		}
 
 		.mode button,
+		.scope button,
+		.images button,
 		.lang button {
 			min-width: 2.2rem;
 			padding: 0.3rem 0.4rem;

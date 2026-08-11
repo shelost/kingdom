@@ -3,6 +3,8 @@
  * Files live in /static/flag_*.svg.
  */
 
+import { staticAsset } from '$lib/staticAsset.svelte';
+
 export const FLAG_IDS = [
 	'silla',
 	'baekje',
@@ -36,7 +38,7 @@ const TOKEN: Record<string, FlagId> = {
 };
 
 export function flagSrc(id: FlagId): string {
-	return `/flag_${id}.svg`;
+	return staticAsset(`/flag_${id}.svg`) ?? `/flag_${id}.svg`;
 }
 
 /** If this badge string is a nation flag, return its id; else null. */

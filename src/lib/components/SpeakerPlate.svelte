@@ -15,10 +15,14 @@
 		type Person
 	} from '$lib/people';
 	import { openProfile } from '$lib/profiles.svelte';
+	import { scriptUi } from '$lib/scriptUi.svelte';
+	import { stageText } from '$lib/stageText';
+	import { activeUtterance } from '$lib/speech.svelte';
+	import SpeakButton from './SpeakButton.svelte';
 
-	/** Live speaker from reading state (null when not immersive / no speaker). */
+	/** Live speaker from reading state (null when not immersion / no speaker). */
 	let person = $derived.by(() => {
-		if (reading.mode !== 'immersive' || !reading.speaker) return null;
+		if (!scriptUi.inScript || reading.mode !== 'immersion' || !reading.speaker) return null;
 		return byId.get(reading.speaker) ?? null;
 	});
 
@@ -72,83 +76,27 @@
 			: 'transparent'
 	);
 
-	let linesKo = $derived(reading.linesKo);
-	let linesEn = $derived(reading.linesEn);
-	let linesZh = $derived(reading.linesZh);
-	let linesZhLatn = $derived(reading.linesZhLatn);
-	let linesJa = $derived(reading.linesJa);
-	let linesJaLatn = $derived(reading.linesJaLatn);
+	/* The live line, as `$lib/stageText` resolves it — one flowing paragraph per
+	   language layer. Shared with the cinema strip so both stages letter the
+	   same utterance the same way. */
+	let showKo = $derived(stageText.showKo);
+	let showEn = $derived(stageText.showEn);
 
-	let showKo = $derived(reading.lang === 'ko' || reading.lang === 'both');
-	let showEn = $derived(reading.lang === 'en' || reading.lang === 'both');
+	let textKo = $derived(stageText.ko);
+	let textEn = $derived(stageText.en);
+	let textZh = $derived(stageText.zh);
+	let textZhLatn = $derived(stageText.zhLatn);
+	let textJa = $derived(stageText.ja);
+	let textJaLatn = $derived(stageText.jaLatn);
 
-	/** Space-joined flowing paragraphs (not one block per source line). */
-	let textKo = $derived(
-		linesKo
-			.map((l) => l.trim())
-			.filter(Boolean)
-			.join(' ')
-	);
-	let textEn = $derived(
-		linesEn
-			.map((l) => l.trim())
-			.filter(Boolean)
-			.join(' ')
-	);
-	let textZh = $derived(
-		linesZh
-			.map((l) => l.trim())
-			.filter(Boolean)
-			.join(' ')
-	);
-	let textZhLatn = $derived(
-		linesZhLatn
-			.map((l) => l.trim())
-			.filter(Boolean)
-			.join(' ')
-	);
-	let textJa = $derived(
-		linesJa
-			.map((l) => l.trim())
-			.filter(Boolean)
-			.join(' ')
-	);
-	let textJaLatn = $derived(
-		linesJaLatn
-			.map((l) => l.trim())
-			.filter(Boolean)
-			.join(' ')
-	);
-
-	let hasKo = $derived(textKo.length > 0);
-	let hasEn = $derived(textEn.length > 0);
-	let hasZh = $derived(textZh.length > 0);
-	let hasJa = $derived(textJa.length > 0);
-	let empty = $derived(
-		(showKo ? !hasKo : true) &&
-			(showEn ? !hasEn : true) &&
-			!hasZh &&
-			!hasJa
-	);
+	let hasKo = $derived(stageText.hasKo);
+	let hasEn = $derived(stageText.hasEn);
+	let hasZh = $derived(stageText.hasZh);
+	let hasJa = $derived(stageText.hasJa);
+	let empty = $derived(stageText.empty);
 
 	/** Remount dialogue text when the active utterance (or lang) changes. */
-	let utteranceKey = $derived(
-		[
-			reading.speaker ?? '',
-			reading.lang,
-			textKo,
-			'\u0001',
-			textEn,
-			'\u0001',
-			textZh,
-			'\u0001',
-			textZhLatn,
-			'\u0001',
-			textJa,
-			'\u0001',
-			textJaLatn
-		].join('\u0000')
-	);
+	let utteranceKey = $derived(stageText.key);
 
 	let reduce = $derived(prefersReducedMotion.current);
 	let portraitIn = $derived({
@@ -169,6 +117,13 @@
 
 	/** Keep stage up while previous is still outroing (previousPerson held until onoutroend). */
 	let stageVisible = $derived(currentPerson !== null || previousPerson !== null);
+
+	/**
+	 * The live line, for the plate's own speak control. Tied to `person` rather
+	 * than to the reading state alone: the stage can outlive its speaker while it
+	 * fades, and a plate on its way out must not offer to read anything.
+	 */
+	let spoken = $derived(person ? activeUtterance() : null);
 </script>
 
 <!-- One bust, used by both the outgoing and the incoming layer. -->
@@ -198,6 +153,7 @@
 {#if stageVisible}
 	<div
 		class="stage"
+		class:in={scriptUi.inScript}
 		style:--k={accent}
 		role="region"
 		aria-label="Dialogue"
@@ -253,6 +209,9 @@
 				{/key}
 			{/if}
 
+			<!-- Hear this line — on the lip of the frame, opposite the name tab. -->
+			<SpeakButton utterance={spoken} variant="plate" size={15} title="Speak this line" />
+
 			<div class="frame" aria-live="polite">
 				<div class="text">
 					{#key utteranceKey}
@@ -293,7 +252,8 @@
 <style>
 	.stage {
 		position: fixed;
-		left: 0;
+		/* --shell-shift grows with the TOC so bust + dialogue clear the panel */
+		left: var(--shell-shift);
 		right: 0;
 		bottom: 0;
 		z-index: 93;
@@ -307,9 +267,20 @@
 		padding-bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
 		padding-left: max(0.75rem, env(safe-area-inset-left, 0px));
 		gap: 0;
+		opacity: 0;
+		transform: translate3d(0, 1.25rem, 0);
+		transition:
+			left var(--toc-duration) var(--toc-ease),
+			opacity 520ms var(--ease),
+			transform 560ms var(--ease);
 	}
 
-	/* The bust stands on the right and *behind* the box: the negative margin
+	.stage.in {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+
+	/* The bust stands on the left and *behind* the box: the negative margin
 	   pulls the frame up over its feet, so the text always reads on top.
 	   `--bust-h` is set in app.css, which also reserves the matching page
 	   padding, so the two can never drift apart. */
@@ -317,7 +288,7 @@
 		position: relative;
 		z-index: 1;
 		display: block;
-		padding-right: 0.35rem;
+		padding-left: 0.35rem;
 		margin-bottom: -2.4rem;
 		/* reserve height so in/out portraits can crossfade without layout jump */
 		height: var(--bust-h);
@@ -326,8 +297,8 @@
 
 	.portrait-layer {
 		position: absolute;
-		left: auto;
-		right: 0.35rem;
+		left: 0.35rem;
+		right: auto;
 		bottom: 0;
 		height: var(--bust-h);
 		pointer-events: none;
@@ -434,7 +405,7 @@
 		background: var(--plate-ink);
 		box-shadow:
 			inset 0 0 0 1px #a8893a,
-			0 2px 8px rgba(0, 0, 0, 0.35);
+			0 2px 8px var(--plate-shadow);
 		cursor: pointer;
 		color: inherit;
 		font: inherit;
@@ -447,8 +418,19 @@
 	}
 
 	.name-tab:focus-visible {
-		outline: 1px solid rgba(216, 178, 106, 0.7);
+		outline: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
 		outline-offset: 2px;
+	}
+
+	/* Straddles the top edge of the frame the way the name tab does, and has to
+	   take pointer events back from the stage, which lets them through. */
+	.box :global(.speak) {
+		pointer-events: auto;
+		position: absolute;
+		top: 0.55rem;
+		right: 0.85rem;
+		z-index: 4;
+		transform: translateY(-50%);
 	}
 
 	.name {
@@ -457,7 +439,7 @@
 		font-weight: 700;
 		letter-spacing: 0.02em;
 		line-height: 1.15;
-		color: #fff8e8;
+		color: var(--plate-fg-strong);
 	}
 
 	.korean {
@@ -465,7 +447,7 @@
 		font-size: 0.66rem;
 		font-weight: 500;
 		line-height: 1.2;
-		color: color-mix(in srgb, var(--gold, #d8b26a) 70%, #fff8e8);
+		color: color-mix(in srgb, var(--gold) 70%, var(--plate-fg-strong));
 	}
 
 	.frame {
@@ -480,7 +462,7 @@
 		box-shadow:
 			inset 0 0 0 2px var(--plate-ink),
 			inset 0 0 0 4px #c9a84c,
-			0 8px 28px rgba(0, 0, 0, 0.48);
+			0 8px 28px var(--plate-shadow);
 		box-sizing: border-box;
 	}
 
@@ -504,9 +486,9 @@
 		font-family: var(--serif);
 		font-size: 1.05rem;
 		font-weight: 500;
-		line-height: 1.45;
+		line-height: 1.38;
 		letter-spacing: 0.01em;
-		color: #f4efe4;
+		color: var(--plate-fg);
 	}
 
 	.line.ko {
@@ -516,7 +498,7 @@
 	.line.en.quiet {
 		font-size: 0.92rem;
 		font-weight: 400;
-		color: color-mix(in srgb, #f4efe4 72%, #8a8478);
+		color: var(--plate-fg-quiet);
 	}
 
 	.line.zh,
@@ -525,7 +507,7 @@
 		font-size: 0.95rem;
 		font-weight: 500;
 		letter-spacing: 0.05em;
-		color: color-mix(in srgb, var(--k) 42%, #f4efe4);
+		color: color-mix(in srgb, var(--k) 42%, var(--plate-fg));
 	}
 
 	.line.zh-latn,
@@ -534,11 +516,11 @@
 		font-weight: 400;
 		font-style: italic;
 		letter-spacing: 0.02em;
-		color: color-mix(in srgb, #f4efe4 55%, #8a8478);
+		color: var(--plate-fg-faint);
 	}
 
 	.line.ellipsis {
-		color: color-mix(in srgb, #f4efe4 55%, #8a8478);
+		color: var(--plate-fg-faint);
 		letter-spacing: 0.12em;
 	}
 
@@ -548,7 +530,7 @@
 		bottom: 0.55rem;
 		font-size: 0.72rem;
 		line-height: 1;
-		color: #e0c878;
+		color: var(--gold);
 		animation: caret-blink 1.05s step-end infinite;
 	}
 
@@ -564,6 +546,11 @@
 	}
 
 	@media (prefers-reduced-motion: reduce) {
+		.stage {
+			transition: left var(--toc-duration) var(--toc-ease);
+			transform: none;
+		}
+
 		.portrait {
 			filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
 			transition: none;
@@ -589,22 +576,23 @@
 			padding-left: max(0.55rem, env(safe-area-inset-left, 0px));
 			background: linear-gradient(
 				to top,
-				rgba(20, 20, 26, 0.92) 0%,
-				rgba(20, 20, 26, 0.72) 42%,
+				var(--plate-scrim) 0%,
+				var(--plate-scrim-mid) 42%,
 				transparent 100%
 			);
 		}
 
 		.portrait-slot {
-			padding-right: 0;
+			padding-left: 0;
 			margin-bottom: -0.45rem;
-			align-self: flex-end;
+			align-self: flex-start;
 			width: min(8.5rem, 36vw);
 			flex-shrink: 0;
 		}
 
 		.portrait-layer {
-			right: 0;
+			left: 0;
+			right: auto;
 		}
 
 		.portrait {
@@ -637,6 +625,11 @@
 			left: 0.55rem;
 			min-height: 2.5rem;
 			padding: 0.38rem 0.8rem 0.4rem;
+		}
+
+		.box :global(.speak) {
+			top: 0.45rem;
+			right: 0.55rem;
 		}
 
 		.name {
@@ -674,15 +667,15 @@
 		.line {
 			font-size: 1.02rem;
 			font-weight: 500;
-			line-height: 1.55;
-			color: #faf6ee;
+			line-height: 1.42;
+			color: var(--plate-fg-strong);
 			overflow-wrap: anywhere;
 			word-break: keep-all;
 		}
 
 		.line.en.quiet {
 			font-size: 0.9rem;
-			color: color-mix(in srgb, #faf6ee 78%, #8a8478);
+			color: var(--plate-fg-quiet);
 		}
 
 		.line.zh,
@@ -734,11 +727,11 @@
 		.portrait-slot {
 			width: min(5.5rem, 22vw);
 			margin-bottom: 0;
-			order: 2;
+			order: 1;
 		}
 
 		.box {
-			order: 1;
+			order: 2;
 			flex: 1;
 			padding-top: 0.35rem;
 		}

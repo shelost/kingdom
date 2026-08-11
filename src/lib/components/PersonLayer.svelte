@@ -10,10 +10,15 @@
 		isPlaceholderArt,
 		KINGDOMS,
 		colorOf,
+		accentColorsOf,
 		hangulInitial,
+		photoOf,
+		binyeoArtOf,
+		kingdomFlag,
 		type Person
 	} from '$lib/people';
 	import { BOND_LABEL } from '$lib/relations';
+	import { orgsOf, membersOf, clanOf, clanEntriesOf, clanMembersOf } from '$lib/wiki';
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
 	import { reading } from '$lib/reading.svelte';
 	import { resolve } from '$app/paths';
@@ -135,7 +140,7 @@
 				<span class="card-sub">
 					{#if ko}<span class="ko">{ko}</span>{/if}
 					<span class="k-dot"></span>
-					{#if k.flag}<img class="card-flag" src={k.flag} alt="" />{/if}
+					{#if kingdomFlag(hovered.kingdom)}<img class="card-flag" src={kingdomFlag(hovered.kingdom)} alt="" />{/if}
 					{k.label}
 				</span>
 			</div>
@@ -158,20 +163,40 @@
 <!-- ————— floating profile peek ————— -->
 {#if peeked}
 	{@const k = { ...KINGDOMS[peeked.kingdom], color: colorOf(peeked) }}
+	{@const accents = accentColorsOf(peeked)}
 	{@const isBond = peeked.entity === 'relationship'}
 	{@const isPlace = peeked.entity === 'place'}
+	{@const isOrg = peeked.entity === 'organization'}
+	{@const isClan = peeked.entity === 'clan'}
 	{@const stageYear = profiles.year}
 	{@const art = avatarOf(peeked, undefined, stageYear)}
+	{@const photo = photoOf(peeked)}
+	{@const binyeoArt = binyeoArtOf(peeked)}
+	{@const flag = kingdomFlag(peeked.kingdom)}
 	{@const who = nameOf(peeked, stageYear)}
 	{@const role = titleOf(peeked, stageYear)}
 	{@const ko = koreanOf(peeked, stageYear)}
+	{@const memberships = isOrg || isClan || isBond || isPlace ? [] : orgsOf(peeked)}
+	{@const orgMembers = isOrg ? membersOf(peeked.id) : isClan ? clanMembersOf(peeked.id) : []}
+	{@const clanLabel = isOrg || isClan || isBond || isPlace ? undefined : clanOf(peeked)}
+	{@const clanEntries = isOrg || isClan || isBond || isPlace ? [] : clanEntriesOf(peeked)}
+	{@const accentA = accents[0] ?? k.color}
+	{@const accentB = accents[1] ?? accents[0] ?? k.color}
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 	<div class="scrim" onclick={() => closeProfile()}></div>
-	<aside class="peek" style:--k={k.color} aria-label="{who} profile">
+	<aside
+		class="peek"
+		style:--k={isBond ? accentA : k.color}
+		style:--k2={isBond ? accentB : (peeked.colorSecondary ?? k.color)}
+		aria-label="{who} profile"
+	>
 		<header class="peek-head">
 			<button class="close" onclick={() => closeProfile()} aria-label="Close">✕</button>
 			{#if peeked.main}<span class="lead">Lead</span>{/if}
 			{#if peeked.entity === 'concept'}<span class="lead concept">Institution</span>{/if}
+			{#if peeked.entity === 'organization'}<span class="lead concept">Organization</span>{/if}
+			{#if peeked.entity === 'clan'}<span class="lead concept">Clan</span>{/if}
+			{#if peeked.entity === 'god'}<span class="lead god">God</span>{/if}
 			{#if isPlace}<span class="lead place">Place</span>{/if}
 			{#if isBond}<span class="lead bond">{peeked.bond ? BOND_LABEL[peeked.bond] : 'Bond'}</span>{/if}
 			<a
@@ -182,9 +207,9 @@
 		</header>
 
 		<div class="peek-body">
-			{#if peeked.photo}
+			{#if photo}
 				<figure class="peek-photo">
-					<img src={peeked.photo} alt={who} />
+					<img src={photo} alt={who} />
 					{#if peeked.photoCredit}<figcaption>{peeked.photoCredit}</figcaption>{/if}
 				</figure>
 			{/if}
@@ -198,7 +223,7 @@
 					</figure>
 				{/if}
 				<div class="hero-id">
-					{#if !art && !peeked.photo}
+					{#if !art && !photo}
 						<span class="peek-avatar" aria-hidden="true">{hangulInitial(peeked)}</span>
 					{/if}
 					<h2 class="peek-name">{who}</h2>
@@ -231,22 +256,39 @@
 								{#if other}
 									<button
 										type="button"
-										class="linkish"
+										class="linkish partner"
 										onclick={() => openProfile(other, stageYear)}
-										>{nameOf(other, stageYear)}</button
 									>
+										<span class="swatch" style:--sw={colorOf(other)} aria-hidden="true"></span>
+										{nameOf(other, stageYear)}
+									</button>
 								{/if}
 							{/each}
 						</dd>
 					</div>
 				{/if}
 				<div>
-					<dt>{isPlace ? 'Territory' : 'Kingdom'}</dt>
+					<dt>{isPlace ? 'Territory' : isBond ? 'Kingdoms' : 'Kingdom'}</dt>
 					<dd>
-						<span class="pill">
-							{#if k.flag}<img class="pill-flag" src={k.flag} alt="" />{/if}
-							{k.label}
-						</span>
+						{#if isBond && peeked.between}
+							<span class="pill-row">
+								{#each peeked.between as id (id)}
+									{@const other = byId.get(id)}
+									{#if other}
+										{@const pk = { ...KINGDOMS[other.kingdom], color: colorOf(other) }}
+										<span class="pill" style:--pill={pk.color}>
+											{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
+											{pk.label}
+										</span>
+									{/if}
+								{/each}
+							</span>
+						{:else}
+							<span class="pill">
+								{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
+								{k.label}
+							</span>
+						{/if}
 					</dd>
 				</div>
 				{#if peeked.entity === 'nation' && k.icons}
@@ -256,18 +298,96 @@
 					<div><dt>Blade</dt><dd>{peeked.blade}</dd></div>
 				{/if}
 				{#if peeked.binyeo}
-					<div><dt>Binyeo</dt><dd>{peeked.binyeo}</dd></div>
+					<div class="binyeo-prop">
+						<dt>Binyeo</dt>
+						<dd class="binyeo-row">
+							{#if binyeoArt}
+								<img class="binyeo-fig" src={binyeoArt} alt="" />
+							{/if}
+							<span class="binyeo-cap">{peeked.binyeo}</span>
+						</dd>
+					</div>
 				{/if}
 				{#if lifespan(peeked)}
 					<div>
-						<dt>{peeked.entity === 'concept' || isBond ? 'Active' : 'Lived'}</dt>
+						<dt
+							>{peeked.entity === 'concept' ||
+							peeked.entity === 'organization' ||
+							peeked.entity === 'clan' ||
+							isBond
+								? 'Active'
+								: 'Lived'}</dt
+						>
 						<dd>{lifespan(peeked)}</dd>
 					</div>
 				{/if}
-				{#if peeked.entity !== 'concept' && peeked.entity !== 'relationship' && peeked.entity !== 'place' && peeked.born != null && peeked.died != null}
+				{#if peeked.entity !== 'concept' && peeked.entity !== 'organization' && peeked.entity !== 'clan' && peeked.entity !== 'relationship' && peeked.entity !== 'place' && peeked.born != null && peeked.died != null}
 					<div><dt>Age at death</dt><dd>{peeked.died - peeked.born}</dd></div>
 				{/if}
-				<div><dt>Identifier</dt><dd><code class="hex">{colorOf(peeked)}</code></dd></div>
+				{#if clanLabel}
+					<div>
+						<dt>Clan</dt>
+						<dd class="between">
+							{#if clanEntries.length}
+								{#each clanEntries as c, i (c.id)}
+									{#if i > 0}<span class="amp">·</span>{/if}
+									<button
+										type="button"
+										class="linkish"
+										onclick={() => openProfile(c, stageYear)}>{nameOf(c)}</button
+									>
+								{/each}
+							{:else}
+								{clanLabel}
+							{/if}
+						</dd>
+					</div>
+				{/if}
+				{#if memberships.length}
+					<div>
+						<dt>Organizations</dt>
+						<dd class="between">
+							{#each memberships as org, i (org.id)}
+								{#if i > 0}<span class="amp">·</span>{/if}
+								<button
+									type="button"
+									class="linkish"
+									onclick={() => openProfile(org, stageYear)}>{nameOf(org)}</button
+								>
+							{/each}
+						</dd>
+					</div>
+				{/if}
+				<div>
+					<dt>{isBond ? 'Colours' : 'Identifier'}</dt>
+					<dd class="accent-row">
+						{#each accents as hex (hex)}
+							<code class="hex" style:--chip={hex}>{hex}</code>
+						{/each}
+					</dd>
+				</div>
+				{#if peeked.firstLine}
+					<div>
+						<dt>First line</dt>
+						<dd class="spoken">
+							<span class="spoken-en">“{peeked.firstLine.en}”</span>
+							{#if peeked.firstLine.ko}
+								<span class="spoken-ko">{peeked.firstLine.ko}</span>
+							{/if}
+						</dd>
+					</div>
+				{/if}
+				{#if peeked.lastLine}
+					<div>
+						<dt>Last line</dt>
+						<dd class="spoken">
+							<span class="spoken-en">“{peeked.lastLine.en}”</span>
+							{#if peeked.lastLine.ko}
+								<span class="spoken-ko">{peeked.lastLine.ko}</span>
+							{/if}
+						</dd>
+					</div>
+				{/if}
 			</dl>
 
 			<p class="tagline">{peeked.tagline}</p>
@@ -280,13 +400,38 @@
 				</ul>
 			{/if}
 
+			{#if orgMembers.length}
+				<h3>Members</h3>
+				<ul class="between" style="flex-direction: column; align-items: flex-start; gap: 0.2rem;">
+					{#each orgMembers as m (m.id)}
+						<li>
+							<button
+								type="button"
+								class="linkish"
+								onclick={() => openProfile(m, stageYear)}>{nameOf(m, stageYear)}</button
+							>
+						</li>
+					{/each}
+				</ul>
+			{/if}
+
 			{#if peeked.nature}
 				<h3>Nature</h3>
 				<p class="arc nature">{peeked.nature}</p>
 			{/if}
 
 			{#if peeked.arc}
-				<h3>{isBond ? 'Story of the bond' : isPlace ? 'About this place' : 'Character arc'}</h3>
+				<h3>
+					{isBond
+						? 'Story of the bond'
+						: isPlace
+							? 'About this place'
+							: isOrg
+								? 'About this organization'
+								: peeked.entity === 'god'
+									? 'Myth'
+									: 'Character arc'}
+				</h3>
 				<p class="arc">{peeked.arc}</p>
 			{/if}
 
@@ -322,7 +467,7 @@
 		transform: translate(-50%, -100%);
 		background: var(--glass);
 		backdrop-filter: blur(18px) saturate(150%);
-		border: 1px solid rgba(255, 255, 255, 0.11);
+		border: 1px solid var(--hairline);
 		border-top: 2px solid var(--k);
 		border-radius: 12px;
 		box-shadow: 0 20px 55px rgba(0, 0, 0, 0.6);
@@ -360,15 +505,21 @@
 		font-family: var(--serif);
 		font-weight: 700;
 		color: #fff;
+		background: transparent;
+	}
+
+	.avatar:not(:has(img)),
+	.peek-avatar:not(:has(img)) {
 		background: color-mix(in srgb, var(--k) 72%, #000);
 	}
 
-	/* standing busts have headroom — crop to the face, not empty sky */
+	/* Full standing bust — never crop heads/feet. */
 	.avatar img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		object-position: 50% 16%;
+		object-fit: contain;
+		object-position: center bottom;
+		background: transparent;
 	}
 
 	.avatar.silhouette img {
@@ -384,7 +535,7 @@
 		display: block;
 		font-weight: 600;
 		font-size: 0.92rem;
-		color: #fffdf8;
+		color: var(--fg-strong);
 		letter-spacing: var(--tracking-display);
 	}
 
@@ -509,18 +660,25 @@
 	}
 
 	.close:hover {
-		background: rgba(255, 255, 255, 0.08);
-		color: #fff;
+		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		color: var(--fg-strong);
+	}
+
+	.accent-row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem;
 	}
 
 	.hex {
 		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 		font-size: 0.72rem;
-		color: var(--k);
-		border: 1px solid color-mix(in srgb, var(--k) 35%, transparent);
-		background: color-mix(in srgb, var(--k) 14%, transparent);
+		color: #fffdf8;
+		border: 1px solid color-mix(in srgb, var(--chip, var(--k)) 45%, transparent);
+		background: var(--chip, var(--k));
 		border-radius: 4px;
 		padding: 0.05rem 0.4rem;
+		text-shadow: 0 0 2px rgba(0, 0, 0, 0.65);
 	}
 
 	.lead.concept {
@@ -528,13 +686,18 @@
 		border-color: var(--hairline);
 	}
 
+	.lead.god {
+		color: color-mix(in srgb, var(--gold, #d8b26a) 75%, var(--fg-strong));
+		border-color: color-mix(in srgb, var(--gold, #d8b26a) 45%, transparent);
+	}
+
 	.lead.place {
-		color: color-mix(in srgb, var(--k) 65%, #fff);
+		color: color-mix(in srgb, var(--k) 65%, var(--fg-strong));
 		border-color: color-mix(in srgb, var(--k) 40%, transparent);
 	}
 
 	.lead.bond {
-		color: color-mix(in srgb, var(--k) 70%, #fff);
+		color: color-mix(in srgb, var(--k) 70%, var(--fg-strong));
 		border-color: color-mix(in srgb, var(--k) 45%, transparent);
 	}
 
@@ -560,11 +723,56 @@
 		margin: 0 0.1rem;
 	}
 
+	.between .partner {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.swatch {
+		width: 0.65rem;
+		height: 0.65rem;
+		border-radius: 2px;
+		background: var(--sw);
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+		flex-shrink: 0;
+	}
+
+	.pill-row {
+		display: inline-flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		align-items: center;
+	}
+
+	.pill-row .pill {
+		border-color: color-mix(in srgb, var(--pill, var(--k)) 45%, transparent);
+		background: color-mix(in srgb, var(--pill, var(--k)) 16%, transparent);
+	}
+
+	.spoken {
+		display: flex;
+		flex-direction: column;
+		gap: 0.18rem;
+	}
+
+	.spoken-en {
+		font-family: var(--serif);
+		font-style: italic;
+		color: var(--fg-strong);
+		line-height: 1.35;
+	}
+
+	.spoken-ko {
+		font-size: 0.82rem;
+		color: var(--fg-dim);
+	}
+
 	.linkish {
 		padding: 0;
 		border: none;
 		background: none;
-		color: color-mix(in srgb, var(--k) 55%, #fff);
+		color: color-mix(in srgb, var(--k) 55%, var(--fg-strong));
 		font: inherit;
 		font-weight: 600;
 		text-decoration: underline;
@@ -573,7 +781,7 @@
 	}
 
 	.linkish:hover {
-		color: #fff;
+		color: var(--fg-strong);
 	}
 
 	.lead {
@@ -704,8 +912,8 @@
 		font-weight: 500;
 		line-height: 1.45;
 		letter-spacing: var(--tracking-display);
-		color: #fffdf8;
-		text-shadow: 0 1px 14px rgba(0, 0, 0, 0.8);
+		color: var(--fg-strong);
+		text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 80%, transparent);
 	}
 
 	.peek-photo {
@@ -727,7 +935,7 @@
 		font-size: 0.62rem;
 		letter-spacing: 0.03em;
 		color: var(--fg-faint);
-		background: rgba(255, 255, 255, 0.03);
+		background: color-mix(in srgb, var(--fg) 3%, transparent);
 	}
 
 	.peek-avatar {
@@ -745,7 +953,7 @@
 		font-weight: 700;
 		letter-spacing: var(--tracking-display);
 		line-height: 1.1;
-		color: #fffdf8;
+		color: var(--fg-strong);
 	}
 
 	.peek-native {
@@ -775,7 +983,7 @@
 		grid-template-columns: 7.5rem 1fr;
 		align-items: baseline;
 		padding: 0.32rem 0;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.045);
+		border-bottom: 1px solid color-mix(in srgb, var(--fg) 5%, transparent);
 	}
 
 	dt {
@@ -789,6 +997,30 @@
 		color: var(--fg);
 	}
 
+	.props > div.binyeo-prop {
+		grid-template-columns: 1fr;
+		gap: 0.35rem;
+		align-items: start;
+	}
+
+	.binyeo-row {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.45rem;
+	}
+
+	.binyeo-fig {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: contain;
+	}
+
+	.binyeo-cap {
+		line-height: 1.45;
+	}
+
 	.pill {
 		display: inline-flex;
 		align-items: center;
@@ -796,7 +1028,7 @@
 		font-size: 0.72rem;
 		padding: 0.1rem 0.5rem 0.1rem 0.28rem;
 		border-radius: 999px;
-		color: color-mix(in srgb, var(--k) 70%, #fff);
+		color: color-mix(in srgb, var(--k) 70%, var(--fg-strong));
 		background: color-mix(in srgb, var(--k) 22%, transparent);
 		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
 	}
@@ -821,7 +1053,7 @@
 		font-style: italic;
 		font-size: 1.02rem;
 		line-height: 1.5;
-		color: color-mix(in srgb, var(--k) 45%, #fff);
+		color: color-mix(in srgb, var(--k) 45%, var(--fg-strong));
 	}
 
 	.sobriquets {
@@ -854,7 +1086,7 @@
 	.arc {
 		margin: 0;
 		font-size: 0.9rem;
-		line-height: 1.68;
+		line-height: 1.48;
 		color: var(--fg-dim);
 	}
 
@@ -877,7 +1109,7 @@
 		font-family: var(--serif);
 		font-size: 0.88rem;
 		font-weight: 700;
-		color: #fffdf8;
+		color: var(--fg-strong);
 		letter-spacing: 0;
 	}
 
@@ -908,7 +1140,7 @@
 		top: 1.1em;
 		bottom: -0.85rem;
 		width: 1px;
-		background: rgba(255, 255, 255, 0.12);
+		background: color-mix(in srgb, var(--fg) 12%, transparent);
 		transform: translateX(-50%);
 	}
 

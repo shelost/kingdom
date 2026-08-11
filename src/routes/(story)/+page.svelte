@@ -4,24 +4,72 @@
 	import { chapters } from '$lib/story';
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
+	import PlaceBanner from '$lib/components/PlaceBanner.svelte';
+	import PlaceMapTile from '$lib/components/PlaceMapTile.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
-	import Toc from '$lib/components/Toc.svelte';
-	import PersonLayer from '$lib/components/PersonLayer.svelte';
-	import Hud from '$lib/components/Hud.svelte';
-	import SpeakerPlate from '$lib/components/SpeakerPlate.svelte';
-	import StoryMap from '$lib/components/StoryMap.svelte';
-	import RelationChart from '$lib/components/RelationChart.svelte';
 	import { ENTRY_PLACE } from '$lib/places';
 	import { buildBeats } from '$lib/beats';
-	import { loadMode, watchReading } from '$lib/reading.svelte';
+	import {
+		reading,
+		episodes,
+		loadMode,
+		loadViewScope,
+		loadImageLayout,
+		stepEpisode,
+		watchReading
+	} from '$lib/reading.svelte';
+	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { flagOf, flagSrc } from '$lib/flags';
 	import { onMount } from 'svelte';
 	import type { Chapter, Entry, StackImage } from '$lib/story';
 
+	let currentEpisode = $derived(episodes[reading.episodeIndex] ?? episodes[0]);
+	let episodesMode = $derived(reading.viewScope === 'episodes');
+	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
+	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
+	let sideImages = $derived(reading.imageLayout === 'side');
+	let inlineImages = $derived(reading.imageLayout === 'inline');
+
 	onMount(() => {
-		/* Sync saved mode (or immersive default) onto <html> before the watcher. */
+		/* Sync saved mode / view / images onto state before the watcher. */
 		loadMode();
-		return watchReading();
+		loadViewScope();
+		loadImageLayout();
+		const stopReading = watchReading();
+
+		/** Chrome waits until cover + blurb are behind the reader. */
+		const scriptEl = document.getElementById('script');
+		const syncInScript = () => {
+			if (!scriptEl) {
+				scriptUi.inScript = true;
+				return;
+			}
+			/* True once any of the script has entered the viewport from below. */
+			scriptUi.inScript = scriptEl.getBoundingClientRect().top < window.innerHeight * 0.92;
+		};
+
+		/* Deep-link into a chapter/entry: show chrome immediately (scroll position
+		   may still be at the top until Toc's hash jump runs on the next frame). */
+		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+		if (hash && scriptEl) {
+			const target = document.getElementById(hash);
+			if (target && scriptEl.contains(target)) scriptUi.inScript = true;
+			else if (episodesMode) scriptUi.inScript = true;
+		} else {
+			syncInScript();
+		}
+		/* Reconcile after hash scrollIntoView (Toc schedules it on rAF). */
+		requestAnimationFrame(syncInScript);
+
+		window.addEventListener('scroll', syncInScript, { passive: true });
+		window.addEventListener('resize', syncInScript);
+
+		return () => {
+			stopReading();
+			window.removeEventListener('scroll', syncInScript);
+			window.removeEventListener('resize', syncInScript);
+			scriptUi.inScript = false;
+		};
 	});
 
 	/**
@@ -46,36 +94,50 @@
 		);
 	}
 
-	const yearsByChapter = new Map(chapters.map((ch) => [ch.id, entryYears(ch)]));
+	function showChapter(chapterId: string) {
+		return !episodesMode || currentEpisode?.chapterId === chapterId;
+	}
 
-	/** TOC open — desktop main shifts by --toc-w; narrow keeps overlay. */
-	let tocOpen = $state(false);
+	function showEntry(chapterId: string, entryIndex: number) {
+		return (
+			!episodesMode ||
+			(currentEpisode?.chapterId === chapterId && currentEpisode.entryIndex === entryIndex)
+		);
+	}
+
+	/** Chapter opener / part title when viewing that chapter's first entry. */
+	function showChapterChrome(chapterId: string) {
+		return !episodesMode || (currentEpisode?.chapterId === chapterId && currentEpisode.entryIndex === 0);
+	}
+
+	const yearsByChapter = new Map(chapters.map((ch) => [ch.id, entryYears(ch)]));
 </script>
 
 <svelte:head>
 	<title>King for All 삼한왕검</title>
 	<meta
 		name="description"
-		content="King for All (삼한왕검) — a scrolling chronicle of 7th-century East Asia, at the end of the Three Kingdoms Period."
+		content="King for All (삼한왕검) by Heewon Ahn — a three-generation chronicle of 7th-century Samhan, at the end of the Three Kingdoms Period."
 	/>
 </svelte:head>
 
-<Toc bind:open={tocOpen} />
-<PersonLayer />
-<Hud />
-<SpeakerPlate />
-<RelationChart />
-<StoryMap />
-
-<main class:toc-open={tocOpen}>
-	<!-- ————— cover ————— -->
+<main>
+	<!-- ————— cover: brand only ————— -->
 	<header class="cover">
 		<div class="cover-mark" use:reveal aria-hidden="true"></div>
 		<h1 class="cover-title" use:reveal={80}>King for All</h1>
 		<p class="cover-ko" use:reveal={160}>삼한왕검</p>
 		<h2 class="cover-subtitle" use:reveal={160}>A Story Told In Parts</h2>
-		
-		<div class="blurb" use:reveal={240}>
+		<p class="cover-author" use:reveal={180}>Heewon Ahn · 안희원</p>
+
+		<span class="scroll-cue" use:reveal={280} aria-hidden="true">
+			<span class="cue-line"></span>
+		</span>
+	</header>
+
+	<!-- ————— blurb: standalone full-viewport screen ————— -->
+	<section class="blurb-page" aria-label="About this story">
+		<div class="blurb" use:reveal={80}>
 			<p>
 				<em>King for All</em> is a story set in 7th-century Samhan, at the end of the Three
 				Kingdoms Period.
@@ -103,145 +165,213 @@
 			<p class="sign">I hope you enjoy it!</p>
 		</div>
 
-		<span class="scroll-cue" use:reveal={340} aria-hidden="true">
+		<span class="scroll-cue" use:reveal={200} aria-hidden="true">
 			<span class="cue-line"></span>
 		</span>
-	</header>
+	</section>
 
-	{#each chapters as chapter, ci (chapter.id)}
-		{#if chapter.part}
-			<section class="part-page" use:reveal>
-				<span class="part-eyebrow">{chapter.part}</span>
-				{#if chapter.partTitle}<h2 class="part-title">{chapter.partTitle}</h2>{/if}
-				{#if chapter.partKorean}<p class="part-ko">{chapter.partKorean}</p>{/if}
-				{#if chapter.partHanja}<p class="part-hanja">{chapter.partHanja}</p>{/if}
-				<span class="part-rule" aria-hidden="true"></span>
-			</section>
-		{/if}
-		<section class="chapter" id={chapter.id}>
-			<header class="chapter-head">
-				<div class="chapter-title">
-					<h1>
-						<span class="num">{ci + 1}</span>
-						<span class="en">{chapter.title}</span>
-						{#if chapter.hanja}<span class="hanja">{chapter.hanja}</span>{/if}
-						{#if chapter.korean}<span class="ko">{chapter.korean}</span>{/if}
-						<span class="range">{chapter.range}</span>
-					</h1>
-					<span class="rule" aria-hidden="true"></span>
-				</div>
-			</header>
-
-			{#each chapter.entries as entry, i (chapter.id + i)}
-				{@const years = yearsByChapter.get(chapter.id) ?? []}
-				{@const beats = buildBeats(entry)}
-				{@const images = stackImages(entry)}
-				<article
-					class="entry"
-					class:flash={entry.flash}
-					id="{chapter.id}-{i}"
-					data-year={years[i]}
-					data-flash={entry.flash ? '1' : undefined}
-					data-music={entry.music ?? undefined}
-					data-place={ENTRY_PLACE[entry.title] ?? undefined}
-					style:--tone={entry.flashTone ?? '#8a8a94'}
-				>
-					<div class="meta">
-						<div class="meta-sticky" use:reveal={{ y: 0 }}>
-							<div class="side-chrome">
-								<p class="chapter-label">
+	<!-- Script: chapters after cover + blurb — fixed chrome waits on this region. -->
+	<div
+		id="script"
+		class="script"
+		class:episodes={episodesMode}
+		class:images-inline={inlineImages}
+	>
+		{#each chapters as chapter, ci (chapter.id)}
+			{#if showChapter(chapter.id)}
+				{#if chapter.part && showChapterChrome(chapter.id)}
+					<section class="part-page" use:reveal>
+						<span class="part-eyebrow">{chapter.part}</span>
+						{#if chapter.partTitle}<h2 class="part-title">{chapter.partTitle}</h2>{/if}
+						{#if chapter.partKorean}<p class="part-ko">{chapter.partKorean}</p>{/if}
+						{#if chapter.partHanja}<p class="part-hanja">{chapter.partHanja}</p>{/if}
+						<span class="part-rule" aria-hidden="true"></span>
+					</section>
+				{/if}
+				<section class="chapter" id={chapter.id}>
+					{#if showChapterChrome(chapter.id)}
+						<header class="chapter-head">
+							<div class="chapter-title">
+								<h1>
 									<span class="num">{ci + 1}</span>
-									<span class="dot" aria-hidden="true">·</span>
-									<span class="name">{chapter.title}</span>
-								</p>
-								<p class="story-index">
-									Story {i + 1} out of {chapter.entries.length}
-								</p>
+									<span class="en">{chapter.title}</span>
+									{#if chapter.hanja}<span class="hanja">{chapter.hanja}</span>{/if}
+									{#if chapter.korean}<span class="ko">{chapter.korean}</span>{/if}
+									<span class="range">{chapter.range}</span>
+								</h1>
+								<span class="rule" aria-hidden="true"></span>
 							</div>
-							<div class="meta-row">
-								<div class="year" class:long={entry.year.length > 4}>
-									{entry.year}
-									{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
-								</div>
-								<div class="episode">
-									<h2 style:color={entry.accent}>{entry.title}</h2>
-									{#if entry.subtitle}<p class="episode-ko">{entry.subtitle}</p>{/if}
-									{#if entry.badges}
-										<div class="badges">
-											{#each entry.badges as badge, j (j)}
-												{@const flag = flagOf(badge)}
-												{#if flag}
-													<span
-														class="badge flag"
-														use:reveal={60 + j * 55}
-														title={flag}
-													>
-														<img src={flagSrc(flag)} alt="" />
-													</span>
-												{:else}
-													<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
-												{/if}
-											{/each}
-										</div>
-									{/if}
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- text beats scroll; the image column sticks and swaps via IO -->
-					<div class="beats">
-						{#each beats as beat, bi (bi)}
-							<div class="text" class:first={bi === 0} data-beat={bi} use:reveal={80}>
-								<Blocks blocks={beat.blocks} year={years[i]} />
-							</div>
-						{/each}
-					</div>
-
-					{#if images.length}
-						<aside class="images-col">
-							<div class="images-sticky">
-								<ImageStack {images} />
-							</div>
-						</aside>
+						</header>
 					{/if}
-				</article>
-			{/each}
-		</section>
-	{/each}
 
-	<footer class="colophon" use:reveal>
-		<p>— to be continued —</p>
-		<p class="colophon-links">
-			<a href={resolve('/wiki')}>Encyclopedia</a>
-		</p>
-	</footer>
+					{#each chapter.entries as entry, i (chapter.id + i)}
+						{#if showEntry(chapter.id, i)}
+							{@const years = yearsByChapter.get(chapter.id) ?? []}
+							{@const beats = buildBeats(entry)}
+							{@const images = stackImages(entry)}
+							<article
+								class="entry"
+								class:flash={entry.flash}
+								id="{chapter.id}-{i}"
+								data-year={years[i]}
+								data-flash={entry.flash ? '1' : undefined}
+								data-music={entry.music ?? undefined}
+								data-place={ENTRY_PLACE[entry.title] ?? undefined}
+								style:--tone={entry.flashTone ?? '#8a8a94'}
+							>
+								<div class="meta">
+									<div class="meta-sticky" use:reveal={{ y: 0 }}>
+										<div class="side-chrome">
+											<p class="chapter-label">
+												<span class="num">{ci + 1}</span>
+												<span class="dot" aria-hidden="true">·</span>
+												<span class="name">{chapter.title}</span>
+											</p>
+											<p class="story-index">
+												Story {i + 1} out of {chapter.entries.length}
+											</p>
+										</div>
+										<div class="meta-row">
+											<div class="year" class:long={entry.year.length > 4}>
+												{entry.year}
+												{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
+											</div>
+											<div class="episode">
+												<h2 style:color={entry.accent}>{entry.title}</h2>
+												{#if entry.subtitle}<p class="episode-ko">{entry.subtitle}</p>{/if}
+												{#if entry.badges}
+													<div class="badges">
+														{#each entry.badges as badge, j (j)}
+															{@const flag = flagOf(badge)}
+															{#if flag}
+																<span
+																	class="badge flag"
+																	use:reveal={60 + j * 55}
+																	title={flag}
+																>
+																	<img src={flagSrc(flag)} alt="" />
+																</span>
+															{:else}
+																<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
+															{/if}
+														{/each}
+													</div>
+												{/if}
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Side: sticky reel swaps from scrollY. Inline: art after each beat. -->
+								<div class="beats">
+									{#each beats as beat, bi (bi)}
+										<div
+											class="text"
+											class:first={bi === 0}
+											class:has-art={sideImages && beat.images.length > 0}
+											data-beat={bi}
+											style:--art-n={Math.max(1, beat.images.length)}
+											use:reveal={80}
+										>
+											<Blocks blocks={beat.blocks} year={years[i]} />
+										</div>
+										{#if inlineImages && beat.images.length}
+											<div class="inline-art" use:reveal={100}>
+												<ImageStack images={beat.images} inline />
+											</div>
+										{/if}
+									{/each}
+								</div>
+
+								{#if (sideImages && images.length) || ENTRY_PLACE[entry.title]}
+									<aside class="images-col" class:place-only={inlineImages}>
+										<div class="images-sticky" class:has-banner={!!ENTRY_PLACE[entry.title]}>
+											{#if ENTRY_PLACE[entry.title]}
+												<div class="bento">
+													<div class="bento-place">
+														<PlaceBanner placeId={ENTRY_PLACE[entry.title]} />
+													</div>
+													<div class="bento-map">
+														<PlaceMapTile placeId={ENTRY_PLACE[entry.title]} />
+													</div>
+												</div>
+											{/if}
+											{#if sideImages && images.length}
+												<div class="reel">
+													<ImageStack {images} />
+												</div>
+											{/if}
+										</div>
+									</aside>
+								{/if}
+							</article>
+						{/if}
+					{/each}
+				</section>
+			{/if}
+		{/each}
+	</div>
+
+	{#if !episodesMode || atLastEpisode}
+		<footer class="colophon" use:reveal>
+			<p>— to be continued —</p>
+			<p class="colophon-links">
+				<a href={resolve('/wiki')}>Encyclopedia</a>
+				<span aria-hidden="true">·</span>
+				<a href={resolve('/images')}>Images</a>
+			</p>
+		</footer>
+	{/if}
+
+	<nav
+		class="ep-nav"
+		class:in={scriptUi.inScript && episodesMode}
+		aria-label="Episode navigation"
+		aria-hidden={!scriptUi.inScript || !episodesMode}
+	>
+		<button
+			type="button"
+			disabled={atFirstEpisode}
+			tabindex={scriptUi.inScript && episodesMode && !atFirstEpisode ? 0 : -1}
+			onclick={() => stepEpisode(-1)}
+		>
+			Prev
+		</button>
+		<span class="ep-count" aria-live="polite">
+			{reading.episodeIndex + 1}
+			<span class="ep-of">/</span>
+			{episodes.length}
+		</span>
+		<button
+			type="button"
+			disabled={atLastEpisode}
+			tabindex={scriptUi.inScript && episodesMode && !atLastEpisode ? 0 : -1}
+			onclick={() => stepEpisode(1)}
+		>
+			Next
+		</button>
+	</nav>
 
 	{#if dev}
-		<a class="edit-link" href={resolve('/edit')} title="Open the story editor">✎ Edit</a>
+		<a
+			class="edit-link"
+			class:in={scriptUi.inScript}
+			href={resolve('/edit')}
+			title="Open the story editor"
+			aria-hidden={!scriptUi.inScript}
+			tabindex={scriptUi.inScript ? 0 : -1}
+		>✎ Edit</a>
 	{/if}
 </main>
 
 <style>
-	main {
-		padding-left: 22px; /* clear the fixed rail */
-		transition: padding-left 260ms cubic-bezier(0.22, 1, 0.36, 1);
-	}
+	/* Shell padding / TOC shift live in (story)/+layout.svelte */
 
-	/* Desktop: open TOC pushes the reading column (Notion-style), not overlay. */
-	main.toc-open {
-		padding-left: var(--toc-w);
-	}
-
-	@media (max-width: 1000px) {
-		main.toc-open {
-			padding-left: 22px;
-		}
-	}
-
-	/* ————— Cover ————— */
-	.cover {
+	/* ————— Cover + blurb: two full-viewport screens (no document snap) ————— */
+	.cover,
+	.blurb-page {
 		min-height: 100vh;
+		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -275,8 +405,16 @@
 		color: var(--fg);
 	}
 
+	.cover-author {
+		margin: 0.85rem 0 0;
+		font-family: var(--serif);
+		font-size: 0.95rem;
+		letter-spacing: 0.02em;
+		color: var(--fg-dim);
+	}
+
 	.blurb {
-		margin-top: 3.2rem;
+		margin: 0;
 		max-width: 34rem;
 	}
 
@@ -284,7 +422,7 @@
 		margin: 0 0 1.15rem;
 		font-size: 0.9rem;
 		font-weight: 100 !important;
-		line-height: 1.72;
+		line-height: 1.48;
 		color: var(--fg-dim);
 	}
 
@@ -369,7 +507,7 @@
 	.part-ko {
 		margin-top: 0.5rem;
 		font-size: clamp(0.95rem, 1.7vw, 1.25rem);
-		color: #fffdf8;
+		color: var(--fg-strong);
 	}
 
 	.part-hanja {
@@ -400,7 +538,7 @@
 		display: flex;
 		align-items: baseline;
 		gap: 0.55em;
-		color: #fffdf8;
+		color: var(--fg-strong);
 	}
 
 	.chapter-title .num {
@@ -435,10 +573,83 @@
 		position: relative;
 		display: grid;
 		grid-template-columns: 16rem minmax(0, 1fr) minmax(260px, 32%);
-		grid-auto-rows: min-content;
+		/* `auto` (not min-content): side columns must stretch to the full entry
+		   height so `position: sticky` on .images-sticky / .meta-sticky has a
+		   tall containing block to travel through while the text scrolls. */
+		grid-auto-rows: auto;
 		gap: 0 3.75rem;
 		padding: 0 0 7rem 3rem;
 		scroll-margin-top: 1.5rem;
+		overflow: visible;
+	}
+
+	/* Immersion: give the phone reel a wider sticky column so it reads as stage. */
+	:global(html.is-immersion) .entry {
+		grid-template-columns: 15rem minmax(0, 1fr) minmax(300px, 40%);
+		gap: 0 2.75rem;
+	}
+
+	/* Inline: drop the art column unless a place banner still needs the stage. */
+	.script.images-inline .entry:not(:has(.images-col)) {
+		grid-template-columns: 16rem minmax(0, 1fr);
+	}
+
+	:global(html.is-immersion) .script.images-inline .entry:not(:has(.images-col)) {
+		grid-template-columns: 15rem minmax(0, 1fr);
+	}
+
+	.script.images-inline .entry:has(.images-col.place-only) {
+		grid-template-columns: 16rem minmax(0, 1fr) minmax(220px, 26%);
+	}
+
+	:global(html.is-immersion) .script.images-inline .entry:has(.images-col.place-only) {
+		grid-template-columns: 15rem minmax(0, 1fr) minmax(240px, 28%);
+	}
+
+	/* ————— Cinema: one column over the panel —————
+	   The stage carries the art, the place and the episode marker, so the side
+	   meta, the sticky reel and the inline figures all stand down and the prose
+	   becomes a single centred column reading over the full-bleed panel.
+	   Everything here is undone by `is-cinema-peek`, which is the one control
+	   that hands the dashboard back. */
+	:global(html.is-cinema) .entry {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0;
+		padding: 0 1.5rem 6rem;
+		/* Jumps land the entry clear of the episode title card, not under it. */
+		scroll-margin-top: 4.5rem;
+	}
+
+	:global(html.is-cinema:not(.is-cinema-peek)) .meta,
+	:global(html.is-cinema:not(.is-cinema-peek)) .images-col,
+	:global(html.is-cinema:not(.is-cinema-peek)) .inline-art,
+	:global(html.is-cinema:not(.is-cinema-peek)) .chapter-head {
+		display: none;
+	}
+
+	:global(html.is-cinema) .beats {
+		grid-column: 1;
+		width: min(100%, 40rem);
+		margin: 0 auto;
+	}
+
+	/* Enough head-room that the opening paragraphs read below the title card
+	   even while it is still holding its beat. */
+	:global(html.is-cinema) .text.first {
+		padding-top: 7rem;
+	}
+
+	/* Peeking: the ordinary three-column entry comes back under the stage. */
+	:global(html.is-cinema.is-cinema-peek) .entry {
+		grid-template-columns: 16rem minmax(0, 1fr) minmax(260px, 32%);
+		gap: 0 3.75rem;
+		padding: 0 0 7rem 3rem;
+	}
+
+	:global(html.is-cinema.is-cinema-peek) .beats {
+		grid-column: 2;
+		width: auto;
+		margin: 0;
 	}
 
 	/* marker + art columns span the full entry so sticky inners can travel with it */
@@ -460,16 +671,114 @@
 		grid-column: 3;
 		grid-row: 1 / -1;
 		align-self: stretch;
+		height: 100%;
+		min-height: 100%;
 		min-width: 0;
+		overflow: visible;
+		/* Flex column so the sticky stage can `align-self: flex-start`
+		   and pin while this tall column scrolls with the entry. */
+		display: flex;
+		flex-direction: column;
 	}
 
 	.images-sticky {
+		/* Shared stage width: bento row + landscape phone (3:2) match. */
+		--stage-gap: 0.7rem;
+		--stage-w: 100%;
 		position: sticky;
 		top: 1.5rem;
+		/* Viewport-tall stage pinned while the entry’s text column scrolls. */
 		height: calc(100vh - 3rem);
+		max-height: calc(100dvh - 3rem);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: var(--stage-gap);
+		padding-top: 2.1rem;
+		min-height: 0;
+		align-self: flex-start;
+		width: 100%;
+	}
+
+	.images-sticky .bento,
+	.images-sticky .reel {
+		width: var(--stage-w);
+		max-width: 100%;
+		flex-shrink: 0;
+	}
+
+	/* Place banner + mini map side by side; banner 16:9 sets the row height. */
+	.bento {
+		display: grid;
+		grid-template-columns: 1.55fr 1fr;
+		gap: var(--stage-gap);
+		align-items: stretch;
+	}
+
+	.bento-place,
+	.bento-map {
+		min-width: 0;
+		min-height: 0;
+	}
+
+	.bento-place :global(.banner) {
+		width: 100%;
+		height: auto;
+	}
+
+	.bento-map {
+		display: flex;
+	}
+
+	.bento-map :global(.tile) {
+		flex: 1 1 auto;
+		width: 100%;
+		height: 100%;
+	}
+
+	.images-sticky .reel {
 		display: flex;
 		align-items: center;
+		justify-content: center;
+	}
+
+	.images-sticky .reel :global(.stack) {
+		width: 100%;
+		height: auto;
+	}
+
+	/* Inline + place banner only: no reel runway — keep the bento compact. */
+	.images-col.place-only .images-sticky {
+		height: auto;
+		justify-content: flex-start;
 		padding-top: 2.1rem;
+	}
+
+	:global(html.is-immersion) .images-col.place-only .images-sticky,
+	:global(html.is-immersion) .images-col.place-only .images-sticky.has-banner {
+		height: auto;
+		--stage-w: min(100%, 22rem);
+	}
+
+	/* Immersion: size stage so bento + landscape 3:2 phone fit above the plate. */
+	:global(html.is-immersion) .images-sticky {
+		top: 1.1rem;
+		height: calc(100dvh - var(--plate-h) - 1.35rem);
+		padding-top: 0.35rem;
+		padding-bottom: 0.35rem;
+		justify-content: center;
+		box-sizing: border-box;
+		/* phone only: height = w * 2/3  →  w = H * 3/2 */
+		--stage-w: min(100%, calc((100dvh - var(--plate-h) - 1.35rem) * 3 / 2));
+	}
+
+	:global(html.is-immersion) .images-sticky.has-banner {
+		/* bento 9/16 + phone 2/3 = 59/48 of width, plus gap */
+		--stage-w: min(
+			100%,
+			calc((100dvh - var(--plate-h) - 1.35rem - var(--stage-gap)) * 48 / 59)
+		);
 	}
 
 	/* Side chrome only: chapter label + story counter + year/title stick here */
@@ -516,7 +825,7 @@
 	}
 
 	.chapter-label .name {
-		color: #fffdf8;
+		color: var(--fg-strong);
 	}
 
 	.story-index {
@@ -541,7 +850,7 @@
 		letter-spacing: var(--tracking-display);
 		display: flex;
 		flex-direction: column;
-		color: #fffdf8;
+		color: var(--fg-strong);
 	}
 
 	/* "March", "October" — month-only markers get a smaller face */
@@ -568,7 +877,11 @@
 		background: color-mix(in srgb, var(--tone) 7%, transparent);
 	}
 
-	.entry.flash > * {
+	/* Tint overlay only — do not promote children into relative containing
+	   blocks that can interfere with sticky side columns. */
+	.entry.flash .beats,
+	.entry.flash .meta-sticky,
+	.entry.flash .images-sticky {
 		position: relative;
 	}
 
@@ -593,7 +906,7 @@
 		line-height: 1.08;
 		letter-spacing: var(--tracking-display);
 		max-width: 9em;
-		color: #fffdf8;
+		color: var(--fg-strong);
 	}
 
 	.episode-ko {
@@ -616,7 +929,7 @@
 		height: 1.45rem;
 		padding: 0 0.3rem;
 		font-size: 0.9rem;
-		background: rgba(255, 255, 255, 0.06);
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
 		border: 1px solid var(--hairline);
 		border-radius: 0.3rem;
 		transition:
@@ -642,7 +955,7 @@
 
 	.badge:hover {
 		transform: translateY(-2px);
-		background: rgba(255, 255, 255, 0.12);
+		background: color-mix(in srgb, var(--fg) 12%, transparent);
 	}
 
 	.badge.flag:hover {
@@ -656,6 +969,28 @@
 
 	.text.first {
 		padding-top: 2.1rem;
+	}
+
+	.inline-art {
+		width: 100%;
+		max-width: min(100%, 34rem);
+		margin: 1.35rem 0 0.35rem;
+	}
+
+	.script.images-inline .inline-art :global(.stack.immersion) {
+		max-width: min(100%, 28rem);
+	}
+
+	/*
+	   Desktop sticky reel: each image-bearing beat reserves a minimum scroll
+	   runway so cue switch points stay spaced and short prose cannot skip art.
+	   --art-n scales the floor when several images share one beat.
+	   Inline layout skips this — art already sits in the flow.
+	*/
+	@media (min-width: 821px) {
+		.text.has-art {
+			min-height: calc(var(--art-n, 1) * min(52vh, 22rem));
+		}
 	}
 
 	.edit-link {
@@ -672,16 +1007,51 @@
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
 		padding: 0.45rem 0.95rem;
+		opacity: 0;
+		transform: translate3d(0, 0.85rem, 0);
+		pointer-events: none;
 		transition:
 			color 0.25s var(--ease),
 			border-color 0.25s var(--ease),
-			transform 0.25s var(--ease);
+			opacity 520ms var(--ease),
+			transform 560ms var(--ease);
 	}
 
-	.edit-link:hover {
-		color: #fff;
+	.edit-link.in {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		pointer-events: auto;
+	}
+
+	.edit-link.in:hover {
+		color: var(--fg-strong);
 		border-color: rgba(216, 178, 106, 0.5);
 		transform: translateY(-2px);
+	}
+
+	/* Cinema: the dev link keeps out of the strip and out of the way. */
+	:global(html.is-cinema) .edit-link {
+		bottom: calc(var(--cin-strip-h) + 4rem);
+		opacity: 0;
+	}
+
+	:global(html.is-cinema) .edit-link.in {
+		opacity: 0.3;
+	}
+
+	:global(html.is-cinema) .edit-link.in:hover {
+		opacity: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.edit-link {
+			transition: opacity 200ms ease, color 0.2s ease, border-color 0.2s ease;
+			transform: none;
+		}
+
+		.edit-link.in:hover {
+			transform: none;
+		}
 	}
 
 	.colophon {
@@ -700,6 +1070,12 @@
 		font-size: 0.78rem;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 0.55rem;
+		color: var(--fg-faint);
 	}
 
 	.colophon-links a {
@@ -718,21 +1094,18 @@
 
 	/* ————— Small screens: a TikTok-style snap feed ————— */
 	@media (max-width: 820px) {
-		main,
-		main.toc-open {
+		main {
 			padding-left: 0;
 			padding-right: 0;
 			overflow-x: clip;
-			/* each entry is a "card" the scroll settles onto */
-			scroll-snap-type: y proximity;
 		}
 
-		.cover {
+		.cover,
+		.blurb-page {
 			min-height: 100dvh;
 			padding: max(4.5rem, calc(env(safe-area-inset-top, 0px) + 3.4rem))
 				max(1.15rem, env(safe-area-inset-right, 0px)) 3rem
 				max(1.15rem, env(safe-area-inset-left, 0px));
-			scroll-snap-align: start;
 		}
 
 		.cover-title {
@@ -741,7 +1114,7 @@
 		}
 
 		.blurb {
-			margin-top: 2rem;
+			margin: 0;
 			max-width: 36rem;
 		}
 
@@ -749,7 +1122,6 @@
 			min-height: 72dvh;
 			padding: 3.5rem max(1.15rem, env(safe-area-inset-right, 0px)) 2.5rem
 				max(1.15rem, env(safe-area-inset-left, 0px));
-			scroll-snap-align: start;
 		}
 
 		/* Chapter opener scrolls away; sticky chrome lives in the side meta on desktop.
@@ -777,20 +1149,12 @@
 			flex-direction: column;
 			min-height: 0;
 			padding: 0 0 3.5rem;
-			scroll-snap-align: start;
-			scroll-snap-stop: always;
 		}
 
-		/* Immersive glides a tapped line into the reading band; snap points
-		   would drag that scroll back to the top of the entry. Extra foot room
-		   keeps the last lines above the speaker plate. */
-		:global(html.is-immersive) main {
-			scroll-snap-type: none;
-		}
-
-		:global(html.is-immersive) .entry {
-			scroll-snap-align: none;
-			scroll-snap-stop: normal;
+		/* Immersion glides a tapped line into the reading band; entry snap
+		   points would drag that scroll back to the top of the entry.
+		   Extra foot room keeps the last lines above the speaker plate. */
+		:global(html.is-immersion) .entry {
 			padding-bottom: 1.25rem;
 		}
 
@@ -798,18 +1162,40 @@
 			padding-top: 0;
 		}
 
-		/* art leads the card, then title, then text — not sticky on narrow */
+		/* Side: art leads the card, then title, then text — not sticky on narrow.
+		   Inline: art lives inside .beats, so a place-only column still leads. */
 		.images-col {
 			order: 1;
 			margin: 0;
 			max-width: 100%;
 		}
 
+		.script.images-inline .inline-art {
+			max-width: none;
+			margin: 0.85rem max(1.15rem, env(safe-area-inset-right, 0px)) 0.15rem
+				max(1.15rem, env(safe-area-inset-left, 0px));
+		}
+
 		.images-sticky {
 			position: static;
 			height: auto;
 			padding-top: 0;
-			display: block;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: var(--stage-gap, 0.55rem);
+			padding-inline: max(1.15rem, env(safe-area-inset-left, 0px))
+				max(1.15rem, env(safe-area-inset-right, 0px));
+			--stage-w: min(100%, 22rem);
+		}
+
+		.images-sticky .reel {
+			flex: none;
+		}
+
+		:global(html.is-immersion) .images-sticky,
+		:global(html.is-immersion) .images-sticky.has-banner {
+			--stage-w: min(100%, 18rem);
 		}
 
 		.meta {
@@ -859,9 +1245,13 @@
 				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
+		/* Phones: clear the (temporary) title card without wasting a screen. */
+		:global(html.is-cinema) .text.first {
+			padding-top: 5rem;
+		}
+
 		.colophon {
 			padding: 4rem 1.15rem max(6rem, calc(env(safe-area-inset-bottom, 0px) + 4rem));
-			scroll-snap-align: start;
 		}
 
 		.edit-link {
@@ -872,7 +1262,7 @@
 			place-items: center;
 		}
 
-		:global(html.is-immersive) .edit-link {
+		:global(html.is-immersion) .edit-link {
 			bottom: calc(var(--plate-h, 14rem) + 0.45rem);
 		}
 	}
@@ -892,10 +1282,115 @@
 		}
 	}
 
-	/* Snapping is a nice-to-have; never fight a reader who wants to scan. */
-	@media (max-width: 820px) and (prefers-reduced-motion: reduce) {
-		main {
-			scroll-snap-type: none;
+	/* ————— Episodes scope: floating prev / next —————
+	   Bottom-center chrome. In immersion, clear the dialogue *box*
+	   (--plate-box-h) — not --plate-h (bust reserve) — so the pill sits
+	   just above the plate instead of mid-prose. z-index stays under the
+	   plate (93) so the two never fight for hits. */
+	.ep-nav {
+		position: fixed;
+		z-index: 92;
+		left: 50%;
+		bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+		transform: translate3d(-50%, 0.85rem, 0);
+		display: flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.28rem;
+		border: 1px solid var(--hairline);
+		border-radius: 999px;
+		background: var(--glass);
+		backdrop-filter: blur(14px);
+		opacity: 0;
+		pointer-events: none;
+		transition:
+			opacity 480ms var(--ease),
+			transform 520ms var(--ease),
+			bottom 420ms var(--ease);
+	}
+
+	.ep-nav.in {
+		opacity: 1;
+		transform: translate3d(-50%, 0, 0);
+		pointer-events: auto;
+	}
+
+	:global(html.is-immersion.is-in-script) .ep-nav {
+		bottom: calc(var(--plate-box-h, 9rem) + 0.75rem);
+	}
+
+	/* Cinema keeps the pill, lifted clear of the dialogue strip. */
+	:global(html.is-cinema.is-in-script) .ep-nav {
+		bottom: calc(var(--cin-strip-h) + 3.5rem);
+	}
+
+	.ep-nav button {
+		font: inherit;
+		font-size: 0.72rem;
+		letter-spacing: 0.04em;
+		color: var(--fg-dim);
+		background: transparent;
+		border: none;
+		border-radius: 999px;
+		padding: 0.4rem 0.85rem;
+		min-height: 2.5rem;
+		cursor: pointer;
+		transition:
+			background 0.25s var(--ease),
+			color 0.25s var(--ease);
+	}
+
+	.ep-nav button:hover:not(:disabled) {
+		color: var(--on-gold);
+		background: var(--gold);
+	}
+
+	.ep-nav button:disabled {
+		opacity: 0.35;
+		cursor: default;
+	}
+
+	.ep-count {
+		font-size: 0.7rem;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: 0.06em;
+		color: var(--fg-faint);
+		padding: 0 0.35rem;
+		min-width: 3.4rem;
+		text-align: center;
+	}
+
+	.ep-of {
+		opacity: 0.55;
+		margin: 0 0.1em;
+	}
+
+	/* Clear the bottom pill in script mode. Immersion already reserves
+	   --plate-h on body, which sits below the nav (--plate-box-h). */
+	.script.episodes .entry {
+		padding-bottom: 5.5rem;
+	}
+
+	@media (max-width: 700px) {
+		.ep-nav {
+			bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
+		}
+
+		:global(html.is-immersion.is-in-script) .ep-nav {
+			bottom: calc(var(--plate-box-h, 9rem) + 0.55rem);
+		}
+
+		.ep-nav button {
+			min-height: 2.75rem;
+			padding: 0.45rem 0.95rem;
+			font-size: 0.74rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.ep-nav {
+			transition: opacity 200ms ease;
+			transform: translate3d(-50%, 0, 0);
 		}
 	}
 

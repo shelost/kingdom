@@ -10,8 +10,11 @@
 		hangulInitial,
 		type Person
 	} from '$lib/people';
-	import { reading, isKorean, activateDialogue } from '$lib/reading.svelte';
+	import { reading, isKorean, isStageMode, activateDialogue } from '$lib/reading.svelte';
+	import { utteranceOf } from '$lib/speech.svelte';
 	import Self from './Blocks.svelte';
+	import DiagramBlock from './diagrams/DiagramBlock.svelte';
+	import SpeakButton from './SpeakButton.svelte';
 
 	type Dialogue = Extract<Block, { kind: 'dialogue' }>;
 
@@ -23,7 +26,8 @@
 			b.kind === 'table' ||
 			b.kind === 'hanja' ||
 			b.kind === 'verse' ||
-			b.kind === 'formation'
+			b.kind === 'formation' ||
+			b.kind === 'diagram'
 		)
 			return true;
 		// quotes always carry hanja / hangul / english together
@@ -91,6 +95,7 @@
 			<p class="cite">{@html linkPeople(prose(block), year)}</p>
 		{:else if block.kind === 'dialogue'}
 			{@const p = block.person ? byId.get(block.person) : undefined}
+			{@const spoken = utteranceOf(block.lines, block.en, p?.id ?? null)}
 			<div
 				class="dialogue"
 				style:--chip={p ? colorOf(p) : block.chip}
@@ -120,10 +125,10 @@
 				{:else}
 					<span class="chip"></span>
 				{/if}
-				<!-- Immersive: the lines are a control — click one to put it on stage.
-				     Only speakers with a profile can hold the plate, so only those
-				     become clickable; everything else stays plain prose. -->
-				{#if p && reading.mode === 'immersive'}
+				<!-- Immersion / cinema: the lines are a control — click one to put it
+				     on stage. Only speakers with a profile can hold a stage, so only
+				     those become clickable; everything else stays plain prose. -->
+				{#if p && isStageMode(reading.mode)}
 					<button
 						type="button"
 						class="lines pick"
@@ -137,6 +142,9 @@
 						{@render utterance(block, p)}
 					</div>
 				{/if}
+				<!-- Hear the line: parked in the gutter under the face, out of the
+				     text's way, and out of flow so it changes no measurement. -->
+				<SpeakButton utterance={spoken} />
 			</div>
 		{:else if block.kind === 'verse'}
 			<div class="verse" style:--vc={block.color}>
@@ -224,6 +232,8 @@
 				</div>
 				{#if block.note}<p class="fm-note">{block.note}</p>{/if}
 			</figure>
+		{:else if block.kind === 'diagram'}
+			<DiagramBlock {block} />
 		{:else if block.kind === 'flashback'}
 			<!-- mini-flashback: the page drops to black while this is under the reading line -->
 			<aside class="mini" data-flash="1">
@@ -244,8 +254,8 @@
 	}
 
 	.prose p {
-		margin: 0 0 1.35rem;
-		line-height: 1.82;
+		margin: 0 0 1.2rem;
+		line-height: 1.5;
 		color: var(--fg);
 	}
 
@@ -269,6 +279,7 @@
 
 	/* ————— dialogue ————— */
 	.dialogue {
+		position: relative;
 		display: grid;
 		grid-template-columns: 1.75rem 1fr;
 		gap: 0.7rem;
@@ -281,19 +292,73 @@
 			margin 420ms var(--ease);
 	}
 
-	/* Immersive: chronicle lines stay; live line gets a soft featured pulse */
-	:global(html.is-immersive) .dialogue:not(:global(.is-speaking)) {
-		opacity: 0.62;
+	/* Stage modes (immersion + cinema): script lines stay; the live line gets a
+	   soft featured pulse and the rest steps back — but never so far that the
+	   page reads as empty. Neighbours stay skimmable. */
+	:global(html.is-stage) .dialogue:not(:global(.is-speaking)) {
+		opacity: 0.74;
 	}
 
 	/* The lit wash is the whole cue — no edge rule, so the line reads as a
 	   raised piece of the page rather than a quoted block. */
-	:global(html.is-immersive) .dialogue:global(.is-speaking) {
+	:global(html.is-stage) .dialogue:global(.is-speaking) {
 		margin-left: -0.55rem;
 		padding: 0.45rem 0.65rem 0.45rem 0.55rem;
 		border-radius: 6px;
-		background: color-mix(in srgb, var(--chip) 12%, rgba(255, 255, 255, 0.04));
+		background: color-mix(in srgb, var(--chip) 12%, color-mix(in srgb, var(--fg) 4%, transparent));
 		opacity: 1;
+	}
+
+	/* ————— Cinema lettering —————
+	   Comic rhythm: a balloon around every cue, narration set as a caption box
+	   with a gold edge, and the translation kept deliberately under its breath
+	   so a bilingual panel still reads as one voice. */
+	:global(html.is-cinema) .prose p {
+		font-size: 1.02rem;
+		line-height: 1.62;
+	}
+
+	:global(html.is-cinema) .dialogue {
+		margin: 1.05rem 0;
+		padding: 0.5rem 0.8rem 0.55rem 0.6rem;
+		border-radius: 12px;
+		background: color-mix(in srgb, var(--plate-ink) 46%, transparent);
+		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chip) 20%, transparent);
+	}
+
+	:global(html.is-cinema) .dialogue:not(:global(.is-speaking)) {
+		opacity: 0.72;
+	}
+
+	:global(html.is-cinema) .dialogue:global(.is-speaking) {
+		margin-left: 0;
+		padding: 0.5rem 0.8rem 0.55rem 0.6rem;
+		border-radius: 12px;
+		background: color-mix(in srgb, var(--chip) 16%, color-mix(in srgb, var(--plate-ink) 62%, transparent));
+		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chip) 45%, transparent);
+	}
+
+	:global(html.is-cinema) .line.ko {
+		font-size: 1.04em;
+		color: var(--fg);
+	}
+
+	:global(html.is-cinema) .line.en:not(.solo) {
+		font-size: 0.86em;
+		color: var(--fg-dim);
+	}
+
+	/* Narration, monologue and the moral read as caption boxes. */
+	:global(html.is-cinema) .cite,
+	:global(html.is-cinema) .monologue,
+	:global(html.is-cinema) .moral {
+		border-left: 3px solid color-mix(in srgb, var(--gold) 45%, transparent);
+		padding-left: 0.9rem;
+		background: color-mix(in srgb, var(--plate-ink) 34%, transparent);
+	}
+
+	:global(html.is-cinema) .cite::before {
+		display: none;
 	}
 
 	.chip {
@@ -317,11 +382,16 @@
 		overflow: hidden;
 		border: 1px solid color-mix(in srgb, var(--chip) 55%, transparent);
 		border-radius: 50%;
-		background: color-mix(in srgb, var(--chip) 72%, #000);
+		background: transparent;
 		cursor: pointer;
 		transition:
 			transform 0.25s var(--ease),
 			box-shadow 0.25s var(--ease);
+	}
+
+	/* Initials still need a fill; painted portraits stay transparent. */
+	.face:not(:has(img)) {
+		background: color-mix(in srgb, var(--chip) 72%, #000);
 	}
 
 	.face:hover {
@@ -329,12 +399,13 @@
 		box-shadow: 0 0 0 3px color-mix(in srgb, var(--chip) 25%, transparent);
 	}
 
-	/* Standing busts have headroom — crop around the face, not the empty top. */
+	/* Full standing bust — never crop heads/feet. */
 	.face img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
-		object-position: 50% 16%;
+		object-fit: contain;
+		object-position: center bottom;
+		background: transparent;
 	}
 
 	/* a placeholder body, not a likeness — it sits back a little */
@@ -356,6 +427,37 @@
 		min-width: 0;
 	}
 
+	/* ————— speak this line —————
+	   Out of flow in the gutter beneath the face, so it can never crowd the
+	   text or change how tall a dialogue is. It keeps out of sight until the
+	   reader is on this line, and stays lit while it is the one sounding. */
+	.dialogue :global(.speak) {
+		position: absolute;
+		top: 2.15rem;
+		left: 0.12rem;
+		opacity: 0;
+		transition: opacity 0.25s var(--ease);
+	}
+
+	@media (hover: hover) {
+		.dialogue:hover :global(.speak) {
+			opacity: 1;
+		}
+	}
+
+	/* Nothing hovers on a touch screen — the control just sits there, quiet. */
+	@media (hover: none) {
+		.dialogue :global(.speak) {
+			opacity: 0.45;
+		}
+	}
+
+	.dialogue:focus-within :global(.speak),
+	.dialogue :global(.speak.on),
+	.dialogue :global(.speak.busy) {
+		opacity: 1;
+	}
+
 	/* Immersive: the lines are the click target; the wash paints the whole
 	   `.dialogue` (same box as `.is-speaking`), not just the text column. */
 	.lines.pick {
@@ -375,17 +477,17 @@
 	/* Hover only where hovering exists — on a touch screen the state would
 	   stick to the last line tapped. Mirror the active wash on the parent. */
 	@media (hover: hover) {
-		:global(html.is-immersive) .dialogue:has(.lines.pick:hover):not(:global(.is-speaking)) {
+		:global(html.is-stage) .dialogue:has(.lines.pick:hover):not(:global(.is-speaking)) {
 			margin-left: -0.55rem;
 			padding: 0.45rem 0.65rem 0.45rem 0.55rem;
 			border-radius: 6px;
-			background: color-mix(in srgb, var(--chip) 10%, rgba(255, 255, 255, 0.03));
+			background: color-mix(in srgb, var(--chip) 10%, color-mix(in srgb, var(--fg) 3%, transparent));
 			opacity: 0.92;
 		}
 	}
 
 	.lines.pick:focus-visible {
-		outline: 1px solid color-mix(in srgb, var(--chip) 55%, #fff);
+		outline: 1px solid color-mix(in srgb, var(--chip) 55%, var(--fg-strong));
 		outline-offset: 0.35rem;
 	}
 
@@ -416,7 +518,7 @@
 		font-family: 'Noto Serif KR', var(--serif);
 		font-size: 0.94em;
 		letter-spacing: 0.06em;
-		line-height: 1.55;
+		line-height: 1.42;
 		color: color-mix(in srgb, var(--chip) 38%, var(--fg-dim));
 	}
 
@@ -434,7 +536,7 @@
 		font-size: 0.72rem;
 		font-weight: 600;
 		letter-spacing: var(--tracking-micro);
-		color: color-mix(in srgb, var(--chip) 45%, #fff);
+		color: color-mix(in srgb, var(--chip) 45%, var(--fg-strong));
 		margin-bottom: 0.1rem;
 	}
 
@@ -452,7 +554,7 @@
 		flex-direction: column;
 		gap: 0.2rem;
 		font-weight: 500;
-		color: color-mix(in srgb, var(--vc) 58%, #fff);
+		color: color-mix(in srgb, var(--vc) 58%, var(--fg-strong));
 	}
 
 	.verse::before {
@@ -495,9 +597,9 @@
 
 	th {
 		font-weight: 600;
-		color: #fffdf8;
+		color: var(--fg-strong);
 		letter-spacing: var(--tracking-micro);
-		background: rgba(255, 255, 255, 0.05);
+		background: color-mix(in srgb, var(--fg) 5%, transparent);
 		border-bottom: 1px solid var(--hairline);
 	}
 
@@ -554,7 +656,7 @@
 		font-family: 'Noto Serif KR', var(--serif);
 		font-size: 0.98em;
 		letter-spacing: 0.14em;
-		line-height: 1.55;
+		line-height: 1.45;
 		color: color-mix(in srgb, var(--quote) 72%, var(--fg-faint));
 	}
 
@@ -562,8 +664,8 @@
 		margin: 0 0 0.35rem;
 		font-family: 'Noto Serif KR', var(--serif);
 		font-size: 1em;
-		line-height: 1.62;
-		color: color-mix(in srgb, var(--quote) 88%, #fff);
+		line-height: 1.48;
+		color: color-mix(in srgb, var(--quote) 88%, var(--fg-strong));
 	}
 
 	.quote-en,
@@ -571,7 +673,7 @@
 		margin: 0;
 		font-size: 0.98em;
 		font-style: italic;
-		line-height: 1.62;
+		line-height: 1.48;
 		color: color-mix(in srgb, var(--quote) 70%, var(--fg-dim));
 	}
 
@@ -604,7 +706,7 @@
 		margin: 0;
 		font-size: 0.98em;
 		font-style: italic;
-		line-height: 1.6;
+		line-height: 1.48;
 		color: color-mix(in srgb, var(--fg) 78%, var(--fg-faint));
 	}
 
@@ -632,9 +734,9 @@
 		font-size: 1.02em;
 		font-style: italic;
 		font-weight: 500;
-		line-height: 1.68;
+		line-height: 1.5;
 		letter-spacing: var(--tracking-display);
-		color: color-mix(in srgb, var(--chip) 28%, #fffdf8);
+		color: color-mix(in srgb, var(--chip) 28%, var(--fg-strong));
 	}
 
 	/* ————— battle formation ————— */
@@ -780,8 +882,8 @@
 	.prose :global(.person) {
 		font: inherit;
 		font-weight: 500;
-		color: #fffdfa;
-		background: rgba(255, 255, 255, .1);
+		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--fg) 10%, transparent);
 		border: none;
 		padding: 0;
 		cursor: pointer;
@@ -825,6 +927,12 @@
 			margin-top: 0.1rem;
 		}
 
+		/* clears the taller face, and the target grows to thumb size */
+		.dialogue :global(.speak) {
+			top: 2.7rem;
+			left: 0.08rem;
+		}
+
 		/* The line is already the full width of the column; only its height is
 		   short of a comfortable target, and padding-block grown against an
 		   equal negative margin-block adds it without moving any text. */
@@ -837,8 +945,8 @@
 		}
 
 		/* the chronicle either side of the live line still has to be readable */
-		:global(html.is-immersive) .dialogue:not(:global(.is-speaking)) {
-			opacity: 0.8;
+		:global(html.is-stage) .dialogue:not(:global(.is-speaking)) {
+			opacity: 0.88;
 		}
 	}
 </style>

@@ -1,35 +1,65 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import type { StackImage } from '$lib/story';
+	import { displayArtOf } from '$lib/cueArt';
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
 
-	let { images }: { images: StackImage[] } = $props();
+	let {
+		images,
+		inline = false
+	}: {
+		images: StackImage[];
+		/** When true, show every frame in reading order (no sticky cue swap). */
+		inline?: boolean;
+	} = $props();
 
-	/** Immersive keeps the portrait frame treatment; both modes show one live image. */
-	let immersive = $derived(reading.mode === 'immersive');
+	/** Immersion keeps the landscape phone-frame treatment; script uses normal sticky + cues. */
+	let immersion = $derived(reading.mode === 'immersion');
 
 	let live = $state(0);
 
+	/** Same mid as the reading band in `reading.svelte.ts` — a fixed viewport line. */
 	const BAND_MID = 0.4;
 
 	/**
-	 * Pick the image for the beat sitting in the reading band. Beats without art
-	 * keep the previous slot so the column never blanks mid-scroll.
+	 * Rank of this slot among images that share its beat, and how many share it.
+	 * Used to subdivide a beat's scroll range so every image gets its own cue.
 	 */
-	function indexForBeat(beat: number): number {
-		let match = -1;
-		let hold = 0;
-		for (let i = 0; i < images.length; i++) {
-			const bi = images[i].beatIndex ?? 0;
-			if (bi < beat) hold = i;
-			if (bi === beat && match < 0) match = i;
+	function cueShare(i: number): { rank: number; total: number; beat: number } {
+		const beat = images[i]?.beatIndex ?? 0;
+		let rank = 0;
+		let total = 0;
+		for (let j = 0; j < images.length; j++) {
+			if ((images[j].beatIndex ?? 0) !== beat) continue;
+			if (j < i) rank++;
+			total++;
 		}
-		return match >= 0 ? match : hold;
+		return { rank, total: Math.max(1, total), beat };
+	}
+
+	/**
+	 * Active image = last cue whose top has crossed the reading-band mid.
+	 * Pure function of layout + scrollY — identical going up or down.
+	 */
+	function indexAtBand(beats: HTMLElement[], mid: number): number {
+		let active = 0;
+		for (let i = 0; i < images.length; i++) {
+			const { rank, total, beat } = cueShare(i);
+			const el = beats[beat];
+			if (!el) continue;
+			const r = el.getBoundingClientRect();
+			const cueTop = r.top + (r.height * rank) / total;
+			if (cueTop <= mid) active = i;
+		}
+		return active;
 	}
 
 	const watchLive: Attachment<HTMLElement> = (node) => {
-		if (!images.length || typeof IntersectionObserver === 'undefined') return;
+		if (inline || !images.length) {
+			live = 0;
+			return;
+		}
 
 		const article = node.closest<HTMLElement>('article.entry');
 		const beats = article
@@ -41,27 +71,33 @@
 			return;
 		}
 
+		let raf = 0;
 		const pick = () => {
-			const mid = window.innerHeight * BAND_MID;
-			let bestBeat = -1;
-			let bestD = Infinity;
-			for (const el of beats) {
-				const r = el.getBoundingClientRect();
-				if (r.bottom < 0 || r.top > window.innerHeight) continue;
-				const d = Math.abs((r.top + r.bottom) / 2 - mid);
-				if (d < bestD) {
-					bestD = d;
-					bestBeat = Number(el.dataset.beat);
-				}
-			}
-			if (bestBeat >= 0) live = indexForBeat(bestBeat);
+			raf = 0;
+			live = indexAtBand(beats, window.innerHeight * BAND_MID);
 		};
 
-		const io = new IntersectionObserver(pick, { rootMargin: '-35% 0px -55% 0px' });
-		for (const el of beats) io.observe(el);
-		pick();
+		const onScroll = () => {
+			if (raf) return;
+			raf = requestAnimationFrame(pick);
+		};
 
-		return () => io.disconnect();
+		pick();
+		window.addEventListener('scroll', onScroll, { passive: true });
+		window.addEventListener('resize', onScroll);
+
+		const ro =
+			typeof ResizeObserver !== 'undefined'
+				? new ResizeObserver(onScroll)
+				: null;
+		for (const el of beats) ro?.observe(el);
+
+		return () => {
+			if (raf) cancelAnimationFrame(raf);
+			window.removeEventListener('scroll', onScroll);
+			window.removeEventListener('resize', onScroll);
+			ro?.disconnect();
+		};
 	};
 
 	function cueText(slot: StackImage): string {
@@ -73,24 +109,28 @@
 </script>
 
 <!--
-	Sticky single-frame stack: all slots occupy one viewport; IntersectionObserver
-	on entry beats picks which frame is live. Slots without `src` show id + prompt.
+	Sticky single-frame stack: all slots occupy one viewport; scroll position
+	picks which frame is live (symmetric, no IO hysteresis). Reading prefers
+	final `src` over temp stand-in. Slots with no resolvable art show id + prompt.
+
+	Inline layout: frames stack in reading order, each always visible.
 -->
-<div class="stack" class:immersive {@attach watchLive}>
+<div class="stack" class:immersion class:inline {@attach watchLive}>
 	{#each images as slot, i (slot.id)}
+		{@const art = displayArtOf(slot, 'reading')}
 		<figure
 			class="frame"
-			class:art={!!slot.src}
-			class:live={i === live}
-			style:aspect-ratio={immersive ? '9 / 16' : (slot.ratio ?? 4 / 3)}
+			class:art={!!art}
+			class:live={inline || i === live}
+			style:aspect-ratio={immersion ? '3 / 2' : (slot.ratio ?? 4 / 3)}
 			style:--tone={slot.tone ?? '#3a3a40'}
-			use:reveal={i * 70}
+			use:reveal={{ delay: i * 70, y: 0 }}
 		>
-			{#if slot.src}
-				{#if immersive}
+			{#if art}
+				{#if immersion}
 					<img
 						class="fill"
-						src={slot.src}
+						src={art}
 						alt=""
 						aria-hidden="true"
 						loading="lazy"
@@ -99,7 +139,7 @@
 				{/if}
 				<img
 					class="shot"
-					src={slot.src}
+					src={art}
 					alt={slot.alt ?? ''}
 					loading={i === 0 ? 'eager' : 'lazy'}
 					decoding="async"
@@ -113,7 +153,7 @@
 				</div>
 			{/if}
 
-			{#if images.length > 1}
+			{#if !inline && images.length > 1}
 				<figcaption class="count" aria-hidden="true">{i + 1}/{images.length}</figcaption>
 			{/if}
 		</figure>
@@ -197,40 +237,69 @@
 		user-select: text;
 	}
 
-	/* Immersive: phone-shaped frame for the live slot */
-	.stack.immersive .frame {
+	/* Immersion: horizontal / landscape 3:2 phone frame — width locked to the stage column. */
+	.stack.immersion {
+		width: 100%;
+		height: auto;
+		min-height: 0;
+		place-items: stretch;
+	}
+
+	.stack.immersion .frame {
 		display: grid;
 		place-items: center;
-		width: min(100%, calc(var(--reel-h, 58dvh) * 9 / 16));
-		max-height: calc(100vh - 3.5rem);
+		width: 100%;
+		max-width: 100%;
+		max-height: none;
+		aspect-ratio: 3 / 2;
 		background: #14141a;
-		border-radius: 12px;
-		box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+		border-radius: 8px;
+		box-shadow: -12px 48px 48px rgba(0, 0, 0, 0.4);
 	}
 
-	.stack.immersive .frame.live {
-		box-shadow:
-			0 0 0 1px rgba(216, 178, 106, 0.32),
-			0 26px 64px rgba(0, 0, 0, 0.62);
-	}
-
-	.stack.immersive .fill,
-	.stack.immersive .shot,
-	.stack.immersive .ph {
+	.stack.immersion .fill,
+	.stack.immersion .shot,
+	.stack.immersion .ph {
 		grid-area: 1 / 1;
 	}
 
-	.stack.immersive .fill {
-		scale: 1.3;
-		filter: blur(30px) saturate(1.3) brightness(0.42);
+	.stack.immersion .fill {
+		scale: 1.35;
+		filter: blur(28px) saturate(1.35) brightness(0.38);
 	}
 
-	.stack.immersive .shot {
+	.stack.immersion .shot {
 		z-index: 1;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		box-shadow: 0 0 52px 8px rgba(0, 0, 0, 0.55);
+	}
+
+	/* Inline: every frame in document order, no overlay swap. */
+	.stack.inline {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 1.1rem;
 		height: auto;
-		max-height: 100%;
-		object-fit: contain;
-		box-shadow: 0 0 46px 6px rgba(0, 0, 0, 0.55);
+		min-height: 0;
+		place-items: stretch;
+	}
+
+	.stack.inline .frame {
+		grid-area: auto;
+		max-height: none;
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.stack.inline.immersion .frame {
+		box-shadow: -8px 28px 36px rgba(0, 0, 0, 0.32);
 	}
 
 	.count {
@@ -262,8 +331,8 @@
 		}
 	}
 
-	/* Narrow / portrait: cap the immersive reel so art leads the card without
-	   owning the whole first screenful. Chronicle keeps a calmer landscape. */
+	/* Narrow / portrait: cap the immersion reel so art leads the card without
+	   owning the whole first screenful. Script keeps a calmer landscape + cues. */
 	@media (max-width: 820px) {
 		.stack {
 			min-height: 0;
@@ -271,21 +340,30 @@
 			padding: 0.65rem 1.1rem 0;
 		}
 
-		.stack:not(.immersive) .frame {
+		.stack.inline {
+			padding: 0;
+		}
+
+		.stack:not(.immersion):not(.inline) .frame {
 			max-height: min(38dvh, 16rem);
 			border-radius: 8px;
 			overflow: hidden;
 		}
 
-		.stack.immersive .frame {
-			width: min(100%, calc(var(--reel-h, 34dvh) * 9 / 16), 13.5rem);
-			max-height: var(--reel-h, 34dvh);
-			margin-inline: auto;
-			border-radius: 10px;
+		.stack.inline:not(.immersion) .frame {
+			max-height: min(42dvh, 18rem);
 		}
 
-		.stack.immersive .shot {
+		.stack.immersion .frame {
+			width: 100%;
+			margin-inline: auto;
+			border-radius: 8px;
+		}
+
+		.stack.immersion .shot {
 			max-height: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 
 		.cue {
@@ -303,12 +381,8 @@
 	}
 
 	@media (max-width: 480px) {
-		.stack {
+		.stack:not(.inline) {
 			padding: 0.5rem 0.9rem 0;
-		}
-
-		.stack.immersive .frame {
-			width: min(100%, calc(var(--reel-h, 32dvh) * 9 / 16), 12rem);
 		}
 	}
 </style>

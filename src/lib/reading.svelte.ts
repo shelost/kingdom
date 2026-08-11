@@ -7,10 +7,42 @@
  * and a missed observer callback would strand the page in the wrong mood.
  */
 
+import { browser } from '$app/environment';
+import { chapters } from '$lib/story';
+import { scriptUi } from '$lib/scriptUi.svelte';
+import { tocUi } from '$lib/tocUi.svelte';
+
 export type Lang = 'both' | 'en' | 'ko';
 
-/** chronicle = default scroll; immersive = VN/game speaker plate */
-export type ReadMode = 'chronicle' | 'immersive';
+/**
+ * script    = scroll layout without speaker plate
+ * immersion = VN/game speaker plate over the reading column
+ * cinema    = viewport grid: letterboxed scene, script rail, character, dialogue
+ */
+export type ReadMode = 'script' | 'immersion' | 'cinema';
+
+/** full = continuous story; episodes = one entry at a time */
+export type ViewScope = 'full' | 'episodes';
+
+/** side = sticky images column; inline = images in the reading flow by beat */
+export type ImageLayout = 'side' | 'inline';
+
+export type EpisodeRef = {
+	chapterId: string;
+	chapterIndex: number;
+	entryIndex: number;
+	id: string;
+};
+
+/** Flat episode list — chapterId-entryIndex ids match TOC / URL hashes. */
+export const episodes: EpisodeRef[] = chapters.flatMap((ch, chapterIndex) =>
+	ch.entries.map((_, entryIndex) => ({
+		chapterId: ch.id,
+		chapterIndex,
+		entryIndex,
+		id: `${ch.id}-${entryIndex}`
+	}))
+);
 
 export const reading = $state({
 	/** true while a flashback (whole entry or inline) is under the reading line */
@@ -21,7 +53,11 @@ export const reading = $state({
 	place: null as string | null,
 	/** story year of the entry in the reading band — drives life-stage faces */
 	year: null as number | null,
-	/** person id of the dialogue currently in the reading band (immersive) */
+	/** id of the entry in the reading band ("chapterId-index") — drives episode packaging */
+	entryId: null as string | null,
+	/** 0…1 — how far the reading band has travelled through that entry */
+	entryProgress: 0,
+	/** person id of the dialogue currently in the reading band (immersion) */
 	speaker: null as string | null,
 	/** plain-text lines for the featured Pokémon-style dialogue box */
 	linesKo: [] as string[],
@@ -33,8 +69,14 @@ export const reading = $state({
 	linesJa: [] as string[],
 	linesJaLatn: [] as string[],
 	lang: 'both' as Lang,
-	/** Immersive by default; loadMode() restores a saved chronicle preference. */
-	mode: 'immersive' as ReadMode
+	/** Immersion by default; loadMode() restores a saved script preference. */
+	mode: 'immersion' as ReadMode,
+	/** Continuous scroll by default; loadViewScope() restores episodes if saved. */
+	viewScope: 'full' as ViewScope,
+	/** Sticky side column by default; loadImageLayout() restores inline if saved. */
+	imageLayout: 'side' as ImageLayout,
+	/** Flat index into `episodes` when viewScope === 'episodes'. */
+	episodeIndex: 0
 });
 
 /* The reading *band*: an element counts as "being read" while any part of it
@@ -49,6 +91,57 @@ const PIN_MS = 2000;
 /** How near the band's middle counts as "the glide has arrived", in viewports. */
 const PIN_SETTLED = 0.06;
 
+function persistMode(m: ReadMode) {
+	try {
+		localStorage.setItem('kingdom:mode', m);
+	} catch {
+		/* private mode */
+	}
+}
+
+function persistViewScope(s: ViewScope) {
+	try {
+		localStorage.setItem('kingdom:view', s);
+	} catch {
+		/* private mode */
+	}
+}
+
+function persistImageLayout(l: ImageLayout) {
+	try {
+		localStorage.setItem('kingdom:images', l);
+	} catch {
+		/* private mode */
+	}
+}
+
+/**
+ * Mirror the mode onto <html>.
+ *
+ * `is-stage` is worn by every mode that puts a live speaker on a stage
+ * (immersion and cinema), so the shared dialogue behaviour — dimmed script
+ * lines, a lit live line, clickable dialogue — is written once.
+ */
+function applyModeClasses(m: ReadMode) {
+	const root = document.documentElement.classList;
+	root.toggle('is-immersion', m === 'immersion');
+	root.toggle('is-cinema', m === 'cinema');
+	root.toggle('is-stage', m !== 'script');
+	if (m !== 'cinema') root.remove('is-cinema-peek');
+}
+
+function normalizeMode(v: string | null): ReadMode | null {
+	if (v === 'script' || v === 'immersion' || v === 'cinema') return v;
+	if (v === 'chronicle') return 'script';
+	if (v === 'immersive') return 'immersion';
+	return null;
+}
+
+/** Modes that put the live line on a stage — immersion's plate, cinema's strip. */
+export function isStageMode(m: ReadMode = reading.mode) {
+	return m !== 'script';
+}
+
 export function setLang(l: Lang) {
 	reading.lang = l;
 	try {
@@ -56,17 +149,18 @@ export function setLang(l: Lang) {
 	} catch {
 		/* private mode — preference just won't persist */
 	}
+	/* The plate's lines are read off the page, so a language it was not showing
+	   a moment ago is simply absent from them. Re-measure once the new rendering
+	   has landed, or the plate (and the voice) would keep the old language until
+	   the reader happened to scroll. */
+	requestAnimationFrame(() => window.dispatchEvent(new Event('scroll')));
 }
 
 export function setMode(m: ReadMode) {
 	reading.mode = m;
 	releaseDialogue();
-	try {
-		localStorage.setItem('kingdom:mode', m);
-	} catch {
-		/* private mode */
-	}
-	document.documentElement.classList.toggle('is-immersive', m === 'immersive');
+	persistMode(m);
+	applyModeClasses(m);
 	// refresh speaker / speaking highlight for the new mode
 	window.dispatchEvent(new Event('scroll'));
 }
@@ -82,12 +176,168 @@ export function loadLang() {
 
 export function loadMode() {
 	try {
-		const v = localStorage.getItem('kingdom:mode');
-		if (v === 'chronicle' || v === 'immersive') reading.mode = v;
+		const raw = localStorage.getItem('kingdom:mode');
+		const next = normalizeMode(raw);
+		if (next) {
+			reading.mode = next;
+			if (raw !== next) persistMode(next);
+		}
 	} catch {
 		/* ignore */
 	}
-	document.documentElement.classList.toggle('is-immersive', reading.mode === 'immersive');
+	applyModeClasses(reading.mode);
+}
+
+export function loadViewScope() {
+	try {
+		const v = localStorage.getItem('kingdom:view');
+		if (v === 'full' || v === 'episodes') reading.viewScope = v;
+	} catch {
+		/* ignore */
+	}
+	if (reading.viewScope === 'episodes') syncEpisodeFromHash({ scroll: false });
+}
+
+export function setImageLayout(l: ImageLayout) {
+	reading.imageLayout = l;
+	persistImageLayout(l);
+	/* Sticky runway / inline figures change layout height — re-measure the band. */
+	requestAnimationFrame(() => window.dispatchEvent(new Event('scroll')));
+}
+
+export function loadImageLayout() {
+	try {
+		const v = localStorage.getItem('kingdom:images');
+		if (v === 'side' || v === 'inline') reading.imageLayout = v;
+	} catch {
+		/* ignore */
+	}
+}
+
+/**
+ * Capture which entry the reader is on (hash → reading band → keep index).
+ * Used when switching into episodes mode mid-story.
+ */
+function captureCurrentEpisode() {
+	if (typeof document === 'undefined') return;
+	const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+	const fromHash = hash ? resolveEpisodeIndex(hash) : -1;
+	if (fromHash >= 0) {
+		reading.episodeIndex = fromHash;
+		return;
+	}
+
+	const top = window.innerHeight * BAND_TOP;
+	const bottom = window.innerHeight * BAND_BOTTOM;
+	const mid = (top + bottom) / 2;
+	let best: HTMLElement | null = null;
+	let bestD = Infinity;
+	for (const el of document.querySelectorAll<HTMLElement>('article.entry')) {
+		const r = el.getBoundingClientRect();
+		if (r.top > bottom || r.bottom < top) continue;
+		const d = Math.abs((Math.max(r.top, top) + Math.min(r.bottom, bottom)) / 2 - mid);
+		if (d < bestD) {
+			bestD = d;
+			best = el;
+		}
+	}
+	if (best?.id) {
+		const idx = resolveEpisodeIndex(best.id);
+		if (idx >= 0) reading.episodeIndex = idx;
+	}
+}
+
+export function setViewScope(s: ViewScope) {
+	reading.viewScope = s;
+	persistViewScope(s);
+	releaseDialogue();
+
+	if (s === 'episodes') {
+		captureCurrentEpisode();
+		const ep = episodes[reading.episodeIndex];
+		if (ep) replaceHash(ep.id);
+	}
+
+	const after = () => {
+		const ep = episodes[reading.episodeIndex];
+		if (!ep) {
+			window.dispatchEvent(new Event('scroll'));
+			return;
+		}
+		/* Only jump when already past cover/blurb — don't yank readers off the title. */
+		const el = document.getElementById(ep.id);
+		if (el && scriptUi.inScript) {
+			el.scrollIntoView({ behavior: 'auto', block: 'start' });
+		}
+		window.dispatchEvent(new Event('scroll'));
+	};
+
+	/* Episodes → full needs a frame for every entry to mount; full → episodes too. */
+	requestAnimationFrame(() => requestAnimationFrame(after));
+}
+
+/** Resolve a chapter or entry id to a flat episode index, or -1. */
+export function resolveEpisodeIndex(id: string): number {
+	const exact = episodes.findIndex((e) => e.id === id);
+	if (exact >= 0) return exact;
+	const first = episodes.findIndex((e) => e.chapterId === id);
+	return first;
+}
+
+function replaceHash(id: string) {
+	try {
+		history.replaceState(null, '', `#${encodeURIComponent(id)}`);
+	} catch {
+		/* ignore */
+	}
+}
+
+export function syncEpisodeFromHash(opts: { scroll?: boolean } = {}) {
+	if (typeof location === 'undefined') return false;
+	const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+	if (!hash) return false;
+	return goToEpisodeById(hash, { hash: false, scroll: opts.scroll ?? false, closeToc: false });
+}
+
+/**
+ * Jump to an episode by flat index. Updates hash, closes TOC, scrolls into view.
+ */
+export function goToEpisode(index: number, opts: { hash?: boolean; scroll?: boolean; closeToc?: boolean } = {}) {
+	if (!episodes.length) return;
+	const next = Math.max(0, Math.min(episodes.length - 1, index));
+	reading.episodeIndex = next;
+	releaseDialogue();
+
+	const ep = episodes[next];
+	if (opts.hash !== false) replaceHash(ep.id);
+	if (opts.closeToc !== false) tocUi.open = false;
+
+	const scroll = opts.scroll !== false;
+	const finish = () => {
+		if (scroll) {
+			const el = document.getElementById(ep.id);
+			/* Auto after remount — smooth scroll has nothing to interpolate from. */
+			if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
+			else document.getElementById('script')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+		}
+		window.dispatchEvent(new Event('scroll'));
+	};
+
+	requestAnimationFrame(() => requestAnimationFrame(finish));
+}
+
+export function goToEpisodeById(
+	id: string,
+	opts: { hash?: boolean; scroll?: boolean; closeToc?: boolean } = {}
+): boolean {
+	const idx = resolveEpisodeIndex(id);
+	if (idx < 0) return false;
+	goToEpisode(idx, opts);
+	return true;
+}
+
+export function stepEpisode(delta: number) {
+	goToEpisode(reading.episodeIndex + delta);
 }
 
 /** entry id last seen by the speaker tracker — module-scoped so measure can close over it */
@@ -146,12 +396,12 @@ function applyUtterance(el: HTMLElement | null, speaker: string | null) {
 	reading.linesJaLatn = readLines(el, '.line.ja-latn');
 }
 
-/** Move the live-line marker onto `el` — only immersive mode wears it. */
+/** Move the live-line marker onto `el` — only the stage modes wear it. */
 function markSpeaking(el: HTMLElement | null) {
 	for (const other of document.querySelectorAll<HTMLElement>('[data-speaker].is-speaking')) {
 		if (other !== el) other.classList.remove('is-speaking');
 	}
-	if (el && reading.mode === 'immersive') el.classList.add('is-speaking');
+	if (el && isStageMode()) el.classList.add('is-speaking');
 }
 
 /**
@@ -162,7 +412,7 @@ function markSpeaking(el: HTMLElement | null) {
  * hand the stage to every line the viewport passes on the way there.
  */
 export function activateDialogue(node: HTMLElement) {
-	if (reading.mode !== 'immersive') return;
+	if (!isStageMode()) return;
 	const el = node.closest<HTMLElement>('[data-speaker]');
 	if (!el) return;
 
@@ -232,7 +482,7 @@ export function watchReading() {
 		const music = nearestInBand<HTMLElement>('[data-music]')?.dataset.music ?? null;
 		const place = nearestInBand<HTMLElement>('[data-place]')?.dataset.place ?? null;
 
-		// Immersive: whoever's dialogue sits in the band is "on stage" — unless a
+		// Immersion: whoever's dialogue sits in the band is "on stage" — unless a
 		// click pinned one, which holds the stage until the glide to it settles.
 		// Between lines we keep the last speaker so the plate doesn't flicker
 		// through narration — it only clears when the entry itself changes.
@@ -246,10 +496,23 @@ export function watchReading() {
 				? Number(yearRaw)
 				: null;
 
+		/* How far the band has travelled through the live entry: cinema reads it
+		   for the episode progress line, the panel cuts and the end card. */
+		let progress = 0;
+		if (entry) {
+			const r = entry.getBoundingClientRect();
+			const mid = (top + bottom) / 2;
+			progress = r.height > 0 ? (mid - r.top) / r.height : 0;
+			progress = Math.max(0, Math.min(1, progress));
+		}
+
 		if (reading.flash !== flash) reading.flash = flash;
 		if (reading.music !== music) reading.music = music;
 		if (reading.place !== place) reading.place = place;
 		if (reading.year !== year) reading.year = year;
+		if (reading.entryId !== entryKey) reading.entryId = entryKey;
+		/* Only publish meaningful movement — a pixel of scroll is not a beat. */
+		if (Math.abs(reading.entryProgress - progress) > 0.004) reading.entryProgress = progress;
 
 		if (entryKey !== lastEntry) {
 			lastEntry = entryKey;
@@ -306,7 +569,10 @@ export function watchReading() {
 		window.removeEventListener('touchstart', releaseDialogue);
 		window.removeEventListener('keydown', releaseDialogue);
 		document.documentElement.classList.remove('is-flash');
-		document.documentElement.classList.remove('is-immersive');
+		document.documentElement.classList.remove('is-immersion');
+		document.documentElement.classList.remove('is-cinema');
+		document.documentElement.classList.remove('is-stage');
+		document.documentElement.classList.remove('is-cinema-peek');
 	};
 }
 
@@ -315,4 +581,24 @@ const KO_RE = /[\u1100-\u11FF\u3130-\u318F\uAC00-\uD7A3\u4E00-\u9FFF\u3400-\u4DB
 
 export function isKorean(s: string) {
 	return KO_RE.test(s);
+}
+
+/* Hydrate mode / view / images from storage before any story chrome mounts, so
+   Toc and the page see saved preferences on first paint. */
+if (browser) {
+	try {
+		const mode = normalizeMode(localStorage.getItem('kingdom:mode'));
+		if (mode) reading.mode = mode;
+		const view = localStorage.getItem('kingdom:view');
+		if (view === 'full' || view === 'episodes') reading.viewScope = view;
+		const images = localStorage.getItem('kingdom:images');
+		if (images === 'side' || images === 'inline') reading.imageLayout = images;
+	} catch {
+		/* private mode */
+	}
+	if (reading.viewScope === 'episodes') {
+		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+		const idx = hash ? resolveEpisodeIndex(hash) : -1;
+		if (idx >= 0) reading.episodeIndex = idx;
+	}
 }

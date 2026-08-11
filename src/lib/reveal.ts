@@ -50,7 +50,10 @@ export function reveal(node: HTMLElement, param: RevealParam = 0) {
 	// Nothing to animate — leave the element exactly as authored.
 	if (reduced || typeof IntersectionObserver === 'undefined') return {};
 
-	const ease = '750ms cubic-bezier(0.22,0.61,0.36,1)';
+	/* Short enough that a paragraph is readable by the time the eye lands on
+	   it — a long fade reads as "the page is broken" mid-scroll. */
+	const DURATION = 480;
+	const ease = `${DURATION}ms cubic-bezier(0.22,0.61,0.36,1)`;
 	node.style.opacity = '0';
 	if (y === 0) {
 		node.style.transition = `opacity ${ease} ${delay}ms`;
@@ -67,7 +70,7 @@ export function reveal(node: HTMLElement, param: RevealParam = 0) {
 		node.style.opacity = '';
 		if (y !== 0) node.style.transform = '';
 		// drop the inline transition once it has played, so hover styles are free
-		setTimeout(() => (node.style.transition = ''), 750 + delay);
+		setTimeout(() => (node.style.transition = ''), DURATION + delay);
 	};
 
 	const item: Item = { show };

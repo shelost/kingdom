@@ -34,6 +34,11 @@ export interface Place {
 	kind: PlaceKind;
 	/** whose land it is — drives the marker colour */
 	side: 'silla' | 'baekje' | 'goguryeo' | 'tang' | 'gaya' | 'yamato' | 'tamla' | 'other';
+	/**
+	 * Parent city / fortress when `kind !== 'city'`.
+	 * Wiki: Place → City → Kingdom. Cities themselves omit this.
+	 */
+	cityId?: string;
 	/** a royal capital: drawn with a gold ring and its Hangul name shown */
 	capital?: boolean;
 	/** one line for the hover explainer / profile tagline */
@@ -65,6 +70,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'goguryeo',
 		capital: true,
+		avatar: '/pl_pyongyang_fortress.png',
 		blurb:
 			'Red Sun’s capital — Goguryeo’s seat. Yeon Gesomun butchers the court here in 642; the walls hold every siege until they are opened from inside in 668.',
 		sobriquets: ['City of the Red Sun'],
@@ -115,6 +121,8 @@ export const PLACES: Record<string, Place> = {
 		y: 366,
 		kind: 'mountain',
 		side: 'goguryeo',
+		cityId: 'jolbon',
+		avatar: '/pl_baekdu.png',
 		blurb: 'The white-headed mountain at the roof of the peninsula — the sacred boundary of the northern world.'
 	},
 	jupil: {
@@ -125,6 +133,7 @@ export const PLACES: Record<string, Place> = {
 		y: 400,
 		kind: 'mountain',
 		side: 'goguryeo',
+		cityId: 'ansi',
 		blurb:
 			'Stallion Mountain. Taizong destroys a Goguryeo field army here in the sixth month of 645 — and rejoices at gaining a brave general rather than at the victory.'
 	},
@@ -137,6 +146,7 @@ export const PLACES: Record<string, Place> = {
 		y: 487,
 		kind: 'river',
 		side: 'goguryeo',
+		cityId: 'pyongyang',
 		blurb: 'The Salsu. Ulchi Munduk drowned an entire Sui host here in 612 — and sent its general a poem about it afterwards.'
 	},
 	sasu: {
@@ -147,6 +157,8 @@ export const PLACES: Record<string, Place> = {
 		y: 519,
 		kind: 'river',
 		side: 'goguryeo',
+		cityId: 'pyongyang',
+		avatar: '/pl_snake_river.png',
 		blurb:
 			'Where Yeon Gesomun destroyed the White Tiger’s army in the second month of 662 — one of the great victories of Goguryeo’s last decade.'
 	},
@@ -159,6 +171,8 @@ export const PLACES: Record<string, Place> = {
 		y: 524,
 		kind: 'river',
 		side: 'goguryeo',
+		cityId: 'pyongyang',
+		avatar: '/pl_stone_gate.png',
 		blurb: 'Seokmun. Silla’s costly defeat in the eighth month of 672, early in the war to expel the Tang.'
 	},
 	jolbon: {
@@ -170,6 +184,7 @@ export const PLACES: Record<string, Place> = {
 		y: 370,
 		kind: 'city',
 		side: 'goguryeo',
+		avatar: '/pl_jumong_cave.png',
 		blurb: 'Where Jumong founded Goguryeo in 37 BCE, after the fish and turtles bridged the river for him.'
 	},
 	gungnae: {
@@ -193,6 +208,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'silla',
 		capital: true,
+		avatar: '/pl_eastern_palace.png',
 		blurb:
 			'Capital of the Divine Country. Queen Sunduk is crowned here in 632, Bidam rebels at its Fortress of Radiance in 647, and Munmu is proclaimed King of Samhan here in 676.',
 		sobriquets: ['Capital of the Divine Country'],
@@ -207,6 +223,7 @@ export const PLACES: Record<string, Place> = {
 		y: 618,
 		kind: 'cave',
 		side: 'silla',
+		cityId: 'surabol',
 		labelLeft: true,
 		avatar: '/places/steam_cavern.png',
 		title: 'Yushin’s cavern lake in the hills',
@@ -247,6 +264,7 @@ export const PLACES: Record<string, Place> = {
 		y: 562,
 		kind: 'city',
 		side: 'silla',
+		avatar: '/pl_wirye.png',
 		blurb:
 			'Baekje’s first capital, founded by Onjo — and by the 640s the contested Han valley that all three kingdoms had held in turn.'
 	},
@@ -259,6 +277,7 @@ export const PLACES: Record<string, Place> = {
 		y: 576,
 		kind: 'harbor',
 		side: 'silla',
+		cityId: 'wirye',
 		blurb:
 			'Silla’s only harbour to Tang, Tianzhu and the western regions. Euija points at it on the map and tells Yeon exactly where to cut.'
 	},
@@ -270,6 +289,7 @@ export const PLACES: Record<string, Place> = {
 		y: 640,
 		kind: 'city',
 		side: 'silla',
+		avatar: '/pl_daeya_fortress.png',
 		blurb:
 			'The border fortress lost in the eighth month of 642. Chunchu’s daughter Gotaso died here, and the war that ends three kingdoms starts from it.'
 	},
@@ -282,6 +302,7 @@ export const PLACES: Record<string, Place> = {
 		y: 649,
 		kind: 'harbor',
 		side: 'silla',
+		cityId: 'surabol',
 		blurb:
 			'Gibeolpo, at the mouth of the Geum. Seongchung died in prison begging Euija to hold it; in the eleventh month of 676 Silla’s victory here ended the Tang war.'
 	},
@@ -297,6 +318,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'baekje',
 		capital: true,
+		avatar: '/pl_sabi_palace.png',
 		blurb:
 			'Capital of the Heavenly Deer. Euija seats forty-one of his own sons in the Assembly here in 655, and the city falls to the Silla–Tang army in 660.',
 		sobriquets: ['Capital of the Heavenly Deer'],
@@ -310,6 +332,8 @@ export const PLACES: Record<string, Place> = {
 		y: 600,
 		kind: 'mountain',
 		side: 'baekje',
+		cityId: 'sabi',
+		avatar: '/pl_yellow_mountain.png',
 		blurb:
 			'Field of the disputed blade — Hwangsanbeol, where Hundred-Victories Gyebek met fifty thousand with five thousand in 660, having killed his own family first so nothing could be used against him.',
 		sobriquets: ['Field of the Disputed Blade'],
@@ -324,6 +348,8 @@ export const PLACES: Record<string, Place> = {
 		y: 631,
 		kind: 'river',
 		side: 'baekje',
+		cityId: 'sabi',
+		avatar: '/pl_white_river.png',
 		blurb:
 			'Mouth where four fleets burned — the Baekgang. In the eighth month of 663 Tang, Silla, Baekje and Yamato fought here — the first time all four met in one battle — and four hundred eastern ships burned.',
 		sobriquets: ['Mouth Where Four Fleets Burned'],
@@ -338,6 +364,7 @@ export const PLACES: Record<string, Place> = {
 		y: 595,
 		kind: 'city',
 		side: 'baekje',
+		avatar: '/pl_bear_fortress.png',
 		blurb: 'Ungjin. Euija fled here when Sabi fell, and its guardian Ye Sikjin handed him to the Tang.'
 	},
 	juryu: {
@@ -417,6 +444,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'tamla',
 		capital: true,
+		avatar: '/pl_mugun_fortress.png',
 		blurb:
 			'The seat of Tamla, the island of oranges. Gyebek spent five years exiled here learning its stories, and in 662 the island changed sides.'
 	},
@@ -428,6 +456,7 @@ export const PLACES: Record<string, Place> = {
 		y: 320,
 		kind: 'mountain',
 		side: 'goguryeo',
+		cityId: 'central',
 		blurb:
 			'Yeon Gesomun’s frontier command — the snowbound outposts where he made the Eastern Commandery the safest in the kingdom, and the capital hated him for it.'
 	},
@@ -440,6 +469,7 @@ export const PLACES: Record<string, Place> = {
 		y: 518,
 		kind: 'city',
 		side: 'other',
+		avatar: '/pl_rock_politics.png',
 		blurb: 'Dangun’s city, and later Wanggeom — the capital of Old Joseon, which fell to the Han in 108 BCE.'
 	},
 	buyeo_north: {
@@ -460,9 +490,90 @@ export const PLACES: Record<string, Place> = {
 		y: 470,
 		kind: 'city',
 		side: 'tang',
+		avatar: '/pl_daming_palace.png',
 		offMap: true,
 		blurb:
 			'The Tang capital, largest city on earth. Chunchu wins his alliance here in 648; Euija dies here a prisoner in 660.'
+	},
+
+	cheomseongdae: {
+		id: 'cheomseongdae',
+		name: 'Cheomseongdae',
+		korean: '첨성대',
+		x: 392,
+		y: 628,
+		kind: 'cave',
+		side: 'silla',
+		cityId: 'surabol',
+		offMap: true,
+		avatar: '/pl_observatory.png',
+		title: 'Observatory of Surabol',
+		blurb: 'Queen Sunduk’s star tower — where the Divine Country reads the sky that argues with Bone Rank.'
+	},
+	halla: {
+		id: 'halla',
+		name: 'Mount Halla',
+		korean: '한라산',
+		x: 290,
+		y: 750,
+		kind: 'mountain',
+		side: 'tamla',
+		cityId: 'mugun',
+		offMap: true,
+		avatar: '/pl_mount_halla.png',
+		blurb: 'The island’s sacred peak — Seolmundae’s apron-work; oreum holes still mark where earth spilled.'
+	},
+	samseonghyeol: {
+		id: 'samseonghyeol',
+		name: 'Three Princes’ Well',
+		korean: '삼성혈',
+		x: 286,
+		y: 746,
+		kind: 'cave',
+		side: 'tamla',
+		cityId: 'mugun',
+		offMap: true,
+		avatar: '/pl_three_princes_well.png',
+		blurb: 'Where Go, Yang, and Bu rose from the ground — Tamla’s founding hole, not Gaya’s eggs.'
+	},
+	deer_rock: {
+		id: 'deer_rock',
+		name: 'Deer Rock',
+		korean: '녹암',
+		x: 307,
+		y: 616,
+		kind: 'cave',
+		side: 'baekje',
+		cityId: 'sabi',
+		offMap: true,
+		avatar: '/pl_deer_rock.png',
+		title: 'Assembly stone of the Eight Clans',
+		blurb: 'Where Baekje’s Great Clans sit and unseat kings — emptied when Euija seats his own sons over them.'
+	},
+	flower_cliff: {
+		id: 'flower_cliff',
+		name: 'Flower Cliff',
+		korean: '꽃벼랑',
+		x: 280,
+		y: 400,
+		kind: 'mountain',
+		side: 'other',
+		offMap: true,
+		avatar: '/pl_flower_cliff.png',
+		blurb: 'Western Flower Field’s cliff-edge in story art — Hallakgungi’s rows above the living world.'
+	},
+	moon_palace: {
+		id: 'moon_palace',
+		name: 'Moon Palace',
+		korean: '월궁',
+		x: 395,
+		y: 625,
+		kind: 'cave',
+		side: 'silla',
+		cityId: 'surabol',
+		offMap: true,
+		avatar: '/pl_moon_palace.png',
+		blurb: 'Surabol’s moonlit court rooms in chronicle art — Eastern Palace’s night face.'
 	},
 	asuka: {
 		id: 'asuka',
@@ -488,6 +599,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Jinheung, The Crescent Moon': 'gwansan',
 	'The Eight Great Clans': 'sabi',
 	'Gunchogo, The Hurricane': 'pyongyang',
+	'Ocean Trade': 'sabi',
 	'The Summit': 'pyongyang',
 	'Gwanggaeto, The Conqueror': 'surabol',
 	'Gotaso’s Wedding': 'surabol',
@@ -496,6 +608,8 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Jinheung’s Betrayal': 'gwansan',
 	'Daeya Fortress': 'daeya',
 	Steam: 'steam_cavern',
+	'Best of Both': 'steam_cavern',
+	'The Marshal\u2019s Steam': 'steam_cavern',
 	'Steam, Again': 'steam_cavern',
 	'Yeon’s Massacre': 'pyongyang',
 	'Chunchu & Gesomun': 'pyongyang',
@@ -574,6 +688,8 @@ export function toPlacePerson(p: Place): Person {
 		hanja: p.hanja,
 		title: p.title ?? PLACE_KIND_LABEL[p.kind],
 		entity: 'place',
+		placeKind: p.kind,
+		cityId: p.cityId,
 		kingdom: p.side,
 		avatar: p.avatar,
 		tagline: p.blurb,

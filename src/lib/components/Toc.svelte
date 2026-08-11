@@ -1,14 +1,46 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { chapters } from '$lib/story';
+	import { TOC_DURATION_MS } from '$lib/tocUi.svelte';
+	import { scriptUi } from '$lib/scriptUi.svelte';
+	import {
+		reading,
+		episodes,
+		goToEpisodeById,
+		syncEpisodeFromHash
+	} from '$lib/reading.svelte';
 
-	/** Bound by the page so main can shift (Notion-style) when the TOC is open. */
+	/** Bound by the story layout so the reading shell + plate shift together. */
 	let { open = $bindable(false) } = $props();
 
-	let active = $state(chapters[0]?.id);
-	let activeEntry = $state('');
-	let progress = $state(0);
+	/** Scroll-driven markers (full scope); episodes mode overlays via derived. */
+	let scrollActive = $state(chapters[0]?.id);
+	let scrollActiveEntry = $state('');
+	let scrollProgress = $state(0);
 	let narrow = $state(false);
+
+	let active = $derived(
+		reading.viewScope === 'episodes'
+			? (episodes[reading.episodeIndex]?.chapterId ?? chapters[0]?.id)
+			: scrollActive
+	);
+	let activeEntry = $derived(
+		reading.viewScope === 'episodes'
+			? (episodes[reading.episodeIndex]?.id ?? '')
+			: scrollActiveEntry
+	);
+	let progress = $derived(
+		reading.viewScope === 'episodes'
+			? episodes.length > 1
+				? reading.episodeIndex / (episodes.length - 1)
+				: 1
+			: scrollProgress
+	);
+
+	/** Pending jump after the TOC retracts / layout settles. */
+	let jumpTimer: ReturnType<typeof setTimeout> | undefined;
+
+	let refreshObservers: (() => void) | undefined;
 
 	onMount(() => {
 		const mq = window.matchMedia('(max-width: 1000px)');
@@ -18,32 +50,41 @@
 
 		const io = new IntersectionObserver(
 			(entries) => {
-				for (const e of entries) if (e.isIntersecting) active = e.target.id;
+				if (reading.viewScope === 'episodes') return;
+				for (const e of entries) if (e.isIntersecting) scrollActive = e.target.id;
 			},
 			// a chapter is "active" while it crosses the upper third of the screen
 			{ rootMargin: '-15% 0px -70% 0px' }
 		);
-		for (const ch of chapters) {
-			const el = document.getElementById(ch.id);
-			if (el) io.observe(el);
-		}
 
 		// entry-level tracking + reading progress
 		const ioEntry = new IntersectionObserver(
 			(entries) => {
-				for (const e of entries) if (e.isIntersecting) activeEntry = e.target.id;
+				if (reading.viewScope === 'episodes') return;
+				for (const e of entries) if (e.isIntersecting) scrollActiveEntry = e.target.id;
 			},
 			{ rootMargin: '-20% 0px -70% 0px' }
 		);
-		for (const ch of chapters)
-			for (let i = 0; i < ch.entries.length; i++) {
-				const el = document.getElementById(`${ch.id}-${i}`);
-				if (el) ioEntry.observe(el);
+
+		refreshObservers = () => {
+			io.disconnect();
+			ioEntry.disconnect();
+			for (const ch of chapters) {
+				const el = document.getElementById(ch.id);
+				if (el) io.observe(el);
 			}
+			for (const ch of chapters)
+				for (let i = 0; i < ch.entries.length; i++) {
+					const el = document.getElementById(`${ch.id}-${i}`);
+					if (el) ioEntry.observe(el);
+				}
+		};
+		refreshObservers();
 
 		const onScroll = () => {
+			if (reading.viewScope === 'episodes') return;
 			const max = document.documentElement.scrollHeight - window.innerHeight;
-			progress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+			scrollProgress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
 		};
 		onScroll();
 		window.addEventListener('scroll', onScroll, { passive: true });
@@ -53,33 +94,152 @@
 		};
 		window.addEventListener('keydown', onKey);
 
+		// Land on a hash target after load (navbar jump writes these).
+		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+		if (hash) {
+			if (reading.viewScope === 'episodes') {
+				syncEpisodeFromHash({ scroll: true });
+			} else {
+				const target = document.getElementById(hash);
+				if (target) {
+					requestAnimationFrame(() => {
+						target.scrollIntoView({ behavior: 'auto', block: 'start' });
+						markActive(target, hash);
+					});
+				}
+			}
+		}
+
 		return () => {
 			io.disconnect();
 			ioEntry.disconnect();
+			refreshObservers = undefined;
 			mq.removeEventListener('change', syncNarrow);
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('keydown', onKey);
+			if (jumpTimer) clearTimeout(jumpTimer);
 		};
 	});
 
-	function jump(id: string) {
-		// keep open on desktop; close on narrow screens so content isn't covered
-		if (narrow) open = false;
-		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	/** Re-bind observers when returning to full scroll (entries remount). */
+	$effect(() => {
+		if (reading.viewScope !== 'full') return;
+		const id = requestAnimationFrame(() => refreshObservers?.());
+		return () => cancelAnimationFrame(id);
+	});
+
+	function markActive(el: HTMLElement, id: string) {
+		if (el.classList.contains('entry')) {
+			scrollActiveEntry = id;
+			scrollActive = el.closest('.chapter')?.id ?? scrollActive;
+		} else {
+			scrollActive = id;
+			scrollActiveEntry = '';
+		}
+	}
+
+	function scrollToEl(el: HTMLElement, behavior: ScrollBehavior) {
+		el.scrollIntoView({ behavior, block: 'start' });
+	}
+
+	/**
+	 * Jump to a chapter/entry. Always retract the TOC first so the final
+	 * scroll is computed in the reading layout — otherwise closing the panel
+	 * later shifts padding and the destination drifts.
+	 */
+	async function jump(id: string) {
+		if (jumpTimer) {
+			clearTimeout(jumpTimer);
+			jumpTimer = undefined;
+		}
+
+		const reduce =
+			typeof matchMedia !== 'undefined' &&
+			matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
+
+		if (reading.viewScope === 'episodes') {
+			const ok = goToEpisodeById(id, { hash: true, scroll: false, closeToc: true });
+			if (!ok) return;
+			open = false;
+			await tick();
+			const ep = episodes[reading.episodeIndex];
+			const el = ep ? document.getElementById(ep.id) : null;
+			if (!el) return;
+			markActive(el, ep.id);
+			const go = () => {
+				scrollToEl(el, behavior);
+				if (behavior === 'smooth') {
+					jumpTimer = setTimeout(() => {
+						scrollToEl(el, 'auto');
+						jumpTimer = undefined;
+					}, 380);
+				}
+			};
+			requestAnimationFrame(() => requestAnimationFrame(go));
+			return;
+		}
+
+		const el = document.getElementById(id);
+		if (!el) return;
+
+		markActive(el, id);
+
+		try {
+			history.replaceState(null, '', `#${encodeURIComponent(id)}`);
+		} catch {
+			/* ignore */
+		}
+
+		/** Desktop open TOC pushes main; wait for that padding transition. */
+		const needsLayoutSettle = open && !narrow;
+		open = false;
+
+		const go = () => {
+			scrollToEl(el, behavior);
+			// After smooth scroll + any late reflow, pin the destination once.
+			if (behavior === 'smooth') {
+				jumpTimer = setTimeout(() => {
+					scrollToEl(el, 'auto');
+					jumpTimer = undefined;
+				}, 380);
+			}
+		};
+
+		if (needsLayoutSettle) {
+			/* Wait one TOC duration (+ frame) so padding / --shell-shift finish. */
+			jumpTimer = setTimeout(go, TOC_DURATION_MS + 16);
+		} else {
+			requestAnimationFrame(() => requestAnimationFrame(go));
+		}
 	}
 
 	function toggle() {
+		if (!scriptUi.inScript) return;
 		open = !open;
 	}
+
+	/** Close the panel if the reader scrolls back to cover/blurb. */
+	$effect(() => {
+		if (!scriptUi.inScript && open) open = false;
+	});
 </script>
 
-<div class="progress" style:transform="scaleX({progress})" aria-hidden="true"></div>
+<div
+	class="progress"
+	class:in={scriptUi.inScript}
+	style:transform="scaleX({progress})"
+	aria-hidden="true"
+></div>
 
 <button
 	class="toc-toggle"
+	class:in={scriptUi.inScript}
 	type="button"
 	aria-expanded={open}
 	aria-controls="toc-panel"
+	aria-hidden={!scriptUi.inScript}
+	tabindex={scriptUi.inScript ? 0 : -1}
 	aria-label={open ? 'Close table of contents' : 'Open table of contents'}
 	onclick={toggle}
 >
@@ -128,6 +288,12 @@
 		background: var(--gold);
 		transform-origin: 0 50%;
 		will-change: transform;
+		opacity: 0;
+		transition: opacity 480ms var(--ease);
+	}
+
+	.progress.in {
+		opacity: 1;
 	}
 
 	.toc-toggle {
@@ -141,24 +307,46 @@
 		place-items: center;
 		font-size: 1.1rem;
 		line-height: 1;
-		color: rgba(255, 253, 248, 0.92);
+		color: color-mix(in srgb, var(--fg-strong) 92%, transparent);
 		background: transparent;
 		border: none;
 		border-radius: 10px;
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
 		text-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.85),
-			0 0 12px rgba(0, 0, 0, 0.55);
+			0 1px 2px var(--bg),
+			0 0 12px var(--bg);
+		opacity: 0;
+		transform: translate3d(0, -0.85rem, 0);
+		pointer-events: none;
 		transition:
 			color 150ms ease,
-			transform 180ms ease,
-			background 150ms ease;
+			background 150ms ease,
+			opacity 520ms var(--ease),
+			transform 560ms var(--ease);
 	}
 
-	.toc-toggle:hover {
-		color: #fff;
+	.toc-toggle.in {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		pointer-events: auto;
+	}
+
+	.toc-toggle.in:hover {
+		color: var(--fg-strong);
 		transform: scale(1.06);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.progress,
+		.toc-toggle {
+			transition: opacity 200ms ease;
+			transform: none;
+		}
+
+		.toc-toggle.in:hover {
+			transform: none;
+		}
 	}
 
 	.toc {
@@ -170,20 +358,21 @@
 		width: min(var(--toc-w), 86vw);
 		padding: 3.6rem 0.5rem 1.5rem calc(22px + 0.35rem);
 		pointer-events: none;
-		transform: translateX(-12px);
+		transform: translate3d(-10px, 0, 0);
 		opacity: 0;
 		visibility: hidden;
 		transition:
-			opacity 260ms cubic-bezier(0.22, 1, 0.36, 1),
-			transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
-			visibility 0s linear 260ms;
+			opacity var(--toc-duration) var(--toc-ease),
+			transform var(--toc-duration) var(--toc-ease),
+			visibility 0s linear var(--toc-duration);
+		will-change: transform, opacity;
 	}
 
 	.toc.open {
 		pointer-events: auto;
 		opacity: 1;
 		visibility: visible;
-		transform: translateX(0);
+		transform: translate3d(0, 0, 0);
 		transition-delay: 0s;
 	}
 
@@ -194,7 +383,7 @@
 		background: transparent;
 		padding: 0.2rem 0.4rem 1rem 0;
 		scrollbar-width: thin;
-		scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+		scrollbar-color: var(--scroll-thumb) transparent;
 	}
 
 	.panel-part {
@@ -206,8 +395,8 @@
 		color: var(--gold);
 		padding: 0.95rem 0.35rem 0.3rem;
 		text-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.9),
-			0 0 14px rgba(0, 0, 0, 0.55);
+			0 1px 2px var(--bg),
+			0 0 14px var(--bg);
 	}
 
 	.panel-item {
@@ -222,19 +411,19 @@
 		border-radius: 7px;
 		padding: 0.42rem 0.45rem;
 		cursor: pointer;
-		color: rgba(255, 255, 255, 0.72);
+		color: color-mix(in srgb, var(--fg) 80%, transparent);
 		text-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.9),
-			0 0 12px rgba(0, 0, 0, 0.5);
+			0 1px 2px var(--bg),
+			0 0 12px var(--bg);
 		transition: color 150ms ease;
 	}
 
 	.panel-item:hover {
-		color: #fff;
+		color: var(--fg-strong);
 	}
 
 	.panel-item.active {
-		color: #fff;
+		color: var(--fg-strong);
 	}
 
 	.pi-title {
@@ -274,7 +463,7 @@
 	.sub {
 		margin-left: 0.55rem;
 		padding-left: 0.45rem;
-		border-left: 1px solid rgba(255, 255, 255, 0.14);
+		border-left: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
 	}
 
 	.sub-item {
@@ -290,19 +479,19 @@
 		border-radius: 6px;
 		padding: 0.22rem 0.4rem;
 		cursor: pointer;
-		color: rgba(255, 255, 255, 0.45);
+		color: color-mix(in srgb, var(--fg) 55%, transparent);
 		text-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.9),
-			0 0 10px rgba(0, 0, 0, 0.45);
+			0 1px 2px var(--bg),
+			0 0 10px var(--bg);
 		transition: color 150ms ease;
 	}
 
 	.sub-item:hover {
-		color: rgba(255, 255, 255, 0.92);
+		color: color-mix(in srgb, var(--fg) 92%, transparent);
 	}
 
 	.sub-item.active {
-		color: #fff;
+		color: var(--fg-strong);
 	}
 
 	.si-year {
@@ -327,9 +516,9 @@
 			left: max(0.35rem, env(safe-area-inset-left, 0px));
 			width: 2.75rem;
 			height: 2.75rem;
-			background: rgba(32, 32, 38, 0.55);
+			background: var(--glass);
 			backdrop-filter: blur(10px);
-			border: 1px solid rgba(255, 255, 255, 0.08);
+			border: 1px solid var(--hairline);
 		}
 
 		.toc {
@@ -339,8 +528,8 @@
 			/* Dim the page behind so the open TOC reads as a sheet, not chrome. */
 			background: linear-gradient(
 				90deg,
-				rgba(20, 20, 26, 0.92) 0%,
-				rgba(20, 20, 26, 0.78) 72%,
+				color-mix(in srgb, var(--panel-sunken) 92%, transparent) 0%,
+				color-mix(in srgb, var(--panel-sunken) 78%, transparent) 72%,
 				transparent 100%
 			);
 		}

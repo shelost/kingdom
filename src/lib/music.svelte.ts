@@ -62,7 +62,8 @@ export const TRACKS: Record<string, Track> = {
 	'Samhan': cue('Samhan', F.sovereign),
 	'The Harmony Council': cue('The Harmony Council', F.tempting),
 	'Eight Great Clans': cue('The Eight Great Clans', F.tempting),
-	'The Rock of Politics': cue('The Rock of Politics', F.tempting),
+	'Deer Rock': cue('Deer Rock', F.tempting),
+	'The Rock of Politics': cue('Deer Rock', F.tempting),
 	// ————— myth & founding —————
 	'Founding': cue('Founding', F.avalon),
 	'Six Eggs': cue('Six Eggs', F.avalon),

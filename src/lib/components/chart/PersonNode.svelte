@@ -9,6 +9,8 @@
 		kingdomColor: string;
 		size: number;
 		gender: 'm' | 'f';
+		avatar?: string | null;
+		initial?: string;
 	};
 
 	let { data }: NodeProps & { data: Data } = $props();
@@ -24,16 +26,21 @@
 	style:width="{size}px"
 	style:height="{size}px"
 >
+	<div class="dot" aria-hidden="true">
+		{#if data.avatar}
+			<img class="face" src={data.avatar} alt="" draggable="false" />
+		{:else}
+			<span class="initial">{data.initial ?? data.label.slice(0, 1)}</span>
+		{/if}
+	</div>
+
 	<div class="labels">
 		<span class="name-row">
 			<span class="name">{data.label}</span>
 			<span class="material-symbols-outlined gender" aria-hidden="true">{genderIcon}</span>
 		</span>
 		{#if data.korean}<span class="ko">{data.korean}</span>{/if}
-		<span class="tag">{data.kingdom}</span>
 	</div>
-
-	<div class="dot" aria-hidden="true"></div>
 
 	<Handle type="source" position={Position.Top} id="s" class="ghost" />
 	<Handle type="target" position={Position.Top} id="t" class="ghost" />
@@ -47,12 +54,41 @@
 		border-radius: 50%;
 		pointer-events: all;
 		overflow: visible;
+		cursor: pointer;
+	}
+
+	.dot {
+		position: absolute;
+		inset: 0;
+		border-radius: 50%;
+		background: color-mix(in srgb, var(--c) 75%, #1e1e1e);
+		border: 1.25px solid rgba(0, 0, 0, 0.35);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 35%, transparent);
+		overflow: hidden;
+		display: grid;
+		place-items: center;
+	}
+
+	.face {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	.initial {
+		font-size: 0.7rem;
+		font-weight: 600;
+		color: rgba(255, 255, 255, 0.92);
+		pointer-events: none;
 	}
 
 	.labels {
 		position: absolute;
 		left: 50%;
-		bottom: calc(100% + 0.28rem);
+		top: calc(100% + 0.28rem);
 		translate: -50% 0;
 		display: flex;
 		flex-direction: column;
@@ -100,24 +136,6 @@
 		font-size: 0.48rem;
 		color: rgba(235, 235, 245, 0.35);
 		line-height: 1.1;
-	}
-
-	.tag {
-		margin-top: 0.02rem;
-		font-size: 0.42rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: color-mix(in srgb, var(--k) 55%, rgba(235, 235, 245, 0.5));
-		line-height: 1.15;
-	}
-
-	.dot {
-		position: absolute;
-		inset: 0;
-		border-radius: 50%;
-		background: color-mix(in srgb, var(--c) 75%, #1e1e1e);
-		border: 1px solid color-mix(in srgb, var(--c) 55%, #444);
 	}
 
 	:global(.ghost.svelte-flow__handle) {

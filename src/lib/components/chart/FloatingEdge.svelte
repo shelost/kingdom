@@ -19,8 +19,11 @@
 		markerStart
 	}: EdgeProps = $props();
 
-	const sourceNode = $derived(useInternalNode(source));
-	const targetNode = $derived(useInternalNode(target));
+	// Edge source/target ids are fixed for this edge instance's lifetime.
+	// svelte-ignore state_referenced_locally
+	const sourceNode = useInternalNode(source);
+	// svelte-ignore state_referenced_locally
+	const targetNode = useInternalNode(target);
 
 	let path = $derived.by(() => {
 		const s = sourceNode.current;

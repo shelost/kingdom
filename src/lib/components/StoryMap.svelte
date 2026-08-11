@@ -3,12 +3,16 @@
 	import { PLACES, MAP_MARKERS, type Place } from '$lib/places';
 	import { KINGDOMS } from '$lib/people';
 	import { openProfile } from '$lib/profiles.svelte';
+	import { mapUi, closeStoryMap } from '$lib/mapUi.svelte';
+
+	/** Full-page Map route: always expanded, no modal scrim. */
+	let { pageMode = false }: { pageMode?: boolean } = $props();
 
 	const VB = { w: 595, h: 842 };
 
-	let open = $state(false);
 	let hovered = $state<Place | null>(null);
 
+	let open = $derived(pageMode || mapUi.open);
 	let place = $derived<Place | null>(reading.place ? (PLACES[reading.place] ?? null) : null);
 	let colour = $derived(place ? KINGDOMS[place.side].color : '#8a8a94');
 
@@ -18,8 +22,13 @@
 	const pct = (p: Place) => ({ left: (p.x / VB.w) * 100, top: (p.y / VB.h) * 100 });
 
 	function toggle() {
-		open = !open;
-		if (!open) hovered = null;
+		if (pageMode) return;
+		if (mapUi.open) {
+			closeStoryMap();
+			hovered = null;
+		} else {
+			mapUi.open = true;
+		}
 	}
 
 	function openPlace(p: Place, e?: Event) {
@@ -28,8 +37,9 @@
 	}
 
 	function onKey(e: KeyboardEvent) {
+		if (pageMode) return;
 		if (e.key === 'Escape' && open) {
-			open = false;
+			closeStoryMap();
 			hovered = null;
 		}
 	}
@@ -37,78 +47,88 @@
 
 <svelte:window onkeydown={onKey} />
 
-{#if open}
+{#if open && !pageMode}
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 	<div class="scrim" onclick={toggle}></div>
 {/if}
 
-<figure class="map" class:open class:has-place={!!place}>
-	<div
-		class="frame"
-		onclick={toggle}
-		role="button"
-		tabindex="0"
-		aria-label={open ? 'Close the map' : 'Open the map'}
-		aria-expanded={open}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				toggle();
-			}
-		}}
-	>
-		<img src="/map.svg" alt="Map of the Three Kingdoms" />
+{#snippet mapBody()}
+	<img src="/map.svg" alt="Map of the Three Kingdoms" />
 
-		<!-- every named site; labels only once the map is opened -->
-		{#each MAP_MARKERS as p (p.id)}
-			{@const c = pct(p)}
-			{@const active = place?.id === p.id}
-			{#if open}
-				<button
-					type="button"
-					class="pin {p.kind}"
-					class:active
-					class:capital={p.capital}
-					class:flip={p.labelLeft}
-					class:lit={hovered?.id === p.id}
-					style:left="{c.left}%"
-					style:top="{c.top}%"
-					style:--c={KINGDOMS[p.side].color}
-					onmouseenter={() => (hovered = p)}
-					onmouseleave={() => hovered?.id === p.id && (hovered = null)}
-					onclick={(e) => openPlace(p, e)}
-					aria-label="Open profile for {p.name}"
-				>
-					<span class="glyph"></span>
-					<span class="label">
-						{#if p.capital && p.korean}<b class="ko">{p.korean.split(' ')[0]}</b>{/if}
-						{p.name}
-					</span>
-				</button>
-			{:else}
-				<span
-					class="pin {p.kind}"
-					class:active
-					class:capital={p.capital}
-					class:flip={p.labelLeft}
-					style:left="{c.left}%"
-					style:top="{c.top}%"
-					style:--c={KINGDOMS[p.side].color}
-					role="presentation"
-				>
-					<span class="glyph"></span>
+	<!-- every named site; labels only once the map is opened -->
+	{#each MAP_MARKERS as p (p.id)}
+		{@const c = pct(p)}
+		{@const active = place?.id === p.id}
+		{#if open}
+			<button
+				type="button"
+				class="pin {p.kind}"
+				class:active
+				class:capital={p.capital}
+				class:flip={p.labelLeft}
+				class:lit={hovered?.id === p.id}
+				style:left="{c.left}%"
+				style:top="{c.top}%"
+				style:--c={KINGDOMS[p.side].color}
+				onmouseenter={() => (hovered = p)}
+				onmouseleave={() => hovered?.id === p.id && (hovered = null)}
+				onclick={(e) => openPlace(p, e)}
+				aria-label="Open profile for {p.name}"
+			>
+				<span class="glyph"></span>
+				<span class="label">
+					{#if p.capital && p.korean}<b class="ko">{p.korean.split(' ')[0]}</b>{/if}
+					{p.name}
 				</span>
-			{/if}
-		{/each}
-
-		<!-- where the story is right now -->
-		{#if place}
-			{@const c = pct(place)}
-			<span class="here" style:left="{c.left}%" style:top="{c.top}%" style:--c={colour}>
-				<span class="ping"></span>
+			</button>
+		{:else}
+			<span
+				class="pin {p.kind}"
+				class:active
+				class:capital={p.capital}
+				class:flip={p.labelLeft}
+				style:left="{c.left}%"
+				style:top="{c.top}%"
+				style:--c={KINGDOMS[p.side].color}
+				role="presentation"
+			>
+				<span class="glyph"></span>
 			</span>
 		{/if}
-	</div>
+	{/each}
+
+	<!-- where the story is right now -->
+	{#if place}
+		{@const c = pct(place)}
+		<span class="here" style:left="{c.left}%" style:top="{c.top}%" style:--c={colour}>
+			<span class="ping"></span>
+		</span>
+	{/if}
+{/snippet}
+
+<figure class="map" class:open class:page={pageMode} class:has-place={!!place || pageMode}>
+	{#if pageMode}
+		<div class="frame" role="group" aria-label="Map of Samhan">
+			{@render mapBody()}
+		</div>
+	{:else}
+		<div
+			class="frame"
+			onclick={toggle}
+			role="button"
+			tabindex="0"
+			aria-label={open ? 'Close the map' : 'Open the map'}
+			aria-expanded={open}
+			onkeydown={(e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					toggle();
+				}
+			}}
+		>
+			{@render mapBody()}
+		</div>
+	{/if}
 
 	<figcaption>
 		{#if shown}
@@ -124,9 +144,19 @@
 				{#if shown.korean}<span class="pl-ko">{shown.korean}</span>{/if}
 			</button>
 			{#if open}<span class="pl-blurb">{shown.blurb}</span>{/if}
-			{#if open}<span class="pl-hint">Click a place for its profile · Esc to close</span>{/if}
+			{#if open}
+				<span class="pl-hint"
+					>{pageMode
+						? 'Click a place for its profile'
+						: 'Click a place for its profile · Esc to close'}</span
+				>
+			{/if}
 		{:else if open}
-			<span class="pl-hint">Hover a place to read about it · click to open profile · Esc to close</span>
+			<span class="pl-hint"
+				>{pageMode
+					? 'Hover a place to read about it · click to open profile'
+					: 'Hover a place to read about it · click to open profile · Esc to close'}</span
+			>
 		{/if}
 	</figcaption>
 </figure>
@@ -147,9 +177,12 @@
 		}
 	}
 
-	/* ————— resting state: a corner card —————
-	   Size and footing come from app.css (--map-w / --corner-*), which is also
-	   where immersive grows the card and lifts it clear of the dialogue box. */
+	/* Resting corner card removed — map lives in the images-column bento.
+	   Only the expanded modal remains here (unless pageMode). */
+	.map:not(.open):not(.page) {
+		display: none;
+	}
+
 	.map {
 		position: fixed;
 		left: var(--corner-left);
@@ -163,15 +196,14 @@
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		opacity: 0.5;
-		/* animating left/bottom/width keeps the card anchored while it grows */
 		transition:
-			opacity 500ms var(--ease),
-			border-color 500ms var(--ease),
-			width 620ms var(--ease),
-			left 620ms var(--ease),
-			bottom 620ms var(--ease),
-			padding 620ms var(--ease),
-			background 620ms var(--ease);
+			opacity 280ms var(--ease),
+			border-color 280ms var(--ease),
+			width 320ms var(--ease),
+			left var(--toc-duration) var(--toc-ease),
+			bottom 320ms var(--ease),
+			padding 320ms var(--ease),
+			background 280ms var(--ease);
 	}
 
 	.map.has-place {
@@ -185,22 +217,29 @@
 
 	/* Immersive: the map is part of the staging, standing over the speech —
 	   it never fades back into the page the way it does while reading. */
-	:global(html.is-immersive) .map {
+	:global(html.is-immersion) .map {
 		opacity: 1;
 		border-color: rgba(255, 255, 255, 0.18);
 		box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
 	}
 
-	:global(html.is-immersive) .map:not(.open) figcaption {
+	:global(html.is-immersion) .map:not(.open) figcaption {
 		min-height: 2.2rem;
 	}
 
-	:global(html.is-immersive) .map:not(.open) .pl-name {
+	:global(html.is-immersion) .map:not(.open) .pl-name {
 		font-size: 0.78rem;
 	}
 
-	:global(html.is-immersive) .map:not(.open) .pl-ko {
+	:global(html.is-immersion) .map:not(.open) .pl-ko {
 		font-size: 0.66rem;
+	}
+
+	/* Cinema: location is told by the graded panel and the caption slug, so the
+	   corner tile stands down until the reader peeks (an opened map stays). */
+	:global(html.is-cinema:not(.is-cinema-peek)) .map:not(.open) {
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	/* ————— opened: centred like a modal ————— */
@@ -215,6 +254,21 @@
 		border-color: rgba(255, 255, 255, 0.2);
 		background: rgba(14, 14, 16, 0.94);
 		box-shadow: 0 40px 120px rgba(0, 0, 0, 0.7);
+	}
+
+	.map.page {
+		position: relative;
+		inset: auto;
+		left: auto;
+		bottom: auto;
+		translate: none;
+		width: min(100%, 36rem);
+		max-width: 100%;
+		margin: 0 auto;
+		opacity: 1;
+		box-shadow: none;
+		z-index: 1;
+		border-radius: 10px;
 	}
 
 	.frame {
@@ -232,6 +286,10 @@
 		cursor: zoom-out;
 	}
 
+	.map.page .frame {
+		cursor: default;
+	}
+
 	img {
 		display: block;
 		width: 100%;
@@ -239,7 +297,13 @@
 		/* the source map is drawn for paper — invert it onto the dark page */
 		filter: invert(1) hue-rotate(180deg) saturate(0.75) brightness(0.82) contrast(1.1);
 		opacity: 0.72;
-		transition: opacity 620ms var(--ease);
+		transition: opacity 280ms var(--ease);
+	}
+
+	/* Light mode: the paper source can stand as drawn. */
+	:global(html[data-theme='light']) img {
+		filter: saturate(0.9) contrast(1.02);
+		opacity: 0.94;
 	}
 
 	.map.open img {
@@ -361,6 +425,19 @@
 		color: #fff;
 	}
 
+	/* Light mode: ink labels with a paper halo instead of white-on-black. */
+	:global(html[data-theme='light']) .label {
+		color: rgba(32, 26, 14, 0.85);
+		text-shadow:
+			0 1px 3px rgba(255, 253, 248, 0.95),
+			0 0 8px rgba(255, 253, 248, 0.85);
+	}
+
+	:global(html[data-theme='light']) .pin.lit .label,
+	:global(html[data-theme='light']) .pin.active .label {
+		color: #17150e;
+	}
+
 	/* generous invisible hit area so small pins are easy to hover */
 	.map.open .pin::before {
 		content: '';
@@ -452,7 +529,7 @@
 		font-size: 0.66rem;
 		font-weight: 500;
 		letter-spacing: var(--tracking-micro);
-		color: #fbfaf8;
+		color: var(--fg-strong);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -461,6 +538,16 @@
 	.map.open .pl-name {
 		font-size: 0.95rem;
 		color: color-mix(in srgb, var(--c) 45%, #fff);
+	}
+
+	/* Light mode: the opened modal reads as a paper sheet, not a lightbox. */
+	:global(html[data-theme='light']) .map.open {
+		background: rgba(250, 248, 244, 0.96);
+		border-color: rgba(28, 22, 10, 0.16);
+	}
+
+	:global(html[data-theme='light']) .map.open .pl-name {
+		color: color-mix(in srgb, var(--c) 60%, #17150e);
 	}
 
 	.pl-ko {

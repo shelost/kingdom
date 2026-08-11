@@ -1,22 +1,21 @@
 <script lang="ts">
 	import {
-		forceSimulation,
-		forceLink,
-		forceManyBody,
-		forceCollide,
-		forceX,
-		forceY,
-		type Simulation,
-		type SimulationLinkDatum
-	} from 'd3-force';
-	import { drag } from 'd3-drag';
-	import { select, type Selection } from 'd3-selection';
-	import { zoom, zoomIdentity, type ZoomBehavior } from 'd3-zoom';
-	import type { Attachment } from 'svelte/attachments';
+		SvelteFlow,
+		Background,
+		Controls,
+		Panel,
+		ConnectionMode,
+		type Node,
+		type Edge
+	} from '@xyflow/svelte';
+	import '@xyflow/svelte/dist/style.css';
+	import { untrack } from 'svelte';
+	import type { Simulation } from 'd3-force';
 
 	import {
 		byId,
 		colorOf,
+		accentColorsOf,
 		avatarOf,
 		hangulInitial,
 		KINGDOMS,
@@ -26,66 +25,78 @@
 		CHART_NODES,
 		RELATIONSHIPS,
 		BOND_LABEL,
-		RANK_SIZE,
 		ERA_META,
 		type ChartEra
 	} from '$lib/relations';
-	import { ERA_Y, KINGDOM_X } from '$lib/chart/force';
+	import {
+		ERA_Y,
+		createRelationForceSimulation,
+		type ForceLink,
+		type ForceNode
+	} from '$lib/chart/force';
 	import { openProfile, closeProfile, profiles } from '$lib/profiles.svelte';
+	import { scriptUi } from '$lib/scriptUi.svelte';
+
+	import PersonNode from '$lib/components/chart/PersonNode.svelte';
+	import FloatingEdge from '$lib/components/chart/FloatingEdge.svelte';
+	import SectionNode from '$lib/components/chart/SectionNode.svelte';
+	import FitViewWhenReady from '$lib/components/chart/FitViewWhenReady.svelte';
+
+	/** Full-page Characters route: graph always open, no story-corner chrome. */
+	let { pageMode = false }: { pageMode?: boolean } = $props();
 
 	/** Portrait diameters — RANK_SIZE scaled up for readable faces. */
 	const PORTRAIT: Record<1 | 2 | 3, number> = {
-		1: 22,
-		2: 28,
-		3: 36
+		1: 28,
+		2: 36,
+		3: 48
 	};
 
-	type GraphNode = {
-		id: string;
-		name: string;
-		korean?: string;
-		color: string;
-		avatar: string | null;
-		initial: string;
-		r: number;
-		era: ChartEra;
-		kingdom: Person['kingdom'];
-		x: number;
-		y: number;
-		vx?: number;
-		vy?: number;
-		fx?: number | null;
-		fy?: number | null;
-		index?: number;
+	const nodeTypes = {
+		person: PersonNode,
+		section: SectionNode
 	};
 
-	type GraphLink = SimulationLinkDatum<GraphNode> & {
-		id: string;
-		color: string;
-		label: string;
-		thick: boolean;
+	const edgeTypes = {
+		floating: FloatingEdge
 	};
 
-	let open = $state(false);
+	type PersonFlowNode = Node<
+		{
+			label: string;
+			korean?: string;
+			color: string;
+			kingdom: string;
+			kingdomColor: string;
+			size: number;
+			gender: 'm' | 'f';
+			avatar: string | null;
+			initial: string;
+			era: ChartEra;
+		},
+		'person'
+	>;
+
+	type SectionFlowNode = Node<{ label: string; hint?: string }, 'section'>;
+	type ChartFlowNode = PersonFlowNode | SectionFlowNode;
+
+	/** Manual open for the story-corner modal; pageMode keeps the graph open. */
+	let openManual = $state(false);
+	let open = $derived(pageMode || openManual);
 	/** Filter by kingdom id; null = show all. */
 	let filter = $state<Person['kingdom'] | null>(null);
 	/** Filter by era band; null = show all. */
 	let eraFilter = $state<ChartEra | null>(null);
 
-	/** Simulation nodes / links — mutated by d3-force; reassigned on rebuild. */
-	let nodes = $state.raw<GraphNode[]>([]);
-	let links = $state.raw<GraphLink[]>([]);
-	/** Bumped each tick so the SVG re-reads x/y. */
-	let tick = $state(0);
-	/** Viewport pan/zoom applied to the inner `<g>`. */
-	let view = $state({ x: 0, y: 0, k: 1 });
+	let nodes = $state.raw<ChartFlowNode[]>([]);
+	let edges = $state.raw<Edge[]>([]);
+	/** Bumped when the graph membership changes so FitViewWhenReady re-fits. */
+	let fitToken = $state(0);
 
-	let svgEl: SVGSVGElement | null = $state(null);
-	let sim: Simulation<GraphNode, GraphLink> | null = null;
-	let zoomer: ZoomBehavior<SVGSVGElement, unknown> | null = null;
-	let svgSel: Selection<SVGSVGElement, unknown, null, undefined> | null = null;
-	/** Suppress click after a real drag. */
-	let didDrag = false;
+	let sim: Simulation<ForceNode, ForceLink> | null = null;
+	let simNodes: ForceNode[] = [];
+	const simById = new Map<string, ForceNode>();
+	const dragging = new Set<string>();
 
 	const kingdomOrder: Person['kingdom'][] = [
 		'silla',
@@ -105,12 +116,6 @@
 		kingdomOrder.filter((k) => CHART_NODES.some((n) => byId.get(n.id)?.kingdom === k))
 	);
 
-	const visibleEras = $derived.by(() => {
-		const eras = eraOrder.filter((e) => nodes.some((n) => n.era === e));
-		if (eraFilter) return eras.filter((e) => e === eraFilter);
-		return eras;
-	});
-
 	function filteredChart(kingdom: Person['kingdom'] | null, era: ChartEra | null) {
 		return CHART_NODES.filter(({ id, era: nodeEra }) => {
 			const p = byId.get(id);
@@ -121,129 +126,158 @@
 		});
 	}
 
+	function visibleErasFor(graphNodes: ForceNode[], era: ChartEra | null): ChartEra[] {
+		const eras = eraOrder.filter((e) => graphNodes.some((n) => n.era === e));
+		if (era) return eras.filter((e) => e === era);
+		return eras;
+	}
+
 	function buildGraph(kingdom: Person['kingdom'] | null, era: ChartEra | null) {
 		const chart = filteredChart(kingdom, era);
-		const nextNodes: GraphNode[] = chart.flatMap(({ id, rank, era: nodeEra, x, y }) => {
+		const nextSim: ForceNode[] = chart.flatMap(({ id, rank, era: nodeEra, x, y }) => {
 			const p = byId.get(id);
 			if (!p) return [];
-			const diameter = PORTRAIT[rank] ?? RANK_SIZE[rank] * 2;
+			const diameter = PORTRAIT[rank] ?? 28;
 			return [
 				{
 					id,
-					name: p.name,
-					korean: p.korean,
-					color: colorOf(p),
-					avatar: avatarOf(p),
-					initial: hangulInitial(p),
-					r: diameter / 2,
 					era: nodeEra,
 					kingdom: p.kingdom,
+					r: diameter / 2,
 					x,
 					y
 				}
 			];
 		});
 
-		const ids = new Set(nextNodes.map((n) => n.id));
-		const nextLinks: GraphLink[] = RELATIONSHIPS.flatMap((rel) => {
+		const ids = new Set(nextSim.map((n) => n.id));
+		const nextLinks: ForceLink[] = RELATIONSHIPS.flatMap((rel) => {
+			if (!rel.between) return [];
+			const [a, b] = rel.between;
+			if (!ids.has(a) || !ids.has(b)) return [];
+			return [{ id: rel.id, source: a, target: b }];
+		});
+
+		const personNodes: PersonFlowNode[] = nextSim.flatMap((sn) => {
+			const meta = chart.find((c) => c.id === sn.id);
+			const p = byId.get(sn.id);
+			if (!meta || !p) return [];
+			const size = sn.r * 2;
+			return [
+				{
+					id: sn.id,
+					type: 'person' as const,
+					position: { x: sn.x, y: sn.y },
+					width: size,
+					height: size,
+					data: {
+						label: p.name,
+						korean: p.korean,
+						color: colorOf(p),
+						kingdom: KINGDOMS[p.kingdom].label,
+						kingdomColor: KINGDOMS[p.kingdom].color,
+						size,
+						gender: meta.gender,
+						avatar: avatarOf(p),
+						initial: hangulInitial(p),
+						era: sn.era
+					}
+				}
+			];
+		});
+
+		const eras = visibleErasFor(nextSim, era);
+		const sectionNodes: SectionFlowNode[] = eras.map((e) => ({
+			id: `era-${e}`,
+			type: 'section' as const,
+			position: { x: -20, y: ERA_Y[e] - 72 },
+			draggable: false,
+			selectable: false,
+			connectable: false,
+			focusable: false,
+			data: {
+				label: ERA_META[e].label,
+				hint: ERA_META[e].hint
+			}
+		}));
+
+		const nextEdges: Edge[] = RELATIONSHIPS.flatMap((rel) => {
 			if (!rel.between) return [];
 			const [a, b] = rel.between;
 			if (!ids.has(a) || !ids.has(b)) return [];
 			const bond = rel.bond ?? 'love';
+			const c = colorOf(rel);
+			const thick = bond === 'love' || bond === 'affair';
 			return [
 				{
 					id: rel.id,
 					source: a,
 					target: b,
-					color: colorOf(rel),
+					sourceHandle: 's',
+					targetHandle: 't',
+					type: 'floating',
 					label: BOND_LABEL[bond],
-					thick: bond === 'love' || bond === 'affair'
+					style: `stroke: ${c}; stroke-width: ${thick ? 1.8 : 1.15}; opacity: 0.7`,
+					interactionWidth: 18
 				}
 			];
 		});
 
-		return { nextNodes, nextLinks };
-	}
-
-	function linkEnd(end: GraphLink['source'] | GraphLink['target']): GraphNode | null {
-		if (typeof end === 'object' && end) return end as GraphNode;
-		return nodes.find((n) => n.id === end) ?? null;
-	}
-
-	function fitView(svg: SVGSVGElement, graphNodes: GraphNode[]) {
-		if (!zoomer || !svgSel || graphNodes.length === 0) return;
-		const w = svg.clientWidth || 1;
-		const h = svg.clientHeight || 1;
-		let minX = Infinity;
-		let minY = Infinity;
-		let maxX = -Infinity;
-		let maxY = -Infinity;
-		for (const n of graphNodes) {
-			minX = Math.min(minX, n.x - n.r - 40);
-			minY = Math.min(minY, n.y - n.r - 28);
-			maxX = Math.max(maxX, n.x + n.r + 40);
-			maxY = Math.max(maxY, n.y + n.r + 28);
-		}
-		const bw = Math.max(maxX - minX, 1);
-		const bh = Math.max(maxY - minY, 1);
-		const pad = 36;
-		const k = Math.min(1.4, Math.max(0.2, Math.min((w - pad * 2) / bw, (h - pad * 2) / bh)));
-		const tx = (w - k * (minX + maxX)) / 2;
-		const ty = (h - k * (minY + maxY)) / 2;
-		svgSel.call(zoomer.transform, zoomIdentity.translate(tx, ty).scale(k));
-	}
-
-	function startSimulation(kingdom: Person['kingdom'] | null, era: ChartEra | null) {
-		sim?.stop();
-		const { nextNodes, nextLinks } = buildGraph(kingdom, era);
-		nodes = nextNodes;
-		links = nextLinks;
-		tick++;
-
-		const simulation = forceSimulation<GraphNode, GraphLink>(nextNodes)
-			.force(
-				'link',
-				forceLink<GraphNode, GraphLink>(nextLinks)
-					.id((d) => d.id)
-					.distance(100)
-					.strength(0.42)
-			)
-			.force('charge', forceManyBody().strength(-200))
-			.force(
-				'collide',
-				forceCollide<GraphNode>()
-					.radius((d) => d.r + 26)
-					.strength(0.9)
-			)
-			.force(
-				'x',
-				forceX<GraphNode>((d) => KINGDOM_X[d.kingdom] ?? 520).strength(0.05)
-			)
-			.force(
-				'y',
-				forceY<GraphNode>((d) => ERA_Y[d.era]).strength(0.065)
-			)
-			.on('tick', () => {
-				tick++;
-			});
-
-		sim = simulation;
-
-		// Fit once the layout has settled a bit.
-		let fitted = false;
-		simulation.on('tick.fit', () => {
-			if (fitted || simulation.alpha() > 0.35) return;
-			fitted = true;
-			if (svgEl) fitView(svgEl, nextNodes);
-			simulation.on('tick.fit', null);
-		});
+		return {
+			nextSim,
+			nextLinks,
+			flowNodes: [...sectionNodes, ...personNodes] as ChartFlowNode[],
+			nextEdges
+		};
 	}
 
 	function stopSimulation() {
 		sim?.stop();
 		sim = null;
+		simNodes = [];
+		simById.clear();
+		dragging.clear();
 		nodes = [];
-		links = [];
+		edges = [];
+	}
+
+	function startSimulation(kingdom: Person['kingdom'] | null, era: ChartEra | null) {
+		sim?.stop();
+		dragging.clear();
+
+		const { nextSim, nextLinks, flowNodes, nextEdges } = buildGraph(kingdom, era);
+		simNodes = nextSim;
+		simById.clear();
+		for (const n of nextSim) simById.set(n.id, n);
+
+		nodes = flowNodes;
+		edges = nextEdges;
+		fitToken++;
+
+		const simulation = createRelationForceSimulation(nextSim, nextLinks);
+		simulation.on('tick', () => {
+			// Reassign flow nodes from sim positions; skip nodes under the pointer.
+			nodes = nodes.map((n) => {
+				if (n.type !== 'person') return n;
+				if (dragging.has(n.id)) return n;
+				const sn = simById.get(n.id);
+				if (!sn) return n;
+				return {
+					...n,
+					position: { x: sn.x ?? n.position.x, y: sn.y ?? n.position.y }
+				};
+			});
+		});
+
+		sim = simulation;
+
+		let fitted = false;
+		simulation.on('tick.fit', () => {
+			if (fitted || simulation.alpha() > 0.4) return;
+			fitted = true;
+			fitToken++;
+			simulation.on('tick.fit', null);
+		});
 	}
 
 	function setFilter(k: Person['kingdom'] | null) {
@@ -255,18 +289,30 @@
 	}
 
 	function toggle() {
-		open = !open;
-		if (!open) {
+		if (pageMode) return;
+		if (!openManual && !scriptUi.inScript) return;
+		openManual = !openManual;
+		if (!openManual) {
 			closeProfile();
 			filter = null;
 			eraFilter = null;
 			stopSimulation();
-			view = { x: 0, y: 0, k: 1 };
 		}
 	}
 
+	$effect(() => {
+		if (pageMode) return;
+		if (scriptUi.inScript || !openManual) return;
+		openManual = false;
+		closeProfile();
+		filter = null;
+		eraFilter = null;
+		stopSimulation();
+	});
+
 	function onKey(e: KeyboardEvent) {
-		if (e.key === 'Escape' && open && !profiles.peeked) open = false;
+		if (pageMode) return;
+		if (e.key === 'Escape' && openManual && !profiles.peeked) openManual = false;
 	}
 
 	let tip = $derived.by(() => {
@@ -275,113 +321,91 @@
 		if (p.entity === 'relationship' && p.between) {
 			const a = byId.get(p.between[0]);
 			const b = byId.get(p.between[1]);
+			const colors = accentColorsOf(p);
 			return {
 				name: p.name,
 				sub: [a?.name, b?.name].filter(Boolean).join(' · '),
 				line: p.tagline,
-				color: colorOf(p)
+				color: colors[0] ?? colorOf(p),
+				color2: colors[1] ?? colors[0] ?? colorOf(p)
 			};
 		}
 		return {
 			name: p.name,
 			sub: KINGDOMS[p.kingdom].label,
 			line: p.tagline,
-			color: colorOf(p)
+			color: colorOf(p),
+			color2: colorOf(p)
 		};
 	});
 
-	/** d3-zoom on the SVG; restarts when the open chart mounts. */
-	const zoomAttach: Attachment<SVGSVGElement> = (svg) => {
-		svgEl = svg;
-		view = { x: 0, y: 0, k: 1 };
-		const z = zoom<SVGSVGElement, unknown>()
-			.scaleExtent([0.15, 1.8])
-			.filter((event) => {
-				// Let node drags own primary-button gestures on .node
-				if (event.type === 'wheel') return true;
-				const t = event.target as Element | null;
-				if (t?.closest?.('.node')) return false;
-				return !event.ctrlKey && !event.button;
-			})
-			.on('zoom', (event) => {
-				const t = event.transform;
-				view = { x: t.x, y: t.y, k: t.k };
-			});
-		zoomer = z;
-		svgSel = select(svg);
-		svgSel.call(z);
-		svgSel.on('dblclick.zoom', null);
-
-		return () => {
-			svgSel?.on('.zoom', null);
-			zoomer = null;
-			svgSel = null;
-			if (svgEl === svg) svgEl = null;
-		};
-	};
-
-	/** Pin node under the pointer while dragging; release on end. */
-	function nodeDrag(node: GraphNode): Attachment<SVGGElement> {
-		return (el) => {
-			const behavior = drag<SVGGElement, unknown>()
-				.container(() => (svgEl ?? el.ownerSVGElement) as SVGSVGElement)
-				.subject(() => {
-					const t = view;
-					return { x: node.x * t.k + t.x, y: node.y * t.k + t.y };
-				})
-				.on('start', (event) => {
-					didDrag = false;
-					if (!event.active) sim?.alphaTarget(0.25).restart();
-					node.fx = node.x;
-					node.fy = node.y;
-				})
-				.on('drag', (event) => {
-					didDrag = true;
-					const t = view;
-					node.fx = (event.x - t.x) / t.k;
-					node.fy = (event.y - t.y) / t.k;
-					tick++;
-				})
-				.on('end', (event) => {
-					if (!event.active) sim?.alphaTarget(0);
-					node.fx = null;
-					node.fy = null;
-				});
-
-			select(el).call(behavior);
-			return () => {
-				select(el).on('.drag', null);
-			};
-		};
+	function onNodeClick({ node }: { node: ChartFlowNode }) {
+		if (node.type !== 'person') return;
+		openProfile(node.id);
 	}
 
-	function onNodeClick(id: string) {
-		if (didDrag) {
-			didDrag = false;
+	function onEdgeClick({ edge }: { edge: Edge }) {
+		openProfile(edge.id);
+	}
+
+	function onNodeDragStart({
+		nodes: dragged
+	}: {
+		nodes: ChartFlowNode[];
+	}) {
+		if (!sim) return;
+		for (const n of dragged) {
+			if (n.type !== 'person') continue;
+			dragging.add(n.id);
+			const sn = simById.get(n.id);
+			if (!sn) continue;
+			sn.fx = n.position.x;
+			sn.fy = n.position.y;
+		}
+		sim.alphaTarget(0.25).restart();
+	}
+
+	function onNodeDrag({
+		nodes: dragged
+	}: {
+		nodes: ChartFlowNode[];
+	}) {
+		for (const n of dragged) {
+			if (n.type !== 'person') continue;
+			const sn = simById.get(n.id);
+			if (!sn) continue;
+			sn.fx = n.position.x;
+			sn.fy = n.position.y;
+		}
+	}
+
+	function onNodeDragStop({
+		nodes: dragged
+	}: {
+		nodes: ChartFlowNode[];
+	}) {
+		for (const n of dragged) {
+			dragging.delete(n.id);
+			const sn = simById.get(n.id);
+			if (!sn) continue;
+			// Release so the force sim can settle again.
+			sn.fx = null;
+			sn.fy = null;
+		}
+		sim?.alphaTarget(0);
+	}
+
+	// Live simulation while open; rebuild only when filters / open change.
+	// startSimulation/stopSimulation write state we must not track here
+	// (fitToken++ would otherwise make this effect re-trigger itself).
+	$effect(() => {
+		if (!open) {
+			untrack(stopSimulation);
 			return;
 		}
-		openProfile(id);
-	}
-
-	function onLinkClick(id: string) {
-		openProfile(id);
-	}
-
-	function zoomBy(factor: number) {
-		if (!svgEl || !zoomer || !svgSel) return;
-		svgSel.call(zoomer.scaleBy, factor);
-	}
-
-	function zoomReset() {
-		if (svgEl) fitView(svgEl, nodes);
-	}
-
-	// Live simulation while the modal is open; rebuild when filters change.
-	$effect(() => {
-		if (!open || !svgEl) return;
 		const k = filter;
 		const e = eraFilter;
-		startSimulation(k, e);
+		untrack(() => startSimulation(k, e));
 		return () => {
 			sim?.stop();
 			sim = null;
@@ -391,161 +415,101 @@
 
 <svelte:window onkeydown={onKey} />
 
-{#if open}
+{#if open && !pageMode}
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
 	<div class="scrim" onclick={toggle}></div>
 {/if}
 
-<figure class="chart" class:open>
+<figure
+	class="chart"
+	class:open
+	class:page={pageMode}
+	class:in={scriptUi.inScript || pageMode}
+	aria-hidden={!pageMode && !scriptUi.inScript && !open}
+>
 	{#if open}
 		<div class="frame open-frame">
 			<div class="flow">
-				<div class="legend-panel">
-					<div class="legend">
-						<button
-							type="button"
-							class="tag era"
-							class:on={eraFilter === null}
-							onclick={() => setEra(null)}>All eras</button
-						>
-						{#each eraOrder as e (e)}
+				<SvelteFlow
+					bind:nodes
+					bind:edges
+					{nodeTypes}
+					{edgeTypes}
+					nodeOrigin={[0.5, 0.5]}
+					fitView
+					fitViewOptions={{ padding: 0.22 }}
+					minZoom={0.12}
+					maxZoom={1.8}
+					nodesConnectable={false}
+					elementsSelectable={false}
+					nodesDraggable={true}
+					panOnScroll
+					zoomOnScroll
+					panOnDrag
+					selectionOnDrag={false}
+					selectNodesOnDrag={false}
+					connectionMode={ConnectionMode.Loose}
+					proOptions={{ hideAttribution: true }}
+					colorMode="dark"
+					onnodeclick={onNodeClick}
+					onedgeclick={onEdgeClick}
+					onnodedragstart={onNodeDragStart}
+					onnodedrag={onNodeDrag}
+					onnodedragstop={onNodeDragStop}
+					defaultEdgeOptions={{ type: 'floating' }}
+				>
+					<Background
+						gap={28}
+						size={1}
+						patternColor="rgba(255,255,255,0.035)"
+						bgColor="#1e1e1e"
+					/>
+					<Controls showLock={false} position="bottom-right" />
+					<FitViewWhenReady token={fitToken} />
+					<Panel position="top-left" class="legend-panel">
+						<div class="legend">
 							<button
 								type="button"
 								class="tag era"
-								class:on={eraFilter === e}
-								onclick={() => setEra(eraFilter === e ? null : e)}
+								class:on={eraFilter === null}
+								onclick={() => setEra(null)}>All eras</button
 							>
-								{ERA_META[e].label}
-							</button>
-						{/each}
-					</div>
-					<div class="legend">
-						<button
-							type="button"
-							class="tag"
-							class:on={filter === null}
-							onclick={() => setFilter(null)}>All</button
-						>
-						{#each usedKingdoms as k (k)}
+							{#each eraOrder as e (e)}
+								<button
+									type="button"
+									class="tag era"
+									class:on={eraFilter === e}
+									onclick={() => setEra(eraFilter === e ? null : e)}
+								>
+									{ERA_META[e].label}
+								</button>
+							{/each}
+						</div>
+						<div class="legend">
 							<button
 								type="button"
 								class="tag"
-								class:on={filter === k}
-								style:--k={KINGDOMS[k].color}
-								onclick={() => setFilter(filter === k ? null : k)}
+								class:on={filter === null}
+								onclick={() => setFilter(null)}>All</button
 							>
-								{KINGDOMS[k].label}
-							</button>
-						{/each}
-					</div>
-					<p class="legend-hint">
-						Larger circles = central figures · Present / Past / Myth are separate bands · Drag to
-						rearrange
-					</p>
-				</div>
-
-				<svg class="graph" {@attach zoomAttach} role="img" aria-label="Relationship force graph">
-					<!-- tick read keeps positions live -->
-					{#if tick >= 0}
-						<g class="viewport" transform="translate({view.x},{view.y}) scale({view.k})">
-							{#each visibleEras as era (era)}
-								<text class="era-label" x={24} y={ERA_Y[era] - 72}>{ERA_META[era].label}</text>
-								<text class="era-hint" x={24} y={ERA_Y[era] - 56}>{ERA_META[era].hint}</text>
-							{/each}
-
-							{#each links as l (l.id)}
-								{@const s = linkEnd(l.source)}
-								{@const t = linkEnd(l.target)}
-								{#if s && t}
-									<g
-										class="link"
-										role="button"
-										tabindex="0"
-										onclick={() => onLinkClick(l.id)}
-										onkeydown={(ev) => {
-											if (ev.key === 'Enter' || ev.key === ' ') {
-												ev.preventDefault();
-												onLinkClick(l.id);
-											}
-										}}
-									>
-										<title>{l.label}</title>
-										<line
-											class="hit"
-											x1={s.x}
-											y1={s.y}
-											x2={t.x}
-											y2={t.y}
-											stroke="transparent"
-											stroke-width="14"
-										/>
-										<line
-											class="bond"
-											x1={s.x}
-											y1={s.y}
-											x2={t.x}
-											y2={t.y}
-											stroke={l.color}
-											stroke-width={l.thick ? 1.6 : 1.1}
-											opacity="0.65"
-										/>
-									</g>
-								{/if}
-							{/each}
-
-							{#each nodes as n (n.id)}
-								<g
-									class="node"
-									transform="translate({n.x},{n.y})"
-									{@attach nodeDrag(n)}
-									onclick={() => onNodeClick(n.id)}
-									role="button"
-									tabindex="0"
-									onkeydown={(ev) => {
-										if (ev.key === 'Enter' || ev.key === ' ') {
-											ev.preventDefault();
-											onNodeClick(n.id);
-										}
-									}}
+							{#each usedKingdoms as k (k)}
+								<button
+									type="button"
+									class="tag"
+									class:on={filter === k}
+									style:--k={KINGDOMS[k].color}
+									onclick={() => setFilter(filter === k ? null : k)}
 								>
-									<title>{n.name}{n.korean ? ` · ${n.korean}` : ''}</title>
-									<defs>
-										<clipPath id="clip-{n.id}">
-											<circle r={n.r} />
-										</clipPath>
-									</defs>
-									<circle
-										class="ring"
-										r={n.r}
-										fill={n.color}
-										stroke="rgba(0,0,0,0.35)"
-										stroke-width="1.25"
-									/>
-									{#if n.avatar}
-										<image
-											href={n.avatar}
-											x={-n.r}
-											y={-n.r}
-											width={n.r * 2}
-											height={n.r * 2}
-											clip-path="url(#clip-{n.id})"
-											preserveAspectRatio="xMidYMid slice"
-										/>
-									{:else}
-										<text class="initial" text-anchor="middle" dy="0.35em">{n.initial}</text>
-									{/if}
-									<text class="label" text-anchor="middle" y={n.r + 12}>{n.name}</text>
-								</g>
+									{KINGDOMS[k].label}
+								</button>
 							{/each}
-						</g>
-					{/if}
-				</svg>
-
-				<div class="zoom-controls" aria-label="Zoom controls">
-					<button type="button" onclick={() => zoomBy(1.25)} aria-label="Zoom in">+</button>
-					<button type="button" onclick={() => zoomBy(1 / 1.25)} aria-label="Zoom out">−</button>
-					<button type="button" onclick={zoomReset} aria-label="Fit view">⊡</button>
-				</div>
+						</div>
+						<p class="legend-hint">
+							Larger circles = central figures · Present / Past / Myth are separate bands · Drag to
+							rearrange
+						</p>
+					</Panel>
+				</SvelteFlow>
 			</div>
 		</div>
 	{:else}
@@ -554,6 +518,7 @@
 			onclick={toggle}
 			aria-label="Open the relationship chart"
 			aria-expanded="false"
+			tabindex={scriptUi.inScript ? 0 : -1}
 			type="button"
 		>
 			<div class="preview" aria-hidden="true">
@@ -566,18 +531,32 @@
 		</button>
 	{/if}
 
-	<figcaption>
-		{#if open && tip}
-			<span class="pl-name" style:--c={tip.color}>{tip.name}</span>
-			<span class="pl-ko">{tip.sub}</span>
-			<span class="pl-blurb">{tip.line}</span>
-		{:else if open}
-			<span class="pl-hint">Click a circle or a bond · Drag nodes · Esc to close</span>
-		{:else}
-			<span class="pl-name">Relations</span>
-			<span class="pl-ko">인물 관계</span>
-		{/if}
-	</figcaption>
+	{#if !pageMode || tip}
+		<figcaption>
+			{#if open && tip}
+				<span class="pl-name" style:--c={tip.color} style:--c2={tip.color2}>
+					<span class="pl-swatches" aria-hidden="true">
+						<span class="pl-swatch" style:background={tip.color}></span>
+						{#if tip.color2 !== tip.color}
+							<span class="pl-swatch" style:background={tip.color2}></span>
+						{/if}
+					</span>
+					{tip.name}
+				</span>
+				<span class="pl-ko">{tip.sub}</span>
+				<span class="pl-blurb">{tip.line}</span>
+			{:else if open}
+				<span class="pl-hint"
+					>{pageMode
+						? 'Click a circle or a bond · Drag nodes · Scroll to zoom'
+						: 'Click a circle or a bond · Drag nodes · Esc to close'}</span
+				>
+			{:else}
+				<span class="pl-name">Relations</span>
+				<span class="pl-ko">인물 관계</span>
+			{/if}
+		</figcaption>
+	{/if}
 </figure>
 
 <style>
@@ -588,12 +567,10 @@
 		background: rgba(0, 0, 0, 0.72);
 	}
 
-	/* Rides directly on top of the map card, so it follows the map wherever
-	   app.css puts it (immersive lifts the pair above the dialogue box). */
 	.chart {
 		position: fixed;
 		left: var(--corner-left);
-		bottom: calc(var(--corner-bottom) + var(--map-stack));
+		bottom: var(--corner-bottom);
 		z-index: 90;
 		width: var(--chart-w);
 		margin: 0;
@@ -601,24 +578,35 @@
 		border: 1px solid var(--hairline);
 		border-radius: 6px;
 		background: var(--glass);
-		opacity: 0.55;
+		opacity: 0;
+		transform: translate3d(0, 1.1rem, 0);
+		pointer-events: none;
 		transition:
-			opacity 500ms var(--ease),
-			border-color 500ms var(--ease),
-			width 620ms var(--ease),
-			height 620ms var(--ease),
-			left 620ms var(--ease),
-			bottom 620ms var(--ease),
-			padding 620ms var(--ease),
-			background 620ms var(--ease);
+			opacity 520ms var(--ease),
+			transform 560ms var(--ease),
+			border-color 280ms var(--ease),
+			width 320ms var(--ease),
+			height 320ms var(--ease),
+			left var(--toc-duration) var(--toc-ease),
+			bottom 320ms var(--ease),
+			padding 320ms var(--ease),
+			background 280ms var(--ease);
 	}
 
-	.chart:hover {
+	.chart.in {
+		opacity: 0.55;
+		transform: translate3d(0, 0, 0);
+		pointer-events: auto;
+	}
+
+	.chart.in:hover {
 		opacity: 1;
 	}
 
 	.chart.open {
 		opacity: 1;
+		transform: translate3d(0, 0, 0);
+		pointer-events: auto;
 		width: min(96vw, 78rem);
 		height: min(90vh, 56rem);
 		left: 50%;
@@ -630,6 +618,27 @@
 		box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65);
 		display: flex;
 		flex-direction: column;
+	}
+
+	/* Full-viewport Characters map — chrome floats above; sheet peeks over. */
+	.chart.page {
+		position: fixed;
+		inset: 0;
+		left: 0;
+		bottom: 0;
+		translate: none;
+		width: 100%;
+		height: 100dvh;
+		min-height: 100dvh;
+		opacity: 1;
+		transform: none;
+		pointer-events: auto;
+		border: none;
+		border-radius: 0;
+		box-shadow: none;
+		padding: 0;
+		background: #1e1e1e;
+		z-index: 1;
 	}
 
 	.frame {
@@ -712,20 +721,26 @@
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		background: #1e1e1e;
-		display: flex;
-		flex-direction: column;
 	}
 
-	.legend-panel {
-		position: absolute;
-		top: 0.55rem;
-		left: 0.55rem;
-		z-index: 2;
+	.chart.page .flow {
+		min-height: 100%;
+		height: 100%;
+		border: none;
+		border-radius: 0;
+	}
+
+	.chart.page .open-frame {
+		height: 100%;
+	}
+
+	:global(.legend-panel) {
+		margin: 0.55rem !important;
 		pointer-events: none;
 	}
 
-	.legend-panel .legend,
-	.legend-panel .tag {
+	:global(.legend-panel) .legend,
+	:global(.legend-panel) .tag {
 		pointer-events: auto;
 	}
 
@@ -766,97 +781,46 @@
 		max-width: min(70vw, 28rem);
 	}
 
-	.graph {
-		width: 100%;
-		flex: 1;
-		min-height: 0;
-		display: block;
-		cursor: grab;
-		touch-action: none;
+	/* Dark chronicle skin for Svelte Flow chrome */
+	.flow :global(.svelte-flow) {
+		background: #1e1e1e;
 	}
 
-	.graph:active {
-		cursor: grabbing;
-	}
-
-	.era-label {
-		fill: rgba(235, 235, 245, 0.45);
-		font-size: 13px;
-		font-weight: 600;
-		letter-spacing: 0.06em;
-		pointer-events: none;
-	}
-
-	.era-hint {
-		fill: rgba(235, 235, 245, 0.22);
-		font-size: 10px;
-		pointer-events: none;
-	}
-
-	.link {
-		cursor: pointer;
-	}
-
-	.link:hover .bond {
-		opacity: 1;
-		stroke-width: 2.2;
-	}
-
-	.node {
-		cursor: pointer;
-	}
-
-	.node:focus-visible .ring {
-		stroke: #fff;
-		stroke-width: 2;
-	}
-
-	.initial {
-		fill: rgba(255, 255, 255, 0.92);
-		font-size: 11px;
-		font-weight: 600;
-		pointer-events: none;
-	}
-
-	.label {
-		fill: rgba(235, 235, 245, 0.78);
-		font-size: 10px;
-		font-weight: 550;
-		pointer-events: none;
-	}
-
-	.zoom-controls {
-		position: absolute;
-		bottom: 0.55rem;
-		right: 0.55rem;
-		z-index: 2;
-		display: flex;
-		flex-direction: column;
+	.flow :global(.svelte-flow__controls) {
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		border-radius: 4px;
 		overflow: hidden;
-		background: #252525;
+		box-shadow: none;
 	}
 
-	.zoom-controls button {
+	.flow :global(.svelte-flow__controls-button) {
+		background: #252525;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+		fill: rgba(235, 235, 245, 0.7);
 		width: 1.7rem;
 		height: 1.7rem;
-		border: none;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-		background: #252525;
-		color: rgba(235, 235, 245, 0.7);
-		font-size: 0.95rem;
-		line-height: 1;
+	}
+
+	.flow :global(.svelte-flow__controls-button:hover) {
+		background: #2e2e2e;
+		fill: #fff;
+	}
+
+	.flow :global(.svelte-flow__edge-path) {
 		cursor: pointer;
 	}
 
-	.zoom-controls button:last-child {
-		border-bottom: none;
+	.flow :global(.svelte-flow__edge:hover .svelte-flow__edge-path) {
+		stroke-opacity: 1;
+		stroke-width: 2.2;
 	}
 
-	.zoom-controls button:hover {
-		color: #fff;
-		background: #2e2e2e;
+	.flow :global(.svelte-flow__node) {
+		cursor: pointer;
+	}
+
+	.flow :global(.svelte-flow__attribution) {
+		display: none;
 	}
 
 	figcaption {
@@ -868,14 +832,33 @@
 		margin-top: 0.35rem;
 	}
 
-	.chart.open figcaption {
+	.chart.open:not(.page) figcaption {
 		min-height: 3.4rem;
 		max-height: 4.6rem;
 		overflow: hidden;
 		padding: 0.45rem 0.2rem 0.3rem;
 	}
 
+	.chart.page figcaption {
+		position: absolute;
+		left: 0.75rem;
+		bottom: 0.75rem;
+		z-index: 4;
+		margin: 0;
+		padding: 0.55rem 0.7rem;
+		min-height: 0;
+		max-width: min(28rem, 70vw);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 6px;
+		background: rgba(30, 30, 30, 0.88);
+		backdrop-filter: blur(12px);
+		pointer-events: none;
+	}
+
 	.pl-name {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
 		font-size: 0.66rem;
 		font-weight: 500;
 		letter-spacing: var(--tracking-micro);
@@ -883,6 +866,20 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+
+	.pl-swatches {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.15rem;
+		flex-shrink: 0;
+	}
+
+	.pl-swatch {
+		width: 0.55rem;
+		height: 0.55rem;
+		border-radius: 2px;
+		box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
 	}
 
 	.chart.open .pl-name {
@@ -914,14 +911,34 @@
 		color: var(--fg-faint);
 	}
 
+	/* Cinema: relations are dashboard, not drama — the corner card stands down
+	   until the reader peeks, and an already-open graph is left alone. */
+	:global(html.is-cinema:not(.is-cinema-peek)) .chart:not(.open) {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.chart {
+			transition:
+				opacity 200ms ease,
+				border-color 200ms ease,
+				width 200ms ease,
+				height 200ms ease,
+				left var(--toc-duration) var(--toc-ease),
+				bottom 200ms ease,
+				padding 200ms ease,
+				background 200ms ease;
+			transform: none;
+		}
+	}
+
 	@media (max-width: 820px) {
-		/* Immersive lifts the map above the dialogue box, and one floating card
-		   is all a phone can carry; opened, the chart is a modal and still welcome. */
-		:global(html.is-immersive) .chart:not(.open) {
+		:global(html.is-immersion) .chart:not(.open) {
 			display: none;
 		}
 
-		.chart.open {
+		.chart.open:not(.page) {
 			width: 98vw;
 			height: 88vh;
 			padding: 0.4rem;
