@@ -7,6 +7,7 @@
 		nameOf,
 		titleOf,
 		koreanOf,
+		stageGalleryOf,
 		isPlaceholderArt,
 		KINGDOMS,
 		ERA_TAG_META,
@@ -16,30 +17,40 @@
 		photoOf,
 		binyeoArtOf,
 		kingdomFlag,
-		type Person
+		sortHwarangMembers,
+		hwarangClassColor,
+		type Person,
+		type CareerOffice
 	} from '$lib/people';
 	import {
 		kindOf,
 		kindLabel,
 		lifespanOf,
 		formatYear,
+		careerYearsOf,
+		careerAgesOf,
 		bondsFor,
 		betweenPeople,
 		appearanceCount,
 		godTierLabel,
 		orgsOf,
 		membersOf,
+		groupsOf,
+		groupMembersOf,
 		clanOf,
 		clanEntriesOf,
 		clanMembersOf,
 		clanAffiliationOf,
 		nationOf,
-		cityOf,
+		realmPlaceOf,
+		parentPlaceOf,
 		placesInCity,
 		citiesOfKingdom,
 		showsWikiAccent
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
+	import { leitmotifOf, playLeitmotif, stopLeitmotif, tempsOf } from '$lib/leitmotifs';
+	import TempRefs from '$lib/components/TempRefs.svelte';
 	import WikiOrgCharts from './diagrams/WikiOrgCharts.svelte';
 	import OrgChart from './diagrams/OrgChart.svelte';
 	import { chartsForWikiEntry, hasDiagramChart } from './diagrams/wikiCharts';
@@ -70,42 +81,90 @@
 	let k = $derived({ ...KINGDOMS[entry.kingdom], color: colorOf(entry) });
 	let accents = $derived(accentColorsOf(entry));
 	let showAccent = $derived(showsWikiAccent(entry));
-	let art = $derived(avatarOf(entry));
+	/** Wiki portrait preview — null = base Person fields. */
+	let previewLook = $state<string | null>(null);
+	let stageRows = $derived(stageGalleryOf(entry));
+	let hasStageGallery = $derived(stageRows.length > 1);
+	let art = $derived(avatarOf(entry, undefined, null, previewLook));
 	let photo = $derived(photoOf(entry));
 	let binyeoArt = $derived(binyeoArtOf(entry));
 	let flag = $derived(kingdomFlag(entry.kingdom));
-	let who = $derived(nameOf(entry));
-	let role = $derived(titleOf(entry));
-	let ko = $derived(koreanOf(entry));
+	let who = $derived(nameOf(entry, null, previewLook));
+	let role = $derived(titleOf(entry, null, previewLook));
+	let ko = $derived(koreanOf(entry, null, previewLook));
 	let isBond = $derived(entry.entity === 'relationship');
 	let isPlace = $derived(entry.entity === 'place');
 	let isPhrase = $derived(entry.entity === 'phrase');
 	let isGod = $derived(entry.entity === 'god');
 	let isOrg = $derived(entry.entity === 'organization');
+	let isGroup = $derived(entry.entity === 'group');
 	let isClan = $derived(entry.entity === 'clan');
 	let isNation = $derived(entry.entity === 'nation');
+	/** Nation detail hero uses the kingdom flag when present (not portrait art). */
+	let heroArt = $derived(isNation && flag ? flag : art);
+	let isNationFlagHero = $derived(isNation && !!flag);
 	let kind = $derived(kindOf(entry));
 	let isCity = $derived(kind === 'city');
-	let parentCity = $derived(kind === 'place' ? cityOf(entry) : undefined);
+	let parentPlace = $derived(kind === 'place' ? parentPlaceOf(entry) : undefined);
 	let nation = $derived(nationOf(entry.kingdom));
-	let childPlaces = $derived(isCity ? placesInCity(entry.id) : []);
+	let realmPlace = $derived(realmPlaceOf(entry));
+	/** Skip empty Territory/Kingdom rows for unrooted cosmological places. */
+	let showPolityRow = $derived(
+		isBond ||
+			isNation ||
+			isCity ||
+			!!parentPlace ||
+			!!nation ||
+			(!isPlace && !!realmPlace && realmPlace.id !== entry.id) ||
+			(!isPlace && entry.kingdom === 'underworld' && !entry.realm) ||
+			(!isPlace && entry.kingdom !== 'other' && entry.kingdom !== 'underworld')
+	);
+	let polityLabel = $derived(
+		isPlace
+			? isCity
+				? 'Kingdom'
+				: 'Territory'
+			: isBond
+				? 'Kingdoms'
+				: realmPlace && !nation
+					? 'Place'
+					: 'Kingdom'
+	);
+	let childPlaces = $derived(
+		isCity || entry.placeKind === 'realm' ? placesInCity(entry.id) : []
+	);
 	let kingdomCities = $derived(isNation ? citiesOfKingdom(entry.kingdom) : []);
 	let relatedBonds = $derived(isBond ? [] : bondsFor(entry.id));
 	let partners = $derived(isBond ? betweenPeople(entry) : []);
 	let bondA = $derived(accents[0] ?? k.color);
 	let bondB = $derived(accents[1] ?? accents[0] ?? k.color);
-	let memberships = $derived(isOrg || isClan || isBond || isPlace ? [] : orgsOf(entry));
-	let orgMembers = $derived(isOrg ? membersOf(entry.id) : isClan ? clanMembersOf(entry.id) : []);
-	let clanLabel = $derived(isOrg || isClan || isBond || isPlace ? undefined : clanOf(entry));
-	let clanEntries = $derived(
-		isOrg || isClan || isBond || isPlace ? [] : clanEntriesOf(entry)
+	let memberships = $derived(isOrg || isGroup || isClan || isBond ? [] : orgsOf(entry));
+	let groupMemberships = $derived(
+		isOrg || isGroup || isClan || isBond ? [] : groupsOf(entry)
 	);
-	let chartNodes = $derived(isOrg ? (entry.orgChart ?? []) : []);
+	let orgMembers = $derived(
+		isOrg
+			? membersOf(entry.id)
+			: isGroup
+				? groupMembersOf(entry.id)
+				: isClan
+					? clanMembersOf(entry.id)
+					: []
+	);
+	let isHwarang = $derived(entry.id === 'hwarang');
+	let orgRoster = $derived(isHwarang ? sortHwarangMembers(orgMembers) : orgMembers);
+	let clanLabel = $derived(isOrg || isGroup || isClan || isBond || isPlace ? undefined : clanOf(entry));
+	let clanEntries = $derived(
+		isOrg || isGroup || isClan || isBond || isPlace ? [] : clanEntriesOf(entry)
+	);
+	let chartNodes = $derived(isOrg || isGroup ? (entry.orgChart ?? []) : []);
 	let life = $derived(lifespanOf(entry));
 	let apps = $derived(appearanceCount(entry.id));
 	let eraTags = $derived(entry.tags ?? []);
 	let charts = $derived(chartsForWikiEntry(entry.id));
-	let showFlatOrgChart = $derived(isOrg && (entry.orgChart ?? []).length > 0 && !hasDiagramChart(entry.id));
+	let showFlatOrgChart = $derived(
+		(isOrg || isGroup) && (entry.orgChart ?? []).length > 0 && !hasDiagramChart(entry.id)
+	);
 	let orgSectionTitle = $derived(
 		entry.id === 'four_divisions' ? 'Cosmology' : charts.length ? 'Organization chart' : 'Institutions'
 	);
@@ -113,6 +172,37 @@
 	let chatPrompt = $derived(canChat ? buildChatPrompt(entry) : '');
 	let copiedForId = $state<string | null>(null);
 	let promptCopied = $derived(copiedForId === entry.id);
+
+	let motif = $derived(leitmotifOf(entry.id));
+	let temps = $derived(tempsOf(motif));
+	let motifPlaying = $state(false);
+	let motifTimer: ReturnType<typeof setTimeout> | undefined;
+
+	function quietMotif() {
+		if (!browser) return;
+		stopLeitmotif();
+		clearTimeout(motifTimer);
+		motifPlaying = false;
+	}
+
+	function toggleMotif() {
+		if (!browser || !motif) return;
+		if (motifPlaying) {
+			quietMotif();
+			return;
+		}
+		const ms = playLeitmotif(entry.id);
+		if (ms <= 0) return;
+		motifPlaying = true;
+		motifTimer = setTimeout(() => (motifPlaying = false), ms);
+	}
+
+	// Stop playback when the entry changes or the detail view unmounts.
+	$effect(() => {
+		void entry.id;
+		previewLook = null;
+		return quietMotif;
+	});
 
 	async function copyChatPrompt() {
 		if (!chatPrompt || !browser) return;
@@ -125,6 +215,10 @@
 		} catch {
 			/* ignore */
 		}
+	}
+
+	function careerOrgId(office: CareerOffice): string | undefined {
+		return office.org && byId.has(office.org) ? office.org : undefined;
 	}</script>
 
 <article
@@ -167,17 +261,20 @@
 
 		<div
 			class="hero"
-			class:has-art={!!art}
-			class:stand-in={isPlaceholderArt(art)}
+			class:has-art={!!heroArt}
+			class:has-photo={!!photo}
+			class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
 			class:place={isPlace}
+			class:nation={isNationFlagHero}
+			class:stacked={isPlace && !!heroArt}
 		>
-			{#if art}
+			{#if heroArt}
 				<figure class="hero-art" aria-hidden="true">
-					<img src={art} alt="" />
+					<img src={heroArt} alt="" />
 				</figure>
 			{/if}
 			<div class="hero-id">
-				{#if !art && !photo}
+				{#if !heroArt && !photo}
 					<span class="initial" aria-hidden="true">{hangulInitial(entry)}</span>
 				{/if}
 				{#if isGod}<span class="badge god-badge">God</span>{/if}
@@ -186,20 +283,80 @@
 					<span class="badge tier-badge" data-tier={entry.godTier} title={tier.hint}>{tier.en}</span>
 				{/if}
 				{#if entry.realm}
-					<span class="realm-chip" title="Realm / domain">{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
+					{#if realmPlace && realmPlace.id !== entry.id}
+						<button
+							type="button"
+							class="realm-chip"
+							title="Open {realmPlace.name}"
+							onclick={() => onOpen(realmPlace.id)}
+						>
+							{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span>
+						</button>
+					{:else}
+						<span class="realm-chip" title="Realm / domain">{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
+					{/if}
 				{/if}
 				<h1 class="name">{who}</h1>
 				<p class="native">
 					{#if entry.hanja}<span class="hanja">{entry.hanja}</span>{/if}
-					{#if ko}<span class="ko">{ko}</span>{/if}
+					{#if ko}
+						<span class="ko" class:modern-gloss={isClan} title={isClan ? 'Modern bon-gwan / surname' : undefined}
+							>{ko}</span
+						>
+					{/if}
 				</p>
 				{#if entry.quote}
 					<figure class="quote">
 						<blockquote>{entry.quote}</blockquote>
 					</figure>
 				{/if}
+				{#if motif}
+					<div class="motif-row">
+						<button
+							type="button"
+							class={['motif-btn', motifPlaying && 'playing']}
+							onclick={toggleMotif}
+							aria-pressed={motifPlaying}
+							title={motif.idea}
+						>
+							<span class="material-symbols-outlined" aria-hidden="true"
+								>{motifPlaying ? 'stop' : 'music_note'}</span
+							>
+							{motifPlaying ? 'Playing' : 'Leitmotif'}
+						</button>
+					</div>
+					{#if temps.length}
+						<div class="motif-temps">
+							<TempRefs {temps} />
+						</div>
+					{/if}
+				{/if}
 			</div>
 		</div>
+
+		{#if hasStageGallery}
+			<section class="stage-gallery" aria-label="Character looks">
+				<h2 class="stage-heading">Looks</h2>
+				<div class="stage-chips">
+					{#each stageRows as row, i (row.id ?? `base-${i}`)}
+						<button
+							type="button"
+							class="stage-chip"
+							class:active={previewLook === row.id}
+							onclick={() => (previewLook = row.id)}
+							title={row.label}
+						>
+							{#if row.art && !isPlaceholderArt(row.art)}
+								<img src={row.art} alt="" />
+							{:else}
+								<span class="stage-initial" aria-hidden="true">{hangulInitial(entry)}</span>
+							{/if}
+							<span class="stage-label">{row.label}</span>
+						</button>
+					{/each}
+				</div>
+			</section>
+		{/if}
 
 		<dl class="props">
 			{#if role}
@@ -223,7 +380,17 @@
 				<div>
 					<dt>Realm</dt>
 					<dd>
-						<span class="pill realm-pill">{entry.realm.en}<span class="realm-ko"> · {entry.realm.ko}</span></span>
+						{#if realmPlace && realmPlace.id !== entry.id}
+							<button
+								type="button"
+								class="pill realm-pill link-pill"
+								onclick={() => onOpen(realmPlace.id)}
+							>
+								{entry.realm.en}<span class="realm-ko"> · {entry.realm.ko}</span>
+							</button>
+						{:else}
+							<span class="pill realm-pill">{entry.realm.en}<span class="realm-ko"> · {entry.realm.ko}</span></span>
+						{/if}
 					</dd>
 				</div>
 			{/if}
@@ -241,55 +408,72 @@
 					</dd>
 				</div>
 			{/if}
-			{#if parentCity}
+			{#if parentPlace}
+				{@const parent = parentPlace}
 				<div>
-					<dt>City</dt>
+					<dt>{parent.placeKind === 'realm' ? 'Realm' : 'City'}</dt>
 					<dd class="links">
-						<button type="button" class="linkish" onclick={() => onOpen(parentCity.id)}
-							>{nameOf(parentCity)}</button
+						<button type="button" class="linkish" onclick={() => onOpen(parent.id)}
+							>{nameOf(parent)}</button
 						>
 					</dd>
 				</div>
 			{/if}
-			<div>
-				<dt>{isPlace ? (isCity ? 'Kingdom' : 'Territory') : isBond ? 'Kingdoms' : 'Kingdom'}</dt>
-				<dd>
-					{#if isBond && partners.length}
-						<span class="pill-row">
-							{#each partners as other (other.id)}
-								{@const pk = { ...KINGDOMS[other.kingdom], color: colorOf(other) }}
-								{@const pn = nationOf(other.kingdom)}
-								{#if pn}
-									<button
-										type="button"
-										class="pill link-pill"
-										style:--pill={pk.color}
-										onclick={() => onOpen(pn.id)}
-									>
-										{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
-										{pk.label}
-									</button>
-								{:else}
-									<span class="pill" style:--pill={pk.color}>
-										{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
-										{pk.label}
-									</span>
-								{/if}
-							{/each}
-						</span>
-					{:else if nation && !isNation}
-						<button type="button" class="pill link-pill" onclick={() => onOpen(nation.id)}>
-							{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
-							{k.label}
-						</button>
-					{:else}
-						<span class="pill">
-							{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
-							{k.label}
-						</span>
-					{/if}
-				</dd>
-			</div>
+			{#if showPolityRow}
+				<div>
+					<dt>{polityLabel}</dt>
+					<dd>
+						{#if isBond && partners.length}
+							<span class="pill-row">
+								{#each partners as other (other.id)}
+									{@const pk = { ...KINGDOMS[other.kingdom], color: colorOf(other) }}
+									{@const pn = nationOf(other.kingdom)}
+									{@const rp = realmPlaceOf(other)}
+									{#if pn}
+										<button
+											type="button"
+											class="pill link-pill"
+											style:--pill={pk.color}
+											onclick={() => onOpen(pn.id)}
+										>
+											{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
+											{pk.label}
+										</button>
+									{:else if rp}
+										<button
+											type="button"
+											class="pill link-pill"
+											style:--pill={pk.color}
+											onclick={() => onOpen(rp.id)}
+										>
+											{pk.label}
+										</button>
+									{:else}
+										<span class="pill" style:--pill={pk.color}>
+											{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
+											{pk.label}
+										</span>
+									{/if}
+								{/each}
+							</span>
+						{:else if nation && !isNation}
+							<button type="button" class="pill link-pill" onclick={() => onOpen(nation.id)}>
+								{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
+								{k.label}
+							</button>
+						{:else if realmPlace && realmPlace.id !== entry.id}
+							<button type="button" class="pill link-pill" onclick={() => onOpen(realmPlace.id)}>
+								{k.label === '—' ? nameOf(realmPlace) : k.label}
+							</button>
+						{:else}
+							<span class="pill">
+								{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
+								{k.label}
+							</span>
+						{/if}
+					</dd>
+				</div>
+			{/if}
 			{#if entry.entity === 'nation' && k.icons}
 				<div><dt>Signs</dt><dd class="icons">{k.icons}</dd></div>
 			{/if}
@@ -312,6 +496,7 @@
 					<dt
 						>{kind === 'concept' ||
 						kind === 'organization' ||
+						kind === 'group' ||
 						kind === 'clan' ||
 						kind === 'phrase' ||
 						kind === 'city' ||
@@ -363,6 +548,36 @@
 					</dd>
 				</div>
 			{/if}
+			{#if entry.hwarangClass}
+				{@const hwColor = hwarangClassColor(entry)}
+				<div>
+					<dt>Hwarang class</dt>
+					<dd>
+						<span
+							class="member-clan-aff"
+							style:--hw={hwColor}
+							title="Hwarang {entry.hwarangClass.label}"
+							>{entry.hwarangClass.label}</span
+						>{#if entry.hwarangClass.korean}<span class="clan-ko">
+								({entry.hwarangClass.korean})</span
+							>{/if}
+					</dd>
+				</div>
+			{/if}
+			{#if groupMemberships.length}
+				<div>
+					<dt>Groups</dt>
+					<dd class="links">
+						{#each groupMemberships as g, i (g.id)}
+							{#if i > 0}<span class="sep">·</span>{/if}
+							<button type="button" class="linkish" onclick={() => onOpen(g.id)}
+								>{nameOf(g)}{#if g.korean}
+									<span class="clan-ko"> ({g.korean})</span>{/if}</button
+							>
+						{/each}
+					</dd>
+				</div>
+			{/if}
 			{#if showAccent && accents.length}
 				<div>
 					<dt>{isBond ? 'Colours' : 'Accent'}</dt>
@@ -397,6 +612,52 @@
 			{/if}
 		</dl>
 
+		{#if entry.career?.length}
+			<section class="cv">
+				<h2>CV <span class="h2-ko">이력</span></h2>
+				{#snippet officeTitle(office: CareerOffice)}
+					{#if office.korean}<span class="cv-ko">{office.korean}</span>{/if}
+					{#if office.hanja}<span class="cv-hanja">{office.hanja}</span>{/if}
+					{#if office.korean || office.hanja}<span class="cv-dot">·</span>{/if}
+					<span class="cv-en">{office.title}</span>
+				{/snippet}
+				<ol class="cv-list">
+					{#each entry.career as office, i (`${office.title}-${office.from ?? 'x'}-${office.to ?? 'x'}-${i}`)}
+						{@const years = careerYearsOf(office, entry.died)}
+						{@const ages = careerAgesOf(office, entry.born, entry.died)}
+						{@const orgId = careerOrgId(office)}
+						<li>
+							<span class="cv-office">
+								{#if orgId}
+									<button
+										type="button"
+										class="linkish cv-post"
+										onclick={() => {
+											if (orgId) onOpen(orgId);
+										}}
+									>
+										{@render officeTitle(office)}
+									</button>
+								{:else}
+									<span class="cv-post">
+										{@render officeTitle(office)}
+									</span>
+								{/if}
+								{#if office.note}<span class="cv-note">{office.note}</span>{/if}
+							</span>
+							<span class="cv-when">
+								<span class="cv-years">{years}</span>
+								{#if ages}
+									<span class="cv-dot">·</span>
+									<span class="cv-age">{ages}</span>
+								{/if}
+							</span>
+						</li>
+					{/each}
+				</ol>
+			</section>
+		{/if}
+
 		{#if showFlatOrgChart}
 			<section class="org-charts">
 				<h2>Organization chart</h2>
@@ -406,44 +667,57 @@
 			</section>
 		{/if}
 
-		{#if orgMembers.length}
+		{#if orgRoster.length}
 			<section>
 				<h2>Members</h2>
-				<ul class="member-grid">
-					{#each orgMembers as m (m.id)}
-						{@const art = avatarOf(m)}
-						{@const clanAff = isClan ? clanAffiliationOf(m, entry.id) : null}
-						<li>
-							<button
-								type="button"
-								class="member-card"
-								style:--mk={colorOf(m)}
-								onclick={() => onOpen(m.id)}
+				{#snippet memberCard(m: Person)}
+					{@const portrait = avatarOf(m)}
+					{@const clanAff = isClan ? clanAffiliationOf(m, entry.id) : null}
+					<li>
+						<button
+							type="button"
+							class="member-card"
+							class:place-card={m.entity === 'place'}
+							style:--mk={colorOf(m)}
+							onclick={() => onOpen(m.id)}
+						>
+							<span
+								class="member-avatar"
+								class:place-thumb={m.entity === 'place'}
+								class:silhouette={isPlaceholderArt(portrait)}
+								aria-hidden="true"
 							>
-								<span
-									class="member-avatar"
-									class:silhouette={isPlaceholderArt(art)}
-									aria-hidden="true"
-								>
-									{#if art}
-										<img src={art} alt="" />
-									{:else}
-										{hangulInitial(m)}
-									{/if}
-								</span>
-								<span class="member-meta">
-									<span class="member-name">{nameOf(m)}</span>
-									{#if clanAff === 'marriage'}
-										<span class="member-clan-aff" title="Joined this clan by marriage">Marriage</span>
-									{/if}
-									{#if titleOf(m)}
-										<span class="member-title">{titleOf(m)}</span>
-									{:else}
-										<span class="member-title">{kindLabel(m)}</span>
-									{/if}
-								</span>
-							</button>
-						</li>
+								{#if portrait}
+									<img src={portrait} alt="" />
+								{:else}
+									{hangulInitial(m)}
+								{/if}
+							</span>
+							<span class="member-meta">
+								<span class="member-name">{nameOf(m)}</span>
+								{#if clanAff === 'marriage'}
+									<span class="member-clan-aff" title="Joined this clan by marriage">Marriage</span>
+								{/if}
+								{#if isHwarang && m.hwarangClass}
+									<span
+										class="member-clan-aff"
+										style:--hw={hwarangClassColor(m)}
+										title="Hwarang {m.hwarangClass.label}"
+										>{m.hwarangClass.label}</span
+									>
+								{/if}
+								{#if titleOf(m)}
+									<span class="member-title">{titleOf(m)}</span>
+								{:else}
+									<span class="member-title">{kindLabel(m)}</span>
+								{/if}
+							</span>
+						</button>
+					</li>
+				{/snippet}
+				<ul class="member-grid">
+					{#each orgRoster as m (m.id)}
+						{@render memberCard(m)}
 					{/each}
 				</ul>
 			</section>
@@ -617,11 +891,13 @@
 							? 'About this place'
 							: isOrg
 								? 'About this organization'
-								: isClan
-									? 'About this clan'
-									: isGod
-										? 'Myth'
-										: 'Character arc'}
+								: isGroup
+									? 'About this group'
+									: isClan
+										? 'About this clan'
+										: isGod
+											? 'Myth'
+											: 'Character arc'}
 				</h2>
 				<p class="prose">{entry.arc}</p>
 			</section>
@@ -782,6 +1058,7 @@
 		margin: 0 0 0.55rem;
 		padding: 0.22rem 0.65rem;
 		border-radius: 999px;
+		font: inherit;
 		font-size: 0.68rem;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -789,6 +1066,14 @@
 		background: color-mix(in srgb, var(--k) 68%, #111);
 		border: 1px solid color-mix(in srgb, var(--k) 80%, #fff);
 		box-shadow: 0 0 0 1px color-mix(in srgb, var(--k) 35%, transparent);
+	}
+
+	button.realm-chip {
+		cursor: pointer;
+	}
+
+	button.realm-chip:hover {
+		border-color: color-mix(in srgb, var(--k) 40%, #fff);
 	}
 
 	.realm-chip .realm-ko,
@@ -894,12 +1179,33 @@
 		border-bottom: 1px solid var(--hairline);
 	}
 
+	/* Historical nation photo sits above — don't pull the flag hero into it. */
+	.hero.has-art.has-photo {
+		margin-top: 0;
+	}
+
 	.detail.expanded .hero.has-art {
 		min-height: min(28rem, 52dvh);
 	}
 
-	.hero.place.has-art {
+	.hero.place.has-art,
+	.hero.nation.has-art {
 		min-height: 15.5rem;
+	}
+
+	.hero.place.stacked.has-art {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		min-height: 0;
+		overflow: visible;
+		padding: 0;
+		border-bottom: none;
+		background: transparent;
+	}
+
+	.detail.expanded .hero.place.stacked.has-art {
+		min-height: 0;
 	}
 
 	.hero.stand-in .hero-art img {
@@ -919,9 +1225,19 @@
 		width: min(32rem, 68%);
 	}
 
-	.hero.place .hero-art {
+	.hero.place .hero-art,
+	.hero.nation .hero-art {
 		inset: 0;
 		width: 100%;
+	}
+
+	.hero.place.stacked .hero-art {
+		position: relative;
+		inset: auto;
+		width: 100%;
+		aspect-ratio: 3 / 2;
+		overflow: hidden;
+		border-bottom: 1px solid var(--hairline);
 	}
 
 	.hero-art img {
@@ -937,6 +1253,15 @@
 	.hero.place .hero-art img {
 		object-fit: cover;
 		object-position: center;
+		-webkit-mask-image: none;
+		mask-image: none;
+	}
+
+	.hero.nation .hero-art img {
+		object-fit: contain;
+		object-position: center;
+		padding: 1.35rem 1.6rem 3.2rem;
+		box-sizing: border-box;
 		-webkit-mask-image: none;
 		mask-image: none;
 	}
@@ -957,6 +1282,16 @@
 	}
 
 	.hero.place.has-art::after {
+		display: none;
+	}
+
+	.hero.place.stacked .hero-id {
+		max-width: none;
+		padding: 1.15rem 1.7rem 0.2rem;
+		text-shadow: none;
+	}
+
+	.hero.nation.has-art::after {
 		background: linear-gradient(
 			to top,
 			var(--panel) 0%,
@@ -970,6 +1305,87 @@
 		position: relative;
 		z-index: 2;
 		max-width: 22rem;
+	}
+
+	.stage-gallery {
+		margin: 0 1.35rem 1.1rem;
+		padding: 0.85rem 0.95rem 0.95rem;
+		border: 1px solid color-mix(in srgb, var(--k) 28%, var(--line));
+		border-radius: 8px;
+		background: color-mix(in srgb, var(--panel) 92%, var(--k) 8%);
+	}
+
+	.stage-heading {
+		margin: 0 0 0.65rem;
+		font-family: var(--sans);
+		font-size: 0.68rem;
+		font-weight: 700;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--fg-muted);
+	}
+
+	.stage-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.55rem;
+	}
+
+	.stage-chip {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.35rem;
+		width: 5.2rem;
+		padding: 0.45rem 0.35rem 0.5rem;
+		border: 1px solid color-mix(in srgb, var(--k) 22%, var(--line));
+		border-radius: 8px;
+		background: var(--panel);
+		cursor: pointer;
+		color: inherit;
+		font: inherit;
+		transition:
+			border-color 180ms ease,
+			box-shadow 180ms ease;
+	}
+
+	.stage-chip:hover {
+		border-color: color-mix(in srgb, var(--k) 45%, var(--line));
+	}
+
+	.stage-chip.active {
+		border-color: color-mix(in srgb, var(--k) 65%, var(--gold));
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--k) 35%, transparent);
+	}
+
+	.stage-chip img {
+		display: block;
+		width: 3.4rem;
+		height: 4.2rem;
+		object-fit: contain;
+		object-position: bottom center;
+	}
+
+	.stage-initial {
+		display: grid;
+		place-items: center;
+		width: 3.4rem;
+		height: 4.2rem;
+		border-radius: 6px;
+		font-family: var(--serif);
+		font-size: 1.35rem;
+		font-weight: 700;
+		color: #fff;
+		background: color-mix(in srgb, var(--k) 72%, #000);
+	}
+
+	.stage-label {
+		max-width: 100%;
+		font-size: 0.62rem;
+		font-weight: 600;
+		line-height: 1.25;
+		text-align: center;
+		color: var(--fg-muted);
 	}
 
 	.initial {
@@ -1035,6 +1451,55 @@
 		letter-spacing: var(--tracking-display);
 		color: var(--fg-strong);
 		text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 80%, transparent);
+	}
+
+	.motif-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.4rem;
+		margin-top: 0.85rem;
+	}
+
+	.motif-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		padding: 0.3rem 0.75rem 0.3rem 0.6rem;
+		border-radius: 999px;
+		border: 1px solid rgba(216, 178, 106, 0.4);
+		background: var(--glass);
+		color: var(--gold);
+		font: inherit;
+		font-size: 0.66rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition:
+			background 0.2s var(--ease),
+			border-color 0.2s var(--ease),
+			color 0.2s var(--ease);
+	}
+
+	.motif-temps {
+		margin-top: 0.55rem;
+		max-width: 28rem;
+	}
+
+	.motif-btn .material-symbols-outlined {
+		font-size: 0.95rem;
+	}
+
+	.motif-btn:hover {
+		background: rgba(216, 178, 106, 0.12);
+		border-color: rgba(216, 178, 106, 0.65);
+	}
+
+	.motif-btn.playing {
+		color: var(--on-gold);
+		background: var(--gold);
+		border-color: var(--gold);
 	}
 
 	.props {
@@ -1273,6 +1738,109 @@
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--gold);
+	}
+
+	.h2-ko {
+		margin-left: 0.35rem;
+		font-size: 0.85em;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		text-transform: none;
+		color: var(--fg-faint);
+	}
+
+	.cv-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.cv-list li {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.35rem 0.75rem;
+		padding: 0.28rem 0;
+		line-height: 1.45;
+		color: var(--fg);
+	}
+
+	.cv-when {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem 0.4rem;
+		margin-left: auto;
+		white-space: nowrap;
+	}
+
+	.cv-years {
+		font-family: var(--serif);
+		font-size: 0.82rem;
+		color: var(--k);
+		white-space: nowrap;
+	}
+
+	.cv-age {
+		font-size: 0.72rem;
+		color: var(--fg-faint);
+		white-space: nowrap;
+	}
+
+	.cv-dot {
+		opacity: 0.45;
+		font-size: 0.72rem;
+	}
+
+	.cv-office {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem;
+		min-width: 0;
+	}
+
+	.cv-post {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem;
+		min-width: 0;
+		text-align: left;
+	}
+
+	button.cv-post.linkish {
+		color: inherit;
+		font-weight: inherit;
+	}
+
+	button.cv-post.linkish:hover .cv-ko,
+	button.cv-post.linkish:hover .cv-en {
+		color: var(--k);
+	}
+
+	.cv-ko {
+		font-weight: 600;
+		color: var(--fg-strong);
+	}
+
+	.cv-hanja {
+		color: var(--fg-faint);
+	}
+
+	.cv-en {
+		color: var(--fg);
+	}
+
+	.cv-note {
+		font-size: 0.78rem;
+		color: var(--fg-dim);
+	}
+
+	.cv-note::before {
+		content: '· ';
+		opacity: 0.55;
 	}
 
 	.prose {
@@ -1515,14 +2083,31 @@
 		font-weight: 600;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
-		color: color-mix(in srgb, var(--mk) 72%, var(--fg));
-		background: color-mix(in srgb, var(--mk) 14%, transparent);
-		border: 1px solid color-mix(in srgb, var(--mk) 28%, transparent);
+		color: color-mix(in srgb, var(--hw, var(--mk)) 72%, var(--fg));
+		background: color-mix(in srgb, var(--hw, var(--mk)) 14%, transparent);
+		border: 1px solid color-mix(in srgb, var(--hw, var(--mk)) 28%, transparent);
+	}
+
+	.props .member-clan-aff {
+		margin-top: 0;
+		margin-right: 0.2rem;
+		vertical-align: 0.12em;
 	}
 
 	.clan-ko {
 		font-weight: 400;
 		color: var(--fg-dim);
+	}
+
+	.modern-gloss {
+		font-size: 0.92em;
+		font-weight: 400;
+		color: var(--fg-dim);
+	}
+
+	.modern-gloss::before {
+		content: '· ';
+		opacity: 0.65;
 	}
 
 	.trait-chips {
@@ -1625,6 +2210,19 @@
 			min-height: 16rem;
 			margin: -1.25rem -1.15rem 1.2rem;
 			padding: 1.25rem 1.15rem 1.1rem;
+		}
+
+		.hero.place.stacked.has-art {
+			padding: 0;
+			min-height: 0;
+		}
+
+		.hero.place.stacked .hero-id {
+			padding: 1rem 1.15rem 0.15rem;
+		}
+
+		.hero.has-art.has-photo {
+			margin-top: 0;
 		}
 
 		.detail.expanded .hero.has-art {

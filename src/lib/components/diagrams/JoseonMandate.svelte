@@ -4,6 +4,7 @@
 	 * Compact vertical chain. Step unused beyond registry default.
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { step = 'lineage', active = false }: DiagramProps = $props();
 
@@ -34,8 +35,7 @@
 		{/if}
 		<g class="node" style="--d: {80 + i * 180}">
 			<circle cx="140" cy={n.y} r={i === 2 ? 26 : 22} />
-			<text class="n-ko" x="140" y={n.y + 1}>{n.ko}</text>
-			<text class="n-en" x="140" y={n.y + 14}>{n.en}</text>
+			<ChartLabel x="140" y={n.y + 2} ko={n.ko} en={n.en} w={i === 2 ? 52 : 44} size={i === 2 ? 'md' : 'sm'} />
 		</g>
 	{/each}
 
@@ -44,7 +44,8 @@
 
 <style>
 	.dg {
-		--joseon: #c4a574;
+		--accent: #f0c56a;
+		--joseon: #f0c56a;
 		font-family: var(--serif);
 	}
 
@@ -72,34 +73,15 @@
 	}
 
 	.node circle {
-		fill: color-mix(in srgb, var(--joseon) 14%, transparent);
-		stroke: color-mix(in srgb, var(--joseon) 60%, transparent);
-		stroke-width: 1.15;
-	}
-
-	.n-ko {
-		font-size: 12px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--joseon) 40%, #fffdf8);
-	}
-
-	.n-en,
-	.foot {
-		text-anchor: middle;
-		fill: var(--fg-faint);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-	}
-
-	.n-en {
-		font-size: 6px;
+		fill: var(--joseon);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.link {
 		fill: none;
-		stroke: color-mix(in srgb, var(--joseon) 42%, transparent);
-		stroke-width: 1.05;
+		stroke: var(--joseon);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -117,7 +99,7 @@
 		font-size: 7.5px;
 		text-transform: none;
 		letter-spacing: 0.08em;
-		fill: color-mix(in srgb, var(--joseon) 55%, var(--fg-faint));
+		fill: var(--joseon);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

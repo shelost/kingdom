@@ -1,8 +1,8 @@
 /**
- * Cache-bust root-relative static assets (`/people/…`, `/ch_…`, flags, …).
+ * Cache-bust root-relative static assets (`/ch_…`, `/pl_…`, `/bn_…`, flags, …).
  *
  * Browsers key image caches on URL. Replacing a file on disk leaves the path
- * unchanged, so `<img src="/people/foo.png">` can keep showing the old bytes
+ * unchanged, so `<img src="/ch_foo.png">` can keep showing the old bytes
  * until the URL changes. Append `?v=` so swaps invalidate cleanly.
  *
  * In dev, a Vite plugin bumps `staticAssetCache.rev` when files under `static/`

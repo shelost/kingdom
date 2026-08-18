@@ -130,6 +130,11 @@ export const CHART_NODES: ChartNode[] = [
 	{ id: 'jacheongbi', x: 1380, y: 1720, rank: 2, era: 'myth', gender: 'f' },
 	{ id: 'mundoryeong', x: 1580, y: 1720, rank: 1, era: 'myth', gender: 'm' },
 	{ id: 'sanbangdeok', x: 1580, y: 1900, rank: 1, era: 'myth', gender: 'f' },
+	{ id: 'sulmun', x: 560, y: 1720, rank: 2, era: 'myth', gender: 'f' },
+	{ id: 'mago', x: 40, y: 1720, rank: 1, era: 'myth', gender: 'f' },
+	{ id: 'bari', x: 980, y: 1900, rank: 1, era: 'myth', gender: 'f' },
+	{ id: 'heavenearthking', x: 1180, y: 1460, rank: 2, era: 'myth', gender: 'm' },
+	{ id: 'chongmyeong', x: 1320, y: 1460, rank: 1, era: 'myth', gender: 'f' },
 	{ id: 'yang_tamla', x: 680, y: 1900, rank: 1, era: 'myth', gender: 'm' },
 	{ id: 'go_tamla', x: 800, y: 1900, rank: 1, era: 'myth', gender: 'm' },
 	{ id: 'bu_tamla', x: 920, y: 1900, rank: 1, era: 'myth', gender: 'm' }
@@ -265,9 +270,12 @@ export const RELATIONSHIPS: Person[] = [
 		bond: 'love',
 		between: ['haemosu', 'yuhwa'],
 		title: 'Heaven stops the chariot',
-		tagline: 'She bathed naked in the Ubal; he came down the same afternoon.',
-		arc: 'The sun god crosses the sky every day and stops once. Yuhwa does not hide. He builds a copper room on the bank because waiting has become unbearable. Habek casts her out; Geumwa takes her in; Jumong is born of that heat.',
-		events: [{ label: 'The Ubal; the copper room; the egg.' }],
+		tagline: 'She bathed naked in the Ubal; he came down the same afternoon — and came again for her soul.',
+		arc: 'The sun god crosses the sky every day and stops once. Yuhwa does not hide. He builds a copper room on the bank because waiting has become unbearable. Habek casts her out; Geumwa takes her in; Jumong is born of that heat. When she dies he does not send a reaper. He comes himself. She keeps the night as moon.',
+		events: [
+			{ label: 'The Ubal; the copper room; the egg.' },
+			{ label: 'He takes her soul; she becomes goddess of the moon.' }
+		],
 		aliases: ['Haemosu & Yuhwa', 'Yuhwa & Haemosu']
 	},
 	{
@@ -342,8 +350,11 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['gesomun', 'gulgul'],
 		title: 'The Mohe boy from the snow',
 		tagline: 'Rescued young; raised in Pyongyang; sent north.',
-		arc: 'Yeon brings a Mohe boy out of a border raid and keeps him. Gulgul grows into the quiet guard of the northern marches — seldom seen at court, always where the cold is. Later ages will call his son Dae Joyoung.',
-		events: [{ label: 'Taken in; raised; posted north.' }],
+		arc: 'Yeon brings a Mohe boy out of a border raid and keeps him. Gulgul grows into the quiet guard of the northern marches — seldom seen at court, always where the cold is — and when Yeon posts him north he gives him the surname Dae. Later ages will call his son Dae Joyoung.',
+		events: [
+			{ year: 634, label: 'Taken in; named Gulgul.' },
+			{ year: 642, label: 'Given the surname Dae; posted north.' }
+		],
 		aliases: ['Yeon & Gulgul', 'Gesomun & Gulgul']
 	},
 	{
@@ -457,8 +468,11 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['jumong', 'yuhwa'],
 		title: 'Mother and the egg',
 		tagline: 'Cast out for loving the sun; she raises the archer who founds a kingdom.',
-		arc: 'Yuhwa bears Jumong after Haemosu. In Buyeo the boy outgrows jealousy; she is the river-blood in his claim to heaven.',
-		events: [{ label: 'The egg; the flight from Buyeo.' }],
+		arc: 'Yuhwa bears Jumong after Haemosu. In Buyeo the boy outgrows jealousy; she is the river-blood in his claim to heaven. Her last mortal word is for him; after that she is the moon.',
+		events: [
+			{ label: 'The egg; the flight from Buyeo.' },
+			{ label: 'She dies; the sun takes her soul; night keeps a face.' }
+		],
 		aliases: ['Jumong & Yuhwa']
 	},
 	{
@@ -604,6 +618,24 @@ export const RELATIONSHIPS: Person[] = [
 			'Sara & Jacheongbi',
 			'할락궁이 · 자청비',
 			'사라도령 · 자청비'
+		]
+	},
+	{
+		id: 'rel-heavenearthking-chongmyeong',
+		name: 'Heaven–Earth King & Chongmyeong',
+		korean: '천지왕 · 총명부인',
+		entity: 'relationship',
+		kingdom: 'tamla',
+		bond: 'kin',
+		between: ['heavenearthking', 'chongmyeong'],
+		title: 'Retired prior and the mother of the twins',
+		tagline: 'He kept both ledgers; she kept the house that later split.',
+		arc: '「천지왕본풀이」: Heaven–Earth King and Lady Chongmyeong bear Big Star and Little Star. He retires from ruling living and dead; the sons wager flowers. She does not take a realm.',
+		events: [{ label: 'Twins born; father retires; 이승 and 저승 divide.' }],
+		aliases: [
+			'Heaven–Earth King & Chongmyeong',
+			'Chongmyeong & Heaven–Earth King',
+			'천지왕 · 총명부인'
 		]
 	},
 	{
@@ -845,7 +877,7 @@ export const RELATIONSHIPS: Person[] = [
 		bond: 'kin',
 		between: ['euija', 'hyo'],
 		title: 'Father and the replacement crown',
-		tagline: 'Ungo’s son — chosen because he was not Satek’s.',
+		tagline: 'Eungo’s son — chosen because he was not Satek’s.',
 		arc: 'Hyo is third of the five. Euija moves the crown-prince mark to him in 655 to keep Queen Satek’s house from ruling through the eldest. The gift is also a target.',
 		events: [{ year: 655, label: 'Named crown prince in Yung’s place.' }],
 		aliases: ['Euija & Hyo', 'Hyo & Euija']
@@ -905,13 +937,13 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['euija', 'queensatek'],
 		title: 'Mother of the Eraha',
 		tagline: 'Satek blood on the throne — and on the veto that made him.',
-		arc: 'Queen Satek’s house — under Satek Jijeok — holds both crown and Prime Minister when Euija rises. The Eight Clans’ grip is the childhood he later breaks by seating his own sons.',
+		arc: 'Queen Satek’s house — under Minister Satek — holds both crown and Prime Minister when Euija rises. The Eight Clans’ grip is the childhood he later breaks by seating his own sons.',
 		events: [{ label: 'Satek queen and Satek Premier — Euija’s starting board.' }],
 		aliases: ['Euija & Queen Satek', 'Queen Satek & Euija']
 	},
 	{
 		id: 'rel-euija-ungo',
-		name: 'Euija & Queen Ungo',
+		name: 'Euija & Queen Eungo',
 		korean: '의자 · 웅고',
 		entity: 'relationship',
 		kingdom: 'baekje',
@@ -919,9 +951,9 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['euija', 'ungo'],
 		title: 'King and the mother of Hyo',
 		tagline: 'She names the fear he already has — Yung belongs to Satek.',
-		arc: 'Ungo is Euija’s wife and Hyo’s mother. After Queen Satek’s death she presses the succession cut: strip Yung of the crown-prince mark before Jijeok’s sleeve grows back through the eldest son.',
+		arc: 'Eungo is Euija’s wife and Hyo’s mother. After Queen Satek’s death she presses the succession cut: strip Yung of the crown-prince mark before Minister Satek’s sleeve grows back through the eldest son.',
 		events: [{ year: 655, label: 'Hyo named crown prince; Yung demoted.' }],
-		aliases: ['Euija & Ungo', 'Ungo & Euija', 'Euija & Queen Ungo']
+		aliases: ['Euija & Eungo', 'Eungo & Euija', 'Euija & Queen Eungo', 'Euija & Queen Ungo']
 	},
 	{
 		id: 'rel-yung-hyo',
@@ -933,7 +965,7 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['yung', 'hyo'],
 		title: 'Crown-prince swap',
 		tagline: 'Eldest stripped; younger crowned — brothers become factions.',
-		arc: 'Euija removes Yung as crown prince for Hyo — motive: Yung too deep in Satek control, Ungo’s counsel in the same key. The rivalry outruns the Assembly purge and ends only when the kingdom does.',
+		arc: 'Euija removes Yung as crown prince for Hyo — motive: Yung too deep in Satek control, Eungo’s counsel in the same key. The rivalry outruns the Assembly purge and ends only when the kingdom does.',
 		events: [{ year: 655, label: 'Mark moves from Yung to Hyo.' }],
 		aliases: ['Yung & Hyo', 'Hyo & Yung']
 	},
@@ -967,24 +999,24 @@ export const RELATIONSHIPS: Person[] = [
 	},
 	{
 		id: 'rel-satek-yunbi',
-		name: 'Jijeok & Munjin',
-		korean: '지적 · 문진',
+		name: 'Elder Satek & Elder Yunbi',
+		korean: '적덕 · 문진',
 		entity: 'relationship',
 		kingdom: 'baekje',
 		bond: 'rival',
 		between: ['eldersatek', 'elderyunbi'],
 		title: 'Sleeve versus arm',
 		tagline: 'Four generations — harbours, writs, and lantern-festival dead.',
-		arc: 'Satek Jijeok and Yunbi Munjin are the named faces of the feud the street already knows. They truce once to remove Gyebek, then lose every chair to Euija’s sons anyway.',
+		arc: 'Elder Satek and Elder Yunbi are the named faces of the feud the street already knows. They truce once to remove Gyebek, then lose every chair to Euija’s sons anyway.',
 		events: [
 			{ year: 632, label: 'Feud already four generations deep.' },
 			{ year: 655, label: 'Night truce; still purged.' }
 		],
-		aliases: ['Satek & Yunbi', 'Jijeok & Munjin', 'Munjin & Jijeok']
+		aliases: ['Satek & Yunbi', 'Elder Satek & Elder Yunbi', 'Jukduk & Munjin', 'Jijeok & Munjin', 'Munjin & Jijeok']
 	},
 	{
 		id: 'rel-jijeok-hana',
-		name: 'Hana & the Sateks',
+		name: 'Lady Yunbi & the Sateks',
 		korean: '한아 · 사택',
 		entity: 'relationship',
 		kingdom: 'baekje',
@@ -992,9 +1024,9 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['yunbihana', 'sateksondung'],
 		title: 'Wharf feud, personal volume',
 		tagline: 'She keeps score; he climbs walls; both call it house honour.',
-		arc: 'Yunbi Hana’s sharp house-pride meets Satek Sondeung’s street volume — the feud’s younger register under Jijeok and Munjin’s Assembly theatre.',
+		arc: 'Lady Yunbi’s sharp house-pride meets Satek Sondeung’s street volume — the feud’s younger register under Elder Satek and Elder Yunbi’s Assembly theatre.',
 		events: [{ year: 632, label: 'West-bridge cart; roof-tiles; unfinished insults.' }],
-		aliases: ['Hana & Sondeung', 'Sondeung & Hana', 'Yunbi Hana & Satek']
+		aliases: ['Hana & Sondeung', 'Sondeung & Hana', 'Lady Yunbi & Satek', 'Yunbi Hana & Satek']
 	},
 	{
 		id: 'rel-jungto-sooyoung',
@@ -1005,10 +1037,43 @@ export const RELATIONSHIPS: Person[] = [
 		bond: 'kin',
 		between: ['jungto', 'sooyoung'],
 		title: 'The softer Yeon roof',
-		tagline: 'Uncle and aunt who raised Yeon Namgun and Yeon Namsan — not the heir.',
-		arc: 'While Gesomun drills Yeon Namseng, Jungto and Sooyoung keep a hall where Yeon Namgun and Yeon Namsan eat. That split becomes the crack messengers later poison. Yeon Namsan the son — never Mount Namsan of Surabol.',
+		tagline: 'Brother and sister who raised Yeon Namgun and Yeon Namsan — not the heir.',
+		arc: 'While Gesomun drills Yeon Namseng, his siblings Jungto and Sooyoung keep a hall where Yeon Namgun and Yeon Namsan eat. That split becomes the crack messengers later poison. Yeon Namsan the son — never Mount Namsan of Surabol.',
 		events: [{ label: 'Raise Yeon Namgun and Yeon Namsan away from Gesomun’s strict roof.' }],
 		aliases: ['Jungto & Sooyoung', 'Sooyoung & Jungto']
+	},
+	{
+		id: 'rel-gesomun-jungto',
+		name: 'Gesomun & Jungto',
+		korean: '개소문 · 정토',
+		entity: 'relationship',
+		kingdom: 'goguryeo',
+		bond: 'kin',
+		between: ['gesomun', 'jungto'],
+		title: 'The strict brother and the soft',
+		tagline: 'One house, two roofs — the drill hall and the supper hall.',
+		arc: 'Brothers of the Yeon house. Gesomun keeps the heir Yeon Namseng under his own rules; Jungto raises Yeon Namgun and Yeon Namsan where supper is allowed to be supper. After Gesomun’s death the split he called logistics becomes the crack the messengers poison — and in 666 the softer brother takes his southern territory to Silla.',
+		events: [
+			{ label: 'Splits the three heirs between his roof and Jungto’s.' },
+			{ year: 666, label: 'Jungto surrenders his southern territory to Silla.' }
+		],
+		aliases: ['Gesomun & Jungto', 'Jungto & Gesomun', 'Yeon Gesomun & Yeon Jungto']
+	},
+	{
+		id: 'rel-gesomun-sooyoung',
+		name: 'Gesomun & Sooyoung',
+		korean: '개소문 · 수영',
+		entity: 'relationship',
+		kingdom: 'goguryeo',
+		bond: 'kin',
+		between: ['gesomun', 'sooyoung'],
+		title: 'The Supreme Commander’s sister',
+		tagline: 'He fed the heir rules; she fed the younger two supper.',
+		arc: 'Brother and sister of the Yeon house. Gesomun trusts Sooyoung and Jungto with Yeon Namgun and Yeon Namsan while he forges Namseng into a second self. She corrects the cruelty his drills leave behind — the one Yeon hall where a boy is not a blade first.',
+		events: [
+			{ label: 'Entrusts Yeon Namgun and Yeon Namsan to Sooyoung and Jungto.' }
+		],
+		aliases: ['Gesomun & Sooyoung', 'Sooyoung & Gesomun', 'Yeon Gesomun & Yeon Sooyoung']
 	},
 	{
 		id: 'rel-jumong-yuri',
@@ -1037,6 +1102,20 @@ export const RELATIONSHIPS: Person[] = [
 		arc: 'Desire crosses a border Habek keeps as sovereignty. Exile is his answer; Jumong’s later claim runs through both courts whether either god wills it.',
 		events: [{ label: 'Yuhwa cast out; the egg still hatches.' }],
 		aliases: ['Haemosu & Habek', 'Habek & Haemosu']
+	},
+	{
+		id: 'rel-haemosu-haewonmek',
+		name: 'Haemosu & Haewonmek',
+		korean: '해모수 · 해원맥',
+		entity: 'relationship',
+		kingdom: 'other',
+		bond: 'kin',
+		between: ['haemosu', 'haewonmek'],
+		title: 'Same 해, split roads',
+		tagline: 'One 해 drives the sun’s chariot; the younger took the night-road.',
+		arc: 'The names share a 해. One keeps Little Star’s day; the other fetches for Yumla under Big Star — 이승 and 저승, not one hall. At Jumong’s river the sun still outranks the fetch: one shove, a promise to let the boy finish, then the night-road again.',
+		events: [{ year: -37, label: 'The river; Haemosu sends Haewonmek off.' }],
+		aliases: ['Haemosu & Haewonmek', 'Haewonmek & Haemosu']
 	},
 	{
 		id: 'rel-habek-yuhwa',
@@ -1138,6 +1217,20 @@ export const RELATIONSHIPS: Person[] = [
 		arc: 'After 642 Yeon’s kingdom needs a legend that is not only knives. Yang Manchun holds Ansi against Taizong and joins the Hall of Heroes list Yeon has been auditioning for his whole life.',
 		events: [{ year: 645, label: 'Ansi holds; Taizong turns back.' }],
 		aliases: ['Yeon & Yang Manchun', 'Gesomun & Yang Manchun']
+	},
+	{
+		id: 'rel-chunchu-ongunhae',
+		name: 'Chunchu & On Gunhae',
+		korean: '춘추 · 온군해',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'sworn',
+		between: ['chunchu', 'ongunhae'],
+		title: 'The coat and the small boat',
+		tagline: 'One sat in the high cap. One went home.',
+		arc: 'On Gunhae attends the Tang embassy and, on the Yellow Sea, wears Chunchu’s high cap and great coat so the Goguryeo patrol takes the wrong man. Chunchu reaches Silla in a small boat. Jinduk posthumously names Gunhae a Daeachan.',
+		events: [{ year: 649, label: 'The patrol ship; the decoy; the small boat.' }],
+		aliases: ['Chunchu & On Gunhae', 'On Gunhae & Chunchu']
 	}
 ];
 

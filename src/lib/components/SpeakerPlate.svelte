@@ -20,9 +20,20 @@
 	import { activeUtterance } from '$lib/speech.svelte';
 	import SpeakButton from './SpeakButton.svelte';
 
-	/** Live speaker from reading state (null when not immersion / no speaker). */
+	/**
+	 * `overlay` is the immersion plate — fixed to the foot of the page, bust
+	 * standing beside the box. `panel` is the very same plate mounted inside
+	 * the cinema stage's Active Dialogue cell: it fills its container and drops
+	 * the bust (cinema's Character pane already holds the portrait). One
+	 * component, so the two dialogue boxes can never drift apart.
+	 */
+	let { variant = 'overlay' }: { variant?: 'overlay' | 'panel' } = $props();
+
+	let wantedMode = $derived(variant === 'panel' ? 'cinema' : 'immersion');
+
+	/** Live speaker from reading state (null when not in this stage / no speaker). */
 	let person = $derived.by(() => {
-		if (!scriptUi.inScript || reading.mode !== 'immersion' || !reading.speaker) return null;
+		if (!scriptUi.inScript || reading.mode !== wantedMode || !reading.speaker) return null;
 		return byId.get(reading.speaker) ?? null;
 	});
 
@@ -131,9 +142,10 @@
 	{@const art = avatarOf(
 		p,
 		p.id === 'courtmaid' ? textKo || textEn : undefined,
-		reading.year
+		reading.year,
+		reading.look
 	)}
-	{@const who = nameOf(p, reading.year)}
+	{@const who = nameOf(p, reading.year, reading.look)}
 	<button
 		type="button"
 		class="portrait"
@@ -154,44 +166,47 @@
 	<div
 		class="stage"
 		class:in={scriptUi.inScript}
+		class:panel={variant === 'panel'}
 		style:--k={accent}
 		role="region"
 		aria-label="Dialogue"
 		in:fly={boxMotion}
 		out:fade={portraitOut}
 	>
-		<div class="portrait-slot">
-			<!-- Outgoing layer: fades out, then cleared so only current remains -->
-			{#if showPrevious && previousPerson}
-				{@const outgoing = previousPerson}
-				<div
-					class="portrait-layer is-prev"
-					out:fade={portraitOut}
-					onoutroend={() => {
-						if (previousPerson?.id === outgoing.id) previousPerson = null;
-					}}
-				>
-					{@render bust(outgoing)}
-				</div>
-			{/if}
-
-			<!-- Incoming / current layer: flies in on speaker (or maid-face) change -->
-			{#if currentPerson}
-				{@const faceKey = `${currentPerson.id}:${avatarOf(currentPerson, textKo || textEn, reading.year)}:${nameOf(currentPerson, reading.year)}`}
-				{#key faceKey}
-					{@const incoming = currentPerson}
-					<div class="portrait-layer is-next" in:fly={portraitIn}>
-						{@render bust(incoming)}
+		{#if variant === 'overlay'}
+			<div class="portrait-slot">
+				<!-- Outgoing layer: fades out, then cleared so only current remains -->
+				{#if showPrevious && previousPerson}
+					{@const outgoing = previousPerson}
+					<div
+						class="portrait-layer is-prev"
+						out:fade={portraitOut}
+						onoutroend={() => {
+							if (previousPerson?.id === outgoing.id) previousPerson = null;
+						}}
+					>
+						{@render bust(outgoing)}
 					</div>
-				{/key}
-			{/if}
-		</div>
+				{/if}
+
+				<!-- Incoming / current layer: flies in on speaker (or maid-face) change -->
+				{#if currentPerson}
+					{@const faceKey = `${currentPerson.id}:${avatarOf(currentPerson, textKo || textEn, reading.year, reading.look)}:${nameOf(currentPerson, reading.year, reading.look)}`}
+					{#key faceKey}
+						{@const incoming = currentPerson}
+						<div class="portrait-layer is-next" in:fly={portraitIn}>
+							{@render bust(incoming)}
+						</div>
+					{/key}
+				{/if}
+			</div>
+		{/if}
 
 		<div class="box">
 			{#if currentPerson}
 				{@const person = currentPerson}
-				{@const who = nameOf(person, reading.year)}
-				{@const ko = koreanOf(person, reading.year)}
+				{@const who = nameOf(person, reading.year, reading.look)}
+				{@const ko = koreanOf(person, reading.year, reading.look)}
 				{#key `${person.id}:${who}`}
 					<button
 						type="button"
@@ -278,6 +293,47 @@
 	.stage.in {
 		opacity: 1;
 		transform: translate3d(0, 0, 0);
+	}
+
+	/* ————— Panel variant (cinema's Active Dialogue cell) —————
+	   Same plate, different stage: it fills the grid cell it was mounted in
+	   instead of fixing itself to the viewport, takes its own pointer events
+	   (there is no page underneath to scroll), and leaves the portrait to the
+	   Character pane beside it. */
+	.stage.panel {
+		position: relative;
+		left: auto;
+		right: auto;
+		bottom: auto;
+		z-index: auto;
+		width: 100%;
+		height: 100%;
+		box-sizing: border-box;
+		padding: 0.85rem 0.85rem 0.8rem;
+		pointer-events: auto;
+		/* the phone overlay's scrim / row layout must not leak into the cell */
+		background: none;
+		flex-direction: column;
+		transition:
+			opacity 520ms var(--ease),
+			transform 560ms var(--ease);
+	}
+
+	.stage.panel .box {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		min-height: 0;
+		height: 100%;
+		margin-top: 0;
+		padding-top: 0.55rem;
+	}
+
+	.stage.panel .frame {
+		flex: 1 1 auto;
+		height: auto;
+		min-height: 0;
+		max-height: none;
 	}
 
 	/* The bust stands on the left and *behind* the box: the negative margin

@@ -31,12 +31,14 @@
 		groupByKind,
 		groupByGodTier,
 		godTierLabel,
-		cityOf,
+		parentPlaceOf,
 		showsWikiAccent,
 		clanSpotlightOf,
+		groupMembersOf,
 		type WikiKind,
 		type WikiFilters
 	} from '$lib/wiki';
+	import { hasLeitmotif, hasTempTrack } from '$lib/leitmotifs';
 	import WikiDetail from '$lib/components/WikiDetail.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
@@ -105,7 +107,8 @@
 			if (!raw) return;
 			const v = JSON.parse(raw) as Partial<WikiFilters>;
 			if (v.kind) kind = v.kind;
-			if (v.kingdom) kingdom = v.kingdom;
+			if (v.kingdom === 'underworld') kingdom = 'all';
+			else if (v.kingdom) kingdom = v.kingdom;
 			if (v.tag) tag = v.tag;
 			if (v.gender) gender = v.gender;
 			// Do not restore `q` — sticky search (e.g. "go") hid most gods/nations.
@@ -312,7 +315,7 @@
 		},
 		restore: (value) => {
 			kind = value.kind;
-			kingdom = value.kingdom;
+			kingdom = value.kingdom === 'underworld' ? 'all' : value.kingdom;
 			tag = value.tag ?? 'all';
 			gender = value.gender ?? 'all';
 			// Never restore search — sticky "go" made gods/nations look missing.
@@ -588,13 +591,20 @@
 							{@const showAccent = showsWikiAccent(p)}
 							{@const art = avatarOf(p)}
 							{@const cardKind = kindOf(p)}
-							{@const parentCity = cardKind === 'place' ? cityOf(p) : undefined}
-							{@const isShowcase = cardKind === 'place' || cardKind === 'city'}
+							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
+							{@const isNationCard = cardKind === 'nation'}
+							{@const isShowcase =
+								cardKind === 'place' || cardKind === 'city' || isNationCard}
+							{@const flagArt = isNationCard ? kingdomFlag(p.kingdom) : undefined}
+							{@const showcaseArt = isNationCard ? flagArt : art}
 							{@const isOrgCard = cardKind === 'organization'}
+							{@const isGroupCard = cardKind === 'group'}
 							{@const isClanCard = cardKind === 'clan'}
 							{@const hasOrgPreview =
-								isOrgCard &&
+								(isOrgCard || isGroupCard) &&
 								(!!chartsForWikiEntry(p.id).length || !!(p.orgChart && p.orgChart.length))}
+							{@const roster =
+								isGroupCard && !hasOrgPreview ? groupMembersOf(p.id).slice(0, 4) : []}
 							{@const spotlight = isClanCard ? clanSpotlightOf(p.id) : undefined}
 							{@const clanArt = spotlight ? avatarOf(spotlight) : undefined}
 							<li>
@@ -602,22 +612,55 @@
 									type="button"
 									class="card"
 									class:card-showcase={isShowcase}
-									class:card-org={isOrgCard}
+									class:card-place={cardKind === 'place' || cardKind === 'city'}
+									class:card-org={isOrgCard || isGroupCard}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
 									onclick={() => openEntry(p.id)}
 								>
+									{#if hasLeitmotif(p.id)}
+										<span
+											class="motif-mark material-symbols-outlined"
+											title={hasTempTrack(p.id)
+												? 'Has a leitmotif · temp reference'
+												: 'Has a leitmotif'}
+											aria-hidden="true">music_note</span
+										>
+									{/if}
 									{#if isShowcase}
-										<span class="showcase" class:empty={!art} aria-hidden="true">
-											{#if art}
-												<img src={art} alt="" />
+										<span
+											class="showcase"
+											class:showcase-flag={isNationCard}
+											class:empty={!showcaseArt}
+											aria-hidden="true"
+										>
+											{#if showcaseArt}
+												<img src={showcaseArt} alt="" />
 											{:else}
 												<span class="showcase-initial">{hangulInitial(p)}</span>
 											{/if}
-											<span class="showcase-fade"></span>
+											{#if isNationCard}
+												<span class="showcase-fade"></span>
+											{/if}
 										</span>
 									{:else if hasOrgPreview}
 										<WikiOrgPreview entry={p} />
+									{:else if roster.length}
+										<span class="avatar-roster" data-n={roster.length} aria-hidden="true">
+											{#each roster as m (m.id)}
+												{@const mArt = avatarOf(m)}
+												<span
+													class="roster-cell"
+													class:silhouette={mArt ? isPlaceholderArt(mArt) : false}
+												>
+													{#if mArt}
+														<img src={mArt} alt="" />
+													{:else}
+														{hangulInitial(m)}
+													{/if}
+												</span>
+											{/each}
+										</span>
 									{:else if spotlight}
 										<span
 											class="avatar avatar-clan"
@@ -647,8 +690,8 @@
 										<span class="card-sub">
 											{#if koreanOf(p)}<span class="ko">{koreanOf(p)}</span>{/if}
 											{#if koreanOf(p)}<span class="sep">·</span>{/if}
-											{#if parentCity}
-												<span class="city-chip">{nameOf(parentCity)}</span>
+											{#if parentPlace}
+												<span class="city-chip">{nameOf(parentPlace)}</span>
 												<span class="sep">·</span>
 											{/if}
 											{#if kingdomFlag(p.kingdom)}<img class="flag" src={kingdomFlag(p.kingdom)} alt="" />{/if}
@@ -1027,6 +1070,7 @@
 	}
 
 	.card {
+		position: relative;
 		display: flex;
 		align-items: flex-start;
 		gap: 1.05rem;
@@ -1064,6 +1108,23 @@
 		transform: translateY(-2px);
 	}
 
+	/* Small gold music-note mark — this entry has a composed leitmotif. */
+	.motif-mark {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.55rem;
+		z-index: 2;
+		font-size: 0.85rem;
+		color: var(--gold);
+		opacity: 0.65;
+		pointer-events: none;
+		transition: opacity 0.2s var(--ease);
+	}
+
+	.card:hover .motif-mark {
+		opacity: 1;
+	}
+
 	.showcase {
 		position: relative;
 		display: block;
@@ -1084,6 +1145,14 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
+	}
+
+	/* Nation flags — contain-fit on kingdom accent, not photo crop. */
+	.showcase.showcase-flag img {
+		object-fit: contain;
+		object-position: center;
+		padding: 0.85rem 1.1rem 1.65rem;
+		box-sizing: border-box;
 	}
 
 	.showcase-fade {
@@ -1114,6 +1183,11 @@
 		margin-top: -2.4rem;
 		position: relative;
 		z-index: 1;
+	}
+
+	.card-showcase.card-place .meta {
+		margin-top: 0;
+		padding-top: 0.7rem;
 	}
 
 	.city-chip {
@@ -1152,6 +1226,51 @@
 
 	.avatar.avatar-clan {
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
+	}
+
+	/* Group cards — square roster montage of member portraits. */
+	.avatar-roster {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 2px;
+		flex-shrink: 0;
+		width: 5.75rem;
+		aspect-ratio: 1;
+		overflow: hidden;
+		border-radius: 10px;
+		border: 1px solid var(--hairline);
+		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
+	}
+
+	/* Two members split the square; a trio gives the first a full column. */
+	.avatar-roster[data-n='2'] {
+		grid-template-rows: 1fr;
+	}
+
+	.avatar-roster[data-n='3'] .roster-cell:first-child {
+		grid-row: span 2;
+	}
+
+	.roster-cell {
+		display: grid;
+		place-items: center;
+		overflow: hidden;
+		font-family: var(--serif);
+		font-weight: 700;
+		font-size: 0.95rem;
+		color: var(--fg-dim);
+	}
+
+	.roster-cell img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	.roster-cell.silhouette img {
+		opacity: 0.62;
 	}
 
 	.meta {

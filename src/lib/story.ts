@@ -53,6 +53,8 @@ export type Block =
 			jaLatn?: string[];
 			speaker?: string;
 			person?: string;
+			/** Pin a life-stage portrait (`PersonStage.id`) regardless of entry year. */
+			look?: string;
 	  }
 	| { kind: 'cite'; html: string; ko?: string } // "• 👑 King Mu (51) of Baekje"
 	| { kind: 'verse'; color: string; lines: string[] }
@@ -70,7 +72,7 @@ export type Block =
 	// The lesson a told story leaves behind — set apart, the way the islanders say it.
 	| { kind: 'moral'; label?: string; html: string; ko?: string }
 	// A character’s internal voice spoken from later — retrospective tense.
-	| { kind: 'monologue'; html: string; ko?: string; person?: string }
+	| { kind: 'monologue'; html: string; ko?: string; person?: string; look?: string }
 	// An animated explainer for an institution or concept — resolved through the
 	// registry in components/diagrams. `diagram` names the component; `step`
 	// picks the moment it depicts (each component documents its own steps).
@@ -83,6 +85,8 @@ export type Block =
 			caption?: string; // English caption under the drawing
 			ko?: string; // Korean caption
 	  }
+	// A large chapter-within-an-entry header — "DAY 1" over a siege chronicle.
+	| { kind: 'day'; label: string; ko?: string }
 	// A mini-flashback that interrupts an entry mid-scroll.
 	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] };
 
@@ -96,6 +100,10 @@ export interface Entry {
 	subtitle?: string; // "선덕여왕"
 	badges?: string[]; // emoji / flag chips under the title (`flag:silla`, `flag:baekje`, …)
 	music?: string; // track name — shows in the player tag while this entry is read
+	/** Genre voice of this episode — e.g. "political thriller", "island folklore". */
+	tone?: string;
+	/** One-line director's brief expanding on `tone`. */
+	toneNote?: string;
 	images: ImageSlot[];
 	blocks: Block[];
 }
@@ -110,6 +118,10 @@ export interface Chapter {
 	hanja?: string; // "三韓王儉"
 	korean?: string; // "삼한왕검"
 	range: string; // "632–642"
+	/** Dominant genre voice of the chapter — entries may override with their own `tone`. */
+	tone?: string;
+	/** One-line director's brief for the chapter's genre voice. */
+	toneNote?: string;
 	entries: Entry[];
 }
 

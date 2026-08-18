@@ -3,8 +3,8 @@
  *
  * A chapter is a season, an entry is an episode. Everything the cinema stage
  * needs that is *not* reactive lives here — where the episode sits in the run,
- * which art the scene panel should be showing, the script cues for the right
- * rail, and what colour the light in that place is.
+ * which art the scene panel should be showing, and what colour the light in
+ * that place is.
  *
  * Nothing in this module knows about the DOM: `CinemaStage.svelte` feeds it the
  * reading position and renders what comes back.
@@ -15,7 +15,6 @@ import { displayArtOf } from '$lib/cueArt';
 import { PLACES } from '$lib/places';
 import { episodes } from '$lib/reading.svelte';
 import { chapters, type Chapter, type Entry } from '$lib/story';
-import { byId, nameOf } from '$lib/people';
 import { staticAsset } from '$lib/staticAsset.svelte';
 
 /* ————— where we are in the season ————— */
@@ -92,6 +91,8 @@ export interface CinemaPanel {
 	 * `place` is location art standing in for one — the camera pans across it.
 	 */
 	kind: 'art' | 'place';
+	/** Slot alt text (art) or place name (place) — for the panel `<img>`. */
+	alt?: string;
 }
 
 /** Location art for a place id, when it has any. */
@@ -117,14 +118,15 @@ export function panelsOf(entry: Entry, placeId: string | null): CinemaPanel[] {
 			const src = displayArtOf(slot, 'reading');
 			if (!src || seen.has(src)) continue;
 			seen.add(src);
-			panels.push({ src, kind: 'art' });
+			panels.push({ src, kind: 'art', alt: slot.alt?.trim() || undefined });
 		}
 	}
 
 	if (panels.length) return panels;
 
 	const place = placeArt(placeId);
-	return place ? [{ src: place, kind: 'place' }] : [];
+	if (!place) return [];
+	return [{ src: place, kind: 'place', alt: placeId ? PLACES[placeId]?.name : undefined }];
 }
 
 /** Which panel a 0…1 position through the episode is on. */
@@ -132,81 +134,6 @@ export function panelIndexAt(count: number, progress: number): number {
 	if (count <= 1) return 0;
 	const i = Math.floor(Math.max(0, Math.min(0.999, progress)) * count);
 	return Math.max(0, Math.min(count - 1, i));
-}
-
-/* ————— script rail cues ————— */
-
-/** One clickable line in the cinema script sidebar. */
-export interface ScriptCue {
-	/** Stable key for the list — entry-local dialogue ordinal. */
-	id: string;
-	/** Index among `[data-speaker]` nodes in the live entry (for DOM jump). */
-	dialogueIndex: number;
-	personId: string | null;
-	/** Display name for the cue header. */
-	who: string;
-	ko: string;
-	en: string;
-}
-
-/** Strip tags / collapse whitespace for script previews. */
-function plain(html: string | undefined): string {
-	if (!html) return '';
-	return html
-		.replace(/<[^>]+>/g, '')
-		.replace(/&nbsp;/gi, ' ')
-		.replace(/&amp;/gi, '&')
-		.replace(/&lt;/gi, '<')
-		.replace(/&gt;/gi, '>')
-		.replace(/\s+/g, ' ')
-		.trim();
-}
-
-/**
- * Dialogue cues for one episode, in reading order.
- *
- * Only profiled speakers become cues — the same rule as Blocks.svelte, which
- * only stamps `data-speaker` (and only then is clickable) when a person id is
- * known. `dialogueIndex` matches document order of those nodes inside the
- * entry article so a click can hand straight to `activateDialogue`.
- */
-export function scriptCuesOf(entry: Entry, year: number | null = null): ScriptCue[] {
-	const cues: ScriptCue[] = [];
-	let dialogueIndex = 0;
-
-	const walk = (blocks: Entry['blocks']) => {
-		for (const block of blocks) {
-			if (block.kind === 'flashback') {
-				walk(block.blocks);
-				continue;
-			}
-			if (block.kind !== 'dialogue') continue;
-
-			const person = block.person ? byId.get(block.person) : undefined;
-			if (!person) continue;
-
-			const who = nameOf(person, year);
-			const ko = plain(block.lines.filter(Boolean).join(' '));
-			const en = plain((block.en ?? []).filter(Boolean).join(' '));
-			if (!ko && !en) {
-				dialogueIndex += 1;
-				continue;
-			}
-
-			cues.push({
-				id: `${dialogueIndex}:${person.id}`,
-				dialogueIndex,
-				personId: person.id,
-				who,
-				ko,
-				en
-			});
-			dialogueIndex += 1;
-		}
-	};
-
-	walk(entry.blocks ?? []);
-	return cues;
 }
 
 /* ————— the light in the room ————— */
@@ -270,7 +197,13 @@ const PLACE_GRADE: Record<string, Grade> = {
 	wirye: BATTLE,
 	central: REDSUN,
 	manchuria: BATTLE,
-	paektu: MYTH
+	paektu: MYTH,
+	realms_pavilion: MYTH,
+	flower_cliff: MYTH,
+	underworld: MYTH,
+	heaven: MYTH,
+	living_world: MYTH,
+	western_flower_field: MYTH
 };
 
 /** Fall back on the kind of place it is when the id has no grade of its own. */
@@ -279,7 +212,8 @@ const KIND_GRADE: Record<string, Grade> = {
 	mountain: BATTLE,
 	river: RIVER,
 	harbor: RIVER,
-	city: COURT
+	city: COURT,
+	realm: MYTH
 };
 
 /** A flashback drains the grade toward memory, whatever room it happens in. */

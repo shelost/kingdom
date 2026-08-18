@@ -14,14 +14,15 @@
 
 import type { LifeEvent, Person } from '$lib/people';
 
-export type PlaceKind = 'city' | 'mountain' | 'river' | 'harbor' | 'cave';
+export type PlaceKind = 'city' | 'mountain' | 'river' | 'harbor' | 'cave' | 'realm';
 
 export const PLACE_KIND_LABEL: Record<PlaceKind, string> = {
 	city: 'City / Fortress',
 	mountain: 'Mountain',
 	river: 'River',
 	harbor: 'Harbour',
-	cave: 'Cavern'
+	cave: 'Cavern',
+	realm: 'Realm'
 };
 
 export interface Place {
@@ -33,10 +34,12 @@ export interface Place {
 	y: number;
 	kind: PlaceKind;
 	/** whose land it is — drives the marker colour */
-	side: 'silla' | 'baekje' | 'goguryeo' | 'tang' | 'gaya' | 'yamato' | 'tamla' | 'other';
+	side: 'silla' | 'baekje' | 'goguryeo' | 'tang' | 'gaya' | 'yamato' | 'tamla' | 'underworld' | 'other';
 	/**
 	 * Parent city / fortress when `kind !== 'city'`.
 	 * Wiki: Place → City → Kingdom. Cities themselves omit this.
+	 * Cosmological sites (저승, 하늘나라) leave it unset — no earthly city.
+	 * A site inside a realm (Flower Cliff in 서천꽃밭) may point at that realm.
 	 */
 	cityId?: string;
 	/** a royal capital: drawn with a gold ring and its Hangul name shown */
@@ -225,7 +228,7 @@ export const PLACES: Record<string, Place> = {
 		side: 'silla',
 		cityId: 'surabol',
 		labelLeft: true,
-		avatar: '/places/steam_cavern.png',
+		avatar: '/pl_cave.png',
 		title: 'Yushin’s cavern lake in the hills',
 		blurb:
 			'A bowl of black water under stone — the only room in Silla where no one asks Kim Yushin for a victory.',
@@ -521,7 +524,7 @@ export const PLACES: Record<string, Place> = {
 		cityId: 'mugun',
 		offMap: true,
 		avatar: '/pl_mount_halla.png',
-		blurb: 'The island’s sacred peak — Seolmundae’s apron-work; oreum holes still mark where earth spilled.'
+		blurb: 'The island’s sacred peak — Sulmun’s apron-work; oreum holes still mark where earth spilled.'
 	},
 	samseonghyeol: {
 		id: 'samseonghyeol',
@@ -558,9 +561,10 @@ export const PLACES: Record<string, Place> = {
 		y: 400,
 		kind: 'mountain',
 		side: 'other',
+		cityId: 'western_flower_field',
 		offMap: true,
 		avatar: '/pl_flower_cliff.png',
-		blurb: 'Western Flower Field’s cliff-edge in story art — Hallakgungi’s rows above the living world.'
+		blurb: 'A cliff-edge inside the Western Flower Field — not the field itself; Hallakgungi’s rows fall away here in story art.'
 	},
 	moon_palace: {
 		id: 'moon_palace',
@@ -586,6 +590,120 @@ export const PLACES: Record<string, Place> = {
 		offMap: true,
 		blurb:
 			'Yamato’s court. Chunchu came asking for troops in 647 and was refused; fifteen years later it sent forty thousand men to die for Baekje.'
+	},
+	realms_pavilion: {
+		id: 'realms_pavilion',
+		name: 'Three Realms Pavilion',
+		korean: '삼계정자',
+		hanja: '三界亭子',
+		x: 298,
+		y: 398,
+		kind: 'cave',
+		side: 'other',
+		offMap: true,
+		avatar: '/pl_three_realms_pavillion.png',
+		title: 'The yearly 정자',
+		blurb:
+			'A small 정자 between 이승, 저승, and 서천꽃밭 — no larger than a fishing shelter, claimed by none of the three courts, where the Class I gods meet once a year.',
+		arc: 'Not a palace and not a battlefield. Floorboards enough for gossip, tea, and the principals’ later seats. Servants arrive first. The Big Man Upstairs does not need to attend for the meeting to count.',
+		aliases: ['Three Realms Pavilion', '삼계정자', 'Annual Meeting pavilion']
+	},
+
+	underworld: {
+		id: 'underworld',
+		name: 'Underworld',
+		korean: '저승',
+		x: 298,
+		y: 820,
+		kind: 'realm',
+		side: 'underworld',
+		offMap: true,
+		avatar: '/pl_underworld.png',
+		title: 'Land of the Dead',
+		blurb: 'Big Star’s realm — judgment, ledger, and borders no living map admits.',
+		arc: 'Paradise, the Siwang court, and Hell sit inside Big Star’s orderly dark: Yumla judges; Kangrim and Haewonmek collect; a crow can scramble a list. Not a metaphor and not a Samhan kingdom — Little Star took the living side by cheat; Big Star kept the minutes. Heaven once tried to arrest Yumla the judge and left two escorts instead. While Surabol and Sabi burn, 저승 keeps time.',
+		sobriquets: ['Land of the Dead', 'Yumla’s court'],
+		aliases: [
+			'Underworld',
+			'the underworld',
+			'저승',
+			'Land of the Dead',
+			'Jeoseung',
+			'Yumla’s court',
+			'Yumla\'s court'
+		]
+	},
+
+	heaven: {
+		id: 'heaven',
+		name: 'Heaven',
+		korean: '하늘나라',
+		hanja: '天界',
+		x: 298,
+		y: 36,
+		kind: 'realm',
+		side: 'other',
+		offMap: true,
+		title: 'Court of the Creator',
+		blurb: 'Hwanin’s seat above 삼계 — not a peer of the three courts below.',
+		arc: '하늘나라 is the Creator’s own court, not a fourth Samhan kingdom and not a fourth peer of 삼계. Sons and seals go down from here; Living, Dead, and Western Flower Field keep house below. The yearly 정자 does not need Hwanin present for the meeting to count.',
+		sobriquets: ['하늘나라', 'Heaven’s Court', 'Court of the Creator'],
+		aliases: [
+			'Heaven',
+			'the heavens',
+			'하늘나라',
+			'Heaven’s Court',
+			"Heaven's Court",
+			'Court of Heaven',
+			'Court of the Creator'
+		]
+	},
+
+	living_world: {
+		id: 'living_world',
+		name: 'Living World',
+		korean: '이승',
+		x: 298,
+		y: 420,
+		kind: 'realm',
+		side: 'other',
+		offMap: true,
+		title: 'Land of the Living',
+		blurb: 'Little Star’s realm — warm, badly governed, and the side he cheated for.',
+		arc: '이승 is one court of 삼계 under Hwanin’s heaven. After Heaven–Earth King retired, the twins wagered flowers; Little Star swapped blooms and took the warm side — which is why thieves and bad hours live under his small law. Ibiga, Haemosu, and Samsin tend sky, sun, and birth here. Not Tamla the island and not a Samhan map.',
+		sobriquets: ['Land of the Living', '이승'],
+		aliases: [
+			'Living World',
+			'the living world',
+			'Land of the Living',
+			'이승',
+			'Iseung'
+		]
+	},
+
+	western_flower_field: {
+		id: 'western_flower_field',
+		name: 'Western Flower Field',
+		korean: '서천꽃밭',
+		hanja: '西天花田',
+		x: 48,
+		y: 420,
+		kind: 'realm',
+		side: 'other',
+		offMap: true,
+		avatar: '/pl_western_flower_field.png',
+		title: 'Hallakgungi’s rows',
+		blurb: 'The Gardener’s realm — resurrection and extinction in the same western rows.',
+		arc: '서천꽃밭 is the third court of 삼계: travel west from 이승 far enough and living maps end. Hallakgungi (할락궁이) keeps the gate after Father Saradoryeong retired. Resurrection blooms sit beside the extinction flower; Jacheongbi’s chain runs through this gate. Flower Cliff is a drop at the field’s edge, not the field itself. Not a kingdom — a court among the Three Realms under Hwanin.',
+		sobriquets: ['서천꽃밭', 'Hallakgungi’s rows', 'the western field'],
+		aliases: [
+			'Western Flower Field',
+			'the Western Flower Field',
+			'서천꽃밭',
+			'Seocheon',
+			'West Field',
+			'western flower field'
+		]
 	}
 };
 
@@ -623,6 +741,8 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Stallion Mountain': 'jupil',
 	'Boiling River': 'gungnae',
 	'Jumong': 'jolbon',
+	'Annual Meeting of the Three Realms': 'realms_pavilion',
+	'The Girl Who Cut Her Hair': 'western_flower_field',
 	'Ansi': 'ansi',
 	'The Flower Youth': 'surabol',
 	'The Harmony Council': 'surabol',
@@ -632,8 +752,10 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'The Fall of Gaya': 'daegaya',
 	'Silla-Tang Alliance': 'changan',
 	'Death of Taizong': 'changan',
+	'Death of the Second Emperor': 'changan',
+	'On Gunhae': 'danghang',
 	'King Muyeol': 'surabol',
-	'Hyukgose': 'surabol',
+	'Hyukgosé': 'surabol',
 	// Part III
 	'Gyebek’s Exile': 'mugun',
 	'Tamla, the Island of Oranges': 'mugun',

@@ -1,14 +1,15 @@
 <script lang="ts">
 	/** Third Emperor’s Four Beasts — Blue Dragon is the sole survivor from the dragon roster. */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { active = false }: DiagramProps = $props();
 
 	const BEASTS = [
-		{ ko: '백호', en: 'White Tiger', han: '白虎', x: 54, fill: '#f1f5f9', stroke: '#94a3b8', survivor: false },
-		{ ko: '주작', en: 'Red Fowl', han: '朱雀', x: 138, fill: '#fecaca', stroke: '#dc2626', survivor: false },
-		{ ko: '청룡', en: 'Blue Dragon', han: '青龍', x: 222, fill: '#bfdbfe', stroke: '#2563eb', survivor: true },
-		{ ko: '현무', en: 'Black Tortoise', han: '玄武', x: 306, fill: '#374151', stroke: '#6b7280', survivor: false }
+		{ ko: '백호', en: 'White Tiger', han: '白虎', x: 54, fill: '#c5d0dc', stroke: '#1e293b', survivor: false },
+		{ ko: '주작', en: 'Red Fowl', han: '朱雀', x: 138, fill: '#ff4444', stroke: '#7f1d1d', survivor: false },
+		{ ko: '청룡', en: 'Blue Dragon', han: '青龍', x: 222, fill: '#3b82ff', stroke: '#1e3a8a', survivor: true },
+		{ ko: '현무', en: 'Black', han: '玄武', x: 306, fill: '#4b5563', stroke: '#030712', survivor: false }
 	] as const;
 </script>
 
@@ -21,8 +22,7 @@
 >
 	<g class="node emperor" style="--d: 0">
 		<rect class="dais" x="108" y="8" width="144" height="52" rx="8" />
-		<text class="t-ko" x="180" y="32">제3황제</text>
-		<text class="t-en" x="180" y="46">Third Emperor</text>
+		<ChartLabel x="180" y="34" ko="제3황제" en="Third Emperor" w={128} size="lg" />
 	</g>
 
 	<path class="spine" style="--d: 200" d="M 180 60 V 78" pathLength="100" />
@@ -35,9 +35,7 @@
 		>
 			<path class="link" style="--d: {340 + i * 120}" d="M 180 78 C 180 92 {b.x} 92 {b.x} 108" pathLength="100" />
 			<rect x={b.x - 36} y="108" width="72" height="52" rx="6" />
-			<text class="d-ko" x={b.x} y="128">{b.ko}</text>
-			<text class="d-han" x={b.x} y="142">{b.han}</text>
-			<text class="d-en" x={b.x} y="154">{b.en}</text>
+			<ChartLabel x={b.x} y="134" ko={b.ko} en={b.en} w={66} />
 		</g>
 	{/each}
 
@@ -47,7 +45,8 @@
 
 <style>
 	.dg {
-		--tang: #b45309;
+		--accent: #f0a03c;
+		--tang: #f0a03c;
 		font-family: var(--serif);
 	}
 
@@ -69,71 +68,35 @@
 	}
 
 	.emperor .dais {
-		fill: color-mix(in srgb, var(--tang) 18%, #1a0f05);
-		stroke: var(--gold);
-		stroke-width: 1.4;
-	}
-
-	.t-ko {
-		font-size: 12px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: var(--gold);
-	}
-
-	.t-en {
-		font-size: 6px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--gold) 55%, var(--fg-faint));
+		fill: var(--tang);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.beast rect {
-		fill: color-mix(in srgb, var(--fill) 35%, #0a0a12);
+		fill: var(--fill);
 		stroke: var(--stroke);
-		stroke-width: 1.4;
+		stroke-width: var(--stroke-w);
 	}
 
 	.beast.survivor rect {
-		stroke: #2563eb;
-		stroke-width: 2;
-		filter: drop-shadow(0 0 4px color-mix(in srgb, #2563eb 50%, transparent));
-	}
-
-	.d-ko {
-		font-size: 11px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--stroke) 70%, #fffdf8);
-	}
-
-	.d-han {
-		font-size: 8px;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--stroke) 55%, var(--fg-faint));
-	}
-
-	.d-en {
-		font-size: 5.5px;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
+		stroke: #1e3a8a;
+		stroke-width: 3.2;
+		filter: drop-shadow(0 0 4px color-mix(in srgb, #3b82ff 70%, transparent));
 	}
 
 	.note {
 		font-size: 6px;
 		font-style: italic;
 		text-anchor: middle;
-		fill: #2563eb;
+		fill: #7eb6ff;
 	}
 
 	.spine,
 	.link {
 		fill: none;
-		stroke: color-mix(in srgb, var(--tang) 60%, var(--gold));
-		stroke-width: 1.1;
+		stroke: var(--tang);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -151,7 +114,7 @@
 	.foot {
 		font-size: 7px;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--tang) 55%, var(--fg-faint));
+		fill: var(--tang);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -6,16 +6,17 @@
 	 *   - 'chunchu' — True Bone is highlighted and barred from the crown
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { step = 'ranks', active = false }: DiagramProps = $props();
 
 	const LAYERS = [
-		{ ko: '성골', en: 'Sacred Bone', w: 84, c: '#8b5cf6' },
-		{ ko: '진골', en: 'True Bone', w: 132, c: '#6d28d9' },
-		{ ko: '6두품', en: 'Head Rank Six', w: 180, c: '#b91c1c' },
-		{ ko: '5두품', en: 'Head Rank Five', w: 228, c: '#1d4ed8' },
-		{ ko: '4두품 이하', en: 'Four & below', w: 276, c: '#a16207' },
-		{ ko: '평민 · 노비', en: 'commoners & slaves', w: 324, c: '#6b7280' }
+		{ ko: '성골', en: 'Sacred Bone', w: 84, c: '#a78bfa' },
+		{ ko: '진골', en: 'True Bone', w: 132, c: '#8b5cf6' },
+		{ ko: '6두품', en: 'Head Rank Six', w: 180, c: '#ef4444' },
+		{ ko: '5두품', en: 'Head Rank Five', w: 228, c: '#3b82f6' },
+		{ ko: '4두품 이하', en: 'Four & below', w: 276, c: '#eab308' },
+		{ ko: '평민 · 노비', en: 'commoners & slaves', w: 324, c: '#9ca3af' }
 	];
 
 	const TOP = 48;
@@ -45,14 +46,13 @@
 	<!-- the throne above the apex -->
 	<g class="crown" style="--d: 1250">
 		<polygon points="164,38 169,24 176,31 180,20 184,31 191,24 196,38" />
-		<text class="crown-label" x="204" y="34">왕좌 the throne</text>
+		<ChartLabel x="248" y="32" ko="왕좌" en="throne" w={52} size="sm" />
 	</g>
 
 	{#each layers as l (l.i)}
 		<g class="layer" class:focus={step === 'chunchu' && l.i === 1} style="--d: {l.delay}; --c: {l.c}">
 			<rect x={l.x} y={l.y} width={l.w} height={H} rx="3" />
-			<text class="l-ko" x="180" y={l.y + 18}>{l.ko}</text>
-			<text class="l-en" x="180" y={l.y + 31}>{l.en}</text>
+			<ChartLabel x="180" y={l.y + H / 2} ko={l.ko} en={l.en} w={Math.min(l.w - 12, 140)} />
 		</g>
 	{/each}
 
@@ -60,8 +60,14 @@
 	{#if step === 'chunchu'}
 		<g class="barred" style="--d: 1600">
 			<circle class="dot" cx={trueBone.x + trueBone.w + 10} cy={trueBone.y + 20} r="3.4" />
-			<text class="who-ko" x={trueBone.x + trueBone.w + 18} y={trueBone.y + 17}>춘추</text>
-			<text class="who-en" x={trueBone.x + trueBone.w + 18} y={trueBone.y + 29}>Chunchu · True Bone</text>
+			<ChartLabel
+				x={trueBone.x + trueBone.w + 52}
+				y={trueBone.y + 20}
+				ko="춘추"
+				en="True Bone"
+				w={72}
+				size="sm"
+			/>
 			<line
 				class="bar-line"
 				x1={trueBone.x + trueBone.w + 10}
@@ -77,6 +83,7 @@
 
 <style>
 	.dg {
+		--accent: #a78bfa;
 		font-family: var(--serif);
 	}
 
@@ -89,9 +96,9 @@
 	}
 
 	.layer rect {
-		fill: color-mix(in srgb, var(--c) 38%, #fff8e8);
-		stroke: color-mix(in srgb, var(--c) 78%, transparent);
-		stroke-width: 1.1;
+		fill: var(--c);
+		stroke: color-mix(in srgb, var(--c) 28%, #080604);
+		stroke-width: var(--stroke-w);
 		transition: stroke 700ms var(--ease) 1900ms, fill 700ms var(--ease) 1900ms;
 	}
 
@@ -100,28 +107,12 @@
 		transform: translateY(0);
 	}
 
-	.l-ko {
-		font-size: 13px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--c) 55%, #1a1020);
-	}
-
-	.l-en {
-		font-size: 7.5px;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
-	}
-
-	/* the focused layer lights up */
 	.play[data-step='chunchu'] .layer.focus rect {
 		stroke: var(--gold);
-		fill: color-mix(in srgb, var(--c) 52%, #fff8e8);
+		stroke-width: 3.2;
+		fill: var(--c);
 	}
 
-	/* ——— crown ——— */
 	.crown {
 		opacity: 0;
 		transform: translateY(6px);
@@ -133,18 +124,11 @@
 		fill: var(--gold);
 	}
 
-	.crown-label {
-		font-size: 8px;
-		letter-spacing: 0.1em;
-		fill: var(--fg-faint);
-	}
-
 	.play .crown {
 		opacity: 1;
 		transform: translateY(0);
 	}
 
-	/* ——— barred from the throne ——— */
 	.barred {
 		opacity: 0;
 		transition: opacity 700ms var(--ease);
@@ -159,22 +143,9 @@
 		fill: var(--gold);
 	}
 
-	.who-ko {
-		font-size: 11px;
-		font-weight: 700;
-		fill: #3b1d6e;
-	}
-
-	.who-en {
-		font-size: 7px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		fill: var(--fg-faint);
-	}
-
 	.bar-line {
 		stroke: #cf4b4b;
-		stroke-width: 1.4;
+		stroke-width: 2.2;
 		stroke-dasharray: 5 4;
 	}
 

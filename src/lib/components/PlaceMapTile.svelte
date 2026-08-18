@@ -60,18 +60,13 @@
 		background: #14141a;
 		font: inherit;
 		color: inherit;
-		box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 		transition:
 			border-color 280ms var(--ease),
-			box-shadow 280ms var(--ease),
 			transform 280ms var(--ease);
 	}
 
 	.tile:hover {
 		border-color: color-mix(in srgb, var(--c) 55%, #fff);
-		box-shadow:
-			0 0 0 1px color-mix(in srgb, var(--c) 30%, transparent),
-			0 14px 34px rgba(0, 0, 0, 0.45);
 		transform: translateY(-1px);
 	}
 

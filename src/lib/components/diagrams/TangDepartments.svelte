@@ -1,121 +1,112 @@
 <script lang="ts">
 	/**
 	 * Tang central government as Chunchu sees it: emperor at the apex,
-	 * Zhengshitang where chief ministers meet, Three Departments that draft /
-	 * review / execute, Six Ministries under the Shangshu, Censorate aside.
+	 * Three Departments (legislative / examination / executive), Six Ministries
+	 * under the Shangshu.
 	 * Steps:
 	 *   - 'machine' — full seating (default)
-	 *   - 'flow'    — draft → review → execute lights in order
+	 *   - 'flow'    — legislative → examination → executive lights in order
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { step = 'machine', active = false }: DiagramProps = $props();
 
 	const DEPTS = [
-		{ ko: '중서성', en: 'Zhongshu', role: 'drafts', han: '中書省', x: 70 },
-		{ ko: '문하성', en: 'Menxia', role: 'reviews', han: '門下省', x: 180 },
-		{ ko: '상서성', en: 'Shangshu', role: 'executes', han: '尚書省', x: 290 }
+		{ ko: '중서성', en: 'Legislative', han: '中書省', x: 70 },
+		{ ko: '문하성', en: 'Examination', han: '門下省', x: 180 },
+		{ ko: '상서성', en: 'Executive', han: '尚書省', x: 290 }
 	] as const;
 
 	const MINISTRIES = [
-		{ ko: '이', en: 'Personnel', full: '吏' },
-		{ ko: '호', en: 'Revenue', full: '戶' },
-		{ ko: '예', en: 'Rites', full: '禮' },
-		{ ko: '병', en: 'War', full: '兵' },
-		{ ko: '형', en: 'Justice', full: '刑' },
-		{ ko: '공', en: 'Works', full: '工' }
+		{ ko: '이', en: 'Personnel', han: '吏' },
+		{ ko: '호', en: 'Revenue', han: '戶' },
+		{ ko: '예', en: 'Rites', han: '禮' },
+		{ ko: '병', en: 'War', han: '兵' },
+		{ ko: '형', en: 'Justice', han: '刑' },
+		{ ko: '공', en: 'Works', han: '工' }
 	] as const;
 
-	const MIN_W = 42;
+	const MIN_W = 48;
 	const MIN_GAP = 6;
 	const MIN_TOTAL = MINISTRIES.length * MIN_W + (MINISTRIES.length - 1) * MIN_GAP;
 	const MIN_X0 = 180 - MIN_TOTAL / 2;
 </script>
 
 <svg
-	viewBox="0 0 360 360"
+	viewBox="0 0 360 320"
 	class="dg"
 	class:play={active}
 	data-step={step}
 	role="img"
-	aria-label="Tang Three Departments and Six Ministries under the emperor, with the Hall of State Affairs and Censorate"
+	aria-label="Tang Three Departments and Six Ministries: emperor above Zhongshu legislative, Menxia examination, and Shangshu executive with six boards"
 >
 	<!-- emperor -->
 	<g class="node emperor" style="--d: 0">
-		<rect class="dais" x="118" y="10" width="124" height="52" rx="8" />
-		<circle cx="180" cy="32" r="18" />
-		<polygon points="171,24 174.5,16 178,20 180,14 182,20 185.5,16 189,24" />
-		<text class="t-ko" x="180" y="40">황제</text>
-		<text class="t-en" x="180" y="54">Emperor · 皇帝</text>
+		<rect class="dais" x="118" y="8" width="124" height="50" rx="8" />
+		<circle cx="180" cy="30" r="16" />
+		<polygon points="171,22 174.5,14 178,18 180,12 182,18 185.5,14 189,22" />
+		<ChartLabel x="180" y="42" ko="황제" han="皇帝" en="Emperor" w={88} />
 	</g>
 
-	<!-- spine: emperor → zhengshitang -->
-	<path class="spine" style="--d: 200" d="M 180 62 V 78" pathLength="100" />
-
-	<!-- Zhengshitang — joint council of chief ministers -->
-	<g class="node hall" style="--d: 280">
-		<rect x="96" y="78" width="168" height="40" rx="6" />
-		<text class="h-ko" x="180" y="94">정사당</text>
-		<text class="h-en" x="180" y="108">政事堂 · Hall of State Affairs</text>
-	</g>
-
-	<path class="spine" style="--d: 480" d="M 180 118 V 132" pathLength="100" />
+	<!-- fork: emperor directly to the three departments -->
+	<path class="spine" style="--d: 180" d="M 180 58 V 70" pathLength="100" />
+	<path class="spine" style="--d: 260" d="M 70 70 H 290" pathLength="100" />
+	<path class="spine" style="--d: 340" d="M 70 70 V 82" pathLength="100" />
+	<path class="spine" style="--d: 340" d="M 180 70 V 82" pathLength="100" />
+	<path class="spine" style="--d: 340" d="M 290 70 V 82" pathLength="100" />
 
 	<!-- Three Departments -->
 	{#each DEPTS as d, i (d.en)}
-		<g class="node dept" class:flow-a={step === 'flow' && i === 0} class:flow-b={step === 'flow' && i === 1} class:flow-c={step === 'flow' && i === 2} style="--d: {600 + i * 160}">
-			<rect x={d.x - 48} y="132" width="96" height="54" rx="6" />
-			<text class="d-ko" x={d.x} y="150">{d.ko}</text>
-			<text class="d-han" x={d.x} y="162">{d.han}</text>
-			<text class="d-en" x={d.x} y="176">{d.en} · {d.role}</text>
+		<g
+			class="node dept"
+			class:flow-a={step === 'flow' && i === 0}
+			class:flow-b={step === 'flow' && i === 1}
+			class:flow-c={step === 'flow' && i === 2}
+			style="--d: {480 + i * 140}"
+		>
+			<rect x={d.x - 50} y="82" width="100" height="62" rx="6" />
+			<ChartLabel x={d.x} y="113" ko={d.ko} han={d.han} en={d.en} w={94} />
 		</g>
 	{/each}
 
 	<!-- flow arrows between departments -->
-	<g class="flow-arrows" style="--d: 1100">
-		<path class="arrow a1" d="M 118 159 H 132" pathLength="100" />
-		<path class="arrow a2" d="M 228 159 H 242" pathLength="100" />
+	<g class="flow-arrows" style="--d: 980">
+		<path class="arrow a1" d="M 120 113 H 130" pathLength="100" />
+		<path class="arrow a2" d="M 230 113 H 240" pathLength="100" />
 	</g>
 
 	<!-- Shangshu down to six ministries -->
-	<path class="spine to-bu" style="--d: 1280" d="M 290 186 V 224" pathLength="100" />
+	<path class="spine to-bu" style="--d: 1120" d="M 290 144 V 176" pathLength="100" />
 	<path
 		class="spine to-bu-bar"
-		style="--d: 1360"
-		d="M {MIN_X0 + MIN_W / 2} 224 H {MIN_X0 + MIN_TOTAL - MIN_W / 2}"
+		style="--d: 1200"
+		d="M {MIN_X0 + MIN_W / 2} 176 H {MIN_X0 + MIN_TOTAL - MIN_W / 2}"
 		pathLength="100"
 	/>
 
-	<g class="bu-label" style="--d: 1400">
-		<text class="bu-ko" x="180" y="200">상서육부</text>
-		<text class="bu-en" x="180" y="210">尚書六部 · Six Ministries</text>
+	<g class="bu-label" style="--d: 1240">
+		<text class="bu-ko" x="180" y="160">상서육부</text>
+		<text class="bu-en" x="180" y="170">尚書六部 · Six Ministries</text>
 	</g>
 
 	{#each MINISTRIES as m, i (m.en)}
 		{@const x = MIN_X0 + i * (MIN_W + MIN_GAP) + MIN_W / 2}
-		<g class="node ministry" style="--d: {1500 + i * 90}">
-			<rect x={x - MIN_W / 2} y="234" width={MIN_W} height="44" rx="4" />
-			<text class="m-ko" x={x} y="252">{m.ko}</text>
-			<text class="m-en" x={x} y="266">{m.en}</text>
+		<g class="node ministry" style="--d: {1320 + i * 80}">
+			<rect x={x - MIN_W / 2} y="184" width={MIN_W} height="52" rx="4" />
+			<ChartLabel x={x} y="210" ko={m.ko} han={m.han} en={m.en} w={MIN_W - 4} size="sm" />
 		</g>
 	{/each}
 
-	<!-- Censorate — watches from the side -->
-	<g class="node censor" style="--d: 2100">
-		<rect x="12" y="300" width="72" height="42" rx="6" />
-		<text class="c-ko" x="48" y="316">어사대</text>
-		<text class="c-en" x="48" y="328">御史臺 · Censorate</text>
-	</g>
-
-	<text class="foot" style="--d: 2300" x="210" y="318">draft · review · execute — one machine</text>
-	<text class="foot-ko" style="--d: 2400" x="210" y="332">기안 · 심사 · 집행 — 하나의 기계</text>
+	<text class="foot" style="--d: 1900" x="180" y="258">legislative · examination · executive</text>
+	<text class="foot-ko" style="--d: 2000" x="180" y="274">기안 · 심사 · 집행 — 하나의 기계</text>
 </svg>
 
 <style>
 	.dg {
-		--tang: #c97a2e;
-		--tang-hot: #e8a04a;
-		--parchment: #fff8e8;
+		--accent: #f0a03c;
+		--tang: #f0a03c;
+		--tang-hot: #ffb84a;
 		font-family: var(--serif);
 	}
 
@@ -133,135 +124,71 @@
 	}
 
 	.emperor .dais {
-		fill: color-mix(in srgb, var(--tang) 20%, var(--parchment));
-		stroke: color-mix(in srgb, var(--tang) 55%, transparent);
-		stroke-width: 1;
+		fill: var(--tang);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.emperor circle {
-		fill: color-mix(in srgb, var(--tang) 30%, var(--parchment));
-		stroke: color-mix(in srgb, var(--tang) 85%, transparent);
-		stroke-width: 1.4;
+		fill: var(--tang);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.emperor polygon {
 		fill: var(--tang-hot);
 	}
 
-	.t-ko,
-	.h-ko,
-	.d-ko,
-	.m-ko,
-	.c-ko,
 	.bu-ko {
 		font-weight: 700;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--tang) 40%, #3a2208);
+		fill: var(--ink);
+		font-size: 8px;
 	}
 
-	.t-ko {
-		font-size: 11px;
-	}
-
-	.t-en,
-	.h-en,
-	.d-en,
-	.d-han,
-	.m-en,
-	.c-en,
 	.bu-en,
 	.foot,
 	.foot-ko {
 		text-anchor: middle;
-		fill: var(--fg-faint);
+		fill: var(--ink-muted);
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
 
-	.t-en {
-		font-size: 6px;
-	}
-
-	.hall rect {
-		fill: color-mix(in srgb, var(--tang) 22%, var(--parchment));
-		stroke: color-mix(in srgb, var(--tang) 65%, transparent);
-		stroke-width: 1.1;
-	}
-
-	.h-ko {
-		font-size: 12px;
-	}
-
-	.h-en {
-		font-size: 6px;
-	}
-
 	.dept rect {
-		fill: color-mix(in srgb, var(--tang) 26%, var(--parchment));
-		stroke: color-mix(in srgb, var(--tang) 70%, transparent);
-		stroke-width: 1.1;
+		fill: var(--tang);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.play[data-step='flow'] .dept.flow-a rect {
 		stroke: var(--tang-hot);
-		stroke-width: 1.6;
-		transition: stroke 500ms var(--ease) 1600ms, stroke-width 500ms var(--ease) 1600ms;
+		stroke-width: 3.2;
+		transition:
+			stroke 500ms var(--ease) 1600ms,
+			stroke-width 500ms var(--ease) 1600ms;
 	}
 
 	.play[data-step='flow'] .dept.flow-b rect {
 		stroke: var(--tang-hot);
-		stroke-width: 1.6;
-		transition: stroke 500ms var(--ease) 2100ms, stroke-width 500ms var(--ease) 2100ms;
+		stroke-width: 3.2;
+		transition:
+			stroke 500ms var(--ease) 2100ms,
+			stroke-width 500ms var(--ease) 2100ms;
 	}
 
 	.play[data-step='flow'] .dept.flow-c rect {
 		stroke: var(--tang-hot);
-		stroke-width: 1.6;
-		transition: stroke 500ms var(--ease) 2600ms, stroke-width 500ms var(--ease) 2600ms;
-	}
-
-	.d-ko {
-		font-size: 11px;
-	}
-
-	.d-han {
-		font-size: 7px;
-		letter-spacing: 0.04em;
-		text-transform: none;
-	}
-
-	.d-en {
-		font-size: 5.5px;
+		stroke-width: 3.2;
+		transition:
+			stroke 500ms var(--ease) 2600ms,
+			stroke-width 500ms var(--ease) 2600ms;
 	}
 
 	.ministry rect {
-		fill: color-mix(in srgb, var(--tang) 18%, var(--parchment));
-		stroke: color-mix(in srgb, var(--tang) 58%, transparent);
-		stroke-width: 1;
-	}
-
-	.m-ko {
-		font-size: 12px;
-	}
-
-	.m-en {
-		font-size: 5px;
-	}
-
-	.censor rect {
-		fill: color-mix(in srgb, var(--tang) 14%, var(--parchment));
-		stroke: color-mix(in srgb, var(--tang) 45%, transparent);
-		stroke-width: 1;
-		stroke-dasharray: 3 3;
-	}
-
-	.c-ko {
-		font-size: 10px;
-	}
-
-	.c-en {
-		font-size: 6px;
-		text-transform: none;
+		fill: var(--tang);
+		stroke: var(--node-stroke);
+		stroke-width: 2.2;
 	}
 
 	.bu-label {
@@ -273,10 +200,6 @@
 		opacity: 1;
 	}
 
-	.bu-ko {
-		font-size: 8px;
-	}
-
 	.bu-en {
 		font-size: 5.5px;
 	}
@@ -284,8 +207,8 @@
 	.spine,
 	.arrow {
 		fill: none;
-		stroke: color-mix(in srgb, var(--tang) 55%, transparent);
-		stroke-width: 1.1;
+		stroke: var(--tang);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -311,7 +234,7 @@
 
 	.arrow {
 		stroke: var(--tang-hot);
-		stroke-width: 1.4;
+		stroke-width: 2.4;
 	}
 
 	.foot,
@@ -325,7 +248,7 @@
 
 	.foot-ko {
 		font-size: 7px;
-		fill: color-mix(in srgb, var(--tang) 45%, var(--fg-faint));
+		fill: var(--tang);
 	}
 
 	.play .foot,

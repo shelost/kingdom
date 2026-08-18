@@ -7,6 +7,7 @@
 	 *   - 'rivalry' — Satek vs Yunbi across the aisle; the other six dim
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { step = 'court', active = false }: DiagramProps = $props();
 
@@ -76,8 +77,7 @@
 		<rect class="dais" x="118" y="18" width="124" height="68" rx="8" />
 		<circle cx="180" cy="48" r="30" />
 		<polygon points="169.5,36 173,26.5 177.5,31 180,24 182.5,31 187,26.5 190.5,36" />
-		<text class="t-ko" x="180" y="58">부여</text>
-		<text class="t-en" x="180" y="70">Buyeo · the throne</text>
+		<ChartLabel x="180" y="58" ko="부여" en="throne" w={70} />
 	</g>
 
 	<!-- the eight houses -->
@@ -90,8 +90,7 @@
 			style="--d: {450 + n.i * 110}"
 		>
 			<circle cx={n.x} cy={n.y} r={n.satek ? 26 : 22} />
-			<text class="c-ko" x={n.x} y={n.y + 1.5}>{n.ko}</text>
-			<text class="c-en" x={n.x} y={n.y + 13}>{n.en}</text>
+			<ChartLabel x={n.x} y={n.y + 2} ko={n.ko} en={n.en} w={n.satek ? 50 : 42} size="sm" />
 		</g>
 	{/each}
 
@@ -117,8 +116,9 @@
 
 <style>
 	.dg {
-		--baekje: #ffcb51;
-		--nay: #cf4b4b;
+		--accent: #ffd24a;
+		--baekje: #ffd24a;
+		--nay: #ff4d4d;
 		font-family: var(--serif);
 	}
 
@@ -136,21 +136,21 @@
 	}
 
 	.floor {
-		fill: color-mix(in srgb, var(--baekje) 16%, #fff8e8);
-		stroke: color-mix(in srgb, var(--baekje) 45%, transparent);
-		stroke-width: 0.9;
+		fill: var(--band-fill);
+		stroke: var(--baekje);
+		stroke-width: 2;
 	}
 
 	.aisle {
-		stroke: color-mix(in srgb, var(--baekje) 50%, transparent);
-		stroke-width: 1.15;
+		stroke: var(--baekje);
+		stroke-width: 2.2;
 		stroke-dasharray: 3 5;
 	}
 
 	.bench rect {
-		fill: color-mix(in srgb, var(--baekje) 20%, #fff8e8);
-		stroke: color-mix(in srgb, var(--baekje) 50%, transparent);
-		stroke-width: 1;
+		fill: var(--band-fill);
+		stroke: var(--baekje);
+		stroke-width: 2.2;
 	}
 
 	/* ——— throne ——— */
@@ -171,37 +171,21 @@
 	}
 
 	.throne .dais {
-		fill: color-mix(in srgb, var(--baekje) 24%, #fff8e8);
-		stroke: color-mix(in srgb, var(--baekje) 55%, transparent);
-		stroke-width: 1;
+		fill: var(--baekje);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.throne circle {
-		fill: color-mix(in srgb, var(--baekje) 32%, #fff8e8);
-		stroke: color-mix(in srgb, var(--baekje) 85%, transparent);
-		stroke-width: 1.35;
+		fill: var(--baekje);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.throne polygon {
 		fill: var(--baekje);
 	}
 
-	.t-ko {
-		font-size: 12px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--baekje) 40%, #5a3d00);
-	}
-
-	.t-en {
-		font-size: 6px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
-	}
-
-	/* ——— clans ——— */
 	.clan {
 		opacity: 0;
 		transform: scale(0.3);
@@ -225,44 +209,28 @@
 	}
 
 	.clan circle {
-		fill: color-mix(in srgb, var(--baekje) 28%, #fff8e8);
-		stroke: color-mix(in srgb, var(--baekje) 70%, transparent);
-		stroke-width: 1.1;
+		fill: var(--baekje);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.clan.satek circle {
-		fill: color-mix(in srgb, var(--baekje) 44%, #fff8e8);
-		stroke: var(--baekje);
-		stroke-width: 1.6;
+		fill: var(--baekje);
+		stroke: var(--node-stroke);
+		stroke-width: 3.2;
 	}
 
 	.play[data-step='rivalry'] .clan.yunbi circle {
-		fill: color-mix(in srgb, var(--baekje) 36%, #fff8e8);
-		stroke: color-mix(in srgb, var(--nay) 70%, var(--baekje));
-		stroke-width: 1.6;
+		fill: var(--nay);
+		stroke: color-mix(in srgb, var(--nay) 28%, #080604);
+		stroke-width: 3.2;
 	}
 
-	.c-ko {
-		font-size: 11.5px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--baekje) 35%, #5a3d00);
-	}
-
-	.c-en {
-		font-size: 6.5px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
-	}
-
-	/* ——— annotations ——— */
 	.satek-note {
 		font-size: 7px;
 		letter-spacing: 0.08em;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--baekje) 60%, var(--fg-faint));
+		fill: var(--baekje);
 		opacity: 0;
 		transition: opacity 700ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
@@ -285,7 +253,7 @@
 	.feud line {
 		fill: none;
 		stroke: var(--nay);
-		stroke-width: 1.3;
+		stroke-width: 2.4;
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		transition: stroke-dashoffset 1100ms var(--ease);

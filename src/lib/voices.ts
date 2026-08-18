@@ -77,6 +77,7 @@ const TONE: Record<string, string> = {
 	sara: 'exact gardener courtesy — unhurried, stem-precise',
 	taizong: 'imperial patience with a threat under it',
 	wuzetian: 'silk over steel',
+	ongunhae: 'quiet, already decided; formal to his lord',
 	herald: 'proclaiming to a full court, formal and carrying'
 };
 

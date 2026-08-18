@@ -4,6 +4,7 @@
 	 * four 낭도 stacked vertically beneath each hwarang.
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { active = false }: DiagramProps = $props();
 
@@ -24,8 +25,7 @@
 >
 	<g class="node marshal" style="--d: 0">
 		<circle cx={MARSHAL.x} cy={MARSHAL.y} r="30" />
-		<text class="n-ko" x={MARSHAL.x} y={MARSHAL.y - 2}>{MARSHAL.ko}</text>
-		<text class="n-en" x={MARSHAL.x} y={MARSHAL.y + 12}>{MARSHAL.en}</text>
+		<ChartLabel x={MARSHAL.x} y={MARSHAL.y + 2} ko={MARSHAL.ko} en={MARSHAL.en} w={56} size="lg" />
 	</g>
 
 	<path class="spine" style="--d: 180" d="M {ROW_MID} 66 V 88" pathLength="100" />
@@ -39,8 +39,7 @@
 				pathLength="100"
 			/>
 			<rect x={hx - 26} y={HW_Y} width="52" height="38" rx="5" />
-			<text class="n-ko" x={hx} y={HW_Y + 16}>화랑</text>
-			<text class="n-en" x={hx} y={HW_Y + 30}>Hwarang</text>
+			<ChartLabel x={hx} y={HW_Y + 19} ko="화랑" en="Hwarang" w={48} />
 		</g>
 		<path
 			class="link disc-spine"
@@ -51,7 +50,7 @@
 		{#each DISC_YS as dy, d (d)}
 			<g class="node disc" style="--d: {520 + i * 90 + d * 40}">
 				<rect x={hx - 14} y={dy} width="28" height="18" rx="3" />
-				<text class="d-ko" x={hx} y={dy + 12}>낭도</text>
+				<ChartLabel x={hx} y={dy + 9} ko="낭도" w={26} size="sm" />
 			</g>
 		{/each}
 	{/each}
@@ -61,9 +60,9 @@
 
 <style>
 	.dg {
-		--silla: #3e79e4;
-		--gold: #d8b26a;
-		--parchment: #fff8e8;
+		--accent: #4d8eff;
+		--silla: #4d8eff;
+		--gold: #e8c36a;
 		font-family: var(--serif);
 	}
 
@@ -83,51 +82,28 @@
 	}
 
 	.marshal circle {
-		fill: color-mix(in srgb, var(--silla) 36%, var(--parchment));
-		stroke: var(--gold);
-		stroke-width: 1.6;
+		fill: var(--gold);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.hwarang rect {
-		fill: color-mix(in srgb, var(--silla) 28%, var(--parchment));
-		stroke: color-mix(in srgb, var(--silla) 75%, var(--gold));
-		stroke-width: 1.2;
+		fill: var(--silla);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.disc rect {
-		fill: color-mix(in srgb, var(--silla) 18%, var(--parchment));
-		stroke: color-mix(in srgb, var(--silla) 60%, transparent);
-		stroke-width: 0.9;
-	}
-
-	.n-ko {
-		font-size: 11px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--silla) 40%, #1a2a4a);
-	}
-
-	.n-en,
-	.d-ko {
-		font-size: 6px;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--silla) 45%, var(--fg-faint));
-	}
-
-	.d-ko {
-		font-size: 7px;
-		text-transform: none;
-		letter-spacing: 0.04em;
-		fill: color-mix(in srgb, var(--silla) 50%, #1a2a4a);
+		fill: var(--silla);
+		stroke: var(--node-stroke);
+		stroke-width: 2.2;
 	}
 
 	.spine,
 	.link {
 		fill: none;
-		stroke: color-mix(in srgb, var(--silla) 55%, var(--gold));
-		stroke-width: 1.1;
+		stroke: var(--silla);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -146,7 +122,7 @@
 		font-size: 7px;
 		letter-spacing: 0.06em;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--gold) 50%, var(--fg-faint));
+		fill: var(--gold);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

@@ -7,7 +7,8 @@
 		{ href: '/', label: 'Chronicle' },
 		{ href: '/wiki', label: 'Wiki' },
 		{ href: '/characters', label: 'Characters' },
-		{ href: '/map', label: 'Map' }
+		{ href: '/map', label: 'Map' },
+		{ href: '/music', label: 'Music' }
 	] as const;
 
 	let path = $derived(page.url.pathname);

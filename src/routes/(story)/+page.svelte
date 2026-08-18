@@ -219,51 +219,52 @@
 								data-place={ENTRY_PLACE[entry.title] ?? undefined}
 								style:--tone={entry.flashTone ?? '#8a8a94'}
 							>
-								<div class="meta">
-									<div class="meta-sticky" use:reveal={{ y: 0 }}>
-										<div class="side-chrome">
-											<p class="chapter-label">
-												<span class="num">{ci + 1}</span>
-												<span class="dot" aria-hidden="true">·</span>
-												<span class="name">{chapter.title}</span>
-											</p>
-											<p class="story-index">
-												Story {i + 1} out of {chapter.entries.length}
-											</p>
-										</div>
-										<div class="meta-row">
-											<div class="year" class:long={entry.year.length > 4}>
-												{entry.year}
-												{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
+								<div class="content-col">
+									<header class="entry-head">
+										<div class="entry-head-sticky" use:reveal={{ y: 0 }}>
+											<div class="head-top">
+												<p class="chapter-label">
+													<span class="num">{ci + 1}</span>
+													<span class="dot" aria-hidden="true">·</span>
+													<span class="name">{chapter.title}</span>
+												</p>
+												<p class="story-index">
+													Story {i + 1} out of {chapter.entries.length}
+												</p>
 											</div>
-											<div class="episode">
-												<h2 style:color={entry.accent}>{entry.title}</h2>
-												{#if entry.subtitle}<p class="episode-ko">{entry.subtitle}</p>{/if}
-												{#if entry.badges}
-													<div class="badges">
-														{#each entry.badges as badge, j (j)}
-															{@const flag = flagOf(badge)}
-															{#if flag}
-																<span
-																	class="badge flag"
-																	use:reveal={60 + j * 55}
-																	title={flag}
-																>
-																	<img src={flagSrc(flag)} alt="" />
-																</span>
-															{:else}
-																<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
-															{/if}
-														{/each}
+											<div class="head-main">
+												<div class="episode">
+													<div class="year" class:long={entry.year.length > 4}>
+														{entry.year}
+														{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
 													</div>
-												{/if}
+													<h2 style:color={entry.accent}>{entry.title}</h2>
+													{#if entry.subtitle}<p class="episode-ko">{entry.subtitle}</p>{/if}
+													{#if entry.badges}
+														<div class="badges">
+															{#each entry.badges as badge, j (j)}
+																{@const flag = flagOf(badge)}
+																{#if flag}
+																	<span
+																		class="badge flag"
+																		use:reveal={60 + j * 55}
+																		title={flag}
+																	>
+																		<img src={flagSrc(flag)} alt="" />
+																	</span>
+																{:else}
+																	<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
+																{/if}
+															{/each}
+														</div>
+													{/if}
+												</div>
 											</div>
 										</div>
-									</div>
-								</div>
+									</header>
 
-								<!-- Side: sticky reel swaps from scrollY. Inline: art after each beat. -->
-								<div class="beats">
+									<!-- Side: sticky reel swaps from scrollY. Inline: art after each beat. -->
+									<div class="beats">
 									{#each beats as beat, bi (bi)}
 										<div
 											class="text"
@@ -281,6 +282,7 @@
 											</div>
 										{/if}
 									{/each}
+								</div>
 								</div>
 
 								{#if (sideImages && images.length) || ENTRY_PLACE[entry.title]}
@@ -516,7 +518,7 @@
 		opacity: 0.75;
 	}
 
-	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .meta) ————— */
+	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .entry-head) ————— */
 	.chapter-head {
 		padding: 1.35rem 3rem 1.1rem;
 	}
@@ -568,30 +570,28 @@
 		color: var(--fg-faint);
 		letter-spacing: 0.02em;
 	}
-	/* ————— Entry: (sticky) year + episode | text beats | sticky images ————— */
+	/* ————— Entry: sticky header + text beats | sticky images ————— */
 	.entry {
 		position: relative;
 		display: grid;
-		grid-template-columns: 16rem minmax(0, 1fr) minmax(260px, 32%);
-		/* `auto` (not min-content): side columns must stretch to the full entry
-		   height so `position: sticky` on .images-sticky / .meta-sticky has a
-		   tall containing block to travel through while the text scrolls. */
+		grid-template-columns: minmax(0, 1fr) minmax(240px, 26%);
 		grid-auto-rows: auto;
-		gap: 0 3.75rem;
-		padding: 0 0 7rem 3rem;
+		gap: 0 3.25rem;
+		padding: 0 3rem 7rem;
 		scroll-margin-top: 1.5rem;
 		overflow: visible;
 	}
 
-	/* Immersion: give the phone reel a wider sticky column so it reads as stage. */
+	/* Immersion: a lead margin column carries the sticky year + chapter chrome,
+	   and the phone reel keeps a wide sticky stage column (0.8× its script width). */
 	:global(html.is-immersion) .entry {
-		grid-template-columns: 15rem minmax(0, 1fr) minmax(300px, 40%);
+		grid-template-columns: 15rem minmax(0, 1fr) minmax(240px, 32%);
 		gap: 0 2.75rem;
 	}
 
 	/* Inline: drop the art column unless a place banner still needs the stage. */
 	.script.images-inline .entry:not(:has(.images-col)) {
-		grid-template-columns: 16rem minmax(0, 1fr);
+		grid-template-columns: minmax(0, 1fr);
 	}
 
 	:global(html.is-immersion) .script.images-inline .entry:not(:has(.images-col)) {
@@ -599,7 +599,7 @@
 	}
 
 	.script.images-inline .entry:has(.images-col.place-only) {
-		grid-template-columns: 16rem minmax(0, 1fr) minmax(220px, 26%);
+		grid-template-columns: minmax(0, 1fr) minmax(220px, 26%);
 	}
 
 	:global(html.is-immersion) .script.images-inline .entry:has(.images-col.place-only) {
@@ -620,7 +620,7 @@
 		scroll-margin-top: 4.5rem;
 	}
 
-	:global(html.is-cinema:not(.is-cinema-peek)) .meta,
+	:global(html.is-cinema:not(.is-cinema-peek)) .entry-head,
 	:global(html.is-cinema:not(.is-cinema-peek)) .images-col,
 	:global(html.is-cinema:not(.is-cinema-peek)) .inline-art,
 	:global(html.is-cinema:not(.is-cinema-peek)) .chapter-head {
@@ -628,8 +628,7 @@
 	}
 
 	:global(html.is-cinema) .beats {
-		grid-column: 1;
-		width: min(100%, 40rem);
+		width: min(100%, 58rem);
 		margin: 0 auto;
 	}
 
@@ -639,28 +638,49 @@
 		padding-top: 7rem;
 	}
 
-	/* Peeking: the ordinary three-column entry comes back under the stage. */
+	/* Peeking: the ordinary two-column entry comes back under the stage. */
 	:global(html.is-cinema.is-cinema-peek) .entry {
-		grid-template-columns: 16rem minmax(0, 1fr) minmax(260px, 32%);
-		gap: 0 3.75rem;
-		padding: 0 0 7rem 3rem;
+		grid-template-columns: minmax(0, 1fr) minmax(240px, 26%);
+		gap: 0 3.25rem;
+		padding: 0 3rem 7rem;
 	}
 
 	:global(html.is-cinema.is-cinema-peek) .beats {
-		grid-column: 2;
 		width: auto;
 		margin: 0;
 	}
 
-	/* marker + art columns span the full entry so sticky inners can travel with it */
-	.meta {
+	/* Sticky header + text column; art column spans the full entry height. */
+	.content-col {
+		grid-column: 1;
+		min-width: 0;
+	}
+
+	.entry-head {
+		min-width: 0;
+	}
+
+	/* Immersion: the head takes the lead margin column with a full-height
+	   runway, so the sticky year + chapter chrome ride alongside the script. */
+	:global(html.is-immersion) .content-col {
+		display: contents;
+	}
+
+	:global(html.is-immersion) .entry-head {
 		grid-column: 1;
 		grid-row: 1 / -1;
 		height: 100%;
 	}
 
-	.beats {
+	:global(html.is-immersion) .beats {
 		grid-column: 2;
+	}
+
+	:global(html.is-immersion) .images-col {
+		grid-column: 3;
+	}
+
+	.beats {
 		display: flex;
 		flex-direction: column;
 		gap: 0;
@@ -668,7 +688,7 @@
 	}
 
 	.images-col {
-		grid-column: 3;
+		grid-column: 2;
 		grid-row: 1 / -1;
 		align-self: stretch;
 		height: 100%;
@@ -781,13 +801,13 @@
 		);
 	}
 
-	/* Side chrome only: chapter label + story counter + year/title stick here */
-	.meta-sticky {
+	/* Year / title chrome sticks to the top of the script column. */
+	.entry-head-sticky {
 		position: sticky;
 		top: 1rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.85rem;
+		gap: 0.65rem;
 		padding: 1.5rem 0 1rem;
 		background: linear-gradient(
 			to bottom,
@@ -797,11 +817,27 @@
 		);
 	}
 
-	.side-chrome {
+	.head-top {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	/* Immersion: the chrome stacks in the narrow margin column. */
+	:global(html.is-immersion) .head-top {
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 0.28rem;
+	}
+
+	.head-main {
 		display: flex;
 		flex-direction: column;
-		gap: 0.28rem;
-		max-width: 14rem;
+		align-items: flex-start;
+		gap: 0;
 	}
 
 	.chapter-label {
@@ -835,28 +871,27 @@
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
-	}
-
-	.meta-row {
-		display: flex;
-		gap: 1.4rem;
+		white-space: nowrap;
 	}
 
 	.year {
 		font-family: var(--serif);
-		font-weight: 500;
-		font-size: 2.3rem;
-		line-height: 0.9;
-		letter-spacing: var(--tracking-display);
+		font-weight: 400;
+		font-size: 0.82rem;
+		line-height: 1.3;
+		letter-spacing: 0.04em;
 		display: flex;
-		flex-direction: column;
-		color: var(--fg-strong);
+		flex-direction: row;
+		align-items: baseline;
+		gap: 0.4rem;
+		margin: 0 0 0.28rem;
+		color: var(--fg-dim);
 	}
 
-	/* "March", "October" — month-only markers get a smaller face */
+	/* "March", "October" — month-only markers stay the same subtitle size */
 	.year.long {
-		font-size: 1.35rem;
-		line-height: 1;
+		font-size: 0.82rem;
+		line-height: 1.3;
 	}
 
 	/* ————— Flashback entries —————
@@ -880,21 +915,21 @@
 	/* Tint overlay only — do not promote children into relative containing
 	   blocks that can interfere with sticky side columns. */
 	.entry.flash .beats,
-	.entry.flash .meta-sticky,
+	.entry.flash .entry-head-sticky,
 	.entry.flash .images-sticky {
 		position: relative;
 	}
 
-	.entry.flash .meta-sticky {
+	.entry.flash .entry-head-sticky {
 		background: transparent;
 	}
 
 	.year-sub {
 		font-family: var(--sans);
-		font-size: 0.82rem;
+		font-size: 0.72rem;
 		font-weight: 400;
 		letter-spacing: var(--tracking-micro);
-		margin-top: 0.45rem;
+		margin-top: 0;
 		color: var(--fg-faint);
 	}
 
@@ -905,7 +940,7 @@
 		font-size: 1.06rem;
 		line-height: 1.08;
 		letter-spacing: var(--tracking-display);
-		max-width: 9em;
+		max-width: none;
 		color: var(--fg-strong);
 	}
 
@@ -968,17 +1003,17 @@
 	}
 
 	.text.first {
-		padding-top: 2.1rem;
+		padding-top: 0.5rem;
 	}
 
 	.inline-art {
 		width: 100%;
-		max-width: min(100%, 34rem);
+		max-width: min(100%, 54rem);
 		margin: 1.35rem 0 0.35rem;
 	}
 
 	.script.images-inline .inline-art :global(.stack.immersion) {
-		max-width: min(100%, 28rem);
+		max-width: min(100%, 36rem);
 	}
 
 	/*
@@ -1124,7 +1159,7 @@
 				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
-		/* Chapter opener scrolls away; sticky chrome lives in the side meta on desktop.
+		/* Chapter opener scrolls away; sticky chrome lives in the entry head on desktop.
 		   Extra top padding clears the fixed HUD when the opener is in view. */
 		.chapter-head {
 			padding: max(3.1rem, calc(env(safe-area-inset-top, 0px) + 2.6rem))
@@ -1151,15 +1186,15 @@
 			padding: 0 0 3.5rem;
 		}
 
+		.entry.flash {
+			padding-top: 0;
+		}
+
 		/* Immersion glides a tapped line into the reading band; entry snap
 		   points would drag that scroll back to the top of the entry.
 		   Extra foot room keeps the last lines above the speaker plate. */
 		:global(html.is-immersion) .entry {
 			padding-bottom: 1.25rem;
-		}
-
-		.entry.flash {
-			padding-top: 0;
 		}
 
 		/* Side: art leads the card, then title, then text — not sticky on narrow.
@@ -1198,31 +1233,39 @@
 			--stage-w: min(100%, 18rem);
 		}
 
-		.meta {
+		.entry-head {
 			order: 2;
-			height: auto;
 			padding: 1.15rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
 				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
-		.meta-sticky {
+		.content-col {
+			order: 2;
+			display: contents;
+		}
+
+		.entry-head-sticky {
 			position: static;
 			padding: 0;
 			gap: 0.65rem;
 			background: none;
 		}
 
-		.meta-row {
-			gap: 0.85rem;
+		/* Narrow: the head is a full-width card row again, not a margin column. */
+		:global(html.is-immersion) .head-top {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: baseline;
+			gap: 1rem;
+		}
+
+		.head-main {
+			gap: 0;
 			min-width: 0;
 		}
 
-		.side-chrome {
-			max-width: none;
-		}
-
 		.year {
-			font-size: 1.75rem;
+			font-size: 0.78rem;
 			flex-shrink: 0;
 		}
 
@@ -1274,7 +1317,7 @@
 		}
 
 		.year {
-			font-size: 1.55rem;
+			font-size: 0.76rem;
 		}
 
 		.badges {

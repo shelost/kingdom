@@ -65,10 +65,8 @@
 		font: inherit;
 		color: inherit;
 		flex-shrink: 0;
-		box-shadow: -12px 24px 48px rgba(0, 0, 0, 0.9);
 		transition:
 			border-color 280ms var(--ease),
-			box-shadow 280ms var(--ease),
 			transform 280ms var(--ease);
 	}
 

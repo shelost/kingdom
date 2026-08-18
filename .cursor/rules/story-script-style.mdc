@@ -1,0 +1,81 @@
+---
+description: Voice and period rules for chronicle narration and dialogue in story.json
+globs: src/lib/data/story.json,src/lib/people.ts
+alwaysApply: false
+---
+
+# Chronicle script voice
+
+Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/people.ts` (`firstLine`, `lastLine`, `quote`, `nature`). Keep the chronicle's ear. Do not flatten wit. Do not lecture the reader. The fix is **redistribution, not deletion**: intelligence stays in the narrator and in loaded objects; thesis statements come out of mouths.
+
+**Blocks** (see `src/lib/story.ts`): `p` (`html` EN + `ko`), `dialogue` (`lines[]` Korean + `en[]` English, index-for-index; `person` id), `quote` (verbatim record), `day`, `flashback`, `diagram`/`table`. Cinema plays array order; only `kind: "flashback"` reads as memory.
+
+Every new `p` / `dialogue` is bilingual. Korean matches the speaker (존댓말 vs 반말), not a literal calque. If you rewrite English, rewrite Korean in the same pass. If the old English was an image `at` fragment, update that slot or the stack will detach.
+
+## Period
+
+- Mortal dialogue must **not** cite AD/CE years ("in 642"). Use reigns, seasons, harvests, "the year she was crowned", "fifteen winters past", event names ("since Daeya fell").
+- Exception: goddesses (`narim`, `golhwa`, `hyulle`) and other divine/mythic speakers MAY know AD years.
+- Narration and `quote` blocks MAY keep AD years (chronicler's voice).
+- Historical `quote` blocks stay verbatim (hanja / ko / en / source). Never rewrite quotes.
+- Do not introduce AD years in mortal mouths when adding new scenes.
+
+## Narration (J.K. Rowling-ish chronicle)
+
+Historical present is the default; occasional past for memory is OK.
+
+- Vary sentence length: long sentences with subordinate clauses + occasional very short punches. Wit lives *inside* the sentence, not only as an end-of-block verdict.
+- Ban AI-isms: "It is not X. It is Y." / "not because X but because Y" / "That is not cruelty. That is administration." — except 1–2 licensed character voices (Euija, Kangrim).
+- Em-dash budget: at most one per narration block when possible.
+- Don't end every paragraph on a drop-beat aphorism.
+- Keep dry-chronicler humor (ledger jokes, "treason with better stationery"). Don't flatten it.
+
+## Trust the reader
+
+1. **Don't let characters speak their own subtext.** Especially Kangrim "exit interviews" ("were you X, or Y?" + thesis answer). Keep Kangrim — the psychopomp is an asset — but break the formula: refuse the question, answer with a concrete object, skip the question. Deathbed emotion via objects already loaded (headband, two teacups, kite, 108–108), not speeches.
+2. **Don't decode the beat you just watched.** After a climax, no paragraph explaining what it meant. Cut or replace with a factual aside (what happened next, what the minutes recorded). One chronicler aside per scene. Retire templates after one use ("That is the mortal last line", "the air thins").
+3. **Distinct voices, not 109 epigram mouths.** License polished aphorisms to Euija and Kangrim (Munhee sparingly). Yushin literal/numeric; Alchun understatement; Gyebek plain; maids gossip-syntax/unfinished; children child-speech; soldiers contractions/banmal. Formal court and Tang imperial stay formal. Goddesses keep their register. Let some people be bad at talking.
+4. **Don't use dialogue as encyclopedia.** Bone ranks, king-lists, timelines belong in narration or `diagram` / `table` blocks. Spoken history should wound, not quiz ("270 years ago, have you forgotten?"). Archival Samguk Sagi-style debate speeches may stay.
+5. **Bilingual:** every new `p`/`dialogue` has English + Korean. Korean should sound natural for that speaker.
+
+## Structure already in the file
+
+- Bidam's Rebellion uses `kind: "day"` headers (DAY 1–10). Don't flatten them into prose prefixes (`<b>첫째 날.</b>`).
+- Flashbacks must use `kind: "flashback"` so cinema doesn't play them as present action.
+- Dead characters must not speak in later years unless wrapped in flashback.
+- Ages in prose are derived from `people.ts` `born` + entry year — don't hardcode stale ages.
+
+## Hwarang
+
+Classes are numeric: First Class, Class 11, Class 17. Members talk like old-boy / Korean military 기수 (선배, our class), not "Yushin's Class".
+
+## Before you save
+
+- No AD/CE in mortal `dialogue`.
+- New `p`/`dialogue` blocks have EN + KO; Korean register matches the speaker.
+- No decoder paragraph after a climax you just wrote; no new "were you X, or Y?" exit interview.
+- The speaker sounds like themselves, not the chronicler (unless they are Euija or Kangrim).
+- `day` / `flashback` kinds preserved; the dead do not speak in later years as present action.
+- Image `at` still matches if you rewrote the beat.
+
+## BAD → GOOD
+
+**Years in mortal dialogue**
+
+- BAD: "In 632, when you spoke — you told me to stand."
+- GOOD: "Fifteen winters past, when you spoke — you told me to stand."
+
+**Sunduk / Kangrim (don't speak the thesis)**
+
+- BAD: "…Tell the sacred country I was tired of being clever for other people's fear. That is my answer."
+- GOOD: "…The tower I built. Cheomseongdae." / "Majesty?" / "Someone should keep the stairs swept. That is all the answer you are getting."
+
+**Decoder after "Blood is inevitable…"**
+
+- BAD: "He is not gloating; he is barely audible. It is the echo of Bidam's fifth-morning barb, turned back on the house that raised him…"
+- GOOD: "Alchun goes pale. An officer asks for the order again. Nobody repeats it. Yushin mounts, and the order stands."
+
+**Bupmin, age six (child-speech)**
+
+- BAD: "I want to be the king for all. Not a king for Sacred Bone. Not a king for True Bone. For all."
+- GOOD: "When I'm king, everyone has to listen. Even the bone people." / "Which bone people?" / "All of them. That's the point."

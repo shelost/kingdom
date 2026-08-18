@@ -8,6 +8,7 @@
 	 *   - 'ornamental' — after the Secretariat: chairs polished, room empty of power
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { step = 'unanimous', active = false }: DiagramProps = $props();
 
@@ -79,8 +80,7 @@
 	<!-- the motion before the room -->
 	<g class="center" style="--d: 0">
 		<circle class="motion" cx={CX} cy={CY} r="34" />
-		<text class="verdict-ko" x={CX} y={CY - 1}>{verdict.ko}</text>
-		<text class="verdict-en" x={CX} y={CY + 16}>{verdict.en}</text>
+		<ChartLabel x={CX} y={CY + 2} ko={verdict.ko} en={verdict.en} w={62} size="lg" />
 	</g>
 
 	<!-- the six sleeves -->
@@ -99,23 +99,13 @@
 			>
 				<circle cx={s.x} cy={s.y} r="19" />
 				{#if v === 'yes'}
-					<text class="mark yes" style="--d: {1450 + s.i * 90}" x={s.x} y={s.y + 4.5}>✓</text>
+					<text class="mark yes" style="--d: {1450 + s.i * 90}" x={s.x} y={s.y - 5}>✓</text>
 				{:else if v === 'no'}
-					<text class="mark nay" style="--d: {1450 + s.i * 90}" x={s.x} y={s.y + 4.5}>✕</text>
+					<text class="mark nay" style="--d: {1450 + s.i * 90}" x={s.x} y={s.y - 5}>✕</text>
 				{/if}
+				<ChartLabel x={s.x} y={s.y + 8} ko="의원" w={36} size="sm" />
 			</g>
 		</g>
-		{#if s.i === BIDAM && (step === 'veto' || step === 'rebellion')}
-			<text
-				class="seat-name"
-				style="--d: 1900; --bx: {step === 'rebellion' ? s.dx * 30 : 0}px; --by: {step ===
-				'rebellion'
-					? s.dy * 30
-					: 0}px"
-				x={s.x + 26}
-				y={s.y + 4}>의원 · Councillor</text
-			>
-		{/if}
 	{/each}
 
 	<!-- the three gates of a session -->
@@ -124,8 +114,7 @@
 			{@const fails = step === 'veto' && i === 2}
 			<g class="gate" class:fail={fails} style="--d: {2100 + i * 350}">
 				<circle cx={g.x} cy={266} r="3.2" />
-				<text class="gate-ko" x={g.x} y={281}>{g.ko}</text>
-				<text class="gate-en" x={g.x} y={292}>{fails ? '✕ ' + g.en : g.en}</text>
+				<ChartLabel x={g.x} y={286} ko={g.ko} en={fails ? '✕ ' + g.en : g.en} w={72} size="sm" />
 			</g>
 			{#if i < 2}
 				<line
@@ -144,10 +133,10 @@
 
 <style>
 	.dg {
-		--silla: #3e79e4;
-		--gold: #d8b26a;
-		--parchment: #fff8e8;
-		--nay: #cf4b4b;
+		--accent: #4d8eff;
+		--silla: #4d8eff;
+		--gold: #e8c36a;
+		--nay: #ff4d4d;
 		font-family: var(--serif);
 	}
 
@@ -159,69 +148,40 @@
 	}
 
 	.motion {
-		fill: color-mix(in srgb, var(--gold) 22%, var(--parchment));
-		stroke: color-mix(in srgb, var(--gold) 70%, transparent);
-		stroke-width: 1.15;
+		fill: var(--gold);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 		transition: fill 800ms var(--ease) 2400ms, stroke 800ms var(--ease) 2400ms;
-	}
-
-	.verdict-ko {
-		font-size: 17px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: var(--fg-dim);
-		opacity: 0;
-		transition: opacity 700ms var(--ease) 2500ms, fill 700ms var(--ease) 2500ms;
-	}
-
-	.verdict-en {
-		font-size: 8.5px;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
-		opacity: 0;
-		transition: opacity 700ms var(--ease) 2600ms;
 	}
 
 	.play .center {
 		opacity: 1;
 	}
 
-	.play .verdict-ko,
-	.play .verdict-en {
-		opacity: 1;
-	}
-
 	.play[data-step='unanimous'] .motion {
-		fill: color-mix(in srgb, var(--gold) 38%, var(--parchment));
-		stroke: var(--gold);
-	}
-
-	.play[data-step='unanimous'] .verdict-ko {
 		fill: var(--gold);
-	}
-
-	.play[data-step='veto'] .verdict-ko {
-		fill: var(--nay);
+		stroke: var(--node-stroke);
+		stroke-width: 3;
 	}
 
 	.play[data-step='veto'] .motion {
-		stroke: color-mix(in srgb, var(--nay) 45%, transparent);
-		fill: transparent;
+		stroke: color-mix(in srgb, var(--nay) 28%, #080604);
+		fill: var(--nay);
+		stroke-width: 3;
 	}
 
 	.play[data-step='ornamental'] .motion,
 	.play[data-step='rebellion'] .motion {
-		stroke: color-mix(in srgb, var(--fg-faint) 45%, transparent);
-		fill: transparent;
-		stroke-dasharray: 3 4;
+		stroke: color-mix(in srgb, var(--ink-muted) 40%, #080604);
+		fill: color-mix(in srgb, var(--silla) 55%, #6b7280);
+		stroke-dasharray: 4 5;
+		stroke-width: var(--stroke-w);
 	}
 
 	/* ——— spokes ——— */
 	.spoke {
-		stroke: color-mix(in srgb, var(--silla) 65%, transparent);
-		stroke-width: 1.15;
+		stroke: var(--silla);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		transition: stroke-dashoffset 800ms var(--ease), opacity 800ms var(--ease),
@@ -234,7 +194,7 @@
 	}
 
 	.play .spoke.no {
-		stroke: color-mix(in srgb, var(--nay) 70%, transparent);
+		stroke: var(--nay);
 	}
 
 	.play .spoke.breakaway {
@@ -245,7 +205,7 @@
 	}
 
 	.play[data-step='ornamental'] .spoke {
-		stroke: color-mix(in srgb, var(--fg-faint) 35%, transparent);
+		stroke: var(--ink-muted);
 		stroke-dasharray: 3 5;
 	}
 
@@ -269,9 +229,9 @@
 	}
 
 	.seat circle {
-		fill: color-mix(in srgb, var(--silla) 34%, var(--parchment));
-		stroke: color-mix(in srgb, var(--silla) 85%, var(--gold));
-		stroke-width: 1.35;
+		fill: var(--silla);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 		transition: fill 800ms var(--ease) 1800ms, stroke 800ms var(--ease) 1800ms;
 	}
 
@@ -282,17 +242,20 @@
 
 	.play .seat.no circle,
 	.play .seat.breakaway circle {
-		fill: color-mix(in srgb, var(--nay) 32%, var(--parchment));
-		stroke: var(--nay);
+		fill: var(--nay);
+		stroke: color-mix(in srgb, var(--nay) 28%, #080604);
 	}
 
 	.play[data-step='rebellion'] .seat.breakaway circle {
-		fill: color-mix(in srgb, var(--nay) 22%, var(--parchment));
+		fill: color-mix(in srgb, var(--nay) 82%, #4a1010);
+		stroke: color-mix(in srgb, var(--nay) 28%, #080604);
+		stroke-dasharray: 4 4;
 	}
 
 	.play[data-step='ornamental'] .seat circle {
-		fill: color-mix(in srgb, var(--fg-faint) 14%, var(--parchment));
-		stroke: color-mix(in srgb, var(--fg-faint) 45%, transparent);
+		fill: color-mix(in srgb, var(--silla) 55%, #6b7280);
+		stroke: color-mix(in srgb, var(--ink-muted) 40%, #080604);
+		stroke-dasharray: 3 4;
 	}
 
 	/* ——— votes ——— */
@@ -317,20 +280,6 @@
 		opacity: 1;
 	}
 
-	.seat-name {
-		font-size: 9.5px;
-		fill: color-mix(in srgb, var(--nay) 75%, #fff);
-		opacity: 0;
-		transform: translate(var(--bx, 0), var(--by, 0));
-		transition: opacity 600ms var(--ease) calc(var(--d) * 1ms),
-			transform 900ms var(--ease) 2000ms;
-	}
-
-	.play .seat-name {
-		opacity: 1;
-	}
-
-	/* ——— the three gates ——— */
 	.gate {
 		opacity: 0;
 		transition: opacity 600ms var(--ease);
@@ -349,29 +298,9 @@
 		fill: var(--nay);
 	}
 
-	.gate-ko {
-		font-size: 9.5px;
-		font-weight: 600;
-		text-anchor: middle;
-		fill: var(--fg-dim);
-	}
-
-	.gate-en {
-		font-size: 7px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
-	}
-
-	.gate.fail .gate-ko,
-	.gate.fail .gate-en {
-		fill: color-mix(in srgb, var(--nay) 80%, #fff);
-	}
-
 	.gate-link {
-		stroke: color-mix(in srgb, var(--fg-faint) 40%, transparent);
-		stroke-width: 1;
+		stroke: var(--ink-muted);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		transition: stroke-dashoffset 600ms var(--ease);

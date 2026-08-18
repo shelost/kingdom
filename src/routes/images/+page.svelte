@@ -64,7 +64,7 @@
 				<img
 					class="layer final-layer"
 					src={im.finalArt}
-					alt={im.slot.alt ?? ''}
+					alt={im.slot.alt ?? im.title}
 					loading="lazy"
 					decoding="async"
 				/>
@@ -82,7 +82,7 @@
 	{:else}
 		<figure class="thumb" style:--tone={im.slot.tone ?? '#3a3a40'}>
 			{#if im.displayArt}
-				<img src={im.displayArt} alt={im.slot.alt ?? ''} loading="lazy" decoding="async" />
+				<img src={im.displayArt} alt={im.slot.alt ?? im.title} loading="lazy" decoding="async" />
 			{:else}
 				<div class="ph">
 					<span class="ph-id">{im.slot.id}</span>

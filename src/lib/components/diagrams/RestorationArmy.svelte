@@ -1,6 +1,7 @@
 <script lang="ts">
 	/** Baekje Restoration Army — king at apex, four general seats beneath. */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { active = false }: DiagramProps = $props();
 
@@ -21,8 +22,7 @@
 >
 	<g class="node king" style="--d: 0">
 		<circle cx="180" cy="42" r="28" />
-		<text class="k-ko" x="180" y="40">왕</text>
-		<text class="k-en" x="180" y="54">King</text>
+		<ChartLabel x="180" y="44" ko="왕" en="King" w={48} size="lg" />
 	</g>
 
 	<path class="spine" style="--d: 220" d="M 180 70 V 88" pathLength="100" />
@@ -31,8 +31,7 @@
 		<g class="node gen" style="--d: {400 + i * 110}">
 			<path class="link" style="--d: {360 + i * 110}" d="M 180 88 C 180 100 {g.x} 100 {g.x} 118" pathLength="100" />
 			<rect x={g.x - 32} y="118" width="64" height="44" rx="5" />
-			<text class="g-ko" x={g.x} y="136">장군</text>
-			<text class="g-en" x={g.x} y="150">General</text>
+			<ChartLabel x={g.x} y="140" ko="장군" en="General" w={58} />
 		</g>
 	{/each}
 
@@ -41,8 +40,8 @@
 
 <style>
 	.dg {
-		--baekje: #ffcb51;
-		--parchment: #fff8e8;
+		--accent: #ffd24a;
+		--baekje: #ffd24a;
 		font-family: var(--serif);
 	}
 
@@ -62,39 +61,22 @@
 	}
 
 	.king circle {
-		fill: color-mix(in srgb, var(--baekje) 42%, var(--parchment));
-		stroke: var(--baekje);
-		stroke-width: 1.6;
-	}
-
-	.k-ko,
-	.g-ko {
-		font-size: 11px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--baekje) 28%, #4a3200);
-	}
-
-	.k-en,
-	.g-en {
-		font-size: 5.5px;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
+		fill: var(--baekje);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.gen rect {
-		fill: color-mix(in srgb, var(--baekje) 28%, var(--parchment));
-		stroke: color-mix(in srgb, var(--baekje) 75%, transparent);
-		stroke-width: 1.2;
+		fill: var(--baekje);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.spine,
 	.link {
 		fill: none;
-		stroke: color-mix(in srgb, var(--baekje) 65%, var(--gold));
-		stroke-width: 1.1;
+		stroke: var(--baekje);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -112,7 +94,7 @@
 	.foot {
 		font-size: 7px;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--baekje) 50%, var(--fg-faint));
+		fill: var(--baekje);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

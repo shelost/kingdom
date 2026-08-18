@@ -1,0 +1,15 @@
+/**
+ * Shared org-chart / wiki-diagram tokens.
+ * Each SVG.dg sets --accent to a bright kingdom color.
+ * Nodes: saturated accent fill + dark outline. Labels: black pills, white type.
+ */
+.dg {
+	--node-fill: var(--accent, var(--gold));
+	--node-stroke: color-mix(in srgb, var(--accent, var(--gold)) 28%, #080604);
+	--ink: #ffffff;
+	--ink-muted: #f4efe6;
+	--stroke-w: 3;
+	--link-w: 2.45;
+	--band-fill: color-mix(in srgb, var(--accent, var(--gold)) 48%, #1c1410);
+	--label-bg: #0c0c10;
+}

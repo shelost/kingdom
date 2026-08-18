@@ -4,6 +4,7 @@
 	 * 三省六部 but exceeded. One 시중; 집사부·병부·창부·예부 + ten 府.
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { active = false }: DiagramProps = $props();
 
@@ -41,16 +42,14 @@
 >
 	<g class="node king" style="--d: 0">
 		<circle cx="180" cy="28" r="22" />
-		<text class="k-ko" x="180" y="26">왕</text>
-		<text class="k-en" x="180" y="38">King</text>
+		<ChartLabel x="180" y="28" ko="왕" en="King" w={40} size="sm" />
 	</g>
 
 	<path class="spine" style="--d: 120" d="M 180 50 V 62" pathLength="100" />
 
 	<g class="node sec" style="--d: 200">
 		<rect x="118" y="62" width="124" height="36" rx="6" />
-		<text class="s-ko" x="180" y="78">시중</text>
-		<text class="s-en" x="180" y="90">Royal Secretary</text>
+		<ChartLabel x="180" y="80" ko="시중" en="Secretary" w={110} />
 	</g>
 
 	<path class="spine" style="--d: 320" d="M 180 98 V 112" pathLength="100" />
@@ -64,8 +63,7 @@
 		{@const y = 138 + row * (BOX_H + GAP)}
 		<g class="node min" style="--d: {440 + i * 45}">
 			<rect x={x - BOX_W / 2} y={y} width={BOX_W} height={BOX_H} rx="4" />
-			<text class="m-ko" x={x} y={y + 12}>{m.ko}</text>
-			<text class="m-en" x={x} y={y + 22}>{m.en}</text>
+			<ChartLabel x={x} y={y + BOX_H / 2} ko={m.ko} en={m.en} w={BOX_W - 4} size="sm" />
 		</g>
 	{/each}
 
@@ -74,9 +72,9 @@
 
 <style>
 	.dg {
-		--silla: #3e79e4;
-		--gold: #d8b26a;
-		--parchment: #fff8e8;
+		--accent: #4d8eff;
+		--silla: #4d8eff;
+		--gold: #e8c36a;
 		font-family: var(--serif);
 	}
 
@@ -98,48 +96,21 @@
 	}
 
 	.king circle {
-		fill: color-mix(in srgb, var(--gold) 34%, var(--parchment));
-		stroke: var(--gold);
-		stroke-width: 1.4;
+		fill: var(--gold);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.sec rect {
-		fill: color-mix(in srgb, var(--gold) 38%, var(--parchment));
-		stroke: var(--gold);
-		stroke-width: 1.5;
+		fill: var(--gold);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.min rect {
-		fill: color-mix(in srgb, var(--silla) 28%, var(--parchment));
-		stroke: color-mix(in srgb, var(--silla) 70%, var(--gold));
-		stroke-width: 1.05;
-	}
-
-	.k-ko,
-	.s-ko,
-	.m-ko {
-		font-size: 8px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--silla) 35%, #1a2a4a);
-	}
-
-	.k-ko {
-		font-size: 11px;
-	}
-
-	.s-ko {
-		font-size: 11px;
-	}
-
-	.k-en,
-	.s-en,
-	.m-en {
-		font-size: 5px;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--silla) 45%, var(--fg-faint));
+		fill: var(--silla);
+		stroke: var(--node-stroke);
+		stroke-width: 2.2;
 	}
 
 	.slogan {
@@ -152,8 +123,8 @@
 
 	.spine {
 		fill: none;
-		stroke: color-mix(in srgb, var(--gold) 55%, var(--silla));
-		stroke-width: 1.1;
+		stroke: var(--gold);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -170,7 +141,7 @@
 	.foot {
 		font-size: 6.5px;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--silla) 50%, var(--fg-faint));
+		fill: var(--gold);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

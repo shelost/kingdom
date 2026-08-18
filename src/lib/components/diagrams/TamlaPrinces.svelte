@@ -4,6 +4,7 @@
 	 * Compact island diagram — step unused beyond registry default.
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { step = 'well', active = false }: DiagramProps = $props();
 
@@ -35,8 +36,7 @@
 		/>
 		<g class="node prince" style="--d: {400 + i * 140}">
 			<circle cx={p.x} cy="72" r="26" />
-			<text class="p-ko" x={p.x} y="70">{p.ko}</text>
-			<text class="p-en" x={p.x} y="84">{p.en}</text>
+			<ChartLabel x={p.x} y="74" ko={p.ko} en={p.en} w={50} />
 		</g>
 	{/each}
 
@@ -44,8 +44,7 @@
 	<g class="well" style="--d: 100">
 		<ellipse class="well-rim" cx="180" cy="178" rx="78" ry="22" />
 		<ellipse class="well-mouth" cx="180" cy="178" rx="52" ry="14" />
-		<text class="w-ko" x="180" y="184">삼성혈</text>
-		<text class="w-en" x="180" y="208">Samseonghyeol</text>
+		<ChartLabel x="180" y="178" ko="삼성혈" en="the well" w={70} size="sm" />
 	</g>
 
 	<text class="foot" style="--d: 1100" x="180" y="240">세 왕자 · three princes from the well</text>
@@ -53,7 +52,8 @@
 
 <style>
 	.dg {
-		--tamla: #e08a2e;
+		--accent: #ff9a2e;
+		--tamla: #ff9a2e;
 		font-family: var(--serif);
 	}
 
@@ -89,62 +89,31 @@
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--tamla) 55%, var(--fg-faint));
+		fill: var(--tamla);
 	}
 
 	.prince circle {
-		fill: color-mix(in srgb, var(--tamla) 16%, transparent);
-		stroke: color-mix(in srgb, var(--tamla) 70%, transparent);
-		stroke-width: 1.2;
-	}
-
-	.p-ko {
-		font-size: 10px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--tamla) 40%, #fffdf8);
-	}
-
-	.p-en,
-	.w-en,
-	.foot {
-		text-anchor: middle;
-		fill: var(--fg-faint);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-	}
-
-	.p-en {
-		font-size: 6px;
+		fill: var(--tamla);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.well-rim {
-		fill: color-mix(in srgb, var(--tamla) 8%, transparent);
-		stroke: color-mix(in srgb, var(--tamla) 40%, transparent);
-		stroke-width: 1;
+		fill: color-mix(in srgb, var(--tamla) 62%, #3a1800);
+		stroke: var(--node-stroke);
+		stroke-width: 2.2;
 	}
 
 	.well-mouth {
-		fill: color-mix(in srgb, var(--tamla) 18%, #1a1410);
-		stroke: color-mix(in srgb, var(--tamla) 55%, transparent);
-		stroke-width: 1.1;
-	}
-
-	.w-ko {
-		font-size: 11px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--tamla) 50%, #fffdf8);
-	}
-
-	.w-en {
-		font-size: 6.5px;
+		fill: var(--tamla);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.rise {
 		fill: none;
-		stroke: color-mix(in srgb, var(--tamla) 45%, transparent);
-		stroke-width: 1.1;
+		stroke: var(--tamla);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -162,7 +131,7 @@
 		font-size: 6.5px;
 		text-transform: none;
 		letter-spacing: 0.05em;
-		fill: color-mix(in srgb, var(--tamla) 50%, var(--fg-faint));
+		fill: var(--tamla);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

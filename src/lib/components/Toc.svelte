@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import { chapters } from '$lib/story';
-	import { TOC_DURATION_MS } from '$lib/tocUi.svelte';
+	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
 		reading,
@@ -42,6 +42,63 @@
 
 	let refreshObservers: (() => void) | undefined;
 
+	/* ————— panel scroll persistence ————— */
+
+	let panelEl: HTMLDivElement | undefined = $state();
+	let panelScrollRaf = 0;
+	let restoreTimer: ReturnType<typeof setTimeout> | undefined;
+
+	/**
+	 * Record the topmost visible panel item + its offset from the panel top,
+	 * so the same item can be re-anchored on reopen (even after the component
+	 * is destroyed and recreated, or the panel width changes between reopens).
+	 */
+	function captureAnchor() {
+		if (!panelEl || !open) return;
+		const panelTop = panelEl.getBoundingClientRect().top;
+		for (const item of panelEl.querySelectorAll<HTMLElement>('[data-toc-id]')) {
+			const r = item.getBoundingClientRect();
+			if (r.bottom > panelTop + 1) {
+				saveTocAnchor({ id: item.dataset.tocId ?? '', delta: r.top - panelTop });
+				return;
+			}
+		}
+	}
+
+	/** Scroll the panel so the saved anchor item sits at its saved offset. */
+	function restoreAnchor() {
+		if (!panelEl) return;
+		const anchor = loadTocAnchor();
+		if (!anchor) return;
+		const item = panelEl.querySelector<HTMLElement>(`[data-toc-id="${CSS.escape(anchor.id)}"]`);
+		if (!item) return;
+		const panelTop = panelEl.getBoundingClientRect().top;
+		panelEl.scrollTop += item.getBoundingClientRect().top - panelTop - anchor.delta;
+	}
+
+	function onPanelScroll() {
+		if (panelScrollRaf) return;
+		panelScrollRaf = requestAnimationFrame(() => {
+			panelScrollRaf = 0;
+			captureAnchor();
+		});
+	}
+
+	/**
+	 * Re-anchor whenever the TOC opens: once right away, and once more after
+	 * the open transition settles in case layout shifts during the animation.
+	 */
+	$effect(() => {
+		if (!open) return;
+		const raf = requestAnimationFrame(restoreAnchor);
+		if (restoreTimer) clearTimeout(restoreTimer);
+		restoreTimer = setTimeout(() => {
+			restoreAnchor();
+			restoreTimer = undefined;
+		}, TOC_DURATION_MS + 32);
+		return () => cancelAnimationFrame(raf);
+	});
+
 	onMount(() => {
 		const mq = window.matchMedia('(max-width: 1000px)');
 		const syncNarrow = () => (narrow = mq.matches);
@@ -81,6 +138,10 @@
 		};
 		refreshObservers();
 
+		// Component recreated (e.g. route change): pre-scroll the hidden panel
+		// so the saved anchor is already in place when the TOC next opens.
+		restoreAnchor();
+
 		const onScroll = () => {
 			if (reading.viewScope === 'episodes') return;
 			const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -118,6 +179,8 @@
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('keydown', onKey);
 			if (jumpTimer) clearTimeout(jumpTimer);
+			if (restoreTimer) clearTimeout(restoreTimer);
+			if (panelScrollRaf) cancelAnimationFrame(panelScrollRaf);
 		};
 	});
 
@@ -247,12 +310,17 @@
 </button>
 
 <nav class="toc" class:open id="toc-panel" aria-label="Table of contents" aria-hidden={!open}>
-	<div class="panel">
+	<div class="panel" bind:this={panelEl} onscroll={onPanelScroll}>
 		{#each chapters as ch, ci (ch.id)}
 			{#if ch.part}
 				<div class="panel-part">{ch.part}</div>
 			{/if}
-			<button class="panel-item" class:active={active === ch.id} onclick={() => jump(ch.id)}>
+			<button
+				class="panel-item"
+				class:active={active === ch.id}
+				data-toc-id={ch.id}
+				onclick={() => jump(ch.id)}
+			>
 				<span class="pi-title">
 					<span class="pi-num">{ci + 1}</span>
 					<span class="pi-dot" aria-hidden="true">·</span>
@@ -267,6 +335,7 @@
 					<button
 						class="sub-item"
 						class:active={activeEntry === `${ch.id}-${ei}`}
+						data-toc-id={`${ch.id}-${ei}`}
 						onclick={() => jump(`${ch.id}-${ei}`)}
 					>
 						<span class="si-year">{en.year || '·'}</span>

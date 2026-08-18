@@ -59,6 +59,8 @@ export const reading = $state({
 	entryProgress: 0,
 	/** person id of the dialogue currently in the reading band (immersion) */
 	speaker: null as string | null,
+	/** optional life-stage id pinned by the live dialogue block (`PersonStage.id`) */
+	look: null as string | null,
 	/** plain-text lines for the featured Pokémon-style dialogue box */
 	linesKo: [] as string[],
 	linesEn: [] as string[],
@@ -232,7 +234,7 @@ function captureCurrentEpisode() {
 	const mid = (top + bottom) / 2;
 	let best: HTMLElement | null = null;
 	let bestD = Infinity;
-	for (const el of document.querySelectorAll<HTMLElement>('article.entry')) {
+	for (const el of scriptRoot().querySelectorAll<HTMLElement>('article.entry')) {
 		const r = el.getBoundingClientRect();
 		if (r.top > bottom || r.bottom < top) continue;
 		const d = Math.abs((Math.max(r.top, top) + Math.min(r.bottom, bottom)) / 2 - mid);
@@ -343,6 +345,16 @@ export function stepEpisode(delta: number) {
 /** entry id last seen by the speaker tracker — module-scoped so measure can close over it */
 let lastEntry: string | null = null;
 
+/**
+ * The reading document — the band watcher, the speaking marker and the episode
+ * capture only ever look inside `#script`. The cinema stage mounts a second
+ * copy of the same blocks in its script rail (fixed chrome, its own scroll),
+ * which must never be mistaken for the page being read.
+ */
+function scriptRoot(): ParentNode {
+	return document.getElementById('script') ?? document;
+}
+
 /** A clicked dialogue, held as the live one until the glide to it has settled. */
 let pinned: HTMLElement | null = null;
 let pinnedUntil = 0;
@@ -388,6 +400,7 @@ function readLines(el: HTMLElement | null, sel: string) {
 
 function applyUtterance(el: HTMLElement | null, speaker: string | null) {
 	reading.speaker = speaker;
+	reading.look = el?.dataset.look || null;
 	reading.linesKo = readLines(el, '.line.ko');
 	reading.linesEn = readLines(el, '.line.en');
 	reading.linesZh = readLines(el, '.line.zh');
@@ -398,10 +411,20 @@ function applyUtterance(el: HTMLElement | null, speaker: string | null) {
 
 /** Move the live-line marker onto `el` — only the stage modes wear it. */
 function markSpeaking(el: HTMLElement | null) {
-	for (const other of document.querySelectorAll<HTMLElement>('[data-speaker].is-speaking')) {
+	for (const other of scriptRoot().querySelectorAll<HTMLElement>('[data-speaker].is-speaking')) {
 		if (other !== el) other.classList.remove('is-speaking');
 	}
 	if (el && isStageMode()) el.classList.add('is-speaking');
+}
+
+/** Glide `el`'s middle onto the reading band's middle — where the watcher reads. */
+export function scrollToBand(el: HTMLElement, smooth = true) {
+	const r = el.getBoundingClientRect();
+	const top = window.scrollY + r.top + r.height / 2 - window.innerHeight * BAND_MID;
+	window.scrollTo({
+		top: Math.max(0, top),
+		behavior: smooth && !reduceMotion() ? 'smooth' : 'auto'
+	});
 }
 
 /**
@@ -423,12 +446,7 @@ export function activateDialogue(node: HTMLElement) {
 	applyUtterance(el, el.dataset.speaker || null);
 	markSpeaking(el);
 
-	const r = el.getBoundingClientRect();
-	const top = window.scrollY + r.top + r.height / 2 - window.innerHeight * BAND_MID;
-	window.scrollTo({
-		top: Math.max(0, top),
-		behavior: reduceMotion() ? 'auto' : 'smooth'
-	});
+	scrollToBand(el);
 }
 
 /**
@@ -455,11 +473,12 @@ export function watchReading() {
 		/* When several elements straddle the band — a short entry sitting inside a
 		   taller neighbour's span — take the one whose middle is closest to it, so
 		   brief entries are not shadowed by their neighbours. */
+		const root = scriptRoot();
 		const nearestInBand = <T extends HTMLElement>(sel: string): T | null => {
 			const mid = (top + bottom) / 2;
 			let best: T | null = null;
 			let bestD = Infinity;
-			for (const el of document.querySelectorAll<T>(sel)) {
+			for (const el of root.querySelectorAll<T>(sel)) {
 				if (!inBand(el)) continue;
 				const r = el.getBoundingClientRect();
 				const d = Math.abs((Math.max(r.top, top) + Math.min(r.bottom, bottom)) / 2 - mid);
@@ -472,7 +491,7 @@ export function watchReading() {
 		};
 
 		let flash = false;
-		for (const el of document.querySelectorAll('[data-flash]')) {
+		for (const el of root.querySelectorAll('[data-flash]')) {
 			if (inBand(el)) {
 				flash = true;
 				break;

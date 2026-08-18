@@ -1,14 +1,15 @@
 <script lang="ts">
 	/** Second Emperor’s Four Dragons — expedition roster under Taizong. */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { active = false }: DiagramProps = $props();
 
 	const DRAGONS = [
-		{ ko: '백룡', en: 'White Dragon', han: '白龍', x: 54, fill: '#f8fafc', stroke: '#cbd5e1' },
-		{ ko: '적룡', en: 'Red Dragon', han: '赤龍', x: 138, fill: '#fecaca', stroke: '#ef4444' },
-		{ ko: '청룡', en: 'Blue Dragon', han: '青龍', x: 222, fill: '#bfdbfe', stroke: '#2563eb' },
-		{ ko: '흑룡', en: 'Black Dragon', han: '黑龍', x: 306, fill: '#374151', stroke: '#9ca3af' }
+		{ ko: '백룡', en: 'White', han: '白龍', x: 54, fill: '#c5d0dc', stroke: '#1e293b' },
+		{ ko: '적룡', en: 'Red', han: '赤龍', x: 138, fill: '#ff4444', stroke: '#7f1d1d' },
+		{ ko: '청룡', en: 'Blue', han: '青龍', x: 222, fill: '#3b82ff', stroke: '#1e3a8a' },
+		{ ko: '흑룡', en: 'Black', han: '黑龍', x: 306, fill: '#4b5563', stroke: '#030712' }
 	] as const;
 </script>
 
@@ -21,8 +22,7 @@
 >
 	<g class="node emperor" style="--d: 0">
 		<rect class="dais" x="108" y="8" width="144" height="52" rx="8" />
-		<text class="t-ko" x="180" y="32">서토 황제</text>
-		<text class="t-en" x="180" y="46">Second Emperor</text>
+		<ChartLabel x="180" y="34" ko="서토 황제" en="Second Emperor" w={128} size="lg" />
 	</g>
 
 	<path class="spine" style="--d: 200" d="M 180 60 V 78" pathLength="100" />
@@ -31,9 +31,7 @@
 		<g class="node dragon" style="--d: {380 + i * 120}; --fill: {d.fill}; --stroke: {d.stroke}">
 			<path class="link" style="--d: {340 + i * 120}" d="M 180 78 C 180 92 {d.x} 92 {d.x} 108" pathLength="100" />
 			<rect x={d.x - 36} y="108" width="72" height="52" rx="6" />
-			<text class="d-ko" x={d.x} y="128">{d.ko}</text>
-			<text class="d-han" x={d.x} y="142">{d.han}</text>
-			<text class="d-en" x={d.x} y="154">{d.en}</text>
+			<ChartLabel x={d.x} y="134" ko={d.ko} en={d.en} w={66} />
 		</g>
 	{/each}
 
@@ -42,7 +40,8 @@
 
 <style>
 	.dg {
-		--tang: #b45309;
+		--accent: #f0a03c;
+		--tang: #f0a03c;
 		font-family: var(--serif);
 	}
 
@@ -62,58 +61,22 @@
 	}
 
 	.emperor .dais {
-		fill: color-mix(in srgb, var(--tang) 18%, #1a0f05);
-		stroke: var(--gold);
-		stroke-width: 1.4;
-	}
-
-	.t-ko {
-		font-size: 12px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: var(--gold);
-	}
-
-	.t-en {
-		font-size: 6px;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--gold) 55%, var(--fg-faint));
+		fill: var(--tang);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.dragon rect {
-		fill: color-mix(in srgb, var(--fill) 35%, #0a0a12);
+		fill: var(--fill);
 		stroke: var(--stroke);
-		stroke-width: 1.4;
-	}
-
-	.d-ko {
-		font-size: 11px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--stroke) 70%, #fffdf8);
-	}
-
-	.d-han {
-		font-size: 8px;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--stroke) 55%, var(--fg-faint));
-	}
-
-	.d-en {
-		font-size: 5.5px;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		text-anchor: middle;
-		fill: var(--fg-faint);
+		stroke-width: var(--stroke-w);
 	}
 
 	.spine,
 	.link {
 		fill: none;
-		stroke: color-mix(in srgb, var(--tang) 60%, var(--gold));
-		stroke-width: 1.1;
+		stroke: var(--tang);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -131,7 +94,7 @@
 	.foot {
 		font-size: 7px;
 		text-anchor: middle;
-		fill: color-mix(in srgb, var(--tang) 55%, var(--fg-faint));
+		fill: var(--tang);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

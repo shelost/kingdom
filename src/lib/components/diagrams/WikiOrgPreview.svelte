@@ -56,9 +56,9 @@
 
 	/* Scale the live diagram into the square without fighting its intrinsic layout. */
 	.org-preview-diagram {
-		width: 280%;
-		height: 280%;
-		transform: scale(0.36);
+		width: 240%;
+		height: 240%;
+		transform: scale(0.42);
 	}
 
 	.org-preview-tree {

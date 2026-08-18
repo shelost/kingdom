@@ -4,6 +4,7 @@
 	 * Step accepted for registry contract; default `'league'`.
 	 */
 	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
 
 	let { step = 'league', active = false }: DiagramProps = $props();
 
@@ -56,15 +57,13 @@
 	<!-- centre: confederacy, not a throne -->
 	<g class="center" style="--d: 0">
 		<circle class="hub" cx={CX} cy={CY} r="34" />
-		<text class="hub-ko" x={CX} y={CY - 2}>가야</text>
-		<text class="hub-en" x={CX} y={CY + 14}>confederacy</text>
+		<ChartLabel x={CX} y={CY + 2} ko="가야" en="league" w={62} size="lg" />
 	</g>
 
 	{#each COURTS as c (c.i)}
 		<g class="node court" style="--d: {500 + c.i * 100}">
 			<circle cx={c.x} cy={c.y} r="24" />
-			<text class="c-ko" x={c.x} y={c.y + 1}>{c.ko}</text>
-			<text class="c-en" x={c.x} y={c.y + 13}>{c.en}</text>
+			<ChartLabel x={c.x} y={c.y + 2} ko={c.ko} en={c.en} w={44} size="sm" />
 		</g>
 	{/each}
 
@@ -73,7 +72,8 @@
 
 <style>
 	.dg {
-		--gaya: #b8956c;
+		--accent: #edb15a;
+		--gaya: #edb15a;
 		font-family: var(--serif);
 	}
 
@@ -106,8 +106,8 @@
 
 	.ring {
 		fill: none;
-		stroke: color-mix(in srgb, var(--gaya) 18%, transparent);
-		stroke-width: 0.9;
+		stroke: var(--gaya);
+		stroke-width: 2.2;
 		stroke-dasharray: 3 5;
 		opacity: 0;
 		transition: opacity 700ms var(--ease);
@@ -119,52 +119,22 @@
 	}
 
 	.hub {
-		fill: color-mix(in srgb, var(--gaya) 10%, transparent);
-		stroke: color-mix(in srgb, var(--gaya) 50%, transparent);
-		stroke-width: 1.1;
+		fill: var(--gaya);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 		stroke-dasharray: 4 4;
 	}
 
-	.hub-ko {
-		font-size: 14px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--gaya) 50%, #fffdf8);
-	}
-
-	.hub-en,
-	.c-en,
-	.foot {
-		text-anchor: middle;
-		fill: var(--fg-faint);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-	}
-
-	.hub-en {
-		font-size: 6.5px;
-	}
-
 	.court circle {
-		fill: color-mix(in srgb, var(--gaya) 16%, transparent);
-		stroke: color-mix(in srgb, var(--gaya) 60%, transparent);
-		stroke-width: 1.1;
-	}
-
-	.c-ko {
-		font-size: 10px;
-		font-weight: 700;
-		text-anchor: middle;
-		fill: color-mix(in srgb, var(--gaya) 40%, #fffdf8);
-	}
-
-	.c-en {
-		font-size: 5.5px;
+		fill: var(--gaya);
+		stroke: var(--node-stroke);
+		stroke-width: var(--stroke-w);
 	}
 
 	.spoke {
-		stroke: color-mix(in srgb, var(--gaya) 35%, transparent);
-		stroke-width: 1;
+		fill: none;
+		stroke: var(--gaya);
+		stroke-width: var(--link-w);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
@@ -182,7 +152,7 @@
 		font-size: 7px;
 		text-transform: none;
 		letter-spacing: 0.06em;
-		fill: color-mix(in srgb, var(--gaya) 50%, var(--fg-faint));
+		fill: var(--gaya);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

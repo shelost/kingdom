@@ -85,18 +85,17 @@
 {#snippet branch(list: TreeNode[], depth: number)}
 	<ul class="tier" style:--depth={depth}>
 		{#each list as t, i (t.node.id)}
-			<li class="seat" style:--i={i}>
+			<li class="seat" style:--i={i} style:--nk={t.person ? colorOf(t.person) : '#e8c36a'}>
 				{#if openable(t)}
 					<button
 						type="button"
 						class="node person"
-						style:--nk={colorOf(t.person!)}
 						onclick={() => onOpen?.(t.node.id)}
 					>
 						{@render face(t)}
 					</button>
 				{:else}
-					<div class="node synthetic" style:--nk="var(--fg-faint)">
+					<div class="node synthetic">
 						{@render face(t)}
 					</div>
 				{/if}
@@ -173,7 +172,7 @@
 	.seat > .tier {
 		padding-top: 0.55rem;
 		width: 100%;
-		border-top: 1px solid color-mix(in oklab, var(--hairline) 85%, transparent);
+		border-top: 2px solid color-mix(in oklab, var(--nk, #111) 85%, #000);
 		position: relative;
 	}
 
@@ -182,9 +181,9 @@
 		position: absolute;
 		top: 0;
 		left: 50%;
-		width: 1px;
+		width: 2px;
 		height: 0.55rem;
-		background: color-mix(in oklab, var(--hairline) 85%, transparent);
+		background: color-mix(in oklab, var(--nk, #111) 85%, #000);
 		transform: translateX(-50%);
 	}
 
@@ -194,10 +193,10 @@
 		gap: 0.55rem;
 		width: 100%;
 		max-width: 11.5rem;
-		padding: 0.4rem 0.55rem;
-		border: 1px solid color-mix(in oklab, var(--nk) 45%, var(--hairline));
+		padding: 0.4rem 0.45rem;
+		border: 2.5px solid color-mix(in oklab, var(--nk, #e8c36a) 28%, #0c0a08);
 		border-radius: 8px;
-		background: color-mix(in oklab, var(--nk) 14%, rgba(255, 255, 255, 0.04));
+		background: var(--nk, #e8c36a);
 		text-align: left;
 		font: inherit;
 		color: inherit;
@@ -211,12 +210,12 @@
 	}
 
 	button.node:hover {
-		border-color: color-mix(in oklab, var(--nk) 55%, var(--hairline));
-		background: color-mix(in oklab, var(--nk) 12%, transparent);
+		border-color: color-mix(in oklab, var(--nk, #e8c36a) 18%, #0c0a08);
+		background: color-mix(in oklab, var(--nk, #e8c36a) 88%, #fff);
 	}
 
 	.synthetic {
-		opacity: 0.72;
+		opacity: 0.85;
 	}
 
 	.avatar {
@@ -228,9 +227,9 @@
 		display: grid;
 		place-items: center;
 		font-size: 0.78rem;
-		background: color-mix(in oklab, var(--nk) 28%, #1a1a18);
-		border: 1px solid color-mix(in oklab, var(--nk) 45%, var(--hairline));
-		color: #f4f0e6;
+		background: color-mix(in oklab, var(--nk, #e8c36a) 90%, #fff);
+		border: 2px solid color-mix(in oklab, var(--nk, #e8c36a) 28%, #0c0a08);
+		color: #0c0c10;
 	}
 
 	.avatar img {
@@ -247,8 +246,12 @@
 	.meta {
 		display: flex;
 		flex-direction: column;
-		gap: 0.12rem;
+		gap: 0.1rem;
 		min-width: 0;
+		flex: 1;
+		background: #0c0c10;
+		border-radius: 5px;
+		padding: 0.22rem 0.4rem;
 	}
 
 	.name {
@@ -258,12 +261,13 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		color: #ffffff;
 	}
 
 	.role {
 		font-size: 0.62rem;
 		letter-spacing: 0.02em;
-		color: var(--fg-faint);
+		color: #f4efe6;
 		line-height: 1.25;
 		display: -webkit-box;
 		-webkit-line-clamp: 2;

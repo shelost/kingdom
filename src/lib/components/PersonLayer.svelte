@@ -15,10 +15,19 @@
 		photoOf,
 		binyeoArtOf,
 		kingdomFlag,
+		hwarangClassColor,
 		type Person
 	} from '$lib/people';
 	import { BOND_LABEL } from '$lib/relations';
-	import { orgsOf, membersOf, clanOf, clanEntriesOf, clanMembersOf } from '$lib/wiki';
+	import {
+		orgsOf,
+		membersOf,
+		groupsOf,
+		groupMembersOf,
+		clanOf,
+		clanEntriesOf,
+		clanMembersOf
+	} from '$lib/wiki';
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
 	import { reading } from '$lib/reading.svelte';
 	import { resolve } from '$app/paths';
@@ -167,6 +176,7 @@
 	{@const isBond = peeked.entity === 'relationship'}
 	{@const isPlace = peeked.entity === 'place'}
 	{@const isOrg = peeked.entity === 'organization'}
+	{@const isGroup = peeked.entity === 'group'}
 	{@const isClan = peeked.entity === 'clan'}
 	{@const stageYear = profiles.year}
 	{@const art = avatarOf(peeked, undefined, stageYear)}
@@ -176,10 +186,19 @@
 	{@const who = nameOf(peeked, stageYear)}
 	{@const role = titleOf(peeked, stageYear)}
 	{@const ko = koreanOf(peeked, stageYear)}
-	{@const memberships = isOrg || isClan || isBond || isPlace ? [] : orgsOf(peeked)}
-	{@const orgMembers = isOrg ? membersOf(peeked.id) : isClan ? clanMembersOf(peeked.id) : []}
-	{@const clanLabel = isOrg || isClan || isBond || isPlace ? undefined : clanOf(peeked)}
-	{@const clanEntries = isOrg || isClan || isBond || isPlace ? [] : clanEntriesOf(peeked)}
+	{@const memberships = isOrg || isGroup || isClan || isBond ? [] : orgsOf(peeked)}
+	{@const groupMemberships =
+		isOrg || isGroup || isClan || isBond ? [] : groupsOf(peeked)}
+	{@const orgMembers = isOrg
+		? membersOf(peeked.id)
+		: isGroup
+			? groupMembersOf(peeked.id)
+			: isClan
+				? clanMembersOf(peeked.id)
+				: []}
+	{@const clanLabel = isOrg || isGroup || isClan || isBond || isPlace ? undefined : clanOf(peeked)}
+	{@const clanEntries =
+		isOrg || isGroup || isClan || isBond || isPlace ? [] : clanEntriesOf(peeked)}
 	{@const accentA = accents[0] ?? k.color}
 	{@const accentB = accents[1] ?? accents[0] ?? k.color}
 	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
@@ -195,6 +214,7 @@
 			{#if peeked.main}<span class="lead">Lead</span>{/if}
 			{#if peeked.entity === 'concept'}<span class="lead concept">Institution</span>{/if}
 			{#if peeked.entity === 'organization'}<span class="lead concept">Organization</span>{/if}
+			{#if peeked.entity === 'group'}<span class="lead concept">Group</span>{/if}
 			{#if peeked.entity === 'clan'}<span class="lead concept">Clan</span>{/if}
 			{#if peeked.entity === 'god'}<span class="lead god">God</span>{/if}
 			{#if isPlace}<span class="lead place">Place</span>{/if}
@@ -216,7 +236,7 @@
 
 			<!-- The art stands on the right; the name, native script and defining
 			     line sit in front of it, lifted off the picture by a scrim. -->
-			<div class="hero" class:has-art={!!art} class:stand-in={isPlaceholderArt(art)}>
+			<div class="hero" class:has-art={!!art} class:stand-in={isPlaceholderArt(art)} class:place={isPlace}>
 				{#if art}
 					<figure class="hero-art" aria-hidden="true">
 						<img src={art} alt="" />
@@ -313,6 +333,7 @@
 						<dt
 							>{peeked.entity === 'concept' ||
 							peeked.entity === 'organization' ||
+							peeked.entity === 'group' ||
 							peeked.entity === 'clan' ||
 							isBond
 								? 'Active'
@@ -321,8 +342,23 @@
 						<dd>{lifespan(peeked)}</dd>
 					</div>
 				{/if}
-				{#if peeked.entity !== 'concept' && peeked.entity !== 'organization' && peeked.entity !== 'clan' && peeked.entity !== 'relationship' && peeked.entity !== 'place' && peeked.born != null && peeked.died != null}
+				{#if peeked.entity !== 'concept' && peeked.entity !== 'organization' && peeked.entity !== 'group' && peeked.entity !== 'clan' && peeked.entity !== 'relationship' && peeked.entity !== 'place' && peeked.born != null && peeked.died != null}
 					<div><dt>Age at death</dt><dd>{peeked.died - peeked.born}</dd></div>
+				{/if}
+				{#if peeked.hwarangClass}
+					{@const hwColor = hwarangClassColor(peeked)}
+					<div>
+						<dt>Hwarang class</dt>
+						<dd>
+							<span
+								class="hwarang-class-chip"
+								style:--hw={hwColor}
+								title="Hwarang {peeked.hwarangClass.label}"
+								>{peeked.hwarangClass.label}</span
+							>{#if peeked.hwarangClass.korean}
+								<span class="clan-ko"> ({peeked.hwarangClass.korean})</span>{/if}
+						</dd>
+					</div>
 				{/if}
 				{#if clanLabel}
 					<div>
@@ -334,7 +370,9 @@
 									<button
 										type="button"
 										class="linkish"
-										onclick={() => openProfile(c, stageYear)}>{nameOf(c)}</button
+										onclick={() => openProfile(c, stageYear)}
+										>{nameOf(c)}{#if c.korean}
+											<span class="clan-ko"> ({c.korean})</span>{/if}</button
 									>
 								{/each}
 							{:else}
@@ -353,6 +391,21 @@
 									type="button"
 									class="linkish"
 									onclick={() => openProfile(org, stageYear)}>{nameOf(org)}</button
+								>
+							{/each}
+						</dd>
+					</div>
+				{/if}
+				{#if groupMemberships.length}
+					<div>
+						<dt>Groups</dt>
+						<dd class="between">
+							{#each groupMemberships as g, i (g.id)}
+								{#if i > 0}<span class="amp">·</span>{/if}
+								<button
+									type="button"
+									class="linkish"
+									onclick={() => openProfile(g, stageYear)}>{nameOf(g)}</button
 								>
 							{/each}
 						</dd>
@@ -428,9 +481,11 @@
 							? 'About this place'
 							: isOrg
 								? 'About this organization'
-								: peeked.entity === 'god'
-									? 'Myth'
-									: 'Character arc'}
+								: isGroup
+									? 'About this group'
+									: peeked.entity === 'god'
+										? 'Myth'
+										: 'Character arc'}
 				</h3>
 				<p class="arc">{peeked.arc}</p>
 			{/if}
@@ -702,13 +757,28 @@
 	}
 
 	/* place art: fill the hero like a landscape, not a bust */
-	.peek:has(.lead.place) .hero.has-art {
+	.hero.place.has-art {
 		min-height: 13.5rem;
 	}
 
-	.peek:has(.lead.place) .hero-art img {
+	.hero.place .hero-art {
+		inset: 0;
+		width: 100%;
+	}
+
+	.hero.place .hero-art img {
 		object-fit: cover;
 		object-position: center;
+		-webkit-mask-image: none;
+		mask-image: none;
+	}
+
+	.hero.place.has-art::after {
+		display: none;
+	}
+
+	.hero.place .hero-id {
+		text-shadow: 0 1px 10px rgba(8, 8, 12, 0.72);
 	}
 
 	.between {
@@ -721,6 +791,26 @@
 	.between .amp {
 		opacity: 0.45;
 		margin: 0 0.1rem;
+	}
+
+	.clan-ko {
+		font-weight: 400;
+		color: var(--fg-dim);
+	}
+
+	.hwarang-class-chip {
+		display: inline-block;
+		margin-right: 0.2rem;
+		padding: 0.08rem 0.38rem;
+		border-radius: 999px;
+		font-size: 0.58rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		vertical-align: 0.12em;
+		color: color-mix(in srgb, var(--hw) 72%, var(--fg));
+		background: color-mix(in srgb, var(--hw) 14%, transparent);
+		border: 1px solid color-mix(in srgb, var(--hw) 28%, transparent);
 	}
 
 	.between .partner {

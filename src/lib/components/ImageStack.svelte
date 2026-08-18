@@ -177,6 +177,7 @@
 		width: 100%;
 		max-height: 100%;
 		overflow: hidden;
+		box-shadow: none;
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;
@@ -254,7 +255,6 @@
 		aspect-ratio: 3 / 2;
 		background: #14141a;
 		border-radius: 8px;
-		box-shadow: -12px 48px 48px rgba(0, 0, 0, 0.4);
 	}
 
 	.stack.immersion .fill,
@@ -274,7 +274,6 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center top;
-		box-shadow: 0 0 52px 8px rgba(0, 0, 0, 0.55);
 	}
 
 	/* Inline: every frame in document order, no overlay swap. */
@@ -296,10 +295,6 @@
 		pointer-events: auto;
 		border-radius: 8px;
 		overflow: hidden;
-	}
-
-	.stack.inline.immersion .frame {
-		box-shadow: -8px 28px 36px rgba(0, 0, 0, 0.32);
 	}
 
 	.count {

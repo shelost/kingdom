@@ -15,15 +15,21 @@
  * When Type = Gods, the index also buckets into class sections via `groupByGodTier`.
  * When Type = Clans, entries sort by member count (desc), then importance; roster
  * within each clan detail sorts youngest → oldest by birth year.
+ * The Hwarang org detail is a single member grid sorted by numeric class
+ * (First Class first), then seniority within the class.
+ * Group detail rosters follow `GROUP_ROSTERS` when pinned (e.g. Five Princes
+ * by birth); otherwise the same importance sort as the index.
  */
 
 import {
 	PROFILES,
 	KINGDOMS,
+	GROUP_ROSTERS,
 	byId,
 	nameOf,
 	isPlaceholderArt,
 	avatarOf,
+	type CareerOffice,
 	type GodTier,
 	type Person
 } from '$lib/people';
@@ -39,6 +45,7 @@ export type WikiKind =
 	| 'phrase'
 	| 'concept'
 	| 'organization'
+	| 'group'
 	| 'clan'
 	| 'relationship'
 	| 'other';
@@ -55,6 +62,7 @@ export const WIKI_KINDS: {
 	{ id: 'nation', label: 'Nation', plural: 'Nations' },
 	{ id: 'phrase', label: 'Phrase', plural: 'Phrases' },
 	{ id: 'organization', label: 'Organization', plural: 'Organizations' },
+	{ id: 'group', label: 'Group', plural: 'Groups' },
 	{ id: 'clan', label: 'Clan', plural: 'Clans' },
 	{ id: 'concept', label: 'Concept', plural: 'Concepts' },
 	{ id: 'relationship', label: 'Relationship', plural: 'Relationships' },
@@ -72,6 +80,7 @@ export function kindOf(p: Person): WikiKind {
 	if (p.entity === 'nation') return 'nation';
 	if (p.entity === 'phrase') return 'phrase';
 	if (p.entity === 'organization') return 'organization';
+	if (p.entity === 'group') return 'group';
 	if (p.entity === 'clan') return 'clan';
 	if (p.entity === 'concept') return 'concept';
 	if (p.entity === 'relationship') return 'relationship';
@@ -96,6 +105,39 @@ export function formatYear(year: number | undefined | null): string {
 	return year < 0 ? `${-year} BCE` : String(year);
 }
 
+/** Resolved end year: explicit `to`, else death when the post is open-ended. */
+function careerEndYear(office: CareerOffice, died?: number): number | undefined {
+	return office.to ?? died;
+}
+
+/** Year span for a CV row — `668–673`, `654–`, `–649`, or `—`. */
+export function careerYearsOf(office: CareerOffice, died?: number): string {
+	const from = office.from;
+	const to = careerEndYear(office, died);
+	if (from == null && to == null) return '—';
+	if (from != null && to != null && from === to) return formatYear(from);
+	if (from != null && to != null) return `${formatYear(from)}–${formatYear(to)}`;
+	if (from != null) return `${formatYear(from)}–`;
+	return `–${formatYear(to)}`;
+}
+
+/** Age span from `born` + years; null when birth year is unknown. */
+export function careerAgesOf(
+	office: CareerOffice,
+	born?: number,
+	died?: number
+): string | null {
+	if (born == null) return null;
+	const fromY = office.from;
+	const toY = careerEndYear(office, died);
+	const a0 = fromY != null ? fromY - born : null;
+	const a1 = toY != null ? toY - born : null;
+	if (a0 == null && a1 == null) return null;
+	if (a0 != null && a1 != null) return a0 === a1 ? `${a0}` : `${a0}–${a1}`;
+	if (a0 != null) return `${a0}–`;
+	return `–${a1}`;
+}
+
 /** Bonds that mention this person (or the bond itself if looking at a relationship). */
 export function bondsFor(id: string): Person[] {
 	return PROFILES.filter(
@@ -118,8 +160,7 @@ const NATION_BY_KINGDOM: Partial<Record<Person['kingdom'], string>> = {
 	gaya: 'nation-gaya',
 	tamla: 'nation-tamla',
 	joseon: 'nation-joseon',
-	yamato: 'nation-yamato',
-	underworld: 'nation-underworld'
+	yamato: 'nation-yamato'
 };
 
 /** Nation encyclopedia entry for a kingdom, if present. */
@@ -128,15 +169,53 @@ export function nationOf(kingdom: Person['kingdom']): Person | undefined {
 	return id ? byId.get(id) : undefined;
 }
 
-/** Parent city profile for a place (`cityId`), when present. */
-export function cityOf(p: Person): Person | undefined {
-	if (!p.cityId) return undefined;
-	const city = byId.get(p.cityId);
-	if (!city || city.entity !== 'place' || city.placeKind !== 'city') return undefined;
-	return city;
+/**
+ * Cosmological place for a person (or a realm kingdom key) — not a political nation.
+ * Gods keep `kingdom: 'underworld'` / `'other'` for color / chart clustering;
+ * the encyclopedia entry is the place (저승, 서천꽃밭, 이승, 하늘나라).
+ */
+const REALM_PLACE_BY_KINGDOM: Partial<Record<Person['kingdom'], string>> = {
+	underworld: 'underworld'
+};
+
+const REALM_PLACE_BY_ID: Record<string, string> = {
+	sara: 'western_flower_field',
+	saradoryeong: 'western_flower_field',
+	sobyeol: 'living_world',
+	hwanin: 'heaven'
+};
+
+export function realmPlaceOf(who: Person | Person['kingdom']): Person | undefined {
+	const id =
+		typeof who === 'string'
+			? REALM_PLACE_BY_KINGDOM[who]
+			: (REALM_PLACE_BY_ID[who.id] ?? REALM_PLACE_BY_KINGDOM[who.kingdom]);
+	if (!id) return undefined;
+	const place = byId.get(id);
+	return place?.entity === 'place' ? place : undefined;
 }
 
-/** Non-city places that list this city as `cityId`. */
+/** Political kingdoms shown as wiki filter chips — not `other`, not 저승. */
+export function isWikiKingdomChip(kingdom: Person['kingdom']): boolean {
+	return kingdom !== 'other' && kingdom !== 'underworld';
+}
+
+/** Parent place for a site (`cityId`) — a city, or a realm that contains the site. */
+export function parentPlaceOf(p: Person): Person | undefined {
+	if (!p.cityId) return undefined;
+	const parent = byId.get(p.cityId);
+	if (!parent || parent.entity !== 'place') return undefined;
+	return parent;
+}
+
+/** Parent city profile for a place (`cityId`), when the parent is a fortress-city. */
+export function cityOf(p: Person): Person | undefined {
+	const parent = parentPlaceOf(p);
+	if (!parent || parent.placeKind !== 'city') return undefined;
+	return parent;
+}
+
+/** Non-city places that list this id as `cityId` (city or containing realm). */
 export function placesInCity(cityId: string): Person[] {
 	return PROFILES.filter(
 		(p) =>
@@ -242,6 +321,13 @@ export function clanEntriesOf(p: Person): Person[] {
 	return rows;
 }
 
+/** Era-primary clan label; modern `korean` gloss in parentheses when set. */
+export function clanLabelOf(entry: Person): string {
+	const era = nameOf(entry);
+	const modern = entry.korean?.trim();
+	return modern ? `${era} (${modern})` : era;
+}
+
 /**
  * Clan / house line for the infobox. Resolves clan entity ids to a display
  * label; otherwise keeps free text or light surname inference.
@@ -249,12 +335,7 @@ export function clanEntriesOf(p: Person): Person[] {
 export function clanOf(p: Person): string | undefined {
 	const entries = clanEntriesOf(p);
 	if (entries.length) {
-		return entries
-			.map((entry) => {
-				const ko = entry.korean?.trim();
-				return ko ? `${nameOf(entry)} (${ko})` : nameOf(entry);
-			})
-			.join(' · ');
+		return entries.map(clanLabelOf).join(' · ');
 	}
 	if (p.clan?.trim()) return p.clan.trim();
 	const hay = [p.name, p.korean, ...(p.aliases ?? [])].filter(Boolean).join(' ');
@@ -511,6 +592,8 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 			p.tagline,
 			p.clan,
 			clanOf(p),
+			p.realm?.en,
+			p.realm?.ko,
 			...(p.personality ?? []),
 			...p.aliases,
 			...(p.sobriquets ?? []),
@@ -564,6 +647,38 @@ export function membersOf(orgId: string): Person[] {
 	).sort(compareWikiEntries);
 }
 
+/** Group profiles listed on a character (forward links). */
+export function groupsOf(p: Person): Person[] {
+	if (!p.groups?.length) return [];
+	const rows: Person[] = [];
+	const seen = new Set<string>();
+	for (const id of p.groups) {
+		const g = byId.get(id);
+		if (!g || seen.has(g.id)) continue;
+		seen.add(g.id);
+		rows.push(g);
+	}
+	return rows;
+}
+
+/** Characters, gods, and places who list this group in `groups` — the roster. */
+export function groupMembersOf(groupId: string): Person[] {
+	const members = PROFILES.filter(
+		(p) =>
+			(p.entity == null || p.entity === 'god' || p.entity === 'place') &&
+			(p.groups ?? []).includes(groupId)
+	);
+	const roster = GROUP_ROSTERS[groupId];
+	if (!roster?.length) return members.sort(compareWikiEntries);
+	const rank = new Map(roster.map((id, i) => [id, i]));
+	return members.sort((a, b) => {
+		const ia = rank.get(a.id) ?? Number.POSITIVE_INFINITY;
+		const ib = rank.get(b.id) ?? Number.POSITIVE_INFINITY;
+		if (ia !== ib) return ia - ib;
+		return compareWikiEntries(a, b);
+	});
+}
+
 export type ClanAffiliation = 'blood' | 'marriage';
 
 /** Blood vs marriage for a person in a given clan (see `clanBy` overrides). */
@@ -604,9 +719,9 @@ export function clanMembersOf(clanId: string): Person[] {
 	).sort(compareClanMembers);
 }
 
-/** Filter chips — every named kingdom except the catch-all `other`. */
+/** Filter chips — political kingdoms only (`other` and 저승 are not nations). */
 export const WIKI_KINGDOMS = (
 	Object.keys(KINGDOMS) as Person['kingdom'][]
-).filter((k) => k !== 'other');
+).filter(isWikiKingdomChip);
 
 export const WIKI_TOTAL = PROFILES.length;

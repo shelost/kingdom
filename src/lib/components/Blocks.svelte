@@ -27,7 +27,8 @@
 			b.kind === 'hanja' ||
 			b.kind === 'verse' ||
 			b.kind === 'formation' ||
-			b.kind === 'diagram'
+			b.kind === 'diagram' ||
+			b.kind === 'day'
 		)
 			return true;
 		// quotes always carry hanja / hangul / english together
@@ -53,7 +54,7 @@
      Shared by the plain rendering and the clickable immersive one. -->
 {#snippet utterance(block: Dialogue, p: Person | undefined)}
 	{#if p}
-		<span class="who">{nameOf(p, year)}</span>
+		<span class="who">{nameOf(p, year, block.look)}</span>
 	{:else if block.speaker}
 		<span class="speaker">{block.speaker}</span>
 	{/if}
@@ -100,14 +101,15 @@
 				class="dialogue"
 				style:--chip={p ? colorOf(p) : block.chip}
 				data-speaker={p?.id ?? undefined}
+				data-look={block.look ?? undefined}
 			>
 				{#if p}
 					{@const maidSeed =
 						p.id === 'courtmaid'
 							? (block.lines ?? block.en ?? []).join('\n')
 							: undefined}
-					{@const art = avatarOf(p, maidSeed, year)}
-					{@const who = nameOf(p, year)}
+					{@const art = avatarOf(p, maidSeed, year, block.look)}
+					{@const who = nameOf(p, year, block.look)}
 					<button
 						type="button"
 						class="face person"
@@ -207,8 +209,9 @@
 				class="monologue"
 				style:--chip={p ? colorOf(p) : 'var(--fg-dim)'}
 				data-speaker={p?.id ?? undefined}
+				data-look={block.look ?? undefined}
 			>
-				<span class="mono-label">{p ? `${nameOf(p, year)}, later` : 'later'}</span>
+				<span class="mono-label">{p ? `${nameOf(p, year, block.look)}, later` : 'later'}</span>
 				<p>{@html linkPeople(prose(block), year)}</p>
 			</aside>
 		{:else if block.kind === 'formation'}
@@ -234,6 +237,16 @@
 			</figure>
 		{:else if block.kind === 'diagram'}
 			<DiagramBlock {block} />
+		{:else if block.kind === 'day'}
+			<!-- the siege calendar: one large plate per day of the chronicle -->
+			<header class="day">
+				<span class="day-rule" aria-hidden="true"></span>
+				<span class="day-text">
+					<span class="day-label">{block.label}</span>
+					{#if block.ko}<span class="day-ko">{block.ko}</span>{/if}
+				</span>
+				<span class="day-rule" aria-hidden="true"></span>
+			</header>
 		{:else if block.kind === 'flashback'}
 			<!-- mini-flashback: the page drops to black while this is under the reading line -->
 			<aside class="mini" data-flash="1">
@@ -250,7 +263,7 @@
 
 <style>
 	.prose {
-		max-width: 42rem;
+		max-width: 54rem;
 	}
 
 	.prose p {
@@ -682,7 +695,7 @@
 		font-size: 0.68rem;
 		letter-spacing: var(--tracking-micro);
 		line-height: 1.45;
-		max-width: 42rem;
+		max-width: 54rem;
 		color: color-mix(in srgb, var(--quote) 45%, var(--fg-faint));
 	}
 
@@ -814,6 +827,63 @@
 		margin: 0.7rem 0 0;
 		font-size: 0.74rem;
 		line-height: 1.55;
+		color: var(--fg-faint);
+	}
+
+	/* ————— siege-day header ————— */
+	.day {
+		display: flex;
+		align-items: center;
+		gap: 1.1rem;
+		margin: 3.4rem 0 1.9rem;
+	}
+
+	.day:first-child {
+		margin-top: 1.4rem;
+	}
+
+	.day-rule {
+		flex: 1;
+		height: 1px;
+		background: linear-gradient(
+			to right,
+			transparent,
+			color-mix(in srgb, var(--gold) 55%, transparent)
+		);
+	}
+
+	.day-rule:last-child {
+		background: linear-gradient(
+			to left,
+			transparent,
+			color-mix(in srgb, var(--gold) 55%, transparent)
+		);
+	}
+
+	.day-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.3rem;
+	}
+
+	.day-label {
+		font-family: var(--serif);
+		font-size: 1.65rem;
+		font-weight: 700;
+		line-height: 1;
+		letter-spacing: 0.24em;
+		text-indent: 0.24em; /* re-centres the tracked type */
+		text-transform: uppercase;
+		color: var(--gold);
+		text-shadow: 0 0 24px color-mix(in srgb, var(--gold) 35%, transparent);
+	}
+
+	.day-ko {
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.3em;
+		text-indent: 0.3em;
 		color: var(--fg-faint);
 	}
 

@@ -22,19 +22,19 @@
 	import {
 		reading,
 		goToEpisodeById,
-		activateDialogue
+		activateDialogue,
+		scrollToBand
 	} from '$lib/reading.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { stageText } from '$lib/stageText';
+	import { buildBeats } from '$lib/beats';
 	import {
 		episodeContextOf,
 		gradeFilter,
 		gradeFor,
 		panelIndexAt,
 		panelsOf,
-		placeArt,
-		scriptCuesOf,
-		type ScriptCue
+		placeArt
 	} from '$lib/cinema';
 	import { PLACES } from '$lib/places';
 	import {
@@ -48,9 +48,10 @@
 		KINGDOMS
 	} from '$lib/people';
 	import { openProfile } from '$lib/profiles.svelte';
-	import { activeUtterance } from '$lib/speech.svelte';
+	import { speech, stopSpeech } from '$lib/speech.svelte';
 	import { stinger, whoosh, closeStingers } from '$lib/stingers';
-	import SpeakButton from './SpeakButton.svelte';
+	import Blocks from './Blocks.svelte';
+	import SpeakerPlate from './SpeakerPlate.svelte';
 
 	/** Cinema only takes the screen once the reader is past cover + blurb. */
 	let live = $derived(reading.mode === 'cinema' && scriptUi.inScript);
@@ -69,60 +70,229 @@
 	let grade = $derived(gradeFor(reading.place, reading.flash));
 	let filter = $derived(gradeFilter(grade));
 
-	/* ————— script rail ————— */
-	let cues = $derived(episode ? scriptCuesOf(episode.entry, reading.year) : []);
-	let scriptEl: HTMLElement | undefined = $state();
+	/* ————— script rail —————
+	   The rail renders the *actual* script — the live episode's beats through
+	   the same `Blocks` component the script / immersion column uses — so the
+	   two renderings can never drift. Interaction is mapped back onto the
+	   reading document under the stage: a click on a rail line activates the
+	   matching line in the page, and the page's live line lights the matching
+	   rail block. */
+	let beats = $derived(episode ? buildBeats(episode.entry) : []);
+	let railEl: HTMLElement | undefined = $state();
 
-	/** Which cue matches the live utterance (speaker + line text). */
-	let activeCueIndex = $derived.by(() => {
-		if (!cues.length) return -1;
-		const speaker = reading.speaker;
-		const ko = stageText.ko.trim();
-		const en = stageText.en.trim();
+	/** Blocks of one prose tree, flashback containers unwrapped to their blocks. */
+	function proseBlocks(root: ParentNode): HTMLElement[] {
+		return [...root.querySelectorAll<HTMLElement>('.prose > *')].filter(
+			(el) => !el.matches('.mini')
+		);
+	}
 
-		if (speaker) {
-			const bySpeaker = cues
-				.map((c, i) => ({ c, i }))
-				.filter(({ c }) => c.personId === speaker);
-			if (bySpeaker.length) {
-				const hit =
-					bySpeaker.find(
-						({ c }) =>
-							(ko && c.ko && (c.ko === ko || ko.includes(c.ko) || c.ko.includes(ko))) ||
-							(en && c.en && (c.en === en || en.includes(c.en) || c.en.includes(en)))
-					) ?? bySpeaker[0];
-				return hit.i;
+	/** The live entry's article in the reading document. */
+	function liveArticle(): HTMLElement | null {
+		return reading.entryId ? document.getElementById(reading.entryId) : null;
+	}
+
+	/* Light + reveal the rail line matching the live one. The marker is the
+	   same `is-speaking` class the document wears, so the rail line takes the
+	   identical featured wash. The rail and the article render the same blocks
+	   through the same component, so `[data-speaker]` indexes line up 1:1. */
+	$effect(() => {
+		if (!live) return;
+		/* subscribe to the live utterance */
+		void stageText.key;
+		void reading.speaker;
+		void reading.entryId;
+		const root = railEl;
+		if (!root) return;
+		const raf = requestAnimationFrame(() => {
+			const article = liveArticle();
+			const docNodes = article
+				? [...article.querySelectorAll<HTMLElement>('[data-speaker]')]
+				: [];
+			const i = docNodes.findIndex((n) => n.classList.contains('is-speaking'));
+			const railNodes = [...root.querySelectorAll<HTMLElement>('[data-speaker]')];
+			railNodes.forEach((n, j) => n.classList.toggle('is-speaking', j === i));
+			if (i >= 0) {
+				railNodes[i]?.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
 			}
+		});
+		return () => cancelAnimationFrame(raf);
+	});
+
+	/** Rail clicks act on the reading document, not the rail's copy of the line. */
+	function onRailClickCapture(e: MouseEvent) {
+		const root = railEl;
+		const t = e.target instanceof Element ? e.target : null;
+		const pick = t?.closest('.lines.pick');
+		if (!root || !pick || !root.contains(pick)) return;
+		e.preventDefault();
+		e.stopPropagation();
+		stopPlay();
+		const node = pick.closest<HTMLElement>('[data-speaker]');
+		const article = liveArticle();
+		if (!node || !article) return;
+		const i = [...root.querySelectorAll<HTMLElement>('[data-speaker]')].indexOf(node);
+		const docNode = article.querySelectorAll<HTMLElement>('[data-speaker]')[i];
+		if (!docNode) return;
+		activateDialogue(docNode.querySelector<HTMLElement>('.lines') ?? docNode);
+	}
+
+	/* ————— play: the chronicle read straight through —————
+	   Advances the reading document block by block: dialogue is put on stage
+	   (and spoken, when the voice is on), narration is glided through on a
+	   clock proportional to its length. Any hand on the wheel pauses it. */
+	let autoplay = $state(false);
+	let playToken = 0;
+
+	const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
+
+	/** How long a silent block holds the stage — proportional to its text. */
+	function readMs(text: string): number {
+		return Math.min(14000, Math.max(1500, text.length * 55));
+	}
+
+	/** Every script block in the reading document, in reading order. */
+	function documentBlocks(): HTMLElement[] {
+		const root = document.getElementById('script');
+		return root ? proseBlocks(root) : [];
+	}
+
+	/** The block nearest the reading band — where a fresh run picks up. */
+	function nearestBlockIndex(blocks: HTMLElement[]): number {
+		const mid = window.innerHeight * 0.4;
+		let best = 0;
+		let bestD = Infinity;
+		blocks.forEach((el, i) => {
+			const r = el.getBoundingClientRect();
+			const d = Math.abs((r.top + r.bottom) / 2 - mid);
+			if (d < bestD) {
+				bestD = d;
+				best = i;
+			}
+		});
+		return best;
+	}
+
+	/** Scroll the rail to its copy of a document block (narration beats). */
+	function revealInRail(docBlock: HTMLElement) {
+		const root = railEl;
+		const article = docBlock.closest<HTMLElement>('article.entry');
+		if (!root || !article || article.id !== reading.entryId) return;
+		const i = proseBlocks(article).indexOf(docBlock);
+		if (i < 0) return;
+		proseBlocks(root)[i]?.scrollIntoView({
+			block: 'center',
+			behavior: reduce ? 'auto' : 'smooth'
+		});
+	}
+
+	function stillPlaying(token: number) {
+		return autoplay && token === playToken && live;
+	}
+
+	/** Wait out the live line's clip (or give up if it never starts). */
+	async function waitForVoice(token: number) {
+		const started = Date.now();
+		while (
+			stillPlaying(token) &&
+			!speech.playing &&
+			!speech.loading &&
+			Date.now() - started < 2500
+		) {
+			await sleep(120);
+		}
+		while (
+			stillPlaying(token) &&
+			(speech.playing || speech.loading) &&
+			Date.now() - started < 90000
+		) {
+			await sleep(150);
+		}
+	}
+
+	async function playLoop() {
+		const token = ++playToken;
+		let blocks = documentBlocks();
+		if (!blocks.length) {
+			autoplay = false;
+			return;
+		}
+		let i = nearestBlockIndex(blocks);
+
+		while (stillPlaying(token)) {
+			blocks = documentBlocks(); /* episodes scope remounts the document */
+			const el = blocks[i];
+
+			if (!el) {
+				/* End of the mounted document: episodes scope hands off to the
+				   next episode; the full scroll has simply finished. */
+				const next = episode?.next;
+				if (reading.viewScope === 'episodes' && next) {
+					goToEpisodeById(next.id);
+					await sleep(900);
+					i = 0;
+					continue;
+				}
+				break;
+			}
+
+			const text = (el.textContent ?? '').trim();
+			if (el.matches('.dialogue[data-speaker]')) {
+				/* A profiled line: put it on stage the way a click would. */
+				activateDialogue(el.querySelector<HTMLElement>('.lines') ?? el);
+				await sleep(700); /* the glide + the voice cueing up */
+				if (!stillPlaying(token)) break;
+				if (speech.auto) await waitForVoice(token);
+				else await sleep(readMs(text));
+			} else {
+				scrollToBand(el);
+				revealInRail(el);
+				await sleep(Math.max(900, readMs(text)));
+			}
+			i += 1;
 		}
 
-		return cues.findIndex(
-			(c) =>
-				(ko && c.ko && (c.ko === ko || ko.includes(c.ko) || c.ko.includes(ko))) ||
-				(en && c.en && (c.en === en || en.includes(c.en) || c.en.includes(en)))
-		);
+		if (token === playToken) autoplay = false;
+	}
+
+	function stopPlay() {
+		if (!autoplay) return;
+		autoplay = false;
+		playToken += 1;
+		stopSpeech();
+	}
+
+	function togglePlay() {
+		if (autoplay) {
+			stopPlay();
+			return;
+		}
+		autoplay = true;
+		void playLoop();
+	}
+
+	/* The reader's own hand always wins: wheel / touch / keys pause the run.
+	   The pills themselves are exempt, or the keyboard could never pause. */
+	$effect(() => {
+		if (!autoplay) return;
+		const stop = (e: Event) => {
+			const t = e.target;
+			if (t instanceof Element && t.closest('.pills')) return;
+			stopPlay();
+		};
+		window.addEventListener('wheel', stop, { passive: true });
+		window.addEventListener('touchstart', stop, { passive: true });
+		window.addEventListener('keydown', stop);
+		return () => {
+			window.removeEventListener('wheel', stop);
+			window.removeEventListener('touchstart', stop);
+			window.removeEventListener('keydown', stop);
+		};
 	});
 
 	$effect(() => {
-		if (!live) return;
-		const i = activeCueIndex;
-		const root = scriptEl;
-		if (i < 0 || !root) return;
-		const row = root.querySelector<HTMLElement>(`[data-cue="${i}"]`);
-		if (!row) return;
-		row.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+		if (!live) stopPlay();
 	});
-
-	function focusCue(cue: ScriptCue) {
-		const entryId = reading.entryId;
-		if (!entryId) return;
-		const article = document.getElementById(entryId);
-		if (!article) return;
-		const nodes = article.querySelectorAll<HTMLElement>('[data-speaker]');
-		const el = nodes[cue.dialogueIndex];
-		if (!el) return;
-		const pick = el.querySelector<HTMLElement>('.lines') ?? el;
-		activateDialogue(pick);
-	}
 
 	/** Wheel over the stage (not the script rail) advances the underlying scroll. */
 	function onStageWheel(e: WheelEvent) {
@@ -138,8 +308,9 @@
 	let accent = $derived(
 		person ? colorOf(person) || KINGDOMS[person.kingdom].color : 'var(--gold)'
 	);
-	let bust = $derived(person ? avatarOf(person, stageText.ko || stageText.en, reading.year) : null);
-	let spoken = $derived(person ? activeUtterance() : null);
+	let bust = $derived(
+		person ? avatarOf(person, stageText.ko || stageText.en, reading.year, reading.look) : null
+	);
 
 	/* ————— transient camera state ————— */
 	let coldOpen = $state(false);
@@ -269,18 +440,6 @@
 		};
 	});
 
-	/* ————— lettering ————— */
-	let showKo = $derived(stageText.showKo);
-	let showEn = $derived(stageText.showEn);
-	let textKo = $derived(stageText.ko);
-	let textEn = $derived(stageText.en);
-	let textZh = $derived(stageText.zh);
-	let textZhLatn = $derived(stageText.zhLatn);
-	let textJa = $derived(stageText.ja);
-	let textJaLatn = $derived(stageText.jaLatn);
-	let emptyLine = $derived(stageText.empty);
-	let lineKey = $derived(stageText.key);
-
 	/** Caption box: the scene slug, with a connective when the scene moved. */
 	let eyebrow = $derived(
 		reading.flash ? 'Years before' : placeShift ? 'Meanwhile' : null
@@ -322,6 +481,7 @@
 	let atEnd = $derived(reading.entryProgress > 0.86 && !!nextUp);
 
 	function jumpNext() {
+		stopPlay();
 		const next = episode?.next;
 		if (!next) return;
 		/* Episodes scope mounts one entry at a time — it has to remount first. */
@@ -336,8 +496,6 @@
 
 	let cardIn = $derived({ duration: reduce ? 0 : 420 });
 	let cardOut = $derived({ duration: reduce ? 0 : 320 });
-	let lineIn = $derived({ duration: reduce ? 0 : 260 });
-	let lineOut = $derived({ duration: reduce ? 0 : 160 });
 </script>
 
 {#if live}
@@ -363,7 +521,7 @@
 					>
 						<img
 							src={panel.src}
-							alt=""
+							alt={panel.alt ?? ''}
 							style:filter
 							in:fade={cardIn}
 							out:fade={cardOut}
@@ -408,38 +566,26 @@
 			{/if}
 		</section>
 
-		<!-- ————— Script (full-height right) ————— -->
-		<aside class="script" aria-label="Script" bind:this={scriptEl}>
+		<!-- ————— Script (full-height right) —————
+		     The real script: the live episode's beats through the same Blocks
+		     component the reading column uses. Clicks are delegated back onto
+		     the document (capture, so the rail's own copies never take the stage). -->
+		<aside class="script" aria-label="Script">
 			<header class="script-head">
 				<span class="script-label">Script</span>
 				{#if episode}
 					<span class="script-ep">Ep {episode.episode} · {episode.entry.title}</span>
 				{/if}
 			</header>
-			<div class="script-list">
-				{#if cues.length}
-					{#each cues as cue, i (cue.id)}
-						<button
-							type="button"
-							class="cue"
-							class:active={i === activeCueIndex}
-							data-cue={i}
-							onclick={() => focusCue(cue)}
-						>
-							<span class="cue-who">{cue.who}</span>
-							{#if showKo && cue.ko}
-								<span class="cue-line ko">{cue.ko}</span>
-							{/if}
-							{#if showEn && cue.en}
-								<span class="cue-line en" class:quiet={showKo && !!cue.ko}>{cue.en}</span>
-							{/if}
-							{#if !showKo && !showEn}
-								<span class="cue-line en">{cue.en || cue.ko}</span>
-							{/if}
-						</button>
+			<div class="script-list" bind:this={railEl} onclickcapture={onRailClickCapture}>
+				{#if beats.length}
+					{#each beats as beat, bi (bi)}
+						<div class="rail-beat" data-beat={bi}>
+							<Blocks blocks={beat.blocks} year={reading.year} />
+						</div>
 					{/each}
 				{:else}
-					<p class="script-empty">No spoken lines in this episode.</p>
+					<p class="script-empty">No script in this episode.</p>
 				{/if}
 			</div>
 		</aside>
@@ -482,50 +628,9 @@
 
 			<section class="dialogue" aria-label="Active dialogue" aria-live="polite">
 				{#if person}
-					{@const p = person}
-					{@const who = nameOf(p, reading.year)}
-					<div class="balloon">
-						{#key `${p.id}:${who}`}
-							<button
-								type="button"
-								class="name-tab"
-								onclick={() => openProfile(p.id, reading.year)}
-								aria-label="Open profile for {who}"
-								in:fade={lineIn}
-								out:fade={lineOut}
-							>
-								<span class="name">{who}</span>
-							</button>
-						{/key}
-
-						<SpeakButton utterance={spoken} variant="plate" size={15} title="Speak this line" />
-
-						<div class="frame">
-							{#key lineKey}
-								<div class="utterance" in:fade={lineIn} out:fade={lineOut}>
-									{#if emptyLine}
-										<p class="line ellipsis">…</p>
-									{:else}
-										{#if showKo && textKo}
-											<p class="line ko">{textKo}</p>
-										{/if}
-										{#if showEn && textEn}
-											<p class="line en" class:quiet={showKo && !!textKo}>{textEn}</p>
-										{/if}
-										{#if textZh}
-											<p class="line zh">{textZh}</p>
-											{#if textZhLatn}<p class="line latn">{textZhLatn}</p>{/if}
-										{/if}
-										{#if textJa}
-											<p class="line ja">{textJa}</p>
-											{#if textJaLatn}<p class="line latn">{textJaLatn}</p>{/if}
-										{/if}
-									{/if}
-								</div>
-							{/key}
-							<span class="caret" aria-hidden="true">▼</span>
-						</div>
-					</div>
+					<!-- The immersion speaker plate itself, mounted as a panel — one
+					     dialogue box for both stages, so they can never drift. -->
+					<SpeakerPlate variant="panel" />
 				{:else if episode}
 					{@const entry = episode.entry}
 					<div class="narration">
@@ -547,20 +652,40 @@
 			</section>
 		</div>
 
-		<!-- peek + end card sit over the grid -->
-		<button
-			type="button"
-			class="peek"
-			class:on={peek}
-			aria-pressed={peek}
-			title={peek ? 'Hide the page chrome again' : 'Peek at relations, location and art'}
-			onclick={() => (peek = !peek)}
-		>
-			<span class="material-symbols-outlined" aria-hidden="true">
-				{peek ? 'visibility_off' : 'visibility'}
-			</span>
-			<span class="peek-label">{peek ? 'Hide' : 'Peek'}</span>
-		</button>
+		<!-- play / peek pills + end card sit over the grid -->
+		<div class="pills">
+			<button
+				type="button"
+				class="pill play"
+				class:on={autoplay}
+				aria-pressed={autoplay}
+				title={autoplay
+					? 'Pause the read-through'
+					: 'Play the script straight through, line by line'}
+				onclick={togglePlay}
+			>
+				<span class="material-symbols-outlined" aria-hidden="true">
+					{autoplay ? 'pause' : 'play_arrow'}
+				</span>
+				<span class="pill-label">{autoplay ? 'Pause' : 'Play'}</span>
+			</button>
+			<button
+				type="button"
+				class="pill peek"
+				class:on={peek}
+				aria-pressed={peek}
+				title={peek ? 'Hide the page chrome again' : 'Peek at relations, location and art'}
+				onclick={() => {
+					stopPlay();
+					peek = !peek;
+				}}
+			>
+				<span class="material-symbols-outlined" aria-hidden="true">
+					{peek ? 'visibility_off' : 'visibility'}
+				</span>
+				<span class="pill-label">{peek ? 'Hide' : 'Peek'}</span>
+			</button>
+		</div>
 
 		{#if atEnd && episode && nextUp}
 			{@const ep = episode}
@@ -611,6 +736,11 @@
 	   top and Character | Active Dialogue on the bottom row. */
 	.stage {
 		--gap: 0.65rem;
+		/* The stage's own grid metrics: a fixed 400px script rail, the floor row
+		   (character + dialogue) and the character pane's width. */
+		--cin-script-w: 400px;
+		--cin-floor-h: clamp(11rem, 26vh, 14rem);
+		--cin-char-w: 11rem;
 		--pad: max(0.75rem, env(safe-area-inset-top, 0px)) max(0.75rem, env(safe-area-inset-right, 0px))
 			max(0.75rem, env(safe-area-inset-bottom, 0px)) max(0.75rem, env(safe-area-inset-left, 0px));
 		position: fixed;
@@ -903,69 +1033,19 @@
 		flex: 1 1 auto;
 		min-height: 0;
 		overflow: auto;
-		padding: 0.45rem 0.4rem 0.75rem;
+		padding: 0.65rem 0.85rem 1rem;
 		overscroll-behavior: contain;
 	}
 
-	.cue {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0.12rem;
-		width: 100%;
-		margin: 0 0 0.35rem;
-		padding: 0.55rem 0.6rem 0.6rem;
-		border: 1px solid transparent;
-		border-radius: 4px;
-		background: transparent;
-		color: inherit;
-		font: inherit;
-		text-align: left;
-		cursor: pointer;
-		transition:
-			background 180ms var(--ease),
-			border-color 180ms var(--ease);
+	/* The blocks inside are the reading column's own (Blocks.svelte carries
+	   their styling, including the cinema lettering) — the rail only spaces
+	   the beats it stacks. */
+	.rail-beat {
+		margin: 0 0 0.4rem;
 	}
 
-	.cue:hover,
-	.cue:focus-visible {
-		background: color-mix(in srgb, var(--fg) 5%, transparent);
-		border-color: var(--hairline);
-		outline: none;
-	}
-
-	.cue.active {
-		background: color-mix(in srgb, var(--k, var(--gold)) 14%, color-mix(in srgb, var(--plate-ink) 55%, transparent));
-		border-color: color-mix(in srgb, var(--k, var(--gold)) 40%, transparent);
-	}
-
-	.cue-who {
-		font-size: 0.62rem;
-		font-weight: 600;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: var(--gold);
-	}
-
-	.cue-line {
-		font-family: var(--serif);
-		font-size: 0.84rem;
-		line-height: 1.35;
-		color: var(--fg);
-		display: -webkit-box;
-		-webkit-line-clamp: 3;
-		line-clamp: 3;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-	}
-
-	.cue-line.ko {
-		font-family: 'Noto Serif KR', var(--serif);
-	}
-
-	.cue-line.en.quiet {
-		font-size: 0.74rem;
-		color: var(--fg-dim);
+	.rail-beat :global(.prose) {
+		max-width: none;
 	}
 
 	.script-empty {
@@ -1071,129 +1151,8 @@
 		color: var(--fg-faint);
 	}
 
-	/* ————— active dialogue ————— */
-	.balloon {
-		position: relative;
-		flex: 1 1 auto;
-		min-width: 0;
-		display: flex;
-		flex-direction: column;
-		padding: 0.55rem 0.75rem 0.65rem;
-	}
-
-	.name-tab {
-		align-self: flex-start;
-		margin: 0 0 0.35rem;
-		padding: 0.22rem 0.7rem 0.26rem;
-		border: 1px solid color-mix(in srgb, var(--k) 45%, #e0c878);
-		border-radius: 999px;
-		background: var(--plate-ink);
-		cursor: pointer;
-		color: inherit;
-		font: inherit;
-		text-align: left;
-	}
-
-	.name-tab:focus-visible {
-		outline: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
-		outline-offset: 2px;
-	}
-
-	.name {
-		font-family: var(--serif);
-		font-size: 0.82rem;
-		font-weight: 700;
-		letter-spacing: 0.02em;
-		color: var(--plate-fg-strong);
-	}
-
-	.balloon :global(.speak) {
-		position: absolute;
-		top: 0.45rem;
-		right: 0.65rem;
-		z-index: 4;
-	}
-
-	.frame {
-		position: relative;
-		flex: 1 1 auto;
-		min-height: 0;
-		padding: 0.55rem 1.1rem 0.7rem 0.15rem;
-		box-sizing: border-box;
-		overflow: hidden;
-	}
-
-	.utterance {
-		display: flex;
-		flex-direction: column;
-		gap: 0.22rem;
-		height: 100%;
-		overflow: auto;
-		padding-right: 0.85rem;
-	}
-
-	.line {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.08rem;
-		font-weight: 500;
-		line-height: 1.34;
-		letter-spacing: 0.01em;
-		color: var(--plate-fg);
-		text-wrap: balance;
-	}
-
-	.line.ko {
-		font-family: 'Noto Serif KR', var(--serif);
-	}
-
-	.line.en.quiet {
-		font-size: 0.88rem;
-		font-weight: 400;
-		color: var(--plate-fg-quiet);
-	}
-
-	.line.zh,
-	.line.ja {
-		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 0.9rem;
-		letter-spacing: 0.05em;
-		color: color-mix(in srgb, var(--k) 42%, var(--plate-fg));
-	}
-
-	.line.latn {
-		font-size: 0.74rem;
-		font-weight: 400;
-		font-style: italic;
-		color: var(--plate-fg-faint);
-	}
-
-	.line.ellipsis {
-		color: var(--plate-fg-faint);
-		letter-spacing: 0.12em;
-	}
-
-	.caret {
-		position: absolute;
-		right: 0.55rem;
-		bottom: 0.35rem;
-		font-size: 0.7rem;
-		line-height: 1;
-		color: var(--gold);
-		animation: caret-blink 1.05s step-end infinite;
-	}
-
-	@keyframes caret-blink {
-		0%,
-		45% {
-			opacity: 1;
-		}
-		55%,
-		100% {
-			opacity: 0;
-		}
-	}
-
+	/* ————— active dialogue —————
+	   The box itself is SpeakerPlate (panel variant) — its styles live there. */
 	.narration {
 		flex: 1 1 auto;
 		min-width: 0;
@@ -1235,12 +1194,20 @@
 		color: var(--plate-fg-faint);
 	}
 
-	/* ————— peek ————— */
-	.peek {
+	/* ————— play / peek pills ————— */
+	.pills {
 		pointer-events: auto;
 		position: absolute;
 		right: calc(var(--cin-script-w) + var(--gap) + 0.85rem);
 		bottom: calc(var(--cin-floor-h) + var(--gap) + 0.85rem);
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+		z-index: 3;
+	}
+
+	.pill {
+		pointer-events: auto;
 		display: flex;
 		align-items: center;
 		gap: 0.35rem;
@@ -1256,28 +1223,27 @@
 		backdrop-filter: blur(14px);
 		cursor: pointer;
 		opacity: 0.45;
-		z-index: 3;
 		transition:
 			opacity 0.25s var(--ease),
 			color 0.25s var(--ease),
 			border-color 0.25s var(--ease);
 	}
 
-	.peek:hover,
-	.peek:focus-visible {
+	.pill:hover,
+	.pill:focus-visible {
 		opacity: 1;
 		color: var(--gold);
 		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
 	}
 
-	.peek.on {
+	.pill.on {
 		opacity: 1;
 		color: var(--on-gold);
 		background: var(--gold);
 		border-color: var(--gold);
 	}
 
-	.peek .material-symbols-outlined {
+	.pill .material-symbols-outlined {
 		font-size: 0.95rem;
 	}
 
@@ -1446,11 +1412,6 @@
 			animation: none;
 			transform: none;
 		}
-
-		.caret {
-			animation: none;
-			opacity: 0.85;
-		}
 	}
 
 	/* ————— mobile: stack Scene → floor → Script ————— */
@@ -1480,13 +1441,13 @@
 			min-height: 0;
 		}
 
-		.peek {
+		.pills {
 			right: 0.7rem;
 			bottom: auto;
 			top: 0.65rem;
 		}
 
-		.peek-label {
+		.pill-label {
 			display: none;
 		}
 
@@ -1495,12 +1456,6 @@
 			bottom: auto;
 			top: 36%;
 			max-width: calc(100vw - 2rem);
-		}
-
-		.line {
-			font-size: 0.98rem;
-			overflow-wrap: anywhere;
-			word-break: keep-all;
 		}
 
 		.run {
