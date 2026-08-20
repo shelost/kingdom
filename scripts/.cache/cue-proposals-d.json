@@ -1,0 +1,189 @@
+{
+ "chapters": ["fall-of-euija", "epilogue-part-ii"],
+ "alts": [
+  { "id": "satek-clan-2", "alt": "The Satek elder's sleeve and seal at the midnight monastery truce" },
+  { "id": "yunbi-clan-2", "alt": "The Yunbi elder across the truce table as the cups are spilled" },
+  { "id": "tamla-comics", "alt": "Island myths told to the exiled Gyebek by lamplight" },
+  { "id": "gyebek-sunset", "alt": "Gyebek marked for exile at dusk over Sabi harbor" },
+  { "id": "gyebek-well", "alt": "Gyebek mends a well rope on Tamla, listening" },
+  { "id": "tamla-map", "alt": "Chronicle map of the sea route from Baekje past Mount Halla to Tamla" },
+  { "id": "sabi-palace", "alt": "Sabi palace at dawn as Euija summons the Ministers' Assembly" },
+  { "id": "assembly-sketch", "alt": "The remade Assembly hall — Satek Chunbok named Prime Minister" },
+  { "id": "five-sons", "alt": "Euija's sons seated in the chairs of the eight houses" },
+  { "id": "hedonism", "alt": "Wine and court maids crowd Euija's endless banquet" },
+  { "id": "sungchung-prison", "alt": "Seongchung starving in a cell within earshot of the feast" },
+  { "id": "halla-goddess", "alt": "Seolmundae the Great Lady piles the seabed into Mount Halla" },
+  { "id": "tamla-well", "alt": "Three divine princes — Yang, Go, and Bu — rise from Samseonghyeol" },
+  { "id": "tamla-island", "alt": "Orange groves and haenyeo shores under Mount Halla" },
+  { "id": "tamla-oreum", "alt": "Oreum hills scattered under Halla — the holes in the Great Lady's apron" },
+  { "id": "gameunjang", "alt": "The cast-out daughter finds gold in the yam-digger's spoil" },
+  { "id": "jacheongbi", "alt": "Asked how he survived twenty years at court, Gyebek answers: he trusted one man" },
+  { "id": "iron-chest", "alt": "An iron chest adrift on the night sea" },
+  { "id": "bloody-hand", "alt": "A blood-marked hand — first of the nine omens over Sabi" },
+  { "id": "lightning-palace", "alt": "Lightning breaks over Sabi palace as the people cry that Baekje falls" },
+  { "id": "red-river", "alt": "The White River turned red with blood" },
+  { "id": "fox-omen", "alt": "Foxes overrunning the hall of the Ministers' Assembly" },
+  { "id": "plague-scream", "alt": "Ghost screams rising from the palace at night" },
+  { "id": "gyebek-departs", "alt": "Gyebek on the Tamla shore as the recall boat ties up" },
+  { "id": "kangrim-ledger", "alt": "Kangrim's crow-scrambled ledger at Yumla's threshold" },
+  { "id": "loyalists-ship", "alt": "The three loyalists' counsel as the ship waits at the water" },
+  { "id": "three-loyalists", "alt": "Seongchung, Heungsu, and Gyebek — the three loyalists of Baekje" },
+  { "id": "gyebek-family", "alt": "Gyebek's last visit home to his family before Hwangsan" },
+  { "id": "yellow-banner", "alt": "The war banner over Yellow Mountain, Baekje's last door" },
+  { "id": "deer-cliff", "alt": "A deer on a cliff over the southern land" },
+  { "id": "family-south", "alt": "Onjo and Biryu take their mother Sosuno south" },
+  { "id": "heavenly-deer", "alt": "The Heavenly Deer at the threshold between yellow earth and starred sky" },
+  { "id": "harbor-city", "alt": "A harbour city on the road to Goguryeo" },
+  { "id": "three-kings", "alt": "Three kings to come — Yuri, Biryu, and Onjo" }
+ ],
+ "moves": [
+  {
+   "id": "tamla-comics",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Gyebek’s Exile",
+   "newAt": "The islanders will spend five years noticing",
+   "reasoning": "Wrong scene: the art depicts the exiled Gyebek hearing island myths by lamplight, but it is anchored in the Sabi monastery truce long before he reaches Tamla — moved to the block where his island life begins."
+  },
+  {
+   "id": "gyebek-well",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Gyebek’s Exile",
+   "newAt": "He is not slow. He is filing it.",
+   "reasoning": "Wrong scene: the art shows Gyebek mending a well rope on Tamla while listening, but it is anchored at the Ungjin assassination attempt back on the mainland — moved to the island scene where he files away what he hears."
+  },
+  {
+   "id": "sungchung-prison",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Euija’s Descent",
+   "newAt": "tries to stop him, but is thrown in prison",
+   "reasoning": "Spoiler: the prison image appears at '…Let them wait.', two scenes before the text reveals Seongchung is imprisoned — moved to the block where the imprisonment happens."
+  },
+  {
+   "id": "tamla-well",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Tamla, the Island of Oranges",
+   "newAt": "three divine princes named",
+   "reasoning": "Broken anchor: the current fragment ('One day, a box drifts from the East Sea, revealing a mes') matches no block text, so the image falls back to the entry opening; the art depicts the three princes rising from Samseonghyeol, so it is anchored to that block."
+  },
+  {
+   "id": "big_little_stars",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Big Star and Little Star",
+   "newAt": "큰별아. 작은별아",
+   "reasoning": "Broken anchor: '두 아들이 있었다' appears in no block of the entry, so the image falls back to the opening; moved to Heaven–Earth King's line that introduces the two brothers."
+  },
+  {
+   "id": "gyebek-family",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "The Three Loyalists",
+   "newAt": "Before he marches he goes home",
+   "reasoning": "Wrong scene: the family image is anchored mid-council at Heungsu's 'You truly mean to march?', several blocks before the text's single-line home visit — moved to land exactly on that moment."
+  },
+  {
+   "id": "yellow-banner",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "The Three Loyalists",
+   "newAt": "his five thousand set out for the",
+   "reasoning": "Wrong scene: the Yellow Mountain banner is anchored to an indoor conversation about the Guardian of Ansi — moved to the block where Gyebek and his five thousand actually march for Yellow Mountain."
+  },
+  {
+   "id": "heavenly-deer",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Onjo",
+   "newAt": "After wandering for a while, they find a",
+   "reasoning": "Spoiler/wrong scene: the Heavenly Deer image is anchored at Lady Ye's speech in Buyeo, well before the deer appears in the text — moved to the block where the brothers find it."
+  }
+ ],
+ "newSlots": [
+  {
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Gyebek’s Exile",
+   "afterId": "tamla-map",
+   "promptSummary": "Satek Jijeok reads the sealed exile order over a kneeling Gyebek in the great hall",
+   "slot": {
+    "id": "exile-order-hall",
+    "ratio": 2.4,
+    "tone": "#eab308",
+    "at": "Gyebek is summoned to the hall and told to kneel",
+    "alt": "Satek Jijeok reads the sealed exile order over the kneeling Gyebek",
+    "prompt": "Historical manhwa: the Sabi great hall — General Gyebek kneeling in the centre, Prime Minister Satek Jijeok holding the borrowed royal seal high and reading the exile order over his head, rows of clan ministers watching in torchlight, the king's empty throne behind them. Match Gyebek and satek_elder refs. No text, --ar 3:2",
+    "refs": ["/ch_gyebek.png", "/ch_satek_elder.png", "/pl_sabi_palace.png"]
+   }
+  },
+  {
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Gyebek’s Exile",
+   "afterId": "turtle-beach",
+   "promptSummary": "Euija out of mourning, raging at the ministers who used his seal",
+   "slot": {
+    "id": "euija-mourning-fury",
+    "ratio": 2.4,
+    "tone": "#e08a2e",
+    "at": "Euija completes his mourning period",
+    "alt": "Euija, freshly out of mourning, rages at the ministers who exiled Gyebek with his borrowed seal",
+    "prompt": "Historical manhwa: King Euija in white mourning robes just cast off, overturning a low council table in fury as cowering Satek ministers shield themselves — he has just learned his own borrowed seal exiled Gyebek. Dim hall, scattered documents, dramatic lamplight. Match Euija ref. No text, --ar 3:2",
+    "refs": ["/ch_buyeo_euija.png", "/pl_sabi_palace.png"]
+   }
+  },
+  {
+   "chapterId": "fall-of-euija",
+   "entryTitle": "The Nine Plagues",
+   "afterId": "red-river",
+   "promptSummary": "Euija cuts down the shaman mid-prophecy over the turtle shell",
+   "slot": {
+    "id": "shaman-cut-down",
+    "ratio": 2.4,
+    "tone": "#9f1239",
+    "at": "The blade is out before the last word cools",
+    "alt": "Euija's blade cuts the shaman down mid-prophecy over the carved turtle shell",
+    "prompt": "Historical manhwa: a dim shrine room — King Euija's sword mid-swing, the seated shaman cut down over the carved turtle shell, oracle bones and lamplight scattering, the nine omens hanging in the smoke behind. Match Euija and shaman refs. No text, --ar 3:2",
+    "refs": ["/ch_buyeo_euija.png", "/ch_shaman.png"]
+   }
+  },
+  {
+   "chapterId": "fall-of-euija",
+   "entryTitle": "The Nine Plagues",
+   "afterId": "plague-scream",
+   "promptSummary": "Euija's midnight plunge into the black White River",
+   "slot": {
+    "id": "euija-river-jump",
+    "ratio": 2.4,
+    "tone": "#1e293b",
+    "at": "He jumps. The cold edits him.",
+    "alt": "Euija plunges alone into the black White River under the moon",
+    "prompt": "Historical manhwa: night on the White River — King Euija mid-plunge into black moonlit water, royal outer robe abandoned on the wet stones of the bank, spray frozen in the moonlight, years of wine stripping off him like a coat. Match Euija and White River refs. No text, --ar 3:2",
+    "refs": ["/ch_buyeo_euija.png", "/pl_white_river.png"]
+   }
+  },
+  {
+   "chapterId": "fall-of-euija",
+   "entryTitle": "The Tribute of Oranges",
+   "afterId": null,
+   "promptSummary": "Tamla tribute ships heavy with oranges resume the crossing to Baekje",
+   "slot": {
+    "id": "orange-tribute",
+    "ratio": 2.4,
+    "tone": "#fdba74",
+    "at": "and the oranges resume",
+    "alt": "Tamla tribute ships heavy with oranges cross calm water toward Baekje, Mount Halla behind",
+    "prompt": "Historical manhwa: small Tamla tribute ships riding calm morning water toward the Baekje coast, decks stacked with baskets of bright oranges, Mount Halla receding behind them — a peaceable, sunlit crossing. Match Halla ref. No text, --ar 3:2",
+    "refs": ["/pl_mount_halla.png"]
+   }
+  },
+  {
+   "chapterId": "epilogue-part-ii",
+   "entryTitle": "Annual Meeting of the Three Realms",
+   "afterId": "three-realms-meeting",
+   "promptSummary": "Kangrim quietly asks the gardener whether the dead can be resurrected",
+   "slot": {
+    "id": "kangrim-resurrection-question",
+    "ratio": 2.4,
+    "tone": "#8fbf8a",
+    "at": "possible to resurrect a dead person",
+    "alt": "Kangrim quietly asks Hallakgungi the gardener whether the flowers can resurrect the dead",
+    "prompt": "Mythic Three Realms council (painterly): the grim reaper Kangrim leaning close to Hallakgungi the gardener at the edge of the divine assembly, asking quietly about the resurrection flowers — the gardener's easy smile hardening into seriousness, gods gossiping in soft light behind them. Painterly digital art, no text, no watermark, --ar 3:2 --stylize 250",
+    "refs": ["/ch_kangrim.png", "/ch_gardener.png"]
+   }
+  }
+ ]
+}

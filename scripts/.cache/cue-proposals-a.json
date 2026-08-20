@@ -1,0 +1,270 @@
+{
+  "chapters": ["samhan", "five-principles"],
+  "alts": [
+    { "id": "seorabeol-panorama", "alt": "Aerial panorama of Seorabeol, Silla's capital, spread along its river beneath the mountains" },
+    { "id": "harmony-council", "alt": "The Harmony Council — Silla's nobles debate the succession around a smoking brazier deep into the night" },
+    { "id": "three-princesses", "alt": "The three remaining Sacred Bone princesses — Seungman, Dukman, and Chunmyung — enthroned side by side" },
+    { "id": "yushin-chunchu-munhee", "alt": "Sketch portraits of Kim Yushin, Kim Chunchu, and Kim Munhee side by side" },
+    { "id": "kim-family", "alt": "The Kim family arrives in force — Yushin, Munhee, Chunchu, and the children, all talking at once" },
+    { "id": "sunduk-poster", "alt": "Coronation poster of Queen Sunduk, twenty-seventh ruler of Silla, in crown and royal robes" },
+    { "id": "crescent-hwarang", "alt": "Jinheung in dark armor under a crescent moon, standing over the slain King Seong in gold" },
+    { "id": "baekje-river", "alt": "Sabi from the White River — palaces and pagodas rising above busy trading boats" },
+    { "id": "king-mu", "alt": "Portrait card of old King Mu of Baekje, crowned and smiling in red and gold" },
+    { "id": "dudung", "alt": "A clan street tough crouches with his fighting stick — Sabi politics at its older volume" },
+    { "id": "young-princes", "alt": "The five young princes of Baekje — Yung, Tae, Hyo, Yun, and Pung — in a row" },
+    { "id": "heartbeat", "alt": "The Satek and Yunbi crowds face off across a heartbeat line" },
+    { "id": "clan-satek", "alt": "Group portrait of the Satek clan in black and gold, the house that holds the king's sleeve" },
+    { "id": "clan-yunbi", "alt": "Group portrait of the crowned Yunbi clan, masters of the coast road" },
+    { "id": "clan-jinmo", "alt": "Group portrait of the blue-haired Jinmo clan in imperial yellow" },
+    { "id": "clan-mokli", "alt": "Group portrait of the Mokli clan in armor and fur" },
+    { "id": "clan-guk", "alt": "Group portrait of the Guk clan in plain green and brown robes" },
+    { "id": "gunchogo", "alt": "Geunchogo deified — a colossal golden rider in the storm clouds above kneeling Baekje courtiers" },
+    { "id": "mountain-outpost", "alt": "Commander Yeon's snowbound mountain outpost, red banners flying above the clouds" },
+    { "id": "spike-heads", "alt": "Severed heads on tall stakes line the snowy pass outside the Eastern outpost" },
+    { "id": "nameless-boy", "alt": "Close-up of the Mohe boy — shaved crown, braids, and a blood-streaked, defiant face" },
+    { "id": "yeon-duel", "alt": "Two armored generals clash face to face over a bloodied blade on a red field" },
+    { "id": "battlefield-corpses", "alt": "A Mohe child sits beside a slain warrior on the bloodied rocks of his village" },
+    { "id": "five-banners", "alt": "The five commanders of Goguryeo beneath their banners — East, West, Center, South, North" },
+    { "id": "sunset-rider", "alt": "Riders and a caravan in silhouette against a hazy sunset over the steppe" },
+    { "id": "gwanggaeto", "alt": "Silla townsfolk eye the Goguryeo garrison still standing guard at their gate — saviors who never left" },
+    { "id": "gotaso_06", "alt": "The young couple embrace, radiant, while a woman in ceremonial robes watches alone from a distance" },
+    { "id": "gotaso_07", "alt": "Gotaso in red wedding robes and Pumsuk in armor, face to face in silhouette" },
+    { "id": "stele-sunrise", "alt": "A family stands small before the towering Gwanggaeto Stele at golden sunrise" },
+    { "id": "three-sons", "alt": "Casting-card triptych of three rival rulers of Samhan, each drawn from drama still to manhwa to cartoon — 'The King for All Samhan, I mean…!'" },
+    { "id": "stone-generals", "alt": "Yeon's three sons grown into grim stone-faced generals in dark armor before a fortress gate" },
+    { "id": "kingdoms-crest-map", "alt": "Gesomun, blades strapped across his back, throws his head back laughing before a great wall map of the Three Kingdoms" },
+    { "id": "young-princes-grown", "alt": "A hooded man in disguise slips through the dark — 'I came to see the real power for myself'" },
+    { "id": "treasure-cliff", "alt": "King Euija and his armored general at a game of baduk, a sword resting within reach of the board" },
+    { "id": "gyebek-sword", "alt": "A grinning king taunts Gesomun past a sword blade — 'you can command soldiers, but statecraft is beyond you'" },
+    { "id": "euija-poster", "alt": "Blood-spattered war portrait of a helmed king glaring beneath a red plume" },
+    { "id": "euija-cartoon", "alt": "Campaign map of Baekje and Silla with the western harbor circled in red ink" },
+    { "id": "img_euija_06", "alt": "A crowned king cuts his own forearm before the court — 'Do you see… my will…!'" },
+    { "id": "crescent-throne", "alt": "Rows of young Hwarang in white crouch through a training drill on the palace yard" },
+    { "id": "north-star-poster", "alt": "Kim Muryuk on a night ridge above the ford at Gucheon, sword drawn beneath a single bright star as torchlit riders close in below" }
+  ],
+  "moves": [
+    {
+      "id": "three-princesses",
+      "chapterId": "samhan",
+      "entryTitle": "Queen Sunduk",
+      "newAt": "There are now only 3 Royals left",
+      "reasoning": "The art is a title-card of the three princesses, but it is anchored at the queen's private self-doubt 14 blocks later; it belongs where the text introduces the three remaining Royals."
+    },
+    {
+      "id": "yushin-chunchu-munhee",
+      "chapterId": "samhan",
+      "entryTitle": "Queen Sunduk",
+      "newAt": "Sword of Silla, Munhee’s older brother",
+      "reasoning": "A labeled trio portrait of Yushin, Chunchu, and Munhee is anchored inside the intimate Queen–Yushin farewell; it belongs where the Marshal and his family ties are introduced."
+    },
+    {
+      "id": "kim-family",
+      "chapterId": "samhan",
+      "entryTitle": "Queen Sunduk",
+      "newAt": "already, in quieter rooms, the most cunning man in Samhan",
+      "reasoning": "A comic panel of the whole Kim family arriving at the event is anchored at the solemn 'call me nothing but Your Majesty' renunciation; it belongs at the opening scene where the family prepares for the coronation."
+    },
+    {
+      "id": "crescent-hwarang",
+      "chapterId": "samhan",
+      "entryTitle": "Jinheung, The Crescent Moon",
+      "newAt": "The man who orders that killing is",
+      "reasoning": "Its anchor spans a <b> tag and never matches, so the image falls back to the opening by accident; the art actually depicts Jinheung standing over the slain King Seong under a crescent moon, so pin it explicitly to the opening block where that killing is told."
+    },
+    {
+      "id": "king-mu",
+      "chapterId": "samhan",
+      "entryTitle": "The Eight Great Clans",
+      "newAt": "King Mu (71)",
+      "reasoning": "Its anchor text no longer exists in any block (dead anchor, image falls to entry opening); the art is a King Mu portrait card, so pin it to the cite block where King Mu enters the scene."
+    },
+    {
+      "id": "young-princes",
+      "chapterId": "samhan",
+      "entryTitle": "The Eight Great Clans",
+      "newAt": "grow up already spoken for",
+      "reasoning": "The art is a lineup of the five young princes, but it is anchored inside the Satek–Yunbi elders' quarrel; it belongs at the paragraph introducing the princes."
+    },
+    {
+      "id": "ocean_trade_01",
+      "chapterId": "samhan",
+      "entryTitle": "Ocean Trade",
+      "newAt": "the hurricane turns to water",
+      "reasoning": "Its anchor 'sea lanes to the East' exists only in the previous entry, so it never matches; re-pin the harbour establishing shot to the opening block."
+    },
+    {
+      "id": "ocean_trade_02",
+      "chapterId": "samhan",
+      "entryTitle": "Ocean Trade",
+      "newAt": "On the ledgers the sea looks honest",
+      "reasoning": "Its anchor 'Clan berths' matches no block (dead anchor, falls to opening); the clerks-and-ledgers art belongs at the ledger block."
+    },
+    {
+      "id": "ocean_trade_03",
+      "chapterId": "samhan",
+      "entryTitle": "Ocean Trade",
+      "newAt": "The sea lane is the country.",
+      "reasoning": "Its anchor 'Neither is permanent' matches no block in this entry (dead anchor, falls to opening); the night-rain dock art belongs at the closing line of the entry."
+    },
+    {
+      "id": "spike-heads",
+      "chapterId": "samhan",
+      "entryTitle": "The Summit",
+      "newAt": "It is over quickly, and it is not clean.",
+      "reasoning": "The art shows heads on stakes outside the outpost, but it is anchored at the Summit chamber in Pyongyang; it belongs at the traitor's execution in the yard."
+    },
+    {
+      "id": "nameless-boy",
+      "chapterId": "samhan",
+      "entryTitle": "The Summit",
+      "newAt": "A month before the Summit",
+      "reasoning": "The art is a close-up of the Mohe boy from the burned village, but it is anchored mid-debate in the Summit chamber — revealing the boy long before the text introduces him; move it to the village flashback."
+    },
+    {
+      "id": "battlefield-corpses",
+      "chapterId": "samhan",
+      "entryTitle": "The Summit",
+      "newAt": "Yeon looks at him for what his officers later agree",
+      "reasoning": "The art shows the Mohe child sitting beside a corpse, but it is anchored at Gusesa's 'Nephew, sit down' line in the chamber; it belongs in the village aftermath where Yeon studies the boy."
+    },
+    {
+      "id": "five-banners",
+      "chapterId": "samhan",
+      "entryTitle": "The Summit",
+      "newAt": "a gathering of all Five Commanderies",
+      "reasoning": "The art is a roster card of the five commanders under their banners, but it is anchored at the yard cheer near the end; it belongs where the Five Commanderies are introduced before the roster table."
+    },
+    {
+      "id": "sunset-rider",
+      "chapterId": "samhan",
+      "entryTitle": "The Summit",
+      "newAt": "You are taking him?",
+      "reasoning": "Its anchor is a bare '…', which first matches the interrogation dialogue near the entry opening; the caravan-at-sunset silhouette belongs at the moment Yeon takes the boy home."
+    },
+    {
+      "id": "gotaso_06",
+      "chapterId": "five-principles",
+      "entryTitle": "Gotaso’s Wedding",
+      "newAt": "All but me.",
+      "reasoning": "Its anchor 'Lord Yushin.' matches no block in this entry (dead anchor, image falls to the opening — the kidnapping scene); the art of the embracing couple watched by a lone woman belongs at the Queen's 'All but me.'"
+    },
+    {
+      "id": "stele-sunrise",
+      "chapterId": "five-principles",
+      "entryTitle": "Yeon’s Three Sons",
+      "newAt": "Yeon takes his sons to the",
+      "reasoning": "The image has no anchor and opens the entry, but the art depicts the family standing before the Gwanggaeto Stele — the mid-entry visit; pin it to that block."
+    },
+    {
+      "id": "euija-cartoon",
+      "chapterId": "five-principles",
+      "entryTitle": "King Euija, the 31st Eraha",
+      "newAt": "I was talking about the Silla border.",
+      "reasoning": "The art is a Baekje–Silla campaign map with a harbor circled, but it is anchored at the Rock-of-Politics ritual talk; it belongs at the scene where the king is studying the map of the Silla border."
+    },
+    {
+      "id": "north-star-poster",
+      "chapterId": "five-principles",
+      "entryTitle": "Jinheung’s Betrayal",
+      "newAt": "Silla’s ambush is waiting.",
+      "reasoning": "Its anchor spans a <b> tag and never matches (image falls to opening, spoiling the ambush art before the betrayal is told); re-pin it to the ambush block it depicts."
+    },
+    {
+      "id": "gwansanseong_night",
+      "chapterId": "five-principles",
+      "entryTitle": "Jinheung’s Betrayal",
+      "newAt": "For months the fight goes Baekje’s way",
+      "reasoning": "Its anchor 'marches on Gwansanseong' spans a <b> tag and never matches (image falls to opening); the night-camp art belongs at the campaign block describing the siege and the night ride."
+    }
+  ],
+  "newSlots": [
+    {
+      "chapterId": "samhan",
+      "entryTitle": "Queen Sunduk",
+      "afterId": "yushin-chunchu-munhee",
+      "promptSummary": "Young Yushin and Chunchu on the hill above Surabol, arguing about the east star",
+      "slot": {
+        "id": "east-star-hill",
+        "ratio": 3.333,
+        "tone": "#0b1a33",
+        "at": "the east star",
+        "alt": "Two boys lie on a hill above Surabol at night, pointing at the bright east star",
+        "prompt": "Cinematic historical illustration of two teenage boys — young Kim Yushin and Kim Chunchu — lying on their backs on a grassy hill above the rooftops of Surabol at night, one pointing at a single brilliant planet low in the east, star-filled sky, the moment they vow to make Samhan one country, Three Kingdoms of Samhan / Tang era (612), scene: the east star flashback, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_kim_yushin.png", "/ch_chunchu.png"]
+      }
+    },
+    {
+      "chapterId": "samhan",
+      "entryTitle": "The Eight Great Clans",
+      "afterId": "clan-guk",
+      "promptSummary": "Prince Euija names the drowned-rat nameless boy Gyebek on the White River bank",
+      "slot": {
+        "id": "gyebek-white-river",
+        "ratio": 3.333,
+        "tone": "#b45309",
+        "at": "A fine young man… what is your name?",
+        "alt": "Prince Euija crouches beside the soaked nameless boy on the White River bank, giving him the name Gyebek",
+        "prompt": "Cinematic historical illustration of Prince Euija in fine robes crouching beside a soaked, exhausted teenage boy on the muddy bank of the wide White River below Sabi, clan barges in the distance, the prince smiling as he grants the nameless boy the name Gyebek, warm late-afternoon light on the water, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans — the naming of Gyebek, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_gyebek.png", "/ch_buyeo_euija.png", "/pl_white_river.png"]
+      }
+    },
+    {
+      "chapterId": "samhan",
+      "entryTitle": "Birth of Namseng",
+      "afterId": null,
+      "promptSummary": "Samsin steps out of the hanging portrait to open the birth of Namseng",
+      "slot": {
+        "id": "samsin-namseng-birth",
+        "ratio": 3.333,
+        "tone": "#c084a0",
+        "at": "steps from the frame the way steam steps",
+        "alt": "Samsin — three as one — steps glowing from a hanging portrait to lay a hand on the labouring mother",
+        "prompt": "Cinematic historical illustration of the goddess Samsin, three luminous women moving as one, stepping out of a hanging painted portrait like steam leaving a kettle, into a lantern-lit Goguryeo birthing chamber where Yeon's wife labours on the floor, divine warm glow against deep night shadow, awe and tenderness, Three Kingdoms of Samhan / Tang era (634), scene: Birth of Namseng — the Samsin opens the breath, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_samsin.png", "/ch_yeon_gesomun.png"]
+      }
+    },
+    {
+      "chapterId": "five-principles",
+      "entryTitle": "Gotaso’s Wedding",
+      "afterId": null,
+      "promptSummary": "Chunchu carries rescued Gotaso the nineteen li home without putting her down",
+      "slot": {
+        "id": "gotaso-carried-home",
+        "ratio": 3.333,
+        "at": "He carries her the whole way home",
+        "alt": "Chunchu carries young Gotaso on his back down the long road home at dawn, Yushin riding escort behind",
+        "prompt": "Cinematic historical illustration of Kim Chunchu in a stained travelling coat carrying his young daughter Gotaso asleep on his back along a nineteen-li country road at dawn, Kim Yushin on horseback keeping quiet escort behind them, mist on the fields, exhausted tenderness, Three Kingdoms of Samhan / Tang era (639), scene: Gotaso's Wedding — the rescue and the walk home, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_chunchu.png", "/ch_gotaso.png", "/ch_kim_yushin.png"]
+      }
+    },
+    {
+      "chapterId": "five-principles",
+      "entryTitle": "Gotaso’s Wedding",
+      "afterId": "gotaso_02",
+      "promptSummary": "Yushin's green-wood pyre smoke rising over Surabol, seen from the palace terrace",
+      "slot": {
+        "id": "pyre-smoke-signal",
+        "ratio": 3.333,
+        "at": "how they met",
+        "alt": "A column of pale smoke rises straight over Surabol from Yushin's pyre, watched from a distant palace terrace",
+        "prompt": "Cinematic historical illustration of a tall straight column of pale smoke rising from a green-wood pyre in a nobleman's courtyard over the rooftops of Surabol, seen from a high palace terrace where a princess and a pale young nobleman stand watching, tense clear spring day, Three Kingdoms of Samhan / Tang era (625), scene: Gotaso's Wedding — how they met, Yushin's smoke signal that forces the marriage, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_kim_yushin.png", "/ch_munhee.png", "/ch_chunchu.png", "/ch_dukman.png"]
+      }
+    },
+    {
+      "chapterId": "five-principles",
+      "entryTitle": "King Euija, the 31st Eraha",
+      "afterId": "young-princes-grown",
+      "promptSummary": "The staged dragon of paper kites gliding through mist over the Sabi River at the coronation",
+      "slot": {
+        "id": "sabi-dragon-dawn",
+        "ratio": 3.333,
+        "tone": "#86efac",
+        "at": "a dragon is seen over the Sabi River",
+        "alt": "A dragon of lacquered paper kites glides through low mist over the Sabi River as crowds point from the banks",
+        "prompt": "Cinematic historical illustration of a sinuous dragon shape formed by lacquered paper kites gliding through low dawn mist over the wide Sabi River, boatmen below holding hidden lines, crowds of Baekje townspeople pointing and kneeling on the banks, golden light coming up the water at exactly the right angle, Three Kingdoms of Samhan / Tang era (641), scene: King Euija's staged coronation miracle, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_buyeo_euija.png", "/pl_sabi_palace.png"]
+      }
+    }
+  ]
+}

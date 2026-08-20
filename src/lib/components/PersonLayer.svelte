@@ -14,6 +14,7 @@
 		hangulInitial,
 		photoOf,
 		binyeoArtOf,
+		swordArtOf,
 		kingdomFlag,
 		hwarangClassColor,
 		type Person
@@ -26,7 +27,8 @@
 		groupMembersOf,
 		clanOf,
 		clanEntriesOf,
-		clanMembersOf
+		clanMembersOf,
+		swordOfPerson
 	} from '$lib/wiki';
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
 	import { reading } from '$lib/reading.svelte';
@@ -178,10 +180,13 @@
 	{@const isOrg = peeked.entity === 'organization'}
 	{@const isGroup = peeked.entity === 'group'}
 	{@const isClan = peeked.entity === 'clan'}
+	{@const isSword = peeked.entity === 'sword'}
+	{@const linkedSword = !isSword && peeked.blade ? swordOfPerson(peeked.id) : undefined}
 	{@const stageYear = profiles.year}
 	{@const art = avatarOf(peeked, undefined, stageYear)}
 	{@const photo = photoOf(peeked)}
 	{@const binyeoArt = binyeoArtOf(peeked)}
+	{@const swordArt = swordArtOf(peeked)}
 	{@const flag = kingdomFlag(peeked.kingdom)}
 	{@const who = nameOf(peeked, stageYear)}
 	{@const role = titleOf(peeked, stageYear)}
@@ -314,17 +319,39 @@
 				{#if peeked.entity === 'nation' && k.icons}
 					<div><dt>Signs</dt><dd class="icons">{k.icons}</dd></div>
 				{/if}
-				{#if peeked.blade}
-					<div><dt>Blade</dt><dd>{peeked.blade}</dd></div>
+				{#if peeked.blade || swordArt || (isSword && peeked.tagline)}
+					<div class={{ 'prop-art': swordArt }}>
+						<dt>Blade</dt>
+						<dd class={{ 'prop-art-row': swordArt }}>
+							{#if swordArt}
+								<img class="prop-art-fig" src={swordArt} alt="" />
+							{/if}
+							{#if isSword && peeked.tagline}
+								<span class="prop-art-cap">{peeked.tagline}</span>
+							{:else if peeked.blade}
+								{#if linkedSword}
+									<button
+										type="button"
+										class="prop-art-link"
+										onclick={() => openProfile(linkedSword.id)}
+									>
+										<span class="prop-art-cap">{peeked.blade}</span>
+									</button>
+								{:else}
+									<span class="prop-art-cap">{peeked.blade}</span>
+								{/if}
+							{/if}
+						</dd>
+					</div>
 				{/if}
 				{#if peeked.binyeo}
-					<div class="binyeo-prop">
+					<div class="prop-art">
 						<dt>Binyeo</dt>
-						<dd class="binyeo-row">
+						<dd class="prop-art-row">
 							{#if binyeoArt}
-								<img class="binyeo-fig" src={binyeoArt} alt="" />
+								<img class="prop-art-fig" src={binyeoArt} alt="" />
 							{/if}
-							<span class="binyeo-cap">{peeked.binyeo}</span>
+							<span class="prop-art-cap">{peeked.binyeo}</span>
 						</dd>
 					</div>
 				{/if}
@@ -1087,28 +1114,44 @@
 		color: var(--fg);
 	}
 
-	.props > div.binyeo-prop {
+	.props > div.prop-art {
 		grid-template-columns: 1fr;
 		gap: 0.35rem;
 		align-items: start;
 	}
 
-	.binyeo-row {
+	.prop-art-row {
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
 		gap: 0.45rem;
 	}
 
-	.binyeo-fig {
+	.prop-art-fig {
 		display: block;
 		width: 100%;
 		height: auto;
 		object-fit: contain;
 	}
 
-	.binyeo-cap {
+	.prop-art-cap {
 		line-height: 1.45;
+	}
+
+	.prop-art-link {
+		display: block;
+		padding: 0;
+		border: none;
+		background: none;
+		font: inherit;
+		color: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.prop-art-link:hover .prop-art-cap {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
 	}
 
 	.pill {

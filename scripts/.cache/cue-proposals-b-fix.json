@@ -1,0 +1,35 @@
+{
+ "chapters": [
+  "iron-will"
+ ],
+ "alts": [],
+ "moves": [
+  {
+   "id": "bojang-throne",
+   "chapterId": "iron-will",
+   "entryTitle": "Chunchu & Gesomun",
+   "newAt": "doing generous work, and everyone in the room knows",
+   "reasoning": "The throne-audience image is anchored at the corridor-guards scene after the audience has already ended; it belongs where Bojang delivers Yeon’s demand."
+  }
+ ],
+ "newSlots": [
+  {
+   "chapterId": "iron-will",
+   "entryTitle": "Daeya Fortress",
+   "afterId": "daeya_granary_gate",
+   "promptSummary": "The underworld messenger Kangrim appears to Gotaso in the last room",
+   "slot": {
+    "id": "daeya_kangrim_gotaso",
+    "ratio": 3.333,
+    "at": "ledger under one arm, crow-dark robe",
+    "alt": "The underworld messenger Kangrim, ledger under one arm, appearing to Lady Gotaso in Daeya's last room",
+    "prompt": "Cinematic historical illustration of the underworld messenger Kangrim appearing to Lady Gotaso in the inner room of a falling fortress — a tall figure in a crow-dark robe with a ledger under one arm, standing at the polite distance of a foreign envoy, the nineteen-year-old bride upright in fine silk as smoke seeps under the door, thin cold spectral light against the warm glow of fires beyond the paper screens, air gone still, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "refs": [
+     "/ch_kangrim.png",
+     "/ch_gotaso.png",
+     "/pl_daeya_fortress.png"
+    ]
+   }
+  }
+ ]
+}

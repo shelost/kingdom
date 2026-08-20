@@ -1,0 +1,340 @@
+{
+  "chapters": ["seventh-invasion", "chunchu-era"],
+  "alts": [
+    { "id": "taizong-portrait", "alt": "Emperor Taizong of Tang enthroned in his palace — the Khan of Heaven, conqueror of countless nations" },
+    { "id": "taizong-court", "alt": "Taizong vows to his court that the young Tang dynasty will not repeat the mistakes of Sui" },
+    { "id": "tang-map", "alt": "A minister lays the month's reports from every corner of the empire before the emperor" },
+    { "id": "four-riders", "alt": "Riders bring Taizong word of the coup in Goryeo — his friend King Yeongnyu is dead" },
+    { "id": "yellow-general", "alt": "Taizong in armour resolves to lead the seventh invasion of Goguryeo himself" },
+    { "id": "four-dragons", "alt": "The four dragon generals of the Tang muster — White, Red, Blue and Black" },
+    { "id": "salsu-flashback", "alt": "Emperor Yang of Sui's vast host marches on Goguryeo in 612" },
+    { "id": "munduk-banner", "alt": "Ulchi Munduk walks alone into the Sui camp to take the enemy's measure" },
+    { "id": "munduk-battle", "alt": "The Salsu ambush — the river falls on the Sui army caught at mid-crossing" },
+    { "id": "invasion-map", "alt": "The invasion routes of 645 converging on Ansi fortress" },
+    { "id": "ansi-court", "alt": "Yang Manchun curses the emperor from the wall — a butcher's name for history" },
+    { "id": "jupil-routes", "alt": "Xue Rengui in white armour cuts a road through the Goguryeo line at Stallion Mountain" },
+    { "id": "jupil-mountain", "alt": "Young Namseng flogged before his little brother in the Tang camp" },
+    { "id": "burning-capital", "alt": "Hwando burns — King Dongchun flees east with a handful of men" },
+    { "id": "ansi-map", "alt": "Ansi fortress on its ridge — the wall that will stop an emperor" },
+    { "id": "ansi-siege", "alt": "Tang siege engines pressed against Ansi's walls" },
+    { "id": "ansi-winter", "alt": "The earthen mountain rises over Ansi's south wall after sixty days of hauling" },
+    { "id": "yang-scream", "alt": "Ansi's defenders storm the fallen mound and set its slopes alight" },
+    { "id": "tang-retreat", "alt": "The Tang army turns for home through early cold — Li Shimin's first retreat" },
+    { "id": "stone-heroes-2", "alt": "The Guardian of Ansi is carved among the Great Heroes of Goguryeo" },
+    { "id": "heroes-hall", "alt": "Taizong grieves before Wei Zheng's memory — the campaign he should never have made" },
+    { "id": "bupmin-hwarang-yard", "alt": "Young Bupmin drills under Marshal Yushin on the unforgiving Hwarang yard" },
+    { "id": "bupmin-five-principles", "alt": "Yushin recites the Five Principles to the flower youth under the eaves at dusk" },
+    { "id": "council-five", "alt": "The great councillors of the Harmony Council weigh the succession in session" },
+    { "id": "bidam-poster", "alt": "Bidam, Second Blade of Samhan — High Councillor turned rebel at the Fortress of Radiance" },
+    { "id": "no-female-rule", "alt": "Bidam proclaims the old slogan to his massed rebels — a woman cannot rule well" },
+    { "id": "hwarang-class", "alt": "Three young Hwarang and one princess — Bidam, Alchun and Yushin in the training years" },
+    { "id": "hwarang-spar", "alt": "Hwarang blades cross in Jade Gate Valley — Bidam's memory of a cleaner war" },
+    { "id": "flower-brush", "alt": "One hundred and nine — Bidam falls, eyes open, form unbroken" },
+    { "id": "duel-shadows", "alt": "Dragon pommel against heavenly horse — Bidam and Yushin's last duel between the camps" },
+    { "id": "young-yushin", "alt": "Yushin at the dying queen's bedside — the promise of 632 kept to the end" },
+    { "id": "jinduk-poster", "alt": "Queen Jinduk crowned before the blood dries — the Sacred Bone's last quiet miracle" },
+    { "id": "wa-mountains", "alt": "The mountains of Wa rise over the sea as Chunchu's embassy crosses east" },
+    { "id": "wa-wave", "alt": "The King of the East refuses — Baekje, land of the heavenly deer, is his ally" },
+    { "id": "wa-king", "alt": "The King of the East marvels at the Silla envoy who speaks his language flawlessly" },
+    { "id": "gaya-surrender", "alt": "Kim Muryuk of Golden Gaya kneels in surrender before Jinheung of Silla" },
+    { "id": "gaya-warrior", "alt": "A Gaya warrior in iron scale armour — the last strength of the confederacy" },
+    { "id": "gaya-crown", "alt": "Jinheung grants the Gaya royal line True Bone rank — a crown traded for a caste" },
+    { "id": "gaya-map", "alt": "The six Gaya kingdoms folded into Silla's map" },
+    { "id": "bowing-envoys", "alt": "Silla envoys bow before the Tang throne as Chunchu pleads for an alliance" },
+    { "id": "go-game", "alt": "Chunchu and crown prince Li Zhi at play between audiences in Chang'an" },
+    { "id": "tang-banquet", "alt": "Taizong's banquet for the Silla guest — a concubine listening behind the screen" },
+    { "id": "tang_04", "alt": "The temple name Taizong is proclaimed — greatness nailed to a single character" },
+    { "id": "muyeol-poster", "alt": "Kim Chunchu enthroned as King Muyeol — the first True Bone king in a hundred and twenty years" },
+    { "id": "chiefs-gather", "alt": "The six chiefs gather at Najeong well after the fall of Old Joseon" },
+    { "id": "white-horse", "alt": "A white horse kneels crying at Najeong well over a great blue egg" },
+    { "id": "hyukgose-poster", "alt": "Boy-king Hyukgosé, born from the egg, crowned to rule with brightness" }
+  ],
+  "moves": [
+    {
+      "id": "munduk-battle",
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Great River",
+      "newAt": "Munduk is honored with the title",
+      "reasoning": "Current anchor never matches (the block styles “The Defender” with <i><b> tags), so the art falls back to the entry opening; this exact plain-text prefix restores the intended block."
+    },
+    {
+      "id": "invasion-map",
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Eastern Fortress",
+      "newAt": "successfully defends against the invasion",
+      "reasoning": "Current anchor never matches (bold tags wrap 'Battle of Ansi Fortress (645 AD)' in the block html), so the art falls back to the opening; this plain fragment sits in the same block."
+    },
+    {
+      "id": "jumong_02",
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Jumong",
+      "newAt": "lays a great egg",
+      "reasoning": "Current anchor 'lays an egg' never matches — the block reads 'lays a great egg' — so the art falls back to the opening beside the bathing scene."
+    },
+    {
+      "id": "jumong_03",
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Jumong",
+      "newAt": "find a fly’s wing with an arrow",
+      "reasoning": "Current anchor 'archery skills quickly make him a target' exists nowhere in the entry, so the archer image falls back to the opening; this fragment anchors it to the block where his shooting makes his brothers' smiles shrink."
+    },
+    {
+      "id": "jumong_04",
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Jumong",
+      "newAt": "One night Jumong slips an assassination",
+      "reasoning": "Current anchor 'narrowly escapes an assassination' never matches (the block says 'slips an assassination'), so the flight image falls back to the opening."
+    },
+    {
+      "id": "jumong_06",
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Jumong",
+      "newAt": "rest of his life driving the western commanderies",
+      "reasoning": "Current anchor 'rest of his life fighting away' never matches (the block says 'driving the western commanderies'), so the founding image falls back to the opening."
+    },
+    {
+      "id": "stone-heroes-2",
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Ansi",
+      "newAt": "the Guardian of Ansi is added to the Great Heroes",
+      "reasoning": "Current anchor names Yang Manchun but the block says 'the Guardian of Ansi', so it never matches and the art falls back to the entry opening."
+    },
+    {
+      "id": "bupmin-hwarang-yard",
+      "chapterId": "chunchu-era",
+      "entryTitle": "The Flower Youth",
+      "newAt": "does not soften the yard because the boy is royal",
+      "reasoning": "Current anchor spans the <b>Marshal Yushin</b> tag so it never matches and the art falls back to the opening; this plain fragment is in the same block."
+    },
+    {
+      "id": "bidam_headband",
+      "chapterId": "chunchu-era",
+      "entryTitle": "Bidam’s Rebellion",
+      "newAt": "The headband 612",
+      "reasoning": "Current anchor 'Take this headband' lives only inside a flashback's nested dialogue, which matches as title+year only — the art falls back to the entry opening 111 blocks early; this anchors it to the headband flashback itself."
+    },
+    {
+      "id": "wa-wave",
+      "chapterId": "chunchu-era",
+      "entryTitle": "Chunchu Goes to the East",
+      "newAt": "Land of the Heavenly Deer",
+      "reasoning": "Current anchor 'Baekje is our ally.' never matches (the line reads 'Baekje — the Land of the Heavenly Deer, Land of the Lord Buddha — is our ally.'), so the art falls back to the opening."
+    },
+    {
+      "id": "hyukgose-poster",
+      "chapterId": "chunchu-era",
+      "entryTitle": "Hyukgosé",
+      "newAt": "여섯 가문이 정치를 쥔다",
+      "reasoning": "Current anchor spans the bold clan-name tags so it never matches and the art falls back to the opening; this Korean fragment from the same block's ko text is tag-free and unique."
+    },
+    {
+      "id": "white-horse",
+      "chapterId": "chunchu-era",
+      "entryTitle": "Hyukgosé",
+      "newAt": "the horse knelt and cried",
+      "reasoning": "The image depicts the white horse and egg at Najeong well (blocks 0–2) but is anchored to the founding-principles speech eight blocks later — wrong scene; this moves it to the moment the horse kneels."
+    },
+    {
+      "id": "gaya_04",
+      "chapterId": "chunchu-era",
+      "entryTitle": "Gaya, the Lost Nations",
+      "newAt": "married a hundred and fifty years",
+      "reasoning": "'Golden Gaya at its height' is anchored to the turtle song sung before any kingdom exists; the 150-year reign with ten sons is where the kingdom's height actually appears in the text."
+    }
+  ],
+  "newSlots": [
+    {
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Stallion Mountain",
+      "afterId": null,
+      "promptSummary": "Farmer Xue Rengui leaves his field for the Liaodong muster, promising his ancestors' graves he will return",
+      "slot": {
+        "id": "xue-longmen-farewell",
+        "ratio": 2.3,
+        "tone": "#e7e5e4",
+        "at": "Not because the field is empty",
+        "alt": "Farmer Xue Rengui shoulders the fangtian ji and leaves his Longmen field, his wife watching from the grave mounds",
+        "prompt": "Cinematic historical illustration of a poor farmer leaving home for war, Three Kingdoms of Samhan / Tang era (645), scene: Xue Rengui in rough hemp clothes shoulders an oversized fangtian ji (crescent-bladed heaven-halberd) at the edge of a poor Longmen millet field, unfinished ancestral grave mounds behind him, his wife standing at the field's edge with quiet resolve, dawn light long and low over the furrows, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_xue_rengui.png"]
+      }
+    },
+    {
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Stallion Mountain",
+      "afterId": "jupil-mountain",
+      "promptSummary": "Xue Rengui breaks out of the Goguryeo fortress by night, ji recovered, taking the wall like water",
+      "slot": {
+        "id": "xue-fortress-escape",
+        "ratio": 2.9,
+        "tone": "#1c1917",
+        "at": "He finds the ji on a rack in the yard",
+        "alt": "Xue Rengui in torn white armour seizes his ji from the fortress yard and scales the wall by night",
+        "prompt": "Cinematic historical illustration of a night escape from a mountain fortress, Three Kingdoms of Samhan / Tang era (645), scene: Xue Rengui in dirtied white armour, chains broken at his wrists, snatching his fangtian ji from a weapon rack in a torch-lit Goguryeo fortress yard and vaulting the stone rampart, startled guards below, cold moonlight and torch flame, motion like water finding a crack, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_xue_rengui.png"]
+      }
+    },
+    {
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Boiling River",
+      "afterId": null,
+      "promptSummary": "King Dongchun's five thousand horse ride onto unseen ground and are destroyed in an afternoon",
+      "slot": {
+        "id": "dongchun-five-thousand",
+        "ratio": 3.1,
+        "tone": "#7f1d1d",
+        "at": "took five thousand horse out to win a third time",
+        "alt": "King Dongchun's five thousand cavalry charge onto ground he never looked at — eighteen thousand men lost by dusk",
+        "prompt": "Cinematic historical illustration of a doomed cavalry charge, Three Kingdoms of Samhan / Tang era (244), scene: King Dongchun of Goguryeo leading five thousand armoured horsemen across an open plain he has not scouted, Wei infantry lines closing like a trap in the distance, banners streaming, late-afternoon light turning the dust red, the moment before catastrophe, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/pl_pyongyang_fortress.png"]
+      }
+    },
+    {
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Jumong",
+      "afterId": "jumong_05",
+      "promptSummary": "Jumong and Sosuno meet at the well at dawn, an accident neither of them left to chance",
+      "slot": {
+        "id": "jumong-sosuno-well",
+        "ratio": 3.333,
+        "at": "They meet at the well the next morning",
+        "alt": "Jumong and Sosuno meet at the Jolbon well at dawn — she timed the water, he timed his thirst",
+        "prompt": "Cinematic historical illustration of a staged chance meeting at a village well, Three Kingdoms of Samhan / Tang era (-37), scene: the exiled prince Jumong, bow slung across his back, drawing water at a stone well in the Jolbon valley at first light while the widow Sosuno in fine merchant robes watches him with a clear appraising gaze, morning mist over the river valley, quiet charged intimacy, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_jumong.png", "/ch_sosuno.png"]
+      }
+    },
+    {
+      "chapterId": "seventh-invasion",
+      "entryTitle": "Jumong",
+      "afterId": "jumong-sosuno-well",
+      "promptSummary": "Jumong splits Yeon Tabal's arrow down the shaft in the hundred-pace contest",
+      "slot": {
+        "id": "jumong-arrow-split",
+        "ratio": 3.333,
+        "at": "He splits Tabal’s arrow down the shaft",
+        "alt": "Jumong's arrow splits Yeon Tabal's shaft down the middle at a hundred paces — the hall falls silent",
+        "prompt": "Cinematic historical illustration of a legendary archery contest, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong at full draw releasing an arrow that splits chieftain Yeon Tabal's arrow lengthwise where it stands in a pine trunk a hundred paces away, the split shaft caught mid-crack, Tabal and his warriors staring, Sosuno gripping the porch rail white-knuckled, low golden evening light through the hall yard, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_jumong.png", "/ch_yeon_tabal.png", "/ch_sosuno.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "The Harmony Council",
+      "afterId": "council-five",
+      "promptSummary": "Bidam alone at night with the old bloodstained black headband from the chest",
+      "slot": {
+        "id": "bidam-old-headband",
+        "ratio": 1.6,
+        "tone": "#2a2830",
+        "at": "takes the old black headband out of the chest",
+        "alt": "Bidam alone by lamplight, holding the old black headband with its blood gone brown — he no longer remembers whose",
+        "prompt": "Cinematic historical illustration of a quiet night reckoning, Three Kingdoms of Samhan / Tang era (645), scene: Bidam, greying Silla councillor in a dark robe, sitting alone in a lamplit room holding an old black cloth headband stained with blood gone brown, an open wooden chest beside him, his face half in shadow between memory and resolve, single warm lamp flame against deep darkness, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_bidam.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "Bidam’s Rebellion",
+      "afterId": "hwarang-spar",
+      "promptSummary": "Fourth morning — Bidam and Yushin take tea in the pavilion between the camps as rain drums the roof",
+      "slot": {
+        "id": "bidam-pavilion-rain",
+        "ratio": 3.333,
+        "tone": "#475569",
+        "at": "Rain on the pavilion roof",
+        "alt": "Bidam and Yushin face each other over cooling tea in the no-man's pavilion, rain drumming on the roof",
+        "prompt": "Cinematic historical illustration of two estranged sworn brothers at truce tea, Three Kingdoms of Samhan / Tang era (647), scene: Bidam in a black councillor's robe and Kim Yushin in blue campaign armour seated across a low table in an open field pavilion pitched between two siege camps, rain streaming off the eaves, two cups of tea untouched and steaming, siege banners of both armies blurred in the grey distance, tense courteous stillness, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_bidam.png", "/ch_kim_yushin.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "Bidam’s Rebellion",
+      "afterId": "bidam-lake-again",
+      "promptSummary": "Yushin flies the burning kite from Wolseong so the fallen star seems to return to the sky",
+      "slot": {
+        "id": "yushin-fire-kite",
+        "ratio": 3.333,
+        "tone": "#0f172a",
+        "at": "He flies the kite from the palace dark",
+        "alt": "Yushin's burning kite climbs from dark Wolseong — a fallen star made to rise again over both armies",
+        "prompt": "Cinematic historical illustration of the burning kite stratagem, Three Kingdoms of Samhan / Tang era (647), scene: Kim Yushin on the dark ramparts of Wolseong palace paying out the line of a great kite carrying a flaming scarecrow high into the night sky, the fire climbing where the omen-star fell, soldiers of both siege camps staring up in awe, embers trailing against deep indigo night, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_kim_yushin.png", "/pl_moon_palace.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "Bidam’s Rebellion",
+      "afterId": "yushin-fire-kite",
+      "promptSummary": "Bidam's night confession to his officers on the rampart of the Fortress of Radiance",
+      "slot": {
+        "id": "bidam-rampart-confession",
+        "ratio": 3.333,
+        "tone": "#312e81",
+        "at": "on Radiance’s rampart, Bidam speaks",
+        "alt": "Bidam addresses his officers from the night rampart of Radiance — they expect a battle plan and receive a confession",
+        "prompt": "Cinematic historical illustration of a rebel leader's last speech, Three Kingdoms of Samhan / Tang era (647), scene: Bidam in a black robe standing on the torch-lit stone rampart of the Fortress of Radiance at night, arms open to a ring of weary armoured officers whose faces shift from expectation to grief, wind pulling at banners, the besieged valley glittering with enemy campfires below, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_bidam.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "Silla-Tang Alliance",
+      "afterId": "bowing-envoys",
+      "promptSummary": "Taizong speaks his own forbidden name to Chunchu — the court does not understand what it heard",
+      "slot": {
+        "id": "taizong-name-gift",
+        "ratio": 2.4,
+        "tone": "#b45309",
+        "at": "The room does not react",
+        "alt": "Taizong leans from the throne and gives Chunchu his forbidden name — only two men in the hall understand",
+        "prompt": "Cinematic historical illustration of an emperor breaking his own taboo, Three Kingdoms of Samhan / Tang era (648), scene: Emperor Taizong leaning forward from the dragon throne in a vast Daming Palace audience hall, speaking quietly to the kneeling Silla prince Chunchu, courtiers frozen in oblivious ceremony on either side, the two men's locked eyes carrying the weight of a name no one is allowed to say, shafts of amber light through high lattice windows, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_taizong.png", "/ch_chunchu.png", "/pl_daming_palace.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "Death of the Second Emperor",
+      "afterId": "tang_04",
+      "promptSummary": "Lady Wu's off-schedule farewell — the whisper that sends Chunchu fleeing to Silla",
+      "slot": {
+        "id": "wu-farewell-whisper",
+        "ratio": 3.333,
+        "tone": "#4c1d95",
+        "at": "asks for a moment that is not on any schedule",
+        "alt": "Lady Wu leans to whisper in Chunchu's ear before his horses leave Chang'an — the clerks pretend not to see",
+        "prompt": "Cinematic historical illustration of a whispered farewell that is really a warning, Three Kingdoms of Samhan / Tang era (649), scene: young Lady Wu in the muted robes of the late emperor's household leaning close to whisper into the ear of the Silla envoy Chunchu beside his saddled embassy horses at a Chang'an palace gate, her social smile intact, his eyes widening in dawning fear, clerks studiously looking away, pale morning light on stone, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_wu_zetian.png", "/ch_chunchu.png", "/pl_daming_palace.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "King Muyeol",
+      "afterId": null,
+      "promptSummary": "Queen Jinduk's death — the Sacred Bone bloodline ends with her",
+      "slot": {
+        "id": "jinduk-passing",
+        "ratio": 1.6,
+        "tone": "#1c1917",
+        "at": "the Sacred Bone bloodline has finally gone extinct",
+        "alt": "Queen Jinduk lies in state as censers burn — the last of the Sacred Bone is gone",
+        "prompt": "Cinematic historical illustration of the end of a royal bloodline, Three Kingdoms of Samhan / Tang era (654), scene: Queen Jinduk lying in state in a dim Silla palace hall, white funeral silks and bronze censers trailing smoke, court women kneeling in rows with bowed heads, a shadowed escort figure waiting at the threshold, the emptiness of a lineage with no heir hanging in the incense light, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_kangrim.png"]
+      }
+    },
+    {
+      "chapterId": "chunchu-era",
+      "entryTitle": "King Muyeol",
+      "afterId": "muyeol-poster",
+      "promptSummary": "Munhee crowned queen consort — the girl who bought a dream now stands beside the throne",
+      "slot": {
+        "id": "munhee-queen-consort",
+        "ratio": 1.6,
+        "tone": "#9d174d",
+        "at": "becomes queen consort of Silla",
+        "alt": "Munhee, once married in disgrace, stands crowned as queen consort beside King Muyeol's throne",
+        "prompt": "Cinematic historical illustration of a queen consort's investiture, Three Kingdoms of Samhan / Tang era (654), scene: Munhee at forty-six receiving the queen consort's coronet beside King Muyeol's throne in the Silla great hall, her expression the dry amused calm of a woman who bought this future for a silk skirt, courtiers bowing in ranks, morning light on lacquered pillars and moon banners, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_munhee.png", "/ch_chunchu.png"]
+      }
+    }
+  ]
+}

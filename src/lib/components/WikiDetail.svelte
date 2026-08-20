@@ -16,8 +16,10 @@
 		hangulInitial,
 		photoOf,
 		binyeoArtOf,
+		swordArtOf,
 		kingdomFlag,
 		sortHwarangMembers,
+		groupByHwarangClass,
 		hwarangClassColor,
 		type Person,
 		type CareerOffice
@@ -46,7 +48,10 @@
 		parentPlaceOf,
 		placesInCity,
 		citiesOfKingdom,
-		showsWikiAccent
+		showsWikiAccent,
+		ownersOf,
+		swordsOf,
+		swordOfPerson
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
 	import { leitmotifOf, playLeitmotif, stopLeitmotif, tempsOf } from '$lib/leitmotifs';
@@ -88,6 +93,7 @@
 	let art = $derived(avatarOf(entry, undefined, null, previewLook));
 	let photo = $derived(photoOf(entry));
 	let binyeoArt = $derived(binyeoArtOf(entry));
+	let swordArt = $derived(swordArtOf(entry));
 	let flag = $derived(kingdomFlag(entry.kingdom));
 	let who = $derived(nameOf(entry, null, previewLook));
 	let role = $derived(titleOf(entry, null, previewLook));
@@ -99,6 +105,7 @@
 	let isOrg = $derived(entry.entity === 'organization');
 	let isGroup = $derived(entry.entity === 'group');
 	let isClan = $derived(entry.entity === 'clan');
+	let isSword = $derived(entry.entity === 'sword');
 	let isNation = $derived(entry.entity === 'nation');
 	/** Nation detail hero uses the kingdom flag when present (not portrait art). */
 	let heroArt = $derived(isNation && flag ? flag : art);
@@ -138,9 +145,9 @@
 	let partners = $derived(isBond ? betweenPeople(entry) : []);
 	let bondA = $derived(accents[0] ?? k.color);
 	let bondB = $derived(accents[1] ?? accents[0] ?? k.color);
-	let memberships = $derived(isOrg || isGroup || isClan || isBond ? [] : orgsOf(entry));
+	let memberships = $derived(isOrg || isGroup || isClan || isBond || isSword ? [] : orgsOf(entry));
 	let groupMemberships = $derived(
-		isOrg || isGroup || isClan || isBond ? [] : groupsOf(entry)
+		isOrg || isGroup || isClan || isBond || isSword ? [] : groupsOf(entry)
 	);
 	let orgMembers = $derived(
 		isOrg
@@ -149,13 +156,21 @@
 				? groupMembersOf(entry.id)
 				: isClan
 					? clanMembersOf(entry.id)
-					: []
+					: isSword
+						? ownersOf(entry.id)
+						: []
 	);
+	let orgRosterTitle = $derived(
+		isSword ? 'Owners' : isClan ? 'Members' : 'Members'
+	);
+	let linkedSword = $derived(!isSword && entry.blade ? swordOfPerson(entry.id) : undefined);
+	let personSwords = $derived(!isSword && entry.blade ? swordsOf(entry.id) : []);
 	let isHwarang = $derived(entry.id === 'hwarang');
 	let orgRoster = $derived(isHwarang ? sortHwarangMembers(orgMembers) : orgMembers);
-	let clanLabel = $derived(isOrg || isGroup || isClan || isBond || isPlace ? undefined : clanOf(entry));
+	let hwarangGroups = $derived(isHwarang ? groupByHwarangClass(orgMembers) : []);
+	let clanLabel = $derived(isOrg || isGroup || isClan || isBond || isPlace || isSword ? undefined : clanOf(entry));
 	let clanEntries = $derived(
-		isOrg || isGroup || isClan || isBond || isPlace ? [] : clanEntriesOf(entry)
+		isOrg || isGroup || isClan || isBond || isPlace || isSword ? [] : clanEntriesOf(entry)
 	);
 	let chartNodes = $derived(isOrg || isGroup ? (entry.orgChart ?? []) : []);
 	let life = $derived(lifespanOf(entry));
@@ -334,6 +349,7 @@
 			</div>
 		</div>
 
+		<div class="detail-body">
 		{#if hasStageGallery}
 			<section class="stage-gallery" aria-label="Character looks">
 				<h2 class="stage-heading">Looks</h2>
@@ -477,17 +493,47 @@
 			{#if entry.entity === 'nation' && k.icons}
 				<div><dt>Signs</dt><dd class="icons">{k.icons}</dd></div>
 			{/if}
-			{#if entry.blade}
-				<div><dt>Blade</dt><dd>{entry.blade}</dd></div>
+			{#if entry.blade || swordArt || (isSword && entry.tagline)}
+				<div class={{ 'prop-art': swordArt }}>
+					<dt>Blade</dt>
+					<dd class={{ 'prop-art-row': swordArt }}>
+						{#if swordArt}
+							<img class="prop-art-fig" src={swordArt} alt="" />
+						{/if}
+						{#if isSword && entry.tagline}
+							<span class="prop-art-cap">{entry.tagline}</span>
+						{:else if entry.blade}
+							{#if linkedSword}
+								<button type="button" class="prop-art-link" onclick={() => onOpen(linkedSword.id)}>
+									<span class="prop-art-cap">{entry.blade}</span>
+								</button>
+							{:else}
+								<span class="prop-art-cap">{entry.blade}</span>
+							{/if}
+						{/if}
+					</dd>
+				</div>
+			{/if}
+			{#if personSwords.length > 1}
+				<div>
+					<dt>Swords</dt>
+					<dd class="pill-row">
+						{#each personSwords as sword (sword.id)}
+							<button type="button" class="pill link-pill" onclick={() => onOpen(sword.id)}>
+								{nameOf(sword)}
+							</button>
+						{/each}
+					</dd>
+				</div>
 			{/if}
 			{#if entry.binyeo}
-				<div class="binyeo-prop">
+				<div class="prop-art">
 					<dt>Binyeo</dt>
-					<dd class="binyeo-row">
+					<dd class="prop-art-row">
 						{#if binyeoArt}
-							<img class="binyeo-fig" src={binyeoArt} alt="" />
+							<img class="prop-art-fig" src={binyeoArt} alt="" />
 						{/if}
-						<span class="binyeo-cap">{entry.binyeo}</span>
+						<span class="prop-art-cap">{entry.binyeo}</span>
 					</dd>
 				</div>
 			{/if}
@@ -499,6 +545,7 @@
 						kind === 'group' ||
 						kind === 'clan' ||
 						kind === 'phrase' ||
+						kind === 'sword' ||
 						kind === 'city' ||
 						kind === 'place' ||
 						isBond
@@ -669,7 +716,7 @@
 
 		{#if orgRoster.length}
 			<section>
-				<h2>Members</h2>
+				<h2>{orgRosterTitle}</h2>
 				{#snippet memberCard(m: Person)}
 					{@const portrait = avatarOf(m)}
 					{@const clanAff = isClan ? clanAffiliationOf(m, entry.id) : null}
@@ -715,11 +762,31 @@
 						</button>
 					</li>
 				{/snippet}
-				<ul class="member-grid">
-					{#each orgRoster as m (m.id)}
-						{@render memberCard(m)}
-					{/each}
-				</ul>
+				{#if isHwarang}
+					<div class="class-bands">
+						{#each hwarangGroups as g (g.id)}
+							<section class="class-band">
+								<h3 class="class-band-head">
+									<span class="member-clan-aff" style:--hw={g.color} title="Hwarang {g.label}"
+										>{g.label}</span
+									>
+									{#if g.korean}<span class="clan-ko"> ({g.korean})</span>{/if}
+								</h3>
+								<ul class="member-grid">
+									{#each g.members as m (m.id)}
+										{@render memberCard(m)}
+									{/each}
+								</ul>
+							</section>
+						{/each}
+					</div>
+				{:else}
+					<ul class="member-grid">
+						{#each orgRoster as m (m.id)}
+							{@render memberCard(m)}
+						{/each}
+					</ul>
+				{/if}
 			</section>
 		{/if}
 
@@ -803,6 +870,9 @@
 
 		{#if isPhrase}
 			<p class="phrase-mark">Household idiom · say it the way others say Trojan horse</p>
+		{/if}
+		{#if isSword}
+			<p class="phrase-mark">Ring-pommel blade · owner linked below</p>
 		{/if}
 		<p class="tagline">{entry.tagline}</p>
 
@@ -959,6 +1029,7 @@
 				</ul>
 			</section>
 		{/if}
+		</div>
 	</div>
 </article>
 
@@ -1138,12 +1209,16 @@
 		min-height: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
-		padding: 1.5rem 1.7rem 4rem;
+		padding: 0 0 4rem;
 		-webkit-overflow-scrolling: touch;
 	}
 
+	.detail-body {
+		padding: 0 1.7rem;
+	}
+
 	.photo {
-		margin: 0 0 1.2rem;
+		margin: 1.5rem 1.7rem 1.2rem;
 		border-radius: 12px;
 		overflow: hidden;
 		border: 1px solid var(--hairline);
@@ -1172,8 +1247,8 @@
 		display: flex;
 		align-items: flex-end;
 		min-height: 20rem;
-		margin: -1.5rem -1.7rem 1.5rem;
-		padding: 1.8rem 1.7rem 1.5rem;
+		margin: 0 0 1.5rem;
+		padding: 0;
 		overflow: hidden;
 		background: color-mix(in srgb, var(--k) 13%, var(--panel-sunken));
 		border-bottom: 1px solid var(--hairline);
@@ -1218,6 +1293,7 @@
 		z-index: 0;
 		width: min(26rem, 74%);
 		margin: 0;
+		padding: 0;
 		pointer-events: none;
 	}
 
@@ -1245,7 +1321,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: contain;
-		object-position: right center;
+		object-position: right bottom;
 		-webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
 		mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
 	}
@@ -1305,10 +1381,11 @@
 		position: relative;
 		z-index: 2;
 		max-width: 22rem;
+		padding: 1.8rem 1.7rem 1.5rem;
 	}
 
 	.stage-gallery {
-		margin: 0 1.35rem 1.1rem;
+		margin: 0 0 1.1rem;
 		padding: 0.85rem 0.95rem 0.95rem;
 		border: 1px solid color-mix(in srgb, var(--k) 28%, var(--line));
 		border-radius: 8px;
@@ -1529,28 +1606,44 @@
 		color: var(--fg);
 	}
 
-	.props > div.binyeo-prop {
+	.props > div.prop-art {
 		grid-template-columns: 1fr;
 		gap: 0.35rem;
 		align-items: start;
 	}
 
-	.binyeo-row {
+	.prop-art-row {
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
 		gap: 0.45rem;
 	}
 
-	.binyeo-fig {
+	.prop-art-fig {
 		display: block;
 		width: 100%;
 		height: auto;
 		object-fit: contain;
 	}
 
-	.binyeo-cap {
+	.prop-art-cap {
 		line-height: 1.45;
+	}
+
+	.prop-art-link {
+		display: block;
+		padding: 0;
+		border: none;
+		background: none;
+		font: inherit;
+		color: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.prop-art-link:hover .prop-art-cap {
+		text-decoration: underline;
+		text-underline-offset: 0.15em;
 	}
 
 	.accent-row {
@@ -1978,6 +2071,26 @@
 		gap: 0.55rem;
 	}
 
+	.class-bands {
+		display: flex;
+		flex-direction: column;
+		gap: 1.1rem;
+	}
+
+	.class-band-head {
+		display: flex;
+		align-items: baseline;
+		gap: 0.35rem;
+		margin: 0 0 0.45rem;
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+	}
+
+	.class-band-head .member-clan-aff {
+		margin-top: 0;
+	}
+
 	.detail.expanded .member-grid {
 		grid-template-columns: repeat(auto-fill, minmax(7.25rem, 1fr));
 		gap: 0.75rem;
@@ -2203,12 +2316,24 @@
 		}
 
 		.detail-scroll {
-			padding: 1.25rem 1.15rem max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
+			padding: 0 0 max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
+		}
+
+		.detail-body {
+			padding: 0 1.15rem;
+		}
+
+		.photo {
+			margin: 1.25rem 1.15rem 1.2rem;
 		}
 
 		.hero.has-art {
 			min-height: 16rem;
-			margin: -1.25rem -1.15rem 1.2rem;
+			margin: 0 0 1.2rem;
+			padding: 0;
+		}
+
+		.hero-id {
 			padding: 1.25rem 1.15rem 1.1rem;
 		}
 

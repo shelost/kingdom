@@ -15,8 +15,9 @@
  * When Type = Gods, the index also buckets into class sections via `groupByGodTier`.
  * When Type = Clans, entries sort by member count (desc), then importance; roster
  * within each clan detail sorts youngest → oldest by birth year.
- * The Hwarang org detail is a single member grid sorted by numeric class
- * (First Class first), then seniority within the class.
+ * The Hwarang org detail is a member grid grouped by yearly class
+ * (First Class / 제일기 first), then seniority within the class. Only
+ * occupied rooms appear — class number = entry year − 559.
  * Group detail rosters follow `GROUP_ROSTERS` when pinned (e.g. Five Princes
  * by birth); otherwise the same importance sort as the index.
  */
@@ -29,6 +30,7 @@ import {
 	nameOf,
 	isPlaceholderArt,
 	avatarOf,
+	sortHwarangMembers,
 	type CareerOffice,
 	type GodTier,
 	type Person
@@ -44,6 +46,7 @@ export type WikiKind =
 	| 'nation'
 	| 'phrase'
 	| 'concept'
+	| 'sword'
 	| 'organization'
 	| 'group'
 	| 'clan'
@@ -65,6 +68,7 @@ export const WIKI_KINDS: {
 	{ id: 'group', label: 'Group', plural: 'Groups' },
 	{ id: 'clan', label: 'Clan', plural: 'Clans' },
 	{ id: 'concept', label: 'Concept', plural: 'Concepts' },
+	{ id: 'sword', label: 'Sword', plural: 'Swords' },
 	{ id: 'relationship', label: 'Relationship', plural: 'Relationships' },
 	{ id: 'other', label: 'Other', plural: 'Other' }
 ];
@@ -83,6 +87,7 @@ export function kindOf(p: Person): WikiKind {
 	if (p.entity === 'group') return 'group';
 	if (p.entity === 'clan') return 'clan';
 	if (p.entity === 'concept') return 'concept';
+	if (p.entity === 'sword') return 'sword';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
 }
@@ -584,6 +589,13 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 			}
 		}
 		if (!q) return true;
+		const ownerHay =
+			p.entity === 'sword'
+				? ownersOf(p.id)
+						.flatMap((o) => [o.name, o.korean, o.hanja, ...(o.aliases ?? [])])
+						.filter(Boolean)
+						.join(' ')
+				: '';
 		const hay = [
 			p.name,
 			p.korean,
@@ -594,6 +606,7 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 			clanOf(p),
 			p.realm?.en,
 			p.realm?.ko,
+			ownerHay,
 			...(p.personality ?? []),
 			...p.aliases,
 			...(p.sobriquets ?? []),
@@ -638,13 +651,45 @@ export function orgsOf(p: Person): Person[] {
 	return rows;
 }
 
+/** Characters / gods who wield or wielded this sword profile. */
+export function ownersOf(swordId: string): Person[] {
+	const sword = byId.get(swordId);
+	if (!sword?.owners?.length) return [];
+	const rows: Person[] = [];
+	const seen = new Set<string>();
+	for (const id of sword.owners) {
+		const person = byId.get(id);
+		if (!person || seen.has(person.id)) continue;
+		seen.add(person.id);
+		rows.push(person);
+	}
+	return rows;
+}
+
+/** Sword encyclopedia entries linked to a person (via `owners`). */
+export function swordsOf(personId: string): Person[] {
+	return PROFILES.filter(
+		(p) => p.entity === 'sword' && (p.owners ?? []).includes(personId)
+	).sort(compareWikiEntries);
+}
+
+/** Primary sword profile for a character — `sword-{personId}` when present. */
+export function swordOfPerson(personId: string): Person | undefined {
+	const direct = byId.get(`sword-${personId}`);
+	if (direct?.entity === 'sword') return direct;
+	const linked = swordsOf(personId);
+	return linked[0];
+}
+
 /** Characters / gods who list this organization in `orgs`. */
 export function membersOf(orgId: string): Person[] {
-	return PROFILES.filter(
+	const members = PROFILES.filter(
 		(p) =>
 			(p.entity == null || p.entity === 'god') &&
 			(p.orgs ?? []).includes(orgId)
-	).sort(compareWikiEntries);
+	);
+	if (orgId === 'hwarang') return sortHwarangMembers(members);
+	return members.sort(compareWikiEntries);
 }
 
 /** Group profiles listed on a character (forward links). */

@@ -278,16 +278,24 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'hwarang',
 			title: 'The Hwarang · 화랑',
 			caption:
-				'국선 (Marshal) at the apex — six 화랑, four 낭도 beneath each. Classes keep their names for life; almost every Harmony Councillor first slept in the hall.',
-			ko: '국선 아래 여섯 화랑, 각 화랑 아래 낭도 넷. 기는 평생 가고, 화백의 거의가 먼저 그 방에서 잤다.'
+				'국선 (Marshal) at the apex — six 화랑, four 낭도 beneath each. One class a year (Class n = entry year − 559); the number is kept for life. Almost every Harmony Councillor first slept in the hall.',
+			ko: '국선 아래 여섯 화랑, 각 화랑 아래 낭도 넷. 기는 해마다 하나(기수 = 입문 연도 − 559)이고 평생 간다. 화백의 거의가 먼저 그 방에서 잤다.'
 		}
 	],
 	restorationarmy: [
 		{
 			diagram: 'restoration-army',
 			title: 'Baekje Restoration Army · 백제부흥군',
-			caption: 'A king at the apex and four generals beneath — the restoration command stack.',
-			ko: '왕 아래 네 장군 — 부흥군의 지휘 줄.'
+			caption: 'King at the apex and four founding generals beneath — the BRA’s five captains.',
+			ko: '왕 아래 네 장군 — 부흥군 오장의 지휘 줄.'
+		}
+	],
+	brafounders: [
+		{
+			diagram: 'restoration-army',
+			title: 'BRA Founding Captains · 부흥군 오장',
+			caption: 'Boksin, Dochim, Sangji, Sangya — and Pungjang’s crown.',
+			ko: '복신·도침·상지·상여·풍왕 — 부흥군을 세운 다섯.'
 		}
 	],
 	tangcourt: [

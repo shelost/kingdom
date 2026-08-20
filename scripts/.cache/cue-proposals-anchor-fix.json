@@ -1,0 +1,38 @@
+{
+ "chapters": [
+  "iron-will",
+  "fall-of-euija"
+ ],
+ "alts": [],
+ "newSlots": [],
+ "moves": [
+  {
+   "id": "daeya_01",
+   "chapterId": "iron-will",
+   "entryTitle": "Daeya Fortress",
+   "newAt": "reads Silla’s border the way he reads everything",
+   "reasoning": "Dead anchor (pre-existing): the invasion-decision sentence was rewritten; re-pinned the fortress establishing shot to the current opening block where Euija reads the border."
+  },
+  {
+   "id": "steam_again_01",
+   "chapterId": "iron-will",
+   "entryTitle": "Steam, Again",
+   "newAt": "does not sleep in the capital",
+   "reasoning": "Dead anchor (pre-existing): the block now says the Sword of Silla rather than Yushin; re-pinned to the surviving plain-text phrase in the same opening block."
+  },
+  {
+   "id": "gyebek-well",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Gyebek’s Exile",
+   "newAt": "a mistake to read the pause as slowness",
+   "reasoning": "Anchor died when the paragraph was rewritten concurrently; re-pinned to the equivalent sentence in the current text of the same block."
+  },
+  {
+   "id": "harbor-city",
+   "chapterId": "fall-of-euija",
+   "entryTitle": "Onjo",
+   "newAt": "He heads to Goguryeo with his friends",
+   "reasoning": "Dead anchor (pre-existing): the old fragment spanned <b> tags; trimmed it to the plain-text prefix of the same block."
+  }
+ ]
+}

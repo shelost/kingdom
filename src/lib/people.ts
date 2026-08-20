@@ -9,6 +9,7 @@
 import { RELATIONSHIPS, CHART_NODES } from '$lib/relations';
 import { PLACE_PROFILES, type PlaceKind } from '$lib/places';
 import { PHRASES } from '$lib/phrases';
+import { SWORDS } from '$lib/swords';
 import { PERSONA_META } from '$lib/personaMeta';
 import { staticAsset } from '$lib/staticAsset.svelte';
 
@@ -80,7 +81,7 @@ export interface Person {
 	 * `organization` = councils, orders, courts (wiki-browsable);
 	 * `group` = named ensembles of characters (Four Dragons, Three Founders, …);
 	 * `clan` = blood houses (Yeon, Eight Clans, Kim lines, …);
-	 * `phrase` / `nation` / `relationship` / `place` as named.
+	 * `phrase` / `nation` / `relationship` / `place` / `sword` as named.
 	 */
 	entity?:
 		| 'god'
@@ -91,15 +92,16 @@ export interface Person {
 		| 'phrase'
 		| 'nation'
 		| 'relationship'
-		| 'place';
+		| 'place'
+		| 'sword';
 	/**
 	 * Organization ids this character belongs to (Hwarang, High Summit, …).
 	 * Reverse lookup on org pages via `membersOf` in wiki.ts.
 	 */
 	orgs?: string[];
 	/**
-	 * Hwarang cohort — numeric class from the 5-year birth-band index
-	 * (`HWARANG_CLASSES` pins famous rooms). Filled during profile merge.
+	 * Hwarang cohort — numeric class from entry year (`year − 559`; Class 1 = 560).
+	 * `HWARANG_CLASSES` pins famous rooms (Jukji with Pumsuk at 74). Filled during profile merge.
 	 */
 	hwarangClass?: {
 		id: string;
@@ -193,6 +195,8 @@ export interface Person {
 	 * Decoration read character the way a crest does.
 	 */
 	blade?: string;
+	/** Ring-pommel illustration (`/sword_*.png` in static). */
+	swordImage?: string;
 	/** Unique binyeo — hairpin that hints at a woman’s station and nature. */
 	binyeo?: string;
 	/** Binyeo illustration (`/bn_*.png` in static). */
@@ -265,6 +269,11 @@ export interface Person {
 	between?: [string, string];
 	/** For relationships: the nature of the bond. */
 	bond?: BondKind;
+	/**
+	 * For sword profiles: person ids who wield or wielded this blade
+	 * (primary / most recent first). Reverse lookup via `swordsOf` in wiki.ts.
+	 */
+	owners?: string[];
 	/** Chart layout hint (people nodes that appear on the relationship graph). */
 	chart?: { x: number; y: number };
 }
@@ -366,6 +375,7 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'habek',
+		avatar: '/ch_habek.png',
 		name: 'Habek',
 		korean: '하백',
 		hanja: '河伯',
@@ -696,6 +706,7 @@ export const PEOPLE: Person[] = [
 		nature: 'The smartest and most wily: an opportunist who will say or become whatever the room requires, lethal when patient. Most steeped in Chinese letters, most international — he can meet Tang, Yamato, and Goryeo each in their own tongue, and sometimes still says Goguryeo because the chronicles taught him the older name. His refrain is blunt: learn from the West, westernize the door (seal, speed, Secretariat) without becoming the West — Tang as the period’s “West,” a metaphor that will outlive the dynasty. Also a sheltered ivory-tower elite: almost no opinion of commoners, almost no contact with them; Daeya’s resentment of the capital blindsides him completely. Reads international patterns decades ahead; packed with life-skills — geomancy, arms, charm. Best-looking of the leads, and the most social. Before the crown, corridors whisper Magenta Devil (자의악마 / 자색의 악마) for the 자색 — purple-crimson, 자홍-adjacent — he prefers to wear as habit, not only rank dye; the epithet thins once he is Muyeol.',
 		arc: 'Born a royal barred from the throne by Bone Rank, Chunchu becomes the cleverest man in rooms he is not allowed to rule — steeped in Chinese letters, fluent in every tongue the peninsula and its neighbours speak, able to forecast an alliance’s betrayal a generation out. He is also sheltered: he does not know what Surabol looks like from Daeya until it kills his daughter. Gotaso’s death turns wit into patience. For most of the chronicle he has one heir in focus — Bupmin; Inmun is also his son, but lives as Tang’s long hostage-diplomat and stays mostly off the page. As Kim Chunchu he is already the Magenta Devil in other people’s mouths — fox, imugi, and magenta sleeve in one whisper. He kneels in Pyongyang, sails to Yamato, wins Chang’an, founds the Royal Secretariat, and dies the first True Bone king — Baekje gone, Goryeo standing, the Tang already inside the door he opened. After coronation the Magenta Devil talk is mostly retired; kings collect other names.',
 		blade: 'Ring-pommel court sword — imugi coiled on the grip; drawn rarely, remembered always.',
+		swordImage: '/sword_dragon.png',
 		stages: [
 			{
 				id: 'prince',
@@ -794,6 +805,7 @@ export const PEOPLE: Person[] = [
 		nature: 'The simplest and most passionate of the three: a true patriot of the common people who despises elites, committees, and tribute paid for another decade of quiet. Rural-general faith — he wholeheartedly believes the founding myths: Jumong the holy king, Haemosu’s sun line, heaven’s descent as bone of the 겨레. Speaks often of 겨레 and builds loyalty by heat rather than by book. Everyone else says Goryeo; he alone insists on Goguryeo, the old full name, as if shortening it were already surrender. Implied blood of Yeon Tabal’s hall: same blunt register, same refusal to be bought by a Go king’s courtesy. Tries to import Tang Taoism to starve the Buddhist monk aristocracy of prestige — a policy that fails to prevent a monk from opening Pyongyang. Charisma of the populist strongman — both the shelter he gives the marches and the massacre he calls rescue. Name: Yeon (연 / 淵) is the Goguryeo clan — never Baekje’s Prince Yun / Buyeo Yun (부여연 / 扶餘演), a different man, kingdom, and hanja.',
 		arc: 'An Eastern Commander (대가) who despises the High Summit’s courage-until-the-final-vote. In 642 he butchers king and Commanders, invents Supreme Commander (대막리지) above the old High Commander (막리지), seats Dosuryu as Chancellor (대대로), and rules through Bojang. When Euija mocks gods as tools of obedience, Gesomun does not flinch — the marches taught him Jumong was real. He leaves three heirs — Yeon Namseng under his own strict roof, Yeon Namgun and Yeon Namsan under his brother Jungto and sister Sooyoung — and no institution that can hold them together. For twenty years he is proved right against Tang; he builds nothing that can outlive him. Within a year of his death the three sons are at each other’s throats and the eldest guides Tang to Pyongyang. Not kin to Baekje’s Prince Yun.',
 		blade: 'The Five Blades — four commandery ring-pommels and the king’s own, each crow-stamped, worn across one spine.',
+		swordImage: '/sword_crow.png',
 		events: [
 			{ year: 634, label: 'Defies the High Summit at Pyongyang; the court marks him a traitor.' },
 			{ year: 642, label: 'Renews his vow at Jumong Cavern; massacres the court; creates Supreme Commander (대막리지).' },
@@ -1000,7 +1012,8 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'The patriotism paradox: a man of the periphery — Gaya’s last princely blood — who becomes Silla’s most loyal sword, the model old-stock soldier and general. Stoic, still human; the marshal every True Bone girl invents a husband for, and the one man who will not look back. Deeply romantic, and in love with Dukman in a way he never makes cheap — eyes only for the queen he cannot have. Lifelong sparring partner to Bidam — one year younger, 108–108 — the confrontation at Radiance hurts because the score was always even, and the blood never was. Hwarang to the bone: elite-trained, beautiful in the way the order demands, with forms the yard still names after him.',
 		arc: 'Grandson of the prince who surrendered Golden Gaya, Yushin is True Bone by grant — forever the man from the edge who out-loves the centre. He already knows the steam cavern his father found: Narim, Golhwa, and Hyullé keep only Kims — 김, steam and surname in the same breath — and he rides there for counsel, not discovery. Bidam names him foreigner at Radiance and tells him blood is inevitable; after the tenth day Yushin whispers the same line back when Alchun objects to annihilating Bidam’s house — Surabol Son, Gurema’s line — turning Bidam’s heritage logic against the clan that raised him. Marshal of the Hwarang and Premier after Bidam, he trains Chunchu’s son Bupmin in the Five Principles after Daeya; conqueror of forty fortresses, the name that opens Yeon’s prison door; he marries his sister to Chunchu, holds Sunduk as she dies, faces Gyebek at the Yellow Mountain, and outlives almost everyone he swore himself to.',
-		blade: 'Ring-pommel dragon sword — coiled dragon on the pommel, Silla blue in the fuller.',
+		blade: 'Ring-pommel fish sword — Gaya fish on the pommel, Silla blue in the fuller.',
+		swordImage: '/sword_fish.png',
 		events: [
 			{ year: 632, label: 'Pledges himself to Queen Sunduk “until the end.”' },
 			{ year: 642, label: 'Marches on Baekje to avenge Daeya.' },
@@ -1042,6 +1055,27 @@ export const PEOPLE: Person[] = [
 			'Last Prince of Gaya',
 			'가야의 마지막 왕자',
 			'Last Son of Gaya'
+		],
+		stages: [
+			{
+				id: 'hwarang',
+				until: 632,
+				label: 'As Hwarang',
+				avatar: '/ch_kim_yushin_hwarang.png'
+			},
+			{
+				id: 'marshal',
+				from: 632,
+				until: 668,
+				label: 'As marshal',
+				avatar: '/ch_kim_yushin.png'
+			},
+			{
+				id: 'elder',
+				from: 668,
+				label: 'In his last years',
+				avatar: '/ch_kim_yushin_old.png'
+			}
 		]
 	},
 	{
@@ -1136,7 +1170,7 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'jinduk',
-		avatar: '/ch_seungman.png',
+		avatar: '/ch_jinduk.png',
 		name: 'Queen Jinduk',
 		korean: '진덕여왕',
 		title: '28th sovereign of Silla',
@@ -1165,16 +1199,22 @@ export const PEOPLE: Person[] = [
 		binyeoImage: '/bn_jinduk.png',
 		stages: [
 			{
+				id: 'princess',
 				until: 647,
 				name: 'Princess Seungman',
 				korean: '승만공주',
-				title: 'Sacred Bone princess of Silla'
+				title: 'Sacred Bone princess of Silla',
+				label: 'As Princess Seungman',
+				avatar: '/ch_seungman.png'
 			},
 			{
+				id: 'queen',
 				from: 647,
 				name: 'Queen Jinduk',
 				korean: '진덕여왕',
-				title: '28th sovereign of Silla'
+				title: '28th sovereign of Silla',
+				label: 'As queen',
+				avatar: '/ch_jinduk.png'
 			}
 		],
 		events: [
@@ -1294,6 +1334,7 @@ export const PEOPLE: Person[] = [
 		nature: 'Unsung true main character: he does not bend the age the way Chunchu, Yeon, or Euija do, but he is the one the chronicle lets you stand beside — watching a sister die, watching a father invent a country, learning the war from the wrong end of the map, and finishing the sentence he stole as a child. Falls for Jayi at the harbour in a K-drama of rain and wrong sums; keeps the lesson that purple is a colour and the ocean is a country. Desire: a kingdom that includes the quay. Wound: Gotaso’s empty seat. Voice: earnest, slightly awkward, stubbornly kind.',
 		arc: 'Chunchu’s story keeps one heir in focus — Bupmin — while brother Inmun stays mostly offstage in Tang. As a boy he takes the words “a king for all” into his own mouth. He watches Gotaso not come home. Under Marshal Yushin he joins the Hwarang — horse, bow, the Five Principles — then volunteers for a Gyebek-style countryside season as junior Pajinchan (Councillor of Ocean Trade) under Kim Seonpum, where he meets Jayi. He grows up in Chunchu’s shadow and Munhee’s packing lists. He inherits a half-won war and an alliance that wants the peninsula as furniture. He commands, waits, and finally expels the Tang — the road his father cleared as far as Baekje, walked to the end of Samhan on his own feet, with Jayi as queen and partner, not ornament.',
 		blade: 'Ring-pommel sea-dragon sword — forged for a king who asked to become a dragon in the strait.',
+		swordImage: '/sword_dragon.png',
 		stages: [
 			{
 				id: 'prince',
@@ -1302,7 +1343,7 @@ export const PEOPLE: Person[] = [
 				korean: '법민',
 				title: 'Prince of Silla',
 				label: 'As Bupmin',
-				avatar: '/ch_bupmin.png'
+				avatar: '/ch_kim_bupmin.png'
 			},
 			{
 				id: 'king',
@@ -1426,7 +1467,7 @@ export const PEOPLE: Person[] = [
 		bornApprox: true,
 		clan: 'clan-gyeongju-kim',
 		avatar: '/ch_jukji.png',
-		tagline: 'True Bone Hwarang of Class 15 — Pumsuk’s cohort; later the first 시중.',
+		tagline: 'True Bone Hwarang of Class 74 — Pumsuk’s cohort; later the first 시중.',
 		ideology: 'Technocratic reformer',
 		ideologyNote: 'Secretariat craft — implements westernizing speed as office work, not sermon.',
 		quote: 'The Council still meets. The seals no longer wait for it.',
@@ -1500,9 +1541,17 @@ export const PEOPLE: Person[] = [
 			'Born to one of Surabol’s oldest houses — the chronicle never states, only implies, descent from Gurema of the Surabol Son clan and the Musan hall the Founding Six raised. Aristocratic gentleman: proper titles, tea poured before the barb lands, almost flirtatious composure under the black robe. Oldest of the three Hwarang classmates — then Yushin, then Alchun, a year apart; all three once orbited Princess Dukman. Yard score never leaves 108–108 with Yushin — effort against birthright, and he feels owed. Once the most liberal True Bone — crowned the woman king, shielded Gaya-blood Yushin from nativist bullying — he spirals in public view: grievance dressed as patriotism, “they’re colonizing us,” charming one moment and ugly the next. Self-aware enough to hear the irony; genius and charisma never leave him — that is what makes it dangerous. Loves the sacred country badly. Weaponizes heritage against Yushin at Radiance: “Blood is inevitable.” Dies smiling at the name he first traded as a boy.',
 		arc: 'In 632 he crowns Dukman with a speech about cleverness. In 636 he and Alchun break King Mu’s spies at Jade Gate Valley (옥문곡). In 645 he alone blocks Seungman while Supum holds the premier’s chair. In 647 he spends ten days at Radiance with Yumjong — morning tabletop debates with Yushin before the armies fight, youth flashbacks, star omen — the liberal curdling into blood-and-soil between cups of tea. On the fifth morning he tells Yushin 피는 못 속인다 — blood is inevitable — weaponizing Gaya/Heo heritage; on the tenth day Yushin finishes the count at one hundred and nine. Last mortal words: “Hwarang Kim Yushin…” Yushin will whisper the same line back when he orders the annihilation of Bidam’s house.',
 		blade: 'Ring-pommel heavenly-horse sword — white horse rearing on the pommel, old-hall steel.',
+		swordImage: '/sword_horse.png',
 		stages: [
 			{
+				id: 'hwarang',
+				until: 632,
+				label: 'As Hwarang',
+				avatar: '/ch_bidam_hwarang.png'
+			},
+			{
 				id: 'young',
+				from: 632,
 				until: 645,
 				label: 'As councillor',
 				avatar: '/ch_bidam.png'
@@ -1593,7 +1642,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'True Bone honour culture — the yard before any doctrine.',
 		quote: "A fortress falls from the inside first.",
 		arc: 'Capital-bred, True Bone, given a fortress for his rank. Gotaso loves him with her whole chest. At Daeya he meets Gumil’s wife and discovers how little of the world Surabol prepared him for.',
-		blade: 'Ring-pommel parade sword — Surabol gilt, never blooded until the wrong night.',
+		blade: 'Ring-pommel parade sword — fox on the gilt pommel, never blooded until the wrong night.',
+		swordImage: '/sword_fox.png',
 		events: [
 			{ year: 641, label: 'Marries Gotaso, swearing to protect her with his life.' },
 			{ year: 642, label: 'Loses Daeya after betrayal; kills his wife and himself.' }
@@ -1608,6 +1658,7 @@ export const PEOPLE: Person[] = [
 		id: 'gumil',
 		name: 'Gumil',
 		korean: '검일',
+		avatar: '/ch_gumil.png',
 		kingdom: 'silla',
 		died: 660,
 		gender: 'm',
@@ -1996,6 +2047,52 @@ export const PEOPLE: Person[] = [
 		aliases: ['Lady Yunbi', 'Yunbi Hana', 'Hana', '연비한아']
 	},
 	{
+		id: 'ladysatek',
+		avatar: '/ch_satek_lady.png',
+		name: 'Lady Satek',
+		korean: '사택한아',
+		hanja: '沙宅翰娥',
+		kingdom: 'baekje',
+		gender: 'f',
+		clan: 'clan-satek',
+		tagline: 'Harbour pride in a red sleeve — the feud’s sharpest niece.',
+		quote: 'Our berth. Your apology. In that order.',
+		nature: 'Younger-house Satek: not the queen-consort sleeve, not the Prime Minister’s seal — the niece who keeps score on the wharf. Sharp tongue, faster memory.',
+		arc: 'Fictional counterpart to Lady Yunbi on the Satek side — featured in the Euija-era street wars opposite Yunbi Hana. Turns over carts with Sondeung, trades insults across the west bridge, and still shows up when Elder Satek needs a face the Assembly cannot pretend is furniture.',
+		binyeo: 'Wharf-iron binyeo — berth-nail metal, no court pearl.',
+		events: [
+			{ year: 632, label: 'Feud with Lady Yunbi over a west-bridge cart.' },
+			{ year: 655, label: 'Watches the chairs empty; keeps the house ledger anyway.' }
+		],
+		career: [
+			{ title: 'Junior Minister', korean: '달솔', hanja: '達率', org: 'ministersassembly', from: 632, to: 655 }
+		],
+		aliases: ['Lady Satek', 'Satek Hana', '사택한아', '沙宅翰娥']
+	},
+	{
+		id: 'ministeryunbi',
+		avatar: '/ch_yunbi_minister.png',
+		name: 'Minister Yunbi',
+		korean: '연비지적',
+		hanja: '燕比智積',
+		title: 'Prime Minister (상좌평) — the political Yunbi',
+		kingdom: 'baekje',
+		gender: 'm',
+		clan: 'clan-yunbi',
+		tagline: 'Coast-road Premier — salt arithmetic against Satek theatre.',
+		quote: 'The sleeve is wet. The ledger is not.',
+		nature: 'Elder Yunbi’s kinsman who holds the Prime Minister’s chair when the coast house wins a majority — dry, northern-proud, allergic to harbour poetry.',
+		arc: 'While Elder Yunbi counts nephews and truces at monastery tables, Minister Yunbi (Jijuk of the Yunbi line) holds 상좌평 when the Assembly tilts north. He stamps salt passes, prices berths, and treats Minister Satek’s seal like weather — inevitable, inconvenient, negotiable until Euija seats forty-one sons and both Premiers become furniture.',
+		events: [
+			{ year: 632, label: 'Prime Minister (상좌평) when the Yunbi house holds the aisle.' },
+			{ year: 655, label: 'Swept when Euija seats his sons in every chair.' }
+		],
+		career: [
+			{ title: 'Prime Minister', korean: '상좌평', hanja: '上佐平', org: 'ministersassembly', from: 632, to: 655 }
+		],
+		aliases: ['Minister Yunbi', 'Yunbi Jijuk', '연비지적', '燕比智積']
+	},
+	{
 		id: 'ungo',
 		avatar: '/ch_eungo.png',
 		name: 'Queen Eungo',
@@ -2114,6 +2211,11 @@ export const PEOPLE: Person[] = [
 		kingdom: 'other',
 		tagline: 'Took in the exiled Yuhwa, and raised the boy who would outgrow his kingdom.',
 		quote: "Shelter what heaven abandons.",
+		family: [
+			{ id: 'daeso', role: 'Son' },
+			{ id: 'galsa', role: 'Son' },
+			{ id: 'jumong', role: 'Foster son' }
+		],
 		aliases: ['King Geumwa', 'Geumwa']
 	},
 	{
@@ -2126,7 +2228,48 @@ export const PEOPLE: Person[] = [
 		died: 22,
 		tagline: 'Geumwa’s son, who could not bear being outshot by a foundling.',
 		quote: "Never be outshot by a foundling.",
+		family: [
+			{ id: 'geumwa', role: 'Father' },
+			{ id: 'galsa', role: 'Brother' },
+			{ id: 'jumong', role: 'Stepbrother' }
+		],
 		aliases: ['Daeso']
+	},
+	{
+		id: 'galsa',
+		gender: 'm',
+		avatar: '/ch_galsa.png',
+		name: 'Galsa',
+		korean: '갈사',
+		hanja: '曷斯',
+		kingdom: 'other',
+		tagline: 'Geumwa’s younger son — the smile that shrinks when Jumong hits the mark.',
+		quote: 'If the arrow lands, pretend you meant to applaud.',
+		nature: 'Second son energy beside Daeso’s heir-rage: less throne, more side-eye. Keeps score the way hunters keep wind.',
+		arc: 'Raised in Buyeo’s hall with Daeso while the egg-born boy outgrows every contest. When Jumong slips away into the night, Galsa is among the nets — not the loudest voice, but one of the smiles that got smaller each year the foundling shot true.',
+		family: [
+			{ id: 'geumwa', role: 'Father' },
+			{ id: 'daeso', role: 'Brother' },
+			{ id: 'jumong', role: 'Stepbrother' }
+		],
+		aliases: ['Galsa', '갈사', '曷斯']
+	},
+	{
+		id: 'buyeojashin',
+		gender: 'm',
+		avatar: '/ch_buyeo_jashin.png',
+		name: 'Buyeo Jashin',
+		korean: '부여자신',
+		hanja: '扶餘子申',
+		kingdom: 'other',
+		tagline: 'Geumwa’s ledger-man — reads omens the way clerks read tax.',
+		quote: 'An egg on the record is still a record.',
+		nature: 'Court strategist in red and seal-gold: calm voice, cold categories. Believes Buyeo survives by filing heaven correctly.',
+		arc: 'Minister of the accounts and the auguries in Geumwa’s Dongbuyeo — the man who tells the king what the egg means before the egg hatches. He counsels patience when Daeso wants blood and caution when Geumwa wants pride. When Jumong crosses the river on fish and turtles, Jashin is the one who writes “unfiled” in the margin and lives with it.',
+		career: [
+			{ title: 'Minister', korean: '대臣', hanja: '大臣', from: -50, to: -20, note: 'Geumwa’s Dongbuyeo court' }
+		],
+		aliases: ['Buyeo Jashin', 'Jashin', '부여자신', '扶餘子申']
 	},
 	{
 		id: 'yomyo',
@@ -2336,6 +2479,7 @@ export const PEOPLE: Person[] = [
 		korean: '도침',
 		hanja: '道琛',
 		kingdom: 'baekje',
+		avatar: '/ch_dochim.png',
 		died: 661,
 		tagline: 'Temple-trained, clan-ignored — the monk who raised an army from leftovers.',
 		quote: 'Restore first. Argue later.',
@@ -2357,6 +2501,7 @@ export const PEOPLE: Person[] = [
 		korean: '흑치상지',
 		hanja: '黑齒常之',
 		kingdom: 'baekje',
+		avatar: '/ch_hukchi_sangji.png',
 		born: 630,
 		died: 689,
 		tagline: 'Held Imjon for the BRA — then won Tang’s wars until Tang invented a charge.',
@@ -2372,6 +2517,29 @@ export const PEOPLE: Person[] = [
 			{ title: 'General of Imjon', korean: '장군', hanja: '將軍', org: 'restorationarmy', from: 661, to: 663 }
 		],
 		aliases: ['Hukchi Sangji', 'Heukchi Sangji']
+	},
+	{
+		id: 'sateksangya',
+		gender: 'm',
+		name: 'Satek Sangya',
+		korean: '사택상여',
+		hanja: '沙宅相如',
+		kingdom: 'baekje',
+		clan: 'clan-satek',
+		died: 663,
+		tagline: 'Satek steel at the restoration table — berth money turned field general.',
+		quote: 'Harbour credit buys one more wall.',
+		nature: 'Not Eight-Clan theatre — Satek muscle who never held Elder Satek’s chair but held a gate. Desire: the house’s name on a victory scroll. Wound: watching restoration eat its captains. Voice: wharf-flat, no poetry.',
+		arc: 'Fifth pillar of the Baekje Restoration Army’s founding captains — the Satek general who raises men the Great Clans never counted beside Boksin, Dochim, and Sangji. When Pung arrives he salutes the crown and keeps the harbour lanes open. After Boksin falls he refuses the king’s arithmetic, holds Imjon with Sangji’s stubbornness, and eventually surrenders to Tang when the White River prices the last chance.',
+		events: [
+			{ year: 660, label: 'Joins the BRA at Juryu with Boksin and Dochim.' },
+			{ year: 661, label: 'Salutes King Pungjang; keeps Satek lanes feeding the host.' },
+			{ year: 663, label: 'Refuses Pung’s camp; defects to Tang as the army collapses.' }
+		],
+		career: [
+			{ title: 'General', korean: '장군', hanja: '將軍', org: 'restorationarmy', from: 660, to: 663 }
+		],
+		aliases: ['Satek Sangya', 'Sangya', '사택상여', '沙宅相如']
 	},
 	{
 		id: 'sadaham',
@@ -2661,6 +2829,29 @@ export const PEOPLE: Person[] = [
 		aliases: ['Echi no Takutsu', 'Takutsu']
 	},
 	{
+		id: 'gungye',
+		gender: 'm',
+		avatar: '/ch_gung_ye.png',
+		name: 'Gung Ye',
+		korean: '궁예',
+		hanja: '弓裔',
+		kingdom: 'goguryeo',
+		born: 869,
+		died: 918,
+		tagline: 'One-eyed monk-king — founded Taebong from Goguryeo’s ashes.',
+		quote: 'The mandate does not ask if you can see.',
+		nature: 'Warrior-monk charisma with a dragon sash and a gold patch: prophecy as policy, violence as liturgy. Terrifying calm.',
+		arc: 'Post-Samhan coda: a monk with one eye and a staff who names himself Son of Heaven, builds Taebong on Goguryeo nostalgia, and dies when the disciples he made decide they prefer a cleaner king. The chronicle visits him only as proof that the peninsula keeps inventing crowns after the maps say the work is finished.',
+		events: [
+			{ year: 901, label: 'Founds Taebong (Later Goguryeo) at Songak.' },
+			{ year: 918, label: 'Overthrown and killed by his generals.' }
+		],
+		career: [
+			{ title: 'King of Taebong', korean: '태봉왕', hanja: '泰封王', from: 901, to: 918 }
+		],
+		aliases: ['Gung Ye', 'Gungye', '궁예', '弓裔']
+	},
+	{
 		id: 'yesikjin',
 		gender: 'm',
 		name: 'Ye Sikjin',
@@ -2704,6 +2895,7 @@ export const PEOPLE: Person[] = [
 		quote: "A Yeon name is already a warning.",
 		nature: 'Chairs the Summit like a feast: soft voice, hard arithmetic. Tells his nephew to sit down — and is the first mouth to set the word traitor on Yeon’s name. Treats alarms as youthful noise until the noise becomes a massacre.',
 		blade: 'Ring-pommel crow sword — haetae carved beneath the stamp; first of the Five to change hands.',
+		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; his crow-stamped blade becomes one of the Five.' }],
 		sobriquets: ['Stone Haetae of Goryeo'],
 		career: [
@@ -2726,6 +2918,7 @@ export const PEOPLE: Person[] = [
 		quote: "Stop counting remounts. Start counting winters.",
 		nature: 'Blunt frontier arithmetic. Sexually confident in the soldier’s way — present, not performative — and allergic to southern romance when his villages are burning.',
 		blade: 'Ring-pommel crow sabre — Mohe-frost nicks in the edge; the Northern blade of the Five.',
+		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Northern crow-blade taken.' }],
 		career: [
 			{ title: 'Northern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
@@ -2747,6 +2940,7 @@ export const PEOPLE: Person[] = [
 		quote: "Send the levy — or stop naming Samhan.",
 		nature: 'Competitive, sharp-tongued, sure of his own front. Treats Eastern tribal fighting as easy work and never forgives a room that starves his border for a slogan.',
 		blade: 'Ring-pommel crow sword — grip worn smooth against Yushin’s passes; the Southern blade of the Five.',
+		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Southern crow-blade taken.' }],
 		career: [
 			{ title: 'Southern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
@@ -2768,6 +2962,7 @@ export const PEOPLE: Person[] = [
 		quote: "Strip the west, and you gift the Tang a road.",
 		nature: 'Cautious about the Second Emperor without sharing Yeon’s urgency. Wants resources, not prophecies — and will not strip the Liao for a king’s peninsula dream.',
 		blade: 'Ring-pommel crow sword — Liao timber-oil in the scabbard; the Western blade of the Five.',
+		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Western crow-blade taken.' }],
 		career: [
 			{ title: 'Western Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
@@ -2798,6 +2993,7 @@ export const PEOPLE: Person[] = [
 		id: 'jungto',
 		name: 'Yeon Jungto',
 		korean: '연정토',
+		avatar: '/ch_yeon_jungto.png',
 		kingdom: 'goguryeo',
 		clan: 'clan-yeon',
 		gender: 'm',
@@ -2819,6 +3015,7 @@ export const PEOPLE: Person[] = [
 		id: 'sooyoung',
 		name: 'Yeon Sooyoung',
 		korean: '연수영',
+		avatar: '/ch_yeon_sooyoung.png',
 		kingdom: 'goguryeo',
 		gender: 'f',
 		clan: 'clan-yeon',
@@ -3491,6 +3688,7 @@ export const PEOPLE: Person[] = [
 		nature: 'Epitome of focus. Traumatic past, emotions suppressed or delayed, endlessly loyal, allergic to politics. He hears sentences at their exact width — misses jokes, misreads faces, trusts numbers because numbers do not lie. Euija’s soft spot and Euija’s pupil: taught the world’s dirt without ever learning to love the game. When the kingdom is already lost, focus is what remains — five thousand against the arithmetic of survival.',
 		arc: 'Found half-drowned by a prince and named after a turtle, Gyebek has no clan and therefore no ceiling and no floor — passed over for command, then shipped to Tamla by the Eight Clans (Minister Satek reading the sealed order) while Euija is locked in mourning. Recalled only when the kingdom is already lost. He hears every sentence at its exact width: he does not catch a joke, cannot read a face, counts what he can count because numbers do not lie to him, and keeps a promise past the point where keeping it makes sense. It is what makes him unbearable at court and unbreakable in a field. He answers with five thousand men against fifty thousand, killing his own family first so that nothing can be used against him.',
 		blade: 'Single-edged phoenix blade — curved like an eastern sword, phoenix on the ring pommel; one side only, as he is.',
+		swordImage: '/sword_lotus.png',
 		events: [
 			{ year: 632, label: 'Named by the crown prince Euija.' },
 			{ year: 655, label: 'Clans exile him to Tamla while Euija mourns; Euija learns and rages.' },
@@ -3721,6 +3919,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		died: 663,
 		gender: 'm',
+		avatar: '/ch_gwisil_boksin.png',
 		clan: 'clan-gwishil',
 		tagline: 'BRA’s best general — raised the country twice, could not share the crown once.',
 		quote: 'Raise the country twice if once was not enough.',
@@ -4122,7 +4321,8 @@ export const PEOPLE: Person[] = [
 		tagline: 'Last prince of Golden Gaya — traded a kingdom so his blood could keep a sword.',
 		quote: 'I loved you before I knew you.',
 		arc: 'He surrenders Geumgwan so his line may live as True Bone. At the cavern lake his ghost tells his grandson what the surrender was for: not his own sake, but Yushin’s — love aimed at a boy who did not yet exist. Look at me. I am so, so proud of you.',
-		blade: 'Ring-pommel Gaya iron — egg-and-iron mark still visible under the Silla polish.',
+		blade: 'Ring-pommel fish sword — Gaya fish on the pommel; egg-and-iron mark still visible under the Silla polish.',
+		swordImage: '/sword_fish.png',
 		events: [
 			{ year: 532, label: 'Golden Gaya surrenders to Silla.' },
 			{ year: 647, label: 'Ghost in the cavern — “I loved you before I knew you.”' }
@@ -4143,7 +4343,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Gaya into Silla — belonging proven by service, not blood argument.',
 		quote: 'You are my son. You are Kim Yushin.',
 		arc: 'Son of Muryuk; father of Yushin and Munhee. Loyal Silla patriot to the end — the middle generation that made the surrender into a household. In the steam beyond Surabol he is the first of the line: Narim, Golhwa, and Hyullé fall for him under the house rule that keeps only Kims — surname and steam, same sound — and every Kim who finds the lake afterward is heirloom. Before Radiance’s tenth day his ghost names the boy past every title: Sword of Silla, Last Prince of Gaya, and still — Kim Yushin. Your mother and I couldn’t be more proud.',
-		blade: 'Ring-pommel plain sword — no crest louder than duty.',
+		blade: 'Ring-pommel fish sword — Gaya fish on the pommel; no crest louder than duty.',
+		swordImage: '/sword_fish.png',
 		events: [
 			{ label: 'Finds the cavern lake; the goddesses love him first.' },
 			{ label: 'Raises Yushin to serve a queen he will never meet.' },
@@ -4422,6 +4623,13 @@ export const CONCEPTS: Person[] = [
 			'대별왕',
 			'대벨왕',
 			'Elder Star'
+		],
+		stages: [
+			{
+				id: 'young',
+				label: 'Before the wager',
+				avatar: '/ch_big_star_young.png'
+			}
 		]
 	},
 	{
@@ -4461,6 +4669,13 @@ export const CONCEPTS: Person[] = [
 			'소별왕',
 			'소벨왕',
 			'Younger Star'
+		],
+		stages: [
+			{
+				id: 'young',
+				label: 'Before the wager',
+				avatar: '/ch_little_star_young.png'
+			}
 		]
 	},
 	{
@@ -4526,7 +4741,8 @@ export const CONCEPTS: Person[] = [
 		nature:
 			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — ledger, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
 		arc: 'From 「차사본풀이」: heaven sent him to arrest Yumla; he stayed. Class III: a specific function — the fetch itself — under Yumla’s broader judgment. Across Samhan he collects with Haewonmek — Gotaso at Daeya who knew only the folk title, Bidam and Sunduk who knew his name, five thousand at Hwangsan who wave them in. He asks Kangrim’s Question; Haewonmek asks only for last words. Wet-nurse stories say 저승사자; palace rooms and Tamla’s last telling say Kangrim. The island tells him last — after every kinder Tamla tale — because once you have heard it, every ending changes key.',
-		blade: 'Black iron escort blade — ring pommel cold as ledger-ink; shown once, never drawn.',
+		blade: 'Black iron death blade — ring pommel cold as ledger-ink; shown once, never drawn.',
+		swordImage: '/sword_crysanthemum.png',
 		events: [
 			{ label: 'Sent to arrest Yumla; stays as escort of judgment under Big Star.' },
 			{ year: 642, label: 'Collects Gotaso at Daeya — she knows only 저승사자; Haewonmek takes Pumsuk.' },
@@ -4581,6 +4797,8 @@ export const CONCEPTS: Person[] = [
 		nature:
 			'Dead silent. Kangrim’s partner on the fetch-roads — introverted, dark, minimal speech, a younger 해 who took the night-road while the other 해 still drives the day. His ask is simpler than Kangrim’s Question: Any last words? / 남길 말 있나? Common folk still say only 저승사자 — one office, two names elites know. When he must speak it is sharp, final, and a little grumpy; he does not soft-pad the hour.',
 		arc: 'Second reaper beside Kangrim under Yumla’s judgment and Big Star’s 저승 — in 「차사본풀이」 the older reaper who once showed Kangrim the trail. Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Hwangsan Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
+		blade: 'Black iron death blade — ring pommel cold as last words; shown once, never drawn.',
+		swordImage: '/sword_crysanthemum.png',
 		events: [
 			{ year: -37, label: 'Comes for Jumong at the river; Haemosu sends him off.' },
 			{ label: 'Walks the reaper roads with Kangrim after the crow scrambles the shared ledger.' },
@@ -4898,7 +5116,7 @@ export const CONCEPTS: Person[] = [
 		tagline: 'Boarding hall and officer factory of Silla’s noblemen — the class you slept in is the class you later vote with.',
 		ideology: 'Martial aristocratic idealism',
 		ideologyNote: 'Flower youth as elite virtue politics — loyalty, beauty, and steel as curriculum. The cohort outlives the yard: old boys staff the Harmony Council.',
-		nature: 'A closed hall that sleeps six to a room, and an officer factory that feeds the state. Boys learn one another’s snores before one another’s ranks, then keep the class number for life — First Class, Class 11, Class 17 — the way a later age keeps a service number. Bidam is senior to Yushin, Yushin to Alchun; decades on they still say our class. Almost every Harmony Councillor first wore the headband. A Hwarang is expected to ride, recite, and look like the country worth dying for. Special forms — named cuts, paired drills, the 108 count — mark who trained in the yard and who merely wore a sword. On the gyuku field they measure one another with a jangsi before the court does.',
+		nature: 'A closed hall that sleeps six to a room, and an officer factory that feeds the state. Boys learn one another’s snores before one another’s ranks, then keep the class number for life — First Class, Class 51, Class 84 — the way a later age keeps a service number. One class a year: Class 1 entered in 560. Bidam is senior to Yushin, Yushin to Alchun; decades on they still say our class. Almost every Harmony Councillor first wore the headband. A Hwarang is expected to ride, recite, and look like the country worth dying for. Special forms — named cuts, paired drills, the 108 count — mark who trained in the yard and who merely wore a sword. On the gyuku field they measure one another with a jangsi before the court does.',
 		arc: 'Silla’s training order for True Bone youth — part boarding school, part brotherhood, part cult of the officer. It incubates the men who later sit the Harmony Council, which is to say the Council is the yard with better chairs. It produces Yushin, Bidam, Alchun and Pumsuk: the man who saves the throne, the man who rebels against it, and the boy who loses Daeya. When two of them meet between camps, the country watches a private language of steel — and of class.',
 		events: [
 			{ year: 576, label: 'Formalised under King Jinheung.' },
@@ -4906,12 +5124,12 @@ export const CONCEPTS: Person[] = [
 			{ year: 660, label: 'Gwanchang and Bangul die at the Yellow Mountain Fields.' }
 		],
 		orgChart: [
-			{ id: 'yushin', role: '국선 · Marshal', reportsTo: null },
-			{ id: 'bidam', role: '화랑', reportsTo: 'yushin' },
-			{ id: 'alchun', role: '화랑', reportsTo: 'yushin' },
-			{ id: 'pumsuk', role: '화랑', reportsTo: 'yushin' },
-			{ id: 'sadaham', role: '화랑 · remembered', reportsTo: 'yushin' },
-			{ id: 'jukji', role: '화랑', reportsTo: 'yushin' },
+			{ id: 'yushin', role: '국선 · Marshal · Class 51', reportsTo: null },
+			{ id: 'bidam', role: '화랑 · Class 51', reportsTo: 'yushin' },
+			{ id: 'alchun', role: '화랑 · Class 51', reportsTo: 'yushin' },
+			{ id: 'pumsuk', role: '화랑 · Class 74', reportsTo: 'yushin' },
+			{ id: 'sadaham', role: '화랑 · remembered · First Class', reportsTo: 'yushin' },
+			{ id: 'jukji', role: '화랑 · Class 74', reportsTo: 'yushin' },
 			{ id: '_hwarang-6', role: '화랑', reportsTo: 'yushin' },
 			{ id: '_disc-bidam-1', role: '낭도 · disciple', reportsTo: 'bidam' },
 			{ id: '_disc-bidam-2', role: '낭도 · disciple', reportsTo: 'bidam' },
@@ -5231,22 +5449,22 @@ export const CONCEPTS: Person[] = [
 		entity: 'organization',
 		kingdom: 'baekje',
 		title: 'The army that tried to un-fall Baekje',
-		tagline: 'Pungjang’s banner over Juryu — Boksin’s steel, Dochim’s timetable, Sangji’s Imjon wall.',
+		tagline: 'Pungjang’s banner over Juryu — five founding captains: Boksin, Dochim, Sangji, Sangya, and the crown Pung fetched from Yamato.',
 		ideology: 'Restoration royalism',
-		ideologyNote: 'A crown fetched from Yamato; a general who cannot share it; a monk who dies first.',
-		arc: 'After Sabi, Gwishil Boksin and the monk Dochim raise a host from people the Eight Clans never counted. They fetch Prince Pung from Yamato and crown him Pungjang. Dochim dies to Boksin’s knife; Boksin dies to Pung’s order; Heukchi Sangji holds Imjon until the White River burns the last chance. Not a Great Clan parliament — a restoration that eats its captains.',
+		ideologyNote: 'Five founding members — Boksin and Dochim raise the host; Sangji holds Imjon; Satek Sangya feeds the lanes; Pungjang supplies the crown. A movement that eats its captains.',
+		arc: 'After Sabi, Gwishil Boksin and the monk Dochim raise a host from people the Eight Clans never counted, with Heukchi Sangji at Imjon and Satek Sangya keeping harbour steel in the line. They fetch Prince Pung from Yamato and crown him Pungjang — five founding captains under one banner. Dochim dies to Boksin’s knife; Boksin dies to Pung’s order; Sangji and Sangya break last at the White River. Not a Great Clan parliament — a restoration that eats its captains.',
 		events: [
-			{ year: 660, label: 'Boksin and Dochim raise the BRA after Sabi.' },
-			{ year: 661, label: 'Pung returns; crowned Pungjang at Juryu.' },
+			{ year: 660, label: 'Boksin, Dochim, Sangji, and Sangya raise the BRA after Sabi.' },
+			{ year: 661, label: 'Pung returns; crowned Pungjang — the fifth founding seat filled.' },
 			{ year: 661, label: 'Dochim killed; Sangji holds Imjon.' },
-			{ year: 663, label: 'Boksin executed; White River ends the army.' }
+			{ year: 663, label: 'Boksin executed; Sangya and Sangji break; White River ends the army.' }
 		],
 		orgChart: [
-			{ id: 'pung', role: 'King Pungjang', reportsTo: null },
-			{ id: 'boksin', role: 'General · Gwishil', reportsTo: 'pung' },
-			{ id: 'dochim', role: 'General · monk-co-founder', reportsTo: 'pung' },
-			{ id: 'sangji', role: 'General · Imjon', reportsTo: 'pung' },
-			{ id: '_bra-sangya', role: 'General · Satek Sangya', reportsTo: 'pung' }
+			{ id: 'pung', role: 'King Pungjang · founding crown', reportsTo: null },
+			{ id: 'boksin', role: 'General · Gwishil · co-founder', reportsTo: 'pung' },
+			{ id: 'dochim', role: 'General · monk · co-founder', reportsTo: 'pung' },
+			{ id: 'sangji', role: 'General · Imjon · co-founder', reportsTo: 'pung' },
+			{ id: 'sateksangya', role: 'General · Satek · co-founder', reportsTo: 'pung' }
 		],
 		aliases: [
 			'Baekje Restoration Army',
@@ -5417,8 +5635,8 @@ export const GROUPS: Person[] = [
 		entity: 'group',
 		kingdom: 'silla',
 		title: 'The flower knights the age remembers',
-		tagline: 'Yushin, Alchun, and Bidam — the three Hwarang whose names outlast the order itself.',
-		arc: 'Of all the flower knights Surabol raised, three names refuse to fade: Yushin the sword, Alchun the elder statesman, Bidam the rebel. The order made many; the chronicle keeps these three.',
+		tagline: 'Yushin, Alchun, and Bidam — Class 51 (오십일기), the three Hwarang whose names outlast the order itself.',
+		arc: 'Of all the flower knights Surabol raised, three names refuse to fade: Yushin the sword, Alchun the elder statesman, Bidam the rebel — Class 51, 오십일기. The order made many; the chronicle keeps these three.',
 		aliases: ['Three Eternal Hwarang', 'The Three Eternal Hwarang', '화랑삼웅']
 	},
 	{
@@ -5494,6 +5712,18 @@ export const GROUPS: Person[] = [
 		tagline: 'Kangrim and Haewonmek — the two reapers who walk the living world to collect its dead.',
 		arc: 'Big Star keeps the orderly dark; these two do the walking. Kangrim, the one the myths promoted, and Haewonmek, the partner on the road — the pair every death scene in the chronicle waits for.',
 		aliases: ['Grim Reapers', 'The Grim Reapers', '저승사자']
+	},
+	{
+		id: 'brafounders',
+		name: 'BRA Founding Captains',
+		korean: '부흥군 오장',
+		hanja: '復興軍五將',
+		entity: 'group',
+		kingdom: 'baekje',
+		title: 'The five who raised the restoration banner',
+		tagline: 'Boksin, Dochim, Sangji, Sangya — and Pungjang’s crown fetched from Yamato.',
+		arc: 'Not Eight-Clan furniture: four generals and a prince who turned refugees into a kingdom-that-almost-was. They share one banner, one fracture, and one river mouth.',
+		aliases: ['BRA Founders', 'BRA Founding Captains', 'Five founding members', '부흥군 오장']
 	},
 	{
 		id: 'fiveprinces',
@@ -6124,6 +6354,9 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	boksin: ['restorationarmy'],
 	dochim: ['restorationarmy'],
 	sangji: ['restorationarmy'],
+	sateksangya: ['restorationarmy'],
+	ladysatek: ['eightclans', 'ministersassembly'],
+	ministeryunbi: ['eightclans', 'ministersassembly'],
 	// Goguryeo — High Summit (Yeon is a clan, not an org)
 	gesomun: ['highsummit'],
 	namseng: ['highsummit'],
@@ -6193,7 +6426,11 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	tae: ['fiveprinces'],
 	hyo: ['fiveprinces'],
 	yun: ['fiveprinces'],
-	pung: ['fiveprinces'],
+	pung: ['fiveprinces', 'brafounders'],
+	boksin: ['brafounders'],
+	dochim: ['brafounders'],
+	sangji: ['brafounders'],
+	sateksangya: ['brafounders'],
 	// Goguryeo — the five 대가 of the Five Commanderies
 	gesomun: ['fivecommanders'],
 	gusesa: ['fivecommanders'],
@@ -6230,6 +6467,7 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 export const GROUP_ROSTERS: Record<string, readonly string[]> = {
 	// Birth order: demoted eldest → self-crowned 2nd → chosen 3rd → quiet 4th → youngest
 	fiveprinces: ['yung', 'tae', 'hyo', 'yun', 'pung'],
+	brafounders: ['boksin', 'dochim', 'sangji', 'sateksangya', 'pung'],
 	// Heaven above, then the three courts of 삼계
 	fourrealms: ['heaven', 'living_world', 'underworld', 'western_flower_field']
 };
@@ -6303,6 +6541,12 @@ const COLOR: Record<string, string> = {
 	heungsu: '#b98f33',
 	dochim: '#a06a28',
 	sangji: '#8a6b1f',
+	sateksangya: '#b8933f',
+	ladysatek: '#d9b45e',
+	ministeryunbi: '#7f9b6b',
+	gungye: '#4a7c6f',
+	galsa: '#6b8f4a',
+	buyeojashin: '#9b2d2d',
 	weizheng: '#9a7b4f',
 	xuerengui: '#e8e3d5',
 	xueliu: '#c4a484',
@@ -6579,6 +6823,8 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	heungsu: ['gen-ii'],
 	dochim: ['gen-ii'],
 	sangji: ['gen-ii'],
+	sateksangya: ['gen-ii'],
+	gungye: ['gen-iii'],
 	yumjong: ['gen-ii'],
 	supum: ['gen-ii'],
 	pumil: ['gen-ii'],
@@ -6617,6 +6863,8 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	sateksondung: ['gen-ii'],
 	elderyunbi: ['gen-ii'],
 	yunbihana: ['gen-ii'],
+	ladysatek: ['gen-ii'],
+	ministeryunbi: ['gen-ii'],
 	ungo: ['gen-ii'],
 	sooyoung: ['gen-ii'],
 	// —— Generation III ——
@@ -6654,6 +6902,8 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	ladyye: ['founders'],
 	geumwa: ['founders'],
 	daeso: ['founders'],
+	galsa: ['founders'],
+	buyeojashin: ['founders'],
 	yuri: ['founders'],
 	// —— Legends (famous earlier kings / heroes — characters only) ——
 	gyeonggeunchogo: ['legends'],
@@ -6669,12 +6919,12 @@ const TAGS_BY_ID: Record<string, string[]> = {
 };
 
 /**
- * Five-year birth bands. Index is stable: 1 + (bandStart − first band) / 5.
- * Named `members` pin a person into a famous room (Bidam into Yushin’s band)
- * even when their birth year sits one year off the floor.
+ * One class per entry year. Class n = year − 559; Class 1 entered in 560
+ * (Sadaham / Mugwan). Named `members` pin a person into a famous room
+ * (Jukji with Pumsuk at 74, not the 635 / Class 76 his CV year would give).
  */
-export const HWARANG_CLASS_SPAN = 5;
-export const HWARANG_FIRST_BAND = 545;
+export const HWARANG_CLASS_EPOCH = 559;
+export const HWARANG_FIRST_YEAR = 560;
 
 const SINO_ONES = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'] as const;
 
@@ -6687,8 +6937,8 @@ function sinoKoreanNumeral(n: number): string {
 	return ones === 0 ? tenPart : `${tenPart}${SINO_ONES[ones]}`;
 }
 
-export function hwarangClassIndex(bornFrom: number): number {
-	return 1 + (bornFrom - HWARANG_FIRST_BAND) / HWARANG_CLASS_SPAN;
+export function hwarangClassIndex(entryYear: number): number {
+	return entryYear - HWARANG_CLASS_EPOCH;
 }
 
 export function hwarangClassLabel(index: number): string {
@@ -6701,17 +6951,16 @@ export function hwarangClassKorean(index: number): string {
 
 /**
  * Chip colours by class index. First Class is a distinguished gold;
- * later rooms are muted jewel tones for the dark chronicle UI.
- * Unlisted indices fall back to `HWARANG_CLASS_FALLBACK` (never gold).
+ * later named rooms keep their old jewel tones. Unlisted indices fall
+ * back to `HWARANG_CLASS_FALLBACK` (never gold) — occupied years only.
  */
 export const HWARANG_CLASS_COLORS: Record<number, string> = {
-	1: '#e4c57a', // First Class — pale gold
-	11: '#c9a05c', // Class 11 — amber bronze
-	12: '#7e9a72', // Class 12 — celadon
-	15: '#6d8aa8', // Class 15 — muted lapis
-	16: '#a07286', // Class 16 — dusty plum
-	17: '#5e9a8c', // Class 17 — malachite
-	21: '#b56e5a' // Class 21 — garnet
+	1: '#e4c57a', // First Class / 제일기 — pale gold
+	51: '#c9a05c', // Class 51 — amber bronze (Bidam, Yushin, Alchun)
+	59: '#7e9a72', // Class 59 — celadon (Chunchu)
+	74: '#6d8aa8', // Class 74 — muted lapis (Pumsuk, Jukji)
+	84: '#5e9a8c', // Class 84 — malachite (Bupmin / Munmu)
+	99: '#b56e5a' // Class 99 — garnet (Gwanchang, Bangul)
 };
 
 const HWARANG_CLASS_FALLBACK = [
@@ -6735,65 +6984,53 @@ export interface HwarangClass {
 	label: string;
 	korean?: string;
 	color: string;
-	/** Inclusive start of the 5-year birth band. */
-	bornFrom: number;
-	/** Exclusive end (`bornFrom + HWARANG_CLASS_SPAN`). */
-	bornTo: number;
+	/** Entry year. Class number = year − 559. */
+	year: number;
 	initiated?: number;
 	members: string[];
 }
 
 function namedHwarangClass(c: Omit<HwarangClass, 'label' | 'korean' | 'color'>): HwarangClass {
-	const index = hwarangClassIndex(c.bornFrom);
+	const index = hwarangClassIndex(c.year);
 	return {
 		...c,
+		initiated: c.initiated ?? c.year,
 		label: hwarangClassLabel(index),
 		korean: hwarangClassKorean(index),
 		color: hwarangClassColorByIndex(index)
 	};
 }
 
+/** Occupied named rooms only — do not enumerate empty yearly classes. */
 export const HWARANG_CLASSES: HwarangClass[] = [
 	namedHwarangClass({
 		id: 'first',
-		bornFrom: 545,
-		bornTo: 550,
-		initiated: 561,
+		year: 560,
 		members: ['sadaham', 'mugwan']
 	}),
 	namedHwarangClass({
 		id: 'yushin',
-		bornFrom: 595,
-		bornTo: 600,
-		initiated: 610,
+		year: 610,
 		members: ['bidam', 'yushin', 'alchun']
 	}),
 	namedHwarangClass({
 		id: 'chunchu',
-		bornFrom: 600,
-		bornTo: 605,
-		initiated: 618,
+		year: 618,
 		members: ['chunchu']
 	}),
 	namedHwarangClass({
 		id: 'pumsuk',
-		bornFrom: 615,
-		bornTo: 620,
-		initiated: 633,
+		year: 633,
 		members: ['pumsuk', 'jukji']
 	}),
 	namedHwarangClass({
 		id: 'bupmin',
-		bornFrom: 625,
-		bornTo: 630,
-		initiated: 641,
+		year: 643,
 		members: ['munmu']
 	}),
 	namedHwarangClass({
 		id: 'gwanchang',
-		bornFrom: 645,
-		bornTo: 650,
-		initiated: 658,
+		year: 658,
 		members: ['gwanchang', 'bangul']
 	})
 ];
@@ -6815,15 +7052,18 @@ function isHwarangMember(p: Person): boolean {
 	return p.orgs?.includes('hwarang') === true || p.career?.some((c) => c.org === 'hwarang') === true;
 }
 
-function classFromBand(from: number): { id: string; label: string; korean: string; color: string } {
-	const to = from + HWARANG_CLASS_SPAN;
-	const index = hwarangClassIndex(from);
+function classFromYear(year: number): { id: string; label: string; korean: string; color: string } {
+	const index = hwarangClassIndex(year);
 	return {
-		id: `${from}-${to}`,
+		id: String(year),
 		label: hwarangClassLabel(index),
 		korean: hwarangClassKorean(index),
 		color: hwarangClassColorByIndex(index)
 	};
+}
+
+function hwarangEntryYear(p: Person): number | undefined {
+	return p.career?.find((c) => c.org === 'hwarang' && c.from != null)?.from;
 }
 
 export type HwarangClassRef = {
@@ -6838,12 +7078,12 @@ function colorOfKlass(klass: { id: string; color?: string }): string {
 	if (klass.color) return klass.color;
 	const named = HWARANG_CLASSES.find((c) => c.id === klass.id);
 	if (named?.color) return named.color;
-	const from = named?.bornFrom ?? parseInt(klass.id, 10);
-	if (Number.isFinite(from)) return hwarangClassColorByIndex(hwarangClassIndex(from));
+	const year = named?.year ?? parseInt(klass.id, 10);
+	if (Number.isFinite(year)) return hwarangClassColorByIndex(hwarangClassIndex(year));
 	return HWARANG_CLASS_COLORS[1];
 }
 
-/** Named class first, then 5-year birth band numbered from First Class. */
+/** Named class first, then a yearly room from the Hwarang career start (occupied years only). */
 export function hwarangClassOf(p: Person): HwarangClassRef | undefined {
 	if (p.hwarangClass) {
 		return p.hwarangClass.color
@@ -6861,9 +7101,9 @@ export function hwarangClassOf(p: Person): HwarangClassRef | undefined {
 			color: named.color
 		};
 	}
-	if (p.born == null) return undefined;
-	const from = Math.floor(p.born / HWARANG_CLASS_SPAN) * HWARANG_CLASS_SPAN;
-	return classFromBand(from);
+	const year = hwarangEntryYear(p);
+	if (year == null) return undefined;
+	return classFromYear(year);
 }
 
 /** Chip colour for a Hwarang member’s class — stable across wiki cards and PersonLayer. */
@@ -6883,9 +7123,9 @@ export type HwarangClassGroup = {
 
 function classSortKey(id: string): number {
 	const named = HWARANG_CLASSES.find((c) => c.id === id);
-	if (named) return named.bornFrom;
-	const from = parseInt(id, 10);
-	return Number.isFinite(from) ? from : Number.POSITIVE_INFINITY;
+	if (named) return named.year;
+	const year = parseInt(id, 10);
+	return Number.isFinite(year) ? year : Number.POSITIVE_INFINITY;
 }
 
 /** Wiki roster: oldest class first; within a class, oldest member first (seniority). */
@@ -6900,7 +7140,7 @@ export function groupByHwarangClass(members: Person[]): HwarangClassGroup[] {
 			group = {
 				id,
 				label: named?.label ?? klass?.label ?? 'Ungraded',
-				korean: named?.korean,
+				korean: named?.korean ?? klass?.korean,
 				initiated: klass?.initiated ?? named?.initiated,
 				color: named?.color ?? (klass ? colorOfKlass(klass) : undefined),
 				members: []
@@ -6990,7 +7230,8 @@ export const PROFILES: Person[] = [
 	...CLANS,
 	...NATIONS,
 	...RELATIONSHIPS,
-	...PLACE_PROFILES
+	...PLACE_PROFILES,
+	...SWORDS
 ].map(withProfileMeta);
 
 /** The identifying colour for a profile (Person.color → COLOR table → kingdom). */
@@ -7166,6 +7407,11 @@ export function photoOf(p: Person): string | undefined {
 /** Binyeo prop illustration on character profiles. */
 export function binyeoArtOf(p: Person): string | undefined {
 	return p.binyeoImage ? (staticAsset(p.binyeoImage) ?? undefined) : undefined;
+}
+
+/** Ring-pommel sword illustration on character profiles. */
+export function swordArtOf(p: Person): string | undefined {
+	return p.swordImage ? (staticAsset(p.swordImage) ?? undefined) : undefined;
 }
 
 /** Kingdom flag chip for wiki / hover cards. */

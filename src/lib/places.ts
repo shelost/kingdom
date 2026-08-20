@@ -88,6 +88,7 @@ export const PLACES: Record<string, Place> = {
 		y: 388,
 		kind: 'city',
 		side: 'goguryeo',
+		avatar: '/pl_eastern.png',
 		blurb: 'The great western fortress guarding the Liao. Taizong storms it in the fifth month of 645.'
 	},
 	ansi: {
@@ -99,6 +100,7 @@ export const PLACES: Record<string, Place> = {
 		y: 415,
 		kind: 'city',
 		side: 'goguryeo',
+		avatar: '/pl_ansi.png',
 		blurb:
 			'The wall that stopped an emperor. Its commander — unnamed in the histories — held out through the summer of 645 and handed Taizong the first defeat of his life.',
 		sobriquets: ['Wall that Stopped an Emperor'],
@@ -588,6 +590,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'yamato',
 		offMap: true,
+		avatar: '/pl_asuka.png',
 		blurb:
 			'Yamato’s court. Chunchu came asking for troops in 647 and was refused; fifteen years later it sent forty thousand men to die for Baekje.'
 	},
@@ -644,6 +647,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'realm',
 		side: 'other',
 		offMap: true,
+		avatar: '/pl_western.png',
 		title: 'Court of the Creator',
 		blurb: 'Hwanin’s seat above 삼계 — not a peer of the three courts below.',
 		arc: '하늘나라 is the Creator’s own court, not a fourth Samhan kingdom and not a fourth peer of 삼계. Sons and seals go down from here; Living, Dead, and Western Flower Field keep house below. The yearly 정자 does not need Hwanin present for the meeting to count.',

@@ -1,5 +1,5 @@
 /**
- * Cache-bust root-relative static assets (`/ch_…`, `/pl_…`, `/bn_…`, flags, …).
+ * Cache-bust root-relative static assets (`/ch_…`, `/pl_…`, `/bn_…`, `/sword_…`, flags, …).
  *
  * Browsers key image caches on URL. Replacing a file on disk leaves the path
  * unchanged, so `<img src="/ch_foo.png">` can keep showing the old bytes

@@ -1,0 +1,45 @@
+{
+ "chapters": [
+  "seventh-invasion",
+  "chunchu-era"
+ ],
+ "alts": [],
+ "moves": [],
+ "newSlots": [
+  {
+   "chapterId": "seventh-invasion",
+   "entryTitle": "Jumong",
+   "afterId": "jumong-sosuno-well",
+   "promptSummary": "Jumong splits Yeon Tabal's arrow down the shaft in the hundred-pace contest",
+   "slot": {
+    "id": "jumong-arrow-split",
+    "ratio": 3.333,
+    "at": "He splits Tabal’s arrow down the shaft",
+    "alt": "Jumong's arrow splits Yeon Tabal's shaft down the middle at a hundred paces — the hall falls silent",
+    "prompt": "Cinematic historical illustration of a legendary archery contest, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong at full draw releasing an arrow that splits chieftain Yeon Tabal's arrow lengthwise where it stands in a pine trunk a hundred paces away, the split shaft caught mid-crack, Tabal and his warriors staring, Sosuno gripping the porch rail white-knuckled, low golden evening light through the hall yard, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "refs": [
+     "/ch_jumong.png",
+     "/ch_yeon_tabal.png",
+     "/ch_sosuno.png"
+    ]
+   }
+  },
+  {
+   "chapterId": "chunchu-era",
+   "entryTitle": "Bidam’s Rebellion",
+   "afterId": "yushin-fire-kite",
+   "promptSummary": "Bidam's night confession to his officers on the rampart of the Fortress of Radiance",
+   "slot": {
+    "id": "bidam-rampart-confession",
+    "ratio": 3.333,
+    "tone": "#312e81",
+    "at": "on Radiance’s rampart, Bidam speaks",
+    "alt": "Bidam addresses his officers from the night rampart of Radiance — they expect a battle plan and receive a confession",
+    "prompt": "Cinematic historical illustration of a rebel leader's last speech, Three Kingdoms of Samhan / Tang era (647), scene: Bidam in a black robe standing on the torch-lit stone rampart of the Fortress of Radiance at night, arms open to a ring of weary armoured officers whose faces shift from expectation to grief, wind pulling at banners, the besieged valley glittering with enemy campfires below, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "refs": [
+     "/ch_bidam.png"
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,255 @@
+[
+  {
+    "id": "hwarang-spar",
+    "alt": "bidam 04",
+    "src": "/img_bidam_04.png",
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_bidam_04.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kim_yushin.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kangrim.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/dukman.png"
+    ]
+  },
+  {
+    "id": "flower-brush",
+    "alt": "bidam 05",
+    "src": "/img_bidam_05.png",
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_bidam_05.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kim_yushin.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kangrim.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/dukman.png"
+    ]
+  },
+  {
+    "id": "duel-shadows",
+    "alt": "bidam 06",
+    "src": "/img_bidam_06.png",
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_bidam_06.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kim_yushin.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kangrim.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/dukman.png"
+    ]
+  },
+  {
+    "id": "young-yushin",
+    "alt": "bidam 07",
+    "src": "/img_bidam_07.png",
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_bidam_07.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kim_yushin.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kangrim.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/dukman.png"
+    ]
+  },
+  {
+    "id": "jinduk-poster",
+    "alt": "bidam 08",
+    "src": "/img_bidam_08.png",
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_bidam_08.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kim_yushin.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kangrim.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/dukman.png"
+    ]
+  },
+  {
+    "id": "bidam-lake-again",
+    "alt": "The night before Radiance — counsel in the steam before Yushin must kill a friend",
+    "src": "/img_steam_again_02.png",
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_steam_again_02.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kim_yushin.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/kangrim.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/dukman.png"
+    ]
+  },
+  {
+    "id": "wa-mountains",
+    "alt": "japan 01",
+    "src": "/img_japan_01.png",
+    "entry": "Chunchu Goes to the East",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_japan_01.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/munhee.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/chunchu.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png"
+    ]
+  },
+  {
+    "id": "wa-wave",
+    "alt": "japan 02",
+    "src": "/img_japan_02.png",
+    "entry": "Chunchu Goes to the East",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_japan_02.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/munhee.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/chunchu.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png"
+    ]
+  },
+  {
+    "id": "wa-king",
+    "alt": "japan 03",
+    "src": "/img_japan_03.png",
+    "entry": "Chunchu Goes to the East",
+    "year": "647",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_japan_03.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/munhee.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/chunchu.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/bidam.png"
+    ]
+  },
+  {
+    "id": "gaya_01",
+    "alt": "The sky god and the mountain goddess",
+    "src": "/img_gaya_01.png",
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaya_01.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/ibiga.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/rightview.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/heo.png"
+    ]
+  },
+  {
+    "id": "gaya_02",
+    "alt": "The six eggs",
+    "src": "/img_gaya_02.png",
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaya_02.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/ibiga.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/rightview.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/heo.png"
+    ]
+  },
+  {
+    "id": "gaya_03",
+    "alt": "Queen Heo arrives from Ayuta",
+    "src": "/img_gaya_03.png",
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaya_03.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/ibiga.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/rightview.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/heo.png"
+    ]
+  },
+  {
+    "id": "gaya_04",
+    "alt": "Golden Gaya at its height",
+    "src": "/img_gaya_04.png",
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaya_04.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/ibiga.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/rightview.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/heo.png"
+    ]
+  },
+  {
+    "id": "gaya_05",
+    "alt": "The iron of Gaya",
+    "src": "/img_gaya_05.png",
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaya_05.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/ibiga.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/rightview.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/heo.png"
+    ]
+  },
+  {
+    "id": "gaya_06",
+    "alt": "The six kingdoms of Gaya",
+    "src": "/img_gaya_06.png",
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaya_06.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/ibiga.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/rightview.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/heo.png"
+    ]
+  },
+  {
+    "id": "gaya_07",
+    "alt": "The confederacy",
+    "src": "/img_gaya_07.png",
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaya_07.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/ibiga.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/rightview.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/heo.png"
+    ]
+  },
+  {
+    "id": "gaozong_01",
+    "alt": "The crown prince at the emperor’s bedside",
+    "src": "/img_gaozong_01.png",
+    "entry": "Death of the Second Emperor",
+    "year": "649",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaozong_01.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/gaozong.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/chunchu.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/wu_zetian.png"
+    ]
+  },
+  {
+    "id": "gaozong_02",
+    "alt": "The new emperor takes the helm",
+    "src": "/img_gaozong_02.png",
+    "entry": "Death of the Second Emperor",
+    "year": "649",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_gaozong_02.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/gaozong.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/chunchu.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/wu_zetian.png"
+    ]
+  },
+  {
+    "id": "tang_04",
+    "alt": "Tang",
+    "src": "/img_tang_04.png",
+    "entry": "Death of the Second Emperor",
+    "year": "649",
+    "refs": [
+      "/Users/heewon/Documents/GitHub/kingdom/static/img_tang_04.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/gaozong.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/chunchu.png",
+      "/Users/heewon/Documents/GitHub/kingdom/static/people/wu_zetian.png"
+    ]
+  }
+]

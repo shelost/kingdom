@@ -1,0 +1,1819 @@
+[
+  {
+    "id": "seorabeol-panorama",
+    "src": "/img_sunduk_01.png",
+    "tempImage": "/temp/seorabeol-panorama.jpg",
+    "prompt": "Cinematic historical illustration of sunduk 01, Three Kingdoms of Samhan / Tang era (632), scene: Queen Sunduk, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "sunduk 01",
+    "refs": [
+      "/img_sunduk_01.png",
+      "/people/munhee.png",
+      "/people/kim_bupmin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 2.5,
+    "entry": "Queen Sunduk",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "harmony-council",
+    "src": "/img_sunduk_02.png",
+    "tempImage": "/temp/harmony-council.jpg",
+    "prompt": "Cinematic historical illustration of sunduk 02, Three Kingdoms of Samhan / Tang era (632), scene: Queen Sunduk, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "sunduk 02",
+    "refs": [
+      "/img_sunduk_02.png",
+      "/people/munhee.png",
+      "/people/kim_bupmin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Queen Sunduk",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "three-princesses",
+    "src": "/img_sunduk_03.png",
+    "tempImage": "/temp/three-princesses.jpg",
+    "prompt": "Cinematic historical illustration of sunduk 03, Three Kingdoms of Samhan / Tang era (632), scene: Queen Sunduk, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "sunduk 03",
+    "refs": [
+      "/img_sunduk_03.png",
+      "/people/munhee.png",
+      "/people/kim_bupmin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Queen Sunduk",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "yushin-chunchu-munhee",
+    "src": "/img_sunduk_04.png",
+    "tempImage": "/temp/yushin-chunchu-munhee.jpg",
+    "prompt": "Cinematic historical illustration of sunduk 04, Three Kingdoms of Samhan / Tang era (632), scene: Queen Sunduk, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "sunduk 04",
+    "refs": [
+      "/img_sunduk_04.png",
+      "/people/munhee.png",
+      "/people/kim_bupmin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Queen Sunduk",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "kim-family",
+    "src": "/img_sunduk_05.png",
+    "tempImage": "/temp/kim-family.jpg",
+    "prompt": "Cinematic historical illustration of sunduk 05, Three Kingdoms of Samhan / Tang era (632), scene: Queen Sunduk, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "sunduk 05",
+    "refs": [
+      "/img_sunduk_05.png",
+      "/people/munhee.png",
+      "/people/kim_bupmin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 1.667,
+    "entry": "Queen Sunduk",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "sunduk-poster",
+    "src": "/img_sunduk_06.png",
+    "tempImage": "/temp/sunduk-poster.jpg",
+    "prompt": "Cinematic historical illustration of sunduk 06, Three Kingdoms of Samhan / Tang era (632), scene: Queen Sunduk, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "sunduk 06",
+    "refs": [
+      "/img_sunduk_06.png",
+      "/people/munhee.png",
+      "/people/kim_bupmin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 2.5,
+    "entry": "Queen Sunduk",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "crescent-hwarang",
+    "src": "/img_jinheung_01.png",
+    "tempImage": "/temp/crescent-hwarang.jpg",
+    "prompt": "Cinematic historical illustration of jinheung 01, Three Kingdoms of Samhan / Tang era (554), scene: Jinheung, The Crescent Moon, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "jinheung 01",
+    "refs": [
+      "/img_jinheung_01.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jinheung, The Crescent Moon",
+    "year": "554",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "baekje-river",
+    "src": "/img_clans_01.png",
+    "tempImage": "/temp/baekje-river.jpg",
+    "prompt": "Cinematic historical illustration of clans 01, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 01",
+    "refs": [
+      "/img_clans_01.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "king-mu",
+    "src": "/img_clans_02.png",
+    "tempImage": "/temp/king-mu.jpg",
+    "prompt": "Cinematic historical illustration of clans 02, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 02",
+    "refs": [
+      "/img_clans_02.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 2.907,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "dudung",
+    "src": "/img_clans_03.png",
+    "tempImage": "/temp/dudung.jpg",
+    "prompt": "Cinematic historical illustration of clans 03, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 03",
+    "refs": [
+      "/img_clans_03.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "young-princes",
+    "src": "/img_clans_04.png",
+    "tempImage": "/temp/young-princes.jpg",
+    "prompt": "Cinematic historical illustration of clans 04, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 04",
+    "refs": [
+      "/img_clans_04.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "heartbeat",
+    "src": "/img_clans_05.png",
+    "tempImage": "/temp/heartbeat.jpg",
+    "prompt": "Cinematic historical illustration of clans 05, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 05",
+    "refs": [
+      "/img_clans_05.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 4.167,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "clan-satek",
+    "src": "/img_clans_06.png",
+    "tempImage": "/temp/clan-satek.jpg",
+    "prompt": "Cinematic historical illustration of clans 06, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 06",
+    "refs": [
+      "/img_clans_06.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 4.167,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "clan-yunbi",
+    "src": "/img_clans_07.png",
+    "tempImage": "/temp/clan-yunbi.jpg",
+    "prompt": "Cinematic historical illustration of clans 07, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 07",
+    "refs": [
+      "/img_clans_07.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 4.167,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "clan-jinmo",
+    "src": "/img_clans_08.png",
+    "tempImage": "/temp/clan-jinmo.jpg",
+    "prompt": "Cinematic historical illustration of clans 08, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 08",
+    "refs": [
+      "/img_clans_08.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 4.167,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "clan-mokli",
+    "src": "/img_clans_09.png",
+    "tempImage": "/temp/clan-mokli.jpg",
+    "prompt": "Cinematic historical illustration of clans 09, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 09",
+    "refs": [
+      "/img_clans_09.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 4.167,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "clan-guk",
+    "src": "/img_clans_10.png",
+    "tempImage": "/temp/clan-guk.jpg",
+    "prompt": "Cinematic historical illustration of clans 10, Three Kingdoms of Samhan / Tang era (632), scene: The Eight Great Clans, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "clans 10",
+    "refs": [
+      "/img_clans_10.png",
+      "/people/satek_elder.png",
+      "/people/yunbi_elder.png"
+    ],
+    "ratio": 4.167,
+    "entry": "The Eight Great Clans",
+    "year": "632",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "mountain-outpost",
+    "src": "/img_summit_01.png",
+    "tempImage": "/temp/mountain-outpost.jpg",
+    "prompt": "Cinematic historical illustration of summit 01, Three Kingdoms of Samhan / Tang era (634), scene: The Summit, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "summit 01",
+    "refs": [
+      "/img_summit_01.png",
+      "/people/yeon_gesomun.png",
+      "/people/gyebek.png",
+      "/people/commander_3.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Summit",
+    "year": "634",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "spike-heads",
+    "src": "/img_summit_02.png",
+    "tempImage": "/temp/spike-heads.jpg",
+    "prompt": "Cinematic historical illustration of summit 02, Three Kingdoms of Samhan / Tang era (634), scene: The Summit, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "summit 02",
+    "refs": [
+      "/img_summit_02.png",
+      "/people/yeon_gesomun.png",
+      "/people/gyebek.png",
+      "/people/commander_3.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Summit",
+    "year": "634",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "nameless-boy",
+    "src": "/img_summit_03.png",
+    "tempImage": "/temp/nameless-boy.jpg",
+    "prompt": "Cinematic historical illustration of summit 03, Three Kingdoms of Samhan / Tang era (634), scene: The Summit, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "summit 03",
+    "refs": [
+      "/img_summit_03.png",
+      "/people/yeon_gesomun.png",
+      "/people/gyebek.png",
+      "/people/commander_3.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Summit",
+    "year": "634",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "yeon-duel",
+    "src": "/img_summit_04.png",
+    "tempImage": "/temp/yeon-duel.jpg",
+    "prompt": "Cinematic historical illustration of summit 04, Three Kingdoms of Samhan / Tang era (634), scene: The Summit, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "summit 04",
+    "refs": [
+      "/img_summit_04.png",
+      "/people/yeon_gesomun.png",
+      "/people/gyebek.png",
+      "/people/commander_3.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Summit",
+    "year": "634",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "battlefield-corpses",
+    "src": "/img_summit_05.png",
+    "tempImage": "/temp/battlefield-corpses.jpg",
+    "prompt": "Cinematic historical illustration of summit 05, Three Kingdoms of Samhan / Tang era (634), scene: The Summit, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "summit 05",
+    "refs": [
+      "/img_summit_05.png",
+      "/people/yeon_gesomun.png",
+      "/people/gyebek.png",
+      "/people/commander_3.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Summit",
+    "year": "634",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "five-banners",
+    "src": "/img_summit_06.png",
+    "tempImage": "/temp/five-banners.jpg",
+    "prompt": "Cinematic historical illustration of summit 06, Three Kingdoms of Samhan / Tang era (634), scene: The Summit, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "summit 06",
+    "refs": [
+      "/img_summit_06.png",
+      "/people/yeon_gesomun.png",
+      "/people/gyebek.png",
+      "/people/commander_3.png"
+    ],
+    "ratio": 1.613,
+    "entry": "The Summit",
+    "year": "634",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "sunset-rider",
+    "src": "/img_summit_07.png",
+    "tempImage": "/temp/sunset-rider.jpg",
+    "prompt": "Cinematic historical illustration of summit 07, Three Kingdoms of Samhan / Tang era (634), scene: The Summit, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "summit 07",
+    "refs": [
+      "/img_summit_07.png",
+      "/people/yeon_gesomun.png",
+      "/people/gyebek.png",
+      "/people/commander_3.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Summit",
+    "year": "634",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gotaso_01",
+    "src": "/img_gotaso_01.png",
+    "tempImage": "/temp/gotaso_01.jpg",
+    "prompt": "Cinematic historical illustration of A Hwarang gyuku match, Three Kingdoms of Samhan / Tang era (641), scene: Gotaso’s Wedding, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "A Hwarang gyuku match",
+    "refs": [
+      "/img_gotaso_01.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/kim_yushin.png",
+      "/people/gotaso.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gotaso’s Wedding",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gotaso_02",
+    "src": "/img_gotaso_02.png",
+    "tempImage": "/temp/gotaso_02.jpg",
+    "prompt": "Cinematic historical illustration of A premium gyuku club — presentation box and all, Three Kingdoms of Samhan / Tang era (641), scene: Gotaso’s Wedding, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "A premium gyuku club — presentation box and all",
+    "refs": [
+      "/img_gotaso_02.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/kim_yushin.png",
+      "/people/gotaso.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gotaso’s Wedding",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gotaso_03",
+    "src": "/img_gotaso_03.png",
+    "tempImage": "/temp/gotaso_03.jpg",
+    "prompt": "Cinematic historical illustration of The wedding procession, Three Kingdoms of Samhan / Tang era (641), scene: Gotaso’s Wedding, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The wedding procession",
+    "refs": [
+      "/img_gotaso_03.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/kim_yushin.png",
+      "/people/gotaso.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gotaso’s Wedding",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gotaso_04",
+    "src": "/img_gotaso_04.png",
+    "tempImage": "/temp/gotaso_04.jpg",
+    "prompt": "Cinematic historical illustration of Gotaso and Pumsuk, Three Kingdoms of Samhan / Tang era (641), scene: Gotaso’s Wedding, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Gotaso and Pumsuk",
+    "refs": [
+      "/img_gotaso_04.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/kim_yushin.png",
+      "/people/gotaso.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gotaso’s Wedding",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gotaso_05",
+    "src": "/img_gotaso_05.png",
+    "tempImage": "/temp/gotaso_05.jpg",
+    "prompt": "Cinematic historical illustration of The Queen watching from the back of the hall, Three Kingdoms of Samhan / Tang era (641), scene: Gotaso’s Wedding, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The Queen watching from the back of the hall",
+    "refs": [
+      "/img_gotaso_05.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/kim_yushin.png",
+      "/people/gotaso.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gotaso’s Wedding",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gotaso_06",
+    "src": "/img_gotaso_06.png",
+    "tempImage": "/temp/gotaso_06.jpg",
+    "prompt": "Cinematic historical illustration of Yushin and the Princess, Three Kingdoms of Samhan / Tang era (641), scene: Gotaso’s Wedding, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Yushin and the Princess",
+    "refs": [
+      "/img_gotaso_06.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/kim_yushin.png",
+      "/people/gotaso.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gotaso’s Wedding",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gotaso_07",
+    "src": "/img_gotaso_07.png",
+    "tempImage": "/temp/gotaso_07.jpg",
+    "prompt": "Cinematic historical illustration of 고타소 Gotaso, Three Kingdoms of Samhan / Tang era (641), scene: Gotaso’s Wedding, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "고타소 Gotaso",
+    "refs": [
+      "/img_gotaso_07.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/kim_yushin.png",
+      "/people/gotaso.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gotaso’s Wedding",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "three-sons",
+    "src": "/img_three.png",
+    "tempImage": "/temp/three-sons.jpg",
+    "prompt": "Cinematic historical illustration of The three, Three Kingdoms of Samhan / Tang era (641), scene: Yeon’s Three Sons, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The three",
+    "refs": [
+      "/img_three.png",
+      "/people/yeon_namseng.png",
+      "/people/yeon_gesomun.png"
+    ],
+    "ratio": 0.838,
+    "entry": "Yeon’s Three Sons",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "young-princes-grown",
+    "src": "/img_euija_01.png",
+    "tempImage": "/temp/young-princes-grown.jpg",
+    "prompt": "Cinematic historical illustration of euija 01, Three Kingdoms of Samhan / Tang era (641), scene: King Euija, the 31st Eraha, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "euija 01",
+    "refs": [
+      "/img_euija_01.png",
+      "/people/gyebek.png",
+      "/people/buyeo_euija.png",
+      "/people/maid_1.png"
+    ],
+    "ratio": 3.333,
+    "entry": "King Euija, the 31st Eraha",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "treasure-cliff",
+    "src": "/img_euija_02.png",
+    "tempImage": "/temp/treasure-cliff.jpg",
+    "prompt": "Cinematic historical illustration of euija 02, Three Kingdoms of Samhan / Tang era (641), scene: King Euija, the 31st Eraha, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "euija 02",
+    "refs": [
+      "/img_euija_02.png",
+      "/people/gyebek.png",
+      "/people/buyeo_euija.png",
+      "/people/maid_1.png"
+    ],
+    "ratio": 3.333,
+    "entry": "King Euija, the 31st Eraha",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gyebek-sword",
+    "src": "/img_euija_03.png",
+    "tempImage": "/temp/gyebek-sword.jpg",
+    "prompt": "Cinematic historical illustration of euija 03, Three Kingdoms of Samhan / Tang era (641), scene: King Euija, the 31st Eraha, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "euija 03",
+    "refs": [
+      "/img_euija_03.png",
+      "/people/gyebek.png",
+      "/people/buyeo_euija.png",
+      "/people/maid_1.png"
+    ],
+    "ratio": 2.5,
+    "entry": "King Euija, the 31st Eraha",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "euija-poster",
+    "src": "/img_euija_04.png",
+    "tempImage": "/temp/euija-poster.jpg",
+    "prompt": "Cinematic historical illustration of euija 04, Three Kingdoms of Samhan / Tang era (641), scene: King Euija, the 31st Eraha, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "euija 04",
+    "refs": [
+      "/img_euija_04.png",
+      "/people/gyebek.png",
+      "/people/buyeo_euija.png",
+      "/people/maid_1.png"
+    ],
+    "ratio": 2.5,
+    "entry": "King Euija, the 31st Eraha",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "euija-cartoon",
+    "src": "/img_euija_05.png",
+    "tempImage": "/temp/euija-cartoon.jpg",
+    "prompt": "Cinematic historical illustration of euija 05, Three Kingdoms of Samhan / Tang era (641), scene: King Euija, the 31st Eraha, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "euija 05",
+    "refs": [
+      "/img_euija_05.png",
+      "/people/gyebek.png",
+      "/people/buyeo_euija.png",
+      "/people/maid_1.png"
+    ],
+    "ratio": 2,
+    "entry": "King Euija, the 31st Eraha",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "img_euija_06",
+    "src": "/img_euija_06.png",
+    "tempImage": "/temp/img_euija_06.jpg",
+    "prompt": "Cinematic historical illustration of euija 06, Three Kingdoms of Samhan / Tang era (641), scene: King Euija, the 31st Eraha, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "euija 06",
+    "refs": [
+      "/img_euija_06.png",
+      "/people/gyebek.png",
+      "/people/buyeo_euija.png",
+      "/people/maid_1.png"
+    ],
+    "ratio": 2.5,
+    "entry": "King Euija, the 31st Eraha",
+    "year": "641",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "crescent-throne",
+    "src": "/img_jinheung_02.png",
+    "tempImage": "/temp/crescent-throne.jpg",
+    "prompt": "Cinematic historical illustration of jinheung 02, Three Kingdoms of Samhan / Tang era (553–554), scene: Jinheung’s Betrayal, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "jinheung 02",
+    "refs": [
+      "/img_jinheung_02.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jinheung’s Betrayal",
+    "year": "553–554",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "marshal_steam_01",
+    "src": "/img_marshal_steam_01.png",
+    "tempImage": "/temp/marshal_steam_01.jpg",
+    "prompt": "Cinematic ultrawide night at the cave mouth. Pale scholar-prince crouches by a paper lantern shaving his chin with a borrowed razor — nervous, out of his element. Cold pine forest behind; warm cyan steam breath from the cave ahead. Kim Chunchu manhwa (/people/chunchu.png). Place refs: /pl_cave.png, /places/steam_cavern.png. Manhwa prince; painterly cave glow. Style split. No text, no watermark. --ar 10:3",
+    "alt": "Chunchu at the cave mouth — nervous scholar-prince shaving by lantern light before the steam",
+    "refs": [
+      "/img_marshal_steam_01.png",
+      "/people/chunchu.png",
+      "/pl_cave.png",
+      "/places/steam_cavern.png",
+      "/people/kim_yushin.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Marshal’s Steam",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "marshal_steam_02",
+    "src": "/img_marshal_steam_02.png",
+    "tempImage": "/temp/marshal_steam_02.jpg",
+    "prompt": "Cinematic ultrawide playful teasing. Three painterly spirit sisters lean over a glowing hot-spring pool and pull a startled pale scholar-prince into the steam, laughing, silk sleeves trailing. His magenta court dignity falling apart. Heavy mist hides below the shoulders. Refs: /people/narim.png, /people/golhwa.png, /people/hyulle.png, /people/chunchu.png. Place refs: /pl_cave.png, /places/steam_cavern.png. Tasteful. Style split. No text, no watermark. --ar 10:3",
+    "alt": "The three sisters drag a startled Chunchu into the glowing pool — court dignity dissolving in mist",
+    "refs": [
+      "/img_marshal_steam_02.png",
+      "/people/chunchu.png",
+      "/people/narim.png",
+      "/people/golhwa.png",
+      "/people/hyulle.png",
+      "/pl_cave.png"
+    ],
+    "ratio": 3.333,
+    "entry": "The Marshal’s Steam",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "marshal_steam_03",
+    "src": "/img_marshal_steam_03.png",
+    "tempImage": "/temp/marshal_steam_03.jpg",
+    "prompt": "Extreme ultrawide thoughtful pre-dawn. Scholar-prince ties his magenta court robe slowly at the edge of a glowing cavern pool, inventing a kingdom; one painterly sister watches the path out, another sleeps against wet stone. Soft steam. Refs: /people/chunchu.png, /people/narim.png, /people/hyulle.png. Place refs: /pl_cave.png, /places/steam_cavern.png. Style split. No text, no watermark. --ar 5:1",
+    "alt": "Pre-dawn — Chunchu ties his magenta robe at the pool’s edge and invents a country; one sister watches the path",
+    "refs": [
+      "/img_marshal_steam_03.png",
+      "/people/chunchu.png",
+      "/people/narim.png",
+      "/people/hyulle.png",
+      "/pl_cave.png",
+      "/places/steam_cavern.png"
+    ],
+    "ratio": 5,
+    "entry": "The Marshal’s Steam",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "daeya_01",
+    "src": "/img_daeya_01.png",
+    "tempImage": "/temp/daeya_01.jpg",
+    "prompt": "Cinematic historical illustration of Daeya Fortress 대야성, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Daeya Fortress 대야성",
+    "refs": [
+      "/img_daeya_01.png",
+      "/people/gumil_wife.png",
+      "/people/chunchu.png",
+      "/people/pumsuk.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Daeya Fortress",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "daeya_02",
+    "src": "/img_daeya_02.png",
+    "tempImage": "/temp/daeya_02.jpg",
+    "prompt": "Cinematic historical illustration of Officers drinking at the border feast, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Officers drinking at the border feast",
+    "refs": [
+      "/img_daeya_02.png",
+      "/people/gumil_wife.png",
+      "/people/chunchu.png",
+      "/people/pumsuk.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Daeya Fortress",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "daeya_03",
+    "src": "/img_daeya_03.png",
+    "tempImage": "/temp/daeya_03.jpg",
+    "prompt": "Cinematic historical illustration of The feast turns, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The feast turns",
+    "refs": [
+      "/img_daeya_03.png",
+      "/people/gumil_wife.png",
+      "/people/chunchu.png",
+      "/people/pumsuk.png"
+    ],
+    "ratio": 5,
+    "entry": "Daeya Fortress",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "daeya_04",
+    "src": "/img_daeya_04.png",
+    "tempImage": "/temp/daeya_04.jpg",
+    "prompt": "Cinematic historical illustration of Geomil’s wife — “I hate True Bones most in all the world”, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Geomil’s wife — “I hate True Bones most in all the world”",
+    "refs": [
+      "/img_daeya_04.png",
+      "/people/gumil_wife.png",
+      "/people/chunchu.png",
+      "/people/pumsuk.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Daeya Fortress",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "daeya_05",
+    "src": "/img_daeya_05.png",
+    "tempImage": "/temp/daeya_05.jpg",
+    "prompt": "Cinematic historical illustration of The fortress falls, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The fortress falls",
+    "refs": [
+      "/img_daeya_05.png",
+      "/people/gumil_wife.png",
+      "/people/chunchu.png",
+      "/people/pumsuk.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Daeya Fortress",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "daeya_06",
+    "src": "/img_daeya_06.png",
+    "tempImage": "/temp/daeya_06.jpg",
+    "prompt": "Cinematic historical illustration of Gotaso in the last room, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Gotaso in the last room",
+    "refs": [
+      "/img_daeya_06.png",
+      "/people/gumil_wife.png",
+      "/people/chunchu.png",
+      "/people/pumsuk.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Daeya Fortress",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "daeya_07",
+    "src": "/img_daeya_07.png",
+    "tempImage": "/temp/daeya_07.jpg",
+    "prompt": "Cinematic historical illustration of 춘추 Chunchu — the vow of revenge, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "춘추 Chunchu — the vow of revenge",
+    "refs": [
+      "/img_daeya_07.png",
+      "/people/gumil_wife.png",
+      "/people/chunchu.png",
+      "/people/pumsuk.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Daeya Fortress",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "steam_again_03",
+    "src": "/img_steam_again_03.png",
+    "tempImage": "/temp/steam_again_03.jpg",
+    "prompt": "Extreme ultrawide hushed healing. Clean-shaven Silla general alone on a warm stone ledge, head bowed, steam curling around shoulders (manhwa Yushin). Three faint painterly glowing spirit sisters dissolved into mist around him. Refs: /people/kim_yushin.png, /people/narim.png, /people/golhwa.png, /people/hyulle.png. Place refs: /pl_cave.png, /places/steam_cavern.png. Style split. No text, no watermark. --ar 5:1",
+    "alt": "The general sits on the warm ledge until the cold leaves his shoulders — no goodbyes",
+    "refs": [
+      "/img_steam_again_03.png",
+      "/people/golhwa.png",
+      "/people/narim.png",
+      "/people/hyulle.png",
+      "/people/kim_yushin.png"
+    ],
+    "ratio": 5,
+    "entry": "Steam, Again",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "pyongyang-sunset",
+    "src": "/img_01.png",
+    "tempImage": "/temp/pyongyang-sunset.jpg",
+    "prompt": "Cinematic location card of Pyongyang Fortress at sunset — banquet lamps lighting in the inner hall, Three Kingdoms of Samhan / Tang era (642), scene: Yeon’s Massacre prelude. Painterly digital art OK for this location plate only (the following massacre beats are B&W + red ink). No modern elements, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Pyongyang Fortress at sunset — banquet lamps lighting in the inner hall",
+    "refs": [
+      "/img_01.png",
+      "/pl_pyongyang_fortress.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Yeon’s Massacre",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "gesomun-title",
+    "src": "/img_07.png",
+    "tempImage": "/temp/gesomun-title.jpg",
+    "prompt": "STRICT STYLE MATCH to Yeon’s Massacre finals (/img_02.png, /img_04.png): black-and-white ink / graphic-novel illustration ONLY — grayscale blacks, whites, and greys; the ONLY color allowed is vivid red blood/ink splatters. No full-color anime, no warm lantern glow, no painted skin tones, no cel shading. High-contrast ink lines on pale ground, kinetic red blood. Match Yeon Gesomun likeness from portrait refs (thick black beard, fierce shout, crow-stamped ring-pommel armor). No text, no watermark, --ar 3:2. Title-card energy: 연개소문 / Yeon Gesomun as ink stamp and silhouette with a slash of red — same Massacre ink language, not a full-color poster.",
+    "alt": "연개소문 title card",
+    "refs": [
+      "/img_07.png",
+      "/img_02.png",
+      "/people/yeon_gesomun.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Yeon’s Massacre",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "yeon-shadow",
+    "src": "/img_02.png",
+    "tempImage": "/temp/yeon-shadow.jpg",
+    "prompt": "STRICT STYLE MATCH to Yeon’s Massacre finals (/img_02.png, /img_04.png): black-and-white ink / graphic-novel illustration ONLY — grayscale blacks, whites, and greys; the ONLY color allowed is vivid red blood/ink splatters. No full-color anime, no warm lantern glow, no painted skin tones, no cel shading. High-contrast ink lines on pale ground, kinetic red blood. Match Yeon Gesomun likeness from portrait refs (thick black beard, fierce shout, crow-stamped ring-pommel armor). No text, no watermark, --ar 3:2. Scene: Yeon cutting through the banquet as soldiers burst in from the side doors — dynamic close-up, red eye glow, massive red ink splatters. Yeon’s Massacre, 642.",
+    "alt": "Yeon cutting through the banquet as soldiers burst in from the side doors",
+    "refs": [
+      "/img_02.png",
+      "/img_04.png",
+      "/people/yeon_gesomun.png"
+    ],
+    "ratio": 4.167,
+    "entry": "Yeon’s Massacre",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "banquet-blood",
+    "src": "/img_04.png",
+    "tempImage": "/temp/banquet-blood.jpg",
+    "prompt": "STRICT STYLE MATCH to Yeon’s Massacre finals (/img_02.png, /img_04.png): black-and-white ink / graphic-novel illustration ONLY — grayscale blacks, whites, and greys; the ONLY color allowed is vivid red blood/ink splatters. No full-color anime, no warm lantern glow, no painted skin tones, no cel shading. High-contrast ink lines on pale ground, kinetic red blood. Match Yeon Gesomun likeness from portrait refs (thick black beard, fierce shout, crow-stamped ring-pommel armor). No text, no watermark, --ar 3:2. Scene: banquet hall running with blood — high-angle courtyard/hall flagstones, overturned tables, silk in wine, red ink pools. Yeon’s Massacre, 642.",
+    "alt": "The banquet hall running with blood — overturned tables, silk in wine",
+    "refs": [
+      "/img_04.png",
+      "/img_02.png",
+      "/people/yeon_gesomun.png"
+    ],
+    "ratio": 2.5,
+    "entry": "Yeon’s Massacre",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "blade-gusesa",
+    "src": "/img_05.png",
+    "tempImage": "/temp/blade-gusesa.jpg",
+    "prompt": "STRICT STYLE MATCH to Yeon’s Massacre finals (/img_02.png, /img_04.png): black-and-white ink / graphic-novel illustration ONLY — grayscale blacks, whites, and greys; the ONLY color allowed is vivid red blood/ink splatters. No full-color anime, no warm lantern glow, no painted skin tones, no cel shading. High-contrast ink lines on pale ground, kinetic red blood. Match Yeon Gesomun likeness from portrait refs (thick black beard, fierce shout, crow-stamped ring-pommel armor). No text, no watermark, --ar 3:2. Scene: Yeon taking Yeon Gusesa’s ring-pommel — elder kinsman, soft voice gone, red ink. Yeon’s Massacre, 642.",
+    "alt": "Yeon taking Yeon Gusesa’s ring-pommel — elder kinsman, soft voice gone",
+    "refs": [
+      "/img_05.png",
+      "/img_02.png",
+      "/img_04.png",
+      "/img_03.png",
+      "/people/yeon_gesomun.png"
+    ],
+    "ratio": 4.167,
+    "entry": "Yeon’s Massacre",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "king-final",
+    "src": "/img_03.png",
+    "tempImage": "/temp/king-final.jpg",
+    "prompt": "STRICT STYLE MATCH to Yeon’s Massacre finals (/img_02.png, /img_04.png): black-and-white ink / graphic-novel illustration ONLY — grayscale blacks, whites, and greys; the ONLY color allowed is vivid red blood/ink splatters. No full-color anime, no warm lantern glow, no painted skin tones, no cel shading. High-contrast ink lines on pale ground, kinetic red blood. Match Yeon Gesomun likeness from portrait refs (thick black beard, fierce shout, crow-stamped ring-pommel armor). No text, no watermark, --ar 3:2. Scene: Yeon before the dying King Yeongnyu in the ruined banquet — crown askew, lamps as grey wash, red blood on stones. Yeon’s Massacre, 642.",
+    "alt": "Yeon before the dying King Yeongnyu in the ruined banquet — crown askew, lamps low",
+    "refs": [
+      "/img_03.png",
+      "/img_02.png",
+      "/people/yeon_gesomun.png"
+    ],
+    "ratio": 4.167,
+    "entry": "Yeon’s Massacre",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "five-blades",
+    "src": "/img_06.png",
+    "tempImage": "/temp/five-blades.jpg",
+    "prompt": "STRICT STYLE MATCH to Yeon’s Massacre finals (/img_02.png, /img_04.png): black-and-white ink / graphic-novel illustration ONLY — grayscale blacks, whites, and greys; the ONLY color allowed is vivid red blood/ink splatters. No full-color anime, no warm lantern glow, no painted skin tones, no cel shading. High-contrast ink lines on pale ground, kinetic red blood. Match Yeon Gesomun likeness from portrait refs (thick black beard, fierce shout, crow-stamped ring-pommel armor). No text, no watermark, --ar 3:2. Scene: Yeon straps the Five Blades onto his back — five crow-stamped ring-pommels, red stains on steel and cloth. Yeon’s Massacre, 642.",
+    "alt": "Yeon straps the Five Blades onto his back — five crow-stamped ring-pommels",
+    "refs": [
+      "/img_06.png",
+      "/img_02.png",
+      "/people/yeon_gesomun.png"
+    ],
+    "ratio": 4.167,
+    "entry": "Yeon’s Massacre",
+    "year": "642",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "chunchu-robes",
+    "src": "/img_chunchu_01.png",
+    "tempImage": "/temp/chunchu-robes.jpg",
+    "prompt": "Cinematic historical illustration of chunchu 01, Three Kingdoms of Samhan / Tang era (7th century), scene: Chunchu & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "chunchu 01",
+    "refs": [
+      "/img_chunchu_01.png",
+      "/people/dukman.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Chunchu & Gesomun",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "bojang-throne",
+    "src": "/img_chunchu_02.png",
+    "tempImage": "/temp/bojang-throne.jpg",
+    "prompt": "Cinematic historical illustration of chunchu 02, Three Kingdoms of Samhan / Tang era (7th century), scene: Chunchu & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "chunchu 02",
+    "refs": [
+      "/img_chunchu_02.png",
+      "/people/dukman.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Chunchu & Gesomun",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "chunchu-prison",
+    "src": "/img_chunchu_03.png",
+    "tempImage": "/temp/chunchu-prison.jpg",
+    "prompt": "Cinematic historical illustration of chunchu 03, Three Kingdoms of Samhan / Tang era (7th century), scene: Chunchu & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "chunchu 03",
+    "refs": [
+      "/img_chunchu_03.png",
+      "/people/dukman.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Chunchu & Gesomun",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "rescue-boats",
+    "src": "/img_chunchu_04.png",
+    "tempImage": "/temp/rescue-boats.jpg",
+    "prompt": "Cinematic historical illustration of chunchu 04, Three Kingdoms of Samhan / Tang era (7th century), scene: Chunchu & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "chunchu 04",
+    "refs": [
+      "/img_chunchu_04.png",
+      "/people/dukman.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Chunchu & Gesomun",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "chunchu-poster",
+    "src": "/img_chunchu_05.png",
+    "tempImage": "/temp/chunchu-poster.jpg",
+    "prompt": "Cinematic historical illustration of chunchu 05, Three Kingdoms of Samhan / Tang era (7th century), scene: Chunchu & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "chunchu 05",
+    "refs": [
+      "/img_chunchu_05.png",
+      "/people/dukman.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png"
+    ],
+    "ratio": 2.5,
+    "entry": "Chunchu & Gesomun",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "yushin-title",
+    "src": "/img_yushin_01.png",
+    "tempImage": "/temp/yushin-title.jpg",
+    "prompt": "Cinematic historical illustration of yushin 01, Three Kingdoms of Samhan / Tang era (7th century), scene: Kim Yushin, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "yushin 01",
+    "refs": [
+      "/img_yushin_01.png",
+      "/people/buyeo_euija.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png",
+      "/people/gyebek.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Kim Yushin",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "five-heroes",
+    "src": "/img_yushin_02.png",
+    "tempImage": "/temp/five-heroes.jpg",
+    "prompt": "Cinematic historical illustration of yushin 02, Three Kingdoms of Samhan / Tang era (7th century), scene: Kim Yushin, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Five heroes charge — manhwa warriors in cold blue night",
+    "refs": [
+      "/img_yushin_02.png",
+      "/people/buyeo_euija.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png",
+      "/people/gyebek.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Kim Yushin",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "steam_05",
+    "src": "/img_steam_05.png",
+    "tempImage": "/temp/steam_05.jpg",
+    "prompt": "Cinematic ultrawide farewell in a steam cavern. Clean-shaven Silla general from behind fastening dark robe and sword belt at the rock lip (manhwa Yushin); far across the glowing cyan lake three painterly spirit sisters sit watching him leave — one swinging a foot. Refs: /people/kim_yushin.png, /people/narim.png, /people/golhwa.png, /people/hyulle.png. Place refs: /pl_cave.png, /places/steam_cavern.png. Style split: painterly sisters, manhwa general. No text, no watermark. --ar 10:3",
+    "alt": "Between campaigns — Yushin dresses at the cavern lip while the three sisters watch him leave",
+    "refs": [
+      "/img_steam_05.png",
+      "/people/kim_yushin.png",
+      "/people/narim.png",
+      "/people/golhwa.png",
+      "/people/hyulle.png",
+      "/pl_cave.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Kim Yushin",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": true
+  },
+  {
+    "id": "img_yushin_03",
+    "src": "/img_yushin_03.png",
+    "tempImage": "/temp/img_yushin_03.jpg",
+    "prompt": "Cinematic historical illustration of yushin 03, Three Kingdoms of Samhan / Tang era (7th century), scene: Kim Yushin, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "yushin 03",
+    "refs": [
+      "/img_yushin_03.png",
+      "/people/buyeo_euija.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png",
+      "/people/gyebek.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Kim Yushin",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "img_yushin_04",
+    "src": "/img_yushin_04.png",
+    "tempImage": "/temp/img_yushin_04.jpg",
+    "prompt": "Cinematic historical illustration of yushin 04, Three Kingdoms of Samhan / Tang era (7th century), scene: Kim Yushin, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "yushin 04",
+    "refs": [
+      "/img_yushin_04.png",
+      "/people/buyeo_euija.png",
+      "/people/kim_yushin.png",
+      "/people/chunchu.png",
+      "/people/gyebek.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Kim Yushin",
+    "year": "",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "taizong-portrait",
+    "src": "/img_tang_01.png",
+    "tempImage": "/temp/taizong-portrait.jpg",
+    "prompt": "Cinematic historical illustration of tang 01, Three Kingdoms of Samhan / Tang era (643), scene: Emperor of the West, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "tang 01",
+    "refs": [
+      "/img_tang_01.png",
+      "/people/taizong.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Emperor of the West",
+    "year": "643",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "taizong-court",
+    "src": "/img_tang_02.png",
+    "tempImage": "/temp/taizong-court.jpg",
+    "prompt": "Cinematic historical illustration of tang 02, Three Kingdoms of Samhan / Tang era (643), scene: Emperor of the West, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "tang 02",
+    "refs": [
+      "/img_tang_02.png",
+      "/people/taizong.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Emperor of the West",
+    "year": "643",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "tang-map",
+    "src": "/img_tang_03.png",
+    "tempImage": "/temp/tang-map.jpg",
+    "prompt": "Cinematic historical illustration of tang 03, Three Kingdoms of Samhan / Tang era (643), scene: Emperor of the West, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "tang 03",
+    "refs": [
+      "/img_tang_03.png",
+      "/people/taizong.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Emperor of the West",
+    "year": "643",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "four-riders",
+    "src": "/img_tang_05.png",
+    "tempImage": "/temp/four-riders.jpg",
+    "prompt": "Cinematic historical illustration of tang 05, Three Kingdoms of Samhan / Tang era (643), scene: Emperor of the West, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "tang 05",
+    "refs": [
+      "/img_tang_05.png",
+      "/people/taizong.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Emperor of the West",
+    "year": "643",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "yellow-general",
+    "src": "/img_tang_06.png",
+    "tempImage": "/temp/yellow-general.jpg",
+    "prompt": "Cinematic historical illustration of tang 06, Three Kingdoms of Samhan / Tang era (643), scene: Emperor of the West, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "tang 06",
+    "refs": [
+      "/img_tang_06.png",
+      "/people/taizong.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Emperor of the West",
+    "year": "643",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "four-dragons",
+    "src": "/img_tang_07.png",
+    "tempImage": "/temp/four-dragons.jpg",
+    "prompt": "Cinematic historical illustration of tang 07, Three Kingdoms of Samhan / Tang era (643), scene: Emperor of the West, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "tang 07",
+    "refs": [
+      "/img_tang_07.png",
+      "/people/taizong.png"
+    ],
+    "ratio": 2.5,
+    "entry": "Emperor of the West",
+    "year": "643",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "jumong_01",
+    "src": "/img_jumong_01.png",
+    "tempImage": "/temp/jumong_01.jpg",
+    "prompt": "Cinematic historical illustration of Haemosu and Lady Yuhwa, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Haemosu and Lady Yuhwa",
+    "refs": [
+      "/img_jumong_01.png",
+      "/people/haemosu.png",
+      "/people/yuhwa.png",
+      "/people/jumong.png",
+      "/people/yeon_tabal.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jumong",
+    "year": "-37",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "jumong_02",
+    "src": "/img_jumong_02.png",
+    "tempImage": "/temp/jumong_02.jpg",
+    "prompt": "Cinematic historical illustration of The egg, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The egg",
+    "refs": [
+      "/img_jumong_02.png",
+      "/people/haemosu.png",
+      "/people/yuhwa.png",
+      "/people/jumong.png",
+      "/people/yeon_tabal.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jumong",
+    "year": "-37",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "jumong_03",
+    "src": "/img_jumong_03.png",
+    "tempImage": "/temp/jumong_03.jpg",
+    "prompt": "Cinematic historical illustration of Jumong the archer, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Jumong the archer",
+    "refs": [
+      "/img_jumong_03.png",
+      "/people/haemosu.png",
+      "/people/yuhwa.png",
+      "/people/jumong.png",
+      "/people/yeon_tabal.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jumong",
+    "year": "-37",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "jumong_04",
+    "src": "/img_jumong_04.png",
+    "tempImage": "/temp/jumong_04.jpg",
+    "prompt": "Cinematic historical illustration of The flight from Buyeo, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The flight from Buyeo",
+    "refs": [
+      "/img_jumong_04.png",
+      "/people/haemosu.png",
+      "/people/yuhwa.png",
+      "/people/jumong.png",
+      "/people/yeon_tabal.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jumong",
+    "year": "-37",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "jumong_05",
+    "src": "/img_jumong_05.png",
+    "tempImage": "/temp/jumong_05.jpg",
+    "prompt": "Cinematic historical illustration of The river gives way — fish and turtles, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The river gives way — fish and turtles",
+    "refs": [
+      "/img_jumong_05.png",
+      "/people/haemosu.png",
+      "/people/yuhwa.png",
+      "/people/jumong.png",
+      "/people/yeon_tabal.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jumong",
+    "year": "-37",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "jumong_06",
+    "src": "/img_jumong_06.png",
+    "tempImage": "/temp/jumong_06.jpg",
+    "prompt": "Cinematic historical illustration of Goguryeo founded at Jolbon, Three Kingdoms of Samhan / Tang era (-37), scene: Jumong, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Goguryeo founded at Jolbon",
+    "refs": [
+      "/img_jumong_06.png",
+      "/people/haemosu.png",
+      "/people/yuhwa.png",
+      "/people/jumong.png",
+      "/people/yeon_tabal.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Jumong",
+    "year": "-37",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "bidam-poster",
+    "src": "/img_bidam_01.png",
+    "tempImage": "/temp/bidam-poster.jpg",
+    "prompt": "Cinematic historical illustration of bidam 01, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 01",
+    "refs": [
+      "/img_bidam_01.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "no-female-rule",
+    "src": "/img_bidam_02.png",
+    "tempImage": "/temp/no-female-rule.jpg",
+    "prompt": "Cinematic historical illustration of bidam 02, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 02",
+    "refs": [
+      "/img_bidam_02.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "hwarang-class",
+    "src": "/img_bidam_03.png",
+    "tempImage": "/temp/hwarang-class.jpg",
+    "prompt": "Cinematic historical illustration of bidam 03, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 03",
+    "refs": [
+      "/img_bidam_03.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "hwarang-spar",
+    "src": "/img_bidam_04.png",
+    "tempImage": "/temp/hwarang-spar.jpg",
+    "prompt": "Cinematic historical illustration of bidam 04, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 04",
+    "refs": [
+      "/img_bidam_04.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "flower-brush",
+    "src": "/img_bidam_05.png",
+    "tempImage": "/temp/flower-brush.jpg",
+    "prompt": "Cinematic historical illustration of bidam 05, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 05",
+    "refs": [
+      "/img_bidam_05.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "duel-shadows",
+    "src": "/img_bidam_06.png",
+    "tempImage": "/temp/duel-shadows.jpg",
+    "prompt": "Cinematic historical illustration of bidam 06, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 06",
+    "refs": [
+      "/img_bidam_06.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "young-yushin",
+    "src": "/img_bidam_07.png",
+    "tempImage": "/temp/young-yushin.jpg",
+    "prompt": "Cinematic historical illustration of bidam 07, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 07",
+    "refs": [
+      "/img_bidam_07.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "jinduk-poster",
+    "src": "/img_bidam_08.png",
+    "tempImage": "/temp/jinduk-poster.jpg",
+    "prompt": "Cinematic historical illustration of bidam 08, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "bidam 08",
+    "refs": [
+      "/img_bidam_08.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "bidam-lake-again",
+    "src": "/img_steam_again_02.png",
+    "tempImage": "/temp/bidam-lake-again.jpg",
+    "prompt": "Cinematic ultrawide solemn oracle inside steam cavern. Clean-shaven grieving general chest-deep in glowing cyan water (manhwa Yushin); painterly Narim in green silk gives a stern warning; shy painterly Hyullé in pale blue waits on a warm ledge. Night before he must kill a friend. Refs: /people/narim.png, /people/hyulle.png, /people/kim_yushin.png. Place refs: /pl_cave.png, /places/steam_cavern.png. Style split. Tasteful steam. No text, no watermark. --ar 10:3",
+    "alt": "The night before Radiance — counsel in the steam before Yushin must kill a friend",
+    "refs": [
+      "/img_steam_again_02.png",
+      "/people/kim_yushin.png",
+      "/people/bidam.png",
+      "/people/kangrim.png",
+      "/people/dukman.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Bidam’s Rebellion",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "wa-mountains",
+    "src": "/img_japan_01.png",
+    "tempImage": "/temp/wa-mountains.jpg",
+    "prompt": "Cinematic historical illustration of japan 01, Three Kingdoms of Samhan / Tang era (647), scene: Chunchu Goes to the East, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "japan 01",
+    "refs": [
+      "/img_japan_01.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/bidam.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Chunchu Goes to the East",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "wa-wave",
+    "src": "/img_japan_02.png",
+    "tempImage": "/temp/wa-wave.jpg",
+    "prompt": "Cinematic historical illustration of japan 02, Three Kingdoms of Samhan / Tang era (647), scene: Chunchu Goes to the East, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "japan 02",
+    "refs": [
+      "/img_japan_02.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/bidam.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Chunchu Goes to the East",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "wa-king",
+    "src": "/img_japan_03.png",
+    "tempImage": "/temp/wa-king.jpg",
+    "prompt": "Cinematic historical illustration of japan 03, Three Kingdoms of Samhan / Tang era (647), scene: Chunchu Goes to the East, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "japan 03",
+    "refs": [
+      "/img_japan_03.png",
+      "/people/munhee.png",
+      "/people/chunchu.png",
+      "/people/bidam.png"
+    ],
+    "ratio": 2.5,
+    "entry": "Chunchu Goes to the East",
+    "year": "647",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaya_01",
+    "src": "/img_gaya_01.png",
+    "tempImage": "/temp/gaya_01.jpg",
+    "prompt": "Cinematic historical illustration of The sky god and the mountain goddess, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The sky god and the mountain goddess",
+    "refs": [
+      "/img_gaya_01.png",
+      "/people/ibiga.png",
+      "/people/rightview.png",
+      "/people/heo.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaya_02",
+    "src": "/img_gaya_02.png",
+    "tempImage": "/temp/gaya_02.jpg",
+    "prompt": "Cinematic historical illustration of The six eggs, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The six eggs",
+    "refs": [
+      "/img_gaya_02.png",
+      "/people/ibiga.png",
+      "/people/rightview.png",
+      "/people/heo.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaya_03",
+    "src": "/img_gaya_03.png",
+    "tempImage": "/temp/gaya_03.jpg",
+    "prompt": "Cinematic historical illustration of Queen Heo arrives from Ayuta, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Queen Heo arrives from Ayuta",
+    "refs": [
+      "/img_gaya_03.png",
+      "/people/ibiga.png",
+      "/people/rightview.png",
+      "/people/heo.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaya_04",
+    "src": "/img_gaya_04.png",
+    "tempImage": "/temp/gaya_04.jpg",
+    "prompt": "Cinematic historical illustration of Golden Gaya at its height, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Golden Gaya at its height",
+    "refs": [
+      "/img_gaya_04.png",
+      "/people/ibiga.png",
+      "/people/rightview.png",
+      "/people/heo.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaya_05",
+    "src": "/img_gaya_05.png",
+    "tempImage": "/temp/gaya_05.jpg",
+    "prompt": "Cinematic historical illustration of The iron of Gaya, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The iron of Gaya",
+    "refs": [
+      "/img_gaya_05.png",
+      "/people/ibiga.png",
+      "/people/rightview.png",
+      "/people/heo.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaya_06",
+    "src": "/img_gaya_06.png",
+    "tempImage": "/temp/gaya_06.jpg",
+    "prompt": "Cinematic historical illustration of The six kingdoms of Gaya, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The six kingdoms of Gaya",
+    "refs": [
+      "/img_gaya_06.png",
+      "/people/ibiga.png",
+      "/people/rightview.png",
+      "/people/heo.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaya_07",
+    "src": "/img_gaya_07.png",
+    "tempImage": "/temp/gaya_07.jpg",
+    "prompt": "Cinematic historical illustration of The confederacy, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The confederacy",
+    "refs": [
+      "/img_gaya_07.png",
+      "/people/ibiga.png",
+      "/people/rightview.png",
+      "/people/heo.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Gaya, the Lost Nations",
+    "year": "42",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaozong_01",
+    "src": "/img_gaozong_01.png",
+    "tempImage": "/temp/gaozong_01.jpg",
+    "prompt": "Cinematic historical illustration of The crown prince at the emperor’s bedside, Three Kingdoms of Samhan / Tang era (649), scene: Death of the Second Emperor, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The crown prince at the emperor’s bedside",
+    "refs": [
+      "/img_gaozong_01.png",
+      "/people/gaozong.png",
+      "/people/chunchu.png",
+      "/people/wu_zetian.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Death of the Second Emperor",
+    "year": "649",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "gaozong_02",
+    "src": "/img_gaozong_02.png",
+    "tempImage": "/temp/gaozong_02.jpg",
+    "prompt": "Cinematic historical illustration of The new emperor takes the helm, Three Kingdoms of Samhan / Tang era (649), scene: Death of the Second Emperor, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "The new emperor takes the helm",
+    "refs": [
+      "/img_gaozong_02.png",
+      "/people/gaozong.png",
+      "/people/chunchu.png",
+      "/people/wu_zetian.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Death of the Second Emperor",
+    "year": "649",
+    "hadPrompt": true,
+    "hadRefs": false
+  },
+  {
+    "id": "tang_04",
+    "src": "/img_tang_04.png",
+    "tempImage": "/temp/tang_04.jpg",
+    "prompt": "Cinematic historical illustration of Tang, Three Kingdoms of Samhan / Tang era (649), scene: Death of the Second Emperor, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+    "alt": "Tang",
+    "refs": [
+      "/img_tang_04.png",
+      "/people/gaozong.png",
+      "/people/chunchu.png",
+      "/people/wu_zetian.png"
+    ],
+    "ratio": 3.333,
+    "entry": "Death of the Second Emperor",
+    "year": "649",
+    "hadPrompt": true,
+    "hadRefs": false
+  }
+]

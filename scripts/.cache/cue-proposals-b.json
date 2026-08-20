@@ -1,0 +1,234 @@
+{
+	"chapters": ["iron-will", "epilogue"],
+	"alts": [
+		{
+			"id": "daeya_01",
+			"alt": "Daeya Fortress on the Silla border — stone walls above the valley, young at the top and hollow underneath"
+		},
+		{
+			"id": "gesomun-title",
+			"alt": "Yeon Gesomun as an ink-stamp silhouette slashed with red — the massacre's title card"
+		},
+		{
+			"id": "chunchu-robes",
+			"alt": "Chunchu in magenta court robes before the Surabol court, volunteering to ride north alone"
+		},
+		{
+			"id": "bojang-throne",
+			"alt": "King Bojang on the Goguryeo throne voicing a demand everyone in the room knows is Yeon's"
+		},
+		{
+			"id": "chunchu-prison",
+			"alt": "Chunchu escorted to the prison, his left hand a red glove dotting the stones with blood"
+		},
+		{
+			"id": "rescue-boats",
+			"alt": "Yushin's rescue force mustering on the sixtieth day — men and boats counted out for the northern border"
+		},
+		{
+			"id": "chunchu-poster",
+			"alt": "Chunchu released at the Goguryeo border as the cry goes up — Yushin is coming"
+		},
+		{
+			"id": "yushin-title",
+			"alt": "Kim Yushin title card — the Sword of Silla in dark lamellar armor"
+		},
+		{
+			"id": "img_yushin_03",
+			"alt": "Chunchu confides in Yushin by night — a man who once wanted only a loving wife and a peaceful household"
+		},
+		{
+			"id": "img_yushin_04",
+			"alt": "Two old friends beneath the bright eastern star, thirty years into the same argument about planets and omens"
+		},
+		{
+			"id": "disguised-euija",
+			"alt": "King Euija in a commoner's disguise at Pyongyang's gate, asking for the man with real power"
+		},
+		{
+			"id": "secret-meeting",
+			"alt": "Yeon and the disguised Euija across a lamp-lit table — two king-breakers trading old regicides"
+		},
+		{
+			"id": "gukjeong",
+			"alt": "Yeon names his one price — the land north of the pass for relief troops — while Euija weighs it"
+		},
+		{
+			"id": "baekje-harbor-map",
+			"alt": "Euija's finger on the trade map — Danghangseong, Silla's only harbour to the Tang"
+		},
+		{
+			"id": "yeon-threat",
+			"alt": "Yeon's blade laid flat on the table between the two men — not pointed at anything, just there"
+		},
+		{
+			"id": "blue-generals",
+			"alt": "Five attendants riding south with Euija — two more than left Sabi, and nobody raises the subject"
+		},
+		{
+			"id": "tang-palace",
+			"alt": "Lamplit Tang palace hall in Chang'an where the Second Emperor turns a foreign name over on his tongue"
+		}
+	],
+	"moves": [
+		{
+			"id": "best_of_both_02",
+			"chapterId": "iron-will",
+			"entryTitle": "Best of Both",
+			"newAt": "pick a country to wash in",
+			"reasoning": "Current anchor \"cavern lake\" appears in no block of this entry, so the sisters'-steam image floats above the entry instead of landing at Narim's counsel in the pool."
+		},
+		{
+			"id": "marshal_steam_01",
+			"chapterId": "iron-will",
+			"entryTitle": "The Marshal’s Steam",
+			"newAt": "borrows a razor",
+			"reasoning": "The text reads \"he borrows a razor\", so the fragment \"borrowed razor\" never matches and the shaving image falls back to the entry opening instead of the cave-mouth block it depicts."
+		},
+		{
+			"id": "marshal_steam_02",
+			"chapterId": "iron-will",
+			"entryTitle": "The Marshal’s Steam",
+			"newAt": "a letter instead of a sword",
+			"reasoning": "\"pull him into the steam\" appears in no block (the text says \"They pull him in\"), so this image also falls to the opening; Golhwa's tease is the moment the sisters drag Chunchu into the pool."
+		},
+		{
+			"id": "daeya_04",
+			"chapterId": "iron-will",
+			"entryTitle": "Daeya Fortress",
+			"newAt": "everyone in this fortress is trash",
+			"reasoning": "\"I hate True Bones more than anything\" appears nowhere in the entry, so this mid-entry portrait of Geomil's wife falls back to the entry opening; her \"everyone in this fortress is trash\" declaration is the matching beat between the feast and the betrayal."
+		},
+		{
+			"id": "king-final",
+			"chapterId": "iron-will",
+			"entryTitle": "Yeon’s Massacre",
+			"newAt": "for the final blow",
+			"reasoning": "The old fragment spans a <b> tag (\"approaches <b>King Youngryu</b>\") so it never matches, and the image of the dying king spoils the massacre from the entry opening; \"for the final blow\" is plain text in the same block."
+		},
+		{
+			"id": "yeon-wife-private",
+			"chapterId": "iron-will",
+			"entryTitle": "After the Knives",
+			"newAt": "the house is quieter than the city",
+			"reasoning": "\"What will they say of us\" is a paraphrase (the dialogue reads \"What will Tang say…\") so the private-chamber image falls to the entry opening; this anchors it to the block that opens the night scene at home."
+		},
+		{
+			"id": "chunchu-prison",
+			"chapterId": "iron-will",
+			"entryTitle": "Chunchu & Gesomun",
+			"newAt": "Blood runs off the wrist",
+			"reasoning": "Matching is case-sensitive and the text capitalizes \"Blood\", so the lowercase fragment never matches and the bloody-exit image spoils the wound from the entry opening; same fragment, correct case."
+		},
+		{
+			"id": "bojang-throne",
+			"chapterId": "iron-will",
+			"entryTitle": "Chunchu & Gesomun",
+			"newAt": "makes his request. It is not really his request",
+			"reasoning": "The throne-audience image is anchored at the corridor-guards scene after the audience has already ended; it belongs where Bojang delivers Yeon's demand."
+		},
+		{
+			"id": "rescue-boats",
+			"chapterId": "iron-will",
+			"entryTitle": "Chunchu & Gesomun",
+			"newAt": "On the sixtieth day",
+			"reasoning": "An image of the rescue force is anchored at the guards discovering Chunchu's blood, revealing the rescue before the text does; Yushin only musters men at the sixtieth-day block."
+		},
+		{
+			"id": "yeon-threat",
+			"chapterId": "iron-will",
+			"entryTitle": "Euija & Gesomun",
+			"newAt": "puts the blade on the table",
+			"reasoning": "The blade-threat image is anchored at the later reflective block where Yeon merely remembers Chunchu; the threat itself happens when Yeon lays the blade on the table and demands a reason not to cut Euija down."
+		}
+	],
+	"newSlots": [
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Daeya Fortress",
+			"afterId": "daeya_04",
+			"promptSummary": "Geomil opens the granary gate to Yunchung's army by night while the stores he counted burn",
+			"slot": {
+				"id": "daeya_granary_gate",
+				"ratio": 3.333,
+				"at": "opens the granary gate to Yunchung",
+				"alt": "Geomil heaving the granary gate open to Yunchung's army by night, the stores he counted burning behind him",
+				"prompt": "Cinematic historical illustration of the betrayal of Daeya Fortress — Geomil, a gaunt low-born quartermaster in worn hemp clothes, heaving the heavy granary gate open by night to Baekje soldiers with torches, while the grain stores he spent years counting burn orange behind him, sparks climbing over dark ramparts, his face half-lit by fire and empty of triumph, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+				"refs": ["/pl_daeya_fortress.png"]
+			}
+		},
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Daeya Fortress",
+			"afterId": "daeya_granary_gate",
+			"promptSummary": "The underworld messenger Kangrim appears to Gotaso in the last room",
+			"slot": {
+				"id": "daeya_kangrim_gotaso",
+				"ratio": 3.333,
+				"at": "ledger under one arm, crow-dark robe",
+				"alt": "The underworld messenger Kangrim, ledger under one arm, appearing to Lady Gotaso in Daeya's last room",
+				"prompt": "Cinematic historical illustration of the underworld messenger Kangrim appearing to Lady Gotaso in the inner room of a falling fortress — a tall figure in a crow-dark robe with a ledger under one arm, standing at the polite distance of a foreign envoy, the nineteen-year-old bride upright in fine silk as smoke seeps under the door, thin cold spectral light against the warm glow of fires beyond the paper screens, air gone still, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+				"refs": ["/ch_kangrim.png", "/ch_gotaso.png", "/pl_daeya_fortress.png"]
+			}
+		},
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Daeya Fortress",
+			"afterId": "daeya_07",
+			"promptSummary": "Young Bupmin waits at the Surabol gate before an empty road",
+			"slot": {
+				"id": "daeya_bupmin_gate",
+				"ratio": 3.333,
+				"at": "waits at the gate the way a boy waits",
+				"alt": "Young Bupmin waiting at the Surabol gate before an empty road, Munhee behind him letting him see it",
+				"prompt": "Cinematic historical illustration of a boy waiting for a sister who promised forever — young Bupmin standing small at the great Surabol city gate at dusk, staring down a long empty autumn road, his mother Munhee a few steps behind refusing to call him inside, cold late light, wind in the roadside grass, quiet cruel stillness, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+				"refs": ["/ch_kim_bupmin.png", "/ch_munhee.png"]
+			}
+		},
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Chunchu & Gesomun",
+			"afterId": "chunchu-poster",
+			"promptSummary": "Yeon explains the release to Dosuryu — you don't poke a tiger for no reason",
+			"slot": {
+				"id": "gesomun_tiger_counsel",
+				"ratio": 3.333,
+				"tone": "#7f1d1d",
+				"at": "does not poke a tiger",
+				"alt": "Yeon waves the release order at a disbelieving Dosuryu — even a man ready to die does not poke a tiger",
+				"prompt": "Cinematic historical illustration of Yeon Gesomun ordering Chunchu's release — the thick-bearded Supreme Commander seated at a lamplit table in Pyongyang, waving the matter away with weary certainty while Grand Herald Dosuryu stands stunned mid-question, five crow-stamped ring-pommel blades racked in shadow behind them, the unspoken shape of a tiger hanging in the talk, Three Kingdoms of Samhan / Tang era (7th century), scene: Chunchu & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+				"refs": ["/ch_yeon_gesomun.png", "/ch_dosuryu.png", "/pl_pyongyang_fortress.png"]
+			}
+		},
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Euija & Gesomun",
+			"afterId": "yeon-threat",
+			"promptSummary": "Chunchu drives his own blade through his left hand and holds the wound up like a seal",
+			"slot": {
+				"id": "chunchu_hand_seal",
+				"ratio": 2.4,
+				"tone": "#7f1d1d",
+				"at": "steel through his own hand",
+				"alt": "Chunchu driving a short blade through his own left hand before Yeon, raising the wound like a seal",
+				"prompt": "Cinematic historical illustration of Chunchu's proof — the pale scholar-prince in magenta court robes driving a short blade clean through his own left palm and raising the bleeding hand up like a seal, eyes hot, dry, almost joyful, never leaving Yeon Gesomun's face across the dim Goguryeo audience hall, the bearded Supreme Commander gone utterly still, blood threading down the pale wrist in lamplight, Three Kingdoms of Samhan / Tang era (7th century), scene: Euija & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+				"refs": ["/ch_chunchu.png", "/ch_yeon_gesomun.png"]
+			}
+		},
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Kim Yushin",
+			"afterId": "img_yushin_04",
+			"promptSummary": "Euija counsels young Gyebek — every man is a king or a slave of his own life",
+			"slot": {
+				"id": "euija_king_or_slave",
+				"ratio": 3.333,
+				"tone": "#292524",
+				"at": "a king, or a slave",
+				"alt": "King Euija gripping young Gyebek's shoulder on a Sabi terrace — every man a king or a slave of his own life",
+				"prompt": "Cinematic historical illustration of King Euija counselling the young general Gyebek on a Sabi palace terrace at dusk — the king in amber royal robes gripping the kneeling soldier's shoulder and bidding him rise, telling him every man is either a king or a slave of his own life, Gyebek looking up with new fire in his eyes, warm lantern light against a violet evening sky over the White River, Three Kingdoms of Samhan / Tang era (7th century), scene: Kim Yushin, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+				"refs": ["/ch_buyeo_euija.png", "/ch_gyebek.png", "/pl_sabi_palace.png"]
+			}
+		}
+	]
+}

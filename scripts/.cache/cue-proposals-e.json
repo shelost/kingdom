@@ -1,0 +1,313 @@
+{
+  "chapters": ["fall-of-baekje", "final-stand", "silla-tang-war", "epilogue-2"],
+  "alts": [
+    { "id": "dangun-mountain", "alt": "Mist-wreathed sacred mountain where Hwanung descended — the sandalwood tree and the bear-woman's vigil" },
+    { "id": "hwangsan-map", "alt": "Map of the Yellow Mountain Fields — three roads in, three Baekje camps, no fourth way" },
+    { "id": "hwangsan-title", "alt": "Three Baekje camps across the pass at dusk, watchfires against fifty thousand" },
+    { "id": "hwangsan-valley", "alt": "Five thousand Baekje soldiers cheer and wave up at the dark underworld escort hanging in plain day" },
+    { "id": "riders-face-off", "alt": "Gyebek and Kangrim face each other across the dusty field at Hwangsanbeol" },
+    { "id": "gyebek-gwanchang", "alt": "Sixteen-year-old Gwanchang charges the Baekje line alone" },
+    { "id": "hwangsan-laststand", "alt": "Gyebek's centre camp collapsing under the final Silla charge — dust, shortening spears, a thin gold line" },
+    { "id": "general-statue", "alt": "The dying Gyebek speaks quietly to the crow-dark escort amid the wreckage of his last field" },
+    { "id": "gold-statue", "alt": "Gyebek holds the boy's unstrapped helmet, staring at the face inside before doing what he must" },
+    { "id": "two-kings", "alt": "Two kings at fallen Sabi — Euija of Baekje brought before Muyeol of Silla" },
+    { "id": "collapsed-mourning", "alt": "Court women collapsed in mourning at the Flower Cliffs above the water" },
+    { "id": "euija-laugh", "alt": "Euija's hollow laugh — the rock named Falling Flowers, Baekje's last invention" },
+    { "id": "cliff-flight", "alt": "Euija's concubines throw themselves from the Flower Cliffs into the river below" },
+    { "id": "euija-fallen", "alt": "Euija fallen — the emptied king meeting his end in the enemy capital" },
+    { "id": "euija-memories", "alt": "Euija's life flashing past — the bright young prince the court called the Zengzi of the East" },
+    { "id": "sword-forge", "alt": "The Seven-Branched Sword at the forge — six branches off a central blade, gold characters inlaid down both sides" },
+    { "id": "chiljido", "alt": "The Chiljido against black — sixty-one golden characters whose single verb two countries still dispute" },
+    { "id": "sunduk-tomb", "alt": "A quiet grass tomb mound on the edge of Surabol, incense drifting from the temple below" },
+    { "id": "munmu-title", "alt": "Bupmin at the foot of his father's bed, already wearing a king's silence" },
+    { "id": "munmu-poster", "alt": "King Munmu — the son who inherits the road cleared as far as Baekje" },
+    { "id": "four-beasts", "alt": "The four beast banners of Tang — White Tiger, Red Fowl, Blue Dragon, Black Tortoise" },
+    { "id": "four-riders-2", "alt": "Four Tang marshals ride east under their beast banners for the eighth invasion" },
+    { "id": "yellow-general-2", "alt": "The gold-armoured Tang commander at the head of the invasion host" },
+    { "id": "revival-banner", "alt": "The restoration banner of Baekje raised over gathered refugees" },
+    { "id": "five-loyalists", "alt": "The loyalists of the restoration — King Pungjang, Boksin, and their captains standing together" },
+    { "id": "pung-poster", "alt": "Prince Pung — twenty years in the East, crowned king of a restoration" },
+    { "id": "gwisil-bokshin", "alt": "General Gwisil Boksin, commander of the revival armies, eyeing the king he crowned" },
+    { "id": "saimei-empress", "alt": "The eastern empress raising ships, grain and soldiers for Baekje's restoration" },
+    { "id": "gija-scroll", "alt": "The Eight Prohibitions on a dark scroll — Gija's iron law over Old Joseon" },
+    { "id": "pyongyang-walls", "alt": "The impenetrable walls of Pyongyang under winter siege" },
+    { "id": "two-dragons", "alt": "Two dragon banners over the frozen siege lines outside Pyongyang" },
+    { "id": "red-sigil", "alt": "A red sigil burning against black — the relief army freezing in the snow" },
+    { "id": "baekgang-map", "alt": "Map of the White River mouth — Tang ships anchored across the throat, the eastern fleet coming in on the tide" },
+    { "id": "baekgang-river", "alt": "The wide mouth of the White River, where the West, Samhan and the East met in one water" },
+    { "id": "naval-clash", "alt": "Yamato and Tang hulls grinding together in the narrow river mouth" },
+    { "id": "naval-fire", "alt": "Four hundred eastern ships burning — the sky scarlet, the sea the colour of cinnabar" },
+    { "id": "yeon-deathbed", "alt": "The Eternal General on his deathbed, his sons gathered close" },
+    { "id": "yeon-burning", "alt": "Yeon's dying vision in flame — the man who will raise Goryeo again 250 years on" },
+    { "id": "namseng-duo", "alt": "The Yeon brothers side by side, the quarrel already forming between them" },
+    { "id": "three-brothers-sketch", "alt": "The three sons of Gesomun sketched together — Namseng, Namgun, Namsan" },
+    { "id": "namseng-poster", "alt": "Yeon Namseng — eldest son and Supreme Commander, soon a guide for the enemy" },
+    { "id": "namgun-poster", "alt": "Yeon Namgun — the brother who seized the seat at Pyongyang" },
+    { "id": "dark-throne", "alt": "The Supreme Commander's darkened throne, contested between brothers" },
+    { "id": "red-king", "alt": "Namseng in crimson kneeling before the Tang court, denouncing his own country" },
+    { "id": "pyongyang-title", "alt": "Pyongyang under final siege, 668 — the last stand of Goguryeo" },
+    { "id": "red-armor", "alt": "Xue Rengui in red-lacquered armour, working the siege like a harvest" },
+    { "id": "three-riders", "alt": "Three riders before Pyongyang's walls — Namseng returned to his father's city as Tang vanguard" },
+    { "id": "three-dragons", "alt": "The three dragon-marshals of Tang before the opened gates of Pyongyang" },
+    { "id": "joseon-fall", "alt": "Wanggeom's gate opened from the inside — the fall of Old Joseon" },
+    { "id": "white-tiger-banner", "alt": "The old Goguryeo white-tiger standard raised again on the Taedong" },
+    { "id": "seokmun-map", "alt": "Map of the Seokmun campaign — the feigned Tang withdrawal and the turn" },
+    { "id": "seokmun-title", "alt": "Wonsul alive after Seokmun — the son his father refuses to see" },
+    { "id": "yushin-sketch", "alt": "Kim Yushin at seventy-nine — a spare sketch of the marshal who wanted in" },
+    { "id": "love-hanja", "alt": "A single hanja over Geumsan — buried with a king's honours and a subject's rank" },
+    { "id": "maeso-map", "alt": "Map of the Maeso campaign — the Tang landing and nine Silla armies converging on the Imjin" },
+    { "id": "maeso-title", "alt": "Thirty thousand captured horses at Maeso Fortress — the war decided on the Imjin" },
+    { "id": "gibeolpo-map", "alt": "Map of Strike Harbor at the mouth of the Geum — the last battle of the war" },
+    { "id": "emperor-back", "alt": "The emperor's back turned — Tang facing away from the east at last" },
+    { "id": "gibeolpo-title", "alt": "Silla ships in the Geum estuary — twenty-two engagements at Strike Harbor" },
+    { "id": "two-kings-crowns", "alt": "Two kings' crowns laid together as Munhee readies her son to be king of all Samhan" },
+    { "id": "three-crowns", "alt": "Three crowns of three kingdoms gathered under one court" },
+    { "id": "balhae-statue", "alt": "The founder of Balhae remembered in stone — the boy who answered the empty north" }
+  ],
+  "moves": [
+    {
+      "id": "hwangsan-valley",
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "Yellow Mountain Fields",
+      "newAt": "They cheer. They wave. Someone shouts a greeting",
+      "reasoning": "Current fragment ends 'as if t' but the block reads 'as if King Yumla's escort', so the anchor never matches and the image falls back to the entry opening instead of the waving scene it depicts."
+    },
+    {
+      "id": "cliff-flight",
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "Sabi Palace",
+      "newAt": "Nobody counts them. Nobody has counted them for years.",
+      "reasoning": "The image depicts the concubines' leap from the Flower Cliffs but is anchored in the later wine-pouring scene with Muyeol — a different scene entirely."
+    },
+    {
+      "id": "munmu-poster",
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "The Death of Kim Chunchu",
+      "newAt": "The ledger does not moralize",
+      "reasoning": "Current fragment ends with a period but the dialogue reads 'moralize —' (em dash), so the anchor never matches and the image falls back to the entry opening."
+    },
+    {
+      "id": "pung-poster",
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "Baekje Restoration Society",
+      "newAt": "has been living in the East for over 20 years",
+      "reasoning": "Current fragment spans a </b> tag ('Prince Pung</b> has been…'), so it never matches the block html and the image falls back to the entry opening."
+    },
+    {
+      "id": "gwisil-bokshin",
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "Baekje Restoration Society",
+      "newAt": "Prince Pung wants to move the base from",
+      "reasoning": "Current fragment spans <b> tags ('from <b>Sand Fortress</b> to'), so it never matches and the image falls back to the entry opening."
+    },
+    {
+      "id": "saimei-empress",
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "Baekje Restoration Society",
+      "newAt": "The eastern empress raises ships, grain and soldiers",
+      "reasoning": "The image depicts the eastern empress raising aid, which happens at the start of the entry, but it is anchored in the much later Juryu/Pisong fortress debate."
+    },
+    {
+      "id": "sasu-battle",
+      "chapterId": "final-stand",
+      "entryTitle": "Snake River",
+      "newAt": "Yeon kills the White Tiger and his thirteen sons",
+      "reasoning": "The wide battle tableau of Yeon's host crushing Pang Xiaotai lands at Kangrim's 'Yeon Gesomun.' dialogue — the intimate supernatural escort scene after the battle is over — instead of the battle itself."
+    },
+    {
+      "id": "yeon-burning",
+      "chapterId": "final-stand",
+      "entryTitle": "The Death of Yeon Gesomun",
+      "newAt": "Yeon catches a vision of",
+      "reasoning": "Current fragment spans '<b>Wang Gun</b>' tags, so it never matches and the image falls back to the entry opening."
+    },
+    {
+      "id": "white-tiger-banner",
+      "chapterId": "silla-tang-war",
+      "entryTitle": "Goguryeo Revival Society",
+      "newAt": "raises the old flag on the Taedong",
+      "reasoning": "A revival banner image is anchored at 'Father…' inside the intimate deathbed flashback dialogue; it belongs at the flag-raising on the Taedong."
+    },
+    {
+      "id": "seokmun-map",
+      "chapterId": "silla-tang-war",
+      "entryTitle": "Stone Gate",
+      "newAt": "The Tang take Hansi and Mapeup and come south",
+      "reasoning": "The campaign map is anchored in the Wonsul family-disgrace passage after the battle; it belongs at the campaign opening, leaving the Wonsul stretch to seokmun-title."
+    },
+    {
+      "id": "two-kings-crowns",
+      "chapterId": "silla-tang-war",
+      "entryTitle": "The King for All",
+      "newAt": "Queen Munmyung now, and the last person alive",
+      "reasoning": "Current fragment spans a </b> tag ('Munhee (66)</b> — Queen…'), so it never matches and the image falls back to the entry opening instead of the collar scene."
+    }
+  ],
+  "newSlots": [
+    {
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "Sabi Palace",
+      "afterId": "cliff-flight",
+      "promptSummary": "Captive Euija forced to pour wine for the seated Muyeol at Sabi",
+      "slot": {
+        "id": "euija-pours-wine",
+        "ratio": 2,
+        "tone": "#7c2d12",
+        "at": "A cup is put into Euija’s hands",
+        "alt": "The captive Euija pours wine for King Muyeol before the assembled court at Sabi",
+        "prompt": "Cinematic historical illustration of the wine-pouring humiliation, Three Kingdoms of Samhan / Tang era (660), scene: the fallen King Euija forced to pour a cup of wine for the seated King Muyeol in a hall of Sabi Palace, victorious Silla officers watching in silence, the old conqueror's hands steady with the last of his pride, lamplight and long shadows, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_buyeo_euija.png", "/ch_chunchu.png", "/pl_sabi_palace.png"]
+      }
+    },
+    {
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "The Death of Buyeo Euija",
+      "afterId": null,
+      "promptSummary": "Euija dragged before the Third Emperor in the Tang capital",
+      "slot": {
+        "id": "euija-changan-court",
+        "ratio": 1.9,
+        "tone": "#292524",
+        "at": "Euija is brought forth before the Third Emperor",
+        "alt": "Euija dragged before the Third Emperor's throne in the Tang capital, shouting his last defiance",
+        "prompt": "Cinematic historical illustration of Euija before the Tang throne, Three Kingdoms of Samhan / Tang era (660), scene: the captive king Buyeo Euija brought forth before the Third Emperor in the vast gloom of the Daming Palace hall, ranks of Tang courtiers lining the columns, one broken old king shouting a curse at his betrayer, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_buyeo_euija.png", "/ch_gaozong.png", "/pl_daming_palace.png"]
+      }
+    },
+    {
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "The Death of Kim Chunchu",
+      "afterId": "sunduk-tomb",
+      "promptSummary": "Munhee at dying Chunchu's temple bedside, their son at the foot of the bed",
+      "slot": {
+        "id": "chunchu-deathbed",
+        "ratio": 2,
+        "tone": "#5b21b6",
+        "at": "Munhee. Have I… paid all of it?",
+        "alt": "Munhee at the dying Chunchu's bedside in the quiet temple, their son standing at the foot of the bed",
+        "prompt": "Cinematic historical illustration of King Muyeol's deathbed, Three Kingdoms of Samhan / Tang era (661), scene: the dying Kim Chunchu in a quiet Buddhist temple on the edge of Surabol, Munhee seated at his side holding his hand, their grown son Bupmin standing at the foot of the bed in a king's silence, incense smoke, stone, paper-screen light, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_chunchu.png", "/ch_munhee.png", "/ch_kim_bupmin.png"]
+      }
+    },
+    {
+      "chapterId": "fall-of-baekje",
+      "entryTitle": "Baekje Restoration Society",
+      "afterId": "saimei-empress",
+      "promptSummary": "Boksin's feigned-sickness plot caught — the general seized in torchlight",
+      "slot": {
+        "id": "boksin-executed",
+        "ratio": 1.9,
+        "tone": "#7f1d1d",
+        "at": "Boksin plots to kill the king by pretending to be sick",
+        "alt": "Boksin's feigned sickbed betrayed — the general seized by King Pungjang's guards in torchlight",
+        "prompt": "Cinematic historical illustration of Boksin's downfall, Three Kingdoms of Samhan / Tang era (663), scene: general Gwisil Boksin caught in his feigned-sickness plot, dragged from a sickbed by King Pungjang's guards inside the mountain fortress of Juryu, torchlight on stone, the restoration devouring itself, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_commander_1.png", "/ch_commander_2.png"]
+      }
+    },
+    {
+      "chapterId": "final-stand",
+      "entryTitle": "White River",
+      "afterId": "naval-fire",
+      "promptSummary": "Echi no Takutsu's last stand on a burning Yamato deck",
+      "slot": {
+        "id": "takutsu-last-stand",
+        "ratio": 2.3,
+        "tone": "#9a3412",
+        "at": "Baekje must survive….",
+        "alt": "Echi no Takutsu makes his last stand on the burning deck of a Yamato ship at the White River",
+        "prompt": "Cinematic historical illustration of a captain's last stand, Three Kingdoms of Samhan / Tang era (663), scene: Yamato captain Echi no Takutsu fighting to the last on the burning deck of his ship in the White River mouth, scarlet smoke-choked sky, cinnabar-coloured water, Tang hulls closing in a wall around him, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_commander_3.png", "/pl_white_river.png"]
+      }
+    },
+    {
+      "chapterId": "final-stand",
+      "entryTitle": "The Brothers’ Coup",
+      "afterId": "dark-throne",
+      "promptSummary": "Namseng rides west across the river his father held for a lifetime",
+      "slot": {
+        "id": "namseng-rides-west",
+        "ratio": 1.9,
+        "tone": "#44403c",
+        "at": "Namseng rides west, across the river",
+        "alt": "Namseng rides west across the wide river his father spent a lifetime holding",
+        "prompt": "Cinematic historical illustration of the defection ride, Three Kingdoms of Samhan / Tang era (666), scene: Yeon Namseng with a small escort riding west across the wide grey river his father held for a lifetime, Goguryeo walls receding behind him, cold overcast light, the weight of betrayal in his posture, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_yeon_namseng.png"]
+      }
+    },
+    {
+      "chapterId": "silla-tang-war",
+      "entryTitle": "Stone Gate",
+      "afterId": "seokmun-map",
+      "promptSummary": "Mohe cavalry wheel into the strung-out Silla pursuit at Seokmun",
+      "slot": {
+        "id": "mohe-ambush",
+        "ratio": 2,
+        "tone": "#b45309",
+        "at": "At Seokmun the Tang turn around",
+        "alt": "Mohe cavalry crash into the flank of a Silla army caught strung out and unformed at Seokmun",
+        "prompt": "Cinematic historical illustration of the Seokmun ambush, Three Kingdoms of Samhan / Tang era (672), scene: the feigned Tang withdrawal turning at Stone Gate, Mohe cavalry wheeling into the flank of a Silla army caught strung out in pursuit and not yet formed in line, dust and panic, an afternoon's ruin, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_commander_2.png", "/ch_commander_4.png"]
+      }
+    },
+    {
+      "chapterId": "silla-tang-war",
+      "entryTitle": "Stone Gate",
+      "afterId": "seokmun-title",
+      "promptSummary": "Flashback — Chunchu lays out the war after the war for his son",
+      "slot": {
+        "id": "chunchu-forecast",
+        "ratio": 2,
+        "tone": "#831843",
+        "at": "A room in Surabol, a year before Baekje falls",
+        "alt": "In a lamplit Surabol room, Chunchu lays out the coming decades for his son like a field",
+        "prompt": "Cinematic historical illustration of a father's forecast, Three Kingdoms of Samhan / Tang era (659), scene: Kim Chunchu and his grown son Bupmin alone at night in a room in Surabol, the father laying out the war after the war — never strike first, one fortress at a time, the sea last — lamplight, maps and quiet conspiratorial intimacy, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_chunchu.png", "/ch_kim_bupmin.png"]
+      }
+    },
+    {
+      "chapterId": "silla-tang-war",
+      "entryTitle": "The Death of Kim Yushin",
+      "afterId": null,
+      "promptSummary": "King Munmu comes himself to the dying Yushin's bedside",
+      "slot": {
+        "id": "munmu-visits-yushin",
+        "ratio": 1.9,
+        "tone": "#1e3a8a",
+        "at": "The King comes to the house himself",
+        "alt": "King Munmu kneels at the bedside of the dying seventy-nine-year-old Yushin",
+        "prompt": "Cinematic historical illustration of a king's visit, Three Kingdoms of Samhan / Tang era (673), scene: King Munmu, having come to the house himself against custom, kneeling at the bedside of the ancient marshal Kim Yushin, morning light through paper doors, sixty years of shared war between them, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_kim_bupmin.png", "/ch_kim_yushin.png"]
+      }
+    },
+    {
+      "chapterId": "silla-tang-war",
+      "entryTitle": "Maeso Fortress",
+      "afterId": "maeso-title",
+      "promptSummary": "Xue Rengui's quiet withdrawal — the white coat turning from the east",
+      "slot": {
+        "id": "white-tiger-withdraws",
+        "ratio": 2,
+        "tone": "#334155",
+        "at": "He withdraws without spectacle",
+        "alt": "An aging Xue Rengui leads the quiet Tang withdrawal from the Imjin, the white coat turning away from the east",
+        "prompt": "Cinematic historical illustration of the quiet withdrawal, Three Kingdoms of Samhan / Tang era (675), scene: an aging Xue Rengui in his white coat riding at the head of a subdued Tang column withdrawing from the Imjin, riderless horses and abandoned wagons behind, grey autumn light, a farmer accepting a lost field, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_xue_rengui.png"]
+      }
+    },
+    {
+      "chapterId": "epilogue-2",
+      "entryTitle": "Unified Silla",
+      "afterId": "unified-silla-day",
+      "promptSummary": "Munmu's funeral pyre on the shore, his bone-rock out in the tide",
+      "slot": {
+        "id": "munmu-sea-tomb",
+        "ratio": 1.6,
+        "tone": "#0c4a6e",
+        "at": "They burn him on the shore",
+        "alt": "Munmu's funeral pyre burning on the eastern shore, the lone bone-rock a hundred paces out in the tide",
+        "prompt": "Funeral fire on the eastern shore of Silla: King Munmu's pyre burning at dusk with mourners at the waterline, and a hundred paces out to sea the lone rock that will hold his bones — the only royal tomb in the world with tides. Historical painterly illustration, dramatic sea light, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+        "refs": ["/ch_kim_bupmin.png"]
+      }
+    }
+  ]
+}
