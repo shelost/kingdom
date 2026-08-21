@@ -1249,12 +1249,8 @@
 		display: block;
 		width: 100%;
 		max-height: min(26rem, 50dvh);
-		object-fit: contain;
-		object-position: right bottom;
-	}
-
-	.detail.expanded .hero-art img {
-		max-height: min(34rem, 56dvh);
+		object-fit: cover;
+		object-position: right top;
 	}
 
 	.hero-art.place img {
@@ -1268,6 +1264,10 @@
 		max-height: min(14rem, 28dvh);
 		object-fit: contain;
 		object-position: center;
+	}
+
+	.detail.expanded .hero-art img {
+		max-height: min(34rem, 56dvh);
 	}
 
 	.hero-art.stand-in img {

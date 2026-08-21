@@ -2234,7 +2234,7 @@
 					},
 					{
 						"kind": "dialogue",
-						"person": "leegaesa",
+						"person": "gusesa",
 						"en": [
 							"If you keep defying the king, Commander Yeon…",
 							"we may have to name you a traitor."
@@ -8232,7 +8232,7 @@
 					{
 						"kind": "dialogue",
 						"chip": "#96473e",
-						"person": "leegaesa",
+						"person": "gusesa",
 						"lines": [
 							"역적…!",
 							"그때… 내가…"

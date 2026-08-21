@@ -607,11 +607,14 @@
 								isGroupCard && !hasOrgPreview ? groupMembersOf(p.id).slice(0, 4) : []}
 							{@const spotlight = isClanCard ? clanSpotlightOf(p.id) : undefined}
 							{@const clanArt = spotlight ? avatarOf(spotlight) : undefined}
+							{@const isPortraitCard =
+								!isShowcase && !hasOrgPreview && !roster.length && !isOrgCard && !isGroupCard}
 							<li>
 								<button
 									type="button"
 									class="card"
 									class:card-showcase={isShowcase}
+									class:card-character={isPortraitCard}
 									class:card-place={cardKind === 'place' || cardKind === 'city'}
 									class:card-org={isOrgCard || isGroupCard}
 									style:--k={kc.color}
@@ -682,7 +685,7 @@
 											{/if}
 										</span>
 									{/if}
-									<span class="meta">
+									<span class="meta expo">
 										<span class="card-name">
 											{nameOf(p)}
 											{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
@@ -1096,6 +1099,37 @@
 		gap: 0;
 		padding: 0;
 		overflow: hidden;
+	}
+
+	/* Character / clan portrait cards — art flush to edges; text in .meta (expo). */
+	.card.card-character {
+		align-items: stretch;
+		gap: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.card.card-character .avatar,
+	.card.card-character .avatar.avatar-clan {
+		width: 6.25rem;
+		flex-shrink: 0;
+		align-self: stretch;
+		min-height: 9.5rem;
+		border-radius: 0;
+		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
+	}
+
+	.card.card-character .avatar img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	.card.card-character .meta {
+		padding: 0.95rem 1.05rem 0.95rem 0.85rem;
+		flex: 1;
+		min-width: 0;
 	}
 
 	.card.card-org {
@@ -1667,6 +1701,16 @@
 
 		.avatar {
 			width: 5rem;
+		}
+
+		.card.card-character .avatar,
+		.card.card-character .avatar.avatar-clan {
+			width: 5.25rem;
+			min-height: 8.25rem;
+		}
+
+		.card.card-character .meta {
+			padding: 0.85rem 1rem 0.85rem 0.75rem;
 		}
 
 		.peek {

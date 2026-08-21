@@ -3074,13 +3074,24 @@ export const PEOPLE: Person[] = [
 		born: 567,
 		died: 632,
 		clan: 'clan-gyeongju-kim',
-		tagline: 'Fifty-three years on the throne, and only daughters.',
+		boneRank: 'Sacred Bone (성골)',
+		tagline: 'Fifty-three years on the throne — and only daughters when the ledger closed.',
 		quote: "A kingdom is a ledger. Keep it balanced.",
-		events: [{ year: 632, label: 'Dies; the Council must invent a queen.' }],
-		career: [
-			{ title: 'King', korean: '진평왕', hanja: '眞平王', org: 'sillaroyal', from: 579 }
+		arc: 'Longest reign in Silla’s annals. Kept the peninsula quiet while bone rank hardened into law; when he died without a son, the Harmony Council had to invent a queen rather than admit the covenant was broken.',
+		events: [
+			{ year: 579, label: 'Ascends the throne at twelve.' },
+			{ year: 632, label: 'Dies after fifty-three years; Sunduk succeeds.' }
 		],
-		aliases: ['King Jinpyung', 'Jinpyung']
+		career: [
+			{ title: 'King', korean: '진평왕', hanja: '眞平王', org: 'sillaroyal', from: 579, to: 632 }
+		],
+		family: [
+			{ id: 'sunduk', role: 'Daughter' },
+			{ id: 'jinduk', role: 'Granddaughter' },
+			{ id: 'chunmyung', role: 'Daughter' },
+			{ id: 'sunhwa', role: 'Daughter' }
+		],
+		aliases: ['King Jinpyung', 'Jinpyung', 'King Jinpyeong', 'Jinpyeong', '眞平王']
 	},
 	{
 		id: 'chunmyung',
@@ -3104,14 +3115,24 @@ export const PEOPLE: Person[] = [
 		id: 'sunhwa',
 		name: 'Princess Sunhwa',
 		korean: '선화공주',
+		hanja: '善花公主',
 		kingdom: 'silla',
 		gender: 'f',
+		born: 580,
+		bornApprox: true,
 		clan: 'clan-gyeongju-kim',
 		clans: ['clan-buyeo'],
 		clanBy: { 'clan-buyeo': 'marriage' },
+		boneRank: 'Sacred Bone (성골)',
 		tagline: 'Married into Baekje — the legend Seodong sang into being.',
 		quote: "A princess can still be a rumor.",
-		aliases: ['Princess Sunhwa', 'Princess Seonhwa', 'Sunhwa', 'Seonhwa']
+		arc: 'Daughter of Jinpyung; the Samguk yusa remembers her as the princess Seodong’s song fetched across the river — whether history or theatre, Baekje’s court still acts as if the marriage bought a decade of peace.',
+		events: [
+			{ year: 600, label: 'Legend: Seodong’s song reaches her at the well.' },
+			{ year: 602, label: 'Marries King Mu of Baekje in the chronicle’s telling.' }
+		],
+		family: [{ id: 'jinpyung', role: 'Father' }],
+		aliases: ['Princess Sunhwa', 'Princess Seonhwa', 'Sunhwa', 'Seonhwa', '善花公主']
 	},
 	{
 		id: 'kingsung',
@@ -3469,6 +3490,30 @@ export const PEOPLE: Person[] = [
 		aliases: ['King Geunchogo', 'Geunchogo', 'Gunchogo']
 	},
 	{
+		id: 'dongchun',
+		gender: 'm',
+		name: 'King Dongcheon',
+		korean: '동천왕',
+		hanja: '東川王',
+		kingdom: 'goguryeo',
+		born: 209,
+		died: 248,
+		bornApprox: true,
+		clan: 'clan-go',
+		tagline: 'Took five thousand horse onto ground he never looked at — eighteen thousand lost by dusk.',
+		quote: '…I did not look at the ground.',
+		arc: 'Eleventh king of Goguryeo. When the Wei regent Guanqiu Jian marched in 244, Dongcheon answered with cavalry pride instead of scouts — the Yangmaek plain swallowed his host. Hwando burned; he fled east in borrowed robes while an officer walked out wearing the crown and died in his place.',
+		events: [
+			{ year: 209, label: 'Succeeds his father Sangno as king.' },
+			{ year: 244, label: 'Loses the Yangmaek campaign to Wei; Hwando falls.' },
+			{ year: 248, label: 'Dies; buried at Wanhang.' }
+		],
+		career: [
+			{ title: 'King of Goguryeo', korean: '왕', hanja: '王', org: 'nation-goguryeo', from: 209, to: 248 }
+		],
+		aliases: ['King Dongcheon', 'Dongcheon', 'Dongchun', '동천왕', '東川王']
+	},
+	{
 		id: 'gwanggaeto',
 		gender: 'm',
 		avatar: '/ch_gwanggaeto.png',
@@ -3548,8 +3593,11 @@ export const PEOPLE: Person[] = [
 		korean: '김무림',
 		hanja: '金無林',
 		kingdom: 'silla',
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — one of the six sleeves in the Seungman vote.',
 		quote: 'Raise your hand when the room has stopped pretending.',
+		events: [{ year: 647, label: 'Raises his sleeve for Princess Seungman (Jinduk) against Bidam’s veto.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -3562,8 +3610,11 @@ export const PEOPLE: Person[] = [
 		korean: '김임종',
 		hanja: '金琳宗',
 		kingdom: 'silla',
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — counted among the six when Seungman’s name circled the room.',
 		quote: 'Unanimity is a roof. One hole is rain.',
+		events: [{ year: 647, label: 'Votes with the six for Seungman’s succession.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -3576,8 +3627,11 @@ export const PEOPLE: Person[] = [
 		korean: '김술종',
 		hanja: '金述宗',
 		kingdom: 'silla',
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — his sleeve rose with the others until one hand stayed down.',
 		quote: 'I vote with the weather once it starts.',
+		events: [{ year: 647, label: 'Among the six daedeung who raised for Seungman.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -3590,8 +3644,11 @@ export const PEOPLE: Person[] = [
 		korean: '김염장',
 		hanja: '金染璋',
 		kingdom: 'silla',
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — not to be confused with Radiance’s Yumjong; the minutes never are.',
 		quote: 'Same surname, different banner.',
+		events: [{ year: 647, label: 'Sixth sleeve up for Seungman — not the rebel Yumjong of 647.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -6610,6 +6667,7 @@ const COLOR: Record<string, string> = {
 	wanggun: '#d16a5a',
 	gyeonggeunchogo: '#eec052',
 	gwanggaeto: '#e0442e',
+	dongchun: '#8b4040',
 	jomei: '#f2a0bb',
 	euljae: '#7f9fd0',
 	ladyye: '#d98fa8',
@@ -6908,6 +6966,7 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	// —— Legends (famous earlier kings / heroes — characters only) ——
 	gyeonggeunchogo: ['legends'],
 	gwanggaeto: ['legends'],
+	dongchun: ['legends'],
 	munduk: ['legends'],
 	sadaham: ['legends'],
 	mugwan: ['legends'],
