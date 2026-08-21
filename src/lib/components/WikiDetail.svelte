@@ -110,6 +110,8 @@
 	/** Nation detail hero uses the kingdom flag when present (not portrait art). */
 	let heroArt = $derived(isNation && flag ? flag : art);
 	let isNationFlagHero = $derived(isNation && !!flag);
+	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
+	let isPortraitHero = $derived(!!heroArt && !isPlace && !isNationFlagHero);
 	let kind = $derived(kindOf(entry));
 	let isCity = $derived(kind === 'city');
 	let parentPlace = $derived(kind === 'place' ? parentPlaceOf(entry) : undefined);
@@ -274,7 +276,7 @@
 			</figure>
 		{/if}
 
-		{#if heroArt}
+		{#if heroArt && !isPortraitHero}
 			<figure
 				class="hero-art"
 				class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
@@ -287,65 +289,82 @@
 		{/if}
 
 		<div class="expo">
-			<div class="hero-id" class:text-only={!heroArt && !photo}>
-				{#if !heroArt && !photo}
-					<span class="initial" aria-hidden="true">{hangulInitial(entry)}</span>
-				{/if}
-				{#if isGod}<span class="badge god-badge">God</span>{/if}
-				{#if entry.godTier}
-					{@const tier = godTierLabel(entry.godTier)}
-					<span class="badge tier-badge" data-tier={entry.godTier} title={tier.hint}>{tier.en}</span>
-				{/if}
-				{#if entry.realm}
-					{#if realmPlace && realmPlace.id !== entry.id}
-						<button
-							type="button"
-							class="realm-chip"
-							title="Open {realmPlace.name}"
-							onclick={() => onOpen(realmPlace.id)}
-						>
-							{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span>
-						</button>
-					{:else}
-						<span class="realm-chip" title="Realm / domain">{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
+			{#snippet identity()}
+				<div class="hero-id" class:text-only={!heroArt && !photo}>
+					{#if !heroArt && !photo}
+						<span class="initial" aria-hidden="true">{hangulInitial(entry)}</span>
 					{/if}
-				{/if}
-				<h1 class="name">{who}</h1>
-				<p class="native">
-					{#if entry.hanja}<span class="hanja">{entry.hanja}</span>{/if}
-					{#if ko}
-						<span class="ko" class:modern-gloss={isClan} title={isClan ? 'Modern bon-gwan / surname' : undefined}
-							>{ko}</span
-						>
+					{#if isGod}<span class="badge god-badge">God</span>{/if}
+					{#if entry.godTier}
+						{@const tier = godTierLabel(entry.godTier)}
+						<span class="badge tier-badge" data-tier={entry.godTier} title={tier.hint}>{tier.en}</span>
 					{/if}
-				</p>
-				{#if entry.quote}
-					<figure class="quote">
-						<blockquote>{entry.quote}</blockquote>
-					</figure>
-				{/if}
-				{#if motif}
-					<div class="motif-row">
-						<button
-							type="button"
-							class={['motif-btn', motifPlaying && 'playing']}
-							onclick={toggleMotif}
-							aria-pressed={motifPlaying}
-							title={motif.idea}
-						>
-							<span class="material-symbols-outlined" aria-hidden="true"
-								>{motifPlaying ? 'stop' : 'music_note'}</span
+					{#if entry.realm}
+						{#if realmPlace && realmPlace.id !== entry.id}
+							<button
+								type="button"
+								class="realm-chip"
+								title="Open {realmPlace.name}"
+								onclick={() => onOpen(realmPlace.id)}
 							>
-							{motifPlaying ? 'Playing' : 'Leitmotif'}
-						</button>
-					</div>
-					{#if temps.length}
-						<div class="motif-temps">
-							<TempRefs {temps} />
-						</div>
+								{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span>
+							</button>
+						{:else}
+							<span class="realm-chip" title="Realm / domain">{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
+						{/if}
 					{/if}
-				{/if}
-			</div>
+					<h1 class="name">{who}</h1>
+					<p class="native">
+						{#if entry.hanja}<span class="hanja">{entry.hanja}</span>{/if}
+						{#if ko}
+							<span class="ko" class:modern-gloss={isClan} title={isClan ? 'Modern bon-gwan / surname' : undefined}
+								>{ko}</span
+							>
+						{/if}
+					</p>
+					{#if entry.quote}
+						<figure class="quote">
+							<blockquote>{entry.quote}</blockquote>
+						</figure>
+					{/if}
+					{#if motif}
+						<div class="motif-row">
+							<button
+								type="button"
+								class={['motif-btn', motifPlaying && 'playing']}
+								onclick={toggleMotif}
+								aria-pressed={motifPlaying}
+								title={motif.idea}
+							>
+								<span class="material-symbols-outlined" aria-hidden="true"
+									>{motifPlaying ? 'stop' : 'music_note'}</span
+								>
+								{motifPlaying ? 'Playing' : 'Leitmotif'}
+							</button>
+						</div>
+						{#if temps.length}
+							<div class="motif-temps">
+								<TempRefs {temps} />
+							</div>
+						{/if}
+					{/if}
+				</div>
+			{/snippet}
+
+			{#if isPortraitHero && heroArt}
+				<div class="hero portrait">
+					{@render identity()}
+					<figure
+						class="hero-art"
+						class:stand-in={isPlaceholderArt(art)}
+						aria-hidden="true"
+					>
+						<img src={heroArt} alt="" />
+					</figure>
+				</div>
+			{:else}
+				{@render identity()}
+			{/if}
 
 		{#if hasStageGallery}
 			<section class="stage-gallery" aria-label="Character looks">
@@ -1236,24 +1255,19 @@
 		background: color-mix(in srgb, var(--fg) 3%, transparent);
 	}
 
-	.hero-art {
+	.hero-art.place,
+	.hero-art.nation {
 		margin: 0;
 		padding: 0;
 		width: 100%;
 		line-height: 0;
-		background: color-mix(in srgb, var(--k) 13%, var(--panel-sunken));
+		background: transparent;
 		border-bottom: 1px solid var(--hairline);
 	}
 
-	.hero-art img {
+	.hero-art.place img {
 		display: block;
 		width: 100%;
-		max-height: min(26rem, 50dvh);
-		object-fit: cover;
-		object-position: right top;
-	}
-
-	.hero-art.place img {
 		max-height: none;
 		aspect-ratio: 3 / 2;
 		object-fit: cover;
@@ -1261,17 +1275,63 @@
 	}
 
 	.hero-art.nation img {
+		display: block;
+		width: 100%;
 		max-height: min(14rem, 28dvh);
 		object-fit: contain;
 		object-position: center;
 	}
 
-	.detail.expanded .hero-art img {
-		max-height: min(34rem, 56dvh);
-	}
-
 	.hero-art.stand-in img {
 		opacity: 0.45;
+	}
+
+	.hero.portrait {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		grid-template-areas: 'id art';
+		align-items: end;
+		column-gap: 1.25rem;
+		margin: 0 0 0.15rem;
+	}
+
+	.detail.expanded .hero.portrait {
+		grid-template-columns: minmax(0, 26rem) auto;
+		justify-content: space-between;
+	}
+
+	.hero.portrait .hero-id {
+		grid-area: id;
+		padding: 1.5rem 0 1.25rem;
+		min-width: 0;
+	}
+
+	.hero.portrait .hero-art {
+		grid-area: art;
+		margin: 0;
+		padding: 0;
+		width: 10.5rem;
+		aspect-ratio: 2 / 3;
+		line-height: 0;
+		overflow: hidden;
+		align-self: end;
+		background: transparent;
+	}
+
+	.hero.portrait .hero-art img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center top;
+	}
+
+	.detail.expanded .hero.portrait .hero-art {
+		width: 16rem;
+	}
+
+	.hero.portrait .hero-art.stand-in {
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
 	}
 
 	.hero-id {
@@ -2234,12 +2294,24 @@
 			padding-top: 1.5rem;
 		}
 
-		.hero-art img {
-			max-height: min(22rem, 44dvh);
+		.hero.portrait .hero-id {
+			padding: 1.25rem 0 1rem;
 		}
 
-		.detail.expanded .hero-art img {
-			max-height: min(28rem, 48dvh);
+		.hero.portrait {
+			column-gap: 0.85rem;
+		}
+
+		.hero.portrait .hero-art {
+			width: 8.25rem;
+		}
+
+		.detail.expanded .hero.portrait .hero-art {
+			width: 11rem;
+		}
+
+		.hero-art.nation img {
+			max-height: min(11rem, 28dvh);
 		}
 
 		.props > div {

@@ -185,12 +185,22 @@ export const PLACES: Record<string, Place> = {
 		labelLeft: true,
 		name: 'Jolbon',
 		korean: '졸본 (환인)',
+		hanja: '卒本',
 		x: 215,
 		y: 370,
-		kind: 'city',
+		kind: 'cave',
 		side: 'goguryeo',
 		avatar: '/pl_jumong_cave.png',
-		blurb: 'Where Jumong founded Goguryeo in 37 BCE, after the fish and turtles bridged the river for him.'
+		title: 'Jumong Cavern — where the holy king prayed',
+		blurb:
+			'Every northern vow begins in the cave Jumong hollowed out — 국동대혈, where every Goguryeo heir renews the vow before blood.',
+		arc: 'Before the tortoise-bridge and the founding, Jumong knelt in this hollow and asked heaven for a country that would outlast his brothers’ hatred. The cavern remembers the bow, the egg, the sun-line — and later kings come back not for scenery but for permission. Gesomun renews his vow here in the tenth month of 642, hours before the banquet knives; Yeon’s sons grow up hearing the story as weather you inherit. When Goguryeo falls, the cave does not. Later crowns still argue about who descended from the man who prayed here.',
+		events: [
+			{ year: -37, label: 'Jumong founds Goguryeo at Jolbon after the river gives way.' },
+			{ year: -37, label: 'He prays in the cavern (국동대혈) for a kingdom of his own.' },
+			{ year: 642, label: 'Gesomun renews his vow here before the Pyongyang massacre.' }
+		],
+		aliases: ['Jolbon', 'Jumong Cavern', '국동대혈', 'Jumong Cave', '졸본']
 	},
 	gungnae: {
 		id: 'gungnae',
@@ -233,13 +243,15 @@ export const PLACES: Record<string, Place> = {
 		avatar: '/pl_cave.png',
 		title: 'Yushin’s cavern lake in the hills',
 		blurb:
-			'A bowl of black water under stone — the only room in Silla where no one asks Kim Yushin for a victory.',
-		arc: 'Between campaigns the marshal rides alone into the hills, strips at the rock lip, and bathes in cold steam. Narim, Golhwa and Hyullé are already waiting: mentors, tormentors, beautiful predators who give real counsel and would rather he never leave the water. He is always a guest here — charming, a little out of his depth — pulled back to queen and war the way shore pulls a swimmer. The lake does not require prayer. It requires honesty. The histories keep the fortresses. This place keeps the man.',
+			'김 — steam and surname in the same breath. A bowl of black water under stone — the only room in Silla where no one asks Kim Yushin for a victory, and where the dead Kims sometimes come back.',
+		arc: 'Kim Seohyeon found it first: naked, clean-shaven, and only men surnamed Kim — 김, the same sound as steam. Narim, Golhwa and Hyullé loved him; every later Kim is heirloom. Between campaigns Yushin rides alone, strips at the rock lip, and bathes in cold steam while the three wait — mentors, tormentors, beautiful predators who give real counsel. But the lake is not only goddesses: when the steam thins, Muryuk and Seohyeon stand on the shelf, and once even Dangun walked the water for a king who did not know his name. The lake does not require prayer. It requires honesty. The histories keep the fortresses. This place keeps the men.',
 		events: [
+			{ label: 'Seohyeon finds the lake; the three goddesses love the first Kim.' },
 			{ label: 'Yushin first finds the three in the steam; Narim sends the younger two away and is caught kissing him.' },
 			{ year: 642, label: 'After Daeya he returns for quiet counsel before the road north.' },
-			{ year: 647, label: 'The night before Bidam, he washes his face here for the capital to watch.' },
-			{ year: 673, label: 'Old, between paperwork wars, he still takes the warm ledge Hyullé keeps.' }
+			{ year: 647, label: 'Before Bidam’s tenth day — Seohyeon and Muryuk appear; “You are Kim Yushin.”' },
+			{ year: 673, label: 'Old, between paperwork wars, his father and grandfather visit once more.' },
+			{ year: 673, label: 'After Yushin’s death Munmu enters; Dangun names the wanggeom’s work.' }
 		],
 		aliases: [
 			'Steam Cavern',
@@ -544,7 +556,7 @@ export const PLACES: Record<string, Place> = {
 	deer_rock: {
 		id: 'deer_rock',
 		name: 'Deer Rock',
-		korean: '녹암',
+		korean: '정사암',
 		x: 307,
 		y: 616,
 		kind: 'cave',
@@ -788,6 +800,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Goguryeo Revival Society': 'surabol',
 	'Stone Gate': 'seokmun',
 	'The Lake Remembers': 'steam_cavern',
+	"The Wanggeom's Guest": 'steam_cavern',
 	'The Death of Kim Yushin': 'surabol',
 	'Maeso Fortress': 'maeso',
 	'Strike Harbor': 'gibeolpo',

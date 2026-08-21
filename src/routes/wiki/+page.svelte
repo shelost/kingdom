@@ -609,6 +609,10 @@
 							{@const clanArt = spotlight ? avatarOf(spotlight) : undefined}
 							{@const isPortraitCard =
 								!isShowcase && !hasOrgPreview && !roster.length && !isOrgCard && !isGroupCard}
+							{@const isFaceCard =
+								cardKind === 'character' || cardKind === 'god' || cardKind === 'clan'}
+							{@const koName = koreanOf(p)}
+							{@const hasNative = !!(koName || p.hanja)}
 							<li>
 								<button
 									type="button"
@@ -691,8 +695,13 @@
 											{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
 										</span>
 										<span class="card-sub">
-											{#if koreanOf(p)}<span class="ko">{koreanOf(p)}</span>{/if}
-											{#if koreanOf(p)}<span class="sep">·</span>{/if}
+											{#if hasNative}
+												<span class="native">
+													{#if koName}<span class="ko">{koName}</span>{/if}
+													{#if p.hanja}<span class="hanja">{p.hanja}</span>{/if}
+												</span>
+											{/if}
+											{#if hasNative}<span class="sep">·</span>{/if}
 											{#if parentPlace}
 												<span class="city-chip">{nameOf(parentPlace)}</span>
 												<span class="sep">·</span>
@@ -709,7 +718,7 @@
 										{/if}
 										{#if titleOf(p)}
 											<span class="card-title">{titleOf(p)}</span>
-										{:else}
+										{:else if !isFaceCard}
 											<span class="card-title">{kindLabel(p)}</span>
 										{/if}
 										{#if showAccent}
@@ -719,7 +728,9 @@
 												{/each}
 											</span>
 										{/if}
-										<span class="card-line">{p.tagline}</span>
+										{#if !isFaceCard}
+											<span class="card-line">{p.tagline}</span>
+										{/if}
 									</span>
 								</button>
 							</li>
@@ -1113,17 +1124,19 @@
 	.card.card-character .avatar.avatar-clan {
 		width: 6.25rem;
 		flex-shrink: 0;
-		align-self: stretch;
-		min-height: 9.5rem;
+		align-self: flex-start;
+		aspect-ratio: 2 / 3;
+		height: auto;
+		min-height: 0;
 		border-radius: 0;
-		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
+		background: transparent;
 	}
 
 	.card.card-character .avatar img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: center top;
+		object-position: center bottom;
 	}
 
 	.card.card-character .meta {
@@ -1259,7 +1272,7 @@
 	}
 
 	.avatar.avatar-clan {
-		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
+		background: transparent;
 	}
 
 	/* Group cards — square roster montage of member portraits. */
@@ -1340,6 +1353,17 @@
 
 	.sep {
 		opacity: 0.45;
+	}
+
+	.card-sub .native {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.35rem;
+	}
+
+	.card-sub .hanja {
+		color: var(--fg-faint);
 	}
 
 	.flag {
@@ -1706,7 +1730,7 @@
 		.card.card-character .avatar,
 		.card.card-character .avatar.avatar-clan {
 			width: 5.25rem;
-			min-height: 8.25rem;
+			min-height: 0;
 		}
 
 		.card.card-character .meta {

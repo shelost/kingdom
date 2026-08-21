@@ -709,7 +709,16 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_dragon.png',
 		stages: [
 			{
+				id: 'hwarang',
+				until: 632,
+				name: 'Kim Chunchu',
+				title: 'Prince of Silla',
+				label: 'As Hwarang',
+				avatar: '/ch_chunchu_hwarang.png'
+			},
+			{
 				id: 'prince',
+				from: 632,
 				until: 654,
 				name: 'Kim Chunchu',
 				title: 'Prince of Silla',
@@ -953,7 +962,7 @@ export const PEOPLE: Person[] = [
 			en: 'No.',
 			ko: '없다.'
 		},
-		nature: 'Palace-bred realpolitik: cynical, calculating, and liberal with appetite — a prince who learned early that people are clay shaped by their rooms. He openly mocks gods and spirits as cheap civil servants — stories designed to keep the people obedient — and laughs in Gesomun’s face for still believing Jumong’s sun-god descent. He disdains the common folk for how easily a story moves them, and insists they need both a narrative and a leader. His soft spot is Gyebek — whom he sees as unstained by politics, a victim of environment rather than a player — and he teaches Gyebek and Gesomun the dirty grammar of courts throughout their alliances. Most calculating of the three kings; closest in method to classic realpolitik, and the most openly sensual of the leads. Baekje’s eastward manners sit easy on him — the polished court that taught the islands how to look at a king.',
+		nature: 'Palace-bred realpolitik: cynical, calculating, and liberal with appetite — a prince who learned early that people are clay shaped by their rooms. He openly mocks gods and spirits as cheap civil servants — stories designed to keep the people obedient — and laughs in Gesomun’s face for still believing Jumong’s sun-god descent. He keeps a court shaman on retainer anyway: not for belief, but for theatre — he finds sincere fear performed under lamplight more entertaining than any opera. He disdains the common folk for how easily a story moves them, and insists they need both a narrative and a leader. His soft spot is Gyebek — whom he sees as unstained by politics, a victim of environment rather than a player — and he teaches Gyebek and Gesomun the dirty grammar of courts throughout their alliances. Most calculating of the three kings; closest in method to classic realpolitik, and the most openly sensual of the leads. Baekje’s eastward manners sit easy on him — the polished court that taught the islands how to look at a king.',
 		arc: 'Palace-raised into cynicism, Euija learns early that a kingdom is a story its people agree on — and that gods are props for obedience. He is the most calculating of the age: he teaches Gyebek and Gesomun how courts actually work, laughs when Gesomun cites Jumong’s sun-god blood as fact, keeps a soft spot for Gyebek as the one man unstained by the game, and indulges appetite the way only a prince who never had to wait can. Where Chunchu’s page keeps one heir in focus and Yeon leaves three, Euija breeds fifty-odd sons and five who matter — Yung, Tae, Hyo, Prince Yun, Pung — each already half-claimed by a mother’s clan. He takes Daeya, humiliates Silla, purges the Great Clans, seats forty-odd of his own sons — fifty-plus in the house by the wine years — then the story eats him. Of that swarm the chronicle keeps five: Yung, Tae, Hyo, Prince Yun (Buyeo Yun — not Yeon Gesomun), and Pung. The rest are Assembly furniture. With no rivals left he seals the palace — the clans having already shipped his truth-teller to Tamla while he mourned — starves the other, and dies in Chang’an screaming Chunchu’s name.',
 		blade: 'Ring-pommel tiger sword — gold tiger on the pommel; worn for ceremony more than blood.',
 		events: [
@@ -963,9 +972,9 @@ export const PEOPLE: Person[] = [
 			{ year: 642, label: 'Goes in disguise to Goryeo to bargain with Yeon Gesomun.' },
 			{ year: 655, label: 'Purges the Ministers’ Assembly, seating 41 of his own sons.' },
 			{ year: 656, label: 'Imprisons Sungchung, who starves to death warning him.' },
-			{ year: 659, label: 'The nine omens. He jumps the White River and shouts for Gyebek.' },
+			{ year: 659, label: 'The nine omens — listens to his kept shaman for sport, then kills her when the turtle speaks true.' },
 			{ year: 660, label: 'Sabi falls; he is captured at Bear Fortress and shipped to Tang.' },
-			{ year: 660, label: 'Dies in Chang’an — “…so you’re real after all.” Escort unseen.' }
+			{ year: 660, label: 'Dies in Chang’an cursing Chunchu — names an avenger not yet born (Later Baekje).' }
 		],
 		sobriquets: ['Righteous and Merciful', 'the Righteous and Merciful', 'Thirty-first Eraha'],
 		career: [
@@ -1338,12 +1347,22 @@ export const PEOPLE: Person[] = [
 		stages: [
 			{
 				id: 'prince',
-				until: 661,
+				until: 643,
 				name: 'Bupmin',
 				korean: '법민',
 				title: 'Prince of Silla',
 				label: 'As Bupmin',
 				avatar: '/ch_kim_bupmin.png'
+			},
+			{
+				id: 'hwarang',
+				from: 643,
+				until: 661,
+				name: 'Bupmin',
+				korean: '법민',
+				title: 'Prince of Silla',
+				label: 'As Hwarang',
+				avatar: '/ch_bupmin_hwarang.png'
 			},
 			{
 				id: 'king',
@@ -1362,6 +1381,7 @@ export const PEOPLE: Person[] = [
 			{ year: 644, label: 'Volunteers as junior Pajinchan; meets Jayi at the harbour.' },
 			{ year: 661, label: 'Takes the throne, vowing to unify Samhan.' },
 			{ year: 668, label: 'Pyongyang falls; Goguryeo ends.' },
+			{ year: 673, label: 'After Yushin’s death, enters the steam cavern; Dangun names the wanggeom’s work.' },
 			{ year: 676, label: 'Expels the Tang; becomes King of Samhan.' }
 		],
 		sobriquets: ['King for All', 'Dragon of the East Sea'],
@@ -2338,7 +2358,7 @@ export const PEOPLE: Person[] = [
 		id: 'hyulle',
 		avatar: '/ch_hyullé.png',
 		name: 'Hyullé',
-		korean: '휠레',
+		korean: '혈레',
 		hanja: '穴禮',
 		kingdom: 'silla',
 		entity: 'god',
@@ -2353,7 +2373,7 @@ export const PEOPLE: Person[] = [
 		arc: 'She speaks least. When she does, it is almost apology — market gossip about Yushin’s shoulders included. Of the three she is the shy one, which is why he misses that she watches him longest after the others look away, and why catching Narim with him hurts more than Golhwa’s loud jealousy: steam was supposed to be shared among Kims, not monopolised. The cavern’s cool cyan edge is hers.',
 		binyeo: 'Teal wave binyeo — crested head, azure collar, silver shaft; water-cool, easy to miss in the steam.',
 		binyeoImage: '/bn_hyulle.png',
-		aliases: ['Hyullé', 'Hyulle', 'Hyeolrye', '휠레', '혈례', 'Cavern Goddess']
+		aliases: ['Hyullé', 'Hyulle', 'Hyeolrye', '혈레', '혈례', 'Cavern Goddess']
 	},
 	{
 		id: 'golhwa',
@@ -3412,7 +3432,13 @@ export const PEOPLE: Person[] = [
 		realm: { en: 'Old Joseon', ko: '고조선' },
 		tagline: 'Demigod — Grandson of Heaven; first earthly steward of the mandate.',
 		quote: 'Heaven descends. Someone must stay and govern.',
-		arc: 'Grandson of Heaven: Hwanin’s line through Hwanung and the Bear-Woman — demigod founder kept among the Gods. Where the Son of Heaven descends, Dangun stays — founding Asadal as the first court that speaks for heaven on earth, the way later crowns will claim a mandate they did not invent.',
+		arc: 'Grandson of Heaven: Hwanin opens the sky; Hwanung descends with three seals and three thousand to Sinsi under the sandalwood tree, ministers of wind, rain, and cloud at his side. The Bear-Woman outlasts the tiger; their son Wanggeom — king who governs, not bone rank — founds Asadal and rules Old Joseon until mountain-spirit retirement. Later crowns copy the mandate; once, after Yushin’s death, he walks the steam for Munmu and names the wanggeom’s work the boy wanted at six.',
+		events: [
+			{ label: 'Born of Hwanung and Ungnyeo under the divine birch.' },
+			{ label: 'Founds Asadal; moves the capital to Paegak and Gunghol.' },
+			{ label: 'Rules fifteen hundred years; becomes a mountain spirit.' },
+			{ year: 673, label: 'Appears in the steam cavern to Munmu — names the king-for-all.' }
+		],
 		career: [
 			{ title: 'God-king of Asadal', korean: '왕검', hanja: '王儉', org: 'nation-joseon' }
 		],
@@ -4132,11 +4158,11 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'Heat without the eldest’s patience. Desire: to prove Gesomun’s shadow can be worn by a second son. Wound: believing a messenger over a brother. Voice: loud, loyal, easily aimed.',
 		blade: 'Ring-pommel crow sword — younger brother of the Five Blades’ stamp.',
-		arc: 'Raised by Jungto and Sooyoung while Namseng ate Gesomun’s rules for supper. Takes his brother’s title after the whisper war; makes the last stand at Pyongyang; dies into a kingdom that mistook family logistics for destiny.',
+		arc: 'Raised by Jungto and Sooyoung while Namseng ate Gesomun’s rules for supper. Takes his brother’s title after the whisper war; makes the last stand at Pyongyang; dies cursing Silla’s sacred blood and vowing Goguryeo’s final victory — heat that later men will hear in Gung Ye and Wang Geon.',
 		events: [
 			{ label: 'Raised by Jungto and Sooyoung.' },
 			{ year: 666, label: 'Seizes Namseng’s title after the poisoned messages.' },
-			{ year: 668, label: 'Defends Pyongyang until the gates are opened from within.' }
+			{ year: 668, label: 'Defends Pyongyang; curses Silla’s royal line at the last stand.' }
 		],
 		career: [
 			{ title: 'Supreme Commander', korean: '대막리지', hanja: '大莫離支', org: 'highsummit', from: 666, to: 668 }
@@ -4485,11 +4511,13 @@ export const CONCEPTS: Person[] = [
 		gender: 'f',
 		kingdom: 'baekje',
 		title: 'Reader of the nine signs',
-		tagline: 'Told Euija what the turtle meant — and did not live to hear him deny it.',
+		tagline: 'Euija’s oracle and his favourite theatre — she believed; he did not.',
 		quote: 'A sign ignored is still a sign.',
+		nature: 'Sincere where the king is cynical: she reads turtle shells and piled omens as if the sky were answering. Euija keeps her for entertainment — the best show in Sabi is a believer performing under lamplight while an atheist king watches.',
 		binyeo: 'Bronze phoenix binyeo — rose-gold bird-head, magenta plume, ruby at the throat; nine signs read once, never twice.',
 		binyeoImage: '/bn_shaman.png',
 		events: [
+			{ label: 'On retainer at Sabi — Euija calls it amusement, she calls it duty.' },
 			{ year: 659, label: 'Reads the nine omens and the turtle’s back; Euija cuts her down.' }
 		],
 		aliases: ['shaman', 'the shaman', '무당']
@@ -4949,6 +4977,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'go_tamla',
+		avatar: '/ch_go_eulna.png',
 		name: 'Prince Go',
 		korean: '고을나',
 		hanja: '高乙那',
@@ -4968,6 +4997,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'yang_tamla',
+		avatar: '/ch_yang_eulna.png',
 		name: 'Prince Yang',
 		korean: '양을나',
 		hanja: '良乙那',
@@ -4987,6 +5017,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'bu_tamla',
+		avatar: '/ch_bu_eulna.png',
 		name: 'Prince Bu',
 		korean: '부을나',
 		hanja: '夫乙那',
