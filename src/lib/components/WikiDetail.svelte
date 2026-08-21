@@ -274,21 +274,20 @@
 			</figure>
 		{/if}
 
-		<div
-			class="hero"
-			class:has-art={!!heroArt}
-			class:has-photo={!!photo}
-			class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
-			class:place={isPlace}
-			class:nation={isNationFlagHero}
-			class:stacked={isPlace && !!heroArt}
-		>
-			{#if heroArt}
-				<figure class="hero-art" aria-hidden="true">
-					<img src={heroArt} alt="" />
-				</figure>
-			{/if}
-			<div class="hero-id">
+		{#if heroArt}
+			<figure
+				class="hero-art"
+				class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
+				class:place={isPlace}
+				class:nation={isNationFlagHero}
+				aria-hidden="true"
+			>
+				<img src={heroArt} alt="" />
+			</figure>
+		{/if}
+
+		<div class="expo">
+			<div class="hero-id" class:text-only={!heroArt && !photo}>
 				{#if !heroArt && !photo}
 					<span class="initial" aria-hidden="true">{hangulInitial(entry)}</span>
 				{/if}
@@ -347,9 +346,7 @@
 					{/if}
 				{/if}
 			</div>
-		</div>
 
-		<div class="detail-body">
 		{#if hasStageGallery}
 			<section class="stage-gallery" aria-label="Character looks">
 				<h2 class="stage-heading">Looks</h2>
@@ -1029,7 +1026,7 @@
 				</ul>
 			</section>
 		{/if}
-		</div>
+		</div><!-- expo -->
 	</div>
 </article>
 
@@ -1213,15 +1210,16 @@
 		-webkit-overflow-scrolling: touch;
 	}
 
-	.detail-body {
+	.expo {
 		padding: 0 1.7rem;
 	}
 
 	.photo {
-		margin: 1.5rem 1.7rem 1.2rem;
-		border-radius: 12px;
+		margin: 0;
+		border-radius: 0;
 		overflow: hidden;
-		border: 1px solid var(--hairline);
+		border: none;
+		border-bottom: 1px solid var(--hairline);
 	}
 
 	.photo img {
@@ -1232,156 +1230,57 @@
 	}
 
 	.photo figcaption {
-		padding: 0.45rem 0.7rem;
+		padding: 0.45rem 1.7rem;
 		font-size: 0.62rem;
 		color: var(--fg-faint);
 		background: color-mix(in srgb, var(--fg) 3%, transparent);
 	}
 
-	.hero {
-		position: relative;
-		margin: 0 0 1.5rem;
-	}
-
-	.hero.has-art {
-		display: flex;
-		align-items: flex-end;
-		min-height: 20rem;
-		margin: 0 0 1.5rem;
-		padding: 0;
-		overflow: hidden;
-		background: color-mix(in srgb, var(--k) 13%, var(--panel-sunken));
-		border-bottom: 1px solid var(--hairline);
-	}
-
-	/* Historical nation photo sits above — don't pull the flag hero into it. */
-	.hero.has-art.has-photo {
-		margin-top: 0;
-	}
-
-	.detail.expanded .hero.has-art {
-		min-height: min(28rem, 52dvh);
-	}
-
-	.hero.place.has-art,
-	.hero.nation.has-art {
-		min-height: 15.5rem;
-	}
-
-	.hero.place.stacked.has-art {
-		display: flex;
-		flex-direction: column;
-		align-items: stretch;
-		min-height: 0;
-		overflow: visible;
-		padding: 0;
-		border-bottom: none;
-		background: transparent;
-	}
-
-	.detail.expanded .hero.place.stacked.has-art {
-		min-height: 0;
-	}
-
-	.hero.stand-in .hero-art img {
-		opacity: 0.45;
-	}
-
 	.hero-art {
-		position: absolute;
-		inset: 0 0 0 auto;
-		z-index: 0;
-		width: min(26rem, 74%);
 		margin: 0;
 		padding: 0;
-		pointer-events: none;
-	}
-
-	.detail.expanded .hero-art {
-		width: min(32rem, 68%);
-	}
-
-	.hero.place .hero-art,
-	.hero.nation .hero-art {
-		inset: 0;
 		width: 100%;
-	}
-
-	.hero.place.stacked .hero-art {
-		position: relative;
-		inset: auto;
-		width: 100%;
-		aspect-ratio: 3 / 2;
-		overflow: hidden;
+		line-height: 0;
+		background: color-mix(in srgb, var(--k) 13%, var(--panel-sunken));
 		border-bottom: 1px solid var(--hairline);
 	}
 
 	.hero-art img {
 		display: block;
 		width: 100%;
-		height: 100%;
+		max-height: min(26rem, 50dvh);
 		object-fit: contain;
 		object-position: right bottom;
-		-webkit-mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
-		mask-image: linear-gradient(to right, transparent 0%, #000 18%, #000 100%);
 	}
 
-	.hero.place .hero-art img {
+	.detail.expanded .hero-art img {
+		max-height: min(34rem, 56dvh);
+	}
+
+	.hero-art.place img {
+		max-height: none;
+		aspect-ratio: 3 / 2;
 		object-fit: cover;
 		object-position: center;
-		-webkit-mask-image: none;
-		mask-image: none;
 	}
 
-	.hero.nation .hero-art img {
+	.hero-art.nation img {
+		max-height: min(14rem, 28dvh);
 		object-fit: contain;
 		object-position: center;
-		padding: 1.35rem 1.6rem 3.2rem;
-		box-sizing: border-box;
-		-webkit-mask-image: none;
-		mask-image: none;
 	}
 
-	.hero.has-art::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		pointer-events: none;
-		background: linear-gradient(
-			100deg,
-			var(--panel) 0%,
-			color-mix(in srgb, var(--panel) 88%, transparent) 34%,
-			color-mix(in srgb, var(--panel) 35%, transparent) 52%,
-			transparent 68%
-		);
-	}
-
-	.hero.place.has-art::after {
-		display: none;
-	}
-
-	.hero.place.stacked .hero-id {
-		max-width: none;
-		padding: 1.15rem 1.7rem 0.2rem;
-		text-shadow: none;
-	}
-
-	.hero.nation.has-art::after {
-		background: linear-gradient(
-			to top,
-			var(--panel) 0%,
-			color-mix(in srgb, var(--panel) 92%, transparent) 28%,
-			color-mix(in srgb, var(--panel) 40%, transparent) 55%,
-			transparent 78%
-		);
+	.hero-art.stand-in img {
+		opacity: 0.45;
 	}
 
 	.hero-id {
-		position: relative;
-		z-index: 2;
-		max-width: 22rem;
-		padding: 1.8rem 1.7rem 1.5rem;
+		padding: 1.5rem 0 1.25rem;
+		max-width: none;
+	}
+
+	.hero-id.text-only {
+		padding-top: 2rem;
 	}
 
 	.stage-gallery {
@@ -2319,43 +2218,28 @@
 			padding: 0 0 max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
 		}
 
-		.detail-body {
+		.expo {
 			padding: 0 1.15rem;
 		}
 
-		.photo {
-			margin: 1.25rem 1.15rem 1.2rem;
-		}
-
-		.hero.has-art {
-			min-height: 16rem;
-			margin: 0 0 1.2rem;
-			padding: 0;
+		.photo figcaption {
+			padding: 0.45rem 1.15rem;
 		}
 
 		.hero-id {
-			padding: 1.25rem 1.15rem 1.1rem;
+			padding: 1.25rem 0 1rem;
 		}
 
-		.hero.place.stacked.has-art {
-			padding: 0;
-			min-height: 0;
+		.hero-id.text-only {
+			padding-top: 1.5rem;
 		}
 
-		.hero.place.stacked .hero-id {
-			padding: 1rem 1.15rem 0.15rem;
+		.hero-art img {
+			max-height: min(22rem, 44dvh);
 		}
 
-		.hero.has-art.has-photo {
-			margin-top: 0;
-		}
-
-		.detail.expanded .hero.has-art {
-			min-height: min(22rem, 46dvh);
-		}
-
-		.hero-art {
-			width: 62%;
+		.detail.expanded .hero-art img {
+			max-height: min(28rem, 48dvh);
 		}
 
 		.props > div {
