@@ -26,6 +26,7 @@ export {
 	hasGenuineTempRefs,
 	isSeedCopyTemp,
 	isTempCueImage,
+	scriptArtFramesOf,
 	tempArtOf
 } from '$lib/cueArt';
 

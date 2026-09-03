@@ -8,6 +8,11 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+
+	interface ImportMetaEnv {
+		readonly VERCEL?: string;
+		readonly VITE_STATIC_ASSET_REV?: string;
+	}
 }
 
 export {};

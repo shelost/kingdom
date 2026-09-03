@@ -13,14 +13,14 @@
 import { buildBeats } from '$lib/beats';
 import { displayArtOf } from '$lib/cueArt';
 import { PLACES } from '$lib/places';
-import { episodes } from '$lib/reading.svelte';
-import { chapters, type Chapter, type Entry } from '$lib/story';
+import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
+import { chapters, entryId, type Chapter, type Entry } from '$lib/story';
 import { staticAsset } from '$lib/staticAsset.svelte';
 
 /* ————— where we are in the season ————— */
 
 export interface EpisodeCue {
-	/** entry id — "chapterId-index", the same key the TOC and hashes use */
+	/** entry id — chapterId-slug, the same key the TOC and hashes use */
 	id: string;
 	title: string;
 	subtitle?: string;
@@ -45,7 +45,7 @@ export interface EpisodeContext {
 function cueOf(chapter: Chapter, entryIndex: number): EpisodeCue | null {
 	const entry = chapter.entries[entryIndex];
 	if (!entry) return null;
-	return { id: `${chapter.id}-${entryIndex}`, title: entry.title, subtitle: entry.subtitle };
+	return { id: entryId(chapter.id, entry.title), title: entry.title, subtitle: entry.subtitle };
 }
 
 /** The next episode in reading order — next entry, else the next chapter's first. */
@@ -58,10 +58,10 @@ function nextCue(chapterIndex: number, entryIndex: number): EpisodeCue | null {
 	return following ? cueOf(following, 0) : null;
 }
 
-/** Resolve an entry id ("chapterId-index") to its place in the season run. */
-export function episodeContextOf(entryId: string | null): EpisodeContext | null {
-	if (!entryId) return null;
-	const flat = episodes.findIndex((e) => e.id === entryId);
+/** Resolve an entry id (slug, leftover hash, or chapterId-index) to its place in the season run. */
+export function episodeContextOf(id: string | null): EpisodeContext | null {
+	if (!id) return null;
+	const flat = resolveEpisodeIndex(id);
 	if (flat < 0) return null;
 
 	const ref = episodes[flat];
@@ -108,6 +108,10 @@ export function placeArt(placeId: string | null): string | null {
  * Beat order (not slot order) so the panel cuts land where the prose does.
  * An episode with no art of its own borrows its location art, which is why
  * every entry can be staged without touching the story JSON.
+ *
+ * Cinema still skips duplicate *paths* so the camera does not cut to the same
+ * file twice. Script view does not use this list — it renders every cue via
+ * `scriptArtFramesOf` (final and a distinct temp both shown).
  */
 export function panelsOf(entry: Entry, placeId: string | null): CinemaPanel[] {
 	const seen = new Set<string>();

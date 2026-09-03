@@ -52,6 +52,7 @@
 	import { stinger, whoosh, closeStingers } from '$lib/stingers';
 	import Blocks from './Blocks.svelte';
 	import SpeakerPlate from './SpeakerPlate.svelte';
+	import { storyImg, optimizeSrc } from '$lib/img';
 
 	/** Cinema only takes the screen once the reader is past cover + blurb. */
 	let live = $derived(reading.mode === 'cinema' && scriptUi.inScript);
@@ -496,7 +497,15 @@
 
 	let cardIn = $derived({ duration: reduce ? 0 : 420 });
 	let cardOut = $derived({ duration: reduce ? 0 : 320 });
+	let nextPanel = $derived(panels[panelIndex + 1] ?? null);
+	const CINEMA_SIZES = '(max-width: 820px) 100vw, 70vw';
 </script>
+
+<svelte:head>
+	{#if live && nextPanel}
+		<link rel="preload" as="image" href={optimizeSrc(nextPanel.src, 1200)} />
+	{/if}
+</svelte:head>
 
 {#if live}
 	<!-- Wheel advances the underlying document; script rail keeps its own scroll. -->
@@ -520,8 +529,12 @@
 						class:dip={reaction}
 					>
 						<img
-							src={panel.src}
-							alt={panel.alt ?? ''}
+							{...storyImg(panel.src, {
+								kind: 'cue',
+								priority: true,
+								sizes: CINEMA_SIZES,
+								alt: panel.alt ?? ''
+							})}
 							style:filter
 							in:fade={cardIn}
 							out:fade={cardOut}
@@ -609,7 +622,7 @@
 							out:fade={{ duration: reduce ? 0 : 200 }}
 						>
 							{#if bust}
-								<img src={bust} alt="" />
+								<img {...storyImg(bust, { kind: 'portrait', alt: '', sizes: '176px' })} />
 							{:else}
 								<span class="initial" aria-hidden="true">{hangulInitial(p)}</span>
 							{/if}
@@ -710,7 +723,16 @@
 	{#if coldOpen && episode}
 		<div class="cold" out:fade={cardOut} in:fade={{ duration: reduce ? 0 : 160 }}>
 			{#if cardArt}
-				<img class="cold-art" src={cardArt} alt="" style:filter />
+				<img
+					class="cold-art"
+					{...storyImg(cardArt, {
+						kind: 'cue',
+						priority: true,
+						sizes: '100vw',
+						alt: ''
+					})}
+					style:filter
+				/>
 			{/if}
 			<div class="cold-inner" in:fly={{ y: reduce ? 0 : 16, duration: reduce ? 0 : 520 }}>
 				<span class="cold-season">Season {episode.season} · {episode.chapter.title}</span>

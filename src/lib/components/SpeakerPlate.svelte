@@ -2,7 +2,7 @@
 	import { tick, untrack } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { prefersReducedMotion } from 'svelte/motion';
-	import { reading } from '$lib/reading.svelte';
+	import { reading, leadLang } from '$lib/reading.svelte';
 	import {
 		avatarOf,
 		nameOf,
@@ -19,6 +19,7 @@
 	import { stageText } from '$lib/stageText';
 	import { activeUtterance } from '$lib/speech.svelte';
 	import SpeakButton from './SpeakButton.svelte';
+	import { storyImg } from '$lib/img';
 
 	/**
 	 * `overlay` is the immersion plate — fixed to the foot of the page, bust
@@ -90,9 +91,6 @@
 	/* The live line, as `$lib/stageText` resolves it — one flowing paragraph per
 	   language layer. Shared with the cinema strip so both stages letter the
 	   same utterance the same way. */
-	let showKo = $derived(stageText.showKo);
-	let showEn = $derived(stageText.showEn);
-
 	let textKo = $derived(stageText.ko);
 	let textEn = $derived(stageText.en);
 	let textZh = $derived(stageText.zh);
@@ -100,11 +98,15 @@
 	let textJa = $derived(stageText.ja);
 	let textJaLatn = $derived(stageText.jaLatn);
 
-	let hasKo = $derived(stageText.hasKo);
-	let hasEn = $derived(stageText.hasEn);
 	let hasZh = $derived(stageText.hasZh);
 	let hasJa = $derived(stageText.hasJa);
 	let empty = $derived(stageText.empty);
+
+	/* Which tongues this plate actually letters, and which of them leads —
+	   the reader's own choice, not a fixed Korean-first order. */
+	let koShown = $derived(stageText.showKo && stageText.hasKo);
+	let enShown = $derived(stageText.showEn && stageText.hasEn);
+	let koFirst = $derived(leadLang(reading.lang) === 'ko');
 
 	/** Remount dialogue text when the active utterance (or lang) changes. */
 	let utteranceKey = $derived(stageText.key);
@@ -155,7 +157,7 @@
 		aria-label="Open profile for {who}"
 	>
 		{#if art}
-			<img src={art} alt="" />
+			<img {...storyImg(art, { kind: 'portrait', alt: '', sizes: '220px' })} />
 		{:else}
 			<span class="initial" aria-hidden="true">{hangulInitial(p)}</span>
 		{/if}
@@ -234,24 +236,37 @@
 							{#if empty}
 								<p class="line ellipsis">…</p>
 							{:else}
-								{#if showKo && hasKo}
-									<p class="line ko">{textKo}</p>
-								{/if}
-								{#if showEn && hasEn}
-									<p class="line en" class:quiet={reading.lang === 'both' && hasKo}>
-										{textEn}
-									</p>
+								<!-- The chosen language leads the plate; the others sit
+								     under it, smaller and half-lit. -->
+								{#if koFirst}
+									{#if koShown}
+										<p class="line ko lead">{textKo}</p>
+									{/if}
+									{#if enShown}
+										<p class="line en" class:lead={!koShown} class:sub={koShown}>
+											{textEn}
+										</p>
+									{/if}
+								{:else}
+									{#if enShown}
+										<p class="line en lead">{textEn}</p>
+									{/if}
+									{#if koShown}
+										<p class="line ko" class:lead={!enShown} class:sub={enShown}>
+											{textKo}
+										</p>
+									{/if}
 								{/if}
 								{#if hasZh}
-									<p class="line zh">{textZh}</p>
+									<p class="line zh sub">{textZh}</p>
 									{#if textZhLatn}
-										<p class="line zh-latn">{textZhLatn}</p>
+										<p class="line zh-latn sub">{textZhLatn}</p>
 									{/if}
 								{/if}
 								{#if hasJa}
-									<p class="line ja">{textJa}</p>
+									<p class="line ja sub">{textJa}</p>
 									{#if textJaLatn}
-										<p class="line ja-latn">{textJaLatn}</p>
+										<p class="line ja-latn sub">{textJaLatn}</p>
 									{/if}
 								{/if}
 							{/if}
@@ -551,17 +566,21 @@
 		font-family: 'Noto Serif KR', var(--serif);
 	}
 
-	.line.en.quiet {
-		font-size: 0.92rem;
+	/* The reader's language is the line; every other tongue is a gloss. */
+	.line.lead {
+		opacity: 1;
+	}
+
+	.line.sub {
+		font-size: 0.9rem;
 		font-weight: 400;
+		opacity: 0.74;
 		color: var(--plate-fg-quiet);
 	}
 
 	.line.zh,
 	.line.ja {
 		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 0.95rem;
-		font-weight: 500;
 		letter-spacing: 0.05em;
 		color: color-mix(in srgb, var(--k) 42%, var(--plate-fg));
 	}
@@ -569,7 +588,6 @@
 	.line.zh-latn,
 	.line.ja-latn {
 		font-size: 0.78rem;
-		font-weight: 400;
 		font-style: italic;
 		letter-spacing: 0.02em;
 		color: var(--plate-fg-faint);
@@ -729,14 +747,9 @@
 			word-break: keep-all;
 		}
 
-		.line.en.quiet {
-			font-size: 0.9rem;
-			color: var(--plate-fg-quiet);
-		}
-
-		.line.zh,
-		.line.ja {
+		.line.sub {
 			font-size: 0.88rem;
+			color: var(--plate-fg-quiet);
 		}
 
 		.line.zh-latn,

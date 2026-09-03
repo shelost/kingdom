@@ -4,15 +4,12 @@
 		setLang,
 		setMode,
 		setViewScope,
-		setImageLayout,
 		loadLang,
 		loadMode,
 		loadViewScope,
-		loadImageLayout,
 		type Lang,
 		type ReadMode,
-		type ViewScope,
-		type ImageLayout
+		type ViewScope
 	} from '$lib/reading.svelte';
 	import { music, TRACKS, initMusic, playTrack, toggleMute } from '$lib/music.svelte';
 	import { speech, initSpeech, syncSpeech, toggleAutoSpeech } from '$lib/speech.svelte';
@@ -55,21 +52,6 @@
 		}
 	];
 
-	const IMAGE_LAYOUTS: { id: ImageLayout; label: string; short: string; hint: string }[] = [
-		{
-			id: 'side',
-			label: 'Side',
-			short: 'Side',
-			hint: 'Sticky images column beside the text'
-		},
-		{
-			id: 'inline',
-			label: 'Inline',
-			short: 'In',
-			hint: 'Images appear in the reading flow by beat'
-		}
-	];
-
 	/** User intent; visual open also requires the HUD to be on stage. */
 	let settingsWanted = $state(false);
 	let settingsRoot: HTMLDivElement | undefined;
@@ -79,7 +61,6 @@
 		loadLang();
 		loadMode();
 		loadViewScope();
-		loadImageLayout();
 		const endMusic = initMusic();
 		const endSpeech = initSpeech();
 		return () => {
@@ -171,7 +152,7 @@
 		<span class="track">{speech.auto ? 'Voice on' : 'Voice off'}</span>
 	</button>
 
-	<!-- ————— settings (mode / scope / images / lang / site nav) ————— -->
+	<!-- ————— settings (mode / scope / lang / site nav) ————— -->
 	<div
 		class="settings"
 		class:open={settingsOpen}
@@ -230,23 +211,8 @@
 					{/each}
 				</div>
 
-				<!-- ————— image layout ————— -->
-				<div class="images pill-stagger" style:--i="2" role="group" aria-label="Images">
-					{#each IMAGE_LAYOUTS as layout (layout.id)}
-						<button
-							class:active={reading.imageLayout === layout.id}
-							title={layout.hint}
-							aria-pressed={reading.imageLayout === layout.id}
-							onclick={() => setImageLayout(layout.id)}
-						>
-							<span class="wide">{layout.label}</span>
-							<span class="narrow">{layout.short}</span>
-						</button>
-					{/each}
-				</div>
-
 				<!-- ————— language ————— -->
-				<div class="lang pill-stagger" style:--i="3" role="group" aria-label="Language">
+				<div class="lang pill-stagger" style:--i="2" role="group" aria-label="Language">
 					{#each LANGS as l (l.id)}
 						<button
 							class:active={reading.lang === l.id}
@@ -259,7 +225,7 @@
 					{/each}
 				</div>
 
-				<div class="nav-wrap pill-stagger" style:--i="4">
+				<div class="nav-wrap pill-stagger" style:--i="3">
 					<SiteNav />
 				</div>
 			</div>
@@ -495,10 +461,9 @@
 		transition-delay: calc(50ms + var(--i, 0) * 45ms);
 	}
 
-	/* ————— mode / scope / images / language toggles ————— */
+	/* ————— mode / scope / language toggles ————— */
 	.mode,
 	.scope,
-	.images,
 	.lang {
 		display: flex;
 		gap: 1px;
@@ -512,7 +477,6 @@
 
 	.mode button,
 	.scope button,
-	.images button,
 	.lang button {
 		font: inherit;
 		font-size: 0.7rem;
@@ -530,14 +494,12 @@
 
 	.mode button:hover,
 	.scope button:hover,
-	.images button:hover,
 	.lang button:hover {
 		color: var(--fg);
 	}
 
 	.mode button.active,
 	.scope button.active,
-	.images button.active,
 	.lang button.active {
 		color: var(--on-gold);
 		background: var(--gold);
@@ -560,8 +522,7 @@
 
 	@media (max-width: 1100px) {
 		.mode button,
-		.scope button,
-		.images button {
+		.scope button {
 			padding: 0.22rem 0.45rem;
 			font-size: 0.65rem;
 		}
@@ -628,7 +589,6 @@
 
 		.mode button,
 		.scope button,
-		.images button,
 		.lang button {
 			min-height: 2.75rem;
 			min-width: 2.5rem;
@@ -664,7 +624,6 @@
 
 		.mode button,
 		.scope button,
-		.images button,
 		.lang button {
 			min-width: 2.2rem;
 			padding: 0.3rem 0.4rem;

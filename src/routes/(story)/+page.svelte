@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
 	import { resolve } from '$app/paths';
-	import { chapters } from '$lib/story';
+	import { chapters, isFlashEntry, entryId, partId } from '$lib/story';
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
 	import PlaceBanner from '$lib/components/PlaceBanner.svelte';
@@ -12,13 +12,15 @@
 	import {
 		reading,
 		episodes,
+		isInlineArt,
+		canonicalHashId,
 		loadMode,
 		loadViewScope,
-		loadImageLayout,
 		stepEpisode,
 		watchReading
 	} from '$lib/reading.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
+	import { tocUi } from '$lib/tocUi.svelte';
 	import { flagOf, flagSrc } from '$lib/flags';
 	import { onMount } from 'svelte';
 	import type { Chapter, Entry, StackImage } from '$lib/story';
@@ -27,20 +29,28 @@
 	let episodesMode = $derived(reading.viewScope === 'episodes');
 	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
 	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
-	let sideImages = $derived(reading.imageLayout === 'side');
-	let inlineImages = $derived(reading.imageLayout === 'inline');
+	/* The mode is the layout: the script reads as a manuscript with its figures
+	   in the flow and no location cards at all; immersion and cinema keep the
+	   sticky stage column beside the text. */
+	let inlineImages = $derived(isInlineArt(reading.mode));
+	let sideImages = $derived(!inlineImages);
 
 	onMount(() => {
-		/* Sync saved mode / view / images onto state before the watcher. */
+		/* Sync saved mode / view onto state before the watcher. */
 		loadMode();
 		loadViewScope();
-		loadImageLayout();
 		const stopReading = watchReading();
 
 		/** Chrome waits until cover + blurb are behind the reader. */
 		const scriptEl = document.getElementById('script');
 		const syncInScript = () => {
 			if (!scriptEl) {
+				scriptUi.inScript = true;
+				return;
+			}
+			/* A TOC jump remounts episodes and can briefly look like cover until
+			   the measured-Y scroll lands — keep chrome up so the panel does not retract. */
+			if (tocUi.jumping) {
 				scriptUi.inScript = true;
 				return;
 			}
@@ -52,13 +62,13 @@
 		   may still be at the top until Toc's hash jump runs on the next frame). */
 		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
 		if (hash && scriptEl) {
-			const target = document.getElementById(hash);
+			const target = document.getElementById(canonicalHashId(hash));
 			if (target && scriptEl.contains(target)) scriptUi.inScript = true;
 			else if (episodesMode) scriptUi.inScript = true;
 		} else {
 			syncInScript();
 		}
-		/* Reconcile after hash scrollIntoView (Toc schedules it on rAF). */
+		/* Reconcile after hash / TOC Y-scroll (Toc schedules it on rAF). */
 		requestAnimationFrame(syncInScript);
 
 		window.addEventListener('scroll', syncInScript, { passive: true });
@@ -180,7 +190,7 @@
 		{#each chapters as chapter, ci (chapter.id)}
 			{#if showChapter(chapter.id)}
 				{#if chapter.part && showChapterChrome(chapter.id)}
-					<section class="part-page" use:reveal>
+					<section class="part-page" id={partId(chapter.id)} use:reveal>
 						<span class="part-eyebrow">{chapter.part}</span>
 						{#if chapter.partTitle}<h2 class="part-title">{chapter.partTitle}</h2>{/if}
 						{#if chapter.partKorean}<p class="part-ko">{chapter.partKorean}</p>{/if}
@@ -209,12 +219,13 @@
 							{@const years = yearsByChapter.get(chapter.id) ?? []}
 							{@const beats = buildBeats(entry)}
 							{@const images = stackImages(entry)}
+							{@const eid = entryId(chapter.id, entry.title)}
 							<article
 								class="entry"
-								class:flash={entry.flash}
-								id="{chapter.id}-{i}"
+								class:flash={isFlashEntry(entry)}
+								id={eid}
 								data-year={years[i]}
-								data-flash={entry.flash ? '1' : undefined}
+								data-flash={isFlashEntry(entry) ? '1' : undefined}
 								data-music={entry.music ?? undefined}
 								data-place={ENTRY_PLACE[entry.title] ?? undefined}
 								style:--tone={entry.flashTone ?? '#8a8a94'}
@@ -263,9 +274,20 @@
 										</div>
 									</header>
 
-									<!-- Side: sticky reel swaps from scrollY. Inline: art after each beat. -->
+									<!-- Side: sticky reel swaps from scrollY. Inline: art immediately before the beat it illustrates. -->
 									<div class="beats">
 									{#each beats as beat, bi (bi)}
+										{#if inlineImages && beat.images.length}
+											<!-- No reveal here: inline figures are part of the
+											     manuscript, so they are simply present. -->
+											<div class="inline-art">
+												<ImageStack
+													images={beat.images}
+													inline
+													priority={episodesMode ? bi === 0 : ci === 0 && i === 0 && bi === 0}
+												/>
+											</div>
+										{/if}
 										<div
 											class="text"
 											class:first={bi === 0}
@@ -274,33 +296,39 @@
 											style:--art-n={Math.max(1, beat.images.length)}
 											use:reveal={80}
 										>
-											<Blocks blocks={beat.blocks} year={years[i]} />
+											<Blocks
+												blocks={beat.blocks}
+												year={years[i]}
+												idPrefix={eid}
+												sceneFrom={entry.blocks}
+											/>
 										</div>
-										{#if inlineImages && beat.images.length}
-											<div class="inline-art" use:reveal={100}>
-												<ImageStack images={beat.images} inline />
-											</div>
-										{/if}
 									{/each}
 								</div>
 								</div>
 
-								{#if (sideImages && images.length) || ENTRY_PLACE[entry.title]}
-									<aside class="images-col" class:place-only={inlineImages}>
+								<!-- The stage column belongs to the stage modes. The script
+								     has no place banner and no map tile — only its own
+								     figures, which ride inline with the prose. -->
+								{#if sideImages && (images.length || ENTRY_PLACE[entry.title])}
+									<aside class="images-col">
 										<div class="images-sticky" class:has-banner={!!ENTRY_PLACE[entry.title]}>
 											{#if ENTRY_PLACE[entry.title]}
 												<div class="bento">
 													<div class="bento-place">
-														<PlaceBanner placeId={ENTRY_PLACE[entry.title]} />
+														<PlaceBanner
+															placeId={ENTRY_PLACE[entry.title]}
+															priority={episodesMode || (ci === 0 && i === 0)}
+														/>
 													</div>
 													<div class="bento-map">
 														<PlaceMapTile placeId={ENTRY_PLACE[entry.title]} />
 													</div>
 												</div>
 											{/if}
-											{#if sideImages && images.length}
+											{#if images.length}
 												<div class="reel">
-													<ImageStack {images} />
+													<ImageStack {images} priority={episodesMode || (ci === 0 && i === 0)} />
 												</div>
 											{/if}
 										</div>
@@ -477,6 +505,7 @@
 		flex-direction: column;
 		justify-content: center;
 		padding: 6rem 6rem 4.5rem 12%;
+		scroll-margin-top: 1.5rem;
 	}
 
 	.part-eyebrow {
@@ -521,6 +550,7 @@
 	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .entry-head) ————— */
 	.chapter-head {
 		padding: 1.35rem 3rem 1.1rem;
+		scroll-margin-top: 1.5rem;
 	}
 
 	.chapter-title {
@@ -589,21 +619,9 @@
 		gap: 0 2.75rem;
 	}
 
-	/* Inline: drop the art column unless a place banner still needs the stage. */
-	.script.images-inline .entry:not(:has(.images-col)) {
+	/* Script: no side column at all — the prose takes the full measure. */
+	.script.images-inline .entry {
 		grid-template-columns: minmax(0, 1fr);
-	}
-
-	:global(html.is-immersion) .script.images-inline .entry:not(:has(.images-col)) {
-		grid-template-columns: 15rem minmax(0, 1fr);
-	}
-
-	.script.images-inline .entry:has(.images-col.place-only) {
-		grid-template-columns: minmax(0, 1fr) minmax(220px, 26%);
-	}
-
-	:global(html.is-immersion) .script.images-inline .entry:has(.images-col.place-only) {
-		grid-template-columns: 15rem minmax(0, 1fr) minmax(240px, 28%);
 	}
 
 	/* ————— Cinema: one column over the panel —————
@@ -658,6 +676,7 @@
 
 	.entry-head {
 		min-width: 0;
+		scroll-margin-top: 1.5rem;
 	}
 
 	/* Immersion: the head takes the lead margin column with a full-height
@@ -766,19 +785,6 @@
 	.images-sticky .reel :global(.stack) {
 		width: 100%;
 		height: auto;
-	}
-
-	/* Inline + place banner only: no reel runway — keep the bento compact. */
-	.images-col.place-only .images-sticky {
-		height: auto;
-		justify-content: flex-start;
-		padding-top: 2.1rem;
-	}
-
-	:global(html.is-immersion) .images-col.place-only .images-sticky,
-	:global(html.is-immersion) .images-col.place-only .images-sticky.has-banner {
-		height: auto;
-		--stage-w: min(100%, 22rem);
 	}
 
 	/* Immersion: size stage so bento + landscape 3:2 phone fit above the plate. */
@@ -944,13 +950,6 @@
 		color: var(--fg-strong);
 	}
 
-	.episode-ko {
-		margin: 0.28rem 0 0;
-		font-weight: 400;
-		font-size: 0.8rem;
-		color: var(--fg-dim);
-	}
-
 	.badges {
 		display: flex;
 		gap: 0.35rem;
@@ -1009,11 +1008,11 @@
 	.inline-art {
 		width: 100%;
 		max-width: min(100%, 54rem);
-		margin: 1.35rem 0 0.35rem;
-	}
-
-	.script.images-inline .inline-art :global(.stack.immersion) {
-		max-width: min(100%, 36rem);
+		min-width: 0;
+		margin: 0.85rem 0 0.55rem;
+		position: relative;
+		z-index: 0;
+		overflow-x: clip;
 	}
 
 	/*
@@ -1197,8 +1196,9 @@
 			padding-bottom: 1.25rem;
 		}
 
-		/* Side: art leads the card, then title, then text — not sticky on narrow.
-		   Inline: art lives inside .beats, so a place-only column still leads. */
+		/* Stage modes: art leads the card, then title, then text — not sticky on
+		   narrow. The script has no column here at all; its figures ride inside
+		   .beats, so only the inline gutters need widening. */
 		.images-col {
 			order: 1;
 			margin: 0;
@@ -1237,6 +1237,7 @@
 			order: 2;
 			padding: 1.15rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
 				max(1.15rem, env(safe-area-inset-left, 0px));
+			scroll-margin-top: max(4.5rem, calc(env(safe-area-inset-top, 0px) + 3.6rem));
 		}
 
 		.content-col {

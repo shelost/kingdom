@@ -21,7 +21,7 @@
 		onclick={() => openStoryMap()}
 		aria-label="Open map at {place.name}"
 	>
-		<img class="map" src="/map.svg" alt="" />
+		<img class="map" src="/map.svg" alt="" loading="lazy" decoding="async" />
 		{#each MAP_MARKERS as p (p.id)}
 			{@const pin = pct(p)}
 			<span

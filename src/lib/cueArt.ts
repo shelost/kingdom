@@ -1,10 +1,12 @@
 /**
  * Resolve display vs final art for a cue image slot.
  *
- * Reading (chronicle): prefer locked-in final `src`, else temp stand-in.
+ * Reading (immersion / cinema): prefer locked-in final `src`, else temp stand-in.
+ * Script (inline): final when present, plus a distinct temp stand-in beside it.
  * Gallery (/images): prefer temp for hover stacks, else final.
  *
  *   readingArt = src | tempImage | /temp/{id}
+ *   scriptArt  = [src?, temp?] when distinct
  *   galleryArt = tempImage | /temp/{id} | src
  *   finalArt   = src when present
  */
@@ -25,7 +27,8 @@ function normalizeArtPath(p: string): string {
 export function tempArtOf(slot: ImageSlot): string | undefined {
 	const temp = slot.tempImage?.trim();
 	if (temp) return normalizeArtPath(temp);
-	return tempArtPath(slot.id);
+	const byId = tempArtPath(slot.id);
+	return byId ? normalizeArtPath(byId) : undefined;
 }
 
 /** Locked-in final artwork from `src`, when present. */
@@ -36,6 +39,34 @@ export function finalArtOf(slot: ImageSlot): string | undefined {
 }
 
 export type ArtDisplayPrefer = 'reading' | 'gallery';
+
+export type ScriptArtLayer = 'final' | 'temp';
+
+export interface ScriptArtFrame {
+	src: string;
+	layer: ScriptArtLayer;
+}
+
+function artKey(p: string): string {
+	const q = p.indexOf('?');
+	return (q === -1 ? p : p.slice(0, q)).toLowerCase();
+}
+
+/**
+ * Script-view plates for one cue: final when present, temp stand-in when
+ * present. If both exist and are distinct paths, both are shown so the
+ * manuscript keeps the reference visible (immersion still uses `displayArtOf`).
+ */
+export function scriptArtFramesOf(slot: ImageSlot): ScriptArtFrame[] {
+	const final = finalArtOf(slot);
+	const temp = tempArtOf(slot);
+	const frames: ScriptArtFrame[] = [];
+	if (final) frames.push({ src: final, layer: 'final' });
+	if (temp && (!final || artKey(temp) !== artKey(final))) {
+		frames.push({ src: temp, layer: 'temp' });
+	}
+	return frames;
+}
 
 /**
  * Preferred display art.

@@ -63,14 +63,16 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 		{
 			diagram: 'four-dragons',
 			title: 'Four Dragons · 사룡',
-			caption: 'Taizong’s dragon generals — White, Red, Blue, and Black Dragons for the Liao roads.',
-			ko: '태종의 사룡 — 백·적·청·흑룡, 요동길의 네 깃발.'
+			caption:
+				'Taizong’s dragons: White Xue Rengui, Red Li Jing, Blue Li Shiji (also a Beast), Black Yuchi Gong.',
+			ko: '태종의 사룡 — 백룡 설인귀, 적룡 이정, 청룡 이세적(사신 겸임), 흑룡 울지공.'
 		},
 		{
 			diagram: 'four-beasts',
 			title: 'Four Beasts · 사신',
-			caption: 'Gaozong’s beast roster — only the Blue Dragon served under both emperors.',
-			ko: '고종의 사신 — 청룡만이 두 황제 모두의 장수였다.'
+			caption:
+				'Gaozong’s beasts: White Tiger Pang Xiaotai (fallen 662; Xue Rengui succeeds), Red Fowl Su Dingfang, Blue Dragon Li Shiji (also a Dragon), Black Tortoise Liu Rengui.',
+			ko: '고종의 사신 — 백호 방효태(662 전사, 설인귀 승계), 주작 소정방, 청룡 이세적(사룡 겸임), 현무 유인궤.'
 		}
 	],
 	'nation-joseon': [
@@ -273,6 +275,24 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			ko: '대가가 막리지 아래 모인다. 임금이 최종 투표를 쥔다.'
 		}
 	],
+	fivecommanders: [
+		{
+			diagram: 'high-summit',
+			step: 'council',
+			title: 'The Five Commanders · 고려오대가',
+			caption: 'East, West, South, North — and the High Commander whose office blade sits above them.',
+			ko: '동·서·남·북 대가와, 그 위의 막리지.'
+		}
+	],
+	crowblades: [
+		{
+			diagram: 'high-summit',
+			step: 'council',
+			title: 'The Crow Blades · 오도',
+			caption: 'Four cardinal crow blades and the High Commander Blade — a set of named swords, not one weapon.',
+			ko: '사방 오도와 막리지검 — 한 자루가 아니라 세트다.'
+		}
+	],
 	hwarang: [
 		{
 			diagram: 'hwarang',
@@ -312,16 +332,18 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 		{
 			diagram: 'four-dragons',
 			title: 'Four Dragons · 사룡',
-			caption: 'Second Emperor Taizong’s dragon generals — the Blue Dragon alone survives into the beast roster.',
-			ko: '서토 황제의 사룡 — 청룡만이 사신으로도 남는다.'
+			caption:
+				'White Xue Rengui, Red Li Jing, Blue Li Shiji (also a Beast), Black Yuchi Gong — four men, four colours.',
+			ko: '백룡 설인귀, 적룡 이정, 청룡 이세적(사신 겸임), 흑룡 울지공.'
 		}
 	],
 	fourbeasts: [
 		{
 			diagram: 'four-beasts',
 			title: 'Four Beasts · 사신',
-			caption: 'Third Emperor Gaozong’s beast generals — Li Shiji’s Blue Dragon served both dragon and beast musters.',
-			ko: '제3황제의 사신 — 이세적 청룡은 사룡과 사신 모두에 섰다.'
+			caption:
+				'White Tiger Pang Xiaotai fallen at Snake River; Xue Rengui takes the seat. Red Fowl Su Dingfang. Blue Dragon Li Shiji on both rosters. Black Tortoise Liu Rengui.',
+			ko: '백호 방효태는 사수에서 죽고 설인귀가 잇는다. 주작 소정방. 청룡 이세적은 양쪽. 현무 유인궤.'
 		}
 	],
 	tangexpedition: [

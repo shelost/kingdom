@@ -8,7 +8,7 @@
  */
 
 import { browser } from '$app/environment';
-import { chapters } from '$lib/story';
+import { chapters, chapterIdFromPartId, entryId } from '$lib/story';
 import { scriptUi } from '$lib/scriptUi.svelte';
 import { tocUi } from '$lib/tocUi.svelte';
 
@@ -24,9 +24,6 @@ export type ReadMode = 'script' | 'immersion' | 'cinema';
 /** full = continuous story; episodes = one entry at a time */
 export type ViewScope = 'full' | 'episodes';
 
-/** side = sticky images column; inline = images in the reading flow by beat */
-export type ImageLayout = 'side' | 'inline';
-
 export type EpisodeRef = {
 	chapterId: string;
 	chapterIndex: number;
@@ -34,13 +31,29 @@ export type EpisodeRef = {
 	id: string;
 };
 
-/** Flat episode list — chapterId-entryIndex ids match TOC / URL hashes. */
+/**
+ * Out-of-range leftover `chapterId-index` hashes from before episode merges.
+ * In-range numeric hashes (`iron-will-0` …) still mean the current entry at
+ * that index; TOC rows use title slugs so they always name the right episode.
+ */
+const EPISODE_HASH_ALIASES: Record<string, string> = {
+	'iron-will-5': 'iron-will-yeons-massacre',
+	'iron-will-6': 'iron-will-yeons-massacre',
+	'iron-will-7': 'iron-will-chunchu-gesomun',
+	'iron-will-8': 'iron-will-euija-gesomun',
+	'iron-will-9': 'iron-will-kim-yushin',
+	'chunchu-era-11': 'chunchu-era-hyukgose',
+	'final-stand-7': 'final-stand-the-final-stand',
+	'silla-tang-war-8': 'silla-tang-war-the-king-for-all'
+};
+
+/** Flat episode list — slug ids match TOC / URL hashes (`chapterId-title-slug`). */
 export const episodes: EpisodeRef[] = chapters.flatMap((ch, chapterIndex) =>
-	ch.entries.map((_, entryIndex) => ({
+	ch.entries.map((entry, entryIndex) => ({
 		chapterId: ch.id,
 		chapterIndex,
 		entryIndex,
-		id: `${ch.id}-${entryIndex}`
+		id: entryId(ch.id, entry.title)
 	}))
 );
 
@@ -53,8 +66,10 @@ export const reading = $state({
 	place: null as string | null,
 	/** story year of the entry in the reading band — drives life-stage faces */
 	year: null as number | null,
-	/** id of the entry in the reading band ("chapterId-index") — drives episode packaging */
+	/** id of the entry in the reading band ("chapterId-slug") — drives episode packaging */
 	entryId: null as string | null,
+	/** DOM id of the scene header in the reading band, when the entry has scenes */
+	sceneId: null as string | null,
 	/** 0…1 — how far the reading band has travelled through that entry */
 	entryProgress: 0,
 	/** person id of the dialogue currently in the reading band (immersion) */
@@ -75,8 +90,6 @@ export const reading = $state({
 	mode: 'immersion' as ReadMode,
 	/** Continuous scroll by default; loadViewScope() restores episodes if saved. */
 	viewScope: 'full' as ViewScope,
-	/** Sticky side column by default; loadImageLayout() restores inline if saved. */
-	imageLayout: 'side' as ImageLayout,
 	/** Flat index into `episodes` when viewScope === 'episodes'. */
 	episodeIndex: 0
 });
@@ -109,14 +122,6 @@ function persistViewScope(s: ViewScope) {
 	}
 }
 
-function persistImageLayout(l: ImageLayout) {
-	try {
-		localStorage.setItem('kingdom:images', l);
-	} catch {
-		/* private mode */
-	}
-}
-
 /**
  * Mirror the mode onto <html>.
  *
@@ -144,6 +149,24 @@ export function isStageMode(m: ReadMode = reading.mode) {
 	return m !== 'script';
 }
 
+/**
+ * Where the art goes, decided by the mode rather than by a setting: the script
+ * is a manuscript, so pictures sit in the flow of it; every stage mode keeps
+ * its sticky column beside the text.
+ */
+export function isInlineArt(m: ReadMode = reading.mode) {
+	return m === 'script';
+}
+
+/**
+ * Which language leads a multilingual line. The reader's own toggle decides
+ * it; 'both' leads with Korean because that is the language the dialogue is
+ * written in. Every other layer follows underneath it, quieter.
+ */
+export function leadLang(l: Lang = reading.lang): 'ko' | 'en' {
+	return l === 'en' ? 'en' : 'ko';
+}
+
 export function setLang(l: Lang) {
 	reading.lang = l;
 	try {
@@ -159,12 +182,19 @@ export function setLang(l: Lang) {
 }
 
 export function setMode(m: ReadMode) {
+	const prev = reading.mode;
 	reading.mode = m;
 	releaseDialogue();
 	persistMode(m);
 	applyModeClasses(m);
+	/* Script view starts with the TOC open. Shared `tocUi.open` means cinema /
+	   immersion keep whatever the reader last chose; entering script still opens. */
+	if (m === 'script' && prev !== 'script') tocUi.open = true;
 	// refresh speaker / speaking highlight for the new mode
 	window.dispatchEvent(new Event('scroll'));
+	/* The mode also decides where the art goes — sticky runway or inline
+	   figures — so the column's height only settles a frame later. */
+	requestAnimationFrame(() => window.dispatchEvent(new Event('scroll')));
 }
 
 export function loadLang() {
@@ -198,22 +228,6 @@ export function loadViewScope() {
 		/* ignore */
 	}
 	if (reading.viewScope === 'episodes') syncEpisodeFromHash({ scroll: false });
-}
-
-export function setImageLayout(l: ImageLayout) {
-	reading.imageLayout = l;
-	persistImageLayout(l);
-	/* Sticky runway / inline figures change layout height — re-measure the band. */
-	requestAnimationFrame(() => window.dispatchEvent(new Event('scroll')));
-}
-
-export function loadImageLayout() {
-	try {
-		const v = localStorage.getItem('kingdom:images');
-		if (v === 'side' || v === 'inline') reading.imageLayout = v;
-	} catch {
-		/* ignore */
-	}
 }
 
 /**
@@ -267,10 +281,8 @@ export function setViewScope(s: ViewScope) {
 			return;
 		}
 		/* Only jump when already past cover/blurb — don't yank readers off the title. */
-		const el = document.getElementById(ep.id);
-		if (el && scriptUi.inScript) {
-			el.scrollIntoView({ behavior: 'auto', block: 'start' });
-		}
+		const el = findStoryHeading(ep.id);
+		if (el && scriptUi.inScript) scrollToStoryHeading(el, 'auto');
 		window.dispatchEvent(new Event('scroll'));
 	};
 
@@ -278,12 +290,258 @@ export function setViewScope(s: ViewScope) {
 	requestAnimationFrame(() => requestAnimationFrame(after));
 }
 
-/** Resolve a chapter or entry id to a flat episode index, or -1. */
+/** Resolve a chapter, slug, leftover, or `chapterId-index` hash to a flat episode index, or -1. */
 export function resolveEpisodeIndex(id: string): number {
+	return resolveStoryTarget(id)?.episodeIndex ?? -1;
+}
+
+/** Hash destination: which episode to show, and which DOM id to scroll to. */
+export type StoryTarget = { episodeIndex: number; hashId: string };
+
+/**
+ * Resolve a chapter, episode, leftover, or `#chapter-episode-scene` hash.
+ * Scene ids are `episodeId-scene-slug` (longest matching episode prefix).
+ */
+export function resolveStoryTarget(id: string): StoryTarget | null {
+	if (!id) return null;
+
 	const exact = episodes.findIndex((e) => e.id === id);
-	if (exact >= 0) return exact;
-	const first = episodes.findIndex((e) => e.chapterId === id);
-	return first;
+	if (exact >= 0) return { episodeIndex: exact, hashId: id };
+
+	if (chapters.some((ch) => ch.id === id)) {
+		const idx = episodes.findIndex((e) => e.chapterId === id);
+		return idx >= 0 ? { episodeIndex: idx, hashId: id } : null;
+	}
+
+	const partChapter = chapterIdFromPartId(id);
+	if (partChapter && chapters.some((ch) => ch.id === partChapter && ch.part)) {
+		const idx = episodes.findIndex((e) => e.chapterId === partChapter);
+		return idx >= 0 ? { episodeIndex: idx, hashId: id } : null;
+	}
+
+	let best = -1;
+	let bestLen = -1;
+	for (let i = 0; i < episodes.length; i++) {
+		const eid = episodes[i].id;
+		if (id.startsWith(`${eid}-`) && eid.length > bestLen) {
+			best = i;
+			bestLen = eid.length;
+		}
+	}
+	if (best >= 0) return { episodeIndex: best, hashId: id };
+
+	const indexMatch = /^(.*)-(\d+)$/.exec(id);
+	if (indexMatch) {
+		const chapterId = indexMatch[1];
+		const entryIndex = Number(indexMatch[2]);
+		const byIndex = episodes.findIndex(
+			(e) => e.chapterId === chapterId && e.entryIndex === entryIndex
+		);
+		if (byIndex >= 0) return { episodeIndex: byIndex, hashId: episodes[byIndex].id };
+	}
+	const aliased = EPISODE_HASH_ALIASES[id];
+	if (aliased) {
+		const fromAlias = episodes.findIndex((e) => e.id === aliased);
+		if (fromAlias >= 0) return { episodeIndex: fromAlias, hashId: episodes[fromAlias].id };
+	}
+	return null;
+}
+
+/** Canonical episode, chapter, or scene id for hashes / getElementById. */
+export function canonicalHashId(id: string): string {
+	return resolveStoryTarget(id)?.hashId ?? id;
+}
+
+function isPainted(el: HTMLElement) {
+	return el.getClientRects().length > 0;
+}
+
+function firstPainted(root: ParentNode, selectors: string[]): HTMLElement | null {
+	for (const sel of selectors) {
+		const el = root.querySelector<HTMLElement>(sel);
+		if (el && isPainted(el)) return el;
+	}
+	return null;
+}
+
+/**
+ * The visible title a TOC row should land on (h1/h2 / scene label), not the
+ * article wrapper or the mobile art card stacked above it.
+ */
+export function storyTitleElement(el: HTMLElement): HTMLElement {
+	if (el.matches('h1, h2, .day-label, .mini-title, .part-eyebrow')) return el;
+
+	if (el.matches('article.entry, .entry-head, .entry-head-sticky')) {
+		const h2 = firstPainted(el, ['.episode h2', '.entry-head h2', 'h2']);
+		const head = firstPainted(el, ['.entry-head-sticky', '.entry-head']);
+		/* Desktop: the year + title bar is sticky. Landing on the inner h2
+		   fights that pin (chrome above the h2 is pulled back). Mobile: the
+		   same bar is static and art sits above it — land on the h2. */
+		if (h2 && head) {
+			const sticky = h2.closest<HTMLElement>('.entry-head-sticky');
+			if (sticky && getComputedStyle(sticky).position === 'sticky') return head;
+			return h2;
+		}
+		return h2 ?? head ?? el;
+	}
+	if (el.matches('section.chapter, .chapter-head')) {
+		return firstPainted(el, ['.chapter-title h1', 'h1']) ?? el;
+	}
+	if (el.matches('.part-page')) {
+		return firstPainted(el, ['.part-title', '.part-eyebrow']) ?? el;
+	}
+	if (el.matches('[data-scene], .day, .mini')) {
+		return firstPainted(el, ['.day-label', '.mini-title', 'h1', 'h2']) ?? el;
+	}
+	return firstPainted(el, ['h1', 'h2']) ?? el;
+}
+
+/**
+ * Locate a part / chapter / episode / scene node. Ids are a lookup key only —
+ * scrolling uses measured Y via `scrollToStoryHeading`.
+ */
+export function findStoryHeading(id: string): HTMLElement | null {
+	const dest = canonicalHashId(id);
+	const script = document.getElementById('script');
+	const root: ParentNode = script ?? document;
+	let el: HTMLElement | null = null;
+	try {
+		el = root.querySelector(`#${CSS.escape(dest)}`);
+	} catch {
+		el = null;
+	}
+	if (!el) el = document.getElementById(dest);
+	if (!el && script) {
+		try {
+			el = script.querySelector(`[data-scene="${CSS.escape(dest)}"]`);
+		} catch {
+			el = null;
+		}
+	}
+	if (!el) return null;
+	return storyTitleElement(el);
+}
+
+/** Window vs overflow: `.reading` only pads — the document is the story scroller. */
+export function readingScroller(): Window | HTMLElement {
+	if (typeof document === 'undefined') return window;
+	const candidates = [
+		document.querySelector<HTMLElement>('.reading'),
+		document.querySelector<HTMLElement>('.reading-clip'),
+		document.getElementById('script')
+	];
+	for (const el of candidates) {
+		if (!el) continue;
+		const { overflowY } = getComputedStyle(el);
+		if (overflowY !== 'auto' && overflowY !== 'scroll' && overflowY !== 'overlay') continue;
+		if (el.scrollHeight > el.clientHeight + 1) return el;
+	}
+	return window;
+}
+
+function isWindowScroller(scroller: Window | HTMLElement): scroller is Window {
+	return typeof Window !== 'undefined' && scroller instanceof Window;
+}
+
+function scrollerScrollTop(scroller: Window | HTMLElement): number {
+	return isWindowScroller(scroller) ? scroller.scrollY : scroller.scrollTop;
+}
+
+function scrollerClientTop(scroller: Window | HTMLElement): number {
+	return isWindowScroller(scroller) ? 0 : scroller.getBoundingClientRect().top;
+}
+
+function yInScroller(el: HTMLElement, scroller: Window | HTMLElement): number {
+	const top = el.getBoundingClientRect().top;
+	if (isWindowScroller(scroller)) return top + scroller.scrollY;
+	return top - scroller.getBoundingClientRect().top + scroller.scrollTop;
+}
+
+function scrollScrollerTo(scroller: Window | HTMLElement, top: number, behavior: ScrollBehavior) {
+	scroller.scrollTo({ top: Math.max(0, top), behavior });
+}
+
+/**
+ * How far below the scroller's top a title must sit so HUD / stuck episode
+ * chrome does not cover it. Measured from live boxes, not CSS scroll-margin.
+ */
+export function storyStickyOffset(title?: HTMLElement | null): number {
+	const pad = 10;
+	const min = 16;
+	let chrome = 0;
+	const x0 = title?.getBoundingClientRect().left ?? 0;
+	const x1 = title?.getBoundingClientRect().right ?? (typeof window !== 'undefined' ? window.innerWidth : 0);
+
+	const overlapsX = (r: DOMRect) => r.left < x1 && r.right > x0;
+
+	const hud = document.querySelector<HTMLElement>('.hud.in');
+	if (hud && isPainted(hud)) {
+		const r = hud.getBoundingClientRect();
+		if (r.bottom > 0 && overlapsX(r)) chrome = Math.max(chrome, r.bottom);
+	}
+
+	for (const sticky of document.querySelectorAll<HTMLElement>('.entry-head-sticky')) {
+		if (!isPainted(sticky)) continue;
+		if (title && sticky.contains(title)) continue;
+		const style = getComputedStyle(sticky);
+		if (style.position !== 'sticky' && style.position !== 'fixed') continue;
+		const r = sticky.getBoundingClientRect();
+		const stickTop = Number.parseFloat(style.top) || 0;
+		if (r.top <= stickTop + 2 && r.bottom > 0 && overlapsX(r)) {
+			chrome = Math.max(chrome, r.bottom);
+		}
+	}
+
+	return Math.max(chrome, min) + pad;
+}
+
+let storyJumpGen = 0;
+
+/**
+ * Scroll the reading scroller so `el`'s title sits at measured Y minus sticky
+ * chrome. Re-measures at call time and again after layout/images settle.
+ * Does not use `scrollIntoView` or hash targeting.
+ */
+export function scrollToStoryHeading(el: HTMLElement, behavior: ScrollBehavior = 'auto') {
+	const gen = ++storyJumpGen;
+	const live = () => (el.isConnected ? storyTitleElement(el) : null);
+
+	const apply = (how: ScrollBehavior) => {
+		if (gen !== storyJumpGen) return;
+		const title = live();
+		if (!title) return;
+		const scroller = readingScroller();
+		const sticky = storyStickyOffset(title);
+		scrollScrollerTo(scroller, yInScroller(title, scroller) - sticky, how);
+	};
+
+	const verify = () => {
+		if (gen !== storyJumpGen) return;
+		const title = live();
+		if (!title) return;
+		const scroller = readingScroller();
+		const sticky = storyStickyOffset(title);
+		const expected = scrollerClientTop(scroller) + sticky;
+		const drift = title.getBoundingClientRect().top - expected;
+		if (Math.abs(drift) <= 6) return;
+		scrollScrollerTo(scroller, scrollerScrollTop(scroller) + drift, 'auto');
+	};
+
+	apply(behavior);
+	requestAnimationFrame(() => {
+		if (behavior === 'smooth') apply('smooth');
+		else verify();
+	});
+
+	const later = [320, 700, 1100];
+	for (const ms of later) setTimeout(verify, ms);
+
+	const host = el.closest('article.entry') ?? el;
+	for (const img of host.querySelectorAll('img')) {
+		if (img.complete) continue;
+		img.addEventListener('load', verify, { once: true });
+		img.addEventListener('error', verify, { once: true });
+	}
 }
 
 function replaceHash(id: string) {
@@ -302,25 +560,33 @@ export function syncEpisodeFromHash(opts: { scroll?: boolean } = {}) {
 }
 
 /**
- * Jump to an episode by flat index. Updates hash, closes TOC, scrolls into view.
+ * Jump to an episode by flat index. Updates hash and scrolls by measured Y.
+ * Does not close the TOC unless `closeToc: true` (hamburger / Escape still do).
+ * `destId` scrolls to a scene header (`episodeId-scene-slug`) when provided.
  */
-export function goToEpisode(index: number, opts: { hash?: boolean; scroll?: boolean; closeToc?: boolean } = {}) {
+export function goToEpisode(
+	index: number,
+	opts: { hash?: boolean; scroll?: boolean; closeToc?: boolean; destId?: string } = {}
+) {
 	if (!episodes.length) return;
 	const next = Math.max(0, Math.min(episodes.length - 1, index));
 	reading.episodeIndex = next;
 	releaseDialogue();
 
 	const ep = episodes[next];
-	if (opts.hash !== false) replaceHash(ep.id);
-	if (opts.closeToc !== false) tocUi.open = false;
+	const destId = opts.destId ?? ep.id;
+	if (opts.hash !== false) replaceHash(destId);
+	if (opts.closeToc === true) tocUi.open = false;
 
 	const scroll = opts.scroll !== false;
 	const finish = () => {
 		if (scroll) {
-			const el = document.getElementById(ep.id);
-			/* Auto after remount — smooth scroll has nothing to interpolate from. */
-			if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
-			else document.getElementById('script')?.scrollIntoView({ behavior: 'auto', block: 'start' });
+			const el = findStoryHeading(destId) ?? findStoryHeading(ep.id);
+			if (el) scrollToStoryHeading(el, 'auto');
+			else {
+				const script = document.getElementById('script');
+				if (script) scrollToStoryHeading(script, 'auto');
+			}
 		}
 		window.dispatchEvent(new Event('scroll'));
 	};
@@ -330,12 +596,23 @@ export function goToEpisode(index: number, opts: { hash?: boolean; scroll?: bool
 
 export function goToEpisodeById(
 	id: string,
-	opts: { hash?: boolean; scroll?: boolean; closeToc?: boolean } = {}
+	opts: { hash?: boolean; scroll?: boolean; closeToc?: boolean; destId?: string } = {}
 ): boolean {
-	const idx = resolveEpisodeIndex(id);
-	if (idx < 0) return false;
-	goToEpisode(idx, opts);
+	const target = resolveStoryTarget(id);
+	if (!target) return false;
+	goToEpisode(target.episodeIndex, { ...opts, destId: opts.destId ?? target.hashId });
 	return true;
+}
+
+/**
+ * Jump to a scene header inside the current (or dest) episode.
+ * Does not close the TOC — same as TOC episode clicks.
+ */
+export function goToScene(
+	sceneId: string,
+	opts: { hash?: boolean; scroll?: boolean } = {}
+): boolean {
+	return goToEpisodeById(sceneId, { ...opts, closeToc: false });
 }
 
 export function stepEpisode(delta: number) {
@@ -525,11 +802,34 @@ export function watchReading() {
 			progress = Math.max(0, Math.min(1, progress));
 		}
 
+		const sceneEl = (() => {
+			if (!entry) return null;
+			const mid = (top + bottom) / 2;
+			let best: HTMLElement | null = null;
+			let bestD = Infinity;
+			for (const el of entry.querySelectorAll<HTMLElement>('[data-scene]')) {
+				if (!inBand(el)) continue;
+				const r = el.getBoundingClientRect();
+				const d = Math.abs((Math.max(r.top, top) + Math.min(r.bottom, bottom)) / 2 - mid);
+				if (d < bestD) {
+					bestD = d;
+					best = el;
+				}
+			}
+			return best;
+		})();
+		const sceneKey = sceneEl?.id || null;
+
 		if (reading.flash !== flash) reading.flash = flash;
 		if (reading.music !== music) reading.music = music;
 		if (reading.place !== place) reading.place = place;
 		if (reading.year !== year) reading.year = year;
 		if (reading.entryId !== entryKey) reading.entryId = entryKey;
+		if (entryKey !== lastEntry) {
+			if (reading.sceneId !== sceneKey) reading.sceneId = sceneKey;
+		} else if (sceneKey && reading.sceneId !== sceneKey) {
+			reading.sceneId = sceneKey;
+		}
 		/* Only publish meaningful movement — a pixel of scroll is not a beat. */
 		if (Math.abs(reading.entryProgress - progress) > 0.004) reading.entryProgress = progress;
 
@@ -577,6 +877,19 @@ export function watchReading() {
 	window.addEventListener('wheel', releaseDialogue, { passive: true });
 	window.addEventListener('touchstart', releaseDialogue, { passive: true });
 	window.addEventListener('keydown', releaseDialogue);
+	/* TOC clicks call goToEpisodeById (replaceState, no hashchange). Browser
+	   back/forward and hash-only navigations still need to swap the episode. */
+	const onHash = () => {
+		if (reading.viewScope === 'episodes') {
+			syncEpisodeFromHash({ scroll: true });
+			return;
+		}
+		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+		if (!hash) return;
+		const el = findStoryHeading(canonicalHashId(hash));
+		if (el) scrollToStoryHeading(el, 'auto');
+	};
+	window.addEventListener('hashchange', onHash);
 
 	return () => {
 		clearTimeout(first);
@@ -587,6 +900,7 @@ export function watchReading() {
 		window.removeEventListener('wheel', releaseDialogue);
 		window.removeEventListener('touchstart', releaseDialogue);
 		window.removeEventListener('keydown', releaseDialogue);
+		window.removeEventListener('hashchange', onHash);
 		document.documentElement.classList.remove('is-flash');
 		document.documentElement.classList.remove('is-immersion');
 		document.documentElement.classList.remove('is-cinema');
@@ -602,22 +916,20 @@ export function isKorean(s: string) {
 	return KO_RE.test(s);
 }
 
-/* Hydrate mode / view / images from storage before any story chrome mounts, so
-   Toc and the page see saved preferences on first paint. */
+/* Hydrate mode / view from storage before any story chrome mounts, so Toc and
+   the page see saved preferences on first paint. */
 if (browser) {
 	try {
 		const mode = normalizeMode(localStorage.getItem('kingdom:mode'));
 		if (mode) reading.mode = mode;
 		const view = localStorage.getItem('kingdom:view');
 		if (view === 'full' || view === 'episodes') reading.viewScope = view;
-		const images = localStorage.getItem('kingdom:images');
-		if (images === 'side' || images === 'inline') reading.imageLayout = images;
 	} catch {
 		/* private mode */
 	}
 	if (reading.viewScope === 'episodes') {
 		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
-		const idx = hash ? resolveEpisodeIndex(hash) : -1;
-		if (idx >= 0) reading.episodeIndex = idx;
+		const target = hash ? resolveStoryTarget(hash) : null;
+		if (target) reading.episodeIndex = target.episodeIndex;
 	}
 }

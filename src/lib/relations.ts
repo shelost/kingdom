@@ -783,7 +783,7 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['gesomun', 'yeongnyu'],
 		title: 'Banquet and the emptied summit',
 		tagline: 'The king kept the final vote; the nephew took the blades.',
-		arc: 'Yeongnyu’s court tries to contain Yeon; Yeon answers with a massacre at the High Summit and wears five swords home. The uncle dies; the nephew remakes the kingdom as Supreme Commander.',
+		arc: 'Yeongnyu’s court tries to contain Yeon; Yeon answers with a massacre at the High Summit and wears the four taken blades home beside the Eastern Crow Blade he brought. The uncle dies; the nephew remakes the kingdom as Supreme Commander.',
 		events: [{ year: 642, label: 'Yeon’s Massacre — Yeongnyu falls.' }],
 		aliases: ['Yeon & Yeongnyu', 'Gesomun & Yeongnyu']
 	},
@@ -810,7 +810,7 @@ export const RELATIONSHIPS: Person[] = [
 		bond: 'kin',
 		between: ['gesomun', 'namseng'],
 		title: 'Eldest of the three',
-		tagline: 'Heir to five blades — and to a house that eats its own.',
+		tagline: 'Heir to the High Commander Blade — and to a house that eats its own.',
 		arc: 'Yeon Namseng is raised under Gesomun’s own strict roof — not Jungto’s softer hall — to inherit command. After Yeon’s death poisoned messengers and Tang’s invitation turn inheritance into exile; he opens a door his father would have barred.',
 		events: [
 			{ label: 'Raised as eldest sword-heir under Gesomun.' },

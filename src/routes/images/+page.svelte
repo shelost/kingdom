@@ -6,6 +6,7 @@
 		type GalleryView,
 		type StoryCueImage
 	} from '$lib/storyImages';
+	import { storyImg } from '$lib/img';
 
 	const images = flattenStoryImages();
 	const orphans = findOrphanedImages();
@@ -60,13 +61,17 @@
 			onclick={() => cycleStack(im)}
 		>
 			<div class="stack-layers" class:final-front={front === 'final'}>
-				<img class="layer temp-layer" src={im.tempArt} alt="" loading="lazy" decoding="async" />
+				<img
+					class="layer temp-layer"
+					{...storyImg(im.tempArt, { kind: 'cue', alt: '', sizes: '180px' })}
+				/>
 				<img
 					class="layer final-layer"
-					src={im.finalArt}
-					alt={im.slot.alt ?? im.title}
-					loading="lazy"
-					decoding="async"
+					{...storyImg(im.finalArt, {
+						kind: 'cue',
+						alt: im.slot.alt ?? im.title,
+						sizes: '180px'
+					})}
 				/>
 			</div>
 			<span class="layer-chip" data-kind={front}>{front === 'temp' ? 'temp' : 'final'}</span>
@@ -82,7 +87,13 @@
 	{:else}
 		<figure class="thumb" style:--tone={im.slot.tone ?? '#3a3a40'}>
 			{#if im.displayArt}
-				<img src={im.displayArt} alt={im.slot.alt ?? im.title} loading="lazy" decoding="async" />
+				<img
+					{...storyImg(im.displayArt, {
+						kind: 'cue',
+						alt: im.slot.alt ?? im.title,
+						sizes: '180px'
+					})}
+				/>
 			{:else}
 				<div class="ph">
 					<span class="ph-id">{im.slot.id}</span>
@@ -230,18 +241,36 @@
 						{#if im.prompt || im.refs.length || im.hasStack || im.isSeedCopy}
 							<div class="temp-panel">
 								{#if im.hasStack}
+									{@const tempSrc = layerSrc(im, 'temp')}
+									{@const finalSrc = layerSrc(im, 'final')}
 									<div class="stack-preview">
 										<p class="panel-label">Temp / final stack</p>
 										<ul class="stack-thumbs">
 											<li class:active={front === 'temp'}>
 												<button type="button" onclick={() => (stackFront[im.key] = 'temp')}>
-													<img src={layerSrc(im, 'temp')} alt="" loading="lazy" decoding="async" />
+													{#if tempSrc}
+														<img
+															{...storyImg(tempSrc, {
+																kind: 'thumb',
+																alt: '',
+																sizes: '72px'
+															})}
+														/>
+													{/if}
 													<span>temp</span>
 												</button>
 											</li>
 											<li class:active={front === 'final'}>
 												<button type="button" onclick={() => (stackFront[im.key] = 'final')}>
-													<img src={layerSrc(im, 'final')} alt="" loading="lazy" decoding="async" />
+													{#if finalSrc}
+														<img
+															{...storyImg(finalSrc, {
+																kind: 'thumb',
+																alt: '',
+																sizes: '72px'
+															})}
+														/>
+													{/if}
 													<span>final</span>
 												</button>
 											</li>
@@ -275,7 +304,9 @@
 										<ul class="refs">
 											{#each im.refs as ref (ref.src)}
 												<li>
-													<img src={ref.src} alt="" loading="lazy" decoding="async" />
+													<img
+														{...storyImg(ref.src, { kind: 'thumb', alt: '', sizes: '48px' })}
+													/>
 													<span>{ref.label}</span>
 												</li>
 											{/each}
@@ -305,7 +336,7 @@
 				{#each orphans as o (o.src)}
 					<article class="card orphan">
 						<figure class="thumb" style:--tone="#3a3a40">
-							<img src={o.src} alt="" loading="lazy" decoding="async" />
+							<img {...storyImg(o.src, { kind: 'cue', alt: '', sizes: '180px' })} />
 							<div class="badges">
 								<span class="badge orphan-badge">orphan</span>
 							</div>

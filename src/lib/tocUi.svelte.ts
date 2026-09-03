@@ -3,8 +3,24 @@
  * Toc.svelte binds into this so chrome and reading column stay in sync.
  */
 export const tocUi = $state({
-	open: false
+	open: false,
+	/** True while a TOC / hash jump is in flight — keeps chrome from treating a remount as “left the script”. */
+	jumping: false
 });
+
+let jumpGen = 0;
+
+export function beginTocJump() {
+	jumpGen += 1;
+	tocUi.jumping = true;
+	return jumpGen;
+}
+
+export function endTocJump(gen?: number) {
+	if (gen !== undefined && gen !== jumpGen) return;
+	tocUi.jumping = false;
+	if (typeof window !== 'undefined') window.dispatchEvent(new Event('scroll'));
+}
 
 /** Desktop layout settle for jump-after-close (matches --toc-duration). */
 export const TOC_DURATION_MS = 140;

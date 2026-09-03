@@ -3,9 +3,10 @@
 	import { KINGDOMS } from '$lib/people';
 	import { openProfile } from '$lib/profiles.svelte';
 
-	let { placeId }: { placeId: string } = $props();
+	let { placeId, priority = false }: { placeId: string; priority?: boolean } = $props();
 
 	import { staticAsset } from '$lib/staticAsset.svelte';
+	import { storyImg } from '$lib/img';
 
 	let place = $derived<Place | null>(PLACES[placeId] ?? null);
 	let colour = $derived(place ? KINGDOMS[place.side].color : '#8a8a94');
@@ -29,10 +30,19 @@
 		aria-label="Open location: {place.name}"
 	>
 		{#if art}
-			<img class="art" src={art} alt="" />
+			<img
+				class="art"
+				{...storyImg(art, { kind: 'place', priority, alt: '', sizes: '(max-width: 820px) 100vw, 28vw' })}
+			/>
 		{:else}
 			<div class="map-crop" aria-hidden="true">
-				<img class="map-bg" src={staticAsset('/map.svg') ?? '/map.svg'} alt="" />
+				<img
+					class="map-bg"
+					src={staticAsset('/map.svg') ?? '/map.svg'}
+					alt=""
+					loading="lazy"
+					decoding="async"
+				/>
 				<span class="map-veil"></span>
 			</div>
 		{/if}

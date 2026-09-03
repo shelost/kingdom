@@ -13,6 +13,7 @@
 		type OrgChartNode,
 		type Person
 	} from '$lib/people';
+	import { storyImg } from '$lib/img';
 
 	let {
 		nodes = [],
@@ -111,7 +112,7 @@
 	{@const art = t.person ? avatarOf(t.person) : null}
 	<span class="avatar" class:silhouette={!!art && isPlaceholderArt(art)} aria-hidden="true">
 		{#if art}
-			<img src={art} alt="" />
+			<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '48px' })} />
 		{:else if t.person}
 			{hangulInitial(t.person)}
 		{:else}

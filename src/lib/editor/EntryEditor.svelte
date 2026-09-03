@@ -2,6 +2,7 @@
 	import { getContext, tick } from 'svelte';
 	import Editable from './Editable.svelte';
 	import BlockEditor from './BlockEditor.svelte';
+	import { isFlashEntry } from '$lib/story';
 	import { uid, newBlock, turnInto, BLOCK_KINDS, type AnyBlock } from './model';
 
 	let {
@@ -96,7 +97,7 @@
 
 <svelte:window onclick={() => (openMenu = null)} />
 
-<section class="entry" class:flash={entry.flash} bind:this={root}>
+<section class="entry" class:flash={isFlashEntry(entry)} bind:this={root}>
 	<header class="meta">
 		<div class="year-col">
 			<Editable
@@ -168,8 +169,13 @@
 			<button
 				title="Toggle flashback band"
 				class="flash-btn"
-				class:on={entry.flash}
-				onclick={() => set(() => (entry.flash = entry.flash ? undefined : true))}
+				class:on={isFlashEntry(entry)}
+				onclick={() =>
+					set(() => {
+						const next = !isFlashEntry(entry);
+						entry.flash = next || undefined;
+						entry.flashback = next || undefined;
+					})}
 			>⌛</button>
 			<button title="Move entry up" onclick={() => onmove(-1)}>↑</button>
 			<button title="Move entry down" onclick={() => onmove(1)}>↓</button>

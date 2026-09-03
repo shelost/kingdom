@@ -115,7 +115,7 @@ export const PLACES: Record<string, Place> = {
 		y: 400,
 		kind: 'city',
 		side: 'goguryeo',
-		blurb: 'Seat of the Central Commandery, one of Goguryeo’s Five. Its commander shouts Yeon down at the High Summit of 634.'
+		blurb: 'Seat of the Central Commandery, one of Goguryeo’s Five. High Commander Yeon Gusesa shouts Yeon down from that chair at the High Summit of 634.'
 	},
 	paektu: {
 		id: 'paektu',
@@ -746,6 +746,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'The Marshal\u2019s Steam': 'steam_cavern',
 	'Steam, Again': 'steam_cavern',
 	'Yeon’s Massacre': 'pyongyang',
+	'After the Knives': 'pyongyang',
 	'Chunchu & Gesomun': 'pyongyang',
 	'Euija & Gesomun': 'pyongyang',
 	'Kim Yushin': 'steam_cavern',
@@ -788,7 +789,6 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'The Death of Kim Chunchu': 'surabol',
 	'Baekje Restoration Society': 'juryu',
 	'The Four Beasts': 'changan',
-	'Gija & Wiman': 'asadal',
 	'Pyongyang Fortress': 'pyongyang',
 	'Snake River': 'sasu',
 	'The Surrender of Tamla': 'mugun',

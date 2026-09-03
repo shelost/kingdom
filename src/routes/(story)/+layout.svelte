@@ -15,7 +15,10 @@
 	/** Sync TOC open → CSS vars (--shell-shift / --corner-left) for fixed chrome. */
 	$effect(() => {
 		if (!browser) return;
-		document.documentElement.classList.toggle('is-toc-open', tocUi.open);
+		document.documentElement.classList.toggle(
+			'is-toc-open',
+			tocUi.open && scriptUi.inScript
+		);
 		return () => document.documentElement.classList.remove('is-toc-open');
 	});
 
@@ -29,9 +32,15 @@
 
 <Toc bind:open={tocUi.open} />
 
-<!-- Reading column: padding push (Notion-style). Duration matches --toc-duration. -->
-<div class="reading" class:toc-open={tocUi.open}>
-	{@render children()}
+<!-- Reading column: padding push (Notion-style). Isolated below the TOC so
+     inline art / sticky frames cannot paint over the panel. Inner clip is the
+     content edge — overflow on .reading itself would clip at the padding edge
+     (viewport left) and still let figures draw in the TOC gutter. clip-path is
+     avoided: it would become the containing block for position:fixed chrome. -->
+<div class="reading" class:toc-open={tocUi.open && scriptUi.inScript}>
+	<div class="reading-clip">
+		{@render children()}
+	</div>
 </div>
 
 <!-- Fixed story chrome — plate / corners follow --shell-shift & --corner-left.
@@ -46,9 +55,23 @@
 <PersonLayer />
 
 <style>
+	/*
+	  Stacking: this column is a single context at z-index 1. Inline art
+	  (ImageStack frames use z-index internally), relation/map siblings, and
+	  the speaker plate sit below the TOC layer (100+). Descendants cannot
+	  escape this context to cover the panel.
+	*/
 	.reading {
+		position: relative;
+		z-index: 1;
+		isolation: isolate;
 		padding-left: 22px; /* clear the fixed rail */
 		transition: padding-left var(--toc-duration) var(--toc-ease);
+	}
+
+	.reading-clip {
+		overflow-x: clip;
+		min-width: 0;
 	}
 
 	.reading.toc-open {

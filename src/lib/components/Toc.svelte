@@ -1,13 +1,17 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
-	import { chapters } from '$lib/story';
-	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor } from '$lib/tocUi.svelte';
+	import { SvelteSet } from 'svelte/reactivity';
+	import { chapters, entryId, partId, scenesOf } from '$lib/story';
+	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
 		reading,
 		episodes,
 		goToEpisodeById,
-		syncEpisodeFromHash
+		syncEpisodeFromHash,
+		canonicalHashId,
+		findStoryHeading,
+		scrollToStoryHeading
 	} from '$lib/reading.svelte';
 
 	/** Bound by the story layout so the reading shell + plate shift together. */
@@ -17,7 +21,6 @@
 	let scrollActive = $state(chapters[0]?.id);
 	let scrollActiveEntry = $state('');
 	let scrollProgress = $state(0);
-	let narrow = $state(false);
 
 	let active = $derived(
 		reading.viewScope === 'episodes'
@@ -37,10 +40,11 @@
 			: scrollProgress
 	);
 
-	/** Pending jump after the TOC retracts / layout settles. */
-	let jumpTimer: ReturnType<typeof setTimeout> | undefined;
-
 	let refreshObservers: (() => void) | undefined;
+
+	/** Episode ids whose scene lists the reader opened or closed by hand. */
+	const opened = new SvelteSet<string>();
+	const closed = new SvelteSet<string>();
 
 	/* ————— panel scroll persistence ————— */
 
@@ -100,10 +104,7 @@
 	});
 
 	onMount(() => {
-		const mq = window.matchMedia('(max-width: 1000px)');
-		const syncNarrow = () => (narrow = mq.matches);
-		syncNarrow();
-		mq.addEventListener('change', syncNarrow);
+		if (reading.mode === 'script') open = true;
 
 		const io = new IntersectionObserver(
 			(entries) => {
@@ -131,8 +132,8 @@
 				if (el) io.observe(el);
 			}
 			for (const ch of chapters)
-				for (let i = 0; i < ch.entries.length; i++) {
-					const el = document.getElementById(`${ch.id}-${i}`);
+				for (const en of ch.entries) {
+					const el = document.getElementById(entryId(ch.id, en.title));
 					if (el) ioEntry.observe(el);
 				}
 		};
@@ -161,11 +162,13 @@
 			if (reading.viewScope === 'episodes') {
 				syncEpisodeFromHash({ scroll: true });
 			} else {
-				const target = document.getElementById(hash);
+				const targetId = canonicalHashId(hash);
+				const target = findStoryHeading(targetId);
 				if (target) {
 					requestAnimationFrame(() => {
-						target.scrollIntoView({ behavior: 'auto', block: 'start' });
-						markActive(target, hash);
+						scrollToStoryHeading(target, 'auto');
+						const entry = target.closest<HTMLElement>('article.entry') ?? target;
+						markActive(entry, entry.id || targetId);
 					});
 				}
 			}
@@ -175,10 +178,8 @@
 			io.disconnect();
 			ioEntry.disconnect();
 			refreshObservers = undefined;
-			mq.removeEventListener('change', syncNarrow);
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('keydown', onKey);
-			if (jumpTimer) clearTimeout(jumpTimer);
 			if (restoreTimer) clearTimeout(restoreTimer);
 			if (panelScrollRaf) cancelAnimationFrame(panelScrollRaf);
 		};
@@ -192,88 +193,69 @@
 	});
 
 	function markActive(el: HTMLElement, id: string) {
-		if (el.classList.contains('entry')) {
-			scrollActiveEntry = id;
-			scrollActive = el.closest('.chapter')?.id ?? scrollActive;
+		const entry = el.classList.contains('entry')
+			? el
+			: el.closest<HTMLElement>('article.entry');
+		if (entry) {
+			scrollActiveEntry = entry.id;
+			scrollActive = entry.closest('.chapter')?.id ?? scrollActive;
 		} else {
 			scrollActive = id;
 			scrollActiveEntry = '';
 		}
 	}
 
-	function scrollToEl(el: HTMLElement, behavior: ScrollBehavior) {
-		el.scrollIntoView({ behavior, block: 'start' });
-	}
-
 	/**
-	 * Jump to a chapter/entry. Always retract the TOC first so the final
-	 * scroll is computed in the reading layout — otherwise closing the panel
-	 * later shifts padding and the destination drifts.
+	 * Jump to a chapter / episode / scene / part title. Click measures the
+	 * title's document Y and scrolls the reading scroller — the TOC stays open
+	 * (desktop push + mobile overlay). Overlay close is the toggle, or Escape.
 	 */
 	async function jump(id: string) {
-		if (jumpTimer) {
-			clearTimeout(jumpTimer);
-			jumpTimer = undefined;
-		}
+		const gen = beginTocJump();
+		try {
+			const reduce =
+				typeof matchMedia !== 'undefined' &&
+				matchMedia('(prefers-reduced-motion: reduce)').matches;
+			const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
+			const dest = canonicalHashId(id);
 
-		const reduce =
-			typeof matchMedia !== 'undefined' &&
-			matchMedia('(prefers-reduced-motion: reduce)').matches;
-		const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
+			if (reading.viewScope === 'episodes') {
+				const ok = goToEpisodeById(dest, { hash: true, scroll: false });
+				if (!ok) return;
+				await tick();
+			}
 
-		if (reading.viewScope === 'episodes') {
-			const ok = goToEpisodeById(id, { hash: true, scroll: false, closeToc: true });
-			if (!ok) return;
-			open = false;
-			await tick();
-			const ep = episodes[reading.episodeIndex];
-			const el = ep ? document.getElementById(ep.id) : null;
-			if (!el) return;
-			markActive(el, ep.id);
 			const go = () => {
-				scrollToEl(el, behavior);
-				if (behavior === 'smooth') {
-					jumpTimer = setTimeout(() => {
-						scrollToEl(el, 'auto');
-						jumpTimer = undefined;
-					}, 380);
+				const el = findStoryHeading(dest);
+				if (!el) return;
+				markActive(el, dest);
+				scrollToStoryHeading(el, behavior);
+				try {
+					history.replaceState(null, '', `#${encodeURIComponent(dest)}`);
+				} catch {
+					/* ignore */
 				}
 			};
+
 			requestAnimationFrame(() => requestAnimationFrame(go));
-			return;
+		} finally {
+			setTimeout(() => endTocJump(gen), 640);
 		}
+	}
 
-		const el = document.getElementById(id);
-		if (!el) return;
+	function scenesOpen(id: string) {
+		if (closed.has(id)) return false;
+		if (opened.has(id)) return true;
+		return activeEntry === id;
+	}
 
-		markActive(el, id);
-
-		try {
-			history.replaceState(null, '', `#${encodeURIComponent(id)}`);
-		} catch {
-			/* ignore */
-		}
-
-		/** Desktop open TOC pushes main; wait for that padding transition. */
-		const needsLayoutSettle = open && !narrow;
-		open = false;
-
-		const go = () => {
-			scrollToEl(el, behavior);
-			// After smooth scroll + any late reflow, pin the destination once.
-			if (behavior === 'smooth') {
-				jumpTimer = setTimeout(() => {
-					scrollToEl(el, 'auto');
-					jumpTimer = undefined;
-				}, 380);
-			}
-		};
-
-		if (needsLayoutSettle) {
-			/* Wait one TOC duration (+ frame) so padding / --shell-shift finish. */
-			jumpTimer = setTimeout(go, TOC_DURATION_MS + 16);
+	function toggleExpand(id: string) {
+		if (scenesOpen(id)) {
+			closed.add(id);
+			opened.delete(id);
 		} else {
-			requestAnimationFrame(() => requestAnimationFrame(go));
+			opened.add(id);
+			closed.delete(id);
 		}
 	}
 
@@ -281,11 +263,6 @@
 		if (!scriptUi.inScript) return;
 		open = !open;
 	}
-
-	/** Close the panel if the reader scrolls back to cover/blurb. */
-	$effect(() => {
-		if (!scriptUi.inScript && open) open = false;
-	});
 </script>
 
 <div
@@ -309,13 +286,21 @@
 	{open ? '✕' : '☰'}
 </button>
 
-<nav class="toc" class:open id="toc-panel" aria-label="Table of contents" aria-hidden={!open}>
+<nav class="toc" class:open class:in={scriptUi.inScript} id="toc-panel" aria-label="Table of contents" aria-hidden={!open || !scriptUi.inScript}>
 	<div class="panel" bind:this={panelEl} onscroll={onPanelScroll}>
 		{#each chapters as ch, ci (ch.id)}
 			{#if ch.part}
-				<div class="panel-part">{ch.part}</div>
+				<button
+					type="button"
+					class="panel-part"
+					data-toc-id={partId(ch.id)}
+					onclick={() => jump(partId(ch.id))}
+				>
+					{ch.part}
+				</button>
 			{/if}
 			<button
+				type="button"
 				class="panel-item"
 				class:active={active === ch.id}
 				data-toc-id={ch.id}
@@ -332,15 +317,53 @@
 
 			<div class="sub">
 				{#each ch.entries as en, ei (ch.id + ei)}
-					<button
-						class="sub-item"
-						class:active={activeEntry === `${ch.id}-${ei}`}
-						data-toc-id={`${ch.id}-${ei}`}
-						onclick={() => jump(`${ch.id}-${ei}`)}
-					>
-						<span class="si-year">{en.year || '·'}</span>
-						<span class="si-title">{en.title || 'Untitled'}</span>
-					</button>
+					{@const eid = entryId(ch.id, en.title)}
+					{@const scenes = scenesOf(en.blocks, eid)}
+					{@const isOpen = scenesOpen(eid)}
+					<div class="ep-block">
+						<div class="ep-row">
+							{#if scenes.length}
+								<button
+									type="button"
+									class="ep-chevron"
+									class:open={isOpen}
+									aria-expanded={isOpen}
+									aria-controls="toc-scenes-{eid}"
+									aria-label={isOpen
+										? `Hide scenes in ${en.title || 'Untitled'}`
+										: `Show scenes in ${en.title || 'Untitled'}`}
+									onclick={() => toggleExpand(eid)}
+								></button>
+							{:else}
+								<span class="ep-chevron-spacer" aria-hidden="true"></span>
+							{/if}
+							<button
+								type="button"
+								class="sub-item"
+								class:active={activeEntry === eid}
+								data-toc-id={eid}
+								onclick={() => jump(eid)}
+							>
+								<span class="si-year">{en.year || '·'}</span>
+								<span class="si-title">{en.title || 'Untitled'}</span>
+							</button>
+						</div>
+						{#if scenes.length && isOpen}
+							<div class="scenes" id="toc-scenes-{eid}">
+								{#each scenes as s (s.id)}
+									<button
+										type="button"
+										class="scene-item"
+										class:active={reading.sceneId === s.id}
+										data-toc-id={s.id}
+										onclick={() => jump(s.id)}
+									>
+										<span class="scene-title">{s.title}</span>
+									</button>
+								{/each}
+							</div>
+						{/if}
+					</div>
 				{/each}
 			</div>
 		{/each}
@@ -353,7 +376,7 @@
 		position: fixed;
 		inset: 0 0 auto 0;
 		height: 2px;
-		z-index: 90;
+		z-index: 100;
 		background: var(--gold);
 		transform-origin: 0 50%;
 		will-change: transform;
@@ -369,7 +392,7 @@
 		position: fixed;
 		top: max(0.55rem, env(safe-area-inset-top, 0px));
 		left: max(calc(22px + 0.2rem), env(safe-area-inset-left, 0px));
-		z-index: 95;
+		z-index: 101;
 		width: 2.75rem;
 		height: 2.75rem;
 		display: grid;
@@ -416,6 +439,10 @@
 		.toc-toggle.in:hover {
 			transform: none;
 		}
+
+		.ep-chevron::before {
+			transition: none;
+		}
 	}
 
 	.toc {
@@ -423,7 +450,8 @@
 		left: 0;
 		top: 0;
 		bottom: 0;
-		z-index: 94;
+		z-index: 100;
+		isolation: isolate;
 		width: min(var(--toc-w), 86vw);
 		padding: 3.6rem 0.5rem 1.5rem calc(22px + 0.35rem);
 		pointer-events: none;
@@ -437,7 +465,7 @@
 		will-change: transform, opacity;
 	}
 
-	.toc.open {
+	.toc.open.in {
 		pointer-events: auto;
 		opacity: 1;
 		visibility: visible;
@@ -456,16 +484,27 @@
 	}
 
 	.panel-part {
+		display: block;
+		width: 100%;
 		font-family: var(--serif);
 		font-weight: 900;
 		font-size: 0.68rem;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
+		text-align: left;
 		color: var(--gold);
 		padding: 0.95rem 0.35rem 0.3rem;
+		margin: 0;
+		background: transparent;
+		border: none;
+		cursor: pointer;
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 14px var(--bg);
+	}
+
+	.panel-part:hover {
+		color: color-mix(in srgb, var(--gold) 88%, white);
 	}
 
 	.panel-item {
@@ -535,6 +574,55 @@
 		border-left: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
 	}
 
+	.ep-row {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.05rem;
+	}
+
+	.ep-row .sub-item {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.ep-chevron,
+	.ep-chevron-spacer {
+		flex-shrink: 0;
+		width: 1.2rem;
+		height: 1.55rem;
+		padding: 0;
+		margin-top: 0.08rem;
+		background: transparent;
+		border: none;
+	}
+
+	.ep-chevron {
+		display: grid;
+		place-items: center;
+		cursor: pointer;
+		color: color-mix(in srgb, var(--gold) 78%, transparent);
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.ep-chevron::before {
+		content: '';
+		display: block;
+		width: 0.38rem;
+		height: 0.38rem;
+		border-right: 1.5px solid currentColor;
+		border-bottom: 1.5px solid currentColor;
+		transform: rotate(-45deg);
+		transition: transform 180ms ease;
+	}
+
+	.ep-chevron.open::before {
+		transform: rotate(45deg);
+	}
+
+	.ep-chevron:hover {
+		color: var(--gold);
+	}
+
 	.sub-item {
 		display: flex;
 		align-items: baseline;
@@ -578,6 +666,60 @@
 		letter-spacing: var(--tracking-display);
 	}
 
+	.scenes {
+		margin: 0.08rem 0 0.28rem 1.25rem;
+		padding-left: 0.45rem;
+		border-left: 1px solid color-mix(in srgb, var(--gold) 26%, transparent);
+	}
+
+	.scene-item {
+		display: flex;
+		align-items: baseline;
+		width: 100%;
+		font: inherit;
+		font-size: 0.7rem;
+		text-align: left;
+		background: transparent;
+		border: none;
+		border-radius: 6px;
+		padding: 0.16rem 0.4rem;
+		cursor: pointer;
+		color: color-mix(in srgb, var(--fg) 42%, transparent);
+		text-shadow:
+			0 1px 2px var(--bg),
+			0 0 10px var(--bg);
+		transition: color 150ms ease;
+	}
+
+	.scene-item:hover {
+		color: color-mix(in srgb, var(--fg) 88%, transparent);
+	}
+
+	.scene-item.active {
+		color: var(--gold);
+	}
+
+	.scene-title {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		letter-spacing: var(--tracking-display);
+	}
+
+	/* Overlay (no padding push below 1000px): a sheet so inline art behind
+	   the panel cannot show through. Desktop push relies on .reading-clip. */
+	@media (max-width: 1000px) {
+		.toc.open.in {
+			background: linear-gradient(
+				90deg,
+				color-mix(in srgb, var(--panel-sunken) 96%, transparent) 0%,
+				color-mix(in srgb, var(--panel-sunken) 88%, transparent) 68%,
+				color-mix(in srgb, var(--panel-sunken) 55%, transparent) 88%,
+				transparent 100%
+			);
+		}
+	}
+
 	@media (max-width: 820px) {
 		.toc-toggle {
 			/* Top-left stays clear of Hud; size is thumb-friendly (≥44px). */
@@ -594,13 +736,6 @@
 			padding: max(3.6rem, calc(env(safe-area-inset-top, 0px) + 3rem)) 0.5rem
 				max(1.5rem, env(safe-area-inset-bottom, 0px)) max(0.55rem, env(safe-area-inset-left, 0px));
 			width: min(20rem, 92vw);
-			/* Dim the page behind so the open TOC reads as a sheet, not chrome. */
-			background: linear-gradient(
-				90deg,
-				color-mix(in srgb, var(--panel-sunken) 92%, transparent) 0%,
-				color-mix(in srgb, var(--panel-sunken) 78%, transparent) 72%,
-				transparent 100%
-			);
 		}
 
 		.panel-item {
@@ -608,10 +743,28 @@
 			padding: 0.55rem 0.5rem;
 		}
 
+		.panel-part {
+			min-height: 2.5rem;
+			padding: 0.7rem 0.5rem 0.35rem;
+		}
+
 		.sub-item {
 			min-height: 2.5rem;
 			padding: 0.45rem 0.45rem;
 			font-size: 0.8rem;
+		}
+
+		.ep-chevron,
+		.ep-chevron-spacer {
+			width: 2.5rem;
+			height: 2.5rem;
+			margin-top: 0;
+		}
+
+		.scene-item {
+			min-height: 2.5rem;
+			padding: 0.4rem 0.45rem;
+			font-size: 0.76rem;
 		}
 	}
 </style>

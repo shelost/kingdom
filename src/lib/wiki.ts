@@ -98,7 +98,7 @@ export function kindLabel(p: Person): string {
 	return WIKI_KINDS.find((w) => w.id === k)?.label ?? 'Entry';
 }
 
-/** Format born/died as a lifespan string, or empty when unknown. */
+/** Format born/died as a year span, or empty when unknown. Nations/places: founding–fall. */
 export function lifespanOf(p: Person): string {
 	const f = (n?: number) => (n == null ? '?' : n < 0 ? `${-n} BCE` : `${n}`);
 	if (p.born == null && p.died == null) return '';
@@ -126,7 +126,7 @@ export function careerYearsOf(office: CareerOffice, died?: number): string {
 	return `–${formatYear(to)}`;
 }
 
-/** Age span from `born` + years; null when birth year is unknown. */
+/** Age span from `born` + years; null when birth year is unknown. Callers skip this for nations/places. */
 export function careerAgesOf(
 	office: CareerOffice,
 	born?: number,

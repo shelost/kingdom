@@ -87,6 +87,8 @@ export type Block =
 	  }
 	// A large chapter-within-an-entry header — "DAY 1" over a siege chronicle.
 	| { kind: 'day'; label: string; ko?: string }
+	// Scene break (same plate as `day`; used if a merge names the cut a scene).
+	| { kind: 'scene'; label: string; ko?: string }
 	// A mini-flashback that interrupts an entry mid-scroll.
 	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] };
 
@@ -94,6 +96,8 @@ export interface Entry {
 	year: string;
 	sub?: string; // "February", "???"
 	flash?: boolean; // renders on a tinted band — a flashback to an earlier era
+	/** Alias of `flash` — whole-episode memory. Inline beats use `kind: 'flashback'`. */
+	flashback?: boolean;
 	flashTone?: string; // band color; defaults to grey (founding myths use kingdom colors)
 	accent?: string; // episode title color — battle entries use red
 	title: string; // "Queen Sunduk"
@@ -128,3 +132,103 @@ export interface Chapter {
 import raw from './data/story.json';
 
 export const chapters = raw as unknown as Chapter[];
+
+/** Whole-entry memory band — `flash` or the explicit `flashback` alias. */
+export function isFlashEntry(entry: Pick<Entry, 'flash' | 'flashback'>) {
+	return !!(entry.flash || entry.flashback);
+}
+
+/**
+ * Stable DOM / hash id fragment from an episode title.
+ * Apostrophes drop so “Yeon’s Massacre” → `yeons-massacre`.
+ */
+export function entrySlug(title: string): string {
+	return title
+		.normalize('NFKD')
+		.replace(/[\u0300-\u036f]/g, '')
+		.replace(/['’‘]/g, '')
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+}
+
+/** Canonical episode id: `chapterId-slug`, used for TOC, hashes, and article roots. */
+export function entryId(chapterId: string, title: string): string {
+	return `${chapterId}-${entrySlug(title)}`;
+}
+
+/** DOM id for a chapter's part title page — distinct from episode slugs. */
+export function partId(chapterId: string): string {
+	return `part-${chapterId}`;
+}
+
+export function chapterIdFromPartId(id: string): string | null {
+	return id.startsWith('part-') ? id.slice('part-'.length) : null;
+}
+
+/** A named cut inside an entry — day plate, scene plate, or titled flashback. */
+export type SceneRef = {
+	id: string;
+	slug: string;
+	title: string;
+	ko?: string;
+	kind: 'day' | 'scene' | 'flashback';
+};
+
+/** Top-level blocks that title a scene the reader can jump to. */
+export function isSceneHeader(b: Block): boolean {
+	return b.kind === 'day' || b.kind === 'scene' || (b.kind === 'flashback' && !!b.title);
+}
+
+function uniqueSlug(used: Map<string, number>, title: string): string {
+	const base = entrySlug(title) || 'scene';
+	const n = (used.get(base) ?? 0) + 1;
+	used.set(base, n);
+	return n === 1 ? base : `${base}-${n}`;
+}
+
+/**
+ * Scene list for one entry, in reading order. Ids are `episodeId-scene-slug`
+ * so hash jumps share the TOC slug scheme.
+ */
+export function scenesOf(blocks: Block[] | undefined, episodeId: string): SceneRef[] {
+	const used = new Map<string, number>();
+	const out: SceneRef[] = [];
+	for (const b of blocks ?? []) {
+		if (b.kind === 'day' || b.kind === 'scene') {
+			const slug = uniqueSlug(used, b.label);
+			out.push({ id: `${episodeId}-${slug}`, slug, title: b.label, ko: b.ko, kind: b.kind });
+		} else if (b.kind === 'flashback' && b.title) {
+			const slug = uniqueSlug(used, b.title);
+			out.push({ id: `${episodeId}-${slug}`, slug, title: b.title, kind: 'flashback' });
+		}
+	}
+	return out;
+}
+
+function headerTitle(b: Block): string {
+	if (b.kind === 'day' || b.kind === 'scene') return b.label;
+	if (b.kind === 'flashback') return b.title ?? '';
+	return '';
+}
+
+/**
+ * DOM id for a scene header block. Walks `source` in reading order so slugs
+ * match `scenesOf` / the TOC even when this block is rendered in a beat slice.
+ */
+export function sceneIdForBlock(
+	block: Block,
+	source: Block[] | undefined,
+	episodeId: string
+): string | undefined {
+	if (!episodeId || !isSceneHeader(block)) return undefined;
+	const list = scenesOf(source, episodeId);
+	let n = 0;
+	for (const b of source ?? []) {
+		if (!isSceneHeader(b)) continue;
+		const s = list[n++];
+		if (b === block) return s?.id;
+	}
+	const slug = entrySlug(headerTitle(block)) || 'scene';
+	return `${episodeId}-${slug}`;
+}

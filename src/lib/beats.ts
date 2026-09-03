@@ -18,6 +18,9 @@ function textOf(b: Block): string {
 	switch (b.kind) {
 		case 'p':
 		case 'cite':
+		case 'moral':
+		case 'monologue':
+		case 'quote':
 			return b.html + ' ' + (b.ko ?? '');
 		case 'dialogue':
 			return [...b.lines, ...(b.en ?? [])].join(' ');
@@ -26,9 +29,22 @@ function textOf(b: Block): string {
 		case 'hanja':
 			return b.chars.map((c) => c.char + c.gloss).join(' ') + ' ' + (b.after ?? '');
 		case 'flashback':
-			return (b.title ?? '') + ' ' + (b.year ?? '');
+			return (
+				(b.title ?? '') +
+				' ' +
+				(b.year ?? '') +
+				' ' +
+				b.blocks.map(textOf).join(' ')
+			);
 		case 'table':
 			return [...b.head, ...b.rows.flat()].join(' ');
+		case 'diagram':
+			return [b.title, b.caption, b.ko].filter(Boolean).join(' ');
+		case 'day':
+		case 'scene':
+			return [b.label, b.ko].filter(Boolean).join(' ');
+		case 'formation':
+			return [b.title, b.note].filter(Boolean).join(' ');
 		default:
 			return '';
 	}

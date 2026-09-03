@@ -43,6 +43,7 @@
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
 	import { chartsForWikiEntry } from '$lib/components/diagrams/wikiCharts';
+	import { storyImg } from '$lib/img';
 	import type { Snapshot } from './$types';
 
 	const INDEX_SCROLL_KEY = 'wiki:indexScroll';
@@ -573,7 +574,7 @@
 		{#if filtered.length === 0}
 			<p class="empty">Nothing matches. Widen the filters or clear the search.</p>
 		{:else}
-			{#each sections as section (section.key)}
+			{#each sections as section, si (section.key)}
 				<section class="group" class:tier-group={kind === 'god'}>
 					<header class="group-head">
 						<h2>
@@ -585,7 +586,7 @@
 						{/if}
 					</header>
 					<ul class="grid">
-						{#each section.items as p (p.id)}
+						{#each section.items as p, i (p.id)}
 							{@const kc = { ...(KINGDOMS[p.kingdom] ?? KINGDOMS.other), color: colorOf(p) }}
 							{@const accents = accentColorsOf(p)}
 							{@const showAccent = showsWikiAccent(p)}
@@ -642,7 +643,14 @@
 											aria-hidden="true"
 										>
 											{#if showcaseArt}
-												<img src={showcaseArt} alt="" />
+												<img
+													{...storyImg(showcaseArt, {
+														kind: 'place',
+														priority: si === 0 && i < 8,
+														alt: '',
+														sizes: '(max-width: 820px) 45vw, 220px'
+													})}
+												/>
 											{:else}
 												<span class="showcase-initial">{hangulInitial(p)}</span>
 											{/if}
@@ -661,7 +669,13 @@
 													class:silhouette={mArt ? isPlaceholderArt(mArt) : false}
 												>
 													{#if mArt}
-														<img src={mArt} alt="" />
+														<img
+															{...storyImg(mArt, {
+																kind: 'thumb',
+																alt: '',
+																sizes: '48px'
+															})}
+														/>
 													{:else}
 														{hangulInitial(m)}
 													{/if}
@@ -675,7 +689,14 @@
 											aria-hidden="true"
 										>
 											{#if clanArt}
-												<img src={clanArt} alt="" />
+												<img
+													{...storyImg(clanArt, {
+														kind: 'thumb',
+														priority: si === 0 && i < 8,
+														alt: '',
+														sizes: '96px'
+													})}
+												/>
 											{:else}
 												{hangulInitial(spotlight)}
 											{/if}
@@ -683,7 +704,14 @@
 									{:else}
 										<span class="avatar" class:silhouette={isPlaceholderArt(art)} aria-hidden="true">
 											{#if art}
-												<img src={art} alt="" />
+												<img
+													{...storyImg(art, {
+														kind: 'thumb',
+														priority: si === 0 && i < 8,
+														alt: '',
+														sizes: '96px'
+													})}
+												/>
 											{:else}
 												{hangulInitial(p)}
 											{/if}

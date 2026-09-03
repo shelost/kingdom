@@ -3,6 +3,7 @@
 	import {
 		byId,
 		ageAt,
+		hasHumanAge,
 		avatarOf,
 		nameOf,
 		titleOf,
@@ -33,6 +34,7 @@
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
 	import { reading } from '$lib/reading.svelte';
 	import { resolve } from '$app/paths';
+	import { storyImg } from '$lib/img';
 
 	// hover card
 	let hovered = $state<Person | null>(null);
@@ -141,7 +143,7 @@
 		<div class="card-top">
 			<span class="avatar" class:silhouette={isPlaceholderArt(art)} aria-hidden="true">
 				{#if art}
-					<img src={art} alt="" />
+					<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '32px' })} />
 				{:else}
 					{hangulInitial(hovered)}
 				{/if}
@@ -155,7 +157,7 @@
 					{k.label}
 				</span>
 			</div>
-			{#if hovered.entity !== 'concept' && hovered.entity !== 'relationship' && hovered.entity !== 'place' && ageAt(hovered, hoverYear) != null}
+			{#if ageAt(hovered, hoverYear) != null}
 				<span class="card-age">{ageAt(hovered, hoverYear)}</span>
 			{/if}
 		</div>
@@ -234,7 +236,7 @@
 		<div class="peek-body">
 			{#if photo}
 				<figure class="peek-photo">
-					<img src={photo} alt={who} />
+					<img {...storyImg(photo, { kind: 'hero', priority: true, alt: who, sizes: '30rem' })} />
 					{#if peeked.photoCredit}<figcaption>{peeked.photoCredit}</figcaption>{/if}
 				</figure>
 			{/if}
@@ -244,7 +246,7 @@
 			<div class="hero" class:has-art={!!art} class:stand-in={isPlaceholderArt(art)} class:place={isPlace}>
 				{#if art}
 					<figure class="hero-art" aria-hidden="true">
-						<img src={art} alt="" />
+						<img {...storyImg(art, { kind: 'portrait', priority: true, alt: '', sizes: '22rem' })} />
 					</figure>
 				{/if}
 				<div class="hero-id">
@@ -324,7 +326,10 @@
 						<dt>Blade</dt>
 						<dd class={{ 'prop-art-row': swordArt }}>
 							{#if swordArt}
-								<img class="prop-art-fig" src={swordArt} alt="" />
+								<img
+									class="prop-art-fig"
+									{...storyImg(swordArt, { kind: 'hero', alt: '', sizes: '28rem' })}
+								/>
 							{/if}
 							{#if isSword && peeked.tagline}
 								<span class="prop-art-cap">{peeked.tagline}</span>
@@ -349,7 +354,10 @@
 						<dt>Binyeo</dt>
 						<dd class="prop-art-row">
 							{#if binyeoArt}
-								<img class="prop-art-fig" src={binyeoArt} alt="" />
+								<img
+									class="prop-art-fig"
+									{...storyImg(binyeoArt, { kind: 'hero', alt: '', sizes: '28rem' })}
+								/>
 							{/if}
 							<span class="prop-art-cap">{peeked.binyeo}</span>
 						</dd>
@@ -357,19 +365,11 @@
 				{/if}
 				{#if lifespan(peeked)}
 					<div>
-						<dt
-							>{peeked.entity === 'concept' ||
-							peeked.entity === 'organization' ||
-							peeked.entity === 'group' ||
-							peeked.entity === 'clan' ||
-							isBond
-								? 'Active'
-								: 'Lived'}</dt
-						>
+						<dt>{hasHumanAge(peeked) ? 'Lived' : 'Active'}</dt>
 						<dd>{lifespan(peeked)}</dd>
 					</div>
 				{/if}
-				{#if peeked.entity !== 'concept' && peeked.entity !== 'organization' && peeked.entity !== 'group' && peeked.entity !== 'clan' && peeked.entity !== 'relationship' && peeked.entity !== 'place' && peeked.born != null && peeked.died != null}
+				{#if hasHumanAge(peeked) && peeked.born != null && peeked.died != null}
 					<div><dt>Age at death</dt><dd>{peeked.died - peeked.born}</dd></div>
 				{/if}
 				{#if peeked.hwarangClass}

@@ -14,6 +14,7 @@
 		colorOf,
 		accentColorsOf,
 		hangulInitial,
+		hasHumanAge,
 		photoOf,
 		binyeoArtOf,
 		swordArtOf,
@@ -59,6 +60,7 @@
 	import WikiOrgCharts from './diagrams/WikiOrgCharts.svelte';
 	import OrgChart from './diagrams/OrgChart.svelte';
 	import { chartsForWikiEntry, hasDiagramChart } from './diagrams/wikiCharts';
+	import { storyImg } from '$lib/img';
 
 	let {
 		entry,
@@ -271,7 +273,7 @@
 	<div class="detail-scroll" {@attach bindScroll}>
 		{#if photo}
 			<figure class="photo">
-				<img src={photo} alt={who} />
+				<img {...storyImg(photo, { kind: 'hero', priority: true, alt: who, sizes: '40rem' })} />
 				{#if entry.photoCredit}<figcaption>{entry.photoCredit}</figcaption>{/if}
 			</figure>
 		{/if}
@@ -284,7 +286,14 @@
 				class:nation={isNationFlagHero}
 				aria-hidden="true"
 			>
-				<img src={heroArt} alt="" />
+				<img
+					{...storyImg(heroArt, {
+						kind: isNationFlagHero ? 'place' : 'hero',
+						priority: true,
+						alt: '',
+						sizes: isNationFlagHero ? '100vw' : '(max-width: 820px) 100vw, 40rem'
+					})}
+				/>
 			</figure>
 		{/if}
 
@@ -359,7 +368,14 @@
 						class:stand-in={isPlaceholderArt(art)}
 						aria-hidden="true"
 					>
-						<img src={heroArt} alt="" />
+						<img
+							{...storyImg(heroArt, {
+								kind: 'portrait',
+								priority: true,
+								alt: '',
+								sizes: '(max-width: 820px) 8.25rem, 16rem'
+							})}
+						/>
 					</figure>
 				</div>
 			{:else}
@@ -379,7 +395,7 @@
 							title={row.label}
 						>
 							{#if row.art && !isPlaceholderArt(row.art)}
-								<img src={row.art} alt="" />
+								<img {...storyImg(row.art, { kind: 'thumb', alt: '', sizes: '3.4rem' })} />
 							{:else}
 								<span class="stage-initial" aria-hidden="true">{hangulInitial(entry)}</span>
 							{/if}
@@ -514,7 +530,7 @@
 					<dt>Blade</dt>
 					<dd class={{ 'prop-art-row': swordArt }}>
 						{#if swordArt}
-							<img class="prop-art-fig" src={swordArt} alt="" />
+							<img class="prop-art-fig" {...storyImg(swordArt, { kind: 'hero', alt: '', sizes: '36rem' })} />
 						{/if}
 						{#if isSword && entry.tagline}
 							<span class="prop-art-cap">{entry.tagline}</span>
@@ -547,7 +563,7 @@
 					<dt>Binyeo</dt>
 					<dd class="prop-art-row">
 						{#if binyeoArt}
-							<img class="prop-art-fig" src={binyeoArt} alt="" />
+							<img class="prop-art-fig" {...storyImg(binyeoArt, { kind: 'hero', alt: '', sizes: '36rem' })} />
 						{/if}
 						<span class="prop-art-cap">{entry.binyeo}</span>
 					</dd>
@@ -555,19 +571,7 @@
 			{/if}
 			{#if life}
 				<div>
-					<dt
-						>{kind === 'concept' ||
-						kind === 'organization' ||
-						kind === 'group' ||
-						kind === 'clan' ||
-						kind === 'phrase' ||
-						kind === 'sword' ||
-						kind === 'city' ||
-						kind === 'place' ||
-						isBond
-							? 'Active'
-							: 'Lived'}</dt
-					>
+					<dt>{hasHumanAge(entry) ? 'Lived' : 'Active'}</dt>
 					<dd>{life}</dd>
 				</div>
 			{/if}
@@ -687,7 +691,9 @@
 				<ol class="cv-list">
 					{#each entry.career as office, i (`${office.title}-${office.from ?? 'x'}-${office.to ?? 'x'}-${i}`)}
 						{@const years = careerYearsOf(office, entry.died)}
-						{@const ages = careerAgesOf(office, entry.born, entry.died)}
+						{@const ages = hasHumanAge(entry)
+							? careerAgesOf(office, entry.born, entry.died)
+							: null}
 						{@const orgId = careerOrgId(office)}
 						<li>
 							<span class="cv-office">
@@ -751,7 +757,7 @@
 								aria-hidden="true"
 							>
 								{#if portrait}
-									<img src={portrait} alt="" />
+									<img {...storyImg(portrait, { kind: 'thumb', alt: '', sizes: '7.25rem' })} />
 								{:else}
 									{hangulInitial(m)}
 								{/if}
@@ -825,7 +831,7 @@
 									aria-hidden="true"
 								>
 									{#if cityArt}
-										<img src={cityArt} alt="" />
+										<img {...storyImg(cityArt, { kind: 'place', alt: '', sizes: '7.25rem' })} />
 									{:else}
 										{hangulInitial(city)}
 									{/if}
@@ -864,7 +870,7 @@
 									aria-hidden="true"
 								>
 									{#if placeArt}
-										<img src={placeArt} alt="" />
+										<img {...storyImg(placeArt, { kind: 'place', alt: '', sizes: '7.25rem' })} />
 									{:else}
 										{hangulInitial(place)}
 									{/if}

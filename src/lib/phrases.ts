@@ -213,7 +213,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — the life-reflection asked at the end',
 		tagline: 'One question at the threshold — then the walk.',
 		quote: 'Ask the question. Do not deliver the answer.',
-		arc: 'Kangrim — 강림 to elites, 저승사자 to the street — fetches the dead for Yumla’s judgment under Big Star’s 저승, often beside Haewonmek, with a ledger scrambled by a crow and a single question about the choice that made the life. Haewonmek’s ask is simpler: Any last words? / 남길 말 있나? Queens, rebels, marshals, a girl at Daeya who knew only the folk title — each gets an ask. Kangrim’s Question is what later mouths call any reckoning at the end: the interview you cannot rehearse, the honesty that shortens the road. You cannot bargain with the hour. You can still answer the question.',
+		arc: 'Kangrim — 강림 to elites, 저승사자 to the street — fetches the dead for Yumla’s judgment under Big Star’s 저승, often beside Haewonmek. The rite first: the red notebook of names (적패지), the name said three times, the cord cut like an umbilical. A crow once scrambled that book; that is why nobody knows their hour. Then the Question, about the choice that made the life. Haewonmek’s ask is simpler: Any last words? / 남길 말 있나? Queens, rebels, marshals, a girl at Daeya who knew only the folk title — each gets an ask. Kangrim’s Question is what later mouths call any reckoning at the end: the interview you cannot rehearse, the honesty that shortens the road. You cannot bargain with the hour. You can still answer the question.',
 		events: [
 			{ label: 'Asked at every threshold Kangrim keeps for the court of judgment.' },
 			{ label: 'Becomes the name for a final life-reflection.' }
@@ -287,7 +287,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — the coup that clears the room',
 		tagline: 'Invite the court. End the court. Keep the swords.',
 		quote: 'Kill me? Yeon Gesomun?',
-		arc: 'In 642 Yeon answers a plot on his life by butchering king, commanders, and officials at a feast — then wears five blades for the men he killed. Yeon’s Banquet is any purge staged as hospitality: the meeting that was always a trap, the toast that ends a government. Pair with the Gesomun Method; one is the dinner, the other is the years after.',
+		arc: 'In 642 Yeon answers a plot on his life by butchering king, commanders, and officials at a feast — then wears the four taken blades with the Eastern Crow Blade he brought. Yeon’s Banquet is any purge staged as hospitality: the meeting that was always a trap, the toast that ends a government. Pair with the Gesomun Method; one is the dinner, the other is the years after.',
 		events: [
 			{ year: 642, label: 'The massacre at Pyongyang.' },
 			{ label: 'Becomes the name for a purge disguised as a feast.' }

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Handle, Position, type NodeProps } from '@xyflow/svelte';
+	import { storyImg } from '$lib/img';
 
 	type Data = {
 		label: string;
@@ -28,7 +29,11 @@
 >
 	<div class="dot" aria-hidden="true">
 		{#if data.avatar}
-			<img class="face" src={data.avatar} alt="" draggable="false" />
+			<img
+				class="face"
+				{...storyImg(data.avatar, { kind: 'thumb', alt: '', sizes: `${size}px` })}
+				draggable="false"
+			/>
 		{:else}
 			<span class="initial">{data.initial ?? data.label.slice(0, 1)}</span>
 		{/if}

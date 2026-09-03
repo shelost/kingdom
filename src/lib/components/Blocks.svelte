@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Block } from '$lib/story';
+	import { isSceneHeader, sceneIdForBlock, scenesOf, type Block } from '$lib/story';
 	import {
 		linkPeople,
 		avatarOf,
@@ -10,15 +10,21 @@
 		hangulInitial,
 		type Person
 	} from '$lib/people';
-	import { reading, isKorean, isStageMode, activateDialogue } from '$lib/reading.svelte';
+	import { reading, isKorean, isStageMode, leadLang, activateDialogue } from '$lib/reading.svelte';
 	import { utteranceOf } from '$lib/speech.svelte';
+	import { storyImg } from '$lib/img';
 	import Self from './Blocks.svelte';
 	import DiagramBlock from './diagrams/DiagramBlock.svelte';
 	import SpeakButton from './SpeakButton.svelte';
 
 	type Dialogue = Extract<Block, { kind: 'dialogue' }>;
 
-	let { blocks, year = null }: { blocks: Block[]; year?: number | null } = $props();
+	let {
+		blocks,
+		year = null,
+		idPrefix = '',
+		sceneFrom
+	}: { blocks: Block[]; year?: number | null; idPrefix?: string; sceneFrom?: Block[] } = $props();
 
 	function visible(b: Block) {
 		if (
@@ -28,7 +34,8 @@
 			b.kind === 'verse' ||
 			b.kind === 'formation' ||
 			b.kind === 'diagram' ||
-			b.kind === 'day'
+			b.kind === 'day' ||
+			b.kind === 'scene'
 		)
 			return true;
 		// quotes always carry hanja / hangul / english together
@@ -47,7 +54,37 @@
 		return reading.lang === 'ko' && b.ko ? b.ko : b.html;
 	}
 
+	/** How many source lines an utterance has, across all its language layers. */
+	function lineCount(b: Dialogue) {
+		return Math.max(
+			b.lines.length,
+			b.en?.length ?? 0,
+			b.zh?.length ?? 0,
+			b.ja?.length ?? 0
+		);
+	}
+
+	let koFirst = $derived(leadLang(reading.lang) === 'ko');
+
 	let shown = $derived(blocks.filter(visible));
+
+	let headerIdByBlock = $derived.by(() => {
+		const map = new Map<Block, string>();
+		if (!idPrefix) return map;
+		const source = sceneFrom ?? blocks;
+		const list = scenesOf(source, idPrefix);
+		let n = 0;
+		for (const b of source) {
+			if (!isSceneHeader(b)) continue;
+			const s = list[n++];
+			if (s) map.set(b, s.id);
+		}
+		return map;
+	});
+
+	function sceneIdFor(block: Block): string | undefined {
+		return headerIdByBlock.get(block) ?? sceneIdForBlock(block, sceneFrom ?? blocks, idPrefix);
+	}
 </script>
 
 <!-- The body of one dialogue block: who is talking, then the lines themselves.
@@ -58,32 +95,38 @@
 	{:else if block.speaker}
 		<span class="speaker">{block.speaker}</span>
 	{/if}
-	{#each {
-		length: Math.max(
-			block.lines.length,
-			block.en?.length ?? 0,
-			block.zh?.length ?? 0,
-			block.ja?.length ?? 0
-		)
-	} as _, j (j)}
-		{#if block.lines[j] && reading.lang !== 'en'}
-			<span class="line ko">{@html block.lines[j]}</span>
-		{/if}
-		{#if block.en?.[j] && reading.lang !== 'ko'}
-			<span class="line en" class:solo={!block.lines[j]}>{@html block.en[j]}</span>
+	{#each { length: lineCount(block) } as _, j (j)}
+		{@const ko = reading.lang === 'en' ? undefined : block.lines[j]}
+		{@const en = reading.lang === 'ko' ? undefined : block.en?.[j]}
+		<!-- The language the reader chose leads at body size; every other tongue
+		     follows underneath it, a step smaller and a shade through. -->
+		{#if koFirst}
+			{#if ko}
+				<span class="line ko lead">{@html ko}</span>
+			{/if}
+			{#if en}
+				<span class="line en" class:lead={!ko} class:sub={!!ko}>{@html en}</span>
+			{/if}
+		{:else}
+			{#if en}
+				<span class="line en lead">{@html en}</span>
+			{/if}
+			{#if ko}
+				<span class="line ko" class:lead={!en} class:sub={!!en}>{@html ko}</span>
+			{/if}
 		{/if}
 		<!-- Native CN/JP subtitle + transcription: always shown when present -->
 		{#if block.zh?.[j]}
-			<span class="line zh">{@html block.zh[j]}</span>
+			<span class="line zh sub">{@html block.zh[j]}</span>
 		{/if}
 		{#if block.zhLatn?.[j]}
-			<span class="line zh-latn">{block.zhLatn[j]}</span>
+			<span class="line zh-latn sub">{block.zhLatn[j]}</span>
 		{/if}
 		{#if block.ja?.[j]}
-			<span class="line ja">{@html block.ja[j]}</span>
+			<span class="line ja sub">{@html block.ja[j]}</span>
 		{/if}
 		{#if block.jaLatn?.[j]}
-			<span class="line ja-latn">{block.jaLatn[j]}</span>
+			<span class="line ja-latn sub">{block.jaLatn[j]}</span>
 		{/if}
 	{/each}
 {/snippet}
@@ -119,7 +162,7 @@
 						aria-label={who}
 					>
 						{#if art}
-							<img src={art} alt="" />
+							<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '32px' })} />
 						{:else}
 							<span class="initial">{hangulInitial(p)}</span>
 						{/if}
@@ -237,9 +280,10 @@
 			</figure>
 		{:else if block.kind === 'diagram'}
 			<DiagramBlock {block} />
-		{:else if block.kind === 'day'}
-			<!-- the siege calendar: one large plate per day of the chronicle -->
-			<header class="day">
+		{:else if block.kind === 'day' || block.kind === 'scene'}
+			{@const sid = sceneIdFor(block)}
+			<!-- the siege calendar / merged-episode scene plate -->
+			<header class="day" id={sid} data-scene={sid}>
 				<span class="day-rule" aria-hidden="true"></span>
 				<span class="day-text">
 					<span class="day-label">{block.label}</span>
@@ -248,8 +292,9 @@
 				<span class="day-rule" aria-hidden="true"></span>
 			</header>
 		{:else if block.kind === 'flashback'}
+			{@const sid = sceneIdFor(block)}
 			<!-- mini-flashback: the page drops to black while this is under the reading line -->
-			<aside class="mini" data-flash="1">
+			<aside class="mini" id={sid} data-scene={sid} data-flash="1">
 				<header class="mini-head">
 					<span class="mini-mark" aria-hidden="true"></span>
 					{#if block.year}<span class="mini-year">{block.year}</span>{/if}
@@ -351,12 +396,13 @@
 		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chip) 45%, transparent);
 	}
 
-	:global(html.is-cinema) .line.ko {
+	:global(html.is-cinema) .line.lead {
 		font-size: 1.04em;
 		color: var(--fg);
 	}
 
-	:global(html.is-cinema) .line.en:not(.solo) {
+	:global(html.is-cinema) .line.ko.sub,
+	:global(html.is-cinema) .line.en.sub {
 		font-size: 0.86em;
 		color: var(--fg-dim);
 	}
@@ -504,32 +550,34 @@
 		outline-offset: 0.35rem;
 	}
 
-	.line.ko {
+	/* ————— language layers —————
+	   Whichever language the reader picked *is* the line: body size, full
+	   strength. Everything else is a gloss set beneath it. */
+	.line {
 		color: var(--fg-dim);
 	}
 
-	/* the English rendering sits under its Korean line, quieter */
-	.line.en {
-		color: var(--fg-faint);
-		font-size: 0.92em;
-		font-style: italic;
+	.line.lead {
+		font-size: 1em;
+		font-style: normal;
+		opacity: 1;
+	}
+
+	.line.sub {
+		font-size: 0.88em;
+		opacity: 0.62;
 		margin-bottom: 0.22rem;
 	}
 
-	/* no Korean above it — this *is* the line */
-	.line.en.solo {
-		color: var(--fg-dim);
-		font-size: 1em;
-		font-style: normal;
-		margin-bottom: 0;
+	.line.en.sub {
+		font-style: italic;
 	}
 
-	/* Tang / Yamato native speech — a subtitle under the reading language */
+	/* Tang / Yamato native speech, and its transcription */
 	.line.zh,
 	.line.ja {
 		margin-top: 0.12rem;
 		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 0.94em;
 		letter-spacing: 0.06em;
 		line-height: 1.42;
 		color: color-mix(in srgb, var(--chip) 38%, var(--fg-dim));
@@ -542,7 +590,6 @@
 		letter-spacing: 0.02em;
 		line-height: 1.45;
 		color: var(--fg-faint);
-		margin-bottom: 0.22rem;
 	}
 
 	.who {
@@ -830,12 +877,13 @@
 		color: var(--fg-faint);
 	}
 
-	/* ————— siege-day header ————— */
+	/* ————— siege-day / scene header ————— */
 	.day {
 		display: flex;
 		align-items: center;
 		gap: 1.1rem;
 		margin: 3.4rem 0 1.9rem;
+		scroll-margin-top: 5.5rem;
 	}
 
 	.day:first-child {
@@ -893,6 +941,7 @@
 		margin: 2rem 0 2.2rem;
 		padding: 1.1rem 0 1.1rem 1.6rem;
 		border-left: 1px solid rgba(216, 178, 106, 0.28);
+		scroll-margin-top: 5.5rem;
 	}
 
 	.mini::before,
@@ -953,22 +1002,15 @@
 		font: inherit;
 		font-weight: 500;
 		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--fg) 10%, transparent);
+		background: none;
 		border: none;
 		padding: 0;
 		cursor: pointer;
-		border-radius: 3px;
-		transition:
-			color 0.2s var(--ease),
-			background 0.2s var(--ease),
-			text-decoration-color 0.2s var(--ease);
+		transition: color 0.2s var(--ease);
 	}
 
 	.prose :global(.person:hover) {
 		color: var(--gold);
-		background: rgba(216, 178, 106, 0.1);
-		text-decoration-color: var(--gold);
-		box-shadow: 0 0 0 3px rgba(216, 178, 106, 0.1);
 	}
 
 	/* the avatar is also a person trigger, but must not take the text styling */
@@ -981,6 +1023,20 @@
 	.prose :global(.person:focus-visible) {
 		outline: 2px solid var(--gold);
 		outline-offset: 2px;
+	}
+
+	.prose :global(.person-age) {
+		font-size: 0.65em;
+		font-weight: 500;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: 0;
+		line-height: 0;
+		color: color-mix(in srgb, var(--fg) 48%, transparent);
+		margin-left: 0.08em;
+	}
+
+	.prose :global(.person:hover .person-age) {
+		color: color-mix(in srgb, var(--gold) 72%, transparent);
 	}
 
 	/* ————— Phones: targets a thumb can actually hit ————— */

@@ -693,7 +693,7 @@ export const PEOPLE: Person[] = [
 		main: true,
 		tagline: '“I am the goal. Everything else is scenery.”',
 		ideology: 'Westernizing modernizer',
-		ideologyNote: 'Insists Samhan must “learn from the West” (Tang then; another empire’s name tomorrow): Chinese-style governance — seal, speed, Secretariat, fewer uncles — without surrendering the lintel. Named for the Chinese classics (春秋, Spring and Autumn) and entirely untroubled by it. Argues modernization through westernization as survival.',
+		ideologyNote: 'Insists Samhan must “learn from the West” (Tang then; another empire’s name tomorrow): Chinese-style governance — seal, speed, Secretariat, fewer uncles — without surrendering the lintel. Named for the Chinese classics (春秋, Spring and Autumn) and entirely untroubled by it. Argues modernization through westernization as survival. Avoids the Harmony Council’s chair until Gotaso dies — his father Yongsu’s stories of Jinji’s deposition taught him what unanimity does to a name; after Daeya he decides the room will have to take him.',
 		quote: 'I am the goal. Everything else is scenery.',
 		firstLine: {
 			en: '…Keep that. I may need to borrow it back when I am braver.',
@@ -704,7 +704,7 @@ export const PEOPLE: Person[] = [
 			ko: '법민아… 사랑한다.'
 		},
 		nature: 'The smartest and most wily: an opportunist who will say or become whatever the room requires, lethal when patient. Most steeped in Chinese letters, most international — he can meet Tang, Yamato, and Goryeo each in their own tongue, and sometimes still says Goguryeo because the chronicles taught him the older name. His refrain is blunt: learn from the West, westernize the door (seal, speed, Secretariat) without becoming the West — Tang as the period’s “West,” a metaphor that will outlive the dynasty. Also a sheltered ivory-tower elite: almost no opinion of commoners, almost no contact with them; Daeya’s resentment of the capital blindsides him completely. Reads international patterns decades ahead; packed with life-skills — geomancy, arms, charm. Best-looking of the leads, and the most social. Before the crown, corridors whisper Magenta Devil (자의악마 / 자색의 악마) for the 자색 — purple-crimson, 자홍-adjacent — he prefers to wear as habit, not only rank dye; the epithet thins once he is Muyeol.',
-		arc: 'Born a royal barred from the throne by Bone Rank, Chunchu becomes the cleverest man in rooms he is not allowed to rule — steeped in Chinese letters, fluent in every tongue the peninsula and its neighbours speak, able to forecast an alliance’s betrayal a generation out. He is also sheltered: he does not know what Surabol looks like from Daeya until it kills his daughter. Gotaso’s death turns wit into patience. For most of the chronicle he has one heir in focus — Bupmin; Inmun is also his son, but lives as Tang’s long hostage-diplomat and stays mostly off the page. As Kim Chunchu he is already the Magenta Devil in other people’s mouths — fox, imugi, and magenta sleeve in one whisper. He kneels in Pyongyang, sails to Yamato, wins Chang’an, founds the Royal Secretariat, and dies the first True Bone king — Baekje gone, Goryeo standing, the Tang already inside the door he opened. After coronation the Magenta Devil talk is mostly retired; kings collect other names.',
+		arc: 'Born a royal barred from the throne by Bone Rank — grandson of King Jinji, whom the Harmony Council deposed, son of Kim Yongsu who told that story until the boy learned to sit anywhere but the chair they vote on. He becomes the cleverest man in rooms he is not allowed to rule, and for years he stays out of mainstream politics on purpose. Steeped in Chinese letters, fluent in every tongue the peninsula and its neighbours speak, able to forecast an alliance’s betrayal a generation out. He is also sheltered: he does not know what Surabol looks like from Daeya until it kills his daughter. Gotaso’s death is the turn: wit becomes patience, and he decides he will take the throne. For most of the chronicle he has one heir in focus — Bupmin; Inmun is also his son, but lives as Tang’s long hostage-diplomat and stays mostly off the page. As Kim Chunchu he is already the Magenta Devil in other people’s mouths — fox, imugi, and magenta sleeve in one whisper. He kneels in Pyongyang, sails to Yamato, wins Chang’an, founds the Royal Secretariat, and dies the first True Bone king — Baekje gone, Goryeo standing, the Tang already inside the door he opened. After coronation the Magenta Devil talk is mostly retired; kings collect other names.',
 		blade: 'Ring-pommel court sword — imugi coiled on the grip; drawn rarely, remembered always.',
 		swordImage: '/sword_dragon.png',
 		stages: [
@@ -746,6 +746,14 @@ export const PEOPLE: Person[] = [
 			{ year: 654, label: 'Crowned King Muyeol — the first True Bone king.' },
 			{ year: 660, label: 'Sabi falls. He makes Euija pour his wine.' },
 			{ year: 661, label: 'Dies with the war unfinished — declines Kangrim and Haewonmek; walks the underworld himself.' }
+		],
+		family: [
+			{ id: 'yongsu', role: 'Father' },
+			{ id: 'chunmyung', role: 'Mother' },
+			{ id: 'munhee', role: 'Wife' },
+			{ id: 'gotaso', role: 'Daughter' },
+			{ id: 'munmu', role: 'Son' },
+			{ id: 'inmun', role: 'Son' }
 		],
 		clan: 'clan-gyeongju-kim',
 		boneRank: 'True Bone (진골)',
@@ -813,11 +821,11 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'The simplest and most passionate of the three: a true patriot of the common people who despises elites, committees, and tribute paid for another decade of quiet. Rural-general faith — he wholeheartedly believes the founding myths: Jumong the holy king, Haemosu’s sun line, heaven’s descent as bone of the 겨레. Speaks often of 겨레 and builds loyalty by heat rather than by book. Everyone else says Goryeo; he alone insists on Goguryeo, the old full name, as if shortening it were already surrender. Implied blood of Yeon Tabal’s hall: same blunt register, same refusal to be bought by a Go king’s courtesy. Tries to import Tang Taoism to starve the Buddhist monk aristocracy of prestige — a policy that fails to prevent a monk from opening Pyongyang. Charisma of the populist strongman — both the shelter he gives the marches and the massacre he calls rescue. Name: Yeon (연 / 淵) is the Goguryeo clan — never Baekje’s Prince Yun / Buyeo Yun (부여연 / 扶餘演), a different man, kingdom, and hanja.',
 		arc: 'An Eastern Commander (대가) who despises the High Summit’s courage-until-the-final-vote. In 642 he butchers king and Commanders, invents Supreme Commander (대막리지) above the old High Commander (막리지), seats Dosuryu as Chancellor (대대로), and rules through Bojang. When Euija mocks gods as tools of obedience, Gesomun does not flinch — the marches taught him Jumong was real. He leaves three heirs — Yeon Namseng under his own strict roof, Yeon Namgun and Yeon Namsan under his brother Jungto and sister Sooyoung — and no institution that can hold them together. For twenty years he is proved right against Tang; he builds nothing that can outlive him. Within a year of his death the three sons are at each other’s throats and the eldest guides Tang to Pyongyang. Not kin to Baekje’s Prince Yun.',
-		blade: 'The Five Blades — four commandery ring-pommels and the king’s own, each crow-stamped, worn across one spine.',
+		blade: 'Eastern Crow Blade (동방 오도) of the marches; after 642, the High Commander Blade (막리지검) taken from the Summit’s first chair.',
 		swordImage: '/sword_crow.png',
 		events: [
 			{ year: 634, label: 'Defies the High Summit at Pyongyang; the court marks him a traitor.' },
-			{ year: 642, label: 'Renews his vow at Jumong Cavern; massacres the court; creates Supreme Commander (대막리지).' },
+			{ year: 642, label: 'Renews his vow at Jumong Cavern; massacres the court; takes the High Commander Blade; creates Supreme Commander (대막리지).' },
 			{ year: 642, label: 'Imprisons Kim Chunchu, then releases him at Kim Yushin’s name.' },
 			{ year: 645, label: 'Survives Taizong’s invasion; Ansi Fortress holds.' },
 			{ year: 662, label: 'Destroys Pang Xiaotai’s army at the Snake River; refuses Kangrim and Haewonmek.' },
@@ -2664,7 +2672,7 @@ export const PEOPLE: Person[] = [
 		title: 'White Tiger II',
 		tagline: 'White-robed general — farmer, fangtian ji, Tang’s unsung eastern blade.',
 		quote: "Keep a road under your feet — even in the east.",
-		arc: 'Born poor at Longmen as Xue Li. His wife Liu sends him to Zhang Shigui’s muster when Taizong calls for Liaodong. At Stallion Mountain he wears white armour, wields the fangtian ji (the same heaven-halberd the storytellers give Lü Bu), and Taizong asks who the man in white is — then says gaining Xue matters more than gaining Liaodong. Captured once in the seventh invasion, he breaks a fortress cage before the Emperor arrives. Inherits the White Tiger title after Pang Xiaotai dies at the Snake River; as Protector-General of the East he takes Pyongyang in 668 and governs without spectacle. At Maeso in 675 he is Tang’s last great eastern commander — competent, sympathetic, and finally out of horses.',
+		arc: 'Born poor at Longmen as Xue Li. His wife Liu sends him to Zhang Shigui’s muster when Taizong calls for Liaodong. At Stallion Mountain he wears white armour, wields the fangtian ji (the same heaven-halberd the storytellers give Lü Bu), and Taizong asks who the man in white is — then says gaining Xue matters more than gaining Liaodong. Captured once in the seventh invasion, he breaks a fortress cage before the Emperor arrives. Named White Dragon on Taizong’s banner. Inherits the White Tiger title after Pang Xiaotai dies at the Snake River; as Protector-General of the East he takes Pyongyang in 668 and governs without spectacle. At Maeso in 675 he is Tang’s last great eastern commander — competent, sympathetic, and finally out of horses. Real-world figure: 薛仁貴 / 설인귀, born Xue Li 薛禮 (614–683).',
 		blade: 'No ring pommel at all — the fangtian ji, the storytellers’ heaven-halberd; the white coat is his crest.',
 		events: [
 			{ year: 644, label: 'Answers Taizong’s muster at his wife’s urging.' },
@@ -2692,6 +2700,8 @@ export const PEOPLE: Person[] = [
 			'Xue Rengui',
 			'Xue Li',
 			'薛禮',
+			'White Dragon',
+			'백룡',
 			'White Tiger II',
 			'백호 2세',
 			'White Coat',
@@ -2703,28 +2713,48 @@ export const PEOPLE: Person[] = [
 		]
 	},
 	{
+		id: 'lijing',
+		gender: 'm',
+		name: 'Red Dragon',
+		korean: '이정',
+		hanja: '李靖',
+		title: 'The Red Dragon',
+		kingdom: 'tang',
+		born: 571,
+		died: 649,
+		tagline: 'The Red Dragon: Taizong’s other marshal — the name the histories pair with Li Shiji.',
+		quote: 'Three thousand horse is enough, if they arrive before the news.',
+		arc: 'Li Jing, courtesy Yaoshi. With Li Shiji he is the pair the Tang histories cannot write one of without the other: Eastern Turks broken, the steppe taught to use a Tang calendar. Too old to ride the Liao roads himself in 645, he is still the Red Dragon on Taizong’s banner — the name that quiets tents. He dies in 649, the same summer as the Second Emperor; the Red Dragon does not pass to Gaozong’s beasts. Real-world figure: 李靖 / 이정 (571–649).',
+		events: [
+			{ year: 630, label: 'Breaks the Eastern Turks with Li Shiji.' },
+			{ year: 645, label: 'Named Red Dragon for Taizong’s Goguryeo banners.' },
+			{ year: 649, label: 'Dies the same year as the Second Emperor.' }
+		],
+		career: [
+			{ title: 'Red Dragon', korean: '적룡', hanja: '赤龍', org: 'fourdragons', from: 645, to: 649 }
+		],
+		aliases: ['Li Jing', 'Yaoshi', '藥師', '이정', 'Red Dragon', 'the Red Dragon']
+	},
+	{
 		id: 'sudingfang',
 		gender: 'm',
 		avatar: '/ch_red_dragon.png',
-		name: 'Red Dragon',
+		name: 'Red Fowl',
 		korean: '소정방',
 		hanja: '蘇定方',
-		title: 'The Red Dragon',
+		title: 'The Red Fowl',
 		kingdom: 'tang',
 		born: 592,
 		died: 667,
-		tagline: 'The Red Dragon: took three kingdoms’ capitals in one career.',
-		quote: "Three capitals. One career.",
-		arc: 'Breaker of the Western Turks, commander of the 660 seaborne invasion that ended Baekje in a single season. He failed only at Pyongyang — mired in snow at the Sasu while Yeon destroyed the supporting army.',
+		tagline: 'The Red Fowl: took three kingdoms’ capitals in one career.',
+		quote: 'Three capitals. One career.',
+		arc: 'Breaker of the Western Turks, commander of the 660 seaborne invasion that ended Baekje in a single season. Gaozong’s Red Fowl — not the Second Emperor’s Red Dragon, which was Li Jing. He failed only at Pyongyang, mired in snow at the Sasu while Yeon destroyed the supporting army. Real-world figure: 蘇定方 / 소정방 (592–667).',
 		events: [
 			{ year: 660, label: 'Lands 130,000 men at the Geum estuary; Sabi falls.' },
 			{ year: 662, label: 'Winters outside Pyongyang, and withdraws.' }
 		],
-		career: [
-			{ title: 'Red Dragon', korean: '적룡', hanja: '赤龍', org: 'fourdragons', from: 645, to: 661 },
-			{ title: 'Red Fowl', korean: '주작', hanja: '朱雀', org: 'fourbeasts', from: 661 }
-		],
-		aliases: ['Su Dingfang', 'Red Dragon', 'the Red Dragon', 'Red Fowl', 'the Red Fowl']
+		career: [{ title: 'Red Fowl', korean: '주작', hanja: '朱雀', org: 'fourbeasts', from: 661, to: 667 }],
+		aliases: ['Su Dingfang', 'Red Fowl', 'the Red Fowl', 'Vermilion Bird', '주작']
 	},
 	{
 		id: 'lishiji',
@@ -2737,36 +2767,81 @@ export const PEOPLE: Person[] = [
 		kingdom: 'tang',
 		born: 594,
 		died: 669,
-		tagline: 'The Blue Dragon: the old marshal who finally took Pyongyang.',
-		quote: "Siege is weather. Wait for the season.",
+		tagline: 'The Blue Dragon: the old marshal who served both dragon and beast musters, and finally took Pyongyang.',
+		quote: 'Siege is weather. Wait for the season.',
+		arc: 'Xu Shiji, granted the imperial Li; later Li Ji, the 世 dropped for Taizong’s taboo. Taizong’s Blue Dragon in 645 — Liaodong Fortress under the emperor — and Gaozong’s Blue Dragon still, the only banner that answers both the Four Dragons and the Four Beasts. He commands the last campaign; Pyongyang falls in 668. Real-world figure: 徐世勣 / 李世勣 / 이세적 (594–669).',
 		events: [
-			{ year: 645, label: 'Takes Liaodong Fortress under the emperor.' },
+			{ year: 645, label: 'Takes Liaodong Fortress under the emperor — Blue Dragon of the Four Dragons.' },
+			{ year: 661, label: 'Keeps the Blue Dragon seat among Gaozong’s Four Beasts.' },
 			{ year: 668, label: 'Commands the final campaign; Pyongyang falls.' }
 		],
 		career: [
-			{ title: 'Blue Dragon', korean: '청룡', hanja: '青龍', org: 'fourdragons', from: 645 }
+			{ title: 'Blue Dragon', korean: '청룡', hanja: '青龍', org: 'fourdragons', from: 645 },
+			{ title: 'Blue Dragon', korean: '청룡', hanja: '青龍', org: 'fourbeasts', from: 661, note: 'sole overlap' }
 		],
-		aliases: ['Li Shiji', 'Li Ji', 'Blue Dragon', 'the Blue Dragon']
+		aliases: [
+			'Li Shiji',
+			'Li Ji',
+			'Xu Shiji',
+			'徐世勣',
+			'이적',
+			'이세적',
+			'Blue Dragon',
+			'the Blue Dragon',
+			'청룡'
+		]
+	},
+	{
+		id: 'yuchigong',
+		gender: 'm',
+		avatar: '/ch_black_dragon.png',
+		name: 'Black Dragon',
+		korean: '울지공',
+		hanja: '尉遲恭',
+		title: 'The Black Dragon',
+		kingdom: 'tang',
+		born: 585,
+		died: 658,
+		tagline: 'The Black Dragon: held a palace gate, then the left-wing horse on the Liao roads.',
+		quote: 'A gate is also a war.',
+		arc: 'Yuchi Gong, courtesy Jingde — door god with Qin Shubao in the later temples, Xuanwu Gate man in the living ones. In 645 he rides Taizong’s left-wing horse army into Goguryeo as the Black Dragon. He is not Liu Rengui: the Black Tortoise is a later, different man. Yuchi dies in 658, three years before Gaozong names the beasts. Real-world figure: 尉遲恭 / 울지공, also 울지경덕 (585–658).',
+		events: [
+			{ year: 626, label: 'Fights at the Xuanwu Gate for Li Shimin.' },
+			{ year: 645, label: 'Left-wing horse commander; named Black Dragon for the Liao banners.' },
+			{ year: 658, label: 'Dies; the Black Dragon banner is not inherited by the beasts.' }
+		],
+		career: [
+			{ title: 'Black Dragon', korean: '흑룡', hanja: '黑龍', org: 'fourdragons', from: 645, to: 658 }
+		],
+		aliases: [
+			'Yuchi Gong',
+			'Yuchi Jingde',
+			'尉遲敬德',
+			'울지경덕',
+			'울지공',
+			'Black Dragon',
+			'the Black Dragon',
+			'흑룡'
+		]
 	},
 	{
 		id: 'liurengui',
 		gender: 'm',
-		avatar: '/ch_black_dragon.png',
-		name: 'Black Dragon',
+		name: 'Black Tortoise',
 		korean: '유인궤',
 		hanja: '劉仁軌',
-		title: 'The Black Dragon',
+		title: 'The Black Tortoise',
 		kingdom: 'tang',
 		born: 601,
 		died: 685,
-		tagline: 'The Black Dragon: burned four hundred eastern ships at the White River.',
-		quote: "Hold what the others break.",
-		events: [{ year: 663, label: 'Wins the naval battle of Baekgang.' }],
+		tagline: 'The Black Tortoise: burned four hundred eastern ships at the White River.',
+		quote: 'Hold what the others break.',
+		arc: 'Gaozong’s Black Tortoise — not the Second Emperor’s Black Dragon, which was Yuchi Gong. Liu Rengui holds Baekje when the restoration tries to stand up, then anchors a hundred and seventy ships across the White River mouth in 663 and waits for the tide to turn against the East. He is the general who keeps what Su Dingfang breaks. Real-world figure: 劉仁軌 / 유인궤 (601–685).',
+		events: [{ year: 663, label: 'Wins the naval battle of Baekgang as Black Tortoise.' }],
 		career: [
-			{ title: 'Black Dragon', korean: '흑룡', hanja: '黑龍', org: 'fourdragons', from: 645, to: 661 },
 			{ title: 'Black Tortoise', korean: '현무', hanja: '玄武', org: 'fourbeasts', from: 661 }
 		],
-		aliases: ['Liu Rengui', 'Black Dragon', 'the Black Dragon', 'Black Tortoise', 'the Black Tortoise']
+		aliases: ['Liu Rengui', 'Black Tortoise', 'the Black Tortoise', 'Xuanwu', '현무']
 	},
 	{
 		id: 'pangxiaotai',
@@ -2774,16 +2849,23 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_white_dragon.png',
 		name: 'White Tiger',
 		korean: '방효태',
+		hanja: '龐孝泰',
 		title: 'The White Tiger',
 		kingdom: 'tang',
 		died: 662,
 		tagline: 'The White Tiger, drowned at the Snake River with his thirteen sons.',
-		quote: "The first tiger dies loud. The second learns.",
-		events: [{ year: 662, label: 'His army is annihilated by Yeon at the Sasu.' }],
-		career: [
-			{ title: 'White Tiger', korean: '백호', hanja: '白虎', org: 'fourbeasts', from: 661 }
+		quote: 'The first tiger dies loud. The second learns.',
+		arc: 'Gaozong’s White Tiger for the Eighth Invasion. In the second month of 662 he drives a Lingnan host into the Snake River — Salsu in the mouths of old men — and Yeon Gesomun kills him there with all thirteen sons. The seat does not stay empty: Xue Rengui, already Taizong’s White Dragon, takes it as White Tiger II. Real-world figure: 龐孝泰 / 방효태 (d. 662).',
+		events: [
+			{
+				year: 662,
+				label: 'Yeon counts his thirteen sons down at the Snake River, then kills the tiger; Xue Rengui inherits the title.'
+			}
 		],
-		aliases: ['Pang Xiaotai', 'White Tiger', 'the White Tiger']
+		career: [
+			{ title: 'White Tiger', korean: '백호', hanja: '白虎', org: 'fourbeasts', from: 661, to: 662 }
+		],
+		aliases: ['Pang Xiaotai', 'White Tiger', 'the White Tiger', '백호']
 	},
 	{
 		id: 'saimei',
@@ -2906,22 +2988,31 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_commander_1.png',
 		name: 'Yeon Gusesa',
 		korean: '연구세사',
+		title: 'High Commander (막리지) of Goguryeo',
 		kingdom: 'goguryeo',
 		died: 642,
-		tagline: 'Stone Haetae of Goryeo — Central Commander, Gesomun’s elder kinsman, first to name him traitor.',
+		tagline: 'Stone Haetae of Goryeo — High Commander (막리지), Gesomun’s elder kinsman, first to name him traitor.',
 		clan: 'clan-yeon',
 		ideology: 'Old-guard Baekje nationalist',
 		ideologyNote: 'Generation that still hears Geunchogo’s hurricane as destiny, not metaphor.',
 		quote: "A Yeon name is already a warning.",
-		nature: 'Chairs the Summit like a feast: soft voice, hard arithmetic. Tells his nephew to sit down — and is the first mouth to set the word traitor on Yeon’s name. Treats alarms as youthful noise until the noise becomes a massacre.',
-		blade: 'Ring-pommel crow sword — haetae carved beneath the stamp; first of the Five to change hands.',
+		nature: 'Chairs the Summit like a feast: soft voice, hard arithmetic — the 막리지 as first sword, sitting the Central seat. Tells his nephew to sit down — and is the first mouth to set the word traitor on Yeon’s name. Treats alarms as youthful noise until the noise becomes a massacre.',
+		blade: 'High Commander Blade (막리지검) — haetae carved beneath the crow stamp; the Summit’s first chair, not a fifth crow.',
 		swordImage: '/sword_crow.png',
-		events: [{ year: 642, label: 'Killed at Yeon’s banquet; his crow-stamped blade becomes one of the Five.' }],
+		events: [{ year: 642, label: 'Killed at Yeon’s banquet; High Commander Blade taken.' }],
 		sobriquets: ['Stone Haetae of Goryeo'],
 		career: [
-			{ title: 'Central Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
+			{ title: 'High Commander', korean: '막리지', hanja: '莫離支', org: 'highsummit', to: 642 }
 		],
-		aliases: ['Yeon Gusesa', 'Gusesa', 'Lee Gaesa', 'Central Commander', 'Stone Haetae of Goryeo']
+		aliases: [
+			'Yeon Gusesa',
+			'Gusesa',
+			'Lee Gaesa',
+			'High Commander',
+			'막리지',
+			'Central Commander',
+			'Stone Haetae of Goryeo'
+		]
 	},
 	{
 		id: 'northcmd',
@@ -2937,9 +3028,9 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'March command as ideology — the frontier’s veto on capital softness.',
 		quote: "Stop counting remounts. Start counting winters.",
 		nature: 'Blunt frontier arithmetic. Sexually confident in the soldier’s way — present, not performative — and allergic to southern romance when his villages are burning.',
-		blade: 'Ring-pommel crow sabre — Mohe-frost nicks in the edge; the Northern blade of the Five.',
+		blade: 'Northern Crow Blade (북방 오도) — Mohe-frost nicks in the edge.',
 		swordImage: '/sword_crow.png',
-		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Northern crow-blade taken.' }],
+		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Northern Crow Blade taken.' }],
 		career: [
 			{ title: 'Northern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
 		],
@@ -2959,9 +3050,9 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Southern command calculus — hold, trade, survive.',
 		quote: "Send the levy — or stop naming Samhan.",
 		nature: 'Competitive, sharp-tongued, sure of his own front. Treats Eastern tribal fighting as easy work and never forgives a room that starves his border for a slogan.',
-		blade: 'Ring-pommel crow sword — grip worn smooth against Yushin’s passes; the Southern blade of the Five.',
+		blade: 'Southern Crow Blade (남방 오도) — grip worn smooth against Yushin’s passes.',
 		swordImage: '/sword_crow.png',
-		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Southern crow-blade taken.' }],
+		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Southern Crow Blade taken.' }],
 		career: [
 			{ title: 'Southern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
 		],
@@ -2981,9 +3072,9 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Western march as hinge between tribute and defiance.',
 		quote: "Strip the west, and you gift the Tang a road.",
 		nature: 'Cautious about the Second Emperor without sharing Yeon’s urgency. Wants resources, not prophecies — and will not strip the Liao for a king’s peninsula dream.',
-		blade: 'Ring-pommel crow sword — Liao timber-oil in the scabbard; the Western blade of the Five.',
+		blade: 'Western Crow Blade (서방 오도) — Liao timber-oil in the scabbard.',
 		swordImage: '/sword_crow.png',
-		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Western crow-blade taken.' }],
+		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Western Crow Blade taken.' }],
 		career: [
 			{ title: 'Western Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
 		],
@@ -3129,6 +3220,11 @@ export const PEOPLE: Person[] = [
 		binyeo: 'Gold amethyst binyeo — purple orb in filigree, violet at the tip; kept in its box, claim and all.',
 		binyeoImage: '/bn_chunmyung.png',
 		events: [{ year: 603, label: 'Mother of Kim Chunchu.' }],
+		family: [
+			{ id: 'jinpyung', role: 'Father' },
+			{ id: 'yongsu', role: 'Husband' },
+			{ id: 'chunchu', role: 'Son' }
+		],
 		aliases: ['Princess Chunmyung', 'Chunmyung']
 	},
 	{
@@ -4157,7 +4253,7 @@ export const PEOPLE: Person[] = [
 			ko: '고구려는… 죽지 않는다….!'
 		},
 		nature: 'Heat without the eldest’s patience. Desire: to prove Gesomun’s shadow can be worn by a second son. Wound: believing a messenger over a brother. Voice: loud, loyal, easily aimed.',
-		blade: 'Ring-pommel crow sword — younger brother of the Five Blades’ stamp.',
+		blade: 'Ring-pommel crow sword — younger brother of the Yeon hall’s crow stamp.',
 		arc: 'Raised by Jungto and Sooyoung while Namseng ate Gesomun’s rules for supper. Takes his brother’s title after the whisper war; makes the last stand at Pyongyang; dies cursing Silla’s sacred blood and vowing Goguryeo’s final victory — heat that later men will hear in Gung Ye and Wang Geon.',
 		events: [
 			{ label: 'Raised by Jungto and Sooyoung.' },
@@ -4466,6 +4562,61 @@ export const PEOPLE: Person[] = [
 			'The Crescent Moon',
 			'초승달'
 		]
+	},
+	{
+		id: 'jinji',
+		gender: 'm',
+		name: 'King Jinji',
+		korean: '진지왕',
+		hanja: '眞智王',
+		title: '25th sovereign of Silla',
+		kingdom: 'silla',
+		born: 551,
+		died: 579,
+		bornApprox: true,
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'Sacred Bone (성골)',
+		tagline: 'Deposed by the Harmony Council — a Sacred Bone the room took back.',
+		quote: 'You would unseat a Sacred Bone for a night’s rumor?',
+		arc: 'Second son of Jinheung. Three years on the throne, then the Council’s three counts — initial vote, deliberation, final vote — and the minutes no longer call him king. The charge is misconduct; the lesson is what unanimity does to a name. His son Yongsu inherits True Bone, not the crown; the grandson is Chunchu.',
+		events: [
+			{ year: 576, label: 'Succeeds Jinheung.' },
+			{ year: 579, label: 'Deposed by the Harmony Council for misconduct.' }
+		],
+		career: [
+			{ title: 'King', korean: '진지왕', hanja: '眞智王', org: 'sillaroyal', from: 576, to: 579 }
+		],
+		family: [
+			{ id: 'jinheung', role: 'Father' },
+			{ id: 'yongsu', role: 'Son' }
+		],
+		aliases: ['King Jinji', 'Jinji', '진지왕', '眞智王']
+	},
+	{
+		id: 'yongsu',
+		gender: 'm',
+		name: 'Kim Yongsu',
+		korean: '김용수',
+		hanja: '金龍樹',
+		title: 'Son of King Jinji',
+		kingdom: 'silla',
+		born: 575,
+		bornApprox: true,
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'True Bone (진골)',
+		tagline: 'Told his son the story of a grandfather the Council unmade — and kept him out of that room.',
+		quote: 'That room eats the men who amuse it. Stay out of that room.',
+		arc: 'Son of the deposed Jinji; husband of Princess Chunmyung; father of Kim Chunchu. True Bone because a deposed king’s son does not inherit Sacred Bone. He tells the boy the Harmony Council’s three counts until Chunchu learns to sit anywhere but the chair they vote on.',
+		events: [
+			{ year: 579, label: 'Father deposed; the house drops from Sacred Bone to True Bone.' },
+			{ year: 603, label: 'Father of Kim Chunchu.' }
+		],
+		family: [
+			{ id: 'jinji', role: 'Father' },
+			{ id: 'chunmyung', role: 'Wife' },
+			{ id: 'chunchu', role: 'Son' }
+		],
+		aliases: ['Kim Yongsu', 'Yongsu', '김용수', '金龍樹']
 	}
 ];
 
@@ -4555,6 +4706,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'jacheongbi',
+		avatar: '/ch_jacheongbi.png',
 		name: 'Jacheongbi',
 		korean: '자청비',
 		entity: 'god',
@@ -4576,6 +4728,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'mundoryeong',
+		avatar: '/ch_mundoryeong.png',
 		name: 'Mun Doryeong',
 		korean: '문도령',
 		entity: 'god',
@@ -4590,6 +4743,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'gameunjang',
+		avatar: '/ch_gameunjang.png',
 		name: 'Gameunjang-agi',
 		korean: '가믄장아기',
 		entity: 'god',
@@ -4608,6 +4762,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'baekjuto',
+		avatar: '/ch_baekjuto.png',
 		name: 'Baekjuto',
 		korean: '백주또',
 		entity: 'god',
@@ -4622,6 +4777,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'socheonguk',
+		avatar: '/ch_socheonguk.png',
 		name: 'Socheon-guk',
 		korean: '소천국',
 		entity: 'god',
@@ -4824,9 +4980,9 @@ export const CONCEPTS: Person[] = [
 			ko: '깨끗한 답이오. 폐하의 나라에는 늦게 진실을 말한 자의 자리도 있소.'
 		},
 		nature:
-			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — ledger, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
-		arc: 'From 「차사본풀이」: heaven sent him to arrest Yumla; he stayed. Class III: a specific function — the fetch itself — under Yumla’s broader judgment. Across Samhan he collects with Haewonmek — Gotaso at Daeya who knew only the folk title, Bidam and Sunduk who knew his name, five thousand at Hwangsan who wave them in. He asks Kangrim’s Question; Haewonmek asks only for last words. Wet-nurse stories say 저승사자; palace rooms and Tamla’s last telling say Kangrim. The island tells him last — after every kinder Tamla tale — because once you have heard it, every ending changes key.',
-		blade: 'Black iron death blade — ring pommel cold as ledger-ink; shown once, never drawn.',
+			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
+		arc: 'From 「차사본풀이」: heaven sent him to arrest Yumla; he stayed. Class III: a specific function — the fetch itself — under Yumla’s broader judgment. Across Samhan he collects with Haewonmek — Gotaso at Daeya who knew only the folk title, Bidam and Sunduk who knew his name, five thousand at Hwangsan who wave them in. The rite is the same on ordinary roads: open the 적패지, say the name three times, cut the cord. Then he asks Kangrim’s Question; Haewonmek asks only for last words. Wet-nurse stories say 저승사자; palace rooms and Tamla’s last telling say Kangrim. The island tells him last — after every kinder Tamla tale — because once you have heard it, every ending changes key.',
+		blade: 'Black iron death blade — ring pommel cold as red-book ink; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
 			{ label: 'Sent to arrest Yumla; stays as escort of judgment under Big Star.' },
@@ -4872,17 +5028,17 @@ export const CONCEPTS: Person[] = [
 		ideologyNote: 'Death’s other clerk — jokes until the door, then silence.',
 		quote: 'Kangrim asks the Question. I ask for last words. Neither of us bargains.',
 		firstLine: {
-			en: 'Any last words?',
-			ko: '유언은?'
+			en: 'The red book is open. Any last words?',
+			ko: '붉은 명부가 열렸다. 유언은?'
 		},
 		lastLine: {
 			en: 'Any last words?',
 			ko: '유언은?'
 		},
 		nature:
-			'Dead silent. Kangrim’s partner on the fetch-roads — introverted, dark, minimal speech, a younger 해 who took the night-road while the other 해 still drives the day. His ask is simpler than Kangrim’s Question: Any last words? / 남길 말 있나? Common folk still say only 저승사자 — one office, two names elites know. When he must speak it is sharp, final, and a little grumpy; he does not soft-pad the hour.',
+			'Dead silent. Kangrim’s partner on the fetch-roads — introverted, dark, minimal speech, a younger 해 who took the night-road while the other 해 still drives the day. The rite first: 적패지, the name three times, the cord. His ask after is simpler than Kangrim’s Question: Any last words? / 남길 말 있나? Common folk still say only 저승사자 — one office, two names elites know. When he must speak it is sharp, final, and a little grumpy; he does not soft-pad the hour.',
 		arc: 'Second reaper beside Kangrim under Yumla’s judgment and Big Star’s 저승 — in 「차사본풀이」 the older reaper who once showed Kangrim the trail. Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Hwangsan Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
-		blade: 'Black iron death blade — ring pommel cold as last words; shown once, never drawn.',
+		blade: 'Black iron death blade — ring pommel cold as last words; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
 			{ year: -37, label: 'Comes for Jumong at the river; Haemosu sends him off.' },
@@ -4945,7 +5101,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'saradoryeong',
-		avatar: '/ch_gardener.png',
+		avatar: '/ch_saradoryeong.png',
 		name: 'Saradoryeong',
 		korean: '사라도령',
 		entity: 'god',
@@ -5037,6 +5193,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'sanbangdeok',
+		avatar: '/ch_sanbangdeok.png',
 		name: 'Sanbangdeok',
 		korean: '산방덕',
 		entity: 'god',
@@ -5136,6 +5293,8 @@ export const CONCEPTS: Person[] = [
 			{ id: 'hyukgose', role: 'Founding king · egg-born · Sacred exception', reportsTo: null },
 			{ id: 'alyoung', role: 'Founding queen · dragon-born · Sacred exception', reportsTo: 'hyukgose' },
 			{ id: 'jinheung', role: '성골 · Sacred Bone · conqueror', reportsTo: null },
+			{ id: 'jinji', role: '성골 · Sacred Bone · deposed', reportsTo: 'jinheung' },
+			{ id: 'yongsu', role: '진골 · True Bone · Jinji’s son', reportsTo: 'jinji' },
 			{ id: 'jinpyung', role: '성골 · Sacred Bone · 53-year reign', reportsTo: null },
 			{ id: 'sunduk', role: '성골 · Sacred Bone · queen', reportsTo: 'jinpyung' },
 			{ id: 'jinduk', role: '성골 · Sacred Bone · queen', reportsTo: 'jinpyung' },
@@ -5163,8 +5322,9 @@ export const CONCEPTS: Person[] = [
 		title: 'Silla’s unanimous council of Councillors',
 		tagline: 'Six Councillors (대등) under a Premier (상대등) — initial vote, deliberation, final vote.',
 		nature: 'Each session: initial vote → deliberation → final vote. Unanimity or nothing; one withheld hand is a Harmony Veto. Yes-Minister courtesy wrapped around Iliad stakes — thrones, pride, and the turning of hands.',
-		arc: 'Members are Councillors (대등); the first chair is Premier (상대등). In 632 six sleeves begin three-to-three on Dukman; Bidam wins deliberation until the final vote is six-to-none. In 645 Bidam alone breaks the initial vote for Seungman and the final vote cannot pass. In 654 Chunchu is enthroned when the holdout is laughed down. After the Chunchu Reforms the Council still meets; the Royal Secretariat ensures nothing of consequence waits for it.',
+		arc: 'Members are Councillors (대등); the first chair is Premier (상대등). In 579 they depose King Jinji on the three counts — misconduct, not treason — and a Sacred Bone house drops to True Bone. In 632 six sleeves begin three-to-three on Dukman; Bidam wins deliberation until the final vote is six-to-none. In 645 Bidam alone breaks the initial vote for Seungman and the final vote cannot pass. In 654 Chunchu is enthroned when the holdout is laughed down. After the Chunchu Reforms the Council still meets; the Royal Secretariat ensures nothing of consequence waits for it.',
 		events: [
+			{ year: 579, label: 'Deposes King Jinji for misconduct — initial vote, deliberation, final vote.' },
 			{ year: 632, label: 'Initial 3:3 → final 6:0 — Queen Sunduk named.' },
 			{ year: 645, label: 'Supum succeeds Euljé as Premier; Bidam alone blocks Seungman.' },
 			{ year: 651, label: 'Outflanked by the Royal Secretariat (집사부).' },
@@ -5314,6 +5474,28 @@ export const CONCEPTS: Person[] = [
 		aliases: ['Great Heroes of Goguryeo', 'Great Heroes']
 	},
 	{
+		id: 'crowblades',
+		name: 'The Crow Blades',
+		korean: '오도',
+		hanja: '烏刀',
+		entity: 'concept',
+		kingdom: 'goguryeo',
+		title: 'Four cardinal blades and the High Commander Blade',
+		tagline: 'A set of named Goguryeo swords — never one weapon.',
+		arc: 'Not an item. Four directional 대가 each carry a crow-stamped blade — Southern, Northern, Eastern, Western — and the High Commander (막리지) carries the office blade, the 막리지검. Yeon Gesomun walks into the banquet of 642 with the Eastern Crow Blade already on his hip. He takes the other three crows and the High Commander Blade; he straps five named swords, not a kit called the Five Blades. Later mouths that still say 오검 mean this set.',
+		events: [{ year: 642, label: 'The four taken blades join the Eastern Crow Blade on Gesomun’s spine.' }],
+		aliases: [
+			'Crow Blades',
+			'The Crow Blades',
+			'사방 오도',
+			'고구려 오도',
+			'Five Blades',
+			'The Five Blades',
+			'오검',
+			'五劍'
+		]
+	},
+	{
 		id: 'sillatang',
 		name: 'The Silla–Tang Alliance',
 		korean: '나당연합',
@@ -5406,18 +5588,6 @@ export const CONCEPTS: Person[] = [
 			'Prime Minister',
 			'상좌평'
 		]
-	},
-	{
-		id: 'fiveblades',
-		name: 'The Five Blades',
-		korean: '오도',
-		entity: 'concept',
-		kingdom: 'goguryeo',
-		title: 'Yeon Gesomun’s swords',
-		tagline: 'Five ring-pommels across the back — four commanderies and a king, each crow-stamped.',
-		arc: 'After the massacre of 642 Yeon takes the blades of the Southern, Northern, Western, and Central commanders — including his uncle Yeon Gusesa — and the king’s own sword, and wears them all. Every pommel carries the three-legged crow. They are the whole argument of his rule in one image: authority is not granted, it is carried — and the Yeon hall has always preferred carrying to asking.',
-		events: [{ year: 642, label: 'Taken at the banquet, after clearing the Summit.' }],
-		aliases: ['Five Blades']
 	},
 	{
 		id: 'fairytales',
@@ -5611,18 +5781,19 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'tang',
 		title: 'The Second Emperor’s dragon generals',
 		tagline: 'White, Red, Blue, and Black Dragons — Taizong’s named blades for the Liao roads.',
-		nature: 'Samhan learns banners, not names. Four dragon titles under the Second Emperor for the seventh invasion and every road that follows.',
-		arc: 'Taizong’s Seventh Invasion of Goguryeo seats four dragon generals: White Dragon (Xue Rengui), Red Dragon (Su Dingfang), Blue Dragon (Li Shiji), Black Dragon (Liu Rengui). Only the Blue Dragon survives into the Third Emperor’s beast roster — the one general both courts could not afford to lose.',
+		nature:
+			'Second Emperor Taizong’s dragon banners, 645. White Dragon — Xue Rengui (薛仁貴 / 설인귀). Red Dragon — Li Jing (李靖 / 이정), not Su Dingfang. Blue Dragon — Li Shiji (李世勣 / 이세적), the sole overlap with the Four Beasts. Black Dragon — Yuchi Gong (尉遲恭 / 울지공), not Liu Rengui. Each colour is a different man except the Blue Dragon, who answers Gaozong’s beast muster as well.',
+		arc: 'Taizong’s Seventh Invasion of Goguryeo seats four dragon generals, each a real Tang name the chronicle already chose: White Dragon Xue Rengui, Red Dragon Li Jing, Blue Dragon Li Shiji, Black Dragon Yuchi Gong. Li Jing dies with the Second Emperor in 649; Yuchi dies in 658. Only Li Shiji’s Blue Dragon is inherited into Gaozong’s Four Beasts. Xue later takes a beast seat too — not by keeping a dragon colour, but by replacing the White Tiger after the Snake River.',
 		events: [
-			{ year: 645, label: 'Four Dragons named for Taizong’s personal Goguryeo campaign.' },
-			{ year: 649, label: 'Second Emperor dies; Blue Dragon serves on under Gaozong.' }
+			{ year: 645, label: 'Four Dragons named: Xue, Li Jing, Li Shiji, Yuchi Gong.' },
+			{ year: 649, label: 'Second Emperor and Red Dragon Li Jing die; Blue Dragon serves on under Gaozong.' }
 		],
 		orgChart: [
 			{ id: 'taizong', role: 'Second Emperor', reportsTo: null },
-			{ id: 'xuerengui', role: 'White Dragon · 백룡', reportsTo: 'taizong' },
-			{ id: 'sudingfang', role: 'Red Dragon · 적룡', reportsTo: 'taizong' },
-			{ id: 'lishiji', role: 'Blue Dragon · 청룡', reportsTo: 'taizong' },
-			{ id: 'liurengui', role: 'Black Dragon · 흑룡', reportsTo: 'taizong' }
+			{ id: 'xuerengui', role: 'White Dragon · 백룡 · Xue Rengui', reportsTo: 'taizong' },
+			{ id: 'lijing', role: 'Red Dragon · 적룡 · Li Jing', reportsTo: 'taizong' },
+			{ id: 'lishiji', role: 'Blue Dragon · 청룡 · Li Shiji', reportsTo: 'taizong' },
+			{ id: 'yuchigong', role: 'Black Dragon · 흑룡 · Yuchi Gong', reportsTo: 'taizong' }
 		],
 		aliases: ['Four Dragons', '사룡', '四龍', 'Taizong’s dragons']
 	},
@@ -5635,18 +5806,22 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'tang',
 		title: 'The Third Emperor’s beast generals',
 		tagline: 'White Tiger, Red Fowl, Blue Dragon, Black Tortoise — Gaozong’s inherited war machine.',
-		nature: 'Same empire, new zodiac. The father’s dragons become the son’s beasts — and only the Blue Dragon answers both musters.',
-		arc: 'Gaozong’s Eighth Invasion of Goguryeo inherits his father’s war and renames the roster: White Tiger (Pang Xiaotai), Red Fowl (Su Dingfang), Blue Dragon (Li Shiji), Black Tortoise (Liu Rengui). Li Shiji alone served under both the Four Dragons and the Four Beasts — the chronicle’s only shared blade between Second and Third Emperor campaigns.',
+		nature:
+			'Third Emperor Gaozong’s beast banners, 661. White Tiger — Pang Xiaotai (龐孝泰 / 방효태), fallen at the Snake River in 662; Xue Rengui (薛仁貴 / 설인귀) succeeds as White Tiger II. Red Fowl — Su Dingfang (蘇定方 / 소정방), not Li Jing’s Red Dragon. Blue Dragon — Li Shiji (李世勣 / 이세적), the sole dragon who kept his seat. Black Tortoise — Liu Rengui (劉仁軌 / 유인궤), not Yuchi Gong’s Black Dragon. Eight offices, seven men; the Blue Dragon is the overlap, and Xue is the replacement after the river.',
+		arc: 'Gaozong’s Eighth Invasion inherits his father’s war and names a new zodiac: White Tiger Pang Xiaotai, Red Fowl Su Dingfang, Blue Dragon Li Shiji, Black Tortoise Liu Rengui. In the second month of 662 Yeon Gesomun kills the White Tiger and his thirteen sons at the Snake River (Salsu in old mouths). Xue Rengui — already Taizong’s White Dragon — takes the dead man’s title as White Tiger II. Li Shiji alone sat both dragon and beast musters from the start. Liu Rengui’s tortoise holds Baekje and burns the eastern fleet at the White River. Pyongyang falls in 668 under the Blue Dragon, the Black Tortoise, and White Tiger II.',
 		events: [
-			{ year: 661, label: 'Four Beasts named for the Eighth Invasion of Goguryeo.' },
-			{ year: 662, label: 'White Tiger dies at the Snake River; Blue Dragon and Black Tortoise continue east.' }
+			{ year: 661, label: 'Four Beasts named: Pang, Su Dingfang, Li Shiji, Liu Rengui.' },
+			{ year: 662, label: 'White Tiger dies at the Snake River; Xue Rengui named White Tiger II.' },
+			{ year: 663, label: 'Black Tortoise Liu Rengui burns the eastern fleet at the White River.' },
+			{ year: 668, label: 'Blue Dragon, Black Tortoise, and White Tiger II take Pyongyang.' }
 		],
 		orgChart: [
 			{ id: 'gaozong', role: 'Third Emperor', reportsTo: null },
-			{ id: 'pangxiaotai', role: 'White Tiger · 백호', reportsTo: 'gaozong' },
-			{ id: 'sudingfang', role: 'Red Fowl · 주작', reportsTo: 'gaozong' },
-			{ id: 'lishiji', role: 'Blue Dragon · 청룡 · survivor', reportsTo: 'gaozong' },
-			{ id: 'liurengui', role: 'Black Tortoise · 현무', reportsTo: 'gaozong' }
+			{ id: 'pangxiaotai', role: 'White Tiger · 백호 · fallen 662', reportsTo: 'gaozong' },
+			{ id: 'xuerengui', role: 'White Tiger II · 백호 · after Snake River', reportsTo: 'pangxiaotai' },
+			{ id: 'sudingfang', role: 'Red Fowl · 주작 · Su Dingfang', reportsTo: 'gaozong' },
+			{ id: 'lishiji', role: 'Blue Dragon · 청룡 · also Four Dragons', reportsTo: 'gaozong' },
+			{ id: 'liurengui', role: 'Black Tortoise · 현무 · Liu Rengui', reportsTo: 'gaozong' }
 		],
 		aliases: ['Four Beasts', '사신', '四神', 'Gaozong’s beasts']
 	},
@@ -5830,9 +6005,9 @@ export const GROUPS: Person[] = [
 		korean: '고려오대가',
 		entity: 'group',
 		kingdom: 'goguryeo',
-		title: 'The five 대가 of the Five Commanderies',
-		tagline: 'East, Central, North, South, West — the five Commanders whose Summit ended at Yeon’s banquet.',
-		arc: 'The Five Commanderies argue as Commanders (대가): Gesomun in the East, Gusesa at the Centre, Go Ul in the North, Son Daeha in the South, Go Heumsong in the West. In 642 the Eastern Commander butchers the other four at a banquet — and the five crow-stamped blades change hands.',
+		title: 'Four directional 대가 and the High Commander',
+		tagline: 'East, West, South, North — and the 막리지 whose blade sits above them.',
+		arc: 'Four Commanders (대가) under a High Commander (막리지): Gesomun in the East with the Eastern Crow Blade, Go Heumsong in the West, Son Daeha in the South, Go Ul in the North, and Yeon Gusesa as High Commander with the 막리지검. In 642 the Eastern Commander butchers the other four at a banquet. He keeps the Eastern Crow Blade he brought and takes the rest — three cardinal crows and the High Commander Blade. They are five swords, not one weapon.',
 		events: [{ year: 642, label: 'Four of the five die at Yeon’s banquet; the Eastern Commander rules.' }],
 		aliases: ['Five Commanders of Goguryeo', 'The Five Commanders of Goguryeo', '고려오대가']
 	},
@@ -5870,7 +6045,7 @@ export const CLANS: Person[] = [
 		entity: 'clan',
 		kingdom: 'goguryeo',
 		title: 'Clan of Yeon Tabal → Gesomun',
-		tagline: 'Salt, iron, and five blades — the hall that preferred carrying to asking.',
+		tagline: 'Salt, iron, and crow-stamped blades — the hall that preferred carrying to asking.',
 		arc: 'From Yeon Tabal’s Jolbon hospitality to Gesomun’s massacre and three quarreling sons. The house outranks ordinary Commanders once Supreme Commander exists; it cannot invent a succession that survives Gesomun’s sleep.',
 		aliases: ['Yeon House', 'Yeon clan', '연씨', '淵氏', 'House of Yeon', 'The Yeon House']
 	},
@@ -6422,6 +6597,8 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	hojin: ['foundingsix'],
 	jinpyung: ['sillaroyal'],
 	jinheung: ['sillaroyal'],
+	jinji: ['sillaroyal'],
+	yongsu: ['sillaroyal', 'bonerank'],
 	chunmyung: ['sillaroyal'],
 	inmun: ['sillaroyal'],
 	gwanchang: ['hwarang'],
@@ -6463,9 +6640,12 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	wuzetian: ['tangcourt'],
 	xuerengui: ['tangcourt', 'tangexpedition'],
 	weizheng: ['tangcourt'],
+	lijing: ['tangcourt'],
+	yuchigong: ['tangcourt'],
 	sudingfang: ['tangcourt', 'tangexpedition'],
 	lishiji: ['tangcourt', 'tangexpedition'],
 	liurengui: ['tangcourt', 'tangexpedition'],
+	pangxiaotai: ['tangexpedition'],
 	// Three Realms cosmology (replaces Heaven’s Court org)
 	hwanin: ['four_divisions'],
 	hwanung: ['four_divisions'],
@@ -6519,7 +6699,7 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	dochim: ['brafounders'],
 	sangji: ['brafounders'],
 	sateksangya: ['brafounders'],
-	// Goguryeo — the five 대가 of the Five Commanderies
+	// Goguryeo — four directional 대가 and the High Commander
 	gesomun: ['fivecommanders'],
 	gusesa: ['fivecommanders'],
 	northcmd: ['fivecommanders'],
@@ -6541,10 +6721,12 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	// Tang dragon / beast rosters (moved from ORGS_BY_ID with the entity change)
 	taizong: ['fourdragons'],
 	gaozong: ['fourbeasts'],
-	xuerengui: ['fourdragons'],
-	sudingfang: ['fourdragons', 'fourbeasts'],
+	xuerengui: ['fourdragons', 'fourbeasts'],
+	lijing: ['fourdragons'],
+	yuchigong: ['fourdragons'],
+	sudingfang: ['fourbeasts'],
 	lishiji: ['fourdragons', 'fourbeasts'],
-	liurengui: ['fourdragons', 'fourbeasts'],
+	liurengui: ['fourbeasts'],
 	pangxiaotai: ['fourbeasts']
 };
 
@@ -6557,7 +6739,11 @@ export const GROUP_ROSTERS: Record<string, readonly string[]> = {
 	fiveprinces: ['yung', 'tae', 'hyo', 'yun', 'pung'],
 	brafounders: ['boksin', 'dochim', 'sangji', 'sateksangya', 'pung'],
 	// Heaven above, then the three courts of 삼계
-	fourrealms: ['heaven', 'living_world', 'underworld', 'western_flower_field']
+	fourrealms: ['heaven', 'living_world', 'underworld', 'western_flower_field'],
+	fourdragons: ['xuerengui', 'lijing', 'lishiji', 'yuchigong'],
+	fourbeasts: ['pangxiaotai', 'sudingfang', 'lishiji', 'liurengui', 'xuerengui'],
+	// East, West, South, North, then the 막리지
+	fivecommanders: ['gesomun', 'westcmd', 'southcmd', 'northcmd', 'gusesa']
 };
 
 /** A distinct hue per profile, used for avatars, chips and the panel accent. */
@@ -6586,6 +6772,8 @@ const COLOR: Record<string, string> = {
 	daedeung_old: '#7a6a58',
 	daedeung_fear: '#5c6b7a',
 	jinheung: '#2f6fd4',
+	jinji: '#3d5fa8',
+	yongsu: '#6a7cb0',
 	// baekje
 	gyebek: '#d9b13a',
 	kingmu: '#b8862c',
@@ -6638,9 +6826,11 @@ const COLOR: Record<string, string> = {
 	weizheng: '#9a7b4f',
 	xuerengui: '#e8e3d5',
 	xueliu: '#c4a484',
+	lijing: '#c45a38',
+	yuchigong: '#2f2f36',
 	sudingfang: '#d95f4b',
 	lishiji: '#4b78c9',
-	liurengui: '#4a4a52',
+	liurengui: '#3d4a48',
 	pangxiaotai: '#c9c9c9',
 	saimei: '#f090b0',
 	tenji: '#e06a95',
@@ -6860,6 +7050,8 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	jinduk: ['gen-i'],
 	jinpyung: ['gen-i'],
 	chunmyung: ['gen-i'],
+	yongsu: ['gen-i'],
+	jinji: ['legends'],
 	kingmu: ['gen-i'],
 	gusesa: ['gen-i'],
 	yeongnyu: ['gen-i'],
@@ -6899,6 +7091,8 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	yesikjin: ['gen-ii'],
 	gaozong: ['gen-ii'],
 	xuerengui: ['gen-ii'],
+	lijing: ['gen-ii'],
+	yuchigong: ['gen-ii'],
 	sudingfang: ['gen-ii'],
 	dosuryu: ['gen-ii'],
 	northcmd: ['gen-ii'],
@@ -7553,8 +7747,16 @@ for (const a of ALIASES) {
 	if (!aliasToId.has(a.alias)) aliasToId.set(a.alias, a.id);
 }
 
+/**
+ * Characters and gods have ages. Nations, places, orgs, clans, and other
+ * encyclopedia entries use `born`/`died` as founding–fall years, not a lifespan.
+ */
+export function hasHumanAge(p: Person): boolean {
+	return p.entity == null || p.entity === 'god';
+}
+
 export function ageAt(p: Person, year: number | null): number | null {
-	if (p.born == null || year == null) return null;
+	if (!hasHumanAge(p) || p.born == null || year == null) return null;
 	const age = year - p.born;
 	// don't print ages before birth or long after death
 	if (age < 0) return null;
@@ -7568,8 +7770,10 @@ function escapeHtml(s: string) {
 
 /**
  * Wrap every known name in the prose with a person trigger, and regenerate the
- * parenthesised age from the person's birth year and the year of this entry.
- * Only text between tags is touched, so markup is never corrupted.
+ * age from the person's birth year and the year of this entry as a superscript
+ * inside the link (so it stays clickable with the name). Only text between tags
+ * is touched, so markup is never corrupted. Nations and other non-human entries
+ * have no age (`ageAt` already returns null).
  */
 export function linkPeople(html: string, year: number | null): string {
 	return html.replace(/(<[^>]*>)|([^<]+)/g, (_m, tag: string, text: string) => {
@@ -7579,8 +7783,8 @@ export function linkPeople(html: string, year: number | null): string {
 			const p = id ? byId.get(id) : undefined;
 			if (!p) return match;
 			const age = ageAt(p, year);
-			const label = age == null ? alias : `${alias} (${age})`;
-			return `<button type="button" class="person" data-person="${p.id}">${escapeHtml(label)}</button>`;
+			const ageMark = age == null ? '' : `<sup class="person-age">${age}</sup>`;
+			return `<button type="button" class="person" data-person="${p.id}">${escapeHtml(alias)}${ageMark}</button>`;
 		});
 	});
 }
