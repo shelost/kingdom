@@ -10940,7 +10940,7 @@
 						"id": "tang-taizong-court",
 						"ratio": 1.7777777777777777,
 						"tone": "#d4af37",
-						"alt": "Emperor Taizong in grand imperial court - ministers bow before throne in vast hall with red pillars and golden light",
+						"alt": "Single golden throne silhouette in vast black negative space - minimal iconic symbol of Tang imperial authority",
 						"src": "/tang_taizong_court.png",
 						"refs": [
 							"/ch_taizong.png"
@@ -10950,14 +10950,14 @@
 						"id": "tang-changan-palace",
 						"ratio": 1.7777777777777777,
 						"tone": "#b91c1c",
-						"alt": "Chang'an palace architecture - massive ceremonial halls with towering red pillars and golden roofs showing Tang imperial grandeur",
+						"alt": "Palace silhouette against golden sky - minimal iconic outline of Tang architecture with vast negative space",
 						"src": "/tang_changan_palace.png"
 					},
 					{
 						"id": "tang-tributary-gifts",
 						"ratio": 1.7777777777777777,
 						"tone": "#d4af37",
-						"alt": "Emperor surrounded by tributary gifts from vassal states - exotic treasures showing Tang dominance over international order",
+						"alt": "Tribute gifts as simple geometric shapes with gold accent - minimal iconic symbol of Tang dominance over vassal states",
 						"src": "/tang_tributary_gifts.png"
 					},
 					{
@@ -11138,7 +11138,7 @@
 						"id": "tang-war-council",
 						"ratio": 1.7777777777777777,
 						"tone": "#8a5a44",
-						"alt": "Tang generals in war council planning invasions - strategic authority over military maps",
+						"alt": "Emperor's shadow cast over ministers - minimal iconic symbol of power through absence and dramatic negative space",
 						"at": "War council",
 						"src": "/tang_war_council.png",
 						"refs": [
@@ -11149,21 +11149,21 @@
 						"id": "tang-army-march",
 						"ratio": 1.7777777777777777,
 						"tone": "#7f1d1d",
-						"alt": "Massive Tang army on march - thousands of cavalry and infantry with endless red and gold banners",
+						"alt": "Abstract army formation as geometric triangular shapes in perfect rows - minimal iconic symbol of Tang military power",
 						"src": "/tang_army_march.png"
 					},
 					{
 						"id": "tang-cavalry-charge",
 						"ratio": 1.7777777777777777,
 						"tone": "#7f1d1d",
-						"alt": "Tang heavy cavalry charge - armored horsemen with lamellar armor and red banners in thunderous assault",
+						"alt": "Abstract army formation as geometric triangular shapes with gold accent - minimal iconic symbol of Tang cavalry power",
 						"src": "/tang_cavalry_charge.png"
 					},
 					{
 						"id": "tang-korean-envoys",
 						"ratio": 1.7777777777777777,
 						"tone": "#450a0a",
-						"alt": "Korean envoys bowing before Tang emperor - diplomatic audience showing imperial authority over vassal states",
+						"alt": "Diplomatic hierarchy shown through scale and position - minimal iconic silhouettes showing Tang authority over vassal states",
 						"src": "/tang_korean_envoys.png"
 					},
 					{
@@ -19884,7 +19884,7 @@
 						"id": "tang-gaozong-wu-zetian",
 						"ratio": 1.7777777777777777,
 						"tone": "#d4af37",
-						"alt": "Emperor Gaozong on throne with Wu Zetian behind screen - visible and hidden power in Tang court",
+						"alt": "Crown floating in vast negative space with gold accent - minimal iconic symbol of Tang imperial authority",
 						"src": "/tang_gaozong_wu_zetian.png",
 						"refs": [
 							"/ch_gaozong.png",
@@ -19895,7 +19895,7 @@
 						"id": "tang-imperial-decree",
 						"ratio": 1.7777777777777777,
 						"tone": "#8a5a44",
-						"alt": "Imperial decree being issued - Tang bureaucratic authority through systematic administration",
+						"alt": "Single hand gesture commanding in dramatic light - minimal iconic symbol of Tang imperial decree and authority",
 						"src": "/tang_imperial_decree.png"
 					},
 					{
@@ -29910,14 +29910,14 @@
 						"id": "tang-navy-fleet",
 						"ratio": 1.7777777777777777,
 						"tone": "#0369a1",
-						"alt": "Tang naval fleet - massive warships with red sails and golden dragon emblems showing maritime military power",
+						"alt": "Fleet as triangular sails against horizon with golden accent - minimal iconic symbol of Tang naval power",
 						"src": "/tang_navy_fleet.png"
 					},
 					{
 						"id": "tang-daming-palace-sunset",
 						"ratio": 1.7777777777777777,
 						"tone": "#d97706",
-						"alt": "Daming Palace at golden hour - monumental imperial complex showing Tang grandeur and power",
+						"alt": "Palace silhouette against golden sky at sunset - minimal iconic symbol of Tang architectural grandeur with vast negative space",
 						"src": "/tang_daming_palace_sunset.png",
 						"refs": [
 							"/pl_daming_palace.png"
@@ -29927,7 +29927,7 @@
 						"id": "tang-imperial-procession",
 						"ratio": 1.7777777777777777,
 						"tone": "#d4af37",
-						"alt": "Imperial procession through Chang'an - pageantry and spectacle of Tang imperial power",
+						"alt": "Single Tang banner flag in wind with gold accent - minimal iconic symbol of Tang imperial authority and pageantry",
 						"src": "/tang_imperial_procession.png"
 					}
 				],
