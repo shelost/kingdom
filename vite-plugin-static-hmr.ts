@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
@@ -9,6 +10,53 @@ const require = createRequire(import.meta.url);
 const VITE_DIR = path.dirname(require.resolve('vite/package.json'));
 const VITE_CLIENT = path.join(VITE_DIR, 'dist/client/client.mjs');
 const VITE_ENV = path.join(VITE_DIR, 'dist/client/env.mjs');
+const THUMB_CACHE = path.resolve('scripts/.cache/img-thumbs');
+const THUMB_WIDTHS = new Set([64, 96, 128, 256, 384, 640]);
+
+type NodeReq = { url?: string };
+type NodeRes = {
+	statusCode: number;
+	setHeader: (k: string, v: string) => void;
+	end: (body?: string | Buffer) => void;
+};
+
+/** Dev-only: `?w=256` on `/ch_*.png` etc. serves a cached JPEG instead of the full PNG. */
+function serveResizedStatic(req: NodeReq, res: NodeRes, next: () => void) {
+	const raw = req.url;
+	if (!raw) return next();
+	let parsed: URL;
+	try {
+		parsed = new URL(raw, 'http://localhost');
+	} catch {
+		return next();
+	}
+	const width = Number(parsed.searchParams.get('w'));
+	if (!THUMB_WIDTHS.has(width) || !IMAGE_RE.test(parsed.pathname)) return next();
+	if (/\.svg$/i.test(parsed.pathname)) return next();
+
+	const rel = decodeURIComponent(parsed.pathname).replace(/^\/+/, '');
+	const source = path.resolve(STATIC_ROOT, rel);
+	if (!source.startsWith(STATIC_ROOT + path.sep) || !fs.existsSync(source)) return next();
+
+	const out = path.join(THUMB_CACHE, String(width), `${rel.replace(/[\\/]/g, '__')}.jpg`);
+	try {
+		const srcStat = fs.statSync(source);
+		const cached = fs.existsSync(out) && fs.statSync(out).mtimeMs >= srcStat.mtimeMs;
+		if (!cached) {
+			fs.mkdirSync(path.dirname(out), { recursive: true });
+			execFileSync(
+				'sips',
+				['-s', 'format', 'jpeg', '-s', 'formatOptions', '72', '-Z', String(width), source, '--out', out],
+				{ stdio: 'ignore' }
+			);
+		}
+		res.setHeader('Content-Type', 'image/jpeg');
+		res.setHeader('Cache-Control', 'public, max-age=3600');
+		res.end(fs.readFileSync(out));
+	} catch {
+		next();
+	}
+}
 
 /** Notify the client when static art changes so image URLs can re-bust. */
 export function staticAssetHmr(): Plugin {
@@ -40,6 +88,7 @@ export function staticAssetHmr(): Plugin {
 			 * run after `sveltekit()`).
 			 */
 			return () => {
+				server.middlewares.stack.unshift({ route: '', handle: serveResizedStatic });
 				const handler = async (
 					req: { url?: string },
 					res: {

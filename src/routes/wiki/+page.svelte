@@ -694,7 +694,7 @@
 														kind: 'thumb',
 														priority: si === 0 && i < 8,
 														alt: '',
-														sizes: '96px'
+														sizes: '128px'
 													})}
 												/>
 											{:else}
@@ -709,7 +709,7 @@
 														kind: 'thumb',
 														priority: si === 0 && i < 8,
 														alt: '',
-														sizes: '96px'
+														sizes: '128px'
 													})}
 												/>
 											{:else}
@@ -1107,29 +1107,39 @@
 		margin: 0;
 		padding: 0;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(19.5rem, 1fr));
-		gap: 0.75rem;
+		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+		gap: 0.7rem;
+	}
+
+	.grid > li {
+		content-visibility: auto;
+		contain-intrinsic-size: auto 11.5rem;
 	}
 
 	.card {
 		position: relative;
 		display: flex;
 		align-items: flex-start;
-		gap: 1.05rem;
+		gap: 1rem;
 		width: 100%;
 		height: 100%;
+		min-height: 11.25rem;
 		text-align: left;
-		padding: 0.95rem 1.05rem;
-		border: 1px solid var(--hairline);
-		border-radius: 14px;
-		background: var(--panel);
+		padding: 0.85rem 0.95rem;
+		border: 1px solid color-mix(in srgb, var(--hairline) 88%, transparent);
+		border-radius: 8px;
+		background: color-mix(in srgb, var(--panel) 92%, #fff);
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.04) inset,
+			0 1px 2px rgba(0, 0, 0, 0.18);
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
 		transition:
-			border-color 0.22s var(--ease),
-			transform 0.22s var(--ease),
-			background 0.22s var(--ease);
+			border-color 0.2s var(--ease),
+			transform 0.2s var(--ease),
+			background 0.2s var(--ease),
+			box-shadow 0.2s var(--ease);
 	}
 
 	.card.card-showcase {
@@ -1140,9 +1150,9 @@
 		overflow: hidden;
 	}
 
-	/* Character / clan portrait cards — art flush to edges; text in .meta (expo). */
+	/* Character / clan portrait cards — art flush to edges; text top-aligned. */
 	.card.card-character {
-		align-items: stretch;
+		align-items: flex-start;
 		gap: 0;
 		padding: 0;
 		overflow: hidden;
@@ -1150,12 +1160,12 @@
 
 	.card.card-character .avatar,
 	.card.card-character .avatar.avatar-clan {
-		width: 6.25rem;
+		width: 7.35rem;
 		flex-shrink: 0;
 		align-self: flex-start;
 		aspect-ratio: 2 / 3;
 		height: auto;
-		min-height: 0;
+		min-height: 11.25rem;
 		border-radius: 0;
 		background: transparent;
 	}
@@ -1168,19 +1178,26 @@
 	}
 
 	.card.card-character .meta {
-		padding: 0.95rem 1.05rem 0.95rem 0.85rem;
+		padding: 0.72rem 0.95rem 0.8rem 0.85rem;
 		flex: 1;
 		min-width: 0;
+		align-self: stretch;
+		align-content: start;
+		align-items: start;
+		justify-content: start;
 	}
 
 	.card.card-org {
-		align-items: center;
+		align-items: flex-start;
 	}
 
 	.card:hover {
-		border-color: rgba(216, 178, 106, 0.35);
+		border-color: color-mix(in srgb, var(--gold) 28%, var(--hairline));
 		background: var(--bg-raised);
-		transform: translateY(-2px);
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.05) inset,
+			0 6px 18px rgba(0, 0, 0, 0.22);
+		transform: translateY(-1px);
 	}
 
 	/* Small gold music-note mark — this entry has a composed leitmotif. */
@@ -1278,7 +1295,7 @@
 		aspect-ratio: 2 / 3;
 		height: auto;
 		overflow: hidden;
-		border-radius: 10px;
+		border-radius: 6px;
 		font-family: var(--serif);
 		font-weight: 700;
 		font-size: 1.65rem;
@@ -1312,7 +1329,7 @@
 		width: 5.75rem;
 		aspect-ratio: 1;
 		overflow: hidden;
-		border-radius: 10px;
+		border-radius: 6px;
 		border: 1px solid var(--hairline);
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
 	}
@@ -1351,13 +1368,17 @@
 	.meta {
 		min-width: 0;
 		display: grid;
-		gap: 0.18rem;
-		padding-top: 0.1rem;
+		align-content: start;
+		align-items: start;
+		justify-items: start;
+		gap: 0.16rem;
+		padding-top: 0;
 	}
 
 	.card-name {
 		font-weight: 600;
-		font-size: 1.05rem;
+		font-size: 1.02rem;
+		line-height: 1.2;
 		color: var(--fg-strong);
 		letter-spacing: var(--tracking-display);
 	}
@@ -1757,12 +1778,16 @@
 
 		.card.card-character .avatar,
 		.card.card-character .avatar.avatar-clan {
-			width: 5.25rem;
-			min-height: 0;
+			width: 6.4rem;
+			min-height: 9.6rem;
+		}
+
+		.card {
+			min-height: 9.6rem;
 		}
 
 		.card.card-character .meta {
-			padding: 0.85rem 1rem 0.85rem 0.75rem;
+			padding: 0.65rem 0.85rem 0.7rem 0.7rem;
 		}
 
 		.peek {

@@ -5,10 +5,9 @@
  * `img_*.png`, `pl_*.png`, `temp/*.jpg`, …). `@sveltejs/enhanced-img` cannot
  * transform those without importing every file at build time, so production
  * uses Vercel Image Optimization (`/_vercel/image`) for AVIF/WebP + srcset.
- * Locally the original path is used unchanged.
+ * Locally, thumbs and portraits request `?w=` and Vite serves a cached JPEG.
  *
- * Later pass (not this change): recompress the on-disk PNGs (many are 1–4 MB)
- * to WebP/AVIF. The CDN already serves those formats on demand in production.
+ * Later pass: recompress the on-disk PNGs (many are 1–4 MB) to WebP/AVIF.
  */
 
 export const IMG_WIDTHS = {
@@ -30,7 +29,7 @@ const DEFAULT_SIZES: Record<StoryImgKind, string> = {
 	cue: '(max-width: 820px) 100vw, 42vw',
 	place: '(max-width: 820px) 100vw, 28vw',
 	portrait: '(max-width: 820px) 40vw, 176px',
-	thumb: '96px',
+	thumb: '128px',
 	hero: '(max-width: 820px) 100vw, 420px'
 };
 
@@ -54,7 +53,22 @@ export type StoryImgAttrs = {
 	fetchpriority: 'high' | 'low' | 'auto';
 	srcset?: string;
 	sizes?: string;
+	width?: number;
+	height?: number;
 };
+
+/** Intrinsic box for thumbs so the browser can reserve space (2:3 portraits). */
+const INTRINSIC: Partial<Record<StoryImgKind, { width: number; height: number }>> = {
+	thumb: { width: 128, height: 192 }
+};
+
+function withWidthQuery(src: string, width: number): string {
+	const q = src.indexOf('?');
+	const base = q === -1 ? src : src.slice(0, q);
+	const params = new URLSearchParams(q === -1 ? '' : src.slice(q + 1));
+	params.set('w', String(width));
+	return `${base}?${params}`;
+}
 
 function vercelImageCdn(): boolean {
 	return Boolean(import.meta.env.VERCEL) && import.meta.env.PROD;
@@ -108,18 +122,27 @@ export function storyImg(src: string, opts: StoryImgOpts = {}): StoryImgAttrs {
 	const kind = opts.kind ?? 'cue';
 	const widths = opts.widths ?? IMG_WIDTHS[kind];
 	const priority = opts.priority === true;
-	const fallbackWidth = widths[Math.min(1, widths.length - 1)] ?? 828;
+	const fallbackWidth =
+		kind === 'thumb' ? 256 : (widths[Math.min(1, widths.length - 1)] ?? 828);
 	const attrs: StoryImgAttrs = {
 		src: optimizeSrc(src, fallbackWidth),
 		alt: opts.alt ?? '',
 		loading: opts.loading ?? (priority ? 'eager' : 'lazy'),
 		decoding: 'async',
-		fetchpriority: opts.fetchpriority ?? (priority ? 'high' : 'auto')
+		fetchpriority: opts.fetchpriority ?? (priority ? 'high' : 'low')
 	};
+	const box = INTRINSIC[kind];
+	if (box) {
+		attrs.width = box.width;
+		attrs.height = box.height;
+	}
 	const srcset = optimizeSrcset(src, widths);
 	if (srcset) {
 		attrs.srcset = srcset;
 		attrs.sizes = opts.sizes ?? DEFAULT_SIZES[kind];
+	} else if (shouldOptimize(src) && (kind === 'thumb' || kind === 'portrait')) {
+		/* Dev / non-Vercel: Vite middleware resizes `?w=` so wiki cards don't pull 2–4 MB PNGs. */
+		attrs.src = withWidthQuery(src, fallbackWidth);
 	}
 	return attrs;
 }
