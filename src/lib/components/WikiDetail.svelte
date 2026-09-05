@@ -1620,13 +1620,14 @@
 	.hex-chip {
 		display: inline-flex;
 		align-items: center;
-		padding: 0.12rem 0.45rem;
-		min-height: 1.15rem;
-		border-radius: 3px;
-		font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+		padding: 0.18rem 0.55rem;
+		min-height: 1.2rem;
+		border-radius: 999px;
+		font-family: var(--ui);
 		font-size: 0.68rem;
-		font-weight: 600;
-		letter-spacing: 0.05em;
+		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
+		line-height: 1;
 		text-transform: uppercase;
 		color: #fffdf8;
 		background: var(--chip);

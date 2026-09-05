@@ -253,6 +253,31 @@
 						"alt": "Three royal crowns in triangular symmetry - Silla blue, Baekje yellow, Goguryeo red - symbolizing power",
 						"at": "The three kingdoms",
 						"src": "/temp/three_crowns_symmetry.png"
+					},
+					{
+						"id": "sunduk-observatory-twilight",
+						"ratio": 0.75,
+						"tone": "#2A5FB8",
+						"at": "a tower to read the stars",
+						"alt": "Queen Sunduk at Cheomseongdae twilight",
+						"prompt": "3:4: Sunduk under twilight at the stone observatory. No text.",
+						"refs": [
+							"/ch_dukman.png",
+							"/pl_observatory.png"
+						],
+						"tempImage": "/temp/sunduk-observatory-twilight.png"
+					},
+					{
+						"id": "cheomseongdae-moon-minimal",
+						"ratio": 0.75,
+						"tone": "#1e3a5f",
+						"at": "Cheomseongdae",
+						"alt": "Cheomseongdae under a full moon — minimal",
+						"prompt": "3:4: tiny bottle observatory, huge moon, empty sky. No text.",
+						"refs": [
+							"/pl_observatory.png"
+						],
+						"tempImage": "/temp/cheomseongdae-moon-minimal.png"
 					}
 				],
 				"blocks": [
@@ -2653,6 +2678,18 @@
 						"src": "/temp/namseng_silk.png",
 						"alt": "Goguryeo red silk draped in elegant folds - warmth and protection for the newborn heir",
 						"prompt": "Vertical birth portrait: Goguryeo red silk fabric (#C30000) draped and folded elegantly against pure white negative space"
+					},
+					{
+						"id": "samsin-cascade",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "steps from the frame the way steam",
+						"alt": "Samsin as a life-cascade — white hair, blue-and-red hanbok, blush-pink plane",
+						"prompt": "Anime-painterly Samsin cascade, pink plane. No room clutter. No text.",
+						"refs": [
+							"/ch_samsin.png"
+						],
+						"tempImage": "/temp/samsin-cascade.png"
 					}
 				],
 				"blocks": [
@@ -3083,6 +3120,18 @@
 							"/ch_pumsuk.png",
 							"/ch_gumil_wife.png"
 						]
+					},
+					{
+						"id": "gotaso-determination-forward",
+						"ratio": 0.75,
+						"tone": "#2A5FB8",
+						"at": "a girl who is not where she is supposed to be",
+						"alt": "Gotaso facing forward with determination — Silla blue",
+						"prompt": "3:4 iconic portrait: Gotaso direct gaze, Silla blue rim, flat charcoal. No text.",
+						"refs": [
+							"/ch_gotaso.png"
+						],
+						"tempImage": "/temp/gotaso-determination-forward.png"
 					}
 				],
 				"blocks": [
@@ -8384,6 +8433,30 @@
 						"at": "the house is quieter than the city",
 						"prompt": "Cinematic historical illustration of intimate lamp-lit chamber in Pyongyang, Yeon Gesomun facing his wife, five swords against the wall, tense quiet after a coup, Three Kingdoms of Samhan / Tang era (642), scene: After the Knives, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/yeon-wife-private.jpg"
+					},
+					{
+						"id": "gesomun-authority-low-angle",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "Yeon decides to host a banquet",
+						"alt": "Gesomun from below — Supreme Commander, Goguryeo red",
+						"prompt": "9:16 low angle: Gesomun imposing, crow armor, Goguryeo red. No text.",
+						"refs": [
+							"/ch_yeon_gesomun.png"
+						],
+						"tempImage": "/temp/gesomun-authority-low-angle.png"
+					},
+					{
+						"id": "massacre-red-doorway",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "October cold sits under the eaves",
+						"alt": "Yeon's banquet coup — silhouette in a red-flooded doorway",
+						"prompt": "9:16: silhouetted figure in a doorway of Goguryeo red. No text.",
+						"refs": [
+							"/ch_yeon_gesomun.png"
+						],
+						"tempImage": "/temp/massacre-red-doorway.png"
 					}
 				],
 				"blocks": [
@@ -10557,6 +10630,31 @@
 							"/ch_kim_yushin.png"
 						],
 						"tempImage": "/temp/yushin-moon-marshal.jpg"
+					},
+					{
+						"id": "yushin-sword-vertical",
+						"ratio": 0.5625,
+						"tone": "#2A5FB8",
+						"at": "the Blue Moon sends the Sword of Silla",
+						"alt": "Yushin's vertical fish sword dividing the frame — Sword of Silla",
+						"prompt": "Minimal 9:16: Yushin in the lower third, ring-pommel fish sword as a vertical black divide, Silla blue accent. No text.",
+						"refs": [
+							"/ch_kim_yushin.png",
+							"/sword_fish.png"
+						],
+						"tempImage": "/temp/yushin-sword-vertical.png"
+					},
+					{
+						"id": "alchun-ready-restraint",
+						"ratio": 0.5625,
+						"tone": "#2A5FB8",
+						"at": "Greatest Blade of Samhan",
+						"alt": "Alchun ready but not violent — hand on a sheathed sword",
+						"prompt": "9:16: Alchun hand on undrawn hilt, Silla blue. No text.",
+						"refs": [
+							"/ch_alchun.png"
+						],
+						"tempImage": "/temp/alchun-ready-restraint.png"
 					}
 				],
 				"blocks": [
@@ -12769,6 +12867,55 @@
 							"/ch_haemosu.png"
 						],
 						"tempImage": "/temp/haemosu-five-dragons.jpg"
+					},
+					{
+						"id": "haemosu-sunrun",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "god of the sun",
+						"alt": "Haemosu as a gold sun-runner cutting a charcoal void, bow in hand",
+						"prompt": "Anime-painterly Haemosu sun-run: gold disk, charcoal void, no clouds. No text.",
+						"refs": [
+							"/ch_haemosu.png"
+						],
+						"tempImage": "/temp/haemosu-sunrun.png"
+					},
+					{
+						"id": "ibiga-slash",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "Three daughters of <b>Habek</b>",
+						"alt": "Ibiga as a sky-hero on a black ridge, deep-blue disk, one sharp slash of light",
+						"prompt": "Anime-painterly Ibiga sky slash, indigo void, no clouds. No text.",
+						"refs": [
+							"/ch_ibiga.png"
+						],
+						"tempImage": "/temp/ibiga-slash.png"
+					},
+					{
+						"id": "yuhwa-moon-office",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "Lady Yuhwa",
+						"alt": "Yuhwa in a pale moon office, blue halo, empty graphic void",
+						"prompt": "Anime-painterly Yuhwa moon office, pale blue plane, no interior clutter. No text.",
+						"refs": [
+							"/ch_yuhwa.png",
+							"/ch_haemosu.png"
+						],
+						"tempImage": "/temp/yuhwa-moon-office.png"
+					},
+					{
+						"id": "jumong-sky-arrow",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "god of the sun",
+						"alt": "Jumong drawing a bow at heaven — mythic founder",
+						"prompt": "9:16: Jumong aiming skyward, Goguryeo red bow, red sun disk. No text.",
+						"refs": [
+							"/ch_jumong.png"
+						],
+						"tempImage": "/temp/jumong-sky-arrow.png"
 					}
 				],
 				"blocks": [
@@ -14856,6 +15003,18 @@
 							"/ch_bidam.png"
 						],
 						"tempImage": "/temp/bidam-second-blade.jpg"
+					},
+					{
+						"id": "bidam-defiance-upward",
+						"ratio": 0.5625,
+						"tone": "#141C2E",
+						"at": "Second Blade of Samhan",
+						"alt": "Bidam looking upward in defiance — purple night",
+						"prompt": "9:16: Bidam jaw set, gaze upward, purple-navy void. No army. No text.",
+						"refs": [
+							"/ch_bidam.png"
+						],
+						"tempImage": "/temp/bidam-defiance-upward.png"
 					}
 				],
 				"blocks": [
@@ -17888,6 +18047,43 @@
 						"alt": "Massive Tang war banner rippling dramatically against stormy grey sky - foreign invasion",
 						"at": "Tang forces",
 						"src": "/temp/tang_banner_storm.png"
+					},
+					{
+						"id": "chunchu-strategist-shadow",
+						"ratio": 1,
+						"tone": "#7a2d6b",
+						"at": "approaches the Second Emperor",
+						"alt": "Chunchu the strategist in shadow — film-noir magenta",
+						"prompt": "1:1: Chunchu half in darkness, magenta court robes, contemplative power. No text.",
+						"refs": [
+							"/ch_chunchu.png"
+						],
+						"tempImage": "/temp/chunchu-strategist-shadow.png"
+					},
+					{
+						"id": "taizong-throne-majesty",
+						"ratio": 0.5625,
+						"tone": "#c97a2e",
+						"at": "Your name is",
+						"alt": "Taizong on the throne from below — Tang gold",
+						"prompt": "9:16 low angle: Taizong, gold shaft, crimson wall. No text.",
+						"refs": [
+							"/ch_taizong.png"
+						],
+						"tempImage": "/temp/taizong-throne-majesty.png"
+					},
+					{
+						"id": "silla-tang-alliance-hands",
+						"ratio": 1,
+						"tone": "#c97a2e",
+						"at": "offers an alliance",
+						"alt": "Silla-blue and Tang-gold hands clasped — the 648 alliance",
+						"prompt": "1:1: two clasped hands, blue sleeve and gold sleeve. No faces. No text.",
+						"refs": [
+							"/ch_chunchu.png",
+							"/ch_taizong.png"
+						],
+						"tempImage": "/temp/silla-tang-alliance-hands.png"
 					}
 				],
 				"blocks": [
@@ -18967,6 +19163,18 @@
 							"/ch_chunchu.png"
 						],
 						"tempImage": "/temp/ongunhae-high-cap.jpg"
+					},
+					{
+						"id": "wuzetian-screen-power",
+						"ratio": 1.333,
+						"tone": "#c97a2e",
+						"at": "The empire does not wait",
+						"alt": "Wu Zetian behind a gold screen — power without the throne",
+						"prompt": "4:3: silhouette behind a translucent gold screen. No text.",
+						"refs": [
+							"/ch_wu_zetian.png"
+						],
+						"tempImage": "/temp/wuzetian-screen-power.png"
 					}
 				],
 				"blocks": [
@@ -21550,6 +21758,18 @@
 						"at": "tries to stop him, but is thrown in prison",
 						"prompt": "Cinematic historical illustration of sungchung prison, Three Kingdoms of Samhan / Tang era (656), scene: Euija’s Descent, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/sungchung-prison.jpg"
+					},
+					{
+						"id": "euija-split-light",
+						"ratio": 1.333,
+						"tone": "#7c2d12",
+						"at": "increasingly paranoid about the aftershock",
+						"alt": "Euija's descent — half gold light, half shadow",
+						"prompt": "4:3: Euija split lighting, tyranny. No text.",
+						"refs": [
+							"/ch_buyeo_euija.png"
+						],
+						"tempImage": "/temp/euija-split-light.png"
 					}
 				],
 				"blocks": [
@@ -22230,6 +22450,42 @@
 							"/ch_samsin.png"
 						],
 						"tempImage": "/temp/sobyeol-living-heat.jpg"
+					},
+					{
+						"id": "heaven-earth-seam",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "천지왕이 있었다",
+						"alt": "Heaven–Earth King on the seam of a hard red plane and a hard blue plane",
+						"prompt": "Anime-painterly Heaven-Earth King, dual red/blue planes. No clouds. No text.",
+						"refs": [
+							"/ch_heavenearthking.png"
+						],
+						"tempImage": "/temp/heaven-earth-seam.png"
+					},
+					{
+						"id": "daebyeol-disc",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "산 자와 죽은 자를",
+						"alt": "Big Star as a steel-blue disk over a flat underworld court",
+						"prompt": "Anime-painterly Daebyeol disk, steel blue, tiny clerks. No clouds. No text.",
+						"refs": [
+							"/ch_daebyeol.png"
+						],
+						"tempImage": "/temp/daebyeol-disc.png"
+					},
+					{
+						"id": "sobyeol-ribbon",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "산 자와 죽은 자를 같이요",
+						"alt": "Little Star under a red living-heat ribbon, life-gods tiny at his feet",
+						"prompt": "Anime-painterly Sobyeol red ribbon, living heat. No clouds. No text.",
+						"refs": [
+							"/ch_sobyeol.png"
+						],
+						"tempImage": "/temp/sobyeol-ribbon.png"
 					}
 				],
 				"blocks": [
@@ -23015,6 +23271,19 @@
 							"/ch_jacheongbi.png"
 						],
 						"tempImage": "/temp/hallakgungi-gate.jpg"
+					},
+					{
+						"id": "hallakgungi-rows",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "자청비는 하늘에서 온 도령을",
+						"alt": "Hallakgungi before rows of resurrection flowers in a flat sage field",
+						"prompt": "Anime-painterly Hallakgungi, sage flower rows, Western Flower Field. No clouds. No text.",
+						"refs": [
+							"/ch_gardener.png",
+							"/ch_jacheongbi.png"
+						],
+						"tempImage": "/temp/hallakgungi-rows.png"
 					}
 				],
 				"blocks": [
@@ -24461,6 +24730,30 @@
 							"/ch_haewonmek.png"
 						],
 						"tempImage": "/temp/haewonmek-mouth.jpg"
+					},
+					{
+						"id": "yumla-bench",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "King Yumla",
+						"alt": "Yumla on a purple judgment bench in a flat underworld void",
+						"prompt": "Anime-painterly Yumla bench, purple plane. No clouds. No text.",
+						"refs": [
+							"/ch_yumla.png"
+						],
+						"tempImage": "/temp/yumla-bench.png"
+					},
+					{
+						"id": "kangrim-redbook",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "강림",
+						"alt": "Kangrim under a black gat, orange sleeves, open red name-book",
+						"prompt": "Anime-painterly Kangrim red book, charcoal underworld. No clouds. No text.",
+						"refs": [
+							"/ch_kangrim.png"
+						],
+						"tempImage": "/temp/kangrim-redbook.png"
 					}
 				],
 				"blocks": [
@@ -25317,6 +25610,19 @@
 							"/ch_little_star.png"
 						],
 						"tempImage": "/temp/three-realms-12-principals.png"
+					},
+					{
+						"id": "kangrim-resurrection-question-new",
+						"ratio": 1.5,
+						"tone": "#8fbf8a",
+						"at": "Grim Reaper Kangrim",
+						"alt": "Kangrim asks Hallakgungi whether the flowers can resurrect the dead — closer cut",
+						"prompt": "Mythic Three Realms pavilion: Kangrim asking Hallakgungi about resurrection flowers. Painterly, no text.",
+						"refs": [
+							"/ch_kangrim.png",
+							"/ch_gardener.png"
+						],
+						"tempImage": "/temp/kangrim-resurrection-question-new.png"
 					}
 				],
 				"blocks": [
@@ -25747,6 +26053,18 @@
 							"/ch_hwanung.png"
 						],
 						"tempImage": "/temp/ungnyeo-cave-vigil.jpg"
+					},
+					{
+						"id": "hwanin-above",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "Hwanin does not plough",
+						"alt": "Hwanin as a cream-white Creator above a tiny earth, three seals falling",
+						"prompt": "Anime-painterly Hwanin above, cream heaven plane. No clouds. No text.",
+						"refs": [
+							"/ch_hwanin.png"
+						],
+						"tempImage": "/temp/hwanin-above.png"
 					}
 				],
 				"blocks": [
@@ -26092,6 +26410,18 @@
 						"alt": "Bird's eye view of flooded battlefield at dusk, water reflecting blood-red sky, broken banner",
 						"at": "Battlefield aftermath",
 						"src": "/temp/flooded_battlefield_reflection.png"
+					},
+					{
+						"id": "gyebek-last-stand-yellow",
+						"ratio": 0.5625,
+						"tone": "#E8C547",
+						"at": "gets to the <b>Yellow Mountain Fields</b>",
+						"alt": "Gyebek's last stand — lone Baekje general under a vast yellow sky",
+						"prompt": "Minimal 9:16 iconic poster: lone Gyebek on a thin earth strip under a flat yellow sky. No army. No text.",
+						"refs": [
+							"/ch_gyebek.png"
+						],
+						"tempImage": "/temp/gyebek-last-stand-yellow.png"
 					}
 				],
 				"blocks": [
@@ -28077,6 +28407,26 @@
 						"at": "The relief army freezes in the snow outside the walls, a",
 						"prompt": "Cinematic historical illustration of red sigil, Three Kingdoms of Samhan / Tang era (7th century), scene: Pyongyang Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/red-sigil.jpg"
+					},
+					{
+						"id": "goguryeo-fortress-red-storm",
+						"ratio": 1.778,
+						"tone": "#C30000",
+						"at": "impenetrable walls of Pyongyang",
+						"alt": "Goguryeo fortress as red geometric walls against storm",
+						"prompt": "16:9: hard red wall planes, storm-navy sky. No faces. No text.",
+						"refs": [],
+						"tempImage": "/temp/goguryeo-fortress-red-storm.png"
+					},
+					{
+						"id": "pyongyang-gate-ajar",
+						"ratio": 0.5625,
+						"tone": "#1a1a1c",
+						"at": "Pyongyang does not fall",
+						"alt": "Pyongyang gate ajar — darkness within, the last siege",
+						"prompt": "9:16: massive gate slightly open, snow-fog, tiny army specks. No text.",
+						"refs": [],
+						"tempImage": "/temp/pyongyang-gate-ajar.png"
 					}
 				],
 				"blocks": [
@@ -28820,6 +29170,16 @@
 							"/pl_white_river.png"
 						],
 						"tempImage": "/temp/takutsu-last-stand.jpg"
+					},
+					{
+						"id": "white-river-aerial",
+						"ratio": 1.778,
+						"tone": "#8fc4e0",
+						"at": "the West, Samhan, and the East meet",
+						"alt": "White River from above — blue and gold mixing in white water",
+						"prompt": "16:9 aerial: Silla blue and Tang gold in white water, tiny ships. No text.",
+						"refs": [],
+						"tempImage": "/temp/white-river-aerial.png"
 					}
 				],
 				"blocks": [
@@ -31038,6 +31398,38 @@
 						"src": "/temp/king_for_all_unity.png",
 						"alt": "Three kingdom colors merging into unified form - the hard-won unification of Samhan",
 						"prompt": "Epic finale composition: Three kingdom flags (Silla blue, Baekje yellow, Goguryeo red) merging into a single flowing form"
+					},
+					{
+						"id": "bupmin-future-king",
+						"ratio": 1.778,
+						"tone": "#d4b86a",
+						"at": "a six-year-old once stole a sentence",
+						"alt": "Young Bupmin as a tiny figure in a vast palace — future king",
+						"prompt": "16:9: tiny child in a vast hall, gold shaft. No text.",
+						"refs": [
+							"/ch_bupmin.png"
+						],
+						"tempImage": "/temp/bupmin-future-king.png"
+					},
+					{
+						"id": "thrones-succession-blue",
+						"ratio": 1.778,
+						"tone": "#2A5FB8",
+						"at": "last person alive who remembers",
+						"alt": "Two empty thrones — Silla blue glow and absence",
+						"prompt": "16:9: two empty thrones, one blue, one dark. No text.",
+						"refs": [],
+						"tempImage": "/temp/thrones-succession-blue.png"
+					},
+					{
+						"id": "three-kingdoms-flags-unified",
+						"ratio": 1,
+						"tone": "#2A5FB8",
+						"at": "getting someone else ready",
+						"alt": "Three kingdom flags — blue, gold, red — unification",
+						"prompt": "1:1: three diagonal banners, Silla blue / Tang gold / Goguryeo red. No text.",
+						"refs": [],
+						"tempImage": "/temp/three-kingdoms-flags-unified.png"
 					}
 				],
 				"blocks": [
@@ -31237,6 +31629,18 @@
 							"/ch_kim_bupmin.png"
 						],
 						"tempImage": "/temp/munmu-sea-tomb.jpg"
+					},
+					{
+						"id": "munhee-witness-profile",
+						"ratio": 1.333,
+						"tone": "#2A5FB8",
+						"at": "now known as <b>Queen Munmyung</b>",
+						"alt": "Munhee the witness — elegant profile, blue binyeo",
+						"prompt": "4:3: Munhee profile, blue binyeo, flat charcoal. No text.",
+						"refs": [
+							"/ch_munhee.png"
+						],
+						"tempImage": "/temp/munhee-witness-profile.png"
 					}
 				],
 				"blocks": [

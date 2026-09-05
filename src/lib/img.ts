@@ -5,7 +5,8 @@
  * `img_*.png`, `pl_*.png`, `temp/*.jpg`, …). `@sveltejs/enhanced-img` cannot
  * transform those without importing every file at build time, so production
  * uses Vercel Image Optimization (`/_vercel/image`) for AVIF/WebP + srcset.
- * Locally, thumbs and portraits request `?w=` and Vite serves a cached JPEG.
+ * Locally, thumbs and portraits request `?w=` and Vite serves a cached PNG
+ * (alpha kept — JPEG was flattening portraits onto white).
  *
  * Later pass: recompress the on-disk PNGs (many are 1–4 MB) to WebP/AVIF.
  */

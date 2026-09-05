@@ -77,11 +77,20 @@
 	--serif: 'Platypi', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
 	--sans:
 		'Platypi', 'Noto Sans KR', 'Apple SD Gothic Neo', -apple-system, 'Segoe UI', Georgia, serif;
+	/* Chrome / wiki UI — Inter, Hangul falls back to Noto Sans KR */
+	--ui:
+		'Inter', 'Noto Sans KR', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		sans-serif;
+	/* Selected chrome: white in dark, black in light */
+	--highlight: #fbfaf8;
+	--on-highlight: #14140f;
 
 	/* Tight, editorial tracking */
 	--tracking-body: -0.012em;
 	--tracking-display: -0.03em;
 	--tracking-micro: 0.02em;
+	--tracking-ui: -0.022em;
+	--leading-ui: 1.25;
 
 	--toc-w: 19rem;
 	/* Shared TOC open/close timing — keep jump settle in Toc.svelte in sync. */
@@ -213,6 +222,8 @@ html[data-theme='light'] {
 	--hairline: rgba(28, 22, 10, 0.13);
 	--gold: #9c7a2c;
 	--on-gold: #fdfbf3;
+	--highlight: #17150e;
+	--on-highlight: #faf8f4;
 	--quote: #8a6b1d;
 
 	--panel: #f3f0e9;

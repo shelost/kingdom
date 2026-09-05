@@ -45,11 +45,15 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.35rem;
+		font-family: var(--ui);
+		letter-spacing: var(--tracking-ui);
+		line-height: var(--leading-ui);
 	}
 
 	.site-nav a {
 		font-size: 0.7rem;
-		letter-spacing: 0.06em;
+		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
 		text-decoration: none;
 		color: var(--fg-faint);
 		padding: 0.34rem 0.7rem;
@@ -64,14 +68,14 @@
 	}
 
 	.site-nav a:hover {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		color: var(--fg);
+		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
 	}
 
 	.site-nav a.active {
-		color: var(--on-gold);
-		background: var(--gold);
-		border-color: var(--gold);
+		color: var(--on-highlight);
+		background: var(--highlight);
+		border-color: var(--highlight);
 	}
 
 	.theme-toggle {
@@ -94,8 +98,8 @@
 	}
 
 	.theme-toggle:hover {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		color: var(--fg);
+		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
 	}
 
 	.theme-toggle .material-symbols-outlined {

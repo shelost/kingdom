@@ -20,7 +20,7 @@ type NodeRes = {
 	end: (body?: string | Buffer) => void;
 };
 
-/** Dev-only: `?w=256` on `/ch_*.png` etc. serves a cached JPEG instead of the full PNG. */
+/** Dev-only: `?w=256` on `/ch_*.png` etc. serves a cached PNG thumb (alpha kept). */
 function serveResizedStatic(req: NodeReq, res: NodeRes, next: () => void) {
 	const raw = req.url;
 	if (!raw) return next();
@@ -38,7 +38,7 @@ function serveResizedStatic(req: NodeReq, res: NodeRes, next: () => void) {
 	const source = path.resolve(STATIC_ROOT, rel);
 	if (!source.startsWith(STATIC_ROOT + path.sep) || !fs.existsSync(source)) return next();
 
-	const out = path.join(THUMB_CACHE, String(width), `${rel.replace(/[\\/]/g, '__')}.jpg`);
+	const out = path.join(THUMB_CACHE, String(width), `${rel.replace(/[\\/]/g, '__')}.png`);
 	try {
 		const srcStat = fs.statSync(source);
 		const cached = fs.existsSync(out) && fs.statSync(out).mtimeMs >= srcStat.mtimeMs;
@@ -46,11 +46,11 @@ function serveResizedStatic(req: NodeReq, res: NodeRes, next: () => void) {
 			fs.mkdirSync(path.dirname(out), { recursive: true });
 			execFileSync(
 				'sips',
-				['-s', 'format', 'jpeg', '-s', 'formatOptions', '72', '-Z', String(width), source, '--out', out],
+				['-s', 'format', 'png', '-Z', String(width), source, '--out', out],
 				{ stdio: 'ignore' }
 			);
 		}
-		res.setHeader('Content-Type', 'image/jpeg');
+		res.setHeader('Content-Type', 'image/png');
 		res.setHeader('Cache-Control', 'public, max-age=3600');
 		res.end(fs.readFileSync(out));
 	} catch {
