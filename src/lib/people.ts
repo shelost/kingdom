@@ -1641,7 +1641,7 @@ export const PEOPLE: Person[] = [
 		ideology: 'Aristocratic Hwarang',
 		ideologyNote: 'True Bone honour culture — the yard before any doctrine.',
 		quote: "A fortress falls from the inside first.",
-		arc: 'Capital-bred, True Bone, given a fortress for his rank. Gotaso loves him with her whole chest. At Daeya he meets Gumil’s wife and discovers how little of the world Surabol prepared him for.',
+		arc: 'Capital-bred, True Bone, given a fortress for his rank. Gotaso loves him with her whole chest. At Daeya he meets Yehwa and discovers how little of the world Surabol prepared him for.',
 		blade: 'Ring-pommel parade sword — fox on the gilt pommel, never blooded until the wrong night.',
 		swordImage: '/sword_fox.png',
 		events: [
@@ -1670,6 +1670,7 @@ export const PEOPLE: Person[] = [
 			{ year: 642, label: 'Betrays Daeya Fortress with Mochuk.' },
 			{ year: 660, label: 'Executed by King Muyeol.' }
 		],
+		family: [{ id: 'gumilwife', role: 'Wife' }],
 		career: [
 			{ title: 'Border officer', korean: '변방장교', from: 642, to: 660, note: '4-dupum yellow sleeve' }
 		],
@@ -1869,17 +1870,18 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'gumilwife',
 		avatar: '/ch_gumil_wife.png',
-		name: 'Gumil’s Wife',
-		korean: '검일의 아내',
+		name: 'Yehwa',
+		korean: '예화',
 		kingdom: 'silla',
 		gender: 'f',
 		tagline: 'A commoner woman at a border feast — and the spark that burns down three kingdoms.',
 		quote: "A half is still more than mine would ever be.",
-		arc: 'She has no name in the histories and no rank worth recording, which is precisely the point. A drunk True Bone takes her because he can; her husband opens the gates of Daeya in return. Everything that follows — Gotaso’s death, Chunchu’s revenge, the Tang alliance, the fall of Baekje and Goryeo — runs back through a woman the system did not consider a person.',
+		arc: 'The histories leave her unnamed — no rank worth recording, which is precisely the point. In this chronicle she is Yehwa: Gumil’s wife, the poorest woman in Daeya. A drunk True Bone takes her because he can; her husband opens the gates in return. Everything that follows — Gotaso’s death, Chunchu’s revenge, the Tang alliance, the fall of Baekje and Goryeo — runs back through a woman the system did not consider a person.',
 		binyeo: 'Wood-sprig binyeo — gnarled branch, leaf and gold bud; cheap timber, clever seduction without court gold.',
 		binyeoImage: '/bn_gumil_wife.png',
 		events: [{ year: 642, label: 'Taken by Pumsuk at the Daeya feast; her husband betrays the fortress.' }],
-		aliases: ['Gumil’s wife', 'Geomil’s wife']
+		family: [{ id: 'gumil', role: 'Husband' }],
+		aliases: ['Yehwa', '예화', 'Gumil’s wife', 'Geomil’s wife', 'Gumil’s Wife']
 	},
 	{
 		id: 'queensatek',
