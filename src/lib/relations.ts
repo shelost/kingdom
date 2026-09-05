@@ -231,17 +231,17 @@ export const RELATIONSHIPS: Person[] = [
 	},
 	{
 		id: 'rel-pumsuk-gumilwife',
-		name: 'Pumsuk & Gumil’s Wife',
-		korean: '품석 · 검일의 아내',
+		name: 'Pumsuk & Yehwa',
+		korean: '품석 · 예화',
 		entity: 'relationship',
 		kingdom: 'silla',
 		bond: 'affair',
 		between: ['pumsuk', 'gumilwife'],
 		title: 'The feast that burns three kingdoms',
 		tagline: 'A capital boy meets a woman who already knows what he wants.',
-		arc: 'Pumsuk is Surabol-bred and still young enough to be startled by her. Gumil’s wife does not startle. What passes between them at the feast is mostly unspoken — and enough. Gumil opens the gates. Everything after runs through that room.',
+		arc: 'Pumsuk is Surabol-bred and still young enough to be startled by her. Yehwa does not startle. What passes between them at the feast is mostly unspoken — and enough. Gumil opens the gates. Everything after runs through that room.',
 		events: [{ year: 642, label: 'The feast; the gates open.' }],
-		aliases: ['Pumsuk & Gumil’s Wife', 'Gumil’s Wife & Pumsuk', 'Pumsuk & Geomil’s Wife']
+		aliases: ['Pumsuk & Yehwa', 'Yehwa & Pumsuk', 'Pumsuk & Gumil’s Wife', 'Gumil’s Wife & Pumsuk', 'Pumsuk & Geomil’s Wife']
 	},
 	{
 		id: 'rel-euija-maids',

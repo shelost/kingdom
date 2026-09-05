@@ -277,7 +277,7 @@ feast = [
 	),
 	P(
 		'He kisses her the way a boy kisses when he has decided all at once to stop being careful — open, hungry, tasting the wine off her tongue — and she takes his head in both hands and does not let him make it small again. When he tries to pull back for air she follows him into it. The feast goes on somewhere behind them. It is a long moment before either of them remembers that breathing is separate from this.',
-		'그는 조심하기를 한꺼번에 그만두기로 한 소년처럼 입을 맞춘다 — 입을 벌리고, 배고프게, 혀에서 술맛을 찾으며. 그리고 검일의 아내가 두 손으로 그의 머리를 붙들어, 다시 작게 만들지 못하게 한다. 숨을 쉬려고 물러나면 그녀가 따라와 다시 그 안으로 넣는다. 잔치는 등 뒤 어딘가에서 계속된다. 둘 중 누가 숨과 이것을 따로 생각하게 되기까지는 한참이다.',
+		'그는 조심하기를 한꺼번에 그만두기로 한 소년처럼 입을 맞춘다 — 입을 벌리고, 배고프게, 혀에서 술맛을 찾으며. 그리고 예화가 두 손으로 그의 머리를 붙들어, 다시 작게 만들지 못하게 한다. 숨을 쉬려고 물러나면 그녀가 따라와 다시 그 안으로 넣는다. 잔치는 등 뒤 어딘가에서 계속된다. 둘 중 누가 숨과 이것을 따로 생각하게 되기까지는 한참이다.',
 	),
 	D(
 		'#7aa8d8',
