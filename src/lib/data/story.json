@@ -19481,20 +19481,64 @@
 						],
 						"tempImage": "/temp/secretariat_02.jpg"
 					},
-					{
-						"id": "secretariat_03",
-						"ratio": 1.6,
-						"tone": "#2a2830",
-						"at": "파발",
-						"alt": "Relay riders leaving the secretariat yard",
-						"prompt": "Relay riders (파발) leaving a Silla palace yard at dusk with sealed packets — speed against clan delay, 651. Painterly historical illustration, no text, no watermark, --ar 3:2 --stylize 250",
-						"refs": [
-							"/ch_chunchu.png",
-							"/ch_chunchu.png"
-						],
-						"tempImage": "/temp/secretariat_03.jpg"
-					}
-				],
+				{
+					"id": "secretariat_03",
+					"ratio": 1.6,
+					"tone": "#2a2830",
+					"at": "파발",
+					"alt": "Relay riders leaving the secretariat yard",
+					"prompt": "Relay riders (파발) leaving a Silla palace yard at dusk with sealed packets — speed against clan delay, 651. Painterly historical illustration, no text, no watermark, --ar 3:2 --stylize 250",
+					"refs": [
+						"/ch_chunchu.png",
+						"/ch_chunchu.png"
+					],
+					"tempImage": "/temp/secretariat_03.jpg"
+				},
+				{
+					"id": "secretariat_tang_formation",
+					"ratio": 1.778,
+					"tone": "#3E79E4",
+					"at": "Tang protocol adopted",
+					"alt": "Secretariat members in Chinese robes standing in geometric formation — cultural transformation symbolized",
+					"src": "/opt/cursor/artifacts/assets/secretariat_tang_formation.png",
+					"refs": [
+						"/ch_kim_seohyun.png",
+						"/ch_kim_muryuk.png"
+					]
+				},
+				{
+					"id": "secretariat_cultural_contrast",
+					"ratio": 1.0,
+					"tone": "#2a2830",
+					"at": "Cultural shift",
+					"alt": "Tang court dress contrasting with traditional Korean robes — the imported grammar visualized",
+					"src": "/opt/cursor/artifacts/assets/secretariat_cultural_contrast.png"
+				},
+				{
+					"id": "secretariat_seals_documents",
+					"ratio": 1.778,
+					"tone": "#d4af37",
+					"at": "Bureaucratic authority",
+					"alt": "Secretariat seals and documents with Chinese characters — the new administrative power",
+					"src": "/opt/cursor/artifacts/assets/secretariat_seals_documents.png"
+				},
+				{
+					"id": "secretariat_tang_bowing",
+					"ratio": 1.778,
+					"tone": "#2a2830",
+					"at": "Imported protocol",
+					"alt": "Ministers bowing in Tang fashion — synchronized submission to new ceremonial grammar",
+					"src": "/opt/cursor/artifacts/assets/secretariat_tang_bowing.png"
+				},
+				{
+					"id": "secretariat_shadow_officials",
+					"ratio": 1.778,
+					"tone": "#d4af37",
+					"at": "Cultural transformation complete",
+					"alt": "Shadow silhouettes of officials in Chinese hats — identity transformed through imported forms",
+					"src": "/opt/cursor/artifacts/assets/secretariat_shadow_officials.png"
+				}
+			],
 				"blocks": [
 					{
 						"kind": "p",
@@ -19747,14 +19791,79 @@
 							"/ch_wu_zetian.png"
 						]
 					},
-					{
-						"id": "tang-imperial-decree",
-						"ratio": 1.7777777777777777,
-						"tone": "#8a5a44",
-						"alt": "Imperial decree being issued - Tang bureaucratic authority through systematic administration",
-						"src": "/tang_imperial_decree.png"
-					}
-				],
+				{
+					"id": "tang-imperial-decree",
+					"ratio": 1.7777777777777777,
+					"tone": "#8a5a44",
+					"alt": "Imperial decree being issued - Tang bureaucratic authority through systematic administration",
+					"src": "/tang_imperial_decree.png"
+				},
+				{
+					"id": "chunchu_growing_shadow",
+					"ratio": 1.778,
+					"tone": "#1c1917",
+					"at": "Centralized authority",
+					"alt": "Chunchu's shadow growing larger over kneeling figures — power symbolized through scale",
+					"src": "/opt/cursor/artifacts/assets/chunchu_growing_shadow.png",
+					"refs": [
+						"/ch_chunchu.png"
+					]
+				},
+				{
+					"id": "chunchu_empty_throne_shadow",
+					"ratio": 1.0,
+					"tone": "#7f1d1d",
+					"at": "Authority presence",
+					"alt": "Empty throne with crown casting long shadow — power felt even in absence",
+					"src": "/opt/cursor/artifacts/assets/chunchu_empty_throne_shadow.png"
+				},
+				{
+					"id": "chunchu_command_hand",
+					"ratio": 1.0,
+					"tone": "#3E79E4",
+					"at": "Absolute command",
+					"alt": "Single hand raised in command gesture against negative space — authority through singular gesture",
+					"src": "/opt/cursor/artifacts/assets/chunchu_command_hand.png"
+				},
+				{
+					"id": "chunchu_elevated_position",
+					"ratio": 1.778,
+					"tone": "#2a2830",
+					"at": "Hierarchical order",
+					"alt": "Chunchu seated higher than all others — hierarchy visualized through vertical composition",
+					"src": "/opt/cursor/artifacts/assets/chunchu_elevated_position.png",
+					"refs": [
+						"/ch_chunchu.png"
+					]
+				},
+				{
+					"id": "chunchu_ring_of_ministers",
+					"ratio": 1.0,
+					"tone": "#3E79E4",
+					"at": "Centralized power",
+					"alt": "Ring of ministers surrounding throne, all facing center — power flows to one point",
+					"src": "/opt/cursor/artifacts/assets/chunchu_ring_of_ministers.png"
+				},
+				{
+					"id": "chunchu_closed_fist",
+					"ratio": 1.0,
+					"tone": "#1c1917",
+					"at": "Controlled authority",
+					"alt": "Closed fist symbol with Silla blue accent — grip on power visualized",
+					"src": "/opt/cursor/artifacts/assets/chunchu_closed_fist.png"
+				},
+				{
+					"id": "chunchu_subordinate_silhouettes",
+					"ratio": 1.778,
+					"tone": "#2a2830",
+					"at": "Subordination hierarchy",
+					"alt": "Chunchu's silhouette with multiple smaller silhouettes behind — subordination through scale repetition",
+					"src": "/opt/cursor/artifacts/assets/chunchu_subordinate_silhouettes.png",
+					"refs": [
+						"/ch_chunchu.png"
+					]
+				}
+			],
 				"blocks": [
 					{
 						"kind": "p",
