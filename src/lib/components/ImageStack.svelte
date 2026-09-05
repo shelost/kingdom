@@ -5,6 +5,7 @@
 	import { storyImg } from '$lib/img';
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
+	import { filterNsfw } from '$lib/nsfwUi.svelte';
 
 	let {
 		images,
@@ -20,6 +21,7 @@
 
 	/** Immersion keeps the landscape phone-frame treatment; script uses normal sticky + cues. */
 	let immersion = $derived(reading.mode === 'immersion');
+	let visible = $derived(filterNsfw(images));
 
 	let live = $state(0);
 	/** Sticky stacks only fetch once they are near the viewport (or marked LCP). */
@@ -68,11 +70,11 @@
 	 * Used to subdivide a beat's scroll range so every image gets its own cue.
 	 */
 	function cueShare(i: number): { rank: number; total: number; beat: number } {
-		const beat = images[i]?.beatIndex ?? 0;
+		const beat = visible[i]?.beatIndex ?? 0;
 		let rank = 0;
 		let total = 0;
-		for (let j = 0; j < images.length; j++) {
-			if ((images[j].beatIndex ?? 0) !== beat) continue;
+		for (let j = 0; j < visible.length; j++) {
+			if ((visible[j].beatIndex ?? 0) !== beat) continue;
 			if (j < i) rank++;
 			total++;
 		}
@@ -85,7 +87,7 @@
 	 */
 	function indexAtBand(beats: HTMLElement[], mid: number): number {
 		let active = 0;
-		for (let i = 0; i < images.length; i++) {
+		for (let i = 0; i < visible.length; i++) {
 			const { rank, total, beat } = cueShare(i);
 			const el = beats[beat];
 			if (!el) continue;
@@ -97,7 +99,7 @@
 	}
 
 	const watchLive: Attachment<HTMLElement> = (node) => {
-		if (inline || !images.length) {
+		if (inline || !visible.length) {
 			live = 0;
 			return;
 		}
@@ -171,8 +173,9 @@
 	Final art leads; a distinct temp stand-in is shown beside it so references
 	are not hidden behind a locked-in `src`.
 -->
+{#if visible.length}
 <div class="stack" class:immersion class:inline {@attach watchLive} {@attach watchNear}>
-	{#each images as slot, i (`${slot.id}:${i}`)}
+	{#each visible as slot, i (`${slot.id}:${i}`)}
 		{#if inline}
 			{@const frames = scriptArtFramesOf(slot)}
 			{#if frames.length}
@@ -255,13 +258,14 @@
 					</div>
 				{/if}
 
-				{#if images.length > 1}
-					<figcaption class="count" aria-hidden="true">{i + 1}/{images.length}</figcaption>
+				{#if visible.length > 1}
+					<figcaption class="count" aria-hidden="true">{i + 1}/{visible.length}</figcaption>
 				{/if}
 			</figure>
 		{/if}
 	{/each}
 </div>
+{/if}
 
 <style>
 	.stack {

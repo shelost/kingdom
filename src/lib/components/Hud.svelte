@@ -17,6 +17,8 @@
 	import { onMount } from 'svelte';
 	import SpeakIcon from './SpeakIcon.svelte';
 	import SiteNav from './SiteNav.svelte';
+	import NsfwToggle from './NsfwToggle.svelte';
+	import { loadShowIntimate } from '$lib/nsfwUi.svelte';
 
 	const LANGS: { id: Lang; label: string; hint: string }[] = [
 		{ id: 'both', label: 'A/한', hint: 'Show everything' },
@@ -61,6 +63,7 @@
 		loadLang();
 		loadMode();
 		loadViewScope();
+		loadShowIntimate();
 		const endMusic = initMusic();
 		const endSpeech = initSpeech();
 		return () => {
@@ -225,7 +228,11 @@
 					{/each}
 				</div>
 
-				<div class="nav-wrap pill-stagger" style:--i="3">
+				<div class="nsfw-wrap pill-stagger" style:--i="3">
+					<NsfwToggle compact />
+				</div>
+
+				<div class="nav-wrap pill-stagger" style:--i="4">
 					<SiteNav />
 				</div>
 			</div>
@@ -506,6 +513,12 @@
 	}
 
 	.nav-wrap {
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+	}
+
+	.nsfw-wrap {
 		display: flex;
 		align-items: center;
 		flex-shrink: 0;

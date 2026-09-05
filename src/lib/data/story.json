@@ -6291,6 +6291,71 @@
 						"tempImage": "/temp/pumsuk-half-share.jpg"
 					},
 					{
+						"id": "nsfw-pumsuk-gumilwife-surprise",
+						"ratio": 1.778,
+						"tone": "#7f1d1d",
+						"nsfw": true,
+						"at": "Put that politeness… on my waist.",
+						"alt": "Gumil’s wife takes young Pumsuk by surprise in a dark chamber — she is in control, knowing smile, large bosom, green robe falling from bare shoulders; he is stunned, gasping, royal-blue crescent-moon headband, bodies pressed together",
+						"src": "/nsfw_pumsuk_gumilwife_surprise.png",
+						"refs": [
+							"/ch_pumsuk.png",
+							"/ch_gumil_wife.png"
+						]
+					},
+					{
+						"id": "nsfw-pumsuk-gumilwife-overwhelm",
+						"ratio": 1.333,
+						"tone": "#d0362f",
+						"nsfw": true,
+						"at": "I am the one shaking.",
+						"alt": "Close-up of Pumsuk’s lust-drunk young face — flushed, gasping, overwhelmed, tears of heat, blue crescent-moon headband; her red-nailed hand grips his jaw",
+						"src": "/nsfw_pumsuk_gumilwife_overwhelm.png",
+						"refs": [
+							"/ch_pumsuk.png",
+							"/ch_gumil_wife.png"
+						]
+					},
+					{
+						"id": "nsfw-pumsuk-gumilwife-allure",
+						"ratio": 1.333,
+						"tone": "#9a7b5f",
+						"nsfw": "erotic",
+						"at": "I’ll put your palm… here.",
+						"alt": "Gumil’s wife’s confident older-woman allure — knowing smile, large bosom, green robe slipping from bare shoulders, red sash; Pumsuk stunned and blushing in the dark behind her",
+						"src": "/nsfw_pumsuk_gumilwife_allure.png",
+						"refs": [
+							"/ch_gumil_wife.png",
+							"/ch_pumsuk.png"
+						]
+					},
+					{
+						"id": "nsfw-pumsuk-gumilwife-pressed",
+						"ratio": 1.333,
+						"tone": "#7f1d1d",
+						"nsfw": true,
+						"at": "The second kiss is not careful at all",
+						"alt": "Bodies pressed together in the chamber — her in control leaning over him, robes falling, lots of skin, large bosom; Pumsuk gasping, undone, blue crescent-moon headband, his chest bare",
+						"src": "/nsfw_pumsuk_gumilwife_pressed.png",
+						"refs": [
+							"/ch_pumsuk.png",
+							"/ch_gumil_wife.png"
+						]
+					},
+					{
+						"id": "nsfw-pumsuk-gumilwife-hands",
+						"ratio": 1.333,
+						"tone": "#7f1d1d",
+						"nsfw": true,
+						"at": "Your hands… are somewhere else.",
+						"alt": "Pumsuk’s hands on Gumil’s wife’s waist, desperate and overpowered by desire — passionate embrace, partially undressed, bare shoulders and chest, her knowing smile against his gasping face",
+						"src": "/nsfw_pumsuk_gumilwife_hands.png",
+						"refs": [
+							"/ch_pumsuk.png",
+							"/ch_gumil_wife.png"
+						]
+					},
+					{
 						"id": "daeya_04",
 						"ratio": 3.333,
 						"src": "/img_daeya_04.png",
@@ -17142,6 +17207,71 @@
 							"/ch_heo.png"
 						],
 						"tempImage": "/temp/suro-heo-tent.jpg"
+					},
+					{
+						"id": "nsfw-suro-heo-hungry",
+						"ratio": 1.333,
+						"tone": "#7f1d1d",
+						"nsfw": true,
+						"at": "or have you already begun to take me.",
+						"alt": "King Suro’s hungry, exasperated lust looking at Queen Heo — gold branch crown, purple-gold silk; she is Indian, darker brown skin, gold tiger-head hairpins, violet silk, skin contrast",
+						"src": "/nsfw_suro_heo_hungry.png",
+						"refs": [
+							"/ch_suro.png",
+							"/ch_heo.png"
+						]
+					},
+					{
+						"id": "nsfw-suro-heo-obsession",
+						"ratio": 1.333,
+						"tone": "#4c1d95",
+						"nsfw": "erotic",
+						"at": "built like nowhere on this coast",
+						"alt": "Queen Heo as the object of Suro’s obsession — adult Indian South Asian woman, darker brown skin, Indian features, gold tiger-head hairpins, violet silk off the shoulders, sensual and proud",
+						"src": "/nsfw_suro_heo_obsession.png",
+						"refs": [
+							"/ch_heo.png",
+							"/ch_suro.png"
+						]
+					},
+					{
+						"id": "nsfw-suro-heo-devour",
+						"ratio": 1.333,
+						"tone": "#7f1d1d",
+						"nsfw": true,
+						"at": "Inside you…",
+						"alt": "Suro devouring Queen Heo in a lamp-lit chamber — passionate embrace, kissing her shoulder, bodies pressed together, his lighter Korean skin against her darker Indian skin, purple silk falling",
+						"src": "/nsfw_suro_heo_devour.png",
+						"refs": [
+							"/ch_suro.png",
+							"/ch_heo.png"
+						]
+					},
+					{
+						"id": "nsfw-suro-heo-cling",
+						"ratio": 1.333,
+						"tone": "#7f1d1d",
+						"nsfw": true,
+						"at": "I cannot… take my hands away.",
+						"alt": "Suro cannot get enough — clinging, kissing Queen Heo’s throat, overwhelmed; she is Indian, darker skin, gold hairpins, violet silk falling from bare shoulders, large bosom, candlelight",
+						"src": "/nsfw_suro_heo_cling.png",
+						"refs": [
+							"/ch_suro.png",
+							"/ch_heo.png"
+						]
+					},
+					{
+						"id": "nsfw-suro-heo-chamber",
+						"ratio": 1.333,
+						"tone": "#4c1d95",
+						"nsfw": true,
+						"at": "Before I go in… once more.",
+						"alt": "Wide cinematic chamber scene — King Suro and Queen Heo in a passionate embrace, partially undressed, bare shoulders and chest, purple-gold silk, gold lamp in a dark royal room, skin contrast",
+						"src": "/nsfw_suro_heo_chamber.png",
+						"refs": [
+							"/ch_suro.png",
+							"/ch_heo.png"
+						]
 					},
 					{
 						"id": "gaya_04",

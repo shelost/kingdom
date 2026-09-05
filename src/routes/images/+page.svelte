@@ -7,13 +7,18 @@
 		type StoryCueImage
 	} from '$lib/storyImages';
 	import { storyImg } from '$lib/img';
+	import NsfwToggle from '$lib/components/NsfwToggle.svelte';
+	import { isNsfwSlot, nsfwAllowed, nsfwUi } from '$lib/nsfwUi.svelte';
 
 	const images = flattenStoryImages();
 	const orphans = findOrphanedImages();
-	const tempCount = images.filter((im) => im.isTemp).length;
-	const refsCount = images.filter((im) => im.hasGenuineRefs).length;
-	const stackCount = images.filter((im) => im.hasStack).length;
-	const seedCopyCount = images.filter((im) => im.isSeedCopy).length;
+	let visible = $derived(images.filter((im) => nsfwAllowed(im.slot)));
+	let nsfwCount = $derived(images.filter((im) => isNsfwSlot(im.slot)).length);
+	let nsfwHidden = $derived(nsfwCount - visible.filter((im) => isNsfwSlot(im.slot)).length);
+	const tempCount = $derived(visible.filter((im) => im.isTemp).length);
+	const refsCount = $derived(visible.filter((im) => im.hasGenuineRefs).length);
+	const stackCount = $derived(visible.filter((im) => im.hasStack).length);
+	const seedCopyCount = $derived(visible.filter((im) => im.isSeedCopy).length);
 
 	let view = $state<GalleryView>('grid');
 	/** Hover / focus stack: which layer is on top per cue key (`temp` | `final`). */
@@ -82,6 +87,9 @@
 				{#if im.hasGenuineRefs}
 					<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
 				{/if}
+				{#if isNsfwSlot(im.slot)}
+					<span class="badge nsfw">intimate</span>
+				{/if}
 			</div>
 		</button>
 	{:else}
@@ -109,6 +117,9 @@
 				{#if im.isSeedCopy}
 					<span class="badge seed">final copy</span>
 				{/if}
+				{#if isNsfwSlot(im.slot)}
+					<span class="badge nsfw">intimate</span>
+				{/if}
 			</div>
 		</figure>
 	{/if}
@@ -125,7 +136,15 @@
 			<span class="dot" aria-hidden="true">·</span>
 			<a href={resolve('/wiki')}>Encyclopedia</a>
 			<span class="dot" aria-hidden="true">·</span>
-			<span>{images.length} cues</span>
+			<span>{visible.length} cues</span>
+			{#if nsfwCount}
+				<span class="dot" aria-hidden="true">·</span>
+				{#if nsfwUi.showIntimate}
+					<span>{nsfwCount} intimate</span>
+				{:else}
+					<span>{nsfwHidden} intimate hidden</span>
+				{/if}
+			{/if}
 			{#if tempCount}
 				<span class="dot" aria-hidden="true">·</span>
 				<span>{tempCount} temp</span>
@@ -156,25 +175,28 @@
 					jpeg copies of the final.
 				</p>
 			</div>
-			<div class="view" role="group" aria-label="Gallery view">
-				{#each VIEWS as v (v.id)}
-					<button
-						type="button"
-						class:active={view === v.id}
-						title={v.hint}
-						aria-pressed={view === v.id}
-						onclick={() => (view = v.id)}
-					>
-						{v.label}
-					</button>
-				{/each}
+			<div class="mast-actions">
+				<NsfwToggle />
+				<div class="view" role="group" aria-label="Gallery view">
+					{#each VIEWS as v (v.id)}
+						<button
+							type="button"
+							class:active={view === v.id}
+							title={v.hint}
+							aria-pressed={view === v.id}
+							onclick={() => (view = v.id)}
+						>
+							{v.label}
+						</button>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</header>
 
 	{#if view === 'grid'}
 		<section class="grid" aria-label="Cue image grid">
-			{#each images as im (im.key)}
+			{#each visible as im (im.key)}
 				<article class="card" class:temp={im.isTemp} class:stackable={im.hasStack}>
 					{@render cueThumb(im)}
 					<div class="meta">
@@ -187,7 +209,7 @@
 		</section>
 	{:else}
 		<section class="cues" aria-label="Cue image list">
-			{#each images as im (im.key)}
+			{#each visible as im (im.key)}
 				{@const front = frontOf(im)}
 				<article class="row" class:temp={im.isTemp}>
 					{@render cueThumb(im)}
@@ -405,6 +427,14 @@
 		align-items: flex-end;
 		justify-content: space-between;
 		gap: 1.25rem 1.5rem;
+	}
+
+	.mast-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.65rem;
+		flex-shrink: 0;
 	}
 
 	.titles {
@@ -628,6 +658,11 @@
 	.badge.seed {
 		background: color-mix(in srgb, var(--fg-faint) 40%, #fffdf8);
 		color: #2a2a28;
+	}
+
+	.badge.nsfw {
+		background: color-mix(in srgb, #c45c6a 75%, #fffdf8);
+		color: #2a1014;
 	}
 
 	.meta {
