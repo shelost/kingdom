@@ -9,6 +9,7 @@
 	import Blocks from '$lib/components/Blocks.svelte';
 	import { ENTRY_PLACE } from '$lib/places';
 	import { buildBeats } from '$lib/beats';
+	import { filterNsfw } from '$lib/nsfwUi.svelte';
 	import {
 		reading,
 		episodes,
@@ -100,7 +101,7 @@
 	/** Flatten beat-anchored images into one sticky stack, tagged with beatIndex. */
 	function stackImages(entry: Entry): StackImage[] {
 		return buildBeats(entry).flatMap((beat, bi) =>
-			beat.images.map((im) => ({ ...im, beatIndex: bi }))
+			filterNsfw(beat.images).map((im) => ({ ...im, beatIndex: bi }))
 		);
 	}
 
@@ -217,7 +218,10 @@
 					{#each chapter.entries as entry, i (chapter.id + i)}
 						{#if showEntry(chapter.id, i)}
 							{@const years = yearsByChapter.get(chapter.id) ?? []}
-							{@const beats = buildBeats(entry)}
+							{@const beats = buildBeats(entry).map((beat) => ({
+								...beat,
+								images: filterNsfw(beat.images)
+							}))}
 							{@const images = stackImages(entry)}
 							{@const eid = entryId(chapter.id, entry.title)}
 							<article

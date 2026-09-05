@@ -30,6 +30,11 @@ export interface ImageSlot {
 	 * no anchor open the entry.
 	 */
 	at?: string;
+	/**
+	 * Intimate / adult cue art. Hidden unless the reader turns on
+	 * “Show intimate scenes”. `true` or `"erotic"` both count as NSFW.
+	 */
+	nsfw?: boolean | 'erotic';
 }
 
 /** ImageSlot plus the beat index it was flattened against for sticky stacks. */

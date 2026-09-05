@@ -12,6 +12,7 @@
 
 import { buildBeats } from '$lib/beats';
 import { displayArtOf } from '$lib/cueArt';
+import { nsfwAllowed } from '$lib/nsfwUi.svelte';
 import { PLACES } from '$lib/places';
 import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
 import { chapters, entryId, type Chapter, type Entry } from '$lib/story';
@@ -119,6 +120,7 @@ export function panelsOf(entry: Entry, placeId: string | null): CinemaPanel[] {
 
 	for (const beat of buildBeats(entry)) {
 		for (const slot of beat.images) {
+			if (!nsfwAllowed(slot)) continue;
 			const src = displayArtOf(slot, 'reading');
 			if (!src || seen.has(src)) continue;
 			seen.add(src);
