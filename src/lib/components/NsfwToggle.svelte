@@ -3,11 +3,11 @@
 
 	let { compact = false }: { compact?: boolean } = $props();
 
-	let label = $derived(nsfwUi.showIntimate ? 'Intimate scenes on' : 'Show intimate scenes');
+	let label = $derived(nsfwUi.showIntimate ? 'Intimate scenes on' : 'Intimate scenes off');
 	let hint = $derived(
 		nsfwUi.showIntimate
-			? 'Hide intimate scenes'
-			: 'Show intimate scenes — adult art hidden by default'
+			? 'Intimate scenes shown — click to hide'
+			: 'Intimate scenes hidden — click to show'
 	);
 </script>
 

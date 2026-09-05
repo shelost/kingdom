@@ -1,12 +1,13 @@
 /**
  * Reader preference for intimate / NSFW cue art.
- * Default off. Persisted as localStorage `kingdom:nsfw` (`1` / `0`).
+ * Default on. Persisted as localStorage `kingdom:nsfw` (`1` / `0`).
+ * Unset storage is treated as on.
  */
 import { browser } from '$app/environment';
 
 const STORAGE_KEY = 'kingdom:nsfw';
 
-export const nsfwUi = $state({ showIntimate: false });
+export const nsfwUi = $state({ showIntimate: true });
 
 export function isNsfwSlot(slot: { nsfw?: boolean | string }): boolean {
 	return Boolean(slot.nsfw);
@@ -35,12 +36,12 @@ export function toggleShowIntimate() {
 	setShowIntimate(!nsfwUi.showIntimate);
 }
 
-/** Restore after hydrate so SSR stays hidden (default off). */
+/** Restore after hydrate. Unset or missing key => show intimate. Only `'0'` hides. */
 export function loadShowIntimate() {
 	if (!browser) return;
 	try {
-		nsfwUi.showIntimate = localStorage.getItem(STORAGE_KEY) === '1';
+		nsfwUi.showIntimate = localStorage.getItem(STORAGE_KEY) !== '0';
 	} catch {
-		/* ignore */
+		/* stay on default (on) */
 	}
 }
