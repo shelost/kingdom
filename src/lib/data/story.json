@@ -84,6 +84,29 @@
 						"tempImage": "/temp/yushin-chunchu-munhee.jpg"
 					},
 					{
+						"id": "yushin-sword-vertical",
+						"ratio": 0.5625,
+						"tone": "#3E79E4",
+						"at": "Sword of Silla",
+						"alt": "Kim Yushin in profile holding sword upright - the Sword of Silla",
+						"src": "/opt/cursor/artifacts/assets/yushin_sword_vertical.png",
+						"refs": [
+							"/ch_kim_yushin.png"
+						]
+					},
+					{
+						"id": "east-star-vow-minimal",
+						"ratio": 1.7777777777777777,
+						"tone": "#3E79E4",
+						"at": "the east star",
+						"alt": "Two boys pointing at a brilliant star on the horizon - the moment Chunchu and Yushin vow to unite Samhan",
+						"src": "/opt/cursor/artifacts/assets/east_star_vow_iconic.png",
+						"refs": [
+							"/ch_chunchu.png",
+							"/ch_kim_yushin.png"
+						]
+					},
+					{
 						"id": "bidam-cleverest",
 						"ratio": 1.778,
 						"tone": "#141C2E",
@@ -126,6 +149,17 @@
 						"tempImage": "/temp/kim-family.jpg"
 					},
 					{
+						"id": "bupmin-future-king",
+						"ratio": 1.7777777777777777,
+						"tone": "#3E79E4",
+						"at": "Bupmin (6)",
+						"alt": "Young prince Bupmin facing vast palace courtyard - dreaming of being king for all",
+						"src": "/opt/cursor/artifacts/assets/bupmin_future_king.png",
+						"refs": [
+							"/ch_kim_bupmin.png"
+						]
+					},
+					{
 						"id": "sunduk-poster",
 						"ratio": 2.5,
 						"tone": "#4a0e0e",
@@ -140,6 +174,29 @@
 							"/ch_chunchu.png"
 						],
 						"tempImage": "/temp/sunduk-poster.jpg"
+					},
+					{
+						"id": "sunduk-observatory-twilight",
+						"ratio": 0.75,
+						"tone": "#3E79E4",
+						"at": "Cheomseongdae",
+						"alt": "Queen Sunduk gazing at stars beside Cheomseongdae tower at twilight",
+						"src": "/opt/cursor/artifacts/assets/sunduk_observatory_twilight.png",
+						"refs": [
+							"/ch_dukman.png",
+							"/pl_observatory.png"
+						]
+					},
+					{
+						"id": "dukman-reaching-stars",
+						"ratio": 0.5625,
+						"tone": "#3E79E4",
+						"at": "Queen Sunduk",
+						"alt": "Queen Sunduk reaching toward the stars - astronomer queen receiving heaven",
+						"src": "/opt/cursor/artifacts/assets/dukman_reaching_stars.png",
+						"refs": [
+							"/ch_dukman.png"
+						]
 					},
 					{
 						"id": "cheomseongdae_01",
@@ -168,6 +225,34 @@
 							"/pl_observatory.png",
 							"/temp/cheomseongdae_01.jpg"
 						]
+					},
+					{
+						"id": "cheomseongdae-moon-iconic",
+						"ratio": 0.75,
+						"tone": "#0b1a33",
+						"at": "Cheomseongdae",
+						"alt": "Cheomseongdae observatory tower silhouetted against a massive full moon",
+						"src": "/opt/cursor/artifacts/assets/cheomseongdae_moon_minimal.png",
+						"refs": [
+							"/pl_observatory.png",
+							"/ch_dukman.png"
+						]
+					},
+					{
+						"id": "empty-throne-blue-light",
+						"ratio": 1.778,
+						"tone": "#3E79E4",
+						"alt": "Empty throne room with shaft of blue light falling on vacant seat - power vacuum and succession crisis",
+						"at": "The Royal blood, there remain only three",
+						"src": "/opt/cursor/artifacts/assets/empty_throne_blue_light.png"
+					},
+					{
+						"id": "three-crowns-symmetry",
+						"ratio": 1.778,
+						"tone": "#1a1a1a",
+						"alt": "Three royal crowns in triangular symmetry - Silla blue, Baekje yellow, Goguryeo red - symbolizing power",
+						"at": "The three kingdoms",
+						"src": "/opt/cursor/artifacts/assets/three_crowns_symmetry.png"
 					}
 				],
 				"blocks": [
@@ -886,6 +971,22 @@
 							"/img_jinheung_01.png"
 						],
 						"tempImage": "/temp/crescent-hwarang.jpg"
+					},
+					{
+						"id": "jinheung-crescent-minimal",
+						"ratio": 1.7777777777777777,
+						"tone": "#3E79E4",
+						"src": "/opt/cursor/artifacts/assets/jinheung_crescent_moon.png",
+						"alt": "A crescent moon floating in vast Silla blue sky above mountain silhouettes - symbol of destiny",
+						"prompt": "Iconic minimal composition: A single crescent moon in brilliant white against vast midnight blue negative space (Silla blue #3E79E4)"
+					},
+					{
+						"id": "jinheung-crown-waiting",
+						"ratio": 1.7777777777777777,
+						"tone": "#3E79E4",
+						"src": "/opt/cursor/artifacts/assets/jinheung_crown_moon.png",
+						"alt": "A golden crown floating in Silla blue space, illuminated by crescent moon - destiny awaits",
+						"prompt": "Cinematic legend: A young king's crown floating alone in vast Silla blue negative space, illuminated by a crescent moon"
 					}
 				],
 				"blocks": [
@@ -1154,6 +1255,14 @@
 							"/pl_white_river.png"
 						],
 						"tempImage": "/temp/gyebek-white-river.jpg"
+					},
+					{
+						"id": "council-chamber-smoke",
+						"ratio": 1.778,
+						"tone": "#3a3a3a",
+						"alt": "Empty council chamber with circular cushions around brazier, smoke rising in beam of light",
+						"at": "The Eight Great Clans",
+						"src": "/opt/cursor/artifacts/assets/council_chamber_smoke_light.png"
 					}
 				],
 				"blocks": [
@@ -1946,6 +2055,17 @@
 							"/ch_commander_3.png"
 						],
 						"tempImage": "/temp/sunset-rider.jpg"
+					},
+					{
+						"id": "munhee-profile-blue-light",
+						"ratio": 0.5625,
+						"tone": "#3E79E4",
+						"alt": "Princess Munhee in profile silhouette with dramatic blue rim light on her golden hair ornament",
+						"at": "Kim Munhee",
+						"src": "/opt/cursor/artifacts/assets/munhee_profile_blue_light.png",
+						"refs": [
+							"/workspace/static/ch_munhee.png"
+						]
 					}
 				],
 				"blocks": [
@@ -2506,6 +2626,22 @@
 							"/ch_samsin.png"
 						],
 						"tempImage": "/temp/samsin-life-office.jpg"
+					},
+					{
+						"id": "namseng-swaddled",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"src": "/opt/cursor/artifacts/assets/namseng_birth.png",
+						"alt": "A newborn wrapped in Goguryeo red silk against pure white - the heir is born",
+						"prompt": "Vertical portrait: A newborn baby wrapped in Goguryeo red silk (#C30000), held by unseen hands against pure white negative space"
+					},
+					{
+						"id": "namseng-silk",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"src": "/opt/cursor/artifacts/assets/namseng_silk.png",
+						"alt": "Goguryeo red silk draped in elegant folds - warmth and protection for the newborn heir",
+						"prompt": "Vertical birth portrait: Goguryeo red silk fabric (#C30000) draped and folded elegantly against pure white negative space"
 					}
 				],
 				"blocks": [
@@ -2714,6 +2850,17 @@
 					"🌙"
 				],
 				"images": [
+					{
+						"id": "gotaso-determination",
+						"ratio": 0.75,
+						"tone": "#3E79E4",
+						"at": "Gotaso",
+						"alt": "Princess Gotaso standing with determination - bridge between kingdoms through marriage",
+						"src": "/opt/cursor/artifacts/assets/gotaso_determination_forward.png",
+						"refs": [
+							"/ch_gotaso.png"
+						]
+					},
 					{
 						"id": "gotaso-carried-home",
 						"ratio": 3.333,
@@ -6131,6 +6278,17 @@
 							"/ch_golhwa.png"
 						],
 						"tempImage": "/temp/golhwa-steam-emblem.jpg"
+					},
+					{
+						"id": "fortress-gate-red-omen",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"alt": "Ancient Korean fortress gate slightly ajar with ominous red light spilling through",
+						"at": "Daeya Fortress",
+						"src": "/opt/cursor/artifacts/assets/fortress_gate_red_omen.png",
+						"refs": [
+							"/workspace/static/pl_eastern.png"
+						]
 					}
 				],
 				"blocks": [
@@ -7842,6 +8000,17 @@
 					"flag:goguryeo"
 				],
 				"images": [
+					{
+						"id": "daeya-massacre-doorway",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "The massacre begins",
+						"alt": "Silhouetted figure in doorway flooded with ominous red light - the Daeya Fortress massacre",
+						"src": "/opt/cursor/artifacts/assets/massacre_red_doorway.png",
+						"refs": [
+							"/ch_yeon_gesomun.png"
+						]
+					},
 					{
 						"id": "pyongyang-sunset",
 						"ratio": 3.333,
@@ -10604,12 +10773,39 @@
 				],
 				"images": [
 					{
+						"id": "taizong-throne-majesty",
+						"ratio": 0.5625,
+						"tone": "#d4af37",
+						"at": "Emperor",
+						"alt": "Tang Emperor Taizong on throne viewed from below - western imperial majesty",
+						"src": "/opt/cursor/artifacts/assets/taizong_throne_majesty.png",
+						"refs": [
+							"/ch_taizong.png"
+						]
+					},
+					{
 						"id": "tang-palace",
 						"ratio": 1.778,
 						"tone": "#b91c1c",
 						"alt": "Chang’an Daming hall — crimson wall, yellow emperor light, tiny Taizong turning a foreign name",
 						"prompt": "Minimal vast epic cinematic still matching the visual bible: Tang Chang’an Daming hall, deep CRIMSON wall plane, intense YELLOW emperor-light shaft, one tiny silhouette in the yellow, wet black floor. No faces, no anime, no clutter, no text, no watermark.",
 						"tempImage": "/temp/tang-palace.jpg"
+					},
+					{
+						"id": "li-shimin-throne",
+						"ratio": 1.7777777777777777,
+						"tone": "#FFCB51",
+						"src": "/opt/cursor/artifacts/assets/li_shimin_throne.png",
+						"alt": "Tang imperial throne in golden light against darkness - the power that watches Korea",
+						"prompt": "Cinematic minimal: A Tang imperial throne in golden yellow (#FFCB51) silhouetted against vast black negative space"
+					},
+					{
+						"id": "li-shimin-dragon",
+						"ratio": 1.7777777777777777,
+						"tone": "#DC2626",
+						"src": "/opt/cursor/artifacts/assets/li_shimin_dragon.png",
+						"alt": "Tang dragon emblem in gold against crimson - imperial power and intrigue",
+						"prompt": "Imperial intrigue: The Tang dragon emblem rendered in gold against deep crimson red negative space"
 					}
 				],
 				"blocks": [
@@ -10760,6 +10956,14 @@
 							"/ch_chunchu.png"
 						],
 						"tempImage": "/temp/taizong-son-of-heaven.jpg"
+					},
+					{
+						"id": "ancient-scroll-candlelight",
+						"ratio": 1.778,
+						"tone": "#d4a574",
+						"alt": "Ancient Korean scroll unfurling dramatically with blue and gold calligraphy by candlelight",
+						"at": "Tang records",
+						"src": "/opt/cursor/artifacts/assets/ancient_scroll_candlelight.png"
 					}
 				],
 				"blocks": [
@@ -11249,6 +11453,17 @@
 				],
 				"images": [
 					{
+						"id": "xuerengui-banner",
+						"ratio": 0.5625,
+						"tone": "#d4af37",
+						"at": "Xue Rengui",
+						"alt": "Tang General Xue Rengui with wind-blown banner - Tang military might",
+						"src": "/opt/cursor/artifacts/assets/xuerengui_banner_wind.png",
+						"refs": [
+							"/ch_xue_rengui.png"
+						]
+					},
+					{
 						"id": "invasion-map",
 						"ratio": 2.3,
 						"tone": "#e0f2fe",
@@ -11265,6 +11480,17 @@
 						"at": "You will simply…",
 						"prompt": "Cinematic historical illustration of ansi court, Three Kingdoms of Samhan / Tang era (645), scene: Eastern Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/ansi-court.jpg"
+					},
+					{
+						"id": "yushin-dawn-vigil",
+						"ratio": 1.778,
+						"tone": "#3E79E4",
+						"alt": "Kim Yushin standing alone on clifftop at dawn, blue robes flowing, sword pointed down",
+						"at": "Kim Yushin",
+						"src": "/opt/cursor/artifacts/assets/yushin_dawn_vigil.png",
+						"refs": [
+							"/workspace/static/ch_kim_yushin.png"
+						]
 					}
 				],
 				"blocks": [
@@ -11968,6 +12194,14 @@
 						"at": "Hwando is burned. The king runs east with a handful of m",
 						"prompt": "Cinematic historical illustration of burning capital, Three Kingdoms of Samhan / Tang era (244), scene: Boiling River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/burning-capital.jpg"
+					},
+					{
+						"id": "boiling-river-chaos",
+						"ratio": 1.7777777777777777,
+						"tone": "#C30000",
+						"src": "/opt/cursor/artifacts/assets/boiling_river.png",
+						"alt": "River churning with steam in Goguryeo red - the battlefield where Wei was repelled",
+						"prompt": "Epic minimal battle scene: A river churning with steam and mist, rendered in Goguryeo red (#C30000) against dark blue-grey negative space"
 					}
 				],
 				"blocks": [
@@ -12062,6 +12296,17 @@
 					"🐦"
 				],
 				"images": [
+					{
+						"id": "jumong-sky-arrow",
+						"ratio": 0.75,
+						"tone": "#C30000",
+						"at": "Jumong",
+						"alt": "Jumong drawing bow aimed at sky - divine archer and mythic founder",
+						"src": "/opt/cursor/artifacts/assets/jumong_sky_arrow.png",
+						"refs": [
+							"/ch_jumong.png"
+						]
+					},
 					{
 						"id": "jumong_01",
 						"ratio": 1.778,
@@ -13172,6 +13417,17 @@
 				],
 				"images": [
 					{
+						"id": "gesomun-authority",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "Yeon Gesomun",
+						"alt": "Yeon Gesomun viewed from below - imposing authority of the Supreme Commander",
+						"src": "/opt/cursor/artifacts/assets/gesomun_authority_low_angle.png",
+						"refs": [
+							"/ch_yeon_gesomun.png"
+						]
+					},
+					{
 						"id": "ansi-map",
 						"ratio": 2.3,
 						"tone": "#e2e8f0",
@@ -13238,6 +13494,14 @@
 						"at": "Had Wei Zheng lived, he would not have let me go this fa",
 						"prompt": "Cinematic historical illustration of heroes hall, Three Kingdoms of Samhan / Tang era (645), scene: Ansi, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/heroes-hall.jpg"
+					},
+					{
+						"id": "burning-arrow-twilight",
+						"ratio": 1.778,
+						"tone": "#d4a574",
+						"alt": "Single burning arrow in flight against twilight sky with trail of golden fire",
+						"at": "Fire arrows",
+						"src": "/opt/cursor/artifacts/assets/burning_arrow_twilight.png"
 					}
 				],
 				"blocks": [
@@ -13472,6 +13736,17 @@
 				"music": "The Crescent Moon",
 				"images": [
 					{
+						"id": "hwarang-meditation",
+						"ratio": 1,
+						"tone": "#3E79E4",
+						"at": "Hwarang",
+						"alt": "Hwarang warrior in meditation with flower petals - beauty and martial discipline",
+						"src": "/opt/cursor/artifacts/assets/hwarang_meditation_petals.png",
+						"refs": [
+							"/ch_hwarang.png"
+						]
+					},
+					{
 						"id": "bupmin-hwarang-yard",
 						"ratio": 2.4,
 						"tone": "#3E79E4",
@@ -13488,6 +13763,14 @@
 						"at": "Loyalty to the sovereign",
 						"prompt": "Cinematic historical illustration of Marshal Yushin teaching the Five Principles to Hwarang youths including prince Bupmin at dusk, Three Kingdoms of Samhan / Tang era (643), scene: The Flower Youth, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/bupmin-five-principles.jpg"
+					},
+					{
+						"id": "hands-sword-blue-determination",
+						"ratio": 1.778,
+						"tone": "#3E79E4",
+						"alt": "Close-up of hands gripping ornate sword hilt in blue Silla armor - determination and strength",
+						"at": "Hwarang warriors",
+						"src": "/opt/cursor/artifacts/assets/hands_sword_blue_determination.png"
 					}
 				],
 				"blocks": [
@@ -13745,6 +14028,17 @@
 					"flag:silla"
 				],
 				"images": [
+					{
+						"id": "chunchu-strategist",
+						"ratio": 1,
+						"tone": "#3E79E4",
+						"at": "Chunchu",
+						"alt": "Kim Chunchu in contemplation - the strategist planning unification",
+						"src": "/opt/cursor/artifacts/assets/chunchu_strategist_shadow.png",
+						"refs": [
+							"/ch_chunchu.png"
+						]
+					},
 					{
 						"id": "council-five",
 						"ratio": 1.9,
@@ -14061,6 +14355,17 @@
 					"flag:silla"
 				],
 				"images": [
+					{
+						"id": "bidam-defiance",
+						"ratio": 0.5625,
+						"tone": "#5b21b6",
+						"at": "Bidam",
+						"alt": "Bidam looking upward with defiance - rebel ambition against the throne",
+						"src": "/opt/cursor/artifacts/assets/bidam_defiance_upward.png",
+						"refs": [
+							"/ch_bidam.png"
+						]
+					},
 					{
 						"id": "bidam-poster",
 						"ratio": 3.333,
@@ -16163,6 +16468,17 @@
 							"/ch_bidam.png"
 						],
 						"tempImage": "/temp/wa-king.jpg"
+					},
+					{
+						"id": "chunchu-strategy-meditation",
+						"ratio": 1.778,
+						"tone": "#D8258C",
+						"alt": "Chunchu in meditation pose surrounded by scrolls and maps, lantern casting warm light",
+						"at": "Chunchu plans",
+						"src": "/opt/cursor/artifacts/assets/chunchu_strategy_meditation.png",
+						"refs": [
+							"/workspace/static/ch_chunchu.png"
+						]
 					}
 				],
 				"blocks": [
@@ -17249,6 +17565,15 @@
 				],
 				"images": [
 					{
+						"id": "alliance-handshake",
+						"ratio": 1,
+						"tone": "#3E79E4",
+						"at": "alliance",
+						"alt": "Silla and Tang hands clasped in alliance - blue and gold sleeves",
+						"src": "/opt/cursor/artifacts/assets/silla_tang_alliance_hands.png",
+						"refs": []
+					},
+					{
 						"id": "bowing-envoys",
 						"ratio": 2.9,
 						"tone": "#fef9c3",
@@ -17324,6 +17649,22 @@
 						"alt": "Wiman brings his men in to protect the king — there is no enemy",
 						"prompt": "Cinematic historical illustration of Wiman’s coup inside the palace, Three Kingdoms of Samhan / Tang era (-108), scene: armed refugees filling a Joseon palace courtyard they were invited to protect, King Jun’s household already too late, the enemy that was never coming, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"src": "/img_wiman_no_enemy.png"
+					},
+					{
+						"id": "alliance-hands-blue-gold",
+						"ratio": 1.778,
+						"tone": "#3E79E4",
+						"alt": "Two hands reaching toward each other - Silla blue sleeve and Tang gold brocade - alliance gesture",
+						"at": "Alliance sealed",
+						"src": "/opt/cursor/artifacts/assets/alliance_hands_blue_gold.png"
+					},
+					{
+						"id": "tang-banner-storm",
+						"ratio": 1.778,
+						"tone": "#C30000",
+						"alt": "Massive Tang war banner rippling dramatically against stormy grey sky - foreign invasion",
+						"at": "Tang forces",
+						"src": "/opt/cursor/artifacts/assets/tang_banner_storm.png"
 					}
 				],
 				"blocks": [
@@ -18320,6 +18661,17 @@
 				],
 				"images": [
 					{
+						"id": "wuzetian-screen",
+						"ratio": 1.3333333333333333,
+						"tone": "#d4af37",
+						"at": "Wu",
+						"alt": "Wu Zetian behind screen - power hidden, influence visible",
+						"src": "/opt/cursor/artifacts/assets/wuzetian_screen_power.png",
+						"refs": [
+							"/ch_wu_zetian.png"
+						]
+					},
+					{
 						"id": "gaozong_01",
 						"ratio": 3.333,
 						"src": "/img_gaozong_01.png",
@@ -19249,6 +19601,17 @@
 							"/ch_muyeol.png"
 						],
 						"tempImage": "/temp/munhee-queen-consort.jpg"
+					},
+					{
+						"id": "palace-roof-moonlight-vigil",
+						"ratio": 1.778,
+						"tone": "#3E79E4",
+						"alt": "Figure in blue Silla robes on palace rooftop at night looking at full moon, blue moonlight",
+						"at": "King Muyeol",
+						"src": "/opt/cursor/artifacts/assets/palace_roof_moonlight_vigil.png",
+						"refs": [
+							"/workspace/static/pl_eastern.png"
+						]
 					}
 				],
 				"blocks": [
@@ -20796,6 +21159,17 @@
 				],
 				"images": [
 					{
+						"id": "euija-split-light",
+						"ratio": 1.3333333333333333,
+						"tone": "#FFCB51",
+						"at": "King Euija",
+						"alt": "King Euija half in shadow, half in light - descent into tyranny",
+						"src": "/opt/cursor/artifacts/assets/euija_split_light.png",
+						"refs": [
+							"/ch_buyeo_euija.png"
+						]
+					},
+					{
 						"id": "euija-court-maids",
 						"ratio": 1.778,
 						"tone": "#7f1d1d",
@@ -21822,6 +22196,14 @@
 							"/ch_sulmun.png"
 						],
 						"src": "/img_seolmundae_ninety_nine.png"
+					},
+					{
+						"id": "great-lady-apron",
+						"ratio": 1.7777777777777777,
+						"tone": "#93C5FD",
+						"src": "/opt/cursor/artifacts/assets/great_ladys_apron.png",
+						"alt": "A giant's woven apron hanging like a landscape - Seolmundae Halmang's creation of Jeju",
+						"prompt": "Folklore minimal: A giant's woven apron rendered as a massive abstract textile form against pale sky blue negative space"
 					}
 				],
 				"blocks": [
@@ -21981,6 +22363,14 @@
 							"/pl_mount_halla.png"
 						],
 						"tempImage": "/temp/black-rock-lava.jpg"
+					},
+					{
+						"id": "black-rock-monolith",
+						"ratio": 0.5625,
+						"tone": "#1E293B",
+						"src": "/opt/cursor/artifacts/assets/black_rock_training.png",
+						"alt": "A massive black volcanic rock emerging from ocean mist - where warriors train",
+						"prompt": "Vertical portrait: A single massive black volcanic rock emerging from white ocean mist"
 					}
 				],
 				"blocks": [
@@ -22088,6 +22478,14 @@
 						"alt": "The cast-out daughter serves two old blind beggars at a three-day feast — her own parents",
 						"prompt": "Mythical Tamla (painterly): three-day beggars’ feast; the daughter serving two old blind parents herself. No text, --ar 3:2",
 						"src": "/img_beggars_feast.png"
+					},
+					{
+						"id": "navel-string-life",
+						"ratio": 0.5625,
+						"tone": "#DC2626",
+						"src": "/opt/cursor/artifacts/assets/navel_string.png",
+						"alt": "Umbilical cord as flowing abstract form - the life force that connects all",
+						"prompt": "Folklore vertical: A single umbilical cord rendered as an abstract flowing form in deep red against soft cream negative space"
 					}
 				],
 				"blocks": [
@@ -22509,6 +22907,22 @@
 						"at": "Then how did you survive twenty years at a court?",
 						"prompt": "Cinematic historical illustration of jacheongbi, Three Kingdoms of Samhan / Tang era (657), scene: Five Thousand, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/jacheongbi.jpg"
+					},
+					{
+						"id": "war-drum-golden-spotlight",
+						"ratio": 1.778,
+						"tone": "#FFCB51",
+						"alt": "Massive war drum centered with spotlight from above creating golden light pool",
+						"at": "War drums sound",
+						"src": "/opt/cursor/artifacts/assets/war_drum_golden_spotlight.png"
+					},
+					{
+						"id": "five-thousand-formation",
+						"ratio": 1.7777777777777777,
+						"tone": "#93C5FD",
+						"src": "/opt/cursor/artifacts/assets/five_thousand_formation.png",
+						"alt": "Five thousand warriors in perfect formation against misty sky - disciplined strength",
+						"prompt": "Training frame minimal: Five thousand warriors' silhouettes arranged in perfect formation against misty pale blue sky"
 					}
 				],
 				"blocks": [
@@ -22634,6 +23048,14 @@
 							"/img_iron_chest.png"
 						],
 						"src": "/img_iron_chest_cast.png"
+					},
+					{
+						"id": "ox-iron-chest-journey",
+						"ratio": 1.7777777777777777,
+						"tone": "#F59E0B",
+						"src": "/opt/cursor/artifacts/assets/ox_iron_chest.png",
+						"alt": "An ox carrying an iron chest across empty golden space - the burden of destiny",
+						"prompt": "Folklore composition: An ox carrying an iron chest on its back, rendered as simple iconic silhouette against warm golden sunset"
 					}
 				],
 				"blocks": [
@@ -22813,6 +23235,14 @@
 							"/ch_sanbangdeok.png"
 						],
 						"src": "/img_sanbangdeok_cliff.png"
+					},
+					{
+						"id": "dolhareubang-monuments",
+						"ratio": 0.5625,
+						"tone": "#78716C",
+						"src": "/opt/cursor/artifacts/assets/end_in_stone.png",
+						"alt": "Three standing stones rising from earth - the stories that end in stone monuments",
+						"prompt": "Vertical folklore: Three standing stones (dolhareubang) rising from earth against pale sky"
 					}
 				],
 				"blocks": [
@@ -23475,6 +23905,25 @@
 							"/pl_mount_halla.png"
 						],
 						"alt": "Gyebek on the Tamla shore as the recall boat ties up"
+					},
+					{
+						"id": "three-flags-triangle-sky",
+						"ratio": 1.778,
+						"tone": "#3a3a3a",
+						"alt": "Three flags in triangle - Silla blue, Baekje yellow, Goguryeo red - against dramatic cloudy sky",
+						"at": "Three kingdoms",
+						"src": "/opt/cursor/artifacts/assets/three_flags_triangle_sky.png"
+					},
+					{
+						"id": "lone-pine-red-sunset",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"alt": "Tall ancient pine tree standing alone on rocky outcrop, backlit by red sunset",
+						"at": "Endurance",
+						"src": "/opt/cursor/artifacts/assets/lone_pine_red_sunset.png",
+						"refs": [
+							"/workspace/static/pl_baekdu.png"
+						]
 					}
 				],
 				"blocks": [
@@ -23787,6 +24236,14 @@
 							"/pl_mount_halla.png"
 						],
 						"tempImage": "/temp/orange-tribute.jpg"
+					},
+					{
+						"id": "tribute-oranges-minimal",
+						"ratio": 1.7777777777777777,
+						"tone": "#F97316",
+						"src": "/opt/cursor/artifacts/assets/tribute_of_oranges.png",
+						"alt": "Three bright oranges against ocean blue - Tamla's precious tribute",
+						"prompt": "Iconic minimal: Three bright orange tangerines arranged in a perfect triangle against vast Tamla ocean blue negative space"
 					}
 				],
 				"blocks": [
@@ -25146,6 +25603,39 @@
 				],
 				"images": [
 					{
+						"id": "alchun-restraint",
+						"ratio": 0.75,
+						"tone": "#3E79E4",
+						"at": "Alchun",
+						"alt": "General Alchun with hand on undrawn sword - ready restraint and loyalty",
+						"src": "/opt/cursor/artifacts/assets/alchun_ready_restraint.png",
+						"refs": [
+							"/ch_alchun.png"
+						]
+					},
+					{
+						"id": "gyebek-last-stand-minimal",
+						"ratio": 0.5625,
+						"tone": "#FFCB51",
+						"at": "Gyebek stands",
+						"alt": "Lone Baekje warrior silhouetted against vast yellow sunset sky - Gyebek's final stand",
+						"src": "/opt/cursor/artifacts/assets/gyebek_last_stand_yellow.png",
+						"refs": [
+							"/ch_gyebek.png"
+						]
+					},
+					{
+						"id": "gyebek-prayer",
+						"ratio": 0.5625,
+						"tone": "#FFCB51",
+						"at": "Gyebek kneels",
+						"alt": "Gyebek kneeling in prayer with sword planted before battle",
+						"src": "/opt/cursor/artifacts/assets/gyebek_prayer_sunset.png",
+						"refs": [
+							"/ch_gyebek.png"
+						]
+					},
+					{
 						"id": "hwangsan-map",
 						"ratio": 2.3,
 						"tone": "#e5e7eb",
@@ -25228,6 +25718,30 @@
 						"at": "The second time, Gyebek has his helmet unstrapped again,",
 						"prompt": "Cinematic historical illustration of gold statue, Three Kingdoms of Samhan / Tang era (660), scene: Gyebek holding Gwanchang helmet battlefield stillness, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/gold-statue.jpg"
+					},
+					{
+						"id": "cavalry-silhouette-golden-dust",
+						"ratio": 1.778,
+						"tone": "#d4a574",
+						"alt": "Silhouette of massive cavalry charge against golden dust cloud backlit by setting sun",
+						"at": "Tang cavalry charges",
+						"src": "/opt/cursor/artifacts/assets/cavalry_silhouette_golden_dust.png"
+					},
+					{
+						"id": "memorial-sword-blue-ribbon",
+						"ratio": 1.778,
+						"tone": "#3E79E4",
+						"alt": "Single sword planted in ground with blue silk ribbon, memorial flowers at base, empty battlefield",
+						"at": "After the battle",
+						"src": "/opt/cursor/artifacts/assets/memorial_sword_blue_ribbon.png"
+					},
+					{
+						"id": "flooded-battlefield-reflection",
+						"ratio": 1.778,
+						"tone": "#C30000",
+						"alt": "Bird's eye view of flooded battlefield at dusk, water reflecting blood-red sky, broken banner",
+						"at": "Battlefield aftermath",
+						"src": "/opt/cursor/artifacts/assets/flooded_battlefield_reflection.png"
 					}
 				],
 				"blocks": [
@@ -25739,6 +26253,17 @@
 					"flag:baekje"
 				],
 				"images": [
+					{
+						"id": "sabi-abandoned-crown",
+						"ratio": 1.7777777777777777,
+						"tone": "#FFCB51",
+						"at": "empty throne",
+						"alt": "Abandoned crown on empty Sabi Palace throne - the end of Baekje",
+						"src": "/opt/cursor/artifacts/assets/sabi_abandoned_crown.png",
+						"refs": [
+							"/pl_sabi_palace.png"
+						]
+					},
 					{
 						"id": "sabi-palace-empty",
 						"ratio": 1.778,
@@ -26419,6 +26944,15 @@
 					"flag:goguryeo"
 				],
 				"images": [
+					{
+						"id": "succession-thrones",
+						"ratio": 1.3333333333333333,
+						"tone": "#3E79E4",
+						"at": "The king dies",
+						"alt": "Two empty throne chairs - one glowing with Silla blue, one dark - symbolizing succession from Chunchu to Munmu",
+						"src": "/opt/cursor/artifacts/assets/thrones_succession_blue.png",
+						"refs": []
+					},
 					{
 						"id": "sunduk-tomb",
 						"ratio": 2,
@@ -27147,6 +27681,28 @@
 				],
 				"images": [
 					{
+						"id": "goguryeo-fortress-storm",
+						"ratio": 1.7777777777777777,
+						"tone": "#C30000",
+						"at": "Pyongyang",
+						"alt": "Red Goguryeo fortress walls in stark geometric forms against gathering storm clouds",
+						"src": "/opt/cursor/artifacts/assets/goguryeo_fortress_red_storm.png",
+						"refs": [
+							"/pl_pyongyang_fortress.png"
+						]
+					},
+					{
+						"id": "pyongyang-gate",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "fortress gate",
+						"alt": "Pyongyang fortress gate standing ajar - the final siege",
+						"src": "/opt/cursor/artifacts/assets/pyongyang_gate_ajar.png",
+						"refs": [
+							"/pl_pyongyang_fortress.png"
+						]
+					},
+					{
 						"id": "pyongyang-walls",
 						"ratio": 1.778,
 						"tone": "#b91c1c",
@@ -27818,6 +28374,14 @@
 							"/pl_mount_halla.png"
 						],
 						"tempImage": "/temp/tamla-surrender.jpg"
+					},
+					{
+						"id": "tamla-surrender-tree",
+						"ratio": 1.7777777777777777,
+						"tone": "#F97316",
+						"src": "/opt/cursor/artifacts/assets/surrender_of_tamla.png",
+						"alt": "A lone orange tree bent by wind - Tamla's lonely submission to the mainland powers",
+						"prompt": "Cinematic composition: A single orange tree bearing fruit, bent by wind, against a vast pale sky"
 					}
 				],
 				"blocks": [
@@ -27848,6 +28412,17 @@
 					"flag:wa"
 				],
 				"images": [
+					{
+						"id": "white-river-aerial",
+						"ratio": 1.7777777777777777,
+						"tone": "#FFCB51",
+						"at": "White River",
+						"alt": "Aerial view of White River where Baekje and Silla forces clash",
+						"src": "/opt/cursor/artifacts/assets/white_river_aerial.png",
+						"refs": [
+							"/pl_white_river.png"
+						]
+					},
 					{
 						"id": "baekgang-map",
 						"ratio": 2.3,
@@ -28370,6 +28945,17 @@
 				],
 				"images": [
 					{
+						"id": "namseng-betrayal",
+						"ratio": 1,
+						"tone": "#C30000",
+						"at": "Namseng",
+						"alt": "Yeon Namseng in profile bearing the burden of betrayal - impossible choice",
+						"src": "/opt/cursor/artifacts/assets/namseng_betrayal_profile.png",
+						"refs": [
+							"/ch_yeon_namseng.png"
+						]
+					},
+					{
 						"id": "namseng-poster",
 						"ratio": 1.9,
 						"tone": "#111111",
@@ -28642,6 +29228,17 @@
 				],
 				"images": [
 					{
+						"id": "bojang-captive",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "King Bojang",
+						"alt": "King Bojang with bound hands held high - captive king with dignity",
+						"src": "/opt/cursor/artifacts/assets/bojang_captive_dignity.png",
+						"refs": [
+							"/ch_bojang.png"
+						]
+					},
+					{
 						"id": "pyongyang-title",
 						"ratio": 2,
 						"tone": "#dc2626",
@@ -28865,6 +29462,14 @@
 						"at": "So they stop attacking the walls and start talking to th",
 						"prompt": "Cinematic historical illustration of joseon fall, Three Kingdoms of Samhan / Tang era (-108), scene: The Fall of Joseon, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/joseon-fall.jpg"
+					},
+					{
+						"id": "joseon-fall-gate",
+						"ratio": 1.7777777777777777,
+						"tone": "#DC2626",
+						"src": "/opt/cursor/artifacts/assets/fall_of_joseon.png",
+						"alt": "Broken fortress gate against blood-red sunset - the ancient kingdom falls to Han",
+						"prompt": "Dark legend minimal: A broken stone fortress gate silhouetted against a blood-red sunset sky"
 					}
 				],
 				"blocks": [
@@ -28942,6 +29547,14 @@
 						"at": "raises the old flag on the Taedong",
 						"prompt": "Cinematic historical illustration of white tiger banner, Three Kingdoms of Samhan / Tang era (670), scene: Goguryeo Revival Society, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/white-tiger-banner.jpg"
+					},
+					{
+						"id": "revival-torch",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"src": "/opt/cursor/artifacts/assets/goguryeo_revival_torch.png",
+						"alt": "A single torch burning with Goguryeo red flame in darkness - resistance lives on",
+						"prompt": "Resistance drama: A single torch burning with Goguryeo red flame (#C30000) against pitch black negative space"
 					}
 				],
 				"blocks": [
@@ -29656,6 +30269,14 @@
 							"/pl_cave.png"
 						],
 						"tempImage": "/temp/munmu-dangun-cavern.jpg"
+					},
+					{
+						"id": "wanggeom-altar",
+						"ratio": 1.7777777777777777,
+						"tone": "#3E79E4",
+						"src": "/opt/cursor/artifacts/assets/wanggeom_guest_altar.png",
+						"alt": "Ancient stone altar on mountaintop at dawn - the sacred coronation awaits",
+						"prompt": "Mythic coronation: An ancient stone altar or throne platform on a mountaintop, rendered in silhouette against a dawn sky mixing Silla blue"
 					}
 				],
 				"blocks": [
@@ -30035,6 +30656,14 @@
 						"at": "She has been in the room for every single one of them. T",
 						"prompt": "Cinematic historical illustration of three crowns, Three Kingdoms of Samhan / Tang era (676), scene: The King for All, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/three-crowns.jpg"
+					},
+					{
+						"id": "unity-three-kingdoms",
+						"ratio": 1.7777777777777777,
+						"tone": "#8B5CF6",
+						"src": "/opt/cursor/artifacts/assets/king_for_all_unity.png",
+						"alt": "Three kingdom colors merging into unified form - the hard-won unification of Samhan",
+						"prompt": "Epic finale composition: Three kingdom flags (Silla blue, Baekje yellow, Goguryeo red) merging into a single flowing form"
 					}
 				],
 				"blocks": [
@@ -30169,6 +30798,46 @@
 					"🌙"
 				],
 				"images": [
+					{
+						"id": "munhee-witness",
+						"ratio": 1.3333333333333333,
+						"tone": "#3E79E4",
+						"at": "Munhee",
+						"alt": "Kim Munhee in profile - the witness who survived to see unification",
+						"src": "/opt/cursor/artifacts/assets/munhee_witness_profile.png",
+						"refs": [
+							"/ch_munhee.png"
+						]
+					},
+					{
+						"id": "munmu-king-for-all",
+						"ratio": 0.5625,
+						"tone": "#3E79E4",
+						"at": "King Munmu",
+						"alt": "King Munmu with peace gesture - the king for all achieved",
+						"src": "/opt/cursor/artifacts/assets/munmu_king_for_all.png",
+						"refs": [
+							"/ch_kim_bupmin.png"
+						]
+					},
+					{
+						"id": "three-kingdoms-unity",
+						"ratio": 1,
+						"tone": "#3E79E4",
+						"at": "Unified Silla",
+						"alt": "Three kingdom banners - Silla blue, Baekje yellow, Goguryeo red - showing the unification",
+						"src": "/opt/cursor/artifacts/assets/three_kingdoms_flags_unified.png",
+						"refs": []
+					},
+					{
+						"id": "peace-moon-crane",
+						"ratio": 1,
+						"tone": "#3E79E4",
+						"at": "peace at last",
+						"alt": "Full moon with crane silhouette crossing - peace after decades of war",
+						"src": "/opt/cursor/artifacts/assets/unified_moon_crane.png",
+						"refs": []
+					},
 					{
 						"id": "unified-silla-day",
 						"ratio": 1.6,
@@ -30315,6 +30984,14 @@
 						"at": "He called it Goguryeo.",
 						"prompt": "Cinematic historical illustration of balhae statue, Three Kingdoms of Samhan / Tang era (698), scene: Balhae, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/balhae-statue.jpg"
+					},
+					{
+						"id": "balhae-new-dawn",
+						"ratio": 1.7777777777777777,
+						"tone": "#F59E0B",
+						"src": "/opt/cursor/artifacts/assets/balhae_dawn.png",
+						"alt": "Sun rising over snowy mountains with Goguryeo red in the sky - Goguryeo rises again as Balhae",
+						"prompt": "New dawn coda: A rising sun in brilliant gold emerging from mountains, casting light across a vast snowy landscape"
 					}
 				],
 				"blocks": [
