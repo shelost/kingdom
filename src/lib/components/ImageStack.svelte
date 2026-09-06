@@ -6,6 +6,8 @@
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
 	import { filterNsfw } from '$lib/nsfwUi.svelte';
+	import { openLightbox, type LightboxItem } from '$lib/imageLightbox.svelte';
+	import { isNsfwCueImage } from '$lib/storyImages';
 
 	let {
 		images,
@@ -161,6 +163,39 @@
 		if (alt) return alt;
 		return `Generate art for “${slot.id}”`;
 	}
+
+	function episodeIdOf(node: HTMLElement | null): string | undefined {
+		const article = node?.closest<HTMLElement>('article.entry');
+		return article?.dataset.storyId || undefined;
+	}
+
+	function stackItems(host: HTMLElement | null): LightboxItem[] {
+		const episodeId = episodeIdOf(host);
+		const items: LightboxItem[] = [];
+		for (const slot of visible) {
+			const frames = inline ? scriptArtFramesOf(slot) : [];
+			const srcs = frames.length
+				? frames.map((f) => f.src)
+				: [displayArtOf(slot, 'reading')].filter((s): s is string => !!s);
+			for (const src of srcs) {
+				items.push({
+					src,
+					alt: slot.alt ?? slot.id,
+					title: slot.alt ?? slot.id,
+					caption: slot.id,
+					nsfw: isNsfwCueImage(slot),
+					episodeId
+				});
+			}
+		}
+		return items;
+	}
+
+	function openAt(src: string, host: HTMLElement | null) {
+		const items = stackItems(host);
+		const index = items.findIndex((im) => im.src === src);
+		openLightbox(items, index >= 0 ? index : 0);
+	}
 </script>
 
 <!--
@@ -185,18 +220,25 @@
 						class:temp={frame.layer === 'temp'}
 						style:--tone={slot.tone ?? '#3a3a40'}
 					>
-						<img
-							class="shot"
-							{...storyImg(frame.src, {
-								kind: 'cue',
-								priority: priority && i === 0 && fi === 0,
-								sizes: INLINE_SIZES,
-								alt:
-									frame.layer === 'temp'
-										? `${slot.alt ?? slot.id} (temp)`
-										: (slot.alt ?? '')
-							})}
-						/>
+						<button
+							type="button"
+							class="open"
+							onclick={(e) => openAt(frame.src, e.currentTarget)}
+							aria-label={`Open ${slot.alt ?? slot.id}`}
+						>
+							<img
+								class="shot"
+								{...storyImg(frame.src, {
+									kind: 'cue',
+									priority: priority && i === 0 && fi === 0,
+									sizes: INLINE_SIZES,
+									alt:
+										frame.layer === 'temp'
+											? `${slot.alt ?? slot.id} (temp)`
+											: (slot.alt ?? '')
+								})}
+							/>
+						</button>
 						{#if frame.layer === 'temp'}
 							<figcaption class="temp-tag">temp</figcaption>
 						{/if}
@@ -240,15 +282,22 @@
 							aria-hidden="true"
 						/>
 					{/if}
-					<img
-						class="shot"
-						{...storyImg(art, {
-							kind: 'cue',
-							priority: priority && i === 0,
-							sizes: CUE_SIZES,
-							alt: slot.alt ?? ''
-						})}
-					/>
+					<button
+						type="button"
+						class="open"
+						onclick={(e) => openAt(art, e.currentTarget)}
+						aria-label={`Open ${slot.alt ?? slot.id}`}
+					>
+						<img
+							class="shot"
+							{...storyImg(art, {
+								kind: 'cue',
+								priority: priority && i === 0,
+								sizes: CUE_SIZES,
+								alt: slot.alt ?? ''
+							})}
+						/>
+					</button>
 				{:else if !art}
 					<div class="ph">
 						<div class="cue">
@@ -313,6 +362,18 @@
 		object-fit: cover;
 	}
 
+	.open {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: none;
+		background: transparent;
+		cursor: zoom-in;
+		font: inherit;
+		color: inherit;
+	}
+
 	.ph {
 		width: 100%;
 		height: 100%;
@@ -366,10 +427,11 @@
 		max-height: none;
 		aspect-ratio: 3 / 2;
 		background: #14141a;
-		border-radius: 8px;
+		border-radius: var(--radius);
 	}
 
 	.stack.immersion .fill,
+	.stack.immersion .open,
 	.stack.immersion .shot,
 	.stack.immersion .ph {
 		grid-area: 1 / 1;
@@ -420,8 +482,15 @@
 		z-index: auto;
 		/* Always present: nothing to fade, nothing to slide. */
 		transition: none;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		overflow: hidden;
+	}
+
+	.stack.inline .open {
+		width: auto;
+		height: auto;
+		max-width: 100%;
+		max-height: var(--inline-h);
 	}
 
 	.stack.inline .frame img {
@@ -470,7 +539,7 @@
 		color: rgba(255, 236, 179, 0.92);
 		background: rgba(0, 0, 0, 0.48);
 		border: 1px dashed color-mix(in srgb, var(--gold, #c9a227) 50%, transparent);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 	}
 
 	.count {
@@ -486,7 +555,7 @@
 		color: rgba(255, 253, 248, 0.86);
 		background: rgba(0, 0, 0, 0.42);
 		border: 1px solid rgba(255, 255, 255, 0.12);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		backdrop-filter: blur(6px);
 		opacity: 0;
 		transition: opacity 420ms var(--ease);
@@ -517,14 +586,14 @@
 
 		.stack:not(.immersion):not(.inline) .frame {
 			max-height: min(38dvh, 16rem);
-			border-radius: 8px;
+			border-radius: var(--radius);
 			overflow: hidden;
 		}
 
 		.stack.immersion .frame {
 			width: 100%;
 			margin-inline: auto;
-			border-radius: 8px;
+			border-radius: var(--radius);
 		}
 
 		.stack.immersion .shot {

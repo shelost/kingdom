@@ -61,6 +61,8 @@
 	import OrgChart from './diagrams/OrgChart.svelte';
 	import { chartsForWikiEntry, hasDiagramChart } from './diagrams/wikiCharts';
 	import { storyImg } from '$lib/img';
+	import { scenesForWikiEntry, type WikiScene } from '$lib/wikiScenes';
+	import { openLightbox } from '$lib/imageLightbox.svelte';
 
 	let {
 		entry,
@@ -115,6 +117,25 @@
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
 	let isPortraitHero = $derived(!!heroArt && !isPlace && !isNationFlagHero);
 	let kind = $derived(kindOf(entry));
+	let scenes = $derived(
+		kind === 'character' || kind === 'god' ? scenesForWikiEntry(entry.id) : []
+	);
+	/** SFW stills tagged with this person. NSFW stays on /images + the modal, not the grid. */
+	let galleryScenes = $derived(scenes.filter((s) => !s.nsfw));
+
+	function openWikiGallery(list: WikiScene[], index: number) {
+		openLightbox(
+			list.map((s) => ({
+				src: s.art,
+				alt: s.alt,
+				title: s.title,
+				caption: s.caption,
+				nsfw: s.nsfw,
+				episodeId: s.episodeId
+			})),
+			index
+		);
+	}
 	let isCity = $derived(kind === 'city');
 	let parentPlace = $derived(kind === 'place' ? parentPlaceOf(entry) : undefined);
 	let nation = $derived(nationOf(entry.kingdom));
@@ -906,6 +927,31 @@
 			</ul>
 		{/if}
 
+		{#if galleryScenes.length}
+			<section class="gallery" aria-label="Gallery">
+				<ul class="gallery-masonry">
+					{#each galleryScenes as scene, i (scene.id)}
+						<li>
+							<button
+								type="button"
+								class="gallery-shot"
+								onclick={() => openWikiGallery(galleryScenes, i)}
+								aria-label={scene.alt || scene.title}
+							>
+								<img
+									{...storyImg(scene.art, {
+										kind: 'cue',
+										alt: '',
+										sizes: '(min-width: 56rem) 28vw, (min-width: 40rem) 11rem, 45vw'
+									})}
+								/>
+							</button>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
+
 		{#if charts.length}
 			<section class="org-charts">
 				<h2>{orgSectionTitle}</h2>
@@ -1084,7 +1130,7 @@
 		color: var(--fg-dim);
 		background: transparent;
 		border: 1px solid var(--hairline);
-		border-radius: 8px;
+		border-radius: var(--radius);
 		cursor: pointer;
 		transition:
 			background 0.2s var(--ease),
@@ -1103,7 +1149,7 @@
 		text-transform: uppercase;
 		color: var(--gold);
 		border: 1px solid rgba(216, 178, 106, 0.4);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.15rem 0.55rem;
 	}
 
@@ -1124,7 +1170,7 @@
 		color: var(--on-gold);
 		background: var(--gold);
 		border-color: color-mix(in srgb, var(--gold) 70%, #000);
-		border-radius: 4px;
+		border-radius: var(--radius);
 		letter-spacing: 0.1em;
 	}
 
@@ -1150,7 +1196,7 @@
 		gap: 0.4rem;
 		margin: 0 0 0.55rem;
 		padding: 0.22rem 0.65rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font: inherit;
 		font-size: 0.68rem;
 		letter-spacing: 0.1em;
@@ -1208,7 +1254,7 @@
 		color: var(--fg-dim);
 		background: none;
 		border: none;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		padding: 0.4rem 0.55rem;
 		cursor: pointer;
 		transition:
@@ -1353,7 +1399,7 @@
 		margin: 0 0 1.1rem;
 		padding: 0.85rem 0.95rem 0.95rem;
 		border: 1px solid color-mix(in srgb, var(--k) 28%, var(--line));
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--panel) 92%, var(--k) 8%);
 	}
 
@@ -1381,7 +1427,7 @@
 		width: 5.2rem;
 		padding: 0.45rem 0.35rem 0.5rem;
 		border: 1px solid color-mix(in srgb, var(--k) 22%, var(--line));
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background: var(--panel);
 		cursor: pointer;
 		color: inherit;
@@ -1413,7 +1459,7 @@
 		place-items: center;
 		width: 3.4rem;
 		height: 4.2rem;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		font-family: var(--serif);
 		font-size: 1.35rem;
 		font-weight: 700;
@@ -1436,7 +1482,7 @@
 		width: 2.8rem;
 		height: 2.8rem;
 		margin-bottom: 0.7rem;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		font-family: var(--serif);
 		font-weight: 700;
 		color: #fff;
@@ -1508,7 +1554,7 @@
 		align-items: center;
 		gap: 0.35rem;
 		padding: 0.3rem 0.75rem 0.3rem 0.6rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		border: 1px solid rgba(216, 178, 106, 0.4);
 		background: var(--glass);
 		color: var(--gold);
@@ -1622,7 +1668,7 @@
 		align-items: center;
 		padding: 0.18rem 0.55rem;
 		min-height: 1.2rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-family: var(--ui);
 		font-size: 0.68rem;
 		font-weight: 500;
@@ -1639,7 +1685,7 @@
 		align-items: center;
 		gap: 0.4rem;
 		padding: 0.12rem 0.55rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
 		background: color-mix(in srgb, var(--k) 14%, transparent);
 		font-size: 0.85rem;
@@ -1780,7 +1826,7 @@
 		text-transform: uppercase;
 		color: var(--fg-faint);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.28rem 0.65rem;
 		background: var(--glass);
 	}
@@ -1968,7 +2014,7 @@
 	.aliases li {
 		padding: 0.2rem 0.55rem;
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-size: 0.8rem;
 		color: var(--fg-dim);
 	}
@@ -1994,7 +2040,7 @@
 		text-align: left;
 		padding: 0.85rem 0.95rem;
 		border: 1px solid var(--hairline);
-		border-radius: 10px;
+		border-radius: var(--radius);
 		background: var(--bg-raised);
 		cursor: pointer;
 		font: inherit;
@@ -2072,7 +2118,7 @@
 		text-align: center;
 		padding: 0.55rem 0.45rem 0.65rem;
 		border: 1px solid var(--hairline);
-		border-radius: 12px;
+		border-radius: var(--radius);
 		background: var(--bg-raised);
 		cursor: pointer;
 		font: inherit;
@@ -2095,7 +2141,7 @@
 		width: 100%;
 		aspect-ratio: 2 / 3;
 		overflow: hidden;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		font-family: var(--serif);
 		font-weight: 700;
 		font-size: 1.35rem;
@@ -2123,6 +2169,65 @@
 	.member-avatar.place-thumb img {
 		object-fit: cover;
 		object-position: center;
+	}
+
+	/* Chronicle stills — bare 3-col masonry, native aspect, no tile chrome. */
+	.gallery {
+		container-type: inline-size;
+		container-name: wiki-gallery;
+		padding: 0;
+		border: none;
+		background: none;
+	}
+
+	.gallery-masonry {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		column-count: 3;
+		column-gap: 0.35rem;
+	}
+
+	.gallery-masonry > li {
+		display: inline-block;
+		width: 100%;
+		margin: 0 0 0.35rem;
+		vertical-align: top;
+		break-inside: avoid;
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+	}
+
+	.gallery-shot {
+		display: block;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		border: none;
+		border-radius: 0;
+		background: none;
+		color: inherit;
+		font: inherit;
+		line-height: 0;
+		cursor: zoom-in;
+	}
+
+	.gallery-shot img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	@container wiki-gallery (max-width: 26rem) {
+		.gallery-masonry {
+			column-count: 2;
+		}
+	}
+
+	@container wiki-gallery (max-width: 16rem) {
+		.gallery-masonry {
+			column-count: 1;
+		}
 	}
 
 	.member-meta {
@@ -2157,7 +2262,7 @@
 		display: inline-block;
 		margin-top: 0.12rem;
 		padding: 0.08rem 0.38rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-size: 0.58rem;
 		font-weight: 600;
 		letter-spacing: 0.04em;
@@ -2201,7 +2306,7 @@
 	.trait-chips li {
 		padding: 0.28rem 0.65rem;
 		border: 1px solid color-mix(in srgb, var(--k) 35%, var(--hairline));
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-size: 0.72rem;
 		letter-spacing: 0.02em;
 		color: var(--fg-strong);
@@ -2210,7 +2315,7 @@
 
 	.chat-prompt details {
 		border: 1px solid var(--hairline);
-		border-radius: 12px;
+		border-radius: var(--radius);
 		background: var(--bg-raised);
 		overflow: hidden;
 	}
@@ -2259,7 +2364,7 @@
 		max-height: 18rem;
 		overflow: auto;
 		padding: 0.85rem 0.95rem;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		background: color-mix(in srgb, var(--bg) 88%, var(--fg));
 		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;

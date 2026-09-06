@@ -54,7 +54,7 @@
 		margin: 0;
 		padding: 0;
 		border: 1px solid color-mix(in srgb, var(--c) 35%, var(--hairline));
-		border-radius: 8px;
+		border-radius: var(--radius);
 		overflow: hidden;
 		cursor: pointer;
 		background: #14141a;
@@ -131,12 +131,12 @@
 	}
 
 	:global(html.is-immersion) .tile {
-		border-radius: 8px;
+		border-radius: var(--radius);
 	}
 
 	@media (max-width: 820px) {
 		.tile {
-			border-radius: 8px;
+			border-radius: var(--radius);
 		}
 	}
 </style>

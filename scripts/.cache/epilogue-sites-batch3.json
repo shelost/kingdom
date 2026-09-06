@@ -1,0 +1,17 @@
+[
+	{
+		"id": "sanggyeong-grid",
+		"alt": "Sanggyeong as nested courtyard rectangles stamped on an empty northern field",
+		"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Sanggyeong (Longquanfu), Balhae capital. ONE geometric device: three NESTED courtyard RECTANGLES stamped on a vast empty millet-gold field — inner hall, middle court, outer wall — not a Tang 3+6 seal, not city streets. Use the attached ruin photographs ONLY for the true empty-capital flatness and earth color. One tiny silky Goguryeo-red hanbok speck in the innermost rectangle, no readable face. Face suggestion of the attached portrait only as a distant rim-lit hint. Goguryeo red #C30000 as the wall-lines and the single accent. Flat pale sky, no clouds. No modern boardwalk. No visitor platform. No mountains catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "balhae-lotus-tile",
+		"alt": "A single Balhae lotus eave-tile as a huge circular medallion on a red void",
+		"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Balhae lotus eave-tile (wadang). ONE geometric device: a huge circular LOTUS-MEDALLION filling the left two-thirds — seed-pod center, radiating petals, gray-buff clay — cropped by the frame edges like a pressed stamp. Use the attached Shangjing brick photograph ONLY for clay color and stamped relief language, then turn it into a lotus wadang disc (not a rectangular brick). Tiny silky red hanbok speck at the lower-right, no readable face. Goguryeo red #C30000 as the void-plane. Flat void, no clouds. No palace. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "balhae-stone-lantern",
+		"alt": "Balhae stone lantern as a thin octagonal column in a red northern void",
+		"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Balhae stone lantern (Xinglong Temple type at Sanggyeong): a tall octagonal granite lamp-pillar. ONE geometric device: a thin vertical COLUMN from the bottom edge to the top, stacked drums and an octagonal fire-chamber, standing alone. Tiny silky red hanbok speck at the base, no readable face. Goguryeo red #C30000 as a single slit of light in the lantern chamber; the rest flat charcoal void. Flat sky, no clouds. No temple buildings. No Silla pagoda. No courtyard clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	}
+]

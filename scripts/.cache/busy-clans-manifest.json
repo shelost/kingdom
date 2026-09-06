@@ -1,0 +1,62 @@
+[
+	{
+		"id": "king-mu",
+		"alt": "Old King Mu alone on a Sabi riverside terrace — yellow hall, empty water, one pagoda",
+		"prompt": "Cinematic historical still, 16:9. REAL Sabi riverside terrace: one yellow wooden palace hall, empty water, one pagoda. King Mu alone in the lower third. Face matches attached portrait. No courtiers. Baekje yellow #FFCB51. Flat pale sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "dudung",
+		"alt": "One clan street-tough crouches in an empty Sabi alley, fighting stick as a vertical line",
+		"prompt": "Cinematic historical still, 16:9. REAL Sabi alley: one timber wall, one yellow lantern, ONE crouching street-tough, stick as a vertical line. No crowd. Flat sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "young-princes",
+		"alt": "Five tiny Baekje princes in a thin row on a vast empty Sabi hall — the heirs already spoken for",
+		"prompt": "Cinematic historical still, 16:9. REAL Sabi yellow court, empty hall. Five tiny boy-princes in a thin row, lower third. No crowd. Flat sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "heartbeat",
+		"alt": "Satek and Yunbi as two color masses facing across a thin line on the Sabi assembly floor",
+		"prompt": "Cinematic historical still, 16:9. REAL Sabi assembly floor. Two facing color planes, one thin line, two tiny elders. No crowd. Flat void. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "clan-satek",
+		"alt": "Elder Satek small at the edge of an empty Sabi hall, holding out a king’s empty sleeve as a long cloth",
+		"prompt": "Cinematic historical still, 16:9. REAL Sabi hall. Empty king’s sleeve as a horizontal cloth. Elder Satek at the right edge. Face matches attached portrait. No crowd. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "clan-yunbi",
+		"alt": "Elder Yunbi walks alone on the empty Geum harbour road below Sabi, one yellow banner",
+		"prompt": "Cinematic historical still, 16:9. REAL Geum harbour road. Elder Yunbi alone. Face matches attached portrait. One yellow banner. No crowd. Flat sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "clan-jinmo",
+		"alt": "One boy waist-deep in the White River below Sabi — empty shore, yellow silk on the bank",
+		"prompt": "Cinematic historical still, 16:9. REAL White River bank. ONE boy in the water, back to camera. No onlookers. Flat sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "clan-mokli",
+		"alt": "One Mokli figure on an empty eastern timber pier, looking across the water toward Yamato",
+		"prompt": "Cinematic historical still, 16:9. REAL eastern Baekje timber berth. ONE armored figure. No army. Flat sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "clan-guk",
+		"alt": "One Guk man in an empty Sabi earth yard, hand raised in an oath",
+		"prompt": "Cinematic historical still, 16:9. REAL Sabi earth yard. ONE man, oath. No soldiers. Flat sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "gunchogo",
+		"alt": "Geunchogo as one gold-red rider on a ridge above real Pyongyang walls on the Taedong",
+		"prompt": "Cinematic historical still, 16:9. REAL Pyongyang on the Taedong. One rider. Face matches attached portrait. No kneeling crowd. Flat dusk sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "gunchogo_siege",
+		"alt": "Pyongyang wall and one fire — Geunchogo small on the near bank, no arrow rain",
+		"prompt": "Cinematic historical still, 16:9. REAL Pyongyang, 371. One wall, one fire, tiny figures. Face matches attached portrait. No army carpet. Flat dusk sky, no clouds. Painterly cinema. No text, no watermark."
+	},
+	{
+		"id": "gunchogo_curse",
+		"alt": "Empty Sabi street at dusk — one yellow banner, two or three tiny chanters",
+		"prompt": "Cinematic historical still, 16:9. REAL Sabi market street. One yellow banner. Two or three tiny figures. No crowd. Flat dusk sky, no clouds. Painterly cinema. No text, no watermark."
+	}
+]

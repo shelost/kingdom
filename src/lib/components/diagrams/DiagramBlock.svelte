@@ -62,7 +62,7 @@
 		margin: 1.6rem 0;
 		padding: 1rem 1rem 0.85rem;
 		border: 1px solid var(--hairline);
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background: rgba(255, 255, 255, 0.015);
 	}
 

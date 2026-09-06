@@ -58,7 +58,7 @@
 		color: var(--fg-faint);
 		padding: 0.34rem 0.7rem;
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		transition:
@@ -86,7 +86,7 @@
 		padding: 0;
 		color: var(--fg-faint);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		cursor: pointer;

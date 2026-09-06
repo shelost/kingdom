@@ -1,0 +1,133 @@
+{
+	"chapters": [
+		"iron-will",
+		"seventh-invasion",
+		"chunchu-era",
+		"fall-of-euija",
+		"fall-of-baekje"
+	],
+	"alts": [],
+	"moves": [],
+	"newSlots": [
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Daeya Fortress",
+			"afterId": "steam_02",
+			"promptSummary": "Golhwa winks from the steam cavern as a tiny silhouette",
+			"slot": {
+				"id": "golhwa-wink",
+				"ratio": 1.778,
+				"tone": "#0e7490",
+				"at": "The water is not the only thing that can burn",
+				"alt": "Golhwa as a tiny steam-cavern silhouette, one ember-orange wink across a vast cyan mist",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: tiny silhouettes in an enormous steam cavern, cool cyan-white mist as one color plane, black water mirroring light. Three spirit-sisters on a distant wet rock; Golhwa turns with a coy tilt, one ember-orange slit of light like a wink, orange-red hem rim-lit. No faces, no anime, no clutter. Tasteful, playful, not explicit. No text, no watermark.",
+				"refs": ["/ch_golhwa.png", "/pl_cave.png"]
+			}
+		},
+		{
+			"chapterId": "iron-will",
+			"entryTitle": "Daeya Fortress",
+			"afterId": "daeya_03",
+			"promptSummary": "Pumsuk and Geomil’s wife at the Daeya feast",
+			"slot": {
+				"id": "pumsuk-half-share",
+				"ratio": 1.778,
+				"tone": "#7f1d1d",
+				"at": "He kisses her the way a boy kisses",
+				"alt": "Pumsuk and Geomil’s wife as tiny silhouettes too close at the dark Daeya feast, wine-red silk the only color",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: cavernous dark fortress banquet hall, wet black reflective floor, two tiny silhouettes at the near end of a long lamp-table — young Silla noble Pumsuk and Geomil’s wife in a plane of deep wine-red silk, knees touching, desire as proximity not anatomy. One warm amber shaft; rest of hall black. No faces, no anime, no clutter, not pornographic. No text, no watermark.",
+				"refs": ["/ch_pumsuk.png", "/ch_gumil_wife.png", "/pl_daeya_fortress.png"]
+			}
+		},
+		{
+			"chapterId": "seventh-invasion",
+			"entryTitle": "Jumong",
+			"afterId": "jumong_04",
+			"promptSummary": "Haewonmek sees Haemosu’s chariot as a flash of dawn",
+			"slot": {
+				"id": "haemosu-chariot-flash",
+				"ratio": 1.778,
+				"tone": "#0f172a",
+				"at": "Then a flash, as if dawn had forgotten",
+				"alt": "Haewonmek on black river stones looks up as a sudden gold shaft of Haemosu’s chariot tears the night",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: night river with no ford, wet stones mirroring light. Tiny reaper silhouette Haewonmek looks up as a vertical shaft of sun-gold light — dawn at the wrong hour, Haemosu’s chariot as LIGHT not a detailed vehicle. One fallen archer speck. No faces, no anime, no clutter. No text, no watermark.",
+				"refs": ["/ch_haemosu.png", "/ch_haewonmek.png", "/ch_jumong.png"]
+			}
+		},
+		{
+			"chapterId": "chunchu-era",
+			"entryTitle": "Chunchu Goes to the East",
+			"afterId": "wa-mountains",
+			"promptSummary": "Yamato throne hall — Chunchu before the King of the East",
+			"slot": {
+				"id": "yamato-throne-hall",
+				"ratio": 1.778,
+				"tone": "#1e293b",
+				"at": "receives him politely",
+				"alt": "Chunchu as a tiny kneeling silhouette in a vast dark Yamato hall of bone-white shoji, no Tang yellow light",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible but NOT Tang yellow-emperor language: Yamato raised-floor hall, white shoji as one moon-pale plane, black timber, indigo night. Tiny kneeling Silla envoy; tiny emperor on a far dark dais. Wet dark wood floor. No imperial yellow shaft. No faces, no anime, no clutter. No text, no watermark.",
+				"refs": ["/ch_chunchu.png"]
+			}
+		},
+		{
+			"chapterId": "chunchu-era",
+			"entryTitle": "Gaya, the Lost Nations",
+			"afterId": "heo-silk-trousers",
+			"promptSummary": "Suro and Heo Hwangok — two nights in a tent",
+			"slot": {
+				"id": "suro-heo-tent",
+				"ratio": 1.778,
+				"tone": "#7f1d1d",
+				"at": "Two nights in a tent",
+				"alt": "A small tent-glow on a vast black Gaya coast — Suro and Heo Hwangok as tiny silhouettes inside, one red sail far off",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: huge black Gaya sea at night, one red sail as a distant color plane, a small tent glowing on the shore. Two tiny silhouettes close inside the lamp — King Suro and Princess Heo Hwangok. Desire as lamplight, tasteful, not explicit. No faces, no anime, no clutter. No text, no watermark.",
+				"refs": ["/ch_suro.png", "/ch_heo.png"]
+			}
+		},
+		{
+			"chapterId": "chunchu-era",
+			"entryTitle": "Hyukgosé",
+			"afterId": "alyoung-chicken-dragon",
+			"promptSummary": "Hyukgosé and Alyoung — egg-born pair in love",
+			"slot": {
+				"id": "hyukgose-alyoung-love",
+				"ratio": 1.778,
+				"tone": "#e0f2fe",
+				"at": "learned love before law",
+				"alt": "Tiny youthful silhouettes of Hyukgosé and Alyoung almost touching under an enormous pale moon in a mist-white valley",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: vast mist-white valley, enormous pale moon. Two tiny youthful silhouettes almost touching hands — egg-born Hyukgosé and Lady Alyoung. A single gold-white egg-glow on the ground behind them. Love as destiny. No faces, no anime, no clutter, not explicit. No text, no watermark.",
+				"refs": ["/ch_hyukgose.png", "/ch_alyoung.png"]
+			}
+		},
+		{
+			"chapterId": "fall-of-euija",
+			"entryTitle": "Euija’s Descent",
+			"afterId": null,
+			"promptSummary": "Euija and the court maids in a vast dark hall",
+			"slot": {
+				"id": "euija-court-maids",
+				"ratio": 1.778,
+				"tone": "#7f1d1d",
+				"at": "Hundreds, by now",
+				"alt": "King Euija as a tiny silhouette among court maids in a small wine-red lamp pool, the rest of the palace swallowed in black",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: cavernous dark Baekje palace, wet black floor, deep red wall plane. A small pool of wine-red lamplight holds a king silhouette and several tiny court-maid silhouettes who pour and lean close. Decadence as scale — a small cluster in a huge empty room. Tasteful, not pornographic. No faces, no anime, no clutter. No text, no watermark.",
+				"refs": ["/ch_buyeo_euija.png", "/ch_maid_1.png", "/ch_maid_2.png"]
+			}
+		},
+		{
+			"chapterId": "fall-of-baekje",
+			"entryTitle": "Yellow Mountain Fields",
+			"afterId": "hwangsan-title",
+			"promptSummary": "Kangrim and Haewonmek flying in with aura trails",
+			"slot": {
+				"id": "kangrim-haewonmek-flight",
+				"ratio": 1.778,
+				"tone": "#fde68a",
+				"at": "Then the air above the Yellow Mountain",
+				"alt": "Kangrim and Haewonmek as tiny reaper silhouettes flying in over the Yellow Mountain, black and sea-green aura trails",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: two underworld reapers flying in from a vast pale sky toward a dusty battlefield. Kangrim a tiny crow-black silhouette with a long black-violet aura trail; Haewonmek beside him with a pale sea-green trail. Specks of soldiers looking up from a monumental yellow-dust plain. No faces, no anime, no clutter. No text, no watermark.",
+				"refs": ["/ch_kangrim.png", "/ch_haewonmek.png"]
+			}
+		}
+	]
+}

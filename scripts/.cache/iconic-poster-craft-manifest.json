@@ -1,0 +1,42 @@
+[
+	{
+		"id": "xue-east-gaze",
+		"alt": "Xue Rengui in profile on the right edge, looking into a vast empty pale-ivory plane — silky white lamellar, one white-dragon accent",
+		"prompt": "Minimal iconic 9:16 poster. Xue Rengui, Tang white-armored general, standing in the RIGHT THIRD in profile LOOKING LEFT into a vast empty pale-ivory plane (#e8e3d5). UNIQUE LAYOUT: edge-gaze — figure cropped to the right edge, the rest of the frame is one hard empty color plane. Face matches the attached portrait. Striking silky pale lamellar and a premium white silk sash, few hues, high contrast. ONE accent: a small white-dragon emblem catching sheen. Flat pale void, monumental emptiness. No army. No fortress. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "salsu-red-wedge",
+		"alt": "One hard red cavalry-wedge plane driving into a thin gold Sui ribbon on black water — Ulchi Munduk a tiny figure at the tip",
+		"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT a busy battlefield. UNIQUE LAYOUT: one hard red triangular WEDGE (#C30000) as a single untextured color plane driving from lower-left, not individual horses. Ulchi Munduk a tiny silhouette at the wedge tip only. Face suggestion matches attached portrait. A thin gold ribbon being cut. Wet black water as one plane. Striking silky red-lacquer silhouette, few hues. Monumental emptiness. No army crowd. No splashes. No tents. No trees. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "goguryeo-five-blocks",
+		"alt": "Five unequal red stone blocks on a wet black floor — Yeon Gesomun a small figure in silky red court-military on the tallest only",
+		"prompt": "Minimal iconic 16:9 poster. UNIQUE LAYOUT: five unequal red stone blocks (#C30000) of different heights on a wet black reflective floor — not a kowtow hall, not a circle. Yeon Gesomun a small figure standing on the TALLEST block only. Face matches the attached portrait: thick black beard, crow-stamped armor. Striking silky Goguryeo court-military, premium red silk sheen, few hues. ONE accent: a black three-legged-crow mark. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "xue-white-ridge",
+		"alt": "Low-strip: a hard dark ridge fills the frame; Xue Rengui a silky pale figure on a thin ivory cavalry-line along the bottom edge",
+		"prompt": "Minimal iconic 16:9 poster. UNIQUE LAYOUT: low strip. A hard dark mountain-ridge plane fills the upper four-fifths as one charcoal mass. Along the BOTTOM EDGE, a thin pale-white strip of silky white-armored cavalry; Xue Rengui a single slightly larger figure at the left of that strip. Face matches the attached portrait. Striking silky pale lamellar, premium white silk, few hues. ONE accent: ivory sheen on the low strip. Flat sky plane, no clouds. No busy army filling the frame. No fortress-escape. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "baekje-eight-seats",
+		"alt": "Eight yellow empty seats in a broken arc around a vacant center — tiny silky Baekje court silhouettes, one deer-crown spark",
+		"prompt": "Minimal iconic 16:9 poster. UNIQUE LAYOUT: broken arc. Eight yellow empty seats (#FFCB51) in a broken arc around a vacant center — not a circle of eggs, not kowtow. Tiny clan silhouettes in striking silky Baekje court hanbok, premium yellow-cream silk sheen, few hues, high contrast. ONE accent: a single deer-crown spark at the empty center. Wet black reflective floor. Flat pale void. Monumental emptiness. No crowd. No palace clutter. No clouds. No readable text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "salsu-ford-ribbon",
+		"alt": "A vast black-silver river plane with the Sui host as one thin gold ribbon mid-ford — Ulchi Munduk a tiny red figure on the far bank",
+		"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT a busy battlefield. UNIQUE LAYOUT: one thin GOLD RIBBON of a host mid-ford across a vast black-silver river plane. Ulchi Munduk a tiny red silky figure on the far bank. Face suggestion matches attached portrait. No individual soldiers, no tents, no trees, no wagons. Flat sky, no clouds. Monumental emptiness. Striking silky period dress, few hues. ONE accent: the gold ribbon. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "baekje-river-palace",
+		"alt": "Sabi as one yellow wooden palace-bar above a flat pale river — pagoda a single vertical accent, empty water, tiny silky court figures",
+		"prompt": "Minimal iconic 16:9 poster. UNIQUE LAYOUT: one elegant HORIZONTAL BAR. A yellow wooden riverside palace as a single long silky-timber bar (#FFCB51) above a flat pale river plane. Pagoda as ONE thin vertical accent. Empty trading water — no boats. Tiny figures in striking silky Baekje court hanbok, few hues. Flat pale sky, no clouds. Monumental emptiness. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "goguryeo-mountain-keep",
+		"alt": "One red stone keep growing from a cliff-plane — a black three-legged-crow on the gate, tiny silky silhouette, pale void",
+		"prompt": "Minimal iconic 16:9 poster. UNIQUE LAYOUT: vertical mountain-keep. One red stone keep (#C30000) growing out of a hard cliff-plane, a single geometric mass. ONE accent: a black three-legged-crow bird-shape on the gate. No busy army. Tiny silky red court-military silhouette on the wall. Flat pale-white void, no clouds. Monumental emptiness. No fortress clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	}
+]

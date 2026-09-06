@@ -4,6 +4,7 @@
 	import '$lib/components/diagrams/orgChartTheme.css';
 	import { onMount } from 'svelte';
 	import { loadShowIntimate } from '$lib/nsfwUi.svelte';
+	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
 
 	let { children } = $props();
 
@@ -17,3 +18,4 @@
 <div class="rail" aria-hidden="true"></div>
 
 {@render children()}
+<ImageLightbox />

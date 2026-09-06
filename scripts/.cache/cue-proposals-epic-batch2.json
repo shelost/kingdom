@@ -1,0 +1,38 @@
+{
+	"chapters": [
+		"final-stand",
+		"fall-of-baekje"
+	],
+	"alts": [],
+	"moves": [],
+	"newSlots": [
+		{
+			"chapterId": "final-stand",
+			"entryTitle": "The Surrender of Tamla",
+			"promptSummary": "Tamla envoys as tiny orange boats on a vast black sea",
+			"slot": {
+				"id": "tamla-surrender",
+				"ratio": 1.778,
+				"tone": "#7c2d12",
+				"at": "sends its envoys",
+				"alt": "Tamla’s envoys as tiny orange boats on a vast black sea — the island a far silhouette in mist-white fog",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: zoomed-out iconic shot, tiny silhouettes in enormous space. Huge black Yellow Sea as one color plane, mist-white fog band, one distant volcanic island silhouette. Two tiny orange-sailed envoy boats the only warm color. Wet black water mirroring the orange specks. No faces, no anime, no clutter, no text, no watermark.",
+				"refs": ["/pl_mount_halla.png"]
+			}
+		},
+		{
+			"chapterId": "fall-of-baekje",
+			"entryTitle": "Sabi Palace",
+			"promptSummary": "Empty Sabi palace — wine-red throne plane in a vast dark hall",
+			"slot": {
+				"id": "sabi-palace-empty",
+				"ratio": 1.778,
+				"tone": "#7f1d1d",
+				"at": "The court hears about the Yellow Mountain Fields",
+				"alt": "Fallen Sabi as a cavernous dark hall — one wine-red empty throne plane, tiny court silhouettes on a wet black floor",
+				"prompt": "Minimal vast epic cinematic still matching the visual bible: zoomed-out iconic shot. Cavernous dark Baekje palace, wet black reflective floor, one hard wine-red vertical plane of an empty throne dais at far right. A handful of tiny black silhouettes. Atmospheric haze. NO Tang yellow emperor light. No faces, no anime, no clutter, no text, no watermark.",
+				"refs": ["/pl_sabi_palace.png"]
+			}
+		}
+	]
+}

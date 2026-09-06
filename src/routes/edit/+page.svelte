@@ -229,7 +229,7 @@
 		color: #787774;
 		text-decoration: none;
 		padding: 0.3rem 0.5rem;
-		border-radius: 5px;
+		border-radius: var(--radius);
 	}
 
 	.back:hover {
@@ -248,7 +248,7 @@
 		text-align: left;
 		background: transparent;
 		border: none;
-		border-radius: 5px;
+		border-radius: var(--radius);
 		padding: 0.3rem 0.5rem;
 		cursor: pointer;
 		color: #37352f;
@@ -288,7 +288,7 @@
 		z-index: 80;
 		font-size: 0.78rem;
 		padding: 0.25rem 0.7rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: #f1f1ef;
 		color: #787774;
 		transition: all 150ms ease;
@@ -382,7 +382,7 @@
 		color: #787774;
 		background: #f1f1ef;
 		border: none;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		padding: 0.25rem 0.6rem;
 		cursor: pointer;
 	}

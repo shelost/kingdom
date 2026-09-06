@@ -527,24 +527,24 @@ export const PEOPLE: Person[] = [
 		godTier: 'II',
 		gender: 'f',
 		kingdom: 'other',
-		title: 'Birth goddesses · life under 이승',
+		title: 'Midwife goddess · life under 이승',
 		realm: { en: 'Life · birth', ko: '생명 · 출산' },
-		tagline: 'Class II under Little Star — the three who keep birth, not Silla’s steam cavern.',
-		quote: 'Life arrives in threes. Count carefully.',
+		tagline: 'Class II under Little Star — one midwife who keeps birth, not Silla’s steam cavern.',
+		quote: 'I open the breath. You keep the name.',
 		nature:
-			'The Samsin-nyeo (삼신녀): birth and life’s office in the living world — optimistic, extroverted, carefree, and sexually forward as life/birth goddesses. Charted under Little Star with Ibiga (sky) and Haemosu (sun). Not the steam sisters of Yushin’s cavern — a different three, and an older claim. Notices Yumla’s shy crush and does not mind.',
-		arc: 'Class II domain of life within 이승. Folk midwifery and household rites know them as the three who open and close a birth; the pantheon chart seats them under Little Star with Ibiga (sky) and Haemosu (sun) — Little Star’s retinue in the Three Realms, not Heaven’s descent line and not Silla’s steam counsel.',
-		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; birth arrives in threes.',
+			'The Samsin-nyeo (삼신녀): one midwife goddess of birth and life in the living world — optimistic, extroverted, carefree, and sexually forward as a life/birth goddess. Charted under Little Star with Ibiga (sky) and Haemosu (sun). Not the steam sisters of Yushin’s cavern — a different office, and an older claim. Notices Yumla’s shy crush and does not mind.',
+		arc: 'Class II domain of life within 이승. Folk midwifery and household rites know her as the one who opens and closes a birth; the pantheon chart seats her under Little Star with Ibiga (sky) and Haemosu (sun) — Little Star’s retinue in the Three Realms, not Heaven’s descent line and not Silla’s steam counsel.',
+		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; one hand opens the breath.',
 		binyeoImage: '/bn_samsin.png',
 		events: [{ label: 'Kept on the Three Realms chart as life under Little Star.' }],
-		sobriquets: ['삼신', 'Three Birth Goddesses', 'Samsin-nyeo'],
+		sobriquets: ['삼신', 'Midwife Goddess', 'Samsin-nyeo'],
 		aliases: [
 			'Samsin',
 			'Samsin-nyeo',
 			'삼신녀',
 			'삼신',
-			'Three Birth Goddesses',
-			'Birth Goddesses'
+			'Midwife Goddess',
+			'Birth Goddess'
 		]
 	},
 	{
@@ -868,7 +868,7 @@ export const PEOPLE: Person[] = [
 		arc: 'The histories leave her unnamed, which is how most wives of strongmen are written. Before Namseng there were years the Eastern hall kept too still — lamps lit for no arrival, women’s voices lowered where even a Supreme Commander’s wife dared not count aloud. When the first heir finally breathes, the household names him plainly: Namseng, a son is born — syllables like thanks. She bears the three heirs; Gesomun keeps the eldest under his own strict roof while Jungto and Sooyoung take the younger two. She keeps the Yeon hall when the banquet hall is still wet, and asks the one question the Supreme Commander cannot answer with a sword: what the outside world will call them.',
 		binyeo: 'Plain bronze crow-pin — march metal, not capital gold.',
 		events: [
-			{ year: 634, label: 'After years of quiet, bears Namseng — “a son is born”; Samsin aids the birth beside their portrait.' },
+			{ year: 634, label: 'After years of quiet, bears Namseng — “a son is born”; Samsin aids the birth beside her portrait.' },
 			{ year: 642, label: 'After the massacre, asks Yeon what foreign courts will say — and receives his answer.' }
 		],
 		aliases: ["Yeon's Wife", "Yeon’s wife", '연씨부인']
@@ -1017,7 +1017,7 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: '“In all this world, wouldn’t it be good to have one person always on your side, Princess?”',
 		ideology: 'Loyalist modernizer',
-		ideologyNote: 'Duty to queen and country over faction. If the crown orders Tang drill and Secretariat speed, he learns them without sentiment — the West’s tools, never the West’s worship. To Bidam that is selling the country; to Yushin it is only the queen’s arithmetic.',
+		ideologyNote: 'Confucian duty — rites, rank, the queen’s arithmetic. He stands; he does not sit in lotus. If the crown orders Tang drill and Secretariat speed, he learns them without sentiment — the West’s tools, never the West’s worship. To Bidam that is selling the country; to Yushin it is only the order.',
 		quote: 'In all this world, wouldn’t it be good to have one person always on your side, Princess?',
 		firstLine: {
 			en: 'Well stood. Tomorrow on the yard — the hundred-and-ninth is mine.',
@@ -1555,7 +1555,7 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-surabol-son',
 		tagline: '“If only three of the Sacred Bone remain, then I choose the cleverest of the three.”',
 		ideology: 'Radical nativist',
-		ideologyNote: 'Blood-and-soil for 삼한 — both Kim lines are imports; the Founding Six had no Kim; opposes Tang-shaped Secretariat and sinicization through courtesy, not rant. Once the liberal who crowned Sunduk and shielded Gaya-blood Yushin; curdles in public — grievance as patriotism, colonizer panic, charm that turns ugly between sips of tea. Genius and charisma never leave him; that is what makes the spiral dangerous. Debates over tea like a salon; dies still charming.',
+		ideologyNote: 'Buddhist-nativist foil to Confucian Yushin — 108 beads, sutras, lotus, incense through the Radiance siege; the soil’s dharma, even while he names India’s sutras a colonization of the mind. Blood-and-soil for 삼한 — both Kim lines are imports; the Founding Six had no Kim; opposes Tang-shaped Secretariat through courtesy, not rant. Once the liberal who crowned Sunduk and shielded Gaya-blood Yushin; curdles in public. Genius and charisma never leave him. Debates over tea like a salon; meditates while the armies wait; dies still charming.',
 		quote: 'If only three of the Sacred Bone remain, then I choose the cleverest of the three.',
 		firstLine: {
 			en: 'My lords keep repeating the one word — “woman.” I have known Princess Dukman since I was a boy.',
@@ -1567,7 +1567,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature:
 			'Born to one of Surabol’s oldest houses — the chronicle never states, only implies, descent from Gurema of the Surabol Son clan and the Musan hall the Founding Six raised. Aristocratic gentleman: proper titles, tea poured before the barb lands, almost flirtatious composure under the black robe. Oldest of the three Hwarang classmates — then Yushin, then Alchun, a year apart; all three once orbited Princess Dukman. Yard score never leaves 108–108 with Yushin — effort against birthright, and he feels owed. Once the most liberal True Bone — crowned the woman king, shielded Gaya-blood Yushin from nativist bullying — he spirals in public view: grievance dressed as patriotism, “they’re colonizing us,” charming one moment and ugly the next. Self-aware enough to hear the irony; genius and charisma never leave him — that is what makes it dangerous. Loves the sacred country badly. Weaponizes heritage against Yushin at Radiance: “Blood is inevitable.” Dies smiling at the name he first traded as a boy.',
-		arc: 'In 632 he crowns Dukman with a speech about cleverness. In 636 he and Alchun break King Mu’s spies at Jade Gate Valley (옥문곡). In 645 he alone blocks Seungman while Supum holds the premier’s chair. In 647 he spends ten days at Radiance with Yumjong — morning tabletop debates with Yushin before the armies fight, youth flashbacks, star omen — the liberal curdling into blood-and-soil between cups of tea. On the fifth morning he tells Yushin 피는 못 속인다 — blood is inevitable — weaponizing Gaya/Heo heritage; on the tenth day Yushin finishes the count at one hundred and nine. Last mortal words: “Hwarang Kim Yushin…” Yushin will whisper the same line back when he orders the annihilation of Bidam’s house.',
+		arc: 'In 632 he crowns Dukman with a speech about cleverness. In 636 he and Alchun break King Mu’s spies at Jade Gate Valley (옥문곡). In 645 he alone blocks Seungman while Supum holds the premier’s chair. In 647 he spends ten days at Radiance with Yumjong — night tabletop debates with Yushin in a small 정자 under a half moon, before the armies fight, youth flashbacks, star omen — the liberal curdling into blood-and-soil between cups of tea. On the fifth night he tells Yushin 피는 못 속인다 — blood is inevitable — weaponizing Gaya/Heo heritage; on the tenth day Yushin finishes the count at one hundred and nine. Last mortal words: “Hwarang Kim Yushin…” Yushin will whisper the same line back when he orders the annihilation of Bidam’s house.',
 		blade: 'Ring-pommel heavenly-horse sword — white horse rearing on the pommel, old-hall steel.',
 		swordImage: '/sword_horse.png',
 		stages: [
@@ -4221,7 +4221,7 @@ export const PEOPLE: Person[] = [
 		blade: 'Ring-pommel crow sword — eldest of the sons’ stamp, kept to Gesomun’s whetstone; it kneels west in 666.',
 		arc: 'Named Namseng — a son is born — in the year after the High Summit, when his mother’s hall had finally stopped waiting in silence. Personally raised under Gesomun’s roof — drills, knives, no soft supper — while Yeon Namgun and Yeon Namsan grow up with uncle Jungto and aunt Sooyoung. Succeeds as Supreme Commander; messengers arrive (return address implied, never spoken: Chunchu’s kind of poison) saying each brother wants the other dead. He rides west. The boy who would not kneel in 645 kneels in 666 to finish what the whisper started.',
 		events: [
-			{ year: 634, label: 'Born Namseng — “a son is born” — after years of quiet; Samsin midwifes beside their portrait in the Eastern hall.' },
+			{ year: 634, label: 'Born Namseng — “a son is born” — after years of quiet; Samsin midwifes beside her portrait in the Eastern hall.' },
 			{ label: 'Raised under Gesomun’s strict roof — not Jungto’s.' },
 			{ year: 665, label: 'Succeeds his father as Supreme Commander.' },
 			{ year: 666, label: 'Ousted by his brothers; defects to the Emperor.' }
@@ -6535,8 +6535,8 @@ export const NATIONS: Person[] = [
  * | sobyeol | red — Little Star / living heat |
  * | sara | light green — Hallakgungi / flower field |
  * | chunchu | magenta — Magenta Devil sleeve |
- * | yushin | darker hwarang blue (mature marshal) |
- * | bidam | near-black blue — nativist foil |
+ * | yushin | darker hwarang blue — Confucian marshal (rites, not beads) |
+ * | bidam | near-black blue — Buddhist-nativist foil (sutra gold on navy) |
  * | muryuk | Gaya purple |
  * | seohyeon | bright Silla-aspiring blue |
  * | munmu | royal red — king for all |

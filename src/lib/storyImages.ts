@@ -13,7 +13,8 @@ import {
 	isTempCueImage,
 	tempArtOf
 } from '$lib/cueArt';
-import { avatarOf, byId, isPlaceholderArt, nameOf } from '$lib/people';
+import { IMAGE_PEOPLE } from '$lib/imagePeople';
+import { avatarOf, byId, isPlaceholderArt, nameOf, PROFILES } from '$lib/people';
 import { ENTRY_PLACE, PLACES } from '$lib/places';
 import { chapters, type Block, type Chapter, type Entry, type ImageSlot } from '$lib/story';
 import { TEMP_ART_BY_ID } from '$lib/tempArtInventory';
@@ -68,6 +69,8 @@ export interface StoryCueImage {
 	hasStack: boolean;
 	/** True when display is a real temp / placeholder (not a seed copy of final). */
 	isTemp: boolean;
+	/** Intimate / erotic / close still — gallery NSFW badge. */
+	isNsfw: boolean;
 	/** Temp file is a trivial sips copy of the final — not a real regeneration. */
 	isSeedCopy: boolean;
 	/** Unique card title for the gallery (entry · cue label). */
@@ -91,7 +94,7 @@ export interface StoryCueImage {
 	refs: StoryImageRef[];
 }
 
-/** File under `static/temp/` (or other story image roots) with no matching cue id. */
+/** File under `static/temp/` with no story slot, person, place, or wiki-scene home. */
 export interface OrphanedImage {
 	id: string;
 	src: string;
@@ -223,6 +226,15 @@ function entryYearNum(entry: Entry, chapter: Chapter): number | null {
 	return Number.isFinite(fromRange) ? fromRange : null;
 }
 
+/** Sensual / sexual stills only — never a generic close-up or battle face. */
+const NSFW_HINT =
+	/skin-forward|close hungry kiss|passionate kiss|robe (off|slipping|open on the chest)|bare (shoulder|chest|back|buttock|ass|thigh)|mouths almost touching|mouth at .{0,40}throat|wet (white )?jeogori|openly sexual|overwhelmed with (lust|desire)|grabbing .{0,80}(ass|hip|buttock)/i;
+
+export function isNsfwCueImage(slot: ImageSlot): boolean {
+	if (slot.nsfw) return true;
+	return NSFW_HINT.test(`${slot.prompt ?? ''} ${slot.alt ?? ''}`);
+}
+
 /** Humanize a cue id: `blade-south` → `Blade south`, `yeon_sons_table` → `Yeon sons table`. */
 export function humanizeCueId(id: string): string {
 	const raw = id.replace(/[_-]+/g, ' ').trim();
@@ -295,6 +307,7 @@ export function flattenStoryImages(source: Chapter[] = chapters): StoryCueImage[
 						tempArt,
 						hasStack: hasArtStack(slot),
 						isTemp: isTempCueImage(slot),
+						isNsfw: isNsfwCueImage(slot),
 						isSeedCopy: isSeedCopyTemp(slot),
 						title,
 						hasExplicitRefs,
@@ -325,15 +338,66 @@ export function storyCueIds(source: Chapter[] = chapters): Set<string> {
 }
 
 /**
- * Temp inventory files (and optional unused final story imgs) whose ids are
- * not attached to any cue slot.
+ * Match inventory files to slots regardless of `/temp` vs root and `_` vs `-`.
+ * `yushin_sword_vertical.png` (locked `src`) and `yushin-sword-vertical` (slot id)
+ * are the same still.
+ */
+export function artAttachmentKey(pathOrId: string): string {
+	const raw = pathOrId.trim().split('?')[0] ?? '';
+	if (!raw) return '';
+	const base = raw.split('/').pop() ?? raw;
+	return base.replace(/\.[^.]+$/i, '').replace(/_/g, '-').toLowerCase();
+}
+
+function addArtKey(keys: Set<string>, value: string | null | undefined) {
+	if (!value) return;
+	const key = artAttachmentKey(value);
+	if (key) keys.add(key);
+}
+
+/**
+ * Filename keys that have a home: chronicle slot (`id` / `src` / `tempImage` /
+ * `refs`), wiki sidecar, or a person/place portrait.
+ */
+export function referencedArtKeys(source: Chapter[] = chapters): Set<string> {
+	const keys = new Set<string>();
+
+	for (const ch of source) {
+		for (const entry of ch.entries) {
+			for (const slot of entry.images ?? []) {
+				addArtKey(keys, slot.id);
+				addArtKey(keys, slot.src);
+				addArtKey(keys, slot.tempImage);
+				for (const ref of slot.refs ?? []) addArtKey(keys, ref);
+			}
+		}
+	}
+
+	for (const slotId of Object.keys(IMAGE_PEOPLE)) addArtKey(keys, slotId);
+
+	for (const person of PROFILES) {
+		addArtKey(keys, person.avatar);
+		addArtKey(keys, person.photo);
+		addArtKey(keys, person.binyeoImage);
+		addArtKey(keys, person.swordImage);
+		for (const stage of person.stages ?? []) addArtKey(keys, stage.avatar);
+	}
+
+	return keys;
+}
+
+/**
+ * Temp inventory files that no chronicle slot, wiki scene, or profile art
+ * references. Slot id need not equal the filename — a kebab slot with an
+ * underscore `src` is attached.
  */
 export function findOrphanedImages(source: Chapter[] = chapters): OrphanedImage[] {
-	const ids = storyCueIds(source);
+	const attached = referencedArtKeys(source);
 	const out: OrphanedImage[] = [];
 
 	for (const [id, src] of TEMP_ART_BY_ID) {
-		if (ids.has(id)) continue;
+		const key = artAttachmentKey(id) || artAttachmentKey(src);
+		if (key && attached.has(key)) continue;
 		out.push({ id, src, kind: 'temp' });
 	}
 

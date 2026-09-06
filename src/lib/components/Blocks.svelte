@@ -283,7 +283,7 @@
 		{:else if block.kind === 'day' || block.kind === 'scene'}
 			{@const sid = sceneIdFor(block)}
 			<!-- the siege calendar / merged-episode scene plate -->
-			<header class="day" id={sid} data-scene={sid}>
+			<header class="day" data-story-id={sid} data-scene={sid}>
 				<span class="day-rule" aria-hidden="true"></span>
 				<span class="day-text">
 					<span class="day-label">{block.label}</span>
@@ -294,7 +294,7 @@
 		{:else if block.kind === 'flashback'}
 			{@const sid = sceneIdFor(block)}
 			<!-- mini-flashback: the page drops to black while this is under the reading line -->
-			<aside class="mini" id={sid} data-scene={sid} data-flash="1">
+			<aside class="mini" data-story-id={sid} data-scene={sid} data-flash="1">
 				<header class="mini-head">
 					<span class="mini-mark" aria-hidden="true"></span>
 					{#if block.year}<span class="mini-year">{block.year}</span>{/if}
@@ -362,7 +362,7 @@
 	:global(html.is-stage) .dialogue:global(.is-speaking) {
 		margin-left: -0.55rem;
 		padding: 0.45rem 0.65rem 0.45rem 0.55rem;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--chip) 12%, color-mix(in srgb, var(--fg) 4%, transparent));
 		opacity: 1;
 	}
@@ -379,7 +379,7 @@
 	:global(html.is-cinema) .dialogue {
 		margin: 1.05rem 0;
 		padding: 0.5rem 0.8rem 0.55rem 0.6rem;
-		border-radius: 12px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--plate-ink) 46%, transparent);
 		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chip) 20%, transparent);
 	}
@@ -391,7 +391,7 @@
 	:global(html.is-cinema) .dialogue:global(.is-speaking) {
 		margin-left: 0;
 		padding: 0.5rem 0.8rem 0.55rem 0.6rem;
-		border-radius: 12px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--chip) 16%, color-mix(in srgb, var(--plate-ink) 62%, transparent));
 		box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--chip) 45%, transparent);
 	}
@@ -539,7 +539,7 @@
 		:global(html.is-stage) .dialogue:has(.lines.pick:hover):not(:global(.is-speaking)) {
 			margin-left: -0.55rem;
 			padding: 0.45rem 0.65rem 0.45rem 0.55rem;
-			border-radius: 6px;
+			border-radius: var(--radius);
 			background: color-mix(in srgb, var(--chip) 10%, color-mix(in srgb, var(--fg) 3%, transparent));
 			opacity: 0.92;
 		}
@@ -633,7 +633,7 @@
 		overflow-x: auto;
 		margin: 1.2rem 0;
 		border: 1px solid var(--hairline);
-		border-radius: 8px;
+		border-radius: var(--radius);
 	}
 
 	table {
@@ -804,7 +804,7 @@
 		margin: 1.4rem 0;
 		padding: 0.9rem 1rem 0.8rem;
 		border: 1px solid var(--hairline);
-		border-radius: 8px;
+		border-radius: var(--radius);
 	}
 
 	.fm-title {
@@ -847,7 +847,7 @@
 		padding: 0.32rem 0.55rem;
 		border: 1px solid color-mix(in srgb, var(--s) 40%, transparent);
 		border-left: 3px solid var(--s);
-		border-radius: 4px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--s) 9%, transparent);
 	}
 
@@ -883,7 +883,6 @@
 		align-items: center;
 		gap: 1.1rem;
 		margin: 3.4rem 0 1.9rem;
-		scroll-margin-top: 5.5rem;
 	}
 
 	.day:first-child {
@@ -941,7 +940,6 @@
 		margin: 2rem 0 2.2rem;
 		padding: 1.1rem 0 1.1rem 1.6rem;
 		border-left: 1px solid rgba(216, 178, 106, 0.28);
-		scroll-margin-top: 5.5rem;
 	}
 
 	.mini::before,
@@ -1066,7 +1064,7 @@
 			min-height: 2.75rem;
 			margin-block: -0.5rem;
 			padding-block: 0.5rem;
-			border-radius: 6px;
+			border-radius: var(--radius);
 			-webkit-tap-highlight-color: transparent;
 		}
 

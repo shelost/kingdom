@@ -34,7 +34,7 @@
 			id: 'immersion',
 			label: 'Immersion',
 			short: 'Scene',
-			hint: 'Speaker portrait like a game dialogue (default)'
+			hint: 'Speaker portrait like a game dialogue'
 		},
 		{
 			id: 'cinema',
@@ -290,7 +290,7 @@
 		padding: 0.34rem 0.8rem;
 		white-space: nowrap;
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		opacity: 0.5;
@@ -400,7 +400,7 @@
 		padding: 0;
 		color: var(--fg-faint);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		cursor: pointer;
@@ -476,7 +476,7 @@
 		gap: 1px;
 		padding: 2px;
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		flex-shrink: 0;
@@ -491,7 +491,7 @@
 		color: var(--fg-faint);
 		background: transparent;
 		border: none;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.22rem 0.6rem;
 		cursor: pointer;
 		transition:
@@ -512,6 +512,7 @@
 		background: var(--gold);
 	}
 
+	.nsfw-wrap,
 	.nav-wrap {
 		display: flex;
 		align-items: center;

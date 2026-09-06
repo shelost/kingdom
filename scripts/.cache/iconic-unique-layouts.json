@@ -1,0 +1,72 @@
+[
+	{
+		"id": "hwanin-opens-sky",
+		"alt": "Hwanin small at the top of an ivory-and-black void, a single gold thread falling through empty space",
+		"prompt": "Unique top-heavy layout: tiny Hwanin at top edge, gold thread down, ivory #F4F1E8 on black, no clouds."
+	},
+	{
+		"id": "yumla-judgment",
+		"alt": "Worm’s-eye view of Yumla as a dark triangular mass of black robe and orange-red sleeves against a flat underworld void",
+		"prompt": "Unique worm’s-eye layout: Yumla from below, orange-red sleeve planes, flat underworld, no clouds."
+	},
+	{
+		"id": "hallakgungi-gate",
+		"alt": "Hallakgungi tiny in the lower-left of a flat mint Western Flower Field, one enormous cropped pink-white bloom filling the right",
+		"prompt": "Unique asymmetric corner layout: small gardener, giant flower disc, flat #8FBF8A, no clouds."
+	},
+	{
+		"id": "samsin-life-office",
+		"alt": "Samsin alone on a blush-pink plane — white hair, blue chima, red sash — one midwife, not three",
+		"prompt": "Unique vertical ribbon: one Samsin, blush-pink #e8b4c8, no room clutter."
+	},
+	{
+		"id": "daebyeol-dark-court",
+		"alt": "A huge steel-blue disc filling the left of the frame; Big Star small in profile at the right edge, flat black underworld",
+		"prompt": "Unique geometric disc layout: Daebyeol #3B6FBF, no bowing circle, no clouds."
+	},
+	{
+		"id": "sobyeol-living-heat",
+		"alt": "Little Star walking left-to-right, his maroon-red cloak a horizontal ribbon filling the lower third of a cream field",
+		"prompt": "Unique horizontal ribbon layout: Sobyeol #C94040, no clouds."
+	},
+	{
+		"id": "kangrim-red-book",
+		"alt": "Kangrim’s orange sleeve and red notebook huge in the left half; his gat a small silhouette in the upper right, flat black underworld",
+		"prompt": "Unique split-foreground: orange sleeve + 적패지, no clouds."
+	},
+	{
+		"id": "haemosu-sun-hero",
+		"alt": "Haemosu in profile running across a flat living-world red field, a gold sun disc cropped at the left edge",
+		"prompt": "Unique horizontal motion: Haemosu sun-run, no halo-behind-head, no clouds."
+	},
+	{
+		"id": "ibiga-sky-hero",
+		"alt": "Ibiga leaning hard right, royal-blue robe as a diagonal slash on a flat deep-blue field — no clouds",
+		"prompt": "Unique diagonal slash: Ibiga #3E79E4, no clouds."
+	},
+	{
+		"id": "heavenearth-dual",
+		"alt": "Heaven–Earth King standing on a hard vertical seam of red and blue color planes",
+		"prompt": "Unique vertical split: #C30000 / #3E79E4, no clouds."
+	},
+	{
+		"id": "dangun-wanggeom",
+		"alt": "Dangun in left profile against a hard bronze-gold rectangle of mandate-light, white robes and red sash",
+		"prompt": "Unique profile + gold slab: Dangun, no mountain landscape."
+	},
+	{
+		"id": "bidam-second-blade",
+		"alt": "Bidam large in the lower left of an empty night-navy field, a thin magenta line cutting the sky",
+		"prompt": "Unique low-strip layout: Bidam #141C2E, no army."
+	},
+	{
+		"id": "yuhwa-rise",
+		"alt": "Yuhwa small on a rising silver moon-curve, pale-blue robe, flat black-indigo void — no clouds",
+		"prompt": "Unique moon-as-floor: Yuhwa, no crescent halo, no clouds."
+	},
+	{
+		"id": "jacheongbi-five",
+		"alt": "Jacheongbi kneeling on a flat mint Western Flower Field with five colored flower-discs in a row above her — no clouds",
+		"prompt": "Unique constellation row: five flower discs, flat #8FBF8A, no clouds."
+	}
+]

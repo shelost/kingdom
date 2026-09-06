@@ -14,10 +14,10 @@
 		reading,
 		episodes,
 		isInlineArt,
-		canonicalHashId,
 		loadMode,
 		loadViewScope,
 		stepEpisode,
+		storyRoot,
 		watchReading
 	} from '$lib/reading.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
@@ -26,7 +26,6 @@
 	import { onMount } from 'svelte';
 	import type { Chapter, Entry, StackImage } from '$lib/story';
 
-	let currentEpisode = $derived(episodes[reading.episodeIndex] ?? episodes[0]);
 	let episodesMode = $derived(reading.viewScope === 'episodes');
 	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
 	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
@@ -43,14 +42,14 @@
 		const stopReading = watchReading();
 
 		/** Chrome waits until cover + blurb are behind the reader. */
-		const scriptEl = document.getElementById('script');
+		const scriptEl = storyRoot();
 		const syncInScript = () => {
 			if (!scriptEl) {
 				scriptUi.inScript = true;
 				return;
 			}
-			/* A TOC jump remounts episodes and can briefly look like cover until
-			   the measured-Y scroll lands — keep chrome up so the panel does not retract. */
+			/* A TOC jump can briefly look like cover until the measured-Y scroll
+			   lands — keep chrome up so the panel does not retract. */
 			if (tocUi.jumping) {
 				scriptUi.inScript = true;
 				return;
@@ -59,17 +58,7 @@
 			scriptUi.inScript = scriptEl.getBoundingClientRect().top < window.innerHeight * 0.92;
 		};
 
-		/* Deep-link into a chapter/entry: show chrome immediately (scroll position
-		   may still be at the top until Toc's hash jump runs on the next frame). */
-		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
-		if (hash && scriptEl) {
-			const target = document.getElementById(canonicalHashId(hash));
-			if (target && scriptEl.contains(target)) scriptUi.inScript = true;
-			else if (episodesMode) scriptUi.inScript = true;
-		} else {
-			syncInScript();
-		}
-		/* Reconcile after hash / TOC Y-scroll (Toc schedules it on rAF). */
+		syncInScript();
 		requestAnimationFrame(syncInScript);
 
 		window.addEventListener('scroll', syncInScript, { passive: true });
@@ -103,22 +92,6 @@
 		return buildBeats(entry).flatMap((beat, bi) =>
 			filterNsfw(beat.images).map((im) => ({ ...im, beatIndex: bi }))
 		);
-	}
-
-	function showChapter(chapterId: string) {
-		return !episodesMode || currentEpisode?.chapterId === chapterId;
-	}
-
-	function showEntry(chapterId: string, entryIndex: number) {
-		return (
-			!episodesMode ||
-			(currentEpisode?.chapterId === chapterId && currentEpisode.entryIndex === entryIndex)
-		);
-	}
-
-	/** Chapter opener / part title when viewing that chapter's first entry. */
-	function showChapterChrome(chapterId: string) {
-		return !episodesMode || (currentEpisode?.chapterId === chapterId && currentEpisode.entryIndex === 0);
 	}
 
 	const yearsByChapter = new Map(chapters.map((ch) => [ch.id, entryYears(ch)]));
@@ -183,15 +156,14 @@
 
 	<!-- Script: chapters after cover + blurb — fixed chrome waits on this region. -->
 	<div
-		id="script"
+		data-story-root
 		class="script"
 		class:episodes={episodesMode}
 		class:images-inline={inlineImages}
 	>
 		{#each chapters as chapter, ci (chapter.id)}
-			{#if showChapter(chapter.id)}
-				{#if chapter.part && showChapterChrome(chapter.id)}
-					<section class="part-page" id={partId(chapter.id)} use:reveal>
+				{#if chapter.part}
+					<section class="part-page" data-story-id={partId(chapter.id)} use:reveal>
 						<span class="part-eyebrow">{chapter.part}</span>
 						{#if chapter.partTitle}<h2 class="part-title">{chapter.partTitle}</h2>{/if}
 						{#if chapter.partKorean}<p class="part-ko">{chapter.partKorean}</p>{/if}
@@ -199,8 +171,7 @@
 						<span class="part-rule" aria-hidden="true"></span>
 					</section>
 				{/if}
-				<section class="chapter" id={chapter.id}>
-					{#if showChapterChrome(chapter.id)}
+				<section class="chapter" data-story-id={chapter.id}>
 						<header class="chapter-head">
 							<div class="chapter-title">
 								<h1>
@@ -213,10 +184,8 @@
 								<span class="rule" aria-hidden="true"></span>
 							</div>
 						</header>
-					{/if}
 
 					{#each chapter.entries as entry, i (chapter.id + i)}
-						{#if showEntry(chapter.id, i)}
 							{@const years = yearsByChapter.get(chapter.id) ?? []}
 							{@const beats = buildBeats(entry).map((beat) => ({
 								...beat,
@@ -227,7 +196,7 @@
 							<article
 								class="entry"
 								class:flash={isFlashEntry(entry)}
-								id={eid}
+								data-story-id={eid}
 								data-year={years[i]}
 								data-flash={isFlashEntry(entry) ? '1' : undefined}
 								data-music={entry.music ?? undefined}
@@ -339,23 +308,19 @@
 									</aside>
 								{/if}
 							</article>
-						{/if}
 					{/each}
 				</section>
-			{/if}
 		{/each}
 	</div>
 
-	{#if !episodesMode || atLastEpisode}
-		<footer class="colophon" use:reveal>
-			<p>— to be continued —</p>
-			<p class="colophon-links">
-				<a href={resolve('/wiki')}>Encyclopedia</a>
-				<span aria-hidden="true">·</span>
-				<a href={resolve('/images')}>Images</a>
-			</p>
-		</footer>
-	{/if}
+	<footer class="colophon" use:reveal>
+		<p>— to be continued —</p>
+		<p class="colophon-links">
+			<a href={resolve('/wiki')}>Encyclopedia</a>
+			<span aria-hidden="true">·</span>
+			<a href={resolve('/images')}>Images</a>
+		</p>
+	</footer>
 
 	<nav
 		class="ep-nav"
@@ -509,7 +474,6 @@
 		flex-direction: column;
 		justify-content: center;
 		padding: 6rem 6rem 4.5rem 12%;
-		scroll-margin-top: 1.5rem;
 	}
 
 	.part-eyebrow {
@@ -554,7 +518,6 @@
 	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .entry-head) ————— */
 	.chapter-head {
 		padding: 1.35rem 3rem 1.1rem;
-		scroll-margin-top: 1.5rem;
 	}
 
 	.chapter-title {
@@ -612,8 +575,8 @@
 		grid-auto-rows: auto;
 		gap: 0 3.25rem;
 		padding: 0 3rem 7rem;
-		scroll-margin-top: 1.5rem;
 		overflow: visible;
+		overflow-anchor: none;
 	}
 
 	/* Immersion: a lead margin column carries the sticky year + chapter chrome,
@@ -628,6 +591,11 @@
 		grid-template-columns: minmax(0, 1fr);
 	}
 
+	/* Browser overflow-anchor + image load used to pin the reader on one entry. */
+	.script {
+		overflow-anchor: none;
+	}
+
 	/* ————— Cinema: one column over the panel —————
 	   The stage carries the art, the place and the episode marker, so the side
 	   meta, the sticky reel and the inline figures all stand down and the prose
@@ -638,8 +606,6 @@
 		grid-template-columns: minmax(0, 1fr);
 		gap: 0;
 		padding: 0 1.5rem 6rem;
-		/* Jumps land the entry clear of the episode title card, not under it. */
-		scroll-margin-top: 4.5rem;
 	}
 
 	:global(html.is-cinema:not(.is-cinema-peek)) .entry-head,
@@ -680,7 +646,6 @@
 
 	.entry-head {
 		min-width: 0;
-		scroll-margin-top: 1.5rem;
 	}
 
 	/* Immersion: the head takes the lead margin column with a full-height
@@ -969,7 +934,7 @@
 		font-size: 0.9rem;
 		background: color-mix(in srgb, var(--fg) 6%, transparent);
 		border: 1px solid var(--hairline);
-		border-radius: 0.3rem;
+		border-radius: var(--radius);
 		transition:
 			transform 0.3s var(--ease),
 			background 0.3s var(--ease);
@@ -1043,7 +1008,7 @@
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.45rem 0.95rem;
 		opacity: 0;
 		transform: translate3d(0, 0.85rem, 0);
@@ -1241,7 +1206,6 @@
 			order: 2;
 			padding: 1.15rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
 				max(1.15rem, env(safe-area-inset-left, 0px));
-			scroll-margin-top: max(4.5rem, calc(env(safe-area-inset-top, 0px) + 3.6rem));
 		}
 
 		.content-col {
@@ -1346,7 +1310,7 @@
 		gap: 0.35rem;
 		padding: 0.28rem;
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		opacity: 0;
@@ -1379,7 +1343,7 @@
 		color: var(--fg-dim);
 		background: transparent;
 		border: none;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.4rem 0.85rem;
 		min-height: 2.5rem;
 		cursor: pointer;

@@ -61,6 +61,10 @@ For each entry, check each image's `at` anchor against the narrative: does the i
 
 Propose a fix as a new `at` fragment (rules above). If everything is fine — and mostly it will be — propose nothing. Every move needs one-sentence reasoning.
 
+## House stills voice (prompts)
+
+New `prompt` fields follow `.cursor/rules/chronicle-image-style.mdc` **Prompt style (canon batch)**. Encode the iconic-poster batch (`wuzetian_screen_power`, `yushin_sword_vertical`, `chunchu_strategist_shadow`) — **never** attach those stills as GenerateImage refs; reuse the language. Face: `static/ch_*.png` only. Fashion: striking **silky premium** hanbok / period court-military (sheen, weight, clean drape), few hues, one accent — not embroidery catalogs, not fantasy robes. Formula: `Minimal iconic [ratio] poster. [Name], [one role]. [ONE new geometric device]. Face matches the attached portrait. [hex] as the plane or the single accent. Striking silky [hanbok / court-military], few hues. Flat void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.` Do not copy the three loved devices (gold screen / vertical sword / half-face shadow). One character-color hex + rim-light; monumental emptiness.
+
 ## Task 3 — new cue slots (no art)
 
 Identify strong un-illustrated visual moments: battles, deaths, births, coronations, divine appearances, quiet emotional beats. Aim for roughly even coverage inside LONG entries (an entry with 40 blocks and 2 images has gaps; an entry with 6 blocks and 3 images does not). Typically 2–6 new slots per chapter; short/epilogue chapters may need 0–1. For each new slot provide the full slot object with:
@@ -69,7 +73,7 @@ Identify strong un-illustrated visual moments: battles, deaths, births, coronati
 - `ratio` + `tone`: copy conventions from neighboring slots in the same entry/chapter
 - `at`: anchor fragment (rules above) at the exact narrative moment
 - `alt`: as task 1
-- `prompt`: written in the chapter's established convention. Read the neighbors: most use "Cinematic historical illustration of …, Three Kingdoms of Samhan / Tang era (YEAR), scene: …, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250". The Goguryeo massacre sequence (iron-will) uses B&W ink with red accents — match whatever the neighboring images in that entry use. Write a DETAILED scene description in the prompt body (who, action, setting, light, mood), not a generic template fill.
+- `prompt`: follow **House stills voice** above and `.cursor/rules/chronicle-image-style.mdc` **Prompt style (canon batch)**. Open with "Minimal iconic {ratio} poster/still. NOT photoreal. NOT busy." Intimate slots: same voice, faces fill the frame. The Goguryeo massacre sequence (iron-will) uses B&W ink with red accents — match that entry. Do not fall back to the old "Cinematic historical illustration of … --stylize 250" template unless a neighbor already locked that wording and you are only filling a hole.
 - `refs`: 1–4 paths from the available assets below where those characters/places appear
 - NO `src`, NO `tempImage`, NO `isPlaceholder`
 

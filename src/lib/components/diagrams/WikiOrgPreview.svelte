@@ -38,7 +38,7 @@
 		width: 5.75rem;
 		aspect-ratio: 1;
 		overflow: hidden;
-		border-radius: 10px;
+		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		background:
 			radial-gradient(ellipse 80% 60% at 50% 20%, rgba(216, 178, 106, 0.1), transparent 70%),

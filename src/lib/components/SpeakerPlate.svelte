@@ -528,7 +528,7 @@
 		max-height: 7rem;
 		padding: 1.1rem 1.35rem 1rem 1.15rem;
 		border: 3px solid #e0c878;
-		border-radius: 5px;
+		border-radius: var(--radius);
 		background: var(--plate-ink);
 		box-shadow:
 			inset 0 0 0 2px var(--plate-ink),

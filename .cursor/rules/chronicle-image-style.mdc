@@ -1,0 +1,86 @@
+---
+description: Permanent stills doctrine — two layouts, silky premium hanbok, iconic-poster prompt voice, banned refs, install pipeline
+alwaysApply: true
+---
+
+# Chronicle stills
+
+Every new cue still follows this. Do not re-ask. Do not dilute.
+
+## Two layouts (pick one; never blend)
+
+**Intimate / close** — personal, skin-forward, faces fill the frame. Sex and seduction stay here (not silhouettes). Painterly / anime-adjacent cinema. Not photoreal, not cartoon.
+
+**Iconic / minimal epic** — zoomed out. Tiny figures *or* one isolated poster-scale body (lower third, silhouette behind a plane), hard color planes, haze, reflective floors, monumental emptiness. Monochrome plus **one** symbolic accent. Vast scale only in this mode. Reference vibe: red wall / black figures / white haze / one yellow shaft.
+
+**Iconic means the layout**, not “delete the world.” One geometric device, few hues, emptiness, no clutter. Location stills (Amnok, Ansi wall, Sabi river, battlefields, palaces) still show a **real natural environment** (water, earth, sky) while staying simple. Flat void / hard color-plane is one tool, not the only tool. Sex/close stays intimate and skin-forward; epic beats can have air, water, ground. No army catalogs, no palace furniture dumps.
+
+Gods may be more realistic / numinous. Hyukgose and Alyoung stay photoreal as demigods.
+
+## Color symbolism
+
+Read accents from `CHARACTER_COLORS` in `src/lib/people.ts`. The plane **is** the person.
+
+- Bidam `#141C2E` — navy void. Sutra/lotus gold is his Buddhist accent, not generic gilding.
+- Yushin `#2A5FB8` — Confucian marshal blue; rites, rank, blank tablets — not beads.
+- Chunchu `#D8258C` · Munmu `#C41E3A` · Hwanin `#F4F1E8`
+- Heaven–Earth King `#C30000` + `#3E79E4` · Daebyeol `#3B6FBF` · Sobyeol `#C94040` · Hallakgungi `#8FBF8A`
+
+**Earth / mortal / Korea locations** (Amnok, Ansi, Sabi, Seorabeol, battlefields, palaces, rivers, mountains): skies are **natural** — clouds, sun, moon, haze, weather as the scene needs. Not a flat graphic void unless the beat is deliberately indoor or night-black.
+
+**Non-earth / otherworld only** — underworld, mythic flower fields, heaven, god-realms, Ibiga’s cloud-country: **no naturalistic sun/moon/cloud weather** as a kingdom-sky dump. Those places stay symbolic (flat color, numinous). Ibiga *is* the clouds; she is not an exception that bans weather on Earth.
+
+Do not write “No clouds” on Earth prompts (including Haemosu–Yuhwa Amnok).
+
+## Fashion
+
+Face/body likeness: `static/ch_*.png` only. Do not invent faces. Do not attach prior stills as face refs.
+
+Garments: striking hanbok (or period court/military dress in that language). Cloth reads **silky and premium** — sheen, weight, clean drape — not matte rags, not photoreal costume dumps. Few hues, high contrast, **one** accent. Fashion is symbolism, same as the color planes.
+
+Not busy embroidery catalogs. Not generic fantasy robes.
+
+- **Intimate / close** — hanbok/period still; skin-forward; silk, not cluttered extras.
+- **Iconic / minimal epic** — even tiny figures read as hanbok silhouettes (wide sleeves, jeogori/chima or court rank robes), one color + void, silk catching the one accent light. Poster-scale bodies wear the same silky, minimal dress.
+
+## Prompt style (canon batch)
+
+House voice for every GenerateImage `description` and every new `prompt` field. Distilled from the iconic-poster batch (GenerateImage calls that produced `wuzetian_screen_power`, `yushin_sword_vertical`, `chunchu_strategist_shadow` — plus siblings Gyebek yellow-plane, Gesomun low-angle, Euija light-seam). Those files are **prompt-style only — never attach them as GenerateImage refs**.
+
+Winning formula (paraphrase into each call; do not paste old filenames as refs):
+
+`Minimal iconic [ratio] poster. [Name], [one role]. [ONE geometric device that divides the frame]. Face matches the attached portrait. [Character hex] as the plane or the single accent. Striking silky [hanbok / court-military], few hues. Earth beats: simple real world (water/earth/natural sky). Otherworld beats: symbolic flat color. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.`
+
+Reusable DNA:
+
+- Open with **Minimal iconic** `{ratio}` poster/still. NOT photoreal. NOT busy.
+- **One graphic device is the whole composition.** From that batch (paraphrase, do not copy as image refs): vertical divider (blade as a hard black line top-to-bottom; figure in the lower third); film-noir half-face shadow, contemplative power; a translucent screen/plane with a single gold light through it (silhouette, influence without the throne). Also: hard light-seam, low-angle monument, tiny body in a vast empty hall.
+- Face matches the **attached** `ch_*.png` portrait (or a face-suggestion / silhouette of that portrait).
+- **One** character-color accent with hex (from `CHARACTER_COLORS`) plus a thin rim-light. Earth: that accent lives in a simple real place. Otherworld: the rest may be a flat charcoal/black (or one symbolic color) void. The plane **is** the person.
+- Monumental emptiness. No army, no palace clutter, no hall furniture. Earth skies are natural weather; otherworld skies stay symbolic.
+- Graphic color-blocking, anime-painterly, not photoreal, not cartoon.
+- Close with: No text. No watermark.
+
+Do **not** copy those three devices (gold translucent screen / vertical sword that bisects / film-noir half-face). Invent a new one (ribbon, wedge, broken arc, edge-gaze, low strip, stamp, shaft).
+
+Intimate stills use the same voice (one accent, silk, void, no clutter) but faces fill the frame.
+
+## Doctrine in the picture (do not lecture in captions)
+
+- **Bidam is Buddhist** — meditates, recites, 108 beads, lotus, incense through the Radiance siege. Nativist *and* a man of this soil’s sutras.
+- **Yushin is Confucian** — duty, yard, queen’s arithmetic. He stands; he does not sit in lotus.
+
+## Unique layouts only
+
+Splits, discs, ribbons, worm’s-eye, corner crops, low strips. Never reuse court-kowtow, egg/horse circle, or crescent-halo hwarang. Do **not** attach those photos, the Xue fortress-escape still, or `wuzetian_screen_power`, `yushin_sword_vertical`, `chunchu_strategist_shadow` (or their temp png/jpg / kebab-case copies) as GenerateImage refs. Face refs: `static/ch_*.png` only.
+
+No readable text, no watermarks, no Latin captions on the image.
+
+## Pipeline
+
+1. Cursor `GenerateImage` → `{slot-id}.png` in the conversation assets folder.
+2. Slot must already exist on the entry in `src/lib/data/story.json`.
+3. `node scripts/install-temp-art.mjs <manifest.json>` → `static/temp/{id}.jpg` + `tempImage`. The script **deletes** the source PNG.
+4. `scripts/sync-temp-art-inventory.mjs` if you skip the installer.
+
+Manifest item: `{ "id", "alt", "prompt" }`.

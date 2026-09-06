@@ -397,7 +397,7 @@
 		font-size: 0.62rem;
 		max-width: 5.2rem;
 		border: 1px solid #ececea;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		background: #fff;
 		color: #787774;
 		padding: 1px 2px;
@@ -424,7 +424,7 @@
 	/* inline flashback */
 	.fb {
 		border: 1px dashed #d8d4cc;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background: #fbfaf7;
 		padding: 0.5rem 0.7rem 0.7rem;
 		margin: 0.5rem 0;
@@ -447,7 +447,7 @@
 		font-size: 0.78rem;
 		border: none;
 		background: transparent;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		padding: 0.1rem 0.25rem;
 	}
 
@@ -603,7 +603,7 @@
 		color: #787774;
 		background: #f1f1ef;
 		border: none;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		padding: 0.15rem 0.5rem;
 		cursor: pointer;
 	}
@@ -637,7 +637,7 @@
 		font-weight: 900;
 		border: none;
 		background: transparent;
-		border-radius: 4px;
+		border-radius: var(--radius);
 	}
 
 	.glyph:hover,
@@ -651,7 +651,7 @@
 		font-weight: 700;
 		border: none;
 		background: transparent;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		padding: 0.2rem 0.3rem;
 	}
 

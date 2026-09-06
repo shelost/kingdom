@@ -1,0 +1,102 @@
+{
+	"chapters": [
+		"epilogue",
+		"seventh-invasion",
+		"chunchu-era",
+		"silla-tang-war"
+	],
+	"alts": [],
+	"moves": [],
+	"newSlots": [
+		{
+			"chapterId": "epilogue",
+			"entryTitle": "Li Shimin, the 2nd Huangdi",
+			"afterId": "tang-palace",
+			"promptSummary": "Worm’s-eye: huge empty-throne shadow stamped on a wet floor; no man",
+			"slot": {
+				"id": "taizong-throne-shadow",
+				"ratio": 1.778,
+				"tone": "#b45309",
+				"at": "turns a name over",
+				"alt": "Worm’s-eye: a huge empty-throne and mianliu-crown shadow stamped across a wet black floor — Taizong only as absence",
+				"prompt": "Minimal iconic 16:9 poster. Taizong, Second Emperor of Tang. ONE geometric device: worm’s-eye looking down a vast wet black floor; a huge empty-throne shadow with a mianliu-crown silhouette stamped across it like a seal; no man standing in the frame. Silhouette suggestion of the attached portrait only; no readable face. Tang #b45309 as the single warm accent along the shadow’s edge. Striking silky Tang court robe implied by the shadow’s wide sleeves and long hem pooling. Few hues. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+				"refs": ["/ch_taizong.png"]
+			}
+		},
+		{
+			"chapterId": "seventh-invasion",
+			"entryTitle": "Emperor of the West",
+			"afterId": "taizong-court",
+			"promptSummary": "Low-strip: tiny emperor silhouette far on a hard yellow plane",
+			"slot": {
+				"id": "taizong-far-plane",
+				"ratio": 1.778,
+				"tone": "#b45309",
+				"at": "resides in the Palace",
+				"alt": "Low-strip: a hard imperial-yellow plane; Taizong a tiny far silhouette in silky court robes — no readable face",
+				"prompt": "Minimal iconic 16:9 poster. Taizong, Second Emperor of Tang. ONE geometric device: a low horizontal strip — the lower third a hard imperial-yellow #b45309 plane, the rest flat charcoal void; one tiny far silhouette at the far right of the yellow strip. Silhouette suggestion of the attached portrait only; no readable face. Yellow is the single accent and the plane. Striking silky Tang court hanbok silhouette: wide sleeves, mianliu crown as a hard black shape, long hem pooling. Few hues. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+				"refs": ["/ch_taizong.png"]
+			}
+		},
+		{
+			"chapterId": "seventh-invasion",
+			"entryTitle": "Emperor of the West",
+			"afterId": "tang-map",
+			"promptSummary": "Corner crop: doorway slit of darkness with one yellow accent",
+			"slot": {
+				"id": "taizong-door-slit",
+				"ratio": 1.778,
+				"tone": "#7f1d1d",
+				"at": "folding nations under imperial rule",
+				"alt": "Corner crop: a doorway slit of darkness; one yellow accent; Taizong only a crown-and-robe silhouette in the slit",
+				"prompt": "Minimal iconic 16:9 poster. Taizong, Second Emperor of Tang. ONE geometric device: a severe corner crop — most of the frame is a flat crimson-black void; a single vertical doorway slit at the far right corner, darkness inside, one thin yellow #b45309 accent along the jamb. The emperor is only a tiny crown-and-robe silhouette inside the slit. Silhouette suggestion of the attached portrait only; no readable face. Striking silky Tang court hanbok silhouette, volumetric sleeves. Few hues. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+				"refs": ["/ch_taizong.png"]
+			}
+		},
+		{
+			"chapterId": "seventh-invasion",
+			"entryTitle": "Emperor of the West",
+			"afterId": "tang-war-council",
+			"promptSummary": "Broken arc of tiny attendants facing an empty dais",
+			"slot": {
+				"id": "taizong-empty-dais",
+				"ratio": 1.778,
+				"tone": "#b45309",
+				"at": "no one left to tell you no",
+				"alt": "Broken arc of three tiny attendant marks facing an empty yellow dais — the emperor not in the room",
+				"prompt": "Minimal iconic 16:9 poster. Taizong, Second Emperor of Tang, present only as vacancy. ONE geometric device: a broken arc of three tiny dark attendant marks on a wet black floor, all facing a far empty dais that is one hard yellow #b45309 rectangle — no man on it, no throne clutter. Silhouette suggestion of court dress from the attached portrait language only; no readable faces. Striking silky Tang court hanbok silhouettes: gat hats, wide sleeves, long hems. Few hues. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+				"refs": ["/ch_taizong.png"]
+			}
+		},
+		{
+			"chapterId": "chunchu-era",
+			"entryTitle": "Death of the Second Emperor",
+			"afterId": "gaozong_02",
+			"promptSummary": "Disc of wet floor reflecting crown and robe; the man only in the reflection",
+			"slot": {
+				"id": "taizong-floor-mirror",
+				"ratio": 1.778,
+				"tone": "#b45309",
+				"at": "The emperor dies in the Cuiwei Palace",
+				"alt": "A circular wet-floor disc reflects a mianliu crown and long robe — Taizong exists only in the reflection",
+				"prompt": "Minimal iconic 16:9 poster. Taizong, Second Emperor of Tang, dying. ONE geometric device: a circular disc of wet black floor in the center of a charcoal void; the disc reflects a mianliu crown and a long silky court robe — the man is not standing above, only the reflection. Silhouette suggestion of the attached portrait only; no readable face. Tang #b45309 as the single warm accent inside the reflection. Striking silky Tang court hanbok. Few hues. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+				"refs": ["/ch_taizong.png"]
+			}
+		},
+		{
+			"chapterId": "silla-tang-war",
+			"entryTitle": "Strike Harbor",
+			"afterId": "emperor-back",
+			"promptSummary": "Ribbon of a long imperial robe-shadow stretching across an empty floor",
+			"slot": {
+				"id": "emperor-robe-ribbon",
+				"ratio": 1.778,
+				"tone": "#b45309",
+				"at": "The Protectorate headquarters is moved",
+				"alt": "A long imperial robe-shadow as a dark ribbon across a wet floor — Gaozong turning from the east, no readable face",
+				"prompt": "Minimal iconic 16:9 poster. Gaozong, Third Emperor of Tang, withdrawing from the east. ONE geometric device: a long dark ribbon of an imperial robe-shadow stretching left-to-right across a vast wet black floor; the man himself off-frame. Silhouette suggestion of the attached portrait only; no readable face. Tang #b45309 as a single thin gold hem-line along the ribbon. Striking silky Tang court robe silhouette, wide sleeves implied by the shadow’s flare. Few hues. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+				"refs": ["/ch_gaozong.png"]
+			}
+		}
+	]
+}

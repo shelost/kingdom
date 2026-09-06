@@ -192,7 +192,7 @@
 		margin: 0;
 		padding: 0.4rem 0.4rem 0.1rem;
 		border: 1px solid var(--hairline);
-		border-radius: 10px;
+		border-radius: var(--radius);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		opacity: 0.5;
@@ -268,7 +268,7 @@
 		opacity: 1;
 		box-shadow: none;
 		z-index: 1;
-		border-radius: 10px;
+		border-radius: var(--radius);
 	}
 
 	.frame {

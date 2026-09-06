@@ -71,7 +71,7 @@
 		margin: 1.6rem 0;
 		padding: 1rem 1rem 0.85rem;
 		border: 1px solid color-mix(in srgb, var(--gold) 35%, var(--hairline));
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background:
 			radial-gradient(ellipse 90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 65%),
 			color-mix(in srgb, var(--k, var(--gold)) 8%, rgba(255, 255, 255, 0.02));

@@ -576,7 +576,7 @@
 		margin: 0;
 		padding: 0.4rem 0.4rem 0.1rem;
 		border: 1px solid var(--hairline);
-		border-radius: 6px;
+		border-radius: var(--radius);
 		background: var(--glass);
 		opacity: 0;
 		transform: translate3d(0, 1.1rem, 0);
@@ -666,7 +666,7 @@
 	.preview {
 		position: relative;
 		height: 4.6rem;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		background: #181818;
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.06);
@@ -717,7 +717,7 @@
 		width: 100%;
 		flex: 1;
 		min-height: min(72vh, 46rem);
-		border-radius: 4px;
+		border-radius: var(--radius);
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		background: #1e1e1e;
@@ -788,7 +788,7 @@
 
 	.flow :global(.svelte-flow__controls) {
 		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 4px;
+		border-radius: var(--radius);
 		overflow: hidden;
 		box-shadow: none;
 	}
@@ -849,7 +849,7 @@
 		min-height: 0;
 		max-width: min(28rem, 70vw);
 		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 6px;
+		border-radius: var(--radius);
 		background: rgba(30, 30, 30, 0.88);
 		backdrop-filter: blur(12px);
 		pointer-events: none;

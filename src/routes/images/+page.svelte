@@ -8,21 +8,66 @@
 	} from '$lib/storyImages';
 	import { storyImg } from '$lib/img';
 	import NsfwToggle from '$lib/components/NsfwToggle.svelte';
-	import { isNsfwSlot, nsfwAllowed, nsfwUi } from '$lib/nsfwUi.svelte';
+	import { nsfwAllowed, nsfwUi } from '$lib/nsfwUi.svelte';
+	import { openLightbox } from '$lib/imageLightbox.svelte';
+	import { entryId } from '$lib/story';
 
 	const images = flattenStoryImages();
 	const orphans = findOrphanedImages();
-	let visible = $derived(images.filter((im) => nsfwAllowed(im.slot)));
-	let nsfwCount = $derived(images.filter((im) => isNsfwSlot(im.slot)).length);
-	let nsfwHidden = $derived(nsfwCount - visible.filter((im) => isNsfwSlot(im.slot)).length);
+	const nsfwCount = images.filter((im) => im.isNsfw).length;
+
+	let view = $state<GalleryView>('grid');
+	let query = $state('');
+	/** Hover / focus stack: which layer is on top per cue key (`temp` | `final`). */
+	let stackFront = $state<Record<string, 'temp' | 'final'>>({});
+
+	function openCue(im: StoryCueImage) {
+		const src = im.hasStack ? layerSrc(im, frontOf(im)) : im.displayArt;
+		if (!src) return;
+		const items = visible
+			.map((row) => {
+				const rowSrc = row.hasStack ? layerSrc(row, frontOf(row)) : row.displayArt;
+				if (!rowSrc) return null;
+				return {
+					src: rowSrc,
+					alt: row.slot.alt ?? row.title,
+					title: row.title,
+					caption: row.slot.id,
+					nsfw: row.isNsfw,
+					episodeId: entryId(row.chapterId, row.entryTitle)
+				};
+			})
+			.filter((row): row is NonNullable<typeof row> => !!row);
+		const index = items.findIndex((row) => row.caption === im.slot.id);
+		openLightbox(items, index >= 0 ? index : 0);
+	}
+
+	const allowed = $derived(images.filter((im) => nsfwAllowed(im.slot)));
+	const nsfwHidden = $derived(nsfwCount - allowed.filter((im) => im.isNsfw).length);
+	const visible = $derived.by(() => {
+		const q = query.trim().toLowerCase();
+		if (!q) return allowed;
+		return allowed.filter((im) => {
+			if (q === 'nsfw') return im.isNsfw;
+			const hay = [
+				im.slot.id,
+				im.title,
+				im.entryTitle,
+				im.chapterTitle,
+				im.slot.alt ?? '',
+				im.at ?? '',
+				im.cueContext,
+				im.isNsfw ? 'nsfw intimate erotic close' : ''
+			]
+				.join(' ')
+				.toLowerCase();
+			return hay.includes(q);
+		});
+	});
 	const tempCount = $derived(visible.filter((im) => im.isTemp).length);
 	const refsCount = $derived(visible.filter((im) => im.hasGenuineRefs).length);
 	const stackCount = $derived(visible.filter((im) => im.hasStack).length);
 	const seedCopyCount = $derived(visible.filter((im) => im.isSeedCopy).length);
-
-	let view = $state<GalleryView>('grid');
-	/** Hover / focus stack: which layer is on top per cue key (`temp` | `final`). */
-	let stackFront = $state<Record<string, 'temp' | 'final'>>({});
 
 	const VIEWS: { id: GalleryView; label: string; hint: string }[] = [
 		{ id: 'grid', label: 'Grid', hint: 'Browsable gallery in story order' },
@@ -51,6 +96,7 @@
 	function layerSrc(im: StoryCueImage, layer: 'temp' | 'final'): string | undefined {
 		return layer === 'temp' ? im.tempArt : im.finalArt;
 	}
+
 </script>
 
 {#snippet cueThumb(im: StoryCueImage)}
@@ -60,10 +106,10 @@
 			type="button"
 			class="thumb stack"
 			style:--tone={im.slot.tone ?? '#3a3a40'}
-			aria-label={`${im.title}: alternate temp and final art`}
+			aria-label={`Open ${im.title} at original size`}
 			onmouseenter={() => showFinalOnHover(im)}
 			onmouseleave={() => showTempOnLeave(im)}
-			onclick={() => cycleStack(im)}
+			onclick={() => openCue(im)}
 		>
 			<div class="stack-layers" class:final-front={front === 'final'}>
 				<img
@@ -81,20 +127,26 @@
 			</div>
 			<span class="layer-chip" data-kind={front}>{front === 'temp' ? 'temp' : 'final'}</span>
 			<div class="badges">
+				{#if im.isNsfw}
+					<span class="badge nsfw">nsfw</span>
+				{/if}
 				{#if im.isTemp}
 					<span class="badge">temp</span>
 				{/if}
 				{#if im.hasGenuineRefs}
 					<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
 				{/if}
-				{#if isNsfwSlot(im.slot)}
-					<span class="badge nsfw">intimate</span>
-				{/if}
 			</div>
 		</button>
 	{:else}
-		<figure class="thumb" style:--tone={im.slot.tone ?? '#3a3a40'}>
-			{#if im.displayArt}
+		{#if im.displayArt}
+			<button
+				type="button"
+				class="thumb"
+				style:--tone={im.slot.tone ?? '#3a3a40'}
+				aria-label={`Open ${im.title} at original size`}
+				onclick={() => openCue(im)}
+			>
 				<img
 					{...storyImg(im.displayArt, {
 						kind: 'cue',
@@ -102,26 +154,42 @@
 						sizes: '180px'
 					})}
 				/>
-			{:else}
+				<div class="badges">
+					{#if im.isNsfw}
+						<span class="badge nsfw">nsfw</span>
+					{/if}
+					{#if im.isTemp}
+						<span class="badge">temp</span>
+					{/if}
+					{#if im.hasGenuineRefs}
+						<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
+					{/if}
+					{#if im.isSeedCopy}
+						<span class="badge seed">final copy</span>
+					{/if}
+				</div>
+			</button>
+		{:else}
+			<figure class="thumb" style:--tone={im.slot.tone ?? '#3a3a40'}>
 				<div class="ph">
 					<span class="ph-id">{im.slot.id}</span>
 				</div>
-			{/if}
-			<div class="badges">
-				{#if im.isTemp}
-					<span class="badge">temp</span>
-				{/if}
-				{#if im.hasGenuineRefs}
-					<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
-				{/if}
-				{#if im.isSeedCopy}
-					<span class="badge seed">final copy</span>
-				{/if}
-				{#if isNsfwSlot(im.slot)}
-					<span class="badge nsfw">intimate</span>
-				{/if}
-			</div>
-		</figure>
+				<div class="badges">
+					{#if im.isNsfw}
+						<span class="badge nsfw">nsfw</span>
+					{/if}
+					{#if im.isTemp}
+						<span class="badge">temp</span>
+					{/if}
+					{#if im.hasGenuineRefs}
+						<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
+					{/if}
+					{#if im.isSeedCopy}
+						<span class="badge seed">final copy</span>
+					{/if}
+				</div>
+			</figure>
+		{/if}
 	{/if}
 {/snippet}
 
@@ -131,23 +199,24 @@
 
 <main class="page">
 	<header class="mast">
+		<div class="mast-inner">
 		<p class="eyebrow">
 			<a href={resolve('/')}>← Chronicle</a>
 			<span class="dot" aria-hidden="true">·</span>
 			<a href={resolve('/wiki')}>Encyclopedia</a>
 			<span class="dot" aria-hidden="true">·</span>
-			<span>{visible.length} cues</span>
-			{#if nsfwCount}
-				<span class="dot" aria-hidden="true">·</span>
-				{#if nsfwUi.showIntimate}
-					<span>{nsfwCount} intimate</span>
-				{:else}
-					<span>{nsfwHidden} intimate hidden</span>
-				{/if}
-			{/if}
+			<span>{query.trim() ? `${visible.length} / ${images.length}` : images.length} cues</span>
 			{#if tempCount}
 				<span class="dot" aria-hidden="true">·</span>
 				<span>{tempCount} temp</span>
+			{/if}
+			{#if nsfwCount}
+				<span class="dot" aria-hidden="true">·</span>
+				{#if nsfwUi.showIntimate}
+					<span>{nsfwCount} nsfw</span>
+				{:else}
+					<span>{nsfwHidden} nsfw hidden</span>
+				{/if}
 			{/if}
 			{#if refsCount}
 				<span class="dot" aria-hidden="true">·</span>
@@ -169,14 +238,17 @@
 		<div class="mast-row">
 			<div class="titles">
 				<h1>Images</h1>
-				<p class="lede">
-					Every cue in reading order — gallery prefers temp when present (hover to final).
-					The chronicle itself shows finals first. “Refs” marks real temp regenerations, not
-					jpeg copies of the final.
-				</p>
 			</div>
-			<div class="mast-actions">
+			<div class="mast-tools">
 				<NsfwToggle />
+				<label class="search">
+					<span class="sr-only">Search cues</span>
+					<input
+						type="search"
+						placeholder="Search cues — gyebek, yushin, last stand…"
+						bind:value={query}
+					/>
+				</label>
 				<div class="view" role="group" aria-label="Gallery view">
 					{#each VIEWS as v (v.id)}
 						<button
@@ -190,19 +262,32 @@
 						</button>
 					{/each}
 				</div>
+				<button
+					type="button"
+					class="nsfw-filter"
+					class:active={query.trim().toLowerCase() === 'nsfw'}
+					aria-pressed={query.trim().toLowerCase() === 'nsfw'}
+					onclick={() => (query = query.trim().toLowerCase() === 'nsfw' ? '' : 'nsfw')}
+				>
+					NSFW
+				</button>
 			</div>
+		</div>
 		</div>
 	</header>
 
 	{#if view === 'grid'}
 		<section class="grid" aria-label="Cue image grid">
 			{#each visible as im (im.key)}
-				<article class="card" class:temp={im.isTemp} class:stackable={im.hasStack}>
+				<article class="card" class:temp={im.isTemp} class:stackable={im.hasStack} class:nsfw={im.isNsfw}>
 					{@render cueThumb(im)}
 					<div class="meta">
 						<p class="year">{im.entryYear}</p>
 						<p class="entry">{im.title}</p>
 						<p class="cue">{im.slot.id}</p>
+						{#if im.isNsfw}
+							<p class="nsfw-label">NSFW</p>
+						{/if}
 					</div>
 				</article>
 			{/each}
@@ -211,7 +296,7 @@
 		<section class="cues" aria-label="Cue image list">
 			{#each visible as im (im.key)}
 				{@const front = frontOf(im)}
-				<article class="row" class:temp={im.isTemp}>
+				<article class="row" class:temp={im.isTemp} class:nsfw={im.isNsfw}>
 					{@render cueThumb(im)}
 
 					<div class="body">
@@ -221,6 +306,10 @@
 							<span>{im.entryYear}</span>
 							<span class="dot" aria-hidden="true">·</span>
 							<span>beat {im.beatIndex + 1}</span>
+							{#if im.isNsfw}
+								<span class="dot" aria-hidden="true">·</span>
+								<span class="nsfw-kicker">NSFW</span>
+							{/if}
 						</p>
 						<h2>{im.title}</h2>
 						{#if im.entrySubtitle}
@@ -350,19 +439,33 @@
 			<header class="orphan-head">
 				<h2>Orphaned</h2>
 				<p>
-					{orphans.length} file{orphans.length === 1 ? '' : 's'} in <code>static/temp/</code> with no
-					matching cue id in the chronicle.
+					{orphans.length} file{orphans.length === 1 ? '' : 's'} in <code>static/temp/</code> that no
+					chronicle slot, person, or place references.
 				</p>
 			</header>
 			<div class="grid orphan-grid">
 				{#each orphans as o (o.src)}
 					<article class="card orphan">
-						<figure class="thumb" style:--tone="#3a3a40">
+						<button
+							type="button"
+							class="thumb"
+							style:--tone="#3a3a40"
+							aria-label={`Open orphaned ${o.id} at original size`}
+							onclick={() =>
+								openLightbox([
+									{
+										src: o.src,
+										alt: o.id,
+										title: o.id,
+										caption: o.src
+									}
+								])}
+						>
 							<img {...storyImg(o.src, { kind: 'cue', alt: '', sizes: '180px' })} />
 							<div class="badges">
 								<span class="badge orphan-badge">orphan</span>
 							</div>
-						</figure>
+						</button>
 						<div class="meta">
 							<p class="year">{o.kind}</p>
 							<p class="entry">{o.id}</p>
@@ -378,7 +481,7 @@
 <style>
 	.page {
 		min-height: 100dvh;
-		padding: max(1.75rem, env(safe-area-inset-top, 0px) + 1rem)
+		padding: calc(7.25rem + env(safe-area-inset-top, 0px))
 			max(1.5rem, env(safe-area-inset-right, 0px) + 1rem)
 			max(3rem, env(safe-area-inset-bottom, 0px) + 2rem)
 			max(1.5rem, calc(env(safe-area-inset-left, 0px) + 1.85rem));
@@ -390,8 +493,23 @@
 	}
 
 	.mast {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 40;
+		padding: max(0.55rem, env(safe-area-inset-top, 0px) + 0.35rem)
+			max(1.5rem, env(safe-area-inset-right, 0px) + 1rem)
+			0.75rem
+			max(1.5rem, calc(env(safe-area-inset-left, 0px) + 1.85rem));
+		background: color-mix(in srgb, var(--bg) 92%, transparent);
+		backdrop-filter: blur(16px);
+		border-bottom: 1px solid var(--hairline);
+	}
+
+	.mast-inner {
 		max-width: 72rem;
-		margin: 0 auto 1.75rem;
+		margin: 0 auto;
 	}
 
 	.eyebrow {
@@ -399,7 +517,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.45rem;
-		margin: 0 0 0.85rem;
+		margin: 0 0 0.4rem;
 		font-size: 0.72rem;
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
@@ -424,17 +542,9 @@
 	.mast-row {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: 1.25rem 1.5rem;
-	}
-
-	.mast-actions {
-		display: flex;
-		flex-wrap: wrap;
 		align-items: center;
-		gap: 0.65rem;
-		flex-shrink: 0;
+		justify-content: space-between;
+		gap: 0.75rem 1.25rem;
 	}
 
 	.titles {
@@ -445,19 +555,51 @@
 	.mast h1 {
 		margin: 0;
 		font-family: var(--serif);
-		font-size: clamp(1.85rem, 2.4vw, 2.45rem);
+		font-size: clamp(1.35rem, 1.8vw, 1.75rem);
 		font-weight: 600;
 		letter-spacing: var(--tracking-display);
 		line-height: 1.1;
 		color: #fffdf8;
 	}
 
-	.lede {
-		margin: 0.7rem 0 0;
-		max-width: 36rem;
-		font-size: 0.95rem;
-		line-height: 1.45;
-		color: var(--fg-dim);
+	.mast-tools {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.65rem 0.85rem;
+		flex-shrink: 0;
+	}
+
+	.search input {
+		width: min(18rem, 70vw);
+		padding: 0.38rem 0.85rem;
+		border: 1px solid var(--hairline);
+		border-radius: var(--radius-pill);
+		background: var(--glass);
+		color: #fffdf8;
+		font: inherit;
+		font-size: 0.82rem;
+	}
+
+	.search input::placeholder {
+		color: var(--fg-faint);
+	}
+
+	.search input:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
 	}
 
 	.view {
@@ -465,7 +607,7 @@
 		gap: 1px;
 		padding: 2px;
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		flex-shrink: 0;
@@ -478,7 +620,7 @@
 		color: var(--fg-faint);
 		background: transparent;
 		border: none;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.28rem 0.85rem;
 		cursor: pointer;
 		transition:
@@ -493,6 +635,26 @@
 	.view button.active {
 		color: #14140f;
 		background: var(--gold);
+	}
+
+	.nsfw-filter {
+		font: inherit;
+		font-size: 0.72rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #fb7185;
+		background: transparent;
+		border: 1px solid color-mix(in srgb, #9f1239 70%, var(--hairline));
+		border-radius: var(--radius-pill);
+		padding: 0.28rem 0.85rem;
+		cursor: pointer;
+	}
+
+	.nsfw-filter:hover,
+	.nsfw-filter.active {
+		color: #fff7f8;
+		background: #9f1239;
+		border-color: #9f1239;
 	}
 
 	.grid {
@@ -517,7 +679,7 @@
 		padding: 0;
 		aspect-ratio: 3 / 2;
 		overflow: hidden;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		background: color-mix(in srgb, var(--tone) 55%, #14141a);
 		font: inherit;
@@ -525,12 +687,15 @@
 		text-align: left;
 	}
 
+	button.thumb {
+		cursor: zoom-in;
+	}
+
 	button.thumb.stack {
-		cursor: pointer;
 		overflow: visible;
 	}
 
-	button.thumb.stack:focus-visible {
+	button.thumb:focus-visible {
 		outline: 2px solid var(--gold);
 		outline-offset: 2px;
 	}
@@ -551,7 +716,7 @@
 	.stack-layers .layer {
 		position: absolute;
 		inset: 0;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		transition:
 			transform 280ms var(--ease),
@@ -594,7 +759,7 @@
 		font-size: 0.58rem;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		color: #14140f;
 		background: #fffdf8;
 	}
@@ -638,7 +803,7 @@
 		text-transform: uppercase;
 		color: #14140f;
 		background: var(--gold);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 	}
 
 	.badge.refs {
@@ -655,14 +820,14 @@
 		color: #fffdf8;
 	}
 
+	.badge.nsfw {
+		background: #9f1239;
+		color: #fff7f8;
+	}
+
 	.badge.seed {
 		background: color-mix(in srgb, var(--fg-faint) 40%, #fffdf8);
 		color: #2a2a28;
-	}
-
-	.badge.nsfw {
-		background: color-mix(in srgb, #c45c6a 75%, #fffdf8);
-		color: #2a1014;
 	}
 
 	.meta {
@@ -698,6 +863,24 @@
 		line-clamp: 2;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
+	}
+
+	.nsfw-label {
+		margin: 0.15rem 0 0;
+		width: fit-content;
+		padding: 0.08rem 0.42rem;
+		font-size: 0.58rem;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #fff7f8;
+		background: #9f1239;
+		border-radius: var(--radius-pill);
+	}
+
+	.nsfw-kicker {
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: #fb7185;
 	}
 
 	.cues {
@@ -811,7 +994,7 @@
 		color: rgba(255, 253, 248, 0.82);
 		background: color-mix(in srgb, var(--panel) 70%, transparent);
 		border: 1px solid var(--hairline);
-		border-radius: 8px;
+		border-radius: var(--radius);
 	}
 
 	.temp-panel {
@@ -820,7 +1003,7 @@
 		gap: 0.85rem;
 		padding: 0.85rem 0.9rem;
 		border: 1px solid rgba(216, 178, 106, 0.22);
-		border-radius: 10px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--gold) 6%, var(--panel-sunken));
 	}
 
@@ -839,7 +1022,7 @@
 		font-size: 0.58rem;
 		letter-spacing: 0.08em;
 		padding: 0.06rem 0.35rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		color: #0f1720;
 		background: color-mix(in srgb, #7eb6ff 70%, #fffdf8);
 	}
@@ -878,7 +1061,7 @@
 		width: 5.5rem;
 		height: 3.4rem;
 		object-fit: cover;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		opacity: 0.7;
 		transition:
@@ -918,7 +1101,7 @@
 		height: 4.5rem;
 		object-fit: cover;
 		object-position: center top;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		background: var(--panel-sunken);
 	}

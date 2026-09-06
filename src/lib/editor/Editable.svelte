@@ -64,7 +64,7 @@
 		white-space: pre-wrap;
 		word-break: break-word;
 		min-height: 1.4em;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		transition: background 120ms ease;
 	}
 

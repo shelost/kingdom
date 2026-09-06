@@ -4,14 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<meta name="text-scale" content="scale" />
-		<!-- Apply immersion chrome + theme before paint so first visits don't flash. -->
+		<!-- Theme before paint. Mode is script from first paint — no stage classes. -->
 		<script>
-			try {
-				var mode = localStorage.getItem('kingdom:mode');
-				if (mode !== 'script' && mode !== 'chronicle') {
-					document.documentElement.classList.add('is-immersion');
-				}
-			} catch (_) {}
 			try {
 				var theme = localStorage.getItem('kingdom:theme');
 				if (theme !== 'light' && theme !== 'dark') {

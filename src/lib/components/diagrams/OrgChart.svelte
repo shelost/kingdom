@@ -196,7 +196,7 @@
 		max-width: 11.5rem;
 		padding: 0.4rem 0.45rem;
 		border: 2.5px solid color-mix(in oklab, var(--nk, #e8c36a) 28%, #0c0a08);
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background: var(--nk, #e8c36a);
 		text-align: left;
 		font: inherit;
@@ -251,7 +251,7 @@
 		min-width: 0;
 		flex: 1;
 		background: #0c0c10;
-		border-radius: 5px;
+		border-radius: var(--radius);
 		padding: 0.22rem 0.4rem;
 	}
 

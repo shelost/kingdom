@@ -551,7 +551,7 @@
 		backdrop-filter: blur(18px) saturate(150%);
 		border: 1px solid var(--hairline);
 		border-top: 2px solid var(--k);
-		border-radius: 12px;
+		border-radius: var(--radius);
 		box-shadow: 0 20px 55px rgba(0, 0, 0, 0.6);
 		padding: 0.8rem 0.9rem;
 		pointer-events: none;
@@ -583,7 +583,7 @@
 		width: 2rem;
 		height: 2rem;
 		overflow: hidden;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		font-family: var(--serif);
 		font-weight: 700;
 		color: #fff;
@@ -701,7 +701,7 @@
 		background: var(--panel);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		border-top: 2px solid var(--k);
-		border-radius: 16px;
+		border-radius: var(--radius);
 		box-shadow:
 			0 28px 70px rgba(0, 0, 0, 0.55),
 			0 8px 24px rgba(0, 0, 0, 0.35);
@@ -734,7 +734,7 @@
 		color: var(--fg-dim);
 		background: transparent;
 		border: 1px solid var(--hairline);
-		border-radius: 7px;
+		border-radius: var(--radius);
 		cursor: pointer;
 		transition:
 			background 0.2s var(--ease),
@@ -758,7 +758,7 @@
 		color: #fffdf8;
 		border: 1px solid color-mix(in srgb, var(--chip, var(--k)) 45%, transparent);
 		background: var(--chip, var(--k));
-		border-radius: 4px;
+		border-radius: var(--radius);
 		padding: 0.05rem 0.4rem;
 		text-shadow: 0 0 2px rgba(0, 0, 0, 0.65);
 	}
@@ -829,7 +829,7 @@
 		display: inline-block;
 		margin-right: 0.2rem;
 		padding: 0.08rem 0.38rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-size: 0.58rem;
 		font-weight: 600;
 		letter-spacing: 0.04em;
@@ -907,7 +907,7 @@
 		text-transform: uppercase;
 		color: var(--gold);
 		border: 1px solid rgba(216, 178, 106, 0.4);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.15rem 0.55rem;
 	}
 
@@ -919,7 +919,7 @@
 		text-decoration: none;
 		color: var(--fg-faint);
 		padding: 0.15rem 0.45rem;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		transition:
 			color 0.2s var(--ease),
 			background 0.2s var(--ease);
@@ -1035,7 +1035,7 @@
 
 	.peek-photo {
 		margin: 0 0 1.1rem;
-		border-radius: 10px;
+		border-radius: var(--radius);
 		overflow: hidden;
 		border: 1px solid var(--hairline);
 	}
@@ -1058,7 +1058,7 @@
 	.peek-avatar {
 		width: 3.4rem;
 		height: 3.4rem;
-		border-radius: 12px;
+		border-radius: var(--radius);
 		font-size: 1.5rem;
 		margin-bottom: 0.9rem;
 	}
@@ -1160,7 +1160,7 @@
 		gap: 0.35rem;
 		font-size: 0.72rem;
 		padding: 0.1rem 0.5rem 0.1rem 0.28rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		color: color-mix(in srgb, var(--k) 70%, var(--fg-strong));
 		background: color-mix(in srgb, var(--k) 22%, transparent);
 		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
@@ -1201,7 +1201,7 @@
 	.sobriquets li {
 		padding: 0.15rem 0.5rem;
 		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-size: 0.72rem;
 		font-style: italic;
 		color: var(--fg-dim);
@@ -1289,7 +1289,7 @@
 		font-size: 0.68rem;
 		color: var(--fg-faint);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0 0.4rem;
 		white-space: nowrap;
 	}
@@ -1306,7 +1306,7 @@
 			bottom: max(0.35rem, env(safe-area-inset-bottom, 0px));
 			left: max(0.35rem, env(safe-area-inset-left, 0px));
 			width: auto;
-			border-radius: 14px;
+			border-radius: var(--radius);
 		}
 
 		.close {

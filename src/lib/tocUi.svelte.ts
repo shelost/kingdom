@@ -3,7 +3,7 @@
  * Toc.svelte binds into this so chrome and reading column stay in sync.
  */
 export const tocUi = $state({
-	open: false,
+	open: true,
 	/** True while a TOC / hash jump is in flight — keeps chrome from treating a remount as “left the script”. */
 	jumping: false
 });

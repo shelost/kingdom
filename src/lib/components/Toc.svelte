@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
 	import { SvelteSet } from 'svelte/reactivity';
 	import { chapters, entryId, partId, scenesOf } from '$lib/story';
 	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump } from '$lib/tocUi.svelte';
@@ -7,15 +7,16 @@
 	import {
 		reading,
 		episodes,
-		goToEpisodeById,
-		syncEpisodeFromHash,
 		canonicalHashId,
 		findStoryHeading,
-		scrollToStoryHeading
+		resolveEpisodeIndex,
+		scrollToStoryHeading,
+		storyRoot,
+		stripStoryHash
 	} from '$lib/reading.svelte';
 
 	/** Bound by the story layout so the reading shell + plate shift together. */
-	let { open = $bindable(false) } = $props();
+	let { open = $bindable(true) } = $props();
 
 	/** Scroll-driven markers (full scope); episodes mode overlays via derived. */
 	let scrollActive = $state(chapters[0]?.id);
@@ -104,12 +105,14 @@
 	});
 
 	onMount(() => {
-		if (reading.mode === 'script') open = true;
-
 		const io = new IntersectionObserver(
 			(entries) => {
 				if (reading.viewScope === 'episodes') return;
-				for (const e of entries) if (e.isIntersecting) scrollActive = e.target.id;
+				for (const e of entries) {
+					if (!e.isIntersecting) continue;
+					const id = (e.target as HTMLElement).dataset.storyId;
+					if (id) scrollActive = id;
+				}
 			},
 			// a chapter is "active" while it crosses the upper third of the screen
 			{ rootMargin: '-15% 0px -70% 0px' }
@@ -119,7 +122,11 @@
 		const ioEntry = new IntersectionObserver(
 			(entries) => {
 				if (reading.viewScope === 'episodes') return;
-				for (const e of entries) if (e.isIntersecting) scrollActiveEntry = e.target.id;
+				for (const e of entries) {
+					if (!e.isIntersecting) continue;
+					const id = (e.target as HTMLElement).dataset.storyId;
+					if (id) scrollActiveEntry = id;
+				}
 			},
 			{ rootMargin: '-20% 0px -70% 0px' }
 		);
@@ -127,13 +134,17 @@
 		refreshObservers = () => {
 			io.disconnect();
 			ioEntry.disconnect();
+			const script = storyRoot();
+			if (!script) return;
 			for (const ch of chapters) {
-				const el = document.getElementById(ch.id);
+				const el = script.querySelector(`[data-story-id="${CSS.escape(ch.id)}"]`);
 				if (el) io.observe(el);
 			}
 			for (const ch of chapters)
 				for (const en of ch.entries) {
-					const el = document.getElementById(entryId(ch.id, en.title));
+					const el = script.querySelector(
+						`[data-story-id="${CSS.escape(entryId(ch.id, en.title))}"]`
+					);
 					if (el) ioEntry.observe(el);
 				}
 		};
@@ -156,24 +167,6 @@
 		};
 		window.addEventListener('keydown', onKey);
 
-		// Land on a hash target after load (navbar jump writes these).
-		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
-		if (hash) {
-			if (reading.viewScope === 'episodes') {
-				syncEpisodeFromHash({ scroll: true });
-			} else {
-				const targetId = canonicalHashId(hash);
-				const target = findStoryHeading(targetId);
-				if (target) {
-					requestAnimationFrame(() => {
-						scrollToStoryHeading(target, 'auto');
-						const entry = target.closest<HTMLElement>('article.entry') ?? target;
-						markActive(entry, entry.id || targetId);
-					});
-				}
-			}
-		}
-
 		return () => {
 			io.disconnect();
 			ioEntry.disconnect();
@@ -185,7 +178,7 @@
 		};
 	});
 
-	/** Re-bind observers when returning to full scroll (entries remount). */
+	/** Re-bind observers when returning to full scroll. */
 	$effect(() => {
 		if (reading.viewScope !== 'full') return;
 		const id = requestAnimationFrame(() => refreshObservers?.());
@@ -197,8 +190,8 @@
 			? el
 			: el.closest<HTMLElement>('article.entry');
 		if (entry) {
-			scrollActiveEntry = entry.id;
-			scrollActive = entry.closest('.chapter')?.id ?? scrollActive;
+			scrollActiveEntry = entry.dataset.storyId ?? '';
+			scrollActive = entry.closest<HTMLElement>('.chapter')?.dataset.storyId ?? scrollActive;
 		} else {
 			scrollActive = id;
 			scrollActiveEntry = '';
@@ -210,7 +203,7 @@
 	 * title's document Y and scrolls the reading scroller — the TOC stays open
 	 * (desktop push + mobile overlay). Overlay close is the toggle, or Escape.
 	 */
-	async function jump(id: string) {
+	function jump(id: string) {
 		const gen = beginTocJump();
 		try {
 			const reduce =
@@ -218,23 +211,16 @@
 				matchMedia('(prefers-reduced-motion: reduce)').matches;
 			const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
 			const dest = canonicalHashId(id);
-
-			if (reading.viewScope === 'episodes') {
-				const ok = goToEpisodeById(dest, { hash: true, scroll: false });
-				if (!ok) return;
-				await tick();
-			}
+			stripStoryHash();
+			const idx = resolveEpisodeIndex(dest);
+			if (idx >= 0) reading.episodeIndex = idx;
 
 			const go = () => {
 				const el = findStoryHeading(dest);
 				if (!el) return;
 				markActive(el, dest);
 				scrollToStoryHeading(el, behavior);
-				try {
-					history.replaceState(null, '', `#${encodeURIComponent(dest)}`);
-				} catch {
-					/* ignore */
-				}
+				stripStoryHash();
 			};
 
 			requestAnimationFrame(() => requestAnimationFrame(go));
@@ -402,7 +388,7 @@
 		color: color-mix(in srgb, var(--fg-strong) 92%, transparent);
 		background: transparent;
 		border: none;
-		border-radius: 10px;
+		border-radius: var(--radius);
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
 		text-shadow:
@@ -516,7 +502,7 @@
 		text-align: left;
 		background: transparent;
 		border: none;
-		border-radius: 7px;
+		border-radius: var(--radius);
 		padding: 0.42rem 0.45rem;
 		cursor: pointer;
 		color: color-mix(in srgb, var(--fg) 80%, transparent);
@@ -633,7 +619,7 @@
 		text-align: left;
 		background: transparent;
 		border: none;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		padding: 0.22rem 0.4rem;
 		cursor: pointer;
 		color: color-mix(in srgb, var(--fg) 55%, transparent);
@@ -681,7 +667,7 @@
 		text-align: left;
 		background: transparent;
 		border: none;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		padding: 0.16rem 0.4rem;
 		cursor: pointer;
 		color: color-mix(in srgb, var(--fg) 42%, transparent);

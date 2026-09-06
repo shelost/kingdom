@@ -8,6 +8,7 @@
  */
 
 import { browser } from '$app/environment';
+import { replaceState } from '$app/navigation';
 import { chapters, chapterIdFromPartId, entryId } from '$lib/story';
 import { scriptUi } from '$lib/scriptUi.svelte';
 import { tocUi } from '$lib/tocUi.svelte';
@@ -86,8 +87,8 @@ export const reading = $state({
 	linesJa: [] as string[],
 	linesJaLatn: [] as string[],
 	lang: 'both' as Lang,
-	/** Immersion by default; loadMode() restores a saved script preference. */
-	mode: 'immersion' as ReadMode,
+	/** Script from first paint. Switching mid-session still persists. */
+	mode: 'script' as ReadMode,
 	/** Continuous scroll by default; loadViewScope() restores episodes if saved. */
 	viewScope: 'full' as ViewScope,
 	/** Flat index into `episodes` when viewScope === 'episodes'. */
@@ -135,13 +136,6 @@ function applyModeClasses(m: ReadMode) {
 	root.toggle('is-cinema', m === 'cinema');
 	root.toggle('is-stage', m !== 'script');
 	if (m !== 'cinema') root.remove('is-cinema-peek');
-}
-
-function normalizeMode(v: string | null): ReadMode | null {
-	if (v === 'script' || v === 'immersion' || v === 'cinema') return v;
-	if (v === 'chronicle') return 'script';
-	if (v === 'immersive') return 'immersion';
-	return null;
 }
 
 /** Modes that put the live line on a stage — immersion's plate, cinema's strip. */
@@ -207,16 +201,6 @@ export function loadLang() {
 }
 
 export function loadMode() {
-	try {
-		const raw = localStorage.getItem('kingdom:mode');
-		const next = normalizeMode(raw);
-		if (next) {
-			reading.mode = next;
-			if (raw !== next) persistMode(next);
-		}
-	} catch {
-		/* ignore */
-	}
 	applyModeClasses(reading.mode);
 }
 
@@ -227,21 +211,14 @@ export function loadViewScope() {
 	} catch {
 		/* ignore */
 	}
-	if (reading.viewScope === 'episodes') syncEpisodeFromHash({ scroll: false });
 }
 
 /**
- * Capture which entry the reader is on (hash → reading band → keep index).
+ * Capture which entry the reader is on from the reading-band Y, not the URL.
  * Used when switching into episodes mode mid-story.
  */
 function captureCurrentEpisode() {
 	if (typeof document === 'undefined') return;
-	const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
-	const fromHash = hash ? resolveEpisodeIndex(hash) : -1;
-	if (fromHash >= 0) {
-		reading.episodeIndex = fromHash;
-		return;
-	}
 
 	const top = window.innerHeight * BAND_TOP;
 	const bottom = window.innerHeight * BAND_BOTTOM;
@@ -257,8 +234,9 @@ function captureCurrentEpisode() {
 			best = el;
 		}
 	}
-	if (best?.id) {
-		const idx = resolveEpisodeIndex(best.id);
+	const storyId = best?.dataset.storyId;
+	if (storyId) {
+		const idx = resolveEpisodeIndex(storyId);
 		if (idx >= 0) reading.episodeIndex = idx;
 	}
 }
@@ -270,8 +248,7 @@ export function setViewScope(s: ViewScope) {
 
 	if (s === 'episodes') {
 		captureCurrentEpisode();
-		const ep = episodes[reading.episodeIndex];
-		if (ep) replaceHash(ep.id);
+		stripStoryHash();
 	}
 
 	const after = () => {
@@ -396,28 +373,39 @@ export function storyTitleElement(el: HTMLElement): HTMLElement {
 	return firstPainted(el, ['h1', 'h2']) ?? el;
 }
 
+/** The chronicle document — class `.script`, never `id="script"` (that was a `:target`). */
+export function storyRoot(): HTMLElement | null {
+	if (typeof document === 'undefined') return null;
+	return document.querySelector<HTMLElement>('[data-story-root]');
+}
+
 /**
- * Locate a part / chapter / episode / scene node. Ids are a lookup key only —
+ * Story nodes use `data-story-id`, never `id="…"`. Matching `#id` let the
+ * browser `:target` / hash-restore the reader after they had already scrolled.
+ */
+export function storyElement(id: string): HTMLElement | null {
+	if (!id || typeof document === 'undefined') return null;
+	const script = storyRoot();
+	const root: ParentNode = script ?? document;
+	try {
+		const el = root.querySelector<HTMLElement>(`[data-story-id="${CSS.escape(id)}"]`);
+		if (el) return el;
+	} catch {
+		/* invalid selector */
+	}
+	try {
+		return root.querySelector<HTMLElement>(`[data-scene="${CSS.escape(id)}"]`);
+	} catch {
+		return null;
+	}
+}
+
+/**
+ * Locate a part / chapter / episode / scene node. Lookup is `data-story-id` —
  * scrolling uses measured Y via `scrollToStoryHeading`.
  */
 export function findStoryHeading(id: string): HTMLElement | null {
-	const dest = canonicalHashId(id);
-	const script = document.getElementById('script');
-	const root: ParentNode = script ?? document;
-	let el: HTMLElement | null = null;
-	try {
-		el = root.querySelector(`#${CSS.escape(dest)}`);
-	} catch {
-		el = null;
-	}
-	if (!el) el = document.getElementById(dest);
-	if (!el && script) {
-		try {
-			el = script.querySelector(`[data-scene="${CSS.escape(dest)}"]`);
-		} catch {
-			el = null;
-		}
-	}
+	const el = storyElement(canonicalHashId(id));
 	if (!el) return null;
 	return storyTitleElement(el);
 }
@@ -428,7 +416,7 @@ export function readingScroller(): Window | HTMLElement {
 	const candidates = [
 		document.querySelector<HTMLElement>('.reading'),
 		document.querySelector<HTMLElement>('.reading-clip'),
-		document.getElementById('script')
+		storyRoot()
 	];
 	for (const el of candidates) {
 		if (!el) continue;
@@ -527,40 +515,104 @@ export function scrollToStoryHeading(el: HTMLElement, behavior: ScrollBehavior =
 		scrollScrollerTo(scroller, scrollerScrollTop(scroller) + drift, 'auto');
 	};
 
+	/* Image-load / settle verify used to yank the reader back after they
+	   already kept scrolling — that was the section loop. First wheel /
+	   touch / key cancels this jump's follow-up scrolls. */
+	const release = () => {
+		if (gen === storyJumpGen) storyJumpGen += 1;
+	};
+	window.addEventListener('wheel', release, { once: true, passive: true });
+	window.addEventListener('touchstart', release, { once: true, passive: true });
+	window.addEventListener('keydown', release, { once: true });
+
 	apply(behavior);
 	requestAnimationFrame(() => {
+		if (gen !== storyJumpGen) return;
 		if (behavior === 'smooth') apply('smooth');
 		else verify();
 	});
-
-	const later = [320, 700, 1100];
-	for (const ms of later) setTimeout(verify, ms);
-
-	const host = el.closest('article.entry') ?? el;
-	for (const img of host.querySelectorAll('img')) {
-		if (img.complete) continue;
-		img.addEventListener('load', verify, { once: true });
-		img.addEventListener('error', verify, { once: true });
-	}
 }
 
-function replaceHash(id: string) {
+/** Reading position is Y-only. Never write `#id` — it trapped scroll in one entry. */
+function clearHash() {
 	try {
-		history.replaceState(null, '', `#${encodeURIComponent(id)}`);
+		if (typeof location === 'undefined' || !location.hash) return;
+		const next = `${location.pathname}${location.search}`;
+		try {
+			replaceState(next, {});
+		} catch {
+			history.replaceState(null, '', next);
+		}
 	} catch {
 		/* ignore */
 	}
 }
 
-export function syncEpisodeFromHash(opts: { scroll?: boolean } = {}) {
-	if (typeof location === 'undefined') return false;
+/**
+ * Strip `#id` after a Y-land. No delayed timers — those used to fire later
+ * and delete a fresh leftover hash before it could land.
+ */
+export function stripStoryHash() {
+	clearHash();
+	if (typeof requestAnimationFrame === 'function') requestAnimationFrame(clearHash);
+}
+
+const PENDING_JUMP_KEY = 'kingdom:story-jump';
+
+/** Wiki / lightbox: land on an episode by Y after navigating home — never `#id`. */
+export function requestStoryJump(id: string) {
+	if (!id || typeof sessionStorage === 'undefined') return;
+	try {
+		sessionStorage.setItem(PENDING_JUMP_KEY, id);
+	} catch {
+		/* private mode */
+	}
+}
+
+/** Consume a pending Y-jump from another route. True when a jump is queued. */
+export function consumePendingStoryJump(): boolean {
+	if (typeof sessionStorage === 'undefined') return false;
+	let id = '';
+	try {
+		id = sessionStorage.getItem(PENDING_JUMP_KEY) ?? '';
+		if (id) sessionStorage.removeItem(PENDING_JUMP_KEY);
+	} catch {
+		return false;
+	}
+	if (!id) return false;
+	const dest = id;
+	requestAnimationFrame(() => {
+		requestAnimationFrame(() => {
+			const el = findStoryHeading(canonicalHashId(dest));
+			if (el) scrollToStoryHeading(el, 'auto');
+			stripStoryHash();
+		});
+	});
+	return true;
+}
+
+/** Hash last landed on — same restored `:target` is stripped without scrolling again. */
+let leftoverHashConsumed = '';
+
+/**
+ * Land once on a leftover `#id` (wiki / old bookmark), then strip so `:target`
+ * cannot pin the reader. Safe to call from the story layout before the script
+ * page finishes hydrating — headings exist in SSR HTML.
+ */
+export function consumeLeftoverStoryHash() {
+	if (typeof location === 'undefined') return;
 	const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
-	if (!hash) return false;
-	return goToEpisodeById(hash, { hash: false, scroll: opts.scroll ?? false, closeToc: false });
+	if (!hash) return;
+	if (hash !== leftoverHashConsumed) {
+		leftoverHashConsumed = hash;
+		const el = findStoryHeading(canonicalHashId(hash));
+		if (el) scrollToStoryHeading(el, 'auto');
+	}
+	stripStoryHash();
 }
 
 /**
- * Jump to an episode by flat index. Updates hash and scrolls by measured Y.
+ * Jump to an episode by flat index. Scrolls by measured Y only — never writes `#id`.
  * Does not close the TOC unless `closeToc: true` (hamburger / Escape still do).
  * `destId` scrolls to a scene header (`episodeId-scene-slug`) when provided.
  */
@@ -575,7 +627,7 @@ export function goToEpisode(
 
 	const ep = episodes[next];
 	const destId = opts.destId ?? ep.id;
-	if (opts.hash !== false) replaceHash(destId);
+	stripStoryHash();
 	if (opts.closeToc === true) tocUi.open = false;
 
 	const scroll = opts.scroll !== false;
@@ -584,7 +636,7 @@ export function goToEpisode(
 			const el = findStoryHeading(destId) ?? findStoryHeading(ep.id);
 			if (el) scrollToStoryHeading(el, 'auto');
 			else {
-				const script = document.getElementById('script');
+				const script = storyRoot();
 				if (script) scrollToStoryHeading(script, 'auto');
 			}
 		}
@@ -624,12 +676,12 @@ let lastEntry: string | null = null;
 
 /**
  * The reading document — the band watcher, the speaking marker and the episode
- * capture only ever look inside `#script`. The cinema stage mounts a second
+ * capture only ever look inside `[data-story-root]`. The cinema stage mounts a second
  * copy of the same blocks in its script rail (fixed chrome, its own scroll),
  * which must never be mistaken for the page being read.
  */
 function scriptRoot(): ParentNode {
-	return document.getElementById('script') ?? document;
+	return storyRoot() ?? document;
 }
 
 /** A clicked dialogue, held as the live one until the glide to it has settled. */
@@ -719,7 +771,7 @@ export function activateDialogue(node: HTMLElement) {
 	pinned = el;
 	pinnedUntil = Date.now() + PIN_MS;
 
-	lastEntry = el.closest<HTMLElement>('article.entry')?.id ?? lastEntry;
+	lastEntry = el.closest<HTMLElement>('article.entry')?.dataset.storyId ?? lastEntry;
 	applyUtterance(el, el.dataset.speaker || null);
 	markSpeaking(el);
 
@@ -784,7 +836,7 @@ export function watchReading() {
 		// through narration — it only clears when the entry itself changes.
 		const dialogue = pin() ?? nearestInBand<HTMLElement>('[data-speaker]');
 		const entry = nearestInBand<HTMLElement>('article.entry');
-		const entryKey = entry?.id ?? null;
+		const entryKey = entry?.dataset.storyId ?? null;
 		const nextSpeaker = dialogue?.dataset.speaker || null;
 		const yearRaw = entry?.dataset.year;
 		const year =
@@ -818,13 +870,19 @@ export function watchReading() {
 			}
 			return best;
 		})();
-		const sceneKey = sceneEl?.id || null;
+		const sceneKey = sceneEl?.dataset.storyId || sceneEl?.dataset.scene || null;
 
 		if (reading.flash !== flash) reading.flash = flash;
 		if (reading.music !== music) reading.music = music;
 		if (reading.place !== place) reading.place = place;
 		if (reading.year !== year) reading.year = year;
 		if (reading.entryId !== entryKey) reading.entryId = entryKey;
+		/* Episodes HUD tracks the band — the full document stays mounted, so
+		   scrolling past an entry advances without remounting. */
+		if (entryKey) {
+			const idx = resolveEpisodeIndex(entryKey);
+			if (idx >= 0 && reading.episodeIndex !== idx) reading.episodeIndex = idx;
+		}
 		if (entryKey !== lastEntry) {
 			if (reading.sceneId !== sceneKey) reading.sceneId = sceneKey;
 		} else if (sceneKey && reading.sceneId !== sceneKey) {
@@ -877,19 +935,10 @@ export function watchReading() {
 	window.addEventListener('wheel', releaseDialogue, { passive: true });
 	window.addEventListener('touchstart', releaseDialogue, { passive: true });
 	window.addEventListener('keydown', releaseDialogue);
-	/* TOC clicks call goToEpisodeById (replaceState, no hashchange). Browser
-	   back/forward and hash-only navigations still need to swap the episode. */
-	const onHash = () => {
-		if (reading.viewScope === 'episodes') {
-			syncEpisodeFromHash({ scroll: true });
-			return;
-		}
-		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
-		if (!hash) return;
-		const el = findStoryHeading(canonicalHashId(hash));
-		if (el) scrollToStoryHeading(el, 'auto');
-	};
-	window.addEventListener('hashchange', onHash);
+	/* Leftover `#id` lands once here (and from the story layout). No hashchange
+	   listener — replaceState(strip) used to fire hashchange and snap back. */
+	if (location.hash) consumeLeftoverStoryHash();
+	window.addEventListener('load', stripStoryHash);
 
 	return () => {
 		clearTimeout(first);
@@ -900,7 +949,7 @@ export function watchReading() {
 		window.removeEventListener('wheel', releaseDialogue);
 		window.removeEventListener('touchstart', releaseDialogue);
 		window.removeEventListener('keydown', releaseDialogue);
-		window.removeEventListener('hashchange', onHash);
+		window.removeEventListener('load', stripStoryHash);
 		document.documentElement.classList.remove('is-flash');
 		document.documentElement.classList.remove('is-immersion');
 		document.documentElement.classList.remove('is-cinema');
@@ -916,20 +965,15 @@ export function isKorean(s: string) {
 	return KO_RE.test(s);
 }
 
-/* Hydrate mode / view from storage before any story chrome mounts, so Toc and
-   the page see saved preferences on first paint. */
+/* Hydrate view from storage before story chrome mounts. Mode is always
+   script on load — persist that so leftover stage prefs cannot flip later. */
 if (browser) {
 	try {
-		const mode = normalizeMode(localStorage.getItem('kingdom:mode'));
-		if (mode) reading.mode = mode;
+		persistMode('script');
+		applyModeClasses('script');
 		const view = localStorage.getItem('kingdom:view');
 		if (view === 'full' || view === 'episodes') reading.viewScope = view;
 	} catch {
 		/* private mode */
-	}
-	if (reading.viewScope === 'episodes') {
-		const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
-		const target = hash ? resolveStoryTarget(hash) : null;
-		if (target) reading.episodeIndex = target.episodeIndex;
 	}
 }

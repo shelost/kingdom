@@ -3,16 +3,20 @@
 :root {
 	color-scheme: dark;
 
-	/* Reading surface — a warm charcoal ink, not a void. Flashbacks and
-	   immersive mode step deeper, but nothing here is ever pure black: on a
-	   phone in a lit room true black reads as a hole, not as a page. */
-	--bg: #26262c;
-	--bg-raised: #2e2e36;
+	/* Corners: one small radius for cards / thumbs / inputs / panels.
+	   Pills and chips stay fully round. Portrait circles stay 50%. */
+	--radius: 4px;
+	--radius-pill: 999px;
+
+	/* Reading surface — near-black charcoal, not OLED void. Flashbacks and
+	   immersive mode step deeper; a hair of warmth keeps the page a page. */
+	--bg: #101014;
+	--bg-raised: #18181e;
 	--fg: #f3f1ec;
-	--fg-dim: #b0aea8;
-	--fg-faint: #7e7c78;
+	--fg-dim: #b4b2ac;
+	--fg-faint: #8a8882;
 	--fg-strong: #fbfaf8;
-	--hairline: rgba(255, 255, 255, 0.09);
+	--hairline: rgba(255, 255, 255, 0.1);
 	--gold: #d8b26a;
 	/* text sitting on a solid gold fill (active pills, chips) */
 	--on-gold: #14140f;
@@ -21,22 +25,22 @@
 	--rail-blue: #3b6fd4;
 
 	/* Chrome surfaces, a step above the page so a card reads as a card */
-	--panel: #2c2c34;
-	--panel-sunken: #222228;
-	--glass: rgba(48, 48, 56, 0.82);
-	--plate-ink: #1e1b24;
+	--panel: #16161c;
+	--panel-sunken: #0c0c10;
+	--glass: rgba(18, 18, 24, 0.88);
+	--plate-ink: #141218;
 	/* Dialogue plate type — cream on charcoal; light theme remaps to ink. */
 	--plate-fg: #f4efe4;
 	--plate-fg-strong: #fff8e8;
 	--plate-fg-quiet: color-mix(in srgb, #f4efe4 72%, #8a8478);
 	--plate-fg-faint: color-mix(in srgb, #f4efe4 55%, #8a8478);
-	--plate-shadow: rgba(0, 0, 0, 0.48);
-	--plate-scrim: rgba(20, 20, 26, 0.92);
-	--plate-scrim-mid: rgba(20, 20, 26, 0.72);
+	--plate-shadow: rgba(0, 0, 0, 0.55);
+	--plate-scrim: rgba(10, 10, 14, 0.94);
+	--plate-scrim-mid: rgba(10, 10, 14, 0.76);
 
 	/* Scrollbars + text selection follow the theme */
-	--scroll-thumb: rgba(255, 255, 255, 0.16);
-	--scroll-thumb-hover: rgba(255, 255, 255, 0.28);
+	--scroll-thumb: rgba(255, 255, 255, 0.18);
+	--scroll-thumb-hover: rgba(255, 255, 255, 0.3);
 	--selection-bg: rgba(216, 178, 106, 0.28);
 	--selection-fg: #fff;
 
@@ -135,7 +139,9 @@ html.is-toc-open {
 
 html {
 	background: var(--bg);
-	scroll-padding-top: 6rem;
+	/* No scroll-padding: it was a `:target` / hash-scroll trap. TOC uses measured Y. */
+	scroll-padding-top: 0;
+	overflow-anchor: none;
 	transition:
 		background-color 800ms var(--ease),
 		color 800ms var(--ease);
@@ -146,7 +152,7 @@ html {
    The map opens as a modal from the stage bento tile (beside the place banner).
    The landscape 3:2 phone reel leads the reading column. */
 html.is-immersion {
-	--bg: #202026;
+	--bg: #0c0c10;
 	--map-w: min(13rem, 22vh);
 	--corner-bottom: calc(var(--plate-box-h) + 0.9rem);
 	/* Tall enough to lead the column, short enough to sit above the plate. */
@@ -169,7 +175,7 @@ html.is-immersion .text .prose > p {
    as little dashboard as the reader will let us get away with. The surface goes
    a shade deeper than immersion so the graded art carries the light. */
 html.is-cinema {
-	--bg: #16161d;
+	--bg: #08080c;
 	--corner-bottom: calc(var(--cin-strip-h) + 0.85rem);
 }
 
@@ -181,7 +187,7 @@ html.is-cinema body {
 }
 
 html[data-theme='light'].is-cinema {
-	--bg: #f2ede3;
+	--bg: #fbfaf6;
 }
 
 /* Reserve the strip only once the reader is in the script — the cover and the
@@ -199,11 +205,11 @@ html.is-cinema .text .prose > p {
 /* The whole page drops into the past — set by watchReading().
    Declared after the immersive block so a flashback always wins the mood. */
 html.is-flash {
-	--bg: #1a1a20;
-	--bg-raised: #222228;
-	--panel: #24242c;
-	--panel-sunken: #1c1c22;
-	--hairline: rgba(255, 255, 255, 0.07);
+	--bg: #0a0a0e;
+	--bg-raised: #141418;
+	--panel: #121218;
+	--panel-sunken: #08080c;
+	--hairline: rgba(255, 255, 255, 0.08);
 }
 
 /* ————— Light mode: warm paper, dark ink —————
@@ -213,50 +219,50 @@ html.is-flash {
 html[data-theme='light'] {
 	color-scheme: light;
 
-	--bg: #faf8f4;
+	--bg: #fffefb;
 	--bg-raised: #ffffff;
-	--fg: #26241f;
-	--fg-dim: #57534a;
-	--fg-faint: #8d8779;
-	--fg-strong: #17150e;
-	--hairline: rgba(28, 22, 10, 0.13);
+	--fg: #1c1a16;
+	--fg-dim: #4a463e;
+	--fg-faint: #7a7468;
+	--fg-strong: #0e0c08;
+	--hairline: rgba(28, 22, 10, 0.12);
 	--gold: #9c7a2c;
 	--on-gold: #fdfbf3;
-	--highlight: #17150e;
-	--on-highlight: #faf8f4;
+	--highlight: #0e0c08;
+	--on-highlight: #fffefb;
 	--quote: #8a6b1d;
 
-	--panel: #f3f0e9;
-	--panel-sunken: #ebe7dd;
-	--glass: rgba(250, 248, 244, 0.88);
+	--panel: #fbfaf7;
+	--panel-sunken: #f4f1ea;
+	--glass: rgba(255, 254, 251, 0.9);
 	/* Speaker plate / speak button: parchment, not charcoal. */
-	--plate-ink: #efe9dc;
-	--plate-fg: #26241f;
-	--plate-fg-strong: #17150e;
-	--plate-fg-quiet: color-mix(in srgb, #26241f 68%, #8d8779);
-	--plate-fg-faint: color-mix(in srgb, #26241f 48%, #8d8779);
-	--plate-shadow: rgba(40, 30, 12, 0.18);
-	--plate-scrim: rgba(250, 248, 244, 0.94);
-	--plate-scrim-mid: rgba(250, 248, 244, 0.72);
+	--plate-ink: #f7f3ea;
+	--plate-fg: #1c1a16;
+	--plate-fg-strong: #0e0c08;
+	--plate-fg-quiet: color-mix(in srgb, #1c1a16 68%, #7a7468);
+	--plate-fg-faint: color-mix(in srgb, #1c1a16 48%, #7a7468);
+	--plate-shadow: rgba(40, 30, 12, 0.14);
+	--plate-scrim: rgba(255, 254, 251, 0.95);
+	--plate-scrim-mid: rgba(255, 254, 251, 0.76);
 
-	--scroll-thumb: rgba(30, 24, 12, 0.2);
-	--scroll-thumb-hover: rgba(30, 24, 12, 0.34);
+	--scroll-thumb: rgba(30, 24, 12, 0.18);
+	--scroll-thumb-hover: rgba(30, 24, 12, 0.32);
 	--selection-bg: rgba(156, 122, 44, 0.24);
-	--selection-fg: #17150e;
+	--selection-fg: #0e0c08;
 }
 
 /* Light immersion / flashback: step the paper a shade warmer instead of darker. */
 html[data-theme='light'].is-immersion {
-	--bg: #f4f0e8;
+	--bg: #fbf9f4;
 }
 
 html[data-theme='light'].is-flash {
-	--bg: #f0ebe0;
-	--bg-raised: #f8f4ec;
-	--panel: #f1ece1;
-	--panel-sunken: #e7e1d3;
-	--plate-ink: #e8e0ce;
-	--hairline: rgba(28, 22, 10, 0.11);
+	--bg: #f8f5ee;
+	--bg-raised: #ffffff;
+	--panel: #faf8f2;
+	--panel-sunken: #f1eee6;
+	--plate-ink: #f3eee4;
+	--hairline: rgba(28, 22, 10, 0.1);
 }
 
 body {
@@ -449,7 +455,7 @@ em {
 
 *::-webkit-scrollbar-thumb {
 	background: var(--scroll-thumb);
-	border-radius: 99px;
+	border-radius: var(--radius-pill);
 }
 
 *::-webkit-scrollbar-thumb:hover {

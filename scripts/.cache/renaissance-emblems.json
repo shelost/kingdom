@@ -1,0 +1,27 @@
+[
+	{
+		"id": "haemosu-five-dragons",
+		"alt": "Haemosu lunges on a glowing sun-chariot pulled by five dragons, white hair streaming, the sun blazing",
+		"prompt": "Renaissance oil: Haemosu drives a sun chariot of five dragons, glowing sun, dynamic lunge, movie-like intensity. Living-world red/gold. No text."
+	},
+	{
+		"id": "yumla-judge",
+		"alt": "Yumla as judge leaning off the bench mid-sentence, orange-red sleeves, a soul kneeling below, flat underworld",
+		"prompt": "Renaissance oil: Yumla the judge, dynamic lean, orange-red sleeves, no clouds. No text."
+	},
+	{
+		"id": "ibiga-in-clouds",
+		"alt": "Ibiga mid-leap through sculptural clouds, royal-blue robe as weather, wild exhilarated face",
+		"prompt": "Renaissance oil: Ibiga lives in the clouds, diagonal leap, blue #3E79E4, movie-like emotion. Clouds are his house. No text."
+	},
+	{
+		"id": "kangrim-blind-book",
+		"alt": "Kangrim lunging, glowing red notebook pressed over both eyes, orange sleeve, black gat, flat underworld",
+		"prompt": "Renaissance oil: Kangrim eyes covered by glowing red 적패지, dynamic lunge, no clouds. No readable text."
+	},
+	{
+		"id": "haewonmek-mouth",
+		"alt": "Haewonmek with mouth bound by gat-ties, only the eyes showing under the brim, cobalt and burnt orange, flat underworld",
+		"prompt": "Renaissance oil: Haewonmek mouth covered, eyes sharp, cobalt/orange, no clouds. No text."
+	}
+]

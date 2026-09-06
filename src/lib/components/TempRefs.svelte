@@ -135,7 +135,7 @@
 		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		padding: 0.12rem 0.45rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		cursor: pointer;
 	}
 
@@ -177,7 +177,7 @@
 
 	.temp-embed {
 		border: 1px dashed color-mix(in srgb, var(--gold) 35%, transparent);
-		border-radius: 10px;
+		border-radius: var(--radius);
 		overflow: hidden;
 		background: var(--panel-sunken);
 	}

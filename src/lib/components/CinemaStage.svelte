@@ -21,10 +21,13 @@
 	import { prefersReducedMotion } from 'svelte/motion';
 	import {
 		reading,
-		goToEpisodeById,
 		activateDialogue,
-		scrollToBand
+		scrollToBand,
+		findStoryHeading,
+		scrollToStoryHeading,
+		storyRoot
 	} from '$lib/reading.svelte';
+	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { stageText } from '$lib/stageText';
 	import { buildBeats } from '$lib/beats';
@@ -90,7 +93,16 @@
 
 	/** The live entry's article in the reading document. */
 	function liveArticle(): HTMLElement | null {
-		return reading.entryId ? document.getElementById(reading.entryId) : null;
+		if (!reading.entryId) return null;
+		const script = storyRoot();
+		if (!script) return null;
+		try {
+			return script.querySelector<HTMLElement>(
+				`[data-story-id="${CSS.escape(reading.entryId)}"]`
+			);
+		} catch {
+			return null;
+		}
 	}
 
 	/* Light + reveal the rail line matching the live one. The marker is the
@@ -154,7 +166,7 @@
 
 	/** Every script block in the reading document, in reading order. */
 	function documentBlocks(): HTMLElement[] {
-		const root = document.getElementById('script');
+		const root = storyRoot();
 		return root ? proseBlocks(root) : [];
 	}
 
@@ -178,7 +190,7 @@
 	function revealInRail(docBlock: HTMLElement) {
 		const root = railEl;
 		const article = docBlock.closest<HTMLElement>('article.entry');
-		if (!root || !article || article.id !== reading.entryId) return;
+		if (!root || !article || article.dataset.storyId !== reading.entryId) return;
 		const i = proseBlocks(article).indexOf(docBlock);
 		if (i < 0) return;
 		proseBlocks(root)[i]?.scrollIntoView({
@@ -221,19 +233,11 @@
 		let i = nearestBlockIndex(blocks);
 
 		while (stillPlaying(token)) {
-			blocks = documentBlocks(); /* episodes scope remounts the document */
+			blocks = documentBlocks();
 			const el = blocks[i];
 
 			if (!el) {
-				/* End of the mounted document: episodes scope hands off to the
-				   next episode; the full scroll has simply finished. */
-				const next = episode?.next;
-				if (reading.viewScope === 'episodes' && next) {
-					goToEpisodeById(next.id);
-					await sleep(900);
-					i = 0;
-					continue;
-				}
+				/* Full document stays mounted — end of the script is the end. */
 				break;
 			}
 
@@ -485,20 +489,28 @@
 		stopPlay();
 		const next = episode?.next;
 		if (!next) return;
-		/* Episodes scope mounts one entry at a time — it has to remount first. */
-		if (reading.viewScope === 'episodes') {
-			goToEpisodeById(next.id);
-			return;
-		}
-		document
-			.getElementById(next.id)
-			?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+		const el = findStoryHeading(next.id);
+		if (el) scrollToStoryHeading(el, reduce ? 'auto' : 'smooth');
 	}
 
 	let cardIn = $derived({ duration: reduce ? 0 : 420 });
 	let cardOut = $derived({ duration: reduce ? 0 : 320 });
 	let nextPanel = $derived(panels[panelIndex + 1] ?? null);
 	const CINEMA_SIZES = '(max-width: 820px) 100vw, 70vw';
+
+	function openPanelLightbox() {
+		if (!panels.length) return;
+		openLightbox(
+			panels.map((p) => ({
+				src: p.src,
+				alt: p.alt ?? '',
+				title: p.alt ?? episode?.entry.title ?? 'Scene',
+				caption: episode?.entry.title,
+				episodeId: episode?.id
+			})),
+			panelIndex
+		);
+	}
 </script>
 
 <svelte:head>
@@ -528,17 +540,24 @@
 						class:hold={!person}
 						class:dip={reaction}
 					>
-						<img
-							{...storyImg(panel.src, {
-								kind: 'cue',
-								priority: true,
-								sizes: CINEMA_SIZES,
-								alt: panel.alt ?? ''
-							})}
-							style:filter
-							in:fade={cardIn}
-							out:fade={cardOut}
-						/>
+						<button
+							type="button"
+							class="matte-open"
+							onclick={openPanelLightbox}
+							aria-label="Open scene still"
+						>
+							<img
+								{...storyImg(panel.src, {
+									kind: 'cue',
+									priority: true,
+									sizes: CINEMA_SIZES,
+									alt: panel.alt ?? ''
+								})}
+								style:filter
+								in:fade={cardIn}
+								out:fade={cardOut}
+							/>
+						</button>
 					</div>
 				{/key}
 			{:else}
@@ -853,6 +872,16 @@
 		background: #000;
 	}
 
+	.matte-open {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		border: none;
+		background: transparent;
+		cursor: zoom-in;
+	}
+
 	.matte.empty {
 		background:
 			linear-gradient(180deg, #0a0a0e 0%, #121218 100%);
@@ -943,7 +972,7 @@
 		gap: 0 0.9rem;
 		padding: 0.4rem 0.95rem 0.5rem;
 		border: 1px solid var(--hairline);
-		border-radius: 4px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--plate-ink) 78%, transparent);
 		backdrop-filter: blur(10px);
 		max-width: min(34rem, calc(100% - 2rem));
@@ -1240,7 +1269,7 @@
 		text-transform: uppercase;
 		color: var(--fg-dim);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		cursor: pointer;
@@ -1282,7 +1311,7 @@
 		gap: 0.3rem;
 		padding: 0.85rem 1.5rem 0.95rem;
 		border: 1px solid color-mix(in srgb, var(--gold) 32%, transparent);
-		border-radius: 6px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--plate-ink) 88%, transparent);
 		backdrop-filter: blur(14px);
 		box-shadow: 0 14px 40px var(--plate-shadow);
@@ -1307,7 +1336,7 @@
 		padding: 0.3rem 0.6rem;
 		font: inherit;
 		border: none;
-		border-radius: 4px;
+		border-radius: var(--radius);
 		background: transparent;
 		cursor: pointer;
 		transition: background 0.25s var(--ease);

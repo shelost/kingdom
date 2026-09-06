@@ -918,7 +918,7 @@
 		color: var(--fg);
 		background: var(--panel-sunken);
 		border: 1px solid var(--hairline);
-		border-radius: 10px;
+		border-radius: var(--radius);
 		padding: 0.75rem 0.9rem;
 		outline: none;
 		transition: border-color 0.2s var(--ease);
@@ -947,7 +947,7 @@
 		color: var(--fg-faint);
 		background: var(--glass);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.4rem 0.7rem;
 		min-height: 2.35rem;
 		cursor: pointer;
@@ -1142,7 +1142,7 @@
 		text-align: left;
 		padding: 0.85rem 0.95rem;
 		border: 1px solid color-mix(in srgb, var(--hairline) 88%, transparent);
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--panel) 92%, #fff);
 		box-shadow:
 			0 1px 0 rgba(255, 255, 255, 0.04) inset,
@@ -1310,7 +1310,7 @@
 		aspect-ratio: 2 / 3;
 		height: auto;
 		overflow: hidden;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		font-family: var(--serif);
 		font-weight: 700;
 		font-size: 1.65rem;
@@ -1344,7 +1344,7 @@
 		width: 5.75rem;
 		aspect-ratio: 1;
 		overflow: hidden;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
 	}
@@ -1466,7 +1466,7 @@
 		max-width: 100%;
 		padding: 0.18rem 0.55rem;
 		min-height: 1.15rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-family: var(--ui);
 		font-size: 0.6rem;
 		font-weight: 500;
@@ -1484,7 +1484,7 @@
 		width: fit-content;
 		margin-top: 0.12rem;
 		padding: 0.1rem 0.42rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-family: var(--ui);
 		font-size: 0.62rem;
 		font-weight: 600;
@@ -1512,7 +1512,7 @@
 		width: fit-content;
 		margin-top: 0.1rem;
 		padding: 0.12rem 0.45rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		font-size: 0.62rem;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
@@ -1583,7 +1583,7 @@
 		width: min(34rem, calc(100vw - 1.7rem));
 		overflow: hidden;
 		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: 16px;
+		border-radius: var(--radius);
 		box-shadow:
 			0 28px 70px rgba(0, 0, 0, 0.55),
 			0 8px 24px rgba(0, 0, 0, 0.35);
@@ -1635,7 +1635,7 @@
 		display: grid;
 		place-items: center;
 		border: 1px solid var(--hairline);
-		border-radius: 8px;
+		border-radius: var(--radius);
 		background: transparent;
 		color: var(--fg-dim);
 		cursor: pointer;
@@ -1715,7 +1715,7 @@
 			color: var(--on-highlight);
 			background: var(--highlight);
 			border: 1px solid var(--highlight);
-			border-radius: 10px;
+			border-radius: var(--radius);
 			padding: 0.85rem 1rem;
 			min-height: 2.75rem;
 			cursor: pointer;
@@ -1775,7 +1775,7 @@
 			color: var(--fg);
 			background: var(--glass);
 			border: 1px solid var(--hairline);
-			border-radius: 999px;
+			border-radius: var(--radius-pill);
 			padding: 0.55rem 0.9rem;
 			min-height: 2.5rem;
 			cursor: pointer;
@@ -1791,7 +1791,7 @@
 			height: 1.15rem;
 			display: inline-grid;
 			place-items: center;
-			border-radius: 999px;
+			border-radius: var(--radius-pill);
 			background: var(--highlight);
 			color: var(--on-highlight);
 			font-size: 0.68rem;
@@ -1826,7 +1826,7 @@
 			bottom: max(0.25rem, env(safe-area-inset-bottom, 0px));
 			left: max(0.25rem, env(safe-area-inset-left, 0px));
 			width: auto;
-			border-radius: 14px;
+			border-radius: var(--radius);
 		}
 
 		.peek.full {

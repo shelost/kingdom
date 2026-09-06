@@ -375,7 +375,7 @@
 		gap: 0.65rem;
 		padding: 1rem 1.05rem 0.95rem;
 		border: 1px solid var(--hairline);
-		border-radius: 14px;
+		border-radius: var(--radius);
 		background: var(--panel);
 		transition:
 			border-color 0.22s var(--ease),
@@ -405,7 +405,7 @@
 		width: 3.4rem;
 		aspect-ratio: 2 / 3;
 		overflow: hidden;
-		border-radius: 8px;
+		border-radius: var(--radius);
 		font-family: var(--serif);
 		font-weight: 700;
 		font-size: 1.2rem;
@@ -427,7 +427,7 @@
 	.portrait.flag {
 		aspect-ratio: 3 / 2;
 		width: 4.4rem;
-		border-radius: 6px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--k) 14%, var(--panel-sunken));
 		border: 1px solid var(--hairline);
 	}
@@ -486,7 +486,7 @@
 		color: var(--fg-dim);
 		background: var(--glass);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 0.14rem 0.5rem;
 	}
 
@@ -508,7 +508,7 @@
 		flex-shrink: 0;
 		width: 2.7rem;
 		height: 2.7rem;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
 		background: var(--glass);
 		color: var(--gold);
@@ -540,7 +540,7 @@
 
 	.score {
 		border: 1px solid var(--hairline);
-		border-radius: 10px;
+		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--panel-sunken) 70%, transparent);
 		padding: 0.25rem 0.4rem;
 		color: var(--fg);

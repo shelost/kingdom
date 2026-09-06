@@ -65,7 +65,7 @@
 		margin: 0;
 		padding: 0;
 		border: 1px solid rgba(255, 255, 255, 0);
-		border-radius: 10px;
+		border-radius: var(--radius);
 		overflow: hidden;
 		aspect-ratio: 16 / 9;
 		width: 100%;
@@ -173,12 +173,12 @@
 	}
 
 	:global(html.is-immersion) .banner {
-		border-radius: 10px;
+		border-radius: var(--radius);
 	}
 
 	@media (max-width: 820px) {
 		.banner {
-			border-radius: 8px;
+			border-radius: var(--radius);
 		}
 
 		.name {

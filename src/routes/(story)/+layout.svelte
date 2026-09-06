@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+	import { afterNavigate, disableScrollHandling } from '$app/navigation';
 	import Toc from '$lib/components/Toc.svelte';
 	import PersonLayer from '$lib/components/PersonLayer.svelte';
 	import Hud from '$lib/components/Hud.svelte';
@@ -9,8 +10,16 @@
 	import StoryMap from '$lib/components/StoryMap.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
+	import { consumeLeftoverStoryHash, consumePendingStoryJump } from '$lib/reading.svelte';
 
 	let { children } = $props();
+
+	afterNavigate(() => {
+		/* Kit would otherwise scroll to `#id`. Story nodes have no HTML ids. */
+		if (typeof location !== 'undefined' && location.hash) disableScrollHandling();
+		const jumped = consumePendingStoryJump();
+		if (!jumped) consumeLeftoverStoryHash();
+	});
 
 	/** Sync TOC open → CSS vars (--shell-shift / --corner-left) for fixed chrome. */
 	$effect(() => {

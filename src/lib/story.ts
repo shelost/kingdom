@@ -25,6 +25,17 @@ export interface ImageSlot {
 	/** Explicit placeholder flag — treated as temp cue art when set. */
 	isPlaceholder?: boolean;
 	/**
+	 * Intimate / adult cue art. Hidden unless the reader leaves
+	 * “Intimate scenes” on. `true` or `"erotic"` both count as NSFW.
+	 */
+	nsfw?: boolean | 'erotic';
+	/**
+	 * Optional people.ts ids of everyone visible in the still.
+	 * Gallery membership prefers the sidecar `image-people.json`
+	 * (`peopleOfSlot`); this field is for hand edits on a slot.
+	 */
+	people?: string[];
+	/**
 	 * Which beat this image belongs to: a fragment of the block it should
 	 * appear alongside. Images sharing an anchor stack together; images with
 	 * no anchor open the entry.
