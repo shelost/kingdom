@@ -306,6 +306,36 @@
 							"/pl_observatory.png"
 						],
 						"tempImage": "/temp/cheomseongdae-moon-minimal.png"
+					},
+					{
+						"id": "munhee-folded-letter",
+						"ratio": 0.5625,
+						"tone": "#E07FA8",
+						"at": "<b>Munhee (22)</b> is a young noblewoman",
+						"alt": "Munhee three-quarter from behind in a black void, a folded pink letter the only lit plane",
+						"prompt": "Minimal iconic 9:16 poster. Kim Munhee, witness who sews the life she means to keep. ONE geometric device: a FOLDED LETTER as a pale-pink hard rectangle held at her chest, the only lit plane. Three-quarter from behind, looking back over her left shoulder — not a side-profile clone. Face matches the attached portrait. Face mostly in shadow; thin #E07FA8 pink rim-light tracing the outer sleeve and the gold-dragon binyeo tip. Striking silky hanbok, folded wide sleeves. Eighty percent black void. Form defined by rim light. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_munhee.png"
+						],
+						"people": [
+							"munhee"
+						],
+						"tempImage": "/temp/munhee-folded-letter.jpg"
+					},
+					{
+						"id": "sunduk-star-shaft",
+						"ratio": 0.5625,
+						"tone": "#E8552B",
+						"at": "the Blue Moon of the Divine Country",
+						"alt": "Queen Sunduk almost lost in a black void, one vermilion star-shaft falling onto her upturned face",
+						"prompt": "Minimal iconic 9:16 poster. Queen Sunduk, reader of stars. ONE geometric device: a STAR-SHAFT — one thin vermilion beam from a single pinprick star at the top-right, falling onto her upturned face. She stands in the lower-left third, looking up, almost lost. Face matches the attached portrait: tall Silla gold tree-antler crown as a faint rim only. Face mostly in shadow; #E8552B vermilion as the single accent in the shaft and one silk fold. Striking silky hanbok. Eighty percent black void. Form defined by the shaft and rim. No Cheomseongdae catalog. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_sunduk.png"
+						],
+						"people": [
+							"sunduk"
+						],
+						"tempImage": "/temp/sunduk-star-shaft.jpg"
 					}
 				],
 				"blocks": [
@@ -3291,6 +3321,36 @@
 							"/pl_eastern_palace.png"
 						],
 						"tempImage": "/temp/munhee-chunchu-back.jpg"
+					},
+					{
+						"id": "gotaso-ribbon-slash",
+						"ratio": 0.75,
+						"tone": "#F0A3C0",
+						"at": "goes out to the lantern market",
+						"alt": "Gotaso cropped into the lower-left of a black void, a pink silk ribbon slashing diagonally",
+						"prompt": "Minimal iconic 3:4 poster. Princess Gotaso, love-obsessed girl of sixteen. ONE geometric device: a PINK RIBBON as a diagonal SLASH of #F0A3C0 silk from upper-left to lower-right. She is cropped into the lower-left corner, looking up along the ribbon, almost lost. Face matches the attached portrait. Face mostly in shadow; thin pink rim-light; gilt-butterfly binyeo catching one bead of light. Striking silky hanbok. Eighty percent black void. Form defined by the ribbon and rim. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_gotaso.png"
+						],
+						"people": [
+							"gotaso"
+						],
+						"tempImage": "/temp/gotaso-ribbon-slash.jpg"
+					},
+					{
+						"id": "pumsuk-headband-bar",
+						"ratio": 0.5625,
+						"tone": "#7EB8F0",
+						"at": "<b>Pumsuk (22)</b> takes the ball",
+						"alt": "Pumsuk in a black void, an ice-blue headband as a thin horizontal bar, face in shadow",
+						"prompt": "Minimal iconic 9:16 poster. Kim Pumsuk, Hwarang of Class 74, guardian of Daeya. ONE geometric device: an ice-blue HEADBAND as a thin HORIZONTAL BAR of #7EB8F0 across the upper third of the frame — a rank-strip, not a crescent halo. Face below it in shadow, ready stance. Face matches the attached portrait: blue headband with a white crescent mark kept as a tiny mark on the bar, not a halo around the head. Thin ice-blue rim-light on one shoulder. Striking silky Hwarang court-military. Eighty percent black void. Form defined by the bar and rim. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_pumsuk.png"
+						],
+						"people": [
+							"pumsuk"
+						],
+						"tempImage": "/temp/pumsuk-headband-bar.jpg"
 					}
 				],
 				"blocks": [
@@ -5374,6 +5434,21 @@
 							"/ch_maid_1.png"
 						],
 						"tempImage": "/temp/img_euija_06.jpg"
+					},
+					{
+						"id": "euija-crown-eaten",
+						"ratio": 0.5625,
+						"tone": "#e08a2e",
+						"at": "<b>King Euija (41)</b>",
+						"alt": "King Euija in a black void, gold crown a broken arc half-eaten by shadow",
+						"prompt": "Minimal iconic 9:16 poster. King Euija, 31st Eraha of Baekje. ONE geometric device: a gold Baekje CROWN as a BROKEN ARC along the top of his head, the right half eaten by black shadow. Face matches the attached portrait: thick black mustache and pointed beard, topknot. Face mostly in shadow; one amber #e08a2e strip of light on the remaining crown and a fold of silk. Striking silky court-military hanbok. Eighty percent black void. Form defined by rim light, not a fully lit portrait. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_buyeo_euija.png"
+						],
+						"people": [
+							"euija"
+						],
+						"tempImage": "/temp/euija-crown-eaten.jpg"
 					}
 				],
 				"blocks": [
@@ -9041,6 +9116,36 @@
 							"/ch_yeon_gesomun.png"
 						],
 						"tempImage": "/temp/massacre-red-doorway.png"
+					},
+					{
+						"id": "gesomun-rank-bar",
+						"ratio": 0.5625,
+						"tone": "#d0362f",
+						"at": "creates a new position for himself",
+						"alt": "Yeon Gesomun as a worm’s-eye silhouette in a black void, a hard crimson rank-bar across the chest",
+						"prompt": "Minimal iconic 9:16 poster. Yeon Gesomun, Supreme Commander. ONE geometric device: a hard horizontal RANK-BAR of Goguryeo crimson #C30000 across mid-chest, a marshal sash as a single plane. Worm’s-eye crop, body filling from the lower third up, almost silhouette, thick beard rim-lit. Face matches the attached portrait. Face mostly in shadow; thin blood-red rim-light. Striking silky Goguryeo lamellar over hanbok. Eighty percent black void. Form defined by rim light. No army. No banquet. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_yeon_gesomun.png"
+						],
+						"people": [
+							"gesomun"
+						],
+						"tempImage": "/temp/gesomun-rank-bar.jpg"
+					},
+					{
+						"id": "bojang-hollow-frame",
+						"ratio": 0.75,
+						"tone": "#8f4a44",
+						"at": "enthrones the king’s nephew as <b>King Bojang</b>",
+						"alt": "King Bojang sitting small inside a hollow rust-red throne-frame in a black void",
+						"prompt": "Minimal iconic 3:4 poster. King Bojang, last sovereign of Goguryeo, puppet king. ONE geometric device: a HOLLOW RECTANGLE — an empty rust-red throne-frame in the center, he sits small inside it, swallowed. Face matches the attached portrait. Face mostly in shadow; thin #8f4a44 rim-light. Striking silky court hanbok. Eighty percent black void. Form defined by the frame and rim, not a floating bust. No army. No palace furniture dump. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_bojang.png"
+						],
+						"people": [
+							"bojang"
+						],
+						"tempImage": "/temp/bojang-hollow-frame.jpg"
 					}
 				],
 				"blocks": [
@@ -16587,6 +16692,36 @@
 							"/ch_bidam_old.png"
 						],
 						"tempImage": "/temp/bidam-pavilion-empty.jpg"
+					},
+					{
+						"id": "bidam-gold-shaft",
+						"ratio": 0.5625,
+						"tone": "#141C2E",
+						"at": "High Councillor <b>Bidam (42)</b>",
+						"alt": "Bidam seated in lotus under a single gold incense shaft in a black void, 108 beads catching the beam",
+						"prompt": "Minimal iconic 9:16 poster. Bidam, Buddhist rebel of Radiance. ONE geometric device: a single thin GOLD INCENSE SHAFT dropping from the top edge through black, dust motes only inside the beam. He SITS in lotus in the lower-center, almost lost in the void; 108 wooden-gold prayer beads in the lap catching the shaft. Face matches the attached portrait: tanned skin, thin neat mustache, dark hair swept back, calm closed eyes, NOT a full beard, NOT Yushin’s ponytail. Face mostly in shadow; thin gold rim-light. Navy near-black hanbok #141C2E, sutra gold the single accent. Striking silky hanbok. Eighty percent of the frame is black void. Form defined by the shaft and rim, not a lit portrait. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_bidam.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/bidam-gold-shaft.jpg"
+					},
+					{
+						"id": "alchun-tablet-bar",
+						"ratio": 0.5625,
+						"tone": "#8fb3e0",
+						"at": "Before noon <b>Alchun</b> is summoned twice",
+						"alt": "Alchun standing in a black void, a blank wooden tablet as a pale bar at chest height",
+						"prompt": "Minimal iconic 9:16 poster. Alchun, councillor of restraint. ONE geometric device: a BLANK WOODEN TABLET as a pale horizontal BAR at chest height, Confucian rank not beads. He STANDS, not lotus. Face matches the attached portrait. Face mostly in shadow; thin #8fb3e0 ice-blue rim-light. Striking silky court-military hanbok. Eighty percent black void. Form defined by the tablet and rim. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_alchun.png"
+						],
+						"people": [
+							"alchun"
+						],
+						"tempImage": "/temp/alchun-tablet-bar.jpg"
 					}
 				],
 				"blocks": [
@@ -21692,6 +21827,36 @@
 						"at": "Cultural transformation complete",
 						"alt": "Shadow silhouettes of officials in Chinese hats — identity transformed through imported forms",
 						"src": "/temp/secretariat_shadow_officials.png"
+					},
+					{
+						"id": "chunchu-map-pool",
+						"ratio": 0.75,
+						"tone": "#D8258C",
+						"at": "Chunchu has counted the seals",
+						"alt": "Chunchu standing in a black void over a glowing magenta map-rectangle on the floor",
+						"prompt": "Minimal iconic 3:4 poster. Kim Chunchu, Magenta Devil strategist. ONE geometric device: a glowing magenta MAP as a hard rectangle of light on the floor, a campaign chart as a pool of #D8258C. He STANDS above it in the upper dark, looking down, body almost a silhouette; not seated, not lotus, not hand-to-chin. Face matches the attached portrait: handsome East Asian man, wavy dark hair with a lock on the forehead, thin jawline beard. Face mostly in shadow; thin magenta rim-light along one shoulder and the hair-lock. Striking silky magenta hanbok. Eighty percent black void. Form defined by rim light, not a fully lit bust. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_chunchu.png"
+						],
+						"people": [
+							"chunchu"
+						],
+						"tempImage": "/temp/chunchu-map-pool.jpg"
+					},
+					{
+						"id": "jukji-inkstone-pool",
+						"ratio": 0.75,
+						"tone": "#6a9e7a",
+						"at": "I stand beside the work",
+						"alt": "Kim Jukji standing in a black void above a sage inkstone pool of light, arms folded",
+						"prompt": "Minimal iconic 3:4 poster. Kim Jukji, first Royal Secretary of Silla. ONE geometric device: an INKSTONE as a small dark rectangle at the bottom, one sage-green pool of wet ink catching the only light. He STANDS above it, arms folded, offset right. Face matches the attached portrait. Face mostly in shadow; thin #6a9e7a rim-light. Striking silky Hwarang court-military hanbok. Eighty percent black void. Form defined by the ink pool and rim. No bamboo. No desks. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_jukji.png"
+						],
+						"people": [
+							"jukji"
+						],
+						"tempImage": "/temp/jukji-inkstone-pool.jpg"
 					}
 				],
 				"blocks": [
@@ -22034,6 +22199,21 @@
 						"refs": [
 							"/ch_chunchu.png"
 						]
+					},
+					{
+						"id": "jinduk-tassel-drop",
+						"ratio": 0.75,
+						"tone": "#9d7bd0",
+						"at": "sat on <b>Queen Jinduk</b>",
+						"alt": "Queen Jinduk almost lost in a black void, a gold tassel hanging as a single vertical drop",
+						"prompt": "Minimal iconic 3:4 poster. Queen Jinduk, last Sacred Bone queen, a bridge not a destination. ONE geometric device: a gold TASSEL hanging as a single vertical DROP from the top edge, a thin gold strip. She stands in the lower-right, almost lost. Face matches the attached portrait: youthful, long thick black hair, tall Silla gold tree-antler crown as rim only. Face mostly in shadow; #9d7bd0 violet as the single silk accent. Striking silky hanbok. Eighty percent black void. Form defined by the tassel and rim. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_jinduk.png"
+						],
+						"people": [
+							"jinduk"
+						],
+						"tempImage": "/temp/jinduk-tassel-drop.jpg"
 					}
 				],
 				"blocks": [
@@ -26745,6 +26925,21 @@
 							"/ch_kangrim.png"
 						],
 						"tempImage": "/temp/kangrim-redbook.png"
+					},
+					{
+						"id": "kangrim-ledger-glow",
+						"ratio": 0.5625,
+						"tone": "#4a4a58",
+						"at": "a ledger that told each living person their hour",
+						"alt": "Kangrim in a black underworld void, an open red ledger the only rectangle of light",
+						"prompt": "Minimal iconic 9:16 poster. Kangrim, psychopomp of the underworld. ONE geometric device: an open RED LEDGER as a hard rectangle of light in his hands, the only plane. Otherworld beat: symbolic flat black, no naturalistic sun moon or clouds. Face matches the attached portrait. Face mostly in shadow under a black gat brim; thin cold grey #4a4a58 rim-light, the ledger the single red accent. Striking silky underworld official robe. Eighty percent black void. Form defined by the ledger and rim. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_kangrim.png"
+						],
+						"people": [
+							"kangrim"
+						],
+						"tempImage": "/temp/kangrim-ledger-glow.jpg"
 					}
 				],
 				"blocks": [
@@ -28494,6 +28689,21 @@
 							"/ch_kim_yushin.png"
 						],
 						"tempImage": "/temp/yushin-after-yellow.jpg"
+					},
+					{
+						"id": "gyebek-planted-wedge",
+						"ratio": 0.75,
+						"tone": "#d9b13a",
+						"at": "I will complete my duty",
+						"alt": "Gyebek kneeling in a black void behind a yellow planted-blade wedge driven into the earth",
+						"prompt": "Minimal iconic 3:4 poster. Gyebek, last general of Baekje. ONE geometric device: a PLANTED BLADE as a yellow WEDGE driven diagonally into black earth from the lower-left, not a vertical center-bisect sword. He kneels behind it in last-stand stillness, almost silhouette. Face matches the attached portrait. Face mostly in shadow; thin #d9b13a yellow rim-light on a gold headband sliver. Striking silky Baekje court-military. Eighty percent black void. Form defined by rim light. No army. No field catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_gyebek.png"
+						],
+						"people": [
+							"gyebek"
+						],
+						"tempImage": "/temp/gyebek-planted-wedge.jpg"
 					}
 				],
 				"blocks": [
@@ -31532,6 +31742,21 @@
 						"at": "Traitor…?",
 						"prompt": "Cinematic historical illustration of three brothers sketch, Three Kingdoms of Samhan / Tang era (665), scene: The Death of Yeon Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/three-brothers-sketch.jpg"
+					},
+					{
+						"id": "namseng-west-seam",
+						"ratio": 0.5625,
+						"tone": "#c25a4e",
+						"at": "takes on the title of Supreme Commander",
+						"alt": "Yeon Namseng reaching from a black void toward a pale-rust light-seam on the right edge",
+						"prompt": "Minimal iconic 9:16 poster. Yeon Namseng, eldest son who rides west. ONE geometric device: a WEST-SEAM — a hard vertical pale-rust LIGHT-SEAM occupying only the right fifth, not a sword. He stands in the left dark, one hand reaching toward the seam. Face matches the attached portrait. Face mostly in shadow; thin #c25a4e rim-light. Striking silky Goguryeo court-military. Eighty percent black void. Form defined by rim light. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_yeon_namseng.png"
+						],
+						"people": [
+							"namseng"
+						],
+						"tempImage": "/temp/namseng-west-seam.jpg"
 					}
 				],
 				"blocks": [
@@ -32602,6 +32827,21 @@
 							"/ch_kim_bupmin.png"
 						],
 						"tempImage": "/temp/chunchu-forecast.jpg"
+					},
+					{
+						"id": "munmu-crimson-tide",
+						"ratio": 0.5625,
+						"tone": "#C41E3A",
+						"at": "Munmu does it in exactly that order",
+						"alt": "King Munmu standing in a black void on a low crimson tide-bar, almost lost in shadow",
+						"prompt": "Minimal iconic 9:16 poster. King Munmu, king for all, dragon of the strait. ONE geometric device: a CRIMSON TIDE as a low horizontal BAR of #C41E3A silk-water occupying only the bottom fifth. He stands in it, poster-scale, almost lost; a sea-dragon ring-pommel catching one red glint. Face matches the attached portrait. Face mostly in shadow; thin crimson rim-light. Striking silky court-military hanbok. Eighty percent black void. Form defined by rim light, not a floating bust. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_munmu.png"
+						],
+						"people": [
+							"munmu"
+						],
+						"tempImage": "/temp/munmu-crimson-tide.jpg"
 					}
 				],
 				"blocks": [
