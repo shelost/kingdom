@@ -68,6 +68,22 @@
 						"tempImage": "/temp/three-princesses.jpg"
 					},
 					{
+						"id": "chunmyung-binyeo-stamp",
+						"ratio": 0.5625,
+						"tone": "#d8a0e8",
+						"at": "Princess Chunmyung (49)",
+						"alt": "Princess Chunmyung isolated in a charcoal void, amethyst-gold binyeo stamp in the upper-right corner",
+						"prompt": "Minimal iconic 9:16 poster. Princess Chunmyung, Sacred Bone mother who gave up a throne. ONE geometric device: a single amethyst-gold BINYEO STAMP — a hard circular gold-and-violet disc occupying only the upper-right corner, like a pressed seal, not a halo. Isolated poster-scale body in the lower third, standing, contemplative, vast dark negative space. Face matches the attached portrait. Lilac #d8a0e8 as the single accent. Striking silky magenta-to-lilac court hanbok, few hues. Earth beat: indoor night-black. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_chunmyung.png"
+						],
+						"people": [
+							"chunmyung"
+						],
+						"src": "/chunmyung-binyeo-stamp.png",
+						"tempImage": "/temp/chunmyung-binyeo-stamp.jpg"
+					},
+					{
 						"id": "yushin-chunchu-munhee",
 						"ratio": 3.333,
 						"tone": "#fde8c8",
@@ -3250,6 +3266,22 @@
 						"tempImage": "/temp/gotaso-determination-forward.png"
 					},
 					{
+						"id": "pumsuk-crescent-arc",
+						"ratio": 0.5625,
+						"tone": "#7EB8F0",
+						"at": "Hwarang Pumsuk (23)",
+						"alt": "Hwarang Pumsuk in a charcoal void under a broken ice-blue crescent arc",
+						"prompt": "Minimal iconic 9:16 poster. Kim Pumsuk, Hwarang of Class 74. ONE geometric device: a BROKEN ARC — a hard ice-blue crescent as an incomplete ring hovering above his head, open at the right, not a full halo. Isolated poster-scale body in the lower third, iconic ready stance. Face matches the attached portrait: blue headband with a white crescent mark. Ice-blue #7EB8F0 as the plane of the broken arc and the outer robe. Striking silky Hwarang court-military, few hues. Earth beat: night-black void. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_pumsuk.png"
+						],
+						"people": [
+							"pumsuk"
+						],
+						"src": "/pumsuk-crescent-arc.png",
+						"tempImage": "/temp/pumsuk-crescent-arc.jpg"
+					},
+					{
 						"id": "munhee-sewing-first",
 						"ratio": 1.778,
 						"tone": "#E07FA8",
@@ -6325,6 +6357,54 @@
 						]
 					},
 					{
+						"id": "narim-jade-arc",
+						"ratio": 0.5625,
+						"tone": "#3d9e52",
+						"at": "with her ankles crossed like an elder sister",
+						"alt": "Narim in a charcoal void under a broken jade-green arc — steam-cavern eldest",
+						"prompt": "Minimal iconic 9:16 poster. Narim, eldest goddess of the steam cavern. ONE geometric device: a BROKEN ARC of jade — a hard forest-green incomplete ring in the upper-left, open at the bottom, like a snapped branch bent into an arc, not a halo. Isolated poster-scale body in the lower third. Face matches the attached portrait: glowing emerald eyes, jade-branch binyeo. Forest green #3d9e52 as the broken arc and the chima. Striking silky hanbok, few hues. Otherworld beat: symbolic flat charcoal void, no naturalistic sun moon or cloud weather. No army. No second sister. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_narim.png"
+						],
+						"people": [
+							"narim"
+						],
+						"src": "/narim-jade-arc.png",
+						"tempImage": "/temp/narim-jade-arc.jpg"
+					},
+					{
+						"id": "hyulle-wave-strip",
+						"ratio": 0.75,
+						"tone": "#2eb8c4",
+						"at": "a half-step behind them, eyes on the water",
+						"alt": "Hyullé looking back over a teal wave-strip in vast dark negative space",
+						"prompt": "Minimal iconic 3:4 poster. Hyullé, quiet sister of the steam cavern. ONE geometric device: a teal WAVE as a LOW STRIP — a single hard undulating cyan band across the bottom fifth. Isolated poster-scale body standing on the strip, looking back over one shoulder. Face matches the attached portrait. Cyan #2eb8c4 as the wave-strip plane and the chima. Striking silky hanbok, few hues. Otherworld beat: symbolic flat charcoal void, no naturalistic sun moon or cloud weather. No army. No second sister. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_hyullé.png"
+						],
+						"people": [
+							"hyulle"
+						],
+						"src": "/hyulle-wave-strip.png",
+						"tempImage": "/temp/hyulle-wave-strip.jpg"
+					},
+					{
+						"id": "golhwa-flame-wedge",
+						"ratio": 0.75,
+						"tone": "#e86820",
+						"alt": "Golhwa beside a hard coral-flame wedge occupying the right third of a charcoal void",
+						"at": "swinging one foot in the mist as if the mist owed her heat",
+						"prompt": "Minimal iconic 3:4 poster. Golhwa, youngest goddess of the steam cavern. ONE geometric device: a coral-flame WEDGE — a hard orange-red triangular plane occupying only the right third of the frame. Isolated poster-scale body in the left-lower third. Face matches the attached portrait: glowing ember-red eyes, coral-flame pin. Orange #e86820 as the wedge plane and the chima. Striking silky hanbok, few hues. Otherworld beat: symbolic flat charcoal void, no naturalistic sun moon or cloud weather. No army. No second sister. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_golhwa.png"
+						],
+						"people": [
+							"golhwa"
+						],
+						"src": "/golhwa-flame-wedge.png",
+						"tempImage": "/temp/golhwa-flame-wedge.jpg"
+					},
+					{
 						"id": "golhwa-wink",
 						"ratio": 1.778,
 						"tone": "#0e7490",
@@ -6818,6 +6898,22 @@
 							"/pl_daeya_fortress.png"
 						],
 						"tempImage": "/temp/daeya_granary_gate.jpg"
+					},
+					{
+						"id": "gumil-sleeve-wedge",
+						"ratio": 1,
+						"tone": "#6b7f9e",
+						"at": "Gumil finishes counting the stores",
+						"alt": "Gumil in slate silk against a hard yellow sleeve-wedge of bone rank",
+						"prompt": "Minimal iconic 1:1 poster. Gumil, yellow-sleeve border officer of Daeya. ONE geometric device: a hard WEDGE of bone-rank yellow — a single triangular plane of pale yellow silk occupying the left third, a sleeve as caste. Isolated poster-scale body in the right-lower third. Face matches the attached portrait. Slate #6b7f9e as the robe plane; yellow as the single sleeve-wedge accent. Striking silky court-military hanbok, few hues. Earth beat: fortress night as charcoal void. No army. No gate catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_gumil.png"
+						],
+						"people": [
+							"gumil"
+						],
+						"src": "/gumil-sleeve-wedge.png",
+						"tempImage": "/temp/gumil-sleeve-wedge.jpg"
 					},
 					{
 						"id": "daeya-door-inside",
@@ -19536,6 +19632,22 @@
 						"tempImage": "/temp/gaya-surrender.jpg"
 					},
 					{
+						"id": "muryuk-iron-bar",
+						"ratio": 0.5625,
+						"tone": "#8B5CF6",
+						"at": "Let my sons live in Silla without shame",
+						"alt": "Kim Muryuk bisected by a hard Gaya-purple iron bar, standing in monumental emptiness",
+						"prompt": "Minimal iconic 9:16 poster. Kim Muryuk, last prince of Golden Gaya. ONE geometric device: a purple IRON BAR — a hard horizontal plane of Gaya-violet iron across mid-chest height, surrender as a single beam, not an egg circle. Isolated poster-scale body in the lower third. Face matches the attached portrait. Gaya purple #8B5CF6 as the iron-bar plane and the cape. Striking silky court-military, few hues. Earth beat: simple dark earth as charcoal void. No army. No egg circle. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_kim_muryuk.png"
+						],
+						"people": [
+							"muryuk"
+						],
+						"src": "/muryuk-iron-bar.png",
+						"tempImage": "/temp/muryuk-iron-bar.jpg"
+					},
+					{
 						"id": "gaya-warrior",
 						"ratio": 2.6,
 						"tone": "#8b5cf6",
@@ -21005,6 +21117,38 @@
 							"/ch_wu_zetian.png"
 						],
 						"tempImage": "/temp/wuzetian-screen-power.png"
+					},
+					{
+						"id": "gaozong-dais-strip",
+						"ratio": 0.5625,
+						"tone": "#b8935a",
+						"at": "the shoulders for the armour",
+						"alt": "Gaozong small on an empty amber dais-strip he does not fill, vast dark negative space above",
+						"prompt": "Minimal iconic 9:16 poster. Gaozong, Third Emperor of Tang, earnest heir. ONE geometric device: an empty amber DAIS as a LOW STRIP — a hard horizontal bar of court-gold silk across the bottom fifth, a throne-step he does not fill. Isolated small poster-scale body standing on the bar. Face matches the attached portrait. Amber #b8935a as the dais-strip plane. Striking silky Tang court robe, few hues. Earth beat: indoor night-black void. No army. No gold screen. No palace furniture. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_gaozong.png"
+						],
+						"people": [
+							"gaozong"
+						],
+						"src": "/gaozong-dais-strip.png",
+						"tempImage": "/temp/gaozong-dais-strip.jpg"
+					},
+					{
+						"id": "wuzetian-edge-gaze",
+						"ratio": 0.5625,
+						"tone": "#e879a6",
+						"at": "She watches how a seal moves",
+						"alt": "Wu Zetian cropped to the right edge, magenta silk, looking inward across a vast dark void",
+						"prompt": "Minimal iconic 9:16 poster. Wu Zetian, Tang concubine who files how a seal moves. ONE geometric device: EDGE-GAZE — she occupies only the RIGHT EDGE of the frame as a vertical crop, face turned inward across a vast dark void; the left two-thirds are empty charcoal. Face matches the attached portrait. Magenta #e879a6 as the single accent on silky court robe. Striking silky Tang court dress, few hues. Earth beat: indoor night-black anteroom as void. No army. No palace clutter. No translucent gold screen. No throne. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_wu_zetian.png"
+						],
+						"people": [
+							"wuzetian"
+						],
+						"src": "/wuzetian-edge-gaze.png",
+						"tempImage": "/temp/wuzetian-edge-gaze.jpg"
 					}
 				],
 				"blocks": [
@@ -21692,6 +21836,22 @@
 						"at": "Cultural transformation complete",
 						"alt": "Shadow silhouettes of officials in Chinese hats — identity transformed through imported forms",
 						"src": "/temp/secretariat_shadow_officials.png"
+					},
+					{
+						"id": "jukji-bamboo-shaft",
+						"ratio": 0.5625,
+						"tone": "#6a9e7a",
+						"at": "I stand beside the work",
+						"alt": "Kim Jukji offset in a charcoal void beside a thin sage-green bamboo shaft down the left fifth",
+						"prompt": "Minimal iconic 9:16 poster. Kim Jukji, first Royal Secretary of Silla. ONE geometric device: a thin bamboo SHAFT as a hard sage-green vertical line occupying only the LEFT fifth of the frame, OFFSET from center, not a sword, not a center bisect. Isolated poster-scale body in the lower-right third, arms folded. Face matches the attached portrait. Sage #6a9e7a as the plane of the bamboo shaft and the outer robe. Striking silky Hwarang court-military, few hues. Earth beat: indoor night-black. No army. No desks. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_jukji.png"
+						],
+						"people": [
+							"jukji"
+						],
+						"src": "/jukji-bamboo-shaft.png",
+						"tempImage": "/temp/jukji-bamboo-shaft.jpg"
 					}
 				],
 				"blocks": [
@@ -27270,6 +27430,54 @@
 						"at": "Yuri….!",
 						"prompt": "Cinematic historical illustration of three kings, Three Kingdoms of Samhan / Tang era (-18), scene: Onjo, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/three-kings.jpg"
+					},
+					{
+						"id": "onjo-river-strip",
+						"ratio": 0.5625,
+						"tone": "#f0c04a",
+						"at": "The land of a HUNDRED tribes",
+						"alt": "Onjo standing above a low mustard-yellow river strip in vast dark negative space",
+						"prompt": "Minimal iconic 9:16 poster. Onjo, founder of Baekje. ONE geometric device: a LOW STRIP of mustard-yellow river occupying only the bottom fifth — a hard horizontal water-plane. Isolated poster-scale body standing on that strip. Face matches the attached portrait. Baekje yellow #f0c04a as the river-strip plane and the outer robe. Striking silky court-military hanbok, few hues. Earth beat: simple real water as the strip only. No army. No palace. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_onjo.png"
+						],
+						"people": [
+							"onjo"
+						],
+						"src": "/onjo-river-strip.png",
+						"tempImage": "/temp/onjo-river-strip.jpg"
+					},
+					{
+						"id": "sosuno-south-wedge",
+						"ratio": 0.75,
+						"tone": "#e8a04a",
+						"at": "take their mother Sosuno and head south",
+						"alt": "Sosuno standing on a diagonal amber south-road wedge in a charcoal void",
+						"prompt": "Minimal iconic 3:4 poster. Sosuno, partner-founder who walked south. ONE geometric device: a DIAGONAL WEDGE of amber earth-road cutting from lower-left to upper-right as a single hard color plane. Isolated poster-scale body standing on the wedge. Face matches the attached portrait. Amber #e8a04a as the road-wedge plane. Striking silky hanbok, few hues. Earth beat: simple real earth of the road wedge. No army. No grain porch furniture. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_sosuno.png"
+						],
+						"people": [
+							"sosuno"
+						],
+						"src": "/sosuno-south-wedge.png",
+						"tempImage": "/temp/sosuno-south-wedge.jpg"
+					},
+					{
+						"id": "ladyye-broken-shaft",
+						"ratio": 0.5625,
+						"tone": "#d98fa8",
+						"at": "tells her son Yuri that his real father",
+						"alt": "Lady Ye in a charcoal void behind a short broken-blade shaft in the lower third",
+						"prompt": "Minimal iconic 9:16 poster. Lady Ye, first wife of Jumong who raises an heir alone. ONE geometric device: a SHORT SHAFT — a broken ring-pommel blade as a hard dark-steel vertical bar occupying only the LOWER third, snapped at the top, not a full-height sword bisect. Isolated poster-scale body standing behind that short shaft. Face matches the attached portrait. Dusty rose #d98fa8 as the single accent. Striking silky hanbok, few hues. Earth beat: Buyeo winter as charcoal void. No army. No egg. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_lady_ye.png"
+						],
+						"people": [
+							"ladyye"
+						],
+						"src": "/ladyye-broken-shaft.png",
+						"tempImage": "/temp/ladyye-broken-shaft.jpg"
 					}
 				],
 				"blocks": [
@@ -28381,6 +28589,22 @@
 						"at": "Bangul rides out alone and does not come back.",
 						"prompt": "Cinematic historical illustration of gyebek gwanchang, Three Kingdoms of Samhan / Tang era (660), scene: young Hwarang charging Baekje line alone at Hwangsanbeol, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/gyebek-gwanchang.jpg"
+					},
+					{
+						"id": "gwanchang-helmet-disc",
+						"ratio": 0.5625,
+						"tone": "#79b6f2",
+						"at": "Gyebek sends him home once",
+						"alt": "Sixteen-year-old Gwanchang under an unstrapped-helmet disc in vast dark negative space",
+						"prompt": "Minimal iconic 9:16 poster. Gwanchang, sixteen-year-old Hwarang who rides back. ONE geometric device: an unstrapped helmet as a DISC — a hard hollow circular plane behind his head, slightly offset, empty of a face, not a halo. Isolated poster-scale body in the lower third. Face matches the attached portrait: red liner at the eyes, blue headband with a gold crescent. Ice-blue #79b6f2 as the headband and a thin rim on the helmet-disc. Striking silky Hwarang hanbok, few hues. Earth beat: Yellow Mountain as charcoal void. Living youth, no gore. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_gwanchang.png"
+						],
+						"people": [
+							"gwanchang"
+						],
+						"src": "/gwanchang-helmet-disc.png",
+						"tempImage": "/temp/gwanchang-helmet-disc.jpg"
 					},
 					{
 						"id": "hwangsan-laststand",
@@ -32869,6 +33093,22 @@
 						"tempImage": "/temp/lake_remembers_01.jpg"
 					},
 					{
+						"id": "seohyeon-steam-corner",
+						"ratio": 1,
+						"tone": "#3E8EF0",
+						"at": "stands where the rock shelves into black",
+						"alt": "Kim Seohyeon standing in a charcoal void with a cyan steam-stamp in the upper-left corner",
+						"prompt": "Minimal iconic 1:1 poster. Kim Seohyeon, Yushin’s father, first Kim the steam loved. ONE geometric device: a CORNER CROP of steam — a hard pale-cyan mist rectangle occupying only the upper-left corner, cut sharp as a stamp of vapor. Isolated poster-scale body standing in the lower-right; he stands, he does not sit lotus. Face matches the attached portrait. Sky-blue #3E8EF0 as the steam-corner and the sash accent. Striking silky court-military, few hues. Otherworld beat: steam cavern as symbolic flat charcoal void plus the cyan corner, no naturalistic sun moon or cloud weather. No army. No three sisters. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_kim_seohyun.png"
+						],
+						"people": [
+							"seohyeon"
+						],
+						"src": "/seohyeon-steam-corner.png",
+						"tempImage": "/temp/seohyeon-steam-corner.jpg"
+					},
+					{
 						"id": "lake_remembers_02",
 						"ratio": 5,
 						"tone": "#243330",
@@ -33578,6 +33818,22 @@
 						"at": "Queen Munmyung now, and the last person alive",
 						"prompt": "Cinematic historical illustration of two kings crowns, Three Kingdoms of Samhan / Tang era (676), scene: The King for All, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/two-kings-crowns.jpg"
+					},
+					{
+						"id": "munhee-coat-wedge",
+						"ratio": 0.5625,
+						"tone": "#E07FA8",
+						"at": "is straightening her son",
+						"alt": "Munhee three-quarter in a charcoal void, a hard rose-silk coat wedge cutting the lower frame — not a profile",
+						"prompt": "Minimal iconic 9:16 poster. Munhee, household queen of Silla. ONE geometric device: a hard triangular WEDGE of rose silk — an unfinished coat as a single color plane cutting from lower-left to mid-right. Isolated poster-scale body in the lower-right third, three-quarter view facing the viewer, NOT a side profile. Face matches the attached portrait. Rose #E07FA8 as the plane of the wedge. Striking silky hanbok: pale teal jeogori, deep rose chima, few hues. Earth beat: indoor night-black. No army. No palace furniture. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_munhee.png"
+						],
+						"people": [
+							"munhee"
+						],
+						"src": "/munhee-coat-wedge.png",
+						"tempImage": "/temp/munhee-coat-wedge.jpg"
 					},
 					{
 						"id": "three-crowns",

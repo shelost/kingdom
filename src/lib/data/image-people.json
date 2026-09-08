@@ -17,6 +17,9 @@
 		"munmu",
 		"sunduk"
 	],
+	"chunmyung-binyeo-stamp": [
+		"chunmyung"
+	],
 	"yushin-chunchu-munhee": [
 		"chunchu",
 		"munhee",
@@ -283,6 +286,9 @@
 	"gotaso-determination-forward": [
 		"gotaso"
 	],
+	"pumsuk-crescent-arc": [
+		"pumsuk"
+	],
 	"munhee-sewing-first": [
 		"chunchu",
 		"munhee"
@@ -367,6 +373,15 @@
 		"golhwa",
 		"hyulle",
 		"narim"
+	],
+	"narim-jade-arc": [
+		"narim"
+	],
+	"hyulle-wave-strip": [
+		"hyulle"
+	],
+	"golhwa-flame-wedge": [
+		"golhwa"
 	],
 	"golhwa-wink": [
 		"golhwa"
@@ -507,6 +522,9 @@
 	"daeya_granary_gate": [
 		"gumil",
 		"yunchung"
+	],
+	"gumil-sleeve-wedge": [
+		"gumil"
 	],
 	"daeya-door-inside": [
 		"pumsuk",
@@ -813,7 +831,8 @@
 		"yuhwa"
 	],
 	"haemosu-stunned-close": [
-		"haemosu"
+		"haemosu",
+		"yuhwa"
 	],
 	"yuhwa-bath-tease": [
 		"yuhwa"
@@ -860,8 +879,31 @@
 		"yeontabal",
 		"yuhwa"
 	],
+	"geumwa-gold-yard": [
+		"geumwa"
+	],
+	"daeso-heir-stare": [
+		"daeso"
+	],
+	"jumong-daeso-bowline": [
+		"daeso",
+		"jumong"
+	],
+	"galsa-smaller-smile": [
+		"galsa"
+	],
+	"galsa-east-split": [
+		"galsa"
+	],
 	"jumong_04": [
 		"haemosu",
+		"jumong"
+	],
+	"jumong-ye-whisper": [
+		"jumong",
+		"ladyye"
+	],
+	"haewonmek-sun-knock": [
 		"jumong"
 	],
 	"haemosu-chariot-flash": [
@@ -1258,6 +1300,9 @@
 		"jinheung",
 		"muryuk"
 	],
+	"muryuk-iron-bar": [
+		"muryuk"
+	],
 	"gaya-crown": [
 		"jinheung"
 	],
@@ -1335,6 +1380,12 @@
 	"wuzetian-screen-power": [
 		"wuzetian"
 	],
+	"gaozong-dais-strip": [
+		"gaozong"
+	],
+	"wuzetian-edge-gaze": [
+		"wuzetian"
+	],
 	"secretariat_01": [
 		"chunchu"
 	],
@@ -1347,6 +1398,9 @@
 	"secretariat_tang_formation": [
 		"muryuk",
 		"seohyeon"
+	],
+	"jukji-bamboo-shaft": [
+		"jukji"
 	],
 	"jinduk-passing": [
 		"jinduk"
@@ -1510,6 +1564,15 @@
 		"onjo",
 		"yuri"
 	],
+	"onjo-river-strip": [
+		"onjo"
+	],
+	"sosuno-south-wedge": [
+		"sosuno"
+	],
+	"ladyye-broken-shaft": [
+		"ladyye"
+	],
 	"three-realms-02-arrival": [
 		"haemosu",
 		"ibiga",
@@ -1585,6 +1648,9 @@
 	"gyebek-gwanchang": [
 		"gwanchang",
 		"gyebek"
+	],
+	"gwanchang-helmet-disc": [
+		"gwanchang"
 	],
 	"hwangsan-laststand": [
 		"gyebek"
@@ -1778,6 +1844,9 @@
 	"yushin-sketch": [
 		"yushin"
 	],
+	"seohyeon-steam-corner": [
+		"seohyeon"
+	],
 	"munmu-dangun-cavern": [
 		"dangun",
 		"munmu"
@@ -1789,6 +1858,9 @@
 		"gaozong"
 	],
 	"two-kings-crowns": [
+		"munhee"
+	],
+	"munhee-coat-wedge": [
 		"munhee"
 	],
 	"unified-silla-wide": [
