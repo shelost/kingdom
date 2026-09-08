@@ -2761,6 +2761,21 @@
 							"/ch_samsin.png"
 						],
 						"tempImage": "/temp/samsin-cascade.jpg"
+					},
+					{
+						"id": "samsin-threefold",
+						"ratio": 0.75,
+						"tone": "#e8b4c8",
+						"at": "I will open the breath.",
+						"alt": "Samsin as a three-fold grandmother: three offset silhouettes of the same midwife in blush-pink light",
+						"prompt": "Minimal iconic 3:4 poster. Samsin, midwife goddess, three-fold grandmother. ONE geometric device: THREE overlapping offset silhouettes of the SAME woman in blush-pink #e8b4c8. Face matches the attached portrait. Otherworld flat black. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_samsin.png"
+						],
+						"people": [
+							"samsin"
+						],
+						"tempImage": "/temp/samsin-threefold.jpg"
 					}
 				],
 				"blocks": [
@@ -7056,6 +7071,51 @@
 						"refs": [
 							"/workspace/static/pl_eastern.png"
 						]
+					},
+					{
+						"id": "narim-jade-pin",
+						"ratio": 0.75,
+						"tone": "#3d9e52",
+						"at": "You wash like a man who thinks dirt is the only thing that sticks.",
+						"alt": "Narim in a black void beside a vertical jade pin, mint-green the only light",
+						"prompt": "Minimal iconic 3:4 poster. Narim, eldest steam-cavern goddess. ONE geometric device: a vertical JADE PIN of #3d9e52 as the only light. Face matches the attached portrait. Otherworld cavern: symbolic flat black. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_narim.png"
+						],
+						"people": [
+							"narim"
+						],
+						"tempImage": "/temp/narim-jade-pin.jpg"
+					},
+					{
+						"id": "golhwa-flame-wedge",
+						"ratio": 0.75,
+						"tone": "#e86820",
+						"at": "Leave the sermon, unnie.",
+						"alt": "Golhwa leaning into a coral flame-wedge punching up from the lower-right of a black void",
+						"prompt": "Minimal iconic 3:4 poster. Golhwa, youngest steam-cavern goddess. ONE geometric device: a FLAME-WEDGE of coral #e86820 from the lower-right. Face matches the attached portrait. Otherworld cavern: symbolic flat black. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_golhwa.png"
+						],
+						"people": [
+							"golhwa"
+						],
+						"tempImage": "/temp/golhwa-flame-wedge.jpg"
+					},
+					{
+						"id": "hyulle-wave-arc",
+						"ratio": 0.75,
+						"tone": "#2eb8c4",
+						"at": "He came to rest.",
+						"alt": "Hyullé small above a broken cyan wave-arc at the bottom of a black void",
+						"prompt": "Minimal iconic 3:4 poster. Hyullé, quiet steam-cavern goddess. ONE geometric device: a BROKEN WAVE-ARC of cyan #2eb8c4 at the bottom edge. Face matches the attached portrait. Otherworld cavern: symbolic flat black. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_hyullé.png"
+						],
+						"people": [
+							"hyulle"
+						],
+						"tempImage": "/temp/hyulle-wave-arc.jpg"
 					}
 				],
 				"blocks": [
@@ -9146,6 +9206,21 @@
 							"bojang"
 						],
 						"tempImage": "/temp/bojang-hollow-frame.jpg"
+					},
+					{
+						"id": "gesomun-five-pommels",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "We settle the succession today.",
+						"alt": "Yeon Gesomun as a dark body in a black void; five shining crow ring-pommels stacked as the only lights",
+						"prompt": "Minimal iconic 9:16 poster. Yeon Gesomun, Supreme Commander. ONE geometric device: EXACTLY FIVE shining hollow RING-POMMELS as a vertical constellation of gold circles, crow stamps inside; the pommels are the only lights. Dark body, thick beard, high bun. Face matches the attached portrait. Goguryeo-red #C30000 rim-light. Eighty percent black void. Striking silky Goguryeo court-military. No army. No banquet. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_yeon_gesomun.png"
+						],
+						"people": [
+							"gesomun"
+						],
+						"tempImage": "/temp/gesomun-five-pommels.jpg"
 					}
 				],
 				"blocks": [
@@ -11810,6 +11885,21 @@
 						"src": "/temp/li_shimin_dragon.png",
 						"alt": "Tang dragon emblem in gold against crimson - imperial power and intrigue",
 						"prompt": "Imperial intrigue: The Tang dragon emblem rendered in gold against deep crimson red negative space"
+					},
+					{
+						"id": "taizong-worms-eye-crown",
+						"ratio": 0.5625,
+						"tone": "#c97a2e",
+						"at": "The seventh invasion of Goguryeo has not begun",
+						"alt": "Worm’s-eye of Emperor Taizong: imperial crown highlighted in gold, yellow robe-rims, the rest a black void",
+						"prompt": "Minimal iconic 9:16 poster. Emperor Taizong, Li Shimin. ONE geometric device: WORM’S-EYE looking UP; the imperial mianliu crown as a highlighted gold bar at the top. Body recedes into black. Face matches the attached portrait. Yellow #c97a2e highlights on crown and silk folds only. Eighty percent black void. No army. No palace furniture. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_taizong.png"
+						],
+						"people": [
+							"taizong"
+						],
+						"tempImage": "/temp/taizong-worms-eye-crown.jpg"
 					}
 				],
 				"blocks": [
@@ -14131,6 +14221,36 @@
 							"/ch_haemosu.png"
 						],
 						"tempImage": "/temp/yuhwa-moon-office.png"
+					},
+					{
+						"id": "haemosu-sunflash-dragons",
+						"ratio": 0.5625,
+						"tone": "#f0b429",
+						"at": "The sun-run is a gold disc",
+						"alt": "Haemosu monumental in a black void, a sun-flash disc behind him and five dragon-arcs wrapping the light",
+						"prompt": "Minimal iconic 9:16 poster. Haemosu, god of the sun. ONE geometric device: a sudden FLASH of the sun as a hard gold disc behind him, five slender dragons as thin five-colored arcs. Face matches the attached portrait. Gold #f0b429 as the single accent. Otherworld charcoal void. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_haemosu.png"
+						],
+						"people": [
+							"haemosu"
+						],
+						"tempImage": "/temp/haemosu-sunflash-dragons.jpg"
+					},
+					{
+						"id": "jumong-bow-arc",
+						"ratio": 0.5625,
+						"tone": "#e8563f",
+						"at": "one bowshot, one bride",
+						"alt": "Jumong as a dark archer in a black void, the bow a single bright red arc of light",
+						"prompt": "Minimal iconic 9:16 poster. Jumong, demigod archer. NOT a fully-lit archer. ONE geometric device: the BOW as ONE bright red #e8563f ARC in the void. Face matches the attached portrait as a rim. Eighty percent black. Simple earth strip. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_jumong.png"
+						],
+						"people": [
+							"jumong"
+						],
+						"tempImage": "/temp/jumong-bow-arc.jpg"
 					}
 				],
 				"blocks": [
@@ -16722,6 +16842,21 @@
 							"alchun"
 						],
 						"tempImage": "/temp/alchun-tablet-bar.jpg"
+					},
+					{
+						"id": "bidam-lotus-sit",
+						"ratio": 0.5625,
+						"tone": "#141C2E",
+						"at": "Tea first.",
+						"alt": "Bidam sitting in lotus in a navy void, 108 gold beads and a lotus-gold shaft the only light",
+						"prompt": "Minimal iconic 9:16 poster. Bidam, Buddhist nativist. He SITS in lotus. ONE geometric device: 108 prayer beads as a gold RING plus a vertical lotus-gold shaft. Navy void #141C2E. Face matches the attached portrait. Sutra/lotus gold, not generic gilding. Not Yushin standing. No army. No sword. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_bidam.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/bidam-lotus-sit.jpg"
 					}
 				],
 				"blocks": [
@@ -19104,6 +19239,21 @@
 							"/ch_ibiga.png"
 						],
 						"tempImage": "/temp/ibiga-in-clouds.jpg"
+					},
+					{
+						"id": "ibiga-cloud-form",
+						"ratio": 0.5625,
+						"tone": "#1e4d9c",
+						"at": "I looked… and could not hold back.",
+						"alt": "Ibiga the sky-god formed from cloud-masses and birds in negative space — he is the weather, not a man in front of it",
+						"prompt": "Minimal iconic 9:16 poster. Ibiga, male god of the sky. ONE geometric device: his body FORMED from cloud-shapes and bird-flocks in clever negative space. Face matches the attached portrait. Deep blue #1e4d9c. Otherworld: clouds ARE his substance. Eighty percent black. No sun, no moon. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_ibiga.png"
+						],
+						"people": [
+							"ibiga"
+						],
+						"tempImage": "/temp/ibiga-cloud-form.jpg"
 					}
 				],
 				"blocks": [
@@ -21140,6 +21290,21 @@
 							"/ch_wu_zetian.png"
 						],
 						"tempImage": "/temp/wuzetian-screen-power.png"
+					},
+					{
+						"id": "wuzetian-seal-stamp",
+						"ratio": 0.5625,
+						"tone": "#e879a6",
+						"at": "The crown prince has been sitting since before dawn.",
+						"alt": "Wu Zetian as a dark silhouette, an imperial rose seal-stamp occupying the lower-right — not a gold screen",
+						"prompt": "Minimal iconic 9:16 poster. Wu Zetian. NEW device, NOT a gold screen. ONE geometric device: an imperial SEAL as a hard square STAMP of deep rose #e879a6, blank, no glyphs. Face matches the attached portrait as a gold-crowned rim. Eighty percent black. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_wu_zetian.png"
+						],
+						"people": [
+							"wuzetian"
+						],
+						"tempImage": "/temp/wuzetian-seal-stamp.jpg"
 					}
 				],
 				"blocks": [
@@ -22214,6 +22379,21 @@
 							"jinduk"
 						],
 						"tempImage": "/temp/jinduk-tassel-drop.jpg"
+					},
+					{
+						"id": "muyeol-shadow-eyes",
+						"ratio": 0.75,
+						"tone": "#D8258C",
+						"at": "When I die, do not pretend I ruled.",
+						"alt": "King Muyeol straight-on, eyes covered by a band of shadow, magenta robe-edge the only accent",
+						"prompt": "Minimal iconic 3:4 poster. King Muyeol, Kim Chunchu. ONE geometric device: STRAIGHT-ON frontal face, BOTH EYES COVERED by a hard horizontal band of black shadow. Magenta #D8258C as the one robe-edge plane. Face matches the attached portrait. Silla gold crown as a faint rim. Eighty percent black void. Not a side-profile strategist. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_muyeol.png"
+						],
+						"people": [
+							"chunchu"
+						],
+						"tempImage": "/temp/muyeol-shadow-eyes.jpg"
 					}
 				],
 				"blocks": [
@@ -22572,6 +22752,36 @@
 							"/ch_hyukgose.png"
 						],
 						"tempImage": "/temp/hyukgose-poster.jpg"
+					},
+					{
+						"id": "hyukgose-eggshell-arc",
+						"ratio": 0.75,
+						"tone": "#6f9fe8",
+						"at": "to rule with brightness",
+						"alt": "Photoreal Hyukgosé mostly in shadow, a broken eggshell-arc and cerulean rim-light the only accent",
+						"prompt": "Minimal iconic 3:4 poster. Hyukgosé, photoreal demigod founder. ONE geometric device: a BROKEN EGGSHELL as an incomplete white arc. Photoreal face matches the attached portrait, mostly in shadow; pale-blue #6f9fe8 rim. No horse. No egg-circle. No army. No text. No watermark. Graphic color-blocking, photoreal demigod face, monumental.",
+						"refs": [
+							"/ch_hyukgose.png"
+						],
+						"people": [
+							"hyukgose"
+						],
+						"tempImage": "/temp/hyukgose-eggshell-arc.jpg"
+					},
+					{
+						"id": "alyoung-dragon-rib",
+						"ratio": 0.75,
+						"tone": "#a8c8f0",
+						"at": "One from an egg, one from a chicken.",
+						"alt": "Photoreal Lady Alyoung mostly in shadow, a chicken-dragon rib as a gold-white bone-arc",
+						"prompt": "Minimal iconic 3:4 poster. Lady Alyoung, photoreal demigod queen. ONE geometric device: a CHICKEN-DRAGON RIB as a gold-white bone-arc. Photoreal face matches the attached portrait, mostly in shadow; pale #a8c8f0 rim. No well catalog. No army. No text. No watermark. Graphic color-blocking, photoreal demigod face, monumental.",
+						"refs": [
+							"/ch_alyoung.png"
+						],
+						"people": [
+							"alyoung"
+						],
+						"tempImage": "/temp/alyoung-dragon-rib.jpg"
 					}
 				],
 				"blocks": [
@@ -24633,6 +24843,51 @@
 							"/ch_sobyeol.png"
 						],
 						"tempImage": "/temp/sobyeol-ribbon.png"
+					},
+					{
+						"id": "daebyeol-blue-star-palm",
+						"ratio": 0.75,
+						"tone": "#3B6FBF",
+						"at": "Dead side! Ledger crooked again!",
+						"alt": "Big Star, taller and cooler, right hand out, a blue star hovering above his palm in a black void",
+						"prompt": "Minimal iconic 3:4 poster. Big Star, Daebyeol. Matching sibling to Little Star but taller, cooler, more monumental. ONE geometric device: RIGHT HAND palm-up, a BLUE star of #3B6FBF hovering above the palm. Face matches the attached portrait. Otherworld flat black. Eighty percent black. No sun moon clouds. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_big_star.png"
+						],
+						"people": [
+							"daebyeol"
+						],
+						"tempImage": "/temp/daebyeol-blue-star-palm.jpg"
+					},
+					{
+						"id": "sobyeol-red-star-palm",
+						"ratio": 0.75,
+						"tone": "#C94040",
+						"at": "Living side! Thief running again!",
+						"alt": "Little Star, closer and hungrier, right hand out, a red star hovering above his palm in a black void",
+						"prompt": "Minimal iconic 3:4 poster. Little Star, Sobyeol. Matching sibling to Big Star but closer, hungrier, hotter. ONE geometric device: RIGHT HAND palm-up, a RED star of #C94040 hovering above the palm. Face matches the attached portrait. Otherworld flat black. Eighty percent black. No sun moon clouds. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_little_star.png"
+						],
+						"people": [
+							"sobyeol"
+						],
+						"tempImage": "/temp/sobyeol-red-star-palm.jpg"
+					},
+					{
+						"id": "heavenearth-split-plane",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"at": "I retire.",
+						"alt": "Heaven–Earth King standing on a hard horizontal seam of red living-heat and blue underworld",
+						"prompt": "Minimal iconic 9:16 poster. Heaven–Earth King. ONE geometric device: a HARD HORIZONTAL split — living heat #C30000 below, orderly dead #3E79E4 above. Body on the seam, mostly shadow. Face matches the attached portrait. Otherworld: no sun moon clouds. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_heaven_earth_king.png"
+						],
+						"people": [
+							"heavenearthking"
+						],
+						"tempImage": "/temp/heavenearth-split-plane.jpg"
 					}
 				],
 				"blocks": [
@@ -25447,6 +25702,21 @@
 							"/ch_jacheongbi.png"
 						],
 						"tempImage": "/temp/hallakgungi-rows.png"
+					},
+					{
+						"id": "hallakgungi-green-bloom",
+						"ratio": 0.75,
+						"tone": "#8FBF8A",
+						"at": "the only time anyone gets him to stand still.",
+						"alt": "Hallakgungi small in stem-shadow, one enormous sage-green bloom as a disc of light in a black void",
+						"prompt": "Minimal iconic 3:4 poster. Hallakgungi, Master of the Western Flower Field. ONE geometric device: one enormous cropped sage BLOOM as a disc of #8FBF8A. Face matches the attached portrait. Otherworld: no sun moon clouds. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_gardener.png"
+						],
+						"people": [
+							"sara"
+						],
+						"tempImage": "/temp/hallakgungi-green-bloom.jpg"
 					}
 				],
 				"blocks": [
@@ -26940,6 +27210,51 @@
 							"kangrim"
 						],
 						"tempImage": "/temp/kangrim-ledger-glow.jpg"
+					},
+					{
+						"id": "kangrim-sword-redbook",
+						"ratio": 0.75,
+						"tone": "#b91c1c",
+						"at": "I do not punish.",
+						"alt": "Kangrim in a black void, eyes banded, sword in one hand and a glowing red notebook in the other",
+						"prompt": "Minimal iconic 3:4 poster. Kangrim, psychopomp. Matching pair LEFT. Sword in one hand, glowing RED notebook in the other as the only light. EYES COVERED with a black cloth band. Face matches the attached portrait. Black gat. Otherworld flat black. Eighty percent black. No readable text. No army. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_kangrim.png"
+						],
+						"people": [
+							"kangrim"
+						],
+						"tempImage": "/temp/kangrim-sword-redbook.jpg"
+					},
+					{
+						"id": "haewonmek-sword-redbook",
+						"ratio": 0.75,
+						"tone": "#b91c1c",
+						"at": "accurate last words",
+						"alt": "Haewonmek, mirrored to Kangrim: mouth banded, sword in one hand and a glowing red notebook in the other",
+						"prompt": "Minimal iconic 3:4 poster. Haewonmek, second psychopomp. Matching pair RIGHT, composition flipped. Sword in one hand, glowing RED notebook in the other. MOUTH COVERED with a black cloth band; eyes visible under the gat. Face matches the attached portrait. Otherworld flat black. Eighty percent black. No readable text. No army. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_haewonmek.png"
+						],
+						"people": [
+							"haewonmek"
+						],
+						"tempImage": "/temp/haewonmek-sword-redbook.jpg"
+					},
+					{
+						"id": "yumla-judgment-seal",
+						"ratio": 0.5625,
+						"tone": "#7c3aed",
+						"at": "with court courtesy",
+						"alt": "Yumla in a black underworld void, a huge purple judgment-stamp the only rectangle of light",
+						"prompt": "Minimal iconic 9:16 poster. Yumla, Judge of the Underworld. ONE geometric device: a huge PURPLE judgment STAMP of #7c3aed, blank, no glyphs. Face matches the attached portrait. Otherworld flat black. Eighty percent black. No army. No furniture dump. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_yumla.png"
+						],
+						"people": [
+							"yumla"
+						],
+						"tempImage": "/temp/yumla-judgment-seal.jpg"
 					}
 				],
 				"blocks": [
@@ -28259,6 +28574,51 @@
 							"/ch_hwanin.png"
 						],
 						"tempImage": "/temp/hwanin-above.png"
+					},
+					{
+						"id": "hwanin-ivory-void",
+						"ratio": 0.5625,
+						"tone": "#F4F1E8",
+						"at": "Three seals go down",
+						"alt": "Hwanin tiny at the top of empty heaven, a single ivory thread of light falling through black",
+						"prompt": "Minimal iconic 9:16 poster. Hwanin, Creator, Lord of Heaven. ONE geometric device: a single thin IVORY thread of light #F4F1E8 falling down empty heaven. Face matches the attached portrait as a cream rim. Otherworld: no sun, no moon, no clouds. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_hwanin.png"
+						],
+						"people": [
+							"hwanin"
+						],
+						"tempImage": "/temp/hwanin-ivory-void.jpg"
+					},
+					{
+						"id": "ungnyeo-cave-shaft",
+						"ratio": 0.5625,
+						"tone": "#c9b18f",
+						"at": "The bear stays.",
+						"alt": "Ungnyeo the Bear-Woman in a black cave, one cream-gold shaft of light the only plane",
+						"prompt": "Minimal iconic 9:16 poster. Ungnyeo, the Bear-Woman. ONE geometric device: a cream-gold SHAFT of light #c9b18f through a black cave-mouth. Face matches the attached portrait. Eighty percent black. Simple cave arch. No tiger catalog. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_ungnyeo.png"
+						],
+						"people": [
+							"ungnyeo"
+						],
+						"tempImage": "/temp/ungnyeo-cave-shaft.jpg"
+					},
+					{
+						"id": "dangun-sandalwood-altar",
+						"ratio": 0.5625,
+						"tone": "#b8956a",
+						"at": "the divine birch",
+						"alt": "Dangun above a low sandalwood altar-bar of bronze light, not a yearbook bust",
+						"prompt": "Minimal iconic 9:16 poster. Dangun, Grandson of Heaven. ONE geometric device: a sandalwood ALTAR as a low bronze bar of #b8956a. Face matches the attached portrait. Eighty percent black. No city. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_dangun.png"
+						],
+						"people": [
+							"dangun"
+						],
+						"tempImage": "/temp/dangun-sandalwood-altar.jpg"
 					}
 				],
 				"blocks": [
@@ -28704,6 +29064,21 @@
 							"gyebek"
 						],
 						"tempImage": "/temp/gyebek-planted-wedge.jpg"
+					},
+					{
+						"id": "gyebek-vertical-blade",
+						"ratio": 0.5625,
+						"tone": "#FFCB51",
+						"at": "Four hundred and twelve.",
+						"alt": "Gyebek kneeling in a black void, a planted phoenix blade as one bright Baekje-yellow vertical line",
+						"prompt": "Minimal iconic 9:16 poster. Gyebek, last general of Baekje. ONE geometric device: a planted phoenix blade as ONE hard bright vertical line, Baekje yellow #FFCB51. He kneels in the lower third gripping the ring pommel. Face matches the attached portrait. Face mostly in shadow. Eighty percent black void. Simple earth dust-strip. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_gyebek.png"
+						],
+						"people": [
+							"gyebek"
+						],
+						"tempImage": "/temp/gyebek-vertical-blade.jpg"
 					}
 				],
 				"blocks": [

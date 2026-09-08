@@ -77,6 +77,12 @@
 	"cheomseongdae-moon-iconic": [
 		"sunduk"
 	],
+	"munhee-folded-letter": [
+		"munhee"
+	],
+	"sunduk-star-shaft": [
+		"sunduk"
+	],
 	"crescent-hwarang": [
 		"jinheung"
 	],
@@ -177,6 +183,9 @@
 		"namseng"
 	],
 	"samsin-cascade": [
+		"samsin"
+	],
+	"samsin-threefold": [
 		"samsin"
 	],
 	"gwanggaeto": [
@@ -295,6 +304,12 @@
 		"chunchu",
 		"munhee"
 	],
+	"gotaso-ribbon-slash": [
+		"gotaso"
+	],
+	"pumsuk-headband-bar": [
+		"pumsuk"
+	],
 	"stele-sunrise": [
 		"gwanggaeto"
 	],
@@ -353,6 +368,9 @@
 	"img_euija_06": [
 		"euija",
 		"gyebek"
+	],
+	"euija-crown-eaten": [
+		"euija"
 	],
 	"north-star-poster": [
 		"muryuk"
@@ -552,6 +570,15 @@
 	"golhwa-steam-emblem": [
 		"golhwa"
 	],
+	"narim-jade-pin": [
+		"narim"
+	],
+	"golhwa-flame-wedge": [
+		"golhwa"
+	],
+	"hyulle-wave-arc": [
+		"hyulle"
+	],
 	"daeya-massacre-doorway": [
 		"gesomun"
 	],
@@ -605,6 +632,15 @@
 		"gesomun"
 	],
 	"massacre-red-doorway": [
+		"gesomun"
+	],
+	"gesomun-rank-bar": [
+		"gesomun"
+	],
+	"bojang-hollow-frame": [
+		"bojang"
+	],
+	"gesomun-five-pommels": [
 		"gesomun"
 	],
 	"chunchu-robes": [
@@ -723,6 +759,9 @@
 	"tang-taizong-court": [
 		"taizong"
 	],
+	"taizong-worms-eye-crown": [
+		"taizong"
+	],
 	"taizong-portrait": [
 		"taizong"
 	],
@@ -813,7 +852,8 @@
 		"yuhwa"
 	],
 	"haemosu-stunned-close": [
-		"haemosu"
+		"haemosu",
+		"yuhwa"
 	],
 	"yuhwa-bath-tease": [
 		"yuhwa"
@@ -860,8 +900,31 @@
 		"yeontabal",
 		"yuhwa"
 	],
+	"geumwa-gold-yard": [
+		"geumwa"
+	],
+	"daeso-heir-stare": [
+		"daeso"
+	],
+	"jumong-daeso-bowline": [
+		"daeso",
+		"jumong"
+	],
+	"galsa-smaller-smile": [
+		"galsa"
+	],
+	"galsa-east-split": [
+		"galsa"
+	],
 	"jumong_04": [
 		"haemosu",
+		"jumong"
+	],
+	"jumong-ye-whisper": [
+		"jumong",
+		"ladyye"
+	],
+	"haewonmek-sun-knock": [
 		"jumong"
 	],
 	"haemosu-chariot-flash": [
@@ -950,6 +1013,12 @@
 	"yuhwa-moon-office": [
 		"haemosu",
 		"yuhwa"
+	],
+	"haemosu-sunflash-dragons": [
+		"haemosu"
+	],
+	"jumong-bow-arc": [
+		"jumong"
 	],
 	"gesomun-authority": [
 		"gesomun"
@@ -1148,6 +1217,15 @@
 	"bidam-pavilion-empty": [
 		"bidam"
 	],
+	"bidam-gold-shaft": [
+		"bidam"
+	],
+	"alchun-tablet-bar": [
+		"alchun"
+	],
+	"bidam-lotus-sit": [
+		"bidam"
+	],
 	"wa-mountains": [
 		"bidam",
 		"chunchu",
@@ -1254,6 +1332,9 @@
 	"ibiga-in-clouds": [
 		"ibiga"
 	],
+	"ibiga-cloud-form": [
+		"ibiga"
+	],
 	"gaya-surrender": [
 		"jinheung",
 		"muryuk"
@@ -1335,6 +1416,9 @@
 	"wuzetian-screen-power": [
 		"wuzetian"
 	],
+	"wuzetian-seal-stamp": [
+		"wuzetian"
+	],
 	"secretariat_01": [
 		"chunchu"
 	],
@@ -1347,6 +1431,12 @@
 	"secretariat_tang_formation": [
 		"muryuk",
 		"seohyeon"
+	],
+	"chunchu-map-pool": [
+		"chunchu"
+	],
+	"jukji-inkstone-pool": [
+		"jukji"
 	],
 	"jinduk-passing": [
 		"jinduk"
@@ -1383,6 +1473,12 @@
 	"chunchu_subordinate_silhouettes": [
 		"chunchu"
 	],
+	"jinduk-tassel-drop": [
+		"jinduk"
+	],
+	"muyeol-shadow-eyes": [
+		"chunchu"
+	],
 	"alyoung-chicken-dragon": [
 		"alyoung",
 		"hyukgose"
@@ -1393,6 +1489,12 @@
 	],
 	"hyukgose-poster": [
 		"hyukgose"
+	],
+	"hyukgose-eggshell-arc": [
+		"hyukgose"
+	],
+	"alyoung-dragon-rib": [
+		"alyoung"
 	],
 	"satek-clan-2": [
 		"eldersatek"
@@ -1567,6 +1669,15 @@
 	"hwanin-above": [
 		"hwanin"
 	],
+	"hwanin-ivory-void": [
+		"hwanin"
+	],
+	"ungnyeo-cave-shaft": [
+		"ungnyeo"
+	],
+	"dangun-sandalwood-altar": [
+		"dangun"
+	],
 	"alchun-restraint": [
 		"alchun"
 	],
@@ -1611,6 +1722,12 @@
 	],
 	"yushin-after-yellow": [
 		"yushin"
+	],
+	"gyebek-planted-wedge": [
+		"gyebek"
+	],
+	"gyebek-vertical-blade": [
+		"gyebek"
 	],
 	"two-kings": [
 		"chunchu",
@@ -1730,6 +1847,10 @@
 		"namsan",
 		"namseng"
 	],
+	"namseng-west-seam": [
+		"gesomun",
+		"namseng"
+	],
 	"namseng-betrayal": [
 		"gesomun",
 		"namseng"
@@ -1769,6 +1890,9 @@
 	],
 	"chunchu-forecast": [
 		"chunchu",
+		"munmu"
+	],
+	"munmu-crimson-tide": [
 		"munmu"
 	],
 	"munmu-visits-yushin": [
@@ -1833,52 +1957,25 @@
 	"sanggyeong-grid": [
 		"daejoyoung"
 	],
-	"bidam-gold-shaft": [
-		"bidam"
+	"daebyeol-blue-star-palm": [
+		"daebyeol"
 	],
-	"chunchu-map-pool": [
-		"chunchu"
+	"sobyeol-red-star-palm": [
+		"sobyeol"
 	],
-	"munhee-folded-letter": [
-		"munhee"
-	],
-	"munmu-crimson-tide": [
-		"munmu"
-	],
-	"gyebek-planted-wedge": [
-		"gyebek"
-	],
-	"euija-crown-eaten": [
-		"euija"
-	],
-	"gesomun-rank-bar": [
-		"gesomun"
-	],
-	"sunduk-star-shaft": [
-		"sunduk"
-	],
-	"bojang-hollow-frame": [
-		"bojang"
-	],
-	"namseng-west-seam": [
-		"namseng"
-	],
-	"kangrim-ledger-glow": [
+	"kangrim-sword-redbook": [
 		"kangrim"
 	],
-	"gotaso-ribbon-slash": [
-		"gotaso"
+	"haewonmek-sword-redbook": [
+		"haewonmek"
 	],
-	"pumsuk-headband-bar": [
-		"pumsuk"
+	"heavenearth-split-plane": [
+		"heavenearthking"
 	],
-	"jukji-inkstone-pool": [
-		"jukji"
+	"hallakgungi-green-bloom": [
+		"sara"
 	],
-	"alchun-tablet-bar": [
-		"alchun"
-	],
-	"jinduk-tassel-drop": [
-		"jinduk"
+	"yumla-judgment-seal": [
+		"yumla"
 	]
 }
