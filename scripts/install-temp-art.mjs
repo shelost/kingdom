@@ -5,13 +5,66 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
-const ASSETS = '/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets';
+const ASSETS =
+	process.env.INSTALL_TEMP_ART_ASSETS ||
+	'/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets';
 const TEMP_DIR = 'static/temp';
 const STORY = 'src/lib/data/story.json';
 // Stand-in art is display-only and the volume is near capacity, so cap the long
 // edge and lean on JPEG rather than storing generator-native resolution.
 const QUALITY = '72';
 const MAX_EDGE = '1200';
+
+function hasSips() {
+	try {
+		execFileSync('which', ['sips'], { stdio: 'ignore' });
+		return true;
+	} catch {
+		return false;
+	}
+}
+
+function convertToJpeg(source, out) {
+	if (hasSips()) {
+		execFileSync(
+			'sips',
+			[
+				'-s',
+				'format',
+				'jpeg',
+				'-s',
+				'formatOptions',
+				QUALITY,
+				'-Z',
+				MAX_EDGE,
+				source,
+				'--out',
+				out
+			],
+			{ stdio: 'ignore' }
+		);
+		return;
+	}
+	execFileSync(
+		'python3',
+		[
+			'-c',
+			[
+				'from PIL import Image',
+				'import sys',
+				'src, out, edge, q = sys.argv[1], sys.argv[2], int(sys.argv[3]), int(sys.argv[4])',
+				'im = Image.open(src).convert("RGB")',
+				'im.thumbnail((edge, edge))',
+				'im.save(out, "JPEG", quality=q, optimize=True)'
+			].join('\n'),
+			source,
+			out,
+			MAX_EDGE,
+			QUALITY
+		],
+		{ stdio: 'ignore' }
+	);
+}
 
 const manifest = JSON.parse(fs.readFileSync(process.argv[2], 'utf8'));
 const story = JSON.parse(fs.readFileSync(STORY, 'utf8'));
@@ -38,23 +91,7 @@ for (const item of manifest) {
 		continue;
 	}
 	const out = path.join(TEMP_DIR, `${item.id}.jpg`);
-	execFileSync(
-		'sips',
-		[
-			'-s',
-			'format',
-			'jpeg',
-			'-s',
-			'formatOptions',
-			QUALITY,
-			'-Z',
-			MAX_EDGE,
-			source,
-			'--out',
-			out
-		],
-		{ stdio: 'ignore' }
-	);
+	convertToJpeg(source, out);
 	fs.rmSync(source);
 
 	slot.tempImage = `/temp/${item.id}.jpg`;
