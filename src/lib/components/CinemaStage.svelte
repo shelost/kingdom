@@ -31,6 +31,7 @@
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { stageText } from '$lib/stageText';
 	import { buildBeats } from '$lib/beats';
+	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import {
 		episodeContextOf,
 		gradeFilter,
@@ -81,7 +82,7 @@
 	   reading document under the stage: a click on a rail line activates the
 	   matching line in the page, and the page's live line lights the matching
 	   rail block. */
-	let beats = $derived(episode ? buildBeats(episode.entry) : []);
+	let beats = $derived(episode ? buildBeats(entryForReading(episode.entry)) : []);
 	let railEl: HTMLElement | undefined = $state();
 
 	/** Blocks of one prose tree, flashback containers unwrapped to their blocks. */

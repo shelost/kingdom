@@ -7,13 +7,19 @@
  * has not reported anything shortly after the first element is observed, the
  * effect is abandoned and everything is shown.
  *
+ * Script view is a manuscript: story-root elements stay as authored (no float-in).
+ * Cover, blurb, and stage modes still reveal.
+ *
  * Pass `{ y: 0 }` (fade only) on any `position: sticky` element — a transform
  * creates a containing block and breaks stickiness for the whole animation.
+ * Pass `false` to skip the effect on that node.
  */
+
+import { reading } from '$lib/reading.svelte';
 
 type Item = { show: () => void };
 
-export type RevealParam = number | { delay?: number; y?: number };
+export type RevealParam = number | { delay?: number; y?: number } | false;
 
 const pending = new Set<Item>();
 let observerAlive = false;
@@ -37,18 +43,27 @@ function armWatchdog() {
 	}, 1500);
 }
 
-function normalize(param: RevealParam = 0): { delay: number; y: number } {
+function normalize(param: Exclude<RevealParam, false> = 0): { delay: number; y: number } {
 	if (typeof param === 'number') return { delay: param, y: 18 };
 	return { delay: param.delay ?? 0, y: param.y ?? 18 };
 }
 
+function skipReveal(node: HTMLElement, param: RevealParam): boolean {
+	if (param === false) return true;
+	/* The chronicle column is already the page — do not hide it to float in. */
+	return reading.mode === 'script' && !!node.closest('[data-story-root]');
+}
+
 export function reveal(node: HTMLElement, param: RevealParam = 0) {
-	const { delay, y } = normalize(param);
 	const reduced =
 		typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 	// Nothing to animate — leave the element exactly as authored.
-	if (reduced || typeof IntersectionObserver === 'undefined') return {};
+	if (skipReveal(node, param) || reduced || typeof IntersectionObserver === 'undefined') {
+		return {};
+	}
+
+	const { delay, y } = normalize(param);
 
 	/* Short enough that a paragraph is readable by the time the eye lands on
 	   it — a long fade reads as "the page is broken" mid-scroll. */

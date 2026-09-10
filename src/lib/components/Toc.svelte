@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { SvelteSet } from 'svelte/reactivity';
 	import { chapters, entryId, partId, scenesOf } from '$lib/story';
+	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
@@ -304,7 +305,9 @@
 			<div class="sub">
 				{#each ch.entries as en, ei (ch.id + ei)}
 					{@const eid = entryId(ch.id, en.title)}
-					{@const scenes = scenesOf(en.blocks, eid)}
+					<!-- Read off the sanitized entry: a scene the Intimate toggle hides
+					     has no anchor in the document, so it must not sit in the list. -->
+					{@const scenes = scenesOf(entryForReading(en).blocks, eid)}
 					{@const isOpen = scenesOpen(eid)}
 					<div class="ep-block">
 						<div class="ep-row">

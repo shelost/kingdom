@@ -8,8 +8,8 @@
 	import PlaceMapTile from '$lib/components/PlaceMapTile.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
 	import { ENTRY_PLACE } from '$lib/places';
-	import { buildBeats } from '$lib/beats';
-	import { filterNsfw } from '$lib/nsfwUi.svelte';
+	import { buildBeats, type Beat } from '$lib/beats';
+	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import {
 		reading,
 		episodes,
@@ -24,7 +24,7 @@
 	import { tocUi } from '$lib/tocUi.svelte';
 	import { flagOf, flagSrc } from '$lib/flags';
 	import { onMount } from 'svelte';
-	import type { Chapter, Entry, StackImage } from '$lib/story';
+	import type { Chapter, StackImage } from '$lib/story';
 
 	let episodesMode = $derived(reading.viewScope === 'episodes');
 	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
@@ -87,11 +87,13 @@
 		});
 	}
 
-	/** Flatten beat-anchored images into one sticky stack, tagged with beatIndex. */
-	function stackImages(entry: Entry): StackImage[] {
-		return buildBeats(entry).flatMap((beat, bi) =>
-			filterNsfw(beat.images).map((im) => ({ ...im, beatIndex: bi }))
-		);
+	/**
+	 * Flatten beat-anchored images into one sticky stack, tagged with beatIndex.
+	 * Takes the beats the entry is already rendering so the stack and the prose
+	 * can never disagree about which art belongs to which beat.
+	 */
+	function stackImages(beats: Beat[]): StackImage[] {
+		return beats.flatMap((beat, bi) => beat.images.map((im) => ({ ...im, beatIndex: bi })));
 	}
 
 	const yearsByChapter = new Map(chapters.map((ch) => [ch.id, entryYears(ch)]));
@@ -187,11 +189,13 @@
 
 					{#each chapter.entries as entry, i (chapter.id + i)}
 							{@const years = yearsByChapter.get(chapter.id) ?? []}
-							{@const beats = buildBeats(entry).map((beat) => ({
-								...beat,
-								images: filterNsfw(beat.images)
-							}))}
-							{@const images = stackImages(entry)}
+							<!-- One sanitized copy of the entry per render: beats, the sticky
+							     stack and the scene-id source all read from it, so anchors and
+							     block indices can never be computed against the unfiltered
+							     blocks while the prose shows the filtered ones. -->
+							{@const shown = entryForReading(entry)}
+							{@const beats = buildBeats(shown)}
+							{@const images = stackImages(beats)}
 							{@const eid = entryId(chapter.id, entry.title)}
 							<article
 								class="entry"
@@ -247,10 +251,13 @@
 										</div>
 									</header>
 
-									<!-- Side: sticky reel swaps from scrollY. Inline: art immediately before the beat it illustrates. -->
+									<!-- Side: sticky reel swaps from scrollY. Inline: art immediately before the beat it illustrates.
+									     Solo flashback beats carry art inside the mini (via flashImages) so TOC jumps still see cues. -->
 									<div class="beats">
 									{#each beats as beat, bi (bi)}
-										{#if inlineImages && beat.images.length}
+										{@const soloFlash =
+											beat.blocks.length === 1 && beat.blocks[0]?.kind === 'flashback'}
+										{#if inlineImages && beat.images.length && !soloFlash}
 											<!-- No reveal here: inline figures are part of the
 											     manuscript, so they are simply present. -->
 											<div class="inline-art">
@@ -273,7 +280,8 @@
 												blocks={beat.blocks}
 												year={years[i]}
 												idPrefix={eid}
-												sceneFrom={entry.blocks}
+												sceneFrom={shown.blocks}
+												flashImages={inlineImages && soloFlash ? beat.images : undefined}
 											/>
 										</div>
 									{/each}

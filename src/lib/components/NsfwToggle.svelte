@@ -6,8 +6,8 @@
 	let label = $derived(nsfwUi.showIntimate ? 'Intimate scenes on' : 'Intimate scenes off');
 	let hint = $derived(
 		nsfwUi.showIntimate
-			? 'Intimate scenes shown — click to hide'
-			: 'Intimate scenes hidden — click to show'
+			? 'Intimate art and script shown — click to hide'
+			: 'Intimate art and script hidden — click to show'
 	);
 </script>
 

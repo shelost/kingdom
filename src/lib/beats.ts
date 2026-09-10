@@ -7,6 +7,10 @@ import type { Block, Entry, ImageSlot } from '$lib/story';
  * Everything from that block up to the next anchor renders in the same row as
  * the art, so text and image always start level and can never overlap. Several
  * images sharing an anchor simply stack inside that row.
+ *
+ * `day` / `scene` plates also force a cut: TOC jumps land on the plate, so it
+ * must not trail the previous scene’s stacked art (same class of bug as
+ * flashback art sitting above the mini-band).
  */
 export interface Beat {
 	blocks: Block[];
@@ -50,7 +54,8 @@ function textOf(b: Block): string {
 	}
 }
 
-export function buildBeats(entry: Entry): Beat[] {
+/** Accepts a full entry or a flashback slice (`blocks` + `images` only). */
+export function buildBeats(entry: Pick<Entry, 'blocks' | 'images'>): Beat[] {
 	const images = entry.images ?? [];
 	const blocks = entry.blocks ?? [];
 
@@ -77,10 +82,17 @@ export function buildBeats(entry: Entry): Beat[] {
 		}
 	}
 
-	const starts = [...anchored.keys()].sort((a, b) => a - b);
+	// Day/scene plates always begin a beat so prior-scene art cannot stack above them.
+	const cutSet = new Set<number>(anchored.keys());
+	for (let i = 0; i < blocks.length; i++) {
+		const b = blocks[i];
+		if (b?.kind === 'day' || b?.kind === 'scene') cutSet.add(i);
+	}
+
+	const starts = [...cutSet].sort((a, b) => a - b);
 	const beats: Beat[] = [];
 
-	// everything before the first anchor opens the entry
+	// everything before the first cut opens the entry
 	const firstStart = starts[0] ?? blocks.length;
 	if (firstStart > 0 || opening.length) {
 		beats.push({ blocks: blocks.slice(0, firstStart), images: opening });
@@ -88,7 +100,10 @@ export function buildBeats(entry: Entry): Beat[] {
 
 	starts.forEach((start, k) => {
 		const end = starts[k + 1] ?? blocks.length;
-		beats.push({ blocks: blocks.slice(start, end), images: anchored.get(start)! });
+		beats.push({
+			blocks: blocks.slice(start, end),
+			images: anchored.get(start) ?? []
+		});
 	});
 
 	return beats;

@@ -41,11 +41,6 @@ export interface ImageSlot {
 	 * no anchor open the entry.
 	 */
 	at?: string;
-	/**
-	 * Intimate / adult cue art. Hidden unless the reader turns on
-	 * “Show intimate scenes”. `true` or `"erotic"` both count as NSFW.
-	 */
-	nsfw?: boolean | 'erotic';
 }
 
 /** ImageSlot plus the beat index it was flattened against for sticky stacks. */
@@ -53,7 +48,7 @@ export type StackImage = ImageSlot & { beatIndex?: number };
 
 export type Block =
 	// `ko` is the Korean rendering of English narration
-	| { kind: 'p'; html: string; ko?: string }
+	| { kind: 'p'; html: string; ko?: string; nsfw?: boolean }
 	// `en` is the English rendering of `lines`, index-for-index.
 	// Tang / Chinese speech may add `zh` + `zhLatn` (pinyin); Yamato / Japanese
 	// speech may add `ja` + `jaLatn` (Hepburn romaji) — subtitle layers shown
@@ -71,6 +66,8 @@ export type Block =
 			person?: string;
 			/** Pin a life-stage portrait (`PersonStage.id`) regardless of entry year. */
 			look?: string;
+			/** Hidden when Intimate scenes are off — same gate as cue art. */
+			nsfw?: boolean;
 	  }
 	| { kind: 'cite'; html: string; ko?: string } // "• 👑 King Mu (51) of Baekje"
 	| { kind: 'verse'; color: string; lines: string[] }
@@ -88,7 +85,7 @@ export type Block =
 	// The lesson a told story leaves behind — set apart, the way the islanders say it.
 	| { kind: 'moral'; label?: string; html: string; ko?: string }
 	// A character’s internal voice spoken from later — retrospective tense.
-	| { kind: 'monologue'; html: string; ko?: string; person?: string; look?: string }
+	| { kind: 'monologue'; html: string; ko?: string; person?: string; look?: string; nsfw?: boolean }
 	// An animated explainer for an institution or concept — resolved through the
 	// registry in components/diagrams. `diagram` names the component; `step`
 	// picks the moment it depicts (each component documents its own steps).

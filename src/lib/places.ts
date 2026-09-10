@@ -762,6 +762,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'The Girl Who Cut Her Hair': 'western_flower_field',
 	'Ansi': 'ansi',
 	'The Flower Youth': 'surabol',
+	'Harbour Ledgers': 'danghang',
 	'The Harmony Council': 'surabol',
 	'Chunchu Goes to the East': 'asuka',
 	'Bidam’s Rebellion': 'surabol',

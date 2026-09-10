@@ -4,10 +4,15 @@
  * tags include that profile’s person id. No title / alt / refs guessing.
  */
 
-import { byId, type Person } from '$lib/people';
+import { byId, nameOf, type Person } from '$lib/people';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { entryId } from '$lib/story';
-import { flattenStoryImages, humanizeCueId, type StoryCueImage } from '$lib/storyImages';
+import {
+	artAttachmentKey,
+	flattenStoryImages,
+	humanizeCueId,
+	type StoryCueImage
+} from '$lib/storyImages';
 
 export type WikiScene = {
 	id: string;
@@ -76,9 +81,50 @@ function buildSceneIndex(): Map<string, WikiScene[]> {
 
 const SCENES_BY_PERSON = buildSceneIndex();
 
-/** Tagged stills for a wiki character or god. Empty when none. */
+function matchesPosterPath(scene: WikiScene, poster: string): boolean {
+	const key = artAttachmentKey(poster);
+	return artAttachmentKey(scene.id) === key || artAttachmentKey(scene.art) === key;
+}
+
+function pinPoster(person: Person, scenes: WikiScene[]): WikiScene[] {
+	const list = [...scenes];
+	const poster = person.poster;
+	if (poster) {
+		const idx = list.findIndex((s) => matchesPosterPath(s, poster));
+		if (idx > 0) {
+			const [hit] = list.splice(idx, 1);
+			if (hit) list.unshift(hit);
+		} else if (idx < 0) {
+			const title = nameOf(person);
+			list.unshift({
+				id: artAttachmentKey(poster) || `poster_${person.id}`,
+				title,
+				alt: title,
+				art: poster,
+				episodeId: '',
+				nsfw: false,
+				caption: 'poster'
+			});
+		}
+		return list;
+	}
+	const idx = list.findIndex(
+		(s) =>
+			s.id.startsWith('poster_') ||
+			s.id.startsWith('poster-') ||
+			s.id === 'yushin-sword-vertical' ||
+			s.id === 'chunchu-strategist'
+	);
+	if (idx > 0) {
+		const [hit] = list.splice(idx, 1);
+		if (hit) list.unshift(hit);
+	}
+	return list;
+}
+
+/** Tagged stills for a wiki character or god. Empty when none. Poster stills pin first. */
 export function scenesForWikiEntry(personId: string): WikiScene[] {
 	const person = byId.get(personId);
 	if (!person || !isCharacter(person)) return [];
-	return SCENES_BY_PERSON.get(personId) ?? [];
+	return pinPoster(person, SCENES_BY_PERSON.get(personId) ?? []);
 }

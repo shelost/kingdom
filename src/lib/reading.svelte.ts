@@ -779,6 +779,19 @@ export function activateDialogue(node: HTMLElement) {
 }
 
 /**
+ * Let go of the line currently on stage.
+ *
+ * The plate latches an utterance until the next scroll measurement, so anything
+ * that can take that line out of the document — the Intimate toggle — has to
+ * clear it, or a hidden line keeps speaking.
+ */
+export function clearUtterance() {
+	releaseDialogue();
+	applyUtterance(null, null);
+	markSpeaking(null);
+}
+
+/**
  * Watch the document for the element crossing the reading line and mirror its
  * mood into `reading`. Returns a teardown.
  */

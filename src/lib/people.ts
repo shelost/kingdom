@@ -172,6 +172,11 @@ export interface Person {
 	 */
 	gender?: 'm' | 'f';
 	avatar?: string; // profile picture, e.g. "/ch_chunchu.png"
+	/**
+	 * Iconic profile poster (not the `ch_*.png` bust). Wiki gallery pins this
+	 * still first — e.g. `/temp/yushin_sword_vertical.png`, `/temp/poster_gesomun.jpg`.
+	 */
+	poster?: string;
 	photo?: string; // real photograph (nations), e.g. "/nations/silla.jpg"
 	photoCredit?: string;
 	tagline: string; // one line, shown in the hover card
@@ -392,6 +397,11 @@ export const PEOPLE: Person[] = [
 			{ label: 'Casts Yuhwa out for loving Haemosu.' },
 			{ label: 'His river later bridges Jumong’s flight on the backs of fish and turtles.' }
 		],
+		family: [
+			{ id: 'hwahye', role: 'Daughter' },
+			{ id: 'wihye', role: 'Daughter' },
+			{ id: 'yuhwa', role: 'Daughter' }
+		],
 		aliases: ['Habek', 'Habaek', '하백', '河伯']
 	},
 	{
@@ -509,12 +519,12 @@ export const PEOPLE: Person[] = [
 		kingdom: 'gaya',
 		title: 'God of the sky',
 		realm: { en: 'Sky', ko: '하늘' },
-		tagline: 'Came down to a mountain ridge and could not take his hands back.',
+		tagline: 'Looked down from the sky, saw her guarding the mountain, and could not keep the hour.',
 		quote: "Desire is a kind of weather — it does not ask permission.",
 		arc: 'God of the sky under Little Star’s 이승 — Class II beside Haemosu (sun) and the Samsin (life). Below Heaven’s lordship, beside the mountain’s claim. He descends to the Lady of the Right View’s ridge and cannot leave; Gaya’s eggs are born of that overnight sovereignty. Territorial weather: the deep blue over the ridge is his.',
 		nature:
 			'Optimistic life-god energy with a sensual, flirty edge — weather as seduction. Extroverted and carefree; less jock than Haemosu, less bluntly carnal than Samsin.',
-		events: [{ label: 'Touches the Lady of the Right View; two sons are born of that night.' }],
+		events: [{ label: 'Sees the Lady of the Right View on her ridge from the sky; comes down; two sons are born of that night.' }],
 		aliases: ['Ibiga'],
 		chart: { x: 40, y: 520 }
 	},
@@ -530,9 +540,9 @@ export const PEOPLE: Person[] = [
 		title: 'Midwife goddess · life under 이승',
 		realm: { en: 'Life · birth', ko: '생명 · 출산' },
 		tagline: 'Class II under Little Star — one midwife who keeps birth, not Silla’s steam cavern.',
-		quote: 'I open the breath. You keep the name.',
+		quote: 'Look if you want. I like being looked at.',
 		nature:
-			'The Samsin-nyeo (삼신녀): one midwife goddess of birth and life in the living world — optimistic, extroverted, carefree, and sexually forward as a life/birth goddess. Charted under Little Star with Ibiga (sky) and Haemosu (sun). Not the steam sisters of Yushin’s cavern — a different office, and an older claim. Notices Yumla’s shy crush and does not mind.',
+			'The Samsin-nyeo (삼신녀): one midwife goddess of birth and life — the most hypersexual of the gods, because that is the office. Mature MILF midwife in her prime, not a girl: defined jaw, knowing eyes, white hair as office not youth. Birth-goddess figure: elegantly plump thighs and hips she likes to show off — not heavy, not skinny, an S-curve she will hike a chima to prove. Optimistic, extroverted, openly carnal; she poses in front of anyone the way other gods recite titles. Charted under Little Star with Ibiga (sky) and Haemosu (sun). Not the steam sisters of Yushin’s cavern. Notices Yumla’s shy crush, leans into it, and watches him go red.',
 		arc: 'Class II domain of life within 이승. Folk midwifery and household rites know her as the one who opens and closes a birth; the pantheon chart seats her under Little Star with Ibiga (sky) and Haemosu (sun) — Little Star’s retinue in the Three Realms, not Heaven’s descent line and not Silla’s steam counsel.',
 		binyeo: 'Glass taeguk binyeo — blue and vermilion in one swirl, celadon clouds down a jade-green shaft; one hand opens the breath.',
 		binyeoImage: '/bn_samsin.png',
@@ -1348,8 +1358,8 @@ export const PEOPLE: Person[] = [
 			en: 'Wait… why is one side of the Goryeo crown strange?',
 			ko: '잠깐… 왜 고구려 관 한쪽이 이상하지?'
 		},
-		nature: 'Unsung true main character: he does not bend the age the way Chunchu, Yeon, or Euija do, but he is the one the chronicle lets you stand beside — watching a sister die, watching a father invent a country, learning the war from the wrong end of the map, and finishing the sentence he stole as a child. Falls for Jayi at the harbour in a K-drama of rain and wrong sums; keeps the lesson that purple is a colour and the ocean is a country. Desire: a kingdom that includes the quay. Wound: Gotaso’s empty seat. Voice: earnest, slightly awkward, stubbornly kind.',
-		arc: 'Chunchu’s story keeps one heir in focus — Bupmin — while brother Inmun stays mostly offstage in Tang. As a boy he takes the words “a king for all” into his own mouth. He watches Gotaso not come home. Under Marshal Yushin he joins the Hwarang — horse, bow, the Five Principles — then volunteers for a Gyebek-style countryside season as junior Pajinchan (Councillor of Ocean Trade) under Kim Seonpum, where he meets Jayi. He grows up in Chunchu’s shadow and Munhee’s packing lists. He inherits a half-won war and an alliance that wants the peninsula as furniture. He commands, waits, and finally expels the Tang — the road his father cleared as far as Baekje, walked to the end of Samhan on his own feet, with Jayi as queen and partner, not ornament.',
+		nature: 'Unsung true main character: he does not bend the age the way Chunchu, Yeon, or Euija do, but he is the one the chronicle lets you stand beside — watching a sister die, watching a father invent a country, learning the war from the wrong end of the map, and finishing the sentence he stole as a child. Falls for Jahee at the harbour in a K-drama of rain and wrong sums; keeps the lesson that purple is a colour and the ocean is a country. Desire: a kingdom that includes the quay. Wound: Gotaso’s empty seat. Voice: earnest, slightly awkward, stubbornly kind.',
+		arc: 'Chunchu’s story keeps one heir in focus — Bupmin — while brother Inmun stays mostly offstage in Tang. As a boy he takes the words “a king for all” into his own mouth. He watches Gotaso not come home. Under Marshal Yushin he joins the Hwarang — horse, bow, the Five Principles — then volunteers for a Gyebek-style countryside season as junior Pajinchan (Councillor of Ocean Trade) under Kim Seonpum, where he meets Jahee — later Queen Jayi. He grows up in Chunchu’s shadow and Munhee’s packing lists. He inherits a half-won war and an alliance that wants the peninsula as furniture. He commands, waits, and finally expels the Tang — the road his father cleared as far as Baekje, walked to the end of Samhan on his own feet, with Jahee as queen and partner, not ornament.',
 		blade: 'Ring-pommel sea-dragon sword — forged for a king who asked to become a dragon in the strait.',
 		swordImage: '/sword_dragon.png',
 		stages: [
@@ -1386,7 +1396,7 @@ export const PEOPLE: Person[] = [
 			{ year: 632, label: 'At six, claims the dream of a king for all.' },
 			{ year: 642, label: 'Watches the house break when Gotaso dies.' },
 			{ year: 643, label: 'Trains as Hwarang under Marshal Yushin.' },
-			{ year: 644, label: 'Volunteers as junior Pajinchan; meets Jayi at the harbour.' },
+			{ year: 644, label: 'Volunteers as junior Pajinchan; meets Jahee at the harbour.' },
 			{ year: 661, label: 'Takes the throne, vowing to unify Samhan.' },
 			{ year: 668, label: 'Pyongyang falls; Goguryeo ends.' },
 			{ year: 673, label: 'After Yushin’s death, enters the steam cavern; Dangun names the wanggeom’s work.' },
@@ -1411,10 +1421,10 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'jayi',
 		avatar: '/ch_jayi.png',
-		name: 'Queen Jayi',
-		korean: '자의',
+		name: 'Jahee',
+		korean: '자희',
 		hanja: '慈儀',
-		title: 'Queen consort of King Munmu',
+		title: 'Queen Jayi',
 		kingdom: 'silla',
 		born: 627,
 		bornApprox: true,
@@ -1433,8 +1443,8 @@ export const PEOPLE: Person[] = [
 			en: 'Keep the harbour book open. A kingdom that cannot count will lose the sea twice.',
 			ko: '항구 장부를 열어 두세요. 셈할 줄 모르는 나라는 바다를 두 번 잃어요.'
 		},
-		nature: 'Sharp, unimpressed, K-drama heroine energy without the helplessness: she steals brushes, vetoes bad arithmetic, and falls for Bupmin only after he stays for the tide book. Daughter of Pajinchan Kim Seonpum. Of all the series’ romances, theirs is the one that survives the war without becoming a tragedy or a joke — partnership as a second country.',
-		arc: 'Meets Bupmin when Yushin posts him as temporary junior Councillor of Ocean Trade under her father. Rain, ledgers, almost-kisses, Seonpum’s cough from the warehouse shadow. Years later she sits as Munmu’s queen — still correcting his margins, still treating the realm as a tide table they keep together. Probably the most successful romance the chronicle allows.',
+		nature: 'Sharp, unimpressed, K-drama heroine energy without the helplessness: she steals brushes, vetoes bad arithmetic, and falls for Bupmin only after he stays for the tide book. Daughter of Pajinchan Kim Seonpum. Personal name Jahee; the court later calls her Queen Jayi. Of all the series’ romances, theirs is the one that survives the war without becoming a tragedy or a joke — partnership as a second country.',
+		arc: 'Meets Bupmin when Yushin posts him as temporary junior Councillor of Ocean Trade under her father. Rain, ledgers, almost-kisses, Seonpum’s cough from the warehouse shadow. Years later she sits as Munmu’s queen under the name Jayi — still correcting his margins, still treating the realm as a tide table they keep together. Probably the most successful romance the chronicle allows.',
 		binyeo: 'Gold wave binyeo — violet enamel in the curl, moonstone at the throat; a harbour pin that never learns court stillness.',
 		binyeoImage: '/bn_jayi.png',
 		events: [
@@ -1445,7 +1455,7 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Queen consort', korean: '왕후', hanja: '王后', org: 'sillaroyal', from: 661 }
 		],
-		aliases: ['Queen Jayi', 'Jayi', '자의', 'Jaeui', 'Queen Jaeui', '자이']
+		aliases: ['Jahee', '자희', 'Queen Jayi', 'Jayi', '자의', 'Jaeui', 'Queen Jaeui', '자이']
 	},
 	{
 		id: 'seonpum',
@@ -1460,7 +1470,7 @@ export const PEOPLE: Person[] = [
 		gender: 'm',
 		clan: 'clan-gyeongju-kim',
 		boneRank: 'True Bone (진골)',
-		tagline: 'Fourth of seventeen — purple sleeve, harbour dirt, Jayi’s father.',
+		tagline: 'Fourth of seventeen — purple sleeve, harbour dirt, Jahee’s father.',
 		ideology: 'Maritime True Bone',
 		ideologyNote: 'Holds Pajinchan as craft: ocean trade under a caste that pretends commerce is beneath purple.',
 		quote: 'Do not swagger. The sailors can smell swagger over salt.',
@@ -1468,7 +1478,7 @@ export const PEOPLE: Person[] = [
 		arc: 'Sitting Councillor of Ocean Trade (파진찬, 波珍飡) when Marshal Yushin attaches Prince Bupmin as junior under him. Watches a prince learn tide tables and a daughter learn a wrong number worth reading.',
 		blade: 'Ring-pommel harbour knife — more ledger-weight than parade.',
 		events: [
-			{ year: 644, label: 'Hosts Bupmin as junior Pajinchan; Jayi keeps the inkstones.' }
+			{ year: 644, label: 'Hosts Bupmin as junior Pajinchan; Jahee keeps the inkstones.' }
 		],
 		career: [
 			{ title: 'Councillor of Ocean Trade', korean: '파진찬', hanja: '波珍飡', org: 'royalsecretariat', from: 644 }
@@ -1669,7 +1679,7 @@ export const PEOPLE: Person[] = [
 		ideology: 'Aristocratic Hwarang',
 		ideologyNote: 'True Bone honour culture — the yard before any doctrine.',
 		quote: "A fortress falls from the inside first.",
-		arc: 'Capital-bred, True Bone, given a fortress for his rank. Gotaso loves him with her whole chest. At Daeya he meets Yehwa and discovers how little of the world Surabol prepared him for.',
+		arc: 'Capital-bred, True Bone, given a fortress for his rank. Gotaso loves him with her whole chest. At Daeya he meets Maehwa and discovers how little of the world Surabol prepared him for.',
 		blade: 'Ring-pommel parade sword — fox on the gilt pommel, never blooded until the wrong night.',
 		swordImage: '/sword_fox.png',
 		events: [
@@ -1898,18 +1908,18 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'gumilwife',
 		avatar: '/ch_gumil_wife.png',
-		name: 'Yehwa',
-		korean: '예화',
+		name: 'Maehwa',
+		korean: '매화',
 		kingdom: 'silla',
 		gender: 'f',
 		tagline: 'A commoner woman at a border feast — and the spark that burns down three kingdoms.',
 		quote: "A half is still more than mine would ever be.",
-		arc: 'The histories leave her unnamed — no rank worth recording, which is precisely the point. In this chronicle she is Yehwa: Gumil’s wife, the poorest woman in Daeya. A drunk True Bone takes her because he can; her husband opens the gates in return. Everything that follows — Gotaso’s death, Chunchu’s revenge, the Tang alliance, the fall of Baekje and Goryeo — runs back through a woman the system did not consider a person.',
+		arc: 'The histories leave her unnamed — no rank worth recording, which is precisely the point. In this chronicle she is Maehwa (매화): Gumil’s wife, the poorest woman in Daeya. A drunk True Bone takes her because he can; her husband opens the gates in return. Everything that follows — Gotaso’s death, Chunchu’s revenge, the Tang alliance, the fall of Baekje and Goryeo — runs back through a woman the system did not consider a person.',
 		binyeo: 'Wood-sprig binyeo — gnarled branch, leaf and gold bud; cheap timber, clever seduction without court gold.',
 		binyeoImage: '/bn_gumil_wife.png',
 		events: [{ year: 642, label: 'Taken by Pumsuk at the Daeya feast; her husband betrays the fortress.' }],
 		family: [{ id: 'gumil', role: 'Husband' }],
-		aliases: ['Yehwa', '예화', 'Gumil’s wife', 'Geomil’s wife', 'Gumil’s Wife']
+		aliases: ['Maehwa', '매화', 'Yehwa', '예화', 'Gumil’s wife', 'Geomil’s wife', 'Gumil’s Wife']
 	},
 	{
 		id: 'queensatek',
@@ -2230,7 +2240,56 @@ export const PEOPLE: Person[] = [
 			{ label: 'Bears the egg that hatches Jumong.' },
 			{ label: 'Dies; Haemosu takes her soul; she becomes goddess of the moon.' }
 		],
-		aliases: ['Lady Yuhwa', 'Yuhwa', '유화', '유화부인', 'moon goddess']
+		aliases: ['Lady Yuhwa', 'Yuhwa', '유화', '유화부인', 'moon goddess'],
+		family: [
+			{ id: 'habek', role: 'Father' },
+			{ id: 'hwahye', role: 'Sister' },
+			{ id: 'wihye', role: 'Sister' },
+			{ id: 'haemosu', role: 'Consort' },
+			{ id: 'jumong', role: 'Son' }
+		]
+	},
+	{
+		id: 'hwahye',
+		avatar: '/ch_hwahye.png',
+		name: 'Hwahye',
+		korean: '화혜',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'f',
+		kingdom: 'goguryeo',
+		title: 'River-daughter · eldest',
+		tagline: 'Habek’s first daughter — dives first, leaves the sun to the youngest.',
+		quote: 'Look up if you must. We are leaving.',
+		arc: 'Class III: eldest of Habek’s three. In the Ubal shallows she sees the chariot stop and chooses the current over heaven. The chronicle keeps her name so the youngest is not bathing alone.',
+		events: [{ label: 'Bathes with her sisters in the Ubal; dives when the sun stops.' }],
+		family: [
+			{ id: 'habek', role: 'Father' },
+			{ id: 'wihye', role: 'Sister' },
+			{ id: 'yuhwa', role: 'Sister' }
+		],
+		aliases: ['Hwahye', '화혜', '훤화']
+	},
+	{
+		id: 'wihye',
+		avatar: '/ch_wihye.png',
+		name: 'Wihye',
+		korean: '위혜',
+		entity: 'god',
+		godTier: 'III',
+		gender: 'f',
+		kingdom: 'goguryeo',
+		title: 'River-daughter · second',
+		tagline: 'The middle sister — laughs, then follows Hwahye under.',
+		quote: 'If he is watching, he is already too late.',
+		arc: 'Class III: second of Habek’s three. She teases Yuhwa for staying upright in the shallows, then dives. The sun was never her appointment.',
+		events: [{ label: 'Bathes with her sisters in the Ubal; dives after Hwahye.' }],
+		family: [
+			{ id: 'habek', role: 'Father' },
+			{ id: 'hwahye', role: 'Sister' },
+			{ id: 'yuhwa', role: 'Sister' }
+		],
+		aliases: ['Wihye', '위혜']
 	},
 	{
 		id: 'geumwa',
@@ -4936,7 +4995,7 @@ export const CONCEPTS: Person[] = [
 		tagline: 'Class II — judge within 저승, not its king. Big Star keeps the dark; Yumla keeps the minutes.',
 		quote: "The living argue. We keep the sentence.",
 		nature:
-			'Death-god introversion under purple robes. Presides over the Ten Kings’ court (시왕국) under Big Star’s sovereignty — authoritative father figure on the bench, shy off it. Big crush on Samsin he almost never names. Once called Yama; elites still say Your Honour / His Honour of judgment. Heaven once sent Kangrim to arrest him; Kangrim stayed and serves the court’s fetch-work.',
+			'Death-god introversion under purple robes. Presides over the Ten Kings’ court (시왕국) under Big Star’s sovereignty — authoritative father figure on the bench, shy off it. Big crush on Samsin he almost never names; when she poses for the room he goes scarlet and cannot keep a sentence. Once called Yama; elites still say Your Honour / His Honour of judgment. Heaven once sent Kangrim to arrest him; Kangrim stayed and serves the court’s fetch-work.',
 		arc: 'Yumla judges the dead inside Big Star’s Land of the Dead — Paradise above, Hell below, Siwang in between. Class II: a broad office of judgment within 저승, not Class I sovereignty. Kangrim and Haewonmek address the office with court courtesy; the crow that scrambled the ledger is the closest the court comes to a foreign incident. At the Snake River his two best clerks fail to take Yeon Gesomun — so at the end he goes himself: a king for a king.',
 		events: [
 			{ label: 'Heaven sends Kangrim to arrest him; Kangrim stays as escort of judgment.' },
@@ -5612,8 +5671,8 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'other',
 		title: 'The chronicle’s love stories',
 		tagline: 'Rain on ledgers, steam on stone, a tide table kept by two — K-drama without the helplessness.',
-		nature: 'Not one couple: the register of wanting. Munmu and Jayi survive the war as partners. Chunchu and Munhee make a house. The cavern is hunger in another key. The music is the held sixth, the almost-kiss, the ballad that does not resolve on the first chorus.',
-		arc: 'The series’ most successful romance is Jayi’s: she corrects Bupmin’s sums and later his kingdom. Other loves break, wait, or become policy. This entry is the tone of all of them — Melomance on a palace stair.',
+		nature: 'Not one couple: the register of wanting. Munmu and Jahee survive the war as partners. Chunchu and Munhee make a house. The cavern is hunger in another key. The music is the held sixth, the almost-kiss, the ballad that does not resolve on the first chorus.',
+		arc: 'The series’ most successful romance is Jahee’s: she corrects Bupmin’s sums and later his kingdom as Queen Jayi. Other loves break, wait, or become policy. This entry is the tone of all of them — Melomance on a palace stair.',
 		aliases: ['the romances', '연애담', 'love stories of the chronicle']
 	},
 	{
@@ -6545,6 +6604,30 @@ export const NATIONS: Person[] = [
  * | munhee | pink (mother vs Gotaso) |
  * | gumilwife | desaturated mint (opposite Gotaso) |
  */
+/** Iconic wiki/profile posters (`poster_*` stills + Yushin’s blade poster). */
+const POSTERS_BY_ID: Record<string, string> = {
+	yushin: '/temp/yushin_sword_vertical.png',
+	gesomun: '/temp/poster_gesomun.jpg',
+	gyebek: '/temp/poster_gyebek.jpg',
+	taizong: '/temp/poster_taizong.jpg',
+	haemosu: '/temp/poster_haemosu.jpg',
+	ibiga: '/temp/poster_ibiga.jpg',
+	chunchu: '/temp/poster_muyeol.jpg',
+	daebyeol: '/temp/poster_daebyeol.jpg',
+	sobyeol: '/temp/poster_sobyeol.jpg',
+	kangrim: '/temp/poster_kangrim.jpg',
+	haewonmek: '/temp/poster_haewonmek.jpg',
+	hwanin: '/temp/poster_hwanin.jpg',
+	hwanung: '/temp/poster_hwanung.jpg',
+	dangun: '/temp/poster_dangun.jpg',
+	heavenearthking: '/temp/poster_heavenearthking.jpg',
+	sara: '/temp/poster_hallakgungi.jpg',
+	yuhwa: '/temp/poster_yuhwa.jpg',
+	ungnyeo: '/temp/poster_ungnyeo.jpg',
+	bidam: '/temp/poster_bidam.jpg',
+	munmu: '/temp/poster_munmu.jpg'
+};
+
 const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string }> = {
 	hwanin: { color: '#F4F1E8' },
 	heavenearthking: { color: '#C30000', colorSecondary: '#3E79E4' },
@@ -6657,6 +6740,8 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	ibiga: ['four_divisions'],
 	haemosu: ['four_divisions'],
 	yuhwa: ['four_divisions'],
+	hwahye: ['four_divisions'],
+	wihye: ['four_divisions'],
 	samsin: ['four_divisions'],
 	yumla: ['four_divisions'],
 	kangrim: ['four_divisions'],
@@ -6904,6 +6989,8 @@ const COLOR: Record<string, string> = {
 	ministersatek: '#c2a24a',
 	sosuno: '#e8a04a',
 	yuhwa: '#8fc4e0',
+	hwahye: '#a8d4e8',
+	wihye: '#7eb8c8',
 	geumwa: '#a89a72',
 	daeso: '#9b8f6a',
 	yomyo: '#a3564a',
@@ -7471,6 +7558,7 @@ function withProfileMeta(p: Person): Person {
 	const extraGroups = GROUPS_BY_ID[p.id];
 	const accents = CHARACTER_COLORS[p.id];
 	const persona = PERSONA_META[p.id];
+	const poster = POSTERS_BY_ID[p.id];
 	let next = p;
 	if (extraTags?.length) {
 		next = { ...next, tags: [...new Set([...(next.tags ?? []), ...extraTags])] };
@@ -7492,6 +7580,7 @@ function withProfileMeta(p: Person): Person {
 				: {})
 		};
 	}
+	if (poster) next = { ...next, poster: next.poster ?? poster };
 	if (persona) {
 		const prompt = (next.llmPrompt ?? next.prompt ?? persona.prompt).trim();
 		next = {
@@ -7698,6 +7787,11 @@ export function binyeoArtOf(p: Person): string | undefined {
 /** Ring-pommel sword illustration on character profiles. */
 export function swordArtOf(p: Person): string | undefined {
 	return p.swordImage ? (staticAsset(p.swordImage) ?? undefined) : undefined;
+}
+
+/** Iconic character poster on wiki profiles (not the `ch_*` bust). */
+export function posterArtOf(p: Person): string | undefined {
+	return p.poster ? (staticAsset(p.poster) ?? undefined) : undefined;
 }
 
 /** Kingdom flag chip for wiki / hover cards. */

@@ -42,7 +42,7 @@ export interface StoryImageRef {
 
 /** One cue image in story reading order, with the beat / entry context that triggers it. */
 export interface StoryCueImage {
-	/** Stable key for lists — chapter + entry + slot id. */
+	/** Stable unique key for lists — chapter + entry + beat + index + slot id. */
 	key: string;
 	chapterId: string;
 	chapterTitle: string;
@@ -291,7 +291,7 @@ export function flattenStoryImages(source: Chapter[] = chapters): StoryCueImage[
 					}
 					usedTitles.add(title);
 					list.push({
-						key: `${ch.id}:${entryIndex}:${slot.id}`,
+						key: `${ch.id}:${entryIndex}:${beatIndex}:${imageIndexInBeat}:${slot.id}`,
 						chapterId: ch.id,
 						chapterTitle: ch.title,
 						entryIndex,
@@ -357,7 +357,7 @@ function addArtKey(keys: Set<string>, value: string | null | undefined) {
 
 /**
  * Filename keys that have a home: chronicle slot (`id` / `src` / `tempImage` /
- * `refs`), wiki sidecar, or a person/place portrait.
+ * `refs`), wiki sidecar, or a person/place portrait (`avatar` / `poster`).
  */
 export function referencedArtKeys(source: Chapter[] = chapters): Set<string> {
 	const keys = new Set<string>();
@@ -377,6 +377,7 @@ export function referencedArtKeys(source: Chapter[] = chapters): Set<string> {
 
 	for (const person of PROFILES) {
 		addArtKey(keys, person.avatar);
+		addArtKey(keys, person.poster);
 		addArtKey(keys, person.photo);
 		addArtKey(keys, person.binyeoImage);
 		addArtKey(keys, person.swordImage);

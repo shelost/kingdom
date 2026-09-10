@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { isSceneHeader, sceneIdForBlock, scenesOf, type Block } from '$lib/story';
+	import { isSceneHeader, sceneIdForBlock, scenesOf, type Block, type ImageSlot } from '$lib/story';
 	import {
 		linkPeople,
 		avatarOf,
@@ -11,11 +11,14 @@
 		type Person
 	} from '$lib/people';
 	import { reading, isKorean, isStageMode, leadLang, activateDialogue } from '$lib/reading.svelte';
+	import { filterScriptNsfw } from '$lib/nsfwUi.svelte';
+	import { buildBeats } from '$lib/beats';
 	import { utteranceOf } from '$lib/speech.svelte';
 	import { storyImg } from '$lib/img';
 	import Self from './Blocks.svelte';
 	import DiagramBlock from './diagrams/DiagramBlock.svelte';
 	import SpeakButton from './SpeakButton.svelte';
+	import ImageStack from './ImageStack.svelte';
 
 	type Dialogue = Extract<Block, { kind: 'dialogue' }>;
 
@@ -23,8 +26,16 @@
 		blocks,
 		year = null,
 		idPrefix = '',
-		sceneFrom
-	}: { blocks: Block[]; year?: number | null; idPrefix?: string; sceneFrom?: Block[] } = $props();
+		sceneFrom,
+		/** Cue art for a solo flashback beat — interleaved beside inner blocks in script mode. */
+		flashImages
+	}: {
+		blocks: Block[];
+		year?: number | null;
+		idPrefix?: string;
+		sceneFrom?: Block[];
+		flashImages?: ImageSlot[];
+	} = $props();
 
 	function visible(b: Block) {
 		if (
@@ -66,7 +77,7 @@
 
 	let koFirst = $derived(leadLang(reading.lang) === 'ko');
 
-	let shown = $derived(blocks.filter(visible));
+	let shown = $derived(filterScriptNsfw(blocks).filter(visible));
 
 	let headerIdByBlock = $derived.by(() => {
 		const map = new Map<Block, string>();
@@ -254,7 +265,7 @@
 				data-speaker={p?.id ?? undefined}
 				data-look={block.look ?? undefined}
 			>
-				<span class="mono-label">{p ? `${nameOf(p, year, block.look)}, later` : 'later'}</span>
+				{#if p}<span class="mono-label">{nameOf(p, year, block.look)}</span>{/if}
 				<p>{@html linkPeople(prose(block), year)}</p>
 			</aside>
 		{:else if block.kind === 'formation'}
@@ -293,6 +304,10 @@
 			</header>
 		{:else if block.kind === 'flashback'}
 			{@const sid = sceneIdFor(block)}
+			{@const innerBeats =
+				flashImages && flashImages.length
+					? buildBeats({ blocks: block.blocks, images: flashImages })
+					: null}
 			<!-- mini-flashback: the page drops to black while this is under the reading line -->
 			<aside class="mini" data-story-id={sid} data-scene={sid} data-flash="1">
 				<header class="mini-head">
@@ -300,7 +315,21 @@
 					{#if block.year}<span class="mini-year">{block.year}</span>{/if}
 					{#if block.title}<span class="mini-title">{block.title}</span>{/if}
 				</header>
-				<Self blocks={block.blocks} year={block.year ? Number(block.year) || year : year} />
+				{#if innerBeats}
+					{#each innerBeats as ib, ii (ii)}
+						{#if ib.images.length}
+							<div class="fb-art">
+								<ImageStack images={ib.images} inline />
+							</div>
+						{/if}
+						<Self
+							blocks={ib.blocks}
+							year={block.year ? Number(block.year) || year : year}
+						/>
+					{/each}
+				{:else}
+					<Self blocks={block.blocks} year={block.year ? Number(block.year) || year : year} />
+				{/if}
 			</aside>
 		{/if}
 	{/each}
@@ -966,6 +995,11 @@
 		align-items: baseline;
 		gap: 0.6rem;
 		margin-bottom: 0.7rem;
+	}
+
+	/* Cue plates interleaved with flashback prose (script / inline mode). */
+	.fb-art {
+		margin: 0 0 0.85rem;
 	}
 
 	.mini-mark {

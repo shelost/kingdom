@@ -38,8 +38,3 @@ export function stepLightbox(delta: number) {
 	if (n < 2) return;
 	imageLightbox.index = (imageLightbox.index + delta + n) % n;
 }
-
-export function currentLightboxItem(): LightboxItem | null {
-	if (!imageLightbox.open) return null;
-	return imageLightbox.items[imageLightbox.index] ?? null;
-}

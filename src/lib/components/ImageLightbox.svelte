@@ -1,14 +1,10 @@
 <script lang="ts">
+	import type { Attachment } from 'svelte/attachments';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { storyImg } from '$lib/img';
-	import {
-		closeLightbox,
-		currentLightboxItem,
-		imageLightbox,
-		stepLightbox
-	} from '$lib/imageLightbox.svelte';
+	import { closeLightbox, imageLightbox, stepLightbox } from '$lib/imageLightbox.svelte';
 	import {
 		canonicalHashId,
 		findStoryHeading,
@@ -17,17 +13,38 @@
 		stripStoryHash
 	} from '$lib/reading.svelte';
 
-	let item = $derived(currentLightboxItem());
+	let item = $derived(
+		imageLightbox.open ? imageLightbox.items[imageLightbox.index] : undefined
+	);
 	let hasStack = $derived(imageLightbox.items.length > 1);
 
-	$effect(() => {
-		const lock = imageLightbox.open;
+	/**
+	 * Native modal: `showModal()` puts the dialog in the top layer so it cannot
+	 * sit under HUD / TOC / wiki peek, and is not trapped by SvelteKit's
+	 * `display: contents` wrapper (`position: fixed` fails there in WebKit).
+	 */
+	const mountDialog: Attachment<HTMLDialogElement> = (node) => {
 		const prev = document.documentElement.style.overflow;
-		document.documentElement.style.overflow = lock ? 'hidden' : '';
+		document.documentElement.style.overflow = 'hidden';
+		/* Next frame: opening during the same click that mounted us would hit
+		   the dialog and close it (classic overlay ghost-click). */
+		const frame = requestAnimationFrame(() => {
+			if (!node.isConnected) return;
+			if (!node.open) node.showModal();
+		});
 		return () => {
+			cancelAnimationFrame(frame);
 			document.documentElement.style.overflow = prev;
 		};
-	});
+	};
+
+	function onBackdropClick(e: MouseEvent) {
+		if (e.target === e.currentTarget) closeLightbox();
+	}
+
+	function onDialogClose() {
+		if (imageLightbox.open) closeLightbox();
+	}
 
 	function onKeydown(e: KeyboardEvent) {
 		if (!imageLightbox.open) return;
@@ -51,7 +68,7 @@
 		stripStoryHash();
 		const home = resolve('/');
 		const here = page.url.pathname;
-		const onStory = here === home || here === '/' || here === '';
+		const onStory = here === home || here === '/';
 		if (onStory) {
 			const el = findStoryHeading(canonicalHashId(episodeId));
 			if (el) scrollToStoryHeading(el, 'smooth');
@@ -65,9 +82,13 @@
 <svelte:window onkeydown={onKeydown} />
 
 {#if imageLightbox.open && item}
-	<div class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
-		<button type="button" class="lightbox-scrim" onclick={closeLightbox} aria-label="Close image"
-		></button>
+	<dialog
+		class="lightbox"
+		aria-labelledby="lightbox-title"
+		{@attach mountDialog}
+		onclick={onBackdropClick}
+		onclose={onDialogClose}
+	>
 		<figure class="lightbox-frame">
 			<img
 				class="lightbox-shot"
@@ -91,7 +112,7 @@
 					<button
 						type="button"
 						class="lightbox-jump"
-						onclick={() => item && item.episodeId && openInChronicle(item.episodeId)}
+						onclick={() => item?.episodeId && openInChronicle(item.episodeId)}
 					>
 						Open in chronicle
 					</button>
@@ -122,13 +143,21 @@
 		<button type="button" class="lightbox-close" onclick={closeLightbox} aria-label="Close">
 			✕
 		</button>
-	</div>
+	</dialog>
 {/if}
 
 <style>
 	.lightbox {
 		position: fixed;
 		inset: 0;
+		width: 100vw;
+		height: 100dvh;
+		max-width: none;
+		max-height: none;
+		margin: 0;
+		border: none;
+		background: transparent;
+		color: inherit;
 		z-index: 240;
 		display: grid;
 		place-items: center;
@@ -137,12 +166,7 @@
 			max(1.1rem, env(safe-area-inset-left, 0px));
 	}
 
-	.lightbox-scrim {
-		position: absolute;
-		inset: 0;
-		margin: 0;
-		padding: 0;
-		border: none;
+	.lightbox::backdrop {
 		background: color-mix(in srgb, var(--panel-sunken, #08080c) 86%, transparent);
 		cursor: zoom-out;
 	}
@@ -156,6 +180,7 @@
 		gap: 0.7rem;
 		max-width: min(96vw, 92rem);
 		max-height: min(92dvh, 92rem);
+		pointer-events: auto;
 	}
 
 	.lightbox-shot {

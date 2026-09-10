@@ -12,7 +12,7 @@
 
 import { buildBeats } from '$lib/beats';
 import { displayArtOf } from '$lib/cueArt';
-import { nsfwAllowed } from '$lib/nsfwUi.svelte';
+import { entryForReading, nsfwAllowed } from '$lib/nsfwUi.svelte';
 import { PLACES } from '$lib/places';
 import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
 import { chapters, entryId, type Chapter, type Entry } from '$lib/story';
@@ -28,6 +28,8 @@ export interface EpisodeCue {
 }
 
 export interface EpisodeContext {
+	/** canonical entry id — `chapterId-slug`, the key the TOC and hashes use */
+	id: string;
 	chapter: Chapter;
 	/** 1-based season number */
 	season: number;
@@ -71,6 +73,7 @@ export function episodeContextOf(id: string | null): EpisodeContext | null {
 	if (!chapter || !entry) return null;
 
 	return {
+		id: entryId(chapter.id, entry.title),
 		chapter,
 		season: ref.chapterIndex + 1,
 		seasonCount: chapters.length,
@@ -118,7 +121,7 @@ export function panelsOf(entry: Entry, placeId: string | null): CinemaPanel[] {
 	const seen = new Set<string>();
 	const panels: CinemaPanel[] = [];
 
-	for (const beat of buildBeats(entry)) {
+	for (const beat of buildBeats(entryForReading(entry))) {
 		for (const slot of beat.images) {
 			if (!nsfwAllowed(slot)) continue;
 			const src = displayArtOf(slot, 'reading');

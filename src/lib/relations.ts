@@ -195,21 +195,21 @@ export const RELATIONSHIPS: Person[] = [
 	},
 	{
 		id: 'rel-munmu-jayi',
-		name: 'Bupmin & Jayi',
-		korean: '법민 · 자의',
+		name: 'Bupmin & Jahee',
+		korean: '법민 · 자희',
 		entity: 'relationship',
 		kingdom: 'silla',
 		bond: 'love',
 		between: ['munmu', 'jayi'],
 		title: 'Harbour ledgers, rain, a queen',
 		tagline: 'She corrected his sums. He kept her tide. The series’ most successful romance.',
-		arc: 'Under Yushin’s voluntary countryside posting as junior Pajinchan, Bupmin meets Jayi (자의) — daughter of Councillor of Ocean Trade Kim Seonpum — in a K-drama of rain, brushes, and almost-kisses. Bone rank marries them cleanly later; the harbour married them first. Unlike the tragic and half-finished loves around them, they finish as political partners: queen and king still arguing tide tables when Samhan is finally one.',
+		arc: 'Under Yushin’s voluntary countryside posting as junior Pajinchan, Bupmin meets Jahee (자희) — daughter of Councillor of Ocean Trade Kim Seonpum — in a K-drama of rain, brushes, and almost-kisses. The court later names her Queen Jayi (자의). Bone rank marries them cleanly later; the harbour married them first. Unlike the tragic and half-finished loves around them, they finish as political partners: queen and king still arguing tide tables when Samhan is finally one.',
 		events: [
 			{ year: 644, label: 'Meet over ocean ledgers at the quay.' },
-			{ year: 661, label: 'She becomes queen consort when he takes the throne.' },
+			{ year: 661, label: 'She becomes Queen Jayi when he takes the throne.' },
 			{ year: 676, label: 'Stand together as the harbour lesson crowned.' }
 		],
-		aliases: ['Bupmin & Jayi', 'Munmu & Jayi', 'Jayi & Bupmin', 'Jayi & Munmu']
+		aliases: ['Bupmin & Jahee', 'Bupmin & Jayi', 'Munmu & Jahee', 'Munmu & Jayi', 'Jayi & Bupmin', 'Jahee & Bupmin']
 	},
 	{
 		id: 'rel-yushin-sunduk',
@@ -231,17 +231,17 @@ export const RELATIONSHIPS: Person[] = [
 	},
 	{
 		id: 'rel-pumsuk-gumilwife',
-		name: 'Pumsuk & Yehwa',
-		korean: '품석 · 예화',
+		name: 'Pumsuk & Maehwa',
+		korean: '품석 · 매화',
 		entity: 'relationship',
 		kingdom: 'silla',
 		bond: 'affair',
 		between: ['pumsuk', 'gumilwife'],
 		title: 'The feast that burns three kingdoms',
 		tagline: 'A capital boy meets a woman who already knows what he wants.',
-		arc: 'Pumsuk is Surabol-bred and still young enough to be startled by her. Yehwa does not startle. What passes between them at the feast is mostly unspoken — and enough. Gumil opens the gates. Everything after runs through that room.',
+		arc: 'Pumsuk is Surabol-bred and still young enough to be startled by her. Maehwa does not startle. What passes between them at the feast is mostly unspoken — and enough. Gumil opens the gates. Everything after runs through that room.',
 		events: [{ year: 642, label: 'The feast; the gates open.' }],
-		aliases: ['Pumsuk & Yehwa', 'Yehwa & Pumsuk', 'Pumsuk & Gumil’s Wife', 'Gumil’s Wife & Pumsuk', 'Pumsuk & Geomil’s Wife']
+		aliases: ['Pumsuk & Maehwa', 'Maehwa & Pumsuk', 'Pumsuk & Yehwa', 'Yehwa & Pumsuk', 'Pumsuk & Gumil’s Wife', 'Gumil’s Wife & Pumsuk', 'Pumsuk & Geomil’s Wife']
 	},
 	{
 		id: 'rel-euija-maids',
@@ -1178,17 +1178,17 @@ export const RELATIONSHIPS: Person[] = [
 	},
 	{
 		id: 'rel-seonpum-jayi',
-		name: 'Seonpum & Jayi',
-		korean: '선품 · 자의',
+		name: 'Seonpum & Jahee',
+		korean: '선품 · 자희',
 		entity: 'relationship',
 		kingdom: 'silla',
 		bond: 'kin',
 		between: ['seonpum', 'jayi'],
 		title: 'Harbour father, tide daughter',
 		tagline: 'Ocean Trade raises the girl who corrects a prince’s sums.',
-		arc: 'Kim Seonpum’s ledgers are Jayi’s childhood. When Bupmin posts to the quay, he marries into the harbour before he marries into bone rank.',
-		events: [{ year: 644, label: 'Bupmin meets Jayi under Seonpum’s roof of accounts.' }],
-		aliases: ['Seonpum & Jayi', 'Jayi & Seonpum']
+		arc: 'Kim Seonpum’s ledgers are Jahee’s childhood. When Bupmin posts to the quay, he marries into the harbour before he marries into bone rank. The court later names her Queen Jayi.',
+		events: [{ year: 644, label: 'Bupmin meets Jahee under Seonpum’s roof of accounts.' }],
+		aliases: ['Seonpum & Jahee', 'Jahee & Seonpum', 'Seonpum & Jayi', 'Jayi & Seonpum']
 	},
 	{
 		id: 'rel-yushin-gyebek',

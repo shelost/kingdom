@@ -18,6 +18,7 @@
 		photoOf,
 		binyeoArtOf,
 		swordArtOf,
+		posterArtOf,
 		kingdomFlag,
 		sortHwarangMembers,
 		groupByHwarangClass,
@@ -98,6 +99,7 @@
 	let photo = $derived(photoOf(entry));
 	let binyeoArt = $derived(binyeoArtOf(entry));
 	let swordArt = $derived(swordArtOf(entry));
+	let posterArt = $derived(posterArtOf(entry));
 	let flag = $derived(kingdomFlag(entry.kingdom));
 	let who = $derived(nameOf(entry, null, previewLook));
 	let role = $derived(titleOf(entry, null, previewLook));
@@ -121,7 +123,30 @@
 		kind === 'character' || kind === 'god' ? scenesForWikiEntry(entry.id) : []
 	);
 	/** SFW stills tagged with this person. NSFW stays on /images + the modal, not the grid. */
-	let galleryScenes = $derived(scenes.filter((s) => !s.nsfw));
+	let galleryScenes = $derived.by(() => {
+		const rest = scenes.filter((s) => !s.nsfw);
+		const isPoster = (s: WikiScene) =>
+			s.id.startsWith('poster_') ||
+			s.id === 'yushin-sword-vertical' ||
+			s.id === 'chunchu-strategist';
+		const posters = rest.filter(isPoster);
+		const others = rest.filter((s) => !isPoster(s));
+		const ordered = [...posters, ...others];
+		if (!posterArt) return ordered;
+		const posterPath = posterArt.split('?')[0] ?? posterArt;
+		if (ordered.some((s) => (s.art.split('?')[0] ?? s.art) === posterPath)) return ordered;
+		return [
+			{
+				id: `poster_${entry.id}`,
+				title: who,
+				alt: `${who} — profile poster`,
+				art: posterArt,
+				episodeId: '',
+				nsfw: false
+			} satisfies WikiScene,
+			...ordered
+		];
+	});
 
 	function openWikiGallery(list: WikiScene[], index: number) {
 		openLightbox(

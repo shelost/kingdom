@@ -1,197 +1,257 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import type { Attachment } from 'svelte/attachments';
+	import { SvelteSet } from 'svelte/reactivity';
 	import {
 		findOrphanedImages,
 		flattenStoryImages,
-		type GalleryView,
+		type OrphanedImage,
 		type StoryCueImage
 	} from '$lib/storyImages';
+	import type { GalleryDeleteItem, GalleryDeleteResponse } from '$lib/galleryDelete';
 	import { storyImg } from '$lib/img';
 	import NsfwToggle from '$lib/components/NsfwToggle.svelte';
 	import { nsfwAllowed, nsfwUi } from '$lib/nsfwUi.svelte';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { entryId } from '$lib/story';
 
-	const images = flattenStoryImages();
-	const orphans = findOrphanedImages();
-	const nsfwCount = images.filter((im) => im.isNsfw).length;
+	type GridCell = {
+		key: string;
+		kind: 'cue' | 'orphan';
+		id: string;
+		title: string;
+		year: string;
+		cueLabel: string;
+		src: string | undefined;
+		alt: string;
+		tone: string;
+		isNsfw: boolean;
+		isTemp: boolean;
+		hasGenuineRefs: boolean;
+		hasExplicitRefs: boolean;
+		isSeedCopy: boolean;
+		episodeId?: string;
+		filename: string;
+		slot?: StoryCueImage['slot'];
+	};
 
-	let view = $state<GalleryView>('grid');
-	let query = $state('');
-	/** Hover / focus stack: which layer is on top per cue key (`temp` | `final`). */
-	let stackFront = $state<Record<string, 'temp' | 'final'>>({});
-
-	function openCue(im: StoryCueImage) {
-		const src = im.hasStack ? layerSrc(im, frontOf(im)) : im.displayArt;
-		if (!src) return;
-		const items = visible
-			.map((row) => {
-				const rowSrc = row.hasStack ? layerSrc(row, frontOf(row)) : row.displayArt;
-				if (!rowSrc) return null;
-				return {
-					src: rowSrc,
-					alt: row.slot.alt ?? row.title,
-					title: row.title,
-					caption: row.slot.id,
-					nsfw: row.isNsfw,
-					episodeId: entryId(row.chapterId, row.entryTitle)
-				};
-			})
-			.filter((row): row is NonNullable<typeof row> => !!row);
-		const index = items.findIndex((row) => row.caption === im.slot.id);
-		openLightbox(items, index >= 0 ? index : 0);
+	function fileNameOf(src: string | undefined, fallback: string): string {
+		if (!src) return fallback;
+		const base = src.split('?')[0] ?? '';
+		return base.split('/').pop() ?? fallback;
 	}
 
-	const allowed = $derived(images.filter((im) => nsfwAllowed(im.slot)));
-	const nsfwHidden = $derived(nsfwCount - allowed.filter((im) => im.isNsfw).length);
+	function cueCell(im: StoryCueImage): GridCell {
+		return {
+			key: im.key,
+			kind: 'cue',
+			id: im.slot.id,
+			title: im.title,
+			year: im.entryYear,
+			cueLabel: im.slot.id,
+			src: im.displayArt,
+			alt: im.slot.alt ?? im.title,
+			tone: im.slot.tone ?? '#3a3a40',
+			isNsfw: im.isNsfw,
+			isTemp: im.isTemp,
+			hasGenuineRefs: im.hasGenuineRefs,
+			hasExplicitRefs: im.hasExplicitRefs,
+			isSeedCopy: im.isSeedCopy,
+			episodeId: entryId(im.chapterId, im.entryTitle),
+			filename: fileNameOf(im.displayArt, im.slot.id),
+			slot: im.slot
+		};
+	}
+
+	function orphanCell(o: OrphanedImage): GridCell {
+		return {
+			key: `orphan:${o.src}`,
+			kind: 'orphan',
+			id: o.id,
+			title: o.id,
+			year: o.kind,
+			cueLabel: o.src,
+			src: o.src,
+			alt: o.id,
+			tone: '#3a3a40',
+			isNsfw: /nsfw/i.test(`${o.id} ${o.src}`),
+			isTemp: true,
+			hasGenuineRefs: false,
+			hasExplicitRefs: false,
+			isSeedCopy: false,
+			filename: fileNameOf(o.src, o.id)
+		};
+	}
+
+	let images = $state.raw(flattenStoryImages());
+	let orphans = $state.raw(findOrphanedImages());
+	let query = $state('');
+	let selecting = $state(false);
+	let confirmOpen = $state(false);
+	let deleting = $state(false);
+	let deleteError = $state('');
+	const selected = new SvelteSet<string>();
+
+	function reloadCatalog() {
+		images = flattenStoryImages();
+		orphans = findOrphanedImages();
+	}
+
+	if (import.meta.hot) {
+		import.meta.hot.accept(() => {
+			reloadCatalog();
+		});
+	}
+
+	const cells = $derived.by(() => [...images.map(cueCell), ...orphans.map(orphanCell)]);
+	const nsfwCount = $derived(cells.filter((c) => c.isNsfw).length);
+	const allowed = $derived(
+		cells.filter((c) => {
+			if (!c.src) return false;
+			return c.slot ? nsfwAllowed(c.slot) : nsfwUi.showIntimate || !c.isNsfw;
+		})
+	);
+	const nsfwHidden = $derived(nsfwCount - allowed.filter((c) => c.isNsfw).length);
 	const visible = $derived.by(() => {
 		const q = query.trim().toLowerCase();
 		if (!q) return allowed;
-		return allowed.filter((im) => {
-			if (q === 'nsfw') return im.isNsfw;
+		return allowed.filter((c) => {
+			if (q === 'nsfw') return c.isNsfw;
 			const hay = [
-				im.slot.id,
-				im.title,
-				im.entryTitle,
-				im.chapterTitle,
-				im.slot.alt ?? '',
-				im.at ?? '',
-				im.cueContext,
-				im.isNsfw ? 'nsfw intimate erotic close' : ''
+				c.id,
+				c.title,
+				c.year,
+				c.cueLabel,
+				c.alt,
+				c.filename,
+				c.isNsfw ? 'nsfw intimate erotic close' : '',
+				c.kind === 'orphan' ? 'orphan orphaned' : ''
 			]
 				.join(' ')
 				.toLowerCase();
 			return hay.includes(q);
 		});
 	});
-	const tempCount = $derived(visible.filter((im) => im.isTemp).length);
-	const refsCount = $derived(visible.filter((im) => im.hasGenuineRefs).length);
-	const stackCount = $derived(visible.filter((im) => im.hasStack).length);
-	const seedCopyCount = $derived(visible.filter((im) => im.isSeedCopy).length);
+	const tempCount = $derived(visible.filter((c) => c.isTemp && c.kind === 'cue').length);
+	const refsCount = $derived(visible.filter((c) => c.hasGenuineRefs).length);
+	const seedCopyCount = $derived(visible.filter((c) => c.isSeedCopy).length);
+	const orphanCount = $derived(visible.filter((c) => c.kind === 'orphan').length);
+	const picked = $derived(cells.filter((c) => selected.has(c.key)));
+	const extraNames = $derived(Math.max(0, picked.length - 12));
 
-	const VIEWS: { id: GalleryView; label: string; hint: string }[] = [
-		{ id: 'grid', label: 'Grid', hint: 'Browsable gallery in story order' },
-		{ id: 'cues', label: 'Cues', hint: 'Each image beside the script cue that triggers it' }
-	];
-
-	function frontOf(im: StoryCueImage): 'temp' | 'final' {
-		return stackFront[im.key] ?? 'temp';
+	function toggleSelectMode() {
+		selecting = !selecting;
+		if (!selecting) {
+			selected.clear();
+			confirmOpen = false;
+			deleteError = '';
+		}
 	}
 
-	function cycleStack(im: StoryCueImage) {
-		if (!im.hasStack) return;
-		stackFront[im.key] = frontOf(im) === 'temp' ? 'final' : 'temp';
+	function toggleKey(key: string) {
+		if (selected.has(key)) selected.delete(key);
+		else selected.add(key);
 	}
 
-	function showFinalOnHover(im: StoryCueImage) {
-		if (!im.hasStack) return;
-		stackFront[im.key] = 'final';
+	function onThumbClick(e: MouseEvent, cell: GridCell) {
+		if (e.metaKey || e.ctrlKey) {
+			e.preventDefault();
+			if (!selecting) selecting = true;
+			toggleKey(cell.key);
+			return;
+		}
+		openCell(cell);
 	}
 
-	function showTempOnLeave(im: StoryCueImage) {
-		if (!im.hasStack) return;
-		stackFront[im.key] = 'temp';
+	function openCell(im: GridCell) {
+		if (!im.src) return;
+		const items = visible
+			.map((row) => {
+				if (!row.src) return null;
+				return {
+					src: row.src,
+					alt: row.alt,
+					title: row.title,
+					caption: row.cueLabel,
+					nsfw: row.isNsfw,
+					episodeId: row.episodeId
+				};
+			})
+			.filter((row): row is NonNullable<typeof row> => !!row);
+		const index = items.findIndex((row) => row.caption === im.cueLabel && row.title === im.title);
+		openLightbox(items, index >= 0 ? index : 0);
 	}
 
-	function layerSrc(im: StoryCueImage, layer: 'temp' | 'final'): string | undefined {
-		return layer === 'temp' ? im.tempArt : im.finalArt;
+	function openConfirm() {
+		if (!picked.length) return;
+		deleteError = '';
+		confirmOpen = true;
 	}
 
+	function closeConfirm() {
+		if (deleting) return;
+		confirmOpen = false;
+		deleteError = '';
+	}
+
+	const mountConfirm: Attachment<HTMLDialogElement> = (node) => {
+		const frame = requestAnimationFrame(() => {
+			if (!node.isConnected) return;
+			if (!node.open) node.showModal();
+		});
+		return () => {
+			cancelAnimationFrame(frame);
+			if (node.open) node.close();
+		};
+	};
+
+	function onConfirmBackdrop(e: MouseEvent) {
+		if (e.target === e.currentTarget) closeConfirm();
+	}
+
+	async function confirmDelete() {
+		if (!picked.length || deleting) return;
+		deleting = true;
+		deleteError = '';
+		const items: GalleryDeleteItem[] = picked.map((c) =>
+			c.kind === 'cue' ? { kind: 'cue', slotId: c.id } : { kind: 'orphan', id: c.id }
+		);
+		try {
+			const res = await fetch(resolve('/api/images'), {
+				method: 'POST',
+				headers: { 'content-type': 'application/json' },
+				body: JSON.stringify({ items })
+			});
+			if (!res.ok) {
+				let message = `Delete failed (${res.status})`;
+				try {
+					const body = (await res.json()) as { message?: string };
+					if (body.message) message = body.message;
+				} catch {
+					/* keep status text */
+				}
+				deleteError = message;
+				return;
+			}
+			const body = (await res.json()) as GalleryDeleteResponse;
+			const cueGone = new Set(
+				body.deleted.filter((d) => d.kind === 'cue').map((d) => d.slotId)
+			);
+			const orphanGone = new Set(
+				body.deleted.filter((d) => d.kind === 'orphan').map((d) => d.id)
+			);
+			images = images.filter((im) => !cueGone.has(im.slot.id));
+			orphans = orphans.filter((o) => !orphanGone.has(o.id));
+			selected.clear();
+			confirmOpen = false;
+			selecting = false;
+		} catch (err) {
+			deleteError = err instanceof Error ? err.message : 'Delete failed';
+		} finally {
+			deleting = false;
+		}
+	}
 </script>
-
-{#snippet cueThumb(im: StoryCueImage)}
-	{@const front = frontOf(im)}
-	{#if im.hasStack && im.tempArt && im.finalArt}
-		<button
-			type="button"
-			class="thumb stack"
-			style:--tone={im.slot.tone ?? '#3a3a40'}
-			aria-label={`Open ${im.title} at original size`}
-			onmouseenter={() => showFinalOnHover(im)}
-			onmouseleave={() => showTempOnLeave(im)}
-			onclick={() => openCue(im)}
-		>
-			<div class="stack-layers" class:final-front={front === 'final'}>
-				<img
-					class="layer temp-layer"
-					{...storyImg(im.tempArt, { kind: 'cue', alt: '', sizes: '180px' })}
-				/>
-				<img
-					class="layer final-layer"
-					{...storyImg(im.finalArt, {
-						kind: 'cue',
-						alt: im.slot.alt ?? im.title,
-						sizes: '180px'
-					})}
-				/>
-			</div>
-			<span class="layer-chip" data-kind={front}>{front === 'temp' ? 'temp' : 'final'}</span>
-			<div class="badges">
-				{#if im.isNsfw}
-					<span class="badge nsfw">nsfw</span>
-				{/if}
-				{#if im.isTemp}
-					<span class="badge">temp</span>
-				{/if}
-				{#if im.hasGenuineRefs}
-					<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
-				{/if}
-			</div>
-		</button>
-	{:else}
-		{#if im.displayArt}
-			<button
-				type="button"
-				class="thumb"
-				style:--tone={im.slot.tone ?? '#3a3a40'}
-				aria-label={`Open ${im.title} at original size`}
-				onclick={() => openCue(im)}
-			>
-				<img
-					{...storyImg(im.displayArt, {
-						kind: 'cue',
-						alt: im.slot.alt ?? im.title,
-						sizes: '180px'
-					})}
-				/>
-				<div class="badges">
-					{#if im.isNsfw}
-						<span class="badge nsfw">nsfw</span>
-					{/if}
-					{#if im.isTemp}
-						<span class="badge">temp</span>
-					{/if}
-					{#if im.hasGenuineRefs}
-						<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
-					{/if}
-					{#if im.isSeedCopy}
-						<span class="badge seed">final copy</span>
-					{/if}
-				</div>
-			</button>
-		{:else}
-			<figure class="thumb" style:--tone={im.slot.tone ?? '#3a3a40'}>
-				<div class="ph">
-					<span class="ph-id">{im.slot.id}</span>
-				</div>
-				<div class="badges">
-					{#if im.isNsfw}
-						<span class="badge nsfw">nsfw</span>
-					{/if}
-					{#if im.isTemp}
-						<span class="badge">temp</span>
-					{/if}
-					{#if im.hasGenuineRefs}
-						<span class="badge refs" class:explicit={im.hasExplicitRefs}>refs</span>
-					{/if}
-					{#if im.isSeedCopy}
-						<span class="badge seed">final copy</span>
-					{/if}
-				</div>
-			</figure>
-		{/if}
-	{/if}
-{/snippet}
 
 <svelte:head>
 	<title>Images — The Kingdom</title>
@@ -200,283 +260,204 @@
 <main class="page">
 	<header class="mast">
 		<div class="mast-inner">
-		<p class="eyebrow">
-			<a href={resolve('/')}>← Chronicle</a>
-			<span class="dot" aria-hidden="true">·</span>
-			<a href={resolve('/wiki')}>Encyclopedia</a>
-			<span class="dot" aria-hidden="true">·</span>
-			<span>{query.trim() ? `${visible.length} / ${images.length}` : images.length} cues</span>
-			{#if tempCount}
+			<p class="eyebrow">
+				<a href={resolve('/')}>← Chronicle</a>
 				<span class="dot" aria-hidden="true">·</span>
-				<span>{tempCount} temp</span>
-			{/if}
-			{#if nsfwCount}
+				<a href={resolve('/wiki')}>Encyclopedia</a>
 				<span class="dot" aria-hidden="true">·</span>
-				{#if nsfwUi.showIntimate}
-					<span>{nsfwCount} nsfw</span>
-				{:else}
-					<span>{nsfwHidden} nsfw hidden</span>
+				<span
+					>{query.trim() ? `${visible.length} / ${cells.length}` : cells.length} stills</span
+				>
+				{#if tempCount}
+					<span class="dot" aria-hidden="true">·</span>
+					<span>{tempCount} temp</span>
 				{/if}
-			{/if}
-			{#if refsCount}
-				<span class="dot" aria-hidden="true">·</span>
-				<span>{refsCount} temp + refs</span>
-			{/if}
-			{#if stackCount}
-				<span class="dot" aria-hidden="true">·</span>
-				<span>{stackCount} stacks</span>
-			{/if}
-			{#if seedCopyCount}
-				<span class="dot" aria-hidden="true">·</span>
-				<span>{seedCopyCount} final copies</span>
-			{/if}
-			{#if orphans.length}
-				<span class="dot" aria-hidden="true">·</span>
-				<span>{orphans.length} orphaned</span>
-			{/if}
-		</p>
-		<div class="mast-row">
-			<div class="titles">
-				<h1>Images</h1>
-			</div>
-			<div class="mast-tools">
-				<NsfwToggle />
-				<label class="search">
-					<span class="sr-only">Search cues</span>
-					<input
-						type="search"
-						placeholder="Search cues — gyebek, yushin, last stand…"
-						bind:value={query}
-					/>
-				</label>
-				<div class="view" role="group" aria-label="Gallery view">
-					{#each VIEWS as v (v.id)}
+				{#if nsfwCount}
+					<span class="dot" aria-hidden="true">·</span>
+					{#if nsfwUi.showIntimate}
+						<span>{nsfwCount} nsfw</span>
+					{:else}
+						<span>{nsfwHidden} nsfw hidden</span>
+					{/if}
+				{/if}
+				{#if refsCount}
+					<span class="dot" aria-hidden="true">·</span>
+					<span>{refsCount} temp + refs</span>
+				{/if}
+				{#if seedCopyCount}
+					<span class="dot" aria-hidden="true">·</span>
+					<span>{seedCopyCount} final copies</span>
+				{/if}
+				{#if orphanCount}
+					<span class="dot" aria-hidden="true">·</span>
+					<span>{orphanCount} orphaned</span>
+				{/if}
+			</p>
+			<div class="mast-row">
+				<div class="titles">
+					<h1>Images</h1>
+				</div>
+				<div class="mast-tools">
+					<NsfwToggle />
+					<label class="search">
+						<span class="sr-only">Search stills</span>
+						<input
+							type="search"
+							placeholder="Search cues — gyebek, yushin, last stand…"
+							bind:value={query}
+						/>
+					</label>
+					<button
+						type="button"
+						class={['nsfw-filter', { active: query.trim().toLowerCase() === 'nsfw' }]}
+						aria-pressed={query.trim().toLowerCase() === 'nsfw'}
+						onclick={() => (query = query.trim().toLowerCase() === 'nsfw' ? '' : 'nsfw')}
+					>
+						NSFW
+					</button>
+					<button
+						type="button"
+						class={['select-toggle', { active: selecting }]}
+						aria-pressed={selecting}
+						onclick={toggleSelectMode}
+					>
+						{selecting ? 'Done' : 'Select'}
+					</button>
+					{#if selecting}
 						<button
 							type="button"
-							class:active={view === v.id}
-							title={v.hint}
-							aria-pressed={view === v.id}
-							onclick={() => (view = v.id)}
+							class="delete-btn"
+							disabled={!picked.length || deleting}
+							onclick={openConfirm}
 						>
-							{v.label}
+							Delete{picked.length ? ` (${picked.length})` : ''}
 						</button>
-					{/each}
+					{/if}
 				</div>
-				<button
-					type="button"
-					class="nsfw-filter"
-					class:active={query.trim().toLowerCase() === 'nsfw'}
-					aria-pressed={query.trim().toLowerCase() === 'nsfw'}
-					onclick={() => (query = query.trim().toLowerCase() === 'nsfw' ? '' : 'nsfw')}
-				>
-					NSFW
-				</button>
 			</div>
-		</div>
 		</div>
 	</header>
 
-	{#if view === 'grid'}
-		<section class="grid" aria-label="Cue image grid">
-			{#each visible as im (im.key)}
-				<article class="card" class:temp={im.isTemp} class:stackable={im.hasStack} class:nsfw={im.isNsfw}>
-					{@render cueThumb(im)}
-					<div class="meta">
-						<p class="year">{im.entryYear}</p>
-						<p class="entry">{im.title}</p>
-						<p class="cue">{im.slot.id}</p>
-						{#if im.isNsfw}
-							<p class="nsfw-label">NSFW</p>
-						{/if}
-					</div>
-				</article>
-			{/each}
-		</section>
-	{:else}
-		<section class="cues" aria-label="Cue image list">
-			{#each visible as im (im.key)}
-				{@const front = frontOf(im)}
-				<article class="row" class:temp={im.isTemp} class:nsfw={im.isNsfw}>
-					{@render cueThumb(im)}
-
-					<div class="body">
-						<p class="kicker">
-							<span>{im.chapterTitle}</span>
-							<span class="dot" aria-hidden="true">·</span>
-							<span>{im.entryYear}</span>
-							<span class="dot" aria-hidden="true">·</span>
-							<span>beat {im.beatIndex + 1}</span>
+	<section class="grid" aria-label="Cue image grid">
+		{#each visible as im (im.key)}
+			<article
+				class={{
+					card: true,
+					temp: im.isTemp,
+					nsfw: im.isNsfw,
+					orphan: im.kind === 'orphan',
+					picked: selected.has(im.key)
+				}}
+			>
+				{#if selecting}
+					<label class="pick">
+						<span class="sr-only">Select {im.title}</span>
+						<input
+							type="checkbox"
+							checked={selected.has(im.key)}
+							onchange={() => toggleKey(im.key)}
+						/>
+					</label>
+				{/if}
+				{#if im.src}
+					<button
+						type="button"
+						class="thumb"
+						style:--tone={im.tone}
+						aria-label={`Open ${im.title} at original size`}
+						onclick={(e) => onThumbClick(e, im)}
+					>
+						<img
+							{...storyImg(im.src, {
+								kind: 'cue',
+								alt: im.alt,
+								sizes: '180px'
+							})}
+						/>
+						<div class="badges">
 							{#if im.isNsfw}
-								<span class="dot" aria-hidden="true">·</span>
-								<span class="nsfw-kicker">NSFW</span>
+								<span class="badge nsfw">nsfw</span>
 							{/if}
-						</p>
-						<h2>{im.title}</h2>
-						{#if im.entrySubtitle}
-							<p class="sub">{im.entrySubtitle}</p>
-						{/if}
-
-						<dl class="facts">
-							<div>
-								<dt>Slot</dt>
-								<dd>{im.slot.id}</dd>
-							</div>
-							{#if im.at}
-								<div>
-									<dt>At</dt>
-									<dd>“{im.at}”</dd>
-								</div>
-							{/if}
-							{#if im.slot.alt}
-								<div>
-									<dt>Alt</dt>
-									<dd>{im.slot.alt}</dd>
-								</div>
-							{/if}
-							{#if im.hasStack}
-								<div>
-									<dt>Layers</dt>
-									<dd>
-										<button type="button" class="layer-toggle" onclick={() => cycleStack(im)}>
-											showing {front} — switch to {front === 'temp' ? 'final' : 'temp'}
-										</button>
-									</dd>
-								</div>
-							{/if}
-						</dl>
-
-						{#if im.cueContext}
-							<p class="context">{im.cueContext}</p>
-						{/if}
-
-						{#if im.prompt || im.refs.length || im.hasStack || im.isSeedCopy}
-							<div class="temp-panel">
-								{#if im.hasStack}
-									{@const tempSrc = layerSrc(im, 'temp')}
-									{@const finalSrc = layerSrc(im, 'final')}
-									<div class="stack-preview">
-										<p class="panel-label">Temp / final stack</p>
-										<ul class="stack-thumbs">
-											<li class:active={front === 'temp'}>
-												<button type="button" onclick={() => (stackFront[im.key] = 'temp')}>
-													{#if tempSrc}
-														<img
-															{...storyImg(tempSrc, {
-																kind: 'thumb',
-																alt: '',
-																sizes: '72px'
-															})}
-														/>
-													{/if}
-													<span>temp</span>
-												</button>
-											</li>
-											<li class:active={front === 'final'}>
-												<button type="button" onclick={() => (stackFront[im.key] = 'final')}>
-													{#if finalSrc}
-														<img
-															{...storyImg(finalSrc, {
-																kind: 'thumb',
-																alt: '',
-																sizes: '72px'
-															})}
-														/>
-													{/if}
-													<span>final</span>
-												</button>
-											</li>
-										</ul>
-									</div>
-								{/if}
-								{#if im.isSeedCopy}
-									<p class="no-refs">
-										Temp file is a jpeg copy of the final — not a ref-based regeneration yet.
-									</p>
-								{/if}
-								{#if im.prompt}
-									<div class="prompt-block">
-										<p class="panel-label">Prompt</p>
-										<pre class="prompt">{im.prompt}</pre>
-									</div>
-								{/if}
-								{#if im.refs.length}
-									<div class="refs-block">
-										<p class="panel-label">
-											Reference images{#if im.hasGenuineRefs}
-												{#if im.hasExplicitRefs}
-													<span class="ref-kind">explicit</span>
-												{:else}
-													<span class="ref-kind">inferred</span>
-												{/if}
-											{:else}
-												<span class="ref-kind">planned</span>
-											{/if}
-										</p>
-										<ul class="refs">
-											{#each im.refs as ref (ref.src)}
-												<li>
-													<img
-														{...storyImg(ref.src, { kind: 'thumb', alt: '', sizes: '48px' })}
-													/>
-													<span>{ref.label}</span>
-												</li>
-											{/each}
-										</ul>
-									</div>
-								{:else if im.prompt}
-									<p class="no-refs">No reference images on this slot.</p>
-								{/if}
-							</div>
-						{/if}
-					</div>
-				</article>
-			{/each}
-		</section>
-	{/if}
-
-	{#if orphans.length}
-		<section class="orphans" aria-label="Orphaned images">
-			<header class="orphan-head">
-				<h2>Orphaned</h2>
-				<p>
-					{orphans.length} file{orphans.length === 1 ? '' : 's'} in <code>static/temp/</code> that no
-					chronicle slot, person, or place references.
-				</p>
-			</header>
-			<div class="grid orphan-grid">
-				{#each orphans as o (o.src)}
-					<article class="card orphan">
-						<button
-							type="button"
-							class="thumb"
-							style:--tone="#3a3a40"
-							aria-label={`Open orphaned ${o.id} at original size`}
-							onclick={() =>
-								openLightbox([
-									{
-										src: o.src,
-										alt: o.id,
-										title: o.id,
-										caption: o.src
-									}
-								])}
-						>
-							<img {...storyImg(o.src, { kind: 'cue', alt: '', sizes: '180px' })} />
-							<div class="badges">
+							{#if im.kind === 'orphan'}
 								<span class="badge orphan-badge">orphan</span>
-							</div>
-						</button>
-						<div class="meta">
-							<p class="year">{o.kind}</p>
-							<p class="entry">{o.id}</p>
-							<p class="cue">{o.src}</p>
+							{:else if im.isTemp}
+								<span class="badge">temp</span>
+							{/if}
+							{#if im.hasGenuineRefs}
+								<span class={['badge', 'refs', { explicit: im.hasExplicitRefs }]}>refs</span>
+							{/if}
+							{#if im.isSeedCopy}
+								<span class="badge seed">final copy</span>
+							{/if}
 						</div>
-					</article>
-				{/each}
-			</div>
-		</section>
-	{/if}
+					</button>
+				{:else}
+					<figure class="thumb" style:--tone={im.tone}>
+						<div class="ph">
+							<span class="ph-id">{im.id}</span>
+						</div>
+						<div class="badges">
+							{#if im.isNsfw}
+								<span class="badge nsfw">nsfw</span>
+							{/if}
+							{#if im.isTemp}
+								<span class="badge">temp</span>
+							{/if}
+						</div>
+					</figure>
+				{/if}
+				<div class="meta">
+					<p class="year">{im.year}</p>
+					<p class="entry">{im.title}</p>
+					<p class="cue">{im.cueLabel}</p>
+					{#if im.isNsfw}
+						<p class="nsfw-label">NSFW</p>
+					{/if}
+				</div>
+			</article>
+		{/each}
+	</section>
 </main>
+
+{#if confirmOpen}
+	<dialog
+		class="confirm"
+		aria-labelledby="delete-title"
+		{@attach mountConfirm}
+		onclick={onConfirmBackdrop}
+		oncancel={(e) => {
+			if (deleting) e.preventDefault();
+		}}
+		onclose={closeConfirm}
+	>
+		<div class="confirm-sheet">
+			<h2 id="delete-title">Delete {picked.length} still{picked.length === 1 ? '' : 's'}?</h2>
+			<p class="confirm-copy">
+				Permanent. Files under <code>static/</code> are removed, and chronicle slots are cleared
+				so they do not come back on reload. Portraits (<code>ch_*.png</code>) are never deleted.
+			</p>
+			<ul class="confirm-files">
+				{#each picked.slice(0, 12) as cell (cell.key)}
+					<li>{cell.filename}</li>
+				{/each}
+			</ul>
+			{#if extraNames}
+				<p class="confirm-more">and {extraNames} more</p>
+			{/if}
+			{#if deleteError}
+				<p class="confirm-error" role="alert">{deleteError}</p>
+			{/if}
+			<div class="confirm-actions">
+				<button type="button" class="cancel" disabled={deleting} onclick={closeConfirm}>
+					Cancel
+				</button>
+				<button type="button" class="destroy" disabled={deleting} onclick={confirmDelete}>
+					{deleting ? 'Deleting…' : 'Delete permanently'}
+				</button>
+			</div>
+		</div>
+	</dialog>
+{/if}
 
 <style>
 	.page {
@@ -602,39 +583,43 @@
 		border: 0;
 	}
 
-	.view {
-		display: flex;
-		gap: 1px;
-		padding: 2px;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		background: var(--glass);
-		backdrop-filter: blur(14px);
-		flex-shrink: 0;
-	}
-
-	.view button {
+	.select-toggle,
+	.delete-btn {
 		font: inherit;
 		font-size: 0.72rem;
-		letter-spacing: 0.04em;
-		color: var(--fg-faint);
-		background: transparent;
-		border: none;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
 		border-radius: var(--radius-pill);
 		padding: 0.28rem 0.85rem;
 		cursor: pointer;
-		transition:
-			background 0.25s var(--ease),
-			color 0.25s var(--ease);
 	}
 
-	.view button:hover {
-		color: var(--fg);
+	.select-toggle {
+		color: var(--fg-dim);
+		background: transparent;
+		border: 1px solid var(--hairline);
 	}
 
-	.view button.active {
+	.select-toggle:hover,
+	.select-toggle.active {
 		color: #14140f;
 		background: var(--gold);
+		border-color: var(--gold);
+	}
+
+	.delete-btn {
+		color: #fff7f8;
+		background: #9f1239;
+		border: 1px solid #9f1239;
+	}
+
+	.delete-btn:hover:not(:disabled) {
+		background: #be123c;
+	}
+
+	.delete-btn:disabled {
+		opacity: 0.45;
+		cursor: not-allowed;
 	}
 
 	.nsfw-filter {
@@ -666,9 +651,37 @@
 	}
 
 	.card {
+		position: relative;
 		display: grid;
 		gap: 0.45rem;
 		min-width: 0;
+	}
+
+	.card.picked .thumb {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
+	}
+
+	.pick {
+		position: absolute;
+		z-index: 5;
+		top: 0.4rem;
+		right: 0.4rem;
+		display: grid;
+		place-items: center;
+		width: 1.35rem;
+		height: 1.35rem;
+		border-radius: 0.3rem;
+		background: color-mix(in srgb, var(--bg) 78%, transparent);
+		border: 1px solid var(--hairline);
+	}
+
+	.pick input {
+		margin: 0;
+		width: 0.9rem;
+		height: 0.9rem;
+		accent-color: var(--gold);
+		cursor: pointer;
 	}
 
 	.thumb {
@@ -691,81 +704,16 @@
 		cursor: zoom-in;
 	}
 
-	button.thumb.stack {
-		overflow: visible;
-	}
-
 	button.thumb:focus-visible {
 		outline: 2px solid var(--gold);
 		outline-offset: 2px;
 	}
 
-	.thumb img,
-	.layer {
+	.thumb img {
 		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-	}
-
-	.stack-layers {
-		position: absolute;
-		inset: 0;
-	}
-
-	.stack-layers .layer {
-		position: absolute;
-		inset: 0;
-		border-radius: var(--radius);
-		border: 1px solid var(--hairline);
-		transition:
-			transform 280ms var(--ease),
-			opacity 280ms var(--ease),
-			box-shadow 280ms var(--ease);
-	}
-
-	.stack-layers .temp-layer {
-		z-index: 2;
-		transform: translate(0, 0) rotate(0deg);
-		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-	}
-
-	.stack-layers .final-layer {
-		z-index: 1;
-		transform: translate(10px, 8px) rotate(2.2deg);
-		opacity: 0.92;
-		box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
-	}
-
-	.stack-layers.final-front .final-layer {
-		z-index: 2;
-		transform: translate(0, 0) rotate(0deg);
-		opacity: 1;
-		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
-	}
-
-	.stack-layers.final-front .temp-layer {
-		z-index: 1;
-		transform: translate(-10px, 8px) rotate(-2deg);
-		opacity: 0.88;
-	}
-
-	.layer-chip {
-		position: absolute;
-		z-index: 4;
-		right: 0.4rem;
-		bottom: 0.4rem;
-		padding: 0.08rem 0.4rem;
-		font-size: 0.58rem;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		border-radius: var(--radius-pill);
-		color: #14140f;
-		background: #fffdf8;
-	}
-
-	.layer-chip[data-kind='temp'] {
-		background: var(--gold);
 	}
 
 	.ph {
@@ -793,7 +741,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.25rem;
-		max-width: calc(100% - 0.8rem);
+		max-width: calc(100% - 2.2rem);
 	}
 
 	.badge {
@@ -877,301 +825,120 @@
 		border-radius: var(--radius-pill);
 	}
 
-	.nsfw-kicker {
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: #fb7185;
-	}
-
-	.cues {
-		max-width: 52rem;
-		margin: 0 auto;
-		display: grid;
-		gap: 1.15rem;
-	}
-
-	.row {
-		display: grid;
-		grid-template-columns: minmax(9rem, 14rem) minmax(0, 1fr);
-		gap: 1.1rem 1.25rem;
-		padding: 1rem 0;
-		border-top: 1px solid var(--hairline);
-	}
-
-	.row:first-child {
-		border-top: none;
-		padding-top: 0;
-	}
-
-	.row .thumb {
-		width: 100%;
-		aspect-ratio: 3 / 2;
-	}
-
-	.body {
-		min-width: 0;
-		display: grid;
-		gap: 0.45rem;
-		align-content: start;
-	}
-
-	.kicker {
+	.confirm {
+		position: fixed;
+		inset: 0;
+		width: 100vw;
+		height: 100dvh;
+		max-width: none;
+		max-height: none;
 		margin: 0;
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.35rem;
-		font-size: 0.68rem;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-	}
-
-	.body h2 {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.25rem;
-		font-weight: 600;
-		letter-spacing: var(--tracking-display);
-		line-height: 1.15;
-		color: #fffdf8;
-	}
-
-	.sub {
-		margin: 0;
-		font-size: 0.85rem;
-		color: var(--fg-dim);
-	}
-
-	.facts {
-		margin: 0.15rem 0 0;
-		display: grid;
-		gap: 0.35rem;
-	}
-
-	.facts > div {
-		display: grid;
-		grid-template-columns: 3.2rem minmax(0, 1fr);
-		gap: 0.55rem;
-		align-items: baseline;
-	}
-
-	.facts dt {
-		margin: 0;
-		font-size: 0.66rem;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-	}
-
-	.facts dd {
-		margin: 0;
-		font-size: 0.86rem;
-		line-height: 1.4;
-		color: var(--fg-dim);
-	}
-
-	.layer-toggle {
-		font: inherit;
-		font-size: 0.86rem;
-		color: var(--gold);
-		background: none;
 		border: none;
-		padding: 0;
-		cursor: pointer;
-		text-align: left;
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
+		background: rgba(8, 8, 10, 0.72);
+		color: inherit;
 	}
 
-	.context {
-		margin: 0.2rem 0 0;
-		padding: 0.65rem 0.75rem;
-		font-family: var(--serif);
-		font-size: 0.88rem;
-		line-height: 1.45;
-		letter-spacing: var(--tracking-body);
-		color: rgba(255, 253, 248, 0.82);
-		background: color-mix(in srgb, var(--panel) 70%, transparent);
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
+	.confirm::backdrop {
+		background: transparent;
 	}
 
-	.temp-panel {
-		margin-top: 0.35rem;
-		display: grid;
-		gap: 0.85rem;
-		padding: 0.85rem 0.9rem;
-		border: 1px solid rgba(216, 178, 106, 0.22);
-		border-radius: var(--radius);
-		background: color-mix(in srgb, var(--gold) 6%, var(--panel-sunken));
-	}
-
-	.panel-label {
-		margin: 0 0 0.4rem;
-		font-size: 0.66rem;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--gold);
-		display: flex;
-		align-items: center;
-		gap: 0.45rem;
-	}
-
-	.ref-kind {
-		font-size: 0.58rem;
-		letter-spacing: 0.08em;
-		padding: 0.06rem 0.35rem;
-		border-radius: var(--radius-pill);
-		color: #0f1720;
-		background: color-mix(in srgb, #7eb6ff 70%, #fffdf8);
-	}
-
-	.prompt {
-		margin: 0;
-		white-space: pre-wrap;
-		word-break: break-word;
-		font-family: var(--serif);
-		font-size: 0.78rem;
-		line-height: 1.45;
-		color: rgba(255, 253, 248, 0.78);
-	}
-
-	.stack-thumbs {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		display: flex;
-		gap: 0.65rem;
-	}
-
-	.stack-thumbs li button {
-		display: grid;
-		gap: 0.25rem;
-		width: 5.5rem;
-		padding: 0;
-		border: none;
-		background: none;
-		cursor: pointer;
-		font: inherit;
-		color: var(--fg-dim);
-	}
-
-	.stack-thumbs img {
-		width: 5.5rem;
-		height: 3.4rem;
-		object-fit: cover;
+	.confirm-sheet {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: min(28rem, calc(100vw - 2rem));
+		padding: 1.25rem 1.3rem 1.1rem;
 		border-radius: var(--radius);
 		border: 1px solid var(--hairline);
-		opacity: 0.7;
-		transition:
-			opacity 200ms var(--ease),
-			border-color 200ms var(--ease);
+		background: var(--panel);
+		box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
 	}
 
-	.stack-thumbs li.active img {
-		opacity: 1;
-		border-color: var(--gold);
-	}
-
-	.stack-thumbs span {
-		font-size: 0.62rem;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-	}
-
-	.refs {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.55rem;
-	}
-
-	.refs li {
-		display: grid;
-		gap: 0.25rem;
-		width: 4.5rem;
-	}
-
-	.refs img {
-		display: block;
-		width: 4.5rem;
-		height: 4.5rem;
-		object-fit: cover;
-		object-position: center top;
-		border-radius: var(--radius);
-		border: 1px solid var(--hairline);
-		background: var(--panel-sunken);
-	}
-
-	.refs span {
-		font-size: 0.62rem;
-		line-height: 1.25;
-		color: var(--fg-dim);
-		display: -webkit-box;
-		-webkit-line-clamp: 2;
-		line-clamp: 2;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-	}
-
-	.no-refs {
-		margin: 0;
-		font-size: 0.78rem;
-		color: var(--fg-faint);
-	}
-
-	.orphans {
-		max-width: 72rem;
-		margin: 3rem auto 0;
-		padding-top: 2rem;
-		border-top: 1px solid var(--hairline);
-	}
-
-	.orphan-head {
-		margin-bottom: 1.1rem;
-	}
-
-	.orphan-head h2 {
+	.confirm-sheet h2 {
 		margin: 0;
 		font-family: var(--serif);
-		font-size: 1.45rem;
+		font-size: 1.35rem;
 		font-weight: 600;
 		letter-spacing: var(--tracking-display);
 		color: #fffdf8;
 	}
 
-	.orphan-head p {
-		margin: 0.45rem 0 0;
-		font-size: 0.88rem;
+	.confirm-copy {
+		margin: 0.65rem 0 0;
+		font-size: 0.86rem;
+		line-height: 1.45;
 		color: var(--fg-dim);
 	}
 
-	.orphan-head code {
+	.confirm-copy code {
 		font-size: 0.82em;
 		color: var(--gold);
 	}
 
-	@media (max-width: 700px) {
-		.row {
-			grid-template-columns: 1fr;
-			gap: 0.75rem;
-		}
-
-		.row .thumb {
-			max-width: 20rem;
-		}
-
-		.grid {
-			grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
-		}
+	.confirm-files {
+		margin: 0.75rem 0 0;
+		padding: 0.55rem 0.75rem;
+		max-height: 10rem;
+		overflow: auto;
+		list-style: none;
+		font-size: 0.78rem;
+		line-height: 1.4;
+		color: var(--fg);
+		background: var(--panel-sunken);
+		border: 1px solid var(--hairline);
+		border-radius: var(--radius);
 	}
 
-	@media (prefers-reduced-motion: reduce) {
-		.stack-layers .layer {
-			transition: none;
+	.confirm-more {
+		margin: 0.4rem 0 0;
+		font-size: 0.72rem;
+		color: var(--fg-faint);
+	}
+
+	.confirm-error {
+		margin: 0.65rem 0 0;
+		font-size: 0.82rem;
+		color: #fb7185;
+	}
+
+	.confirm-actions {
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.55rem;
+		margin-top: 1rem;
+	}
+
+	.confirm-actions button {
+		font: inherit;
+		font-size: 0.78rem;
+		letter-spacing: 0.04em;
+		border-radius: var(--radius-pill);
+		padding: 0.38rem 0.95rem;
+		cursor: pointer;
+	}
+
+	.cancel {
+		color: var(--fg);
+		background: transparent;
+		border: 1px solid var(--hairline);
+	}
+
+	.destroy {
+		color: #fff7f8;
+		background: #9f1239;
+		border: 1px solid #9f1239;
+	}
+
+	.destroy:disabled,
+	.cancel:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	@media (max-width: 700px) {
+		.grid {
+			grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
 		}
 	}
 </style>
