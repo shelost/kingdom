@@ -7843,8 +7843,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "She kisses the wet stone",
-						"alt": "Golhwa kissing wet cavern rock — mouth on stone, fire steam, coral-flame binyeo",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Photoreal adult goddess kissing a wet black cavern rock: mouth on the wet stone, flushed, tongue touching granite, living ember eyes. Face and garments match attached portrait: white silky jeogori slipped, coral-orange #e86820 chima. Hair ornament matches attached coral-flame binyeo. Ember heat-shimmer. Dim attached cavern. No man. No text. No watermark.",
+						"alt": "golhwa-rock-kiss",
+						"prompt": "golhwa-rock-kiss",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -7852,7 +7852,8 @@
 						],
 						"people": [
 							"golhwa"
-						]
+						],
+						"tempImage": "/temp/golhwa-rock-kiss.jpg"
 					},
 					{
 						"id": "golhwa-rock-embrace",
@@ -7860,8 +7861,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "Arms around the rock as if it had a waist",
-						"alt": "Golhwa straddling and hugging wet rock — arms around stone, fire accent",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Photoreal adult goddess seated astride a wet black rock, arms wrapped around the stone as if it had a waist, cheek toward the granite, flushed, mouth parted. Face and garments match attached portrait: white silky jeogori slipped, coral-orange #e86820 chima. Hair ornament matches attached coral-flame binyeo. Ember heat-shimmer. Dim attached cavern. No man. No text. No watermark.",
+						"alt": "golhwa-rock-embrace",
+						"prompt": "golhwa-rock-embrace",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -7869,7 +7870,8 @@
 						],
 						"people": [
 							"golhwa"
-						]
+						],
+						"tempImage": "/temp/golhwa-rock-embrace.jpg"
 					},
 					{
 						"id": "golhwa-rock-cheek",
@@ -7877,8 +7879,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "Cheek pressed to the granite",
-						"alt": "Close: Golhwa’s cheek pressed to wet rock, hungry mouth, fire steam",
-						"prompt": "Intimate cinematic CLOSE-UP still, 9:16. Photoreal adult goddess, cheek pressed to wet black granite, hungry mouth, living ember eyes, heavy flush. Face and garments match attached portrait: white silky jeogori, coral-orange #e86820 chima. Hair ornament matches attached coral-flame binyeo. Ember heat-shimmer. Dim attached cavern. No man. No text. No watermark.",
+						"alt": "golhwa-rock-cheek",
+						"prompt": "golhwa-rock-cheek",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -7886,7 +7888,8 @@
 						],
 						"people": [
 							"golhwa"
-						]
+						],
+						"tempImage": "/temp/golhwa-rock-cheek.jpg"
 					},
 					{
 						"id": "golhwa-rock-pov",
@@ -7894,8 +7897,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "From the stone she is a sky",
-						"alt": "Worm’s-eye from the rock: Golhwa astride above, tongue out, heart-eyes, fire aura",
-						"prompt": "Intimate cinematic CLOSE-UP still, 9:16. WORM'S-EYE from wet black stone looking UP. Luminous adult goddess astride above the camera, legs straddled wide, back arched, tongue out, heart-shaped pupils, begging expression, peaked nipples under wet white silk, chima hiked up around hips, thighs bare on wet stone, silk bunched. Coral-orange #e86820 silk gathered at the waist, not draped. Face and garments match attached portrait. Hair ornament matches attached coral-flame binyeo. Ember motes, fire aura, spirit-steam. Magical aura, anime-painterly cavern spirit, not photoreal. No man. No text. No watermark.",
+						"alt": "golhwa-rock-pov",
+						"prompt": "golhwa-rock-pov",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -7903,7 +7906,8 @@
 						],
 						"people": [
 							"golhwa"
-						]
+						],
+						"tempImage": "/temp/golhwa-rock-pov.jpg"
 					},
 					{
 						"id": "golhwa-rock-arch",
@@ -7911,8 +7915,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "back arched, legs wide",
-						"alt": "Golhwa astride wet rock, back arched, ass toward side, fire aura, heart-eyes",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. THREE-QUARTER from behind and beside. Luminous adult goddess seated astride wet black stone, back arched, legs straddled wide, looking over her shoulder with tongue out and heart-shaped pupils, peaked under wet white silk. chima hiked up around hips, thighs bare on wet stone, silk bunched. Face and garments match attached portrait: white silky jeogori slipped, coral-orange #e86820 chima. Hair ornament matches attached coral-flame binyeo. Ember motes, fire aura. Magical aura, anime-painterly cavern spirit, not photoreal. No man. No text. No watermark.",
+						"alt": "golhwa-rock-arch",
+						"prompt": "Installed golhwa-rock-arch",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -7920,7 +7924,8 @@
 						],
 						"people": [
 							"golhwa"
-						]
+						],
+						"tempImage": "/temp/golhwa-rock-arch.jpg"
 					},
 					{
 						"id": "golhwa-rock-peaked",
@@ -7928,8 +7933,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "peaked under wet silk",
-						"alt": "Golhwa close astride rock — peaked nipples under wet silk, tongue out, heart-eyes, fire aura",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Luminous adult goddess seated astride wet black stone, facing camera, tongue out, heart-shaped pupils, heavy flush, peaked under wet clinging white silk. chima hiked up around hips, thighs bare on wet stone, silk bunched. Face and garments match attached portrait. Hair ornament matches attached coral-flame binyeo. Ember motes, fire aura, spirit-steam. Magical aura, anime-painterly cavern spirit, not photoreal. No man. No text. No watermark.",
+						"alt": "golhwa-rock-peaked",
+						"prompt": "Installed golhwa-rock-peaked",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -7937,7 +7942,8 @@
 						],
 						"people": [
 							"golhwa"
-						]
+						],
+						"tempImage": "/temp/golhwa-rock-peaked.jpg"
 					},
 					{
 						"id": "golhwa-rock-manhwa-astride",
@@ -7981,8 +7987,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "Hips pressed down on the stone",
-						"alt": "Golhwa hips pressed to wet rock — open jeogori, clinging silk, climax face",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel, erotic comic framing, heavy blush, heart pupils, sweat drop, motion lines, climax expression. Luminous adult goddess seated astride wet black cavern rock, legs spread wide apart, hips pressed down on the stone, chima hiked up around hips, thighs bare on wet stone, silk bunched tight at the waist where body meets rock. White silky jeogori open at both shoulders, wet silk clinging to her chest. Face matches attached portrait. Hair ornament matches attached coral-flame binyeo. Climax expression: tongue out, heart-shaped ember pupils, heavy flush, drool thread. Ember motes, fire aura #e86820. Dim attached cavern. No man. No text. No watermark.",
+						"alt": "golhwa-rock-hips-press",
+						"prompt": "Installed golhwa-rock-hips-press",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -8367,8 +8373,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "Golhwa climbs into his lap first",
-						"alt": "Older bare Seohyeon — Golhwa climbing into his lap, legs open, chima hiked, wanting face",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel framing, heavy blush, heart pupils, sweat drop. Luminous adult goddess seated close against a painterly older East Asian man in black cavern water — her coral-orange chima hiked at the hips, legs open invitation on wet stone, silk bunched, fire aura #e86820. Loud wanting face: half-lidded ember eyes, mouth open, heavy flush, not a polite smile. Face and garments match attached Golhwa portrait; coral-flame binyeo. He is an aged version of the attached Seohyeon portrait — grey temples, lined, same face older. FACE ONLY. Do NOT wear his portrait's hanbok or headband. Wet loose hair. NO headband. Bathing: wet muscular chest above water, bright skin, nothing but water and steam. Waist-up. Tasteful, no explicit anatomy. Dim attached cavern. No text. No watermark.",
+						"alt": "seohyeon-older-straddle",
+						"prompt": "Installed seohyeon-older-straddle",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -8387,8 +8393,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "She kisses him like she has been waiting decades",
-						"alt": "Golhwa kissing older bare Seohyeon in steam — legs open climbing him, mouths locked, ember aura",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel, erotic comic framing, heavy blush, heart pupils, sweat drop, climax expression. Adult goddess Golhwa kissing a painterly older East Asian man mouth-to-mouth in black cavern steam — her legs open climbing him, coral-orange chima hiked high around hips, thighs bare, white jeogori open, wet silk clinging, deep cleavage, fire aura #e86820. Loud wanting kiss-face: mouth open on his, heavy flush, heart-shaped ember pupils, not a polite smile. Face and garments match attached Golhwa portrait; hair ornament matches attached coral-flame binyeo. He is aged from attached Seohyeon portrait — grey temples, lined, same face older. FACE ONLY. Do NOT wear his portrait's hanbok, court silk, armor, or headband. Wet loose hair. NO headband. Unclothed bathing body: wet muscular chest and shoulders, nothing but water and steam, bright-blue #3E8EF0 rim. Dim attached cavern. Waist-up intimate framing. Tasteful, no explicit anatomy. No text. No watermark.",
+						"alt": "seohyeon-older-kiss",
+						"prompt": "Installed seohyeon-older-kiss",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -8407,8 +8413,8 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "She seats herself on him in the black bowl",
-						"alt": "Golhwa astride older naked Seohyeon in spring — hiked chima, climax face, his wet muscle in shadow",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel, erotic comic framing, heavy blush, heart pupils, sweat drop, climax expression. Luminous adult goddess Golhwa straddling a painterly older East Asian man in black spring water — seated close against him, coral-orange chima hiked high around hips, thighs bare, silk bunched, white jeogori open, wet silk clinging, deep cleavage, ember fire aura #e86820. Loud climax manhwa face: mouth open, heart pupils, heavy flush, sweat drop, not a cute smile. Face and garments match attached Golhwa portrait; coral-flame binyeo. He is aged from attached Seohyeon portrait — grey temples, lined. FACE ONLY. Do NOT wear hanbok or headband. Wet loose hair. NO headband. Unclothed bathing body in shadow: wet muscular older torso and shoulders above water, nothing but water and steam. Dim attached cavern. Waist-up. Tasteful, no explicit anatomy. No text. No watermark.",
+						"alt": "seohyeon-older-ride",
+						"prompt": "Installed seohyeon-older-ride",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -8423,12 +8429,12 @@
 					},
 					{
 						"id": "seohyeon-older-hips",
-						"ratio": 0.75,
+						"ratio": 0.5625,
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "Hips pressed together in the water",
-						"alt": "Worm’s-eye: Golhwa riding older Seohyeon — hips pressed, hiked chima, magical aura climax face",
-						"prompt": "Intimate cinematic CLOSE-UP still, 9:16. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel, erotic comic framing, heavy blush, heart pupils, sweat drop, climax expression. Worm's-eye low angle looking up: luminous adult goddess Golhwa straddling a painterly older East Asian man in black cavern water — embrace, hips pressed together, coral chima hiked high, thighs bare, silk bunched as cover, open jeogori, wet silk clinging, fire aura #e86820. Her climax face fills upper frame: open mouth, heart pupils, heavy flush. Face matches attached Golhwa portrait; coral-flame binyeo. His wet muscular older body under her in shadow — grey temples, FACE ONLY from attached Seohyeon portrait aged. No hanbok. No headband. Unclothed bathing chest. Dim cavern. Waist-up tasteful silk cover, no explicit anatomy. No text. No watermark.",
+						"alt": "seohyeon-older-hips",
+						"prompt": "Installed seohyeon-older-hips",
 						"refs": [
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
@@ -8477,8 +8483,8 @@
 						],
 						"tone": "#e86820",
 						"at": "They finish together",
-						"alt": "Simultaneous climax: Golhwa astride bare older Seohyeon — climax faces, hiked chima, wet muscle",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel, erotic comic framing, heavy blush, heart pupils, sweat drop, climax expression. Luminous adult goddess Golhwa seated close against a painterly older East Asian man in black spring water — coral-orange chima hiked high around hips, thighs bare, silk bunched, white jeogori open, wet silk clinging, ember fire aura #e86820. Loud climax manhwa face: mouth open, heart pupils, heavy flush, sweat drop. Face and garments match attached Golhwa portrait; coral-flame binyeo. He is aged from attached Seohyeon portrait — grey temples, lined. FACE ONLY. Do NOT wear hanbok or headband. Wet loose hair. NO headband. Bare wet muscular older torso and shoulders above water. Dim attached cavern. Waist-up. Tasteful, no explicit anatomy. No text. No watermark.",
+						"alt": "seohyeon-older-climax-duo",
+						"prompt": "Installed seohyeon-older-climax-duo",
 						"tempImage": "/temp/seohyeon-older-climax-duo.jpg"
 					},
 					{
@@ -8527,8 +8533,8 @@
 						"tone": "#2eb8c4",
 						"nsfw": true,
 						"at": "Hyullé watches with her knees still pressed",
-						"alt": "Hyullé pressed to older Seohyeon’s grey temple — knees together, eyes down, soaked",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel framing, heavy blush, sweat drop. Luminous adult goddess pressed close to a painterly older East Asian man. Her legs tightly together, knees pressed, shy gaze down against his grey temple, soaked teal silk, water aura #2eb8c4. Face and garments match attached Hyullé portrait; teal-wave binyeo. He is an aged version of the attached Seohyeon portrait — grey temples, lined, same face older. FACE ONLY. Do NOT wear his portrait's hanbok or headband. Wet loose hair. NO headband. Bathing: wet muscular chest above black water, nothing but water and steam. Waist-up. Tasteful, no explicit anatomy. Dim attached cavern. No text. No watermark.",
+						"alt": "seohyeon-older-hyulle-press",
+						"prompt": "Installed seohyeon-older-hyulle-press",
 						"refs": [
 							"/ch_hyullé.png",
 							"/bn_hyulle.png",
@@ -8546,23 +8552,16 @@
 						"ratio": 1.778,
 						"tone": "#3d9e52",
 						"nsfw": true,
-						"at": "Narim’s breath goes late on his lined cheek",
-						"alt": "Narim breathless on older Seohyeon’s lined cheek — three sisters close, same heat",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. Soft manhwa close. An older East Asian man with grey temples in black spring water, wet loose hair, no headband, wet chest above the waterline — face aged from the attached Seohyeon portrait. Beside him two luminous goddesses lean close: one coral-orange silk with ember flush, one teal silk with shy downcast eyes. Faces match attached portraits. Dim cave steam. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-close",
+						"prompt": "Installed seohyeon-older-close",
 						"refs": [
 							"/ch_narim.png",
-							"/ch_golhwa.png",
-							"/ch_hyullé.png",
 							"/bn_narim.png",
-							"/bn_golhwa.png",
-							"/bn_hyulle.png",
 							"/ch_kim_seohyun.png",
 							"/pl_cave.png"
 						],
 						"people": [
 							"narim",
-							"golhwa",
-							"hyulle",
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-close.jpg"
@@ -8573,22 +8572,16 @@
 						"tone": "#3d9e52",
 						"nsfw": true,
 						"at": "The sisters leave their rock",
-						"alt": "Sisters joining: three goddesses climbing onto bare older Seohyeon",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. Soft manhwa close. An older East Asian man with grey temples in black spring water, wet loose hair, no headband, wet muscular chest — face aged from attached Seohyeon. Golhwa coral silk already close against him; Narim and Hyullé lean in from the rock overlapping — leaf and teal open silk, hands on his bare chest, wanting flush. Faces match attached portraits. Dim cave steam. Four bodies. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-sisters-join",
+						"prompt": "Installed seohyeon-older-sisters-join",
 						"refs": [
-							"/ch_golhwa.png",
 							"/ch_narim.png",
-							"/ch_hyullé.png",
-							"/bn_golhwa.png",
 							"/bn_narim.png",
-							"/bn_hyulle.png",
 							"/ch_kim_seohyun.png",
 							"/pl_cave.png"
 						],
 						"people": [
-							"golhwa",
 							"narim",
-							"hyulle",
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-sisters-join.jpg"
@@ -8599,22 +8592,16 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "Two kissing while one rides",
-						"alt": "Orgy: coral goddess on naked older Seohyeon while sisters faces nearly touch",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. Soft manhwa close. An older East Asian man with grey temples in black spring water, wet loose hair, no headband, wet muscular chest — face aged from attached Seohyeon. Three luminous goddesses overlapping him: coral silk hiked open close against his chest, leaf and teal goddesses with faces nearly touching each other beside them, hands on his bare shoulders. Faces match attached portraits. Dim cave steam. Four bodies. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-orgy-kiss-ride",
+						"prompt": "Installed seohyeon-older-orgy-kiss-ride",
 						"refs": [
 							"/ch_golhwa.png",
-							"/ch_narim.png",
-							"/ch_hyullé.png",
 							"/bn_golhwa.png",
-							"/bn_narim.png",
-							"/bn_hyulle.png",
 							"/ch_kim_seohyun.png",
 							"/pl_cave.png"
 						],
 						"people": [
 							"golhwa",
-							"narim",
-							"hyulle",
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-orgy-kiss-ride.jpg"
@@ -8625,8 +8612,8 @@
 						"tone": "#3d9e52",
 						"nsfw": true,
 						"at": "the eldest fails into it",
-						"alt": "Narim elder-failing into heat on older Seohyeon — open silk, bitten lip, leaf-light",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel, erotic comic framing, heavy blush, sweat drop. Luminous adult eldest goddess Narim close against a painterly older East Asian man in black spring — white silky jeogori slightly open, leaf-green chima, breath late, bitten lip, floating leaves #3d9e52, hungry eldest-failing face. Face matches attached Narim portrait; jade-branch binyeo. He: grey temples, lined, FACE ONLY from attached Seohyeon aged. Do NOT wear his portrait's hanbok or headband. Wet loose hair. Bare wet chest. Dim attached cavern. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-narim-fail",
+						"prompt": "Installed seohyeon-older-narim-fail",
 						"refs": [
 							"/ch_narim.png",
 							"/bn_narim.png",
@@ -8644,9 +8631,8 @@
 						"ratio": 1.778,
 						"tone": "#2eb8c4",
 						"nsfw": true,
-						"at": "Hyullé’s knees finally part enough to climb",
-						"alt": "Hyullé climbing closer to older Seohyeon — eyes down, soaked teal silk, silent wrecked",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel, erotic comic framing, heavy blush, sweat drop. Luminous adult goddess Hyullé pressed close to a painterly older East Asian man in black spring — soaked teal silk clinging, water aura #2eb8c4, shy gaze down, heavy flush, silent wrecked wanting face, knees close but climbing nearer. Face matches attached Hyullé portrait; teal-wave binyeo. He: grey temples, FACE ONLY from attached Seohyeon aged. Do NOT wear his portrait's hanbok or headband. Wet loose hair. Bare wet muscular chest. Dim attached cavern. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-hyulle-climb",
+						"prompt": "Installed seohyeon-older-hyulle-climb",
 						"refs": [
 							"/ch_hyullé.png",
 							"/bn_hyulle.png",
@@ -8661,26 +8647,19 @@
 					},
 					{
 						"id": "seohyeon-older-orgy-pile",
-						"ratio": 1.778,
-						"tone": "#3E8EF0",
+						"ratio": 0.5625,
+						"tone": "#e86820",
 						"nsfw": true,
-						"at": "Steam turns the four into one silhouette pile",
-						"alt": "Dense orgy pile: three goddesses pressing on bare older Seohyeon in steam",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel collage energy. CENTER: painterly older East Asian man waist-up in black water, grey temples, bare wet muscular chest and abs accentuated, no headband, no hanbok, FACE ONLY from attached Seohyeon aged. AROUND him three luminous goddesses pressing close overlapping — coral ember leaf teal hiked open silk edges bare shoulders heavy blush wanting faces matching attached portraits. Steam dense. Dim attached cavern. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-orgy-pile",
+						"prompt": "Installed seohyeon-older-orgy-pile",
 						"refs": [
 							"/ch_golhwa.png",
-							"/ch_narim.png",
-							"/ch_hyullé.png",
 							"/bn_golhwa.png",
-							"/bn_narim.png",
-							"/bn_hyulle.png",
 							"/ch_kim_seohyun.png",
 							"/pl_cave.png"
 						],
 						"people": [
 							"golhwa",
-							"narim",
-							"hyulle",
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-orgy-pile.jpg"
@@ -8690,24 +8669,18 @@
 						"ratio": 1.778,
 						"tone": "#e86820",
 						"nsfw": true,
-						"at": "Steam turns the four into one silhouette pile",
-						"alt": "Three goddess climax-wanting faces in steam — Golhwa loud, Narim gasping, Hyullé wrecked",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. Soft manhwa close: three luminous adult goddess faces side by side in cavern steam — left Golhwa ember flush #e86820 mouth open wanting, center Narim leaf #3d9e52 breathless, right Hyullé cyan #2eb8c4 gaze down wrecked. Heavy blush, sweat drop. Faces match attached portraits; matching binyeo. Dim attached cavern. Tasteful faces. No text. No watermark.",
+						"alt": "seohyeon-older-orgy-faces",
+						"prompt": "Installed seohyeon-older-orgy-faces",
 						"refs": [
 							"/ch_golhwa.png",
-							"/ch_narim.png",
 							"/ch_hyullé.png",
 							"/bn_golhwa.png",
-							"/bn_narim.png",
 							"/bn_hyulle.png",
-							"/ch_kim_seohyun.png",
 							"/pl_cave.png"
 						],
 						"people": [
 							"golhwa",
-							"narim",
-							"hyulle",
-							"seohyeon"
+							"hyulle"
 						],
 						"tempImage": "/temp/seohyeon-older-orgy-faces.jpg"
 					},
@@ -8813,23 +8786,16 @@
 						"ratio": 1.778,
 						"tone": "#e86820",
 						"nsfw": true,
-						"at": "Four bodies in the black bowl",
-						"alt": "Orgy tangle collage: bare older Seohyeon center, three goddesses pressing in",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. manhwa panel collage energy. CENTER: painterly older East Asian man waist-up in black water, grey temples, bare wet muscular chest and abs accentuated, no headband, no hanbok, FACE ONLY from attached Seohyeon aged. AROUND him three luminous goddess faces and bare shoulders pressing in — coral ember, leaf, teal — hiked open silk edges, heavy blush, wanting expressions matching attached portraits. Overlapping bodies imply wild shared night. Dim attached cavern. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-orgy-tangle",
+						"prompt": "Installed seohyeon-older-orgy-tangle",
 						"refs": [
 							"/ch_golhwa.png",
-							"/ch_narim.png",
-							"/ch_hyullé.png",
 							"/bn_golhwa.png",
-							"/bn_narim.png",
-							"/bn_hyulle.png",
 							"/ch_kim_seohyun.png",
 							"/pl_cave.png"
 						],
 						"people": [
 							"golhwa",
-							"narim",
-							"hyulle",
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-orgy-tangle.jpg"
@@ -8839,23 +8805,16 @@
 						"ratio": 1.778,
 						"tone": "#e86820",
 						"nsfw": true,
-						"at": "They take turns astride him",
-						"alt": "Riding pile: three goddesses overlapping naked older Seohyeon — hiked open silk, wet muscle",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. Soft manhwa close. An older East Asian man with grey temples in black spring water, wet loose hair, no headband, wet muscular chest above the waterline — face aged from the attached Seohyeon portrait. Three luminous goddesses lean onto him overlapping from the rock: coral silk hiked open ember flush, leaf-green silk open breathless, teal silk open shy downcast — hands on his bare shoulders and chest, mouths close to his skin and each other. Faces match attached portraits. Dim cave steam. Four bodies close. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-ride-pile",
+						"prompt": "Installed seohyeon-older-ride-pile",
 						"refs": [
 							"/ch_golhwa.png",
-							"/ch_narim.png",
-							"/ch_hyullé.png",
 							"/bn_golhwa.png",
-							"/bn_narim.png",
-							"/bn_hyulle.png",
 							"/ch_kim_seohyun.png",
 							"/pl_cave.png"
 						],
 						"people": [
 							"golhwa",
-							"narim",
-							"hyulle",
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-ride-pile.jpg"
@@ -8866,10 +8825,12 @@
 						"tone": "#e86820",
 						"nsfw": true,
 						"at": "shadow puppets on stone",
-						"alt": "Cave-wall shadow puppet: doggy-style mounting pose silhouette on wet stone",
-						"prompt": "Wide cinematic cavern still, 16:9. ICONIC / MINIMAL EPIC from dark cave looking at a wet stone wall lit by warm ember lamp. ONE geometric device: the lit rectangular wall plane. On the stone: clear dark shadow silhouettes of two adult figures — one kneeling, another leaning over from behind — readable intimate pose body language as shadow puppet, full hip curve in outline only, no faces, no detail skin. Ember #e86820 accent in the glow. Attached cave location mood. No text. No watermark. Graphic color-blocking, anime-painterly.",
+						"alt": "seohyeon-older-wall-doggy",
+						"prompt": "Installed seohyeon-older-wall-doggy",
 						"refs": [
-							"/pl_cave.png"
+							"/pl_cave.png",
+							"/ch_golhwa.png",
+							"/ch_kim_seohyun.png"
 						],
 						"people": [
 							"golhwa",
@@ -8883,8 +8844,8 @@
 						"tone": "#2eb8c4",
 						"nsfw": true,
 						"at": "a straddling pile",
-						"alt": "Cave-wall shadow: straddling sex-pose silhouette on wet stone",
-						"prompt": "Wide cinematic cavern still, 16:9. ICONIC / MINIMAL EPIC. Dark cave, glowing wet wall. ONE geometric device: the lit wall screen. On the stone: clear dark shadow silhouettes of two adult figures in a straddling embrace — readable intimate pose body language, no faces, no detail skin. Cyan #2eb8c4 lamp accent. No text. No watermark. Graphic color-blocking, anime-painterly.",
+						"alt": "seohyeon-older-wall-straddle",
+						"prompt": "Installed seohyeon-older-wall-straddle",
 						"refs": [
 							"/pl_cave.png"
 						],
@@ -8900,8 +8861,8 @@
 						"tone": "#3d9e52",
 						"nsfw": true,
 						"at": "tangled four-body outlines",
-						"alt": "Cave-wall shadow: tangled multi-body orgy silhouettes on stone",
-						"prompt": "Wide cinematic cavern still, 16:9. ICONIC / MINIMAL EPIC. Dark cave, glowing wet wall. ONE geometric device: the lit wall plane with leaf-green #3d9e52 rim. On the stone: clear dark shadow silhouettes of several adult figures overlapping in a tangled embrace cluster — shadow puppet only, no faces, no detail skin. Monumental stone emptiness. No text. No watermark. Graphic color-blocking, anime-painterly.",
+						"alt": "seohyeon-older-wall-orgy",
+						"prompt": "Installed seohyeon-older-wall-orgy",
 						"refs": [
 							"/pl_cave.png"
 						],
@@ -8919,8 +8880,8 @@
 						"tone": "#3E8EF0",
 						"nsfw": true,
 						"at": "Dawn finds them passed out",
-						"alt": "Aftermath: three goddesses spent on bare older Seohyeon — wet skin shine, hiked silk",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Magical aura, anime-painterly cavern spirit, not photoreal. Soft manhwa close. An older East Asian man with grey temples in black spring water, wet loose hair, no headband, wet muscular chest above the waterline — face aged from the attached Seohyeon portrait. Three luminous goddesses limp spent against him overlapping: coral silk open messy hair, leaf-green silk open, teal silk open eyes down — soft wet skin shine catching steam. Faces match attached portraits. Dim cave steam. Four bodies. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-milk-spent",
+						"prompt": "Installed seohyeon-older-milk-spent",
 						"refs": [
 							"/ch_golhwa.png",
 							"/ch_narim.png",
@@ -8945,8 +8906,8 @@
 						"tone": "#3E8EF0",
 						"nsfw": true,
 						"at": "Afterwards they tremble in the steam",
-						"alt": "Afterglow orgy: naked older Seohyeon under three spent goddesses — pearlescent sheen, hiked silk",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Magical aura, anime-painterly cavern spirit, not photoreal. Aftermath mood: painterly older NAKED East Asian man grey temples under three spent luminous goddesses trembling against him — Golhwa legs still open hiked coral silk, Hyullé wrecked teal, Narim breathless leaf. Pearlescent sheen on skin and thighs. Goddesses wear almost nothing of house silk left: white jeogoris fallen open or off shoulders, chima hiked high around hips as thin bunched cover only, mostly bare wet skin, full hips, spread thighs, wet silk clinging. Faces and binyeo match attached portraits when visible. He is fully unclothed bathing body: wet muscular older East Asian male torso, abs, shoulders, arms accentuated, grey temples, wet loose hair, NO headband, NO ribbon, NO hanbok, NO court silk, NO armor. FACE ONLY from attached Seohyeon portrait aged. Bright-blue #3E8EF0 rim on wet skin. Dim attached cavern. Multi-body readable. Waist-up. Tasteful. No text. No watermark.",
+						"alt": "seohyeon-older-afterglow",
+						"prompt": "Installed seohyeon-older-afterglow",
 						"refs": [
 							"/ch_golhwa.png",
 							"/ch_narim.png",
@@ -8964,6 +8925,184 @@
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-afterglow.jpg"
+					},
+					{
+						"id": "seohyeon-older-tease",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "They tease him first",
+						"alt": "seohyeon-older-tease",
+						"prompt": "Installed seohyeon-older-tease",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-tease.jpg"
+					},
+					{
+						"id": "seohyeon-older-overcome",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "Overcome. Not polite",
+						"alt": "seohyeon-older-overcome",
+						"prompt": "Installed seohyeon-older-overcome",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-overcome.jpg"
+					},
+					{
+						"id": "seohyeon-older-narim-alone",
+						"ratio": 1.778,
+						"tone": "#3d9e52",
+						"nsfw": true,
+						"at": "Narim’s breath goes late on his lined cheek",
+						"alt": "seohyeon-older-narim-alone",
+						"prompt": "Installed seohyeon-older-narim-alone",
+						"refs": [
+							"/ch_narim.png",
+							"/bn_narim.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"narim",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-narim-alone.jpg"
+					},
+					{
+						"id": "seohyeon-older-hyulle-alone",
+						"ratio": 1.778,
+						"tone": "#2eb8c4",
+						"nsfw": true,
+						"at": "Hyullé’s knees finally part enough to climb",
+						"alt": "seohyeon-older-hyulle-alone",
+						"prompt": "Installed seohyeon-older-hyulle-alone",
+						"refs": [
+							"/ch_hyullé.png",
+							"/bn_hyulle.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"hyulle",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-hyulle-alone.jpg"
+					},
+					{
+						"id": "seohyeon-older-pov-doggy",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "She looks back over her shoulder while he stays behind her",
+						"alt": "seohyeon-older-pov-doggy",
+						"prompt": "Installed seohyeon-older-pov-doggy",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-pov-doggy.jpg"
+					},
+					{
+						"id": "seohyeon-older-sister-kiss",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "Sister mouths find sister mouths in the steam",
+						"alt": "seohyeon-older-sister-kiss",
+						"prompt": "Installed seohyeon-older-sister-kiss",
+						"refs": [
+							"/ch_golhwa.png",
+							"/ch_hyullé.png",
+							"/bn_golhwa.png",
+							"/bn_hyulle.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"hyulle"
+						],
+						"tempImage": "/temp/seohyeon-older-sister-kiss.jpg"
+					},
+					{
+						"id": "seohyeon-older-ontop-stack",
+						"ratio": 0.5625,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "Once the frame drops to her face over his bare chest only",
+						"alt": "seohyeon-older-ontop-stack",
+						"prompt": "Installed seohyeon-older-ontop-stack",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-ontop-stack.jpg"
+					},
+					{
+						"id": "seohyeon-older-corner-ride",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "They take turns astride him until the spring forgets who started",
+						"alt": "seohyeon-older-corner-ride",
+						"prompt": "Installed seohyeon-older-corner-ride",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-corner-ride.jpg"
+					},
+					{
+						"id": "seohyeon-older-wall-side",
+						"ratio": 1.778,
+						"tone": "#2eb8c4",
+						"nsfw": true,
+						"at": "Another wall shows them in side profile only",
+						"alt": "seohyeon-older-wall-side",
+						"prompt": "Installed seohyeon-older-wall-side",
+						"refs": [
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-wall-side.jpg"
 					}
 				],
 				"blocks": [
@@ -9828,6 +9967,60 @@
 					},
 					{
 						"kind": "p",
+						"html": "They tease him first — centuries of hunger looking at grey temples as if age were a joke they could still tell out loud. Golhwa loudest. Narim cutting. Hyullé almost silent, which is worse.",
+						"ko": "먼저 놀린다 — 회색 관자놀이를 보고 수백 년 허기가 나이를 아직도 큰 소리로 말할 수 있는 농담처럼 여긴다. 골화가 제일 시끄럽다. 나림은 짧게 자른다. 휼레는 거의 말이 없고, 그게 더 나쁘다.",
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e86820",
+						"person": "golhwa",
+						"en": [
+							"Grey already?",
+							"Can that old body keep up with three of us?",
+							"Don’t break, First Kim—"
+						],
+						"lines": [
+							"벌써 세었어?",
+							"그 늙은 몸으로 우리 셋을 감당하겠어?",
+							"부러지지 마, 첫 김씨—"
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3d9e52",
+						"person": "narim",
+						"en": [
+							"The hill remembers a younger walk.",
+							"Tonight we will see what is left."
+						],
+						"lines": [
+							"언덕은 더 젊은 걸음을 기억한다.",
+							"오늘 밤, 뭐가 남았는지 보자."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#2eb8c4",
+						"person": "hyulle",
+						"en": [
+							"…Hm."
+						],
+						"lines": [
+							"…흠."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "He takes it. Most receptive man in the steam — jaw quiet, hands already on wet hips — and does not argue with goddesses who have waited longer than bone-rank.",
+						"ko": "그는 받는다. 김 속에서 제일 잘 받아들이는 남자 — 턱은 고요하고, 손은 이미 젖은 허리에 — 골품보다 오래 기다린 여신들과 말다툼하지 않는다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
 						"html": "She kisses him like she has been waiting decades. Not a polite press — mouths open in the steam, ember flush, her tongue finding his while a sound tears out of her that the cavern has never owned before. He kisses back. Hard. An old man who never learned to play it cool answering volume with volume.",
 						"ko": "몇십 년을 기다린 것처럼 입을 맞춘다. 예의 바른 입술이 아니다 — 김 속에서 입이 열리고, 불씨 같은 홍조, 혀가 그의 혀를 찾는 동안 동굴이 처음 듣는 소리가 목에서 찢어진다. 그도 맞춘다. 세게. 쿨한 척을 끝내 못 배운 늙은이가 소리에 소리로 답한다.",
 						"nsfw": true
@@ -9878,8 +10071,88 @@
 					},
 					{
 						"kind": "p",
+						"html": "The jokes thin out. His arms are still iron under wet skin. Grey at the temples — and the spring learns the difference between old face and old strength. He holds her through a drop of hips that was supposed to mock him and does not ask permission to set the pace.",
+						"ko": "농담이 얇아진다. 젖은 피부 아래 팔은 아직도 쇠다. 관자놀이는 회색 — 그리고 샘은 늙은 얼굴과 늙은 힘의 차이를 배운다. 놀리려던 허리 낙폭을 그가 받아 안은 채, 속도를 정하는 데 허락을 묻지 않는다.",
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e86820",
+						"person": "golhwa",
+						"en": [
+							"Wait—",
+							"Your hands—"
+						],
+						"lines": [
+							"잠깐—",
+							"손—"
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3d9e52",
+						"person": "narim",
+						"en": [
+							"…Still hard."
+						],
+						"lines": [
+							"…아직 단단하구나."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "p",
 						"html": "Hips pressed together in the water. Climax face already — mouth open mid-cry, heart-pupil hunger, wet silk clinging, jeogori fallen open. He holds her and moves with her, grey temples against her throat, meeting every scream with his body, receptive, ruined, grateful.",
 						"ko": "물속에서 엉덩이가 맞붙는다. 이미 절정 얼굴 — 비명 중간에 벌어진 입, 하트 눈동자 같은 굶주림, 젖은 비단이 달라붙고 저고리가 벌어진다. 그는 붙들고 같이 움직인다. 회색 관자놀이가 목에 닿고, 비명마다 몸으로 답하고, 받아들이고, 망가지고, 고마워한다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Lines give way to breath. No more census of his years — only the sound of three goddesses learning they miscounted the man under them. Muscle that should have softened doesn’t. Stamina that should have thinned doesn’t. He moves them when he wants them moved.",
+						"ko": "말이 숨으로 바뀐다. 더 이상 나이를 세지 않는다 — 자기 아래 남자를 잘못 센 여신 셋의 숨소리만. 물러졌어야 할 근육이 안 물러진다. 얇아졌어야 할 스태미나가 안 얇아진다. 그가 옮기고 싶을 때 그들을 옮긴다.",
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e86820",
+						"person": "golhwa",
+						"en": [
+							"Hah—",
+							"Hah—",
+							"Fuck—"
+						],
+						"lines": [
+							"하아—",
+							"하아—",
+							"씨—"
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3d9e52",
+						"person": "narim",
+						"en": [
+							"Ah—",
+							"Ah—"
+						],
+						"lines": [
+							"아—",
+							"아—"
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#2eb8c4",
+						"person": "hyulle",
+						"en": [
+							"…Nn—"
+						],
+						"lines": [
+							"…응—"
+						],
 						"nsfw": true
 					},
 					{
@@ -9918,6 +10191,54 @@
 						"kind": "p",
 						"html": "They finish together. Not polite. Not staged. Her scream breaks on the same breath his body gives out — he comes buckets inside her, spilling until the water around their hips goes warmer, and she comes on him at the same second, shaking so hard the bunched chima slips and her open mouth cannot close. Decades of wanting collapse into one wet, loud, shared ruin.",
 						"ko": "같이 싸. 예의도 연출도 없다. 비명이 갈라지는 숨과 그의 몸이 터지는 숨이 같다 — 안에 한 바가지처럼 싸 넣고, 엉덩이 주위 물이 더워질 때까지 쏟아지고, 같은 순간에 그녀도 그 위에서 싸며, 걷힌 치마가 미끄러질 만큼 떨리고 벌어진 입이 안 다물어진다. 몇십 년의 갈망이 축축하고 크고 공유된 파국 하나로 무너진다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Overcome. Not polite. The tease is gone — burned out of their mouths. Virile strength at old age holds them through the break: he comes with her and keeps them from falling wrong, grey hair wet against coral silk, and Golhwa’s loud cruelty collapses into wrecked pleasure she cannot dress as a joke.",
+						"ko": "압도. 공손하지 않다. 놀림은 사라졌다 — 입에서 타 버렸다. 노년의 정력이 무너지는 순간에도 붙잡는다: 함께 싸며 잘못 쓰러지지 않게 붙들고, 회색 머리가 산호 비단에 젖고, 골화의 시끄러운 잔인함은 농담으로 꾸밀 수 없는 무너진 쾌락이 된다.",
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e86820",
+						"person": "golhwa",
+						"en": [
+							"I—",
+							"I can’t—",
+							"Daddy—!"
+						],
+						"lines": [
+							"나—",
+							"안 돼—",
+							"오빠—!"
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3d9e52",
+						"person": "narim",
+						"en": [
+							"Forgive—",
+							"the eldest was wrong—"
+						],
+						"lines": [
+							"용서해—",
+							"언니가 틀렸어—"
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#2eb8c4",
+						"person": "hyulle",
+						"en": [
+							"…Ah—!"
+						],
+						"lines": [
+							"…아—!"
+						],
 						"nsfw": true
 					},
 					{
@@ -10098,6 +10419,12 @@
 						"nsfw": true
 					},
 					{
+						"kind": "p",
+						"html": "Sister mouths find sister mouths in the steam — open, wet, tongues brief and hungry — while the ride under them does not stop.",
+						"ko": "김 속에서 언니의 입이 언니의 입을 찾는다 — 벌어진 채, 젖은 채, 짧고 배고픈 혀 — 그 아래의 타기는 멈추지 않는다.",
+						"nsfw": true
+					},
+					{
 						"kind": "dialogue",
 						"chip": "#3E8EF0",
 						"person": "seohyeon",
@@ -10121,14 +10448,32 @@
 					},
 					{
 						"kind": "p",
+						"html": "Once the frame drops to her face over his bare chest only — stacked close, no room for the other sisters in the crop — the cavern feels smaller than their mouths.",
+						"ko": "프레임이 맨가슴 위 그녀의 얼굴만으로 줄어들면 — 쌓인 근접, 다른 언니가 들어갈 자리 없음 — 동굴이 입보다 작아진다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
 						"html": "The wet cave wall keeps a second show. Ember light throws their bodies as shadow puppets on stone — one silhouette on hands and knees, another mounting from behind; a straddling pile; tangled four-body outlines so clear a stranger would know the pose without seeing skin. The wall is filthier than the water.",
 						"ko": "젖은 동굴 벽이 두 번째 공연을 한다. 불씨 빛이 몸을 돌 위 그림자놀이로 던진다 — 손과 무릎의 실루엣, 뒤에서 올라타는 실루엣; 올라탄 더미; 피부 없이도 자세를 알 네 몸 윤곽. 벽이 물보다 더럽다.",
 						"nsfw": true
 					},
 					{
 						"kind": "p",
+						"html": "Another wall shows them in side profile only — arched back, close behind, hip curve as a single black stamp on wet stone.",
+						"ko": "다른 벽은 옆모습만 보여 준다 — 활처럼 휜 등, 바로 뒤, 젖은 돌 위 검은 도장 같은 엉덩이 곡선.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
 						"html": "They take turns astride him until the spring forgets who started. Full hips, legs spread, fallen silk as the only cover. Mouths on mouths. Hands on wet muscle. He stays naked under them — grey temples, bare chest, no headband — and the night keeps riding.",
 						"ko": "누가 시작했는지 샘이 잊을 때까지 번갈아 탄다. 풍만한 허리, 벌린 다리, 덮개로는 떨어진 비단뿐. 입에 입. 젖은 근육에 손. 그는 그 아래에서 계속 벗은 채다 — 회색 관자놀이, 맨가슴, 머리띠 없음 — 밤은 계속 탄다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "She looks back over her shoulder while he stays behind her in the black bowl — arched back, hiked coral silk, climax flush catching ember light. The spring sees her face, not a polite court portrait.",
+						"ko": "검은 사발에서 그가 뒤에 있는 동안 그녀는 어깨 너머로 돌아본다 — 활처럼 휜 등, 걷힌 산호빛 비단, 불씨 빛에 잡히는 절정 홍조. 샘은 공손한 초상이 아니라 그 얼굴을 본다.",
 						"nsfw": true
 					},
 					{
@@ -10545,7 +10890,8 @@
 						"tempImage": "/temp/chunchu-surprised-bare.jpg",
 						"at": "you brought us a letter",
 						"alt": "Bare bathing Chunchu surprised — Golhwa feral wink, fire steam, coral-flame binyeo",
-						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Painterly pale scholar-prince startled mid-turn. FACE ONLY from attached Chunchu portrait — do NOT wear the portrait's hanbok or court silk. He is unclothed in the spring: bare bathing body, wet skin, nothing on but water. Luminous goddess close: feral wink, tongue out, heart-shaped pupils. Face and garments match attached Golhwa portrait; coral-flame binyeo. Ember motes. Magical aura, anime-painterly cavern spirit, not photoreal. Waist-up. No genitals. No text. No watermark.",						"refs": [
+						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Painterly pale scholar-prince startled mid-turn. FACE ONLY from attached Chunchu portrait — do NOT wear the portrait's hanbok or court silk. He is unclothed in the spring: bare bathing body, wet skin, nothing on but water. Luminous goddess close: feral wink, tongue out, heart-shaped pupils. Face and garments match attached Golhwa portrait; coral-flame binyeo. Ember motes. Magical aura, anime-painterly cavern spirit, not photoreal. Waist-up. No genitals. No text. No watermark.",
+						"refs": [
 							"/ch_chunchu.png",
 							"/ch_golhwa.png",
 							"/bn_golhwa.png",
