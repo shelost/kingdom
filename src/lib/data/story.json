@@ -9103,6 +9103,206 @@
 							"seohyeon"
 						],
 						"tempImage": "/temp/seohyeon-older-wall-side.jpg"
+					},
+					{
+						"id": "seohyeon-older-golhwa-ride-side",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "Sideways the ride reads clearer",
+						"alt": "seohyeon-older-golhwa-ride-side",
+						"prompt": "seohyeon-older-golhwa-ride-side",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-golhwa-ride-side.jpg"
+					},
+					{
+						"id": "seohyeon-older-golhwa-ride-worm",
+						"ratio": 0.5625,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "From below she is a sky of ember heat",
+						"alt": "seohyeon-older-golhwa-ride-worm",
+						"prompt": "seohyeon-older-golhwa-ride-worm",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-golhwa-ride-worm.jpg"
+					},
+					{
+						"id": "seohyeon-older-golhwa-ride-over",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "Over his shoulder her face fills the steam",
+						"alt": "seohyeon-older-golhwa-ride-over",
+						"prompt": "seohyeon-older-golhwa-ride-over",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-golhwa-ride-over.jpg"
+					},
+					{
+						"id": "seohyeon-older-golhwa-ride-hips",
+						"ratio": 1.778,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "Face and hips in one crop",
+						"alt": "seohyeon-older-golhwa-ride-hips",
+						"prompt": "seohyeon-older-golhwa-ride-hips",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-golhwa-ride-hips.jpg"
+					},
+					{
+						"id": "seohyeon-older-golhwa-ride-front",
+						"ratio": 0.5625,
+						"tone": "#e86820",
+						"nsfw": true,
+						"at": "Front view of Golhwa still claiming him between turns",
+						"alt": "seohyeon-older-golhwa-ride-front",
+						"prompt": "seohyeon-older-golhwa-ride-front",
+						"refs": [
+							"/ch_golhwa.png",
+							"/bn_golhwa.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"golhwa",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-golhwa-ride-front.jpg"
+					},
+					{
+						"id": "seohyeon-older-narim-ride",
+						"ratio": 1.778,
+						"tone": "#3d9e52",
+						"nsfw": true,
+						"at": "Narim takes her turn astride him",
+						"alt": "seohyeon-older-narim-ride",
+						"prompt": "seohyeon-older-narim-ride",
+						"refs": [
+							"/ch_narim.png",
+							"/bn_narim.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"narim",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-narim-ride.jpg"
+					},
+					{
+						"id": "seohyeon-older-narim-ride-side",
+						"ratio": 1.778,
+						"tone": "#3d9e52",
+						"nsfw": true,
+						"at": "Corner of the cavern: Narim still astride",
+						"alt": "seohyeon-older-narim-ride-side",
+						"prompt": "seohyeon-older-narim-ride-side",
+						"refs": [
+							"/ch_narim.png",
+							"/bn_narim.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"narim",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-narim-ride-side.jpg"
+					},
+					{
+						"id": "seohyeon-older-turn-narim",
+						"ratio": 1.778,
+						"tone": "#3d9e52",
+						"nsfw": true,
+						"at": "Narim again after Golhwa",
+						"alt": "seohyeon-older-turn-narim",
+						"prompt": "seohyeon-older-turn-narim",
+						"refs": [
+							"/ch_narim.png",
+							"/bn_narim.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"narim",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-turn-narim.jpg"
+					},
+					{
+						"id": "seohyeon-older-hyulle-ride",
+						"ratio": 1.778,
+						"tone": "#2eb8c4",
+						"nsfw": true,
+						"at": "Hyullé’s turn: knees that started tight finally open enough to seat herself astride",
+						"alt": "seohyeon-older-hyulle-ride",
+						"prompt": "seohyeon-older-hyulle-ride",
+						"refs": [
+							"/ch_hyullé.png",
+							"/bn_hyulle.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"hyulle",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-hyulle-ride.jpg"
+					},
+					{
+						"id": "seohyeon-older-hyulle-ride-astride",
+						"ratio": 1.778,
+						"tone": "#2eb8c4",
+						"nsfw": true,
+						"at": "teal silk hiked, gaze down, wrecked silence breaking only in breath",
+						"alt": "seohyeon-older-hyulle-ride-astride",
+						"prompt": "seohyeon-older-hyulle-ride-astride",
+						"refs": [
+							"/ch_hyullé.png",
+							"/bn_hyulle.png",
+							"/ch_kim_seohyun.png",
+							"/pl_cave.png"
+						],
+						"people": [
+							"hyulle",
+							"seohyeon"
+						],
+						"tempImage": "/temp/seohyeon-older-hyulle-ride-astride.jpg"
 					}
 				],
 				"blocks": [
@@ -10048,6 +10248,12 @@
 						"nsfw": true
 					},
 					{
+						"kind": "p",
+						"html": "Sideways the ride reads clearer — coral hiked silk, bare older muscle under her, grey temples tipped back while she takes the depth she asked for.",
+						"ko": "옆에서 보면 타기가 더 분명하다 — 걷힌 산호 비단, 아래의 벗은 늙은 근육, 그녀가 청한 깊이로 앉는 동안 뒤로 젖혀진 회색 관자놀이.",
+						"nsfw": true
+					},
+					{
 						"kind": "dialogue",
 						"chip": "#e0783a",
 						"person": "golhwa",
@@ -10071,8 +10277,26 @@
 					},
 					{
 						"kind": "p",
+						"html": "From below she is a sky of ember heat — worm’s-eye on hiked coral hips and a climax face looking down at the man who was not supposed to keep up.",
+						"ko": "아래에서 보면 그녀는 불씨 열기의 하늘이다 — 걷힌 산호 허리와, 따라오지 못할 줄 알았던 남자를 내려다보는 절정 얼굴의 웜즈아이.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
 						"html": "The jokes thin out. His arms are still iron under wet skin. Grey at the temples — and the spring learns the difference between old face and old strength. He holds her through a drop of hips that was supposed to mock him and does not ask permission to set the pace.",
 						"ko": "농담이 얇아진다. 젖은 피부 아래 팔은 아직도 쇠다. 관자놀이는 회색 — 그리고 샘은 늙은 얼굴과 늙은 힘의 차이를 배운다. 놀리려던 허리 낙폭을 그가 받아 안은 채, 속도를 정하는 데 허락을 묻지 않는다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Over his shoulder her face fills the steam — still astride, still loud, watching him watch her while iron arms hold the pace.",
+						"ko": "그의 어깨 너머로 그녀의 얼굴이 김을 채운다 — 여전히 타고, 여전히 시끄럽고, 쇠 같은 팔이 속도를 잡는 동안 그를 바라본다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Face and hips in one crop: her open mouth, hiked coral, his wet bare chest — the old body answering under her.",
+						"ko": "얼굴과 허리가 한 프레임: 벌어진 입, 걷힌 산호, 그의 젖은 맨가슴 — 아래에서 대답하는 늙은 몸.",
 						"nsfw": true
 					},
 					{
@@ -10111,6 +10335,18 @@
 						"kind": "p",
 						"html": "Lines give way to breath. No more census of his years — only the sound of three goddesses learning they miscounted the man under them. Muscle that should have softened doesn’t. Stamina that should have thinned doesn’t. He moves them when he wants them moved.",
 						"ko": "말이 숨으로 바뀐다. 더 이상 나이를 세지 않는다 — 자기 아래 남자를 잘못 센 여신 셋의 숨소리만. 물러졌어야 할 근육이 안 물러진다. 얇아졌어야 할 스태미나가 안 얇아진다. 그가 옮기고 싶을 때 그들을 옮긴다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Narim takes her turn astride him — leaf silk hiked, eldest composure cracked open mid-gasp, floating leaves shaking with her breath. The hill’s scolding voice does not finish a sentence.",
+						"ko": "나림이 번갈아 탄다 — 걷힌 잎빛 비단, 헐떡임 속에 갈라진 언니의 침착, 숨과 함께 떠는 뜬 잎. 언덕의 꾸짖는 목소리는 문장을 끝내지 못한다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Corner of the cavern: Narim still astride, elder face broken into pleasure against his grey temple — she did not expect the stamina either.",
+						"ko": "동굴 구석: 나림이 여전히 타고, 회색 관자놀이에 맞댄 언니 얼굴이 쾌락으로 부서진다 — 그도 스태미나를 예상하지 못했다.",
 						"nsfw": true
 					},
 					{
@@ -10468,6 +10704,24 @@
 						"kind": "p",
 						"html": "They take turns astride him until the spring forgets who started. Full hips, legs spread, fallen silk as the only cover. Mouths on mouths. Hands on wet muscle. He stays naked under them — grey temples, bare chest, no headband — and the night keeps riding.",
 						"ko": "누가 시작했는지 샘이 잊을 때까지 번갈아 탄다. 풍만한 허리, 벌린 다리, 덮개로는 떨어진 비단뿐. 입에 입. 젖은 근육에 손. 그는 그 아래에서 계속 벗은 채다 — 회색 관자놀이, 맨가슴, 머리띠 없음 — 밤은 계속 탄다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Hyullé’s turn: knees that started tight finally open enough to seat herself astride — teal silk hiked, gaze down, wrecked silence breaking only in breath against his wet chest.",
+						"ko": "휼레의 차례: 처음에 모였던 무릎이 겨우 벌어져 올라탄다 — 걷힌 청록 비단, 내린 시선, 젖은 가슴에 숨으로만 깨지는 무너진 침묵.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Front view of Golhwa still claiming him between turns — coral astride, climax flush, the First Kim’s bare older frame under her like the joke never landed.",
+						"ko": "번갈아 타는 사이에도 골화가 앞에서 그를 차지한다 — 산호로 올라탄 채, 절정 홍조, 농담이 먹히지 않은 듯 아래의 첫 김씨 벗은 늙은 몸.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "Narim again after Golhwa — turn-taking without a census, leaf silk astride wet muscle, eldest gasp where the tease used to be.",
+						"ko": "골화 다음 다시 나림 — 인구조사 없는 교대, 젖은 근육 위 잎빛 비단, 놀림 있던 자리에 언니의 헐떡임.",
 						"nsfw": true
 					},
 					{
