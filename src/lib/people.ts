@@ -638,7 +638,7 @@ export const PEOPLE: Person[] = [
 		binyeo: 'Purple-tiger binyeo — amethyst shaft, gold snarl clutching a violet orb; foreign work no Gaya smith could name, kept like her name across the water.',
 		binyeoImage: '/bn_heo.png',
 		events: [
-			{ year: 48, label: 'Arrives by sea at sixteen; buries her silk trousers as an offering.' },
+			{ year: 48, label: 'Arrives by sea at twenty-one; buries her silk trousers as an offering.' },
 			{ label: 'Mother of ten sons; two of them take her surname.' }
 		],
 		career: [
@@ -2204,8 +2204,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Co-architect at the root; power shared before it becomes a title.',
 		quote: "The bow wins the night. The road wins the rest.",
 		nature:
-			'Yeon by birth (Tabal’s daughter) and Go by marriage to Jumong — both houses claim her. Love first, alliance second — hunger that founds kingdoms. With Jumong, desire is spoken in glances and grain porches, never as thesis.',
-		arc: 'Daughter of Yeon Tabal; she falls for Jumong before the alliance is spoken, and her father’s suspicion breaks on an archery contest. She gives Jumong the tribes that make Goryeo. When his first son arrives from Buyeo and takes the succession, she does not fight for it — she takes Onjo and Biryu south and builds Baekje instead.',
+			'Yeon by birth (Tabal’s daughter) and Go by marriage to Jumong — both houses claim her. Love first, alliance second — hunger that founds kingdoms. Book-pervert under a tsundere hide: she ogles him, imagines the nights in language she will not say, and pretends hostility because the heat is too loud. She snubs him at the well, hoards scraps from every meeting, and only admits the count was him after he turns to leave. On the porch she is Tabal’s strong daughter. With Jumong, desire is insult, inventory, and a chase across packed earth.',
+		arc: 'Daughter of Yeon Tabal; she falls for Jumong before the alliance is spoken, hides it as scorn, and is caught by a well-kiss and a stash of his things. Her father’s suspicion breaks on an archery contest he sets while still sour. She gives Jumong the tribes that make Goryeo. When his first son arrives from Buyeo and takes the succession, she does not fight for it — she takes Onjo and Biryu south and builds Baekje instead.',
 		binyeo: 'Patina-gold binyeo — openwork phoenix in a dark ring; Tabal wealth worn warm, not bright.',
 		binyeoImage: '/bn_sosuno.png',
 		events: [
@@ -2982,6 +2982,7 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'takutsu',
 		gender: 'm',
+		avatar: '/ch_takutsu.png',
 		name: 'Echi no Takutsu',
 		korean: '에치노 다쿠쓰',
 		kingdom: 'yamato',
@@ -3365,7 +3366,7 @@ export const PEOPLE: Person[] = [
 		ideology: 'Founding unifier',
 		ideologyNote: 'Mythic state-builder — loyalty forged by exile, bow, and a kingdom that did not exist yet.',
 		quote: "From the first look — only you.",
-		nature: 'Exile who becomes a maker; with Sosuno the nights run longer than the war talk. Charm of the bow, appetite of a man who has been hungry in more than one sense. Go-clan founder — the royal line Yeon Tabal’s hall will spend centuries arguing with.',
+		nature: 'Exile who becomes a maker; with Sosuno the nights run longer than the war talk. Fun-loving and laid-back — he grins when she is mean, laughs when she dumps the bucket, and only turns serious for the bow. Charm of the bow, appetite of a man who has been hungry in more than one sense. Go-clan founder — the royal line Yeon Tabal’s hall will spend centuries arguing with.',
 		arc: 'Born of a sunbeam and a river god’s daughter, hatched from an egg, hunted by his brothers — demigod enough that the chronicle keeps him among the Gods. He fled south from Daeso’s riders; at the water Haemosu blocked the fetch and whispered a claim into him, and the river’s creatures bridged the current. He prayed at the Jumong Cavern (국동대혈) for a kingdom of his own. At Jolbon he founded Goryeo — every kingdom in this story claims a piece of his shadow. History begins where the egg cracks; mythology only explains the crack.',
 		blade: 'Ring-pommel crow bow-knife — three-legged crow scratched into the pommel by a river wife’s hand.',
 		events: [
@@ -6625,7 +6626,16 @@ const POSTERS_BY_ID: Record<string, string> = {
 	yuhwa: '/temp/poster_yuhwa.jpg',
 	ungnyeo: '/temp/poster_ungnyeo.jpg',
 	bidam: '/temp/poster_bidam.jpg',
-	munmu: '/temp/poster_munmu.jpg'
+	munmu: '/temp/poster_munmu.jpg',
+	xuerengui: '/temp/poster_xuerengui.jpg',
+	takutsu: '/temp/poster_takutsu.jpg',
+	euija: '/temp/poster_euija.jpg',
+	yangmanchun: '/temp/poster_yangmanchun.jpg',
+	namseng: '/temp/poster_namseng.jpg',
+	namgun: '/temp/poster_namgun.jpg',
+	bojang: '/temp/poster_bojang.jpg',
+	jumong: '/temp/poster_jumong.jpg',
+	daeso: '/temp/poster_daeso.jpg'
 };
 
 const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string }> = {

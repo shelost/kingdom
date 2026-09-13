@@ -173,7 +173,7 @@
 						aria-label={who}
 					>
 						{#if art}
-							<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '32px' })} />
+							<img {...storyImg(art, { kind: 'thumb', alt: '', sizes: '44px' })} />
 						{:else}
 							<span class="initial">{hangulInitial(p)}</span>
 						{/if}
@@ -368,8 +368,8 @@
 	.dialogue {
 		position: relative;
 		display: grid;
-		grid-template-columns: 1.75rem 1fr;
-		gap: 0.7rem;
+		grid-template-columns: 2.15rem 1fr;
+		gap: 0.75rem;
 		margin: 1.25rem 0;
 		transition:
 			background 420ms var(--ease),
@@ -461,8 +461,8 @@
 
 	/* profile picture (or initial) for an assigned speaker */
 	.face {
-		width: 1.75rem;
-		height: 1.75rem;
+		width: 2.15rem;
+		height: 2.15rem;
 		margin-top: 0.15rem;
 		padding: 0;
 		display: grid;
@@ -470,16 +470,16 @@
 		overflow: hidden;
 		border: 1px solid color-mix(in srgb, var(--chip) 55%, transparent);
 		border-radius: 50%;
-		background: transparent;
+		background: var(--chip);
 		cursor: pointer;
 		transition:
 			transform 0.25s var(--ease),
 			box-shadow 0.25s var(--ease);
 	}
 
-	/* Initials still need a fill; painted portraits stay transparent. */
+	/* Initials sit on the same accent disk. */
 	.face:not(:has(img)) {
-		background: color-mix(in srgb, var(--chip) 72%, #000);
+		background: var(--chip);
 	}
 
 	.face:hover {
@@ -521,7 +521,7 @@
 	   reader is on this line, and stays lit while it is the one sounding. */
 	.dialogue :global(.speak) {
 		position: absolute;
-		top: 2.15rem;
+		top: 2.55rem;
 		left: 0.12rem;
 		opacity: 0;
 		transition: opacity 0.25s var(--ease);
@@ -1049,7 +1049,7 @@
 	.prose :global(.face.person) {
 		text-decoration: none;
 		box-shadow: none;
-		background: color-mix(in srgb, var(--chip) 72%, #000);
+		background: var(--chip);
 	}
 
 	.prose :global(.person:focus-visible) {
@@ -1074,20 +1074,20 @@
 	/* ————— Phones: targets a thumb can actually hit ————— */
 	@media (max-width: 820px) {
 		.dialogue {
-			grid-template-columns: 2.25rem 1fr;
+			grid-template-columns: 2.6rem 1fr;
 			gap: 0.8rem;
 			margin: 1.5rem 0;
 		}
 
 		.face {
-			width: 2.25rem;
-			height: 2.25rem;
+			width: 2.6rem;
+			height: 2.6rem;
 			margin-top: 0.1rem;
 		}
 
 		/* clears the taller face, and the target grows to thumb size */
 		.dialogue :global(.speak) {
-			top: 2.7rem;
+			top: 3.1rem;
 			left: 0.08rem;
 		}
 

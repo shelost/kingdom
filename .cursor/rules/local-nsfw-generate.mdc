@@ -1,0 +1,16 @@
+---
+description: Use local Draw Things for explicit chronicle stills instead of Cursor GenerateImage
+alwaysApply: true
+---
+
+# Local NSFW stills
+
+Cursor `GenerateImage` is filtered. For explicit / sex / skin-forward chronicle stills, do **not** use it.
+
+1. Call `node scripts/generate-nsfw.mjs --id {slot-id} --prompt "..."` (Draw Things API on `127.0.0.1:7860`).
+2. Slot must already exist on the entry in `src/lib/data/story.json`.
+3. `node scripts/install-temp-art.mjs <manifest.json>` as usual.
+
+If the API is down, tell the user to open Draw Things, load **Pony Diffusion V6 XL**, enable **API Server**, then retry. Do not fall back to Cursor GenerateImage for those beats.
+
+Face refs stay `static/ch_*.png` + `bn_*.png` in the prompt text. Keep the chronicle still doctrine (locked hall, two people, no glass lanterns, no text).

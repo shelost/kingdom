@@ -265,6 +265,8 @@
 				<span class="dot" aria-hidden="true">·</span>
 				<a href={resolve('/wiki')}>Encyclopedia</a>
 				<span class="dot" aria-hidden="true">·</span>
+				<a href={resolve('/grade')}>Grade</a>
+				<span class="dot" aria-hidden="true">·</span>
 				<span
 					>{query.trim() ? `${visible.length} / ${cells.length}` : cells.length} stills</span
 				>

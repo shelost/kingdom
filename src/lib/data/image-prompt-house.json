@@ -1,0 +1,18 @@
+{
+	"updatedAt": "2026-09-12T22:15:00.000Z",
+	"suffix": "Painterly anime-adjacent cinema, not photoreal, not 3D. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, aerial, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC layout: name ONE geometric device that divides the frame; figures tiny or lower-third; monumental emptiness. COLOR SYMBOLISM: hex is lighting / a background plane / one accent — NEVER recolor the attached portrait’s garments gold or a costume swap. BATTLE ARMOR: metallic GRAY steel lamellar from the steel-armor ref; cloth peeks in the character hex (red / blue / yellow by country) — never gold-painted plate, never a standing armor catalog. Two garment-true figures against crushed black. Real Korean architecture: grey giwa, timber, packed earth — not a gold-plated village. No army. No readable text. No watermark. Copy: high contrast chiaroscuro, not even wash; iconic one-device layout, not a standing lineup; face and garments match attached portrait; cinematography: dutch, worm’s-eye, bokeh, mise-en-scène. Never: gold-wash the location; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; no pasted portrait pose — new body every still; muddy same-hue wash on every figure; earth places stay real buildings, not color-plane furniture; never paint lamellar yellow/gold as a metal suit.",
+	"copy": [
+		"high contrast chiaroscuro, not even wash",
+		"iconic one-device layout, not a standing lineup",
+		"face and garments match attached portrait",
+		"cinematography: dutch, worm’s-eye, bokeh, mise-en-scène"
+	],
+	"ban": [
+		"gold-wash the location or recolor portrait clothes",
+		"copy-pasted reference as a fashion plate",
+		"flat even-daylight postcard wide",
+		"no pasted portrait pose — new body every still",
+		"muddy same-hue wash on every figure",
+		"earth places stay real buildings, not color-plane furniture"
+	]
+}

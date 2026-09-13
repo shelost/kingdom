@@ -327,6 +327,8 @@
 			<a href={resolve('/wiki')}>Encyclopedia</a>
 			<span aria-hidden="true">·</span>
 			<a href={resolve('/images')}>Images</a>
+			<span aria-hidden="true">·</span>
+			<a href={resolve('/grade')}>Grade</a>
 		</p>
 	</footer>
 

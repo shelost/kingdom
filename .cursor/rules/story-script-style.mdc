@@ -1,7 +1,7 @@
 ---
-description: Voice and period rules for chronicle narration and dialogue in story.json
+description: Voice and period rules for chronicle narration and dialogue in story.json — movie/novel talk, not captions
 globs: src/lib/data/story.json,src/lib/people.ts
-alwaysApply: false
+alwaysApply: true
 ---
 
 # Chronicle script voice
@@ -11,6 +11,26 @@ Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/peopl
 **Blocks** (see `src/lib/story.ts`): `p` (`html` EN + `ko`), `dialogue` (`lines[]` Korean + `en[]` English, index-for-index; `person` id), `quote` (verbatim record), `day`, `flashback`, `diagram`/`table`. Cinema plays array order; only `kind: "flashback"` reads as memory.
 
 Every new `p` / `dialogue` is bilingual. Korean matches the speaker (존댓말 vs 반말), not a literal calque. If you rewrite English, rewrite Korean in the same pass. If the old English was an image `at` fragment, update that slot or the stack will detach.
+
+## Movie / novel talk (default)
+
+Dialogue is what people **say while doing something**, not a caption of the plot. Write it like a scene in a novel or a film — overlapping, interrupted, slightly stupid, with jokes that miss. The narrator can say what happened; mouths should not recap it.
+
+**Do**
+- Short lines. One thought per line. Let the next speaker cut in.
+- Subtext: she says the bucket; she means stay. He says he'll go; he's watching her face.
+- Character rhythm: Jumong easy, amused, a little slow on purpose. Sosuno sharp then too much then covering. Tabal short and sour. Yushin numbers. Maids unfinished.
+- After a kiss / run / fight: breath, a fragment, then the real sentence. Not a press statement.
+- Keep one locked phrase per still (`at`) somewhere in the block so cinema does not detach — bury it in talk, don't let the whole speech be the phrase.
+
+**Don't**
+- Legal-notice dialogue: "I was wrong. I'll leave the village. Tonight."
+- Theme read-aloud: "save you the heartache of wanting a man you will not name."
+- Encyclopedia in mouths (already banned). Also banned: listing the plot beats in order as speech.
+- Matching thesis to thesis ("Then I will wait for the second bucket." / "This is fun, lady.").
+- Three poetic metaphors in one speech. One object is enough (bucket, pine, ledger).
+
+If a line could be a still's `alt` text, it is too dry. Put the camera sentence in `p`. Put the messy mouth in `dialogue`.
 
 ## Period
 
@@ -55,6 +75,7 @@ Classes are yearly: First Class (제일기, 560), Class 51 (오십일기), Class
 - New `p`/`dialogue` blocks have EN + KO; Korean register matches the speaker.
 - No decoder paragraph after a climax you just wrote; no new "were you X, or Y?" exit interview.
 - The speaker sounds like themselves, not the chronicler (unless they are Euija or Kangrim).
+- New talk sounds like a scene, not a caption. If the line could be an image `alt`, put it in `p` instead.
 - `day` / `flashback` kinds preserved; the dead do not speak in later years as present action.
 - Image `at` still matches if you rewrote the beat.
 
@@ -79,3 +100,14 @@ Classes are yearly: First Class (제일기, 560), Class 51 (오십일기), Class
 
 - BAD: "I want to be the king for all. Not a king for Sacred Bone. Not a king for True Bone. For all."
 - GOOD: "When I'm king, everyone has to listen. Even the bone people." / "Which bone people?" / "All of them. That's the point."
+
+**Romance / tsundere (don't caption the plot)**
+
+- BAD: "I was wrong. I'll leave the village. Tonight."
+- GOOD: "That was— yeah. I'll go. Tonight, if that's easier."
+- BAD: "And save you the heartache of wanting a man you will not name."
+- GOOD: "I walk. You keep your numbers. Nobody has to say anything stupid."
+- BAD: "You hide these like a thief. From me. Taken from every time we met."
+- GOOD: "That's my headband." / "It was dirty." / "There's four of them."
+- BAD: "Stay. I wanted you. From the first count. Don't you dare save me."
+- GOOD: "Wait— you idiot— stay. I wanted you. The first morning. Don't you dare be noble about it."

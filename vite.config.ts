@@ -5,6 +5,11 @@ import { compactStoryJson } from './vite-plugin-story-json.ts';
 import { staticAssetHmr } from './vite-plugin-static-hmr.ts';
 
 export default defineConfig({
+	server: {
+		watch: {
+			ignored: ['**/src/lib/data/image-grades.json', '**/src/lib/data/image-prompt-house.json']
+		}
+	},
 	define: {
 		'import.meta.env.VERCEL': JSON.stringify(process.env.VERCEL ?? '')
 	},

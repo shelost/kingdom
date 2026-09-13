@@ -73,7 +73,10 @@ Read accents from `CHARACTER_COLORS` in `src/lib/people.ts`. The plane **is** th
 - Bidam `#141C2E` — navy void. Sutra/lotus gold is his Buddhist accent, not generic gilding.
 - Yushin `#2A5FB8` — Confucian marshal blue; rites, rank, blank tablets — not beads.
 - Chunchu `#D8258C` · Munmu `#C41E3A` · Hwanin `#F4F1E8`
+- Jumong `#e8563f` · Sosuno `#e8a04a` · Pumsuk `#7EB8F0` · Maehwa `#8AAFA0`
 - Heaven–Earth King `#C30000` + `#3E79E4` · Daebyeol `#3B6FBF` · Sobyeol `#C94040` · Hallakgungi `#8FBF8A`
+
+**The person is the hue — as light or a plane, not a costume swap.** Jumong’s red silk already matches his portrait; Sosuno’s dusty-rose hanbok stays dusty-rose (`#e8a04a` is a rim or ground stamp, not gold robes). Geumwa’s court silk stays red-burgundy from `ch_geumwa.png` — do not gold-plate the Buyeo yard. Two people = two garment-true figures against crushed black. Encode the hex as key/rim/plane, never as “paint the whole still that color.”
 
 **Earth / mortal / Korea locations** (Amnok, Ansi, Sabi, Seorabeol, battlefields, palaces, rivers, mountains): skies are **natural** — clouds, sun, moon, haze, weather as the scene needs. Not a flat graphic void unless the beat is deliberately indoor or night-black.
 
@@ -89,6 +92,19 @@ Face/body likeness: `static/ch_*.png` only. Do not invent faces. Do not attach p
 
 **Binyeo is required when hair/head is visible.** Attach the matching `static/bn_*.png` (binyeo-only boards — not clothing). Prompt must say the hair ornament matches the attached binyeo ref. Do not invent fantasy tiaras or wrong pins. Cavern triad: Narim `/bn_narim.png` (jade branch), Golhwa `/bn_golhwa.png` (coral-flame), Hyullé `/bn_hyulle.png` (teal wave).
 
+## Kingdom battle armor (generals)
+
+Battle stills: **FACE from `ch_*.png`**. Lamellar language from `static/ar_lamellar_steel.png` plus kingdom helm refs (`static/ar_*.jpg`) — not the portrait’s simplified scale shirt, not Japanese *kabuto*, not generic fantasy plate, not a gold-painted metal suit. Ignore diagram labels and watermarks on those refs.
+
+**Plates are metallic gray steel.** Cloth peeks at collar, sleeves, skirt, sash, plume-cord — red, blue, or yellow by country, **most often the character hex** as the only color highlight. The person is that cloth-light, not a recolored armor.
+
+- **Silla** (Yushin, Alchun, Sadaham on campaign): steel lamellar; tall pointed *jonghyeongju* helm; cloth `#2A5FB8` (Yushin) or ice-blue `#6fa8ff` (Sadaham).
+- **Baekje** (Gyebek): steel lamellar; cloth `#d9b13a` yellow peeking, red sash/skirt accent; not a yellow metal cuirass.
+- **Gaya** (Muryuk): steel lamellar; tall conical helm (고깔); purple `#8B5CF6` cloth peek / rim only — not a purple cape dump.
+- **Goguryeo** (Gesomun, Yang Manchun): steel lamellar; **red wing** shoulder-flaps `#C30000` / `#d0362f` as the cloth accent, not gold plate.
+
+One poster-scale general or tiny figures. No army catalog. Vary dutch / worm’s-eye / aerial / OTS. Faces grimace, shout, snarl — not a standing armor catalog. High contrast, crushed black, one hard key. Not even daylight on a gold field.
+
 **Cavern elemental triad** (composition, not a lecture): Golhwa = fire (heat shimmer, ember `#e86820`, steam off skin). Hyullé = water (drip, spray, soaked `#2eb8c4`). Narim = leaves / earth-wood (moss, floating leaves, vine-shadow `#3d9e52`). One accent each; monumental emptiness still.
 
 Garments: striking hanbok (or period court/military dress in that language). Cloth reads **silky and premium** — sheen, weight, clean drape — not matte rags, not photoreal costume dumps. Few hues, high contrast, **one** accent. Fashion is symbolism, same as the color planes.
@@ -102,15 +118,30 @@ Not busy embroidery catalogs. Not generic fantasy robes.
 
 House voice for every GenerateImage `description` and every new `prompt` field. Distilled from the iconic-poster batch (GenerateImage calls that produced `wuzetian_screen_power`, `yushin_sword_vertical`, `chunchu_strategist_shadow` — plus siblings Gyebek yellow-plane, Gesomun low-angle, Euija light-seam). Those files are **prompt-style only — never attach them as GenerateImage refs**.
 
-Winning formula (paraphrase into each call; do not paste old filenames as refs):
+Winning formula (paraphrase into each call; do not paste old filenames as refs). Poster batch plus the **Jumong remake batch** that landed (high contrast, named device, dramatic pose, person-as-hex):
 
-`Minimal iconic [ratio] poster. [Name], [one role]. [ONE geometric device that divides the frame]. Face matches the attached portrait. [Character hex] as the plane or the single accent. Striking silky [hanbok / court-military], few hues. Earth location: REAL Korean [gate / granary / river / hall] a camera could stand in — stone, timber, giwa, packed earth — not a monolith. Natural sky. Otherworld beats: symbolic flat color. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.`
+`Minimal iconic [ratio] still. [CINEMATOGRAPHY — name the shot: dutch angle / worm’s-eye / bird’s-eye / over-shoulder / ECU / two-shot]. [LENS: shallow DOF, bokeh, rack-focus, long-shadow key]. Mise-en-scène: [one locked Korean place, few props]. ONE device: [named geometry that divides the frame]. [Name], [verb pose — mid-stride, kneel, full-draw, weigh, tumble], not a standing portrait clone. FACE ONLY from the attached portrait. [Character hex] as the plane or the single accent — the person IS that color. Striking silky [hanbok / court-military], few hues, graphic color-blocking. Earth: REAL Korean [gate / granary / river / hall] — stone, timber, giwa, packed earth — crushed blacks, one hard key, long shadows, chiaroscuro. Otherworld: symbolic flat color. No army. No palace clutter. No even daylight postcard. No text. No watermark. Painterly anime-adjacent, monumental.`
 
 Reusable DNA:
 
 - Open with **Minimal iconic** `{ratio}` poster/still. NOT photoreal. NOT busy.
+- **Name the cinematography.** Every prompt picks a shot (dutch, worm’s-eye, bird’s-eye, OTS, ECU, two-shot) and a lens/light term (bokeh, shallow DOF, rack focus, chiaroscuro, contre-jour, rim light). Mise-en-scène is the locked place — not a lecture, one set.
+- **Foreground / midground / bokeh.** Sharp foreground (a shoulder, bucket, rope, sleeve), the beat in the midground, background *giwa* / timber melting into creamy bokeh. Rack-focus. This is the Jumong–Sosuno well-yard language — keep it.
+- **One of each named person.** Never clone Sosuno, Jumong, or anyone twice in one still.
+- **Wells are architecture.** Bodies stand or kneel on packed earth at the **rim**. Nobody stands inside the shaft.
+- **Jumong’s face is fun.** Laid-back, grins, laughs, winks, easy eyes when Sosuno is mean. Not a grim founder statue.
 - **One graphic device is the whole composition.** From that batch (paraphrase, do not copy as image refs): vertical divider (blade as a hard black line top-to-bottom; figure in the lower third); film-noir half-face shadow, contemplative power; a translucent screen/plane with a single gold light through it (silhouette, influence without the throne). Also: hard light-seam, low-angle monument, tiny body in a vast empty hall.
 - Face matches the **attached** `ch_*.png` portrait (or a face-suggestion / silhouette of that portrait).
+
+## Face refs are faces — not poses (do not dilute)
+
+`ch_*.png` is **face + garment language only**. Every still invents a **new body and camera**. Forbidden: 3/4 standing fashion plate, clasped-hands clone, tiger-pelt portrait stance pasted onto a porch, two people side-by-side in the yard like a still from the character sheet.
+
+Dynamic bodies only: mid-stride, kneel, full-draw, turn, tumble, lean, count, worm’s-eye, over-shoulder, dutch. **Name the pose as a verb** (arriving, weighing, splitting, diving). Wides are still **iconic** — one named device (hall as a dark wedge, pine as a vertical, arch as a leaf-light stamp, tiny figure in lower third) — not a tourist postcard of buildings with even daylight and a copied stance.
+
+**High contrast is mandatory** on Earth wides too: crushed shadow masses, one hard key, long shadows, tenebrism. Not an even wash. Not a flat game-map establishing shot.
+
+**Color symbolism is layout.** Few hues. The character hex *is* the plane or the single accent. Two people = two color planes against crushed black. No muddy same-hue wash.
 - **One** character-color accent with hex (from `CHARACTER_COLORS`) plus a thin rim-light. Earth: that accent lives in a simple real place. Otherworld: the rest may be a flat charcoal/black (or one symbolic color) void. The plane **is** the person.
 - Monumental emptiness. No army, no palace clutter, no hall furniture. Earth skies are natural weather; otherworld skies stay symbolic.
 - **Earth locations stay buildings.** Paraphrase the red-omen gate (do not attach it): real *seongmun*, real yard, one accent. Never a brutalist slab, never a burning monolith labeled “granary.”
@@ -120,6 +151,10 @@ Reusable DNA:
 Do **not** copy those three devices (gold translucent screen / vertical sword that bisects / film-noir half-face). Invent a new one (ribbon, wedge, broken arc, edge-gaze, low strip, stamp, shaft).
 
 Intimate stills use the same voice (one accent, silk, void, no clutter) but faces fill the frame.
+
+## Movie sequence (Jumong / Pumsuk / Wu halls)
+
+Grounded film: **same place**, clear chronology, variety of angles, stills locked to dialogue/beats. Open with a wide of that actual Korean place, then cut closer. Every frame still obeys the Jumong remake grammar: high contrast, one named device, dramatic pose, person-as-hex. Do not flatten a sequence into even-daylight establishing postcards.
 
 ## Doctrine in the picture (do not lecture in captions)
 

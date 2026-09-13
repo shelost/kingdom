@@ -2,6 +2,7 @@
 	/**
 	 * The Harmony Council (화백회의): one motion in the centre, six Councillor
 	 * seats around it. Steps:
+	 *   - 'split'      — initial hung vote, 3:3 (Bidam + two yes; three no)
 	 *   - 'unanimous'  — seats pop in, every sleeve assents, the motion passes
 	 *   - 'veto'       — five assent, one (Bidam) objects; the motion dies
 	 *   - 'rebellion'  — Bidam's seat goes dark and breaks away from the circle
@@ -28,22 +29,26 @@
 		};
 	});
 
-	const voting = $derived(step === 'unanimous' || step === 'veto');
+	const voting = $derived(step === 'unanimous' || step === 'veto' || step === 'split');
 
 	function vote(i: number): 'yes' | 'no' | 'none' {
 		if (step === 'unanimous') return 'yes';
+		// Hung jury: Bidam and two sleeves yes; three no.
+		if (step === 'split') return i === BIDAM || i === 0 || i === 2 ? 'yes' : 'no';
 		if (step === 'veto') return i === BIDAM ? 'no' : 'yes';
 		return 'none';
 	}
 
 	const verdict = $derived(
-		step === 'unanimous'
-			? { ko: '가결', en: 'passed' }
-			: step === 'veto'
-				? { ko: '부결', en: 'vetoed' }
-				: step === 'rebellion'
-					? { ko: '화백', en: 'the Council' }
-					: { ko: '화백', en: 'ornamental' }
+		step === 'split'
+			? { ko: '3:3', en: 'hung' }
+			: step === 'unanimous'
+				? { ko: '가결', en: 'passed' }
+				: step === 'veto'
+					? { ko: '부결', en: 'vetoed' }
+					: step === 'rebellion'
+						? { ko: '화백', en: 'the Council' }
+						: { ko: '화백', en: 'ornamental' }
 	);
 
 	// The three gates of every session, lit in sequence while a vote is shown.
@@ -161,6 +166,12 @@
 	.play[data-step='unanimous'] .motion {
 		fill: var(--gold);
 		stroke: var(--node-stroke);
+		stroke-width: 3;
+	}
+
+	.play[data-step='split'] .motion {
+		fill: color-mix(in srgb, var(--gold) 52%, var(--nay));
+		stroke: color-mix(in srgb, var(--nay) 22%, #080604);
 		stroke-width: 3;
 	}
 

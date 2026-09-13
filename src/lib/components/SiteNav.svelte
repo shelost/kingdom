@@ -8,7 +8,8 @@
 		{ href: '/wiki', label: 'Wiki' },
 		{ href: '/characters', label: 'Characters' },
 		{ href: '/map', label: 'Map' },
-		{ href: '/music', label: 'Music' }
+		{ href: '/music', label: 'Music' },
+		{ href: '/grade', label: 'Grade' }
 	] as const;
 
 	let path = $derived(page.url.pathname);

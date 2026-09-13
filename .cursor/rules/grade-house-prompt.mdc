@@ -1,0 +1,14 @@
+---
+description: Append the living house still suffix from /grade when generating chronicle art
+alwaysApply: true
+---
+
+# House prompt from grades
+
+When writing a new still prompt (Cursor `GenerateImage` or `scripts/generate-nsfw.mjs`), append the current `suffix` from `src/lib/data/image-prompt-house.json`.
+
+That file is rebuilt on every /grade save from keep/cut notes. Do not retype those lessons by hand. Do not paste the whole grades JSON into the prompt — only the suffix.
+
+`scripts/generate-nsfw.mjs` already appends it. For GenerateImage, read the file and add the suffix to `description`.
+
+The suffix’s base is the **Jumong remake batch**: high contrast tenebrism, one named geometric device, dramatic poses (dutch / worm’s-eye / lower-third), color symbolism (person hex as the plane or single accent). Do not weaken it in the scene sentence. Do not drop the hex. Do not paste a standing portrait into even daylight.

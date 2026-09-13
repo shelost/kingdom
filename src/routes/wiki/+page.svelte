@@ -56,7 +56,6 @@
 	let gender = $state<WikiFilters['gender']>('all');
 	let q = $state('');
 	let expanded = $state(false);
-	let filtersOpen = $state(false);
 	let detailScrollEl = $state<HTMLElement | undefined>(undefined);
 	/** Per-entry detail scroll tops while hopping related links. */
 	let detailScrollById = $state<Record<string, number>>({});
@@ -112,6 +111,7 @@
 			else if (v.kingdom) kingdom = v.kingdom;
 			if (v.tag) tag = v.tag;
 			if (v.gender) gender = v.gender;
+			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
 			// Do not restore `q` — sticky search (e.g. "go") hid most gods/nations.
 		} catch {
 			/* ignore */
@@ -120,8 +120,13 @@
 
 	function persistFilters() {
 		if (!browser) return;
-		// Persist type/kingdom/era only — never the find query.
+		// Persist type/kingdom/era/gender only — never the find query.
 		sessionStorage.setItem(FILTERS_KEY, JSON.stringify({ kind, kingdom, tag, gender }));
+	}
+
+	function onKindChange() {
+		if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
+		persistFilters();
 	}
 
 	/** Era chip counts — characters only (eras are not applied to other kinds). */
@@ -244,7 +249,6 @@
 		if (selectedId) saveDetailScroll(selectedId);
 		else saveIndexScroll();
 		expanded = false;
-		filtersOpen = false;
 		persistFilters();
 		// Open immediately — do not wait for pushState / page.url.
 		selectedId = id;
@@ -269,12 +273,9 @@
 
 	function onKey(e: KeyboardEvent) {
 		if (e.key !== 'Escape') return;
-		if (selectedId) {
-			if (expanded) collapseEntry();
-			else clearEntry();
-			return;
-		}
-		if (filtersOpen) filtersOpen = false;
+		if (!selectedId) return;
+		if (expanded) collapseEntry();
+		else clearEntry();
 	}
 
 	function kindCount(k: WikiKind | 'all'): number {
@@ -319,6 +320,7 @@
 			kingdom = value.kingdom === 'underworld' ? 'all' : value.kingdom;
 			tag = value.tag ?? 'all';
 			gender = value.gender ?? 'all';
+			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
 			// Never restore search — sticky "go" made gods/nations look missing.
 			q = '';
 			detailScrollById = value.detailScrollById ?? {};
@@ -352,224 +354,108 @@
 <svelte:window onkeydown={onKey} onpopstate={onPopState} />
 
 <main class="wiki" class:dimmed={!!selectedId}>
-	{#if filtersOpen}
-		<button
-			type="button"
-			class="find-scrim"
-			aria-label="Close find panel"
-			onclick={() => (filtersOpen = false)}
-		></button>
-	{/if}
+	<header class="topbar">
+		<div class="mast-nav">
+			<SiteNav />
+			<span class="dot" aria-hidden="true">·</span>
+			<a class="quiet" href={resolve('/images')}>Images</a>
+			<span class="dot" aria-hidden="true">·</span>
+			<a class="quiet" href={resolve('/grade')}>Grade</a>
+			<span class="dot" aria-hidden="true">·</span>
+			<span>{WIKI_TOTAL} entries</span>
+		</div>
+	</header>
 
-	<aside class="find" class:open={filtersOpen} id="wiki-find" aria-label="Find entries">
-		<header class="mast">
-			<div class="mast-nav">
-				<SiteNav />
-				<span class="dot" aria-hidden="true">·</span>
-				<a class="quiet" href={resolve('/images')}>Images</a>
-				<span class="dot" aria-hidden="true">·</span>
-				<span>{WIKI_TOTAL} entries</span>
-			</div>
+	<header class="hero">
+		<div class="hero-copy">
 			<h1>Encyclopedia</h1>
 			<p class="lede">
 				Every face, place, bond, and idea named in the chronicle — drawn from the same records the
 				story reads.
 			</p>
-		</header>
-
-		<div class="controls">
-			<p class="find-label">Find</p>
-
-			<label class="search">
-				<span class="sr">Search</span>
-				<input
-					type="search"
-					placeholder="Search name, Korean, title…"
-					bind:value={q}
-					oninput={persistFilters}
-					autocomplete="off"
-				/>
-			</label>
-
-			<div class="filter-block">
-				<p class="filter-label" id="wiki-kind-label">Type</p>
-				<div class="chips" role="group" aria-labelledby="wiki-kind-label">
-					<button
-						type="button"
-						class:active={kind === 'all'}
-						onclick={() => {
-							kind = 'all';
-							persistFilters();
-						}}
-					>
-						All <em>{kindCount('all')}</em>
-					</button>
-					{#each WIKI_KINDS as k (k.id)}
-						<button
-							type="button"
-							class:active={kind === k.id}
-							onclick={() => {
-								kind = k.id;
-								persistFilters();
-							}}
-						>
-							{k.plural} <em>{kindCount(k.id)}</em>
-						</button>
-					{/each}
-				</div>
-			</div>
-
-			<div class="filter-block">
-				<p class="filter-label" id="wiki-kingdom-label">Kingdom</p>
-				<div class="chips" role="group" aria-labelledby="wiki-kingdom-label">
-					<button
-						type="button"
-						class:active={kingdom === 'all'}
-						onclick={() => {
-							kingdom = 'all';
-							persistFilters();
-						}}
-					>
-						All kingdoms <em>{kingdomCount('all')}</em>
-					</button>
-					{#each WIKI_KINGDOMS as kid (kid)}
-						<button
-							type="button"
-							class:active={kingdom === kid}
-							style:--chip={KINGDOMS[kid].color}
-							onclick={() => {
-								kingdom = kid;
-								persistFilters();
-							}}
-						>
-							{KINGDOMS[kid].label} <em>{kingdomCount(kid)}</em>
-						</button>
-					{/each}
-					<button
-						type="button"
-						class:active={kingdom === 'other'}
-						onclick={() => {
-							kingdom = 'other';
-							persistFilters();
-						}}
-					>
-						{KINGDOMS.other.label} <em>{kingdomCount('other')}</em>
-					</button>
-				</div>
-			</div>
-
-			{#if showGenderFilter}
-				<div class="filter-block">
-					<p class="filter-label" id="wiki-gender-label">Gender</p>
-					<div class="chips" role="group" aria-labelledby="wiki-gender-label">
-						<button
-							type="button"
-							class:active={gender === 'all'}
-							onclick={() => {
-								gender = 'all';
-								persistFilters();
-							}}
-						>
-							All <em>{genderCount('all')}</em>
-						</button>
-						<button
-							type="button"
-							class:active={gender === 'm'}
-							onclick={() => {
-								gender = 'm';
-								persistFilters();
-							}}
-						>
-							Men <em>{genderCount('m')}</em>
-						</button>
-						<button
-							type="button"
-							class:active={gender === 'f'}
-							onclick={() => {
-								gender = 'f';
-								persistFilters();
-							}}
-						>
-							Women <em>{genderCount('f')}</em>
-						</button>
-					</div>
-				</div>
-			{/if}
-
-			<div class="filter-block">
-				<p class="filter-label" id="wiki-era-label">Era</p>
-				<div class="chips" role="group" aria-labelledby="wiki-era-label">
-					<button
-						type="button"
-						class:active={tag === 'all'}
-						onclick={() => {
-							tag = 'all';
-							persistFilters();
-						}}
-					>
-						Any era <em>{tagCount('all')}</em>
-					</button>
-					{#each ERA_TAG_IDS as tid (tid)}
-						<button
-							type="button"
-							class:active={tag === tid}
-							title={ERA_TAG_META[tid]?.hint}
-							onclick={() => {
-								tag = tid;
-								persistFilters();
-							}}
-						>
-							{ERA_TAG_META[tid]?.label ?? tid} <em>{tagCount(tid)}</em>
-						</button>
-					{/each}
-				</div>
-			</div>
 		</div>
 
-		<button type="button" class="find-done" onclick={() => (filtersOpen = false)}>
-			Show {filtered.length}
-			{filtered.length === 1 ? 'entry' : 'entries'}
-		</button>
-	</aside>
+		<label class="search">
+			<span class="sr">Search the encyclopedia</span>
+			<span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
+			<input
+				type="search"
+				placeholder="Search the encyclopedia"
+				bind:value={q}
+				autocomplete="off"
+			/>
+		</label>
+
+		<div class="filters">
+			<label class="filter">
+				<span class="filter-label">Type</span>
+				<span class="select-wrap">
+					<select bind:value={kind} onchange={onKindChange}>
+						<option value="all">All · {kindCount('all')}</option>
+						{#each WIKI_KINDS as k (k.id)}
+							<option value={k.id}>{k.plural} · {kindCount(k.id)}</option>
+						{/each}
+					</select>
+				</span>
+			</label>
+
+			<label class="filter">
+				<span class="filter-label">Kingdom</span>
+				<span class="select-wrap">
+					<select bind:value={kingdom} onchange={persistFilters}>
+						<option value="all">All kingdoms · {kingdomCount('all')}</option>
+						{#each WIKI_KINGDOMS as kid (kid)}
+							<option value={kid}>{KINGDOMS[kid].label} · {kingdomCount(kid)}</option>
+						{/each}
+						<option value="other">{KINGDOMS.other.label} · {kingdomCount('other')}</option>
+					</select>
+				</span>
+			</label>
+
+			<label class="filter">
+				<span class="filter-label">Era</span>
+				<span class="select-wrap">
+					<select bind:value={tag} onchange={persistFilters}>
+						<option value="all">Any era · {tagCount('all')}</option>
+						{#each ERA_TAG_IDS as tid (tid)}
+							<option value={tid} title={ERA_TAG_META[tid]?.hint}>
+								{ERA_TAG_META[tid]?.label ?? tid} · {tagCount(tid)}
+							</option>
+						{/each}
+					</select>
+				</span>
+			</label>
+
+			{#if showGenderFilter}
+				<label class="filter">
+					<span class="filter-label">Gender</span>
+					<span class="select-wrap">
+						<select bind:value={gender} onchange={persistFilters}>
+							<option value="all">All · {genderCount('all')}</option>
+							<option value="m">Men · {genderCount('m')}</option>
+							<option value="f">Women · {genderCount('f')}</option>
+						</select>
+					</span>
+				</label>
+			{/if}
+		</div>
+	</header>
 
 	<section class="browse" aria-label="Encyclopedia results">
-		<header class="browse-bar">
-			<div class="browse-title">
-				<div class="mobile-only mast-nav compact">
-				<SiteNav />
-				<span class="dot" aria-hidden="true">·</span>
-				<span>{WIKI_TOTAL}</span>
-			</div>
-				<h2 class="mobile-only">Encyclopedia</h2>
-				<p class="count" aria-live="polite">
-					{filtered.length}
-					{filtered.length === 1 ? 'entry' : 'entries'}
-					{#if activeFilterCount > 0}
-						<span>matched</span>
-					{/if}
-					<span class="sort-hint"
-						>{kind === 'god'
-							? '· by class'
-							: kind === 'clan'
-								? '· by members'
-								: '· by importance'}</span
-					>
-				</p>
-			</div>
-			<button
-				type="button"
-				class="find-toggle"
-				aria-expanded={filtersOpen}
-				aria-controls="wiki-find"
-				onclick={() => (filtersOpen = !filtersOpen)}
+		<p class="count" aria-live="polite">
+			{filtered.length}
+			{filtered.length === 1 ? 'entry' : 'entries'}
+			{#if activeFilterCount > 0}
+				<span>matched</span>
+			{/if}
+			<span class="sort-hint"
+				>{kind === 'god'
+					? '· by class'
+					: kind === 'clan'
+						? '· by members'
+						: '· by importance'}</span
 			>
-				<span class="material-symbols-outlined" aria-hidden="true">tune</span>
-				Find
-				{#if activeFilterCount > 0}
-					<em>{activeFilterCount}</em>
-				{/if}
-			</button>
-		</header>
+		</p>
 
 		{#if filtered.length === 0}
 			<p class="empty">Nothing matches. Widen the filters or clear the search.</p>
@@ -812,170 +698,34 @@
 
 <style>
 	.wiki {
-		--wiki-find-w: 20.5rem;
 		min-height: 100dvh;
-		display: grid;
-		grid-template-columns: var(--wiki-find-w) minmax(0, 1fr);
-		align-items: start;
+		display: flex;
+		flex-direction: column;
 		background: var(--bg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
 		transition: filter 0.35s var(--ease);
+		padding:
+			0
+			max(1.5rem, env(safe-area-inset-right, 0px))
+			max(4rem, env(safe-area-inset-bottom, 0px) + 2rem)
+			max(1.5rem, env(safe-area-inset-left, 0px));
 	}
 
 	.wiki.dimmed {
 		filter: saturate(0.92);
 	}
 
-	.find {
-		position: sticky;
-		top: 0;
-		z-index: 30;
-		height: 100dvh;
-		display: flex;
-		flex-direction: column;
-		gap: 1.25rem;
-		padding: max(1.75rem, env(safe-area-inset-top, 0px) + 1rem)
-			1.25rem
-			max(1.5rem, env(safe-area-inset-bottom, 0px) + 1rem)
-			max(1.35rem, calc(env(safe-area-inset-left, 0px) + 1.85rem));
-		border-right: none;
-		background: var(--bg);
-		backdrop-filter: none;
-		overflow-x: hidden;
-		overflow-y: auto;
-		overscroll-behavior: contain;
-	}
-
-	.mast {
-		flex-shrink: 0;
+	.topbar {
+		width: 100%;
+		max-width: 72rem;
+		margin: 0 auto;
+		padding-top: max(1rem, env(safe-area-inset-top, 0px) + 0.55rem);
 	}
 
 	.dot {
 		opacity: 0.5;
-	}
-
-	.mast h1 {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: clamp(1.85rem, 2.4vw, 2.45rem);
-		font-weight: 600;
-		letter-spacing: var(--tracking-display);
-		line-height: 1.1;
-		color: var(--fg-strong);
-	}
-
-	.lede {
-		margin: 0.7rem 0 0;
-		font-family: var(--ui);
-		font-size: 0.92rem;
-		font-weight: 400;
-		letter-spacing: var(--tracking-ui);
-		line-height: 1.28;
-		color: var(--fg-dim);
-	}
-
-	.controls {
-		display: grid;
-		gap: 1.05rem;
-		padding-bottom: 0.25rem;
-	}
-
-	.find-label {
-		margin: 0;
-		font-family: var(--ui);
-		font-size: 0.72rem;
-		font-weight: 600;
-		letter-spacing: 0.08em;
-		line-height: 1.2;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-	}
-
-	.filter-block {
-		display: grid;
-		gap: 0.45rem;
-	}
-
-	.filter-label {
-		margin: 0;
-		font-family: var(--ui);
-		font-size: 0.68rem;
-		font-weight: 500;
-		letter-spacing: 0.08em;
-		line-height: 1.2;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-	}
-
-	.search input {
-		width: 100%;
-		font-family: var(--ui);
-		font-size: 0.95rem;
-		letter-spacing: var(--tracking-ui);
-		line-height: var(--leading-ui);
-		color: var(--fg);
-		background: var(--panel-sunken);
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
-		padding: 0.75rem 0.9rem;
-		outline: none;
-		transition: border-color 0.2s var(--ease);
-	}
-
-	.search input::placeholder {
-		color: var(--fg-faint);
-	}
-
-	.search input:focus {
-		border-color: color-mix(in srgb, var(--highlight) 45%, var(--hairline));
-	}
-
-	.chips {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.35rem;
-	}
-
-	.chips button {
-		font-family: var(--ui);
-		font-size: 0.74rem;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
-		line-height: 1.2;
-		color: var(--fg-faint);
-		background: var(--glass);
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		padding: 0.4rem 0.7rem;
-		min-height: 2.35rem;
-		cursor: pointer;
-		transition:
-			background 0.2s var(--ease),
-			color 0.2s var(--ease),
-			border-color 0.2s var(--ease);
-	}
-
-	.chips button em {
-		font-style: normal;
-		opacity: 0.65;
-		margin-left: 0.2rem;
-	}
-
-	.chips button:hover {
-		color: var(--fg);
-		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
-	}
-
-	.chips button.active {
-		color: var(--on-highlight);
-		background: var(--highlight);
-		border-color: var(--highlight);
-	}
-
-	.chips button.active em {
-		opacity: 0.7;
 	}
 
 	.mast-nav {
@@ -983,17 +733,12 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.4rem;
-		margin: 0 0 0.75rem;
+		margin: 0;
 		font-family: var(--ui);
 		font-size: 0.72rem;
 		letter-spacing: var(--tracking-ui);
 		line-height: 1.2;
 		color: var(--fg-faint);
-	}
-
-	.mast-nav.compact :global(.site-nav a) {
-		padding: 0.28rem 0.5rem;
-		font-size: 0.62rem;
 	}
 
 	.mast-nav .quiet {
@@ -1009,35 +754,193 @@
 		opacity: 0.45;
 	}
 
-	.find-done,
-	.find-toggle,
-	.find-scrim,
-	.mobile-only {
-		display: none;
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin: 0 auto;
+		padding: 3.35rem 0 1.65rem;
+		text-align: center;
+	}
+
+	.hero-copy,
+	.search {
+		width: 100%;
+		max-width: 40rem;
+	}
+
+	.hero h1 {
+		margin: 0;
+		font-family: var(--serif);
+		font-size: clamp(2.05rem, 4.2vw, 2.75rem);
+		font-weight: 600;
+		letter-spacing: var(--tracking-display);
+		line-height: 1.1;
+		color: var(--fg-strong);
+	}
+
+	.lede {
+		margin: 0.75rem auto 0;
+		max-width: 36rem;
+		font-family: var(--ui);
+		font-size: 0.95rem;
+		font-weight: 400;
+		letter-spacing: var(--tracking-ui);
+		line-height: 1.35;
+		color: var(--fg-dim);
+	}
+
+	.search {
+		position: relative;
+		margin-top: 1.65rem;
+		text-align: left;
+	}
+
+	.search-icon {
+		position: absolute;
+		left: 0.9rem;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.3rem;
+		color: var(--fg-faint);
+		pointer-events: none;
+	}
+
+	.search input {
+		width: 100%;
+		height: 3rem;
+		font-family: var(--ui);
+		font-size: 1rem;
+		letter-spacing: var(--tracking-ui);
+		line-height: var(--leading-ui);
+		color: var(--fg);
+		background: var(--panel);
+		border: 1px solid var(--hairline);
+		border-radius: 8px;
+		padding: 0 1rem 0 2.85rem;
+		outline: none;
+		appearance: none;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+		transition:
+			border-color 0.2s var(--ease),
+			box-shadow 0.2s var(--ease);
+	}
+
+	.search input::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+
+	.search input::placeholder {
+		color: var(--fg-faint);
+	}
+
+	.search input:focus {
+		border-color: color-mix(in srgb, var(--highlight) 55%, var(--hairline));
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.08),
+			0 0 0 3px color-mix(in srgb, var(--highlight) 22%, transparent);
+	}
+
+	.filters {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.75rem 0.85rem;
+		width: 100%;
+		max-width: 42rem;
+		margin-top: 1.15rem;
+	}
+
+	.filter {
+		display: grid;
+		gap: 0.32rem;
+		flex: 1 1 8.4rem;
+		min-width: 8.4rem;
+		max-width: 12.5rem;
+		text-align: left;
+	}
+
+	.filter-label {
+		margin: 0;
+		font-family: var(--ui);
+		font-size: 0.75rem;
+		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
+		line-height: 1.2;
+		color: var(--fg-faint);
+	}
+
+	.select-wrap {
+		position: relative;
+		display: block;
+	}
+
+	.select-wrap::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: 0.72rem;
+		width: 0.7rem;
+		height: 0.7rem;
+		transform: translateY(-50%);
+		pointer-events: none;
+		background-color: var(--fg-faint);
+		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round' d='M4 6.25 8 10.25 12 6.25'/%3E%3C/svg%3E");
+		mask-size: contain;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round' d='M4 6.25 8 10.25 12 6.25'/%3E%3C/svg%3E");
+		-webkit-mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+	}
+
+	.filter select {
+		display: block;
+		width: 100%;
+		height: 2.35rem;
+		padding: 0 2rem 0 0.75rem;
+		font-family: var(--ui);
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
+		line-height: 1.2;
+		color: var(--fg);
+		background: var(--panel);
+		border: 1px solid var(--hairline);
+		border-radius: 8px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+		appearance: none;
+		-webkit-appearance: none;
+		cursor: pointer;
+		outline: none;
+		transition:
+			border-color 0.2s var(--ease),
+			box-shadow 0.2s var(--ease);
+	}
+
+	.filter select:hover {
+		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
+	}
+
+	.filter select:focus {
+		border-color: color-mix(in srgb, var(--highlight) 55%, var(--hairline));
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.08),
+			0 0 0 3px color-mix(in srgb, var(--highlight) 22%, transparent);
 	}
 
 	.browse {
+		width: 100%;
+		max-width: 72rem;
 		min-width: 0;
-		padding: max(2rem, env(safe-area-inset-top, 0px) + 1.25rem)
-			max(1.75rem, env(safe-area-inset-right, 0px))
-			max(4rem, env(safe-area-inset-bottom, 0px) + 2rem)
-			1.75rem;
-	}
-
-	.browse-bar {
-		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: 1rem;
-		margin-bottom: 1.35rem;
-	}
-
-	.browse-title {
-		min-width: 0;
+		margin: 0 auto;
+		padding-top: 0.35rem;
 	}
 
 	.count {
-		margin: 0;
+		margin: 0 0 1.35rem;
 		font-family: var(--ui);
 		font-size: 0.78rem;
 		letter-spacing: var(--tracking-ui);
@@ -1667,135 +1570,24 @@
 
 	@media (max-width: 960px) {
 		.wiki {
-			grid-template-columns: 1fr;
+			padding-left: max(1.05rem, env(safe-area-inset-left, 0px));
+			padding-right: max(1.05rem, env(safe-area-inset-right, 0px));
 		}
 
-		.find-scrim {
-			display: block;
-			position: fixed;
-			inset: 0;
-			z-index: 90;
-			border: 0;
-			padding: 0;
-			margin: 0;
-			background: rgba(0, 0, 0, 0.5);
-			backdrop-filter: blur(2px);
-			cursor: pointer;
-			animation: fade-in 0.25s ease;
+		.hero {
+			padding-top: 2.15rem;
+			padding-bottom: 1.2rem;
 		}
 
-		.find {
-			position: fixed;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			z-index: 95;
-			width: min(22rem, calc(100vw - 2.5rem));
-			height: 100dvh;
-			border-right: none;
-			box-shadow: 18px 0 48px rgba(0, 0, 0, 0.45);
-			transform: translateX(-105%);
-			transition: transform 0.32s var(--ease);
-			padding-left: max(1.15rem, env(safe-area-inset-left, 0px));
+		.filters {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			max-width: 40rem;
 		}
 
-		.find.open {
-			transform: translateX(0);
-		}
-
-		.find-done {
-			display: block;
-			margin-top: auto;
-			width: 100%;
-			font-family: var(--ui);
-			font-size: 0.9rem;
-			font-weight: 600;
-			letter-spacing: var(--tracking-ui);
-			line-height: 1.2;
-			color: var(--on-highlight);
-			background: var(--highlight);
-			border: 1px solid var(--highlight);
-			border-radius: var(--radius);
-			padding: 0.85rem 1rem;
-			min-height: 2.75rem;
-			cursor: pointer;
-		}
-
-		.browse {
-			padding: max(1.15rem, env(safe-area-inset-top, 0px))
-				max(1.05rem, env(safe-area-inset-right, 0px))
-				max(4rem, env(safe-area-inset-bottom, 0px) + 2rem)
-				max(1.05rem, env(safe-area-inset-left, 0px));
-		}
-
-		.browse-bar {
-			position: sticky;
-			top: 0;
-			z-index: 25;
-			align-items: flex-start;
-			margin: 0 -0.15rem 1.2rem;
-			padding: 0.35rem 0.15rem 0.85rem;
-			background: linear-gradient(
-				to bottom,
-				var(--bg) 62%,
-				color-mix(in srgb, var(--bg) 72%, transparent)
-			);
-			backdrop-filter: blur(10px);
-		}
-
-		.mobile-only {
-			display: block;
-		}
-
-		.browse-title .mast-nav {
-			margin-bottom: 0.45rem;
-		}
-
-		.browse-title h2 {
-			margin: 0 0 0.45rem;
-			font-family: var(--serif);
-			font-size: 1.65rem;
-			font-weight: 600;
-			letter-spacing: var(--tracking-display);
-			line-height: 1.1;
-			color: var(--fg-strong);
-		}
-
-		.find-toggle {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.35rem;
-			flex-shrink: 0;
-			font-family: var(--ui);
-			font-size: 0.78rem;
-			font-weight: 500;
-			letter-spacing: var(--tracking-ui);
-			line-height: 1.2;
-			text-transform: uppercase;
-			color: var(--fg);
-			background: var(--glass);
-			border: 1px solid var(--hairline);
-			border-radius: var(--radius-pill);
-			padding: 0.55rem 0.9rem;
-			min-height: 2.5rem;
-			cursor: pointer;
-		}
-
-		.find-toggle .material-symbols-outlined {
-			font-size: 1.05rem;
-		}
-
-		.find-toggle em {
-			font-style: normal;
-			min-width: 1.15rem;
-			height: 1.15rem;
-			display: inline-grid;
-			place-items: center;
-			border-radius: var(--radius-pill);
-			background: var(--highlight);
-			color: var(--on-highlight);
-			font-size: 0.68rem;
-			font-weight: 700;
+		.filter {
+			min-width: 0;
+			max-width: none;
 		}
 
 		.grid {
@@ -1842,9 +1634,7 @@
 		.card,
 		.scrim,
 		.peek,
-		.wiki,
-		.find,
-		.find-scrim {
+		.wiki {
 			animation: none;
 			transition: none;
 		}

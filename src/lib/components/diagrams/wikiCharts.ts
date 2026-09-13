@@ -222,10 +222,26 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 	harmonycouncil: [
 		{
 			diagram: 'harmony-council',
+			step: 'split',
+			title: 'Initial vote · 초투표 3:3',
+			caption:
+				'A session begins hung. Three sleeves up, three down — deliberation is the only way out.',
+			ko: '초투표는 갈린다. 셋이 들고 셋이 내린다 — 숙고만이 출구다.'
+		},
+		{
+			diagram: 'harmony-council',
 			step: 'unanimous',
 			title: 'The Harmony Council · 화백회의',
-			caption: 'Six Councillors around one motion. Initial vote, deliberation, final vote — only unanimity opens the gate.',
+			caption:
+				'Six Councillors around one motion. Initial vote, deliberation, final vote — only unanimity opens the gate.',
 			ko: '소매 여섯이 한 안건을 둘러싼다. 초투표, 숙고, 최종 투표 — 만장일치만이 문을 연다.'
+		},
+		{
+			diagram: 'harmony-council',
+			step: 'veto',
+			title: 'Harmony Veto · 화백 거부',
+			caption: 'Five assent, one hand stays down. Unanimity fails; the name cannot pass.',
+			ko: '다섯이 찬성하고 손 하나가 내린다. 만장일치가 깨지면 그 이름은 통과하지 못한다.'
 		}
 	],
 	bonerank: [
