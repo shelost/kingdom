@@ -360,11 +360,15 @@
 		"gwanggaeto"
 	],
 	"three-sons": [
-		"gesomun",
-		"namseng"
+		"namseng",
+		"namgun",
+		"namsan",
+		"gesomun"
 	],
 	"stone-generals": [
-		"gesomun"
+		"namseng",
+		"namgun",
+		"namsan"
 	],
 	"kingdoms-crest-map": [
 		"gesomun"
@@ -377,8 +381,7 @@
 		"namseng"
 	],
 	"young-princes-grown": [
-		"euija",
-		"gyebek"
+		"euija"
 	],
 	"sabi-dragon-dawn": [
 		"euija"
@@ -389,7 +392,6 @@
 	],
 	"gyebek-sword": [
 		"euija",
-		"gesomun",
 		"gyebek"
 	],
 	"euija-poster": [
@@ -412,8 +414,7 @@
 		"gyebek"
 	],
 	"img_euija_06": [
-		"euija",
-		"gyebek"
+		"euija"
 	],
 	"euija-crown-eaten": [
 		"euija"
@@ -859,9 +860,6 @@
 	"hyulle-wave-arc": [
 		"hyulle"
 	],
-	"daeya-massacre-doorway": [
-		"gesomun"
-	],
 	"gesomun-title": [
 		"gesomun"
 	],
@@ -872,13 +870,16 @@
 		"gesomun"
 	],
 	"blade-south": [
-		"gesomun"
+		"gesomun",
+		"southcmd"
 	],
 	"blade-north": [
-		"gesomun"
+		"gesomun",
+		"northcmd"
 	],
 	"blade-west": [
-		"gesomun"
+		"gesomun",
+		"westcmd"
 	],
 	"blade-lee": [
 		"gesomun",
@@ -906,7 +907,8 @@
 		"gesomun"
 	],
 	"yeon-wife-private": [
-		"gesomun"
+		"gesomun",
+		"yeonwife"
 	],
 	"gesomun-authority-low-angle": [
 		"gesomun"
@@ -2849,5 +2851,11 @@
 	"seohyeon-older-hyulle-ride-astride": [
 		"hyulle",
 		"seohyeon"
+	],
+	"pyongyang-massacre-doorway": [
+		"gesomun"
+	],
+	"gesomun-seq-wings": [
+		"gesomun"
 	]
 }

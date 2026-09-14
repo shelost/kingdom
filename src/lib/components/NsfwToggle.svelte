@@ -1,25 +1,39 @@
 <script lang="ts">
-	import { nsfwUi, toggleShowIntimate } from '$lib/nsfwUi.svelte';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/state';
+	import { NSFW_QUERY, nsfwQueryOn, nsfwUi } from '$lib/nsfwUi.svelte';
 
 	let { compact = false }: { compact?: boolean } = $props();
 
-	let label = $derived(nsfwUi.showIntimate ? 'Intimate scenes on' : 'Intimate scenes off');
+	let on = $derived(nsfwUi.showIntimate);
+	let label = $derived(on ? 'Intimate scenes on' : 'Intimate scenes off');
 	let hint = $derived(
-		nsfwUi.showIntimate
+		on
 			? 'Intimate art and script shown — click to hide'
 			: 'Intimate art and script hidden — click to show'
 	);
+
+	function toggle() {
+		const next = new URL(page.url);
+		if (nsfwQueryOn(next)) next.searchParams.delete(NSFW_QUERY);
+		else next.searchParams.set(NSFW_QUERY, 'true');
+		void goto(`${next.pathname}${next.search}${next.hash}`, {
+			keepFocus: true,
+			noScroll: true,
+			replaceState: true
+		});
+	}
 </script>
 
 <button
 	type="button"
 	class="nsfw-toggle"
 	class:compact
-	class:on={nsfwUi.showIntimate}
-	aria-pressed={nsfwUi.showIntimate}
+	class:on
+	aria-pressed={on}
 	aria-label={label}
 	title={hint}
-	onclick={toggleShowIntimate}
+	onclick={toggle}
 >
 	{#if compact}
 		<span class="wide">Intimate</span>

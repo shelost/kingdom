@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
+	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
 	import { toggleTheme } from '$lib/themeUi.svelte';
 
 	const LINKS = [
@@ -17,7 +18,7 @@
 
 <nav class="site-nav" aria-label="Site">
 	{#each LINKS as link (link.href)}
-		{@const href = resolve(link.href)}
+		{@const href = hrefWithNsfw(resolve(link.href), page.url)}
 		{@const active =
 			link.href === '/'
 				? path === '/' || path === href
@@ -63,20 +64,26 @@
 		background: var(--glass);
 		backdrop-filter: blur(14px);
 		transition:
-			color 0.25s var(--ease),
-			border-color 0.25s var(--ease),
-			background 0.25s var(--ease);
+			color 0.38s var(--toc-ease),
+			border-color 0.38s var(--toc-ease),
+			background 0.38s var(--toc-ease),
+			box-shadow 0.38s var(--toc-ease),
+			transform 0.38s var(--toc-ease);
 	}
 
 	.site-nav a:hover {
 		color: var(--fg);
 		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
+		transform: translateY(-1px);
+		box-shadow: 0 6px 18px color-mix(in srgb, var(--bg) 55%, transparent);
 	}
 
 	.site-nav a.active {
 		color: var(--on-highlight);
 		background: var(--highlight);
 		border-color: var(--highlight);
+		transform: translateY(0);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--highlight) 35%, transparent);
 	}
 
 	.theme-toggle {

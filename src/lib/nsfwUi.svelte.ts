@@ -1,19 +1,34 @@
 /**
- * Reader preference for intimate / NSFW cue art and script.
- * One toggle: images and `p` / `dialogue` / `monologue` marked `nsfw`.
- * Default on. Persisted as localStorage `kingdom:nsfw` (`1` / `0`).
- * Unset storage is treated as on.
+ * Intimate / NSFW cue art and script (`p` / `dialogue` / `monologue` with `nsfw`).
+ * Off unless the URL has `?nsfw=true`. Not persisted. SSR always hides it
+ * (shared module state must not follow a request).
  */
 import { browser } from '$app/environment';
 import { clearUtterance } from '$lib/reading.svelte';
 import type { Block, Entry } from '$lib/story';
 
-const STORAGE_KEY = 'kingdom:nsfw';
+export const NSFW_QUERY = 'nsfw';
 
-export const nsfwUi = $state({ showIntimate: true });
+export const nsfwUi = $state({ showIntimate: false });
 
 /** Anything this toggle can hide: a cue slot, or a script block carrying `nsfw`. */
 type Nsfwable = { nsfw?: boolean | string };
+
+export function nsfwQueryOn(url: URL): boolean {
+	return url.searchParams.get(NSFW_QUERY) === 'true';
+}
+
+/** Keep `?nsfw=true` on an in-app href when the current URL already has it. */
+export function hrefWithNsfw(href: string, current: URL): string {
+	if (!nsfwQueryOn(current)) return href;
+	const next = new URL(href, current);
+	next.searchParams.set(NSFW_QUERY, 'true');
+	return `${next.pathname}${next.search}${next.hash}`;
+}
+
+export function applyNsfwFromUrl(url: URL) {
+	setShowIntimate(nsfwQueryOn(url));
+}
 
 export function isNsfwSlot(slot: Nsfwable): boolean {
 	return Boolean(slot.nsfw);
@@ -72,28 +87,10 @@ export function entryForReading(entry: Entry): Entry {
 }
 
 export function setShowIntimate(on: boolean) {
+	if (nsfwUi.showIntimate === on) return;
 	nsfwUi.showIntimate = on;
 	if (!browser) return;
 	/* The stage plate holds the last line until the reader scrolls again — drop
 	   it, so a line this toggle just removed cannot stay on stage. */
 	if (!on) clearUtterance();
-	try {
-		localStorage.setItem(STORAGE_KEY, on ? '1' : '0');
-	} catch {
-		/* private mode — preference just won't persist */
-	}
-}
-
-export function toggleShowIntimate() {
-	setShowIntimate(!nsfwUi.showIntimate);
-}
-
-/** Restore after hydrate. Unset or missing key => show intimate. Only `'0'` hides. */
-export function loadShowIntimate() {
-	if (!browser) return;
-	try {
-		nsfwUi.showIntimate = localStorage.getItem(STORAGE_KEY) !== '0';
-	} catch {
-		/* stay on default (on) */
-	}
 }

@@ -98,8 +98,8 @@
 
 	--toc-w: 19rem;
 	/* Shared TOC open/close timing — keep jump settle in Toc.svelte in sync. */
-	--toc-duration: 140ms;
-	--toc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+	--toc-duration: 380ms;
+	--toc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 	/* Immersive plate inset; layout toggles this with the TOC. */
 	--shell-shift: 0px;
 

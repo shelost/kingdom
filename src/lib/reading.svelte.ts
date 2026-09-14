@@ -44,7 +44,13 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'iron-will-8': 'iron-will-euija-gesomun',
 	'iron-will-9': 'iron-will-kim-yushin',
 	'chunchu-era-11': 'chunchu-era-hyukgose',
-	'final-stand-7': 'final-stand-the-final-stand',
+	'chunchu-era-the-flower-youth': 'chunchu-era-the-hwarang',
+	'chunchu-era-silla-tang-alliance': 'chunchu-era-the-emperor',
+	'final-stand-7': 'final-stand-pyongyang-a',
+	'final-stand-pyongyang-fortress': 'final-stand-pyongyang',
+	'final-stand-the-final-stand': 'final-stand-pyongyang-a',
+	'final-stand-white-river': 'fall-of-baekje-white-river',
+	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-the-protectorate',
 	'silla-tang-war-8': 'silla-tang-war-the-king-for-all'
 };
 

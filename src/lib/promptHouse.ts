@@ -34,6 +34,10 @@ export const BAN_CHIPS = [
 	'hwarang headband in council',
 	'European crown / tiara',
 	'even well-lit studio',
+	'halo / bloom / glow around figures',
+	'graphic poster / split-screen / black-triangle overlay',
+	'photoreal live-action or 3D archviz',
+	'busy extras crowding an iconic frame',
 	'muddy same-hue wash on every figure',
 	'symbol with no scene (floating crown, pinstripe sword)',
 	'wrong Cheomseongdae (lighthouse / ziggurat)',
@@ -44,7 +48,7 @@ export const BAN_CHIPS = [
 
 /** Canon from the Jumong remake batch (high contrast, one device, dramatic pose, person-as-hex). */
 const HOUSE_BASE =
-	'Painterly anime-adjacent cinema, not photoreal, not 3D. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, aerial, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. DEPTH: sharp FOREGROUND (shoulder, bucket, rope, sleeve), people in the MIDGROUND, BACKGROUND grey giwa / timber in creamy bokeh — rack-focus. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC layout: name ONE geometric device that divides the frame; figures tiny or lower-third; monumental emptiness. COLOR SYMBOLISM: hex is lighting / a background plane / one accent — NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not a standing armor catalog. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark.';
+	'2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock every still: a CAMERA in a real Korean place — anamorphic 16:9 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key, never a fog hugging the body. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. DEPTH: sharp FOREGROUND (shoulder, bucket, rope, sleeve), people in the MIDGROUND, BACKGROUND grey giwa / timber in creamy bokeh — rack-focus. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex is lighting / a background plane / one accent — NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not a standing armor catalog. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark.';
 
 const NOTE_TO_COPY: Array<[RegExp, string]> = [
 	[/contrast|lighting|movie poster|chiaroscuro|hard key/i, 'one hard key / chiaroscuro, movie-poster contrast'],
@@ -62,6 +66,8 @@ const NOTE_TO_BAN: Array<[RegExp, string]> = [
 	[/repetitive character|copy paste|identical to the reference|copy pasted/i, 'no pasted portrait pose — new body every still'],
 	[/wrong crowns|european/i, 'Silla tree-antler crown only — no European tiara'],
 	[/too realistic|photoreal|3d/i, 'not photoreal, not 3D render'],
+	[/glow|halo|bloom|god.?ray|rim.?aura/i, 'no halo or bloom around figures'],
+	[/not iconic|too busy|clutter|not minimal/i, 'iconic minimal — one device, empty frame, lower-third'],
 	[/wrong clothes|headband|teal/i, 'correct house dress; no hwarang headband in council'],
 	[/two tables/i, 'one locked table — no extra braziers'],
 	[/cheomseongda|no context|wrong image and no context/i, 'real bottle-shaped Cheomseongdae plus a story beat'],

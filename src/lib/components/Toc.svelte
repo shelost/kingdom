@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { SvelteSet } from 'svelte/reactivity';
-	import { chapters, entryId, partId, scenesOf } from '$lib/story';
+	import { chapters, entryId, partId } from '$lib/story';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
+	import { branchContains, spineEntries, spineLabel, tocLeavesFor } from '$lib/tocTree';
 	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
@@ -230,14 +231,15 @@
 		}
 	}
 
-	function scenesOpen(id: string) {
+	function scenesOpen(id: string, leafIds: string[]) {
 		if (closed.has(id)) return false;
 		if (opened.has(id)) return true;
-		return activeEntry === id;
+		if (activeEntry === id) return true;
+		return leafIds.includes(activeEntry) || leafIds.includes(reading.sceneId ?? '');
 	}
 
-	function toggleExpand(id: string) {
-		if (scenesOpen(id)) {
+	function toggleExpand(id: string, leafIds: string[]) {
+		if (scenesOpen(id, leafIds)) {
 			closed.add(id);
 			opened.delete(id);
 		} else {
@@ -303,15 +305,19 @@
 			</button>
 
 			<div class="sub">
-				{#each ch.entries as en, ei (ch.id + ei)}
+				{#each spineEntries(ch) as en (ch.id + en.title)}
 					{@const eid = entryId(ch.id, en.title)}
+					{@const heading = spineLabel(ch, en)}
 					<!-- Read off the sanitized entry: a scene the Intimate toggle hides
 					     has no anchor in the document, so it must not sit in the list. -->
-					{@const scenes = scenesOf(entryForReading(en).blocks, eid)}
-					{@const isOpen = scenesOpen(eid)}
-					<div class="ep-block">
+					{@const leaves = tocLeavesFor(ch, en, eid, entryForReading(en))}
+					{@const leafIds = leaves.map((l) => l.id)}
+					{@const isOpen = scenesOpen(eid, leafIds)}
+					{@const onBranch =
+						activeEntry === eid || branchContains(leaves, activeEntry, reading.sceneId ?? '')}
+					<div class="ep-block" class:open={isOpen}>
 						<div class="ep-row">
-							{#if scenes.length}
+							{#if leaves.length}
 								<button
 									type="button"
 									class="ep-chevron"
@@ -319,9 +325,9 @@
 									aria-expanded={isOpen}
 									aria-controls="toc-scenes-{eid}"
 									aria-label={isOpen
-										? `Hide scenes in ${en.title || 'Untitled'}`
-										: `Show scenes in ${en.title || 'Untitled'}`}
-									onclick={() => toggleExpand(eid)}
+										? `Hide scenes in ${heading || 'Untitled'}`
+										: `Show scenes in ${heading || 'Untitled'}`}
+									onclick={() => toggleExpand(eid, leafIds)}
 								></button>
 							{:else}
 								<span class="ep-chevron-spacer" aria-hidden="true"></span>
@@ -330,26 +336,38 @@
 								type="button"
 								class="sub-item"
 								class:active={activeEntry === eid}
+								class:branch={onBranch && activeEntry !== eid}
 								data-toc-id={eid}
 								onclick={() => jump(eid)}
 							>
 								<span class="si-year">{en.year || '·'}</span>
-								<span class="si-title">{en.title || 'Untitled'}</span>
+								<span class="si-title">{heading || 'Untitled'}</span>
 							</button>
 						</div>
-						{#if scenes.length && isOpen}
-							<div class="scenes" id="toc-scenes-{eid}">
-								{#each scenes as s (s.id)}
-									<button
-										type="button"
-										class="scene-item"
-										class:active={reading.sceneId === s.id}
-										data-toc-id={s.id}
-										onclick={() => jump(s.id)}
-									>
-										<span class="scene-title">{s.title}</span>
-									</button>
-								{/each}
+						{#if leaves.length}
+							<div
+								class="scene-fold"
+								class:open={isOpen}
+								id="toc-scenes-{eid}"
+								aria-hidden={!isOpen}
+							>
+								<div class="scene-fold-inner">
+									<div class="scenes">
+										{#each leaves as s, si (s.id)}
+											<button
+												type="button"
+												class="scene-item"
+												class:active={activeEntry === s.id || reading.sceneId === s.id}
+												data-toc-id={s.id}
+												tabindex={isOpen ? 0 : -1}
+												onclick={() => jump(s.id)}
+											>
+												<span class="scene-num">{si + 1}</span>
+												<span class="scene-title">{s.title}</span>
+											</button>
+										{/each}
+									</div>
+								</div>
 							</div>
 						{/if}
 					</div>
@@ -401,8 +419,8 @@
 		transform: translate3d(0, -0.85rem, 0);
 		pointer-events: none;
 		transition:
-			color 150ms ease,
-			background 150ms ease,
+			color 220ms var(--toc-ease),
+			background 220ms var(--toc-ease),
 			opacity 520ms var(--ease),
 			transform 560ms var(--ease);
 	}
@@ -415,7 +433,8 @@
 
 	.toc-toggle.in:hover {
 		color: var(--fg-strong);
-		transform: scale(1.06);
+		background: color-mix(in srgb, var(--gold) 12%, transparent);
+		transform: scale(1.05);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -429,7 +448,8 @@
 			transform: none;
 		}
 
-		.ep-chevron::before {
+		.ep-chevron::before,
+		.scene-fold {
 			transition: none;
 		}
 	}
@@ -444,7 +464,7 @@
 		width: min(var(--toc-w), 86vw);
 		padding: 3.6rem 0.5rem 1.5rem calc(22px + 0.35rem);
 		pointer-events: none;
-		transform: translate3d(-10px, 0, 0);
+		transform: translate3d(-1.15rem, 0, 0);
 		opacity: 0;
 		visibility: hidden;
 		transition:
@@ -512,15 +532,19 @@
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 12px var(--bg);
-		transition: color 150ms ease;
+		transition:
+			color 220ms var(--toc-ease),
+			background 220ms var(--toc-ease);
 	}
 
 	.panel-item:hover {
 		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
 	}
 
 	.panel-item.active {
 		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--gold) 10%, transparent);
 	}
 
 	.pi-title {
@@ -563,6 +587,10 @@
 		border-left: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
 	}
 
+	.ep-block {
+		border-radius: var(--radius);
+	}
+
 	.ep-row {
 		display: flex;
 		align-items: flex-start;
@@ -591,6 +619,10 @@
 		cursor: pointer;
 		color: color-mix(in srgb, var(--gold) 78%, transparent);
 		-webkit-tap-highlight-color: transparent;
+		border-radius: 999px;
+		transition:
+			color 220ms var(--toc-ease),
+			background 220ms var(--toc-ease);
 	}
 
 	.ep-chevron::before {
@@ -601,7 +633,8 @@
 		border-right: 1.5px solid currentColor;
 		border-bottom: 1.5px solid currentColor;
 		transform: rotate(-45deg);
-		transition: transform 180ms ease;
+		transform-origin: 50% 50%;
+		transition: transform 320ms var(--toc-ease);
 	}
 
 	.ep-chevron.open::before {
@@ -610,6 +643,7 @@
 
 	.ep-chevron:hover {
 		color: var(--gold);
+		background: color-mix(in srgb, var(--gold) 14%, transparent);
 	}
 
 	.sub-item {
@@ -629,15 +663,23 @@
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 10px var(--bg);
-		transition: color 150ms ease;
+		transition:
+			color 220ms var(--toc-ease),
+			background 220ms var(--toc-ease);
 	}
 
 	.sub-item:hover {
 		color: color-mix(in srgb, var(--fg) 92%, transparent);
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
 	}
 
 	.sub-item.active {
 		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--gold) 11%, transparent);
+	}
+
+	.sub-item.branch {
+		color: color-mix(in srgb, var(--fg) 82%, transparent);
 	}
 
 	.si-year {
@@ -655,8 +697,23 @@
 		letter-spacing: var(--tracking-display);
 	}
 
+	.scene-fold {
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 340ms var(--toc-ease);
+	}
+
+	.scene-fold.open {
+		grid-template-rows: 1fr;
+	}
+
+	.scene-fold-inner {
+		overflow: hidden;
+		min-height: 0;
+	}
+
 	.scenes {
-		margin: 0.08rem 0 0.28rem 1.25rem;
+		margin: 0.08rem 0 0.34rem 1.25rem;
 		padding-left: 0.45rem;
 		border-left: 1px solid color-mix(in srgb, var(--gold) 26%, transparent);
 	}
@@ -664,6 +721,7 @@
 	.scene-item {
 		display: flex;
 		align-items: baseline;
+		gap: 0.45rem;
 		width: 100%;
 		font: inherit;
 		font-size: 0.7rem;
@@ -677,15 +735,33 @@
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 10px var(--bg);
-		transition: color 150ms ease;
+		transition:
+			color 220ms var(--toc-ease),
+			background 220ms var(--toc-ease),
+			transform 220ms var(--toc-ease);
 	}
 
 	.scene-item:hover {
 		color: color-mix(in srgb, var(--fg) 88%, transparent);
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
 	}
 
 	.scene-item.active {
 		color: var(--gold);
+		background: color-mix(in srgb, var(--gold) 10%, transparent);
+	}
+
+	.scene-num {
+		flex-shrink: 0;
+		width: 1.15em;
+		font-variant-numeric: tabular-nums;
+		font-size: 0.64rem;
+		opacity: 0.55;
+		color: var(--gold);
+	}
+
+	.scene-item.active .scene-num {
+		opacity: 1;
 	}
 
 	.scene-title {

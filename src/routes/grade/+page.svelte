@@ -5,7 +5,6 @@
 	import { peopleOfSlot } from '$lib/imagePeople';
 	import { storyImg } from '$lib/img';
 	import { nsfwAllowed } from '$lib/nsfwUi.svelte';
-	import NsfwToggle from '$lib/components/NsfwToggle.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import GradeForm from '$lib/components/GradeForm.svelte';
 	import {
@@ -225,7 +224,6 @@
 			<span>{remainingCount} left</span>
 		</div>
 		<div class="tools">
-			<NsfwToggle compact />
 			<div class="modes" role="tablist" aria-label="Queue">
 				<button type="button" class:on={mode === 'remaining'} onclick={() => setMode('remaining')}>
 					Left

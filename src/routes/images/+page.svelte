@@ -10,7 +10,6 @@
 	} from '$lib/storyImages';
 	import type { GalleryDeleteItem, GalleryDeleteResponse } from '$lib/galleryDelete';
 	import { storyImg } from '$lib/img';
-	import NsfwToggle from '$lib/components/NsfwToggle.svelte';
 	import { nsfwAllowed, nsfwUi } from '$lib/nsfwUi.svelte';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { entryId } from '$lib/story';
@@ -300,7 +299,6 @@
 					<h1>Images</h1>
 				</div>
 				<div class="mast-tools">
-					<NsfwToggle />
 					<label class="search">
 						<span class="sr-only">Search stills</span>
 						<input

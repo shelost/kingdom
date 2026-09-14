@@ -23,7 +23,7 @@ export function endTocJump(gen?: number) {
 }
 
 /** Desktop layout settle for jump-after-close (matches --toc-duration). */
-export const TOC_DURATION_MS = 140;
+export const TOC_DURATION_MS = 380;
 
 /**
  * Scroll anchor for the TOC panel: the topmost visible item (`id`) and its

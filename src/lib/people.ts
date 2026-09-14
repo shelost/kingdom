@@ -465,9 +465,9 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-yeon',
 		title: 'Chieftain of Jolbon',
 		tagline: 'Suspicious of an exile — until that exile split his arrow.',
-		quote: "Salt and iron before courtesy.",
+		quote: "The millet likes you. I don't. Stay anyway.",
 		nature:
-			'Speaks the way later Yeons will speak — short, hot, no patience for a Go prince who arrives with nothing but a bow. The Yeon clan’s river wealth against the royal Go claim starts here, implied in every weighing look he gives Jumong.',
+			'Speaks the way later Yeons will speak — short, hot, no patience for a name that arrives before the man has hunted. Scouts drag Jumong in; Tabal shows him the valley like a ledger he does not want to share. He finds use first (boar, ditch, a count that comes out even) and liking much later, if at all. The Yeon clan’s river wealth against the royal Go claim starts here, implied in every weighing look.',
 		blade: 'Ring-pommel hunting sword — tiger-tooth guard, no court polish.',
 		events: [
 			{ label: 'Backs an exiled prince with salt, iron and his daughter.' },
@@ -960,7 +960,9 @@ export const PEOPLE: Person[] = [
 			{
 				until: 641,
 				name: 'Buyeo Euija',
-				title: 'Crown Prince of Baekje'
+				title: 'Crown Prince of Baekje',
+				label: 'As prince, in disguise',
+				avatar: '/ch_euija_young.png'
 			},
 			{
 				from: 641,
@@ -1364,7 +1366,17 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_dragon.png',
 		stages: [
 			{
+				id: 'child',
+				until: 636,
+				name: 'Bupmin',
+				korean: '법민',
+				title: 'Prince of Silla',
+				label: 'As a boy',
+				avatar: '/ch_bupmin_child.png'
+			},
+			{
 				id: 'prince',
+				from: 636,
 				until: 643,
 				name: 'Bupmin',
 				korean: '법민',
@@ -2202,10 +2214,10 @@ export const PEOPLE: Person[] = [
 		tagline: 'Founded one kingdom with her husband, then walked south and founded another with her sons.',
 		ideology: 'Partner-founder',
 		ideologyNote: 'Co-architect at the root; power shared before it becomes a title.',
-		quote: "The bow wins the night. The road wins the rest.",
+		quote: "Don’t— don’t be nice. I’ll get stupid.",
 		nature:
-			'Yeon by birth (Tabal’s daughter) and Go by marriage to Jumong — both houses claim her. Love first, alliance second — hunger that founds kingdoms. Book-pervert under a tsundere hide: she ogles him, imagines the nights in language she will not say, and pretends hostility because the heat is too loud. She snubs him at the well, hoards scraps from every meeting, and only admits the count was him after he turns to leave. On the porch she is Tabal’s strong daughter. With Jumong, desire is insult, inventory, and a chase across packed earth.',
-		arc: 'Daughter of Yeon Tabal; she falls for Jumong before the alliance is spoken, hides it as scorn, and is caught by a well-kiss and a stash of his things. Her father’s suspicion breaks on an archery contest he sets while still sour. She gives Jumong the tribes that make Goryeo. When his first son arrives from Buyeo and takes the succession, she does not fight for it — she takes Onjo and Biryu south and builds Baekje instead.',
+			'Tabal’s eldest: chin-up girl-boss on the packed earth — hunt muster, spear-count — then wrecked the first time she sees the wet exile, and hiding it. She does not know his father’s name; she knows a shoulder. Book-pervert in the loft. She talks to herself down there and has named that voice Little Sosuno. After she is mean in the yard she goes upstairs, ogles Jumong’s working back (meat, not a pedigree), and comes down a different woman when her father calls. Tsundere hide — 그런 거 아니거든, 바보 같애, big idiot — until a compliment lands; then she hides her face after he leaves. Unlocked she is a size queen and a jealous mate-guard: other halls’ daughters get a list of his flaws. In the grain room she dumps a whole book at him — body, the wet slap, what she wants done to Little Sosuno — then dies of shame that he heard. Jumong being kind after she hears herself makes her melt into a bigger idiot.',
+		arc: 'She is already running the Jolbon yard when the wet exile walks in. The hunt goes quiet; she hides the wreck. Days of big idiot, loft hunger, then she chases other daughters off him and screams when he asks why. Well, stash, bow, confession — then I am not your wife yet into the grain room. Pine, tribes, Goryeo. When Yuri takes the succession she says goodbye at the well, takes one last screaming night, and walks south with that glow to found Baekje.',
 		binyeo: 'Patina-gold binyeo — openwork phoenix in a dark ring; Tabal wealth worn warm, not bright.',
 		binyeoImage: '/bn_sosuno.png',
 		events: [
@@ -3366,8 +3378,8 @@ export const PEOPLE: Person[] = [
 		ideology: 'Founding unifier',
 		ideologyNote: 'Mythic state-builder — loyalty forged by exile, bow, and a kingdom that did not exist yet.',
 		quote: "From the first look — only you.",
-		nature: 'Exile who becomes a maker; with Sosuno the nights run longer than the war talk. Fun-loving and laid-back — he grins when she is mean, laughs when she dumps the bucket, and only turns serious for the bow. Charm of the bow, appetite of a man who has been hungry in more than one sense. Go-clan founder — the royal line Yeon Tabal’s hall will spend centuries arguing with.',
-		arc: 'Born of a sunbeam and a river god’s daughter, hatched from an egg, hunted by his brothers — demigod enough that the chronicle keeps him among the Gods. He fled south from Daeso’s riders; at the water Haemosu blocked the fetch and whispered a claim into him, and the river’s creatures bridged the current. He prayed at the Jumong Cavern (국동대혈) for a kingdom of his own. At Jolbon he founded Goryeo — every kingdom in this story claims a piece of his shadow. History begins where the egg cracks; mythology only explains the crack.',
+		nature: 'Exile who becomes a maker; Haemosu’s son, and it shows — Jolbon women notice; Sosuno notices them noticing. Fun-loving and laid-back. He grins when she is mean, answers to big idiot, calls her pretty or sexy like it is weather, and reassures her after she hears her own filthy mouth, which makes her worse. Only turns serious for the bow.',
+		arc: 'Born of a sunbeam and a river god’s daughter, hatched from an egg, hunted by his brothers — demigod enough that the chronicle keeps him among the Gods. He fled south from Daeso’s riders; at the water Haemosu blocked the fetch and whispered a claim into him, and the river’s creatures bridged the current. At Jolbon he ends the five tribes’ ditch-wars, marries Sosuno, and they vote him first king. He prays at the Jumong Cavern (국동대혈); dawn breaks and Haemosu unveils the work: build a world of your own. His descendants will make Goryeo the largest kingdom in Samhan. History begins where the egg cracks; mythology only explains the crack.',
 		blade: 'Ring-pommel crow bow-knife — three-legged crow scratched into the pommel by a river wife’s hand.',
 		events: [
 			{ year: -37, label: 'Crosses the river on turtles; prays at 국동대혈; founds Goryeo at Jolbon.' },
@@ -3914,6 +3926,23 @@ export const PEOPLE: Person[] = [
 		born: 620,
 		died: 660,
 		bornApprox: true,
+		stages: [
+			{
+				id: 'boy',
+				until: 640,
+				name: 'Gyebek',
+				label: 'As a boy',
+				avatar: '/ch_gyebek_boy.png'
+			},
+			{
+				id: 'general',
+				from: 640,
+				name: 'Gyebek',
+				title: 'General of Baekje',
+				label: 'As general',
+				avatar: '/ch_gyebek.png'
+			}
+		],
 		tagline: '“I will complete my duty.”',
 		ideology: 'Apolitical soldier-ethic',
 		ideologyNote: 'Duty without a platform; numbers and promises over factions and -isms.',
@@ -6653,6 +6682,9 @@ const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string 
 	muryuk: { color: '#8B5CF6' },
 	seohyeon: { color: '#3E8EF0' },
 	munmu: { color: '#C41E3A' },
+	gyebek: { color: '#d9b13a' },
+	euija: { color: '#e08a2e' },
+	gesomun: { color: '#d0362f' },
 	pumsuk: { color: '#7EB8F0' },
 	gotaso: { color: '#F0A3C0' },
 	munhee: { color: '#E07FA8' },
