@@ -153,6 +153,8 @@ export interface Person {
 		| 'silla'
 		| 'baekje'
 		| 'goguryeo'
+		| 'buyeo'
+		| 'jolbon'
 		| 'tang'
 		| 'gaya'
 		| 'yamato'
@@ -202,6 +204,13 @@ export interface Person {
 	blade?: string;
 	/** Ring-pommel illustration (`/sword_*.png` in static). */
 	swordImage?: string;
+	/**
+	 * Named object board (`/obj_*.png` in static) — chariot, relic, vehicle.
+	 * Same hook as `swordImage` / `binyeoImage`: wiki + GenerateImage DNA.
+	 */
+	objectImage?: string;
+	/** Prose for the object board (chariot, relic) — wiki caption beside `objectImage`. */
+	object?: string;
 	/** Unique binyeo — hairpin that hints at a woman’s station and nature. */
 	binyeo?: string;
 	/** Binyeo illustration (`/bn_*.png` in static). */
@@ -305,6 +314,16 @@ export const KINGDOMS: Record<
 		flag: '/flag_goguryeo.svg',
 		icons: 'crown · three-legged crow · red · sun · will'
 	},
+	buyeo: {
+		label: 'Buyeo',
+		color: '#7a2430',
+		icons: 'egg · burgundy silk · river-capital · foster roof'
+	},
+	jolbon: {
+		label: 'Jolbon',
+		color: '#4a6741',
+		icons: 'five animal roofs · pine · packed earth · crow first'
+	},
 	tang: { label: 'Tang', color: '#b45309', flag: '/flag_tang.svg', icons: 'dragon · gold · empire' },
 	gaya: {
 		label: 'Gaya',
@@ -356,6 +375,9 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'haemosu',
 		avatar: '/ch_haemosu.png',
+		objectImage: '/obj_haemosu_chariot.png',
+		object:
+			'Five-dragon gold sun-chariot — two spoked wheels, open floor, curved rail, yoke; dragons jade, azure, crimson, gold, white. Same vehicle forever.',
 		name: 'Haemosu',
 		korean: '해모수',
 		hanja: '解慕漱',
@@ -369,7 +391,7 @@ export const PEOPLE: Person[] = [
 		quote: "I stop the chariot once. That once is enough.",
 		arc: 'Sun under Little Star’s 이승 — Class II beside Ibiga (sky) and the Samsin (life). Not Lord of Heaven, not Son of Heaven, but the light that still answers desire. He crosses the sky on schedule until Yuhwa in the Amnok shallows breaks the schedule; Habek casts her out; Jumong is born of that heat. A younger 해 took the night-road; Haemosu leaves that job alone until the river, once, for his son — Class II still outranks the fetch. When Yuhwa dies he does not send the dark: he comes himself, and she takes the night as moon. A territorial god: where the chariot passes, the day belongs to him.',
 		nature:
-			'Optimistic jock / cheerleader of the life gods — most extroverted of Haemosu–Ibiga–Samsin. Upbeat, carefree, heat-as-appetite; stops the chariot once and never apologizes for wanting. Has a younger 해 who walked the dark instead of the sun’s chariot; he will shove that one off a riverbank for Jumong and clap him on the shoulder afterward. Death is not his office — except once, for her.',
+			'Feral horny sun-god — optimistic jock of the life gods, most extroverted of Haemosu–Ibiga–Samsin. Easy, greedy, heat-as-appetite; stops the chariot once and never apologizes for wanting. In the copper room he is a fuckboy overridden by lust, not a romantic: Mommae-register body talk (몸매, thighs, bounce), unfinished and filthy, soft sexy skin wiping his brain. Not a tourist: he does not count the girls out loud or ask the river for a tour. Talks like a bright athlete who broke the rules on purpose — “hey,” “wait,” grab first. Has a younger 해 who walked the dark instead of the sun’s chariot; he will shove that one off a riverbank for Jumong and clap him on the shoulder afterward. Death is not his office — except once, for her.',
 		events: [
 			{ label: 'Sees Yuhwa in the shallows of the Ubal and comes down.' },
 			{ label: 'Builds a copper room on the riverbank in an afternoon.' },
@@ -392,6 +414,8 @@ export const PEOPLE: Person[] = [
 		realm: { en: 'Amnok River', ko: '압록강' },
 		tagline: 'Ruled a river the way kings rule borders — and cast out a daughter for crossing one.',
 		quote: "The Amnok keeps its own court.",
+		nature:
+			'River sovereign, not a dad in a sitcom. Speaks in full sentences like a border king: cold, formal, rhetorical. Never slang. Never telegram. He interrogates, then sentences — exile without negotiation. Korean: 하오체 / 하라체.',
 		arc: 'River-god of the Amnok, father of Yuhwa. He keeps a court under the current — vassals of fish and turtle, borders of mist — and when the sun god takes his daughter he answers as a sovereign, not a peasant: exile, not negotiation. Jumong’s claim later runs through his blood whether Habek wills it or not. Territorial: the Amnok’s mist is his seal.',
 		events: [
 			{ label: 'Casts Yuhwa out for loving Haemosu.' },
@@ -461,22 +485,87 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_yeon_tabal.png',
 		name: 'Yeon Tabal',
 		korean: '연타발',
-		kingdom: 'goguryeo',
+		kingdom: 'jolbon',
 		clan: 'clan-yeon',
 		title: 'Chieftain of Jolbon',
 		tagline: 'Suspicious of an exile — until that exile split his arrow.',
 		quote: "The millet likes you. I don't. Stay anyway.",
 		nature:
-			'Speaks the way later Yeons will speak — short, hot, no patience for a name that arrives before the man has hunted. Scouts drag Jumong in; Tabal shows him the valley like a ledger he does not want to share. He finds use first (boar, ditch, a count that comes out even) and liking much later, if at all. The Yeon clan’s river wealth against the royal Go claim starts here, implied in every weighing look.',
+			'Speaks the way later Yeons will speak — short, hot, no patience, but he still talks in sentences. Scouts drag a wet stranger; Tabal smells spy first (Mohe, Khitan, Han commandery) because the clothes are wrong. He will kill the man for not talking, then fail to bend the bow, then call him a delusional madman and put him to work anyway. He learns “Buyeo” from the exile’s mouth and answers with his own name for the pine: Jolbon. Crow-clan chieftain, largest of five animal roofs that forgot they were Joseon. Use first (boar, ditch, shed); then a worker under Sosuno’s count. Catches them in the granary and does not speechify — son-in-law takes tests, the pine is one.',
 		blade: 'Ring-pommel hunting sword — tiger-tooth guard, no court polish.',
 		events: [
 			{ label: 'Backs an exiled prince with salt, iron and his daughter.' },
 			{ label: 'The Yeon hall’s register — blunt, loyal, hard to buy — passes down the blood.' }
 		],
 		career: [
-			{ title: 'Chieftain of Jolbon', korean: '족장', from: -37 }
+			{ title: 'Crow-clan chieftain', korean: '족장', org: 'fivetribes' },
+			{ title: 'Chieftain of Jolbon', korean: '족장', org: 'nation-jolbon', from: -37 }
 		],
 		aliases: ['Yeon Tabal', 'Tabal']
+	},
+	{
+		id: 'tigerchief',
+		gender: 'm',
+		avatar: '/ch_tiger_chief.png',
+		name: 'Tiger Chief',
+		korean: '호랑이 족장',
+		kingdom: 'jolbon',
+		title: 'Tiger-clan chieftain of Jolbon',
+		tagline: 'Youngest of the four roofs that are not crow — arrives with a bow and a pelt still warm.',
+		quote: 'Count your ditch. I’ll count the shot.',
+		nature:
+			'Proud hunter voice. Red headband, tiger pelt, bow already in the hand. Talks like a man who wants the first look and the last word. Not Tabal — the tiger roof, not the crow.',
+		events: [{ label: 'Walks Tabal’s packed-earth yard for the first summit of the five tribes.' }],
+		career: [{ title: 'Tiger-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the western commandery' }],
+		aliases: ['Tiger Chief', '호랑이 족장', 'tiger chief']
+	},
+	{
+		id: 'boarchief',
+		gender: 'm',
+		avatar: '/ch_boar_chief.png',
+		name: 'Boar Chief',
+		korean: '멧돼지 족장',
+		kingdom: 'jolbon',
+		title: 'Boar-clan chieftain of Jolbon',
+		tagline: 'Heavy man, boar pelt, the roof that eats first and argues later.',
+		quote: 'If the store is full I don’t care whose ditch it was.',
+		nature:
+			'Blunt, thick, practical. Talks in grain and meat. The boar pelt is not costume — it is the roof. Not Tabal’s crow, not the tiger’s pride.',
+		events: [{ label: 'Sits the five-fire ring and votes Jumong king.' }],
+		career: [{ title: 'Boar-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the southern commandery' }],
+		aliases: ['Boar Chief', '멧돼지 족장', 'boar chief']
+	},
+	{
+		id: 'wolfchief',
+		gender: 'm',
+		avatar: '/ch_wolf_chief.png',
+		name: 'Wolf Chief',
+		korean: '늑대 족장',
+		kingdom: 'jolbon',
+		title: 'Wolf-clan chieftain of Jolbon',
+		tagline: 'White-fur eldest — counts winters, not miracles.',
+		quote: 'I have held this yard longer than that boy has been dry.',
+		nature:
+			'Oldest of the four. White beard, white wolf pelt, grey headband. Seniority first. Yields in full sentences when he yields. Not Tabal.',
+		events: [{ label: 'Oldest roof at the first summit; votes with the ring.' }],
+		career: [{ title: 'Wolf-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the northern commandery' }],
+		aliases: ['Wolf Chief', '늑대 족장', 'wolf chief']
+	},
+	{
+		id: 'bearchief',
+		gender: 'm',
+		avatar: '/ch_bear_chief.png',
+		name: 'Bear Chief',
+		korean: '곰 족장',
+		kingdom: 'jolbon',
+		title: 'Bear-clan chieftain of Jolbon',
+		tagline: 'Two black-bear heads on the shoulders — few words, red sash, the heaviest roof.',
+		quote: 'I came. That is the vote.',
+		nature:
+			'Heavy, few words. Black robe, red sash, two bear heads. Does not speechify. Sits, eats, nods. The bear roof, not the crow.',
+		events: [{ label: 'Watches the vermilion cord from the bear fire.' }],
+		career: [{ title: 'Bear-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the central commandery' }],
+		aliases: ['Bear Chief', '곰 족장', 'bear chief']
 	},
 	{
 		id: 'jomigon',
@@ -830,7 +919,7 @@ export const PEOPLE: Person[] = [
 			ko: '서로… 싸우지 마라…'
 		},
 		nature: 'The simplest and most passionate of the three: a true patriot of the common people who despises elites, committees, and tribute paid for another decade of quiet. Rural-general faith — he wholeheartedly believes the founding myths: Jumong the holy king, Haemosu’s sun line, heaven’s descent as bone of the 겨레. Speaks often of 겨레 and builds loyalty by heat rather than by book. Everyone else says Goryeo; he alone insists on Goguryeo, the old full name, as if shortening it were already surrender. Implied blood of Yeon Tabal’s hall: same blunt register, same refusal to be bought by a Go king’s courtesy. Tries to import Tang Taoism to starve the Buddhist monk aristocracy of prestige — a policy that fails to prevent a monk from opening Pyongyang. Charisma of the populist strongman — both the shelter he gives the marches and the massacre he calls rescue. Name: Yeon (연 / 淵) is the Goguryeo clan — never Baekje’s Prince Yun / Buyeo Yun (부여연 / 扶餘演), a different man, kingdom, and hanja.',
-		arc: 'An Eastern Commander (대가) who despises the High Summit’s courage-until-the-final-vote. In 642 he butchers king and Commanders, invents Supreme Commander (대막리지) above the old High Commander (막리지), seats Dosuryu as Chancellor (대대로), and rules through Bojang. When Euija mocks gods as tools of obedience, Gesomun does not flinch — the marches taught him Jumong was real. He leaves three heirs — Yeon Namseng under his own strict roof, Yeon Namgun and Yeon Namsan under his brother Jungto and sister Sooyoung — and no institution that can hold them together. For twenty years he is proved right against Tang; he builds nothing that can outlive him. Within a year of his death the three sons are at each other’s throats and the eldest guides Tang to Pyongyang. Not kin to Baekje’s Prince Yun.',
+		arc: 'An Eastern Commander (대가) on the crow tribe’s old roof — the five animal tribes’ eastern 부, still Yeon. He despises the High Summit’s courage-until-the-final-vote. In 642 he butchers king and Commanders, invents Supreme Commander (대막리지) above the old High Commander (막리지), seats Dosuryu as Chancellor (대대로), and rules through Bojang. When Euija mocks gods as tools of obedience, Gesomun does not flinch — the marches taught him Jumong was real. He leaves three heirs — Yeon Namseng under his own strict roof, Yeon Namgun and Yeon Namsan under his brother Jungto and sister Sooyoung — and no institution that can hold them together. For twenty years he is proved right against Tang; he builds nothing that can outlive him. Within a year of his death the three sons are at each other’s throats and the eldest guides Tang to Pyongyang. Not kin to Baekje’s Prince Yun.',
 		blade: 'Eastern Crow Blade (동방 오도) of the marches; after 642, the High Commander Blade (막리지검) taken from the Summit’s first chair.',
 		swordImage: '/sword_crow.png',
 		events: [
@@ -848,7 +937,7 @@ export const PEOPLE: Person[] = [
 			'only real man left in Samhan'
 		],
 		career: [
-			{ title: 'Eastern Commander', korean: '대가', hanja: '大加', org: 'highsummit', from: 634, to: 642 },
+			{ title: 'Eastern Commander', korean: '대가', hanja: '大加', org: 'highsummit', from: 634, to: 642, note: 'Crow tribe’s eastern 부' },
 			{ title: 'Supreme Commander', korean: '대막리지', hanja: '大莫離支', org: 'highsummit', from: 642 }
 		],
 		aliases: [
@@ -1809,8 +1898,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Open to women on thrones and stolen Tuesdays; modernization without Bidam’s purity test.',
 		quote: 'Judge what is best for the divine nation.',
 		firstLine: {
-			en: 'Below all of them are the slaves — but those are not counted as people.',
-			ko: '그 아래는 모두 노비 — 그러나 사람은 세지 않는다.'
+			en: 'I have taken a tiger.',
+			ko: '나는 호랑이를 잡아 본 사람이오.'
 		},
 		lastLine: {
 			en: 'The age of Kim Chunchu begins.',
@@ -1819,6 +1908,7 @@ export const PEOPLE: Person[] = [
 		nature: 'Descended from Sobuldori of the Surabol Choi — Dolsan Goheo-chon, Saryang-bu — though he cites the founder only when pressed, and never in a speech. Stuck between Bidam and Yushin since the Hwarang yard — same line, same impossible orbit around Dukman. At Okmun-gok he and Bidam still fight as one; by Radiance he answers both with hard counsel and still raises neither blade nor banner — and neutrality costs him a generation of standing.',
 		arc: 'Hwarang with Bidam and Yushin; tiger-catcher of the Council; victor with Bidam at Jade Gate Valley (옥문곡, 636) against King Mu’s spies. In 647 he is summoned to both camps before noon: he tells Yushin not to be blinded by the princess they all loved as boys, tells Bidam that arms against the crown are highest treason — then raises neither blade nor banner for ten days. After Bidam falls, the minutes file him under Neither. Later he laughs the last holdout down so Chunchu can take the throne rather than wear a crown built on that silence.',
 		events: [
+			{ year: 632, label: 'Last sleeve in the 6:0 that names Queen Sunduk — not Premier; Pumil chairs.' },
 			{ year: 636, label: 'With Bidam, destroys Baekje spies at Jade Gate Valley (옥문곡).' },
 			{
 				year: 647,
@@ -1891,11 +1981,16 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_lady_ye.png',
 		name: 'Lady Ye',
 		korean: '예씨부인',
-		kingdom: 'goguryeo',
+		kingdom: 'buyeo',
 		gender: 'f',
 		tagline: 'Jumong’s first wife, who raised his heir alone in Buyeo.',
 		quote: "A broken sword can still raise a king.",
 		binyeo: 'Plain horn binyeo — Buyeo winter-cut; she raised a king on half a sword and less gold.',
+		nature: 'Quiet on purpose. Stays when staying is the harder job. Talks in objects: a half-sword, a lamp, a door left open.',
+		family: [
+			{ id: 'jumong', role: 'Husband' },
+			{ id: 'yuri', role: 'Son' }
+		],
 		aliases: ['Lady Ye']
 	},
 	{
@@ -1911,6 +2006,8 @@ export const PEOPLE: Person[] = [
 		died: 18,
 		tagline: 'Demigod-touched heir — found the broken sword, took his father’s throne.',
 		quote: "What a father hides, a son digs up.",
+		nature:
+			'Buyeo yard first: tired of pointing at weather. Short, a little sour, then a click. He does not make speeches about destiny; he puts iron on iron and waits to see if the hall laughs.',
 		events: [{ year: -19, label: 'Succeeds Jumong; Onjo and Biryu go south.' }],
 		career: [
 			{ title: 'King of Goryeo', korean: '왕', hanja: '王', org: 'nation-goguryeo', from: -19 }
@@ -2216,15 +2313,15 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Co-architect at the root; power shared before it becomes a title.',
 		quote: "Don’t— don’t be nice. I’ll get stupid.",
 		nature:
-			'Tabal’s eldest: chin-up girl-boss on the packed earth — hunt muster, spear-count — then wrecked the first time she sees the wet exile, and hiding it. She does not know his father’s name; she knows a shoulder. Book-pervert in the loft. She talks to herself down there and has named that voice Little Sosuno. After she is mean in the yard she goes upstairs, ogles Jumong’s working back (meat, not a pedigree), and comes down a different woman when her father calls. Tsundere hide — 그런 거 아니거든, 바보 같애, big idiot — until a compliment lands; then she hides her face after he leaves. Unlocked she is a size queen and a jealous mate-guard: other halls’ daughters get a list of his flaws. In the grain room she dumps a whole book at him — body, the wet slap, what she wants done to Little Sosuno — then dies of shame that he heard. Jumong being kind after she hears herself makes her melt into a bigger idiot.',
-		arc: 'She is already running the Jolbon yard when the wet exile walks in. The hunt goes quiet; she hides the wreck. Days of big idiot, loft hunger, then she chases other daughters off him and screams when he asks why. Well, stash, bow, confession — then I am not your wife yet into the grain room. Pine, tribes, Goryeo. When Yuri takes the succession she says goodbye at the well, takes one last screaming night, and walks south with that glow to found Baekje.',
+			'Tabal’s eldest, a young widow whose arranged match ended mid-winter — the unused peg, the dry second bowl; the chin-up is the lid. Girl-boss on the packed earth — hunt muster, spear-count, then the exile on her ledger as a worker she did not ask for. The first look cracks the stern face; she hates that something in her goes stupid. Hypersexual and repressed: she kicks other daughters off her well, then goes upstairs and Little Sosuno names the cover. Book-pervert in the loft — legs open on timber, fingers, shame in the same breath. She talks to herself down there and has named that voice Little Sosuno. After she is mean in the yard she goes upstairs, ogles Jumong’s working back (meat, not a pedigree), and comes down a different woman when her father calls. Tsundere hide — 그런 거 아니거든, 바보 같애, big idiot — until her mouth slips (those other bitches) and he grins. She denies past the blush. He kisses her without asking; she shoves, then covers. He turns for the pine. Only then: first morning, first look, don’t make me twice. He makes her say the rest — hate-fuck, don’t be nice — before he comes back. Grain room: reluctant virgin, jealous that he has done this, wet because of it. Unlocked she is a size queen and a jealous mate-guard. As first queen the split hardens — public: harsh stern girlboss who forbids concubines and second halls; behind the screen door: horny pervert bookworm who still talks to Little Sosuno and demands he cum only for her. Twenty winters later the yard is still calm chin-up; the grain room is still shy-back, then shame. Jumong being kind after she hears herself makes her melt into a bigger idiot.',
+		arc: 'She is already running the Jolbon yard when the wet exile walks in. The hunt goes quiet; she hides the wreck. Tabal puts him on her count as a worker; she uses the ledger to chase other daughters off, works him stern, then the loft names what the ditch was covering. Well, stash, bow, confession — grain room — they sleep in the granary and wake to Tabal’s tests. Tribes, Goryeo, a crown that does not soften the dual: queen in the yard, dirty little bookworm behind the door, no concubines ever. As queen she walks the pine-yard rail when Jumong annexes Song Yang’s 소나무 나라 to get Oi, Mari, and Hyupbo back. When Yuri takes the succession she says goodbye at the well, takes one last screaming night, and walks south with that glow to found Baekje.',
 		binyeo: 'Patina-gold binyeo — openwork phoenix in a dark ring; Tabal wealth worn warm, not bright.',
 		binyeoImage: '/bn_sosuno.png',
 		events: [
 			{ year: -37, label: 'Helps Jumong found Goryeo at Jolbon.' },
 			{ year: -18, label: 'Leads her sons south; Baekje is founded.' }
 		],
-		aliases: ['Sosuno']
+		aliases: ['Sosuno', 'Queen Sosuno', '소서노왕비']
 	},
 	{
 		id: 'yuhwa',
@@ -2244,6 +2341,8 @@ export const PEOPLE: Person[] = [
 			en: 'Build a world of your own…. my son…!',
 			ko: '너만의 세상을 만들어라.... 아들아...!'
 		},
+		nature:
+			'Youngest river-daughter: stays when the others dive. Flirty, brave, unfinished. With sisters: 언니/동생 반말, shared water, no personality interviews. With Haemosu: teasing, hungry, half-dare — hedges, then dares. With her father: hesitating, quiet defiance that still uses 해요체. Never caption-speak.',
 		arc: 'Class III: Habek’s daughter, not a realm’s sovereign. Exile from the Amnok court for Haemosu; the egg that becomes Jumong is what the river and the sun refuse to unmake. She dies in Buyeo after he has gone. The reapers do not come — Haemosu does. She does not go down. She goes up, and the living world keeps a moon: the office that answers the sun without riding beside him.',
 		binyeo: 'Pearl-wave binyeo — mother-of-pearl shaft, blue crest and orb, gold cloud at the tail; cool, never quite dry.',
 		binyeoImage: '/bn_yuhwa.png',
@@ -2273,6 +2372,8 @@ export const PEOPLE: Person[] = [
 		title: 'River-daughter · eldest',
 		tagline: 'Habek’s first daughter — dives first, leaves the sun to the youngest.',
 		quote: 'Look up if you must. We are leaving.',
+		nature:
+			'Eldest: leaves first. Practical, curt, protective. Short orders — “야. 들어가.” — not poetry, not a lecture on heaven’s schedule. She chooses the current and expects them to follow; she does not explain why the youngest stays.',
 		arc: 'Class III: eldest of Habek’s three. In the Ubal shallows she sees the chariot stop and chooses the current over heaven. The chronicle keeps her name so the youngest is not bathing alone.',
 		events: [{ label: 'Bathes with her sisters in the Ubal; dives when the sun stops.' }],
 		family: [
@@ -2294,6 +2395,8 @@ export const PEOPLE: Person[] = [
 		title: 'River-daughter · second',
 		tagline: 'The middle sister — laughs, then follows Hwahye under.',
 		quote: 'If he is watching, he is already too late.',
+		nature:
+			'Middle: laughs, then follows Hwahye under. Mean-funny 반말. Teases Yuhwa mid-sentence and does not finish. Never interviews her (“she always stays”) — she just goes.',
 		arc: 'Class III: second of Habek’s three. She teases Yuhwa for staying upright in the shallows, then dives. The sun was never her appointment.',
 		events: [{ label: 'Bathes with her sisters in the Ubal; dives after Hwahye.' }],
 		family: [
@@ -2309,14 +2412,17 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_geumwa.png',
 		name: 'King Geumwa',
 		korean: '금와왕',
-		kingdom: 'other',
+		kingdom: 'buyeo',
 		tagline: 'Took in the exiled Yuhwa, and raised the boy who would outgrow his kingdom.',
 		quote: "Shelter what heaven abandons.",
+		nature:
+			'Warm laconic host-king. Short lines that still sound spoken — dry humor, no court lecture. Offers a room before he offers a category. Korean: gentle 하게체.',
 		family: [
 			{ id: 'daeso', role: 'Son' },
 			{ id: 'galsa', role: 'Son' },
 			{ id: 'jumong', role: 'Foster son' }
 		],
+		career: [{ title: 'King of Buyeo', korean: '왕', hanja: '王', org: 'nation-buyeo' }],
 		aliases: ['King Geumwa', 'Geumwa']
 	},
 	{
@@ -2325,10 +2431,11 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_daeso.png',
 		name: 'Daeso',
 		korean: '대소',
-		kingdom: 'other',
+		kingdom: 'buyeo',
 		died: 22,
 		tagline: 'Geumwa’s son, who could not bear being outshot by a foundling.',
 		quote: "Never be outshot by a foundling.",
+		nature: 'Heir-voice, short. Used to call the foundling 막내 and fix his grip; now the house is a contest he is losing. Counts the yard like it already belongs to him. Does not clap.',
 		family: [
 			{ id: 'geumwa', role: 'Father' },
 			{ id: 'galsa', role: 'Brother' },
@@ -2343,10 +2450,10 @@ export const PEOPLE: Person[] = [
 		name: 'Galsa',
 		korean: '갈사',
 		hanja: '曷斯',
-		kingdom: 'other',
+		kingdom: 'buyeo',
 		tagline: 'Geumwa’s younger son — the smile that shrinks when Jumong hits the mark.',
 		quote: 'If the arrow lands, pretend you meant to applaud.',
-		nature: 'Second son energy beside Daeso’s heir-rage: less throne, more side-eye. Keeps score the way hunters keep wind.',
+		nature: 'Second son: the delayed clap. Wants all three at the same table and will not pick a knife, so he looks at the dirt, then takes a smaller roof east and puts his own name on it.',
 		arc: 'Raised in Buyeo’s hall with Daeso while the egg-born boy outgrows every contest. When Jumong slips away into the night, Galsa is among the nets — not the loudest voice, but one of the smiles that got smaller each year the foundling shot true.',
 		family: [
 			{ id: 'geumwa', role: 'Father' },
@@ -2356,19 +2463,76 @@ export const PEOPLE: Person[] = [
 		aliases: ['Galsa', '갈사', '曷斯']
 	},
 	{
+		id: 'oi',
+		gender: 'm',
+		name: 'Oi',
+		korean: '오이',
+		hanja: '烏伊',
+		kingdom: 'goguryeo',
+		tagline: 'Took the ridge, not the shells — ended up in the Pine Kingdom until Jumong took the roof.',
+		quote: 'South before they count us.',
+		nature: 'Short. Already packing. Talks over Mari. Does not wait for the pretty version.',
+		arc: 'Flees Buyeo with Jumong, then splits in the pines and takes the ridge while Jumong takes the river alone. The ridge does not deliver him to Tabal’s hall. He, Mari, and Hyupbo fetch up under Song Yang’s pine roof — 소나무 나라 — until King Jumong and Queen Sosuno annex that timber to get them back.',
+		aliases: ['Oi', '오이', '烏伊']
+	},
+	{
+		id: 'mari',
+		gender: 'm',
+		name: 'Mari',
+		korean: '마리',
+		hanja: '摩離',
+		kingdom: 'goguryeo',
+		tagline: 'Counted the quiet gate, then the ridge — held in the Pine Kingdom until the shaft.',
+		quote: 'If the gate’s quiet, that’s worse.',
+		nature: 'Questions, then follows. Slightly sour. The one who says the knife was real.',
+		arc: 'Splits from Jumong in the pines before the turtle crossing. The east path lands him in Song Yang’s 소나무 나라, not Tabal’s yard. After the five tribes vote him king, Jumong learns they did not vanish and takes the pine roof — a royal act — to bring Mari, Oi, and Hyupbo home.',
+		aliases: ['Mari', '마리', '摩離']
+	},
+	{
+		id: 'hyupbo',
+		gender: 'm',
+		name: 'Hyupbo',
+		korean: '협보',
+		hanja: '陜父',
+		kingdom: 'goguryeo',
+		tagline: 'Last out with the spare string — pine-kingdom guest until Jumong won the yard.',
+		quote: 'I brought the spare string.',
+		nature: 'Quiet until it is time. Carries extra. Finishes other people’s sentences with a nod.',
+		arc: 'Hands Jumong the spare string at the split and says see you in Jolbon. The other path puts him under Song Yang instead — he does not walk into Tabal’s hall with the exile. When King Jumong wins the pine yard, he gives the string back.',
+		aliases: ['Hyupbo', 'Hyeopbo', '협보', '陜父']
+	},
+	{
+		id: 'songyang',
+		gender: 'm',
+		avatar: '/ch_songyang.png',
+		name: 'Song Yang',
+		korean: '송양',
+		hanja: '松讓',
+		kingdom: 'jolbon',
+		title: 'King of the Pine Kingdom',
+		tagline: 'King of 소나무 나라 — yielded the pine roof so Jumong could take his three friends back.',
+		quote: 'This pine country had a name before you hatched.',
+		nature:
+			'Older chieftain voice. Counts seniority, not miracles. Talks like a man who has held a yard longer than the guest has been alive. When he loses, he yields in full sentences, not poetry.',
+		arc: 'Song Yang rules the Pine Kingdom — 소나무 나라, hanja 松國 in the ledgers — a Jolbon-adjacent pine roof. Oi, Mari, and Hyupbo take the ridge after the split and fetch up under his timber as guests who do not leave. After Jumong is first king and Sosuno first queen, they contest him as a royal act: annex the pine roof in order to get the three friends back. One bow, one yard, not an army. Song Yang yields the country and the three; the chronicle keeps his name so the founding is not only Tabal’s vote.',
+		events: [{ year: -37, label: 'Loses the pine-yard shaft to Jumong; 소나무 나라 yields, and the three friends return.' }],
+		family: [],
+		aliases: ['Song Yang', '송양', '松讓']
+	},
+	{
 		id: 'buyeojashin',
 		gender: 'm',
 		avatar: '/ch_buyeo_jashin.png',
 		name: 'Buyeo Jashin',
 		korean: '부여자신',
 		hanja: '扶餘子申',
-		kingdom: 'other',
+		kingdom: 'buyeo',
 		tagline: 'Geumwa’s ledger-man — reads omens the way clerks read tax.',
 		quote: 'An egg on the record is still a record.',
-		nature: 'Court strategist in red and seal-gold: calm voice, cold categories. Believes Buyeo survives by filing heaven correctly.',
+		nature: 'Autistic-formal clerk in red and seal-gold: exact categories, no small talk, prefers the precise filing. Calm voice. Believes Buyeo survives by filing heaven correctly — smash vs egg is a paperwork problem first.',
 		arc: 'Minister of the accounts and the auguries in Geumwa’s Dongbuyeo — the man who tells the king what the egg means before the egg hatches. He counsels patience when Daeso wants blood and caution when Geumwa wants pride. When Jumong crosses the river on fish and turtles, Jashin is the one who writes “unfiled” in the margin and lives with it.',
 		career: [
-			{ title: 'Minister', korean: '대臣', hanja: '大臣', from: -50, to: -20, note: 'Geumwa’s Dongbuyeo court' }
+			{ title: 'Minister', korean: '대臣', hanja: '大臣', from: -50, to: -20, note: 'Geumwa’s Dongbuyeo court', org: 'nation-buyeo' }
 		],
 		aliases: ['Buyeo Jashin', 'Jashin', '부여자신', '扶餘子申']
 	},
@@ -3076,7 +3240,7 @@ export const PEOPLE: Person[] = [
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; High Commander Blade taken.' }],
 		sobriquets: ['Stone Haetae of Goryeo'],
 		career: [
-			{ title: 'High Commander', korean: '막리지', hanja: '莫離支', org: 'highsummit', to: 642 }
+			{ title: 'High Commander', korean: '막리지', hanja: '莫離支', org: 'highsummit', to: 642, note: 'Sits the bear tribe’s central 부 as first sword' }
 		],
 		aliases: [
 			'Yeon Gusesa',
@@ -3106,7 +3270,7 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Northern Crow Blade taken.' }],
 		career: [
-			{ title: 'Northern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
+			{ title: 'Northern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Wolf tribe’s northern 부' }
 		],
 		aliases: ['Go Ul', 'Northern Commander', 'the Northern Commander', '고울']
 	},
@@ -3128,7 +3292,7 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Southern Crow Blade taken.' }],
 		career: [
-			{ title: 'Southern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
+			{ title: 'Southern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Boar tribe’s southern 부' }
 		],
 		aliases: ['Son Daeha', 'Southern Commander', 'the Southern Commander', '손대하']
 	},
@@ -3150,7 +3314,7 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Western Crow Blade taken.' }],
 		career: [
-			{ title: 'Western Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642 }
+			{ title: 'Western Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Tiger tribe’s western 부' }
 		],
 		aliases: ['Go Heumsong', 'Western Commander', 'the Western Commander', '고흠송']
 	},
@@ -3363,6 +3527,9 @@ export const PEOPLE: Person[] = [
 		id: 'jumong',
 		gender: 'm',
 		avatar: '/ch_jumong.png',
+		objectImage: '/obj_jumong_bow.png',
+		object:
+			'Crow-bow and quiver — dark-grain recurve with a red-wrapped grip and trailing red tip-ribbons; tan quiver wrapped in red cloud-pattern, dark-red leather caps, red cord knot. The bow Tabal’s hall cannot bend; the same shape later finds a fly’s wing.',
 		name: 'Jumong',
 		korean: '주몽',
 		hanja: '朱蒙',
@@ -3378,17 +3545,28 @@ export const PEOPLE: Person[] = [
 		ideology: 'Founding unifier',
 		ideologyNote: 'Mythic state-builder — loyalty forged by exile, bow, and a kingdom that did not exist yet.',
 		quote: "From the first look — only you.",
-		nature: 'Exile who becomes a maker; Haemosu’s son, and it shows — Jolbon women notice; Sosuno notices them noticing. Fun-loving and laid-back. He grins when she is mean, answers to big idiot, calls her pretty or sexy like it is weather, and reassures her after she hears her own filthy mouth, which makes her worse. Only turns serious for the bow.',
-		arc: 'Born of a sunbeam and a river god’s daughter, hatched from an egg, hunted by his brothers — demigod enough that the chronicle keeps him among the Gods. He fled south from Daeso’s riders; at the water Haemosu blocked the fetch and whispered a claim into him, and the river’s creatures bridged the current. At Jolbon he ends the five tribes’ ditch-wars, marries Sosuno, and they vote him first king. He prays at the Jumong Cavern (국동대혈); dawn breaks and Haemosu unveils the work: build a world of your own. His descendants will make Goryeo the largest kingdom in Samhan. History begins where the egg cracks; mythology only explains the crack.',
+		nature: 'Exile who becomes a maker; Haemosu’s son, and it shows — Jolbon women notice; Sosuno notices them noticing. Fun-loving and laid-back. Tabal puts him on Sosuno’s ledger as a worker; he grins at the ditch while she is stern. He grins when she is mean, answers to big idiot, calls her pretty or sexy like it is weather. After she slips (other bitches) he teases — how long, am I your type — then points at the blush and walks. He will not take the confession back for her; he makes her say what she wants done. Grain room he is the one who has done this; he does not mock the shaking, then he is not nice. Kindness after she hears herself makes her worse. Only turns serious for the bow.',
+		arc: 'Born of a sunbeam and a river god’s daughter, hatched from an egg, hunted by his brothers — demigod enough that the chronicle keeps him among the Gods. He fled south from Daeso’s riders with Oi, Mari, and Hyupbo; they split in the pines, and he crossed the river alone on fish and turtles — the three do not arrive with him at Tabal’s hall. At Jolbon he ends the five tribes’ ditch-wars, marries Sosuno, and they vote him first king. After the cord he learns Oi, Mari, and Hyupbo reached Song Yang’s Pine Kingdom (소나무 나라) and annexes that roof as king, queen on the rail, to get them back. He prays at the Jumong Cavern (국동대혈); dawn breaks and Haemosu unveils the work: build a world of your own. His descendants will make Goryeo the largest kingdom in Samhan. History begins where the egg cracks; mythology only explains the crack.',
 		blade: 'Ring-pommel crow bow-knife — three-legged crow scratched into the pommel by a river wife’s hand.',
 		events: [
-			{ year: -37, label: 'Crosses the river on turtles; prays at 국동대혈; founds Goryeo at Jolbon.' },
+			{ year: -37, label: 'Crosses the river on turtles; founds Goryeo at Jolbon; takes 소나무 나라 to recover Oi, Mari, and Hyupbo.' },
 			{ year: -19, label: 'Dies; his son Yuri succeeds him.' }
 		],
 		career: [
+			{ title: 'Voted king of the five tribes', korean: '왕', hanja: '王', org: 'fivetribes', from: -37 },
 			{ title: 'King of Goryeo', korean: '왕', hanja: '王', org: 'nation-goguryeo', from: -37 }
 		],
-		aliases: ['Jumong']
+		family: [
+			{ id: 'haemosu', role: 'Father' },
+			{ id: 'yuhwa', role: 'Mother' },
+			{ id: 'geumwa', role: 'Foster father' },
+			{ id: 'daeso', role: 'Stepbrother' },
+			{ id: 'galsa', role: 'Stepbrother' },
+			{ id: 'ladyye', role: 'Wife' },
+			{ id: 'yuri', role: 'Son' },
+			{ id: 'sosuno', role: 'Wife' }
+		],
+		aliases: ['Jumong', 'Dongmyung', 'Dongmyeong', 'King Dongmyung', '동명왕', '동명성왕', '주몽']
 	},
 	{
 		id: 'onjo',
@@ -3402,6 +3580,8 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-buyeo',
 		tagline: 'Jumong’s son who went south and named a kingdom for a hundred crossings.',
 		quote: "South is also a beginning.",
+		nature:
+			'Counts sacks. Jokes that die. Notices the furniture first. When he names a country he names it bigger than the hurt, then asks how it sounds.',
 		events: [{ year: -18, label: 'Founds Baekje at Wiryeseong.' }],
 		career: [
 			{ title: 'King', korean: '왕', hanja: '王', org: 'nation-baekje', from: -18 }
@@ -3418,6 +3598,7 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-buyeo',
 		tagline: 'Chose the salt marshes of Michuhol, and regretted it.',
 		quote: "Wrong shores still make kingdoms.",
+		nature: 'Packs first. Hates speeches. If someone cries he leaves faster. Salt later.',
 		aliases: ['Biryu']
 	},
 	{
@@ -3753,15 +3934,15 @@ export const PEOPLE: Person[] = [
 		korean: '을제',
 		kingdom: 'silla',
 		gender: 'm',
-		title: 'Premier (상대등) of the Harmony Council',
-		tagline: 'The Premier who held the first chair the night six sleeves named a queen.',
+		title: 'Councillor (대등) of the Harmony Council',
+		tagline: 'A sleeve at the 632 night — Premier Pumil holds the first chair.',
 		quote: 'Tonight the better option is a confession.',
-		nature: 'Chairs by waiting for a better option — until Bidam forces him to admit there is none but Dukman. Steadies the early reign afterward with the fatigue of a man who has already lost an argument that saved the country.',
-		arc: 'In 632 he withholds on the initial vote for a woman king, then yields on the final vote when Bidam leaves him no ghost to invent. Remains Premier into Sunduk’s first years.',
+		nature: 'Sits the hung vote without taking the minutes. The first chair belongs to Pumil; Euljé is the fatigue beside him, not the nod that opens the session.',
+		arc: 'In 632 he sits while Premier Pumil chairs the 3:3 that Bidam and Alchun turn to 6:0. He does not succeed to the first chair; in 645 that seat passes from Pumil to Supum.',
 		career: [
-			{ title: 'Premier', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 645 }
+			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 }
 		],
-		aliases: ['Euljé', 'Eulje', '을제', 'Premier Euljé']
+		aliases: ['Euljé', 'Eulje', '을제']
 	},
 	{
 		id: 'supum',
@@ -3772,10 +3953,10 @@ export const PEOPLE: Person[] = [
 		hanja: '金述品',
 		title: 'Premier (상대등) of the Harmony Council',
 		kingdom: 'silla',
-		tagline: 'Succeeds Euljé in the first chair — the steadier hand while the yard’s old boys argue succession.',
+		tagline: 'Succeeds Pumil in the first chair — the steadier hand while the yard’s old boys argue succession.',
 		quote: 'The room must finish its vote before the country finishes its patience.',
 		nature: 'A councillor who becomes premier by outlasting argument, not by winning one. Chairs the unanimity rule without treating it as theatre — which makes Bidam’s withheld hand feel louder than a shout.',
-		arc: 'In 645 he takes the premier’s seat when Euljé steps down. Holds the council through the Seungman veto and into the season when Bidam raises men at Radiance. The chronicle names him less than the rebels; the grain ledger names him daily.',
+		arc: 'In 645 he takes the premier’s seat when Pumil steps down. Holds the council through the Seungman veto and into the season when Bidam raises men at Radiance. The chronicle names him less than the rebels; the grain ledger names him daily.',
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 },
 			{ title: 'Premier', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 645, to: 647 }
@@ -3858,17 +4039,33 @@ export const PEOPLE: Person[] = [
 		korean: '김품일',
 		hanja: '金品日',
 		kingdom: 'silla',
-		title: 'General · minor Harmony Councillor',
-		tagline: 'Right column at Hwangsan — Gwanchang’s father; a sleeve the council barely counts.',
-		quote: 'My son’s face is as if he lived.',
-		arc: 'A minor daedeung who held the southern road at the Yellow Mountain Fields. When Gwanchang’s head came back tied to the saddle, Pumil took it up by the hair — and the wet sleeve broke Silla’s hesitation harder than any speech.',
-		events: [{ year: 660, label: 'Commands Silla’s right column at Hwangsanbeol.' }],
+		born: 572,
+		bornApprox: true,
+		title: 'Premier (상대등) of the Harmony Council',
+		tagline: 'Elderly statesman — Premier the night six sleeves named a queen.',
+		quote: 'The first count is split.',
+		firstLine: {
+			en: 'Below all of them are the slaves — but those are not counted as people.',
+			ko: '그 아래로는… 노비가 있지만, 그건 사람 수에 넣지 않습니다.'
+		},
+		lastLine: {
+			en: 'My son’s face is as if he lived.',
+			ko: '아들의 얼굴이, 산 것과 같구나.'
+		},
+		nature:
+			'Grey when Bidam, Yushin, and Alchun are still yard-brothers. He chairs the Harmony Council like a man who has kept the same roof through three kings: tea, wooden pieces, the flame that must turn blue. Not a Hwarang classmate — an old hall, patient, slightly tired of the word woman being said forty times.',
+		arc: 'In 632 he is Premier: he names the hung 3:3, waits through Bidam’s speech, and watches Alchun — not himself — move the last piece. In 645 he yields the first chair to Supum. In 660 he commands Silla’s right column at Hwangsanbeol; when Gwanchang’s head comes back tied to the saddle, he takes it up by the hair.',
+		events: [
+			{ year: 632, label: 'As Premier, chairs the hung vote that names Queen Sunduk.' },
+			{ year: 645, label: 'Yields the first chair to Supum.' },
+			{ year: 660, label: 'Commands Silla’s right column at Hwangsanbeol.' }
+		],
 		family: [{ id: 'gwanchang', role: 'Son' }],
 		career: [
-			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 640, note: 'minor seat' },
+			{ title: 'Premier', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 645 },
 			{ title: 'General', korean: '장군', hanja: '將軍', from: 660, to: 660 }
 		],
-		aliases: ['Pumil', 'Kim Pumil', '품일', '品日']
+		aliases: ['Pumil', 'Kim Pumil', '품일', '品日', 'Premier Pumil']
 	},
 	{
 		id: 'daedeung_stern',
@@ -5417,20 +5614,20 @@ export const CONCEPTS: Person[] = [
 		events: [
 			{ year: 579, label: 'Deposes King Jinji for misconduct — initial vote, deliberation, final vote.' },
 			{ year: 632, label: 'Initial 3:3 → final 6:0 — Queen Sunduk named.' },
-			{ year: 645, label: 'Supum succeeds Euljé as Premier; Bidam alone blocks Seungman.' },
+			{ year: 645, label: 'Supum succeeds Pumil as Premier; Bidam alone blocks Seungman.' },
 			{ year: 651, label: 'Outflanked by the Royal Secretariat (집사부).' },
 			{ year: 654, label: 'Enthrones Kim Chunchu as King Muyeol.' }
 		],
 		orgChart: [
-			{ id: 'supum', role: '상대등 · Premier', reportsTo: null },
+			{ id: 'pumil', role: '상대등 · Premier (632–645)', reportsTo: null },
+			{ id: 'supum', role: '상대등 · Premier (from 645)', reportsTo: null },
 			{ id: 'yushin', role: '대등', reportsTo: 'supum' },
 			{ id: 'alchun', role: '대등', reportsTo: 'supum' },
 			{ id: 'murim', role: '대등', reportsTo: 'supum' },
 			{ id: 'imjong', role: '대등', reportsTo: 'supum' },
 			{ id: 'suljong', role: '대등', reportsTo: 'supum' },
 			{ id: 'yumjang', role: '대등', reportsTo: 'supum' },
-			{ id: 'bidam', role: '대등 · 645 veto', reportsTo: 'supum' },
-			{ id: 'pumil', role: '대등 · minor', reportsTo: 'supum' }
+			{ id: 'bidam', role: '대등 · 645 veto', reportsTo: 'supum' }
 		],
 		aliases: [
 			'Harmony Council',
@@ -5715,7 +5912,7 @@ export const CONCEPTS: Person[] = [
 		title: 'Goguryeo’s council of Commanders',
 		tagline: 'Commanders (대가) under a High Commander (막리지) — the king keeps the final vote.',
 		nature: 'Consultation with a crown: all opinions equally valued until His Majesty finalises — then equally forgotten. After 642 the Supreme Commander (대막리지) makes the final vote a formality, with a Chancellor (대대로) to issue retrospective minutes.',
-		arc: 'The Five Commanderies argue as Commanders (대가); the High Commander (막리지) is first sword; the king casts the last word. Yeon’s massacre replaces the old first chair with Supreme Commander (대막리지) and seats Dosuryu as Chancellor (대대로) — force first, procedure after.',
+		arc: 'The Five Commanderies are the Five Animal Tribes under later names: crow East, tiger West, boar South, wolf North, bear Central. They argue as Commanders (대가); the High Commander (막리지) is first sword — Yeon Gusesa sits the old bear chair; Yeon Gesomun holds the crow’s eastern 부. The king casts the last word. Yeon’s massacre replaces the old first chair with Supreme Commander (대막리지) and seats Dosuryu as Chancellor (대대로) — force first, procedure after.',
 		events: [
 			{ year: 642, label: 'Summit cleared at Yeon’s banquet; Supreme Commander created.' },
 			{ year: 642, label: 'Dosuryu named Chancellor (대대로).' }
@@ -5743,6 +5940,41 @@ export const CONCEPTS: Person[] = [
 			'대막리지',
 			'Chancellor',
 			'대대로'
+		]
+	},
+	{
+		id: 'fivetribes',
+		name: 'The Five Tribes',
+		korean: '오부족',
+		hanja: '五部族',
+		entity: 'organization',
+		kingdom: 'jolbon',
+		title: 'Five animal roofs of Jolbon',
+		tagline: 'Crow, tiger, boar, wolf, bear — the league that votes Jumong king, then becomes Goguryeo’s five commanderies.',
+		nature: 'Not a throne: five ditch-warring roofs that forgot they were Joseon. Tabal’s crow is largest. They hate sharing a yard more than they hate a stranger with a bow. The first summit is the thing they never wanted — agreement.',
+		arc: 'Bear, tiger, crow, wolf, boar sit Tabal’s packed-earth ring and vote Jumong first king of Goryeo. The animal names do not die; they are relabeled as the five 부. Crow becomes the eastern commandery — the Yeon hall keeps that roof until Yeon Gesomun sits it as 대가, then butchers the other four chairs in 642. Tiger → west (Go Heumsong), boar → south (Son Daeha), wolf → north (Go Ul), bear → central (the High Commander’s seat, Yeon Gusesa). The High Summit is this league with grey giwa and a king’s last word.',
+		events: [
+			{ year: -37, label: 'First summit on Tabal’s yard; they vote Jumong king.' },
+			{ year: -37, label: 'The five roofs become Goryeo’s five commanderies.' },
+			{ year: 642, label: 'The crow’s eastern 대가 clears the other four chairs at Yeon’s banquet.' }
+		],
+		orgChart: [
+			{ id: 'jumong', role: 'First king they vote', reportsTo: null },
+			{ id: 'yeontabal', role: 'Crow · 동부', reportsTo: 'jumong' },
+			{ id: 'tigerchief', role: 'Tiger · 서부', reportsTo: 'jumong' },
+			{ id: 'boarchief', role: 'Boar · 남부', reportsTo: 'jumong' },
+			{ id: 'wolfchief', role: 'Wolf · 북부', reportsTo: 'jumong' },
+			{ id: 'bearchief', role: 'Bear · 중부', reportsTo: 'jumong' }
+		],
+		aliases: [
+			'Five Tribes',
+			'the Five Tribes',
+			'five tribes',
+			'five animal tribes',
+			'오부족',
+			'오부',
+			'Five Animal Tribes',
+			'five roofs'
 		]
 	},
 	{
@@ -6097,8 +6329,8 @@ export const GROUPS: Person[] = [
 		entity: 'group',
 		kingdom: 'goguryeo',
 		title: 'Four directional 대가 and the High Commander',
-		tagline: 'East, West, South, North — and the 막리지 whose blade sits above them.',
-		arc: 'Four Commanders (대가) under a High Commander (막리지): Gesomun in the East with the Eastern Crow Blade, Go Heumsong in the West, Son Daeha in the South, Go Ul in the North, and Yeon Gusesa as High Commander with the 막리지검. In 642 the Eastern Commander butchers the other four at a banquet. He keeps the Eastern Crow Blade he brought and takes the rest — three cardinal crows and the High Commander Blade. They are five swords, not one weapon.',
+		tagline: 'Four directional 대가 and the High Commander — the Five Tribes under later names.',
+		arc: 'The five animal roofs of Jolbon renamed as commanderies: Gesomun in the East (crow tribe, Eastern Crow Blade), Go Heumsong in the West (tiger), Son Daeha in the South (boar), Go Ul in the North (wolf), and Yeon Gusesa as High Commander on the bear’s central seat with the 막리지검. In 642 the Eastern Commander — crow roof, Yeon hall — butchers the other four at a banquet. He keeps the Eastern Crow Blade he brought and takes the rest. They are five swords, not one weapon.',
 		events: [{ year: 642, label: 'Four of the five die at Yeon’s banquet; the Eastern Commander rules.' }],
 		aliases: ['Five Commanders of Goguryeo', 'The Five Commanders of Goguryeo', '고려오대가']
 	},
@@ -6137,7 +6369,7 @@ export const CLANS: Person[] = [
 		kingdom: 'goguryeo',
 		title: 'Clan of Yeon Tabal → Gesomun',
 		tagline: 'Salt, iron, and crow-stamped blades — the hall that preferred carrying to asking.',
-		arc: 'From Yeon Tabal’s Jolbon hospitality to Gesomun’s massacre and three quarreling sons. The house outranks ordinary Commanders once Supreme Commander exists; it cannot invent a succession that survives Gesomun’s sleep.',
+		arc: 'From Yeon Tabal’s crow roof at Jolbon — largest of five animal tribes — to the eastern commandery Gesomun holds as 대가, then the massacre and three quarreling sons. The house outranks ordinary Commanders once Supreme Commander exists; it cannot invent a succession that survives Gesomun’s sleep.',
 		aliases: ['Yeon House', 'Yeon clan', '연씨', '淵氏', 'House of Yeon', 'The Yeon House']
 	},
 	{
@@ -6467,28 +6699,88 @@ export const NATIONS: Person[] = [
 		title: 'Kingdom of Jumong',
 		photo: '/nations/goguryeo.jpg',
 		photoCredit: 'The Gwanggaeto Stele at Ji’an — erected 414 (Wikimedia Commons)',
-		tagline: 'People of Jumong — the Five Tribes that broke the Sui and stalled the Tang.',
+		tagline: 'People of Jumong — five commanderies that were five animal tribes, and the wall that stalled two empires.',
 		ideology: 'Martial ethnostate',
 		ideologyNote: 'Frontier power politics; 겨레 spoken as if it were a constitution.',
-		nature: 'High Summit of regional commands; kings who pay tribute for another decade of quiet. After 642, a Supreme Commander and a Grand Herald speak for the 겨레 over a nephew-king — force in place of committee. The common tongue of the age is Goryeo; Yeon alone says Goguryeo, as if the longer name were a wall. Cold marches, sealed capital, will recited until it becomes weather — and the crown that binds the three-legged crow. Yeon hall versus Go hall is the private war under the public one.',
-		arc: 'Founded by Jumong the archer under the three-legged crow of the sun — a red kingdom of will that would rather break than bend. Grown under Gwanggaeto into the great power of Northeast Asia, Goryeo spends its final century as the wall between the peninsula and two western empires: it destroys the Sui invasions, turns back Taizong at Ansi, and breaks army after army. What no emperor could do, succession did: after Yeon Gesomun dies his sons turn on each other, and in 668 his eldest guides the Tang army to Pyongyang. A shard of the crown walks north into the millet — and the sentence does not stop.',
+		nature: 'High Summit of regional commands — the Five Tribes wearing later titles. Kings who pay tribute for another decade of quiet. After 642, a Supreme Commander and a Grand Herald speak for the 겨레 over a nephew-king — force in place of committee. The common tongue of the age is Goryeo; Yeon alone says Goguryeo, as if the longer name were a wall. Cold marches, sealed capital, will recited until it becomes weather — and the crown that binds the three-legged crow. Yeon hall versus Go hall is the private war under the public one.',
+		arc: 'Founded by Jumong the archer under the three-legged crow of the sun — a red kingdom of will that would rather break than bend. Jolbon’s five animal roofs become the five 부; the crow tribe is the eastern commandery the Yeons keep. Grown under Gwanggaeto into the great power of Northeast Asia, Goryeo spends its final century as the wall between the peninsula and two western empires: it destroys the Sui invasions, turns back Taizong at Ansi, and breaks army after army. What no emperor could do, succession did: after Yeon Gesomun dies his sons turn on each other, and in 668 his eldest guides the Tang army to Pyongyang. A shard of the crown walks north into the millet — and the sentence does not stop.',
 		events: [
-			{ year: -37, label: 'Founded at Jolbon by Jumong.' },
+			{ year: -37, label: 'Founded at Jolbon by Jumong — five tribes become five commanderies.' },
 			{ year: 413, label: 'Gwanggaeto dies; his stele lists his conquests.' },
 			{ year: 612, label: 'Destroys the Sui at the Salsu.' },
 			{ year: 645, label: 'Turns back Taizong at Ansi.' },
 			{ year: 668, label: 'Pyongyang falls to the Silla–Tang alliance.' },
 			{ year: 698, label: 'Balhae rises — the sentence kept.' }
 		],
-		sobriquets: ['Kingdom of Jumong', 'People of Jumong', 'the Five Tribes'],
+		sobriquets: ['Kingdom of Jumong', 'People of Jumong'],
 		aliases: [
 			'Goguryeo',
 			'Goryeo',
 			'고려',
 			'Kingdom of Jumong',
-			'People of Jumong',
-			'the Five Tribes',
-			'Five Tribes'
+			'People of Jumong'
+		]
+	},
+	{
+		id: 'nation-buyeo',
+		name: 'Buyeo',
+		korean: '부여',
+		hanja: '扶餘',
+		entity: 'nation',
+		kingdom: 'buyeo',
+		born: -86,
+		died: 22,
+		bornApprox: true,
+		title: 'The northern river-capital',
+		photo: '/pl_buyeo_yard.png',
+		photoCredit: 'Northern Buyeo timber yard — chronicle place still (pl_buyeo_yard)',
+		tagline: 'Geumwa’s timber yard — the roof that sheltered Yuhwa’s egg and hunted the boy it raised.',
+		ideology: 'Foster-court conservatism',
+		ideologyNote: 'A ledger-kingdom: eggs, heirs, and whether heaven files correctly.',
+		nature: 'Burgundy court silk, packed-earth square, iron-boss doors on a river. Geumwa hosts what heaven abandons; Daeso cannot bear being outshot; Galsa looks at the dirt; Jashin files the omen. Not Samhan. The north the chronicle flees.',
+		arc: 'Northern Buyeo takes in Habek’s cast-out daughter and the egg that hatches Jumong. The yard teaches brothers to share a mark-stake until the foundling outgrows the house. Jumong slips the night nets; Daeso’s hunt fails at the river of fish and turtles. Lady Ye raises Yuri here on half a sword. Daeso dies in 22 when Goryeo comes back for the roof that would not keep him.',
+		events: [
+			{ label: 'Geumwa shelters Yuhwa; the egg hatches in the Buyeo hall.' },
+			{ year: -37, label: 'Jumong flees south; the yard does not catch him.' },
+			{ year: -19, label: 'Yuri leaves with a broken sword to take Jolbon’s throne.' },
+			{ year: 22, label: 'Daeso falls; Eastern Buyeo’s sentence ends.' }
+		],
+		sobriquets: ['Northern Buyeo', 'Dongbuyeo', 'the river-capital'],
+		aliases: [
+			'Northern Buyeo',
+			'Dongbuyeo',
+			'Eastern Buyeo',
+			'the Buyeo yard',
+			'Geumwa’s Buyeo'
+		]
+	},
+	{
+		id: 'nation-jolbon',
+		name: 'Jolbon',
+		korean: '졸본',
+		hanja: '卒本',
+		entity: 'nation',
+		kingdom: 'jolbon',
+		died: -37,
+		title: 'Five roofs under pine',
+		photo: '/pl_jumong_cave.png',
+		photoCredit: 'Jumong Cavern at Jolbon — chronicle place still (pl_jumong_cave)',
+		tagline: 'Tabal’s packed-earth country — crow largest among five animal tribes, until they vote a king.',
+		ideology: 'Tribal confederacy',
+		ideologyNote: 'Five ditches, one yard they hate to share — then one vote they cannot take back.',
+		nature: 'Pine, millet, salt and iron. Yeon Tabal names the place Jolbon when an exile says Buyeo. Five animal roofs feud until a wet stranger splits an arrow. Song Yang’s pine country sits next door and is not the vote — it is the roof Jumong takes after, to get his friends back.',
+		arc: 'Before Goryeo there is Jolbon: crow, tiger, boar, wolf, bear. They vote Jumong king in -37 and the name becomes a founding. The five tribes do not vanish; they become the five commanderies. The crow roof stays Yeon — eastern 대가, then Gesomun’s massacre. The cavern (국동대혈) is where the holy king prays; later commanders still come to ask permission.',
+		events: [
+			{ label: 'Five animal roofs feud in the ditches; crow is largest.' },
+			{ year: -37, label: 'First summit; they vote Jumong king of Goryeo.' },
+			{ year: -37, label: 'Jumong annexes Song Yang’s pine roof; Jolbon is a kingdom’s first capital.' }
+		],
+		sobriquets: ['the pine country', 'five roofs'],
+		aliases: [
+			'Jolbon',
+			'졸본',
+			'卒本',
+			'Jolbon Buyeo'
 		]
 	},
 	{
@@ -6640,7 +6932,7 @@ const POSTERS_BY_ID: Record<string, string> = {
 	gesomun: '/temp/poster_gesomun.jpg',
 	gyebek: '/temp/poster_gyebek.jpg',
 	taizong: '/temp/poster_taizong.jpg',
-	haemosu: '/temp/poster_haemosu.jpg',
+	haemosu: '/temp/jumong-poster_haemosu.jpg',
 	ibiga: '/temp/poster_ibiga.jpg',
 	chunchu: '/temp/poster_muyeol.jpg',
 	daebyeol: '/temp/poster_daebyeol.jpg',
@@ -6652,7 +6944,7 @@ const POSTERS_BY_ID: Record<string, string> = {
 	dangun: '/temp/poster_dangun.jpg',
 	heavenearthking: '/temp/poster_heavenearthking.jpg',
 	sara: '/temp/poster_hallakgungi.jpg',
-	yuhwa: '/temp/poster_yuhwa.jpg',
+	yuhwa: '/temp/jumong-poster_yuhwa.jpg',
 	ungnyeo: '/temp/poster_ungnyeo.jpg',
 	bidam: '/temp/poster_bidam.jpg',
 	munmu: '/temp/poster_munmu.jpg',
@@ -6761,6 +7053,13 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	northcmd: ['highsummit'],
 	southcmd: ['highsummit'],
 	westcmd: ['highsummit'],
+	// Jolbon — five animal tribes (predecessor of the five commanderies)
+	yeontabal: ['fivetribes'],
+	tigerchief: ['fivetribes'],
+	boarchief: ['fivetribes'],
+	wolfchief: ['fivetribes'],
+	bearchief: ['fivetribes'],
+	jumong: ['fivetribes'],
 	// Tang court + eastern expedition (dragon/beast rosters moved to GROUPS_BY_ID)
 	taizong: ['tangcourt'],
 	gaozong: ['tangcourt', 'tangexpedition'],
@@ -6951,6 +7250,10 @@ const COLOR: Record<string, string> = {
 	ministeryunbi: '#7f9b6b',
 	gungye: '#4a7c6f',
 	galsa: '#6b8f4a',
+	oi: '#7a6b5a',
+	mari: '#5c6b6e',
+	hyupbo: '#4a5548',
+	songyang: '#c4a35a',
 	buyeojashin: '#9b2d2d',
 	weizheng: '#9a7b4f',
 	xuerengui: '#e8e3d5',
@@ -7031,8 +7334,8 @@ const COLOR: Record<string, string> = {
 	ministersatek: '#c2a24a',
 	sosuno: '#e8a04a',
 	yuhwa: '#8fc4e0',
-	hwahye: '#a8d4e8',
-	wihye: '#7eb8c8',
+	hwahye: '#8a62c4',
+	wihye: '#4fad72',
 	geumwa: '#a89a72',
 	daeso: '#9b8f6a',
 	yomyo: '#a3564a',
@@ -7041,6 +7344,10 @@ const COLOR: Record<string, string> = {
 	haemosu: '#f0b429',
 	habek: '#2f8f7a',
 	yeontabal: '#a97c4a',
+	tigerchief: '#c45a2a',
+	boarchief: '#6b4a32',
+	wolfchief: '#c8d0d4',
+	bearchief: '#2c2c30',
 	jomigon: '#8f9c8f',
 	imja: '#b08d5a',
 	courtmaid: '#c9a0a8',
@@ -7189,6 +7496,7 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	muryuk: ['gen-i'],
 	seohyeon: ['gen-i'],
 	euljae: ['gen-i'],
+	pumil: ['gen-i'],
 	daedeung_stern: ['gen-i'],
 	daedeung_old: ['gen-i'],
 	daedeung_fear: ['gen-i'],
@@ -7196,7 +7504,7 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	yeonwife: ['gen-i'],
 	jomei: ['gen-i'],
 	sunhwa: ['gen-i'],
-	yeontabal: ['gen-i'],
+	yeontabal: ['founders'],
 	// —— Generation II ——
 	chunchu: ['gen-ii'],
 	ongunhae: ['gen-ii'],
@@ -7241,7 +7549,6 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	gungye: ['gen-iii'],
 	yumjong: ['gen-ii'],
 	supum: ['gen-ii'],
-	pumil: ['gen-ii'],
 	murim: ['gen-ii'],
 	imjong: ['gen-ii'],
 	suljong: ['gen-ii'],
@@ -7317,6 +7624,14 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	geumwa: ['founders'],
 	daeso: ['founders'],
 	galsa: ['founders'],
+	oi: ['founders'],
+	mari: ['founders'],
+	hyupbo: ['founders'],
+	songyang: ['founders'],
+	tigerchief: ['founders'],
+	boarchief: ['founders'],
+	wolfchief: ['founders'],
+	bearchief: ['founders'],
 	buyeojashin: ['founders'],
 	yuri: ['founders'],
 	// —— Legends (famous earlier kings / heroes — characters only) ——
@@ -7829,6 +8144,11 @@ export function binyeoArtOf(p: Person): string | undefined {
 /** Ring-pommel sword illustration on character profiles. */
 export function swordArtOf(p: Person): string | undefined {
 	return p.swordImage ? (staticAsset(p.swordImage) ?? undefined) : undefined;
+}
+
+/** Named object board on character profiles (`/obj_*.png` — chariot, relic). */
+export function objectArtOf(p: Person): string | undefined {
+	return p.objectImage ? (staticAsset(p.objectImage) ?? undefined) : undefined;
 }
 
 /** Iconic character poster on wiki profiles (not the `ch_*` bust). */

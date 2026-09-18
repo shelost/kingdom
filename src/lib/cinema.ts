@@ -12,6 +12,7 @@
 
 import { buildBeats } from '$lib/beats';
 import { displayArtOf } from '$lib/cueArt';
+import { editUi } from '$lib/editUi.svelte';
 import { entryForReading, nsfwAllowed } from '$lib/nsfwUi.svelte';
 import { PLACES } from '$lib/places';
 import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
@@ -97,6 +98,8 @@ export interface CinemaPanel {
 	kind: 'art' | 'place';
 	/** Slot alt text (art) or place name (place) — for the panel `<img>`. */
 	alt?: string;
+	/** Story cue id when `kind === 'art'` — used by `?edit=true` delete. */
+	slotId?: string;
 }
 
 /** Location art for a place id, when it has any. */
@@ -123,11 +126,17 @@ export function panelsOf(entry: Entry, placeId: string | null): CinemaPanel[] {
 
 	for (const beat of buildBeats(entryForReading(entry))) {
 		for (const slot of beat.images) {
+			if (editUi.removedCueIds.has(slot.id)) continue;
 			if (!nsfwAllowed(slot)) continue;
 			const src = displayArtOf(slot, 'reading');
 			if (!src || seen.has(src)) continue;
 			seen.add(src);
-			panels.push({ src, kind: 'art', alt: slot.alt?.trim() || undefined });
+			panels.push({
+				src,
+				kind: 'art',
+				alt: slot.alt?.trim() || undefined,
+				slotId: slot.id
+			});
 		}
 	}
 

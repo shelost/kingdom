@@ -22,6 +22,7 @@ export type NestSpec = {
  * not a flat dump of flashes. Labels follow the chronicle’s scene names.
  */
 export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
+	jumong: [],
 	samhan: [
 		{
 			parent: 'Queen Sunduk',
@@ -68,10 +69,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		{
 			parent: 'Stallion Mountain',
 			children: [{ title: 'Eastern Fortress' }, { title: 'Boiling River' }]
-		},
-		{
-			parent: 'Ansi',
-			children: [{ title: 'Jumong' }]
 		}
 	],
 	'chunchu-era': [

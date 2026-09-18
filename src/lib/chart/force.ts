@@ -46,6 +46,8 @@ export const KINGDOM_X: Partial<Record<Person['kingdom'], number>> = {
 	silla: 200,
 	baekje: 520,
 	goguryeo: 860,
+	buyeo: 860,
+	jolbon: 780,
 	tang: 1120,
 	gaya: 520,
 	tamla: 860,

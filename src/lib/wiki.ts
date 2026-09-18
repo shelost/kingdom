@@ -161,6 +161,8 @@ const NATION_BY_KINGDOM: Partial<Record<Person['kingdom'], string>> = {
 	silla: 'nation-silla',
 	baekje: 'nation-baekje',
 	goguryeo: 'nation-goguryeo',
+	buyeo: 'nation-buyeo',
+	jolbon: 'nation-jolbon',
 	tang: 'nation-tang',
 	gaya: 'nation-gaya',
 	tamla: 'nation-tamla',

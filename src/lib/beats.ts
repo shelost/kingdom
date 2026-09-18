@@ -73,7 +73,8 @@ export function buildBeats(entry: Pick<Entry, 'blocks' | 'images'>): Beat[] {
 			opening.push(im);
 			continue;
 		}
-		const i = blocks.findIndex((b) => textOf(b).includes(im.at!));
+		const needle = im.at.trim().toLowerCase();
+		const i = blocks.findIndex((b) => textOf(b).toLowerCase().includes(needle));
 		if (i < 0) opening.push(im); // anchor no longer present — keep the art
 		else {
 			const list = anchored.get(i);

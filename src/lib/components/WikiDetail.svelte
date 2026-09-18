@@ -18,6 +18,7 @@
 		photoOf,
 		binyeoArtOf,
 		swordArtOf,
+		objectArtOf,
 		posterArtOf,
 		kingdomFlag,
 		sortHwarangMembers,
@@ -99,6 +100,7 @@
 	let photo = $derived(photoOf(entry));
 	let binyeoArt = $derived(binyeoArtOf(entry));
 	let swordArt = $derived(swordArtOf(entry));
+	let objectArt = $derived(objectArtOf(entry));
 	let posterArt = $derived(posterArtOf(entry));
 	let flag = $derived(kingdomFlag(entry.kingdom));
 	let who = $derived(nameOf(entry, null, previewLook));
@@ -148,7 +150,7 @@
 		];
 	});
 
-	function openWikiGallery(list: WikiScene[], index: number) {
+	function openWikiGallery(list: WikiScene[], index: number, from?: EventTarget | null) {
 		openLightbox(
 			list.map((s) => ({
 				src: s.art,
@@ -158,7 +160,8 @@
 				nsfw: s.nsfw,
 				episodeId: s.episodeId
 			})),
-			index
+			index,
+			from
 		);
 	}
 	let isCity = $derived(kind === 'city');
@@ -615,6 +618,19 @@
 					</dd>
 				</div>
 			{/if}
+			{#if entry.object || objectArt}
+				<div class={{ 'prop-art': objectArt }}>
+					<dt>Object</dt>
+					<dd class={{ 'prop-art-row': objectArt }}>
+						{#if objectArt}
+							<img class="prop-art-fig" {...storyImg(objectArt, { kind: 'hero', alt: '', sizes: '36rem' })} />
+						{/if}
+						{#if entry.object}
+							<span class="prop-art-cap">{entry.object}</span>
+						{/if}
+					</dd>
+				</div>
+			{/if}
 			{#if life}
 				<div>
 					<dt>{hasHumanAge(entry) ? 'Lived' : 'Active'}</dt>
@@ -877,7 +893,7 @@
 									aria-hidden="true"
 								>
 									{#if cityArt}
-										<img {...storyImg(cityArt, { kind: 'place', alt: '', sizes: '7.25rem' })} />
+										<img {...storyImg(cityArt, { kind: 'place', alt: '', sizes: '7.25rem', widths: [128, 256] })} />
 									{:else}
 										{hangulInitial(city)}
 									{/if}
@@ -916,7 +932,7 @@
 									aria-hidden="true"
 								>
 									{#if placeArt}
-										<img {...storyImg(placeArt, { kind: 'place', alt: '', sizes: '7.25rem' })} />
+										<img {...storyImg(placeArt, { kind: 'place', alt: '', sizes: '7.25rem', widths: [128, 256] })} />
 									{:else}
 										{hangulInitial(place)}
 									{/if}
@@ -960,14 +976,15 @@
 							<button
 								type="button"
 								class="gallery-shot"
-								onclick={() => openWikiGallery(galleryScenes, i)}
+								onclick={(e) => openWikiGallery(galleryScenes, i, e.currentTarget)}
 								aria-label={scene.alt || scene.title}
 							>
 								<img
 									{...storyImg(scene.art, {
 										kind: 'cue',
 										alt: '',
-										sizes: '(min-width: 56rem) 28vw, (min-width: 40rem) 11rem, 45vw'
+										sizes: '(min-width: 56rem) 28vw, (min-width: 40rem) 11rem, 45vw',
+										widths: [384, 640, 828]
 									})}
 								/>
 							</button>

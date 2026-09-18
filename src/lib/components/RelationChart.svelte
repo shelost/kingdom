@@ -102,6 +102,8 @@
 		'silla',
 		'baekje',
 		'goguryeo',
+		'buyeo',
+		'jolbon',
 		'tang',
 		'gaya',
 		'tamla',

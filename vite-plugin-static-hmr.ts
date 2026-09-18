@@ -11,7 +11,8 @@ const VITE_DIR = path.dirname(require.resolve('vite/package.json'));
 const VITE_CLIENT = path.join(VITE_DIR, 'dist/client/client.mjs');
 const VITE_ENV = path.join(VITE_DIR, 'dist/client/env.mjs');
 const THUMB_CACHE = path.resolve('scripts/.cache/img-thumbs');
-const THUMB_WIDTHS = new Set([64, 96, 128, 256, 384, 640]);
+/** Keep in sync with `LOCAL_IMG_WIDTHS` in `src/lib/img.ts`. */
+const THUMB_WIDTHS = new Set([64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920]);
 
 type NodeReq = { url?: string };
 type NodeRes = {
@@ -20,7 +21,10 @@ type NodeRes = {
 	end: (body?: string | Buffer) => void;
 };
 
-/** Dev-only: `?w=256` on `/ch_*.png` etc. serves a cached PNG thumb (alpha kept). */
+/**
+ * Dev-only: `?w=828` on `/temp/*.jpg` / `/ch_*.png` serves a cached resize.
+ * JPEG sources stay JPEG (much smaller for cues); PNG keeps alpha as PNG.
+ */
 function serveResizedStatic(req: NodeReq, res: NodeRes, next: () => void) {
 	const raw = req.url;
 	if (!raw) return next();
@@ -38,19 +42,32 @@ function serveResizedStatic(req: NodeReq, res: NodeRes, next: () => void) {
 	const source = path.resolve(STATIC_ROOT, rel);
 	if (!source.startsWith(STATIC_ROOT + path.sep) || !fs.existsSync(source)) return next();
 
-	const out = path.join(THUMB_CACHE, String(width), `${rel.replace(/[\\/]/g, '__')}.png`);
+	const jpeg = /\.jpe?g$/i.test(source);
+	const ext = jpeg ? '.jpg' : '.png';
+	const out = path.join(THUMB_CACHE, String(width), `${rel.replace(/[\\/]/g, '__')}${ext}`);
 	try {
 		const srcStat = fs.statSync(source);
 		const cached = fs.existsSync(out) && fs.statSync(out).mtimeMs >= srcStat.mtimeMs;
 		if (!cached) {
 			fs.mkdirSync(path.dirname(out), { recursive: true });
-			execFileSync(
-				'sips',
-				['-s', 'format', 'png', '-Z', String(width), source, '--out', out],
-				{ stdio: 'ignore' }
-			);
+			const args = jpeg
+				? [
+						'-s',
+						'format',
+						'jpeg',
+						'-s',
+						'formatOptions',
+						'72',
+						'-Z',
+						String(width),
+						source,
+						'--out',
+						out
+					]
+				: ['-s', 'format', 'png', '-Z', String(width), source, '--out', out];
+			execFileSync('sips', args, { stdio: 'ignore' });
 		}
-		res.setHeader('Content-Type', 'image/png');
+		res.setHeader('Content-Type', jpeg ? 'image/jpeg' : 'image/png');
 		res.setHeader('Cache-Control', 'public, max-age=3600');
 		res.end(fs.readFileSync(out));
 	} catch {

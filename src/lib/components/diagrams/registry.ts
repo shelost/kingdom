@@ -18,6 +18,7 @@ import Hwarang from './Hwarang.svelte';
 import FourDragons from './FourDragons.svelte';
 import FourBeasts from './FourBeasts.svelte';
 import RestorationArmy from './RestorationArmy.svelte';
+import FiveTribes from './FiveTribes.svelte';
 
 export interface DiagramProps {
 	step?: string;
@@ -40,5 +41,6 @@ export const DIAGRAMS: Record<string, Component<DiagramProps>> = {
 	hwarang: Hwarang,
 	'four-dragons': FourDragons,
 	'four-beasts': FourBeasts,
-	'restoration-army': RestorationArmy
+	'restoration-army': RestorationArmy,
+	'five-tribes': FiveTribes
 };

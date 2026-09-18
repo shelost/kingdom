@@ -11,6 +11,7 @@
 		episodes,
 		canonicalHashId,
 		findStoryHeading,
+		goToEpisodeById,
 		resolveEpisodeIndex,
 		scrollToStoryHeading,
 		storyRoot,
@@ -156,10 +157,16 @@
 		// so the saved anchor is already in place when the TOC next opens.
 		restoreAnchor();
 
+		let scrollRaf = 0;
 		const onScroll = () => {
 			if (reading.viewScope === 'episodes') return;
-			const max = document.documentElement.scrollHeight - window.innerHeight;
-			scrollProgress = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+			if (scrollRaf) return;
+			scrollRaf = requestAnimationFrame(() => {
+				scrollRaf = 0;
+				const max = document.documentElement.scrollHeight - window.innerHeight;
+				const next = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+				if (Math.abs(next - scrollProgress) > 0.002) scrollProgress = next;
+			});
 		};
 		onScroll();
 		window.addEventListener('scroll', onScroll, { passive: true });
@@ -201,19 +208,26 @@
 	}
 
 	/**
-	 * Jump to a chapter / episode / scene / part title. Click measures the
-	 * title's document Y and scrolls the reading scroller — the TOC stays open
-	 * (desktop push + mobile overlay). Overlay close is the toggle, or Escape.
+	 * Jump to a chapter / episode / scene / part title.
+	 * Full scope: scroll the continuous manuscript to that heading.
+	 * Episodes scope: swap the mounted entry (same as Prev/Next), then land
+	 * on the heading — never scroll through off-page siblings.
 	 */
 	function jump(id: string) {
 		const gen = beginTocJump();
 		try {
+			const dest = canonicalHashId(id);
+			stripStoryHash();
+
+			if (reading.viewScope === 'episodes') {
+				goToEpisodeById(dest, { closeToc: false });
+				return;
+			}
+
 			const reduce =
 				typeof matchMedia !== 'undefined' &&
 				matchMedia('(prefers-reduced-motion: reduce)').matches;
 			const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
-			const dest = canonicalHashId(id);
-			stripStoryHash();
 			const idx = resolveEpisodeIndex(dest);
 			if (idx >= 0) reading.episodeIndex = idx;
 

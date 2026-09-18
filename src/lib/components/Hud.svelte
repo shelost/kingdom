@@ -14,6 +14,7 @@
 	import { music, TRACKS, initMusic, playTrack, toggleMute } from '$lib/music.svelte';
 	import { speech, initSpeech, syncSpeech, toggleAutoSpeech } from '$lib/speech.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
+	import { editUi } from '$lib/editUi.svelte';
 	import { onMount } from 'svelte';
 	import SpeakIcon from './SpeakIcon.svelte';
 	import SiteNav from './SiteNav.svelte';
@@ -228,6 +229,12 @@
 				<div class="nav-wrap pill-stagger" style:--i="3">
 					<SiteNav />
 				</div>
+
+				{#if editUi.enabled}
+					<p class="edit-flag pill-stagger" style:--i="4" title="?edit=true — right-click cue art to delete">
+						Edit
+					</p>
+				{/if}
 			</div>
 		</div>
 	</div>
@@ -509,6 +516,19 @@
 		display: flex;
 		align-items: center;
 		flex-shrink: 0;
+	}
+
+	.edit-flag {
+		margin: 0;
+		font-size: 0.65rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--on-gold);
+		background: var(--gold);
+		border: 1px solid var(--gold);
+		border-radius: var(--radius-pill);
+		padding: 0.3rem 0.65rem;
 	}
 
 	.nav-wrap :global(.site-nav) {

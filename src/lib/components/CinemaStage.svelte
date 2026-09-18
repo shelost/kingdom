@@ -24,6 +24,7 @@
 		activateDialogue,
 		scrollToBand,
 		findStoryHeading,
+		goToEpisodeById,
 		scrollToStoryHeading,
 		storyRoot
 	} from '$lib/reading.svelte';
@@ -57,10 +58,12 @@
 	import Blocks from './Blocks.svelte';
 	import SpeakerPlate from './SpeakerPlate.svelte';
 	import { storyImg, optimizeSrc } from '$lib/img';
+	import { editUi, permanentlyDeleteCue } from '$lib/editUi.svelte';
 
 	/** Cinema only takes the screen once the reader is past cover + blurb. */
 	let live = $derived(reading.mode === 'cinema' && scriptUi.inScript);
 	let reduce = $derived(prefersReducedMotion.current);
+	let editing = $derived(editUi.enabled);
 
 	/* ————— where we are ————— */
 	let episode = $derived(episodeContextOf(reading.entryId));
@@ -300,15 +303,6 @@
 		if (!live) stopPlay();
 	});
 
-	/** Wheel over the stage (not the script rail) advances the underlying scroll. */
-	function onStageWheel(e: WheelEvent) {
-		if (!live || peek) return;
-		const t = e.target;
-		if (t instanceof Element && t.closest('.script')) return;
-		e.preventDefault();
-		window.scrollBy({ top: e.deltaY, left: 0, behavior: 'auto' });
-	}
-
 	/* ————— who is on stage ————— */
 	let person = $derived(reading.speaker ? (byId.get(reading.speaker) ?? null) : null);
 	let accent = $derived(
@@ -490,6 +484,10 @@
 		stopPlay();
 		const next = episode?.next;
 		if (!next) return;
+		if (reading.viewScope === 'episodes') {
+			void goToEpisodeById(next.id);
+			return;
+		}
 		const el = findStoryHeading(next.id);
 		if (el) scrollToStoryHeading(el, reduce ? 'auto' : 'smooth');
 	}
@@ -499,7 +497,7 @@
 	let nextPanel = $derived(panels[panelIndex + 1] ?? null);
 	const CINEMA_SIZES = '(max-width: 820px) 100vw, 70vw';
 
-	function openPanelLightbox() {
+	function openPanelLightbox(e: MouseEvent) {
 		if (!panels.length) return;
 		openLightbox(
 			panels.map((p) => ({
@@ -509,8 +507,16 @@
 				caption: episode?.entry.title,
 				episodeId: episode?.id
 			})),
-			panelIndex
+			panelIndex,
+			e.currentTarget instanceof HTMLElement ? e.currentTarget : null
 		);
+	}
+
+	function onEditPanelContextMenu(e: MouseEvent) {
+		if (!editUi.enabled || !panel?.slotId) return;
+		e.preventDefault();
+		e.stopPropagation();
+		void permanentlyDeleteCue(panel.slotId);
 	}
 </script>
 
@@ -521,7 +527,8 @@
 </svelte:head>
 
 {#if live}
-	<!-- Wheel advances the underlying document; script rail keeps its own scroll. -->
+	<!-- Scene uses overflow:clip so wheel chains to the document (native
+	     momentum). The script rail keeps its own scroll. -->
 	<div
 		class="stage"
 		class:peeking={peek}
@@ -529,7 +536,6 @@
 		style:--k={accent}
 		style:--cin-tint={grade.tint}
 		style:--cin-wash={grade.wash}
-		onwheel={onStageWheel}
 	>
 		<!-- ————— Scene (top-left, letterboxed) ————— -->
 		<section class="scene" aria-label="Scene">
@@ -544,8 +550,11 @@
 						<button
 							type="button"
 							class="matte-open"
+							class:editing
 							onclick={openPanelLightbox}
+							oncontextmenu={onEditPanelContextMenu}
 							aria-label="Open scene still"
+							title={editing && panel.slotId ? 'Right-click to delete permanently' : undefined}
 						>
 							<img
 								{...storyImg(panel.src, {
@@ -796,6 +805,8 @@
 		padding: var(--pad);
 		box-sizing: border-box;
 		background: var(--bg);
+		/* Not a scroll container — wheel must reach the reading document. */
+		overflow: clip;
 		transition:
 			left var(--toc-duration) var(--toc-ease),
 			opacity 280ms var(--ease),
@@ -818,7 +829,9 @@
 		grid-row: 1;
 		position: relative;
 		min-height: 0;
-		overflow: hidden;
+		/* clip (not hidden) so this pane is not a scroll container and
+		   trackpad wheel chains to the document instead of dying here. */
+		overflow: clip;
 		border: 1px solid var(--hairline);
 		background: #050508;
 	}
@@ -851,7 +864,7 @@
 		min-width: 0;
 		border: 1px solid var(--hairline);
 		background: color-mix(in srgb, var(--plate-ink) 92%, transparent);
-		overflow: hidden;
+		overflow: clip;
 	}
 
 	.dialogue {
@@ -881,6 +894,12 @@
 		border: none;
 		background: transparent;
 		cursor: zoom-in;
+	}
+
+	.matte-open.editing {
+		cursor: context-menu;
+		outline: 1px dashed color-mix(in srgb, #c9a227 55%, transparent);
+		outline-offset: -3px;
 	}
 
 	.matte.empty {

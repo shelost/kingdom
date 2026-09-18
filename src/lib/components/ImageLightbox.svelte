@@ -3,8 +3,15 @@
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
+	import gsap from 'gsap';
+	import { Flip } from 'gsap/Flip';
 	import { storyImg } from '$lib/img';
-	import { closeLightbox, imageLightbox, stepLightbox } from '$lib/imageLightbox.svelte';
+	import {
+		closeLightbox,
+		imageLightbox,
+		lightboxReduceMotion,
+		stepLightbox
+	} from '$lib/imageLightbox.svelte';
 	import {
 		canonicalHashId,
 		findStoryHeading,
@@ -13,10 +20,159 @@
 		stripStoryHash
 	} from '$lib/reading.svelte';
 
+	gsap.registerPlugin(Flip);
+
+	const OPEN_MS = 0.28;
+	const CLOSE_MS = 0.26;
+
 	let item = $derived(
 		imageLightbox.open ? imageLightbox.items[imageLightbox.index] : undefined
 	);
 	let hasStack = $derived(imageLightbox.items.length > 1);
+
+	let dialogEl = $state<HTMLDialogElement | null>(null);
+	let scrimEl = $state<HTMLButtonElement | null>(null);
+	let shotEl = $state<HTMLImageElement | null>(null);
+	let flipping = $state(false);
+
+	function clearFlipStyles(el: HTMLElement | null) {
+		if (!el) return;
+		gsap.set(el, {
+			clearProps:
+				'transform,transformOrigin,width,height,position,top,left,maxWidth,maxHeight,opacity,borderRadius,filter'
+		});
+	}
+
+	function fadeChromeIn(delay = 0.06) {
+		const cap = dialogEl?.querySelector('.lightbox-cap');
+		const chrome = dialogEl?.querySelectorAll('.lightbox-close, .lightbox-nav, .lightbox-count');
+		if (cap) {
+			gsap.fromTo(
+				cap,
+				{ autoAlpha: 0, y: 6 },
+				{ autoAlpha: 1, y: 0, duration: 0.18, delay, ease: 'power2.out' }
+			);
+		}
+		if (chrome?.length) {
+			gsap.fromTo(
+				chrome,
+				{ autoAlpha: 0 },
+				{ autoAlpha: 1, duration: 0.16, delay: delay + 0.04, ease: 'power2.out' }
+			);
+		}
+	}
+
+	function fadeChromeOut() {
+		const cap = dialogEl?.querySelector('.lightbox-cap');
+		const chrome = dialogEl?.querySelectorAll('.lightbox-close, .lightbox-nav, .lightbox-count');
+		if (cap) gsap.to(cap, { autoAlpha: 0, duration: 0.1, ease: 'power1.in' });
+		if (chrome?.length) gsap.to(chrome, { autoAlpha: 0, duration: 0.1, ease: 'power1.in' });
+	}
+
+	function runOpenFlip(shot: HTMLImageElement) {
+		const reduce = lightboxReduceMotion();
+		const origin = imageLightbox.originEl;
+		const flipId = imageLightbox.flipId;
+		const scrim = scrimEl;
+
+		if (scrim) {
+			gsap.fromTo(
+				scrim,
+				{ autoAlpha: 0 },
+				{ autoAlpha: 1, duration: reduce ? 0 : OPEN_MS, ease: 'power2.out' }
+			);
+		}
+
+		if (reduce || !origin?.isConnected || !flipId) {
+			gsap.fromTo(
+				shot,
+				{ autoAlpha: 0, scale: reduce ? 1 : 0.96 },
+				{ autoAlpha: 1, scale: 1, duration: reduce ? 0 : 0.2, ease: 'power2.out' }
+			);
+			fadeChromeIn(0.04);
+			return;
+		}
+
+		origin.dataset.flipId = flipId;
+		shot.dataset.flipId = flipId;
+
+		const state = Flip.getState(origin);
+		flipping = true;
+		gsap.set(shot, { autoAlpha: 1 });
+
+		Flip.from(state, {
+			targets: shot,
+			duration: OPEN_MS,
+			ease: 'power2.inOut',
+			absolute: true,
+			scale: true,
+			fade: true,
+			onComplete: () => {
+				flipping = false;
+				clearFlipStyles(shot);
+			}
+		});
+
+		fadeChromeIn(OPEN_MS * 0.45);
+	}
+
+	function finishClose() {
+		flipping = false;
+		closeLightbox();
+	}
+
+	function requestClose() {
+		if (flipping) return;
+		const reduce = lightboxReduceMotion();
+		const shot = shotEl;
+		const origin = imageLightbox.originEl;
+		const flipId = imageLightbox.flipId;
+		const scrim = scrimEl;
+
+		fadeChromeOut();
+		if (scrim) {
+			gsap.to(scrim, {
+				autoAlpha: 0,
+				duration: reduce ? 0 : CLOSE_MS,
+				ease: 'power2.in'
+			});
+		}
+
+		if (reduce || !shot || !origin?.isConnected || !flipId) {
+			if (shot && !reduce) {
+				gsap.to(shot, {
+					autoAlpha: 0,
+					scale: 0.97,
+					duration: 0.16,
+					ease: 'power2.in',
+					onComplete: finishClose
+				});
+			} else {
+				finishClose();
+			}
+			return;
+		}
+
+		/* Keep the dialog alive and fit the modal shot back onto the thumb. */
+		flipping = true;
+		origin.dataset.flipId = flipId;
+		shot.dataset.flipId = flipId;
+		gsap.set(origin, { autoAlpha: 0 });
+
+		Flip.fit(shot, origin, {
+			duration: CLOSE_MS,
+			ease: 'power2.inOut',
+			scale: true,
+			absolute: true,
+			onComplete: () => {
+				clearFlipStyles(shot);
+				clearFlipStyles(origin);
+				gsap.set(origin, { autoAlpha: 1, clearProps: 'opacity,visibility' });
+				delete origin.dataset.flipId;
+				finishClose();
+			}
+		});
+	}
 
 	/**
 	 * Native modal: `showModal()` puts the dialog in the top layer so it cannot
@@ -24,6 +180,7 @@
 	 * `display: contents` wrapper (`position: fixed` fails there in WebKit).
 	 */
 	const mountDialog: Attachment<HTMLDialogElement> = (node) => {
+		dialogEl = node;
 		const prev = document.documentElement.style.overflow;
 		document.documentElement.style.overflow = 'hidden';
 		/* Next frame: opening during the same click that mounted us would hit
@@ -35,12 +192,45 @@
 		return () => {
 			cancelAnimationFrame(frame);
 			document.documentElement.style.overflow = prev;
+			dialogEl = null;
 		};
 	};
 
-	function onBackdropClick(e: MouseEvent) {
-		if (e.target === e.currentTarget) closeLightbox();
-	}
+	const mountScrim: Attachment<HTMLButtonElement> = (node) => {
+		scrimEl = node;
+		gsap.set(node, { autoAlpha: 0 });
+		return () => {
+			scrimEl = null;
+		};
+	};
+
+	const mountShot: Attachment<HTMLImageElement> = (node) => {
+		shotEl = node;
+		gsap.set(node, { autoAlpha: 0 });
+
+		let started = false;
+		const start = () => {
+			if (started || !node.isConnected) return;
+			started = true;
+			runOpenFlip(node);
+		};
+
+		if (node.complete && node.naturalWidth > 0) {
+			const frame = requestAnimationFrame(start);
+			return () => {
+				cancelAnimationFrame(frame);
+				shotEl = null;
+			};
+		}
+
+		node.addEventListener('load', start, { once: true });
+		const timer = window.setTimeout(start, 140);
+		return () => {
+			node.removeEventListener('load', start);
+			window.clearTimeout(timer);
+			shotEl = null;
+		};
+	};
 
 	function onDialogClose() {
 		if (imageLightbox.open) closeLightbox();
@@ -49,10 +239,11 @@
 	function onKeydown(e: KeyboardEvent) {
 		if (!imageLightbox.open) return;
 		if (e.key === 'Escape') {
-			closeLightbox();
+			requestClose();
 			e.stopPropagation();
 			return;
 		}
+		if (flipping) return;
 		if (e.key === 'ArrowRight') {
 			stepLightbox(1);
 			e.preventDefault();
@@ -64,7 +255,7 @@
 	}
 
 	function openInChronicle(episodeId: string) {
-		closeLightbox();
+		requestClose();
 		stripStoryHash();
 		const home = resolve('/');
 		const here = page.url.pathname;
@@ -86,12 +277,20 @@
 		class="lightbox"
 		aria-labelledby="lightbox-title"
 		{@attach mountDialog}
-		onclick={onBackdropClick}
 		onclose={onDialogClose}
 	>
+		<button
+			type="button"
+			class="lightbox-scrim"
+			aria-label="Close image"
+			{@attach mountScrim}
+			onclick={requestClose}
+		></button>
 		<figure class="lightbox-frame">
 			<img
 				class="lightbox-shot"
+				data-flip-id={imageLightbox.flipId || undefined}
+				{@attach mountShot}
 				{...storyImg(item.src, {
 					kind: 'hero',
 					alt: item.alt,
@@ -140,7 +339,7 @@
 				{imageLightbox.index + 1} / {imageLightbox.items.length}
 			</p>
 		{/if}
-		<button type="button" class="lightbox-close" onclick={closeLightbox} aria-label="Close">
+		<button type="button" class="lightbox-close" onclick={requestClose} aria-label="Close">
 			✕
 		</button>
 	</dialog>
@@ -164,11 +363,25 @@
 		padding: max(1.1rem, env(safe-area-inset-top, 0px))
 			max(1.1rem, env(safe-area-inset-right, 0px)) max(1.1rem, env(safe-area-inset-bottom, 0px))
 			max(1.1rem, env(safe-area-inset-left, 0px));
+		overflow: hidden;
 	}
 
+	/* Real blur lives on .lightbox-scrim (animatable). Keep native backdrop clear. */
 	.lightbox::backdrop {
-		background: color-mix(in srgb, var(--panel-sunken, #08080c) 86%, transparent);
+		background: transparent;
+	}
+
+	.lightbox-scrim {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		margin: 0;
+		padding: 0;
+		border: none;
 		cursor: zoom-out;
+		background: color-mix(in srgb, #050508 62%, transparent);
+		backdrop-filter: blur(18px) saturate(1.05);
+		-webkit-backdrop-filter: blur(18px) saturate(1.05);
 	}
 
 	.lightbox-frame {
@@ -331,6 +544,11 @@
 	@media (prefers-reduced-motion: reduce) {
 		.lightbox {
 			transition: none;
+		}
+
+		.lightbox-scrim {
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
 		}
 	}
 </style>

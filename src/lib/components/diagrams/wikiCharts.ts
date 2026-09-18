@@ -43,12 +43,30 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 	],
 	'nation-goguryeo': [
 		{
+			diagram: 'five-tribes',
+			step: 'league',
+			title: 'The Five Tribes · 오부족',
+			caption:
+				'Jolbon’s five animal roofs — crow, tiger, boar, wolf, bear — become Goguryeo’s five commanderies. Crow is East: the Yeon hall, later Gesomun’s 대가.',
+			ko: '졸본의 다섯 짐승 지붕이 오부가 된다. 까마귀는 동부 — 연씨 지붕, 나중엔 개소문의 대가.'
+		},
+		{
 			diagram: 'high-summit',
 			step: 'council',
 			title: 'The High Summit · 제가회의',
 			caption:
 				'Five Commanderies argue as Commanders; the High Commander is first sword; the king keeps the final vote.',
 			ko: '오부가 대가로 다툰다. 막리지가 첫 칼이고, 임금이 최종 투표를 쥔다.'
+		}
+	],
+	'nation-jolbon': [
+		{
+			diagram: 'five-tribes',
+			step: 'league',
+			title: 'The Five Tribes · 오부족',
+			caption:
+				'Five fires on packed earth. No single crown until they vote one. Crow largest; the pine next door is Song Yang’s, not Tabal’s.',
+			ko: '흙마당에 불 다섯. 투표 전까지는 왕관이 없다. 까마귀가 가장 크고, 옆 소나무는 송양의 것이다.'
 		}
 	],
 	'nation-tang': [
@@ -289,6 +307,16 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			title: 'The High Summit · 제가회의',
 			caption: 'Commanders (대가) under a High Commander (막리지) — the king keeps the final vote.',
 			ko: '대가가 막리지 아래 모인다. 임금이 최종 투표를 쥔다.'
+		}
+	],
+	fivetribes: [
+		{
+			diagram: 'five-tribes',
+			step: 'league',
+			title: 'The Five Tribes · 오부족',
+			caption:
+				'Crow East, tiger West, boar South, wolf North, bear Central — the same five chairs the High Summit later names 부.',
+			ko: '까마귀 동부, 호랑이 서부, 멧돼지 남부, 늑대 북부, 곰 중부 — 제가가 나중에 부라고 부르는 그 다섯 자리.'
 		}
 	],
 	fivecommanders: [

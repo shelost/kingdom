@@ -34,7 +34,7 @@ export interface Place {
 	y: number;
 	kind: PlaceKind;
 	/** whose land it is — drives the marker colour */
-	side: 'silla' | 'baekje' | 'goguryeo' | 'tang' | 'gaya' | 'yamato' | 'tamla' | 'underworld' | 'other';
+	side: Person['kingdom'];
 	/**
 	 * Parent city / fortress when `kind !== 'city'`.
 	 * Wiki: Place → City → Kingdom. Cities themselves omit this.
@@ -203,8 +203,7 @@ export const PLACES: Record<string, Place> = {
 		x: 215,
 		y: 370,
 		kind: 'cave',
-		side: 'goguryeo',
-		avatar: '/pl_jumong_cave.png',
+		side: 'jolbon',
 		title: 'Jumong Cavern — where the holy king prayed',
 		blurb:
 			'Every northern vow begins in the cave Jumong hollowed out — 국동대혈, where every Goguryeo heir renews the vow before blood.',
@@ -215,6 +214,23 @@ export const PLACES: Record<string, Place> = {
 			{ year: 642, label: 'Gesomun renews his vow here before the Pyongyang massacre.' }
 		],
 		aliases: ['Jolbon', 'Jumong Cavern', '국동대혈', 'Jumong Cave', '졸본']
+	},
+	pine_kingdom: {
+		id: 'pine_kingdom',
+		labelLeft: true,
+		name: 'Pine Kingdom',
+		korean: '소나무 나라',
+		hanja: '松國',
+		x: 198,
+		y: 358,
+		kind: 'city',
+		side: 'jolbon',
+		title: 'Song Yang’s pine roof',
+		blurb:
+			'Song Yang’s timber country beside Jolbon — pines, packed earth, one giwa hall. Jumong annexed the roof to get Oi, Mari, and Hyupbo back.',
+		arc: 'The ridge path after Jumong’s river split does not run to Tabal’s yard. It runs here. Song Yang holds the three as guests who do not leave until King Jumong — Queen Sosuno on the rail — takes a single shaft in this packed-earth yard and yields both the friends and the country. The ledgers may write 松國; mouths say 소나무 나라. The name is not the later son’s.',
+		events: [{ year: -37, label: 'Song Yang yields the pine roof; Jumong’s three friends return to Jolbon.' }],
+		aliases: ['Pine Kingdom', '소나무 나라', '松國', 'Song Yang’s pine roof']
 	},
 	gungnae: {
 		id: 'gungnae',
@@ -354,6 +370,21 @@ export const PLACES: Record<string, Place> = {
 			'Capital of the Heavenly Deer. Euija seats forty-one of his own sons in the Assembly here in 655, and the city falls to the Silla–Tang army in 660.',
 		sobriquets: ['Capital of the Heavenly Deer'],
 		aliases: ['Sabi', '사비', 'Capital of the Heavenly Deer']
+	},
+	sabi_tourney: {
+		id: 'sabi_tourney',
+		name: 'Sabi tournament yard',
+		korean: '사비 시합뜰',
+		x: 305,
+		y: 620,
+		kind: 'city',
+		side: 'baekje',
+		cityId: 'sabi',
+		offMap: true,
+		avatar: '/pl_sabi_tourney.png',
+		blurb:
+			'Packed earth in front of the palace. Once a year the court chalks a white square; Euija’s five named sons step on in white, and the clans keep score from the hall bar.',
+		aliases: ['Sabi tournament yard', '사비 시합뜰']
 	},
 	hwangsan: {
 		id: 'hwangsan',
@@ -510,7 +541,9 @@ export const PLACES: Record<string, Place> = {
 		x: 280,
 		y: 270,
 		kind: 'city',
-		side: 'other',
+		side: 'buyeo',
+		capital: true,
+		avatar: '/pl_buyeo_yard.png',
 		blurb: 'The northern kingdom Jumong fled, and where Lady Ye raised his heir alone.'
 	},
 	changan: {

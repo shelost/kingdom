@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import type { RequestHandler } from './$types';
 import type { GalleryDeleteItem, GalleryDeleteRequest } from '$lib/galleryDelete';
+import { armSkipChronicleHmr } from '$lib/server/chronicleHmr';
 
 const ROOT = path.resolve('.');
 const STATIC_ROOT = path.resolve(ROOT, 'static');
@@ -13,7 +14,7 @@ const PEOPLE_FILE = path.resolve(ROOT, 'src/lib/data/image-people.json');
 const INVENTORY_FILE = path.resolve(ROOT, 'src/lib/tempArtInventory.ts');
 
 const MAX_ITEMS = 200;
-const PORTRAIT_FILE = /^(ch_|pl_|bn_|sword_|flag)/i;
+const PORTRAIT_FILE = /^(ch_|pl_|bn_|ar_|obj_|sword_|flag)/i;
 
 type StorySlot = {
 	id?: string;
@@ -269,6 +270,7 @@ async function handleDelete(request: Request) {
 	}
 
 	const removedCueIds = [...new Set(deleted.filter((d) => d.kind === 'cue').map((d) => d.slotId))];
+	if (removedCueIds.length || files.length) armSkipChronicleHmr();
 	if (removedCueIds.length) {
 		await fs.writeFile(STORY_FILE, JSON.stringify(rawStory, null, '\t') + '\n');
 		try {

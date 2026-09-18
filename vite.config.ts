@@ -7,7 +7,11 @@ import { staticAssetHmr } from './vite-plugin-static-hmr.ts';
 export default defineConfig({
 	server: {
 		watch: {
-			ignored: ['**/src/lib/data/image-grades.json', '**/src/lib/data/image-prompt-house.json']
+			ignored: [
+			'**/src/lib/data/image-grades.json',
+			'**/src/lib/data/image-prompt-house.json',
+			'**/scripts/.cache/skip-chronicle-hmr'
+		]
 		}
 	},
 	define: {

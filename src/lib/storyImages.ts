@@ -381,6 +381,7 @@ export function referencedArtKeys(source: Chapter[] = chapters): Set<string> {
 		addArtKey(keys, person.photo);
 		addArtKey(keys, person.binyeoImage);
 		addArtKey(keys, person.swordImage);
+		addArtKey(keys, person.objectImage);
 		for (const stage of person.stages ?? []) addArtKey(keys, stage.avatar);
 	}
 

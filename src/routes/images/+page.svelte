@@ -159,10 +159,10 @@
 			toggleKey(cell.key);
 			return;
 		}
-		openCell(cell);
+		openCell(cell, e.currentTarget);
 	}
 
-	function openCell(im: GridCell) {
+	function openCell(im: GridCell, from?: EventTarget | null) {
 		if (!im.src) return;
 		const items = visible
 			.map((row) => {
@@ -178,7 +178,7 @@
 			})
 			.filter((row): row is NonNullable<typeof row> => !!row);
 		const index = items.findIndex((row) => row.caption === im.cueLabel && row.title === im.title);
-		openLightbox(items, index >= 0 ? index : 0);
+		openLightbox(items, index >= 0 ? index : 0, from);
 	}
 
 	function openConfirm() {
@@ -369,9 +369,10 @@
 					>
 						<img
 							{...storyImg(im.src, {
-								kind: 'cue',
+								kind: 'thumb',
 								alt: im.alt,
-								sizes: '180px'
+								sizes: '180px',
+								widths: [128, 256]
 							})}
 						/>
 						<div class="badges">

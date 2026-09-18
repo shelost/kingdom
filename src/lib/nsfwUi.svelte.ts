@@ -18,11 +18,20 @@ export function nsfwQueryOn(url: URL): boolean {
 	return url.searchParams.get(NSFW_QUERY) === 'true';
 }
 
-/** Keep `?nsfw=true` on an in-app href when the current URL already has it. */
+/** Keep `?nsfw=true` (and `?edit=true` when set) on an in-app href. */
 export function hrefWithNsfw(href: string, current: URL): string {
-	if (!nsfwQueryOn(current)) return href;
 	const next = new URL(href, current);
-	next.searchParams.set(NSFW_QUERY, 'true');
+	let dirty = false;
+	if (nsfwQueryOn(current)) {
+		next.searchParams.set(NSFW_QUERY, 'true');
+		dirty = true;
+	}
+	/* Lazy import avoided — edit flag lives beside nsfw in the address bar. */
+	if (current.searchParams.get('edit') === 'true') {
+		next.searchParams.set('edit', 'true');
+		dirty = true;
+	}
+	if (!dirty) return href;
 	return `${next.pathname}${next.search}${next.hash}`;
 }
 

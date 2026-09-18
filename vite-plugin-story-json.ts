@@ -1,9 +1,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { Plugin } from 'vite';
+import { chronicleHmrSkipArmed } from './src/lib/server/chronicleHmr.ts';
 
 const STORY = path.resolve('src/lib/data/story.json');
+const PEOPLE = path.resolve('src/lib/data/image-people.json');
+const INVENTORY = path.resolve('src/lib/tempArtInventory.ts');
 const VIRTUAL = '\0compact-story-json';
+
+function isChroniclePersist(file: string): boolean {
+	const n = path.normalize(file);
+	return (
+		n === path.normalize(STORY) || n === path.normalize(PEOPLE) || n === path.normalize(INVENTORY)
+	);
+}
 
 /**
  * story.json is a 1.2MB pretty-printed chronicle. Vite’s default JSON
@@ -35,6 +45,9 @@ export function compactStoryJson(): Plugin {
 			};
 		},
 		handleHotUpdate({ file, server }) {
+			/* Edit-mode cue delete already patched client state. Reloading
+			   story.json / inventory remounts the chronicle and jumps to top. */
+			if (isChroniclePersist(file) && chronicleHmrSkipArmed()) return [];
 			if (path.normalize(file) !== path.normalize(STORY)) return;
 			const mod = server.moduleGraph.getModuleById(VIRTUAL);
 			if (!mod) return;

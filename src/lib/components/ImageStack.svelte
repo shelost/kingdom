@@ -6,6 +6,7 @@
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
 	import { filterNsfw } from '$lib/nsfwUi.svelte';
+	import { editUi, filterRemovedCues, permanentlyDeleteCue } from '$lib/editUi.svelte';
 	import { openLightbox, type LightboxItem } from '$lib/imageLightbox.svelte';
 	import { isNsfwCueImage } from '$lib/storyImages';
 
@@ -23,7 +24,8 @@
 
 	/** Immersion keeps the landscape phone-frame treatment; script uses normal sticky + cues. */
 	let immersion = $derived(reading.mode === 'immersion');
-	let visible = $derived(filterNsfw(images));
+	let visible = $derived(filterRemovedCues(filterNsfw(images)));
+	let editing = $derived(editUi.enabled);
 
 	let live = $state(0);
 	/** Sticky stacks only fetch once they are near the viewport (or marked LCP). */
@@ -61,7 +63,7 @@
 			(entries) => {
 				if (entries.some((e) => e.isIntersecting)) near = true;
 			},
-			{ rootMargin: '1000px 0px', threshold: 0 }
+			{ rootMargin: '400px 0px', threshold: 0 }
 		);
 		io.observe(node);
 		return () => io.disconnect();
@@ -85,19 +87,33 @@
 
 	/**
 	 * Active image = last cue whose top has crossed the reading-band mid.
-	 * Pure function of layout + scrollY — identical going up or down.
+	 * Hysteresis keeps the live index from flickering when a cue sits on
+	 * the mid-line (subpixel + sticky reflow used to chatter the reel).
 	 */
-	function indexAtBand(beats: HTMLElement[], mid: number): number {
+	const CUE_HYSTERESIS = 12;
+
+	function cueTopOf(i: number, beats: HTMLElement[]): number | null {
+		const { rank, total, beat } = cueShare(i);
+		const el = beats[beat];
+		if (!el) return null;
+		const r = el.getBoundingClientRect();
+		return r.top + (r.height * rank) / total;
+	}
+
+	function indexAtBand(beats: HTMLElement[], mid: number, current: number): number {
 		let active = 0;
 		for (let i = 0; i < visible.length; i++) {
-			const { rank, total, beat } = cueShare(i);
-			const el = beats[beat];
-			if (!el) continue;
-			const r = el.getBoundingClientRect();
-			const cueTop = r.top + (r.height * rank) / total;
+			const cueTop = cueTopOf(i, beats);
+			if (cueTop == null) continue;
 			if (cueTop <= mid) active = i;
 		}
-		return active;
+		if (active === current) return current;
+		if (active > current) {
+			const cueTop = cueTopOf(active, beats);
+			return cueTop != null && cueTop <= mid - CUE_HYSTERESIS ? active : current;
+		}
+		const cueTop = cueTopOf(current, beats);
+		return cueTop != null && cueTop > mid + CUE_HYSTERESIS ? active : current;
 	}
 
 	const watchLive: Attachment<HTMLElement> = (node) => {
@@ -117,14 +133,29 @@
 		}
 
 		let raf = 0;
+		let roTimer = 0;
 		const pick = () => {
 			raf = 0;
-			live = indexAtBand(beats, window.innerHeight * BAND_MID);
+			if (article) {
+				const r = article.getBoundingClientRect();
+				const slop = window.innerHeight * 1.5;
+				if (r.bottom < -slop || r.top > window.innerHeight + slop) return;
+			}
+			const next = indexAtBand(beats, window.innerHeight * BAND_MID, live);
+			if (next !== live) live = next;
 		};
 
 		const onScroll = () => {
 			if (raf) return;
 			raf = requestAnimationFrame(pick);
+		};
+
+		const onResize = () => {
+			if (roTimer) return;
+			roTimer = window.setTimeout(() => {
+				roTimer = 0;
+				onScroll();
+			}, 80);
 		};
 
 		pick();
@@ -133,12 +164,13 @@
 
 		const ro =
 			typeof ResizeObserver !== 'undefined'
-				? new ResizeObserver(onScroll)
+				? new ResizeObserver(onResize)
 				: null;
 		for (const el of beats) ro?.observe(el);
 
 		return () => {
 			if (raf) cancelAnimationFrame(raf);
+			if (roTimer) clearTimeout(roTimer);
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('resize', onScroll);
 			ro?.disconnect();
@@ -194,7 +226,14 @@
 	function openAt(src: string, host: HTMLElement | null) {
 		const items = stackItems(host);
 		const index = items.findIndex((im) => im.src === src);
-		openLightbox(items, index >= 0 ? index : 0);
+		openLightbox(items, index >= 0 ? index : 0, host);
+	}
+
+	function onEditContextMenu(e: MouseEvent, slotId: string) {
+		if (!editUi.enabled) return;
+		e.preventDefault();
+		e.stopPropagation();
+		void permanentlyDeleteCue(slotId);
 	}
 </script>
 
@@ -209,7 +248,7 @@
 	are not hidden behind a locked-in `src`.
 -->
 {#if visible.length}
-<div class="stack" class:immersion class:inline {@attach watchLive} {@attach watchNear}>
+<div class="stack" class:immersion class:inline class:editing {@attach watchLive} {@attach watchNear}>
 	{#each visible as slot, i (`${slot.id}:${i}`)}
 		{#if inline}
 			{@const frames = scriptArtFramesOf(slot)}
@@ -219,6 +258,8 @@
 						class="frame art live"
 						class:temp={frame.layer === 'temp'}
 						style:--tone={slot.tone ?? '#3a3a40'}
+						style:--ratio={slot.ratio ?? 4 / 3}
+						oncontextmenu={(e) => onEditContextMenu(e, slot.id)}
 					>
 						<button
 							type="button"
@@ -232,6 +273,7 @@
 									kind: 'cue',
 									priority: priority && i === 0 && fi === 0,
 									sizes: INLINE_SIZES,
+									widths: [256, 384, 640],
 									alt:
 										frame.layer === 'temp'
 											? `${slot.alt ?? slot.id} (temp)`
@@ -266,22 +308,9 @@
 				style:--ratio={immersion ? '3 / 2' : (slot.ratio ?? 4 / 3)}
 				style:--tone={slot.tone ?? '#3a3a40'}
 				{@attach revealFrame(i)}
+				oncontextmenu={(e) => onEditContextMenu(e, slot.id)}
 			>
 				{#if art && paintSlot(i)}
-					{#if immersion}
-						<img
-							class="fill"
-							{...storyImg(art, {
-								kind: 'cue',
-								alt: '',
-								sizes: CUE_SIZES,
-								widths: [640],
-								loading: 'lazy',
-								fetchpriority: 'low'
-							})}
-							aria-hidden="true"
-						/>
-					{/if}
 					<button
 						type="button"
 						class="open"
@@ -324,6 +353,36 @@
 		min-height: 12rem;
 		display: grid;
 		place-items: center;
+	}
+
+	.stack.editing .frame.art {
+		outline: 1px dashed color-mix(in srgb, var(--gold) 55%, transparent);
+		outline-offset: -2px;
+		cursor: context-menu;
+	}
+
+	.stack.editing .frame.art::after {
+		content: 'Right-click to delete';
+		position: absolute;
+		left: 0.45rem;
+		bottom: 0.4rem;
+		z-index: 3;
+		font-family: var(--ui);
+		font-size: 0.58rem;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: rgba(255, 253, 248, 0.88);
+		background: color-mix(in srgb, #14141a 72%, transparent);
+		padding: 0.18rem 0.4rem;
+		border-radius: 999px;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 160ms var(--ease);
+	}
+
+	.stack.editing .frame.art:hover::after,
+	.stack.editing .frame.art.live::after {
+		opacity: 1;
 	}
 
 	.frame {
@@ -430,16 +489,10 @@
 		border-radius: var(--radius);
 	}
 
-	.stack.immersion .fill,
 	.stack.immersion .open,
 	.stack.immersion .shot,
 	.stack.immersion .ph {
 		grid-area: 1 / 1;
-	}
-
-	.stack.immersion .fill {
-		scale: 1.35;
-		filter: blur(28px) saturate(1.35) brightness(0.38);
 	}
 
 	.stack.immersion .shot {
@@ -451,10 +504,9 @@
 	}
 
 	/* ————— Inline (script) —————
-	   Every frame in reading order, small enough that the prose still leads:
-	   a plate in the margin of a manuscript, never a full-bleed illustration.
-	   No crop and no declared ratio — whatever proportions the art was drawn
-	   in are the proportions it keeps. */
+	   Every frame in reading order, small enough that the prose still leads.
+	   Height is locked and width follows --ratio so lazy decode cannot
+	   shove the column (that was the mid-scroll jump). */
 	.stack.inline {
 		/* The one dimension an inline figure is allowed to claim. */
 		--inline-h: 200px;
@@ -473,9 +525,10 @@
 		width: auto;
 		max-width: 100%;
 		min-width: 0;
-		height: auto;
+		height: var(--inline-h);
 		max-height: var(--inline-h);
-		aspect-ratio: auto;
+		aspect-ratio: var(--ratio, 4 / 3);
+		contain: layout style;
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
@@ -487,17 +540,17 @@
 	}
 
 	.stack.inline .open {
-		width: auto;
-		height: auto;
+		width: 100%;
+		height: 100%;
 		max-width: 100%;
-		max-height: var(--inline-h);
+		max-height: 100%;
 	}
 
 	.stack.inline .frame img {
-		width: auto;
-		height: auto;
+		width: 100%;
+		height: 100%;
 		max-width: 100%;
-		max-height: var(--inline-h);
+		max-height: 100%;
 		object-fit: contain;
 	}
 

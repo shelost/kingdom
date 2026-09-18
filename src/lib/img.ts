@@ -2,11 +2,12 @@
  * Production image loading for story/wiki/cinema art.
  *
  * Files live in `static/` and are referenced dynamically from JSON (`ch_*.png`,
- * `img_*.png`, `pl_*.png`, `temp/*.jpg`, …). `@sveltejs/enhanced-img` cannot
+ * `img_*.png`, `pl_*.png`, `bn_*.png`, `ar_*.png`, `obj_*.png`, `temp/*.jpg`, …). `@sveltejs/enhanced-img` cannot
  * transform those without importing every file at build time, so production
  * uses Vercel Image Optimization (`/_vercel/image`) for AVIF/WebP + srcset.
- * Locally, thumbs and portraits request `?w=` and Vite serves a cached PNG
- * (alpha kept — JPEG was flattening portraits onto white).
+ * Locally, every kind requests `?w=` and Vite serves a cached resized file
+ * (PNG for alpha sources, JPEG for JPEG cues) so sticky stacks and galleries
+ * do not pull multi‑megabyte originals.
  *
  * Later pass: recompress the on-disk PNGs (many are 1–4 MB) to WebP/AVIF.
  */
@@ -25,6 +26,13 @@ export const IMG_WIDTHS = {
 } as const;
 
 export type StoryImgKind = keyof typeof IMG_WIDTHS;
+
+/** Widths the Vite `?w=` middleware will resize (must stay in sync). */
+export const LOCAL_IMG_WIDTHS = [
+	64, 96, 128, 256, 384, 640, 750, 828, 1080, 1200, 1920
+] as const;
+
+const LOCAL_WIDTH_SET = new Set<number>(LOCAL_IMG_WIDTHS);
 
 const DEFAULT_SIZES: Record<StoryImgKind, string> = {
 	cue: '(max-width: 820px) 100vw, 42vw',
@@ -72,7 +80,8 @@ function withWidthQuery(src: string, width: number): string {
 }
 
 function vercelImageCdn(): boolean {
-	return Boolean(import.meta.env.VERCEL) && import.meta.env.PROD;
+	const env = import.meta.env as { VERCEL?: string; PROD?: boolean } | undefined;
+	return Boolean(env?.VERCEL) && Boolean(env?.PROD);
 }
 
 function shouldOptimize(src: string): boolean {
@@ -81,6 +90,17 @@ function shouldOptimize(src: string): boolean {
 	const path = src.split('?')[0] ?? src;
 	if (/\.svg$/i.test(path)) return false;
 	return true;
+}
+
+/** Nearest allowed local width (never upscale past the request). */
+export function snapLocalWidth(width: number): number {
+	let best: number = LOCAL_IMG_WIDTHS[0];
+	for (const w of LOCAL_IMG_WIDTHS) {
+		if (w <= width) best = w;
+		else break;
+	}
+	if (LOCAL_WIDTH_SET.has(width)) return width;
+	return best;
 }
 
 /** Path the optimizer should fetch (relative, including cache-bust query). */
@@ -96,10 +116,16 @@ function optimizerUrl(src: string): string {
 	return src;
 }
 
-/** Single optimized URL, or the original when the CDN is not available. */
+/**
+ * Single optimized URL. On Vercel: CDN. Locally: `?w=` via Vite middleware.
+ * Used by `<link rel="preload">` and as the `<img src>` fallback.
+ */
 export function optimizeSrc(src: string, width: number, quality = 75): string {
-	if (!vercelImageCdn() || !shouldOptimize(src)) return src;
-	return `/_vercel/image?url=${encodeURIComponent(optimizerUrl(src))}&w=${width}&q=${quality}`;
+	if (!shouldOptimize(src)) return src;
+	if (vercelImageCdn()) {
+		return `/_vercel/image?url=${encodeURIComponent(optimizerUrl(src))}&w=${width}&q=${quality}`;
+	}
+	return withWidthQuery(src, snapLocalWidth(width));
 }
 
 /** `srcset` string, or `undefined` off Vercel (callers omit the attribute). */
@@ -141,9 +167,6 @@ export function storyImg(src: string, opts: StoryImgOpts = {}): StoryImgAttrs {
 	if (srcset) {
 		attrs.srcset = srcset;
 		attrs.sizes = opts.sizes ?? DEFAULT_SIZES[kind];
-	} else if (shouldOptimize(src) && (kind === 'thumb' || kind === 'portrait')) {
-		/* Dev / non-Vercel: Vite middleware resizes `?w=` so wiki cards don't pull 2–4 MB PNGs. */
-		attrs.src = withWidthQuery(src, fallbackWidth);
 	}
 	return attrs;
 }

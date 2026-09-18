@@ -13,6 +13,54 @@ import { chapters, chapterIdFromPartId, entryId } from '$lib/story';
 import { scriptUi } from '$lib/scriptUi.svelte';
 import { tocUi } from '$lib/tocUi.svelte';
 
+const KEEP_SCROLL_KEY = 'kingdom:keep-scroll';
+
+type KeptScroll = { href: string; y: number; t: number };
+
+/** Persist Y so a Vite remount after cue-delete does not jump to the episode head. */
+export function rememberReadingScroll() {
+	if (!browser) return;
+	try {
+		const kept: KeptScroll = {
+			href: `${location.pathname}${location.search}`,
+			y: window.scrollY,
+			t: Date.now()
+		};
+		sessionStorage.setItem(KEEP_SCROLL_KEY, JSON.stringify(kept));
+	} catch {
+		/* private mode */
+	}
+}
+
+function readKeptScroll(): KeptScroll | null {
+	if (!browser) return null;
+	try {
+		const raw = sessionStorage.getItem(KEEP_SCROLL_KEY);
+		if (!raw) return null;
+		const kept = JSON.parse(raw) as KeptScroll;
+		if (!kept || typeof kept.y !== 'number' || typeof kept.href !== 'string') return null;
+		if (Date.now() - kept.t > 15_000) return null;
+		if (kept.href !== `${location.pathname}${location.search}`) return null;
+		return kept;
+	} catch {
+		return null;
+	}
+}
+
+/** Restore a remembered Y. Returns true when applied. */
+export function restoreKeptReadingScroll(): boolean {
+	const kept = readKeptScroll();
+	if (!kept) return false;
+	try {
+		sessionStorage.removeItem(KEEP_SCROLL_KEY);
+	} catch {
+		/* ignore */
+	}
+	window.scrollTo(0, kept.y);
+	window.dispatchEvent(new Event('scroll'));
+	return true;
+}
+
 export type Lang = 'both' | 'en' | 'ko';
 
 /**
@@ -24,6 +72,10 @@ export type ReadMode = 'script' | 'immersion' | 'cinema';
 
 /** full = continuous story; episodes = one entry at a time */
 export type ViewScope = 'full' | 'episodes';
+
+/** URL: `?ep=jumong` (title slug). Legacy `?view=episodes` still accepted. */
+export const VIEW_QUERY = 'view';
+export const EP_QUERY = 'ep';
 
 export type EpisodeRef = {
 	chapterId: string;
@@ -63,6 +115,34 @@ export const episodes: EpisodeRef[] = chapters.flatMap((ch, chapterIndex) =>
 		id: entryId(ch.id, entry.title)
 	}))
 );
+
+	/** Title slug only — `jumong` from `jumong-jumong`. */
+export function episodeTitleSlug(ep: EpisodeRef): string {
+	return ep.id.slice(ep.chapterId.length + 1);
+}
+
+/** Title slugs that appear once — safe as bare `?ep=` values. */
+const UNIQUE_TITLE_SLUGS = (() => {
+	const counts = new Map<string, number>();
+	for (const ep of episodes) {
+		const slug = episodeTitleSlug(ep);
+		counts.set(slug, (counts.get(slug) ?? 0) + 1);
+	}
+	const unique = new Set<string>();
+	for (const [slug, n] of counts) {
+		if (n === 1) unique.add(slug);
+	}
+	return unique;
+})();
+
+/**
+ * Shortest stable query id for an episode: bare title slug when unique
+ * (`jumong`), else the full `chapterId-slug` (`jumong-jumong`).
+ */
+export function episodeQueryId(ep: EpisodeRef): string {
+	const slug = episodeTitleSlug(ep);
+	return UNIQUE_TITLE_SLUGS.has(slug) ? slug : ep.id;
+}
 
 export const reading = $state({
 	/** true while a flashback (whole entry or inline) is under the reading line */
@@ -212,11 +292,25 @@ export function loadMode() {
 
 export function loadViewScope() {
 	try {
-		const v = localStorage.getItem('kingdom:view');
-		if (v === 'full' || v === 'episodes') reading.viewScope = v;
+		const urlHasView =
+			browser &&
+			(() => {
+				const u = new URL(location.href);
+				return u.searchParams.has(VIEW_QUERY) || u.searchParams.has(EP_QUERY);
+			})();
+		/* Address bar wins over the saved preference. */
+		if (!urlHasView) {
+			const v = localStorage.getItem('kingdom:view');
+			if (v === 'full' || v === 'episodes') reading.viewScope = v;
+		}
 	} catch {
 		/* ignore */
 	}
+	if (!browser) return;
+	/* Hydrate index FROM the URL before writing — otherwise episodeIndex 0
+	   (Queen Sunduk) overwrites a bookmarked `?ep=jumong` on every mount. */
+	applyReadingFromUrl(new URL(location.href));
+	if (reading.viewScope === 'episodes') syncReadingUrl();
 }
 
 /**
@@ -257,6 +351,8 @@ export function setViewScope(s: ViewScope) {
 		stripStoryHash();
 	}
 
+	syncReadingUrl();
+
 	const after = () => {
 		const ep = episodes[reading.episodeIndex];
 		if (!ep) {
@@ -273,6 +369,116 @@ export function setViewScope(s: ViewScope) {
 	requestAnimationFrame(() => requestAnimationFrame(after));
 }
 
+/** True while applying `?view` / `?ep` from the address bar (skip echo writes). */
+let applyingReadingUrl = false;
+
+/** Write `ep` to match `reading` (replaceState — no history spam). */
+export function syncReadingUrl() {
+	if (!browser || applyingReadingUrl) return;
+	try {
+		const url = new URL(location.href);
+		let dirty = false;
+		if (reading.viewScope === 'episodes') {
+			/* `?ep=jumong` alone implies episodes — drop legacy `view=episodes`. */
+			if (url.searchParams.has(VIEW_QUERY)) {
+				url.searchParams.delete(VIEW_QUERY);
+				dirty = true;
+			}
+			const ep = episodes[reading.episodeIndex];
+			const qid = ep ? episodeQueryId(ep) : null;
+			if (qid && url.searchParams.get(EP_QUERY) !== qid) {
+				url.searchParams.set(EP_QUERY, qid);
+				dirty = true;
+			}
+		} else {
+			if (url.searchParams.has(VIEW_QUERY)) {
+				url.searchParams.delete(VIEW_QUERY);
+				dirty = true;
+			}
+			if (url.searchParams.has(EP_QUERY)) {
+				url.searchParams.delete(EP_QUERY);
+				dirty = true;
+			}
+		}
+		if (!dirty) return;
+		const next = `${url.pathname}${url.search}${url.hash}`;
+		try {
+			replaceState(next, {});
+		} catch {
+			history.replaceState(null, '', next);
+		}
+	} catch {
+		/* private / SSR */
+	}
+}
+
+/**
+ * Apply `?view=` / `?ep=` from the URL. No-ops when neither param is present so
+ * localStorage / in-memory scope survive unrelated query edits (`nsfw`, `edit`).
+ */
+export function applyReadingFromUrl(url: URL) {
+	if (!browser) return;
+	const view = url.searchParams.get(VIEW_QUERY);
+	const epParam = url.searchParams.get(EP_QUERY);
+	if (view === null && epParam === null) return;
+
+	applyingReadingUrl = true;
+	try {
+		if (view === 'full') {
+			if (reading.viewScope !== 'full') {
+				reading.viewScope = 'full';
+				persistViewScope('full');
+				releaseDialogue();
+				requestAnimationFrame(() => window.dispatchEvent(new Event('scroll')));
+			}
+			return;
+		}
+
+		const wantEpisodes = view === 'episodes' || !!epParam;
+		if (!wantEpisodes) return;
+
+		let changed = false;
+		if (reading.viewScope !== 'episodes') {
+			reading.viewScope = 'episodes';
+			persistViewScope('episodes');
+			changed = true;
+		}
+
+		if (epParam) {
+			const idx = resolveEpisodeIndex(epParam);
+			if (idx >= 0 && reading.episodeIndex !== idx) {
+				reading.episodeIndex = idx;
+				releaseDialogue();
+				changed = true;
+			}
+		}
+
+		if (!changed && !readKeptScroll()) return;
+
+		if (changed) stripStoryHash();
+		const dest = epParam ? canonicalHashId(epParam) : episodes[reading.episodeIndex]?.id;
+		requestAnimationFrame(() =>
+			requestAnimationFrame(() => {
+				if (restoreKeptReadingScroll()) return;
+				if (!changed) {
+					window.dispatchEvent(new Event('scroll'));
+					return;
+				}
+				if (!dest) {
+					window.dispatchEvent(new Event('scroll'));
+					return;
+				}
+				const ep = episodes[reading.episodeIndex];
+				const el = findStoryHeading(dest) ?? (ep ? findStoryHeading(ep.id) : null);
+				if (el && scriptUi.inScript) scrollToStoryHeading(el, 'auto');
+				window.dispatchEvent(new Event('scroll'));
+			})
+		);
+	} finally {
+		applyingReadingUrl = false;
+	}
+}
+
 /** Resolve a chapter, slug, leftover, or `chapterId-index` hash to a flat episode index, or -1. */
 export function resolveEpisodeIndex(id: string): number {
 	return resolveStoryTarget(id)?.episodeIndex ?? -1;
@@ -282,14 +488,26 @@ export function resolveEpisodeIndex(id: string): number {
 export type StoryTarget = { episodeIndex: number; hashId: string };
 
 /**
- * Resolve a chapter, episode, leftover, or `#chapter-episode-scene` hash.
+ * Resolve a chapter, episode, leftover, short `?ep=` slug, or `#chapter-episode-scene` hash.
  * Scene ids are `episodeId-scene-slug` (longest matching episode prefix).
+ * Short query ids (`jumong`) match a unique title slug.
  */
 export function resolveStoryTarget(id: string): StoryTarget | null {
 	if (!id) return null;
 
 	const exact = episodes.findIndex((e) => e.id === id);
 	if (exact >= 0) return { episodeIndex: exact, hashId: id };
+
+	/* Old Ansi-nested id — Jumong is its own founding chapter now. */
+	if (id === 'seventh-invasion-jumong' || id.startsWith('seventh-invasion-jumong-')) {
+		return resolveStoryTarget(`jumong-jumong${id.slice('seventh-invasion-jumong'.length)}`);
+	}
+
+	/* Bare title slug from `?ep=jumong` (unique across the chronicle). */
+	const byTitleSlug = episodes.findIndex((e) => episodeTitleSlug(e) === id);
+	if (byTitleSlug >= 0 && UNIQUE_TITLE_SLUGS.has(id)) {
+		return { episodeIndex: byTitleSlug, hashId: episodes[byTitleSlug].id };
+	}
 
 	if (chapters.some((ch) => ch.id === id)) {
 		const idx = episodes.findIndex((e) => e.chapterId === id);
@@ -646,6 +864,7 @@ export function goToEpisode(
 				if (script) scrollToStoryHeading(script, 'auto');
 			}
 		}
+		syncReadingUrl();
 		window.dispatchEvent(new Event('scroll'));
 	};
 
@@ -896,9 +1115,10 @@ export function watchReading() {
 		if (reading.place !== place) reading.place = place;
 		if (reading.year !== year) reading.year = year;
 		if (reading.entryId !== entryKey) reading.entryId = entryKey;
-		/* Episodes HUD tracks the band — the full document stays mounted, so
-		   scrolling past an entry advances without remounting. */
-		if (entryKey) {
+		/* Full scope: scroll advances the episode index.
+		   Episodes scope: URL / TOC / Prev-Next own the index — don't let the
+		   band watcher fight a bookmarked `?ep=` (or snap back to index 0). */
+		if (entryKey && reading.viewScope === 'full') {
 			const idx = resolveEpisodeIndex(entryKey);
 			if (idx >= 0 && reading.episodeIndex !== idx) reading.episodeIndex = idx;
 		}
@@ -995,4 +1215,5 @@ if (browser) {
 	} catch {
 		/* private mode */
 	}
+	import.meta.hot?.on('vite:beforeFullReload', () => rememberReadingScroll());
 }

@@ -27,6 +27,7 @@
 	import type { Chapter, StackImage } from '$lib/story';
 
 	let episodesMode = $derived(reading.viewScope === 'episodes');
+	let currentEp = $derived(episodes[reading.episodeIndex]);
 	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
 	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
 	/* The mode is the layout: the script reads as a manuscript with its figures
@@ -43,29 +44,37 @@
 
 		/** Chrome waits until cover + blurb are behind the reader. */
 		const scriptEl = storyRoot();
+		let syncRaf = 0;
 		const syncInScript = () => {
-			if (!scriptEl) {
-				scriptUi.inScript = true;
-				return;
-			}
-			/* A TOC jump can briefly look like cover until the measured-Y scroll
-			   lands — keep chrome up so the panel does not retract. */
-			if (tocUi.jumping) {
-				scriptUi.inScript = true;
-				return;
-			}
-			/* True once any of the script has entered the viewport from below. */
-			scriptUi.inScript = scriptEl.getBoundingClientRect().top < window.innerHeight * 0.92;
+			if (syncRaf) return;
+			syncRaf = requestAnimationFrame(() => {
+				syncRaf = 0;
+				if (!scriptEl) {
+					scriptUi.inScript = true;
+					return;
+				}
+				/* A TOC jump can briefly look like cover until the measured-Y scroll
+				   lands — keep chrome up so the panel does not retract. */
+				if (tocUi.jumping) {
+					scriptUi.inScript = true;
+					return;
+				}
+				/* Hysteresis so chrome does not chatter when the cover edge
+				   sits on the threshold. */
+				const top = scriptEl.getBoundingClientRect().top;
+				const vh = window.innerHeight;
+				scriptUi.inScript = scriptUi.inScript ? top < vh * 0.98 : top < vh * 0.88;
+			});
 		};
 
 		syncInScript();
-		requestAnimationFrame(syncInScript);
 
 		window.addEventListener('scroll', syncInScript, { passive: true });
 		window.addEventListener('resize', syncInScript);
 
 		return () => {
 			stopReading();
+			if (syncRaf) cancelAnimationFrame(syncRaf);
 			window.removeEventListener('scroll', syncInScript);
 			window.removeEventListener('resize', syncInScript);
 			scriptUi.inScript = false;
@@ -164,7 +173,8 @@
 		class:images-inline={inlineImages}
 	>
 		{#each chapters as chapter, ci (chapter.id)}
-				{#if chapter.part}
+			{#if !episodesMode || chapter.id === currentEp?.chapterId}
+				{#if chapter.part && !episodesMode}
 					<section class="part-page" data-story-id={partId(chapter.id)} use:reveal>
 						<span class="part-eyebrow">{chapter.part}</span>
 						{#if chapter.partTitle}<h2 class="part-title">{chapter.partTitle}</h2>{/if}
@@ -174,20 +184,23 @@
 					</section>
 				{/if}
 				<section class="chapter" data-story-id={chapter.id}>
-						<header class="chapter-head">
-							<div class="chapter-title">
-								<h1>
-									<span class="num">{ci + 1}</span>
-									<span class="en">{chapter.title}</span>
-									{#if chapter.hanja}<span class="hanja">{chapter.hanja}</span>{/if}
-									{#if chapter.korean}<span class="ko">{chapter.korean}</span>{/if}
-									<span class="range">{chapter.range}</span>
-								</h1>
-								<span class="rule" aria-hidden="true"></span>
-							</div>
-						</header>
+						{#if !episodesMode}
+							<header class="chapter-head">
+								<div class="chapter-title">
+									<h1>
+										<span class="num">{ci + 1}</span>
+										<span class="en">{chapter.title}</span>
+										{#if chapter.hanja}<span class="hanja">{chapter.hanja}</span>{/if}
+										{#if chapter.korean}<span class="ko">{chapter.korean}</span>{/if}
+										<span class="range">{chapter.range}</span>
+									</h1>
+									<span class="rule" aria-hidden="true"></span>
+								</div>
+							</header>
+						{/if}
 
 					{#each chapter.entries as entry, i (chapter.id + i)}
+							{#if !episodesMode || (chapter.id === currentEp?.chapterId && i === currentEp?.entryIndex)}
 							{@const years = yearsByChapter.get(chapter.id) ?? []}
 							<!-- One sanitized copy of the entry per render: beats, the sticky
 							     stack and the scene-id source all read from it, so anchors and
@@ -273,8 +286,8 @@
 											class:first={bi === 0}
 											class:has-art={sideImages && beat.images.length > 0}
 											data-beat={bi}
-											style:--art-n={Math.max(1, beat.images.length)}
-											use:reveal={80}
+											style:--art-n={Math.min(2, Math.max(1, beat.images.length))}
+											use:reveal={{ delay: 80, y: 0 }}
 										>
 											<Blocks
 												blocks={beat.blocks}
@@ -316,21 +329,25 @@
 									</aside>
 								{/if}
 							</article>
+							{/if}
 					{/each}
 				</section>
+			{/if}
 		{/each}
 	</div>
 
-	<footer class="colophon" use:reveal>
-		<p>— to be continued —</p>
-		<p class="colophon-links">
-			<a href={resolve('/wiki')}>Encyclopedia</a>
-			<span aria-hidden="true">·</span>
-			<a href={resolve('/images')}>Images</a>
-			<span aria-hidden="true">·</span>
-			<a href={resolve('/grade')}>Grade</a>
-		</p>
-	</footer>
+	{#if !episodesMode}
+		<footer class="colophon" use:reveal>
+			<p>— to be continued —</p>
+			<p class="colophon-links">
+				<a href={resolve('/wiki')}>Encyclopedia</a>
+				<span aria-hidden="true">·</span>
+				<a href={resolve('/images')}>Images</a>
+				<span aria-hidden="true">·</span>
+				<a href={resolve('/grade')}>Grade</a>
+			</p>
+		</footer>
+	{/if}
 
 	<nav
 		class="ep-nav"
@@ -995,14 +1012,14 @@
 	}
 
 	/*
-	   Desktop sticky reel: each image-bearing beat reserves a minimum scroll
-	   runway so cue switch points stay spaced and short prose cannot skip art.
-	   --art-n scales the floor when several images share one beat.
+	   Desktop sticky reel: a modest runway so short prose cannot skip art.
+	   --art-n is capped at 2 — a dozen stills on one beat used to inflate
+	   this into empty screens, which felt like the page was stuck then jumped.
 	   Inline layout skips this — art already sits in the flow.
 	*/
 	@media (min-width: 821px) {
 		.text.has-art {
-			min-height: calc(var(--art-n, 1) * min(52vh, 22rem));
+			min-height: calc(var(--art-n, 1) * min(36vh, 14rem));
 		}
 	}
 

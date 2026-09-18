@@ -1,16 +1,32 @@
 ---
-description: Use local Draw Things for explicit chronicle stills instead of Cursor GenerateImage
+description: Use Cursor GenerateImage for explicit chronicle stills (not Fal Pony / Draw Things)
 alwaysApply: true
 ---
 
-# Local NSFW stills
+# NSFW stills (Cursor GenerateImage)
 
-Cursor `GenerateImage` is filtered. For explicit / sex / skin-forward chronicle stills, do **not** use it.
+For explicit / sex / skin-forward chronicle stills, use Cursor `GenerateImage` (`CallDynamicTool` namespace `cursor`, toolName `GenerateImage`). Do **not** use `scripts/generate-nsfw.mjs`, Fal Pony (`fal-ai/pony-v7`, `fal-ai/lora`), Fal face-swap, or Draw Things Pony.
 
-1. Call `node scripts/generate-nsfw.mjs --id {slot-id} --prompt "..."` (Draw Things API on `127.0.0.1:7860`).
-2. Slot must already exist on the entry in `src/lib/data/story.json`.
-3. `node scripts/install-temp-art.mjs <manifest.json>` as usual.
+## Pipeline
 
-If the API is down, tell the user to open Draw Things, load **Pony Diffusion V6 XL**, enable **API Server**, then retry. Do not fall back to Cursor GenerateImage for those beats.
+1. Slot must already exist on the entry in `src/lib/data/story.json`.
+2. Cursor `GenerateImage` → `{slot-id}.png` (filename is the slot id). Attach face/garment refs `static/ch_*.png` and binyeo `static/bn_*.png` when hair/head is visible. Do not invent faces.
+3. Append the current `suffix` from `src/lib/data/image-prompt-house.json`.
+4. `node scripts/install-temp-art.mjs <manifest.json>` → `static/temp/{id}.jpg` + `tempImage`. The script deletes the source PNG.
 
-Face refs stay `static/ch_*.png` + `bn_*.png` in the prompt text. Keep the chronicle still doctrine (locked hall, two people, no glass lanterns, no text).
+Keep chronicle still doctrine (intimate/close for sex; locked Korean place; person-as-hex; no text).
+
+## Cursor filter (400)
+
+Cursor may **400** on explicit sex / porn-dump wording. Retry once with a **skin-forward cinematic** prompt — same beat, same place, same refs — without porn vocabulary:
+
+- naked back, grind silhouette, hiked chima, wanting face, off-shoulder silk, lamp chiaroscuro
+- Do **not** dump: penetration, genitals-as-subject, creampie, explicit sex-act catalogs
+
+If it 400s again, delete the slot from `images[]` and `movieSequences` rather than leaving a Fal/Pony plate.
+
+## Do not use
+
+- `scripts/generate-nsfw.mjs` / `scripts/generate-nsfw-pony-swap.mjs`
+- Fal Pony, dual IP-Adapter Pony, Draw Things local Pony
+- Cursor GenerateImage is the preferred path. Pony is not a fallback.

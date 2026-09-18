@@ -1,113 +1,131 @@
 ---
-description: Voice and period rules for chronicle narration and dialogue in story.json — movie/novel talk, not captions
+description: Voice and period rules for chronicle narration and dialogue — spoken scenes, not telegram captions
 globs: src/lib/data/story.json,src/lib/people.ts
 alwaysApply: true
 ---
 
 # Chronicle script voice
 
-Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/people.ts` (`firstLine`, `lastLine`, `quote`, `nature`). Keep the chronicle's ear. Do not flatten wit. Do not lecture the reader. The fix is **redistribution, not deletion**: intelligence stays in the narrator and in loaded objects; thesis statements come out of mouths.
+Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/people.ts` (`firstLine`, `lastLine`, `quote`, `nature`). Keep the chronicle’s ear. Do not flatten wit. Do not lecture the reader.
 
 **Blocks** (see `src/lib/story.ts`): `p` (`html` EN + `ko`), `dialogue` (`lines[]` Korean + `en[]` English, index-for-index; `person` id), `quote` (verbatim record), `day`, `flashback`, `diagram`/`table`. Cinema plays array order; only `kind: "flashback"` reads as memory.
 
-Every new `p` / `dialogue` is bilingual. Korean matches the speaker (존댓말 vs 반말), not a literal calque. If you rewrite English, rewrite Korean in the same pass. If the old English was an image `at` fragment, update that slot or the stack will detach.
+Every new `p` / `dialogue` is bilingual. Korean matches the speaker (존댓말 vs 반말) and should sound **said aloud**, not a calque of the English. If you rewrite English, rewrite Korean in the same pass. If the old English was an image `at` fragment, update that slot or the stack will detach.
 
-## Movie / novel talk (default)
+## Spoken scene (default)
 
-Dialogue is what people **say while doing something**, not a caption of the plot. Write it like a scene in a novel or a film — overlapping, interrupted, slightly stupid, with jokes that miss. The narrator can say what happened; mouths should not recap it.
+Dialogue is what people say **to each other in a room**, the way a TV drama or a novel writes talk: questions that get answers, accusations, hedges, trailing off, people talking past each other. The narrator covers business the mouths would never volunteer (five tribes, bone ranks, who owns the pine, who dives, who stays).
+
+This is the **opposite** of telegram-epigram **and** of fake-literary captions. Do not compress a whole beat into three nouns. Do not let mouths narrate the camera.
 
 **Do**
-- Short lines. One thought per line. Let the next speaker cut in.
-- Subtext: she says the bucket; she means stay. He says he'll go; he's watching her face.
-- Character rhythm: Jumong easy, amused, a little slow on purpose. Sosuno sharp then too much then covering. Tabal short and sour. Yushin numbers. Maids unfinished.
-- After a kiss / run / fight: breath, a fragment, then the real sentence. Not a press statement.
-- Keep one locked phrase per still (`at`) somewhere in the block so cinema does not detach — bury it in talk, don't let the whole speech be the phrase.
+- Let them ask and answer. “So who sent you.” / “Nobody sent me. Your men grabbed me.” is a scene. “River. I didn’t send me.” is a caption.
+- Full-enough sentences when strangers talk. Two or three clauses is fine. Ellipses, restarts, “wait,” “I mean,” whispering when scared.
+- **Close people** (sisters, lovers, old friends): **shared context**. Nicknames. Unfinished sentences. Interruption. Teasing cruelty. Overlap. They already know the river, the well, the hour. They do **not** plot-dump to each other.
+- Character rhythm still: Jumong easy until he isn’t, then scared and a little stupid. Sosuno sharp, too much, then covering. Tabal sour, interrogating, not poetry. Yushin numbers. Maids unfinished. **Haemosu**: feral, greedy, easy sun-god — “hey,” “wait,” want first, not a tourist counting the girls. **Yuhwa**: youngest, stays, flirty/brave, hedges then dares. **Hwahye**: eldest, leaves first, curt orders. **Wihye**: middle, laughs, then follows.
+- After a kiss / run / fight / dive: breath, a fragment, then the real sentence.
+- Bury one locked cinema phrase (`at`) in the block. Don’t let the whole speech *be* the phrase. Encyclopedia stays in the narrator.
 
-**Don't**
-- Legal-notice dialogue: "I was wrong. I'll leave the village. Tonight."
-- Theme read-aloud: "save you the heartache of wanting a man you will not name."
-- Encyclopedia in mouths (already banned). Also banned: listing the plot beats in order as speech.
-- Matching thesis to thesis ("Then I will wait for the second bucket." / "This is fun, lady.").
-- Three poetic metaphors in one speech. One object is enough (bucket, pine, ledger).
+**Don’t**
+- Telegram stacks: “Han. Mohe. Khitan. The next roof over.”
+- Legal-notice: “I was wrong. I’ll leave the village. Tonight.”
+- Theme read-aloud: “save you the heartache of wanting a man you will not name.”
+- Encyclopedia quizzes (“270 years ago, have you forgotten?”). Archival Samguk Sagi debate speeches may stay.
+- Matching thesis to thesis.
+- **Caption-dialogue:** saying the camera beat out loud. Listing options for the audience. “He’s staring at us. Should I show him more.” / “Wait, why are two leaving. I’m not done looking.”
+- **Interview sisters:** explaining personality to each other. “Youngest will stay. She always does.” Show it: two dive, one stays. Mouths stay messy.
 
-If a line could be a still's `alt` text, it is too dry. Put the camera sentence in `p`. Put the messy mouth in `dialogue`.
+If a line could be a still’s `alt` text, it is too dry. Camera in `p`. Mouths in `dialogue`.
+
+Korean must **sound said**. River sisters: 언니 / 동생 **반말**, overlap, unfinished. Do not calque an English thesis into 존댓말. Haemosu easy 반말; Yuhwa flirts 해요체 then slips.
+
+A chieftain **may** list suspects (Mohe, Khitan, Han commandery) because that is how he interrogates. That is not encyclopedia. The chronicler still owns the five-tribe lecture.
 
 ## Period
 
-- Mortal dialogue must **not** cite AD/CE years ("in 642"). Use reigns, seasons, harvests, "the year she was crowned", "fifteen winters past", event names ("since Daeya fell").
+- Mortal dialogue must **not** cite AD/CE years (“in 642”). Use reigns, seasons, harvests, “the year she was crowned”, “fifteen winters past”, event names (“since Daeya fell”).
 - Exception: goddesses (`narim`, `golhwa`, `hyulle`) and other divine/mythic speakers MAY know AD years.
-- Narration and `quote` blocks MAY keep AD years (chronicler's voice).
+- Narration and `quote` blocks MAY keep AD years (chronicler’s voice).
 - Historical `quote` blocks stay verbatim (hanja / ko / en / source). Never rewrite quotes.
-- Do not introduce AD years in mortal mouths when adding new scenes.
 
 ## Narration (J.K. Rowling-ish chronicle)
 
 Historical present is the default; occasional past for memory is OK.
 
 - Vary sentence length: long sentences with subordinate clauses + occasional very short punches. Wit lives *inside* the sentence, not only as an end-of-block verdict.
-- Ban AI-isms: "It is not X. It is Y." / "not because X but because Y" / "That is not cruelty. That is administration." — except 1–2 licensed character voices (Euija, Kangrim).
+- Ban AI-isms: “It is not X. It is Y.” / “not because X but because Y” / “That is not cruelty. That is administration.” — except 1–2 licensed character voices (Euija, Kangrim).
 - Em-dash budget: at most one per narration block when possible.
-- Don't end every paragraph on a drop-beat aphorism.
-- Keep dry-chronicler humor (ledger jokes, "treason with better stationery"). Don't flatten it.
+- Don’t end every paragraph on a drop-beat aphorism.
+- Keep dry-chronicler humor. Don’t flatten it.
+- **Action the mouths skip:** men moving to kill, a bow that will not bend, a cup not drunk. Put that in `p`.
 
 ## Trust the reader
 
-1. **Don't let characters speak their own subtext.** Especially Kangrim "exit interviews" ("were you X, or Y?" + thesis answer). Keep Kangrim — the psychopomp is an asset — but break the formula: refuse the question, answer with a concrete object, skip the question. Deathbed emotion via objects already loaded (headband, two teacups, kite, 108–108), not speeches.
-2. **Don't decode the beat you just watched.** After a climax, no paragraph explaining what it meant. Cut or replace with a factual aside (what happened next, what the minutes recorded). One chronicler aside per scene. Retire templates after one use ("That is the mortal last line", "the air thins").
-3. **Distinct voices, not 109 epigram mouths.** License polished aphorisms to Euija and Kangrim (Munhee sparingly). Yushin literal/numeric; Alchun understatement; Gyebek plain; maids gossip-syntax/unfinished; children child-speech; soldiers contractions/banmal. Formal court and Tang imperial stay formal. Goddesses keep their register. Let some people be bad at talking.
-4. **Don't use dialogue as encyclopedia.** Bone ranks, king-lists, timelines belong in narration or `diagram` / `table` blocks. Spoken history should wound, not quiz ("270 years ago, have you forgotten?"). Archival Samguk Sagi-style debate speeches may stay.
-5. **Bilingual:** every new `p`/`dialogue` has English + Korean. Korean should sound natural for that speaker.
+1. Don’t let characters speak their own subtext (Kangrim “were you X, or Y?” + thesis). Emotion via objects already loaded, not speeches. Desperate identity claims under a knife are allowed — that is what he would say.
+2. Don’t decode the beat you just watched. One chronicler aside per scene.
+3. Distinct voices, not 109 epigram mouths. License polished aphorisms to Euija and Kangrim (Munhee sparingly). Formal court and Tang stay formal. Goddesses keep their register. Let some people be bad at talking.
+4. Bilingual: Korean register matches the speaker.
 
 ## Structure already in the file
 
-- Bidam's Rebellion uses `kind: "day"` headers (DAY 1–10). Don't flatten them into prose prefixes (`<b>첫째 날.</b>`).
-- Flashbacks must use `kind: "flashback"` so cinema doesn't play them as present action.
+- Bidam’s Rebellion uses `kind: "day"` headers. Don’t flatten them into prose prefixes.
+- Flashbacks must use `kind: "flashback"`.
 - Dead characters must not speak in later years unless wrapped in flashback.
-- Ages in prose are derived from `people.ts` `born` + entry year — don't hardcode stale ages.
+- Ages in prose are derived from `people.ts` `born` + entry year.
 
 ## Hwarang
 
-Classes are yearly: First Class (제일기, 560), Class 51 (오십일기), Class 84 (팔십사기). Class n = entry year − 559. Members talk like old-boy / Korean military 기수 (선배, our class), not "Yushin's Class".
+Classes are yearly: First Class (제일기, 560), Class 51 (오십일기), Class 84 (팔십사기). Class n = entry year − 559. Members talk like old-boy / Korean military 기수 (선배, our class), not “Yushin’s Class”.
 
 ## Before you save
 
 - No AD/CE in mortal `dialogue`.
-- New `p`/`dialogue` blocks have EN + KO; Korean register matches the speaker.
-- No decoder paragraph after a climax you just wrote; no new "were you X, or Y?" exit interview.
+- New `p`/`dialogue` have EN + KO; Korean sounds spoken.
+- No decoder paragraph after a climax; no new “were you X, or Y?” exit interview.
 - The speaker sounds like themselves, not the chronicler (unless they are Euija or Kangrim).
-- New talk sounds like a scene, not a caption. If the line could be an image `alt`, put it in `p` instead.
-- `day` / `flashback` kinds preserved; the dead do not speak in later years as present action.
+- Talk sounds like a scene, not a caption and not a telegram.
 - Image `at` still matches if you rewrote the beat.
 
 ## BAD → GOOD
 
+**Telegram vs spoken (Tabal hall)**
+
+- BAD: “River dump you? / Or did someone send you.” / “River. / I didn’t send me.”
+- GOOD: “So who sent you.” / “…What? Nobody sent me. Your men grabbed me. I was just— here.”
+- BAD: “Han. Mohe. Khitan. The next roof over. / You don’t talk like this valley.”
+- GOOD: “Don’t play dumb. Mohe? Khitan? Or the commandery? Your clothes aren’t from anywhere near here. A spy would at least dress right.”
+- BAD: “State your name. State your father. State why you came.”
+- GOOD: “Name.” / “Jumong. I— look, your men already—” / “I asked for a name.”
+
+**Caption-dialogue / interview sisters (Amnok)**
+
+- BAD: “Stop— stop the chariot. / Hey. There’s three of you. / Wait, why are two leaving. I’m not done looking—”
+- GOOD: “야— / 잠깐. 야. / 거기. 너.” / “Hey— / Wait. Hey. / You. Stay.”
+- BAD: “Sister. Look up. / …He’s staring at us. / Should I pretend to blush, or— / Should I just show him more.”
+- GOOD: “언니. / 가. 난 여기. / …올려다보지 마, 라고 하려고—” / “Unni. / Go. I’m here. / …I was going to say don’t look up—”
+- BAD: “Don’t look up. Not now. / We’re going under. / Heaven keeps a schedule. We’ll keep the water.”
+- GOOD: “야. 들어가. / 지금. 안 들려?” / “Hey. In. / Now. You hear me?”
+- BAD: “You look up and you’re already late, idiot. / He’s staring like that— yeah, too late. / Youngest will stay. She always does, this one.”
+- GOOD: “푸핫— 언니 기다려. / 막내 너 진짜— / 아 몰라, 나 먼저—” / “Pfft— wait up. / You, seriously— / whatever, I’m going—”
+
 **Years in mortal dialogue**
 
-- BAD: "In 632, when you spoke — you told me to stand."
-- GOOD: "Fifteen winters past, when you spoke — you told me to stand."
+- BAD: “In 632, when you spoke — you told me to stand.”
+- GOOD: “Fifteen winters past, when you spoke — you told me to stand.”
 
-**Sunduk / Kangrim (don't speak the thesis)**
+**Sunduk / Kangrim (don’t speak the thesis)**
 
-- BAD: "…Tell the sacred country I was tired of being clever for other people's fear. That is my answer."
-- GOOD: "…The tower I built. Cheomseongdae." / "Majesty?" / "Someone should keep the stairs swept. That is all the answer you are getting."
+- BAD: “…Tell the sacred country I was tired of being clever for other people’s fear. That is my answer.”
+- GOOD: “…The tower I built. Cheomseongdae.” / “Majesty?” / “Someone should keep the stairs swept. That is all the answer you are getting.”
 
-**Decoder after "Blood is inevitable…"**
+**Decoder after “Blood is inevitable…”**
 
-- BAD: "He is not gloating; he is barely audible. It is the echo of Bidam's fifth-morning barb, turned back on the house that raised him…"
-- GOOD: "Alchun goes pale. An officer asks for the order again. Nobody repeats it. Yushin mounts, and the order stands."
+- BAD: “He is not gloating; he is barely audible. It is the echo of Bidam’s fifth-morning barb…”
+- GOOD: “Alchun goes pale. An officer asks for the order again. Nobody repeats it. Yushin mounts, and the order stands.”
 
-**Bupmin, age six (child-speech)**
+**Romance (messy mouth, not a caption)**
 
-- BAD: "I want to be the king for all. Not a king for Sacred Bone. Not a king for True Bone. For all."
-- GOOD: "When I'm king, everyone has to listen. Even the bone people." / "Which bone people?" / "All of them. That's the point."
-
-**Romance / tsundere (don't caption the plot)**
-
-- BAD: "I was wrong. I'll leave the village. Tonight."
-- GOOD: "That was— yeah. I'll go. Tonight, if that's easier."
-- BAD: "And save you the heartache of wanting a man you will not name."
-- GOOD: "I walk. You keep your numbers. Nobody has to say anything stupid."
-- BAD: "You hide these like a thief. From me. Taken from every time we met."
-- GOOD: "That's my headband." / "It was dirty." / "There's four of them."
-- BAD: "Stay. I wanted you. From the first count. Don't you dare save me."
-- GOOD: "Wait— you idiot— stay. I wanted you. The first morning. Don't you dare be noble about it."
+- BAD: “I was wrong. I’ll leave the village. Tonight.”
+- GOOD: “That was— yeah. I’ll go. Tonight, if that’s easier.”
+- BAD: “Stay. I wanted you. From the first count. Don’t you dare save me.”
+- GOOD: “Wait— you idiot— stay. I wanted you. The first morning. Don’t you dare be noble about it.”
