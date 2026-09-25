@@ -5,8 +5,31 @@
 export const tocUi = $state({
 	open: true,
 	/** True while a TOC / hash jump is in flight — keeps chrome from treating a remount as “left the script”. */
-	jumping: false
+	jumping: false,
+	/** Sidebar as a floating card with drop shadow. Default on. */
+	floating: true
 });
+
+const TOC_FLOAT_KEY = 'kingdom:toc-float';
+
+export function setTocFloating(on: boolean) {
+	tocUi.floating = on;
+	try {
+		localStorage.setItem(TOC_FLOAT_KEY, on ? '1' : '0');
+	} catch {
+		/* private mode */
+	}
+}
+
+export function loadTocFloating() {
+	try {
+		const v = localStorage.getItem(TOC_FLOAT_KEY);
+		if (v === '0') tocUi.floating = false;
+		else tocUi.floating = true;
+	} catch {
+		/* default on */
+	}
+}
 
 let jumpGen = 0;
 

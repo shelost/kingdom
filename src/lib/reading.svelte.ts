@@ -8,8 +8,9 @@
  */
 
 import { browser } from '$app/environment';
-import { replaceState } from '$app/navigation';
+import { goto, replaceState } from '$app/navigation';
 import { chapters, chapterIdFromPartId, entryId } from '$lib/story';
+import { isLoveEpisode } from '$lib/loveEpisodes';
 import { scriptUi } from '$lib/scriptUi.svelte';
 import { tocUi } from '$lib/tocUi.svelte';
 
@@ -70,7 +71,7 @@ export type Lang = 'both' | 'en' | 'ko';
  */
 export type ReadMode = 'script' | 'immersion' | 'cinema';
 
-/** full = continuous story; episodes = one entry at a time */
+/** full = continuous story; episodes = one entry at a time (default) */
 export type ViewScope = 'full' | 'episodes';
 
 /** URL: `?ep=jumong` (title slug). Legacy `?view=episodes` still accepted. */
@@ -106,18 +107,25 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'silla-tang-war-8': 'silla-tang-war-the-king-for-all'
 };
 
-/** Flat episode list — slug ids match TOC / URL hashes (`chapterId-title-slug`). */
-export const episodes: EpisodeRef[] = chapters.flatMap((ch, chapterIndex) =>
-	ch.entries.map((entry, entryIndex) => ({
-		chapterId: ch.id,
-		chapterIndex,
-		entryIndex,
-		id: entryId(ch.id, entry.title)
-	}))
-);
+/** Flat episode list — slug ids match TOC / URL hashes (`chapterId-title-slug`).
+ * Index 0 is the title page, its own episode, not a scroll above the first entry. */
+export const TITLE_EPISODE_ID = 'title';
 
-	/** Title slug only — `jumong` from `jumong-jumong`. */
+export const episodes: EpisodeRef[] = [
+	{ chapterId: 'title', chapterIndex: -1, entryIndex: -1, id: TITLE_EPISODE_ID },
+	...chapters.flatMap((ch, chapterIndex) =>
+		ch.entries.map((entry, entryIndex) => ({
+			chapterId: ch.id,
+			chapterIndex,
+			entryIndex,
+			id: entryId(ch.id, entry.title)
+		}))
+	)
+];
+
+/** Title slug only — `jumong` from `jumong-jumong`. The title page is `title`. */
 export function episodeTitleSlug(ep: EpisodeRef): string {
+	if (ep.id === TITLE_EPISODE_ID) return TITLE_EPISODE_ID;
 	return ep.id.slice(ep.chapterId.length + 1);
 }
 
@@ -142,6 +150,14 @@ const UNIQUE_TITLE_SLUGS = (() => {
 export function episodeQueryId(ep: EpisodeRef): string {
 	const slug = episodeTitleSlug(ep);
 	return UNIQUE_TITLE_SLUGS.has(slug) ? slug : ep.id;
+}
+
+/** Short label for the episode picker (title page + entry titles). */
+export function episodeNavLabel(ep: EpisodeRef): string {
+	if (ep.id === TITLE_EPISODE_ID) return 'Title';
+	const entry = chapters[ep.chapterIndex]?.entries[ep.entryIndex];
+	const title = entry?.title?.trim() || episodeTitleSlug(ep);
+	return isLoveEpisode(ep.id) ? `♡ ${title}` : title;
 }
 
 export const reading = $state({
@@ -175,8 +191,8 @@ export const reading = $state({
 	lang: 'both' as Lang,
 	/** Script from first paint. Switching mid-session still persists. */
 	mode: 'script' as ReadMode,
-	/** Continuous scroll by default; loadViewScope() restores episodes if saved. */
-	viewScope: 'full' as ViewScope,
+	/** Episodes by default — one entry mounted, far fewer cue fetches. */
+	viewScope: 'episodes' as ViewScope,
 	/** Flat index into `episodes` when viewScope === 'episodes'. */
 	episodeIndex: 0
 });
@@ -310,7 +326,11 @@ export function loadViewScope() {
 	/* Hydrate index FROM the URL before writing — otherwise episodeIndex 0
 	   (Queen Sunduk) overwrites a bookmarked `?ep=jumong` on every mount. */
 	applyReadingFromUrl(new URL(location.href));
-	if (reading.viewScope === 'episodes') syncReadingUrl();
+	if (reading.viewScope === 'episodes') {
+		tocUi.open = true;
+		scriptUi.inScript = true;
+		syncReadingUrl();
+	}
 }
 
 /**
@@ -349,6 +369,8 @@ export function setViewScope(s: ViewScope) {
 	if (s === 'episodes') {
 		captureCurrentEpisode();
 		stripStoryHash();
+		tocUi.open = true;
+		scriptUi.inScript = true;
 	}
 
 	syncReadingUrl();
@@ -359,9 +381,13 @@ export function setViewScope(s: ViewScope) {
 			window.dispatchEvent(new Event('scroll'));
 			return;
 		}
-		/* Only jump when already past cover/blurb — don't yank readers off the title. */
+		if (ep.id === TITLE_EPISODE_ID) {
+			window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+			window.dispatchEvent(new Event('scroll'));
+			return;
+		}
 		const el = findStoryHeading(ep.id);
-		if (el && scriptUi.inScript) scrollToStoryHeading(el, 'auto');
+		if (el) scrollToStoryHeading(el, 'auto');
 		window.dispatchEvent(new Event('scroll'));
 	};
 
@@ -372,7 +398,10 @@ export function setViewScope(s: ViewScope) {
 /** True while applying `?view` / `?ep` from the address bar (skip echo writes). */
 let applyingReadingUrl = false;
 
-/** Write `ep` to match `reading` (replaceState — no history spam). */
+/**
+ * Write `ep` (or drop it in full scope) via SvelteKit `goto`.
+ * Mutates the current URL so `nsfw`, `edit`, Intimate, and any other flags stay.
+ */
 export function syncReadingUrl() {
 	if (!browser || applyingReadingUrl) return;
 	try {
@@ -402,11 +431,18 @@ export function syncReadingUrl() {
 		}
 		if (!dirty) return;
 		const next = `${url.pathname}${url.search}${url.hash}`;
-		try {
-			replaceState(next, {});
-		} catch {
-			history.replaceState(null, '', next);
-		}
+		void goto(next, {
+			replaceState: true,
+			keepFocus: true,
+			noScroll: true,
+			invalidateAll: false
+		}).catch(() => {
+			try {
+				replaceState(next, {});
+			} catch {
+				history.replaceState(null, '', next);
+			}
+		});
 	} catch {
 		/* private / SSR */
 	}
@@ -443,6 +479,7 @@ export function applyReadingFromUrl(url: URL) {
 			persistViewScope('episodes');
 			changed = true;
 		}
+		scriptUi.inScript = true;
 
 		if (epParam) {
 			const idx = resolveEpisodeIndex(epParam);
@@ -469,8 +506,13 @@ export function applyReadingFromUrl(url: URL) {
 					return;
 				}
 				const ep = episodes[reading.episodeIndex];
+				if (ep?.id === TITLE_EPISODE_ID) {
+					window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+					window.dispatchEvent(new Event('scroll'));
+					return;
+				}
 				const el = findStoryHeading(dest) ?? (ep ? findStoryHeading(ep.id) : null);
-				if (el && scriptUi.inScript) scrollToStoryHeading(el, 'auto');
+				if (el) scrollToStoryHeading(el, 'auto');
 				window.dispatchEvent(new Event('scroll'));
 			})
 		);
@@ -847,7 +889,11 @@ export function goToEpisode(
 	if (!episodes.length) return;
 	const next = Math.max(0, Math.min(episodes.length - 1, index));
 	reading.episodeIndex = next;
+	reading.sceneId = opts.destId && opts.destId !== episodes[next]?.id ? opts.destId : null;
 	releaseDialogue();
+	/* Query first so the address bar matches the mounted entry even if scroll
+	   waits a frame for the new article. */
+	syncReadingUrl();
 
 	const ep = episodes[next];
 	const destId = opts.destId ?? ep.id;
@@ -857,14 +903,17 @@ export function goToEpisode(
 	const scroll = opts.scroll !== false;
 	const finish = () => {
 		if (scroll) {
-			const el = findStoryHeading(destId) ?? findStoryHeading(ep.id);
-			if (el) scrollToStoryHeading(el, 'auto');
-			else {
-				const script = storyRoot();
-				if (script) scrollToStoryHeading(script, 'auto');
+			if (ep.id === TITLE_EPISODE_ID) {
+				window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+			} else {
+				const el = findStoryHeading(destId) ?? findStoryHeading(ep.id);
+				if (el) scrollToStoryHeading(el, 'auto');
+				else {
+					const script = storyRoot();
+					if (script) scrollToStoryHeading(script, 'auto');
+				}
 			}
 		}
-		syncReadingUrl();
 		window.dispatchEvent(new Event('scroll'));
 	};
 
@@ -1065,7 +1114,25 @@ export function watchReading() {
 			}
 		}
 
-		const music = nearestInBand<HTMLElement>('[data-music]')?.dataset.music ?? null;
+		const musicHeld = (() => {
+			/* A cue starts when its paragraph reaches the reading line and holds
+			   until a later cue does. The entry's own track is the floor. */
+			const mid = (top + bottom) / 2;
+			let best: HTMLElement | null = null;
+			let bestTop = -Infinity;
+			for (const el of root.querySelectorAll<HTMLElement>('[data-music]')) {
+				const name = el.dataset.music;
+				if (!name) continue;
+				const r = el.getBoundingClientRect();
+				if (r.top > mid) continue;
+				if (r.top >= bestTop) {
+					bestTop = r.top;
+					best = el;
+				}
+			}
+			return best?.dataset.music ?? null;
+		})();
+		const music = musicHeld;
 		const place = nearestInBand<HTMLElement>('[data-place]')?.dataset.place ?? null;
 
 		// Immersion: whoever's dialogue sits in the band is "on stage" — unless a
@@ -1212,6 +1279,7 @@ if (browser) {
 		applyModeClasses('script');
 		const view = localStorage.getItem('kingdom:view');
 		if (view === 'full' || view === 'episodes') reading.viewScope = view;
+		if (reading.viewScope === 'episodes') scriptUi.inScript = true;
 	} catch {
 		/* private mode */
 	}

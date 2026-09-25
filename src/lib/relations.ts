@@ -65,6 +65,7 @@ export const CHART_NODES: ChartNode[] = [
 	{ id: 'ungo', x: 920, y: 160, rank: 1, era: 'present', gender: 'f' },
 	{ id: 'gyebek', x: 720, y: 440, rank: 2, era: 'present', gender: 'm' },
 	{ id: 'seongchung', x: 900, y: 440, rank: 1, era: 'present', gender: 'm' },
+	{ id: 'heungsu', x: 980, y: 360, rank: 1, era: 'present', gender: 'm' },
 	{ id: 'chunbok', x: 1060, y: 440, rank: 1, era: 'present', gender: 'm' },
 	{ id: 'queensatek', x: 720, y: 600, rank: 1, era: 'present', gender: 'f' },
 	{ id: 'eldersatek', x: 620, y: 520, rank: 1, era: 'present', gender: 'm' },
@@ -96,6 +97,7 @@ export const CHART_NODES: ChartNode[] = [
 	{ id: 'taizong', x: 1780, y: 200, rank: 2, era: 'present', gender: 'm' },
 	{ id: 'gaozong', x: 1780, y: 380, rank: 2, era: 'present', gender: 'm' },
 	{ id: 'xuerengui', x: 1960, y: 300, rank: 2, era: 'present', gender: 'm' },
+	{ id: 'xueliu', x: 2120, y: 300, rank: 1, era: 'present', gender: 'f' },
 	{ id: 'sudingfang', x: 1780, y: 540, rank: 1, era: 'present', gender: 'm' },
 
 	// ——— PAST · founders & flashbacks ———
@@ -335,8 +337,8 @@ export const RELATIONSHIPS: Person[] = [
 		bond: 'love',
 		between: ['hwanung', 'ungnyeo'],
 		title: 'Garlic, mugwort, and the sacred tree',
-		tagline: 'She waited to be seen; he could not be king until he touched her.',
-		arc: 'The bear endures twenty-one days and stands under the tree until heaven notices. What follows is not a tidy myth of duty — it is a prince undone by a woman who used to be a bear. Their son is Dangun.',
+		tagline: 'She stood on his path. He lost the seal under her head.',
+		arc: 'The bear lasts twenty-one days and then stands under the birch on the way to the hall. He means to walk past. She tells him not to come closer and pulls him down anyway. In the morning the seal is under her hair, and their son is Dangun.',
 		events: [{ label: 'Marriage under the tree; Dangun is born.' }],
 		aliases: ['Hwanung & Ungnyeo', 'Ungnyeo & Hwanung']
 	},
@@ -457,6 +459,37 @@ export const RELATIONSHIPS: Person[] = [
 		arc: 'Euija elevates Gyebek when the clans will not. At Hwangsanbeol Gyebek kills his family and dies fighting. The king who named him cannot save the country.',
 		events: [{ year: 660, label: 'Hwangsanbeol.' }],
 		aliases: ['Euija & Gyebek']
+	},
+	{
+		id: 'rel-seongchung-heungsu',
+		name: 'Seongchung & Heungsu',
+		korean: '성충 · 흥수',
+		entity: 'relationship',
+		kingdom: 'baekje',
+		bond: 'ally',
+		between: ['seongchung', 'heungsu'],
+		title: 'The same ground twice',
+		tagline: 'One wrote Tanhyeon and Gibeolpo. The other said: same as Seongchung.',
+		arc: 'Two jwapyeong, one map. Seongchung starves with the passes on paper. Heungsu, posted to Gomamiji, will not invent a second plan when the courier asks. The court hears bitterness. The rivers hear nothing.',
+		events: [
+			{ year: 656, label: 'Seongchung dies in the cell; Heungsu is already on the posting road.' },
+			{ year: 660, label: 'Heungsu answers with Seongchung’s words; both passes are already lost.' }
+		],
+		aliases: ['Seongchung & Heungsu']
+	},
+	{
+		id: 'rel-heungsu-gyebek',
+		name: 'Heungsu & Gyebek',
+		korean: '흥수 · 계백',
+		entity: 'relationship',
+		kingdom: 'baekje',
+		bond: 'ally',
+		between: ['heungsu', 'gyebek'],
+		title: 'The posting and the name',
+		tagline: 'Hold the river, or there will be no Sabi left to be loyal to.',
+		arc: 'Last talk at the berth before Gomamiji. Gyebek will take Yellow Mountain anyway. Heungsu’s 660 answer never reaches him as a change of road.',
+		events: [{ year: 656, label: 'The berth. Then the posting.' }],
+		aliases: ['Heungsu & Gyebek']
 	},
 	{
 		id: 'rel-jumong-yuhwa',
@@ -693,6 +726,20 @@ export const RELATIONSHIPS: Person[] = [
 		arc: 'Bidam rebels when a star falls. Sunduk dies in the crisis; Yushin and Chunchu put the revolt down. Jinduk takes the throne afterward.',
 		events: [{ year: 647, label: 'Bidam’s rebellion.' }],
 		aliases: ['Sunduk & Bidam']
+	},
+	{
+		id: 'rel-xue-liu',
+		name: 'Xue Rengui & Lady Liu',
+		korean: '설인귀 · 유씨',
+		entity: 'relationship',
+		kingdom: 'tang',
+		bond: 'love',
+		between: ['xuerengui', 'xueliu'],
+		title: 'The yellow hemp and the hut door',
+		tagline: 'Talent needs its hour. She named the hour.',
+		arc: 'Poor Longmen: he stacks earth for the dead; she sends him to Zhang Shigui. The Xin Tangshu keeps her speech. Opera later starves her in a kiln and calls her Yingchun. The field still comes first.',
+		events: [{ year: 645, label: 'She talks him off the graves and onto the muster.' }],
+		aliases: ['Xue & Liu', '仁貴 · 柳氏']
 	},
 	{
 		id: 'rel-taizong-xuerengui',

@@ -1,7 +1,7 @@
 /**
  * Chronicle edit mode — `?edit=true`.
- * Enables destructive cue tools (right-click delete). Dev API only honors deletes
- * locally; the flag itself is URL-driven and not persisted.
+ * Enables cue tools (right-click grade / image tools; delete from the grade popover). Dev APIs
+ * only write locally; the flag itself is URL-driven and not persisted.
  */
 import { browser } from '$app/environment';
 import { SvelteSet } from 'svelte/reactivity';
@@ -16,7 +16,9 @@ export const editUi = $state({
 	enabled: false,
 	/** Cue slot ids removed this session (story.json already updated by the API). */
 	removedCueIds: new SvelteSet<string>(),
-	busyId: null as string | null
+	busyId: null as string | null,
+	/** After a Fal still edit, show this URL instead of locked `src` this session. */
+	previewById: {} as Record<string, string>
 });
 
 export function editQueryOn(url: URL): boolean {

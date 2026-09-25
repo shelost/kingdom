@@ -2,7 +2,6 @@
 	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import { flattenStoryImages, type StoryCueImage } from '$lib/storyImages';
-	import { peopleOfSlot } from '$lib/imagePeople';
 	import { storyImg } from '$lib/img';
 	import { nsfwAllowed } from '$lib/nsfwUi.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
@@ -15,13 +14,8 @@
 		type ImageGrade,
 		type ImageGradeStore
 	} from '$lib/imageGrades';
-	import {
-		EMPTY_PROMPT_HOUSE,
-		enrichGrade,
-		layoutOfPrompt,
-		rebuildPromptHouse,
-		type PromptHouse
-	} from '$lib/promptHouse';
+	import { fetchGradeStore, postGrade, snapshotCueGrade } from '$lib/gradeSave';
+	import { EMPTY_PROMPT_HOUSE, rebuildPromptHouse, type PromptHouse } from '$lib/promptHouse';
 	import { chapters, type ImageSlot } from '$lib/story';
 	import { selfGradeAllSequences, selfGradeFromSlot } from '$lib/selfGrade';
 
@@ -67,10 +61,6 @@
 	const sequenceGrades = $derived(selfGradeAllSequences(slotsById));
 	const currentSelf = $derived(current ? selfGradeFromSlot(current.slot) : null);
 
-	function peopleOf(im: StoryCueImage): string[] {
-		return peopleOfSlot(im.slot.id, im.slot.people);
-	}
-
 	function setMode(next: QueueMode) {
 		mode = next;
 		if (!queue.some((im) => im.slot.id === currentId)) {
@@ -88,30 +78,7 @@
 	}
 
 	function snapshot(im: StoryCueImage, draft: GradeDraft): ImageGrade {
-		const refs = im.refs.map((r) => r.src).filter(Boolean);
-		return enrichGrade({
-			id: im.slot.id,
-			score: draft.score,
-			note: draft.note,
-			axes: draft.axes,
-			keep: '',
-			cut: '',
-			tags: [],
-			tagsWorked: [],
-			tagsFailed: [],
-			src: im.displayArt,
-			prompt: im.prompt,
-			alt: im.slot.alt,
-			entryTitle: im.entryTitle,
-			chapterTitle: im.chapterTitle,
-			nsfw: im.isNsfw,
-			people: peopleOf(im),
-			refs: refs.length ? refs : undefined,
-			layout: layoutOfPrompt(im.prompt),
-			at: im.at,
-			source: draft.source ?? 'human',
-			gradedAt: new Date().toISOString()
-		});
+		return snapshotCueGrade(im, draft, store.grades[im.slot.id]);
 	}
 
 	function commitStore(next: ImageGradeStore, nextHouse?: PromptHouse) {
@@ -124,23 +91,9 @@
 		saving = true;
 		saveError = '';
 		try {
-			const res = await fetch(resolve('/api/grades'), {
-				method: 'POST',
-				headers: { 'content-type': 'application/json' },
-				body: JSON.stringify(grade)
-			});
-			if (!res.ok) {
-				const text = await res.text();
-				throw new Error(text || res.statusText);
-			}
-			const body = (await res.json()) as { store: ImageGradeStore; house?: PromptHouse };
-			commitStore(body.store, body.house);
-		} catch (err) {
-			commitStore({
-				updatedAt: grade.gradedAt,
-				grades: { ...store.grades, [grade.id]: grade }
-			});
-			saveError = err instanceof Error ? err.message : 'Saved in this tab only';
+			const result = await postGrade(grade, store);
+			commitStore(result.store, result.house);
+			if (!result.ok) saveError = result.error ?? 'Saved in this tab only';
 		} finally {
 			saving = false;
 		}
@@ -182,23 +135,9 @@
 	}
 
 	onMount(async () => {
-		try {
-			const res = await fetch(resolve('/api/grades'));
-			if (res.ok) {
-				const body = (await res.json()) as {
-					store?: ImageGradeStore;
-					house?: PromptHouse;
-					grades?: ImageGradeStore['grades'];
-					updatedAt?: string;
-				};
-				if (body.store?.grades) commitStore(body.store, body.house);
-				else commitStore(body as ImageGradeStore, body.house);
-			} else {
-				commitStore(readLocalGrades() ?? EMPTY_GRADE_STORE);
-			}
-		} catch {
-			commitStore(readLocalGrades() ?? EMPTY_GRADE_STORE);
-		}
+		const remote = await fetchGradeStore();
+		if (remote.ok) commitStore(remote.store, remote.house);
+		else commitStore(readLocalGrades() ?? EMPTY_GRADE_STORE);
 		loaded = true;
 		currentId = queue[0]?.slot.id ?? null;
 	});

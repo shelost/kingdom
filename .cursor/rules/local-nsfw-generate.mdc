@@ -14,7 +14,7 @@ For explicit / sex / skin-forward chronicle stills, use Cursor `GenerateImage` (
 3. Append the current `suffix` from `src/lib/data/image-prompt-house.json`.
 4. `node scripts/install-temp-art.mjs <manifest.json>` → `static/temp/{id}.jpg` + `tempImage`. The script deletes the source PNG.
 
-Keep chronicle still doctrine (intimate/close for sex; locked Korean place; person-as-hex; no text).
+Keep chronicle still doctrine (intimate/close for sex; locked Korean place; character hex as real-light accent not a glow aura; no text).
 
 ## Cursor filter (400)
 

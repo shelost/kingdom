@@ -1,7 +1,7 @@
 <script lang="ts">
 	/**
 	 * Royal Secretariat (집사부): fourteen Silla ministries modeled after Tang’s
-	 * 三省六部 but exceeded. One 시중; 집사부·병부·창부·예부 + ten 府.
+	 * 三省六部 but exceeded. One 중시; 집사부·병부·창부·예부 + ten 府.
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
@@ -38,7 +38,7 @@
 	class="dg"
 	class:play={active}
 	role="img"
-	aria-label="Royal Secretariat with fourteen Silla ministries under the Royal Secretary — Never Enough"
+	aria-label="Royal Secretariat with fourteen Silla ministries under the Premier — Never Enough"
 >
 	<g class="node king" style="--d: 0">
 		<circle cx="180" cy="28" r="22" />
@@ -49,7 +49,7 @@
 
 	<g class="node sec" style="--d: 200">
 		<rect x="118" y="62" width="124" height="36" rx="6" />
-		<ChartLabel x="180" y="80" ko="시중" en="Secretary" w={110} />
+		<ChartLabel x="180" y="80" ko="중시" en="Premier" w={110} />
 	</g>
 
 	<path class="spine" style="--d: 320" d="M 180 98 V 112" pathLength="100" />

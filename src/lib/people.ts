@@ -202,7 +202,7 @@ export interface Person {
 	 * Decoration read character the way a crest does.
 	 */
 	blade?: string;
-	/** Ring-pommel illustration (`/sword_*.png` in static). */
+	/** Ring-pommel motif only (`/sword_*.png`) — pommel ECU stills. Full-blade stills attach `/sw_bidam.png` and do not attach this close-up. */
 	swordImage?: string;
 	/**
 	 * Named object board (`/obj_*.png` in static) — chariot, relic, vehicle.
@@ -377,7 +377,7 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_haemosu.png',
 		objectImage: '/obj_haemosu_chariot.png',
 		object:
-			'Five-dragon gold sun-chariot — two spoked wheels, open floor, curved rail, yoke; dragons jade, azure, crimson, gold, white. Same vehicle forever.',
+			'Five-dragon gold sun-chariot — two spoked wheels, open floor, curved rail, yoke; dragons jade, azure, crimson, gold, white. Same vehicle forever. Exile road: pale gold-white sun-fox (`/obj_haemosu_fox.png`), the heat that walks when the chariot cannot.',
 		name: 'Haemosu',
 		korean: '해모수',
 		hanja: '解慕漱',
@@ -395,6 +395,7 @@ export const PEOPLE: Person[] = [
 		events: [
 			{ label: 'Sees Yuhwa in the shallows of the Ubal and comes down.' },
 			{ label: 'Builds a copper room on the riverbank in an afternoon.' },
+			{ label: 'A sun-fox walks Yuhwa the exile road to Buyeo.' },
 			{ year: -37, label: 'Blocks Haewonmek at the river so Jumong may cross.' },
 			{ label: 'Takes Yuhwa’s soul himself; she keeps the moon.' }
 		],
@@ -748,8 +749,8 @@ export const PEOPLE: Person[] = [
 		kingdom: 'joseon',
 		title: 'Son of Heaven',
 		realm: { en: 'Heaven’s descent', ko: '천강' },
-		tagline: 'Sent down with the mandate — and could not rule until he had touched the earth.',
-		quote: "A king must first touch the earth.",
+		tagline: 'Sent down to farm a kingdom, and stopped at the birch.',
+		quote: "I don't know where I put the seal.",
 		arc: 'Son of Heaven — the Creator’s heir, sent below from 하늘나라 into Little Star’s mortal domain with three seals and three thousand. The gravity of the descent is the story: heaven’s word made flesh among garlic, mugwort, and a woman who used to be a bear. Their son Dangun inherits the mandate as earthly steward. Island banter still asks what mortals did with that son.',
 		events: [{ label: 'Marries Ungnyeo under the sacred tree; fathers Dangun.' }],
 		career: [
@@ -770,8 +771,9 @@ export const PEOPLE: Person[] = [
 		kingdom: 'joseon',
 		title: 'The Bear-Woman',
 		realm: { en: 'Sandalwood ordeal', ko: '신단수' },
-		tagline: 'Twenty-one days of garlic and mugwort — then she waited to be seen.',
-		quote: "Endure the dark. Become what the light can marry.",
+		tagline: 'She stood under the birch until he forgot the hall.',
+		quote: "…I was going to say don't come closer.",
+		binyeo: 'Bear-head binyeo — gold snarl, green-gold mane down a bronze shaft; the pin she wears once she has a woman’s hair.',
 		binyeoImage: '/bn_ungnyeo.png',
 		events: [{ label: 'Becomes a woman; stands under the tree until heaven marries her.' }],
 		aliases: ['Ungnyeo', 'Bear-Woman', 'the Bear-Woman'],
@@ -1129,15 +1131,16 @@ export const PEOPLE: Person[] = [
 			ko: '공주…'
 		},
 		nature: 'The patriotism paradox: a man of the periphery — Gaya’s last princely blood — who becomes Silla’s most loyal sword, the model old-stock soldier and general. Stoic, still human; the marshal every True Bone girl invents a husband for, and the one man who will not look back. Deeply romantic, and in love with Dukman in a way he never makes cheap — eyes only for the queen he cannot have. Lifelong sparring partner to Bidam — one year younger, 108–108 — the confrontation at Radiance hurts because the score was always even, and the blood never was. Hwarang to the bone: elite-trained, beautiful in the way the order demands, with forms the yard still names after him.',
-		arc: 'Grandson of the prince who surrendered Golden Gaya, Yushin is True Bone by grant — forever the man from the edge who out-loves the centre. He already knows the steam cavern his father found: Narim, Golhwa, and Hyullé keep only Kims — 김, steam and surname in the same breath — and he rides there for counsel, not discovery. Bidam names him foreigner at Radiance and tells him blood is inevitable; after the tenth day Yushin whispers the same line back when Alchun objects to annihilating Bidam’s house — Surabol Son, Gurema’s line — turning Bidam’s heritage logic against the clan that raised him. Marshal of the Hwarang and Premier after Bidam, he trains Chunchu’s son Bupmin in the Five Principles after Daeya; conqueror of forty fortresses, the name that opens Yeon’s prison door; he marries his sister to Chunchu, holds Sunduk as she dies, faces Gyebek at the Yellow Mountain, and outlives almost everyone he swore himself to.',
+		arc: 'Grandson of the prince who surrendered Golden Gaya, Yushin is True Bone by grant — forever the man from the edge who out-loves the centre. He already knows the steam cavern his father found: Narim, Golhwa, and Hyullé keep only Kims — 김, steam and surname in the same breath — and he rides there for counsel, not discovery. Bidam names him foreigner at Radiance and tells him blood is inevitable; after the tenth day Yushin whispers the same line back when Alchun objects to annihilating Bidam’s house — Surabol Son, Gurema’s line — turning Bidam’s heritage logic against the clan that raised him. Marshal of the Hwarang for the length of the reigns he serves, High Councillor after Bidam, and Supreme General once Pyongyang is open, he trains Chunchu’s son Bupmin in the Five Principles after Daeya; conqueror of forty fortresses, the name that opens Yeon’s prison door; he marries his sister to Chunchu, holds Sunduk as she dies, faces Gyebek at the Yellow Mountain, and outlives almost everyone he swore himself to.',
 		blade: 'Ring-pommel fish sword — Gaya fish on the pommel, Silla blue in the fuller.',
 		swordImage: '/sword_fish.png',
 		events: [
 			{ year: 632, label: 'Pledges himself to Queen Sunduk “until the end.”' },
 			{ year: 642, label: 'Marches on Baekje to avenge Daeya.' },
 			{ year: 643, label: 'Trains Bupmin among the Hwarang — marshal of the flower youth.' },
-			{ year: 647, label: 'Puts down Bidam’s rebellion; named Premier (상대등); orders annihilation of Surabol Son; holds Sunduk as she dies.' },
+			{ year: 647, label: 'Puts down Bidam’s rebellion; named High Councillor (상대등); orders annihilation of Surabol Son; holds Sunduk as she dies.' },
 			{ year: 660, label: 'Faces Gyebek at the Yellow Mountain Fields.' },
+			{ year: 668, label: 'After Goguryeo falls, Munmu names him Supreme General (태대각간) — a grade cut above the seventeen, and above 대각간.' },
 			{ year: 673, label: 'Dies — Big Star comes himself; offers any wish; the wish is not written.' }
 		],
 		sobriquets: [
@@ -1157,8 +1160,8 @@ export const PEOPLE: Person[] = [
 			{ title: 'Hwarang disciple', korean: '낭도', hanja: '郎徒', org: 'hwarang', from: 610, to: 613, note: 'youth' },
 			{ title: 'Hwarang', korean: '화랑', hanja: '花郎', org: 'hwarang', from: 613, to: 632 },
 			{ title: 'Marshal', korean: '국선', hanja: '國仙', org: 'hwarang', from: 632, to: 668, note: 'head of the Hwarang' },
-			{ title: 'Premier', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 647, to: 668 },
-			{ title: 'Grand Elder', korean: '태대각간', hanja: '太大角干', org: 'nation-silla', from: 668 }
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 647, to: 668 },
+			{ title: 'Supreme General', korean: '태대각간', hanja: '太大角干', org: 'nation-silla', from: 668 }
 		],
 		aliases: [
 			'Marshal Yushin',
@@ -1498,6 +1501,7 @@ export const PEOPLE: Person[] = [
 			{ year: 642, label: 'Watches the house break when Gotaso dies.' },
 			{ year: 643, label: 'Trains as Hwarang under Marshal Yushin.' },
 			{ year: 644, label: 'Volunteers as junior Pajinchan; meets Jahee at the harbour.' },
+			{ year: 647, label: 'At twenty-one, first meets the steam-cavern goddesses — they name him the best of both; splashes Bidam; the water does nothing.' },
 			{ year: 661, label: 'Takes the throne, vowing to unify Samhan.' },
 			{ year: 668, label: 'Pyongyang falls; Goguryeo ends.' },
 			{ year: 673, label: 'After Yushin’s death, enters the steam cavern; Dangun names the wanggeom’s work.' },
@@ -1600,25 +1604,25 @@ export const PEOPLE: Person[] = [
 		name: 'Kim Jukji',
 		korean: '김죽지',
 		hanja: '金竹旨',
-		title: 'First Royal Secretary (시중) of the Royal Secretariat',
+		title: 'First Premier (중시) of the Royal Secretariat',
 		kingdom: 'silla',
 		born: 620,
 		bornApprox: true,
 		clan: 'clan-gyeongju-kim',
 		avatar: '/ch_jukji.png',
-		tagline: 'True Bone Hwarang of Class 74 — Pumsuk’s cohort; later the first 시중.',
+		tagline: 'True Bone Hwarang of Class 74 — Pumsuk’s cohort; later the first 중시.',
 		ideology: 'Technocratic reformer',
 		ideologyNote: 'Secretariat craft — implements westernizing speed as office work, not sermon.',
 		quote: 'The Council still meets. The seals no longer wait for it.',
-		nature: 'Young enough to think a new office is elegant; old enough in the yard to know elegance is a weapon. Loyal to Chunchu the way a Hwarang is loyal to a form — precisely, without needing to be asked twice. Yes-Minister fluency: preserves the Premier’s chair while emptying it of consequences.',
+		nature: 'Young enough to think a new office is elegant; old enough in the yard to know elegance is a weapon. Loyal to Chunchu the way a Hwarang is loyal to a form — precisely, without needing to be asked twice. Yes-Minister fluency: preserves the High Councillor’s chair while emptying it of consequences.',
 		blade: 'Ring-pommel bamboo sword — light, fast, named for the virtue of bending without breaking.',
 		events: [
-			{ year: 651, label: 'Named first Royal Secretary (시중) of the Royal Secretariat (집사부).' },
+			{ year: 651, label: 'Named first Premier (중시) of the Royal Secretariat (집사부).' },
 			{ year: 654, label: 'Keeps the seals moving under King Muyeol.' }
 		],
 		career: [
 			{ title: 'Hwarang', korean: '화랑', hanja: '花郎', org: 'hwarang', from: 635, to: 651 },
-			{ title: 'Royal Secretary', korean: '시중', hanja: '侍中', org: 'royalsecretariat', from: 651 }
+			{ title: 'Premier', korean: '중시', hanja: '中侍', org: 'royalsecretariat', from: 651 }
 		],
 		aliases: [
 			'Kim Jukji',
@@ -1628,9 +1632,9 @@ export const PEOPLE: Person[] = [
 			'죽지랑',
 			'竹旨',
 			'竹旨郞',
-			'Royal Secretary Jukji',
-			'Royal Secretary',
-			'시중',
+			'Premier Jukji',
+			'Premier',
+			'중시',
 			'侍中'
 		]
 	},
@@ -1658,7 +1662,7 @@ export const PEOPLE: Person[] = [
 		avatar: '/ch_bidam.png',
 		name: 'Bidam',
 		korean: '비담',
-		title: 'Premier (상대등) of Silla',
+		title: 'High Councillor (상대등) of Silla',
 		kingdom: 'silla',
 		born: 594,
 		died: 647,
@@ -1737,7 +1741,40 @@ export const PEOPLE: Person[] = [
 			'Black-Robed Gentleman',
 			'흑의군자',
 			'Legend of the Hwarang'
-		]
+		],
+		family: [{ id: 'sukwon', role: 'Father' }]
+	},
+	{
+		id: 'sukwon',
+		gender: 'm',
+		avatar: '/ch_bidam_old.png',
+		name: 'Son Sukwon',
+		korean: '손숙원',
+		hanja: '孫淑遠',
+		title: 'Musan hall — Bidam’s father',
+		kingdom: 'silla',
+		born: 560,
+		died: 628,
+		bornApprox: true,
+		clan: 'clan-surabol-son',
+		boneRank: 'True Bone (진골)',
+		tagline: '“Rather a righteous traitor than an unrighteous king.”',
+		ideology: 'Silla-true Buddhist',
+		ideologyNote: 'Abhidharma in the name he gave his son; 108 beads in the sleeve; Surabol Son blood that does not ask Gaya to apologise for existing, and will not let a yard mock a mouth.',
+		quote: 'Son… I need you to be a man who would rather be a righteous traitor than an unrighteous king.',
+		firstLine: {
+			en: 'Bidam… do you know the meaning of your name.',
+			ko: '비담아… 네 이름 뜻을 아느냐.'
+		},
+		lastLine: {
+			en: 'Go make us proud, son…!',
+			ko: '가서, 우리를 자랑스럽게 해다오, 아들아…!'
+		},
+		nature:
+			'Old-hall Surabol. Speaks to his boy like a man sending someone into weather: keep your head, walk alone if you must. Loves Bidam without covering it. Silla-true in the bone; the Gaya-born classmates his son will meet are not his enemy, but he will not pretend the yard is kind.',
+		arc: 'Hands Bidam to Class 51 on a first Hwarang morning with the Abhidharma and 성즉군왕 패즉역적. Dies before Radiance; the teaching does not.',
+		events: [{ year: 610, label: 'Sends Bidam to the Hwarang — Class 51.' }],
+		aliases: ['Sukwon', 'Son Sukwon', '손숙원', 'Bidam’s father']
 	},
 	{
 		id: 'gotaso',
@@ -1908,7 +1945,7 @@ export const PEOPLE: Person[] = [
 		nature: 'Descended from Sobuldori of the Surabol Choi — Dolsan Goheo-chon, Saryang-bu — though he cites the founder only when pressed, and never in a speech. Stuck between Bidam and Yushin since the Hwarang yard — same line, same impossible orbit around Dukman. At Okmun-gok he and Bidam still fight as one; by Radiance he answers both with hard counsel and still raises neither blade nor banner — and neutrality costs him a generation of standing.',
 		arc: 'Hwarang with Bidam and Yushin; tiger-catcher of the Council; victor with Bidam at Jade Gate Valley (옥문곡, 636) against King Mu’s spies. In 647 he is summoned to both camps before noon: he tells Yushin not to be blinded by the princess they all loved as boys, tells Bidam that arms against the crown are highest treason — then raises neither blade nor banner for ten days. After Bidam falls, the minutes file him under Neither. Later he laughs the last holdout down so Chunchu can take the throne rather than wear a crown built on that silence.',
 		events: [
-			{ year: 632, label: 'Last sleeve in the 6:0 that names Queen Sunduk — not Premier; Pumil chairs.' },
+			{ year: 632, label: 'Last sleeve in the 6:0 that names Queen Sunduk — not High Councillor; Pumil chairs.' },
 			{ year: 636, label: 'With Bidam, destroys Baekje spies at Jade Gate Valley (옥문곡).' },
 			{
 				year: 647,
@@ -2725,17 +2762,30 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'heungsu',
 		gender: 'm',
+		avatar: '/ch_heungsu.png',
 		name: 'Heungsu',
 		korean: '흥수',
 		hanja: '興首',
 		kingdom: 'baekje',
+		title: 'Jwapyeong (좌평)',
 		tagline: 'The exiled loyalist whose last advice arrived too late.',
 		ideology: 'Exile Cassandra',
 		ideologyNote: 'Sees the trap early; realism without a room willing to listen.',
-		quote: "Warning a king is a temporary posting.",
-		arc: 'One of the three loyalists with Sungchung and Gyebek. Exiled, he sent the same counsel Sungchung had died giving — hold the Baek river and the Tanhyeon pass — and the court debated it until both had already been crossed.',
-		events: [{ year: 660, label: 'His warning is ignored; Sabi falls.' }],
-		aliases: ['Heungsu']
+		quote: 'It is generally the same as Jwapyeong Seongchung’s words.',
+		nature:
+			'Dry, already tired of saying it twice. Half-sentences. He does not re-lecture Tanhyeon; he points at a dead friend’s paper. 하오체 to Gyebek, 하십시오 when the king’s man is in the yard. The ring at his belt is a posting, not a speech.',
+		firstLine: 'You… you truly mean to march?',
+		lastLine: 'It is generally the same as Jwapyeong Seongchung’s words.',
+		arc: 'One of the three loyalists with Sungchung and Gyebek. After the purge Euija posts him to Gomamiji. When the Chunchu Army is already moving, a courier asks what to do; Heungsu answers with Seongchung’s dying ground. The court calls it the bitterness of a bound man. Tang is already in the White River. Silla is already over Tanhyeon.',
+		events: [
+			{ year: 656, label: 'Exiled to Gomamiji-hyeon after saying the purge would finish Silla’s work.' },
+			{ year: 660, label: 'Counsel ignored; White River and Tanhyeon already crossed.' }
+		],
+		career: [
+			{ title: 'Jwapyeong', korean: '좌평', hanja: '佐平', org: 'ministersassembly', from: 641, to: 656 }
+		],
+		blade: 'Baekje court 환두대도 — hollow ring worn smooth on a posting road.',
+		aliases: ['Heungsu', '흥수', '興首']
 	},
 	{
 		id: 'dochim',
@@ -2888,13 +2938,17 @@ export const PEOPLE: Person[] = [
 		name: 'Lady Liu',
 		korean: '유씨',
 		hanja: '柳氏',
+		avatar: '/ch_xue_liu.png',
 		kingdom: 'tang',
 		gender: 'f',
+		born: 616,
 		tagline: 'Told a farmer the Son of Heaven was calling — and sent him to history.',
-		quote: "Talent needs its hour. This is the hour.",
-		arc: 'Xue Rengui’s wife. When he meant to rebury his ancestors in quiet poverty, she named the hour: Taizong wanted fierce generals for Liaodong. Without her sentence there is no white coat, no ji, no eastern command.',
-		events: [{ year: 644, label: 'Urges Xue Rengui to answer the muster for Liaodong.' }],
-		aliases: ['Lady Liu', '柳氏', '유씨']
+		quote: 'Talent needs its hour. This is the hour.',
+		arc: 'Xue Rengui’s wife, née Liu — named in the Xin Tangshu, not given a personal name in the Zhengshi. Folklore and jingju later call her Liu Yingchun (柳迎春) and park her in a cold kiln (汾河灣, 武家坡-adjacent cycles). When he meant to rebury his ancestors in Longmen poverty, she named the hour: Taizong wanted fierce generals for Liaodong. Without her sentence there is no white coat, no ji, no eastern command.',
+		events: [{ year: 645, label: 'Urges Xue Rengui off the Longmen field to Zhang Shigui’s muster.' }],
+		firstLine: { en: 'I’ll shut the door.', ko: '문은 내가 닫아요.' },
+		lastLine: { en: 'If this is the hour — then go.', ko: '지금이 그 때면 — 가면 돼요.' },
+		aliases: ['Lady Liu', '柳氏', '유씨', 'Liu Yingchun', '柳迎春', '유영춘']
 	},
 	{
 		id: 'xuerengui',
@@ -3499,7 +3553,7 @@ export const PEOPLE: Person[] = [
 		died: 554,
 		clan: 'clan-buyeo',
 		tagline: 'The sage king of Sabi, killed by a slave’s hand at Gwansanseong.',
-		quote: "Holding on is sometimes the only victory.",
+		quote: "It went into the marrow. Every time I thought of it.",
 		arc: 'Moved the capital to Sabi and rebuilt Baekje’s golden age; retook the Han valley with Silla, and lost it to Silla’s betrayal within a year. Riding at night to his son’s relief, he was caught by Kim Muryeok’s troops, and a stable-slave named Dodo took his head.',
 		events: [
 			{ year: 538, label: 'Moves the capital to Sabi.' },
@@ -3935,10 +3989,10 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		gender: 'm',
 		title: 'Councillor (대등) of the Harmony Council',
-		tagline: 'A sleeve at the 632 night — Premier Pumil holds the first chair.',
+		tagline: 'A sleeve at the 632 night — High Councillor Pumil holds the first chair.',
 		quote: 'Tonight the better option is a confession.',
 		nature: 'Sits the hung vote without taking the minutes. The first chair belongs to Pumil; Euljé is the fatigue beside him, not the nod that opens the session.',
-		arc: 'In 632 he sits while Premier Pumil chairs the 3:3 that Bidam and Alchun turn to 6:0. He does not succeed to the first chair; in 645 that seat passes from Pumil to Supum.',
+		arc: 'In 632 he sits while High Councillor Pumil chairs the 3:3 that Bidam and Alchun turn to 6:0. He does not succeed to the first chair; in 645 that seat passes from Pumil to Supum.',
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 }
 		],
@@ -3951,7 +4005,7 @@ export const PEOPLE: Person[] = [
 		name: 'Kim Supum',
 		korean: '김수범',
 		hanja: '金述品',
-		title: 'Premier (상대등) of the Harmony Council',
+		title: 'High Councillor (상대등) of the Harmony Council',
 		kingdom: 'silla',
 		tagline: 'Succeeds Pumil in the first chair — the steadier hand while the yard’s old boys argue succession.',
 		quote: 'The room must finish its vote before the country finishes its patience.',
@@ -3959,9 +4013,9 @@ export const PEOPLE: Person[] = [
 		arc: 'In 645 he takes the premier’s seat when Pumil steps down. Holds the council through the Seungman veto and into the season when Bidam raises men at Radiance. The chronicle names him less than the rebels; the grain ledger names him daily.',
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 },
-			{ title: 'Premier', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 645, to: 647 }
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 645, to: 647 }
 		],
-		aliases: ['Supum', 'Kim Supum', '수범', '述品', 'Premier Supum']
+		aliases: ['Supum', 'Kim Supum', '수범', '述品', 'High Councillor Supum']
 	},
 	{
 		id: 'murim',
@@ -4041,8 +4095,8 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		born: 572,
 		bornApprox: true,
-		title: 'Premier (상대등) of the Harmony Council',
-		tagline: 'Elderly statesman — Premier the night six sleeves named a queen.',
+		title: 'High Councillor (상대등) of the Harmony Council',
+		tagline: 'Elderly statesman — High Councillor the night six sleeves named a queen.',
 		quote: 'The first count is split.',
 		firstLine: {
 			en: 'Below all of them are the slaves — but those are not counted as people.',
@@ -4054,18 +4108,18 @@ export const PEOPLE: Person[] = [
 		},
 		nature:
 			'Grey when Bidam, Yushin, and Alchun are still yard-brothers. He chairs the Harmony Council like a man who has kept the same roof through three kings: tea, wooden pieces, the flame that must turn blue. Not a Hwarang classmate — an old hall, patient, slightly tired of the word woman being said forty times.',
-		arc: 'In 632 he is Premier: he names the hung 3:3, waits through Bidam’s speech, and watches Alchun — not himself — move the last piece. In 645 he yields the first chair to Supum. In 660 he commands Silla’s right column at Hwangsanbeol; when Gwanchang’s head comes back tied to the saddle, he takes it up by the hair.',
+		arc: 'In 632 he is High Councillor: he names the hung 3:3, waits through Bidam’s speech, and watches Alchun — not himself — move the last piece. In 645 he yields the first chair to Supum. In 660 he commands Silla’s right column at Hwangsanbeol; when Gwanchang’s head comes back tied to the saddle, he takes it up by the hair.',
 		events: [
-			{ year: 632, label: 'As Premier, chairs the hung vote that names Queen Sunduk.' },
+			{ year: 632, label: 'As High Councillor, chairs the hung vote that names Queen Sunduk.' },
 			{ year: 645, label: 'Yields the first chair to Supum.' },
 			{ year: 660, label: 'Commands Silla’s right column at Hwangsanbeol.' }
 		],
 		family: [{ id: 'gwanchang', role: 'Son' }],
 		career: [
-			{ title: 'Premier', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 645 },
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 645 },
 			{ title: 'General', korean: '장군', hanja: '將軍', from: 660, to: 660 }
 		],
-		aliases: ['Pumil', 'Kim Pumil', '품일', '品日', 'Premier Pumil']
+		aliases: ['Pumil', 'Kim Pumil', '품일', '品日', 'High Councillor Pumil']
 	},
 	{
 		id: 'daedeung_stern',
@@ -4152,7 +4206,7 @@ export const PEOPLE: Person[] = [
 			en: 'Your Majesty… I have completed my duty.',
 			ko: '폐하… 소신의 임무를 마쳤나이다.'
 		},
-		nature: 'Epitome of focus. Traumatic past, emotions suppressed or delayed, endlessly loyal, allergic to politics. He hears sentences at their exact width — misses jokes, misreads faces, trusts numbers because numbers do not lie. Euija’s soft spot and Euija’s pupil: taught the world’s dirt without ever learning to love the game. When the kingdom is already lost, focus is what remains — five thousand against the arithmetic of survival.',
+		nature: 'Epitome of focus. Traumatic past, emotions suppressed or delayed, endlessly loyal, allergic to politics. He hears every sentence at its exact width and will not bend it: a joke is a false statement, a metaphor is two orders at once, and once he has parsed one meaning he will not take the other. He misses faces, trusts numbers because numbers do not lie, and keeps a promise past the point where keeping it makes sense. Euija reads the room and leaves the folded meaning out on purpose; Gyebek cannot, and will not pretend. Euija’s soft spot and Euija’s pupil: taught the world’s dirt without ever learning to love the game. When the kingdom is already lost, focus is what remains — five thousand against the arithmetic of survival.',
 		arc: 'Found half-drowned by a prince and named after a turtle, Gyebek has no clan and therefore no ceiling and no floor — passed over for command, then shipped to Tamla by the Eight Clans (Minister Satek reading the sealed order) while Euija is locked in mourning. Recalled only when the kingdom is already lost. He hears every sentence at its exact width: he does not catch a joke, cannot read a face, counts what he can count because numbers do not lie to him, and keeps a promise past the point where keeping it makes sense. It is what makes him unbearable at court and unbreakable in a field. He answers with five thousand men against fifty thousand, killing his own family first so that nothing can be used against him.',
 		blade: 'Single-edged phoenix blade — curved like an eastern sword, phoenix on the ring pommel; one side only, as he is.',
 		swordImage: '/sword_lotus.png',
@@ -4209,16 +4263,30 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'seongchung',
 		gender: 'm',
+		avatar: '/ch_seongchung.png',
 		name: 'Sungchung',
 		korean: '성충',
+		hanja: '成忠',
 		kingdom: 'baekje',
 		died: 656,
+		title: 'Jwapyeong (좌평)',
 		tagline: 'Told the king the truth and starved in prison for it.',
 		ideology: 'Constitutional royalist',
 		ideologyNote: 'Warns kings against hollowing their own counsel and chanting grudges into foreign ears.',
-		quote: "Truth spoken once is still a weapon.",
-		events: [{ year: 656, label: 'Dies imprisoned, leaving instructions on how to defend Baekje.' }],
-		aliases: ['Sungchung', 'Seongchung']
+		quote: 'A loyal servant does not forget his king even in death.',
+		nature:
+			'Tide-tables and unfinished sentences. 하십시오 to the king until the guards take the belt. In the cell he stops arguing aloud and writes. He does not speak subtext; he names passes. Also 정충 (淨忠) in some records.',
+		firstLine: 'Your Majesty. Open court. Today.',
+		lastLine: 'Hold the difficult ground, and you may yet stop them.',
+		arc: 'Jwapyeong who read the Geum for the whole rock. In the third month of Euija’s sixteenth year he remonstrates the wine; the king jails him; nobody else dares speak. He starves within earshot of the feast and leaves the Tanhyeon–Gibeolpo memorial. Four years later Euija sighs that he did not use the words.',
+		events: [
+			{ year: 656, label: 'Remonstrates the wine; imprisoned; starves; dying memorial on Chimhyeon and Gibeolpo.' }
+		],
+		career: [
+			{ title: 'Jwapyeong', korean: '좌평', hanja: '佐平', org: 'ministersassembly', from: 641, to: 656 }
+		],
+		blade: 'Baekje court 환두대도 — hollow ring that hangs on a prison post after the belt is taken.',
+		aliases: ['Sungchung', 'Seongchung', '성충', '成忠', '정충', '淨忠']
 	},
 	{
 		id: 'yung',
@@ -5608,19 +5676,19 @@ export const CONCEPTS: Person[] = [
 		entity: 'organization',
 		kingdom: 'silla',
 		title: 'Silla’s unanimous council of Councillors',
-		tagline: 'Six Councillors (대등) under a Premier (상대등) — initial vote, deliberation, final vote.',
+		tagline: 'Six Councillors (대등) under a High Councillor (상대등) — initial vote, deliberation, final vote.',
 		nature: 'Each session: initial vote → deliberation → final vote. Unanimity or nothing; one withheld hand is a Harmony Veto. Yes-Minister courtesy wrapped around Iliad stakes — thrones, pride, and the turning of hands.',
-		arc: 'Members are Councillors (대등); the first chair is Premier (상대등). In 579 they depose King Jinji on the three counts — misconduct, not treason — and a Sacred Bone house drops to True Bone. In 632 six sleeves begin three-to-three on Dukman; Bidam wins deliberation until the final vote is six-to-none. In 645 Bidam alone breaks the initial vote for Seungman and the final vote cannot pass. In 654 Chunchu is enthroned when the holdout is laughed down. After the Chunchu Reforms the Council still meets; the Royal Secretariat ensures nothing of consequence waits for it.',
+		arc: 'Members are Councillors (대등); the first chair is High Councillor (상대등). In 579 they depose King Jinji on the three counts — misconduct, not treason — and a Sacred Bone house drops to True Bone. In 632 six sleeves begin three-to-three on Dukman; Bidam wins deliberation until the final vote is six-to-none. In 645 Bidam alone breaks the initial vote for Seungman and the final vote cannot pass. In 654 Chunchu is enthroned when the holdout is laughed down. After the Chunchu Reforms the Council still meets; the Royal Secretariat ensures nothing of consequence waits for it.',
 		events: [
 			{ year: 579, label: 'Deposes King Jinji for misconduct — initial vote, deliberation, final vote.' },
 			{ year: 632, label: 'Initial 3:3 → final 6:0 — Queen Sunduk named.' },
-			{ year: 645, label: 'Supum succeeds Pumil as Premier; Bidam alone blocks Seungman.' },
+			{ year: 645, label: 'Supum succeeds Pumil as High Councillor; Bidam alone blocks Seungman.' },
 			{ year: 651, label: 'Outflanked by the Royal Secretariat (집사부).' },
 			{ year: 654, label: 'Enthrones Kim Chunchu as King Muyeol.' }
 		],
 		orgChart: [
-			{ id: 'pumil', role: '상대등 · Premier (632–645)', reportsTo: null },
-			{ id: 'supum', role: '상대등 · Premier (from 645)', reportsTo: null },
+			{ id: 'pumil', role: '상대등 · High Councillor (632–645)', reportsTo: null },
+			{ id: 'supum', role: '상대등 · High Councillor (from 645)', reportsTo: null },
 			{ id: 'yushin', role: '대등', reportsTo: 'supum' },
 			{ id: 'alchun', role: '대등', reportsTo: 'supum' },
 			{ id: 'murim', role: '대등', reportsTo: 'supum' },
@@ -5634,7 +5702,7 @@ export const CONCEPTS: Person[] = [
 			'화백회의',
 			'Councillors',
 			'대등',
-			'Premier',
+			'High Councillor',
 			'상대등'
 		]
 	},
@@ -5985,18 +6053,18 @@ export const CONCEPTS: Person[] = [
 		entity: 'organization',
 		kingdom: 'silla',
 		title: 'Chunchu’s instrument of direct rule',
-		tagline: 'Never Enough — Tang’s three departments and six ministries, copied and exceeded: fourteen Silla ministries under one 시중.',
+		tagline: 'Never Enough — Tang’s three departments and six ministries, copied and exceeded: fourteen Silla ministries under one 중시.',
 		ideology: 'Westernizing institutionalism',
 		ideologyNote: 'Chunchu wanted to model Silla after Tang — then out-Tang Tang. Like two Koreas taking one ideology each to the extreme: Never Enough.',
-		nature: 'The Chunchu Reforms in one building: preserve the Premier’s chair, empty it of consequences. Chang’an’s 三省六部 as blueprint; Surabol’s answer is 집사부 plus 병부, 창부, 예부 and ten 府 — fourteen ministries that never pretend to wait for six unanimous sleeves.',
-		arc: 'Founded in 651 as 집사부 with Kim Jukji as first Royal Secretary (시중). Chunchu admired Tang’s machine and decided Surabol needed more of it — 집사부, 병부, 창부, 예부, and ten 府 beneath the 시중, fourteen ministries where Chang’an stops at six. The Harmony Council still meets; nothing of consequence waits. Enemies call it tyranny by Tuesday; Chunchu calls it Never Enough.',
+		nature: 'The Chunchu Reforms in one building: preserve the High Councillor’s chair, empty it of consequences. Chang’an’s 三省六部 as blueprint; Surabol’s answer is 집사부 plus 병부, 창부, 예부 and ten 府 — fourteen ministries that never pretend to wait for six unanimous sleeves.',
+		arc: 'Founded in 651 as 집사부 with Kim Jukji as first Premier (중시). Chunchu admired Tang’s machine and decided Surabol needed more of it — 집사부, 병부, 창부, 예부, and ten 府 beneath the 중시, fourteen ministries where Chang’an stops at six. The Harmony Council still meets; nothing of consequence waits. Enemies call it tyranny by Tuesday; Chunchu calls it Never Enough.',
 		events: [
-			{ year: 651, label: 'Established by Chunchu; Jukji named first Royal Secretary (시중); fourteen ministries seated.' },
+			{ year: 651, label: 'Established by Chunchu; Jukji named first Premier (중시); fourteen ministries seated.' },
 			{ year: 654, label: 'Runs the kingdom under Muyeol while the Council adjourns on schedule.' }
 		],
 		orgChart: [
 			{ id: 'chunchu', role: 'King', reportsTo: null },
-			{ id: 'jukji', role: '시중 · Royal Secretary', reportsTo: 'chunchu' },
+			{ id: 'jukji', role: '중시 · Premier', reportsTo: 'chunchu' },
 			{ id: '_min-jipsa', role: '집사부 · Secretariat', reportsTo: 'jukji' },
 			{ id: '_min-byeong', role: '병부 · War', reportsTo: 'jukji' },
 			{ id: '_min-chang', role: '창부 · Granary', reportsTo: 'jukji' },
@@ -6016,9 +6084,9 @@ export const CONCEPTS: Person[] = [
 			'Royal Secretariat',
 			'執事部',
 			'집사부',
-			'Royal Secretary',
-			'시중',
-			'侍中',
+			'Premier',
+			'중시',
+			'中侍',
 			'Chunchu Reforms'
 		]
 	},
@@ -6971,6 +7039,7 @@ const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string 
 	chunchu: { color: '#D8258C' },
 	yushin: { color: '#2A5FB8' },
 	bidam: { color: '#141C2E' },
+	sukwon: { color: '#3d4654' },
 	muryuk: { color: '#8B5CF6' },
 	seohyeon: { color: '#3E8EF0' },
 	munmu: { color: '#C41E3A' },
@@ -6989,6 +7058,7 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	chunchu: ['hwarang', 'harmonycouncil', 'royalsecretariat', 'bonerank', 'sillaroyal'],
 	yushin: ['hwarang', 'harmonycouncil'],
 	bidam: ['hwarang', 'harmonycouncil'],
+	sukwon: ['bonerank'],
 	munmu: ['hwarang', 'royalsecretariat', 'bonerank', 'sillaroyal'],
 	pumsuk: ['hwarang', 'bonerank'],
 	jukji: ['hwarang', 'royalsecretariat'],
@@ -7192,6 +7262,7 @@ const COLOR: Record<string, string> = {
 	daeya_a: '#a16207',
 	daeya_b: '#92744a',
 	bidam: '#141C2E',
+	sukwon: '#3d4654',
 	gotaso: '#F0A3C0',
 	pumsuk: '#7EB8F0',
 	inmun: '#6fb0d8',
@@ -7463,7 +7534,8 @@ const COLOR: Record<string, string> = {
 	'rel-yumla-daebyeol': '#7c3aed',
 	'rel-sara-jacheongbi': '#d4a0c8',
 	'rel-tamla-princes': '#e8a060',
-	'rel-taizong-xuerengui': '#e8e3d5'
+	'rel-taizong-xuerengui': '#e8e3d5',
+	'rel-xue-liu': '#c4a484'
 };
 
 /** Era / generation tag slugs used in the wiki. */

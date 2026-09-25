@@ -44,7 +44,7 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		},
 		{
 			parent: 'King Euija, the 31st Eraha',
-			children: [{ title: 'Jinheung’s Betrayal' }]
+			children: [{ title: 'The Severing' }]
 		}
 	],
 	'iron-will': [

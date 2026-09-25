@@ -276,8 +276,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'royal-secretariat',
 			title: 'The Royal Secretariat · 집사부',
 			caption:
-				'Never Enough — fourteen Silla ministries under one 시중. Tang’s 三省六部 copied and exceeded.',
-			ko: '결코 충분하지 않다 — 시중 아래 열네 부. 당의 삼성육부를 본따 더했다.'
+				'Never Enough — fourteen Silla ministries under one 중시. Tang’s 三省六部 copied and exceeded.',
+			ko: '결코 충분하지 않다 — 중시 아래 열네 부. 당의 삼성육부를 본따 더했다.'
 		}
 	],
 	eightclans: [

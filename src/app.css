@@ -90,10 +90,10 @@
 	--on-highlight: #14140f;
 
 	/* Tight, editorial tracking */
-	--tracking-body: -0.012em;
-	--tracking-display: -0.03em;
-	--tracking-micro: 0.02em;
-	--tracking-ui: -0.022em;
+	--tracking-body: -0.022em;
+	--tracking-display: -0.045em;
+	--tracking-micro: 0.006em;
+	--tracking-ui: -0.036em;
 	--leading-ui: 1.25;
 
 	--toc-w: 19rem;

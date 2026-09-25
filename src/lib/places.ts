@@ -786,7 +786,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Gotaso’s Wedding': 'surabol',
 	'Yeon’s Three Sons': 'gungnae',
 	'King Euija, the 31st Eraha': 'sabi',
-	'Jinheung’s Betrayal': 'gwansan',
+	'The Severing': 'gwansan',
 	'Daeya Fortress': 'daeya',
 	Steam: 'steam_cavern',
 	'Best of Both': 'steam_cavern',

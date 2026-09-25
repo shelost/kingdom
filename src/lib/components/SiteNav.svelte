@@ -10,6 +10,7 @@
 		{ href: '/characters', label: 'Characters' },
 		{ href: '/map', label: 'Map' },
 		{ href: '/music', label: 'Music' },
+		{ href: '/scenes', label: 'Scenes' },
 		{ href: '/grade', label: 'Grade' }
 	] as const;
 

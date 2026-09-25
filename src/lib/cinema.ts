@@ -11,8 +11,8 @@
  */
 
 import { buildBeats } from '$lib/beats';
-import { displayArtOf } from '$lib/cueArt';
 import { editUi } from '$lib/editUi.svelte';
+import { liveDisplayArt } from '$lib/stillEditUi.svelte';
 import { entryForReading, nsfwAllowed } from '$lib/nsfwUi.svelte';
 import { PLACES } from '$lib/places';
 import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
@@ -69,6 +69,7 @@ export function episodeContextOf(id: string | null): EpisodeContext | null {
 	if (flat < 0) return null;
 
 	const ref = episodes[flat];
+	if (!ref || ref.chapterIndex < 0) return null;
 	const chapter = chapters[ref.chapterIndex];
 	const entry = chapter?.entries[ref.entryIndex];
 	if (!chapter || !entry) return null;
@@ -98,7 +99,7 @@ export interface CinemaPanel {
 	kind: 'art' | 'place';
 	/** Slot alt text (art) or place name (place) — for the panel `<img>`. */
 	alt?: string;
-	/** Story cue id when `kind === 'art'` — used by `?edit=true` delete. */
+	/** Story cue id when `kind === 'art'` — used by `?edit=true` grade / delete. */
 	slotId?: string;
 }
 
@@ -128,7 +129,7 @@ export function panelsOf(entry: Entry, placeId: string | null): CinemaPanel[] {
 		for (const slot of beat.images) {
 			if (editUi.removedCueIds.has(slot.id)) continue;
 			if (!nsfwAllowed(slot)) continue;
-			const src = displayArtOf(slot, 'reading');
+			const src = liveDisplayArt(slot, 'reading');
 			if (!src || seen.has(src)) continue;
 			seen.add(src);
 			panels.push({

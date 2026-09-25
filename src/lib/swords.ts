@@ -2,9 +2,23 @@
  * Ring-pommel blades of the chronicle — each sword is a wiki profile (entity: 'sword')
  * linked to the character(s) who wield it. Only explicitly named blades from the
  * chronicle appear here; generic `blade:` prose on minor characters stays on person records.
+ *
+ * Stills: blade body is always `SWORD_BLADE_REF` (`/sw_bidam.png`). Handle:blade is 1:3.
+ * `swordImage` (`/sword_*.png`) is the small pommel motif only — never a mid-blade tsuba.
+ * Xue’s fangtian ji and wooden mokgeom are the exceptions.
  */
 
 import type { LifeEvent, Person } from '$lib/people';
+
+/** Full-blade DNA for GenerateImage — length, edge, grip, collar. Pommel motif from `swordImage`. */
+export const SWORD_BLADE_REF = '/sw_bidam.png';
+
+/**
+ * Anatomy measured off `sw_bidam.png`. Bake into every still that shows steel.
+ * Handle (ring + grip + collars) ≈ 1/4 of total; blade ≈ 3/4. Always 1:3.
+ */
+export const SWORD_STILL_ANATOMY =
+	'Copy attached sw_bidam.png. The ONLY circle on the sword is the small hollow RING at the pommel. When the blade hangs down: RING is UP (heel of the fist, little-finger side) → short gold band → palm-length diamond GRIP (one fist, not two-handed) → thin gold BAND (a collar, never a round tsuba, never a second ring) → long steel BLADE down toward the ankle → point. Handle:blade = 1:3 locked (handle = one quarter of the whole; blade = three quarters). Hip scale: hilt at hip, tip near ankle — never taller than the person, never a polearm. NEVER put the ring between the hand and the steel. NEVER point a giant blade at the camera as a graphic. sword_*.png is a pommel ECU only.';
 
 export interface SwordDef {
 	id: string;
@@ -150,6 +164,26 @@ export const SWORD_DEFS: SwordDef[] = [
 		swordImage: '/sword_lotus.png',
 		tagline: 'Single-edged phoenix blade — curved like an eastern sword, phoenix on the ring pommel; one side only, as he is.',
 		arc: 'Gyebek’s phoenix blade — single-edged, curved, one side only as he is. The five thousand at Yellow Mountain carry the type into later ages.'
+	},
+	{
+		id: 'sword-seongchung',
+		name: 'Tide-table ring',
+		korean: '물때환두',
+		owners: ['seongchung'],
+		kingdom: 'baekje',
+		swordImage: '/sword_lotus.png',
+		tagline: 'Baekje court 환두대도 — hollow ring that hangs on a prison post after the belt is taken.',
+		arc: 'Seongchung’s office blade. In the hall it catches the lamp at his hip while he remonstrates the wine. In the cell it hangs on timber; the memorial is written underneath it.'
+	},
+	{
+		id: 'sword-heungsu',
+		name: 'Posting ring',
+		korean: '유배환두',
+		owners: ['heungsu'],
+		kingdom: 'baekje',
+		swordImage: '/sword_lotus.png',
+		tagline: 'Baekje court 환두대도 — hollow ring worn smooth on a posting road.',
+		arc: 'Heungsu’s belt-ring at Gomamiji. The courier sees it before he hears the answer. Same hollow circle Seongchung wore; a different road.'
 	},
 	{
 		id: 'sword-xuerengui',

@@ -18,6 +18,7 @@ import { avatarOf, byId, isPlaceholderArt, nameOf, PROFILES } from '$lib/people'
 import { ENTRY_PLACE, PLACES } from '$lib/places';
 import { chapters, type Block, type Chapter, type Entry, type ImageSlot } from '$lib/story';
 import { TEMP_ART_BY_ID } from '$lib/tempArtInventory';
+import { isNsfwCueImage } from '$lib/nsfwCue';
 
 export {
 	artOf,
@@ -30,6 +31,8 @@ export {
 	scriptArtFramesOf,
 	tempArtOf
 } from '$lib/cueArt';
+
+export { isNsfwCueImage } from '$lib/nsfwCue';
 
 export type GalleryView = 'grid' | 'cues';
 
@@ -226,15 +229,6 @@ function entryYearNum(entry: Entry, chapter: Chapter): number | null {
 	return Number.isFinite(fromRange) ? fromRange : null;
 }
 
-/** Sensual / sexual stills only — never a generic close-up or battle face. */
-const NSFW_HINT =
-	/skin-forward|close hungry kiss|passionate kiss|robe (off|slipping|open on the chest)|bare (shoulder|chest|back|buttock|ass|thigh)|mouths almost touching|mouth at .{0,40}throat|wet (white )?jeogori|openly sexual|overwhelmed with (lust|desire)|grabbing .{0,80}(ass|hip|buttock)/i;
-
-export function isNsfwCueImage(slot: ImageSlot): boolean {
-	if (slot.nsfw) return true;
-	return NSFW_HINT.test(`${slot.prompt ?? ''} ${slot.alt ?? ''}`);
-}
-
 /** Humanize a cue id: `blade-south` → `Blade south`, `yeon_sons_table` → `Yeon sons table`. */
 export function humanizeCueId(id: string): string {
 	const raw = id.replace(/[_-]+/g, ' ').trim();
@@ -324,6 +318,12 @@ export function flattenStoryImages(source: Chapter[] = chapters): StoryCueImage[
 	}
 
 	return list;
+}
+
+/** First cue with this slot id (story.json order). */
+export function findStoryCueBySlotId(slotId: string, source: Chapter[] = chapters): StoryCueImage | undefined {
+	if (!slotId) return undefined;
+	return flattenStoryImages(source).find((im) => im.slot.id === slotId);
 }
 
 /** Cue ids currently registered in story.json. */

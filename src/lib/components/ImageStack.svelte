@@ -1,14 +1,15 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import type { StackImage } from '$lib/story';
-	import { displayArtOf, scriptArtFramesOf } from '$lib/cueArt';
+	import { liveDisplayArt, liveScriptFrames } from '$lib/stillEditUi.svelte';
 	import { storyImg } from '$lib/img';
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
 	import { filterNsfw } from '$lib/nsfwUi.svelte';
-	import { editUi, filterRemovedCues, permanentlyDeleteCue } from '$lib/editUi.svelte';
+	import { editUi, filterRemovedCues } from '$lib/editUi.svelte';
+	import { onEditGradeContextMenu } from '$lib/imageGradeUi.svelte';
 	import { openLightbox, type LightboxItem } from '$lib/imageLightbox.svelte';
-	import { isNsfwCueImage } from '$lib/storyImages';
+	import { isNsfwCueImage } from '$lib/nsfwCue';
 
 	let {
 		images,
@@ -28,7 +29,7 @@
 	let editing = $derived(editUi.enabled);
 
 	let live = $state(0);
-	/** Sticky stacks only fetch once they are near the viewport (or marked LCP). */
+	/** Sticky / inline stacks only fetch once near the viewport (or marked LCP). */
 	let near = $state(false);
 
 	const CUE_SIZES = '(max-width: 820px) 100vw, 42vw';
@@ -41,16 +42,17 @@
 	 * Sticky mode stacks every frame in the same viewport cell, so native
 	 * `loading="lazy"` does not help — the browser treats them all as in-view.
 	 * Only decode the live cue plus one neighbour for the fade / the next cut.
+	 * Inline (script) stacks also wait until near the viewport — otherwise every
+	 * cue on the chronicle mounts an `<img>` at once.
 	 */
 	function paintSlot(i: number): boolean {
+		if (!near) return false;
 		if (inline) return true;
 		if (priority && i <= 1) return true;
-		if (!near) return false;
 		return Math.abs(i - live) <= 1;
 	}
 
 	const watchNear: Attachment<HTMLElement> = (node) => {
-		if (inline) return;
 		if (priority) {
 			near = true;
 			return;
@@ -63,7 +65,7 @@
 			(entries) => {
 				if (entries.some((e) => e.isIntersecting)) near = true;
 			},
-			{ rootMargin: '400px 0px', threshold: 0 }
+			{ rootMargin: inline ? '600px 0px' : '400px 0px', threshold: 0 }
 		);
 		io.observe(node);
 		return () => io.disconnect();
@@ -205,10 +207,10 @@
 		const episodeId = episodeIdOf(host);
 		const items: LightboxItem[] = [];
 		for (const slot of visible) {
-			const frames = inline ? scriptArtFramesOf(slot) : [];
+			const frames = inline ? liveScriptFrames(slot) : [];
 			const srcs = frames.length
 				? frames.map((f) => f.src)
-				: [displayArtOf(slot, 'reading')].filter((s): s is string => !!s);
+				: [liveDisplayArt(slot, 'reading')].filter((s): s is string => !!s);
 			for (const src of srcs) {
 				items.push({
 					src,
@@ -230,10 +232,7 @@
 	}
 
 	function onEditContextMenu(e: MouseEvent, slotId: string) {
-		if (!editUi.enabled) return;
-		e.preventDefault();
-		e.stopPropagation();
-		void permanentlyDeleteCue(slotId);
+		onEditGradeContextMenu(e, slotId);
 	}
 </script>
 
@@ -251,7 +250,7 @@
 <div class="stack" class:immersion class:inline class:editing {@attach watchLive} {@attach watchNear}>
 	{#each visible as slot, i (`${slot.id}:${i}`)}
 		{#if inline}
-			{@const frames = scriptArtFramesOf(slot)}
+			{@const frames = liveScriptFrames(slot)}
 			{#if frames.length}
 				{#each frames as frame, fi (`${slot.id}:${i}:${frame.layer}`)}
 					<figure
@@ -261,28 +260,30 @@
 						style:--ratio={slot.ratio ?? 4 / 3}
 						oncontextmenu={(e) => onEditContextMenu(e, slot.id)}
 					>
-						<button
-							type="button"
-							class="open"
-							onclick={(e) => openAt(frame.src, e.currentTarget)}
-							aria-label={`Open ${slot.alt ?? slot.id}`}
-						>
-							<img
-								class="shot"
-								{...storyImg(frame.src, {
-									kind: 'cue',
-									priority: priority && i === 0 && fi === 0,
-									sizes: INLINE_SIZES,
-									widths: [256, 384, 640],
-									alt:
-										frame.layer === 'temp'
-											? `${slot.alt ?? slot.id} (temp)`
-											: (slot.alt ?? '')
-								})}
-							/>
-						</button>
-						{#if frame.layer === 'temp'}
-							<figcaption class="temp-tag">temp</figcaption>
+						{#if paintSlot(i)}
+							<button
+								type="button"
+								class="open"
+								onclick={(e) => openAt(frame.src, e.currentTarget)}
+								aria-label={`Open ${slot.alt ?? slot.id}`}
+							>
+								<img
+									class="shot"
+									{...storyImg(frame.src, {
+										kind: 'cue',
+										priority: priority && i === 0 && fi === 0,
+										sizes: INLINE_SIZES,
+										widths: [256, 384, 640],
+										alt:
+											frame.layer === 'temp'
+												? `${slot.alt ?? slot.id} (temp)`
+												: (slot.alt ?? '')
+									})}
+								/>
+							</button>
+							{#if frame.layer === 'temp'}
+								<figcaption class="temp-tag">temp</figcaption>
+							{/if}
 						{/if}
 					</figure>
 				{/each}
@@ -300,7 +301,7 @@
 				</figure>
 			{/if}
 		{:else}
-			{@const art = displayArtOf(slot, 'reading')}
+			{@const art = liveDisplayArt(slot, 'reading')}
 			<figure
 				class="frame"
 				class:art={!!art}
@@ -362,7 +363,7 @@
 	}
 
 	.stack.editing .frame.art::after {
-		content: 'Right-click to delete';
+		content: 'Right-click to grade / edit';
 		position: absolute;
 		left: 0.45rem;
 		bottom: 0.4rem;

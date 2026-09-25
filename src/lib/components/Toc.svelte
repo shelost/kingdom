@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { SvelteSet } from 'svelte/reactivity';
 	import { chapters, entryId, partId } from '$lib/story';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import { branchContains, spineEntries, spineLabel, tocLeavesFor } from '$lib/tocTree';
-	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump } from '$lib/tocUi.svelte';
+	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump, tocUi, loadTocFloating } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
 		reading,
@@ -17,6 +16,8 @@
 		storyRoot,
 		stripStoryHash
 	} from '$lib/reading.svelte';
+	import HudSearch from './HudSearch.svelte';
+	import { isLoveEpisode } from '$lib/loveEpisodes';
 
 	/** Bound by the story layout so the reading shell + plate shift together. */
 	let { open = $bindable(true) } = $props();
@@ -44,17 +45,98 @@
 			: scrollProgress
 	);
 
-	let refreshObservers: (() => void) | undefined;
+	let panelEl: HTMLDivElement | undefined = $state();
+	let pill = $state({ top: 0, left: 0, width: 0, height: 0, on: false });
+	let lastPill = { top: 0, left: 0, width: 0, height: 0, on: false };
+	let pillAt = $state('');
 
-	/** Episode ids whose scene lists the reader opened or closed by hand. */
-	const opened = new SvelteSet<string>();
-	const closed = new SvelteSet<string>();
+	/** Scene if one is live; otherwise the episode; otherwise the chapter. */
+	let pillId = $derived(reading.sceneId || activeEntry || active || '');
+
+	function findPillItem(): HTMLElement | null {
+		if (!panelEl) return null;
+		const ids = [pillId, activeEntry, active].filter(Boolean);
+		for (const id of ids) {
+			const item = panelEl.querySelector<HTMLElement>(`[data-toc-id="${CSS.escape(id)}"]`);
+			if (!item || item.offsetParent === null) continue;
+			if (item.getBoundingClientRect().height < 2) continue;
+			return item;
+		}
+		return null;
+	}
+
+	function measurePill() {
+		if (!panelEl || !open) {
+			if (lastPill.on) {
+				lastPill = { ...lastPill, on: false };
+				pill = lastPill;
+			}
+			pillAt = '';
+			return;
+		}
+		const item = findPillItem();
+		if (!item) {
+			if (lastPill.on) {
+				lastPill = { ...lastPill, on: false };
+				pill = lastPill;
+			}
+			pillAt = '';
+			return;
+		}
+		const pr = panelEl.getBoundingClientRect();
+		const ir = item.getBoundingClientRect();
+		const next = {
+			top: ir.top - pr.top + panelEl.scrollTop,
+			left: ir.left - pr.left + panelEl.scrollLeft,
+			width: ir.width,
+			height: ir.height,
+			on: true
+		};
+		const at = item.dataset.tocId ?? '';
+		if (pillAt !== at) pillAt = at;
+		if (
+			lastPill.on &&
+			Math.abs(lastPill.top - next.top) < 0.5 &&
+			Math.abs(lastPill.left - next.left) < 0.5 &&
+			Math.abs(lastPill.width - next.width) < 0.5 &&
+			Math.abs(lastPill.height - next.height) < 0.5
+		) {
+			return;
+		}
+		lastPill = next;
+		pill = next;
+	}
+
+	$effect(() => {
+		pillId;
+		activeEntry;
+		open;
+		tocUi.floating;
+		if (!open) return;
+		const raf1 = requestAnimationFrame(() => {
+			measurePill();
+			requestAnimationFrame(measurePill);
+		});
+		const t = setTimeout(measurePill, 360);
+		return () => {
+			cancelAnimationFrame(raf1);
+			clearTimeout(t);
+		};
+	});
+
+	$effect(() => {
+		const el = panelEl;
+		if (!el) return;
+		const ro = new ResizeObserver(() => measurePill());
+		ro.observe(el);
+		return () => ro.disconnect();
+	});
 
 	/* ————— panel scroll persistence ————— */
 
-	let panelEl: HTMLDivElement | undefined = $state();
 	let panelScrollRaf = 0;
 	let restoreTimer: ReturnType<typeof setTimeout> | undefined;
+	let refreshObservers: (() => void) | undefined;
 
 	/**
 	 * Record the topmost visible panel item + its offset from the panel top,
@@ -108,6 +190,7 @@
 	});
 
 	onMount(() => {
+		loadTocFloating();
 		const io = new IntersectionObserver(
 			(entries) => {
 				if (reading.viewScope === 'episodes') return;
@@ -245,21 +328,10 @@
 		}
 	}
 
+	/** Scene lists sit under the current episode (or its nested branch). No toggle. */
 	function scenesOpen(id: string, leafIds: string[]) {
-		if (closed.has(id)) return false;
-		if (opened.has(id)) return true;
 		if (activeEntry === id) return true;
 		return leafIds.includes(activeEntry) || leafIds.includes(reading.sceneId ?? '');
-	}
-
-	function toggleExpand(id: string, leafIds: string[]) {
-		if (scenesOpen(id, leafIds)) {
-			closed.add(id);
-			opened.delete(id);
-		} else {
-			opened.add(id);
-			closed.delete(id);
-		}
 	}
 
 	function toggle() {
@@ -289,8 +361,28 @@
 	{open ? '✕' : '☰'}
 </button>
 
-<nav class="toc" class:open class:in={scriptUi.inScript} id="toc-panel" aria-label="Table of contents" aria-hidden={!open || !scriptUi.inScript}>
+<nav
+	class={['toc', { open, floating: tocUi.floating }]}
+	class:in={scriptUi.inScript}
+	id="toc-panel"
+	aria-label="Table of contents"
+	aria-hidden={!open || !scriptUi.inScript}
+>
 	<div class="panel" bind:this={panelEl} onscroll={onPanelScroll}>
+		<div
+			class="toc-pill"
+			class:on={pill.on}
+			style:top="{pill.top}px"
+			style:left="{pill.left}px"
+			style:width="{pill.width}px"
+			style:height="{pill.height}px"
+			aria-hidden="true"
+		></div>
+		<div class="toc-search">
+			<p class="toc-label">Search</p>
+			<HudSearch placement="toc" />
+		</div>
+		<p class="toc-label">Chapters</p>
 		{#each chapters as ch, ci (ch.id)}
 			{#if ch.part}
 				<button
@@ -306,6 +398,7 @@
 				type="button"
 				class="panel-item"
 				class:active={active === ch.id}
+				class:on-pill={pillAt === ch.id}
 				data-toc-id={ch.id}
 				onclick={() => jump(ch.id)}
 			>
@@ -319,6 +412,7 @@
 			</button>
 
 			<div class="sub">
+				<p class="toc-label nested">Episodes</p>
 				{#each spineEntries(ch) as en (ch.id + en.title)}
 					{@const eid = entryId(ch.id, en.title)}
 					{@const heading = spineLabel(ch, en)}
@@ -329,35 +423,23 @@
 					{@const isOpen = scenesOpen(eid, leafIds)}
 					{@const onBranch =
 						activeEntry === eid || branchContains(leaves, activeEntry, reading.sceneId ?? '')}
-					<div class="ep-block" class:open={isOpen}>
-						<div class="ep-row">
-							{#if leaves.length}
-								<button
-									type="button"
-									class="ep-chevron"
-									class:open={isOpen}
-									aria-expanded={isOpen}
-									aria-controls="toc-scenes-{eid}"
-									aria-label={isOpen
-										? `Hide scenes in ${heading || 'Untitled'}`
-										: `Show scenes in ${heading || 'Untitled'}`}
-									onclick={() => toggleExpand(eid, leafIds)}
-								></button>
-							{:else}
-								<span class="ep-chevron-spacer" aria-hidden="true"></span>
+					<div class="ep-block">
+						<button
+							type="button"
+							class="sub-item"
+							class:active={activeEntry === eid}
+							class:branch={onBranch && activeEntry !== eid}
+							class:on-pill={pillAt === eid}
+							class:love={isLoveEpisode(eid)}
+							data-toc-id={eid}
+							onclick={() => jump(eid)}
+						>
+							<span class="si-year">{en.year || '·'}</span>
+							<span class="si-title">{heading || 'Untitled'}</span>
+							{#if isLoveEpisode(eid)}
+								<span class="si-love" title="Love story" aria-label="Love story"></span>
 							{/if}
-							<button
-								type="button"
-								class="sub-item"
-								class:active={activeEntry === eid}
-								class:branch={onBranch && activeEntry !== eid}
-								data-toc-id={eid}
-								onclick={() => jump(eid)}
-							>
-								<span class="si-year">{en.year || '·'}</span>
-								<span class="si-title">{heading || 'Untitled'}</span>
-							</button>
-						</div>
+						</button>
 						{#if leaves.length}
 							<div
 								class="scene-fold"
@@ -372,6 +454,7 @@
 												type="button"
 												class="scene-item"
 												class:active={activeEntry === s.id || reading.sceneId === s.id}
+												class:on-pill={pillAt === s.id}
 												data-toc-id={s.id}
 												tabindex={isOpen ? 0 : -1}
 												onclick={() => jump(s.id)}
@@ -462,8 +545,11 @@
 			transform: none;
 		}
 
-		.ep-chevron::before,
 		.scene-fold {
+			transition: none;
+		}
+
+		.toc-pill {
 			transition: none;
 		}
 	}
@@ -481,6 +567,14 @@
 		transform: translate3d(-1.15rem, 0, 0);
 		opacity: 0;
 		visibility: hidden;
+		--tracking-toc: -0.035em;
+		--tracking-toc-kicker: -0.04em;
+		--tracking-toc-scene: -0.03em;
+		font-family: var(--ui);
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: var(--tracking-toc);
+		line-height: var(--leading-ui);
 		transition:
 			opacity var(--toc-duration) var(--toc-ease),
 			transform var(--toc-duration) var(--toc-ease),
@@ -496,7 +590,37 @@
 		transition-delay: 0s;
 	}
 
+	.toc.floating {
+		top: max(3.55rem, calc(env(safe-area-inset-top, 0px) + 3.15rem));
+		left: max(0.55rem, env(safe-area-inset-left, 0px));
+		bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+		width: min(calc(var(--toc-w) - 0.85rem), 86vw);
+		padding: 0;
+	}
+
+	.toc.floating .panel {
+		background: var(--glass);
+		backdrop-filter: blur(22px);
+		-webkit-backdrop-filter: blur(22px);
+		border: 1px solid var(--hairline);
+		border-radius: 14px;
+		box-shadow:
+			0 1px 0 color-mix(in srgb, white 7%, transparent),
+			0 18px 44px rgba(0, 0, 0, 0.48),
+			0 4px 14px rgba(0, 0, 0, 0.28);
+		padding: 0.7rem 0.5rem 1rem;
+	}
+
+	.toc.floating .toc-search {
+		background: linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--panel) 92%, transparent) 62%,
+			transparent
+		);
+	}
+
 	.panel {
+		position: relative;
 		height: 100%;
 		overflow-y: auto;
 		overscroll-behavior: contain;
@@ -506,17 +630,67 @@
 		scrollbar-color: var(--scroll-thumb) transparent;
 	}
 
+	.toc-pill {
+		position: absolute;
+		z-index: 0;
+		border-radius: 8px;
+		background: #fff;
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.22);
+		pointer-events: none;
+		opacity: 0;
+		transition:
+			top 320ms var(--toc-ease),
+			left 320ms var(--toc-ease),
+			width 320ms var(--toc-ease),
+			height 320ms var(--toc-ease),
+			opacity 180ms var(--toc-ease);
+	}
+
+	.toc-pill.on {
+		opacity: 1;
+	}
+
+	.toc-search {
+		position: sticky;
+		top: 0;
+		z-index: 2;
+		padding: 0 0 0.65rem;
+		background: linear-gradient(
+			180deg,
+			color-mix(in srgb, var(--bg) 88%, transparent) 70%,
+			transparent
+		);
+	}
+
+	.toc-label {
+		margin: 0.7rem 0.35rem 0.28rem;
+		font-size: 10px;
+		font-weight: 500;
+		letter-spacing: var(--tracking-toc-kicker);
+		color: color-mix(in srgb, var(--fg-faint) 82%, transparent);
+		text-transform: uppercase;
+	}
+
+	.toc-label.nested {
+		margin: 0.45rem 0.35rem 0.15rem;
+		font-size: 10px;
+	}
+
+	.toc-search .toc-label {
+		margin-top: 0;
+	}
+
 	.panel-part {
 		display: block;
 		width: 100%;
-		font-family: var(--serif);
-		font-weight: 900;
-		font-size: 0.68rem;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
+		font: inherit;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: var(--tracking-toc);
+		text-transform: none;
 		text-align: left;
 		color: var(--gold);
-		padding: 0.95rem 0.35rem 0.3rem;
+		padding: 0.55rem 0.35rem 0.2rem;
 		margin: 0;
 		background: transparent;
 		border: none;
@@ -539,10 +713,12 @@
 		text-align: left;
 		background: transparent;
 		border: none;
-		border-radius: var(--radius);
+		border-radius: 8px;
 		padding: 0.42rem 0.45rem;
 		cursor: pointer;
-		color: color-mix(in srgb, var(--fg) 80%, transparent);
+		color: color-mix(in srgb, var(--fg) 90%, transparent);
+		position: relative;
+		z-index: 1;
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 12px var(--bg);
@@ -557,15 +733,24 @@
 	}
 
 	.panel-item.active {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--gold) 10%, transparent);
+		background: transparent;
+	}
+
+	.panel-item.on-pill {
+		color: #14140f;
+		background: transparent;
+		text-shadow: none;
+	}
+
+	.panel-item.on-pill .pi-num {
+		color: #14140f;
 	}
 
 	.pi-title {
-		font-family: var(--serif);
-		font-weight: 700;
-		font-size: 0.88rem;
-		letter-spacing: var(--tracking-display);
+		font: inherit;
+		font-weight: 600;
+		font-size: 13.5px;
+		letter-spacing: var(--tracking-toc);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -582,16 +767,19 @@
 	}
 
 	.pi-ko {
-		font-size: 0.7rem;
-		opacity: 0.55;
+		font-size: 11px;
+		letter-spacing: 0;
+		opacity: 0.5;
 		flex-shrink: 0;
 	}
 
 	.pi-range {
 		margin-left: auto;
-		font-family: var(--serif);
-		font-size: 0.72rem;
-		opacity: 0.5;
+		font: inherit;
+		font-size: 10.5px;
+		font-weight: 500;
+		letter-spacing: var(--tracking-toc-scene);
+		opacity: 0.45;
 		flex-shrink: 0;
 	}
 
@@ -605,75 +793,24 @@
 		border-radius: var(--radius);
 	}
 
-	.ep-row {
-		display: flex;
-		align-items: flex-start;
-		gap: 0.05rem;
-	}
-
-	.ep-row .sub-item {
-		flex: 1;
-		min-width: 0;
-	}
-
-	.ep-chevron,
-	.ep-chevron-spacer {
-		flex-shrink: 0;
-		width: 1.2rem;
-		height: 1.55rem;
-		padding: 0;
-		margin-top: 0.08rem;
-		background: transparent;
-		border: none;
-	}
-
-	.ep-chevron {
-		display: grid;
-		place-items: center;
-		cursor: pointer;
-		color: color-mix(in srgb, var(--gold) 78%, transparent);
-		-webkit-tap-highlight-color: transparent;
-		border-radius: 999px;
-		transition:
-			color 220ms var(--toc-ease),
-			background 220ms var(--toc-ease);
-	}
-
-	.ep-chevron::before {
-		content: '';
-		display: block;
-		width: 0.38rem;
-		height: 0.38rem;
-		border-right: 1.5px solid currentColor;
-		border-bottom: 1.5px solid currentColor;
-		transform: rotate(-45deg);
-		transform-origin: 50% 50%;
-		transition: transform 320ms var(--toc-ease);
-	}
-
-	.ep-chevron.open::before {
-		transform: rotate(45deg);
-	}
-
-	.ep-chevron:hover {
-		color: var(--gold);
-		background: color-mix(in srgb, var(--gold) 14%, transparent);
-	}
-
 	.sub-item {
 		display: flex;
 		align-items: baseline;
 		gap: 0.5rem;
 		width: 100%;
 		font: inherit;
-		font-size: 0.76rem;
+		font-size: 12.5px;
+		font-weight: 500;
+		letter-spacing: var(--tracking-toc);
 		text-align: left;
 		background: transparent;
 		border: none;
-		border-radius: var(--radius);
+		border-radius: 8px;
 		padding: 0.22rem 0.4rem;
 		cursor: pointer;
 		color: color-mix(in srgb, var(--fg) 55%, transparent);
+		position: relative;
+		z-index: 1;
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 10px var(--bg);
@@ -688,8 +825,13 @@
 	}
 
 	.sub-item.active {
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--gold) 11%, transparent);
+		background: transparent;
+	}
+
+	.sub-item.on-pill {
+		color: #14140f;
+		background: transparent;
+		text-shadow: none;
 	}
 
 	.sub-item.branch {
@@ -699,16 +841,34 @@
 	.si-year {
 		flex-shrink: 0;
 		width: 2.7em;
-		font-family: var(--serif);
-		letter-spacing: 0;
-		opacity: 0.8;
+		font: inherit;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: var(--tracking-toc);
+		opacity: 0.72;
 	}
 
 	.si-title {
+		flex: 1;
+		min-width: 0;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		letter-spacing: var(--tracking-display);
+		letter-spacing: var(--tracking-toc);
+	}
+
+	.si-love {
+		flex: 0 0 auto;
+		align-self: center;
+		width: 0.38rem;
+		height: 0.38rem;
+		border-radius: 50%;
+		background: #e879a8;
+		box-shadow: 0 0 0 1px color-mix(in srgb, #e879a8 40%, transparent);
+	}
+
+	.sub-item.on-pill .si-love {
+		background: #c45a8a;
+		box-shadow: none;
 	}
 
 	.scene-fold {
@@ -727,7 +887,7 @@
 	}
 
 	.scenes {
-		margin: 0.08rem 0 0.34rem 1.25rem;
+		margin: 0.08rem 0 0.34rem 0.2rem;
 		padding-left: 0.45rem;
 		border-left: 1px solid color-mix(in srgb, var(--gold) 26%, transparent);
 	}
@@ -738,14 +898,18 @@
 		gap: 0.45rem;
 		width: 100%;
 		font: inherit;
-		font-size: 0.7rem;
+		font-size: 12px;
+		font-weight: 500;
+		letter-spacing: var(--tracking-toc-scene);
 		text-align: left;
 		background: transparent;
 		border: none;
-		border-radius: var(--radius);
+		border-radius: 8px;
 		padding: 0.16rem 0.4rem;
 		cursor: pointer;
 		color: color-mix(in srgb, var(--fg) 42%, transparent);
+		position: relative;
+		z-index: 1;
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 10px var(--bg);
@@ -761,34 +925,40 @@
 	}
 
 	.scene-item.active {
-		color: var(--gold);
-		background: color-mix(in srgb, var(--gold) 10%, transparent);
+		background: transparent;
+	}
+
+	.scene-item.on-pill {
+		color: #14140f;
+		background: transparent;
+		text-shadow: none;
+	}
+
+	.scene-item.on-pill .scene-num {
+		opacity: 0.72;
+		color: #14140f;
 	}
 
 	.scene-num {
 		flex-shrink: 0;
 		width: 1.15em;
 		font-variant-numeric: tabular-nums;
-		font-size: 0.64rem;
+		font-size: 11px;
 		opacity: 0.55;
 		color: var(--gold);
-	}
-
-	.scene-item.active .scene-num {
-		opacity: 1;
 	}
 
 	.scene-title {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		letter-spacing: var(--tracking-display);
+		letter-spacing: var(--tracking-toc-scene);
 	}
 
 	/* Overlay (no padding push below 1000px): a sheet so inline art behind
 	   the panel cannot show through. Desktop push relies on .reading-clip. */
 	@media (max-width: 1000px) {
-		.toc.open.in {
+		.toc.open.in:not(.floating) {
 			background: linear-gradient(
 				90deg,
 				color-mix(in srgb, var(--panel-sunken) 96%, transparent) 0%,
@@ -830,20 +1000,13 @@
 		.sub-item {
 			min-height: 2.5rem;
 			padding: 0.45rem 0.45rem;
-			font-size: 0.8rem;
-		}
-
-		.ep-chevron,
-		.ep-chevron-spacer {
-			width: 2.5rem;
-			height: 2.5rem;
-			margin-top: 0;
+			font-size: 12.5px;
 		}
 
 		.scene-item {
 			min-height: 2.5rem;
 			padding: 0.4rem 0.45rem;
-			font-size: 0.76rem;
+			font-size: 12px;
 		}
 	}
 </style>

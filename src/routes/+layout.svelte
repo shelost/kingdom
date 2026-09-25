@@ -1,13 +1,13 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
 	import '../app.css';
 	import '$lib/components/diagrams/orgChartTheme.css';
 	import { beforeNavigate, goto } from '$app/navigation';
 	import { page } from '$app/state';
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
+	import GradePopover from '$lib/components/GradePopover.svelte';
 	import { applyNsfwFromUrl, NSFW_QUERY, nsfwQueryOn } from '$lib/nsfwUi.svelte';
 	import { applyEditFromUrl, EDIT_QUERY, editQueryOn } from '$lib/editUi.svelte';
-	import { applyReadingFromUrl, EP_QUERY, VIEW_QUERY } from '$lib/reading.svelte';
+	import { applyReadingFromUrl, EP_QUERY, VIEW_QUERY, reading } from '$lib/reading.svelte';
 
 	let { children } = $props();
 
@@ -38,14 +38,15 @@
 		}
 
 		/* Episode encoding only travels on the chronicle home (`?ep=jumong`).
-		   Carry `ep` only when the destination omitted it — never clobber an
-		   explicit new episode with the previous one. */
+		   Carry `ep` only when the destination omitted it AND we are still in
+		   episode scope — never clobber an explicit new `ep`, and never glue
+		   the old episode back on after Full mode drops the param. */
 		const toStory = next.pathname === '/' || next.pathname === '';
 		const fromStory = from.pathname === '/' || from.pathname === '';
 		if (toStory && fromStory) {
 			const ep = from.searchParams.get(EP_QUERY);
 			const view = from.searchParams.get(VIEW_QUERY);
-			if (ep && !next.searchParams.has(EP_QUERY)) {
+			if (ep && !next.searchParams.has(EP_QUERY) && reading.viewScope === 'episodes') {
 				next.searchParams.set(EP_QUERY, ep);
 				dirty = true;
 			} else if (
@@ -71,10 +72,11 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" type="image/png" href="/crown.png" />
 </svelte:head>
 
 <div class="rail" aria-hidden="true"></div>
 
 {@render children()}
 <ImageLightbox />
+<GradePopover />

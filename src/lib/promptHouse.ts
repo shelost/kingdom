@@ -8,7 +8,7 @@ export const COPY_CHIPS = [
 	'one hard key / chiaroscuro',
 	'high contrast, crushed blacks, not an even wash',
 	'iconic one-device layout, not a standing lineup',
-	'color symbolism: person hex as the plane or single accent',
+	'color symbolism: hex as hard key / bounce / specular in the dark — not a glow aura',
 	'cinematography: dutch, worm’s-eye, bokeh, mise-en-scène',
 	'sharp foreground / midground people / background giwa in bokeh',
 	'Jumong grins, laughs, easy eyes — laid-back, not a grim founder',
@@ -34,7 +34,7 @@ export const BAN_CHIPS = [
 	'hwarang headband in council',
 	'European crown / tiara',
 	'even well-lit studio',
-	'halo / bloom / glow around figures',
+	'halo / bloom / glow aura / emissive skin around figures',
 	'graphic poster / split-screen / black-triangle overlay',
 	'photoreal live-action or 3D archviz',
 	'busy extras crowding an iconic frame',
@@ -43,12 +43,13 @@ export const BAN_CHIPS = [
 	'wrong Cheomseongdae (lighthouse / ziggurat)',
 	'duplicate of the same named person in one still',
 	'figure standing inside a well shaft',
-	'Jumong as a grim statue / dead-eyed founder mask'
+	'Jumong as a grim statue / dead-eyed founder mask',
+	'katana / tsuba / reversed handle-blade / oversized 환두대도 (must stay sw_bidam 1:3 hip sword)'
 ] as const;
 
-/** Canon from the Jumong remake batch (high contrast, one device, dramatic pose, person-as-hex). */
+/** Canon from the Jumong remake batch (high contrast, one device, dramatic pose, hex as real-light accent). */
 const HOUSE_BASE =
-	'2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock every still: a CAMERA in a real Korean place — anamorphic 16:9 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key, never a fog hugging the body. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. DEPTH: sharp FOREGROUND (shoulder, bucket, rope, sleeve), people in the MIDGROUND, BACKGROUND grey giwa / timber in creamy bokeh — rack-focus. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex is lighting / a background plane / one accent — NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not a standing armor catalog. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark.';
+	'2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock every still: a CAMERA in a real Korean place — anamorphic 16:9 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. DEPTH: sharp FOREGROUND (shoulder, bucket, rope, sleeve), people in the MIDGROUND, BACKGROUND grey giwa / timber in creamy bokeh — rack-focus. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark.';
 
 const NOTE_TO_COPY: Array<[RegExp, string]> = [
 	[/contrast|lighting|movie poster|chiaroscuro|hard key/i, 'one hard key / chiaroscuro, movie-poster contrast'],
@@ -56,7 +57,7 @@ const NOTE_TO_COPY: Array<[RegExp, string]> = [
 	[/iconic, simple|memorable|good iconography/i, 'one gesture in empty space — iconic and simple'],
 	[/3d depth|good 3d/i, 'real spatial depth, objects receding'],
 	[/good layout|alternate poses|background/i, 'new camera pose in a real place, not a portrait paste'],
-	[/round|overhead|color symbolism/i, 'color symbolism: person hex as the plane or single accent'],
+	[/round|overhead|color symbolism/i, 'color symbolism: hex as hard key / bounce / specular — not a glow aura'],
 	[/dynamic pose|mythology.?like|mythology-scale|mytholog/i, 'dramatic poses in a mythology-scale one-device layout']
 ];
 
@@ -66,7 +67,7 @@ const NOTE_TO_BAN: Array<[RegExp, string]> = [
 	[/repetitive character|copy paste|identical to the reference|copy pasted/i, 'no pasted portrait pose — new body every still'],
 	[/wrong crowns|european/i, 'Silla tree-antler crown only — no European tiara'],
 	[/too realistic|photoreal|3d/i, 'not photoreal, not 3D render'],
-	[/glow|halo|bloom|god.?ray|rim.?aura/i, 'no halo or bloom around figures'],
+	[/glow|halo|bloom|god.?ray|rim.?aura|emissive/i, 'no glow aura, halo, bloom, or emissive skin around figures'],
 	[/not iconic|too busy|clutter|not minimal/i, 'iconic minimal — one device, empty frame, lower-third'],
 	[/wrong clothes|headband|teal/i, 'correct house dress; no hwarang headband in council'],
 	[/two tables/i, 'one locked table — no extra braziers'],
@@ -135,7 +136,7 @@ const AXIS_COPY: Record<GradeAxisId, string> = {
 	pose: 'new dramatic body every still — mid-stride, kneel, full-draw, not a clone',
 	face: 'readable expression — want, grimace, flush — not a serene portrait',
 	angle: 'named cinematography: dutch, worm’s-eye, OTS, ECU, bokeh',
-	colors: 'few hues; hex is lighting / plane / rim, not a costume swap',
+	colors: 'few hues; hex tints real light (key/bounce/specular), not a glow aura or costume swap',
 	lighting: 'one hard key / chiaroscuro, movie-poster contrast'
 };
 
@@ -149,7 +150,7 @@ const AXIS_BAN: Record<GradeAxisId, string> = {
 	pose: 'no copy-pasted reference as a fashion plate',
 	face: 'no polite-smile beauty plate',
 	angle: 'no default eye-level standing shot',
-	colors: 'few hues only — no gold-wash of the village or muddy extras',
+	colors: 'few hues only — no gold-wash, no body halo, no neon figure',
 	lighting: 'no even well-lit studio, no pale white room-as-void'
 };
 

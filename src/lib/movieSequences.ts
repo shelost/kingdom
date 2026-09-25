@@ -68,16 +68,16 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	},
 	{
 		id: 'harmony-council-632',
-		title: 'Harmony Council — first night, Premier Pumil',
+		title: 'Harmony Council — first night, High Councillor Pumil',
 		entryTitles: ['Queen Sunduk'],
 		place: 'Eastern Palace pond pavilion (pl_eastern_palace) — tea, wooden pieces, flame red then blue',
-		why: 'The chronicle’s first council: elderly Premier Pumil chairs; Bidam speaks; Alchun is the last sleeve, not the chair. The three eternal hwarang are classmates, not the old first chair.',
-		canon: 'SAME pavilion every cut. Premier is Pumil (ch_pumil) — grey, elderly statesman, #6a8ab8 rim. Alchun is a young hwarang councillor who flips the last piece — NEVER the premier. Bidam, Yushin, Alchun: three eternal hwarang. Blue flame after red. Tea and wooden pieces. High contrast. One of each named person.',
+		why: 'The chronicle’s first council: elderly High Councillor Pumil chairs; Bidam speaks; Alchun is the last sleeve, not the chair. The three eternal hwarang are classmates, not the old first chair.',
+		canon: 'SAME pavilion every cut. High Councillor is Pumil (ch_pumil) — grey, elderly statesman, #6a8ab8 rim. Alchun is a young hwarang councillor who flips the last piece — NEVER the high councillor. Bidam, Yushin, Alchun: three eternal hwarang. Blue flame after red. Tea and wooden pieces. High contrast. One of each named person.',
 		shots: [
 			{ id: 'council-seq-red-wide', role: 'red flame', angle: 'dutch wide', at: 'Someone lights the small brazier' },
 			{ id: 'council-seq-blue-birth', role: 'blue tongue', angle: 'insert', at: 'The flame turns blue' },
 			{ id: 'council-tea-wide', role: 'session', angle: 'dutch pavilion', at: 'debate who the next king should be' },
-			{ id: 'council-flame-close', role: 'Premier Pumil', angle: 'table-rim two-shot', at: 'The first count is split' },
+			{ id: 'council-flame-close', role: 'High Councillor Pumil', angle: 'table-rim two-shot', at: 'The first count is split' },
 			{ id: 'council-tea-bidam', role: 'Bidam speaks', angle: 'close', at: 'My lords have said one word' },
 			{ id: 'council-alchun-tiger', role: 'Alchun last sleeve', angle: 'hand raised', at: 'A tiger has no sex' },
 			{ id: 'council-seq-unanimous', role: '6:0', angle: 'wide', at: 'All six sit on the yes side' }
@@ -268,7 +268,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gaya-muryuk',
 		title: 'Muryuk — fight to surrender',
-		entryTitles: ['Jinheung’s Betrayal', 'The Fall of Gaya'],
+		entryTitles: ['The Severing', 'The Fall of Gaya'],
 		place: 'Gwansanseong ridge, then Jinheung’s hall',
 		why: 'Gaya’s last prince plus Sadaham’s 562 vanguard: cone helm at Gwansanseong, then Jinheung’s hall; True Bone is the price. Fight → Sadaham gate → surrender → rank.',
 		canon: 'Lock the tall Gaya cone. Steel plates, purple cloth peek. Night ridge dutch, then hall. Sadaham ice-blue #6fa8ff under Silla steel.',
@@ -283,6 +283,24 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'gaya-surrender', role: 'kneel', angle: 'two-shot hall' },
 			{ id: 'gaya-crown', role: 'True Bone', angle: 'insert / close' },
 			{ id: 'muryuk-seq-aged', role: 'old prince', angle: 'worm’s-eye', at: 'Very well. Your descendants shall be raised as True Bone' }
+		]
+	},
+	{
+		id: 'the-severing',
+		title: 'The Severing — Gucheon at night',
+		entryTitles: ['The Severing'],
+		place: 'Gwansanseong ditch at night — stone fortress, packed earth, one torch',
+		why: 'Jinheung drops the signal. Seong sees a Gaya cone and understands too late. Muryuk presides and calls the name. Dodo does what the rank will not.',
+		canon: 'NIGHT. Jinheung FACE from ch_jinheung, red robe stays red, #2f6fd4 is torch light not a recolor. Muryuk FACE from ch_kim_muryuk, steel lamellar, tall cone, purple #8B5CF6 peek only. Dodo FACE from ch_dodo, #7f96b5 cold cloth. Seong has no portrait — crown and yellow #e5b83a silk, face in shadow, never an invented face. One device each. High contrast. No gore catalog.',
+		shots: [
+			{ id: 'sever-night-wide', role: 'the ditch', angle: 'wide night', at: 'the torches coming up the bank' },
+			{ id: 'sever-jinheung-hand', role: 'the signal', angle: 'ECU hand', at: 'Jinheung’s hand drops' },
+			{ id: 'sever-seong-pov', role: 'what he sees', angle: 'OTS', at: 'A prince of Geumgwan' },
+			{ id: 'sever-seong-recoil', role: 'surprise', angle: '3:4 shadow', at: 'A slave’s hand— no' },
+			{ id: 'sever-dodo-ask', role: 'the ask', angle: 'ECU kneel', at: 'Let me take the head' },
+			{ id: 'sever-muryuk-call', role: 'the call', angle: 'worm’s-eye', at: 'Dodo.' },
+			{ id: 'sever-anguish', role: 'last moment', angle: '3:4 stool', at: 'It went into the marrow' },
+			{ id: 'sever-blade-line', role: 'the cut', angle: 'iconic blade-line', at: 'The ditch takes the head' }
 		]
 	},
 	{
@@ -690,6 +708,30 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'nsfw-jumong-yuhwa-worm-hips', role: 'worm hips', angle: 'worm’s-eye', at: 'Worm’s-eye: her hips own the copper' },
 			{ id: 'nsfw-jumong-yuhwa-dutch-two-shot', role: 'two-shot', angle: 'dutch two-shot', at: 'Dutch two-shot: sun and river sharing one mouth' },
 			{ id: 'jumong-habek-finds-copper-cast', role: 'cast out', angle: 'dutch bank', at: 'Habek finds the kiln still warm and casts her out' }
+		]
+	},
+	{
+		id: 'yuhwa-fox-exile',
+		title: 'Yuhwa — kicked out, the sun-fox, Geumwa',
+		entryTitles: ['Jumong'],
+		place: 'Habek’s court INSIDE pl_amnok_pavillion (dark giwa, timber walkway, braided Amnok below). Exile road: real Korean earth. Arrival: pl_northern_buyeo then pl_buyeo_palace path',
+		why: 'The kick was a look; then she sits; the sky talks; the fox walks her to Buyeo. Needs film, not a gold sticker on watercolor.',
+		canon: 'LOCK pavilion to /pl_amnok_pavillion.png — same dark giwa, same walkway, same braided river. Yuhwa FACE ch_yuhwa + bn_yuhwa; ice-blue silky jeogori+chima #8fc4e0, clothed, NOT the bathing nude-back clone. Habek FACE ch_habek, ice-blue river silk, #2f8f7a as mist/bounce not a body halo. Fox BODY from /obj_haemosu_fox.png: pale cream-white sun-fox, flowing fur; ignore the orange sticker outline; #f0b429 as real light on the fur, NEVER a halo on Yuhwa. Haemosu is a sky voice — gold light-plane in cloud, no body on the voice cut. Geumwa red-burgundy from ch_geumwa, not gold-plated; #a89a72 dusty bounce. Earth skies natural. HIGH CONTRAST. 2D cel-painterly. Chronology: pavilion wide → dutch kick → walkway stumble → dejected sit → ECU → sky voice → fox appears → fox lookback → follow south → pine → pass → Buyeo ridge → Geumwa path → come in.',
+		shots: [
+			{ id: 'yuhwa-exile-pavilion-wide', role: 'exposition kick', angle: 'dutch wide pavilion', at: 'Habek kicks Yuhwa out' },
+			{ id: 'yuhwa-exile-habek-dutch', role: 'he drives her', angle: 'dutch inside', at: 'Habek kicks Yuhwa out' },
+			{ id: 'yuhwa-exile-walkway-stumble', role: 'stumble', angle: 'OTS walkway', at: 'The pavilion walkway does not catch her' },
+			{ id: 'yuhwa-exile-dejected-sit', role: 'abandoned', angle: 'wide lower-third', at: 'For a while nobody comes' },
+			{ id: 'yuhwa-exile-dejected-ecu', role: 'dejected face', angle: 'ECU', at: 'For a while nobody comes' },
+			{ id: 'yuhwa-exile-sky-voice', role: 'sky talks', angle: 'worm’s-eye look-up', at: 'The sky talks first' },
+			{ id: 'yuhwa-exile-fox-appear', role: 'fox on the earth', angle: 'dutch two-shot', at: 'The fox is already on the packed earth' },
+			{ id: 'yuhwa-exile-fox-lookback', role: 'fox lookback', angle: 'OTS low', at: 'The fox is already on the packed earth' },
+			{ id: 'yuhwa-exile-fox-follow-south', role: 'follow', angle: 'OTS road', at: 'She follows behind' },
+			{ id: 'yuhwa-exile-fox-pine', role: 'pine shade', angle: 'dutch pine', at: 'Pine shade, then a river-bend' },
+			{ id: 'yuhwa-exile-fox-pass', role: 'switchback stamp', angle: 'bird’s-eye pass', at: 'The fox is a pale stamp on the switchback' },
+			{ id: 'yuhwa-exile-fox-buyeo-see', role: 'first Buyeo', angle: 'ridge lower-third', at: 'The capital is a palisade from the river' },
+			{ id: 'yuhwa-exile-geumwa-path', role: 'he reaches', angle: 'dutch path', at: 'Come in. I’ve got a room free.' },
+			{ id: 'yuhwa-exile-geumwa-come-in', role: 'the room', angle: 'dutch two-shot', at: 'Come in. I’ve got a room free.' }
 		]
 	},
 	{
@@ -1276,6 +1318,153 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'nsfw-onjo-last-fill', role: 'finish', angle: 'profile', at: 'Fill Little Sosuno' },
 			{ id: 'onjo-seq-caravan-dawn', role: 'send-off', angle: 'wide dawn', at: 'Take the millet. Take the well-wish' },
 			{ id: 'sosuno-seq-glow-south', role: 'south road', angle: 'wide dawn', at: 'She carries the glow all the way to Baekje' }
+		]
+	},
+	{
+		id: 'bidam-father-hwarang',
+		title: 'Bidam — first Hwarang morning',
+		entryTitles: ['The Harmony Council'],
+		place: 'Surabol Hwarang yard — packed earth, timber gate (after 645 veto, as memory)',
+		why: 'After Bidam’s solo veto, the father’s If: walk alone toward the truth.',
+		canon: 'Young Bidam FACE from ch_bidam_hwarang. Father FACE from ch_bidam_old as Son Sukwon. Navy #141C2E. Beads. Packed earth. One device. High contrast. 2D cel-painterly.',
+		shots: [
+			{ id: 'bidam-father-first-day', role: 'father sends', angle: 'dutch two-shot', at: 'righteous traitor' },
+			{ id: 'bidam-defends-yushin', role: 'defends Yushin', angle: 'OTS yard', at: 'the Gaya boy’s mouth' }
+		]
+	},
+	{
+		id: 'bidam-rebellion-splash',
+		title: 'Bidam’s Rebellion — cavern water',
+		entryTitles: ["Bidam’s Rebellion"],
+		place: 'Steam cavern (pl_cave) then Radiance 정자 night',
+		why: 'Bupmin at 21 first meets the goddesses; splash fails; Bidam laughs alive.',
+		canon: 'Bupmin ch_bupmin_hwarang painterly #C41E3A. Goddesses photoreal-numinous, living eyes (not oracle glow). Bidam navy beads. Yushin Confucian blue standing. Splash is political, not sex. Same 정자 as other Radiance nights.',
+		shots: [
+			{ id: 'chunchu-sends-bupmin', role: 'send', angle: 'dutch stride', at: 'send Bupmin to the steam' },
+			{ id: 'goddesses-meet-bupmin', role: 'first meeting', angle: 'two-shot steam', at: 'He is the best of both' },
+			{ id: 'yushin-stalls-bidam', role: 'stall', angle: 'OTS pavilion', at: 'keep him talking' },
+			{ id: 'bupmin-splash-bidam', role: 'splash', angle: 'dutch behind', at: 'splash the water' },
+			{ id: 'water-does-nothing', role: 'no vision', angle: 'ECU', at: "why isn't it doing anything" },
+			{ id: 'bidam-laugh-monologue', role: 'laugh', angle: "worm’s-eye", at: 'HAHAHAHAHA' }
+		]
+	},
+	{
+		id: 'bidam-rebellion-cinema',
+		title: 'Bidam’s Rebellion — lineage, tea, black bands, Radiance',
+		entryTitles: ["Bidam’s Rebellion"],
+		place: 'Steam cavern (pl_cave) · night 정자 · Radiance fortress (pl_radiance_fortress)',
+		why: 'Cavern lineage, tabletop nights, age-scored duels, rebel black headbands, Bidam–Yumjong at the gate.',
+		canon: 'Yushin CLEAN-SHAVEN from ch_kim_yushin. Father ch_kim_seohyun, grandfather ch_kim_muryuk. Bidam navy #141C2E + BLACK HEADBAND. Yushin #2A5FB8. Place refs drive 3D layout. High contrast. One device. No army carpet.',
+		shots: [
+			{ id: 'radiance-exposition-wide', role: 'Radiance wide', angle: 'exposition', at: 'Fortress of Radiance' },
+			{ id: 'bidam-yumjong-gate', role: 'open gate', angle: 'dutch', at: 'Open the Radiance gate.' },
+			{ id: 'bidam-yumjong-rally', role: 'rally', angle: 'wide shout', at: 'raise men at the Fortress of Radiance' },
+			{ id: 'rebel-black-headband-army', role: 'black bands', angle: 'iconic lower-third', at: 'The rebel band ties black headbands' },
+			{ id: 'silla-blue-camp', role: 'Silla camp', angle: 'iconic opposite', at: 'Between the camps a small pavilion goes up' },
+			{ id: 'bidam-yushin-tea-ots', role: 'tea OTS', angle: 'OTS', at: 'Tea first.' },
+			{ id: 'bidam-yushin-tea-map', role: 'tea map', angle: 'dutch', at: 'Bidam has brought a map' },
+			{ id: 'bidam-yushin-tea-cold', role: 'cold tea', angle: 'ECU cups', at: 'The tea is cold before anyone raises a blade' },
+			{ id: 'bidam-yushin-duel-youth', role: 'duel youth', angle: 'dutch', at: 'The yard after rain' },
+			{ id: 'bidam-yushin-duel-prime', role: 'duel prime', angle: "worm’s-eye", at: 'only the old score again' },
+			{ id: 'yushin-cavern-lineage-wide', role: 'lineage wide', angle: "worm’s-eye cavern", at: 'Two shapes wait where the rock shelves into black' },
+			{ id: 'yushin-father-grandfather-close', role: 'lineage close', angle: 'dutch three', at: 'Two shapes wait where the rock shelves into black' },
+			{ id: 'yushin-cavern-seohyeon-hand', role: 'father hand', angle: 'ECU', at: 'You are my son. You are Kim Yushin.' },
+			{ id: 'yushin-cavern-muryuk-proud', role: 'grandfather', angle: 'OTS', at: 'I loved you before I knew you.' },
+			{ id: 'bidam-yushin-duel-day10', role: 'day 10 clash', angle: "worm’s-eye", at: 'They meet again between the camps — not as councillor and marshal' }
+		]
+	},
+	{
+		id: 'gaya-fall-cinema',
+		title: 'The Fall of Gaya — cone and surrender',
+		entryTitles: ['The Fall of Gaya', 'Gaya, the Lost Nations'],
+		place: 'Gaya iron coast · Silla hall · night ridge',
+		why: 'Harbour league, last cone fight, Muryuk’s surrender condition.',
+		canon: 'Muryuk FACE from ch_kim_muryuk. Tall Gaya cone. Steel lamellar + purple #8B5CF6 peek. High contrast. One device.',
+		shots: [
+			{ id: 'gaya-iron-harbour-wide', role: 'iron harbours', angle: 'exposition', at: 'league of iron harbours' },
+			{ id: 'gaya-cone-last-fight', role: 'last fight', angle: "worm’s-eye", at: 'The tall Gaya cone still fights' },
+			{ id: 'gaya-muryuk-surrender-dutch', role: 'surrender', angle: 'dutch kneel', at: 'If I am to surrender, I have one condition' }
+		]
+	},
+	{
+		id: 'xue-longmen-field',
+		title: 'Xue Rengui — Longmen field and hut',
+		entryTitles: ['Longmen Field'],
+		place: 'Jiangzhou Longmen — rammed-earth hut, millet/sorghum field (not Korean giwa)',
+		why: 'The Xin Tangshu wife speech lives here: poverty, graves, yellow peasant cloth, then the ji. Needs a dedicated farm sequence, not a Stallion Mountain cameo.',
+		canon: 'SAME hut and field every cut. Chinese ink/wash + Northern Song / Tang genre painting grammar: empty mist, one hut, tiny figures or poster-scale peasants. Xue FACE from ch_xue_rengui — NEVER the white armour; PLAIN YELLOW hemp peasant cloth (dye, not a yellow aura). Liu FACE and dusty hemp from ch_xue_liu. Hex #e8e3d5 / #c4a484 as real dawn bounce on earth, not a halo. High contrast. One device. No Korean hanbok. No photoreal. No glow.',
+		shots: [
+			{ id: 'xue-longmen-field-dawn', role: 'exposition', angle: 'bird’s-eye dawn mist', at: 'poor field of Longmen' },
+			{ id: 'xue-longmen-hut-door', role: 'hut door', angle: 'worm’s-eye door stamp', at: 'hut door' },
+			{ id: 'xue-longmen-yellow-hoe', role: 'yellow hoe', angle: 'dutch mid-stride hoe', at: 'plain yellow peasant cloth' },
+			{ id: 'xue-longmen-wife-close', role: 'Liu', angle: 'intimate ECU', at: 'You have abilities' },
+			{ id: 'xue-longmen-two-shot', role: 'threshold two-shot', angle: 'dutch OTS', at: 'Hours like this do not come often' },
+			{ id: 'xue-longmen-graves', role: 'unfinished mounds', angle: 'wide lower-third', at: 'rebury his ancestors' },
+			{ id: 'xue-longmen-leave', role: 'leaves with the ji', angle: 'dutch farewell', at: 'He goes' }
+		]
+	},
+	{
+		id: 'hwanung-ungnyeo',
+		title: 'Hwanung & Ungnyeo — under the birch',
+		entryTitles: ['Dangun & Old Joseon'],
+		place: 'Divine birch on the snow peak (pl_baekdu) — the first romance',
+		why: 'She stands on the path to the hall until he forgets the seal. First love in the chronicle, before every later courtship.',
+		canon: 'SAME snow peak and birch every cut. Hwanung FACE and white fur-silk from ch_hwanung. Ungnyeo FACE, brown fur collar, rust sash from ch_ungnyeo, bear-head pin from bn_ungnyeo. #d4b86a and #c9b18f as real dusk or moon, not a glow. High contrast. One device: the birch. Night stills are intimate and skin-forward.',
+		shots: [
+			{ id: 'hwanung-ungnyeo-birch-wide', role: 'exposition', angle: 'wide dusk', at: 'stands under the sacred tree' },
+			{ id: 'ungnyeo-dont-closer', role: 'she hedges', angle: '3:4 against bark', at: "don't come closer" },
+			{ id: 'hwanung-seal-forgotten', role: 'he stops', angle: 'dutch', at: 'the seal in his hand' },
+			{ id: 'ungnyeo-pass-again', role: 'she calls', angle: 'OTS dutch', at: "You're going to walk past again" },
+			{ id: 'hwanung-garlic-far', role: 'he teases', angle: 'ECU', at: 'The garlic reached this far' },
+			{ id: 'ungnyeo-hand-claim', role: 'hands', angle: 'intimate still-life', at: 'You already have the hand' },
+			{ id: 'hwanung-come-down', role: 'come down', angle: "worm’s-eye", at: 'Then come down' },
+			{ id: 'ungnyeo-tree-watch', role: 'the birch watches', angle: 'iconic wide', at: 'The tree can watch' },
+			{ id: 'hwanung-ungnyeo-kiss', role: 'first kiss', angle: 'close', at: 'The kiss is clumsy' },
+			{ id: 'hwanung-ungnyeo-sash-moss', role: 'sash in moss', angle: 'intimate dutch', at: 'rust-red sash is somewhere in the moss' },
+			{ id: 'hwanung-ungnyeo-night', role: 'night', angle: 'intimate 16:9', at: 'pulls him down by the hair' },
+			{ id: 'ungnyeo-seal-thief', role: 'she keeps the seal', angle: 'ECU seal', at: 'Under my head.' },
+			{ id: 'ungnyeo-marry-morning', role: 'dawn ask', angle: 'dawn two-shot', at: 'Marry me in the morning' }
+		]
+	},
+	{
+		id: 'euija-coup',
+		title: 'Euija’s Coup — martial law at Deer Rock',
+		entryTitles: ['Euija’s Coup'],
+		place: 'Deer Rock / Rock of Politics (pl_rock_politics) — Sabi Ministers’ Assembly',
+		why: 'Emergency martial law speech → Enabling Law → peace-or-war vote → forty-one sons → Chunbok Premier. Same rock every cut.',
+		canon: 'LOCK pl_rock_politics every still. Euija FACE/garments ch_buyeo_euija, amber #e08a2e as real torch/silk bounce not a halo. Chunbok ch_satek_chunbok. Minister Satek ch_satek_minister. Chronology: wide aisle → dutch speech → trust ECU → wet ink → enabling scroll → peace-or-war → sons grid → Satek stare → Chunbok seal → empty benches. 2D cel. High contrast. One device. No readable text. No glow.',
+		shots: [
+			{ id: 'euija-coup-rock-wide', role: 'exposition', angle: 'wide lower-third', at: 'Ministers’ Assembly at Deer Rock' },
+			{ id: 'euija-coup-speech-dutch', role: 'martial law', angle: 'dutch', at: 'I hereby declare emergency martial law' },
+			{ id: 'euija-coup-trust-ecu', role: 'please trust me', angle: 'ECU', at: 'Please trust me.' },
+			{ id: 'euija-coup-wet-ink', role: 'proclamation still wet', angle: 'intimate still life', at: 'The characters for “in one stroke” are still wet' },
+			{ id: 'euija-coup-enabling-scroll', role: 'enabling law', angle: 'OTS scroll', at: 'Law to Remedy the Distress of the People and the Country' },
+			{ id: 'euija-coup-peace-or-war', role: 'the choice', angle: "worm’s-eye", at: 'peace, or war' },
+			{ id: 'euija-coup-sons-forty-one', role: 'forty-one sons', angle: "bird’s-eye stamp", at: 'of his own sons to the Assembly' },
+			{ id: 'euija-coup-satek-stare', role: 'clan emptied', angle: 'OTS aisle', at: 'a law for emptying the Assembly' },
+			{ id: 'euija-coup-chunbok-pm', role: 'Premier named', angle: 'intimate kneel', at: 'is named Premier (상좌평)' },
+			{ id: 'euija-coup-empty-benches', role: 'aftermath', angle: 'iconic empty', at: 'The Enabling Law did not abolish the chair' }
+		]
+	},
+	{
+		id: 'seongchung-heungsu-rings',
+		title: 'Seongchung & Heungsu — the ring and the passes',
+		entryTitles: ['Euija’s Descent', 'The Three Loyalists'],
+		place: 'Sabi hall and prison (pl_sabi_palace); Gomamiji posting; White River / Gibeolpo (pl_white_river); Tanhyeon switchback',
+		why: 'The two jwapyeong who named Chimhyeon and Gibeolpo. Ring-pommels in the room: hall yank, prison post, posting door, mud, Yushin’s fish-ring on the pass they begged to hold.',
+		canon: 'FACE ch_seongchung / ch_heungsu / ch_buyeo_euija / ch_gyebek / ch_kim_yushin. Baekje 환두대도 from sword_lotus; Yushin fish from sword_fish. Hex is REAL lamp/sun bounce on the hollow ring — #c9a24d, #b98f33, #d9b13a, #2A5FB8 — NOT a glow aura. Same Sabi timber; Gomamiji rammed earth; White River mud. Chronology: remonstrate → belt yanked → prison write → Gomamiji threshold → berth two-shot → courier → Euija yes → Tanhyeon already passed → Gibeolpo ring in mud → Yushin climb. 2D cel. High contrast. One device per still. No readable text.',
+		shots: [
+			{ id: 'seongchung-hall-remonstrate', role: 'remonstrance', angle: 'dutch mid-stride', at: 'Open court. Today.' },
+			{ id: 'seongchung-ring-yank', role: 'belt taken', angle: 'ECU ring', at: 'the belt comes off in the aisle' },
+			{ id: 'sungchung-prison', role: 'dying memorial', angle: 'dutch kneel', at: 'tries to stop him, but is thrown in prison' },
+			{ id: 'heungsu-gomamiji-wide', role: 'exile posting', angle: 'wide threshold', at: 'Gomamiji is a posting, not a retirement' },
+			{ id: 'heungsu-gyebek-listen', role: 'berth', angle: 'two-shot', at: 'Hold the White River mouth and the Tanhyeon pass' },
+			{ id: 'heungsu-gyebek-rings', role: 'berth rings', angle: 'dutch two-shot', at: 'You… you truly mean to march?' },
+			{ id: 'heungsu-messenger', role: 'courier', angle: 'OTS', at: 'The matter is urgent. What then.' },
+			{ id: 'euija-yes-so', role: 'so it is', angle: "worm’s-eye empty", at: 'So it is.' },
+			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'already the White River and the Tanhyeon pass' },
+			{ id: 'gibeolpo-ring-mud', role: 'river lost', angle: "bird’s-eye mud", at: 'Tang keels in the mud of Gibeolpo' },
+			{ id: 'yushin-tanhyeon-fish-ring', role: 'Silla on the pass', angle: "worm’s-eye climb", at: 'Yushin is already on the switchback' }
 		]
 	}
 ];

@@ -58,7 +58,8 @@
 	import Blocks from './Blocks.svelte';
 	import SpeakerPlate from './SpeakerPlate.svelte';
 	import { storyImg, optimizeSrc } from '$lib/img';
-	import { editUi, permanentlyDeleteCue } from '$lib/editUi.svelte';
+	import { editUi } from '$lib/editUi.svelte';
+	import { onEditGradeContextMenu } from '$lib/imageGradeUi.svelte';
 
 	/** Cinema only takes the screen once the reader is past cover + blurb. */
 	let live = $derived(reading.mode === 'cinema' && scriptUi.inScript);
@@ -513,10 +514,8 @@
 	}
 
 	function onEditPanelContextMenu(e: MouseEvent) {
-		if (!editUi.enabled || !panel?.slotId) return;
-		e.preventDefault();
-		e.stopPropagation();
-		void permanentlyDeleteCue(panel.slotId);
+		if (!panel?.slotId) return;
+		onEditGradeContextMenu(e, panel.slotId);
 	}
 </script>
 
@@ -554,7 +553,7 @@
 							onclick={openPanelLightbox}
 							oncontextmenu={onEditPanelContextMenu}
 							aria-label="Open scene still"
-							title={editing && panel.slotId ? 'Right-click to delete permanently' : undefined}
+							title={editing && panel.slotId ? 'Right-click to grade / edit' : undefined}
 						>
 							<img
 								{...storyImg(panel.src, {

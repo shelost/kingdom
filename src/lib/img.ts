@@ -128,13 +128,16 @@ export function optimizeSrc(src: string, width: number, quality = 75): string {
 	return withWidthQuery(src, snapLocalWidth(width));
 }
 
-/** `srcset` string, or `undefined` off Vercel (callers omit the attribute). */
+/**
+ * `srcset` string for both Vercel CDN and local `?w=` middleware.
+ * Callers omit the attribute when this returns undefined.
+ */
 export function optimizeSrcset(
 	src: string,
 	widths: readonly number[],
 	quality = 75
 ): string | undefined {
-	if (!vercelImageCdn() || !shouldOptimize(src) || !widths.length) return undefined;
+	if (!shouldOptimize(src) || !widths.length) return undefined;
 	return [...widths]
 		.sort((a, b) => a - b)
 		.map((w) => `${optimizeSrc(src, w, quality)} ${w}w`)

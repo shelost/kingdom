@@ -204,19 +204,26 @@
 					{@const playing = playingId === card.id}
 					<li class="card" class:playing style:--k={p ? colorOf(p) : 'var(--gold)'}>
 						<div class="card-top">
-							<span
-								class="portrait"
-								class:flag={isNation}
-								class:silhouette={!isNation && !!art && p ? isPlaceholderArt(art) : false}
-								aria-hidden="true"
-							>
-								{#if art}
-									<img src={art} alt="" />
-								{:else if p}
-									{hangulInitial(p)}
-								{:else}
-									♪
-								{/if}
+							<span class="sleeve" class:flag={isNation} aria-hidden="true">
+								<span class="sleeve-shadow"></span>
+								<span class="album">
+									<span class="slab"></span>
+									<span class="spine"></span>
+									<span
+										class="portrait"
+										class:flag={isNation}
+										class:silhouette={!isNation && !!art && p ? isPlaceholderArt(art) : false}
+									>
+										{#if art}
+											<img src={art} alt="" />
+										{:else if p}
+											{hangulInitial(p)}
+										{:else}
+											♪
+										{/if}
+										<span class="gloss"></span>
+									</span>
+								</span>
 							</span>
 							<span class="who">
 								<span class="who-name">{p ? nameOf(p) : card.id}</span>
@@ -398,45 +405,137 @@
 		gap: 0.85rem;
 	}
 
+	.sleeve {
+		position: relative;
+		flex-shrink: 0;
+		width: 9.2rem;
+		height: 9.2rem;
+		perspective: 900px;
+	}
+
+	.sleeve.flag {
+		width: 8.4rem;
+		height: 5.5rem;
+	}
+
+	.sleeve-shadow {
+		position: absolute;
+		left: 22%;
+		right: -6%;
+		bottom: -4%;
+		height: 28%;
+		border-radius: 50%;
+		background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.72), transparent 68%);
+		filter: blur(5px);
+		transform: translate(8px, 14px);
+		pointer-events: none;
+	}
+
+	.slab {
+		position: absolute;
+		inset: 0;
+		border-radius: 3px;
+		background: linear-gradient(160deg, #f4e7cc 0%, #c6a15a 38%, #5c4524 100%);
+		transform: translate3d(11px, 8px, -16px);
+	}
+
+	.album {
+		position: absolute;
+		inset: 0;
+		transform-style: preserve-3d;
+		transform: rotateY(-18deg) rotateX(10deg) translateZ(0);
+		transform-origin: center center;
+		transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+		filter: drop-shadow(16px 22px 18px rgba(0, 0, 0, 0.45));
+	}
+
 	.portrait {
+		position: absolute;
+		inset: 0;
 		display: grid;
 		place-items: center;
-		flex-shrink: 0;
-		width: 3.4rem;
-		aspect-ratio: 2 / 3;
 		overflow: hidden;
-		border-radius: var(--radius);
+		border-radius: 3px;
+		background:
+			linear-gradient(160deg, color-mix(in srgb, var(--k) 55%, #1a140c), #120e0a 70%);
+		transform: translateZ(12px);
+		box-shadow:
+			0 1px 0 rgba(255, 255, 255, 0.28) inset,
+			0 0 0 1px rgba(0, 0, 0, 0.55);
 		font-family: var(--serif);
 		font-weight: 700;
-		font-size: 1.2rem;
-		color: var(--fg-dim);
+		font-size: 1.35rem;
+		color: rgba(255, 248, 236, 0.82);
+	}
+
+	.spine {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 22px;
+		height: 100%;
+		transform-origin: right center;
+		transform: rotateY(90deg);
+		background: linear-gradient(
+			90deg,
+			#2a2116 0%,
+			#f0e2c4 22%,
+			color-mix(in srgb, var(--k) 55%, #c6a15a) 55%,
+			#3d3122 100%
+		);
+	}
+
+	.gloss {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(
+			115deg,
+			rgba(255, 255, 255, 0.22) 0%,
+			rgba(255, 255, 255, 0.05) 18%,
+			transparent 42%
+		);
+		pointer-events: none;
 	}
 
 	.portrait img {
 		display: block;
 		width: 100%;
 		height: 100%;
-		object-fit: contain;
-		object-position: center bottom;
+		object-fit: cover;
+		object-position: center 18%;
 	}
 
 	.portrait.silhouette img {
-		opacity: 0.62;
+		opacity: 0.72;
 	}
 
 	.portrait.flag {
-		aspect-ratio: 3 / 2;
-		width: 4.4rem;
-		border-radius: var(--radius);
-		background: color-mix(in srgb, var(--k) 14%, var(--panel-sunken));
-		border: 1px solid var(--hairline);
+		background: color-mix(in srgb, var(--k) 22%, #16130f);
 	}
 
 	.portrait.flag img {
 		object-fit: contain;
 		object-position: center;
-		padding: 0.3rem 0.4rem;
+		padding: 0.45rem 0.55rem;
 		box-sizing: border-box;
+	}
+
+	.card:hover .album,
+	.card.playing .album {
+		transform: rotateY(-8deg) rotateX(4deg) translateY(-10px) translateZ(24px);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.album,
+		.card:hover .album,
+		.card.playing .album {
+			transform: none;
+			transition: none;
+		}
+
+		.spine {
+			display: none;
+		}
 	}
 
 	.who {

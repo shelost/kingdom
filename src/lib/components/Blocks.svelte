@@ -145,7 +145,7 @@
 <div class="prose">
 	{#each shown as block, i (i)}
 		{#if block.kind === 'p'}
-			<p>{@html linkPeople(prose(block), year)}</p>
+			<p data-music={block.music || undefined}>{@html linkPeople(prose(block), year)}</p>
 		{:else if block.kind === 'cite'}
 			<p class="cite">{@html linkPeople(prose(block), year)}</p>
 		{:else if block.kind === 'dialogue'}

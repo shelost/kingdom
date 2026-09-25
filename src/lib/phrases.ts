@@ -303,7 +303,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — one hand that stops everything',
 		tagline: 'Unanimity or nothing — a single objection freezes a kingdom.',
 		quote: 'One hand down stops a queen, an heir, or a war.',
-		arc: 'Silla’s Harmony Council of Councillors (대등) decides only when every sleeve agrees under the Premier (상대등). Bidam’s single withheld hand blocks Seungman in 645; the physics is why Chunchu builds the Royal Secretariat (집사부). Harmony Veto is any system where one holdout equals infinity — a filibuster with bone rank, the polite word for paralysis.',
+		arc: 'Silla’s Harmony Council of Councillors (대등) decides only when every sleeve agrees under the High Councillor (상대등). Bidam’s single withheld hand blocks Seungman in 645; the physics is why Chunchu builds the Royal Secretariat (집사부). Harmony Veto is any system where one holdout equals infinity — a filibuster with bone rank, the polite word for paralysis.',
 		events: [
 			{ year: 645, label: 'Bidam alone withholds his hand.' },
 			{ label: 'Named for any single-voice stoppage.' }
@@ -412,7 +412,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — the hard sentence spoken to both walls',
 		tagline: 'Admonish the loyalist and the rebel with the same mouth — and stand in neither camp.',
 		quote: 'Judge what is best for the divine nation.',
-		arc: 'In 647 Alchun is summoned by Yushin and by Bidam before noon. To the Sword he says: stop being blinded by the princess you loved as a boy. To the Premier he says: raising arms against the crown is highest treason. Then he raises neither blade nor banner. Alchun’s Counsel is any rebuke that costs you both friendships — the nation named out loud when loyalty has become a private fever.',
+		arc: 'In 647 Alchun is summoned by Yushin and by Bidam before noon. To the Sword he says: stop being blinded by the princess you loved as a boy. To the High Councillor he says: raising arms against the crown is highest treason. Then he raises neither blade nor banner. Alchun’s Counsel is any rebuke that costs you both friendships — the nation named out loud when loyalty has become a private fever.',
 		events: [
 			{ year: 647, label: 'Spoken to both camps on Day 1 of Radiance.' },
 			{ label: 'Named for admonishing opposite walls and belonging to neither.' }

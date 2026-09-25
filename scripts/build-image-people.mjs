@@ -91,6 +91,9 @@ function parsePeople() {
 		const av = line.match(/avatar:\s*'([^']+)'/);
 		if (av) current.avatars.push(av[1]);
 
+		const obj = line.match(/objectImage:\s*'([^']+)'/);
+		if (obj) current.avatars.push(obj[1]);
+
 		const nm = line.match(/^\t\tname:\s*'((?:\\'|[^'])*)'/);
 		if (nm) current.name = nm[1].replace(/\\'/g, "'");
 

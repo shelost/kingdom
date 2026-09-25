@@ -13,6 +13,8 @@
 	import {
 		reading,
 		episodes,
+		episodeNavLabel,
+		goToEpisode,
 		isInlineArt,
 		loadMode,
 		loadViewScope,
@@ -28,6 +30,7 @@
 
 	let episodesMode = $derived(reading.viewScope === 'episodes');
 	let currentEp = $derived(episodes[reading.episodeIndex]);
+	let onTitleEpisode = $derived(episodesMode && currentEp?.id === 'title');
 	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
 	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
 	/* The mode is the layout: the script reads as a manuscript with its figures
@@ -50,6 +53,10 @@
 			syncRaf = requestAnimationFrame(() => {
 				syncRaf = 0;
 				if (!scriptEl) {
+					scriptUi.inScript = true;
+					return;
+				}
+				if (reading.viewScope === 'episodes') {
 					scriptUi.inScript = true;
 					return;
 				}
@@ -117,8 +124,9 @@
 </svelte:head>
 
 <main>
-	<!-- ————— cover: brand only ————— -->
-	<header class="cover">
+	{#if !episodesMode || onTitleEpisode}
+	<!-- ————— cover: brand only. In episodes mode this is episode 0. ————— -->
+	<header class="cover" data-story-id="title">
 		<div class="cover-mark" use:reveal aria-hidden="true"></div>
 		<h1 class="cover-title" use:reveal={80}>King for All</h1>
 		<p class="cover-ko" use:reveal={160}>삼한왕검</p>
@@ -164,6 +172,7 @@
 			<span class="cue-line"></span>
 		</span>
 	</section>
+	{/if}
 
 	<!-- Script: chapters after cover + blurb — fixed chrome waits on this region. -->
 	<div
@@ -363,11 +372,19 @@
 		>
 			Prev
 		</button>
-		<span class="ep-count" aria-live="polite">
-			{reading.episodeIndex + 1}
-			<span class="ep-of">/</span>
-			{episodes.length}
-		</span>
+		<select
+			class="ep-pick"
+			aria-label="Episode"
+			tabindex={scriptUi.inScript && episodesMode ? 0 : -1}
+			bind:value={
+				() => reading.episodeIndex,
+				(i) => goToEpisode(i)
+			}
+		>
+			{#each episodes as ep, i (ep.id)}
+				<option value={i}>{i + 1} · {episodeNavLabel(ep)}</option>
+			{/each}
+		</select>
 		<button
 			type="button"
 			disabled={atLastEpisode}
@@ -606,11 +623,14 @@
 		overflow-anchor: none;
 	}
 
-	/* Immersion: a lead margin column carries the sticky year + chapter chrome,
-	   and the phone reel keeps a wide sticky stage column (0.8× its script width). */
+	/* Immersion: no year/title/flag margin. Prose and the sticky stage only. */
 	:global(html.is-immersion) .entry {
-		grid-template-columns: 15rem minmax(0, 1fr) minmax(240px, 32%);
+		grid-template-columns: minmax(0, 1fr) minmax(240px, 32%);
 		gap: 0 2.75rem;
+	}
+
+	:global(html.is-immersion) .entry-head {
+		display: none;
 	}
 
 	/* Script: no side column at all — the prose takes the full measure. */
@@ -673,26 +693,6 @@
 
 	.entry-head {
 		min-width: 0;
-	}
-
-	/* Immersion: the head takes the lead margin column with a full-height
-	   runway, so the sticky year + chapter chrome ride alongside the script. */
-	:global(html.is-immersion) .content-col {
-		display: contents;
-	}
-
-	:global(html.is-immersion) .entry-head {
-		grid-column: 1;
-		grid-row: 1 / -1;
-		height: 100%;
-	}
-
-	:global(html.is-immersion) .beats {
-		grid-column: 2;
-	}
-
-	:global(html.is-immersion) .images-col {
-		grid-column: 3;
 	}
 
 	.beats {
@@ -825,14 +825,6 @@
 		justify-content: space-between;
 		gap: 1rem;
 		flex-wrap: wrap;
-	}
-
-	/* Immersion: the chrome stacks in the narrow margin column. */
-	:global(html.is-immersion) .head-top {
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
-		gap: 0.28rem;
 	}
 
 	.head-main {
@@ -1247,14 +1239,6 @@
 			background: none;
 		}
 
-		/* Narrow: the head is a full-width card row again, not a margin column. */
-		:global(html.is-immersion) .head-top {
-			flex-direction: row;
-			justify-content: space-between;
-			align-items: baseline;
-			gap: 1rem;
-		}
-
 		.head-main {
 			gap: 0;
 			min-width: 0;
@@ -1363,7 +1347,8 @@
 		bottom: calc(var(--cin-strip-h) + 3.5rem);
 	}
 
-	.ep-nav button {
+	.ep-nav button,
+	.ep-pick {
 		font: inherit;
 		font-size: 0.72rem;
 		letter-spacing: 0.04em;
@@ -1379,6 +1364,29 @@
 			color 0.25s var(--ease);
 	}
 
+	.ep-pick {
+		max-width: min(18rem, 52vw);
+		appearance: none;
+		-webkit-appearance: none;
+		text-align: center;
+		text-overflow: ellipsis;
+		color: var(--fg);
+		padding: 0.4rem 0.65rem;
+		-moz-appearance: none;
+		background-image: none;
+	}
+
+	.ep-pick::-ms-expand {
+		display: none;
+	}
+
+	.ep-pick:hover,
+	.ep-pick:focus-visible {
+		color: var(--on-gold);
+		background-color: var(--gold);
+		outline: none;
+	}
+
 	.ep-nav button:hover:not(:disabled) {
 		color: var(--on-gold);
 		background: var(--gold);
@@ -1387,21 +1395,6 @@
 	.ep-nav button:disabled {
 		opacity: 0.35;
 		cursor: default;
-	}
-
-	.ep-count {
-		font-size: 0.7rem;
-		font-variant-numeric: tabular-nums;
-		letter-spacing: 0.06em;
-		color: var(--fg-faint);
-		padding: 0 0.35rem;
-		min-width: 3.4rem;
-		text-align: center;
-	}
-
-	.ep-of {
-		opacity: 0.55;
-		margin: 0 0.1em;
 	}
 
 	/* Clear the bottom pill in script mode. Immersion already reserves
@@ -1419,7 +1412,8 @@
 			bottom: calc(var(--plate-box-h, 9rem) + 0.55rem);
 		}
 
-		.ep-nav button {
+		.ep-nav button,
+		.ep-pick {
 			min-height: 2.75rem;
 			padding: 0.45rem 0.95rem;
 			font-size: 0.74rem;

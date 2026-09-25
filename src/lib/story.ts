@@ -48,7 +48,7 @@ export type StackImage = ImageSlot & { beatIndex?: number };
 
 export type Block =
 	// `ko` is the Korean rendering of English narration
-	| { kind: 'p'; html: string; ko?: string; nsfw?: boolean }
+	| { kind: 'p'; html: string; ko?: string; nsfw?: boolean; /** Soundtrack cue while this paragraph is the latest one reached. */ music?: string }
 	// `en` is the English rendering of `lines`, index-for-index.
 	// Tang / Chinese speech may add `zh` + `zhLatn` (pinyin); Yamato / Japanese
 	// speech may add `ja` + `jaLatn` (Hepburn romaji) — subtitle layers shown

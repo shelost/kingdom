@@ -66,8 +66,8 @@ for (const item of manifest) {
 fs.mkdirSync(TEMP_DIR, { recursive: true });
 fs.writeFileSync(STORY, JSON.stringify(story, null, '\t') + '\n');
 
-// Keep the client-side convention fallback inventory in sync.
-execFileSync(process.execPath, ['scripts/sync-temp-art-inventory.mjs'], { stdio: 'inherit' });
+// Keep the client-side convention fallback inventory in sync (referenced only).
+execFileSync(process.execPath, ['scripts/sync-temp-deploy.mjs'], { stdio: 'inherit' });
 
 console.log(`installed ${installed.length}: ${installed.join(', ')}`);
 if (skipped.length) console.log(`skipped ${skipped.length}:\n  ${skipped.join('\n  ')}`);
