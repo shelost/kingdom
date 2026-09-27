@@ -4,7 +4,7 @@
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import gsap from 'gsap';
-	import { Flip } from 'gsap/Flip';
+	import FlipPkg from 'gsap/Flip';
 	import { storyImg } from '$lib/img';
 	import {
 		closeLightbox,
@@ -20,6 +20,18 @@
 		stripStoryHash
 	} from '$lib/reading.svelte';
 
+	/** ESM build default-exports the plugin; Vercel’s CJS build puts it on `.Flip`. */
+	function loadFlip(mod: unknown): typeof FlipPkg {
+		if (typeof mod === 'function') return mod as typeof FlipPkg;
+		if (mod && typeof mod === 'object') {
+			const bag = mod as { Flip?: unknown; default?: unknown };
+			const picked = bag.Flip ?? bag.default;
+			if (typeof picked === 'function') return picked as typeof FlipPkg;
+		}
+		throw new Error('GSAP Flip did not load');
+	}
+
+	const Flip = loadFlip(FlipPkg);
 	gsap.registerPlugin(Flip);
 
 	const OPEN_MS = 0.28;

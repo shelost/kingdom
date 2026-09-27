@@ -5,6 +5,10 @@ import { compactStoryJson } from './vite-plugin-story-json.ts';
 import { staticAssetHmr } from './vite-plugin-static-hmr.ts';
 
 export default defineConfig({
+	ssr: {
+		// Vercel Node treats gsap/Flip as CJS. A named import crashes every page.
+		noExternal: ['gsap']
+	},
 	server: {
 		watch: {
 			ignored: [
