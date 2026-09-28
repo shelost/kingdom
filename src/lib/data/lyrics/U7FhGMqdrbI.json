@@ -1,0 +1,59 @@
+{
+	"id": "U7FhGMqdrbI",
+	"source": "instrumental",
+	"instrumental": true,
+	"trackName": "육룡이 나르샤 Opening",
+	"artistName": "SBS",
+	"lines": [
+		{
+			"t": 0,
+			"text": "♪",
+			"scene": "Six of them. The field tips."
+		},
+		{
+			"t": 5,
+			"text": "♪",
+			"scene": "Not a parade. A weather."
+		},
+		{
+			"t": 10,
+			"text": "♪",
+			"scene": "Names later. Steel now."
+		},
+		{
+			"t": 15,
+			"text": "♪",
+			"scene": "The river takes a side"
+		},
+		{
+			"t": 20,
+			"text": "♪",
+			"scene": "and the side is whoever lasts."
+		},
+		{
+			"t": 25,
+			"text": "♪",
+			"scene": "Rise."
+		},
+		{
+			"t": 30,
+			"text": "♪",
+			"scene": "Dragons are just men"
+		},
+		{
+			"t": 35,
+			"text": "♪",
+			"scene": "the mud hasn't swallowed."
+		},
+		{
+			"t": 40,
+			"text": "♪",
+			"scene": "Yet."
+		},
+		{
+			"t": 45,
+			"text": "♪",
+			"scene": "Again. The line holds."
+		}
+	]
+}

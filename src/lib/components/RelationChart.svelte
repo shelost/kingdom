@@ -954,4 +954,43 @@
 			height: 3.2rem;
 		}
 	}
+
+	/* Phones: the corner card would sit on the episode pill, and Characters is a
+	   tab away. The page map starts under its title band and ends above the tab bar. */
+	@media (max-width: 720px) {
+		.chart:not(.open):not(.page) {
+			display: none;
+		}
+
+		.chart.page {
+			top: var(--page-chrome-h, 0px);
+			bottom: var(--tabbar-space);
+			height: auto;
+			min-height: 0;
+		}
+
+		.legend {
+			flex-wrap: nowrap;
+			max-width: calc(100vw - 1.1rem);
+			overflow-x: auto;
+			scrollbar-width: none;
+		}
+
+		.legend::-webkit-scrollbar {
+			display: none;
+		}
+
+		.tag {
+			flex: none;
+			padding: 0.35rem 0.6rem;
+		}
+
+		.legend-hint {
+			display: none;
+		}
+
+		.chart.page figcaption {
+			max-width: calc(100vw - 5rem);
+		}
+	}
 </style>

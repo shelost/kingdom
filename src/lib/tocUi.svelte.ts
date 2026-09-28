@@ -10,6 +10,18 @@ export const tocUi = $state({
 	floating: true
 });
 
+/** Below this width the drawer covers the page instead of pushing it. Keep in step with Toc.svelte's 820px rules. */
+const TOC_OVERLAY_QUERY = '(max-width: 820px)';
+
+export function tocOverlays(): boolean {
+	return typeof matchMedia !== 'undefined' && matchMedia(TOC_OVERLAY_QUERY).matches;
+}
+
+/** Opens the TOC for the reader, except on a phone where it would cover the page. */
+export function autoOpenToc() {
+	if (!tocOverlays()) tocUi.open = true;
+}
+
 const TOC_FLOAT_KEY = 'kingdom:toc-float';
 
 export function setTocFloating(on: boolean) {

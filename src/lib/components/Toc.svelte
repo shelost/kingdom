@@ -3,7 +3,11 @@
 	import { chapters, entryId, partId } from '$lib/story';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import { branchContains, spineEntries, spineLabel, tocLeavesFor } from '$lib/tocTree';
-	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump, tocUi, loadTocFloating } from '$lib/tocUi.svelte';
+	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump, tocUi, loadTocFloating, tocOverlays } from '$lib/tocUi.svelte';
+	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
+	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
+	import { SITE_LINKS } from '$lib/siteLinks';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
 		reading,
@@ -191,6 +195,8 @@
 
 	onMount(() => {
 		loadTocFloating();
+		/* A phone opens on the page, not on a drawer covering it. */
+		if (tocOverlays()) open = false;
 		const io = new IntersectionObserver(
 			(entries) => {
 				if (reading.viewScope === 'episodes') return;
@@ -298,6 +304,8 @@
 	 */
 	function jump(id: string) {
 		const gen = beginTocJump();
+		/* On a phone the drawer sits over the page it just jumped to. */
+		if (tocOverlays()) open = false;
 		try {
 			const dest = canonicalHashId(id);
 			stripStoryHash();
@@ -361,6 +369,16 @@
 	{open ? '✕' : '☰'}
 </button>
 
+{#if open && scriptUi.inScript}
+	<button
+		type="button"
+		class="toc-scrim"
+		tabindex="-1"
+		aria-label="Close table of contents"
+		onclick={() => (open = false)}
+	></button>
+{/if}
+
 <nav
 	class={['toc', { open, floating: tocUi.floating }]}
 	class:in={scriptUi.inScript}
@@ -378,6 +396,19 @@
 			style:height="{pill.height}px"
 			aria-hidden="true"
 		></div>
+		<div class="toc-site">
+			<p class="toc-label">Explore</p>
+			<div class="toc-site-links">
+				{#each SITE_LINKS as link (link.href)}
+					{#if link.href !== '/'}
+						<a href={hrefWithNsfw(resolve(link.href), page.url)} tabindex={open ? 0 : -1}>
+							<span class="material-symbols-outlined" aria-hidden="true">{link.icon}</span>
+							{link.label}
+						</a>
+					{/if}
+				{/each}
+			</div>
+		</div>
 		<div class="toc-search">
 			<p class="toc-label">Search</p>
 			<HudSearch placement="toc" />
@@ -969,7 +1000,53 @@
 		}
 	}
 
+	/* Site links + tap-away scrim are phone chrome; desktop has the Hud's site nav. */
+	.toc-site,
+	.toc-scrim {
+		display: none;
+	}
+
 	@media (max-width: 820px) {
+		.toc-scrim {
+			position: fixed;
+			inset: 0;
+			z-index: 99;
+			display: block;
+			padding: 0;
+			border: none;
+			background: rgba(0, 0, 0, 0.42);
+		}
+
+		.toc-site {
+			display: block;
+			padding: 0 0 0.4rem;
+		}
+
+		.toc-site-links {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.3rem;
+		}
+
+		.toc-site-links a {
+			display: flex;
+			align-items: center;
+			gap: 0.45rem;
+			min-height: 2.6rem;
+			padding: 0 0.6rem;
+			border: 1px solid var(--hairline);
+			border-radius: 10px;
+			background: color-mix(in srgb, var(--fg) 4%, transparent);
+			color: var(--fg);
+			font-size: 13px;
+			text-decoration: none;
+		}
+
+		.toc-site-links .material-symbols-outlined {
+			font-size: 1.1rem;
+			color: var(--gold);
+		}
+
 		.toc-toggle {
 			/* Top-left stays clear of Hud; size is thumb-friendly (≥44px). */
 			top: max(0.4rem, env(safe-area-inset-top, 0px));

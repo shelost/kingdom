@@ -102,6 +102,8 @@
 	--toc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 	/* Immersive plate inset; layout toggles this with the TOC. */
 	--shell-shift: 0px;
+	/* Phone tab bar height (MobileTabBar). Zero wherever the bar is not drawn. */
+	--tabbar-space: 0px;
 
 	--ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -373,6 +375,17 @@ em {
 	/* dimming narration to feature the live line costs too much on a phone */
 	html.is-immersion .text .prose > p {
 		opacity: 0.92;
+	}
+}
+
+/* The tab bar owns the foot of the screen; the page ends above it. */
+@media (max-width: 720px) {
+	html.has-tabbar {
+		--tabbar-space: calc(3.4rem + env(safe-area-inset-bottom, 0px));
+	}
+
+	html.has-tabbar body {
+		padding-bottom: var(--tabbar-space);
 	}
 }
 

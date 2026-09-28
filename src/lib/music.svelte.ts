@@ -481,6 +481,11 @@ export function playTrack(track: Track | null) {
 		void loadYoutubeApi().then(() => {
 			if (gen !== playGen) return;
 			if (music.current?.youtubeId !== id) return;
+			/* A background tab must not spin up another hidden iframe. */
+			if (document.hidden) {
+				stopTrack();
+				return;
+			}
 			ensureYoutube(id, loop);
 			applyYoutubePlayback();
 		});
@@ -582,6 +587,29 @@ export function togglePause() {
 	else applyLivePlayback();
 }
 
+/** Sounding right now: a track is loaded, armed, unmuted and not paused. */
+export function isAudible(): boolean {
+	return !!music.current && music.armed && !music.muted && !music.paused;
+}
+
+/** A transport's play button. `start` puts the right track on before it resumes. */
+export function playOrPause(start?: () => void) {
+	if (isAudible()) {
+		togglePause();
+		return;
+	}
+	start?.();
+	if (music.muted) toggleMute();
+	else if (music.paused) togglePause();
+}
+
+/** Seconds as m:ss. */
+export function formatTime(sec: number): string {
+	if (!Number.isFinite(sec) || sec < 0) return '0:00';
+	const s = Math.floor(sec);
+	return `${Math.floor(s / 60)}:${(s % 60).toString().padStart(2, '0')}`;
+}
+
 export function seek(seconds: number) {
 	const want = Math.max(0, Number(seconds) || 0);
 
@@ -676,6 +704,7 @@ export function initMusic() {
 	}
 
 	const onGesture = () => {
+		if (document.hidden) return;
 		arm();
 		if (music.current?.youtubeId) {
 			applyYoutubePlayback();
@@ -686,6 +715,18 @@ export function initMusic() {
 		}
 	};
 
+	/**
+	 * The YouTube iframe is mounted on document.body, outside the route.
+	 * destroy() leaves its audio running, and pagehide does not fire when
+	 * the tab is merely backgrounded. Tear the player out as soon as the
+	 * document is hidden.
+	 */
+	const onHidden = () => {
+		if (!document.hidden) return;
+		if (!music.current?.youtubeId && !yt) return;
+		stopTrack();
+	};
+
 	/** Tab close / bfcache — Svelte cleanup may not run; kill both beds hard. */
 	const onPageHide = () => stopTrack();
 
@@ -693,6 +734,8 @@ export function initMusic() {
 	window.addEventListener('keydown', onGesture, { passive: true });
 	window.addEventListener('pagehide', onPageHide);
 	window.addEventListener('beforeunload', onPageHide);
+	document.addEventListener('visibilitychange', onHidden);
+	document.addEventListener('freeze', onPageHide);
 
 	startProgress();
 
@@ -701,6 +744,8 @@ export function initMusic() {
 		window.removeEventListener('keydown', onGesture);
 		window.removeEventListener('pagehide', onPageHide);
 		window.removeEventListener('beforeunload', onPageHide);
+		document.removeEventListener('visibilitychange', onHidden);
+		document.removeEventListener('freeze', onPageHide);
 		stopTrack();
 		a = b = live = undefined;
 	};

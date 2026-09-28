@@ -6,139 +6,173 @@
 	"lines": [
 		{
 			"t": 11.99,
-			"text": "또 왜 그러는데 뭐가 못마땅한데"
+			"text": "또 왜 그러는데 뭐가 못마땅한데",
+			"scene": "We should talk."
 		},
 		{
 			"t": 23.72,
-			"text": "할 말 있으면 터 놓고 말해봐"
+			"text": "할 말 있으면 터 놓고 말해봐",
+			"scene": "You say that like a summons."
 		},
 		{
 			"t": 35.48,
-			"text": "너 많이 변했어 (내가 뭘 어쨌는데)"
+			"text": "너 많이 변했어 (내가 뭘 어쨌는데)",
+			"scene": "It is. Sit. The well can wait."
 		},
 		{
 			"t": 41.65,
-			"text": "첨엔 안 그랬는데 (첨에 어땠었는데)"
+			"text": "첨엔 안 그랬는데 (첨에 어땠었는데)",
+			"scene": "You grabbed the count again."
 		},
 		{
 			"t": 47.42,
-			"text": "요새는 내가 하는 말투랑 화장과 머리 옷 입는 것까지"
+			"text": "요새는 내가 하는 말투랑 화장과 머리 옷 입는 것까지",
+			"scene": "You grabbed my sleeve. Different crime."
 		},
 		{
 			"t": 53.31,
-			"text": "다 짜증 나나봐 (그건 니 생각이야)"
+			"text": "다 짜증 나나봐 (그건 니 생각이야)",
+			"scene": "Sosuno."
 		},
 		{
 			"t": 59.72,
-			"text": "우리 서로 사랑한지도 어느덧 10개월"
+			"text": "우리 서로 사랑한지도 어느덧 10개월",
+			"scene": "Don't Sosuno me in that voice."
 		},
 		{
 			"t": 65.79,
-			"text": "매일 보는 얼굴 싫증도 나겠지"
+			"text": "매일 보는 얼굴 싫증도 나겠지",
+			"scene": "Then which voice do you want?"
 		},
 		{
 			"t": 71.77,
-			"text": "나도 너처럼 나 좋다는 사람 많이 줄 섰어"
+			"text": "나도 너처럼 나 좋다는 사람 많이 줄 섰어",
+			"scene": "The one that admits I came back."
 		},
 		{
 			"t": 80.65,
-			"text": "(간다는 사람 잡지 않아 어디 한번 잘해봐)"
+			"text": "(간다는 사람 잡지 않아 어디 한번 잘해봐)",
+			"scene": "Start there. Good. Continue."
 		},
 		{
 			"t": 83.74,
-			"text": "근데 그놈의 정이 뭔지 내 뜻대로 안 돼"
+			"text": "근데 그놈의 정이 뭔지 내 뜻대로 안 돼",
+			"scene": "I was mean this morning."
 		},
 		{
 			"t": 89.71,
-			"text": "맘은 끝인데 몸이 따르질 않아"
+			"text": "맘은 끝인데 몸이 따르질 않아",
+			"scene": "You were accurate. I liked it."
 		},
 		{
 			"t": 95.65,
-			"text": "아마 이런 게 사랑인가봐 널 사랑하나봐"
+			"text": "아마 이런 게 사랑인가봐 널 사랑하나봐",
+			"scene": "That's not an apology."
 		},
 		{
 			"t": 104.2,
-			"text": "(지금부터 내 말을 들어봐)"
+			"text": "(지금부터 내 말을 들어봐)",
+			"scene": "It's the part before one."
 		},
 		{
 			"t": 108.18,
-			"text": "넌 집착이 심해 (그건 집착이 아냐)"
+			"text": "넌 집착이 심해 (그건 집착이 아냐)",
+			"scene": "Your men, your yard, your rules."
 		},
 		{
 			"t": 113.86,
-			"text": "나를 너무너무 구속해 (그럼 너도 나를 구속해)"
+			"text": "나를 너무너무 구속해 (그럼 너도 나를 구속해)",
+			"scene": "I don't have a father in the room."
 		},
 		{
 			"t": 119.58,
-			"text": "우리 결혼한 사이도 아닌데 마치 와이프처럼"
+			"text": "우리 결혼한 사이도 아닌데 마치 와이프처럼",
+			"scene": "I have a sky, and it doesn't help"
 		},
 		{
 			"t": 126.15,
-			"text": "모든 걸 간섭해"
+			"text": "모든 걸 간섭해",
+			"scene": "when you're looking at me like that."
 		},
 		{
 			"t": 131.28,
-			"text": "너의 관심 끌고 싶어서 내 정든 긴 머리"
+			"text": "너의 관심 끌고 싶어서 내 정든 긴 머리",
+			"scene": "Like what?"
 		},
 		{
 			"t": 137.12,
-			"text": "짧게 치고서 웨이브 줬더니"
+			"text": "짧게 치고서 웨이브 줬더니",
+			"scene": "Like you'll kiss me to win the argument."
 		},
 		{
 			"t": 143.75,
-			"text": "한심스러운 너의 목소리 나이 들어 보여"
+			"text": "한심스러운 너의 목소리 나이 들어 보여",
+			"scene": "I might."
 		},
 		{
 			"t": 152.17,
-			"text": "(난 너의 긴 머리 때문에 너를 좋아했는데)"
+			"text": "(난 너의 긴 머리 때문에 너를 좋아했는데)",
+			"scene": "Don't you dare be smooth."
 		},
 		{
 			"t": 155.71,
-			"text": "니가 너무 보고 싶어서 전화를 걸어"
+			"text": "니가 너무 보고 싶어서 전화를 걸어",
+			"scene": "I'm not. I'm scared and stupid"
 		},
 		{
 			"t": 161.65,
-			"text": "날 사랑하냐고 물어봤더니"
+			"text": "날 사랑하냐고 물어봤더니",
+			"scene": "and still here."
 		},
 		{
 			"t": 167.75,
-			"text": "귀찮은 듯한 너의 목소리 나 지금 바빠"
+			"text": "귀찮은 듯한 너의 목소리 나 지금 바빠",
+			"scene": "Then talk."
 		},
 		{
 			"t": 176.73,
-			"text": "(듣고 보니 내가 너무 미안해)"
+			"text": "(듣고 보니 내가 너무 미안해)",
+			"scene": "I want you in the kingdom"
 		},
 		{
 			"t": 179.98,
-			"text": "대화가 필요해 (이럴 바엔 우리 헤어져)"
+			"text": "대화가 필요해 (이럴 바엔 우리 헤어져)",
+			"scene": "even if the kingdom isn't built."
 		},
 		{
 			"t": 185.64,
-			"text": "내가 너를 너무 몰랐어 (그런 말로 넘어가지 마)"
+			"text": "내가 너를 너무 몰랐어 (그런 말로 넘어가지 마)",
+			"scene": "Jumong."
 		},
 		{
 			"t": 191.59,
-			"text": "항상 내 곁에 있어서 너의 소중함과 고마움까지도"
+			"text": "항상 내 곁에 있어서 너의 소중함과 고마움까지도",
+			"scene": "Yes."
 		},
 		{
 			"t": 198.12,
-			"text": "다 잊고 살았어"
+			"text": "다 잊고 살았어",
+			"scene": "That's enough talk."
 		},
 		{
 			"t": 203.94,
-			"text": "대화가 필요해 우린 대화가 부족해"
+			"text": "대화가 필요해 우린 대화가 부족해",
+			"scene": "For this breath."
 		},
 		{
 			"t": 215.28,
-			"text": "서로 사랑하면서도 사소한 오해 맘에 없는 말들로"
+			"text": "서로 사랑하면서도 사소한 오해 맘에 없는 말들로",
+			"scene": "The next sentence can wait"
 		},
 		{
 			"t": 221.75,
-			"text": "서로 힘들게 해 (너를 너무 사랑해)"
+			"text": "서로 힘들게 해 (너를 너무 사랑해)",
+			"scene": "until after you stop smiling."
 		},
 		{
 			"t": 227.83,
-			"text": "대화가 필요해"
+			"text": "대화가 필요해",
+			"scene": "Then we talk again."
 		}
 	]
 }

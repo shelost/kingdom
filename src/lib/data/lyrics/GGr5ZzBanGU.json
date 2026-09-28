@@ -1,112 +1,390 @@
 {
 	"id": "GGr5ZzBanGU",
-	"source": "youtube-auto",
+	"source": "lrclib",
 	"trackName": "I Believe",
 	"artistName": "이수영",
+	"offset": -63.54,
 	"lines": [
 		{
-			"t": 32.2,
-			"text": "그때 그 약속을"
+			"t": 0,
+			"text": "♪",
+			"scene": "I already know which marshal."
 		},
 		{
-			"t": 36,
-			"text": "기억하고"
+			"t": 5,
+			"text": "♪",
+			"scene": "Don't make me say the quiet part"
 		},
 		{
-			"t": 47.08,
-			"text": "있을까요 많이"
+			"t": 10,
+			"text": "♪",
+			"scene": "where the ministers can file it."
 		},
 		{
-			"t": 49.72,
-			"text": "변했 내 모습을 알아볼까요"
+			"t": 15,
+			"text": "♪",
+			"scene": "Yushin."
 		},
 		{
-			"t": 64.12,
-			"text": "네가 전한"
+			"t": 20,
+			"text": "♪",
+			"scene": "You stand like a sum."
 		},
 		{
-			"t": 67.2,
-			"text": "간날 너의 빈 책상"
+			"t": 25,
+			"text": "♪",
+			"scene": "I have loved a sum before."
 		},
 		{
-			"t": 72.92,
-			"text": "새겨져 있던 그 말을 난"
+			"t": 30,
+			"text": "♪",
+			"scene": "This one looks back."
 		},
 		{
-			"t": 79.28,
-			"text": "기억해요 오늘이"
+			"t": 35,
+			"text": "♪",
+			"scene": "Inconvenient."
 		},
 		{
-			"t": 83.2,
-			"text": "바로 그대 약속한 그 날인걸요"
+			"t": 40,
+			"text": "♪",
+			"scene": "Come closer than the report."
 		},
 		{
-			"t": 110.8,
-			"text": "운명이란 걸 난"
+			"t": 45,
+			"text": "♪",
+			"scene": "No. Stay exactly there."
 		},
 		{
-			"t": 118.84,
-			"text": "느껴서요"
+			"t": 50,
+			"text": "♪",
+			"scene": "If you kneel I will hate us both."
 		},
 		{
-			"t": 123.28,
-			"text": "블 친근한 말한 마디조차 한 적"
+			"t": 55,
+			"text": "♪",
+			"scene": "If you don't, I will miss it."
 		},
 		{
-			"t": 139.16,
-			"text": "없지만 슬픈 그대"
+			"t": 60,
+			"text": "♪",
+			"scene": "I believe the sky less than I believe"
 		},
 		{
-			"t": 143.28,
-			"text": "얼굴 이유를"
+			"t": 63.54,
+			"text": "♪",
+			"scene": "the way you refuse to sit."
 		},
 		{
-			"t": 145.72,
-			"text": "알았을 때"
+			"t": 65,
+			"text": "♪",
+			"scene": "Confucian to the bone."
 		},
 		{
-			"t": 150.52,
-			"text": "한 표정만 짓고"
+			"t": 68.54,
+			"text": "♪",
+			"scene": "And still you look at a queen"
 		},
 		{
-			"t": 157.24,
-			"text": "연락하기로"
+			"t": 70,
+			"text": "♪",
+			"scene": "as if she were a woman who might"
 		},
 		{
-			"t": 159.24,
-			"text": "해 웃으며"
+			"t": 73.54,
+			"text": "♪",
+			"scene": "say stay."
 		},
 		{
-			"t": 161.8,
-			"text": "말하던 너는"
+			"t": 75,
+			"text": "♪",
+			"scene": "I will not keep you."
 		},
 		{
-			"t": 172.16,
-			"text": "있니 제 못할 거란 걸 알고"
+			"t": 78.54,
+			"text": "♪",
+			"scene": "Hear it from me, not from the reign."
 		},
 		{
-			"t": 178.84,
-			"text": "있어 앞으로도"
+			"t": 80,
+			"text": "♪",
+			"scene": "I will not put you in a box"
 		},
 		{
-			"t": 182.64,
-			"text": "영원히 볼 수 없다는"
+			"t": 83.54,
+			"text": "♪",
+			"scene": "and call the box a marriage."
 		},
 		{
-			"t": 186.8,
-			"text": "것을 이젠이 세상에 너는"
+			"t": 85,
+			"text": "♪",
+			"scene": "I want you anyway."
 		},
 		{
-			"t": 191.72,
-			"text": "사람은 없는"
+			"t": 88.54,
+			"text": "♪",
+			"scene": "That is the indecency."
 		},
 		{
-			"t": 194.56,
-			"text": "거니 내가 잘못한 것이 길 비고 있어"
+			"t": 90,
+			"text": "♪",
+			"scene": "The refined one. The true one."
 		},
 		{
-			"t": 203.76,
-			"text": "약속하니 것은"
+			"t": 93.54,
+			"text": "♪",
+			"scene": "Your hand on a sword is public."
+		},
+		{
+			"t": 95.74,
+			"text": "그대 그약속을",
+			"scene": "Your hand not on me is also public."
+		},
+		{
+			"t": 98.69,
+			"text": "기억하고 있을까요",
+			"scene": "Everyone can see the not."
+		},
+		{
+			"t": 103.51,
+			"text": "I believe I believe",
+			"scene": "I count people as people."
+		},
+		{
+			"t": 107.69,
+			"text": "I believe",
+			"scene": "I counted you twice and ruined"
+		},
+		{
+			"t": 112.36,
+			"text": "많이 변했을 내 모습을",
+			"scene": "the arithmetic."
+		},
+		{
+			"t": 116.71,
+			"text": "알아볼까요",
+			"scene": "Good."
+		},
+		{
+			"t": 120,
+			"text": "And I believe",
+			"scene": "When I am sharp, come nearer."
+		},
+		{
+			"t": 122.58,
+			"text": "I believe I believe",
+			"scene": "When I am kind, be afraid."
+		},
+		{
+			"t": 129.27,
+			"text": "니가 떠나던 날",
+			"scene": "Kindness is where I hide the want."
+		},
+		{
+			"t": 133.55,
+			"text": "너의 빈 책상위에",
+			"scene": "You already found it."
+		},
+		{
+			"t": 137.72,
+			"text": "새겨져 있 던 그말을",
+			"scene": "Don't save me."
+		},
+		{
+			"t": 142.57,
+			"text": "난 기억해요",
+			"scene": "Don't save the country from this hour."
+		},
+		{
+			"t": 146.06,
+			"text": "오늘이 바로 그대",
+			"scene": "The country will survive a queen"
+		},
+		{
+			"t": 150.9,
+			"text": "약속한 그날인걸요",
+			"scene": "who wanted her marshal"
+		},
+		{
+			"t": 161.52,
+			"text": "오지 못할거란걸",
+			"scene": "and sent him to the war anyway."
+		},
+		{
+			"t": 165.01,
+			"text": "알고 있어",
+			"scene": "I believe you will go."
+		},
+		{
+			"t": 167.94,
+			"text": "앞으로도 영원히",
+			"scene": "I believe you will turn once"
+		},
+		{
+			"t": 171.99,
+			"text": "볼 수 없다는 것을",
+			"scene": "at the gate, like a fool."
+		},
+		{
+			"t": 176,
+			"text": "이젠 이세상에",
+			"scene": "Do it."
+		},
+		{
+			"t": 178.4,
+			"text": "너란 사람은 없는거니",
+			"scene": "I will be on the step, not waving."
+		},
+		{
+			"t": 184.03,
+			"text": "내가 잘못 안것이길",
+			"scene": "Waving is for people who can keep"
+		},
+		{
+			"t": 188.35,
+			"text": "빌고 있어",
+			"scene": "what they wave at."
+		},
+		{
+			"t": 190.24,
+			"text": "우리 약속한",
+			"scene": "I can't."
+		},
+		{
+			"t": 193.4,
+			"text": "이곳 에서",
+			"scene": "So I will look."
+		},
+		{
+			"t": 201.04,
+			"text": "I, I, I, I, I believe, I believe",
+			"scene": "That is the whole luxury."
+		},
+		{
+			"t": 205.28,
+			"text": "I, I, I, I, I believe",
+			"scene": "Yushin."
+		},
+		{
+			"t": 210.89,
+			"text": "I believe I believe I believe woo",
+			"scene": "If the bond is physical, let it be"
+		},
+		{
+			"t": 214.95,
+			"text": "I believe I believe",
+			"scene": "in the way silk remembers a wrist."
+		},
+		{
+			"t": 219.27,
+			"text": "I believe I believe I believe woo",
+			"scene": "Not a scandal. A fact."
+		},
+		{
+			"t": 223.63,
+			"text": "I believe I believe",
+			"scene": "I love you."
+		},
+		{
+			"t": 230.85,
+			"text": "처음부터 운명이란 걸",
+			"scene": "I will not keep you."
+		},
+		{
+			"t": 232.99,
+			"text": "난 느꼈어요",
+			"scene": "Both sentences are mine."
+		},
+		{
+			"t": 235.11,
+			"text": "I believe I believe",
+			"scene": "Don't tidy them into one."
+		},
+		{
+			"t": 239.38,
+			"text": "친근한 말 한 마디조차",
+			"scene": "When the court asks what I decided"
+		},
+		{
+			"t": 241.57,
+			"text": "한 적 없지만",
+			"scene": "tell them I decided the truth"
+		},
+		{
+			"t": 243.25,
+			"text": "And I believe",
+			"scene": "and then did my job."
+		},
+		{
+			"t": 248.03,
+			"text": "슬픈 그대 얼굴",
+			"scene": "Come back alive if you can."
+		},
+		{
+			"t": 250.17,
+			"text": "이유를 알았을때",
+			"scene": "If you can't, I already knew"
+		},
+		{
+			"t": 252.42,
+			"text": "애써 담담한 표정만",
+			"scene": "the shape of the room without you."
+		},
+		{
+			"t": 254.8,
+			"text": "짓고 있었 죠",
+			"scene": "I hate that I know it."
+		},
+		{
+			"t": 256.73,
+			"text": "연락하기로 해",
+			"scene": "Smile. Just for the step."
+		},
+		{
+			"t": 258.81,
+			"text": "웃으며 말하던",
+			"scene": "There."
+		},
+		{
+			"t": 260.16,
+			"text": "너는 어디있니",
+			"scene": "I believe that."
+		},
+		{
+			"t": 263.99,
+			"text": "오지 못할거란걸",
+			"scene": "I believe you."
+		},
+		{
+			"t": 266.7,
+			"text": "알고 있어",
+			"scene": "Now go, before I become"
+		},
+		{
+			"t": 268.35,
+			"text": "앞으로도 영원히",
+			"scene": "the kind of queen who begs."
+		},
+		{
+			"t": 270.53,
+			"text": "볼 수 없다는 것을",
+			"scene": "I am not that queen."
+		},
+		{
+			"t": 272.7,
+			"text": "이젠 이세상에",
+			"scene": "I am this one."
+		},
+		{
+			"t": 274.02,
+			"text": "너란 사람은 없는거니",
+			"scene": "And I wanted you."
+		},
+		{
+			"t": 277.06,
+			"text": "내가 잘못 안것이길",
+			"scene": "There. The last true thing."
 		}
-	]
+	],
+	"instrumentalGaps": true
 }

@@ -5,208 +5,310 @@
 	"artistName": "Bon Jovi",
 	"lines": [
 		{
+			"t": 0,
+			"text": "♪",
+			"scene": "Always is a boy's word."
+		},
+		{
+			"t": 5,
+			"text": "♪",
+			"scene": "I mean it anyway."
+		},
+		{
+			"t": 10,
+			"text": "♪",
+			"scene": "Dukman, you cross the same stones"
+		},
+		{
+			"t": 15,
+			"text": "♪",
+			"scene": "and the yard changes temperature."
+		},
+		{
+			"t": 20,
+			"text": "♪",
+			"scene": "I will not say princess"
+		},
+		{
 			"t": 21.63,
-			"text": "This Romeo is bleeding"
+			"text": "This Romeo is bleeding",
+			"scene": "like a title. I'll say it"
 		},
 		{
 			"t": 24.99,
-			"text": "But you can't see his blood"
+			"text": "But you can't see his blood",
+			"scene": "like a secret I failed to keep."
 		},
 		{
 			"t": 28.48,
-			"text": "It's nothing but some feelings"
+			"text": "It's nothing but some feelings",
+			"scene": "You fan yourself. I notice."
 		},
 		{
 			"t": 30.57,
-			"text": "That this old dog kicked up"
+			"text": "That this old dog kicked up",
+			"scene": "You blush and call it wind."
 		},
 		{
 			"t": 35.05,
-			"text": "It's been raining since you left me"
+			"text": "It's been raining since you left me",
+			"scene": "I am the wind's accomplice."
 		},
 		{
 			"t": 37.5,
-			"text": "Now I'm drowning in the flood"
+			"text": "Now I'm drowning in the flood",
+			"scene": "If I am too young, the feeling"
 		},
 		{
 			"t": 41.63,
-			"text": "You see, I've always been a fighter"
+			"text": "You see, I've always been a fighter",
+			"scene": "is not. It has tenure."
 		},
 		{
 			"t": 44.34,
-			"text": "But without you, I give up"
+			"text": "But without you, I give up",
+			"scene": "Every morning I try to be"
 		},
 		{
 			"t": 48.96,
-			"text": "I can't sing a love song"
+			"text": "I can't sing a love song",
+			"scene": "a man of the class."
 		},
 		{
 			"t": 51.29,
-			"text": "Like the way it's meant to be"
+			"text": "Like the way it's meant to be",
+			"scene": "Then you pass, and I am"
 		},
 		{
 			"t": 54.58,
-			"text": "Well, I guess I'm not that good anymore"
+			"text": "Well, I guess I'm not that good anymore",
+			"scene": "a man of the passing."
 		},
 		{
 			"t": 58.1,
-			"text": "But baby, that's just me"
+			"text": "But baby, that's just me",
+			"scene": "I would stand in this spot"
 		},
 		{
 			"t": 61.49,
-			"text": "And I will love you, baby, always"
+			"text": "And I will love you, baby, always",
+			"scene": "until the giwa grew moss"
 		},
 		{
 			"t": 75.16,
-			"text": "And I'll be there forever and a day, always"
+			"text": "And I'll be there forever and a day, always",
+			"scene": "if you kept using this path."
 		},
 		{
 			"t": 89.14,
-			"text": "I'll be there 'til the stars don't shine"
+			"text": "I'll be there 'til the stars don't shine",
+			"scene": "Don't be careful with me."
 		},
 		{
 			"t": 92.49,
-			"text": "'Til the heavens burst and the words don't rhyme"
+			"text": "'Til the heavens burst and the words don't rhyme",
+			"scene": "Careful is how people lose years."
 		},
 		{
 			"t": 95.79,
-			"text": "And I know when I die, you'll be on my mind"
+			"text": "And I know when I die, you'll be on my mind",
+			"scene": "I want the careless hour."
 		},
 		{
 			"t": 99.33,
-			"text": "And I'll love you, always"
+			"text": "And I'll love you, always",
+			"scene": "The one where your sleeve"
 		},
 		{
 			"t": 109.3,
-			"text": "Now your pictures that you left behind"
+			"text": "Now your pictures that you left behind",
+			"scene": "forgets the court."
 		},
 		{
 			"t": 112.66,
-			"text": "Are just memories of a different life"
+			"text": "Are just memories of a different life",
+			"scene": "Always sounds like a song."
 		},
 		{
 			"t": 116.39,
-			"text": "Some that made us laugh, some that made us cry"
+			"text": "Some that made us laugh, some that made us cry",
+			"scene": "Fine. Let it."
 		},
 		{
 			"t": 119.77,
-			"text": "One that made you have to say goodbye"
+			"text": "One that made you have to say goodbye",
+			"scene": "I will be there when you are queen"
 		},
 		{
 			"t": 122.99,
-			"text": "What I'd give to run my fingers through your hair"
+			"text": "What I'd give to run my fingers through your hair",
+			"scene": "and when you pretend"
 		},
 		{
 			"t": 126.24,
-			"text": "To touch your lips, to hold you near"
+			"text": "To touch your lips, to hold you near",
+			"scene": "you don't look for me first."
 		},
 		{
 			"t": 129.7,
-			"text": "When you say your prayers, try to understand"
+			"text": "When you say your prayers, try to understand",
+			"scene": "I will be there when the numbers"
 		},
 		{
 			"t": 133.01,
-			"text": "I've made mistakes, I'm just a man"
+			"text": "I've made mistakes, I'm just a man",
+			"scene": "are the only honest language"
 		},
 		{
 			"t": 136.19,
-			"text": "When he holds you close, when he pulls you near"
+			"text": "When he holds you close, when he pulls you near",
+			"scene": "and I still pick yours."
 		},
 		{
 			"t": 139.51,
-			"text": "When he says the words you've been needing to hear"
+			"text": "When he says the words you've been needing to hear",
+			"scene": "You can scold."
 		},
 		{
 			"t": 143.12,
-			"text": "I wish I was him"
+			"text": "I wish I was him",
+			"scene": "You can walk by faster."
 		},
 		{
 			"t": 144.7,
-			"text": "With these words of mine"
+			"text": "With these words of mine",
+			"scene": "I will match the pace"
 		},
 		{
 			"t": 146.83,
-			"text": "To say to you 'til the end of time"
+			"text": "To say to you 'til the end of time",
+			"scene": "half a step behind,"
 		},
 		{
 			"t": 149.75,
-			"text": "That I will love you baby, always"
+			"text": "That I will love you baby, always",
+			"scene": "which is not surrender."
 		},
 		{
 			"t": 162.9,
-			"text": "And I'll be there forever and a day, always"
+			"text": "And I'll be there forever and a day, always",
+			"scene": "It is aim."
 		},
 		{
 			"t": 177.52,
-			"text": "If you told me to cry for you, I could"
+			"text": "If you told me to cry for you, I could",
+			"scene": "If someone else takes your arm"
 		},
 		{
 			"t": 184.32,
-			"text": "If you told me to die for you, I would"
+			"text": "If you told me to die for you, I would",
+			"scene": "I will learn the name"
 		},
 		{
 			"t": 191.15,
-			"text": "Take a look at my face"
+			"text": "Take a look at my face",
+			"scene": "and hate it politely."
 		},
 		{
 			"t": 194.22,
-			"text": "There's no price I won't pay"
+			"text": "There's no price I won't pay",
+			"scene": "Then I will still be here."
 		},
 		{
 			"t": 199.96,
-			"text": "To say these words to you"
+			"text": "To say these words to you",
+			"scene": "That is the threat and the gift."
+		},
+		{
+			"t": 204.96,
+			"text": "♪",
+			"scene": "Dukman."
+		},
+		{
+			"t": 209.96,
+			"text": "♪",
+			"scene": "I don't grow out of you."
+		},
+		{
+			"t": 214.96,
+			"text": "♪",
+			"scene": "I grow around the place you stood."
+		},
+		{
+			"t": 219.96,
+			"text": "♪",
+			"scene": "Always."
+		},
+		{
+			"t": 224.96,
+			"text": "♪",
+			"scene": "Even when I shouldn't say it."
 		},
 		{
 			"t": 229.7,
-			"text": "Well, there ain't no luck"
+			"text": "Well, there ain't no luck",
+			"scene": "Especially then."
 		},
 		{
 			"t": 231.79,
-			"text": "In these loaded dice"
+			"text": "In these loaded dice",
+			"scene": "The yard knows."
 		},
 		{
 			"t": 233.25,
-			"text": "But baby, if you give me just one more try"
+			"text": "But baby, if you give me just one more try",
+			"scene": "So do you."
 		},
 		{
 			"t": 236.38,
-			"text": "We can pack up our old dreams"
+			"text": "We can pack up our old dreams",
+			"scene": "Stay."
 		},
 		{
 			"t": 238.49,
-			"text": "And our old lives"
+			"text": "And our old lives",
+			"scene": "I will be at the same stone."
 		},
 		{
 			"t": 239.95,
-			"text": "We'll find a place where the sun still shines"
+			"text": "We'll find a place where the sun still shines",
+			"scene": "Tomorrow, and after the crown."
 		},
 		{
 			"t": 242.94,
-			"text": "And I will love you, baby, always"
+			"text": "And I will love you, baby, always",
+			"scene": "If you send me away"
 		},
 		{
 			"t": 255.94,
-			"text": "And I'll be there forever and a day, always"
+			"text": "And I'll be there forever and a day, always",
+			"scene": "I will go like a soldier"
 		},
 		{
 			"t": 269.74,
-			"text": "I'll be there 'til the stars don't shine"
+			"text": "I'll be there 'til the stars don't shine",
+			"scene": "and return like a man"
 		},
 		{
 			"t": 273.14,
-			"text": "'Til the heavens burst and the words don't rhyme"
+			"text": "'Til the heavens burst and the words don't rhyme",
+			"scene": "who did not forget the path."
 		},
 		{
 			"t": 276.88,
-			"text": "I know when I die, you'll be on my mind"
+			"text": "I know when I die, you'll be on my mind",
+			"scene": "Always meant this."
 		},
 		{
 			"t": 280.05,
-			"text": "And I'll love you, always"
+			"text": "And I'll love you, always",
+			"scene": "The path."
 		},
 		{
 			"t": 290.11,
-			"text": "Always, always"
+			"text": "Always, always",
+			"scene": "You."
 		}
-	]
+	],
+	"instrumentalGaps": true
 }

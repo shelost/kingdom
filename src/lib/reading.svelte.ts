@@ -12,7 +12,7 @@ import { goto, replaceState } from '$app/navigation';
 import { chapters, chapterIdFromPartId, entryId } from '$lib/story';
 import { isLoveEpisode } from '$lib/loveEpisodes';
 import { scriptUi } from '$lib/scriptUi.svelte';
-import { tocUi } from '$lib/tocUi.svelte';
+import { autoOpenToc, tocUi } from '$lib/tocUi.svelte';
 
 const KEEP_SCROLL_KEY = 'kingdom:keep-scroll';
 
@@ -285,7 +285,7 @@ export function setMode(m: ReadMode) {
 	applyModeClasses(m);
 	/* Script view starts with the TOC open. Shared `tocUi.open` means cinema /
 	   immersion keep whatever the reader last chose; entering script still opens. */
-	if (m === 'script' && prev !== 'script') tocUi.open = true;
+	if (m === 'script' && prev !== 'script') autoOpenToc();
 	// refresh speaker / speaking highlight for the new mode
 	window.dispatchEvent(new Event('scroll'));
 	/* The mode also decides where the art goes — sticky runway or inline
@@ -327,7 +327,7 @@ export function loadViewScope() {
 	   (Queen Sunduk) overwrites a bookmarked `?ep=jumong` on every mount. */
 	applyReadingFromUrl(new URL(location.href));
 	if (reading.viewScope === 'episodes') {
-		tocUi.open = true;
+		autoOpenToc();
 		scriptUi.inScript = true;
 		syncReadingUrl();
 	}
@@ -369,7 +369,7 @@ export function setViewScope(s: ViewScope) {
 	if (s === 'episodes') {
 		captureCurrentEpisode();
 		stripStoryHash();
-		tocUi.open = true;
+		autoOpenToc();
 		scriptUi.inScript = true;
 	}
 

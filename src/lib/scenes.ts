@@ -140,7 +140,7 @@ export const SCENES: Scene[] = [
 	{
 		id: 'taizong-qin-wang',
 		image: '/scene_taizong_1.png',
-		frames: ['/scene_taizong_1.png', '/scene_taizong_2.png', '/scene_taizong_3.png'],
+		frames: ['/scene_taizong_1.png', '/scene_taizong_2.png', '/scene_taizong_3.png', '/scene_taizong-qin-wang_2.jpg', '/scene_taizong-qin-wang_3.jpg', '/scene_taizong-qin-wang_4.jpg', '/scene_taizong-qin-wang_12.jpg', '/scene_taizong-qin-wang_13.jpg', '/scene_taizong-qin-wang_14.jpg'],
 		frameMs: 3200,
 		title: 'Taizong',
 		place: 'Chang’an — the Son of Heaven',
@@ -153,7 +153,7 @@ export const SCENES: Scene[] = [
 	{
 		id: 'ibiga-ridge-gaya-love',
 		image: '/scene_ibiga_1.png',
-		frames: ['/scene_ibiga_1.png', '/scene_ibiga_2.png', '/scene_ibiga_3.png'],
+		frames: ['/scene_ibiga_1.png', '/scene_ibiga_2.png', '/scene_ibiga_3.png', '/scene_ibiga-ridge-gaya-love_2.jpg', '/scene_ibiga-ridge-gaya-love_4.jpg'],
 		frameMs: 3400,
 		title: 'As Long As There Is A Sky',
 		place: 'Cloud country — the heart-ridge',
@@ -167,13 +167,21 @@ export const SCENES: Scene[] = [
 	{
 		id: 'sunduk-little-fall-of-rain',
 		image: '/scene_sunduk_1.png',
-		frames: ['/scene_sunduk_1.png', '/scene_sunduk_2.png', '/scene_sunduk_3.png'],
+		frames: [
+			'/scene_sunduk-little-fall-of-rain_2.jpg',
+			'/scene_sunduk_1.png',
+			'/scene_sunduk_2.png',
+			'/scene_sunduk_3.png',
+			'/scene_sunduk-little-fall-of-rain_11.jpg',
+			'/scene_sunduk-little-fall-of-rain_13.jpg',
+			'/scene_sunduk-little-fall-of-rain_14.jpg'
+		],
 		frameMs: 3600,
 		title: 'My Queen',
 		place: 'Moon palace — Sunduk’s last bed, Yushin kneeling',
 		audio: file({
 			file: '/mu_little_fall_of_rain.mp3',
-			title: 'My Queen',
+			title: 'Little Fall of Rain',
 			artist: 'Sunduk & Yushin',
 			credit: 'Les Misérables (2012 film) · Samantha Barks & Eddie Redmayne',
 			loop: false
@@ -185,10 +193,11 @@ export const SCENES: Scene[] = [
 		frames: [
 			'/img_gotaso_03.png',
 			'/img_gotaso_04.png',
-			'/img_gotaso_05.png',
 			'/img_gotaso_06.png',
-			'/temp/gotaso-pumsuk-warmth.jpg',
-			'/img_gotaso_pumsuk_passion.png'
+			'/img_gotaso_pumsuk_passion.png',
+			'/scene_gotaso-pumsuk_2.jpg',
+			'/scene_gotaso-pumsuk_4.jpg',
+			'/scene_gotaso-pumsuk_12.jpg'
 		],
 		frameMs: 3200,
 		title: 'Love Spring',
@@ -203,6 +212,12 @@ export const SCENES: Scene[] = [
 	{
 		id: 'yushin-sunduk-flower',
 		image: '/img_gotaso_07.png',
+		frames: [
+			'/img_gotaso_07.png',
+			'/scene_yushin-sunduk-flower_2.jpg',
+			'/scene_yushin-sunduk-flower_10.jpg',
+			'/scene_yushin-sunduk-flower_12.jpg'
+		],
 		title: 'As the flower blooms and falls',
 		place: 'Yushin and Sunduk',
 		audio: youtube({
@@ -216,12 +231,19 @@ export const SCENES: Scene[] = [
 		id: 'sunduk-loves-yushin',
 		image: '/scene_sunduk_sing.png',
 		frames: [
+			'/scene_sunduk_gayageum.png',
 			'/scene_sunduk_sing.png',
 			'/temp/sunduk-yushin-flush.jpg',
 			'/temp/sunduk-yushin-back-blush.jpg',
 			'/temp/yushin-fans-sunduk-only.jpg',
 			'/temp/dukman_reaching_stars.png',
-			'/scene_sunduk_1.png'
+			'/scene_sunduk_1.png',
+			'/scene_sunduk-loves-yushin_2.jpg',
+			'/scene_sunduk-loves-yushin_3.jpg',
+			'/scene_sunduk-loves-yushin_5.jpg',
+			'/scene_sunduk-loves-yushin_10.jpg',
+			'/scene_sunduk-loves-yushin_14.jpg',
+			'/scene_sunduk-loves-yushin_16.jpg'
 		],
 		frameMs: 3600,
 		title: 'Sunduk loves Yushin',
@@ -243,7 +265,9 @@ export const SCENES: Scene[] = [
 			'/temp/sunduk-flirt-blush.jpg',
 			'/temp/sunduk-yushin-flush.jpg',
 			'/temp/sunduk-yushin-back-blush.jpg',
-			'/temp/three-youths-dukman.jpg'
+			'/temp/three-youths-dukman.jpg',
+			'/scene_young-yushin-loves-sunduk_2.jpg',
+			'/scene_young-yushin-loves-sunduk_12.jpg'
 		],
 		frameMs: 3600,
 		title: 'My Princess',
@@ -259,10 +283,12 @@ export const SCENES: Scene[] = [
 		id: 'birch-old-joseon',
 		image: '/temp/hwanung-ungnyeo-birch-wide.jpg',
 		frames: [
-			'/temp/hwanung-ungnyeo-birch-wide.jpg',
+			'/temp/hwanung-ungnyeo-kiss.jpg',
 			'/temp/ungnyeo-dont-closer.jpg',
+			'/temp/hwanung-ungnyeo-birch-wide.jpg',
+			'/scene_birch-old-joseon_2.jpg',
 			'/temp/hwanung-seal-forgotten.jpg',
-			'/temp/hwanung-ungnyeo-kiss.jpg'
+			'/scene_birch-old-joseon_3.jpg'
 		],
 		frameMs: 3400,
 		title: 'Under the divine birch',
@@ -276,7 +302,15 @@ export const SCENES: Scene[] = [
 	{
 		id: 'yushin-sword',
 		image: '/temp/yushin-sword-vertical.jpg',
-		frames: ['/temp/yushin-sword-vertical.jpg', '/temp/yushin_sword_vertical.png'],
+		frames: [
+			'/scene_yushin-sword_3.jpg',
+			'/temp/yushin-sword-vertical.jpg',
+			'/temp/yushin_sword_vertical.png',
+			'/scene_yushin-sword_2.jpg',
+			'/scene_yushin-sword_12.jpg',
+			'/scene_yushin-sword_14.jpg',
+			'/scene_yushin-sword_15.jpg'
+		],
 		frameMs: 3600,
 		title: 'Yushin’s sword',
 		place: 'Surabol — duty as a vertical',
@@ -294,7 +328,10 @@ export const SCENES: Scene[] = [
 			'/temp/ansi-stone-ring.jpg',
 			'/temp/ansi-earthen-ramp.jpg',
 			'/temp/ansi-winter.jpg',
-			'/temp/taizong-ansi-face.jpg'
+			'/temp/taizong-ansi-face.jpg',
+			'/scene_ansi-holds_2.jpg',
+			'/scene_ansi-holds_4.jpg',
+			'/scene_ansi-holds_13.jpg'
 		],
 		frameMs: 3200,
 		title: 'Ansi holds',
@@ -312,7 +349,8 @@ export const SCENES: Scene[] = [
 			'/temp/white-river-aerial.jpg',
 			'/temp/gyebek-white-river.jpg',
 			'/temp/gyebek-field-face.jpg',
-			'/temp/gyebek-last-stand-yellow.png'
+			'/temp/gyebek-last-stand-yellow.png',
+			'/scene_white-river_2.jpg'
 		],
 		frameMs: 3200,
 		title: 'The White River',
@@ -332,7 +370,8 @@ export const SCENES: Scene[] = [
 			'/temp/gyebek-field-face.jpg',
 			'/temp/gyebek-last-stand-yellow.png',
 			'/temp/ansi-wide.jpg',
-			'/temp/salsu-red-wedge.jpg'
+			'/temp/salsu-red-wedge.jpg',
+			'/scene_battle-six-dragons_2.jpg'
 		],
 		frameMs: 3000,
 		title: 'Battle',
@@ -349,9 +388,13 @@ export const SCENES: Scene[] = [
 		image: '/temp/poster_dangun.jpg',
 		frames: [
 			'/temp/dangun-mountain.jpg',
+			'/scene_dangun-founding_4.jpg',
 			'/temp/dangun-asadal.jpg',
 			'/temp/dangun-over-shoulder.jpg',
-			'/temp/poster_dangun.jpg'
+			'/temp/poster_dangun.jpg',
+			'/scene_dangun-founding_2.jpg',
+			'/scene_dangun-founding_3.jpg',
+			'/scene_dangun-founding_13.jpg'
 		],
 		frameMs: 3400,
 		title: 'Dangun',
@@ -366,10 +409,12 @@ export const SCENES: Scene[] = [
 		id: 'euija-coup',
 		image: '/temp/euija-coup-rock-wide.jpg',
 		frames: [
+			'/scene_euija-coup_2.jpg',
 			'/temp/euija-coup-rock-wide.jpg',
 			'/temp/euija-coup-empty-benches.jpg',
 			'/temp/euija-coup-speech-dutch.jpg',
-			'/temp/euija-coup-satek-stare.jpg'
+			'/temp/euija-coup-satek-stare.jpg',
+			'/scene_euija-coup_4.jpg'
 		],
 		frameMs: 3200,
 		title: 'Deer Rock',
@@ -384,9 +429,11 @@ export const SCENES: Scene[] = [
 		id: 'fortress-omen',
 		image: '/temp/fortress_gate_red_omen.png',
 		frames: [
+			'/scene_fortress-omen_2.jpg',
 			'/temp/fortress_gate_red_omen.png',
 			'/temp/goguryeo-fortress-red-storm-v2.jpg',
-			'/temp/eastern-fortress-wide.jpg'
+			'/temp/eastern-fortress-wide.jpg',
+			'/scene_fortress-omen_13.jpg'
 		],
 		frameMs: 3400,
 		title: 'Red omen at the gate',
@@ -397,10 +444,25 @@ export const SCENES: Scene[] = [
 		id: 'wuzetian-screen',
 		image: '/scene_wuzetian_sing.png',
 		frames: [
-			'/scene_wuzetian_sing.png',
 			'/temp/wuzetian_screen_power.png',
+			'/scene_wuzetian_sing.png',
 			'/temp/wuzetian-seal-stamp.jpg',
-			'/temp/wuzetian-seduction.jpg'
+			'/temp/wuzetian-seduction.jpg',
+			'/scene_wuzetian-screen_2.jpg',
+			'/scene_wuzetian-screen_4.jpg',
+			'/scene_wuzetian-screen_5.jpg',
+			'/scene_wuzetian-screen_6.jpg',
+			'/scene_wuzetian-screen_7.jpg',
+			'/scene_wuzetian-screen_8.jpg',
+			'/scene_wuzetian-screen_9.jpg',
+			'/scene_wuzetian-screen_10.jpg',
+			'/scene_wuzetian-screen_12.jpg',
+			'/scene_wuzetian-screen_13.jpg',
+			'/scene_wuzetian-screen_16.jpg',
+			'/scene_wuzetian-screen_17.jpg',
+			'/scene_wuzetian-screen_18.jpg',
+			'/scene_wuzetian-screen_19.jpg',
+			'/scene_wuzetian-screen_20.jpg'
 		],
 		frameMs: 3400,
 		title: 'Wu behind the screen',
@@ -422,7 +484,10 @@ export const SCENES: Scene[] = [
 			'/temp/three-realms-06-council.png',
 			'/temp/three-realms-07-feast.png',
 			'/temp/three-realms-12-principals.png',
-			'/temp/three-realms-meeting.png'
+			'/temp/three-realms-meeting.png',
+			'/scene_three-realms-goddess_2.jpg',
+			'/scene_three-realms-goddess_3.jpg',
+			'/scene_three-realms-goddess_4.jpg'
 		],
 		frameMs: 3400,
 		title: 'The Three Realms',
@@ -437,9 +502,12 @@ export const SCENES: Scene[] = [
 		id: 'salsu-gesomun',
 		image: '/temp/salsu-red-wedge.jpg',
 		frames: [
+			'/scene_dosuryu_geomungo.png',
 			'/temp/salsu-red-wedge.jpg',
 			'/temp/salsu-ford-ribbon.jpg',
-			'/temp/salsu-flashback.jpg'
+			'/temp/salsu-flashback.jpg',
+			'/scene_salsu-gesomun_2.jpg',
+			'/scene_salsu-gesomun_4.jpg'
 		],
 		frameMs: 3200,
 		title: 'Salsu',
@@ -457,7 +525,9 @@ export const SCENES: Scene[] = [
 			'/temp/chunchu_strategist_shadow.png',
 			'/temp/chunchu-map-pool.jpg',
 			'/temp/chunchu-forecast.jpg',
-			'/temp/chunchu-death-wide.jpg'
+			'/temp/chunchu-death-wide.jpg',
+			'/scene_chunchu-shadow_2.jpg',
+			'/scene_chunchu-shadow_5.jpg'
 		],
 		frameMs: 3200,
 		title: 'Chunchu in shadow',
@@ -472,11 +542,17 @@ export const SCENES: Scene[] = [
 		id: 'bidam-never-again',
 		image: '/scene_bidam_sing.png',
 		frames: [
+			'/scene_bidam_wolgeum.png',
 			'/scene_bidam_sing.png',
 			'/scene_bidam_1.png',
 			'/scene_bidam_2.png',
 			'/scene_bidam_3.png',
-			'/scene_bidam_4.png'
+			'/scene_bidam_4.png',
+			'/scene_bidam-never-again_2.jpg',
+			'/scene_bidam-never-again_3.jpg',
+			'/scene_bidam-never-again_4.jpg',
+			'/scene_bidam-never-again_5.jpg',
+			'/scene_bidam-never-again_10.jpg'
 		],
 		frameMs: 3200,
 		title: 'Bidam',
@@ -497,7 +573,9 @@ export const SCENES: Scene[] = [
 			'/temp/suro-heo-tent.jpg',
 			'/temp/heo-court-face.jpg',
 			'/temp/heo-court-present.jpg',
-			'/temp/heo-silk-trousers.jpg'
+			'/temp/heo-silk-trousers.jpg',
+			'/scene_suro-heo-goodbye_2.jpg',
+			'/scene_suro-heo-goodbye_12.jpg'
 		],
 		frameMs: 3400,
 		title: 'The Red Sail',
@@ -519,7 +597,17 @@ export const SCENES: Scene[] = [
 			'/temp/jumong-sosuno-side-almost-kiss.jpg',
 			'/temp/jumong-sosuno-seq-kiss-shock.jpg',
 			'/temp/jumong-sosuno-seq-queen-hall.jpg',
-			'/temp/jumong-sosuno-pov-leave.jpg'
+			'/temp/jumong-sosuno-pov-leave.jpg',
+			'/scene_jumong-sosuno-talk_2.jpg',
+			'/scene_jumong-sosuno-talk_4.jpg',
+			'/scene_jumong-sosuno-talk_10.jpg',
+			'/scene_jumong-sosuno-talk_12.jpg',
+			'/scene_jumong-sosuno-talk_14.jpg',
+			'/scene_jumong-sosuno-talk_16.jpg',
+			'/scene_jumong-sosuno-talk_17.jpg',
+			'/scene_jumong-sosuno-talk_18.jpg',
+			'/scene_jumong-sosuno-talk_19.jpg',
+			'/scene_jumong-sosuno-talk_20.jpg'
 		],
 		frameMs: 3200,
 		title: 'Sosuno and Jumong',
@@ -535,11 +623,13 @@ export const SCENES: Scene[] = [
 		id: 'xue-rengui-war',
 		image: '/temp/poster_xuerengui.jpg',
 		frames: [
+			'/scene_xue-rengui-war_4.jpg',
 			'/temp/poster_xuerengui.jpg',
 			'/temp/xue-white-ridge.jpg',
 			'/temp/xue-eastern-shaft.jpg',
 			'/temp/xue-longmen-field-dawn.jpg',
-			'/temp/xue-fortress-escape.jpg'
+			'/temp/xue-fortress-escape.jpg',
+			'/scene_xue-rengui-war_2.jpg'
 		],
 		frameMs: 3000,
 		title: 'Xue Rengui',
@@ -560,7 +650,11 @@ export const SCENES: Scene[] = [
 			'/temp/xue-longmen-wife-close.jpg',
 			'/temp/xue-longmen-hut-door.jpg',
 			'/temp/xue-longmen-farewell.jpg',
-			'/temp/xue-longmen-yellow-hoe.jpg'
+			'/temp/xue-longmen-yellow-hoe.jpg',
+			'/scene_xue-lady-liu_2.jpg',
+			'/scene_xue-lady-liu_3.jpg',
+			'/scene_xue-lady-liu_4.jpg',
+			'/scene_xue-lady-liu_12.jpg'
 		],
 		frameMs: 3400,
 		title: 'Xue and Lady Liu',
@@ -576,13 +670,16 @@ export const SCENES: Scene[] = [
 		id: 'grim-reapers-killmonger',
 		image: '/temp/poster_kangrim.jpg',
 		frames: [
+			'/scene_grim-reapers-killmonger_2.jpg',
 			'/temp/poster_kangrim.jpg',
 			'/temp/poster_haewonmek.jpg',
 			'/temp/kangrim_reaper_scroll.png',
 			'/temp/kangrim-haewonmek-flight.jpg',
 			'/temp/kangrim-ledger-glow.jpg',
 			'/temp/haewonmek-sword-redbook.jpg',
-			'/temp/jumong-night-reaper-over.jpg'
+			'/temp/jumong-night-reaper-over.jpg',
+			'/scene_grim-reapers-killmonger_3.jpg',
+			'/scene_grim-reapers-killmonger_4.jpg'
 		],
 		frameMs: 3200,
 		title: 'The Grim Reapers',
@@ -604,7 +701,11 @@ export const SCENES: Scene[] = [
 			'/temp/jumong-haemosu-sky-dusk-lean.jpg',
 			'/temp/jumong-haemosu-sky-sisters.jpg',
 			'/temp/jumong-haemosu-pov-yuhwa-grin.jpg',
-			'/temp/jumong-haemosu-heart-dutch-high.jpg'
+			'/temp/jumong-haemosu-heart-dutch-high.jpg',
+			'/scene_haemosu-bae-bae_2.jpg',
+			'/scene_haemosu-bae-bae_3.jpg',
+			'/scene_haemosu-bae-bae_11.jpg',
+			'/scene_haemosu-bae-bae_14.jpg'
 		],
 		frameMs: 3200,
 		title: 'Haemosu',
@@ -627,7 +728,11 @@ export const SCENES: Scene[] = [
 			'/temp/gyebek-well.jpg',
 			'/temp/gyebek-seq-name.jpg',
 			'/temp/gyebek-sunset.jpg',
-			'/temp/gyebek-departs.jpg'
+			'/temp/gyebek-departs.jpg',
+			'/scene_gyebek-who-am-i_2.jpg',
+			'/scene_gyebek-who-am-i_3.jpg',
+			'/scene_gyebek-who-am-i_5.jpg',
+			'/scene_gyebek-who-am-i_15.jpg'
 		],
 		frameMs: 3400,
 		title: 'Gyebek',
@@ -647,7 +752,8 @@ export const SCENES: Scene[] = [
 			'/scene_three_princesses_sing.png',
 			'/temp/three-princesses.jpg',
 			'/temp/dukman_reaching_stars.png',
-			'/temp/three-youths-dukman.jpg'
+			'/temp/three-youths-dukman.jpg',
+			'/scene_three-princesses-invite_2.jpg'
 		],
 		frameMs: 3600,
 		title: 'Three Princesses',
@@ -672,7 +778,10 @@ export const SCENES: Scene[] = [
 			'/temp/sadaham-seq-vanguard.jpg',
 			'/temp/sadaham-seq-mugwan-vow.jpg',
 			'/temp/sadaham-seven-days.jpg',
-			'/temp/sadaham-seq-free.jpg'
+			'/temp/sadaham-seq-free.jpg',
+			'/scene_sadaham-try-again_2.jpg',
+			'/scene_sadaham-try-again_4.jpg',
+			'/scene_sadaham-try-again_5.jpg'
 		],
 		frameMs: 3400,
 		title: 'Sadaham',
@@ -692,7 +801,8 @@ export const SCENES: Scene[] = [
 			'/temp/hwarang-class.jpg',
 			'/temp/hwarang-spar.jpg',
 			'/temp/crescent-hwarang.jpg',
-			'/temp/hwarang-female-fans.jpg'
+			'/temp/hwarang-female-fans.jpg',
+			'/scene_hwarang-oxygen_2.jpg'
 		],
 		frameMs: 3200,
 		title: 'The Hwarang',
@@ -714,7 +824,16 @@ export const SCENES: Scene[] = [
 			'/temp/maehwa-garrison-03-post.jpg',
 			'/temp/maehwa-feast-close.jpg',
 			'/temp/maehwa-feast-hands.jpg',
-			'/temp/maehwa-feast-families.jpg'
+			'/temp/maehwa-feast-families.jpg',
+			'/scene_maehwa-coming-of-age_2.jpg',
+			'/scene_maehwa-coming-of-age_3.jpg',
+			'/scene_maehwa-coming-of-age_10.jpg',
+			'/scene_maehwa-coming-of-age_12.jpg',
+			'/scene_maehwa-coming-of-age_16.jpg',
+			'/scene_maehwa-coming-of-age_17.jpg',
+			'/scene_maehwa-coming-of-age_18.jpg',
+			'/scene_maehwa-coming-of-age_19.jpg',
+			'/scene_maehwa-coming-of-age_20.jpg'
 		],
 		frameMs: 3400,
 		title: 'Maehwa',
@@ -736,7 +855,9 @@ export const SCENES: Scene[] = [
 			'/temp/euija-laugh.jpg',
 			'/temp/euija-fallen.jpg',
 			'/temp/euija_king_or_slave.jpg',
-			'/temp/euija-coup-speech-dutch.jpg'
+			'/temp/euija-coup-speech-dutch.jpg',
+			'/scene_euija-anger-f_2.jpg',
+			'/scene_euija-anger-f_3.jpg'
 		],
 		frameMs: 3200,
 		title: 'Euija’s anger',
@@ -752,13 +873,15 @@ export const SCENES: Scene[] = [
 		id: 'yushin-chunchu-bad-boy',
 		image: '/scene_yushin_chunchu_sing.png',
 		frames: [
+			'/scene_yushin-chunchu-bad-boy_2.jpg',
 			'/scene_yushin_chunchu_sing.png',
 			'/temp/yushin-chunchu-munhee.jpg',
 			'/temp/harmony-council.jpg',
 			'/temp/chunchu_strategist_shadow.png',
 			'/temp/yushin-sword-vertical.jpg',
 			'/temp/bidam-blood-inevitable.jpg',
-			'/temp/council-tea-yushin.jpg'
+			'/temp/council-tea-yushin.jpg',
+			'/scene_yushin-chunchu-bad-boy_5.jpg'
 		],
 		frameMs: 3200,
 		title: 'Yushin & Chunchu',
@@ -780,7 +903,10 @@ export const SCENES: Scene[] = [
 			'/temp/sunduk-yushin-flush.jpg',
 			'/temp/sunduk-yushin-back-blush.jpg',
 			'/temp/yushin-fans-sunduk-only.jpg',
-			'/temp/dukman_reaching_stars.png'
+			'/temp/dukman_reaching_stars.png',
+			'/scene_yushin-always-dukman_2.jpg',
+			'/scene_yushin-always-dukman_4.jpg',
+			'/scene_yushin-always-dukman_12.jpg'
 		],
 		frameMs: 3600,
 		title: 'Yushin and Dukman',
@@ -800,7 +926,8 @@ export const SCENES: Scene[] = [
 			'/temp/three-youths-dukman.jpg',
 			'/temp/hwarang_flower_youth.png',
 			'/temp/hwarang-class.jpg',
-			'/temp/hwarang-spar.jpg'
+			'/temp/hwarang-spar.jpg',
+			'/scene_hwarang-belle_2.jpg'
 		],
 		frameMs: 3400,
 		title: 'Three for Dukman',
@@ -821,7 +948,11 @@ export const SCENES: Scene[] = [
 			'/temp/munhee-chunchu-back.jpg',
 			'/temp/munhee-sewing-first.jpg',
 			'/temp/munhee-queen-consort.jpg',
-			'/temp/munhee-folded-letter.jpg'
+			'/temp/munhee-folded-letter.jpg',
+			'/scene_chunchu-munhee-moonlight_2.jpg',
+			'/scene_chunchu-munhee-moonlight_3.jpg',
+			'/scene_chunchu-munhee-moonlight_12.jpg',
+			'/scene_chunchu-munhee-moonlight_16.jpg'
 		],
 		frameMs: 3600,
 		title: 'Chunchu and Munhee',
@@ -840,7 +971,9 @@ export const SCENES: Scene[] = [
 			'/scene_jahee_sing.png',
 			'/temp/bupmin-jahee-rain.jpg',
 			'/temp/bupmin-jahee-ledger.jpg',
-			'/temp/bupmin-jahee-almost.jpg'
+			'/temp/bupmin-jahee-almost.jpg',
+			'/scene_bupmin-jahee-nagging_2.jpg',
+			'/scene_bupmin-jahee-nagging_12.jpg'
 		],
 		frameMs: 3200,
 		title: 'Bupmin and Jahee',
@@ -856,13 +989,16 @@ export const SCENES: Scene[] = [
 		id: 'chunchu-revenge',
 		image: '/scene_chunchu_prison_floor.png',
 		frames: [
+			'/emotional_chunchu_revenge_oath.png',
+			'/scene_chunchu_daegeum.png',
 			'/scene_chunchu_prison_floor.png',
 			'/scene_chunchu_prison_close.png',
 			'/scene_chunchu_prison_window.png',
-			'/emotional_chunchu_revenge_oath.png',
 			'/temp/chunchu-prison.jpg',
 			'/temp/chunchu-map-pool.jpg',
-			'/temp/chunchu-forecast.jpg'
+			'/temp/chunchu-forecast.jpg',
+			'/scene_chunchu-revenge_2.jpg',
+			'/scene_chunchu-revenge_3.jpg'
 		],
 		frameMs: 3400,
 		title: 'Chunchu’s revenge',
@@ -879,11 +1015,17 @@ export const SCENES: Scene[] = [
 		id: 'euija-ambition',
 		image: '/scene_euija_deer_sing.png',
 		frames: [
+			'/scene_euija_gonghu.png',
 			'/scene_euija_deer_sing.png',
 			'/temp/euija-crown-eaten.jpg',
 			'/temp/euija-coup-speech-dutch.jpg',
 			'/temp/euija-coup-rock-wide.jpg',
-			'/temp/euija-changan-court.jpg'
+			'/temp/euija-changan-court.jpg',
+			'/scene_euija-ambition_2.jpg',
+			'/scene_euija-ambition_4.jpg',
+			'/scene_euija-ambition_5.jpg',
+			'/scene_euija-ambition_12.jpg',
+			'/scene_euija-ambition_13.jpg'
 		],
 		frameMs: 3400,
 		title: 'Euija’s ambition',
@@ -905,7 +1047,13 @@ export const SCENES: Scene[] = [
 			'/temp/gesomun-five-pommels.jpg',
 			'/temp/gesomun-rings-cross.jpg',
 			'/temp/gesomun-seq-pyongyang-gate.jpg',
-			'/temp/gesomun-authority-low-angle.jpg'
+			'/temp/gesomun-authority-low-angle.jpg',
+			'/scene_gesomun-promise_2.jpg',
+			'/scene_gesomun-promise_3.jpg',
+			'/scene_gesomun-promise_4.jpg',
+			'/scene_gesomun-promise_5.jpg',
+			'/scene_gesomun-promise_13.jpg',
+			'/scene_gesomun-promise_14.jpg'
 		],
 		frameMs: 3200,
 		title: 'Gesomun’s promise',
@@ -927,7 +1075,11 @@ export const SCENES: Scene[] = [
 			'/temp/hallakgungi-green-bloom.jpg',
 			'/temp/hallakgungi-rows.png',
 			'/temp/jacheongbi-flower-field.jpg',
-			'/temp/three-realms-08-hallakgungi-joke.png'
+			'/temp/three-realms-08-hallakgungi-joke.png',
+			'/scene_gardener-homage_2.jpg',
+			'/scene_gardener-homage_3.jpg',
+			'/scene_gardener-homage_4.jpg',
+			'/scene_gardener-homage_5.jpg'
 		],
 		frameMs: 3600,
 		title: 'The Gardener',
@@ -942,7 +1094,7 @@ export const SCENES: Scene[] = [
 	{
 		id: 'fall-of-joseon',
 		image: '/temp/fall_of_joseon.png',
-		frames: ['/temp/fall_of_joseon.png', '/temp/joseon-fall.jpg'],
+		frames: ['/temp/fall_of_joseon.png', '/temp/joseon-fall.jpg', '/scene_fall-of-joseon_2.jpg', '/scene_fall-of-joseon_3.jpg', '/scene_fall-of-joseon_4.jpg'],
 		frameMs: 3800,
 		title: 'The Fall of Joseon',
 		place: 'Wanggeom’s gate — opened from the inside',
@@ -963,7 +1115,9 @@ export const SCENES: Scene[] = [
 			'/scene_life_gods_laugh.png',
 			'/scene_life_gods_shove.png',
 			'/temp/samsin-threefold.jpg',
-			'/scene_ibiga_1.png'
+			'/scene_ibiga_1.png',
+			'/scene_three-life-gods_2.jpg',
+			'/scene_three-life-gods_3.jpg'
 		],
 		frameMs: 3200,
 		title: 'Three Life Gods',
@@ -979,13 +1133,16 @@ export const SCENES: Scene[] = [
 		id: 'gotaso-hers',
 		image: '/scene_gotaso_sing.png',
 		frames: [
+			'/scene_gotaso-hers_2.jpg',
 			'/scene_gotaso_sing.png',
 			'/temp/gotaso-determination-forward.png',
 			'/temp/gotaso-seq-market-wide.jpg',
 			'/temp/gotaso-ribbon-slash.jpg',
 			'/temp/gotaso-seq-ford.jpg',
 			'/emotional_gotaso_love_longing.png',
-			'/img_gotaso_01.png'
+			'/img_gotaso_01.png',
+			'/scene_gotaso-hers_4.jpg',
+			'/scene_gotaso-hers_11.jpg'
 		],
 		frameMs: 3200,
 		title: 'Gotaso',
@@ -1004,7 +1161,9 @@ export const SCENES: Scene[] = [
 			'/scene_bupmin_sing.png',
 			'/temp/bupmin-future-king.jpg',
 			'/temp/bupmin-five-principles.jpg',
-			'/temp/bupmin-hwarang-yard.jpg'
+			'/temp/bupmin-hwarang-yard.jpg',
+			'/scene_bupmin-resolve_2.jpg',
+			'/scene_bupmin-resolve_3.jpg'
 		],
 		frameMs: 3400,
 		title: 'Bupmin’s resolve',
@@ -1020,11 +1179,18 @@ export const SCENES: Scene[] = [
 		id: 'haemosu-yuhwa-confession',
 		image: '/scene_haemosu_yuhwa_sing.png',
 		frames: [
-			'/scene_haemosu_yuhwa_sing.png',
 			'/temp/jumong-haemosu-heart-yuhwa-chin.jpg',
+			'/scene_haemosu-yuhwa-confession_4.jpg',
 			'/temp/jumong-haemosu-pov-yuhwa-grin.jpg',
 			'/temp/jumong-haemosu-sky-dusk-lean.jpg',
-			'/temp/jumong-yuhwa-haemosu-two-grin.jpg'
+			'/temp/jumong-yuhwa-haemosu-two-grin.jpg',
+			'/scene_haemosu-yuhwa-confession_2.jpg',
+			'/scene_haemosu-yuhwa-confession_5.jpg',
+			'/scene_haemosu-yuhwa-confession_10.jpg',
+			'/scene_haemosu-yuhwa-confession_12.jpg',
+			'/scene_haemosu-yuhwa-confession_13.jpg',
+			'/scene_haemosu-yuhwa-confession_14.jpg',
+			'/scene_haemosu-yuhwa-confession_16.jpg'
 		],
 		frameMs: 3400,
 		title: 'The Sun and the Water',
@@ -1041,11 +1207,17 @@ export const SCENES: Scene[] = [
 		id: 'jumong-for-sosuno',
 		image: '/scene_jumong_sosuno_sing.png',
 		frames: [
+			'/scene_jumong-for-sosuno_3.jpg',
 			'/scene_jumong_sosuno_sing.png',
 			'/temp/jumong-sosuno-well.jpg',
 			'/temp/jumong-sosuno-seq-kiss-shock.jpg',
 			'/temp/jumong-sosuno-side-almost-kiss.jpg',
-			'/temp/jumong-sosuno-hall-chin.jpg'
+			'/temp/jumong-sosuno-hall-chin.jpg',
+			'/scene_jumong-for-sosuno_2.jpg',
+			'/scene_jumong-for-sosuno_4.jpg',
+			'/scene_jumong-for-sosuno_5.jpg',
+			'/scene_jumong-for-sosuno_10.jpg',
+			'/scene_jumong-for-sosuno_13.jpg'
 		],
 		frameMs: 3400,
 		title: "Jumong's Confession",
@@ -1062,11 +1234,14 @@ export const SCENES: Scene[] = [
 		id: 'ibiga-rightview',
 		image: '/scene_ibiga_rightview_sing.png',
 		frames: [
+			'/scene_ibiga-rightview_12.jpg',
 			'/scene_ibiga_rightview_sing.png',
 			'/temp/ibiga-seq-ridge.jpg',
 			'/temp/rightview-ridge-guard.jpg',
 			'/temp/rightview-seq-face.jpg',
-			'/temp/ibiga-lookdown-face.jpg'
+			'/temp/ibiga-lookdown-face.jpg',
+			'/scene_ibiga-rightview_2.jpg',
+			'/scene_ibiga-rightview_3.jpg'
 		],
 		frameMs: 3400,
 		title: 'As Long As There Is A Sky',
@@ -1083,11 +1258,14 @@ export const SCENES: Scene[] = [
 		id: 'bidam-rebellion',
 		image: '/scene_bidam_rebellion_sing.png',
 		frames: [
+			'/temp/bidam_rebellion_torch.png',
 			'/scene_bidam_rebellion_sing.png',
 			'/temp/bidam-rebellion-wide.jpg',
-			'/temp/bidam_rebellion_torch.png',
 			'/scene_bidam_1.png',
-			'/scene_bidam_3.png'
+			'/scene_bidam_3.png',
+			'/scene_bidam-rebellion_2.jpg',
+			'/scene_bidam-rebellion_3.jpg',
+			'/scene_bidam-rebellion_4.jpg'
 		],
 		frameMs: 3200,
 		title: 'Farewell, My Queen',
@@ -1103,11 +1281,13 @@ export const SCENES: Scene[] = [
 		id: 'pumsuk-loves-gotaso',
 		image: '/scene_pumsuk_gotaso_sing.png',
 		frames: [
-			'/scene_pumsuk_gotaso_sing.png',
 			'/temp/gotaso-pumsuk-warmth.jpg',
+			'/scene_pumsuk_gotaso_sing.png',
 			'/img_gotaso_pumsuk_passion.png',
 			'/temp/gotaso-love-gaze.jpg',
-			'/img_gotaso_04.png'
+			'/img_gotaso_04.png',
+			'/scene_pumsuk-loves-gotaso_2.jpg',
+			'/scene_pumsuk-loves-gotaso_11.jpg'
 		],
 		frameMs: 3400,
 		title: 'Love Spring',

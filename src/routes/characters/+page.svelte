@@ -81,4 +81,27 @@
 		font-size: 0.78rem;
 		line-height: 1.4;
 	}
+
+	/* Phones: the title is a solid band and the map starts under it, so the
+	   filter chips never sit beneath the heading. */
+	@media (max-width: 720px) {
+		.characters-page {
+			--page-chrome-h: calc(3rem + env(safe-area-inset-top, 0px));
+			height: calc(100dvh - var(--tabbar-space));
+			min-height: 0;
+		}
+
+		.chrome {
+			height: var(--page-chrome-h);
+			align-items: center;
+			padding-top: env(safe-area-inset-top, 0px);
+			padding-bottom: 0;
+			background: var(--bg);
+			border-bottom: 1px solid var(--hairline);
+		}
+
+		.lede {
+			display: none;
+		}
+	}
 </style>

@@ -379,6 +379,7 @@
 	.card {
 		display: flex;
 		flex-direction: column;
+		min-width: 0;
 		gap: 0.65rem;
 		padding: 1rem 1.05rem 0.95rem;
 		border: 1px solid var(--hairline);
@@ -638,6 +639,8 @@
 	}
 
 	.score {
+		min-width: 0;
+		overflow-x: auto;
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--panel-sunken) 70%, transparent);
@@ -654,8 +657,35 @@
 	}
 
 	@media (max-width: 640px) {
+		.music {
+			padding-inline: max(0.9rem, env(safe-area-inset-left, 0px));
+		}
+
 		.grid {
-			grid-template-columns: 1fr;
+			grid-template-columns: minmax(0, 1fr);
+		}
+
+		.card {
+			padding: 0.85rem 0.8rem 0.8rem;
+		}
+
+		.card-top {
+			gap: 0.7rem;
+		}
+
+		.sleeve {
+			width: 5.6rem;
+			height: 5.6rem;
+		}
+
+		.sleeve.flag {
+			width: 5.6rem;
+			height: 3.7rem;
+		}
+
+		.play {
+			width: 2.9rem;
+			height: 2.9rem;
 		}
 	}
 </style>

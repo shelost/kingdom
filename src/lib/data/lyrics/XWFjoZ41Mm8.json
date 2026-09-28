@@ -6,131 +6,163 @@
 	"lines": [
 		{
 			"t": 8.18,
-			"text": "When are you gonna come down?"
+			"text": "When are you gonna come down?",
+			"scene": "Second leaving. Harder than the first."
 		},
 		{
 			"t": 12.06,
-			"text": "When are you going to land?"
+			"text": "When are you going to land?",
+			"scene": "My queen. I will not kneel this time"
 		},
 		{
 			"t": 15.89,
-			"text": "I should have stayed on the farm"
+			"text": "I should have stayed on the farm",
+			"scene": "to make the hall feel safe."
 		},
 		{
 			"t": 18.87,
-			"text": "I should have listened to my old man"
+			"text": "I should have listened to my old man",
+			"scene": "The road out is not a fable."
 		},
 		{
 			"t": 23.75,
-			"text": "You know you can't hold me forever"
+			"text": "You know you can't hold me forever",
+			"scene": "It is ash and a decision."
 		},
 		{
 			"t": 27.68,
-			"text": "I didn't sign up with you"
+			"text": "I didn't sign up with you",
+			"scene": "I loved the system enough to try it."
 		},
 		{
 			"t": 31.54,
-			"text": "I'm not a present for your friends to open"
+			"text": "I'm not a present for your friends to open",
+			"scene": "I love you enough to say goodbye"
 		},
 		{
 			"t": 35.53,
-			"text": "This boy's too young to be singing the blues"
+			"text": "This boy's too young to be singing the blues",
+			"scene": "without asking you to bless the fire."
 		},
 		{
 			"t": 50.92,
-			"text": "So goodbye yellow brick road"
+			"text": "So goodbye yellow brick road",
+			"scene": "Don't follow. You have a throne"
 		},
 		{
 			"t": 55.08,
-			"text": "Where the dogs of society howl"
+			"text": "Where the dogs of society howl",
+			"scene": "that still believes in daylight."
 		},
 		{
 			"t": 59.27,
-			"text": "You can't plant me in your penthouse"
+			"text": "You can't plant me in your penthouse",
+			"scene": "I am past daylight."
 		},
 		{
 			"t": 63.14,
-			"text": "I'm going back to my plough"
+			"text": "I'm going back to my plough",
+			"scene": "If you call my name in the smoke"
 		},
 		{
 			"t": 67.06,
-			"text": "Back to the howling old owl in the woods"
+			"text": "Back to the howling old owl in the woods",
+			"scene": "I will hear it and I will not turn"
 		},
 		{
 			"t": 71.15,
-			"text": "Hunting the horny back toad"
+			"text": "Hunting the horny back toad",
+			"scene": "into the man who comes back tame."
 		},
 		{
 			"t": 76.24,
-			"text": "Oh, I've finally decided my future lies"
+			"text": "Oh, I've finally decided my future lies",
+			"scene": "Farewell is a clean word"
 		},
 		{
 			"t": 80.81,
-			"text": "Beyond the yellow brick road"
+			"text": "Beyond the yellow brick road",
+			"scene": "for a filthy hour."
 		},
 		{
 			"t": 98.36,
-			"text": "What do you think you'll do then"
+			"text": "What do you think you'll do then",
+			"scene": "and left me the edge."
 		},
 		{
 			"t": 102.91,
-			"text": "I bet that'll shoot down your plane"
+			"text": "I bet that'll shoot down your plane",
+			"scene": "History can have the argument."
 		},
 		{
 			"t": 106.67,
-			"text": "It'll take you a couple of vodka and tonics"
+			"text": "It'll take you a couple of vodka and tonics",
+			"scene": "You can have the truth, quietly:"
 		},
 		{
 			"t": 110.93,
-			"text": "To set you on your feet again"
+			"text": "To set you on your feet again",
+			"scene": "I did not start as your enemy."
 		},
 		{
 			"t": 115.08,
-			"text": "Maybe you'll get a replacement"
+			"text": "Maybe you'll get a replacement",
+			"scene": "I ended where the door closed."
 		},
 		{
 			"t": 118.81,
-			"text": "There's plenty like me to be found"
+			"text": "There's plenty like me to be found",
+			"scene": "Go inside."
 		},
 		{
 			"t": 122.04,
-			"text": "Mongrels who ain't got a penny"
+			"text": "Mongrels who ain't got a penny",
+			"scene": "I am already on the road"
 		},
 		{
 			"t": 126.92,
-			"text": "Sniffing for tidbits like you on the ground"
+			"text": "Sniffing for tidbits like you on the ground",
+			"scene": "that does not return to your step."
 		},
 		{
 			"t": 142.61,
-			"text": "So goodbye yellow brick road"
+			"text": "So goodbye yellow brick road",
+			"scene": "Bidam."
 		},
 		{
 			"t": 146.67,
-			"text": "Where the dogs of society howl"
+			"text": "Where the dogs of society howl",
+			"scene": "Sunduk."
 		},
 		{
 			"t": 150.96,
-			"text": "You can't plant me in your penthouse"
+			"text": "You can't plant me in your penthouse",
+			"scene": "That was the whole reign"
 		},
 		{
 			"t": 155.05,
-			"text": "I'm going back to my plough"
+			"text": "I'm going back to my plough",
+			"scene": "between two people"
 		},
 		{
 			"t": 159.01,
-			"text": "Back to the howling old owl in the woods"
+			"text": "Back to the howling old owl in the woods",
+			"scene": "who ran out of room."
 		},
 		{
 			"t": 163.07,
-			"text": "Hunting the horny back toad"
+			"text": "Hunting the horny back toad",
+			"scene": "Goodbye."
 		},
 		{
 			"t": 168.02,
-			"text": "Oh, I've finally decided my future lies"
+			"text": "Oh, I've finally decided my future lies",
+			"scene": "Not gentle."
 		},
 		{
 			"t": 172.79,
-			"text": "Beyond the yellow brick road"
+			"text": "Beyond the yellow brick road",
+			"scene": "Exact."
 		}
 	]
 }

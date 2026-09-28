@@ -5,179 +5,205 @@
 	"artistName": "이승기",
 	"lines": [
 		{
+			"t": 0,
+			"text": "♪",
+			"scene": "She crosses the yard."
+		},
+		{
+			"t": 5,
+			"text": "♪",
+			"scene": "I lose the count."
+		},
+		{
+			"t": 10,
+			"text": "♪",
+			"scene": "Princess. Don't look so pleased."
+		},
+		{
+			"t": 15,
+			"text": "♪",
+			"scene": "I am pleased. That's the problem."
+		},
+		{
+			"t": 20,
+			"text": "♪",
+			"scene": "They told me to grow up first."
+		},
+		{
 			"t": 24.35,
 			"text": "나를 동생으로만 그냥 그정도로만",
-			"scene": "She crosses the yard. I lose the count."
+			"scene": "I grew toward you instead."
 		},
 		{
 			"t": 30.33,
 			"text": "귀엽다고 하지만 누난 내게 여자야",
-			"scene": "Don't look up. I'm not looking."
+			"scene": "You pat my head like a boy."
 		},
 		{
 			"t": 36.32,
 			"text": "니가 뭘 알겠냐고 크면 알게 된다고",
-			"scene": "I am. She knows."
+			"scene": "I am not here to be your boy."
 		},
 		{
 			"t": 42.31,
 			"text": "까분다고 하지만 누난 내게 여자야",
-			"scene": "Princess. I didn't say it out loud."
+			"scene": "Call it too early. Call it wrong."
 		},
 		{
 			"t": 48.32,
 			"text": "누나가 누굴 만나든지",
-			"scene": "The others can have names."
+			"scene": "I wanted you from the first morning."
 		},
 		{
 			"t": 51.6,
 			"text": "누굴 만나 뭘 하든지",
-			"scene": "She gets the one I won't use."
+			"scene": "Not the crown. The walk."
 		},
 		{
 			"t": 54.3,
 			"text": "난 그냥 기다릴뿐",
-			"scene": "I'll wait on the step."
+			"scene": "The way you pretend not to see me"
 		},
 		{
 			"t": 59.8,
 			"text": "누난 내 여자니까 너는 내 여자니까",
-			"scene": "Call her what you like."
+			"scene": "and then see nothing else."
 		},
 		{
 			"t": 66.49,
 			"text": "너라고 부를께 뭐라고 하든지",
-			"scene": "I already know which one."
+			"scene": "My princess."
 		},
 		{
 			"t": 72.52,
 			"text": "남자로 느끼도록 꽉 안아줄께",
-			"scene": "They can pass. She doesn't."
+			"scene": "I will say it until the yard blushes."
 		},
 		{
 			"t": 78.57,
 			"text": "너라고 부를께",
-			"scene": "I grinned. She kept walking."
+			"scene": "If you scold me, I'll take the scold."
 		},
 		{
 			"t": 81.35,
 			"text": "뭐라고 하든 상관없어요 놀라지 말아요",
-			"scene": "That was enough to wreck the morning."
+			"scene": "If you laugh, I'll take that harder."
 		},
 		{
 			"t": 90.3,
 			"text": "알고보면 어린 여자라니까",
-			"scene": "I told myself it was the yard."
+			"scene": "Don't save me from this."
 		},
 		{
 			"t": 108.29,
 			"text": "어딜 갔다 왔는지 어디가 아픈건지",
-			"scene": "It isn't the yard."
+			"scene": "I know the rank. I know the years."
 		},
 		{
 			"t": 114.28,
 			"text": "슬퍼보이네요 누나답지 않네요",
-			"scene": "If she turns, I stay."
+			"scene": "I also know your mouth almost smiled."
 		},
 		{
 			"t": 120.25,
 			"text": "무슨일 있냐고 무슨일이냐고",
-			"scene": "If she doesn't, I stay."
+			"scene": "Come here. Not a bow."
 		},
 		{
 			"t": 126.32,
 			"text": "말해보라 했더니 머릴 쓰다듬네요",
-			"scene": "Don't make me use the title."
+			"scene": "A man, even a young one,"
 		},
 		{
 			"t": 132.29,
 			"text": "누가 누나를 울린다면 그 누가 됐건간에",
-			"scene": "I'll say the rest."
+			"scene": "can tell when a princess is lonely"
 		},
 		{
 			"t": 138.25,
 			"text": "난 절대 참지 않아",
-			"scene": "Mine, if she wants the idiot."
+			"scene": "in a way rank can't fix."
 		},
 		{
 			"t": 143.84,
 			"text": "누난 내 여자니까 너는 내 여자니까",
-			"scene": "Not the court. Her."
+			"scene": "I won't be noble about it."
 		},
 		{
 			"t": 150.28,
 			"text": "너라고 부를께 뭐라고 하든지",
-			"scene": "The walk past me was on purpose."
+			"scene": "I'll be here."
 		},
 		{
 			"t": 156.31,
 			"text": "슬픔이 잊혀지도록 꽉 안아줄께",
-			"scene": "I saw the blush. She saw me see it."
+			"scene": "When you pass, the numbers fall out of me."
 		},
 		{
 			"t": 162.29,
 			"text": "너라고 부를께",
-			"scene": "Good."
+			"scene": "Good. Let them fall."
 		},
 		{
 			"t": 165.3,
 			"text": "뭐라고 하든 상관없어요 내품에 안겨요",
-			"scene": "I can wait out the lesson."
+			"scene": "You are not a lesson."
 		},
 		{
 			"t": 174.3,
 			"text": "알고보면 여린 여자라니까",
-			"scene": "I can wait out the crown they'll put on her."
+			"scene": "You are the reason the lesson stops."
 		},
 		{
 			"t": 179.43,
 			"text": "좋아하니까 이러는 거겠지",
-			"scene": "I won't wait to look."
+			"scene": "My princess. Mine in the only way"
 		},
 		{
 			"t": 185.84,
 			"text": "이러면 안되는거 알아요",
-			"scene": "Come back by the pine."
+			"scene": "that doesn't need a decree."
 		},
 		{
 			"t": 191.52,
 			"text": "좋아하니까 좋아하니까",
-			"scene": "I'll be the one not studying."
+			"scene": "Stay in the yard one breath longer."
 		},
 		{
 			"t": 197.87,
 			"text": "누난 내여자니까 너는 내 여자니까",
-			"scene": "Princess."
+			"scene": "I already lost the count."
 		},
 		{
 			"t": 203.83,
 			"text": "네게 미쳤으니까",
-			"scene": "There. I said it to the dirt."
+			"scene": "I'll lose it again tomorrow."
 		},
 		{
 			"t": 207.31,
 			"text": "미안해 하지마 난 행복하니까",
-			"scene": "Not to them."
+			"scene": "On purpose."
 		},
 		{
 			"t": 213.32,
 			"text": "널 바라만 봐도 난 눈물이 흘러",
-			"scene": "She heard it anyway."
+			"scene": "And she's still the one."
 		},
 		{
 			"t": 219.27,
 			"text": "너라고 부를께",
-			"scene": "Say I'm young. I heard you."
+			"scene": "Princess."
 		},
 		{
 			"t": 222.35,
 			"text": "뭐라고 하든 상관없어요 곁에만 있어요",
-			"scene": "I'm still on this step."
+			"scene": "Mine."
 		},
 		{
 			"t": 231.31,
 			"text": "결국엔 넌 내 여자라니까",
-			"scene": "And she's still the one."
+			"scene": "Still."
 		}
-	]
+	],
+	"instrumentalGaps": true
 }

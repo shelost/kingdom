@@ -11,7 +11,10 @@
 		kind = 'hero' as 'hero' | 'thumb' | 'cue',
 		priority = false,
 		sizes = '(max-width: 900px) 100vw, 72vw',
-		onactivate
+		onactivate,
+		onmenu,
+		onindex,
+		cue = null
 	}: {
 		frames: readonly string[];
 		alt?: string;
@@ -23,6 +26,12 @@
 		sizes?: string;
 		/** Click on the still (not the story bar) — e.g. arm + play. */
 		onactivate?: () => void;
+		/** Right-click on the still. Omit to keep the browser menu. */
+		onmenu?: (event: MouseEvent, index: number) => void;
+		/** Fires when the visible frame changes. */
+		onindex?: (index: number) => void;
+		/** Bump `token` to show `index` and restart the clock there. */
+		cue?: { index: number; token: number } | null;
 	} = $props();
 
 	let index = $state(0);
@@ -52,13 +61,16 @@
 		const token = restartToken;
 		void token;
 
+		/* A deleted still shrinks the list: stay on the same slot, not frame one. */
+		const kept = Math.min(untrack(() => index), Math.max(0, n - 1));
 		if (!live || n < 2 || reduceMotion) {
-			index = 0;
+			index = live ? kept : 0;
 			progress = live && n >= 2 && reduceMotion ? 1 : 0;
 			return;
 		}
 
-		let frame = untrack(() => index);
+		let frame = kept;
+		index = frame;
 		progress = 0;
 		let start = performance.now();
 		let raf = 0;
@@ -79,13 +91,31 @@
 		return () => cancelAnimationFrame(raf);
 	});
 
-	function jumpTo(i: number, e: MouseEvent) {
-		e.preventDefault();
-		e.stopPropagation();
+	function show(i: number) {
 		if (i < 0 || i >= list.length) return;
 		index = i;
 		progress = 0;
 		restartToken += 1;
+	}
+
+	/* Only a new cue token jumps. Everything else is untracked so segment clicks stick. */
+	$effect(() => {
+		const target = cue;
+		if (!target) return;
+		void target.token;
+		untrack(() => show(target.index));
+	});
+
+	$effect(() => {
+		const i = index;
+		const report = onindex;
+		untrack(() => report?.(i));
+	});
+
+	function jumpTo(i: number, e: MouseEvent) {
+		e.preventDefault();
+		e.stopPropagation();
+		show(i);
 	}
 
 	function fillFor(i: number): number {
@@ -137,6 +167,12 @@
 		aria-label={alt || 'Scene still'}
 		onclick={onStillClick}
 		onkeydown={onStillKey}
+		oncontextmenu={onmenu
+			? (e) => {
+					e.preventDefault();
+					onmenu(e, index);
+				}
+			: undefined}
 	>
 		{#each list as src, i (src)}
 			<img

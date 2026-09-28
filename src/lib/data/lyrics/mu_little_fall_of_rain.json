@@ -1,0 +1,180 @@
+{
+	"id": "mu_little_fall_of_rain",
+	"lines": [
+		{
+			"t": 0,
+			"text": "♪",
+			"scene": "Don't arrange your face."
+		},
+		{
+			"t": 5,
+			"text": "♪",
+			"scene": "I'm the one dying. I still get to talk."
+		},
+		{
+			"t": 10,
+			"text": "♪",
+			"scene": "Yushin. Kneel if you must."
+		},
+		{
+			"t": 15,
+			"text": "♪",
+			"scene": "I can see the crown of your head"
+		},
+		{
+			"t": 20,
+			"text": "♪",
+			"scene": "and it is not the view I wanted."
+		},
+		{
+			"t": 25,
+			"text": "♪",
+			"scene": "Look up. There."
+		},
+		{
+			"t": 29.94,
+			"text": "Don't you fret, M'sieur Marius, I don't feel any pain",
+			"scene": "Rain on the step. Ordinary."
+		},
+		{
+			"t": 38.72,
+			"text": "A little fall of rain can hardly hurt me now",
+			"scene": "Don't make it an omen just because"
+		},
+		{
+			"t": 47.51,
+			"text": "You're here, that's all I need to know",
+			"scene": "I am running out of hours."
+		},
+		{
+			"t": 54.16,
+			"text": "And you will keep me safe",
+			"scene": "I will not keep you."
+		},
+		{
+			"t": 58.36,
+			"text": "And you will keep me close",
+			"scene": "I told you that when I could stand."
+		},
+		{
+			"t": 63.05,
+			"text": "And rain will make the flowers grow",
+			"scene": "It remains true, and I hate it"
+		},
+		{
+			"t": 70.41,
+			"text": "But you will live, 'Ponine, dear God above",
+			"scene": "less than I hate you being noble"
+		},
+		{
+			"t": 76.77,
+			"text": "If I could heal your wounds with words of love",
+			"scene": "at the foot of a bed."
+		},
+		{
+			"t": 83.03,
+			"text": "Just hold me now, and let it be",
+			"scene": "Come closer than the physicians."
+		},
+		{
+			"t": 88.5,
+			"text": "Shelter me, comfort me",
+			"scene": "They count. You used to count."
+		},
+		{
+			"t": 95.33,
+			"text": "You would live a hundred years if I could show you how",
+			"scene": "Count me instead, one last time,"
+		},
+		{
+			"t": 103.62,
+			"text": "I won't desert you now, the rain can't hurt me now",
+			"scene": "I loved the marshal and the man"
+		},
+		{
+			"t": 112.37,
+			"text": "This rain will wash away what's past",
+			"scene": "for the chronicle's comfort."
+		},
+		{
+			"t": 118.39,
+			"text": "And you will keep me safe",
+			"scene": "If I go first, don't you dare"
+		},
+		{
+			"t": 122.41,
+			"text": "And you will keep me close",
+			"scene": "turn me into a lesson before dusk."
+		},
+		{
+			"t": 126.91,
+			"text": "I'll sleep in your embrace at last",
+			"scene": "Be wrecked. Be here."
+		},
+		{
+			"t": 134.52,
+			"text": "The rain that brings you here is Heaven-blessed",
+			"scene": "Then be the country's sword"
+		},
+		{
+			"t": 141.62,
+			"text": "The skies begin to clear and I'm at rest",
+			"scene": "the way you always were"
+		},
+		{
+			"t": 149.41,
+			"text": "A breath away from where you are",
+			"scene": "when I was still vain enough"
+		},
+		{
+			"t": 154.09,
+			"text": "I've come home from so far",
+			"scene": "to pretend I might keep you."
+		},
+		{
+			"t": 162.26,
+			"text": "So don't you fret (hush-a-bye), M'sieur Marius (dear Eponine)",
+			"scene": "Moon palace. Last bed."
+		},
+		{
+			"t": 167.06,
+			"text": "I don't (you won't) feel any pain",
+			"scene": "You."
+		},
+		{
+			"t": 172.24,
+			"text": "A little fall of rain can hardly hurt me (you) now",
+			"scene": "I see you."
+		},
+		{
+			"t": 181.11,
+			"text": "(I'm here) that's all I need to know",
+			"scene": "That is the luxury I saved."
+		},
+		{
+			"t": 188.87,
+			"text": "And you will keep me safe (I will stay with you)",
+			"scene": "Stay until the rain decides"
+		},
+		{
+			"t": 192.31,
+			"text": "('Til you are sleeping) and you will keep me close",
+			"scene": "it has seen enough of us."
+		},
+		{
+			"t": 197.72,
+			"text": "And rain (and rain) will make the flowers (will make the flowers)",
+			"scene": "I'll go when it does."
+		},
+		{
+			"t": 208.64,
+			"text": "Grow",
+			"scene": "Not before I've had your eyes."
+		}
+	],
+	"source": "lrclib",
+	"trackName": "A Little Fall of Rain",
+	"artistName": "Les Miserables",
+	"offset": 0,
+	"instrumentalGaps": true
+}

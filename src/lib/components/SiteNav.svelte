@@ -3,33 +3,18 @@
 	import { resolve } from '$app/paths';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
 	import { toggleTheme } from '$lib/themeUi.svelte';
-
-	const LINKS = [
-		{ href: '/', label: 'Chronicle' },
-		{ href: '/wiki', label: 'Wiki' },
-		{ href: '/characters', label: 'Characters' },
-		{ href: '/map', label: 'Map' },
-		{ href: '/music', label: 'Music' },
-		{ href: '/scenes', label: 'Scenes' },
-		{ href: '/grade', label: 'Grade' }
-	] as const;
+	import { SITE_LINKS, isSiteLinkActive } from '$lib/siteLinks';
+	import ThemeIcon from './ThemeIcon.svelte';
 
 	let path = $derived(page.url.pathname);
 </script>
 
 <nav class="site-nav" aria-label="Site">
-	{#each LINKS as link (link.href)}
+	{#each SITE_LINKS as link (link.href)}
 		{@const href = hrefWithNsfw(resolve(link.href), page.url)}
-		{@const active =
-			link.href === '/'
-				? path === '/' || path === href
-				: path === link.href || path === href || path.startsWith(`${link.href}/`)}
+		{@const active = isSiteLinkActive(link, path, href)}
 		<a {href} class:active aria-current={active ? 'page' : undefined}>{link.label}</a>
 	{/each}
-	<!--
-	  Icon visibility is CSS-driven from html[data-theme] so SSR and the
-	  pre-paint boot script never disagree (avoids hydration mismatch).
-	-->
 	<button
 		type="button"
 		class="theme-toggle"
@@ -37,8 +22,7 @@
 		aria-label="Toggle light and dark mode"
 		title="Toggle light and dark mode"
 	>
-		<span class="material-symbols-outlined icon-for-dark" aria-hidden="true">light_mode</span>
-		<span class="material-symbols-outlined icon-for-light" aria-hidden="true">dark_mode</span>
+		<ThemeIcon />
 	</button>
 </nav>
 
@@ -111,21 +95,15 @@
 		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
 	}
 
-	.theme-toggle .material-symbols-outlined {
+	.theme-toggle :global(.material-symbols-outlined) {
 		grid-area: 1 / 1;
 		font-size: 1rem;
 	}
 
-	/* Default (dark / no attribute): offer the sun. Light theme: offer the moon. */
-	.icon-for-light {
-		display: none;
-	}
-
-	:global(html[data-theme='light']) .icon-for-dark {
-		display: none;
-	}
-
-	:global(html[data-theme='light']) .icon-for-light {
-		display: inline-block;
+	/* Phones navigate from the tab bar; the pill rows would only wrap. */
+	@media (max-width: 720px) {
+		:global(html.has-tabbar) .site-nav {
+			display: none;
+		}
 	}
 </style>

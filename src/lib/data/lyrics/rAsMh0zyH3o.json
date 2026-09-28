@@ -6,219 +6,289 @@
 	"lines": [
 		{
 			"t": 0.68,
-			"text": "난 이제 더 이상"
+			"text": "난 이제 더 이상",
+			"scene": "Daeya. I walk it like I own the looking."
+		},
+		{
+			"t": 5.68,
+			"text": "♪",
+			"scene": "Maehwa. Say it with your chin up."
+		},
+		{
+			"t": 10.68,
+			"text": "♪",
+			"scene": "The garrison thinks a girl becomes"
+		},
+		{
+			"t": 15.68,
+			"text": "♪",
+			"scene": "a woman when they decide."
 		},
 		{
 			"t": 19.53,
-			"text": "그대여 뭘 망설이나요"
+			"text": "그대여 뭘 망설이나요",
+			"scene": "Wrong clock."
 		},
 		{
 			"t": 23.12,
-			"text": "그대 원하고 있죠"
+			"text": "그대 원하고 있죠",
+			"scene": "I decide at the well, the store,"
 		},
 		{
 			"t": 25.44,
-			"text": "눈 앞에 있는 날 (눈 앞에 있는 날)"
+			"text": "눈 앞에 있는 날 (눈 앞에 있는 날)",
+			"scene": "the post, the feast where the hands"
 		},
 		{
 			"t": 28.7,
-			"text": "알아요 그대 뭘 원하는지"
+			"text": "알아요 그대 뭘 원하는지",
+			"scene": "finally stop pretending."
 		},
 		{
 			"t": 32.68,
-			"text": "뭘 기다리는지"
+			"text": "뭘 기다리는지",
+			"scene": "Coming of age is not a ribbon."
 		},
 		{
 			"t": 35.27,
-			"text": "그대여 이리와요 (그대여 이리와요)"
+			"text": "그대여 이리와요 (그대여 이리와요)",
+			"scene": "It is the hour you notice"
 		},
 		{
 			"t": 38.72,
-			"text": "나도 언제까지 그대가"
+			"text": "나도 언제까지 그대가",
+			"scene": "everyone wanted the ribbon"
 		},
 		{
 			"t": 42.43,
-			"text": "생각하는 소녀가 아니에요"
+			"text": "생각하는 소녀가 아니에요",
+			"scene": "more than they wanted you thinking."
 		},
 		{
 			"t": 45.62,
-			"text": "이제 나 여자로 태어났죠"
+			"text": "이제 나 여자로 태어났죠",
+			"scene": "I think."
 		},
 		{
 			"t": 49.61,
-			"text": "기다려준 그대가 고마울 뿐이죠"
+			"text": "기다려준 그대가 고마울 뿐이죠",
+			"scene": "Watch."
 		},
 		{
 			"t": 53.69,
-			"text": "나 이제 그대 입맞춤에 여자가 돼요"
+			"text": "나 이제 그대 입맞춤에 여자가 돼요",
+			"scene": "If I flirt, it is with my eyes open."
 		},
 		{
 			"t": 57.92,
-			"text": "난 이제 더 이상 소녀가 아니에요"
+			"text": "난 이제 더 이상 소녀가 아니에요",
+			"scene": "The yard can survive that."
 		},
 		{
 			"t": 61.23,
-			"text": "그대 더 이상 망설이지 말아요"
+			"text": "그대 더 이상 망설이지 말아요",
+			"scene": "A boy who can't, can't have the walk."
 		},
 		{
 			"t": 63.57,
-			"text": "그대 기다렸던 만큼"
+			"text": "그대 기다렸던 만큼",
+			"scene": "Families at the table. I see them."
 		},
 		{
 			"t": 65.16,
-			"text": "나도 오늘을 기다렸어요"
+			"text": "나도 오늘을 기다렸어요",
+			"scene": "I also see the door and the road"
 		},
 		{
 			"t": 68.62,
-			"text": "장미 스무송일 내게 줘요"
+			"text": "장미 스무송일 내게 줘요",
+			"scene": "and the version of me that leaves"
 		},
 		{
 			"t": 70.73,
-			"text": "그대 사랑을 느낄 수 있게"
+			"text": "그대 사랑을 느낄 수 있게",
+			"scene": "without asking the table's permission."
 		},
 		{
 			"t": 73.39,
-			"text": "그댈 기다리며"
+			"text": "그댈 기다리며",
+			"scene": "Don't call me early."
 		},
 		{
 			"t": 74.59,
-			"text": "나 이제 눈을 감아요"
+			"text": "나 이제 눈을 감아요",
+			"scene": "Call me accurate."
 		},
 		{
 			"t": 79.61,
-			"text": "그대여 나 허락 할래요"
+			"text": "그대여 나 허락 할래요",
+			"scene": "I like the weight of a look"
 		},
 		{
 			"t": 83.63,
-			"text": "나만을 바라보던 그대의 사랑을"
+			"text": "나만을 바라보던 그대의 사랑을",
+			"scene": "when I give it back harder."
 		},
 		{
 			"t": 89.46,
-			"text": "사랑은 너무나 달콤하고"
+			"text": "사랑은 너무나 달콤하고",
+			"scene": "There. Blush if you want."
 		},
 		{
 			"t": 93.17,
-			"text": "향기로운거란 걸"
+			"text": "향기로운거란 걸",
+			"scene": "I won't file it for you."
 		},
 		{
 			"t": 95.7,
-			"text": "내게 가르쳐줘요"
+			"text": "내게 가르쳐줘요",
+			"scene": "Sacred? No. Mine."
 		},
 		{
 			"t": 99.53,
-			"text": "항상 힘들어하는 그대"
+			"text": "항상 힘들어하는 그대",
+			"scene": "Daeya raised me on grain and rumor."
 		},
 		{
 			"t": 103.39,
-			"text": "기다려 주던 그대"
+			"text": "기다려 주던 그대",
+			"scene": "I kept the grain. I improved the rumor."
 		},
 		{
 			"t": 105.58,
-			"text": "모습 바라보는"
+			"text": "모습 바라보는",
+			"scene": "When they say she's ready"
 		},
 		{
 			"t": 107.97,
-			"text": "내 마음도 아팠어요"
+			"text": "내 마음도 아팠어요",
+			"scene": "tell them she was ready"
 		},
 		{
 			"t": 110.33,
-			"text": "하지만 이제 내게"
+			"text": "하지만 이제 내게",
+			"scene": "before their sentence ended."
 		},
 		{
 			"t": 112.53,
-			"text": "더 기다려야 될"
+			"text": "더 기다려야 될",
+			"scene": "The feast is loud. Good."
 		},
 		{
 			"t": 115.04,
-			"text": "이유가 없어지는 날이 온 거에요"
+			"text": "이유가 없어지는 날이 온 거에요",
+			"scene": "Loud means nobody owns the quiet"
 		},
 		{
 			"t": 119.08,
-			"text": "난 이제 더 이상 소녀가 아니에요"
+			"text": "난 이제 더 이상 소녀가 아니에요",
+			"scene": "except the person who stops talking."
 		},
 		{
 			"t": 121.56,
-			"text": "그대 더 이상 망설이지 말아요"
+			"text": "그대 더 이상 망설이지 말아요",
+			"scene": "I can stop. Watch them lean."
 		},
 		{
 			"t": 123.89,
-			"text": "그대 기다렸던 만큼"
+			"text": "그대 기다렸던 만큼",
+			"scene": "Power is a pause with good posture."
 		},
 		{
 			"t": 126.08,
-			"text": "나도 오늘을 기다렸어요"
+			"text": "나도 오늘을 기다렸어요",
+			"scene": "I practice."
 		},
 		{
 			"t": 128.63,
-			"text": "장미 스무송일 내게 줘요"
+			"text": "장미 스무송일 내게 줘요",
+			"scene": "If you want a dance, ask."
 		},
 		{
 			"t": 131.36,
-			"text": "그대 사랑을 느낄 수 있게"
+			"text": "그대 사랑을 느낄 수 있게",
+			"scene": "If you want a wife-shaped story,"
 		},
 		{
 			"t": 133.5,
-			"text": "그댈 기다리며"
+			"text": "그댈 기다리며",
+			"scene": "write it about someone milder."
 		},
 		{
 			"t": 134.77,
-			"text": "나 이제 눈을 감아요"
+			"text": "나 이제 눈을 감아요",
+			"scene": "I am the age I say I am."
 		},
 		{
 			"t": 148.19,
-			"text": "난 이제 더 이상"
+			"text": "난 이제 더 이상",
+			"scene": "I am the trouble I feel like being."
 		},
 		{
 			"t": 157.02,
-			"text": "나도 언제까지 그대가"
+			"text": "나도 언제까지 그대가",
+			"scene": "Smile, Maehwa."
 		},
 		{
 			"t": 160.97,
-			"text": "생각하는 소녀가 아니에요"
+			"text": "생각하는 소녀가 아니에요",
+			"scene": "You earned the teeth."
 		},
 		{
 			"t": 165.21,
-			"text": "이제 나 여자로 태어났죠"
+			"text": "이제 나 여자로 태어났죠",
+			"scene": "The yard is yours for the length"
 		},
 		{
 			"t": 168.35,
-			"text": "기다려준 그대가 고마울 뿐이죠"
+			"text": "기다려준 그대가 고마울 뿐이죠",
+			"scene": "of this crossing."
 		},
 		{
 			"t": 172.24,
-			"text": "나 이제 그대 입맞춤에 여자가 돼요"
+			"text": "나 이제 그대 입맞춤에 여자가 돼요",
+			"scene": "Take the long way."
 		},
 		{
 			"t": 176.95,
-			"text": "(Whoo!)난 이제 더 이상 소녀가 아니에요"
+			"text": "(Whoo!)난 이제 더 이상 소녀가 아니에요",
+			"scene": "Let them turn their heads"
 		},
 		{
 			"t": 179.97,
-			"text": "그대 더 이상 망설이지 말아요"
+			"text": "그대 더 이상 망설이지 말아요",
+			"scene": "and call it wind."
 		},
 		{
 			"t": 182.38,
-			"text": "그대 기다렸던 만큼"
+			"text": "그대 기다렸던 만큼",
+			"scene": "It isn't wind."
 		},
 		{
 			"t": 184.24,
-			"text": "나도 오늘을 기다렸어요"
+			"text": "나도 오늘을 기다렸어요",
+			"scene": "It's me, grown,"
 		},
 		{
 			"t": 186.97,
-			"text": "장미 스무송일 내게 줘요"
+			"text": "장미 스무송일 내게 줘요",
+			"scene": "and not a bit sorry."
 		},
 		{
 			"t": 189.47,
-			"text": "그대 사랑을 느낄 수 있게"
+			"text": "그대 사랑을 느낄 수 있게",
+			"scene": "Again, from the well."
 		},
 		{
 			"t": 191.79,
-			"text": "그댈 기다리며"
+			"text": "그댈 기다리며",
+			"scene": "This time they move."
 		},
 		{
 			"t": 193.03,
-			"text": "나 이제 눈을 감아요"
+			"text": "나 이제 눈을 감아요",
+			"scene": "Mine."
 		}
-	]
+	],
+	"instrumentalGaps": true
 }

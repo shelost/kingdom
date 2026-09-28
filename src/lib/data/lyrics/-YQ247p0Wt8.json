@@ -5,124 +5,200 @@
 	"artistName": "Yim Jae Beum",
 	"lines": [
 		{
+			"t": 0,
+			"text": "♪",
+			"scene": "Sosuno. Look at me."
+		},
+		{
+			"t": 5,
+			"text": "♪",
+			"scene": "Not the well. Me."
+		},
+		{
+			"t": 10,
+			"text": "♪",
+			"scene": "I have been easy all morning"
+		},
+		{
 			"t": 13.55,
-			"text": "어쩜 우린 복잡한 인연에"
+			"text": "어쩜 우린 복잡한 인연에",
+			"scene": "and I am done being easy."
 		},
 		{
 			"t": 20.54,
-			"text": "서로 엉켜 있는 사람인가 봐"
+			"text": "서로 엉켜 있는 사람인가 봐",
+			"scene": "You counted me like grain."
 		},
 		{
 			"t": 27.5,
-			"text": "나는 매일 네게 갚지도 못할 만큼 많은"
+			"text": "나는 매일 네게 갚지도 못할 만큼 많은",
+			"scene": "I let you. I liked it."
 		},
 		{
 			"t": 35.79,
-			"text": "빚을 지고 있어"
+			"text": "빚을 지고 있어",
+			"scene": "Your mouth is the sharp thing"
 		},
 		{
 			"t": 41.72,
-			"text": "연인처럼 때론 남남처럼"
+			"text": "연인처럼 때론 남남처럼",
+			"scene": "and I keep walking back to it."
 		},
 		{
 			"t": 48.48,
-			"text": "계속 살아가도 괜찮은 걸까"
+			"text": "계속 살아가도 괜찮은 걸까",
+			"scene": "I am not noble about this."
 		},
 		{
 			"t": 55.35,
-			"text": "그렇게도 많은 잘못과 잦은 이별에도"
+			"text": "그렇게도 많은 잘못과 잦은 이별에도",
+			"scene": "I want you. There. I said it."
 		},
 		{
 			"t": 63.72,
-			"text": "항상 거기 있는 너"
+			"text": "항상 거기 있는 너",
+			"scene": "Not the village. Not the bow."
 		},
 		{
 			"t": 69.31,
-			"text": "날 세상에서 제대로 살게 해줄"
+			"text": "날 세상에서 제대로 살게 해줄",
+			"scene": "You."
 		},
 		{
 			"t": 76.33,
-			"text": "유일한 사람이 너란 걸 알아"
+			"text": "유일한 사람이 너란 걸 알아",
+			"scene": "If I leave tonight"
 		},
 		{
 			"t": 83.19,
-			"text": "나 후회 없이 살아가기 위해"
+			"text": "나 후회 없이 살아가기 위해",
+			"scene": "I leave with your name in my teeth."
 		},
 		{
 			"t": 90.17,
-			"text": "너를 붙잡아야 할 테지만"
+			"text": "너를 붙잡아야 할 테지만",
+			"scene": "Father."
 		},
 		{
 			"t": 95.65,
-			"text": "내 거친 생각과 불안한 눈빛과"
+			"text": "내 거친 생각과 불안한 눈빛과",
+			"scene": "If you are in that empty sky"
 		},
 		{
 			"t": 102.24,
-			"text": "그걸 지켜보는 너"
+			"text": "그걸 지켜보는 너",
+			"scene": "stop grinning and listen."
 		},
 		{
 			"t": 105.81,
-			"text": "그건 아마도 전쟁 같은 사랑"
+			"text": "그건 아마도 전쟁 같은 사랑",
+			"scene": "You put a sun in my blood"
 		},
 		{
 			"t": 111.25,
-			"text": "난 위험하니까 사랑하니까"
+			"text": "난 위험하니까 사랑하니까",
+			"scene": "and a girl in my way."
 		},
 		{
 			"t": 121.5,
-			"text": "너에게서 떠나 줄꺼야"
+			"text": "너에게서 떠나 줄꺼야",
+			"scene": "I am not asking you to choose."
+		},
+		{
+			"t": 126.5,
+			"text": "♪",
+			"scene": "I already chose."
+		},
+		{
+			"t": 131.5,
+			"text": "♪",
+			"scene": "She is the woman I love."
+		},
+		{
+			"t": 136.5,
+			"text": "♪",
+			"scene": "The egg, the horse, the road south —"
+		},
+		{
+			"t": 141.5,
+			"text": "♪",
+			"scene": "I will take them."
+		},
+		{
+			"t": 146.5,
+			"text": "♪",
+			"scene": "I will found the kingdom"
+		},
+		{
+			"t": 151.5,
+			"text": "♪",
+			"scene": "you were too bright to sit in."
 		},
 		{
 			"t": 152.78,
-			"text": "날 세상에서 제대로 살게 해줄"
+			"text": "날 세상에서 제대로 살게 해줄",
+			"scene": "But I will not found it"
 		},
 		{
 			"t": 159.76,
-			"text": "유일한 사람이 너란 걸 알아"
+			"text": "유일한 사람이 너란 걸 알아",
+			"scene": "as a man who pretends"
 		},
 		{
 			"t": 166.88,
-			"text": "나 후회 없이 살아가기 위해"
+			"text": "나 후회 없이 살아가기 위해",
+			"scene": "he did not want her first."
 		},
 		{
 			"t": 173.64,
-			"text": "너를 붙잡아야 할 테지만"
+			"text": "너를 붙잡아야 할 테지만",
+			"scene": "Sosuno stays in the story."
 		},
 		{
 			"t": 179.08,
-			"text": "내 거친 생각과 불안한 눈빛과"
+			"text": "내 거친 생각과 불안한 눈빛과",
+			"scene": "You can have the mission."
 		},
 		{
 			"t": 185.92,
-			"text": "그걸 지켜보는 너"
+			"text": "그걸 지켜보는 너",
+			"scene": "She has me."
 		},
 		{
 			"t": 189.35,
-			"text": "그건 아마도 (전쟁 같은 사랑)"
+			"text": "그건 아마도 (전쟁 같은 사랑)",
+			"scene": "Tell the river."
 		},
 		{
 			"t": 194.66,
-			"text": "(난) 위험하니까 사랑하니까"
+			"text": "(난) 위험하니까 사랑하니까",
+			"scene": "Tell the Buyeo yard."
 		},
 		{
 			"t": 205.21,
-			"text": "너에게서 떠나 줄꺼야"
+			"text": "너에게서 떠나 줄꺼야",
+			"scene": "Tell whoever is still counting."
 		},
 		{
 			"t": 211.15,
-			"text": "Oh-ooh-oh-ooh-oh-ooh-oh"
+			"text": "Oh-ooh-oh-ooh-oh-ooh-oh",
+			"scene": "Jumong goes."
 		},
 		{
 			"t": 215.55,
-			"text": "너를 위해"
+			"text": "너를 위해",
+			"scene": "And he goes hers."
 		},
 		{
 			"t": 221.03,
-			"text": "(떠날꺼야)"
+			"text": "(떠날꺼야)",
+			"scene": "Father, keep the sky."
 		},
 		{
 			"t": 235.18,
-			"text": "감사합니다 (hoo)"
+			"text": "감사합니다 (hoo)",
+			"scene": "I will keep her."
 		}
-	]
+	],
+	"instrumentalGaps": true
 }

@@ -1,19 +1,28 @@
 <script lang="ts">
-	import { onMount, tick } from 'svelte';
+	import { onMount, tick, untrack } from 'svelte';
+	import type { Attachment } from 'svelte/attachments';
+	import { MediaQuery } from 'svelte/reactivity';
 	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SceneMobile from '$lib/components/SceneMobile.svelte';
 	import SceneLyrics from '$lib/components/SceneLyrics.svelte';
 	import ScenePlayer from '$lib/components/ScenePlayer.svelte';
 	import SceneLoop from '$lib/components/SceneLoop.svelte';
+	import SceneFrameEdit from '$lib/components/SceneFrameEdit.svelte';
+	import FrameMenu from '$lib/components/FrameMenu.svelte';
+	import AlbumCover from '$lib/components/AlbumCover.svelte';
+	import { resolve } from '$app/paths';
+	import { replaceState } from '$app/navigation';
+	import { page } from '$app/state';
+	import { editUi } from '$lib/editUi.svelte';
 	import { storyImg } from '$lib/img';
-	import { hasLyricsForYoutubeId, youtubeIdOfScene } from '$lib/lyrics';
-	import { initMusic, playTrack, stopTrack, music, toggleMute, togglePause } from '$lib/music.svelte';
+	import { hasLyricsForScene } from '$lib/lyrics';
+	import { initMusic, playOrPause, playTrack, stopTrack, music, toggleMute } from '$lib/music.svelte';
 	import {
 	scenesForPage,
 	trackOf,
 	audioLabel,
 	audioArtist,
 	audioCredit,
-	sceneCover,
 	sceneFrames,
 	isLoveScene,
 	isPersonScene,
@@ -21,13 +30,108 @@
 } from '$lib/scenes';
 
 	const scenes = scenesForPage();
+	let editing = $derived(editUi.enabled);
+	/** Frame order edited this session. The file is updated underneath. */
+	let frameEdits = $state<Record<string, string[]>>({});
 
-	let activeId = $state(scenes[0]?.id ?? '');
+	function framesOf(scene: Scene): string[] {
+		return frameEdits[scene.id] ?? [...sceneFrames(scene)];
+	}
+
+	function coverOf(scene: Scene): string {
+		return framesOf(scene)[0] || scene.image;
+	}
+
+	async function persistFrames(id: string, frames: string[]) {
+		frameEdits = { ...frameEdits, [id]: frames };
+		const res = await fetch(resolve('/api/scene-frames'), {
+			method: 'PUT',
+			headers: { 'content-type': 'application/json' },
+			body: JSON.stringify({ id, frames })
+		});
+		if (!res.ok) window.alert('Could not save this sequence');
+	}
+
+	function reorderActive(frames: string[]) {
+		if (!active) return;
+		void persistFrames(active.id, frames);
+	}
+
+	/** Edit-mode right-click menu on a still (sequence rail or the live frame). */
+	let frameMenu = $state<{ sceneId: string; index: number; x: number; y: number } | null>(null);
+	/** Frame the live still reported last, tagged with its scene. */
+	let shown = $state<{ id: string; index: number }>({ id: '', index: 0 });
+	/** Click in the sequence rail. `token` forces the still to jump even to the same index. */
+	let frameCue = $state<{ id: string; index: number; token: number } | null>(null);
+
+	function showFrame(index: number) {
+		if (!active) return;
+		shown = { id: active.id, index };
+		frameCue = { id: active.id, index, token: (frameCue?.token ?? 0) + 1 };
+	}
+
+	function openFrameMenu(sceneId: string, event: MouseEvent, index: number) {
+		if (!editing) return;
+		event.preventDefault();
+		frameMenu = { sceneId, index, x: event.clientX, y: event.clientY };
+	}
+
+	function frameCount(sceneId: string): number {
+		const scene = scenes.find((s) => s.id === sceneId);
+		return scene ? framesOf(scene).length : 0;
+	}
+
+	function frameSrc(sceneId: string, index: number): string {
+		const scene = scenes.find((s) => s.id === sceneId);
+		return scene ? (framesOf(scene)[index] ?? coverOf(scene)) : '';
+	}
+
+	function removeFrame(sceneId: string, index: number) {
+		const scene = scenes.find((s) => s.id === sceneId);
+		if (!scene) return;
+		const frames = framesOf(scene).filter((_, i) => i !== index);
+		if (!frames.length) return;
+		void persistFrames(sceneId, frames);
+	}
+
+	/** `?scene=<id>` — the song on screen, so a reload or a shared link lands on it. */
+	const SCENE_QUERY = 'scene';
+
+	function sceneFromUrl(): Scene | null {
+		const id = page.url.searchParams.get(SCENE_QUERY);
+		return id ? (scenes.find((s) => s.id === id) ?? null) : null;
+	}
+
+	/* A linked song is the first scene on screen; it is not armed until the reader plays. */
+	let activeId = $state(sceneFromUrl()?.id ?? scenes[0]?.id ?? '');
 	let armed = $state(false);
-	let feedEl: HTMLElement | undefined = $state();
+	/** Album-cover grid. Off keeps the snap feed. */
+	let grid = $state(false);
+	/** Phones get the library + Now Playing sheet instead of the feed. SSR renders the desktop. */
+	const phone = new MediaQuery('max-width: 720px', false);
+	/** Set by `wireFeed` while the desktop feed is mounted. */
+	let feedEl: HTMLElement | undefined;
 	let railEl: HTMLElement | undefined = $state();
 
 	let active = $derived(scenes.find((s) => s.id === activeId) ?? scenes[0] ?? null);
+	/** Frame the sequence rail marks. A scene that has not reported yet is on frame one. */
+	let shownFrame = $derived(shown.id === activeId ? shown.index : 0);
+
+	/** False until mount, so the address bar is only written in the browser. */
+	let urlReady = $state(false);
+
+	$effect(() => {
+		if (!urlReady || !activeId) return;
+		/* `location`, not `page.url`: a fallback history write never reaches page state. */
+		const url = new URL(location.href);
+		if (url.searchParams.get(SCENE_QUERY) === activeId) return;
+		url.searchParams.set(SCENE_QUERY, activeId);
+		try {
+			replaceState(`${url.pathname}${url.search}${url.hash}`, untrack(() => page.state));
+		} catch {
+			history.replaceState(history.state, '', url);
+		}
+	});
 	let activeIndex = $derived(Math.max(0, scenes.findIndex((s) => s.id === activeId)));
 
 	/** Scene id we are jumping to with play intent (thumb / next / prev). */
@@ -37,6 +141,70 @@
 	/** Scene the feed last measured as most visible. */
 	let visibleId: string | null = null;
 	let audioTimer: number | undefined;
+	let jumpTimer: number | undefined;
+
+	function panelFor(id: string): HTMLElement | null {
+		return feedEl?.querySelector<HTMLElement>(`[data-scene-id="${CSS.escape(id)}"]`) ?? null;
+	}
+
+	/** The panel whose top sits closest to the top of the feed, measured now. */
+	function sceneInView(): string | null {
+		if (!feedEl) return null;
+		const top = feedEl.getBoundingClientRect().top;
+		let best: { id: string; gap: number } | null = null;
+		for (const el of feedEl.querySelectorAll<HTMLElement>('[data-scene-id]')) {
+			const gap = Math.abs(el.getBoundingClientRect().top - top);
+			if (!best || gap < best.gap) best = { id: el.dataset.sceneId ?? '', gap };
+		}
+		return best?.id || null;
+	}
+
+	/*
+	 * `scrollTo` on each scroller, never two `scrollIntoView` calls in a row: Chrome
+	 * cancels the first smooth scrollIntoView when a second one starts elsewhere.
+	 * `instant`, not `auto`: the feed's CSS makes `auto` smooth.
+	 */
+	function scrollFeedTo(id: string, smooth: boolean): boolean {
+		const panel = panelFor(id);
+		if (!feedEl || !panel) return false;
+		const delta = panel.getBoundingClientRect().top - feedEl.getBoundingClientRect().top;
+		if (Math.abs(delta) < 2) return false;
+		feedEl.scrollTo({ top: feedEl.scrollTop + delta, behavior: smooth ? 'smooth' : 'instant' });
+		return true;
+	}
+
+	function revealThumb(id: string, smooth = true) {
+		const thumb = railEl?.querySelector<HTMLElement>(`[data-thumb-id="${CSS.escape(id)}"]`);
+		if (!railEl || !thumb) return;
+		const rail = railEl.getBoundingClientRect();
+		const box = thumb.getBoundingClientRect();
+		let delta = 0;
+		if (box.top < rail.top) delta = box.top - rail.top - 12;
+		else if (box.bottom > rail.bottom) delta = box.bottom - rail.bottom + 12;
+		if (!delta) return;
+		railEl.scrollTo({ top: railEl.scrollTop + delta, behavior: smooth ? 'smooth' : 'instant' });
+	}
+
+	/** Programmatic jump. Panels passed on the way are ignored until it lands. */
+	function jumpFeed(id: string, smooth: boolean) {
+		window.clearTimeout(jumpTimer);
+		scrollTargetId = id;
+		const moving = scrollFeedTo(id, smooth);
+		revealThumb(id, smooth);
+		if (!moving) {
+			scrollTargetId = null;
+			return;
+		}
+		jumpTimer = window.setTimeout(() => finishJump(id), smooth ? 1600 : 150);
+	}
+
+	/** A jump that stopped short (snap, interrupted animation) is set onto its target. */
+	function finishJump(id: string) {
+		window.clearTimeout(jumpTimer);
+		if (scrollTargetId !== id) return;
+		scrollTargetId = null;
+		if (sceneInView() !== id) scrollFeedTo(id, false);
+	}
 
 	function schedulePlay(id: string) {
 		window.clearTimeout(audioTimer);
@@ -72,19 +240,18 @@
 
 	async function goTo(scene: Scene, opts: { play?: boolean; smooth?: boolean } = {}) {
 		const wantPlay = opts.play === true;
-		scrollTargetId = scene.id;
 		pendingPlayId = wantPlay ? scene.id : null;
 		activeId = scene.id;
 		window.clearTimeout(audioTimer);
 		if (!wantPlay) stopTrack({ keepPauseState: true });
+		if (grid || phone.current) {
+			scrollTargetId = null;
+			if (wantPlay) playScene(scene);
+			return;
+		}
+		scrollTargetId = scene.id;
 		await tick();
-		const panel = feedEl?.querySelector<HTMLElement>(`[data-scene-id="${CSS.escape(scene.id)}"]`);
-		panel?.scrollIntoView({
-			block: 'start',
-			behavior: opts.smooth === false ? 'auto' : 'smooth'
-		});
-		const thumb = railEl?.querySelector<HTMLElement>(`[data-thumb-id="${CSS.escape(scene.id)}"]`);
-		thumb?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+		jumpFeed(scene.id, opts.smooth !== false);
 		if (wantPlay) playScene(scene);
 	}
 
@@ -107,20 +274,33 @@
 		void goTo(next, { play: isTransportPlaying() });
 	}
 
+	async function toggleGrid() {
+		const showFeed = grid;
+		grid = !grid;
+		if (!showFeed) return;
+		await tick();
+		jumpFeed(activeId, false);
+	}
+
 	function onPlayerPlay() {
 		arm();
 		music.paused = false;
 		if (active) playScene(active);
 	}
 
-	onMount(() => {
-		const endMusic = initMusic();
-		if (scenes[0]) activeId = scenes[0].id;
-
+	/*
+	 * The snap feed's scroll tracking. An attachment rather than onMount so the feed
+	 * can come and go when the window crosses the phone breakpoint.
+	 */
+	const wireFeed: Attachment<HTMLElement> = (el) => {
+		feedEl = el;
+		/* Open on the current scene: a linked song, or the one picked on the phone layout. */
+		jumpFeed(untrack(() => activeId), false);
 		const ratios = new Map<string, number>();
 
 		const io = new IntersectionObserver(
 			(entries) => {
+				if (grid) return;
 				let best: { id: string; ratio: number } | null = null;
 
 				for (const e of entries) {
@@ -147,6 +327,7 @@
 
 				if (scrollTargetId) {
 					if (best.id !== scrollTargetId) return;
+					window.clearTimeout(jumpTimer);
 					scrollTargetId = null;
 					pendingPlayId = null;
 					return;
@@ -165,36 +346,62 @@
 				const keepPlaying = pendingPlayId === scene.id || isTransportPlaying();
 				pendingPlayId = null;
 				activeId = scene.id;
-				const thumb = railEl?.querySelector<HTMLElement>(
-					`[data-thumb-id="${CSS.escape(scene.id)}"]`
-				);
-				thumb?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+				revealThumb(scene.id);
 
 				window.clearTimeout(audioTimer);
 				stopTrack({ keepPauseState: true });
 				if (keepPlaying) schedulePlay(scene.id);
 			},
-			{ root: feedEl, threshold: [0.25, 0.45, 0.55, 0.7, 0.85] }
+			{ root: el, threshold: [0.25, 0.45, 0.55, 0.7, 0.85] }
 		);
 
-		const nodes = feedEl?.querySelectorAll<HTMLElement>('[data-scene-id]') ?? [];
-		for (const el of nodes) io.observe(el);
+		for (const panel of el.querySelectorAll<HTMLElement>('[data-scene-id]')) io.observe(panel);
 
 		const onUserScroll = () => {
+			window.clearTimeout(jumpTimer);
 			scrollTargetId = null;
 		};
+		/* Scrollbar drags land on the feed itself; clicks on a still do not. */
+		const onFeedPointer = (e: PointerEvent) => {
+			if (e.target === el) onUserScroll();
+		};
+		/* The screen is the truth once scrolling stops: header, sequence and song follow it. */
 		const onScrollEnd = () => {
-			scrollTargetId = null;
-			if (!visibleId || visibleId === activeId) return;
+			if (grid) return;
+			if (scrollTargetId) {
+				finishJump(scrollTargetId);
+				return;
+			}
+			const id = sceneInView();
+			visibleId = id;
+			if (!id || id === activeId) return;
 			const keep = isTransportPlaying();
-			activeId = visibleId;
+			activeId = id;
+			revealThumb(id);
 			window.clearTimeout(audioTimer);
 			stopTrack({ keepPauseState: true });
-			if (keep) schedulePlay(visibleId);
+			if (keep) schedulePlay(id);
 		};
-		feedEl?.addEventListener('wheel', onUserScroll, { passive: true });
-		feedEl?.addEventListener('touchmove', onUserScroll, { passive: true });
-		feedEl?.addEventListener('scrollend', onScrollEnd);
+		el.addEventListener('wheel', onUserScroll, { passive: true });
+		el.addEventListener('touchmove', onUserScroll, { passive: true });
+		el.addEventListener('pointerdown', onFeedPointer);
+		el.addEventListener('scrollend', onScrollEnd);
+
+		return () => {
+			io.disconnect();
+			window.clearTimeout(jumpTimer);
+			el.removeEventListener('wheel', onUserScroll);
+			el.removeEventListener('touchmove', onUserScroll);
+			el.removeEventListener('pointerdown', onFeedPointer);
+			el.removeEventListener('scrollend', onScrollEnd);
+			scrollTargetId = null;
+			if (feedEl === el) feedEl = undefined;
+		};
+	};
+
+	onMount(() => {
+		const endMusic = initMusic();
+		urlReady = true;
 
 		const onKey = (e: KeyboardEvent) => {
 			const tag = (e.target as HTMLElement | null)?.tagName;
@@ -213,27 +420,14 @@
 				if (active && !music.muted) playScene(active);
 			} else if (e.key === ' ') {
 				e.preventDefault();
-				const playing =
-					!!music.current && music.armed && !music.muted && !music.paused;
-				if (playing) {
-					togglePause();
-					return;
-				}
-				onPlayerPlay();
-				if (music.muted) toggleMute();
-				else if (music.paused) togglePause();
+				playOrPause(onPlayerPlay);
 			}
 		};
 		window.addEventListener('keydown', onKey);
 
 		return () => {
-			io.disconnect();
 			window.clearTimeout(audioTimer);
-			feedEl?.removeEventListener('wheel', onUserScroll);
-			feedEl?.removeEventListener('touchmove', onUserScroll);
-			feedEl?.removeEventListener('scrollend', onScrollEnd);
 			window.removeEventListener('keydown', onKey);
-			scrollTargetId = null;
 			stopTrack();
 			endMusic();
 		};
@@ -250,6 +444,7 @@
 
 {#snippet sceneCaption(scene: Scene)}
 	<span class="meta">
+		<AlbumCover src={coverOf(scene)} alt="" live={activeId === scene.id} />
 		<span class="shot-title">
 			{scene.title}
 			{#if isPersonScene(scene)}
@@ -268,7 +463,20 @@
 	</span>
 {/snippet}
 
-<main class="scenes">
+<main class="scenes" class:phone={phone.current}>
+	{#if phone.current}
+		<SceneMobile
+			{scenes}
+			{activeId}
+			{coverOf}
+			{framesOf}
+			canPrev={activeIndex > 0}
+			canNext={activeIndex < scenes.length - 1}
+			onpick={onThumbClick}
+			onstep={step}
+			onplay={onPlayerPlay}
+		/>
+	{:else}
 	<header class="chrome">
 		<SiteNav />
 		<div class="chrome-meta">
@@ -278,9 +486,18 @@
 				<span class="now-title">{active.title}</span>
 			{/if}
 		</div>
+		<button
+			type="button"
+			class="grid-toggle"
+			aria-pressed={grid}
+			onclick={toggleGrid}
+		>
+			{grid ? 'grid on' : 'grid off'}
+		</button>
 	</header>
 
-	<div class="stage">
+	<div class="view">
+	<div class="stage" class:editing class:asleep={grid}>
 		<aside class="scene-rail" bind:this={railEl} aria-label="Scene grid">
 			{#each scenes as scene, i (scene.id)}
 				<button
@@ -296,7 +513,7 @@
 				>
 					<span class="sleeve">
 						<img
-							{...storyImg(sceneCover(scene), {
+							{...storyImg(coverOf(scene), {
 								kind: 'thumb',
 								priority: i < 6,
 								sizes: '96px',
@@ -324,18 +541,18 @@
 		</aside>
 
 		<div class="picture">
-		<div class="feed" bind:this={feedEl} aria-label="Scene feed">
+		<div class="feed" {@attach wireFeed} aria-label="Scene feed">
 			{#each scenes as scene, i (scene.id)}
 				<section
 					class="panel"
 					class:live={activeId === scene.id}
-					class:with-lyrics={hasLyricsForYoutubeId(youtubeIdOfScene(scene))}
+					class:with-lyrics={hasLyricsForScene(scene)}
 					data-scene-id={scene.id}
 				>
-					{#if scene.frames && scene.frames.length > 1}
+					{#if framesOf(scene).length > 1}
 						<div class="frame">
 							<SceneLoop
-								frames={sceneFrames(scene)}
+								frames={framesOf(scene)}
 								alt={scene.title}
 								live={activeId === scene.id}
 								frameMs={scene.frameMs ?? 3000}
@@ -343,6 +560,11 @@
 								priority={i === 0 || activeId === scene.id}
 								sizes="(max-width: 900px) 100vw, 72vw"
 								onactivate={() => onFeedActivate(scene)}
+								onmenu={editing ? (e, index) => openFrameMenu(scene.id, e, index) : undefined}
+								onindex={activeId === scene.id
+									? (n) => (shown = { id: scene.id, index: n })
+									: undefined}
+								cue={frameCue?.id === scene.id ? frameCue : null}
 							/>
 							<span class="veil" aria-hidden="true"></span>
 							{@render sceneCaption(scene)}
@@ -350,7 +572,7 @@
 					{:else}
 						<button type="button" class="frame" onclick={() => onFeedActivate(scene)}>
 							<img
-								{...storyImg(scene.image, {
+								{...storyImg(coverOf(scene), {
 									kind: 'hero',
 									priority: i === 0,
 									sizes: '(max-width: 900px) 100vw, 72vw',
@@ -370,6 +592,58 @@
 			{/each}
 		</div>
 		</div>
+		{#if editing && active}
+			<SceneFrameEdit
+				frames={framesOf(active)}
+				current={shownFrame}
+				onreorder={reorderActive}
+				onmenu={(e, index) => openFrameMenu(active.id, e, index)}
+				onpick={showFrame}
+			/>
+		{/if}
+		{#if frameMenu}
+			{@const menu = frameMenu}
+			{@const count = frameCount(menu.sceneId)}
+			<FrameMenu
+				x={menu.x}
+				y={menu.y}
+				label="Still {menu.index + 1} of {count}"
+				src={frameSrc(menu.sceneId, menu.index)}
+				canDelete={count > 1}
+				ondelete={() => removeFrame(menu.sceneId, menu.index)}
+				onclose={() => (frameMenu = null)}
+			/>
+		{/if}
+	</div>
+	{#if grid}
+		<div class="cover-grid" aria-label="Album covers">
+			{#each scenes as scene (scene.id)}
+				<button
+					type="button"
+					class="cover-card"
+					class:live={activeId === scene.id}
+					onclick={() => onThumbClick(scene)}
+					aria-current={activeId === scene.id ? 'true' : undefined}
+					aria-label="{scene.title}. {audioArtist(scene) ? `${audioArtist(scene)}. ` : ''}{audioLabel(scene)}"
+				>
+					<AlbumCover src={coverOf(scene)} alt="" live={activeId === scene.id} />
+					<span class="card-title">
+						{scene.title}
+						{#if isPersonScene(scene)}
+							<span class="person-dot inline" title="Their theme" aria-hidden="true"></span>
+						{/if}
+						{#if isLoveScene(scene)}
+							<span class="love-dot inline" title="Love story" aria-hidden="true"></span>
+						{/if}
+					</span>
+					{#if audioArtist(scene)}
+						<span class="card-artist">{audioArtist(scene)}</span>
+					{/if}
+					<span class="card-song">{audioLabel(scene)}</span>
+				</button>
+			{/each}
+		</div>
+	{/if}
 	</div>
 
 	<ScenePlayer
@@ -380,6 +654,7 @@
 		onnext={() => step(1)}
 		onplay={onPlayerPlay}
 	/>
+	{/if}
 </main>
 
 <style>
@@ -390,6 +665,11 @@
 		color: var(--fg);
 		display: grid;
 		grid-template-rows: auto minmax(0, 1fr) auto;
+	}
+
+	.scenes.phone {
+		height: calc(100dvh - var(--tabbar-space));
+		display: block;
 	}
 
 	.chrome {
@@ -433,6 +713,74 @@
 		font-weight: 500;
 	}
 
+	.grid-toggle {
+		margin-left: auto;
+		flex: none;
+		border: 0;
+		background: transparent;
+		padding: 0.2rem 0.1rem;
+		font-family: var(--ui);
+		font-size: 0.78rem;
+		letter-spacing: var(--tracking-ui);
+		color: color-mix(in srgb, var(--fg) 68%, transparent);
+		cursor: pointer;
+	}
+
+	.grid-toggle[aria-pressed='true'] {
+		color: var(--gold);
+	}
+
+	.view {
+		height: 100%;
+		min-height: 0;
+		display: grid;
+		grid-template-rows: minmax(0, 1fr);
+		overflow: hidden;
+	}
+
+	.view > .stage,
+	.view > .cover-grid {
+		grid-area: 1 / 1;
+		min-height: 0;
+	}
+
+	.stage.asleep {
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	.cover-grid {
+		height: 100%;
+		min-height: 0;
+		overflow: auto;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+		gap: 1.75rem 1.15rem;
+		align-content: start;
+		padding: 1rem 1.35rem 2.5rem;
+	}
+
+	.cover-card {
+		display: grid;
+		justify-items: start;
+		align-content: start;
+		gap: 0.12rem;
+		border: 0;
+		background: transparent;
+		color: inherit;
+		text-align: left;
+		cursor: pointer;
+		padding: 0.4rem 0.35rem 0.2rem;
+	}
+
+	.cover-card :global(.album) {
+		margin-bottom: 0.45rem;
+	}
+
+	.cover-card.live .card-title {
+		color: var(--gold);
+	}
+
 	.stage {
 		min-height: 0;
 		height: 100%;
@@ -441,6 +789,10 @@
 		gap: 1.1rem;
 		padding: 0.85rem 1.15rem 0.95rem 1rem;
 		box-sizing: border-box;
+	}
+
+	.stage.editing {
+		grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr) 11.5rem;
 	}
 
 	/* Not `.rail` — that class is the global decorative left stripe in app.css. */
@@ -778,6 +1130,10 @@
 			grid-template-columns: minmax(11.5rem, 42vw) minmax(0, 1fr);
 			gap: 0.65rem;
 			padding: 0.55rem 0.55rem 0.7rem;
+		}
+
+		.stage.editing {
+			grid-template-columns: minmax(9rem, 34vw) minmax(0, 1fr) 6.75rem;
 		}
 
 		.scene-rail {

@@ -1,6 +1,6 @@
 /**
- * Timed lyrics for /scenes — keyed by YouTube video id.
- * Data files live in `src/lib/data/lyrics/{youtubeId}.json` (LRCLIB synced LRC).
+ * Timed lyrics for /scenes — keyed by YouTube video id or local file stem
+ * (e.g. `mu_little_fall_of_rain`). Data: `src/lib/data/lyrics/{id}.json`.
  */
 
 export type LyricLine = {
@@ -53,13 +53,21 @@ for (const [path, mod] of Object.entries(modules)) {
 	if (base && base !== data.id) BY_ID.set(base, track);
 }
 
+export function lyricsForId(id: string | undefined | null): LyricTrack | null {
+	if (!id) return null;
+	return BY_ID.get(id) ?? null;
+}
+
 export function lyricsForYoutubeId(youtubeId: string | undefined | null): LyricTrack | null {
-	if (!youtubeId) return null;
-	return BY_ID.get(youtubeId) ?? null;
+	return lyricsForId(youtubeId);
+}
+
+export function hasLyricsForId(id: string | undefined | null): boolean {
+	return !!lyricsForId(id);
 }
 
 export function hasLyricsForYoutubeId(youtubeId: string | undefined | null): boolean {
-	return !!lyricsForYoutubeId(youtubeId);
+	return hasLyricsForId(youtubeId);
 }
 
 /** Player clock → LRC clock. */
@@ -103,4 +111,29 @@ export function youtubeIdOfScene(scene: {
 }): string | null {
 	if (scene.audio.kind === 'youtube' && scene.audio.youtubeId) return scene.audio.youtubeId;
 	return null;
+}
+
+/** Lyrics lookup key: YouTube id, or local file stem (`mu_little_fall_of_rain`). */
+export function lyricsIdOfScene(scene: {
+	audio: { kind: string; youtubeId?: string; file?: string };
+}): string | null {
+	if (scene.audio.kind === 'youtube' && scene.audio.youtubeId) return scene.audio.youtubeId;
+	if (scene.audio.kind === 'file' && scene.audio.file) {
+		const base = scene.audio.file.split('/').pop() ?? '';
+		const stem = base.replace(/\.[^.]+$/, '');
+		return stem || null;
+	}
+	return null;
+}
+
+export function lyricsForScene(scene: {
+	audio: { kind: string; youtubeId?: string; file?: string };
+}): LyricTrack | null {
+	return lyricsForId(lyricsIdOfScene(scene));
+}
+
+export function hasLyricsForScene(scene: {
+	audio: { kind: string; youtubeId?: string; file?: string };
+}): boolean {
+	return !!lyricsForScene(scene);
 }

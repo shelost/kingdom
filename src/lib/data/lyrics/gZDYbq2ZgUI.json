@@ -5,168 +5,241 @@
 	"artistName": "Les Misérables - Original London Cast & Colm Wilkinson",
 	"lines": [
 		{
-			"t": 3.85,
-			"text": "He thinks that man is me"
+			"t": 0,
+			"text": "♪",
+			"scene": "They think the king is finished."
 		},
 		{
-			"t": 5.9,
-			"text": "He knew him at a glance!"
+			"t": 5,
+			"text": "♪",
+			"scene": "They knew him for the cup."
 		},
 		{
-			"t": 8.72,
-			"text": "That stranger he has found"
+			"t": 10,
+			"text": "♪",
+			"scene": "I knew him for the order"
 		},
 		{
-			"t": 10.84,
-			"text": "This man could be my chance!"
+			"t": 15,
+			"text": "♪",
+			"scene": "that put a sword in my hand"
 		},
 		{
-			"t": 13.7,
-			"text": "Why should I save his hide?"
+			"t": 20,
+			"text": "♪",
+			"scene": "when I was nobody at a well."
 		},
 		{
-			"t": 15.74,
-			"text": "Why should I right this wrong"
+			"t": 25,
+			"text": "♪",
+			"scene": "Five thousand. They look at me"
 		},
 		{
-			"t": 18.72,
-			"text": "When I have come so far"
+			"t": 31.35,
+			"text": "He thinks that man is me",
+			"scene": "like I am allowed to leave him."
 		},
 		{
-			"t": 20.67,
-			"text": "And struggled for so long?"
+			"t": 33.4,
+			"text": "He knew him at a glance!",
+			"scene": "I am not allowed."
 		},
 		{
-			"t": 26.01,
-			"text": "If I speak, I am condemned"
+			"t": 36.22,
+			"text": "That stranger he has found",
+			"scene": "If I ride home I damn the men"
 		},
 		{
-			"t": 31.33,
-			"text": "If I stay silent, I am damned!"
+			"t": 38.34,
+			"text": "This man could be my chance!",
+			"scene": "who believed the yellow fields"
 		},
 		{
-			"t": 37.42,
-			"text": "I am the master of hundreds of workers"
+			"t": 41.2,
+			"text": "Why should I save his hide?",
+			"scene": "were worth a name."
 		},
 		{
-			"t": 40.73,
-			"text": "They all look to me"
+			"t": 43.24,
+			"text": "Why should I right this wrong",
+			"scene": "If I stay I damn my own years."
 		},
 		{
-			"t": 44.21,
-			"text": "Can I abandon them?"
+			"t": 46.22,
+			"text": "When I have come so far",
+			"scene": "Fine. I have been damned before."
 		},
 		{
-			"t": 45.84,
-			"text": "How would they live"
+			"t": 48.17,
+			"text": "And struggled for so long?",
+			"scene": "The well remembers the boy."
 		},
 		{
-			"t": 47.58,
-			"text": "If I am not free?"
+			"t": 53.51,
+			"text": "If I speak, I am condemned",
+			"scene": "The road remembers the marshal."
 		},
 		{
-			"t": 53.1,
-			"text": "If I speak, I am condemned"
+			"t": 58.83,
+			"text": "If I stay silent, I am damned!",
+			"scene": "I don't get to pick a third self"
 		},
 		{
-			"t": 59.28,
-			"text": "If I stay silent, I am damned!"
+			"t": 64.92,
+			"text": "I am the master of hundreds of workers",
+			"scene": "on the morning of the last ride."
 		},
 		{
-			"t": 72.78,
-			"text": "Who am I?"
+			"t": 68.23,
+			"text": "They all look to me",
+			"scene": "Baekje. Say it without flinching."
 		},
 		{
-			"t": 74.75,
-			"text": "Can I condemn this man to slavery?"
+			"t": 71.71,
+			"text": "Can I abandon them?",
+			"scene": "He gave me rank when hope was thin."
 		},
 		{
-			"t": 78.34,
-			"text": "Pretend I do not feel his agony?"
+			"t": 73.34,
+			"text": "How would they live",
+			"scene": "I give him the march."
 		},
 		{
-			"t": 83.69,
-			"text": "This innocent who bears my face"
+			"t": 75.08,
+			"text": "If I am not free?",
+			"scene": "Not because he is spotless."
 		},
 		{
-			"t": 85.64,
-			"text": "Who goes to judgement in my place"
+			"t": 80.6,
+			"text": "If I speak, I am condemned",
+			"scene": "Because the oath was not a mood."
 		},
 		{
-			"t": 87.61,
-			"text": "Who am I?"
+			"t": 86.78,
+			"text": "If I stay silent, I am damned!",
+			"scene": "Silla can wait at the end of it"
 		},
 		{
-			"t": 89.29,
-			"text": "Can I conceal myself for evermore?"
+			"t": 100.28,
+			"text": "Who am I?",
+			"scene": "with whatever cleverness it has."
 		},
 		{
-			"t": 92.75,
-			"text": "Pretend I'm not the man I was before?"
+			"t": 102.25,
+			"text": "Can I condemn this man to slavery?",
+			"scene": "It is mine."
 		},
 		{
-			"t": 97.92,
-			"text": "And must my name until I die"
+			"t": 105.84,
+			"text": "Pretend I do not feel his agony?",
+			"scene": "Don't ask me to become a rumor"
 		},
 		{
-			"t": 99.72,
-			"text": "Be no more than an alibi?"
+			"t": 111.19,
+			"text": "This innocent who bears my face",
+			"scene": "that abandoned his king for comfort."
 		},
 		{
-			"t": 101.64,
-			"text": "Must I lie?"
+			"t": 113.14,
+			"text": "Who goes to judgement in my place",
+			"scene": "Comfort never knew my name."
 		},
 		{
-			"t": 103.48,
-			"text": "How can I ever face my fellow men?"
+			"t": 115.11,
+			"text": "Who am I?",
+			"scene": "Gyebek did."
 		},
 		{
-			"t": 106.84,
-			"text": "How can I ever face myself again?"
+			"t": 116.79,
+			"text": "Can I conceal myself for evermore?",
+			"scene": "The sunset can have the pretty version."
 		},
 		{
-			"t": 111.98,
-			"text": "My soul belongs to God, I know"
+			"t": 120.25,
+			"text": "Pretend I'm not the man I was before?",
+			"scene": "I take the horse."
 		},
 		{
-			"t": 113.94,
-			"text": "I made that bargain long ago"
+			"t": 125.42,
+			"text": "And must my name until I die",
+			"scene": "If the reapers are already walking"
 		},
 		{
-			"t": 115.74,
-			"text": "He gave me hope when hope was gone"
+			"t": 127.22,
+			"text": "Be no more than an alibi?",
+			"scene": "they can walk behind the column."
 		},
 		{
-			"t": 118.89,
-			"text": "He gave me strength to journey on"
+			"t": 129.14,
+			"text": "Must I lie?",
+			"scene": "I named them. They can wait their turn."
 		},
 		{
-			"t": 124.69,
-			"text": "Who am I?"
+			"t": 130.98,
+			"text": "How can I ever face my fellow men?",
+			"scene": "Five thousand. One road."
 		},
 		{
-			"t": 131.15,
-			"text": "Who am I?"
+			"t": 134.34,
+			"text": "How can I ever face myself again?",
+			"scene": "A king I will not leave to die"
 		},
 		{
-			"t": 132.74,
-			"text": "I am Jean Valjean!"
+			"t": 139.48,
+			"text": "My soul belongs to God, I know",
+			"scene": "as a story other men tell."
 		},
 		{
-			"t": 140.81,
-			"text": "And so Javert, you see it's true"
+			"t": 141.44,
+			"text": "I made that bargain long ago",
+			"scene": "I ride."
 		},
 		{
-			"t": 144.13,
-			"text": "That man bears no more guilt than you!"
+			"t": 143.24,
+			"text": "He gave me hope when hope was gone",
+			"scene": "Not a question."
 		},
 		{
-			"t": 150.16,
-			"text": "Who am I?"
+			"t": 146.39,
+			"text": "He gave me strength to journey on",
+			"scene": "A fact with dust on it."
 		},
 		{
-			"t": 153.85,
-			"text": "Two-four-six-oh-one!"
+			"t": 152.19,
+			"text": "Who am I?",
+			"scene": "Baekje, look."
+		},
+		{
+			"t": 158.65,
+			"text": "Who am I?",
+			"scene": "Your marshal is still coming."
+		},
+		{
+			"t": 160.24,
+			"text": "I am Jean Valjean!",
+			"scene": "And he knows exactly who he is"
+		},
+		{
+			"t": 168.31,
+			"text": "And so Javert, you see it's true",
+			"scene": "without borrowing a chorus."
+		},
+		{
+			"t": 171.63,
+			"text": "That man bears no more guilt than you!",
+			"scene": "The well. The name. The last ride."
+		},
+		{
+			"t": 177.66,
+			"text": "Who am I?",
+			"scene": "Gyebek."
+		},
+		{
+			"t": 181.35,
+			"text": "Two-four-six-oh-one!",
+			"scene": "Onward."
 		}
-	]
+	],
+	"offset": 0,
+	"instrumentalGaps": true
 }

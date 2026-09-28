@@ -5,6 +5,7 @@
 	import { page } from '$app/state';
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
 	import GradePopover from '$lib/components/GradePopover.svelte';
+	import MobileTabBar from '$lib/components/MobileTabBar.svelte';
 	import { applyNsfwFromUrl, NSFW_QUERY, nsfwQueryOn } from '$lib/nsfwUi.svelte';
 	import { applyEditFromUrl, EDIT_QUERY, editQueryOn } from '$lib/editUi.svelte';
 	import { applyReadingFromUrl, EP_QUERY, VIEW_QUERY, reading } from '$lib/reading.svelte';
@@ -78,5 +79,6 @@
 <div class="rail" aria-hidden="true"></div>
 
 {@render children()}
+<MobileTabBar />
 <ImageLightbox />
 <GradePopover />

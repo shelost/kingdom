@@ -1,9 +1,9 @@
 <script lang="ts">
 	import {
 		activeLyricIndex,
-		lyricsForYoutubeId,
-		playerTimeForLyric,
-		youtubeIdOfScene
+		lyricsForScene,
+		lyricsIdOfScene,
+		playerTimeForLyric
 	} from '$lib/lyrics';
 	import { music, seek } from '$lib/music.svelte';
 	import type { Scene } from '$lib/scenes';
@@ -11,25 +11,28 @@
 	let {
 		scene,
 		live = false,
+		layout = 'side',
 		onplay
 	}: {
 		scene: Scene | null;
 		/** Only the active feed panel should drive highlight + seek. */
 		live?: boolean;
+		/** `side`: a column beside the still. `full`: the whole box, large lines (phone Now Playing). */
+		layout?: 'side' | 'full';
 		/** Arm / ensure the scene track is playing before a lyric jump. */
 		onplay?: () => void;
 	} = $props();
 
 	let scrollHost = $state<HTMLElement | null>(null);
 	let reduceMotion = $state(false);
-	/** YouTube id whose column is showing the recording instead of the scene lines. */
+	/** Lyrics id whose column is showing the recording instead of the scene lines. */
 	let originalFor = $state<string | null>(null);
 
-	let youtubeId = $derived(scene ? youtubeIdOfScene(scene) : null);
-	let track = $derived(youtubeId ? lyricsForYoutubeId(youtubeId) : null);
+	let lyricsId = $derived(scene ? lyricsIdOfScene(scene) : null);
+	let track = $derived(scene ? lyricsForScene(scene) : null);
 	let lines = $derived(track?.lines ?? []);
 	let hasSceneLines = $derived(lines.some((line) => !!line.scene));
-	let showOriginal = $derived(!!youtubeId && originalFor === youtubeId);
+	let showOriginal = $derived(!!lyricsId && originalFor === lyricsId);
 	let offset = $derived(track?.offset ?? 0);
 	let activeIndex = $derived(
 		live ? activeLyricIndex(lines, music.currentTime, offset) : -1
@@ -62,8 +65,13 @@
 		return line.scene;
 	}
 
+	function isNote(line: { text: string; scene?: string }) {
+		const t = lineText(line).trim();
+		return t.length > 0 && /^[♪♩♫♬\s]+$/u.test(t);
+	}
+
 	function toggleOriginal() {
-		originalFor = showOriginal ? null : youtubeId;
+		originalFor = showOriginal ? null : lyricsId;
 	}
 
 	function jumpToLine(lineT: number, e: MouseEvent) {
@@ -77,7 +85,7 @@
 </script>
 
 {#if live && scene && track && lines.length > 0}
-	<div class="col" aria-label="Lyrics">
+	<div class="col" class:full={layout === 'full'} aria-label="Lyrics">
 		{#if hasSceneLines}
 			<button
 				type="button"
@@ -214,5 +222,30 @@
 		.line {
 			font-size: 0.72rem;
 		}
+	}
+
+	.col.full {
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: auto;
+	}
+
+	.full .scroller {
+		padding: 22% 1.1rem 30%;
+	}
+
+	.full .line {
+		padding: 0.4rem 0;
+		font-size: 1.28rem;
+		font-weight: 700;
+		line-height: 1.25;
+		letter-spacing: -0.02em;
+	}
+
+	/* Below the still's segment bars. */
+	.full .source {
+		top: 1.9rem;
+		right: 1.1rem;
 	}
 </style>

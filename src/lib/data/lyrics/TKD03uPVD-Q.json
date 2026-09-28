@@ -6,215 +6,268 @@
 	"lines": [
 		{
 			"t": 4.13,
-			"text": "🐲 I'm in love 눈에 콩깍지 씌었어 babe (Oh)"
+			"text": "🐲 I'm in love 눈에 콩깍지 씌었어 babe (Oh)",
+			"scene": "Three of you. Unfair."
 		},
 		{
 			"t": 7.53,
-			"text": "하의 실종에 흰 와이셔츠 babe (Oh)"
+			"text": "하의 실종에 흰 와이셔츠 babe (Oh)",
+			"scene": "Hey. Wait. You."
 		},
 		{
 			"t": 10.87,
-			"text": "사람이야 천사야 oh Jesus, babe (Woh)"
+			"text": "사람이야 천사야 oh Jesus, babe (Woh)",
+			"scene": "The river put you here"
 		},
 		{
 			"t": 14.43,
-			"text": "눈부셔 babe (Woh)"
+			"text": "눈부셔 babe (Woh)",
+			"scene": "and I am not apologizing"
 		},
 		{
 			"t": 16,
-			"text": "Sunglass babe"
+			"text": "Sunglass babe",
+			"scene": "for looking."
 		},
 		{
 			"t": 17.8,
-			"text": "정신이 망신이야 홀렸어 네게 (Yeh)"
+			"text": "정신이 망신이야 홀렸어 네게 (Yeh)",
+			"scene": "Eldest, you already decided to leave."
 		},
 		{
 			"t": 21.3,
-			"text": "피가 한쪽으로 또 쏠렸어 네게 (Right)"
+			"text": "피가 한쪽으로 또 쏠렸어 네게 (Right)",
+			"scene": "Go, then. Don't narrate it."
 		},
 		{
 			"t": 24.77,
-			"text": "위험해 you're so dangerous babe"
+			"text": "위험해 you're so dangerous babe",
+			"scene": "Middle one, laugh and follow."
 		},
 		{
 			"t": 28.03,
-			"text": "살려줘 babe"
+			"text": "살려줘 babe",
+			"scene": "I heard the laugh. It was kind"
 		},
 		{
 			"t": 29.83,
-			"text": "경찰 불러 babe"
+			"text": "경찰 불러 babe",
+			"scene": "and it was a door closing."
 		},
 		{
 			"t": 31.6,
-			"text": "☀️ Baby, baby 지금처럼만"
+			"text": "☀️ Baby, baby 지금처럼만",
+			"scene": "Youngest."
 		},
 		{
 			"t": 34.17,
-			"text": "아름다워 줄래 넌"
+			"text": "아름다워 줄래 넌",
+			"scene": "Don't you dare go under"
 		},
 		{
 			"t": 37.07,
-			"text": "시간이 지나도 내가 설렐 수 있게"
+			"text": "시간이 지나도 내가 설렐 수 있게",
+			"scene": "because they did."
 		},
 		{
 			"t": 42.73,
-			"text": "Woo"
+			"text": "Woo",
+			"scene": "You want to. I can see the want"
 		},
 		{
 			"t": 45.3,
-			"text": "Baby, baby 넌 시들지 마"
+			"text": "Baby, baby 넌 시들지 마",
+			"scene": "fight the dive."
 		},
 		{
 			"t": 47.87,
-			"text": "이기적인 날 위해"
+			"text": "이기적인 날 위해",
+			"scene": "Good. Let it fight."
 		},
 		{
 			"t": 50.63,
-			"text": "그 모습 그대로"
+			"text": "그 모습 그대로",
+			"scene": "I am easy until I'm not."
 		},
 		{
 			"t": 52.8,
-			"text": "넌 그대로 여야만 해"
+			"text": "넌 그대로 여야만 해",
+			"scene": "Right now I am not easy."
 		},
 		{
 			"t": 57.07,
-			"text": "🐰 Yeah"
+			"text": "🐰 Yeah",
+			"scene": "I am a sun stopped on a road"
 		},
 		{
 			"t": 58.87,
-			"text": "사슴같이 예쁜 눈 나의 princess (Yeah)"
+			"text": "사슴같이 예쁜 눈 나의 princess (Yeah)",
+			"scene": "because a girl looked up."
 		},
 		{
 			"t": 62.47,
-			"text": "나를 보고 비웃는 게 너무 chic 해 (Yeah)"
+			"text": "나를 보고 비웃는 게 너무 chic 해 (Yeah)",
+			"scene": "Show me less courtesy"
 		},
 		{
 			"t": 65.87,
-			"text": "미친 거 아닐까 자연 미인 특이해 특이해"
+			"text": "미친 거 아닐까 자연 미인 특이해 특이해",
+			"scene": "and more of that almost-smile."
 		},
 		{
 			"t": 69.3,
-			"text": "내게 완벽한 그대여 나의 muse 해"
+			"text": "내게 완벽한 그대여 나의 muse 해",
+			"scene": "If I say you're beautiful"
 		},
 		{
 			"t": 72.73,
-			"text": "우리 둘이 편해 완전 살찌네 (Right)"
+			"text": "우리 둘이 편해 완전 살찌네 (Right)",
+			"scene": "you'll call it cheap."
 		},
 		{
 			"t": 76.17,
-			"text": "너와 몸이 완전 착착 감기네 (Hoh)"
+			"text": "너와 몸이 완전 착착 감기네 (Hoh)",
+			"scene": "So I won't."
 		},
 		{
 			"t": 79.6,
-			"text": "영원히 넌 스물다섯이야 내게 (Yeah)"
+			"text": "영원히 넌 스물다섯이야 내게 (Yeah)",
+			"scene": "I'll say stay, and mean"
 		},
 		{
 			"t": 83,
-			"text": "변치 않아 babe 오 곱하기 오 (5 X 5) babe"
+			"text": "변치 않아 babe 오 곱하기 오 (5 X 5) babe",
+			"scene": "the rest of the afternoon"
 		},
 		{
 			"t": 86.43,
-			"text": "🐯 Baby, baby 지금처럼만"
+			"text": "🐯 Baby, baby 지금처럼만",
+			"scene": "and whatever the afternoon becomes."
 		},
 		{
 			"t": 89.07,
-			"text": "아름다워 줄래 넌"
+			"text": "아름다워 줄래 넌",
+			"scene": "Your sisters think I'm a problem."
 		},
 		{
 			"t": 91.87,
-			"text": "시간이 지나도 내가 설렐 수 있게z"
+			"text": "시간이 지나도 내가 설렐 수 있게z",
+			"scene": "They're right."
 		},
 		{
 			"t": 97.4,
-			"text": "Woo"
+			"text": "Woo",
+			"scene": "Be my problem on purpose."
 		},
 		{
 			"t": 100.17,
-			"text": "Baby, baby 넌 시들지 마"
+			"text": "Baby, baby 넌 시들지 마",
+			"scene": "Yuhwa."
 		},
 		{
 			"t": 102.7,
-			"text": "이기적인 날 위해"
+			"text": "이기적인 날 위해",
+			"scene": "There. Name said."
 		},
 		{
 			"t": 105.47,
-			"text": "그 모습 그대로"
+			"text": "그 모습 그대로",
+			"scene": "The chariot can rust."
 		},
 		{
 			"t": 107.63,
-			"text": "넌 그대로 여야만 해"
+			"text": "넌 그대로 여야만 해",
+			"scene": "I'll count the drops on your collar"
 		},
 		{
 			"t": 113.27,
-			"text": "🐼 난"
+			"text": "🐼 난",
+			"scene": "instead of the provinces."
 		},
 		{
 			"t": 115.93,
-			"text": "예쁜 꽃을 든 남자"
+			"text": "예쁜 꽃을 든 남자",
+			"scene": "Don't blush for them."
 		},
 		{
 			"t": 119.4,
-			"text": "모든 이가 사랑할"
+			"text": "모든 이가 사랑할",
+			"scene": "Blush for me, if you're going to."
 		},
 		{
 			"t": 122.8,
-			"text": "너란 꽃을 든 남자"
+			"text": "너란 꽃을 든 남자",
+			"scene": "Or don't. Stare back."
 		},
 		{
 			"t": 126.27,
-			"text": "그대 향기에 취해"
+			"text": "그대 향기에 취해",
+			"scene": "I like the stare more."
 		},
 		{
 			"t": 129.73,
-			"text": "난 또 몽롱해지고"
+			"text": "난 또 몽롱해지고",
+			"scene": "Come up the bank."
 		},
 		{
 			"t": 133.17,
-			"text": "꺾이지 말아주오"
+			"text": "꺾이지 말아주오",
+			"scene": "Or I'll come to the water"
 		},
 		{
 			"t": 135.2,
-			"text": "제발 너만은"
+			"text": "제발 너만은",
+			"scene": "and ruin a perfectly good godhood."
 		},
 		{
 			"t": 140.27,
-			"text": "🐲 찹쌀떡 (Oh, right)"
+			"text": "🐲 찹쌀떡 (Oh, right)",
+			"scene": "Worth it."
 		},
 		{
 			"t": 143.77,
-			"text": "찹쌀떡 (Woo, 🐰 babe babe)"
+			"text": "찹쌀떡 (Woo, 🐰 babe babe)",
+			"scene": "You stayed."
 		},
 		{
 			"t": 147.27,
-			"text": "궁합이 Yeah"
+			"text": "궁합이 Yeah",
+			"scene": "I knew you would"
 		},
 		{
 			"t": 149.87,
-			"text": "우리 우리 궁합이 (Haha)"
+			"text": "우리 우리 궁합이 (Haha)",
+			"scene": "and I was still surprised."
 		},
 		{
 			"t": 152.4,
-			"text": "Yeah (Bae babe, babe bea)"
+			"text": "Yeah (Bae babe, babe bea)",
+			"scene": "That's the flirt and the truth"
 		},
 		{
 			"t": 154.1,
-			"text": "찹쌀떡 (Oh, 🐰 babe babe)"
+			"text": "찹쌀떡 (Oh, 🐰 babe babe)",
+			"scene": "in the same mouth."
 		},
 		{
 			"t": 157.47,
-			"text": "찹쌀떡 (WOO!, Blow blow)"
+			"text": "찹쌀떡 (WOO!, Blow blow)",
+			"scene": "Hey."
 		},
 		{
 			"t": 161,
-			"text": "궁합이 Yeah"
+			"text": "궁합이 Yeah",
+			"scene": "Don't look away now."
 		},
 		{
 			"t": 163.6,
-			"text": "우리 우리 궁합이 (Haha)"
+			"text": "우리 우리 궁합이 (Haha)",
+			"scene": "You."
 		},
 		{
 			"t": 166.17,
-			"text": "Yeah"
+			"text": "Yeah",
+			"scene": "Stay."
 		}
 	]
 }

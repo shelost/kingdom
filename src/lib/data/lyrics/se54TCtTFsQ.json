@@ -6,127 +6,214 @@
 	"lines": [
 		{
 			"t": 10.34,
-			"text": "어찌합니까 어떻게 할까요"
+			"text": "어찌합니까 어떻게 할까요",
+			"scene": "Yuhwa."
+		},
+		{
+			"t": 15.34,
+			"text": "♪",
+			"scene": "Don't go under yet."
+		},
+		{
+			"t": 20.34,
+			"text": "♪",
+			"scene": "I stopped the chariot. You saw."
+		},
+		{
+			"t": 25.34,
+			"text": "♪",
+			"scene": "Hey. I said hey like a man"
+		},
+		{
+			"t": 30.34,
+			"text": "♪",
+			"scene": "who forgot he was the sun."
 		},
 		{
 			"t": 32.4,
-			"text": "감히 제가 감히 그녀를 사랑합니다"
+			"text": "감히 제가 감히 그녀를 사랑합니다",
+			"scene": "You stayed. The other two didn't."
 		},
 		{
 			"t": 46.66,
-			"text": "조용히 나조차 나조차도 모르게"
+			"text": "조용히 나조차 나조차도 모르게",
+			"scene": "I know. I watched the choice."
 		},
 		{
 			"t": 57.21,
-			"text": "잊은 척 산다는 건 살아도 죽은겁니다"
+			"text": "잊은 척 산다는 건 살아도 죽은겁니다",
+			"scene": "I wanted you before the speech."
 		},
 		{
 			"t": 74.27,
-			"text": "세상의 비난도 미쳐 보일 모습도"
+			"text": "세상의 비난도 미쳐 보일 모습도",
+			"scene": "Before the river had a theology."
 		},
 		{
 			"t": 83.03,
-			"text": "모두 다 알지만"
+			"text": "모두 다 알지만",
+			"scene": "Just you, wet hair, looking up"
 		},
 		{
 			"t": 87.88,
-			"text": "그게 두렵지만 사랑합니다"
+			"text": "그게 두렵지만 사랑합니다",
+			"scene": "like you might dare me."
 		},
 		{
 			"t": 96.91,
-			"text": "어디에 있나요"
+			"text": "어디에 있나요",
+			"scene": "I dare you back."
 		},
 		{
 			"t": 102.04,
-			"text": "제 얘기 정말 들리시나요"
+			"text": "제 얘기 정말 들리시나요",
+			"scene": "This is the confession, not the grin."
 		},
 		{
 			"t": 109.32,
-			"text": "그럼 피 흘리는"
+			"text": "그럼 피 흘리는",
+			"scene": "Though the grin is also true."
 		},
 		{
 			"t": 111.91,
-			"text": "가엾은 제 사랑을 알고 계신가요"
+			"text": "가엾은 제 사랑을 알고 계신가요",
+			"scene": "I will not be a tourist about you."
 		},
 		{
 			"t": 123.26,
-			"text": "용서해주세요"
+			"text": "용서해주세요",
+			"scene": "I will be greedy and then serious"
 		},
 		{
 			"t": 127.56,
-			"text": "벌하신다면 저 받을게요"
+			"text": "벌하신다면 저 받을게요",
+			"scene": "and then greedy again, because"
 		},
 		{
 			"t": 135.15,
-			"text": "허나 그녀만은"
+			"text": "허나 그녀만은",
+			"scene": "that is the order of my blood."
 		},
 		{
 			"t": 137.92,
-			"text": "제게 그녀 하나만 허락해 주소서"
+			"text": "제게 그녀 하나만 허락해 주소서",
+			"scene": "Father of her child, if the story"
+		},
+		{
+			"t": 142.92,
+			"text": "♪",
+			"scene": "goes the way my chest is going."
+		},
+		{
+			"t": 147.92,
+			"text": "♪",
+			"scene": "I should say that slower."
+		},
+		{
+			"t": 152.92,
+			"text": "♪",
+			"scene": "I want the girl who stayed."
+		},
+		{
+			"t": 157.92,
+			"text": "♪",
+			"scene": "I want the nights after the myth."
 		},
 		{
 			"t": 161.27,
-			"text": "어디에 있나요"
+			"text": "어디에 있나요",
+			"scene": "If heaven has a schedule"
+		},
+		{
+			"t": 166.27,
+			"text": "♪",
+			"scene": "it can wait its turn."
+		},
+		{
+			"t": 171.27,
+			"text": "♪",
+			"scene": "Yuhwa, look up."
+		},
+		{
+			"t": 176.27,
+			"text": "♪",
+			"scene": "I'm already late. You said that"
 		},
 		{
 			"t": 182.02,
-			"text": "제 얘기 정말 들리시나요"
+			"text": "제 얘기 정말 들리시나요",
+			"scene": "with your eyes."
 		},
 		{
 			"t": 188.89,
-			"text": "그럼 피 흘리는"
+			"text": "그럼 피 흘리는",
+			"scene": "Good."
 		},
 		{
 			"t": 192.23,
-			"text": "가엾은 제 사랑을 알고 계신가요"
+			"text": "가엾은 제 사랑을 알고 계신가요",
+			"scene": "I confess the want."
 		},
 		{
 			"t": 208.02,
-			"text": "용서해주세요"
+			"text": "용서해주세요",
+			"scene": "I confess the staying."
 		},
 		{
 			"t": 211.47,
-			"text": "벌하신다면 저 받을게요"
+			"text": "벌하신다면 저 받을게요",
+			"scene": "I confess I will make trouble"
 		},
 		{
 			"t": 215.89,
-			"text": "허나 그녀만은"
+			"text": "허나 그녀만은",
+			"scene": "your sisters will laugh about"
 		},
 		{
 			"t": 218.8,
-			"text": "제게 그녀 하나만 허락해 주소서"
+			"text": "제게 그녀 하나만 허락해 주소서",
+			"scene": "and you will not quite deny."
 		},
 		{
 			"t": 228.01,
-			"text": "어디에 있나요"
+			"text": "어디에 있나요",
+			"scene": "Take my hand before the water does."
 		},
 		{
 			"t": 236.52,
-			"text": "제 얘기 정말 들리시나요"
+			"text": "제 얘기 정말 들리시나요",
+			"scene": "Or take the water and take me after."
 		},
 		{
 			"t": 240.32,
-			"text": "그럼 피 흘리는"
+			"text": "그럼 피 흘리는",
+			"scene": "I am not proud."
 		},
 		{
 			"t": 242.3,
-			"text": "가엾은 제 사랑을 알고 계신가요"
+			"text": "가엾은 제 사랑을 알고 계신가요",
+			"scene": "I am sure."
 		},
 		{
 			"t": 247.69,
-			"text": "용서해주세요"
+			"text": "용서해주세요",
+			"scene": "You."
 		},
 		{
 			"t": 250.76,
-			"text": "벌하신다면 저 받을게요"
+			"text": "벌하신다면 저 받을게요",
+			"scene": "That's the whole high prayer."
 		},
 		{
 			"t": 254.56,
-			"text": "허나 그녀만은"
+			"text": "허나 그녀만은",
+			"scene": "The rest is just a god"
 		},
 		{
 			"t": 256.24,
-			"text": "제게 그녀 하나만 허락해 주소서"
+			"text": "제게 그녀 하나만 허락해 주소서",
+			"scene": "trying not to fumble it."
 		}
-	]
+	],
+	"instrumentalGaps": true
 }

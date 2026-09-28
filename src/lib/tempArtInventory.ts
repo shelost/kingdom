@@ -1999,7 +1999,6 @@ export const TEMP_ART_BY_ID: ReadonlyMap<string, string> = new Map([
 	['xue-east-gaze', '/temp/xue-east-gaze.jpg'],
 	['xue-eastern-shaft', '/temp/xue-eastern-shaft.jpg'],
 	['xue-fortress-escape', '/temp/xue-fortress-escape.jpg'],
-	['xue-longmen-farewell', '/temp/xue-longmen-farewell.jpg'],
 	['xue-longmen-field-dawn', '/temp/xue-longmen-field-dawn.jpg'],
 	['xue-longmen-graves', '/temp/xue-longmen-graves.jpg'],
 	['xue-longmen-hut-door', '/temp/xue-longmen-hut-door.jpg'],

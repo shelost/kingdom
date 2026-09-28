@@ -1,12 +1,7 @@
 <script lang="ts">
 	import { storyImg } from '$lib/img';
-	import {
-		music,
-		setVolume,
-		toggleMute,
-		togglePause,
-		seek
-	} from '$lib/music.svelte';
+	import { isAudible, music, playOrPause, setVolume, toggleMute } from '$lib/music.svelte';
+	import SeekBar from './SeekBar.svelte';
 	import type { Scene } from '$lib/scenes';
 	import { audioArtist, audioCredit, audioLabel, sceneCover } from '$lib/scenes';
 
@@ -27,8 +22,6 @@
 		onplay?: () => void;
 	} = $props();
 
-	let scrubbing = $state(false);
-	let scrubValue = $state(0);
 	let volOpen = $state(false);
 
 	let title = $derived(scene ? audioLabel(scene) : 'No track');
@@ -37,45 +30,7 @@
 	let cover = $derived(scene ? sceneCover(scene) : '');
 	let sceneTitle = $derived(scene?.title ?? 'Scenes');
 
-	let playing = $derived(
-		!!music.current && music.armed && !music.muted && !music.paused
-	);
-
-	let displayTime = $derived(scrubbing ? scrubValue : music.currentTime);
-	let progress = $derived(
-		music.duration > 0 ? Math.min(1, displayTime / music.duration) : 0
-	);
-
-	function fmt(sec: number) {
-		if (!Number.isFinite(sec) || sec < 0) return '0:00';
-		const s = Math.floor(sec);
-		const m = Math.floor(s / 60);
-		const r = s % 60;
-		return `${m}:${r.toString().padStart(2, '0')}`;
-	}
-
-	function onPlayClick() {
-		if (playing) {
-			togglePause();
-			return;
-		}
-		onplay?.();
-		if (music.muted) toggleMute();
-		else if (music.paused) togglePause();
-	}
-
-	function onSeekInput(e: Event) {
-		const el = e.currentTarget as HTMLInputElement;
-		scrubbing = true;
-		scrubValue = Number(el.value);
-	}
-
-	function onSeekCommit(e: Event) {
-		const el = e.currentTarget as HTMLInputElement;
-		const t = Number(el.value);
-		scrubbing = false;
-		seek(t);
-	}
+	let playing = $derived(isAudible());
 
 	function onVolInput(e: Event) {
 		const el = e.currentTarget as HTMLInputElement;
@@ -142,7 +97,7 @@
 				<button
 					type="button"
 					class="play"
-					onclick={onPlayClick}
+					onclick={() => playOrPause(onplay)}
 					aria-label={playing ? 'Pause' : 'Play'}
 				>
 					{#if playing}
@@ -172,25 +127,7 @@
 				</button>
 			</div>
 
-			<div class="scrub">
-				<span class="time">{fmt(displayTime)}</span>
-				<label class="bar">
-					<span class="sr">Seek</span>
-					<input
-						type="range"
-						min="0"
-						max={music.duration || 0}
-						step="0.05"
-						value={displayTime}
-						disabled={!music.duration}
-						style:--p="{progress * 100}%"
-						oninput={onSeekInput}
-						onchange={onSeekCommit}
-						onpointerup={onSeekCommit}
-					/>
-				</label>
-				<span class="time end">{music.duration ? fmt(music.duration) : '—:—'}</span>
-			</div>
+			<SeekBar />
 		</div>
 
 		<div class="gain" class:open={volOpen}>
@@ -450,32 +387,6 @@
 		transform: scale(0.97);
 	}
 
-	.scrub {
-		display: grid;
-		grid-template-columns: 2.4rem minmax(0, 1fr) 2.4rem;
-		align-items: center;
-		gap: 0.45rem;
-		width: min(100%, 26rem);
-	}
-
-	.time {
-		font-size: 0.65rem;
-		font-variant-numeric: tabular-nums;
-		letter-spacing: 0.02em;
-		color: var(--player-muted);
-		text-align: right;
-	}
-
-	.time.end {
-		text-align: left;
-	}
-
-	.bar {
-		display: block;
-		min-width: 0;
-	}
-
-	.bar input,
 	.vol input {
 		-webkit-appearance: none;
 		appearance: none;
@@ -491,7 +402,6 @@
 		cursor: pointer;
 	}
 
-	.bar input::-webkit-slider-thumb,
 	.vol input::-webkit-slider-thumb {
 		-webkit-appearance: none;
 		appearance: none;
@@ -501,19 +411,8 @@
 		background: #fff;
 		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 		border: none;
-		opacity: 0;
-		transition: opacity 140ms ease;
 	}
 
-	.bar:hover input::-webkit-slider-thumb,
-	.bar input:focus-visible::-webkit-slider-thumb,
-	.vol:hover input::-webkit-slider-thumb,
-	.vol input:focus-visible::-webkit-slider-thumb,
-	.vol input::-webkit-slider-thumb {
-		opacity: 1;
-	}
-
-	.bar input::-moz-range-thumb,
 	.vol input::-moz-range-thumb {
 		width: 0.78rem;
 		height: 0.78rem;
