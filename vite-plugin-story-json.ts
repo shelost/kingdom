@@ -6,6 +6,7 @@ import { chronicleHmrSkipArmed } from './src/lib/server/chronicleHmr.ts';
 const STORY = path.resolve('src/lib/data/story.json');
 const PEOPLE = path.resolve('src/lib/data/image-people.json');
 const INVENTORY = path.resolve('src/lib/tempArtInventory.ts');
+const SCENES = path.resolve('src/lib/scenes.ts');
 const VIRTUAL = '\0compact-story-json';
 
 /** Same heuristic as `isNsfwCueImage` — bake flags when stripping prompts in prod. */
@@ -15,7 +16,10 @@ const NSFW_HINT =
 function isChroniclePersist(file: string): boolean {
 	const n = path.normalize(file);
 	return (
-		n === path.normalize(STORY) || n === path.normalize(PEOPLE) || n === path.normalize(INVENTORY)
+		n === path.normalize(STORY) ||
+		n === path.normalize(PEOPLE) ||
+		n === path.normalize(INVENTORY) ||
+		n === path.normalize(SCENES)
 	);
 }
 
@@ -78,8 +82,8 @@ export function compactStoryJson(): Plugin {
 			};
 		},
 		handleHotUpdate({ file, server }) {
-			/* Edit-mode cue delete already patched client state. Reloading
-			   story.json / inventory remounts the chronicle and jumps to top. */
+			/* Edit-mode deletes already patched client state. Reloading
+			   story.json / inventory / scenes.ts remounts the page and jumps to top. */
 			if (isChroniclePersist(file) && chronicleHmrSkipArmed()) return [];
 			if (path.normalize(file) !== path.normalize(STORY)) return;
 			const mod = server.moduleGraph.getModuleById(VIRTUAL);
