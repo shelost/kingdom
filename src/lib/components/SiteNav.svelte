@@ -100,9 +100,11 @@
 		font-size: 1rem;
 	}
 
-	/* Phones navigate from the tab bar; the pill rows would only wrap. */
+	/* Phones navigate from the tab bar; the pill rows would only wrap. A page's
+	   separator dot right after the nav goes with it. */
 	@media (max-width: 720px) {
-		:global(html.has-tabbar) .site-nav {
+		:global(html.has-tabbar) .site-nav,
+		:global(html.has-tabbar) .site-nav + :global(.dot) {
 			display: none;
 		}
 	}
