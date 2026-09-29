@@ -1,0 +1,265 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  } ],
+  "wpWinPositions": [ {
+  
+  } ],
+  "events": [ {
+    "tStartMs": 5051,
+    "dDurationMs": 3391,
+    "segs": [ {
+      "utf8": "나를 그냥 짓밟고 가 "
+    } ]
+  }, {
+    "tStartMs": 9724,
+    "dDurationMs": 4031,
+    "segs": [ {
+      "utf8": "괜찮아 돌아보지 마"
+    } ]
+  }, {
+    "tStartMs": 14417,
+    "dDurationMs": 4799,
+    "segs": [ {
+      "utf8": "내가 아파봤자 너만 하겠니"
+    } ]
+  }, {
+    "tStartMs": 19434,
+    "dDurationMs": 3660,
+    "segs": [ {
+      "utf8": "이젠 너를 헤아려봐"
+    } ]
+  }, {
+    "tStartMs": 24339,
+    "dDurationMs": 4739,
+    "segs": [ {
+      "utf8": "날 위해 쉬던 그 숨은 잊고"
+    } ]
+  }, {
+    "tStartMs": 29078,
+    "dDurationMs": 4755,
+    "segs": [ {
+      "utf8": "저 위에 널 위해 Just kill my ego"
+    } ]
+  }, {
+    "tStartMs": 33833,
+    "dDurationMs": 4752,
+    "segs": [ {
+      "utf8": "등 돌려 걸어가"
+    } ]
+  }, {
+    "tStartMs": 38667,
+    "dDurationMs": 4347,
+    "segs": [ {
+      "utf8": "You got it you got it yeah"
+    } ]
+  }, {
+    "tStartMs": 43298,
+    "dDurationMs": 8181,
+    "segs": [ {
+      "utf8": "안녕은 우릴 아프게 하지만 우아할 거야"
+    } ]
+  }, {
+    "tStartMs": 53370,
+    "dDurationMs": 7790,
+    "segs": [ {
+      "utf8": "나 땅을 치고 후회하도록 넌 크게 웃어줘"
+    } ]
+  }, {
+    "tStartMs": 61160,
+    "dDurationMs": 1657,
+    "segs": [ {
+      "utf8": "goodb-ye"
+    } ]
+  }, {
+    "tStartMs": 62817,
+    "dDurationMs": 4725,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 67542,
+    "dDurationMs": 4835,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye (b-ye)"
+    } ]
+  }, {
+    "tStartMs": 72377,
+    "dDurationMs": 4782,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 77159,
+    "dDurationMs": 4415,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 81574,
+    "dDurationMs": 5358,
+    "segs": [ {
+      "utf8": "후회하도록 goodb-ye"
+    } ]
+  }, {
+    "tStartMs": 91448,
+    "dDurationMs": 3637,
+    "segs": [ {
+      "utf8": "널 생각한 운율이야"
+    } ]
+  }, {
+    "tStartMs": 96261,
+    "dDurationMs": 4352,
+    "segs": [ {
+      "utf8": "비로소 느껴지잖아"
+    } ]
+  }, {
+    "tStartMs": 100865,
+    "dDurationMs": 4782,
+    "segs": [ {
+      "utf8": "눈물은 고이고 찬란하게 빛나"
+    } ]
+  }, {
+    "tStartMs": 105870,
+    "dDurationMs": 3708,
+    "segs": [ {
+      "utf8": "우린 좋은 안녕 중이야"
+    } ]
+  }, {
+    "tStartMs": 110019,
+    "dDurationMs": 5252,
+    "segs": [ {
+      "utf8": "고맙단 말 대신 전할게"
+    } ]
+  }, {
+    "tStartMs": 115394,
+    "dDurationMs": 4359,
+    "segs": [ {
+      "utf8": "goodbye good goodbye"
+    } ]
+  }, {
+    "tStartMs": 120098,
+    "dDurationMs": 8412,
+    "segs": [ {
+      "utf8": "안녕은 우릴 아프게 하지만 우아할 거야"
+    } ]
+  }, {
+    "tStartMs": 130084,
+    "dDurationMs": 7960,
+    "segs": [ {
+      "utf8": "나 땅을 치고 후회하도록 넌 크게 웃어줘"
+    } ]
+  }, {
+    "tStartMs": 138044,
+    "dDurationMs": 1561,
+    "segs": [ {
+      "utf8": "goodb-ye"
+    } ]
+  }, {
+    "tStartMs": 139605,
+    "dDurationMs": 4765,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 144370,
+    "dDurationMs": 4851,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye (b-ye)"
+    } ]
+  }, {
+    "tStartMs": 149221,
+    "dDurationMs": 4314,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 153535,
+    "dDurationMs": 3778,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 158478,
+    "dDurationMs": 4516,
+    "segs": [ {
+      "utf8": "세상이 나를 빤히 내려다봐도"
+    } ]
+  }, {
+    "tStartMs": 163383,
+    "dDurationMs": 4357,
+    "segs": [ {
+      "utf8": "내 편이 돼줄 사람 하나 없어도"
+    } ]
+  }, {
+    "tStartMs": 167740,
+    "dDurationMs": 2057,
+    "segs": [ {
+      "utf8": "Don't worry it's okay"
+    } ]
+  }, {
+    "tStartMs": 169870,
+    "dDurationMs": 2743,
+    "segs": [ {
+      "utf8": "난 내 곁에 있을게"
+    } ]
+  }, {
+    "tStartMs": 172726,
+    "dDurationMs": 4741,
+    "segs": [ {
+      "utf8": "I'll be on my side instead of you"
+    } ]
+  }, {
+    "tStartMs": 177511,
+    "dDurationMs": 8158,
+    "segs": [ {
+      "utf8": "안녕은 나를 아프게 하지만 울어볼 거야"
+    } ]
+  }, {
+    "tStartMs": 186959,
+    "dDurationMs": 8151,
+    "segs": [ {
+      "utf8": "땅을 치고 후회해도 좋아 우리 이렇게"
+    } ]
+  }, {
+    "tStartMs": 195110,
+    "dDurationMs": 1539,
+    "segs": [ {
+      "utf8": "goodb-ye"
+    } ]
+  }, {
+    "tStartMs": 196649,
+    "dDurationMs": 4683,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 201332,
+    "dDurationMs": 4841,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye (b-ye)"
+    } ]
+  }, {
+    "tStartMs": 206173,
+    "dDurationMs": 4556,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 210729,
+    "dDurationMs": 3874,
+    "segs": [ {
+      "utf8": "bye ye ye ye ye"
+    } ]
+  }, {
+    "tStartMs": 215303,
+    "dDurationMs": 5293,
+    "segs": [ {
+      "utf8": "후회조차도 goodb-ye"
+    } ]
+  } ]
+}

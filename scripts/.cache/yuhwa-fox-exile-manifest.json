@@ -1,0 +1,72 @@
+[
+	{
+		"id": "yuhwa-exile-pavilion-wide",
+		"alt": "Wide: Habek’s dark giwa pavilion over the braided Amnok, tiny figures on the walkway as he drives Yuhwa out",
+		"prompt": "Minimal iconic 16:9 still. DUTCH WIDE of attached Amnok pavilion — same dark giwa, walkway, braided river. Tiny Habek driving Yuhwa out, lower third. Yuhwa ice-blue silky hanbok #8fc4e0, bn_yuhwa, not bathing clone. #2f8f7a mist bounce, not a halo. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-habek-dutch",
+		"alt": "Dutch: Habek lunges from the pavilion floor, sleeve a closed door, Yuhwa driven toward the walkway",
+		"prompt": "Minimal iconic 16:9 still. DUTCH inside attached pavilion. Habek lunging, pointing. Yuhwa recoiling, ice-blue hanbok, bn_yuhwa. Sleeve as a hard diagonal. #2f8f7a mist, not a glow. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-walkway-stumble",
+		"alt": "Yuhwa stumbles on the timber walkway, ice-blue silk, river far below",
+		"prompt": "Minimal iconic 16:9 still. OTS DUTCH: Yuhwa stumbling on the pavilion walkway. Ice-blue silky hanbok #8fc4e0, bn_yuhwa. Walkway boards as a steep diagonal. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-dejected-sit",
+		"alt": "Abandoned: Yuhwa sits small on packed earth below the pavilion, mist gone, ice-blue dull with dust",
+		"prompt": "Minimal iconic 16:9 still. WIDE LOWER-THIRD: Yuhwa sitting small on packed earth below the pavilion. Dusty ice-blue hanbok, bn_yuhwa, bare feet. Empty packed earth as the plane. HIGH CONTRAST dusk. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-dejected-ecu",
+		"alt": "ECU: Yuhwa’s dejected face, dust on ice-blue, she does not look up",
+		"prompt": "Minimal iconic 16:9 still. ECU DUTCH: Yuhwa dejected face, dusty ice-blue collar, bn_yuhwa. #8fc4e0 silk catch, not a glow. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-sky-voice",
+		"alt": "Worm’s-eye: Yuhwa looks up; a gold light-plane in the cloud, no body",
+		"prompt": "Minimal iconic 16:9 still. WORM’S-EYE Yuhwa looking up. ONE gold #f0b429 light-plane in the cloud — no body, no chariot, no halo on her. Ice-blue hanbok, bn_yuhwa. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-fox-appear",
+		"alt": "The pale gold-white sun-fox stands on packed earth; Yuhwa seeing it",
+		"prompt": "Minimal iconic 16:9 still. DUTCH: Yuhwa seeing the sun-fox on packed earth. Fox BODY from obj_haemosu_fox — pale cream-white flowing fur, ignore orange outline. #f0b429 on fur, not a halo on her. Ice-blue hanbok, bn_yuhwa. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-fox-lookback",
+		"alt": "The sun-fox looks back once from the packed earth, Yuhwa still sitting",
+		"prompt": "Minimal iconic 16:9 still. LOW OTS: cream-white sun-fox looking back, Yuhwa rising behind. Fox from obj_haemosu_fox, ignore orange outline. #f0b429 on fur only. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-fox-follow-south",
+		"alt": "OTS: Yuhwa follows the sun-fox south along the Amnok, bare feet, dusty ice-blue",
+		"prompt": "Minimal iconic 16:9 still. OTS: readable Yuhwa following a cream-white sun-fox along the braided Amnok. Ice-blue hanbok, bn_yuhwa, bare feet. #f0b429 on fox fur. HIGH CONTRAST long shadows. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-fox-pine",
+		"alt": "Pine shade: Yuhwa following the pale fox, a river-bend that is not the Amnok",
+		"prompt": "Minimal iconic 16:9 still. DUTCH tenebrism in Korean pines. Yuhwa following cream-white sun-fox. Trunks as a dark grill. #f0b429 shaft through needles. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-fox-pass",
+		"alt": "Bird’s-eye: a pass of bare stone, Yuhwa smaller than the ridge, the fox a pale stamp on the switchback",
+		"prompt": "Minimal iconic 16:9 still. BIRD’S-EYE stone switchback. Tiny Yuhwa and cream-white fox in the lower third. Switchback as a pale stamp. HIGH CONTRAST tenebrism. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-fox-buyeo-see",
+		"alt": "From a ridge: Northern Buyeo’s mountain city under a real sky; fox and Yuhwa tiny in the lower third",
+		"prompt": "Minimal iconic 16:9 still. Ridge view LOCKED to pl_northern_buyeo mesa city. Tiny Yuhwa and cream-white fox in the lower third. HIGH CONTRAST ridge shadow / sunlit city. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-geumwa-path",
+		"alt": "Palace path: Geumwa in red-burgundy court silk reaching toward dusty Yuhwa; the fox already gone",
+		"prompt": "Minimal iconic 16:9 still. DUTCH on pl_buyeo_palace path. Geumwa red-burgundy court silk from portrait, not gold-plated. Yuhwa dusty ice-blue, bn_yuhwa. Path as a pale ribbon. #a89a72 bounce. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-exile-geumwa-come-in",
+		"alt": "Dutch two-shot: Geumwa offers the room; Yuhwa still dusty, ice-blue, not kneeling as a plea",
+		"prompt": "Minimal iconic 16:9 still. DUTCH TWO-SHOT. Geumwa FACE from portrait — lined king, red-bead crown, red-burgundy silk, open hand. Yuhwa dusty ice-blue, bn_yuhwa. Offered hand as the device. #a89a72 bounce. HIGH CONTRAST. 2D cel-painterly. No text. No watermark."
+	}
+]

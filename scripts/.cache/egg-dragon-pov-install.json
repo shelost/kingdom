@@ -1,0 +1,87 @@
+[
+	{
+		"id": "jumong-buyeo-wc-sunshaft-belly",
+		"alt": "Watercolor — small Buyeo room, sun-shaft on Yuhwa’s belly, no Geumwa",
+		"prompt": "Watercolor — small Buyeo room, sun-shaft on Yuhwa’s belly, no Geumwa. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-buyeo-ink-sunshaft-belly",
+		"alt": "Ink-wash — sun-shaft on belly, Yuhwa alone",
+		"prompt": "Ink-wash — sun-shaft on belly, Yuhwa alone. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-buyeo-wc-egg-birth",
+		"alt": "Watercolor — Yuhwa alone lays the egg under the sun-shaft",
+		"prompt": "Watercolor — Yuhwa alone lays the egg under the sun-shaft. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-buyeo-ink-egg-birth",
+		"alt": "Ink-wash — egg birth, Yuhwa alone",
+		"prompt": "Ink-wash — egg birth, Yuhwa alone. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-wc-dragon-banter",
+		"alt": "Watercolor — Haemosu banters with the five playful dragons",
+		"prompt": "Watercolor — Haemosu banters with the five playful dragons. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-ink-dragon-banter",
+		"alt": "Ink-wash — Haemosu talks to the azure dragon",
+		"prompt": "Ink-wash — Haemosu talks to the azure dragon. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-wc-dragon-nuzzle",
+		"alt": "Watercolor — crimson dragon nuzzles Haemosu mid-banter",
+		"prompt": "Watercolor — crimson dragon nuzzles Haemosu mid-banter. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-wc-pov-haemosu-her",
+		"alt": "Watercolor POV Haemosu — OTS looking at Yuhwa in the talk",
+		"prompt": "Watercolor POV Haemosu — OTS looking at Yuhwa in the talk. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-wc-pov-yuhwa-him",
+		"alt": "Watercolor POV Yuhwa — OTS looking at Haemosu grin",
+		"prompt": "Watercolor POV Yuhwa — OTS looking at Haemosu grin. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-ink-pov-haemosu-her",
+		"alt": "Ink-wash POV Haemosu — her face from his eyeline",
+		"prompt": "Ink-wash POV Haemosu — her face from his eyeline. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-ink-pov-yuhwa-him",
+		"alt": "Ink-wash POV Yuhwa — his grin from her eyeline",
+		"prompt": "Ink-wash POV Yuhwa — his grin from her eyeline. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-amnok-wc-pov-like-ecu",
+		"alt": "Watercolor ECU — Yuhwa likes what she sees",
+		"prompt": "Watercolor ECU — Yuhwa likes what she sees. Place/face/object from attached. No Geumwa on egg/sunshaft beats."
+	},
+	{
+		"id": "jumong-yuhwa-sunshaft-timber",
+		"alt": "Small Buyeo room — sun-shaft on Yuhwa’s belly, empty yard, no Geumwa",
+		"prompt": "Sun-shaft plane on belly. Yuhwa alone. No Geumwa."
+	},
+	{
+		"id": "jumong-buyeo-egg",
+		"alt": "Yuhwa alone with the glossy egg in the timber room — no Geumwa",
+		"prompt": "Egg room. Yuhwa alone. No Geumwa."
+	},
+	{
+		"id": "jumong-buyeo-wc-egg-hurl",
+		"alt": "Watercolor — pale egg alone mid-air over daylight Buyeo, no people",
+		"prompt": "Egg alone. No Geumwa."
+	},
+	{
+		"id": "jumong-buyeo-wc-egg-axe",
+		"alt": "Watercolor — Yuhwa wraps the egg warm, alone",
+		"prompt": "Yuhwa wraps egg. No Geumwa."
+	},
+	{
+		"id": "jumong-buyeo-ink-egg-air",
+		"alt": "Ink-wash — pale egg alone mid-air, no Geumwa",
+		"prompt": "Egg alone. No Geumwa."
+	}
+]

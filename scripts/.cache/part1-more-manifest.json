@@ -1,0 +1,77 @@
+[
+	{
+		"id": "family-seq-ride-wide",
+		"alt": "Bird’s-eye: the palace road as a pale ribbon; Chunchu and Gotaso on one horse, Bupmin following on another",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. BIRD’S-EYE. ONE device: packed-earth road as a pale ribbon. Two horses, three people — Chunchu+Gotaso same horse, Bupmin behind. Magenta #D8258C rim. Eastern Palace giwa. Empty yard. No text. No watermark."
+	},
+	{
+		"id": "family-seq-ride-close",
+		"alt": "Dutch close: Chunchu laughing open-mouthed with Gotaso in front of him on the same horse; travel coats",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH CLOSE. ONE device: horse neck as a dark diagonal. Chunchu LOUD laugh, Gotaso gripping mane. Magenta #D8258C cheek-plane. Travel coats, not court silk. No text. No watermark."
+	},
+	{
+		"id": "moon-seq-hall-bird",
+		"alt": "Bird’s-eye inside Moon Palace: empty timber well, one vermilion axis, vacant floor",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. BIRD’S-EYE INTERIOR. ONE device: hall as a dark rectangular well. Vermilion #E8552B floor seam. Empty Moon Palace timber. No crowd. No text. No watermark."
+	},
+	{
+		"id": "sunduk-seq-coronation-sym",
+		"alt": "Symmetrical worm’s-eye: Queen Sunduk on the Moon Palace axis, vermilion silk, empty hall",
+		"prompt": "ICONIC MINIMAL 3:4. 2D cel-painterly, not photoreal. No halo/bloom. WORM’S-EYE SYMMETRY. ONE device: mirrored timber V. Sunduk lower-third on the axis, vermilion #E8552B plane. Empty Moon Palace. No text. No watermark."
+	},
+	{
+		"id": "sabi-seq-hall-bird",
+		"alt": "Bird’s-eye inside Sabi palace: courtyard as a pale stamp in a dark timber well",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. BIRD’S-EYE INTERIOR. ONE device: courtyard as a pale rectangle. Amber #e08a2e eave-plane. Empty Sabi timber. No text. No watermark."
+	},
+	{
+		"id": "euija-seq-disguise-yard",
+		"alt": "Dutch: young unbearded Euija in hemp commoner clothes, mid-stride in an empty Sabi yard",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH. ONE device: timber gate as a vertical stamp. Young Euija hemp disguise, NO large beard. Amber #e08a2e rim. Lower third. No text. No watermark."
+	},
+	{
+		"id": "gyebek-seq-dive-wide",
+		"alt": "Dutch wide: White River as a dark diagonal; a boy in wet white hanbok diving again, Euija on the bank",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH WIDE. ONE device: river as a dark diagonal. Boy in soaked WHITE hanbok diving; young Euija on the bank. Yellow #d9b13a wet key. No text. No watermark."
+	},
+	{
+		"id": "gyebek-seq-surface",
+		"alt": "Dutch close: Gyebek gasping at the waterline after another dive, soaked white collar",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH CLOSE. ONE device: waterline as a hard black bar. Teenage Gyebek gasping, WHITE hanbok, short-medium wet hair, no armor. Yellow #d9b13a. No text. No watermark."
+	},
+	{
+		"id": "gyebek-seq-name",
+		"alt": "Two-shot on the wet bank: Euija naming him Gyebek; the boy kneeling soaked in white hanbok",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. TWO-SHOT. ONE device: river as a dark horizontal. Young Euija hemp, Gyebek white soaked hanbok. Amber #e08a2e and yellow #d9b13a rims. No text. No watermark."
+	},
+	{
+		"id": "gyebek-fb-burn",
+		"alt": "Flashback: one burning timber house as a black stamp; a tiny boy in noble silk running",
+		"prompt": "ICONIC MINIMAL 16:9 FLASHBACK. 2D cel-painterly, not photoreal. No halo/bloom. ONE device: house as a black stamp against a fire-plane. Tiny running boy, noble silk. Yellow #d9b13a rim. No text. No watermark."
+	},
+	{
+		"id": "gyebek-fb-run",
+		"alt": "Flashback dutch: a timber alley-wedge; a boy in torn noble silk running, hiding his name",
+		"prompt": "ICONIC MINIMAL 16:9 FLASHBACK. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH. ONE device: alley as a dark wedge. Boy running, torn noble silk. Yellow #d9b13a rim. No text. No watermark."
+	},
+	{
+		"id": "gyebek-fb-beg",
+		"alt": "Flashback lower-third: a dirty noble collar at an empty timber gate, begging",
+		"prompt": "ICONIC MINIMAL 16:9 FLASHBACK. 2D cel-painterly, not photoreal. No halo/bloom. LOWER-THIRD. ONE device: gate as a dark rectangle. Boy kneeling, dirty noble collar. Yellow #d9b13a rim. No text. No watermark."
+	},
+	{
+		"id": "gesomun-seq-pyongyang-wide",
+		"alt": "Bird’s-eye: Pyongyang red two-tier munru; one rider on the pale approach ribbon",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. BIRD’S-EYE. ONE device: approach as a pale ribbon into the red gate. One tiny Gesomun. Grey steel, red-wing #C30000. Real Pyongyang fortress. No army. No text. No watermark."
+	},
+	{
+		"id": "gesomun-seq-pyongyang-gate",
+		"alt": "Worm’s-eye dutch: Gesomun riding under the red two-tier seongmun, grey steel, red-wing cloth",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. WORM’S-EYE DUTCH. ONE device: gate as a monumental dark arch. Gesomun mid-gallop, grey steel, red-wing #d0362f. Real Pyongyang munru. No army. No text. No watermark."
+	},
+	{
+		"id": "pyongyang-seq-hall-bird",
+		"alt": "Bird’s-eye inside a Pyongyang fortress hall: empty timber well, one red cloth-plane",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. BIRD’S-EYE INTERIOR. ONE device: hall as a dark well. Red #C30000 wall-plane. Empty Goguryeo timber. No crowd. No text. No watermark."
+	}
+]

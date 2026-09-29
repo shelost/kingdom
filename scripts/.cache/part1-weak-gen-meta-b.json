@@ -1,0 +1,52 @@
+[
+	{
+		"id": "blade-south",
+		"aspect": "16:9",
+		"refs": [
+			"static/ch_yeon_gesomun.png",
+			"static/ch_commander_3.png",
+			"static/ar_lamellar_steel.png",
+			"static/pl_pyongyang_fortress.png"
+		]
+	},
+	{
+		"id": "blade-north",
+		"aspect": "16:9",
+		"refs": [
+			"static/ch_yeon_gesomun.png",
+			"static/ch_commander_2.png",
+			"static/ar_lamellar_steel.png",
+			"static/pl_pyongyang_fortress.png"
+		]
+	},
+	{
+		"id": "blade-west",
+		"aspect": "16:9",
+		"refs": [
+			"static/ch_yeon_gesomun.png",
+			"static/ch_commander_4.png",
+			"static/ar_lamellar_steel.png",
+			"static/pl_pyongyang_fortress.png"
+		]
+	},
+	{
+		"id": "blade-lee",
+		"aspect": "16:9",
+		"refs": [
+			"static/ch_yeon_gesomun.png",
+			"static/ch_commander_1.png",
+			"static/ar_lamellar_steel.png",
+			"static/pl_pyongyang_fortress.png"
+		]
+	},
+	{
+		"id": "blade-gusesa",
+		"aspect": "16:9",
+		"refs": [
+			"static/ch_yeon_gesomun.png",
+			"static/ch_commander_1.png",
+			"static/ar_lamellar_steel.png",
+			"static/pl_pyongyang_fortress.png"
+		]
+	}
+]

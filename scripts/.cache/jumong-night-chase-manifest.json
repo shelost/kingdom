@@ -1,0 +1,92 @@
+[
+	{
+		"id": "jumong-night-run-dutch",
+		"alt": "Dutch night pines: Jumong mid-stride running, scared, clean-shaven red silk, trunks as a tilted cage",
+		"prompt": "Dutch night pine path. Jumong CLEAN-SHAVEN mid-stride RUN, scared open mouth, red #e8563f silk + red headband from portrait. ONE device: trunks as a tilted cage. LOCK forest dirt path. No gods. No army catalog. No mustache. Jumong does not see the gods; eyeline is the dark path. No text."
+	},
+	{
+		"id": "jumong-night-run-aerial",
+		"alt": "Aerial crane: pine canopy as a net, tiny red Jumong running the dirt floor",
+		"prompt": "Aerial crane night. Pine canopy NET. Tiny crimson #e8563f Jumong running the dirt. CLEAN-SHAVEN. FACE suggestion from portrait only. No army catalog. No gods. Jumong does not see the gods. No text."
+	},
+	{
+		"id": "jumong-night-run-ots",
+		"alt": "OTS anonymous spear-hafts: Jumong a red smear running away down the pine path",
+		"prompt": "Over-shoulder night. Foreground: handheld spear-hafts, NO faces, not Jumong clones. Midground: Jumong running away, CLEAN-SHAVEN red #e8563f. ONE device: spear-hafts as bars. No named soldiers. No gods. Jumong does not see the gods. No text."
+	},
+	{
+		"id": "jumong-night-army-net",
+		"alt": "Bird’s-eye pine net: tiny anonymous spear-dots closing, one red gap",
+		"prompt": "Bird’s-eye night. Pine canopy as a closing NET. Tiny anonymous spear-dots, NO faces. One tiny red #e8563f stamp in the gap. No army catalog. No named people. No gods. No text."
+	},
+	{
+		"id": "jumong-night-army-points",
+		"alt": "Low dutch: iron spear-points only in crushed pine dark, red lower-third blur ahead",
+		"prompt": "Low dutch night. ONLY spear-points as a black-iron row in crushed pine dark. Jumong a red #e8563f lower-third blur ahead, no readable face. NO face dump. Tiny anonymous silhouettes. No gods. No text."
+	},
+	{
+		"id": "jumong-night-trip",
+		"alt": "Dutch: Jumong mid-trip, toe on a root, body pitching, scared open mouth, clean-shaven",
+		"prompt": "Dutch night dirt. Jumong CLEAN-SHAVEN mid-TRIP, toe catching a root, body pitching forward, scared open mouth. Red #e8563f silk. ONE device: root as a dark trip-bar. No gods. Jumong does not see the gods; eyeline is dirt. No text."
+	},
+	{
+		"id": "jumong-night-face-dirt",
+		"alt": "ECU: Jumong’s clean-shaven cheek smashed in grit, one eye squeezed, wrecked",
+		"prompt": "Intimate ECU night. Jumong CLEAN-SHAVEN cheek smashed in grit/mud, one eye squeezed, wrecked. Red #e8563f as a dirt-stamped accent. FACE from portrait, no mustache. No gods. Eyeline in dirt. No text."
+	},
+	{
+		"id": "jumong-night-eyes-roll",
+		"alt": "ECU Jumong: eyes rolling back, about to die, mouth slack, rain grit, clean-shaven",
+		"prompt": "ECU night. Jumong CLEAN-SHAVEN, eyes rolling back, about-to-die, mouth slack, rain grit. Expressive, not serene. Red #e8563f. FACE from portrait, no mustache. No gods in frame. No text."
+	},
+	{
+		"id": "jumong-night-unconscious",
+		"alt": "Low: face-down crimson Jumong slack on wet stones, bow a pace off, river a black bar",
+		"prompt": "Low night. Face-down slack Jumong, CLEAN-SHAVEN, crimson #e8563f, bow a pace off. River as a black bar. LOCK pl_white_river banks/reeds/hills only — NO boats, NO pier. Eyes shut. No gods. No text."
+	},
+	{
+		"id": "jumong-night-reaper-over",
+		"alt": "Haewonmek crouched over face-down unconscious Jumong; gat brim a black bar; Jumong eyes shut in mud",
+		"prompt": "Low two-shot night rain. Haewonmek over UNCONSCIOUS face-down Jumong. Jumong eyes SHUT in mud — he does NOT look at the gat, does NOT see the reaper. Camera sees black gat, mouth-band, cobalt sash. ONE device: gat brim as a black bar over the body. Jumong CLEAN-SHAVEN #e8563f. HARD RULE: Jumong does not see the gods. NO boats. No text."
+	},
+	{
+		"id": "jumong-night-gold-plane-arrive",
+		"alt": "Gold light-plane as a side wall; Jumong face-down eyes shut; Haewonmek over him; Haemosu arriving in the plane",
+		"prompt": "Dutch night. Gold #f0b429 LIGHT-PLANE as a side wall (never body-halo, never spotlight cone). Jumong FACE-DOWN, eyes shut, eyeline dirt — he does NOT see Haemosu or Haewonmek. Haewonmek over him. HARD RULE: Jumong does not see the gods. NO boats. No text."
+	},
+	{
+		"id": "jumong-night-wrist-unconscious",
+		"alt": "Haemosu gold-plane wrist-stop; Jumong still face-down, eyes on grit, not looking at either god",
+		"prompt": "Dutch mid. Haemosu locks Haewonmek’s wrist in the air. Gold #f0b429 as a LIGHT-PLANE only, NEVER body-halo. Jumong still face-down / eyes on grit — he does NOT look at either god. HARD RULE: Jumong does not see the gods. CLEAN-SHAVEN. NO boats. No text."
+	},
+	{
+		"id": "jumong-night-whisper-behind",
+		"alt": "Haemosu at Jumong’s ear from behind; Jumong stares at empty dark river, confused, not turning",
+		"prompt": "Close two-shot night. Haemosu at the EAR FROM BEHIND. Jumong’s face toward EMPTY dark / river, confused, NOT turning, NOT looking at the gold man. Gold #f0b429 as a thin plane on Haemosu only, NEVER body-halo. Jumong CLEAN-SHAVEN #e8563f. HARD RULE: Jumong does not see the gods. NO boats. No text."
+	},
+	{
+		"id": "jumong-night-whisper-grit",
+		"alt": "ECU Jumong: eyes on empty dark, confused, mouth parted; no second face",
+		"prompt": "ECU Jumong night. Eyes on empty dark / grit, confused, mouth parted. NO second face. Jumong does NOT look at Haemosu. CLEAN-SHAVEN. Red #e8563f. HARD RULE: Jumong does not see the gods. No text."
+	},
+	{
+		"id": "jumong-night-inspire-forward",
+		"alt": "Jumong’s face changing fear-to-idea while looking down at the black river, not aside at any god",
+		"prompt": "Close dutch night. Jumong’s FACE CHANGES — fear to idea — looking FORWARD/DOWN at the black river, NOT aside at a god. CLEAN-SHAVEN. Red #e8563f. HARD RULE: Jumong does not see the gods; eyeline is water. LOCK banks only, NO boats. No text."
+	},
+	{
+		"id": "jumong-night-inspire-ecu",
+		"alt": "ECU Jumong: pupils, the idea arriving, looking down, not at a god",
+		"prompt": "ECU night. Jumong CLEAN-SHAVEN, the idea arriving in the eyes, looking DOWN, not aside. Red #e8563f. No god in frame. HARD RULE: eyeline away from Haemosu and Haewonmek. No mustache. No text."
+	},
+	{
+		"id": "jumong-night-shout-worm",
+		"alt": "Worm’s-eye: Jumong’s open mouth shouting at the night ford, river as a black plane",
+		"prompt": "Worm’s-eye night. Jumong CLEAN-SHAVEN open mouth shouting at the FORD, not at a father. River as a black plane. Red #e8563f. Gods only in far bokeh behind if present — Jumong eyeline is WATER. HARD RULE: Jumong does not see the gods. NO boats. No text."
+	},
+	{
+		"id": "jumong-night-shout-dutch",
+		"alt": "Dutch toward the ford: Jumong shouting at the water, bow high; gods only tiny bokeh behind",
+		"prompt": "Dutch toward water. Jumong CLEAN-SHAVEN shouting Make way at the FORD, looking at the river not at gods. Red #e8563f. Gods only tiny bokeh BEHIND if present. HARD RULE: Jumong does not see the gods. LOCK banks/reeds — NO boats NO pier. No text."
+	}
+]

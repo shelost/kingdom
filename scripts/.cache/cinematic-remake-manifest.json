@@ -1,0 +1,72 @@
+[
+	{
+		"id": "heo-court-present",
+		"alt": "Long Gaya timber-column aisle: Heo presents herself in the court, Suro a small gold figure on the far dais",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Iconic 16:9 movie still. REAL Gaya timber court: long aisle of round columns, giwa eaves, packed-earth floor, one low dais. Heo looking up, presenting. Suro far on the dais. Rose #d98fa8 as the silk accent. Dramatic 3D depth. No text. No watermark."
+	},
+	{
+		"id": "suro-court-love",
+		"alt": "Close: Suro leaning forward on the Gaya dais — gold branch crown, stunned the first time he sees Heo",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Suro leaning forward, gold #e0a33c. Face likeness, new pose. Dramatic side-lamp. No text. No watermark."
+	},
+	{
+		"id": "heo-court-face",
+		"alt": "Close: Heo looking up from the Gaya court floor — violet silk off one shoulder, presenting herself",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Heo looking up, rose #d98fa8 silk off one shoulder. Face likeness, new upward gaze. No text. No watermark."
+	},
+	{
+		"id": "gesomun-death-black",
+		"alt": "Aged Gesomun on a timber deathbed talking; calm Yumla stands at the bedside — only these two, one violet lamp",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate 16:9. Pitch-black room, one violet lamp. Aged Gesomun LIES on a low timber deathbed. Yumla STANDS leaning down to talk. Violet #7c3aed. Only these two. No text. No watermark."
+	},
+	{
+		"id": "pumsuk-feast-curve",
+		"alt": "Daeya feast-hall: slim Maehwa in teal silk at the lamp-line; Pumsuk in ice-blue trying not to look",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate 16:9. REAL timber feast-hall, lamps, tables. Slim hourglass Maehwa, teal #8AAFA0. Not fat. No text. No watermark."
+	},
+	{
+		"id": "seohyeon-accident-wide",
+		"alt": "Seohyeon is the subject: seated at the cavern lip from behind, wet hair, cyan pool — three tiny goddesses far off",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate 16:9. Seohyeon fills the frame FROM BEHIND at the cavern lip. Bright-blue #3E8EF0. REAL steam-cavern. No text. No watermark."
+	},
+	{
+		"id": "seohyeon-wet-back",
+		"alt": "Close over-shoulder: wet Seohyeon, bright-blue silk off one shoulder, cyan steam — he is the subject",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9 over-shoulder. Wet hair, #3E8EF0 silk off one shoulder. Cavern steam. No text. No watermark."
+	},
+	{
+		"id": "munhee-knit-disrobe",
+		"alt": "Silla inner-hall lamp: Chunchu sits coat-off, Munhee knits close at his shoulder — only these two",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate 16:9. REAL timber inner-hall, one lamp. Coat off. Only two people. Magenta #D8258C and pink #E07FA8. No text. No watermark."
+	},
+	{
+		"id": "munhee-knit-close",
+		"alt": "Close: Munhee knitting by lamp — gold-dragon binyeo, looking down at the work, first-visit heat",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Munhee face and hands, pink #E07FA8. New downward pose. No text. No watermark."
+	},
+	{
+		"id": "maehwa-feast-close",
+		"alt": "Close: slim Maehwa looking back through feast-lamp haze — teal silk slipping, wooden sprig pin",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Slim Maehwa, teal #8AAFA0, look-back. Not fat. No text. No watermark."
+	},
+	{
+		"id": "pumsuk-feast-eyes",
+		"alt": "Close: Pumsuk’s face — ice-blue silk, crescent band, flushed, failing to look away",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Pumsuk looking down and aside. Ice-blue #7EB8F0. Dramatic lamp. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-look-up-wet",
+		"alt": "Close: Yuhwa looking straight up from the Amnok — wet pale silk, chin lifted to the sun",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9 worm’s-eye. Yuhwa chin up, ice-blue #8fc4e0. Wet silk. No text. No watermark."
+	},
+	{
+		"id": "ibiga-lookdown-face",
+		"alt": "Close high-angle: Ibiga looking straight down from the sky — cobalt silk, gold cloud crown",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9 high angle. Ibiga looking down. Cobalt #1e4d9c. No text. No watermark."
+	},
+	{
+		"id": "haemosu-lookdown-bath",
+		"alt": "Bird’s-eye from the sun-chariot: three river-daughters in the real Amnok looking up, wet silk, one gold shaft",
+		"prompt": "Painterly anime-adjacent cinema, halfway realistic. Iconic bird’s-eye 16:9. REAL Amnok. Three sisters looking up. Ice-blue #8fc4e0. One gold sun-shaft. No text. No watermark."
+	}
+]

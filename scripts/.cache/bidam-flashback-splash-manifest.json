@@ -1,0 +1,42 @@
+[
+	{
+		"id": "bidam-father-first-day",
+		"alt": "Young Bidam kneeling on packed earth; his father stoops, beads in the sleeve, navy hall behind",
+		"prompt": "Dutch two-shot, timber gate-bar, Class 51 first morning, navy #141C2E, father Sukwon, beads."
+	},
+	{
+		"id": "bidam-defends-yushin",
+		"alt": "Young Bidam steps between yard bullies and Yushin; beads vs a standing blue sleeve",
+		"prompt": "OTS yard, navy sleeve as diagonal, Class 51, Bidam beads #141C2E, Yushin #2A5FB8."
+	},
+	{
+		"id": "chunchu-sends-bupmin",
+		"alt": "Chunchu mid-stride in Wolseong, magenta rim, sending twenty-one-year-old Bupmin with a jar",
+		"prompt": "Dutch Wolseong night, jar stamp foreground, Chunchu #D8258C, Bupmin 21 #C41E3A."
+	},
+	{
+		"id": "goddesses-meet-bupmin",
+		"alt": "Three photoreal goddesses in steam meeting painterly Bupmin, twenty-one, jar at the lip",
+		"prompt": "Cavern first meeting, jar disc, Bupmin painterly 21, goddesses numinous living eyes, best of both."
+	},
+	{
+		"id": "yushin-stalls-bidam",
+		"alt": "Night pavilion: Yushin leaning in, stalling; Bidam with beads; navy vs Confucian blue",
+		"prompt": "OTS 정자, table bar, Yushin stands #2A5FB8, Bidam beads #141C2E, stall."
+	},
+	{
+		"id": "bupmin-splash-bidam",
+		"alt": "Bupmin behind Bidam at the 정자, jar tipping, water as a hard diagonal",
+		"prompt": "Dutch splash, water plane, Bupmin behind Bidam, political, clothed."
+	},
+	{
+		"id": "water-does-nothing",
+		"alt": "ECU: water beads on Bidam’s face, no vision, beads still, navy void",
+		"prompt": "ECU water-track, Bidam shock empty, no trauma-film, navy plane."
+	},
+	{
+		"id": "bidam-laugh-monologue",
+		"alt": "Worm’s-eye: Bidam laughing, mouth open, navy plane, gold beads as the one accent",
+		"prompt": "Worm’s-eye laugh, navy #141C2E, beads gold arc, Bidam alive."
+	}
+]

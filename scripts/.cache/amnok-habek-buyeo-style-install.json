@@ -1,0 +1,82 @@
+[
+	{
+		"id": "jumong-amnok-wc-habek-court",
+		"alt": "Watercolor — Habek’s court on the Amnok, mist as a pale dais",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor — Habek’s court on the Amnok, mist as a pale dais"
+	},
+	{
+		"id": "jumong-amnok-wc-habek-charge",
+		"alt": "Watercolor — Habek charges Yuhwa on the bright bank",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor — Habek charges Yuhwa on the bright bank"
+	},
+	{
+		"id": "jumong-amnok-wc-looked-up",
+		"alt": "Watercolor — Yuhwa answers: she looked up",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor — Yuhwa answers: she looked up"
+	},
+	{
+		"id": "jumong-amnok-wc-sisters-silent",
+		"alt": "Watercolor — sisters do not argue the sentence",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor — sisters do not argue the sentence"
+	},
+	{
+		"id": "jumong-amnok-wc-kick-out",
+		"alt": "Watercolor — Habek kicks Yuhwa off the bank",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor — Habek kicks Yuhwa off the bank"
+	},
+	{
+		"id": "jumong-amnok-ink-habek-court",
+		"alt": "Ink-wash — Habek’s court on the Amnok",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash — Habek’s court on the Amnok"
+	},
+	{
+		"id": "jumong-amnok-ink-habek-charge",
+		"alt": "Ink-wash — Habek charges Yuhwa",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash — Habek charges Yuhwa"
+	},
+	{
+		"id": "jumong-amnok-ink-looked-up",
+		"alt": "Ink-wash — Yuhwa looked up",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash — Yuhwa looked up"
+	},
+	{
+		"id": "jumong-amnok-ink-sisters-silent",
+		"alt": "Ink-wash — sisters silent at the sentence",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash — sisters silent at the sentence"
+	},
+	{
+		"id": "jumong-amnok-ink-kick-out",
+		"alt": "Ink-wash — kick-out on the bank",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash — kick-out on the bank"
+	},
+	{
+		"id": "jumong-buyeo-wc-capital-open",
+		"alt": "Watercolor daylight — Northern Buyeo capital, mountain and clouds",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor daylight — Northern Buyeo capital, mountain and clouds"
+	},
+	{
+		"id": "jumong-buyeo-wc-come-in",
+		"alt": "Watercolor daylight — Geumwa welcomes Yuhwa at the threshold",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor daylight — Geumwa welcomes Yuhwa at the threshold"
+	},
+	{
+		"id": "jumong-buyeo-wc-hall-day",
+		"alt": "Watercolor daylight — empty Buyeo hall, sun through the doors",
+		"prompt": "STYLE watercolor. Place locked to attached ref. Faces from attached. Watercolor daylight — empty Buyeo hall, sun through the doors"
+	},
+	{
+		"id": "jumong-buyeo-ink-capital-open",
+		"alt": "Ink-wash daylight — Northern Buyeo capital",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash daylight — Northern Buyeo capital"
+	},
+	{
+		"id": "jumong-buyeo-ink-come-in",
+		"alt": "Ink-wash daylight — Geumwa welcomes Yuhwa",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash daylight — Geumwa welcomes Yuhwa"
+	},
+	{
+		"id": "jumong-buyeo-ink-hall-day",
+		"alt": "Ink-wash daylight — empty Buyeo hall",
+		"prompt": "STYLE ink-wash. Place locked to attached ref. Faces from attached. Ink-wash daylight — empty Buyeo hall"
+	}
+]

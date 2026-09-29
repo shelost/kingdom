@@ -1,0 +1,52 @@
+[
+	{
+		"id": "clan-tourney-grid-wide",
+		"alt": "Dutch crane painting: rotated white chalk square on crushed-black Sabi yard, gold stripe, five tiny princes in white, munru as a dark bar",
+		"prompt": "EVERY FRAME A PAINTING. LOCK pl_sabi_tourney: crushed-black earth, rotated white square, gold #FFCB51 stripe, munru bar. Five tiny princes in WHITE as stamps. High contrast. No text."
+	},
+	{
+		"id": "clan-tourney-call",
+		"alt": "Worm’s-eye: Yung’s white sleeve as a plane; Hyo mid-stride onto the gold stripe in the square",
+		"prompt": "EVERY FRAME A PAINTING. Worm’s-eye. Yung FACE, white sleeve-plane. Hyo FACE, long hair, stepping the stripe. Same square. No red robes. No text."
+	},
+	{
+		"id": "clan-tourney-sword-midstrike",
+		"alt": "Dutch: Yung and Hyo in white, wooden blades as an X over the gold-striped square",
+		"prompt": "EVERY FRAME A PAINTING. Dutch. Yung vs Hyo faces. Crossed mokgeom as X over the square. White silk. No glow. No text."
+	},
+	{
+		"id": "clan-tourney-sword-dutch",
+		"alt": "Extreme dutch: Yung along the gold stripe, Hyo in the ink half, blades skimming the square",
+		"prompt": "EVERY FRAME A PAINTING. Extreme dutch. Gold stripe as light on earth, not a collage. Yung in the stripe, Hyo in ink. White silk. No text."
+	},
+	{
+		"id": "clan-tourney-sword-ots",
+		"alt": "Over Yung’s white shoulder: Hyo lunges across the gold-striped square",
+		"prompt": "EVERY FRAME A PAINTING. OTS. Yung back/topknot, wooden mokgeom FG. Hyo FACE long hair lunging. Same square. No katana. No text."
+	},
+	{
+		"id": "clan-tourney-sword-victory",
+		"alt": "Yung a white vertical in the gold stripe; Hyo kneeling in the ink half of the square",
+		"prompt": "EVERY FRAME A PAINTING. Yung FACE in the stripe as a white vertical. Hyo kneeling in ink. Shadow as column. White silk. No glow. No text."
+	},
+	{
+		"id": "clan-tourney-ssireum-grip",
+		"alt": "Dutch: Tae and Yun lock satba over the gold-striped square",
+		"prompt": "EVERY FRAME A PAINTING. Dutch. Tae and Yun FACE. Satba at thigh, no labels, empty earth. White silk. Same square. No text."
+	},
+	{
+		"id": "clan-tourney-ssireum-lift",
+		"alt": "Worm’s-eye: Tae lifts Yun as a white diagonal over the gold stripe",
+		"prompt": "EVERY FRAME A PAINTING. Worm’s-eye. Tae and Yun FACE, white clothes. Yun as diagonal over the stripe. Same square. No text."
+	},
+	{
+		"id": "clan-tourney-ssireum-throw",
+		"alt": "Dutch freeze: Yun’s shoulder hits the gold stripe; Tae still gripping satba",
+		"prompt": "EVERY FRAME A PAINTING. Dutch. Tae and Yun FACE. Sand as gold calligraphy on the square. White silk. No text."
+	},
+	{
+		"id": "clan-tourney-spectators",
+		"alt": "From the munru bar: Pung a small white child kicking the step; gold shaft to two tiny princes in the square",
+		"prompt": "EVERY FRAME A PAINTING. From the hall bar down the gold shaft to the square. Child-prince in white, elder silhouette. No boxed courtyard. No text."
+	}
+]

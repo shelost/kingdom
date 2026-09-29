@@ -1,0 +1,27 @@
+[
+	{
+		"id": "maehwa-garrison-01-well",
+		"alt": "Movie frame: Maehwa walking the well-yard among men turning their heads; wives watching her",
+		"prompt": "One 16:9 movie frame. Well-yard crowd, she walks through, men turning, wives watching. Same moonlight. No lamps. No halo. No text. No watermark."
+	},
+	{
+		"id": "maehwa-garrison-02-store",
+		"alt": "Movie frame: storehouse aisle; a man catching her wrist; others staring from the sacks",
+		"prompt": "One 16:9 movie frame. Storehouse aisle, grain sacks, she overlapping the space. No lamps. No halo. No text. No watermark."
+	},
+	{
+		"id": "maehwa-garrison-03-post",
+		"alt": "Movie frame: inner stair, look-back; men turning up; wives on the landing jealous",
+		"prompt": "One 16:9 movie frame. Inner stair, men turning, wives on the landing. No lamps. No halo. No text. No watermark."
+	},
+	{
+		"id": "maehwa-feast-families",
+		"alt": "Movie frame: feast aisle; she among the tables; men turning; wives jealous",
+		"prompt": "One 16:9 movie frame. Feast aisle among tables. Adults. No halo. No text. No watermark."
+	},
+	{
+		"id": "maehwa-feast-hands",
+		"alt": "Movie medium: she at the feast table with plum and a hand on her thigh; men staring",
+		"prompt": "One 16:9 movie medium. She sits at the same table. Plum. Hand on thigh. No lamps. No text. No watermark."
+	}
+]

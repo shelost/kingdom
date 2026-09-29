@@ -1,0 +1,37 @@
+[
+	{
+		"id": "jumong-sosuno-style-minhwa",
+		"alt": "Style experiment: minhwa Sosuno — flat ink, dusty-rose plane",
+		"prompt": "STYLE EXPERIMENT minhwa. Sosuno FACE from attached, dusty-rose, bird binyeo."
+	},
+	{
+		"id": "jumong-sosuno-style-watercolor",
+		"alt": "Style experiment: watercolor Sosuno — wet wash bloom",
+		"prompt": "STYLE EXPERIMENT watercolor. Sosuno FACE from attached, dusty-rose, bird binyeo."
+	},
+	{
+		"id": "jumong-sosuno-style-woodblock",
+		"alt": "Style experiment: woodblock Sosuno — hard carved planes",
+		"prompt": "STYLE EXPERIMENT woodblock. Sosuno FACE from attached, dusty-rose, bird binyeo."
+	},
+	{
+		"id": "jumong-sosuno-style-charcoal",
+		"alt": "Style experiment: charcoal Sosuno — Conté study",
+		"prompt": "STYLE EXPERIMENT charcoal. Sosuno FACE from attached, dusty-rose chalk, bird binyeo."
+	},
+	{
+		"id": "jumong-sosuno-style-gloss",
+		"alt": "Style experiment: glossy manhwa Sosuno — mirror silk",
+		"prompt": "STYLE EXPERIMENT gloss manhwa. Sosuno FACE from attached, dusty-rose sheen, bird binyeo."
+	},
+	{
+		"id": "jumong-sosuno-style-minhwa-loft",
+		"alt": "Style experiment: minhwa loft heat — dutch-spread beat in folk paint",
+		"prompt": "STYLE EXPERIMENT minhwa loft. Same dutch-spread beat. Sosuno FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-style-charcoal-loft",
+		"alt": "Style experiment: charcoal loft heat — dutch-spread beat as Conté study",
+		"prompt": "STYLE EXPERIMENT charcoal loft. Same dutch-spread beat. Sosuno FACE from attached."
+	}
+]

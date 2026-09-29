@@ -626,7 +626,12 @@
 					aria-current={activeId === scene.id ? 'true' : undefined}
 					aria-label="{scene.title}. {audioArtist(scene) ? `${audioArtist(scene)}. ` : ''}{audioLabel(scene)}"
 				>
-					<AlbumCover src={coverOf(scene)} alt="" live={activeId === scene.id} />
+					<AlbumCover
+						src={coverOf(scene)}
+						alt=""
+						live={activeId === scene.id}
+						sizes="18rem"
+					/>
 					<span class="card-title">
 						{scene.title}
 						{#if isPersonScene(scene)}
@@ -754,7 +759,7 @@
 		min-height: 0;
 		overflow: auto;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
 		gap: 1.75rem 1.15rem;
 		align-content: start;
 		padding: 1rem 1.35rem 2.5rem;
@@ -771,6 +776,10 @@
 		text-align: left;
 		cursor: pointer;
 		padding: 0.4rem 0.35rem 0.2rem;
+	}
+
+	.cover-card {
+		--album-size: calc(100% - 0.6rem);
 	}
 
 	.cover-card :global(.album) {

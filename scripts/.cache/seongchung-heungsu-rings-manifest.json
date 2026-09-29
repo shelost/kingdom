@@ -1,0 +1,57 @@
+[
+	{
+		"id": "seongchung-hall-remonstrate",
+		"alt": "Dutch: Seongchung mid-stride remonstrating in the Sabi hall; hollow ring-pommel catching the lamp",
+		"prompt": "Minimal iconic 16:9 still. DUTCH mid-stride in REAL Sabi palace. Seongchung FACE from ch_seongchung — NEW body remonstrating. Euija wine-slack in bokeh. ONE device: hollow gold ring-pommel as a bright circle. #c9a24d as real lamp bounce, not a glow. No text. No watermark."
+	},
+	{
+		"id": "seongchung-ring-yank",
+		"alt": "ECU: guards yank Seongchung’s belt; the hollow ring-pommel fills the frame in the Sabi hall",
+		"prompt": "Minimal iconic 16:9 still. ECU hand on a hollow 환두대도 as the belt is yanked. Seongchung grimace sliver. Sabi timber bokeh. #c9a24d lamp specular on the ring, not a glow. No text. No watermark."
+	},
+	{
+		"id": "sungchung-prison",
+		"alt": "Seongchung starving, writing; his ring-pommel hung on the prison post in lamp-light",
+		"prompt": "Minimal iconic 16:9 still. DUTCH Sabi undercroft cell. Seongchung FACE from ch_seongchung — NEW kneeling starved body writing. ONE device: hollow ring-pommel hung on timber catching the lamp. #c9a24d as real bounce, not a glow. No text. No watermark."
+	},
+	{
+		"id": "heungsu-gomamiji-wide",
+		"alt": "Heungsu on the threshold of a rammed-earth posting hut; worn ring-pommel against the doorpost",
+		"prompt": "Minimal iconic 16:9 still. Gomamiji rammed-earth hut, packed-earth yard. Heungsu FACE from ch_heungsu sitting on the threshold. ONE device: worn hollow ring-pommel at the doorpost. #b98f33 as real late-sun bounce, not a glow. No text. No watermark."
+	},
+	{
+		"id": "heungsu-messenger",
+		"alt": "Over-shoulder: a courier in Heungsu’s packed-earth yard; the worn ring-pommel between them",
+		"prompt": "Minimal iconic 16:9 still. OTS courier toward Heungsu mid-turn at Gomamiji. ONE device: hollow ring-pommel as a sun circle. #b98f33 real bounce, not a glow. No text. No watermark."
+	},
+	{
+		"id": "heungsu-gyebek-listen",
+		"alt": "Two-shot at the White River: Heungsu and Gyebek; two hollow ring-pommels overlapping at their belts",
+		"prompt": "Minimal iconic 16:9 still. Close two-shot White River bank. Heungsu and Gyebek FACE from portraits, NEW bodies. ONE device: two hollow rings as overlapping circles. Real specular, not glow. No text. No watermark."
+	},
+	{
+		"id": "heungsu-gyebek-rings",
+		"alt": "Dutch two-shot: Heungsu and Gyebek at the berth, ring-pommels catching the dusk",
+		"prompt": "Minimal iconic 16:9 still. DUTCH two-shot at White River. Two hollow ring-pommels as geometry. Faces from portraits. No glow. No text. No watermark."
+	},
+	{
+		"id": "euija-yes-so",
+		"alt": "Worm’s-eye empty Sabi hall: Euija slumped, agreeing to the wrong plan",
+		"prompt": "Minimal iconic 16:9 still. Worm’s-eye empty Sabi hall. Euija FACE from portrait, NEW slumped body. Amber #e08a2e lamp bounce, not a glow. No text. No watermark."
+	},
+	{
+		"id": "tanhyeon-already-passed",
+		"alt": "Wide Tanhyeon: the pass empty of a defense, a forgotten ring-pommel in the packed earth",
+		"prompt": "Minimal iconic 16:9 still. Wide Korean mountain pass. Forgotten hollow ring-pommel in the foreground. Tiny Silla over the crest. No army catalog. No text. No watermark."
+	},
+	{
+		"id": "gibeolpo-ring-mud",
+		"alt": "Gibeolpo mudflat: a Baekje ring-pommel in the wet silt, Tang keels on the White River",
+		"prompt": "Minimal iconic 16:9 still. White River estuary. Hollow ring-pommel in wet mud as the one device; Tang keels as stamps. No text. No watermark."
+	},
+	{
+		"id": "yushin-tanhyeon-fish-ring",
+		"alt": "Worm’s-eye: Yushin climbing Tanhyeon, Gaya fish-ring pommel readable in the foreground",
+		"prompt": "Minimal iconic 16:9 still. Worm’s-eye Tanhyeon climb. Yushin FACE from ch_kim_yushin, NEW climbing body. Fish-ring 환두대도 as geometry. #2A5FB8 real bounce, not a glow. No text. No watermark."
+	}
+]

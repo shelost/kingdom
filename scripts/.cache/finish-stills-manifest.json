@@ -1,0 +1,52 @@
+[
+	{
+		"id": "rightview-seq-mountain",
+		"alt": "Korean ridge as a recumbent woman in jade-mist stone — the mountain before a face",
+		"prompt": "Animated painterly cinema. Iconic 16:9. REAL Korean mountain ridge. The ridge itself reads as a recumbent woman in jade-mist stone #c084fc. No Great Wall. No text. No watermark."
+	},
+	{
+		"id": "rightview-seq-face",
+		"alt": "Right View’s face emerging from jade-mist rock, becoming a lady",
+		"prompt": "Animated painterly cinema. Intimate close 16:9. Beautiful adult woman’s face emerging from jade-mist rock. Face matches attached /ch_rightview.png. Korean ridge. No text. No watermark."
+	},
+	{
+		"id": "rightview-seq-close",
+		"alt": "Close: Right View’s face, the look that stops the sky",
+		"prompt": "Intimate close 16:9. Lady of the Right View’s face filling the frame, gold phoenix pins, cream-gold silk. Face matches attached. No text. No watermark."
+	},
+	{
+		"id": "ibiga-seq-fall",
+		"alt": "Ibiga falling through his own cobalt cloud, struck, looking down",
+		"prompt": "Dynamic 16:9. Ibiga falling through cobalt #1e4d9c cloud-body. Face matches attached /ch_ibiga.png. Tiny Korean ridge below. No Great Wall. No text. No watermark."
+	},
+	{
+		"id": "ibiga-seq-ridge",
+		"alt": "Ibiga landing on a Korean pine ridge; Right View turning",
+		"prompt": "Animated 16:9. REAL Korean pine ridge, not the Great Wall. Ibiga dynamic landing, cobalt silk. Right View cream-gold jeogori, red chima. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-forest",
+		"alt": "Dark forest chase: Jumong in red running; trees and riders close like a net",
+		"prompt": "Animated iconic 16:9 night forest chase. Dark Korean pines. Jumong running, red #e8563f, face matches attached. Trees as a closing net. No army catalog. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-king",
+		"alt": "Jumong as first king of Goguryeo — red plane, Jolbon hall, fierce face",
+		"prompt": "Animated high-contrast 16:9. Jumong first king. Red #e8563f plane. REAL Korean timber hall, giwa, packed earth. Face matches attached. No army. No text. No watermark."
+	},
+	{
+		"id": "yuhwa-seq-lookback",
+		"alt": "Yuhwa at the Amnok, wet silk, looking over her shoulder",
+		"prompt": "Intimate animated 16:9. Yuhwa wet pale-blue silk #8fc4e0, looking over her shoulder. Face matches attached /ch_yuhwa.png. Real Korean river. Sun as light only, no mouth in the sun. No text. No watermark."
+	},
+	{
+		"id": "taizong-seq-imposing",
+		"alt": "Worm’s-eye Taizong in gold with raised blue dragons; Chunchu a white-hanbok sliver",
+		"prompt": "Low-angle 16:9. Taizong imposing, gold #c97a2e with raised blue dragon embroidery. Daming vermilion columns. Chunchu white wrap hanbok, magenta #D8258C sash. No text. No watermark."
+	},
+	{
+		"id": "taizong-seq-fit",
+		"alt": "High contrast: gold emperor with blue dragons facing white-and-magenta Chunchu",
+		"prompt": "High-contrast two-shot 16:9. Empty Daming hall, no banners, no calligraphy. Taizong gold with blue dragons. Chunchu white wrap hanbok, magenta sash. One light-seam. No text. No watermark."
+	}
+]

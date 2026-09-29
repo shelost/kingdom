@@ -1,0 +1,102 @@
+[
+	{
+		"id": "family-seq-ride-wide",
+		"alt": "Dutch dusk wide: two horses on the palace road, Eastern Palace pavilions in bokeh; Gotaso in front of Chunchu, Bupmin behind",
+		"prompt": "SAME FILM 16:9 anamorphic 2D cel-painterly. DUTCH long-lens wide at chest height. Two horses. Magenta #D8258C key. Eastern Palace pond-pavilions in bokeh. No 3D map. No neon. No text."
+	},
+	{
+		"id": "family-seq-ride-close",
+		"alt": "Dutch close: Chunchu laughing, child Gotaso in front of him on the same horse; giwa in dusk bokeh",
+		"prompt": "SAME FILM 16:9. DUTCH close. Horse neck diagonal. Laughing Chunchu, child Gotaso. Magenta #D8258C. Giwa bokeh. No black void. No text."
+	},
+	{
+		"id": "moon-seq-hall-bird",
+		"alt": "Dutch gallery crane inside Moon Palace: empty timber hall, vermilion light-seam on the floor axis",
+		"prompt": "SAME FILM 16:9. DUTCH gallery crane. Empty Moon Palace timber. Vermilion #E8552B floor seam. Painterly, not CAD. No text."
+	},
+	{
+		"id": "sunduk-seq-coronation-sym",
+		"alt": "Worm’s-eye inside a dark Moon Palace hall: Sunduk standing on the column axis, one hard key",
+		"prompt": "SAME FILM 16:9. WORM’S-EYE hall. Sunduk standing lower-third. Vermilion #E8552B key-plane. Empty timber. No courtyard carpet. No text."
+	},
+	{
+		"id": "sabi-seq-hall-bird",
+		"alt": "Dutch gallery crane inside Sabi: empty courtyard catching amber late light",
+		"prompt": "SAME FILM 16:9. DUTCH gallery. Sabi timber. Amber #e08a2e courtyard plane. Painterly. No CAD. No text."
+	},
+	{
+		"id": "euija-seq-disguise-yard",
+		"alt": "Dutch dusk: young Euija in hemp running the empty Sabi yard, gate in bokeh",
+		"prompt": "SAME FILM 16:9. DUTCH tracking. Hemp commoner, young. Amber #e08a2e rim not glow. Sabi gate bokeh. No text."
+	},
+	{
+		"id": "gyebek-seq-dive-wide",
+		"alt": "Dutch low wide: White River waterline; a boy diving, Euija on the wet bank",
+		"prompt": "SAME FILM 16:9. DUTCH low wide. Real river. Waterline device. No split-screen. No glow. No text."
+	},
+	{
+		"id": "gyebek-seq-surface",
+		"alt": "Dutch close: gasping at the waterline after a dive",
+		"prompt": "SAME FILM 16:9. DUTCH waterline ECU. Gasp. Yellow #d9b13a key. No halo. No text."
+	},
+	{
+		"id": "gyebek-seq-name",
+		"alt": "Dutch two-shot on the wet bank: Euija naming him, Gyebek kneeling soaked in white",
+		"prompt": "SAME FILM 16:9. DUTCH two-shot. River horizontal. No glow. Amber and yellow rims. No text."
+	},
+	{
+		"id": "gyebek-fb-burn",
+		"alt": "Memory dutch: one burning hanok, a boy in noble silk running",
+		"prompt": "SAME FILM 16:9 memory. DUTCH wide. One burning house. No graphic stamp. No text."
+	},
+	{
+		"id": "gyebek-fb-run",
+		"alt": "Memory dutch: a timber alley, a boy in torn silk running",
+		"prompt": "SAME FILM 16:9 memory. DUTCH alley wedge. No halo. No text."
+	},
+	{
+		"id": "gyebek-fb-beg",
+		"alt": "Memory dutch low: dirty noble collar begging at a timber gate",
+		"prompt": "SAME FILM 16:9 memory. DUTCH low gate. No glow. No text."
+	},
+	{
+		"id": "gesomun-seq-pyongyang-wide",
+		"alt": "Dutch crane: one rider approaching Pyongyang’s red two-tier munru",
+		"prompt": "SAME FILM 16:9. DUTCH crane. Real Pyongyang fortress. Grey steel, red-wing. No 3D map. No text."
+	},
+	{
+		"id": "gesomun-seq-pyongyang-gate",
+		"alt": "Worm’s-eye dutch: Gesomun galloping under the red two-tier seongmun",
+		"prompt": "SAME FILM 16:9. WORM’S-EYE dutch. Gate as arch. Grey steel, red-wing #d0362f. No army. No text."
+	},
+	{
+		"id": "pyongyang-seq-hall-bird",
+		"alt": "Dutch gallery inside a Pyongyang fortress hall: empty timber, one red wall-plane",
+		"prompt": "SAME FILM 16:9. DUTCH gallery. Empty Goguryeo timber. Red #C30000 plane. Painterly not CAD. No text."
+	},
+	{
+		"id": "sunduk-seq-palace-wide",
+		"alt": "Dutch dusk: Eastern Palace pond as a dark mirror, two tiny figures on the terrace",
+		"prompt": "SAME FILM 16:9. DUTCH wide dusk. Pond-pavilions. No black-triangle overlay. No text."
+	},
+	{
+		"id": "east-seq-hill-wide",
+		"alt": "Dutch low night: two boys on a real hill, distant giwa bokeh, one small planet",
+		"prompt": "SAME FILM 16:9. DUTCH low night hill. No spotlight cone. No neon outlines. No text."
+	},
+	{
+		"id": "east-seq-point",
+		"alt": "Dutch two-shot: a pointing sleeve, two boys, one small planet in a natural sky",
+		"prompt": "SAME FILM 16:9. DUTCH two-shot. Pointing sleeve. Natural night. No graphic beam. No text."
+	},
+	{
+		"id": "east-seq-planet",
+		"alt": "Dutch OTS: a blue shoulder in focus, one small planet in the night sky",
+		"prompt": "SAME FILM 16:9. DUTCH OTS rack-focus. Blue #2A5FB8 shoulder. Small planet. No neon. No text."
+	},
+	{
+		"id": "east-seq-vow",
+		"alt": "Dutch low: two boys on the hill vowing under a small planet",
+		"prompt": "SAME FILM 16:9. DUTCH low two-shot. Grass foreground. Natural night. No spotlight cone. No text."
+	}
+]

@@ -1,0 +1,14 @@
+[
+	{"id":"jumong-set-sky-noon-empty","alt":"Wide noon sky: tiny gold five-dragon wheeled chariot as a stamp; Amnok a thin river far below; no close faces","prompt":"Empty noon sky. Tiny locked chariot stamp. River far below. Zero close people."},
+	{"id":"jumong-set-amnok-dusk-empty","alt":"Empty Amnok dusk: real river shallows, wet stones, reeds, one gold bar on the water, no bathers","prompt":"Empty Amnok dusk. Gold bar on water. Real shallows. No people. No palace pond."},
+	{"id":"jumong-set-amnok-shallows-stones","alt":"Worm’s-eye wet Amnok stones in the foreground; empty shallows; dusk sky; no bodies","prompt":"Worm’s-eye wet stones. Empty shallows. No people."},
+	{"id":"jumong-set-amnok-silk-rocks","alt":"Empty Amnok bank: two silk heaps on wet rocks, empty water, no faces","prompt":"Silk on rocks only. Empty water. No faces."},
+	{"id":"jumong-set-chariot-lookdown-empty","alt":"From the chariot: gold rail and wheel rim in foreground; empty Amnok ribbon far below","prompt":"Look-down from locked chariot. Empty river ribbon. No bathers."},
+	{"id":"jumong-set-copper-empty-wide","alt":"Empty copper kiln on the Amnok bank; tiny chariot in sky; no people","prompt":"Empty copper kiln on bank. Tiny chariot. No people."},
+	{"id":"jumong-set-copper-door-empty","alt":"Worm’s-eye empty copper doorway: gold light-plane inside, bank and water behind, no bodies","prompt":"Empty copper doorway. Gold plane inside. No people."},
+	{"id":"jumong-set-habek-mist-empty","alt":"Bird’s-eye empty Habek mist-court: wet stone spit, mist as a plane, copper kiln stamp, no figures","prompt":"Empty mist-court. Wet stones. Copper stamp. No people."},
+	{"id":"jumong-set-buyeo-approach","alt":"Far bird’s-eye: thin river, Buyeo palisade and grey-giwa hall as a dark stamp, empty approach","prompt":"Far approach: river + palisade capital. Empty. LOCK pl_buyeo_yard."},
+	{"id":"jumong-set-hatch-door-empty","alt":"Empty Buyeo hatch-room: timber floor, doorway onto packed-earth yard and grey-giwa hall, no people","prompt":"Empty hatch-room. Door onto yard. LOCK pl_buyeo_yard. No people."},
+	{"id":"jumong-set-egg-field-empty","alt":"Empty Buyeo dusk field outside the palisade: packed earth, grey-giwa hall peeking, no egg yet","prompt":"Empty Buyeo field dusk. Hall peek. No people. No giant egg yet."},
+	{"id":"jumong-set-gate-empty","alt":"Empty outside Buyeo palisade: iron-boss timber doors, grey-giwa peeking, no guards","prompt":"Empty palisade doors. No guards. LOCK pl_buyeo_yard."}
+]

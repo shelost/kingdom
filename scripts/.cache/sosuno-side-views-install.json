@@ -1,0 +1,62 @@
+[
+	{
+		"id": "jumong-sosuno-side-well-count",
+		"alt": "Side profile — Sosuno counts at the well, chin cuts the rope",
+		"prompt": "STRICT SIDE PROFILE Sosuno at Jolbon well. Dusty-rose #e8a04a. FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-side-porch-chin",
+		"alt": "Side profile — cold chin above the porch rail",
+		"prompt": "STRICT SIDE PROFILE Sosuno porch chin. Dusty-rose #e8a04a. FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-side-loft-want",
+		"alt": "Side profile — loft window, hand over mouth, millet beyond",
+		"prompt": "STRICT SIDE PROFILE Sosuno loft want. Dusty-rose #e8a04a. FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-side-almost-kiss",
+		"alt": "Side profile two-shot — noses almost touch, rose vs red",
+		"prompt": "STRICT SIDE PROFILE two-shot. CLEAN-SHAVEN Jumong. Faces from attached."
+	},
+	{
+		"id": "jumong-sosuno-side-dump",
+		"alt": "Side profile — water arc dump at the well",
+		"prompt": "STRICT SIDE PROFILE dump. CLEAN-SHAVEN Jumong. Faces from attached."
+	},
+	{
+		"id": "jumong-sosuno-side-full-draw",
+		"alt": "Side profile — full-draw, arrow as horizontal line",
+		"prompt": "STRICT SIDE PROFILE full-draw. Dusty-rose #e8a04a. FACE from attached."
+	},
+	{
+		"id": "nsfw-jumong-sosuno-side-loft",
+		"alt": "Side profile — loft heat, hiked silk silhouette",
+		"prompt": "STRICT SIDE PROFILE loft heat. Skin-forward cinematic. FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-side-walk-away",
+		"alt": "Side profile — mid-stride walk-away, trailing sleeve",
+		"prompt": "STRICT SIDE PROFILE walk-away. Dusty-rose #e8a04a. FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-style-charcoal-side",
+		"alt": "Style charcoal — pure side-profile Conté",
+		"prompt": "STYLE charcoal STRICT SIDE PROFILE. FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-style-oil-side",
+		"alt": "Style oil — pure side-profile Rembrandt",
+		"prompt": "STYLE oil STRICT SIDE PROFILE. FACE from attached."
+	},
+	{
+		"id": "nsfw-jumong-sosuno-side-well",
+		"alt": "Side profile — hiked well heat at the rim",
+		"prompt": "STRICT SIDE PROFILE well hike. Skin-forward. FACE from attached."
+	},
+	{
+		"id": "jumong-sosuno-side-scream",
+		"alt": "Side profile — scream-mad open mouth wedge",
+		"prompt": "STRICT SIDE PROFILE scream. FACE from attached."
+	}
+]

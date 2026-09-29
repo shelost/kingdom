@@ -1,0 +1,137 @@
+[
+	{
+		"id": "jumong-amnok-wc-copper-lean",
+		"alt": "Watercolor — copper lean-kiss, dynamic",
+		"prompt": "Watercolor — copper lean-kiss, dynamic. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-amnok-wc-exile-stride",
+		"alt": "Watercolor — Yuhwa mid-stride exile",
+		"prompt": "Watercolor — Yuhwa mid-stride exile. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-amnok-ink-exile-stride",
+		"alt": "Ink-wash — exile stride",
+		"prompt": "Ink-wash — exile stride. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-yuhwa-wc-wander-road",
+		"alt": "Watercolor — Yuhwa wandering the road to Buyeo",
+		"prompt": "Watercolor — Yuhwa wandering the road to Buyeo. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-yuhwa-ink-wander-road",
+		"alt": "Ink-wash — wandering road",
+		"prompt": "Ink-wash — wandering road. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-wc-arrive-kneel",
+		"alt": "Watercolor daylight — Yuhwa collapses at the gate",
+		"prompt": "Watercolor daylight — Yuhwa collapses at the gate. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-wc-geumwa-stride",
+		"alt": "Watercolor — Geumwa mid-stride welcome",
+		"prompt": "Watercolor — Geumwa mid-stride welcome. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-ink-geumwa-stride",
+		"alt": "Ink-wash — Geumwa mid-stride welcome",
+		"prompt": "Ink-wash — Geumwa mid-stride welcome. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-wc-geumwa-pull",
+		"alt": "Watercolor — Geumwa pulls her up by the wrist",
+		"prompt": "Watercolor — Geumwa pulls her up by the wrist. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-wc-egg-hurl",
+		"alt": "Watercolor — Geumwa mid-hurl, daylight yard",
+		"prompt": "Watercolor — Geumwa mid-hurl, daylight yard. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-ink-egg-air",
+		"alt": "Ink-wash — egg mid-air over daylight yard",
+		"prompt": "Ink-wash — egg mid-air over daylight yard. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-wc-egg-axe",
+		"alt": "Watercolor — axe mid-swing on unhurt egg",
+		"prompt": "Watercolor — axe mid-swing on unhurt egg. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-wc-hatch",
+		"alt": "Watercolor — hatch, Yuhwa holds the infant",
+		"prompt": "Watercolor — hatch, Yuhwa holds the infant. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-buyeo-ink-hatch",
+		"alt": "Ink-wash — hatch",
+		"prompt": "Ink-wash — hatch. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-tabal-bow-ecu-obj",
+		"alt": "ECU — crow-bow grip strain, object-locked",
+		"prompt": "ECU — crow-bow grip strain, object-locked. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-tabal-bow-ots-obj",
+		"alt": "OTS — full-draw fail, crow-bow object-locked",
+		"prompt": "OTS — full-draw fail, crow-bow object-locked. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-tabal-bow-object-ecu",
+		"alt": "Object ECU — crow-bow and quiver alone",
+		"prompt": "Object ECU — crow-bow and quiver alone. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-child-wc-infants-yard",
+		"alt": "Day — infant princes tumbling in the Buyeo yard",
+		"prompt": "Day — infant princes tumbling in the Buyeo yard. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-child-forest-race",
+		"alt": "Day forest — three boys racing the pines",
+		"prompt": "Day forest — three boys racing the pines. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-child-archery-dusk",
+		"alt": "Dusk archery — grip lesson at the mark-stake",
+		"prompt": "Dusk archery — grip lesson at the mark-stake. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-child-night-bowls",
+		"alt": "Night — three bowls on the timber steps",
+		"prompt": "Night — three bowls on the timber steps. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-child-palace-youths",
+		"alt": "Day palace — youths, Daeso shoves the grin",
+		"prompt": "Day palace — youths, Daeso shoves the grin. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-child-fly-wing-bow",
+		"alt": "Dawn — full-draw finds a fly’s wing, crow-bow",
+		"prompt": "Dawn — full-draw finds a fly’s wing, crow-bow. Faces/place/object from attached refs."
+	},
+	{
+		"id": "jumong-egg-ordeal-hurl",
+		"alt": "Remake dynamic daylight — jumong-egg-ordeal-hurl",
+		"prompt": "Dynamic remake locked to pl_northern_buyeo daylight."
+	},
+	{
+		"id": "jumong-egg-ordeal-cast-cliff",
+		"alt": "Remake dynamic daylight — jumong-egg-ordeal-cast-cliff",
+		"prompt": "Dynamic remake locked to pl_northern_buyeo daylight."
+	},
+	{
+		"id": "jumong-egg-ordeal-birds-seize",
+		"alt": "Remake dynamic daylight — jumong-egg-ordeal-birds-seize",
+		"prompt": "Dynamic remake locked to pl_northern_buyeo daylight."
+	},
+	{
+		"id": "jumong-egg-ordeal-axe",
+		"alt": "Remake dynamic daylight — jumong-egg-ordeal-axe",
+		"prompt": "Dynamic remake locked to pl_northern_buyeo daylight."
+	}
+]

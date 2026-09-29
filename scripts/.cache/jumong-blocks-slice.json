@@ -1,0 +1,793 @@
+[
+  {
+    "kind": "p",
+    "html": "Before the valley has a name for him he finds a mouth in the hill — stone, leaf-light, a country-shaped dark. <b>He prays at the Jumong cavern.</b> Not for a throne. For a roof that is his.",
+    "ko": "골짜기가 아직 그의 이름을 부르기 전에 산허리에 입이 있다 — 돌, 잎빛, 나라 모양의 어둠. <b>국동대혈에서 빈다.</b> 왕좌가 아니다. 자기 지붕을."
+  },
+  {
+    "kind": "p",
+    "html": "He comes across mountain tribes in the Jolbon valley. <b>Yeon Tabal</b>, the richest chieftain on the river, does not welcome him — he weighs him. An exiled prince with a bow and three friends is either a son-in-law or a fire. Tabal has not decided which. <b>The Jolbon hall is a timber country.</b>",
+    "ko": "그는 졸본 골짜기의 산속 부족들을 만난다. 강가에서 가장 부유한 족장 <b>연타발</b>은 그를 환영하지 않는다 — 잰다. 활 하나와 벗 셋을 가진 망명 왕자는 사윗감이거나 불이다. 연타발은 아직 고르지 않았다. <b>졸본 대청은 나무 나라다.</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#a97c4a",
+    "lines": [
+      "이름은 들었다. 주몽.",
+      "활 하나 든 고씨 피.",
+      "내 마루에 재 끌어들이고 싶지 않다."
+    ],
+    "en": [
+      "I have heard the name. Jumong.",
+      "Go blood with nothing but a bow.",
+      "I do not want ash tracked into my hall."
+    ],
+    "person": "yeontabal"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "재는 남기고 싶지 않소.",
+      "다만… 하룻밤 지붕이 필요하오.",
+      "활은, 원하시면 보여 드리겠소."
+    ],
+    "en": [
+      "I do not mean to leave ash.",
+      "Only… a roof for one night.",
+      "The bow I can show you, if you wish."
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "p",
+    "html": "His daughter <b>Sosuno</b> is already watching from the grain porch — a widow with two sons and a gaze that has priced every man who entered that hall. This one she prices as danger, out loud. Under the counting-voice she is already too warm. <b>She prices him, then forgets the count.</b>",
+    "ko": "딸 <b>소서노</b>는 이미 곡식 누대에서 보고 있다 — 아들 둘을 둔 과부, 그 대청에 들어온 사내마다 값을 매겨 온 눈. 이번엔 위험으로 값을 매긴다, 소리 내어. 세는 목소리 아래는 이미 덥다. <b>값을 매기다가 세던 것을 잊는다.</b>"
+  },
+  {
+    "kind": "p",
+    "html": "She turns her face as if going back to the grain, proud — the chieftain’s daughter, a widow who will not be seen wanting. And still she stares at the line of his back. Heat climbs her throat. <b>She blushes at his back.</b> He is not looking. That is when the heat is worst. In her head the ledger is not grain. She hides it in the counting-voice, and the voice does not quite hold.",
+    "ko": "곡식을 세러 돌아가는 척 얼굴을 돌린다. 자존심이다 — 족장의 딸, 원하는 티를 내면 안 되는 과부. 그런데도 그의 등 선을 본다. 열이 목으로 오른다. <b>등 뒤에서 얼굴을 붉힌다.</b> 그는 안 본다. 그때가 제일 덥다. 머릿속 장부는 곡식이 아니다. 세는 목소리 안에 숨긴다. 목소리는 끝까지 버티지 못한다."
+  },
+  {
+    "kind": "p",
+    "html": "The counting-voice says one, two, three. The other voice — the one she keeps in books she should not have read — says his weight on her, his mouth at her neck, the hall empty except for that. <b>In her head the ledger is not grain.</b> Outside she is already turning away, as if the sacks mattered more.",
+    "ko": "세는 목소리는 하나, 둘, 셋. 다른 목소리 — 읽지 말았어야 할 책에 적어 둔 목소리 — 는 그의 무게, 목덜미의 입, 대청이 그것만 남는 일을 말한다. <b>머릿속 장부는 곡식이 아니다.</b> 겉으로는 이미 외면한다. 가마니가 더 중요해 보이게."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "아버지.",
+      "저 사람 아직 있어요.",
+      "집 구한 얼굴로 들어왔잖아요.",
+      "전 곡식 세요. 보지 마세요."
+    ],
+    "en": [
+      "Father.",
+      "He's still here.",
+      "Walked in like he already lives here.",
+      "I'm counting. Don't watch me."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#a97c4a",
+    "person": "yeontabal",
+    "lines": [
+      "가마니 두 번 셌다.",
+      "그리고 얼굴이 빨개.",
+      "과부 된 이유, 잊었냐."
+    ],
+    "en": [
+      "You counted that sack twice.",
+      "And you're pink.",
+      "Have you forgotten why you are a widow."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "안 잊었어요.",
+      "재는 재로 두라고요.",
+      "…얼굴 보지 마세요. 셈 틀어지니까."
+    ],
+    "en": [
+      "I haven't.",
+      "Leave ash as ash.",
+      "…Don't look at my face. The count goes wrong."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "They meet at the well the next morning, entirely by accident — an accident she has arranged by timing the water, and he by timing his thirst. <b>The well is an accident she timed.</b> She looks at the buckets first. At him second. As if the buckets were the point.",
+    "ko": "이튿날 아침, 둘은 우물에서 순전히 우연으로 만난다 — 소서노가 물 뜨는 시각을 맞춰 두고, 주몽이 목마름을 맞춰 둔, 그런 우연으로. <b>우물은 그녀가 맞춘 우연이다.</b> 먼저 두레박을 본다. 그다음 그를 본다. 두레박이 목적인 것처럼."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "부인.",
+      "이름… 여쭤도 되겠소.",
+      "줄이 걸렸소. 잡아 드릴까."
+    ],
+    "en": [
+      "Lady…",
+      "May I ask your name.",
+      "Rope's stuck. Want me to—"
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "lines": [
+      "소서노요.",
+      "말 시키지 마세요.",
+      "물만 뜨세요.",
+      "얼굴은… 보지 마세요. 곡식 셈이 틀어지니까."
+    ],
+    "en": [
+      "Sosuno.",
+      "Don't talk.",
+      "Just draw the water.",
+      "Don't look at my face. The count goes wrong."
+    ],
+    "person": "sosuno"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "person": "jumong",
+    "lines": [
+      "우물만 보고 있었소.",
+      "손은— 그 정도는 아니오.",
+      "…재미있네."
+    ],
+    "en": [
+      "I was looking at the well.",
+      "A hand is not— whatever you think.",
+      "…You're funny."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "누가 말하래요.",
+      "뜨고 가세요.",
+      "웃지 마세요."
+    ],
+    "en": [
+      "Who asked you to speak.",
+      "Draw it and go.",
+      "And stop smiling."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He keeps ending up thirsty at the same hour. She keeps being there, rude, pink at the ears. On the fourth morning he stops pretending he does not know. They are both on the packed earth, at the rim — not in the well, she would never forgive him that. <b>He kisses her at the well-beam.</b>",
+    "ko": "같은 시각에 목이 마르고, 같은 우물에 그녀가 있다. 독하고, 귓불이 분홍이다. 나흘째 아침에 모르는 척을 그만둔다. 둘 다 다진 흙 위, 우물 가에 있다 — 안에 들어가면 평생 안 봐준다. <b>우물 들보에서 입을 맞춘다.</b>"
+  },
+  {
+    "kind": "p",
+    "nsfw": true,
+    "html": "She does not pull away first. She turns. Dusty-rose silk at the waist, wet from the well-rope, and <b>the back is the picture</b> — a column, the look over the shoulder at the man who just used the beam. He is still on packed earth, still not in the shaft, grinning like an idiot who got away with it.",
+    "ko": "먼저 떼지 않는다. 돌아선다. 허리의 회분홍 비단, 우물줄에 젖고, <b>등이 그림이다</b> — 기둥, 들보를 쓴 남자를 넘겨보는 눈. 그는 아직 다진 흙 위, 아직 우물 안이 아니고, 된 놈처럼 웃는다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "당신—",
+      "어떻게 감히.",
+      "지금— 우물에서—"
+    ],
+    "en": [
+      "You—",
+      "How dare you.",
+      "Here. At the well."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "person": "jumong",
+    "lines": [
+      "알아. 내가 먼저였소.",
+      "원하시면… 오늘 밤 떠나겠소.",
+      "쉬운 쪽으로."
+    ],
+    "en": [
+      "Yeah. That was me.",
+      "I’ll leave the village. Tonight.",
+      "If that is easier."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "She does not say stay. She goes at the rope, the weather, his boots, anything that is not his name. <b>The second bucket isn’t full.</b>",
+    "ko": "남으라는 말은 안 한다. 줄, 날씨, 신발, 이름만 빼고 다 말한다. <b>둘째 두레박이 안 찼다.</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "둘째 두레박이… 안 찼어요.",
+      "줄 밟지 마세요.",
+      "가라는 말은 안 했거든요.",
+      "그냥— 두레박요."
+    ],
+    "en": [
+      "The second bucket isn’t full.",
+      "You’re on the rope.",
+      "I didn’t say leave.",
+      "I said the bucket."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "person": "jumong",
+    "lines": [
+      "그럼 기다리겠소.",
+      "두레박.",
+      "재밌소, 부인.",
+      "화내지 마시오. 웃는 거요."
+    ],
+    "en": [
+      "Then I will wait for the second bucket.",
+      "Just the bucket.",
+      "This is fun, you know.",
+      "Don't scowl. I'm smiling."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He has been collecting her collecting. From the grain-porch post, a cloth: thread off his sleeve, a fletch he dropped, well-rope, a scrap of headband. He holds it up like a joke that might not be one. <b>You hide these like a thief.</b>",
+    "ko": "소서노가 모아 온 것을 주몽이 모아 왔다. 곡식 누대 기둥의 보자기 — 소매 실, 떨어뜨린 깃, 우물 새끼, 머리띠 조각. 농담인 척 들어 올린다. <b>도둑처럼 숨겼구나.</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "person": "jumong",
+    "lines": [
+      "내 머리띤데.",
+      "흙 묻었소, 라고 말하려던 참이오?",
+      "네 개요. 도둑처럼 숨겼소."
+    ],
+    "en": [
+      "That's my headband.",
+      "You were going to say it was dirty.",
+      "Four of them. You hide these like a thief."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "She goes so red the dusty-rose looks pale. She snatches at the cloth and misses. <b>Those are… inventory.</b>",
+    "ko": "얼굴이 너무 달아 먼지로즈가 창백해 보인다. 보자기를 뺏으려다 놓친다. <b>재고예요….</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "재고예요.",
+      "곡식 재고.",
+      "쓰레기. 태울 거예요.",
+      "얼굴 치우세요."
+    ],
+    "en": [
+      "Those are… inventory.",
+      "Grain inventory.",
+      "Trash. I'll burn them.",
+      "Get your face off it."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He turns so she does not have to look at him wanting. Easy about it, which is worse. <b>I’ll leave, and save you the heartache.</b>",
+    "ko": "그녀가 원하는 얼굴을 보지 않게 등을 돌린다. 너무 쉽게 돌려서 더 나쁘다. <b>떠나서, 그 마음을 아끼겠소.</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "person": "jumong",
+    "lines": [
+      "그럼 가겠소.",
+      "숫자나 세요.",
+      "바보 같은 말, 안 해도 되고."
+    ],
+    "en": [
+      "Then I will go.",
+      "You keep your numbers.",
+      "Nobody has to say anything stupid."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "She runs. Packed earth. Grey giwa. Catches the red sleeve the way she did not at the well, and kisses him like she has been waiting to be caught. <b>Stay. I wanted you.</b>",
+    "ko": "달린다. 다진 흙. 회색 기와. 우물에서 안 잡은 붉은 소매를 잡고, 잡히려고 기다린 것처럼 입을 맞춘다. <b>남아요. 원했어요.</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "기다려요— 바보야— 남아요.",
+      "처음부터 원했어요. 첫날 아침부터.",
+      "착하게 구지 마세요. 남아요."
+    ],
+    "en": [
+      "Wait— you idiot— stay.",
+      "I wanted you. From the first morning.",
+      "Don't you dare be noble about it. Stay."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "person": "jumong",
+    "lines": [
+      "알겠어, 알겠어.",
+      "안 가요.",
+      "웃지 말라고 하기 전에— 벌써 웃고 있소."
+    ],
+    "en": [
+      "Alright, alright.",
+      "I'm not going.",
+      "Before you say don't smirk — too late."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Tabal has been on the porch the whole time, looking like a man who bit a persimmon too early. <b>I am not pleased. I am also not blind.</b>",
+    "ko": "연타발은 처음부터 누대에 있었다. 감이 너무 일찍 온 얼굴. <b>안 기쁘다. 눈은 있다.</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#a97c4a",
+    "person": "yeontabal",
+    "lines": [
+      "…소나무다.",
+      "백 보. 지금.",
+      "맞히면 밥. 빗나가면 내가 직접 내보낸다.",
+      "안 기쁘다. 눈은 있다. 이 누대에 눈 없는 사람 없으니까."
+    ],
+    "en": [
+      "…The pine.",
+      "A hundred paces. Now.",
+      "Hit it, he eats. Miss, I throw him out myself.",
+      "I am not pleased. I am also not blind. Nobody on this porch is."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He had already named the pine from the porch. Now he makes them do it in front of the hall — publicly, so no one can claim the weight was wrong. Three flights. His best men first. Then himself. Then the exile, if the exile still has the nerve after being kissed in the yard.",
+    "ko": "소나무는 이미 누대에서 짚었다. 이제 대청 앞에서 시킨다 — 공개적으로, 무게가 틀렸다고 말할 수 없게. 세 순. 먼저 제 장수들. 그다음 자신. 그다음 망명객, 마당에서 입 맞춘 뒤에도 배가 남아 있다면."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#a97c4a",
+    "person": "yeontabal",
+    "lines": [
+      "말했잖소. 소나무.",
+      "백 보.",
+      "다들 보게. 숨어서 볼 생각 말고."
+    ],
+    "en": [
+      "I already said. The pine.",
+      "A hundred paces.",
+      "Everybody watches. No peeking from the rail."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "<b>The pine is a hundred paces.</b> Packed earth. One tree. The hall behind them, giwa catching late light. Sosuno on the porch rail, knuckles already white, pretending she is only here for the count.",
+    "ko": "<b>소나무는 백 보다.</b> 다진 흙. 나무 하나. 등 뒤의 대청, 늦은 빛을 받는 기와. 소서노는 누대 난간에 있다. 손마디가 이미 하얗다. 셈하러 온 척한다."
+  },
+  {
+    "kind": "p",
+    "html": "The best men hit bark. Tabal hits the knot he named. Jumong does not aim at the knot. He splits Tabal’s arrow down the shaft — so cleanly the hall hears the wood cry before it sees the feather still trembling. <b>The hall hears the wood cry.</b>",
+    "ko": "장수들은 껍질을 맞힌다. 연타발은 자신이 짚은 옹이를 맞힌다. 주몽은 옹이를 조준하지 않는다. 연타발의 화살을 자루째 가른다 — 깃털이 떨리기도 전에 대청이 나무 우는 소리를 들을 만큼 깨끗하게. <b>대청이 나무 우는 소리를 듣는다.</b>"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "…재는 이렇게 안 생겼소.",
+      "봐. 아직 웃고 있잖소."
+    ],
+    "en": [
+      "…Ash does not look like this.",
+      "See? I'm still smiling."
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "p",
+    "html": "Silence. Then Tabal laughs — short, unwilling, the laugh of a man whose suspicion has just been outshot. Sosuno’s hand is already on the porch rail, white at the knuckles.",
+    "ko": "침묵. 이윽고 연타발이 웃는다 — 짧고, 마지못해, 의심이 활에 진 사내의 웃음. 소서노의 손은 이미 누대 난간에 올려져 있고, 마디가 하얗다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#a97c4a",
+    "lines": [
+      "…밥은 먹이겠소.",
+      "길은… 서두르지 않겠소.",
+      "허나 내 딸은 —"
+    ],
+    "en": [
+      "…You will eat.",
+      "And I will not hurry the road.",
+      "But my daughter —"
+    ],
+    "person": "yeontabal"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "활은 활이고요.",
+      "그렇게 보지 마세요.",
+      "전 그냥— 셈이 틀린 거예요.",
+      "웃지 마요."
+    ],
+    "en": [
+      "The bow is the bow.",
+      "Don't look at me like that.",
+      "I only— lost the count.",
+      "Stop smiling."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#a97c4a",
+    "person": "yeontabal",
+    "lines": [
+      "…하.",
+      "강물이 데려가는 줄 알았더니 딸이 쫓아가네.",
+      "소서노. 네 입으로 골랐으면 네가 지켜. 축하하는 거 아니다.",
+      "주몽. 내 딸 재로 만들면 활로도 못 막아.",
+      "먹어. 남아. 이 대청에서 우리처럼 투덜거려."
+    ],
+    "en": [
+      "…Ha.",
+      "I thought the river would take him. Instead my daughter ran after it.",
+      "Sosuno. You chose him with your mouth. You keep him. I'm not throwing a feast.",
+      "Jumong. Ash of my daughter and no bow will stop me.",
+      "Eat. Stay. Grumble in my hall like the rest of us."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "After that the war-talk still happens, but nights belong to something else. He watches her count grain. She lets him. The ledger stays open longer than it needs to, because neither of them wants to be the first to close it.",
+    "ko": "그 뒤로도 전쟁 이야기는 이어지지만, 밤은 다른 것의 몫이다. 주몽이 곡식을 세는 소서노를 본다. 소서노는 그것을 허락한다. 장부는 필요 이상으로 오래 열려 있다. 둘 다 먼저 덮고 싶지 않아서."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "부인.",
+      "장부 덮으시오.",
+      "숫자 안 보이오.",
+      "목 때문에. 촛불보다 밝아서."
+    ],
+    "en": [
+      "Wife.",
+      "Close the ledger.",
+      "I can't see the numbers.",
+      "Your throat. Brighter than the lamp. Sorry."
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "lines": [
+      "아직 아내 아닌데요.",
+      "그렇게 부르지 마요. 손 떨리잖아요.",
+      "세는 손이 필요해요, 아니면 나예요.",
+      "답 알고 묻지 마요."
+    ],
+    "en": [
+      "I am not your wife yet.",
+      "Don't call me that. My hands shake.",
+      "Do you need the counting hand, or me.",
+      "Don't ask if you know."
+    ],
+    "person": "sosuno"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "당신만.",
+      "처음부터 당신만이었소.",
+      "입을… 먼저 주시오.",
+      "나라는… 나중에 세우겠소."
+    ],
+    "en": [
+      "Only you.",
+      "From the first look — only you.",
+      "Give me your mouth… first.",
+      "The country… we can found later."
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "lines": [
+      "그럼 받으세요.",
+      "입도.",
+      "장부도.",
+      "부족도.",
+      "사랑은… 값을 매기지 말아요.",
+      "저는 이미 값을 잃었으니까."
+    ],
+    "en": [
+      "Then take them.",
+      "The mouth.",
+      "The ledger.",
+      "The tribes.",
+      "Do not put a price on the love.",
+      "I have already lost the count."
+    ],
+    "person": "sosuno"
+  },
+  {
+    "kind": "p",
+    "html": "<b>Sosuno (24)</b> is still a widow with two sons and her father’s rivers in her head. The marriage is real hunger first — and only afterwards the alliance Tabal can explain to the other chieftains without sounding like a man who was outshot by his future son-in-law.",
+    "ko": "<b>소서노 (24)</b>는 여전히 아들 둘을 둔 과부이고, 아버지의 물길을 머릿속에 담고 있다. 혼인은 먼저 진짜 허기고 — 그다음에야, 연타발이 다른 족장들에게 «사위한테 활로 진 사람»처럼 들리지 않게 설명할 수 있는 동맹이다."
+  },
+  {
+    "kind": "p",
+    "nsfw": true,
+    "html": "The grain-room lamp. Dusty-rose hiked. She still pretends the count is what she came for until his cock is in her from behind, one hand on the open ledger, and she is not pretending. Tsundere breaks on the first thrust. She wanted this from the porch. She will not say it first. She says it now.",
+    "ko": "곡식방 등잔. 먼지로즈가 걷혀 있다. 셈하러 온 척하다가, 뒤에서 들어가고, 한 손은 열린 장부에, 척이 끝난다. 첫 찌름에 츤데레가 깨진다. 누대에서부터 원했다. 먼저 말은 안 했다. 지금은 한다."
+  },
+  {
+    "kind": "dialogue",
+    "nsfw": true,
+    "chip": "#e8a04a",
+    "person": "sosuno",
+    "lines": [
+      "뒤에서— 아— 보지 마 얼굴—",
+      "더 세게— 이 큰 거— 씨발 좋아—",
+      "장부는— 나중에— 안에—"
+    ],
+    "en": [
+      "From behind— ah— don’t look at my face—",
+      "Harder— this huge— fuck it feels so good—",
+      "Unload it in me— the ledger can wait—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "nsfw": true,
+    "chip": "#e8563f",
+    "person": "jumong",
+    "lines": [
+      "받아— 과부—",
+      "이 엉덩이— 튀겨—",
+      "쌀 것이오—"
+    ],
+    "en": [
+      "Take it—",
+      "That ass— bounce—",
+      "I’m going to nut—"
+    ]
+  },
+  {
+    "kind": "p",
+    "nsfw": true,
+    "html": "He spends in her against the grain sacks — a fugitive’s unused load, messy, the dusty-rose already ruined at the hip. She laughs into the timber because she lost the count on purpose. Messy hair. Spent. She will found a country on this hunger. Tonight she just wants the next one.",
+    "ko": "곡식 가마니에 대고 싼다 — 망명객의 안 쓴 한 방, 지저분하고, 먼지로즈는 이미 허리에서 망가졌다. 일부러 셈을 잃어서 들보에 웃는다. 헝클어진 머리. 다 씀. 이 허기로 나라를 세울 것이다. 오늘 밤은 다음이 고프다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "…내가 가진 게 활 하나요.",
+      "그래도… 당신을 얻었소."
+    ],
+    "en": [
+      "…All I own is a bow.",
+      "And still… I have you."
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "lines": [
+      "활이 저를 얻었지요.",
+      "나머지는… 같이 가면 됩니다."
+    ],
+    "en": [
+      "The bow won me.",
+      "The rest… we can carry together."
+    ],
+    "person": "sosuno"
+  },
+  {
+    "kind": "p",
+    "html": "Her wealth still buys what love alone cannot: tribes, grain, river routes. Her two sons are raised in the hall of the kingdom they build together. Twenty years later a first wife walks in from Buyeo with a boy and a broken sword, and the succession goes to him, and Sosuno takes her sons and walks south, and founds the other kingdom in this story. The first love was real enough; she simply refuses to live as a footnote in it.",
+    "ko": "사랑만으로는 못 사는 것들을 그의 재산이 여전히 산다: 부족, 곡식, 물길. 두 아들은 함께 세운 나라의 대청에서 자란다. 이십 년 뒤 부여에서 첫 아내가 아들 하나와 부러진 칼을 들고 걸어 들어오고, 왕위는 그 아이에게 간다. 그러자 소서노는 아들들을 데리고 남쪽으로 걸어가, 이 이야기의 다른 한 나라를 세운다. 첫사랑이 거짓이었던 것은 아니다. 다만 그 이야기의 각주로 살기를 거절했을 뿐이다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8a04a",
+    "lines": [
+      "나라는 두 번 세워 보면 아는 게 있습니다. / 두 번째가 쉽다는 거예요."
+    ],
+    "en": [
+      "You learn something from founding a country twice. / The second one is easier."
+    ],
+    "person": "sosuno"
+  },
+  {
+    "kind": "p",
+    "html": "The tribes come over to him, a few at a time, and then all at once.",
+    "ko": "부족들이 그에게로 넘어온다. 처음엔 몇씩, 그다음엔 한꺼번에."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "아버지!"
+    ],
+    "en": [
+      "Father!"
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#8fc4e0",
+    "lines": [
+      "주몽.... 내 아들아..."
+    ],
+    "speaker": "👨",
+    "en": [
+      "Jumong…. my son…"
+    ],
+    "person": "yuhwa"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#e8563f",
+    "lines": [
+      "아버지... 제 말을 듣기는 하시는 거예요?"
+    ],
+    "en": [
+      "Father… are you even listening to me?"
+    ],
+    "person": "jumong"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#8fc4e0",
+    "lines": [
+      "새로운 세상을 만드는 것이다.",
+      "너만의 세상을 만들어라.... 아들아...!"
+    ],
+    "speaker": "🔴",
+    "en": [
+      "It is to build a new world.",
+      "Build a world of your own…. my son…!"
+    ],
+    "person": "yuhwa"
+  },
+  {
+    "kind": "quote",
+    "hanja": "我是天帝子 河伯孫 今日逃遁 追者垂及 奈何 於是魚鼈成橋",
+    "ko": "나는 천제의 아들이요, 하백의 손이다. 오늘 도망하는데 쫓는 자가 거의 이르렀으니, 어찌하리오. 이에 물고기와 자라가 다리를 이루었다.",
+    "html": "I am the son of the Heavenly Emperor, grandson of the River Earl. Today I flee, and those who pursue me have nearly arrived — what shall I do? Thereupon the fish and turtles formed a bridge.",
+    "source": "Samguk Sagi (三國史記) bk. 13, Goguryeo Annals — Jumong; Lee Byong-do ed., vol. 1, p. 218 · cf. Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Old Buyeo / Jumong"
+  },
+  {
+    "kind": "p",
+    "html": "Jumong spends the rest of his life driving the western commanderies from the river valleys, and the country grows the way countries grow in old stories — one bowshot, one bride, one sworn brother at a time. The tellers always pause here, because two boys raised in Sosuno’s hall are about to sail south and begin a story of their own.",
+    "ko": "주몽은 남은 생을 중원의 군현을 강가 골짜기에서 몰아내는 데 바치고, 나라는 옛이야기 속 나라들이 자라는 방식으로 자란다 — 화살 한 발, 신부 한 사람, 의형제 한 명씩. 이야기꾼들은 늘 여기서 잠시 숨을 고른다. 소서노의 집에서 자란 두 아이가, 곧 남쪽으로 배를 띄워 저희들만의 이야기를 시작할 참이기 때문이다."
+  },
+  {
+    "kind": "p",
+    "html": "Word comes from Buyeo while the new country is still learning its name. Yuhwa has stopped. The hall that took her in keeps the body. The door that opens next is not a mortal door.",
+    "ko": "새 나라가 아직 제 이름을 익히는 동안, 부여에서 소식이 온다. 유화가 멈췄다. 그를 거둔 대청이 몸을 지킨다. 다음에 열리는 문은 사람 문이 아니다."
+  },
+  {
+    "kind": "p",
+    "html": "Heat in a room that had gone cold. Gold where the lamp had failed. <b>Haemosu</b> is simply there — chariot left in the yard like a horse someone could not bear to stable.",
+    "ko": "식은 방에 열기가 든다. 등잔이 죽은 자리에 금빛. <b>해모수</b>가 그냥 있다 — 마당에 세워 둔 수레는, 차마 외양간에 넣지 못한 말처럼."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#f0b429",
+    "lines": [
+      "유화.",
+      "아우한테 맡기지 않았다.",
+      "손."
+    ],
+    "en": [
+      "Yuhwa.",
+      "I didn’t give this to my little brother.",
+      "Your hand."
+    ],
+    "person": "haemosu"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#8fc4e0",
+    "lines": [
+      "늦으셨네요.",
+      "구리방은… 당신이 없을 때도 따뜻했어요."
+    ],
+    "en": [
+      "You’re late.",
+      "The copper room… stayed warm. Even when you weren’t in it."
+    ],
+    "person": "yuhwa"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#f0b429",
+    "lines": [
+      "그때는 내가 내려왔다.",
+      "지금은 네가 올라온다.",
+      "빈 자리가 하나 있다. 내가 지는 쪽에."
+    ],
+    "en": [
+      "That time I came down.",
+      "This time you come up.",
+      "There’s an empty seat. On the side where I set."
+    ],
+    "person": "haemosu"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#8fc4e0",
+    "lines": [
+      "그 빛… 여울에서 올려다보던 거랑은 다르네요.",
+      "차갑고.",
+      "그래도… 당신 맞은편이면 괜찮아요."
+    ],
+    "en": [
+      "That light… it isn’t the one I looked up at from the shallows.",
+      "It’s cold.",
+      "Still… across from you is fine."
+    ],
+    "person": "yuhwa"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#f0b429",
+    "lines": [
+      "그럼 가자.",
+      "수레는 오늘 밤을 비킨다."
+    ],
+    "en": [
+      "Then come.",
+      "The chariot yields the night."
+    ],
+    "person": "haemosu"
+  },
+  {
+    "kind": "p",
+    "html": "He does not ask a question. She takes the hand that once could not leave her back. Buyeo keeps a grave. The minutes there say a river-daughter died. The sky, which keeps poorer minutes, has a moon the next night.",
+    "ko": "그는 묻지 않는다. 한때 등에서 손을 못 떼던 그 손을, 유화가 잡는다. 부여는 무덤을 지킨다. 그곳 기록은 하백의 딸이 죽었다고 한다. 하늘은 기록을 덜 남기는 편이라, 이튿날 밤부터 달이 있다."
+  },
+  {
+    "kind": "p",
+    "html": "The chronicles will not write that the Yeon hall never forgot weighing a Go exile. Centuries later another Yeon will speak in the same short heat — and call the country by its longest name, as if shortening it were already kneeling to a softer king.",
+    "ko": "사가는 연 집안이 고씨 망명을 저울질한 일을 잊지 않았다고 쓰지 않을 것이다. 수백 년 뒤 또 다른 연이 같은 짧은 열기로 말할 것이고 — 나라를 가장 긴 이름으로 부를 것이다. 줄이는 일이 이미 부드러운 임금에게 무릎 꿇는 일이라도 되는 양."
+  }
+]

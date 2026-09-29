@@ -1,0 +1,37 @@
+[
+	{
+		"id": "jumong-seq-buyeo-wide",
+		"alt": "Bird’s-eye dusk: empty Northern Buyeo packed-earth yard, grey-giwa timber hall as a dark bar, palisade, thin river",
+		"prompt": "Minimal iconic 16:9 still. Bird’s-eye dutch dusk. LOCK to pl_buyeo_yard. Tiny Geumwa. Hall as dark bar. #a89a72 stamp. No gold palace. No army. No text."
+	},
+	{
+		"id": "jumong-buyeo-egg",
+		"alt": "Dutch timber room: Yuhwa kneeling over a pale egg on packed earth, Geumwa a doorway stamp",
+		"prompt": "Dutch low. Yuhwa ice-blue court silk, FACE from ch_yuhwa, not bathing wrap. Pale egg as oval device. Geumwa doorway stamp. #8fc4e0 rim. No text."
+	},
+	{
+		"id": "jumong-buyeo-hatch",
+		"alt": "ECU cracked pale egg; a small boy’s face in the split, one red #e8563f seam",
+		"prompt": "Intimate 3:4 ECU cracked egg. Red #e8563f seam. Child face from Jumong portrait, no headband. Ice-blue sleeve bokeh. No text."
+	},
+	{
+		"id": "jumong-buyeo-boys",
+		"alt": "Worm’s-eye Buyeo yard: three boys at one mark-stake, Jumong grinning mid-draw",
+		"prompt": "Worm’s-eye. Three boys, one mark-stake. Jumong grin red silk. Daeso too close. Galsa delayed smile. LOCK pl_buyeo_yard. No text."
+	},
+	{
+		"id": "jumong-buyeo-fly",
+		"alt": "Shallow DOF: Jumong full-draw, a fly’s wing pinned to the mark-stake, Daeso’s blue sleeve in bokeh",
+		"prompt": "Rack-focus. Jumong adult full-draw grin. Fly wing on stake foreground. Daeso blue bokeh. #e8563f arrow-line. No text."
+	},
+	{
+		"id": "jumong-buyeo-knife",
+		"alt": "Dutch night corridor: blade as a hard black line, Jumong ducking, one lamp, empty timber",
+		"prompt": "Extreme dutch night. Blade as vertical black line. Jumong ducking, red silk, one lamp. Anonymous assassin sleeve. No text."
+	},
+	{
+		"id": "jumong-buyeo-four",
+		"alt": "Night gate of Buyeo: Jumong mid-stride through iron-boss doors, three friends as lower-third silks, pines beyond",
+		"prompt": "Low dutch night. Iron-boss doors cracked open. Jumong mid-stride red #e8563f. Three anonymous friends. Pines as net. No text."
+	}
+]

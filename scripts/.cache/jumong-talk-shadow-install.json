@@ -1,0 +1,16 @@
+[
+	{"id":"daughter-teal-talk-ecu","alt":"ECU anonymous teal daughter talking at the well; fox-flirt, not Sosuno","prompt":"ECU teal daughter. Hey big boy. Not Sosuno."},
+	{"id":"jumong-talk-funny-ecu","alt":"ECU Jumong clean-shaven, easy laugh at the well, no mustache","prompt":"ECU Jumong clean-shaven. Easy laugh. NO mustache."},
+	{"id":"daughter-saffron-talk-ecu","alt":"ECU anonymous saffron daughter inviting him to their well","prompt":"ECU saffron daughter. Stay. Not Sosuno."},
+	{"id":"jumong-talk-bucket-ecu","alt":"ECU Jumong clean-shaven answering the bucket joke, wink, no mustache","prompt":"ECU Jumong clean-shaven. Poor bucket. NO mustache."},
+	{"id":"daughter-plum-talk-ecu","alt":"ECU anonymous plum daughter: don’t look at Sosuno, look at me","prompt":"ECU plum daughter. Look at me. Not Sosuno."},
+	{"id":"jumong-cold-shudder","alt":"OTS Jumong back: Sosuno-shaped shadow (hanbok, binyeo, empty bucket) — no face, no blush","prompt":"OTS back. Sosuno-shaped shadow: hanbok, binyeo, empty bucket. No face. No blush."},
+	{"id":"jumong-turn-sosuno","alt":"Dutch: Jumong mid-turn, clean-shaven; Sosuno cold chin-up, empty bucket, NO blush","prompt":"Dutch turn. Packed-earth gap. Sosuno cold, no blush. Jumong clean-shaven."},
+	{"id":"sosuno-tsun-well-caught","alt":"ECU Sosuno cold tsundere: chin up, scowl, NO blush, empty bucket rim","prompt":"ECU Sosuno cold scowl. No blush. Bucket rim."},
+	{"id":"jumong-carries-pine","alt":"Worm’s-eye Buyeo yard: Jumong clean-shaven carrying the uprooted pine","prompt":"Worm’s-eye. Jumong carries the uprooted pine. Clean-shaven. LOCK pl_buyeo_yard."},
+	{"id":"yuhwa-leave-tonight","alt":"ECU Yuhwa ice-blue: pack, leave Buyeo tonight","prompt":"ECU Yuhwa. Leave Buyeo. Tonight."},
+	{"id":"lady-ye-half-door","alt":"Dutch lamp room: Lady Ye at a half-open timber door","prompt":"Dutch. Lady Ye at a half-open door. Lamp seam."},
+	{"id":"haemosu-thats-my-boy","alt":"OTS gold chariot rail: Haemosu watching tiny Jumong on the living ford","prompt":"OTS rail. Haemosu. That's my boy. Living ford below."},
+	{"id":"jumong-scouts-hands","alt":"Dutch pine road: Jumong clean-shaven, hands up, bow on packed earth","prompt":"Dutch. Hands up. Bow on dirt. Clean-shaven."},
+	{"id":"daeso-morning-slept","alt":"Dutch Buyeo colonnade dawn: Daeso too close; Jumong clean-shaven, grin thin","prompt":"Dutch colonnade. Daeso: You slept. Jumong clean-shaven."}
+]

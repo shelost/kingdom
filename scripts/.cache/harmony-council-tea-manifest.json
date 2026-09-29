@@ -1,0 +1,57 @@
+[
+	{
+		"id": "council-tea-wide",
+		"alt": "Night pavilion: six councillors on the floor around a low table, tea, blue flame, smoke",
+		"prompt": "Intimate cinematic 16:9. Dark Korean pavilion, low table, tea, blue flame, chiaroscuro. No text. No watermark."
+	},
+	{
+		"id": "council-tea-overhead",
+		"alt": "Top-down: low wooden table, tea bowls in a ring, blue flame, white dragon-coat shoulders",
+		"prompt": "Intimate cinematic 16:9 top-down. Tea, blue flame, dark pavilion. No text. No watermark."
+	},
+	{
+		"id": "council-tea-worm",
+		"alt": "Worm’s-eye from the floor: table slab, towering blue flame, councillors looming",
+		"prompt": "Intimate cinematic 16:9 worm’s-eye. Blue flame, tea, dark pavilion. No text. No watermark."
+	},
+	{
+		"id": "council-tea-cups",
+		"alt": "Table close: tea bowls, a tense hand, blue flame, smoke on dark wood",
+		"prompt": "Intimate cinematic 16:9 table close. Tea bowls, blue flame. No text. No watermark."
+	},
+	{
+		"id": "council-tea-bidam",
+		"alt": "Bidam close — mid-speech, tea bowl, blue flame on his jaw, dark pavilion",
+		"prompt": "Intimate cinematic 9:16. Bidam speaking, tea, blue flame. No text. No watermark."
+	},
+	{
+		"id": "council-tea-rise",
+		"alt": "Bidam half-rises from the floor; tea bowls, blue flame, the others look up",
+		"prompt": "Intimate cinematic 16:9. Bidam rising. Dark pavilion. No text. No watermark."
+	},
+	{
+		"id": "council-tea-across",
+		"alt": "Bidam and Yushin across the low table, tea and blue flame between them",
+		"prompt": "Intimate cinematic 16:9 two-shot. Tea, blue flame. No text. No watermark."
+	},
+	{
+		"id": "council-tea-alchun",
+		"alt": "Alchun raises his hand in the dark pavilion — scar, tea, blue flame",
+		"prompt": "Intimate cinematic 16:9. Alchun hand raised. No text. No watermark."
+	},
+	{
+		"id": "council-tea-yushin",
+		"alt": "Yushin seated on the floor — beard, clenched jaw, blue flame, council coat",
+		"prompt": "Intimate cinematic 9:16. Yushin, no armor. No text. No watermark."
+	},
+	{
+		"id": "council-tea-supum",
+		"alt": "Premier Supum across the low table, tea and blue flame in a dark pavilion",
+		"prompt": "Intimate cinematic 16:9. Supum, tea, blue flame. No text. No watermark."
+	},
+	{
+		"id": "council-tea-veto",
+		"alt": "Five sleeves up around the blue flame; Bidam’s fist and a tea bowl stay down",
+		"prompt": "Intimate cinematic 16:9 veto. Tea, blue flame. No text. No watermark."
+	}
+]

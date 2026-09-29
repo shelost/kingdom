@@ -1,0 +1,211 @@
+{
+	"blade-south": {
+		"alt": "Dutch ECU: Gesomun drawing Son Daeha’s southern crow ring-pommel — one orange #c46b3a plane, Pyongyang hall dark",
+		"prompt": "Minimal iconic 16:9 still. DUTCH extreme close on crow-stamped ring-pommel as Yeon Gesomun draws the Southern Commander’s blade from a fallen belt. FACE of Gesomun from attached portrait only as thick-beard grimace at frame edge — NEW body mid-draw, not portrait stance. Fallen Southern commander face-suggestion from attached commander portrait melting into crushed-black bokeh (ONE of each person). Steel-gray lamellar + Goguryeo red-wing cloth #d0362f peek; Southern accent #c46b3a as the single hard light-plane on the hollow ring. Mise-en-scène: SAME Pyongyang banquet timber hall from place ref. ONE device: the hollow gold ring-pommel as a bright circle dividing the frame. Shallow DOF, rack-focus on the crow stamp. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ch_commander_3.png",
+			"/ar_lamellar_steel.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun",
+			"southcmd"
+		],
+		"ratio": 1.778,
+		"tone": "#c46b3a",
+		"dropSrc": true
+	},
+	"blade-north": {
+		"alt": "Worm’s-eye: Gesomun lifting Go Ul’s northern crow blade — green #6a8f6e rim, Pyongyang floor",
+		"prompt": "Minimal iconic 16:9 still. WORM’S-EYE dutch as Yeon Gesomun lifts the Northern crow ring-pommel from the banquet floor. FACE from attached Gesomun portrait; NEW kneeling-reach body. Fallen Northern commander as a dark silk heap — face-suggestion only from attached commander ref, not a second standing clone. Steel lamellar; red-wing #d0362f cloth; Northern #6a8f6e as a thin cold rim on the blade. Pyongyang timber hall DNA from place ref. ONE device: a hard vertical lamp-shadow splitting Gesomun from the fallen. Crushed blacks, one hard key. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ch_commander_2.png",
+			"/ar_lamellar_steel.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun",
+			"northcmd"
+		],
+		"ratio": 1.778,
+		"tone": "#6a8f6e",
+		"dropSrc": true
+	},
+	"blade-west": {
+		"alt": "OTS: Gesomun taking Go Heumsong’s western crow — violet #7a6b8a seam toward the Liao dark",
+		"prompt": "Minimal iconic 16:9 still. OVER-SHOULDER from behind fallen Western Commander toward Yeon Gesomun mid-stride taking the western crow ring-pommel. Gesomun FACE from attached portrait; NEW body leaning west; commander face only as a cheek/ear crop from attached ref. Steel lamellar + red-wing #d0362f; Western #7a6b8a as a hard light-seam pointing off-frame west. SAME Pyongyang banquet hall timber from place. ONE device: the seam as a road-line of light. Shallow DOF, chiaroscuro. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ch_commander_4.png",
+			"/ar_lamellar_steel.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun",
+			"westcmd"
+		],
+		"ratio": 1.778,
+		"tone": "#7a6b8a",
+		"dropSrc": true
+	},
+	"blade-lee": {
+		"alt": "Dutch two-shot: Gesomun keeping Lee Gaesa’s word as metal — crow pommel, wine-dark silk",
+		"prompt": "Minimal iconic 16:9 still. DUTCH two-shot: Yeon Gesomun wrenching a crow ring-pommel from Lee Gaesa’s belt while the Summit mouth collapses. Gesomun FACE from attached portrait — shout mid-take, NEW kinetic body. Lee Gaesa face from attached commander portrait — wine-wet mouth, not fashion plate. Steel lamellar + red-wing #d0362f as Gesomun’s plane; wine-dark #96473e cloth on the fallen as second accent only. Pyongyang banquet timber from place ref. ONE device: the hollow ring as a bright stamp between their hands. Crushed blacks, one lamp key. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ch_commander_1.png",
+			"/ar_lamellar_steel.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun",
+			"gusesa"
+		],
+		"ratio": 1.778,
+		"tone": "#96473e",
+		"dropSrc": true
+	},
+	"blade-gusesa": {
+		"alt": "Close dutch: Gesomun taking Yeon Gusesa’s haetae ring-pommel — elder kinsman, soft voice gone",
+		"prompt": "Minimal iconic 16:9 still. CLOSE DUTCH: Yeon Gesomun taking Central elder Yeon Gusesa’s crow/haetae ring-pommel — almost gentle, which hurts more. Gesomun FACE from attached portrait; NEW lean-in body, not standing clone. Elder face from attached commander portrait — soft eyes, gray at temples, silk bunched. Steel lamellar; red-wing #d0362f rim; elder #b2554a as a dying cloth plane. SAME Pyongyang hall crushed-black bokeh from place. ONE device: two hands on one hollow ring as the geometry. Shallow DOF, rack-focus on the crow stamp. No army. No banquet clutter dump. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ch_commander_1.png",
+			"/ar_lamellar_steel.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun",
+			"gusesa"
+		],
+		"ratio": 1.778,
+		"tone": "#b2554a",
+		"dropSrc": true
+	},
+	"gesomun-title": {
+		"alt": "Worm’s-eye title stamp: Gesomun bursting a Pyongyang doorway against a hard red #C30000 slash",
+		"prompt": "Minimal iconic 16:9 still. WORM’S-EYE title-card energy: Yeon Gesomun filling the lower third as a dark silhouette-stamp against a hard red #C30000 wall-plane in a REAL Pyongyang banquet doorway — timber + stone from attached fortress place. FACE from attached portrait only as thick-beard shout rim-lit; NEW mid-stride burst body, not portrait fashion plate. Steel-gray lamellar language from armor refs; Goguryeo red-wing shoulder cloth #d0362f as the single accent. ONE device: a vertical red #C30000 light-slash cutting the black void like a stamp. Crushed blacks, one hard key, monumental emptiness. No army. No ink-poster collage. No readable text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ar_lamellar_steel.png",
+			"/ar_silla_goguryeo.jpg",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun"
+		],
+		"ratio": 1.778,
+		"tone": "#C30000",
+		"dropSrc": true
+	},
+	"taoist-halls": {
+		"alt": "Dutch crane: Pyongyang temple hall cooling — incense-smoke wedge, Tang masters tiny, Gesomun edge silhouette",
+		"prompt": "Minimal iconic 16:9 still. DUTCH crane inside a REAL Pyongyang temple hall after the coup — grey giwa eaves, timber columns matching attached fortress/city place DNA. ONE device: a hard cool incense-smoke wedge as the only plane; almost no red — at most a distant crimson #C30000 seal-stamp accent far in bokeh. Tiny silky Tang Taoist masters as lower-third stamps only; Yeon Gesomun as a dark red-wing #d0362f silhouette at the frame edge (FACE suggestion from attached portrait, not a fashion clone). Crushed blacks, long shadows, high contrast. Halls cooling. No army. No busy monk catalog. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/pl_pyongyang_fortress.png",
+			"/pl_pyongyang_city.png"
+		],
+		"people": [
+			"gesomun"
+		],
+		"ratio": 1.778,
+		"tone": "#2a2824",
+		"dropSrc": true
+	},
+	"yeon-wife-private": {
+		"alt": "OTS lamp chamber: Gesomun and his wife — five crow blades as a wall constellation, Pyongyang quiet",
+		"prompt": "Minimal iconic 16:9 still. OVER-SHOULDER intimate lamp chamber in the Yeon house, Pyongyang night — timber posts, grey giwa language from attached fortress place (NOT a banquet). Yeon Gesomun facing his wife across one oil lamp. Gesomun FACE from attached portrait; NEW seated lean body in steel lamellar with red-wing #d0362f cloth peek, not portrait stance. Wife: unnamed period Goguryeo silky hanbok, face turned three-quarter into lamp shadow — no invented celebrity face, no portrait clone of Gesomun. ONE device: five crow ring-pommel blades leaning as a dark vertical constellation against the wall. #d0362f as the single accent on one pommel rim. Shallow DOF, creamy bokeh, crushed blacks, one lamp key. Quiet after knives. No army. No clutter dump. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ar_lamellar_steel.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun",
+			"yeonwife"
+		],
+		"ratio": 1.778,
+		"tone": "#2a1c1c",
+		"dropSrc": true
+	},
+	"pyongyang-massacre-doorway": {
+		"alt": "Worm’s-eye: Gesomun silhouetted in a Pyongyang banquet doorway flooded with red #C30000",
+		"prompt": "Minimal iconic 9:16 still. WORM’S-EYE dutch: a silhouetted Yeon Gesomun filling a REAL Pyongyang banquet timber doorway flooded with a hard red #C30000 light-plane from inside — architecture from attached fortress place (Pyongyang capital hall, NOT Daeya Fortress, NOT Silla gate). FACE suggestion from attached portrait as thick-beard rim only; NEW mid-burst body, not standing clone. Steel lamellar language from armor refs; red-wing #d0362f cloth peek. ONE device: the doorway as a vertical red rectangle stamp against crushed black yard. The massacre begins. High contrast chiaroscuro. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ar_lamellar_steel.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun"
+		],
+		"ratio": 0.5625,
+		"tone": "#C30000",
+		"dropSrc": true,
+		"at": "The massacre begins"
+	},
+	"massacre-red-doorway": {
+		"alt": "Dutch low strip: October cold under Pyongyang eaves — red doorway glow, Gesomun tiny mid-approach",
+		"prompt": "Minimal iconic 9:16 still. DUTCH low strip: October cold under Pyongyang banquet eaves — empty packed-earth yard before the knives, one red #C30000 doorway glow in the upper third. Tiny Gesomun silhouette mid-approach in the lower third — FACE suggestion from attached portrait; NEW walking body; steel + red-wing #d0362f cloth. Architecture from attached fortress place (same red munru / timber language). ONE device: the glowing door as a hard rectangle stamp in crushed black night. Natural night sky, long shadows, chiaroscuro. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun"
+		],
+		"ratio": 0.5625,
+		"tone": "#C30000",
+		"dropSrc": true
+	},
+	"gesomun-authority-low-angle": {
+		"alt": "Worm’s-eye: Gesomun towering — steel lamellar, red-wing, crimson rank-plane of light",
+		"prompt": "Minimal iconic 9:16 still. Extreme WORM’S-EYE: Yeon Gesomun as Supreme Commander towering — steel-gray lamellar from armor refs, Goguryeo red-wing cloth #d0362f, thick-beard FACE from attached portrait; NEW imposing mid-shout body filling from lower third up, not clasped-hands clone. ONE device: a hard horizontal crimson #C30000 rank-plane of light across the chest against eighty-percent crushed black void; Pyongyang timber ceiling beams as thin bokeh from place ref. High contrast. No army. No banquet clutter. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ar_lamellar_steel.png",
+			"/ar_silla_goguryeo.jpg",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun"
+		],
+		"ratio": 0.5625,
+		"tone": "#C30000",
+		"dropSrc": true
+	},
+	"gesomun-seq-wings": {
+		"alt": "Worm’s-eye doorway: Gesomun filling the frame, steel lamellar, red-wing cloth, shout",
+		"prompt": "Minimal iconic 16:9 still. WORM’S-EYE dutch doorway fill: ONE Yeon Gesomun bursting through a REAL Pyongyang banquet timber door — FACE from attached portrait mid-shout; NEW kinetic body; steel-gray lamellar; red-wing shoulder cloth #d0362f filling the frame as the plane. Armor language from attached refs. Place DNA from fortress ref. ONE device: the door frame as a hard black rectangle around him. Crushed blacks, one hard key from inside lamps. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_yeon_gesomun.png",
+			"/ar_lamellar_steel.png",
+			"/ar_silla_goguryeo.jpg",
+			"/pl_pyongyang_fortress.png"
+		],
+		"people": [
+			"gesomun"
+		],
+		"ratio": 1.778,
+		"tone": "#d0362f",
+		"dropSrc": true
+	},
+	"disguised-euija": {
+		"alt": "Dutch: disguised Euija at Pyongyang seongmun — gate shadow-wedge hiding a royal face",
+		"prompt": "Minimal iconic 16:9 still. DUTCH at a REAL Pyongyang seongmun — red two-tier munru, timber doors with iron bosses from attached fortress/city place refs. King Euija in commoner disguise mid-stride asking at the gate — FACE AND garments from attached Euija portrait but stripped to dusty travel silk / cloak, NEW body leaning into the gatekeeper’s shadow, not fashion-plate clone. ONE device: a hard shadow-wedge of the gate leaf hiding a royal face. Euija hex as a thin warm rim only. Natural dusk sky, crushed blacks, long shadows. No army. No readable plaques. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+		"refs": [
+			"/ch_buyeo_euija.png",
+			"/pl_pyongyang_fortress.png",
+			"/pl_pyongyang_city.png"
+		],
+		"people": [
+			"euija"
+		],
+		"ratio": 1.778,
+		"tone": "#78350f",
+		"dropSrc": true
+	}
+}

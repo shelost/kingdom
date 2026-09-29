@@ -1,0 +1,12 @@
+[
+	{
+		"id": "jumong-sosuno-style-inkwash",
+		"alt": "Style experiment: ink-wash Sosuno — sumi gray with dusty-rose accent",
+		"prompt": "STYLE EXPERIMENT ink-wash sumi-e. Sosuno FACE from attached, dusty-rose accent, bird binyeo."
+	},
+	{
+		"id": "jumong-sosuno-style-oil",
+		"alt": "Style experiment: oil Sosuno — Rembrandt chiaroscuro",
+		"prompt": "STYLE EXPERIMENT classical oil. Sosuno FACE from attached, dusty-rose plane, bird binyeo."
+	}
+]

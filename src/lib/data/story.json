@@ -979,6 +979,56 @@
 							"sunduk"
 						],
 						"tempImage": "/temp/sunduk-star-shaft.jpg"
+					},
+					{
+						"id": "parody-coronation-dukman",
+						"ratio": 1.778,
+						"tone": "#E8552B",
+						"at": "and Dukman is queen",
+						"alt": "The Coronation of Napoleon as a vast Neoclassical canvas: young Bidam raising the Silla gold crown over Dukman kneeling before him, True Bone elders watching",
+						"prompt": "A parody of Jacques-Louis David’s THE CORONATION OF NAPOLEON, painted exactly like the real enormous canvas: Neoclassical oil, smooth glazing, warm gold and crimson palette, old varnish, a packed ceremonial hall with a crowd of dignitaries in tiers. Same central action: a standing man on the dais raising a crown in both hands above a woman kneeling before him with hands folded, her long train spread behind her, onlookers crowding both sides. The man is young BIDAM (attached white-robed portrait: face and white horse-embroidered robe over plum hanbok); he lifts a SILLA GOLD CROWN with tree-shaped uprights and dangling jade over PRINCESS DUKMAN (attached portrait: face and garments, hair ornament matching the attached binyeo ref) in vermilion #E8552B silk. The hall is a Silla palace of red timber pillars and lattice; the crowd are True Bone nobles in court silk, several looking sour. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam.png",
+							"/ch_dukman.png",
+							"/bn_sunduk.png"
+						],
+						"people": [
+							"bidam",
+							"sunduk"
+						],
+						"tempImage": "/temp/parody-coronation-dukman.jpg"
+					},
+					{
+						"id": "parody-sejong-sunduk",
+						"ratio": 0.75,
+						"tone": "#E8552B",
+						"at": "raised a tower to read the stars",
+						"alt": "The Gwanghwamun King Sejong statue, painted: Queen Sunduk as the gilded seated monument, book open, Cheomseongdae rising behind her",
+						"prompt": "A painted parody of the KING SEJONG STATUE at Gwanghwamun: an oil painting of the huge gilded bronze monument seen from a low angle on its broad stone plinth, thick brushwork, gold catching late sun. Same pose: a monarch seated on a throne, calm and benevolent, an open book resting in the left hand, the right hand extended palm-down in a gesture of blessing, heavy royal robes cascading. The monarch is QUEEN SUNDUK (attached portrait: face; hair ornament matching the attached binyeo ref) as gilded bronze, her robes tinted vermilion #E8552B under the gold. Behind the plinth rises the bottle-shaped stone observatory tower Cheomseongdae from the attached place ref, under a deepening blue evening sky with first stars. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_sunduk.png",
+							"/bn_sunduk.png",
+							"/pl_observatory.png"
+						],
+						"people": [
+							"sunduk"
+						],
+						"tempImage": "/temp/parody-sejong-sunduk.jpg"
+					},
+					{
+						"id": "ink-peony-no-butterflies-sunduk",
+						"ratio": 0.5625,
+						"tone": "#E8552B",
+						"at": "…There are no butterflies on these flowers.",
+						"alt": "Ink-and-color scroll: one tall peony stem in three blooms on vast empty silk, no butterflies anywhere, young Sunduk tiny at the bottom edge looking up",
+						"prompt": "A Korean ink-and-light-color hanging scroll in the manner of a Joseon flower painting (hwahwedo), aged cream silk, fine boneless brushwork. ICONIC MINIMAL LAYOUT: tall vertical scroll almost entirely EMPTY silk. ONE device: a single thin peony stem rising from the bottom-right corner in a long S-curve, three open blooms at the top in three colours — vermilion #E8552B, pale pink, white — leaves in soft green-grey washes. Conspicuously NO butterflies, NO bees, NO insects anywhere; the empty air around the blooms is the point. At the very bottom-left edge, tiny, the young queen SUNDUK (face and garments from the attached portrait, face barely suggested in a few strokes) kneels with her head tilted, looking up at the flowers, a thin opened packet of seeds beside her knee. Vast negative space, quiet, witty. One blank red seal square low on the right. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_sunduk.png"
+						],
+						"people": [
+							"sunduk"
+						],
+						"tempImage": "/temp/ink-peony-no-butterflies-sunduk.jpg"
 					}
 				],
 				"blocks": [
@@ -3293,6 +3343,17 @@
 							"/temp/ocean_trade_02.jpg",
 							"/pl_white_river.png"
 						]
+					},
+					{
+						"id": "parody-great-wave-baekje",
+						"ratio": 1.778,
+						"tone": "#d9b13a",
+						"at": "the hurricane turns to water",
+						"alt": "Hokusai’s Great Wave as a woodblock print: a clawed Prussian-blue wave over three Baekje trade boats, a small Korean peak in the trough",
+						"prompt": "A parody of Katsushika Hokusai’s THE GREAT WAVE OFF KANAGAWA, made exactly like the real ukiyo-e woodblock print: flat Prussian blue and indigo, cream paper texture with fibres and slight registration offsets, crisp black keylines, the claw-like foam fingers, a pale speckled sky. Same composition: the enormous wave curling from the left, three long narrow boats of rowers bowed low beneath it, a small distant mountain framed in the wave’s trough. Here the boats are Baekje trade ships with lowered matting sails and one small yellow #d9b13a pennant, and the mountain is a rugged Korean granite peak instead of Fuji. The cartouche area is left blank. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [],
+						"people": [],
+						"tempImage": "/temp/parody-great-wave-baekje.jpg"
 					}
 				],
 				"blocks": [
@@ -4380,6 +4441,71 @@
 							"/temp/gwanggaeto.jpg",
 							"/temp/gwanggaeto_ride.jpg"
 						]
+					},
+					{
+						"id": "parody-napoleon-gwanggaeto",
+						"ratio": 0.75,
+						"tone": "#e0442e",
+						"at": "three-legged crow rides south",
+						"alt": "Napoleon Crossing the Alps as a Neoclassical oil painting: Gwanggaeto on a rearing white horse, red cloak whipping, pointing south under a red sun",
+						"prompt": "A parody of Jacques-Louis David’s NAPOLEON CROSSING THE ALPS, painted exactly like the real canvas: polished Neoclassical oil, smooth glazes, crisp contours, old varnish and fine craquelure, grey storm sky. Same composition and pose: a white horse rearing on a steep rocky slope, mane and tail whipped by wind, the rider calm and upright pointing up and forward, a great red cloak billowing in an arc behind, tiny soldiers far below. The rider is GWANGGAETO THE GREAT (attached portrait: face) in gray steel lamellar armor (attached lamellar ref) with a Goguryeo helmet (attached kingdom ref, ignore its labels), red wing shoulder-flaps #C30000 and a red #e0442e cloak. A red sun behind the storm clouds with a small black three-legged crow crossing it. Korean granite peaks and pines instead of the Alps. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_gwanggaeto.png",
+							"/ar_lamellar_steel.png",
+							"/ar_silla_goguryeo.jpg"
+						],
+						"people": [
+							"gwanggaeto"
+						],
+						"tempImage": "/temp/parody-napoleon-gwanggaeto.jpg"
+					},
+					{
+						"id": "parody-alexander-mosaic-gwanggaeto",
+						"ratio": 1.778,
+						"tone": "#e0442e",
+						"at": "shatters the Wa army besieging Silla",
+						"alt": "The Alexander Mosaic in tesserae: Gwanggaeto bareheaded on horseback charging through a forest of spears, the Wa commander twisting in flight",
+						"prompt": "A parody of the ALEXANDER MOSAIC from Pompeii (the Battle of Issus), made exactly like the real Roman floor mosaic: thousands of small stone tesserae, limited palette of ochre, brick red, black, white and grey, patches of missing tiles, a dark broken border. Same composition: on the left the young conqueror charges on horseback, bareheaded, eyes wide, spearing an enemy; on the right the enemy leader, in a chariot, twists back in horror and flings out an arm as his army turns to flee; a forest of long spears slanting across the sky; a bare dead tree. The conqueror is GWANGGAETO (attached portrait: face) in gray steel lamellar (attached ref) with a red #e0442e cloak; the fleeing leader is a Wa commander in lacquered plate on a boat-shaped chariot, Wa foot soldiers scattering. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_gwanggaeto.png",
+							"/ar_lamellar_steel.png"
+						],
+						"people": [
+							"gwanggaeto"
+						],
+						"tempImage": "/temp/parody-alexander-mosaic-gwanggaeto.jpg"
+					},
+					{
+						"id": "parody-ingres-throne-gwanggaeto",
+						"ratio": 0.75,
+						"tone": "#e0442e",
+						"at": "Sixty-four fortresses, one reign.",
+						"alt": "Ingres’ Napoleon on His Imperial Throne: Gwanggaeto frozen frontal on a round-backed throne, red and gold, sceptre and bow in hand",
+						"prompt": "A parody of Jean-Auguste-Dominique Ingres’ NAPOLEON I ON HIS IMPERIAL THRONE, painted exactly like the real canvas: enamel-smooth Neoclassical oil, icy precision, stiff hieratic frontality like a Byzantine icon, a huge round gilded throne back framing the head like a disc, heavy fabrics, patterned carpet at the feet. Same pose: seated dead-frontal, expressionless, a long sceptre upright in the right hand, a rod in the left, heavy robes spilling over the knees. The emperor is GWANGGAETO (attached portrait: face) in Goguryeo red #e0442e and gold court robes with a gold crown of flame-shaped uprights; the round throne back carries a painted three-legged crow in a sun disc; a strung horn bow leans on the throne; the carpet shows a pattern of tiny fortress walls. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_gwanggaeto.png"
+						],
+						"people": [
+							"gwanggaeto"
+						],
+						"tempImage": "/temp/parody-ingres-throne-gwanggaeto.jpg"
+					},
+					{
+						"id": "parody-vercingetorix-gwanggaeto",
+						"ratio": 1.778,
+						"tone": "#e0442e",
+						"at": "crown princes go north as hostages",
+						"alt": "Vercingetorix Throws Down His Arms at the Feet of Caesar: a Silla crown prince rides in and drops his sword before Gwanggaeto’s dais",
+						"prompt": "A parody of Lionel Royer’s VERCINGETORIX THROWS DOWN HIS ARMS AT THE FEET OF JULIUS CAESAR, painted exactly like the real 1899 academic oil canvas: polished Salon realism, warm grey sky, crisp drawing, rows of armored soldiers with standards. Same composition: the conqueror sits on a raised dais at the right, stern, surrounded by his officers and standards; from the left a young defeated leader on a white horse rides up and throws his weapons down on the ground at the foot of the dais, head high. The conqueror is GWANGGAETO (attached portrait: face) in gray steel lamellar (attached ref) and a Goguryeo helm (attached kingdom ref, ignore labels) with red #e0442e cloak and red wing shoulder-flaps; the rider is a young SILLA CROWN PRINCE in white silk and a small gold crown, dropping a ring-pommel sword and a bow. Goguryeo spearmen, banners with a three-legged crow. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_gwanggaeto.png",
+							"/ar_lamellar_steel.png",
+							"/ar_silla_goguryeo.jpg"
+						],
+						"people": [
+							"gwanggaeto"
+						],
+						"tempImage": "/temp/parody-vercingetorix-gwanggaeto.jpg"
 					}
 				],
 				"blocks": [
@@ -5219,6 +5345,55 @@
 							"munhee"
 						],
 						"tempImage": "/temp/nsfw-munhee-chunchu-window-neighbor-eye.jpg"
+					},
+					{
+						"id": "parody-wolha-chunchu-munhee",
+						"ratio": 0.75,
+						"tone": "#D8258C",
+						"at": "They do not leap. They accumulate.",
+						"alt": "Shin Yun-bok’s Lovers Under the Moon as a Joseon album leaf: Chunchu with a lantern and Munhee under a green jangot at the corner of the wall, a thin moon above",
+						"prompt": "A parody of Shin Yun-bok’s WOLHA JEONGIN (월하정인, Lovers Under the Moon), painted exactly like the real Joseon album leaf: ink and soft color on aged hanji, delicate lines, pale wash for night, a large area of blank paper sky, a thin tilted crescent moon. Same composition: at the corner of a plastered wall with a tiled coping, a young man holding a paper lantern leans toward a woman whose head is hooded in a long green jangot cloak; she turns shyly aside. The man is young KIM CHUNCHU (attached portrait: face, magenta #D8258C coat); the woman is MUNHEE (attached portrait: face, pink skirt under the green jangot). The blank space top-right where the original has a poem is left as empty paper. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_chunchu_hwarang.png",
+							"/ch_munhee.png"
+						],
+						"people": [
+							"chunchu",
+							"munhee"
+						],
+						"tempImage": "/temp/parody-wolha-chunchu-munhee.jpg"
+					},
+					{
+						"id": "parody-masters-pumsuk",
+						"ratio": 0.75,
+						"tone": "#7EB8F0",
+						"at": "presentation-silk still on the headcover",
+						"alt": "The green-jacket ceremony, painted: Alchun holding open a green silk coat while Pumsuk shrugs into it, polo stick in hand",
+						"prompt": "A painted parody of the MASTERS GREEN-JACKET CEREMONY photo, as a painterly anime-adjacent illustration with loose brushwork: bright afternoon, blurred painted crowd and pines behind. Same staging: last year’s champion stands behind the winner holding open a green jacket while the winner slips one arm into the sleeve, both grinning stiffly at unseen cameras. At the edge of a Silla gyuku (polo) field: ALCHUN (attached portrait: face and garments) holds open a bright GREEN silk Silla coat; PUMSUK (attached portrait: face, sky-blue #7EB8F0 silk) shrugs into it, flushed and cocky, a polo stick in his other hand with presentation silk still wrapped on its head. Painted horses and nobles in hanbok behind. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_pumsuk.png",
+							"/ch_alchun.png"
+						],
+						"people": [
+							"pumsuk",
+							"alchun"
+						],
+						"tempImage": "/temp/parody-masters-pumsuk.jpg"
+					},
+					{
+						"id": "parody-inwang-surabol-flood",
+						"ratio": 1.778,
+						"tone": "#E07FA8",
+						"at": "and all of Surabol drowned.",
+						"alt": "Jeong Seon’s Inwangsan after Rain as Bohee’s dream: Namsan’s great wet granite brow in heavy ink, mist, and all of Surabol under water",
+						"prompt": "A parody of Jeong Seon’s INWANG JESAEKDO (인왕제색도, Clearing after Rain on Mount Inwang), painted exactly like the real Joseon masterpiece: massive dark rain-soaked granite domes built from heavy broad strokes of wet black ink, bands of white mist, dense pine dots, true-view landscape on aged paper, monochrome ink. Same composition: the great dark rock face dominating the upper half, mist belts through the middle, trees and a small house in the lower part. Here it is Namsan in Surabol from Bohee’s dream: the mist in the lower half has become flood water — tiled Surabol rooftops and a pagoda tip poking out of a pale ink sea. On a ledge of the mountain, tiny, sits a young woman in pink #E07FA8 (MUNHEE, attached portrait, face tiny), looking pleased. No inscription text; one blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_munhee.png"
+						],
+						"people": [
+							"munhee"
+						],
+						"tempImage": "/temp/parody-inwang-surabol-flood.jpg"
 					}
 				],
 				"blocks": [
@@ -7242,6 +7417,24 @@
 							"/ch_yeon_namsan.png",
 							"/ch_yeon_gesomun.png"
 						]
+					},
+					{
+						"id": "ink-stele-yeon-sons",
+						"ratio": 0.5625,
+						"tone": "#d0362f",
+						"at": "which lists the accomplishments of the late king",
+						"alt": "Ink scroll: the Gwanggaeto Stele as one towering black stone column on an empty plain, Yeon Gaesomun and three small boys at its foot, the smallest pointing up",
+						"prompt": "A Korean ink painting on aged hanji with the texture of an ink rubbing (takbon) in the stone. ICONIC MINIMAL LAYOUT: tall vertical scroll. ONE device: the Gwanggaeto Stele as one massive rough-hewn natural stone column, slightly irregular, rising from the lower third nearly to the top edge, a solid mass of dark rubbed ink texture with faint rows of carved-character pits that are NOT legible (abstract chisel marks only). Everything around it is empty paper: a flat plain as one pale ink line, faint distant Goguryeo tomb mound. At its foot, tiny, YEON GAESOMUN (face and garments from the attached portrait, face a few strokes) stands with his hand flat on the stone, a red #d0362f sash the only colour; beside him three small boys in plain robes — one boy pointing up bored, one squinting at the marks, one looking only at his father. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_yeon_gesomun.png"
+						],
+						"people": [
+							"gesomun",
+							"namseng",
+							"namgun",
+							"namsan"
+						],
+						"tempImage": "/temp/ink-stele-yeon-sons.jpg"
 					}
 				],
 				"blocks": [
@@ -8708,6 +8901,17 @@
 						],
 						"prompt": "Minimal iconic 16:9 NIGHT. The execution as a layout, not a wound study. ONE device: a single blade as a hard vertical silver line dividing the frame. Lower third: a gold crown struck on packed earth, yellow #e5b83a silk collapsed, no face, no gore catalog. Dodo only as an arm and a blue-gray #7f96b5 shoulder. Muryuk’s conical helm a still vertical in the upper right, steel and purple peek, unmoving. Ditch, stone fortress, crushed black, one torch key, natural night. No text. No watermark.",
 						"tempImage": "/temp/sever-blade-line.jpg"
+					},
+					{
+						"id": "ink-wrong-torches-severing",
+						"ratio": 1.778,
+						"tone": "#C30000",
+						"at": "the torches coming up the bank are the wrong color",
+						"alt": "Night ink handscroll: almost all black wash, a thin pale road, a tiny cluster of fifty riders stopped on it, and a slanted line of red torches climbing the bank toward them",
+						"prompt": "A Korean night ink-wash handscroll, wide horizontal, the paper soaked almost entirely in layered black and charcoal ink wash, a few dry-brush reeds. ICONIC MINIMAL LAYOUT: the only light areas are a thin pale strip of road running across the lower third and a faint grey ridge line near the top. ONE device: a single slanted diagonal line of small torch flames climbing the dark embankment from the lower right toward the road, each flame a dab of red #C30000, the only colour on the page. On the road, left of centre, a tiny tight cluster of about fifty ink riders reined in, horses rearing, a single small royal parasol among them; nobody’s face readable. Heavy empty darkness everywhere else, dread, stillness. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [],
+						"people": [],
+						"tempImage": "/temp/ink-wrong-torches-severing.jpg"
 					}
 				],
 				"blocks": [
@@ -15000,6 +15204,19 @@
 						"nsfw": true,
 						"alt": "nsfw-maehwa-goes-quiet",
 						"tempImage": "/temp/nsfw-maehwa-goes-quiet.jpg"
+					},
+					{
+						"id": "ink-wind-bamboo-jukjuk",
+						"ratio": 0.5625,
+						"tone": "#2f4a3a",
+						"at": "that I should break before I bend",
+						"alt": "Ink bamboo in a gale after Yi Jeong: every leaf torn sideways but one stalk standing dead straight, a tiny armored Jukjuk at its root on a broken fortress wall",
+						"prompt": "A parody of Yi Jeong’s PUNGJUKDO (풍죽도, Bamboo in the Wind), painted exactly like the real Joseon ink scroll: pure black ink on dark-toned silk, sharp calligraphic leaf strokes, pale ink for distant stalks, deep ink for the near one. ICONIC MINIMAL LAYOUT: tall vertical scroll, mostly empty. ONE device: a single bamboo stalk rising DEAD STRAIGHT from bottom to top like a black vertical line while every leaf around it is whipped hard sideways by the gale; faint pale-ink stalks behind it bent low. At its root, tiny, a fragment of a stone fortress parapet with a few broken giwa tiles, and on it one small Silla officer in dark steel lamellar with a cloth sash in deep bamboo green #2f4a3a, standing just as straight as the stalk, spear grounded, facing into the wind; his face is a few strokes. Behind the parapet a faint ink smear of smoke. No other figures. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [],
+						"people": [
+							"jukjuk"
+						],
+						"tempImage": "/temp/ink-wind-bamboo-jukjuk.jpg"
 					}
 				],
 				"blocks": [
@@ -34259,6 +34476,68 @@
 						"alt": "jumong-buyeo-wc-palace-path-welcome",
 						"at": "Come in. I’ve got a room free.",
 						"tempImage": "/temp/jumong-buyeo-wc-palace-path-welcome.jpg"
+					},
+					{
+						"id": "parody-muyongchong-jumong",
+						"ratio": 1.778,
+						"tone": "#e8563f",
+						"at": "one bowshot, one bride",
+						"alt": "The Muyongchong hunting mural as a Goguryeo tomb-wall painting: King Jumong twisted backward in the saddle at full draw, a stag and a tiger fleeing over banded hills",
+						"prompt": "A parody of the Goguryeo MUYONGCHONG TOMB HUNTING MURAL (무용총 수렵도), painted exactly like the real 5th-century tomb wall: mineral pigments on cracked, stained plaster, flat outlined figures, ochre, red-brown, black and pale cream, water-damage blooms, no shading. Same composition: horsemen galloping across the wall between stylised stacked wavy ridge-bands of white, red and yellow, a tiger and spotted deer fleeing, one rider twisted fully BACKWARD in the saddle drawing his bow at full draw behind him (the Parthian shot). That rider is KING JUMONG (attached king portrait: face, beard, feathered cap), in a red jacket #e8563f with black dots, on a galloping horse with flying legs. Tiny tree strokes, a few falling flowers painted as dots. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_dongmyung.png"
+						],
+						"people": [
+							"jumong"
+						],
+						"tempImage": "/temp/parody-muyongchong-jumong.jpg"
+					},
+					{
+						"id": "parody-odysseus-bow-tabal",
+						"ratio": 1,
+						"tone": "#e8563f",
+						"at": "does not do him the courtesy of bending",
+						"alt": "Odysseus’ bow on a red-figure cup: Tabal straining at Jumong’s bow while Jumong lounges and grins",
+						"prompt": "A parody of the ODYSSEY bow contest (the suitors failing to string Odysseus’ bow), painted exactly like a real Attic RED-FIGURE kylix tondo: a circular cup interior, figures reserved in orange terracotta against glossy black slip, fine black relief lines for folds and muscles, a meander key border around the circle, small chips and a museum-lit sheen. In the circle: a heavy older chieftain braced with one foot on the bow, veins bulging, straining to bend it, the string slack; beside him a young man lounges on a stool, clean-shaven, grinning, chin on his hand. The chieftain is YEON TABAL (attached portrait 1, face); the young man is JUMONG (attached portrait 2, face; clean-shaven, no mustache). A torch and a pine-branch in the field. Jumong’s cloak picked out in added red #e8563f. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_yeon_tabal.png",
+							"/ch_jumong.png"
+						],
+						"people": [
+							"yeontabal",
+							"jumong"
+						],
+						"tempImage": "/temp/parody-odysseus-bow-tabal.jpg"
+					},
+					{
+						"id": "parody-odysseus-arrow-jumong",
+						"ratio": 0.75,
+						"tone": "#e8563f",
+						"at": "He splits Tabal’s arrow down the shaft.",
+						"alt": "Odysseus’ arrow on a black-figure amphora: Jumong at full draw, his arrow threading a row of iron rings to split Tabal’s arrow in the pine knot",
+						"prompt": "A parody of Odysseus shooting through the twelve axe-heads, painted exactly like a real archaic Greek BLACK-FIGURE AMPHORA (Exekias style): a photographed pot shape, glossy black silhouette figures on orange clay, incised details scratched through the black, added red and white touches, tongue-pattern bands above and below the picture panel. In the panel: a young archer in profile at full draw, clean-shaven, knee bent; his arrow flies through a straight row of twelve small iron rings on posts and strikes a pine tree, splitting another arrow already lodged in the knot. The archer is JUMONG (attached portrait: face in profile, clean-shaven, no mustache), with added red #e8563f on his tunic. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_jumong.png"
+						],
+						"people": [
+							"jumong"
+						],
+						"tempImage": "/temp/parody-odysseus-arrow-jumong.jpg"
+					},
+					{
+						"id": "ink-turtle-bridge-jumong",
+						"ratio": 1.778,
+						"tone": "#e8563f",
+						"at": "Thereupon the fish and turtles formed a bridge.",
+						"alt": "Ink handscroll: a vast pale river with one thin line of turtle shells stitched across it, tiny Jumong on horseback halfway over in red, pursuing riders stopped as dots on the far bank",
+						"prompt": "A Korean ink-wash handscroll, wide horizontal, soft grey water washes on aged hanji, a few dark rock strokes on the banks. ICONIC MINIMAL LAYOUT: nearly the whole paper is a vast pale empty river, the banks only thin ink strips at the far left and far right. ONE device: a single thin dotted line of turtle shells and fish backs stitched straight across the water from bank to bank, drawn with tiny round ink dabs. Halfway across that line, tiny, young JUMONG rides a dark horse at full gallop — face and red silk from the attached portrait, reduced to a few strokes, CLEAN-SHAVEN young man, no mustache — his robe the only colour on the page, vermilion #e8563f, a bow on his back. On the left bank a cluster of tiny dark ink riders reined in at the water’s edge, spears up, unable to follow. Behind Jumong the turtle line is already dissolving into the water. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_jumong.png"
+						],
+						"people": [
+							"jumong"
+						],
+						"tempImage": "/temp/ink-turtle-bridge-jumong.jpg"
 					}
 				],
 				"blocks": [
@@ -39596,6 +39875,40 @@
 						"alt": "Close-up of hands gripping ornate sword hilt in blue Silla armor - determination and strength",
 						"at": "Hwarang warriors",
 						"src": "/temp/hands_sword_blue_determination.png"
+					},
+					{
+						"id": "parody-class-photo-hwarang",
+						"ratio": 1.778,
+						"tone": "#2A5FB8",
+						"at": "learn each other’s snores",
+						"alt": "The unit class photo, painted: the new Hwarang intake in stiff rows on the hall steps, Bupmin front and centre, Yushin at the end with his arms folded",
+						"prompt": "A painted parody of a Korean MILITARY UNIT CLASS PHOTO (기수 사진), as a painterly anime-adjacent illustration with a warm faded palette, visible brushwork, a painted white print border. Same staging: dead-frontal symmetrical group on stepped risers, three rows, front row seated with fists on knees, back rows at attention, everyone staring stiffly out, one instructor rigid at the end. Teenage Hwarang cadets in matching headbands and practice silk on the stone steps of a Silla training hall with timber pillars and a grey giwa roof: one blinking, one grinning, one with a black eye. BUPMIN (attached portrait: face and garments) dead centre in the front row. YUSHIN (attached portrait: face, marshal blue #2A5FB8) stands at the right end, arms folded, no sword. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bupmin_hwarang.png",
+							"/ch_kim_yushin.png"
+						],
+						"people": [
+							"munmu",
+							"yushin"
+						],
+						"tempImage": "/temp/parody-class-photo-hwarang.jpg"
+					},
+					{
+						"id": "parody-seodang-hwarang",
+						"ratio": 0.75,
+						"tone": "#2A5FB8",
+						"at": "which one did Daeya break in you",
+						"alt": "Kim Hong-do’s Village School: Yushin as the schoolmaster, Bupmin wiping his eyes in front of him, the other cadets in a ring trying not to laugh",
+						"prompt": "A parody of Kim Hong-do’s SEODANG (서당, The Village School), painted exactly like the real Danwon genre album leaf: quick lively ink lines, pale brown and blue washes on aged hanji, no background, figures in a loose ring seen from slightly above. Same composition: the schoolmaster seated at the top, a boy in front of him turned half away, crying and wiping his eyes after a scolding, the other pupils seated in two rows on either side, some hiding smiles behind their hands. The master is YUSHIN (attached portrait: face, marshal blue #2A5FB8 robe), stern but softening; the crying boy is young BUPMIN (attached portrait: face) in a Hwarang headband; the pupils are teenage Hwarang cadets in headbands with a few scrolls and a practice bow on the floor. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_kim_yushin.png",
+							"/ch_bupmin_hwarang.png"
+						],
+						"people": [
+							"yushin",
+							"munmu"
+						],
+						"tempImage": "/temp/parody-seodang-hwarang.jpg"
 					}
 				],
 				"blocks": [
@@ -40243,6 +40556,42 @@
 						],
 						"prompt": "OTS yard, navy sleeve as diagonal, Class 51, Bidam beads #141C2E, Yushin #2A5FB8.",
 						"tempImage": "/temp/bidam-defends-yushin.jpg"
+					},
+					{
+						"id": "parody-last-supper",
+						"ratio": 1.778,
+						"tone": "#7f9fd0",
+						"at": "Unanimity has failed.",
+						"alt": "The Last Supper as a cracked Renaissance fresco of the Harmony Council: Supum at the centre, every sleeve raised to vote except Bidam’s",
+						"prompt": "A parody of Leonardo da Vinci’s THE LAST SUPPER, painted exactly like the real mural: faded tempera-and-oil on a plaster wall, flaking and cracked, chalky muted earth colors, soft Renaissance modelling, the famous one-point perspective. Same composition: one long table covered in white cloth seen dead-on, thirteen men all on the far side in four groups of three around a central figure, a bright opening of three windows behind the centre. Here it is the Silla Harmony Council hall: coffered timber ceiling and paper-lattice windows in place of the Milan room, lacquer cups and bowls on the cloth. Premier SUPUM (attached portrait) sits at the centre in the Christ position, arms spread on the table, serene. Every other councillor — Yushin in marshal blue (attached portrait), Alchun (attached portrait) and nine anonymous True Bone elders in Silla court silk — raises one hand high to vote, leaning and gesturing in the Leonardo groupings. BIDAM (attached grey-haired portrait, black robe) sits in the Judas position, the ONLY man whose hand stays flat on the table, clutching prayer beads, faint smile. Supum steel-blue #7f9fd0 as the pale window sky. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_supum.png",
+							"/ch_bidam_old.png",
+							"/ch_kim_yushin.png",
+							"/ch_alchun.png"
+						],
+						"people": [
+							"supum",
+							"bidam",
+							"yushin",
+							"alchun"
+						],
+						"tempImage": "/temp/parody-last-supper.jpg"
+					},
+					{
+						"id": "parody-thinker-yushin",
+						"ratio": 0.75,
+						"tone": "#2A5FB8",
+						"at": "Yushin does not answer the count.",
+						"alt": "Rodin’s Thinker, painted: Yushin as a green-patinated bronze on a granite block before the council hall steps",
+						"prompt": "A painted parody of Auguste Rodin’s THE THINKER: an oil painting of the bronze statue, thick visible brushstrokes, dark bronze body with green-and-gold patina painted in broad strokes, simplified heroic forms, on a rough granite block. Exact Thinker pose: seated, hunched forward, RIGHT elbow on the LEFT thigh, chin propped on the back of the right hand, left forearm across the left knee, feet planted, brow furrowed. The statue is KIM YUSHIN, face from the attached portrait, cast as bronze, wearing his marshal’s robe and topknot as bronze folds (clothed, not nude), no sword. The block stands at the foot of the stone steps of a Silla council hall, timber pillars and grey giwa roof dissolving into brushwork, deep blue #2A5FB8 dusk sky. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_kim_yushin.png"
+						],
+						"people": [
+							"yushin"
+						],
+						"tempImage": "/temp/parody-thinker-yushin.jpg"
 					}
 				],
 				"blocks": [
@@ -41252,6 +41601,22 @@
 						"tempImage": "/temp/yushin-fire-kite.jpg"
 					},
 					{
+						"id": "bidam-pensive-star",
+						"ratio": 1.778,
+						"tone": "#141C2E",
+						"at": "He only names it in a useful direction",
+						"alt": "The eighth night: Bidam in profile on a Radiance merlon in the pensive-bodhisattva pose — ankle on knee, fingertips to cheek — smiling at a star that streaks down toward Wolseong",
+						"prompt": "Minimal iconic 16:9 still, full-bleed. Still-parody of the Korean gilt-bronze pensive bodhisattva (반가사유상) as a hard silhouette against the night. Low side angle, PROFILE view, camera level with the parapet top of the attached Fortress of Radiance at night; the two-tier giwa pavilion and a few torch-points soft in background bokeh. Natural night sky, thin haze, stars. ONE device: a single falling star drawing one long bright diagonal toward the far Wolseong side of the valley. Bidam in the lower third on one stone merlon, clean side profile: the exact pensive pose from the attached bronze statue photo — LEFT foot hanging down, RIGHT ankle crossed flat over the LEFT knee, RIGHT elbow on that knee, two fingertips at his cheek, LEFT hand on the crossed ankle, head tipped toward the star, faint smile; wide black robe draping over the merlon in layered pleats like the bronze skirt. POSE ONLY from the statue — no crown, no gold skin, no bare chest. FACE AND GARMENTS from the attached Bidam portrait: silver-grey swept-back hair, tanned skin, thin neat mustache, silky black robe over grey-brown hanbok. A few blue Silla camp fires far below. Navy #141C2E as the sky and the specular on black silk; the star and torches the only warm-white light. No army mass. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
+						"refs": [
+							"/ch_bidam_old.png",
+							"/pl_radiance_fortress.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/bidam-pensive-star.jpg"
+					},
+					{
 						"id": "bidam-rampart-confession",
 						"ratio": 3.333,
 						"tone": "#312e81",
@@ -41501,6 +41866,22 @@
 							"bidam"
 						],
 						"tempImage": "/temp/bidam-break-close.jpg"
+					},
+					{
+						"id": "bidam-pensive-incense",
+						"ratio": 0.75,
+						"tone": "#141C2E",
+						"at": "waits for it to take",
+						"alt": "Bidam on the Radiance parapet in the pensive-bodhisattva pose — fingertips to cheek, ankle on knee — beside a small gilt-bronze pensive statuette doing the same, one incense thread rising between them",
+						"prompt": "Minimal iconic 3:4 still. Still-parody of the Korean gilt-bronze pensive bodhisattva (반가사유상). WORM’S-EYE, low and close, shallow DOF. Mise-en-scène: the stone rampart of the attached Fortress of Radiance at night before the banner goes up — weathered block parapet, the two-tier giwa pavilion melting into bokeh behind, far torch-points as specks. ONE device: two identical pensive silhouettes side by side on the parapet — Bidam life-size on a round stone drum, and a small palm-high gilt-bronze pensive bodhisattva statuette set on the merlon beside him, both in exactly the same pose; one straight thread of incense smoke rising between them as a thin vertical line. Bidam’s POSE copies the attached bronze statue photo exactly: seated, LEFT foot down flat, RIGHT ankle crossed over the LEFT knee, RIGHT elbow on the right knee, two fingertips of the right hand barely touching his cheek, LEFT hand resting on the right ankle, head tipped forward, eyes half-lowered, a faint closed-mouth smile. His black robe spills over the stone drum in layered cascading pleats like the bronze skirt; 108 wooden prayer beads loop from the hand on his ankle. POSE ONLY from the statue photo — do NOT give Bidam its crown, gold skin, bare chest, or face. FACE AND GARMENTS from the attached Bidam portrait: 42, silver-grey swept-back hair, tanned skin, thin neat mustache, silky black outer robe over grey-brown hanbok, white collar — not the portrait’s standing clasped-hands stance. Navy #141C2E as the night and as specular on the beads and black silk; sutra gold only as the incense ember and the lamp-catch on the little bronze. Crushed blacks, one hard warm key from a low brazier, long shadows. Dry comedy in the rhyme, played completely straight. No army. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
+						"refs": [
+							"/ch_bidam_old.png",
+							"/pl_radiance_fortress.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/bidam-pensive-incense.jpg"
 					},
 					{
 						"id": "yushin-no-kim-close",
@@ -41952,6 +42333,21 @@
 						"tempImage": "/temp/bidam-yushin-tea-map.jpg"
 					},
 					{
+						"id": "bidam-pensive-map",
+						"ratio": 1.778,
+						"tone": "#141C2E",
+						"at": "not of the siege, of the roads west",
+						"alt": "Bird’s-eye on the pavilion boards: Bidam in the pensive-bodhisattva pose beside the unrolled map of the western roads, beads spilling onto the parchment",
+						"prompt": "Minimal iconic 16:9 still. Still-parody of the Korean gilt-bronze pensive bodhisattva (반가사유상). BIRD’S-EYE, straight down from the pavilion rafters, a dark timber beam crossing the near edge of frame in soft focus. Mise-en-scène: the square plank floor of the open 정자 between the camps at night, one low wooden table, nothing else. ONE device: a long pale unrolled map of the roads west as a hard bright rectangle across the dark boards, its ink roads running off the frame toward the west edge; Bidam in the lower third beside it. Bidam’s POSE copies the attached bronze statue photo, read from above: seated, RIGHT ankle crossed over the LEFT knee, RIGHT elbow on the knee, two fingertips resting at his cheek, LEFT hand on the ankle, head tipped down toward the map, eyes lowered; his black robe fanning over the boards in layered pleats like the bronze skirt; 108 wooden prayer beads spilling from his ankle-hand onto the parchment. POSE ONLY from the statue photo — no crown, no gold skin, no bare chest, not its face. FACE AND GARMENTS from the attached Bidam portrait: 42, silver-grey swept-back hair, tanned skin, thin neat mustache, silky black robe over grey-brown hanbok. Half-moon light as one hard cool key from the open side; navy #141C2E in the shadows and the specular on the silk and beads; sutra gold only as a single lamp pooled on the map. Crushed blacks, long shadows, empty boards. No Yushin in frame. No army. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
+						"refs": [
+							"/ch_bidam_old.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/bidam-pensive-map.jpg"
+					},
+					{
 						"id": "bidam-yushin-tea-cold",
 						"ratio": 1.333,
 						"tone": "#2A5FB8",
@@ -41967,6 +42363,23 @@
 						],
 						"prompt": "Intimate 4:3. TWO cold tea cups as a hard horizontal bar in the foreground. Above: Bidam and Yushin faces almost touching across the empty table — weary, not smiling. Faces from attached portraits. Fifth night. #141C2E and #2A5FB8. Crushed black. Shallow DOF. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
 						"tempImage": "/temp/bidam-yushin-tea-cold.jpg"
+					},
+					{
+						"id": "bidam-pensive-smile",
+						"ratio": 0.75,
+						"tone": "#141C2E",
+						"at": "Bidam smiles as if nothing ugly had been said",
+						"alt": "Over Yushin’s blurred blue shoulder: Bidam at the pavilion table in the pensive-bodhisattva pose, two fingertips on his cheek, wearing the statue’s faint smile over the cooling tea",
+						"prompt": "Intimate cinematic 3:4 close still. Still-parody of the Korean gilt-bronze pensive bodhisattva (반가사유상) — its famous faint smile. OVER-THE-SHOULDER from Yushin: his shoulder and marshal-blue #2A5FB8 sleeve a soft out-of-focus mass in the near foreground, one unfinished teacup sharp on the low wooden table. Rack-focus to Bidam across the table in the open 정자 pavilion at night, half moon beyond the eaves in bokeh. ONE device: the diagonal of Bidam’s raised forearm from knee to cheek, cutting the dark frame. Bidam’s POSE copies the attached bronze statue photo: seated on the pavilion floor-edge, RIGHT ankle crossed over the LEFT knee, RIGHT elbow on the knee, two fingertips just touching the cheek, LEFT hand resting on the ankle, head tipped forward, eyes lowered and half-closed, the statue’s serene closed-mouth smile — as if nothing ugly had been said. POSE ONLY from the statue photo — no crown, no gold skin, no bare chest, not its face. FACE AND GARMENTS from the attached Bidam portrait: 42, silver-grey swept-back hair, tanned skin, thin neat mustache, silky black robe over grey-brown hanbok — not the portrait’s clasped-hands stance. Yushin’s face does not show; only the attached Yushin portrait’s blue sleeve and shoulder. Navy #141C2E as the night and the specular on Bidam’s black silk; a thin curl of tea steam catching the single warm lamp key. Crushed blacks, chiaroscuro, faces fill the frame. No army. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
+						"refs": [
+							"/ch_bidam_old.png",
+							"/ch_kim_yushin.png"
+						],
+						"people": [
+							"bidam",
+							"yushin"
+						],
+						"tempImage": "/temp/bidam-pensive-smile.jpg"
 					},
 					{
 						"id": "bidam-yushin-duel-day10",
@@ -41999,6 +42412,178 @@
 						],
 						"prompt": "Minimal iconic 21:9 exposition. Camera far back on the attached Radiance fortress — weathered stone, timber gate, giwa munru recognizable. Tiny black-headband figures at the gate as stamps. ONE device: the fortress ridge as a hard silhouette against dusk. Natural sky. Crushed blacks, one hard key. No army carpet. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
 						"tempImage": "/temp/radiance-exposition-wide.jpg"
+					},
+					{
+						"id": "parody-liberty-bidam",
+						"ratio": 1.333,
+						"tone": "#141C2E",
+						"at": "The rebel band ties black headbands",
+						"alt": "Liberty Leading the People as a Romantic oil painting: Bidam at the apex of a barricade at the Radiance gate, black banner raised, rebels in black headbands surging behind",
+						"prompt": "A parody of Eugène Delacroix’s LIBERTY LEADING THE PEOPLE, painted exactly like the real 1830 canvas: thick Romantic oil paint, visible brushwork, craquelure and old yellowed varnish, smoky brown-gold palette, dramatic pyramid composition. Same composition: the flag-bearer striding forward at the apex over a barricade of rubble and fallen bodies, one arm raised high with the flag, a boy with a weapon on one side, a kneeling man looking up at the leader, a surge of fighters behind in the smoke. The leader is BIDAM (attached grey-haired portrait: face and black robe, one sleeve torn), raising a long pole with a plain BLACK banner, the attached ring-pommel sword in his other hand. The fighters wear black headbands and hemp clothes, holding spears. The smoky background shows the stone gate and giwa pavilion of the attached Fortress of Radiance. Navy #141C2E in the shadows. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam_old.png",
+							"/pl_radiance_fortress.png",
+							"/sw_bidam.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/parody-liberty-bidam.jpg"
+					},
+					{
+						"id": "parody-cheonmachong-bidam",
+						"ratio": 1.333,
+						"tone": "#141C2E",
+						"at": "The robe eats the lamp.",
+						"alt": "The Cheonmachong heavenly horse as the painted birch-bark mudguard: the white flying horse, and Bidam riding it",
+						"prompt": "A parody of the Silla CHEONMACHONG HEAVENLY HORSE painting (천마도), made exactly like the real 5th–6th century artefact: pigment painted on a panel of layered birch bark, cracked and darkened with age, a broad border of red, white and black honeysuckle-scroll pattern around the edge, flat archaic brushwork. Same central image: a white horse in flying gallop with legs flung out front and back, tail streaming up, mane in flame-like tufts, cloud-scroll wisps around its hooves. Riding low on its back is a small archaic figure of BIDAM (attached grey-haired portrait: face, black robe streaming like the horse’s mane), drawn in the same flat ancient style, with a tiny ring-pommel sword at his hip. Navy-black #141C2E ground inside the border. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam_old.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/parody-cheonmachong-bidam.jpg"
+					},
+					{
+						"id": "parody-dano-cavern",
+						"ratio": 0.75,
+						"tone": "#2eb8c4",
+						"at": "This is the first time the cavern goddesses meet",
+						"alt": "Shin Yun-bok’s Dano bathers as a Joseon ink-and-color album leaf: Golhwa on a swing, Hyullé washing her hair, Narim on the rocks, Bupmin peeking",
+						"prompt": "A parody of Shin Yun-bok’s DANO PUNGJEONG (단오풍정), painted exactly like the real Joseon album leaf: ink and light mineral color on aged hanji paper, fine elegant outline brushwork, soft flat washes, lots of blank paper, faded edges. Same composition: one woman on a rope swing in a vivid skirt, other women by a stream washing their long hair with bare shoulders, and two young men peeking from behind a rock in the corner, grinning. Here it is the goddesses’ spring with steam wisps painted as pale ink: GOLHWA on the swing in a coral-orange #e86820 chima, legs kicked out; HYULLÉ kneeling at the water wringing her long hair, knees together, teal #2eb8c4 chima; NARIM sitting on a rock combing her hair, green #3d9e52 chima — white jeogori slipping off their shoulders, faces and hair ornaments from the attached goddess portraits. Young BUPMIN (attached portrait, face) peeks from behind the rock clutching a clay jar. Tasteful, playful, not explicit. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_golhwa.png",
+							"/ch_hyullé.png",
+							"/ch_narim.png",
+							"/ch_bupmin_hwarang.png"
+						],
+						"people": [
+							"golhwa",
+							"hyulle",
+							"narim",
+							"munmu"
+						],
+						"tempImage": "/temp/parody-dano-cavern.jpg"
+					},
+					{
+						"id": "parody-ssireum-yard",
+						"ratio": 0.75,
+						"tone": "#2A5FB8",
+						"at": "The yard after rain.",
+						"alt": "Kim Hong-do’s Ssireum as a Joseon genre-painting album leaf: young Bidam and Yushin wrestling in a ring of Hwarang cadets, a rice-cake boy looking away",
+						"prompt": "A parody of Kim Hong-do’s SSIREUM (씨름), painted exactly like the real Danwon genre album leaf: quick confident ink lines, light brown and pale blue washes on aged hanji, no background at all — just blank paper, figures arranged in a ring seen from slightly above. Same composition: two wrestlers locked in the centre, one heaving the other off the ground; spectators seated all around in a circle, hugging their knees, leaning in, some with hats set beside them; a boy selling snacks from a tray at the edge looking away. The wrestlers are young BIDAM and young YUSHIN (attached Hwarang portraits: faces, black and blue #2A5FB8 headbands), sleeves rolled, straining and grinning. The spectators are teenage Hwarang cadets in headbands. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam_hwarang.png",
+							"/ch_kim_yushin_hwarang.png"
+						],
+						"people": [
+							"bidam",
+							"yushin"
+						],
+						"tempImage": "/temp/parody-ssireum-yard.jpg"
+					},
+					{
+						"id": "parody-abbey-road-hwarang",
+						"ratio": 1,
+						"tone": "#141C2E",
+						"at": "Three Hwarang. One princess.",
+						"alt": "Abbey Road, painted: young Bidam, Alchun and Yushin crossing a stream on stepping stones in single file, mid-stride",
+						"prompt": "A painted parody of THE BEATLES’ ABBEY ROAD album cover, as a square painterly anime-adjacent illustration with soft summer light and visible brushwork. Same staging: exactly three young men walking in single file left to right in strict side profile, evenly spaced, all mid-stride with the same leg forward, a leafy street receding behind. The zebra crossing is a straight row of flat pale granite stepping stones (징검다리) across a shallow stream beside a Silla yard wall with grey giwa, willows behind. BIDAM leads (attached Hwarang portrait, black headband), ALCHUN in the middle (attached portrait, drawn younger), YUSHIN last (attached Hwarang portrait, blue headband), wide silk sleeves swinging, no swords. Navy #141C2E in the willow shade. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam_hwarang.png",
+							"/ch_alchun.png",
+							"/ch_kim_yushin_hwarang.png"
+						],
+						"people": [
+							"bidam",
+							"alchun",
+							"yushin"
+						],
+						"tempImage": "/temp/parody-abbey-road-hwarang.jpg"
+					},
+					{
+						"id": "parody-gosa-alchun",
+						"ratio": 0.75,
+						"tone": "#8fb3e0",
+						"at": "walks back to the space between the camps and eats alone",
+						"alt": "Kang Hui-an’s Scholar Gazing at Water: Alchun lying on a rock, chin on folded arms, watching the stream between the two camps",
+						"prompt": "A parody of Kang Hui-an’s GOSA GWANSUDO (고사관수도, Lofty Scholar Contemplating Water), painted exactly like the real early-Joseon ink painting: dark ink on aged silk, bold axe-cut rock strokes, hanging vines, deep ink tones fading to brown silk, small intimate format. Same composition: a scholar lying on his stomach on a large rock ledge, chin resting on his folded arms, gazing calmly down at the water below, vines trailing from the cliff above him. The scholar is ALCHUN (attached portrait: face and garments), unbothered, a half-eaten bowl of rice beside his elbow on the rock. Very faint pale blue #8fb3e0 wash on his robe; far in the mist on each side, the faintest suggestion of two camp banners. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_alchun.png"
+						],
+						"people": [
+							"alchun"
+						],
+						"tempImage": "/temp/parody-gosa-alchun.jpg"
+					},
+					{
+						"id": "parody-dalmado-bidam",
+						"ratio": 0.75,
+						"tone": "#141C2E",
+						"at": "and to all of that, I simply say no.",
+						"alt": "Kim Myeong-guk’s Bodhidharma: Bidam in a few furious ink strokes, hooded, glaring, beads in his fist",
+						"prompt": "A parody of Kim Myeong-guk’s DALMADO (달마도, Bodhidharma), painted exactly like the real Joseon Zen ink painting: a handful of explosive, fast, wet-and-dry brushstrokes in black ink on pale paper, the robe done in a few thick sweeping strokes, the face in fine sharp lines, huge empty background. Same composition: a half-length figure in a hooded robe, bushy brows, big glaring eyes, a stubborn scowl. The figure is BIDAM (attached grey-haired portrait: face with thin mustache, the grey hair showing under the hood), glaring straight out with total refusal, a string of prayer beads gripped in one fist, navy-black #141C2E ink. One blank red seal square in a corner. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam_old.png"
+						],
+						"people": [
+							"bidam"
+						],
+						"tempImage": "/temp/parody-dalmado-bidam.jpg"
+					},
+					{
+						"id": "parody-tiger-golhwa",
+						"ratio": 0.5625,
+						"tone": "#e86820",
+						"at": "Golhwa goes first",
+						"alt": "Kim Hong-do’s Tiger under Pine: Golhwa’s fire-tiger in fine ink hair-strokes under a gnarled pine at the cavern mouth, tiny Bidam fleeing with his beads",
+						"prompt": "A parody of Kim Hong-do’s SONGHA MAENGHO (송하맹호도, Tiger under a Pine), painted exactly like the real Joseon hanging scroll: ink and light color on aged silk, the tiger’s fur built from thousands of fine individual hair strokes, a gnarled pine trunk and needles overhead, lots of empty silk. Same composition: a huge tiger stalking forward, body curving, tail up, head lowered, glaring — tall vertical scroll. Here it is GOLHWA’s fire-tiger: the stripes and fur tips washed in ember orange #e86820, faint painted steam curling off its back, the pine growing over the mouth of a rocky cavern. In the lower corner a tiny BIDAM (attached portrait, face small) scrambles away, clutching prayer beads, unclothed except for a cloth at the hips, drawn in a few quick lines. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam_old.png"
+						],
+						"people": [
+							"golhwa",
+							"bidam"
+						],
+						"tempImage": "/temp/parody-tiger-golhwa.jpg"
+					},
+					{
+						"id": "parody-team7-hwarang",
+						"ratio": 1.333,
+						"tone": "#141C2E",
+						"at": "same impossible orbit around",
+						"alt": "Team 7’s photo as the Three Eternal Hwarang: Yushin and Bidam glaring at each other, Alchun grinning in the middle, Princess Dukman behind with a hand on each rival’s head",
+						"prompt": "A parody of the NARUTO TEAM 7 PHOTO (the framed picture on the bedside table), painted as bright anime key art with clean cel shading and a slightly faded framed-photo feel. Same staging: three young teammates in front, the teacher standing behind them. On the left the loud one glares sideways at the rival with fists clenched; on the right the cool prodigy looks away with arms crossed, glaring back; the one in the middle beams at the camera with hands clasped; the teacher behind rests a hand on top of each rival’s head, eyes creased in a smile. Here, as teenage Hwarang of Class 51 in a Silla training yard with a grey giwa wall and a gyuku stick on the ground: YUSHIN on the left (attached Hwarang portrait, blue #2A5FB8 headband), BIDAM on the right (attached Hwarang portrait, black headband, navy #141C2E robe), ALCHUN in the middle (attached portrait, drawn as a teenager, grinning). Behind them young PRINCESS DUKMAN (attached portrait: face and silk) with a hand on each boy’s head, amused. Tied cloth headbands, no metal plates, no ninja symbols. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_kim_yushin_hwarang.png",
+							"/ch_alchun.png",
+							"/ch_bidam_hwarang.png",
+							"/ch_dukman.png"
+						],
+						"people": [
+							"yushin",
+							"alchun",
+							"bidam",
+							"sunduk"
+						],
+						"tempImage": "/temp/parody-team7-hwarang.jpg"
+					},
+					{
+						"id": "parody-laocoon-bidam",
+						"ratio": 0.75,
+						"tone": "#2eb8c4",
+						"at": "serpent-coil, bear-shove",
+						"alt": "Laocoön, painted: Bidam as a marble figure writhing in the coils of Hyullé’s water-serpent, beads flying",
+						"prompt": "A painted parody of the LAOCOÖN GROUP marble sculpture: an oil painting of the white marble statue, broad creamy brushstrokes, cool grey shadows, dramatic raking light on a dark ground. Same pose: a muscular man twisting in agony on an altar block, one arm flung up and back, torso straining, head thrown back, a huge serpent coiling around his legs and arm and biting at his hip. The man is BIDAM (attached portrait: face with thin mustache and swept grey hair, carved in marble), nude but for a marble cloth at the hips, a string of prayer beads snapping in his raised hand. The serpent is the water goddess Hyullé’s serpent form: its scales painted wet teal #2eb8c4 over the marble, water spilling off the coils. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_bidam_old.png"
+						],
+						"people": [
+							"bidam",
+							"hyulle"
+						],
+						"tempImage": "/temp/parody-laocoon-bidam.jpg"
 					}
 				],
 				"blocks": [
@@ -44440,6 +45025,21 @@
 						],
 						"tempImage": "/temp/chunchu-strategy-meditation.jpg",
 						"prompt": "Minimal iconic 16:9 poster. Kim Chunchu, strategist. ONE geometric device: a diagonal cascade of blank unfurled map-sheets as hard translucent planes cutting from upper-right to lower-left — no writing, no labels. Face matches the attached portrait — short goatee, wavy dark hair with a lock on the forehead, knowing calm — rim-lit in the lower-left corner, standing (not lotus, not cross-legged meditation), one hand at his chin. Magenta #D8258C as the robe and the sheet tint; navy collar and sash the only other hue. Striking silky court hanbok, few hues, premium silk sheen and weight. Flat charcoal void. No army. No palace clutter. No clouds. No lotus. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+					},
+					{
+						"id": "ink-packing-munhee",
+						"ratio": 1.778,
+						"tone": "#E07FA8",
+						"at": "Nobody writes any of this down, which is why it needs saying.",
+						"alt": "Ink genre painting after Shin Yun-bok: an empty floor of pale paper, Munhee tiny and kneeling at one edge knotting a travel bundle, one pink ribbon the only color",
+						"prompt": "A Korean genre painting in the manner of Shin Yun-bok (Hyewon), fine elegant ink line with pale washes on aged hanji, wide horizontal album leaf. ICONIC MINIMAL LAYOUT: almost the whole leaf is empty pale paper standing for a bare wooden floor, one thin ink line for the edge of a folding screen at the far right. ONE device: a long low row of neatly tied travel bundles (bojagi cloth bundles) receding across the lower third like stepping stones, each one a quiet tan wash. At the near end, MUNHEE (face and garments from the attached portrait, a mature noblewoman) kneels, head bowed, pulling the knot of the last bundle tight with both hands, sleeves folded back; her dusty-pink #E07FA8 chima and the pink ribbon on the knot are the only colour. No other figures, no writing brush, no paper on the floor. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_munhee.png"
+						],
+						"people": [
+							"munhee"
+						],
+						"tempImage": "/temp/ink-packing-munhee.jpg"
 					}
 				],
 				"blocks": [
@@ -48959,6 +49559,36 @@
 							"/ch_jukji.png"
 						],
 						"prompt": "Minimal iconic 16:9 OTS from the moon-palace gate in the attached place. One courier, mid-stride, sealed packet under the arm, leaving a wet yard at dusk. Giwa and timber real, not a slab. ONE device: the gate as a dark arch cropping him small in the lower third. #D8258C as a single lantern accent. Not an army. Not a catalog of riders. Crushed black, long shadow, natural dusk sky. No text. No watermark."
+					},
+					{
+						"id": "parody-jobs-chunchu",
+						"ratio": 1.778,
+						"tone": "#D8258C",
+						"at": "Are you getting it?",
+						"alt": "The keynote, painted: Chunchu alone on a black stage in one hard spotlight, holding up a small bronze seal, a giant ink circle on the screen behind",
+						"prompt": "A painted parody of the famous STEVE JOBS keynote photograph, as a painterly anime-adjacent illustration with visible brushwork: pitch-black stage, one hard white spotlight, a huge glowing projection screen behind. Same staging: the presenter alone near the stage edge, relaxed, holding one small object up between thumb and fingers at shoulder height, other hand open, easy half-smile. The presenter is KIM CHUNCHU (attached portrait: face, magenta #D8258C Silla court silk, topknot), holding up a small square bronze seal as if it were the new product. The screen shows only one black ink-brush circle on white. Silhouetted heads of officials in black gat hats in the foreground. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_chunchu.png"
+						],
+						"people": [
+							"chunchu"
+						],
+						"tempImage": "/temp/parody-jobs-chunchu.jpg"
+					},
+					{
+						"id": "parody-godfather-chunchu",
+						"ratio": 0.75,
+						"tone": "#D8258C",
+						"at": "in polished chairs",
+						"alt": "The Godfather poster, painted: Chunchu’s hand in a magenta sleeve holding the marionette bar, the Harmony Council dangling in their polished chairs",
+						"prompt": "A parody of THE GODFATHER film poster, painted: a pure black field, and from the top edge a single hand holding a wooden marionette control bar, white strings falling straight down; no lettering at all. Same layout and stark minimalism. The hand comes out of a magenta #D8258C Silla silk sleeve (KIM CHUNCHU, attached portrait: garments; his face half-visible in shadow at the very top, amused). On the strings hang tiny wooden puppets of grey-bearded True Bone councillors, each sitting in a little polished lacquered chair, arms lifted as if voting. Painterly, graphic, high contrast. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_chunchu.png"
+						],
+						"people": [
+							"chunchu"
+						],
+						"tempImage": "/temp/parody-godfather-chunchu.jpg"
 					}
 				],
 				"blocks": [
@@ -50814,6 +51444,22 @@
 							"/pl_rock_politics.png"
 						],
 						"tempImage": "/temp/euija-coup-empty-benches.jpg"
+					},
+					{
+						"id": "parody-coup-poster-euija",
+						"ratio": 1.778,
+						"tone": "#e08a2e",
+						"at": "of his own sons to the Assembly",
+						"alt": "12.12: The Day, painted: Euija grinning at the centre of his victory portrait, the forty-one sons he just seated packed in rows around him on the palace steps",
+						"prompt": "A painted parody of the victory group photo that ends the Korean coup film 12.12: THE DAY (the conspirators’ commemorative portrait the night the coup succeeds), as a painterly anime-adjacent illustration with the film’s teal-and-amber grade and visible brushwork. Same staging: a dense, stiff, frontal group portrait on the steps of a government building at night, the ringleader dead centre in the front row grinning wide, the co-conspirators packed shoulder to shoulder in rising rows, smug, some clapping, one flash-lit. Here: KING EUIJA (attached portrait: face and garments) sits front and centre, laughing, amber #e08a2e lamplight on his face; around and behind him FORTY-ONE of his sons, young men and boys in new Baekje court robes and black hats, in five packed rows on the stone steps of the attached Sabi palace hall (red pillars, giwa eaves). At the edge, a row of empty lacquered Assembly chairs pushed aside. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_buyeo_euija.png",
+							"/pl_sabi_palace.png"
+						],
+						"people": [
+							"euija"
+						],
+						"tempImage": "/temp/parody-coup-poster-euija.jpg"
 					}
 				],
 				"blocks": [
@@ -54611,6 +55257,21 @@
 						"src": "/temp/five_thousand_formation.png",
 						"alt": "Five thousand warriors in perfect formation against misty sky - disciplined strength",
 						"prompt": "Training frame minimal: Five thousand warriors' silhouettes arranged in perfect formation against misty pale blue sky"
+					},
+					{
+						"id": "parody-sehando-gyebek",
+						"ratio": 1.778,
+						"tone": "#d9b13a",
+						"at": "I trusted one man.",
+						"alt": "Kim Jeong-hui’s Sehando on Tamla: a bare hut between four wind-bent pines in dry ink, one small figure — Gyebek — standing alone in the snow",
+						"prompt": "A parody of Kim Jeong-hui’s SEHANDO (세한도, Winter Scene), painted exactly like the real Joseon handscroll: dry scratchy brush ink on pale hanji, almost no color, vast empty paper, austere and cold, painted by an exile on Jeju. Same composition: a simple round-windowed hut in the middle, flanked by two old pines on the left and two cypress/pines on the right, snowy blank ground, nothing else. Here it is Tamla (Jeju) in exile: add one tiny standing figure beside the hut — GYEBEK (attached portrait, face barely suggested), in plain clothes, arms at his sides, looking at nothing — and a small basket of oranges at his feet in the only touch of color, faint yellow #d9b13a. The long inscription area on the right is left as blank paper; one blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_gyebek.png"
+						],
+						"people": [
+							"gyebek"
+						],
+						"tempImage": "/temp/parody-sehando-gyebek.jpg"
 					}
 				],
 				"blocks": [
@@ -58742,6 +59403,21 @@
 							"hwanung"
 						],
 						"tempImage": "/temp/ungnyeo-marry-morning.jpg"
+					},
+					{
+						"id": "ink-sindansu-hwanung",
+						"ratio": 0.5625,
+						"tone": "#d4b86a",
+						"at": "Hwanung lands on a mountain under a sandalwood tree",
+						"alt": "Ink mountain scroll: one sacred tree on a lone summit above a sea of cloud, a tiny Hwanung descending toward it trailing a pale gold sleeve",
+						"prompt": "A Korean true-view ink landscape hanging scroll in the manner of Jeong Seon, heavy wet ink rock strokes and pine dots on aged hanji, monochrome ink with one faint colour. ICONIC MINIMAL LAYOUT: a single sharp granite peak rises from the bottom third out of a blank sea of white cloud-paper; everything above is EMPTY paper. ONE device: on the very summit, one lone ancient tree (the sacred sindansu, a birch-sandalwood with a spreading crown), its crown the only dark mass on the page. High in the empty upper paper, tiny, HWANUNG (face and garments from the attached portrait, reduced to a few elegant strokes) descends feet-first toward the tree, robe and one long sleeve trailing upward, a pale gold #d4b86a wash on the sleeve as the only colour. Three faint smudges of cloud behind him hint at the Earl of Wind, Master of Rain, Master of Cloud — no faces. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_hwanung.png"
+						],
+						"people": [
+							"hwanung"
+						],
+						"tempImage": "/temp/ink-sindansu-hwanung.jpg"
 					}
 				],
 				"blocks": [
@@ -59396,6 +60072,22 @@
 							"gyebek"
 						],
 						"tempImage": "/temp/gyebek-vertical-blade.jpg"
+					},
+					{
+						"id": "parody-300-gyebek",
+						"ratio": 0.75,
+						"tone": "#d9b13a",
+						"at": "Like the three hundred at Thermopylae",
+						"alt": "The 300 poster, painted: Gyebek mid-roar behind a round shield, spear up, red cloak whipping, the five thousand behind him in a sepia storm",
+						"prompt": "A parody of the film poster for 300 (Frank Miller’s graphic-novel look), painted as a gritty high-contrast illustration: sepia-bronze storm sky, crushed blacks, desaturated skin, only the cloak saturated, dust and grain, no lettering. Same layout: the king in the foreground roaring, mouth wide open, round shield braced on one arm and spear raised, blood-red cloak whipping behind him, a packed line of warriors behind with shields locked. The king is GYEBEK (attached portrait: face), in gray steel lamellar (attached ref) with yellow #d9b13a cloth at collar and sleeves and a red cloak, his round shield painted with a phoenix; behind him the five thousand Baekje spearmen, yellow dust rising off the Yellow Mountain. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_gyebek.png",
+							"/ar_lamellar_steel.png"
+						],
+						"people": [
+							"gyebek"
+						],
+						"tempImage": "/temp/parody-300-gyebek.jpg"
 					}
 				],
 				"blocks": [
@@ -63398,6 +64090,24 @@
 							"/ch_munmu.png"
 						],
 						"prompt": "Intimate 3:4 ECU. Aged Yushin’s face fills the frame, mouth closed, eyes taking a rank he did not ask for — not a smile, not a shout. Foreground bokeh: Munmu’s hand and a blank wooden tablet, no writing. ONE device: the tablet edge as a vertical cutting the cheek. #2A5FB8 rim, #C41E3A a thin accent on the hand. Faces and garments from the attached portraits. Crushed black, chiaroscuro. No readable text. No watermark."
+					},
+					{
+						"id": "parody-admiral-yi-yushin",
+						"ratio": 0.5625,
+						"tone": "#2A5FB8",
+						"at": "cuts a rank the grades did not have",
+						"alt": "The Gwanghwamun Admiral Yi statue, painted: old Yushin as the towering bronze general, ring-pommel sword planted, Pyongyang’s walls behind",
+						"prompt": "A painted parody of the ADMIRAL YI SUN-SIN STATUE at Gwanghwamun: an oil painting of the towering dark bronze monument seen from a steep worm’s-eye angle on its tall stone pedestal, thick brushwork, bronze glinting. Same pose: a standing general in armor, feet apart, looking far ahead, a long sword held upright in front of him in its scabbard, both hands resting on it. The general is the old KIM YUSHIN (attached old portrait: face, white beard) in bronze steel lamellar (attached ref), marshal-blue #2A5FB8 cloth peeking at the collar as patina; the sword is the attached ring-pommel 환두대도, small ring pommel up. Behind the pedestal, the red two-tier gate pavilion and stone walls of the attached Pyongyang fortress under a wide autumn sky. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_kim_yushin_old.png",
+							"/sw_bidam.png",
+							"/ar_lamellar_steel.png",
+							"/pl_pyongyang_fortress.png"
+						],
+						"people": [
+							"yushin"
+						],
+						"tempImage": "/temp/parody-admiral-yi-yushin.jpg"
 					}
 				],
 				"blocks": [
@@ -65664,6 +66374,21 @@
 							"/ch_kim_bupmin.png"
 						],
 						"tempImage": "/temp/munmu-tide-rock.jpg"
+					},
+					{
+						"id": "ink-flower-field-sunduk",
+						"ratio": 0.75,
+						"tone": "#E8552B",
+						"at": "out in the Western Flower Field",
+						"alt": "Otherworld ink leaf: flat blank paper with a sparse drift of tiny painted flowers, old Queen Sunduk far off walking away through them, one vermilion sleeve",
+						"prompt": "A Korean ink-and-colour album leaf, otherworldly and symbolic: flat blank cream paper, NO sky, NO sun, NO clouds, NO horizon line. ICONIC MINIMAL LAYOUT: ONE device: a sparse diagonal drift of tiny boneless-brush flowers (peonies, chrysanthemums, lotus) scattered across the paper from lower left to upper right like a path, soft mineral colours, lots of empty paper between them. Far along that path in the upper right third, tiny, the aged QUEEN SUNDUK (face and garments from the attached portrait, face a few strokes, back mostly turned) walks away unhurried, one vermilion #E8552B sleeve the only strong colour, her hand trailing over the blooms. At the lower-left corner one small cut peony lies on the blank paper as if dropped. Serene, emptied, final. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_sunduk_old.png"
+						],
+						"people": [
+							"sunduk"
+						],
+						"tempImage": "/temp/ink-flower-field-sunduk.jpg"
 					}
 				],
 				"blocks": [

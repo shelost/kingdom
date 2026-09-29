@@ -1,0 +1,62 @@
+[
+	{
+		"id": "confess-pin-out",
+		"alt": "ECU: bird binyeo sliding from Sosuno’s hair, fingers, heavy blush, Jolbon packed earth",
+		"prompt": "Intimate ECU. Bird pin coming out. Hair starting to fall. Sitting. Dusty-rose #e8a04a blush-plane."
+	},
+	{
+		"id": "confess-hair-falls",
+		"alt": "Dutch ECU: Sosuno’s black hair falling fully undone, bird pin in her lowered hand, blush",
+		"prompt": "Intimate dutch ECU. Hair falls undone. Pin in hand. Sitting. Dusty-rose #e8a04a blush-plane."
+	},
+	{
+		"id": "confess-sit-floor",
+		"alt": "Low dutch: Sosuno collapsed sitting on packed earth, chin down, hair fully undone, dusty-rose pool",
+		"prompt": "Intimate low dutch. She sits facing down. Hair undone. Dusty-rose #e8a04a pool."
+	},
+	{
+		"id": "confess-heap-two",
+		"alt": "Dutch two-shot: Jumong stopped standing, Sosuno a surrendered heap on packed earth, hair undone",
+		"prompt": "Dutch two-shot. She a surrendered heap. He standing clean-shaven. Packed-earth gap."
+	},
+	{
+		"id": "confess-forehead-boards",
+		"alt": "High ECU: Sosuno’s forehead toward packed earth, undone hair, heavy blush",
+		"prompt": "Intimate high ECU. Forehead toward packed earth. Hair undone. Dusty-rose #e8a04a."
+	},
+	{
+		"id": "confess-hair-veil",
+		"alt": "ECU Sosuno: undone hair veiling her face, eyes down, heavy blush, surrendered",
+		"prompt": "Intimate ECU. Hair veils her face. Eyes down. Heavy blush. Dusty-rose #e8a04a."
+	},
+	{
+		"id": "confess-crown-down",
+		"alt": "Dutch from above: crown of Sosuno’s undone hair, dusty-rose chima pooled on packed earth",
+		"prompt": "Dutch from above. Crown of undone hair. Dusty-rose pool. Packed earth."
+	},
+	{
+		"id": "confess-mid-word",
+		"alt": "ECU Sosuno mid-word, mouth open, blush, chin down, hair undone, not looking up",
+		"prompt": "Intimate ECU. Mouth mid-word. Chin down. Hair undone. Dusty-rose #e8a04a blush."
+	},
+	{
+		"id": "confess-no-look",
+		"alt": "Dutch close: Sosuno still talking, still not looking up, hair undone, surrendered blush",
+		"prompt": "Intimate dutch. Still doesn’t look up. Keep talking. Hair undone. Dusty-rose #e8a04a."
+	},
+	{
+		"id": "confess-hands-earth",
+		"alt": "ECU: Sosuno’s hands on packed earth, undone hair falling over wrists, blush in bokeh",
+		"prompt": "ECU hands on packed earth. Hair over wrists. Blush bokeh. Dusty-rose #e8a04a."
+	},
+	{
+		"id": "confess-binyeo-hide",
+		"alt": "ECU: bird binyeo half-hidden under Sosuno’s undone hair on packed earth",
+		"prompt": "ECU. Hair hides the bird binyeo on packed earth. Dusty-rose sleeve. #e8a04a rim."
+	},
+	{
+		"id": "confess-he-kneels",
+		"alt": "OTS: Jumong kneeling into Sosuno’s downcast sitting frame, her undone hair, his clean-shaven face",
+		"prompt": "OTS kneel. He enters her downcast frame. Clean-shaven. Hair undone. Red #e8563f."
+	}
+]

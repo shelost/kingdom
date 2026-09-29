@@ -1,0 +1,37 @@
+[
+	{
+		"id": "jumong-seq-jolbon-wide",
+		"alt": "Dusk Jolbon hall as a dark wedge: Jumong running in; Tabal seated in a gold slit, weighing him",
+		"prompt": "Minimal iconic 16:9 dusk. Hall as dark wedge, one gold slit. Jumong mid-stride. Tabal seated. High contrast. Face only. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-buyeo-wide",
+		"alt": "High angle: gold sun-shaft across a Buyeo timber yard; Geumwa a small human king walking the light",
+		"prompt": "Minimal iconic 16:9. Gold shaft. Tiny human Geumwa. Real timber yard. High contrast. No frog body. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-forest-wide",
+		"alt": "Dutch night: Jumong running a knife-path through crushed-black pines",
+		"prompt": "Minimal iconic aerial dutch. Path as a knife. Jumong running. High contrast. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-cave-wide",
+		"alt": "Worm’s-eye: Jumong a red rim-silhouette praying in the Jumong cavern; the arch is a leaf-light stamp",
+		"prompt": "Minimal iconic. Same cavern arch. Worm’s-eye. Off-center kneel. High contrast. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-well-wide",
+		"alt": "Well as a black disc: Sosuno over-shoulder; Jumong leaning into the dark",
+		"prompt": "Minimal iconic. Well-disc, rope vertical. Over-shoulder. New bodies. High contrast. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-pine-wide",
+		"alt": "Worm’s-eye: bowstring splits the frame; Jumong at full draw; Sosuno on the rail",
+		"prompt": "Minimal iconic. Bowstring vertical device. Full draw. High contrast. No text. No watermark."
+	},
+	{
+		"id": "jumong-seq-king",
+		"alt": "Worm’s-eye: giwa hall as a dark monument; Jumong a small lower-third figure mid-turn",
+		"prompt": "Minimal iconic worm’s-eye. Hall monument. Jumong lower-third mid-turn. High contrast. No portrait clone. No text. No watermark."
+	}
+]

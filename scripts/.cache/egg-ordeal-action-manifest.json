@@ -1,0 +1,52 @@
+[
+	{
+		"id": "egg-ordeal-windup",
+		"alt": "Close dutch: Geumwa’s red-burgundy hand winding back, glossy pale egg leaving the palm, motion blur",
+		"prompt": "Dutch ECU wind-up. ONE Geumwa, red-burgundy sleeve flung back, not a standing clone. ONE glossy realistic pale egg just leaving the palm — wet specular, motion blur on fingers. Egg as the #8fc4e0 plane. #a89a72 dirt rim. LOCK pl_buyeo_yard packed earth bokeh, grey-giwa hall as dark bar. No clone kings. No gold plate. No text."
+	},
+	{
+		"id": "egg-ordeal-air",
+		"alt": "Dutch motion: one glossy egg mid-air across the muted Buyeo yard, action lines, tiny Geumwa in the lower third",
+		"prompt": "Dutch motion-blur mid-air. ONE glossy realistic pale egg owns the frame as a bright #8fc4e0 oval — wet specular streak, action lines. MUTED crushed Buyeo yard. Tiny ONE Geumwa in the lower third after the throw, red-burgundy silk not gold. LOCK pl_buyeo_yard grey-giwa hall as dark bar. No clone kings. No text."
+	},
+	{
+		"id": "egg-ordeal-cast-cliff",
+		"alt": "Worm’s-eye: glossy egg in air over a packed-earth palisade drop beside the Buyeo yard, Geumwa mid-cast",
+		"prompt": "Worm’s-eye from below the palisade. ONE glossy realistic pale egg in mid-air over a packed-earth drop / timber palisade edge NEXT TO the Buyeo yard — same hall bar, same dusk, not a mountain. ONE device: the palisade as a dark horizontal cut. ONE Geumwa at the rim, mid-cast, red-burgundy. Egg as #8fc4e0 plane. MUTED drop, crushed blacks. No Chinese cliff. No clone. No text."
+	},
+	{
+		"id": "egg-ordeal-fall",
+		"alt": "Aerial dutch: one glossy egg falling, specular streak over a muted packed-earth drop and palisade",
+		"prompt": "Aerial high dutch. ONE glossy realistic pale egg falling — wet specular streak as a white/#8fc4e0 slash through crushed dusk. MUTED packed-earth drop and timber palisade below, Buyeo hall as a dark stamp. Motion blur, action lines. Egg never cracks. No people. No mountain. No text."
+	},
+	{
+		"id": "egg-ordeal-land",
+		"alt": "Worm’s-eye: glossy pale egg just landed on packed earth, dust burst, still unhurt and wet-specular",
+		"prompt": "Worm’s-eye land. ONE glossy realistic pale egg just hit packed earth — dust burst, still wet-specular, unhurt. #8fc4e0 egg-plane. MUTED Buyeo yard, grey-giwa hall as dark bar. #a89a72 dirt. No crack. No people. No text."
+	},
+	{
+		"id": "egg-ordeal-second-hurl",
+		"alt": "Dutch: Geumwa mid-second-throw, red-burgundy sleeve flung, glossy egg leaving the hand again",
+		"prompt": "Dutch second throw. ONE Geumwa mid-hurl, red-burgundy sleeve flung, verb pose not a portrait clone. ONE glossy realistic pale egg leaving the hand. #8fc4e0 egg-plane. #a89a72 dirt rim. LOCK pl_buyeo_yard packed earth, hall as dark bar. No gold plate. No clone kings. No text."
+	},
+	{
+		"id": "egg-ordeal-bounce",
+		"alt": "Dutch low: one glossy egg bouncing on packed earth, motion streak and dust, still unhurt",
+		"prompt": "Dutch low bounce. ONE glossy realistic pale egg bouncing on packed earth — motion arc, dust, still wet-specular, unhurt. #8fc4e0 egg-plane. MUTED Buyeo yard, hall as dark bar. ONE device: the bounce-arc. No people. No crack. No text."
+	},
+	{
+		"id": "egg-ordeal-birds-seize",
+		"alt": "Aerial: dark birds seize one glossy egg in talons and carry it off over the muted Buyeo yard",
+		"prompt": "Aerial seize. Dark birds SEIZE ONE glossy realistic pale egg in talons and carry it off — wing-arcs, motion lines, talons locked. Egg as the bright #8fc4e0 oval in claws. MUTED Buyeo yard far below, grey-giwa hall stamp. Birds carry; they do NOT peck it open. No white doves. No people. No text."
+	},
+	{
+		"id": "egg-ordeal-birds-flight",
+		"alt": "Dutch wing-storm: dark birds covering the glossy egg with wings while carrying it in flight over the palisade",
+		"prompt": "Dutch wing-storm in flight. Dark birds COVER the egg with wings WHILE carrying — wing-arc storm, motion. ONE glossy realistic pale egg still whole in the cluster as #8fc4e0 plane. MUTED sky, Buyeo palisade as a thin dark line below. They do NOT peck it open. No white-dove circle. No people. No text."
+	},
+	{
+		"id": "egg-ordeal-drop-door",
+		"alt": "Dutch doorstep: glossy egg dropped unhurt onto packed earth at a timber hatch-door, birds leaving in bokeh",
+		"prompt": "Dutch OTS doorstep. ONE glossy realistic pale egg dropped onto packed earth at a timber hatch-door — unhurt, wet specular, #8fc4e0 plane. MUTED Buyeo doorway, grey-giwa. Dark birds leaving as wing-stamps in upper bokeh. LOCK pl_buyeo_yard. No people. No crack. No text."
+	}
+]

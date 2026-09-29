@@ -1,0 +1,18 @@
+[
+	{"id":"family-seq-ride-wide","alt":"Dutch dusk wide: Chunchu in magenta prince robes, Gotaso with him, Bupmin in blue on a trailing horse; Eastern Palace in bokeh","prompt":"Caravaggio 16:9. DUTCH wide. Prince Chunchu (no hwarang headband). Child Bupmin blue hanbok. Magenta #D8258C key. No glow."},
+	{"id":"family-seq-ride-close","alt":"Dutch close: Chunchu laughing in magenta prince robes, child Gotaso in front of him; giwa bokeh","prompt":"Caravaggio 16:9. DUTCH close. No headband. Magenta #D8258C. FG mane, BG giwa bokeh. No glow."},
+	{"id":"moon-seq-hall-bird","alt":"Dutch gallery inside Moon Palace: empty timber hall, vermilion light-seam, Caravaggio key","prompt":"Caravaggio 16:9. DUTCH gallery. Vermilion #E8552B seam. Painterly timber. No glow."},
+	{"id":"sunduk-seq-coronation-sym","alt":"Worm’s-eye: Sunduk standing on the dark hall axis, one hard key","prompt":"Caravaggio 16:9. WORM’S-EYE. Sunduk standing. Vermilion plane. No glow."},
+	{"id":"sabi-seq-hall-bird","alt":"Dutch gallery in Sabi palace; Geum trading port and masts through the doors in bokeh","prompt":"Caravaggio 16:9. DUTCH gallery. Sabi port through doors. Amber #e08a2e. No glow."},
+	{"id":"euija-seq-disguise-yard","alt":"Dutch: unbearded young Euija in a gray robe on the Sabi quay, ships in bokeh","prompt":"Caravaggio 16:9. DUTCH. Gray robe, no beard. Amber #e08a2e key not glow. Sabi port."},
+	{"id":"gyebek-seq-dive-wide","alt":"Dutch wide: a boy in white hanbok diving at Baekgang; gray-robed Euija on the bank","prompt":"Caravaggio 16:9. DUTCH wide. Boy white hanbok. Waterline. No glow. No armor."},
+	{"id":"gyebek-seq-surface","alt":"Dutch close: the boy gasping at the waterline in soaked white hanbok","prompt":"Caravaggio 16:9. DUTCH ECU. Boy sheet. Yellow #d9b13a. No glow."},
+	{"id":"gyebek-seq-name","alt":"Dutch two-shot: gray-robed Euija naming a kneeling boy in wet white hanbok","prompt":"Caravaggio 16:9. DUTCH two-shot. Boy + young Euija. No glow."},
+	{"id":"gyebek-fb-burn","alt":"Memory: a boy in noble silk running from a burning hanok","prompt":"Caravaggio 16:9 memory. DUTCH. Boy sheet. Fire as key-plane not glow."},
+	{"id":"gyebek-fb-run","alt":"Memory dutch: the boy in torn silk running a timber alley","prompt":"Caravaggio 16:9 memory. DUTCH alley. Boy sheet. No glow."},
+	{"id":"gyebek-fb-beg","alt":"Memory dutch low: the boy begging at a timber gate, dirty noble collar","prompt":"Caravaggio 16:9 memory. DUTCH low. Boy sheet. No glow."},
+	{"id":"gesomun-seq-yeon-snow","alt":"Dutch crane: one rider below the snowy Yeon mountain fortress","prompt":"Caravaggio 16:9. DUTCH crane. Snowy Yeon fortress. Red-wing #C30000. Not Pyongyang city. No glow."},
+	{"id":"gesomun-seq-pyongyang-wide","alt":"Dutch crane: one rider entering Pyongyang as a Taedong river city","prompt":"Caravaggio 16:9. DUTCH crane. Pyongyang city. Dense giwa, river. Red-wing. No glow."},
+	{"id":"gesomun-seq-pyongyang-gate","alt":"Worm’s-eye dutch: Gesomun under the city gate, streets in haze beyond","prompt":"Caravaggio 16:9. WORM’S-EYE. Urban gate. Blank plaque. No glow. No text."},
+	{"id":"pyongyang-seq-hall-bird","alt":"Dutch gallery in a Pyongyang capital hall; city giwa through the doors","prompt":"Caravaggio 16:9. DUTCH gallery. Urban palace. Red #C30000 plane. No glow."}
+]

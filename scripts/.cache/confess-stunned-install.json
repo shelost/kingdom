@@ -1,0 +1,27 @@
+[
+	{
+		"id": "confess-silence-gap",
+		"alt": "Dutch two-shot: packed-earth gap between frozen Jumong and Sosuno; Jolbon well-yard",
+		"prompt": "Dutch two-shot. Packed-earth gap as the device. Both frozen. LOCK Jolbon well-yard."
+	},
+	{
+		"id": "jumong-stunned-ecu",
+		"alt": "ECU Jumong stunned: grin dead, mouth open, blown pupils, red headband",
+		"prompt": "Intimate ECU. Jumong stunned. Grin dead. Mouth open. Red #e8563f cheek-plane."
+	},
+	{
+		"id": "sosuno-stunned-ecu",
+		"alt": "ECU Sosuno stunned at herself: mouth still open, ears red, dusty-rose, bird binyeo",
+		"prompt": "Intimate ECU. Sosuno stunned at herself. Mouth still open. Dusty-rose #e8a04a blush-plane."
+	},
+	{
+		"id": "confess-insert-rope",
+		"alt": "Insert: hemp well-rope as a vertical; granite rim; empty packed earth",
+		"prompt": "Insert still-life. Hemp well-rope as a vertical. Granite rim. Nobody in the shaft."
+	},
+	{
+		"id": "jumong-here-soft",
+		"alt": "ECU Jumong soft after the stun: not grinning, still here, red silk",
+		"prompt": "Intimate ECU. Jumong soft after the stun. Not grinning. Still here."
+	}
+]

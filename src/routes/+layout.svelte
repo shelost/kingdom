@@ -3,6 +3,7 @@
 	import '$lib/components/diagrams/orgChartTheme.css';
 	import { beforeNavigate, goto } from '$app/navigation';
 	import { page } from '$app/state';
+	import { untrack } from 'svelte';
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
 	import GradePopover from '$lib/components/GradePopover.svelte';
 	import MobileTabBar from '$lib/components/MobileTabBar.svelte';
@@ -12,11 +13,15 @@
 
 	let { children } = $props();
 
+	/* Only the URL is a dependency: the appliers read reader state, and tracking it
+	   would re-apply a stale `?ep=` the instant Prev/Next moves the index. */
 	$effect(() => {
 		const url = page.url;
-		applyNsfwFromUrl(url);
-		applyEditFromUrl(url);
-		applyReadingFromUrl(url);
+		untrack(() => {
+			applyNsfwFromUrl(url);
+			applyEditFromUrl(url);
+			applyReadingFromUrl(url);
+		});
 	});
 
 	/** Carry reader flags across same-origin in-app navigations. */

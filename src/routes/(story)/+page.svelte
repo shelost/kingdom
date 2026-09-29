@@ -1277,9 +1277,10 @@
 			padding: 4rem 1.15rem max(6rem, calc(env(safe-area-inset-bottom, 0px) + 4rem));
 		}
 
+		/* Stands above the episode pill, which spans the phone's foot. */
 		.edit-link {
 			right: max(0.7rem, env(safe-area-inset-right, 0px));
-			bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
+			bottom: calc(max(0.7rem, env(safe-area-inset-bottom, 0px)) + 3.9rem);
 			min-height: 2.75rem;
 			display: inline-grid;
 			place-items: center;

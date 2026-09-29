@@ -1,0 +1,112 @@
+[
+	{
+		"id": "haemosu-night-arrive",
+		"alt": "Night rain Amnok: Jumong on near stones; gold chariot plane arriving",
+		"prompt": "Dutch wide night rain. Tiny crimson Jumong on near stones. Gold #f0b429 light-plane, five-dragon wheeled chariot arriving. LOCK pl_white_river banks. NO boats. NO body-halo."
+	},
+	{
+		"id": "haemosu-shaft-knock",
+		"alt": "Gold light-plane knocks Haewonmek mid-flight; tiny Jumong still on the stones",
+		"prompt": "Dutch mid-air. Gold #f0b429 plane knocks Haewonmek. Jumong tiny, watching water. NO body-halo."
+	},
+	{
+		"id": "haewonmek-pin-stones",
+		"alt": "Haewonmek crouched over Jumong on wet stones, sword-arm raised",
+		"prompt": "Low two-shot night rain. Haewonmek pin, blow coming down. Jumong clean-shaven. Sword as black diagonal."
+	},
+	{
+		"id": "haemosu-wrist-close",
+		"alt": "Close: Haemosu locks Haewonmek’s sword-hand in the rain",
+		"prompt": "Dutch close. Wrist/sword lock. Haemosu grin. Haewonmek gat, mouth-band. Gold as key-plane, no halo."
+	},
+	{
+		"id": "haewonmek-blocked-ecu",
+		"alt": "ECU Haewonmek: gat, black mouth-band, blocked glare in the rain",
+		"prompt": "ECU look-back. Gat brim as black bar. Cobalt sash. Night rain. No halo."
+	},
+	{
+		"id": "haemosu-heh-ecu",
+		"alt": "ECU Haemosu: jolly sun-grin in night rain",
+		"prompt": "ECU sun-grin. Gold #f0b429 as cheek plane, NEVER body-halo. White robe from portrait."
+	},
+	{
+		"id": "jumong-ford-call",
+		"alt": "Jumong clean-shaven shouting at the night river, bow high",
+		"prompt": "Dutch shout/run. Clean-shaven. Crimson #e8563f. River as black bar. Make way for me."
+	},
+	{
+		"id": "jumong-turtle-night",
+		"alt": "Bird’s-eye night: spaced 자라 discs, water gaps, tiny crimson Jumong mid-run",
+		"prompt": "LOCKED FORD: same olive-brown oval discs, one-shell-width water gaps, runnable. No leatherback. No boats. Jumong clean-shaven #e8563f."
+	},
+	{
+		"id": "jumong-turtle-crossing-wide",
+		"alt": "Wide night: same spaced turtle-ford, Jumong mid-run",
+		"prompt": "LOCK same 자라 discs and gaps as jumong-turtle-night. Wide moon river. No boats. No pile."
+	},
+	{
+		"id": "jumong-turtle-crossing-dutch",
+		"alt": "Dutch: Jumong running the same spaced wet discs, bow high",
+		"prompt": "LOCK same ford DNA. Dutch mid-stride. Clean-shaven. Water gaps. No ships."
+	},
+	{
+		"id": "gods-watch-run",
+		"alt": "Near bank: laughing Haemosu’s arm on Haewonmek; spaced turtles, red speck beyond",
+		"prompt": "Two-shot night. Haemosu laugh, Haewonmek mouth-band. LOCK spaced 자라 line. Gold as cheek key, no halo."
+	},
+	{
+		"id": "haemosu-boy-ecu",
+		"alt": "ECU Haemosu: proud look-off, gold as a cheek plane",
+		"prompt": "ECU that’s-my-boy. Gold #f0b429 plane, NEVER body-halo. Night rain."
+	},
+	{
+		"id": "haewonmek-ledger-ecu",
+		"alt": "ECU Haewonmek: gat, mouth-band, robbed-ledger look-back",
+		"prompt": "ECU clerk-exasperated. Askew gat. Night rain. You just robbed a ledger."
+	},
+	{
+		"id": "haemosu-thats-my-boy",
+		"alt": "OTS gold chariot rail: Haemosu watching Jumong on the spaced living ford",
+		"prompt": "OTS gold rail as light-plane. LOCK same spaced 자라. Tiny crimson Jumong. No boats. No halo."
+	},
+	{
+		"id": "tabal-name-ecu",
+		"alt": "ECU Tabal torch interrogation: Name.",
+		"prompt": "ECU lean-in. FACE ch_yeon_tabal. Torch hall. Name."
+	},
+	{
+		"id": "tabal-who-sent-ecu",
+		"alt": "ECU Tabal: So who sent you — sour weigh, timber post",
+		"prompt": "ECU dutch. Tabal sour. Night giwa bokeh. So who sent you."
+	},
+	{
+		"id": "tabal-millet-ecu",
+		"alt": "ECU Tabal turning away: The millet likes you. I don’t.",
+		"prompt": "ECU turn. Tiger pelt. Torch half-face. Millet likes you."
+	},
+	{
+		"id": "jumong-seq-crown-yard",
+		"alt": "Wide dusk: same packed-earth yard, five fires, vermilion cord, tiny king and queen",
+		"prompt": "Bird’s-eye LOCK summit yard. Five fires. Grey giwa. Vermilion cord. No army."
+	},
+	{
+		"id": "crown-fires-dutch",
+		"alt": "Five fire columns on the same packed-earth yard; king and queen tiny",
+		"prompt": "Five pits, same wind, same yard. King/queen lower-third. High contrast."
+	},
+	{
+		"id": "crown-cord-tabal",
+		"alt": "Tabal sets a vermilion cord on King Jumong’s brow; five fires behind",
+		"prompt": "Dutch OTS. Tabal FACE ch_yeon_tabal. King FACE ch_dongmyung. Cord as red line. Same yard."
+	},
+	{
+		"id": "crown-king-worm",
+		"alt": "King Jumong newly corded among five fires under a giwa eave",
+		"prompt": "Dongmyung FACE/garments. Five fires. Same packed earth. Vermilion on brow."
+	},
+	{
+		"id": "crown-queen-rail",
+		"alt": "Queen Sosuno at a timber rail, counting the five fires in the same yard",
+		"prompt": "OTS rail. FACE ch_sosuno_queen, binyeo bn_sosuno. #e8a04a rim only. Same yard."
+	}
+]

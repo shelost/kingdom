@@ -13,6 +13,8 @@
  * armed-but-silent until the reader interacts with the page even once.
  */
 
+import { untrack } from 'svelte';
+
 export interface Track {
 	id: string;
 	file: string;
@@ -458,7 +460,16 @@ function applyLivePlayback() {
 	}
 }
 
+/**
+ * Callers drive this from `$effect`s keyed on a cue. It reads and rewrites
+ * `music`, so it must stay untracked or the effect re-runs until Svelte aborts
+ * every pending update on the page.
+ */
 export function playTrack(track: Track | null) {
+	untrack(() => switchTrack(track));
+}
+
+function switchTrack(track: Track | null) {
 	if (!a || !b) return;
 	const gen = ++playGen;
 	const prevYoutubeId = music.current?.youtubeId;

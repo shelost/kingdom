@@ -1,0 +1,72 @@
+[
+	{
+		"id": "jumong-seq-report-morning",
+		"alt": "Dutch porch: Jumong mid-stride reporting; Sosuno chin-down at the millet stick",
+		"prompt": "Minimal iconic 16:9 DUTCH grain porch. Jumong mid-stride reporting, CLEAN-SHAVEN, easy grin, red #e8563f. Sosuno chin-down at millet stick, dusty-rose, no blush. Porch-beam as hard bar. SAME Jolbon."
+	},
+	{
+		"id": "sosuno-seq-point-millet",
+		"alt": "Dutch: Sosuno pointing west millet, chin up; Jumong turning to follow",
+		"prompt": "Minimal iconic 16:9 DUTCH. Sosuno mid-point, chin up, dusty-rose, no blush. Jumong CLEAN-SHAVEN turning, easy grin, red #e8563f. Pointing arm as diagonal. SAME Jolbon porch."
+	},
+	{
+		"id": "jumong-seq-follow-finger",
+		"alt": "OTS: Sosuno’s pointing sleeve; Jumong mid-stride toward sacks",
+		"prompt": "Minimal iconic 16:9 OTS. Sosuno pointing sleeve foreground. Jumong CLEAN-SHAVEN mid-stride to sacks, grin, red #e8563f. Sleeve as foreground bar. SAME Jolbon yard."
+	},
+	{
+		"id": "jumong-seq-haul-grin",
+		"alt": "Worm’s-eye: Jumong hauling a millet sack, easy grin; Sosuno a porch stamp",
+		"prompt": "Minimal iconic 16:9 WORM’S-EYE. Jumong CLEAN-SHAVEN mid-lift millet sack, easy grin, red #e8563f. Sosuno tiny dusty-rose porch stamp. Sack as dark wedge. SAME Jolbon."
+	},
+	{
+		"id": "sosuno-seq-wrong-stack",
+		"alt": "Dutch: Sosuno correcting the wet sack off his shoulder; he still grins",
+		"prompt": "Minimal iconic 16:9 DUTCH. Sosuno yanking wet sack, chin up, no blush. Jumong CLEAN-SHAVEN still grinning, red #e8563f. Tilted sack as wrong diagonal. SAME Jolbon porch."
+	},
+	{
+		"id": "sosuno-seq-ditch-dont",
+		"alt": "Worm’s-eye ditch: Jumong digging and talking; Sosuno a stern stamp above",
+		"prompt": "Minimal iconic 16:9 WORM’S-EYE ditch. Jumong CLEAN-SHAVEN mid-dig, talking, grin, red #e8563f muddy. Sosuno stern dusty-rose stamp above. Ditch lip as horizon. SAME Jolbon."
+	},
+	{
+		"id": "jumong-seq-ditch-chat",
+		"alt": "Close: Jumong’s stupid-soft grin from the ditch, muddy, talking",
+		"prompt": "Intimate CLOSE 16:9. Jumong CLEAN-SHAVEN stupid-soft grin, talking from ditch, red #e8563f collar. Ditch lip as lower-third bar. SAME Jolbon bokeh."
+	},
+	{
+		"id": "sosuno-seq-rope-watch",
+		"alt": "Dutch well: Jumong mid-pull on hemp; Sosuno watching, chin up",
+		"prompt": "Minimal iconic 16:9 DUTCH SAME Jolbon well. Jumong CLEAN-SHAVEN mid-pull hemp, grin, red #e8563f. Sosuno watching chin up, dusty-rose, no blush. T-beam horizontal. Work not kiss."
+	},
+	{
+		"id": "jumong-seq-bucket-work",
+		"alt": "OTS well: bucket sharp in front; Jumong lifting the other; Sosuno counting in bokeh",
+		"prompt": "Minimal iconic 16:9 OTS well work. Foreground bucket stamp. Jumong CLEAN-SHAVEN lifting second bucket, grin, red #e8563f. Sosuno counting in bokeh. SAME granite well. Not a kiss."
+	},
+	{
+		"id": "sosuno-seq-dusk-count",
+		"alt": "Dutch dusk porch: unused peg and dry bowl; Sosuno finishing the stick; Jumong waiting",
+		"prompt": "Minimal iconic 16:9 DUTCH dusk porch. Peg and dry bowl as objects. Sosuno finishing count, chin up, dusty-rose. Jumong CLEAN-SHAVEN waiting lower-third, red #e8563f. Peg as vertical. SAME Jolbon."
+	},
+	{
+		"id": "sosuno-seq-work-chin-ecu",
+		"alt": "ECU: Sosuno work-face, chin up, no blush, dusty-rose rim",
+		"prompt": "Intimate CLOSE 16:9 ECU Sosuno work-face, chin up, no blush, #e8a04a rim, bird binyeo. Chin as hard horizontal. Grain-porch bokeh."
+	},
+	{
+		"id": "jumong-seq-work-soft-ecu",
+		"alt": "ECU: Jumong clean-shaven stupid-soft grin, millet-dust bokeh",
+		"prompt": "Intimate CLOSE 16:9 ECU Jumong CLEAN-SHAVEN stupid-soft grin, red #e8563f collar. Grin owns the frame. Millet-dust bokeh."
+	},
+	{
+		"id": "sosuno-seq-work-first-two",
+		"alt": "Dutch two-shot: Sosuno counting, Jumong hauling; packed-earth gap between them",
+		"prompt": "Minimal iconic 16:9 DUTCH two-shot. Packed-earth gap. Sosuno counting chin up. Jumong CLEAN-SHAVEN kneeling at sacks, grin, red #e8563f. They do not touch. SAME Jolbon porch."
+	},
+	{
+		"id": "sosuno-seq-dont-grin-work",
+		"alt": "Intimate two-shot: her stern lid, his easy grin; they do not kiss",
+		"prompt": "Intimate CLOSE 16:9 two-shot. Sosuno stern lid, no blush. Jumong CLEAN-SHAVEN still grinning, red #e8563f. Her shoulder as descending plane. No kiss."
+	}
+]

@@ -1,0 +1,13 @@
+[
+	{ "id": "onjo-seq-buyeo-bully", "alt": "Dutch: Buyeo packed-earth yard — Yuri shoved; timber storehouses, grey giwa", "prompt": "Dutch Buyeo yard shove" },
+	{ "id": "onjo-seq-pine-dig", "alt": "Worm’s-eye: Yuri kneeling at a seven-sided stone under a pine; broken sword in dirt", "prompt": "Pine seven-sided stone dig" },
+	{ "id": "onjo-seq-retrace-wide", "alt": "Bird’s-eye: tiny figures on a real river road south — same pines Jumong fled", "prompt": "River road retrace" },
+	{ "id": "onjo-seq-court-match", "alt": "Dutch: Goguryeo timber hall — two broken sword halves meeting; Dongmyung and Yuri", "prompt": "Sword halves click" },
+	{ "id": "onjo-seq-left-rail", "alt": "OTS: Queen Sosuno at Jolbon hall rail; Onjo and Biryu tiny in the yard below", "prompt": "Queen rail leftover sons" },
+	{ "id": "onjo-seq-ten-pack", "alt": "Dutch: ten carts on packed earth; Onjo counting sacks, Biryu tying rope", "prompt": "Ten men packing" },
+	{ "id": "onjo-seq-torn", "alt": "Two-shot dutch: King Dongmyung with Onjo and Biryu in the empty hall", "prompt": "Jumong torn with sons" },
+	{ "id": "onjo-seq-caravan-dawn", "alt": "Wide dawn: caravan leaving Jolbon yard — king at the gate, queen and sons on the road", "prompt": "Dawn caravan send-off" },
+	{ "id": "jumong-seq-crown-yard", "alt": "Wide: Jolbon packed-earth courtyard coronation — timber hall, five fire-pits, tiny figures", "prompt": "Vermilion cord courtyard" },
+	{ "id": "jumong-seq-crown-fires", "alt": "Dutch: five fire-pits in a Jolbon yard answering one wind; king a lower-third silhouette", "prompt": "Five fires same wind" },
+	{ "id": "jumong-seq-crown-rail", "alt": "OTS: Queen Sosuno at the hall rail looking at the cord; millet-smell yard beyond", "prompt": "First queen millet rail" }
+]

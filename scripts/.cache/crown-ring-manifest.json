@@ -1,0 +1,32 @@
+[
+	{
+		"id": "crown-ring-wide",
+		"alt": "High wide: five chiefs in a ring of bowed backs on packed earth; Jumong center; Tabal placing the vermilion cord",
+		"prompt": "LOCK yard/pose from crown-cord-tabal (setting only). Circle of bowed backs. Jumong center FACE ch_dongmyung. Tabal places vermilion cord FACE ch_yeon_tabal. Four other chiefs FACE from boards. One of each."
+	},
+	{
+		"id": "crown-ring-dutch",
+		"alt": "Dutch: bowed chief-backs as a ring; Jumong a center vertical; Tabal leaning in with the vermilion thread",
+		"prompt": "Dutch of the same ring. LOCK crown-cord-tabal yard. Bowed backs, not court-kowtow catalog. One of each attached face."
+	},
+	{
+		"id": "crown-thread-ecu",
+		"alt": "ECU: Tabal’s hands placing the vermilion thread on King Dongmyung’s brow; five fires bokeh",
+		"prompt": "ECU hands + vermilion thread. LOCK pose from crown-cord-tabal. FACE Tabal / Dongmyung from portraits. Same yard fires bokeh."
+	},
+	{
+		"id": "crown-jumong-center",
+		"alt": "Worm’s-eye center: King Dongmyung as a vertical; vermilion cord; circle of bowed chief-backs",
+		"prompt": "Jumong center vertical FACE ch_dongmyung. Human chiefs bowed in a ring. LOCK same yard from crown-cord-tabal."
+	},
+	{
+		"id": "crown-bowed-backs",
+		"alt": "OTS: a ring of bowed chief-backs — tiger, boar, wolf, bear pelts — Jumong and the cord in the center beyond",
+		"prompt": "Circle of bowed backs. Distinct pelts from four chief boards. Center Jumong + cord. LOCK yard from crown-cord-tabal."
+	},
+	{
+		"id": "crown-queen-rail-ring",
+		"alt": "OTS rail: Queen Sosuno watching the ring of bowed chiefs and the vermilion cord on the same packed-earth yard",
+		"prompt": "Queen FACE ch_sosuno_queen + bn_sosuno at a timber rail. Same ring ceremony in the yard. LOCK from crown-cord-tabal. #e8a04a rim only."
+	}
+]

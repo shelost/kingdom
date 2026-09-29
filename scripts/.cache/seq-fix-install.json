@@ -1,0 +1,62 @@
+[
+	{
+		"id": "jumong-yuhwa-wc-fox-pawprints",
+		"alt": "Watercolor — gold-aura fox silhouette ahead; pawprints; Yuhwa follows behind",
+		"prompt": "Watercolor — gold-aura fox silhouette ahead; pawprints; Yuhwa follows behind BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-yuhwa-wc-fox-follow-behind",
+		"alt": "Watercolor — following fox pawprints from behind",
+		"prompt": "Watercolor — following fox pawprints from behind BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-wc-habek-pavilion",
+		"alt": "Watercolor — Habek–Yuhwa in riverside pavilion",
+		"prompt": "Watercolor — Habek–Yuhwa in riverside pavilion BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-wc-habek-pavilion-ecu",
+		"alt": "Watercolor — Habek ECU in pavilion",
+		"prompt": "Watercolor — Habek ECU in pavilion BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-wc-habek-pavilion-kick",
+		"alt": "Watercolor — kick-out from pavilion steps",
+		"prompt": "Watercolor — kick-out from pavilion steps BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-wc-flirt-midriver-two",
+		"alt": "Watercolor — mid-river flirt two-shot, binyeo on head",
+		"prompt": "Watercolor — mid-river flirt two-shot, binyeo on head BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-wc-flirt-whisper-midriver",
+		"alt": "Watercolor — mid-river whisper; he still cocky",
+		"prompt": "Watercolor — mid-river whisper; he still cocky BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-ink-flirt-whisper-midriver",
+		"alt": "Ink — mid-river whisper; he not cracked yet",
+		"prompt": "Ink — mid-river whisper; he not cracked yet BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-wc-flirt-blush-midriver",
+		"alt": "Watercolor — mid-river blush AFTER whisper",
+		"prompt": "Watercolor — mid-river blush AFTER whisper BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-amnok-wc-flirt-makeout-midriver",
+		"alt": "Watercolor — mid-river makeout",
+		"prompt": "Watercolor — mid-river makeout BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-buyeo-wc-fox-pawprints-gate",
+		"alt": "Watercolor — pawprints to Buyeo gate; fox silhouette ahead",
+		"prompt": "Watercolor — pawprints to Buyeo gate; fox silhouette ahead BINYEO on head. Locked set."
+	},
+	{
+		"id": "jumong-buyeo-wc-geumwa-pawprint-arrive",
+		"alt": "Watercolor — pawprints end; Geumwa welcomes",
+		"prompt": "Watercolor — pawprints end; Geumwa welcomes BINYEO on head. Locked set."
+	}
+]

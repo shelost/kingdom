@@ -1,0 +1,47 @@
+[
+	{
+		"id": "wu-farewell-whisper",
+		"alt": "Same dark Daming corridor: Wu on her toes at his ear; he is already still",
+		"prompt": "Locked night feilang, crushed black. She whispers in his ear. Dim white-magenta hanbok, dim red silk. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-call",
+		"alt": "Same dark corridor: pale Wu calling, hand at her mouth; him turning in white-magenta",
+		"prompt": "Locked night feilang. She calls. He turns in white hanbok. Crushed black. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-turn",
+		"alt": "Same dark corridor: over-shoulder, Chunchu looking back with a question",
+		"prompt": "Locked night feilang. Over-shoulder turn. Question face. Crushed black. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-she",
+		"alt": "Same dark corridor: she is already in his space — How is she, not the throne",
+		"prompt": "Locked night feilang. She leans in. He caught. Crushed black. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-oh",
+		"alt": "Same dark corridor: Chunchu’s knowing smile — he has understood which she",
+		"prompt": "Locked night feilang. His knowing smile. Dim white-magenta. Her red silk behind. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-message",
+		"alt": "Same dark corridor: Wu speaking the message; Chunchu listening",
+		"prompt": "Locked night feilang. She speaks. He listens. Crushed black. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-who",
+		"alt": "Same dark corridor: Chunchu astonished — who did you say you were",
+		"prompt": "Locked night feilang. His shock. White-magenta hanbok. Crushed black. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-stun",
+		"alt": "Same dark corridor: after the whisper he is frozen mid-turn",
+		"prompt": "Locked night feilang. He frozen mid-turn. She behind. Crushed black. No lanterns. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-wave",
+		"alt": "Same dark corridor: she waves; he is already a small figure walking into the black",
+		"prompt": "Locked night feilang. She waves. He recedes. Crushed black. No lanterns. No text. No watermark."
+	}
+]

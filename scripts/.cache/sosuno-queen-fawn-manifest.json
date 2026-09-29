@@ -1,0 +1,14 @@
+[
+	{"id": "jumong-seq-fawn-yard", "alt": "Wide Jolbon yard: Jumong grinning; three anonymous women in teal / plum / saffron silk", "prompt": "fawn yard"},
+	{"id": "jumong-seq-fawn-ots", "alt": "OTS: saffron sleeve laugh; Jumong red grin", "prompt": "fawn ots"},
+	{"id": "jumong-seq-fawn-close", "alt": "Close dutch: Jumong grin; teal and plum girls crowding", "prompt": "fawn close"},
+	{"id": "jumong-seq-fawn-dutch", "alt": "Dutch well: three colored silks fawning; Jumong mid-laugh", "prompt": "fawn dutch"},
+	{"id": "sosuno-seq-jealous-dutch", "alt": "Dutch: Sosuno dusty-rose wedge between Jumong and fawning cluster", "prompt": "jealous dutch"},
+	{"id": "sosuno-seq-jealous-ecu", "alt": "ECU: Sosuno jealous glare", "prompt": "jealous ecu"},
+	{"id": "dongmyung-seq-hall-wide", "alt": "Wide: King Dongmyung alone in empty Jolbon hall", "prompt": "dongmyung hall"},
+	{"id": "sosuno-seq-queen-hall", "alt": "Dutch: Queen Sosuno stern at hall threshold", "prompt": "queen hall"},
+	{"id": "jumong-seq-royal-pair-new", "alt": "Two-shot: Dongmyung and Queen Sosuno dual royal portraits", "prompt": "royal pair new"},
+	{"id": "onjo-seq-queen-king-rail", "alt": "OTS: Queen Sosuno cold at rail; Dongmyung at well", "prompt": "queen king rail"},
+	{"id": "jumong-seq-summit-queen", "alt": "Queen Sosuno at the rail — royal portrait", "prompt": "summit queen"},
+	{"id": "onjo-seq-goodbye-well", "alt": "Dutch dusk: King Dongmyung and Queen Sosuno at well goodbye", "prompt": "goodbye well"}
+]

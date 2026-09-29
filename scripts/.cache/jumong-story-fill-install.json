@@ -1,0 +1,13 @@
+[
+  {"id":"habek-sentence-mist","alt":"Bird’s-eye mist-court: Habek on wet stones as a dais; copper kiln stamp; tiny Yuhwa","prompt":"Bird’s-eye LOCK pl_white_river mist-court. Habek on wet stones as dais. Copper kiln stamp. Tiny Yuhwa ice-blue. Mist plane device."},
+  {"id":"egg-ordeal-sty","alt":"Iconic: pale egg in sty; animals refuse; Buyeo timber bokeh","prompt":"Iconic LOCK pl_buyeo_yard. Pale egg oval in dark sty; dogs/pigs turning away. Timber bokeh."},
+  {"id":"egg-ordeal-road","alt":"Iconic: egg on road; cattle/hooves parting; Buyeo packed earth","prompt":"Iconic LOCK pl_buyeo_yard road. Pale egg low; cattle/horse hooves parting. Hall as dark bar."},
+  {"id":"egg-ordeal-birds","alt":"Iconic: birds wing-covering the egg in an open field","prompt":"Iconic open field. Pale egg center; birds covering with wings. Wing-arc device."},
+  {"id":"egg-ordeal-axe","alt":"Dutch: axe stopped on pale egg; Geumwa doorway stamp","prompt":"Dutch axe stopped on pale egg. Geumwa doorway stamp. LOCK pl_buyeo_yard."},
+  {"id":"jumong-turtle-crossing-wide","alt":"Wide night river: living turtle-fish ford; tiny crimson Jumong mid-run","prompt":"Wide night LOCK pl_white_river. Turtles/fish lock shell to shell. Tiny crimson Jumong mid-run. Living ford diagonal."},
+  {"id":"jumong-turtle-crossing-dutch","alt":"Dutch: Jumong crimson running wet turtle shells; night river","prompt":"Dutch Jumong mid-stride on wet turtle shells. Crimson silk. LOCK pl_white_river."},
+  {"id":"daeso-side-room","alt":"Dutch empty side room: low lamp, no record; Daeso and two minister silhouettes","prompt":"Dutch film-noir side-room. Daeso doorway stamp. One lamp seam. LOCK Buyeo hall timber."},
+  {"id":"tabal-bow-strain","alt":"Worm’s-eye: Tabal straining Jumong’s bow; torch hall; string won’t come","prompt":"Worm’s-eye Tabal straining heavy bow as vertical line. Jumong tiny stamp. String won’t come."},
+  {"id":"tabal-bow-stop","alt":"ECU Tabal: Stop! — torch sweat, bow still unbent","prompt":"ECU Tabal shouting Stop. Torch sweat. Bow unbent at edge."},
+  {"id":"onjo-biryu-well-watch","alt":"Dutch Jolbon well: two small princes watching; Sosuno chin at porch","prompt":"Dutch well rim circle. Onjo and Biryu watching. Sosuno queen chin at porch."}
+]

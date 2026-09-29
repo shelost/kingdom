@@ -1,0 +1,62 @@
+[
+	{
+		"id": "sunduk-seq-palace-wide",
+		"alt": "Dutch wide dusk: Eastern Palace pond as a black wedge; two tiny hanbok specks in the lower third",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH WIDE. ONE device: pond as a hard black diagonal wedge. Tiny figures lower third. Grey giwa, creamy bokeh. Pink #E07FA8 one accent. Crushed blacks, one hard key. No text. No watermark."
+	},
+	{
+		"id": "sunduk-seq-munhee-hair",
+		"alt": "Dutch: a comb as a hard diagonal; Munhee a single lower-third body against empty timber",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH. ONE device: comb as a hard diagonal. Munhee lower third, pink #E07FA8. Empty timber, bokeh lattice. Crushed blacks. No text. No watermark."
+	},
+	{
+		"id": "sunduk-seq-chunchu-prep",
+		"alt": "Dutch: timber pillar as a vertical; Chunchu mid-stride in the lower third of an empty colonnade",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH. ONE device: pillar as a hard vertical. Chunchu lower-third mid-stride, magenta #D8258C rim. Empty colonnade, giwa bokeh. No text. No watermark."
+	},
+	{
+		"id": "sunduk-seq-bupmin-hill",
+		"alt": "Worm’s-eye wide: hill-crest diagonal; tiny Bupmin in the lower third against empty grass and sky",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. WIDE WORM’S-EYE. ONE device: hill-crest diagonal. Tiny Bupmin lower third, crimson #C41E3A rim. Empty sky, giwa bokeh. No text. No watermark."
+	},
+	{
+		"id": "east-seq-hill-wide",
+		"alt": "Dutch wide night: one planet as a white shaft; two tiny boys on an empty hill above Surabol",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH WIDE NIGHT. ONE device: east planet as a hard white shaft. Two specks lower third. Crushed black hill. No text. No watermark."
+	},
+	{
+		"id": "east-seq-point",
+		"alt": "Dutch two-shot: a pointing arm as a diagonal to one planet; two boys reclining on an empty hill",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH. ONE device: pointing arm as a diagonal. Two lower-third bodies. Magenta #D8258C and blue #2A5FB8 rims. No text. No watermark."
+	},
+	{
+		"id": "east-seq-planet",
+		"alt": "Dutch OTS: Yushin’s shoulder as a blue plane; one planet pinprick on empty black",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH OTS. ONE device: shoulder as a hard blue plane; planet pinprick. Confucian-blue #2A5FB8. Empty sky. No text. No watermark."
+	},
+	{
+		"id": "east-seq-vow",
+		"alt": "Dutch low: tilted horizon slash; two boys lying in the lower third, vowing under empty sky",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH LOW. ONE device: tilted horizon slash. Two boys lower third. Empty sky, thin giwa bokeh. No text. No watermark."
+	},
+	{
+		"id": "gotaso-seq-market-wide",
+		"alt": "Dutch wide night street: lanterns as a horizontal of bokeh orbs; one tiny pink speck in the lower third",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH WIDE. ONE device: lanterns as a hard horizontal of orbs. One tiny pink speck lower third. Empty packed-earth street. No text. No watermark."
+	},
+	{
+		"id": "gotaso-seq-ford",
+		"alt": "Dutch low night: river as a black horizontal; Chunchu mid-stride in the lower third of an empty ford",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH LOW. ONE device: river as a hard black horizontal. Chunchu lower-third mid-stride, magenta #D8258C. Empty ford. No text. No watermark."
+	},
+	{
+		"id": "gotaso-seq-wipe",
+		"alt": "Dutch ECU: two hands wiping grass as a horizontal bar; Chunchu’s face a small lower-third fragment in bokeh",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH ECU. ONE device: hands as a hard horizontal bar. Empty crushed-black above. Magenta sleeve sharp, face in bokeh. No text. No watermark."
+	},
+	{
+		"id": "gotaso-seq-nineteen",
+		"alt": "Dutch wide dawn: the road as a pale ribbon; Chunchu carrying Gotaso in the lower third of empty fields",
+		"prompt": "ICONIC MINIMAL 16:9. 2D cel-painterly, not photoreal. No halo/bloom. DUTCH WIDE. ONE device: road as a pale ribbon. Two people lower third. Magenta #D8258C and pink #F0A3C0 rims. Empty mist. No text. No watermark."
+	}
+]

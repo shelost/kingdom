@@ -2,7 +2,12 @@
 	import type { Attachment } from 'svelte/attachments';
 	import { storyImg } from '$lib/img';
 
-	let { src, alt = '', live = false }: { src: string; alt?: string; live?: boolean } = $props();
+	let {
+		src,
+		alt = '',
+		live = false,
+		sizes = '9rem'
+	}: { src: string; alt?: string; live?: boolean; sizes?: string } = $props();
 
 	/** Resting lean, plus how far the cursor may push it. Degrees. */
 	const REST_X = 3;
@@ -82,8 +87,8 @@
 				<img
 					{...storyImg(src, {
 						kind: 'thumb',
-						sizes: '9rem',
-						widths: [128, 256, 384],
+						sizes,
+						widths: [128, 256, 384, 640],
 						alt
 					})}
 				/>
@@ -98,18 +103,19 @@
 <style>
 	/*
 	 * Thin box. A few degrees of rest lean, then the live cover eases
-	 * toward the cursor across the picture.
+	 * toward the cursor across the picture. Parents resize it through
+	 * `--album-size`; the right margin leaves room for the box edge.
 	 */
 	.album {
 		--depth: 0.5rem;
-		width: 8.2rem;
-		margin: 0 0 0.75rem;
+		width: var(--album-size, 7.6rem);
+		margin: 0 0.6rem 0.75rem 0;
 		pointer-events: none;
 	}
 
 	.rig {
 		position: relative;
-		height: 7.6rem;
+		aspect-ratio: 1;
 		perspective: 880px;
 		perspective-origin: 50% 45%;
 		transform-style: preserve-3d;
@@ -117,10 +123,7 @@
 
 	.box {
 		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 7.6rem;
-		aspect-ratio: 1;
+		inset: 0;
 		transform-style: preserve-3d;
 		transform-origin: center center;
 		transform: rotateX(3deg) rotateY(-5deg);
@@ -182,16 +185,8 @@
 
 	@media (max-width: 720px) {
 		.album {
-			width: 5.6rem;
-			margin-bottom: 0.5rem;
-		}
-
-		.rig {
-			height: 5.35rem;
-		}
-
-		.box {
-			width: 5.35rem;
+			width: var(--album-size, 5.35rem);
+			margin: 0 0.25rem 0.5rem 0;
 		}
 	}
 

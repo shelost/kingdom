@@ -1,0 +1,12 @@
+[
+	{"id":"sosuno-seq-dump-water","alt":"Dutch: Sosuno dumping a bucket at Jumong’s boots, looking away, dusty-rose silk","prompt":"Jolbon well-yard dutch dump. Dusty-rose #e8a04a. Red #e8563f Jumong grin."},
+	{"id":"jumong-seq-leave-bow","alt":"Worm’s-eye: Jumong walking away; his bow left on packed earth at the well-rim","prompt":"Bow as foreground bar. Jumong red back receding."},
+	{"id":"sosuno-seq-beam-shot","alt":"Worm’s-eye: Sosuno full-draw; arrow in the well-beam beside Jumong; packed earth","prompt":"Arrow in timber beam, not in him. Sosuno full-draw."},
+	{"id":"sosuno-seq-forced-confess","alt":"ECU: Sosuno looking down, heavy blush, mouth bitten, dusty-rose; Jumong’s grin in bokeh","prompt":"Hands as a bar. Forced confession ECU."},
+	{"id":"jumong-seq-tribes-wide","alt":"Bird’s-eye: five tiny timber-hall roofs, one packed-earth yard, Jumong a red speck","prompt":"Five roofs as a broken ring."},
+	{"id":"jumong-seq-tribes-speak","alt":"Dutch hall: Jumong mid-speech, red silk; Tabal on the porch-beam, weighing","prompt":"Porch-beam divider. Jumong speaking."},
+	{"id":"jumong-seq-king-vote","alt":"Low strip: Jumong kneeling to receive a crown-band; five tiny chiefs; giwa hall","prompt":"Kneeling king, empty yard."},
+	{"id":"jumong-seq-cave-dawn","alt":"Same Jumong cavern: hard dawn light-seam; tiny kneeling red figure in lower third","prompt":"Dawn seam, pl_jumong_cave."},
+	{"id":"jumong-seq-haemosu-unveil","alt":"Cavern two-shot: painterly Jumong kneeling; photoreal Haemosu in dawn gold","prompt":"Mortal painterly vs divine Haemosu."},
+	{"id":"jumong-seq-largest","alt":"Iconic wide: Jumong as king, tiny in a vast Jolbon courtyard, red #e8563f accent","prompt":"Tiny king lower third."}
+]

@@ -1,0 +1,32 @@
+[
+	{
+		"id": "wu-hall-01-keep",
+		"alt": "Night Daming flying corridor: vermilion columns, white plaster; pale Wu; Chunchu in white envoy robe with magenta inner",
+		"prompt": "Night movie inside Daming feilang. Vermilion columns, white lime, red dado, brick. White robe, magenta inner. Pale Wu. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-02-pale",
+		"alt": "Night close in Daming corridor: porcelain Wu; white-and-magenta envoy cuff",
+		"prompt": "Night close. Daming corridor. Pale Wu. White magenta cuff. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-03-yes",
+		"alt": "Night two-shot in Daming corridor: white envoy robe with magenta sash; pale Wu in red",
+		"prompt": "Night two-shot. Vermilion pillar, white plaster. White robe magenta. Pale Wu. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-04-how",
+		"alt": "Night close: Wu’s pale face latticed by Daming corridor light",
+		"prompt": "Night close. Lattice on pale Wu. Interior Daming. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-05-silence",
+		"alt": "Night Daming corridor: fierce pale Wu; Chunchu in white robe with magenta listening",
+		"prompt": "Night. Fierce pale Wu. White embassy robe magenta inner. Vermilion timber. No text. No watermark."
+	},
+	{
+		"id": "wu-farewell-whisper",
+		"alt": "Night Daming flying corridor: vermilion columns; pale Wu; Chunchu in white envoy robe with magenta",
+		"prompt": "Night movie inside Daming feilang. Vermilion columns, white lime. White robe magenta. No text. No watermark."
+	}
+]

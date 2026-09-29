@@ -1,0 +1,77 @@
+[
+	{
+		"id": "haemosu-heart-worm-speck",
+		"alt": "Worm’s-eye from Amnok shallows: three figures looking straight up; locked gold chariot a zenith speck",
+		"prompt": "Minimal iconic 16:9. Extreme worm’s-eye from Amnok shallows looking STRAIGHT UP. VAST living sky. SAME gold two-wheel five-dragon chariot as a SPECK at the ZENITH, really high, not mid-height. Object lock: two spoked wheels, rail, floor, yoke; dragons gold/crimson/azure/jade/white. Three small figures in pale silk looking up. Gold #f0b429 light-plane, no halo."
+	},
+	{
+		"id": "haemosu-heart-yuhwa-chin",
+		"alt": "Worm’s-eye: Yuhwa chin straight up from the Amnok; locked gold chariot a sky stamp",
+		"prompt": "Intimate cinematic 16:9. Worm’s-eye ECU: ONE Yuhwa chin STRAIGHT UP, ice-blue #8fc4e0, FACE+binyeo from attached. SAME gold two-wheel five-dragon chariot as a high stamp. Gold #f0b429 light-plane, no halo."
+	},
+	{
+		"id": "haemosu-heart-rail-ecu",
+		"alt": "ECU from the gold rail: Haemosu heart-pupils looking straight down; Amnok a hair-thin ribbon, extremely high",
+		"prompt": "Intimate cinematic 16:9. ECU at the gold RAIL. ONE Haemosu looking STRAIGHT DOWN, gold heart-pupils #f0b429, stunned-want. SAME chariot object: rail + spoked wheel. River a hair-thin ribbon. Gold as light-plane, never a body-halo."
+	},
+	{
+		"id": "haemosu-heart-floor-birds",
+		"alt": "Bird’s-eye from the chariot floor: gold wheel-rim foreground; three wet dots in a vast Amnok; extremely high",
+		"prompt": "Minimal iconic 16:9. Strict bird’s-eye from INSIDE the chariot looking STRAIGHT DOWN. Gold SPOKED WHEEL RIM as foreground arc. EXTREMELY HIGH: three dots in the Amnok. SAME object lock. Gold #f0b429 floor light-plane, no halo."
+	},
+	{
+		"id": "haemosu-heart-dutch-high",
+		"alt": "Dutch streak still high: locked five-dragon gold chariot; thin Amnok ribbon below",
+		"prompt": "Minimal iconic 16:9. Dutch streak, camera still HIGH. SAME gold two-wheel five-dragon chariot. ONE Haemosu looking STRAIGHT DOWN, heart-pupils #f0b429. Gold light-plane, no halo."
+	},
+	{
+		"id": "haemosu-sky-dawn-tiny",
+		"alt": "Bird’s-eye dawn: tiny locked five-dragon gold two-wheel chariot stamps a cool Amnok ribbon",
+		"prompt": "Minimal iconic 16:9. Bird’s-eye dawn. TINY gold two-wheel sun-chariot comma-stamp. SAME object lock. Gold #f0b429 dawn light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-dawn-drive",
+		"alt": "Dutch close dawn: Haemosu full-drive on the locked gold two-wheel chariot; Amnok ribbon far below",
+		"prompt": "Minimal iconic 16:9. Dutch close dawn full-drive. SAME locked chariot. Gold #f0b429 dawn light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-noon-laugh",
+		"alt": "Dutch close noon: Haemosu mid-laugh full-drive on the locked five-dragon gold chariot",
+		"prompt": "Minimal iconic 16:9. Dutch close noon, mid-laugh full-drive. SAME locked chariot. Gold #f0b429 noon light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-worm-earth",
+		"alt": "Worm’s-eye from Amnok bank: locked five-dragon gold chariot a high stamp in noon sky",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye from Amnok bank looking FAR UP. SAME chariot as a high stamp. Gold #f0b429 light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-dutch-streak",
+		"alt": "Dutch streak: locked gold five-dragon chariot cutting noon cloud as a hard diagonal",
+		"prompt": "Minimal iconic 16:9. Dutch streak. SAME gold wheeled chariot as a speed diagonal. Gold #f0b429 light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-ecu-rail",
+		"alt": "ECU: Haemosu leaning on the gold chariot rail plus one spoked wheel; noon sky bokeh",
+		"prompt": "Intimate cinematic 16:9. ECU rail + wheel. ONE Haemosu leaning, mid-laugh. SAME object lock. Gold #f0b429 light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-dusk-tiny",
+		"alt": "Bird’s-eye dusk: tiny locked five-dragon gold chariot over a low gold Amnok bar",
+		"prompt": "Minimal iconic 16:9. Bird’s-eye dusk. TINY gold chariot stamp. Gold #f0b429 dusk light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-dusk-lean",
+		"alt": "Dutch dusk: Haemosu leaning on the locked gold rail, looking ahead; Amnok copper ribbon below",
+		"prompt": "Minimal iconic 16:9. Dutch close dusk lean on rail. SAME locked chariot. Gold #f0b429 dusk light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-night-stars",
+		"alt": "Bird’s-eye night: tiny locked five-dragon gold chariot under living stars; dark Amnok ribbon",
+		"prompt": "Minimal iconic 16:9. Bird’s-eye night, real stars. TINY gold chariot stamp. Gold #f0b429 night light-plane. No halo."
+	},
+	{
+		"id": "haemosu-sky-night-drive",
+		"alt": "Dutch night: Haemosu full-drive on the locked gold chariot looking down at a dark Amnok ribbon",
+		"prompt": "Minimal iconic 16:9. Dutch close night full-drive. SAME locked chariot. Gold #f0b429 light-plane. No halo."
+	}
+]

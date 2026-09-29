@@ -1,0 +1,22 @@
+[
+	{
+		"id": "sosuno-seq-cold-ecu",
+		"alt": "ECU: Sosuno cold command face, shuttered eyes, chin up, dusty-rose, no blush",
+		"prompt": "Minimal iconic 16:9 ECU. Sibling of girl-boss silence: Sosuno COLD command face, shuttered eyes, chin up, not blushing. FACE from ch_sosuno, binyeo, dusty-rose NOT gold. ONE device: her eye as the frame. #e8a04a rim. Cel-painterly. No text."
+	},
+	{
+		"id": "sosuno-seq-muster-dutch",
+		"alt": "Dutch: poster-scale Sosuno barking spear-count, tiny men in the lower third",
+		"prompt": "Minimal iconic 16:9 DUTCH. Sosuno poster-scale, chin up, barking a spear-count. FACE from ch_sosuno, dusty-rose NOT gold. Tiny men lower-third. ONE device: pointing arm diagonal. #e8a04a rim. Cel-painterly. No text."
+	},
+	{
+		"id": "sosuno-seq-mean-two",
+		"alt": "Dutch two-shot: Sosuno looking down on Jumong, cold chin; he grins",
+		"prompt": "Minimal iconic 16:9 DUTCH two-shot. Sosuno looking down, cold chin, FACE from ch_sosuno, dusty-rose. Jumong lower, grin, FACE from ch_jumong, #e8563f. ONE device: her shoulder as a descending plane. Cel-painterly. No text."
+	},
+	{
+		"id": "sosuno-seq-cold-ots",
+		"alt": "OTS: Sosuno’s cold dusty-rose shoulder; Jumong a small red grin in the yard",
+		"prompt": "Minimal iconic 16:9 OTS. Sosuno cold back/shoulder, FACE sliver from ch_sosuno. Jumong small in the yard, grin, #e8563f. ONE device: her shoulder as the frame edge. Cel-painterly. No text."
+	}
+]

@@ -1,0 +1,92 @@
+[
+	{
+		"id": "buyeo-seq-capital-wide",
+		"alt": "Bird’s-eye dusk river-capital: grey-giwa hall as a dark bar, palisade, thin river ribbon, tiny Geumwa",
+		"prompt": "Minimal iconic 16:9. Bird’s-eye dusk river-capital. LOCK pl_buyeo_yard. Tiny Geumwa burgundy. River ribbon. Hall as dark bar. No gold palace. No army. No text."
+	},
+	{
+		"id": "buyeo-seq-yard-dutch",
+		"alt": "Dutch crane: packed-earth Buyeo yard, hall as a horizontal bar, mark-stake a tiny vertical",
+		"prompt": "Minimal iconic 16:9. Dutch crane. LOCK pl_buyeo_yard. Empty yard. Hall bar. Mark-stake vertical. No army. No text."
+	},
+	{
+		"id": "buyeo-seq-hall-interior-wide",
+		"alt": "Wide empty Buyeo timber hall, one lamp-shaft, doorway opening onto the packed-earth yard",
+		"prompt": "Minimal iconic 16:9. Wide timber interior. Empty. Lamp-shaft plane. Doorway to yard. Tiny Geumwa stamp. No furniture dump. No text."
+	},
+	{
+		"id": "buyeo-seq-gate-wide",
+		"alt": "Outside the palisade: iron-boss doors, two tiny spear-guards, grey-giwa hall peeking over the fence",
+		"prompt": "Minimal iconic 16:9. Outside palisade iron-boss doors. Two tiny guards. LOCK pl_buyeo_yard. No army. No text."
+	},
+	{
+		"id": "buyeo-seq-river-edge",
+		"alt": "River in the foreground, Buyeo hall a distant dark bar beyond the palisade",
+		"prompt": "Minimal iconic 16:9. River foreground. Hall as distant bar. LOCK pl_buyeo_yard. Real bank. No army. No text."
+	},
+	{
+		"id": "buyeo-seq-childhood-tiny",
+		"alt": "Bird’s-eye same Buyeo yard: three tiny child princes at the mark-stake, hall as a dark bar",
+		"prompt": "Minimal iconic 16:9. Bird’s-eye. Three tiny boys at stake. Jumong #e8563f. LOCK pl_buyeo_yard. Location dominates. No glow. No text."
+	},
+	{
+		"id": "buyeo-seq-night-palisade",
+		"alt": "Night Buyeo: palisade gate, pines, hall as a dark bar, Jumong a tiny red stamp",
+		"prompt": "Minimal iconic 16:9 night. Gate + pines + hall. Jumong tiny red #e8563f. LOCK pl_buyeo_yard. No army. No text."
+	},
+	{
+		"id": "buyeo-seq-hatch-room-wide",
+		"alt": "Wide timber hatch-room: tiny infant and shell in lower third, doorway onto the Buyeo packed-earth yard",
+		"prompt": "Minimal iconic 16:9 wide hatch-room. Doorway to yard. Tiny infant. Yuhwa ice-blue. LOCK pl_buyeo_yard. No neon. No text."
+	},
+	{
+		"id": "jumong-seq-buyeo-wide",
+		"alt": "Bird’s-eye dusk: Northern Buyeo packed-earth yard, grey-giwa hall as a dark bar, palisade, thin river, tiny Geumwa",
+		"prompt": "Minimal iconic 16:9. Bird’s-eye dutch dusk. LOCK pl_buyeo_yard. Tiny Geumwa. Hall as dark bar. No gold palace. No army. No text."
+	},
+	{
+		"id": "jumong-buyeo-boys",
+		"alt": "Worm’s-eye Buyeo yard: three boys at one mark-stake, giwa hall a dark bar above",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye. Three boys, hall above. LOCK pl_buyeo_yard. Jumong grin red. No glow. No text."
+	},
+	{
+		"id": "jumong-buyeo-youths",
+		"alt": "Dutch dusk same Buyeo yard: three youths at the mark-stake, hall as a dark bar",
+		"prompt": "Minimal iconic 16:9. Dutch dusk. Three youths. No glow. LOCK pl_buyeo_yard. Jumong grin. No text."
+	},
+	{
+		"id": "jumong-buyeo-hatch",
+		"alt": "16:9 timber hatch: wet infant beside broken pale shell, Yuhwa ice-blue, doorway to Buyeo yard in bokeh",
+		"prompt": "Intimate 16:9. Wet infant, shell, Yuhwa ice-blue. Doorway yard bokeh. Red seam as plane not halo. No text."
+	},
+	{
+		"id": "jumong-buyeo-hatch-worm",
+		"alt": "16:9 worm’s-eye from shell: infant looking up, Yuhwa ice-blue, doorway to Buyeo yard",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye shell. Infant looking up. Doorway to yard. Red seam plane. No glow halo. No text."
+	},
+	{
+		"id": "jumong-buyeo-hatch-hold",
+		"alt": "16:9 OTS: Yuhwa in ice-blue holding a wet infant; timber room, Buyeo dusk in the doorway",
+		"prompt": "Intimate 16:9 OTS. Yuhwa ice-blue court silk holding infant. Doorway to yard. No glow halo. No text."
+	},
+	{
+		"id": "jumong-buyeo-four",
+		"alt": "Night palisade of Buyeo: Jumong mid-stride through iron-boss doors, three friends as lower-third silks",
+		"prompt": "Low dutch night. Iron-boss doors. Jumong mid-stride red #e8563f. Three anonymous friends. LOCK pl_buyeo_yard. No text."
+	},
+	{
+		"id": "jumong-buyeo-knife",
+		"alt": "Dutch night colonnade: blade as a hard black line, Jumong ducking, one lamp, empty timber",
+		"prompt": "One frame dutch night. Blade as black line. Jumong ducking. One lamp. No split-screen. No text."
+	},
+	{
+		"id": "yuhwa-sunshaft-timber",
+		"alt": "16:9 dutch Buyeo timber: gold sun-plane cutting dark; Yuhwa in ice-blue; yard through the door",
+		"prompt": "Minimal iconic 16:9. Dutch interior. Sun-shaft as plane not halo. Yuhwa ice-blue. Tiny Geumwa doorway. LOCK pl_buyeo_yard. No text."
+	},
+	{
+		"id": "jumong-buyeo-boys-worm",
+		"alt": "16:9 worm’s-eye Buyeo yard: three boys at the stake, giwa hall a dark bar above",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye packed earth. Three boys, hall bar above. LOCK pl_buyeo_yard. No text."
+	}
+]

@@ -1,0 +1,15 @@
+[
+	{"id":"jumong-seq-buyeo-wide","alt":"Bird’s-eye dusk: grey-giwa Buyeo timber yard, river ribbon, Geumwa in red-burgundy court silk mid-stride","prompt":"Grey giwa Buyeo, not gold. Geumwa FACE AND GARMENTS from ch_geumwa. Bird’s-eye dutch. No text."},
+	{"id":"jumong-seq-forest-wide","alt":"Aerial night pine net: tiny Jumong running red","prompt":"Aerial pine net. Jumong FACE from ch_jumong. No text."},
+	{"id":"jumong-seq-cave-wide","alt":"Worm’s-eye Jumong cavern mouth: kneeling red figure, leaf-light arch","prompt":"Place from pl_jumong_cave. Jumong FACE from ch_jumong. Worm’s-eye. No text."},
+	{"id":"jumong-seq-jolbon-wide","alt":"Dutch dusk: Jolbon hall as a dark wedge, Jumong arriving, Tabal weighing from the porch","prompt":"Jolbon timber hall. FACE from ch_jumong and ch_yeon_tabal. No text."},
+	{"id":"jumong-seq-tabal-weigh","alt":"OTS: Tabal in tiger-pelt weighing Jumong in the same hall","prompt":"OTS two-shot. FACE AND GARMENTS from attached. No text."},
+	{"id":"jumong-seq-porch-watch","alt":"High angle: Sosuno in dusty-rose hanbok on the grain porch, Jumong tiny in the yard","prompt":"Sosuno dusty-rose from ch_sosuno, not gold. Jumong from ch_jumong. No text."},
+	{"id":"jumong-seq-back-blush","alt":"OTS: Sosuno blushing in dusty-rose hanbok; Jumong’s red back in the yard","prompt":"Garments match portraits. OTS. No text."},
+	{"id":"jumong-seq-well-wide","alt":"Wide: Jolbon well, Jumong and Sosuno with a bucket, grey giwa","prompt":"Well circle device. FACE AND GARMENTS from attached. No readable text."},
+	{"id":"jumong-seq-well-name","alt":"Two-shot over the well-beam: he asks her name, she looks at the bucket","prompt":"Two-shot. FACE AND GARMENTS from attached. No text."},
+	{"id":"jumong-seq-well-tsun","alt":"ECU: Sosuno tsundere at the well, dusty-rose silk, bird binyeo","prompt":"ECU. FACE AND GARMENTS from ch_sosuno and bn_sosuno. No gold silk. No text."},
+	{"id":"jumong-seq-pine-wide","alt":"Worm’s-eye archery yard: Jumong full-draw, Tabal crouching, Sosuno on the porch in rose hanbok","prompt":"Pine vertical. Three portrait-true figures. No text."},
+	{"id":"jumong-seq-split","alt":"Worm’s-eye: Jumong at full draw, Tabal’s arrow splitting on the pine","prompt":"Bow as vertical. FACE from ch_jumong. No text."},
+	{"id":"jumong-seq-ledger","alt":"Night grain-room: Sosuno at the open ledger, Jumong watching her throat","prompt":"Lamp shaft. FACE AND GARMENTS from attached. No glass lantern. No text."}
+]

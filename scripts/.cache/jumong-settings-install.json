@@ -1,0 +1,16 @@
+[
+	{"id":"jumong-set-buyeo-night-sky","alt":"Bird’s-eye night: empty Buyeo packed-earth yard, grey-giwa hall as a dark bar, palisade, star field, one moon","prompt":"Empty Buyeo night sky. LOCK pl_buyeo_yard. Bird’s-eye. Zero people. Moon-plane + stars."},
+	{"id":"jumong-set-buyeo-worm-eaves","alt":"Worm’s-eye: grey-giwa eaves of the Buyeo hall against a crushed-black night sky, palisade teeth","prompt":"Worm’s-eye Buyeo eaves vs night. LOCK pl_buyeo_yard. Zero people."},
+	{"id":"jumong-set-buyeo-stake-moon","alt":"Dutch empty Buyeo yard: one mark-stake, moon as a hard plane, hall a distant dark bar","prompt":"Empty stake + moon. LOCK pl_buyeo_yard. Dutch. Zero people."},
+	{"id":"jumong-set-buyeo-river-night","alt":"Night river-edge: water in the foreground, Buyeo hall a distant dark bar beyond the palisade, stars","prompt":"Night river, hall distant. LOCK pl_buyeo_yard. Zero people."},
+	{"id":"jumong-set-well-empty-night","alt":"Empty Jolbon well at night: round granite rim, timber beam, two buckets, grey-giwa hall, moon","prompt":"Empty Jolbon well night. Same rim beam buckets. Zero people."},
+	{"id":"jumong-set-well-worm-sky","alt":"Worm’s-eye from packed earth: granite well-rim and timber beam cutting a star field","prompt":"Worm’s-eye well-rim into stars. Nobody in the shaft. Zero people."},
+	{"id":"jumong-set-well-dutch-empty","alt":"Dutch empty well-yard: granite rim lower-third, grey-giwa hall as a dark bar, two buckets","prompt":"Dutch empty Jolbon well. Hall as dark bar. Zero people."},
+	{"id":"jumong-set-jolbon-empty-night","alt":"Empty Jolbon night porch: grey-giwa eaves, one lamp-plane in the doorway, packed earth, no one","prompt":"Empty Jolbon porch night. Lamp in doorway. Zero people."},
+	{"id":"jumong-set-jolbon-roofs-stars","alt":"Bird’s-eye night: Jolbon grey-giwa roofs as dark bars under a star field, packed-earth yard empty","prompt":"Bird’s-eye Jolbon roofs vs stars. Zero people."},
+	{"id":"jumong-set-jolbon-yard-moon","alt":"Empty Jolbon packed-earth yard at moon, grey-giwa hall as a dark wedge, no figures","prompt":"Empty Jolbon yard moon. Hall as wedge. Zero people."},
+	{"id":"jumong-set-forest-empty","alt":"Aerial empty pine net: tall trunks as columns, dirt path, no runner","prompt":"Aerial pine net EMPTY. No red figure."},
+	{"id":"jumong-set-forest-night-stars","alt":"Worm’s-eye pine trunks as columns cutting a star field, forest floor crushed black","prompt":"Worm’s-eye pines vs stars. Empty forest."},
+	{"id":"jumong-set-forest-path-dutch","alt":"Dutch empty pine path: trunks as a closing net, one moonlight stamp on dirt","prompt":"Dutch empty pine path. No runner."},
+	{"id":"jumong-set-pine-empty","alt":"Empty Jolbon pine-yard dusk: one pine, grey-giwa hall corner, packed earth, no bodies","prompt":"Empty pine + giwa. Zero people."}
+]

@@ -1,0 +1,97 @@
+[
+	{
+		"id": "poster_gesomun",
+		"alt": "Yeon Gesomun — five ring-pommel swords fanned, gold rings the only light",
+		"prompt": "Minimal iconic 3:4 poster. Yeon Gesomun, Supreme Commander of Goguryeo. ONE geometric device: FIVE ring-pommel swords fanned as a hard radial behind him, the hollow GOLD RING POMMELS catching the only bright highlights. Extreme chiaroscuro. Face matches the attached portrait. Goguryeo red #d0362f as the plane. Isolated poster-scale body in the lower third. Flat charcoal-black void. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_gyebek",
+		"alt": "Gyebek — vertical sword divider, figure in the lower third",
+		"prompt": "Minimal iconic 3:4 poster. Gyebek, General of Baekje. ONE geometric device: a VERTICAL SWORD as a hard bright divider from top edge to bottom, figure in the LOWER THIRD. Extreme chiaroscuro. Face matches the attached portrait. Baekje gold-yellow #d9b13a as the plane. Flat charcoal-black void. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_taizong",
+		"alt": "Tang Taizong — worm’s-eye, imperial crown lit, yellow robe highlights",
+		"prompt": "Minimal iconic 3:4 poster. Tang Taizong, the Second Emperor. ONE geometric device: WORM’S-EYE monument, the imperial crown lit at the top. Extreme chiaroscuro. Face matches the attached portrait. Imperial yellow #c97a2e as the robe highlights. Flat charcoal-black void. No army. No throne catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_haemosu",
+		"alt": "Haemosu — sun-flash behind, five living dragons gold crimson azure jade white",
+		"prompt": "Minimal iconic 3:4 poster. Haemosu, sun god. ONE geometric device: a SUN-FLASH as a hard white-gold disk behind him, five living dragons as gold/crimson/azure/jade/white ribbons. Extreme chiaroscuro. Face matches the attached portrait. Sun-gold #f0b429 as the plane. Otherworld symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_ibiga",
+		"alt": "Ibiga — figure cut from clouds and bird negative space",
+		"prompt": "Minimal iconic 3:4 poster. Ibiga, sky god. ONE geometric device: the FIGURE IS FORMED FROM CLOUDS AND BIRDS as negative space. Extreme chiaroscuro. Face matches the attached portrait. Cobalt #1e4d9c. Ibiga IS clouds. Otherworld symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_muyeol",
+		"alt": "King Muyeol — full frontal, eyes in hard shadow, magenta court silk",
+		"prompt": "Minimal iconic 3:4 poster. Kim Chunchu as King Muyeol. ONE geometric device: FULL FRONTAL STAMP, eyes lost in HARD SHADOW under the Silla crown — not a film-noir half-face. Extreme chiaroscuro. Face matches the attached portrait. Magenta #D8258C as the plane. Flat charcoal-black void. No throne. No second figure. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_daebyeol",
+		"alt": "Big Star — right hand raised, one blue star above the palm",
+		"prompt": "Minimal iconic 3:4 poster. Big Star / Daebyeolwang. ONE geometric device: the RIGHT HAND raised, a single BLUE STAR hovering above the open palm. Extreme chiaroscuro. Face matches the attached portrait. Blue #3B6FBF as the plane and the star. Otherworld symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_sobyeol",
+		"alt": "Little Star — right hand raised, one red star above the palm",
+		"prompt": "Minimal iconic 3:4 poster. Little Star / Sobyeolwang. ONE geometric device: the RIGHT HAND raised, a single RED STAR hovering above the open palm. Extreme chiaroscuro. Face matches the attached portrait. Red #C94040 as the plane and the star. Otherworld symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_kangrim",
+		"alt": "Kangrim — black band over the eyes, sword and bright red notebook",
+		"prompt": "Minimal iconic 3:4 poster. Kangrim, death’s fetch. ONE geometric device: a BLACK BAND covering the EYES. Ring-pommel sword plus a BRIGHT RED NOTEBOOK. Extreme chiaroscuro. Face matches the attached portrait. Charcoal #4a4a58; red notebook the single accent. Otherworld symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_haewonmek",
+		"alt": "Haewonmek — black band over the mouth, sword and bright red notebook",
+		"prompt": "Minimal iconic 3:4 poster. Haewonmek, death’s fetch. ONE geometric device: a BLACK BAND covering the MOUTH. Ring-pommel sword plus a BRIGHT RED NOTEBOOK — mirrored pair with Kangrim. Extreme chiaroscuro. Face matches the attached portrait. Charcoal #6b5b6e; red notebook the single accent. Otherworld symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_hwanin",
+		"alt": "Hwanin — descending ivory column of heaven, figure at its foot",
+		"prompt": "Minimal iconic 3:4 poster. Hwanin, Lord of Heaven. ONE geometric device: a DESCENDING IVORY COLUMN of #F4F1E8 from the top edge to the lower third. Extreme chiaroscuro. Face matches the attached portrait. Otherworld symbolic flat black. No army. No throne catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_hwanung",
+		"alt": "Hwanung — three gold seal-bars stacked above the descent",
+		"prompt": "Minimal iconic 3:4 poster. Hwanung, Heaven’s son. ONE geometric device: THREE HORIZONTAL SEAL-BARS of #d4b86a stacked in the upper third. Extreme chiaroscuro. Face matches the attached portrait. Otherworld symbolic flat black. No army. No birch catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_dangun",
+		"alt": "Dangun — birch trunk as a hard vertical split, bear-fur wedge",
+		"prompt": "Minimal iconic 3:4 poster. Dangun Wanggeom. ONE geometric device: a BIRCH TRUNK as a hard pale vertical SPLIT, white bear-fur as a triangular WEDGE. Extreme chiaroscuro. Face matches the attached portrait. Birch-bronze #b8956a as the plane. Otherworld/mandate symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_heavenearthking",
+		"alt": "Heaven–Earth King — vertical bisect, red left and blue right",
+		"prompt": "Minimal iconic 3:4 poster. Heaven–Earth King. ONE geometric device: a VERTICAL BISECT — left #C30000, right #3E79E4, body on the seam. Extreme chiaroscuro. Face matches the attached portrait. Dual accent red+blue. Otherworld symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_hallakgungi",
+		"alt": "Hallakgungi — sage flower-rows as horizontal bars, figure in the gap",
+		"prompt": "Minimal iconic 3:4 poster. Hallakgungi, master of the Western Flower Field. ONE geometric device: HORIZONTAL FLOWER-ROWS of sage-green #8FBF8A, figure in the gap. Extreme chiaroscuro. Face matches the attached portrait. Otherworld flower-field symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_yuhwa",
+		"alt": "Yuhwa — ice-blue moon-sickle as a left-edge crescent, looking back",
+		"prompt": "Minimal iconic 3:4 poster. Yuhwa, willow goddess. ONE geometric device: a MOON-SICKLE as a hard ice-blue CRESCENT EDGE, NOT a halo behind the head. Extreme chiaroscuro. Face matches the attached portrait. Ice-blue #8fc4e0 as the plane. Otherworld/moon symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_munmu",
+		"alt": "King Munmu — low crimson sea-strip, dragon-king standing on it",
+		"prompt": "Minimal iconic 3:4 poster. King Munmu. ONE geometric device: a LOW SEA-STRIP occupying only the bottom fifth, figure standing on it. Extreme chiaroscuro. Face matches the attached portrait. Crimson #C41E3A as the plane. No army. No dragon embroidery catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_bidam",
+		"alt": "Bidam — gold lotus-disc stamp on the chest, navy void, standing",
+		"prompt": "Minimal iconic 3:4 poster. Bidam, Buddhist nativist. ONE geometric device: a GOLD LOTUS-DISC as a circular STAMP covering the chest. He STANDS, not lotus-seated. Extreme chiaroscuro. Face matches the attached portrait. Navy void #141C2E as the plane. Sutra/lotus gold the single Buddhist accent. No army. No sutra-bar. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	},
+	{
+		"id": "poster_ungnyeo",
+		"alt": "Ungnyeo — garlic and mugwort as two herb-strokes forming a doorway",
+		"prompt": "Minimal iconic 3:4 poster. Ungnyeo, the Bear-Woman. ONE geometric device: TWO VERTICAL HERB-STROKES — garlic-white and mugwort-green — as a doorway, cream-gold #c9b18f light between them. Face matches the attached portrait. Isolated poster-scale woman standing in the doorway, lower third. #c9b18f as the light-plane and the single accent. Striking silky hanbok, few hues. Chiaroscuro: doorway bright, cave-dark at the edges. Otherworld ordeal: symbolic cave, no tiger catalog. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental."
+	}
+]

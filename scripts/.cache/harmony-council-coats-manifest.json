@@ -1,0 +1,47 @@
+[
+	{
+		"id": "council-blue-table",
+		"alt": "Harmony Council pale void: black oval table, blue flame at center, six white dragon-coats over magenta",
+		"prompt": "Minimal iconic 16:9 still. SAME chamber as img_sunduk_02: pale grey void, black oval table, blue flame. Magenta inner, white dragon overcoat. No text. No watermark."
+	},
+	{
+		"id": "council-flame-close",
+		"alt": "Table-rim close: blue flame on the black disc, Bidam and Euljé in white dragon-coats over magenta",
+		"prompt": "Intimate cinematic 16:9 still. Camera at table-rim. Blue flame center. Council coats. No text. No watermark."
+	},
+	{
+		"id": "council-bidam-coat",
+		"alt": "Bidam stands — magenta inner, white dragon overcoat, blue flame shaft behind him",
+		"prompt": "Minimal iconic 9:16 poster. Bidam standing, blue flame shaft. Council coat. No text. No watermark."
+	},
+	{
+		"id": "council-across-flame",
+		"alt": "Bidam and Yushin across the black table, blue flame between them, same white dragon-coats",
+		"prompt": "Intimate 16:9 two-shot. Bidam and Yushin, blue flame divider. Council coats. No text. No watermark."
+	},
+	{
+		"id": "council-alchun-tiger",
+		"alt": "Alchun raises his hand — grey hair, scar, white dragon-coat over magenta, blue flame low-left",
+		"prompt": "Intimate 16:9 still. Alchun hand raised. Council coat. Blue flame. No text. No watermark."
+	},
+	{
+		"id": "council-yushin-coat",
+		"alt": "Yushin seated in council dress — beard, white dragon-coat over magenta, blue flame at his shoulder",
+		"prompt": "Minimal iconic 9:16 poster. Yushin in council coat, no armor. Blue flame. No text. No watermark."
+	},
+	{
+		"id": "council-supum-flame",
+		"alt": "Premier Supum at the far side of the oval table, blue flame framing his face, white dragon-coat",
+		"prompt": "Minimal iconic 16:9 still. Supum at the table, blue flame. Council coat. No text. No watermark."
+	},
+	{
+		"id": "council-hands-blue",
+		"alt": "Overhead stamp: black oval table, blue flame at center, white dragon-coat sleeves in a ring",
+		"prompt": "Intimate 16:9 overhead. Table as a dark disc. Blue flame center. Council sleeves. No text. No watermark."
+	},
+	{
+		"id": "council-veto-blue",
+		"alt": "Five white dragon-coat sleeves up around the blue flame; Bidam’s fist stays on the table",
+		"prompt": "Intimate 16:9 table-edge. Five hands up, Bidam’s fist down. Blue flame. No text. No watermark."
+	}
+]

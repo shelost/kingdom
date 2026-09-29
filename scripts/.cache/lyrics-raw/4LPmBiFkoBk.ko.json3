@@ -1,0 +1,850 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 176619,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 1700,
+    "dDurationMs": 7850,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "흐",
+      "acAsrConf": 252
+    }, {
+      "utf8": " 르",
+      "tOffsetMs": 570,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 륵",
+      "tOffsetMs": 810,
+      "acAsrConf": 251
+    }, {
+      "utf8": " 않아",
+      "tOffsetMs": 1050,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 어느",
+      "tOffsetMs": 2010,
+      "acAsrConf": 252
+    } ]
+  }, {
+    "tStartMs": 5580,
+    "dDurationMs": 3970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5590,
+    "dDurationMs": 11400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "실",
+      "acAsrConf": 226
+    }, {
+      "utf8": " 가",
+      "tOffsetMs": 540,
+      "acAsrConf": 226
+    }, {
+      "utf8": " 만큼",
+      "tOffsetMs": 979,
+      "acAsrConf": 238
+    }, {
+      "utf8": " 4",
+      "tOffsetMs": 1979,
+      "acAsrConf": 217
+    }, {
+      "utf8": " 어느",
+      "tOffsetMs": 2550,
+      "acAsrConf": 232
+    } ]
+  }, {
+    "tStartMs": 9540,
+    "dDurationMs": 7450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9550,
+    "dDurationMs": 11170,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "돼",
+      "acAsrConf": 172
+    }, {
+      "utf8": " 어쩌면",
+      "tOffsetMs": 1190,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 당연할",
+      "tOffsetMs": 3170,
+      "acAsrConf": 0
+    }, {
+      "utf8": " ga",
+      "tOffsetMs": 4170,
+      "acAsrConf": 193
+    }, {
+      "utf8": " 더",
+      "tOffsetMs": 4560,
+      "acAsrConf": 132
+    }, {
+      "utf8": " 몰라요",
+      "tOffsetMs": 5360,
+      "acAsrConf": 195
+    } ]
+  }, {
+    "tStartMs": 16980,
+    "dDurationMs": 3740,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16990,
+    "dDurationMs": 7879,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "수만",
+      "acAsrConf": 217
+    }, {
+      "utf8": " 앙",
+      "tOffsetMs": 690,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 아",
+      "tOffsetMs": 1140,
+      "acAsrConf": 213
+    }, {
+      "utf8": " 침",
+      "tOffsetMs": 1289,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 더",
+      "tOffsetMs": 1980,
+      "acAsrConf": 252
+    } ]
+  }, {
+    "tStartMs": 20710,
+    "dDurationMs": 4159,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 20720,
+    "dDurationMs": 10300,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "srl",
+      "acAsrConf": 68
+    }, {
+      "utf8": " 막냉이",
+      "tOffsetMs": 1170,
+      "acAsrConf": 222
+    }, {
+      "utf8": " 하였지",
+      "tOffsetMs": 2230,
+      "acAsrConf": 165
+    } ]
+  }, {
+    "tStartMs": 24859,
+    "dDurationMs": 6161,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24869,
+    "dDurationMs": 6821,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "j",
+      "acAsrConf": 155
+    }, {
+      "utf8": " 그렇게",
+      "tOffsetMs": 981,
+      "acAsrConf": 201
+    }, {
+      "utf8": " 하기에",
+      "tOffsetMs": 3111,
+      "acAsrConf": 218
+    }, {
+      "utf8": " 더",
+      "tOffsetMs": 4111,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 31010,
+    "dDurationMs": 680,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31020,
+    "dDurationMs": 6859,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "5",
+      "acAsrConf": 240
+    } ]
+  }, {
+    "tStartMs": 31680,
+    "dDurationMs": 6199,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31690,
+    "dDurationMs": 21380,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[음악]"
+    } ]
+  }, {
+    "tStartMs": 37869,
+    "dDurationMs": 15201,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 37879,
+    "dDurationMs": 19531,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "we",
+      "acAsrConf": 251
+    }, {
+      "utf8": " took",
+      "tOffsetMs": 1201,
+      "acAsrConf": 226
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2201,
+      "acAsrConf": 244
+    }, {
+      "utf8": " small",
+      "tOffsetMs": 4141,
+      "acAsrConf": 252
+    }, {
+      "utf8": " wall",
+      "tOffsetMs": 7291,
+      "acAsrConf": 85
+    }, {
+      "utf8": " will",
+      "tOffsetMs": 9691,
+      "acAsrConf": 196
+    }, {
+      "utf8": " soon",
+      "tOffsetMs": 12121,
+      "acAsrConf": 0
+    }, {
+      "utf8": " woo",
+      "tOffsetMs": 13320,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 53060,
+    "dDurationMs": 4350,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 53070,
+    "dDurationMs": 4340,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "여전히",
+      "acAsrConf": 249
+    }, {
+      "utf8": " 같은",
+      "tOffsetMs": 630,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 마음을",
+      "tOffsetMs": 1020,
+      "acAsrConf": 204
+    }, {
+      "utf8": " 되니까",
+      "tOffsetMs": 1710,
+      "acAsrConf": 136
+    } ]
+  }, {
+    "tStartMs": 60940,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 60950,
+    "dDurationMs": 17190,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "waa",
+      "acAsrConf": 99
+    }, {
+      "utf8": " 채",
+      "tOffsetMs": 1140,
+      "acAsrConf": 121
+    }, {
+      "utf8": " gender",
+      "tOffsetMs": 2140,
+      "acAsrConf": 247
+    }, {
+      "utf8": " 에",
+      "tOffsetMs": 4050,
+      "acAsrConf": 232
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 6720,
+      "acAsrConf": 142
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 7919,
+      "acAsrConf": 167
+    }, {
+      "utf8": " hot",
+      "tOffsetMs": 8919,
+      "acAsrConf": 200
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 9550,
+      "acAsrConf": 123
+    }, {
+      "utf8": " 춤",
+      "tOffsetMs": 10180,
+      "acAsrConf": 166
+    }, {
+      "utf8": " 저렴한거",
+      "tOffsetMs": 10690,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 73900,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 73910,
+    "dDurationMs": 7930,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "부린다고",
+      "acAsrConf": 225
+    }, {
+      "utf8": " berea",
+      "tOffsetMs": 1920,
+      "acAsrConf": 232
+    } ]
+  }, {
+    "tStartMs": 78130,
+    "dDurationMs": 3710,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 78140,
+    "dDurationMs": 8100,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "wh",
+      "acAsrConf": 243
+    }, {
+      "utf8": " 아",
+      "tOffsetMs": 1630,
+      "acAsrConf": 232
+    }, {
+      "utf8": " 아",
+      "tOffsetMs": 1660,
+      "acAsrConf": 232
+    }, {
+      "utf8": " 으",
+      "tOffsetMs": 2190,
+      "acAsrConf": 232
+    } ]
+  }, {
+    "tStartMs": 81830,
+    "dDurationMs": 4410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 81840,
+    "dDurationMs": 4400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "*",
+      "acAsrConf": 180
+    }, {
+      "utf8": " n",
+      "tOffsetMs": 540,
+      "acAsrConf": 202
+    }, {
+      "utf8": " 전",
+      "tOffsetMs": 779,
+      "acAsrConf": 178
+    }, {
+      "utf8": " 너의",
+      "tOffsetMs": 1440,
+      "acAsrConf": 224
+    } ]
+  }, {
+    "tStartMs": 89120,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 89130,
+    "dDurationMs": 5189,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "날",
+      "acAsrConf": 249
+    }, {
+      "utf8": " ho",
+      "tOffsetMs": 360,
+      "acAsrConf": 238
+    }, {
+      "utf8": " 그",
+      "tOffsetMs": 900,
+      "acAsrConf": 208
+    } ]
+  }, {
+    "tStartMs": 90640,
+    "dDurationMs": 3679,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 90650,
+    "dDurationMs": 6059,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[음악]"
+    } ]
+  }, {
+    "tStartMs": 94309,
+    "dDurationMs": 2400,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 94319,
+    "dDurationMs": 2390,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "co",
+      "acAsrConf": 217
+    } ]
+  }, {
+    "tStartMs": 106960,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 106970,
+    "dDurationMs": 6060,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "we",
+      "acAsrConf": 232
+    }, {
+      "utf8": " took",
+      "tOffsetMs": 1440,
+      "acAsrConf": 212
+    }, {
+      "utf8": " her",
+      "tOffsetMs": 3060,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 113750,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 113760,
+    "dDurationMs": 25340,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "완결",
+      "acAsrConf": 144
+    }, {
+      "utf8": " #",
+      "tOffsetMs": 480,
+      "acAsrConf": 165
+    }, {
+      "utf8": " 위에",
+      "tOffsetMs": 780,
+      "acAsrConf": 109
+    }, {
+      "utf8": " 같은",
+      "tOffsetMs": 900,
+      "acAsrConf": 201
+    }, {
+      "utf8": " 맘",
+      "tOffsetMs": 1230,
+      "acAsrConf": 62
+    } ]
+  }, {
+    "tStartMs": 117580,
+    "dDurationMs": 21520,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 117590,
+    "dDurationMs": 21510,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "we",
+      "acAsrConf": 248
+    }, {
+      "utf8": " try",
+      "tOffsetMs": 2520,
+      "acAsrConf": 201
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 4590,
+      "acAsrConf": 232
+    }, {
+      "utf8": " whom",
+      "tOffsetMs": 7110,
+      "acAsrConf": 198
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 9420,
+      "acAsrConf": 232
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 11430,
+      "acAsrConf": 232
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 13620,
+      "acAsrConf": 159
+    }, {
+      "utf8": " also",
+      "tOffsetMs": 18510,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 139160,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 139170,
+    "dDurationMs": 7800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "뭐",
+      "acAsrConf": 229
+    }, {
+      "utf8": " kl",
+      "tOffsetMs": 600,
+      "acAsrConf": 138
+    }, {
+      "utf8": " 탓이",
+      "tOffsetMs": 1440,
+      "acAsrConf": 201
+    }, {
+      "utf8": " 돌아간",
+      "tOffsetMs": 2310,
+      "acAsrConf": 235
+    }, {
+      "utf8": " 태도",
+      "tOffsetMs": 3120,
+      "acAsrConf": 225
+    }, {
+      "utf8": " 토",
+      "tOffsetMs": 3840,
+      "acAsrConf": 245
+    } ]
+  }, {
+    "tStartMs": 144500,
+    "dDurationMs": 2470,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 144510,
+    "dDurationMs": 11630,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "유성희",
+      "acAsrConf": 204
+    }, {
+      "utf8": " 같음",
+      "tOffsetMs": 750,
+      "acAsrConf": 150
+    }, {
+      "utf8": " 일치",
+      "tOffsetMs": 1410,
+      "acAsrConf": 132
+    } ]
+  }, {
+    "tStartMs": 146960,
+    "dDurationMs": 9180,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 146970,
+    "dDurationMs": 9170,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "으",
+      "acAsrConf": 139
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 6170,
+      "acAsrConf": 227
+    } ]
+  }, {
+    "tStartMs": 156890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 156900,
+    "dDurationMs": 6110,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "오",
+      "acAsrConf": 232
+    }, {
+      "utf8": " 오",
+      "acAsrConf": 221
+    }, {
+      "utf8": " 오",
+      "tOffsetMs": 59,
+      "acAsrConf": 221
+    }, {
+      "utf8": " 오",
+      "tOffsetMs": 899,
+      "acAsrConf": 223
+    }, {
+      "utf8": " woori",
+      "tOffsetMs": 2750,
+      "acAsrConf": 69
+    } ]
+  }, {
+    "tStartMs": 161690,
+    "dDurationMs": 1320,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 161700,
+    "dDurationMs": 3830,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[음악]"
+    } ]
+  }, {
+    "tStartMs": 163000,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 163010,
+    "dDurationMs": 5820,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "trailer",
+      "acAsrConf": 205
+    } ]
+  }, {
+    "tStartMs": 165520,
+    "dDurationMs": 3310,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 165530,
+    "dDurationMs": 3460,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "이렇개",
+      "acAsrConf": 225
+    }, {
+      "utf8": " 음",
+      "tOffsetMs": 1800,
+      "acAsrConf": 242
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2220,
+      "acAsrConf": 246
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2310,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2429,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2460,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2520,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2580,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2640,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2700,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2760,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2820,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2880,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 2940,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 3000,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 3060,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 3120,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 3179,
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 3240,
+      "acAsrConf": 252
+    } ]
+  }, {
+    "tStartMs": 168820,
+    "dDurationMs": 170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 168830,
+    "dDurationMs": 7789,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "로",
+      "acAsrConf": 252
+    }, {
+      "utf8": " 로",
+      "tOffsetMs": 60,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 168980,
+    "dDurationMs": 7639,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 168990,
+    "dDurationMs": 7629,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[음악]"
+    } ]
+  } ]
+}

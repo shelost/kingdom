@@ -1,0 +1,67 @@
+[
+	{
+		"id": "gaya-seq-fortress-night",
+		"alt": "Night wide: Gaya mountain seongmun, stone and giwa, one purple iron-spark accent",
+		"prompt": "Minimal iconic 16:9 still. Bird’s-eye night, chiaroscuro. Inland Gaya mountain fortress: weathered stone seongmun, giwa munru, timber doors, packed earth. ONE device: gate as a dark wedge with a purple #8B5CF6 iron-spark seam. Tiny figures lower third. Crushed blacks. No army. No text. No watermark."
+	},
+	{
+		"id": "sadaham-seq-vanguard",
+		"alt": "Dutch night charge: Sadaham in steel lamellar, ice-blue cloth peek, pointed Silla helm",
+		"prompt": "Minimal iconic 16:9. Dutch charge, night tenebrism. ONE Sadaham mid-stride snarl. FACE ch_sadaham. Steel-gray lamellar; ice-blue #6fa8ff cloth peek; pointed Silla helm. Spear as diagonal device. No clone. No text. No watermark."
+	},
+	{
+		"id": "sadaham-seq-gate",
+		"alt": "Worm’s-eye night: Sadaham shoving Gaya timber seongmun, steel plates, ice-blue sash",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye, ONE Sadaham at timber seongmun. Steel-gray lamellar; ice-blue #6fa8ff peek; pointed Silla helm. Door as vertical black plane. FACE ch_sadaham. No clone. No text. No watermark."
+	},
+	{
+		"id": "sadaham-seq-free",
+		"alt": "Lower-third: Sadaham opening prize-cages in an empty night yard, ice-blue rim",
+		"prompt": "Minimal iconic 16:9. Dutch lower-third. ONE Sadaham turning a timber cage latch. Steel-gray lamellar; ice-blue peek; crescent headband. Empty packed-earth yard. No Japanese castle. No text. No watermark."
+	},
+	{
+		"id": "sadaham-seq-mugwan-vow",
+		"alt": "Two-shot under Hwarang eaves: Sadaham and Mugwan wrist-lock vow",
+		"prompt": "Minimal iconic 16:9. OTS two-shot night eaves. ONE Sadaham, ONE Mugwan, wrist-lock. Ice-blue #6fa8ff and dusty-rose coats from portraits. Not standing clones. No text. No watermark."
+	},
+	{
+		"id": "sadaham-seq-seven-close",
+		"alt": "ECU: Sadaham seventeen, wrecked, empty bowl sharp in the foreground",
+		"prompt": "Intimate 16:9 ECU. Sadaham wrecked; empty bowl as a pale disc in the foreground. Ice-blue #6fa8ff rim. FACE ch_sadaham. No living Mugwan clone. No text. No watermark."
+	},
+	{
+		"id": "muryuk-seq-cone-fight",
+		"alt": "Worm’s-eye: Muryuk last fight, steel lamellar, tall Gaya cone, purple cloth peek, snarl",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye tenebrism. ONE Muryuk mid-swing snarl. Steel-gray lamellar; tall Gaya cone helm; purple #8B5CF6 cloth peek only. FACE ch_kim_muryuk. No text. No watermark."
+	},
+	{
+		"id": "muryuk-seq-ridge",
+		"alt": "Dutch night ridge: Muryuk mid-stride, steel plates, tall Gaya cone, purple rim",
+		"prompt": "Minimal iconic 16:9. Dutch night. ONE Muryuk mid-stride. Steel-gray lamellar; Gaya cone; purple #8B5CF6 peek. FACE ch_kim_muryuk. No text. No watermark."
+	},
+	{
+		"id": "gyebek-seq-palisade",
+		"alt": "Worm’s-eye dusk: Gyebek shouting at the palisade, steel lamellar, yellow cloth peek",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye dusk. ONE Gyebek shouting over palisade. Steel-gray lamellar — not yellow metal; #d9b13a cloth peek, red sash. FACE ch_gyebek. No text. No watermark."
+	},
+	{
+		"id": "yushin-seq-gallop",
+		"alt": "Dutch low gallop: Yushin, steel lamellar, tall Silla helm, Confucian-blue cloth peek",
+		"prompt": "Minimal iconic 16:9. Dutch gallop. ONE Yushin snarling on horseback. Steel-gray lamellar; pointed Silla helm; #2A5FB8 cloth peek. FACE ch_kim_yushin. No text. No watermark."
+	},
+	{
+		"id": "hwangsan-seq-clash",
+		"alt": "OTS clash: steel vs steel, blue cloth vs yellow cloth, two grimaces, crushed dusk",
+		"prompt": "Minimal iconic 16:9. OTS clash. ONE Yushin, ONE Gyebek. Both steel-gray lamellar; blue vs yellow cloth peek. Blades as an X. Faces from portraits. No text. No watermark."
+	},
+	{
+		"id": "gesomun-seq-wings",
+		"alt": "Worm’s-eye doorway: Gesomun filling the frame, steel lamellar, red-wing cloth, shout",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye dutch door. ONE Gesomun bursting through. Steel-gray lamellar; red-wing #d0362f cloth. FACE ch_yeon_gesomun. No army. No text. No watermark."
+	},
+	{
+		"id": "yangmanchun-seq-wings",
+		"alt": "Worm’s-eye Ansi parapet: Yang Manchun, steel plates, red-wing accent, wind-snarl",
+		"prompt": "Minimal iconic 16:9. Worm’s-eye Ansi parapet. ONE Yang Manchun. Same fortress as pl_ansi. Steel-gray lamellar; red-wing #C30000 accent. FACE ch_guardian. No text. No watermark."
+	}
+]

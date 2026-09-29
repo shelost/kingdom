@@ -1,0 +1,32 @@
+[
+	{
+		"id": "wu-hall-01-keep",
+		"alt": "Night colonnade: pale Wu calling; Chunchu in magenta ambassador coat with white inner collar and sleeves",
+		"prompt": "Night movie 16:9. Dark Tang colonnade. Pale Wu. Magenta embassy coat, white undershirt collar and sleeves. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-02-pale",
+		"alt": "Night close: porcelain-pale Wu; magenta edge with a white inner cuff",
+		"prompt": "Night close. Pale Wu. White cuff. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-03-yes",
+		"alt": "Night two-shot: Chunchu’s white-collar ambassador yes; Wu pale and measuring",
+		"prompt": "Night two-shot. Magenta with white inner. Pale Wu. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-04-how",
+		"alt": "Night close: Wu’s pale face split by moonlight — How is she",
+		"prompt": "Night close. Half-shadow pale Wu. No text. No watermark."
+	},
+	{
+		"id": "wu-hall-05-silence",
+		"alt": "Night: fierce pale Wu; Chunchu listening in magenta with white inner sleeves",
+		"prompt": "Night. Fierce pale Wu. Ambassador white inner. No text. No watermark."
+	},
+	{
+		"id": "wu-farewell-whisper",
+		"alt": "Night colonnade: pale Wu calling; Chunchu in magenta ambassador coat with white inner collar and sleeves",
+		"prompt": "Night movie 16:9. Dark Tang colonnade. Pale Wu. Magenta embassy coat, white undershirt. No text. No watermark."
+	}
+]

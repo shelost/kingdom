@@ -1,0 +1,82 @@
+[
+	{
+		"id": "haemosu-laugh-ecu",
+		"alt": "ECU Haemosu: open-mouth jolly laugh, silver-white hair, gold as a cheek plane",
+		"prompt": "ECU open-mouth laugh. Gold #f0b429 cheek-plane, NEVER body-halo. White silk. Night rain."
+	},
+	{
+		"id": "haemosu-wink-ecu",
+		"alt": "ECU Haemosu: one-eye wink, sun-grin, gold cheek plane, night rain bokeh",
+		"prompt": "ECU wink. Gold #f0b429 plane, NEVER body-halo. Playful."
+	},
+	{
+		"id": "haemosu-boy-open-ecu",
+		"alt": "ECU Haemosu: open-mouth pride, looking off at the far bank, gold as a hard plane",
+		"prompt": "ECU open-mouth that's-my-boy. Look-off. Gold plane, no halo."
+	},
+	{
+		"id": "haemosu-whisper-soft-ecu",
+		"alt": "ECU Haemosu: half-lidded soft whisper, lips parted, gold as a thin cheek plane",
+		"prompt": "ECU soft whisper. Half-lidded. Gold plane, NEVER halo."
+	},
+	{
+		"id": "haemosu-playful-anger-ecu",
+		"alt": "ECU Haemosu: angry-playful contempt, teeth, looking at Haewonmek, gold plane",
+		"prompt": "ECU playful-anger. Teeth. Gold #f0b429 plane, no halo."
+	},
+	{
+		"id": "haemosu-stunned-rail-ecu",
+		"alt": "ECU Haemosu at the gold chariot rail: mouth open, blown pupils, stunned look-down",
+		"prompt": "ECU stunned rail. LOCK obj chariot rail as bar. Gold plane, no halo."
+	},
+	{
+		"id": "haemosu-tender-back-ecu",
+		"alt": "ECU Haemosu: tender eyes looking off at Jumong’s back, soft mouth, gold plane",
+		"prompt": "ECU tender look-off. Soft closed mouth. Gold plane, no halo."
+	},
+	{
+		"id": "haemosu-feral-want-ecu",
+		"alt": "ECU Haemosu: feral want at the rail, bitten mouth, flush, gold as a hard plane",
+		"prompt": "ECU feral want. Bitten lip. Gold rail-plane, NEVER body-halo."
+	},
+	{
+		"id": "haewonmek-cold-ecu",
+		"alt": "ECU Haewonmek arriving: half-lidded cold eyes over black mouth-band, gat brim a black bar",
+		"prompt": "ECU cold approach. Gat brim bar. Mouth-band. Eyes only."
+	},
+	{
+		"id": "haewonmek-shock-ecu",
+		"alt": "ECU Haewonmek mid-strike shock: eyes blown wide, gat knocked, gold flash as a plane",
+		"prompt": "ECU shock. Wide eyes. Gold flash-plane, no halo. Gat askew."
+	},
+	{
+		"id": "haewonmek-pain-ecu",
+		"alt": "ECU Haewonmek: wince of pain, eyes squeezed, gat askew, wrist caught off-frame",
+		"prompt": "ECU pain wince. Eyes squeezed. Gat askew. Night rain."
+	},
+	{
+		"id": "haewonmek-disgust-ecu",
+		"alt": "ECU Haewonmek: disgust, eyes narrowed down, mouth-band, gat brim cutting the frame",
+		"prompt": "ECU disgust. Look-down. Mouth-band. Gat brim bar."
+	},
+	{
+		"id": "haewonmek-tired-ecu",
+		"alt": "ECU Haewonmek: tired lids, gat askew, the look of a clerk who lost the argument",
+		"prompt": "ECU tired. Heavy lids. Askew gat. He is still mortal."
+	},
+	{
+		"id": "haewonmek-almost-smile-ecu",
+		"alt": "ECU Haewonmek: eyes crinkle toward a smile, then he shuts it down, watching the run",
+		"prompt": "ECU almost-smile refused. Look-off. Mouth-band."
+	},
+	{
+		"id": "haemosu-haewonmek-ots-laugh",
+		"alt": "OTS two-shot: Haemosu laughing over Haewonmek’s gat brim; night river bokeh",
+		"prompt": "OTS gat brim. Haemosu laugh. Gold plane on Haemosu only, no halo."
+	},
+	{
+		"id": "jumong-ford-fear-ecu",
+		"alt": "ECU Jumong at the night ford: clean-shaven, scared grin, red #e8563f, rain",
+		"prompt": "ECU Jumong scared grin. CLEAN-SHAVEN. Crimson #e8563f. Night rain."
+	}
+]

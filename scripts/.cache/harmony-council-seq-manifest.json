@@ -1,0 +1,15 @@
+[
+	{"id": "council-seq-light", "alt": "Hands light the small brazier — the flame is red first", "prompt": "Lighting the brazier, red flame. Locked pavilion. No text. No watermark."},
+	{"id": "council-seq-red-wide", "alt": "Locked pavilion: six men, mats, tea, wooden pieces, red brazier", "prompt": "Wide, red flame. Locked pavilion. No text. No watermark."},
+	{"id": "council-seq-blue-birth", "alt": "Brazier close: red coals, piercing blue tongue, tea and a wooden piece at the rim", "prompt": "Flame turns blue. No text. No watermark."},
+	{"id": "council-seq-session", "alt": "Same pavilion, same seats: piercing blue flame, session begins, pieces not yet voted", "prompt": "Session wide, blue flame. No text. No watermark."},
+	{"id": "council-seq-overhead", "alt": "Top-down: octagonal table, six mats, tea, unused wooden pieces, blue flame", "prompt": "Top-down. No text. No watermark."},
+	{"id": "council-seq-worm", "alt": "Worm’s-eye: piercing blue shaft, same table, same cups and pieces", "prompt": "Worm’s-eye, blue shaft. No text. No watermark."},
+	{"id": "council-seq-split", "alt": "Hung 3:3 — three wooden pieces yes of the cup, three no, same seats", "prompt": "First count 3:3 pieces. No text. No watermark."},
+	{"id": "council-seq-bidam", "alt": "Bidam close in piercing blue light — tea, wooden piece on the yes side", "prompt": "Bidam close. No text. No watermark."},
+	{"id": "council-seq-across", "alt": "Bidam and Yushin across the same table, tea and pieces, piercing blue", "prompt": "Two-shot. No text. No watermark."},
+	{"id": "council-seq-alchun", "alt": "Alchun moves his wooden piece from no to yes beside his cup", "prompt": "Alchun flips his piece. No text. No watermark."},
+	{"id": "council-seq-unanimous", "alt": "Same pavilion, same seats: every wooden piece on the yes side of the cup", "prompt": "Unanimous pieces. No text. No watermark."},
+	{"id": "council-seq-veto", "alt": "Same pavilion: five pieces yes, Bidam’s piece alone on the no side", "prompt": "645 veto pieces. No text. No watermark."},
+	{"id": "council-seq-veto-close", "alt": "Bidam’s cup and wooden piece on the no side, piercing blue flame", "prompt": "Bidam no-side close. No text. No watermark."}
+]

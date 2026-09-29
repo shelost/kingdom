@@ -1,0 +1,9 @@
+[
+	{"id":"gyebek-seq-palisade","alt":"Worm’s-eye: Gyebek in Baekje yellow hwangchilgap holding the Hwangsan palisade","prompt":"Baekje 황칠갑. FACE ch_gyebek. Worm’s-eye. No text."},
+	{"id":"yushin-seq-gallop","alt":"Dutch charge: Yushin in tall pointed black Silla 쪽샘 helm, red plume","prompt":"Silla tall black lacquer helm. FACE ch_kim_yushin. Dutch gallop. No text."},
+	{"id":"hwangsan-seq-clash","alt":"OTS: tall Silla black helm vs Baekje yellow hwangchil at Hwangsan","prompt":"Two kingdom armors. FACE both portraits. OTS. No text."},
+	{"id":"muryuk-seq-ridge","alt":"Dutch night: Muryuk in tall Gaya conical helmet on the ridge","prompt":"Gaya tall cone helm. FACE ch_kim_muryuk. Dutch night. No text."},
+	{"id":"muryuk-seq-cone-fight","alt":"Worm’s-eye: Muryuk wearing the tall Gaya cone, last fight","prompt":"Gaya cone off the top of frame. FACE ch_kim_muryuk. Worm’s-eye. No text."},
+	{"id":"yangmanchun-seq-wings","alt":"Worm’s-eye Ansi parapet: Yang Manchun in Goguryeo red-wing chalgap","prompt":"Goguryeo red wings. FACE ch_guardian. Ansi place. No text."},
+	{"id":"gesomun-seq-wings","alt":"Dutch doorway: Gesomun in red-wing Goguryeo armor, five pommels","prompt":"Goguryeo red-wing chalgap. FACE ch_yeon_gesomun. Dutch door. No text."}
+]

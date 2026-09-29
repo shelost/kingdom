@@ -1,0 +1,22 @@
+[
+	{
+		"id": "jumong-haemosu-lookdown-bath",
+		"alt": "Top-down clear water: three sisters far apart — purple, blue, green — looking up",
+		"prompt": "Minimal iconic 16:9. STRICT bird’s-eye STRAIGHT DOWN. CLEAR dark water like jumong-haemosu-pov-yuhwa-kneel: transparent crushed-black, gold flecks, painterly. THREE SMALL sisters FAR APART, empty water between. Hwahye PURPLE #8a62c4 + bn_hwahye. Yuhwa BLUE #8fc4e0 + bn_yuhwa. Wihye GREEN #4fad72 + bn_wihye. FACES from attached. Looking UP. ONE of each. Thin gold rail at the top edge only. No god-rays. No halo. No text. No watermark."
+	},
+	{
+		"id": "jumong-sisters-kneel-well",
+		"alt": "Top-down clear well: three sisters in a wide triangle — blue, purple, green — looking up",
+		"prompt": "Intimate cinematic 3:4. STRICT bird’s-eye STRAIGHT DOWN. CLEAR dark water like jumong-haemosu-pov-yuhwa-kneel. THREE sisters FAR APART in a wide triangle. Yuhwa BLUE #8fc4e0 + bn_yuhwa. Hwahye PURPLE #8a62c4 + bn_hwahye. Wihye GREEN #4fad72 + bn_wihye. Looking UP. ONE of each. No cluster. No text. No watermark."
+	},
+	{
+		"id": "jumong-sisters-spread-well",
+		"alt": "Top-down clear water: three sisters far apart — purple, blue, green silk and matching wave binyeo",
+		"prompt": "Minimal iconic 16:9. STRICT bird’s-eye STRAIGHT DOWN. CLEAR dark water like jumong-haemosu-pov-yuhwa-kneel: transparent, gold flecks, painterly. THREE SMALL sisters FAR APART, most of the frame empty water. Hwahye PURPLE #8a62c4 + bn_hwahye. Yuhwa BLUE #8fc4e0 + bn_yuhwa. Wihye GREEN #4fad72 + bn_wihye. FACES from attached. Looking UP. ONE of each. No god-rays. No text. No watermark."
+	},
+	{
+		"id": "jumong-sisters-spread-triangle",
+		"alt": "Top-down clear pool: three isolated stamps at the edges — blue, purple, green",
+		"prompt": "Minimal iconic 3:4. STRICT bird’s-eye STRAIGHT DOWN. CLEAR dark water like jumong-haemosu-pov-yuhwa-kneel. THREE isolated stamps at the edges, huge empty water in the center. Yuhwa BLUE #8fc4e0 + bn_yuhwa. Hwahye PURPLE #8a62c4 + bn_hwahye. Wihye GREEN #4fad72 + bn_wihye. Looking UP. ONE of each. No text. No watermark."
+	}
+]

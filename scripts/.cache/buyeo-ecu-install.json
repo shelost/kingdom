@@ -1,0 +1,8 @@
+[
+	{"id":"jumong-clap-fly-ecu","alt":"ECU Jumong clean-shaven: You can have the clap. I’ll take the fly.","prompt":"ECU Jumong grin. I’ll take the fly. LOCK Buyeo yard bokeh."},
+	{"id":"jumong-grin-fly-ecu","alt":"ECU Jumong clean-shaven easy grin after the fly-wing; Buyeo yard bokeh","prompt":"ECU Jumong grin cheaper than asking. LOCK Buyeo yard."},
+	{"id":"daeso-stop-smiling-ecu","alt":"ECU Daeso: Stop smiling; heir glare; Buyeo timber bokeh","prompt":"ECU Daeso. Stop smiling."},
+	{"id":"daeso-house-feeds-ecu","alt":"ECU Daeso too close: This house feeds you","prompt":"ECU Daeso lean-in. This house feeds you."},
+	{"id":"daeso-he-is-not-ecu","alt":"ECU Daeso plotting: He is not. That’s the problem.","prompt":"ECU Daeso quiet plot. He is not."},
+	{"id":"daeso-plot-lamp-ecu","alt":"ECU Daeso in the side-room lamp: Do it before the next hunt","prompt":"ECU Daeso lamp. Before the next hunt."}
+]

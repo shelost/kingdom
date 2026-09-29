@@ -1,0 +1,27 @@
+[
+	{
+		"id": "yushin-sword-vertical",
+		"alt": "Kim Yushin holding a hip-scale Sword of Silla — 환두대도, fish in the small pommel ring",
+		"prompt": "Minimal iconic 9:16 still. DUTCH mid-stride, crushed black. Kim Yushin FACE and lamellar from attached portrait — ignore the brown katana. Copy sw_bidam.png: when the sword hangs down, small hollow RING is UP at the heel of the fist, palm-length grip, thin gold BAND (not a disc), blade DOWN to mid-calf. Handle:blade 1:3. Only circle is the pommel ring. No tsuba. #2A5FB8 hard key. No glow. No text. No watermark."
+	},
+	{
+		"id": "bidam-sword-dark",
+		"alt": "Dark navy: Bidam carrying the sword — only the blade and gold ring pommel hold the light",
+		"prompt": "Minimal iconic 9:16 still. DUTCH mid-carry in a navy void #141C2E. Bidam FACE from attached portrait — NEW body mid-stride. ONE-HANDED hip 환두대도 from attached sw_bidam.png: handle:blade 1:3. Order: small horse-openwork RING at the heel of the fist → short diamond grip → thin gold collar → long blade toward the ankle. Never a tsuba. Never taller than him. Specular gold on the small ring only. No text. No watermark."
+	},
+	{
+		"id": "kangrim-sword-redbook",
+		"alt": "Kangrim in a black void, eyes banded, hip-scale 환두대도 in one hand and a glowing red notebook in the other",
+		"prompt": "Minimal iconic 3:4 poster. Kangrim, psychopomp. Matching pair LEFT. EYES COVERED. FACE from attached portrait — ignore the smear-blade. RED notebook in one hand. Other hand holds sw_bidam.png hang: small hollow RING at the TOP of the fist, fist-length grip, thin gold BAND, blade DOWN to mid-calf. Handle:blade 1:3. ONE circle — the pommel ring. No tsuba. Otherworld flat black. No readable text. No watermark."
+	},
+	{
+		"id": "haewonmek-sword-redbook",
+		"alt": "Haewonmek, mirrored to Kangrim: mouth banded, hip-scale 환두대도 in one hand and a glowing red notebook in the other",
+		"prompt": "Minimal iconic 3:4 poster. Haewonmek, second psychopomp. Matching pair RIGHT. MOUTH COVERED. FACE from attached portrait — ignore the smear-blade. RED notebook in one hand. Other hand holds sw_bidam.png hang: small hollow RING at the TOP of the fist, fist-length grip, thin gold BAND, blade DOWN to mid-calf. Handle:blade 1:3. ONE circle — the pommel ring. No tsuba. Otherworld flat black. No readable text. No watermark."
+	},
+	{
+		"id": "yushin-tanhyeon-fish-ring",
+		"alt": "Yushin climbing Tanhyeon, hip-scale 환두대도 hanging at his side — fish-ring pommel at the heel of the fist",
+		"prompt": "Minimal iconic 16:9 still. LOW ANGLE Tanhyeon climb — real Korean rock, pines, grey giwa on the switchback. Yushin FACE from attached portrait; NEW climbing body, steel lamellar, #2A5FB8 cloth. Sword hangs at the hip like sw_bidam.png: small RING at the heel of the fist, short grip, thin gold band, blade DOWN toward his feet along the rock — not at the camera. Handle:blade 1:3. ONE small circle — the pommel. No tsuba. Ignore the portrait katana. #2A5FB8 bounce. No text. No watermark."
+	}
+]
