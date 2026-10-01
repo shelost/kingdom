@@ -96,6 +96,8 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'iron-will-7': 'iron-will-chunchu-gesomun',
 	'iron-will-8': 'iron-will-euija-gesomun',
 	'iron-will-9': 'iron-will-kim-yushin',
+	'iron-will-the-first-kim': 'iron-will-daeya-fortress',
+	'fall-of-euija-onjo': 'jumong-onjo',
 	'chunchu-era-11': 'chunchu-era-hyukgose',
 	'chunchu-era-the-flower-youth': 'chunchu-era-the-hwarang',
 	'chunchu-era-silla-tang-alliance': 'chunchu-era-the-emperor',
@@ -105,7 +107,11 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'final-stand-the-final-stand': 'final-stand-the-fall-of-pyongyang',
 	'fall-of-baekje-white-river': 'final-stand-white-river',
 	'fall-of-baekje-the-seven-branched-sword': 'final-stand-the-seven-branched-sword',
-	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-the-protectorate',
+	'fall-of-baekje-dangun-old-joseon': 'silla-tang-war-dangun-old-joseon',
+	'silla-tang-war-the-fall-of-joseon': 'silla-tang-war-dangun-old-joseon',
+	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-stone-gate',
+	'silla-tang-war-the-protectorate': 'silla-tang-war-stone-gate',
+	'epilogue-2-unified-silla': 'silla-tang-war-the-king-for-all',
 	'silla-tang-war-8': 'silla-tang-war-the-king-for-all'
 };
 
