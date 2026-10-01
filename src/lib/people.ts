@@ -3467,6 +3467,8 @@ export const PEOPLE: Person[] = [
 		died: 647,
 		tagline: 'Bidam’s fellow conspirator at the Fortress of Radiance — the quieter name on the banner.',
 		quote: 'Rebellion needs two names. Be the quieter one.',
+		voice:
+			'Bidam’s blunt second: short muster orders and titles, no flourish (“Open the Radiance gate.”). Korean: 해라체 orders to his men, 상대등께서 when he names Bidam.',
 		events: [{ year: 647, label: 'Rises with Bidam at Radiance; falls in the outer works on the ninth day.' }],
 		aliases: ['Yumjong', 'Yeomjong']
 	},
@@ -4292,6 +4294,8 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — his sleeve rose with the others until one hand stayed down.',
 		quote: 'I vote with the weather once it starts.',
+		voice:
+			'Courteous, cautious True Bone councillor who offers a man the way back instead of arguing him down (“Lord Bidam, think again.”). Korean: polite 하오체 in council.',
 		events: [{ year: 645, label: 'Among the five daedeung who raised for Seungman.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }

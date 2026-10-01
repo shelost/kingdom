@@ -30204,7 +30204,7 @@
 						"id": "parody-thinker-yushin",
 						"ratio": 0.75,
 						"tone": "#2A5FB8",
-						"at": "Yushin does not answer the count.",
+						"at": "Yushin does not answer.",
 						"alt": "Rodin’s Thinker, painted: Yushin as a green-patinated bronze on a granite block before the council hall steps",
 						"prompt": "A painted parody of Auguste Rodin’s THE THINKER: an oil painting of the bronze statue, thick visible brushstrokes, dark bronze body with green-and-gold patina painted in broad strokes, simplified heroic forms, on a rough granite block. Exact Thinker pose: seated, hunched forward, RIGHT elbow on the LEFT thigh, chin propped on the back of the right hand, left forearm across the left knee, feet planted, brow furrowed. The statue is KIM YUSHIN, face from the attached portrait, cast as bronze, wearing his marshal’s robe and topknot as bronze folds (clothed, not nude), no sword. The block stands at the foot of the stone steps of a Silla council hall, timber pillars and grey giwa roof dissolving into brushwork, deep blue #2A5FB8 dusk sky. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
 						"refs": [
@@ -30275,13 +30275,13 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>High Councillor Supum</b> has held the first chair since <b>Euljé</b> left it. The <b>Harmony Council</b>’s six sleeves — <b>Alchun</b>, <b>Yushin</b>, <b>Murim</b>, <b>Imjong</b>, <b>Suljong</b>, and <b>Bidam</b> — still decide only by unanimity, which is the only way the Council selects anything.",
-						"ko": "<b>수품 상대등</b>은 <b>을제</b>에게서 이어받은 첫 자리를 지키고 있다. <b>화백회의</b>의 여섯 소매 — <b>알천</b>, <b>유신</b>, <b>무림</b>, <b>임종</b>, <b>술종</b>, <b>비담</b> — 은 여전히 만장일치로만 결정한다. 화백이 무엇을 고르는 유일한 방식이다."
+						"html": "<b>High Councillor Supum</b> has held the first chair since <b>Euljé</b> left it. The <b>Harmony Council</b>’s six sleeves — <b>Alchun</b>, <b>Yushin</b>, <b>Murim</b>, <b>Imjong</b>, <b>Suljong</b>, and <b>Bidam</b> — still decide nothing except by unanimity.",
+						"ko": "<b>수품 상대등</b>은 <b>을제</b>에게서 이어받은 첫 자리를 지키고 있다. <b>화백회의</b>의 여섯 소매는 — <b>알천</b>, <b>유신</b>, <b>무림</b>, <b>임종</b>, <b>술종</b>, <b>비담</b> — 지금도 만장일치가 아니면 아무것도 정하지 않는다."
 					},
 					{
 						"kind": "p",
-						"html": "The technique has not changed since they crowned Dukman: initial vote, deliberation, final vote. Six Councillors. One High Councillor. Nothing moves unless the circle closes.",
-						"ko": "기법은 덕만을 세울 때부터 같다. 초투표, 숙고, 최종 투표. 대등 여섯. 상대등 하나. 원이 닫히지 않으면 아무것도 안 움직인다."
+						"html": "The procedure is the one that crowned Dukman: initial vote, deliberation, final vote. Six Councillors and one High Councillor, and nothing moves unless the circle closes.",
+						"ko": "절차는 덕만을 세울 때와 같다. 초투표, 숙고, 최종 투표. 대등 여섯에 상대등 하나, 원이 닫히지 않으면 아무것도 움직이지 않는다."
 					},
 					{
 						"kind": "diagram",
@@ -30319,8 +30319,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "One by one the hands go up. In a unanimous council a raised hand is a kind of weather — once it starts, it finishes. <b>Yushin</b>’s hand is among them. He has served one queen; he will serve her sister.",
-						"ko": "손이 하나씩 오른다. 만장일치 회의에서 손이란 일종의 날씨다 — 한 번 시작되면 끝난다. <b>유신</b>의 손도 그 안에 있다. 여왕 하나를 섬겼으면 그 누이도 섬긴다."
+						"html": "One by one the hands go up. In a council that must agree, hands follow hands; once the first is up, the rest come quickly. <b>Yushin</b>’s hand is among them. He has served one queen, and he will serve her sister.",
+						"ko": "손이 하나씩 오른다. 뜻을 모아야만 하는 회의에서 손은 손을 따른다. 하나가 오르면 나머지는 금방이다. <b>유신</b>의 손도 그 안에 있다. 여왕 하나를 섬겼으니, 그 누이도 섬길 것이다."
 					},
 					{
 						"kind": "p",
@@ -30345,16 +30345,14 @@
 						"person": "murim",
 						"chip": "#6b7280",
 						"lines": [
-							"비담. 초투표요.",
-							"다섯이 들었소. 숙고할 거리가 뭐요.",
-							"최종 투표를 열 수조차 없소.",
-							"당신이 문을 잠근 거요."
+							"비담. 초투표일 뿐이오.",
+							"다섯이 들었소. 숙고할 게 뭐가 있소?",
+							"당신 손 하나 때문에 최종 투표는 열지도 못하오."
 						],
 						"en": [
-							"Bidam. This is the initial vote.",
-							"Five are up. What is there to deliberate.",
-							"We cannot even open the final vote.",
-							"You locked the door."
+							"Bidam. It is only the initial vote.",
+							"Five are up. What is there to deliberate?",
+							"Because of your one hand we cannot even open the final vote."
 						]
 					},
 					{
@@ -30362,12 +30360,12 @@
 						"person": "suljong",
 						"chip": "#57534e",
 						"lines": [
-							"손 하나만 내리면 이 방은 끝나요.",
-							"그걸 알면서 내리는 거요?"
+							"비담 공, 다시 생각해 보시오.",
+							"정말 반대하는 거요?"
 						],
 						"en": [
-							"One hand down and this room is finished.",
-							"You know that, and you still put it down?"
+							"Lord Bidam, think again.",
+							"You truly mean to object?"
 						]
 					},
 					{
@@ -30383,19 +30381,19 @@
 					},
 					{
 						"kind": "p",
-						"html": "The room does the small silence of men who have already counted themselves finished. Unanimity has failed. The name cannot pass. Someone laughs once, short, the laugh you make when a junior spoils a dinner.",
-						"ko": "방은, 이미 끝났다고 세어 둔 사내들의 짧은 침묵을 한다. 만장일치가 깨졌다. 그 이름은 통과할 수 없다. 누군가 짧게 한 번 웃는다 — 후배가 저녁을 망쳤을 때 내는 웃음."
+						"html": "The room goes quiet, the quiet of men who had already stood up in their heads. Unanimity has failed. The name cannot pass. Someone laughs once, short, the laugh you give when a junior spoils a dinner.",
+						"ko": "방이 조용해진다. 머릿속으로는 벌써 자리에서 일어나 있던 사내들의 침묵이다. 만장일치가 깨졌다. 그 이름은 통과할 수 없다. 누군가 짧게 한 번 웃는다. 후배가 술자리를 망쳤을 때 나오는 웃음이다."
 					},
 					{
 						"kind": "dialogue",
 						"person": "alchun",
 						"lines": [
-							"비담이… 혼자?",
-							"승만공주님인데?"
+							"비담이… 혼자가?",
+							"승만공주님 아이가?"
 						],
 						"en": [
-							"Bidam… alone?",
-							"It is Princess Seungman."
+							"Bidam… on his own?",
+							"Against Princess Seungman?"
 						],
 						"chip": "#8fb3e0"
 					},
@@ -30420,14 +30418,14 @@
 						"kind": "dialogue",
 						"person": "yushin",
 						"lines": [
-							"비담아.",
-							"같은 피다. 같은 집이다.",
-							"네가 일으킨 여왕의 누이다."
+							"비담 공.",
+							"폐하의 친동생이시오.",
+							"그 폐하를 세운 것도 공이었소."
 						],
 						"en": [
-							"Bidam.",
-							"Same blood. Same house.",
-							"The sister of the queen you raised."
+							"Lord Bidam.",
+							"She is Her Majesty’s own sister.",
+							"And it was you who raised Her Majesty."
 						],
 						"chip": "#4a8fe0"
 					},
@@ -30435,25 +30433,23 @@
 						"kind": "dialogue",
 						"person": "bidam",
 						"lines": [
-							"그래서 더 반대하는 겁니다.",
-							"형님.",
-							"우리는 화랑 때 백팔 대 백팔이오.",
-							"나라는 점수판이 아닙니다.",
-							"춘추 공이 장안으로 눈을 돌리는 이 밤에 — 또 한 명의 약한 성골을 올리면, 이 나라는 누가 팝니까."
+							"그러니 더 반대하는 겁니다, 대장군.",
+							"한 못에서 연꽃도 피고 부평초도 뜹니다.",
+							"춘추 공의 눈은 벌써 장안에 가 있습니다.",
+							"이럴 때 약한 성골을 또 하나 올리면, 이 나라는 누가 팔아넘기겠습니까?"
 						],
 						"en": [
-							"That is why I object all the harder.",
-							"Brother.",
-							"We are one hundred and eight to one hundred and eight from our Hwarang days.",
-							"A country is not a scoreboard.",
-							"On a night when Lord Chunchu’s eyes turn toward Chang’an — if we seat another soft Sacred Bone, who sells this country."
+							"Which is why I object all the more, Marshal.",
+							"The same pond grows lotus and duckweed.",
+							"Lord Chunchu’s eyes are already on Chang’an.",
+							"Seat another soft Sacred Bone now, and who do you think sells this country?"
 						],
 						"chip": "#7b5cd6"
 					},
 					{
 						"kind": "p",
-						"html": "Yushin does not answer the count. Something in his face closes that has been open since they were boys on the yard. The Council adjourns with no successor named.",
-						"ko": "유신은 그 수에 대답하지 않는다. 연무장 소년 시절부터 열려 있던 얼굴의 한 곳이 닫힌다. 화백은 후계 없이 파한다."
+						"html": "Yushin does not answer. Something in his face closes that had stayed open since they were boys on the yard. The Council adjourns with no successor named.",
+						"ko": "유신은 대답하지 않는다. 연무장 소년 시절부터 열려 있던 얼굴의 어딘가가 닫힌다. 화백은 후계를 정하지 못한 채 파한다."
 					},
 					{
 						"kind": "flashback",
@@ -32256,13 +32252,13 @@
 						"person": "bidam",
 						"lines": [
 							"여주는 능히 잘 다스리지 못한다.",
-							"女主不能善理 — 여주가 즉위하던 해에 방이 말했고, 날씨인 척했다.",
-							"오늘은 그 척을 그만둔다."
+							"여왕이 즉위하던 해, 회의장 사내들이 다 속으로 외던 경이다.",
+							"오늘은 소리 내어 왼다."
 						],
 						"en": [
 							"A woman cannot rule well.",
-							"女主不能善理 — the room said it the year she was crowned and pretended it was weather.",
-							"Today we stop pretending."
+							"The year she was crowned, every man in that council hall murmured it like a sutra.",
+							"Today we chant it out loud."
 						]
 					},
 					{
@@ -32271,11 +32267,11 @@
 						"person": "yumjong",
 						"lines": [
 							"명활성 문을 열어라.",
-							"비담 상대등께서 오신다 — 오늘은 예의가 아니라 깃발이다."
+							"상대등께서 드신다. 깃발 올려라!"
 						],
 						"en": [
 							"Open the Radiance gate.",
-							"High Councillor Bidam comes — today it is the banner, not courtesy."
+							"The High Councillor is coming in. Raise the banner!"
 						]
 					},
 					{
@@ -32320,14 +32316,14 @@
 						"chip": "#c9a24a",
 						"person": "alchun",
 						"lines": [
-							"비담에게 칼을 들지는 않겠다.",
-							"폐하께 깃발을 들지도 않겠다.",
-							"열흘째에 다시 물어라. 그때도 겁쟁이일 수 있다 — 다만 정확한 겁쟁이로."
+							"나는 비담한테 칼 안 든다.",
+							"폐하께 깃발도 안 들고.",
+							"열흘째에 다시 물어봐라. 그때까지 다 살아 있으면."
 						],
 						"en": [
-							"I will not raise a blade against Bidam.",
-							"I will not raise a banner against Her Majesty.",
-							"Ask me again on the tenth day. I may still be a coward — but I will be a precise one."
+							"I won’t draw on Bidam.",
+							"And I won’t raise a banner against Her Majesty.",
+							"Ask me again on the tenth day. If we’re all still alive."
 						]
 					},
 					{
@@ -32418,11 +32414,11 @@
 								"person": "bidam",
 								"lines": [
 									"성골에 남자가 바닥나면, 가장 총명한 여자를 고르시오.",
-									"나는 어린 시절부터 덕만을 안다. 총명함에는 성별이 없다."
+									"덕만은 어려서부터 봐 왔소. 그 아이보다 경을 빨리 외는 사내는 아직 못 봤소."
 								],
 								"en": [
 									"If the Sacred Bone runs out of men, pick the cleverest woman.",
-									"I have known Dukman since we were children. Cleverness is not a gender."
+									"I have known Dukman since we were children. I have yet to meet the boy who learns a sutra faster."
 								]
 							},
 							{
@@ -32443,14 +32439,14 @@
 								"chip": "#c9a24a",
 								"person": "alchun",
 								"lines": [
-									"너희 둘은 점수 때문에 서로를 죽일 거다.",
-									"나는 가운데 있는 아이 때문에 나를 죽일 거다.",
-									"…농담이다. 농담으로 정리해 둬라."
+									"니들 둘은 점수 갖고 서로 죽이겠다.",
+									"나는 가운데 저 아 때문에 죽겠고.",
+									"…농담이다, 농담."
 								],
 								"en": [
-									"You two will kill each other over a score.",
-									"I will kill myself over the girl in the middle.",
-									"…That was a joke. File it as a joke."
+									"You two are going to kill each other over a score.",
+									"And that girl in the middle is going to be the death of me.",
+									"…Joke. It’s a joke."
 								]
 							},
 							{
@@ -32500,18 +32496,18 @@
 						"chip": "#7b5cd6",
 						"person": "bidam",
 						"lines": [
-							"삼한은 피로도, 마음으로도 식민지가 되고 있어.",
+							"삼한이 남의 것이 되어 가고 있어. 피로도, 마음으로도.",
 							"당은 제도를, 인도는…",
-							"…허황옥 여왕의 피를 통해, 불경을.",
-							"유신 — 네 눈 색은 예쁘다. 서쪽에서 온 색이다.",
-							"…내가 먼저 일어섰을 때는, 그들이 나를 개화파라 불렀지."
+							"…허황옥 여왕의 피를 타고, 불경을.",
+							"유신, 네 눈 색은 예쁘다. 서쪽에서 온 색이지.",
+							"…내가 처음 일어섰을 땐, 다들 날 법도 깨는 놈이라 했지."
 						],
 						"en": [
-							"Samhan is being colonized — in blood, and in the mind.",
+							"Samhan is becoming someone else’s. In blood, and in the mind.",
 							"Tang sends institutions. India sends…",
 							"…through Queen Heo’s blood, sutras.",
-							"Yushin — your eyes are handsome. They are a western colour.",
-							"…When I stood first, they called me the liberal."
+							"Yushin, your eyes are handsome. A western colour.",
+							"…When I first stood up, they all called me a breaker of custom."
 						]
 					},
 					{
@@ -32520,13 +32516,11 @@
 						"person": "yushin",
 						"lines": [
 							"가야 피도 서쪽에서 왔소.",
-							"나는… 일어났소.",
-							"열다섯 해 전, 네가 그렇게 말했을 때 — 일어나라고 했소."
+							"열다섯 해 전, 일어나라고 한 건 공이었소. 그래서 일어났소."
 						],
 						"en": [
 							"Gaya blood came from the west too.",
-							"I… stood up.",
-							"Fifteen winters past, when you spoke — you told me to stand."
+							"Fifteen winters past, it was you who told me to stand. So I stood."
 						]
 					},
 					{
@@ -32562,12 +32556,12 @@
 								"chip": "#c9a24a",
 								"person": "alchun",
 								"lines": [
-									"비담 — 왼쪽 능선. 나는 마른 시내.",
-									"우소가 안장을 풀면, 위원회를 기다리지 않는다."
+									"비담, 니는 왼쪽 능선. 나는 마른 개울.",
+									"우소 그놈이 안장 푸는 거 보이면, 바로 친다."
 								],
 								"en": [
-									"Bidam — left ridge. I take the dry creek.",
-									"If Uso loosens a saddle, we do not wait for a committee."
+									"Bidam, you take the left ridge. I’ve got the dry creek.",
+									"The second Uso loosens a saddle, we hit him."
 								]
 							},
 							{
@@ -32593,12 +32587,12 @@
 								"chip": "#c9a24a",
 								"person": "alchun",
 								"lines": [
-									"목표가 성 밖이면 우리는 좋은 짝이다.",
-									"성 안에서는… 두고 보자."
+									"성 밖에서 붙으면 우리 둘이 딱인데.",
+									"성 안에서는… 글쎄다."
 								],
 								"en": [
-									"We make a good pair when the target is outside the wall.",
-									"Inside the wall… we will see."
+									"Outside a wall, we make a good pair.",
+									"Inside one… we’ll see."
 								]
 							},
 							{
@@ -32631,16 +32625,16 @@
 						"chip": "#c084fc",
 						"person": "chunchu",
 						"lines": [
-							"법민.",
-							"항아리 하나 가져가.",
-							"샘은 네 외숙이 아는 곳이다. 네가 김씨니까 문이 열릴 거다.",
-							"비담에게 그 물을 끼얹어라."
+							"법민아.",
+							"항아리 하나 챙겨라.",
+							"네 외숙이 씻는 샘이 있다. 김씨는 들여보내 준다더구나.",
+							"물은 그릇 모양을 따른다지. 비담한테 끼얹어 보거라. 어떤 그릇인지 보게."
 						],
 						"en": [
 							"Bupmin.",
 							"Take a jar.",
-							"The spring is a place your uncle knows. You’re a Kim — the door will open.",
-							"Splash him."
+							"Your uncle bathes at a spring. They let Kims in, I hear.",
+							"Water takes the shape of its vessel, the books say. Throw it on Bidam and let’s see his shape."
 						]
 					},
 					{
@@ -32649,34 +32643,38 @@
 						"person": "munmu",
 						"look": "hwarang",
 						"lines": [
-							"아버지…",
-							"그 물이, 사람을 어떻게…",
-							"알겠습니다. 다녀오겠습니다."
+							"아버지.",
+							"그 물을 맞으면, 사람이 어떻게 됩니까?",
+							"…알겠습니다. 다녀오겠습니다."
 						],
 						"en": [
-							"Father…",
-							"What does the water do to a man…",
-							"I understand. I’ll go."
+							"Father.",
+							"What does that water do to a man?",
+							"…Understood. I’ll go."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "This is the first time the cavern goddesses meet Bupmin. He is twenty-one. He does not yet have a king’s name. He has a jar and Chunchu’s weather.",
-						"ko": "동굴 여신들이 법민을 만나는 첫날이다. 스물하나. 아직 왕의 이름은 없다. 항아리와, 춘추의 날씨만 있다."
+						"html": "This is the first time the cavern goddesses meet Bupmin. He is twenty-one. He does not yet have a king’s name. He has a jar, and his father’s orders.",
+						"ko": "동굴 여신들이 법민을 만나는 첫날이다. 스물하나. 아직 왕의 이름은 없다. 항아리 하나와 아버지의 명이 있을 뿐이다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#5fad6e",
 						"person": "narim",
 						"lines": [
-							"김이네.",
-							"앉아. 아니 — 항아리 먼저.",
-							"너… 너는 양쪽의 최선이야. 어깨는 가야. 입은 서라벌. 서 있으면 골화가 타고 오를 거야. 앉아."
+							"김씨네요.",
+							"앉아요. 아니, 항아리 먼저.",
+							"그쪽은… 아니, 얘는 양쪽 좋은 것만 받았네.",
+							"어깨는 가야, 입은 서라벌.",
+							"그렇게 서 있으면 골화가 타고 올라가요. 앉아요."
 						],
 						"en": [
 							"A Kim.",
-							"Sit. No — the jar first.",
-							"You… He is the best of both. Gaya in the shoulders. Surabol in the mouth. Golhwa is going to climb you if you stay standing. Sit."
+							"Sit. No, the jar first.",
+							"You’re… No. He is the best of both.",
+							"Gaya in the shoulders, Surabol in the mouth.",
+							"If you stay standing, Golhwa will climb you. Sit."
 						]
 					},
 					{
@@ -32684,15 +32682,15 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"lines": [
-							"아.",
-							"처음 보는 김이야. 둘 다야.",
-							"물 받아. 양심이 달라붙어. 트라우마. 원한. 그 손을 움직이는 거.",
-							"…그리고 그렇게 서 있지 마."
+							"오.",
+							"이런 김은 또 처음이네.",
+							"물 떠 가. 사람한테 끼얹으면 트라우마 같은 게 줄줄 나와.",
+							"…그리고 그렇게 서 있지 좀 마."
 						],
 						"en": [
 							"Oh.",
-							"A Kim we haven’t had. He’s both.",
-							"Take the water. Conscience sticks to it. Trauma. Grudge. Whatever’s driving the hand.",
+							"Now there’s a Kim we haven’t had.",
+							"Take your water. Throw it on a man and out pours his trauma.",
 							"…And stop standing like that."
 						]
 					},
@@ -32701,10 +32699,10 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"lines": [
-							"나 언덕이려 하는데, 너는 무릎 위에 두고 싶은 문제처럼 생겼어."
+							"나 지금 언덕 노릇 하는 중인데… 너 무릎에 앉히고 싶어 죽겠어."
 						],
 						"en": [
-							"I’m trying to be a hill and you are shaped like a problem I want in my lap."
+							"I’m supposed to be a hill right now… and all I want is you in my lap."
 						],
 						"nsfw": true
 					},
@@ -32714,15 +32712,15 @@
 						"person": "hyulle",
 						"lines": [
 							"…조심해요.",
-							"튀기면, 왜 이러는지 보여요.",
+							"그 물이 닿으면, 왜 그러는지 보여요.",
 							"아무것도 안 보이면… 그것도 답이에요.",
-							"…예뻐요. 조용히 있을게요. 차분할 수는 없어요."
+							"…예쁘다."
 						],
 						"en": [
 							"…Be careful.",
-							"If you splash it, you see why he’s doing it.",
-							"If you don’t see anything… that’s its own answer.",
-							"…He’s pretty. I’ll be quiet. I won’t be calm."
+							"Once it touches him, you’ll see why he’s doing it.",
+							"If you don’t see anything… that’s an answer too.",
+							"…He’s pretty."
 						]
 					},
 					{
@@ -32758,24 +32756,24 @@
 					},
 					{
 						"kind": "p",
-						"html": "Fourth night. Same low table under the half moon. Bidam reads a rumoured draft — never enough secretariat, never enough emperor. His voice stays pleasant. The sentences do not.",
-						"ko": "넷째 밤. 반달 아래 같은 낮은 상. 비담은 소문난 초안을 읽는다 — 집사부는 늘 부족하고, 황제는 늘 부족하다. 목소리는 여전히 부드럽다. 문장만 그렇지 않다."
+						"html": "Fourth night. Same low table under the half moon. Bidam has brought a draft that is going round Wolseong, Chunchu’s plan for a secretariat on the Tang model, and he reads from it in a pleasant voice.",
+						"ko": "넷째 밤. 반달 아래 같은 낮은 상. 비담은 월성에 나도는 초안 하나를 들고 왔다. 당나라 식으로 집사부를 세우자는 춘추의 안이다. 그는 부드러운 목소리로 그것을 읽어 내려간다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#7b5cd6",
 						"person": "bidam",
 						"lines": [
-							"춘추가 원하는 건…",
-							"당나라 봉투 안의 나라야.",
-							"중앙집권. 황제. 서기.",
-							"화백의 만장일치 — 우리가 남긴 유일한 것 — 을 태울 셈이지."
+							"춘추가 바라는 건…",
+							"이 나라를 뿌리째 뽑아다 당나라 논에 옮겨 심는 거야.",
+							"황제 하나에, 서기가 천.",
+							"화백의 만장일치는 우리 손에 남은 마지막 건데, 그것부터 태우겠지."
 						],
 						"en": [
 							"What Chunchu wants…",
-							"is a country that fits inside a Tang envelope.",
-							"Central rule. Emperor. Clerks.",
-							"He would burn the Harmony Council’s unanimity — the one thing we kept."
+							"is to pull this country up by the roots and plant it in a Tang paddy.",
+							"One emperor. A thousand clerks.",
+							"The Council’s unanimity is the last thing still in our hands, and he will burn that first."
 						]
 					},
 					{
@@ -32783,10 +32781,10 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"백제는 문장이 아니라 칼로 오니까."
+							"백제가 고개를 넘어오는데, 화백이 뜻을 모을 때까지 기다려 주겠소?"
 						],
 						"en": [
-							"Baekje comes with swords, not sentences."
+							"When Baekje comes over the pass, will they wait for the Council to agree?"
 						]
 					},
 					{
@@ -32794,18 +32792,16 @@
 						"chip": "#7b5cd6",
 						"person": "bidam",
 						"lines": [
-							"그래 — 그래서 네가 항상 이겼지.",
-							"연무장에서도, 여기서도.",
-							"노력이… 내 혈통보다 시끄럽게 말해.",
-							"…그 여인이 즉위하던 해엔 나도, 여주를 위해 일어선 개화파였는데.",
-							"지금은 삼한 피를 지키는 자라 부르는구나. 아이러니하지, 유신?"
+							"그래. 너는 늘 그렇게 이겼지.",
+							"연무장에서도, 여기서도. 네 땀이 늘 내 피보다 시끄러웠어.",
+							"…그때 나더러 법도를 깨는 놈이라던 입들이,",
+							"이제는 낡은 피만 붙드는 늙은이라 하는구나. 바퀴가 제자리로 돌아왔어, 유신."
 						],
 						"en": [
-							"Yes — and that is why you always win.",
-							"On the yard, and here.",
-							"Effort… speaks louder than my blood.",
-							"…The year they crowned her, I was the liberal who stood for the woman king.",
-							"Now they call me the blood-and-soil man. Ironic, Yushin?"
+							"Yes. That is how you always won.",
+							"On the yard, and here. Your sweat was always louder than my blood.",
+							"…The same mouths that called me a breaker of custom back then",
+							"now call me an old man clinging to old blood. The wheel has come round, Yushin."
 						]
 					},
 					{
@@ -32813,7 +32809,7 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"…그 젊은 화랑은 아직 여기 있다."
+							"…그 젊은 화랑은 아직 여기 있소."
 						],
 						"en": [
 							"…That young Hwarang is still here."
@@ -32953,14 +32949,14 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"비담.",
-							"그 십 리 바깥 이야기, 한 번만 더.",
-							"백성이 황제를 원치 않는다 — 그 말은, 어디서 들었소."
+							"비담 공.",
+							"그 십 리 밖 이야기, 다시 해 보시오.",
+							"백성이 황제를 원치 않는다니, 그건 누구한테 들었소?"
 						],
 						"en": [
-							"Bidam.",
-							"That ten-mile story. Once more.",
-							"The people have no wish for an emperor — where did you hear that."
+							"Lord Bidam.",
+							"Tell me again about beyond the ten miles.",
+							"The people want no emperor. Who told you that?"
 						]
 					},
 					{
@@ -32997,8 +32993,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Nothing rises. No childhood. No princess. No grudge-film in the steam. The water runs off the black robe as if it had mistaken a man for a wound. Chunchu, at the pavilion’s edge, does not move. The stoic act holds; the eyes do not.",
-						"ko": "아무것도 안 뜬다. 어린 시절도, 공주도, 김 속의 한 필름도. 물은 흑의를 타고 내린다. 사람을 상처로 착각한 것처럼. 정자 가장자리의 춘추는 움직이지 않는다. 담담한 연기는 유지된다. 눈만 아니다."
+						"html": "Nothing rises. No childhood, no princess, no old grudge taking shape in the steam. The water runs off the black robe as if it had mistaken a man for a wound. At the pavilion’s edge Chunchu does not move. Only his eyes go to the empty jar.",
+						"ko": "아무것도 떠오르지 않는다. 어린 시절도, 공주도, 김 속에서 모양을 잡는 묵은 원한도 없다. 물은 사람을 상처로 잘못 알았다는 듯 흑의를 타고 흘러내린다. 정자 가장자리의 춘추는 움직이지 않는다. 눈만 빈 항아리로 간다."
 					},
 					{
 						"kind": "dialogue",
@@ -33078,20 +33074,27 @@
 						"ko": "늦게 등을 들고 온 알천의 얼굴이 하얘진다. 장교 하나가 항아리를 빼앗을지 묻는다. 대답하는 사람이 없다. 비담은 아직 웃고, 아직 살아 있고, 염주는 아직 세고 있다."
 					},
 					{
+						"kind": "p",
+						"html": "Back inside Wolseong, Chunchu talks the night over with Munhee.",
+						"ko": "월성으로 돌아온 춘추는 문희와 그 밤 일을 따져 본다."
+					},
+					{
 						"kind": "dialogue",
 						"chip": "#c084fc",
 						"person": "chunchu",
 						"lines": [
-							"비담이 이기면 집사부는 고상한 취미가 된다.",
-							"비담이 져도, 우리에게는 죽어 가는 여왕과 서쪽의 당 모양 구멍이 남는다.",
-							"그 사람은 좋은 생각도 당나라 봉투에 담겨 오면 태울 사람이다. 강령의 전부가 그것이고 — 인기는 좋다.",
-							"문희 — 어느 날씨든 싸 둬라."
+							"비담이 이기면 내 집사부는 서가에 꽂아 둔 장식이 되겠지.",
+							"져도 마찬가지야. 여왕은 죽어 가고, 서쪽엔 당나라만 한 구멍이 남아.",
+							"장안에서 왔다 하면 좋은 생각도 태울 사람이야. 진시황이 책 태우듯이.",
+							"그런데 저잣거리는 그 연기에 박수를 치거든.",
+							"문희, 짐 싸 둬. 어느 쪽이 되든."
 						],
 						"en": [
-							"If Bidam wins, the Secretariat becomes a quaint hobby.",
-							"If Bidam loses, we still have a dying queen and a Tang-shaped hole in the west.",
-							"The man would burn a good idea for arriving in a Tang envelope. That is the whole platform — and it polls well.",
-							"Munhee — pack for either weather."
+							"If Bidam wins, my Secretariat becomes an ornament on a bookshelf.",
+							"If he loses, it’s no better. The queen is dying, and there’s a hole in the west the size of Tang.",
+							"He would burn a good idea for coming from Chang’an, the way the First Emperor of Qin burned books.",
+							"And the market cheers the smoke.",
+							"Munhee. Pack. Whichever way it goes."
 						]
 					},
 					{
@@ -33099,12 +33102,14 @@
 						"chip": "#f472b6",
 						"person": "munhee",
 						"lines": [
-							"이미 쌌다.",
-							"여왕이 즉위하던 해에 쌌다. 너는 포위 때만 눈치챈다."
+							"벌써 쌌어요.",
+							"여왕께서 즉위하시던 해에요.",
+							"당신은 꼭 포위가 돼야 알죠."
 						],
 						"en": [
-							"I already packed.",
-							"I packed the year the Queen was crowned. You only notice in sieges."
+							"Already packed.",
+							"The year the Queen was crowned.",
+							"You only ever notice in a siege."
 						]
 					},
 					{
@@ -33185,8 +33190,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The tea has not been touched. He says it like a compliment that curdled — still the gentleman, still the black robe, still the voice that once shielded this same man from the yard.",
-						"ko": "차는 손대지 않았다. 상처 주는 칭찬처럼 말한다 — 여전히 군자, 여전히 흑의, 여전히 연무장에서 이 같은 사람을 막아 세던 그 목소리."
+						"html": "The tea has not been touched. He says it pleasantly, the way he says everything, in the same voice that once stood between this man and the yard bullies.",
+						"ko": "차는 손도 대지 않았다. 그는 늘 그렇듯 부드럽게 말한다. 한때 연무장 패거리 앞을 막아서서 이 사람을 감싸 주던, 바로 그 목소리로."
 					},
 					{
 						"kind": "dialogue",
@@ -33286,11 +33291,11 @@
 								"person": "yushin",
 								"lines": [
 									"백팔.",
-									"일어서라. 기우는 숫자는 밤에 못 잔다."
+									"일어서라."
 								],
 								"en": [
 									"One hundred and eight.",
-									"Get up. An uneven number does not sleep."
+									"Get up."
 								]
 							},
 							{
@@ -33349,11 +33354,11 @@
 						"person": "bidam",
 						"lines": [
 							"…오늘은 안 오는구나.",
-							"괜찮아. 여섯 번째 밤까지는 예의를 지켰어."
+							"그래. 예의는 차릴 만큼 차렸지."
 						],
 						"en": [
-							"…He is not coming today.",
-							"Very well. Courtesy held until the sixth night."
+							"…He isn’t coming tonight.",
+							"Well. We have been polite long enough."
 						]
 					},
 					{
@@ -33579,10 +33584,12 @@
 						"chip": "#2eb8c4",
 						"person": "hyulle",
 						"en": [
-							"…The mouth. Before the water takes the blade."
+							"…The way out is over there.",
+							"Before the water takes your blade."
 						],
 						"lines": [
-							"…입구로. 물이 칼을 가져가기 전에."
+							"…입구는 저쪽이에요.",
+							"물이 그 칼을 가져가기 전에요."
 						]
 					},
 					{
@@ -33602,8 +33609,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "They kick him toward the light — tiger-shoulder, serpent-coil, bear-shove. Three beasts, one refusal. The night has him again. The lake keeps Kims. It does not keep slogans.",
-						"ko": "셋이 그를 빛 쪽으로 밀어낸다 — 호랑이 어깨, 뱀의 몸, 곰의 밀침. 짐승 셋, 거절 하나. 밤이 다시 그를 갖는다. 호수는 김씨를 지킨다. 구호는 지키지 않는다."
+						"html": "They kick him toward the light — tiger-shoulder, serpent-coil, bear-shove — and the night has him again.",
+						"ko": "셋이 그를 빛 쪽으로 차낸다. 호랑이 어깨, 뱀의 똬리, 곰의 밀침. 밤이 다시 그를 받아 간다."
 					},
 					{
 						"kind": "scene",
@@ -33643,12 +33650,12 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"lines": [
-							"친구를 죽이려 해서 온 거지.",
-							"숲의 예의: 그냥 말해."
+							"친구를 죽이게 생겨서 온 거야.",
+							"그냥 말해요, 유신."
 						],
 						"en": [
-							"He came because he is about to kill a friend.",
-							"Forest etiquette: say it plain."
+							"He’s here because he’s about to kill a friend.",
+							"Just say it, Yushin."
 						]
 					},
 					{
@@ -33669,12 +33676,12 @@
 						"lines": [
 							"못 해요.",
 							"…미안해요.",
-							"머리띠를 기억할 상처는 남기고. 칼에 고마워하길 바라는 상처는 버리세요."
+							"…그 머리띠 준 사람으로, 기억해 줘요."
 						],
 						"en": [
 							"You can’t.",
 							"…I’m sorry.",
-							"Keep the wound that remembers the headband. Lose the one that wants him to thank you for the blade."
+							"…Remember him as the boy who gave you the headband."
 						]
 					},
 					{
@@ -33712,12 +33719,12 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"lines": [
-							"그만, 불꽃아.",
-							"그는 갈 거다. 갑옷을 벗고도 그 이름을 붙들고 있을 때부터 알았다."
+							"골화, 그만.",
+							"놔 줘."
 						],
 						"en": [
-							"Enough, fire.",
-							"He will go. We knew that when he took the armour off and still kept her name on."
+							"Golhwa. Enough.",
+							"Let him go."
 						]
 					},
 					{
@@ -33727,12 +33734,12 @@
 						"lines": [
 							"…가요.",
 							"선덕께 승리를 드리세요.",
-							"우리에게는 침묵을 조금만."
+							"…우리 생각도, 조금만 해 줘요."
 						],
 						"en": [
 							"…Go.",
 							"Give Sunduk the victory.",
-							"Keep a little silence for us."
+							"…And think of us. A little."
 						]
 					},
 					{
@@ -33746,13 +33753,13 @@
 						"person": "yushin",
 						"lines": [
 							"아버지. 할아버지.",
-							"엿새 사이에 같은 입이 저를 신국의 구원자라 부르고, 가야 놈이라 불렀습니다.",
-							"열흘째 아침에는 그중 어느 쪽을 들고 나가야 합니까."
+							"비담이 저를 가야 놈이라 했습니다. 감히 신국의 구원자 행세를 한다고.",
+							"열흘째 아침엔, 그 사람한테 칼을 들고 나가야 합니다."
 						],
 						"en": [
 							"Father. Grandfather.",
-							"In six days the same mouth has called me the sacred country’s saviour and a Gaya wretch.",
-							"Which of the two do I carry out to the tenth morning?"
+							"Bidam called me a Gaya wretch. Said I dared to play the sacred country’s saviour.",
+							"On the tenth morning I have to go out to him with a sword."
 						]
 					},
 					{
@@ -33849,13 +33856,13 @@
 						"chip": "#7b5cd6",
 						"person": "bidam",
 						"lines": [
-							"들었느냐.",
-							"하늘은 이미 여왕의 자리에 반대표를 던졌다.",
-							"女主不能善理 — 이제 하늘이 불로 쓴다."
+							"보았느냐.",
+							"하늘도 손을 들지 않았다.",
+							"女主不能善理. 이제는 하늘이 불로 쓴다."
 						],
 						"en": [
-							"You heard it.",
-							"Heaven has already voted against a woman on the throne.",
+							"You saw it.",
+							"Heaven has kept its hand down too.",
 							"女主不能善理 — and now the sky writes it in fire."
 						]
 					},
@@ -33869,12 +33876,12 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"폐하 — 떨어지는 빛을 두려워 마십시오.",
-							"별을 읽을 수 있다면, 읽지 못하게 할 수도 있습니다."
+							"폐하, 저 별에 마음 쓰지 마십시오.",
+							"떨어진 별이면, 다시 올리면 됩니다."
 						],
 						"en": [
-							"Your Majesty — do not fear a falling light.",
-							"If they can read a star, they can also unread one."
+							"Your Majesty, pay that star no mind.",
+							"If a star has fallen, we put it back up."
 						]
 					},
 					{
@@ -33887,14 +33894,14 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"lines": [
-							"올려 보아라.",
-							"하늘이 마음을 바꿨다 — 아니면 우리가 하늘의 필체를 고쳤다.",
-							"화랑, 나를 따르라."
+							"올려다봐라!",
+							"떨어진 별이 다시 올라간다!",
+							"화랑, 나를 따르라!"
 						],
 						"en": [
-							"Look up.",
-							"Heaven changed its mind — or we changed heaven’s handwriting.",
-							"Hwarang, with me."
+							"Look up!",
+							"The fallen star is going back up!",
+							"Hwarang, with me!"
 						]
 					},
 					{
@@ -34085,12 +34092,14 @@
 						"chip": "#c9a24a",
 						"person": "alchun",
 						"lines": [
-							"나는 이 주를 살아남는 나라에 속한다.",
-							"그 답이 공허하다면 — 너희가 나중에 내게 줄 자리도 공허할 것이다."
+							"어느 성벽이냐꼬?",
+							"열흘 지나고도 서 있는 쪽이다.",
+							"나중에 자리 준다는 소리는 하지 마라."
 						],
 						"en": [
-							"I belong to the country that survives the week.",
-							"If that answer is empty — then so is the chair you will offer me afterward."
+							"Which wall?",
+							"Whichever one is still standing when the ten days are up.",
+							"And don’t talk to me about seats afterward."
 						]
 					},
 					{
@@ -34246,13 +34255,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "They meet again between the camps — not as High Councillor and marshal, but as the yard’s two best. Dragon pommel against heavenly horse. The first exchanges are almost gentle. That is how Hwarang kill each other.",
-						"ko": "다시 진영 사이에서 만난다 — 상대등과 대장군이 아니라, 연무장의 두 최고로. 용 자루 머리와 천마. 처음 몇 수는 거의 다정하다. 화랑은 그렇게 서로를 죽인다."
+						"html": "They meet again between the camps with their titles left behind, the yard’s two best. Dragon pommel against heavenly horse. The first exchanges are almost gentle.",
+						"ko": "다시 진영 사이에서 만난다. 직함은 두고 나온, 연무장의 두 최강이다. 용 자루 머리와 천마. 처음 몇 합은 거의 다정하다."
 					},
 					{
 						"kind": "p",
 						"html": "Yushin wins the way a man wins when he would rather lose — late, ugly, through a guard he taught Bidam twenty years ago. The heavenly-horse blade drops. Blood finds the mud that used to be a scoreboard.",
-						"ko": "유신은 차라리 지고 싶은 사람이 이기듯 이긴다 — 늦게, 흉하게, 이십 년 전 비담에게 가르친 가드를 뚫고. 천마 칼이 떨어진다. 피가, 한때 점수판이던 진흙을 찾는다."
+						"ko": "유신은 차라리 지고 싶은 사람이 이기듯 이긴다 — 늦게, 흉하게, 이십 년 전 비담에게 가르친 막기 자세를 뚫고. 천마 칼이 떨어진다. 피가, 한때 점수판이던 진흙을 찾는다."
 					},
 					{
 						"kind": "dialogue",
@@ -34332,13 +34341,11 @@
 						"person": "yushin",
 						"lines": [
 							"비담의 집안을 없애라.",
-							"손씨 — 무산 일대, 구르마의 후예 전부.",
-							"반역의 피는 끊어야 한다."
+							"무산 손씨. 구르마의 후손까지 전부."
 						],
 						"en": [
 							"Erase Bidam’s house.",
-							"The Son line — all Musan, all Gurema’s descendants.",
-							"Treason’s blood must be cut."
+							"The Son clan of Musan. Every last descendant of Gurema."
 						]
 					},
 					{
@@ -34346,14 +34353,14 @@
 						"chip": "#c9a24a",
 						"person": "alchun",
 						"lines": [
-							"유신…",
-							"비담은 죽었다. 열흘 동안 차를 따르고, 칼을 맞았다.",
-							"그의 대청까지 태우면 — 우리가 지키려던 육촌 중 하나를 스스로 지운다."
+							"유신아…",
+							"비담이 죽었다 아이가. 열흘을 니한테 차 따르다가, 니 칼 맞고.",
+							"집안까지 태우면, 육촌 하나를 우리 손으로 지우는 기다."
 						],
 						"en": [
 							"Yushin…",
-							"Bidam is dead. He poured tea for ten days, then took the blade.",
-							"If you burn his hall — we erase one of the Six Elders with our own hands."
+							"Bidam’s dead. Ten days he poured you tea, and then he took your blade.",
+							"Burn his house as well and we wipe out one of the Six Elders with our own hands."
 						]
 					},
 					{
@@ -34383,11 +34390,11 @@
 						"person": "kangrim",
 						"lines": [
 							"상대등.",
-							"명부가 여기까지요. 함께 가십시다 — 폐하의 나라는 서라벌보다 회의록을 잘 남깁니다."
+							"명부에서 상대등의 장은 여기서 끝나오."
 						],
 						"en": [
 							"High Councillor.",
-							"Your list ends here. Walk with me — His Majesty’s kingdom keeps better minutes than Surabol."
+							"Your page in the ledger ends here."
 						]
 					},
 					{
@@ -34395,12 +34402,12 @@
 						"chip": "#6b7280",
 						"person": "kangrim",
 						"lines": [
-							"상대등 — 회의록을 닫기 전에.",
-							"반대편 연. 뭐라고 적을까요?"
+							"덮기 전에 하나만 묻겠소.",
+							"반대편 연. 뭐라고 적으면 되겠소?"
 						],
 						"en": [
-							"High Councillor — before the minutes close.",
-							"The opposite kite. What do you want written?"
+							"One question before I close it.",
+							"The opposite kite. What do I write?"
 						]
 					},
 					{
@@ -34417,6 +34424,19 @@
 							"The rest they can guess.",
 							"Tell the sacred country I loved it badly."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5f5f6b",
+						"lines": [
+							"갑시다.",
+							"폐하의 나라는 서라벌보다 회의록을 잘 남기오."
+						],
+						"en": [
+							"Walk.",
+							"His Majesty’s kingdom keeps better minutes than Surabol."
+						],
+						"person": "kangrim"
 					},
 					{
 						"kind": "p",
@@ -34457,11 +34477,11 @@
 						"person": "yushin",
 						"lines": [
 							"의원들이 복도에 있습니다.",
-							"비는 기다리라 했습니다."
+							"들이시겠습니까?"
 						],
 						"en": [
 							"The physicians are in the corridor.",
-							"I told them the rain can wait."
+							"Shall I send them in?"
 						]
 					},
 					{
