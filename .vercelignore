@@ -4,6 +4,7 @@ scripts/.cache
 .DS_Store
 node_modules
 # --- generated: unreferenced static/temp (scripts/sync-temp-deploy.mjs) ---
+static/temp/ancient_scroll_candlelight.png
 static/temp/arrow_in_tree.png
 static/temp/bidam-defiance-upward.png
 static/temp/bidam-gold-shaft.jpg
@@ -14,6 +15,7 @@ static/temp/bidam-sword-carry.jpg
 static/temp/bidam-yumjong-rally.jpg
 static/temp/bidam_defiance_upward.png
 static/temp/bidam_rebellion_torch.png
+static/temp/burning_arrow_twilight.png
 static/temp/council-seq-veto.jpg
 static/temp/council-tea-supum.jpg
 static/temp/council-veto-fist.jpg
@@ -53,6 +55,7 @@ static/temp/golhwa-thought-bubble.jpg
 static/temp/golhwa-thought-straddle.jpg
 static/temp/golhwa-wade-close.jpg
 static/temp/gyebek_golden_resolve.png
+static/temp/hands_sword_blue_determination.png
 static/temp/harbor-city.jpg
 static/temp/hwarang_flower_youth.png
 static/temp/hyulle-lounge-bite.jpg
@@ -66,6 +69,7 @@ static/temp/hyulle-will-spill.jpg
 static/temp/img_emotional_closeness_comfort.png
 static/temp/img_lovers_parting_war.png
 static/temp/img_steam_cavern_intimacy.png
+static/temp/img_wu_zetian_seduction_power.png
 static/temp/jumong-amnok-ink-copper-kiss.jpg
 static/temp/jumong-amnok-ink-copper-room.jpg
 static/temp/jumong-amnok-ink-dragon-banter.jpg
@@ -516,6 +520,8 @@ static/temp/jumong-yuhwa-wc-wander-road.jpg
 static/temp/jumong-yuhwa-why-not-sun.jpg
 static/temp/jumong-yuhwa-worm-chariot.jpg
 static/temp/kangrim_reaper_scroll.png
+static/temp/li_shimin_dragon.png
+static/temp/li_shimin_throne.png
 static/temp/narim-hunger-hearts.jpg
 static/temp/narim-lounge-lip.jpg
 static/temp/narim-rock-hike-high.jpg
@@ -636,14 +642,24 @@ static/temp/seohyeon-prophecy-surprise.jpg
 static/temp/seohyeon-shadow-wet.jpg
 static/temp/seohyeon-wet-back.jpg
 static/temp/seohyeon-wont-stand.jpg
+static/temp/taizong-throne-majesty.jpg
+static/temp/taizong-throne-majesty.png
 static/temp/taizong.png
+static/temp/taizong_throne_majesty.png
 static/temp/tamla_orange_tribute.png
+static/temp/tang-axis-palace.jpg
+static/temp/tang_cavalry_charge.png
+static/temp/tang_changan_palace.png
+static/temp/tang_taizong_court.png
+static/temp/tang_tributary_gifts.png
 static/temp/three_swords_memorial.png
 static/temp/two_teacups_memorial.png
 static/temp/war_drum_golden_circle.png
 static/temp/war_drum_silence.png
 static/temp/watchtower_red_defiance.png
+static/temp/xue-eastern-shaft.jpg
 static/temp/xue-longmen-farewell.jpg
+static/temp/xuerengui_banner_wind.png
 static/temp/yuhwa-exile-dejected-ecu.jpg
 static/temp/yuhwa-exile-fox-buyeo-see.jpg
 static/temp/yuhwa-exile-fox-lookback.jpg

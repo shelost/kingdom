@@ -2935,6 +2935,21 @@ export const PEOPLE: Person[] = [
 		aliases: ['Wei Zheng', 'the imperial minister', 'The Imperial Minister', 'the minister']
 	},
 	{
+		id: 'chusuiliang',
+		gender: 'm',
+		name: 'Chu Suiliang',
+		korean: '저수량',
+		hanja: '褚遂良',
+		kingdom: 'tang',
+		born: 596,
+		died: 658,
+		tagline: 'The court diarist at the foot of Wei Zheng’s deathbed, writing down everything the emperor says.',
+		career: [
+			{ title: 'Remonstrance Counsellor', korean: '간의대부', hanja: '諫議大夫', org: 'tangcourt', note: 'keeps the court diary' }
+		],
+		aliases: ['Chu Suiliang', '저수량', '褚遂良']
+	},
+	{
 		id: 'xueliu',
 		name: 'Lady Liu',
 		korean: '유씨',
@@ -3300,12 +3315,22 @@ export const PEOPLE: Person[] = [
 		aliases: [
 			'Yeon Gusesa',
 			'Gusesa',
-			'Lee Gaesa',
 			'High Commander',
 			'막리지',
 			'Central Commander',
 			'Stone Haetae of Goryeo'
 		]
+	},
+	{
+		id: 'leegaesa',
+		gender: 'm',
+		name: 'Lee Gaesa',
+		korean: '이가사',
+		kingdom: 'goguryeo',
+		died: 642,
+		tagline: 'The Summit’s mouth the day the word traitor was first set on Yeon’s name; he dies at the banquet with it in his mouth.',
+		events: [{ year: 642, label: 'Dies at Yeon’s banquet — “Traitor…!”' }],
+		aliases: ['Lee Gaesa', '이가사']
 	},
 	{
 		id: 'northcmd',

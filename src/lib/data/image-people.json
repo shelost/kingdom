@@ -1461,7 +1461,8 @@
 	],
 	"blade-lee": [
 		"gesomun",
-		"gusesa"
+		"gusesa",
+		"leegaesa"
 	],
 	"blade-gusesa": [
 		"gesomun",
@@ -1599,19 +1600,16 @@
 	"alchun-ready-restraint": [
 		"alchun"
 	],
-	"poster_taizong": [
-		"taizong"
+	"yushin-dawn-vigil": [
+		"yushin"
 	],
-	"taizong-throne-majesty": [
+	"poster_taizong": [
 		"taizong"
 	],
 	"tang-palace": [
 		"taizong"
 	],
 	"taizong-throne-shadow": [
-		"taizong"
-	],
-	"tang-taizong-court": [
 		"taizong"
 	],
 	"taizong-worms-eye-crown": [
@@ -2711,9 +2709,6 @@
 	"taizong-empty-dais": [
 		"taizong"
 	],
-	"wu-zetian-seduction-power": [
-		"wuzetian"
-	],
 	"munduk-banner": [
 		"munduk"
 	],
@@ -2750,20 +2745,8 @@
 		"xueliu",
 		"xuerengui"
 	],
-	"xuerengui-banner": [
-		"xuerengui"
-	],
-	"xue-eastern-shaft": [
-		"xuerengui"
-	],
-	"xue-east-gaze": [
-		"xuerengui"
-	],
 	"ansi-court": [
 		"yangmanchun"
-	],
-	"yushin-dawn-vigil": [
-		"yushin"
 	],
 	"poster_xuerengui": [
 		"xuerengui"
@@ -2775,6 +2758,9 @@
 		"namseng"
 	],
 	"xue-fortress-escape": [
+		"xuerengui"
+	],
+	"xue-east-gaze": [
 		"xuerengui"
 	],
 	"dongchun-five-thousand": [
@@ -2848,18 +2834,6 @@
 		"sadaham"
 	],
 	"sadaham-grief-clutch": [
-		"mugwan",
-		"sadaham"
-	],
-	"sadaham-grief-ecu-fist": [
-		"mugwan",
-		"sadaham"
-	],
-	"sadaham-grief-ots-back": [
-		"mugwan",
-		"sadaham"
-	],
-	"sadaham-grief-bird": [
 		"mugwan",
 		"sadaham"
 	],

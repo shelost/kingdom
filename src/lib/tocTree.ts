@@ -71,7 +71,7 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		{
 			parent: 'The Hwarang',
 			children: [
-				{ title: 'Harbour Ledgers', label: 'A Girl from the Harbor', after: 'Flowering Youth' },
+				{ title: 'Harbour Ledgers', label: 'A Girl from the Harbor', after: 'Flowering Youth', expandScenes: true },
 				{
 					title: 'The Harmony Council',
 					label: 'The Three Eternal Hwarang',
