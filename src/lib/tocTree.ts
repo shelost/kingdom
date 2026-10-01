@@ -49,10 +49,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	],
 	'iron-will': [
 		{
-			parent: 'Daeya Fortress',
-			children: [{ title: 'The First Kim' }]
-		},
-		{
 			parent: 'Yeon’s Massacre',
 			children: [
 				{ title: 'Chunchu & Gesomun' },
