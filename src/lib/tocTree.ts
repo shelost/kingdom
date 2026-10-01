@@ -133,7 +133,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		{
 			parent: 'Yellow Mountain Fields',
 			children: [
-				{ title: 'Dangun & Old Joseon' },
 				{ title: 'Sabi Palace' },
 				{ title: 'The Death of Buyeo Euija' },
 				{ title: 'The Seven Branched Sword' }
@@ -161,10 +160,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		}
 	],
 	'silla-tang-war': [
-		{
-			parent: 'The Protectorate',
-			children: [{ title: 'The Fall of Joseon' }, { title: 'Stone Gate' }]
-		},
 		{
 			parent: 'The Death of Kim Yushin',
 			children: [{ title: "The Wanggeom's Guest" }]

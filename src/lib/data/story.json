@@ -47507,804 +47507,6 @@
 		"range": "660–661",
 		"entries": [
 			{
-				"year": "???",
-				"flash": true,
-				"title": "Dangun & Old Joseon",
-				"tone": "founder fairy tale",
-				"subtitle": "고조선",
-				"badges": [
-					"flag:tang",
-					"flag:goguryeo"
-				],
-				"images": [
-					{
-						"id": "poster_dangun",
-						"ratio": 0.75,
-						"tone": "#b8956a",
-						"nsfw": false,
-						"alt": "Dangun — birch trunk as a hard vertical split, bear-fur wedge",
-						"prompt": "Minimal iconic 3:4 poster. Dangun Wanggeom. ONE geometric device: a BIRCH TRUNK as a hard pale vertical SPLIT, white bear-fur as a triangular WEDGE. Extreme chiaroscuro. Face matches the attached portrait. Birch-bronze #b8956a as the plane. Otherworld/mandate symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_dangun.png"
-						],
-						"people": [
-							"dangun"
-						],
-						"tempImage": "/temp/poster_dangun.jpg"
-					},
-					{
-						"id": "poster_hwanung",
-						"ratio": 0.75,
-						"tone": "#d4b86a",
-						"nsfw": false,
-						"alt": "Hwanung — three gold seal-bars stacked above the descent",
-						"prompt": "Minimal iconic 3:4 poster. Hwanung, Heaven’s son. ONE geometric device: THREE HORIZONTAL SEAL-BARS of #d4b86a stacked in the upper third. Extreme chiaroscuro. Face matches the attached portrait. Otherworld symbolic flat black. No army. No birch catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_hwanung.png"
-						],
-						"people": [
-							"hwanung"
-						],
-						"tempImage": "/temp/poster_hwanung.jpg"
-					},
-					{
-						"id": "poster_hwanin",
-						"ratio": 0.75,
-						"tone": "#F4F1E8",
-						"nsfw": false,
-						"alt": "Hwanin — descending ivory column of heaven, figure at its foot",
-						"prompt": "Minimal iconic 3:4 poster. Hwanin, Lord of Heaven. ONE geometric device: a DESCENDING IVORY COLUMN of #F4F1E8 from the top edge to the lower third. Extreme chiaroscuro. Face matches the attached portrait. Otherworld symbolic flat black. No army. No throne catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_hwanin.png"
-						],
-						"people": [
-							"hwanin"
-						],
-						"tempImage": "/temp/poster_hwanin.jpg"
-					},
-					{
-						"id": "poster_ungnyeo",
-						"ratio": 0.75,
-						"tone": "#c9b18f",
-						"nsfw": false,
-						"alt": "Ungnyeo — garlic and mugwort as two herb-strokes forming a doorway",
-						"prompt": "Minimal iconic 3:4 poster. Ungnyeo, the Bear-Woman. ONE geometric device: TWO VERTICAL HERB-STROKES — garlic-white and mugwort-green — as a doorway, cream-gold #c9b18f light between them. Face matches the attached portrait. Isolated poster-scale woman standing in the doorway, lower third. #c9b18f as the light-plane and the single accent. Striking silky hanbok, few hues. Chiaroscuro: doorway bright, cave-dark at the edges. Otherworld ordeal: symbolic cave, no tiger catalog. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_ungnyeo.png"
-						],
-						"people": [
-							"ungnyeo"
-						],
-						"tempImage": "/temp/poster_ungnyeo.jpg"
-					},
-					{
-						"id": "hwanung-descent",
-						"ratio": 2.9,
-						"tone": "#bbf7d0",
-						"at": "Hwanung comes down onto a mountain with three thousand",
-						"alt": "Hwanung as layout hero inside a hard gold mandate-shaft onto a simple black mountain-plane",
-						"prompt": "Anime-painterly Hwanung descent: gold #d4b86a shaft, character hero, no photoreal crags, no clouds.",
-						"refs": [
-							"/ch_hwanung.png",
-							"/ch_hwanin.png",
-							"/pl_baekdu.png"
-						],
-						"src": "/img_hwanung_descent.png",
-						"tempImage": "/temp/hwanung-descent.jpg"
-					},
-					{
-						"id": "bear-tiger-cave",
-						"ratio": 2.9,
-						"tone": "#365314",
-						"at": "A bear and a tiger come to him",
-						"alt": "A bear and a tiger in a dark cave with mugwort and garlic — one will last, one will not",
-						"prompt": "Cinematic historical illustration of the bear and tiger given mugwort and garlic, Three Kingdoms of Samhan / Tang era (???), scene: a cave shut against the sun, a bear and a tiger crouched over a bundle of mugwort and twenty cloves of garlic, the hundred-day trial just begun, one animal already restless, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"refs": [
-							"/ch_hwanung.png",
-							"/ch_ungnyeo.png"
-						],
-						"src": "/img_bear_tiger_cave.png"
-					},
-					{
-						"id": "dangun-mountain",
-						"ratio": 2.9,
-						"tone": "#86efac",
-						"alt": "Mist-wreathed sacred mountain where Hwanung descended — the sandalwood tree and the bear-woman's vigil",
-						"at": "twenty-first morning",
-						"prompt": "Cinematic historical illustration of dangun mountain, Three Kingdoms of Samhan / Tang era (???), scene: Dangun & Old Joseon, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/dangun-mountain.jpg",
-						"src": "/img_dangun_mountain.png"
-					},
-					{
-						"id": "dangun-asadal",
-						"ratio": 2.9,
-						"tone": "#86efac",
-						"at": "founds Asadal",
-						"alt": "Dangun’s first court as a tiny hall on a vast mist-white plain, one gold mandate-shaft",
-						"prompt": "Minimal vast epic cinematic still matching the visual bible: vast mist-WHITE mountain-plain, tiny geometric hall where mountain meets earth, one GOLD mandate-light shaft, two or three tiny silhouettes. Wet earth mirroring gold. No faces, no anime, no clutter, no text, no watermark.",
-						"refs": [
-							"/ch_hwanung.png",
-							"/ch_ungnyeo.png",
-							"/pl_baekdu.png"
-						],
-						"src": "/img_dangun_asadal.png",
-						"tempImage": "/temp/dangun-asadal.jpg"
-					},
-					{
-						"id": "hwanin-opens-sky",
-						"ratio": 1.778,
-						"tone": "#F4F1E8",
-						"at": "Hwanin does not plough",
-						"alt": "Hwanin small at the top of an ivory-and-black void, a single gold thread falling through empty space",
-						"prompt": "Unique top-heavy layout: tiny Hwanin at top edge, gold thread down, ivory #F4F1E8 on black, no clouds.",
-						"refs": [
-							"/ch_hwanin.png"
-						],
-						"tempImage": "/temp/hwanin-opens-sky.jpg"
-					},
-					{
-						"id": "dangun-wanggeom",
-						"ratio": 1.778,
-						"tone": "#b8956a",
-						"at": "first court that speaks for heaven",
-						"alt": "Dangun in left profile against a hard bronze-gold rectangle of mandate-light, white robes and red sash",
-						"prompt": "Unique profile + gold slab: Dangun, no mountain landscape.",
-						"refs": [
-							"/ch_dangun.png",
-							"/ch_hwanung.png"
-						],
-						"tempImage": "/temp/dangun-wanggeom.jpg"
-					},
-					{
-						"id": "ungnyeo-cave-vigil",
-						"ratio": 1.778,
-						"tone": "#c9b18f",
-						"at": "outlasted a tiger",
-						"alt": "Ungnyeo as layout hero in a black cave-arch, cream-gold light, tiger leaving as a tiny silhouette",
-						"prompt": "Anime-painterly Ungnyeo, cream #c9b18f, graphic cave-arch only.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/ch_hwanung.png"
-						],
-						"tempImage": "/temp/ungnyeo-cave-vigil.jpg"
-					},
-					{
-						"id": "hwanin-above",
-						"ratio": 1.778,
-						"tone": "#1a1a1c",
-						"at": "Hwanin does not plough",
-						"alt": "Hwanin as a cream-white Creator above a tiny earth, three seals falling",
-						"prompt": "Anime-painterly Hwanin above, cream heaven plane. No clouds. No text.",
-						"refs": [
-							"/ch_hwanin.png"
-						],
-						"tempImage": "/temp/hwanin-above.png"
-					},
-					{
-						"id": "hwanin-ivory-void",
-						"ratio": 0.5625,
-						"tone": "#F4F1E8",
-						"at": "Three seals go down",
-						"alt": "Hwanin tiny at the top of empty heaven, a single ivory thread of light falling through black",
-						"prompt": "Minimal iconic 9:16 poster. Hwanin, Creator, Lord of Heaven. ONE geometric device: a single thin IVORY thread of light #F4F1E8 falling down empty heaven. Face matches the attached portrait as a cream rim. Otherworld: no sun, no moon, no clouds. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_hwanin.png"
-						],
-						"people": [
-							"hwanin"
-						],
-						"tempImage": "/temp/hwanin-ivory-void.jpg"
-					},
-					{
-						"id": "ungnyeo-cave-shaft",
-						"ratio": 0.5625,
-						"tone": "#c9b18f",
-						"at": "The bear stays.",
-						"alt": "Ungnyeo the Bear-Woman in a black cave, one cream-gold shaft of light the only plane",
-						"prompt": "Minimal iconic 9:16 poster. Ungnyeo, the Bear-Woman. ONE geometric device: a cream-gold SHAFT of light #c9b18f through a black cave-mouth. Face matches the attached portrait. Eighty percent black. Simple cave arch. No tiger catalog. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_ungnyeo.png"
-						],
-						"people": [
-							"ungnyeo"
-						],
-						"tempImage": "/temp/ungnyeo-cave-shaft.jpg"
-					},
-					{
-						"id": "hwanung-ungnyeo-birch-wide",
-						"ratio": 1.778,
-						"tone": "#d4b86a",
-						"nsfw": false,
-						"at": "stands under the sacred tree",
-						"alt": "Dusk under the divine birch: two tiny figures at the trunk, the snow peak behind",
-						"people": [
-							"hwanung",
-							"ungnyeo"
-						],
-						"refs": [
-							"/pl_baekdu.png",
-							"/ch_hwanung.png",
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png"
-						],
-						"prompt": "Minimal iconic 16:9 WIDE, dusk. The snow peak from the attached place stays recognizable behind. ONE device: the divine birch as a pale vertical trunk, two tiny silky figures at its base in the lower third — Hwanung in white fur-collared silk, Ungnyeo in white silk with a brown fur collar and rust-red sash. She is mid-turn toward him, not a standing clone. #d4b86a as the last light on the bark only. #c9b18f as a small catch on her fur. Crushed blue shadow on the snow, long shadows, natural dusk sky. Faces and garments from the attached portraits. Her hairpin matches the attached bear-head binyeo. No army. No text. No watermark.",
-						"tempImage": "/temp/hwanung-ungnyeo-birch-wide.jpg"
-					},
-					{
-						"id": "ungnyeo-dont-closer",
-						"ratio": 0.75,
-						"tone": "#c9b18f",
-						"nsfw": false,
-						"at": "don't come closer",
-						"alt": "Ungnyeo against the birch, mouth open, about to tell him not to come closer",
-						"people": [
-							"ungnyeo"
-						],
-						"refs": [
-							"/pl_baekdu.png",
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png"
-						],
-						"prompt": "Intimate 3:4 still. Ungnyeo against the divine birch, snow peak from the attached place soft in bokeh. She is mid-turn, one hand in the brown fur at her throat, mouth open as if the warning slipped. Wanting, flushed, not a polite smile. Cream #c9b18f as dusk bounce on her cheek and the fur. FACE AND GARMENTS from the attached portrait: white silk, brown fur collar, rust-red sash. Hairpin matches the attached bear-head binyeo. New body, not the portrait stance. Shallow DOF, crushed shadow, one hard key. No text. No watermark.",
-						"tempImage": "/temp/ungnyeo-dont-closer.jpg"
-					},
-					{
-						"id": "hwanung-seal-forgotten",
-						"ratio": 1.778,
-						"tone": "#d4b86a",
-						"nsfw": false,
-						"at": "the seal in his hand",
-						"alt": "Dutch: Hwanung stopped mid-stride, seal forgotten, her shoulder in the foreground",
-						"people": [
-							"hwanung",
-							"ungnyeo"
-						],
-						"refs": [
-							"/pl_baekdu.png",
-							"/ch_hwanung.png",
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png"
-						],
-						"prompt": "Minimal iconic 16:9 DUTCH. Hwanung stopped mid-stride under the birch, seal lowered and forgotten in one hand, looking at her as if the hall just left his head. Her fur-collared shoulder is sharp in the foreground; he is the midground; the snow peak from the attached place melts into bokeh. ONE device: the birch as a pale vertical cutting the dutch frame. #d4b86a as a hard key on the bark and his cheek, not a glow. FACE AND GARMENTS from the attached portraits: his white silk and cream fur collar, long wavy hair, beard. Her pin matches the attached binyeo. Not a fashion lineup. Crushed black, long shadow, natural dusk. No text. No watermark.",
-						"tempImage": "/temp/hwanung-seal-forgotten.jpg"
-					},
-					{
-						"id": "hwanung-ungnyeo-kiss",
-						"ratio": 0.75,
-						"tone": "#c9b18f",
-						"nsfw": false,
-						"at": "The kiss is clumsy",
-						"alt": "Close: a clumsy first kiss against birch bark, her fist in his hair",
-						"people": [
-							"hwanung",
-							"ungnyeo"
-						],
-						"refs": [
-							"/pl_baekdu.png",
-							"/ch_hwanung.png",
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png"
-						],
-						"prompt": "Intimate 3:4 CLOSE. First kiss against birch bark, clumsy, mid-kiss. Her fist in his long hair, his hand at her jaw, both mouths parted, her eyes half-open and flushed. Birch bark sharp behind her shoulder; snow peak from the attached place is only a cool bokeh. #c9b18f bounce on her cheek, #d4b86a as a thin catch in his hair. FACE AND GARMENTS from the attached portraits — white silk, her brown fur collar, his cream fur collar, rust-red sash. Hairpin matches the attached bear-head binyeo. Not serene. Shallow DOF, crushed shadow, one hard key. No text. No watermark.",
-						"tempImage": "/temp/hwanung-ungnyeo-kiss.jpg"
-					},
-					{
-						"id": "hwanung-ungnyeo-night",
-						"ratio": 1.778,
-						"tone": "#d4b86a",
-						"nsfw": true,
-						"at": "pulls him down by the hair",
-						"alt": "Night under the birch: silk off one shoulder, her hand in his hair",
-						"people": [
-							"hwanung",
-							"ungnyeo"
-						],
-						"refs": [
-							"/pl_baekdu.png",
-							"/ch_hwanung.png",
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png"
-						],
-						"prompt": "Intimate 16:9 night still under the divine birch, snow peak from the attached place in moonlight. She has pulled him down by the hair. Off-shoulder white silk, hiked chima, wanting faces, flushed, mouths open. Bodies close in moon chiaroscuro. ONE device: the birch as a black vertical. #d4b86a as moonlight on bark and silk, #c9b18f on her cheek. FACE AND GARMENTS from the attached portraits. Bear-head pin loose in her hair. Crushed black, one hard moon key, natural night sky. No text. No watermark.",
-						"tempImage": "/temp/hwanung-ungnyeo-night.jpg"
-					},
-					{
-						"id": "dangun-sandalwood-altar",
-						"ratio": 0.5625,
-						"tone": "#b8956a",
-						"at": "the divine birch",
-						"alt": "Dangun above a low sandalwood altar-bar of bronze light, not a yearbook bust",
-						"prompt": "Minimal iconic 9:16 poster. Dangun, Grandson of Heaven. ONE geometric device: a sandalwood ALTAR as a low bronze bar of #b8956a. Face matches the attached portrait. Eighty percent black. No city. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_dangun.png"
-						],
-						"people": [
-							"dangun"
-						],
-						"tempImage": "/temp/dangun-sandalwood-altar.jpg"
-					},
-					{
-						"id": "ungnyeo-pass-again",
-						"ratio": 1.778,
-						"at": "You're going to walk past again",
-						"alt": "OTS dutch: Ungnyeo at the birch watching Hwanung halt mid-path",
-						"prompt": "Minimal iconic 16:9 OTS dutch still. Over Hwanung's white-fur shoulder in sharp foreground, Ungnyeo midground at the divine birch mid-call — not a standing portrait clone. FACE AND GARMENTS from attached portraits; bear-head pin matches binyeo ref. ONE device: the birch trunk as a hard vertical divider. Snow peak Baekdu place from location ref. Cream-gold #c9b18f and gold #d4b86a as real dusk bounce on silk/fur — NOT a glow aura. High contrast, crushed blacks, long shadows. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png",
-							"/ch_hwanung.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"ungnyeo",
-							"hwanung"
-						],
-						"tempImage": "/temp/ungnyeo-pass-again.jpg"
-					},
-					{
-						"id": "hwanung-garlic-far",
-						"ratio": 0.75,
-						"at": "The garlic reached this far",
-						"alt": "Intimate ECU: Hwanung almost-laughing, gold seal catchlight",
-						"prompt": "Intimate 3:4 ECU. Hwanung's face fills the frame — easy almost-laugh, eyes soft, not a grim statue. FACE from attached portrait; white fur-silk garments match. ONE device: a thin gold #d4b86a seal-edge catchlight cutting the cheek. Shallow DOF, crushed black. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_hwanung.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"hwanung"
-						],
-						"tempImage": "/temp/hwanung-garlic-far.jpg"
-					},
-					{
-						"id": "ungnyeo-hand-claim",
-						"ratio": 1.333,
-						"at": "You already have the hand",
-						"alt": "Intimate still-life: joined hands on birch bark, cream-gold #c9b18f key",
-						"prompt": "Intimate 4:3 still-life cinema. Joined hands on birch bark fill the frame — her fingers claiming his. Soft cream #c9b18f key on skin and rust sash edge. ONE device: the bark grain as a hard diagonal. Faces only as soft bokeh suggestion matching portraits. No text. No watermark. Painterly anime-adjacent. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png",
-							"/ch_hwanung.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"ungnyeo",
-							"hwanung"
-						],
-						"tempImage": "/temp/ungnyeo-hand-claim.jpg"
-					},
-					{
-						"id": "hwanung-come-down",
-						"ratio": 0.562,
-						"at": "Then come down",
-						"alt": "Worm’s-eye: Ungnyeo calling him down from the birch path",
-						"prompt": "Minimal iconic 9:16 WORM'S-EYE. Ungnyeo looking down toward camera, daring him closer — new dramatic pose mid-lean, not a standing clone. FACE AND GARMENTS from portrait; binyeo matches. Hwanung tiny in the lower path as a white stamp. ONE device: the birch rising as a vertical from her hip. Snow peak. #c9b18f hard key. No glow aura. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png",
-							"/ch_hwanung.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"ungnyeo",
-							"hwanung"
-						],
-						"tempImage": "/temp/hwanung-come-down.jpg"
-					},
-					{
-						"id": "ungnyeo-tree-watch",
-						"ratio": 1.778,
-						"at": "The tree can watch",
-						"alt": "Iconic wide: tiny pair at the divine birch, moon stamp",
-						"prompt": "Minimal iconic 16:9 wide. Divine birch as ONE monumental vertical. Two tiny figures in the lower third — white silk and brown-fur collar readable as silhouettes. Natural moon in a real snow-peak sky (Baekdu place ref). Cream #c9b18f moon bounce on snow — NOT a body halo. Monumental emptiness. High contrast. No army. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png",
-							"/ch_hwanung.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"ungnyeo",
-							"hwanung"
-						],
-						"tempImage": "/temp/ungnyeo-tree-watch.jpg"
-					},
-					{
-						"id": "hwanung-ungnyeo-sash-moss",
-						"ratio": 1.778,
-						"at": "rust-red sash is somewhere in the moss",
-						"alt": "Intimate dutch: rust sash in snow-moss, bare shoulder, wanting faces",
-						"prompt": "Intimate 16:9 dutch still. Skin-forward romance under the birch: rust-red sash lost in snow-moss, off-shoulder white silk, brown fur open at her throat, wanting faces (open mouth, flush, blown pupils) — not serene beauty. FACE AND GARMENTS from attached portraits; binyeo matches. ONE device: the sash as a rust ribbon across crushed-black moss. #c9b18f lamp-moon key as real light bounce not a glow. No porn catalog. No text. No watermark. Manhwa panel energy, erotic comic framing, heavy blush. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png",
-							"/ch_hwanung.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"ungnyeo",
-							"hwanung"
-						],
-						"nsfw": true,
-						"tempImage": "/temp/hwanung-ungnyeo-sash-moss.jpg"
-					},
-					{
-						"id": "ungnyeo-seal-thief",
-						"ratio": 0.75,
-						"at": "Under my head.",
-						"alt": "ECU: Ungnyeo smiling with the gold seal under her hair",
-						"prompt": "Intimate 3:4 ECU. Ungnyeo mid-smile, mischievous thief — gold heavenly seal half-hidden under her hair/cheek. FACE from attached portrait; bear-head binyeo matches. ONE device: the seal disc as a hard gold stamp. Cream #c9b18f catchlight. Crushed black. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"ungnyeo"
-						],
-						"tempImage": "/temp/ungnyeo-seal-thief.jpg"
-					},
-					{
-						"id": "ungnyeo-marry-morning",
-						"ratio": 1.778,
-						"at": "Marry me in the morning",
-						"alt": "Dawn two-shot: soft cream key, birch as vertical divider",
-						"prompt": "Minimal iconic 16:9 dawn two-shot. Soft cream-gold #c9b18f / #d4b86a morning key through the birch. Ungnyeo and Hwanung close after the night — messy hair, quiet faces, not a fashion lineup. NEW poses leaning into each other. FACE AND GARMENTS from portraits; binyeo matches. ONE device: birch as a pale vertical light-seam between them. Baekdu snow. High contrast but dawn, long shadows. No glow aura. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"refs": [
-							"/ch_ungnyeo.png",
-							"/bn_ungnyeo.png",
-							"/ch_hwanung.png",
-							"/pl_baekdu.png"
-						],
-						"people": [
-							"ungnyeo",
-							"hwanung"
-						],
-						"tempImage": "/temp/ungnyeo-marry-morning.jpg"
-					},
-					{
-						"id": "ink-sindansu-hwanung",
-						"ratio": 0.5625,
-						"tone": "#d4b86a",
-						"at": "Hwanung lands on a mountain under a sandalwood tree",
-						"alt": "Ink mountain scroll: one sacred tree on a lone summit above a sea of cloud, a tiny Hwanung descending toward it trailing a pale gold sleeve",
-						"prompt": "A Korean true-view ink landscape hanging scroll in the manner of Jeong Seon, heavy wet ink rock strokes and pine dots on aged hanji, monochrome ink with one faint colour. ICONIC MINIMAL LAYOUT: a single sharp granite peak rises from the bottom third out of a blank sea of white cloud-paper; everything above is EMPTY paper. ONE device: on the very summit, one lone ancient tree (the sacred sindansu, a birch-sandalwood with a spreading crown), its crown the only dark mass on the page. High in the empty upper paper, tiny, HWANUNG (face and garments from the attached portrait, reduced to a few elegant strokes) descends feet-first toward the tree, robe and one long sleeve trailing upward, a pale gold #d4b86a wash on the sleeve as the only colour. Three faint smudges of cloud behind him hint at the Earl of Wind, Master of Rain, Master of Cloud — no faces. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
-						"refs": [
-							"/ch_hwanung.png"
-						],
-						"people": [
-							"hwanung"
-						],
-						"tempImage": "/temp/ink-sindansu-hwanung.jpg"
-					}
-				],
-				"blocks": [
-					{
-						"kind": "p",
-						"html": "<b>Hwanin</b>, the Lord of Heaven, sends his son <b>Hwanung</b> — Son of Heaven — down to Earth. The grandson of that line will be <b>Dangun</b>, earthly steward of the heavenly mandate.",
-						"ko": "하늘의 임금 <b>환인</b>이 아들 <b>환웅</b> — 천자의 아들 — 을 땅으로 내려보낸다. 그 계통의 손자가 <b>단군</b>이니, 하늘의 명을 땅에서 맡은 첫 재상이다."
-					},
-					{
-						"kind": "diagram",
-						"diagram": "joseon-mandate",
-						"title": "Old Joseon · 고조선",
-						"caption": "Heaven’s mandate made into a capital: Hwanin → Hwanung → Dangun → Asadal.",
-						"ko": "하늘의 명을 수도로 만든 계보. 환인 → 환웅 → 단군 → 아사달."
-					},
-					{
-						"kind": "p",
-						"html": "Hwanin does not plough — he opens the sky. Three seals go down with the Son of Heaven: proof that what follows is not a prince playing at exile but a mandate with paperwork. The chronicle’s later kings will forge their own seals; this is the one they are all copying.",
-						"ko": "환인은 갈지 않는다 — 하늘을 연다. 천자와 함께 내려가는 것은 천부인 셋: 이후가 유배 놀이가 아니라 문서 있는 명분임을 증명한다. 후대의 임금들은 자기 인장을 새길 것이다. 이것이 그들이 모두 베끼는 원본이다."
-					},
-					{
-						"kind": "p",
-						"html": "Hwanung lands on a mountain under a sandalwood tree — 신단수, the divine birch — and names the ground beneath it <b>Sinsi</b>, the Divine City. Three thousand followers come with him; among them the Earl of Wind, the Master of Rain, and the Master of Cloud. They are not decoration. Someone has to argue with the weather.",
-						"ko": "환웅은 신단수 — 신성한 자작나무 — 아래 산에 내리고, 그 밑 땅을 <b>신시</b>, 신성한 도시라 부른다. 무리 삼천이 따른다. 그중 바람의 백, 비의 백, 구름의 백. 장식이 아니다. 날씨와 말할 사람이 필요하다."
-					},
-					{
-						"kind": "quote",
-						"hanja": "乃授天符印三箇 雄率徒三千 降於太伯山頂神壇樹下 是謂神市 熊女與婚 生子 號曰壇君王儉",
-						"ko": "이에 천부인 셋을 주어 다스리게 하니, 환웅이 무리 삼천을 이끌고 태백산 꼭대기 신단수 아래로 내려와 이를 신시라 하였다. 웅녀와 혼인하여 아들을 낳으니, 이름하여 단군왕검이라 하였다.",
-						"html": "He granted three heavenly seals and sent him to govern. Hwanung led a following of three thousand and descended under the sacred altar-tree on the summit of Mount Taebaek; this was called the Divine City. He married the bear-woman, and she bore a son named Dangun Wanggeom.",
-						"source": "Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Old Joseon (Dangun); Ha & Mintz tr., pp. 32–33"
-					},
-					{
-						"kind": "p",
-						"html": "Hwanung, Son of Heaven, marries the <b>Bear-Woman</b> and gives birth to Dangun. That is the short way to tell it, the way it is carved on stones. The long way begins, as long ways do, with a bear who wanted something so badly that she outlasted a tiger for it.",
-						"ko": "천자의 아들 환웅이 <b>웅녀</b>와 혼인하여 단군을 낳는다. 그것이 짧게 전하는 방식이고, 돌에 새기는 방식이다. 길게 전하는 방식은 — 긴 이야기가 늘 그렇듯 — 무언가를 너무나 간절히 원한 나머지 호랑이보다 오래 견딘 곰 한 마리에서 시작된다."
-					},
-					{
-						"kind": "p",
-						"html": "<b>Dangun</b>, Grandson of Heaven, founds the city of <b>Asadal</b>, ruling over the kingdom of <b>Joseon</b> as the first court that speaks for heaven on earth.",
-						"ko": "하늘의 손자 <b>단군</b>이 <b>아사달</b>에 도읍을 열고 <b>조선</b>을 다스린다 — 땅에서 하늘을 대변하는 첫 조정."
-					},
-					{
-						"kind": "p",
-						"html": "Hwanung comes down onto a mountain with three thousand followers, three heavenly seals, and authority over the wind, the rain and the clouds, which is a strange bundle of powers until you remember that he came here to farm.",
-						"ko": "환웅은 무리 삼천과 천부인 셋을 가지고 산 위로 내려온다. 바람과 비와 구름을 거느린다. 그가 농사를 지으러 왔다는 것을 떠올리기 전까지는 이상한 조합이다."
-					},
-					{
-						"kind": "p",
-						"html": "From Sinsi he dispenses what mortals later call civilisation in instalments: laws, punishments, lifespans, illness, good and evil, and the arts of medicine and moxibustion — three hundred and sixty matters, the Samguk Yusa counts. He runs the rest of it too.",
-						"ko": "신시에서 그는 후에 사람들이 문명이라 부를 것을 할부로 내준다. 법, 형벌, 수명, 병, 선악, 그리고 의술과 뜸 — 삼백육십 가지, 삼국유사가 센다. 나머지 일도 그가 맡는다."
-					},
-					{
-						"kind": "p",
-						"html": "A bear and a tiger come to him and ask to be made human. He gives them a bundle of mugwort, twenty cloves of garlic, and one instruction: stay out of the sun for a hundred days.",
-						"ko": "곰과 범이 그를 찾아와 사람이 되게 해 달라 청한다. 그는 쑥 한 줌과 마늘 스무 쪽을 주고 한 가지를 이른다. 백 일 동안 햇빛을 보지 마라."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#8d8d95",
-						"lines": [
-							"마늘 스무 쪽.",
-							"백 일 동안."
-						],
-						"en": [
-							"Twenty cloves of garlic.",
-							"For a hundred days."
-						],
-						"person": "herald"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#8d8d95",
-						"lines": [
-							"범은 스무하루 만에 나갔다지."
-						],
-						"en": [
-							"The tiger left on the twenty-first day, they say."
-						],
-						"person": "herald"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#8d8d95",
-						"lines": [
-							"나 같아도 나갔다."
-						],
-						"en": [
-							"So would I."
-						],
-						"person": "herald"
-					},
-					{
-						"kind": "p",
-						"html": "The bear stays. She comes out a woman on the twenty-first morning, garlic still on her breath, and finds the mountain already staffed — wind, rain, cloud, and not one of them a husband. So she stands under the sacred tree. Not once. Every day, on the path he has to take if he means to reach the hall.",
-						"ko": "곰은 남는다. 스무하루째 아침, 입가에 마늘 냄새가 남은 채로 여자가 되어 나오니, 산은 이미 사람이 가득하다 — 바람, 비, 구름, 그리고 남편이 될 이는 하나도 없다. 그래서 신단수 아래에 선다. 한 번이 아니다. 그가 전각으로 가려면 반드시 지나야 하는 길에, 날마다."
-					},
-					{
-						"kind": "p",
-						"html": "He means to reach the hall. On the third evening he gets as far as the birch, and the seal in his hand becomes a thing he is holding for no reason he can name.",
-						"ko": "그는 전각에 닿을 작정이다. 사흘째 저녁, 자작나무까지는 온다. 손의 인장은, 왜 들고 있는지 스스로도 말할 수 없는 물건이 된다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"또 지나치실 거요."
-						],
-						"en": [
-							"You're going to walk past again."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4b86a",
-						"person": "hwanung",
-						"lines": [
-							"…오늘은 아니오."
-						],
-						"en": [
-							"…Not today."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"어제는 그랬소.",
-							"그저께도. 나는 여기 서 있었는데."
-						],
-						"en": [
-							"Yesterday you did.",
-							"And the day before. I was standing right here."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4b86a",
-						"person": "hwanung",
-						"lines": [
-							"봤소.",
-							"마늘 냄새가 여기까지 왔소."
-						],
-						"en": [
-							"I saw you.",
-							"The garlic reached this far."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"스무하루를 그렇게 먹고 나왔소.",
-							"…가까이 오지 마시오, 라고 하려고 했는데."
-						],
-						"en": [
-							"Twenty-one days of that, and this is what came out.",
-							"…I was going to say don't come closer."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4b86a",
-						"person": "hwanung",
-						"lines": [
-							"늦었소.",
-							"가지 마. 아니— 가지 마시오. 손이—"
-						],
-						"en": [
-							"Too late.",
-							"Stay. I mean— don't go. Your hand—"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"손은 이미 잡았소.",
-							"…나머지는 무서우시오?"
-						],
-						"en": [
-							"You already have the hand.",
-							"…Scared of the rest?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4b86a",
-						"person": "hwanung",
-						"lines": [
-							"무섭소.",
-							"당신이 보고 있으니까."
-						],
-						"en": [
-							"I am.",
-							"Because you're looking at me."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"그럼 내려와요.",
-							"나무는 보고 있을 테니까. 나는… 더."
-						],
-						"en": [
-							"Then come down.",
-							"The tree can watch. I want… more."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "The kiss is clumsy. Beard, a new mouth, birch bark at her back. She makes a small furious sound and tries again, and the second one lands.",
-						"ko": "입맞춤은 서투르다. 수염, 처음 쓰는 입, 등에 닿는 자작나무 껍질. 그녀가 짧게 성난 소리를 내고 다시 하고, 두 번째는 닿는다."
-					},
-					{
-						"kind": "p",
-						"html": "White silk goes down among the roots. The fur at her throat opens under his mouth. She laughs once, startled at the sound, and pulls him down by the hair.",
-						"ko": "흰 비단이 뿌리 사이에 내려앉는다. 목덜미의 털깃이 그의 입 밑에서 풀린다. 그녀는 한 번 웃는다. 그 소리에 스스로 놀라서. 그리고 머리카락을 잡아 그를 끌어내린다."
-					},
-					{
-						"kind": "p",
-						"html": "By the time the moon clears the snow on the peak, the rust-red sash is somewhere in the moss, and neither of them has gone back up the path.",
-						"ko": "달빛이 봉우리의 눈에 닿을 때쯤, 붉은 띠는 이끼 어딘가에 있고, 둘 다 그 길로 돌아 올라가지 않았다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"…벌써 가시오?"
-						],
-						"en": [
-							"…You're going already?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4b86a",
-						"person": "hwanung",
-						"lines": [
-							"못 가오.",
-							"인장을 어디에 뒀는지 모르겠소."
-						],
-						"en": [
-							"I can't.",
-							"I don't know where I put the seal."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"내 머리 밑이야.",
-							"아까 내가 뺐어. …가지 마."
-						],
-						"en": [
-							"Under my head.",
-							"I took it. …Don't go."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4b86a",
-						"person": "hwanung",
-						"lines": [
-							"…도둑."
-						],
-						"en": [
-							"…Thief."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9b18f",
-						"person": "ungnyeo",
-						"lines": [
-							"아침에 아내로 맞추시오.",
-							"지금은 여기 있소."
-						],
-						"en": [
-							"Marry me in the morning.",
-							"Right now I'm here."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "Their son is <b>Dangun</b>. The name on the stone is <b>Wanggeom</b> — king who governs, not king who inherits a bone rank — and he founds Asadal where the mountain meets the plain, then moves the capital to the slopes of Paegak and Gunghol when the city outgrows its first prayer. He rules for one thousand five hundred years, and then becomes a mountain spirit.",
-						"ko": "그 아들이 <b>단군</b>이다. 돌에 새긴 이름은 <b>왕검</b> — 다스리는 임금, 골격 신분을 물려받은 임금이 아니라 — 이고, 그는 산과 평야가 만나는 곳에 아사달을 세운 뒤, 도읍이 첫 기도를 넘어설 때 백악·굉 걸의 경사로 옮긴다. 천오백 년을 다스리고 산신이 된다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#8d8d95",
-						"lines": [
-							"천오백 년."
-						],
-						"en": [
-							"Fifteen hundred years."
-						],
-						"person": "herald"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#8d8d95",
-						"lines": [
-							"그때 사람들은 다들 오래 살았어."
-						],
-						"en": [
-							"People lived a long time back then."
-						],
-						"person": "herald"
-					},
-					{
-						"kind": "p",
-						"html": "Every later crown in these kingdoms argues, one way or another, back to the woman who used to be a bear.",
-						"ko": "이후 이 왕국들의 왕관은, 어떤 식으로든, 한때 곰이었던 여자에게로 거슬러 올라간다."
-					}
-				],
-				"music": "Old Joseon",
-				"flashback": true
-			},
-			{
 				"year": "660",
 				"sub": "August",
 				"accent": "#b91c1c",
@@ -52966,17 +52168,452 @@
 		"range": "670–676",
 		"entries": [
 			{
-				"year": "-108",
+				"year": "Long ago",
 				"flash": true,
-				"title": "The Fall of Joseon",
-				"tone": "fairy-tale legend, dark",
+				"title": "Dangun & Old Joseon",
+				"tone": "founder fairy tale, then a dark legend",
+				"subtitle": "고조선",
+				"badges": [
+					"🐻"
+				],
 				"images": [
+					{
+						"id": "poster_dangun",
+						"ratio": 0.75,
+						"tone": "#b8956a",
+						"nsfw": false,
+						"alt": "Dangun — birch trunk as a hard vertical split, bear-fur wedge",
+						"prompt": "Minimal iconic 3:4 poster. Dangun Wanggeom. ONE geometric device: a BIRCH TRUNK as a hard pale vertical SPLIT, white bear-fur as a triangular WEDGE. Extreme chiaroscuro. Face matches the attached portrait. Birch-bronze #b8956a as the plane. Otherworld/mandate symbolic flat black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_dangun.png"
+						],
+						"people": [
+							"dangun"
+						],
+						"tempImage": "/temp/poster_dangun.jpg"
+					},
+					{
+						"id": "poster_hwanung",
+						"ratio": 0.75,
+						"tone": "#d4b86a",
+						"nsfw": false,
+						"alt": "Hwanung — three gold seal-bars stacked above the descent",
+						"prompt": "Minimal iconic 3:4 poster. Hwanung, Heaven’s son. ONE geometric device: THREE HORIZONTAL SEAL-BARS of #d4b86a stacked in the upper third. Extreme chiaroscuro. Face matches the attached portrait. Otherworld symbolic flat black. No army. No birch catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_hwanung.png"
+						],
+						"people": [
+							"hwanung"
+						],
+						"tempImage": "/temp/poster_hwanung.jpg"
+					},
+					{
+						"id": "poster_hwanin",
+						"ratio": 0.75,
+						"tone": "#F4F1E8",
+						"nsfw": false,
+						"alt": "Hwanin — descending ivory column of heaven, figure at its foot",
+						"prompt": "Minimal iconic 3:4 poster. Hwanin, Lord of Heaven. ONE geometric device: a DESCENDING IVORY COLUMN of #F4F1E8 from the top edge to the lower third. Extreme chiaroscuro. Face matches the attached portrait. Otherworld symbolic flat black. No army. No throne catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_hwanin.png"
+						],
+						"people": [
+							"hwanin"
+						],
+						"tempImage": "/temp/poster_hwanin.jpg"
+					},
+					{
+						"id": "poster_ungnyeo",
+						"ratio": 0.75,
+						"tone": "#c9b18f",
+						"nsfw": false,
+						"alt": "Ungnyeo — garlic and mugwort as two herb-strokes forming a doorway",
+						"prompt": "Minimal iconic 3:4 poster. Ungnyeo, the Bear-Woman. ONE geometric device: TWO VERTICAL HERB-STROKES — garlic-white and mugwort-green — as a doorway, cream-gold #c9b18f light between them. Face matches the attached portrait. Isolated poster-scale woman standing in the doorway, lower third. #c9b18f as the light-plane and the single accent. Striking silky hanbok, few hues. Chiaroscuro: doorway bright, cave-dark at the edges. Otherworld ordeal: symbolic cave, no tiger catalog. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_ungnyeo.png"
+						],
+						"people": [
+							"ungnyeo"
+						],
+						"tempImage": "/temp/poster_ungnyeo.jpg"
+					},
+					{
+						"id": "hwanung-descent",
+						"ratio": 2.9,
+						"tone": "#bbf7d0",
+						"at": "Hwanung lands on",
+						"alt": "Hwanung as layout hero inside a hard gold mandate-shaft onto a simple black mountain-plane",
+						"prompt": "Anime-painterly Hwanung descent: gold #d4b86a shaft, character hero, no photoreal crags, no clouds.",
+						"refs": [
+							"/ch_hwanung.png",
+							"/ch_hwanin.png",
+							"/pl_baekdu.png"
+						],
+						"src": "/img_hwanung_descent.png",
+						"tempImage": "/temp/hwanung-descent.jpg"
+					},
+					{
+						"id": "bear-tiger-cave",
+						"ratio": 2.9,
+						"tone": "#365314",
+						"at": "A bear and a tiger come to him",
+						"alt": "A bear and a tiger in a dark cave with mugwort and garlic — one will last, one will not",
+						"prompt": "Cinematic historical illustration of the bear and tiger given mugwort and garlic, Three Kingdoms of Samhan / Tang era (???), scene: a cave shut against the sun, a bear and a tiger crouched over a bundle of mugwort and twenty cloves of garlic, the hundred-day trial just begun, one animal already restless, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"refs": [
+							"/ch_hwanung.png",
+							"/ch_ungnyeo.png"
+						],
+						"src": "/img_bear_tiger_cave.png"
+					},
+					{
+						"id": "dangun-mountain",
+						"ratio": 2.9,
+						"tone": "#86efac",
+						"alt": "Mist-wreathed sacred mountain where Hwanung descended — the sandalwood tree and the bear-woman's vigil",
+						"at": "twenty-first morning",
+						"prompt": "Cinematic historical illustration of dangun mountain, Three Kingdoms of Samhan / Tang era (???), scene: Dangun & Old Joseon, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/dangun-mountain.jpg",
+						"src": "/img_dangun_mountain.png"
+					},
+					{
+						"id": "dangun-asadal",
+						"ratio": 2.9,
+						"tone": "#86efac",
+						"at": "founds Asadal",
+						"alt": "Dangun’s first court as a tiny hall on a vast mist-white plain, one gold mandate-shaft",
+						"prompt": "Minimal vast epic cinematic still matching the visual bible: vast mist-WHITE mountain-plain, tiny geometric hall where mountain meets earth, one GOLD mandate-light shaft, two or three tiny silhouettes. Wet earth mirroring gold. No faces, no anime, no clutter, no text, no watermark.",
+						"refs": [
+							"/ch_hwanung.png",
+							"/ch_ungnyeo.png",
+							"/pl_baekdu.png"
+						],
+						"src": "/img_dangun_asadal.png",
+						"tempImage": "/temp/dangun-asadal.jpg"
+					},
+					{
+						"id": "hwanin-opens-sky",
+						"ratio": 1.778,
+						"tone": "#F4F1E8",
+						"at": "Hwanin does not plough",
+						"alt": "Hwanin small at the top of an ivory-and-black void, a single gold thread falling through empty space",
+						"prompt": "Unique top-heavy layout: tiny Hwanin at top edge, gold thread down, ivory #F4F1E8 on black, no clouds.",
+						"refs": [
+							"/ch_hwanin.png"
+						],
+						"tempImage": "/temp/hwanin-opens-sky.jpg"
+					},
+					{
+						"id": "dangun-wanggeom",
+						"ratio": 1.778,
+						"tone": "#b8956a",
+						"at": "Their son is",
+						"alt": "Dangun in left profile against a hard bronze-gold rectangle of mandate-light, white robes and red sash",
+						"prompt": "Unique profile + gold slab: Dangun, no mountain landscape.",
+						"refs": [
+							"/ch_dangun.png",
+							"/ch_hwanung.png"
+						],
+						"tempImage": "/temp/dangun-wanggeom.jpg"
+					},
+					{
+						"id": "ungnyeo-cave-vigil",
+						"ratio": 1.778,
+						"tone": "#c9b18f",
+						"at": "outlasted a tiger",
+						"alt": "Ungnyeo as layout hero in a black cave-arch, cream-gold light, tiger leaving as a tiny silhouette",
+						"prompt": "Anime-painterly Ungnyeo, cream #c9b18f, graphic cave-arch only.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/ch_hwanung.png"
+						],
+						"tempImage": "/temp/ungnyeo-cave-vigil.jpg"
+					},
+					{
+						"id": "hwanin-above",
+						"ratio": 1.778,
+						"tone": "#1a1a1c",
+						"at": "Hwanin does not plough",
+						"alt": "Hwanin as a cream-white Creator above a tiny earth, three seals falling",
+						"prompt": "Anime-painterly Hwanin above, cream heaven plane. No clouds. No text.",
+						"refs": [
+							"/ch_hwanin.png"
+						],
+						"tempImage": "/temp/hwanin-above.png"
+					},
+					{
+						"id": "ungnyeo-cave-shaft",
+						"ratio": 0.5625,
+						"tone": "#c9b18f",
+						"at": "The bear stays.",
+						"alt": "Ungnyeo the Bear-Woman in a black cave, one cream-gold shaft of light the only plane",
+						"prompt": "Minimal iconic 9:16 poster. Ungnyeo, the Bear-Woman. ONE geometric device: a cream-gold SHAFT of light #c9b18f through a black cave-mouth. Face matches the attached portrait. Eighty percent black. Simple cave arch. No tiger catalog. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_ungnyeo.png"
+						],
+						"people": [
+							"ungnyeo"
+						],
+						"tempImage": "/temp/ungnyeo-cave-shaft.jpg"
+					},
+					{
+						"id": "hwanung-ungnyeo-birch-wide",
+						"ratio": 1.778,
+						"tone": "#d4b86a",
+						"nsfw": false,
+						"at": "stands under the sacred tree",
+						"alt": "Dusk under the divine birch: two tiny figures at the trunk, the snow peak behind",
+						"people": [
+							"hwanung",
+							"ungnyeo"
+						],
+						"refs": [
+							"/pl_baekdu.png",
+							"/ch_hwanung.png",
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png"
+						],
+						"prompt": "Minimal iconic 16:9 WIDE, dusk. The snow peak from the attached place stays recognizable behind. ONE device: the divine birch as a pale vertical trunk, two tiny silky figures at its base in the lower third — Hwanung in white fur-collared silk, Ungnyeo in white silk with a brown fur collar and rust-red sash. She is mid-turn toward him, not a standing clone. #d4b86a as the last light on the bark only. #c9b18f as a small catch on her fur. Crushed blue shadow on the snow, long shadows, natural dusk sky. Faces and garments from the attached portraits. Her hairpin matches the attached bear-head binyeo. No army. No text. No watermark.",
+						"tempImage": "/temp/hwanung-ungnyeo-birch-wide.jpg"
+					},
+					{
+						"id": "ungnyeo-dont-closer",
+						"ratio": 0.75,
+						"tone": "#c9b18f",
+						"nsfw": false,
+						"at": "don't come closer",
+						"alt": "Ungnyeo against the birch, mouth open, about to tell him not to come closer",
+						"people": [
+							"ungnyeo"
+						],
+						"refs": [
+							"/pl_baekdu.png",
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png"
+						],
+						"prompt": "Intimate 3:4 still. Ungnyeo against the divine birch, snow peak from the attached place soft in bokeh. She is mid-turn, one hand in the brown fur at her throat, mouth open as if the warning slipped. Wanting, flushed, not a polite smile. Cream #c9b18f as dusk bounce on her cheek and the fur. FACE AND GARMENTS from the attached portrait: white silk, brown fur collar, rust-red sash. Hairpin matches the attached bear-head binyeo. New body, not the portrait stance. Shallow DOF, crushed shadow, one hard key. No text. No watermark.",
+						"tempImage": "/temp/ungnyeo-dont-closer.jpg"
+					},
+					{
+						"id": "hwanung-seal-forgotten",
+						"ratio": 1.778,
+						"tone": "#d4b86a",
+						"nsfw": false,
+						"at": "the seal in his hand",
+						"alt": "Dutch: Hwanung stopped mid-stride, seal forgotten, her shoulder in the foreground",
+						"people": [
+							"hwanung",
+							"ungnyeo"
+						],
+						"refs": [
+							"/pl_baekdu.png",
+							"/ch_hwanung.png",
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png"
+						],
+						"prompt": "Minimal iconic 16:9 DUTCH. Hwanung stopped mid-stride under the birch, seal lowered and forgotten in one hand, looking at her as if the hall just left his head. Her fur-collared shoulder is sharp in the foreground; he is the midground; the snow peak from the attached place melts into bokeh. ONE device: the birch as a pale vertical cutting the dutch frame. #d4b86a as a hard key on the bark and his cheek, not a glow. FACE AND GARMENTS from the attached portraits: his white silk and cream fur collar, long wavy hair, beard. Her pin matches the attached binyeo. Not a fashion lineup. Crushed black, long shadow, natural dusk. No text. No watermark.",
+						"tempImage": "/temp/hwanung-seal-forgotten.jpg"
+					},
+					{
+						"id": "hwanung-ungnyeo-kiss",
+						"ratio": 0.75,
+						"tone": "#c9b18f",
+						"nsfw": false,
+						"at": "The kiss is clumsy",
+						"alt": "Close: a clumsy first kiss against birch bark, her fist in his hair",
+						"people": [
+							"hwanung",
+							"ungnyeo"
+						],
+						"refs": [
+							"/pl_baekdu.png",
+							"/ch_hwanung.png",
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png"
+						],
+						"prompt": "Intimate 3:4 CLOSE. First kiss against birch bark, clumsy, mid-kiss. Her fist in his long hair, his hand at her jaw, both mouths parted, her eyes half-open and flushed. Birch bark sharp behind her shoulder; snow peak from the attached place is only a cool bokeh. #c9b18f bounce on her cheek, #d4b86a as a thin catch in his hair. FACE AND GARMENTS from the attached portraits — white silk, her brown fur collar, his cream fur collar, rust-red sash. Hairpin matches the attached bear-head binyeo. Not serene. Shallow DOF, crushed shadow, one hard key. No text. No watermark.",
+						"tempImage": "/temp/hwanung-ungnyeo-kiss.jpg"
+					},
+					{
+						"id": "hwanung-ungnyeo-night",
+						"ratio": 1.778,
+						"tone": "#d4b86a",
+						"nsfw": true,
+						"at": "pulls him down by the hair",
+						"alt": "Night under the birch: silk off one shoulder, her hand in his hair",
+						"people": [
+							"hwanung",
+							"ungnyeo"
+						],
+						"refs": [
+							"/pl_baekdu.png",
+							"/ch_hwanung.png",
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png"
+						],
+						"prompt": "Intimate 16:9 night still under the divine birch, snow peak from the attached place in moonlight. She has pulled him down by the hair. Off-shoulder white silk, hiked chima, wanting faces, flushed, mouths open. Bodies close in moon chiaroscuro. ONE device: the birch as a black vertical. #d4b86a as moonlight on bark and silk, #c9b18f on her cheek. FACE AND GARMENTS from the attached portraits. Bear-head pin loose in her hair. Crushed black, one hard moon key, natural night sky. No text. No watermark.",
+						"tempImage": "/temp/hwanung-ungnyeo-night.jpg"
+					},
+					{
+						"id": "ungnyeo-pass-again",
+						"ratio": 1.778,
+						"at": "You're going to walk past again",
+						"alt": "OTS dutch: Ungnyeo at the birch watching Hwanung halt mid-path",
+						"prompt": "Minimal iconic 16:9 OTS dutch still. Over Hwanung's white-fur shoulder in sharp foreground, Ungnyeo midground at the divine birch mid-call — not a standing portrait clone. FACE AND GARMENTS from attached portraits; bear-head pin matches binyeo ref. ONE device: the birch trunk as a hard vertical divider. Snow peak Baekdu place from location ref. Cream-gold #c9b18f and gold #d4b86a as real dusk bounce on silk/fur — NOT a glow aura. High contrast, crushed blacks, long shadows. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png",
+							"/ch_hwanung.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"ungnyeo",
+							"hwanung"
+						],
+						"tempImage": "/temp/ungnyeo-pass-again.jpg"
+					},
+					{
+						"id": "hwanung-garlic-far",
+						"ratio": 0.75,
+						"at": "The garlic reached this far",
+						"alt": "Intimate ECU: Hwanung almost-laughing, gold seal catchlight",
+						"prompt": "Intimate 3:4 ECU. Hwanung's face fills the frame — easy almost-laugh, eyes soft, not a grim statue. FACE from attached portrait; white fur-silk garments match. ONE device: a thin gold #d4b86a seal-edge catchlight cutting the cheek. Shallow DOF, crushed black. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_hwanung.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"hwanung"
+						],
+						"tempImage": "/temp/hwanung-garlic-far.jpg"
+					},
+					{
+						"id": "ungnyeo-hand-claim",
+						"ratio": 1.333,
+						"at": "You already have the hand",
+						"alt": "Intimate still-life: joined hands on birch bark, cream-gold #c9b18f key",
+						"prompt": "Intimate 4:3 still-life cinema. Joined hands on birch bark fill the frame — her fingers claiming his. Soft cream #c9b18f key on skin and rust sash edge. ONE device: the bark grain as a hard diagonal. Faces only as soft bokeh suggestion matching portraits. No text. No watermark. Painterly anime-adjacent. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png",
+							"/ch_hwanung.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"ungnyeo",
+							"hwanung"
+						],
+						"tempImage": "/temp/ungnyeo-hand-claim.jpg"
+					},
+					{
+						"id": "hwanung-come-down",
+						"ratio": 0.562,
+						"at": "Then come down",
+						"alt": "Worm’s-eye: Ungnyeo calling him down from the birch path",
+						"prompt": "Minimal iconic 9:16 WORM'S-EYE. Ungnyeo looking down toward camera, daring him closer — new dramatic pose mid-lean, not a standing clone. FACE AND GARMENTS from portrait; binyeo matches. Hwanung tiny in the lower path as a white stamp. ONE device: the birch rising as a vertical from her hip. Snow peak. #c9b18f hard key. No glow aura. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png",
+							"/ch_hwanung.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"ungnyeo",
+							"hwanung"
+						],
+						"tempImage": "/temp/hwanung-come-down.jpg"
+					},
+					{
+						"id": "ungnyeo-tree-watch",
+						"ratio": 1.778,
+						"at": "The tree can watch",
+						"alt": "Iconic wide: tiny pair at the divine birch, moon stamp",
+						"prompt": "Minimal iconic 16:9 wide. Divine birch as ONE monumental vertical. Two tiny figures in the lower third — white silk and brown-fur collar readable as silhouettes. Natural moon in a real snow-peak sky (Baekdu place ref). Cream #c9b18f moon bounce on snow — NOT a body halo. Monumental emptiness. High contrast. No army. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png",
+							"/ch_hwanung.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"ungnyeo",
+							"hwanung"
+						],
+						"tempImage": "/temp/ungnyeo-tree-watch.jpg"
+					},
+					{
+						"id": "hwanung-ungnyeo-sash-moss",
+						"ratio": 1.778,
+						"at": "rust-red sash is somewhere in the moss",
+						"alt": "Intimate dutch: rust sash in snow-moss, bare shoulder, wanting faces",
+						"prompt": "Intimate 16:9 dutch still. Skin-forward romance under the birch: rust-red sash lost in snow-moss, off-shoulder white silk, brown fur open at her throat, wanting faces (open mouth, flush, blown pupils) — not serene beauty. FACE AND GARMENTS from attached portraits; binyeo matches. ONE device: the sash as a rust ribbon across crushed-black moss. #c9b18f lamp-moon key as real light bounce not a glow. No porn catalog. No text. No watermark. Manhwa panel energy, erotic comic framing, heavy blush. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png",
+							"/ch_hwanung.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"ungnyeo",
+							"hwanung"
+						],
+						"nsfw": true,
+						"tempImage": "/temp/hwanung-ungnyeo-sash-moss.jpg"
+					},
+					{
+						"id": "ungnyeo-seal-thief",
+						"ratio": 0.75,
+						"at": "Under my head.",
+						"alt": "ECU: Ungnyeo smiling with the gold seal under her hair",
+						"prompt": "Intimate 3:4 ECU. Ungnyeo mid-smile, mischievous thief — gold heavenly seal half-hidden under her hair/cheek. FACE from attached portrait; bear-head binyeo matches. ONE device: the seal disc as a hard gold stamp. Cream #c9b18f catchlight. Crushed black. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"ungnyeo"
+						],
+						"tempImage": "/temp/ungnyeo-seal-thief.jpg"
+					},
+					{
+						"id": "ungnyeo-marry-morning",
+						"ratio": 1.778,
+						"at": "Marry me in the morning",
+						"alt": "Dawn two-shot: soft cream key, birch as vertical divider",
+						"prompt": "Minimal iconic 16:9 dawn two-shot. Soft cream-gold #c9b18f / #d4b86a morning key through the birch. Ungnyeo and Hwanung close after the night — messy hair, quiet faces, not a fashion lineup. NEW poses leaning into each other. FACE AND GARMENTS from portraits; binyeo matches. ONE device: birch as a pale vertical light-seam between them. Baekdu snow. High contrast but dawn, long shadows. No glow aura. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
+						"refs": [
+							"/ch_ungnyeo.png",
+							"/bn_ungnyeo.png",
+							"/ch_hwanung.png",
+							"/pl_baekdu.png"
+						],
+						"people": [
+							"ungnyeo",
+							"hwanung"
+						],
+						"tempImage": "/temp/ungnyeo-marry-morning.jpg"
+					},
+					{
+						"id": "ink-sindansu-hwanung",
+						"ratio": 0.5625,
+						"tone": "#d4b86a",
+						"at": "Hwanung lands on a mountain under a sandalwood tree",
+						"alt": "Ink mountain scroll: one sacred tree on a lone summit above a sea of cloud, a tiny Hwanung descending toward it trailing a pale gold sleeve",
+						"prompt": "A Korean true-view ink landscape hanging scroll in the manner of Jeong Seon, heavy wet ink rock strokes and pine dots on aged hanji, monochrome ink with one faint colour. ICONIC MINIMAL LAYOUT: a single sharp granite peak rises from the bottom third out of a blank sea of white cloud-paper; everything above is EMPTY paper. ONE device: on the very summit, one lone ancient tree (the sacred sindansu, a birch-sandalwood with a spreading crown), its crown the only dark mass on the page. High in the empty upper paper, tiny, HWANUNG (face and garments from the attached portrait, reduced to a few elegant strokes) descends feet-first toward the tree, robe and one long sleeve trailing upward, a pale gold #d4b86a wash on the sleeve as the only colour. Three faint smudges of cloud behind him hint at the Earl of Wind, Master of Rain, Master of Cloud — no faces. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+						"refs": [
+							"/ch_hwanung.png"
+						],
+						"people": [
+							"hwanung"
+						],
+						"tempImage": "/temp/ink-sindansu-hwanung.jpg"
+					},
 					{
 						"id": "joseon-fall",
 						"ratio": 2,
 						"tone": "#0f766e",
 						"alt": "Wanggeom's gate opened from the inside — the fall of Old Joseon",
-						"at": "So they stop attacking the walls and start talking to th",
+						"at": "Someone lifts the",
 						"prompt": "Cinematic historical illustration of joseon fall, Three Kingdoms of Samhan / Tang era (-108), scene: The Fall of Joseon, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/joseon-fall.jpg"
 					},
@@ -52986,24 +52623,275 @@
 						"tone": "#DC2626",
 						"src": "/temp/fall_of_joseon.png",
 						"alt": "Broken fortress gate against blood-red sunset - the ancient kingdom falls to Han",
-						"prompt": "Dark legend minimal: A broken stone fortress gate silhouetted against a blood-red sunset sky"
+						"prompt": "Dark legend minimal: A broken stone fortress gate silhouetted against a blood-red sunset sky",
+						"at": "Han takes Wanggeom"
 					}
 				],
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>King Ugeo</b> wants to fight until the end, but his prince <b>Jang Hang</b> is unsure.",
-						"ko": "<b>우거왕</b>은 끝까지 싸우려 하지만, 태자 <b>장항</b>은 흔들린다."
+						"html": "Before there are any kingdoms, there is a son in heaven who keeps looking down. He is <b>Hwanung</b>. His father <b>Hwanin</b>, the Lord of Heaven, notices, looks down himself at a mountain called Taebaek and the people living around it, and decides the world could use his son.",
+						"ko": "나라라는 것이 하나도 없던 때, 하늘에 자꾸 아래를 내려다보는 아들이 있다. <b>환웅</b>이다. 아버지인 하늘의 임금 <b>환인</b>이 그것을 알아채고, 저도 태백이라는 산과 그 둘레에 사는 사람들을 내려다본 뒤, 세상에 아들이 쓸모 있겠다고 정한다."
+					},
+					{
+						"kind": "diagram",
+						"diagram": "joseon-mandate",
+						"title": "Old Joseon · 고조선",
+						"caption": "Heaven’s mandate made into a capital: Hwanin → Hwanung → Dangun → Asadal.",
+						"ko": "하늘의 명을 수도로 만든 계보. 환인 → 환웅 → 단군 → 아사달."
 					},
 					{
 						"kind": "p",
-						"html": "The loyal official <b>Sung Gi</b> wants to keep fighting, but is assassinated by the traitors <b>Noin, Choi,</b> and <b>Sam.</b>",
-						"ko": "충신 <b>성기</b>가 항전을 주장하다, 배신자 <b>노인·최·삼</b>에게 암살당한다."
+						"html": "Hwanin does not plough — he opens the sky. Three seals go down with his son, so that nobody on the ground can mistake him for a prince playing at exile. Every later king in this chronicle will cut seals of his own, and every one of them is copying these.",
+						"ko": "환인은 갈지 않는다 — 하늘을 연다. 아들과 함께 천부인 셋이 내려간다. 땅의 누구도 그를 유배 놀이 하는 왕자로 착각하지 못하게. 이 편년의 후대 임금들은 저마다 제 인장을 새길 것이고, 그 모두가 이것을 베낀다."
 					},
 					{
 						"kind": "p",
-						"html": "The gates are opened, the fortress is captured, and the <b>Four Commanderies of Han</b> are established. For hundreds of years, the people of Joseon are ruled under an iron fist.",
-						"ko": "성문이 열리고 왕검성이 함락되어 <b>한사군</b>이 설치된다. 그 뒤 수백 년 동안 조선 사람들은 철권 아래 살아간다."
+						"html": "Hwanung lands on a mountain under a sandalwood tree — 신단수, the divine birch — and names the ground beneath it <b>Sinsi</b>, the Divine City. Three thousand followers come with him; among them the Earl of Wind, the Master of Rain, and the Master of Cloud. Someone has to argue with the weather.",
+						"ko": "환웅은 신단수 — 신성한 자작나무 — 아래 산에 내리고, 그 밑 땅을 <b>신시</b>, 신성한 도시라 부른다. 무리 삼천이 따른다. 그중 바람의 백, 비의 백, 구름의 백. 날씨와 말할 사람이 필요하다."
+					},
+					{
+						"kind": "quote",
+						"hanja": "乃授天符印三箇 雄率徒三千 降於太伯山頂神壇樹下 是謂神市 熊女與婚 生子 號曰壇君王儉",
+						"ko": "이에 천부인 셋을 주어 다스리게 하니, 환웅이 무리 삼천을 이끌고 태백산 꼭대기 신단수 아래로 내려와 이를 신시라 하였다. 웅녀와 혼인하여 아들을 낳으니, 이름하여 단군왕검이라 하였다.",
+						"html": "He granted three heavenly seals and sent him to govern. Hwanung led a following of three thousand and descended under the sacred altar-tree on the summit of Mount Taebaek; this was called the Divine City. He married the bear-woman, and she bore a son named Dangun Wanggeom.",
+						"source": "Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Old Joseon (Dangun); Ha & Mintz tr., pp. 32–33"
+					},
+					{
+						"kind": "p",
+						"html": "That is the short way to tell it, the way it is carved on stones. The long way begins, as long ways do, with a bear who wanted something so badly that she outlasted a tiger for it.",
+						"ko": "그것이 짧게 전하는 방식이고, 돌에 새기는 방식이다. 길게 전하는 방식은, 긴 이야기가 늘 그렇듯, 무언가를 너무나 간절히 원한 나머지 호랑이보다 오래 견딘 곰 한 마리에서 시작된다."
+					},
+					{
+						"kind": "p",
+						"html": "From Sinsi he dispenses what mortals later call civilisation in instalments: laws, punishments, lifespans, illness, good and evil, and the arts of medicine and moxibustion — three hundred and sixty matters, the Samguk Yusa counts.",
+						"ko": "신시에서 그는 후에 사람들이 문명이라 부를 것을 할부로 내준다. 법, 형벌, 수명, 병, 선악, 그리고 의술과 뜸 — 삼백육십 가지, 삼국유사가 센다."
+					},
+					{
+						"kind": "p",
+						"html": "A bear and a tiger come to him and ask to be made human. He gives them a bundle of mugwort, twenty cloves of garlic, and one instruction: stay out of the sun for a hundred days.",
+						"ko": "곰과 범이 그를 찾아와 사람이 되게 해 달라 청한다. 그는 쑥 한 줌과 마늘 스무 쪽을 주고 한 가지를 이른다. 백 일 동안 햇빛을 보지 마라."
+					},
+					{
+						"kind": "p",
+						"html": "The bear stays. She comes out a woman on the twenty-first morning, garlic still on her breath, and finds the mountain already staffed — wind, rain, cloud, and not one of them a husband. So she stands under the sacred tree. Not once. Every day, on the path he has to take if he means to reach the hall.",
+						"ko": "곰은 남는다. 스무하루째 아침, 입가에 마늘 냄새가 남은 채로 여자가 되어 나오니, 산은 이미 사람이 가득하다 — 바람, 비, 구름, 그리고 남편이 될 이는 하나도 없다. 그래서 신단수 아래에 선다. 한 번이 아니다. 그가 전각으로 가려면 반드시 지나야 하는 길에, 날마다.",
+						"art": "Open on the cave mouth: the tiger’s tracks leading away into the snow, then her first step into daylight."
+					},
+					{
+						"kind": "p",
+						"html": "He means to reach the hall. On the third evening he gets as far as the birch, and the seal in his hand becomes a thing he is holding for no reason he can name.",
+						"ko": "그는 전각에 닿을 작정이다. 사흘째 저녁, 자작나무까지는 온다. 손의 인장은, 왜 들고 있는지 스스로도 말할 수 없는 물건이 된다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"또 지나치실 거요."
+						],
+						"en": [
+							"You're going to walk past again."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d4b86a",
+						"person": "hwanung",
+						"lines": [
+							"…오늘은 아니오."
+						],
+						"en": [
+							"…Not today."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"어제는 그랬소.",
+							"그저께도. 나는 여기 서 있었는데."
+						],
+						"en": [
+							"Yesterday you did.",
+							"And the day before. I was standing right here."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d4b86a",
+						"person": "hwanung",
+						"lines": [
+							"봤소.",
+							"마늘 냄새가 여기까지 왔소."
+						],
+						"en": [
+							"I saw you.",
+							"The garlic reached this far."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"스무하루를 그렇게 먹고 나왔소.",
+							"…가까이 오지 마시오, 라고 하려고 했는데."
+						],
+						"en": [
+							"Twenty-one days of that, and this is what came out.",
+							"…I was going to say don't come closer."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d4b86a",
+						"person": "hwanung",
+						"lines": [
+							"늦었소.",
+							"가지 마. 아니— 가지 마시오. 손이—"
+						],
+						"en": [
+							"Too late.",
+							"Stay. I mean— don't go. Your hand—"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"손은 이미 잡았소.",
+							"…나머지는 무서우시오?"
+						],
+						"en": [
+							"You already have the hand.",
+							"…Scared of the rest?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d4b86a",
+						"person": "hwanung",
+						"lines": [
+							"무섭소.",
+							"당신이 보고 있으니까."
+						],
+						"en": [
+							"I am.",
+							"Because you're looking at me."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"그럼 내려와요.",
+							"나무는 보고 있을 테니까. 나는… 더."
+						],
+						"en": [
+							"Then come down.",
+							"The tree can watch. I want… more."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "The kiss is clumsy. Beard, a new mouth, birch bark at her back. She makes a small furious sound and tries again, and the second one lands.",
+						"ko": "입맞춤은 서투르다. 수염, 처음 쓰는 입, 등에 닿는 자작나무 껍질. 그녀가 짧게 성난 소리를 내고 다시 하고, 두 번째는 닿는다."
+					},
+					{
+						"kind": "p",
+						"html": "White silk goes down among the roots. The fur at her throat opens under his mouth. She laughs once, startled at the sound, and pulls him down by the hair.",
+						"ko": "흰 비단이 뿌리 사이에 내려앉는다. 목덜미의 털깃이 그의 입 밑에서 풀린다. 그녀는 한 번 웃는다. 그 소리에 스스로 놀라서. 그리고 머리카락을 잡아 그를 끌어내린다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "By the time the moon clears the snow on the peak, the rust-red sash is somewhere in the moss, and neither of them has gone back up the path.",
+						"ko": "달빛이 봉우리의 눈에 닿을 때쯤, 붉은 띠는 이끼 어딘가에 있고, 둘 다 그 길로 돌아 올라가지 않았다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"…벌써 가시오?"
+						],
+						"en": [
+							"…You're going already?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d4b86a",
+						"person": "hwanung",
+						"lines": [
+							"못 가오.",
+							"인장을 어디에 뒀는지 모르겠소."
+						],
+						"en": [
+							"I can't.",
+							"I don't know where I put the seal."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"내 머리 밑이야.",
+							"아까 내가 뺐어. …가지 마."
+						],
+						"en": [
+							"Under my head.",
+							"I took it. …Don't go."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d4b86a",
+						"person": "hwanung",
+						"lines": [
+							"…도둑."
+						],
+						"en": [
+							"…Thief."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9b18f",
+						"person": "ungnyeo",
+						"lines": [
+							"아침에 아내로 맞추시오.",
+							"지금은 여기 있소."
+						],
+						"en": [
+							"Marry me in the morning.",
+							"Right now I'm here."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Their son is <b>Dangun</b>. The name on the stone is <b>Wanggeom</b> — king who governs, not king who inherits a bone rank — and he founds Asadal where the mountain meets the plain, then moves the capital to the slopes of Paegak and Gunghol when the city outgrows its first prayer. He rules for one thousand five hundred years, and then becomes a mountain spirit.",
+						"ko": "그 아들이 <b>단군</b>이다. 돌에 새긴 이름은 <b>왕검</b> — 다스리는 임금, 골격 신분을 물려받은 임금이 아니라 — 이고, 그는 산과 평야가 만나는 곳에 아사달을 세운 뒤, 도읍이 첫 기도를 넘어설 때 백악과 궁홀의 비탈로 옮긴다. 천오백 년을 다스리고 산신이 된다."
+					},
+					{
+						"kind": "p",
+						"html": "Every later crown in these kingdoms argues, one way or another, back to the woman who used to be a bear.",
+						"ko": "이후 이 왕국들의 왕관은, 어떤 식으로든, 한때 곰이었던 여자에게로 거슬러 올라간다."
+					},
+					{
+						"kind": "scene",
+						"label": "The Fall of Joseon",
+						"ko": "조선의 멸망"
+					},
+					{
+						"kind": "p",
+						"html": "Joseon outlives its founder by a long way. Two thousand years on it is still there, run by other kings now, from a walled city on the Taedong that has kept his name: <b>Wanggeom</b>. In the autumn of 109 BC, Han comes to the gate.",
+						"ko": "조선은 시조보다 훨씬 오래 산다. 이천 년이 지나도 여전히 거기 있다. 이제는 다른 임금들이, 그의 이름 <b>왕검</b>을 그대로 지닌 대동강가의 성에서 다스린다. 기원전 109년 가을, 한나라가 그 성문 앞에 온다."
 					},
 					{
 						"kind": "p",
@@ -53014,6 +52902,128 @@
 						"kind": "p",
 						"html": "So they stop attacking the walls and start talking to the men behind them, which is cheaper and has never once failed.",
 						"ko": "그래서 그들은 성벽을 치는 일을 그만두고, 성벽 뒤의 사람들과 이야기하기 시작한다. 더 싸고, 단 한 번도 실패한 적 없는 방법이다."
+					},
+					{
+						"kind": "p",
+						"html": "<b>King Ugeo</b> has stopped sleeping in the palace. He sleeps on the wall, where he can hear the Han camp coughing, and his son, Prince <b>Jang Hang</b>, has started sleeping somewhere else.",
+						"ko": "<b>우거왕</b>은 궁에서 자지 않은 지 오래다. 한나라 진영의 기침 소리가 들리는 성벽 위에서 잔다. 태자 <b>장항</b>은 언제부턴가 다른 데서 잔다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#9c8f7a",
+						"lines": [
+							"아버님. 저들이 또 조건을 보내왔습니다.",
+							"성문만 열면 성 안 사람은 아무도 건드리지 않겠답니다."
+						],
+						"en": [
+							"Father. They’ve sent terms again.",
+							"Open the gate, they say, and nobody inside gets hurt."
+						],
+						"speaker": "Prince Jang Hang"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#918878",
+						"lines": [
+							"작년 가을에도 그 말을 했다.",
+							"누가 가져왔느냐."
+						],
+						"en": [
+							"They said that last autumn.",
+							"Who brought it to you?"
+						],
+						"person": "ugeo"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#9c8f7a",
+						"lines": [
+							"…그게 중요합니까."
+						],
+						"en": [
+							"…Does it matter who?"
+						],
+						"speaker": "Prince Jang Hang"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#918878",
+						"lines": [
+							"중요하다.",
+							"내 성벽에서 내려가라."
+						],
+						"en": [
+							"It matters.",
+							"Get off my wall."
+						],
+						"person": "ugeo"
+					},
+					{
+						"kind": "p",
+						"html": "Noin, one of the ministers who have been doing the talking, goes over the wall that week and dies on the road before he reaches the Han tents. Another of them, Sam, does not bother with the road. One night at the start of summer he sends men up the wall-stair instead.",
+						"ko": "말을 주고받던 대신 가운데 하나인 노인이 그 주에 성벽을 넘어가다, 한나라 장막에 닿기도 전에 길에서 죽는다. 또 다른 대신 삼은 길로 나서지 않는다. 초여름 어느 밤, 그는 성벽 계단으로 사람들을 올려 보낸다.",
+						"art": "Torchlight on the wall-stair, knives, the king turning from the parapet too late."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#7d8a6e",
+						"lines": [
+							"폐하—!"
+						],
+						"en": [
+							"Majesty—!"
+						],
+						"speaker": "Seong Gi"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#918878",
+						"lines": [
+							"…성기냐.",
+							"성은 지키지 마라. 나 때문이라면.",
+							"사람들 데리고 나가. 살아서… 어디서든, 새로 나라를 세워라."
+						],
+						"en": [
+							"…Seong Gi?",
+							"Don’t hold the city. Not for me.",
+							"Get the people out. Live… and make a new country. Anywhere."
+						],
+						"person": "ugeo"
+					},
+					{
+						"kind": "p",
+						"html": "Seong Gi closes the king’s eyes, goes back up to the parapet, and holds the city anyway.",
+						"ko": "성기는 임금의 눈을 감기고, 다시 성가퀴로 올라가, 그래도 성을 지킨다."
+					},
+					{
+						"kind": "p",
+						"html": "He holds it until Noin’s son Choi and the prince go down into the lanes, where people have been eating bark since the spring.",
+						"ko": "노인의 아들 최와 태자가 골목으로 내려갈 때까지는 지킨다. 골목 사람들은 봄부터 나무껍질을 먹고 있었다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6f6a60",
+						"lines": [
+							"임금은 죽었소.",
+							"그럼 이제 누구 때문에 굶는 거요? 저 사람?"
+						],
+						"en": [
+							"The king is dead.",
+							"So who are you starving for now? Him?"
+						],
+						"speaker": "Choi",
+						"art": "Choi pointing up at Seong Gi on the wall."
+					},
+					{
+						"kind": "p",
+						"html": "Before morning Seong Gi is dead too.",
+						"ko": "아침이 오기 전에 성기도 죽는다."
+					},
+					{
+						"kind": "p",
+						"html": "Someone lifts the bar.",
+						"ko": "누군가 빗장을 든다.",
+						"art": "Wordless. The gate of Wanggeom swings open from the inside; Han banners wait in the grey light."
 					},
 					{
 						"kind": "dialogue",
@@ -53039,156 +53049,12 @@
 					},
 					{
 						"kind": "p",
-						"html": "Seven hundred years later a Silla prince will say the same sentence about a fortress called Daeya, and build the rest of his life on it.",
-						"ko": "칠백 년 뒤 한 신라의 왕자가 대야성이라는 성을 두고 똑같은 문장을 말하고, 남은 생을 그 위에 세운다."
-					},
-					{
-						"kind": "p",
-						"html": "Before he dies, King Ugeo implores his people to survive and form new kingdoms.",
-						"ko": "죽기 전, 우거왕은 백성들에게 살아남아 새 나라를 세우라 이른다."
+						"html": "Han takes Wanggeom in 108 BC. Some of the people the king told to live go south over the mountains and settle in six villages in the valleys around Surabol, where, two generations later, they will go looking for a king. The rest stay, and are cut into the <b>Four Commanderies of Han</b>. The last of them, Nangnang on the Taedong, is still collecting taxes four hundred years later.",
+						"ko": "기원전 108년, 한나라가 왕검성을 차지한다. 임금이 살라고 한 사람들 가운데 일부는 산을 넘어 남쪽으로 가서, 서라벌 둘레 골짜기에 여섯 마을을 이룬다. 두 세대쯤 지나 그들은 임금을 찾아 나설 것이다. 나머지는 남아 <b>한사군</b>으로 쪼개진다. 그 가운데 마지막까지 남은 대동강가의 낙랑은 사백 년 뒤에도 여전히 세금을 걷고 있다."
 					}
 				],
 				"music": "Old Joseon",
 				"flashback": true
-			},
-			{
-				"year": "670",
-				"title": "The Protectorate",
-				"tone": "resistance drama",
-				"images": [
-					{
-						"id": "white-tiger-banner",
-						"ratio": 2,
-						"tone": "#1e293b",
-						"alt": "The old Goguryeo white-tiger standard raised again on the Taedong",
-						"at": "raises the old flag on the Taedong",
-						"prompt": "Cinematic historical illustration of white tiger banner, Three Kingdoms of Samhan / Tang era (670), scene: Goguryeo Revival Society, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/white-tiger-banner.jpg"
-					},
-					{
-						"id": "andong-grid-stamp",
-						"ratio": 1.778,
-						"tone": "#e8e3d5",
-						"at": "The Third Emperor establishes the <b>Eastern Commandery</b>",
-						"alt": "The Tang Andong Protectorate built over a Goguryeo city — real streets, walls, and a Tang yamen",
-						"prompt": "Cinematic historical still, 16:9, high view of a REAL 7th-century city on former Goguryeo land: packed-earth walls, a Tang administrative yamen and grid of streets laid over older Korean streets. Gold Tang banners, a few remaining red Goguryeo roofs. Xue Rengui a small white-armored figure at the east gate. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
-						"refs": [
-							"/ch_xue_rengui.png"
-						],
-						"tempImage": "/temp/andong-grid-stamp.jpg"
-					},
-					{
-						"id": "revival-torch",
-						"ratio": 0.5625,
-						"tone": "#C30000",
-						"src": "/temp/goguryeo_revival_torch.png",
-						"alt": "A single torch burning with Goguryeo red flame in darkness - resistance lives on",
-						"prompt": "Resistance drama: A single torch burning with Goguryeo red flame (#C30000) against pitch black negative space"
-					},
-					{
-						"id": "tang-navy-fleet",
-						"ratio": 1.7777777777777777,
-						"tone": "#0369a1",
-						"alt": "Fleet as triangular sails against horizon with golden accent - minimal iconic symbol of Tang naval power",
-						"src": "/tang_navy_fleet.png"
-					},
-					{
-						"id": "tang-daming-palace-sunset",
-						"ratio": 1.7777777777777777,
-						"tone": "#d97706",
-						"alt": "Palace silhouette against golden sky at sunset - minimal iconic symbol of Tang architectural grandeur with vast negative space",
-						"src": "/tang_daming_palace_sunset.png",
-						"refs": [
-							"/pl_daming_palace.png"
-						]
-					},
-					{
-						"id": "tang-imperial-procession",
-						"ratio": 1.7777777777777777,
-						"tone": "#d4af37",
-						"alt": "Single Tang banner flag in wind with gold accent - minimal iconic symbol of Tang imperial authority and pageantry",
-						"src": "/tang_imperial_procession.png"
-					}
-				],
-				"blocks": [
-					{
-						"kind": "p",
-						"html": "The Third Emperor establishes the <b>Eastern Commandery</b> on Goguryeo land, causing anger.",
-						"ko": "황제가 고구려 땅에 <b>안동도호부</b>를 세우니, 분노가 들끓는다."
-					},
-					{
-						"kind": "p",
-						"html": "Geom Mojam raises the old flag on the Taedong and puts Anseung, of the royal house, at the head of it. Then he quarrels with Anseung, and Anseung kills him, and takes four thousand households south to Silla.",
-						"ko": "검모잠이 대동강에서 옛 깃발을 세우고 왕족 안승을 그 앞에 세운다. 그러다 안승과 다투고, 안승이 그를 죽이고, 사천 호를 이끌고 남쪽 신라로 넘어간다."
-					},
-					{
-						"kind": "p",
-						"html": "Munmu gives him a title, a district, and a name for the thing: Goguryeo, still standing, inside Silla. It is a useful fiction and both sides know exactly how useful.",
-						"ko": "문무왕은 그에게 관작과 고을과 이름 하나를 준다. 신라 안에 여전히 서 있는 고구려. 쓸모 있는 허구이고, 양쪽 다 그것이 얼마나 쓸모 있는지 정확히 안다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#D8258C",
-						"lines": [
-							"법민아...!",
-							"우리가 백제와 고려를 정벌한 다음엔, 황제가 분명히 신라를 공략할 것이다..."
-						],
-						"speaker": "🙎",
-						"en": [
-							"Bupmin…!",
-							"After we have subdued Baekje and Goguryeo, the Third Emperor will certainly come for Silla…"
-						],
-						"person": "chunchu"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#3fa9c9",
-						"lines": [
-							"아버지..."
-						],
-						"en": [
-							"Father…"
-						],
-						"person": "munmu"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#D8258C",
-						"lines": [
-							"지금부터 잘 들어라."
-						],
-						"speaker": "🙎",
-						"en": [
-							"Listen carefully from here."
-						],
-						"person": "chunchu"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#3fa9c9",
-						"lines": [
-							"배신자...?"
-						],
-						"en": [
-							"Traitor…?"
-						],
-						"person": "munmu"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#D8258C",
-						"lines": [
-							"아들아. 사랑한다...!"
-						],
-						"speaker": "🙎",
-						"en": [
-							"My son. I love you…!"
-						],
-						"person": "chunchu"
-					}
-				],
-				"music": "The Long War",
-				"subtitle": "안동도호부"
 			},
 			{
 				"year": "672",
@@ -53256,22 +53122,62 @@
 						"tempImage": "/temp/chunchu-forecast.jpg"
 					},
 					{
-						"id": "munmu-crimson-tide",
-						"ratio": 0.5625,
-						"tone": "#C41E3A",
-						"at": "Munmu does it in exactly that order",
-						"alt": "King Munmu standing in a black void on a low crimson tide-bar, almost lost in shadow",
-						"prompt": "Minimal iconic 9:16 poster. King Munmu, king for all, dragon of the strait. ONE geometric device: a CRIMSON TIDE as a low horizontal BAR of #C41E3A silk-water occupying only the bottom fifth. He stands in it, poster-scale, almost lost; a sea-dragon ring-pommel catching one red glint. Face matches the attached portrait. Face mostly in shadow; thin crimson rim-light. Striking silky court-military hanbok. Eighty percent black void. Form defined by rim light, not a floating bust. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"id": "andong-grid-stamp",
+						"ratio": 1.778,
+						"tone": "#e8e3d5",
+						"at": "Nearly eight hundred",
+						"alt": "The Tang Andong Protectorate built over a Goguryeo city — real streets, walls, and a Tang yamen",
+						"prompt": "Cinematic historical still, 16:9, high view of a REAL 7th-century city on former Goguryeo land: packed-earth walls, a Tang administrative yamen and grid of streets laid over older Korean streets. Gold Tang banners, a few remaining red Goguryeo roofs. Xue Rengui a small white-armored figure at the east gate. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
 						"refs": [
-							"/ch_munmu.png"
+							"/ch_xue_rengui.png"
 						],
-						"people": [
-							"munmu"
-						],
-						"tempImage": "/temp/munmu-crimson-tide.jpg"
+						"tempImage": "/temp/andong-grid-stamp.jpg"
+					},
+					{
+						"id": "white-tiger-banner",
+						"ratio": 2,
+						"tone": "#1e293b",
+						"alt": "The old Goguryeo white-tiger standard raised again on the Taedong",
+						"at": "raises the old flag on the Taedong",
+						"prompt": "Cinematic historical illustration of white tiger banner, Three Kingdoms of Samhan / Tang era (670), scene: Goguryeo Revival Society, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/white-tiger-banner.jpg"
+					},
+					{
+						"id": "revival-torch",
+						"ratio": 0.5625,
+						"tone": "#C30000",
+						"src": "/temp/goguryeo_revival_torch.png",
+						"alt": "A single torch burning with Goguryeo red flame in darkness - resistance lives on",
+						"prompt": "Resistance drama: A single torch burning with Goguryeo red flame (#C30000) against pitch black negative space",
+						"at": "Geom Mojam raises"
 					}
 				],
 				"blocks": [
+					{
+						"kind": "scene",
+						"label": "The Protectorate",
+						"ko": "안동도호부"
+					},
+					{
+						"kind": "p",
+						"html": "Nearly eight hundred years after Wanggeom, the empire of the West comes back to the Taedong and does the same thing again. The Third Emperor sets up a <b>Protectorate</b> over Goguryeo, staffs it with his own officials, and seems surprised that anyone minds.",
+						"ko": "왕검성으로부터 팔백 년 가까이 지나, 서토의 제국이 다시 대동강으로 와서 같은 일을 되풀이한다. 황제는 고구려 땅에 <b>안동도호부</b>를 세우고 제 관리들로 채운 뒤, 누가 싫어하는 걸 보고 놀란 눈치다."
+					},
+					{
+						"kind": "p",
+						"html": "Geom Mojam raises the old flag on the Taedong and puts Anseung, of the royal house, at the head of it. Then he quarrels with Anseung, and Anseung kills him, and takes four thousand households south to Silla.",
+						"ko": "검모잠이 대동강에서 옛 깃발을 세우고 왕족 안승을 그 앞에 세운다. 그러다 안승과 다투고, 안승이 그를 죽이고, 사천 호를 이끌고 남쪽 신라로 넘어간다."
+					},
+					{
+						"kind": "p",
+						"html": "Munmu gives him a title, a district, and a name for the thing: Goguryeo, still standing, inside Silla. It is a useful fiction and both sides know exactly how useful.",
+						"ko": "문무왕은 그에게 관작과 고을과 이름 하나를 준다. 신라 안에 여전히 서 있는 고구려. 쓸모 있는 허구이고, 양쪽 다 그것이 얼마나 쓸모 있는지 정확히 안다."
+					},
+					{
+						"kind": "scene",
+						"label": "Stone Gate",
+						"ko": "석문"
+					},
 					{
 						"kind": "p",
 						"html": "The Tang take Hansi and Mapeup and come south. Silla and what is left of the Goguryeo revival meet them, cut down several thousand, and then make the mistake that costs the year: they chase.",
@@ -53475,11 +53381,6 @@
 								"person": "chunchu"
 							}
 						]
-					},
-					{
-						"kind": "p",
-						"html": "Munmu does it in exactly that order. Never first. One fortress at a time. An apology after each. The sea last, in 676, after the horses.",
-						"ko": "문무는 정확히 그 순서로 한다. 먼저 치지 않는다. 성을 하나씩. 그때마다 사죄를. 바다는 마지막으로, 676년, 말을 다 잃은 뒤에."
 					}
 				],
 				"music": "The Long War"
@@ -53577,9 +53478,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Hyullé’s hand finds the water and stays. She looks at his mouth while he sits like a man who has finally learned the ledge. He is old and she still wants. Fifty years of the same ledge.",
-						"ko": "혈레의 손이 물을 찾아 그대로 있다. 그가 턱을 배운 사람처럼 앉는 동안 입을 본다. 늙었는데 아직 원한다. 같은 턱을 오십 년.",
-						"nsfw": true
+						"html": "Hyullé’s hand finds the water beside the ledge where he always sits, and stays there. Fifty years of the same ledge.",
+						"ko": "혈레의 손이 그가 늘 앉던 턱 곁의 물을 찾아, 그대로 머문다. 같은 턱을 오십 년."
 					},
 					{
 						"kind": "dialogue",
@@ -53587,11 +53487,11 @@
 						"person": "narim",
 						"en": [
 							"You still undress like a soldier checking for wounds.",
-							"Sit. The counsel is shorter these days. So is the war. Undress slower. I want to watch the last of it."
+							"Sit. The counsel is shorter these days. So is the war. Slower. Let me look at you."
 						],
 						"lines": [
 							"아직도 상처 확인하듯 옷을 벗는군요.",
-							"앉아요. 요즘은 충고도 짧고, 전쟁도. 더 천천히 벗어요. 마지막은 보고 싶어요."
+							"앉아요. 요즘은 충고도 짧고, 전쟁도. 천천히 해요. 얼굴 좀 보게요."
 						]
 					},
 					{
@@ -53600,11 +53500,11 @@
 						"person": "golhwa",
 						"en": [
 							"He’s going to say it.",
-							"Watch — three, two — and I’m already wet about a man who came to say goodbye. Don’t look at me."
+							"Watch — three, two —"
 						],
 						"lines": [
 							"말할 거야.",
-							"봐 — 셋, 둘 — 작별하러 온 남자한테 나 이미 젖었어. 보지 마."
+							"봐 — 셋, 둘 —"
 						]
 					},
 					{
@@ -53627,12 +53527,12 @@
 						"en": [
 							"Ugh… even in the Western Flower Field she gets the title.",
 							"What did that mortal have that we don’t?",
-							"…Don’t answer. Stay until the steam drops. I want your mouth once more before the hill keeps you."
+							"…Don’t answer. Stay until the steam drops. Before the hill keeps you."
 						],
 						"lines": [
 							"으엑… 서천꽃밭에서도 그 인간은 직함을 가져.",
 							"그 인간한테 우리한테 없는 게 뭐였는데?",
-							"…답하지 마. 김이 식을 때까지 있어. 언덕이 널 두기 전에 입을 한 번 더 원해."
+							"…답하지 마. 김이 식을 때까지 있어. 언덕이 널 두기 전에."
 						]
 					},
 					{
@@ -53642,12 +53542,12 @@
 						"en": [
 							"I didn’t — bring —",
 							"…It’s just warmer there.",
-							"You always liked it. I liked your weight on it. Come lie down. Please."
+							"You always liked it. Come sit. Please."
 						],
 						"lines": [
 							"제가 — 가져온 게 —",
 							"…그냥 거기가 더 따뜻해서요.",
-							"항상 좋아하셨잖아요. 저는 그 위의 무게가 좋았어요. 누워요. 제발요."
+							"항상 좋아하셨잖아요. 와서 앉아요. 제발요."
 						]
 					},
 					{
@@ -53754,8 +53654,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (67)</b> is in the courtyard when they come out. She was the girl who burned a skirt to make a marriage. She has been a queen, a queen dowager, and now the last of three children from a house that used to be a country.",
-						"ko": "<b>문희 (67)</b>가 마당에 서 있다. 혼인을 이루려 치마를 태우던 소녀였다. 왕비였고, 왕대비였고, 이제는 한때 나라였던 집안의 세 남매 중 마지막 하나다."
+						"html": "<b>Munhee (67)</b> is in the courtyard when they come out. She was the girl in the burnt-skirt rumour. She has been a queen and a queen dowager. Her sister Bohee has been in the ground for years, and after tonight Munhee is the last of three children from a house that used to be a country.",
+						"ko": "<b>문희 (67)</b>가 마당에 서 있다. 치마를 태웠다는 그 소문 속의 소녀였다. 왕비였고, 왕대비였다. 언니 보희는 땅에 묻힌 지 오래고, 오늘 밤이 지나면 한때 나라였던 집안의 세 남매 가운데 남는 사람은 문희 하나다."
 					},
 					{
 						"kind": "dialogue",
@@ -53787,32 +53687,38 @@
 					{
 						"kind": "p",
 						"html": "<b>— Kim Yushin —</b>",
-						"ko": "<b>— 김유신 —</b>"
+						"ko": "<b>— 김유신 —</b>",
+						"art": "Full-page end card. The name and the five italic paragraphs after it (through “…made him a king.”) share one page."
 					},
 					{
 						"kind": "p",
 						"html": "<i>His grandfather bought the family a rank with a kingdom. That was the deal: Gaya for True Bone, one generation for the next. Everyone honoured it. Everyone also remembered it, which was the part the deal did not cover.</i>",
-						"ko": "<i>그의 할아버지는 나라 하나로 집안의 신분을 샀다. 그것이 거래였다. 가야를 주고 진골을 받는, 한 세대가 다음 세대를 위해 치른 값. 모두가 그 약속을 지켰다. 그리고 모두가 그것을 기억했다. 거래에 포함되지 않은 조항이 바로 그것이었다.</i>"
+						"ko": "<i>그의 할아버지는 나라 하나로 집안의 신분을 샀다. 그것이 거래였다. 가야를 주고 진골을 받는, 한 세대가 다음 세대를 위해 치른 값. 모두가 그 약속을 지켰다. 그리고 모두가 그것을 기억했다. 거래에 포함되지 않은 조항이 바로 그것이었다.</i>",
+						"art": "Full-page end card, continued."
 					},
 					{
 						"kind": "p",
 						"html": "<i>So he became necessary instead. Forty fortresses. The Hwarang. The one name that opened a prison door in Pyongyang. If you cannot be one of them by blood you can be the thing they cannot do without, and he was very, very good at being that.</i>",
-						"ko": "<i>그래서 그는 대신 없어서는 안 될 사람이 되었다. 성 마흔 개. 화랑. 평양에서 옥문을 여는 단 하나의 이름. 피로 그들 중 하나가 될 수 없다면, 그들이 없이는 안 되는 무엇이 될 수는 있다. 그리고 그는 그것을 아주, 아주 잘해 냈다.</i>"
+						"ko": "<i>그래서 그는 대신 없어서는 안 될 사람이 되었다. 성 마흔 개. 화랑. 평양에서 옥문을 여는 단 하나의 이름. 피로 그들 중 하나가 될 수 없다면, 그들이 없이는 안 되는 무엇이 될 수는 있다. 그리고 그는 그것을 아주, 아주 잘해 냈다.</i>",
+						"art": "Full-page end card, continued."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He married his sister into the royal house and called it strategy. He married a princess himself, late, and called that strategy too. He loved a queen for forty years and never once said so where it could be heard. Assimilation is a long word for wanting to be let in.</i>",
-						"ko": "<i>그는 누이를 왕실에 시집보내고 그것을 계략이라 불렀다. 늦은 나이에 스스로 공주를 아내로 맞고 그것 또한 계략이라 불렀다. 사십 년을 한 여왕을 사랑했으나, 들릴 만한 자리에서는 단 한 번도 그렇다고 말하지 않았다. 동화(同化)란 안으로 들여보내 달라는 마음을 이르는 긴 말이다.</i>"
+						"ko": "<i>그는 누이를 왕실에 시집보내고 그것을 계략이라 불렀다. 늦은 나이에 스스로 공주를 아내로 맞고 그것 또한 계략이라 불렀다. 사십 년을 한 여왕을 사랑했으나, 들릴 만한 자리에서는 단 한 번도 그렇다고 말하지 않았다. 동화(同化)란 안으로 들여보내 달라는 마음을 이르는 긴 말이다.</i>",
+						"art": "Full-page end card, continued."
 					},
 					{
 						"kind": "p",
 						"html": "<i>The taunt came in the end from the boy who had given him a headband. <em>You were never even of Silla.</em> Sixty years of service and it was still available, still sharp, still the first thing an enemy reached for.</i>",
-						"ko": "<i>그 조롱은 끝내 그에게 머리띠를 주었던 그 소년의 입에서 나왔다. <em>애초에 신라 사람도 아니잖아.</em> 육십 년을 섬겼는데도 그 말은 여전히 거기 있었고, 여전히 날이 서 있었고, 여전히 적이 가장 먼저 집어 드는 물건이었다.</i>"
+						"ko": "<i>그 조롱은 끝내 그에게 머리띠를 주었던 그 소년의 입에서 나왔다. <em>애초에 신라 사람도 아니잖아.</em> 육십 년을 섬겼는데도 그 말은 여전히 거기 있었고, 여전히 날이 서 있었고, 여전히 적이 가장 먼저 집어 드는 물건이었다.</i>",
+						"art": "Full-page end card, continued."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He outlived the queen, the friend, the war and most of the men he trained. They gave him a posthumous title no subject had ever held. It is the most Silla thing imaginable: they would not let him in while he was alive, and once he was safely dead they made him a king.</i>",
-						"ko": "<i>그는 여왕보다, 벗보다, 전쟁보다, 그리고 자신이 길러 낸 대부분의 사내들보다 오래 살았다. 사람들은 신하가 가져 본 적 없는 시호를 그에게 올렸다. 그보다 더 신라다운 일은 상상하기 어렵다. 살아 있는 동안에는 들여보내 주지 않다가, 안전하게 죽고 나자 그를 왕으로 만들어 준 것이다.</i>"
+						"ko": "<i>그는 여왕보다, 벗보다, 전쟁보다, 그리고 자신이 길러 낸 대부분의 사내들보다 오래 살았다. 사람들은 신하가 가져 본 적 없는 시호를 그에게 올렸다. 그보다 더 신라다운 일은 상상하기 어렵다. 살아 있는 동안에는 들여보내 주지 않다가, 안전하게 죽고 나자 그를 왕으로 만들어 준 것이다.</i>",
+						"art": "Full-page end card, continued."
 					}
 				],
 				"music": "An Ending"
@@ -53864,7 +53770,7 @@
 						"id": "munmu-cave-profile",
 						"ratio": 1.778,
 						"tone": "#C41E3A",
-						"at": "The house rule is the same",
+						"at": "He strips at",
 						"nsfw": true,
 						"alt": "Movie profile: naked Munmu in dim cave steam, sweat on the collarbone, crimson rim-light",
 						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. King Munmu, naked in the steam cavern, STRICT PROFILE. Movie-like side angle. Face fills the left third. Face matches the attached Munmu portrait: clean-shaven Kim house, adult king. Sweat, skin texture, real adult proportions, dim cyan cave. Bare chest and shoulders, waist-up. Munmu crimson #C41E3A as a thin rim-light. Attached cavern. No second body. No genitals. No text. No watermark. Graphic color-blocking, anime-painterly.",
@@ -54040,13 +53946,15 @@
 					},
 					{
 						"kind": "p",
-						"html": "He takes the <b>best of both</b> — the uncle’s steam, which no minutes recorded, and the first king’s name, which every stone still does. This is the entrance. The lake has not yet named the stranger on the water.",
-						"ko": "그는 <b>양쪽의 최선</b>을 취한다 — 아무도 기록하지 않은 외숙의 김, 그리고 돌마다 아직 적고 있는 첫 임금의 이름. 여기는 입구다. 호수는 아직 물 위의 낯선 이의 이름을 대지 않았다."
+						"html": "He takes the <b>best of both</b> — the uncle’s steam, which no record kept, and the first king’s name, which every stone still does. The lake has not yet named the stranger on the water.",
+						"ko": "그는 <b>양쪽의 최선</b>을 취한다 — 아무도 기록하지 않은 외숙의 김, 그리고 돌마다 아직 적고 있는 첫 임금의 이름. 호수는 아직 물 위의 낯선 이의 이름을 대지 않았다.",
+						"art": "This is the entrance. Establishing panel: the cave mouth in the hillside, steam rolling out into the dusk."
 					},
 					{
 						"kind": "p",
-						"html": "The house rule is the same: naked, clean-shaven, and only Kims. He strips at the rock lip like a soldier obeying an order he was never given in writing, and steps into water so black it reflects nothing.",
-						"ko": "집법은 같다. 벗고, 수염을 밀고, 김씨만. 그는 종이로 받지 못한 명령을 따르는 병사처럼 바위 끝에서 옷을 벗고, 아무것도 비추지 않는 검은 물로 들어간다."
+						"html": "He strips at the rock lip as if obeying an order nobody ever gave him in writing, and steps into water so black it reflects nothing.",
+						"ko": "그는 종이로 받지 못한 명령을 따르듯 바위 끝에서 옷을 벗고, 아무것도 비추지 않는 검은 물로 들어간다.",
+						"art": "The house rule is the same: naked, clean-shaven, and only Kims."
 					},
 					{
 						"kind": "p",
@@ -54076,7 +53984,8 @@
 						"lines": [
 							"누구…",
 							"여긴 누가 사는 곳이오. 외숙이 샘이라 한 곳을 찾았소."
-						]
+						],
+						"art": "Reverse angle: the three sisters on the rock across the water, each in her signature posture from the cast bible; house silk and binyeo."
 					},
 					{
 						"kind": "dialogue",
@@ -54103,12 +54012,24 @@
 						"person": "golhwa",
 						"en": [
 							"Oh. Oh no.",
-							"He’s both. Hi. I’m Golhwa. That’s unnie. That’s Hyullé. Don’t look at me like that or I am going to say the stupid thing. The stupid thing is I want to sit on you."
+							"He’s both. Hi. I’m Golhwa. That’s unnie. That’s Hyullé. Don’t look at me like that or I am going to say the stupid thing."
 						],
 						"lines": [
 							"아. 아 안 돼.",
-							"둘 다야. 안녕. 나 골화. 저 언니. 저 혈레. 그렇게 보지 마. 보면 바보 같은 말 할 거야. 바보 같은 말은, 앉고 싶다는 거."
+							"둘 다야. 안녕. 나 골화. 저 언니. 저 혈레. 그렇게 보지 마. 보면 바보 같은 말 할 거야."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"바보 같은 말은, 앉고 싶다는 거."
+						],
+						"en": [
+							"The stupid thing is I want to sit on you."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -54116,18 +54037,18 @@
 						"person": "golhwa",
 						"en": [
 							"You’re both—",
-							"I can’t sit. My legs opened and I haven’t even said hello properly."
+							"I can’t sit. I haven’t even said hello properly."
 						],
 						"lines": [
 							"둘 다라서—",
-							"못 앉아. 안녕도 제대로 못 했는데 다리가 벌어졌어."
+							"못 앉아. 안녕도 제대로 못 했는데."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
 						"html": "Gaya shoulders. Surabol mouth. She has been on the rock since the uncle left. She wants him to pin her until she goes insane.",
-						"ko": "가야 어깨. 서라벌 입. 외숙 가고부터 그 바위에 허리를 갈대였다. 미쳐버릴 때까지 눌러 줬으면.",
+						"ko": "가야 어깨. 서라벌 입. 외숙 가고부터 내내 그 바위 위였다. 미쳐버릴 때까지 눌러 줬으면.",
 						"nsfw": true
 					},
 					{
@@ -54135,11 +54056,23 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"en": [
-							"Hello. I’ll be quiet. I’m already wet. Please ignore both."
+							"Hello. I’ll be quiet."
 						],
 						"lines": [
-							"안녕. 조용히 있을게요. 이미 젖었어요. 둘 다 모른 척해 주세요."
+							"안녕. 조용히 있을게요."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"이미 젖었어요. 둘 다 모른 척해 주세요."
+						],
+						"en": [
+							"I’m already wet. Please ignore both."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "p",
@@ -54255,7 +54188,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "Munmu tells no one. The court minutes record only a day’s ride and a night’s silence. The chronicle knows because the steam keeps Kim heirs, and because later, when he expels the Tang and takes the title King of Samhan, someone in Surabol remembers the word <em>wanggeom</em> and does not explain it.",
+						"html": "Munmu tells no one. The court records note only a day’s ride and a night’s silence. The chronicle knows because the steam keeps Kim heirs, and because later, when he expels the Tang and takes the title King of Samhan, someone in Surabol remembers the word <em>wanggeom</em> and does not explain it.",
 						"ko": "문무는 아무에게도 말하지 않는다. 조정 기록에는 하루의 기승과 하룻밤의 침묵만 남는다. 편년이 아는 것은 김이 김씨 후손을 기억하기 때문이고, 후에 당을 몰아내고 삼한의 왕을 칭할 때 서라벌 누군가 <em>왕검</em>이라는 말을 기억해 설명하지 않기 때문이다."
 					}
 				],
@@ -54302,13 +54235,28 @@
 							"/ch_xue_rengui.png"
 						],
 						"tempImage": "/temp/white-tiger-withdraws.jpg"
+					},
+					{
+						"id": "munmu-crimson-tide",
+						"ratio": 0.5625,
+						"tone": "#C41E3A",
+						"at": "After they have",
+						"alt": "King Munmu standing in a black void on a low crimson tide-bar, almost lost in shadow",
+						"prompt": "Minimal iconic 9:16 poster. King Munmu, king for all, dragon of the strait. ONE geometric device: a CRIMSON TIDE as a low horizontal BAR of #C41E3A silk-water occupying only the bottom fifth. He stands in it, poster-scale, almost lost; a sea-dragon ring-pommel catching one red glint. Face matches the attached portrait. Face mostly in shadow; thin crimson rim-light. Striking silky court-military hanbok. Eighty percent black void. Form defined by rim light, not a floating bust. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_munmu.png"
+						],
+						"people": [
+							"munmu"
+						],
+						"tempImage": "/temp/munmu-crimson-tide.jpg"
 					}
 				],
 				"blocks": [
 					{
 						"kind": "scene",
-						"label": "Maeso Fortress",
-						"ko": "매소성"
+						"label": "The Landing",
+						"ko": "상륙"
 					},
 					{
 						"kind": "p",
@@ -54348,8 +54296,87 @@
 					},
 					{
 						"kind": "p",
-						"html": "It goes badly for him. Munhun meets the landing, takes fourteen hundred heads, forty ships and a thousand horses, and the sea road is closed again.",
-						"ko": "그에게는 좋지 않게 흘러간다. 문훈이 상륙을 맞받아 목 천사백을 베고 배 마흔 척과 말 천 필을 얻는다. 바닷길이 다시 닫힌다."
+						"html": "Above the beach at Cheonseong, a Silla general named <b>Munhun</b> lies flat in the dune grass and watches the boats come in. He has been told to stop the landing. He has decided to let it happen first.",
+						"ko": "천성 바닷가 위, 신라 장수 <b>문훈</b>이 모래언덕 풀숲에 엎드려 배들이 들어오는 것을 지켜본다. 상륙을 막으라는 명을 받았다. 그는 먼저 상륙하게 두기로 했다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8d8d95",
+						"lines": [
+							"장군, 말을 내립니다. 말부터요."
+						],
+						"en": [
+							"General, they’re unloading the horses. Horses first."
+						],
+						"speaker": "Silla captain"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4f7fbf",
+						"lines": [
+							"그래. 내리게 둬."
+						],
+						"en": [
+							"Good. Let them."
+						],
+						"speaker": "Munhun"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8d8d95",
+						"lines": [
+							"상륙을 막으라고 하셨는데요."
+						],
+						"en": [
+							"We were told to stop the landing."
+						],
+						"speaker": "Silla captain"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4f7fbf",
+						"lines": [
+							"막을 거다.",
+							"젖은 모래에 선 말은 못 돈다. 배가 빌 때까지 기다려."
+						],
+						"en": [
+							"We will.",
+							"A horse on wet sand can’t turn. Wait till the boats are empty."
+						],
+						"speaker": "Munhun"
+					},
+					{
+						"kind": "p",
+						"html": "When the last horse is off, Munhun stands up.",
+						"ko": "마지막 말이 내리자, 문훈이 일어선다.",
+						"art": "Silla spearmen pouring over the dune crest; horses rearing in the surf; Tang boats backing oars."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e8e3d5",
+						"lines": [
+							"배로."
+						],
+						"en": [
+							"To the boats."
+						],
+						"person": "xuerengui",
+						"zh": [
+							"回船。"
+						],
+						"zhLatn": [
+							"Huí chuán."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "By evening Munhun has fourteen hundred heads, forty Tang ships, and a thousand horses standing in the surf with nobody to ride them. The sea road is closed again.",
+						"ko": "저녁이 되자 문훈의 손에는 목 천사백과 당나라 배 마흔 척, 그리고 탈 사람 없이 파도 속에 선 말 천 필이 남는다. 바닷길이 다시 닫힌다."
+					},
+					{
+						"kind": "scene",
+						"label": "Maeso Fortress",
+						"ko": "매소성"
 					},
 					{
 						"kind": "p",
@@ -54393,6 +54420,42 @@
 					},
 					{
 						"kind": "p",
+						"html": "The army at Maeso is mostly Mohe, and the Mohe are mostly horse. Thirty thousand of them graze the flats under the walls, because the grass is outside and no fortress on the Imjin was built to stable a herd.",
+						"ko": "매소성의 군대는 대부분 말갈이고, 말갈은 대부분 말이다. 삼만 필이 성벽 아래 강가 풀밭에서 풀을 뜯는다. 풀은 성 밖에 있고, 임진강가의 어느 성도 그만한 무리를 들이도록 지어지지 않았으니까."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4f7fbf",
+						"lines": [
+							"성벽은 두고.",
+							"말뚝 줄을 끊어. 말부터 데려와."
+						],
+						"en": [
+							"Forget the walls.",
+							"Cut the picket lines. Bring me the horses."
+						],
+						"speaker": "Silla commander"
+					},
+					{
+						"kind": "p",
+						"html": "Before dawn the herd moves all at once, and not toward the fortress.",
+						"ko": "동트기 전, 말 떼가 한꺼번에 움직인다. 성 쪽이 아니다.",
+						"art": "Wordless. Knives at the picket ropes in the dark; then the whole herd streaming across the flats toward the Silla lines."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#b45309",
+						"lines": [
+							"말! 말이 간다!"
+						],
+						"en": [
+							"The horses! The horses are going!"
+						],
+						"speaker": "Mohe rider",
+						"art": "Mohe riders running after the herd on foot."
+					},
+					{
+						"kind": "p",
 						"html": "Horses are the thing. An army that has lost thirty thousand horses on the Imjin is not riding to Surabol next spring, or the spring after.",
 						"ko": "중요한 건 말이다. 임진강에서 말 삼만을 잃은 군대는 다음 봄에도, 그다음 봄에도 서라벌로 달려오지 못한다."
 					},
@@ -54424,8 +54487,59 @@
 					},
 					{
 						"kind": "p",
-						"html": "<em>After they have lost the horses.</em> Munmu is fifty years old and still, occasionally, checking his father’s work against the day.",
-						"ko": "<em>말을 다 잃은 뒤에.</em> 문무는 쉰이고, 여전히 이따금 아버지의 셈을 그날그날에 견주어 본다."
+						"html": "In Surabol the number arrives a day ahead of the generals.",
+						"ko": "서라벌에는 장수들보다 숫자가 하루 먼저 닿는다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8d8d95",
+						"lines": [
+							"삼만 삼백팔십입니다, 전하."
+						],
+						"en": [
+							"Thirty thousand, three hundred and eighty, Majesty."
+						],
+						"speaker": "Messenger"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3fa9c9",
+						"lines": [
+							"…목이?"
+						],
+						"en": [
+							"…Heads?"
+						],
+						"person": "munmu"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8d8d95",
+						"lines": [
+							"말입니다, 전하."
+						],
+						"en": [
+							"Horses, Majesty."
+						],
+						"speaker": "Messenger"
+					},
+					{
+						"kind": "p",
+						"html": "<em>After they have lost the horses.</em> Munmu is nearly fifty and still, occasionally, checking his father’s work against the day.",
+						"ko": "<em>말을 다 잃은 뒤에.</em> 문무는 쉰을 앞두고 있고, 여전히 이따금 아버지의 셈을 그날그날에 견주어 본다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3fa9c9",
+						"lines": [
+							"그럼 배를 모아라.",
+							"이제 바다다."
+						],
+						"en": [
+							"Then get me ships.",
+							"It’s the sea now."
+						],
+						"person": "munmu"
 					}
 				],
 				"music": "The Long War"
@@ -54455,7 +54569,7 @@
 						"ratio": 2,
 						"tone": "#b91c1c",
 						"alt": "The emperor's back turned — Tang facing away from the east at last",
-						"at": "Have we…. won….?",
+						"at": "Have we… won…?",
 						"prompt": "Cinematic historical illustration of emperor back, Three Kingdoms of Samhan / Tang era (676), scene: Strike Harbor, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/emperor-back.jpg"
 					},
@@ -54463,7 +54577,7 @@
 						"id": "emperor-robe-ribbon",
 						"ratio": 1.778,
 						"tone": "#b45309",
-						"at": "The Protectorate headquarters is moved",
+						"at": "In the second",
 						"alt": "A long imperial robe-shadow as a dark ribbon across a wet floor — Gaozong turning from the east, no readable face",
 						"prompt": "Minimal iconic 16:9 poster. Gaozong, Third Emperor of Tang, withdrawing from the east. ONE geometric device: a long dark ribbon of an imperial robe-shadow stretching left-to-right across a vast wet black floor; the man himself off-frame except as the shadow. Silhouette suggestion of the attached portrait only; no readable face. Gaozong #b8935a as a single thin cream-gold hem-line along the ribbon. Striking silky Tang court robe silhouette, wide sleeves implied by the shadow’s flare. Few hues. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -54484,40 +54598,75 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "The Commandery HQ is expelled from Pyongyang, and is eventually abolished.",
-						"ko": "안동도호부가 평양에서 쫓겨나고, 끝내 폐지된다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4776a",
-						"lines": [
-							"형님..."
-						],
-						"en": [
-							"Brother…"
-						],
-						"person": "namsan"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#3fa9c9",
-						"lines": [
-							"우리가.... 이긴거냐....?"
-						],
-						"en": [
-							"Have we…. won….?"
-						],
-						"person": "munmu"
+						"html": "In the second month the Protectorate headquarters is moved out of Pyongyang to Liaodong, then further, and then it stops being mentioned. Xue Rengui still has a fleet, and a fleet does not need a headquarters.",
+						"ko": "이월, 안동도호부가 평양에서 요동으로 옮겨 가고, 다시 더 멀리 물러나고, 이윽고 언급되지 않는다. 설인귀에게는 아직 함대가 있고, 함대에는 도호부가 필요 없다."
 					},
 					{
 						"kind": "p",
-						"html": "The last of it happens at the mouth of the Geum, in the eleventh month, in water Seongchung had begged a different king to hold sixteen years earlier.",
-						"ko": "마지막은 열한째 달, 금강 어귀에서 벌어진다. 열여섯 해 전 성충이 다른 임금에게 지키라 애원했던 바로 그 물목이다."
+						"html": "The last of it happens at the mouth of the Geum, in the eleventh month, in water Seongchung had begged a different king to hold twenty years earlier.",
+						"ko": "마지막은 열한째 달, 금강 어귀에서 벌어진다. 스무 해 전 성충이 다른 임금에게 지키라 애원했던 바로 그 물목이다."
 					},
 					{
 						"kind": "p",
-						"html": "Sachan Sideuk takes the Silla ships out and loses. He goes out again and loses again.",
-						"ko": "사찬 시득이 신라의 배를 몰고 나가 진다. 다시 나가 또 진다."
+						"html": "The Silla ships belong to a <b>sachan</b> named <b>Sideuk</b>, a middling rank for a man about to be handed the end of a war. He takes them out on the ebb and loses.",
+						"ko": "신라의 배는 사찬 <b>시득</b>이 맡고 있다. 전쟁의 끝을 넘겨받을 사내치고는 어중간한 관등이다. 그는 썰물에 배를 몰고 나가, 진다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8d8d95",
+						"lines": [
+							"사찬님, 또 나갑니까?"
+						],
+						"en": [
+							"Sachan, we’re going out again?"
+						],
+						"speaker": "Silla helmsman"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4f7fbf",
+						"lines": [
+							"물때 바뀌면."
+						],
+						"en": [
+							"When the tide turns."
+						],
+						"speaker": "Sideuk"
+					},
+					{
+						"kind": "p",
+						"html": "He goes out again and loses again.",
+						"ko": "다시 나가, 또 진다.",
+						"art": "Tang hulls high and dark over the Silla boats; the Silla line turning back."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8d8d95",
+						"lines": [
+							"…세 번째도요?"
+						],
+						"en": [
+							"…And a third time?"
+						],
+						"speaker": "Silla helmsman"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4f7fbf",
+						"lines": [
+							"저놈들 배는 크다.",
+							"큰 배는 개펄에서 못 돈다. 끌고 들어와."
+						],
+						"en": [
+							"Their ships are big.",
+							"A big ship can’t turn on the mudflats. Draw them in."
+						],
+						"speaker": "Sideuk"
+					},
+					{
+						"kind": "p",
+						"html": "The third time he does not try to win. He runs, up the estuary and over the mudflats, and the Tang fleet comes in after him. What follows is twenty-two fights, large and small, in water too shallow for the ships that started them.",
+						"ko": "세 번째에는 이기려 하지 않는다. 달아난다. 강어귀를 거슬러 개펄 위로 달아나고, 당의 함대가 뒤따라 들어온다. 그다음은 크고 작은 스물두 번의 싸움이다. 그 싸움을 시작한 배들에게는 너무 얕은 물에서."
 					},
 					{
 						"kind": "quote",
@@ -54555,8 +54704,32 @@
 					},
 					{
 						"kind": "p",
-						"html": "The Protectorate headquarters is moved out of Pyongyang the same year, and then further, and then it stops being mentioned. Nobody signs anything. The war simply stops being fought.",
-						"ko": "안동도호부는 그해 평양에서 물러나고, 다시 더 멀리 물러나고, 이윽고 언급되지 않는다. 누구도 무엇에 서명하지 않는다. 전쟁은 그저 더 이상 치러지지 않게 된다."
+						"html": "No treaty comes after it, and no envoy. The war simply stops being fought, and the first anyone in Surabol hears of it is a messenger with river mud still on his feet.",
+						"ko": "그 뒤로 조약도 오지 않고 사신도 오지 않는다. 전쟁은 그저 더 이상 치러지지 않게 되고, 서라벌에서 그것을 처음 듣는 것은 발에 아직 강 진흙이 묻은 전령에게서다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8d8d95",
+						"lines": [
+							"전하. 기벌포에서… 당의 배가 물러갑니다.",
+							"서쪽으로 갑니다. 돌아서는 배가 없습니다."
+						],
+						"en": [
+							"Majesty. At Gibeolpo… the Tang ships are pulling out.",
+							"They’re heading west. None of them are turning back."
+						],
+						"speaker": "Messenger"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3fa9c9",
+						"lines": [
+							"우리가… 이긴 거냐…?"
+						],
+						"en": [
+							"Have we… won…?"
+						],
+						"person": "munmu"
 					}
 				],
 				"music": "The White River"
@@ -54624,13 +54797,37 @@
 						"prompt": "1:1: three diagonal banners, Silla blue / Tang gold / Goguryeo red. No text.",
 						"refs": [],
 						"tempImage": "/temp/three-kingdoms-flags-unified.png"
+					},
+					{
+						"id": "munmu-sea-tomb",
+						"ratio": 1.6,
+						"tone": "#0c4a6e",
+						"at": "They burn him on the shore",
+						"alt": "Munmu's funeral pyre burning on the eastern shore, the lone bone-rock a hundred paces out in the tide",
+						"prompt": "Funeral fire on the eastern shore of Silla: King Munmu's pyre burning at dusk with mourners at the waterline, and a hundred paces out to sea the lone rock that will hold his bones — the only royal tomb in the world with tides. Historical painterly illustration, dramatic sea light, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"refs": [
+							"/ch_kim_bupmin.png"
+						],
+						"tempImage": "/temp/munmu-sea-tomb.jpg"
+					},
+					{
+						"id": "munmu-tide-rock",
+						"ratio": 1.778,
+						"tone": "#C41E3A",
+						"at": "They burn him",
+						"alt": "Daewangam as a single rock-stamp in a vast Munmu-crimson tide plane",
+						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. King Munmu’s underwater tomb, Daewangam, East Sea. ONE geometric device: a single jagged ROCK-STAMP sitting in the lower third of a vast flat tide-plane. Use the attached photograph ONLY for the true islet silhouette. Tiny silky hanbok speck on the shore-strip at the extreme left, no readable face. Face suggestion of the attached portrait only if a figure is visible. Munmu crimson #C41E3A as the water-plane; charcoal rock; one pale foam-rim. Flat sky, no clouds. No funeral pyre. No seagull flock. No stone tablet. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_kim_bupmin.png"
+						],
+						"tempImage": "/temp/munmu-tide-rock.jpg"
 					}
 				],
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>Bupmin</b> — <b>King Munmu</b> — stands where a six-year-old once stole a sentence. The war is commanded. The ally is expelled. The childhood dream has the bad manners to come true.",
-						"ko": "<b>법민</b> — <b>문무왕</b> — 여섯 살 아이가 문장을 훔치던 자리에 선다. 전쟁은 지휘되었고, 동맹은 쫓겨났고, 어린 시절의 꿈이 무례하게도 이루어진다."
+						"html": "<b>Bupmin</b>, <b>King Munmu</b> now, stands where a six-year-old once stole a sentence. The war is won, the ally has been shown the door, and the childhood dream has had the bad manners to come true.",
+						"ko": "<b>법민</b>, 이제는 <b>문무왕</b>인 그가 여섯 살 아이가 문장을 훔치던 자리에 선다. 전쟁은 이겼고, 동맹은 문밖으로 내보내졌고, 어린 시절의 꿈은 무례하게도 이루어지고 말았다."
 					},
 					{
 						"kind": "dialogue",
@@ -54666,8 +54863,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (70)</b> — Queen Munmyung now, and the last person alive who remembers all of it from the inside — is straightening her son’s collar. She was twenty-two when this story started and her sister burned a skirt on a hill so that she could be married.",
-						"ko": "<b>문희 (70)</b>. 이제 문명왕후이고, 이 모든 일을 안쪽에서 기억하는 마지막 사람이다. 아들의 옷깃을 여며 주고 있다. 이 이야기가 시작될 때 그는 스물둘이었고, 언니가 언덕에서 치마를 태워 준 덕에 혼인할 수 있었다."
+						"html": "<b>Munhee (70)</b> — Queen Munmyung now, and the last person alive who remembers all of it from the inside — is straightening her son’s collar. She was twenty-six when this story started and her sister burned a skirt on a hill so that she could be married.",
+						"ko": "<b>문희 (70)</b>. 이제 문명왕후이고, 이 모든 일을 안쪽에서 기억하는 마지막 사람이다. 아들의 옷깃을 여며 주고 있다. 이 이야기가 시작될 때 그는 스물여섯이었고, 언니가 언덕에서 치마를 태워 준 덕에 혼인할 수 있었다."
 					},
 					{
 						"kind": "dialogue",
@@ -54705,7 +54902,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "She has been in the room for every single one of them. The wedding she was not supposed to have. The daughter who did not come home from Daeya. The husband who came back from the East with a name nobody else was allowed to say. The brother who was never quite let in. She was never the one holding the sword and she is the only one still standing.",
+						"html": "She has been in the room for every single one of them. The wedding she was not supposed to have. The daughter who did not come home from Daeya. The husband who came back from the West with a name nobody else was allowed to say. The brother who was never quite let in. She was never the one holding the sword and she is the only one still standing.",
 						"ko": "그는 그 모든 자리에 있었다. 있어서는 안 될 혼례에도. 대야성에서 돌아오지 못한 딸의 자리에도. 아무도 입에 올릴 수 없는 이름을 하나 안고 서토에서 돌아온 남편의 자리에도. 끝내 안으로 들여보내지지 않은 오라비의 자리에도. 칼을 쥔 적은 한 번도 없고, 아직 서 있는 사람은 그뿐이다."
 					},
 					{
@@ -54734,6 +54931,28 @@
 						"kind": "p",
 						"html": "Silla lasts nine hundred and ninety-two years. He was, as usual, very slightly optimistic and essentially correct.",
 						"ko": "신라는 구백구십이 년을 간다. 늘 그렇듯 그는 아주 조금 낙관적이었고, 본질적으로는 옳았다."
+					},
+					{
+						"kind": "scene",
+						"label": "681",
+						"ko": "681년"
+					},
+					{
+						"kind": "p",
+						"html": "Five summers later the king for all is dying, and he has left instructions his ministers do not like. No mound in the hills beside his fathers. Burn him, and put what is left in the sea the Wa come across.",
+						"ko": "다섯 해 뒤 여름, 모두의 임금이 죽어 가고, 그가 남긴 분부를 대신들은 달가워하지 않는다. 선왕들 곁 언덕에 봉분을 쓰지 말라 한다. 태워서, 남은 것을 왜가 건너오는 바다에 두라고."
+					},
+					{
+						"kind": "quote",
+						"hanja": "朕身後願爲護國大龍 崇奉佛法 守護邦家",
+						"ko": "짐이 죽은 뒤에는 호국대룡이 되어, 불법을 받들고 나라를 지키고자 한다.",
+						"html": "After I am gone I wish to become a great dragon that guards the country, to uphold the Buddha’s law and protect the realm.",
+						"source": "Samguk Yusa (三國遺事) bk. 2, Wonder 2 — King Munmu becomes a dragon; Ha & Mintz tr., p. 95"
+					},
+					{
+						"kind": "p",
+						"html": "They burn him on the shore and put his bones under a rock a hundred paces out to sea, which is still there, and is the only royal tomb in the world with tides.",
+						"ko": "사람들은 바닷가에서 그를 화장하고, 뭍에서 백 걸음 나간 바위 아래에 뼈를 모신다. 그 바위는 지금도 그 자리에 있고, 세상에서 밀물과 썰물이 드나드는 유일한 왕릉이다."
 					}
 				],
 				"music": "Samhan"
@@ -54748,319 +54967,6 @@
 		"korean": "에필로그",
 		"range": "",
 		"entries": [
-			{
-				"year": "676",
-				"title": "Unified Silla",
-				"tone": "mythic-cosmic warmth",
-				"subtitle": "에필로그 · 통일신라",
-				"badges": [
-					"flag:silla",
-					"🌙"
-				],
-				"images": [
-					{
-						"id": "unified-silla-wide",
-						"ratio": 2.4,
-						"tone": "#3E79E4",
-						"alt": "Wide Gyeongju morning: one blue Silla court on the basin, three old colors as thin banner specks",
-						"prompt": "Wide cinematic EXPOSITION still, 16:9. REAL Gyeongju / Seorabeol basin, 676. One long wooden Silla palace hall as a blue #3E79E4 plane. Tiny silky court figures. Three old kingdom colors only as thin banner specks — Silla blue, Baekje yellow, Goguryeo red — now under one court. Flat pale sky, no clouds. Painterly cinema. No text, no watermark.",
-						"refs": [
-							"/ch_munmu.png"
-						],
-						"tempImage": "/temp/unified-silla-wide.jpg"
-					},
-					{
-						"id": "munhee-witness",
-						"ratio": 1.3333333333333333,
-						"tone": "#3E79E4",
-						"at": "Munhee",
-						"alt": "Kim Munhee in profile - the witness who survived to see unification",
-						"src": "/temp/munhee_witness_profile.png",
-						"refs": [
-							"/ch_munhee.png"
-						]
-					},
-					{
-						"id": "munmu-king-for-all",
-						"ratio": 0.5625,
-						"tone": "#3E79E4",
-						"at": "King Munmu",
-						"alt": "King Munmu with peace gesture - the king for all achieved",
-						"src": "/temp/munmu_king_for_all.png",
-						"refs": [
-							"/ch_kim_bupmin.png"
-						]
-					},
-					{
-						"id": "three-kingdoms-unity",
-						"ratio": 1,
-						"tone": "#3E79E4",
-						"at": "Unified Silla",
-						"alt": "Three kingdom banners - Silla blue, Baekje yellow, Goguryeo red - showing the unification",
-						"src": "/temp/three_kingdoms_flags_unified.png",
-						"refs": []
-					},
-					{
-						"id": "peace-moon-crane",
-						"ratio": 1,
-						"tone": "#3E79E4",
-						"at": "peace at last",
-						"alt": "Full moon with crane silhouette crossing - peace after decades of war",
-						"src": "/temp/unified_moon_crane.png",
-						"refs": []
-					},
-					{
-						"id": "unified-silla-day",
-						"ratio": 1.6,
-						"tone": "#3a3428",
-						"at": "King for All",
-						"alt": "Munmu as King for All — Unified Silla morning",
-						"prompt": "Ceremonial morning of Unified Silla: King Munmu as King for All, Queen Munmyung preparing, banners of a single peninsula court. Historical painterly illustration, 676, no text, no watermark, --ar 3:2 --stylize 250",
-						"refs": [
-							"/ch_kim_bupmin.png",
-							"/ch_munhee.png",
-							"/temp/munmu-poster.jpg"
-						],
-						"tempImage": "/temp/unified-silla-day.jpg"
-					},
-					{
-						"id": "unified-silla-banners",
-						"ratio": 1.778,
-						"tone": "#3E79E4",
-						"at": "King for All",
-						"alt": "Munmu small under one blue Silla sky — yellow and red only as folded banners at his feet",
-						"prompt": "Cinematic historical still, 16:9. REAL Seorabeol courtyard. King Munmu small in crimson-blue silk, gold Silla crown. Face matches attached portrait. One Confucian-blue #3E79E4 sky plane. Folded Baekje-yellow and Goguryeo-red banners at his feet. Flat sky, no clouds. Painterly cinema. No text, no watermark.",
-						"refs": [
-							"/ch_munmu.png"
-						],
-						"tempImage": "/temp/unified-silla-banners.jpg"
-					},
-					{
-						"id": "unified-silla-two-thrones",
-						"ratio": 1.778,
-						"tone": "#C41E3A",
-						"at": "King Munmu",
-						"alt": "One crimson Munmu plane, one pink Munhee witness — two small figures on a wet Gyeongju court",
-						"prompt": "Cinematic historical still, 16:9. REAL Gyeongju court. Two tiny silky figures: King Munmu in crimson #C41E3A, Queen Munmyung (Munhee) in pink #E07FA8. Faces match attached portraits as distant hints. Wet black floor, one blue hall-bar. Flat sky, no clouds. Painterly cinema. No text, no watermark.",
-						"refs": [
-							"/ch_munmu.png",
-							"/ch_munhee.png"
-						],
-						"tempImage": "/temp/unified-silla-two-thrones.jpg"
-					},
-					{
-						"id": "munmu-sea-tomb",
-						"ratio": 1.6,
-						"tone": "#0c4a6e",
-						"at": "They burn him on the shore",
-						"alt": "Munmu's funeral pyre burning on the eastern shore, the lone bone-rock a hundred paces out in the tide",
-						"prompt": "Funeral fire on the eastern shore of Silla: King Munmu's pyre burning at dusk with mourners at the waterline, and a hundred paces out to sea the lone rock that will hold his bones — the only royal tomb in the world with tides. Historical painterly illustration, dramatic sea light, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"refs": [
-							"/ch_kim_bupmin.png"
-						],
-						"tempImage": "/temp/munmu-sea-tomb.jpg"
-					},
-					{
-						"id": "munhee-witness-profile",
-						"ratio": 1.333,
-						"tone": "#2A5FB8",
-						"at": "now known as <b>Queen Munmyung</b>",
-						"alt": "Munhee the witness — elegant profile, blue binyeo",
-						"prompt": "4:3: Munhee profile, blue binyeo, flat charcoal. No text.",
-						"refs": [
-							"/ch_munhee.png"
-						],
-						"tempImage": "/temp/munhee-witness-profile.png"
-					},
-					{
-						"id": "seokguram-disc",
-						"ratio": 1.778,
-						"tone": "#3E79E4",
-						"at": "a granite Buddha-disc in Tohamsan",
-						"alt": "Seokguram reduced to a circular granite grotto-disc; tiny hanbok speck at the rim",
-						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Seokguram grotto, Unified Silla. ONE geometric device: a huge circular granite DISC — the cave-mouth — filling the center of the frame; the seated Buddha is a pale stone plane inside the disc, not a statue close-up. Use the attached photograph ONLY for the true round chamber and granite Buddha silhouette. Tiny silky hanbok monk-speck at the lower rim of the disc, no readable face. Munmu crimson #C41E3A as a thin rim-light on the disc edge. Flat Silla-blue #3E79E4 void. No clouds. No guardian catalog. No tourists. No temple clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [],
-						"tempImage": "/temp/seokguram-disc.jpg"
-					},
-					{
-						"id": "bulguksa-twin-stamps",
-						"ratio": 1.778,
-						"tone": "#3E79E4",
-						"at": "two pagodas on one Bulguksa court",
-						"alt": "Bulguksa courtyard as two unequal stone stamps: laced Dabotap and plain Seokgatap",
-						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Bulguksa, Unified Silla. ONE geometric device: TWO unequal vertical STAMPS on a wet black courtyard plane — left, ornate Dabotap as a laced square-column; right, Seokgatap as a plain three-storey bar. Use the attached photographs ONLY for the true pagoda silhouettes. One tiny silky hanbok speck between the stamps, no readable face. Munmu crimson #C41E3A as a hairline accent on the wet floor. Flat Silla-blue #3E79E4 sky, no clouds. No wooden halls. No pines. No tourists. No railings. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [],
-						"tempImage": "/temp/bulguksa-twin-stamps.jpg"
-					},
-					{
-						"id": "emille-bell-ring",
-						"ratio": 1.778,
-						"tone": "#5c5346",
-						"at": "the Emille Bell",
-						"alt": "The Sacred Bell of King Seongdeok as a huge bronze ovoid hanging in a charcoal void",
-						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Emille Bell — Sacred Bell of King Seongdeok. ONE geometric device: a huge bronze OVOID occupying the right two-thirds, mouth down, cropped by the top and bottom edges; a dragon-loop implied as a small dark knot at the crown. Use the attached photograph ONLY for the true Korean bell silhouette (dragon loop, sound-pipe, flared rim). Tiny silky hanbok speck under the lip, no readable face. Single bronze-gold accent on a flat charcoal void. No white museum pavilion. No wooden striker log. No trees. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [],
-						"tempImage": "/temp/emille-bell-ring.jpg"
-					},
-					{
-						"id": "cheomseongdae-bottle",
-						"ratio": 1.778,
-						"tone": "#3E79E4",
-						"at": "Sunduk’s bottle of stars",
-						"alt": "Cheomseongdae as a bottle-shaped granite trapezoid on a vast empty Gyeongju plane",
-						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Cheomseongdae observatory, Gyeongju. ONE geometric device: the bottle-shaped tower as a single vertical TRAPEZOID of stacked granite — square base, swelling circular body, square window-mouth at the top — standing alone in the lower-center. Use the attached photograph ONLY for the true bottle silhouette. Tiny silky hanbok speck at the foot, no readable face. Flat Silla-blue #3E79E4 sky, no clouds. NO moon. NO crescent. NO flowers. No grass catalog. No other buildings. Munmu crimson #C41E3A as one thin slit in the square top window. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [],
-						"tempImage": "/temp/cheomseongdae-bottle.jpg"
-					},
-					{
-						"id": "anapji-mirror",
-						"ratio": 1.778,
-						"tone": "#3E79E4",
-						"at": "Anapji copying the sky",
-						"alt": "Anapji / Wolji as a hard horizontal water-mirror; one thin palace bar reflected",
-						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Anapji (Wolji) palace pond, Gyeongju. ONE geometric device: a hard HORIZONTAL water-rectangle occupying the lower two-thirds, a wet mirror of flat Silla-blue #3E79E4; one thin dark palace-bar along the far edge, its reflection a second bar in the water. Use the attached photograph ONLY for the true pond-and-pavilion silhouette. Tiny silky hanbok specks on the shore, no readable faces. Munmu crimson #C41E3A as a single lantern-spark. Flat sky matching the water, no clouds. No night-tourism lights. No trees catalog. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [],
-						"tempImage": "/temp/anapji-mirror.jpg"
-					},
-					{
-						"id": "munmu-tide-rock",
-						"ratio": 1.778,
-						"tone": "#C41E3A",
-						"at": "The bone-rock is still there",
-						"alt": "Daewangam as a single rock-stamp in a vast Munmu-crimson tide plane",
-						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. King Munmu’s underwater tomb, Daewangam, East Sea. ONE geometric device: a single jagged ROCK-STAMP sitting in the lower third of a vast flat tide-plane. Use the attached photograph ONLY for the true islet silhouette. Tiny silky hanbok speck on the shore-strip at the extreme left, no readable face. Face suggestion of the attached portrait only if a figure is visible. Munmu crimson #C41E3A as the water-plane; charcoal rock; one pale foam-rim. Flat sky, no clouds. No funeral pyre. No seagull flock. No stone tablet. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_kim_bupmin.png"
-						],
-						"tempImage": "/temp/munmu-tide-rock.jpg"
-					},
-					{
-						"id": "ink-flower-field-sunduk",
-						"ratio": 0.75,
-						"tone": "#E8552B",
-						"at": "out in the Western Flower Field",
-						"alt": "Otherworld ink leaf: flat blank paper with a sparse drift of tiny painted flowers, old Queen Sunduk far off walking away through them, one vermilion sleeve",
-						"prompt": "A Korean ink-and-colour album leaf, otherworldly and symbolic: flat blank cream paper, NO sky, NO sun, NO clouds, NO horizon line. ICONIC MINIMAL LAYOUT: ONE device: a sparse diagonal drift of tiny boneless-brush flowers (peonies, chrysanthemums, lotus) scattered across the paper from lower left to upper right like a path, soft mineral colours, lots of empty paper between them. Far along that path in the upper right third, tiny, the aged QUEEN SUNDUK (face and garments from the attached portrait, face a few strokes, back mostly turned) walks away unhurried, one vermilion #E8552B sleeve the only strong colour, her hand trailing over the blooms. At the lower-left corner one small cut peony lies on the blank paper as if dropped. Serene, emptied, final. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
-						"refs": [
-							"/ch_sunduk_old.png"
-						],
-						"people": [
-							"sunduk"
-						],
-						"tempImage": "/temp/ink-flower-field-sunduk.jpg"
-					}
-				],
-				"blocks": [
-					{
-						"kind": "p",
-						"html": "<b>Epilogue · Part III.</b> Aftermath of the Great War.",
-						"ko": "<b>에필로그 · 제3부.</b> 대전 이후."
-					},
-					{
-						"kind": "p",
-						"html": "<b>Munhee</b> (70), now known as <b>Queen Munmyung</b>, is getting ready for a big day.",
-						"ko": "이제 <b>문명왕후</b>라 불리는 <b>문희 (70)</b>가 큰 날을 준비하고 있다."
-					},
-					{
-						"kind": "p",
-						"html": "<b>King Munmu</b> (50) is now the <b>King for All</b> — the long-awaited man to unite all the people under a single kingdom.",
-						"ko": "<b>문무왕 (50)</b>이 이제 <b>삼한왕검</b>이다 — 온 백성을 한 나라 아래 아우른, 오래 기다린 사내다."
-					},
-					{
-						"kind": "p",
-						"html": "He asks for troops. He asks twice.",
-						"ko": "그는 군사를 청한다. 두 번 청한다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e07fa8",
-						"person": "munhee",
-						"lines": [
-							"…서천꽃밭 계신 폐하께도 오늘 소식이 닿았으면."
-						],
-						"en": [
-							"…I hope word of this reaches Her Majesty, out in the Western Flower Field."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#3fa9c9",
-						"person": "munmu",
-						"lines": [
-							"선덕 폐하 말씀이십니까?"
-						],
-						"en": [
-							"You mean Queen Sunduk?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e07fa8",
-						"person": "munhee",
-						"lines": [
-							"그분은 평생 남의 사랑을 지켜보기만 하셨단다.",
-							"내 것까지 포함해서."
-						],
-						"en": [
-							"She spent her whole life watching other people love.",
-							"Mine included."
-						],
-						"look": "elder"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#3fa9c9",
-						"lines": [
-							"잠시만... 고려 왕관에 왜 한 쪽이 이상하지?"
-						],
-						"en": [
-							"Wait… why is one side of the Goryeo crown strange?"
-						],
-						"person": "munmu"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#d4a94e",
-						"lines": [
-							"아… 평양에서 옮기다 조각이 깨진 듯합니다.",
-							"폐하의 권위엔 해가 되지 않습니다 — 있는 그대로 쓰십시오.",
-							"왕관을 짊어진 자는 그 나라의 신수를 부린다고들 하지요.",
-							"빠진 조각은… 북으로 걸어간 짐승입니다. 그래도 만수무강하소서."
-						],
-						"speaker": "🙇",
-						"en": [
-							"Ah… it seems a piece broke when it was carried from Pyongyang.",
-							"It does no harm to Your Majesty’s sovereignty — wear it as it is.",
-							"Whoever carries a crown is understood to speak for the beasts of that nation.",
-							"A missing shard is… a beast that walked north. Live ten thousand years anyway."
-						],
-						"person": "chunbok"
-					},
-					{
-						"kind": "quote",
-						"hanja": "朕身後願爲護國大龍 崇奉佛法 守護邦家",
-						"ko": "짐이 죽은 뒤에는 호국대룡이 되어, 불법을 받들고 나라를 지키고자 한다.",
-						"html": "After I am gone I wish to become a great dragon that guards the country, to uphold the Buddha’s law and protect the realm.",
-						"source": "Samguk Yusa (三國遺事) bk. 2, Wonder 2 — King Munmu becomes a dragon; Ha & Mintz tr., p. 95"
-					},
-					{
-						"kind": "p",
-						"html": "They burn him on the shore and put his bones under a rock a hundred paces out to sea, which is still there, and is the only royal tomb in the world with tides.",
-						"ko": "사람들은 바닷가에서 그를 화장하고, 뭍에서 백 걸음 나간 바위 아래에 뼈를 모신다. 그 바위는 지금도 그 자리에 있고, 세상에서 밀물과 썰물이 드나드는 유일한 왕릉이다."
-					},
-					{
-						"kind": "p",
-						"html": "The bone-rock is still there — <b>Daewangam</b>, a hundred paces out, waiting for the tide.",
-						"ko": "뼈를 모신 바위는 아직도 그 자리에 있다 — <b>대왕암</b>, 뭍에서 백 걸음, 밀물을 기다린다."
-					},
-					{
-						"kind": "p",
-						"html": "The later court leaves stone where the armies were: a granite Buddha-disc in Tohamsan, two pagodas on one Bulguksa court, the Emille Bell, Sunduk’s bottle of stars, Anapji copying the sky.",
-						"ko": "뒷날 조정은 군대 자리에 돌을 남긴다. 토함산의 화강암 부처 원반, 불국사 한 마당의 탑 둘, 에밀레종, 선덕의 별 병, 하늘을 베껴 둔 안압지."
-					}
-				],
-				"music": "Samhan"
-			},
 			{
 				"year": "698",
 				"title": "Balhae",
@@ -55150,7 +55056,7 @@
 						"id": "balhae-stone-lantern",
 						"ratio": 1.778,
 						"tone": "#C30000",
-						"at": "a stone lantern, the shard still warm",
+						"at": "a stone lantern",
 						"alt": "Balhae stone lantern as a thin octagonal column in a red northern void",
 						"prompt": "Minimal iconic 16:9 poster. NOT photoreal. NOT busy. Balhae stone lantern (Xinglong Temple type at Sanggyeong): a tall octagonal granite lamp-pillar. ONE geometric device: a thin vertical COLUMN from the bottom edge to the top, stacked drums and an octagonal fire-chamber, standing alone. Tiny silky red hanbok speck at the base, no readable face. Goguryeo red #C30000 as a single slit of light in the lantern chamber; the rest flat charcoal void. Flat sky, no clouds. No temple buildings. No Silla pagoda. No courtyard clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [],
@@ -55160,8 +55066,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Thirty years after Pyongyang, the fields of Manchuria are taller than a boy’s shoulder. <b>Gulgul</b> walks them with a cloth bundle hard against his ribs — not grain. A shard of the Goryeo crown, broken when the city fell, still warm with the authority nobody else would carry north.",
-						"ko": "평양 이후 삼십 년, 만주의 밭은 아이 어깨보다 높다. <b>걸걸</b>이 갈비에 단단한 보따리를 안고 걷는다 — 곡식이 아니다. 성이 무너질 때 깨진 고려 왕관의 조각. 북쪽으로 가져가려 한 사람이 없어서, 아직도 권위의 온기가 남아 있다."
+						"html": "The autumn Pyongyang falls, the fields of Manchuria are taller than a boy’s shoulder. <b>Gulgul</b> walks them with a cloth bundle hard against his ribs — not grain. A shard of the Goryeo crown, broken when the city fell, still warm with the authority nobody else would carry north.",
+						"ko": "평양이 무너지던 가을, 만주의 밭은 아이 어깨보다 높다. <b>걸걸</b>이 갈비에 단단한 보따리를 안고 걷는다 — 곡식이 아니다. 성이 무너질 때 깨진 고려 왕관의 조각. 북쪽으로 가져가려 한 사람이 없어서, 아직도 권위의 온기가 남아 있다."
 					},
 					{
 						"kind": "p",
@@ -55227,13 +55133,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "They walk on. Years later the boy will raise a kingdom called Balhae on that sentence — and the shard will still be warm.",
-						"ko": "그들은 계속 걷는다. 세월이 지나 아이는 그 문장 위에 발해라는 나라를 세울 것이다 — 그리고 조각은 여전히 따뜻할 것이다."
+						"html": "They walk on. Thirty years later the boy will raise a kingdom called Balhae on those three words — and the shard will still be warm.",
+						"ko": "그들은 계속 걷는다. 삼십 년 뒤 아이는 그 말 위에 발해라는 나라를 세울 것이다 — 그리고 조각은 여전히 따뜻할 것이다."
 					},
 					{
 						"kind": "p",
-						"html": "<b>Sanggyeong</b> is later a stamped grid of halls on the Mudanjiang — lotus tiles, a stone lantern, the shard still warm.",
-						"ko": "뒷날 <b>상경</b>은 무단강가에 찍힌 궁성 격자다 — 연꽃 와당, 석등, 조각은 여전히 따뜻하다."
+						"html": "<b>Sanggyeong</b> is later a stamped grid of halls on the Mudanjiang — lotus tiles, a stone lantern.",
+						"ko": "뒷날 <b>상경</b>은 무단강가에 찍힌 궁성 격자다 — 연꽃 와당, 석등."
 					},
 					{
 						"kind": "p",

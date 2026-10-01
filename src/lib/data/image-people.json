@@ -4178,111 +4178,6 @@
 	"three-realms-08-hallakgungi-joke": [
 		"hwanung"
 	],
-	"poster_dangun": [
-		"dangun"
-	],
-	"poster_hwanung": [
-		"hwanung"
-	],
-	"poster_hwanin": [
-		"hwanin"
-	],
-	"poster_ungnyeo": [
-		"ungnyeo"
-	],
-	"hwanung-descent": [
-		"hwanin",
-		"hwanung"
-	],
-	"bear-tiger-cave": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"dangun-mountain": [
-		"dangun",
-		"hwanung",
-		"ungnyeo"
-	],
-	"dangun-asadal": [
-		"dangun",
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanin-opens-sky": [
-		"hwanin"
-	],
-	"dangun-wanggeom": [
-		"dangun",
-		"hwanung"
-	],
-	"ungnyeo-cave-vigil": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanin-above": [
-		"hwanin"
-	],
-	"hwanin-ivory-void": [
-		"hwanin"
-	],
-	"ungnyeo-cave-shaft": [
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-birch-wide": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"ungnyeo-dont-closer": [
-		"ungnyeo"
-	],
-	"hwanung-seal-forgotten": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-kiss": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-night": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"dangun-sandalwood-altar": [
-		"dangun"
-	],
-	"ungnyeo-pass-again": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-garlic-far": [
-		"hwanung"
-	],
-	"ungnyeo-hand-claim": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-come-down": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"ungnyeo-tree-watch": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-sash-moss": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"ungnyeo-seal-thief": [
-		"ungnyeo"
-	],
-	"ungnyeo-marry-morning": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"ink-sindansu-hwanung": [
-		"hwanung"
-	],
 	"gyebek-seq-palisade": [
 		"gyebek"
 	],
@@ -4550,8 +4445,104 @@
 	"parody-admiral-yi-yushin": [
 		"yushin"
 	],
-	"andong-grid-stamp": [
-		"xuerengui"
+	"poster_dangun": [
+		"dangun"
+	],
+	"poster_hwanung": [
+		"hwanung"
+	],
+	"poster_hwanin": [
+		"hwanin"
+	],
+	"poster_ungnyeo": [
+		"ungnyeo"
+	],
+	"hwanung-descent": [
+		"hwanin",
+		"hwanung"
+	],
+	"bear-tiger-cave": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"dangun-mountain": [
+		"dangun",
+		"hwanung",
+		"ungnyeo"
+	],
+	"dangun-asadal": [
+		"dangun",
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanin-opens-sky": [
+		"hwanin"
+	],
+	"dangun-wanggeom": [
+		"dangun",
+		"hwanung"
+	],
+	"ungnyeo-cave-vigil": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanin-above": [
+		"hwanin"
+	],
+	"ungnyeo-cave-shaft": [
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-birch-wide": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-dont-closer": [
+		"ungnyeo"
+	],
+	"hwanung-seal-forgotten": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-kiss": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-night": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-pass-again": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-garlic-far": [
+		"hwanung"
+	],
+	"ungnyeo-hand-claim": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-come-down": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-tree-watch": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-sash-moss": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-seal-thief": [
+		"ungnyeo"
+	],
+	"ungnyeo-marry-morning": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ink-sindansu-hwanung": [
+		"hwanung"
 	],
 	"mohe-ambush": [
 		"northcmd",
@@ -4561,8 +4552,8 @@
 		"chunchu",
 		"munmu"
 	],
-	"munmu-crimson-tide": [
-		"munmu"
+	"andong-grid-stamp": [
+		"xuerengui"
 	],
 	"yushin-death-black": [
 		"yushin"
@@ -4619,43 +4610,20 @@
 	"white-tiger-withdraws": [
 		"xuerengui"
 	],
+	"munmu-crimson-tide": [
+		"munmu"
+	],
 	"emperor-robe-ribbon": [
 		"gaozong"
 	],
 	"two-kings-crowns": [
 		"munhee"
 	],
-	"unified-silla-wide": [
-		"munmu"
-	],
-	"munhee-witness": [
-		"munhee"
-	],
-	"munmu-king-for-all": [
-		"munmu"
-	],
-	"unified-silla-day": [
-		"munhee",
-		"munmu"
-	],
-	"unified-silla-banners": [
-		"munmu"
-	],
-	"unified-silla-two-thrones": [
-		"munhee",
-		"munmu"
-	],
 	"munmu-sea-tomb": [
 		"munmu"
 	],
-	"munhee-witness-profile": [
-		"munhee"
-	],
 	"munmu-tide-rock": [
 		"munmu"
-	],
-	"ink-flower-field-sunduk": [
-		"sunduk"
 	],
 	"balhae-wide": [
 		"daejoyoung"

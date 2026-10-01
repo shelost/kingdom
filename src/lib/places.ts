@@ -849,8 +849,6 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'The Brothers’ Coup': 'pyongyang',
 	'Pyongyang, A': 'pyongyang',
 	'The Final Stand': 'pyongyang',
-	'The Fall of Joseon': 'asadal',
-	'The Protectorate': 'surabol',
 	'Goguryeo Revival Society': 'surabol',
 	'Stone Gate': 'seokmun',
 	'The Lake Remembers': 'steam_cavern',
@@ -859,7 +857,6 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Maeso Fortress': 'maeso',
 	'Strike Harbor': 'gibeolpo',
 	'The King for All': 'surabol',
-	'Unified Silla': 'surabol',
 	'Balhae': 'jolbon'
 };
 
