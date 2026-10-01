@@ -16,7 +16,7 @@
 	<header class="mast">
 		<SiteNav />
 		<h1>Map</h1>
-		<p class="lede">Samhan on one sheet — click a place for its encyclopedia entry.</p>
+		<p class="lede">Samhan on one sheet — click a place for its wiki entry.</p>
 	</header>
 	<StoryMap pageMode />
 </main>

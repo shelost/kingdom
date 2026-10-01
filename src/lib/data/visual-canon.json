@@ -1,0 +1,635 @@
+{
+	"about": "Visual source of truth for every GenerateImage still. Hand-authored facts only: look, dress, demeanor, carry, fighting, horse, eras, never. Derived at build time (do NOT copy here): portrait by year + binyeo + object board from src/lib/people.ts, character hex from CHARACTER_COLORS/COLOR in people.ts, sword tagline + pommel from src/lib/swords.ts, place board from src/lib/places.ts. Kingdom flag ref is derived from KINGDOMS in people.ts (flag_*.svg → flag_*.png via scripts/rasterize-flags.mjs); only the in-world banner text lives here. Build with: node scripts/visual-canon.mjs --year <Y> [--battle|--sword|--mounted|--flags] <ids…> place:<id> flag:<kingdom>. Any field may be a list of { from?, until?, text | id } to change by year; an era with \"redress\": true replaces the portrait's clothing and the base look/dress (face only). A place \"mood\" is that place's default light and hour.",
+	"armor": {
+		"common": "Battle armor: plates are METALLIC GRAY STEEL lamellar copied from the attached lamellar ref, cloth peeking at collar, sleeves, skirt, sash and plume-cord in the wearer's color only. Ignore labels and watermarks on armor refs. Not Japanese kabuto, not fantasy plate, not a gold-painted suit.",
+		"silla": {
+			"refs": [
+				"/ar_lamellar_steel.png",
+				"/ar_silla_gaya.jpg"
+			],
+			"text": "Silla kit: steel lamellar cuirass and skirt, tall pointed jonghyeongju helm with a short plume."
+		},
+		"baekje": {
+			"refs": [
+				"/ar_lamellar_steel.png",
+				"/ar_kingdoms_diagram.jpg"
+			],
+			"text": "Baekje kit: steel lamellar, rounded Baekje helm with neck guard; yellow cloth peeking, red sash/skirt accent — never a yellow metal cuirass."
+		},
+		"goguryeo": {
+			"refs": [
+				"/ar_lamellar_steel.png",
+				"/ar_silla_goguryeo.jpg"
+			],
+			"text": "Goguryeo kit: steel lamellar with red-edged plates and RED WING shoulder-flaps, peaked helm with plume — red cloth, never gold plate."
+		},
+		"gaya": {
+			"refs": [
+				"/ar_lamellar_steel.png",
+				"/ar_silla_gaya.jpg"
+			],
+			"text": "Gaya kit: steel lamellar, tall conical helm (고깔); purple cloth peek only — no purple cape dump."
+		},
+		"tang": {
+			"refs": [
+				"/ar_tang_taizong_yuanling.jpg"
+			],
+			"text": "Tang kit: Tang lamellar with round polished chest-mirror plates (mingguang), wide shoulder guards — a different silhouette from Korean lamellar."
+		}
+	},
+	"flags": {
+		"common": "Kingdom banners: copy field colour and emblem from the attached flag_*.png ref onto period silk war-banners — tall poles behind each side, long streamers, small pennants on spear-tips and saddle-backs. Painted silk, wind-whipped, torn and smoke-stained in battle; never a flat modern flag graphic. Each side's banner colour is the clearest colour on its half of the frame, so the kingdom reads at a glance.",
+		"silla": "Silla banners: blue silk with a white crescent moon.",
+		"baekje": "Baekje banners: warm yellow silk with a darker gold door-lintel and three gold stars.",
+		"goguryeo": "Goguryeo banners: red silk with the black three-legged crow inside a studded black sun-ring.",
+		"tang": "Tang banners: vermilion silk with a yellow sun disc and a dark brush glyph inside it — painted as an illegible brush mark, never readable text.",
+		"gaya": "Gaya banners: plain purple silk.",
+		"tamla": "Tamla banners: plain orange silk.",
+		"yamato": "Wa banners: red silk with a gold many-petalled sunburst."
+	},
+	"horses": {
+		"common": "HORSE ANATOMY is a centrepiece: the whole horse body reads clearly and beautifully — arched neck, deep chest, sloping shoulder, round haunch, clean long legs in a correct gait, every muscle modelled by the one hard key with a bright edge along the topline and deep shadow under the belly; the horse is never cropped into a blob, never hidden behind dust, never stiff like a toy; mane and tail as flowing painted strokes; the coat colour exactly as the board."
+	},
+	"characters": {
+		"yushin": {
+			"look": "Tall, broad-shouldered, long black hair in a high topknot-ponytail with trailing Silla-blue cloth tails; level hard brows, deep-set eyes.",
+			"dress": "Silla-blue po and trousers, plum-violet sash knotted at the waist, white inner collar, dark wrapped forearms. Off duty: plain blue po, no jewelry.",
+			"demeanor": "Confucian: he STANDS — never sits in lotus. Weighs, counts, frowns at sums; tight jaw, rare dry half-smile. Grief shows as stillness, not tears. The most feared warrior in all of Samhan: a line goes quiet when the tall Silla helm and the white horse appear. Massive, deliberate, terrifying at a walk; by Hwangsan (65) heavier and slower than Gyebek but still the man armies are built around.",
+			"armor": "silla",
+			"sword": "sword-fish",
+			"carry": "One fish-ring sword at the left hip. Never two blades.",
+			"fighting": "Orthodox FORWARD one-hand grip, ring at the heel of the fist; square upright stance, short economical straight cuts and thrusts — the drill-yard form he teaches. Mounted, he cuts down from the saddle on the off side.",
+			"horse": [
+				{
+					"until": 612,
+					"id": "hanbyul"
+				},
+				{
+					"from": 629,
+					"until": 647,
+					"id": "hangyul"
+				},
+				{
+					"from": 647,
+					"id": "hanseul"
+				}
+			],
+			"eras": [
+				{
+					"until": 631,
+					"text": "Hwarang years (stage portrait): BEARDLESS, Silla-blue headband with a gold crescent moon, its tails trailing."
+				},
+				{
+					"from": 632,
+					"until": 667,
+					"text": "Marshal: full black beard and moustache; a blue ribbon in the topknot instead of the headband."
+				},
+				{
+					"from": 668,
+					"text": "Old marshal: grey-streaked beard, heavier frame, slower — still stands, still counts."
+				}
+			],
+			"never": [
+				"sitting in lotus or holding prayer beads",
+				"katana, tsuba or curved blade (ignore the sword drawn on his portrait)",
+				"two swords at once",
+				"blue glow aura"
+			]
+		},
+		"gyebek": {
+			"look": "Lean and hard, sun-dark skin; black hair in a high topknot with loose strands over the brow; heavy scowl, narrow dark eyes, clean-shaven.",
+			"dress": "Ochre-gold jeogori and trousers, a crimson scarf knotted at the chest, crimson sash at the waist, forearms wrapped in dark cloth.",
+			"demeanor": "Says little. Counts under his breath. Grim, tired, absolutely decided; never smiles in a fight. Rose from a nameless White River boy to 백승계백 (Hundred-Victories Gyebek); by Hwangsanbeol the taverns argue he is the stronger blade than Yushin, and one-to-one he is: twenty-five years younger, faster, never beaten in single combat. Rides low and coiled, like he fights.",
+			"armor": "baekje",
+			"sword": "sword-gyebek",
+			"pommel": "phoenix",
+			"carry": "One phoenix-ring sword, scabbard worn edge-up on the left hip.",
+			"fighting": "REVERSE GRIP (역수), like a Japanese warrior's backhand hold: the small RING pommel pokes out ABOVE his thumb, the blade exits BELOW his little finger and lies flat back along the outside of his forearm toward the elbow, edge facing out. Low coiled crouch, blade-arm held across his body like a shield; he draws and cuts in one rising backhand slash, then stabs downward. Mounted, the blade trails back along the horse's flank. The blade is still the STRAIGHT ring-pommel sword of sw_bidam (handle:blade 1:3) — reverse grip is the hold, not a different sword. This hold overrides the hanging-blade 'ring at the little-finger side' note in SWORD ANATOMY; the ring→band→grip→collar→blade order is unchanged.",
+			"horse": "gomanari",
+			"eras": [
+				{
+					"until": 639,
+					"text": "Boyhood (ch_gyebek_boy): thin, quiet, already counting; no armor."
+				}
+			],
+			"never": [
+				"curved blade, katana or tsuba (ignore the sword drawn on his portrait)",
+				"forward textbook grip once the fight starts",
+				"yellow metal cuirass",
+				"smiling in battle"
+			]
+		},
+		"gesomun": {
+			"look": "Massive, broad-chested; black hair in a tight topknot tied with red cord; thick black beard trimmed close to the jaw, heavy brows, glaring eyes.",
+			"dress": "Dark charcoal robe and trousers under red-edged armor, a red cape falling off the shoulders.",
+			"demeanor": "Arrogant, theatrical, loud; looks down at people (worm's-eye suits him). Laughs while fighting.",
+			"armor": "goguryeo",
+			"sword": [
+				{
+					"until": 641,
+					"id": "sword-gesomun"
+				},
+				{
+					"from": 642,
+					"id": "sword-gusesa"
+				}
+			],
+			"carry": "FIVE crow-ring swords (身佩五刀): four crossed in a fan on his back with the hilts rising above his shoulders, plus one at the hip.",
+			"fighting": "DUAL-WIELDS: a crow-ring sword in EACH hand, both forward one-hand grips, ring pommels at the heel of each fist. Wide aggressive stance, arms flung apart, scissoring cross-cuts and windmill slashes; lose one blade and he pulls another off his back. Each blade straight sw_bidam anatomy, 1:3.",
+			"never": [
+				"one sword in a fight",
+				"gold-plated armor",
+				"beardless face (except a flashback to youth)"
+			],
+			"horse": "damul"
+		},
+		"chunchu": {
+			"look": "Slim and elegant; shoulder-length loose black hair parted in the middle; thin moustache and goatee stubble; amused eyes, small knowing smile.",
+			"dress": "Magenta-crimson silk po with a charcoal sash, dark layered collar. Silk even on campaign.",
+			"demeanor": "Diplomat and strategist: talks with his hands, smiles while calculating, never shouts; half-lidded watchful eyes.",
+			"sword": "sword-chunchu",
+			"carry": "Imugi court sword at the hip, nearly always sheathed.",
+			"fighting": "Rarely draws. When he must: brave but clumsy, forward grip with the second hand steadying it; he fights with words first.",
+			"horse": "hadong",
+			"eras": [
+				{
+					"until": 631,
+					"text": "Young hwarang (stage portrait): beardless, eager."
+				},
+				{
+					"from": 654,
+					"text": "King Muyeol (stage portrait): royal robes and crown; heavier, tired eyes."
+				}
+			],
+			"never": [
+				"front-line armored warrior pose",
+				"shouting battle face",
+				"katana"
+			]
+		},
+		"bidam": {
+			"look": "Tall, handsome, clean-shaven; short slicked-back black hair; warm brown eyes, faint self-amused smile.",
+			"dress": "Long white outer robe whose sleeves are embroidered with galloping horses, over a plum-magenta inner robe and white sash. Navy #141C2E lives in the room and on the beads, not on his clothes.",
+			"demeanor": "Buddhist: 108 beads wrapped on the wrist or rolling through his fingers, lotus seat, incense, a sutra under his breath; calm, ironic, never hurried. In anger the smile stays and the eyes go flat.",
+			"armor": "silla",
+			"sword": "sword-bidam",
+			"carry": "Heavenly-horse ring sword at the left hip; the bead string on the same right hand.",
+			"fighting": "Flowing circular hwarang yard form, forward one-hand grip, the bead string looped around his sword wrist; patient — waits, then one clean cut. Never wild, never two blades.",
+			"horse": "bisamun",
+			"eras": [
+				{
+					"until": 631,
+					"text": "Young hwarang (stage portrait)."
+				},
+				{
+					"from": 645,
+					"text": "Older Sangdaedeung (stage portrait): grey at the temples, same smile."
+				}
+			],
+			"never": [
+				"headband",
+				"Confucian rank tablet",
+				"navy glow aura",
+				"dual swords"
+			]
+		},
+		"sunduk": {
+			"look": "Pale oval face, dark calm eyes; black hair in a full coiled updo; when crowned, the gold Silla tree-and-antler crown hung with jade gogok.",
+			"dress": "Crimson court robe with gold phoenix brocade, blue embroidered cape-collar, a red ribbon bow at the chest.",
+			"demeanor": "Composed, faint smile, wit in the eyes; looks up at the sky (Cheomseongdae). Never weepy, never cowed.",
+			"eras": [
+				{
+					"until": 631,
+					"text": "Princess Deokman (stage portrait): no crown, hair pinned with her binyeo."
+				}
+			],
+			"never": [
+				"Tang empress costume",
+				"fantasy tiara in place of the Silla gold crown"
+			]
+		},
+		"munmu": {
+			"look": "Square jaw, goatee and moustache, confident grin; arms folded when he is pleased with himself.",
+			"dress": "As king: crimson robe with gold dragon embroidery, blue shoulder pieces, gold Silla crown. Earlier: prince/hwarang stage portraits.",
+			"demeanor": "Cocky, warm, practical; his father's charm with his uncle's spine.",
+			"armor": "silla",
+			"sword": "sword-munmu",
+			"fighting": "Forward grip, aggressive cavalry officer — charges first, cuts from the saddle.",
+			"never": [
+				"katana",
+				"Tang dragon robe in place of Silla court dress"
+			]
+		},
+		"euija": {
+			"look": "Broad, bearded king; black hair in a topknot with a yellow-gold headband whose tails trail; heavy brows, cynical eyes.",
+		"dress": "Crimson robe with a dark charcoal collar and gold trim; a steel lamellar pauldron peeking at one shoulder.",
+		"eras": [
+			{
+				"from": 660,
+				"redress": true,
+				"text": "PRISONER IN THE TANG CAPITAL: broad bearded old king, heavy brows, cynical eyes. One plain undyed WHITE hemp robe and nothing else — no headband, no topknot, no crown, no gold, no crimson, no armor, no belt ornament, barefoot; his long black hair streaked grey hangs LOOSE and unbound past his shoulders; beard unkempt."
+			}
+		],
+		"demeanor": "Licensed wit: drinks, smirks, slumps on the throne, speaks in polished aphorisms. Fatalist.",
+			"armor": "baekje",
+			"fighting": "Tiger-ring sword is ceremonial; he barely draws it.",
+			"never": [
+				"heroic battle pose",
+				"smiling innocence"
+			]
+		},
+		"kangrim": {
+			"look": "Face hidden under a wide black gat brim — only mouth and jaw visible; tall and thin.",
+			"dress": "Black reaper's robe over blue and vermilion layers, white gat strings.",
+			"demeanor": "Silent, unhurried, reads names from the red register.",
+			"sword": "sword-kangrim",
+			"fighting": "Draws only a hand's width of black iron; the reaper cuts once — a cord, not flesh.",
+			"style": "Keep his portrait's ink-brush dissolve at his edges.",
+			"never": [
+				"eyes clearly visible",
+				"gore",
+				"armor"
+			]
+		},
+		"gwanchang": {
+			"look": "Boy of fifteen at the Yellow Mountain: smooth face, bright eyes with a red liner wing, long black hair in a topknot with side locks; Silla-blue headband with a crescent-moon emblem.",
+			"dress": "White hwarang po with crimson collar and crimson sash, dark under-sleeves, wrapped forearms.",
+			"demeanor": "Eager, smiling, reckless courage — a boy, not a man.",
+			"armor": "silla",
+			"fighting": "A boy's grip on a man's edge: two hands on a one-hand colt-ring sword, overreaching lunges, all heart.",
+			"never": [
+				"beard",
+				"adult bulk"
+			]
+		},
+		"pumil": {
+			"demeanor": "Silla general and Gwanchang's father; holds rank over grief in public, breaks in private.",
+			"armor": "silla",
+			"never": [
+				"breaking down in front of the ranks"
+			]
+		},
+		"alchun": {
+			"demeanor": "Silla's senior general and Yushin's peer; steady, dry, loyal to the throne over factions.",
+			"armor": "silla"
+		},
+		"munhee": {
+			"demeanor": "Yushin's younger sister, Chunchu's wife; quick and warm, the one who bought the dream.",
+			"never": [
+				"fantasy tiara instead of her binyeo"
+			]
+		},
+		"jumong": {
+			"look": "Lean archer; black hair half-bound under a knotted red headband with long tails; dark warm eyes, easy grin. CLEAN-SHAVEN before he is king — ignore the moustache and chin hair on his portrait.",
+			"dress": "Red silk jeogori and po over a charcoal underlayer, rope-tied sash, wrapped forearms; bow across his back.",
+			"demeanor": "Fun: grins, laughs, winks, easy eyes when Sosuno is mean; scared and a little stupid when it matters.",
+			"carry": "Bow always (his object board); crow bow-knife at the belt.",
+			"fighting": "Archer first: full draw, spare arrows held in the bow hand, shoots from the saddle at a gallop; the knife only at arm's length.",
+			"eras": [
+				{
+					"from": -37,
+					"id": "/ch_dongmyung.png",
+					"text": "King Dongmyeong: use the attached king portrait; beard allowed now."
+				}
+			],
+			"never": [
+				"facial hair before he is king",
+				"grim founder-statue face",
+				"sword-duel hero pose"
+			]
+		},
+		"sosuno": {
+			"look": "Long straight black hair with a high topknot pinned by her gold binyeo, a thin red headband with a center jewel; sharp brows, cool appraising eyes.",
+			"dress": "Dusty-rose hanbok over white sleeves, black wrap sash with red cords, red-wrapped wrists; bow and quiver on her back. Her hex is lamplight or a ground stamp — never gold robes.",
+			"demeanor": "Sharp, quick, too much, then covering; a merchant's appraising glance.",
+			"fighting": "Archer with a short blade; shoots, does not duel.",
+			"never": [
+				"gold robes",
+				"meek downcast pose"
+			]
+		},
+		"haemosu": {
+			"demeanor": "Feral, greedy, easy sun-god — wants first. Divine render: photoreal-leaning and numinous beside painterly mortals.",
+			"props": "His chariot and fox match their object boards (/obj_haemosu_chariot.png, /obj_haemosu_fox.png).",
+			"never": [
+				"colored glow outline around his body"
+			]
+		},
+		"yuhwa": {
+			"demeanor": "Youngest river daughter; stays when her sisters dive; flirts, hedges, then dares.",
+			"never": [
+				"fantasy tiara instead of her binyeo"
+			]
+		},
+		"hyukgose": {
+			"demeanor": "Demigod founder of Silla, hatched from the great egg at Najeong; photoreal and numinous beside painterly mortals.",
+			"animal": "chunma",
+			"never": [
+				"anime-flat render",
+				"glow aura"
+			]
+		},
+		"alyoung": {
+			"demeanor": "Demigod queen born of the gyeryong at Alyeong well; photoreal and numinous. The beak-lip appears only in her birth beat at the Bukcheon stream.",
+			"never": [
+				"anime-flat render",
+				"glow aura"
+			]
+		},
+		"onjo": {
+			"demeanor": "Younger brother, steadier; listens to the ten ministers and stays inland at Wirye. The Sinrok deer stays with him.",
+			"animal": "sinrok"
+		},
+		"biryu": {
+			"demeanor": "Elder brother, sea-hungry and proud; wants the coast at Michuhol and will not listen.",
+			"animal": "sinrok"
+		},
+		"taizong": {
+			"look": "Bearded Tang emperor: black futou cap with an upright pin, thick black beard and moustache, fierce scowl; one hand flung out commanding.",
+			"dress": "Imperial yellow robe-cape over black brocade.",
+			"demeanor": "Commands; never asks. Conqueror's contempt that curdles at Ansi.",
+			"eras": [
+				{
+					"until": 626,
+					"redress": true,
+					"text": "LI SHIMIN, PRINCE OF QIN, early twenties: the same face as the portrait but young and lean, a short black moustache and a short curled beard, hair bound in a plain topknot under a small black cap or a Tang helm — no emperor's yellow robe, no imperial cape. On campaign: Tang lamellar with round chest-mirror plates, a red war-robe under it, a great horn bow and a quiver of long white-fletched arrows at the saddle; he rides ahead of his own men."
+				}
+			],
+			"armor": "tang",
+			"armorRefs": [
+				"/ar_tang_taizong_dragon.png"
+			],
+			"fighting": "A straight double-edged Tang jian with a gold guard — the one blade in the chronicle that is NOT a ring-pommel sword. He leads mounted; he does not duel.",
+			"never": [
+				"Korean ring-pommel sword",
+				"Korean lamellar"
+			]
+		},
+		"xuerengui": {
+			"demeanor": "Tang's white-robed champion; showman of the charge.",
+			"carry": "Fangtian ji halberd — no ring sword at all.",
+			"fighting": "Long-reach halberd sweeps from horseback at the head of a white-coated charge.",
+			"never": [
+				"ring-pommel sword"
+			]
+		},
+		"yangmanchun": {
+			"demeanor": "The nameless Ansi castellan: plain, unhurried, unbreakable; the fortress is his signature.",
+			"armor": "goguryeo",
+			"fighting": "On the wall with a bow; a crestless ring sword worn smooth.",
+			"never": [
+				"crest or banner with his name"
+			]
+		},
+		"namseng": {
+			"demeanor": "Gesomun's eldest; heir who kneels west in 666.",
+			"armor": "goguryeo",
+			"fighting": "His father's forward grip with one crow sword — never his father's two."
+		},
+		"seohyeon": {
+			"armor": "silla",
+			"sword": "sword-fish",
+			"demeanor": "Yushin's father; Gaya blood, Silla duty, quiet."
+		},
+		"muryuk": {
+			"armor": "gaya",
+			"sword": "sword-fish",
+			"demeanor": "Gaya prince turned Silla general; the egg-and-iron line."
+		},
+		"sadaham": {
+			"armor": "silla",
+			"demeanor": "Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief."
+		},
+		"narim": {
+			"demeanor": "Eldest cavern goddess (leaves / earth-wood): elder-failing and breathless when a Kim looks at her kindly.",
+			"element": "Floating leaves, moss and vine-shadow.",
+			"never": [
+				"body glow aura (glowing eyes only on oracle pronouncements)"
+			]
+		},
+		"golhwa": {
+			"demeanor": "Fire cavern goddess: legs spread wide by default — sitting, riding the rock, lounging; chima hiked to the hips on wet stone; open pleasure face.",
+			"element": "Heat shimmer, embers, steam off skin.",
+			"never": [
+				"polite smile",
+				"body glow aura"
+			]
+		},
+		"hyulle": {
+			"demeanor": "Water cavern goddess: knees pressed tight together, gaze down or aside — shy, soaked, wrecked, the strongest want under silence.",
+			"element": "Drip, spray, soaked silk, water-light in the pool.",
+			"never": [
+				"legs apart",
+				"body glow aura"
+			]
+		}
+	},
+	"animals": {
+		"hanbyul": {
+			"name": "Hanbyul",
+			"ko": "한별",
+			"owner": "yushin",
+			"kind": "horse",
+			"look": "Yushin's first horse (no board yet): a plain dark chestnut hwarang mount, nothing grand.",
+			"temperament": "A creature of habit — carries a sleeping rider where he always goes."
+		},
+		"hangyul": {
+			"name": "Hangyul",
+			"ko": "한결",
+			"owner": "yushin",
+			"kind": "horse",
+			"board": "/obj_hangyul.png",
+			"look": "Pure white war horse, long flowing white mane, powerful galloping build — match the board.",
+			"temperament": "Eighteen years under Yushin since Nangbi; puts his nose into Yushin's chest and waits."
+		},
+		"hanseul": {
+			"name": "Hanseul",
+			"ko": "한슬",
+			"owner": "yushin",
+			"kind": "horse",
+			"look": "PURE WHITE war horse like Hangyul before him (coat reference: the attached Hangyul board), younger and a hand lighter in the chest; long white mane. At Hwangsanbeol the white horse against Gyebek’s black Gomanari is the picture.",
+			"temperament": "The last horse he names; easy, unafraid, steadier by the Yellow Mountain.",
+			"board": "/obj_hangyul.png"
+		},
+		"gomanari": {
+			"name": "Gomanari",
+			"ko": "고마나리",
+			"owner": "gyebek",
+			"kind": "horse",
+			"board": "/obj_gomanari.png",
+			"look": "Jet-black war horse with a long flowing black mane and tail — match the board. Plain dark tack, a yellow cord at the bridle.",
+			"temperament": "Named for Gomanaru (Ungjin); stands by its master's planted sword after the field."
+		},
+		"bisamun": {
+			"name": "Bisamun",
+			"ko": "비사문",
+			"owner": "bidam",
+			"kind": "horse",
+			"board": "/obj_bisamun.png",
+			"look": "Dark mahogany blood-bay, heavy thick black mane and long forelock, black legs — match the board. Plain dark tack with a short string of prayer beads tied at the bridle.",
+			"temperament": "Named for Vaiśravaṇa, guardian of the north; will not be led by anyone else."
+		},
+		"hadong": {
+			"name": "Hadong",
+			"ko": "하동",
+			"owner": "chunchu",
+			"kind": "horse",
+			"board": "/obj_hadong.png",
+			"look": "Lean rangy red bay, lighter than Bisamun, fine head, black stockings and thinner black mane — match the board. Court tack with magenta tassels.",
+			"temperament": "A diplomat's horse: patient on long roads, waits outside gates."
+		},
+		"chunma": {
+			"name": "Chunma",
+			"ko": "천마",
+			"owner": "hyukgose",
+			"kind": "heavenly horse",
+			"board": "/obj_chunma.png",
+			"look": "White winged heavenly horse in the Cheonmachong saddle-flap style — match the board. Divine render: numinous through scale and atmosphere, not a glow outline.",
+			"temperament": "Kneels and cries beside the purple egg at Najeong, sees men approach, neighs and rises into the sky."
+		},
+		"sinrok": {
+			"name": "Sinrok",
+			"ko": "신록",
+			"guides": [
+				"onjo",
+				"biryu"
+			],
+			"kind": "guardian deer of Baekje",
+			"board": "/obj_sinrok.png",
+			"look": "Pale white-gold stag with tall branching antlers — match the board's animal, but ignore its glow outline: light catches the antlers and coat as real light.",
+			"temperament": "Owned by no one; leads the brothers south and stays with Onjo."
+		},
+		"samjogo": {
+			"name": "Samjogo",
+			"ko": "삼족오",
+			"guides": [
+				"jumong"
+			],
+			"kind": "three-legged crow, guardian of Goguryeo",
+			"board": "/obj_samjogo.png",
+			"look": "Black three-legged crow — always THREE legs visible; red sun motif as the one accent — match the board.",
+			"temperament": "Owned by no one; watches from branches and far banks, flies ahead to show Jumong the way."
+		},
+		"damul": {
+			"name": "Damul",
+			"ko": "다물",
+			"owner": "gesomun",
+			"kind": "horse",
+			"board": "/obj_damul.png",
+			"battleBoard": "/obj_damul_gaema.png",
+			"look": "The biggest horse on any field: a red-bay Goguryeo war stallion, coat a deep BROWN-RED like oxblood lacquer (browner and darker than Hadong, redder and larger than Bisamun), a thick BLACK mane and BLACK tail, black lower legs, heavy arched neck — match the board. In battle it wears Goguryeo 개마 (gaema) barding as in the Anak Tomb No. 3 mural: steel lamellar skirts over the body and neck, a steel chamfron on the face, red cords and a red plume; the black mane falls over the steel.",
+			"temperament": "Named for 다물 (多勿), the old Goguryeo word for winning back the lost land; charges into water and spears without being asked, bites other horses."
+		},
+		"sunfox": {
+			"name": "Sun-Fox",
+			"ko": "해여우",
+			"owner": "haemosu",
+			"guides": ["yuhwa"],
+			"kind": "sun-fox, Haemosu's heat on foot",
+			"board": "/obj_haemosu_fox.png",
+			"look": "Large pale cream-white fox with long flowing fur and a full brush tail — match the board's animal, but ignore its orange glow outline: #f0b429 lives as real low sunlight on the fur, never a halo.",
+			"temperament": "The heat that walks when the chariot cannot; leads Yuhwa down the exile road to Buyeo, looks back once, never explains the map."
+		},
+		"baitiwu": {
+			"name": "Baitiwu",
+			"ko": "백제오",
+			"owner": "taizong",
+			"kind": "war horse, first of the Six Steeds of Zhaoling",
+			"look": "Jet-black Tang war horse, black from ear to tail, with four pure WHITE hooves and white pasterns as though it walked through snow. Tang royal grooming: mane clipped into three upright tufts (三花), tail bound up in a knot; red-tasselled Tang tack.",
+			"temperament": "Runs all night without being asked twice; two hundred li after a battle, to the enemy's gate by dawn."
+		},
+		"telebiao": {
+			"name": "Telebiao",
+			"ko": "특륵표",
+			"owner": "taizong",
+			"kind": "war horse, one of the Six Steeds of Zhaoling",
+			"look": "Pale yellow-gold Tang war horse with a WHITE muzzle, a steppe horse with a Turkic name; compact, deep-chested. Tang royal grooming: mane clipped into three upright tufts (三花), tail bound up in a knot.",
+			"temperament": "Never complains: eight engagements in a day, two days without food, three without the rider's armour off."
+		},
+		"saluzi": {
+			"name": "Saluzi",
+			"ko": "삽로자",
+			"owner": "taizong",
+			"kind": "war horse, the first and dearest of the Six Steeds of Zhaoling",
+			"look": "Purple-roan Tang war horse — a deep plum-chestnut coat with a violet bloom, the colour of a fresh bruise; proud high head, arched neck. Tang royal grooming: mane clipped into three upright tufts (三花), tail bound up in a knot; in battle a red saddle-cloth and red tassels.",
+			"temperament": "Out in front of everyone, always. Takes an arrow in the chest outside Luoyang and stands with it in him until the rider is safe; carries him back to camp, then dies."
+		},
+		"qingzhui": {
+			"name": "Qingzhui",
+			"ko": "청추",
+			"owner": "taizong",
+			"kind": "war horse, one of the Six Steeds of Zhaoling",
+			"look": "Blue-grey DAPPLED Tang war horse, pale grey with darker round dapples, the fastest of the six; long legs fully extended in the flying gallop. Tang royal grooming: mane clipped into three upright tufts (三花), tail bound up in a knot.",
+			"temperament": "Fast as a rumour: at Hulao five arrows strike him, every one from behind."
+		},
+		"shifachi": {
+			"name": "Shifachi",
+			"ko": "십벌적",
+			"owner": "taizong",
+			"kind": "war horse, one of the Six Steeds of Zhaoling",
+			"look": "Pure blazing RED chestnut Tang war horse, red as cinnabar seal paste, wearing a Turkic title as its name. Tang royal grooming: mane clipped into three upright tufts (三花), tail bound up in a knot.",
+			"temperament": "Finishes the charge with five arrows in the hindquarters, bristling like a hedgehog that has lost its temper."
+		},
+		"quanmaogua": {
+			"name": "Quanmaogua",
+			"ko": "권모왜",
+			"owner": "taizong",
+			"kind": "war horse, last of the Six Steeds of Zhaoling",
+			"look": "Tawny-yellow Tang war horse with a CURLY, crimped coat and a BLACK muzzle — the ugliest horse in the empire; thick-necked, stubborn stance. Tang royal grooming: mane clipped into three upright tufts (三花), tail bound up in a knot.",
+			"temperament": "Nine arrows by the Ming River, six in front and three behind; stands until the fighting is done, then lies down."
+		}
+	},
+	"places": {
+		"hwangsan": {
+			"dna": "Low rolling yellow-dust plain under a vast sky, Baekje stockade on a rise; few trees; dust is the weather."
+		},
+		"daeya": {
+			"dna": "Daeya seongmun: weathered stone wall with crenellations, curved giwa pavilion over a hongye arch, heavy iron-bossed timber doors."
+		},
+		"ansi": {
+			"dna": "Ansi: stone fortress on a ridge, the Tang earthen siege mound rising against the wall."
+		},
+		"surabol": {
+			"dna": "Seorabeol palace: Silla giwa halls, packed-earth yards, timber verandas."
+		},
+		"sabi": {
+			"dna": "Sabi palace on the Baengma river bluffs; Baekje giwa halls and pavilions."
+		},
+		"pyongyang": {
+			"dna": "Pyongyang: Goguryeo walled city on the Taedong, stone walls and red munru gate pavilions."
+		},
+		"steam_cavern": {
+			"dna": "Steam cavern hot spring: wet black stone, steam, motes in the element colors; magical anime-painterly atmosphere, not a photoreal cave."
+		},
+		"wirye": {
+			"dna": "Wirye: earthen walls on the Han river plain below the mountains."
+		},
+		"cheomseongdae": {
+			"dna": "Cheomseongdae: the bottle-shaped stone star tower on a grass field under the night sky."
+		},
+		"underworld": {
+			"dna": "Otherworld — symbolic flat color, no naturalistic weather."
+		},
+		"radiance": {
+			"board": "/pl_radiance_fortress.png",
+			"dna": "Myeonghwal (Radiance) Fortress: Bidam's mountain wall facing Wolseong across the field."
+		},
+		"pyongyang_fortress": {
+			"board": "/pl_pyongyang_fortress.png",
+			"dna": "Pyongyang fortress: the same red two-tier munru on the stone ridge in every still."
+		},
+		"changan": {
+			"board": "/pl_daming_night.png",
+			"dna": "Tang palace of Chang'an, drawn from the Daming Palace (大明宮) site and reconstruction models: Hanyuan Hall's concave ensemble — an eleven-bay hall with a double-eaved hipped roof of dark grey tiles and curled owl-tail ridge ends (chiwei), red columns, white plaster walls, lattice windows, raised on three tiers of rammed-earth terraces faced in ochre-red plaster and edged with white stone balustrades; the Dragon Tail Way ramps folding up the terraces; forward on each side the Xiangluan and Qifeng que-towers (three stepped pavilions on tall battered grey-brick piers) joined to the hall by long roofed corridors; a vast paved square below, entered through the five-doored Danfeng Gate. Wide low Tang proportions, deep eaves on massive bracket sets. Tang palette is VERMILION and WHITE (red columns, white walls); roofs are black-grey tile trimmed with green-glazed ridge and eave tiles (a little yellow and blue tricolour glaze); balustrade posts painted red, blue and green. YELLOW belongs to the emperor's robe; gold is gilt-bronze fittings, lamp-trees and firelight on vermilion. Interiors: dark polished stone floors, rows of vermilion columns, gauze hangings, a raised dais with a painted screen behind the throne. Never the Forbidden City, never all-yellow glazed roofs, never the modern reconstruction or a city skyline.",
+			"mood": "Staged like a Chinese historical drama (Legend of the Demon Cat, The Longest Day in Chang'an) but lit as full Heewon tenebrism: night or blue hour; ONE dominant hard key per shot — a backlight through open doors or lattice, or one lamp-tree — and 75% of the frame crushed black with no fill; colour contrast — gold-yellow flame highlights against cool blue-green in the few lit shadows; the other flames (lamp-trees, silk lanterns with no writing, braziers) are small points and round bokeh IN the black, never lighting the room evenly; red lantern light through lattice as one pattern on the floor; incense haze only inside the key shaft; polished dark floors reflecting the flames. Staged like a drama, at true human scale: camera at eye or knee height on a dolly or crane; court officials in two lines facing inward along the central aisle with tablets; banquet tables in two long facing rows with dancers in the centre and the emperor on the dais at the head; exteriors are real-scale terraces and corridors, the hall large but never a fantasy fortress."
+		},
+		"amnok": {
+			"board": "/pl_amnok_river.png",
+			"dna": "Amnok river: wide green water, reeds and stony banks, natural sky."
+		},
+		"jumong_cave": {
+			"board": "/pl_jumong_cave.png",
+			"dna": "The cavern where Jumong prays after the crossing."
+		}
+	}
+}

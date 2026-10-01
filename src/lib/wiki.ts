@@ -47,6 +47,7 @@ export type WikiKind =
 	| 'phrase'
 	| 'concept'
 	| 'sword'
+	| 'animal'
 	| 'organization'
 	| 'group'
 	| 'clan'
@@ -60,6 +61,7 @@ export const WIKI_KINDS: {
 }[] = [
 	{ id: 'character', label: 'Character', plural: 'Characters' },
 	{ id: 'god', label: 'God', plural: 'Gods' },
+	{ id: 'animal', label: 'Animal', plural: 'Animals' },
 	{ id: 'city', label: 'City', plural: 'Cities' },
 	{ id: 'place', label: 'Place', plural: 'Places' },
 	{ id: 'nation', label: 'Nation', plural: 'Nations' },
@@ -88,6 +90,7 @@ export function kindOf(p: Person): WikiKind {
 	if (p.entity === 'clan') return 'clan';
 	if (p.entity === 'concept') return 'concept';
 	if (p.entity === 'sword') return 'sword';
+	if (p.entity === 'animal') return 'animal';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
 }
@@ -592,7 +595,7 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 		}
 		if (!q) return true;
 		const ownerHay =
-			p.entity === 'sword'
+			p.entity === 'sword' || p.entity === 'animal'
 				? ownersOf(p.id)
 						.flatMap((o) => [o.name, o.korean, o.hanja, ...(o.aliases ?? [])])
 						.filter(Boolean)
@@ -653,13 +656,13 @@ export function orgsOf(p: Person): Person[] {
 	return rows;
 }
 
-/** Characters / gods who wield or wielded this sword profile. */
-export function ownersOf(swordId: string): Person[] {
-	const sword = byId.get(swordId);
-	if (!sword?.owners?.length) return [];
+/** People listed in a profile's `owners` — a sword's wielders, an animal's rider or guided. */
+export function ownersOf(profileId: string): Person[] {
+	const profile = byId.get(profileId);
+	if (!profile?.owners?.length) return [];
 	const rows: Person[] = [];
 	const seen = new Set<string>();
-	for (const id of sword.owners) {
+	for (const id of profile.owners) {
 		const person = byId.get(id);
 		if (!person || seen.has(person.id)) continue;
 		seen.add(person.id);
@@ -672,6 +675,13 @@ export function ownersOf(swordId: string): Person[] {
 export function swordsOf(personId: string): Person[] {
 	return PROFILES.filter(
 		(p) => p.entity === 'sword' && (p.owners ?? []).includes(personId)
+	).sort(compareWikiEntries);
+}
+
+/** Horses and creatures linked to a person — the animals they ride or are led by. */
+export function animalsOf(personId: string): Person[] {
+	return PROFILES.filter(
+		(p) => p.entity === 'animal' && (p.owners ?? []).includes(personId)
 	).sort(compareWikiEntries);
 }
 

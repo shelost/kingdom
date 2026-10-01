@@ -11,4 +11,4 @@ That file is rebuilt on every /grade save from keep/cut notes. Do not retype tho
 
 `scripts/generate-nsfw.mjs` already appends it. For GenerateImage, read the file and add the suffix to `description`.
 
-The suffix’s base is the **Jumong remake batch**: high contrast tenebrism, one named geometric device, dramatic poses (dutch / worm’s-eye / lower-third), color symbolism (character hex as the hard key / bounce / specular in a dark scene — not a glow aura, not a body halo). Do not weaken it in the scene sentence. Do not drop the hex. Do not paste a standing portrait into even daylight.
+The suffix opens with **Heewon style** (`HEEWON_STYLE` in `src/lib/promptHouse.ts`): anime figures in a watercolor-and-oil painted world, Romanticist canvas layout, movie tenebrism. Under it, the base is the **Jumong remake batch**: high contrast tenebrism, one named geometric device, dramatic poses (dutch / worm’s-eye / lower-third), color symbolism (character hex as the hard key / bounce / specular in a dark scene — not a glow aura, not a body halo). Do not weaken it in the scene sentence. Do not drop the hex. Do not paste a standing portrait into even daylight.

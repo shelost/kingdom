@@ -229,7 +229,7 @@
 			<a
 				class="wiki-link"
 				href={resolve(`/wiki?id=${encodeURIComponent(peeked.id)}`)}
-				title="Open in encyclopedia">Wiki</a
+				title="Open in the wiki">Wiki</a
 			>
 		</header>
 

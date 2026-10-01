@@ -1,10 +1,12 @@
 /**
- * Chronicle cue stills for wiki character / god pages.
- * Membership is the sidecar `image-people.json` — a still appears iff its
- * tags include that profile’s person id. No title / alt / refs guessing.
+ * Chronicle cue stills for wiki character / god / animal pages.
+ * People: membership is the sidecar `image-people.json` — a still appears iff
+ * its tags include that profile’s person id. Animals: the still attaches the
+ * animal's board in `refs` or names it in the slot id (see `buildAnimalSceneIndex`).
  */
 
 import { byId, nameOf, type Person } from '$lib/people';
+import { ANIMAL_INDEX } from '$lib/animals';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { entryId } from '$lib/story';
 import {
@@ -122,9 +124,55 @@ function pinPoster(person: Person, scenes: WikiScene[]): WikiScene[] {
 	return list;
 }
 
-/** Tagged stills for a wiki character or god. Empty when none. Poster stills pin first. */
+/**
+ * Stills for animal profiles: a still belongs to an animal when it attaches
+ * that animal's board, or its slot id carries the name (`yushin-hangyul-…`).
+ * Boards can be shared (Hanseul uses Hangyul's coat board), so when several
+ * animals match, the ones named in the slot id, alt, or canon header
+ * (`HANSEUL (한슬, …`) win; otherwise the first def keeps it.
+ */
+function buildAnimalSceneIndex(): Map<string, WikiScene[]> {
+	const buckets = new Map<string, WikiScene[]>();
+	for (const im of flattenStoryImages()) {
+		const refs = im.slot.refs ?? [];
+		const idWords = im.slot.id.toLowerCase().split(/[-_]/);
+		const hits = ANIMAL_INDEX.filter(
+			(a) =>
+				a.boards.some((b) => refs.includes(b)) ||
+				a.names.some((n) => idWords.includes(n.toLowerCase()))
+		);
+		if (!hits.length) continue;
+		const scene = toWikiScene(im);
+		if (!scene) continue;
+		const label = `${im.slot.id} ${im.slot.alt ?? ''}`.toLowerCase();
+		const prompt = im.slot.prompt ?? '';
+		const named = hits.filter((a) =>
+			a.names.some(
+				(n) => label.includes(n.toLowerCase()) || prompt.includes(`${n.toUpperCase()} (`)
+			)
+		);
+		for (const a of named.length ? named : hits.slice(0, 1)) {
+			const list = buckets.get(a.profileId);
+			if (list) list.push(scene);
+			else buckets.set(a.profileId, [scene]);
+		}
+	}
+	return buckets;
+}
+
+const SCENES_BY_ANIMAL = buildAnimalSceneIndex();
+
+/** Tagged stills for a wiki character, god, or animal. Empty when none. Poster / cover stills pin first. */
 export function scenesForWikiEntry(personId: string): WikiScene[] {
 	const person = byId.get(personId);
-	if (!person || !isCharacter(person)) return [];
+	if (!person) return [];
+	if (person.entity === 'animal') {
+		const list = [...(SCENES_BY_ANIMAL.get(personId) ?? [])];
+		const cover = person.avatar ? artAttachmentKey(person.avatar) : '';
+		const idx = cover ? list.findIndex((s) => artAttachmentKey(s.art) === cover) : -1;
+		if (idx > 0) list.unshift(...list.splice(idx, 1));
+		return list;
+	}
+	if (!isCharacter(person)) return [];
 	return pinPoster(person, SCENES_BY_PERSON.get(personId) ?? []);
 }

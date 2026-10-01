@@ -4,6 +4,8 @@
 	import { KINGDOMS } from '$lib/people';
 	import { openProfile } from '$lib/profiles.svelte';
 	import { mapUi, closeStoryMap } from '$lib/mapUi.svelte';
+	import { untrack } from 'svelte';
+	import type { Attachment } from 'svelte/attachments';
 
 	/** Full-page Map route: always expanded, no modal scrim. */
 	let { pageMode = false }: { pageMode?: boolean } = $props();
@@ -20,6 +22,25 @@
 	let shown = $derived(hovered ?? place);
 
 	const pct = (p: Place) => ({ left: (p.x / VB.w) * 100, top: (p.y / VB.h) * 100 });
+
+	/** Where a pannable phone sheet opens when the story has no current place. */
+	const MARKER_CENTRE = {
+		x: MAP_MARKERS.reduce((sum, p) => sum + p.x, 0) / MAP_MARKERS.length,
+		y: MAP_MARKERS.reduce((sum, p) => sum + p.y, 0) / MAP_MARKERS.length
+	};
+
+	/** Phones pan an enlarged sheet: open it centred on the story's place. */
+	const centreSheet: Attachment<HTMLElement> = (frame) => {
+		const img = frame.querySelector('img');
+		const target = untrack(() => place) ?? MARKER_CENTRE;
+		const centre = () => {
+			frame.scrollLeft = (target.x / VB.w) * frame.scrollWidth - frame.clientWidth / 2;
+			frame.scrollTop = (target.y / VB.h) * frame.scrollHeight - frame.clientHeight / 2;
+		};
+		if (!img || img.complete) centre();
+		img?.addEventListener('load', centre, { once: true });
+		return () => img?.removeEventListener('load', centre);
+	};
 
 	function toggle() {
 		if (pageMode) return;
@@ -106,10 +127,23 @@
 	{/if}
 {/snippet}
 
+{#snippet hint(mouse: string)}
+	<span class="pl-hint">
+		<span class="hint-mouse">{mouse}</span>
+		<span class="hint-touch"
+			>{pageMode
+				? 'Tap a place for its profile · drag to pan'
+				: 'Tap a place for its profile · tap outside to close'}</span
+		>
+	</span>
+{/snippet}
+
 <figure class="map" class:open class:page={pageMode} class:has-place={!!place || pageMode}>
 	{#if pageMode}
-		<div class="frame" role="group" aria-label="Map of Samhan">
-			{@render mapBody()}
+		<div class="frame" role="group" aria-label="Map of Samhan" {@attach centreSheet}>
+			<div class="sheet">
+				{@render mapBody()}
+			</div>
 		</div>
 	{:else}
 		<div
@@ -145,18 +179,16 @@
 			</button>
 			{#if open}<span class="pl-blurb">{shown.blurb}</span>{/if}
 			{#if open}
-				<span class="pl-hint"
-					>{pageMode
-						? 'Click a place for its profile'
-						: 'Click a place for its profile · Esc to close'}</span
-				>
+				{@render hint(
+					pageMode ? 'Click a place for its profile' : 'Click a place for its profile · Esc to close'
+				)}
 			{/if}
 		{:else if open}
-			<span class="pl-hint"
-				>{pageMode
+			{@render hint(
+				pageMode
 					? 'Hover a place to read about it · click to open profile'
-					: 'Hover a place to read about it · click to open profile · Esc to close'}</span
-			>
+					: 'Hover a place to read about it · click to open profile · Esc to close'
+			)}
 		{/if}
 	</figcaption>
 </figure>
@@ -288,6 +320,10 @@
 
 	.map.page .frame {
 		cursor: default;
+	}
+
+	.sheet {
+		position: relative;
 	}
 
 	img {
@@ -575,6 +611,20 @@
 		color: var(--fg-faint);
 	}
 
+	.hint-touch {
+		display: none;
+	}
+
+	@media (hover: none) {
+		.hint-mouse {
+			display: none;
+		}
+
+		.hint-touch {
+			display: inline;
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.ping {
 			animation: none;
@@ -608,6 +658,22 @@
 
 		.label {
 			font-size: 0.5rem;
+		}
+
+		/* The page map pans a sheet twice the column's width so labels stop colliding. */
+		.map.page .frame {
+			max-height: 68dvh;
+			overflow: auto;
+			overscroll-behavior: contain;
+			border-radius: calc(var(--radius) - 2px);
+		}
+
+		.map.page .sheet {
+			width: 200%;
+		}
+
+		.map.page .label {
+			font-size: 0.66rem;
 		}
 	}
 </style>

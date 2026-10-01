@@ -93,6 +93,14 @@
 		}
 	}
 
+	/* Phones: the rail is a 4px stripe inside the text's own gutter. */
+	@media (max-width: 820px) {
+		.reading,
+		.reading.toc-open {
+			padding-left: 0;
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.reading {
 			transition: none;
