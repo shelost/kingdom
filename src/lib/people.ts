@@ -1128,7 +1128,7 @@ export const PEOPLE: Person[] = [
 			{ year: 642, label: 'Takes Daeya Fortress, killing Chunchu’s daughter.' },
 			{ year: 642, label: 'Goes in disguise to Goryeo to bargain with Yeon Gesomun.' },
 			{ year: 655, label: 'Purges the Ministers’ Assembly, seating 41 of his own sons.' },
-			{ year: 656, label: 'Imprisons Sungchung, who starves to death warning him.' },
+			{ year: 656, label: 'Imprisons Seongchung, who starves to death warning him.' },
 			{ year: 659, label: 'The nine omens — listens to his kept shaman for sport, then kills her when the turtle speaks true.' },
 			{ year: 660, label: 'Sabi falls; he is captured at Bear Fortress and shipped to Tang.' },
 			{ year: 660, label: 'Dies in Chang’an cursing Chunchu — names an avenger not yet born (Later Baekje).' }
@@ -2937,10 +2937,12 @@ export const PEOPLE: Person[] = [
 		korean: '사택천복',
 		kingdom: 'baekje',
 		clan: 'clan-satek',
+		title: 'Premier (상좌평)',
 		tagline: 'The young Satek who chose the king over his clan.',
 		quote: "Say one name. Bring him back.",
 		voice:
 			'Courtly and procedural: “as Your Majesty well knows”, the will of the Rock, careful hedges, then a sudden practical plan. Korean: formal 합쇼체.',
+		career: [{ title: 'Premier', korean: '상좌평', hanja: '上佐平', org: 'ministersassembly', from: 655 }],
 		aliases: ['Satek Chunbok', 'Chunbok']
 	},
 	{
@@ -2958,9 +2960,11 @@ export const PEOPLE: Person[] = [
 		quote: 'It is generally the same as Jwapyeong Seongchung’s words.',
 		nature:
 			'Dry, already tired of saying it twice. Half-sentences. He does not re-lecture Tanhyeon; he points at a dead friend’s paper. 하오체 to Gyebek, 하십시오 when the king’s man is in the yard. The ring at his belt is a posting, not a speech.',
+		voice:
+			'Dry and tired of saying it twice: half-sentences, and he points at a dead friend’s paper instead of explaining the passes again. Korean: 하오체 to Gyebek, 합쇼체 to the king’s man.',
 		firstLine: 'You… you truly mean to march?',
 		lastLine: 'It is generally the same as Jwapyeong Seongchung’s words.',
-		arc: 'One of the three loyalists with Sungchung and Gyebek. After the purge Euija posts him to Gomamiji. When the Chunchu Army is already moving, a courier asks what to do; Heungsu answers with Seongchung’s dying ground. The court calls it the bitterness of a bound man. Tang is already in the White River. Silla is already over Tanhyeon.',
+		arc: 'One of the three loyalists with Seongchung and Gyebek. After the purge Euija posts him to Gomamiji. When the Chunchu Army is already moving, a courier asks what to do; Heungsu answers with Seongchung’s dying ground. The court calls it the bitterness of a bound man. Tang is already in the White River. Silla is already over Tanhyeon.',
 		events: [
 			{ year: 656, label: 'Exiled to Gomamiji-hyeon after saying the purge would finish Silla’s work.' },
 			{ year: 660, label: 'Counsel ignored; White River and Tanhyeon already crossed.' }
@@ -3700,7 +3704,7 @@ export const PEOPLE: Person[] = [
 		quote: 'Tell the story until the mainland listens.',
 		voice:
 			'The island storyteller: unhurried and wry, starts at the beginning and will not be rushed, and pokes at Gyebek’s silence. Korean: oral-tale 반말 (말하마, -지).',
-		arc: 'Collector of stories and castaways. When Gyebek washes up, Yuri Dora feeds him Tamla’s myths in order — Big Star and Little Star first — and is the mouth that first frames the Three Realms (삼계) under Hwanin’s heaven as the larger map under which Samhan’s Great War looks small. History remains the chronicle’s spine; mythology arrives mostly through his island.',
+		arc: 'Collector of stories and castaways. When Gyebek washes up, Yuri Dora feeds him Tamla’s myths in order — the Great Lady’s apron first, on a roof, and Big Star and Little Star that night — and is the mouth that first frames the Three Realms (삼계) under Hwanin’s heaven as the larger map under which Samhan’s Great War looks small. History remains the chronicle’s spine; mythology arrives mostly through his island.',
 		career: [
 			{ title: 'King of Tamla', korean: '왕', hanja: '王', org: 'nation-tamla' }
 		],
@@ -4512,7 +4516,7 @@ export const PEOPLE: Person[] = [
 		id: 'seongchung',
 		gender: 'm',
 		avatar: '/ch_seongchung.png',
-		name: 'Sungchung',
+		name: 'Seongchung',
 		korean: '성충',
 		hanja: '成忠',
 		kingdom: 'baekje',
@@ -5359,6 +5363,8 @@ export const CONCEPTS: Person[] = [
 		realm: { en: 'Five grains', ko: '오곡' },
 		tagline: 'Cut her hair to get into the room, then walked west to the flower field to get him back.',
 		quote: 'Cut your hair if you must. Walk to the dead if you must.',
+		voice:
+			'Bold, teasing and practical, and she never pleads: she asks the question that embarrasses him, then gets on with the job. Korean: 해요체 to her lover, 합쇼체 at the flower-field gate, and a scolding 해라체 when he is slow (“이제야 아느냐?”).',
 		arc: 'From 「세경본풀이」: she studies as a man beside Mun Doryeong, reveals herself at the parting stream, and when heaven kills the match she walks west — far enough that living maps end — into 서천꽃밭. Hallakgungi (할락궁이) keeps the resurrection flowers after his father Saradoryeong retired; she takes what she needs, rebuilds the boy bone by bone, and brings the five grains down to Tamla.',
 		events: [
 			{ label: 'Studies three years disguised as a man beside Mun Doryeong.' },
@@ -5381,6 +5387,7 @@ export const CONCEPTS: Person[] = [
 		realm: { en: 'Sky-born match', ko: '하늘 도령' },
 		tagline: 'Sat beside her for three years and noticed on the last night.',
 		quote: 'Notice on the last night — or lose her forever.',
+		voice: 'Slow and honest; he admits things as he realises them, a little stunned. Korean: 하오체.',
 		aliases: ['Mun Doryeong']
 	},
 	{
@@ -5415,6 +5422,7 @@ export const CONCEPTS: Person[] = [
 		realm: { en: 'Songdang farming', ko: '송당' },
 		tagline: 'Came across the sea, married a hunter, and divorced him over an ox.',
 		quote: 'An ox can end a marriage. A shrine can begin one.',
+		voice: 'Incredulous: her questions are accusations, and she repeats the worst part. Korean: blunt 반말.',
 		aliases: ['Baekjuto']
 	},
 	{
@@ -5430,6 +5438,7 @@ export const CONCEPTS: Person[] = [
 		realm: { en: 'Hunt', ko: '사냥' },
 		tagline: 'Ate the plough ox. Then ate somebody else’s.',
 		quote: 'Hunt first. Apologize never.',
+		voice: 'Sheepish, and every confession makes it worse. Korean: 하오체.',
 		aliases: ['Socheon-guk', 'Socheonguk']
 	},
 	{
@@ -5487,7 +5496,7 @@ export const CONCEPTS: Person[] = [
 			'Elder twin of Little Star. 대인배 — magnanimous, wise, clear law, no appetite for cheating. Inherits half of Heaven–Earth King’s retired charge: rules 저승 as sovereign among the Three Realms — Paradise, the Ten Kings’ court, Hell nested within — while Yumla judges under his roof and Kangrim and Haewonmek fetch. Has made peace with the brother who cheated him.',
 		voice:
 			'The elder twin: calm, magnanimous, judicial. Short sentences that settle a matter, longer patient ones when he teaches his brother, and courtesy on a large scale. Korean: plain 반말 to his brother.',
-		arc: 'From 「천지왕본풀이」: Heaven–Earth King retires from ruling all mortals under Hwanin — living and dead — and leaves the charge to his sons. The twins wager flowers for 이승; Little Star swaps the blooms while Big Star sleeps; Big Star accepts the loss and takes 저승. Class I of 삼계. Retinue: Yumla, Kangrim, Haewonmek. Later he still helps his brother — shooting surplus suns and moons, silencing talking beasts — but leaves human wickedness to the cheat who wanted the warm side. First Tamla myth the island tells Gyebek — and the beat where Yuri Dora first names the Three Realms.',
+		arc: 'From 「천지왕본풀이」: Heaven–Earth King retires from ruling all mortals under Hwanin — living and dead — and leaves the charge to his sons. The twins wager flowers for 이승; Little Star swaps the blooms while Big Star sleeps; Big Star accepts the loss and takes 저승. Class I of 삼계. Retinue: Yumla, Kangrim, Haewonmek. Later he still helps his brother — shooting surplus suns and moons, silencing talking beasts — but leaves human wickedness to the cheat who wanted the warm side. Yuri Dora’s second tale for Gyebek, told the night of the Great Lady’s apron, and the beat where he first names the Three Realms.',
 		events: [
 			{ label: 'Father (Heaven–Earth King) retires; sons inherit the mortal charge under Hwanin.' },
 			{ label: 'Wagers flowers with Little Star for the living world; loses by swap.' },
@@ -5536,7 +5545,7 @@ export const CONCEPTS: Person[] = [
 			'Younger twin. Used to be 소인배 — petty about the flower cheat — and has matured somewhat; made up with Big Star enough to still ask for help with suns and moons. Clever, hungry for 이승, bad at admitting why it stays messy. Inherits half of Heaven–Earth King’s retired charge after the flower swap; must ask Big Star to fix suns, moons, and speaking beasts — but not human crime. Retinue: Ibiga (sky), Haemosu (sun), Samsin (life).',
 		voice:
 			'The younger twin: quick and petty, full of excuses and jokes that almost land as apologies, grown up enough now to ask for help. Korean: casual 반말, 하오체 when he begs his brother.',
-		arc: 'From 「천지왕본풀이」: after Heaven–Earth King retires under Hwanin’s heaven, he plants the withered flower, swaps it for his brother’s full bloom, and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. That is why the living world runs on thieves, quarrels, and bad hours — the cheat inherited the warm side. Tamla tells this first, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
+		arc: 'From 「천지왕본풀이」: after Heaven–Earth King retires under Hwanin’s heaven, he plants the withered flower, swaps it for his brother’s full bloom, and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. That is why the living world runs on thieves, quarrels, and bad hours — the cheat inherited the warm side. Tamla tells this early, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
 		events: [
 			{ label: 'Father (Heaven–Earth King) retires; sons inherit the mortal charge under Hwanin.' },
 			{ label: 'Swaps flowers while Big Star sleeps; takes 이승.' },
@@ -5799,6 +5808,7 @@ export const CONCEPTS: Person[] = [
 		title: 'Divine prince of Samseonghyeol · Go line',
 		tagline: 'Demigod — rose from the three-surnames hollow, not from an egg.',
 		quote: 'The island remembers who came up, not who hatched.',
+		voice: 'Would rather shoot than talk, and approves in a word. Korean: terse 반말.',
 		arc: 'One of Tamla’s three divine princes (삼신인) who emerge from Samseonghyeol. With Yang and Bu he shoots for a share of the island, marries a princess from the East Sea box, and founds the Go surname line the island still counts.',
 		events: [
 			{ label: 'Emerges from Samseonghyeol with Yang and Bu.' },
@@ -5819,6 +5829,7 @@ export const CONCEPTS: Person[] = [
 		title: 'Divine prince of Samseonghyeol · Yang line',
 		tagline: 'Demigod — first of the three to name the hollow sacred.',
 		quote: 'Mark the ground that gave you. Then farm it.',
+		voice: 'Decides for the three in a few words and leaves the arguing for later. Korean: terse 반말.',
 		arc: 'Elder voice among the three who rise from Samseonghyeol. Shares the arrow-division of Tamla, takes a princess and grain from the drifting box, and leaves the Yang surname on the island’s founding register.',
 		events: [
 			{ label: 'Emerges from Samseonghyeol with Go and Bu.' },
@@ -5839,6 +5850,7 @@ export const CONCEPTS: Person[] = [
 		title: 'Divine prince of Samseonghyeol · Bu line',
 		tagline: 'Demigod — third from the well; calves, foals, and a third of the orange island.',
 		quote: 'What arrives by sea in a box is still yours to keep.',
+		voice: 'The youngest: one-line claims, stated and done. Korean: terse 반말.',
 		arc: 'Youngest of the Samseonghyeol triad. Shoots for his share, marries the third princess, and helps open Tamla’s farming age when the sea-box yields livestock and the five grains.',
 		events: [
 			{ label: 'Emerges from Samseonghyeol with Yang and Go.' },
@@ -5859,6 +5871,7 @@ export const CONCEPTS: Person[] = [
 		realm: { en: 'Sanbang cliff', ko: '산방' },
 		tagline: 'Loved a poor man, was wanted by an official, and went back into the cliff.',
 		quote: "Better the cliff than the wrong official.",
+		voice: 'Soft and wondering; her sentences trail off. Korean: 해요체.',
 		aliases: ['Sanbangdeok']
 	},
 	{

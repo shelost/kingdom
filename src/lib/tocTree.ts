@@ -105,27 +105,22 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	],
 	'fall-of-euija': [
 		{
-			parent: 'Gyebek’s Exile',
+			parent: 'Turtle',
 			children: [
-				{ title: 'Tamla, the Island of Oranges', label: 'Tamla' },
-				{ title: 'Big Star and Little Star' },
-				{ title: 'The Great Lady’s Apron', label: 'Sulmun & The Three Princes' },
-				{ title: 'Kangrim', label: 'Hallakgungi' },
-				{ title: 'Her Own Navel-String' },
-				{ title: 'The Girl Who Cut Her Hair' },
-				{ title: 'The Ox and the Iron Chest' },
-				{ title: 'The Ones That End in Stone' },
-				{ title: 'The Tribute of Oranges' }
+				{ title: 'Tamla, the Island of Oranges', label: 'Sulmun & The Three Princes' },
+				{ title: 'Big Star and Little Star' }
 			]
 		},
 		{
-			parent: 'Euija’s Descent',
+			parent: 'Her Own Navel-String',
+			children: [{ title: 'Black Rock' }]
+		},
+		{
+			parent: 'The Girl Who Cut Her Hair',
 			children: [
-				{ title: 'Euija’s Coup', label: 'The Coup' },
-				{ title: 'Black Rock', label: 'Nightmares' },
-				{ title: 'The Nine Plagues', label: 'Nine Omens' },
-				{ title: 'Five Thousand' },
-				{ title: 'The Fifth Year' }
+				{ title: 'The Ox and the Iron Chest' },
+				{ title: 'The Ones That End in Stone' },
+				{ title: 'Five Thousand' }
 			]
 		}
 	],

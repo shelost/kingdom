@@ -940,7 +940,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'euija-coup-sons-forty-one', role: 'forty-one sons', angle: "bird’s-eye stamp", at: 'of his own sons to the Assembly' },
 			{ id: 'euija-coup-satek-stare', role: 'clan emptied', angle: 'OTS aisle', at: 'a law for emptying the Assembly' },
 			{ id: 'euija-coup-chunbok-pm', role: 'Premier named', angle: 'intimate kneel', at: 'is named Premier (상좌평)' },
-			{ id: 'euija-coup-empty-benches', role: 'aftermath', angle: 'iconic empty', at: 'The Enabling Law did not abolish the chair' }
+			{ id: 'euija-coup-empty-benches', role: 'aftermath', angle: 'iconic empty', at: 'as promised, remains undisturbed' }
 		]
 	},
 	{
@@ -951,16 +951,16 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		why: 'The two jwapyeong who named Chimhyeon and Gibeolpo. Ring-pommels in the room: hall yank, prison post, posting door, mud, Yushin’s fish-ring on the pass they begged to hold.',
 		canon: 'FACE ch_seongchung / ch_heungsu / ch_buyeo_euija / ch_gyebek / ch_kim_yushin. Baekje 환두대도 from sword_lotus; Yushin fish from sword_fish. Hex is REAL lamp/sun bounce on the hollow ring — #c9a24d, #b98f33, #d9b13a, #2A5FB8 — NOT a glow aura. Same Sabi timber; Gomamiji rammed earth; White River mud. Chronology: remonstrate → belt yanked → prison write → Gomamiji threshold → berth two-shot → courier → Euija yes → Tanhyeon already passed → Gibeolpo ring in mud → Yushin climb. 2D cel. High contrast. One device per still. No readable text.',
 		shots: [
-			{ id: 'seongchung-hall-remonstrate', role: 'remonstrance', angle: 'dutch mid-stride', at: 'Open court. Today.' },
-			{ id: 'seongchung-ring-yank', role: 'belt taken', angle: 'ECU ring', at: 'the belt comes off in the aisle' },
-			{ id: 'sungchung-prison', role: 'dying memorial', angle: 'dutch kneel', at: 'tries to stop him, but is thrown in prison' },
-			{ id: 'heungsu-gomamiji-wide', role: 'exile posting', angle: 'wide threshold', at: 'Gomamiji is a posting, not a retirement' },
+			{ id: 'seongchung-hall-remonstrate', role: 'remonstrance', angle: 'dutch mid-stride', at: 'Your Majesty. Open court.' },
+			{ id: 'seongchung-ring-yank', role: 'belt taken', angle: 'ECU ring', at: 'unbuckle his sword-belt in the aisle' },
+			{ id: 'sungchung-prison', role: 'dying memorial', angle: 'dutch kneel', at: 'starves in a cell within earshot of the feast' },
+			{ id: 'heungsu-gomamiji-wide', role: 'exile posting', angle: 'wide threshold', at: 'He sits on the threshold until the dust' },
 			{ id: 'heungsu-gyebek-listen', role: 'berth', angle: 'two-shot', at: 'Hold the White River mouth and the Tanhyeon pass' },
 			{ id: 'heungsu-gyebek-rings', role: 'berth rings', angle: 'dutch two-shot', at: 'You… you truly mean to march?' },
 			{ id: 'heungsu-messenger', role: 'courier', angle: 'OTS', at: 'The matter is urgent. What then.' },
 			{ id: 'euija-yes-so', role: 'so it is', angle: "worm’s-eye empty", at: 'So it is.' },
-			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'already the White River and the Tanhyeon pass' },
-			{ id: 'gibeolpo-ring-mud', role: 'river lost', angle: "bird’s-eye mud", at: 'Tang keels in the mud of Gibeolpo' },
+			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'held the White River or the Tanhyeon pass' },
+			{ id: 'gibeolpo-ring-mud', role: 'river lost', angle: "bird’s-eye mud", at: 'Tang keels are already in the mud of Gibeolpo' },
 			{ id: 'yushin-tanhyeon-fish-ring', role: 'Silla on the pass', angle: "worm’s-eye climb", at: 'Yushin is already on the switchback' }
 		]
 	}

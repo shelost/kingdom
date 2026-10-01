@@ -823,7 +823,8 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'King Muyeol': 'surabol',
 	'Hyukgosé': 'surabol',
 	// Part III
-	'Gyebek’s Exile': 'mugun',
+	'Gyebek’s Exile': 'sabi',
+	'Turtle': 'mugun',
 	'Tamla, the Island of Oranges': 'mugun',
 	'Euija’s Coup': 'sabi',
 	'Euija’s Descent': 'sabi',
