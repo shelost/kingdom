@@ -15,7 +15,6 @@ static/temp/bidam-second-blade.jpg
 static/temp/bidam-sword-carry.jpg
 static/temp/bidam-yumjong-rally.jpg
 static/temp/bidam_defiance_upward.png
-static/temp/bidam_rebellion_torch.png
 static/temp/bulguksa-twin-stamps.jpg
 static/temp/burning_arrow_twilight.png
 static/temp/cavalry_silhouette_golden_dust.png
@@ -68,7 +67,6 @@ static/temp/gyebek_golden_resolve.png
 static/temp/hands_sword_blue_determination.png
 static/temp/harbor-city.jpg
 static/temp/hwanin-ivory-void.jpg
-static/temp/hwarang_flower_youth.png
 static/temp/hyulle-lounge-bite.jpg
 static/temp/hyulle-near-him.jpg
 static/temp/hyulle-rock-hike-shy.jpg
@@ -280,11 +278,9 @@ static/temp/jumong-haemosu-follows-shallows.jpg
 static/temp/jumong-haemosu-grin-ecu.jpg
 static/temp/jumong-haemosu-gulp-hour-ecu.jpg
 static/temp/jumong-haemosu-haewonmek-ots-laugh.jpg
-static/temp/jumong-haemosu-heart-dutch-high.jpg
 static/temp/jumong-haemosu-heart-floor-birds.jpg
 static/temp/jumong-haemosu-heart-rail-ecu.jpg
 static/temp/jumong-haemosu-heart-worm-speck.jpg
-static/temp/jumong-haemosu-heart-yuhwa-chin.jpg
 static/temp/jumong-haemosu-heh-ecu.jpg
 static/temp/jumong-haemosu-laugh-ecu.jpg
 static/temp/jumong-haemosu-lookdown-bath.jpg
@@ -298,7 +294,6 @@ static/temp/jumong-haemosu-pov-no-reason.jpg
 static/temp/jumong-haemosu-pov-rack-her.jpg
 static/temp/jumong-haemosu-pov-wades-her.jpg
 static/temp/jumong-haemosu-pov-yuhwa-face.jpg
-static/temp/jumong-haemosu-pov-yuhwa-grin.jpg
 static/temp/jumong-haemosu-pov-yuhwa-kneel.jpg
 static/temp/jumong-haemosu-pov-yuhwa-stay.jpg
 static/temp/jumong-haemosu-seq-aerial.jpg
@@ -306,7 +301,6 @@ static/temp/jumong-haemosu-shaft-knock.jpg
 static/temp/jumong-haemosu-shallows.jpg
 static/temp/jumong-haemosu-sky-dawn-drive.jpg
 static/temp/jumong-haemosu-sky-dawn-tiny.jpg
-static/temp/jumong-haemosu-sky-dusk-lean.jpg
 static/temp/jumong-haemosu-sky-dusk-tiny.jpg
 static/temp/jumong-haemosu-sky-dutch-streak.jpg
 static/temp/jumong-haemosu-sky-ecu-rail.jpg
@@ -334,7 +328,6 @@ static/temp/jumong-night-eyes-roll.jpg
 static/temp/jumong-night-face-dirt.jpg
 static/temp/jumong-night-gold-plane-arrive.jpg
 static/temp/jumong-night-inspire-ecu.jpg
-static/temp/jumong-night-reaper-over.jpg
 static/temp/jumong-night-run-aerial.jpg
 static/temp/jumong-night-run-ots.jpg
 static/temp/jumong-night-shout-dutch.jpg
@@ -420,7 +413,6 @@ static/temp/jumong-sosuno-not-a-tour.jpg
 static/temp/jumong-sosuno-porch-kill-ecu.jpg
 static/temp/jumong-sosuno-pov-done.jpg
 static/temp/jumong-sosuno-pov-grin.jpg
-static/temp/jumong-sosuno-pov-leave.jpg
 static/temp/jumong-sosuno-pov-listen.jpg
 static/temp/jumong-sosuno-seq-cold-ots.jpg
 static/temp/jumong-sosuno-seq-ditch-dont.jpg
@@ -437,7 +429,6 @@ static/temp/jumong-sosuno-seq-love-ecu.jpg
 static/temp/jumong-sosuno-seq-love-void.jpg
 static/temp/jumong-sosuno-seq-mean-two.jpg
 static/temp/jumong-sosuno-seq-muster-dutch.jpg
-static/temp/jumong-sosuno-seq-queen-hall.jpg
 static/temp/jumong-sosuno-seq-rope-watch.jpg
 static/temp/jumong-sosuno-seq-silence-ecu.jpg
 static/temp/jumong-sosuno-seq-snap-chin.jpg
@@ -445,7 +436,6 @@ static/temp/jumong-sosuno-seq-tough-chin.jpg
 static/temp/jumong-sosuno-seq-work-chin-ecu.jpg
 static/temp/jumong-sosuno-seq-work-sacks.jpg
 static/temp/jumong-sosuno-seq-work-stern-ecu.jpg
-static/temp/jumong-sosuno-side-almost-kiss.jpg
 static/temp/jumong-sosuno-side-dump.jpg
 static/temp/jumong-sosuno-side-loft-want.jpg
 static/temp/jumong-sosuno-side-porch-chin.jpg
@@ -531,7 +521,6 @@ static/temp/jumong-yuhwa-wc-fox-pawprints.jpg
 static/temp/jumong-yuhwa-wc-wander-road.jpg
 static/temp/jumong-yuhwa-why-not-sun.jpg
 static/temp/jumong-yuhwa-worm-chariot.jpg
-static/temp/kangrim_reaper_scroll.png
 static/temp/li_shimin_dragon.png
 static/temp/li_shimin_throne.png
 static/temp/memorial_sword_blue_ribbon.png
@@ -726,13 +715,10 @@ static/temp/watchtower_red_defiance.png
 static/temp/white-river-aerial.jpg
 static/temp/white-river-aerial.png
 static/temp/white_river_aerial.png
-static/temp/xue-eastern-shaft.jpg
-static/temp/xue-longmen-farewell.jpg
 static/temp/xuerengui_banner_wind.png
 static/temp/yuhwa-exile-dejected-ecu.jpg
 static/temp/yuhwa-exile-fox-buyeo-see.jpg
 static/temp/yuhwa-exile-fox-lookback.jpg
-static/temp/yuhwa-exile-fox-pine.jpg
 static/temp/yuhwa-exile-geumwa-path.jpg
 static/temp/yuhwa-exile-habek-dutch.jpg
 # --- end generated: unreferenced static/temp ---

@@ -2,8 +2,9 @@
  * Keep production deploys from shipping orphan stand-in art under static/temp/.
  *
  * - Writes a managed block into `.vercelignore` for every temp file that nothing
- *   in story / image-people / people art references (same key rules as
- *   `artAttachmentKey` in storyImages.ts).
+ *   in story / image-people / people art references, and that no `/temp/…`
+ *   literal in `src/` code names (the /scenes feed, animals) — same key rules
+ *   as `artAttachmentKey` in storyImages.ts.
  * - Rebuilds `tempArtInventory.ts` from **referenced** on-disk files only, so
  *   the client never points at a path excluded from deploy.
  *
@@ -21,6 +22,7 @@ const TEMP_DIR = path.join(ROOT, 'static/temp');
 const STORY = path.join(ROOT, 'src/lib/data/story.json');
 const IMAGE_PEOPLE = path.join(ROOT, 'src/lib/data/image-people.json');
 const PEOPLE_TS = path.join(ROOT, 'src/lib/people.ts');
+const SRC = path.join(ROOT, 'src');
 const VERCELIGNORE = path.join(ROOT, '.vercelignore');
 const INVENTORY = path.join(ROOT, 'src/lib/tempArtInventory.ts');
 
@@ -65,7 +67,26 @@ function referencedKeys() {
 		addArtKey(keys, m[1]);
 	}
 
+	for (const file of sourceFiles(SRC)) {
+		for (const m of fs.readFileSync(file, 'utf8').matchAll(/['"`](\/temp\/[^'"`$]+)['"`]/g)) {
+			addArtKey(keys, m[1]);
+		}
+	}
+
 	return keys;
+}
+
+/** Code under src/ that can point the client at temp art. The inventory is
+ *  skipped: it is built from this result, so reading it would keep every
+ *  orphan alive. */
+function sourceFiles(dir) {
+	const out = [];
+	for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+		const p = path.join(dir, ent.name);
+		if (ent.isDirectory()) out.push(...sourceFiles(p));
+		else if (/\.(ts|js|svelte)$/.test(ent.name) && p !== INVENTORY) out.push(p);
+	}
+	return out;
 }
 
 function listTempFiles() {
@@ -80,7 +101,7 @@ function writeInventory(files) {
 	const body = [
 		'/**',
 		' * Build-time inventory of stand-in art under `static/temp/`.',
-		' * Only files referenced by the chronicle (story / people / image-people).',
+		' * Only files referenced by the chronicle (story / people / image-people) or src/ code.',
 		' * Regenerate: `node scripts/sync-temp-deploy.mjs` (or sync-temp-art-inventory.mjs).',
 		' */',
 		'',
