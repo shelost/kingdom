@@ -6,7 +6,9 @@ alwaysApply: true
 
 # Chronicle script voice
 
-Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/people.ts` (`firstLine`, `lastLine`, `quote`, `nature`). Keep the chronicle’s ear. Do not flatten wit. Do not lecture the reader.
+Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/people.ts` (`voice`, `firstLine`, `lastLine`, `quote`, `nature`). Keep the chronicle’s ear. Do not flatten wit. Do not lecture the reader.
+
+**Each speaker’s `voice` in `src/lib/people.ts` is the voice bible.** Read it for everyone who talks in a scene before you write their lines, and match its rhythm and Korean speech level. Where this file and a `voice` note disagree about a character, the note wins. Heewon’s handwritten passages stay word for word and outrank both.
 
 **Blocks** (see `src/lib/story.ts`): `p` (`html` EN + `ko`), `dialogue` (`lines[]` Korean + `en[]` English, index-for-index; `person` id), `quote` (verbatim record), `day`, `flashback`, `diagram`/`table`. Cinema plays array order; only `kind: "flashback"` reads as memory.
 
@@ -22,7 +24,7 @@ This is the **opposite** of telegram-epigram **and** of fake-literary captions. 
 - Let them ask and answer. “So who sent you.” / “Nobody sent me. Your men grabbed me.” is a scene. “River. I didn’t send me.” is a caption.
 - Full-enough sentences when strangers talk. Two or three clauses is fine. Ellipses, restarts, “wait,” “I mean,” whispering when scared.
 - **Close people** (sisters, lovers, old friends): **shared context**. Nicknames. Unfinished sentences. Interruption. Teasing cruelty. Overlap. They already know the river, the well, the hour. They do **not** plot-dump to each other.
-- Character rhythm still: Jumong easy until he isn’t, then scared and a little stupid. Sosuno sharp, too much, then covering. Tabal sour, interrogating, not poetry. Yushin numbers. Maids unfinished. **Haemosu**: feral, greedy, easy sun-god — “hey,” “wait,” want first, not a tourist counting the girls. **Yuhwa**: youngest, stays, flirty/brave, hedges then dares. **Hwahye**: eldest, leaves first, curt orders. **Wihye**: middle, laughs, then follows.
+- Character rhythm comes from the `voice` notes: Jumong easy until he isn’t, Sosuno sharp then covering, Gyebek one word where others use ten, Euija loud and royal, Gesomun crude, Chunchu and Bidam in metaphor and verse, Yushin and Bupmin plain and steady, the Second Emperor grand. Maids unfinished.
 - After a kiss / run / fight / dive: breath, a fragment, then the real sentence.
 - Bury one locked cinema phrase (`at`) in the block. Don’t let the whole speech *be* the phrase. Encyclopedia stays in the narrator.
 
@@ -53,7 +55,7 @@ A chieftain **may** list suspects (Mohe, Khitan, Han commandery) because that is
 Historical present is the default; occasional past for memory is OK.
 
 - Vary sentence length: long sentences with subordinate clauses + occasional very short punches. Wit lives *inside* the sentence, not only as an end-of-block verdict.
-- Ban AI-isms: “It is not X. It is Y.” / “not because X but because Y” / “That is not cruelty. That is administration.” — except 1–2 licensed character voices (Euija, Kangrim).
+- Ban AI-isms: “It is not X. It is Y.” / “not because X but because Y” / “That is not cruelty. That is administration.” — except Kangrim, the one licensed aphorist.
 - Em-dash budget: at most one per narration block when possible.
 - Don’t end every paragraph on a drop-beat aphorism.
 - Keep dry-chronicler humor. Don’t flatten it.
@@ -63,7 +65,7 @@ Historical present is the default; occasional past for memory is OK.
 
 1. Don’t let characters speak their own subtext (Kangrim “were you X, or Y?” + thesis). Emotion via objects already loaded, not speeches. Desperate identity claims under a knife are allowed — that is what he would say.
 2. Don’t decode the beat you just watched. One chronicler aside per scene.
-3. Distinct voices, not 109 epigram mouths. License polished aphorisms to Euija and Kangrim (Munhee sparingly). Formal court and Tang stay formal. Goddesses keep their register. Let some people be bad at talking.
+3. Distinct voices, not 109 epigram mouths. Polished aphorisms belong to Kangrim (Munhee sparingly). Chunchu and Bidam speak in metaphor and verse, each from his own world (the court for Chunchu, the temple and the soil for Bidam); Euija in proverbs, jokes and royal orders. Formal court and Tang stay formal. Goddesses keep their register. Let some people be bad at talking.
 4. Bilingual: Korean register matches the speaker.
 
 ## Structure already in the file
@@ -82,7 +84,7 @@ Classes are yearly: First Class (제일기, 560), Class 51 (오십일기), Class
 - No AD/CE in mortal `dialogue`.
 - New `p`/`dialogue` have EN + KO; Korean sounds spoken.
 - No decoder paragraph after a climax; no new “were you X, or Y?” exit interview.
-- The speaker sounds like themselves, not the chronicler (unless they are Euija or Kangrim).
+- The speaker sounds like their `voice` note in `people.ts`, not like the chronicler (Kangrim excepted).
 - Talk sounds like a scene, not a caption and not a telegram.
 - Image `at` still matches if you rewrote the beat.
 

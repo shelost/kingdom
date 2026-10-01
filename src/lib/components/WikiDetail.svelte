@@ -1039,6 +1039,13 @@
 			</section>
 		{/if}
 
+		{#if entry.voice}
+			<section>
+				<h2>Voice</h2>
+				<p class="prose">{entry.voice}</p>
+			</section>
+		{/if}
+
 		{#if canChat && chatPrompt}
 			<section class="chat-prompt">
 				<details>
