@@ -8018,7 +8018,8 @@
 					{
 						"kind": "p",
 						"html": "He does not count faces. He counts the hem — how far the long chima rides when she pours, whether the stair takes the silk to the thigh.",
-						"ko": "그는 얼굴을 세지 않는다. 자락을 센다 — 따를 때 긴 치마가 어디까지 오르는지, 계단이 비단을 허벅지까지 데려가는지."
+						"ko": "그는 얼굴을 세지 않는다. 자락을 센다 — 따를 때 긴 치마가 어디까지 오르는지, 계단이 비단을 허벅지까지 데려가는지.",
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -8041,16 +8042,26 @@
 						"lines": [
 							"폐하.",
 							"오늘은 어느 쪽이 곁에 앉을까요?",
-							"아니면… 둘 다, 숨소리만 나누고 있을까요.",
-							"무릎 사이에… 폐하 손목을 두고."
+							"아니면… 둘 다, 숨소리만 나누고 있을까요."
 						],
 						"en": [
 							"Your Majesty.",
 							"Which of us sits beside you today?",
-							"Or… shall both of us only share your breath.",
-							"With Your Majesty’s wrist… between our knees."
+							"Or… shall both of us only share your breath."
 						],
 						"person": "courtmaid"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9a0a8",
+						"person": "courtmaid",
+						"lines": [
+							"무릎 사이에… 폐하 손목을 두고."
+						],
+						"en": [
+							"With Your Majesty’s wrist… between our knees."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -8097,18 +8108,28 @@
 						"lines": [
 							"예, 폐하.",
 							"국경 얘기 하실 때 목소리가 제일 좋으세요.",
-							"그래서 저희가 자꾸 여쭙는 거고요.",
-							"그 목소리로… 저희 이름을 불러 주시면,",
-							"옷고름이… 먼저 풀립니다."
+							"그래서 저희가 자꾸 여쭙는 거고요."
 						],
 						"en": [
 							"Yes, Your Majesty.",
 							"Your voice is at its best when you talk about borders.",
-							"So we keep asking.",
+							"So we keep asking."
+						],
+						"person": "courtmaid"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9a0a8",
+						"person": "courtmaid",
+						"lines": [
+							"그 목소리로… 저희 이름을 불러 주시면,",
+							"옷고름이… 먼저 풀립니다."
+						],
+						"en": [
 							"If you say our names… in that voice,",
 							"the ties… come undone first."
 						],
-						"person": "courtmaid"
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15173,12 +15194,24 @@
 						"person": "hyulle",
 						"en": [
 							"…Golhwa.",
-							"He came to rest. I still want my mouth on him. I’m sorry. I’m not."
+							"He came to rest."
 						],
 						"lines": [
 							"…골화.",
-							"쉬러 온 거예요. 그래도 입에 대고 싶어요. 미안해요. 미안하지 않아요."
+							"쉬러 온 거예요."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"그래도 입에 대고 싶어요. 미안해요. 미안하지 않아요."
+						],
+						"en": [
+							"I still want my mouth on him. I’m sorry. I’m not."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15237,15 +15270,25 @@
 						"en": [
 							"She meant it. Don’t apologise for being right, Hyullé.",
 							"Also — your friend with the pink name. Chunchu.",
-							"He will kneel in rooms you would burn. That is not weakness. It cuts later.",
-							"You, though. If you’re going to kneel, kneel here, where I can feel it."
+							"He will kneel in rooms you would burn. That is not weakness. It cuts later."
 						],
 						"lines": [
 							"그 말 맞아요. 맞다고 사과하지 마, 혈레.",
 							"그리고 — 분홍빛 이름 가진 친구. 춘추.",
-							"당신은 태울 방에서 그는 무릎을 꿇을 거예요. 약함이 아니야. 나중에 베니까.",
-							"너는. 무릎 꿇을 거면 여기 꿇어. 내가 느끼게."
+							"당신은 태울 방에서 그는 무릎을 꿇을 거예요. 약함이 아니야. 나중에 베니까."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"너는. 무릎 꿇을 거면 여기 꿇어. 내가 느끼게."
+						],
+						"en": [
+							"You, though. If you’re going to kneel, kneel here, where I can feel it."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15267,14 +15310,35 @@
 						"en": [
 							"Ugh…",
 							"<i>“Her Majesty.” “Her Majesty.”</i>",
-							"What does that mortal have that we don’t? A chair. I’ve got my legs open and you’re still saying her name.",
-							"Stay with us, Yushin~~"
+							"What does that mortal have that we don’t? A chair."
 						],
 						"lines": [
 							"으엑…",
 							"<i>«폐하.» «폐하.»</i>",
-							"그 인간한테 우리한테 없는 게 뭐가 있는데? 의자. 난 다리 벌리고 있는데 너는 아직도 그 이름을 불러.",
+							"그 인간한테 우리한테 없는 게 뭐가 있는데? 의자."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"난 다리 벌리고 있는데 너는 아직도 그 이름을 불러."
+						],
+						"en": [
+							"I’ve got my legs open and you’re still saying her name."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
 							"우리랑 있어, 유신~~"
+						],
+						"en": [
+							"Stay with us, Yushin~~"
 						]
 					},
 					{
@@ -15316,14 +15380,24 @@
 						"person": "hyulle",
 						"en": [
 							"…The binyeo is pretty. The face is tired.",
-							"…He can go.",
-							"I only — wanted my thighs around him before the road. Warm was the polite word."
+							"…He can go."
 						],
 						"lines": [
 							"…비녀는 예뻐요. 얼굴은 지쳤어요.",
-							"…가도 돼요.",
-							"전 단지 — 길 나서기 전에 허벅지로 감고 싶었어요. 따뜻하다는 말은 점잖은 거였어요."
+							"…가도 돼요."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"전 단지 — 길 나서기 전에 허벅지로 감고 싶었어요. 따뜻하다는 말은 점잖은 거였어요."
+						],
+						"en": [
+							"I only — wanted my thighs around him before the road. Warm was the polite word."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15346,12 +15420,24 @@
 						"person": "golhwa",
 						"en": [
 							"Hear that? He thanked the water. Not us.",
-							"Fine. Go play marshal. Next time, leave the armour — and that mortal — outside the cave. Leave the hard part in here."
+							"Fine. Go play marshal. Next time, leave the armour — and that mortal — outside the cave."
 						],
 						"lines": [
 							"들려? 물한테 고맙대. 우리한테가 아니라.",
-							"그래. 가서 장군 놀아. 다음엔 갑옷이랑 — 그 인간도 — 동굴 밖에 두고 와. 선 건 여기 두고."
+							"그래. 가서 장군 놀아. 다음엔 갑옷이랑 — 그 인간도 — 동굴 밖에 두고 와."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"선 건 여기 두고."
+						],
+						"en": [
+							"Leave the hard part in here."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15360,13 +15446,25 @@
 						"en": [
 							"Golhwa. Hyullé.",
 							"The warm ledge around the bend — and the herbs in the cleft. Both of you.",
-							"Go on. The marshal still has ears for counsel… and I still have a mouth for it. I’m going to use the mouth."
+							"Go on. The marshal still has ears for counsel… and I still have a mouth for it."
 						],
 						"lines": [
 							"골화. 혈레.",
 							"굽이 너머 따뜻한 턱이랑 — 틈새의 약초. 둘 다.",
-							"가. 대장군은 아직 조언 들을 귀가 있고… 나한테는 그걸 받을 입이 있어. 그 입, 쓸 거야."
+							"가. 대장군은 아직 조언 들을 귀가 있고… 나한테는 그걸 받을 입이 있어."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"그 입, 쓸 거야."
+						],
+						"en": [
+							"I’m going to use the mouth."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15387,12 +15485,24 @@
 						"person": "hyulle",
 						"en": [
 							"…Yes, unnie.",
-							"We’ll — we’ll be quick. Don’t you dare finish him before I hear it."
+							"We’ll — we’ll be quick."
 						],
 						"lines": [
 							"…네, 언니.",
-							"금방 — 금방 올게요. 제가 듣기 전에 끝내 버리면 안 돼요."
+							"금방 — 금방 올게요."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"제가 듣기 전에 끝내 버리면 안 돼요."
+						],
+						"en": [
+							"Don’t you dare finish him before I hear it."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "p",
@@ -15406,13 +15516,25 @@
 						"en": [
 							"You thanked the water.",
 							"I am not water.",
-							"Come here, Kim Yushin — I want you in my mouth before the border teaches you how to refuse."
+							"Come here, Kim Yushin"
 						],
 						"lines": [
 							"물한테 고맙다 했죠.",
 							"나는 물이 아니에요.",
-							"이리 와요, 김유신 — 국경이 거절을 가르치기 전에 제 입에 넣어요."
+							"이리 와요, 김유신"
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"— 국경이 거절을 가르치기 전에 제 입에 넣어요."
+						],
+						"en": [
+							"— I want you in my mouth before the border teaches you how to refuse."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15434,13 +15556,25 @@
 						"en": [
 							"I told <i>them</i>.",
 							"The counsel was real. So is this.",
-							"Stay. Not for the queen. Not for the road. For the part of you that’s hard, pretending the steam has no mouth."
+							"Stay. Not for the queen. Not for the road."
 						],
 						"lines": [
 							"<i>애들한테</i> 한 말이지.",
 							"조언은 진짜였어요. 이것도.",
-							"남아요. 여왕 때문도, 길 때문도 아니에요. 지금 선 그거 때문에. 김에 입이 없는 척하지 마요."
+							"남아요. 여왕 때문도, 길 때문도 아니에요."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"지금 선 그거 때문에. 김에 입이 없는 척하지 마요."
+						],
+						"en": [
+							"For the part of you that’s hard, pretending the steam has no mouth."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "p",
@@ -15467,13 +15601,25 @@
 						"en": [
 							"Of course you do.",
 							"Mainland boys always do.",
-							"So kiss me like someone who will be late for the border — and put your hand under the silk while you still can."
+							"So kiss me like someone who will be late for the border"
 						],
 						"lines": [
 							"당연하죠.",
 							"뭍의 남자들은 늘 그래요.",
-							"그러니까 국경에 늦을 사람처럼 입 맞춰요 — 아직 될 때 비단 밑에 손을 넣고요."
+							"그러니까 국경에 늦을 사람처럼 입 맞춰요"
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"— 아직 될 때 비단 밑에 손을 넣고요."
+						],
+						"en": [
+							"— and put your hand under the silk while you still can."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "p",
@@ -15493,7 +15639,8 @@
 							"그래요.",
 							"더. 김은 말하지 않아요.",
 							"…동생들이 하기 전엔. 살살 할 생각 하지 마요."
-						]
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15518,13 +15665,25 @@
 						"en": [
 							"UNNIE.",
 							"You sent us for herbs so you could—?!",
-							"What does that mortal have that we don’t — wait. What do <i>you</i> have that <i>we</i> don’t?! Him. In you. Get off, or share."
+							"What does that mortal have that we don’t — wait. What do <i>you</i> have that <i>we</i> don’t?!"
 						],
 						"lines": [
 							"언니.",
 							"약초 시키면서 그 짓을—?!",
-							"그 인간한테 우리한테 없는 게 뭐야 — 잠깐. <i>언니</i>가 <i>우리</i>한테 없는 게 뭐야?! 그 사람. 안에. 내려오든가 나눠."
+							"그 인간한테 우리한테 없는 게 뭐야 — 잠깐. <i>언니</i>가 <i>우리</i>한테 없는 게 뭐야?!"
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"그 사람. 안에. 내려오든가 나눠."
+						],
+						"en": [
+							"Him. In you. Get off, or share."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15533,13 +15692,25 @@
 						"en": [
 							"…Unnie.",
 							"You said we were his steam.",
-							"Steam doesn’t… hold like that. I was going to. I kept my knees together so I wouldn’t, and you sat down first."
+							"Steam doesn’t… hold like that."
 						],
 						"lines": [
 							"…언니.",
 							"김이라 했잖아요.",
-							"김은… 그렇게 안 안아요. 제가 하려고 했어요. 무릎 붙잡고 참았는데, 언니가 먼저 앉았어요."
+							"김은… 그렇게 안 안아요."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"제가 하려고 했어요. 무릎 붙잡고 참았는데, 언니가 먼저 앉았어요."
+						],
+						"en": [
+							"I was going to. I kept my knees together so I wouldn’t, and you sat down first."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15548,13 +15719,25 @@
 						"en": [
 							"Put the herbs down.",
 							"And close your mouths before the marshal remembers he can still dress.",
-							"…Hyullé. The ledge. Warm it anyway — he will run, and he will pretend this was weather. You can still taste where I was."
+							"…Hyullé. The ledge. Warm it anyway — he will run, and he will pretend this was weather."
 						],
 						"lines": [
 							"약초 내려놔.",
 							"그리고 입 다물어. 대장군이 아직 옷 입을 수 있다는 걸 기억하기 전에.",
-							"…혈레. 턱. 그래도 데워 둬 — 뛸 거고, 이걸 날씨였다고 우길 테니. 내가 있던 자리는 아직 맛볼 수 있어."
+							"…혈레. 턱. 그래도 데워 둬 — 뛸 거고, 이걸 날씨였다고 우길 테니."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"내가 있던 자리는 아직 맛볼 수 있어."
+						],
+						"en": [
+							"You can still taste where I was."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15575,14 +15758,47 @@
 						"person": "golhwa",
 						"en": [
 							"Oh <i>now</i> he thanks the exit.",
-							"Fine. Next time nobody leaves the rock. I mean it. I’ll sit on his face until the queen’s numbers fall out.",
-							"Stay with us, Yushin~~ — or at least stop letting unnie eat first."
+							"Fine. Next time nobody leaves the rock. I mean it."
 						],
 						"lines": [
 							"아 <i>이제</i> 나가면서 고맙대.",
-							"좋아. 다음엔 아무도 바위 못 떠나. 진심이야. 왕비 셈이 머리에서 빠질 때까지 얼굴에 앉을 거야.",
-							"우리랑 있어, 유신~~ — 아니면 적어도 언니가 먼저 먹지 못하게 해."
+							"좋아. 다음엔 아무도 바위 못 떠나. 진심이야."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"왕비 셈이 머리에서 빠질 때까지 얼굴에 앉을 거야."
+						],
+						"en": [
+							"I’ll sit on his face until the queen’s numbers fall out."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"우리랑 있어, 유신~~"
+						],
+						"en": [
+							"Stay with us, Yushin~~"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"— 아니면 적어도 언니가 먼저 먹지 못하게 해."
+						],
+						"en": [
+							"— or at least stop letting unnie eat first."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -15591,12 +15807,35 @@
 						"en": [
 							"…The ledge is still warm.",
 							"If you want. Before the road.",
-							"I won’t — look. Much. I’ll look lower. I’m sorry. Come here anyway."
+							"I won’t — look. Much."
 						],
 						"lines": [
 							"…턱은 아직 따뜻해요.",
 							"원하시면. 길 나서기 전에.",
-							"전 — 많이 안 볼게요. 아래는 볼게요. 미안해요. 그래도 와요."
+							"전 — 많이 안 볼게요."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"아래는 볼게요."
+						],
+						"en": [
+							"I’ll look lower."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"미안해요. 그래도 와요."
+						],
+						"en": [
+							"I’m sorry. Come here anyway."
 						]
 					},
 					{
@@ -19024,10 +19263,10 @@
 						"kind": "dialogue",
 						"chip": "#4a8fe0",
 						"lines": [
-							"허 참… 난 우리나라가 먼저 망하는 줄 알았더니, 고려가 먼저 가는구먼~ 그래, 그 신하는 또 누군가?"
+							"허 참… 난 우리나라가 먼저 망하는 줄 알았더니, 고려가 먼저 가는구먼. 그래, 그 신하는 또 누군가?"
 						],
 						"en": [
-							"Well I never… I thought our country would fall first, and Goryeo goes ahead of us~ So who is this subject?"
+							"Well I never… I thought our country would fall first, and Goryeo goes ahead of us. So who is this subject?"
 						],
 						"person": "yushin"
 					},
@@ -20176,17 +20415,27 @@
 						"chip": "#c9a0a8",
 						"lines": [
 							"폐하. 고려는 춥습니다.",
-							"저희로… 녹여 드릴까요?",
+							"저희로… 녹여 드릴까요?"
+						],
+						"en": [
+							"Your Majesty. Goryeo is cold.",
+							"Shall we… warm you?"
+						],
+						"person": "courtmaid"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9a0a8",
+						"person": "courtmaid",
+						"lines": [
 							"입술로. 허벅지로.",
 							"폐하가 지도 보시는 동안에도요."
 						],
 						"en": [
-							"Your Majesty. Goryeo is cold.",
-							"Shall we… warm you?",
 							"With mouths. With thighs.",
 							"Even while you look at the map."
 						],
-						"person": "courtmaid"
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -20209,44 +20458,74 @@
 						"kind": "dialogue",
 						"chip": "#c9a0a8",
 						"lines": [
-							"오늘 밤은 둘이 들어가겠습니다.",
+							"오늘 밤은 둘이 들어가겠습니다."
+						],
+						"en": [
+							"So tonight two of us will come in."
+						],
+						"person": "courtmaid"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9a0a8",
+						"person": "courtmaid",
+						"lines": [
 							"폐하를 한 몸으로 감싸기엔… 모자라서요.",
 							"양쪽에서… 동시에요."
 						],
 						"en": [
-							"So tonight two of us will come in.",
 							"One body isn’t enough… to hold Your Majesty.",
 							"From both sides… at once."
 						],
-						"person": "courtmaid"
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#e0b155",
 						"lines": [
-							"…아첨하지 말거라.",
-							"이미… 몸이 대답하고 있다."
+							"…아첨하지 말거라."
 						],
 						"en": [
-							"…Don’t flatter.",
-							"The body… is already answering."
+							"…Don’t flatter."
 						],
 						"person": "euija"
 					},
 					{
 						"kind": "dialogue",
+						"chip": "#e0b155",
+						"person": "euija",
+						"lines": [
+							"이미… 몸이 대답하고 있다."
+						],
+						"en": [
+							"The body… is already answering."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
 						"chip": "#c9a0a8",
 						"lines": [
-							"아첨이 아니에요.",
+							"아첨이 아니에요."
+						],
+						"en": [
+							"It isn’t flattery."
+						],
+						"person": "courtmaid"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9a0a8",
+						"person": "courtmaid",
+						"lines": [
 							"손이… 기억하니까요.",
 							"어제 밤 폐하가… 어디에 두라고 하셨는지."
 						],
 						"en": [
-							"It isn’t flattery.",
 							"The hands… remember.",
 							"Where Your Majesty… told them to go last night."
 						],
-						"person": "courtmaid"
+						"nsfw": true
 					},
 					{
 						"kind": "p",
@@ -20543,12 +20822,24 @@
 						"person": "golhwa",
 						"en": [
 							"Stay is not a number, marshal.",
-							"Sit. Unnie will do the other two. I’ll do the one she pretends isn’t counsel. It involves my mouth."
+							"Sit. Unnie will do the other two. I’ll do the one she pretends isn’t counsel."
 						],
 						"lines": [
 							"남는 건 숫자가 아니야, 원수.",
-							"앉아. 나머지 둘은 언니가 해. 언니가 충고가 아니라고 하는 건 내가 할게. 내 입이 필요해."
+							"앉아. 나머지 둘은 언니가 해. 언니가 충고가 아니라고 하는 건 내가 할게."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"내 입이 필요해."
+						],
+						"en": [
+							"It involves my mouth."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "p",
@@ -20563,24 +20854,48 @@
 						"en": [
 							"Yeon’s door is a guest-door only from one side.",
 							"The queen’s count is the one they will not let her finish. Bring her the west in numbers. Do not stand in front of the chair.",
-							"Take what you need. Leave before Golhwa asks you to stay. She will ask. She will also try to sit on you. I’m only warning you about one of those."
+							"Take what you need. Leave before Golhwa asks you to stay. She will ask."
 						],
 						"lines": [
 							"연의 문은 한쪽에서만 손님 문이에요.",
 							"여왕의 수는 끝내게 두지 않는 수예요. 서쪽을 숫자로 가져와요. 의자 앞에 서지 말아요.",
-							"필요한 것만 가져가요. 골화가 남으라 하기 전에 가요. 할 테니까. 앉으려고도 할 거야. 경고는 그중 하나만 하는 거고."
+							"필요한 것만 가져가요. 골화가 남으라 하기 전에 가요. 할 테니까."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"앉으려고도 할 거야. 경고는 그중 하나만 하는 거고."
+						],
+						"en": [
+							"She will also try to sit on you. I’m only warning you about one of those."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"Stay. In the water. On me, if you can bear the youngest being first."
+							"Stay. In the water."
 						],
 						"lines": [
-							"있어. 물속에. 내 위에, 막내가 먼저인 걸 견딜 수 있으면."
+							"있어. 물속에."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"내 위에, 막내가 먼저인 걸 견딜 수 있으면."
+						],
+						"en": [
+							"On me, if you can bear the youngest being first."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
