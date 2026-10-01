@@ -19362,7 +19362,7 @@
 						"nsfw": false,
 						"alt": "jumong-galsa-smaller-smile",
 						"tempImage": "/temp/jumong-galsa-smaller-smile.jpg",
-						"at": "If it lands,"
+						"at": "I was going to clap"
 					},
 					{
 						"id": "jumong-galsa-east-split",
@@ -21024,7 +21024,7 @@
 						"ratio": 1.778,
 						"nsfw": false,
 						"alt": "jumong-daughter-teal-talk-ecu",
-						"at": "Hey big boy~",
+						"at": "the one who never misses",
 						"tempImage": "/temp/jumong-daughter-teal-talk-ecu.jpg"
 					},
 					{
@@ -22426,18 +22426,14 @@
 						"kind": "dialogue",
 						"chip": "#8fc4e0",
 						"lines": [
-							"하늘이 매일 내려다보는데.",
-							"오늘만 부끄러워하라고요?",
-							"…더 가까이 오세요. 보고 싶으시다면.",
-							"물속까지요.",
-							"손… 어디에 두실지도 정하고 오시고요."
+							"하늘은 매일 내려다보잖아요. 오늘만 숨으라고요?",
+							"…보고 싶으면, 더 가까이 오시든가요.",
+							"손은… 어디 둘지 정하고 오시고요."
 						],
 						"en": [
-							"Heaven looks down every day.",
-							"So today I’m supposed to blush?",
-							"…Come closer, if you want to see.",
-							"Into the water.",
-							"And decide… where your hands are going."
+							"Heaven looks down every day. Today I’m supposed to hide?",
+							"…If you want to see, come closer.",
+							"And decide… where your hands go first."
 						],
 						"person": "yuhwa"
 					},
@@ -22461,14 +22457,12 @@
 						"chip": "#8fc4e0",
 						"lines": [
 							"먼저 내려오세요.",
-							"하늘에서 부르면 명령이니까.",
-							"물가에서는… 청으로 들을게요.",
+							"거기서 부르시면 다 명령 같잖아요.",
 							"입술로 물으시면… 이름으로 대답할게요."
 						],
 						"en": [
 							"Come down first.",
-							"From the sky it’s an order.",
-							"At the water… I’ll hear it as a request.",
+							"From up there everything sounds like an order.",
 							"Ask with your mouth… and I’ll answer with my name."
 						],
 						"person": "yuhwa"
@@ -22500,12 +22494,12 @@
 						"kind": "dialogue",
 						"chip": "#8fc4e0",
 						"en": [
-							"…Didn’t see any reason.",
-							"The water’s cold. You’re warm. That’s all there is to it."
+							"…Didn’t see a reason to.",
+							"The water’s cold. You’re warm."
 						],
 						"lines": [
-							"…이유가 안 보여서요.",
-							"물은 차갑고, 당신은 따뜻하고. 그게 다예요."
+							"…도망갈 이유가 없던데요.",
+							"물은 차갑고, 당신은 따뜻하고요."
 						],
 						"person": "yuhwa"
 					},
@@ -22553,13 +22547,13 @@
 						"chip": "#8fc4e0",
 						"en": [
 							"I like what I see.",
-							"I’m looking anyway. You came down.",
-							"Don’t make me say it twice."
+							"I’m looking anyway. You came all the way down.",
+							"Don’t just stand there."
 						],
 						"lines": [
 							"보는 게… 좋아요.",
-							"어차피 보고 있는데요. 내려오셨잖아요.",
-							"두 번 말하게 하지 마요."
+							"어차피 보고 있는걸요. 여기까지 내려오셨는데.",
+							"그렇게 서 있지만 마시고요."
 						],
 						"person": "yuhwa"
 					},
@@ -22579,11 +22573,11 @@
 						"chip": "#8fc4e0",
 						"en": [
 							"This way. The bank.",
-							"The sky has too many sisters."
+							"Out here everyone can see. My sisters, too."
 						],
 						"lines": [
 							"이쪽이요. 강턱.",
-							"하늘엔 언니가 너무 많아요."
+							"여긴 다 보여요. 언니들한테도."
 						],
 						"person": "yuhwa"
 					},
@@ -22601,16 +22595,14 @@
 						"kind": "dialogue",
 						"chip": "#8fc4e0",
 						"lines": [
-							"구리는 여름에 뜨겁습니다.",
-							"…만지면 알 수 있어요.",
+							"구리는 여름엔 뜨거워요.",
 							"제 등도요.",
-							"구리에 기대면… 어디에 데었는지 구분 못 하실 거예요."
+							"저를 거기 기대 세우시면… 뭐에 데었는지 모르실걸요."
 						],
 						"en": [
 							"Copper gets hot in summer.",
-							"…You’ll know if you touch it.",
-							"My back, too.",
-							"If you press me to it… you won’t tell which burned you."
+							"So does my back.",
+							"Press me against it… and you won’t know which one burned you."
 						],
 						"person": "yuhwa"
 					},
@@ -22670,11 +22662,11 @@
 						"chip": "#8fc4e0",
 						"en": [
 							"If you want it, say so.",
-							"I’m not asking twice."
+							"Out loud."
 						],
 						"lines": [
 							"원하면 말해요.",
-							"두 번은 안 물어요."
+							"소리 내서요."
 						],
 						"person": "yuhwa",
 						"nsfw": true
@@ -22770,7 +22762,7 @@
 						"kind": "dialogue",
 						"chip": "#3E79E4",
 						"en": [
-							"Who stopped the chariot. Say a name."
+							"Who stopped the chariot? Give me a name."
 						],
 						"lines": [
 							"수레를 멈춘 게 누구냐. 이름을 대라."
@@ -22794,12 +22786,12 @@
 						"kind": "dialogue",
 						"chip": "#3E79E4",
 						"en": [
-							"You don’t sleep in my mist after that.",
-							"You smell like copper."
+							"You smell of copper.",
+							"You don’t sleep in my mist again."
 						],
 						"lines": [
-							"그 다음엔 내 안개에서 자지 못한다.",
-							"구리 냄새가 난다."
+							"구리 냄새가 나는구나.",
+							"다시는 내 안개에서 자지 못한다."
 						],
 						"person": "habek"
 					},
@@ -22807,10 +22799,10 @@
 						"kind": "dialogue",
 						"chip": "#3E79E4",
 						"en": [
-							"Go. The bank is closed."
+							"Go. This river doesn’t know you anymore."
 						],
 						"lines": [
-							"가라. 이 강턱은 닫았다."
+							"가거라. 이 강은 이제 너를 모른다."
 						],
 						"person": "habek"
 					},
@@ -22870,11 +22862,11 @@
 						"chip": "#a89a72",
 						"en": [
 							"Come in. I’ve got a room free.",
-							"The yard can learn your name later."
+							"Your name can wait. Sit down first."
 						],
 						"lines": [
-							"들어와. 빈 방이 있다.",
-							"이름은 마당이 나중에 알아도 된다."
+							"들어오게. 빈 방이 하나 있네.",
+							"이름은 나중에 듣지. 우선 앉게."
 						],
 						"person": "geumwa"
 					},
@@ -22989,10 +22981,12 @@
 						"chip": "#9b8f6a",
 						"person": "daeso",
 						"lines": [
-							"먹여 주는 집보다 멀리 쏘지 마라."
+							"막내야. 가끔은 좀 빗맞혀라.",
+							"밥 먹여 주는 집 체면도 생각해야지."
 						],
 						"en": [
-							"Do not outshoot the house that feeds you."
+							"Little brother. Miss once in a while.",
+							"Think of the house that feeds you."
 						]
 					},
 					{
@@ -23000,10 +22994,10 @@
 						"chip": "#e8563f",
 						"person": "jumong",
 						"lines": [
-							"그럼 과녁을 더 멀리 두시오."
+							"그럼 과녁을 더 뒤로 옮기시든가요, 형님."
 						],
 						"en": [
-							"Then put the mark farther."
+							"Then put the mark farther back, brother."
 						]
 					},
 					{
@@ -23011,10 +23005,10 @@
 						"chip": "#6b8f4a",
 						"person": "galsa",
 						"lines": [
-							"맞으면, 치려던 거다."
+							"아, 맞았네… 박수 치려고 했어. 진짜로."
 						],
 						"en": [
-							"If it lands, I meant to applaud."
+							"Oh— it landed… I was going to clap. Really."
 						]
 					},
 					{
@@ -23047,11 +23041,11 @@
 						"chip": "#9b8f6a",
 						"en": [
 							"Do it before the next hunt.",
-							"Quiet is fine."
+							"Quietly. I don’t want to hear about it."
 						],
 						"lines": [
 							"다음 사냥 전에 끝내.",
-							"조용하면 됐다."
+							"조용히. 내 귀에 안 들리게."
 						],
 						"person": "daeso"
 					},
@@ -23187,7 +23181,7 @@
 						],
 						"lines": [
 							"부여를 떠나. 오늘 밤.",
-							"등잔은 내가 켤게."
+							"등잔은 내가 지킬게."
 						],
 						"person": "ladyye"
 					},
@@ -23196,11 +23190,11 @@
 						"chip": "#e8563f",
 						"en": [
 							"Leave the door half open.",
-							"So I know which way is still yours."
+							"You know I get lost."
 						],
 						"lines": [
-							"문은 반만 닫아 둬.",
-							"어느 쪽이 아직 네 건지 알게."
+							"문 반만 열어 둬.",
+							"나 길 잘 잃잖아."
 						],
 						"person": "jumong"
 					},
@@ -23229,11 +23223,11 @@
 						"chip": "#8d8d95",
 						"en": [
 							"We’ll take the ridge.",
-							"Find us when you still have a bow."
+							"See you south. Don’t die."
 						],
 						"lines": [
-							"우리는 능선으로 간다.",
-							"활이 남아 있을 때 찾아."
+							"우린 능선 탄다.",
+							"남쪽에서 보자. 죽지 말고."
 						],
 						"person": "oi"
 					},
@@ -23307,8 +23301,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Jumong’s cheek is in the mud. Haewonmek looks back. Behind him, in a dark hood, the sun god is holding his wrist and laughing, as if the night had grabbed the wrong man. The night is Haewonmek’s road. The joke is Haemosu’s.",
-						"ko": "주몽의 뺨은 진흙에 있다. 해원맥이 돌아본다. 그 뒤에서 검은 두건을 쓴 태양신이 그의 손목을 잡은 채 웃고 있다. 밤이 사람을 잘못 집었다는 듯이. 밤은 해원맥의 길이다. 농담은 해모수의 것이다."
+						"html": "Jumong’s cheek is in the mud. Haewonmek looks back. Behind him, in a dark hood, the sun god is holding his wrist and laughing, as if the night had grabbed the wrong man.",
+						"ko": "주몽의 뺨은 진흙에 있다. 해원맥이 돌아본다. 그 뒤에서 검은 두건을 쓴 태양신이 그의 손목을 잡은 채 웃고 있다. 밤이 사람을 잘못 집었다는 듯이."
 					},
 					{
 						"kind": "dialogue",
@@ -23328,8 +23322,8 @@
 						"chip": "#f0b429",
 						"lines": [
 							"흥…",
-							"해가 밤에 사라진다고 정말 생각하느냐.",
-							"바다를 건너다 네가 오는 소리가 들리더군."
+							"해가 밤엔 사라지는 줄 알았냐?",
+							"바다 건너는데 너 오는 소리가 들리더라."
 						],
 						"en": [
 							"Heh…",
@@ -23356,17 +23350,17 @@
 						"chip": "#f0b429",
 						"lines": [
 							"야, 해원맥.",
-							"아우가 새 일 하는 동안은 가만 둘 셈이었다.",
-							"허나 이건 내 아들이다.",
-							"아직 이승에서 할 일이 남았다.",
-							"게다가… 내가 위다.",
-							"염라가 할 말 있으면, 직접 와서 보라 해라."
+							"아우 새 일 하는 건 웬만하면 안 건드려.",
+							"근데 이건 내 아들이야.",
+							"아직 이승에서 할 일이 남았어.",
+							"게다가… 내가 위잖아.",
+							"염라가 불만 있으면, 나한테 직접 오라 그래."
 						],
 						"en": [
 							"Hey, Haewonmek.",
 							"I’ll leave my little brother alone while he’s at his new job.",
 							"But this is my son.",
-							"And he still hasn’t completed his purpose in this world.",
+							"And he’s not done in this world yet.",
 							"And besides… I outrank you.",
 							"If Yumla has any complaints, tell him to come see me himself."
 						],
@@ -23420,16 +23414,14 @@
 						"kind": "dialogue",
 						"chip": "#f0b429",
 						"lines": [
-							"그래. 물론이지.",
-							"허나 말이야… 사람은 누구나 이승에 온 까닭이 있다.",
-							"저 애는 큰일을 할 거다.",
-							"때가 되면, 그때는 네가 데려가게 두지."
+							"알아, 알아.",
+							"근데 쟤는 큰일 할 놈이야. 두고 봐.",
+							"때 되면 데려가. 그땐 안 막을게."
 						],
 						"en": [
-							"Yes, of course.",
-							"But you know… every man comes into this world for a purpose.",
-							"He’s going to do great things.",
-							"When his time comes, I’ll let you take him."
+							"I know, I know.",
+							"But that one’s going to do big things. You’ll see.",
+							"When his time comes, take him. I won’t stop you then."
 						],
 						"person": "haemosu"
 					},
@@ -23438,8 +23430,8 @@
 						"chip": "#f0b429",
 						"person": "haemosu",
 						"lines": [
-							"봐. 저거.",
-							"내 아이다."
+							"봐, 봐. 저거.",
+							"내 아들이야."
 						],
 						"en": [
 							"Look at him go.",
@@ -23462,8 +23454,8 @@
 						"chip": "#f0b429",
 						"person": "haemosu",
 						"lines": [
-							"하루를 빌렸다.",
-							"돌려줄 테다."
+							"하루 빌렸어.",
+							"돌려줄게."
 						],
 						"en": [
 							"I borrowed a day.",
@@ -23594,13 +23586,11 @@
 						"chip": "#e8563f",
 						"en": [
 							"Down. It’s down.",
-							"Don’t— spear. Please.",
-							"Water—"
+							"The spear— could you not. Please."
 						],
 						"lines": [
-							"내렸어. 내려놨어.",
-							"창— 창만. 제발.",
-							"물—"
+							"내려놨어요. 내려놨다고요.",
+							"창— 창은 좀 치워 줘요. 제발."
 						]
 					},
 					{
@@ -23612,7 +23602,7 @@
 							"You deaf?"
 						],
 						"lines": [
-							"손. 손 보여.",
+							"손. 손 보이게 들어.",
 							"귀 먹었어?"
 						]
 					},
@@ -23621,12 +23611,12 @@
 						"person": "jumong",
 						"chip": "#e8563f",
 						"en": [
-							"Yeah. Yeah look.",
-							"Just— I ran. River. That’s it."
+							"Yeah. Yeah, look.",
+							"I just— ran. From the river. That’s all."
 						],
 						"lines": [
-							"응. 봐봐.",
-							"그냥— 뛰었어. 강. 그게 다야."
+							"네, 네. 봐요.",
+							"그냥— 뛰었어요. 강에서. 그게 다예요."
 						]
 					},
 					{
@@ -23651,8 +23641,8 @@
 							"Jumong. That’s— that’s the name."
 						],
 						"lines": [
-							"주몽.",
-							"주몽. 그게— 이름이야."
+							"주몽이요.",
+							"주몽. 그게— 그게 이름이에요."
 						]
 					},
 					{
@@ -23664,8 +23654,8 @@
 							"Walk. If you trip I swear—"
 						],
 						"lines": [
-							"타발 어른께 가게.",
-							"걸어. 넘어지면 진짜—"
+							"타발 어른한테 간다.",
+							"걸어. 넘어지기만 해 봐—"
 						]
 					},
 					{
@@ -23712,8 +23702,8 @@
 							"Your men grabbed me. I was just— here."
 						],
 						"lines": [
-							"아무도 안 보냈어요.",
-							"당신 사람들이 잡았어요. 그냥… 여기 있었어요."
+							"아무도 안 보냈소.",
+							"그쪽 사람들이 날 잡아 온 거요. 나는 그냥… 여기 있었소."
 						],
 						"person": "jumong"
 					},
@@ -23724,7 +23714,7 @@
 							"I asked for a name."
 						],
 						"lines": [
-							"이름은 물었다."
+							"이름 물었다."
 						],
 						"person": "yeontabal"
 					},
@@ -23736,8 +23726,8 @@
 							"That’s the name."
 						],
 						"lines": [
-							"주몽이요.",
-							"그게 이름이에요."
+							"주몽이오.",
+							"그게 이름이오."
 						],
 						"person": "jumong"
 					},
@@ -23745,12 +23735,12 @@
 						"kind": "dialogue",
 						"chip": "#a97c4a",
 						"en": [
-							"Your clothes don’t look like anything nearby.",
+							"Don’t play dumb. Your clothes don’t look like anything nearby.",
 							"Mohe? Khitan? Or the commandery?"
 						],
 						"lines": [
-							"네 옷은 이 근처 어디에도 안 닮았다.",
-							"말갈? 거란? 아니면 군현?"
+							"장난하냐. 그 옷, 이 근처 옷이 아니다.",
+							"말갈이냐? 거란이냐? 아니면 군현 놈이냐?"
 						],
 						"person": "yeontabal"
 					},
@@ -23798,10 +23788,10 @@
 						"kind": "dialogue",
 						"chip": "#e8563f",
 						"en": [
-							"Ow— I said it."
+							"Oh no— I said that out loud."
 						],
 						"lines": [
-							"앗, 말했잖아요."
+							"아… 소리 내서 말했네."
 						],
 						"person": "jumong"
 					},
@@ -23843,8 +23833,8 @@
 							"The bow knows. I didn’t ask it to."
 						],
 						"lines": [
-							"해모수의 아들이요.",
-							"활이 알아요. 제가 부탁한 건 아닌데."
+							"해모수의 아들이오.",
+							"활이 아는 거요. 내가 시킨 건 아니고."
 						],
 						"person": "jumong"
 					},
@@ -23859,12 +23849,12 @@
 						"en": [
 							"You're a slave. My daughter's.",
 							"Shed. You hunt, you eat.",
-							"I do not want ash tracked into my hall."
+							"Don’t track ash into my hall."
 						],
 						"lines": [
 							"넌 종이다. 내 딸의.",
 							"헛간. 사냥하면 먹어.",
-							"내 마루에 재 끌어들이고 싶지 않다."
+							"내 마루에 재 묻히지 마."
 						],
 						"person": "yeontabal"
 					},
@@ -23898,7 +23888,7 @@
 						],
 						"lines": [
 							"예.",
-							"…우물이 더 좋긴 해요."
+							"…우물이 더 좋긴 하오만."
 						]
 					},
 					{
@@ -24025,7 +24015,8 @@
 							"저 얼굴. 저 가슴. 젖었어. 내가—",
 							"여기선 안 돼. 아버지 앞에서. 좀 작게 그르렁거려. 작게—"
 						],
-						"nsfw": true
+						"nsfw": true,
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "dialogue",
@@ -24122,12 +24113,12 @@
 						"kind": "dialogue",
 						"chip": "#e8a04a",
 						"en": [
-							"It's not like that. Worker.",
-							"Move the sack."
+							"It’s not like that. He’s a worker.",
+							"You. Move the sack."
 						],
 						"lines": [
-							"그런 거 아니야. 일꾼.",
-							"가마니나 옮겨."
+							"그런 거 아니거든. 그냥 일꾼이야.",
+							"너. 가마니나 옮겨."
 						],
 						"person": "sosuno"
 					},
@@ -24148,10 +24139,10 @@
 						"kind": "dialogue",
 						"chip": "#e8563f",
 						"en": [
-							"So how long has it been."
+							"So how long have I been yours?"
 						],
 						"lines": [
-							"그래서 얼마나 됐어."
+							"그래서, 나 언제부터 네 거였어?"
 						],
 						"person": "jumong"
 					},
@@ -24170,10 +24161,10 @@
 						"kind": "dialogue",
 						"chip": "#e8563f",
 						"en": [
-							"Then why are you furiously blushing."
+							"Then why are you going so red?"
 						],
 						"lines": [
-							"그럼 왜 그렇게 세게 붉어져."
+							"그럼 왜 그렇게 빨개져?"
 						],
 						"person": "jumong"
 					},
@@ -24181,12 +24172,12 @@
 						"kind": "dialogue",
 						"chip": "#e8a04a",
 						"en": [
-							"I’m also not stopping.",
-							"The count. Not you."
+							"I’m not red!!",
+							"I’m counting."
 						],
 						"lines": [
-							"나도 안 멈춰.",
-							"셈. 너 말고."
+							"안 빨개졌거든!!",
+							"셈하는 중이야."
 						],
 						"person": "sosuno"
 					},
@@ -24250,7 +24241,7 @@
 						],
 						"lines": [
 							"물 다른 데도 있거든.",
-							"거기로."
+							"거기 가서 떠."
 						]
 					},
 					{
@@ -24265,7 +24256,7 @@
 						"lines": [
 							"비킬게.",
 							"봐. 비켰어.",
-							"이럴 때 재밌어."
+							"너 이럴 때 재밌다."
 						]
 					},
 					{
@@ -24278,9 +24269,9 @@
 							"Don’t grin at the work."
 						],
 						"lines": [
-							"재미없는 거거든.",
+							"나 재미없거든.",
 							"일하는 중이야.",
-							"일 보고 웃지 마."
+							"일하는데 웃지 마."
 						]
 					},
 					{
@@ -24308,12 +24299,12 @@
 						"en": [
 							"Hey.",
 							"You’re pretty when you’re mean.",
-							"Like— actually. Sorry. Not sorry."
+							"No, really."
 						],
 						"lines": [
 							"야.",
 							"화내면 예쁘더라.",
-							"진짜. 미안. 안 미안."
+							"아니, 진짜로."
 						]
 					},
 					{
@@ -24342,8 +24333,8 @@
 							"Sleeve’s wet. Thanks."
 						],
 						"lines": [
-							"가. 가.",
-							"소매 젖었어. 고마워."
+							"간다, 간다.",
+							"소매 젖었다. 고마워."
 						]
 					},
 					{
@@ -24397,7 +24388,7 @@
 						],
 						"lines": [
 							"바보. 내 머릿속에서 웃지 마.",
-							"네 탓이야, 바보야."
+							"네 탓이야, 이 큰 바보야."
 						],
 						"person": "sosuno",
 						"nsfw": true
@@ -24436,12 +24427,12 @@
 						"en": [
 							"Sosuno!",
 							"West count. Now.",
-							"Don’t make me climb."
+							"Do I have to come up there?"
 						],
 						"lines": [
 							"소서노!",
-							"서쪽 셈. 지금.",
-							"내가 올라가게 하지 마."
+							"서쪽 셈. 당장.",
+							"내가 올라가야 되겠냐?"
 						]
 					},
 					{
@@ -24486,7 +24477,7 @@
 							"Can we do the millet."
 						],
 						"lines": [
-							"아무거나 싫어요.",
+							"등이고 뭐고 다 싫어요.",
 							"조나 세요."
 						]
 					},
@@ -24505,12 +24496,12 @@
 						"speaker": "A chieftain",
 						"chip": "#8d8d95",
 						"en": [
-							"My girl can count.",
-							"Strong arms. Good hall."
+							"My girl can count, too.",
+							"And he’s got good arms on him. He’d do well in my hall."
 						],
 						"lines": [
-							"우리 애도 셈해.",
-							"팔 좋아. 대청에 어울려."
+							"우리 딸도 셈할 줄 알아.",
+							"저 사람 팔 좋던데. 우리 대청에 들이면 딱이겠어."
 						]
 					},
 					{
@@ -24537,10 +24528,10 @@
 						"kind": "dialogue",
 						"chip": "#2eb8c4",
 						"en": [
-							"Hey big boy~"
+							"Hey— you’re the one who never misses?"
 						],
 						"lines": [
-							"야, 큰 남자~"
+							"야, 활 잘 쏜다는 게 너야?"
 						],
 						"speaker": "Teal"
 					},
@@ -24548,10 +24539,12 @@
 						"kind": "dialogue",
 						"chip": "#e8563f",
 						"en": [
-							"You’re— yeah. Funny. Too funny."
+							"Yeah, that’s me.",
+							"Also the one who lives in a shed."
 						],
 						"lines": [
-							"너, 응. 웃겨. 너무 웃겨."
+							"맞아요, 저예요.",
+							"헛간 사는 것도 저고요."
 						],
 						"person": "jumong"
 					},
@@ -24559,10 +24552,10 @@
 						"kind": "dialogue",
 						"chip": "#2eb8c4",
 						"en": [
-							"Don’t look at Sosuno. Look at me."
+							"Stop looking at Sosuno and look at me."
 						],
 						"lines": [
-							"소서노 보지 마. 나를 봐."
+							"소서노 그만 보고 나 좀 봐."
 						],
 						"speaker": "Teal"
 					},
@@ -24571,11 +24564,11 @@
 						"chip": "#2eb8c4",
 						"en": [
 							"Don’t follow me.",
-							"Unless you are."
+							"…Unless you want to."
 						],
 						"lines": [
 							"따라오지 마.",
-							"따라올 거면 말고."
+							"…올 거면 오든가."
 						],
 						"speaker": "Teal"
 					},
@@ -24625,8 +24618,8 @@
 							"Get off my well."
 						],
 						"lines": [
-							"내려. 와.",
-							"내 우물에서 내려."
+							"떨어져.",
+							"내 우물에서 떨어지라고."
 						],
 						"person": "sosuno"
 					},
@@ -24637,12 +24630,12 @@
 						"en": [
 							"This well’s ours.",
 							"Ditch is that way.",
-							"He doesn’t need help. He needs to work."
+							"He doesn’t need help. He’s here to work."
 						],
 						"lines": [
-							"이 우물 우리 거야.",
-							"도랑은 그쪽이고.",
-							"도움 필요 없어. 일이나 해."
+							"이 우물 우리 집 거야.",
+							"도랑은 저쪽이고.",
+							"저 사람 도와줄 필요 없어. 일하러 온 거야."
 						]
 					},
 					{
@@ -24653,7 +24646,7 @@
 							"We were only—"
 						],
 						"lines": [
-							"그냥—"
+							"우린 그냥—"
 						]
 					},
 					{
@@ -24662,13 +24655,13 @@
 						"chip": "#e8a04a",
 						"en": [
 							"You. Bucket.",
-							"That well is not a porch.",
-							"Go home before I tell your mother you can’t count steam."
+							"Go flirt on your own porch.",
+							"Go, before I tell your mother."
 						],
 						"lines": [
 							"너. 두레박.",
-							"우물이 누대는 아니거든.",
-							"김 세는 것도 못 한다고 어미한테 말하기 전에 가."
+							"꼬리 칠 거면 너네 누대 가서 쳐.",
+							"너네 어머니한테 이르기 전에 가."
 						]
 					},
 					{
@@ -24692,8 +24685,8 @@
 							"Don’t smile at me either."
 						],
 						"lines": [
-							"너는. 헛간.",
-							"그애들한테 웃지 마.",
+							"너. 헛간.",
+							"걔들한테 웃지 마.",
 							"나한테도 웃지 마."
 						]
 					},
@@ -24708,11 +24701,11 @@
 						"chip": "#e8563f",
 						"en": [
 							"So.",
-							"You keep chasing them off."
+							"Why do you keep chasing them off?"
 						],
 						"lines": [
-							"자.",
-							"자꾸 쫓아내잖아."
+							"그래서.",
+							"왜 자꾸 쫓아내?"
 						]
 					},
 					{
@@ -24731,10 +24724,12 @@
 						"person": "jumong",
 						"chip": "#e8563f",
 						"en": [
-							"The well girls. That chieftain’s kid. You told her I talk to millet."
+							"…Other?",
+							"And you told that chieftain I talk to the millet."
 						],
 						"lines": [
-							"우물 애들. 그 족장 딸. 조한테 말 건다고 했지."
+							"…다른?",
+							"그 족장한테는 나 조한테 말 건다고 했다며."
 						]
 					},
 					{
@@ -24750,8 +24745,8 @@
 						"lines": [
 							"하잖아—!!",
 							"누가 물어봤어—!!",
-							"아니라— 길에 있잖아—",
-							"여긴 내 마당이야— 내 우물이야—"
+							"그게 아니라— 걔네가 길을 막잖아—",
+							"여긴 내 마당이야— 내 우물이고—"
 						]
 					},
 					{
@@ -24765,8 +24760,8 @@
 						],
 						"lines": [
 							"알겠어. 알겠어.",
-							"소리 지르고 있거든.",
-							"인사하면 안 되는 이유만 물은 거야."
+							"너 지금 소리 지르고 있어.",
+							"인사하면 왜 안 되는지 물어본 거야."
 						]
 					},
 					{
@@ -24779,9 +24774,9 @@
 							"BIG IDIOT. GET— get off my post—"
 						],
 						"lines": [
-							"그애들한테 안녕 하지 마.",
-							"나한테도 하지 마.",
-							"이 큰 바보. 내— 내 기둥에서 떨어져—"
+							"걔들한테 안녕 하지 마!!",
+							"나한테도 하지 마!!",
+							"이 큰 바보야. 내— 내 기둥에서 떨어져—"
 						]
 					},
 					{
@@ -24848,7 +24843,7 @@
 						"lines": [
 							"소서노.",
 							"이름 귀엽네.",
-							"귓불 분홍이야."
+							"귀 빨개졌다."
 						]
 					},
 					{
@@ -24885,14 +24880,14 @@
 						"chip": "#e8a04a",
 						"en": [
 							"I was here first.",
-							"That’s water.",
-							"If you mhm I will kill you.",
+							"I came for water.",
+							"If you go “mhm” I will kill you.",
 							"Pull."
 						],
 						"lines": [
-							"내가 먼저야.",
-							"물이야.",
-							"음 하면 죽여.",
+							"내가 먼저 왔거든.",
+							"물 뜨러 온 거야.",
+							"음— 하기만 해 봐. 죽여 버린다.",
 							"당겨."
 						]
 					},
@@ -24913,16 +24908,14 @@
 						"en": [
 							"You—",
 							"How dare you.",
-							"My father’s well—",
-							"I will kill you.",
-							"After. Move."
+							"At my father’s well—",
+							"I’ll kill you. Later. Move."
 						],
 						"lines": [
 							"너—",
 							"어떻게 감히.",
-							"아버지 우물에서—",
-							"죽여 버릴 거야.",
-							"그다음에. 비키든가."
+							"우리 아버지 우물에서—",
+							"죽여 버릴 거야. 나중에. 일단 비켜."
 						]
 					},
 					{
@@ -24934,8 +24927,8 @@
 							"Just saying."
 						],
 						"lines": [
-							"너도 따라왔거든.",
-							"참고로."
+							"너도 했잖아.",
+							"그냥 그렇다고."
 						]
 					},
 					{
@@ -24944,15 +24937,13 @@
 						"chip": "#e8a04a",
 						"en": [
 							"Did not.",
-							"Surprise.",
-							"The second bucket isn’t full.",
-							"That’s all I said."
+							"That was surprise.",
+							"…The second bucket isn’t full."
 						],
 						"lines": [
-							"안 했어.",
-							"놀라서.",
-							"둘째 두레박 안 찼어.",
-							"그게 다야."
+							"안 했거든.",
+							"놀라서 그런 거야.",
+							"…두 번째 두레박 아직 안 찼어."
 						]
 					},
 					{
@@ -24961,15 +24952,15 @@
 						"chip": "#e8563f",
 						"en": [
 							"Okay.",
-							"Waiting.",
-							"You’re kinda sexy when you threaten me.",
-							"I’ll shut up. I’ll shut up."
+							"I’ll wait.",
+							"Threaten me again. I liked it.",
+							"…I’ll shut up. Shutting up."
 						],
 						"lines": [
-							"알겠어.",
+							"알았어.",
 							"기다릴게.",
-							"협박하면 좀 섹시해.",
-							"입 닫을게. 닫을게."
+							"또 협박해 봐. 좋던데.",
+							"…입 닫을게. 닫았어."
 						]
 					},
 					{
@@ -25077,7 +25068,7 @@
 						"lines": [
 							"가져.",
 							"나 갈게.",
-							"조한테 고맙대."
+							"조한테 고맙다고 전해 줘."
 						]
 					},
 					{
@@ -25122,7 +25113,7 @@
 							"I don’t— I don’t like you."
 						],
 						"lines": [
-							"나, 너 안 좋아해."
+							"나— 나 너 안 좋아해."
 						],
 						"person": "sosuno"
 					},
@@ -25148,19 +25139,19 @@
 						"chip": "#e8a04a",
 						"en": [
 							"I wasn’t going to say it.",
-							"I was gonna let you leave. Stupid. Fine.",
+							"I was going to let you go. Like an idiot. Fine.",
 							"Then you put the bow down and I—",
 							"I want you. There. Stay.",
-							"Don’t make me— I can’t twice.",
-							"Big idiot. Other ear. I swear."
+							"Don’t make me— I can’t say it twice.",
+							"Big idiot. Grin and the next one’s for the other ear."
 						],
 						"lines": [
-							"말하려고 한 적 없어.",
-							"가게 둘 뻔했어. 바보로. 됐어.",
-							"활 내려놓으니까 내가—",
-							"원해요. 당신. 남아.",
+							"말 안 하려고 했어.",
+							"그냥 가게 두려고 했어. 바보같이. 됐다고.",
+							"근데 네가 활을 내려놓으니까, 내가—",
+							"너 원해. 됐지. 남아.",
 							"두 번은 못 해. 시키지 마.",
-							"이 큰 바보. 다른 귀야. 진짜."
+							"이 큰 바보. 웃으면 다음 건 반대쪽 귀야."
 						]
 					},
 					{
@@ -25178,9 +25169,9 @@
 							"Come here. You’re shaking."
 						],
 						"lines": [
-							"야. 야 나 여기 있어.",
-							"봐. 아직이야.",
-							"이리 와. 떨리잖아."
+							"야. 야, 나 여기 있어.",
+							"봐. 아직 있잖아.",
+							"이리 와. 떨고 있잖아."
 						],
 						"art": "Episode break: side story S4 ends here."
 					},
@@ -25196,12 +25187,12 @@
 						"en": [
 							"Hey.",
 							"Numbers later.",
-							"Your throat’s brighter than the lamp. Sorry. Not sorry."
+							"Your throat’s brighter than the lamp."
 						],
 						"lines": [
 							"야.",
-							"숫자는 나중에.",
-							"목이 촛불보다 밝아. 미안. 안 미안."
+							"셈은 나중에 해.",
+							"네 목이 등잔보다 밝다."
 						]
 					},
 					{
@@ -25210,15 +25201,13 @@
 						"chip": "#e8a04a",
 						"en": [
 							"I am not your wife yet.",
-							"Don’t— my hands.",
-							"Counting hand or me.",
+							"Don’t— not my hands.",
 							"…Big idiot.",
 							"It’s not like that."
 						],
 						"lines": [
-							"아직 아내 아니거든.",
-							"만지지— 손.",
-							"세는 손이야, 나야.",
+							"나 아직 네 아내 아니거든.",
+							"손— 손은 잡지 마.",
 							"…이 큰 바보.",
 							"그런 거 아니거든."
 						]
@@ -25230,14 +25219,12 @@
 						"en": [
 							"Only you.",
 							"From the first look.",
-							"Give me your mouth… first.",
-							"Country later."
+							"Give me your mouth… first."
 						],
 						"lines": [
-							"너만.",
-							"처음부터.",
-							"입… 먼저 줘.",
-							"나라는 나중에."
+							"너만 봤어.",
+							"처음 본 날부터.",
+							"입… 먼저 줘."
 						]
 					},
 					{
@@ -25252,7 +25239,7 @@
 						"lines": [
 							"그럼 가져.",
 							"값 매기지 마.",
-							"난 이미 셈 잃었거든."
+							"셈은 벌써 놓쳤거든."
 						]
 					},
 					{
@@ -25284,7 +25271,7 @@
 							"It won’t— ah— fit—"
 						],
 						"lines": [
-							"안 들어가, 아."
+							"안— 아— 안 들어가—"
 						],
 						"person": "sosuno",
 						"nsfw": true
@@ -25312,14 +25299,14 @@
 						"person": "jumong",
 						"chip": "#e8563f",
 						"en": [
-							"Hate me then.",
+							"Hate me, then.",
 							"Harder.",
-							"God you’re— look at you."
+							"Look at you—"
 						],
 						"lines": [
 							"그럼 미워해.",
-							"더.",
-							"진짜— 너 봐봐."
+							"더 세게.",
+							"너 좀 봐—"
 						],
 						"nsfw": true
 					},
@@ -25347,13 +25334,13 @@
 						"chip": "#e8563f",
 						"en": [
 							"Hey. Hey—",
-							"Or don’t. God.",
-							"Look at you talking."
+							"Where did you learn to talk like that?",
+							"…Keep going."
 						],
 						"lines": [
 							"야. 야—",
-							"아니면 말고. 진짜.",
-							"말하는 거 봐."
+							"그런 말은 어디서 배웠어.",
+							"…계속해."
 						],
 						"nsfw": true
 					},
@@ -25416,12 +25403,12 @@
 						"en": [
 							"That’s it—",
 							"I’ve got you.",
-							"Take it—"
+							"Let go—"
 						],
 						"lines": [
 							"그래—",
 							"잡고 있어.",
-							"받아—"
+							"놔도 돼—"
 						],
 						"nsfw": true
 					},
@@ -25454,12 +25441,12 @@
 						"en": [
 							"I heard.",
 							"You can talk like that.",
-							"It’s you. It’s hot. I’m keeping you. Both."
+							"I liked it. I’m keeping both of you."
 						],
 						"lines": [
 							"들었어.",
 							"그렇게 말해도 돼.",
-							"너야. 섹시해. 둘 다 둘게."
+							"좋던데? 둘 다 내가 데리고 살 거야."
 						],
 						"nsfw": true
 					},
@@ -25479,10 +25466,10 @@
 							"…Stay. Not because you asked."
 						],
 						"lines": [
-							"착하게 굴 생각하지 마.",
-							"바보 돼.",
-							"녹는 거 아니거든. 족장 딸이야. 수줍은 거 아니거든.",
-							"…남아. 네가 청해서가 아니야."
+							"다정하게 굴지 마.",
+							"바보 된단 말이야.",
+							"녹는 거 아니거든. 족장 딸이야. 부끄러운 거 아니거든.",
+							"…남아. 네가 해 달래서 그러는 거 아니야."
 						]
 					},
 					{
@@ -25492,12 +25479,12 @@
 						"en": [
 							"Hey.",
 							"You’re beautiful.",
-							"Water. You want?"
+							"Want some water?"
 						],
 						"lines": [
 							"야.",
 							"예쁘다.",
-							"물. 줄까."
+							"물 줄까?"
 						]
 					},
 					{
@@ -25541,14 +25528,14 @@
 						"en": [
 							"The pine.",
 							"Hundred paces. Now.",
-							"Hit, he eats. Miss, I throw him.",
-							"I am not pleased. I am also not blind."
+							"Hit, he eats. Miss, I throw him out.",
+							"And don’t think I didn’t see the well."
 						],
 						"lines": [
 							"소나무.",
 							"백 보. 지금.",
 							"맞히면 밥. 빗나가면 내가 내보낸다.",
-							"안 기쁘다. 눈은 있다."
+							"우물가 일, 내가 못 본 줄 알지 마라."
 						]
 					},
 					{
@@ -25576,7 +25563,7 @@
 						],
 						"lines": [
 							"…예.",
-							"아직 있어요."
+							"아직 여기 있소."
 						]
 					},
 					{
@@ -25604,15 +25591,15 @@
 						"person": "sosuno",
 						"chip": "#e8a04a",
 						"en": [
-							"The bow is the bow.",
-							"Don’t.",
-							"I only— lost the count.",
+							"Don’t, Father.",
+							"He shot well. That’s all.",
+							"…I wasn’t worried.",
 							"Big idiot. Stop smiling."
 						],
 						"lines": [
-							"활은 활이고.",
-							"보지 마.",
-							"그냥— 셈이 틀린 거야.",
+							"아버지, 하지 마요.",
+							"활 잘 쏜 거예요. 그게 다예요.",
+							"…걱정한 거 아니거든.",
 							"이 큰 바보. 웃지 마."
 						]
 					},
@@ -25623,15 +25610,15 @@
 						"en": [
 							"Ha.",
 							"River was supposed to take him. Daughter ran after it.",
-							"Sosuno. You picked. You keep. No feast.",
-							"Jumong. Hurt her, bow won’t save you.",
+							"Sosuno. You picked him, you keep him. No feast.",
+							"Jumong. Make her cry and that bow won’t save you.",
 							"Eat. Stay. Grumble like the rest of us."
 						],
 						"lines": [
 							"하.",
 							"강이 데려가는 줄 알았더니 딸이 쫓아가네.",
-							"소서노. 네가 골랐으면 네가 지켜. 잔치 없다.",
-							"주몽. 다치면 활로도 못 막아.",
+							"소서노. 네가 골랐으면 네가 데리고 살아. 잔치는 없다.",
+							"주몽. 쟤 울리면 그 활로도 못 막는다.",
 							"먹어. 남아. 우리처럼 투덜거려."
 						]
 					},
@@ -25656,13 +25643,13 @@
 						"chip": "#e8563f",
 						"en": [
 							"You keep cutting each other.",
-							"A ditch is not a country.",
-							"I crossed a river on turtles. You fight over who owns the mud."
+							"Over a ditch.",
+							"I crossed a river on the backs of turtles. And here you are, fighting over who owns the mud."
 						],
 						"lines": [
-							"서로만 베고 있소.",
-							"도랑이 나라가 아니오.",
-							"나는 자라 타고 강을 건넜소. 여기는 진흙 주인 싸움이오."
+							"다들 서로 베기만 하오.",
+							"도랑 하나 가지고.",
+							"나는 자라 등을 밟고 강을 건너왔소. 그런데 여기선 진흙 임자를 두고 싸우는구려."
 						]
 					},
 					{
@@ -25685,14 +25672,14 @@
 						"person": "jumong",
 						"chip": "#e8563f",
 						"en": [
-							"Then make them one hall.",
+							"Then put them in one hall.",
 							"Five fires, one roof.",
-							"Or keep the ditches. I can leave a bow on dirt again."
+							"Or keep your ditches. I can always leave a bow in the dirt again."
 						],
 						"lines": [
-							"그럼 대청을 하나로 하시오.",
-							"불 다섯, 지붕 하나.",
-							"아니면 도랑이나 지키시오. 활은 또 흙에 둘 수 있소."
+							"그럼 한 대청에 앉히시오.",
+							"불은 다섯이라도 지붕은 하나로.",
+							"싫으면 도랑이나 지키시구려. 활이야 또 흙바닥에 두고 가면 그만이오."
 						]
 					},
 					{
@@ -25712,8 +25699,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "After the marriage the five tribes sit in Tabal’s hall and do the thing they hate more than a ditch: they agree. They vote Jumong first king. Nobody remembers him asking; the grin had already become a roof.",
-						"ko": "혼인 뒤에 다섯 부족이 연타발의 대청에 앉아 도랑보다 싫은 일을 한다. 합의다. 주몽을 첫 왕으로 뽑는다. 그가 청했다고 기억하는 사람은 없다. 그 웃음이 이미 지붕이 되어 있었다."
+						"html": "After the marriage the five tribes sit in Tabal’s hall and do the thing they hate more than a ditch: they agree. They vote Jumong first king. Nobody remembers him asking.",
+						"ko": "혼인 뒤에 다섯 부족이 연타발의 대청에 앉아 도랑보다 싫은 일을 한다. 합의다. 주몽을 첫 왕으로 뽑는다. 그가 청했다고 기억하는 사람은 없다."
 					},
 					{
 						"kind": "p",
@@ -25727,13 +25714,13 @@
 						"en": [
 							"…Fine.",
 							"King, then.",
-							"If the ditches start again I will say I told you.",
+							"If the ditches start again, I’m saying I told you so.",
 							"Eat. Stay. Wear it."
 						],
 						"lines": [
 							"…됐다.",
 							"왕이면 왕이지.",
-							"도랑이 다시 열리면 내가 그랬다고 한다.",
+							"도랑 싸움 다시 나면, 내 그럴 줄 알았다고 할 거다.",
 							"먹어. 남아. 쓰고 다녀."
 						]
 					},
@@ -25743,13 +25730,11 @@
 						"chip": "#e8563f",
 						"en": [
 							"I will.",
-							"Not for the chair.",
-							"For the roof."
+							"It’s a bit big on me."
 						],
 						"lines": [
 							"알겠소.",
-							"의자 때문이 아니오.",
-							"지붕 때문에."
+							"머리에 좀 크긴 하오."
 						]
 					},
 					{
@@ -25778,11 +25763,11 @@
 						"chip": "#e8a04a",
 						"en": [
 							"Like a queen, then.",
-							"Don’t you dare be gentle about the title."
+							"Go easy because of it and you’re back in the shed."
 						],
 						"lines": [
-							"왕비답게 해.",
-							"작호 가지고 부드럽게 굴지 마."
+							"그럼 왕비 대접해 봐.",
+							"왕비라고 살살 하면 도로 헛간이야."
 						],
 						"person": "sosuno",
 						"nsfw": true
@@ -25836,11 +25821,11 @@
 						"chip": "#e8563f",
 						"en": [
 							"Then put the name on the mark.",
-							"One arrow. Then we talk."
+							"One arrow each. Then we talk."
 						],
 						"lines": [
-							"그럼 이름을 과녁에 올려.",
-							"화살 하나. 그러고 이야기하자."
+							"그럼 그 이름을 과녁에 거시오.",
+							"화살 한 대씩. 얘기는 그다음에 합시다."
 						],
 						"person": "jumong"
 					},
@@ -25853,12 +25838,12 @@
 						"kind": "dialogue",
 						"chip": "#c4a35a",
 						"en": [
-							"The pine country is under this roof.",
-							"Take the three. They ate."
+							"The pine country is under your roof now.",
+							"Take your three. They’ve been fed."
 						],
 						"lines": [
-							"솔나라는 이 지붕 아래다.",
-							"셋은 데려가. 밥은 먹었다."
+							"솔나라는 이제 그대 지붕 아래 들겠소.",
+							"셋은 데려가시오. 밥은 먹여 놨소."
 						],
 						"person": "songyang"
 					},
@@ -25869,8 +25854,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Years later, the bow will wait on packed earth, and the yard will be quieter than a feast, which is how this country keeps a death.",
-						"ko": "몇 해 뒤, 활은 다진 흙 위에서 기다리게 될 것이다. 마당은 잔치보다 조용할 것이다. 이 나라는 그렇게 죽음을 지킨다."
+						"html": "Years later, the bow will wait on packed earth, and the yard will be quieter than any feast.",
+						"ko": "몇 해 뒤, 활은 다진 흙 위에서 기다리게 될 것이다. 마당은 어느 잔치보다 조용할 것이다."
 					},
 					{
 						"kind": "scene",
@@ -25958,7 +25943,7 @@
 							"I’m staying near the porch."
 						],
 						"lines": [
-							"어머니 또 세.",
+							"어머니 또 세고 있어.",
 							"난 누대 쪽에 있을게."
 						],
 						"person": "onjo"
@@ -25972,7 +25957,7 @@
 						],
 						"lines": [
 							"난 더 멀리 갈 거야. 크면.",
-							"어머니한테 말하지 마."
+							"내가 그랬다고 어머니한테 말하지 마."
 						],
 						"person": "biryu",
 						"art": "Episode break: side story S5 ends here."
@@ -26407,7 +26392,7 @@
 						],
 						"lines": [
 							"야.",
-							"쌌네.",
+							"짐 쌌네.",
 							"길 하나치곤 두레박이 많아."
 						]
 					},
@@ -26416,12 +26401,12 @@
 						"person": "sosuno",
 						"chip": "#e8a04a",
 						"en": [
-							"Not buckets.",
-							"Grain. Boys. Me."
+							"They’re not buckets. It’s grain.",
+							"The boys are going. So am I."
 						],
 						"lines": [
-							"두레박 아니야.",
-							"곡식. 애들. 나."
+							"두레박 아니거든. 곡식이야.",
+							"애들도 가. 나도 가고."
 						]
 					},
 					{
@@ -26443,7 +26428,7 @@
 							"Don’t— don’t make a speech. I’ll hit you."
 						],
 						"lines": [
-							"연설하지 마. 때릴 거야."
+							"말 길게 하지 마. 때린다."
 						]
 					},
 					{
@@ -26453,12 +26438,12 @@
 						"en": [
 							"Wasn’t going to.",
 							"Well’s still here.",
-							"I kept it. For you. Stupid, I know."
+							"I kept it for you. Stupid, I know."
 						],
 						"lines": [
 							"안 하려고 했어.",
-							"우물 아직 있어.",
-							"남겨 뒀어. 너 때문에. 바보인 거 알아."
+							"우물 아직 있다.",
+							"너 주려고 남겨 둔 거야. 바보 같은 거 알아."
 						]
 					},
 					{
@@ -26468,13 +26453,13 @@
 						"en": [
 							"Don’t be nice.",
 							"I’ll get stupid.",
-							"Yuri can have the chair. I’m not sitting in a footnote.",
+							"Let Yuri be crown prince. I won’t sit in a corner as the old queen.",
 							"You know that. You always knew."
 						],
 						"lines": [
-							"착하게 굴지 마.",
-							"바보 돼.",
-							"의자는 유리가 가져. 난 각주로 안 앉아.",
+							"다정하게 굴지 마.",
+							"바보 된단 말이야.",
+							"태자는 유리 하라 그래. 난 구석에 앉은 늙은 왕비는 안 해.",
 							"알잖아. 처음부터 알았잖아."
 						]
 					},
@@ -26485,14 +26470,12 @@
 						"en": [
 							"Yeah.",
 							"South, then.",
-							"Take the glow. Leave me the well.",
 							"…Come here. Please. One night. I’m still thirsty."
 						],
 						"lines": [
 							"응.",
-							"그럼 남쪽.",
-							"그 빛은 가져. 우물은 남겨.",
-							"…이리 와. 제발. 하룻밤. 아직 목말라."
+							"그럼 남쪽이네.",
+							"…이리 와. 제발. 하룻밤만. 아직 목마르단 말이야."
 						]
 					},
 					{
@@ -26509,7 +26492,7 @@
 							"이 큰 바보.",
 							"애들 잤어.",
 							"칭찬하면 소리 지를 거야.",
-							"…거절 아니야."
+							"…싫다는 거 아니야."
 						]
 					},
 					{
@@ -26530,12 +26513,12 @@
 						"en": [
 							"Still you.",
 							"Still that mouth.",
-							"Look at you. Older. Sexier. Sorry. Not sorry."
+							"Look at you. Older. Sexier."
 						],
 						"lines": [
 							"아직 너야.",
-							"그 입 아직.",
-							"너 봐. 나이 들어. 더 섹시해. 미안. 안 미안."
+							"그 입도 아직.",
+							"너 좀 봐. 나이 들더니 더 섹시해졌네."
 						],
 						"nsfw": true
 					},
@@ -26564,12 +26547,12 @@
 						"en": [
 							"Yours.",
 							"Always was.",
-							"Scream it. Last time. Louder."
+							"Louder. It’s the last time."
 						],
 						"lines": [
 							"네 거야.",
-							"처음부터.",
-							"질러. 마지막이야. 더 크게."
+							"처음부터 그랬어.",
+							"더 크게. 마지막이잖아."
 						],
 						"nsfw": true
 					},
@@ -26604,12 +26587,12 @@
 						"en": [
 							"I heard.",
 							"You can still talk like that.",
-							"I’m keeping both of you. Even from a chair away."
+							"I’m keeping both of you. Even down south."
 						],
 						"lines": [
 							"들었어.",
-							"그렇게 말해도 돼. 아직.",
-							"둘 다 둘게. 의자 멀리서도."
+							"아직도 그렇게 말해도 돼.",
+							"둘 다 내 거야. 남쪽에 가 있어도."
 						],
 						"nsfw": true
 					},
@@ -26626,13 +26609,13 @@
 							"Don’t be nice.",
 							"I’ll get stupid.",
 							"…I’m already stupid.",
-							"Keep the well. I’m taking the glow."
+							"Keep the well. I’m taking a bucket."
 						],
 						"lines": [
-							"착하게 굴지 마.",
-							"바보 돼.",
-							"…이미 바보야.",
-							"우물은 가져. 빛은 내가 가져갈게."
+							"다정하게 굴지 마.",
+							"바보 된단 말이야.",
+							"…이미 바보 됐어.",
+							"우물은 너 가져. 두레박은 내가 가져간다."
 						]
 					},
 					{
@@ -26642,12 +26625,12 @@
 						"en": [
 							"Take it.",
 							"You’re beautiful.",
-							"Go found the other one. I’ll be here. Grinning. Like an idiot."
+							"Go found the other one. I’ll be here, grinning like an idiot."
 						],
 						"lines": [
-							"가져.",
+							"가져가.",
 							"예쁘다.",
-							"가서 다른 거 세워. 난 여기 있을게. 웃으면서. 바보처럼."
+							"가서 나라 하나 더 세워. 난 여기 있을게. 바보처럼 웃으면서."
 						]
 					},
 					{
@@ -26657,8 +26640,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "After wandering for a while they find a <b>Heavenly Deer</b> at what the older priests will call a heavenly door, a threshold between the yellow earth and the starred sky, and decide to settle there. Loyalty, they say later, is what you owe the door that let you in.",
-						"ko": "한참을 헤매다 <b>천록</b>을 만난다. 뒷날 늙은 제사장들이 천문(天門)이라 부를 자리, 누런 땅과 별 하늘 사이의 문턱이다. 그들은 거기 자리를 잡는다. 충성이란, 훗날 그들 말로는, 들여보내 준 문에 빚진 것이다."
+						"html": "After wandering for a while they find a <b>Heavenly Deer</b> at what the older priests will call a heavenly door, a threshold between the yellow earth and the starred sky, and decide to settle there.",
+						"ko": "한참을 헤매다 <b>천록</b>을 만난다. 뒷날 늙은 제사장들이 천문(天門)이라 부를 자리, 누런 땅과 별 하늘 사이의 문턱이다. 그들은 거기 자리를 잡는다."
 					},
 					{
 						"kind": "p",
@@ -26952,12 +26935,12 @@
 						"person": "sosuno",
 						"chip": "#e8a04a",
 						"en": [
-							"You learn something from founding a country twice.",
-							"The second one is easier."
+							"The second country was easier.",
+							"The first time I had a big idiot to look after."
 						],
 						"lines": [
-							"나라는 두 번 세워 보면 아는 게 있습니다.",
-							"두 번째가 쉽다는 거예요."
+							"두 번째 나라가 훨씬 쉽더라.",
+							"처음엔 큰 바보 하나 챙기느라."
 						]
 					},
 					{
@@ -26987,13 +26970,13 @@
 								"chip": "#f0b429",
 								"lines": [
 									"유화.",
-									"아우한테 맡기지 않았다.",
-									"손."
+									"아우한테 안 맡겼어. 내가 직접 왔지.",
+									"손 줘."
 								],
 								"en": [
 									"Yuhwa.",
-									"I didn’t give this to my little brother.",
-									"Your hand."
+									"I didn’t leave you to my little brother. I came myself.",
+									"Give me your hand."
 								],
 								"person": "haemosu"
 							},
@@ -27014,14 +26997,14 @@
 								"kind": "dialogue",
 								"chip": "#f0b429",
 								"lines": [
-									"그때는 내가 내려왔다.",
-									"지금은 네가 올라온다.",
-									"빈 자리가 하나 있다. 내가 지는 쪽에."
+									"그땐 내가 내려갔지.",
+									"이번엔 네가 올라와.",
+									"내 맞은편 자리, 비워 뒀어."
 								],
 								"en": [
-									"That time I came down.",
+									"Last time I came down.",
 									"This time you come up.",
-									"There’s an empty seat. On the side where I set."
+									"I kept the seat across from me empty."
 								],
 								"person": "haemosu"
 							},
@@ -27045,11 +27028,11 @@
 								"chip": "#f0b429",
 								"lines": [
 									"그럼 가자.",
-									"수레는 오늘 밤을 비킨다."
+									"수레 세워 뒀어. 오늘 밤은 네 거야."
 								],
 								"en": [
-									"Then come.",
-									"The chariot yields the night."
+									"Then come on.",
+									"I stopped the chariot. Tonight’s yours."
 								],
 								"person": "haemosu"
 							},

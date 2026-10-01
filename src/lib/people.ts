@@ -432,6 +432,8 @@ export const PEOPLE: Person[] = [
 		quote: "The Amnok keeps its own court.",
 		nature:
 			'River sovereign, not a dad in a sitcom. Speaks in full sentences like a border king: cold, formal, rhetorical. Never slang. Never telegram. He interrogates, then sentences — exile without negotiation. Korean: 하오체 / 하라체.',
+		voice:
+			'Cold river-king: interrogates, then sentences. Short, full sentences; no puns, no slang. Korean: 하라체 down to his daughter (“이름을 대라”, “가거라”).',
 		arc: 'River-god of the Amnok, father of Yuhwa. He keeps a court under the current — vassals of fish and turtle, borders of mist — and when the sun god takes his daughter he answers as a sovereign, not a peasant: exile, not negotiation. Jumong’s claim later runs through his blood whether Habek wills it or not. Territorial: the Amnok’s mist is his seal.',
 		events: [
 			{ label: 'Casts Yuhwa out for loving Haemosu.' },
@@ -2125,6 +2127,7 @@ export const PEOPLE: Person[] = [
 		quote: "What a father hides, a son digs up.",
 		nature:
 			'Buyeo yard first: tired of pointing at weather. Short, a little sour, then a click. He does not make speeches about destiny; he puts iron on iron and waits to see if the hall laughs.',
+		voice: 'Earnest, few words: a fatherless boy’s questions. Korean: 합쇼체 to his mother.',
 		events: [{ year: -19, label: 'Succeeds Jumong; Onjo and Biryu go south.' }],
 		career: [
 			{ title: 'King of Goryeo', korean: '왕', hanja: '王', org: 'nation-goguryeo', from: -19 }
@@ -2465,11 +2468,8 @@ export const PEOPLE: Person[] = [
 		realm: { en: 'Moon', ko: '달' },
 		tagline: 'Habek’s daughter, cast out for the sun; after death she keeps the night.',
 		quote: 'Still… across from you is fine.',
-		firstLine: { en: 'Sister. Above us.', ko: '언니. 위에.' },
-		lastLine: {
-			en: 'Build a world of your own…. my son…!',
-			ko: '너만의 세상을 만들어라.... 아들아...!'
-		},
+		firstLine: { en: 'Unni. Go. I’m here.', ko: '언니. 가. 난 여기.' },
+		lastLine: { en: 'Until Daeso’s done sharpening.', ko: '대소가 칼을 다 갈 때까지.' },
 		nature:
 			'Youngest river-daughter: stays when the others dive. Flirty, brave, unfinished. With sisters: 언니/동생 반말, shared water, no personality interviews. With Haemosu: teasing, hungry, half-dare — hedges, then dares. With her father: hesitating, quiet defiance that still uses 해요체. Never caption-speak.',
 		voice:
@@ -2552,6 +2552,8 @@ export const PEOPLE: Person[] = [
 		quote: "Shelter what heaven abandons.",
 		nature:
 			'Warm laconic host-king. Short lines that still sound spoken — dry humor, no court lecture. Offers a room before he offers a category. Korean: gentle 하게체.',
+		voice:
+			'Warm, unhurried host-king who offers a seat before he asks a name; dry humour, no court lecture. Korean: gentle 하게체 to a guest (“들어오게”, “앉게”), easy 해라체 once Jumong is part of the house.',
 		family: [
 			{ id: 'daeso', role: 'Son' },
 			{ id: 'galsa', role: 'Son' },
@@ -2571,6 +2573,8 @@ export const PEOPLE: Person[] = [
 		tagline: 'Geumwa’s son, who could not bear being outshot by a foundling.',
 		quote: "Never be outshot by a foundling.",
 		nature: 'Heir-voice, short. Used to call the foundling 막내 and fix his grip; now the house is a contest he is losing. Counts the yard like it already belongs to him. Does not clap.',
+		voice:
+			'The heir. Needles like a big brother in public (“막내야”) and gives the ugly orders sideways, so he never has to hear them carried out. Korean: 반말.',
 		family: [
 			{ id: 'geumwa', role: 'Father' },
 			{ id: 'galsa', role: 'Brother' },
@@ -2589,6 +2593,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Geumwa’s younger son — the smile that shrinks when Jumong hits the mark.',
 		quote: 'If the arrow lands, pretend you meant to applaud.',
 		nature: 'Second son: the delayed clap. Wants all three at the same table and will not pick a knife, so he looks at the dirt, then takes a smaller roof east and puts his own name on it.',
+		voice: 'The brother who claps too late and means it; can’t pick a side. Korean: soft 반말.',
 		arc: 'Raised in Buyeo’s hall with Daeso while the egg-born boy outgrows every contest. When Jumong slips away into the night, Galsa is among the nets — not the loudest voice, but one of the smiles that got smaller each year the foundling shot true.',
 		family: [
 			{ id: 'geumwa', role: 'Father' },
@@ -2607,6 +2612,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Took the ridge, not the shells — ended up in the Pine Kingdom until Jumong took the roof.',
 		quote: 'South before they count us.',
 		nature: 'Short. Already packing. Talks over Mari. Does not wait for the pretty version.',
+		voice: 'Jumong’s friend. Short and practical, already moving (“See you south. Don’t die.”). Korean: 반말 among the boys.',
 		arc: 'Flees Buyeo with Jumong, then splits in the pines and takes the ridge while Jumong takes the river alone. The ridge does not deliver him to Tabal’s hall. He, Mari, and Hyupbo fetch up under Song Yang’s pine roof — 소나무 나라 — until King Jumong and Queen Sosuno annex that timber to get them back.',
 		aliases: ['Oi', '오이', '烏伊']
 	},
@@ -2649,6 +2655,8 @@ export const PEOPLE: Person[] = [
 		quote: 'This pine country had a name before you hatched.',
 		nature:
 			'Older chieftain voice. Counts seniority, not miracles. Talks like a man who has held a yard longer than the guest has been alive. When he loses, he yields in full sentences, not poetry.',
+		voice:
+			'Proud older king of the pine roof. Pulls seniority in 해라체 until he loses the shot, then yields in plain 하오체 (“들겠소”, “데려가시오”).',
 		arc: 'Song Yang rules the Pine Kingdom — 소나무 나라, hanja 松國 in the ledgers — a Jolbon-adjacent pine roof. Oi, Mari, and Hyupbo take the ridge after the split and fetch up under his timber as guests who do not leave. After Jumong is first king and Sosuno first queen, they contest him as a royal act: annex the pine roof in order to get the three friends back. One bow, one yard, not an army. Song Yang yields the country and the three; the chronicle keeps his name so the founding is not only Tabal’s vote.',
 		events: [{ year: -37, label: 'Loses the pine-yard shaft to Jumong; 소나무 나라 yields, and the three friends return.' }],
 		family: [],
@@ -3866,6 +3874,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Chose the salt marshes of Michuhol, and regretted it.',
 		quote: "Wrong shores still make kingdoms.",
 		nature: 'Packs first. Hates speeches. If someone cries he leaves faster. Salt later.',
+		voice: 'The restless elder son. Wants to go farther and hides it from his mother. Korean: 반말 to his brother.',
 		aliases: ['Biryu']
 	},
 	{
