@@ -262,7 +262,7 @@
 			<p class="eyebrow">
 				<a href={resolve('/')}>← Chronicle</a>
 				<span class="dot" aria-hidden="true">·</span>
-				<a href={resolve('/wiki')}>Encyclopedia</a>
+				<a href={resolve('/wiki')}>Wiki</a>
 				<span class="dot" aria-hidden="true">·</span>
 				<a href={resolve('/grade')}>Grade</a>
 				<span class="dot" aria-hidden="true">·</span>

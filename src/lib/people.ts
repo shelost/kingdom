@@ -10,6 +10,7 @@ import { RELATIONSHIPS, CHART_NODES } from '$lib/relations';
 import { PLACE_PROFILES, type PlaceKind } from '$lib/places';
 import { PHRASES } from '$lib/phrases';
 import { SWORDS } from '$lib/swords';
+import { ANIMALS } from '$lib/animals';
 import { PERSONA_META } from '$lib/personaMeta';
 import { staticAsset } from '$lib/staticAsset.svelte';
 
@@ -81,6 +82,7 @@ export interface Person {
 	 * `organization` = councils, orders, courts (wiki-browsable);
 	 * `group` = named ensembles of characters (Four Dragons, Three Founders, …);
 	 * `clan` = blood houses (Yeon, Eight Clans, Kim lines, …);
+	 * `animal` = named horses and mythic creatures (Hangyul, Samjogo, …);
 	 * `phrase` / `nation` / `relationship` / `place` / `sword` as named.
 	 */
 	entity?:
@@ -93,7 +95,8 @@ export interface Person {
 		| 'nation'
 		| 'relationship'
 		| 'place'
-		| 'sword';
+		| 'sword'
+		| 'animal';
 	/**
 	 * Organization ids this character belongs to (Hwarang, High Summit, …).
 	 * Reverse lookup on org pages via `membersOf` in wiki.ts.
@@ -292,8 +295,12 @@ export interface Person {
 	/**
 	 * For sword profiles: person ids who wield or wielded this blade
 	 * (primary / most recent first). Reverse lookup via `swordsOf` in wiki.ts.
+	 * For animal profiles: the rider, or the people a guardian creature leads
+	 * (reverse lookup via `animalsOf`).
 	 */
 	owners?: string[];
+	/** Wiki roster heading for `owners` — defaults to “Owners” (animals: “Rider”, “Guided”). */
+	ownersLabel?: string;
 	/** Chart layout hint (people nodes that appear on the relationship graph). */
 	chart?: { x: number; y: number };
 }
@@ -2702,6 +2709,32 @@ export const PEOPLE: Person[] = [
 		aliases: ['Junior Guard']
 	},
 	{
+		id: 'seondohae',
+		gender: 'm',
+		name: 'Seon Dohae',
+		korean: '선도해',
+		hanja: '先道解',
+		kingdom: 'goguryeo',
+		title: 'Favourite of King Bojang',
+		tagline: 'Takes the blue cloth, drinks both cups, tells a story about a rabbit.',
+		quote: 'Who lives without a liver?',
+		arc: 'A Goguryeo courtier close to King Bojang. When Chunchu is held in Pyongyang, three hundred measures of blue cloth reach Seon Dohae in secret, and Seon Dohae visits the cell with wine and the old tale of the turtle and the rabbit. Chunchu takes the hint, writes the king a promise he never means to keep, and goes home.',
+		aliases: ['Seon Dohae', 'Seondohae']
+	},
+	{
+		id: 'cheongwan',
+		gender: 'f',
+		name: 'Cheongwan',
+		korean: '천관',
+		hanja: '天官',
+		kingdom: 'silla',
+		title: 'Courtesan of Seorabeol',
+		tagline: 'Her lantern was already lifted when the horse brought him back.',
+		quote: 'You came?',
+		arc: 'The courtesan young Yushin swore to his mother he would never see again. One night he fell asleep drunk in the saddle and his first horse, Hanbyul, carried him to her gate out of habit. He beheaded the horse there and walked home. Tradition says she answered with a song of resentment, and that a temple named for her later stood where her house had been.',
+		aliases: ['Cheongwan', 'Chongwan']
+	},
+	{
 		id: 'narim',
 		avatar: '/ch_narim.png',
 		name: 'Narim',
@@ -4355,8 +4388,8 @@ export const PEOPLE: Person[] = [
 			'Greatest Blade of Samhan',
 			'Hundred-Victories Gyebek',
 			'Hundred Victories',
-			'백전불패 계백',
-			'백전불패'
+			'백승계백',
+			'백승'
 		],
 		career: [
 			{ title: 'General', korean: '달솔', hanja: '達率', org: 'ministersassembly', from: 660 }
@@ -4366,8 +4399,8 @@ export const PEOPLE: Person[] = [
 			'Hundred-Victories Gyebek',
 			'Hundred-Victories',
 			'Hundred Victories',
-			'백전불패 계백',
-			'백전불패'
+			'백승계백',
+			'백승'
 		]
 	},
 	{
@@ -7542,6 +7575,8 @@ const COLOR: Record<string, string> = {
 	dosuryu: '#c98578',
 	goguard_a: '#b07068',
 	goguard_b: '#9a5c55',
+	seondohae: '#5f7fa6',
+	cheongwan: '#c9a0b4',
 	narim: '#3d9e52',
 	hyulle: '#2eb8c4',
 	golhwa: '#e86820',
@@ -7837,6 +7872,8 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	herald: ['gen-ii'],
 	goguard_a: ['gen-ii'],
 	goguard_b: ['gen-ii'],
+	seondohae: ['gen-ii'],
+	cheongwan: ['gen-ii'],
 	wuzetian: ['gen-ii'],
 	boksin: ['gen-ii'],
 	eldersatek: ['gen-ii'],
@@ -8223,7 +8260,8 @@ export const PROFILES: Person[] = [
 	...NATIONS,
 	...RELATIONSHIPS,
 	...PLACE_PROFILES,
-	...SWORDS
+	...SWORDS,
+	...ANIMALS
 ].map(withProfileMeta);
 
 /** The identifying colour for a profile (Person.color → COLOR table → kingdom). */

@@ -378,6 +378,17 @@
 	"chunchu-royal-intimacy": [
 		"chunchu"
 	],
+	"hs-pentagon": [
+		"gesomun",
+		"gusesa"
+	],
+	"hs-hands-flat": [
+		"gesomun"
+	],
+	"hs-sit-down": [
+		"gesomun",
+		"gusesa"
+	],
 	"poster_namseng": [
 		"gesomun",
 		"namseng"
@@ -1502,6 +1513,12 @@
 	"gesomun-five-pommels": [
 		"gesomun"
 	],
+	"youngryu-death-fortress": [
+		"yeongnyu"
+	],
+	"youngryu-death-crown": [
+		"yeongnyu"
+	],
 	"chunchu-robes": [
 		"chunchu",
 		"sunduk",
@@ -1530,6 +1547,21 @@
 	"gesomun_tiger_counsel": [
 		"dosuryu",
 		"gesomun"
+	],
+	"chunchu-rabbit-fable": [
+		"chunchu",
+		"seondohae"
+	],
+	"hadong-west-gate": [
+		"chunchu",
+		"yushin"
+	],
+	"hadong-empty-saddle": [
+		"chunchu"
+	],
+	"hadong-rein-knot": [
+		"chunchu",
+		"yushin"
 	],
 	"disguised-euija": [
 		"euija"
@@ -1598,6 +1630,16 @@
 	],
 	"alchun-ready-restraint": [
 		"alchun"
+	],
+	"nangbi-helmet-off": [
+		"seohyeon",
+		"yushin"
+	],
+	"nangbi-trench-leap": [
+		"yushin"
+	],
+	"nangbi-naming": [
+		"yushin"
 	],
 	"yushin-dawn-vigil": [
 		"yushin"
@@ -2605,6 +2647,19 @@
 		"geumwa",
 		"yuhwa"
 	],
+	"jumong-needle-stable": [
+		"jumong",
+		"yuhwa"
+	],
+	"samjogo-pines-pace": [
+		"jumong"
+	],
+	"samjogo-far-bank": [
+		"jumong"
+	],
+	"samjogo-cavern-door": [
+		"jumong"
+	],
 	"family-south": [
 		"biryu",
 		"onjo",
@@ -2657,6 +2712,20 @@
 	],
 	"nsfw-onjo-ogle-body": [
 		"onjo"
+	],
+	"sinrok-ridge-path": [
+		"biryu",
+		"onjo"
+	],
+	"sinrok-looks-back": [
+		"biryu",
+		"onjo",
+		"sosuno"
+	],
+	"sinrok-buak-summit": [
+		"biryu",
+		"onjo",
+		"sosuno"
 	],
 	"ink-turtle-bridge-jumong": [
 		"jumong"
@@ -2913,6 +2982,19 @@
 		"yushin"
 	],
 	"parody-thinker-yushin": [
+		"yushin"
+	],
+	"hc-circle-closes": [
+		"alchun",
+		"bidam",
+		"yushin"
+	],
+	"hc-hands-rise": [
+		"bidam",
+		"yushin"
+	],
+	"hc-bidam-piece": [
+		"bidam",
 		"yushin"
 	],
 	"poster_bidam": [
@@ -3236,6 +3318,31 @@
 		"bidam",
 		"hyulle"
 	],
+	"yushin-hanbyul-cheongwan-gate": [
+		"cheongwan",
+		"yushin"
+	],
+	"yushin-hangyul-forehead": [
+		"yushin"
+	],
+	"yushin-hangyul-offering-wide": [
+		"yushin"
+	],
+	"bidam-bisamun-smoke": [
+		"bidam"
+	],
+	"bisamun-beads-bridle": [
+		"bidam"
+	],
+	"bisamun-riderless": [
+		"xuerengui"
+	],
+	"bidam-death-field": [
+		"bidam"
+	],
+	"bidam-death-blood": [
+		"bidam"
+	],
 	"bidam-defends-yushin": [
 		"bidam",
 		"yushin"
@@ -3527,6 +3634,86 @@
 		"chunchu",
 		"taizong"
 	],
+	"six-steeds-gallery": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-walk": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-wall": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-hoof": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-saluzi": [
+		"taizong"
+	],
+	"six-steeds-chunchu": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-qingzhui": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-arrows": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-empty": [
+		"chunchu",
+		"taizong"
+	],
+	"steed-baitiwu-night-ride": [
+		"taizong"
+	],
+	"steed-telebiao-queshu": [
+		"taizong"
+	],
+	"steed-qingzhui-hulao": [
+		"taizong"
+	],
+	"steed-shifachi-hedgehog": [
+		"taizong"
+	],
+	"steed-quanmaogua-nine-arrows": [
+		"taizong"
+	],
+	"steed-saluzi-alone": [
+		"taizong"
+	],
+	"steed-saluzi-arrow": [
+		"taizong"
+	],
+	"steed-saluzi-homecoming": [
+		"taizong"
+	],
+	"tang-daming-dusk": [
+		"chunchu"
+	],
+	"tang-court-ranks": [
+		"chunchu",
+		"taizong"
+	],
+	"tang-clerks-machine": [
+		"chunchu"
+	],
+	"tang-lamp-bearers": [
+		"chunchu",
+		"taizong"
+	],
+	"tang-banquet-thousands": [
+		"chunchu",
+		"taizong"
+	],
+	"tang-inner-court-women": [
+		"wuzetian"
+	],
 	"wuzetian-screen": [
 		"wuzetian"
 	],
@@ -3720,6 +3907,9 @@
 	"alyoung-dragon-rib": [
 		"alyoung"
 	],
+	"hyukgose-oreung": [
+		"hyukgose"
+	],
 	"satek-clan-2": [
 		"eldersatek"
 	],
@@ -3744,6 +3934,10 @@
 	],
 	"euija-mourning-fury": [
 		"euija"
+	],
+	"ma-gyebek-kneels": [
+		"gyebek",
+		"ministersatek"
 	],
 	"assembly-sketch": [
 		"chunbok"
@@ -3787,6 +3981,14 @@
 	],
 	"parody-coup-poster-euija": [
 		"euija"
+	],
+	"ma-facing-rows": [
+		"euija",
+		"ministersatek"
+	],
+	"ma-forty-one-sons": [
+		"euija",
+		"ministersatek"
 	],
 	"euija-descent-wide": [
 		"euija"
@@ -4109,6 +4311,12 @@
 	"yellow-banner": [
 		"gyebek"
 	],
+	"gomanari-dawn-yard": [
+		"gyebek"
+	],
+	"gomanari-forehead": [
+		"gyebek"
+	],
 	"three-realms-02-arrival": [
 		"haemosu",
 		"ibiga",
@@ -4241,6 +4449,89 @@
 	"parody-300-gyebek": [
 		"gyebek"
 	],
+	"duel-gyebek-contre-jour": [
+		"gyebek"
+	],
+	"duel-yushin-eyes": [
+		"yushin"
+	],
+	"duel-gyebek-counting": [
+		"gyebek"
+	],
+	"duel-meet-dust": [
+		"gyebek",
+		"yushin"
+	],
+	"duel-ink-slash": [
+		"gyebek",
+		"yushin"
+	],
+	"duel-horse-eye": [
+		"yushin"
+	],
+	"duel-report-ots": [
+		"gyebek"
+	],
+	"duel-oil-gwanchang-helm": [
+		"gwanchang",
+		"gyebek"
+	],
+	"duel-oil-pumil-pieta": [
+		"pumil",
+		"yushin"
+	],
+	"duel-last-line-strip": [
+		"gyebek"
+	],
+	"duel-oil-kangrim-above": [
+		"gyebek"
+	],
+	"duel-oil-duty": [
+		"gyebek"
+	],
+	"duel-kangrim-shadow": [
+		"gyebek"
+	],
+	"hwangsan-gyebek-charge": [
+		"gyebek"
+	],
+	"hwangsan-yushin-column": [
+		"sunduk",
+		"yushin"
+	],
+	"hwangsan-fourth-clash": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-white-horse-back": [
+		"yushin"
+	],
+	"hwangsan-black-white-gap": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-go-stones": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-quiet-talk": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-tied-sleeve": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-turn-apart": [
+		"gyebek",
+		"yushin"
+	],
+	"gyebek-death-field": [
+		"gyebek"
+	],
+	"gyebek-death-pieta": [
+		"gyebek"
+	],
 	"two-kings": [
 		"chunchu",
 		"euija"
@@ -4266,6 +4557,12 @@
 		"euija"
 	],
 	"euija-memories": [
+		"euija"
+	],
+	"euija-death-steps": [
+		"euija"
+	],
+	"euija-death-close": [
 		"euija"
 	],
 	"chiljido-bestowal": [
@@ -4375,6 +4672,16 @@
 		"gesomun"
 	],
 	"sasu-seq-subdue": [
+		"gesomun"
+	],
+	"sasu-damul-knot": [
+		"gesomun"
+	],
+	"sasu-banner-cut": [
+		"gesomun",
+		"pangxiaotai"
+	],
+	"sasu-red-horse-shallows": [
 		"gesomun"
 	],
 	"gesomun-death-black": [

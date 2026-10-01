@@ -40,6 +40,7 @@
 	} from '$lib/wiki';
 	import { hasLeitmotif, hasTempTrack } from '$lib/leitmotifs';
 	import WikiDetail from '$lib/components/WikiDetail.svelte';
+	import { tilt } from '$lib/attachments/tilt';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
 	import { chartsForWikiEntry } from '$lib/components/diagrams/wikiCharts';
@@ -343,11 +344,11 @@
 
 <svelte:head>
 	<title
-		>{selected ? `${nameOf(selected)} · Encyclopedia` : 'Encyclopedia · King for All'}</title
+		>{selected ? `${nameOf(selected)} · Wiki` : 'Wiki · King for All'}</title
 	>
 	<meta
 		name="description"
-		content="Encyclopedia of every profile in the chronicle — characters, gods, places, nations, clans, organizations, phrases, concepts, and relationships."
+		content="Wiki of every profile in the chronicle — characters, gods, animals, places, nations, clans, organizations, phrases, concepts, and relationships."
 	/>
 </svelte:head>
 
@@ -368,19 +369,22 @@
 
 	<header class="hero">
 		<div class="hero-copy">
-			<h1>Encyclopedia</h1>
+			<p class="eyebrow">The Chronicle Archive</p>
+			<h1>Wiki</h1>
+			<p class="hero-ko" lang="ko">위키 <span aria-hidden="true">·</span> 百科</p>
+			<span class="ornament" aria-hidden="true"></span>
 			<p class="lede">
-				Every face, place, bond, and idea named in the chronicle — drawn from the same records the
+				Every face, horse, place, bond, and idea named in the chronicle — drawn from the same records the
 				story reads.
 			</p>
 		</div>
 
 		<label class="search">
-			<span class="sr">Search the encyclopedia</span>
+			<span class="sr">Search the wiki</span>
 			<span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
 			<input
 				type="search"
-				placeholder="Search the encyclopedia"
+				placeholder="Search the wiki"
 				bind:value={q}
 				autocomplete="off"
 			/>
@@ -441,7 +445,7 @@
 		</div>
 	</header>
 
-	<section class="browse" aria-label="Encyclopedia results">
+	<section class="browse" aria-label="Wiki results">
 		<p class="count" aria-live="polite">
 			{filtered.length}
 			{filtered.length === 1 ? 'entry' : 'entries'}
@@ -458,7 +462,7 @@
 		</p>
 
 		{#if filtered.length === 0}
-			<p class="empty">Nothing matches. Widen the filters or clear the search.</p>
+			<p class="no-results">Nothing matches. Widen the filters or clear the search.</p>
 		{:else}
 			{#each sections as section, si (section.key)}
 				<section class="group" class:tier-group={kind === 'god'}>
@@ -480,8 +484,9 @@
 							{@const cardKind = kindOf(p)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
 							{@const isNationCard = cardKind === 'nation'}
+							{@const isAnimalCard = cardKind === 'animal'}
 							{@const isShowcase =
-								cardKind === 'place' || cardKind === 'city' || isNationCard}
+								cardKind === 'place' || cardKind === 'city' || isNationCard || isAnimalCard}
 							{@const flagArt = isNationCard ? kingdomFlag(p.kingdom) : undefined}
 							{@const showcaseArt = isNationCard ? flagArt : art}
 							{@const isOrgCard = cardKind === 'organization'}
@@ -503,14 +508,15 @@
 							<li>
 								<button
 									type="button"
-									class="card"
+									class="card tilt"
 									class:card-showcase={isShowcase}
 									class:card-character={isPortraitCard}
-									class:card-place={cardKind === 'place' || cardKind === 'city'}
+									class:card-place={cardKind === 'place' || cardKind === 'city' || isAnimalCard}
 									class:card-org={isOrgCard || isGroupCard}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
 									onclick={() => openEntry(p.id)}
+									{@attach tilt()}
 								>
 									{#if hasLeitmotif(p.id)}
 										<span
@@ -669,7 +675,7 @@
 		style:--k={colorOf(selected)}
 		role="dialog"
 		aria-modal="true"
-		aria-label="{nameOf(selected)} encyclopedia entry"
+		aria-label="{nameOf(selected)} wiki entry"
 	>
 		<WikiDetail
 			entry={selected}
@@ -698,10 +704,23 @@
 
 <style>
 	.wiki {
+		--card-radius: 14px;
+		--plate: linear-gradient(
+			165deg,
+			color-mix(in srgb, var(--panel) 94%, var(--fg) 6%) 0%,
+			var(--panel) 42%,
+			color-mix(in srgb, var(--panel) 70%, var(--panel-sunken)) 100%
+		);
 		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
-		background: var(--bg);
+		background:
+			radial-gradient(
+				ellipse 70% 38rem at 50% -8rem,
+				color-mix(in srgb, var(--gold) 10%, transparent),
+				transparent 72%
+			),
+			var(--bg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
@@ -760,7 +779,7 @@
 		align-items: center;
 		width: 100%;
 		margin: 0 auto;
-		padding: 3.35rem 0 1.65rem;
+		padding: 4.25rem 0 2.25rem;
 		text-align: center;
 	}
 
@@ -770,36 +789,89 @@
 		max-width: 40rem;
 	}
 
+	.eyebrow {
+		margin: 0 0 0.85rem;
+		font-family: var(--ui);
+		font-size: 0.68rem;
+		font-weight: 500;
+		letter-spacing: 0.32em;
+		text-transform: uppercase;
+		color: var(--gold);
+	}
+
 	.hero h1 {
 		margin: 0;
 		font-family: var(--serif);
-		font-size: clamp(2.05rem, 4.2vw, 2.75rem);
-		font-weight: 600;
-		letter-spacing: var(--tracking-display);
-		line-height: 1.1;
+		font-size: clamp(2.6rem, 6vw, 4rem);
+		font-weight: 500;
+		letter-spacing: -0.03em;
+		line-height: 1;
 		color: var(--fg-strong);
 	}
 
-	.lede {
-		margin: 0.75rem auto 0;
-		max-width: 36rem;
-		font-family: var(--ui);
+	.hero-ko {
+		margin: 0.7rem 0 0;
+		font-family: 'Noto Serif KR', var(--serif);
 		font-size: 0.95rem;
+		font-weight: 600;
+		letter-spacing: 0.18em;
+		color: var(--fg-faint);
+	}
+
+	.hero-ko span {
+		opacity: 0.5;
+	}
+
+	/* Thin gold rule with a centred lozenge. */
+	.ornament {
+		position: relative;
+		display: block;
+		width: min(14rem, 60%);
+		height: 1px;
+		margin: 1.35rem auto 0;
+		background: linear-gradient(
+			to right,
+			transparent,
+			color-mix(in srgb, var(--gold) 70%, transparent) 30%,
+			color-mix(in srgb, var(--gold) 70%, transparent) 70%,
+			transparent
+		);
+	}
+
+	.ornament::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 7px;
+		height: 7px;
+		background: var(--bg);
+		border: 1px solid var(--gold);
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	.lede {
+		margin: 1.25rem auto 0;
+		max-width: 34rem;
+		font-family: var(--serif);
+		font-size: 1.02rem;
+		font-style: italic;
 		font-weight: 400;
-		letter-spacing: var(--tracking-ui);
-		line-height: 1.35;
+		letter-spacing: -0.01em;
+		line-height: 1.5;
 		color: var(--fg-dim);
 	}
 
 	.search {
 		position: relative;
-		margin-top: 1.65rem;
+		margin-top: 2rem;
 		text-align: left;
 	}
 
 	.search-icon {
 		position: absolute;
-		left: 0.9rem;
+		z-index: 1;
+		left: 1.15rem;
 		top: 50%;
 		transform: translateY(-50%);
 		font-size: 1.3rem;
@@ -809,22 +881,25 @@
 
 	.search input {
 		width: 100%;
-		height: 3rem;
+		height: 3.25rem;
 		font-family: var(--ui);
 		font-size: 1rem;
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
 		color: var(--fg);
-		background: var(--panel);
-		border: 1px solid var(--hairline);
-		border-radius: 8px;
-		padding: 0 1rem 0 2.85rem;
+		background: color-mix(in srgb, var(--panel) 78%, transparent);
+		backdrop-filter: blur(10px);
+		border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
+		border-radius: var(--radius-pill);
+		padding: 0 1.25rem 0 3.1rem;
 		outline: none;
 		appearance: none;
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+		box-shadow:
+			0 1px 0 color-mix(in srgb, var(--fg) 6%, transparent) inset,
+			0 12px 32px -18px rgba(0, 0, 0, 0.6);
 		transition:
-			border-color 0.2s var(--ease),
-			box-shadow 0.2s var(--ease);
+			border-color 0.25s var(--ease),
+			box-shadow 0.25s var(--ease);
 	}
 
 	.search input::-webkit-search-decoration {
@@ -836,10 +911,11 @@
 	}
 
 	.search input:focus {
-		border-color: color-mix(in srgb, var(--highlight) 55%, var(--hairline));
+		border-color: color-mix(in srgb, var(--gold) 60%, transparent);
 		box-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.08),
-			0 0 0 3px color-mix(in srgb, var(--highlight) 22%, transparent);
+			0 1px 0 color-mix(in srgb, var(--fg) 6%, transparent) inset,
+			0 0 0 4px color-mix(in srgb, var(--gold) 14%, transparent),
+			0 12px 32px -18px rgba(0, 0, 0, 0.6);
 	}
 
 	.filters {
@@ -849,12 +925,12 @@
 		gap: 0.75rem 0.85rem;
 		width: 100%;
 		max-width: 42rem;
-		margin-top: 1.15rem;
+		margin-top: 1.35rem;
 	}
 
 	.filter {
 		display: grid;
-		gap: 0.32rem;
+		gap: 0.4rem;
 		flex: 1 1 8.4rem;
 		min-width: 8.4rem;
 		max-width: 12.5rem;
@@ -863,10 +939,12 @@
 
 	.filter-label {
 		margin: 0;
+		padding-left: 0.95rem;
 		font-family: var(--ui);
-		font-size: 0.75rem;
+		font-size: 0.62rem;
 		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
 		line-height: 1.2;
 		color: var(--fg-faint);
 	}
@@ -899,18 +977,18 @@
 	.filter select {
 		display: block;
 		width: 100%;
-		height: 2.35rem;
-		padding: 0 2rem 0 0.75rem;
+		height: 2.4rem;
+		padding: 0 2.1rem 0 0.95rem;
 		font-family: var(--ui);
 		font-size: 13px;
 		font-weight: 500;
 		letter-spacing: var(--tracking-ui);
 		line-height: 1.2;
 		color: var(--fg);
-		background: var(--panel);
-		border: 1px solid var(--hairline);
-		border-radius: 8px;
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+		background: color-mix(in srgb, var(--panel) 70%, transparent);
+		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
+		border-radius: var(--radius-pill);
+		box-shadow: none;
 		appearance: none;
 		-webkit-appearance: none;
 		cursor: pointer;
@@ -921,14 +999,12 @@
 	}
 
 	.filter select:hover {
-		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
+		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
 	}
 
 	.filter select:focus {
-		border-color: color-mix(in srgb, var(--highlight) 55%, var(--hairline));
-		box-shadow:
-			0 1px 2px rgba(0, 0, 0, 0.08),
-			0 0 0 3px color-mix(in srgb, var(--highlight) 22%, transparent);
+		border-color: color-mix(in srgb, var(--gold) 60%, transparent);
+		box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 14%, transparent);
 	}
 
 	.browse {
@@ -940,10 +1016,11 @@
 	}
 
 	.count {
-		margin: 0 0 1.35rem;
+		margin: 0 0 1.75rem;
 		font-family: var(--ui);
-		font-size: 0.78rem;
-		letter-spacing: var(--tracking-ui);
+		font-size: 0.66rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
 		line-height: 1.2;
 		color: var(--fg-faint);
 	}
@@ -957,42 +1034,59 @@
 		opacity: 0.75;
 	}
 
-	.empty {
+	.no-results {
 		margin: 2rem 0;
 		color: var(--fg-dim);
 		font-style: italic;
 	}
 
 	.group {
-		margin: 0 0 2.4rem;
+		margin: 0 0 3.25rem;
 	}
 
 	.group-head {
-		margin: 0 0 0.85rem;
+		margin: 0 0 1.15rem;
 		border-bottom: none;
 		padding-bottom: 0;
 	}
 
+	/* Serif title, gold count, hairline running out to the right. */
 	.group h2 {
 		display: flex;
 		align-items: baseline;
-		gap: 0.55rem;
+		gap: 0.7rem;
 		margin: 0;
 		font-family: var(--serif);
-		font-size: 0.82rem;
-		font-weight: 600;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
+		font-size: 1.45rem;
+		font-weight: 500;
+		letter-spacing: -0.02em;
+		line-height: 1.15;
 		color: var(--fg-strong);
 	}
 
+	.group h2::after {
+		content: '';
+		flex: 1;
+		align-self: center;
+		height: 1px;
+		margin-left: 0.35rem;
+		background: linear-gradient(
+			to right,
+			color-mix(in srgb, var(--gold) 45%, transparent),
+			color-mix(in srgb, var(--fg) 8%, transparent) 40%,
+			transparent
+		);
+	}
+
 	.group h2 span {
-		font-family: var(--ui);
-		font-size: 0.72rem;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
+		font-family: var(--serif);
+		font-size: 0.9rem;
+		font-weight: 400;
+		font-style: italic;
+		font-variant-numeric: oldstyle-nums;
+		letter-spacing: 0;
 		line-height: 1.2;
-		color: var(--fg-faint);
+		color: var(--gold);
 	}
 
 	.group-sub {
@@ -1016,8 +1110,7 @@
 	}
 
 	.tier-group h2 {
-		font-size: 0.9rem;
-		letter-spacing: 0.14em;
+		font-size: 1.6rem;
 	}
 
 	.grid {
@@ -1026,12 +1119,28 @@
 		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-		gap: 0.7rem;
+		gap: 1rem;
 	}
 
+	/* No content-visibility here: its paint containment clips the tilt and hover shadow. */
 	.grid > li {
-		content-visibility: auto;
-		contain-intrinsic-size: auto 11.5rem;
+		min-width: 0;
+	}
+
+	/* Cards rise into place as they scroll into view. */
+	@supports (animation-timeline: view()) {
+		.grid > li {
+			animation: card-rise linear both;
+			animation-timeline: view();
+			animation-range: entry 0% entry 55%;
+		}
+	}
+
+	@keyframes card-rise {
+		from {
+			opacity: 0;
+			transform: translateY(1.6rem) scale(0.97);
+		}
 	}
 
 	.card {
@@ -1043,21 +1152,40 @@
 		height: 100%;
 		min-height: 11.25rem;
 		text-align: left;
-		padding: 0.85rem 0.95rem;
-		border: 1px solid color-mix(in srgb, var(--hairline) 88%, transparent);
-		border-radius: var(--radius);
-		background: color-mix(in srgb, var(--panel) 92%, #fff);
+		padding: 0.95rem 1.05rem;
+		border: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
+		border-radius: var(--card-radius);
+		background: var(--plate);
 		box-shadow:
-			0 1px 0 rgba(255, 255, 255, 0.04) inset,
-			0 1px 2px rgba(0, 0, 0, 0.18);
+			0 1px 0 color-mix(in srgb, var(--fg) 5%, transparent) inset,
+			0 10px 28px -20px rgba(0, 0, 0, 0.7);
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
+		isolation: isolate;
 		transition:
-			border-color 0.2s var(--ease),
-			transform 0.2s var(--ease),
-			background 0.2s var(--ease),
-			box-shadow 0.2s var(--ease);
+			border-color 0.35s var(--ease),
+			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+			box-shadow 0.35s var(--ease);
+	}
+
+	/* Hairline of the entry's own colour along the top edge. */
+	.card::before {
+		content: '';
+		position: absolute;
+		inset: 0 0 auto;
+		z-index: 3;
+		height: 1px;
+		background: linear-gradient(
+			to right,
+			transparent,
+			color-mix(in srgb, var(--k) 85%, transparent) 30%,
+			color-mix(in srgb, var(--k2, var(--k)) 85%, transparent) 70%,
+			transparent
+		);
+		opacity: 0.55;
+		pointer-events: none;
+		transition: opacity 0.35s var(--ease);
 	}
 
 	.card.card-showcase {
@@ -1085,7 +1213,19 @@
 		height: auto;
 		min-height: 11.25rem;
 		border-radius: 0;
-		background: transparent;
+		/* The entry's colour as a floor light behind the figure. */
+		background:
+			radial-gradient(
+				ellipse 95% 55% at 50% 100%,
+				color-mix(in srgb, var(--k) 34%, transparent),
+				transparent 72%
+			),
+			linear-gradient(
+				to bottom,
+				transparent 40%,
+				color-mix(in srgb, var(--k) 8%, transparent)
+			);
+		mask-image: linear-gradient(to right, #000 82%, transparent);
 	}
 
 	.card.card-character .avatar img {
@@ -1093,6 +1233,19 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center bottom;
+		transform-origin: 50% 100%;
+	}
+
+	/* Art drifts against the tilt — a window onto a deeper plane. */
+	.card .avatar img,
+	.card .showcase img {
+		transform: translate3d(calc(var(--tilt-x) * -6px), calc(var(--tilt-y) * -5px), 0)
+			scale(var(--art-scale, 1));
+		transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+
+	.card:hover {
+		--art-scale: 1.06;
 	}
 
 	.card.card-character .meta {
@@ -1109,13 +1262,24 @@
 		align-items: flex-start;
 	}
 
+	/* Lift, and a shadow that slides away from the raised corner. */
 	.card:hover {
-		border-color: color-mix(in srgb, var(--highlight) 22%, var(--hairline));
-		background: var(--bg-raised);
+		--tilt-lift: -5px;
+		border-color: color-mix(in srgb, var(--k) 42%, transparent);
 		box-shadow:
-			0 1px 0 rgba(255, 255, 255, 0.05) inset,
-			0 6px 18px rgba(0, 0, 0, 0.22);
-		transform: translateY(-1px);
+			0 1px 0 color-mix(in srgb, var(--fg) 7%, transparent) inset,
+			calc(var(--tilt-x) * -14px) calc(24px + var(--tilt-y) * -10px) 46px -24px
+				color-mix(in srgb, var(--k) 55%, rgba(0, 0, 0, 0.8));
+	}
+
+	.card:hover::before {
+		opacity: 1;
+	}
+
+	.card:focus-visible {
+		outline: none;
+		border-color: color-mix(in srgb, var(--gold) 70%, transparent);
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 22%, transparent);
 	}
 
 	/* Small gold music-note mark — this entry has a composed leitmotif. */
@@ -1247,7 +1411,7 @@
 		width: 5.75rem;
 		aspect-ratio: 1;
 		overflow: hidden;
-		border-radius: var(--radius);
+		border-radius: 10px;
 		border: 1px solid var(--hairline);
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
 	}
@@ -1295,11 +1459,11 @@
 
 	.card-name {
 		font-family: var(--serif);
-		font-weight: 600;
-		font-size: 1.02rem;
-		line-height: 1.12;
+		font-weight: 500;
+		font-size: 1.22rem;
+		line-height: 1.1;
 		color: var(--fg-strong);
-		letter-spacing: var(--tracking-display);
+		letter-spacing: -0.025em;
 	}
 
 	.lead-dot {
@@ -1332,6 +1496,10 @@
 		flex-wrap: wrap;
 		align-items: baseline;
 		gap: 0.35rem;
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 0.78rem;
+		letter-spacing: 0.02em;
+		color: var(--fg-dim);
 	}
 
 	.card-sub .hanja {
@@ -1346,39 +1514,49 @@
 	}
 
 	.card-title {
-		font-family: var(--ui);
-		font-size: 0.78rem;
+		margin-top: 0.2rem;
+		font-family: var(--serif);
+		font-size: 0.86rem;
+		font-style: italic;
 		font-weight: 400;
-		letter-spacing: var(--tracking-ui);
-		line-height: 1.22;
+		letter-spacing: -0.005em;
+		line-height: 1.3;
 		color: var(--fg-dim);
 	}
 
 	.card-hexes {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.28rem;
-		margin-top: 0.35rem;
+		gap: 0.3rem 0.75rem;
+		margin-top: 0.5rem;
 	}
 
+	/* Colour swatch: a small lit dot and a quiet code. */
 	.card-hex {
 		display: inline-flex;
 		align-items: center;
-		justify-content: center;
+		gap: 0.38rem;
 		width: fit-content;
 		max-width: 100%;
-		padding: 0.18rem 0.55rem;
-		min-height: 1.15rem;
-		border-radius: var(--radius-pill);
-		font-family: var(--ui);
+		font-family: ui-monospace, 'SF Mono', Menlo, monospace;
 		font-size: 0.6rem;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
+		font-weight: 400;
+		letter-spacing: 0.06em;
 		line-height: 1;
 		text-transform: uppercase;
-		color: #fffdf8;
+		color: var(--fg-faint);
+	}
+
+	.card-hex::before {
+		content: '';
+		width: 0.55rem;
+		height: 0.55rem;
+		flex-shrink: 0;
+		border-radius: 50%;
 		background: var(--chip, var(--k));
-		text-shadow: 0 0 2px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.45);
+		box-shadow:
+			0 0 0 1px color-mix(in srgb, var(--fg) 14%, transparent),
+			0 0 8px color-mix(in srgb, var(--chip, var(--k)) 60%, transparent);
 	}
 
 	.card-tier {
@@ -1437,11 +1615,11 @@
 		line-clamp: 2;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
-		margin-top: 0.25rem;
+		margin-top: 0.35rem;
 		font-family: var(--ui);
 		font-size: 0.82rem;
 		letter-spacing: var(--tracking-ui);
-		line-height: 1.28;
+		line-height: 1.4;
 		color: var(--fg-dim);
 	}
 
@@ -1483,10 +1661,10 @@
 		right: 0.85rem;
 		bottom: 0.85rem;
 		z-index: 115;
-		width: min(34rem, calc(100vw - 1.7rem));
+		width: min(36rem, calc(100vw - 1.7rem));
 		overflow: hidden;
-		border: 1px solid rgba(255, 255, 255, 0.1);
-		border-radius: var(--radius);
+		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
+		border-radius: 18px;
 		box-shadow:
 			0 28px 70px rgba(0, 0, 0, 0.55),
 			0 8px 24px rgba(0, 0, 0, 0.35);
@@ -1575,8 +1753,12 @@
 		}
 
 		.hero {
-			padding-top: 2.15rem;
-			padding-bottom: 1.2rem;
+			padding-top: 2.6rem;
+			padding-bottom: 1.5rem;
+		}
+
+		.group h2 {
+			font-size: 1.25rem;
 		}
 
 		.filters {
@@ -1618,7 +1800,7 @@
 			bottom: max(0.25rem, env(safe-area-inset-bottom, 0px));
 			left: max(0.25rem, env(safe-area-inset-left, 0px));
 			width: auto;
-			border-radius: var(--radius);
+			border-radius: 14px;
 		}
 
 		.peek.full {
@@ -1630,16 +1812,84 @@
 		}
 	}
 
+	/* ————— Masthead entrance: staggered rise, rule draws outward ————— */
+	.hero-copy > *,
+	.search,
+	.filters {
+		animation: rise-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+	}
+
+	.eyebrow {
+		animation-delay: 0.05s;
+	}
+
+	.hero h1 {
+		animation-delay: 0.12s;
+	}
+
+	.hero-ko {
+		animation-delay: 0.2s;
+	}
+
+	.hero .ornament {
+		animation-name: rule-draw;
+		animation-delay: 0.3s;
+	}
+
+	.lede {
+		animation-delay: 0.38s;
+	}
+
+	.search {
+		animation-delay: 0.48s;
+	}
+
+	.filters {
+		animation-delay: 0.58s;
+	}
+
+	@keyframes rise-in {
+		from {
+			opacity: 0;
+			transform: translateY(0.9rem);
+			filter: blur(6px);
+		}
+	}
+
+	@keyframes rule-draw {
+		from {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+	}
+
+	/* Section rules sweep out as their heading scrolls in. */
+	@supports (animation-timeline: view()) {
+		.group h2::after {
+			transform-origin: left center;
+			animation: rule-draw linear both;
+			animation-timeline: view();
+			animation-range: entry 20% cover 35%;
+		}
+	}
+
 	@media (prefers-reduced-motion: reduce) {
 		.card,
 		.scrim,
 		.peek,
-		.wiki {
+		.wiki,
+		.grid > li,
+		.hero-copy > *,
+		.search,
+		.filters,
+		.group h2::after {
 			animation: none;
 			transition: none;
 		}
 
-		.card:hover {
+		.card:hover,
+		.card .avatar img,
+		.card .showcase img {
 			transform: none;
 		}
 	}

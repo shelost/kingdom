@@ -617,13 +617,13 @@ export function storyTitleElement(el: HTMLElement): HTMLElement {
 	if (el.matches('article.entry, .entry-head, .entry-head-sticky')) {
 		const h2 = firstPainted(el, ['.episode h2', '.entry-head h2', 'h2']);
 		const head = firstPainted(el, ['.entry-head-sticky', '.entry-head']);
-		/* Desktop: the year + title bar is sticky. Landing on the inner h2
-		   fights that pin (chrome above the h2 is pulled back). Mobile: the
-		   same bar is static and art sits above it — land on the h2. */
+		/* Desktop: the year + title bar is sticky, so land on the bar. Phones:
+		   the bar is static — land on its first row so the chapter label and
+		   story index clear the fixed menu buttons along with the title. */
 		if (h2 && head) {
 			const sticky = h2.closest<HTMLElement>('.entry-head-sticky');
 			if (sticky && getComputedStyle(sticky).position === 'sticky') return head;
-			return h2;
+			return firstPainted(head, ['.head-top']) ?? h2;
 		}
 		return h2 ?? head ?? el;
 	}
@@ -728,9 +728,9 @@ export function storyStickyOffset(title?: HTMLElement | null): number {
 
 	const overlapsX = (r: DOMRect) => r.left < x1 && r.right > x0;
 
-	const hud = document.querySelector<HTMLElement>('.hud.in');
-	if (hud && isPainted(hud)) {
-		const r = hud.getBoundingClientRect();
+	for (const fixed of document.querySelectorAll<HTMLElement>('.hud.in, .toc-toggle.in')) {
+		if (!isPainted(fixed)) continue;
+		const r = fixed.getBoundingClientRect();
 		if (r.bottom > 0 && overlapsX(r)) chrome = Math.max(chrome, r.bottom);
 	}
 

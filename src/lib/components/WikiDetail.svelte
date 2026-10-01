@@ -54,7 +54,8 @@
 		showsWikiAccent,
 		ownersOf,
 		swordsOf,
-		swordOfPerson
+		swordOfPerson,
+		animalsOf
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
 	import { leitmotifOf, playLeitmotif, stopLeitmotif, tempsOf } from '$lib/leitmotifs';
@@ -65,6 +66,7 @@
 	import { storyImg } from '$lib/img';
 	import { scenesForWikiEntry, type WikiScene } from '$lib/wikiScenes';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
+	import { tilt } from '$lib/attachments/tilt';
 
 	let {
 		entry,
@@ -114,15 +116,22 @@
 	let isGroup = $derived(entry.entity === 'group');
 	let isClan = $derived(entry.entity === 'clan');
 	let isSword = $derived(entry.entity === 'sword');
+	let isAnimal = $derived(entry.entity === 'animal');
+	/** Swords and animals list people in `owners` (wielders / rider / guided). */
+	let hasOwners = $derived(isSword || isAnimal);
 	let isNation = $derived(entry.entity === 'nation');
 	/** Nation detail hero uses the kingdom flag when present (not portrait art). */
 	let heroArt = $derived(isNation && flag ? flag : art);
 	let isNationFlagHero = $derived(isNation && !!flag);
+	/** Places and animals lead with a landscape still. */
+	let isLandscapeHero = $derived(isPlace || isAnimal);
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
-	let isPortraitHero = $derived(!!heroArt && !isPlace && !isNationFlagHero);
+	let isPortraitHero = $derived(!!heroArt && !isLandscapeHero && !isNationFlagHero);
 	let kind = $derived(kindOf(entry));
 	let scenes = $derived(
-		kind === 'character' || kind === 'god' ? scenesForWikiEntry(entry.id) : []
+		kind === 'character' || kind === 'god' || kind === 'animal'
+			? scenesForWikiEntry(entry.id)
+			: []
 	);
 	/** SFW stills tagged with this person. NSFW stays on /images + the modal, not the grid. */
 	let galleryScenes = $derived.by(() => {
@@ -198,9 +207,9 @@
 	let partners = $derived(isBond ? betweenPeople(entry) : []);
 	let bondA = $derived(accents[0] ?? k.color);
 	let bondB = $derived(accents[1] ?? accents[0] ?? k.color);
-	let memberships = $derived(isOrg || isGroup || isClan || isBond || isSword ? [] : orgsOf(entry));
+	let memberships = $derived(isOrg || isGroup || isClan || isBond || hasOwners ? [] : orgsOf(entry));
 	let groupMemberships = $derived(
-		isOrg || isGroup || isClan || isBond || isSword ? [] : groupsOf(entry)
+		isOrg || isGroup || isClan || isBond || hasOwners ? [] : groupsOf(entry)
 	);
 	let orgMembers = $derived(
 		isOrg
@@ -209,21 +218,24 @@
 				? groupMembersOf(entry.id)
 				: isClan
 					? clanMembersOf(entry.id)
-					: isSword
+					: hasOwners
 						? ownersOf(entry.id)
 						: []
 	);
 	let orgRosterTitle = $derived(
-		isSword ? 'Owners' : isClan ? 'Members' : 'Members'
+		entry.ownersLabel ?? (isSword ? 'Owners' : 'Members')
 	);
 	let linkedSword = $derived(!isSword && entry.blade ? swordOfPerson(entry.id) : undefined);
 	let personSwords = $derived(!isSword && entry.blade ? swordsOf(entry.id) : []);
+	let personAnimals = $derived(
+		kind === 'character' || kind === 'god' ? animalsOf(entry.id) : []
+	);
 	let isHwarang = $derived(entry.id === 'hwarang');
 	let orgRoster = $derived(isHwarang ? sortHwarangMembers(orgMembers) : orgMembers);
 	let hwarangGroups = $derived(isHwarang ? groupByHwarangClass(orgMembers) : []);
-	let clanLabel = $derived(isOrg || isGroup || isClan || isBond || isPlace || isSword ? undefined : clanOf(entry));
+	let clanLabel = $derived(isOrg || isGroup || isClan || isBond || isPlace || hasOwners ? undefined : clanOf(entry));
 	let clanEntries = $derived(
-		isOrg || isGroup || isClan || isBond || isPlace || isSword ? [] : clanEntriesOf(entry)
+		isOrg || isGroup || isClan || isBond || isPlace || hasOwners ? [] : clanEntriesOf(entry)
 	);
 	let chartNodes = $derived(isOrg || isGroup ? (entry.orgChart ?? []) : []);
 	let life = $derived(lifespanOf(entry));
@@ -294,7 +306,7 @@
 	class:expanded
 	style:--k={isBond ? bondA : k.color}
 	style:--k2={isBond ? bondB : (entry.colorSecondary ?? k.color)}
-	aria-label="{who} encyclopedia entry"
+	aria-label="{who} wiki entry"
 >
 	<header class="detail-bar">
 		<button type="button" class="icon-btn" onclick={onBack} aria-label="Close">✕</button>
@@ -320,6 +332,7 @@
 	</header>
 
 	<div class="detail-scroll" {@attach bindScroll}>
+		{#key entry.id}
 		{#if photo}
 			<figure class="photo">
 				<img {...storyImg(photo, { kind: 'hero', priority: true, alt: who, sizes: '40rem' })} />
@@ -331,7 +344,7 @@
 			<figure
 				class="hero-art"
 				class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
-				class:place={isPlace}
+				class:place={isLandscapeHero}
 				class:nation={isNationFlagHero}
 				aria-hidden="true"
 			>
@@ -607,6 +620,23 @@
 					</dd>
 				</div>
 			{/if}
+			{#if personAnimals.length}
+				<div>
+					<dt>Animals</dt>
+					<dd class="pill-row">
+						{#each personAnimals as animal (animal.id)}
+							<button
+								type="button"
+								class="pill link-pill"
+								style:--pill={colorOf(animal)}
+								onclick={() => onOpen(animal.id)}
+							>
+								{nameOf(animal)}{#if animal.korean}<span class="realm-ko"> · {animal.korean}</span>{/if}
+							</button>
+						{/each}
+					</dd>
+				</div>
+			{/if}
 			{#if entry.binyeo}
 				<div class="prop-art">
 					<dt>Binyeo</dt>
@@ -620,7 +650,7 @@
 			{/if}
 			{#if entry.object || objectArt}
 				<div class={{ 'prop-art': objectArt }}>
-					<dt>Object</dt>
+					<dt>{isAnimal ? 'Coat' : 'Object'}</dt>
 					<dd class={{ 'prop-art-row': objectArt }}>
 						{#if objectArt}
 							<img class="prop-art-fig" {...storyImg(objectArt, { kind: 'hero', alt: '', sizes: '36rem' })} />
@@ -807,10 +837,11 @@
 					<li>
 						<button
 							type="button"
-							class="member-card"
+							class="member-card tilt"
 							class:place-card={m.entity === 'place'}
 							style:--mk={colorOf(m)}
 							onclick={() => onOpen(m.id)}
+							{@attach tilt()}
 						>
 							<span
 								class="member-avatar"
@@ -883,9 +914,10 @@
 						<li>
 							<button
 								type="button"
-								class="member-card place-card"
+								class="member-card place-card tilt"
 								style:--mk={colorOf(city)}
 								onclick={() => onOpen(city.id)}
+								{@attach tilt()}
 							>
 								<span
 									class="member-avatar place-thumb"
@@ -922,9 +954,10 @@
 						<li>
 							<button
 								type="button"
-								class="member-card place-card"
+								class="member-card place-card tilt"
 								style:--mk={colorOf(place)}
 								onclick={() => onOpen(place.id)}
+								{@attach tilt()}
 							>
 								<span
 									class="member-avatar place-thumb"
@@ -1131,7 +1164,7 @@
 							.map((id) => byId.get(id))
 							.filter((x): x is Person => !!x)}
 						<li>
-							<button type="button" class="rel-card" onclick={() => onOpen(bond.id)}>
+							<button type="button" class="rel-card tilt" onclick={() => onOpen(bond.id)} {@attach tilt()}>
 								<span class="rel-name">{nameOf(bond)}</span>
 								<span class="rel-meta">
 									{kindLabel(bond)}
@@ -1147,16 +1180,36 @@
 			</section>
 		{/if}
 		</div><!-- expo -->
+		{/key}
 	</div>
 </article>
 
 <style>
 	.detail {
+		--card-radius: 12px;
+		--plate: linear-gradient(
+			165deg,
+			color-mix(in srgb, var(--panel) 94%, var(--fg) 6%) 0%,
+			var(--panel) 45%,
+			color-mix(in srgb, var(--panel) 70%, var(--panel-sunken)) 100%
+		);
 		display: flex;
 		flex-direction: column;
 		height: 100%;
 		min-height: 0;
-		background: var(--panel);
+		/* The entry's colour as a lamp behind the portrait, top right. */
+		background:
+			radial-gradient(
+				ellipse 75% 26rem at 88% -4rem,
+				color-mix(in srgb, var(--k) 20%, transparent),
+				transparent 70%
+			),
+			radial-gradient(
+				ellipse 60% 18rem at 0% 0%,
+				color-mix(in srgb, var(--gold) 5%, transparent),
+				transparent 70%
+			),
+			var(--panel);
 	}
 
 	.detail-bar {
@@ -1164,9 +1217,9 @@
 		align-items: center;
 		flex-shrink: 0;
 		gap: 0.55rem;
-		padding: 0.75rem 1rem;
-		border-bottom: 1px solid var(--hairline);
-		background: var(--panel);
+		padding: 0.8rem 1.1rem;
+		border-bottom: 1px solid color-mix(in srgb, var(--fg) 7%, transparent);
+		background: transparent;
 	}
 
 	.icon-btn {
@@ -1178,8 +1231,8 @@
 		font-size: 0.85rem;
 		color: var(--fg-dim);
 		background: transparent;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
+		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
+		border-radius: 50%;
 		cursor: pointer;
 		transition:
 			background 0.2s var(--ease),
@@ -1331,7 +1384,7 @@
 	}
 
 	.expo {
-		padding: 0 1.7rem;
+		padding: 0 1.9rem;
 	}
 
 	.photo {
@@ -1350,7 +1403,7 @@
 	}
 
 	.photo figcaption {
-		padding: 0.45rem 1.7rem;
+		padding: 0.45rem 1.9rem;
 		font-size: 0.62rem;
 		color: var(--fg-faint);
 		background: color-mix(in srgb, var(--fg) 3%, transparent);
@@ -1411,12 +1464,18 @@
 		grid-area: art;
 		margin: 0;
 		padding: 0;
-		width: 10.5rem;
+		width: 11.5rem;
 		aspect-ratio: 2 / 3;
 		line-height: 0;
 		overflow: hidden;
 		align-self: end;
-		background: transparent;
+		/* Floor light in the entry's colour; figure fades into the rule below. */
+		background: radial-gradient(
+			ellipse 90% 50% at 50% 100%,
+			color-mix(in srgb, var(--k) 32%, transparent),
+			transparent 72%
+		);
+		mask-image: linear-gradient(to bottom, #000 80%, transparent);
 	}
 
 	.hero.portrait .hero-art img {
@@ -1428,7 +1487,7 @@
 	}
 
 	.detail.expanded .hero.portrait .hero-art {
-		width: 16rem;
+		width: 17rem;
 	}
 
 	.hero.portrait .hero-art.stand-in {
@@ -1446,9 +1505,9 @@
 
 	.stage-gallery {
 		margin: 0 0 1.1rem;
-		padding: 0.85rem 0.95rem 0.95rem;
+		padding: 0.95rem 1rem 1rem;
 		border: 1px solid color-mix(in srgb, var(--k) 28%, var(--line));
-		border-radius: var(--radius);
+		border-radius: var(--card-radius);
 		background: color-mix(in srgb, var(--panel) 92%, var(--k) 8%);
 	}
 
@@ -1476,7 +1535,7 @@
 		width: 5.2rem;
 		padding: 0.45rem 0.35rem 0.5rem;
 		border: 1px solid color-mix(in srgb, var(--k) 22%, var(--line));
-		border-radius: var(--radius);
+		border-radius: 10px;
 		background: var(--panel);
 		cursor: pointer;
 		color: inherit;
@@ -1541,19 +1600,21 @@
 	.name {
 		margin: 0;
 		font-family: var(--serif);
-		font-size: clamp(1.9rem, 4.5vw, 2.6rem);
-		font-weight: 600;
-		letter-spacing: var(--tracking-display);
-		line-height: 1.15;
+		font-size: clamp(2.2rem, 5vw, 3rem);
+		font-weight: 500;
+		letter-spacing: -0.035em;
+		line-height: 1.02;
 		color: var(--fg-strong);
 	}
 
 	.native {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.55rem;
-		margin: 0.45rem 0 0;
+		gap: 0.6rem;
+		margin: 0.6rem 0 0;
+		font-family: 'Noto Serif KR', var(--serif);
 		font-size: 1rem;
+		letter-spacing: 0.04em;
 		color: var(--fg-dim);
 	}
 
@@ -1639,24 +1700,29 @@
 		border-color: var(--gold);
 	}
 
+	/* Catalogue rows separated by hairlines. */
 	.props {
 		display: grid;
-		gap: 0.75rem;
-		margin: 0 0 1.4rem;
+		gap: 0;
+		margin: 0 0 1.8rem;
 		padding: 0;
+		border-top: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
 	}
 
 	.props > div {
 		display: grid;
-		grid-template-columns: 7rem 1fr;
-		gap: 0.6rem;
+		grid-template-columns: 7.25rem 1fr;
+		gap: 0.75rem;
 		align-items: baseline;
+		padding: 0.62rem 0;
+		border-bottom: 1px solid color-mix(in srgb, var(--fg) 6%, transparent);
 	}
 
 	.props dt {
 		margin: 0;
-		font-size: 0.68rem;
-		letter-spacing: 0.1em;
+		font-size: 0.62rem;
+		font-weight: 500;
+		letter-spacing: 0.18em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
 	}
@@ -1712,21 +1778,33 @@
 		gap: 0.35rem;
 	}
 
+	/* Colour swatch: a small lit dot and a quiet code. */
 	.hex-chip {
 		display: inline-flex;
 		align-items: center;
-		padding: 0.18rem 0.55rem;
-		min-height: 1.2rem;
+		gap: 0.45rem;
+		padding: 0.22rem 0.65rem 0.22rem 0.4rem;
+		min-height: 1.4rem;
 		border-radius: var(--radius-pill);
-		font-family: var(--ui);
-		font-size: 0.68rem;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
+		border: 1px solid color-mix(in srgb, var(--chip) 35%, transparent);
+		font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+		font-size: 0.66rem;
+		font-weight: 400;
+		letter-spacing: 0.06em;
 		line-height: 1;
 		text-transform: uppercase;
-		color: #fffdf8;
+		color: var(--fg-dim);
+		background: color-mix(in srgb, var(--chip) 8%, transparent);
+	}
+
+	.hex-chip::before {
+		content: '';
+		width: 0.7rem;
+		height: 0.7rem;
+		flex-shrink: 0;
+		border-radius: 50%;
 		background: var(--chip);
-		text-shadow: 0 0 2px rgba(0, 0, 0, 0.7), 0 1px 2px rgba(0, 0, 0, 0.45);
+		box-shadow: 0 0 10px color-mix(in srgb, var(--chip) 60%, transparent);
 	}
 
 	.pill {
@@ -1852,12 +1930,21 @@
 	}
 
 	.tagline {
-		margin: 0 0 0.85rem;
-		font-size: 1.05rem;
-		line-height: 1.45;
-		color: var(--fg-dim);
-		border-left: 2px solid color-mix(in srgb, var(--k) 55%, transparent);
-		padding-left: 0.9rem;
+		margin: 0 0 1.1rem;
+		font-family: var(--serif);
+		font-size: 1.12rem;
+		font-style: italic;
+		line-height: 1.5;
+		letter-spacing: -0.01em;
+		color: var(--fg);
+		border-left: 2px solid transparent;
+		border-image: linear-gradient(
+				to bottom,
+				var(--k),
+				color-mix(in srgb, var(--k) 10%, transparent)
+			)
+			1;
+		padding: 0.1rem 0 0.1rem 1rem;
 	}
 
 	.era-tags {
@@ -1881,22 +1968,39 @@
 	}
 
 	section {
-		margin: 0 0 1.8rem;
+		margin: 0 0 2.2rem;
 	}
 
+	/* Gold small caps with a hairline running out to the right. */
 	h2 {
-		margin: 0 0 0.65rem;
-		font-family: var(--serif);
-		font-size: 0.78rem;
+		display: flex;
+		align-items: baseline;
+		margin: 0 0 0.9rem;
+		font-family: var(--ui);
+		font-size: 0.66rem;
 		font-weight: 600;
-		letter-spacing: 0.14em;
+		letter-spacing: 0.24em;
 		text-transform: uppercase;
 		color: var(--gold);
 	}
 
+	h2::after {
+		content: '';
+		flex: 1;
+		align-self: center;
+		height: 1px;
+		margin-left: 0.85rem;
+		background: linear-gradient(
+			to right,
+			color-mix(in srgb, var(--gold) 40%, transparent),
+			transparent
+		);
+	}
+
 	.h2-ko {
-		margin-left: 0.35rem;
-		font-size: 0.85em;
+		margin-left: 0.5rem;
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 1.1em;
 		font-weight: 500;
 		letter-spacing: 0.04em;
 		text-transform: none;
@@ -2010,17 +2114,36 @@
 	}
 
 	.timeline {
+		--tl-year: 4.2rem;
+		--tl-gap: 0.55rem;
+		position: relative;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 
+	/* Spine through the dots. */
+	.timeline::before {
+		content: '';
+		position: absolute;
+		top: 0.9rem;
+		bottom: 0.9rem;
+		left: calc(var(--tl-year) + var(--tl-gap) + 3px);
+		width: 1px;
+		background: linear-gradient(
+			to bottom,
+			color-mix(in srgb, var(--k) 50%, transparent),
+			color-mix(in srgb, var(--k) 12%, transparent)
+		);
+	}
+
 	.timeline li {
+		position: relative;
 		display: grid;
-		grid-template-columns: 4.2rem 0.7rem 1fr;
-		gap: 0.55rem;
+		grid-template-columns: var(--tl-year) 0.7rem 1fr;
+		gap: var(--tl-gap);
 		align-items: start;
-		padding: 0.45rem 0;
+		padding: 0.5rem 0;
 	}
 
 	.tl-year {
@@ -2087,25 +2210,32 @@
 		gap: 0.2rem;
 		width: 100%;
 		text-align: left;
-		padding: 0.85rem 0.95rem;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
-		background: var(--bg-raised);
+		padding: 0.95rem 1.05rem;
+		border: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
+		border-radius: var(--card-radius);
+		background: var(--plate);
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
+		--tilt-max: 4deg;
 		transition:
-			border-color 0.2s var(--ease),
-			background 0.2s var(--ease);
+			border-color 0.3s var(--ease),
+			box-shadow 0.3s var(--ease),
+			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.rel-card:hover {
-		border-color: rgba(216, 178, 106, 0.4);
-		background: color-mix(in srgb, var(--bg-raised) 80%, var(--k));
+		--tilt-lift: -3px;
+		border-color: color-mix(in srgb, var(--k) 45%, transparent);
+		box-shadow: calc(var(--tilt-x) * -10px) calc(16px + var(--tilt-y) * -8px) 34px -22px
+			color-mix(in srgb, var(--k) 60%, rgba(0, 0, 0, 0.8));
 	}
 
 	.rel-name {
-		font-weight: 600;
+		font-family: var(--serif);
+		font-size: 1.05rem;
+		font-weight: 500;
+		letter-spacing: -0.015em;
 		color: var(--fg-strong);
 	}
 
@@ -2166,22 +2296,24 @@
 		height: 100%;
 		text-align: center;
 		padding: 0.55rem 0.45rem 0.65rem;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
-		background: var(--bg-raised);
+		border: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
+		border-radius: var(--card-radius);
+		background: var(--plate);
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
+		--tilt-max: 9deg;
 		transition:
-			border-color 0.2s var(--ease),
-			background 0.2s var(--ease),
-			transform 0.2s var(--ease);
+			border-color 0.3s var(--ease),
+			box-shadow 0.3s var(--ease),
+			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.member-card:hover {
-		border-color: rgba(216, 178, 106, 0.4);
-		background: color-mix(in srgb, var(--bg-raised) 78%, var(--mk, var(--k)));
-		transform: translateY(-1px);
+		--tilt-lift: -3px;
+		border-color: color-mix(in srgb, var(--mk, var(--k)) 45%, transparent);
+		box-shadow: calc(var(--tilt-x) * -10px) calc(16px + var(--tilt-y) * -8px) 34px -22px
+			color-mix(in srgb, var(--mk, var(--k)) 60%, rgba(0, 0, 0, 0.8));
 	}
 
 	.member-avatar {
@@ -2429,6 +2561,97 @@
 		gap: 0.5rem;
 	}
 
+	/* ————— Entrance — replays per entry ({#key entry.id}) ————— */
+	.hero-art img {
+		animation: art-in 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+	}
+
+	.hero-id > *,
+	.props > div,
+	.tagline {
+		animation: rise-in 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+	}
+
+	.hero-id > :nth-child(2) {
+		animation-delay: 0.06s;
+	}
+
+	.hero-id > :nth-child(3) {
+		animation-delay: 0.12s;
+	}
+
+	.hero-id > :nth-child(4) {
+		animation-delay: 0.18s;
+	}
+
+	.hero-id > :nth-child(n + 5) {
+		animation-delay: 0.24s;
+	}
+
+	.props > div:nth-child(1) {
+		animation-delay: 0.2s;
+	}
+
+	.props > div:nth-child(2) {
+		animation-delay: 0.25s;
+	}
+
+	.props > div:nth-child(3) {
+		animation-delay: 0.3s;
+	}
+
+	.props > div:nth-child(4) {
+		animation-delay: 0.35s;
+	}
+
+	.props > div:nth-child(5) {
+		animation-delay: 0.4s;
+	}
+
+	.props > div:nth-child(n + 6) {
+		animation-delay: 0.45s;
+	}
+
+	.tagline {
+		animation-delay: 0.3s;
+	}
+
+	@keyframes art-in {
+		from {
+			opacity: 0;
+			transform: scale(1.06) translateY(0.6rem);
+			filter: blur(8px);
+		}
+	}
+
+	@keyframes rise-in {
+		from {
+			opacity: 0;
+			transform: translateY(0.7rem);
+		}
+	}
+
+	/* Lower sections and gallery shots rise as they scroll into the panel. */
+	@supports (animation-timeline: view()) {
+		section,
+		.gallery-masonry > li {
+			animation: rise-in linear both;
+			animation-timeline: view();
+			animation-range: entry 0% entry 45%;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.hero-art img,
+		.hero-id > *,
+		.props > div,
+		.tagline,
+		section,
+		.gallery-masonry > li {
+			animation: none;
+		}
+	}
+
 	@media (max-width: 600px) {
 		.icon-btn {
 			width: 2.75rem;
@@ -2480,8 +2703,12 @@
 			gap: 0.15rem;
 		}
 
+		.timeline {
+			--tl-year: 3.4rem;
+		}
+
 		.timeline li {
-			grid-template-columns: 3.4rem 0.55rem 1fr;
+			grid-template-columns: var(--tl-year) 0.55rem 1fr;
 		}
 
 		.text-btn {

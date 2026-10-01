@@ -7,6 +7,27 @@ alwaysApply: true
 
 Every new cue still follows this. Do not re-ask. Do not dilute.
 
+## Frame: horizontal 2:1 (default)
+
+Every new still is **2:1 horizontal** unless the user names another shape (album covers stay 1:1; portraits/boards keep theirs).
+
+- GenerateImage has no 2:1, so call it with `aspect_ratio: "16:9"` and compose for a 2:1 crop: keep heads, blades, hooves and the horizon inside the **central band** — the top and bottom ~6% are cut. Say so in the prompt ("composed for a 2:1 letterbox crop; nothing important at the top or bottom edge").
+- The installers centre-crop to 2:1 (`scripts/crop-ratio.mjs`): `install-temp-art.mjs` (item `ratio` overrides; `"native"` keeps the generator frame) and `scripts/.cache/install-scene-stills.mjs <n> [ratio]`. Both accept the `.jpg` GenerateImage now writes — no png conversion.
+- `add-image-slots.mjs` writes `ratio: 2` by default.
+
+## Visual canon (source of truth — run it before every prompt)
+
+Per-character and per-place visual facts live in **`src/lib/data/visual-canon.json`**: look, dress, demeanor, how they carry and fight, their horse by year, era changes, and a never-list. Plus armor kits, animals (`obj_*` boards) and place DNA. The builder **`scripts/visual-canon.mjs`** merges that with what already lives elsewhere — portrait-by-year, binyeo and object boards from `people.ts`, the character hex, sword tagline and pommel from `swords.ts`, place boards from `places.ts` — and prints refs plus a `CANON —` text block.
+
+- `node scripts/visual-canon.mjs --year 660 --battle gyebek yushin place:hwangsan` → attach every printed ref, paste the text into the GenerateImage `description` (before the house suffix). `--battle` adds armor, sword, fighting and horse; `--sword` adds sword and fighting; `--mounted` adds the horse.
+- `scripts/.cache/add-image-slots.mjs` does this automatically for manifest items with `people` (year from the entry; `canon: { battle, sword, mounted, with: ['gomanari', 'place:hwangsan'] }`, or `canon: false`).
+- A recurring detail you learn (a grip, a scar, a horse, a crown) goes **into the canon**, not into one prompt. Never restate it by hand in a scene sentence that could drift.
+- **Kingdom banners.** `--battle` (or `--flags`, or an explicit `flag:tang` id) attaches each side's `static/flag_*.png` (rasterized from `flag_*.svg` by `scripts/rasterize-flags.mjs`) and the banner text from `visual-canon.json` → `flags`. Battle stills show those banners on poles and pennants so each side's colour reads at a glance.
+- **Horses are a centrepiece.** Any canon horse adds `horses.common`: full readable body, modelled muscle, edge light along the topline. Gesomun's horse is **Damul** (다물): red-bay, brown-red coat, black mane/tail/legs; battle stills attach the armoured `obj_damul_gaema.png` (Goguryeo 개마), otherwise `obj_damul.png`.
+- **Tang palace.** `place:changan` attaches `pl_daming_night.png` (the night twin of `pl_daming.png`, painted from Daming Palace site photos and reconstruction models: Hanyuan Hall on red rammed-earth terraces, white balustrades, Dragon Tail ramps, que-towers on grey brick piers, grey tiles with owl-tail ridges). Lit and staged like a **Chinese historical drama** (*Legend of the Demon Cat*, *The Longest Day in Chang'an*): night or blue hour, hard backlight through doors and lattice, gold-yellow flame highlights against cool blue-green shadows, many practical flames in frame, red lantern spill, incense haze, reflective dark floors; human-scale drama blocking (officials in two inward-facing lines, banquet tables in two facing rows, emperor on a dais before a screen). Tang palette is vermilion + white with black-grey roofs trimmed in green glaze; yellow is the emperor's robe, not the roofs. Never the Forbidden City, never yellow glazed roofs, never the modern replica.
+- **Era redress.** A canon era with `"redress": true` (Euija the prisoner from 660) makes the portrait face-only and drops the base look/dress, so the portrait's clothes and headband never leak back in.
+- Signature fighting: **Gyebek** fights reverse-grip (역수) — ring above the thumb, straight blade back along the forearm, edge out. **Gesomun** carries five crow swords (four fanned on his back) and fights with **two at once**. **Yushin** orthodox forward grip, one sword. **Bidam** beads looped on the sword wrist. **Jumong** is an archer, not a duelist.
+
 ## Two layouts (pick one; never blend)
 
 **Intimate / close** — personal, skin-forward, faces fill the frame. Sex and seduction stay here (not silhouettes). Painterly / anime-adjacent cinema. Not photoreal, not cartoon.
@@ -123,10 +144,10 @@ small hollow RING (pommel — the *butt* of the handle, at the heel of the fist)
 When the sword hangs down: RING is UP in the fist, BLADE is DOWN toward the ankle. The only circle on the whole sword is that small pommel ring. A second circle between grip and blade is a tsuba — forbidden. Grip is one closed fist, not a two-handed wrap.
 
 - **Scale.** One-handed hip sword. Hilt at the hip → tip near the ankle. Never taller than the person. Never a two-handed greatsword or polearm.
-- **Blade body.** When any length of steel is in frame, attach `static/sw_bidam.png`. Ignore swords drawn on `ch_*.png` (Yushin’s portrait katana; Kangrim’s smear-blade).
+- **Blade body — the one reference.** `static/sw_bidam.png` is the master board for every sword in the chronicle (ring pommel at the butt, 1:3 handle:blade). Attach it on **any still where a sword could be in frame** — a duel, a general, armored cavalry, a scabbard at the hip, a sword in the background, a sword one inch tall. No exceptions for "small" or "silhouette" or "not the subject"; a blade drawn without it drifts (katana, tsuba, jian, ring in the wrong place). Paste `SWORD_STILL_ANATOMY` from `src/lib/swords.ts` into the prompt with it. `visual-canon.mjs --battle/--sword` does both; `add-image-slots.mjs` adds both automatically when the scene text mentions a sword/blade/hilt/scabbard. Hand-written GenerateImage calls must do it by hand. Ignore swords drawn on `ch_*.png` (Yushin’s portrait katana; Kangrim’s smear-blade).
 - **`sword_*.png` is a pommel close-up, not a second sword.** Attach it only when the ring itself is the shot (ECU). On full-blade stills, **do not attach it** — the model reads that giant circle as a *tsuba* in the middle of the blade (handle/blade in the wrong order). Name the motif in the prompt instead (fish, horse, crow, lotus, dragon, chrysanthemum, fox) and keep the ring as small as the one already on `sw_bidam.png`.
 - **Forbidden:** ring at the blade tip; a large disc between grip and blade; katana / *tsuba*; short jian; ball pommel; a new sabre length; oversized steel filling the frame.
-- **Exceptions (not this type):** Xue Rengui’s *fangtian ji*. Clan-tourney *mokgeom* (wood). The Seven-Branched Sword as a unique relic. Gyebek’s phoenix lives **in the ring**, not as a different curve.
+- **Exceptions (not this type):** Xue Rengui’s *fangtian ji*. Clan-tourney *mokgeom* (wood). The Seven-Branched Sword as a unique relic. Gyebek’s phoenix lives **in the ring**, not as a different curve; his reverse grip is a hold, not a different sword.
 
 **Cavern elemental triad** (composition, not a lecture): Golhwa = fire (heat shimmer, ember `#e86820`, steam off skin). Hyullé = water (drip, spray, soaked `#2eb8c4`). Narim = leaves / earth-wood (moss, floating leaves, vine-shadow `#3d9e52`). One accent each; monumental emptiness still.
 
@@ -147,7 +168,7 @@ Winning formula (paraphrase into each call; do not paste old filenames as refs).
 
 Reusable DNA:
 
-- Open with **Minimal iconic** `{ratio}` poster/still. NOT photoreal. NOT busy.
+- Open with **Minimal iconic** `{ratio}` poster/still (`2:1` unless told otherwise). NOT photoreal. NOT busy.
 - **Name the cinematography.** Every prompt picks a shot (dutch, worm’s-eye, bird’s-eye, OTS, ECU, two-shot) and a lens/light term (bokeh, shallow DOF, rack focus, chiaroscuro, contre-jour, catchlight). Mise-en-scène is the locked place — not a lecture, one set. “Rim” means a hard key grazing silk — not a colored glow outline.
 - **Foreground / midground / bokeh.** Sharp foreground (a shoulder, bucket, rope, sleeve), the beat in the midground, background *giwa* / timber melting into creamy bokeh. Rack-focus. This is the Jumong–Sosuno well-yard language — keep it.
 - **One of each named person.** Never clone Sosuno, Jumong, or anyone twice in one still.
@@ -156,6 +177,22 @@ Reusable DNA:
 - **Pre-king Jumong is clean-shaven.** No mustache, no goatee, no chin hair until he is king (`ch_dongmyung`). The exile portrait `ch_jumong.png` may show a small mustache — **ignore it**. Every pre-crown still: clean-shaven, no facial hair.
 - **One graphic device is the whole composition.** From that batch (paraphrase, do not copy as image refs): vertical divider (blade as a hard black line top-to-bottom; figure in the lower third); film-noir half-face shadow, contemplative power; a translucent screen/plane with a single gold light through it (silhouette, influence without the throne). Also: hard light-seam, low-angle monument, tiny body in a vast empty hall.
 - Face matches the **attached** `ch_*.png` portrait (or a face-suggestion / silhouette of that portrait).
+
+## Heewon style (the house look — name it in every prompt)
+
+**Webtoon figures × European old-master world × Romanticist canvas layout × movie tenebrism.** The text lives in `HEEWON_STYLE` (`src/lib/promptHouse.ts`) and leads the house suffix; open every GenerateImage `description` with “HEEWON STYLE”.
+
+- **Figures = Korean webtoon / anime.** Clean digital-ink linework, simplified expressive webtoon faces, shaded in soft watercolor washes and translucent oil glazes (not flat cel fill). No pores, no photographic detail.
+- **World = European old-master painting.** Renaissance and Baroque oil technique (Titian, Rembrandt, Tiepolo, Turner): visible broken-colour brushwork, skies scumbled from short loaded dabs, layered glazes in the darks, sfumato edges, a touch of impasto on the brightest highlights — over watercolor blooms, granulation and paper grain; frame edges dissolve into paint.
+- **Background + foreground = Renaissance tenebrist oil** (Caravaggio, La Tour, Rembrandt): umber-to-black ground; rooms, tables and the dark foreground shapes modelled in glazed oil out of one candle / lamp / window key, sfumato into black. The webtoon figures sit *inside* that oil space under the same key — never pasted on a flat backdrop.
+- **Lead benchmark: `duel-last-line-strip`** (prompt-style only, never a ref) — Gyebek drawn as a webtoon figure under a Baroque/Turner storm of broken-colour dabs, one golden shaft, his men silhouetted. The mix of European painting technique and webtoon figure is the target.
+- “Renaissance oil” / “oil sketch” as the *whole render* drags faces into photoreal — the failure mode on the first Hwangsan oils. The paint belongs to the world and the shading; the faces stay drawn.
+- **Layout = Romanticism** (Delacroix, Géricault, Friedrich, Goya). Heroic diagonal or pyramid; small figures against a sublime storm sky or vast field; extreme foreshortening — worm’s-eye from the dirt, or straight down from above. A level camera on a posed group reads as a costume photo.
+- **Light = film tenebrism at full strength.** Extreme value range: inky blacks beside small near-white highlights, almost no middle grey. 70–80% of the frame in deep painted shadow (oil-glazed umber / indigo / black). One hard directional key — lamp, single cloud-break, low sun shaft, firelight — carves the subject out and *models* it: light wraps cheekbones, plates, horse muscle, silk folds, then drops off at a hard terminator. A thin edge of the same real light grazes the far side of the silhouette to separate it from the background (never a glow outline). Long raking shadows.
+- **Depth = three planes, always.** Dark out-of-focus foreground shape near the lens (shoulder, rein, post, grass, smoke); subject razor-sharp in the midground; background dissolving into wash and atmospheric haze, with round painted **bokeh** discs from small real lights behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow DOF, overlapping shapes, receding haze. Never flat, never every plane in equal focus. A storm sky with one pale break, or one shaft, is the key — a real cloud opening, never a halo behind a head. Default hour is dusk, night, storm or pre-dawn; flat overcast, even daylight and a bright open sky filling the frame are failures.
+- **Tenebrism benchmarks — the animal-scene batch** (prompt-style only, never refs): `bisamun-beads-bridle` (one lamp, black void, specular on beads), `nangbi-naming` (single camp lamp on a white coat), `bisamun-north` (navy dusk, one silver break). Flat-light counterexamples from the same batch were retaken.
+- **Benchmarks — the watercolor Hwangsan batch** (prompt-style only, never refs): `duel-oil-pumil-pieta` (painted storm, granulated dust, drawn faces), `duel-report-ots` (Rückenfigur, wash-dissolved frame edges), `duel-horse-eye` (oil-glazed darks), `duel-oil-gwanchang-helm` (worm’s-eye watercolor sky), `duel-oil-duty` (top-down pool of light on painted ground), `duel-last-line-strip` (Turner storm). Layout-only: `duel-oil-kangrim-above` (*di sotto in sù* angle — not its oil render).
+- This is the default for every new still unless the beat is an ink-painting hybrid or an explicit parody.
 
 ## Face refs are faces — not poses (do not dilute)
 
@@ -193,9 +230,9 @@ No readable text, no watermarks, no Latin captions on the image.
 
 ## Pipeline
 
-1. Cursor `GenerateImage` → `{slot-id}.png` in the conversation assets folder.
-2. Slot must already exist on the entry in `src/lib/data/story.json`.
-3. `node scripts/install-temp-art.mjs <manifest.json>` → `static/temp/{id}.jpg` + `tempImage`. The script **deletes** the source PNG.
+1. Slot must already exist on the entry in `src/lib/data/story.json` (`add-image-slots.mjs` writes it with the canon block + house suffix).
+2. Cursor `GenerateImage` (`aspect_ratio: "16:9"`, composed for 2:1) → `{slot-id}.jpg` in the conversation assets folder, attaching every canon ref — and `sw_bidam.png` whenever a sword can appear.
+3. `node scripts/install-temp-art.mjs <manifest.json>` → centre-cropped 2:1 `static/temp/{id}.jpg` + `tempImage` + `ratio`. The script **deletes** the source file.
 4. `scripts/sync-temp-art-inventory.mjs` if you skip the installer.
 
-Manifest item: `{ "id", "alt", "prompt" }`.
+Manifest item: `{ "id", "alt", "prompt", "ratio"? }` (`ratio` defaults to 2).

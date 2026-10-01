@@ -1,9 +1,11 @@
 // Installs generated art into static/temp as compressed JPEGs and points story.json slots at them.
 // Usage: node scripts/install-temp-art.mjs <manifest.json>
-// Manifest: [{ "id": "slot-id", "prompt": "...", "alt": "..." }]
+// Manifest: [{ "id": "slot-id", "prompt": "...", "alt": "...", "ratio"?: 2 | 1 | "native" }]
+// Every still is centre-cropped to the house 2:1 unless the item names another ratio.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { cropArgs, imageSize, parseRatio } from './crop-ratio.mjs';
 
 const ASSETS = '/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets';
 const TEMP_DIR = 'static/temp';
@@ -32,31 +34,27 @@ for (const item of manifest) {
 		skipped.push(`${item.id}: no such slot`);
 		continue;
 	}
-	const source = path.join(ASSETS, `${item.id}.png`);
-	if (!fs.existsSync(source)) {
-		skipped.push(`${item.id}: missing ${source}`);
+	const source = ['png', 'jpg', 'jpeg']
+		.map((ext) => path.join(ASSETS, `${item.id}.${ext}`))
+		.find((file) => fs.existsSync(file));
+	if (!source) {
+		skipped.push(`${item.id}: missing ${path.join(ASSETS, `${item.id}.png`)}`);
 		continue;
 	}
 	const out = path.join(TEMP_DIR, `${item.id}.jpg`);
+	const ratio = parseRatio(item.ratio);
 	execFileSync(
 		'sips',
-		[
-			'-s',
-			'format',
-			'jpeg',
-			'-s',
-			'formatOptions',
-			QUALITY,
-			'-Z',
-			MAX_EDGE,
-			source,
-			'--out',
-			out
-		],
+		['-s', 'format', 'jpeg', '-s', 'formatOptions', QUALITY, ...cropArgs(source, ratio), source, '--out', out],
 		{ stdio: 'ignore' }
 	);
+	const { w, h } = imageSize(out);
+	if (Math.max(w, h) > Number(MAX_EDGE)) {
+		execFileSync('sips', ['-s', 'formatOptions', QUALITY, '-Z', MAX_EDGE, out], { stdio: 'ignore' });
+	}
 	fs.rmSync(source);
 
+	slot.ratio = ratio ?? Number((w / h).toFixed(3));
 	slot.tempImage = `/temp/${item.id}.jpg`;
 	if (item.prompt) slot.prompt = item.prompt;
 	if (item.alt) slot.alt = item.alt;

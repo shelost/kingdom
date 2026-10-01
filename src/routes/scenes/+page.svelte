@@ -39,7 +39,7 @@
 	}
 
 	function coverOf(scene: Scene): string {
-		return framesOf(scene)[0] || scene.image;
+		return scene.cover || framesOf(scene)[0] || scene.image;
 	}
 
 	async function persistFrames(id: string, frames: string[]) {
@@ -706,7 +706,7 @@
 
 	.brand {
 		font-weight: 600;
-		color: var(--fg);
+		color: #f3f1ec;
 	}
 
 	.sep {
@@ -714,7 +714,7 @@
 	}
 
 	.now-title {
-		color: var(--fg);
+		color: #f3f1ec;
 		font-weight: 500;
 	}
 
@@ -727,7 +727,7 @@
 		font-family: var(--ui);
 		font-size: 0.78rem;
 		letter-spacing: var(--tracking-ui);
-		color: color-mix(in srgb, var(--fg) 68%, transparent);
+		color: color-mix(in srgb, #f3f1ec 68%, transparent);
 		cursor: pointer;
 	}
 
@@ -1101,6 +1101,7 @@
 	}
 
 	.shot-title {
+		color: #fff;
 		font-size: clamp(1.35rem, 3vw, 1.85rem);
 		font-weight: 600;
 		letter-spacing: var(--tracking-display);

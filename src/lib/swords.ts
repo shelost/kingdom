@@ -162,7 +162,7 @@ export const SWORD_DEFS: SwordDef[] = [
 		owners: ['gyebek'],
 		kingdom: 'baekje',
 		swordImage: '/sword_lotus.png',
-		tagline: 'Single-edged phoenix blade — curved like an eastern sword, phoenix on the ring pommel; one side only, as he is.',
+		tagline: 'Single-edged phoenix blade — straight, held backwards along the forearm, phoenix on the ring pommel; one side only, as he is.',
 		arc: 'Gyebek’s phoenix blade — single-edged, curved, one side only as he is. The five thousand at Yellow Mountain carry the type into later ages.'
 	},
 	{

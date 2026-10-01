@@ -10,6 +10,7 @@
 	import { onEditGradeContextMenu } from '$lib/imageGradeUi.svelte';
 	import { openLightbox, type LightboxItem } from '$lib/imageLightbox.svelte';
 	import { isNsfwCueImage } from '$lib/nsfwCue';
+	import { measureRatio, naturalRatio } from '$lib/imageRatio.svelte';
 
 	let {
 		images,
@@ -253,11 +254,13 @@
 			{@const frames = liveScriptFrames(slot)}
 			{#if frames.length}
 				{#each frames as frame, fi (`${slot.id}:${i}:${frame.layer}`)}
+					{@const fit = naturalRatio(frame.src)}
 					<figure
 						class="frame art live"
 						class:temp={frame.layer === 'temp'}
+						class:fitted={fit != null}
 						style:--tone={slot.tone ?? '#3a3a40'}
-						style:--ratio={slot.ratio ?? 4 / 3}
+						style:--ratio={fit ?? slot.ratio ?? 2}
 						oncontextmenu={(e) => onEditContextMenu(e, slot.id)}
 					>
 						{#if paintSlot(i)}
@@ -269,6 +272,7 @@
 							>
 								<img
 									class="shot"
+									{@attach measureRatio(frame.src)}
 									{...storyImg(frame.src, {
 										kind: 'cue',
 										priority: priority && i === 0 && fi === 0,
@@ -302,11 +306,13 @@
 			{/if}
 		{:else}
 			{@const art = liveDisplayArt(slot, 'reading')}
+			{@const fit = naturalRatio(art)}
 			<figure
 				class="frame"
 				class:art={!!art}
 				class:live={i === live}
-				style:--ratio={immersion ? '3 / 2' : (slot.ratio ?? 4 / 3)}
+				class:fitted={fit != null}
+				style:--ratio={immersion ? '3 / 2' : (fit ?? slot.ratio ?? 2)}
 				style:--tone={slot.tone ?? '#3a3a40'}
 				{@attach revealFrame(i)}
 				oncontextmenu={(e) => onEditContextMenu(e, slot.id)}
@@ -320,6 +326,7 @@
 					>
 						<img
 							class="shot"
+							{@attach measureRatio(art)}
 							{...storyImg(art, {
 								kind: 'cue',
 								priority: priority && i === 0,
@@ -413,6 +420,11 @@
 
 	.frame.art {
 		background: color-mix(in srgb, var(--tone) 40%, #14141a);
+	}
+
+	/* Tone is only a loading placeholder; once the real ratio is known the frame is the image. */
+	.frame.art.fitted {
+		background: transparent;
 	}
 
 	.frame img {
@@ -636,6 +648,18 @@
 
 		.stack.inline {
 			padding: 0;
+		}
+
+		/* One still per row at the column's full width; the measured ratio sizes it. */
+		.stack.inline .frame {
+			width: 100%;
+			height: auto;
+			max-height: none;
+		}
+
+		.stack.inline .ph {
+			width: 100%;
+			min-width: 0;
 		}
 
 		.stack:not(.immersion):not(.inline) .frame {

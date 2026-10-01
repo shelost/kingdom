@@ -646,8 +646,15 @@
 		.scope button,
 		.lang button,
 		.music,
+		/* Same glass pill as the menu button, so prose never reads through it. */
 		.settings-text {
 			min-height: 2.75rem;
+			padding: 0 0.85rem;
+			border: 1px solid var(--hairline);
+			border-radius: var(--radius-pill);
+			background: var(--glass);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
 		}
 	}
 </style>

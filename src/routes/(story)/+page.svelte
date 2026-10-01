@@ -349,7 +349,7 @@
 		<footer class="colophon" use:reveal>
 			<p>— to be continued —</p>
 			<p class="colophon-links">
-				<a href={resolve('/wiki')}>Encyclopedia</a>
+				<a href={resolve('/wiki')}>Wiki</a>
 				<span aria-hidden="true">·</span>
 				<a href={resolve('/images')}>Images</a>
 				<span aria-hidden="true">·</span>
@@ -1194,6 +1194,7 @@
 		}
 
 		.script.images-inline .inline-art {
+			width: auto;
 			max-width: none;
 			margin: 0.85rem max(1.15rem, env(safe-area-inset-right, 0px)) 0.15rem
 				max(1.15rem, env(safe-area-inset-left, 0px));
@@ -1225,6 +1226,11 @@
 			order: 2;
 			padding: 1.15rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
 				max(1.15rem, env(safe-area-inset-left, 0px));
+		}
+
+		/* Episodes open on the entry head: clear the fixed menu and settings buttons. */
+		.script.episodes .entry-head {
+			padding-top: max(3.6rem, calc(env(safe-area-inset-top, 0px) + 3.2rem));
 		}
 
 		.content-col {
