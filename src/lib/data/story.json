@@ -1165,7 +1165,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "Silla is a class society dominated by the <b>Bone Rank System (골품제)</b>, where everything is determined by one’s rank. There are the 6 Common Ranks, and then the Nobles and Royals.",
+						"html": "Silla is a class society dominated by the Bone Rank System (골품제), where everything is determined by one’s rank. There are the 6 Common Ranks, and then the Nobles and Royals.",
 						"ko": "신라는 <b>골품제</b>가 지배하는 신분 사회다. 모든 것이 뼈의 등급으로 정해진다. 여섯 개의 두품 아래, 귀족과 왕족이 있다."
 					},
 					{
@@ -1205,8 +1205,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "There are now only 3 Royals left — 🌸 <b>Princess Dukman (37)</b>, 🌼 <b>Princess Seungman (32)</b>, and 🎖 <b>Princess Chunmyung (49)</b>.",
-						"ko": "이제 성골은 셋뿐이다 — 🌸 <b>덕만공주 (37)</b>, 🌼 <b>승만공주 (32)</b>, 그리고 🎖 <b>천명공주 (49)</b>."
+						"html": "There are now only 3 Royals left — 🌸 <b>Princess Dukman (37)</b>, 🌼 <b>Princess Seungman (32)</b>, and 🎖 <b>Princess Chunmyung (52)</b>.",
+						"ko": "이제 성골은 셋뿐이다 — 🌸 <b>덕만공주 (37)</b>, 🌼 <b>승만공주 (32)</b>, 그리고 🎖 <b>천명공주 (52)</b>."
 					},
 					{
 						"kind": "p",
@@ -1215,13 +1215,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "Night in a small pavilion off the pond. Someone lights the small brazier. <b>The flame is red first.</b>",
-						"ko": "연못가 작은 정자다. 누가 화로에 불을 붙인다. <b>불꽃은 먼저 붉다.</b>"
+						"html": "Night in a small pavilion off the pond. Someone lights the small brazier. The flame is red first.",
+						"ko": "연못가 작은 정자다. 누가 화로에 불을 붙인다. 불꽃은 먼저 붉다."
 					},
 					{
 						"kind": "p",
-						"html": "It runs hotter. <b>The flame turns blue.</b> Only then may the session start.",
-						"ko": "불이 더 뜨거워진다. <b>불꽃이 푸르게 바뀐다.</b> 그제야 회의가 시작된다."
+						"html": "It runs hotter. The flame turns blue. Only then may the session start.",
+						"ko": "불이 더 뜨거워진다. 불꽃이 푸르게 바뀐다. 그제야 회의가 시작된다."
 					},
 					{
 						"kind": "p",
@@ -1235,13 +1235,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "The <b>first count is three to three</b>. A hung jury in silk. Initial vote, then deliberation, then a final vote that cannot move until every sleeve agrees.",
-						"ko": "<b>초투표는 셋 대 셋</b>이다. 비단 안의 미결 배심. 초투표, 숙고, 그리고 소매가 모두 맞을 때까지 못 움직이는 최종 투표."
+						"html": "The first count is three to three. A hung jury in silk. Initial vote, then deliberation, then a final vote that cannot move until every sleeve agrees.",
+						"ko": "초투표는 셋 대 셋이다. 비단 안의 미결 배심. 초투표, 숙고, 그리고 소매가 모두 맞을 때까지 못 움직이는 최종 투표."
 					},
 					{
 						"kind": "p",
-						"html": "<b>Three pieces go to the yes side of the cup. Three go to the no side.</b>",
-						"ko": "<b>패 셋은 잔의 찬성 쪽, 셋은 반대 쪽.</b>"
+						"html": "Three pieces go to the yes side of the cup. Three go to the no side.",
+						"ko": "패 셋은 잔의 찬성 쪽, 셋은 반대 쪽."
 					},
 					{
 						"kind": "diagram",
@@ -1383,8 +1383,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Alchun moves his piece. <b>All six sit on the yes side.</b>",
-						"ko": "알천이 패를 옮긴다. <b>여섯이 모두 찬성 쪽에 앉는다.</b>"
+						"html": "Alchun moves his piece. All six sit on the yes side.",
+						"ko": "알천이 패를 옮긴다. 여섯이 모두 찬성 쪽에 앉는다."
 					},
 					{
 						"kind": "diagram",
@@ -1466,7 +1466,7 @@
 						"chip": "#4a8fe0",
 						"lines": [
 							"잘하든, 못하든,",
-							"그게 <무조건>이라는 거니까요.",
+							"그게 “무조건”이라는 거니까요.",
 							"이 세상에서, 항상 공주님 편인 한 명이라도 있으면 좋지 않겠습니까?",
 							"화랑 김유신.",
 							"끝까지 섬기겠습니다."
@@ -1514,7 +1514,7 @@
 					{
 						"kind": "p",
 						"html": "<b>Marshal Yushin (37)</b>, Sword of Silla, Munhee’s older brother, is unusually close with Princess Dukman. He is the leader of the <b>Hwarang</b>, an elite training corps for young noblemen — horse, bow, and the gyuku field where Surabol decides who matters before the court does.",
-						"ko": "<b>유신 장군 (37)</b>, 신라의 도검, 문희의 오빠는 덕만공주와 유달리 가깝다. 그는 <b>화랑</b>의 수장이다. 젊은 귀족을 기르는 정예 — 말, 활, 그리고 조정보다 먼저 누가 중요한지 서라벌이 정하는 격구장."
+						"ko": "유신 장군 (37), 신라의 도검, 문희의 오빠는 덕만공주와 유달리 가깝다. 그는 <b>화랑</b>의 수장이다. 젊은 귀족을 기르는 정예 — 말, 활, 그리고 조정보다 먼저 누가 중요한지 서라벌이 정하는 격구장."
 					},
 					{
 						"kind": "p",
@@ -1551,8 +1551,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Then the yard-coat is open down the spine, and <b>She sees the width of his back</b> — muscle the court is not supposed to want — and the Queen’s face goes vermilion before she can pretend it is the lamp.",
-						"ko": "그러다 연무장 도포가 등줄기를 따라 열리고, <b>그녀는 그 등의 너비를 본다</b> — 조정이 원해서는 안 되는 근육 — 여왕의 얼굴이, 등불 탓으로 돌리기도 전에 주홍으로 오른다."
+						"html": "Then the yard-coat is open down the spine, and She sees the width of his back — muscle the court is not supposed to want — and the Queen’s face goes vermilion before she can pretend it is the lamp.",
+						"ko": "그러다 연무장 도포가 등줄기를 따라 열리고, 그녀는 그 등의 너비를 본다 — 조정이 원해서는 안 되는 근육 — 여왕의 얼굴이, 등불 탓으로 돌리기도 전에 주홍으로 오른다."
 					},
 					{
 						"kind": "p",
@@ -1788,8 +1788,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The young Hwarang knights, including 🟣 <b>Bidam (27)</b> — already the Second Blade in the yard’s private ledger — 🟡 <b>Alchun (27)</b>, and 🟢 <b>Pumsuk (14)</b>, pledge allegiance to the throne.",
-						"ko": "🟣 <b>비담 (27)</b> — 연무장의 사적 장부에서는 이미 제이검 — , 🟡 <b>알천 (27)</b>, 🟢 <b>품석 (14)</b>을 비롯한 젊은 화랑들이 왕좌에 충성을 맹세한다."
+						"html": "The young Hwarang knights, including 🟣 <b>Bidam (38)</b> — already the Second Blade in the yard’s private ledger — 🟡 <b>Alchun (36)</b>, and 🟢 <b>Pumsuk (14)</b>, pledge allegiance to the throne.",
+						"ko": "🟣 <b>비담 (38)</b> — 연무장의 사적 장부에서는 이미 제이검 — , 🟡 <b>알천 (36)</b>, 🟢 <b>품석 (14)</b>을 비롯한 젊은 화랑들이 왕좌에 충성을 맹세한다."
 					},
 					{
 						"kind": "dialogue",
@@ -2009,7 +2009,7 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "At the <b>Battle of Gwansanseong (관산성)</b> in 554, Silla’s armies kill <b>King Seong (#26)</b> of Baekje — the man who had, only a year before, helped Silla take the Han River from Goguryeo. The man who orders that killing is <b>the Crescent Moon</b> — <b>Jinheung (#24)</b>.",
+						"html": "At the Battle of Gwansanseong (관산성) in 554, Silla’s armies kill <b>King Seong (#26)</b> of Baekje — the man who had, only a year before, helped Silla take the Han River from Goguryeo. The man who orders that killing is <b>the Crescent Moon</b> — <b>Jinheung (#24)</b>.",
 						"ko": "554년 <b>관산성 전투</b>에서 신라군이 백제의 <b>성왕 (#26)</b>을 죽인다 — 불과 한 해 전, 신라와 함께 고구려로부터 한강을 빼앗았던 그 임금을. 그 죽음을 명한 이가 <b>초승달</b> — <b>진흥왕 (#24)</b>이다."
 					},
 					{
@@ -2364,7 +2364,7 @@
 						"id": "gyebek-seq-name",
 						"ratio": 1.778,
 						"tone": "#e08a2e",
-						"at": "How about — <Gyebek>?",
+						"at": "How about — “Gyebek”?",
 						"alt": "Dutch two-shot: gray-robed Euija naming a kneeling boy in wet white hanbok",
 						"refs": [
 							"/ch_gyebek_boy.png",
@@ -2611,12 +2611,12 @@
 					},
 					{
 						"kind": "p",
-						"html": "The young princes — <b>Yung (17)</b>, <b>Tae (16)</b>, <b>Hyo (15)</b>, <b>Yun (12)</b>, and <b>Pung (9)</b> — grow up already spoken for: each with a clan’s ring on his finger, a clan’s tutor at his ear, and a clan’s grudge folded into his allowance.",
+						"html": "The young princes — <b>Yung (17)</b>, <b>Tae (16)</b>, <b>Hyo (15)</b>, <b>Yun (12)</b>, and <b>Pung (8)</b> — grow up already spoken for: each with a clan’s ring on his finger, a clan’s tutor at his ear, and a clan’s grudge folded into his allowance.",
 						"ko": "어린 왕자들 — <b>융 (17)</b>, <b>태 (16)</b>, <b>효 (15)</b>, <b>연 (12)</b>, <b>풍 (9)</b> — 은 이미 임자가 정해진 채 자란다. 손가락에는 가문의 가락지, 귓가에는 가문의 스승, 용돈 속에는 가문의 원한이 접혀 들어 있다."
 					},
 					{
 						"kind": "p",
-						"html": "Baekje is dominated by the <b>Eight Great Clans (대성팔족)</b> — eight houses, eight fighting styles, one king between them. Satek fights with the king’s sleeve; Yunbi fights with the coast road; the other six keep their techniques quiet. Each generation, every house sends its best into the Assembly.",
+						"html": "Baekje is dominated by the Eight Great Clans (대성팔족) — eight houses, eight fighting styles, one king between them. Satek fights with the king’s sleeve; Yunbi fights with the coast road; the other six keep their techniques quiet. Each generation, every house sends its best into the Assembly.",
 						"ko": "백제는 <b>대성팔족</b>이 지배한다 — 여덟 가문, 여덟 가지 싸움법, 그 사이에 임금 하나. 사택은 왕의 소맷자락으로 싸우고, 연비는 해안 길로 싸우고, 나머지 여섯은 제 기술을 조용히 감춘다. 대마다 가문들은 제 최고수를 정사암에 내보낸다."
 					},
 					{
@@ -2656,8 +2656,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Once a year the street volume drops and the palace raises its own. On the packed earth inside the Sabi halls the court chalks a <b>square grid in the palace yard</b> — four hard lines, no furniture, no banners worth reading — and the <b>young men of each house step onto the grid</b> in white. Eight houses. Eight fighting styles. The same quarrel as the west bridge, conducted without carts.",
-						"ko": "일 년에 한 번, 저잣거리의 소리가 잦아들고 궁이 제 소리를 올린다. 사비 전각 안쪽 다진 흙에 조정이 <b>궁뜰 네모 격자</b>를 긋는다 — 선 넷, 가구 없고, 읽을 만한 깃발도 없다 — 그러면 각 집 <b>젊은이들이 격자 위로</b> 흰옷을 입고 오른다. 여덟 가문. 여덟 가지 싸움법. 서시 다리와 같은 다툼을, 짐수레 없이 하는 것이다."
+						"html": "Once a year the street volume drops and the palace raises its own. On the packed earth inside the Sabi halls the court chalks a square grid in the palace yard — four hard lines, no furniture, no banners worth reading — and the young men of each house step onto the grid in white. Eight houses. Eight fighting styles. The same quarrel as the west bridge, conducted without carts.",
+						"ko": "일 년에 한 번, 저잣거리의 소리가 잦아들고 궁이 제 소리를 올린다. 사비 전각 안쪽 다진 흙에 조정이 궁뜰 네모 격자를 긋는다 — 선 넷, 가구 없고, 읽을 만한 깃발도 없다 — 그러면 각 집 젊은이들이 격자 위로 흰옷을 입고 오른다. 여덟 가문. 여덟 가지 싸움법. 서시 다리와 같은 다툼을, 짐수레 없이 하는 것이다."
 					},
 					{
 						"kind": "dialogue",
@@ -2687,8 +2687,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The sword bouts go first. Mokgeom — wood that still remembers steel. A boy from Jinmo takes <b>Sangdanse</b> high guard; a Satek answers from middle. On the call they move: overhead cut, advance-and-strike, blades skim, chalk dust. <b>Mokgeom mid-strike on the grid</b> — then a near-miss so close the white sleeves clap. <b>Blades skim the chalk.</b> <b>Over his shoulder the chalk holds</b> — from the steps you only see a back, a lunge, and the hard L of the square.",
-						"ko": "검이 먼저다. 목검 — 그래도 쇠를 기억하는 나무. 진모 쪽이 <b>상단세</b>로 올리고, 사택이 중단으로 받는다. 구령에 움직인다. 내려찍기, 진전격적, 날이 스치고, 분필 가루. <b>격자 위 목검이 한가운데서 부딪친다</b> — 그다음엔 흰 소매가 맞부딪힐 만큼 가까운 빗나감. <b>날이 분필선을 스친다.</b> <b>어깨 너머로 분필선이 버틴다</b> — 섬돌에서는 등, 찌르기, 네모의 굳은 ㄱ자만 보인다."
+						"html": "The sword bouts go first. Mokgeom — wood that still remembers steel. A boy from Jinmo takes <b>Sangdanse</b> high guard; a Satek answers from middle. On the call they move: overhead cut, advance-and-strike, blades skim, chalk dust. Mokgeom mid-strike on the grid — then a near-miss so close the white sleeves clap. Blades skim the chalk. Over his shoulder the chalk holds — from the steps you only see a back, a lunge, and the hard L of the square.",
+						"ko": "검이 먼저다. 목검 — 그래도 쇠를 기억하는 나무. 진모 쪽이 <b>상단세</b>로 올리고, 사택이 중단으로 받는다. 구령에 움직인다. 내려찍기, 진전격적, 날이 스치고, 분필 가루. 격자 위 목검이 한가운데서 부딪친다 — 그다음엔 흰 소매가 맞부딪힐 만큼 가까운 빗나감. 날이 분필선을 스친다. 어깨 너머로 분필선이 버틴다 — 섬돌에서는 등, 찌르기, 네모의 굳은 ㄱ자만 보인다."
 					},
 					{
 						"kind": "dialogue",
@@ -2709,13 +2709,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "When the wooden points are tallied, the sand comes out. A circle of grit inside the same square. Ssireum — <b>satba locked before they stand</b>, knees in the grit, equal grips on waist and thigh, then up without letting go. No circling for a hold. The bout is the hold.",
-						"ko": "목검 점수가 쌓이면 모래가 나온다. 같은 네모 안에 모래 원. 씨름 — <b>일어서기 전에 샅바부터 잠근다</b>. 무릎은 모래에, 허리와 허벅지 샅바를 같은 힘으로 잡고, 놓지 않은 채로 일어선다. 잡고 돌 틈이 없다. 붙잡은 것이 곧 시합이다."
+						"html": "When the wooden points are tallied, the sand comes out. A circle of grit inside the same square. Ssireum — satba locked before they stand, knees in the grit, equal grips on waist and thigh, then up without letting go. No circling for a hold. The bout is the hold.",
+						"ko": "목검 점수가 쌓이면 모래가 나온다. 같은 네모 안에 모래 원. 씨름 — 일어서기 전에 샅바부터 잠근다. 무릎은 모래에, 허리와 허벅지 샅바를 같은 힘으로 잡고, 놓지 않은 채로 일어선다. 잡고 돌 틈이 없다. 붙잡은 것이 곧 시합이다."
 					},
 					{
 						"kind": "p",
-						"html": "A Hae youth hooks; a Guk answers with hip. Then <b>deulbaejigi clears the sand</b> — lift onto the belly, second hoist, turn right, and the other man’s feet leave the earth. The yard goes quiet the way a berth goes quiet when a rope snaps. <b>Sand takes the shoulder.</b> Any part above the knee. The chalk does not argue.",
-						"ko": "해씨 쪽이 걸고, 국씨가 허리로 받는다. 그러다 <b>들배지기가 모래를 비운다</b> — 배로 올리고, 한 번 더 추켜, 오른쪽으로 돌리면 상대 발이 뜬다. 마당이 조용해진다. 밧줄이 끊어질 때 선석이 조용해지듯. <b>모래가 어깨를 받는다.</b> 무릎 위 어디든. 분필은 따지지 않는다."
+						"html": "A Hae youth hooks; a Guk answers with hip. Then deulbaejigi clears the sand — lift onto the belly, second hoist, turn right, and the other man’s feet leave the earth. The yard goes quiet the way a berth goes quiet when a rope snaps. Sand takes the shoulder. Any part above the knee. The chalk does not argue.",
+						"ko": "해씨 쪽이 걸고, 국씨가 허리로 받는다. 그러다 들배지기가 모래를 비운다 — 배로 올리고, 한 번 더 추켜, 오른쪽으로 돌리면 상대 발이 뜬다. 마당이 조용해진다. 밧줄이 끊어질 때 선석이 조용해지듯. 모래가 어깨를 받는다. 무릎 위 어디든. 분필은 따지지 않는다."
 					},
 					{
 						"kind": "dialogue",
@@ -2747,12 +2747,12 @@
 					},
 					{
 						"kind": "p",
-						"html": "From the timber steps the houses keep score like berths. The <b>elders watch from the hall steps</b> — always — and still miscount when the sleeve is theirs. By dusk the white is grey with chalk and grit. Nobody has settled four generations. That was never the point. The point was to put the quarrel where the throne can see it — and to send the boys home with a score instead of a funeral.",
-						"ko": "목재 섬돌에서 가문들은 선석 세듯 점수를 센다. <b>원로들은 전각 섬돌에서 본다</b> — 늘 본다 — 그래도 제 소매 일이면 잘못 센다. 해 질 녘이면 흰옷이 분필과 모래로 잿빛이 된다. 사대 원한을 누가 결판낸 것은 아니다. 애초에 그게 목적이 아니었다. 목적은 다툼을 왕좌가 볼 수 있는 자리에 두는 것 — 그리고 애들을 장례 대신 점수로 돌려보내는 것이다."
+						"html": "From the timber steps the houses keep score like berths. The elders watch from the hall steps — always — and still miscount when the sleeve is theirs. By dusk the white is grey with chalk and grit. Nobody has settled four generations. That was never the point. The point was to put the quarrel where the throne can see it — and to send the boys home with a score instead of a funeral.",
+						"ko": "목재 섬돌에서 가문들은 선석 세듯 점수를 센다. 원로들은 전각 섬돌에서 본다 — 늘 본다 — 그래도 제 소매 일이면 잘못 센다. 해 질 녘이면 흰옷이 분필과 모래로 잿빛이 된다. 사대 원한을 누가 결판낸 것은 아니다. 애초에 그게 목적이 아니었다. 목적은 다툼을 왕좌가 볼 수 있는 자리에 두는 것 — 그리고 애들을 장례 대신 점수로 돌려보내는 것이다."
 					},
 					{
 						"kind": "p",
-						"html": "The Satek clan is currently the most powerful. Both the Queen and the Prime Minister are from the Satek clan, making them a key rival to the royal Buyeo clan.",
+						"html": "The Satek clan is currently the most powerful. Both the Queen and the Premier are from the Satek clan, making them a key rival to the royal Buyeo clan.",
 						"ko": "지금 가장 강한 가문은 사택씨다. 왕비도 재상도 사택씨 — 왕실 부여씨의 최대 맞수다."
 					},
 					{
@@ -3136,11 +3136,11 @@
 						"speaker": "👦",
 						"lines": [
 							"훌륭한 사람의 이름이지.",
-							"<계백>. 어떠냐?"
+							"“계백”. 어떠냐?"
 						],
 						"en": [
 							"It’s the name of a great man.",
-							"How about — <Gyebek>?"
+							"How about — “Gyebek”?"
 						],
 						"person": "euija"
 					},
@@ -3192,7 +3192,6 @@
 			},
 			{
 				"year": "371",
-				"sub": "???",
 				"flash": true,
 				"title": "Gunchogo, The Hurricane",
 				"tone": "fairy-tale legend",
@@ -3636,7 +3635,7 @@
 					{
 						"kind": "p",
 						"html": "He is taken to the outpost of <b>Commander Yeon (29)</b>, the Eternal General — a ruthless military general.",
-						"ko": "그는 무자비한 무장, 영원의 대장군 <b>연 장군 (29)</b>의 초소로 끌려간다."
+						"ko": "그는 무자비한 무장, 영원의 대장군 연 장군 (29)의 초소로 끌려간다."
 					},
 					{
 						"kind": "dialogue",
@@ -3722,8 +3721,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Goguryeo works like this: five Commanderies argue as Commanders; the High Commander is first sword; the <b>king keeps the final vote</b>.",
-						"ko": "고구려는 이렇게 돌아간다. 오부가 대가로 다투고, 막리지가 첫 칼이며, <b>임금이 최종 투표를 쥔다</b>."
+						"html": "Goguryeo works like this: five Commanderies argue as Commanders; the High Commander is first sword; the king keeps the final vote.",
+						"ko": "고구려는 이렇게 돌아간다. 오부가 대가로 다투고, 막리지가 첫 칼이며, 임금이 최종 투표를 쥔다."
 					},
 					{
 						"kind": "diagram",
@@ -3765,12 +3764,12 @@
 						"en": [
 							"Enough.",
 							"I did not call five commands to Pyongyang to divide a granary.",
-							"I will be the <King for All> — Samhan under one roof. Silla and Baekje first."
+							"I will be the “King for All” — Samhan under one roof. Silla and Baekje first."
 						],
 						"lines": [
 							"그만.",
 							"곳간이나 나누자고 오부를 평양에 부른 것이 아니다.",
-							"짐이 <삼한왕검>이 되리라 — 삼한을 한 지붕 아래로. 신라와 백제부터."
+							"짐이 “삼한왕검”이 되리라 — 삼한을 한 지붕 아래로. 신라와 백제부터."
 						],
 						"chip": "#a83b34"
 					},
@@ -3945,12 +3944,12 @@
 						"en": [
 							"Listen to yourselves.",
 							"Horses. Timber. Bodies. A crown-word.",
-							"When Taizong comes he will not ask which of you was most polite in committee."
+							"When the Second Emperor comes he will not ask which of you was most polite in committee."
 						],
 						"lines": [
 							"당신들 말하는 꼴 좀 들어 보시오.",
 							"말. 목재. 사람. 그리고 관호.",
-							"태종이 오면, 이 중 누가 회의에서 제일 공손했는지는 묻지 않을 거요."
+							"황제가 오면, 이 중 누가 회의에서 제일 공손했는지는 묻지 않을 거요."
 						],
 						"chip": "#d0362f"
 					},
@@ -4385,7 +4384,6 @@
 			},
 			{
 				"year": "400",
-				"sub": "???",
 				"flash": true,
 				"title": "Gwanggaeto, The Conqueror",
 				"tone": "fairy-tale legend",
@@ -5098,7 +5096,7 @@
 						"id": "pumsuk-headband-bar",
 						"ratio": 0.5625,
 						"tone": "#7EB8F0",
-						"at": "<b>Pumsuk (22)</b> takes the ball",
+						"at": "<b>Pumsuk (23)</b> takes the ball",
 						"alt": "Pumsuk in a black void, an ice-blue headband as a thin horizontal bar, face in shadow",
 						"prompt": "Minimal iconic 9:16 poster. Kim Pumsuk, Hwarang of Class 74, guardian of Daeya. ONE geometric device: an ice-blue HEADBAND as a thin HORIZONTAL BAR of #7EB8F0 across the upper third of the frame — a rank-strip, not a crescent halo. Face below it in shadow, ready stance. Face matches the attached portrait: blue headband with a white crescent mark kept as a tiny mark on the bar, not a halo around the head. Thin ice-blue rim-light on one shoulder. Striking silky Hwarang court-military. Eighty percent black void. Form defined by the bar and rim. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -5356,8 +5354,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Gotaso (14)</b> goes out to the lantern market with two maids and does not come back with any. The maids are found first, by the river, in the morning.",
-						"ko": "<b>고타소 (14)</b>가 시녀 둘을 데리고 등 시장에 나갔다가, 아무도 없이 돌아오지 못한다. 시녀들이 먼저 발견된다. 강가에서, 아침에."
+						"html": "<b>Gotaso (16)</b> goes out to the lantern market with two maids and does not come back with any. The maids are found first, by the river, in the morning.",
+						"ko": "<b>고타소 (16)</b>가 시녀 둘을 데리고 등 시장에 나갔다가, 아무도 없이 돌아오지 못한다. 시녀들이 먼저 발견된다. 강가에서, 아침에."
 					},
 					{
 						"kind": "dialogue",
@@ -6087,7 +6085,7 @@
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "<b>They shut the door</b> on the yard and do not open it again for a long time. The minutes will later invent one decorous wedding night. What actually happens is weeks of it — her on him, him on her, the magenta and the pink in a heap by the door — until the meals go cold and Surabol learns to wait.",
+								"html": "They shut the door on the yard and do not open it again for a long time. The minutes will later invent one decorous wedding night. What actually happens is weeks of it — her on him, him on her, the magenta and the pink in a heap by the door — until the meals go cold and Surabol learns to wait.",
 								"ko": "마당을 향해 <b>문을 닫고</b>, 한참을 다시 열지 않는다. 훗날 기록은 점잖은 첫날밤 하나를 지어낼 것이다. 실제로 있었던 일은 몇 주다 — 그녀가 위에, 그가 위에, 자홍과 분홍이 문가에 한 더미로 — 밥이 식고 서라벌이 기다리는 법을 배울 때까지."
 							},
 							{
@@ -6133,26 +6131,26 @@
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "<b>For weeks they do not leave the bedding</b> except to drink, to laugh, to start again. She wakes with him still beside her and starts again before the laugh is finished. She rides him until her thighs shake and asks for more the way she would ask for a sum he is good at. A strategist who can forecast a betrayal a generation out cannot forecast his own stamina, and does not care.",
-								"ko": "<b>몇 주 동안 침상을 떠나지 않는다</b>. 물을 마시고, 웃고, 다시 시작할 때만 잠깐. 깨어 보면 그는 아직 곁에 있고, 그녀는 웃음이 끝나기도 전에 다시 시작한다. 허벅지가 떨릴 때까지 그 위에 있다가, 그가 잘하는 셈을 청하듯 한 번 더를 청한다. 한 세대 뒤의 배신을 내다보는 책사가 제 기력은 내다보지 못하고, 개의치도 않는다."
+								"html": "For weeks they do not leave the bedding except to drink, to laugh, to start again. She wakes with him still beside her and starts again before the laugh is finished. She rides him until her thighs shake and asks for more the way she would ask for a sum he is good at. A strategist who can forecast a betrayal a generation out cannot forecast his own stamina, and does not care.",
+								"ko": "몇 주 동안 침상을 떠나지 않는다. 물을 마시고, 웃고, 다시 시작할 때만 잠깐. 깨어 보면 그는 아직 곁에 있고, 그녀는 웃음이 끝나기도 전에 다시 시작한다. 허벅지가 떨릴 때까지 그 위에 있다가, 그가 잘하는 셈을 청하듯 한 번 더를 청한다. 한 세대 뒤의 배신을 내다보는 책사가 제 기력은 내다보지 못하고, 개의치도 않는다."
 							},
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "The <b>neighbors on both walls</b> learn their names the wrong way — through plaster, through <i>다시</i>, through a rhythm that does not stop when the lamp does. Servants stop knocking. Someone on the east side moves a sleeping mat farther from the shared timber and blames the draft.",
-								"ko": "<b>양쪽 담장 너머 이웃</b>은 둘의 이름을 틀린 길로 배운다 — 회벽을 통해, <i>다시</i>라는 소리를 통해, 등불이 꺼져도 멈추지 않는 박자를 통해. 하인들은 문 두드리기를 그만둔다. 동쪽 누군가는 잠자리를 공용 들보에서 멀리 옮기고 외풍 탓을 한다."
+								"html": "The neighbors on both walls learn their names the wrong way — through plaster, through <i>다시</i>, through a rhythm that does not stop when the lamp does. Servants stop knocking. Someone on the east side moves a sleeping mat farther from the shared timber and blames the draft.",
+								"ko": "양쪽 담장 너머 이웃은 둘의 이름을 틀린 길로 배운다 — 회벽을 통해, <i>다시</i>라는 소리를 통해, 등불이 꺼져도 멈추지 않는 박자를 통해. 하인들은 문 두드리기를 그만둔다. 동쪽 누군가는 잠자리를 공용 들보에서 멀리 옮기고 외풍 탓을 한다."
 							},
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "At night the courtyard looks up and learns worse. <b>The paper window glows</b> — warm lamp inside, blue-black street outside — and on the 창호지 the shadows are unmistakable: one figure straddling the other; two bodies pressed to the lattice; upright, tangled, a lift that makes a silhouette into a confession. No faces needed. The pose is the gossip.",
-								"ko": "밤이면 마당이 위를 보고 더 심한 것을 배운다. <b>창호지에 불이 비친다</b> — 안은 따뜻한 등잔, 밖은 청흑의 골목 — 그 창호지 위 그림자는 틀림없다. 한쪽이 다른 쪽을 타고 앉은 꼴. 살창에 밀착된 두 몸. 세로로 엉킨 채, 그림자를 자백으로 만드는 들어올림. 얼굴은 필요 없다. 자세가 소문이다."
+								"html": "At night the courtyard looks up and learns worse. The paper window glows — warm lamp inside, blue-black street outside — and on the 창호지 the shadows are unmistakable: one figure straddling the other; two bodies pressed to the lattice; upright, tangled, a lift that makes a silhouette into a confession. No faces needed. The pose is the gossip.",
+								"ko": "밤이면 마당이 위를 보고 더 심한 것을 배운다. 창호지에 불이 비친다 — 안은 따뜻한 등잔, 밖은 청흑의 골목 — 그 창호지 위 그림자는 틀림없다. 한쪽이 다른 쪽을 타고 앉은 꼴. 살창에 밀착된 두 몸. 세로로 엉킨 채, 그림자를 자백으로 만드는 들어올림. 얼굴은 필요 없다. 자세가 소문이다."
 							},
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "A neighbor freezes mid-step under the eaves, looks up at the <b>shadow on the lattice</b>, and looks away too late. By the third night half the lane has an opinion, and none of it is about politics.",
-								"ko": "처마 아래 이웃이 걸음을 멈추고 <b>살창 위의 그림자</b>를 올려다보다가, 너무 늦게 눈을 돌린다. 사흘째가 되면 골목 절반이 의견을 갖고, 그중 정치 이야기는 하나도 없다."
+								"html": "A neighbor freezes mid-step under the eaves, looks up at the shadow on the lattice, and looks away too late. By the third night half the lane has an opinion, and none of it is about politics.",
+								"ko": "처마 아래 이웃이 걸음을 멈추고 살창 위의 그림자를 올려다보다가, 너무 늦게 눈을 돌린다. 사흘째가 되면 골목 절반이 의견을 갖고, 그중 정치 이야기는 하나도 없다."
 							},
 							{
 								"kind": "dialogue",
@@ -6191,14 +6189,14 @@
 							{
 								"kind": "p",
 								"html": "<b>They fit.</b> Not the polite fit of a well-arranged marriage: when he is all the way with her she makes a noise like someone who has been waiting years for exactly that, and then laughs into it, because he is already moving again. Neither pretends to be shy. Later the household will call it love, which is also true. In the bed she only says <i>again</i>, and <i>don’t you dare stop</i>.",
-								"ko": "<b>둘이 맞는다.</b> 잘 짜인 혼사의 예의 바른 맞춤이 아니다. 그가 온전히 그녀에게 닿으면 그녀는 몇 해를 바로 그것만 기다린 사람 같은 소리를 내고, 이내 그 소리 속으로 웃는다. 그가 벌써 다시 움직이고 있으니까. 둘 다 수줍은 척하지 않는다. 훗날 집안은 사랑이라 부를 테고, 그것도 맞다. 침상에서 그녀는 그저 <i>또</i>, 그리고 <i>멈추기만 해 봐요</i>, 한다.",
+								"ko": "둘이 맞는다. 잘 짜인 혼사의 예의 바른 맞춤이 아니다. 그가 온전히 그녀에게 닿으면 그녀는 몇 해를 바로 그것만 기다린 사람 같은 소리를 내고, 이내 그 소리 속으로 웃는다. 그가 벌써 다시 움직이고 있으니까. 둘 다 수줍은 척하지 않는다. 훗날 집안은 사랑이라 부를 테고, 그것도 맞다. 침상에서 그녀는 그저 <i>또</i>, 그리고 <i>멈추기만 해 봐요</i>, 한다.",
 								"nsfw": true
 							},
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "<b>Morning finds them still tangled</b> — lattice light on flushed faces, her thigh over his hip, the pink silk she never put back on crumpled under them. He wants her again before he is properly awake. She laughs into his mouth and lets him, slowly this time, which is somehow worse. He kisses the place above her pulse the way she once kissed his. The strategist’s cleverness has nowhere to go but her.",
-								"ko": "<b>아침이 와도 아직 엉켜 있다</b> — 상기된 얼굴 위에 살창 빛, 그의 허리에 걸친 그녀의 허벅지, 다시 입지 않은 분홍 비단이 몸 아래 구겨져 있다. 그는 제대로 깨기도 전에 또 그녀를 원한다. 그녀는 그의 입 안으로 웃으며 그러게 둔다. 이번엔 천천히, 그래서 더 심하다. 그는 언젠가 그녀가 자기에게 그랬듯 맥 뛰는 자리 위에 입을 맞춘다. 책사의 총명은 그녀 말고는 갈 곳이 없다."
+								"html": "Morning finds them still tangled — lattice light on flushed faces, her thigh over his hip, the pink silk she never put back on crumpled under them. He wants her again before he is properly awake. She laughs into his mouth and lets him, slowly this time, which is somehow worse. He kisses the place above her pulse the way she once kissed his. The strategist’s cleverness has nowhere to go but her.",
+								"ko": "아침이 와도 아직 엉켜 있다 — 상기된 얼굴 위에 살창 빛, 그의 허리에 걸친 그녀의 허벅지, 다시 입지 않은 분홍 비단이 몸 아래 구겨져 있다. 그는 제대로 깨기도 전에 또 그녀를 원한다. 그녀는 그의 입 안으로 웃으며 그러게 둔다. 이번엔 천천히, 그래서 더 심하다. 그는 언젠가 그녀가 자기에게 그랬듯 맥 뛰는 자리 위에 입을 맞춘다. 책사의 총명은 그녀 말고는 갈 곳이 없다."
 							},
 							{
 								"kind": "dialogue",
@@ -6232,8 +6230,8 @@
 							},
 							{
 								"kind": "p",
-								"html": "<b>Months pass before either of them remembers the yard</b>. When they finally open the door she walks like someone who has been thoroughly loved and does not mind the lane knowing it, and they look at each other like people who have won a private war — still in love, still hungry, and willing, for one afternoon, to put clothes back on.",
-								"ko": "<b>둘 중 누구든 마당을 다시 떠올리기까지 몇 달이 걸린다</b>. 마침내 문을 열었을 때 그녀는 실컷 사랑받았고 골목이 그걸 알아도 상관없다는 사람처럼 걷고, 둘은 사사로운 전쟁에서 이긴 사람처럼 서로를 본다 — 여전히 사랑하고, 여전히 배고프고, 오후 한나절쯤은 옷을 다시 입어 줄 마음이 든 채로.",
+								"html": "Months pass before either of them remembers the yard. When they finally open the door she walks like someone who has been thoroughly loved and does not mind the lane knowing it, and they look at each other like people who have won a private war — still in love, still hungry, and willing, for one afternoon, to put clothes back on.",
+								"ko": "둘 중 누구든 마당을 다시 떠올리기까지 몇 달이 걸린다. 마침내 문을 열었을 때 그녀는 실컷 사랑받았고 골목이 그걸 알아도 상관없다는 사람처럼 걷고, 둘은 사사로운 전쟁에서 이긴 사람처럼 서로를 본다 — 여전히 사랑하고, 여전히 배고프고, 오후 한나절쯤은 옷을 다시 입어 줄 마음이 든 채로.",
 								"nsfw": true
 							},
 							{
@@ -6312,8 +6310,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "At a <b>spring gyuku match</b> the Hwarang ride for the Queen. The stands smell of horse and expensive varnish. Servants carry club-boxes the way other households carry ancestral tablets. <b>Princess Gotaso (15)</b> is only meant to watch.",
-						"ko": "<b>봄 격구</b>에서 화랑들이 여왕 앞에서 달린다. 관중석에서는 말 냄새와 비싼 니스 냄새가 난다. 시종들은 다른 집이 신주를 모시듯 채 함을 모신다. <b>고타소 (15)</b>는 보기만 하러 왔다."
+						"html": "At a <b>spring gyuku match</b> the Hwarang ride for the Queen. The stands smell of horse and expensive varnish. Servants carry club-boxes the way other households carry ancestral tablets. <b>Princess Gotaso (16)</b> is only meant to watch.",
+						"ko": "<b>봄 격구</b>에서 화랑들이 여왕 앞에서 달린다. 관중석에서는 말 냄새와 비싼 니스 냄새가 난다. 시종들은 다른 집이 신주를 모시듯 채 함을 모신다. <b>고타소 (16)</b>는 보기만 하러 왔다."
 					},
 					{
 						"kind": "dialogue",
@@ -6345,8 +6343,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Pumsuk (22)</b> takes the ball on the off-side — a showy, illegal-looking, completely legal cut — and for half a breath too long catches her eye instead of the goal. His <b>premium gyuku club</b> flashes once in the sun: presentation-silk still on the headcover, five coloured rings on the shaft, vulgar as Surabol sport gets.",
-						"ko": "<b>품석 (22)</b>이 오프사이드에서 공을 받는다 — 허세 같고 반칙 같아 보이지만 완전히 합법인 컷 — 그리고 반 호흡만큼 너무 길게, 골이 아니라 그의 눈을 붙잡는다. <b>프리미엄 격구채</b>가 햇살에 한 번 번쩍인다. 헤드커버엔 아직 진열용 비단, 자루엔 오방색 고리 다섯. 서라벌 경기가 천박해지는 지점이다."
+						"html": "<b>Pumsuk (23)</b> takes the ball on the off-side — a showy, illegal-looking, completely legal cut — and for half a breath too long catches her eye instead of the goal. His <b>premium gyuku club</b> flashes once in the sun: presentation-silk still on the headcover, five coloured rings on the shaft, vulgar as Surabol sport gets.",
+						"ko": "<b>품석 (23)</b>이 오프사이드에서 공을 받는다 — 허세 같고 반칙 같아 보이지만 완전히 합법인 컷 — 그리고 반 호흡만큼 너무 길게, 골이 아니라 그의 눈을 붙잡는다. <b>프리미엄 격구채</b>가 햇살에 한 번 번쩍인다. 헤드커버엔 아직 진열용 비단, 자루엔 오방색 고리 다섯. 서라벌 경기가 천박해지는 지점이다."
 					},
 					{
 						"kind": "dialogue",
@@ -7481,7 +7479,7 @@
 						"ratio": 1.778,
 						"tone": "#374151",
 						"alt": "ECU dutch: sword blade as vertical divider — Euija grin and Gyebek steel shoulder",
-						"at": "Sungchung. Hate the method. You have my permission.",
+						"at": "Seongchung. Hate the method. You have my permission.",
 						"prompt": "Minimal iconic 16:9 still. ECU dutch: a sword blade as a hard vertical divider; King Euija’s grin cropped behind it, Gyebek steel shoulder in the lower third — FACES from attached portraits; NEW kinetic bodies. Mise-en-scène: REAL Sabi hall timber bokeh from palace place. ONE device: the blade as a black vertical line top-to-bottom. High contrast chiaroscuro. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
 						"refs": [
 							"/ch_buyeo_euija.png",
@@ -7619,8 +7617,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>The thirtieth Eraha — King Mu (80)</b> is dead, after years of fighting against Silla.",
-						"ko": "신라와 싸워 온 <b>서른째 어라하, 무왕 (80)</b>이 승하했다."
+						"html": "The thirtieth Eraha — King Mu (80) is dead, after years of fighting against Silla.",
+						"ko": "신라와 싸워 온 서른째 어라하, 무왕 (80)이 승하했다."
 					},
 					{
 						"kind": "p",
@@ -7956,7 +7954,7 @@
 							"다만 통하지 않는다는 소리는 하지 마시오."
 						],
 						"en": [
-							"Sungchung. Hate the method. You have my permission.",
+							"Seongchung. Hate the method. You have my permission.",
 							"Only do not stand there telling me it does not work."
 						]
 					},
@@ -8214,7 +8212,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "The Prime Minister is chosen via the <b>Rock of Politics</b> — a ritual the Great Clans have controlled for generations.",
+						"html": "The Premier is chosen via the <b>Rock of Politics</b> — a ritual the Great Clans have controlled for generations.",
 						"ko": "재상은 <b>정사암</b>에서 뽑는다 — 대성팔족이 대대로 쥐고 흔들어 온 의식이다."
 					},
 					{
@@ -8833,8 +8831,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Kim Muryuk</b> is already down in the cut — military governor of the new Sinju, a prince of fallen Geumgwan, Silla’s commission over a Gaya cone. <b>Muryuk’s cone cuts the night ridge.</b> He does not draw. He watches.",
-						"ko": "<b>김무력</b>은 이미 패인 곳에 있다. 새 신주의 군주, 멸망한 금관의 왕자, 가야의 고깔 위에 신라의 임명. <b>무력의 고깔이 밤 능선을 가른다.</b> 그는 칼을 뽑지 않는다. 본다."
+						"html": "<b>Kim Muryuk</b> is already down in the cut — military governor of the new Sinju, a prince of fallen Geumgwan, Silla’s commission over a Gaya cone. Muryuk’s cone cuts the night ridge. He does not draw. He watches.",
+						"ko": "<b>김무력</b>은 이미 패인 곳에 있다. 새 신주의 군주, 멸망한 금관의 왕자, 가야의 고깔 위에 신라의 임명. 무력의 고깔이 밤 능선을 가른다. 그는 칼을 뽑지 않는다. 본다."
 					},
 					{
 						"kind": "dialogue",
@@ -13877,8 +13875,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Before the True Bone’s horse is even a rumour, the inside of Daeya already has a weather, and the weather is her. <b>The well-post learns her hip first.</b> Packed earth. Timber eaves. Men turn their heads as she passes. The wives they brought watch her instead of the water.",
-						"ko": "진골의 말이 소문도 되기 전에, 대야 안에는 이미 날씨가 있고, 그 날씨는 그녀다. <b>우물 기둥이 허리를 먼저 배운다.</b> 다진 흙. 나무 처마. 지나갈 때 사내들이 고개를 돌린다. 데려온 아내들은 물이 아니라 그녀를 본다."
+						"html": "Before the True Bone’s horse is even a rumour, the inside of Daeya already has a weather, and the weather is her. The well-post learns her hip first. Packed earth. Timber eaves. Men turn their heads as she passes. The wives they brought watch her instead of the water.",
+						"ko": "진골의 말이 소문도 되기 전에, 대야 안에는 이미 날씨가 있고, 그 날씨는 그녀다. 우물 기둥이 허리를 먼저 배운다. 다진 흙. 나무 처마. 지나갈 때 사내들이 고개를 돌린다. 데려온 아내들은 물이 아니라 그녀를 본다."
 					},
 					{
 						"kind": "dialogue",
@@ -13898,8 +13896,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She does not look at them. She places a hand on the red sash as if it had slipped, and it has not slipped. <b>The storehouse door is a dark mouth.</b> Yellow sleeves in the shadow forget they have wives standing next to them. The wives do not forget. Thirty-one. The silk is poor. The body is not.",
-						"ko": "그들을 보지 않는다. 붉은 끈이 흘러내린 것처럼 손을 올리는데, 흘러내린 적이 없다. <b>창고 문이 어두운 입이다.</b> 그늘의 노란 소매들이, 옆에 선 아내가 있는 줄을 잊는다. 아내들은 잊지 않는다. 서른하나. 비단은 가난하다. 몸은 아니다."
+						"html": "She does not look at them. She places a hand on the red sash as if it had slipped, and it has not slipped. The storehouse door is a dark mouth. Yellow sleeves in the shadow forget they have wives standing next to them. The wives do not forget. Thirty-one. The silk is poor. The body is not.",
+						"ko": "그들을 보지 않는다. 붉은 끈이 흘러내린 것처럼 손을 올리는데, 흘러내린 적이 없다. 창고 문이 어두운 입이다. 그늘의 노란 소매들이, 옆에 선 아내가 있는 줄을 잊는다. 아내들은 잊지 않는다. 서른하나. 비단은 가난하다. 몸은 아니다."
 					},
 					{
 						"kind": "dialogue",
@@ -13918,13 +13916,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "On the inner stair she lets the jeogori fall another finger. <b>The post takes the silhouette.</b> Men turn on the steps. Wives on the landing go still. They will tell themselves they were looking at the stair. They were looking at the curve under the ochre.",
-						"ko": "안쪽 계단에서 저고리를 손가락 하나만큼 더 내린다. <b>기둥이 실루엣을 받는다.</b> 계단의 사내들이 고개를 돌린다. 참의 아내들이 멈춘다. 계단을 봤다고 할 것이다. 황토 아래 곡선을 본 것이다."
+						"html": "On the inner stair she lets the jeogori fall another finger. The post takes the silhouette. Men turn on the steps. Wives on the landing go still. They will tell themselves they were looking at the stair. They were looking at the curve under the ochre.",
+						"ko": "안쪽 계단에서 저고리를 손가락 하나만큼 더 내린다. 기둥이 실루엣을 받는다. 계단의 사내들이 고개를 돌린다. 참의 아내들이 멈춘다. 계단을 봤다고 할 것이다. 황토 아래 곡선을 본 것이다."
 					},
 					{
 						"kind": "p",
-						"html": "<b>The night before the True Bone arrives</b>, the room is only a lamp and the two of them. Maehwa’s teal silk opens at the shoulder. Gumil’s yellow sleeve comes off as if the month’s pay had never been the argument. They still know how to find each other. They will not know how tomorrow.",
-						"ko": "<b>진골이 도착하기 전날 밤</b>, 방에는 등 하나와 두 사람뿐이다. 매화의 청록 비단이 어깨에서 열린다. 검일의 노란 소매가, 월봉이 한 번도 다툼이 아니었던 것처럼 벗어진다. 아직 서로를 찾는 법을 안다. 내일은 모를 것이다."
+						"html": "The night before the True Bone arrives, the room is only a lamp and the two of them. Maehwa’s teal silk opens at the shoulder. Gumil’s yellow sleeve comes off as if the month’s pay had never been the argument. They still know how to find each other. They will not know how tomorrow.",
+						"ko": "진골이 도착하기 전날 밤, 방에는 등 하나와 두 사람뿐이다. 매화의 청록 비단이 어깨에서 열린다. 검일의 노란 소매가, 월봉이 한 번도 다툼이 아니었던 것처럼 벗어진다. 아직 서로를 찾는 법을 안다. 내일은 모를 것이다."
 					},
 					{
 						"kind": "dialogue",
@@ -13961,8 +13959,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "They stop talking. <b>The lamp is too small for manners.</b> The red sash comes off the way it always does in this room — one impatient pull — and the teal silk follows it onto the boards. His yellow sleeve is already gone. Thirty-one, and she still puts him where she wants him: on his back, her hand around him, then sitting until he is in to the hilt, the way winter has always started in this house.",
-						"ko": "말은 그만둔다. <b>등잔은 예절을 담기엔 너무 작다.</b> 붉은 허리끈이 이 방에서 늘 그러하듯 참을성 없이 한 번에 풀리고, 청록 비단이 마루로 내려간다. 노란 소매는 이미 없다. 서른하나. 그래도 원하는 자리에 눕힌다: 등을 깔고, 손으로 잡고, 끝까지 앉는다. 이 집에서 겨울은 늘 그렇게 시작한다."
+						"html": "They stop talking. The lamp is too small for manners. The red sash comes off the way it always does in this room — one impatient pull — and the teal silk follows it onto the boards. His yellow sleeve is already gone. Thirty-one, and she still puts him where she wants him: on his back, her hand around him, then sitting until he is in to the hilt, the way winter has always started in this house.",
+						"ko": "말은 그만둔다. 등잔은 예절을 담기엔 너무 작다. 붉은 허리끈이 이 방에서 늘 그러하듯 참을성 없이 한 번에 풀리고, 청록 비단이 마루로 내려간다. 노란 소매는 이미 없다. 서른하나. 그래도 원하는 자리에 눕힌다: 등을 깔고, 손으로 잡고, 끝까지 앉는다. 이 집에서 겨울은 늘 그렇게 시작한다."
 					},
 					{
 						"kind": "dialogue",
@@ -14006,24 +14004,24 @@
 					},
 					{
 						"kind": "p",
-						"html": "At the feast the wine finds Pumsuk first. Clean ice-blue silk. Crescent band. A cup he is not tasting. Then <b>the lamp-line is hers</b> — Maehwa walking the cheap hanging lamps like she built them, dirtied green jeogori, ochre chima washed too many times, the red sash tied by habit. Poor cloth against a dark hall. His clothes stay clean. Hers do not.",
-						"ko": "연회에서 술이 품석을 먼저 찾는다. 깨끗한 얼음빛 비단. 초승달 띠. 맛보지 않는 잔. 그리고 <b>등잔 줄은 그녀 것이다</b> — 매화가 싼 등잔을 자기가 세워 둔 것처럼 걷는다. 때 묻은 초록 저고리, 너무 많이 빤 황토 치마, 습관으로 맨 붉은 끈. 어두운 전각에 가난한 옷. 그의 옷은 깨끗하다. 그녀의 옷은 아니다."
+						"html": "At the feast the wine finds Pumsuk first. Clean ice-blue silk. Crescent band. A cup he is not tasting. Then the lamp-line is hers — Maehwa walking the cheap hanging lamps like she built them, dirtied green jeogori, ochre chima washed too many times, the red sash tied by habit. Poor cloth against a dark hall. His clothes stay clean. Hers do not.",
+						"ko": "연회에서 술이 품석을 먼저 찾는다. 깨끗한 얼음빛 비단. 초승달 띠. 맛보지 않는 잔. 그리고 등잔 줄은 그녀 것이다 — 매화가 싼 등잔을 자기가 세워 둔 것처럼 걷는다. 때 묻은 초록 저고리, 너무 많이 빤 황토 치마, 습관으로 맨 붉은 끈. 어두운 전각에 가난한 옷. 그의 옷은 깨끗하다. 그녀의 옷은 아니다."
 					},
 					{
 						"kind": "p",
-						"html": "He talks to the cup. It does not help. <b>The training is a joke tonight.</b> Heart-pupils. A thread of drool he will not wipe. She is only a green shape in the lamp behind him, and that is enough.",
-						"ko": "잔에 말한다. 안 된다. <b>오늘 밤 훈련은 농담이다.</b> 눈 안에 하트. 닦지 않는 침 한 줄. 등잔 뒤로는 초록 실루엣뿐인데, 그걸로 충분하다."
+						"html": "He talks to the cup. It does not help. The training is a joke tonight. Heart-pupils. A thread of drool he will not wipe. She is only a green shape in the lamp behind him, and that is enough.",
+						"ko": "잔에 말한다. 안 된다. 오늘 밤 훈련은 농담이다. 눈 안에 하트. 닦지 않는 침 한 줄. 등잔 뒤로는 초록 실루엣뿐인데, 그걸로 충분하다."
 					},
 					{
 						"kind": "p",
-						"html": "The feast is not a private room. It is every man in Daeya and the families they brought. She walks the aisle. Bowls stop. Necks turn. The wives watch her, not the food, and the watching is already a fight. He looks at her instead of his own table. <b>The families are still eating.</b> She is already working.",
-						"ko": "잔치는 밀실이 아니다. 대야의 사내들과 데려온 식구들이다. 그녀가 통로를 걷는다. 그릇이 멈춘다. 고개가 돈다. 아내들은 밥이 아니라 그녀를 보고, 그 눈이 이미 싸움이다. 그는 제 상 대신 그녀를 본다. <b>식구들은 아직 먹고 있다.</b> 그녀는 이미 일하고 있다."
+						"html": "The feast is not a private room. It is every man in Daeya and the families they brought. She walks the aisle. Bowls stop. Necks turn. The wives watch her, not the food, and the watching is already a fight. He looks at her instead of his own table. The families are still eating. She is already working.",
+						"ko": "잔치는 밀실이 아니다. 대야의 사내들과 데려온 식구들이다. 그녀가 통로를 걷는다. 그릇이 멈춘다. 고개가 돈다. 아내들은 밥이 아니라 그녀를 보고, 그 눈이 이미 싸움이다. 그는 제 상 대신 그녀를 본다. 식구들은 아직 먹고 있다. 그녀는 이미 일하고 있다."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She does it in public the way she does it in a dark room. A plum from a tray. A hand on her own hip, then on the sash, then — as if by accident — at the inner thigh where the ochre splits when she sits. <b>She has practised this.</b> The boy in ice-blue counts without meaning to. Twenty-four. The training does not cover a woman who knows where to put her hands.",
-						"ko": "어두운 방에서 하듯 사람들 앞에서 한다. 쟁반의 자두. 제 허리에 손, 끈에 손, 그리고 — 실수인 척 — 앉으면 황토가 갈라지는 허벅지 안쪽에. <b>연습한 것이다.</b> 얼음빛 소년이 세고 있다, 셀 생각이 없는데. 스물넷. 훈련은 손 둘 곳을 아는 여자를 다루지 않는다."
+						"html": "She does it in public the way she does it in a dark room. A plum from a tray. A hand on her own hip, then on the sash, then — as if by accident — at the inner thigh where the ochre splits when she sits. She has practised this. The boy in ice-blue counts without meaning to. Twenty-four. The training does not cover a woman who knows where to put her hands.",
+						"ko": "어두운 방에서 하듯 사람들 앞에서 한다. 쟁반의 자두. 제 허리에 손, 끈에 손, 그리고 — 실수인 척 — 앉으면 황토가 갈라지는 허벅지 안쪽에. 연습한 것이다. 얼음빛 소년이 세고 있다, 셀 생각이 없는데. 스물넷. 훈련은 손 둘 곳을 아는 여자를 다루지 않는다."
 					},
 					{
 						"kind": "dialogue",
@@ -14050,8 +14048,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He does the correct thing. He stands. He bows to a feast that has not asked him to leave. He goes to sleep like a man with a pink room waiting. <b>The pallet does not take him.</b>",
-						"ko": "옳은 일을 한다. 일어선다. 나가라고 하지 않은 잔치에 절한다. 분홍 방이 기다리는 사람처럼 자러 간다. <b>침상이 받지 않는다.</b>"
+						"html": "He does the correct thing. He stands. He bows to a feast that has not asked him to leave. He goes to sleep like a man with a pink room waiting. The pallet does not take him.",
+						"ko": "옳은 일을 한다. 일어선다. 나가라고 하지 않은 잔치에 절한다. 분홍 방이 기다리는 사람처럼 자러 간다. 침상이 받지 않는다."
 					},
 					{
 						"kind": "scene",
@@ -14061,8 +14059,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "Ice-blue on dark timber. One dying lamp. Eyes open. The hall comes with him anyway — her hip, her mouth, the plum, the hand that was not an accident. <b>He tries to sleep and the hall comes with him.</b> A True Bone should be able to close his eyes. He is twenty-four and hard in the dark and he knows exactly why.",
-						"ko": "어두운 나무 위 얼음빛. 죽어 가는 등 하나. 눈은 떠 있다. 전각이 따라온다 — 허리, 입, 자두, 실수가 아니었던 손. <b>자려고 하면 전각이 따라온다.</b> 진골이면 눈을 감을 수 있어야 한다. 스물넷. 어둠 속에서 서 있고, 이유를 정확히 안다."
+						"html": "Ice-blue on dark timber. One dying lamp. Eyes open. The hall comes with him anyway — her hip, her mouth, the plum, the hand that was not an accident. He tries to sleep and the hall comes with him. A True Bone should be able to close his eyes. He is twenty-four and hard in the dark and he knows exactly why.",
+						"ko": "어두운 나무 위 얼음빛. 죽어 가는 등 하나. 눈은 떠 있다. 전각이 따라온다 — 허리, 입, 자두, 실수가 아니었던 손. 자려고 하면 전각이 따라온다. 진골이면 눈을 감을 수 있어야 한다. 스물넷. 어둠 속에서 서 있고, 이유를 정확히 안다."
 					},
 					{
 						"kind": "monologue",
@@ -14074,14 +14072,14 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "In the gold behind his lids she arrives with the plum. Jeogori already wrong. <b>She arrives in the gold.</b> He cannot close his eyes on a mouth he has already counted.",
-						"ko": "눈꺼풀 뒤 금빛으로 그녀가 자두를 들고 온다. 저고리가 이미 틀렸다. <b>금빛 속으로 온다.</b> 이미 센 입 위로 눈을 감을 수가 없다."
+						"html": "In the gold behind his lids she arrives with the plum. Jeogori already wrong. She arrives in the gold. He cannot close his eyes on a mouth he has already counted.",
+						"ko": "눈꺼풀 뒤 금빛으로 그녀가 자두를 들고 온다. 저고리가 이미 틀렸다. 금빛 속으로 온다. 이미 센 입 위로 눈을 감을 수가 없다."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She looks back over the shoulder in the dirtied green and the dream is the same lamp as the feast. <b>The look-back in the dark.</b> He sits up. Palm down on taut ice-blue. Shame and hunger in the same hand. <b>Palm on the ice-blue.</b> The pink ribbon on the post is still there. He does not take it. He takes the hall.",
-						"ko": "때 묻은 초록 속에서 어깨 너머로 돌아보고, 꿈의 등잔이 잔치의 등잔이다. <b>어둠 속의 뒤돌아봄.</b> 일어앉는다. 팽팽한 얼음빛 위에 손바닥. 같은 손에 부끄러움과 굶주림. <b>얼음빛 위의 손.</b> 기둥의 분홍 리본은 아직 있다. 그것은 집어 들지 않는다. 전각을 집어 든다."
+						"html": "She looks back over the shoulder in the dirtied green and the dream is the same lamp as the feast. The look-back in the dark. He sits up. Palm down on taut ice-blue. Shame and hunger in the same hand. Palm on the ice-blue. The pink ribbon on the post is still there. He does not take it. He takes the hall.",
+						"ko": "때 묻은 초록 속에서 어깨 너머로 돌아보고, 꿈의 등잔이 잔치의 등잔이다. 어둠 속의 뒤돌아봄. 일어앉는다. 팽팽한 얼음빛 위에 손바닥. 같은 손에 부끄러움과 굶주림. 얼음빛 위의 손. 기둥의 분홍 리본은 아직 있다. 그것은 집어 들지 않는다. 전각을 집어 든다."
 					},
 					{
 						"kind": "p",
@@ -14103,8 +14101,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "She drops beside him before he has stood. <b>She sits like the chair was always hers.</b> Jeogori already a little open — not court, not accident. The smirk shows teeth. His mouth is already open and he has not used it yet.",
-						"ko": "그가 일어서기도 전에 옆에 앉는다. <b>자리는 원래 자기 것이었다는 듯이 앉는다.</b> 저고리가 이미 조금 열려 있다 — 궁도 아니고, 실수도 아니다. 이빨이 보이는 미소. 그의 입은 이미 열려 있고, 아직 말을 안 했다."
+						"html": "She drops beside him before he has stood. She sits like the chair was always hers. Jeogori already a little open — not court, not accident. The smirk shows teeth. His mouth is already open and he has not used it yet.",
+						"ko": "그가 일어서기도 전에 옆에 앉는다. 자리는 원래 자기 것이었다는 듯이 앉는다. 저고리가 이미 조금 열려 있다 — 궁도 아니고, 실수도 아니다. 이빨이 보이는 미소. 그의 입은 이미 열려 있고, 아직 말을 안 했다."
 					},
 					{
 						"kind": "dialogue",
@@ -14139,8 +14137,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "She puts his clean True Bone hand on the frayed red knot herself — not the waist, the chest, where the cheap sash is already tearing. <b>His palm finds the worn knot.</b> More skin than a minute ago. She does not look at the hand. She looks at his face, to see the exact second it stops being a general’s face.",
-						"ko": "진골의 깨끗한 손을 헐거운 붉은 매듭 위에 제 손으로 올려 둔다 — 허리가 아니라 가슴, 싼 끈이 이미 찢어지는 곳. <b>손바닥이 낡은 매듭을 찾는다.</b> 일 분 전보다 살이 더 보인다. 손은 안 본다. 얼굴을 본다. 장군 얼굴이 끝나는 그 초를 보려고."
+						"html": "She puts his clean True Bone hand on the frayed red knot herself — not the waist, the chest, where the cheap sash is already tearing. His palm finds the worn knot. More skin than a minute ago. She does not look at the hand. She looks at his face, to see the exact second it stops being a general’s face.",
+						"ko": "진골의 깨끗한 손을 헐거운 붉은 매듭 위에 제 손으로 올려 둔다 — 허리가 아니라 가슴, 싼 끈이 이미 찢어지는 곳. 손바닥이 낡은 매듭을 찾는다. 일 분 전보다 살이 더 보인다. 손은 안 본다. 얼굴을 본다. 장군 얼굴이 끝나는 그 초를 보려고."
 					},
 					{
 						"kind": "monologue",
@@ -14179,8 +14177,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "She says seventeen with her tongue still on her tooth. Jeogori looser. The dirtied green falls another finger-width. <b>She counts his looks out loud.</b> A True Bone lady would have looked down. Maehwa never learned that, and she is using the gap.",
-						"ko": "열일곱을 이빨에 혀를 붙인 채로 말한다. 저고리가 더 헐겁다. 때 묻은 초록이 손가락 하나만큼 더 내린다. <b>그가 본 횟수를 소리 내어 센다.</b> 진골 아씨라면 눈을 내렸을 것이다. 매화는 그걸 배운 적이 없고, 그 빈칸을 쓴다."
+						"html": "She says seventeen with her tongue still on her tooth. Jeogori looser. The dirtied green falls another finger-width. She counts his looks out loud. A True Bone lady would have looked down. Maehwa never learned that, and she is using the gap.",
+						"ko": "열일곱을 이빨에 혀를 붙인 채로 말한다. 저고리가 더 헐겁다. 때 묻은 초록이 손가락 하나만큼 더 내린다. 그가 본 횟수를 소리 내어 센다. 진골 아씨라면 눈을 내렸을 것이다. 매화는 그걸 배운 적이 없고, 그 빈칸을 쓴다."
 					},
 					{
 						"kind": "dialogue",
@@ -14215,8 +14213,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "She leans him into the post. His ice-blue robe has come open at the chest — clean silk, still clean, stupidly clean next to her mended green. Her mouth finds the tendon. <b>Heart-pupils, if anyone looked that close.</b> Drool he cannot swallow. She does not move back.",
-						"ko": "그를 기둥에 기대게 한다. 얼음빛 도포가 가슴에서 열린다 — 깨끗한 비단, 여전히 깨끗하고, 기운 초록 옆에 바보같이 깨끗하다. 입이 힘줄을 찾는다. <b>가까이 보면 눈 안에 하트.</b> 삼키지 못하는 침. 그녀는 물러나지 않는다."
+						"html": "She leans him into the post. His ice-blue robe has come open at the chest — clean silk, still clean, stupidly clean next to her mended green. Her mouth finds the tendon. Heart-pupils, if anyone looked that close. Drool he cannot swallow. She does not move back.",
+						"ko": "그를 기둥에 기대게 한다. 얼음빛 도포가 가슴에서 열린다 — 깨끗한 비단, 여전히 깨끗하고, 기운 초록 옆에 바보같이 깨끗하다. 입이 힘줄을 찾는다. 가까이 보면 눈 안에 하트. 삼키지 못하는 침. 그녀는 물러나지 않는다."
 					},
 					{
 						"kind": "monologue",
@@ -14227,8 +14225,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>The mouth goes first.</b> He holds her like he is afraid the hall will take her back — open, hungry, wine off her tongue — and the dirtied jeogori is still on, just enough off the shoulder that the figure starts to tell. The feast keeps talking on the other side of the cheap screen.",
-						"ko": "<b>입이 먼저다.</b> 전각이 도로 가져갈까 봐 안는다 — 벌리고, 배고프게, 혀에서 술맛을 찾으며. 때 묻은 저고리는 아직 있다. 어깨만 조금 내려가, 몸이 말하기 시작한다. 싼 병풍 너머로 잔치는 계속 말한다."
+						"html": "The mouth goes first. He holds her like he is afraid the hall will take her back — open, hungry, wine off her tongue — and the dirtied jeogori is still on, just enough off the shoulder that the figure starts to tell. The feast keeps talking on the other side of the cheap screen.",
+						"ko": "입이 먼저다. 전각이 도로 가져갈까 봐 안는다 — 벌리고, 배고프게, 혀에서 술맛을 찾으며. 때 묻은 저고리는 아직 있다. 어깨만 조금 내려가, 몸이 말하기 시작한다. 싼 병풍 너머로 잔치는 계속 말한다."
 					},
 					{
 						"kind": "dialogue",
@@ -14258,8 +14256,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Then she does the modest thing she never uses. Jeogori closed. Back to him. One step toward the dark. <b>I should go, she says, like a joke that wants to be caught.</b> His hand is already in the air.",
-						"ko": "한 번도 안 쓰던 정숙함을 한다. 저고리를 여민다. 등을 보인다. 어둠 쪽으로 한 걸음. <b>이만 갈게, 라고 한다. 잡히고 싶은 농담처럼.</b> 그의 손은 이미 허공에 있다."
+						"html": "Then she does the modest thing she never uses. Jeogori closed. Back to him. One step toward the dark. I should go, she says, like a joke that wants to be caught. His hand is already in the air.",
+						"ko": "한 번도 안 쓰던 정숙함을 한다. 저고리를 여민다. 등을 보인다. 어둠 쪽으로 한 걸음. 이만 갈게, 라고 한다. 잡히고 싶은 농담처럼. 그의 손은 이미 허공에 있다."
 					},
 					{
 						"kind": "dialogue",
@@ -14276,8 +14274,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>He is already on the floor.</b> She has sat back down as if the leaving were a game. Bare foot. Cheap hem hiked just enough. His clean blue sleeve on her ankle. He does not remember kneeling.",
-						"ko": "<b>이미 바닥에 있다.</b> 그녀는 가는 척이 장난이었다는 듯이 다시 앉는다. 맨발. 싼 자락이 조금 걷혀 있다. 깨끗한 푸른 소매가 발목에. 무릎 꿇은 줄은 모른다."
+						"html": "He is already on the floor. She has sat back down as if the leaving were a game. Bare foot. Cheap hem hiked just enough. His clean blue sleeve on her ankle. He does not remember kneeling.",
+						"ko": "이미 바닥에 있다. 그녀는 가는 척이 장난이었다는 듯이 다시 앉는다. 맨발. 싼 자락이 조금 걷혀 있다. 깨끗한 푸른 소매가 발목에. 무릎 꿇은 줄은 모른다."
 					},
 					{
 						"kind": "dialogue",
@@ -14294,8 +14292,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "We see what he cannot quite: the look down, unrefined, a little pleased. She does not start with her hands. She starts with a plum from the tray. Jeogori open again, farther than before — the figure the yard has been staring at since spring. <b>She puts the plum in her mouth so he has to watch.</b> Pink in his eyes. Drool. Thirty-one. She has never rushed a man who was already lost.",
-						"ko": "그가 다 못 보는 것을 본다: 내려다보는 눈, 곱지 않고, 조금 기분 좋은. 손은 나중이다. 쟁반의 자두다. 저고리가 다시 열린다, 전보다 더 — 봄부터 마당이 보던 몸. <b>그가 보게 하려고 자두를 입에 넣는다.</b> 눈에 분홍. 침. 서른하나. 이미 끝난 사내를 재촉한 적은 없다."
+						"html": "We see what he cannot quite: the look down, unrefined, a little pleased. She does not start with her hands. She starts with a plum from the tray. Jeogori open again, farther than before — the figure the yard has been staring at since spring. She puts the plum in her mouth so he has to watch. Pink in his eyes. Drool. Thirty-one. She has never rushed a man who was already lost.",
+						"ko": "그가 다 못 보는 것을 본다: 내려다보는 눈, 곱지 않고, 조금 기분 좋은. 손은 나중이다. 쟁반의 자두다. 저고리가 다시 열린다, 전보다 더 — 봄부터 마당이 보던 몸. 그가 보게 하려고 자두를 입에 넣는다. 눈에 분홍. 침. 서른하나. 이미 끝난 사내를 재촉한 적은 없다."
 					},
 					{
 						"kind": "monologue",
@@ -14307,8 +14305,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>The mouth goes first.</b> Not a polite peck. Tongues. Wet. She sucks his lower lip and he makes a stupid sound into her. Ice-blue fist in dirtied green. She is starving. Ten years of three-stroke nights and a husband who is done before she starts. She kisses him like she is going to eat him. <i>Chup. Chup.</i> Spit on the chin. His young mouth does not know how. She teaches that too.",
-						"ko": "<b>입이 먼저다.</b> 예의 바른 쪽 아님. 혀. 젖은. 아랫입술을 빨면 그가 바보 소리를 낸다. 때 묻은 초록을 얼음빛이 쥔다. 굶었다. 십 년, 세 번에 끝나는 밤, 시작도 전에 끝나는 남편. 잡아먹을 듯이 입맞춘다. <i>춥. 춥.</i> 턱에 침. 젊은 입은 모른다. 그것도 가르친다."
+						"html": "The mouth goes first. Not a polite peck. Tongues. Wet. She sucks his lower lip and he makes a stupid sound into her. Ice-blue fist in dirtied green. She is starving. Ten years of three-stroke nights and a husband who is done before she starts. She kisses him like she is going to eat him. <i>Chup. Chup.</i> Spit on the chin. His young mouth does not know how. She teaches that too.",
+						"ko": "입이 먼저다. 예의 바른 쪽 아님. 혀. 젖은. 아랫입술을 빨면 그가 바보 소리를 낸다. 때 묻은 초록을 얼음빛이 쥔다. 굶었다. 십 년, 세 번에 끝나는 밤, 시작도 전에 끝나는 남편. 잡아먹을 듯이 입맞춘다. <i>춥. 춥.</i> 턱에 침. 젊은 입은 모른다. 그것도 가르친다."
 					},
 					{
 						"kind": "dialogue",
@@ -14329,8 +14327,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>As little silk as the lamp allows.</b> She peels the ice-blue off his shoulders with both hands — <i>ssrk</i> — and the chest is right there, twenty-four, muscle she has not had in her mouth. She bites. Jeogori off her own shoulders like it never meant to stay. Ochre hiked to the waist. Nothing left that is not skin or a cheap sash. Deep french kiss while she opens him. <i>Mmh—</i> His cock slaps her thigh, already leaking. Made for this. Both of them. She can feel it in the fit before he is even in.",
-						"ko": "<b>등이 허락하는 만큼만 비단.</b> 두 손으로 얼음빛을 어깨에서 벗긴다 — <i>스르륵</i> — 가슴이 있다. 스물넷. 입에 넣어 본 적 없는 근육. 문다. 제 저고리도 어깨에서, 처음부터 남을 생각 없던 것처럼. 황토는 허리까지. 살과 싼 끈 말고는 없다. 벗기면서 혀를 깊게. <i>음—</i> 자지가 허벅지에 닿고, 이미 흘린다. 이걸 위해 만들어진 몸. 둘 다. 넣기도 전에 맞춤이 느껴진다."
+						"html": "As little silk as the lamp allows. She peels the ice-blue off his shoulders with both hands — <i>ssrk</i> — and the chest is right there, twenty-four, muscle she has not had in her mouth. She bites. Jeogori off her own shoulders like it never meant to stay. Ochre hiked to the waist. Nothing left that is not skin or a cheap sash. Deep french kiss while she opens him. <i>Mmh—</i> His cock slaps her thigh, already leaking. Made for this. Both of them. She can feel it in the fit before he is even in.",
+						"ko": "등이 허락하는 만큼만 비단. 두 손으로 얼음빛을 어깨에서 벗긴다 — <i>스르륵</i> — 가슴이 있다. 스물넷. 입에 넣어 본 적 없는 근육. 문다. 제 저고리도 어깨에서, 처음부터 남을 생각 없던 것처럼. 황토는 허리까지. 살과 싼 끈 말고는 없다. 벗기면서 혀를 깊게. <i>음—</i> 자지가 허벅지에 닿고, 이미 흘린다. 이걸 위해 만들어진 몸. 둘 다. 넣기도 전에 맞춤이 느껴진다."
 					},
 					{
 						"kind": "dialogue",
@@ -14349,8 +14347,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "What follows is not a kiss. She sits him on the worn pine in that clean ice-blue and climbs on — ochre hiked, jeogori already a veil, the heavy chest in his face so he has to see it. She meant to lead. She takes his hands and puts them on her tits herself, like a lesson. <b>This milf will teach you.</b> He does not hear the lesson. He hears skin. He grabs like a dog that has never been fed, kneading, burying his mouth in the chest, a rabid animal whose whole mind is the next squeeze, the next wet, the hole he is already pushing up into. No rank. No wife in the pink room. Only this.",
-						"ko": "그다음이 입맞춤이 아니다. 깨끗한 얼음빛 그대로 낡은 마루에 앉히고 올라탄다 — 황토는 걷히고, 저고리는 이미 너울, 무거운 젖이 얼굴에 와서 안 볼 수가 없다. 이끌려고 했다. 제 손으로 그의 손을 젖에 얹는다. 수업이다. <b>이 아줌마가 가르쳐 줄게.</b> 수업은 안 들린다. 살만 들린다. 안 먹여 본 개처럼 움켜쥔다. 주무르고, 젖에 입을 박고, 발정 난 짐승이다. 머릿속은 다음 움켜쥠, 다음 젖음, 이미 밀어 넣고 있는 구멍뿐이다. 계급 없다. 분홍 방의 아내 없다. 이것뿐이다."
+						"html": "What follows is not a kiss. She sits him on the worn pine in that clean ice-blue and climbs on — ochre hiked, jeogori already a veil, the heavy chest in his face so he has to see it. She meant to lead. She takes his hands and puts them on her tits herself, like a lesson. This milf will teach you. He does not hear the lesson. He hears skin. He grabs like a dog that has never been fed, kneading, burying his mouth in the chest, a rabid animal whose whole mind is the next squeeze, the next wet, the hole he is already pushing up into. No rank. No wife in the pink room. Only this.",
+						"ko": "그다음이 입맞춤이 아니다. 깨끗한 얼음빛 그대로 낡은 마루에 앉히고 올라탄다 — 황토는 걷히고, 저고리는 이미 너울, 무거운 젖이 얼굴에 와서 안 볼 수가 없다. 이끌려고 했다. 제 손으로 그의 손을 젖에 얹는다. 수업이다. 이 아줌마가 가르쳐 줄게. 수업은 안 들린다. 살만 들린다. 안 먹여 본 개처럼 움켜쥔다. 주무르고, 젖에 입을 박고, 발정 난 짐승이다. 머릿속은 다음 움켜쥠, 다음 젖음, 이미 밀어 넣고 있는 구멍뿐이다. 계급 없다. 분홍 방의 아내 없다. 이것뿐이다."
 					},
 					{
 						"kind": "dialogue",
@@ -14445,8 +14443,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>She goes quiet.</b> The feast keeps talking on the other side of the screen. She does not. Four drops. Five. Six. Condescension sits in her throat and will not come out. He looks up from her chest, wrecked, waiting for the next instruction. She shakes her head. Not a no. A don’t.",
-						"ko": "<b>입을 닫는다.</b> 병풍 너머 잔치는 아직 말한다. 그녀는 아니다. 네 번. 다섯. 여섯. 깔보던 말이 목에 걸려 안 나온다. 그가 젖에서 올려다본다, 망가지고, 다음 지시를 기다린다. 고개를 젓는다. 거절이 아니다. 하지 말라는 것이다."
+						"html": "She goes quiet. The feast keeps talking on the other side of the screen. She does not. Four drops. Five. Six. Condescension sits in her throat and will not come out. He looks up from her chest, wrecked, waiting for the next instruction. She shakes her head. Not a no. A don’t.",
+						"ko": "입을 닫는다. 병풍 너머 잔치는 아직 말한다. 그녀는 아니다. 네 번. 다섯. 여섯. 깔보던 말이 목에 걸려 안 나온다. 그가 젖에서 올려다본다, 망가지고, 다음 지시를 기다린다. 고개를 젓는다. 거절이 아니다. 하지 말라는 것이다."
 					},
 					{
 						"kind": "dialogue",
@@ -14548,8 +14546,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "The name does it. Whatever was left of the general leaves the hips. He holds her by the cheap sash and the tits at once and drives until there is no teacher left even as a joke. She is still astride when the sound leaves her. <b>The laugh becomes a scream.</b> She comes on the second scream, loud, messy, and then the water comes with it — she squirts all over him, ice-blue finally stained, his lap, his cock, the ochre, the pine, a shameful hot spray she cannot stop, and she is still saying she hates him into his mouth.",
-						"ko": "그 이름이 한다. 장군으로 남은 것이 허리에서 나간다. 싼 끈과 젖을 한꺼번에 잡고 선생님이 농담으로도 안 남게 박는다. 소리가 나와도 아직 타고 있다. <b>웃음이 비명이 된다.</b> 두 번째 비명에서 가고, 크고, 지저분하고, 물이 따라온다 — 그 위에 분수처럼 싼다. 얼음빛이 드디어 젖고, 무릎, 자지, 황토, 마루. 못 멈추는 뜨거운 물. 입술에 대고 아직 미워한다고 한다."
+						"html": "The name does it. Whatever was left of the general leaves the hips. He holds her by the cheap sash and the tits at once and drives until there is no teacher left even as a joke. She is still astride when the sound leaves her. The laugh becomes a scream. She comes on the second scream, loud, messy, and then the water comes with it — she squirts all over him, ice-blue finally stained, his lap, his cock, the ochre, the pine, a shameful hot spray she cannot stop, and she is still saying she hates him into his mouth.",
+						"ko": "그 이름이 한다. 장군으로 남은 것이 허리에서 나간다. 싼 끈과 젖을 한꺼번에 잡고 선생님이 농담으로도 안 남게 박는다. 소리가 나와도 아직 타고 있다. 웃음이 비명이 된다. 두 번째 비명에서 가고, 크고, 지저분하고, 물이 따라온다 — 그 위에 분수처럼 싼다. 얼음빛이 드디어 젖고, 무릎, 자지, 황토, 마루. 못 멈추는 뜨거운 물. 입술에 대고 아직 미워한다고 한다."
 					},
 					{
 						"kind": "dialogue",
@@ -14574,8 +14572,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "He does not last the courtesy of a first finish. <i>Plap-plap-plap—</i> and he is already shaking. He buries it — a stupid, young, endless amount, gallons of thick white shooting from that juicy young cock into a woman who has been empty for a decade — and keeps thrusting through the squirt, wetter, louder, white already running down the inside of the ochre in ropes. <b>Every last drop.</b> She laughs into the scream. She thought that was a night. One. Thank you. Back to the feast. She starts to sit. It is still coming out of her. <i>Glk. Glk.</i>",
-						"ko": "첫 번의 예의를 지키지 못한다. <i>철벅철벅철벅—</i> 이미 떤다. 묻는다 — 바보같고, 젊고, 끝이 없는 양, 두꺼운 흰 것이 젊은 자지에서 십 년을 비워 둔 여자 안으로 — 싼 물 위로 계속 박는다. 더 젖고, 더 크고, 하얗게가 황토 안으로 줄줄. <b>한 방울도 남기지 않는다.</b> 비명 속에서 웃는다. 이게 밤인 줄 알았다. 한 번. 고맙다. 잔치로. 일어나려 한다. 아직 나온다. <i>꿀꺽. 꿀꺽.</i>"
+						"html": "He does not last the courtesy of a first finish. <i>Plap-plap-plap—</i> and he is already shaking. He buries it — a stupid, young, endless amount, gallons of thick white shooting from that juicy young cock into a woman who has been empty for a decade — and keeps thrusting through the squirt, wetter, louder, white already running down the inside of the ochre in ropes. Every last drop. She laughs into the scream. She thought that was a night. One. Thank you. Back to the feast. She starts to sit. It is still coming out of her. <i>Glk. Glk.</i>",
+						"ko": "첫 번의 예의를 지키지 못한다. <i>철벅철벅철벅—</i> 이미 떤다. 묻는다 — 바보같고, 젊고, 끝이 없는 양, 두꺼운 흰 것이 젊은 자지에서 십 년을 비워 둔 여자 안으로 — 싼 물 위로 계속 박는다. 더 젖고, 더 크고, 하얗게가 황토 안으로 줄줄. 한 방울도 남기지 않는다. 비명 속에서 웃는다. 이게 밤인 줄 알았다. 한 번. 고맙다. 잔치로. 일어나려 한다. 아직 나온다. <i>꿀꺽. 꿀꺽.</i>"
 					},
 					{
 						"kind": "dialogue",
@@ -14657,8 +14655,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>Cowgirl again.</b> She drops on him — <i>PLAP. PLAP. PLAP.</i> Ochre wrecked. Ass slapping his lap. Tits bouncing in his grip. First load squelching out around the cock every time she sits. <i>Schlk-schlk-schlk.</i> She rides like a woman who has not been fucked properly since she was a girl. She loves the back under her hands. The hips. The stomach. All of it. Young man body and she is going to use every inch.",
-						"ko": "<b>또 올라탄다.</b> 떨어진다 — <i>철벅. 철벅. 철벅.</i> 황토 망가짐. 엉덩이가 무릎에. 젖이 쥔 대로 튐. 앉을 때마다 첫 한이 자지 옆으로 새어. <i>찔꺽찔꺽찔꺽.</i> 제대로 박힌 적 없는 여자처럼 탄다. 손 아래 등이 좋다. 허리. 배. 전부. 젊은 남자 몸. 한 치도 안 남긴다."
+						"html": "Cowgirl again. She drops on him — <i>PLAP. PLAP. PLAP.</i> Ochre wrecked. Ass slapping his lap. Tits bouncing in his grip. First load squelching out around the cock every time she sits. <i>Schlk-schlk-schlk.</i> She rides like a woman who has not been fucked properly since she was a girl. She loves the back under her hands. The hips. The stomach. All of it. Young man body and she is going to use every inch.",
+						"ko": "또 올라탄다. 떨어진다 — <i>철벅. 철벅. 철벅.</i> 황토 망가짐. 엉덩이가 무릎에. 젖이 쥔 대로 튐. 앉을 때마다 첫 한이 자지 옆으로 새어. <i>찔꺽찔꺽찔꺽.</i> 제대로 박힌 적 없는 여자처럼 탄다. 손 아래 등이 좋다. 허리. 배. 전부. 젊은 남자 몸. 한 치도 안 남긴다."
 					},
 					{
 						"kind": "dialogue",
@@ -14717,7 +14715,7 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>He turns her.</b> Doggy. Cheap post in her fists. He takes the hips he has been staring at since the yard and slams. <i>CLAP. CLAP. CLAP.</i> Her tits swing. White already running down the inside of her thighs, dripping off the knees onto pine. Third load. He does not pull out. She would kill him if he pulled out. Breeding. Raw. The bodies slot like they were cut from the same want.",
+						"html": "He turns her. Doggy. Cheap post in her fists. He takes the hips he has been staring at since the yard and slams. <i>CLAP. CLAP. CLAP.</i> Her tits swing. White already running down the inside of her thighs, dripping off the knees onto pine. Third load. He does not pull out. She would kill him if he pulled out. Breeding. Raw. The bodies slot like they were cut from the same want.",
 						"ko": "<b>돌린다.</b> 뒤에서. 싼 기둥이 주먹에. 마당부터 보던 허리를 잡고 박는다. <i>짝. 짝. 짝.</i> 젖이 흔들린다. 흰 것이 이미 허벅지 안으로, 무릎에서 마루로. 세 번째. 안 뺀다. 빼면 죽일 것이다. 씨. 생. 몸이 같은 욕으로 잘린 것처럼 맞는다."
 					},
 					{
@@ -14791,8 +14789,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "On her side. Then on her back again. Then her on top facing away so he can watch the ass he ruined. <i>Plap. Squelch. Drip.</i> Load after load of breeding. She loses the count. Five. Six. The pine is white. The ochre is a rag. Ice-blue is stained to the hip. Every time she thinks the wick is the end he looks at the mess between her legs and gets hard inside her. <b>The lamp keeps dying and he does not.</b>",
-						"ko": "옆으로. 다시 바로. 등을 보이게 타서 망가뜨린 엉덩이를 보게 한다. <i>철벅. 찔꺽. 뚝.</i> 씨가 한 번 한 번. 세는 것을 잃는다. 다섯. 여섯. 마루가 하얗다. 황토는 걸레. 얼음빛은 허리까지 젖었다. 심지가 끝인 줄 알 때마다 다리 사이를 보고 안에서 다시 선다. <b>등잔은 죽어 가는데 그는 안 죽는다.</b>"
+						"html": "On her side. Then on her back again. Then her on top facing away so he can watch the ass he ruined. <i>Plap. Squelch. Drip.</i> Load after load of breeding. She loses the count. Five. Six. The pine is white. The ochre is a rag. Ice-blue is stained to the hip. Every time she thinks the wick is the end he looks at the mess between her legs and gets hard inside her. The lamp keeps dying and he does not.",
+						"ko": "옆으로. 다시 바로. 등을 보이게 타서 망가뜨린 엉덩이를 보게 한다. <i>철벅. 찔꺽. 뚝.</i> 씨가 한 번 한 번. 세는 것을 잃는다. 다섯. 여섯. 마루가 하얗다. 황토는 걸레. 얼음빛은 허리까지 젖었다. 심지가 끝인 줄 알 때마다 다리 사이를 보고 안에서 다시 선다. 등잔은 죽어 가는데 그는 안 죽는다."
 					},
 					{
 						"kind": "dialogue",
@@ -14825,8 +14823,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>They do not stop until the lamp dies.</b> Load after load inside her — she squirts again on the last one, water and white, on the dirtied green, on the worn pine, on the frayed red sash, on the tits she cannot cover, on his stomach, on the cheap post. Hanbok still on — just straps of it. The hall smells of sex. She is hoarse. He is shaking and still in her, still holding the chest, still twitching out the last of a night that was only breeding. For the first time in this fortress <b>they are in love in a room that cannot keep them.</b>",
-						"ko": "<b>등잔이 죽을 때까지 멈추지 않는다.</b> 그 안에 한 번 한 번 — 마지막에 또 물이 나오고, 하얗고 물이고, 때 묻은 초록에, 낡은 마루에, 헐거운 붉은 끈에, 못 가리는 젖에, 그의 배에, 싼 기둥에. 한복은 아직 있다 — 끈만. 전각에 그 냄새가 있다. 목이 쉬었다. 그는 떨면서 아직 그 안에 있고, 아직 가슴을 잡고, 씨만 있던 밤의 마지막을 아직 튄다. 이 성에서 처음으로 <b>붙잡아 둘 수 없는 방에서 사랑한다.</b>"
+						"html": "They do not stop until the lamp dies. Load after load inside her — she squirts again on the last one, water and white, on the dirtied green, on the worn pine, on the frayed red sash, on the tits she cannot cover, on his stomach, on the cheap post. Hanbok still on — just straps of it. The hall smells of sex. She is hoarse. He is shaking and still in her, still holding the chest, still twitching out the last of a night that was only breeding. For the first time in this fortress they are in love in a room that cannot keep them.",
+						"ko": "등잔이 죽을 때까지 멈추지 않는다. 그 안에 한 번 한 번 — 마지막에 또 물이 나오고, 하얗고 물이고, 때 묻은 초록에, 낡은 마루에, 헐거운 붉은 끈에, 못 가리는 젖에, 그의 배에, 싼 기둥에. 한복은 아직 있다 — 끈만. 전각에 그 냄새가 있다. 목이 쉬었다. 그는 떨면서 아직 그 안에 있고, 아직 가슴을 잡고, 씨만 있던 밤의 마지막을 아직 튄다. 이 성에서 처음으로 붙잡아 둘 수 없는 방에서 사랑한다."
 					},
 					{
 						"kind": "monologue",
@@ -14872,13 +14870,13 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "Afterwards she is <b>on the worn pine</b>. Jeogori open. Chima a wreck. <b>White milk on the dirtied green</b> — load after load of it, on the boards, on the cheap sash, on her, still pumping out when she tries to close her legs, catching the last of the lamp. She cannot sit up yet. She does not try. The feast on the other side of the screen has gone very quiet.",
-						"ko": "끝나고 <b>낡은 마루 위에 있다</b>. 저고리는 열려 있다. 치마는 망가졌다. <b>때 묻은 초록 위에 흰 젖</b> — 한 번 한 번, 마루에, 싼 끈에, 그녀에, 다리를 모으려 해도 아직 나오고, 마지막 등잔에 잡힌다. 아직 일어나지 못한다. 하려고도 하지 않는다. 병풍 너머 잔치가 아주 조용해진다."
+						"html": "Afterwards she is on the worn pine. Jeogori open. Chima a wreck. White milk on the dirtied green — load after load of it, on the boards, on the cheap sash, on her, still pumping out when she tries to close her legs, catching the last of the lamp. She cannot sit up yet. She does not try. The feast on the other side of the screen has gone very quiet.",
+						"ko": "끝나고 낡은 마루 위에 있다. 저고리는 열려 있다. 치마는 망가졌다. 때 묻은 초록 위에 흰 젖 — 한 번 한 번, 마루에, 싼 끈에, 그녀에, 다리를 모으려 해도 아직 나오고, 마지막 등잔에 잡힌다. 아직 일어나지 못한다. 하려고도 하지 않는다. 병풍 너머 잔치가 아주 조용해진다."
 					},
 					{
 						"kind": "p",
-						"html": "He stands. He looks once — the way a man looks at someone he has already lost. He does not speak. <b>He leaves the feast without a word</b> — through the cheap screen, through the dark hall, back into the rank that will pretend this timber never happened. The lamps do not follow him. She stays on the floor.",
-						"ko": "일어선다. 한 번 본다 — 이미 잃은 사람을 보는 눈. 말하지 않는다. <b>말 없이 잔치를 나선다</b> — 싼 병풍을 지나, 어두운 전각을 지나, 이 나무가 없었다고 할 계급 속으로. 등잔은 따라가지 않는다. 그녀는 마루에 남는다."
+						"html": "He stands. He looks once — the way a man looks at someone he has already lost. He does not speak. He leaves the feast without a word — through the cheap screen, through the dark hall, back into the rank that will pretend this timber never happened. The lamps do not follow him. She stays on the floor.",
+						"ko": "일어선다. 한 번 본다 — 이미 잃은 사람을 보는 눈. 말하지 않는다. 말 없이 잔치를 나선다 — 싼 병풍을 지나, 어두운 전각을 지나, 이 나무가 없었다고 할 계급 속으로. 등잔은 따라가지 않는다. 그녀는 마루에 남는다."
 					},
 					{
 						"kind": "day",
@@ -14887,8 +14885,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Grey in the door-slit. The feast is a cold hall. <b>Gumil comes back from the stores</b> and finds his wife where the True Bone left her — dirtied green still open, last night still on the boards. He does not ask if she is hurt. He asks for the story.",
-						"ko": "문틈의 회색. 잔치는 차가운 전각이다. <b>검일이 창고에서 돌아와</b> 진골이 두고 간 자리에 아내를 본다 — 때 묻은 초록은 아직 열려 있고, 지난밤은 아직 마루에 있다. 다쳤느냐고 묻지 않는다. 이야기를 묻는다."
+						"html": "Grey in the door-slit. The feast is a cold hall. Gumil comes back from the stores and finds his wife where the True Bone left her — dirtied green still open, last night still on the boards. He does not ask if she is hurt. He asks for the story.",
+						"ko": "문틈의 회색. 잔치는 차가운 전각이다. 검일이 창고에서 돌아와 진골이 두고 간 자리에 아내를 본다 — 때 묻은 초록은 아직 열려 있고, 지난밤은 아직 마루에 있다. 다쳤느냐고 묻지 않는다. 이야기를 묻는다."
 					},
 					{
 						"kind": "dialogue",
@@ -14938,7 +14936,7 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She does not wait for the rest of the questions. Same pine. Same wrecked ochre. She is still in milf mode — the voice she used on the boy, the hands on the chest, the hike. She pulls the yellow sleeve down, puts him in, and <b>does not let go</b>. He is already overwhelmed. Her. The smell. Last night still wet on her. Three strokes. He always was three strokes.",
+						"html": "She does not wait for the rest of the questions. Same pine. Same wrecked ochre. She is still in milf mode — the voice she used on the boy, the hands on the chest, the hike. She pulls the yellow sleeve down, puts him in, and does not let go. He is already overwhelmed. Her. The smell. Last night still wet on her. Three strokes. He always was three strokes.",
 						"ko": "나머지 질문을 기다리지 않는다. 같은 마루. 같은 망가진 황토. 아직 아줌마 모드다 — 그 아이에게 쓰던 목소리, 가슴의 손, 걷어 올린 것. 노란 소매를 내리고, 넣고, <b>안 놓는다</b>. 이미 압도됐다. 그녀. 냄새. 지난밤이 아직 젖어. 세 번. 원래 세 번이었다."
 					},
 					{
@@ -15003,8 +15001,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She tells it. The walk. The knot. The scream the screen did not hide. She thought it was over after the first, and after the second, and it was not — he looked at her and it started again, load after load, and the clean silk that never stained. She tells him she said the wife’s name, and that is when the boy got angry, and that is when she liked it most — stealing a noble lady’s husband out loud. She tells him by the lamp she was the one being owned. <b>He makes her say the leaving last</b> — that the boy stood up, did not look, and walked out of the feast as if the room were already empty.",
-						"ko": "말한다. 걸음. 매듭. 병풍이 가리지 못한 소리. 첫 번 다음에 끝난 줄 알았고, 두 번째 다음에도, 아니었다 — 그 아이가 봐서 또 시작됐고, 그 안에 몇 번, 그리고 더러워지지 않은 비단. 아내 이름을 말했다고 하고, 그때 그 아이가 화났다고 하고, 그때가 제일 좋았다고 한다 — 진골 아씨 남편을 소리 내어 훔친 것. 등잔 옆에서는 소유당한 쪽이 자기였다고 한다. <b>떠나는 것을 마지막에 말하게 한다</b> — 그 아이가 일어서서, 보지 않고, 방이 이미 빈 것처럼 잔치를 나갔다고."
+						"html": "She tells it. The walk. The knot. The scream the screen did not hide. She thought it was over after the first, and after the second, and it was not — he looked at her and it started again, load after load, and the clean silk that never stained. She tells him she said the wife’s name, and that is when the boy got angry, and that is when she liked it most — stealing a noble lady’s husband out loud. She tells him by the lamp she was the one being owned. He makes her say the leaving last — that the boy stood up, did not look, and walked out of the feast as if the room were already empty.",
+						"ko": "말한다. 걸음. 매듭. 병풍이 가리지 못한 소리. 첫 번 다음에 끝난 줄 알았고, 두 번째 다음에도, 아니었다 — 그 아이가 봐서 또 시작됐고, 그 안에 몇 번, 그리고 더러워지지 않은 비단. 아내 이름을 말했다고 하고, 그때 그 아이가 화났다고 하고, 그때가 제일 좋았다고 한다 — 진골 아씨 남편을 소리 내어 훔친 것. 등잔 옆에서는 소유당한 쪽이 자기였다고 한다. 떠나는 것을 마지막에 말하게 한다 — 그 아이가 일어서서, 보지 않고, 방이 이미 빈 것처럼 잔치를 나갔다고."
 					},
 					{
 						"kind": "dialogue",
@@ -15068,8 +15066,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>They stand in the door-slit of morning</b> and do not touch. The heat from the feast is gone. What is left is the count of what she said, and the count of what he made her say, and a marriage that has already finished speaking.",
-						"ko": "<b>그들은 아침 문틈에 서서</b> 서로 닿지 않는다. 잔치의 열기는 없다. 남은 것은 그녀가 한 말의 셈과, 그가 말하게 한 말의 셈과, 이미 말하기를 끝낸 혼인이다."
+						"html": "They stand in the door-slit of morning and do not touch. The heat from the feast is gone. What is left is the count of what she said, and the count of what he made her say, and a marriage that has already finished speaking.",
+						"ko": "그들은 아침 문틈에 서서 서로 닿지 않는다. 잔치의 열기는 없다. 남은 것은 그녀가 한 말의 셈과, 그가 말하게 한 말의 셈과, 이미 말하기를 끝낸 혼인이다."
 					},
 					{
 						"kind": "p",
@@ -15078,18 +15076,18 @@
 					},
 					{
 						"kind": "p",
-						"html": "Three weeks later <b>Yunchung’s fire through the gate</b> is the first thing the inner court sees — ten thousand men, and the wall still theoretically Silla’s.",
-						"ko": "삼 주 뒤, 내성이 먼저 보는 것은 <b>문을 가르는 윤충의 불</b>이다 — 군사 만 명. 성벽은 이론상 아직 신라의 것이다."
+						"html": "Three weeks later Yunchung’s fire through the gate is the first thing the inner court sees — ten thousand men, and the wall still theoretically Silla’s.",
+						"ko": "삼 주 뒤, 내성이 먼저 보는 것은 문을 가르는 윤충의 불이다 — 군사 만 명. 성벽은 이론상 아직 신라의 것이다."
 					},
 					{
 						"kind": "p",
-						"html": "<b>Mochuk lifts the bar</b>. The leaf swings. The approach road fills. He does not look at the men coming in. He looks at the man who asked him to.",
-						"ko": "<b>모척이 빗장을 든다</b>. 문이 열린다. 진입로가 찬다. 들어오는 사람들을 보지 않는다. 열어 달라 한 사람을 본다."
+						"html": "Mochuk lifts the bar. The leaf swings. The approach road fills. He does not look at the men coming in. He looks at the man who asked him to.",
+						"ko": "모척이 빗장을 든다. 문이 열린다. 진입로가 찬다. 들어오는 사람들을 보지 않는다. 열어 달라 한 사람을 본다."
 					},
 					{
 						"kind": "p",
-						"html": "Then <b>Gumil puts the torch to the stores</b> he counted, and opens the granary gate to Yunchung, and it is not for Baekje and it is not for money.",
-						"ko": "그리고 <b>검일은 제가 세던 군량에 횃불을 대고</b>, 윤충에게 곳간 문을 연다. 백제를 위해서가 아니고, 돈을 위해서도 아니다."
+						"html": "Then Gumil puts the torch to the stores he counted, and opens the granary gate to Yunchung, and it is not for Baekje and it is not for money.",
+						"ko": "그리고 검일은 제가 세던 군량에 횃불을 대고, 윤충에게 곳간 문을 연다. 백제를 위해서가 아니고, 돈을 위해서도 아니다."
 					},
 					{
 						"kind": "dialogue",
@@ -16423,7 +16421,7 @@
 					{
 						"kind": "p",
 						"html": "Yeon places each of the <b>Five Blades</b> onto his own back.",
-						"ko": "연은 <b>다섯 자루의 칼</b>을 모두 제 등에 짊어진다."
+						"ko": "연은 다섯 자루의 칼을 모두 제 등에 짊어진다."
 					},
 					{
 						"kind": "p",
@@ -16799,7 +16797,7 @@
 				"music": "The Five Blades"
 			},
 			{
-				"year": "",
+				"year": "642",
 				"sub": "October",
 				"title": "Chunchu & Gesomun",
 				"tone": "enemy-parley thriller",
@@ -16947,10 +16945,10 @@
 						"kind": "dialogue",
 						"chip": "#D8258C",
 						"lines": [
-							"<연개소문>..."
+							"“연개소문”..."
 						],
 						"en": [
-							"<Yeon Gesomun>…"
+							"“Yeon Gesomun”…"
 						],
 						"person": "chunchu"
 					},
@@ -17367,7 +17365,7 @@
 				"music": "Two Kings Talking"
 			},
 			{
-				"year": "",
+				"year": "642",
 				"title": "Euija & Gesomun",
 				"tone": "summit intrigue",
 				"subtitle": "의자와 개소문",
@@ -17882,10 +17880,10 @@
 						"kind": "dialogue",
 						"chip": "#d0362f",
 						"lines": [
-							"신라의 <김춘추>라고 아시오?"
+							"신라의 “김춘추”라고 아시오?"
 						],
 						"en": [
-							"Do you know a <Kim Chunchu> of Silla?"
+							"Do you know a “Kim Chunchu” of Silla?"
 						],
 						"person": "gesomun"
 					},
@@ -18202,7 +18200,7 @@
 				"music": "Two Kings Talking"
 			},
 			{
-				"year": "",
+				"year": "642",
 				"title": "Kim Yushin",
 				"tone": "war-legend chronicle",
 				"subtitle": "김유신",
@@ -18397,7 +18395,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "In Sabi markets they spit when they say <b>Sword of the Divine Country</b>. In Surabol they toast it. In both cities someone always adds, quietly, that <b>Hundred-Victories Gyebek</b> has not yet been measured against him — and until Yellow Mountain, the title Greatest Blade of Samhan remains a tavern argument with two correct answers.",
+						"html": "In Sabi markets they spit when they say Sword of the Divine Country. In Surabol they toast it. In both cities someone always adds, quietly, that <b>Hundred-Victories Gyebek</b> has not yet been measured against him — and until Yellow Mountain, the title Greatest Blade of Samhan remains a tavern argument with two correct answers.",
 						"ko": "사비 장터에선 <b>신국의 검</b>이라 하면 침을 뱉는다. 서라벌에선 축배를 든다. 두 도시 모두에서 누군가는 조용히 덧붙인다 — <b>백전불패 계백</b>이 아직 그와 재어지지 않았고, 황산 전까지 삼한 최강의 칼은 정답이 둘인 주점 논쟁이라고."
 					},
 					{
@@ -18648,14 +18646,14 @@
 							"형님… 이제 잡으러 갑시다.",
 							"우리 옛날 그 궁궐…",
 							"어릴 적에 꾸던 그 꿈…",
-							"<b><삼한왕검> 말입니다…!</b>"
+							"<b>“삼한왕검” 말입니다…!</b>"
 						],
 						"en": [
 							"The eastern star shines especially bright tonight…",
 							"Brother… let us go and take it now.",
 							"That old palace of ours…",
 							"the dream we had when we were young…",
-							"<b>The <King for All>, I mean…!</b>"
+							"<b>The “King for All”, I mean…!</b>"
 						],
 						"person": "chunchu"
 					},
@@ -18744,11 +18742,11 @@
 						"chip": "#e08a2e",
 						"lines": [
 							"계백아… 사내는 더 큰 꿈을 품어야지.",
-							"<b><삼한왕검> 말이다…!</b>"
+							"<b>“삼한왕검” 말이다…!</b>"
 						],
 						"en": [
 							"Gyebek… a man should hold a larger dream.",
-							"<b>The <King for All>, I mean…!</b>"
+							"<b>The “King for All”, I mean…!</b>"
 						],
 						"person": "euija"
 					},
@@ -18795,13 +18793,13 @@
 							"제 몸의 뼈가 다 부서질 때까지.",
 							"제 마음의 구슬이 다 금 갈 때까지.",
 							"저는 이것을 놓지 않겠습니다.",
-							"<b><삼한왕검> 말입니다…!</b>"
+							"<b>“삼한왕검” 말입니다…!</b>"
 						],
 						"en": [
 							"Until every bone in me is broken.",
 							"Until every jewel in my heart is cracked through.",
 							"I will not let go of this.",
-							"<b>The <King for All>, I mean…!</b>"
+							"<b>The “King for All”, I mean…!</b>"
 						],
 						"person": "gyebek"
 					}
@@ -18888,8 +18886,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>Epilogue · Part I.</b> Chang’an. The Second Emperor turns a name over on his tongue — the first syllable of Part II.",
-						"ko": "<b>에필로그 · 제1부.</b> 장안. 제2황제가 이름 하나를 혀에 굴린다 — 제2부의 첫 음절."
+						"html": "Epilogue · Part I. Chang’an. The Second Emperor turns a name over on his tongue — the first syllable of Part II.",
+						"ko": "에필로그 · 제1부. 장안. 제2황제가 이름 하나를 혀에 굴린다 — 제2부의 첫 음절."
 					},
 					{
 						"kind": "diagram",
@@ -26679,10 +26677,10 @@
 						"kind": "dialogue",
 						"chip": "#f0c04a",
 						"lines": [
-							"<백제> 어떠냐?"
+							"“백제” 어떠냐?"
 						],
 						"en": [
-							"<Baekje> — how does that sound?"
+							"“Baekje” — how does that sound?"
 						],
 						"person": "onjo"
 					},
@@ -27109,7 +27107,7 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>The Second Emperor of the West</b> resides in the Palace. Seventeen years ago he murdered his brothers to become the Son of Heaven, and he has spent every year since folding nations under imperial rule — the Turks, the Xueyantuo, the Tibetans.",
+						"html": "The Second Emperor of the West resides in the Palace. Seventeen years ago he murdered his brothers to become the Son of Heaven, and he has spent every year since folding nations under imperial rule — the Turks, the Xueyantuo, the Tibetans.",
 						"ko": "<b>서토의 황제</b>가 궁에 있다. 17년 전 형제들을 죽이고 천자가 된 그는, 그 뒤의 모든 해를 나라들을 제국의 지배 아래 접어 넣는 데 썼다 — 돌궐, 설연타, 토번."
 					},
 					{
@@ -27444,8 +27442,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He launches the <b>Seventh Invasion of Goguryeo</b> — the seventh time an army has come out of the West for it, and the first that he will lead himself. The muster is a catalogue the clerks take three days to read aloud: horse from the frontier prefectures, foot from the river provinces, five hundred hulls out of Laizhou riding heavy with a year of grain.",
-						"ko": "그는 <b>제7차 고구려 원정</b>을 일으킨다. 서토에서 군대가 그 나라를 향해 나온 것이 일곱 번째이고, 그가 몸소 이끄는 것은 처음이다. 소집 명부는 서기들이 사흘에 걸쳐 소리 내어 읽는 목록이 된다. 변경의 주에서 온 기마, 강 유역의 주에서 온 보병, 일 년치 곡식을 싣고 내주에서 뜬 배 오백 척."
+						"html": "He launches the Seventh Invasion of Goguryeo — the seventh time an army has come out of the West for it, and the first that he will lead himself. The muster is a catalogue the clerks take three days to read aloud: horse from the frontier prefectures, foot from the river provinces, five hundred hulls out of Laizhou riding heavy with a year of grain.",
+						"ko": "그는 제7차 고구려 원정을 일으킨다. 서토에서 군대가 그 나라를 향해 나온 것이 일곱 번째이고, 그가 몸소 이끄는 것은 처음이다. 소집 명부는 서기들이 사흘에 걸쳐 소리 내어 읽는 목록이 된다. 변경의 주에서 온 기마, 강 유역의 주에서 온 보병, 일 년치 곡식을 싣고 내주에서 뜬 배 오백 척."
 					},
 					{
 						"kind": "p",
@@ -27486,7 +27484,6 @@
 			},
 			{
 				"year": "612",
-				"sub": "???",
 				"flash": true,
 				"title": "Great River",
 				"tone": "epic war legend",
@@ -27550,7 +27547,7 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>Emperor Yang of Sui</b> invades Goguryeo in the year 612.",
+						"html": "Emperor Yang of Sui invades Goguryeo in the year 612.",
 						"ko": "서기 612년, <b>수 양제</b>가 고구려를 침공한다."
 					},
 					{
@@ -27761,8 +27758,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The cloth on his back is <b>plain yellow peasant hemp</b>. Not a banner. Not the white armour the mountain will learn later. Just the cheapest dye the village still sells, the colour of millet at the wrong hour. He hoes. His wife, <b>Liu</b>, keeps the hut door.",
-						"ko": "등에 걸친 것은 <b>평범한 노란 농부의 삼베</b>다. 깃발이 아니다. 나중에 산이 배우게 될 흰 갑옷도 아니다. 마을이 아직 파는 가장 싼 물감, 잘못된 시각의 기장 빛. 그는 호미질한다. 아내 <b>유씨</b>가 흙집 문을 지킨다."
+						"html": "The cloth on his back is plain yellow peasant hemp. Not a banner. Not the white armour the mountain will learn later. Just the cheapest dye the village still sells, the colour of millet at the wrong hour. He hoes. His wife, <b>Liu</b>, keeps the hut door.",
+						"ko": "등에 걸친 것은 평범한 노란 농부의 삼베다. 깃발이 아니다. 나중에 산이 배우게 될 흰 갑옷도 아니다. 마을이 아직 파는 가장 싼 물감, 잘못된 시각의 기장 빛. 그는 호미질한다. 아내 <b>유씨</b>가 흙집 문을 지킨다."
 					},
 					{
 						"kind": "p",
@@ -28449,8 +28446,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Taizong laughs once — short, relieved — and does not ask how. A sovereign who has to ask how has already lost the man.",
-						"ko": "태종은 짧게, 안도하며 한 번 웃고, 어떻게 했는지는 묻지 않는다. 어떻게를 물어야 하는 군주는 이미 그 사내를 잃은 것이다."
+						"html": "The Second Emperor laughs once — short, relieved — and does not ask how. A sovereign who has to ask how has already lost the man.",
+						"ko": "황제는 짧게, 안도하며 한 번 웃고, 어떻게 했는지는 묻지 않는다. 어떻게를 물어야 하는 군주는 이미 그 사내를 잃은 것이다."
 					},
 					{
 						"kind": "p",
@@ -28596,7 +28593,6 @@
 			},
 			{
 				"year": "244",
-				"sub": "???",
 				"flash": true,
 				"title": "Boiling River",
 				"tone": "epic war legend",
@@ -30088,12 +30084,12 @@
 					{
 						"kind": "p",
 						"html": "<b>High Councillor Supum</b> has held the first chair since <b>Euljé</b> left it. The <b>Harmony Council</b>’s six sleeves — <b>Alchun</b>, <b>Yushin</b>, <b>Murim</b>, <b>Imjong</b>, <b>Suljong</b>, and <b>Bidam</b> — still decide only by unanimity, which is the only way the Council selects anything.",
-						"ko": "<b>수범 상대등</b>은 <b>을제</b>에게서 이어받은 첫 자리를 지키고 있다. <b>화백회의</b>의 여섯 소매 — <b>알천</b>, <b>유신</b>, <b>무림</b>, <b>임종</b>, <b>술종</b>, <b>비담</b> — 은 여전히 만장일치로만 결정한다. 화백이 무엇을 고르는 유일한 방식이다."
+						"ko": "<b>수품 상대등</b>은 <b>을제</b>에게서 이어받은 첫 자리를 지키고 있다. <b>화백회의</b>의 여섯 소매 — <b>알천</b>, <b>유신</b>, <b>무림</b>, <b>임종</b>, <b>술종</b>, <b>비담</b> — 은 여전히 만장일치로만 결정한다. 화백이 무엇을 고르는 유일한 방식이다."
 					},
 					{
 						"kind": "p",
-						"html": "The technique has not changed since they crowned Dukman: <b>initial vote, deliberation, final vote</b>. Six Councillors. One High Councillor. Nothing moves unless the circle closes.",
-						"ko": "기법은 덕만을 세울 때부터 같다. <b>초투표, 숙고, 최종 투표</b>. 대등 여섯. 상대등 하나. 원이 닫히지 않으면 아무것도 안 움직인다."
+						"html": "The technique has not changed since they crowned Dukman: initial vote, deliberation, final vote. Six Councillors. One High Councillor. Nothing moves unless the circle closes.",
+						"ko": "기법은 덕만을 세울 때부터 같다. 초투표, 숙고, 최종 투표. 대등 여섯. 상대등 하나. 원이 닫히지 않으면 아무것도 안 움직인다."
 					},
 					{
 						"kind": "diagram",
@@ -30141,8 +30137,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Five pieces go to the yes side of the cup. Bidam’s piece stays on the no side.</b>",
-						"ko": "<b>패 다섯은 잔의 찬성 쪽. 비담의 패만 반대 쪽에 남는다.</b>"
+						"html": "Five pieces go to the yes side of the cup. Bidam’s piece stays on the no side.",
+						"ko": "패 다섯은 잔의 찬성 쪽. 비담의 패만 반대 쪽에 남는다."
 					},
 					{
 						"kind": "diagram",
@@ -30481,7 +30477,7 @@
 					{
 						"kind": "p",
 						"html": "Before the month is out, Supum is thanked for his years and sent home, and the queen makes High Councillor of the one man who told her council no.",
-						"ko": "그달이 가기 전에 수범은 그간의 노고를 치하받고 물러나고, 여왕은 자기 회의에 아니라고 말한 단 한 사람을 상대등에 앉힌다.",
+						"ko": "그달이 가기 전에 수품은 그간의 노고를 치하받고 물러나고, 여왕은 자기 회의에 아니라고 말한 단 한 사람을 상대등에 앉힌다.",
 						"art": "One panel: Sunduk sets the High Councillor’s seal before Bidam across the council table; Supum’s seat empty."
 					},
 					{
@@ -31900,13 +31896,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "High Councillor <b>Bidam (42)</b> — Second Blade of Samhan — and <b>Yumjong</b> raise men at the <b>Fortress of Radiance</b> (명활성). The slogan is already old; they only give it a banner. <b>Yumjong</b> holds the outer muster while Bidam walks the rampart as if the stones owed him rent. Inside Wolseong the stewards count the grain and arrive at ten days. Nobody says the number aloud. Everybody schedules by it. <b>The rebel band ties black headbands</b> — Bidam’s old colour from the yard — so the fortress can tell its own from Wolseong’s blue.",
-						"ko": "상대등 <b>비담 (42)</b> — 삼한제이검 — 과 <b>염종</b>이 <b>명활성</b>에 군을 모은다. 구호는 이미 낡아 있다. 그들은 깃발만 빌려 줄 뿐이다. <b>염종</b>이 외곽 집결을 맡는 동안 비담은 돌이 자기에게 세를 빚진 것처럼 성벽을 돈다. 월성 안에서는 집사들이 곡식을 세어 열흘이라는 답을 얻는다. 아무도 그 숫자를 입 밖에 내지 않는다. 모두가 그 숫자에 맞춰 움직인다. <b>반란군은 검은 머리띠를 맨다</b> — 연무장에서부터 비담의 빛깔 — 성이 월성의 푸른색과 제 편을 가리게."
+						"html": "High Councillor <b>Bidam (53)</b> — Second Blade of Samhan — and <b>Yumjong</b> raise men at the <b>Fortress of Radiance</b> (명활성). The slogan is already old; they only give it a banner. <b>Yumjong</b> holds the outer muster while Bidam walks the rampart as if the stones owed him rent. Inside Wolseong the stewards count the grain and arrive at ten days. Nobody says the number aloud. Everybody schedules by it. The rebel band ties black headbands — Bidam’s old colour from the yard — so the fortress can tell its own from Wolseong’s blue.",
+						"ko": "상대등 <b>비담 (53)</b> — 삼한제이검 — 과 <b>염종</b>이 <b>명활성</b>에 군을 모은다. 구호는 이미 낡아 있다. 그들은 깃발만 빌려 줄 뿐이다. <b>염종</b>이 외곽 집결을 맡는 동안 비담은 돌이 자기에게 세를 빚진 것처럼 성벽을 돈다. 월성 안에서는 집사들이 곡식을 세어 열흘이라는 답을 얻는다. 아무도 그 숫자를 입 밖에 내지 않는다. 모두가 그 숫자에 맞춰 움직인다. 반란군은 검은 머리띠를 맨다 — 연무장에서부터 비담의 빛깔 — 성이 월성의 푸른색과 제 편을 가리게."
 					},
 					{
 						"kind": "p",
-						"html": "<b>He carries the heavenly-horse sword</b> in the dark. The robe eats the lamp. <b>Only the ring pommel holds the light</b> — <b>a gold circle at the end of old-hall steel</b>.",
-						"ko": "어둠 속에서 <b>그는 천마환도를 든다</b>. 도포가 등을 삼킨다. <b>고리 손잡이만 빛을 받는다</b> — 옛 전당의 강철 끝에 금빛 원."
+						"html": "He carries the heavenly-horse sword in the dark. The robe eats the lamp. Only the ring pommel holds the light — a gold circle at the end of old-hall steel.",
+						"ko": "어둠 속에서 그는 천마환도를 든다. 도포가 등을 삼킨다. 고리 손잡이만 빛을 받는다 — 옛 전당의 강철 끝에 금빛 원."
 					},
 					{
 						"kind": "quote",
@@ -32163,7 +32159,7 @@
 					{
 						"kind": "p",
 						"html": "<b>Third night.</b> Same pavilion. Same half moon. Bidam has brought a map — not of the siege, of the roads west.",
-						"ko": "<b>셋째 밤.</b> 같은 정자. 같은 반달. 비담은 포위도가 아니라 — 서쪽 길 지도를 가져왔다."
+						"ko": "셋째 밤. 같은 정자. 같은 반달. 비담은 포위도가 아니라 — 서쪽 길 지도를 가져왔다."
 					},
 					{
 						"kind": "dialogue",
@@ -32294,7 +32290,7 @@
 					{
 						"kind": "p",
 						"html": "Before the fourth night’s tea, Wolseong tries a quieter weapon. Chunchu sends <b>Bupmin (21)</b> to the steam — the water that shows a man’s inner conscience, the past that is driving his hand. Yushin is told only to <b>keep him talking</b>.",
-						"ko": "넷째 밤의 차 전에, 월성은 더 조용한 무기를 쓴다. 춘추가 <b>법민 (21)</b>을 김으로 보낸다 — 사람의 속마음과, 그 손을 움직이는 과거를 보여주는 물. 유신에게는 <b>말만 붙들어 두라</b>고만 한다."
+						"ko": "넷째 밤의 차 전에, 월성은 더 조용한 무기를 쓴다. 춘추가 <b>법민 (21)</b>을 김으로 보낸다 — 사람의 속마음과, 그 손을 움직이는 과거를 보여주는 물. 유신에게는 말만 붙들어 두라고만 한다."
 					},
 					{
 						"kind": "dialogue",
@@ -32413,7 +32409,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "He fills the jar. He does not stay for the lake’s other lessons. He is <b>the best of both</b>, and he leaves because his father told him to.",
+						"html": "He fills the jar. He does not stay for the lake’s other lessons. He is the best of both, and he leaves because his father told him to.",
 						"ko": "항아리를 채운다. 호수의 다른 수업은 받지 않는다. 그는 <b>양쪽의 최선</b>이고, 아버지가 시키니까 돌아간다."
 					},
 					{
@@ -32428,8 +32424,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Fourth night.</b> Same low table under the half moon. Bidam reads a rumoured draft — never enough secretariat, never enough emperor. His voice stays pleasant. The sentences do not.",
-						"ko": "<b>넷째 밤.</b> 반달 아래 같은 낮은 상. 비담은 소문난 초안을 읽는다 — 집사부는 늘 부족하고, 황제는 늘 부족하다. 목소리는 여전히 부드럽다. 문장만 그렇지 않다."
+						"html": "Fourth night. Same low table under the half moon. Bidam reads a rumoured draft — never enough secretariat, never enough emperor. His voice stays pleasant. The sentences do not.",
+						"ko": "넷째 밤. 반달 아래 같은 낮은 상. 비담은 소문난 초안을 읽는다 — 집사부는 늘 부족하고, 황제는 늘 부족하다. 목소리는 여전히 부드럽다. 문장만 그렇지 않다."
 					},
 					{
 						"kind": "dialogue",
@@ -33011,7 +33007,7 @@
 					{
 						"kind": "p",
 						"html": "<b>Sixth night.</b> Yushin does not come to the pavilion. Bidam sends tea anyway — two cups poured, one left steaming.",
-						"ko": "<b>여섯째 밤.</b> 유신은 정자에 오지 않는다. 비담은 그래도 차를 보낸다 — 잔 둘, 하나는 김이 오른 채."
+						"ko": "여섯째 밤. 유신은 정자에 오지 않는다. 비담은 그래도 차를 보낸다 — 잔 둘, 하나는 김이 오른 채."
 					},
 					{
 						"kind": "dialogue",
@@ -33401,7 +33397,7 @@
 						],
 						"en": [
 							"…Go.",
-							"Give Seondeok the victory.",
+							"Give Sunduk the victory.",
 							"Keep a little silence for us."
 						]
 					},
@@ -34400,7 +34396,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "The <b>King of the East</b> receives him politely, which is its own kind of answer.",
+						"html": "The King of the East receives him politely, which is its own kind of answer.",
 						"ko": "<b>왜왕</b>이 그를 정중히 맞는다. 그 정중함 자체가 하나의 대답이다."
 					},
 					{
@@ -35252,13 +35248,13 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "This is the story of the <b>Gaya confederacy.</b>",
+						"html": "This is the story of the Gaya confederacy.",
 						"ko": "이것은 <b>가야 연맹</b>의 이야기다."
 					},
 					{
 						"kind": "p",
-						"html": "Gaya’s technique is not a crown. It is a <b>league of iron harbours</b> — six courts for the chronicle’s mnemonic; the ground is denser, and no single king can lock a vote the way Surabol can.",
-						"ko": "가야의 기법은 왕관이 아니다. <b>철과 항구의 연맹</b>이다. 여섯은 기억법이고 땅은 더 빽빽하며, 서라벌처럼 표결을 잠글 임금은 없다."
+						"html": "Gaya’s technique is not a crown. It is a league of iron harbours — six courts for the chronicle’s mnemonic; the ground is denser, and no single king can lock a vote the way Surabol can.",
+						"ko": "가야의 기법은 왕관이 아니다. 철과 항구의 연맹이다. 여섯은 기억법이고 땅은 더 빽빽하며, 서라벌처럼 표결을 잠글 임금은 없다."
 					},
 					{
 						"kind": "diagram",
@@ -35274,8 +35270,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "On her mountain the <b>Lady of the Right View</b> is on watch. At first she is the ridge — jade stone, mist, a woman’s shape the mountain has not admitted yet. <b>The mountain is a woman before it has a face.</b> Then a face comes out of the stone. She is guarding the mountain as if it were a country. She does not look up. She does not need to. Then the sky occupies the path. <b>Cloud comes down to the ridge.</b>",
-						"ko": "산 위에서 <b>정견모주</b>가 지킨다. 처음엔 능선이다 — 옥빛 돌, 안개, 산이 아직 인정하지 않은 여자의 형. <b>산이 얼굴보다 먼저 여자다.</b> 그러다 돌에서 얼굴이 나온다. 나라를 지키듯 산을 지킨다. 올려다보지 않는다. 그럴 필요가 없다. 그러다 하늘이 길을 차지한다. <b>구름이 능선으로 내려온다.</b>"
+						"html": "On her mountain the Lady of the Right View is on watch. At first she is the ridge — jade stone, mist, a woman’s shape the mountain has not admitted yet. The mountain is a woman before it has a face. Then a face comes out of the stone. She is guarding the mountain as if it were a country. She does not look up. She does not need to. Then the sky occupies the path. Cloud comes down to the ridge.",
+						"ko": "산 위에서 <b>정견모주</b>가 지킨다. 처음엔 능선이다 — 옥빛 돌, 안개, 산이 아직 인정하지 않은 여자의 형. 산이 얼굴보다 먼저 여자다. 그러다 돌에서 얼굴이 나온다. 나라를 지키듯 산을 지킨다. 올려다보지 않는다. 그럴 필요가 없다. 그러다 하늘이 길을 차지한다. 구름이 능선으로 내려온다."
 					},
 					{
 						"kind": "dialogue",
@@ -35294,8 +35290,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Love arrives as weather — sudden, unasked. He cannot keep the hour. <b>He falls before he lands.</b> The sky comes down to touch the mountain, and does not leave.",
-						"ko": "사랑은 날씨처럼 온다. 허락을 묻지 않는다. 시각을 지키지 못한다. <b>닿기 전에 먼저 떨어진다.</b> 하늘이 산에 닿으러 내려오고, 떠나지 않는다."
+						"html": "Love arrives as weather — sudden, unasked. He cannot keep the hour. He falls before he lands. The sky comes down to touch the mountain, and does not leave.",
+						"ko": "사랑은 날씨처럼 온다. 허락을 묻지 않는다. 시각을 지키지 못한다. 닿기 전에 먼저 떨어진다. 하늘이 산에 닿으러 내려오고, 떠나지 않는다."
 					},
 					{
 						"kind": "dialogue",
@@ -35402,8 +35398,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>He holds her with one arm.</b> The other is cloud. The ridge is still a mountain; the mountain is still a woman. She does not look up. She does not have to.",
-						"ko": "<b>한 팔로 안는다.</b> 다른 팔은 구름이다. 능선은 산이고, 산은 아직 여자다. 올려다보지 않는다. 그럴 필요가 없다."
+						"html": "He holds her with one arm. The other is cloud. The ridge is still a mountain; the mountain is still a woman. She does not look up. She does not have to.",
+						"ko": "한 팔로 안는다. 다른 팔은 구름이다. 능선은 산이고, 산은 아직 여자다. 올려다보지 않는다. 그럴 필요가 없다."
 					},
 					{
 						"kind": "p",
@@ -35412,7 +35408,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "The sky god <b>Ibiga</b> and mountain goddess <b>Lady of the Right View</b> give birth to two sons, <b>King Suro</b> and <b>King Ijinasi</b>.",
+						"html": "The sky god <b>Ibiga</b> and mountain goddess Lady of the Right View give birth to two sons, <b>King Suro</b> and <b>King Ijinasi</b>.",
 						"ko": "하늘신 <b>이비가</b>와 산신 <b>정견모주</b>가 두 아들을 낳으니, <b>수로왕</b>과 <b>이진아시왕</b>이다."
 					},
 					{
@@ -35508,8 +35504,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "Protocol is still trying to stand. He is already off the dais. <b>He comes down with one arm</b> — gold around violet, the same hold the sky used on the ridge, only this time the hall has columns and a floor.",
-						"ko": "예법이 아직 일어서려 한다. 그는 이미 자리에서 내려온다. <b>한 팔로 내려온다</b> — 금이 자주를 안고, 하늘이 능선에 쓰던 그 안음. 다만 이번엔 기둥이 있고, 바닥이 있다."
+						"html": "Protocol is still trying to stand. He is already off the dais. He comes down with one arm — gold around violet, the same hold the sky used on the ridge, only this time the hall has columns and a floor.",
+						"ko": "예법이 아직 일어서려 한다. 그는 이미 자리에서 내려온다. 한 팔로 내려온다 — 금이 자주를 안고, 하늘이 능선에 쓰던 그 안음. 다만 이번엔 기둥이 있고, 바닥이 있다."
 					},
 					{
 						"kind": "p",
@@ -35692,8 +35688,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "She turns so he can see <b>the curve of her hip catching lamp</b>, and he is <b>kissing the throat he will marry</b> before he has permission to call it a country.",
-						"ko": "그녀는 돌아서, <b>등이 잡은 엉덩이 곡선</b>을 보이게 하고, 그는 그것을 나라라고 부를 허락이 생기기도 전에 <b>혼인할 목덜미에 입을 맞춘다</b>."
+						"html": "She turns so he can see the curve of her hip catching lamp, and he is kissing the throat he will marry before he has permission to call it a country.",
+						"ko": "그녀는 돌아서, 등이 잡은 엉덩이 곡선을 보이게 하고, 그는 그것을 나라라고 부를 허락이 생기기도 전에 혼인할 목덜미에 입을 맞춘다."
 					},
 					{
 						"kind": "p",
@@ -36154,8 +36150,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The vanguard thought otherwise. After the city fell he opened the prize-cages and kept only Alcheon dirt. <b>Take the land. Leave the people.</b>",
-						"ko": "선봉은 그렇지 않았다. 성이 떨어진 뒤 상으로 받은 우리를 열고 알천의 박토만 받았다. <b>땅은 가져라. 사람은 놔둬라.</b>"
+						"html": "The vanguard thought otherwise. After the city fell he opened the prize-cages and kept only Alcheon dirt. Take the land. Leave the people.",
+						"ko": "선봉은 그렇지 않았다. 성이 떨어진 뒤 상으로 받은 우리를 열고 알천의 박토만 받았다. 땅은 가져라. 사람은 놔둬라."
 					},
 					{
 						"kind": "dialogue",
@@ -36172,8 +36168,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Kim Muryuk</b>, prince of Golden Gaya, had already surrendered his kingdom to Silla in <b>532</b>. His grandson is Kim Yushin, the great general of Silla. Before the hall, the field. <b>The tall Gaya cone still fights.</b>",
-						"ko": "금관가야의 왕자 <b>김무력</b>은 이미 <b>532년</b> 나라를 신라에 바쳤다. 그의 손자가 신라의 명장 김유신이다. 대청 전에 벌판이 있다. <b>가야의 높은 고깔이 아직 싸운다.</b>"
+						"html": "<b>Kim Muryuk</b>, prince of Golden Gaya, had already surrendered his kingdom to Silla in <b>532</b>. His grandson is Kim Yushin, the great general of Silla. Before the hall, the field. The tall Gaya cone still fights.",
+						"ko": "금관가야의 왕자 <b>김무력</b>은 이미 <b>532년</b> 나라를 신라에 바쳤다. 그의 손자가 신라의 명장 김유신이다. 대청 전에 벌판이 있다. 가야의 높은 고깔이 아직 싸운다."
 					},
 					{
 						"kind": "quote",
@@ -36665,8 +36661,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "In Chang’an he watches the machine that does not wait for uncles: <b>Zhongshu drafts, Menxia examines, Shangshu executes</b> through six boards. One seal. One speed.",
-						"ko": "장안에서 그는 삼촌을 기다리지 않는 기계를 본다. <b>중서가 기안하고 문하가 심사하며 상서가 육부로 집행한다</b>. 어보 하나. 속도 하나."
+						"html": "In Chang’an he watches the machine that does not wait for uncles: Zhongshu drafts, Menxia examines, Shangshu executes through six boards. One seal. One speed.",
+						"ko": "장안에서 그는 삼촌을 기다리지 않는 기계를 본다. 중서가 기안하고 문하가 심사하며 상서가 육부로 집행한다. 어보 하나. 속도 하나."
 					},
 					{
 						"kind": "diagram",
@@ -36694,14 +36690,14 @@
 						"kind": "dialogue",
 						"chip": "#c97a2e",
 						"lines": [
-							"이름이 <춘추>라고....? 그러면, 네 동생 이름은 <전국>이냐?"
+							"이름이 “춘추”라고....? 그러면, 네 동생 이름은 “전국”이냐?"
 						],
 						"person": "taizong",
 						"en": [
-							"Your name is <Spring and Autumn>…? Then is your younger brother called <Warring States>?"
+							"Your name is “Spring and Autumn”…? Then is your younger brother called “Warring States”?"
 						],
 						"zh": [
-							"名叫<春秋>……？那你弟弟可叫<戰國>？"
+							"名叫《春秋》……？那你弟弟可叫《戰國》？"
 						],
 						"zhLatn": [
 							"Míng jiào Chūnqiū…? Nà nǐ dìdi kě jiào Zhànguó?"
@@ -36711,11 +36707,11 @@
 						"kind": "dialogue",
 						"chip": "#D8258C",
 						"lines": [
-							"제 아버지가 유학을 숭배하여, 제 이름을 공자의 <춘추>를 따라 지었습니다."
+							"제 아버지가 유학을 숭배하여, 제 이름을 공자의 “춘추”를 따라 지었습니다."
 						],
 						"person": "chunchu",
 						"en": [
-							"My father revered the Confucian learning, and named me after Confucius’s <Spring and Autumn Annals>."
+							"My father revered the Confucian learning, and named me after Confucius’s “Spring and Autumn Annals”."
 						]
 					},
 					{
@@ -36782,8 +36778,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>After the hall, a smaller room. A go board.</b> The emperor keeps the platform. Chunchu sits on the floor. Stones click in the dark.",
-						"ko": "<b>대전 다음, 작은 방. 바둑판.</b> 황제는 높은 자리에 그대로 앉는다. 춘추는 바닥에 앉는다. 어둠 속에서 돌이 맞는다."
+						"html": "After the hall, a smaller room. A go board. The emperor keeps the platform. Chunchu sits on the floor. Stones click in the dark.",
+						"ko": "대전 다음, 작은 방. 바둑판. 황제는 높은 자리에 그대로 앉는다. 춘추는 바닥에 앉는다. 어둠 속에서 돌이 맞는다."
 					},
 					{
 						"kind": "p",
@@ -37109,8 +37105,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "They play <b>gyuku until the dust</b> makes them the same colour. Li Zhi’s club is palace-issue lacquer — beautiful, slightly wrong in the hands. Chunchu’s is travel-worn Wolseong pine he refused to replace for the embassy, which the Tang attendants find either humble or insane. Li Zhi talks like a man who has been waiting his whole life to be ordinary with somebody dangerous. Chunchu lets him — between strokes, between arguments about whose wood is “premium,” between the kind of silence that founds alliances.",
-						"ko": "그들은 <b>먼지가 같은 색깔이 될 때까지 격구</b>를 한다. 이치의 채는 궁중 지급 옻칠 — 아름답고, 손엔 살짝 안 맞는다. 춘추의 채는 사신길에 안 바꾼 닳은 월성 소나무라, 당의 시종들은 겸손인지 정신이상인지 분간을 못 한다. 이치는 평생 위험한 누군가와 평범해지기를 기다린 사람처럼 말한다. 춘추는 그걸 허락한다 — 스윙과 스윙 사이, «프리미엄» 나무를 놓고 다투는 사이, 동맹을 세우는 종류의 침묵 사이."
+						"html": "They play gyuku until the dust makes them the same colour. Li Zhi’s club is palace-issue lacquer — beautiful, slightly wrong in the hands. Chunchu’s is travel-worn Wolseong pine he refused to replace for the embassy, which the Tang attendants find either humble or insane. Li Zhi talks like a man who has been waiting his whole life to be ordinary with somebody dangerous. Chunchu lets him — between strokes, between arguments about whose wood is “premium,” between the kind of silence that founds alliances.",
+						"ko": "그들은 먼지가 같은 색깔이 될 때까지 격구를 한다. 이치의 채는 궁중 지급 옻칠 — 아름답고, 손엔 살짝 안 맞는다. 춘추의 채는 사신길에 안 바꾼 닳은 월성 소나무라, 당의 시종들은 겸손인지 정신이상인지 분간을 못 한다. 이치는 평생 위험한 누군가와 평범해지기를 기다린 사람처럼 말한다. 춘추는 그걸 허락한다 — 스윙과 스윙 사이, «프리미엄» 나무를 놓고 다투는 사이, 동맹을 세우는 종류의 침묵 사이."
 					},
 					{
 						"kind": "dialogue",
@@ -37318,8 +37314,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "At a banquet meant to impress the Silla guest, Taizong’s laughter is the loudest thing in the hall. Behind a screen a concubine listens the way a strategist listens — counting who drinks, who flinches, which foreign prince the emperor calls brother.",
-						"ko": "신라 사신을 압도하려는 연회에서 태종의 웃음이 가장 크다. 병풍 뒤에서 후궁 하나가 전략가처럼 듣는다 — 누가 마시고, 누가 움츠리고, 황제가 어느 외국 왕자를 형이라 부르는지."
+						"html": "At a banquet meant to impress the Silla guest, the Second Emperor’s laughter is the loudest thing in the hall. Behind a screen a concubine listens the way a strategist listens — counting who drinks, who flinches, which foreign prince the emperor calls brother.",
+						"ko": "신라 사신을 압도하려는 연회에서 황제의 웃음이 가장 크다. 병풍 뒤에서 후궁 하나가 전략가처럼 듣는다 — 누가 마시고, 누가 움츠리고, 황제가 어느 외국 왕자를 형이라 부르는지."
 					},
 					{
 						"kind": "dialogue",
@@ -38344,8 +38340,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The Daming flying corridor is night — vermilion columns, white plaster, a red line at the brick floor. Faint court-light from the next hall, not a lamp in the frame. She is porcelain-pale. His embassy coat is white with magenta at the inner and the sash, the reverse of a magenta plane. <b>The hallway keeps them.</b>",
-						"ko": "대명궁 飛廊이 밤이다 — 주칠 기둥, 백회 벽, 전돌 바닥의 붉은 선. 다음 전의 희미한 빛. 등잔은 그림에 없다. 그녀는 백자처럼 창백하다. 사신 겉옷은 흰 바탕에 자홍 속깃과 허리. 자홍 면의 반대다. <b>회랑이 둘을 붙든다.</b>"
+						"html": "The Daming flying corridor is night — vermilion columns, white plaster, a red line at the brick floor. Faint court-light from the next hall, not a lamp in the frame. She is porcelain-pale. His embassy coat is white with magenta at the inner and the sash, the reverse of a magenta plane. The hallway keeps them.",
+						"ko": "대명궁 飛廊이 밤이다 — 주칠 기둥, 백회 벽, 전돌 바닥의 붉은 선. 다음 전의 희미한 빛. 등잔은 그림에 없다. 그녀는 백자처럼 창백하다. 사신 겉옷은 흰 바탕에 자홍 속깃과 허리. 자홍 면의 반대다. 회랑이 둘을 붙든다."
 					},
 					{
 						"kind": "p",
@@ -38382,8 +38378,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>He turns in the dark.</b>",
-						"ko": "<b>어둠에서 돌아본다.</b>"
+						"html": "He turns in the dark.",
+						"ko": "어둠에서 돌아본다."
 					},
 					{
 						"kind": "dialogue",
@@ -39689,8 +39685,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "At <b>Najeong</b> well in Yangsan the horse knelt and cried; the six chiefs — <b>Alpyung, Sobuldori, Jibekho, Gurema, Jita, Hojin</b> — dug where it stood and lifted a great egg. The shell opened on a boy already kingly in the face. He learns fast. The chiefs say the land has been waiting.",
-						"ko": "양산 <b>나정</b> 우물가에서 말이 무릎 꿇고 울자, 여섯 촌장 — <b>알평, 소벌도리, 지백호, 구례마, 지타, 호진</b> — 이 그 자리를 파어 큰 알을 들어 올린다. 껍질이 갈라진 아이는 이미 왕의 얼굴을 하고 있었다. 배우는 게 빠르다. 촌장들은 땅이 기다려 왔다고 한다."
+						"html": "At <b>Najeong</b> well in Yangsan the horse knelt and cried; the six chiefs — Alpyung, Sobuldori, Jibekho, Gurema, Jita, Hojin — dug where it stood and lifted a great egg. The shell opened on a boy already kingly in the face. He learns fast. The chiefs say the land has been waiting.",
+						"ko": "양산 <b>나정</b> 우물가에서 말이 무릎 꿇고 울자, 여섯 촌장 — 알평, 소벌도리, 지백호, 구례마, 지타, 호진 — 이 그 자리를 파어 큰 알을 들어 올린다. 껍질이 갈라진 아이는 이미 왕의 얼굴을 하고 있었다. 배우는 게 빠르다. 촌장들은 땅이 기다려 왔다고 한다."
 					},
 					{
 						"kind": "p",
@@ -39758,7 +39754,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "The six clans of <b>Lee, Jung, Choi, Son, Bae, Seol</b> dominate politics.",
+						"html": "The six clans of Lee, Jung, Choi, Son, Bae, Seol dominate politics.",
 						"ko": "<b>이·정·최·손·배·설</b> 여섯 가문이 정치를 쥔다."
 					},
 					{
@@ -39821,7 +39817,6 @@
 		"entries": [
 			{
 				"year": "655",
-				"sub": "???",
 				"title": "Gyebek’s Exile",
 				"tone": "exile drama — into island folklore",
 				"subtitle": "친위 쿠데타",
@@ -40328,7 +40323,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "It is read with the king’s formula and the king’s seal — but not by the king. <b>Minister Satek</b> holds the Assembly’s borrowed stamp; the voice in the hall is the Prime Minister’s.",
+						"html": "It is read with the king’s formula and the king’s seal — but not by the king. <b>Minister Satek</b> holds the Assembly’s borrowed stamp; the voice in the hall is the Premier’s.",
 						"ko": "왕의 문투와 왕의 옥새로 읽힌다 — 그러나 왕이 읽는 것은 아니다. <b>사택지적</b>이 정사암이 빌린 도장을 쥐고 있고, 대전에서 울리는 목소리는 상좌평의 것이다."
 					},
 					{
@@ -40910,8 +40905,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Then he unrolls a second scroll — shorter, denser, the kind of law that fits on one sheet because the power is in what it erases. The clerks name it before he does: <b>the Law to Remedy the Distress of the People and the Country</b>.",
-						"ko": "이어 두 번째 두루마리를 펼친다 — 더 짧고, 더 빽빽하고, 지우는 것에 힘이 있어서 한 장으로 충분한 법. 서리들이 그보다 먼저 이름을 붙인다. <b>백성과 나라의 곤경을 덜기 위한 법</b>."
+						"html": "Then he unrolls a second scroll — shorter, denser, the kind of law that fits on one sheet because the power is in what it erases. The clerks name it before he does: the Law to Remedy the Distress of the People and the Country.",
+						"ko": "이어 두 번째 두루마리를 펼친다 — 더 짧고, 더 빽빽하고, 지우는 것에 힘이 있어서 한 장으로 충분한 법. 서리들이 그보다 먼저 이름을 붙인다. 백성과 나라의 곤경을 덜기 위한 법."
 					},
 					{
 						"kind": "dialogue",
@@ -42519,8 +42514,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Gomamiji is a posting, not a retirement.</b> He sits on the threshold until the dust on the hem looks like the hem. The hollow ring leans on the timber. Nobody from Sabi writes.",
-						"ko": "<b>고마미지는 부임이지, 은퇴가 아니다.</b> 자락의 먼지가 자락처럼 보일 때까지 문턱에 앉는다. 빈 고리는 나무에 기대 있다. 사비에서는 아무도 글을 보내지 않는다."
+						"html": "Gomamiji is a posting, not a retirement. He sits on the threshold until the dust on the hem looks like the hem. The hollow ring leans on the timber. Nobody from Sabi writes.",
+						"ko": "고마미지는 부임이지, 은퇴가 아니다. 자락의 먼지가 자락처럼 보일 때까지 문턱에 앉는다. 빈 고리는 나무에 기대 있다. 사비에서는 아무도 글을 보내지 않는다."
 					},
 					{
 						"kind": "p",
@@ -42606,8 +42601,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "<b>She looks back, hip out</b>. <b>His hand finds the silk at her waist</b>. <b>The S-curve of a hip</b> is the whole argument of the hall. Less clothes. More lamp. The robe hangs open. The jeogori does not stay on the shoulder.",
-						"ko": "<b>그녀는 돌아보며 엉덩이를 내민다</b>. <b>그의 손이 허리의 비단을 찾는다</b>. <b>엉덩이의 S자</b>가 전각의 전부다. 옷은 더 적다. 등은 더 많다. 도포가 열린다. 저고리는 어깨에 남아 있지 않는다."
+						"html": "She looks back, hip out. His hand finds the silk at her waist. The S-curve of a hip is the whole argument of the hall. Less clothes. More lamp. The robe hangs open. The jeogori does not stay on the shoulder.",
+						"ko": "그녀는 돌아보며 엉덩이를 내민다. 그의 손이 허리의 비단을 찾는다. <b>엉덩이의 S자</b>가 전각의 전부다. 옷은 더 적다. 등은 더 많다. 도포가 열린다. 저고리는 어깨에 남아 있지 않는다."
 					},
 					{
 						"kind": "p",
@@ -42847,7 +42842,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Sungchung</b> comes while the wine is still being poured. He does not wait for a gap. The ring at his hip catches the lamp when he steps — a hollow circle, nothing poetic, just the office blade of a man who used to read tides.",
+						"html": "<b>Seongchung</b> comes while the wine is still being poured. He does not wait for a gap. The ring at his hip catches the lamp when he steps — a hollow circle, nothing poetic, just the office blade of a man who used to read tides.",
 						"ko": "<b>성충</b>은 술이 아직 따르는 중에 온다. 틈을 기다리지 않는다. 허리의 환두가 등을 받는다 — 빈 고리. 시가 아니다. 물때를 읽던 사내의 관직 칼일 뿐이다."
 					},
 					{
@@ -42891,8 +42886,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He does not finish. The king is already angry. <b>The belt comes off in the aisle.</b> After that, nobody else tries to speak.",
-						"ko": "끝내지 못한다. 왕은 이미 노한다. <b>허리띠는 복도에서 벗겨진다.</b> 그 다음부터는, 감히 말하려는 자가 없다."
+						"html": "He does not finish. The king is already angry. The belt comes off in the aisle. After that, nobody else tries to speak.",
+						"ko": "끝내지 못한다. 왕은 이미 노한다. 허리띠는 복도에서 벗겨진다. 그 다음부터는, 감히 말하려는 자가 없다."
 					},
 					{
 						"kind": "quote",
@@ -42903,7 +42898,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Sungchung</b> starves in a cell within earshot of the feast. The ring hangs on the post. With the last of his ink he leaves the king one piece of paper.",
+						"html": "<b>Seongchung</b> starves in a cell within earshot of the feast. The ring hangs on the post. With the last of his ink he leaves the king one piece of paper.",
 						"ko": "<b>성충</b>이 연회 소리가 들리는 옥에서 굶어 간다. 환두는 기둥에 걸려 있다. 마지막 남은 먹으로, 왕에게 종이 한 장을 남긴다."
 					},
 					{
@@ -46236,7 +46231,7 @@
 				"blocks": [
 					{
 						"kind": "scene",
-						"label": "Sungchung",
+						"label": "Seongchung",
 						"ko": "성충"
 					},
 					{
@@ -46541,8 +46536,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The next courier is shorter. Tang keels are already in the mud of Gibeolpo. <b>Yushin is already on the switchback.</b> The news is that they have <b>already the White River and the Tanhyeon pass</b>.",
-						"ko": "다음 사자는 더 짧다. 당의 용골이 이미 기벌포 진흙에 있다. <b>유신은 이미 굽잇길에 있다.</b> 소식은, <b>백강과 탄현을 이미</b> 지났다는 것이다."
+						"html": "The next courier is shorter. Tang keels are already in the mud of Gibeolpo. Yushin is already on the switchback. The news is that they have already the White River and the Tanhyeon pass.",
+						"ko": "다음 사자는 더 짧다. 당의 용골이 이미 기벌포 진흙에 있다. 유신은 이미 굽잇길에 있다. 소식은, 백강과 탄현을 이미 지났다는 것이다."
 					},
 					{
 						"kind": "scene",
@@ -47054,8 +47049,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>Epilogue · Part II.</b> The annual meeting is a small 정자: four posts, a raised floor, clouds for a yard. Living, dead, and western rows all fit if nobody stretches.",
-						"ko": "<b>에필로그 · 제2부.</b> 연례회의는 작은 정자에서 열린다. 기둥 넷, 마루 하나, 마당은 구름. 이승과 저승과 서쪽 이랑이 발을 들여놓을 자리는 그 정도면 된다."
+						"html": "Epilogue · Part II. The annual meeting is a small 정자: four posts, a raised floor, clouds for a yard. Living, dead, and western rows all fit if nobody stretches.",
+						"ko": "에필로그 · 제2부. 연례회의는 작은 정자에서 열린다. 기둥 넷, 마루 하나, 마당은 구름. 이승과 저승과 서쪽 이랑이 발을 들여놓을 자리는 그 정도면 된다."
 					},
 					{
 						"kind": "diagram",
@@ -47854,8 +47849,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Hundred-Victories gets to the <b>Yellow Mountain Fields</b> first and picks his ground. Then he waits — for the Sword of Silla, or for arithmetic, whichever arrives with a banner. <b>Yellow lacquer holds the palisade.</b> When the Sword arrives it is a tall black helm and a blue rim. <b>The tall Silla helm comes in at a gallop.</b> They meet in the dust. <b>Blue plume cuts yellow lacquer.</b>",
-						"ko": "백전불패가 <b>황산벌</b>에 먼저 닿아 자리를 고른다. 그리고 기다린다 — 신라의 도검이든, 셈이든, 깃발을 달고 오는 쪽을. <b>황칠이 목책을 지킨다.</b> 검이 올 때는 높은 검은 투구와 푸른 테다. <b>신라의 높은 투구가 달려 들어온다.</b> 먼지 속에서 만난다. <b>푸른 깃이 황칠을 가른다.</b>"
+						"html": "Hundred-Victories gets to the <b>Yellow Mountain Fields</b> first and picks his ground. Then he waits — for the Sword of Silla, or for arithmetic, whichever arrives with a banner. Yellow lacquer holds the palisade. When the Sword arrives it is a tall black helm and a blue rim. The tall Silla helm comes in at a gallop. They meet in the dust. Blue plume cuts yellow lacquer.",
+						"ko": "백전불패가 <b>황산벌</b>에 먼저 닿아 자리를 고른다. 그리고 기다린다 — 신라의 도검이든, 셈이든, 깃발을 달고 오는 쪽을. 황칠이 목책을 지킨다. 검이 올 때는 높은 검은 투구와 푸른 테다. 신라의 높은 투구가 달려 들어온다. 먼지 속에서 만난다. 푸른 깃이 황칠을 가른다."
 					},
 					{
 						"kind": "p",
@@ -48354,7 +48349,7 @@
 				"music": "Five Thousand"
 			},
 			{
-				"year": "",
+				"year": "660",
 				"sub": "August",
 				"accent": "#b91c1c",
 				"title": "Sabi Palace",
@@ -48677,7 +48672,7 @@
 				"music": "Pyongyang, 668"
 			},
 			{
-				"year": "",
+				"year": "660",
 				"sub": "December",
 				"title": "The Death of Buyeo Euija",
 				"tone": "psychopomp ritual",
@@ -48932,8 +48927,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>— Buyeo Euija —</b>",
-						"ko": "<b>— 부여의자 —</b>"
+						"html": "— Buyeo Euija —",
+						"ko": "— 부여의자 —"
 					},
 					{
 						"kind": "p",
@@ -49447,8 +49442,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>— Kim Chunchu —</b>",
-						"ko": "<b>— 김춘추 —</b>"
+						"html": "— Kim Chunchu —",
+						"ko": "— 김춘추 —"
 					},
 					{
 						"kind": "p",
@@ -49549,8 +49544,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "The Third Emperor launches the <b>Eighth Invasion of Goguryeo</b> — his father’s war, inherited along with everything else.",
-						"ko": "황제가 <b>제8차 고구려 원정</b>을 일으킨다. 다른 모든 것과 함께 물려받은, 아버지의 전쟁이다."
+						"html": "The Third Emperor launches the Eighth Invasion of Goguryeo — his father’s war, inherited along with everything else.",
+						"ko": "황제가 제8차 고구려 원정을 일으킨다. 다른 모든 것과 함께 물려받은, 아버지의 전쟁이다."
 					},
 					{
 						"kind": "diagram",
@@ -49697,11 +49692,11 @@
 					{
 						"kind": "p",
 						"html": "She dies the following year in 661. The eastern prince (35) takes the throne and forms the Baekje Revival Army. Baekje refugees gather from all around the world in order to restore Baekje.",
-						"ko": "그녀는 이듬해인 661년에 죽는다. <b>동쪽의 왕자 (35)</b>가 그 자리를 이어 백제 부흥군을 조직한다. 백제 유민들이 사방에서 모여든다."
+						"ko": "그녀는 이듬해인 661년에 죽는다. 동쪽의 왕자 (35)가 그 자리를 이어 백제 부흥군을 조직한다. 백제 유민들이 사방에서 모여든다."
 					},
 					{
 						"kind": "p",
-						"html": "King <b>Pungjang (37)</b> · <b>Gwishil Bokshin</b> · <b>Hukchi Sangji</b> · <b>Satek Sangya</b> · <b>Bagon</b> · <b>Echi no Takutsu</b>",
+						"html": "King <b>Pungjang (37)</b> · <b>Gwishil Boksin</b> · <b>Hukchi Sangji</b> · <b>Satek Sangya</b> · <b>Bagon</b> · <b>Echi no Takutsu</b>",
 						"ko": "<b>풍왕 (37)</b> · <b>귀실복신</b> · <b>흑치상지</b> · <b>사택상여</b> · <b>바곤</b> · <b>에치노 다쿠쓰</b>"
 					},
 					{
@@ -50174,7 +50169,7 @@
 		"range": "661–668",
 		"entries": [
 			{
-				"year": "",
+				"year": "661",
 				"sub": "December",
 				"accent": "#b91c1c",
 				"title": "Pyongyang",
@@ -50297,8 +50292,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>Red Sun’s capital sits on the ridge</b> — the red two-storey munru, the grey stone, the clouds that always look like weather about to choose a side. Every still of this city is that gate. There is no other capital.",
-						"ko": "<b>붉은 해의 서울이 능선에 앉는다</b> — 붉은 이층 문루, 회색 돌, 언제나 편을 고를 듯한 구름. 이 도시의 모든 장면은 그 문이다. 다른 서울은 없다."
+						"html": "Red Sun’s capital sits on the ridge — the red two-storey munru, the grey stone, the clouds that always look like weather about to choose a side. Every still of this city is that gate. There is no other capital.",
+						"ko": "붉은 해의 서울이 능선에 앉는다 — 붉은 이층 문루, 회색 돌, 언제나 편을 고를 듯한 구름. 이 도시의 모든 장면은 그 문이다. 다른 서울은 없다."
 					},
 					{
 						"kind": "p",
@@ -51031,7 +51026,7 @@
 				"music": "The Great River"
 			},
 			{
-				"year": "",
+				"year": "662",
 				"sub": "February",
 				"title": "The Surrender of Tamla",
 				"tone": "island coda",
@@ -51272,7 +51267,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "Yeon catches a vision of <b>Wang Gun</b>, the man who will revive Goryeo 250 years after his death.",
+						"html": "Yeon catches a vision of <b>Wang Geon</b>, the man who will revive Goryeo 250 years after his death.",
 						"ko": "연의 눈앞에 <b>왕건</b>의 환영이 스친다. 그가 죽은 지 250년 뒤 고려를 되살릴 사내다."
 					},
 					{
@@ -51369,12 +51364,12 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>— Yeon Gesomun —</b>",
-						"ko": "<b>— 연개소문 —</b>"
+						"html": "— Yeon Gesomun —",
+						"ko": "— 연개소문 —"
 					},
 					{
 						"kind": "p",
-						"html": "<i>Every single thing he said about his country was correct. The court was rotten. The tribute was a slow surrender. The Second Emperor was coming whether or not they were polite about it. He was the only man in the room who could see it, and he was right, and being right is what destroyed him.</i>",
+						"html": "<i>Every single thing he said about his country was correct. The court was rotten. The tribute was a slow surrender. Taizong was coming whether or not they were polite about it. He was the only man in the room who could see it, and he was right, and being right is what destroyed him.</i>",
 						"ko": "<i>제 나라에 대해 그가 한 말은 하나도 빠짐없이 옳았다. 조정은 썩었다. 조공은 느린 항복이었다. 황제는 그들이 예의를 갖추든 말든 올 것이었다. 그 방에서 그것을 볼 수 있는 사람은 그뿐이었고, 그는 옳았다. 그리고 옳았다는 것이 그를 무너뜨렸다.</i>"
 					},
 					{
@@ -51463,8 +51458,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "The Third Emperor launches the <b>Ninth Invasion of Goguryeo</b>. This one has a guide.",
-						"ko": "황제가 <b>제9차 고구려 원정</b>을 일으킨다. 이번에는 길잡이가 있다."
+						"html": "The Third Emperor launches the Ninth Invasion of Goguryeo. This one has a guide.",
+						"ko": "황제가 제9차 고구려 원정을 일으킨다. 이번에는 길잡이가 있다."
 					},
 					{
 						"kind": "dialogue",
@@ -53049,7 +53044,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "Han takes Wanggeom in 108 BC. Some of the people the king told to live go south over the mountains and settle in six villages in the valleys around Surabol, where, two generations later, they will go looking for a king. The rest stay, and are cut into the <b>Four Commanderies of Han</b>. The last of them, Nangnang on the Taedong, is still collecting taxes four hundred years later.",
+						"html": "Han takes Wanggeom in 108 BC. Some of the people the king told to live go south over the mountains and settle in six villages in the valleys around Surabol, where, two generations later, they will go looking for a king. The rest stay, and are cut into the Four Commanderies of Han. The last of them, Nangnang on the Taedong, is still collecting taxes four hundred years later.",
 						"ko": "기원전 108년, 한나라가 왕검성을 차지한다. 임금이 살라고 한 사람들 가운데 일부는 산을 넘어 남쪽으로 가서, 서라벌 둘레 골짜기에 여섯 마을을 이룬다. 두 세대쯤 지나 그들은 임금을 찾아 나설 것이다. 나머지는 남아 <b>한사군</b>으로 쪼개진다. 그 가운데 마지막까지 남은 대동강가의 낙랑은 사백 년 뒤에도 여전히 세금을 걷고 있다."
 					}
 				],
@@ -53686,8 +53681,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>— Kim Yushin —</b>",
-						"ko": "<b>— 김유신 —</b>",
+						"html": "— Kim Yushin —",
+						"ko": "— 김유신 —",
 						"art": "Full-page end card. The name and the five italic paragraphs after it (through “…made him a king.”) share one page."
 					},
 					{
@@ -55143,8 +55138,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>The Three Kingdoms Era is over. The Northern and Southern States Era begins…!</b>",
-						"ko": "<b>삼국시대는 끝났다. 남북국시대가 시작된다…!</b>"
+						"html": "The Three Kingdoms Era is over. The Northern and Southern States Era begins…!",
+						"ko": "삼국시대는 끝났다. 남북국시대가 시작된다…!"
 					},
 					{
 						"kind": "p",
