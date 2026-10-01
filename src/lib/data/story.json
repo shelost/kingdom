@@ -9149,7 +9149,7 @@
 						"id": "golhwa-wink",
 						"ratio": 1.778,
 						"tone": "#0e7490",
-						"at": "The water is not the only thing that can burn",
+						"at": "winking at him over the water",
 						"alt": "Painterly Golhwa close-up wink — ember eyes, coral pin, wet white jeogori, cyan mist",
 						"prompt": "Minimal iconic 16:9 intimate CLOSE-UP, movie scene. Golhwa, youngest mythical Korean steam-cavern goddess: painterly semi-realistic matching attached portrait — glowing ember-red eyes, one eye winking, coral-flame binyeo, white wet jeogori off a shoulder, orange-red silk, cyan mist. God = more realistic/numinous. No text. No watermark.",
 						"refs": [
@@ -9213,7 +9213,7 @@
 						"ratio": 1.778,
 						"tone": "#e86820",
 						"nsfw": true,
-						"at": "I will come across",
+						"at": "I’m coming across",
 						"alt": "Golhwa across the water toward bare Yushin — house orange chima, his wet muscle in shadow",
 						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Luminous goddess leaning across spirit-steam toward a painterly marshal. His FACE ONLY from the attached portrait — do NOT wear the portrait's hanbok, court silk, armor, or robe. He is unclothed in the spring: bare bathing body, wet muscular chest, nothing on but water. Her face and garments match attached portrait. Confucian-blue #2A5FB8 as rim-light only. Magical aura, anime-painterly cavern spirit, not photoreal. Waist-up. No genitals. No text. No watermark.",
 						"refs": [
@@ -10730,7 +10730,7 @@
 						"id": "narim-jade-pin",
 						"ratio": 0.75,
 						"tone": "#3d9e52",
-						"at": "You wash like a man who thinks dirt is the only thing that sticks.",
+						"at": "You can stop scrubbing",
 						"alt": "Narim in a black void beside a vertical jade pin, mint-green the only light",
 						"prompt": "Minimal iconic 3:4 poster. Narim, eldest steam-cavern goddess. ONE geometric device: a vertical JADE PIN of #3d9e52 as the only light. Face matches the attached portrait. Otherworld cavern: symbolic flat black. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -10745,7 +10745,7 @@
 						"id": "golhwa-flame-wedge",
 						"ratio": 0.75,
 						"tone": "#e86820",
-						"at": "Leave the sermon, unnie.",
+						"at": "He will kneel in rooms you would burn",
 						"alt": "Golhwa leaning into a coral flame-wedge punching up from the lower-right of a black void",
 						"prompt": "Minimal iconic 3:4 poster. Golhwa, youngest steam-cavern goddess. ONE geometric device: a FLAME-WEDGE of coral #e86820 from the lower-right. Face matches the attached portrait. Otherworld cavern: symbolic flat black. Eighty percent black. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -11466,18 +11466,18 @@
 					},
 					{
 						"kind": "p",
-						"html": "Before Daeya — before the year that will stain his hands — the Sword of Silla rides alone to a small cavern lake in the hills: a bowl of black water under stone, cold enough to teach the bones manners. He has heard of the place the way a son hears of a hill his father once named a spring. His father came until the hill learned his walk. He comes the same way. Water. One question. The name.",
-						"ko": "대야 전 — 손을 더럽힐 해 전 — 신라의 도검은 홀로 산중의 작은 동굴 호수로 간다. 돌 아래 검은 물의 사발, 뼈에 예의를 가르치는 냉기. 아버지가 샘이라 이름 붙인 언덕을 아들이 듣듯 그곳은 들어 보았다. 아버지는 언덕이 걸음을 배울 때까지 왔다. 같은 길로 온다. 물. 질문 하나. 이름."
+						"html": "Before Daeya, and before the year that will stain his hands, the Sword of Silla rides alone to a small cavern lake in the hills, a bowl of black water under stone. His father named it a spring. His father came until the hill learned his walk, and now the son comes the same way.",
+						"ko": "대야 일이 있기 전, 그의 손을 더럽힐 해가 오기도 전에, 신라의 도검은 홀로 산속 작은 동굴 호수를 찾아간다. 돌 아래 검은 물 한 사발. 아버지는 그곳을 샘이라 불렀다. 아버지는 언덕이 그의 걸음을 배울 때까지 그곳을 드나들었고, 이제 아들이 같은 길로 온다."
 					},
 					{
 						"kind": "p",
-						"html": "The marshal’s robe falls at the rock lip before the steam has a name for him. Confucian blue on wet stone. He does not look up; looking up would be a request.",
-						"ko": "원수의 도포가 바위 끝에서 내린다. 김이 아직 그의 이름을 부르기 전에. 유교의 푸른빛이 젖은 돌 위에 있다. 올려다보지 않는다. 올려다보는 것은 청이 되니까."
+						"html": "The marshal’s robe falls at the rock lip before the steam has a name for him, and lies blue on the wet stone. He does not look up. Looking up would be asking.",
+						"ko": "김이 그의 이름을 부르기도 전에, 원수의 도포가 바위 끝에 떨어져 젖은 돌 위에 푸르게 놓인다. 그는 올려다보지 않는다. 올려다보면 청하는 셈이 되니까."
 					},
 					{
 						"kind": "p",
-						"html": "Steam lifts. They are already on the far rock: <b>Narim</b> with her ankles crossed like an elder sister who has seen this entrance before; <b>Golhwa</b> legs spread wide in the mist, chima hiked, as if the mist owed her heat; <b>Hyullé</b> a half-step behind them, knees pressed, eyes down on the water, not yet on him.",
-						"ko": "김이 오른다. 저쪽 바위에 이미 있다. <b>나림</b>은 이 등장을 여러 번 본 언니처럼 발목을 꼬고 있고, <b>골화</b>는 다리를 넓게 벌리고 치마를 걷은 채 연기가 제게 열을 빚진 것처럼 앉아 있으며, <b>혈레</b>는 반 걸음 뒤에 — 무릎은 모으고 눈은 아직 그가 아니라 물에."
+						"html": "Steam lifts. They are already on the far rock: <b>Narim</b> with her ankles crossed like an elder sister who has seen this entrance before; <b>Golhwa</b>, legs spread wide in the mist, chima hiked, as if the mist owed her heat; <b>Hyullé</b> a half-step behind them, knees pressed, eyes down on the water, not yet on him.",
+						"ko": "김이 오른다. 저쪽 바위에 이미 있다. <b>나림</b>은 이 등장을 여러 번 본 언니처럼 발목을 꼬고 있고, <b>골화</b>는 다리를 넓게 벌리고 치마를 걷은 채 안개가 제게 열을 빚지기라도 한 것처럼 앉아 있으며, <b>혈레</b>는 반 걸음 뒤에 — 무릎은 모으고 눈은 아직 그가 아니라 물에."
 					},
 					{
 						"kind": "dialogue",
@@ -11536,7 +11536,7 @@
 								],
 								"lines": [
 									"뭐든 될 수 있어…",
-									"여우도. 노파도. 오는 사람한테 물 주고 보내. 벌써 원하고 싶지 않은데."
+									"여우도 되고, 노파도 되고. 오는 사람한테 물이나 주고 보내. 벌써부터 원하게 되는 거 싫어."
 								]
 							},
 							{
@@ -11560,7 +11560,7 @@
 									"I pick the last face."
 								],
 								"lines": [
-									"그럼 해 봐. 여우부터. 웃으면 바꿔.",
+									"그럼 해 보자. 여우부터. 웃으면 바꿔.",
 									"마지막 얼굴은 내가 골라."
 								]
 							},
@@ -11578,7 +11578,7 @@
 									"He would run. Fine. Old ladies."
 								],
 								"lines": [
-									"여우 같잖아. 나 좋아.",
+									"나 여우 같지? 맘에 들어.",
 									"도망가겠지. 됐어. 할머니로."
 								]
 							},
@@ -11593,11 +11593,11 @@
 								"person": "narim",
 								"en": [
 									"He’ll take the water and bless us and leave.",
-									"Younger, then. Not crones. The face a man stays for and calls mother."
+									"Younger, then. Not crones. Old enough to be his mother. A man stays for his mother."
 								],
 								"lines": [
-									"물만 떠 가고, 축복하고, 가 버리겠지.",
-									"그럼 좀 젊게. 노파는 말고. 남자가 머물면서 어머니라고 부르는 얼굴."
+									"물만 떠 가고, 축복해 주고, 가 버리겠지.",
+									"그럼 좀 젊게. 노파 말고. 어머니뻘로. 남자는 어머니 곁에는 머물거든."
 								]
 							},
 							{
@@ -11611,11 +11611,11 @@
 								"chip": "#5fad6e",
 								"person": "narim",
 								"en": [
-									"He’ll want a mother. He’ll walk out of a mother.",
+									"…No. He’ll want a mother, and then he’ll leave her.",
 									"Young. Sit so the silk sticks."
 								],
 								"lines": [
-									"어머니를 원하겠지. 그러고는 어머니한테서 걸어 나가.",
+									"…아니. 어머니 품은 원하겠지. 그러고는 떠나.",
 									"젊게. 비단이 붙게 앉아."
 								]
 							},
@@ -11728,10 +11728,14 @@
 								"chip": "#e0783a",
 								"person": "golhwa",
 								"en": [
-									"You already— wait. Hi. I’m Golhwa. That’s unnie. That’s Hyullé, she won’t say it unless you look at her first, which you should, but maybe don’t look at me like that or I am going to say the stupid thing."
+									"You already— wait. Hi. I’m Golhwa.",
+									"That’s unnie, that’s Hyullé. She won’t talk unless you look at her first. So look.",
+									"But don’t look at me like that, or I’ll say the stupid thing."
 								],
 								"lines": [
-									"벌써— 잠깐. 안녕. 골화야. 저쪽이 언니. 저쪽이 혈레, 네가 먼저 봐야 말하거든, 보는 게 맞는데, 나를 그렇게 보면 바보 같은 말 할 것 같아."
+									"벌써— 잠깐. 안녕. 나 골화야.",
+									"저쪽이 언니, 저쪽이 혈레. 쟤는 네가 먼저 봐 줘야 말해. 그러니까 봐 줘.",
+									"근데 나는 그렇게 보지 마. 그럼 나 바보 같은 소리 한다."
 								]
 							},
 							{
@@ -11753,12 +11757,12 @@
 								"chip": "#6ec4c9",
 								"person": "hyulle",
 								"en": [
-									"I was going to.",
-									"Hello."
+									"I was going to…",
+									"…Hello."
 								],
 								"lines": [
-									"하려고 했어요.",
-									"안녕."
+									"하려고 했어요…",
+									"…안녕하세요."
 								]
 							},
 							{
@@ -11779,12 +11783,12 @@
 								"chip": "#5fad6e",
 								"person": "narim",
 								"en": [
-									"Today. We are the mouths the hill uses when it is tired of being stone.",
-									"Not a village bath. I’m Narim."
+									"Today.",
+									"Other days we’re the hill. This isn’t a village bath, either. I’m Narim."
 								],
 								"lines": [
-									"오늘은요. 돌이기를 지친 언덕이 쓰는 입이에요.",
-									"마을 목욕탕 아니에요. 나림이에요."
+									"오늘은요.",
+									"다른 날엔 언덕이고요. 마을 목욕탕도 아니에요. 나림이에요."
 								]
 							},
 							{
@@ -11793,11 +11797,13 @@
 								"person": "golhwa",
 								"en": [
 									"Kim.",
-									"Say it again. No, I heard you. It just… sticks. Same sound as the steam. I like it."
+									"Say it again. No, I heard you. It just… sticks.",
+									"Same sound as the steam. I like it."
 								],
 								"lines": [
 									"김.",
-									"다시. 아니, 들었어. 그냥… 붙어. 김이랑 같은 소리. 좋아."
+									"다시. 아니, 들었어. 그냥… 입에 붙어.",
+									"김이랑 같은 소리잖아. 좋아."
 								]
 							},
 							{
@@ -11881,12 +11887,12 @@
 								"person": "narim",
 								"en": [
 									"Stand where you are. Do not climb the rock. Do not ask who we are.",
-									"One question. Spoken once, from the water. About what you will do — not what you want to hear.",
+									"One question, from the water, once. Ask what you should do. Don’t ask for what you want to hear.",
 									"The name is the offering. Kim."
 								],
 								"lines": [
 									"거기 서요. 바위에 오르지 말아요. 우리가 누구냐고 묻지 말아요.",
-									"질문 하나. 물에서, 한 번만. 듣고 싶은 말이 아니라 — 당신이 할 일.",
+									"질문 하나. 물에서, 한 번만. 해야 할 일을 물어요. 듣고 싶은 말은 묻지 말고요.",
 									"이름이 제물이에요. 김."
 								]
 							},
@@ -11898,7 +11904,7 @@
 									"…Will the road take me home."
 								],
 								"lines": [
-									"…길이 나를 집으로 데려가겠소."
+									"…길이 나를 집으로 데려다주겠소?"
 								]
 							},
 							{
@@ -11907,11 +11913,11 @@
 								"person": "narim",
 								"en": [
 									"The road will take you home. The house will not stay there.",
-									"Keep the name in the palm they cannot see. A country will take your house and call the taking love."
+									"Keep the name in the palm they cannot see. A country will take your house and call it love."
 								],
 								"lines": [
 									"길은 당신을 집으로 데려가요. 집은 거기 머물지 않아요.",
-									"그들이 못 보는 손바닥에 이름을 두어요. 나라가 당신 집을 가져가고, 그 가져감을 사랑이라 부를 거예요."
+									"그들이 못 보는 손바닥에 이름을 두어요. 나라가 당신 집을 가져갈 거예요. 그걸 사랑이라고 부를 거예요."
 								]
 							},
 							{
@@ -11943,12 +11949,12 @@
 								"chip": "#3E8EF0",
 								"person": "seohyeon",
 								"en": [
-									"I have a son. A few weeks. Yushin.",
+									"I have a son. A few weeks old. Yushin.",
 									"I don’t know what I would ask for him."
 								],
 								"lines": [
-									"아들이 있소. 몇 주. 유신.",
-									"그를 위해 뭘 물어야 할지도 모르겠소."
+									"아들이 있소. 난 지 몇 주 됐소. 유신이오.",
+									"그 애를 위해 뭘 물어야 할지도 모르겠소."
 								]
 							},
 							{
@@ -11966,7 +11972,7 @@
 								"chip": "#0e7490",
 								"speaker": "The Hill",
 								"en": [
-									"The child will be the measure two countries cannot share.",
+									"The child will be what two countries cannot share.",
 									"They will call him a blade and mean a border.",
 									"When they say he was never of them, the blade will still be Kim.",
 									"He will cut more than he is given. Don’t ask who bleeds."
@@ -11983,10 +11989,10 @@
 								"chip": "#e0783a",
 								"person": "golhwa",
 								"en": [
-									"That wasn’t a second. The hill was generous. This is me."
+									"That one didn’t count as a second. The hill was being generous."
 								],
 								"lines": [
-									"두 번째가 아니야. 언덕이 후했어. 이건 나야."
+									"그건 두 번째 아니야. 언덕이 인심 쓴 거야."
 								]
 							},
 							{
@@ -11999,12 +12005,14 @@
 								"chip": "#5fad6e",
 								"person": "narim",
 								"en": [
-									"If it goes cold, you did not come as a petitioner.",
-									"If it stays warm, the hill will open. Same way. Water. One question. The name. Come back every time it is warm. Until you cannot climb. Then send the name."
+									"If it goes cold, you didn’t come for counsel.",
+									"If it stays warm, the hill will open. Come the same way: the water, one question, the name.",
+									"Come back whenever it’s warm, until you can’t climb. Then send the name."
 								],
 								"lines": [
-									"식으면 청원으로 온 게 아니에요.",
-									"따뜻하면 언덕이 열려요. 같은 길. 물. 질문 하나. 이름. 따뜻할 때마다 다시 와요. 오르지 못할 때까지. 그다음엔 이름을 보내요."
+									"식으면, 조언 들으러 온 게 아닌 거예요.",
+									"따뜻하면 언덕이 열려요. 같은 길로 와요. 물, 질문 하나, 이름.",
+									"따뜻할 때마다 와요. 못 오를 때까지. 그다음엔 이름을 보내요."
 								]
 							},
 							{
@@ -12087,11 +12095,11 @@
 								"person": "hyulle",
 								"en": [
 									"If he does… I want the face next time.",
-									"I’ll hide. I’ll look anyway."
+									"I’ll probably hide. I’ll look anyway."
 								],
 								"lines": [
 									"오면… 다음에는 얼굴을.",
-									"숨겠지. 그래도 볼 거야."
+									"아마 숨을 거야. 그래도 볼 거야."
 								]
 							},
 							{
@@ -12139,7 +12147,7 @@
 								"person": "narim",
 								"en": [
 									"The hill remembers a younger walk.",
-									"Tonight we will see what is left."
+									"Let’s see what’s left tonight."
 								],
 								"lines": [
 									"언덕은 더 젊은 걸음을 기억하는데요.",
@@ -12209,21 +12217,24 @@
 					},
 					{
 						"kind": "p",
-						"html": "Golhwa’s legs stay spread wide on the wet rock, chima hiked. She is wet enough to take him from here. A thread of it finds her lip and she does not wipe it. His father’s shoulders. Worse. Hyullé’s knees stay pressed, eyes down, silk soaked through between them, and she answers nothing because if she opens her mouth it will be a sound. Narim’s silk clings and her next breath is late. Kim. Ours. Fuck him. The marshal looks once and the spring does not hide much — he is rock-hard in the black bowl and pretends the water is a wall. His father would have teased. He quotes the queen.",
-						"ko": "골화의 다리는 젖은 바위에서 넓게 벌어진 채고 치마는 걷혀 있다. 여기서 바로 받아도 될 만큼 젖었다. 그 실이 입술에 붙고 닦지 않는다. 아버지 어깨. 더 나빠. 혈레의 무릎은 모아져 있고 눈은 아래, 사이 비단은 다 젖었고, 입을 열면 소리가 나올 거라 아무 말도 안 한다. 나림의 비단이 붙고, 다음 숨이 늦다. 김. 우리 거야. 박아. 원수가 한 번 보고 샘이 감춰 주는 게 없다 — 검은 사발 안에서 이미 돌처럼 서 있고, 물을 벽인 척한다. 아버지라면 농을 했을 것이다. 그는 여왕을 인용한다.",
-						"nsfw": true
+						"html": "Golhwa is wet enough to take him from where she sits, and does not bother to hide it. His father’s shoulders. That makes it worse. Hyullé keeps her eyes on the water and her mouth shut, because if she opens it a sound will come out. Narim’s silk clings, and her next breath comes late. The marshal looks once, and the spring hides less than he would like: he is hard under the black water, and pretends the water is a wall. His father would have teased them. He quotes the queen to himself.",
+						"ko": "골화는 앉은 자리에서 그대로 그를 받아들여도 될 만큼 젖어 있고, 그걸 감출 생각도 없다. 아버지 어깨다. 그래서 더 나쁘다. 혈레는 물만 보며 입을 꼭 다문다. 열면 소리가 새어 나올 테니까. 나림의 비단이 살에 달라붙고, 다음 숨이 늦게 온다. 원수는 딱 한 번 보고, 샘은 그가 바라는 만큼 가려 주지 않는다. 검은 물 아래서 그는 이미 단단하고, 물이 벽이라도 되는 척한다. 아버지였다면 셋을 놀려 댔을 것이다. 그는 속으로 여왕의 말을 왼다.",
+						"nsfw": true,
+						"art": "Postures hold from the opening: Golhwa’s knees apart on the wet rock, Hyullé’s pressed together. A thread of drool at Golhwa’s lip that she does not wipe."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#5fad6e",
 						"person": "narim",
 						"en": [
-							"Kim Yushin. You wash like a man who thinks dirt is the only thing that sticks.",
-							"It isn’t. The water’s on your stomach and I haven’t looked away."
+							"Kim Yushin.",
+							"You can stop scrubbing. The road came off a while ago.",
+							"…I’ve been watching the water run down your stomach this whole time. Forget I said that."
 						],
 						"lines": [
-							"김유신. 때만이 붙는 줄 아는 사람처럼 씻는군요.",
-							"아니에요. 물이 배 위에 있는데, 저 한 번도 눈을 못 뗐어요."
+							"김유신.",
+							"그만 문질러요. 길 먼지는 진작 다 빠졌어요.",
+							"…배 위로 물 흐르는 거, 아까부터 계속 보고 있었어요. 못 들은 걸로 해요."
 						]
 					},
 					{
@@ -12231,38 +12242,39 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"Leave the sermon, unnie. He’s naked. We can be honest.",
+							"Forget it? Not a chance, unnie. He’s naked. We can be honest.",
 							"Come closer, Yushin— I want that on my tongue before she makes it a lesson."
 						],
 						"lines": [
-							"설교는 됐어요, 언니. 벗었잖아요. 솔직해지자구요.",
+							"잊긴 뭘 잊어, 언니. 벗었잖아. 솔직해지자.",
 							"가까이 와, 유신— 언니가 교훈으로 만들기 전에 혀에 올리고 싶어."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "She has been on that rock since his father left, moaning at nobody, picturing him under her. She wants him to grab her and fuck her into the stone. If he stays put she will come across. The most popular man in Silla, and he came back to their water. Hyullé’s eyes go to the waterline and stay. Narim forgets the sermon for one breath.",
-						"ko": "아버지 가고부터 그 바위에 올라앉아, 없는 사람한테 신음해 왔다. 밑에 그가 있다고 그리면서. 세게 잡아 바닥에 박아 줬으면. 그대로 서 있으면 내가 건너간다. 신라에서 제일 인기 있는 남자인데, 그들의 물에 돌아왔다. 혈레의 눈이 수선에 가서 머문다. 나림은 설교를 한숨 잊는다.",
+						"html": "Hyullé’s eyes go to the waterline and stay. Narim forgets, for one breath, that she is the eldest. Golhwa has been on that rock since his father left, moaning to nobody, picturing him under her, and now she wants his hands on her and her back against the stone. Half the daughters of Surabol dream about this man, and he came back to their water.",
+						"ko": "혈레의 눈이 수면에 가서 머문다. 나림은 한 숨 동안 자기가 맏이라는 걸 잊는다. 골화는 그의 아버지가 떠난 뒤로 줄곧 그 바위에 앉아, 아무도 없는 데 대고 신음하며 제 밑에 그를 그려 왔다. 이제는 그 손이 제 몸을 쥐고, 등이 돌에 눌리기를 바란다. 서라벌 처녀 절반이 꿈에 그리는 남자가, 그들의 물로 돌아왔다.",
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "She goes in like a tiger. Wink. Knees open. Steam that looks like it is coming off her skin.",
-						"ko": "호랑이처럼 들어간다. 윙크. 무릎이 열린다. 살에서 나는 것처럼 보이는 김.",
-						"nsfw": true
+						"html": "She goes in like a tiger, winking at him over the water, and the steam looks as if it is coming off her skin.",
+						"ko": "그녀는 호랑이처럼 물에 뛰어든다. 물 건너 그에게 윙크를 던지고, 김은 그녀의 살갗에서 피어오르는 것처럼 보인다.",
+						"nsfw": true,
+						"art": "Knees open as she wades."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"Don’t stand there like that. I can see all of you and you’re just letting me.",
-							"I will come across. Open your knees. I’m not swimming over to talk."
+							"Don’t stand there like that. I can see all of you and you’re just letting me look.",
+							"I’m coming across. Open your knees. I’m not swimming over to talk."
 						],
 						"lines": [
-							"그렇게 서지 마. 다 보이는데 그냥 보여 주는 거잖아.",
-							"내가 건너갈 거야. 무릎 벌려. 이야기하러 헤엄치는 거 아니야."
+							"그렇게 서 있지 마. 다 보이는데 그냥 보게 두잖아.",
+							"내가 건너간다. 무릎 벌려. 얘기하러 헤엄쳐 가는 거 아니거든."
 						],
 						"nsfw": true
 					},
@@ -12276,18 +12288,19 @@
 						],
 						"lines": [
 							"…골화.",
-							"쉬러 온 거예요."
-						]
+							"쉬러 온 사람이야."
+						],
+						"art": "Golhwa has already slid off her rock and is wading toward him."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"lines": [
-							"그래도 입에 대고 싶어요. 미안해요. 미안하지 않아요."
+							"그래도 입 대고 싶어. 미안. …안 미안해."
 						],
 						"en": [
-							"I still want my mouth on him. I’m sorry. I’m not."
+							"I still want my mouth on him. I’m sorry. …I’m not."
 						],
 						"nsfw": true
 					},
@@ -12297,33 +12310,33 @@
 						"person": "yushin",
 						"en": [
 							"…Who are you three.",
-							"If this is a dream, make it shorter. I have a border to cut."
+							"If this is a dream, I’d like it short. I’m due at the border."
 						],
 						"lines": [
 							"…당신들은 누구요.",
-							"꿈이면 짧게 해 주시오. 자를 국경이 있소."
+							"꿈이라면 짧았으면 하오. 국경에 가 봐야 하오."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "The comedy goes out of the cave again. He asked who they are. That is not a question they answer.",
-						"ko": "동굴에서 다시 장난이 빠진다. 그가 누구냐고 물었다. 그건 답하는 질문이 아니다."
+						"html": "Narim stops smiling. Even Golhwa goes still.",
+						"ko": "나림의 얼굴에서 웃음이 걷힌다. 골화마저 그 자리에 멈춘다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#5fad6e",
 						"person": "narim",
 						"en": [
-							"That is not a question we answer. Stand where you are. One question. What you will do.",
-							"You came as your father came. The flirting is free. The hill is not.",
+							"We don’t answer that one. Stand where you are.",
+							"You came the way your father did. No need to ask.",
 							"Take Baekje’s forts if you must. Do not take Baekje’s hurry.",
 							"And stop standing there wet, like you don’t know what that does to the three of us."
 						],
 						"lines": [
-							"그건 답하는 질문이 아니에요. 거기 서요. 질문 하나. 당신이 할 일.",
-							"아버지처럼 왔군요. 농은 공짜예요. 언덕은 아니고요.",
-							"백제의 성은 가져도 돼요. 백제의 서두름은 가지지 말고.",
-							"그리고 젖은 채로 그렇게 서 있지 마세요. 우리 셋한테 무슨 짓인지 모르는 척하지 마시고요."
+							"그건 우리가 대답 안 하는 질문이에요. 거기 서요.",
+							"아버지처럼 왔네요. 물을 것도 없어요.",
+							"백제 성은 가져도 돼요. 백제의 조급함까지 가져오진 말고요.",
+							"그리고 그렇게 젖은 채로 서 있지 말아요. 우리 셋한테 그게 무슨 짓인지 모르는 척하지 말고요."
 						]
 					},
 					{
@@ -12333,12 +12346,12 @@
 						"en": [
 							"And… if a man from the north offers you a door…",
 							"…look who holds the latch on the other side.",
-							"Sorry. I — I was staring at your chest. The latch too. I meant both."
+							"…Sorry. I was looking at your chest. I meant the part about the door, though."
 						],
 						"lines": [
-							"그리고… 북쪽 사람이 문을 내밀거든…",
-							"…저쪽에서 빗장을 쥔 손이 누구인지 보아요.",
-							"미안해요. 전 — 가슴을 보고 있었어요. 빗장도. 둘 다요."
+							"그리고… 북쪽 사람이 문을 열어 주겠다고 하거든…",
+							"…반대편에서 빗장 쥔 손이 누구 건지 봐요.",
+							"…미안해요. 가슴 보고 있었어요. 그래도 문 얘기는 진심이에요."
 						]
 					},
 					{
@@ -12346,14 +12359,16 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"She meant it. Don’t apologise for being right, Hyullé.",
+							"Stop saying sorry, Hyullé. You were right.",
 							"Also — your friend with the pink name. Chunchu.",
-							"He will kneel in rooms you would burn. That is not weakness. It cuts later."
+							"He will kneel in rooms you would burn.",
+							"…Let him. He’s better at kneeling than you."
 						],
 						"lines": [
-							"그 말 맞아요. 맞다고 사과하지 마, 혈레.",
+							"미안하다고 좀 하지 마, 혈레. 맞는 말 했잖아.",
 							"그리고 — 분홍빛 이름 가진 친구. 춘추.",
-							"당신은 태울 방에서 그는 무릎을 꿇을 거예요. 약함이 아니야. 나중에 베니까."
+							"당신이라면 불태울 방에서, 그 사람은 무릎을 꿇을 거예요.",
+							"…꿇게 둬. 그런 건 너보다 잘하잖아."
 						]
 					},
 					{
@@ -12424,17 +12439,17 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"Stay— in my lap. Don’t make me beg when my legs are already open."
+							"Stay— in my lap. Don’t make me beg."
 						],
 						"lines": [
-							"있어— 내 무릎 위에. 이미 다리 벌렸는데 빌게 하지 마."
+							"있어— 내 무릎 위에. 빌게 만들지 마."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "She wants him in her, not bowing. The title can keep the forts. Unnie can keep the sermon.",
-						"ko": "절하지 말고 들어와 줬으면. 존호는 성을 가져도 돼. 설교는 언니가 해.",
+						"html": "She wants him inside her, and he is bowing to a title. The queen can keep the forts.",
+						"ko": "그녀는 그가 제 안에 들어오기를 바라는데, 그는 칭호에 대고 절을 하고 있다. 성은 여왕이나 가지라지.",
 						"nsfw": true
 					},
 					{
@@ -12443,13 +12458,15 @@
 						"person": "narim",
 						"en": [
 							"Golhwa.",
-							"When they ask if a woman can hold the west, do not answer for her. Take the forts on her count. Slow. She will look like she planned it.",
-							"And when the count is done, come back dripping. I am not finished with you."
+							"When they ask if a woman can hold the west, do not answer for her. Take the forts on her count. Slow.",
+							"Then she will look like she planned it.",
+							"And when it’s done, come back dripping. I’m not finished with you."
 						],
 						"lines": [
 							"골화.",
-							"여자가 서쪽을 지킬 수 있냐고 묻거든, 대신 답하지 말아요. 성을 그 수대로 가져요. 천천히. 계획한 것처럼 보일 테니까.",
-							"셈이 끝나면 젖은 채로 돌아와요. 저 아직 안 끝났어요."
+							"여자가 서쪽을 지킬 수 있냐고들 묻거든, 대신 대답하지 말아요. 성은 여왕 셈대로 가져요. 천천히.",
+							"그래야 여왕이 다 계획한 것처럼 보여요.",
+							"끝나면 젖은 채로 돌아와요. 당신한테 아직 볼일 남았어요."
 						]
 					},
 					{
@@ -12457,12 +12474,12 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"en": [
-							"…The binyeo is pretty. The face is tired.",
-							"…He can go."
+							"…Her binyeo is pretty. Her face is tired.",
+							"…He can go now."
 						],
 						"lines": [
-							"…비녀는 예뻐요. 얼굴은 지쳤어요.",
-							"…가도 돼요."
+							"…비녀는 예뻐요. 얼굴은 지쳐 있고요.",
+							"…이제 보내 줘도 돼."
 						]
 					},
 					{
@@ -12470,10 +12487,10 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"lines": [
-							"전 단지 — 길 나서기 전에 허벅지로 감고 싶었어요. 따뜻하다는 말은 점잖은 거였어요."
+							"난 그냥 — 길 떠나기 전에 허벅지로 한번 감아 보고 싶었어."
 						],
 						"en": [
-							"I only — wanted my thighs around him before the road. Warm was the polite word."
+							"I only — wanted my thighs around him before the road."
 						],
 						"nsfw": true
 					},
@@ -12483,13 +12500,13 @@
 						"person": "yushin",
 						"en": [
 							"Forts. Slow. Her count. I have it.",
-							"Dedication is not a flirtation you three get to bill me for.",
-							"…But the water helps. Already."
+							"…The rest, I wouldn’t know about.",
+							"…The water helps, though. Already."
 						],
 						"lines": [
-							"성. 천천히. 그 수. 들었소.",
-							"충성이 당신들이 청구할 수 있는 농염은 아니오.",
-							"…허나 물은 도움이 되오. 벌써."
+							"성. 천천히. 여왕의 셈. 들었소.",
+							"…나머지는 잘 모르겠소.",
+							"…허나 물은 벌써 도움이 되오."
 						]
 					},
 					{
@@ -12498,11 +12515,11 @@
 						"person": "golhwa",
 						"en": [
 							"Hear that? He thanked the water. Not us.",
-							"Fine. Go play marshal. Next time, leave the armour — and that mortal — outside the cave."
+							"Fine. Go play marshal. Next time leave the armour outside. That mortal too."
 						],
 						"lines": [
 							"들려? 물한테 고맙대. 우리한테가 아니라.",
-							"그래. 가서 장군 놀아. 다음엔 갑옷이랑 — 그 인간도 — 동굴 밖에 두고 와."
+							"그래. 가서 장군 놀이나 해. 다음엔 갑옷은 밖에 두고 와. 그 인간도."
 						]
 					},
 					{
@@ -12523,13 +12540,15 @@
 						"person": "narim",
 						"en": [
 							"Golhwa. Hyullé.",
-							"The warm ledge around the bend — and the herbs in the cleft. Both of you.",
+							"Go and pick herbs. In the cleft past the warm ledge. Both of you.",
+							"We’re his steam, all three. Nobody keeps him.",
 							"Go on. The marshal still has ears for counsel… and I still have a mouth for it."
 						],
 						"lines": [
 							"골화. 혈레.",
-							"굽이 너머 따뜻한 턱이랑 — 틈새의 약초. 둘 다.",
-							"가. 대장군은 아직 조언 들을 귀가 있고… 나한테는 그걸 받을 입이 있어."
+							"약초 좀 따 와. 굽이 너머 따뜻한 턱 옆 틈에 있어. 둘 다.",
+							"우린 이 사람 김이야. 셋 다. 아무도 혼자 못 가져.",
+							"어서. 대장군은 아직 조언 들을 귀가 있고… 나한테는 그걸 받을 입이 있어."
 						]
 					},
 					{
@@ -12550,11 +12569,11 @@
 						"person": "golhwa",
 						"en": [
 							"Herbs? For a bath?",
-							"…Unnie. If you’re about to sermon him alone, I’m billing you for boredom. If you’re about to sit on him, I’m billing you for theft."
+							"…Unnie. Sit on him while we’re gone and I’ll know."
 						],
 						"lines": [
 							"약초? 목욕에?",
-							"…언니. 혼자 설교할 거면 심심해서 청구할 거야. 그 위에 앉을 거면 도둑질로 청구할 거고."
+							"…언니. 우리 없는 새에 저 위에 올라앉기만 해 봐. 내가 다 알아."
 						]
 					},
 					{
@@ -12566,8 +12585,8 @@
 							"We’ll — we’ll be quick."
 						],
 						"lines": [
-							"…네, 언니.",
-							"금방 — 금방 올게요."
+							"…응, 언니.",
+							"금방 — 금방 올게."
 						]
 					},
 					{
@@ -12575,7 +12594,7 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"lines": [
-							"제가 듣기 전에 끝내 버리면 안 돼요."
+							"내가 듣기도 전에 끝내 버리면 안 돼."
 						],
 						"en": [
 							"Don’t you dare finish him before I hear it."
@@ -12584,8 +12603,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "They go. Mist takes the younger two the way water takes a thrown stone — a bright disturbance, then nothing. Yushin is alone with Narim, and for the first time he understands that being alone with any of them is not the same as being safe.",
-						"ko": "간다. 안개가 동생 둘을 가져간다 — 물에 던진 돌처럼, 잠깐 반짝이고, 이내 없음. 유신은 나림과 단둘이 남고, 비로소 안다. 그중 누구와도 단둘이 있는 것은 안전한 것과 다르다는 것을."
+						"html": "They go, and the mist closes behind the younger two. Yushin is alone with Narim. He had thought that would be safer.",
+						"ko": "둘이 가고, 동생들 뒤로 안개가 닫힌다. 유신은 나림과 단둘이 남는다. 그쪽이 더 안전할 줄 알았다."
 					},
 					{
 						"kind": "dialogue",
@@ -12594,12 +12613,12 @@
 						"en": [
 							"You thanked the water.",
 							"I am not water.",
-							"Come here, Kim Yushin"
+							"Come here, Kim Yushin."
 						],
 						"lines": [
 							"물한테 고맙다 했죠.",
 							"나는 물이 아니에요.",
-							"이리 와요, 김유신"
+							"이리 와요, 김유신."
 						]
 					},
 					{
@@ -12607,10 +12626,10 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"lines": [
-							"— 국경이 거절을 가르치기 전에 제 입에 넣어요."
+							"거절하는 법이 생각나기 전에 내 입에 넣어요."
 						],
 						"en": [
-							"— I want you in my mouth before the border teaches you how to refuse."
+							"I want you in my mouth before you remember how to refuse."
 						],
 						"nsfw": true
 					},
@@ -12620,11 +12639,11 @@
 						"person": "yushin",
 						"en": [
 							"Narim—",
-							"You just told them we are steam."
+							"You just told them nobody keeps me."
 						],
 						"lines": [
 							"나림—",
-							"방금 김이라 하지 않았소."
+							"방금 저 둘한테, 아무도 나를 혼자 못 가진다 하지 않았소."
 						]
 					},
 					{
@@ -12634,12 +12653,12 @@
 						"en": [
 							"I told <i>them</i>.",
 							"The counsel was real. So is this.",
-							"Stay. Not for the queen. Not for the road."
+							"Stay. Just for a while."
 						],
 						"lines": [
-							"<i>애들한테</i> 한 말이지.",
-							"조언은 진짜였어요. 이것도.",
-							"남아요. 여왕 때문도, 길 때문도 아니에요."
+							"그건 <i>애들한테</i> 한 말이고요.",
+							"조언은 진짜였어요. 이것도요.",
+							"남아요. 잠깐이면 돼요."
 						]
 					},
 					{
@@ -12647,17 +12666,17 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"lines": [
-							"지금 선 그거 때문에. 김에 입이 없는 척하지 마요."
+							"지금 서 있는 그거 때문에라도요."
 						],
 						"en": [
-							"For the part of you that’s hard, pretending the steam has no mouth."
+							"If only for the part of you that’s already hard."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "She crosses the black water as if it owes her a path. Close enough that the steam becomes her breath on his mouth. Her palm finds the wet line of his collarbone — not Golhwa’s tease, not Hyullé’s apology — a quiet claim, and when she kisses him there is laughter under it, and hunger, and the patience of someone who has been watching him undress for longer than this visit.",
-						"ko": "검은 물을 건너온다. 물이 길을 빚진 것처럼. 김이 그의 입 위에서 그녀의 숨이 될 만큼 가깝다. 손바닥이 젖은 쇄골을 찾는다 — 골화의 장난도, 혈레의 사과도 아닌 — 조용한 차지. 입을 맞출 때 그 밑에 웃음이 있고, 굶주림이 있고, 이번 방문보다 오래 그가 벗는 것을 보아 온 사람의 참을성이 있다."
+						"html": "She crosses the black water to him, close enough that the steam is her breath on his mouth. Her palm settles on the wet line of his collarbone and stays. When she kisses him she is half laughing, hungry, and in no hurry at all. She has been watching Kims undress for as long as he has been alive.",
+						"ko": "그녀는 검은 물을 건너 그에게 온다. 김이 그녀의 숨이 되어 그의 입술에 닿을 만큼 가까이. 손바닥이 젖은 쇄골 위에 내려앉아 떠나지 않는다. 입을 맞추는 그녀는 반쯤 웃고 있고, 굶주려 있고, 조금도 서두르지 않는다. 그가 살아온 세월 내내, 그녀는 김씨 남자들이 옷 벗는 걸 지켜봐 왔다."
 					},
 					{
 						"kind": "dialogue",
@@ -12678,13 +12697,13 @@
 						"person": "narim",
 						"en": [
 							"Of course you do.",
-							"Mainland boys always do.",
-							"So kiss me like someone who will be late for the border"
+							"Kims always do.",
+							"Then kiss me like a man who’s going to be late."
 						],
 						"lines": [
 							"당연하죠.",
-							"뭍의 남자들은 늘 그래요.",
-							"그러니까 국경에 늦을 사람처럼 입 맞춰요"
+							"김씨들은 늘 그래요.",
+							"그럼 늦을 사람처럼 입 맞춰요."
 						]
 					},
 					{
@@ -12692,10 +12711,10 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"lines": [
-							"— 아직 될 때 비단 밑에 손을 넣고요."
+							"그리고 아직 될 때 비단 밑에 손 넣어요."
 						],
 						"en": [
-							"— and put your hand under the silk while you still can."
+							"And put your hand under the silk while you still can."
 						],
 						"nsfw": true
 					},
@@ -12743,12 +12762,12 @@
 						"en": [
 							"UNNIE.",
 							"You sent us for herbs so you could—?!",
-							"What does that mortal have that we don’t — wait. What do <i>you</i> have that <i>we</i> don’t?!"
+							"While we were out there picking weeds?!"
 						],
 						"lines": [
-							"언니.",
+							"언니!",
 							"약초 시키면서 그 짓을—?!",
-							"그 인간한테 우리한테 없는 게 뭐야 — 잠깐. <i>언니</i>가 <i>우리</i>한테 없는 게 뭐야?!"
+							"우린 밖에서 풀이나 뜯고 있었는데?!"
 						]
 					},
 					{
@@ -12774,8 +12793,8 @@
 						],
 						"lines": [
 							"…언니.",
-							"김이라 했잖아요.",
-							"김은… 그렇게 안 안아요."
+							"우린 그 사람 김이라며.",
+							"김은… 그렇게 안 안아."
 						]
 					},
 					{
@@ -12783,7 +12802,7 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"lines": [
-							"제가 하려고 했어요. 무릎 붙잡고 참았는데, 언니가 먼저 앉았어요."
+							"나도 하려고 했어. 무릎 꼭 붙이고 참았는데, 언니가 먼저 앉았잖아."
 						],
 						"en": [
 							"I was going to. I kept my knees together so I wouldn’t, and you sat down first."
@@ -12797,12 +12816,12 @@
 						"en": [
 							"Put the herbs down.",
 							"And close your mouths before the marshal remembers he can still dress.",
-							"…Hyullé. The ledge. Warm it anyway — he will run, and he will pretend this was weather."
+							"…Hyullé. The ledge. Warm it anyway. He’ll run, and then he’ll pretend nothing happened."
 						],
 						"lines": [
 							"약초 내려놔.",
 							"그리고 입 다물어. 대장군이 아직 옷 입을 수 있다는 걸 기억하기 전에.",
-							"…혈레. 턱. 그래도 데워 둬 — 뛸 거고, 이걸 날씨였다고 우길 테니."
+							"…혈레. 턱. 그래도 데워 둬. 도망갈 거고, 아무 일 없었던 척할 테니까."
 						]
 					},
 					{
@@ -12823,11 +12842,11 @@
 						"person": "yushin",
 						"en": [
 							"…I should go.",
-							"The Queen will need me before the year turns."
+							"Her Majesty will be needing me."
 						],
 						"lines": [
-							"…가야겠소.",
-							"여왕께서 해가 바뀌기 전에 나를 필요로 할 테니."
+							"…가 봐야겠소.",
+							"폐하께서 곧 나를 찾으실 거요."
 						]
 					},
 					{
@@ -12835,11 +12854,11 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"Oh <i>now</i> he thanks the exit.",
+							"Oh, <i>her</i> again.",
 							"Fine. Next time nobody leaves the rock. I mean it."
 						],
 						"lines": [
-							"아 <i>이제</i> 나가면서 고맙대.",
+							"아, <i>또</i> 그 인간.",
 							"좋아. 다음엔 아무도 바위 못 떠나. 진심이야."
 						]
 					},
@@ -12848,33 +12867,10 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"lines": [
-							"왕비 셈이 머리에서 빠질 때까지 얼굴에 앉을 거야."
+							"여왕 셈이 머리에서 빠질 때까지 얼굴에 앉을 거야. 그리고 언니는 이제 먼저 못 먹어."
 						],
 						"en": [
-							"I’ll sit on his face until the queen’s numbers fall out."
-						],
-						"nsfw": true
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0783a",
-						"person": "golhwa",
-						"lines": [
-							"우리랑 있어, 유신~~"
-						],
-						"en": [
-							"Stay with us, Yushin~~"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0783a",
-						"person": "golhwa",
-						"lines": [
-							"— 아니면 적어도 언니가 먼저 먹지 못하게 해."
-						],
-						"en": [
-							"— or at least stop letting unnie eat first."
+							"I’ll sit on his face until the queen’s numbers fall out. And unnie doesn’t get to eat first anymore."
 						],
 						"nsfw": true
 					},
@@ -12918,8 +12914,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He dresses in the cold with three pairs of eyes on him and one mouth still tasting of forest. When he looks again they are back on the far rock — as if nothing happened — except Golhwa’s foot swings harder, and Hyullé’s footprint takes longer to fade, and Narim’s smile is the smallest, most dangerous thing in the cave. He rides south with counsel under his ribs… and an invitation he can no longer pretend not to have answered.",
-						"ko": "추위 속에서 옷을 입는다. 눈 세 쌍이 그를 보고, 입 하나는 아직 숲 맛이 난다. 다시 보면 저쪽 바위에 돌아와 있다 — 아무 일 없었다는 듯이 — 다만 골화의 발은 더 세게 흔들리고, 혈레의 발자국은 더 늦게 지워지며, 나림의 미소는 동굴에서 가장 작고 가장 위험한 것이다. 갈비 밑에 조언을 품고 남으로 달린다… 그리고 더 이상 대답하지 않았다고 우길 수 없는 초대 하나를."
+						"html": "He dresses in the cold with three pairs of eyes on him, his mouth still tasting of forest. When he looks again they are back on the far rock as if nothing had happened, except that Golhwa’s foot swings harder, Hyullé’s footprint takes longer to fade, and Narim’s smile is small and not tired at all. He rides south with the counsel under his ribs and an invitation he has already answered.",
+						"ko": "그는 추위 속에서 옷을 입는다. 눈 세 쌍이 그를 보고 있고, 입에는 아직 숲 맛이 남아 있다. 다시 돌아보면 셋은 아무 일 없었다는 듯 저쪽 바위에 돌아가 있다. 다만 골화의 발이 더 세게 흔들리고, 혈레의 발자국이 더 늦게 지워지고, 나림의 미소는 작지만 조금도 지쳐 있지 않다. 그는 갈비뼈 아래 조언을 품고 남쪽으로 달린다. 이미 대답해 버린 초대 하나와 함께."
 					},
 					{
 						"kind": "day",
