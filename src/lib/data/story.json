@@ -55400,8 +55400,8 @@
 						"chip": "#c9b18f",
 						"person": "ungnyeo",
 						"lines": [
-							"내 머리 밑이야.",
-							"아까 내가 뺐어. …가지 마."
+							"내 머리 밑에 있어요.",
+							"아까 내가 뺐어요. …가지 마요."
 						],
 						"en": [
 							"Under my head.",
@@ -55424,7 +55424,7 @@
 						"chip": "#c9b18f",
 						"person": "ungnyeo",
 						"lines": [
-							"아침에 아내로 맞추시오.",
+							"아침에 나를 아내로 맞으시오.",
 							"지금은 여기 있소."
 						],
 						"en": [
@@ -55435,7 +55435,7 @@
 					{
 						"kind": "p",
 						"html": "Their son is <b>Dangun</b>. The name on the stone is <b>Wanggeom</b> — king who governs, not king who inherits a bone rank — and he founds Asadal where the mountain meets the plain, then moves the capital to the slopes of Paegak and Gunghol when the city outgrows its first prayer. He rules for one thousand five hundred years, and then becomes a mountain spirit.",
-						"ko": "그 아들이 <b>단군</b>이다. 돌에 새긴 이름은 <b>왕검</b> — 다스리는 임금, 골격 신분을 물려받은 임금이 아니라 — 이고, 그는 산과 평야가 만나는 곳에 아사달을 세운 뒤, 도읍이 첫 기도를 넘어설 때 백악과 궁홀의 비탈로 옮긴다. 천오백 년을 다스리고 산신이 된다."
+						"ko": "그 아들이 <b>단군</b>이다. 돌에 새긴 이름은 <b>왕검</b> — 다스리는 임금, 골품을 물려받은 임금이 아니라 — 이고, 그는 산과 평야가 만나는 곳에 아사달을 세운 뒤, 도읍이 첫 기도를 넘어설 때 백악과 궁홀의 비탈로 옮긴다. 천오백 년을 다스리고 산신이 된다."
 					},
 					{
 						"kind": "p",
@@ -55588,10 +55588,10 @@
 						"kind": "dialogue",
 						"chip": "#8d8d95",
 						"lines": [
-							"성이 무너진 게 아니야."
+							"들었나? 왕검성 성벽은 끝내 멀쩡했다더군."
 						],
 						"en": [
-							"The wall did not come down."
+							"Heard? The walls of Wanggeom never came down, they say."
 						],
 						"person": "herald"
 					},
@@ -55599,10 +55599,10 @@
 						"kind": "dialogue",
 						"chip": "#8d8d95",
 						"lines": [
-							"문이 안에서 열린 거지."
+							"문이 안에서 열렸다지 뭔가."
 						],
 						"en": [
-							"A door was opened from the inside."
+							"A door was opened from the inside, would you believe."
 						],
 						"person": "herald"
 					},
@@ -55807,10 +55807,12 @@
 						"kind": "dialogue",
 						"chip": "#eab308",
 						"lines": [
-							"남의 아들은 물러나도 되네. / 내 아들은 안 되고."
+							"남의 아들은 물러나도 되네.",
+							"내 아들은 안 되고."
 						],
 						"en": [
-							"Another man’s son may retreat. / Mine may not."
+							"Another man’s son may retreat.",
+							"Mine may not."
 						],
 						"person": "yushin"
 					},
@@ -55828,10 +55830,10 @@
 								"kind": "dialogue",
 								"chip": "#D8258C",
 								"lines": [
-									"법민아. 백제가 무너진 다음에 무슨 일이 일어날 것 같으냐?"
+									"법민아. 백제가 무너지면, 그다음은 어찌 될 것 같으냐?"
 								],
 								"en": [
-									"Bupmin. What do you think happens after Baekje falls?"
+									"Bupmin. When Baekje falls, what comes next?"
 								],
 								"person": "chunchu"
 							},
@@ -55850,7 +55852,7 @@
 								"kind": "dialogue",
 								"chip": "#D8258C",
 								"lines": [
-									"그 다음은."
+									"그다음은."
 								],
 								"en": [
 									"And after that."
@@ -55861,10 +55863,10 @@
 								"kind": "dialogue",
 								"chip": "#5b8dd6",
 								"lines": [
-									"…통일입니다."
+									"…그러면 삼한이 하나가 됩니다."
 								],
 								"en": [
-									"…Unification."
+									"…Then Samhan is one."
 								],
 								"person": "munmu"
 							},
@@ -55872,10 +55874,14 @@
 								"kind": "dialogue",
 								"chip": "#D8258C",
 								"lines": [
-									"아니다. / 그 다음은 <b>우리 차례</b>다."
+									"아니다.",
+									"토끼를 다 잡고 나면 사냥개를 삶는 법이다.",
+									"그다음은 <b>우리 차례</b>다."
 								],
 								"en": [
-									"No. / After that, <b>it is our turn</b>."
+									"No.",
+									"Once the hares are caught, the hound goes in the pot.",
+									"After that, <b>it is our turn</b>."
 								],
 								"person": "chunchu"
 							},
@@ -55888,10 +55894,16 @@
 								"kind": "dialogue",
 								"chip": "#D8258C",
 								"lines": [
-									"그때 절대로 먼저 치지 마라. / 저들이 고려에서 지칠 때까지 기다려라. / 성은 하나씩 되찾고, 되찾을 때마다 사죄 사절을 보내라. / 저들이 원하는 건 땅이 아니라 문서니까."
+									"그날이 와도 절대 먼저 치지 마라.",
+									"저들이 고려에서 지칠 때까지 기다려라.",
+									"성은 하나씩 되찾고, 하나 찾을 때마다 사죄 사신을 보내라.",
+									"바둑이라 생각해라. 돌은 내주고 집은 지켜라."
 								],
 								"en": [
-									"When it comes, never strike first. / Wait until they have exhausted themselves in the north. / Take the fortresses back one at a time, and send an apology after each one. / What they want is not the land. It is the paperwork."
+									"When that day comes, never strike first.",
+									"Wait till they’ve worn themselves out in the north.",
+									"Take the fortresses back one at a time, and send an apology after each one.",
+									"Play it like go. Give up stones, keep the territory."
 								],
 								"person": "chunchu"
 							},
@@ -55910,10 +55922,12 @@
 								"kind": "dialogue",
 								"chip": "#D8258C",
 								"lines": [
-									"바다는 마지막이다. / 저들이 말을 다 잃은 뒤에."
+									"바다는 마지막이다.",
+									"저들이 말을 다 잃은 뒤에."
 								],
 								"en": [
-									"The sea is last. / After they have lost the horses."
+									"The sea is last.",
+									"After they have lost the horses."
 								],
 								"person": "chunchu"
 							},
@@ -55932,10 +55946,12 @@
 								"kind": "dialogue",
 								"chip": "#D8258C",
 								"lines": [
-									"이세민한테 배웠다. / 그자가 나한테 하려던 걸 그대로 적어 뒀거든."
+									"이세민한테 배웠다.",
+									"그자가 나한테 하려던 걸 그대로 적어 뒀거든."
 								],
 								"en": [
-									"Li Shimin taught me. / I wrote down everything he intended to do to me."
+									"Li Shimin taught me.",
+									"I wrote down everything he intended to do to me."
 								],
 								"person": "chunchu"
 							}
@@ -56033,7 +56049,7 @@
 					{
 						"kind": "p",
 						"html": "Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern. The steam is thinner. The three are not. They look the same age they always looked — which is either mercy or mockery, and he has never asked which.",
-						"ko": "이제 늙어, 대부분 문서인 원정 사이에서도 유신은 동굴을 찾는다. 김은 옅어졌다. 셋은 아니다. 늘 그 나이로 보인다 — 자비인지 조롱인지, 그는 끝내 묻지 않았다."
+						"ko": "늙은 유신은, 원정이라 해 봐야 대개 문서 일뿐인 요즘에도, 여전히 동굴을 찾는다. 김은 옅어졌다. 셋은 그대로다. 늘 그 나이로 보인다 — 자비인지 조롱인지, 그는 끝내 묻지 않았다."
 					},
 					{
 						"kind": "p",
@@ -56046,11 +56062,11 @@
 						"person": "narim",
 						"en": [
 							"You still undress like a soldier checking for wounds.",
-							"Sit. The counsel is shorter these days. So is the war. Slower. Let me look at you."
+							"Slower. Let me look at you."
 						],
 						"lines": [
 							"아직도 상처 확인하듯 옷을 벗는군요.",
-							"앉아요. 요즘은 충고도 짧고, 전쟁도. 천천히 해요. 얼굴 좀 보게요."
+							"천천히 해요. 얼굴 좀 보게요."
 						]
 					},
 					{
@@ -56071,12 +56087,12 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"en": [
-							"But Her Majesty is gone.",
-							"…I still hear myself saying it."
+							"But Her Majesty —",
+							"…No. She’s gone."
 						],
 						"lines": [
-							"허나 폐하는 가셨소.",
-							"…입에서는 아직도 그 말이 나오오."
+							"허나 폐하께서는 —",
+							"…아니. 가셨지."
 						]
 					},
 					{
@@ -56086,12 +56102,12 @@
 						"en": [
 							"Ugh… even in the Western Flower Field she gets the title.",
 							"What did that mortal have that we don’t?",
-							"…Don’t answer. Stay until the steam drops. Before the hill keeps you."
+							"…Don’t answer. Just stay till the steam drops. Okay?"
 						],
 						"lines": [
-							"으엑… 서천꽃밭에서도 그 인간은 직함을 가져.",
+							"으엑… 서천꽃밭에 가서도 폐하 소리를 듣네.",
 							"그 인간한테 우리한테 없는 게 뭐였는데?",
-							"…답하지 마. 김이 식을 때까지 있어. 언덕이 널 두기 전에."
+							"…답하지 마. 김 가라앉을 때까지만 있어. 응?"
 						]
 					},
 					{
@@ -56099,12 +56115,12 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"en": [
-							"I didn’t — bring —",
+							"I didn’t — bring anything —",
 							"…It’s just warmer there.",
 							"You always liked it. Come sit. Please."
 						],
 						"lines": [
-							"제가 — 가져온 게 —",
+							"저 — 가져온 게 없어서 —",
 							"…그냥 거기가 더 따뜻해서요.",
 							"항상 좋아하셨잖아요. 와서 앉아요. 제발요."
 						]
@@ -56133,7 +56149,7 @@
 						"kind": "dialogue",
 						"chip": "#3fa9c9",
 						"lines": [
-							"유신..."
+							"유신…"
 						],
 						"en": [
 							"Yushin…"
@@ -56176,12 +56192,12 @@
 						"en": [
 							"Marshal.",
 							"One hundred and eight draws, one win that ended a friend, sixty years of being useful.",
-							"Question: were you becoming Silla — or proving you never needed their blood to outserve them?"
+							"One question, then we walk. Those sixty years — what did you want?"
 						],
 						"lines": [
 							"대장군.",
-							"백여덟 무승부, 친구를 끝낸 한 승, 육십 년의 쓸모.",
-							"질문: 신라가 되려 한 겁니까 — 아니면 그들 피 없이도 더 섬길 수 있음을 증명한 겁니까?"
+							"백여덟 번의 무승부, 벗을 끝낸 한 번의 승리, 예순 해의 쓸모.",
+							"질문 하나만 하고 걸읍시다. 그 예순 해, 무엇을 바라셨소?"
 						],
 						"chip": "#5f5f6b"
 					},
@@ -56189,12 +56205,10 @@
 						"kind": "dialogue",
 						"person": "yushin",
 						"en": [
-							"…I wanted in.",
-							"Wanting in is not shameful. Pretending I did not is."
+							"…I wanted in."
 						],
 						"lines": [
-							"…들어가고 싶었네.",
-							"들어가고 싶은 건 부끄러운 게 아니야. 아니라고 꾸미는 게 부끄러운 거지."
+							"…들어가고 싶었소."
 						],
 						"chip": "#4a8fe0"
 					},
@@ -56203,11 +56217,11 @@
 						"person": "kangrim",
 						"en": [
 							"Clean answer.",
-							"His Majesty’s kingdom has room for men who told the truth late."
+							"There’s room where we’re going. Walk."
 						],
 						"lines": [
-							"깨끗한 대답이군.",
-							"폐하의 나라엔 늦게 진실을 말한 사내를 둘 자리가 있네."
+							"깨끗한 대답이오.",
+							"우리가 가는 곳엔 자리가 있소. 걸으시지요."
 						],
 						"chip": "#5f5f6b"
 					},
@@ -56220,10 +56234,10 @@
 						"kind": "dialogue",
 						"chip": "#e07fa8",
 						"lines": [
-							"오라버니. 이제 신라 사람이에요?"
+							"오라버니. 이제 신라 사람 됐어?"
 						],
 						"en": [
-							"Brother. Are you a Silla man now?"
+							"Brother. Are you a Silla man yet?"
 						],
 						"person": "munhee"
 					},
@@ -56231,7 +56245,7 @@
 						"kind": "dialogue",
 						"chip": "#4a8fe0",
 						"lines": [
-							"…모르겠다. 물어봐 다오, 저들에게."
+							"…모르겠다. 저들한테 물어봐 다오."
 						],
 						"en": [
 							"…I don’t know. Ask them for me."
@@ -56522,8 +56536,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "They smell him before they see him — uncle’s heat, father’s road-dust, both houses in one walk. He still thinks he is alone. Time drops. Golhwa’s mouth opens and does not close. Hyullé cannot get a word out. Narim bites her lip and fails at being eldest.",
-						"ko": "보기 전에 맡는다 — 외숙의 열, 아버지의 길먼지, 한 걸음 안에 집 둘. 아직 혼자인 줄 안다. 시간이 떨어진다. 골화의 입이 열리고 다물어지지 않는다. 혈레는 말이 안 나온다. 나림은 입술을 깨물고 언니이기를 실패한다.",
+						"html": "They smell him before they see him: the uncle’s heat and the father’s road-dust, both houses in one walk. He still thinks he is alone. Golhwa’s mouth opens and stays open, Hyullé cannot get a word out, and Narim bites her lip and fails, for once, at being the eldest.",
+						"ko": "보기도 전에 냄새로 안다. 외숙의 열기와 아버지의 길먼지, 두 집안이 한 걸음에 다 들어 있다. 그는 아직 혼자인 줄 안다. 골화는 입이 벌어진 채 다물지 못하고, 혈레는 한마디도 꺼내지 못하고, 나림은 입술을 깨문 채 이번만은 맏이 노릇에 실패한다.",
 						"nsfw": true
 					},
 					{
@@ -56538,11 +56552,11 @@
 						"person": "munmu",
 						"en": [
 							"Who…",
-							"Who lives here. I was looking for a spring my uncle named."
+							"Who lives here? My uncle only ever called it a spring."
 						],
 						"lines": [
 							"누구…",
-							"여긴 누가 사는 곳이오. 외숙이 샘이라 한 곳을 찾았소."
+							"여기 누가 사시오? 외숙은 그냥 샘이라고만 했소."
 						],
 						"art": "Reverse angle: the three sisters on the rock across the water, each in her signature posture from the cast bible; house silk and binyeo."
 					},
@@ -56552,17 +56566,17 @@
 						"person": "narim",
 						"en": [
 							"We do. You fell.",
-							"The door is the name. Kim. You came the same way. Sit—"
+							"Only Kims find it. They all come in like that. Sit—"
 						],
 						"lines": [
 							"우리가 살아요. 당신은 떨어졌고요.",
-							"문이 이름이에요. 김. 같은 길로 왔어요. 앉—"
+							"김씨만 찾아오는 곳이에요. 다들 그렇게 빠져서 와요. 앉—"
 						]
 					},
 					{
 						"kind": "p",
-						"html": "He looks at her like she is kind. Narim cannot finish the sentence. Out of breath, and she pretends the steam did that. Sit down before I ask you to put me on the rock, she does not say. Fuck. Uncle’s shoulders. Father’s mouth. She is not supposed to want both.",
-						"ko": "그가 친절한 사람을 보듯 본다. 나림은 문장을 끝내지 못한다. 숨이 가쁘다, 김 탓인 척한다. 앉아요, 내가 바위에 눕혀 달라고 하기 전에 — 그 말은 안 한다. 씨발. 외숙의 어깨. 아버지의 입. 둘 다 원하면 안 된다.",
+						"html": "He looks at her kindly, and Narim cannot finish the sentence. She is out of breath and lets the steam take the blame. <i>Sit down before I ask you to lay me on that rock</i>, she does not say. His uncle’s shoulders, his father’s mouth: she is not supposed to want both.",
+						"ko": "그가 다정하게 바라보자, 나림은 말을 끝맺지 못한다. 숨이 가쁜 것은 김 탓으로 돌린다. <i>앉아요, 저 바위에 눕혀 달라고 조르기 전에.</i> 그 말은 하지 않는다. 외숙의 어깨, 아버지의 입. 둘 다 원하면 안 되는 거였다.",
 						"nsfw": true
 					},
 					{
@@ -56571,11 +56585,15 @@
 						"person": "golhwa",
 						"en": [
 							"Oh. Oh no.",
-							"He’s both. Hi. I’m Golhwa. That’s unnie. That’s Hyullé. Don’t look at me like that or I am going to say the stupid thing."
+							"He’s both. Uncle and father.",
+							"Hi. I’m Golhwa. That’s unnie. That’s Hyullé.",
+							"Don’t look at me like that or I’m going to say the stupid thing."
 						],
 						"lines": [
-							"아. 아 안 돼.",
-							"둘 다야. 안녕. 나 골화. 저 언니. 저 혈레. 그렇게 보지 마. 보면 바보 같은 말 할 거야."
+							"아. 아, 안 돼.",
+							"둘 다 닮았어. 외삼촌도, 아버지도.",
+							"안녕. 나 골화. 저쪽이 언니, 저기가 혈레.",
+							"그렇게 보지 마. 보면 바보 같은 말 할 거야."
 						]
 					},
 					{
@@ -56583,7 +56601,7 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"lines": [
-							"바보 같은 말은, 앉고 싶다는 거."
+							"바보 같은 말이 뭐냐면, 네 위에 앉고 싶다는 거."
 						],
 						"en": [
 							"The stupid thing is I want to sit on you."
@@ -56595,19 +56613,19 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"You’re both—",
-							"I can’t sit. I haven’t even said hello properly."
+							"It’s because you’re both—",
+							"Ah— no. I haven’t even said hello properly."
 						],
 						"lines": [
-							"둘 다라서—",
-							"못 앉아. 안녕도 제대로 못 했는데."
+							"둘 다라서 그래—",
+							"아, 아니. 안녕도 제대로 안 했는데."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "Gaya shoulders. Surabol mouth. She has been on the rock since the uncle left. She wants him to pin her until she goes insane.",
-						"ko": "가야 어깨. 서라벌 입. 외숙 가고부터 내내 그 바위 위였다. 미쳐버릴 때까지 눌러 줬으면.",
+						"html": "She has been on that rock since the uncle stopped coming. She wants this one to hold her down on the stone until she forgets her own name.",
+						"ko": "외숙이 발길을 끊은 뒤로 내내 그 바위 위였다. 이 사내가 저를 돌 위에 눌러, 제 이름도 잊게 해 줬으면 싶다.",
 						"nsfw": true
 					},
 					{
@@ -56626,17 +56644,17 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"lines": [
-							"이미 젖었어요. 둘 다 모른 척해 주세요."
+							"…벌써 젖었어요. 못 들은 걸로 해 주세요."
 						],
 						"en": [
-							"I’m already wet. Please ignore both."
+							"…I’m already wet. Please pretend you didn’t hear that."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "Silk on Hyullé is only water now. She stands near him and looks like she will explode. The hello is all she can get out. In the steam she is already filled. She will not say it. He keeps the black water as a wall. He does not climb out.",
-						"ko": "혈레 위의 비단은 이제 물뿐이다. 곁에 서서 터질 것처럼 보인다. 안녕이 나올 수 있는 말의 전부다. 김 속에서 이미 채워져 있다. 그 말은 안 한다. 그는 검은 물을 벽으로 쓴다. 올라오지 않는다.",
+						"html": "The silk on Hyullé is only water now. She stands close to him looking as if she might come apart, and the hello is all she can get out. In the steam she has already had him, and she will never say so. He keeps the black water between them like a wall and does not climb out.",
+						"ko": "혈레 위의 비단은 이제 물뿐이다. 그 곁에 서서 금방이라도 무너질 것 같은 얼굴인데, 입 밖에 나오는 건 안녕 한마디뿐이다. 김 속에서는 이미 그를 가졌고, 그 말은 끝내 하지 않을 것이다. 그는 검은 물을 벽처럼 사이에 두고, 올라오지 않는다.",
 						"nsfw": true
 					},
 					{
@@ -56645,11 +56663,11 @@
 						"person": "narim",
 						"en": [
 							"Sit down before you fall in again.",
-							"We are the mouths the hill uses. Wisdom, if you stand in the water and ask once. The uncle is gone. The hill is not."
+							"If you came to ask something, ask it once. The hill will answer."
 						],
 						"lines": [
 							"또 빠지기 전에 앉아요.",
-							"언덕이 쓰는 입이에요. 지혜요, 물에 서서 한 번만 물으면. 외숙은 갔어요. 언덕은 안 가요."
+							"물을 게 있으면 한 번만 물어요. 언덕이 대답할 거예요."
 						]
 					},
 					{
@@ -56657,12 +56675,12 @@
 						"chip": "#C41E3A",
 						"person": "munmu",
 						"en": [
-							"I came because he died.",
-							"…Will the west stay taken."
+							"I came because my uncle died.",
+							"…Can we keep what we’ve won?"
 						],
 						"lines": [
-							"그가 죽어서 왔소.",
-							"…서쪽은 가져온 채로 남겠소."
+							"외숙이 돌아가셔서 왔소.",
+							"…이긴 것을, 지킬 수 있겠소?"
 						]
 					},
 					{
@@ -56689,11 +56707,11 @@
 						"person": "golhwa",
 						"en": [
 							"That was the hill. This is me.",
-							"Come back anyway. You’re both. I can’t sit. I want you back in the water with nothing on, and that is the stupid thing."
+							"Come back anyway. Like this, nothing on. …See? There’s the stupid thing."
 						],
 						"lines": [
 							"그건 언덕이었어. 이건 나야.",
-							"그래도 돌아와. 둘 다라서. 못 앉아. 아무것도 안 입고 물로 다시 와. 그게 바보 같은 말이야."
+							"그래도 또 와. 이렇게, 아무것도 안 걸치고. …거봐, 바보 같은 말 했잖아."
 						],
 						"nsfw": true
 					},
@@ -56708,13 +56726,13 @@
 						"person": "dangun",
 						"en": [
 							"You wanted a king for all when you were six.",
-							"The title you are looking for is older than your father’s reforms.",
-							"Wanggeom — not Sacred Bone, not True Bone. The first who stayed when heaven descended."
+							"The name you’re after is older than anything your father brought back from the West.",
+							"Wanggeom — not Sacred Bone, not True Bone. The first who stayed when heaven came down."
 						],
 						"lines": [
-							"여섯 살 때 모두를 위한 임금을 원했다.",
-							"네가 찾는 칭호는 아버지의 개혁보다 오래되었다.",
-							"왕검 — 성골도, 진골도 아닌. 하늘이 내려왔을 때 머문 첫 임금."
+							"여섯 살에 너는 모두를 위한 임금을 바랐지.",
+							"네가 찾는 그 이름은, 네 아비가 서쪽에서 들여온 무엇보다 오래됐다.",
+							"왕검. 성골도 진골도 아닌, 하늘이 내려왔을 때 머문 첫 임금이다."
 						]
 					},
 					{
@@ -56722,12 +56740,12 @@
 						"chip": "#3fa9c9",
 						"person": "munmu",
 						"en": [
-							"Who are you.",
-							"Which court sent you."
+							"Who are you?",
+							"Which court sent you?"
 						],
 						"lines": [
-							"누구십니까.",
-							"어느 조정에서 보내신 겁니까."
+							"누구십니까?",
+							"어느 조정에서 보내셨습니까?"
 						]
 					},
 					{
@@ -56735,14 +56753,14 @@
 						"chip": "#b8956a",
 						"person": "dangun",
 						"en": [
-							"Asadal is dust.",
-							"The mandate is not.",
-							"Finish what your uncle could not name aloud."
+							"Asadal. Dust, long ago.",
+							"The mandate stayed.",
+							"Finish what your uncle never said out loud."
 						],
 						"lines": [
-							"아사달은 흙이 되었다.",
-							"명은 아니다.",
-							"외숙이 입 밖에 내지 못한 것을 끝내라."
+							"아사달. 흙이 된 지 오래다.",
+							"명은 남았다.",
+							"네 외숙이 끝내 입 밖에 못 낸 것을, 네가 마저 해라."
 						]
 					},
 					{
@@ -56831,21 +56849,21 @@
 						"kind": "dialogue",
 						"chip": "#e8e3d5",
 						"lines": [
-							"신라… 예전에 우리와 같이 싸웠던 나라.",
-							"이제 그 나라가, 나의 마지막 상대인가."
+							"신라라… 한때는 같이 싸웠는데.",
+							"이 늙은 농사꾼의 마지막 싸움이 저들이로군."
 						],
 						"en": [
-							"Silla… the country that once fought beside us.",
-							"And now that country is to be my last opponent."
+							"Silla… We fought on the same side, once.",
+							"And now they’re this old farmer’s last fight."
 						],
 						"person": "xuerengui",
 						"zh": [
-							"新羅……曾與我并肩作戰之國。",
-							"而今，那國竟成我最後之對手。"
+							"新羅……昔日曾並肩作戰。",
+							"如今，竟是我這老農最後一戰。"
 						],
 						"zhLatn": [
-							"Xīnluó… céng yǔ wǒ bìngjiān zuòzhàn zhī guó.",
-							"Ér jīn, nà guó jìng chéng wǒ zuìhòu zhī duìshǒu."
+							"Xīnluó… xīrì céng bìngjiān zuòzhàn.",
+							"Rújīn, jìng shì wǒ zhè lǎonóng zuìhòu yī zhàn."
 						]
 					},
 					{
@@ -57023,20 +57041,20 @@
 						"chip": "#e8e3d5",
 						"lines": [
 							"…말을 잃었군.",
-							"농부에게 말을 잃는 일은… 밭을 잃는 일과 같소."
+							"봄갈이는 글렀다."
 						],
 						"en": [
 							"…So the horses are gone.",
-							"For a farmer, losing horses… is like losing the field."
+							"No spring ploughing, then."
 						],
 						"person": "xuerengui",
 						"zh": [
 							"……馬沒了。",
-							"對農夫而言，失馬……如失田。"
+							"春耕無望矣。"
 						],
 						"zhLatn": [
 							"…Mǎ méi le.",
-							"Duì nóngfū éryán, shī mǎ… rú shī tián."
+							"Chūngēng wú wàng yǐ."
 						]
 					},
 					{
@@ -57214,11 +57232,11 @@
 						"chip": "#4f7fbf",
 						"lines": [
 							"저놈들 배는 크다.",
-							"큰 배는 개펄에서 못 돈다. 끌고 들어와."
+							"개펄에 얹히면 꼼짝 못 한다. 끌고 들어와."
 						],
 						"en": [
 							"Their ships are big.",
-							"A big ship can’t turn on the mudflats. Draw them in."
+							"Get them onto the mudflats and they’ll stick. Draw them in."
 						],
 						"speaker": "Sideuk"
 					},
@@ -57393,11 +57411,11 @@
 						"person": "munmu",
 						"en": [
 							"Mother.",
-							"I kept the childhood sentence."
+							"What I said when I was six — I kept it."
 						],
 						"lines": [
 							"어머니.",
-							"어린 문장을 지켰어요."
+							"여섯 살 때 한 말, 지켰어요."
 						],
 						"chip": "#3fa9c9",
 						"look": "king"
@@ -57407,11 +57425,11 @@
 						"person": "munhee",
 						"en": [
 							"I know.",
-							"I packed for every country that tried to stop you."
+							"I packed every bag."
 						],
 						"lines": [
 							"알아.",
-							"너를 막으려던 나라마다 짐을 싸 줬으니까."
+							"짐은 내가 다 싸 줬잖니."
 						],
 						"chip": "#e07fa8"
 					},
@@ -57429,7 +57447,7 @@
 						"kind": "dialogue",
 						"chip": "#e07fa8",
 						"lines": [
-							"가만있어라. 목이 삐뚤다."
+							"가만있어라. 옷깃이 삐뚤어졌다."
 						],
 						"en": [
 							"Hold still. Your collar is crooked."
@@ -57471,7 +57489,7 @@
 							"아버지가 늘 하시던 말씀이 있었잖습니까. 천 년 가는 나라."
 						],
 						"en": [
-							"Father used to say a thing. A kingdom that lasts a thousand years."
+							"Remember what Father always said? A kingdom that lasts a thousand years."
 						],
 						"person": "munmu"
 					},
@@ -57626,7 +57644,7 @@
 					{
 						"kind": "p",
 						"html": "The autumn Pyongyang falls, the fields of Manchuria are taller than a boy’s shoulder. <b>Gulgul</b> walks them with a cloth bundle hard against his ribs — not grain. A shard of the Goryeo crown, broken when the city fell, still warm with the authority nobody else would carry north.",
-						"ko": "평양이 무너지던 가을, 만주의 밭은 아이 어깨보다 높다. <b>걸걸</b>이 갈비에 단단한 보따리를 안고 걷는다 — 곡식이 아니다. 성이 무너질 때 깨진 고려 왕관의 조각. 북쪽으로 가져가려 한 사람이 없어서, 아직도 권위의 온기가 남아 있다."
+						"ko": "평양이 무너지던 가을, 만주의 밭은 아이 어깨보다 높다. <b>걸걸</b>이 갈비에 단단한 보따리를 안고 걷는다 — 곡식이 아니다. 성이 무너질 때 깨진 고려 왕관의 조각. 아무도 북쪽으로 지고 가려 하지 않던 권위의 온기가 아직 남아 있다."
 					},
 					{
 						"kind": "p",
@@ -57637,12 +57655,12 @@
 						"kind": "dialogue",
 						"person": "gulgul",
 						"en": [
-							"Keep it under the coat.",
-							"By the Holy King’s bow — if they see gold, they will remember we were a country."
+							"Keep it under your coat for now.",
+							"By the Holy King’s bow, the day they see this gold, they’ll remember we were a country."
 						],
 						"lines": [
-							"웃옷 안에 넣어라.",
-							"성왕의 활에 걸고 — 금을 보면, 우리가 나라였다는 걸 기억할 테니까."
+							"아직은 웃옷 안에 넣어 둬라.",
+							"성왕의 활에 걸고, 이 금을 보는 날엔 다들 기억할 거다. 우리가 나라였다는 걸."
 						],
 						"chip": "#8b3a3a"
 					},
@@ -57665,12 +57683,12 @@
 						"en": [
 							"He called it Goguryeo.",
 							"Everyone else got tired and said Goryeo.",
-							"You — you say it the way he would have wanted."
+							"You say it the way he did."
 						],
 						"lines": [
-							"그는 고구려라 불렀다.",
-							"나머지는 지쳐서 고려라 했다.",
-							"너는 — 그가 원했을 방식으로 말해라."
+							"그분은 고구려라고 했다.",
+							"다들 지쳐서 고려라고 줄여 불렀지.",
+							"너는 그분처럼 불러라."
 						],
 						"chip": "#8b3a3a"
 					},

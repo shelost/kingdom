@@ -1063,6 +1063,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		tagline: 'The boy who repeated what the fields would not forget.',
 		quote: "A crown in shards is still a crown.",
+		voice: 'Short, honest questions to his father; shouts when he speaks for the country. Korean: 해요체 to his father.',
 		arc: 'Son of Dae Gulgul. Runs through Manchurian millet with a crown-shard against his ribs and a sentence in his mouth that outlives every wall.',
 		events: [
 			{ year: 668, label: 'Flees the fall with his father and a piece of the crown.' },
@@ -1502,8 +1503,8 @@ export const PEOPLE: Person[] = [
 			ko: '나는 모두를 위한 왕이 되고 싶다. 성골의 왕도, 진골의 왕도 아닌. 모두를 위한.'
 		},
 		lastLine: {
-			en: 'Wait… why is one side of the Goryeo crown strange?',
-			ko: '잠깐… 왜 고구려 관 한쪽이 이상하지?'
+			en: 'Remember what Father always said? A kingdom that lasts a thousand years.',
+			ko: '아버지가 늘 하시던 말씀이 있었잖습니까. 천 년 가는 나라.'
 		},
 		nature: 'Unsung true main character: he does not bend the age the way Chunchu, Yeon, or Euija do, but he is the one the chronicle lets you stand beside — watching a sister die, watching a father invent a country, learning the war from the wrong end of the map, and finishing the sentence he stole as a child. Falls for Jahee at the harbour in a K-drama of rain and wrong sums; keeps the lesson that purple is a colour and the ocean is a country. Desire: a kingdom that includes the quay. Wound: Gotaso’s empty seat.',
 		voice:
@@ -4043,6 +4044,7 @@ export const PEOPLE: Person[] = [
 		realm: { en: 'Old Joseon', ko: '고조선' },
 		tagline: 'Demigod — Grandson of Heaven; first earthly steward of the mandate.',
 		quote: 'Heaven descends. Someone must stay and govern.',
+		voice: 'Spare, unhurried, grandfatherly. Answers sideways with a place or a name, and never argues. Korean: short 해라체.',
 		arc: 'Grandson of Heaven: Hwanin opens the sky; Hwanung descends with three seals and three thousand to Sinsi under the sandalwood tree, ministers of wind, rain, and cloud at his side. The Bear-Woman outlasts the tiger; their son Wanggeom — king who governs, not bone rank — founds Asadal and rules Old Joseon until mountain-spirit retirement. Later crowns copy the mandate; once, after Yushin’s death, he walks the steam for Munmu and names the wanggeom’s work the boy wanted at six.',
 		events: [
 			{ label: 'Born of Hwanung and Ungnyeo under the divine birch.' },
@@ -4064,6 +4066,7 @@ export const PEOPLE: Person[] = [
 		died: -108,
 		tagline: 'The last king of Old Joseon, betrayed from inside his own walls.',
 		quote: 'A gate kept by traitors is already open.',
+		voice: 'Curt, suspicious, proud: a besieged king who interrogates rather than argues, and gives one soft order as he dies. Korean: short 해라체.',
 		events: [{ year: -108, label: 'Wanggeom falls to the Han; the Four Commanderies begin.' }],
 		career: [
 			{ title: 'King of Old Joseon', korean: '왕', hanja: '王', org: 'nation-joseon', to: -108 }
@@ -5583,8 +5586,8 @@ export const CONCEPTS: Person[] = [
 			ko: '고타소 낭자. 질문 하나만 드리고, 걸으시지요. 영원을 고르실 때 — 그 사람을 고르신 겁니까, 맹세를 고르신 겁니까?'
 		},
 		lastLine: {
-			en: 'Clean answer. His Majesty’s kingdom has room for men who told the truth late.',
-			ko: '깨끗한 답이오. 폐하의 나라에는 늦게 진실을 말한 자의 자리도 있소.'
+			en: 'Clean answer. There’s room where we’re going. Walk.',
+			ko: '깨끗한 대답이오. 우리가 가는 곳엔 자리가 있소. 걸으시지요.'
 		},
 		nature:
 			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
