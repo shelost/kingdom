@@ -127,10 +127,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 				{ title: 'Five Thousand' },
 				{ title: 'The Fifth Year' }
 			]
-		},
-		{
-			parent: 'The Three Loyalists',
-			children: [{ title: 'Onjo' }]
 		}
 	],
 	'fall-of-baekje': [

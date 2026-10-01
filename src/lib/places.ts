@@ -805,6 +805,7 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Stallion Mountain': 'jupil',
 	'Boiling River': 'gungnae',
 	'Jumong': 'jolbon',
+	'Dongmyung': 'jolbon',
 	'Annual Meeting of the Three Realms': 'realms_pavilion',
 	'The Girl Who Cut Her Hair': 'western_flower_field',
 	'Ansi': 'ansi',
