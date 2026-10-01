@@ -46,7 +46,15 @@ export interface ImageSlot {
 /** ImageSlot plus the beat index it was flattened against for sticky stacks. */
 export type StackImage = ImageSlot & { beatIndex?: number };
 
-export type Block =
+/**
+ * Panel note for the artist / letterer ("Wordless.", "Thought balloon.",
+ * "Full-page end card.", camera and posture directions). Never rendered in
+ * the reader; the script export prints it beside the beat.
+ */
+export type PanelNote = { art?: string };
+
+export type Block = PanelNote &
+	(
 	// `ko` is the Korean rendering of English narration
 	| { kind: 'p'; html: string; ko?: string; nsfw?: boolean; /** Soundtrack cue while this paragraph is the latest one reached. */ music?: string }
 	// `en` is the English rendering of `lines`, index-for-index.
@@ -70,7 +78,8 @@ export type Block =
 			nsfw?: boolean;
 	  }
 	| { kind: 'cite'; html: string; ko?: string } // "• 👑 King Mu (51) of Baekje"
-	| { kind: 'verse'; color: string; lines: string[] }
+	// `en` is the English rendering of `lines`, index-for-index.
+	| { kind: 'verse'; color: string; lines: string[]; en?: string[] }
 	| { kind: 'table'; head: string[]; rows: string[][]; colors?: string[] }
 	| { kind: 'hanja'; chars: { char: string; gloss: string }[]; after?: string }
 	// A genuine line from the record — rendered in light yellow, with its source.
@@ -103,7 +112,8 @@ export type Block =
 	// Scene break (same plate as `day`; used if a merge names the cut a scene).
 	| { kind: 'scene'; label: string; ko?: string }
 	// A mini-flashback that interrupts an entry mid-scroll.
-	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] };
+	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] }
+	);
 
 export interface Entry {
 	year: string;

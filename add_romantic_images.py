@@ -10,42 +10,6 @@ romantic_images = [
     {
         "entry_key": ("641", "Gotaso's Wedding"),
         "image": {
-            "id": "gotaso-pumsuk-passion",
-            "ratio": 1.778,
-            "tone": "#d0362f",
-            "alt": "Gotaso and Pumsuk in intimate proximity, faces nearly touching, silhouetted against warm candlelight - passionate love and deep longing",
-            "at": "passionate love and longing",
-            "src": "/img_gotaso_pumsuk_passion.png",
-            "refs": ["/ch_gotaso.png", "/ch_pumsuk.png"]
-        }
-    },
-    {
-        "entry_key": ("641", "Gotaso's Wedding"),
-        "image": {
-            "id": "wedding-night-anticipation",
-            "ratio": 1.778,
-            "tone": "#d0362f",
-            "alt": "Wedding night symbolic union - two figures in bridal chamber separated by red silk curtains, nervous anticipation and threshold moment",
-            "at": "the threshold moment",
-            "src": "/img_wedding_night_anticipation.png",
-            "refs": []
-        }
-    },
-    {
-        "entry_key": ("641", "Gotaso's Wedding"),
-        "image": {
-            "id": "secret-meeting-night",
-            "ratio": 1.778,
-            "tone": "#3b82f6",
-            "alt": "Secret midnight meeting in hidden pavilion - lovers reaching through lattice screens under moonlight, clandestine romance",
-            "at": "secret meetings",
-            "src": "/img_secret_meeting_night.png",
-            "refs": []
-        }
-    },
-    {
-        "entry_key": ("641", "Gotaso's Wedding"),
-        "image": {
             "id": "moonlit-silhouettes-romance",
             "ratio": 1.778,
             "tone": "#3b82f6",

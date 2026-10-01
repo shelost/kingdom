@@ -249,6 +249,16 @@
 	"sunduk-star-shaft": [
 		"sunduk"
 	],
+	"parody-coronation-dukman": [
+		"bidam",
+		"sunduk"
+	],
+	"parody-sejong-sunduk": [
+		"sunduk"
+	],
+	"ink-peony-no-butterflies-sunduk": [
+		"sunduk"
+	],
 	"crescent-hwarang": [
 		"jinheung"
 	],
@@ -368,6 +378,17 @@
 	"chunchu-royal-intimacy": [
 		"chunchu"
 	],
+	"hs-pentagon": [
+		"gesomun",
+		"gusesa"
+	],
+	"hs-hands-flat": [
+		"gesomun"
+	],
+	"hs-sit-down": [
+		"gesomun",
+		"gusesa"
+	],
 	"poster_namseng": [
 		"gesomun",
 		"namseng"
@@ -412,6 +433,18 @@
 		"gwanggaeto"
 	],
 	"gwanggaeto_hostages": [
+		"gwanggaeto"
+	],
+	"parody-napoleon-gwanggaeto": [
+		"gwanggaeto"
+	],
+	"parody-alexander-mosaic-gwanggaeto": [
+		"gwanggaeto"
+	],
+	"parody-ingres-throne-gwanggaeto": [
+		"gwanggaeto"
+	],
+	"parody-vercingetorix-gwanggaeto": [
 		"gwanggaeto"
 	],
 	"bupmin-birth-white": [
@@ -537,16 +570,11 @@
 		"yushin"
 	],
 	"gotaso_07": [
-		"sunduk",
-		"yushin"
-	],
-	"gotaso-pumsuk-passion": [
+		"chunchu",
 		"gotaso",
-		"pumsuk"
-	],
-	"pumsuk-forbidden-desire": [
-		"gumilwife",
-		"pumsuk"
+		"munhee",
+		"pumsuk",
+		"yushin"
 	],
 	"gotaso-determination-forward": [
 		"gotaso"
@@ -613,6 +641,20 @@
 		"chunchu",
 		"munhee"
 	],
+	"parody-wolha-chunchu-munhee": [
+		"chunchu",
+		"munhee",
+		"yun"
+	],
+	"parody-masters-pumsuk": [
+		"alchun",
+		"pumsuk"
+	],
+	"parody-inwang-surabol-flood": [
+		"bohee",
+		"munhee",
+		"namsan"
+	],
 	"stele-sunrise": [
 		"gwanggaeto"
 	],
@@ -637,6 +679,10 @@
 		"namgun",
 		"namsan",
 		"namseng"
+	],
+	"ink-stele-yeon-sons": [
+		"gesomun",
+		"gwanggaeto"
 	],
 	"poster_euija": [
 		"euija"
@@ -722,441 +768,6 @@
 	"sever-blade-line": [
 		"dodo",
 		"muryuk"
-	],
-	"seohyeon-accident-wide": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-cavern-wide": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-robe-falls": [
-		"seohyeon"
-	],
-	"seohyeon-naked-enter": [
-		"seohyeon"
-	],
-	"seohyeon-wet-back": [
-		"seohyeon"
-	],
-	"goddesses-heart-stare": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"golhwa-drool-hearts": [
-		"golhwa"
-	],
-	"hyulle-shy-hearts": [
-		"hyulle"
-	],
-	"narim-hunger-hearts": [
-		"narim"
-	],
-	"seohyeon-their-gaze": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"narim-silk-appeal": [
-		"narim"
-	],
-	"golhwa-wade-close": [
-		"golhwa"
-	],
-	"hyulle-thighs-claim": [
-		"hyulle"
-	],
-	"seohyeon-wont-stand": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"goddesses-stake-him": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"golhwa-spread-wink": [
-		"golhwa"
-	],
-	"golhwa-grind-rock": [
-		"golhwa"
-	],
-	"hyulle-will-spill": [
-		"hyulle"
-	],
-	"narim-sentence-dies": [
-		"narim"
-	],
-	"hyulle-near-him": [
-		"hyulle",
-		"seohyeon"
-	],
-	"narim-his-kind-look": [
-		"narim",
-		"seohyeon"
-	],
-	"golhwa-pounce-kim": [
-		"golhwa",
-		"seohyeon"
-	],
-	"goddesses-lounge-wide": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"golhwa-lounge-tongue": [
-		"golhwa"
-	],
-	"hyulle-lounge-bite": [
-		"hyulle"
-	],
-	"narim-lounge-lip": [
-		"narim"
-	],
-	"goddesses-fantasy-lie": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"goddesses-crone-shift": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"goddesses-milf-shift": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"goddesses-settle-beauty": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"goddesses-heads-turn": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"goddesses-pronounce-glow": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"goddesses-yushin-prophecy": [
-		"narim",
-		"seohyeon",
-		"yushin"
-	],
-	"seohyeon-prophecy-surprise": [
-		"seohyeon"
-	],
-	"seohyeon-shadow-wet": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-leaving": [
-		"seohyeon"
-	],
-	"golhwa-loins-low": [
-		"golhwa"
-	],
-	"golhwa-loins-hands": [
-		"golhwa"
-	],
-	"golhwa-rock-kiss": [
-		"golhwa"
-	],
-	"golhwa-rock-embrace": [
-		"golhwa"
-	],
-	"golhwa-rock-cheek": [
-		"golhwa"
-	],
-	"golhwa-rock-pov": [
-		"golhwa"
-	],
-	"golhwa-rock-arch": [
-		"golhwa"
-	],
-	"golhwa-rock-peaked": [
-		"golhwa"
-	],
-	"golhwa-rock-manhwa-astride": [
-		"golhwa"
-	],
-	"golhwa-rock-riding": [
-		"golhwa"
-	],
-	"golhwa-rock-hips-press": [
-		"golhwa"
-	],
-	"golhwa-rock-hip-curve": [
-		"golhwa"
-	],
-	"golhwa-rock-worm-sky": [
-		"golhwa"
-	],
-	"golhwa-rock-worm-open": [
-		"golhwa"
-	],
-	"golhwa-rock-hike-high": [
-		"golhwa"
-	],
-	"golhwa-rock-silk-press": [
-		"golhwa"
-	],
-	"golhwa-rock-cleavage": [
-		"golhwa"
-	],
-	"golhwa-rock-ceiling": [
-		"golhwa"
-	],
-	"narim-rock-hike-high": [
-		"narim"
-	],
-	"hyulle-rock-hike-shy": [
-		"hyulle"
-	],
-	"golhwa-thought-bubble": [
-		"golhwa"
-	],
-	"hyulle-thought-bubble": [
-		"hyulle"
-	],
-	"narim-thought-bubble": [
-		"narim"
-	],
-	"goddesses-thought-bubble": [
-		"golhwa",
-		"hyulle",
-		"narim"
-	],
-	"golhwa-thought-straddle": [
-		"golhwa"
-	],
-	"hyulle-thought-filled": [
-		"hyulle"
-	],
-	"narim-thought-pin": [
-		"narim"
-	],
-	"seohyeon-arrival-thought": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"golhwa-body-collage": [
-		"golhwa",
-		"seohyeon"
-	],
-	"golhwa-loins-clutch": [
-		"golhwa"
-	],
-	"seohyeon-older-wide": [
-		"seohyeon"
-	],
-	"seohyeon-older-straddle": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-kiss": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-ride": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-hips": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-scream": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-climax-duo": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-possessive": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-spent": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-hyulle-press": [
-		"hyulle",
-		"seohyeon"
-	],
-	"seohyeon-older-close": [
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-sisters-join": [
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-orgy-kiss-ride": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-narim-fail": [
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-hyulle-climb": [
-		"hyulle",
-		"seohyeon"
-	],
-	"seohyeon-older-orgy-pile": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-orgy-faces": [
-		"golhwa",
-		"hyulle",
-		"seohyeon"
-	],
-	"seohyeon-page-turn": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"golhwa-manhwa-face": [
-		"golhwa"
-	],
-	"golhwa-panel-inset": [
-		"golhwa",
-		"seohyeon"
-	],
-	"golhwa-afterglow": [
-		"golhwa"
-	],
-	"hyulle-sound-leak": [
-		"hyulle"
-	],
-	"seohyeon-older-orgy-tangle": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-ride-pile": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-wall-doggy": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-wall-straddle": [
-		"seohyeon"
-	],
-	"seohyeon-older-wall-orgy": [
-		"seohyeon"
-	],
-	"seohyeon-older-milk-spent": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-afterglow": [
-		"golhwa",
-		"hyulle",
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-tease": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-overcome": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-narim-alone": [
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-hyulle-alone": [
-		"hyulle",
-		"seohyeon"
-	],
-	"seohyeon-older-pov-doggy": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-sister-kiss": [
-		"golhwa",
-		"hyulle",
-		"seohyeon"
-	],
-	"seohyeon-older-ontop-stack": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-corner-ride": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-wall-side": [
-		"seohyeon"
-	],
-	"seohyeon-older-golhwa-ride-side": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-golhwa-ride-worm": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-golhwa-ride-over": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-golhwa-ride-hips": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-golhwa-ride-front": [
-		"golhwa",
-		"seohyeon"
-	],
-	"seohyeon-older-narim-ride": [
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-narim-ride-side": [
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-turn-narim": [
-		"narim",
-		"seohyeon"
-	],
-	"seohyeon-older-hyulle-ride": [
-		"hyulle",
-		"seohyeon"
-	],
-	"seohyeon-older-hyulle-ride-astride": [
-		"hyulle",
-		"seohyeon"
 	],
 	"gotaso-death-black": [
 		"gotaso"
@@ -1696,6 +1307,144 @@
 	"nsfw-maehwa-goes-quiet": [
 		"gumilwife"
 	],
+	"ink-wind-bamboo-jukjuk": [
+		"jukjuk"
+	],
+	"pumsuk-forbidden-desire": [
+		"gumilwife",
+		"pumsuk"
+	],
+	"goddesses-crone-shift": [
+		"golhwa",
+		"hyulle",
+		"narim"
+	],
+	"goddesses-milf-shift": [
+		"golhwa",
+		"hyulle",
+		"narim"
+	],
+	"goddesses-settle-beauty": [
+		"golhwa",
+		"hyulle",
+		"narim"
+	],
+	"seohyeon-accident-wide": [
+		"golhwa",
+		"hyulle",
+		"narim",
+		"seohyeon"
+	],
+	"seohyeon-robe-falls": [
+		"seohyeon"
+	],
+	"hyulle-sound-leak": [
+		"hyulle"
+	],
+	"narim-his-kind-look": [
+		"narim",
+		"seohyeon"
+	],
+	"golhwa-pounce-kim": [
+		"golhwa",
+		"seohyeon"
+	],
+	"goddesses-pronounce-glow": [
+		"golhwa",
+		"hyulle",
+		"narim"
+	],
+	"goddesses-yushin-prophecy": [
+		"narim",
+		"seohyeon",
+		"yushin"
+	],
+	"seohyeon-leaving": [
+		"seohyeon"
+	],
+	"seohyeon-older-kiss": [
+		"golhwa",
+		"seohyeon"
+	],
+	"seohyeon-cavern-wide": [
+		"golhwa",
+		"hyulle",
+		"narim",
+		"seohyeon"
+	],
+	"seohyeon-naked-enter": [
+		"seohyeon"
+	],
+	"seohyeon-page-turn": [
+		"golhwa",
+		"hyulle",
+		"narim",
+		"seohyeon"
+	],
+	"seohyeon-older-wide": [
+		"seohyeon"
+	],
+	"goddesses-heads-turn": [
+		"golhwa",
+		"hyulle",
+		"narim"
+	],
+	"goddesses-lounge-wide": [
+		"golhwa",
+		"hyulle",
+		"narim"
+	],
+	"golhwa-grind-rock": [
+		"golhwa"
+	],
+	"seohyeon-their-gaze": [
+		"golhwa",
+		"hyulle",
+		"narim",
+		"seohyeon"
+	],
+	"golhwa-panel-inset": [
+		"golhwa",
+		"seohyeon"
+	],
+	"seohyeon-older-tease": [
+		"golhwa",
+		"seohyeon"
+	],
+	"seohyeon-older-ride": [
+		"golhwa",
+		"seohyeon"
+	],
+	"seohyeon-older-golhwa-ride-over": [
+		"golhwa",
+		"seohyeon"
+	],
+	"seohyeon-older-climax-duo": [
+		"golhwa",
+		"seohyeon"
+	],
+	"seohyeon-older-spent": [
+		"golhwa",
+		"seohyeon"
+	],
+	"seohyeon-older-sisters-join": [
+		"narim",
+		"seohyeon"
+	],
+	"seohyeon-older-narim-ride": [
+		"narim",
+		"seohyeon"
+	],
+	"seohyeon-older-hyulle-ride": [
+		"hyulle",
+		"seohyeon"
+	],
+	"seohyeon-older-afterglow": [
+		"golhwa",
+		"hyulle",
+		"narim",
+		"seohyeon"
+	],
 	"pyongyang-massacre-doorway": [
 		"gesomun"
 	],
@@ -1722,7 +1471,8 @@
 	],
 	"blade-lee": [
 		"gesomun",
-		"gusesa"
+		"gusesa",
+		"leegaesa"
 	],
 	"blade-gusesa": [
 		"gesomun",
@@ -1763,6 +1513,12 @@
 	"gesomun-five-pommels": [
 		"gesomun"
 	],
+	"youngryu-death-fortress": [
+		"yeongnyu"
+	],
+	"youngryu-death-crown": [
+		"yeongnyu"
+	],
 	"chunchu-robes": [
 		"chunchu",
 		"sunduk",
@@ -1791,6 +1547,21 @@
 	"gesomun_tiger_counsel": [
 		"dosuryu",
 		"gesomun"
+	],
+	"chunchu-rabbit-fable": [
+		"chunchu",
+		"seondohae"
+	],
+	"hadong-west-gate": [
+		"chunchu",
+		"yushin"
+	],
+	"hadong-empty-saddle": [
+		"chunchu"
+	],
+	"hadong-rein-knot": [
+		"chunchu",
+		"yushin"
 	],
 	"disguised-euija": [
 		"euija"
@@ -1860,10 +1631,20 @@
 	"alchun-ready-restraint": [
 		"alchun"
 	],
-	"poster_taizong": [
-		"taizong"
+	"nangbi-helmet-off": [
+		"seohyeon",
+		"yushin"
 	],
-	"taizong-throne-majesty": [
+	"nangbi-trench-leap": [
+		"yushin"
+	],
+	"nangbi-naming": [
+		"yushin"
+	],
+	"yushin-dawn-vigil": [
+		"yushin"
+	],
+	"poster_taizong": [
 		"taizong"
 	],
 	"tang-palace": [
@@ -1872,203 +1653,11 @@
 	"taizong-throne-shadow": [
 		"taizong"
 	],
-	"tang-taizong-court": [
-		"taizong"
-	],
 	"taizong-worms-eye-crown": [
 		"taizong"
 	],
-	"taizong-portrait": [
-		"taizong"
-	],
-	"taizong-vast-harem": [
-		"taizong"
-	],
-	"taizong-court": [
-		"taizong"
-	],
-	"taizong-far-plane": [
-		"taizong"
-	],
-	"taizong-door-slit": [
-		"taizong"
-	],
-	"four-dragons": [
-		"taizong"
-	],
-	"taizong-son-of-heaven": [
-		"taizong"
-	],
-	"tang-war-council": [
-		"xuerengui"
-	],
-	"taizong-empty-dais": [
-		"taizong"
-	],
-	"wu-zetian-seduction-power": [
-		"wuzetian"
-	],
-	"munduk-banner": [
-		"munduk"
-	],
-	"munduk-battle": [
-		"munduk"
-	],
-	"salsu-ford-ribbon": [
-		"munduk"
-	],
-	"salsu-red-wedge": [
-		"munduk"
-	],
-	"xue-longmen-field-dawn": [
-		"xueliu",
-		"xuerengui"
-	],
-	"xue-longmen-hut-door": [
-		"xueliu"
-	],
-	"xue-longmen-yellow-hoe": [
-		"xuerengui"
-	],
-	"xue-longmen-wife-close": [
-		"xueliu"
-	],
-	"xue-longmen-two-shot": [
-		"xueliu",
-		"xuerengui"
-	],
-	"xue-longmen-graves": [
-		"xuerengui"
-	],
-	"xue-longmen-leave": [
-		"xueliu",
-		"xuerengui"
-	],
-	"xuerengui-banner": [
-		"xuerengui"
-	],
-	"xue-eastern-shaft": [
-		"xuerengui"
-	],
-	"xue-east-gaze": [
-		"xuerengui"
-	],
-	"ansi-court": [
-		"yangmanchun"
-	],
-	"yushin-dawn-vigil": [
-		"yushin"
-	],
-	"poster_xuerengui": [
-		"xuerengui"
-	],
-	"jupil-routes": [
-		"xuerengui"
-	],
-	"jupil-mountain": [
-		"namseng"
-	],
-	"xue-fortress-escape": [
-		"xuerengui"
-	],
-	"dongchun-five-thousand": [
-		"dongchun"
-	],
-	"burning-capital": [
-		"dongchun"
-	],
-	"poster_daeso": [
-		"daeso"
-	],
-	"poster_jumong": [
-		"jumong"
-	],
-	"haemosu-sky-sisters": [
-		"haemosu",
-		"hwahye",
-		"wihye",
-		"yuhwa"
-	],
-	"haemosu-lookdown-bath": [
-		"haemosu",
-		"hwahye",
-		"wihye",
-		"yuhwa"
-	],
-	"yuhwa-look-up-wet": [
-		"yuhwa"
-	],
-	"poster_yuhwa": [
-		"sunduk",
-		"yuhwa"
-	],
-	"poster_haemosu": [
-		"haemosu"
-	],
-	"jumong-wide": [
-		"jumong"
-	],
-	"jumong-sky-arrow": [
-		"jumong"
-	],
 	"jumong_01": [
 		"jumong",
-		"yuhwa"
-	],
-	"haemosu-chariot-dive": [
-		"haemosu",
-		"yuhwa"
-	],
-	"haemosu-stunned-close": [
-		"haemosu",
-		"yuhwa"
-	],
-	"nsfw-haemosu-heart-eyes": [
-		"haemosu",
-		"yuhwa"
-	],
-	"nsfw-haemosu-drool-shallows": [
-		"haemosu",
-		"yuhwa"
-	],
-	"yuhwa-bath-tease": [
-		"yuhwa"
-	],
-	"yuhwa-sisters-bath": [
-		"hwahye",
-		"wihye",
-		"yuhwa"
-	],
-	"yuhwa-bath-tease-more": [
-		"yuhwa"
-	],
-	"yuhwa-wash-back": [
-		"yuhwa"
-	],
-	"yuhwa-seq-lookback": [
-		"yuhwa"
-	],
-	"yuhwa-worm-chariot": [
-		"haemosu",
-		"yuhwa"
-	],
-	"haemosu-chariot-down": [
-		"haemosu",
-		"yuhwa"
-	],
-	"yuhwa-looks-up-wet": [
-		"yuhwa"
-	],
-	"haemosu-looks-down-wet": [
-		"haemosu",
-		"yuhwa"
-	],
-	"haemosu-yuhwa-copper-skin": [
-		"haemosu",
-		"yuhwa"
-	],
-	"haemosu-shallows": [
-		"haemosu",
 		"yuhwa"
 	],
 	"haemosu-copper-room": [
@@ -2087,21 +1676,9 @@
 		"yeontabal",
 		"yuhwa"
 	],
-	"geumwa-gold-yard": [
-		"geumwa"
-	],
-	"daeso-heir-stare": [
-		"daeso"
-	],
 	"jumong-daeso-bowline": [
 		"daeso",
 		"jumong"
-	],
-	"galsa-smaller-smile": [
-		"galsa"
-	],
-	"galsa-east-split": [
-		"galsa"
 	],
 	"jumong_04": [
 		"haemosu",
@@ -2111,56 +1688,15 @@
 		"jumong",
 		"ladyye"
 	],
-	"haewonmek-sun-knock": [
-		"jumong"
-	],
-	"haewonmek-seq-unseen": [
-		"jumong"
-	],
-	"haemosu-seq-aerial": [
-		"haemosu"
-	],
-	"haemosu-seq-wormglow": [
-		"haemosu"
-	],
-	"haemosu-chariot-flash": [
-		"haemosu",
-		"jumong"
-	],
 	"haemosu-blocks-haewonmek": [
-		"haemosu",
-		"jumong"
-	],
-	"haemosu-ambush-night": [
-		"haemosu"
-	],
-	"haemosu-whisper-ear": [
 		"haemosu",
 		"jumong"
 	],
 	"jumong-turtle-night": [
 		"jumong"
 	],
-	"jumong-seq-forest": [
-		"jumong"
-	],
 	"jumong-seq-king": [
 		"jumong"
-	],
-	"nsfw-haemosu-yuhwa-copper": [
-		"haemosu",
-		"yuhwa"
-	],
-	"nsfw-jumong-sosuno-hunger": [
-		"jumong",
-		"sosuno"
-	],
-	"gods-watch-run": [
-		"haemosu",
-		"jumong"
-	],
-	"haemosu-jolly-haewonmek": [
-		"haemosu"
 	],
 	"jumong_05": [
 		"haemosu",
@@ -2175,9 +1711,6 @@
 		"geumwa",
 		"jumong"
 	],
-	"jumong-seq-forest-wide": [
-		"jumong"
-	],
 	"jumong-seq-cave-wide": [
 		"jumong"
 	],
@@ -2189,23 +1722,11 @@
 		"jumong",
 		"yeontabal"
 	],
-	"jumong-seq-porch-watch": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-seq-back-blush": [
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-sosuno-imagine": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-seq-well-wide": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-well-name": [
 		"jumong",
 		"sosuno"
 	],
@@ -2217,18 +1738,7 @@
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-sosuno-wash-back": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-how-dare": [
-		"sosuno"
-	],
 	"jumong-seq-leave-bow": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-stay-awkward": [
 		"jumong",
 		"sosuno"
 	],
@@ -2236,21 +1746,9 @@
 		"jumong",
 		"sosuno"
 	],
-	"sosuno-seq-stash-blush": [
-		"sosuno"
-	],
 	"jumong-seq-turn-leave": [
 		"jumong",
 		"sosuno"
-	],
-	"sosuno-seq-run-kiss": [
-		"jumong",
-		"sosuno"
-	],
-	"tabal-seq-grumpy": [
-		"jumong",
-		"sosuno",
-		"yeontabal"
 	],
 	"jumong-seq-pine-wide": [
 		"jumong",
@@ -2265,34 +1763,6 @@
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-sosuno-backshot": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-count-heart": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-peek-chima": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-well-hike": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-hands-shake": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-wall-pin": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-night-spent": [
-		"jumong",
-		"sosuno"
-	],
 	"sosuno-grain-porch": [
 		"jumong",
 		"sosuno"
@@ -2301,85 +1771,11 @@
 		"jumong",
 		"sosuno"
 	],
-	"sosuno-shy-heat": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-hide-back": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-arrow-split": [
 		"gesomun",
 		"jumong",
 		"sosuno",
 		"yeontabal"
-	],
-	"jumong-sosuno-nights": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong_06": [
-		"haemosu",
-		"jumong",
-		"yeontabal",
-		"yuhwa"
-	],
-	"yuhwa-moon-ascent": [
-		"haemosu",
-		"sunduk",
-		"yuhwa"
-	],
-	"yuhwa-rise": [
-		"haemosu",
-		"yuhwa"
-	],
-	"haemosu-sun-hero": [
-		"haemosu",
-		"yuhwa"
-	],
-	"haemosu-five-dragons": [
-		"haemosu"
-	],
-	"haemosu-sunrun": [
-		"haemosu"
-	],
-	"haemosu-gold-wedge": [
-		"haemosu"
-	],
-	"haemosu-chariot-stamp": [
-		"haemosu"
-	],
-	"haemosu-wheel-arc": [
-		"haemosu"
-	],
-	"haemosu-path-strip": [
-		"haemosu"
-	],
-	"ibiga-slash": [
-		"ibiga"
-	],
-	"yuhwa-moon-office": [
-		"haemosu",
-		"yuhwa"
-	],
-	"haemosu-sunflash-dragons": [
-		"haemosu"
-	],
-	"jumong-bow-arc": [
-		"jumong"
-	],
-	"sosuno-seq-dump-water": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-beam-shot": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-forced-confess": [
-		"jumong",
-		"sosuno"
 	],
 	"jumong-seq-tribes-wide": [
 		"jumong"
@@ -2399,21 +1795,6 @@
 		"haemosu",
 		"jumong"
 	],
-	"jumong-seq-largest": [
-		"jumong"
-	],
-	"nsfw-sosuno-first-lust": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-beg-nut": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-scream-caps": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-seq-scouts-wide": [
 		"jumong"
 	],
@@ -2428,18 +1809,6 @@
 		"jumong",
 		"yeontabal"
 	],
-	"sosuno-seq-tough-chin": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-shy-back": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-well-bird": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-seq-well-ecu-rope": [
 		"jumong",
 		"sosuno"
@@ -2448,69 +1817,7 @@
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-sosuno-naked-back": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-grain-back": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-dumb-idiot": [
-		"sosuno"
-	],
-	"nsfw-sosuno-loft-ogle": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-little": [
-		"sosuno"
-	],
-	"sosuno-seq-come-down": [
-		"sosuno"
-	],
-	"sosuno-seq-mate-guard": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-hunt-wide": [
-		"sosuno"
-	],
-	"sosuno-seq-silence-ecu": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-first-purr": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-sosuno-loft-hike": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-scream-mad": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-seq-girls-fawn": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-royal-pair": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-cold-ecu": [
-		"sosuno"
-	],
-	"sosuno-seq-muster-dutch": [
-		"sosuno"
-	],
-	"sosuno-seq-mean-two": [
-		"jumong",
-		"sosuno"
-	],
-	"sosuno-seq-cold-ots": [
 		"jumong",
 		"sosuno"
 	],
@@ -2518,86 +1825,13 @@
 		"haemosu",
 		"jumong"
 	],
-	"jumong-haemosu-lookdown-bath": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-yuhwa-look-up-wet": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-poster_yuhwa": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-poster_haemosu": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-haemosu-chariot-dive": [
 		"haemosu",
 		"jumong"
 	],
-	"jumong-haemosu-stunned-close": [
-		"haemosu",
-		"jumong"
-	],
-	"nsfw-jumong-haemosu-heart-eyes": [
-		"haemosu",
-		"jumong"
-	],
-	"nsfw-jumong-haemosu-drool-shallows": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-yuhwa-bath-tease": [
-		"jumong",
-		"yuhwa"
-	],
 	"jumong-yuhwa-sisters-bath": [
 		"jumong",
 		"yuhwa"
-	],
-	"jumong-yuhwa-bath-tease-more": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-wash-back": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-seq-lookback": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-worm-chariot": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-chariot-down": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-yuhwa-looks-up-wet": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-looks-down-wet": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-yuhwa-copper-skin": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-shallows": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-copper-room": [
-		"haemosu",
-		"jumong"
 	],
 	"jumong-geumwa-gold-yard": [
 		"geumwa",
@@ -2615,25 +1849,10 @@
 		"galsa",
 		"jumong"
 	],
-	"jumong-haewonmek-sun-knock": [
-		"jumong"
-	],
 	"jumong-haewonmek-seq-unseen": [
 		"jumong"
 	],
-	"jumong-haemosu-seq-aerial": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-haemosu-seq-wormglow": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-chariot-flash": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-blocks-haewonmek": [
 		"haemosu",
 		"jumong"
 	],
@@ -2645,11 +1864,6 @@
 		"haemosu",
 		"jumong"
 	],
-	"nsfw-jumong-haemosu-yuhwa-copper": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
 	"jumong-gods-watch-run": [
 		"jumong"
 	],
@@ -2657,28 +1871,10 @@
 		"haemosu",
 		"jumong"
 	],
-	"jumong-buyeo-seq-capital-wide": [
-		"jumong"
-	],
-	"jumong-buyeo-seq-hall-interior-wide": [
-		"jumong"
-	],
-	"jumong-buyeo-seq-childhood-tiny": [
-		"jumong"
-	],
 	"jumong-buyeo-seq-night-palisade": [
 		"jumong"
 	],
-	"jumong-buyeo-seq-hatch-room-wide": [
-		"jumong"
-	],
-	"jumong-buyeo-four": [
-		"jumong"
-	],
 	"jumong-buyeo-knife": [
-		"jumong"
-	],
-	"jumong-buyeo-fly": [
 		"jumong"
 	],
 	"jumong-buyeo-boys": [
@@ -2689,14 +1885,6 @@
 	],
 	"jumong-buyeo-egg": [
 		"jumong"
-	],
-	"nsfw-jumong-sosuno-imagine": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-wash-back": [
-		"jumong",
-		"sosuno"
 	],
 	"jumong-sosuno-seq-how-dare": [
 		"jumong",
@@ -2713,36 +1901,14 @@
 	"jumong-pov-tease": [
 		"jumong"
 	],
-	"jumong-sosuno-pov-grin": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-pov-blush": [
 		"jumong"
-	],
-	"jumong-sosuno-pov-leave": [
-		"jumong",
-		"sosuno"
 	],
 	"jumong-pov-lookback": [
 		"jumong"
 	],
 	"jumong-pov-wont-say": [
 		"jumong"
-	],
-	"jumong-sosuno-pov-listen": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-pov-say-rest": [
-		"jumong"
-	],
-	"jumong-pov-never": [
-		"jumong"
-	],
-	"jumong-sosuno-pov-done": [
-		"jumong",
-		"sosuno"
 	],
 	"jumong-sosuno-seq-run-kiss": [
 		"jumong",
@@ -2752,35 +1918,11 @@
 		"jumong",
 		"yeontabal"
 	],
-	"nsfw-jumong-sosuno-backshot": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-count-heart": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-peek-chima": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-well-hike": [
-		"jumong",
-		"sosuno"
-	],
 	"nsfw-jumong-sosuno-hands-shake": [
 		"jumong",
 		"sosuno"
 	],
 	"nsfw-jumong-sosuno-wall-pin": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-night-spent": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-grain-porch": [
 		"jumong",
 		"sosuno"
 	],
@@ -2792,22 +1934,6 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-yuhwa-moon-ascent": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-rise": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-five-dragons": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-yuhwa-moon-office": [
-		"jumong",
-		"yuhwa"
-	],
 	"jumong-sosuno-seq-dump-water": [
 		"jumong",
 		"sosuno"
@@ -2817,18 +1943,6 @@
 		"sosuno"
 	],
 	"jumong-sosuno-seq-forced-confess": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-first-lust": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-beg-nut": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-scream-caps": [
 		"jumong",
 		"sosuno"
 	],
@@ -2844,21 +1958,11 @@
 		"jumong",
 		"yeontabal"
 	],
-	"jumong-tabal-rope-wide": [
-		"jumong",
-		"yeontabal"
-	],
 	"jumong-tabal-rope-dutch": [
 		"jumong",
 		"yeontabal"
 	],
-	"jumong-name-protest-ecu": [
-		"jumong"
-	],
 	"jumong-nobody-sent-ecu": [
-		"jumong"
-	],
-	"jumong-looks-up-easy": [
 		"jumong"
 	],
 	"jumong-clothes-swallow": [
@@ -2867,54 +1971,19 @@
 	"jumong-sees-her-ots": [
 		"jumong"
 	],
-	"jumong-sees-her-ecu": [
-		"jumong"
-	],
 	"jumong-sosuno-hall-chin": [
 		"jumong",
 		"sosuno"
 	],
-	"jumong-pretty-threeshot": [
-		"jumong"
-	],
 	"jumong-pretty-says": [
 		"jumong"
-	],
-	"jumong-tabal-pretty-glare": [
-		"jumong",
-		"yeontabal"
 	],
 	"jumong-sosuno-pretty-cold": [
 		"jumong",
 		"sosuno"
 	],
-	"jumong-pretty-oh": [
-		"jumong"
-	],
 	"jumong-how-i-die-ecu": [
 		"jumong"
-	],
-	"jumong-stop-relief-ecu": [
-		"jumong"
-	],
-	"jumong-haemosu-grin-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-pretty-tiny": [
-		"jumong"
-	],
-	"jumong-pov-tabal-kill": [
-		"jumong",
-		"yeontabal"
-	],
-	"jumong-tabal-pov-bow": [
-		"jumong",
-		"yeontabal"
-	],
-	"jumong-seq-tabal-stop": [
-		"jumong",
-		"yeontabal"
 	],
 	"jumong-seq-tabal-lineage": [
 		"jumong",
@@ -2926,21 +1995,10 @@
 	"jumong-buyeo-hatch-worm": [
 		"jumong"
 	],
-	"jumong-seq-buyeo-roof": [
-		"jumong"
-	],
 	"jumong-seq-pine-net-crane": [
 		"jumong"
 	],
-	"jumong-sosuno-seq-tough-chin": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-sosuno-seq-shy-back": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-naked-back": [
 		"jumong",
 		"sosuno"
 	],
@@ -2949,10 +2007,6 @@
 		"sosuno"
 	],
 	"nsfw-jumong-sosuno-dumb-idiot": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-ogle": [
 		"jumong",
 		"sosuno"
 	],
@@ -2972,39 +2026,7 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-sosuno-seq-silence-ecu": [
-		"jumong",
-		"sosuno"
-	],
 	"nsfw-jumong-sosuno-first-purr": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-hike": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-loft-climax": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-loft-hand": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-loft-worm": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-loft-profile": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-loft-ecu": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-loft-dutch": [
 		"jumong",
 		"sosuno"
 	],
@@ -3020,25 +2042,10 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-sosuno-seq-muster-dutch": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-mean-two": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-cold-ots": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-seq-summit-wide": [
 		"jumong"
 	],
 	"jumong-seq-summit-fires": [
-		"jumong"
-	],
-	"jumong-seq-summit-crown": [
 		"jumong"
 	],
 	"jumong-seq-summit-queen": [
@@ -3048,93 +2055,21 @@
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-jumong-sosuno-queen-slut": [
-		"jumong",
-		"sosuno"
-	],
 	"nsfw-jumong-royal-queen-back": [
 		"jumong"
 	],
 	"nsfw-jumong-royal-king-back": [
 		"jumong"
 	],
-	"nsfw-jumong-sosuno-only-mine": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-dongmyung-seq-hall-wide": [
-		"jumong"
-	],
-	"jumong-sosuno-seq-queen-hall": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-royal-pair-new": [
-		"jumong"
-	],
-	"nsfw-jumong-sosuno-pov-his-back": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-pov-her-back": [
-		"jumong"
-	],
-	"nsfw-jumong-grain-ots-his-back": [
-		"jumong"
-	],
-	"nsfw-jumong-grain-ots-her-back": [
-		"jumong"
-	],
-	"jumong-seq-fawn-yard": [
-		"jumong"
-	],
-	"jumong-seq-fawn-ots": [
-		"jumong"
-	],
-	"jumong-seq-fawn-close": [
-		"jumong"
-	],
-	"jumong-seq-fawn-dutch": [
-		"jumong"
-	],
-	"jumong-sosuno-seq-jealous-dutch": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-sosuno-seq-jealous-ecu": [
 		"jumong",
 		"sosuno"
-	],
-	"nsfw-jumong-sosuno-jealous-heat": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-crown-fires": [
-		"jumong"
-	],
-	"jumong-seq-crown-rail": [
-		"jumong"
-	],
-	"nsfw-jumong-royal-queen-back-h": [
-		"jumong"
 	],
 	"jumong-sosuno-seq-daughters-sexy": [
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-jumong-sosuno-ass-out": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-back-tight": [
-		"jumong",
-		"sosuno"
-	],
 	"nsfw-jumong-sosuno-back-dutch": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-back-worm": [
 		"jumong",
 		"sosuno"
 	],
@@ -3158,14 +2093,6 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-sosuno-seq-work-sacks": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-work-stern-ecu": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-sosuno-seq-work-rope": [
 		"jumong",
 		"sosuno"
@@ -3177,17 +2104,6 @@
 	"jumong-seq-dawn-shy": [
 		"jumong"
 	],
-	"jumong-sosuno-seq-love-void": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-love-ecu": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-first-look-ots": [
-		"jumong"
-	],
 	"jumong-sosuno-seq-kiss-shock": [
 		"jumong",
 		"sosuno"
@@ -3196,29 +2112,9 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-seq-daughters-pose": [
-		"jumong"
-	],
 	"jumong-sosuno-seq-kick-out": [
 		"jumong",
 		"sosuno"
-	],
-	"jumong-seq-tiny-red": [
-		"jumong"
-	],
-	"nsfw-jumong-sosuno-loft-spread": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-fingers": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-royal-queen-ass": [
-		"jumong"
-	],
-	"nsfw-jumong-royal-grind": [
-		"jumong"
 	],
 	"jumong-yuhwa-sunshaft-timber": [
 		"jumong",
@@ -3228,13 +2124,6 @@
 		"jumong"
 	],
 	"jumong-buyeo-boys-young": [
-		"jumong"
-	],
-	"jumong-buyeo-youths": [
-		"jumong"
-	],
-	"jumong-haemosu-falls-three": [
-		"haemosu",
 		"jumong"
 	],
 	"jumong-yuhwa-only-stays": [
@@ -3293,18 +2182,6 @@
 	"jumong-death-bow": [
 		"jumong"
 	],
-	"nsfw-jumong-haemosu-copper-titian": [
-		"haemosu",
-		"jumong"
-	],
-	"nsfw-jumong-haemosu-copper-ots": [
-		"haemosu",
-		"jumong"
-	],
-	"nsfw-jumong-haemosu-shallows-myth": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-yuhwa-amnok-dusk-expo": [
 		"jumong",
 		"yuhwa"
@@ -3312,10 +2189,6 @@
 	"jumong-yuhwa-sisters-dive-wake": [
 		"jumong",
 		"yuhwa"
-	],
-	"jumong-haemosu-lookdown-goldrail": [
-		"haemosu",
-		"jumong"
 	],
 	"jumong-yuhwa-copper-room-rise": [
 		"jumong",
@@ -3329,10 +2202,6 @@
 		"jumong",
 		"yuhwa"
 	],
-	"nsfw-jumong-yuhwa-wet-silk-grind": [
-		"jumong",
-		"yuhwa"
-	],
 	"nsfw-jumong-yuhwa-wanting-ecu": [
 		"jumong",
 		"yuhwa"
@@ -3341,52 +2210,11 @@
 		"jumong",
 		"yuhwa"
 	],
-	"nsfw-jumong-yuhwa-dutch-two-shot": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-habek-finds-copper-cast": [
-		"habek",
-		"jumong"
-	],
-	"jumong-buyeo-boys-worm": [
-		"jumong"
-	],
 	"jumong-sosuno-seq-think-void": [
 		"jumong",
 		"sosuno"
 	],
-	"jumong-sosuno-seq-snap-chin": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-yuhwa-lookback-hips": [
-		"jumong",
-		"yuhwa"
-	],
-	"nsfw-jumong-yuhwa-dutch-hike-back": [
-		"jumong",
-		"yuhwa"
-	],
-	"nsfw-jumong-haemosu-grab-yuhwa-back": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
-	"nsfw-jumong-yuhwa-worm-hips": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-seq-daughters-lean": [
-		"jumong"
-	],
-	"jumong-seq-daughters-hike": [
-		"jumong"
-	],
 	"jumong-seq-daughters-invite": [
-		"jumong"
-	],
-	"jumong-seq-daughters-grin": [
 		"jumong"
 	],
 	"jumong-sosuno-seq-kick-well-dutch": [
@@ -3397,23 +2225,7 @@
 		"haemosu",
 		"jumong"
 	],
-	"nsfw-jumong-haemosu-copper-combo-bounce": [
-		"haemosu",
-		"jumong"
-	],
-	"nsfw-jumong-haemosu-copper-combo-mommae": [
-		"haemosu",
-		"jumong"
-	],
-	"nsfw-jumong-sosuno-queen-naked-back-flirt": [
-		"jumong",
-		"sosuno"
-	],
 	"nsfw-jumong-sosuno-queen-blush-ecu": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-queen-flirty-ots": [
 		"jumong",
 		"sosuno"
 	],
@@ -3426,10 +2238,6 @@
 		"sosuno"
 	],
 	"jumong-sosuno-seq-first-blush-ecu": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-first-shoulder": [
 		"jumong",
 		"sosuno"
 	],
@@ -3456,10 +2264,6 @@
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-jumong-sosuno-thatch-fantasy": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-sosuno-seq-thatch-aftermath": [
 		"jumong",
 		"sosuno"
@@ -3469,9 +2273,6 @@
 		"jumong"
 	],
 	"jumong-turtle-crossing-wide": [
-		"jumong"
-	],
-	"jumong-turtle-crossing-dutch": [
 		"jumong"
 	],
 	"jumong-daeso-side-room": [
@@ -3491,9 +2292,6 @@
 		"jumong",
 		"onjo"
 	],
-	"jumong-confess-silence-gap": [
-		"jumong"
-	],
 	"jumong-stunned-ecu": [
 		"jumong"
 	],
@@ -3511,18 +2309,11 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-going-south": [
-		"jumong"
-	],
 	"jumong-flirt-daughters": [
 		"jumong"
 	],
 	"jumong-cold-shudder": [
 		"jumong"
-	],
-	"jumong-turn-sosuno": [
-		"jumong",
-		"sosuno"
 	],
 	"jumong-sosuno-tsun-well-caught": [
 		"jumong",
@@ -3531,21 +2322,8 @@
 	"jumong-daughter-teal-talk-ecu": [
 		"jumong"
 	],
-	"jumong-talk-funny-ecu": [
-		"jumong"
-	],
-	"jumong-talk-bucket-ecu": [
-		"jumong"
-	],
 	"jumong-daughter-plum-talk-ecu": [
 		"jumong"
-	],
-	"jumong-carries-pine": [
-		"jumong"
-	],
-	"jumong-yuhwa-leave-tonight": [
-		"jumong",
-		"yuhwa"
 	],
 	"jumong-lady-ye-half-door": [
 		"jumong"
@@ -3557,131 +2335,30 @@
 	"jumong-scouts-hands": [
 		"jumong"
 	],
-	"jumong-daeso-morning-slept": [
-		"daeso",
-		"jumong"
-	],
-	"jumong-buyeo-one-roof-night": [
-		"jumong"
-	],
 	"jumong-buyeo-daeso-grip": [
 		"daeso",
 		"jumong"
 	],
-	"jumong-buyeo-galsa-dirt": [
-		"galsa",
-		"jumong"
-	],
-	"jumong-sosuno-widow-peg": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-grin-fly-ecu": [
-		"jumong"
-	],
-	"jumong-daeso-stop-smiling-ecu": [
-		"daeso",
-		"jumong"
-	],
-	"jumong-daeso-house-feeds-ecu": [
-		"daeso",
-		"jumong"
-	],
-	"jumong-daeso-he-is-not-ecu": [
-		"daeso",
 		"jumong"
 	],
 	"jumong-daeso-plot-lamp-ecu": [
 		"daeso",
 		"jumong"
 	],
-	"jumong-clap-fly-ecu": [
-		"jumong"
-	],
-	"jumong-set-buyeo-night-sky": [
-		"jumong"
-	],
-	"jumong-set-buyeo-worm-eaves": [
-		"jumong"
-	],
-	"jumong-set-buyeo-stake-moon": [
-		"jumong"
-	],
-	"jumong-set-buyeo-river-night": [
-		"jumong"
-	],
-	"jumong-set-well-empty-night": [
-		"jumong"
-	],
-	"jumong-set-well-worm-sky": [
-		"jumong"
-	],
-	"jumong-set-well-dutch-empty": [
-		"jumong"
-	],
-	"jumong-set-jolbon-empty-night": [
-		"jumong"
-	],
-	"jumong-set-jolbon-roofs-stars": [
-		"jumong"
-	],
-	"jumong-set-jolbon-yard-moon": [
-		"jumong"
-	],
-	"jumong-set-forest-empty": [
-		"jumong"
-	],
-	"jumong-set-forest-night-stars": [
-		"jumong"
-	],
-	"jumong-set-forest-path-dutch": [
-		"jumong"
-	],
-	"jumong-set-pine-empty": [
-		"jumong"
-	],
 	"jumong-set-sky-noon-empty": [
-		"jumong"
-	],
-	"jumong-set-amnok-dusk-empty": [
-		"jumong"
-	],
-	"jumong-set-amnok-shallows-stones": [
 		"jumong"
 	],
 	"jumong-set-amnok-silk-rocks": [
 		"jumong"
 	],
-	"jumong-set-chariot-lookdown-empty": [
-		"jumong"
-	],
-	"jumong-set-copper-empty-wide": [
-		"jumong"
-	],
-	"jumong-set-copper-door-empty": [
-		"jumong"
-	],
-	"jumong-set-habek-mist-empty": [
-		"habek",
-		"jumong"
-	],
 	"jumong-set-buyeo-approach": [
-		"jumong"
-	],
-	"jumong-set-hatch-door-empty": [
 		"jumong"
 	],
 	"jumong-set-egg-field-empty": [
 		"jumong"
 	],
-	"jumong-set-gate-empty": [
-		"jumong"
-	],
 	"jumong-haemosu-night-arrive": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-shaft-knock": [
 		"haemosu",
 		"jumong"
 	],
@@ -3692,110 +2369,14 @@
 		"haemosu",
 		"jumong"
 	],
-	"jumong-haemosu-heh-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-ford-call": [
-		"jumong"
-	],
-	"jumong-haemosu-boy-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-tabal-name-ecu": [
-		"jumong",
-		"yeontabal"
-	],
-	"jumong-tabal-who-sent-ecu": [
-		"jumong",
-		"yeontabal"
-	],
-	"jumong-tabal-millet-ecu": [
-		"jumong",
-		"yeontabal"
-	],
 	"jumong-crown-cord-tabal": [
 		"jumong",
 		"yeontabal"
 	],
-	"jumong-crown-king-worm": [
-		"jumong"
-	],
 	"jumong-crown-queen-rail": [
 		"jumong"
 	],
-	"jumong-seq-crown-yard": [
-		"jumong"
-	],
-	"jumong-haemosu-obj-noon-run": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-obj-rail-lookdown": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-obj-dive-amnok": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-obj-night-ford": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-chief-tiger-arrive": [
-		"jumong"
-	],
-	"jumong-chief-boar-arrive": [
-		"jumong"
-	],
-	"jumong-chief-wolf-arrive": [
-		"jumong"
-	],
-	"jumong-chief-bear-arrive": [
-		"jumong"
-	],
-	"jumong-chiefs-summit-four": [
-		"jumong"
-	],
-	"jumong-chiefs-vote-four": [
-		"jumong"
-	],
-	"jumong-chiefs-crown-yard": [
-		"jumong"
-	],
-	"jumong-chiefs-five-roofs": [
-		"jumong"
-	],
-	"jumong-chiefs-summit-fires": [
-		"jumong"
-	],
-	"jumong-chiefs-cord-ots": [
-		"jumong"
-	],
-	"jumong-chiefs-king-crowned": [
-		"jumong"
-	],
-	"jumong-chiefs-queen-count": [
-		"jumong"
-	],
-	"jumong-crown-ring-wide": [
-		"jumong"
-	],
-	"jumong-crown-ring-dutch": [
-		"jumong"
-	],
 	"jumong-crown-thread-ecu": [
-		"jumong"
-	],
-	"jumong-crown-jumong-center": [
-		"jumong"
-	],
-	"jumong-crown-bowed-backs": [
-		"jumong"
-	],
-	"jumong-crown-queen-rail-ring": [
 		"jumong"
 	],
 	"jumong-confess-pin-out": [
@@ -3807,46 +2388,10 @@
 	"jumong-confess-sit-floor": [
 		"jumong"
 	],
-	"jumong-confess-heap-two": [
-		"jumong"
-	],
-	"jumong-confess-forehead-boards": [
-		"jumong"
-	],
-	"jumong-confess-hair-veil": [
-		"jumong"
-	],
-	"jumong-confess-crown-down": [
-		"jumong"
-	],
-	"jumong-confess-mid-word": [
-		"jumong"
-	],
-	"jumong-confess-no-look": [
-		"jumong"
-	],
-	"jumong-confess-hands-earth": [
-		"jumong"
-	],
-	"jumong-confess-binyeo-hide": [
-		"jumong"
-	],
 	"jumong-confess-he-kneels": [
 		"jumong"
 	],
-	"jumong-haemosu-laugh-ecu": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-haemosu-wink-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-boy-open-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-whisper-soft-ecu": [
 		"haemosu",
 		"jumong"
 	],
@@ -3858,28 +2403,7 @@
 		"haemosu",
 		"jumong"
 	],
-	"jumong-haemosu-tender-back-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-feral-want-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-haewonmek-ots-laugh": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-ford-fear-ecu": [
-		"jumong"
-	],
 	"jumong-night-run-dutch": [
-		"jumong"
-	],
-	"jumong-night-run-aerial": [
-		"jumong"
-	],
-	"jumong-night-run-ots": [
 		"jumong"
 	],
 	"jumong-night-army-net": [
@@ -3891,49 +2415,10 @@
 	"jumong-night-trip": [
 		"jumong"
 	],
-	"jumong-night-face-dirt": [
-		"jumong"
-	],
-	"jumong-night-eyes-roll": [
-		"jumong"
-	],
-	"jumong-night-unconscious": [
-		"jumong"
-	],
-	"jumong-night-reaper-over": [
-		"jumong"
-	],
-	"jumong-night-gold-plane-arrive": [
-		"jumong"
-	],
-	"jumong-night-wrist-unconscious": [
-		"jumong"
-	],
-	"jumong-night-whisper-behind": [
-		"jumong"
-	],
-	"jumong-night-whisper-grit": [
-		"jumong"
-	],
 	"jumong-night-inspire-forward": [
 		"jumong"
 	],
-	"jumong-night-inspire-ecu": [
-		"jumong"
-	],
 	"jumong-night-shout-worm": [
-		"jumong"
-	],
-	"jumong-night-shout-dutch": [
-		"jumong"
-	],
-	"jumong-egg-ordeal-recoil": [
-		"jumong"
-	],
-	"jumong-egg-ordeal-hurl": [
-		"jumong"
-	],
-	"jumong-egg-ordeal-axe": [
 		"jumong"
 	],
 	"jumong-egg-ordeal-axe-spark": [
@@ -3942,22 +2427,11 @@
 	"jumong-egg-ordeal-return": [
 		"jumong"
 	],
-	"jumong-egg-ordeal-crack": [
-		"jumong"
-	],
 	"jumong-yuhwa-amnok-kneel-look": [
 		"jumong",
 		"yuhwa"
 	],
 	"jumong-yuhwa-amnok-rinse-lookback": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-amnok-hike-dusk": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-amnok-wanting-chin": [
 		"jumong",
 		"yuhwa"
 	],
@@ -3969,27 +2443,7 @@
 		"jumong",
 		"wihye"
 	],
-	"jumong-yuhwa-copper-offshoulder-lean": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-copper-lookback-want": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-tiny-obj-lookdown": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-two-wake-from-rail": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-haemosu-love-stunned-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-gulp-hour-ecu": [
 		"haemosu",
 		"jumong"
 	],
@@ -4001,43 +2455,15 @@
 		"haemosu",
 		"jumong"
 	],
-	"jumong-haemosu-first-step-water": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-haemosu-wades-close-her": [
 		"haemosu",
 		"jumong"
-	],
-	"jumong-yuhwa-naked-back-stay": [
-		"jumong",
-		"yuhwa"
 	],
 	"jumong-haemosu-why-not-run": [
 		"haemosu",
 		"jumong"
 	],
-	"jumong-yuhwa-no-reason": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-looking-at-sun": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-yuhwa-why-not-sun": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-burn-eyes": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-yuhwa-like-what-i-see": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-like-see-wet-back": [
 		"jumong",
 		"yuhwa"
 	],
@@ -4053,124 +2479,33 @@
 		"jumong",
 		"yuhwa"
 	],
-	"jumong-haemosu-follows-shallows": [
-		"haemosu",
-		"jumong"
-	],
-	"nsfw-jumong-yuhwa-lead-hike": [
-		"jumong",
-		"yuhwa"
-	],
 	"jumong-yuhwa-copper-kiss-sfw": [
 		"jumong",
 		"yuhwa"
-	],
-	"jumong-haemosu-copper-want-ecu": [
-		"haemosu",
-		"jumong"
 	],
 	"jumong-yuhwa-copper-aftermath-back": [
 		"jumong",
 		"yuhwa"
 	],
-	"jumong-set-amnok-dawn-empty": [
-		"jumong"
-	],
 	"jumong-set-amnok-morning-empty": [
-		"jumong"
-	],
-	"jumong-set-amnok-day-empty": [
-		"jumong"
-	],
-	"jumong-set-buyeo-morning-empty": [
-		"jumong"
-	],
-	"jumong-set-buyeo-day-yard": [
 		"jumong"
 	],
 	"jumong-set-well-day-empty": [
 		"jumong"
 	],
-	"jumong-set-jolbon-dusk-porch": [
-		"jumong"
-	],
-	"jumong-egg-ordeal-windup": [
-		"jumong"
-	],
-	"jumong-egg-ordeal-air": [
-		"jumong"
-	],
 	"jumong-egg-ordeal-cast-cliff": [
-		"jumong"
-	],
-	"jumong-daughter-teal-ass-back": [
-		"jumong"
-	],
-	"jumong-daughter-saffron-ass-back": [
 		"jumong"
 	],
 	"jumong-daughter-plum-ass-back": [
 		"jumong"
 	],
-	"jumong-seq-daughters-ass-two": [
-		"jumong"
-	],
-	"jumong-daughter-saffron-lookback-hike": [
-		"jumong"
-	],
-	"nsfw-jumong-sosuno-loft-wide-lock": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-legs-wide": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-dutch-spread": [
-		"jumong",
-		"sosuno"
-	],
 	"nsfw-jumong-sosuno-loft-worm-open": [
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-jumong-sosuno-loft-ots-hips": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-idiot-ecu": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-tsun-glare": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-loft-want-climax": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-queen-ass-dutch": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-queen-ass-majesty": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-worker-ass-silk": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-report-morning": [
-		"jumong"
-	],
 	"jumong-sosuno-seq-point-millet": [
 		"jumong",
 		"sosuno"
-	],
-	"jumong-seq-follow-finger": [
-		"jumong"
 	],
 	"jumong-seq-haul-grin": [
 		"jumong"
@@ -4178,31 +2513,6 @@
 	"jumong-sosuno-seq-wrong-stack": [
 		"jumong",
 		"sosuno"
-	],
-	"jumong-sosuno-seq-ditch-dont": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-ditch-chat": [
-		"jumong"
-	],
-	"jumong-sosuno-seq-rope-watch": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-bucket-work": [
-		"jumong"
-	],
-	"jumong-sosuno-seq-dusk-count": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-seq-work-chin-ecu": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-seq-work-soft-ecu": [
-		"jumong"
 	],
 	"jumong-sosuno-seq-work-first-two": [
 		"jumong",
@@ -4212,39 +2522,7 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-haemosu-sky-dawn-tiny": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-sky-dawn-drive": [
-		"haemosu",
-		"jumong"
-	],
 	"jumong-haemosu-sky-noon-laugh": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-sky-worm-earth": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-sky-dutch-streak": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-sky-ecu-rail": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-sky-dusk-tiny": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-sky-dusk-lean": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-sky-night-stars": [
 		"haemosu",
 		"jumong"
 	],
@@ -4252,32 +2530,7 @@
 		"haemosu",
 		"jumong"
 	],
-	"jumong-haemosu-heart-worm-speck": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-heart-rail-ecu": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-heart-floor-birds": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-heart-dutch-high": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-child-tiny-stamps": [
-		"jumong"
-	],
 	"jumong-child-borrowed-bows": [
-		"jumong"
-	],
-	"jumong-child-fly-practice": [
-		"jumong"
-	],
-	"jumong-child-fly-hit": [
 		"jumong"
 	],
 	"jumong-child-daeso-no-clap": [
@@ -4308,17 +2561,7 @@
 	"jumong-child-two-talk": [
 		"jumong"
 	],
-	"jumong-haemosu-heart-yuhwa-chin": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
 	"jumong-haemosu-pov-yuhwa-only": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-pov-yuhwa-face": [
 		"haemosu",
 		"jumong",
 		"yuhwa"
@@ -4328,223 +2571,30 @@
 		"jumong",
 		"yuhwa"
 	],
-	"jumong-haemosu-pov-yuhwa-stay": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
 	"jumong-haemosu-pov-yuhwa-wash": [
 		"haemosu",
 		"jumong",
 		"yuhwa"
-	],
-	"jumong-haemosu-pov-yuhwa-kneel": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-pov-chin-want": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-pov-wades-her": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-pov-rack-her": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-haemosu-pov-hike-rail": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-yuhwa-pov-haemosu-grin": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-pov-yuhwa-grin": [
-		"haemosu",
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-pov-sun-grin": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-pov-like-grin": [
-		"haemosu",
-		"jumong"
 	],
 	"jumong-yuhwa-haemosu-two-grin": [
 		"haemosu",
 		"jumong",
 		"yuhwa"
 	],
-	"jumong-yuhwa-pov-wink-grin": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-haemosu-pov-no-reason": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-yuhwa-pov-bank-grin": [
-		"jumong",
-		"yuhwa"
-	],
 	"jumong-sisters-kneel-well": [
 		"jumong"
 	],
-	"jumong-sisters-kneel-worm": [
-		"jumong"
-	],
-	"jumong-sisters-kneel-waterline": [
-		"jumong"
-	],
-	"jumong-sisters-kneel-side": [
-		"jumong"
-	],
 	"jumong-sisters-kneel-ots": [
-		"jumong"
-	],
-	"jumong-sisters-kneel-under": [
-		"jumong"
-	],
-	"jumong-sisters-kneel-dutch-high": [
-		"jumong"
-	],
-	"jumong-sisters-kneel-ecu-three": [
-		"jumong"
-	],
-	"jumong-sisters-spread-well": [
-		"jumong"
-	],
-	"jumong-sisters-spread-triangle": [
 		"jumong"
 	],
 	"nsfw-jumong-sosuno-haunt-face": [
 		"jumong",
 		"sosuno"
 	],
-	"nsfw-jumong-sosuno-haunt-back": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-haunt-smile": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-scold-after": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-daughter-teal-lean-hike": [
 		"jumong"
 	],
-	"jumong-daughter-saffron-lean-dare": [
-		"jumong"
-	],
-	"jumong-daughter-plum-lean-invite": [
-		"jumong"
-	],
-	"jumong-daughter-teal-lean-ass": [
-		"jumong"
-	],
-	"jumong-sosuno-style-minhwa": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-watercolor": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-woodblock": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-charcoal": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-gloss": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-minhwa-loft": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-charcoal-loft": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-inkwash": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-oil": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-watercolor-dump": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-woodblock-beam": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-oil-howdare": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-gloss-kiss": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-minhwa-kick": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-charcoal-cold": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-inkwash-grin": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-watercolor-well": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-side-well-count": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-side-porch-chin": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-side-loft-want": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-side-almost-kiss": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-side-dump": [
-		"jumong",
-		"sosuno"
-	],
 	"jumong-sosuno-side-full-draw": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-side-loft": [
 		"jumong",
 		"sosuno"
 	],
@@ -4552,451 +2602,25 @@
 		"jumong",
 		"sosuno"
 	],
-	"jumong-sosuno-style-charcoal-side": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-style-oil-side": [
-		"jumong",
-		"sosuno"
-	],
-	"nsfw-jumong-sosuno-side-well": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-sosuno-side-scream": [
-		"jumong",
-		"sosuno"
-	],
-	"jumong-amnok-wc-tiny-chariot": [
-		"jumong"
-	],
-	"jumong-amnok-wc-sisters-bath": [
-		"jumong"
-	],
-	"jumong-amnok-wc-yuhwa-stays": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-amnok-wc-haemosu-stunned": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-amnok-wc-wades-close": [
-		"jumong"
-	],
-	"jumong-amnok-wc-two-grin": [
-		"jumong"
-	],
-	"jumong-amnok-wc-why-not-run": [
-		"jumong"
-	],
-	"jumong-amnok-wc-like-see": [
-		"jumong"
-	],
-	"jumong-amnok-wc-lead-bank": [
-		"jumong"
-	],
-	"jumong-amnok-wc-copper-room": [
-		"jumong"
-	],
-	"jumong-amnok-wc-copper-kiss": [
-		"jumong"
-	],
-	"jumong-amnok-ink-tiny-chariot": [
-		"jumong"
-	],
-	"jumong-amnok-ink-sisters-bath": [
-		"jumong"
-	],
-	"jumong-amnok-ink-yuhwa-stays": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-amnok-ink-haemosu-stunned": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-amnok-ink-wades-close": [
-		"jumong"
-	],
-	"jumong-amnok-ink-two-grin": [
-		"jumong"
-	],
-	"jumong-amnok-ink-why-not-run": [
-		"jumong"
-	],
-	"jumong-amnok-ink-like-see": [
-		"jumong"
-	],
-	"jumong-amnok-ink-lead-bank": [
-		"jumong"
-	],
-	"jumong-amnok-ink-copper-room": [
-		"jumong"
-	],
-	"jumong-amnok-ink-copper-kiss": [
-		"jumong"
-	],
-	"jumong-amnok-wc-habek-court": [
-		"habek",
-		"jumong"
-	],
-	"jumong-amnok-wc-habek-charge": [
-		"habek",
-		"jumong"
-	],
-	"jumong-amnok-wc-looked-up": [
-		"jumong"
-	],
 	"jumong-amnok-wc-sisters-silent": [
 		"jumong"
-	],
-	"jumong-amnok-wc-kick-out": [
-		"jumong"
-	],
-	"jumong-amnok-ink-habek-court": [
-		"habek",
-		"jumong"
-	],
-	"jumong-amnok-ink-habek-charge": [
-		"habek",
-		"jumong"
-	],
-	"jumong-amnok-ink-looked-up": [
-		"jumong"
-	],
-	"jumong-amnok-ink-sisters-silent": [
-		"jumong"
-	],
-	"jumong-amnok-ink-kick-out": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-capital-open": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-come-in": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-hall-day": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-capital-open": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-come-in": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-hall-day": [
-		"jumong"
-	],
-	"jumong-amnok-wc-copper-lean": [
-		"jumong"
-	],
-	"jumong-amnok-wc-exile-stride": [
-		"jumong"
-	],
-	"jumong-amnok-ink-exile-stride": [
-		"jumong"
-	],
-	"jumong-yuhwa-wc-wander-road": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-ink-wander-road": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-buyeo-wc-arrive-kneel": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-geumwa-stride": [
-		"geumwa",
-		"jumong"
-	],
-	"jumong-buyeo-ink-geumwa-stride": [
-		"geumwa",
-		"jumong"
-	],
-	"jumong-buyeo-wc-geumwa-pull": [
-		"geumwa",
-		"jumong"
-	],
-	"jumong-buyeo-wc-egg-hurl": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-egg-air": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-egg-axe": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-hatch": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-hatch": [
-		"jumong"
-	],
-	"jumong-tabal-bow-ecu-obj": [
-		"jumong",
-		"yeontabal"
-	],
-	"jumong-tabal-bow-ots-obj": [
-		"jumong",
-		"yeontabal"
 	],
 	"jumong-tabal-bow-object-ecu": [
 		"jumong",
 		"yeontabal"
 	],
-	"jumong-child-wc-infants-yard": [
-		"jumong"
-	],
-	"jumong-child-forest-race": [
-		"jumong"
-	],
-	"jumong-child-archery-dusk": [
-		"jumong"
-	],
-	"jumong-child-night-bowls": [
-		"jumong"
-	],
-	"jumong-child-palace-youths": [
-		"jumong"
-	],
 	"jumong-child-fly-wing-bow": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-sunshaft-belly": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-sunshaft-belly": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-egg-birth": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-egg-birth": [
-		"jumong"
-	],
-	"jumong-amnok-wc-dragon-banter": [
-		"jumong"
-	],
-	"jumong-amnok-ink-dragon-banter": [
-		"jumong"
-	],
-	"jumong-amnok-wc-dragon-nuzzle": [
-		"jumong"
-	],
-	"jumong-amnok-wc-pov-haemosu-her": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-amnok-wc-pov-yuhwa-him": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-amnok-ink-pov-haemosu-her": [
-		"haemosu",
-		"jumong"
-	],
-	"jumong-amnok-ink-pov-yuhwa-him": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-amnok-wc-pov-like-ecu": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-sunshaft-night-out": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-sunshaft-night-in": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-sunshaft-night-worm": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-sunshaft-night-top": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-sunshaft-night-ecu": [
-		"jumong"
-	],
-	"jumong-buyeo-ink-sunshaft-night-out": [
-		"jumong"
-	],
-	"jumong-buyeo-wc-egg-birth-night": [
-		"jumong"
-	],
-	"jumong-amnok-wc-flirt-he-cocksure": [
-		"jumong"
-	],
-	"jumong-amnok-wc-flirt-whisper": [
-		"jumong"
-	],
-	"jumong-amnok-ink-flirt-whisper": [
-		"jumong"
-	],
-	"jumong-amnok-wc-flirt-he-blushes": [
-		"jumong"
-	],
-	"jumong-amnok-ink-flirt-he-blushes": [
-		"jumong"
-	],
-	"jumong-amnok-wc-flirt-makeout": [
-		"jumong"
-	],
-	"jumong-amnok-wc-flirt-into-heat": [
-		"jumong"
-	],
-	"jumong-amnok-wc-habek-talk-1": [
-		"habek",
-		"jumong"
-	],
-	"jumong-amnok-wc-habek-sentence": [
-		"habek",
-		"jumong"
-	],
-	"jumong-amnok-wc-kick-stride-2": [
-		"jumong"
-	],
-	"jumong-amnok-wc-pov-yuhwa-habek": [
-		"habek",
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-wc-fox-lead": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-wc-fox-lookback": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-ink-fox-lead": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-buyeo-wc-fox-arrive-geumwa": [
-		"geumwa",
-		"jumong"
-	],
-	"jumong-buyeo-wc-geumwa-accept-2": [
-		"geumwa",
-		"jumong"
-	],
-	"jumong-yuhwa-wc-fox-pawprints": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-yuhwa-wc-fox-follow-behind": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-wcine-chariot-approach": [
-		"jumong"
-	],
-	"jumong-wcine-sisters-dive": [
-		"jumong"
-	],
-	"jumong-wcine-yuhwa-stays": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-wcine-he-descends": [
-		"jumong"
-	],
-	"jumong-wcine-wade-closer": [
-		"jumong"
-	],
-	"jumong-wcine-ots-him": [
-		"jumong"
-	],
-	"jumong-wcine-ots-her": [
-		"jumong"
-	],
-	"jumong-wcine-swallow": [
-		"jumong"
-	],
-	"jumong-wcine-kiss-ecu": [
-		"jumong"
-	],
-	"jumong-wcine-almost": [
-		"jumong"
-	],
-	"jumong-cine-habek-worm": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-habek-shout": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-habek-banish": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-habek-wide": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-habek-dutch": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-habek-ecu": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-habek-eyes": [
-		"habek",
 		"jumong"
 	],
 	"jumong-cine-yuhwa-flinch-ecu": [
 		"jumong",
 		"yuhwa"
 	],
-	"jumong-cine-habek-faces": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-habek-grip": [
-		"habek",
-		"jumong"
-	],
-	"jumong-cine-yuhwa-away": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-cine-yuhwa-answer": [
-		"jumong",
-		"yuhwa"
-	],
-	"jumong-cine-kick-bridge": [
-		"jumong"
-	],
-	"jumong-cine-fox-behind": [
-		"jumong"
-	],
-	"jumong-cine-fox-palace": [
-		"jumong"
-	],
-	"jumong-cine-fox-prints": [
-		"jumong"
-	],
 	"jumong-cine-geumwa-stride": [
 		"geumwa",
 		"jumong"
 	],
-	"jumong-cine-geumwa-worm": [
-		"geumwa",
-		"jumong"
-	],
 	"yuhwa-exile-pavilion-wide": [
-		"habek",
-		"yuhwa"
-	],
-	"yuhwa-exile-habek-dutch": [
 		"habek",
 		"yuhwa"
 	],
@@ -5007,87 +2631,211 @@
 	"yuhwa-exile-dejected-sit": [
 		"yuhwa"
 	],
-	"yuhwa-exile-dejected-ecu": [
+	"yuhwa-exile-sky-voice": [
 		"yuhwa"
 	],
-	"yuhwa-exile-sky-voice": [
-		"yuhwa",
-		"haemosu"
-	],
 	"yuhwa-exile-fox-appear": [
-		"yuhwa",
-		"haemosu"
-	],
-	"yuhwa-exile-fox-lookback": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-follow-south": [
-		"yuhwa",
-		"haemosu"
-	],
-	"yuhwa-exile-fox-pine": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-pass": [
-		"yuhwa",
-		"haemosu"
-	],
-	"yuhwa-exile-fox-buyeo-see": [
-		"yuhwa",
-		"haemosu"
-	],
-	"yuhwa-exile-geumwa-path": [
-		"geumwa",
 		"yuhwa"
 	],
 	"yuhwa-exile-geumwa-come-in": [
 		"geumwa",
 		"yuhwa"
 	],
-	"jumong-amnok-wc-habek-pavilion": [
-		"habek",
+	"jumong-needle-stable": [
+		"jumong",
+		"yuhwa"
+	],
+	"samjogo-pines-pace": [
 		"jumong"
 	],
-	"jumong-amnok-wc-habek-pavilion-ecu": [
-		"habek",
+	"samjogo-far-bank": [
 		"jumong"
 	],
-	"jumong-amnok-wc-habek-pavilion-kick": [
-		"habek",
+	"samjogo-cavern-door": [
 		"jumong"
 	],
-	"jumong-amnok-wc-flirt-midriver-two": [
+	"family-south": [
+		"biryu",
+		"onjo",
+		"sosuno"
+	],
+	"three-kings": [
+		"biryu",
+		"onjo",
+		"yuri"
+	],
+	"onjo-seq-goodbye-well": [
+		"jumong",
+		"onjo",
+		"sosuno"
+	],
+	"nsfw-sosuno-last-night": [
+		"sosuno"
+	],
+	"sosuno-seq-glow-south": [
+		"biryu",
+		"onjo",
+		"sosuno"
+	],
+	"onjo-seq-queen-king-rail": [
+		"onjo"
+	],
+	"onjo-seq-buyeo-bully": [
+		"onjo"
+	],
+	"onjo-seq-pine-dig": [
+		"onjo"
+	],
+	"onjo-seq-retrace-wide": [
+		"onjo"
+	],
+	"onjo-seq-court-match": [
+		"onjo"
+	],
+	"onjo-seq-left-rail": [
+		"onjo"
+	],
+	"onjo-seq-ten-pack": [
+		"onjo"
+	],
+	"onjo-seq-torn": [
+		"onjo"
+	],
+	"nsfw-onjo-last-ots": [
+		"onjo"
+	],
+	"nsfw-onjo-ogle-body": [
+		"onjo"
+	],
+	"sinrok-ridge-path": [
+		"biryu",
+		"onjo"
+	],
+	"sinrok-looks-back": [
+		"biryu",
+		"onjo",
+		"sosuno"
+	],
+	"sinrok-buak-summit": [
+		"biryu",
+		"onjo",
+		"sosuno"
+	],
+	"ink-turtle-bridge-jumong": [
 		"jumong"
 	],
-	"jumong-amnok-wc-flirt-whisper-midriver": [
+	"jumong_06": [
+		"haemosu",
+		"jumong",
+		"yeontabal",
+		"yuhwa"
+	],
+	"jumong-bow-arc": [
 		"jumong"
 	],
-	"jumong-amnok-ink-flirt-whisper-midriver": [
+	"jumong-yuhwa-moon-ascent": [
+		"jumong",
+		"yuhwa"
+	],
+	"jumong-yuhwa-rise": [
+		"jumong",
+		"yuhwa"
+	],
+	"jumong-dongmyung-seq-hall-wide": [
 		"jumong"
 	],
-	"jumong-amnok-wc-flirt-blush-midriver": [
-		"jumong"
+	"taizong-portrait": [
+		"taizong"
 	],
-	"jumong-amnok-wc-flirt-makeout-midriver": [
-		"jumong"
+	"taizong-vast-harem": [
+		"taizong"
 	],
-	"jumong-buyeo-wc-fox-pawprints-gate": [
-		"jumong"
+	"taizong-court": [
+		"taizong"
 	],
-	"jumong-buyeo-wc-geumwa-pawprint-arrive": [
-		"geumwa",
-		"jumong"
+	"taizong-far-plane": [
+		"taizong"
 	],
-	"jumong-amnok-wc-pavilion-from-bridge": [
-		"jumong"
+	"taizong-door-slit": [
+		"taizong"
 	],
-	"jumong-amnok-ink-pavilion-inside": [
-		"jumong"
+	"four-dragons": [
+		"taizong"
 	],
-	"jumong-buyeo-wc-palace-path-welcome": [
-		"jumong"
+	"taizong-son-of-heaven": [
+		"taizong"
+	],
+	"tang-war-council": [
+		"xuerengui"
+	],
+	"taizong-empty-dais": [
+		"taizong"
+	],
+	"munduk-banner": [
+		"munduk"
+	],
+	"munduk-battle": [
+		"munduk"
+	],
+	"salsu-ford-ribbon": [
+		"munduk"
+	],
+	"salsu-red-wedge": [
+		"munduk"
+	],
+	"xue-longmen-field-dawn": [
+		"xueliu",
+		"xuerengui"
+	],
+	"xue-longmen-hut-door": [
+		"xueliu"
+	],
+	"xue-longmen-yellow-hoe": [
+		"xuerengui"
+	],
+	"xue-longmen-wife-close": [
+		"xueliu"
+	],
+	"xue-longmen-two-shot": [
+		"xueliu",
+		"xuerengui"
+	],
+	"xue-longmen-graves": [
+		"xuerengui"
+	],
+	"xue-longmen-leave": [
+		"xueliu",
+		"xuerengui"
+	],
+	"ansi-court": [
+		"yangmanchun"
+	],
+	"poster_xuerengui": [
+		"xuerengui"
+	],
+	"jupil-routes": [
+		"xuerengui"
+	],
+	"jupil-mountain": [
+		"namseng"
+	],
+	"xue-fortress-escape": [
+		"xuerengui"
+	],
+	"xue-east-gaze": [
+		"xuerengui"
+	],
+	"dongchun-five-thousand": [
+		"dongchun"
+	],
+	"burning-capital": [
+		"dongchun"
 	],
 	"poster_yangmanchun": [
 		"yangmanchun"
@@ -5153,6 +2901,10 @@
 		"mugwan",
 		"sadaham"
 	],
+	"sadaham-grief-clutch": [
+		"mugwan",
+		"sadaham"
+	],
 	"bupmin-hwarang-yard": [
 		"munmu",
 		"yushin"
@@ -5161,6 +2913,14 @@
 		"yushin"
 	],
 	"bupmin-five-principles": [
+		"yushin"
+	],
+	"parody-class-photo-hwarang": [
+		"munmu",
+		"yushin"
+	],
+	"parody-seodang-hwarang": [
+		"munmu",
 		"yushin"
 	],
 	"bupmin-jahee-rain": [
@@ -5181,11 +2941,6 @@
 		"supum",
 		"xuerengui"
 	],
-	"council-tea-supum": [
-		"bidam",
-		"jukji",
-		"supum"
-	],
 	"chunchu-strategist": [
 		"chunchu"
 	],
@@ -5201,10 +2956,6 @@
 		"bidam",
 		"xuerengui"
 	],
-	"council-veto-fist": [
-		"alchun",
-		"bidam"
-	],
 	"council-veto-blue": [
 		"alchun",
 		"bidam",
@@ -5213,10 +2964,6 @@
 	],
 	"council-tea-veto": [
 		"bidam"
-	],
-	"council-seq-veto": [
-		"bidam",
-		"supum"
 	],
 	"council-seq-veto-close": [
 		"bidam"
@@ -5228,7 +2975,25 @@
 	"bidam-father-first-day": [
 		"bidam"
 	],
-	"bidam-defends-yushin": [
+	"parody-last-supper": [
+		"alchun",
+		"bidam",
+		"supum",
+		"yushin"
+	],
+	"parody-thinker-yushin": [
+		"yushin"
+	],
+	"hc-circle-closes": [
+		"alchun",
+		"bidam",
+		"yushin"
+	],
+	"hc-hands-rise": [
+		"bidam",
+		"yushin"
+	],
+	"hc-bidam-piece": [
 		"bidam",
 		"yushin"
 	],
@@ -5238,16 +3003,10 @@
 	"bidam-rebellion-wide": [
 		"bidam"
 	],
-	"bidam-defiance": [
-		"bidam"
-	],
 	"bidam-sword-dark": [
 		"bidam"
 	],
 	"bidam-sword-pommel": [
-		"bidam"
-	],
-	"bidam-sword-carry": [
 		"bidam"
 	],
 	"bidam-poster": [
@@ -5304,9 +3063,6 @@
 		"sunduk",
 		"yushin"
 	],
-	"bidam-death-betrayal": [
-		"bidam"
-	],
 	"young-yushin": [
 		"bidam",
 		"sunduk",
@@ -5360,6 +3116,9 @@
 	"yushin-fire-kite": [
 		"yushin"
 	],
+	"bidam-pensive-star": [
+		"bidam"
+	],
 	"bidam-rampart-confession": [
 		"bidam"
 	],
@@ -5377,12 +3136,6 @@
 		"bidam",
 		"yushin"
 	],
-	"bidam-second-blade": [
-		"bidam"
-	],
-	"bidam-defiance-upward": [
-		"bidam"
-	],
 	"bidam-sutra-recitation": [
 		"bidam"
 	],
@@ -5391,13 +3144,6 @@
 	],
 	"bidam-beads-ring": [
 		"bidam"
-	],
-	"bidam-incense-column": [
-		"bidam"
-	],
-	"radiance-siege-ring": [
-		"bidam",
-		"yushin"
 	],
 	"bidam-yushin-two-laws": [
 		"bidam",
@@ -5410,16 +3156,13 @@
 	"bidam-pavilion-empty": [
 		"bidam"
 	],
-	"bidam-gold-shaft": [
-		"bidam"
-	],
 	"alchun-tablet-bar": [
 		"alchun"
 	],
-	"bidam-lotus-sit": [
+	"bidam-break-close": [
 		"bidam"
 	],
-	"bidam-break-close": [
+	"bidam-pensive-incense": [
 		"bidam"
 	],
 	"yushin-no-kim-close": [
@@ -5504,10 +3247,6 @@
 		"bidam",
 		"yumjong"
 	],
-	"bidam-yumjong-rally": [
-		"bidam",
-		"yumjong"
-	],
 	"rebel-black-headband-army": [
 		"bidam"
 	],
@@ -5522,11 +3261,89 @@
 		"bidam",
 		"yushin"
 	],
+	"bidam-pensive-map": [
+		"bidam"
+	],
 	"bidam-yushin-tea-cold": [
 		"bidam",
 		"yushin"
 	],
+	"bidam-pensive-smile": [
+		"bidam",
+		"yushin"
+	],
 	"bidam-yushin-duel-day10": [
+		"bidam",
+		"yushin"
+	],
+	"parody-liberty-bidam": [
+		"bidam"
+	],
+	"parody-cheonmachong-bidam": [
+		"bidam"
+	],
+	"parody-dano-cavern": [
+		"golhwa",
+		"hyulle",
+		"munmu",
+		"narim",
+		"yun"
+	],
+	"parody-ssireum-yard": [
+		"bidam",
+		"yushin"
+	],
+	"parody-abbey-road-hwarang": [
+		"alchun",
+		"bidam",
+		"yushin"
+	],
+	"parody-gosa-alchun": [
+		"alchun"
+	],
+	"parody-dalmado-bidam": [
+		"bidam"
+	],
+	"parody-tiger-golhwa": [
+		"bidam",
+		"golhwa"
+	],
+	"parody-team7-hwarang": [
+		"alchun",
+		"bidam",
+		"sunduk",
+		"yushin"
+	],
+	"parody-laocoon-bidam": [
+		"bidam",
+		"hyulle"
+	],
+	"yushin-hanbyul-cheongwan-gate": [
+		"cheongwan",
+		"yushin"
+	],
+	"yushin-hangyul-forehead": [
+		"yushin"
+	],
+	"yushin-hangyul-offering-wide": [
+		"yushin"
+	],
+	"bidam-bisamun-smoke": [
+		"bidam"
+	],
+	"bisamun-beads-bridle": [
+		"bidam"
+	],
+	"bisamun-riderless": [
+		"xuerengui"
+	],
+	"bidam-death-field": [
+		"bidam"
+	],
+	"bidam-death-blood": [
+		"bidam"
+	],
+	"bidam-defends-yushin": [
 		"bidam",
 		"yushin"
 	],
@@ -5550,6 +3367,10 @@
 	],
 	"chunchu-strategy-meditation": [
 		"chunchu"
+	],
+	"ink-packing-munhee": [
+		"munhee",
+		"yun"
 	],
 	"heo-court-present": [
 		"heohwangok",
@@ -5813,6 +3634,86 @@
 		"chunchu",
 		"taizong"
 	],
+	"six-steeds-gallery": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-walk": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-wall": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-hoof": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-saluzi": [
+		"taizong"
+	],
+	"six-steeds-chunchu": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-qingzhui": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-arrows": [
+		"chunchu",
+		"taizong"
+	],
+	"six-steeds-empty": [
+		"chunchu",
+		"taizong"
+	],
+	"steed-baitiwu-night-ride": [
+		"taizong"
+	],
+	"steed-telebiao-queshu": [
+		"taizong"
+	],
+	"steed-qingzhui-hulao": [
+		"taizong"
+	],
+	"steed-shifachi-hedgehog": [
+		"taizong"
+	],
+	"steed-quanmaogua-nine-arrows": [
+		"taizong"
+	],
+	"steed-saluzi-alone": [
+		"taizong"
+	],
+	"steed-saluzi-arrow": [
+		"taizong"
+	],
+	"steed-saluzi-homecoming": [
+		"taizong"
+	],
+	"tang-daming-dusk": [
+		"chunchu"
+	],
+	"tang-court-ranks": [
+		"chunchu",
+		"taizong"
+	],
+	"tang-clerks-machine": [
+		"chunchu"
+	],
+	"tang-lamp-bearers": [
+		"chunchu",
+		"taizong"
+	],
+	"tang-banquet-thousands": [
+		"chunchu",
+		"taizong"
+	],
+	"tang-inner-court-women": [
+		"wuzetian"
+	],
 	"wuzetian-screen": [
 		"wuzetian"
 	],
@@ -5942,6 +3843,12 @@
 	"secretariat-courier": [
 		"jukji"
 	],
+	"parody-jobs-chunchu": [
+		"chunchu"
+	],
+	"parody-godfather-chunchu": [
+		"chunchu"
+	],
 	"poster_muyeol": [
 		"chunchu"
 	],
@@ -6000,6 +3907,9 @@
 	"alyoung-dragon-rib": [
 		"alyoung"
 	],
+	"hyukgose-oreung": [
+		"hyukgose"
+	],
 	"satek-clan-2": [
 		"eldersatek"
 	],
@@ -6024,6 +3934,10 @@
 	],
 	"euija-mourning-fury": [
 		"euija"
+	],
+	"ma-gyebek-kneels": [
+		"gyebek",
+		"ministersatek"
 	],
 	"assembly-sketch": [
 		"chunbok"
@@ -6064,6 +3978,17 @@
 	],
 	"euija-coup-empty-benches": [
 		"euija"
+	],
+	"parody-coup-poster-euija": [
+		"euija"
+	],
+	"ma-facing-rows": [
+		"euija",
+		"ministersatek"
+	],
+	"ma-forty-one-sons": [
+		"euija",
+		"ministersatek"
 	],
 	"euija-descent-wide": [
 		"euija"
@@ -6331,6 +4256,9 @@
 	"jacheongbi": [
 		"gyebek"
 	],
+	"parody-sehando-gyebek": [
+		"gyebek"
+	],
 	"bloody-hand": [
 		"euija"
 	],
@@ -6383,100 +4311,11 @@
 	"yellow-banner": [
 		"gyebek"
 	],
-	"family-south": [
-		"biryu",
-		"onjo",
-		"sosuno"
+	"gomanari-dawn-yard": [
+		"gyebek"
 	],
-	"three-kings": [
-		"biryu",
-		"onjo",
-		"yuri"
-	],
-	"onjo-seq-goodbye-well": [
-		"jumong",
-		"onjo",
-		"sosuno"
-	],
-	"nsfw-sosuno-last-night": [
-		"sosuno"
-	],
-	"sosuno-seq-glow-south": [
-		"biryu",
-		"onjo",
-		"sosuno"
-	],
-	"onjo-seq-queen-king-rail": [
-		"onjo"
-	],
-	"nsfw-onjo-backs-last": [
-		"onjo"
-	],
-	"nsfw-onjo-queen-back": [
-		"onjo"
-	],
-	"nsfw-onjo-king-back": [
-		"onjo"
-	],
-	"onjo-seq-buyeo-bully": [
-		"onjo"
-	],
-	"onjo-seq-pine-dig": [
-		"onjo"
-	],
-	"onjo-seq-retrace-wide": [
-		"onjo"
-	],
-	"onjo-seq-court-match": [
-		"onjo"
-	],
-	"onjo-seq-left-rail": [
-		"onjo"
-	],
-	"onjo-seq-ten-pack": [
-		"onjo"
-	],
-	"onjo-seq-torn": [
-		"onjo"
-	],
-	"onjo-seq-caravan-dawn": [
-		"onjo"
-	],
-	"nsfw-onjo-last-wide": [
-		"onjo"
-	],
-	"nsfw-onjo-queen-back-h": [
-		"onjo"
-	],
-	"nsfw-onjo-king-back-h": [
-		"onjo"
-	],
-	"nsfw-onjo-last-ots": [
-		"onjo"
-	],
-	"nsfw-onjo-last-dutch": [
-		"onjo"
-	],
-	"nsfw-onjo-last-ecu": [
-		"onjo"
-	],
-	"nsfw-onjo-last-worm": [
-		"onjo"
-	],
-	"nsfw-onjo-last-fill": [
-		"onjo"
-	],
-	"nsfw-onjo-ogle-body": [
-		"onjo"
-	],
-	"nsfw-onjo-queen-back-shy": [
-		"onjo"
-	],
-	"nsfw-onjo-queen-pose": [
-		"onjo"
-	],
-	"nsfw-onjo-queen-back-dutch": [
-		"onjo"
+	"gomanari-forehead": [
+		"gyebek"
 	],
 	"three-realms-02-arrival": [
 		"haemosu",
@@ -6546,108 +4385,6 @@
 	"three-realms-08-hallakgungi-joke": [
 		"hwanung"
 	],
-	"poster_dangun": [
-		"dangun"
-	],
-	"poster_hwanung": [
-		"hwanung"
-	],
-	"poster_hwanin": [
-		"hwanin"
-	],
-	"poster_ungnyeo": [
-		"ungnyeo"
-	],
-	"hwanung-descent": [
-		"hwanin",
-		"hwanung"
-	],
-	"bear-tiger-cave": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"dangun-mountain": [
-		"dangun",
-		"hwanung",
-		"ungnyeo"
-	],
-	"dangun-asadal": [
-		"dangun",
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanin-opens-sky": [
-		"hwanin"
-	],
-	"dangun-wanggeom": [
-		"dangun",
-		"hwanung"
-	],
-	"ungnyeo-cave-vigil": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanin-above": [
-		"hwanin"
-	],
-	"hwanin-ivory-void": [
-		"hwanin"
-	],
-	"ungnyeo-cave-shaft": [
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-birch-wide": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"ungnyeo-dont-closer": [
-		"ungnyeo"
-	],
-	"hwanung-seal-forgotten": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-kiss": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-night": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"dangun-sandalwood-altar": [
-		"dangun"
-	],
-	"ungnyeo-pass-again": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-garlic-far": [
-		"hwanung"
-	],
-	"ungnyeo-hand-claim": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-come-down": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"ungnyeo-tree-watch": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"hwanung-ungnyeo-sash-moss": [
-		"hwanung",
-		"ungnyeo"
-	],
-	"ungnyeo-seal-thief": [
-		"ungnyeo"
-	],
-	"ungnyeo-marry-morning": [
-		"hwanung",
-		"ungnyeo"
-	],
 	"gyebek-seq-palisade": [
 		"gyebek"
 	],
@@ -6709,6 +4446,92 @@
 	"gyebek-vertical-blade": [
 		"gyebek"
 	],
+	"parody-300-gyebek": [
+		"gyebek"
+	],
+	"duel-gyebek-contre-jour": [
+		"gyebek"
+	],
+	"duel-yushin-eyes": [
+		"yushin"
+	],
+	"duel-gyebek-counting": [
+		"gyebek"
+	],
+	"duel-meet-dust": [
+		"gyebek",
+		"yushin"
+	],
+	"duel-ink-slash": [
+		"gyebek",
+		"yushin"
+	],
+	"duel-horse-eye": [
+		"yushin"
+	],
+	"duel-report-ots": [
+		"gyebek"
+	],
+	"duel-oil-gwanchang-helm": [
+		"gwanchang",
+		"gyebek"
+	],
+	"duel-oil-pumil-pieta": [
+		"pumil",
+		"yushin"
+	],
+	"duel-last-line-strip": [
+		"gyebek"
+	],
+	"duel-oil-kangrim-above": [
+		"gyebek"
+	],
+	"duel-oil-duty": [
+		"gyebek"
+	],
+	"duel-kangrim-shadow": [
+		"gyebek"
+	],
+	"hwangsan-gyebek-charge": [
+		"gyebek"
+	],
+	"hwangsan-yushin-column": [
+		"sunduk",
+		"yushin"
+	],
+	"hwangsan-fourth-clash": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-white-horse-back": [
+		"yushin"
+	],
+	"hwangsan-black-white-gap": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-go-stones": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-quiet-talk": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-tied-sleeve": [
+		"gyebek",
+		"yushin"
+	],
+	"hwangsan-turn-apart": [
+		"gyebek",
+		"yushin"
+	],
+	"gyebek-death-field": [
+		"gyebek"
+	],
+	"gyebek-death-pieta": [
+		"gyebek"
+	],
 	"two-kings": [
 		"chunchu",
 		"euija"
@@ -6734,6 +4557,12 @@
 		"euija"
 	],
 	"euija-memories": [
+		"euija"
+	],
+	"euija-death-steps": [
+		"euija"
+	],
+	"euija-death-close": [
 		"euija"
 	],
 	"chiljido-bestowal": [
@@ -6845,6 +4674,16 @@
 	"sasu-seq-subdue": [
 		"gesomun"
 	],
+	"sasu-damul-knot": [
+		"gesomun"
+	],
+	"sasu-banner-cut": [
+		"gesomun",
+		"pangxiaotai"
+	],
+	"sasu-red-horse-shallows": [
+		"gesomun"
+	],
 	"gesomun-death-black": [
 		"gesomun"
 	],
@@ -6909,8 +4748,107 @@
 		"munmu",
 		"yushin"
 	],
-	"andong-grid-stamp": [
-		"xuerengui"
+	"parody-admiral-yi-yushin": [
+		"yushin"
+	],
+	"poster_dangun": [
+		"dangun"
+	],
+	"poster_hwanung": [
+		"hwanung"
+	],
+	"poster_hwanin": [
+		"hwanin"
+	],
+	"poster_ungnyeo": [
+		"ungnyeo"
+	],
+	"hwanung-descent": [
+		"hwanin",
+		"hwanung"
+	],
+	"bear-tiger-cave": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"dangun-mountain": [
+		"dangun",
+		"hwanung",
+		"ungnyeo"
+	],
+	"dangun-asadal": [
+		"dangun",
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanin-opens-sky": [
+		"hwanin"
+	],
+	"dangun-wanggeom": [
+		"dangun",
+		"hwanung"
+	],
+	"ungnyeo-cave-vigil": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanin-above": [
+		"hwanin"
+	],
+	"ungnyeo-cave-shaft": [
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-birch-wide": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-dont-closer": [
+		"ungnyeo"
+	],
+	"hwanung-seal-forgotten": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-kiss": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-night": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-pass-again": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-garlic-far": [
+		"hwanung"
+	],
+	"ungnyeo-hand-claim": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-come-down": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-tree-watch": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"hwanung-ungnyeo-sash-moss": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ungnyeo-seal-thief": [
+		"ungnyeo"
+	],
+	"ungnyeo-marry-morning": [
+		"hwanung",
+		"ungnyeo"
+	],
+	"ink-sindansu-hwanung": [
+		"hwanung"
 	],
 	"mohe-ambush": [
 		"northcmd",
@@ -6920,8 +4858,8 @@
 		"chunchu",
 		"munmu"
 	],
-	"munmu-crimson-tide": [
-		"munmu"
+	"andong-grid-stamp": [
+		"xuerengui"
 	],
 	"yushin-death-black": [
 		"yushin"
@@ -6978,37 +4916,17 @@
 	"white-tiger-withdraws": [
 		"xuerengui"
 	],
+	"munmu-crimson-tide": [
+		"munmu"
+	],
 	"emperor-robe-ribbon": [
 		"gaozong"
 	],
 	"two-kings-crowns": [
 		"munhee"
 	],
-	"unified-silla-wide": [
-		"munmu"
-	],
-	"munhee-witness": [
-		"munhee"
-	],
-	"munmu-king-for-all": [
-		"munmu"
-	],
-	"unified-silla-day": [
-		"munhee",
-		"munmu"
-	],
-	"unified-silla-banners": [
-		"munmu"
-	],
-	"unified-silla-two-thrones": [
-		"munhee",
-		"munmu"
-	],
 	"munmu-sea-tomb": [
 		"munmu"
-	],
-	"munhee-witness-profile": [
-		"munhee"
 	],
 	"munmu-tide-rock": [
 		"munmu"

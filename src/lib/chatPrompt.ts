@@ -36,6 +36,7 @@ export function buildChatPrompt(p: Person): string {
 		if (p.personality?.length) {
 			extras.push(`Trait tags: ${p.personality.join('; ')}.`);
 		}
+		if (p.voice) extras.push(`How you talk: ${p.voice}`);
 		const clan = clanOf(p);
 		if (clan) extras.push(`Clan / house: ${clan}.`);
 		if (!extras.length) return authored.endsWith('\n') ? authored : authored + '\n';
@@ -73,6 +74,10 @@ export function buildChatPrompt(p: Person): string {
 
 	if (p.nature) {
 		blocks.push('Personality and temperament:', p.nature, '');
+	}
+
+	if (p.voice) {
+		blocks.push('How you talk:', p.voice, '');
 	}
 
 	if (p.arc) {
