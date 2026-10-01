@@ -132,25 +132,21 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	'fall-of-baekje': [
 		{
 			parent: 'Yellow Mountain Fields',
-			children: [
-				{ title: 'Sabi Palace' },
-				{ title: 'The Death of Buyeo Euija' },
-				{ title: 'The Seven Branched Sword' }
-			]
+			children: [{ title: 'Sabi Palace' }, { title: 'The Death of Buyeo Euija' }]
 		},
 		{
 			parent: 'The Death of Kim Chunchu',
 			children: [{ title: 'The Four Beasts' }]
-		},
-		{
-			parent: 'Baekje Restoration Society',
-			children: [{ title: 'White River' }]
 		}
 	],
 	'final-stand': [
 		{
 			parent: 'Snake River',
 			children: [{ title: 'The Surrender of Tamla', after: 'Yumla Defied' }]
+		},
+		{
+			parent: 'Juryu Fortress',
+			children: [{ title: 'The Seven Branched Sword' }, { title: 'White River' }]
 		},
 		{
 			parent: 'The Death of Yeon Gesomun',

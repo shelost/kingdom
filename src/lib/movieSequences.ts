@@ -226,7 +226,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'snake-river-wide', role: 'exposition', angle: 'wide winter establishing' },
 			{ id: 'sasu-seq-stab', role: 'Tang mid-stab', angle: 'over-shoulder', at: 'a Tang blade a finger from his throat' },
 			{ id: 'sasu-seq-soul-exit', role: 'soul leaves', angle: 'worm’s-eye', at: 'the air thins the way Tamla stories promised' },
-			{ id: 'sasu-seq-soul-fight', role: 'soul defeats escorts', angle: 'dutch', at: 'And neither is your business until I am done' },
+			{ id: 'sasu-seq-soul-fight', role: 'soul defeats escorts', angle: 'dutch', at: 'He cuts the escorts in the thinning air' },
 			{ id: 'sasu-seq-soul-return', role: 'soul returns', angle: 'high dutch', at: 'He stands up on will alone' },
 			{ id: 'sasu-seq-eyes', role: 'dead to alive', angle: 'ECU', at: 'The blade misses' },
 			{ id: 'sasu-seq-subdue', role: 'wrist-lock stare', angle: 'OTS close', at: 'The blade misses' }
@@ -242,9 +242,9 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		shots: [
 			{ id: 'hwangsan-wide', role: 'exposition wide', angle: 'aerial / high establishing' },
 			{ id: 'hwangsan-three-camps', role: 'three roads in', angle: 'high view' },
-			{ id: 'gyebek-seq-palisade', role: 'Gyebek holds', angle: 'worm’s-eye', at: 'Yellow lacquer holds the palisade' },
-			{ id: 'yushin-seq-gallop', role: 'Yushin arrives', angle: 'dutch low gallop', at: 'The tall Silla helm comes in at a gallop' },
-			{ id: 'hwangsan-seq-clash', role: 'two blades', angle: 'over-shoulder', at: 'Blue plume cuts yellow lacquer' },
+			{ id: 'gyebek-seq-palisade', role: 'Gyebek holds', angle: 'worm’s-eye', at: 'palisades lacquered yellow' },
+			{ id: 'yushin-seq-gallop', role: 'Yushin arrives', angle: 'dutch low gallop', at: 'you are this Hundred-Victories Gyebek' },
+			{ id: 'hwangsan-seq-clash', role: 'two blades', angle: 'over-shoulder', at: 'The fourth time Yushin rides at the head' },
 			{ id: 'hwangsan-cavalry-fourth', role: 'fourth charge', angle: 'ground tracking' },
 			{ id: 'gyebek-last-stand-yellow', role: 'aftermath iconic', angle: 'poster / lower-third' }
 		]

@@ -49246,7 +49246,7 @@
 						"nsfw": false,
 						"id": "gyebek-seq-palisade",
 						"tone": "#d9b13a",
-						"at": "Yellow lacquer holds the palisade",
+						"at": "palisades lacquered yellow",
 						"alt": "Worm’s-eye dusk: Gyebek shouting at the palisade, steel lamellar, yellow cloth peek",
 						"refs": [
 							"/ch_gyebek.png",
@@ -49265,7 +49265,7 @@
 						"nsfw": false,
 						"id": "yushin-seq-gallop",
 						"tone": "#2A5FB8",
-						"at": "The tall Silla helm comes in at a gallop",
+						"at": "you are this Hundred-Victories Gyebek",
 						"alt": "Dutch low gallop: Yushin, steel lamellar, tall Silla helm, Confucian-blue cloth peek",
 						"refs": [
 							"/ch_kim_yushin.png",
@@ -49284,7 +49284,7 @@
 						"nsfw": false,
 						"id": "hwangsan-seq-clash",
 						"tone": "#d9b13a",
-						"at": "Blue plume cuts yellow lacquer",
+						"at": "The fourth time Yushin rides at the head",
 						"alt": "OTS clash: steel vs steel, blue cloth vs yellow cloth, two grimaces, crushed dusk",
 						"refs": [
 							"/ch_kim_yushin.png",
@@ -49301,28 +49301,6 @@
 						"prompt": "Minimal iconic 16:9. OTS clash. ONE Yushin, ONE Gyebek. Both steel-gray lamellar; blue vs yellow cloth peek. Blades as an X. Faces from portraits. No text. No watermark."
 					},
 					{
-						"id": "alchun-restraint",
-						"ratio": 0.75,
-						"tone": "#3E79E4",
-						"at": "Alchun",
-						"alt": "General Alchun with hand on undrawn sword - ready restraint and loyalty",
-						"src": "/temp/alchun_ready_restraint.png",
-						"refs": [
-							"/ch_alchun.png"
-						]
-					},
-					{
-						"id": "gyebek-last-stand-minimal",
-						"ratio": 0.5625,
-						"tone": "#FFCB51",
-						"at": "Gyebek stands",
-						"alt": "Lone Baekje warrior silhouetted against vast yellow sunset sky - Gyebek's final stand",
-						"src": "/temp/gyebek_last_stand_yellow.png",
-						"refs": [
-							"/ch_gyebek.png"
-						]
-					},
-					{
 						"id": "gyebek-prayer",
 						"ratio": 0.5625,
 						"tone": "#FFCB51",
@@ -49337,7 +49315,7 @@
 						"id": "gyebek-ring-plant",
 						"ratio": 1.333,
 						"tone": "#d9b13a",
-						"at": "plants the phoenix ring",
+						"at": "plants his sword in the yellow dust",
 						"alt": "Close: Gyebek’s hand on a planted phoenix-ring 환두대도 — hollow gold circle readable in yellow dust",
 						"prompt": "Minimal iconic 4:3 still. Gyebek, last general of Baekje. ONE geometric device: a planted 환두대도 phoenix-ring as a hollow gold circle standing in a thin yellow-dust strip; his adult hand gripping the ring, fully readable lotus-phoenix inside. Face matches the attached portrait only as a gold-headband sliver at the top. Yellow #d9b13a as the plane. Striking silky Baekje court-military, few hues. Flat charcoal void. No army. No field catalog. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly. NOT photoreal. NOT busy.",
 						"refs": [
@@ -49401,7 +49379,7 @@
 						"ratio": 2.3,
 						"tone": "#facc15",
 						"alt": "Sixteen-year-old Gwanchang charges the Baekje line alone",
-						"at": "Bangul rides out alone and does not come back.",
+						"at": "rides straight at the Baekje line alone",
 						"prompt": "Cinematic historical illustration of gyebek gwanchang, Three Kingdoms of Samhan / Tang era (660), scene: young Hwarang charging Baekje line alone at Hwangsanbeol, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/gyebek-gwanchang.jpg"
 					},
@@ -49419,7 +49397,7 @@
 						"ratio": 1.9,
 						"tone": "#78350f",
 						"alt": "The dying Gyebek speaks quietly to the crow-dark escort amid the wreckage of his last field",
-						"at": "And you — you were heaven’s messenger.",
+						"at": "On Tamla they tell your story last",
 						"prompt": "Cinematic historical illustration of general statue, Three Kingdoms of Samhan / Tang era (660), scene: dying general speaking quietly to crow-dark underworld escort on battlefield, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/general-statue.jpg"
 					},
@@ -49433,34 +49411,10 @@
 						"tempImage": "/temp/gold-statue.jpg"
 					},
 					{
-						"id": "cavalry-silhouette-golden-dust",
-						"ratio": 1.778,
-						"tone": "#d4a574",
-						"alt": "Silhouette of massive cavalry charge against golden dust cloud backlit by setting sun",
-						"at": "Tang cavalry charges",
-						"src": "/temp/cavalry_silhouette_golden_dust.png"
-					},
-					{
-						"id": "memorial-sword-blue-ribbon",
-						"ratio": 1.778,
-						"tone": "#3E79E4",
-						"alt": "Single sword planted in ground with blue silk ribbon, memorial flowers at base, empty battlefield",
-						"at": "After the battle",
-						"src": "/temp/memorial_sword_blue_ribbon.png"
-					},
-					{
-						"id": "flooded-battlefield-reflection",
-						"ratio": 1.778,
-						"tone": "#C30000",
-						"alt": "Bird's eye view of flooded battlefield at dusk, water reflecting blood-red sky, broken banner",
-						"at": "Battlefield aftermath",
-						"src": "/temp/flooded_battlefield_reflection.png"
-					},
-					{
 						"id": "gyebek-last-stand-yellow",
 						"ratio": 0.5625,
 						"tone": "#E8C547",
-						"at": "gets to the <b>Yellow Mountain Fields</b>",
+						"at": "finishes counting, and walks",
 						"alt": "Gyebek's last stand — lone Baekje general under a vast yellow sky",
 						"prompt": "Minimal 9:16 iconic poster: lone Gyebek on a thin earth strip under a flat yellow sky. No army. No text.",
 						"refs": [
@@ -49510,7 +49464,7 @@
 						"id": "yushin-after-yellow",
 						"ratio": 0.5625,
 						"tone": "#2A5FB8",
-						"at": "After the battle",
+						"at": "finishes counting, and walks",
 						"alt": "Adult Kim Yushin after Hwangsanbeol — Confucian marshal blue, no triumph, only duty. Face fills the frame.",
 						"prompt": "Intimate cinematic CLOSE-UP still, 9:16. Adult Kim Yushin, Confucian marshal after Hwangsanbeol. ONE geometric device: his face fills the frame against a Confucian blue #2A5FB8 coat-plane. Face matches the attached portrait. He stands; he does not sit in lotus. Striking silky court-military, few hues. Dim after-battle light. Real adult proportions. No triumph, only duty. Flat charcoal void. No army. No palace clutter. No clouds. No lotus. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -49635,7 +49589,7 @@
 						"id": "duel-meet-dust",
 						"ratio": 1.778,
 						"tone": "#2A5FB8",
-						"at": "They meet in the dust.",
+						"at": "the two of them meet in the dust",
 						"alt": "Worm’s-eye clash: grey Hanseul and black Gomanari crash past each other, two ring-pommel blades meeting, a single shaft of sun cutting through a wall of dust",
 						"prompt": "Minimal iconic 16:9 still, high-contrast tenebrism. Extreme worm’s-eye from the dirt, dutch tilt: two warhorses crash past each other overhead, the pure WHITE horse (Hanseul) from the left and the BLACK horse (Gomanari) from the right, hooves and flying clods filling the bottom edge. Above them KIM YUSHIN (face from the attached portrait; steel lamellar, tall pointed Silla helm, blue #2A5FB8 cloth peeking) and GYEBEK (face from the attached portrait; steel lamellar, yellow #d9b13a cloth peeking) lean out of their saddles, faces snarling, their one-handed swords meeting at the exact center. Both swords exactly like the attached sw_bidam.png: small ring pommel at the heel of the fist (Yushin’s ring holds a fish, Gyebek’s a phoenix), short grip, thin gold collar, long straight blade, handle:blade 1:3; NO tsuba, NO katana, NO disc guard. ONE device: a single hard diagonal shaft of sunlight stabbing through a dark wall of dust exactly where the blades meet; the rest of the frame crushed brown-black. Motion blur on manes, sparks at the steel. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
 						"refs": [
@@ -49655,7 +49609,7 @@
 						"id": "duel-ink-slash",
 						"ratio": 1.778,
 						"tone": "#2A5FB8",
-						"at": "Blue plume cuts yellow lacquer.",
+						"at": "the two of them meet in the dust",
 						"alt": "Ink-hybrid: the cut as one enormous black calligraphic brushstroke sweeping across the frame, Yushin painted mid-follow-through, a blue plume and a split yellow lacquer plate flying, ink spatter for dust",
 						"prompt": "HYBRID still: cel-painted figures fused with a violent Korean ink-wash brushstroke on aged hanji. 16:9. Pale empty paper ground. ONE device: the sword cut rendered as a single enormous black calligraphic ink stroke sweeping in a hard arc from upper left to lower right, wet at the start, dry-brush splitting at the tail, with ink spatter flung off it like blood and dust. Along that stroke, crisp cel-painted: KIM YUSHIN (face from the attached portrait; steel lamellar, blue #2A5FB8 sleeve) at the end of his follow-through, low and twisted, his ring-pommel sword (exactly like the attached sw_bidam.png: small ring pommel with fish openwork, short grip, thin gold collar, long straight blade, handle:blade 1:3, no tsuba) trailing the stroke. Across from him GYEBEK (face from the attached portrait; steel lamellar) reeling back, a yellow #d9b13a lacquered shoulder plate split and spinning in the air, a cut blue horsehair plume flying free between them. Everything except the two figures, the blue plume and the yellow plate is black ink on pale paper. One blank red seal square, no characters. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
 						"refs": [
@@ -49823,7 +49777,7 @@
 						"id": "duel-kangrim-shadow",
 						"ratio": 0.5625,
 						"tone": "#5f5f6b",
-						"at": "closes the distance",
+						"at": "keeps better hours than Sabi",
 						"alt": "Bird’s-eye: Gyebek kneels small on pale yellow dust beside his planted sword; a long dark shadow of a robed figure, unseen, falls across the dust and over him from the top of the frame",
 						"prompt": "Minimal iconic 9:16 still, straight-down bird’s-eye from high above, very low sun from the top of the frame, extreme contrast. A field of pale hot yellow dust, almost empty. Lower third: GYEBEK, small, kneeling, grey lamellar with a sliver of yellow #d9b13a cloth, his ring-pommel sword planted upright beside him (small ring on top, long straight blade into the ground, no guard). ONE device: from the top edge of the frame a single enormously long shadow of a robed figure with wide sleeves and a tall hat, the figure itself out of frame, stretches down across the dust and swallows him; where it touches him the ground goes black. Hoofprints and a broken spear shaft at the edges. No other people. HEEWON STYLE: a hand-painted ANIME film frame composed like a Romanticist master painting. FIGURES are anime: clean ink linework, simplified anime faces with expressive eyes, shaded in soft watercolor washes and translucent oil glazes instead of flat cel fill — no skin pores, no photographic detail, not photoreal, not 3D. THE WORLD is watercolor and oil: skies, dust, ground and light are visibly hand-painted — wet-in-wet blooms, pigment granulation, soft bleeding edges, dry-brush dust, rich oil glazes in the darks, faint paper grain; edges of the frame dissolve into wash. LAYOUT is Romanticism (Delacroix, Géricault, Friedrich, Goya, Turner): heroic diagonal or pyramid composition, small figures against a sublime storm sky or vast field, extreme foreshortening (worm’s-eye from the dirt or straight down from above), one break in the clouds or one shaft as the key. LIGHT is movie tenebrism: most of the frame deep painted darkness, one hard key, long shadows, high contrast. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
 						"refs": [
@@ -50098,8 +50052,9 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Hundred-Victories gets to the <b>Yellow Mountain Fields</b> first and picks his ground. Then he waits — for the Sword of Silla, or for arithmetic, whichever arrives with a banner. Yellow lacquer holds the palisade. When the Sword arrives it is a tall black helm and a blue rim. The tall Silla helm comes in at a gallop. They meet in the dust. Blue plume cuts yellow lacquer.",
-						"ko": "백승이 <b>황산벌</b>에 먼저 닿아 자리를 고른다. 그리고 기다린다 — 신라의 도검이든, 셈이든, 깃발을 달고 오는 쪽을. 황칠이 목책을 지킨다. 검이 올 때는 높은 검은 투구와 푸른 테다. 신라의 높은 투구가 달려 들어온다. 먼지 속에서 만난다. 푸른 깃이 황칠을 가른다."
+						"html": "Hundred-Victories gets to the <b>Yellow Mountain Fields</b> first and picks his ground. Then he waits behind palisades lacquered yellow for the Sword of Silla, or for arithmetic, whichever arrives with a banner. When the Sword arrives it is a tall black helm and a blue rim, and before the day is out the two of them meet in the dust.",
+						"ko": "백승이 <b>황산벌</b>에 먼저 닿아 자리를 고른다. 그리고 황칠한 목책 뒤에서 기다린다. 신라의 검이든 셈이든, 깃발을 달고 먼저 오는 쪽을. 검이 올 때는 높은 검은 투구에 푸른 테다. 그리고 해가 지기 전에, 둘은 먼지 속에서 만난다.",
+						"art": "Gyebek at the yellow-lacquered palisade."
 					},
 					{
 						"kind": "p",
@@ -50189,7 +50144,6 @@
 						"lines": [
 							"그쪽은?"
 						],
-						"speaker": "🙇",
 						"en": [
 							"And theirs?"
 						],
@@ -50197,15 +50151,14 @@
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#d9b13a",
+						"chip": "#b59a5b",
 						"lines": [
 							"5만이라 하옵니다."
 						],
-						"speaker": "🙇",
+						"speaker": "Officer",
 						"en": [
 							"Fifty thousand, my lord."
-						],
-						"person": "gyebek"
+						]
 					},
 					{
 						"kind": "dialogue",
@@ -50213,7 +50166,6 @@
 						"lines": [
 							"5천 대 5만이라...."
 						],
-						"speaker": "🙇",
 						"en": [
 							"Five thousand against fifty thousand…."
 						],
@@ -50267,7 +50219,8 @@
 						"lines": [
 							"…충성이오.",
 							"두려움이었다면 그들에게 말하지 마시오. 더 예쁜 말을 갖게 두시오."
-						]
+						],
+						"chip": "#d9b13a"
 					},
 					{
 						"kind": "dialogue",
@@ -50286,13 +50239,14 @@
 					},
 					{
 						"kind": "p",
-						"html": "Gyebek kneels. He plants the phoenix ring in the yellow dust and keeps his hand on it. Gyebek stands when the dust has learned the shape.",
-						"ko": "계백은 무릎을 꿇는다. 봉환을 노란 먼지에 꽂고 손을 그 위에 둔다. 먼지가 그 모양을 기억하면, 계백은 선다."
+						"html": "Gyebek kneels. He plants his sword in the yellow dust and keeps his hand on the hilt. He stands when the dust has learned the shape.",
+						"ko": "계백은 무릎을 꿇는다. 칼을 노란 먼지에 꽂고 손잡이에 손을 얹는다. 먼지가 그 모양을 기억하면, 그제야 일어선다.",
+						"art": "Phoenix openwork in the hollow ring pommel."
 					},
 					{
 						"kind": "p",
-						"html": "Five thousand against fifty thousand — not a formation so much as a sentence written in bodies. Like the three hundred at Thermopylae in stories that have not yet reached Samhan, they arrange themselves to be remembered rather than rescued. The math does not change. The watching does.",
-						"ko": "오천 대 오만 — 진형이라기보다 몸으로 쓴 문장. 삼한에 아직 닿지 않은 이야기 속 삼백처럼, 구출되기보다 기억되도록 선다. 셈은 바뀌지 않는다. 응시가 바뀔 뿐."
+						"html": "Like the three hundred at Thermopylae, in stories that have not yet reached Samhan, the five thousand arrange themselves to be remembered rather than rescued.",
+						"ko": "삼한에 아직 닿지 않은 이야기 속 삼백처럼, 오천은 구출되기보다 기억되도록 선다."
 					},
 					{
 						"kind": "p",
@@ -50305,7 +50259,6 @@
 						"lines": [
 							"<b>지난 날 중원의 구천(句踐)은 5천 명으로 오(吳)나라의 70만 대군을 격파하였다. 지금 오늘 마땅히 각자 힘써 싸워 승리함으로써 나라의 은혜에 보답하자.</b>"
 						],
-						"speaker": "🙇",
 						"person": "gyebek",
 						"en": [
 							"<b>Long ago Goujian of the Central Plain shattered Wu’s host of seven hundred thousand with five thousand men. Today let each of us fight with all his strength, and repay the country’s grace with victory.</b>"
@@ -50318,12 +50271,12 @@
 							"그래 — 소문으로만 듣던 백승계백이 그대인가?",
 							"주점들은 아직도 삼한 최강의 칼을 우리 둘로 나눈다. 그 논쟁, 여기서 끝낼까?"
 						],
-						"speaker": "🙇",
 						"en": [
 							"So — you are this Hundred-Victories Gyebek I have heard of?",
 							"The taverns still split the Greatest Blade of Samhan between us. Shall we settle their argument?"
 						],
-						"person": "yushin"
+						"person": "yushin",
+						"art": "Yushin comes in at a gallop under the tall Silla helm, blue plume."
 					},
 					{
 						"kind": "dialogue",
@@ -50332,7 +50285,6 @@
 							"그러면 그대가 신국의 검이겠군.",
 							"나는 주점에서 마시지 않소. 나는 셉니다. 오늘은 오 대 오십 — 칭호는 그 다음이오."
 						],
-						"speaker": "🙇",
 						"en": [
 							"Then you must be the Sword of the Divine Country.",
 							"I do not drink in taverns. I count. Today the count is five against fifty — and titles after."
@@ -50352,13 +50304,18 @@
 							"이미 죽음에 손 흔든 오천은 다른 종류의 숫자요.",
 							"그럼 자리를 지키시오. 우리가 가서 재어 보겠소."
 						],
-						"chip": "#4a8fe0",
-						"speaker": "🙇"
+						"chip": "#4a8fe0"
 					},
 					{
 						"kind": "p",
-						"html": "Silla comes on the first time in three columns — Yushin centre, Heumsun left, Pumil right — and the three Baekje camps throw them back into their own dust. The second time the same. The third time the right road almost opens, and closes again on spears counted in the night. The fourth time Yushin rides at the head of the centre himself, on the white horse, and meets Hundred-Victories in the gap between the camps. Both armies stop to watch two men, which armies are not supposed to do. It lasts about as long as it takes a banner to fall and be picked up again, and then the white horse is going back the way it came with a red line along its shoulder, and the Sword of Silla is holding his left arm against his ribs.",
-						"ko": "신라가 처음으로 세 길로 온다 — 가운데 유신, 왼쪽 흠순, 오른쪽 품일 — 백제 세 진영이 그들을 제 먼지로 되밀어낸다. 두 번째도 같다. 세 번째에 오른쪽 길이 거의 열렸다가, 밤에 세어 둔 창에 다시 닫힌다. 네 번째에는 유신이 몸소 흰 말을 타고 가운데 맨 앞에 서서, 진영과 진영 사이의 틈에서 백승을 만난다. 양쪽 군대가 두 사내를 구경하느라 멈춘다. 군대가 해서는 안 되는 일이다. 깃발 하나가 쓰러졌다가 다시 들릴 만큼의 시간이다. 그러고 나면 흰 말은 왔던 길로 돌아가고 있고, 그 어깨에 붉은 줄이 하나 그어져 있으며, 신라의 도검은 왼팔을 갈비뼈에 붙여 안고 있다."
+						"html": "Silla comes on the first time in three columns — Yushin centre, Heumsun left, Pumil right — and the three Baekje camps throw them back into their own dust. The second time the same. The third time the right road almost opens, and closes again on Baekje spears.",
+						"ko": "신라가 처음으로 세 길로 온다 — 가운데 유신, 왼쪽 흠순, 오른쪽 품일 — 백제 세 진영이 그들을 제 먼지로 되밀어낸다. 두 번째도 같다. 세 번째에 오른쪽 길이 거의 열렸다가, 백제의 창에 다시 닫힌다."
+					},
+					{
+						"kind": "p",
+						"html": "The fourth time Yushin rides at the head of the centre himself, on the white horse, and meets Hundred-Victories in the gap between the camps. Both armies stop to watch two men, which armies are not supposed to do. It lasts about as long as it takes a banner to fall and be picked up again, and then the white horse is going back the way it came with a red line along its shoulder, and the Sword of Silla is holding his left arm against his ribs.",
+						"ko": "네 번째에는 유신이 몸소 흰 말을 타고 가운데 맨 앞에 서서, 진영과 진영 사이의 틈에서 백승을 만난다. 양쪽 군대가 두 사내를 구경하느라 멈춘다. 군대가 해서는 안 되는 일이다. 깃발 하나가 쓰러졌다가 다시 들릴 만큼의 시간이다. 그러고 나면 흰 말은 왔던 길로 돌아가고 있고, 그 어깨에 붉은 줄이 하나 그어져 있으며, 신라의 도검은 왼팔을 갈비뼈에 붙여 안고 있다.",
+						"art": "Blue plume against yellow lacquer in the dust."
 					},
 					{
 						"kind": "quote",
@@ -50380,9 +50337,8 @@
 					},
 					{
 						"kind": "dialogue",
-						"person": "gyebek",
-						"chip": "#d9b13a",
-						"speaker": "🙇",
+						"chip": "#b59a5b",
+						"speaker": "Officer",
 						"en": [
 							"…Left camp still has arrows.",
 							"Centre has men.",
@@ -50612,13 +50568,128 @@
 					},
 					{
 						"kind": "p",
-						"html": "Bangul rides out alone and does not come back. Then Gwanchang, who is sixteen, rides out alone. Gyebek sends him home once. He comes back.",
-						"ko": "반굴이 홀로 말을 몰고 나가 돌아오지 않는다. 이어 열여섯의 관창이 홀로 나간다. 계백은 그를 한 번 돌려보낸다. 관창은 다시 온다."
+						"html": "<b>Kim Heumsun</b>, Yushin’s younger brother, calls his son out of the line.",
+						"ko": "유신의 아우 <b>김흠순</b>이 아들을 대열 밖으로 불러낸다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4f7cc0",
+						"lines": [
+							"반굴아.",
+							"신하 된 자에게는 충만 한 것이 없고, 자식 된 자에게는 효만 한 것이 없다.",
+							"위태로움을 보고 목숨을 바치면, 충과 효를 다 지키는 것이다."
+						],
+						"en": [
+							"Bangul.",
+							"For a subject, nothing is greater than loyalty. For a son, nothing is greater than duty to his father.",
+							"See the danger and give your life to it, and you have kept both."
+						],
+						"person": "heumsun"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5e9dd8",
+						"lines": [
+							"…삼가 명을 받들겠습니다."
+						],
+						"en": [
+							"…As you command, Father."
+						],
+						"person": "bangul"
+					},
+					{
+						"kind": "p",
+						"html": "Bangul rides out alone and does not come back.",
+						"ko": "반굴이 홀로 말을 몰고 나가 돌아오지 않는다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6a8ab8",
+						"lines": [
+							"관창아.",
+							"어려도 너는 배짱이 있다.",
+							"오늘… 삼군이 보고 따를 깃발이 되어 줄 수 있겠느냐."
+						],
+						"en": [
+							"Gwanchang.",
+							"You’re young, but you have nerve.",
+							"Today… could you be the flag the whole army follows?"
+						],
+						"person": "pumil"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#79b6f2",
+						"lines": [
+							"예."
+						],
+						"en": [
+							"Yes."
+						],
+						"person": "gwanchang"
+					},
+					{
+						"kind": "p",
+						"html": "Gwanchang mounts, takes up his spear, and rides straight at the Baekje line alone. He kills two men at the palisade. The third brings his horse down, and the yellow line closes over him.",
+						"ko": "관창은 말에 올라 창을 쥐고, 홀로 백제의 진을 향해 곧장 달린다. 목책 앞에서 둘을 벤다. 셋째가 그의 말을 쓰러뜨리고, 노란 대열이 그 위를 덮는다."
+					},
+					{
+						"kind": "p",
+						"html": "They bring him to Gyebek alive, arms bound, still in his helmet. Gyebek has it unstrapped.",
+						"ko": "그들은 그를 산 채로, 팔을 묶고 투구를 쓴 그대로 계백 앞에 끌고 온다. 계백이 투구 끈을 풀게 한다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d9b13a",
+						"lines": [
+							"…아이로군.",
+							"신라에는 이런 놈들이 너무 많아.",
+							"아이가 이 정도면, 장정들은 어떻겠나.",
+							"돌려보내라."
+						],
+						"en": [
+							"…A boy.",
+							"Silla has too many of these.",
+							"If this is a boy, think what their grown men are like.",
+							"Send him back."
+						],
+						"person": "gyebek"
+					},
+					{
+						"kind": "p",
+						"html": "They put him back on a horse and turn its head toward Silla. Gwanchang rides home across the open ground with his helmet in his hand, and fifty thousand men watch him come.",
+						"ko": "그들은 그를 다시 말에 태워 신라 쪽으로 머리를 돌려 준다. 관창은 투구를 손에 든 채 빈 벌판을 가로질러 돌아오고, 오만이 그가 오는 것을 지켜본다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#79b6f2",
+						"lines": [
+							"아버지.",
+							"들어가서 장수 목도 못 베고, 깃발도 못 뺏어 왔습니다.",
+							"…죽는 게 무서워서 그런 게 아닙니다."
+						],
+						"en": [
+							"Father.",
+							"I went in, and I didn’t get their general’s head. Or their flag.",
+							"…It wasn’t because I was afraid to die."
+						],
+						"person": "gwanchang"
+					},
+					{
+						"kind": "p",
+						"html": "He kneels at a well behind the line, drinks from his cupped hands, and is riding at the yellow line again before his father has found anything to say.",
+						"ko": "그는 진 뒤 우물가에 무릎을 꿇고 두 손으로 물을 떠 마신다. 그리고 아비가 할 말을 찾기도 전에, 다시 노란 대열을 향해 달리고 있다."
 					},
 					{
 						"kind": "p",
 						"html": "The second time, Gyebek has his helmet unstrapped again, looks at the face inside it for a while, and then does what he has to. He ties the head to the saddle and sends the horse back.",
 						"ko": "두 번째로 계백은 다시 그 투구를 벗기게 하고, 안에 든 얼굴을 한참 바라본 뒤, 해야 할 일을 한다. 그리고 그 머리를 안장에 매어 말을 돌려보낸다."
+					},
+					{
+						"kind": "p",
+						"html": "The horse comes home at a walk, through a gap the Silla line opens for it. Pumil lifts his son’s head down from the saddle and wipes the face clean with his sleeve.",
+						"ko": "말이 걸어서 돌아온다. 신라의 대열이 말 앞에서 갈라진다. 품일이 안장에서 아들의 머리를 내려, 소매로 얼굴을 닦는다.",
+						"art": "Wordless. The riderless horse walking home through the parted Silla line; Pumil wiping his son’s face with his sleeve."
 					},
 					{
 						"kind": "quote",
@@ -50629,13 +50700,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "The Silla line, which has failed four times that morning, goes forward and does not stop. A father’s wet sleeve is worth more than a fourth failure. The left camp goes under first — not broken so much as used up. The right holds one more breath, then folds toward the centre like a hinge that has decided to finish.",
-						"ko": "그날 아침 네 번을 실패한 신라의 대열이 앞으로 나아가고, 이번엔 멈추지 않는다. 아비의 젖은 소매가 네 번째 실패보다 값이 크다. 왼쪽 진영이 먼저 가라앉는다 — 부서졌다기보다 다 쓰인 것에 가깝다. 오른쪽이 한 숨 더 버티다가, 끝내기로 한 경첩처럼 가운데로 접힌다."
+						"html": "The Silla line, which has failed four times that morning, goes forward and does not stop. A father’s wet sleeve is worth more than a fourth failure. The left camp goes under first. The right holds one more breath, then folds toward the centre like a hinge that has decided to finish.",
+						"ko": "그날 아침 네 번을 실패한 신라의 대열이 앞으로 나아가고, 이번엔 멈추지 않는다. 아비의 젖은 소매가 네 번째 실패보다 값이 크다. 왼쪽 진영이 먼저 가라앉는다. 오른쪽이 한 숨 더 버티다가, 끝내기로 한 경첩처럼 가운데로 접힌다."
 					},
 					{
 						"kind": "p",
-						"html": "By the fifth charge the left camp is a rumour of men. Gyebek’s centre is the last grammar the field still understands — a thin line of Baekje that refuses to become a paragraph about surrender. Spears shorten. Names stop answering. Kangrim, who has been hanging in the day like unfinished weather, comes down to speaking distance.",
-						"ko": "다섯 번째 돌격쯤이면 왼쪽 진영은 사람의 소문에 가깝다. 계백의 가운데가 이 벌판이 아직 알아듣는 마지막 문법이다 — 항복에 대한 문단이 되기를 거부하는 백제의 얇은 선. 창이 짧아진다. 이름이 대답을 멈춘다. 미완의 날씨처럼 대낮에 걸려 있던 강림이, 말 닿는 거리까지 내려온다."
+						"html": "By the fifth charge the left camp is a rumour of men. Gyebek’s centre holds, a thin line of Baekje that will not turn into a surrender. Spears shorten. Names stop answering. Kangrim, who has been hanging in the day like unfinished weather, comes down to speaking distance.",
+						"ko": "다섯 번째 돌격쯤이면 왼쪽 진영은 사람의 소문에 가깝다. 계백의 가운데는 버틴다. 끝내 항복이 되지 않는 백제의 얇은 선. 창이 짧아진다. 이름이 대답을 멈춘다. 미완의 날씨처럼 대낮에 걸려 있던 강림이, 말 닿는 거리까지 내려온다."
 					},
 					{
 						"kind": "p",
@@ -50662,64 +50733,13 @@
 						"person": "gyebek",
 						"en": [
 							"…Loyalty. I said it.",
-							"And you — you were heaven’s messenger.",
-							"Sent to arrest King Yumla. You stayed. A crow mixed the pages of your ledger.",
-							"That is why nobody knows their hour until you are already in the room."
+							"On Tamla they tell your story last."
 						],
 						"lines": [
 							"…충성이오. 이미 말했소.",
-							"그리고 당신 — 당신은 하늘의 사신이었소.",
-							"염라대왕을 잡아 오라 보내졌고. 당신은 남았고. 까마귀가 명부의 장을 뒤섞었소.",
-							"그래서 당신이 이미 방에 들어오기 전엔, 아무도 제 시각을 모르는 것이오."
+							"탐라에서는 당신 이야기를 맨 나중에 하오."
 						],
 						"chip": "#d9b13a"
-					},
-					{
-						"kind": "dialogue",
-						"person": "kangrim",
-						"en": [
-							"…",
-							"The island told you.",
-							"Living men are not supposed to finish that sentence.",
-							"How long have you been carrying my origin like a spare spear?"
-						],
-						"lines": [
-							"…",
-							"섬이 말했군.",
-							"산 자는 그 문장을 끝까지 말하면 안 된다.",
-							"내 내력을 예비 창처럼 얼마나 들고 다녔나?"
-						],
-						"chip": "#5f5f6b"
-					},
-					{
-						"kind": "dialogue",
-						"person": "gyebek",
-						"en": [
-							"Five years of evenings on Tamla.",
-							"They save your story for last — after every kinder tale.",
-							"I counted the stories the way I count paces.",
-							"When you hung above us this morning, I already knew which kingdom’s marshal you were."
-						],
-						"lines": [
-							"탐라에서 오 년의 저녁이오.",
-							"그들은 당신 이야기를 마지막에 한다 — 더 고운 이야기들 뒤에.",
-							"나는 이야기를 걸음 세듯 세었소.",
-							"오늘 아침 우리 위에 걸렸을 때, 이미 어느 나라의 원수인지 알았소."
-						],
-						"chip": "#d9b13a"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6b7280",
-						"person": "kangrim",
-						"en": [
-							"Surprise is rare in my work.",
-							"Thank you for that — His Majesty appreciates accurate minutes."
-						],
-						"lines": [
-							"내 일에 놀람은 드뭅니다.",
-							"고맙소 — 폐하께서는 정확한 회의록을 기뻐하십니다."
-						]
 					},
 					{
 						"kind": "flashback",
@@ -50774,11 +50794,6 @@
 						]
 					},
 					{
-						"kind": "p",
-						"html": "Kangrim, who has been hanging in the day like unfinished weather, closes the distance.",
-						"ko": "낮에 미완의 날씨처럼 걸려 있던 강림이 거리를 좁힌다."
-					},
-					{
 						"kind": "dialogue",
 						"chip": "#6b7280",
 						"person": "kangrim",
@@ -50786,7 +50801,7 @@
 							"Walk, then. The underworld kingdom keeps better hours than Sabi ever did."
 						],
 						"lines": [
-							"그럼 가시죠. 저승은 사비보다 시간을 잘 킵니다."
+							"그럼 갑시다. 저승은 사비보다 시간을 잘 지키오."
 						]
 					},
 					{
@@ -50798,24 +50813,6 @@
 						"kind": "p",
 						"html": "Nobody can lead the black horse off the field. It stands over the place where he went down until the Silla grooms come at dusk with ropes, and it takes six of them, and in the night it breaks the line and goes south toward the ferry it was named for. Nobody on either side ever reports seeing it again.",
 						"ko": "아무도 그 검은 말을 들판에서 끌어내지 못한다. 말은 그가 쓰러진 자리를 지키고 서 있다가, 해 질 녘 신라 마부들이 밧줄을 들고 오자 여섯이 달라붙어야 하고, 밤이 되자 줄을 끊고 제 이름이 된 나루 쪽, 남으로 간다. 어느 편에서도 그 말을 다시 보았다는 보고는 없다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c97a2e",
-						"lines": [
-							"?"
-						],
-						"speaker": "👑",
-						"person": "taizong",
-						"en": [
-							"?"
-						],
-						"zh": [
-							"？"
-						],
-						"zhLatn": [
-							"?"
-						]
 					}
 				],
 				"music": "Five Thousand"
@@ -50847,7 +50844,7 @@
 						"id": "sabi-abandoned-crown",
 						"ratio": 1.7777777777777777,
 						"tone": "#FFCB51",
-						"at": "empty throne",
+						"at": "with fewer men than he expected",
 						"alt": "Abandoned crown on empty Sabi Palace throne - the end of Baekje",
 						"src": "/temp/sabi_abandoned_crown.png",
 						"refs": [
@@ -50872,14 +50869,15 @@
 						"tone": "#fbcfe8",
 						"alt": "Two kings at fallen Sabi — Euija of Baekje brought before Muyeol of Silla",
 						"prompt": "Cinematic historical illustration of two kings, Three Kingdoms of Samhan / Tang era (7th century), scene: Sabi Palace, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/two-kings.jpg"
+						"tempImage": "/temp/two-kings.jpg",
+						"at": "you are Euija"
 					},
 					{
 						"id": "collapsed-mourning",
 						"ratio": 2,
 						"tone": "#e5e7eb",
 						"alt": "Court women collapsed in mourning at the Flower Cliffs above the water",
-						"at": "In the Flower Cliffs, the concubines of Euija throw them",
+						"at": "walk to the edge",
 						"prompt": "Cinematic historical illustration of collapsed mourning, Three Kingdoms of Samhan / Tang era (7th century), scene: Sabi Palace, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/collapsed-mourning.jpg"
 					},
@@ -50923,30 +50921,6 @@
 						"ko": "조정은 이튿날 아침 황산벌 소식을 듣는다."
 					},
 					{
-						"kind": "dialogue",
-						"chip": "#e08a2e",
-						"lines": [
-							"예전에 너의 아비가 나의 여동생을 억울하게 죽여 옥중에 묻은 적이 있다. (그 일은) 나로 하여금 20년 동안 마음이 아프고 골치를 앓게 하였는데, 오늘날 너의 목숨이 내 손 안에 있구나!"
-						],
-						"speaker": "🙇",
-						"person": "euija",
-						"en": [
-							"Long ago your father had my younger sister killed unjustly and buried in a prison. That deed left my heart sore and my head aching for twenty years — and today your life is in my hands!"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#D8258C",
-						"lines": [
-							"이건 또 무슨 소리....?"
-						],
-						"speaker": "🙇",
-						"person": "chunchu",
-						"en": [
-							"And what is this supposed to mean….?"
-						]
-					},
-					{
 						"kind": "p",
 						"html": "Euija leaves Sabi at night for <b>Bear Fortress</b>, with fewer men than he expected to have.",
 						"ko": "의자는 밤에 사비를 떠나 <b>웅진성</b>으로 향한다. 데리고 갈 수 있는 사람은 생각보다 적었다."
@@ -50965,7 +50939,6 @@
 							"김춘추...",
 							"<b>김춘추!!!</b>"
 						],
-						"speaker": "🙇",
 						"person": "euija",
 						"en": [
 							"Kim Chunchu…",
@@ -50978,7 +50951,6 @@
 						"lines": [
 							"응?"
 						],
-						"speaker": "🙇",
 						"person": "chunchu",
 						"en": [
 							"Hm?"
@@ -50992,7 +50964,6 @@
 							"<b>삼한의 땅으로 외세를 끌어들이는 이 비랄한 만고의 역적아!!</b>",
 							"<b>네 천벌을 받을 것이다!!</b>"
 						],
-						"speaker": "🙇",
 						"person": "euija",
 						"en": [
 							"<b>Kim Chunchu, you wretch!!</b>",
@@ -51014,35 +50985,14 @@
 					},
 					{
 						"kind": "p",
-						"html": "In the Flower Cliffs, the concubines of Euija throw themselves off into the water to avoid capture.",
-						"ko": "낙화암에서 의자의 궁녀들이 사로잡히지 않으려 물로 몸을 던진다."
+						"html": "Back in Sabi, the women of Euija’s court come out onto the cliff above the river in their silks and walk to the edge. Behind them the path up from the palace fills with Tang soldiers. They take each other’s hands, and step off.",
+						"ko": "사비에서는 의자의 궁녀들이 비단옷 차림으로 강 위 벼랑에 나와 끝까지 걸어간다. 등 뒤로 궁에서 올라오는 길이 당의 군사로 메워진다. 서로 손을 잡고, 발을 내딛는다.",
+						"art": "Wordless. The court women at the cliff edge above the White River, hands joined; Tang soldiers filling the path behind them."
 					},
 					{
 						"kind": "p",
-						"html": "Nobody counts them. Nobody has counted them for years. It had been two, once, and a joke, and a modest number a man was proud of.",
-						"ko": "아무도 세지 않는다. 여러 해 동안 아무도 세지 않았다. 한때는 둘이었고, 우스개였고, 한 사내가 자랑스러워하던 소박한 수효였다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9a0a8",
-						"lines": [
-							"폐하께서 어제처럼… 저희를 찾으시겠지."
-						],
-						"en": [
-							"He’ll reach for us today, like yesterday."
-						],
-						"person": "courtmaid"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c9a0a8",
-						"lines": [
-							"오늘은 안 계셔. / …그래도 몸이 기억나."
-						],
-						"en": [
-							"He isn’t here today. / …But the body remembers."
-						],
-						"person": "courtmaid"
+						"html": "Nobody counts them. Nobody has counted them for years.",
+						"ko": "아무도 세지 않는다. 여러 해 동안 아무도 세지 않았다."
 					},
 					{
 						"kind": "p",
@@ -51051,8 +51001,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>King Muyeol</b> finally arrives at the scene. He makes Euija pour his wineglass, and executes the traitors <b>Gumil</b> and <b>Mochuk</b>.",
-						"ko": "마침내 <b>무열왕</b>이 당도한다. 그는 의자에게 술을 따르게 하고, 배신자 <b>검일</b>과 <b>모척</b>을 처형한다."
+						"html": "<b>King Muyeol</b> finally arrives at the scene, and executes the traitors <b>Gumil</b> and <b>Mochuk</b>.",
+						"ko": "마침내 <b>무열왕</b>이 당도하여, 배신자 <b>검일</b>과 <b>모척</b>을 처형한다."
 					},
 					{
 						"kind": "dialogue",
@@ -51063,7 +51013,6 @@
 							"내가 너를 잡아들이려고 얼마나 고생했는지 아나?",
 							"거의 내 인생을 썼다, 이 자식아."
 						],
-						"speaker": "🙎",
 						"en": [
 							"So… you are Euija.",
 							"The one who started all of this… Buyeo Euija.",
@@ -51121,7 +51070,6 @@
 							"춘추...",
 							"너도 언젠가는 누군가 앞에 꿇을 거다."
 						],
-						"speaker": "🙇",
 						"person": "euija",
 						"en": [
 							"Chunchu…",
@@ -51134,11 +51082,32 @@
 						"lines": [
 							"이 자를 끌어가시오."
 						],
-						"speaker": "🙎",
 						"en": [
 							"Take this man away."
 						],
 						"person": "chunchu"
+					},
+					{
+						"kind": "p",
+						"html": "Outside, Bupmin has Prince <b>Yung</b> brought to the foot of his horse and made to kneel there. He leans down from the saddle and spits in his face.",
+						"ko": "밖에서는 법민이 왕자 <b>융</b>을 말 앞에 끌어다 꿇어앉힌다. 그는 안장 위에서 몸을 숙여 융의 얼굴에 침을 뱉는다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3fa9c9",
+						"lines": [
+							"예전에 너의 아비가 나의 누이를 억울하게 죽여 옥중에 묻은 적이 있다. (그 일은) 나로 하여금 20년 동안 마음이 아프고 골치를 앓게 하였는데, 오늘날 너의 목숨이 내 손 안에 있구나!"
+						],
+						"person": "munmu",
+						"en": [
+							"Long ago your father had my sister killed unjustly and buried in a prison. That deed left my heart sore and my head aching for twenty years — and today your life is in my hands!"
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Prince Yung lies face-down in the dust and says nothing.",
+						"ko": "왕자 융은 흙바닥에 엎드린 채 아무 말도 하지 않는다.",
+						"art": "Wordless. Yung prostrate at the foot of Bupmin’s horse."
 					}
 				],
 				"music": "Pyongyang, 668"
@@ -51158,7 +51127,7 @@
 						"ratio": 1.778,
 						"id": "euija-death-black",
 						"tone": "#4a4a58",
-						"at": "Before the enemy capital finishes humiliating you",
+						"at": "writes the name once",
 						"alt": "Night underworld road: Kangrim and Euija only",
 						"prompt": "Cinematic 16:9 movie still. REAL underworld road, night-black. ONLY Kangrim and Euija. No text. No watermark.",
 						"refs": [
@@ -51195,7 +51164,7 @@
 						"ratio": 1.9,
 						"tone": "#fde68a",
 						"alt": "Euija fallen — the emptied king meeting his end in the enemy capital",
-						"at": "Then you die richer than the record will admit.",
+						"at": "writes the name once",
 						"prompt": "Cinematic historical illustration of euija fallen, Three Kingdoms of Samhan / Tang era (7th century), scene: The Death of Buyeo Euija, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/euija-fallen.jpg"
 					},
@@ -51229,7 +51198,7 @@
 						"id": "euija-death-close",
 						"ratio": 0.75,
 						"tone": "#e08a2e",
-						"at": "Euija dies, vengeful and emptied.",
+						"at": "making a room lean in",
 						"alt": "Dutch close-up at night: Euija in plain white, hair loose, cheek on a cold step, torchlight on his face, the lit Tang hall blurred behind",
 						"prompt": "3:4 drama close-up. DUTCH ANGLE tilted 20 degrees at step level, night: EUIJA lies with his cheek on a cold stone step, eyes open and wet, staring up the stairs — one plain undyed WHITE robe, no headband, no topknot, long grey-streaked hair LOOSE and spilling over the step edge; a thread of dark blood from the corner of his mouth runs into the stone joint. A hard warm torch key from above the frame (#e08a2e) carves his cheekbone, beard and the white collar; cool blue moonlight on the far side of his face and hair. Behind him, out of focus, the palace hall's open doors glow gold and a line of terrace lanterns melts into round gold bokeh against a deep blue night. Haze. Face drawn in webtoon ink like the portrait, not photographic. No writing. CANON — KING EUIJA — FACE ONLY from attached /ch_buyeo_euija.png; ignore the portrait's clothing, headgear, jewelry and hair styling — dress exactly as \"Now\" below (invent a new pose). Now: PRISONER IN THE TANG CAPITAL: broad bearded old king, heavy brows, cynical eyes. One plain undyed WHITE hemp robe and nothing else — no headband, no topknot, no crown, no gold, no crimson, no armor, no belt ornament, barefoot; his long black hair streaked grey hangs LOOSE and unbound past his shoulders; beard unkempt. Demeanor: Licensed wit: drinks, smirks, slumps on the throne, speaks in polished aphorisms. Fatalist. #e08a2e as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: heroic battle pose; smiling innocence. | PLACE Chang’an (장안) — attached board /pl_daming_night.png; keep this exact architecture and ground. Tang palace of Chang'an, drawn from the Daming Palace (大明宮) site and reconstruction models: Hanyuan Hall's concave ensemble — an eleven-bay hall with a double-eaved hipped roof of dark grey tiles and curled owl-tail ridge ends (chiwei), red columns, white plaster walls, lattice windows, raised on three tiers of rammed-earth terraces faced in ochre-red plaster and edged with white stone balustrades; the Dragon Tail Way ramps folding up the terraces; forward on each side the Xiangluan and Qifeng que-towers (three stepped pavilions on tall battered grey-brick piers) joined to the hall by long roofed corridors; a vast paved square below, entered through the five-doored Danfeng Gate. Wide low Tang proportions, deep eaves on massive bracket sets. Tang palette is VERMILION and WHITE (red columns, white walls); roofs are black-grey tile trimmed with green-glazed ridge and eave tiles (a little yellow and blue tricolour glaze); balustrade posts painted red, blue and green. YELLOW belongs to the emperor's robe; gold is gilt-bronze fittings, lamp-trees and firelight on vermilion. Interiors: dark polished stone floors, rows of vermilion columns, gauze hangings, a raised dais with a painted screen behind the throne. Never the Forbidden City, never all-yellow glazed roofs, never the modern reconstruction or a city skyline. Mood: Staged like a Chinese historical drama (Legend of the Demon Cat, The Longest Day in Chang'an) but lit as full Heewon tenebrism: night or blue hour; ONE dominant hard key per shot — a backlight through open doors or lattice, or one lamp-tree — and 75% of the frame crushed black with no fill; colour contrast — gold-yellow flame highlights against cool blue-green in the few lit shadows; the other flames (lamp-trees, silk lanterns with no writing, braziers) are small points and round bokeh IN the black, never lighting the room evenly; red lantern light through lattice as one pattern on the floor; incense haze only inside the key shaft; polished dark floors reflecting the flames. Staged like a drama, at true human scale: camera at eye or knee height on a dolly or crane; court officials in two lines facing inward along the central aisle with tablets; banquet tables in two long facing rows with dancers in the centre and the emperor on the dais at the head; exteriors are real-scale terraces and corridors, the hall large but never a fantasy fortress. HEEWON STYLE: a Korean WEBTOON figure painted into a European OLD-MASTER canvas, composed like a Romanticist master painting. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, shaded in soft watercolor washes and translucent oil glazes instead of flat cel fill — no skin pores, no photographic detail, not photoreal, not 3D. THE WORLD is painted with European old-master technique — Renaissance and Baroque oil (Titian, Rembrandt, Tiepolo, Turner): visible broken-colour brushwork, skies scumbled from short loaded dabs, layered glazes in the darks, sfumato edges, a touch of impasto on the brightest highlights — over watercolor wet-in-wet blooms, pigment granulation and faint paper grain; edges of the frame dissolve into paint. LAYOUT is Romanticism (Delacroix, Géricault, Friedrich, Goya, Turner): heroic diagonal or pyramid composition, small figures against a sublime storm sky or vast field, extreme foreshortening (worm’s-eye from the dirt or straight down from above), one break in the clouds or one shaft as the key. LIGHT is movie tenebrism at full strength (Caravaggio, Rembrandt, night-interior cinema): an extreme value range — inky blacks right beside small near-white highlights, almost no middle grey; 70–80% of the frame in deep painted shadow (oil-glazed umber, indigo and black); ONE hard directional key (a lamp, a single cloud-break, a low sun shaft, firelight) carves the subject out of the dark. Form is modelled: the key wraps around cheekbones, armor plates, horse muscle and silk folds, then falls off at a hard terminator; a thin edge of that same real light grazes the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — a lit figure against a background pushed two steps darker, or a near-black silhouette against the one bright break; foreground shapes almost black; the eye lands on the subject first. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Not a katana, not a tsuba, not a short jian, not a ball pommel. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow aura / emissive skin around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide; katana / tsuba / random sabre length instead of sw_bidam 환두대도.",
 						"refs": [
@@ -51249,51 +51218,9 @@
 						"ko": "당의 도읍에서 의자가 황제 앞에 끌려 나온다."
 					},
 					{
-						"kind": "dialogue",
-						"chip": "#e08a2e",
-						"lines": [
-							"김춘추...",
-							"<b>김춘추!!!</b>"
-						],
-						"speaker": "🙇",
-						"person": "euija",
-						"en": [
-							"Kim Chunchu…",
-							"<b>KIM CHUNCHU!!!</b>"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#D8258C",
-						"lines": [
-							"응?"
-						],
-						"speaker": "🙇",
-						"person": "chunchu",
-						"en": [
-							"Hm?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e08a2e",
-						"lines": [
-							"<b>김춘추 이 놈!!</b>",
-							"<b>삼한의 땅으로 당을 끌어들이는 이 비랄한 만고의 역적아!!</b>",
-							"<b>네 천벌을 받을 것이다!!</b>"
-						],
-						"speaker": "🙇",
-						"person": "euija",
-						"en": [
-							"<b>Kim Chunchu, you wretch!!</b>",
-							"<b>You vile traitor of the ages, who dragged a foreign power onto the soil of Samhan!!</b>",
-							"<b>Heaven’s punishment will find you!!</b>"
-						]
-					},
-					{
 						"kind": "p",
-						"html": "The shouting burns out. What remains is a man who has finally run out of stories to sell — and one last story he cannot afford to keep.",
-						"ko": "고함이 사그라든다. 남은 것은 팔 이야기가 바닥난 사내 — 그리고 더는 쥐고 있을 수 없는 마지막 이야기 하나."
+						"html": "He has run out of stories to sell, except one, and he cannot afford to keep it.",
+						"ko": "팔 이야기가 바닥났다. 하나만 빼고. 그 하나는 더는 쥐고 있을 수가 없다."
 					},
 					{
 						"kind": "dialogue",
@@ -51355,67 +51282,9 @@
 					},
 					{
 						"kind": "p",
-						"html": "Kangrim reads his name three times in the Tang capital — Euija. Euija. Euija. — the underworld's receipt before the humiliation finishes.",
-						"ko": "강림은 당의 도읍에서 그의 이름을 세 번 부른다 — 의자. 의자. 의자. — 능욕이 끝나기 전 저승의 영수증처럼."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6b7280",
-						"person": "kangrim",
-						"lines": [
-							"어라하.",
-							"백강의 아이. 당신이 준 이름이 아직 명부에 있습니다."
-						],
-						"en": [
-							"Eraha.",
-							"The boy at the White River. The name you gave him is still in the ledger."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0b155",
-						"person": "euija",
-						"lines": [
-							"…친구.",
-							"기적은 싼 칸에 적으시오."
-						],
-						"en": [
-							"…A friend.",
-							"Put the miracle on the cheap side of the page."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6b7280",
-						"person": "kangrim",
-						"lines": [
-							"그러면 기록보다 부자로 죽는 겁니다.",
-							"가시죠."
-						],
-						"en": [
-							"Then you die richer than the record will admit.",
-							"Come."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "Euija dies, vengeful and emptied. His life flashes before his eyes.",
-						"ko": "의자는 원한을 남긴 채, 비워진 채 죽는다. 삶이 눈앞을 스친다."
-					},
-					{
-						"kind": "p",
-						"html": "Once heralded as a bright and promising young prince, then a successful conqueror, he now meets his final moments in the capital of the enemy, humiliated by the Third Emperor and with no authority.",
-						"ko": "한때 총명하고 촉망받는 왕자였고, 이어 승승장구한 정복자였던 그는, 이제 적국의 도읍에서 황제에게 능욕당한 채, 아무 권세도 없이 마지막을 맞는다."
-					},
-					{
-						"kind": "p",
-						"html": "He pleads for someone, maybe in future generations, to finally avenge him.",
-						"ko": "그는 누군가가 — 훗날의 어느 세대가 — 자기 대신 복수해 주기를 빈다."
-					},
-					{
-						"kind": "p",
-						"html": "He catches a glimpse of <b>Kyun Hwon</b>, who will later revive Baekje in 240 years.",
-						"ko": "그의 눈에 <b>견훤</b>의 모습이 스친다. 240년 뒤 백제를 되살릴 사내다."
+						"html": "Kangrim writes the name once, Euija, a few pages after Gyebek’s, and closes the ledger.",
+						"ko": "강림은 그 이름을 한 번 적는다. 의자. 계백의 장에서 몇 장 뒤에. 그리고 명부를 덮는다.",
+						"art": "One panel: Kangrim closing the ledger on the name; Euija on the floor of the Tang hall behind him."
 					},
 					{
 						"kind": "p",
@@ -51437,143 +51306,47 @@
 					{
 						"kind": "p",
 						"html": "— Buyeo Euija —",
-						"ko": "— 부여의자 —"
+						"ko": "— 부여의자 —",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He was right about everything, which is the particular cruelty of his case. A country <em>is</em> a story. He said so at forty-one, in a courtyard, to a boy he had named himself.</i>",
-						"ko": "<i>그는 모든 것에 대해 옳았다. 그 점이 그의 경우에 유독 잔인하다. 나라는 <em>과연</em> 하나의 이야기다. 그는 마흔한 살에 마당에서, 제가 이름 지어 준 아이에게 그렇게 말했다.</i>"
+						"ko": "<i>그는 모든 것에 대해 옳았다. 그 점이 그의 경우에 유독 잔인하다. 나라는 <em>과연</em> 하나의 이야기다. 그는 마흔한 살에 마당에서, 제가 이름 지어 준 아이에게 그렇게 말했다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>And then he learned the rest of it, which he had not thought about: that a story does not care who is telling it. That the moment you make yourself its author you have also made yourself a character in it, and characters can be revised.</i>",
-						"ko": "<i>그리고 그는 미처 생각하지 못한 나머지를 배웠다. 이야기는 누가 그것을 말하고 있는지 개의치 않는다는 것을. 스스로 그 이야기의 저자가 되는 순간, 자신도 그 안의 인물이 된다는 것을. 그리고 인물은 고쳐 쓰일 수 있다는 것을.</i>"
+						"ko": "<i>그리고 그는 미처 생각하지 못한 나머지를 배웠다. 이야기는 누가 그것을 말하고 있는지 개의치 않는다는 것을. 스스로 그 이야기의 저자가 되는 순간, 자신도 그 안의 인물이 된다는 것을. 그리고 인물은 고쳐 쓰일 수 있다는 것을.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He broke the eight clans because they were strangling the throne, and he was correct. He seated his own sons instead, and was correct again — and then found himself alone in a room where every voice agreed with him — a room that had stopped being a court some years earlier, and become a mirror.</i>",
-						"ko": "<i>그는 여덟 가문이 왕좌의 목을 조르고 있었기에 그들을 꺾었고, 그것은 옳았다. 그 자리에 제 아들들을 앉혔고, 그것 또한 옳았다 — 그러고는 모든 목소리가 자신에게 동의하는 방 안에 홀로 남았다. 그 방은 이미 몇 해 전에 조정이기를 그만두고, 거울이 되어 있었다.</i>"
+						"ko": "<i>그는 여덟 가문이 왕좌의 목을 조르고 있었기에 그들을 꺾었고, 그것은 옳았다. 그 자리에 제 아들들을 앉혔고, 그것 또한 옳았다 — 그러고는 모든 목소리가 자신에게 동의하는 방 안에 홀로 남았다. 그 방은 이미 몇 해 전에 조정이기를 그만두고, 거울이 되어 있었다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>Seongchung told him. He put Seongchung in a cell. Heungsu told him. He had already exiled Heungsu. Gyebek would have told him, and he had put Gyebek on a boat. A man does not fall because nobody warned him. He falls because he arranged, patiently and over years, to be somewhere the warnings could not reach.</i>",
-						"ko": "<i>성충이 말했다. 그는 성충을 옥에 가두었다. 흥수가 말했다. 그는 이미 흥수를 내쫓은 뒤였다. 계백이라면 말했을 것이다. 그리고 그는 계백을 배에 태워 보냈다. 사람은 아무도 경고하지 않아서 무너지지 않는다. 여러 해에 걸쳐 참을성 있게, 경고가 닿을 수 없는 곳에 제 자리를 마련해 두었기 때문에 무너진다.</i>"
+						"ko": "<i>성충이 말했다. 그는 성충을 옥에 가두었다. 흥수가 말했다. 그는 이미 흥수를 내쫓은 뒤였다. 계백이라면 말했을 것이다. 그리고 그는 계백을 배에 태워 보냈다. 사람은 아무도 경고하지 않아서 무너지지 않는다. 여러 해에 걸쳐 참을성 있게, 경고가 닿을 수 없는 곳에 제 자리를 마련해 두었기 때문에 무너진다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>The Zengzi of the East. They called him that when he was young, and they meant it. The name was neither flattery nor wrong. He was never a fool. He was a clever man who won, and kept winning, until winning was the only instrument he had left, and then he tried to play a dying country on it.</i>",
-						"ko": "<i>해동증자. 젊은 시절 사람들은 그를 그렇게 불렀고, 진심이었다. 아첨도 아니고 틀린 말도 아니었다. 그는 결코 어리석지 않았다. 그는 이기고 또 이긴 영리한 사람이었고, 마침내 이기는 것 말고는 남은 악기가 없어졌을 때, 죽어 가는 나라를 그것으로 연주하려 했다.</i>"
+						"ko": "<i>해동증자. 젊은 시절 사람들은 그를 그렇게 불렀고, 진심이었다. 아첨도 아니고 틀린 말도 아니었다. 그는 결코 어리석지 않았다. 그는 이기고 또 이긴 영리한 사람이었고, 마침내 이기는 것 말고는 남은 악기가 없어졌을 때, 죽어 가는 나라를 그것으로 연주하려 했다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He asked, at the end, for someone to avenge him. Two hundred and forty years later a man called Kyun Hwon raised his banner and used his name and lost as well. The story went on without either of them. It always does.</i>",
-						"ko": "<i>그는 마지막에 자기를 위해 복수해 줄 사람을 구했다. 이백사십 년 뒤 견훤이라는 사내가 그의 깃발을 들고 그의 이름을 쓰고, 또한 졌다. 이야기는 둘 중 누구도 없이 계속되었다. 언제나 그렇듯이.</i>"
+						"ko": "<i>그는 마지막에 자기를 위해 복수해 줄 사람을 구했다. 이백사십 년 뒤 견훤이라는 사내가 그의 깃발을 들고 그의 이름을 쓰고, 또한 졌다. 이야기는 둘 중 누구도 없이 계속되었다. 언제나 그렇듯이.</i>",
+						"art": "Full-page end card."
 					}
 				],
 				"music": "A Man of Baekje"
-			},
-			{
-				"year": "371",
-				"flash": true,
-				"title": "The Seven Branched Sword",
-				"tone": "relic legend",
-				"subtitle": "칠지도",
-				"badges": [
-					"flag:baekje"
-				],
-				"images": [
-					{
-						"id": "chiljido-bestowal",
-						"ratio": 2,
-						"tone": "#be185d",
-						"at": "bestows the Seven-Branched Sword",
-						"alt": "King Geunchogo bestows the Seven-Branched Sword on the King of Wa as a symbol of friendship",
-						"prompt": "Cinematic historical illustration of the bestowal of the Chiljido, Three Kingdoms of Samhan / Tang era (371), scene: King Geunchogo of Baekje presenting the seven-branched iron sword across a ceremonial hall to the King of Wa, gold inlay catching lamplight, friendship as a blade with six arms, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"src": "/img_chiljido_bestowal.png"
-					},
-					{
-						"id": "sword-forge",
-						"ratio": 2,
-						"tone": "#be185d",
-						"alt": "The Seven-Branched Sword at the forge — six branches off a central blade, gold characters inlaid down both sides",
-						"at": "It is iron, two and a half feet long, with six branches ",
-						"prompt": "Cinematic historical illustration of sword forge, Three Kingdoms of Samhan / Tang era (371), scene: The Seven Branched Sword, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/sword-forge.jpg"
-					},
-					{
-						"id": "chiljido",
-						"ratio": 2,
-						"tone": "#111111",
-						"alt": "The Chiljido against black — sixty-one golden characters whose single verb two countries still dispute",
-						"at": "Which is it?",
-						"prompt": "Cinematic historical illustration of chiljido, Three Kingdoms of Samhan / Tang era (371), scene: The Seven Branched Sword, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/chiljido.jpg"
-					}
-				],
-				"blocks": [
-					{
-						"kind": "p",
-						"html": "The thirteenth Eraha of Baekje bestows the Seven-Branched Sword (칠지도) to the King of Wa, as a symbol of friendship.",
-						"ko": "백제의 열셋째 어라하가 우호의 징표로 <b>칠지도</b>를 왜왕에게 내린다."
-					},
-					{
-						"kind": "p",
-						"html": "Baekje–Wa relations continue to flourish and Wang In spreads western literature to the Yamato kingdom.",
-						"ko": "백제와 왜의 교류는 더욱 깊어지고, 왕인이 왜국에 한학을 전한다."
-					},
-					{
-						"kind": "verse",
-						"color": "#dc2626",
-						"lines": [
-							"先世以來未有此刀百濟王世─奇生聖音故爲倭王旨造傳示後世",
-							"선세 이래 이런 칼은 없었다. 백제왕이 세세토록 특별히(각별히) 성음(聖音)을 내었기에 왜왕을 위하여 훌륭하게 만들었다. 후세에 전하여 보이도록 하라."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "It is iron, two and a half feet long, with six branches off a central blade and sixty-one characters inlaid in gold down both sides. It has never been sharpened. It was never going to be.",
-						"ko": "쇠로 되어 있고 길이는 두 자 반, 가운데 몸통에서 가지 여섯이 뻗어 나오며, 앞뒤로 금상감한 글자 예순한 자가 있다. 한 번도 날을 세운 적이 없다. 애초에 세울 물건이 아니었다."
-					},
-					{
-						"kind": "p",
-						"html": "The inscription is the interesting part, because the two countries have spent fifteen hundred years disagreeing about a single verb: whether Baekje <em>presented</em> it upward, or <em>bestowed</em> it downward.",
-						"ko": "흥미로운 것은 명문이다. 두 나라가 천오백 년 동안 동사 하나를 두고 다투어 왔기 때문이다. 백제가 그것을 위로 <em>바친</em> 것인지, 아래로 <em>내린</em> 것인지."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#8d8d95",
-						"lines": [
-							"어느 쪽인데?"
-						],
-						"en": [
-							"Which is it?"
-						],
-						"person": "herald"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#8d8d95",
-						"lines": [
-							"그건 읽는 사람이 어느 나라 사람이냐에 달렸지."
-						],
-						"en": [
-							"That depends on which country is doing the reading."
-						],
-						"person": "herald"
-					},
-					{
-						"kind": "p",
-						"html": "What is not in dispute: Baekje sent scholars, craftsmen, weavers, horse-handlers, potters and the written word across that water for three hundred years, and when Baekje finally needed ships, the East sent forty-two thousand men to die in a river for it.",
-						"ko": "다투지 않는 사실은 이렇다. 백제는 삼백 년 동안 그 바다 건너로 학자와 장인과 직공과 말 다루는 이와 옹기장이와 글자를 보냈다. 그리고 마침내 백제에 배가 필요해졌을 때, 동토는 사만이천 명을 보내 강에서 죽게 했다."
-					},
-					{
-						"kind": "p",
-						"html": "Whichever verb it was, it was paid.",
-						"ko": "어느 쪽 동사였든, 값은 치러졌다."
-					}
-				],
-				"music": "Counsel",
-				"flashback": true
 			},
 			{
 				"year": "661",
@@ -51632,7 +51405,7 @@
 						"id": "succession-thrones",
 						"ratio": 1.3333333333333333,
 						"tone": "#3E79E4",
-						"at": "The king dies",
+						"at": "takes the throne and vows to unify Samhan",
 						"alt": "Two empty throne chairs - one glowing with Silla blue, one dark - symbolizing succession from Chunchu to Munmu",
 						"src": "/temp/thrones_succession_blue.png",
 						"refs": []
@@ -51663,7 +51436,7 @@
 						"id": "chunchu-afterlife-walk",
 						"ratio": 1.778,
 						"tone": "#D8258C",
-						"at": "I am… just going to keep walking west",
+						"at": "already on the road west",
 						"alt": "Tiny Chunchu walks alone into a magenta underworld road — monumental emptiness, no escort",
 						"prompt": "Minimal iconic 16:9 poster. Kim Chunchu walks to the afterlife ALONE. ONE geometric device: a MAGENTA RIBBON of road receding into a flat charcoal-rose underworld void — the ribbon is the whole composition. Tiny silky hanbok figure walking AWAY from camera, by himself, no psychopomp, no family. Face matches the attached portrait only as a tiny likeness. Chunchu magenta #D8258C as the plane and the single accent. Otherworld: symbolic flat color, no naturalistic sun or moon weather. Monumental emptiness. Callback to an earlier long-road still of a father carrying a child: same road-ribbon, now empty of the child. No army. No clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -51674,22 +51447,6 @@
 							"chunchu"
 						],
 						"tempImage": "/temp/chunchu-afterlife-walk.jpg"
-					},
-					{
-						"id": "chunchu-west-road",
-						"ratio": 1.778,
-						"tone": "#D8258C",
-						"at": "Walk, Spring-and-Autumn",
-						"alt": "A broken arc of pale underworld light; tiny Chunchu walks through it alone, magenta hem",
-						"prompt": "Minimal iconic 16:9 poster. Kim Chunchu, Spring-and-Autumn, walking west alone. ONE geometric device: a BROKEN ARC of pale underworld light as a doorway in the upper half; tiny silky figure in the lower third stepping through, by himself. Face matches the attached portrait only as a tiny likeness. Magenta #D8258C as the single accent on the hem. Otherworld symbolic flat charcoal. No Kangrim. No second walker. Monumental emptiness. No clouds as kingdom weather. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_chunchu.png",
-							"/pl_underworld.png"
-						],
-						"people": [
-							"chunchu"
-						],
-						"tempImage": "/temp/chunchu-west-road.jpg"
 					},
 					{
 						"id": "munmu-title",
@@ -51704,8 +51461,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "They take him first to a Buddhist temple on the edge of Surabol — not for miracle, for quiet. Incense. Stone. A monk who knows when not to speak. <b>Munhee</b> sits where wives of True Bone have always sat when history arrives as a fever.",
-						"ko": "먼저 서라벌 가장자리 절로 옮긴다 — 기적이 아니라 고요를 위해. 향. 돌. 말없이 있을 때를 아는 스님. <b>문희</b>는 진골의 아내들이 역사가 열병으로 올 때 항상 앉던 자리에 앉는다."
+						"html": "They take him first to a Buddhist temple on the edge of Surabol, for the quiet. Incense, stone, and a monk who knows when not to speak. <b>Munhee</b> sits where wives of True Bone have always sat when history arrives as a fever.",
+						"ko": "고요를 찾아 먼저 그를 서라벌 가장자리의 절로 옮긴다. 향과 돌, 그리고 말없이 있을 때를 아는 스님. <b>문희</b>는 진골의 아내들이 역사가 열병으로 올 때 항상 앉던 자리에 앉는다."
 					},
 					{
 						"kind": "dialogue",
@@ -51715,8 +51472,8 @@
 							"Leave me the hours. I invent endings."
 						],
 						"lines": [
-							"곁방에서 나라를 다시 만들었지.",
-							"시간은 내게 남겨. 끝은 내가 발명할게."
+							"곁방에서 나라를 새로 만드셨잖아요.",
+							"남은 시간은 저한테 주세요. 끝은 제가 지을게요."
 						],
 						"chip": "#e07fa8"
 					},
@@ -51727,8 +51484,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (55)</b> sits where she has sat since the spring. She has buried a sister who was a queen and a brother’s youth and a daughter she never got back, and she is still here — until their son comes and stands at the foot of the bed, already wearing a king’s silence he has not yet been allowed to begin.",
-						"ko": "<b>문희 (55)</b>는 봄부터 앉아 온 자리에 앉아 있다. 여왕이었던 언니를 묻었고, 오라비의 젊음을 묻었고, 끝내 돌려받지 못한 딸을 묻었다. 그러고도 여전히 여기 있다 — 아들이 들어와 침대 맡에 서기 전까지. 아직 시작도 허락받지 못한 왕의 침묵을, 벌써 입고 있는 아들."
+						"html": "<b>Munhee (55)</b> has not left his side since the spring. She has buried <b>Bohee</b>, the sister who burned a skirt on a hill to get her married, and a brother’s youth, and a daughter she never got back, and she is still here — until their son comes and stands at the foot of the bed, already wearing a king’s silence he has not yet been allowed to begin.",
+						"ko": "<b>문희 (55)</b>는 봄부터 그의 곁을 떠나지 않았다. 언덕에서 치마를 태워 시집보내 준 언니 <b>보희</b>를 묻었고, 오라비의 젊음을 묻었고, 끝내 돌려받지 못한 딸을 묻었다. 그러고도 여전히 여기 있다 — 아들이 들어와 침대 맡에 서기 전까지. 아직 시작도 허락받지 못한 왕의 침묵을, 벌써 입고 있는 아들."
 					},
 					{
 						"kind": "dialogue",
@@ -51872,67 +51629,9 @@
 					},
 					{
 						"kind": "p",
-						"html": "He reads the king's name three times — Muyeol. Muyeol. Muyeol. — though the room still knows him as Chunchu.",
-						"ko": "그는 임금의 이름을 세 번 부른다 — 무열. 무열. 무열. — 방은 여전히 그를 춘추로 알고 있어도."
-					},
-					{
-						"kind": "p",
-						"html": "He goes quiet between the two names. The room still knows him as Chunchu. The ledger has already written Muyeol.",
-						"ko": "두 이름 사이에서 그가 고요해진다. 방은 여전히 그를 춘추로 안다. 명부에는 이미 무열이 적혀 있다."
-					},
-					{
-						"kind": "dialogue",
-						"person": "kangrim",
-						"en": [
-							"King Muyeol.",
-							"We have met before — in your daughter’s eyes, if not in yours.",
-							"Your son is packing. The West is already in the hall."
-						],
-						"lines": [
-							"무열왕.",
-							"우리는 만난 적 있습니다 — 당신 눈이 아니라 따님의 눈에서.",
-							"아들은 짐을 싸고 있습니다. 서쪽은 이미 전각 안에 있습니다."
-						],
-						"chip": "#5f5f6b"
-					},
-					{
-						"kind": "dialogue",
-						"person": "chunchu",
-						"en": [
-							"…I know.",
-							"I saw a room where they all absolutely obeyed one man — no matter what.",
-							"I never un-saw it. Tell Bupmin the packing list is his."
-						],
-						"lines": [
-							"…아오.",
-							"한 사람에게 — 무슨 일이 있어도 — 모두가 절대 복종하는 방을 보았소.",
-							"그걸 언-보지는 못했소. 법민에게 전하게. 짐 목록은 이제 그의 것이오."
-						],
-						"chip": "#D8258C"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c084fc",
-						"person": "chunchu",
-						"en": [
-							"I am… just going to keep walking west."
-						],
-						"lines": [
-							"나는… 그냥 계속 서쪽으로 걷겠다."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "kangrim",
-						"en": [
-							"The ledger does not moralize — His Majesty only asks whether you knew. You knew.",
-							"Walk, Spring-and-Autumn. The underworld kingdom has a seat that keeps better silence than Chang’an."
-						],
-						"lines": [
-							"명부는 도덕을 논하지 않습니다 — 폐하께서는 알았는지만 물으십니다. 당신은 알았습니다.",
-							"걸으시지요, 춘추. 저승 나라엔 장안보다 침묵을 잘 지키는 자리가 있습니다."
-						],
-						"chip": "#5f5f6b"
+						"html": "Kangrim writes the name the court will use, Muyeol, while the room is still saying Chunchu, and closes the ledger. By then Chunchu is already on the road west, a little ahead of him.",
+						"ko": "방은 아직 춘추라 부르는데, 강림은 조정이 쓸 이름인 무열을 적고 명부를 덮는다. 그때 춘추는 벌써 그보다 조금 앞서 서쪽 길을 걷고 있다.",
+						"art": "One panel: the ledger closing on the name Muyeol; tiny Chunchu walking the underworld road west."
 					},
 					{
 						"kind": "p",
@@ -51952,37 +51651,43 @@
 					{
 						"kind": "p",
 						"html": "— Kim Chunchu —",
-						"ko": "— 김춘추 —"
+						"ko": "— 김춘추 —",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He was a boy on a hill who wanted one country and no more borders, and he got half of it, and left the rest in his son’s mouth — the same words, stolen honestly, when the boy was still small enough to believe a king could be for everyone.</i>",
-						"ko": "<i>그는 하나의 나라와 사라진 국경을 바라던 언덕 위의 소년이었고, 절반을 얻었으며, 나머지를 아들의 입에 남겨 두었다 — 같은 말, 정직하게 훔친 말. 그 아이가 아직 임금이 모두를 위한 것일 수 있다고 믿던 입으로.</i>"
+						"ko": "<i>그는 하나의 나라와 사라진 국경을 바라던 언덕 위의 소년이었고, 절반을 얻었으며, 나머지를 아들의 입에 남겨 두었다 — 같은 말, 정직하게 훔친 말. 그 아이가 아직 임금이 모두를 위한 것일 수 있다고 믿던 입으로.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>First the politics, which he gave up for a wife and three children. Then the wife and the children, one of whom was taken from him at Daeya, which gave the politics back to him with interest. He did not choose the second time. That is what people never understand about him.</i>",
-						"ko": "<i>먼저 정치를 내놓았다. 아내와 세 아이를 위해. 그다음엔 그 아내와 아이들을 내놓았다. 그중 하나를 대야성에서 빼앗겼고, 그것이 정치를 이자까지 붙여 그에게 돌려주었다. 두 번째는 그가 고른 것이 아니었다. 사람들이 그에 대해 끝내 이해하지 못하는 지점이 그것이다.</i>"
+						"ko": "<i>먼저 정치를 내놓았다. 아내와 세 아이를 위해. 그다음엔 그 아내와 아이들을 내놓았다. 그중 하나를 대야성에서 빼앗겼고, 그것이 정치를 이자까지 붙여 그에게 돌려주었다. 두 번째는 그가 고른 것이 아니었다. 사람들이 그에 대해 끝내 이해하지 못하는 지점이 그것이다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He knelt to the Eternal General, who despised him for it. He knelt to an emperor, who liked him for it and kept his son. The Righteous and Merciful said he did not fear a man who kneels. Euija was wrong, and it took eighteen years and a cup of wine to demonstrate how wrong.</i>",
-						"ko": "<i>그는 영원의 대장군 앞에 무릎을 꿇었고, 연은 그 때문에 그를 경멸했다. 그는 황제 앞에 무릎을 꿇었고, 황제는 그 때문에 그를 마음에 들어 하며 그의 아들을 붙잡아 두었다. 인자군왕은 남에게 무릎 꿇는 자는 두렵지 않다고 했다. 의자는 틀렸고, 얼마나 틀렸는지를 보이는 데 십팔 년과 술 한 잔이 들었다.</i>"
+						"ko": "<i>그는 영원의 대장군 앞에 무릎을 꿇었고, 연은 그 때문에 그를 경멸했다. 그는 황제 앞에 무릎을 꿇었고, 황제는 그 때문에 그를 마음에 들어 하며 그의 아들을 붙잡아 두었다. 인자군왕은 남에게 무릎 꿇는 자는 두렵지 않다고 했다. 의자는 틀렸고, 얼마나 틀렸는지를 보이는 데 십팔 년과 술 한 잔이 들었다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>The charge against him is that he brought a foreign army onto Samhan soil, and the charge is true. He knew it while he was doing it. He did it anyway, and spent the rest of his life teaching his son how to get them out again.</i>",
-						"ko": "<i>그를 향한 죄목은 삼한의 땅으로 외세를 끌어들였다는 것이고, 그 죄목은 사실이다. 그는 그렇게 하는 동안에도 알고 있었다. 그래도 했고, 남은 평생을 아들에게 그들을 다시 몰아내는 법을 가르치며 보냈다.</i>"
+						"ko": "<i>그를 향한 죄목은 삼한의 땅으로 외세를 끌어들였다는 것이고, 그 죄목은 사실이다. 그는 그렇게 하는 동안에도 알고 있었다. 그래도 했고, 남은 평생을 아들에게 그들을 다시 몰아내는 법을 가르치며 보냈다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He died with Baekje gone and Goguryeo still standing. Halfway. The last two names he said were his daughter’s and his son’s. Not the kingdom’s.</i>",
-						"ko": "<i>그는 백제가 사라지고 고구려는 아직 서 있는 채로 죽었다. 절반에서. 그가 마지막으로 부른 두 이름은 딸의 이름과 아들의 이름이었다. 나라의 이름이 아니었다.</i>"
+						"ko": "<i>그는 백제가 사라지고 고구려는 아직 서 있는 채로 죽었다. 절반에서. 그가 마지막으로 부른 두 이름은 딸의 이름과 아들의 이름이었다. 나라의 이름이 아니었다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
-						"html": "<b>King Munmu (35)</b> takes the throne and vows to unify Samhan — not as an inheritance of revenge, but as the country a six-year-old once named out loud.",
-						"ko": "<b>문무왕 (35)</b>이 즉위하여 삼한 통일을 맹세한다 — 복수의 유산이 아니라, 여섯 살짜리가 언젠가 소리 내어 이름 붙였던 나라로서."
+						"html": "<b>King Munmu (35)</b> takes the throne and vows to unify Samhan.",
+						"ko": "<b>문무왕 (35)</b>이 즉위하여 삼한 통일을 맹세한다."
 					},
 					{
 						"kind": "quote",
@@ -52057,18 +51762,26 @@
 						"ko": "황제가 제8차 고구려 원정을 일으킨다. 다른 모든 것과 함께 물려받은, 아버지의 전쟁이다."
 					},
 					{
+						"kind": "p",
+						"html": "Four banners go up on a hill above the camp, one for each marshal, in the colours of the four quarters of heaven.",
+						"ko": "진영 위 언덕에 깃발 넷이 오른다. 장수마다 하나씩, 하늘 네 방위의 빛깔로.",
+						"art": "The four banners on the hill against the sky: White Tiger, Red Fowl, Blue Dragon, Black Tortoise."
+					},
+					{
 						"kind": "diagram",
 						"diagram": "four-beasts",
 						"title": "Four Beasts · 사신",
 						"caption": "Gaozong’s expeditionary colours: White Tiger, Red Fowl, Blue Dragon, Black Tortoise.",
-						"ko": "고종의 동정 색깔. 백호, 주작, 청룡, 현무."
+						"ko": "고종의 동정 색깔. 백호, 주작, 청룡, 현무.",
+						"art": "Drawn as the four banners on the hill, not as a chart."
 					},
 					{
 						"kind": "diagram",
 						"diagram": "four-dragons",
 						"title": "Four Dragons · 사룡",
-						"caption": "Taizong’s older roster — the grammar the son inherited with the war.",
-						"ko": "태종의 옛 명부 — 아들이 전쟁과 함께 물려받은 문법."
+						"caption": "Taizong’s older roster: the four dragons of the last war.",
+						"ko": "태종의 옛 진용. 지난 전쟁의 네 용.",
+						"art": "Drawn as Taizong’s old four-dragon banners, furled and carried behind the new four."
 					},
 					{
 						"kind": "table",
@@ -52091,7 +51804,8 @@
 							"#fee2e2",
 							"#dbeafe",
 							"#e5e7eb"
-						]
+						],
+						"art": "Drawn as each marshal under his banner on the hill; the names are for the reader, not lettered."
 					},
 					{
 						"kind": "p",
@@ -52099,12 +51813,16 @@
 						"ko": "삼한은 끝내 그들의 이름을 배우지 않는다. 깃발을 배운다. 깃발이란 원래 그러라고 있는 것이다."
 					},
 					{
+						"kind": "p",
+						"html": "In Chang’an the Third Emperor sends for <b>Kim Inmun</b>, King Munmu’s younger brother, who serves at the Tang court.",
+						"ko": "장안에서 황제가 당의 조정에서 숙위하는 문무왕의 아우 <b>김인문</b>을 부른다."
+					},
+					{
 						"kind": "dialogue",
 						"chip": "#b8935a",
 						"lines": [
 							"짐이 이미 백제를 멸하여 너희 나라의 근심을 제거하였는데, 이제 고려가 지리의 험함을 믿고 예맥(穢貊)과 함께 악한 짓을 하여 큰 나라를 섬기는 예를 어기고 이웃 나라와 사이좋게 지내는 의리를 저버리고 있다. 짐은 병사를 보내어 치려고 하니, 너도 돌아가 너희 국왕에게 고하여 군대를 출동시켜 우리와 함께 망해가는 오랑캐를 섬멸케 하라."
 						],
-						"speaker": "🙇",
 						"en": [
 							"I have already destroyed Baekje and removed your country’s worry; yet now Goryeo trusts in the ruggedness of its land, joins the Yemaek in wickedness, breaks the rite of serving a great state, and abandons the duty of living peaceably with its neighbours. I am sending soldiers to strike it — so return and tell your king to send out his army, and with us annihilate these failing barbarians."
 						],
@@ -52149,15 +51867,6 @@
 						"tempImage": "/temp/five-loyalists.jpg"
 					},
 					{
-						"id": "gwisil-bokshin",
-						"ratio": 1.9,
-						"tone": "#1e3a8a",
-						"alt": "General Gwisil Boksin, commander of the revival armies, eyeing the king he crowned",
-						"at": "Prince Pung wants to move the base from",
-						"prompt": "Cinematic historical illustration of gwisil bokshin, Three Kingdoms of Samhan / Tang era (661), scene: Baekje Restoration Society, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/gwisil-bokshin.jpg"
-					},
-					{
 						"id": "saimei-empress",
 						"ratio": 2,
 						"tone": "#fbcfe8",
@@ -52165,26 +51874,13 @@
 						"at": "The eastern empress raises ships, grain and soldiers",
 						"prompt": "Cinematic historical illustration of saimei empress, Three Kingdoms of Samhan / Tang era (661), scene: Baekje Restoration Society, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/saimei-empress.jpg"
-					},
-					{
-						"id": "boksin-executed",
-						"ratio": 1.9,
-						"tone": "#7f1d1d",
-						"at": "Boksin plots to kill the king by pretending to be sick",
-						"alt": "Boksin's feigned sickbed betrayed — the general seized by King Pungjang's guards in torchlight",
-						"prompt": "Cinematic historical illustration of Boksin's downfall, Three Kingdoms of Samhan / Tang era (663), scene: general Gwisil Boksin caught in his feigned-sickness plot, dragged from a sickbed by King Pungjang's guards inside the mountain fortress of Juryu, torchlight on stone, the restoration devouring itself, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"refs": [
-							"/ch_commander_1.png",
-							"/ch_commander_2.png"
-						],
-						"tempImage": "/temp/boksin-executed.jpg"
 					}
 				],
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Prince Pung sends a message to Yamato the East, requesting aid in order to restore Baekje and defeat the Tang–Silla alliance.",
-						"ko": "부여풍이 왜국에 사람을 보내, 백제를 되살리고 나당연합을 꺾을 원병을 청한다."
+						"html": "The restoration sends envoys across the sea to Yamato, the East. They ask for an army to restore Baekje and break the Tang–Silla alliance, and for the prince Yamato has been keeping: Pung.",
+						"ko": "부흥군이 바다 건너 동쪽의 왜국으로 사신을 보낸다. 백제를 되살리고 나당연합을 꺾을 군사를 청하고, 왜가 데리고 있던 왕자 풍을 돌려 달라 청한다."
 					},
 					{
 						"kind": "diagram",
@@ -52200,12 +51896,17 @@
 					},
 					{
 						"kind": "p",
-						"html": "She dies the following year in 661. The eastern prince (35) takes the throne and forms the Baekje Revival Army. Baekje refugees gather from all around the world in order to restore Baekje.",
-						"ko": "그녀는 이듬해인 661년에 죽는다. 동쪽의 왕자 (35)가 그 자리를 이어 백제 부흥군을 조직한다. 백제 유민들이 사방에서 모여든다."
+						"html": "She dies that summer, with the fleet half-built. Her son, Prince <b>Naka-no-Ōe</b>, takes up her war without waiting to take her throne. In Baekje the refugees come down out of the hills to the restoration’s camps.",
+						"ko": "그해 여름 여제가 죽는다. 함대는 반쯤 지어진 채였다. 아들인 <b>나카노오에</b> 왕자가 왕위에 오르기를 기다리지 않고 어머니의 전쟁을 이어받는다. 백제에서는 유민들이 산에서 내려와 부흥군의 진으로 모여든다."
 					},
 					{
 						"kind": "p",
-						"html": "King <b>Pungjang (37)</b> · <b>Gwishil Boksin</b> · <b>Hukchi Sangji</b> · <b>Satek Sangya</b> · <b>Bagon</b> · <b>Echi no Takutsu</b>",
+						"html": "<b>Prince Pung</b> has lived in the East for more than twenty years. He is the only prince left, so the restoration takes him as its leader and crowns him <b>King Pungjang</b>.",
+						"ko": "<b>부여풍</b>은 스무 해 넘게 왜에서 살아 왔다. 남은 왕자는 그뿐이라, 부흥군은 그를 수장으로 맞아 <b>풍왕</b>으로 세운다."
+					},
+					{
+						"kind": "p",
+						"html": "King <b>Pungjang (37)</b> · <b>Gwishil Boksin</b> · <b>Heukchi Sangji</b> · <b>Satek Sangya</b> · <b>Bagon</b> · <b>Echi no Takutsu</b>",
 						"ko": "<b>풍왕 (37)</b> · <b>귀실복신</b> · <b>흑치상지</b> · <b>사택상여</b> · <b>바곤</b> · <b>에치노 다쿠쓰</b>"
 					},
 					{
@@ -52214,454 +51915,17 @@
 						"ko": "왕관은 풍의 것이고, 군사는 복신의 것이다. 그 셈은 누구 눈에나 보인다. 두 사람 눈에도."
 					},
 					{
-						"kind": "flashback",
-						"year": "643",
-						"title": "The year after Daeya",
-						"blocks": [
-							{
-								"kind": "dialogue",
-								"chip": "#D8258C",
-								"lines": [
-									"대야성은 성이 무너져서 함락된 게 아니오. / 문이 안에서 열렸지."
-								],
-								"en": [
-									"Daeya did not fall because a wall came down. / A door was opened from the inside."
-								],
-								"person": "chunchu"
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#eab308",
-								"lines": [
-									"검일 하나 때문에 나라 전체를 의심할 셈인가."
-								],
-								"en": [
-									"You mean to suspect an entire country because of one Gumil."
-								],
-								"person": "yushin"
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#D8258C",
-								"lines": [
-									"아니. / 나라마다 검일이 하나씩 있다는 얘기요. / 우리한테도 있었고. / 그러니 백제 검일을 찾고, 고려 검일을 찾고, 필요하면 당의 검일도 찾아야지."
-								],
-								"en": [
-									"No. / I mean every country has a Gumil in it. / We had ours. / So find Baekje’s. Find Goguryeo’s. And if it comes to it, find the Tang’s."
-								],
-								"person": "chunchu"
-							},
-							{
-								"kind": "p",
-								"html": "It takes eleven years. A captured Silla servant named <b>Jomi-gon</b> is sent back into Baekje as a household man to the minister <b>Imja</b>, and spends years being useful, and one evening asks a question he has been carrying since he left.",
-								"ko": "십일 년이 걸린다. 사로잡혔던 신라의 종 <b>조미곤</b>이 좌평 <b>임자</b>의 집사람으로 백제에 되돌려 보내지고, 여러 해 쓸모 있는 사람으로 지내다가, 어느 저녁 떠나올 때부터 품고 있던 질문 하나를 한다."
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#8f9c8f",
-								"lines": [
-									"나으리. / 나라가 망하면 나으리 가문은 어찌 됩니까?"
-								],
-								"en": [
-									"My lord. / When the country falls, what becomes of your house?"
-								],
-								"person": "jomigon"
-							},
-							{
-								"kind": "p",
-								"html": "Imja does not report the question, which is the answer.",
-								"ko": "임자는 그 질문을 고하지 않는다. 그것이 곧 대답이다."
-							}
-						]
+						"kind": "p",
+						"html": "Boksin and Pung will not need a Gumil. They will do it to each other unassisted, exactly as Chunbok once told an emperor they would.",
+						"ko": "복신과 풍에게는 검일이 필요 없을 것이다. 아무 도움 없이 서로에게 그 일을 할 것이다. 언젠가 춘복이 황제에게 말했던 그대로."
 					},
 					{
 						"kind": "p",
-						"html": "Boksin and Pung will not need a Gumil. They will do it to each other unassisted, which Chunchu also predicted, in a sentence his son has written down and kept.",
-						"ko": "복신과 풍에게는 검일이 필요 없을 것이다. 아무 도움 없이 서로에게 그 일을 할 것이다. 이 또한 춘추가 예언한 것이고, 그 문장은 아들이 적어 간직하고 있다."
-					},
-					{
-						"kind": "p",
-						"html": "Chunchu had put it in a sentence his son kept — not a line from the annals, only counsel: where blood ties are strong, the state grows weak.",
-						"ko": "춘추가 한 문장으로 남겨 아들이 간직한 것 — 본기의 기록이 아니라 조언일 뿐. 혈연이 강하면, 국력은 약해진다."
-					},
-					{
-						"kind": "p",
-						"html": "<b>Prince Pung</b> has been living in the East for over 20 years. He is the only prince left, so is welcomed as the leader of the Revival Society and crowned as <b>King Pungjang</b>.",
-						"ko": "<b>부여풍</b>은 스무 해 넘게 왜에서 살아 왔다. 남은 유일한 왕자였기에 부흥군의 수장으로 추대되어 <b>풍왕</b>으로 즉위한다."
-					},
-					{
-						"kind": "p",
-						"html": "<b>Boksin</b>, the lead general of the Revival Society, commands its armies — and begins to resent the king he crowned.",
-						"ko": "부흥군의 총사 <b>복신</b>이 군을 지휘한다 — 그리고 제 손으로 세운 임금을 못마땅해하기 시작한다."
-					},
-					{
-						"kind": "p",
-						"html": "Prince Pung wants to move the base from <b>Sand Fortress</b> to the <b>Evasion Fortress</b>, against the advice of his ministers.",
-						"ko": "풍왕은 신하들의 만류에도 <b>주류성</b>에서 <b>피성</b>으로 근거를 옮기려 한다."
-					},
-					{
-						"kind": "p",
-						"html": "After 2 months, they’re forced to move back because it is too close to the Silla border.",
-						"ko": "두 달 만에, 신라 국경에 너무 가깝다는 이유로 다시 돌아올 수밖에 없게 된다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e6c76a",
-						"lines": [
-							"이 주유(州柔)[3]는 농토와 멀리 떨어져 있고 토지가 척박하여 농업과 양잠에 적합하지 않은 땅이고, 이곳은 방어하기 좋아 싸울 만한 곳이다. 여기에서 오래 머문다면 백성들이 굶주릴 것이니 이제 피성(避城)으로 옮기는 것이 좋겠다. 피성은 서북쪽으로는 띠를 두르듯 고련단경(古連旦涇)이 흐르고 동남쪽으로는 깊은 수렁과 커다란 둑으로 된 제방이 자리하고 있으며, 땅으로 둘러싸여 있고 도랑을 터트리면 물이 쏟아진다. 꽃과 열매가 있는 나무에서 얻는 토산물은 삼한(三韓)에서 가장 기름질 것이며, 옷과 음식의 근원은 천지 사이에 숨어 있는 곳일 것이다. 비록 낮은 땅(평지)이라고 하지만 어찌 옮기지 않겠는가?"
-						],
-						"speaker": "🙎",
-						"en": [
-							"This Juryu lies far from farmland, its soil barren and unfit for farming or sericulture; it is good ground for defence and for battle. If we stay long the people will starve — better now to move to Pisong. Pisong has the Goryeondangyeong running about it like a sash to the northwest, and to the southeast deep marshes and great embankments; ringed with earth, and when the sluices are opened the water pours forth. The produce of its flowering and fruiting trees will be the richest in all Samhan, and the source of clothing and food lies hidden between heaven and earth there. Low ground it may be — but why should we not move?"
-						],
-						"person": "pung"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#a8781f",
-						"lines": [
-							"피성과 적이 있는 곳과의 거리는 하룻밤이면 갈 수 있습니다. 서로 이렇게 매우 가까우니 만약 예기하지 못한 일이 있게 되면 후회해도 소용이 없을 것입니다. 굶는 것은 나중의 일이고 망하는 것이 먼저입니다. 지금 적이 함부로 오지 않는 것은 주유가 산이 험한 곳에 있어 모두 방어물이 되며, 산이 높고 계곡이 좁아 지키기 쉽고 공격하기 어렵기 때문입니다. 만약 낮은 땅에 머물면 어찌 굳건히 살겠으며 흔들리지 않음이 오늘날에 미치겠습니까?”"
-						],
-						"speaker": "🙎",
-						"en": [
-							"Pisong lies a single night’s march from the enemy. So close that if the unexpected comes, regret will be useless. Starving is a later matter; ruin comes first. The reason the enemy does not come freely now is that Juryu sits in rough mountains — every slope a defence, the peaks high and the valleys narrow, easy to hold and hard to attack. If we sit on low ground, how shall we stand firm, and how shall we last until today’s tomorrow?"
-						],
-						"person": "boksin"
-					},
-					{
-						"kind": "p",
-						"html": "The men move once, move back, and start looking at each other differently.",
-						"ko": "군은 한 번 옮겼다가 되돌아왔고, 그 뒤로 서로를 보는 눈이 달라진다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#a8781f",
-						"lines": [
-							"결국 이 나라를 두 번 세우는 건 나요.",
-							"왕관을 쓴 건 저쪽이고."
-						],
-						"speaker": "🙎",
-						"en": [
-							"In the end it is I who raise this country twice.",
-							"And it is he who wears the crown."
-						],
-						"person": "boksin"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#a8781f",
-						"lines": [
-							"…또 옮기자고 하시겠지."
-						],
-						"speaker": "🙎",
-						"person": "boksin",
-						"en": [
-							"…And he will want to move again."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "Boksin plots to kill the king by pretending to be sick, but is caught and executed instead.",
-						"ko": "복신은 병을 핑계로 임금을 죽이려 하지만, 발각되어 도리어 처형된다."
-					},
-					{
-						"kind": "p",
-						"html": "However, there is still a problem. Boksin was the most competent general of the movement, and there is only one chance left.",
-						"ko": "그러나 문제가 남는다. 복신은 부흥군 최고의 장수였고, 이제 기회는 단 한 번뿐이다."
+						"html": "<b>Boksin</b> commands the restoration’s armies, and before long he has begun to resent the king he crowned.",
+						"ko": "부흥군의 군사는 <b>복신</b>이 거느린다. 그리고 머지않아, 그는 제 손으로 세운 임금을 못마땅해하기 시작한다."
 					}
 				],
 				"music": "The Long War"
-			},
-			{
-				"year": "663",
-				"sub": "August",
-				"accent": "#b91c1c",
-				"title": "White River",
-				"tone": "grim war epic — naval",
-				"subtitle": "백강 전투",
-				"badges": [
-					"⚔️",
-					"flag:tang",
-					"flag:silla",
-					"flag:baekje",
-					"flag:wa"
-				],
-				"images": [
-					{
-						"id": "poster_takutsu",
-						"ratio": 0.75,
-						"tone": "#111111",
-						"nsfw": false,
-						"alt": "Echi no Takutsu — torn burgundy banner-plane",
-						"prompt": "Minimal iconic 3:4 poster. NOT photoreal. NOT busy. Echi no Takutsu. ONE geometric device: torn banner plane of #b05575. Face matches the attached portrait. #b05575 as the plane. Flat charcoal-black void. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_takutsu.png"
-						],
-						"people": [
-							"takutsu"
-						],
-						"tempImage": "/temp/poster_takutsu.jpg"
-					},
-					{
-						"id": "white-river-aerial",
-						"ratio": 1.7777777777777777,
-						"tone": "#FFCB51",
-						"at": "White River",
-						"alt": "Aerial view of White River where Baekje and Silla forces clash",
-						"src": "/temp/white_river_aerial.png",
-						"refs": [
-							"/pl_white_river.png"
-						],
-						"tempImage": "/temp/white-river-aerial.jpg"
-					},
-					{
-						"id": "baekgang-map",
-						"ratio": 2.3,
-						"tone": "#e5e7eb",
-						"alt": "Map of the White River mouth — Tang ships anchored across the throat, the eastern fleet coming in on the tide",
-						"prompt": "Cinematic historical illustration of baekgang map, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/baekgang-map.jpg"
-					},
-					{
-						"id": "baekgang-river",
-						"ratio": 2.3,
-						"tone": "#86efac",
-						"alt": "The wide mouth of the White River, where the West, Samhan and the East met in one water",
-						"at": "The unification of Samhan is not far off…",
-						"prompt": "Cinematic historical illustration of baekgang river, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/baekgang-river.jpg"
-					},
-					{
-						"id": "naval-clash",
-						"ratio": 2.3,
-						"tone": "#0ea5e9",
-						"alt": "Yamato and Tang hulls grinding together in the narrow river mouth",
-						"at": "Chunchu, you wretch… how dare you, to His Majesty…!",
-						"prompt": "Cinematic historical illustration of naval clash, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/naval-clash.jpg"
-					},
-					{
-						"id": "naval-fire",
-						"ratio": 2.3,
-						"tone": "#dc2626",
-						"alt": "Four hundred eastern ships burning — the sky scarlet, the sea the colour of cinnabar",
-						"at": "Four hundred eastern ships do not sink so much as",
-						"prompt": "Cinematic historical illustration of naval fire, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"tempImage": "/temp/naval-fire.jpg"
-					},
-					{
-						"id": "baekgang-line-hold",
-						"ratio": 1.778,
-						"tone": "#b45309",
-						"at": "has already learned the river’s grammar",
-						"alt": "Geum River estuary at Baekgang: Tang tower-ships in a tight line holding the narrow mouth against a Wa fleet",
-						"prompt": "Cinematic historical still, 16:9, high view of the REAL Geum River / Baekgang estuary: tidal mouth, mudflats, reed banks. About 170 Tang tower-ships and covered warships in a rigid gold-bannered line across the choke. A larger pink-bannered Yamato fleet trying to force the mouth. Silla troops visible on the near bank. Real water, real ships, 7th-century East Asian naval gear. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
-						"refs": [
-							"/ch_black_dragon.png"
-						],
-						"tempImage": "/temp/baekgang-line-hold.jpg"
-					},
-					{
-						"id": "baekgang-envelop",
-						"ratio": 1.778,
-						"tone": "#ec4899",
-						"at": "Four hundred eastern ships do not sink so much as",
-						"alt": "Tang tower-ships with deck catapults burning Wa hulls in the Baekgang estuary",
-						"prompt": "Cinematic historical still, 16:9, on the water at the Geum estuary: Tang louchuan tower-ships with traction trebuchets on deck, gold banners, enveloping lighter Japanese ships that are on fire. Smoke, oars, real tidal water. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
-						"refs": [
-							"/ch_black_dragon.png"
-						],
-						"tempImage": "/temp/baekgang-envelop.jpg"
-					},
-					{
-						"id": "takutsu-last-stand",
-						"ratio": 2.3,
-						"tone": "#9a3412",
-						"at": "Baekje must survive….",
-						"alt": "Echi no Takutsu makes his last stand on the burning deck of a Yamato ship at the White River",
-						"prompt": "Cinematic historical illustration of a captain's last stand, Three Kingdoms of Samhan / Tang era (663), scene: Yamato captain Echi no Takutsu fighting to the last on the burning deck of his ship in the White River mouth, scarlet smoke-choked sky, cinnabar-coloured water, Tang hulls closing in a wall around him, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
-						"refs": [
-							"/ch_commander_3.png",
-							"/pl_white_river.png"
-						],
-						"tempImage": "/temp/takutsu-last-stand.jpg"
-					}
-				],
-				"blocks": [
-					{
-						"kind": "p",
-						"html": "Chang’an’s clerks still count to thirteen when they hear the word <i>river</i>. This mouth is not that river. The tiger already died in February water, with every son numbered. The <b>White River</b> has come for sails.",
-						"ko": "장안의 서기들은 아직도 <i>강</i>이라는 말만 들어도 열셋까지 센다. 이 하구는 그 강이 아니다. 호랑이는 이미 이월의 물에서, 아들마다 번호를 매긴 채로 죽었다. <b>백강</b>이 온 것은 돛을 위해서다."
-					},
-					{
-						"kind": "p",
-						"html": "The epic battle: for the first time the West, Samhan, and the East meet in one mouth of water. Tang and Silla hold the banks; Baekje’s restoration and a Yamato expeditionary fleet come in on the tide — and discover, too late, that tide is not a friend you can hire.",
-						"ko": "대전투: 중원과 삼한과 왜가 역사상 처음으로 한 물목에서 맞붙는다. 당과 신라가 양쪽 언덕을 잡고, 백제 부흥과 야마토 원정 함대가 밀물을 타고 들어온다 — 그리고 너무 늦게야 안다. 밀물은 고용할 수 있는 친구가 아니라는 것을."
-					},
-					{
-						"kind": "p",
-						"html": "The <b>Black Dragon</b> has already learned the river’s grammar: narrow mouth, sandbars that shift like lies, a current that punishes anyone who charges without forming line. He anchors a hundred and seventy ships across the throat of the <b>White River</b> and waits. On the east bank Kim Yushin’s land army keeps the shore from becoming a pier.",
-						"ko": "<b>흑룡</b>은 이미 강의 문법을 배웠다: 좁은 하구, 거짓말처럼 움직이는 모래톱, 대열 없이 돌격하는 자를 벌하는 물살. 그는 배 백칠십 척을 <b>백강</b> 목구멍에 가로막고 기다린다. 동쪽 언덕에서는 김유신의 육군이 언덕이 부두가 되지 않게 지킨다."
-					},
-					{
-						"kind": "p",
-						"html": "Upriver at Juryu, <b>King Pungjang</b> still believes a kingdom can be restored by enough sails. The East has sent him nearly eight hundred ships and some forty-two thousand men — Echi no Takutsu among the captains who still say <i>Kudara</i>. They come down on the eighth month’s water, packed too tight for oars, shouting for a victory the tide has already priced differently.",
-						"ko": "상류 주류에서 <b>풍장왕</b>은 아직, 배가 충분하면 나라를 되돌릴 수 있다고 믿는다. 왜는 거의 팔백 척과 사만 이천을 보내 주었다 — 에치노 다쿠쓰처럼 옛 이름 <i>쿠다라</i>를 아직 입에 올리는 장수들과 함께. 그들은 팔월의 물을 타고 내려온다. 노를 젓기엔 너무 빽빽하고, 밀물이 이미 다른 값으로 매긴 승리를 외친다."
-					},
-					{
-						"kind": "formation",
-						"title": "The Baekgang, eighth month, 663",
-						"sides": [
-							{
-								"name": "Tang & Silla",
-								"color": "#b45309",
-								"units": [
-									{
-										"label": "Black Dragon — Liu Rengui",
-										"sub": "170 ships, held across the mouth"
-									},
-									{
-										"label": "Silla land army — Yushin",
-										"sub": "east bank"
-									},
-									{
-										"label": "Tang fire & crossbow",
-										"sub": "waiting on the turn of tide"
-									}
-								]
-							},
-							{
-								"name": "Baekje & Yamato",
-								"color": "#FFCB51",
-								"units": [
-									{
-										"label": "Eastern fleet",
-										"sub": "c. 800 ships, 42,000 men"
-									},
-									{
-										"label": "Echi no Takutsu",
-										"sub": "among the captains"
-									},
-									{
-										"label": "King Pungjang",
-										"sub": "Juryu, upriver"
-									}
-								]
-							}
-						],
-						"note": "Four charges into a formed Tang line, against the tide, in a river mouth too narrow for the eastern numbers. Smoke, flame, and a cinnabar sea."
-					},
-					{
-						"kind": "p",
-						"html": "The first charge hits a wall of hulls. The second finds the current turning against them — Tang waits for that turn the way a patient general waits for thirst. On the third and fourth, fire travels faster than orders: arrows wrapped for flame, ships brushed together until one burning deck becomes a neighbourhood. Four hundred eastern ships do not sink so much as spend themselves into light.",
-						"ko": "첫 돌격은 선체의 벽에 부딪친다. 두 번째는 물살이 거꾸로 도는 것을 만난다 — 당은 목마른 자를 기다리듯 그 돌음을 기다렸다. 세 번째와 네 번째에 불이 명령보다 빠르다: 불붙인 화살, 甲板이 서로 스쳐 한 척의 불길이 이웃이 된다. 왜의 배 사백 척은 가라앉는다기보다, 빛으로 자신을 써 버린다."
-					},
-					{
-						"kind": "quote",
-						"hanja": "焚其舟四百艘 煙焰漲天 海水皆赤",
-						"ko": "그 배 사백 척을 불사르니, 연기와 불꽃이 하늘에 가득하고, 바닷물이 모두 붉었다.",
-						"html": "They burned four hundred of their ships; smoke and flame filled the sky, and the seawater was all red.",
-						"source": "Jiu Tangshu (舊唐書) bk. 84, Liu Renkui (劉仁軌) — Battle of the White River mouth (663) · cf. Samguk Sagi bk. 28, Baekje Annals: 煙炎灼天 海水爲丹"
-					},
-					{
-						"kind": "dialogue",
-						"person": "takutsu",
-						"en": [
-							"Long live Kudara — Land of the Heavenly Deer….!"
-						],
-						"lines": [
-							"구다라 만세 — 천록의 나라여….!"
-						],
-						"chip": "#b05575",
-						"ja": [
-							"百済万歳……！"
-						],
-						"jaLatn": [
-							"Kudara banzai…!"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "yushin",
-						"en": [
-							"The unification of Samhan is not far off…"
-						],
-						"lines": [
-							"삼한일통은 멀지 않았다..."
-						],
-						"chip": "#4a8fe0",
-						"speaker": "🙇"
-					},
-					{
-						"kind": "dialogue",
-						"person": "pung",
-						"en": [
-							"Chunchu, you wretch… how dare you, to His Majesty…!"
-						],
-						"lines": [
-							"춘추 이 놈... 감히 페하를...!"
-						],
-						"chip": "#e6c76a",
-						"speaker": "🙇"
-					},
-					{
-						"kind": "dialogue",
-						"person": "sudingfang",
-						"en": [
-							"The people of the Holy King will kneel…",
-							"Write it: the Five Tribes bend, or the ledger lies."
-						],
-						"lines": [
-							"성왕의 백성이 무릎 꿇으리…",
-							"적어라: 다섯 부족이 굽히거나, 장부가 거짓말하거나."
-						],
-						"chip": "#d95f4b",
-						"speaker": "🙎",
-						"zh": [
-							"高麗蠻夷，終將下跪……"
-						],
-						"zhLatn": [
-							"Gāolí mányí, zhōng jiāng xiàguì…"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "liurengui",
-						"en": [
-							"Hold the line. Let the tide finish what the bowstrings began.",
-							"A river mouth is a judge. Today it judged the East."
-						],
-						"lines": [
-							"대열을 지켜라. 활시위가 시작한 일을 밀물이 끝내게 두어라.",
-							"하구는 재판관이다. 오늘 왜를 재판했다."
-						],
-						"chip": "#1f2937"
-					},
-					{
-						"kind": "dialogue",
-						"person": "takutsu",
-						"en": [
-							"Baekje must survive…."
-						],
-						"lines": [
-							"백제는 살아남아야 한다...."
-						],
-						"chip": "#b05575",
-						"speaker": "🙎",
-						"ja": [
-							"百済は生き残らねばならない……。"
-						],
-						"jaLatn": [
-							"Kudara wa ikinokoraneba naranai…."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "When the water cools to ordinary colour again, the restoration has no fleet worth the word. The <b>Black Dragon</b> sits down with Kim Yushin. Neither of them believes a word the other says, and they get a great deal done — which is how alliances sound after four hundred ships have paid for the silence.",
-						"ko": "물이 다시 평범한 빛으로 식으면, 부흥에는 함대라 부를 것이 없다. <b>흑룡</b>이 김유신과 마주 앉는다. 둘 다 상대의 말을 한마디도 믿지 않으면서, 아주 많은 것을 정한다 — 배 사백 척이 그 침묵의 값을 치른 뒤의 동맹이란 그런 소리다."
-					}
-				],
-				"music": "The White River"
 			}
 		],
 		"partTitle": "Kingfall",
@@ -52703,28 +51967,6 @@
 						"prompt": "Minimal iconic 16:9 poster. Wide cinematic EXPOSITION of Pyongyang Fortress. SAME architecture as the place: deep-red two-tier munru, dark giwa, light-grey rectangular stone ridge, watchtower right, huge painterly cream clouds. ONE device: the red munru as a stamp on the grey ridge. REAL Korean seongmun. No army. No text. No watermark."
 					},
 					{
-						"id": "goguryeo-fortress-storm",
-						"ratio": 1.7777777777777777,
-						"tone": "#C30000",
-						"at": "The impenetrable walls of Pyongyang",
-						"alt": "The same red two-tier Pyongyang munru on the ridge — storm-cream clouds, grey stone",
-						"refs": [
-							"/pl_pyongyang_fortress.png"
-						],
-						"tempImage": "/temp/goguryeo-fortress-red-storm-v2.jpg"
-					},
-					{
-						"id": "pyongyang-gate",
-						"ratio": 0.5625,
-						"tone": "#C30000",
-						"at": "fortress gate",
-						"alt": "Pyongyang fortress gate standing ajar - the final siege",
-						"src": "/temp/pyongyang_gate_ajar.png",
-						"refs": [
-							"/pl_pyongyang_fortress.png"
-						]
-					},
-					{
 						"id": "pyongyang-walls",
 						"ratio": 1.778,
 						"tone": "#b91c1c",
@@ -52762,7 +52004,7 @@
 						"ratio": 2,
 						"tone": "#1c1917",
 						"alt": "Two dragon banners over the frozen siege lines outside Pyongyang",
-						"at": "The relief army freezes in the snow outside the walls, a",
+						"at": "freezes in the snow outside the walls",
 						"prompt": "Cinematic historical illustration of two dragons, Three Kingdoms of Samhan / Tang era (7th century), scene: Pyongyang Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/two-dragons.jpg"
 					},
@@ -52771,21 +52013,9 @@
 						"ratio": 2,
 						"tone": "#111111",
 						"alt": "A red sigil burning against black — the relief army freezing in the snow",
-						"at": "The relief army freezes in the snow outside the walls, a",
+						"at": "freezes in the snow outside the walls",
 						"prompt": "Cinematic historical illustration of red sigil, Three Kingdoms of Samhan / Tang era (7th century), scene: Pyongyang Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/red-sigil.jpg"
-					},
-					{
-						"id": "goguryeo-fortress-red-storm",
-						"ratio": 1.778,
-						"tone": "#C30000",
-						"at": "The impenetrable walls of Pyongyang",
-						"alt": "Storm over the same red two-tier Pyongyang munru — grey stone, cream cloud, one red accent",
-						"prompt": "Minimal iconic 16:9. SAME Pyongyang munru as the place ref under storm. Not a red polygon. No text. No watermark.",
-						"refs": [
-							"/pl_pyongyang_fortress.png"
-						],
-						"tempImage": "/temp/goguryeo-fortress-red-storm-v2.jpg"
 					},
 					{
 						"id": "pyongyang-gate-ajar",
@@ -52801,8 +52031,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Red Sun’s capital sits on the ridge — the red two-storey munru, the grey stone, the clouds that always look like weather about to choose a side. Every still of this city is that gate. There is no other capital.",
-						"ko": "붉은 해의 서울이 능선에 앉는다 — 붉은 이층 문루, 회색 돌, 언제나 편을 고를 듯한 구름. 이 도시의 모든 장면은 그 문이다. 다른 서울은 없다."
+						"html": "Red Sun’s capital sits on the ridge — the red two-storey munru, the grey stone, the clouds that always look like weather about to choose a side.",
+						"ko": "붉은 해의 서울이 능선에 앉는다 — 붉은 이층 문루, 회색 돌, 언제나 편을 고를 듯한 구름."
 					},
 					{
 						"kind": "p",
@@ -52816,7 +52046,6 @@
 							"평양성은 절대로 함락되지 않는다.",
 							"성왕께서 활을 메신 이래 칠백 년 동안 그랬듯이."
 						],
-						"speaker": "🙎",
 						"en": [
 							"Pyongyang does not fall.",
 							"Not since the Holy King strung his bow. Seven hundred years."
@@ -52825,8 +52054,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The relief army freezes in the snow outside the walls, and withdraws.",
-						"ko": "구원군은 성 밖 눈밭에서 얼어붙고, 끝내 물러난다."
+						"html": "The Tang army freezes in the snow outside the walls, and withdraws.",
+						"ko": "당군은 성 밖 눈밭에서 얼어붙고, 끝내 물러난다."
 					}
 				],
 				"music": "Pyongyang, 668"
@@ -52940,21 +52169,6 @@
 						"tempImage": "/temp/sasu-brink.jpg"
 					},
 					{
-						"id": "sasu-eyes-glow",
-						"ratio": 1.9,
-						"tone": "#b91c1c",
-						"at": "He stands up on will alone",
-						"alt": "Yeon’s eyes glow — locked in, back from the dead",
-						"prompt": "Close cinematic beat: Yeon Gesomun’s eyes suddenly glow — locked in, back from the dead — as he stands up on will alone at the Snake River. The blade misses; Kangrim and Haewonmek recoil as the ledger closes. Accurate Yeon likeness, red/ember eye glow, winter battlefield, painterly, no text, no watermark, --ar 3:2 --stylize 250",
-						"refs": [
-							"/ch_yeon_gesomun.png",
-							"/ch_kangrim.png",
-							"/ch_haewonmek.png",
-							"/pl_snake_river.png"
-						],
-						"tempImage": "/temp/sasu-eyes-glow.jpg"
-					},
-					{
 						"id": "sasu-seq-stab",
 						"ratio": 1.778,
 						"tone": "#d0362f",
@@ -52998,7 +52212,7 @@
 						"id": "sasu-seq-soul-fight",
 						"ratio": 1.778,
 						"tone": "#d0362f",
-						"at": "And neither is your business until I am done",
+						"at": "He cuts the escorts in the thinning air",
 						"alt": "Dutch: white translucent soul grappling both reapers bare-handed on black ice",
 						"refs": [
 							"/ch_yeon_gesomun.png",
@@ -53231,7 +52445,7 @@
 					{
 						"kind": "dialogue",
 						"chip": "#8a9bb0",
-						"speaker": "the seventh",
+						"speaker": "Seventh son",
 						"lines": [
 							"백주…",
 							"집에…"
@@ -53280,13 +52494,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "The third is old enough to bargain. He offers the banner, the Lingnan levy, a road south, if the Magreji will count him as a messenger instead of a son.",
+						"html": "The third is old enough to bargain. He offers the banner, the Lingnan levy, a road south, if the Supreme Commander will count him as a messenger instead of a son.",
 						"ko": "셋째는 흥정할 나이다. 깃발과 영남의 병과 남쪽으로 가는 길을 내놓는다. 대막리지가 자신을 아들이 아니라 전령으로 세어 준다면."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#9a8b6a",
-						"speaker": "the third",
+						"speaker": "Third son",
 						"lines": [
 							"전령으로 가게 해 주십시오.",
 							"열셋 가운데 입을 연 자는 저뿐입니다."
@@ -53364,13 +52578,13 @@
 					{
 						"kind": "dialogue",
 						"chip": "#7a8a9a",
-						"speaker": "aide",
+						"speaker": "Aide",
 						"lines": [
 							"총관! 유백영 진영으로—",
 							"살아서 셈을 남기십시오!"
 						],
 						"en": [
-							"Commander! Toward You Boying’s camp—",
+							"Commander! Toward Liu Boying’s camp—",
 							"Live, and leave the account!"
 						],
 						"zh": [
@@ -53436,7 +52650,6 @@
 							"아직도 정신 못 차렸나, 이 새끼들아?!",
 							"내가... 바로... 연개소문이다!!"
 						],
-						"speaker": "🔴",
 						"person": "gesomun",
 						"en": [
 							"Still haven’t come to your senses, you bastards?!",
@@ -53491,56 +52704,13 @@
 					},
 					{
 						"kind": "dialogue",
-						"person": "kangrim",
-						"chip": "#5f5f6b",
-						"en": [
-							"Yeon Gesomun.",
-							"Your page is… persuasive today."
-						],
-						"lines": [
-							"연개소문.",
-							"네 장이 오늘은… 설득력 있군."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "kangrim",
-						"chip": "#5f5f6b",
-						"en": [
-							"Commander. If you walk away now —",
-							"are you choosing Goguryeo, or choosing not to be finished by anyone else’s schedule?"
-						],
-						"lines": [
-							"대막리지. 지금 걸어가신다면 —",
-							"고구려를 고르는 겁니까, 아니면 남의 일정에 끝나지 않기를 고르는 겁니까?"
-						]
-					},
-					{
-						"kind": "dialogue",
 						"person": "haewonmek",
 						"chip": "#6b5b6e",
 						"en": [
-							"Any last words?",
-							"Say them now. The blade is already practicing your name."
+							"Any last words?"
 						],
 						"lines": [
-							"남길 말 있나?",
-							"지금 하시게. 칼이 이미 네 이름을 연습 중이니."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "gesomun",
-						"chip": "#d0362f",
-						"en": [
-							"Kangrim. Haewonmek.",
-							"Both.",
-							"And neither is your business until I am done."
-						],
-						"lines": [
-							"강림. 해원맥.",
-							"둘 다다.",
-							"그리고 내가 끝날 때까지 네 알 바 아니다."
+							"남길 말 있나?"
 						]
 					},
 					{
@@ -53564,7 +52734,7 @@
 					{
 						"kind": "p",
 						"html": "He stands up on will alone. The blade misses. Both reapers close the ledger with something like respect — the rare expression of His Majesty’s escorts impressed by rudeness. They fail, together, at the Snake River.",
-						"ko": "의지 하나로 일어선다. 칼이 빗나간다. 두 사자가 명부를 덮으며 존중에 가까운 표정을 짓는다 — 무례에 감명받은, 폐하의 사신의 드문 얼굴. 살수에서, 둘이 함께, 실패한다."
+						"ko": "의지 하나로 일어선다. 칼이 빗나간다. 두 사자가 명부를 덮으며 존중에 가까운 표정을 짓는다 — 무례에 감명받은, 폐하의 사신의 드문 얼굴. 사수에서, 둘이 함께, 실패한다."
 					},
 					{
 						"kind": "dialogue",
@@ -53572,13 +52742,11 @@
 						"chip": "#5f5f6b",
 						"en": [
 							"Hah.",
-							"Keep the country a little longer, then.",
-							"I hate refiling — and Your Majesty hates wasted parchment."
+							"Keep the country a little longer, then."
 						],
 						"lines": [
 							"하.",
-							"그럼 나라 좀 더 붙들고 있어.",
-							"서류 다시 넣기 싫거든 — 폐하께서도 헛된 종이를 싫어하시니."
+							"그럼 나라 좀 더 붙들고 있어."
 						]
 					},
 					{
@@ -53633,15 +52801,578 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "After the (五) Battle of Sasu, Tamla quietly changes sides."
+						"html": "After the Snake River, Tamla quietly changes sides.",
+						"ko": "사수 싸움이 끝나자, 탐라는 조용히 편을 바꾼다."
 					},
 					{
 						"kind": "p",
-						"html": "The island kingdom sends its envoys to Silla and the Tang, ending seven centuries beside Baekje.",
-						"ko": "섬나라는 신라와 당에 사신을 보내, 칠백 년을 함께한 백제와의 인연을 끝낸다."
+						"html": "The island kingdom sends its envoys to Silla and the Tang, ending more than a century and a half beside Baekje.",
+						"ko": "섬나라는 신라와 당에 사신을 보내, 백오십 년 넘게 함께한 백제와의 인연을 끝낸다."
+					},
+					{
+						"kind": "p",
+						"html": "The envoy comes home in the spring with a Silla seal, a bolt of Tang silk, and mainland news two summers old. <b>Yuri Dora</b> takes the seal without looking at it.",
+						"ko": "사신은 봄에 신라의 인장과 당의 비단 한 필, 그리고 두 해 묵은 육지 소식을 안고 돌아온다. <b>유리도라</b>는 인장을 들여다보지도 않고 받는다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#f97316",
+						"lines": [
+							"그라고 거북이는? 그 백제 사내 말이다."
+						],
+						"en": [
+							"And Turtle? The Baekje man."
+						],
+						"person": "yuridora"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#d08a4a",
+						"lines": [
+							"황산벌에서 쓰러졌답니다. 제 사람 오천을 데리고, 오만을 상대로.",
+							"신라 사람들은 자기들이 이긴 얘기보다 그 얘기를 더 자주 합디다."
+						],
+						"en": [
+							"He fell at the Yellow Mountain Fields, they say. Five thousand of his, against fifty thousand.",
+							"The Silla men tell that one more often than they tell their own victory."
+						],
+						"speaker": "Tamla envoy"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#f97316",
+						"lines": [
+							"…그랬나.",
+							"끝을 정해 놓고 시작했네. 그 거북이."
+						],
+						"en": [
+							"…Did he.",
+							"So he began it with the ending already fixed. That turtle."
+						],
+						"person": "yuridora"
+					},
+					{
+						"kind": "p",
+						"html": "That night he tells the story of the Yellow Mountain Fields at the fire, to children who never met the man, and he tells it last.",
+						"ko": "그날 밤 그는 불가에서, 그 사내를 본 적 없는 아이들에게 황산벌 이야기를 한다. 그리고 그 이야기를 맨 나중에 한다."
 					}
 				],
 				"music": "Across the Sea"
+			},
+			{
+				"year": "662",
+				"sub": "December",
+				"title": "Juryu Fortress",
+				"tone": "resistance drama",
+				"subtitle": "주류성",
+				"badges": [
+					"🎗️",
+					"flag:baekje"
+				],
+				"music": "The Long War",
+				"images": [
+					{
+						"id": "gwisil-bokshin",
+						"ratio": 1.9,
+						"tone": "#1e3a8a",
+						"alt": "General Gwisil Boksin, commander of the revival armies, eyeing the king he crowned",
+						"at": "Boksin has come with his armour on",
+						"prompt": "Cinematic historical illustration of gwisil bokshin, Three Kingdoms of Samhan / Tang era (661), scene: Baekje Restoration Society, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/gwisil-bokshin.jpg"
+					},
+					{
+						"id": "boksin-executed",
+						"ratio": 1.9,
+						"tone": "#7f1d1d",
+						"at": "run a leather cord through the palms",
+						"alt": "Boksin's feigned sickbed betrayed — the general seized by King Pungjang's guards in torchlight",
+						"prompt": "Cinematic historical illustration of Boksin's downfall, Three Kingdoms of Samhan / Tang era (663), scene: general Gwisil Boksin caught in his feigned-sickness plot, dragged from a sickbed by King Pungjang's guards inside the mountain fortress of Juryu, torchlight on stone, the restoration devouring itself, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"refs": [
+							"/ch_commander_1.png",
+							"/ch_commander_2.png"
+						],
+						"tempImage": "/temp/boksin-executed.jpg"
+					}
+				],
+				"blocks": [
+					{
+						"kind": "p",
+						"html": "Winter, in the hall at <b>Juryu</b>. King Pungjang has called his council, and Boksin has come with his armour on.",
+						"ko": "겨울, <b>주류성</b>의 대청. 풍왕이 신하들을 불러 모았고, 복신은 갑옷을 입은 채 왔다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e6c76a",
+						"lines": [
+							"이 주유(州柔)[3]는 농토와 멀리 떨어져 있고 토지가 척박하여 농업과 양잠에 적합하지 않은 땅이고, 이곳은 방어하기 좋아 싸울 만한 곳이다. 여기에서 오래 머문다면 백성들이 굶주릴 것이니 이제 피성(避城)으로 옮기는 것이 좋겠다. 피성은 서북쪽으로는 띠를 두르듯 고련단경(古連旦涇)이 흐르고 동남쪽으로는 깊은 수렁과 커다란 둑으로 된 제방이 자리하고 있으며, 땅으로 둘러싸여 있고 도랑을 터트리면 물이 쏟아진다. 꽃과 열매가 있는 나무에서 얻는 토산물은 삼한(三韓)에서 가장 기름질 것이며, 옷과 음식의 근원은 천지 사이에 숨어 있는 곳일 것이다. 비록 낮은 땅(평지)이라고 하지만 어찌 옮기지 않겠는가?"
+						],
+						"en": [
+							"This Juryu lies far from farmland, its soil barren and unfit for farming or sericulture; it is good ground for defence and for battle. If we stay long the people will starve — better now to move to Pisong. Pisong has the Goryeondangyeong running about it like a sash to the northwest, and to the southeast deep marshes and great embankments; ringed with earth, and when the sluices are opened the water pours forth. The produce of its flowering and fruiting trees will be the richest in all Samhan, and the source of clothing and food lies hidden between heaven and earth there. Low ground it may be — but why should we not move?"
+						],
+						"person": "pung"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#a8781f",
+						"lines": [
+							"피성과 적이 있는 곳과의 거리는 하룻밤이면 갈 수 있습니다. 서로 이렇게 매우 가까우니 만약 예기하지 못한 일이 있게 되면 후회해도 소용이 없을 것입니다. 굶는 것은 나중의 일이고 망하는 것이 먼저입니다. 지금 적이 함부로 오지 않는 것은 주유가 산이 험한 곳에 있어 모두 방어물이 되며, 산이 높고 계곡이 좁아 지키기 쉽고 공격하기 어렵기 때문입니다. 만약 낮은 땅에 머물면 어찌 굳건히 살겠으며 흔들리지 않음이 오늘날에 미치겠습니까?”"
+						],
+						"en": [
+							"Pisong lies a single night’s march from the enemy. So close that if the unexpected comes, regret will be useless. Starving is a later matter; ruin comes first. The reason the enemy does not come freely now is that Juryu sits in rough mountains — every slope a defence, the peaks high and the valleys narrow, easy to hold and hard to attack. If we sit on low ground, how shall we stand firm, and how shall we last until today’s tomorrow?"
+						],
+						"person": "boksin"
+					},
+					{
+						"kind": "p",
+						"html": "Against Boksin’s advice, King Pungjang moves the court down to <b>Pisong</b>.",
+						"ko": "복신의 만류에도 풍왕은 조정을 <b>피성</b>으로 옮긴다."
+					},
+					{
+						"kind": "p",
+						"html": "In the second month Silla comes over the border and burns the towns to the south, one night’s march from Pisong.",
+						"ko": "이월, 신라가 국경을 넘어와 남쪽 고을들을 불사른다. 피성에서 하룻밤 거리다."
+					},
+					{
+						"kind": "p",
+						"html": "The court climbs back up to Juryu behind its king, and from then on the men look at each other differently.",
+						"ko": "조정은 임금을 따라 다시 주류로 올라오고, 그 뒤로 사람들이 서로를 보는 눈이 달라진다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#a8781f",
+						"lines": [
+							"결국 이 나라를 두 번 세우는 건 나요.",
+							"왕관을 쓴 건 저쪽이고."
+						],
+						"en": [
+							"In the end it is I who raise this country twice.",
+							"And it is he who wears the crown."
+						],
+						"person": "boksin"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#a8781f",
+						"lines": [
+							"…또 옮기자고 하시겠지."
+						],
+						"person": "boksin",
+						"en": [
+							"…And he will want to move again."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "By summer the king and his general avoid being in the same room. Boksin takes to his bed in a cave room under the fortress, with his own men waiting in the dark behind the hangings, and lets it be known that he has a fever. When the king comes to ask after his health, they will take him there.",
+						"ko": "여름이 되자 임금과 장군은 한 방에 있기를 피한다. 복신은 성 아래 굴방에 몸져눕고, 휘장 뒤 어둠에 제 사람들을 숨겨 둔 채, 열이 난다는 말을 퍼뜨린다. 임금이 병문안을 오면, 거기서 잡을 것이다."
+					},
+					{
+						"kind": "p",
+						"html": "Pung comes. He brings his own men, more of them, and he comes in first.",
+						"ko": "풍은 온다. 제 사람들을, 더 많이 데리고. 그리고 먼저 들어온다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e6c76a",
+						"lines": [
+							"열이 있다 들었소, 장군.",
+							"…피성은 적과 하룻밤 거리라 하였지.",
+							"굶는 건 나중 일이고, 망하는 게 먼저라고."
+						],
+						"en": [
+							"I hear you have a fever, General.",
+							"…A single night’s march from the enemy, you said.",
+							"Starving is a later matter. Ruin comes first."
+						],
+						"person": "pung"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#a8781f",
+						"lines": [
+							"…다 들으셨으면, 옮기지 마셨어야지요."
+						],
+						"en": [
+							"…If you heard every word, you should not have moved."
+						],
+						"person": "boksin"
+					},
+					{
+						"kind": "p",
+						"html": "Pung’s men drag Boksin’s out from behind the hangings. They bind the general on his own sickbed and run a leather cord through the palms of his hands.",
+						"ko": "풍의 사람들이 휘장 뒤에서 복신의 사람들을 끌어낸다. 그들은 장군을 그의 병상에 묶고, 두 손바닥을 꿰뚫어 가죽끈을 꿴다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e6c76a",
+						"lines": [
+							"그 죄가 이러하오. 베어야 하겠소, 말아야 하겠소?"
+						],
+						"en": [
+							"You see what his crime is. Shall I behead him, or not?"
+						],
+						"person": "pung"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#9c8a5e",
+						"lines": [
+							"이런 역적은 놓아줄 수 없습니다."
+						],
+						"en": [
+							"A traitor like this cannot be let go."
+						],
+						"speaker": "Minister"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#a8781f",
+						"lines": [
+							"썩은 개. 미련한 종놈."
+						],
+						"en": [
+							"Rotten dog. Idiot slave."
+						],
+						"person": "boksin",
+						"art": "He spits at the minister."
+					},
+					{
+						"kind": "p",
+						"html": "Pung looks at the guards by the door. Then he takes the knife from the nearest of them and does it himself.",
+						"ko": "풍은 문가의 장사들을 한 번 돌아본다. 그러고는 가장 가까운 자의 칼을 받아 들고, 제 손으로 한다."
+					},
+					{
+						"kind": "p",
+						"html": "Pung has the crown and the army, and no one left who knows how to use either. There is one chance left, and it is coming by sea.",
+						"ko": "풍에게는 왕관도 군대도 있지만, 둘 다 부릴 줄 아는 사람은 이제 없다. 남은 기회는 한 번, 그것도 바다에서 온다."
+					}
+				]
+			},
+			{
+				"year": "371",
+				"flash": true,
+				"title": "The Seven Branched Sword",
+				"tone": "relic legend",
+				"subtitle": "칠지도",
+				"badges": [
+					"flag:baekje"
+				],
+				"images": [
+					{
+						"id": "chiljido-bestowal",
+						"ratio": 2,
+						"tone": "#be185d",
+						"at": "sends the Seven-Branched Sword",
+						"alt": "King Geunchogo bestows the Seven-Branched Sword on the King of Wa as a symbol of friendship",
+						"prompt": "Cinematic historical illustration of the bestowal of the Chiljido, Three Kingdoms of Samhan / Tang era (371), scene: King Geunchogo of Baekje presenting the seven-branched iron sword across a ceremonial hall to the King of Wa, gold inlay catching lamplight, friendship as a blade with six arms, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"src": "/img_chiljido_bestowal.png"
+					},
+					{
+						"id": "sword-forge",
+						"ratio": 2,
+						"tone": "#be185d",
+						"alt": "The Seven-Branched Sword at the forge — six branches off a central blade, gold characters inlaid down both sides",
+						"at": "It is iron, two and a half feet long, with six branches ",
+						"prompt": "Cinematic historical illustration of sword forge, Three Kingdoms of Samhan / Tang era (371), scene: The Seven Branched Sword, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/sword-forge.jpg"
+					},
+					{
+						"id": "chiljido",
+						"ratio": 2,
+						"tone": "#111111",
+						"alt": "The Chiljido against black — sixty-one golden characters whose single verb two countries still dispute",
+						"at": "disagreeing about a single verb",
+						"prompt": "Cinematic historical illustration of chiljido, Three Kingdoms of Samhan / Tang era (371), scene: The Seven Branched Sword, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/chiljido.jpg"
+					}
+				],
+				"blocks": [
+					{
+						"kind": "p",
+						"html": "The thirteenth Eraha of Baekje sends the Seven-Branched Sword (칠지도) across the sea to the King of Wa, as a token of friendship.",
+						"ko": "백제의 열셋째 어라하가 우호의 징표로 <b>칠지도</b>를 바다 건너 왜왕에게 보낸다."
+					},
+					{
+						"kind": "p",
+						"html": "The friendship lasts. A generation later <b>Wang In</b> carries the Chinese classics to the Yamato court.",
+						"ko": "우호는 이어진다. 한 세대 뒤, <b>왕인</b>이 한학을 왜의 조정에 전한다."
+					},
+					{
+						"kind": "verse",
+						"color": "#dc2626",
+						"lines": [
+							"先世以來未有此刀百濟王世─奇生聖音故爲倭王旨造傳示後世",
+							"선세 이래 이런 칼은 없었다. 백제왕이 세세토록 특별히(각별히) 성음(聖音)을 내었기에 왜왕을 위하여 훌륭하게 만들었다. 후세에 전하여 보이도록 하라."
+						],
+						"en": [
+							"",
+							"Since the ages before, there has never been a sword like this. Because the King of Baekje, generation after generation, has spoken the sacred word with special care, it was made fine for the King of Wa. Let it be handed down and shown to later ages."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "It is iron, two and a half feet long, with six branches off a central blade and sixty-one characters inlaid in gold down both sides. It has never been sharpened. It was never going to be.",
+						"ko": "쇠로 되어 있고 길이는 두 자 반, 가운데 몸통에서 가지 여섯이 뻗어 나오며, 앞뒤로 금상감한 글자 예순한 자가 있다. 한 번도 날을 세운 적이 없다. 애초에 세울 물건이 아니었다."
+					},
+					{
+						"kind": "p",
+						"html": "The inscription is the interesting part, because the two countries have spent fifteen hundred years disagreeing about a single verb: whether Baekje <em>presented</em> it upward, or <em>bestowed</em> it downward.",
+						"ko": "흥미로운 것은 명문이다. 두 나라가 천오백 년 동안 동사 하나를 두고 다투어 왔기 때문이다. 백제가 그것을 위로 <em>바친</em> 것인지, 아래로 <em>내린</em> 것인지."
+					},
+					{
+						"kind": "p",
+						"html": "What is not in dispute: Baekje sent scholars, craftsmen, weavers, horse-handlers, potters and the written word across that water for three hundred years, and when Baekje finally needed ships, the East sent forty-two thousand men to die in a river for it.",
+						"ko": "다투지 않는 사실은 이렇다. 백제는 삼백 년 동안 그 바다 건너로 학자와 장인과 직공과 말 다루는 이와 옹기장이와 글자를 보냈다. 그리고 마침내 백제에 배가 필요해졌을 때, 동토는 사만이천 명을 보내 강에서 죽게 했다."
+					},
+					{
+						"kind": "p",
+						"html": "Whichever verb it was, it was paid.",
+						"ko": "어느 쪽 동사였든, 값은 치러졌다."
+					}
+				],
+				"music": "Counsel",
+				"flashback": true
+			},
+			{
+				"year": "663",
+				"sub": "August",
+				"accent": "#b91c1c",
+				"title": "White River",
+				"tone": "grim war epic — naval",
+				"subtitle": "백강 전투",
+				"badges": [
+					"⚔️",
+					"flag:tang",
+					"flag:silla",
+					"flag:baekje",
+					"flag:wa"
+				],
+				"images": [
+					{
+						"id": "poster_takutsu",
+						"ratio": 0.75,
+						"tone": "#111111",
+						"nsfw": false,
+						"alt": "Echi no Takutsu — torn burgundy banner-plane",
+						"prompt": "Minimal iconic 3:4 poster. NOT photoreal. NOT busy. Echi no Takutsu. ONE geometric device: torn banner plane of #b05575. Face matches the attached portrait. #b05575 as the plane. Flat charcoal-black void. No army. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_takutsu.png"
+						],
+						"people": [
+							"takutsu"
+						],
+						"tempImage": "/temp/poster_takutsu.jpg"
+					},
+					{
+						"id": "baekgang-map",
+						"ratio": 2.3,
+						"tone": "#e5e7eb",
+						"alt": "Map of the White River mouth — Tang ships anchored across the throat, the eastern fleet coming in on the tide",
+						"prompt": "Cinematic historical illustration of baekgang map, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/baekgang-map.jpg"
+					},
+					{
+						"id": "baekgang-river",
+						"ratio": 2.3,
+						"tone": "#86efac",
+						"alt": "The wide mouth of the White River, where the West, Samhan and the East met in one water",
+						"at": "meet in one mouth of water",
+						"prompt": "Cinematic historical illustration of baekgang river, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/baekgang-river.jpg"
+					},
+					{
+						"id": "naval-clash",
+						"ratio": 2.3,
+						"tone": "#0ea5e9",
+						"alt": "Yamato and Tang hulls grinding together in the narrow river mouth",
+						"at": "The first charge hits a wall of hulls",
+						"prompt": "Cinematic historical illustration of naval clash, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/naval-clash.jpg"
+					},
+					{
+						"id": "naval-fire",
+						"ratio": 2.3,
+						"tone": "#dc2626",
+						"alt": "Four hundred eastern ships burning — the sky scarlet, the sea the colour of cinnabar",
+						"at": "fire travels faster than orders",
+						"prompt": "Cinematic historical illustration of naval fire, Three Kingdoms of Samhan / Tang era (663), scene: White River, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"tempImage": "/temp/naval-fire.jpg"
+					},
+					{
+						"id": "baekgang-line-hold",
+						"ratio": 1.778,
+						"tone": "#b45309",
+						"at": "has already learned the river’s grammar",
+						"alt": "Geum River estuary at Baekgang: Tang tower-ships in a tight line holding the narrow mouth against a Wa fleet",
+						"prompt": "Cinematic historical still, 16:9, high view of the REAL Geum River / Baekgang estuary: tidal mouth, mudflats, reed banks. About 170 Tang tower-ships and covered warships in a rigid gold-bannered line across the choke. A larger pink-bannered Yamato fleet trying to force the mouth. Silla troops visible on the near bank. Real water, real ships, 7th-century East Asian naval gear. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
+						"refs": [
+							"/ch_black_dragon.png"
+						],
+						"tempImage": "/temp/baekgang-line-hold.jpg"
+					},
+					{
+						"id": "baekgang-envelop",
+						"ratio": 1.778,
+						"tone": "#ec4899",
+						"at": "fire travels faster than orders",
+						"alt": "Tang tower-ships with deck catapults burning Wa hulls in the Baekgang estuary",
+						"prompt": "Cinematic historical still, 16:9, on the water at the Geum estuary: Tang louchuan tower-ships with traction trebuchets on deck, gold banners, enveloping lighter Japanese ships that are on fire. Smoke, oars, real tidal water. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
+						"refs": [
+							"/ch_black_dragon.png"
+						],
+						"tempImage": "/temp/baekgang-envelop.jpg"
+					},
+					{
+						"id": "takutsu-last-stand",
+						"ratio": 2.3,
+						"tone": "#9a3412",
+						"at": "Baekje must survive….",
+						"alt": "Echi no Takutsu makes his last stand on the burning deck of a Yamato ship at the White River",
+						"prompt": "Cinematic historical illustration of a captain's last stand, Three Kingdoms of Samhan / Tang era (663), scene: Yamato captain Echi no Takutsu fighting to the last on the burning deck of his ship in the White River mouth, scarlet smoke-choked sky, cinnabar-coloured water, Tang hulls closing in a wall around him, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+						"refs": [
+							"/ch_commander_3.png",
+							"/pl_white_river.png"
+						],
+						"tempImage": "/temp/takutsu-last-stand.jpg"
+					}
+				],
+				"blocks": [
+					{
+						"kind": "p",
+						"html": "The chance comes by sea, as promised. In the eighth month the East’s sails come over the horizon toward the <b>White River</b> mouth, so many that the lookouts on the bluffs give up on numbers and simply point.",
+						"ko": "기회는 약속대로 바다로 온다. 팔월, 동쪽의 돛들이 수평선을 넘어 <b>백강</b> 하구로 다가온다. 하도 많아 벼랑 위 망꾼들은 수를 헤아리다 말고 그저 손가락으로 가리킨다."
+					},
+					{
+						"kind": "p",
+						"html": "For the first time the West, Samhan, and the East meet in one mouth of water. Tang and Silla hold the banks; Baekje’s restoration and a Yamato expeditionary fleet come in on the tide — and discover, too late, that tide is not a friend you can hire.",
+						"ko": "중원과 삼한과 왜가 역사상 처음으로 한 물목에서 맞붙는다. 당과 신라가 양쪽 언덕을 잡고, 백제 부흥과 야마토 원정 함대가 밀물을 타고 들어온다 — 그리고 너무 늦게야 안다. 밀물은 고용할 수 있는 친구가 아니라는 것을."
+					},
+					{
+						"kind": "p",
+						"html": "The <b>Black Tortoise</b> has already learned the river’s grammar: narrow mouth, sandbars that shift like lies, a current that punishes anyone who charges without forming line. He anchors a hundred and seventy ships across the throat of the <b>White River</b> and waits. On the east bank Kim Yushin’s land army keeps the shore from becoming a pier.",
+						"ko": "<b>현무</b>는 이미 강의 문법을 배웠다: 좁은 하구, 거짓말처럼 움직이는 모래톱, 대열 없이 돌격하는 자를 벌하는 물살. 그는 배 백칠십 척을 <b>백강</b> 목구멍에 가로막고 기다린다. 동쪽 언덕에서는 김유신의 육군이 언덕이 부두가 되지 않게 지킨다."
+					},
+					{
+						"kind": "p",
+						"html": "<b>King Pungjang</b> has come down from Juryu to meet the fleet himself, and still believes a kingdom can be restored by enough sails. The East has sent him nearly eight hundred ships and some forty-two thousand men — Echi no Takutsu among the captains who still say <i>Kudara</i>. They come down on the eighth month’s water, packed too tight for oars, shouting for a victory the tide has already priced differently.",
+						"ko": "<b>풍장왕</b>은 함대를 몸소 맞으러 주류에서 내려와 있고, 아직도 배가 충분하면 나라를 되돌릴 수 있다고 믿는다. 왜는 거의 팔백 척과 사만 이천을 보내 주었다 — 에치노 다쿠쓰처럼 옛 이름 <i>쿠다라</i>를 아직 입에 올리는 장수들과 함께. 그들은 팔월의 물을 타고 내려온다. 노를 젓기엔 너무 빽빽하고, 밀물이 이미 다른 값으로 매긴 승리를 외친다."
+					},
+					{
+						"kind": "formation",
+						"title": "The Baekgang, eighth month, 663",
+						"sides": [
+							{
+								"name": "Tang & Silla",
+								"color": "#b45309",
+								"units": [
+									{
+										"label": "Black Tortoise — Liu Rengui",
+										"sub": "170 ships, held across the mouth"
+									},
+									{
+										"label": "Silla land army — Yushin",
+										"sub": "east bank"
+									},
+									{
+										"label": "Tang fire & crossbow",
+										"sub": "waiting on the turn of tide"
+									}
+								]
+							},
+							{
+								"name": "Baekje & Yamato",
+								"color": "#FFCB51",
+								"units": [
+									{
+										"label": "Eastern fleet",
+										"sub": "c. 800 ships, 42,000 men"
+									},
+									{
+										"label": "Echi no Takutsu",
+										"sub": "among the captains"
+									},
+									{
+										"label": "King Pungjang",
+										"sub": "down from Juryu to meet the fleet"
+									}
+								]
+							}
+						],
+						"note": "Four charges into a formed Tang line, against the tide, in a river mouth too narrow for the eastern numbers. Smoke, flame, and a cinnabar sea."
+					},
+					{
+						"kind": "p",
+						"html": "The first charge hits a wall of hulls. The second finds the current turning against them; Tang has waited for that turn the way a patient general waits for thirst.",
+						"ko": "첫 돌격은 선체의 벽에 부딪친다. 두 번째는 물살이 거꾸로 도는 것을 만난다. 당은 목마른 자를 기다리듯 그 돌음을 기다렸다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "liurengui",
+						"en": [
+							"Hold the line. Let the tide finish what the bowstrings began."
+						],
+						"lines": [
+							"대열을 지켜라. 활시위가 시작한 일을 밀물이 끝내게 두어라."
+						],
+						"chip": "#1f2937"
+					},
+					{
+						"kind": "p",
+						"html": "On the third and fourth charges fire travels faster than orders. Arrows come in wrapped for flame, the eastern hulls are packed too tight to turn away, and one burning deck lights the next. By the turn of the tide the river mouth is burning from bank to bank.",
+						"ko": "세 번째와 네 번째 돌격에서는 불이 명령보다 빠르다. 불을 감은 화살이 날아들고, 왜의 배들은 너무 빽빽해 돌아설 수도 없어, 불붙은 갑판 하나가 옆 갑판에 불을 옮긴다. 물때가 바뀔 무렵, 하구는 이쪽 언덕에서 저쪽 언덕까지 타오르고 있다."
+					},
+					{
+						"kind": "quote",
+						"hanja": "焚其舟四百艘 煙焰漲天 海水皆赤",
+						"ko": "그 배 사백 척을 불사르니, 연기와 불꽃이 하늘에 가득하고, 바닷물이 모두 붉었다.",
+						"html": "They burned four hundred of their ships; smoke and flame filled the sky, and the seawater was all red.",
+						"source": "Jiu Tangshu (舊唐書) bk. 84, Liu Renkui (劉仁軌) — Battle of the White River mouth (663) · cf. Samguk Sagi bk. 28, Baekje Annals: 煙炎灼天 海水爲丹"
+					},
+					{
+						"kind": "p",
+						"html": "On the deck of a burning eastern ship <b>Echi no Takutsu</b> looks up at the sky and swears an oath through his teeth.",
+						"ko": "불타는 왜선의 갑판 위에서 <b>에치노 다쿠쓰</b>가 하늘을 올려다보며 이를 악물고 맹세한다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "takutsu",
+						"en": [
+							"Baekje must survive…."
+						],
+						"lines": [
+							"백제는 살아남아야 한다...."
+						],
+						"chip": "#b05575",
+						"ja": [
+							"百済は生き残らねばならない……。"
+						],
+						"jaLatn": [
+							"Kudara wa ikinokoraneba naranai…."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Then he turns on the Tang marines coming over the rail. He kills them until there are too many of them and too little deck left to stand on.",
+						"ko": "그러고는 뱃전을 넘어오는 당의 군사들에게 돌아선다. 적이 너무 많아지고 디딜 갑판이 너무 좁아질 때까지 벤다."
+					},
+					{
+						"kind": "p",
+						"html": "Behind the burning line, <b>King Pungjang</b> goes over the side into a small boat with a few of his men. His sword stays on the deck where he set it down. The boat turns north, away from the fire.",
+						"ko": "불타는 대열 뒤에서 <b>풍장왕</b>이 몇몇 부하와 함께 뱃전을 넘어 작은 배로 내려간다. 내려놓은 칼은 갑판에 그대로 남는다. 배는 불을 등지고 북쪽으로 머리를 돌린다."
+					},
+					{
+						"kind": "p",
+						"html": "From the deck of a Tang tower-ship, Prince <b>Yung</b> watches his younger brother’s boat go north until he cannot see it.",
+						"ko": "당의 누선 갑판에서 왕자 <b>융</b>이, 아우의 배가 북쪽으로 멀어져 보이지 않을 때까지 지켜본다.",
+						"art": "Wordless. Yung at the rail of a Tang tower-ship; the small boat going north past the burning hulls."
+					},
+					{
+						"kind": "p",
+						"html": "When the water cools to ordinary colour again, the restoration has no fleet worth the word. The <b>Black Tortoise</b> sits down with Kim Yushin. Neither of them believes a word the other says, and they get a great deal done — which is how alliances sound after four hundred ships have paid for the silence.",
+						"ko": "물이 다시 평범한 빛으로 식으면, 부흥에는 함대라 부를 것이 없다. <b>현무</b>가 김유신과 마주 앉는다. 둘 다 상대의 말을 한마디도 믿지 않으면서, 아주 많은 것을 정한다 — 배 사백 척이 그 침묵의 값을 치른 뒤의 동맹이란 그런 소리다."
+					}
+				],
+				"music": "The White River"
 			},
 			{
 				"year": "665",
@@ -53656,7 +53387,7 @@
 						"ratio": 1.778,
 						"id": "gesomun-death-black",
 						"tone": "#7c3aed",
-						"at": "himself stands in the room.",
+						"at": "himself stands in the room",
 						"alt": "Aged Gesomun on a timber deathbed talking; calm Yumla stands at the bedside — only these two, one violet lamp",
 						"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate 16:9. Pitch-black room, one violet lamp. Aged Gesomun LIES on a low timber deathbed. Yumla STANDS leaning down to talk. Violet #7c3aed. Only these two. No text. No watermark.",
 						"refs": [
@@ -53692,7 +53423,7 @@
 						"ratio": 1.9,
 						"tone": "#93c5fd",
 						"alt": "The Yeon brothers side by side, the quarrel already forming between them",
-						"at": "Gesomun… he really did have a gift, didn’t he.",
+						"at": "he really did have a gift",
 						"prompt": "Cinematic historical illustration of namseng duo, Three Kingdoms of Samhan / Tang era (665), scene: The Death of Yeon Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/namseng-duo.jpg"
 					},
@@ -53701,7 +53432,7 @@
 						"ratio": 1.9,
 						"tone": "#fef9c3",
 						"alt": "The three sons of Gesomun sketched together — Namseng, Namgun, Namsan",
-						"at": "Traitor…?",
+						"at": "we would not be in this state",
 						"prompt": "Cinematic historical illustration of three brothers sketch, Three Kingdoms of Samhan / Tang era (665), scene: The Death of Yeon Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/three-brothers-sketch.jpg"
 					},
@@ -53779,18 +53510,18 @@
 						"person": "gesomun",
 						"chip": "#d0362f",
 						"en": [
-							"…Which of you failed me at Salsu?",
+							"…Which of you failed me at the Snake River?",
 							"Come on. Ask. I am ready to say no again."
 						],
 						"lines": [
-							"…살수에서 실패한 게 누구냐.",
+							"…사수에서 실패한 게 누구냐.",
 							"자. 물어라. 이번에도 아니라고 할 준비는 됐다."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "It is not either of them. Purple of sentence, not crow-dark of the fetch — <b>Yumla</b> himself stands in the room. The judge, not the clerks. A king for a king.",
-						"ko": "둘 중 아무도 아니다. 거둬 가는 자의 까마귀빛이 아니라 판결의 자주빛 — <b>염라</b> 본인이 방에 서 있다. 서기가 아니라 심판관. 왕에게 왕."
+						"html": "Neither of them comes. <b>Yumla</b> himself stands in the room, in the purple of judgment instead of the escorts’ crow-black.",
+						"ko": "둘 다 오지 않는다. 사자들의 까마귀빛이 아니라 심판의 자주빛을 두르고, <b>염라</b> 본인이 방에 서 있다."
 					},
 					{
 						"kind": "dialogue",
@@ -53804,7 +53535,7 @@
 						],
 						"lines": [
 							"연개소문.",
-							"내 두 최고의 부하가 살수에서 그대를 데려오지 못했지.",
+							"내 두 최고의 부하가 사수에서 그대를 데려오지 못했지.",
 							"그대 같은 사내 — 다른 왕이 아니면 데려갈 수 없다.",
 							"예우를 돌려받는 셈으로 알라."
 						]
@@ -53867,10 +53598,10 @@
 						"kind": "dialogue",
 						"chip": "#9e3b32",
 						"lines": [
-							"개소문... 역시 재주 하나는 끝내주네."
+							"아버지... 역시 재주 하나는 끝내주셨지."
 						],
 						"en": [
-							"Gesomun… he really did have a gift, didn’t he."
+							"The old man… he really did have a gift, didn’t he."
 						],
 						"person": "namgun"
 					},
@@ -53878,91 +53609,48 @@
 						"kind": "dialogue",
 						"chip": "#9e3b32",
 						"lines": [
-							"개소문 어른께서 살아 계셨으면 이런 꼴은 안 났지."
+							"아버지가 살아 계셨으면 이런 꼴은 안 났지."
 						],
-						"speaker": "🙎",
 						"en": [
-							"If the old man were alive we would not be in this state."
+							"If he were still alive, we would not be in this state."
 						],
 						"person": "namgun"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#9e3b32",
-						"lines": [
-							"이런 건방진 것이... 아닐, 그러면 어떻게 하란 말이냐?"
-						],
-						"en": [
-							"Insolent— no. Then what would you have me do?"
-						],
-						"person": "namgun"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c25a4e",
-						"lines": [
-							"배신자."
-						],
-						"en": [
-							"Traitor."
-						],
-						"person": "namseng"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#9e3b32",
-						"lines": [
-							"배신자...?"
-						],
-						"en": [
-							"Traitor…?"
-						],
-						"person": "namgun"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c25a4e",
-						"lines": [
-							"원래 인간이 높을수록, 그 그림자도 길다고 들었습니다.",
-							"개소문 사후, 고려에는 그의 그림자에 미칠 자도 없을 것입니다.",
-							"그 아들"
-						],
-						"en": [
-							"They say the taller a man stands, the longer his shadow.",
-							"After Gesomun, there is no one in Goryeo who can reach even his shadow.",
-							"And his sons—"
-						],
-						"person": "namseng"
 					},
 					{
 						"kind": "p",
 						"html": "— Yeon Gesomun —",
-						"ko": "— 연개소문 —"
+						"ko": "— 연개소문 —",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>Every single thing he said about his country was correct. The court was rotten. The tribute was a slow surrender. Taizong was coming whether or not they were polite about it. He was the only man in the room who could see it, and he was right, and being right is what destroyed him.</i>",
-						"ko": "<i>제 나라에 대해 그가 한 말은 하나도 빠짐없이 옳았다. 조정은 썩었다. 조공은 느린 항복이었다. 황제는 그들이 예의를 갖추든 말든 올 것이었다. 그 방에서 그것을 볼 수 있는 사람은 그뿐이었고, 그는 옳았다. 그리고 옳았다는 것이 그를 무너뜨렸다.</i>"
+						"ko": "<i>제 나라에 대해 그가 한 말은 하나도 빠짐없이 옳았다. 조정은 썩었다. 조공은 느린 항복이었다. 황제는 그들이 예의를 갖추든 말든 올 것이었다. 그 방에서 그것을 볼 수 있는 사람은 그뿐이었고, 그는 옳았다. 그리고 옳았다는 것이 그를 무너뜨렸다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>Because a man who is right and impatient does not build. He replaces. He killed the council and became the council. He killed the command and became the command. For twenty-two years Goguryeo did not need institutions, because it had him, and he was better than institutions — faster, braver, entirely unaccountable.</i>",
-						"ko": "<i>옳으면서 성마른 사람은 세우지 않는다. 갈아치운다. 그는 회의를 죽이고 회의가 되었다. 군령을 죽이고 군령이 되었다. 스물두 해 동안 고구려에는 제도가 필요 없었다. 그가 있었으니까. 그리고 그는 제도보다 나았다 — 더 빠르고, 더 담대하고, 누구에게도 책임지지 않았다.</i>"
+						"ko": "<i>옳으면서 성마른 사람은 세우지 않는다. 갈아치운다. 그는 회의를 죽이고 회의가 되었다. 군령을 죽이고 군령이 되었다. 스물두 해 동안 고구려에는 제도가 필요 없었다. 그가 있었으니까. 그리고 그는 제도보다 나았다 — 더 빠르고, 더 담대하고, 누구에게도 책임지지 않았다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He broke the Sui memory at the Salsu and the Tang at Ansi and the White Tiger at the Snake River with his own hands, and every victory made the kingdom lean on him a little harder, until the whole weight of it rested on one man’s spine. A spine is a magnificent thing, but no one has ever built a house on one.</i>",
-						"ko": "<i>그는 살수의 기억과 안시의 당군과 사수의 백호를 제 손으로 부수었고, 그 승리 하나하나가 나라로 하여금 그에게 조금씩 더 기대게 만들었다. 마침내 그 모든 무게가 한 사내의 등뼈 위에 얹혔다. 등뼈는 훌륭한 것이지만, 등뼈 위에 집을 지은 사람은 없다.</i>"
+						"ko": "<i>그는 살수의 기억과 안시의 당군과 사수의 백호를 제 손으로 부수었고, 그 승리 하나하나가 나라로 하여금 그에게 조금씩 더 기대게 만들었다. 마침내 그 모든 무게가 한 사내의 등뼈 위에 얹혔다. 등뼈는 훌륭한 것이지만, 등뼈 위에 집을 지은 사람은 없다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>His last words were: do not fight one another. His eldest son answered that he had left no brothers of his own — that he had cut them all down. Both of them were telling the truth, and neither of them could hear it.</i>",
-						"ko": "<i>그의 마지막 말은 이러했다. 서로 싸우지 말아라. 맏아들은 아버지께서는 형제를 남기지 않으셨노라고, 전부 베어 버리셨노라고 대답했다. 둘 다 진실을 말하고 있었고, 둘 다 그것을 듣지 못했다.</i>"
+						"ko": "<i>그의 마지막 말은 이러했다. 서로 싸우지 말아라. 맏아들은 아버지께서는 형제를 남기지 않으셨노라고, 전부 베어 버리셨노라고 대답했다. 둘 다 진실을 말하고 있었고, 둘 다 그것을 듣지 못했다.</i>",
+						"art": "Full-page end card."
 					},
 					{
 						"kind": "p",
 						"html": "<i>He held the north for a generation and left nothing behind him that could hold it for a year. Nine months after they buried him his sons were at war with each other. Twenty-six months after that his eldest was riding west to show the Third Emperor the road in.</i>",
-						"ko": "<i>그는 한 세대 동안 북방을 지켰고, 그것을 일 년이라도 지탱할 무엇도 남기지 않았다. 그를 묻은 지 아홉 달 만에 아들들은 서로 전쟁을 벌였다. 그로부터 스물여섯 달 뒤, 맏아들은 황제에게 들어오는 길을 일러 주러 서쪽으로 말을 몰았다.</i>"
+						"ko": "<i>그는 한 세대 동안 북방을 지켰고, 그것을 일 년이라도 지탱할 무엇도 남기지 않았다. 그를 묻은 지 아홉 달 만에 아들들은 서로 전쟁을 벌였다. 그로부터 스물여섯 달 뒤, 맏아들은 황제에게 들어오는 길을 일러 주러 서쪽으로 말을 몰았다.</i>",
+						"art": "Full-page end card."
 					}
 				],
 				"music": "An Ending"
@@ -53989,7 +53677,7 @@
 						"id": "namseng-betrayal",
 						"ratio": 1,
 						"tone": "#C30000",
-						"at": "Namseng",
+						"at": "Defection of Yeon Namseng",
 						"alt": "Yeon Namseng in profile bearing the burden of betrayal - impossible choice",
 						"src": "/temp/namseng_betrayal_profile.png",
 						"refs": [
@@ -54001,7 +53689,7 @@
 						"ratio": 2,
 						"tone": "#292524",
 						"alt": "The Supreme Commander's darkened throne, contested between brothers",
-						"at": "Traitor…?",
+						"at": "the gates of Pyongyang are shut",
 						"prompt": "Cinematic historical illustration of dark throne, Three Kingdoms of Samhan / Tang era (666), scene: The Brothers’ Coup, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/dark-throne.jpg"
 					},
@@ -54034,131 +53722,22 @@
 						"ko": "황제가 제9차 고구려 원정을 일으킨다. 이번에는 길잡이가 있다."
 					},
 					{
-						"kind": "dialogue",
-						"chip": "#b8935a",
-						"lines": [
-							"짐이 이미 백제를 멸하여 너희 나라의 근심을 제거하였는데, 이제 고려가 지리의 험함을 믿고 예맥(穢貊)과 함께 악한 짓을 하여 큰 나라를 섬기는 예를 어기고 이웃 나라와 사이좋게 지내는 의리를 저버리고 있다. 짐은 병사를 보내어 치려고 하니, 너도 돌아가 너희 국왕에게 고하여 군대를 출동시켜 우리와 함께 망해가는 오랑캐를 섬멸케 하라."
-						],
-						"speaker": "🙇",
-						"person": "gaozong",
-						"en": [
-							"I have already destroyed Baekje and removed your country’s worry; yet now Goryeo trusts in the ruggedness of its land, joins the Yemaek in wickedness, breaks the rite of serving a great state, and abandons the duty of living peaceably with its neighbours. I am sending soldiers to strike it — so return and tell your king to send out his army, and with us annihilate these failing barbarians."
-						],
-						"zh": [
-							"朕已滅百濟，除爾國之憂；而高麗恃險，連穢貊為惡，失事大之禮，棄睦鄰之義。朕將發兵討之——歸告爾王出師，與我共滅此將亡之蠻夷。"
-						],
-						"zhLatn": [
-							"Zhèn yǐ miè Bǎijì, chú ěr guó zhī yōu; ér Gāolí shì xiǎn, lián Huìmò wéi è, shī shì dà zhī lǐ, qì mùlín zhī yì. Zhèn jiāng fābīng tǎo zhī——guī gào ěr wáng chūshī, yǔ wǒ gòng miè cǐ jiāng wáng zhī mányí."
-						]
-					},
-					{
 						"kind": "p",
-						"html": "All of a sudden, a messenger come with an urgent message. Yeon meets him in his quarters.",
+						"html": "All of a sudden, a messenger comes with an urgent message. <b>Namseng</b> meets him in his quarters.",
 						"ko": "그때, 전령이 급보를 들고 온다. 연남생이 처소에서 그를 맞는다."
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#e08a2e",
+						"chip": "#8a7f72",
 						"lines": [
-							"김춘추...",
-							"<b>김춘추!!!</b>"
-						],
-						"speaker": "🙇",
-						"person": "euija",
-						"en": [
-							"Kim Chunchu…",
-							"<b>KIM CHUNCHU!!!</b>"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#D8258C",
-						"lines": [
-							"응?"
-						],
-						"speaker": "🙇",
-						"person": "chunchu",
-						"en": [
-							"Hm?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e08a2e",
-						"lines": [
-							"<b>김춘추 이 놈!!</b>",
-							"<b>삼한의 땅으로 당을 끌어들이는 이 비랄한 만고의 역적아!!</b>",
-							"<b>네 천벌을 받을 것이다!!</b>"
-						],
-						"speaker": "🙇",
-						"person": "euija",
-						"en": [
-							"<b>Kim Chunchu, you wretch!!</b>",
-							"<b>You vile traitor of the ages, who dragged a foreign power onto the soil of Samhan!!</b>",
-							"<b>Heaven’s punishment will find you!!</b>"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c25a4e",
-						"lines": [
-							"페하께선, 혼자는 결코 삼한정벌은 못 하실 겁니다."
-						],
-						"speaker": "🙎",
-						"en": [
-							"Your Majesty will never conquer Samhan alone."
-						],
-						"person": "namseng"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#9e3b32",
-						"lines": [
-							"이런 건방진 것이... 아닐, 그러면 어떻게 하란 말이냐?"
-						],
-						"person": "namgun",
-						"en": [
-							"Insolent— no. Then what would you have me do?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c25a4e",
-						"lines": [
-							"배신자."
+							"대막리지, 평양성 문이 닫혔습니다.",
+							"아우님들이 닫으셨습니다."
 						],
 						"en": [
-							"Traitor."
+							"Supreme Commander — the gates of Pyongyang are shut.",
+							"Your brothers shut them."
 						],
-						"person": "namseng"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#9e3b32",
-						"lines": [
-							"배신자...?"
-						],
-						"en": [
-							"Traitor…?"
-						],
-						"person": "namgun"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c25a4e",
-						"lines": [
-							"조선이 어떻게 몰락되었습니까? 왕의 최측근의 배신 때문이였죠.",
-							"원래 인간이 높을수록, 그 그림자도 길다고 들었습니다.",
-							"개소문 사후, 고려에는 그의 그림자에 미칠 자도 없을 것입니다.",
-							"그 아들"
-						],
-						"en": [
-							"How did Joseon fall? Through the betrayal of the king’s closest men.",
-							"They say the taller a man stands, the longer his shadow.",
-							"After Gesomun, there is no one in Goryeo who can reach even his shadow.",
-							"And his sons—"
-						],
-						"person": "namseng"
+						"speaker": "Messenger"
 					},
 					{
 						"kind": "scene",
@@ -54177,7 +53756,6 @@
 							"고려는 사기꾼과 도둑놈들 밖에 없는,",
 							"희망이 없는 족속들이옵니다."
 						],
-						"speaker": "🙎",
 						"en": [
 							"Goryeo is nothing but swindlers and thieves —",
 							"a people beyond hope."
@@ -54186,8 +53764,112 @@
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#c97a2e",
-						"person": "taizong",
+						"chip": "#c25a4e",
+						"lines": [
+							"폐하께선, 혼자는 결코 삼한정벌은 못 하실 겁니다."
+						],
+						"en": [
+							"Your Majesty will never conquer Samhan alone."
+						],
+						"person": "namseng"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#b8935a",
+						"lines": [
+							"이런 건방진 것이... 아니, 그러면 어떻게 하란 말이냐?"
+						],
+						"person": "gaozong",
+						"en": [
+							"Insolent— no. Then what would you have me do?"
+						],
+						"zh": [
+							"放肆——不。那你要朕如何？"
+						],
+						"zhLatn": [
+							"Fàngsì— bù. Nà nǐ yào zhèn rúhé?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c25a4e",
+						"lines": [
+							"배신자."
+						],
+						"en": [
+							"Traitor."
+						],
+						"person": "namseng"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#b8935a",
+						"lines": [
+							"배신자...?"
+						],
+						"en": [
+							"Traitor…?"
+						],
+						"person": "gaozong",
+						"zh": [
+							"叛徒……？"
+						],
+						"zhLatn": [
+							"Pàntú……?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c25a4e",
+						"lines": [
+							"조선이 어찌하여 무너졌습니까? 왕의 최측근이 배신했기 때문입니다.",
+							"원래 인간이 높을수록, 그 그림자도 길다고 들었습니다.",
+							"개소문 사후, 고려에는 그의 그림자에 미칠 자도 없을 것입니다.",
+							"그 아들"
+						],
+						"en": [
+							"How did Joseon fall? Through the betrayal of the king’s closest men.",
+							"They say the taller a man stands, the longer his shadow.",
+							"After Gesomun, there is no one in Goryeo who can reach even his shadow.",
+							"And his sons—"
+						],
+						"person": "namseng"
+					},
+					{
+						"kind": "p",
+						"html": "He is thirty-two years old, and his brother has taken his title, his city and his father’s seat, and this is the second time in his life he has been offered a house in Chang’an. Nobody flogs him for the answer this time.",
+						"ko": "그는 서른둘이고, 아우가 그의 관작과 도성과 아버지의 자리를 빼앗았으며, 장안의 집을 제안받은 것은 평생 두 번째다. 이번에는 그 대답 때문에 매를 맞지 않는다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c25a4e",
+						"lines": [
+							"황제... 폐하... 만세...!"
+						],
+						"en": [
+							"Emperor… Your Majesty… ten thousand years…!"
+						],
+						"person": "namseng"
+					},
+					{
+						"kind": "p",
+						"html": "Namseng is given a Tang title, and a vanguard command against his own country.",
+						"ko": "남생은 당의 관작과 함께, 제 나라를 치는 선봉의 지휘를 받는다."
+					},
+					{
+						"kind": "p",
+						"html": "In the south their uncle <b>Yeon Jungto</b> takes twelve cities over to Silla, and the family is finished in three directions at once.",
+						"ko": "남쪽에서는 숙부 <b>연정토</b>가 열두 성을 들고 신라로 넘어간다. 그 집안은 한꺼번에 세 방향에서 끝난다."
+					},
+					{
+						"kind": "p",
+						"html": "When the vanguard reports to the Blue Dragon’s tent, <b>Li Shiji</b> looks at its commander for a long time.",
+						"ko": "선봉이 청룡의 막사에 들자, <b>이세적</b>이 그 장수를 한참 바라본다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4b78c9",
+						"person": "lishiji",
 						"lines": [
 							"…어디서 본 얼굴인데."
 						],
@@ -54206,39 +53888,13 @@
 						"chip": "#c25a4e",
 						"person": "namseng",
 						"lines": [
-							"스무 해 전, 폐하께서 요수를 건너오셨을 때 뵈었습니다.",
+							"스무 해 전, 장군께서 요수를 건너오셨을 때 뵈었습니다.",
 							"그때는 무릎을 꿇지 않았지요."
 						],
 						"en": [
-							"We met twenty years ago, Your Majesty — when you crossed the Liao.",
+							"We met twenty years ago, General — when you crossed the Liao.",
 							"I did not kneel then."
 						]
-					},
-					{
-						"kind": "p",
-						"html": "He is thirty-two years old, and his brother has taken his title, his city and his father’s seat, and this is the second time in his life he has been offered a house in Chang’an. Nobody flogs him for the answer this time.",
-						"ko": "그는 서른둘이고, 아우가 그의 관작과 도성과 아버지의 자리를 빼앗았으며, 장안의 집을 제안받은 것은 평생 두 번째다. 이번에는 그 대답 때문에 매를 맞지 않는다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c25a4e",
-						"lines": [
-							"황제... 페하... 만세...!"
-						],
-						"en": [
-							"Emperor… Your Majesty… ten thousand years…!"
-						],
-						"person": "namseng"
-					},
-					{
-						"kind": "p",
-						"html": "Namseng is given a Tang title, and a vanguard command against his own country.",
-						"ko": "남생은 당의 관작과 함께, 제 나라를 치는 선봉의 지휘를 받는다."
-					},
-					{
-						"kind": "p",
-						"html": "In the south their uncle <b>Yeon Jungto</b> takes twelve cities over to Silla, and the family is finished in three directions at once.",
-						"ko": "남쪽에서는 숙부 <b>연정토</b>가 열두 성을 들고 신라로 넘어간다. 그 집안은 한꺼번에 세 방향에서 끝난다."
 					}
 				],
 				"music": "Betrayal"
@@ -54247,7 +53903,7 @@
 				"year": "668",
 				"sub": "September",
 				"accent": "#b91c1c",
-				"title": "Pyongyang, A",
+				"title": "The Fall of Pyongyang",
 				"tone": "grim war epic — the siege",
 				"subtitle": "평양성 함락",
 				"badges": [
@@ -54332,7 +53988,7 @@
 						"id": "final-three-dragons",
 						"ratio": 1.778,
 						"tone": "#C30000",
-						"at": "The <b>Blue Dragon</b>, with the <b>Black Dragon</b> and <b>White Tiger II</b>",
+						"at": "leads the Tang forces",
 						"alt": "Three Tang columns — blue, black, white banners — closing on Pyongyang’s river walls in 668",
 						"prompt": "Cinematic historical still, 16:9, high view of REAL Pyongyang in 668: river, walls, winter-bare hills. Three Tang columns approach with blue, black, and white beast-banners. Goguryeo red on the walls. Real siege, real city. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
 						"tempImage": "/temp/final-three-dragons.jpg"
@@ -54446,8 +54102,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The <b>Blue Dragon</b>, with the <b>Black Dragon</b> and <b>White Tiger II</b>, lead the Tang forces.",
-						"ko": "<b>청룡</b>이 <b>흑룡</b>, <b>백호 2세</b>와 함께 당군을 이끈다."
+						"html": "The <b>Blue Dragon</b> leads the Tang forces, with the <b>Black Tortoise</b> and <b>White Tiger II</b>.",
+						"ko": "<b>청룡</b>이 <b>현무</b>, <b>백호 2세</b>와 함께 당군을 이끈다."
 					},
 					{
 						"kind": "dialogue",
@@ -54485,7 +54141,6 @@
 						"lines": [
 							"형님..."
 						],
-						"speaker": "🙇",
 						"en": [
 							"Brother…"
 						],
@@ -54497,22 +54152,10 @@
 						"lines": [
 							"마침내… 평양성의 땅을 밟는다—"
 						],
-						"speaker": "🙎",
 						"en": [
 							"At last… I set foot on Pyongyang’s ground—"
 						],
 						"person": "namseng"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#b91c1c",
-						"person": "namgun",
-						"en": [
-							"Goguryeo… never dies….!"
-						],
-						"lines": [
-							"고구려는… 죽지 않는다….!"
-						]
 					},
 					{
 						"kind": "scene",
@@ -54521,13 +54164,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The monk aristocracy Yeon tried to starve with Tang Taoism has waited a generation. <b>Shinsung</b> does not make a speech about doctrine. He opens a gate. Betrayal, in the end, is also a kind of liturgy — performed from the inside.",
-						"ko": "연이 당의 도교로 굶기려 했던 승려 귀족이 한 세대를 기다렸다. <b>신성</b>은 교리에 대해 연설하지 않는다. 문을 연다. 배신도 결국 일종의 의례다 — 안에서 올리는."
-					},
-					{
-						"kind": "p",
-						"html": "The monk <b>Shinsung</b> and general <b>Yomyo</b> open the gates of the Fortress, letting the Tang army inside.",
-						"ko": "승려 <b>신성</b>과 장수 <b>요묘</b>가 성문을 열어, 당군을 안으로 들인다."
+						"html": "The monk aristocracy Yeon tried to starve with Tang Taoism has waited a generation. <b>Shinsung</b> does not make a speech about doctrine. He opens a gate.",
+						"ko": "연이 당의 도교로 굶기려 했던 승려 귀족이 한 세대를 기다렸다. <b>신성</b>은 교리에 대해 연설하지 않는다. 문을 연다."
 					},
 					{
 						"kind": "scene",
@@ -54536,7 +54174,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "Supreme Commander <b>Yeon Namgun</b> (31) leads a final last stand against the Blue Dragon",
+						"html": "Supreme Commander <b>Yeon Namgun</b> (31) leads a last stand against the Blue Dragon.",
 						"ko": "대막리지 <b>연남건 (31)</b>이 청룡에 맞서 마지막 항전을 이끈다."
 					},
 					{
@@ -54557,7 +54195,7 @@
 					{
 						"kind": "p",
 						"html": "The wall is already lost. He knows it. He says it anyway, to the men who can still hear him and to a bloodline across the river he cannot see. Later chronicles will hear Gung Ye in the heat, and Wang Geon in the name — Goryeo reborn under another man’s hand.",
-						"ko": "성벽은 이미 졌다. 그는 안다. 그래도 말한다 — 아직 들을 수 있는 사람들에게, 보이지 않는 강 건너 혈통에게. 후대의 편년은 그 뜨거움에서 궁예를, 그 이름에서 왕건을 — 다른 손으로 되살아난 고려를 — 들을 것이다."
+						"ko": "성벽은 이미 졌다. 그는 안다. 그래도 말한다. 아직 들을 수 있는 사람들에게, 보이지 않는 강 건너 혈통에게. 후대의 편년은 그 뜨거움에서 궁예를, 그 이름에서 왕건을 들을 것이다. 다른 손으로 되살아난 고려를."
 					},
 					{
 						"kind": "dialogue",
@@ -54598,13 +54236,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>The story isn’t over yet.<br>The Third Emperor still controls large swaths of Samhan.<br>The final war begins...!</b>",
-						"ko": "<b>이야기는 아직 끝나지 않았다.<br>황제는 여전히 삼한의 넓은 땅을 쥐고 있다.<br>마지막 전쟁이 시작된다…!</b>"
-					},
-					{
-						"kind": "p",
-						"html": "The minutes are shorter than the kingdom. Goguryeo had stood seven hundred years. The king was taken to Chang’an. The record, for its part, writes only the month and the surrender.",
-						"ko": "기록은 나라보다 짧다. 고구려는 칠백 년을 섰다. 왕은 장안으로 잡혀 갔다. 편년은, 제 몫으로는, 달과 항복만을 적는다."
+						"html": "Goguryeo has stood for seven hundred years. Its king goes to Chang’an as a prisoner, and the annal gives the whole of it one line: the month, and the surrender.",
+						"ko": "고구려는 칠백 년을 섰다. 왕은 포로가 되어 장안으로 끌려가고, 편년은 그 전부에 한 줄을 준다. 달, 그리고 항복."
 					},
 					{
 						"kind": "quote",
@@ -54615,8 +54248,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The seventeen grades stop at one another. In the tenth month, after the city is open, <b>King Munmu</b> cuts a rank the grades did not have, and gives it to the man who has been Marshal since the yard.",
-						"ko": "열일곱 관등은 서로에게서 멈춘다. 성이 열린 뒤 열째 달, <b>문무왕</b>이 그 관등에 없던 자리를 하나 베어, 연무장에서부터 대장군이던 사람에게 준다."
+						"html": "Silla’s seventeen grades of rank stop at the first. In the tenth month, after the city is open, <b>King Munmu</b> cuts a rank the grades did not have, and gives it to the man who has been Marshal since the yard.",
+						"ko": "신라의 열일곱 관등은 첫째에서 끝난다. 성이 열린 뒤 열째 달, <b>문무왕</b>이 그 관등에 없던 자리를 하나 베어, 연무장에서부터 대장군이던 사람에게 준다."
 					},
 					{
 						"kind": "dialogue",
@@ -54719,6 +54352,12 @@
 						"en": [
 							"…As you command."
 						]
+					},
+					{
+						"kind": "p",
+						"html": "<b>The story isn’t over yet.<br>The Third Emperor still controls large swaths of Samhan.<br>The final war begins...!</b>",
+						"ko": "<b>이야기는 아직 끝나지 않았다.<br>황제는 여전히 삼한의 넓은 땅을 쥐고 있다.<br>마지막 전쟁이 시작된다…!</b>",
+						"art": "Full-page trailer card."
 					}
 				],
 				"music": "Pyongyang, 668"

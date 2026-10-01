@@ -99,10 +99,12 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'chunchu-era-11': 'chunchu-era-hyukgose',
 	'chunchu-era-the-flower-youth': 'chunchu-era-the-hwarang',
 	'chunchu-era-silla-tang-alliance': 'chunchu-era-the-emperor',
-	'final-stand-7': 'final-stand-pyongyang-a',
+	'final-stand-7': 'final-stand-the-fall-of-pyongyang',
+	'final-stand-pyongyang-a': 'final-stand-the-fall-of-pyongyang',
 	'final-stand-pyongyang-fortress': 'final-stand-pyongyang',
-	'final-stand-the-final-stand': 'final-stand-pyongyang-a',
-	'final-stand-white-river': 'fall-of-baekje-white-river',
+	'final-stand-the-final-stand': 'final-stand-the-fall-of-pyongyang',
+	'fall-of-baekje-white-river': 'final-stand-white-river',
+	'fall-of-baekje-the-seven-branched-sword': 'final-stand-the-seven-branched-sword',
 	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-the-protectorate',
 	'silla-tang-war-8': 'silla-tang-war-the-king-for-all'
 };

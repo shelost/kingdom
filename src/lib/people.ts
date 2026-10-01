@@ -2890,6 +2890,25 @@ export const PEOPLE: Person[] = [
 		aliases: ['Gwanchang', '관창', '官昌', 'Kim Gwanchang']
 	},
 	{
+		id: 'heumsun',
+		gender: 'm',
+		name: 'Kim Heumsun',
+		korean: '김흠순',
+		hanja: '金欽純',
+		title: 'General (장군)',
+		kingdom: 'silla',
+		tagline: 'Yushin’s younger brother, who called his own son out of the line at Hwangsanbeol.',
+		quote: 'For a subject, nothing is greater than loyalty. For a son, nothing is greater than duty to his father.',
+		voice:
+			'Few words, and those from the classics: duty laid out like a father’s instruction, with no comfort after it. Korean: plain 해라체 to his son.',
+		events: [{ year: 660, label: 'Leads the Silla left at Hwangsanbeol and sends his son Bangul out alone.' }],
+		family: [
+			{ id: 'yushin', role: 'Brother' },
+			{ id: 'bangul', role: 'Son' }
+		],
+		aliases: ['Heumsun', 'Kim Heumsun', '흠순', '김흠순', '欽純']
+	},
+	{
 		id: 'bangul',
 		gender: 'm',
 		avatar: '/ch_bangul.png',
@@ -2907,6 +2926,7 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Hwarang', korean: '화랑', hanja: '花郎', org: 'hwarang', to: 660 }
 		],
+		family: [{ id: 'heumsun', role: 'Father' }],
 		aliases: ['Bangul', 'Banggul', '반굴', '金盤屈', 'Kim Bangul', 'Kim Banggul']
 	},
 	{
@@ -3415,7 +3435,7 @@ export const PEOPLE: Person[] = [
 		died: 663,
 		tagline: 'Died at the White River shouting Kudara’s name.',
 		quote: "Loyalty does not ask whose map you die on.",
-		events: [{ year: 663, label: 'Falls at Baekgang crying “Long live Kudara!”' }],
+		events: [{ year: 663, label: 'Swears to heaven on a burning deck, then falls fighting at Baekgang.' }],
 		aliases: ['Echi no Takutsu', 'Takutsu']
 	},
 	{
@@ -4634,14 +4654,14 @@ export const PEOPLE: Person[] = [
 		clans: ['clan-mokli'],
 		clanBy: { 'clan-mokli': 'blood' },
 		tagline: '“Blood remembers a country that forgot your face.”',
-		quote: 'Chunchu, you wretch… how dare you, to His Majesty…!',
+		quote: 'I hear you have a fever, General.',
 		firstLine: {
 			en: 'Low ground it may be — but why should we not move?',
-			ko: '낮은 땅일지언정 — 어찌 옮기지 않겠는가?'
+			ko: '비록 낮은 땅(평지)이라고 하지만 어찌 옮기지 않겠는가?'
 		},
 		lastLine: {
-			en: 'Chunchu, you wretch… how dare you, to His Majesty…!',
-			ko: '춘추 놈… 감히 폐하께…!'
+			en: 'You see what his crime is. Shall I behead him, or not?',
+			ko: '그 죄가 이러하오. 베어야 하겠소, 말아야 하겠소?'
 		},
 		nature: 'Exile polish over Baekje panic. Mother’s house whispers Mokli — timber, eastern berths, a clan that already looks across the water — before the court parks him in Yamato. Desire: to be more than a souvenir. Wound: the country that shipped him out and only wanted him back as a flag.',
 		voice:
@@ -4812,7 +4832,7 @@ export const PEOPLE: Person[] = [
 		},
 		lastLine: {
 			en: 'At last… I set foot on Pyongyang’s ground—',
-			ko: '드디어… 평양 땅에 발을—'
+			ko: '마침내… 평양성의 땅을 밟는다—'
 		},
 		nature: 'Eldest-son rigidity with a child’s hunger for a father’s rare yes — and the weight of a name that means relief. Desire: to be the blade Gesomun forged. Wound: discovering the forge left no room for brothers, and that he was named for surviving what others did not.',
 		voice:
@@ -4885,11 +4905,11 @@ export const PEOPLE: Person[] = [
 		quote: 'Brother…',
 		firstLine: {
 			en: 'Brother…',
-			ko: '형…'
+			ko: '형님...'
 		},
 		lastLine: {
 			en: 'Brother…',
-			ko: '형…'
+			ko: '형님...'
 		},
 		nature: 'Youngest-child weather vane with a soft upbringing and a hard ending. Desire: not to be the one who decides. Wound: every decision still lands on him. Person, not place: Yeon Namsan / 연남산 / 淵男産 — Gesomun’s third son. Never Mount Namsan (남산) above Surabol / Gyeongju, the Silla ridge of cypress and kite songs.',
 		voice:
@@ -7590,6 +7610,7 @@ const COLOR: Record<string, string> = {
 	yunchung: '#c9932a',
 	gwanchang: '#79b6f2',
 	bangul: '#5e9dd8',
+	heumsun: '#4f7cc0',
 	sadaham: '#6fa8ff',
 	mugwan: '#7aa0c8',
 	chunbok: '#d4a94e',
