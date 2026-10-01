@@ -5,7 +5,19 @@ scripts/.cache
 node_modules
 # --- generated: unreferenced static/temp (scripts/sync-temp-deploy.mjs) ---
 static/temp/arrow_in_tree.png
+static/temp/bidam-defiance-upward.png
+static/temp/bidam-gold-shaft.jpg
+static/temp/bidam-incense-column.jpg
+static/temp/bidam-lotus-sit.jpg
+static/temp/bidam-second-blade.jpg
+static/temp/bidam-sword-carry.jpg
+static/temp/bidam-yumjong-rally.jpg
+static/temp/bidam_defiance_upward.png
 static/temp/bidam_rebellion_torch.png
+static/temp/council-seq-veto.jpg
+static/temp/council-tea-supum.jpg
+static/temp/council-veto-fist.jpg
+static/temp/emotional_bidam_death_betrayal.png
 static/temp/euija_last_king_fading.png
 static/temp/gaesomun_authority_portrait.png
 static/temp/goddesses-fantasy-lie.jpg
@@ -102,6 +114,7 @@ static/temp/narim-thought-bubble.jpg
 static/temp/narim-thought-pin.jpg
 static/temp/nsfw-jumong-royal-king-back-h.jpg
 static/temp/nsfw-jumong-royal-naked-pose.jpg
+static/temp/radiance-siege-ring.jpg
 static/temp/seohyeon-arrival-thought.jpg
 static/temp/seohyeon-older-close.jpg
 static/temp/seohyeon-older-corner-ride.jpg

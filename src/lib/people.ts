@@ -1682,7 +1682,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature:
 			'Born to one of Surabol’s oldest houses — the chronicle never states, only implies, descent from Gurema of the Surabol Son clan and the Musan hall the Founding Six raised. Aristocratic gentleman: proper titles, tea poured before the barb lands, almost flirtatious composure under the black robe. Oldest of the three Hwarang classmates — then Yushin, then Alchun, a year apart; all three once orbited Princess Dukman. Yard score never leaves 108–108 with Yushin — effort against birthright, and he feels owed. Once the most liberal True Bone — crowned the woman king, shielded Gaya-blood Yushin from nativist bullying — he spirals in public view: grievance dressed as patriotism, “they’re colonizing us,” charming one moment and ugly the next. Self-aware enough to hear the irony; genius and charisma never leave him — that is what makes it dangerous. Loves the sacred country badly. Weaponizes heritage against Yushin at Radiance: “Blood is inevitable.” Dies smiling at the name he first traded as a boy.',
-		arc: 'In 632 he crowns Dukman with a speech about cleverness. In 636 he and Alchun break King Mu’s spies at Jade Gate Valley (옥문곡). In 645 he alone blocks Seungman while Supum holds the premier’s chair. In 647 he spends ten days at Radiance with Yumjong — night tabletop debates with Yushin in a small 정자 under a half moon, before the armies fight, youth flashbacks, star omen — the liberal curdling into blood-and-soil between cups of tea. On the fifth night he tells Yushin 피는 못 속인다 — blood is inevitable — weaponizing Gaya/Heo heritage; on the tenth day Yushin finishes the count at one hundred and nine. Last mortal words: “Hwarang Kim Yushin…” Yushin will whisper the same line back when he orders the annihilation of Bidam’s house.',
+		arc: 'In 632 he crowns Dukman with a speech about cleverness. In 636 he and Alchun break King Mu’s spies at Jade Gate Valley (옥문곡). In 645 he alone blocks Seungman while Supum holds the first chair, and before the month is out the queen gives that chair to him. In 647 he spends ten days at Radiance with Yumjong — night tabletop debates with Yushin in a small 정자 under a half moon, before the armies fight, youth flashbacks, star omen — the liberal curdling into blood-and-soil between cups of tea. On the fifth night he tells Yushin 피는 못 속인다 — blood is inevitable — weaponizing Gaya/Heo heritage; on the tenth day Yushin finishes the count at one hundred and nine. Last mortal words: “Hwarang Kim Yushin…” Yushin will whisper the same line back when he orders the annihilation of Bidam’s house.',
 		blade: 'Ring-pommel heavenly-horse sword — white horse rearing on the pommel, old-hall steel.',
 		swordImage: '/sword_horse.png',
 		stages: [
@@ -1709,7 +1709,7 @@ export const PEOPLE: Person[] = [
 		events: [
 			{ year: 632, label: 'Turns 3:3 into 6:0 — Silla’s first woman king.' },
 			{ year: 636, label: 'With Alchun, breaks Baekje spies at Jade Gate Valley (옥문곡).' },
-			{ year: 645, label: 'Alone blocks Seungman as successor — Supum holds the first chair.' },
+			{ year: 645, label: 'Alone blocks Seungman as successor; before the month is out the queen makes him High Councillor.' },
 			{ year: 647, label: 'Ten-day rebellion at Radiance; tells Yushin 피는 못 속인다; dies — “Hwarang Kim Yushin…”' }
 		],
 		sobriquets: [
@@ -1726,7 +1726,8 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Hwarang disciple', korean: '낭도', hanja: '郎徒', org: 'hwarang', from: 610, to: 613 },
 			{ title: 'Hwarang', korean: '화랑', hanja: '花郎', org: 'hwarang', from: 613, to: 645 },
-			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 647 }
+			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 },
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 645, to: 647 }
 		],
 		aliases: [
 			'Councillor Bidam',
@@ -3272,7 +3273,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Bidam’s fellow conspirator at the Fortress of Radiance — the quieter name on the banner.',
 		quote: 'Rebellion needs two names. Be the quieter one.',
 		events: [{ year: 647, label: 'Rises with Bidam at Radiance; falls in the outer works on the ninth day.' }],
-		aliases: ['Yumjong', 'Yeomjong', 'Yumjang']
+		aliases: ['Yumjong', 'Yeomjong']
 	},
 	{
 		id: 'gusesa',
@@ -3995,9 +3996,9 @@ export const PEOPLE: Person[] = [
 		quote: 'Tonight the better option is a confession.',
 		nature:
 			'He chairs the Harmony Council like a man who has kept the same roof through three kings: tea, wooden pieces, the flame that must turn blue. Not a Hwarang classmate — an old hall, patient, slightly tired of the word woman being said forty times.',
-		arc: 'In 632 he is High Councillor: he names the hung 3:3, waits through Bidam’s speech, and watches Alchun — not himself — move the last piece. In 645 he yields the first chair to Supum.',
+		arc: 'In 632 he is High Councillor: he names the hung 3:3, waits through Bidam’s speech, and watches Alchun — not himself — move the last piece. In 636 he yields the first chair to Supum.',
 		career: [
-			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 645 }
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 636 }
 		],
 		aliases: ['Euljé', 'Eulje', '을제', 'High Councillor Euljé']
 	},
@@ -4013,10 +4014,10 @@ export const PEOPLE: Person[] = [
 		tagline: 'Succeeds Euljé in the first chair — the steadier hand while the yard’s old boys argue succession.',
 		quote: 'The room must finish its vote before the country finishes its patience.',
 		nature: 'A councillor who reaches the first chair by outlasting argument, not by winning one. Chairs the unanimity rule without treating it as theatre — which makes Bidam’s withheld hand feel louder than a shout.',
-		arc: 'In 645 he takes the first chair when Euljé steps down. Holds the council through the Seungman veto and into the season when Bidam raises men at Radiance. The chronicle names him less than the rebels; the grain ledger names him daily.',
+		arc: 'In 636 he takes the first chair when Euljé steps down, and holds it until the Seungman veto of 645. Before that month is out the queen thanks him for his years, sends him home, and gives the chair to the one man who told her council no. The chronicle names him less than the rebels; the grain ledger names him daily.',
 		career: [
-			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 },
-			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 645, to: 647 }
+			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 636 },
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 636, to: 645 }
 		],
 		aliases: ['Supum', 'Kim Supum', '수품', '水品', 'High Councillor Supum']
 	},
@@ -4031,7 +4032,7 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — one of the six sleeves in the Seungman vote.',
 		quote: 'Raise your hand when the room has stopped pretending.',
-		events: [{ year: 647, label: 'Raises his sleeve for Princess Seungman (Jinduk) against Bidam’s veto.' }],
+		events: [{ year: 645, label: 'Raises his sleeve for Princess Seungman (Jinduk) against Bidam’s veto.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -4048,7 +4049,7 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — counted among the six when Seungman’s name circled the room.',
 		quote: 'Unanimity is a roof. One hole is rain.',
-		events: [{ year: 647, label: 'Votes with the six for Seungman’s succession.' }],
+		events: [{ year: 645, label: 'Raises his sleeve with the other four for Seungman’s succession.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -4065,7 +4066,7 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — his sleeve rose with the others until one hand stayed down.',
 		quote: 'I vote with the weather once it starts.',
-		events: [{ year: 647, label: 'Among the six daedeung who raised for Seungman.' }],
+		events: [{ year: 645, label: 'Among the five daedeung who raised for Seungman.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -4082,7 +4083,7 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — not to be confused with Radiance’s Yumjong; the minutes never are.',
 		quote: 'Same surname, different banner.',
-		events: [{ year: 647, label: 'Sixth sleeve up for Seungman — not the rebel Yumjong of 647.' }],
+		events: [{ year: 632, label: 'One of the six sleeves the night Dukman is named — not the rebel Yumjong of 647.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
 		],
@@ -5674,20 +5675,20 @@ export const CONCEPTS: Person[] = [
 		events: [
 			{ year: 579, label: 'Deposes King Jinji for misconduct — initial vote, deliberation, final vote.' },
 			{ year: 632, label: 'Initial 3:3 → final 6:0 — Queen Sunduk named.' },
-			{ year: 645, label: 'Supum succeeds Euljé as High Councillor; Bidam alone blocks Seungman.' },
+			{ year: 636, label: 'Supum succeeds Euljé as High Councillor.' },
+			{ year: 645, label: 'Bidam alone blocks Seungman; the queen makes him High Councillor.' },
 			{ year: 651, label: 'Outflanked by the Royal Secretariat (집사부).' },
 			{ year: 654, label: 'Enthrones Kim Chunchu as King Muyeol.' }
 		],
 		orgChart: [
-			{ id: 'euljae', role: '상대등 · High Councillor (632–645)', reportsTo: null },
-			{ id: 'supum', role: '상대등 · High Councillor (from 645)', reportsTo: null },
+			{ id: 'euljae', role: '상대등 · High Councillor (632–636)', reportsTo: null },
+			{ id: 'supum', role: '상대등 · High Councillor (636–645)', reportsTo: null },
+			{ id: 'bidam', role: '상대등 · High Councillor (645–647) · the 645 veto', reportsTo: null },
 			{ id: 'yushin', role: '대등', reportsTo: 'supum' },
 			{ id: 'alchun', role: '대등', reportsTo: 'supum' },
 			{ id: 'murim', role: '대등', reportsTo: 'supum' },
 			{ id: 'imjong', role: '대등', reportsTo: 'supum' },
-			{ id: 'suljong', role: '대등', reportsTo: 'supum' },
-			{ id: 'yumjang', role: '대등', reportsTo: 'supum' },
-			{ id: 'bidam', role: '대등 · 645 veto', reportsTo: 'supum' }
+			{ id: 'suljong', role: '대등', reportsTo: 'supum' }
 		],
 		aliases: [
 			'Harmony Council',

@@ -4951,11 +4951,6 @@
 		"supum",
 		"xuerengui"
 	],
-	"council-tea-supum": [
-		"bidam",
-		"jukji",
-		"supum"
-	],
 	"chunchu-strategist": [
 		"chunchu"
 	],
@@ -4971,10 +4966,6 @@
 		"bidam",
 		"xuerengui"
 	],
-	"council-veto-fist": [
-		"alchun",
-		"bidam"
-	],
 	"council-veto-blue": [
 		"alchun",
 		"bidam",
@@ -4983,10 +4974,6 @@
 	],
 	"council-tea-veto": [
 		"bidam"
-	],
-	"council-seq-veto": [
-		"bidam",
-		"supum"
 	],
 	"council-seq-veto-close": [
 		"bidam"
@@ -4997,10 +4984,6 @@
 	],
 	"bidam-father-first-day": [
 		"bidam"
-	],
-	"bidam-defends-yushin": [
-		"bidam",
-		"yushin"
 	],
 	"parody-last-supper": [
 		"alchun",
@@ -5017,16 +5000,10 @@
 	"bidam-rebellion-wide": [
 		"bidam"
 	],
-	"bidam-defiance": [
-		"bidam"
-	],
 	"bidam-sword-dark": [
 		"bidam"
 	],
 	"bidam-sword-pommel": [
-		"bidam"
-	],
-	"bidam-sword-carry": [
 		"bidam"
 	],
 	"bidam-poster": [
@@ -5082,9 +5059,6 @@
 		"bidam",
 		"sunduk",
 		"yushin"
-	],
-	"bidam-death-betrayal": [
-		"bidam"
 	],
 	"young-yushin": [
 		"bidam",
@@ -5159,12 +5133,6 @@
 		"bidam",
 		"yushin"
 	],
-	"bidam-second-blade": [
-		"bidam"
-	],
-	"bidam-defiance-upward": [
-		"bidam"
-	],
 	"bidam-sutra-recitation": [
 		"bidam"
 	],
@@ -5173,13 +5141,6 @@
 	],
 	"bidam-beads-ring": [
 		"bidam"
-	],
-	"bidam-incense-column": [
-		"bidam"
-	],
-	"radiance-siege-ring": [
-		"bidam",
-		"yushin"
 	],
 	"bidam-yushin-two-laws": [
 		"bidam",
@@ -5192,14 +5153,8 @@
 	"bidam-pavilion-empty": [
 		"bidam"
 	],
-	"bidam-gold-shaft": [
-		"bidam"
-	],
 	"alchun-tablet-bar": [
 		"alchun"
-	],
-	"bidam-lotus-sit": [
-		"bidam"
 	],
 	"bidam-break-close": [
 		"bidam"
@@ -5289,10 +5244,6 @@
 		"bidam",
 		"yumjong"
 	],
-	"bidam-yumjong-rally": [
-		"bidam",
-		"yumjong"
-	],
 	"rebel-black-headband-army": [
 		"bidam"
 	],
@@ -5363,6 +5314,10 @@
 	"parody-laocoon-bidam": [
 		"bidam",
 		"hyulle"
+	],
+	"bidam-defends-yushin": [
+		"bidam",
+		"yushin"
 	],
 	"wa-mountains": [
 		"bidam",

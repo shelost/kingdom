@@ -1328,8 +1328,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		why: 'After Bidam’s solo veto, the father’s If: walk alone toward the truth.',
 		canon: 'Young Bidam FACE from ch_bidam_hwarang. Father FACE from ch_bidam_old as Son Sukwon. Navy #141C2E. Beads. Packed earth. One device. High contrast. 2D cel-painterly.',
 		shots: [
-			{ id: 'bidam-father-first-day', role: 'father sends', angle: 'dutch two-shot', at: 'righteous traitor' },
-			{ id: 'bidam-defends-yushin', role: 'defends Yushin', angle: 'OTS yard', at: 'the Gaya boy’s mouth' }
+			{ id: 'bidam-father-first-day', role: 'father sends', angle: 'dutch two-shot', at: 'righteous traitor' }
 		]
 	},
 	{
@@ -1340,11 +1339,11 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		why: 'Bupmin at 21 first meets the goddesses; splash fails; Bidam laughs alive.',
 		canon: 'Bupmin ch_bupmin_hwarang painterly #C41E3A. Goddesses photoreal-numinous, living eyes (not oracle glow). Bidam navy beads. Yushin Confucian blue standing. Splash is political, not sex. Same 정자 as other Radiance nights.',
 		shots: [
-			{ id: 'chunchu-sends-bupmin', role: 'send', angle: 'dutch stride', at: 'send Bupmin to the steam' },
+			{ id: 'chunchu-sends-bupmin', role: 'send', angle: 'dutch stride', at: 'Take a jar.' },
 			{ id: 'goddesses-meet-bupmin', role: 'first meeting', angle: 'two-shot steam', at: 'He is the best of both' },
 			{ id: 'yushin-stalls-bidam', role: 'stall', angle: 'OTS pavilion', at: 'keep him talking' },
 			{ id: 'bupmin-splash-bidam', role: 'splash', angle: 'dutch behind', at: 'splash the water' },
-			{ id: 'water-does-nothing', role: 'no vision', angle: 'ECU', at: "why isn't it doing anything" },
+			{ id: 'water-does-nothing', role: 'no vision', angle: 'ECU', at: 'why isn’t it doing anything' },
 			{ id: 'bidam-laugh-monologue', role: 'laugh', angle: "worm’s-eye", at: 'HAHAHAHAHA' }
 		]
 	},
@@ -1358,7 +1357,6 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		shots: [
 			{ id: 'radiance-exposition-wide', role: 'Radiance wide', angle: 'exposition', at: 'Fortress of Radiance' },
 			{ id: 'bidam-yumjong-gate', role: 'open gate', angle: 'dutch', at: 'Open the Radiance gate.' },
-			{ id: 'bidam-yumjong-rally', role: 'rally', angle: 'wide shout', at: 'raise men at the Fortress of Radiance' },
 			{ id: 'rebel-black-headband-army', role: 'black bands', angle: 'iconic lower-third', at: 'The rebel band ties black headbands' },
 			{ id: 'silla-blue-camp', role: 'Silla camp', angle: 'iconic opposite', at: 'Between the camps a small pavilion goes up' },
 			{ id: 'bidam-yushin-tea-ots', role: 'tea OTS', angle: 'OTS', at: 'Tea first.' },
@@ -1366,11 +1364,12 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'bidam-yushin-tea-cold', role: 'cold tea', angle: 'ECU cups', at: 'The tea is cold before anyone raises a blade' },
 			{ id: 'bidam-yushin-duel-youth', role: 'duel youth', angle: 'dutch', at: 'The yard after rain' },
 			{ id: 'bidam-yushin-duel-prime', role: 'duel prime', angle: "worm’s-eye", at: 'only the old score again' },
+			{ id: 'bidam-defends-yushin', role: 'defends Yushin', angle: 'OTS yard', at: 'What did any of you do to earn True Bone?' },
 			{ id: 'yushin-cavern-lineage-wide', role: 'lineage wide', angle: "worm’s-eye cavern", at: 'Two shapes wait where the rock shelves into black' },
 			{ id: 'yushin-father-grandfather-close', role: 'lineage close', angle: 'dutch three', at: 'Two shapes wait where the rock shelves into black' },
 			{ id: 'yushin-cavern-seohyeon-hand', role: 'father hand', angle: 'ECU', at: 'You are my son. You are Kim Yushin.' },
 			{ id: 'yushin-cavern-muryuk-proud', role: 'grandfather', angle: 'OTS', at: 'I loved you before I knew you.' },
-			{ id: 'bidam-yushin-duel-day10', role: 'day 10 clash', angle: "worm’s-eye", at: 'They meet again between the camps — not as councillor and marshal' }
+			{ id: 'bidam-yushin-duel-day10', role: 'day 10 clash', angle: "worm’s-eye", at: 'They meet again between the camps' }
 		]
 	},
 	{

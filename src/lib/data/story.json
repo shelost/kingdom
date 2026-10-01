@@ -1960,13 +1960,6 @@
 							}
 						],
 						"after": "Long live <i><b>Queen Sunduk!</b></i>"
-					},
-					{
-						"kind": "quote",
-						"hanja": "毗曇、廉宗等謂女主不能善理 因謀叛擧兵 不克",
-						"ko": "비담·염종 등이 이르기를, 여주(女主)는 잘 다스리지 못한다 하고, 반란을 꾀하여 군사를 일으켰으나 이기지 못하였다.",
-						"html": "Bidam, Yeomjong and others said a woman sovereign cannot govern well, and so plotted rebellion and raised troops, but did not succeed.",
-						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 16 (647), 1st month; Lee Byong-do ed., vol. 1, p. 122"
 					}
 				],
 				"music": "Long Live the Queen"
@@ -38204,7 +38197,7 @@
 						"id": "council-supum-flame",
 						"ratio": 1.778,
 						"tone": "#7f9fd0",
-						"at": "Premier Supum",
+						"at": "High Councillor Supum",
 						"alt": "Premier Supum at the far side of the oval table, blue flame framing his face, white dragon-coat",
 						"refs": [
 							"/img_sunduk_02.png",
@@ -38213,19 +38206,6 @@
 						],
 						"prompt": "Minimal iconic 16:9 still. Supum at the table, blue flame. Council coat. No text. No watermark.",
 						"tempImage": "/temp/council-supum-flame.jpg"
-					},
-					{
-						"id": "council-tea-supum",
-						"ratio": 1.778,
-						"tone": "#0a0c12",
-						"at": "still decide only by unanimity",
-						"alt": "Premier Supum across the low table, tea and blue flame in a dark pavilion",
-						"refs": [
-							"/ch_supum.png",
-							"/ch_bidam.png"
-						],
-						"prompt": "Intimate cinematic 16:9. Supum, tea, blue flame. No text. No watermark.",
-						"tempImage": "/temp/council-tea-supum.jpg"
 					},
 					{
 						"id": "chunchu-strategist",
@@ -38243,7 +38223,7 @@
 						"ratio": 1.9,
 						"tone": "#334155",
 						"alt": "The great councillors of the Harmony Council weigh the succession in session",
-						"at": "Our sacred country has produced no end of talent,",
+						"at": "when Her Majesty fails, who next",
 						"prompt": "Cinematic historical illustration of council five, Three Kingdoms of Samhan / Tang era (645), scene: The Harmony Council, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/council-five.jpg"
 					},
@@ -38278,7 +38258,7 @@
 						"id": "council-hands-blue",
 						"ratio": 1.778,
 						"tone": "#3E79E4",
-						"at": "Yushin’s hand is among them",
+						"at": "Nothing moves unless the circle closes",
 						"alt": "Overhead stamp: black oval table, blue flame at center, white dragon-coat sleeves in a ring",
 						"refs": [
 							"/img_sunduk_02.png",
@@ -38288,23 +38268,10 @@
 						"tempImage": "/temp/council-hands-blue.jpg"
 					},
 					{
-						"id": "council-veto-fist",
-						"ratio": 1.778,
-						"tone": "#141C2E",
-						"at": "Only one hand stays down",
-						"alt": "Five sleeves raised; Bidam’s fist still on the lamplit table",
-						"refs": [
-							"/ch_bidam.png",
-							"/ch_alchun.png"
-						],
-						"tempImage": "/temp/council-veto-fist.jpg",
-						"prompt": "Intimate cinematic still. Five hands up, one fist on the table. Bidam face matches attached portrait. No text. No watermark."
-					},
-					{
 						"id": "council-veto-blue",
 						"ratio": 1.778,
 						"tone": "#141C2E",
-						"at": "I object.",
+						"at": "Only one hand stays down",
 						"alt": "Five white dragon-coat sleeves up around the blue flame; Bidam’s fist stays on the table",
 						"refs": [
 							"/img_sunduk_02.png",
@@ -38326,19 +38293,6 @@
 						],
 						"prompt": "Intimate cinematic 16:9 veto. Tea, blue flame. No text. No watermark.",
 						"tempImage": "/temp/council-tea-veto.jpg"
-					},
-					{
-						"id": "council-seq-veto",
-						"ratio": 1.778,
-						"tone": "#141C2E",
-						"at": "Five pieces go to the yes side of the cup",
-						"alt": "Same pavilion: five pieces yes, Bidam’s piece alone on the no side",
-						"refs": [
-							"/ch_bidam.png",
-							"/ch_supum.png"
-						],
-						"prompt": "645 veto pieces. No text. No watermark.",
-						"tempImage": "/temp/council-seq-veto.jpg"
 					},
 					{
 						"id": "council-seq-veto-close",
@@ -38392,23 +38346,6 @@
 						"tempImage": "/temp/bidam-father-first-day.jpg"
 					},
 					{
-						"id": "bidam-defends-yushin",
-						"ratio": 1.778,
-						"tone": "#2A5FB8",
-						"at": "the Gaya boy’s mouth",
-						"alt": "Young Bidam steps between yard bullies and Yushin; beads vs a standing blue sleeve",
-						"people": [
-							"bidam",
-							"yushin"
-						],
-						"refs": [
-							"/ch_bidam_hwarang.png",
-							"/ch_kim_yushin_hwarang.png"
-						],
-						"prompt": "OTS yard, navy sleeve as diagonal, Class 51, Bidam beads #141C2E, Yushin #2A5FB8.",
-						"tempImage": "/temp/bidam-defends-yushin.jpg"
-					},
-					{
 						"id": "parody-last-supper",
 						"ratio": 1.778,
 						"tone": "#7f9fd0",
@@ -38448,12 +38385,12 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>Premier Supum</b> succeeds <b>Euljé (60)</b> in the first chair. The <b>Harmony Council</b>’s six sleeves — <b>Alchun</b>, <b>Yushin</b>, <b>Murim</b>, <b>Imjong</b>, <b>Suljong</b>, and <b>Yumjang</b> — still decide only by unanimity, which is the only way the Council selects anything.",
-						"ko": "<b>수범 상대등</b>이 <b>을제 (60)</b>의 첫 자리를 이어받는다. <b>화백회의</b>의 여섯 소매 — <b>알천</b>, <b>유신</b>, <b>무림</b>, <b>임종</b>, <b>술종</b>, <b>염장</b> — 은 여전히 만장일치로만 결정한다. 화백이 무엇을 고르는 유일한 방식이다."
+						"html": "<b>High Councillor Supum</b> has held the first chair since <b>Euljé</b> left it. The <b>Harmony Council</b>’s six sleeves — <b>Alchun</b>, <b>Yushin</b>, <b>Murim</b>, <b>Imjong</b>, <b>Suljong</b>, and <b>Bidam</b> — still decide only by unanimity, which is the only way the Council selects anything.",
+						"ko": "<b>수범 상대등</b>은 <b>을제</b>에게서 이어받은 첫 자리를 지키고 있다. <b>화백회의</b>의 여섯 소매 — <b>알천</b>, <b>유신</b>, <b>무림</b>, <b>임종</b>, <b>술종</b>, <b>비담</b> — 은 여전히 만장일치로만 결정한다. 화백이 무엇을 고르는 유일한 방식이다."
 					},
 					{
 						"kind": "p",
-						"html": "The technique has not changed since they crowned Dukman: <b>initial vote, deliberation, final vote</b>. Six Councillors. One Premier. Nothing moves unless the circle closes.",
+						"html": "The technique has not changed since they crowned Dukman: <b>initial vote, deliberation, final vote</b>. Six Councillors. One High Councillor. Nothing moves unless the circle closes.",
 						"ko": "기법은 덕만을 세울 때부터 같다. <b>초투표, 숙고, 최종 투표</b>. 대등 여섯. 상대등 하나. 원이 닫히지 않으면 아무것도 안 움직인다."
 					},
 					{
@@ -38477,7 +38414,7 @@
 							"Murim",
 							"Imjong",
 							"Suljong",
-							"Yumjang"
+							"Bidam"
 						],
 						"rows": [
 							[
@@ -38486,14 +38423,14 @@
 								"무림",
 								"임종",
 								"술종",
-								"염장"
+								"비담"
 							]
 						]
 					},
 					{
 						"kind": "p",
-						"html": "One by one the hands go up. In a unanimous council a raised hand is a kind of weather — once it starts, it finishes. <b>Yushin</b>’s hand is among them. He has served one queen; he will serve her sister. That is what loyalty looks like when it has already chosen its direction.",
-						"ko": "손이 하나씩 오른다. 만장일치 회의에서 손이란 일종의 날씨다 — 한 번 시작되면 끝난다. <b>유신</b>의 손도 그 안에 있다. 여왕 하나를 섬겼으면 그 누이도 섬긴다. 이미 방향을 고른 충성이란 그런 것이다."
+						"html": "One by one the hands go up. In a unanimous council a raised hand is a kind of weather — once it starts, it finishes. <b>Yushin</b>’s hand is among them. He has served one queen; he will serve her sister.",
+						"ko": "손이 하나씩 오른다. 만장일치 회의에서 손이란 일종의 날씨다 — 한 번 시작되면 끝난다. <b>유신</b>의 손도 그 안에 있다. 여왕 하나를 섬겼으면 그 누이도 섬긴다."
 					},
 					{
 						"kind": "p",
@@ -38519,24 +38456,15 @@
 						"chip": "#6b7280",
 						"lines": [
 							"비담. 초투표요.",
-							"다섯이 들었소. 숙고할 거리가 뭐요."
+							"다섯이 들었소. 숙고할 거리가 뭐요.",
+							"최종 투표를 열 수조차 없소.",
+							"당신이 문을 잠근 거요."
 						],
 						"en": [
 							"Bidam. This is the initial vote.",
-							"Five are up. What is there to deliberate."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "imjong",
-						"chip": "#78716c",
-						"lines": [
-							"당신이 세운 여왕의 누이요.",
-							"오늘은 나라 일이 아니라 집안일이오."
-						],
-						"en": [
-							"The sister of the queen you raised.",
-							"Today this is not the country. It is the house."
+							"Five are up. What is there to deliberate.",
+							"We cannot even open the final vote.",
+							"You locked the door."
 						]
 					},
 					{
@@ -38550,19 +38478,6 @@
 						"en": [
 							"One hand down and this room is finished.",
 							"You know that, and you still put it down?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "yumjang",
-						"chip": "#64748b",
-						"lines": [
-							"최종 투표를 열 수조차 없소.",
-							"당신이 문을 잠근 거요."
-						],
-						"en": [
-							"We cannot even open the final vote.",
-							"You locked the door."
 						]
 					},
 					{
@@ -38600,13 +38515,13 @@
 						"lines": [
 							"승만공주는 폐하만큼 총명하진 않습니다.",
 							"성골이라는 이유만으로 나라를 맡길 수는 없습니다.",
-							"열세 살의 제가 덕만공주를 밀었을 때는, 그분이 제일 총명해서였습니다.",
+							"열세 해 전, 제가 덕만공주를 밀었을 때는, 그분이 제일 총명해서였습니다.",
 							"지금은… 그 기준을 버리라는 겁니까."
 						],
 						"en": [
 							"Princess Seungman is not as clear-sighted as Her Majesty.",
 							"We cannot hand the country over for Sacred Bone alone.",
-							"When I was thirteen and stood for Princess Dukman, it was because she was the cleverest.",
+							"Thirteen years ago, when I stood for Princess Dukman, it was because she was the cleverest.",
 							"Now you ask me to throw that measure away."
 						],
 						"chip": "#7b5cd6"
@@ -38647,8 +38562,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Yushin does not answer the count. Something in his face closes that has been open since they were boys on the yard. The Council adjourns with no successor named. The rift is not loud. It does not need to be. In this room, one no stops a name.",
-						"ko": "유신은 그 수에 대답하지 않는다. 연무장 소년 시절부터 열려 있던 얼굴의 한 곳이 닫힌다. 화백은 후계 없이 파한다. 균열은 시끄럽지 않다. 그럴 필요가 없다. 이 방에서는 반대 하나가 이름을 멈춘다."
+						"html": "Yushin does not answer the count. Something in his face closes that has been open since they were boys on the yard. The Council adjourns with no successor named.",
+						"ko": "유신은 그 수에 대답하지 않는다. 연무장 소년 시절부터 열려 있던 얼굴의 한 곳이 닫힌다. 화백은 후계 없이 파한다."
 					},
 					{
 						"kind": "flashback",
@@ -38724,103 +38639,20 @@
 						]
 					},
 					{
-						"kind": "flashback",
-						"year": "611",
-						"title": "The Gaya boy’s mouth",
-						"blocks": [
-							{
-								"kind": "p",
-								"html": "Same class — 오십일기. Bidam is a year older; Yushin still sounds like the surrender. Two 선배 from the class before them have him by the collar for <b>the Gaya boy’s mouth</b>.",
-								"ko": "같은 기수 — 오십일기. 비담이 한 살 위고, 유신은 아직 항복한 나라 말투다. 한 기수 위 선배 둘이 <b>가야 아이 입</b> 때문에 옷깃을 잡는다."
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#6b7280",
-								"speaker": "Hwarang",
-								"lines": [
-									"야.",
-									"입 다시 해 봐. 서라벌 말로.",
-									"가야는 저기 없거든."
-								],
-								"en": [
-									"Hey.",
-									"Say it again. In a Surabol mouth.",
-									"Gaya isn’t over here."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#4a8fe0",
-								"person": "yushin",
-								"look": "hwarang",
-								"lines": [
-									"…다시 하겠습니다.",
-									"형님."
-								],
-								"en": [
-									"…I’ll say it again.",
-									"Hyungnim."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "Bidam is already between them. Beads knock once against the wrist. He does not recite a sutra. He takes the collar out of their hands.",
-								"ko": "비담은 이미 그 사이에 서 있다. 염주가 손목에 한 번 부딪친다. 경은 외지 않는다. 옷깃만 선배들 손에서 빼낸다."
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#7b5cd6",
-								"person": "bidam",
-								"look": "hwarang",
-								"lines": [
-									"오십일긴데.",
-									"우리 기수 입을 갖고 놀지 마.",
-									"머리띠.",
-									"이거 하면 — 더 잡지 마."
-								],
-								"en": [
-									"He’s Class 51.",
-									"Don’t play with our class’s mouth.",
-									"Headband.",
-									"He wears this — you don’t grab him again."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#4a8fe0",
-								"person": "yushin",
-								"look": "hwarang",
-								"lines": [
-									"…왜.",
-									"형님은 손씨인데."
-								],
-								"en": [
-									"…Why.",
-									"You’re a Son."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#7b5cd6",
-								"person": "bidam",
-								"look": "hwarang",
-								"lines": [
-									"알아.",
-									"가서 일어서.",
-									"점수는 내일."
-								],
-								"en": [
-									"I know.",
-									"Go stand up.",
-									"Score’s tomorrow."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "The 선배 laugh anyway, later, where Bidam cannot hear. Yushin keeps the headband. The walk-alone does not wait for a crowd to agree.",
-								"ko": "선배들은 나중에, 비담이 안 듣는 곳에서, 그래도 웃는다. 유신은 머리띠를 지킨다. 혼자 걷는 일은 무리가 동의해 주기를 기다리지 않는다."
-							}
-						]
+						"kind": "p",
+						"html": "In the emptied hall the incense has burned down to a stub. Bidam has not left the table. His fist is still on the wood.",
+						"ko": "텅 빈 회의장에서 향은 끄트머리만 남기고 다 탔다. 비담은 아직 탁자를 떠나지 않았다. 주먹은 여전히 나무 위에 있다.",
+						"art": "Wide: the emptied council hall, every seat empty but Bidam’s, his fist still on the table."
+					},
+					{
+						"kind": "scene",
+						"label": "Princess Seungman",
+						"ko": "승만공주"
+					},
+					{
+						"kind": "p",
+						"html": "Princess Seungman catches him at the palace gate. Word has reached her before he has.",
+						"ko": "승만공주가 궁문에서 그를 붙잡는다. 소문이 그보다 먼저 와 있었다."
 					},
 					{
 						"kind": "dialogue",
@@ -38830,9 +38662,8 @@
 							"설마…"
 						],
 						"en": [
-							"Bidam…!",
-							"What are you saying?",
-							"Surely you don’t—"
+							"Bidam…! What is this I hear?",
+							"Surely not…"
 						],
 						"chip": "#9d7bd0"
 					},
@@ -38851,37 +38682,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He starts counting who would come with him. It begins as arithmetic and stops being arithmetic somewhere along the way.",
-						"ko": "그는 자기를 따를 사람이 몇인지 세기 시작한다. 처음엔 계산이었는데, 어느 지점부터 계산이 아니게 된다."
-					},
-					{
-						"kind": "p",
-						"html": "That night he takes the old black headband out of the chest where he keeps it. There is still blood on it, gone brown with the years. He does not remember whose.",
-						"ko": "그날 밤 그는 궤짝에서 낡은 검은 머리띠를 꺼낸다. 아직도 피가 묻어 있다. 세월이 흘러 갈색으로 변한 피다. 누구의 피였는지는 기억나지 않는다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#7b5cd6",
-						"person": "bidam",
-						"lines": [
-							"…그때 이걸 그 애한테 줬지.",
-							"아무도 안 괴롭힐 거라고."
-						],
-						"en": [
-							"…I gave this to that boy, back then.",
-							"Told him nobody would trouble him if he had it."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#7b5cd6",
-						"person": "bidam",
-						"lines": [
-							"괴롭히는 사람이 나라가 될 줄은 몰랐고."
-						],
-						"en": [
-							"I did not know the one troubling him would turn out to be the country."
-						]
+						"html": "He starts counting who would come with him, and the first door he knocks on is Alchun’s.",
+						"ko": "그는 자기를 따를 사람을 꼽아 보기 시작하고, 맨 먼저 두드리는 문은 알천의 문이다."
 					},
 					{
 						"kind": "dialogue",
@@ -38941,6 +38743,17 @@
 					},
 					{
 						"kind": "dialogue",
+						"chip": "#8fb3e0",
+						"lines": [
+							"…그라고 머리 좀 써 봐라. 승만공주가 못 오르면 그 자리에 누가 앉노? 춘추다. 지가 앉을 끼다."
+						],
+						"en": [
+							"…And use your head. If Princess Seungman doesn’t take the throne, who sits there? Chunchu. He’ll take it himself."
+						],
+						"person": "alchun"
+					},
+					{
+						"kind": "dialogue",
 						"chip": "#7b5cd6",
 						"lines": [
 							"춘추 공께서 안 그러시겠다고 이미 들었습니다."
@@ -38962,6 +38775,41 @@
 							"Never — not for one moment — believe a word that comes out of that mouth…!"
 						],
 						"person": "alchun"
+					},
+					{
+						"kind": "p",
+						"html": "Before the month is out, Supum is thanked for his years and sent home, and the queen makes High Councillor of the one man who told her council no.",
+						"ko": "그달이 가기 전에 수범은 그간의 노고를 치하받고 물러나고, 여왕은 자기 회의에 아니라고 말한 단 한 사람을 상대등에 앉힌다.",
+						"art": "One panel: Sunduk sets the High Councillor’s seal before Bidam across the council table; Supum’s seat empty."
+					},
+					{
+						"kind": "p",
+						"html": "That night Bidam takes the old black headband out of the chest where he keeps it. There is still blood on it, gone brown with the years. He does not remember whose.",
+						"ko": "그날 밤 비담은 궤짝에서 낡은 검은 머리띠를 꺼낸다. 아직도 피가 묻어 있다. 세월이 흘러 갈색으로 변한 피다. 누구의 피였는지는 기억나지 않는다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#7b5cd6",
+						"person": "bidam",
+						"lines": [
+							"…그때 이걸 그 애한테 줬지.",
+							"아무도 안 괴롭힐 거라고."
+						],
+						"en": [
+							"…I gave this to that boy, back then.",
+							"Told him nobody would trouble him if he had it."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#7b5cd6",
+						"person": "bidam",
+						"lines": [
+							"괴롭히는 사람이 나라가 될 줄은 몰랐고."
+						],
+						"en": [
+							"I did not know the one troubling him would turn out to be the country."
+						]
 					}
 				],
 				"music": "The Harmony Council"
@@ -39000,17 +38848,6 @@
 						"tempImage": "/temp/bidam-rebellion-wide.jpg"
 					},
 					{
-						"id": "bidam-defiance",
-						"ratio": 0.5625,
-						"tone": "#5b21b6",
-						"at": "Bidam",
-						"alt": "Bidam looking upward with defiance - rebel ambition against the throne",
-						"src": "/temp/bidam_defiance_upward.png",
-						"refs": [
-							"/ch_bidam.png"
-						]
-					},
-					{
 						"id": "bidam-sword-dark",
 						"ratio": 0.5625,
 						"tone": "#141C2E",
@@ -39037,23 +38874,11 @@
 						"prompt": "Intimate cinematic CLOSE-UP. Dark navy. Bidam and the gold RING POMMEL at the end of the hilt. Face matches the attached portrait. No text. No watermark."
 					},
 					{
-						"id": "bidam-sword-carry",
-						"ratio": 0.5625,
-						"tone": "#141C2E",
-						"at": "a gold circle at the end of old-hall steel",
-						"alt": "Navy void: only the golden ring pommel of Bidam’s heavenly-horse sword holds the light",
-						"refs": [
-							"/sword_horse.png"
-						],
-						"tempImage": "/temp/bidam-sword-carry.jpg",
-						"prompt": "Minimal iconic 9:16. Navy void #141C2E. Only the GOLDEN RING POMMEL glistens — white horse inside the ring. No text. No watermark."
-					},
-					{
 						"id": "bidam-poster",
 						"ratio": 3.333,
 						"tone": "#312e81",
 						"src": "/img_bidam_01.png",
-						"alt": "Bidam standing under a blank gold sutra-bar in a navy void, 108 beads at the wrist",
+						"alt": "Title card: Bidam diving with his sword drawn across a violet field, his name behind him in hangul and hanja.",
 						"prompt": "Minimal iconic 16:9 poster. Bidam, Second Blade of Samhan, High Councillor turned rebel. ONE geometric device: a single unrolled sutra as a hard pale-gold horizontal bar occupying only the upper third — blank paper, no readable glyphs. Face matches the attached portrait: tanned skin, thin neat mustache, dark hair volume swept back with a few locks on the forehead, calm faint smile — NOT a full beard, NOT a high warrior ponytail, NOT Yushin. Isolated poster-scale body in the lower third, standing (not lotus, not seated), 108 prayer beads as one small gold loop at the wrist. Navy void #141C2E as the plane. Striking silky white hanbok over a plum-magenta inner collar, few hues, premium sheen, wide sleeves. Sutra/lotus gold is the single Buddhist accent, not generic gilding. Flat charcoal-navy void. No army. No fortress. No flags. No clouds. No sword. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental. NOT photoreal. NOT busy.",
 						"refs": [
 							"/ch_bidam.png"
@@ -39222,7 +39047,7 @@
 						"tone": "#e9d5ff",
 						"src": "/img_bidam_06.png",
 						"alt": "Dragon pommel against heavenly horse — Bidam and Yushin's last duel between the camps",
-						"at": "Hwarang Kim Yushin",
+						"at": "Dragon pommel against heavenly horse",
 						"prompt": "Cinematic historical illustration of bidam 06, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"refs": [
 							"/img_bidam_06.png",
@@ -39234,23 +39059,12 @@
 						"tempImage": "/temp/duel-shadows.jpg"
 					},
 					{
-						"id": "bidam-death-betrayal",
-						"ratio": 1.778,
-						"tone": "#312e81",
-						"at": "former best friend",
-						"alt": "K-drama emotional close-up: Bidam dying slowly, blood on black robe, eyes full of profound sadness and betrayal by his former best friend, expression of heartbreak",
-						"src": "/emotional_bidam_death_betrayal.png",
-						"refs": [
-							"/ch_bidam.png"
-						]
-					},
-					{
 						"id": "young-yushin",
 						"ratio": 3.333,
 						"tone": "#d6d3d1",
 						"src": "/img_bidam_07.png",
-						"alt": "Yushin at the dying queen's bedside — the promise of 632 kept to the end",
-						"at": "Your Majesty… Yushin is here",
+						"alt": "Young Yushin on the yard, mud on his face, grinning and pointing at himself — “My name is Kim Yushin!”",
+						"at": "My name is Kim Yushin",
 						"prompt": "Cinematic historical illustration of bidam 07, Three Kingdoms of Samhan / Tang era (647), scene: Bidam’s Rebellion, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"refs": [
 							"/img_bidam_07.png",
@@ -39279,7 +39093,7 @@
 						"tone": "#2f4a44",
 						"src": "/img_steam_again_02.png",
 						"alt": "The night before Radiance — counsel in the steam before Yushin must kill a friend",
-						"at": "The night before the tenth day",
+						"at": "Yushin goes to the cavern lake",
 						"prompt": "Cinematic ultrawide solemn oracle inside steam cavern. Clean-shaven grieving general chest-deep in glowing cyan water (manhwa Yushin); painterly Narim in green silk gives a stern warning; shy painterly Hyullé in pale blue waits on a warm ledge. Night before he must kill a friend. Refs: /ch_narim.png, /ch_hyullé.png, /ch_kim_yushin.png. Place refs: /pl_cave.png. Style split. Tasteful steam. No text, no watermark. --ar 10:3",
 						"refs": [
 							"/img_steam_again_02.png",
@@ -39536,30 +39350,6 @@
 						]
 					},
 					{
-						"id": "bidam-second-blade",
-						"ratio": 1.778,
-						"tone": "#141C2E",
-						"at": "Second Blade of Samhan — and",
-						"alt": "Bidam large in the lower left of an empty night-navy field, a thin magenta line cutting the sky",
-						"prompt": "Unique low-strip layout: Bidam #141C2E, no army.",
-						"refs": [
-							"/ch_bidam.png"
-						],
-						"tempImage": "/temp/bidam-second-blade.jpg"
-					},
-					{
-						"id": "bidam-defiance-upward",
-						"ratio": 0.5625,
-						"tone": "#141C2E",
-						"at": "Second Blade of Samhan",
-						"alt": "Bidam looking upward in defiance — purple night",
-						"prompt": "9:16: Bidam jaw set, gaze upward, purple-navy void. No army. No text.",
-						"refs": [
-							"/ch_bidam.png"
-						],
-						"tempImage": "/temp/bidam-defiance-upward.png"
-					},
-					{
 						"id": "bidam-sutra-recitation",
 						"ratio": 1.778,
 						"tone": "#141C2E",
@@ -39594,31 +39384,6 @@
 							"/ch_bidam_old.png"
 						],
 						"tempImage": "/temp/bidam-beads-ring.jpg"
-					},
-					{
-						"id": "bidam-incense-column",
-						"ratio": 0.5625,
-						"tone": "#141C2E",
-						"at": "Open the Radiance gate.",
-						"alt": "One gold incense shaft through navy — tiny Bidam at the base",
-						"prompt": "Iconic minimal epic, 9:16. Single vertical gold incense shaft through a flat #141C2E navy field. No clouds. Tiny black-robed seated silhouette at the foot. Painterly cinematic, not photoreal. No text, no watermark.",
-						"refs": [
-							"/ch_bidam_old.png"
-						],
-						"tempImage": "/temp/bidam-incense-column.jpg"
-					},
-					{
-						"id": "radiance-siege-ring",
-						"ratio": 1.778,
-						"tone": "#141C2E",
-						"at": "High Councillor <b>Bidam (42)</b>",
-						"alt": "Myeonghwal mountain fortress (Radiance) east of Gyeongju under Silla siege, incense rising from the keep",
-						"prompt": "Cinematic historical still, 16:9, high view of REAL Myeonghwalsanseong east of Gyeongju: a stone mountain fortress in pine hills. Silla blue-bannered siege lines in the valleys. A thin column of incense/smoke from the inner keep. Real Korean mountain castle, not a symbol. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
-						"refs": [
-							"/ch_bidam.png",
-							"/ch_kim_yushin.png"
-						],
-						"tempImage": "/temp/radiance-siege-ring.jpg"
 					},
 					{
 						"id": "bidam-yushin-two-laws",
@@ -39659,21 +39424,6 @@
 						"tempImage": "/temp/bidam-pavilion-empty.jpg"
 					},
 					{
-						"id": "bidam-gold-shaft",
-						"ratio": 0.5625,
-						"tone": "#141C2E",
-						"at": "High Councillor <b>Bidam (42)</b>",
-						"alt": "Bidam seated in lotus under a single gold incense shaft in a black void, 108 beads catching the beam",
-						"prompt": "Minimal iconic 9:16 poster. Bidam, Buddhist rebel of Radiance. ONE geometric device: a single thin GOLD INCENSE SHAFT dropping from the top edge through black, dust motes only inside the beam. He SITS in lotus in the lower-center, almost lost in the void; 108 wooden-gold prayer beads in the lap catching the shaft. Face matches the attached portrait: tanned skin, thin neat mustache, dark hair swept back, calm closed eyes, NOT a full beard, NOT Yushin’s ponytail. Face mostly in shadow; thin gold rim-light. Navy near-black hanbok #141C2E, sutra gold the single accent. Striking silky hanbok. Eighty percent of the frame is black void. Form defined by the shaft and rim, not a lit portrait. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_bidam.png"
-						],
-						"people": [
-							"bidam"
-						],
-						"tempImage": "/temp/bidam-gold-shaft.jpg"
-					},
-					{
 						"id": "alchun-tablet-bar",
 						"ratio": 0.5625,
 						"tone": "#8fb3e0",
@@ -39687,21 +39437,6 @@
 							"alchun"
 						],
 						"tempImage": "/temp/alchun-tablet-bar.jpg"
-					},
-					{
-						"id": "bidam-lotus-sit",
-						"ratio": 0.5625,
-						"tone": "#141C2E",
-						"at": "Tea first.",
-						"alt": "Bidam sitting in lotus in a navy void, 108 gold beads and a lotus-gold shaft the only light",
-						"prompt": "Minimal iconic 9:16 poster. Bidam, Buddhist nativist. He SITS in lotus. ONE geometric device: 108 prayer beads as a gold RING plus a vertical lotus-gold shaft. Navy void #141C2E. Face matches the attached portrait. Sutra/lotus gold, not generic gilding. Not Yushin standing. No army. No sword. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_bidam.png"
-						],
-						"people": [
-							"bidam"
-						],
-						"tempImage": "/temp/bidam-lotus-sit.jpg"
 					},
 					{
 						"id": "bidam-break-close",
@@ -39803,7 +39538,7 @@
 						"id": "sunduk-wound-close",
 						"ratio": 0.75,
 						"tone": "#6ea8ff",
-						"at": "goes pale",
+						"at": "The rebel shout shakes the ground",
 						"alt": "The dying queen's face under falling starlight — Sunduk hearing heaven vote against her, the marshal's hand at the edge",
 						"prompt": "Intimate cinematic CLOSE-UP still, 3:4. Painterly anime-adjacent cinema, not photoreal, not cartoon. Queen Sunduk, fifty-two and dying, as the rebel shout for the fallen star reaches the sickroom. ONE device: light from the falling star coming through a wooden lattice and laid over her face as a single travelling bar, everything outside that bar in shadow; a marshal's hand entering at the frame edge and not yet reaching hers. Face matches the attached portrait: gaunt now, sweat at the hairline, eyes open and clear and unsurprised. Pale royal blue #6ea8ff the single accent, on the light bar and her collar. Silky pale hanbok, black room, few hues. Skin and eyes forward. No attendants. No crown. No text. No watermark.",
 						"refs": [
@@ -39919,7 +39654,7 @@
 						"id": "chunchu-sends-bupmin",
 						"ratio": 1.778,
 						"tone": "#D8258C",
-						"at": "send Bupmin to the steam",
+						"at": "Take a jar.",
 						"alt": "Chunchu mid-stride in Wolseong, magenta rim, sending twenty-one-year-old Bupmin with a jar",
 						"people": [
 							"chunchu",
@@ -39997,7 +39732,7 @@
 						"id": "water-does-nothing",
 						"ratio": 1.778,
 						"tone": "#141C2E",
-						"at": "why isn't it doing anything",
+						"at": "why isn’t it doing anything",
 						"alt": "ECU: water beads on Bidam’s face, no vision, beads still, navy void",
 						"people": [
 							"bidam",
@@ -40098,24 +39833,6 @@
 						],
 						"prompt": "Minimal iconic 16:9 DUTCH. Camera at the timber gate of the attached Radiance fortress — real stone, giwa, wooden leaves. Bidam and Yumjong mid-stride opening the gate at night. Faces from attached portraits. BOTH wear BLACK HEADBANDS. Bidam navy #141C2E robe and beads. ONE device: the open gate as a hard vertical split. Tiny torch only. No army catalog. Crushed black, natural night sky. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
 						"tempImage": "/temp/bidam-yumjong-gate.jpg"
-					},
-					{
-						"id": "bidam-yumjong-rally",
-						"ratio": 1.778,
-						"tone": "#141C2E",
-						"at": "raise men at the Fortress of Radiance",
-						"alt": "Minimal iconic 16:9. Bidam mid-shout on Radiance packed earth from attached plac",
-						"people": [
-							"bidam",
-							"yumjong"
-						],
-						"refs": [
-							"/pl_radiance_fortress.png",
-							"/ch_bidam.png",
-							"/ch_yumjong.png"
-						],
-						"prompt": "Minimal iconic 16:9. Bidam mid-shout on Radiance packed earth from attached place, Yumjong beside him pointing. Faces from attached portraits. BLACK HEADBANDS on both. ONE device: a black headband ribbon as a hard horizontal bar across the upper third. A handful of tiny rebel silhouettes with matching black bands in the lower third — not an army catalog. #141C2E navy plane. High contrast. No text. No watermark. EVERY FRAME A PAINTING: compose as a master canvas — one geometry or one body owns the frame; light is the plot; negative space is ink; not coverage, not a tourist postcard, not a game-map. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
-						"tempImage": "/temp/bidam-yumjong-rally.jpg"
 					},
 					{
 						"id": "rebel-black-headband-army",
@@ -40236,7 +39953,7 @@
 						"id": "bidam-yushin-duel-day10",
 						"ratio": 1.778,
 						"tone": "#2A5FB8",
-						"at": "They meet again between the camps — not as councillor and marshal",
+						"at": "They meet again between the camps",
 						"alt": "Minimal iconic 16:9 WORM’S-EYE between the camps. Bidam and Yushin mid-clash — d",
 						"people": [
 							"bidam",
@@ -40435,9 +40152,33 @@
 							"hyulle"
 						],
 						"tempImage": "/temp/parody-laocoon-bidam.jpg"
+					},
+					{
+						"id": "bidam-defends-yushin",
+						"ratio": 1.778,
+						"tone": "#2A5FB8",
+						"at": "What did any of you do to earn True Bone?",
+						"alt": "Young Bidam steps between yard bullies and Yushin; beads vs a standing blue sleeve",
+						"people": [
+							"bidam",
+							"yushin"
+						],
+						"refs": [
+							"/ch_bidam_hwarang.png",
+							"/ch_kim_yushin_hwarang.png"
+						],
+						"prompt": "OTS yard, navy sleeve as diagonal, Class 51, Bidam beads #141C2E, Yushin #2A5FB8.",
+						"tempImage": "/temp/bidam-defends-yushin.jpg"
 					}
 				],
 				"blocks": [
+					{
+						"kind": "quote",
+						"hanja": "毗曇、廉宗等謂女主不能善理 因謀叛擧兵 不克",
+						"ko": "비담·염종 등이 이르기를, 여주(女主)는 잘 다스리지 못한다 하고, 반란을 꾀하여 군사를 일으켰으나 이기지 못하였다.",
+						"html": "Bidam, Yeomjong and others said a woman sovereign cannot govern well, and so plotted rebellion and raised troops, but did not succeed.",
+						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 16 (647), 1st month; Lee Byong-do ed., vol. 1, p. 122"
+					},
 					{
 						"kind": "day",
 						"label": "DAY 1",
@@ -40445,8 +40186,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Queen Sunduk (52)</b> is in critical condition. The Eastern Palace smells of medicine and unfinished minutes.",
-						"ko": "<b>선덕여왕 (52)</b>이 위독하다. 동궁에는 약 냄새와 끝나지 않은 회의록 냄새가 난다."
+						"html": "<b>Queen Sunduk (52)</b> is in critical condition. The Eastern Palace smells of medicine and of a succession nobody has settled.",
+						"ko": "<b>선덕여왕 (52)</b>이 위독하다. 동궁에는 약 냄새와, 아무도 정하지 못한 후계의 냄새가 난다."
 					},
 					{
 						"kind": "quote",
@@ -40498,17 +40239,17 @@
 						"person": "yumjong",
 						"lines": [
 							"명활성 문을 열어라.",
-							"비담 대등께서 오신다 — 오늘은 예의가 아니라 깃발이다."
+							"비담 상대등께서 오신다 — 오늘은 예의가 아니라 깃발이다."
 						],
 						"en": [
 							"Open the Radiance gate.",
-							"Councillor Bidam comes — today it is the banner, not courtesy."
+							"High Councillor Bidam comes — today it is the banner, not courtesy."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "Before noon <b>Alchun</b> is summoned twice — once by the Sword of Silla, once by the Premier with a banner — and he answers both, because neutrality in Alchun’s mouth was never silence: it is the same hard sentence spoken to opposite walls.",
-						"ko": "정오 전에 <b>알천</b>은 두 번 불린다 — 신라의 도검에게 한 번, 깃발을 든 상대등에게 한 번 — 그리고 둘 다에게 답한다. 알천의 입에서 중립은 애초에 침묵인 적이 없다. 반대편 두 벽에 대고 말하는, 똑같이 단단한 한 문장이다."
+						"html": "Before noon <b>Alchun</b> is summoned twice — once by the Sword of Silla, once by the High Councillor with a banner — and he answers both.",
+						"ko": "정오 전에 <b>알천</b>은 두 번 불린다 — 신라의 도검에게 한 번, 깃발을 든 상대등에게 한 번 — 그리고 둘 다에게 답한다."
 					},
 					{
 						"kind": "dialogue",
@@ -40538,7 +40279,7 @@
 						],
 						"en": [
 							"Bidam…",
-							"You swore allegiance to the Hwarang, and the divine nation has vested you with the authority of the Premier — the highest office in the land.",
+							"You swore allegiance to the Hwarang, and the divine nation has vested you with the authority of the High Councillor — the highest office in the land.",
 							"For you to take up arms against the crown would be an act of highest treason."
 						]
 					},
@@ -40570,7 +40311,7 @@
 					{
 						"kind": "p",
 						"html": "Night. Between the camps a small pavilion goes up — a 정자 with no walls, no chairs, only a low wooden table. Neither side’s banner on the ridgepole. Tea already poured. A half moon hangs in an empty sky. They meet the way they once met after sparring: gloves off, courtesy on.",
-						"ko": "밤. 진영 사이에 작은 정자가 오른다 — 벽도 없고, 의자도 없고, 낮은 목탁상만. 어느 쪽 깃발도 없는 서까래. 차는 이미 따르고. 빈 하늘에 반달이 걸려 있다. 연무장 뒤 만나던 것처럼 — 장갑은 벗고, 예의는 남긴 채."
+						"ko": "밤. 진영 사이에 작은 정자가 오른다 — 벽도 없고, 의자도 없고, 낮은 나무 상 하나뿐. 어느 쪽 깃발도 없는 서까래. 차는 이미 따르고. 빈 하늘에 반달이 걸려 있다. 연무장 뒤 만나던 것처럼 — 장갑은 벗고, 예의는 남긴 채."
 					},
 					{
 						"kind": "dialogue",
@@ -40626,13 +40367,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The siege lines dig in. Inside Wolseong, Yushin paces like a man counting an old score. Outside, Bidam walks the rampart as if the stones owed him rent.",
-						"ko": "포위선이 자리를 잡는다. 월성 안에서 유신은 옛 점수를 세는 사람처럼 걷는다. 밖에서 비담은 돌이 자기에게 세를 빚진 것처럼 성벽을 돈다."
-					},
-					{
-						"kind": "p",
-						"html": "Three Hwarang. One princess. The yard remembers what the Council minutes refuse to file.",
-						"ko": "화랑 셋. 공주 하나. 연무장은 화백 회의록이 적기를 거부한 것을 기억한다."
+						"html": "Three Hwarang. One princess. The yard remembers what the Council never wrote down.",
+						"ko": "화랑 셋. 공주 하나. 연무장은 화백이 끝내 적지 않은 것을 기억한다."
 					},
 					{
 						"kind": "flashback",
@@ -40919,14 +40655,26 @@
 							"아.",
 							"처음 보는 김이야. 둘 다야.",
 							"물 받아. 양심이 달라붙어. 트라우마. 원한. 그 손을 움직이는 거.",
-							"…그리고 그렇게 서 있지 마. 나 언덕이려 하는데, 너는 무릎 위에 두고 싶은 문제처럼 생겼어."
+							"…그리고 그렇게 서 있지 마."
 						],
 						"en": [
 							"Oh.",
 							"A Kim we haven’t had. He’s both.",
 							"Take the water. Conscience sticks to it. Trauma. Grudge. Whatever’s driving the hand.",
-							"…And stop standing like that. I’m trying to be a hill and you are shaped like a problem I want in my lap."
+							"…And stop standing like that."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"나 언덕이려 하는데, 너는 무릎 위에 두고 싶은 문제처럼 생겼어."
+						],
+						"en": [
+							"I’m trying to be a hill and you are shaped like a problem I want in my lap."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -41329,8 +41077,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Alchun eats alone between the camps. Both sides send him wine. He drinks neither. Yes Minister would call this constructive ambiguity. Surabol will later call it treason with better stationery.",
-						"ko": "알천은 진영 사이에서 혼자 먹는다. 양쪽이 술을 보낸다. 그는 어느 쪽도 마시지 않는다. Yes Minister라면 건설적 모호성이라 부를 것이다. 서라벌은 나중에 더 좋은 편지지의 반역이라 부를 것이다."
+						"html": "Alchun eats alone between the camps. Both sides send him wine. He drinks neither. Surabol will later call it treason with better stationery.",
+						"ko": "알천은 진영 사이에서 혼자 먹는다. 양쪽이 술을 보낸다. 그는 어느 쪽도 마시지 않는다. 서라벌은 나중에 더 좋은 편지지의 반역이라 부를 것이다."
 					},
 					{
 						"kind": "day",
@@ -41407,11 +41155,6 @@
 						"kind": "p",
 						"html": "The tea has not been touched. He says it like a compliment that curdled — still the gentleman, still the black robe, still the voice that once shielded this same man from the yard.",
 						"ko": "차는 손대지 않았다. 상처 주는 칭찬처럼 말한다 — 여전히 군자, 여전히 흑의, 여전히 연무장에서 이 같은 사람을 막아 세던 그 목소리."
-					},
-					{
-						"kind": "p",
-						"html": "Bidam’s house is older than the moon banners — one of the first halls that swore to the white horse. Yushin’s is a conquered kingdom’s courtesy title. That is the wound under every number they ever traded.",
-						"ko": "비담의 집안은 달 깃발보다 오래다 — 백마에 먼저 맹세한 대청 중 하나. 유신의 것은 정복당한 나라가 받은 예의상의 칭호다. 둘이 주고받은 모든 숫자 밑에 있는 상처가 그것이다."
 					},
 					{
 						"kind": "dialogue",
@@ -41548,8 +41291,8 @@
 							},
 							{
 								"kind": "p",
-								"html": "They end the evening even. They always do. Bidam is still the young liberal then — the boy who stood up for a clever woman against a room of old bone.",
-								"ko": "그날 저녁도 비긴다. 언제나 그랬다. 그때 비담은 아직 젊은 개화파다 — 늙은 뼈들의 방에서 총명한 여자를 위해 일어선 소년."
+								"html": "They end the evening even. They always do.",
+								"ko": "그날 저녁도 비긴다. 언제나 그랬다."
 							}
 						]
 					},
@@ -41587,19 +41330,24 @@
 						"title": "The headband",
 						"blocks": [
 							{
+								"kind": "p",
+								"html": "The Hwarang hall, the new boy’s first day. Two seniors lean across his desk.",
+								"ko": "화랑 강당, 새로 온 아이의 첫날. 선배 둘이 그 아이 책상 너머로 몸을 기울인다."
+							},
+							{
 								"kind": "dialogue",
-								"chip": "#ec4899",
-								"person": "bidam",
+								"chip": "#6b7280",
 								"lines": [
 									"그럼 진짜 진골도 아닌 겁니데이!"
 								],
 								"en": [
 									"So he isn’t even a real True Bone!"
-								]
+								],
+								"speaker": "Senior Hwarang"
 							},
 							{
 								"kind": "dialogue",
-								"chip": "#ec4899",
+								"chip": "#7b5cd6",
 								"person": "bidam",
 								"lines": [
 									"야, 그만둬라!",
@@ -41614,7 +41362,7 @@
 							},
 							{
 								"kind": "dialogue",
-								"chip": "#ec4899",
+								"chip": "#4a8fe0",
 								"person": "yushin",
 								"lines": [
 									"고마워요."
@@ -41625,7 +41373,7 @@
 							},
 							{
 								"kind": "dialogue",
-								"chip": "#ec4899",
+								"chip": "#7b5cd6",
 								"person": "bidam",
 								"lines": [
 									"야, 뭐가 고맙나?",
@@ -41642,6 +41390,11 @@
 						"kind": "p",
 						"html": "Sixth night. The cup Yushin did not drink sits where Bidam left it. Courtesy held — and then, under the half moon, does not.",
 						"ko": "여섯째 밤. 유신이 마시지 않은 잔이 비담이 놓아 둔 자리에 있다. 예의는 지켜졌다 — 그리고 반달 아래에서, 더는 그렇지 않다."
+					},
+					{
+						"kind": "p",
+						"html": "Near midnight Yushin comes to the pavilion after all. He does not touch the cup.",
+						"ko": "자정 무렵, 유신이 끝내 정자로 온다. 잔에는 손대지 않는다."
 					},
 					{
 						"kind": "dialogue",
@@ -41721,315 +41474,326 @@
 						"ko": "일곱째 날"
 					},
 					{
+						"kind": "scene",
+						"label": "Not a Kim",
+						"ko": "김씨가 아니다"
+					},
+					{
 						"kind": "p",
-						"html": "The night before the tenth day’s arithmetic, Yushin goes to the cavern lake as if habit could hold a country together.",
-						"ko": "열흘째의 셈법 전날 밤, 유신은 습관이 나라를 붙잡아 주기라도 할 것처럼 동굴 호수로 간다."
+						"html": "<b>Bidam</b> finds the cavern the way a man finds a rumor. Sword on the lip. Beads in the fist. The navy coat comes off because he has heard Yushin wash here, and a man who wants what Yushin has will copy the wash if he cannot copy the name.",
+						"ko": "<b>비담</b>은 소문을 찾듯 동굴을 찾는다. 칼은 턱에. 염주는 주먹에. 남색 도포가 내린다. 유신이 여기서 씻는다는 말은 들었고, 유신이 가진 것을 원하는 남자는 이름을 베끼지 못하면 씻는 법을 베끼니까."
 					},
 					{
-						"kind": "flashback",
-						"year": "647",
-						"title": "not a Kim",
-						"blocks": [
-							{
-								"kind": "p",
-								"html": "<b>Bidam</b> finds the cavern the way a man finds a rumor. Sword on the lip. Beads in the fist. The navy coat comes off because he has heard Yushin wash here, and a man who wants what Yushin has will copy the wash if he cannot copy the name.",
-								"ko": "<b>비담</b>은 소문을 찾듯 동굴을 찾는다. 칼은 턱에. 염주는 주먹에. 남색 도포가 내린다. 유신이 여기서 씻는다는 말은 들었고, 유신이 가진 것을 원하는 남자는 이름을 베끼지 못하면 씻는 법을 베끼니까."
-							},
-							{
-								"kind": "p",
-								"html": "He walks into the steam with nothing on but water and one hundred and eight beads.",
-								"ko": "물과 백팔 염주만 걸치고 김 속으로 들어간다."
-							},
-							{
-								"kind": "p",
-								"html": "They are already on the far rock. Golhwa’s legs stay spread wide, chima hiked — an invitation that is not for him, and she is wet anyway, because the steam does not care whose cock it is until the name is wrong. Hyullé’s knees stay pressed, eyes down, soaked. Narim looks at him the way an eldest looks at a door that opened wrong.",
-								"ko": "저쪽 바위에 이미 있다. 골화의 다리는 넓게 벌어진 채, 치마는 걷혀 있다 — 그를 위한 초대가 아닌데, 그래도 젖어 있다. 김은 이름이 틀리기 전까지 누구 것인지 안 가리니까. 혈레의 무릎은 모아져 있고 눈은 아래, 다 젖었다. 나림은 잘못 열린 문을 보는 언니처럼 그를 본다."
-							},
-							{
-								"kind": "p",
-								"html": "The spring does not hide much. Heat hits him low. He is already rock-hard in the black bowl before he has finished looking, and the waterline he is using as a wall is doing the opposite of hiding him. He recites. The beads do not help.",
-								"ko": "샘이 감춰 주는 게 없다. 열이 아래서 온다. 다 보기도 전에 검은 사발 안에서 이미 돌처럼 서 있고, 벽으로 쓰는 수선이 오히려 드러낸다. 염불을 한다. 염주가 도움이 안 된다.",
-								"nsfw": true
-							},
-							{
-								"kind": "monologue",
-								"person": "bidam",
-								"html": "I came to wash. The sutra does not cover this. I am standing in a door I cannot close.",
-								"ko": "씻으러 왔다. 경이 이걸 가리지 못한다. 닫을 수 없는 문에 서 있다.",
-								"nsfw": true
-							},
-							{
-								"kind": "p",
-								"html": "The beads stop mid-count. He stares. The waterline drops.",
-								"ko": "염주가 세다 만다. 본다. 수선이 내려간다.",
-								"nsfw": true
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#e86820",
-								"person": "golhwa",
-								"en": [
-									"Wrong door. He brought iron. And that."
-								],
-								"lines": [
-									"문 잘못 들었어. 쇠를 들고 왔네. 그리고 그것도."
-								],
-								"nsfw": true
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#3d9e52",
-								"person": "narim",
-								"en": [
-									"He is not a Kim. The steam already knows."
-								],
-								"lines": [
-									"김씨가 아니에요. 김이 이미 알아요."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#2eb8c4",
-								"person": "hyulle",
-								"en": [
-									"…The mouth. Before the water takes the blade."
-								],
-								"lines": [
-									"…입구로. 물이 칼을 가져가기 전에."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "They do not stay women.",
-								"ko": "여자로 남지 않는다."
-							},
-							{
-								"kind": "p",
-								"html": "Golhwa goes first — fire unfolding into a tiger the size of the rock, ember pelt, steam off the fangs. Hyullé’s silk becomes a water-serpent, long as the bowl, cyan scales. Narim’s elder-shape thickens into a moss-bear, leaves in the fur, the hill’s weight on four feet.",
-								"ko": "골화가 먼저다 — 불이 바위만 한 호랑이로 펼쳐지고, 불씨 털, 송곳니에서 김. 혈레의 비단이 사발만큼 긴 물뱀이 되고, 청록 비늘. 나림의 언니 형상이 이끼 곰으로 두꺼워진다. 털에 잎, 네 발에 언덕의 무게."
-							},
-							{
-								"kind": "p",
-								"html": "He recoils. The beads jump. The sword is a hard black line he cannot lift in time.",
-								"ko": "뒷걸음친다. 염주가 튄다. 칼은 제때 들지 못하는 단단한 검은 선이다."
-							},
-							{
-								"kind": "p",
-								"html": "They kick him toward the light — tiger-shoulder, serpent-coil, bear-shove. Three beasts, one refusal. The night has him again. The lake keeps Kims. It does not keep slogans.",
-								"ko": "셋이 그를 빛 쪽으로 밀어낸다 — 호랑이 어깨, 뱀의 몸, 곰의 밀침. 짐승 셋, 거절 하나. 밤이 다시 그를 갖는다. 호수는 김씨를 지킨다. 구호는 지키지 않는다."
-							}
+						"kind": "p",
+						"html": "He walks into the steam with nothing on but water and one hundred and eight beads.",
+						"ko": "물과 백팔 염주만 걸치고 김 속으로 들어간다."
+					},
+					{
+						"kind": "p",
+						"html": "The three sisters are already on the far rock. Narim looks at him the way an eldest looks at a door that opened wrong.",
+						"ko": "세 자매는 이미 저쪽 바위에 있다. 나림은 잘못 열린 문을 보는 언니처럼 그를 본다.",
+						"art": "Golhwa on the rock, legs spread wide, chima hiked; Hyullé, knees pressed, eyes down, soaked."
+					},
+					{
+						"kind": "p",
+						"html": "Golhwa’s invitation is not meant for him, and she is wet anyway; the steam does not care whose body it is until the name is wrong.",
+						"ko": "골화의 초대는 그를 위한 것이 아닌데, 그래도 젖어 있다. 김은 이름이 틀리기 전까지 누구 몸인지 안 가리니까.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "The spring does not hide much. Heat hits him low. He is already rock-hard in the black bowl before he has finished looking, and the waterline he is using as a wall is doing the opposite of hiding him. He recites. The beads do not help.",
+						"ko": "샘이 감춰 주는 게 없다. 열이 아래서 온다. 다 보기도 전에 검은 사발 안에서 이미 돌처럼 서 있고, 벽으로 쓰는 수선이 오히려 드러낸다. 염불을 한다. 염주가 도움이 안 된다.",
+						"nsfw": true
+					},
+					{
+						"kind": "monologue",
+						"person": "bidam",
+						"html": "I came to wash. The sutra does not cover this. I am standing in a door I cannot close.",
+						"ko": "씻으러 왔다. 경이 이걸 가리지 못한다. 닫을 수 없는 문에 서 있다.",
+						"nsfw": true
+					},
+					{
+						"kind": "p",
+						"html": "The beads stop mid-count. He stares. The waterline drops.",
+						"ko": "염주가 세다 만다. 본다. 수선이 내려간다.",
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e86820",
+						"person": "golhwa",
+						"en": [
+							"Wrong door. He brought iron. And that."
+						],
+						"lines": [
+							"문 잘못 들었어. 쇠를 들고 왔네. 그리고 그것도."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#3d9e52",
+						"person": "narim",
+						"en": [
+							"He is not a Kim. The steam already knows."
+						],
+						"lines": [
+							"김씨가 아니에요. 김이 이미 알아요."
 						]
 					},
 					{
-						"kind": "flashback",
-						"year": "647",
-						"title": "the lake, again",
-						"blocks": [
-							{
-								"kind": "p",
-								"html": "The night before the tenth day at the Fortress of Radiance, Yushin undresses without ceremony. The three are already in the steam — mentors, tormentors, the only room in Silla where no one asks him for a victory. Golhwa’s legs are already open, wet for the walk she knows. Hyullé’s knees are already pressed, eyes down, silk ruined. The spring does not hide much; he is hard before he has finished looking, and he pretends the water is arithmetic while Golhwa looks at his cock like a problem she is going to solve with her body.",
-								"ko": "명활성의 열흘째를 앞에 둔 밤, 유신은 격식 없이 옷을 벗는다. 셋은 이미 김 속에 있다 — 스승이자 장난꾼, 신라에서 승리를 요구하지 않는 유일한 방. 골화의 다리는 이미 벌어져 있다. 그 걸음을 알고 젖어 있다. 혈레의 무릎은 이미 모아져 있고 눈은 아래, 비단은 이미 망가졌다. 샘이 감춰 주는 게 없다. 다 보기도 전에 서 있고, 물을 산술인 척하는 동안 골화는 그걸 몸으로 풀 문제처럼 본다.",
-								"nsfw": true
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#e0783a",
-								"person": "golhwa",
-								"lines": [
-									"일찍 왔네. 영광인걸."
-								],
-								"en": [
-									"You came early. How flattering."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#5fad6e",
-								"person": "narim",
-								"lines": [
-									"친구를 죽이려 해서 온 거지.",
-									"숲의 예의: 그냥 말해."
-								],
-								"en": [
-									"He came because he is about to kill a friend.",
-									"Forest etiquette: say it plain."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#4a8fe0",
-								"person": "yushin",
-								"lines": [
-									"그걸 알면, 안 하는 법을 가르치시오."
-								],
-								"en": [
-									"If you know that, tell me how not to."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#6ec4c9",
-								"person": "hyulle",
-								"lines": [
-									"못 해요.",
-									"…미안해요.",
-									"머리띠를 기억할 상처는 남기고. 칼에 고마워하길 바라는 상처는 버리세요."
-								],
-								"en": [
-									"You can’t.",
-									"…I’m sorry.",
-									"Keep the wound that remembers the headband. Lose the one that wants him to thank you for the blade."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#e0783a",
-								"person": "golhwa",
-								"lines": [
-									"아니면 또 여왕께 감사 인사를 아껴 두는 거겠지.",
-									"물 속에는 여왕이 없어, 유신. 우리가 있어."
-								],
-								"en": [
-									"Unless you’re saving all your thank-yous for the Queen again.",
-									"She is not in the water, Yushin. We are."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "She takes his wrist under the water and does not wait for the Queen’s name to finish. For a few breaths there is only steam, and the walk they already know, and a marshal who cannot keep his arithmetic. Then Narim’s voice cuts the wick.",
-								"ko": "물 속에서 손목을 잡고, 여왕의 이름이 끝나기를 기다리지 않는다. 몇 숨은 김뿐이고, 이미 아는 걸음뿐이고, 셈을 지키지 못하는 장군뿐이다. 그러다 나림의 목소리가 심지를 자른다.",
-								"nsfw": true
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#4a8fe0",
-								"person": "yushin",
-								"lines": [
-									"하지만 폐하는 —"
-								],
-								"en": [
-									"But Her Majesty —"
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#5fad6e",
-								"person": "narim",
-								"lines": [
-									"그만, 불꽃아.",
-									"그는 갈 거다. 갑옷을 벗고도 그 이름을 붙들고 있을 때부터 알았다."
-								],
-								"en": [
-									"Enough, fire.",
-									"He will go. We knew that when he took the armour off and still kept her name on."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#6ec4c9",
-								"person": "hyulle",
-								"lines": [
-									"…가요.",
-									"선덕께 승리를 드리세요.",
-									"우리에게는 침묵을 조금만."
-								],
-								"en": [
-									"…Go.",
-									"Give Seondeok the victory.",
-									"Keep a little silence for us."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "Steam thins. Two shapes wait where the rock shelves into black: the father who taught him that loyalty is soil, and the grandfather who traded a kingdom so a grandson could keep a sword.",
-								"ko": "김이 옅어진다. 바위가 검은 물로 꺾이는 곳에 형상 둘이 기다린다 — 충성이야말로 흙이라고 가르친 아버지, 그리고 손자가 칼을 지키도록 나라를 넘겨 준 할아버지."
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#4a8fe0",
-								"person": "yushin",
-								"lines": [
-									"아버지. 할아버지.",
-									"엿새 사이에 같은 입이 저를 신국의 구원자라 부르고, 가야 놈이라 불렀습니다.",
-									"열흘째 아침에는 그중 어느 쪽을 들고 나가야 합니까."
-								],
-								"en": [
-									"Father. Grandfather.",
-									"In six days the same mouth has called me the sacred country’s saviour and a Gaya wretch.",
-									"Which of the two do I carry out to the tenth morning?"
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#a8a29e",
-								"person": "seohyeon",
-								"lines": [
-									"유신아, 내 사랑하는 아들아.",
-									"너는 내 인생의 빛이었고, 이제 나라는 네가 구원자가 되기를 필요로 한다.",
-									"미안하다… 내가 신라의 피가 아니어서. 가야의 뿌리를 잊으려 애썼고, 내가 아닌 무언가인 척하려 했다.",
-									"하지만 너는 더 이상 그렇게 할 필요가 없다.",
-									"아들아, 너는 강력한 신라의 도검이며, 가야의 마지막 왕자이기도 하다.",
-									"그러나 너는 그보다 무한히 더 크다…!",
-									"너는 내 아들이다. 너는 김유신이다.",
-									"네 어머니와 나는 네가 더없이 자랑스럽다…!"
-								],
-								"en": [
-									"Yushin, my beloved son.",
-									"You were the light of my life, and now the nation needs you to be its savior.",
-									"I am sorry that I was not of Silla blood… I tried my hardest to forget my Gaya roots, and tried to pretend that I was something I was not.",
-									"But you don’t need to do that anymore.",
-									"Son, you are the mighty Sword of Silla, and the Last Prince of Gaya.",
-									"But you are infinitely more than that…!",
-									"You are my son. You are Kim Yushin.",
-									"Your mother and I couldn’t be more proud of you…!"
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#78716c",
-								"person": "muryuk",
-								"lines": [
-									"유신아, 내 사랑하는 손자야.",
-									"내가 신라 왕실에 충성을 맹세했을 때, 그것은 나 자신을 위해서가 아니라 — 너를 위해서였다.",
-									"나는 너를 알기 전에 너를 사랑했다.",
-									"유신아, 나를 보아라.",
-									"나는… 정말, 정말 네가 자랑스럽다…!"
-								],
-								"en": [
-									"Yushin, my beloved grandson.",
-									"When I swore allegiance to the Silla crown, it was not for my own sake, but for yours.",
-									"I loved you before I knew you.",
-									"Yushin, look at me.",
-									"I am so, so proud of you…!"
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#4a8fe0",
-								"person": "yushin",
-								"lines": [
-									"아버지…",
-									"할아버지…",
-									"(울며) 고맙습니다."
-								],
-								"en": [
-									"Father…",
-									"Grandfather…",
-									"(crying) Thank you."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"chip": "#e0783a",
-								"person": "golhwa",
-								"lines": [
-									"(눈물을 참으며) 봐, 울잖아."
-								],
-								"en": [
-									"(holding back tears) Look at him — he’s crying."
-								]
-							}
+						"kind": "dialogue",
+						"chip": "#2eb8c4",
+						"person": "hyulle",
+						"en": [
+							"…The mouth. Before the water takes the blade."
+						],
+						"lines": [
+							"…입구로. 물이 칼을 가져가기 전에."
 						]
+					},
+					{
+						"kind": "p",
+						"html": "They do not stay women.",
+						"ko": "여자로 남지 않는다."
+					},
+					{
+						"kind": "p",
+						"html": "Golhwa goes first — fire unfolding into a tiger the size of the rock, ember pelt, steam off the fangs. Hyullé’s silk becomes a water-serpent, long as the bowl, cyan scales. Narim’s elder-shape thickens into a moss-bear, leaves in the fur, the hill’s weight on four feet.",
+						"ko": "골화가 먼저다 — 불이 바위만 한 호랑이로 펼쳐지고, 불씨 털, 송곳니에서 김. 혈레의 비단이 사발만큼 긴 물뱀이 되고, 청록 비늘. 나림의 언니 형상이 이끼 곰으로 두꺼워진다. 털에 잎, 네 발에 언덕의 무게."
+					},
+					{
+						"kind": "p",
+						"html": "He recoils. The beads jump. The sword is a hard black line he cannot lift in time.",
+						"ko": "뒷걸음친다. 염주가 튄다. 칼은 제때 들지 못하는 단단한 검은 선이다."
+					},
+					{
+						"kind": "p",
+						"html": "They kick him toward the light — tiger-shoulder, serpent-coil, bear-shove. Three beasts, one refusal. The night has him again. The lake keeps Kims. It does not keep slogans.",
+						"ko": "셋이 그를 빛 쪽으로 밀어낸다 — 호랑이 어깨, 뱀의 몸, 곰의 밀침. 짐승 셋, 거절 하나. 밤이 다시 그를 갖는다. 호수는 김씨를 지킨다. 구호는 지키지 않는다."
+					},
+					{
+						"kind": "scene",
+						"label": "The Lake, Again",
+						"ko": "다시 호수로"
+					},
+					{
+						"kind": "p",
+						"html": "On the seventh night Yushin goes to the cavern lake, as if habit could hold a country together.",
+						"ko": "일곱째 밤, 유신은 습관이 나라를 붙잡아 주기라도 할 것처럼 동굴 호수로 간다."
+					},
+					{
+						"kind": "p",
+						"html": "Yushin undresses without ceremony. The three are already in the steam — mentors, tormentors, the only room in Silla where no one asks him for a victory.",
+						"ko": "유신은 격식 없이 옷을 벗는다. 셋은 이미 김 속에 있다 — 스승이자 장난꾼, 신라에서 승리를 요구하지 않는 유일한 방.",
+						"art": "Golhwa on the rock, legs open; Hyullé, knees pressed, eyes down, silk soaked."
+					},
+					{
+						"kind": "p",
+						"html": "Golhwa knows that walk and is already wet for it. The spring hides nothing; he is hard before he has finished looking, and he pretends the water is arithmetic while Golhwa watches him like a problem she means to solve with her body.",
+						"ko": "골화는 그 걸음을 알고, 이미 젖어 있다. 샘은 아무것도 감춰 주지 않는다. 그는 다 보기도 전에 서 버리고, 물을 산술인 척하는 동안 골화는 몸으로 풀 문제를 보듯 그를 본다.",
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"일찍 왔네. 영광인걸."
+						],
+						"en": [
+							"You came early. How flattering."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"친구를 죽이려 해서 온 거지.",
+							"숲의 예의: 그냥 말해."
+						],
+						"en": [
+							"He came because he is about to kill a friend.",
+							"Forest etiquette: say it plain."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4a8fe0",
+						"person": "yushin",
+						"lines": [
+							"그걸 알면, 안 하는 법을 가르치시오."
+						],
+						"en": [
+							"If you know that, tell me how not to."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"못 해요.",
+							"…미안해요.",
+							"머리띠를 기억할 상처는 남기고. 칼에 고마워하길 바라는 상처는 버리세요."
+						],
+						"en": [
+							"You can’t.",
+							"…I’m sorry.",
+							"Keep the wound that remembers the headband. Lose the one that wants him to thank you for the blade."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"아니면 또 여왕께 감사 인사를 아껴 두는 거겠지.",
+							"물 속에는 여왕이 없어, 유신. 우리가 있어."
+						],
+						"en": [
+							"Unless you’re saving all your thank-yous for the Queen again.",
+							"She is not in the water, Yushin. We are."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "She takes his wrist under the water and does not wait for the Queen’s name to finish. For a few breaths there is only steam, and the walk they already know, and a marshal who cannot keep his arithmetic. Then Narim’s voice cuts the wick.",
+						"ko": "물 속에서 손목을 잡고, 여왕의 이름이 끝나기를 기다리지 않는다. 몇 숨은 김뿐이고, 이미 아는 걸음뿐이고, 셈을 지키지 못하는 장군뿐이다. 그러다 나림의 목소리가 심지를 자른다.",
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4a8fe0",
+						"person": "yushin",
+						"lines": [
+							"하지만 폐하는 —"
+						],
+						"en": [
+							"But Her Majesty —"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"그만, 불꽃아.",
+							"그는 갈 거다. 갑옷을 벗고도 그 이름을 붙들고 있을 때부터 알았다."
+						],
+						"en": [
+							"Enough, fire.",
+							"He will go. We knew that when he took the armour off and still kept her name on."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6ec4c9",
+						"person": "hyulle",
+						"lines": [
+							"…가요.",
+							"선덕께 승리를 드리세요.",
+							"우리에게는 침묵을 조금만."
+						],
+						"en": [
+							"…Go.",
+							"Give Seondeok the victory.",
+							"Keep a little silence for us."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Steam thins. Two shapes wait where the rock shelves into black: the father who taught him that loyalty is soil, and the grandfather who traded a kingdom so a grandson could keep a sword.",
+						"ko": "김이 옅어진다. 바위가 검은 물로 꺾이는 곳에 형상 둘이 기다린다 — 충성이야말로 흙이라고 가르친 아버지, 그리고 손자가 칼을 지키도록 나라를 넘겨 준 할아버지."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4a8fe0",
+						"person": "yushin",
+						"lines": [
+							"아버지. 할아버지.",
+							"엿새 사이에 같은 입이 저를 신국의 구원자라 부르고, 가야 놈이라 불렀습니다.",
+							"열흘째 아침에는 그중 어느 쪽을 들고 나가야 합니까."
+						],
+						"en": [
+							"Father. Grandfather.",
+							"In six days the same mouth has called me the sacred country’s saviour and a Gaya wretch.",
+							"Which of the two do I carry out to the tenth morning?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#a8a29e",
+						"person": "seohyeon",
+						"lines": [
+							"유신아, 내 사랑하는 아들아.",
+							"너는 내 인생의 빛이었고, 이제 나라는 네가 구원자가 되기를 필요로 한다.",
+							"미안하다… 내가 신라의 피가 아니어서. 가야의 뿌리를 잊으려 애썼고, 내가 아닌 무언가인 척하려 했다.",
+							"하지만 너는 더 이상 그렇게 할 필요가 없다.",
+							"아들아, 너는 강력한 신라의 도검이며, 가야의 마지막 왕자이기도 하다.",
+							"그러나 너는 그보다 무한히 더 크다…!",
+							"너는 내 아들이다. 너는 김유신이다.",
+							"네 어머니와 나는 네가 더없이 자랑스럽다…!"
+						],
+						"en": [
+							"Yushin, my beloved son.",
+							"You were the light of my life, and now the nation needs you to be its savior.",
+							"I am sorry that I was not of Silla blood… I tried my hardest to forget my Gaya roots, and tried to pretend that I was something I was not.",
+							"But you don’t need to do that anymore.",
+							"Son, you are the mighty Sword of Silla, and the Last Prince of Gaya.",
+							"But you are infinitely more than that…!",
+							"You are my son. You are Kim Yushin.",
+							"Your mother and I couldn’t be more proud of you…!"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#78716c",
+						"person": "muryuk",
+						"lines": [
+							"유신아, 내 사랑하는 손자야.",
+							"내가 신라 왕실에 충성을 맹세했을 때, 그것은 나 자신을 위해서가 아니라 — 너를 위해서였다.",
+							"나는 너를 알기 전에 너를 사랑했다.",
+							"유신아, 나를 보아라.",
+							"나는… 정말, 정말 네가 자랑스럽다…!"
+						],
+						"en": [
+							"Yushin, my beloved grandson.",
+							"When I swore allegiance to the Silla crown, it was not for my own sake, but for yours.",
+							"I loved you before I knew you.",
+							"Yushin, look at me.",
+							"I am so, so proud of you…!"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#4a8fe0",
+						"person": "yushin",
+						"lines": [
+							"아버지…",
+							"할아버지…",
+							"고맙습니다."
+						],
+						"en": [
+							"Father…",
+							"Grandfather…",
+							"Thank you."
+						],
+						"art": "Yushin crying."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#e0783a",
+						"person": "golhwa",
+						"lines": [
+							"봐, 울잖아."
+						],
+						"en": [
+							"Look at him — he’s crying."
+						],
+						"art": "Golhwa holding back tears."
 					},
 					{
 						"kind": "day",
@@ -42108,8 +41872,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Assault and counter-assault. <b>Yumjong</b> falls in the outer works — the quieter name on the banner, gone first. Bidam does not. By dusk the grain ledger inside Wolseong is down to its last page, and men who have never prayed are learning the postures. Alchun is asked, for the last useful time, which wall he belongs to.",
-						"ko": "공격과 역공. <b>염종</b>이 외곽에서 쓰러진다 — 깃발의 더 조용한 이름이 먼저 간다. 비담은 쓰러지지 않는다. 해 질 무렵 월성 안 곡식 장부는 마지막 장만 남고, 기도해 본 적 없는 사내들이 무릎 꿇는 자세를 배운다. 알천은 — 마지막으로 쓸모 있는 질문으로 — 어느 성벽에 속하는지 질문을 받는다."
+						"html": "Assault and counter-assault. <b>Yumjong</b> falls in the outer works — the quieter name on the banner, gone first. Bidam does not. By dusk the granary inside Wolseong is down to its last sacks, and men who have never prayed are learning the postures. Alchun is asked, for the last useful time, which wall he belongs to.",
+						"ko": "공격과 역공. <b>염종</b>이 외곽에서 쓰러진다 — 깃발의 더 조용한 이름이 먼저 간다. 비담은 쓰러지지 않는다. 해 질 무렵 월성 안 곳간은 마지막 섬만 남고, 기도해 본 적 없는 사내들이 무릎 꿇는 자세를 배운다. 알천은 — 마지막으로 쓸모 있는 질문으로 — 어느 성벽에 속하는지 질문을 받는다."
 					},
 					{
 						"kind": "dialogue",
@@ -42126,8 +41890,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He still does not draw. After Bidam falls, that sentence will be enough to strip Alchun of standing for a generation — the man who caught tigers, filed under Neither.",
-						"ko": "그는 끝내 칼을 뽑지 않는다. 비담이 쓰러진 뒤, 그 문장만으로 알천의 지위는 한 세대 동안 벗겨질 것이다 — 호랑이를 잡던 남자, ‘어느 쪽도 아님’으로 분류되어."
+						"html": "He still does not draw. After Bidam falls, Surabol will remember that sentence for years — the man who caught tigers, filed under Neither.",
+						"ko": "그는 끝내 칼을 뽑지 않는다. 비담이 쓰러진 뒤에도 서라벌은 그 문장을 오래 기억할 것이다 — 호랑이를 잡던 남자, ‘어느 쪽도 아님’으로 분류되어."
 					},
 					{
 						"kind": "p",
@@ -42223,18 +41987,13 @@
 						]
 					},
 					{
-						"kind": "p",
-						"html": "As strategy it is worthless, and every officer on that rampart knows it. What they are watching is a man standing athwart the tenth day, saying no.",
-						"ko": "작전으로서는 쓸모가 없고, 성벽 위의 장교들도 그것을 안다. 그들이 보고 있는 것은 열째 날을 가로막고 서서 아니라고 말하는 한 남자다."
-					},
-					{
 						"kind": "day",
 						"label": "DAY 10",
 						"ko": "열째 날"
 					},
 					{
 						"kind": "p",
-						"html": "They meet again between the camps — not as councillor and marshal, but as the yard’s two best. Dragon pommel against heavenly horse. The first exchanges are almost gentle. That is how Hwarang kill each other.",
+						"html": "They meet again between the camps — not as High Councillor and marshal, but as the yard’s two best. Dragon pommel against heavenly horse. The first exchanges are almost gentle. That is how Hwarang kill each other.",
 						"ko": "다시 진영 사이에서 만난다 — 상대등과 대장군이 아니라, 연무장의 두 최고로. 용 자루 머리와 천마. 처음 몇 수는 거의 다정하다. 화랑은 그렇게 서로를 죽인다."
 					},
 					{
@@ -42288,8 +42047,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Yushin does not kneel. Mud still wet, he turns to the Hwarang who followed him out and names a house — <b>Surabol Son</b>, Musan, the Gurema line Bidam wore in his jaw and never in his minutes. Every hall. Every name in the ledger. Annihilation.",
-						"ko": "유신은 무릎 꿇지 않는다. 진흙이 아직 젖은 채, 자신을 따라 나온 화랑들에게 돌아서 한 집안을 부른다 — <b>서라벌 손씨</b>, 무산, 비담이 턱선으로만 입고 회의록에는 쓰지 않던 구르마의 혈통. 모든 대청. 장부의 모든 이름. 멸문."
+						"html": "Yushin does not kneel. Mud still wet, he turns to the Hwarang who followed him out and names a house — <b>Surabol Son</b>, Musan, the Gurema line Bidam carried in his jaw and never once claimed aloud.",
+						"ko": "유신은 무릎 꿇지 않는다. 진흙이 아직 젖은 채, 자신을 따라 나온 화랑들에게 돌아서 한 집안을 부른다 — <b>서라벌 손씨</b>, 무산, 비담이 턱선으로만 지니고 한 번도 입 밖에 내지 않던 구르마의 혈통."
 					},
 					{
 						"kind": "dialogue",
@@ -42348,10 +42107,10 @@
 						"person": "kangrim",
 						"lines": [
 							"상대등.",
-							"명부가 여기까지요. 함께 가십시다 — 폐하의 나라는 서라벌보다 회의록을 잘 킵니다."
+							"명부가 여기까지요. 함께 가십시다 — 폐하의 나라는 서라벌보다 회의록을 잘 남깁니다."
 						],
 						"en": [
-							"Councillor.",
+							"High Councillor.",
 							"Your list ends here. Walk with me — His Majesty’s kingdom keeps better minutes than Surabol."
 						]
 					},
@@ -42364,7 +42123,7 @@
 							"반대편 연. 뭐라고 적을까요?"
 						],
 						"en": [
-							"Councillor — before the minutes close.",
+							"High Councillor — before the minutes close.",
 							"The opposite kite. What do you want written?"
 						]
 					},
@@ -42385,8 +42144,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Bidam falls the way a Hwarang falls — eyes open, form unbroken. The kite burns out over the wall. Somewhere behind Yushin the queen is already leaving the sentence.",
-						"ko": "비담은 화랑이 쓰러지듯 쓰러진다 — 눈 뜨고, 형 깨지지 않은 채. 연은 성 위에서 사그라든다. 유신 뒤에서 여왕은 이미 문장을 떠나고 있다."
+						"html": "Bidam falls the way a Hwarang falls — eyes open, form unbroken. The kite burns out over the wall. Somewhere behind Yushin the queen is already slipping away.",
+						"ko": "비담은 화랑이 쓰러지듯 쓰러진다 — 눈 뜨고, 형 깨지지 않은 채. 연은 성 위에서 사그라든다. 유신 뒤에서 여왕은 이미 떠나가고 있다."
 					},
 					{
 						"kind": "p",
@@ -42665,40 +42424,20 @@
 					},
 					{
 						"kind": "p",
-						"html": "Kangrim reads her name three times — Jinduk. Jinduk. Jinduk. — the ledger's habit before a Sacred Bone line closes.",
-						"ko": "강림은 그녀의 이름을 세 번 부른다 — 진덕. 진덕. 진덕. — 성골의 혈통이 닫히기 전 명부의 버릇대로.",
-						"music": "Rebellion"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6b7280",
-						"person": "kangrim",
-						"lines": [
-							"폐하. 유신이 아직 손을 잡고 있는 동안 —",
-							"하늘이 물어서 왕좌를 택하셨습니까, 아니면 방이 묻기를 멈추지 않아서입니까?"
-						],
-						"en": [
-							"Majesty. While Yushin still holds your hand —",
-							"Did you choose the throne because heaven asked, or because the room would not stop asking?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6ea8ff",
-						"person": "sunduk",
-						"lines": [
-							"…신국에 전하게. 나는 남의 공포를 위해 총명하기에 지쳤다고.",
-							"그게 내 답이다."
-						],
-						"en": [
-							"…Tell the sacred country I was tired of being clever for other people’s fear.",
-							"That is my answer."
-						]
+						"html": "Kangrim reads her name three times — Dukman. Dukman. Dukman. — the ledger’s habit before a Sacred Bone line closes.",
+						"ko": "강림은 그녀의 이름을 세 번 부른다 — 덕만. 덕만. 덕만. — 성골의 혈통이 닫히기 전 명부의 버릇대로.",
+						"music": "Rebellion",
+						"art": "One panel: the ledger closing in Kangrim’s hands, rain on the lattice behind."
 					},
 					{
 						"kind": "p",
 						"html": "<b>Queen Jinduk (47)</b> is crowned before the blood on the yard dries — Sacred Bone’s last polite miracle, stamped and filed while the censers are still warm. The succession Bidam died objecting to passes, at last, unanimously.",
 						"ko": "<b>진덕여왕 (47)</b>이 연무장 피가 마르기 전에 즉위한다 — 성골의 마지막 예의 바른 기적. 향로가 채 식기도 전에 도장이 찍히고 문서철에 들어간다. 비담이 반대하다 죽은 그 계승은, 마침내, 만장일치로 통과된다."
+					},
+					{
+						"kind": "p",
+						"html": "Alchun is not at the coronation. The court writes his absence down as illness. Everyone understands the illness’s true name: Day 1 through Day 10, unanswered.",
+						"ko": "알천은 즉위식에 없다. 궁은 그의 부재를 병으로 적는다. 모두가 병의 진짜 이름을 안다 — 첫째 날부터 열째 날까지, 답하지 않음."
 					},
 					{
 						"kind": "dialogue",
@@ -42788,8 +42527,28 @@
 					},
 					{
 						"kind": "p",
-						"html": "Alchun is not at the coronation. The minutes record his absence as illness. Everyone understands the illness’s true name: Day 1 through Day 10, unanswered.",
-						"ko": "알천은 즉위식에 없다. 회의록은 병을 이유로 적는다. 모두가 병의 진짜 이름을 안다 — 첫째 날부터 열째 날까지, 답하지 않음."
+						"html": "That night Yushin walks out alone to the pavilion between the old camp lines. The low table is still there, and on it the cup he never touched. He sits down across from no one.",
+						"ko": "그날 밤 유신은 혼자 옛 진영 사이의 정자로 걸어 나간다. 낮은 상은 그대로 있고, 그 위에 그가 끝내 손대지 않은 잔이 있다. 그는 아무도 없는 맞은편을 두고 앉는다.",
+						"art": "Wide: the empty pavilion at night, Yushin small at the low table, the untouched cup in front of him."
+					},
+					{
+						"kind": "flashback",
+						"year": "647",
+						"title": "The sixth night · 여섯째 밤",
+						"blocks": [
+							{
+								"kind": "dialogue",
+								"chip": "#7b5cd6",
+								"lines": [
+									"<b>가야 놈 새끼가…!</b>"
+								],
+								"en": [
+									"<b>You Gaya wretch…!</b>"
+								],
+								"person": "bidam",
+								"art": "Echo balloon over Yushin at the table; Bidam is not in the panel."
+							}
+						]
 					}
 				],
 				"music": "Rebellion"
