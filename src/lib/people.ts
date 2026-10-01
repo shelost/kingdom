@@ -5580,7 +5580,7 @@ export const CONCEPTS: Person[] = [
 		quote: 'One question, then we walk.',
 		firstLine: {
 			en: 'Lady Gotaso. One question, then we walk. When you chose forever — did you choose the man, or the vow?',
-			ko: '고타소 부인. 질문 하나, 그리고 걷읍시다. 영원을 고를 때 — 사람을 골랐소, 맹세를 골랐소?'
+			ko: '고타소 낭자. 질문 하나만 드리고, 걸으시지요. 영원을 고르실 때 — 그 사람을 고르신 겁니까, 맹세를 고르신 겁니까?'
 		},
 		lastLine: {
 			en: 'Clean answer. His Majesty’s kingdom has room for men who told the truth late.',
