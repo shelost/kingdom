@@ -278,7 +278,6 @@ export const PLACES: Record<string, Place> = {
 		events: [
 			{ label: 'Seohyeon finds the lake; the three goddesses love the first Kim.' },
 			{ label: 'Yushin first finds the three in the steam; Narim sends the younger two away and is caught kissing him.' },
-			{ year: 642, label: 'After Daeya he returns for quiet counsel before the road north.' },
 			{ year: 647, label: 'Before Bidam’s tenth day — Seohyeon and Muryuk appear; “You are Kim Yushin.”' },
 			{ year: 673, label: 'Old, between paperwork wars, his father and grandfather visit once more.' },
 			{ year: 673, label: 'After Yushin’s death Munmu enters; Dangun names the wanggeom’s work.' }
@@ -791,7 +790,6 @@ export const ENTRY_PLACE: Record<string, string> = {
 	Steam: 'steam_cavern',
 	'Best of Both': 'steam_cavern',
 	'The Marshal\u2019s Steam': 'steam_cavern',
-	'Steam, Again': 'steam_cavern',
 	'Yeon’s Massacre': 'pyongyang',
 	'After the Knives': 'pyongyang',
 	'Chunchu & Gesomun': 'pyongyang',

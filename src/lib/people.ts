@@ -1899,6 +1899,8 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'gumil',
+		born: 610,
+		bornApprox: true,
 		name: 'Gumil',
 		korean: '검일',
 		avatar: '/ch_gumil.png',
@@ -1931,6 +1933,8 @@ export const PEOPLE: Person[] = [
 		boneRank: '4-dupum (yellow sleeve)',
 		tagline: 'Gumil’s fellow yellow-sleeve at Daeya — treason as the only promotion left.',
 		quote: "Treason is only treason if you lose.",
+		voice:
+			'Laconic gate-bar keeper and Gumil’s drinking friend. Threatens by promising to repeat things (“I’ll tell Gumil word for word.”); one blunt question when it matters. Korean: blunt 반말 with the yard, 하게체 with Gumil.',
 		aliases: ['Mochuk']
 	},
 	{
@@ -2128,6 +2132,8 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'gumilwife',
+		born: 611,
+		bornApprox: true,
 		avatar: '/ch_gumil_wife.png',
 		name: 'Maehwa',
 		korean: '매화',
@@ -2813,9 +2819,27 @@ export const PEOPLE: Person[] = [
 		died: 642,
 		tagline: 'Named “bamboo” by his father — break, never bend.',
 		quote: 'Break. Never bend.',
+		voice:
+			'Plain and unbending. Grants the argument and refuses anyway; his name is his reason. No speeches of his own: the record carries the speech. Korean: 하게체 to fellow officers.',
 		arc: 'A local officer of Daeya, sahji rank. When Pumsuk chose surrender, Jukjuk refused: his father had named him after bamboo so that he would wither in the cold before bending. He held the ruined fortress with Yongseok and died fighting.',
 		events: [{ year: 642, label: 'Dies defending Daeya after Pumsuk’s surrender.' }],
 		aliases: ['Jukjuk']
+	},
+	{
+		id: 'yongseok',
+		gender: 'm',
+		name: 'Yongseok',
+		korean: '용석',
+		hanja: '龍石',
+		kingdom: 'silla',
+		died: 642,
+		title: 'Saji of Daeya',
+		tagline: 'Argues for surrender once, then takes the wall beside Jukjuk.',
+		voice:
+			'Practical, then silent. Makes the sensible case for surrender once, then picks up his spear. Korean: 하게체 to Jukjuk.',
+		arc: 'A saji of Daeya alongside Jukjuk. When the outer fortress was lost he urged surrender, as the Samguk Sagi records; when Jukjuk refused, he fought beside him on the inner wall and died with him.',
+		events: [{ year: 642, label: 'Dies with Jukjuk on Daeya’s inner wall.' }],
+		aliases: ['Yongseok']
 	},
 	{
 		id: 'yunchung',
@@ -2826,6 +2850,8 @@ export const PEOPLE: Person[] = [
 		kingdom: 'baekje',
 		tagline: 'The general Euija trusted with ten thousand men and Daeya.',
 		quote: "Plain speech is also a weapon.",
+		voice:
+			'Courteous, formal, unhurried. Swears on grand things (“that bright sun”) and breaks the oath without changing tone. Korean: formal 하오체.',
 		events: [{ year: 642, label: 'Takes Daeya Fortress with 10,000 troops.' }],
 		aliases: ['Yunchung']
 	},
@@ -7528,6 +7554,7 @@ const COLOR: Record<string, string> = {
 	mochuk: '#7d8a99',
 	// supporting cast
 	jukjuk: '#3f9b6e',
+	yongseok: '#7a8c6e',
 	yunchung: '#c9932a',
 	gwanchang: '#79b6f2',
 	bangul: '#5e9dd8',
@@ -7835,6 +7862,7 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	gulgul: ['gen-ii'],
 	yunchung: ['gen-ii'],
 	jukjuk: ['gen-ii'],
+	yongseok: ['gen-ii'],
 	daeya_a: ['gen-ii'],
 	daeya_b: ['gen-ii'],
 	heungsu: ['gen-ii'],

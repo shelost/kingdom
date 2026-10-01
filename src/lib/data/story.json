@@ -9083,47 +9083,10 @@
 					},
 					{
 						"ratio": 1.778,
-						"id": "pumsuk-feast-curve",
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Daeya feast-hall: slim Maehwa in teal silk at the lamp-line; Pumsuk in ice-blue trying not to look",
-						"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate 16:9. REAL timber feast-hall, lamps, tables. Slim hourglass Maehwa, teal #8AAFA0. Not fat. No text. No watermark.",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/ch_pumsuk.png",
-							"/pl_daeya_fortress.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"tempImage": "/temp/pumsuk-feast-curve.jpg"
-					},
-					{
-						"ratio": 1.778,
-						"id": "pumsuk-cannot-hold",
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "He tries to contain himself",
-						"alt": "Pumsuk failing at self-control — ice-blue silk, flushed throat, knuckles white on the cup",
-						"prompt": "Cinematic CLOSE-UP 16:9 movie still. REAL Daeya lamp-hall. Pumsuk cannot look away. No text. No watermark.",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						],
-						"tempImage": "/temp/pumsuk-cannot-hold.jpg"
-					},
-					{
-						"ratio": 1.778,
 						"id": "maehwa-feast-close",
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
+						"at": "He goes back.",
 						"alt": "Close: slim Maehwa looking back through feast-lamp haze — teal silk slipping, wooden sprig pin",
 						"refs": [
 							"/ch_gumil_wife.png"
@@ -9133,22 +9096,6 @@
 						],
 						"tempImage": "/temp/maehwa-feast-close.jpg",
 						"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Slim Maehwa, teal #8AAFA0, look-back. Not fat. No text. No watermark."
-					},
-					{
-						"ratio": 1.778,
-						"id": "pumsuk-feast-eyes",
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Close: Pumsuk’s face — ice-blue silk, crescent band, flushed, failing to look away",
-						"refs": [
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"pumsuk"
-						],
-						"tempImage": "/temp/pumsuk-feast-eyes.jpg",
-						"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Pumsuk looking down and aside. Ice-blue #7EB8F0. Dramatic lamp. No text. No watermark."
 					},
 					{
 						"id": "steam_01",
@@ -9344,7 +9291,7 @@
 						"id": "best_of_both_02",
 						"ratio": 3.333,
 						"tone": "#2d4a3e",
-						"at": "pick a country to wash in",
+						"at": "You don’t have",
 						"alt": "Profile: bearded manhwa Yushin on the right rock, three tiny painterly sisters across the water",
 						"tempImage": "/temp/best_of_both_02.jpg",
 						"prompt": "Intimate cinematic still, 16:9. STRICT PROFILE. Yushin matches attached manhwa portrait. Sisters match attached painterly portraits. Athletic not bodybuilder. Wet loose hair. NO ribbon. Dim cavern. Waist-up. No genitals. No text. No watermark.",
@@ -9471,7 +9418,7 @@
 						"ratio": 1.778,
 						"tone": "#2eb8c4",
 						"nsfw": true,
-						"at": "She looks like she will explode",
+						"at": "He looks at her the",
 						"alt": "Hyullé soaked beside bare Chunchu — tongue on lip, teal-wave binyeo, silent wreckage",
 						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. SHARED FRAME. Luminous goddess soaked, water-luminescence, tongue out, heart-shaped cyan pupils. Face and garments match attached portrait; teal-wave binyeo. Painterly pale scholar-prince beside her. FACE ONLY from attached Chunchu portrait — do NOT wear the portrait's hanbok or court silk. He is unclothed in the spring: bare bathing body, wet skin, nothing on but water. Magical aura, anime-painterly cavern spirit, not photoreal. Waist-up. No genitals. No text. No watermark.",
 						"refs": [
@@ -9569,7 +9516,7 @@
 						"ratio": 0.75,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "The yard is about the curve",
+						"at": "She leaves them",
 						"alt": "Close: Maehwa’s hip and teal-sage silk as the thing the Daeya yard is about",
 						"prompt": "Minimal iconic 3:4 still. Intimate / close. Maehwa’s figure is what the yard is about. ONE geometric device: her hip and teal-sage #8AAFA0 chima as a low horizontal plane filling two-thirds of the frame; a thin band of Daeya packed earth and red munru at the top. Face matches the attached portrait: tan skin, haughty almost-smile, messy bun, wooden sprig pin, looking down past the camera. Skin-forward, silk sheen, red sash knot. One accent. No porn catalog. No extra-men dump. No text. No watermark. Graphic color-blocking, anime-painterly. Adult/mature. NOT photoreal. NOT cartoon.",
 						"refs": [
@@ -9695,7 +9642,7 @@
 							"gumilwife"
 						],
 						"id": "maehwa-garrison-03-post",
-						"at": "The post takes the silhouette",
+						"at": "On the inner",
 						"alt": "Movie frame: inner stair, look-back; men turning up; wives on the landing jealous",
 						"prompt": "One 16:9 movie frame. Inner stair, men turning, wives on the landing. No lamps. No halo. No text. No watermark.",
 						"tempImage": "/temp/maehwa-garrison-03-post.jpg"
@@ -9714,7 +9661,7 @@
 							"pumsuk"
 						],
 						"id": "maehwa-feast-families",
-						"at": "The families are still eating",
+						"at": "Every man in",
 						"alt": "Movie frame: feast aisle; she among the tables; men turning; wives jealous",
 						"prompt": "One 16:9 movie frame. Feast aisle among tables. Adults. No halo. No text. No watermark.",
 						"tempImage": "/temp/maehwa-feast-families.jpg"
@@ -9749,25 +9696,6 @@
 							"gumilwife",
 							"pumsuk"
 						],
-						"id": "pumsuk-pov-body",
-						"at": "From his eyes the chest is the lamp",
-						"alt": "Pumsuk POV: looking down her open jeogori, the chest filling the frame",
-						"prompt": "Intimate 16:9. POV looking down. CARAVAGGIO. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-pov-body.jpg"
-					},
-					{
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
 						"id": "pumsuk-pov-kiss",
 						"at": "The mouth goes first",
 						"alt": "Pumsuk POV: kissing her mouth, her face filling the gold",
@@ -9775,30 +9703,11 @@
 						"tempImage": "/temp/pumsuk-pov-kiss.jpg"
 					},
 					{
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"id": "pumsuk-lust-throat2",
-						"at": "Heart-pupils, if anyone looked that close",
-						"alt": "Another throat still: her mouth on the tendon, his ice-blue open, heart-pupils",
-						"prompt": "Intimate 16:9. Throat lust. CARAVAGGIO. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-lust-throat2.jpg"
-					},
-					{
 						"id": "pumsuk-seq-02-contain",
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "The training is a joke tonight",
+						"at": "He talks to",
 						"alt": "Close: Pumsuk’s ice-blue heart-pupils and drool; Maehwa a green blur in the lamp behind",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -9817,7 +9726,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "The training is a joke tonight",
+						"at": "He talks to",
 						"alt": "Caravaggio close: his ice-blue face failing in the gold; green smear behind",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -9950,7 +9859,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "Heart-pupils, if anyone looked that close",
+						"at": "She leans him",
 						"alt": "Her mouth at his throat; his ice-blue robe open, heart-pupils, drool against the post",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -9969,7 +9878,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "Heart-pupils, if anyone looked that close",
+						"at": "She leans him",
 						"alt": "Caravaggio: her mouth at his throat; ice-blue open, heart-pupils in the gold",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10026,7 +9935,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "I should go, she says, like a joke that wants to be caught",
+						"at": "Then she does",
 						"alt": "Jeogori closed, one step into the dark; his hand already in the air",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10045,7 +9954,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "I should go, she says, like a joke that wants to be caught",
+						"at": "Then she does",
 						"alt": "Caravaggio: jeogori closed as a stamp; his hand up in the dark hall",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10174,7 +10083,7 @@
 						"ratio": 0.75,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "The laugh becomes a scream",
+						"at": "They look at each",
 						"alt": "Final: Maehwa’s naked back to camera, side breasts showing, pressed to Pumsuk’s chest",
 						"prompt": "Minimal iconic 3:4 still. Adult Maehwa pressed to adult Pumsuk. ONE geometric device: her back as a vertical plane filling the frame, camera behind the pair. He stands behind her in ice-blue #7EB8F0 silk; she leans into his chest, no gap. Crescent headband visible over her shoulder. Soft side-light on the curve of her torso. Face matches the attached Maehwa portrait looking back over one shoulder. His face matches the attached Pumsuk portrait as a sliver. Teal-sage #8AAFA0 silk at the hip. Intimate, skin-forward. Flat charcoal-lamp void. No stone wall. No army. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly. Adult. NOT photoreal. NOT cartoon.",
 						"refs": [
@@ -10206,87 +10115,11 @@
 						"tempImage": "/temp/nsfw-pumsuk-yehwa-press.jpg"
 					},
 					{
-						"id": "pumsuk-hc-11-scream",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "The laugh becomes a scream",
-						"alt": "Caravaggio: still standing, the sound leaving her; he behind in clean blue",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"prompt": "Intimate cinematic 16:9. LOCKED hall. CARAVAGGIO. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-hc-11-scream.jpg"
-					},
-					{
-						"id": "pumsuk-seq-12-lose",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "She loses the room",
-						"alt": "Down against the wall, dirtied green open as far as it will go; she has lost the room",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"prompt": "Intimate cinematic 16:9. Locked hall. She loses the room. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-seq-12-lose.jpg"
-					},
-					{
-						"id": "pumsuk-hc-12-lose",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "She loses the room",
-						"alt": "Caravaggio: down against the wall, dirtied green open; his ice-blue still clean",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"prompt": "Intimate cinematic 16:9. LOCKED hall. CARAVAGGIO. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-hc-12-lose.jpg"
-					},
-					{
-						"id": "pumsuk-hc-13-milk",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "White milk on the dirtied green",
-						"alt": "Aftermath on the worn pine — spilled white milk catching the dying lamp; dirtied green wrecked, his ice-blue still clean",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"prompt": "Intimate cinematic 16:9. LOCKED hall. CARAVAGGIO aftermath. White spilled milk. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-hc-13-milk.jpg"
-					},
-					{
 						"id": "pumsuk-more-01-look",
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "He looks at her and is hard again",
+						"at": "He does not go",
 						"alt": "After the first finish: he stares at her open dirtied green and the look is instant",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10301,58 +10134,11 @@
 						"tempImage": "/temp/pumsuk-more-01-look.jpg"
 					},
 					{
-						"id": "nsfw-yehwa-fruit-lookback",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "He looks at her and is hard again",
-						"alt": "Split: Maehwa’s back and hip in green silk; close, a plum at her mouth",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png"
-						],
-						"people": [
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 16:9. Adult Maehwa look-back and plum. Face and garments match attached portrait; wood-sprig binyeo. Dramatic lamp. No text. No watermark.",
-						"tempImage": "/temp/nsfw-yehwa-fruit-lookback.jpg"
-					},
-					{
-						"id": "nsfw-yehwa-shadow-body",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "He looks at her and is hard again",
-						"alt": "Maehwa as a lamp-cut silhouette — hourglass in a vast dark hall",
-						"refs": [
-							"/ch_gumil_wife.png"
-						],
-						"people": [
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 16:9. Maehwa figure in dramatic shadow. No text. No watermark.",
-						"tempImage": "/temp/nsfw-yehwa-shadow-body.jpg"
-					},
-					{
-						"id": "nsfw-pumsuk-gumilwife-allure",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "He looks at her and is hard again",
-						"alt": "Maehwa looking back — flushed allure, hip weight, teal silk; she is still leading",
-						"src": "/nsfw_pumsuk_gumilwife_allure.png",
-						"tempImage": "/temp/nsfw-pumsuk-gumilwife-allure.jpg",
-						"refs": [
-							"/ch_gumil_wife.png"
-						],
-						"prompt": "Intimate cinematic CLOSE-UP, 16:9. Maehwa seducing, looking back. Teal-sage #8AAFA0. Face matches attached portrait. No text. No watermark."
-					},
-					{
 						"id": "pumsuk-more-02-already",
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "Already?",
+						"at": "I thought you",
 						"alt": "Her face: shocked, aroused, already?— he is hard again and she cannot hide it",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10367,45 +10153,11 @@
 						"tempImage": "/temp/pumsuk-more-02-already.jpg"
 					},
 					{
-						"id": "nsfw-yehwa-fruit-lounge",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "Already?",
-						"alt": "Maehwa lounging on dark timber — persimmon at her mouth, jeogori open, ochre chima hiked",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png"
-						],
-						"people": [
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 16:9. Adult Maehwa lounging, persimmon. Face and garments match attached portrait; wood-sprig binyeo. Dramatic lamp. No text. No watermark.",
-						"tempImage": "/temp/nsfw-yehwa-fruit-lounge.jpg"
-					},
-					{
-						"id": "nsfw-yehwa-sash-hip",
-						"ratio": 0.75,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "Already?",
-						"alt": "Maehwa on one hip — red sash as a bar, ochre chima tight, fruit at her teeth",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png"
-						],
-						"people": [
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 3:4. Adult Maehwa hip and red sash, fruit at teeth. Face and garments match attached portrait; wood-sprig binyeo. Dramatic lamp. No text. No watermark.",
-						"tempImage": "/temp/nsfw-yehwa-sash-hip.jpg"
-					},
-					{
 						"id": "pumsuk-more-03-whose",
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "Whose is it",
+						"at": "Say it. Whose",
 						"alt": "Iconic: two overlapping hanbok silhouettes — kneeling and standing over — one gold flame",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10418,74 +10170,6 @@
 						],
 						"prompt": "Minimal iconic 16:9. Night-black hall. ONE gold flame. One black ink-blot: kneeling and standing-over hanbok silhouettes. No text. No watermark.",
 						"tempImage": "/temp/pumsuk-more-03-whose.jpg"
-					},
-					{
-						"id": "pumsuk-more-04-third",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "the look is the whole third round",
-						"alt": "Second recovery: two faces — he looks, she knows he is hard again",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 16:9. Two faces. The look that starts the third round. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-more-04-third.jpg"
-					},
-					{
-						"id": "nsfw-yehwa-fruit-low",
-						"ratio": 0.5625,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "the look is the whole third round",
-						"alt": "Worm’s-eye: Maehwa towers, plum in her mouth, one lamp over her bun",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png"
-						],
-						"people": [
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 9:16 worm’s-eye. Adult Maehwa, plum in mouth. Face and garments match attached portrait; wood-sprig binyeo. Dramatic lamp. No text. No watermark.",
-						"tempImage": "/temp/nsfw-yehwa-fruit-low.jpg"
-					},
-					{
-						"id": "nsfw-yehwa-lamp-split",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "the look is the whole third round",
-						"alt": "Maehwa split by the lamp-seam — gold on the left, charcoal on the right, plum at her mouth",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png"
-						],
-						"people": [
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 16:9. Adult Maehwa, lamp-seam split, plum. Face and garments match attached portrait; wood-sprig binyeo. No text. No watermark.",
-						"tempImage": "/temp/nsfw-yehwa-lamp-split.jpg"
-					},
-					{
-						"id": "nsfw-pumsuk-gumilwife-pressed",
-						"ratio": 0.75,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "the look is the whole third round",
-						"alt": "Bodies pressed — Pumsuk kissing Maehwa, both flushed, ice-blue and teal silk",
-						"src": "/nsfw_pumsuk_gumilwife_pressed.png",
-						"tempImage": "/temp/nsfw-pumsuk-gumilwife-pressed.jpg",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"prompt": "Intimate cinematic CLOSE-UP, 9:16. Adult Pumsuk and adult Maehwa pressed together in a passionate kiss. Faces fill the frame, blushing, overwhelmed. His ice-blue #7EB8F0 silk; her teal-sage #8AAFA0. Faces match attached portraits. Dynamic lean, erotic gold-and-blue rim light. Adult/mature. Painterly. No text, no watermark."
 					},
 					{
 						"id": "pumsuk-more-05-night",
@@ -10511,7 +10195,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "she is not running the room anymore",
+						"at": "They do not stop",
 						"alt": "Spent on the pine — she is owned, hoarse, still being looked at",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10524,38 +10208,6 @@
 						],
 						"prompt": "Intimate cinematic 16:9. Aftermath on worn pine. She cannot sit up. He stands in clean ice-blue and looks. No text. No watermark.",
 						"tempImage": "/temp/pumsuk-more-06-owned.jpg"
-					},
-					{
-						"id": "nsfw-pumsuk-gumilwife-overwhelm",
-						"ratio": 0.75,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "she is not running the room anymore",
-						"alt": "Ecstasy — Pumsuk overwhelmed, eyes half-shut, Maehwa still at his throat",
-						"src": "/nsfw_pumsuk_gumilwife_overwhelm.png",
-						"tempImage": "/temp/nsfw-pumsuk-gumilwife-overwhelm.jpg",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"prompt": "Intimate cinematic CLOSE-UP, 16:9. Pumsuk overwhelmed in ecstasy. Faces match attached portraits. No text. No watermark."
-					},
-					{
-						"id": "nsfw-yehwa-fruit-lips",
-						"ratio": 0.5625,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "she is not running the room anymore",
-						"alt": "Maehwa close — dark plum at her tongue, juice, green jeogori open, lamp on the chest",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png"
-						],
-						"people": [
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 9:16 close. Adult Maehwa sucking a dark plum. Face and garments match attached portrait; wood-sprig binyeo. Teal-sage #8AAFA0 rim. Dramatic lamp. No text. No watermark.",
-						"tempImage": "/temp/nsfw-yehwa-fruit-lips.jpg"
 					},
 					{
 						"id": "pumsuk-hc-14-leave",
@@ -10581,7 +10233,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "The mouth goes first",
+						"at": "It stops being polite",
 						"alt": "Deep kiss: Maehwa and Pumsuk, silk falling, lamp, mouths as a bar",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10619,7 +10271,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "AUUAAAAUAGGH",
+						"at": "The teacher dies",
 						"alt": "Wrecked wanting faces, mouths open, lamp on wet silk",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10632,25 +10284,6 @@
 						],
 						"prompt": "Intimate cinematic 16:9 CLOSE. Dutch ECU, chiaroscuro. ONE device: two open mouths as stacked ovals. Adult Maehwa and adult Pumsuk, silk remaining, heavy blush. Faces match attached; binyeo. Ice-blue #7EB8F0 and teal #8AAFA0 rims. No readable text. No watermark.",
 						"tempImage": "/temp/nsfw-maehwa-scream-load.jpg"
-					},
-					{
-						"id": "nsfw-maehwa-buckets",
-						"ratio": 1.778,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "every last drop",
-						"alt": "Still close on worn pine, lamp-catch down hiked ochre, last drop",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"prompt": "Intimate cinematic 16:9. Low angle, long-shadow key. ONE device: lamp-catch vertical down hiked ochre. Adult bodies still close, silk covering, wrecked faces. Faces match attached. Ice-blue #7EB8F0, teal #8AAFA0. No text. No watermark.",
-						"tempImage": "/temp/nsfw-maehwa-buckets.jpg"
 					},
 					{
 						"id": "nsfw-gumil-milf-fast",
@@ -10733,7 +10366,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "He tries to sleep and the hall comes with him",
+						"at": "He lies on",
 						"alt": "He tries to sleep on a dark timber pallet — clean ice-blue, eyes open, one dying lamp",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10752,7 +10385,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "She arrives in the gold",
+						"at": "In the gold",
 						"alt": "Dream: Maehwa arrives in the gold with a plum; he cannot close his eyes",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10771,7 +10404,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "The look-back in the dark",
+						"at": "She looks back",
 						"alt": "Dream: she looks back over the shoulder in dirtied green, same feast-hall lamp",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10786,49 +10419,11 @@
 						"tempImage": "/temp/pumsuk-dream-03-lookback.jpg"
 					},
 					{
-						"id": "pumsuk-dream-04-fruit",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "She arrives in the gold",
-						"alt": "Dream: plum at her mouth, jeogori open; his ice-blue heart-pupils",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"prompt": "Intimate cinematic 16:9. Dream plum. CARAVAGGIO. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-dream-04-fruit.jpg"
-					},
-					{
-						"id": "pumsuk-dream-05-shame",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "Palm on the ice-blue",
-						"alt": "He sits up — palm down on taut ice-blue silk; she is only a green smear in the lamp",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/bn_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"people": [
-							"gumilwife",
-							"pumsuk"
-						],
-						"prompt": "Intimate cinematic 16:9. Shame on the pallet. CARAVAGGIO. No text. No watermark.",
-						"tempImage": "/temp/pumsuk-dream-05-shame.jpg"
-					},
-					{
 						"id": "pumsuk-dream-06-token",
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "Palm on the ice-blue",
+						"at": "She looks back",
 						"alt": "He turns to the pink ribbon on the post; she stays in the lamp behind him",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -10846,7 +10441,7 @@
 						"id": "pumsuk-lust-desire",
 						"ratio": 1.778,
 						"tone": "#d0362f",
-						"at": "__retired_pumsuk_seq__",
+						"at": "She leans him",
 						"alt": "K-drama emotional close-up: Pumsuk's face showing dangerous forbidden lust for Gumil's wife, expression intense and predatory yet conflicted, jaw tense",
 						"src": "/emotional_pumsuk_lust_desire.png",
 						"refs": [
@@ -10858,136 +10453,22 @@
 						"id": "pumsuk-half-share",
 						"ratio": 1.778,
 						"tone": "#7f1d1d",
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Wide Daeya feast yard: two tiny figures under lantern haze; one teal-sage #8AAFA0 accent",
+						"at": "I love you too.",
+						"alt": "Afterglow: Maehwa kisses the cheek of a flushed, tearful Pumsuk, his chest bare, her silk off one shoulder; lamp behind",
 						"prompt": "Wide cinematic EXPOSITION still, 16:9. ICONIC / MINIMAL EPIC. Camera far back. Tiny distant figures only — no readable faces, no huge heads, no intimate close, no centered couple portraits, no flushed anime two-shot. Hard color planes grounded in a REAL recognizable place. White haze, wet reflective ground. Monochrome plus ONE symbolic accent — the color plane IS the person. Flat kingdom sky, no clouds. Period hanbok silhouettes (wide sleeves, jeogori/chima). Lust implied only by distance, pose, and color. Somewhat realistic, painterly, grounded. No readable text, no watermark. PLACE: Daeya fortress feast courtyard — tan gate in haze, grey walls, wet black yard. UNIQUE LAYOUT: two tiny figures at a distant low table. ONE accent: teal-sage #8AAFA0 silk. Pumsuk ice-blue #7EB8F0 only as a thin rim.",
 						"refs": [
 							"/ch_pumsuk.png",
 							"/ch_gumil_wife.png",
 							"/pl_daeya_fortress.png"
 						],
-						"tempImage": "/temp/pumsuk-half-share.jpg"
-					},
-					{
-						"id": "nsfw-pumsuk-yehwa-horndog",
-						"ratio": 0.75,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Pumsuk the horndog — ice-blue silk open, Maehwa’s teal silk torn from the breast, lust not implied",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-yehwa-horndog.jpg",
-						"prompt": "Minimal iconic 3:4 still. Adult Pumsuk and adult Maehwa, Geomil’s wife. ONE geometric device: torn teal-sage #8AAFA0 silk as a hard diagonal off her breast. Faces fill the frame. Faces match the attached portraits: his blue crescent headband, messy dark hair, flushed horndog mouth; her tan skin, wooden sprig pin, knowing heat. Ice-blue #7EB8F0 as his open silk. Skin-forward, desire, breasts, wet mouths — match the heat of forbidden desire, not a polite glance. Flat charcoal-lamp void. No bedroom catalog. No army. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly. Adult/mature. NOT photoreal. NOT cartoon.",
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						]
-					},
-					{
-						"id": "nsfw-pumsuk-heart-stare",
-						"ratio": 0.5625,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Pumsuk close — ice-blue heart pupils, drool, Maehwa a shadow behind him",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						],
-						"prompt": "Intimate cinematic 9:16. Pumsuk heart pupils. No text. No watermark.",
-						"tempImage": "/temp/nsfw-pumsuk-heart-stare.jpg"
-					},
-					{
-						"id": "nsfw-pumsuk-heart-drool",
-						"ratio": 1.778,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Pumsuk’s ice-blue heart-pupils and a thread of drool — staring at slim Maehwa in the Daeya lamp-hall",
-						"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Pumsuk ice-blue #7EB8F0 heart-pupils, drool. Slim Maehwa teal sliver. Dramatic lamp. No text. No watermark.",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png",
-							"/pl_daeya_fortress.png"
-						],
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-heart-drool.jpg"
-					},
-					{
-						"id": "nsfw-pumsuk-lookdown-steam",
-						"ratio": 1.778,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Pumsuk looking down her silk — ice-blue steam from his nose, knuckles white on the cup",
-						"prompt": "Painterly anime-adjacent cinema, halfway realistic. Intimate CLOSE-UP 16:9. Pumsuk looking down. Ice-blue #7EB8F0 steam. Slim Maehwa teal blur. No text. No watermark.",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png",
-							"/pl_daeya_fortress.png"
-						],
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-lookdown-steam.jpg"
-					},
-					{
-						"id": "nsfw-pumsuk-yehwa-smirk",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Maehwa’s smirk over the shoulder — she has him — before she turns back",
-						"refs": [
-							"/ch_gumil_wife.png"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-yehwa-smirk.jpg",
-						"prompt": "Intimate cinematic CLOSE-UP, 16:9. Maehwa smirk. Face matches attached portrait. No text. No watermark."
-					},
-					{
-						"id": "nsfw-pumsuk-yehwa-ankle",
-						"ratio": 1.778,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Pumsuk bowed on the boards, one hand locked on Maehwa’s ankle",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-yehwa-ankle.jpg",
-						"prompt": "Intimate cinematic still, 16:9. Pumsuk on the floor grabbing her ankle. Faces match attached portraits. No text. No watermark."
-					},
-					{
-						"id": "nsfw-pumsuk-yehwa-leave",
-						"ratio": 1.778,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Maehwa covers her throat and takes one step into the dark — a fake leaving",
-						"refs": [
-							"/ch_gumil_wife.png",
-							"/ch_pumsuk.png"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-yehwa-leave.jpg",
-						"prompt": "Intimate cinematic still, 16:9. Maehwa fake-leaving, silk closed. Faces match attached portraits. No text. No watermark."
+						"tempImage": "/temp/pumsuk-half-share.jpg",
+						"nsfw": true
 					},
 					{
 						"id": "pumsuk-yehwa-notice",
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
-						"at": "__retired_pumsuk_seq__",
+						"at": "Every man in",
 						"alt": "The first crack — Pumsuk’s eyes drop to Maehwa’s hip in teal-sage silk",
 						"refs": [
 							"/ch_pumsuk.png",
@@ -11000,7 +10481,7 @@
 						"id": "pumsuk-yehwa-indifferent",
 						"ratio": 1.778,
 						"tone": "#7EB8F0",
-						"at": "__retired_pumsuk_seq__",
+						"at": "Here— ah, don’t",
 						"alt": "Feast lamp: Pumsuk looks past Maehwa at his cup — True Bone indifference",
 						"refs": [
 							"/ch_pumsuk.png",
@@ -11010,76 +10491,11 @@
 						"prompt": "Intimate cinematic still, 16:9. Pumsuk indifferent, looking past Maehwa at his cup. Ice-blue #7EB8F0. Teal-sage #8AAFA0. Faces match attached portraits. Gold lamp. No text. No watermark."
 					},
 					{
-						"id": "nsfw-pumsuk-gumilwife-surprise",
-						"ratio": 0.75,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Close: Maehwa’s blushing surprise as young Pumsuk steps into her lamp",
-						"src": "/nsfw_pumsuk_gumilwife_surprise.png",
-						"tempImage": "/temp/nsfw-pumsuk-gumilwife-surprise.jpg",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"prompt": "Intimate cinematic CLOSE-UP, 9:16. Faces fill the frame. Adult Maehwa (Geomil’s wife), tan skin, dark bun, wooden sprig pin, teal-sage #8AAFA0 silk — blushing surprise, lips parted. Young adult Pumsuk at the edge in ice-blue #7EB8F0 silk, not yet the aggressor. Faces match attached portraits. Erotic gold lamp. Painterly anime-adjacent. Adult/mature. No text, no watermark."
-					},
-					{
-						"id": "nsfw-pumsuk-yehwa-claim",
-						"ratio": 0.75,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Pumsuk pinning Maehwa — ice-blue and teal silk open, skin-forward, no more boy-politeness",
-						"prompt": "Minimal iconic 3:4 still. Adult Pumsuk the aggressor pinning adult Maehwa. ONE geometric device: his ice-blue #7EB8F0 sleeve as a hard bar across her tan chest. Faces fill the frame, mouths almost eating. Faces match the attached portraits: crescent headband, sprig pin. Teal-sage #8AAFA0 silk open. Skin-forward, breasts, sweat, forbidden heat — not a polite almost-kiss. Flat charcoal void. No furniture. No army. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly. Adult/mature. NOT photoreal. NOT cartoon.",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-yehwa-claim.jpg",
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						]
-					},
-					{
-						"id": "nsfw-pumsuk-yehwa-devotion",
-						"ratio": 0.75,
-						"tone": "#8AAFA0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "Close faces: Pumsuk flushed and hungry, Maehwa’s mouth parted, teal silk off the shoulder, lamp gold",
-						"prompt": "Minimal iconic 3:4 still. Adult Pumsuk and adult Maehwa, devotion as lust. ONE geometric device: two faces filling the frame, his brow against hers as a hard diagonal. Faces match the attached portraits. Ice-blue #7EB8F0 and teal-sage #8AAFA0. Skin-forward, wet mouths, her breast against his chest, not polite. Flat charcoal-lamp void. No army. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly. Adult/mature. NOT photoreal. NOT cartoon.",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-yehwa-devotion.jpg",
-						"people": [
-							"pumsuk",
-							"gumilwife"
-						]
-					},
-					{
-						"id": "nsfw-pumsuk-yehwa-night2",
-						"ratio": 1.778,
-						"tone": "#7EB8F0",
-						"nsfw": true,
-						"at": "__retired_pumsuk_seq__",
-						"alt": "After the feast: Pumsuk’s mouth at Maehwa’s throat, ice-blue and teal silk open",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						],
-						"tempImage": "/temp/nsfw-pumsuk-yehwa-night2.jpg",
-						"prompt": "Intimate cinematic NIGHT still, 16:9. Adult Pumsuk and adult Maehwa. Silk still on. No genitals. Faces match the attached portraits. No text. No watermark."
-					},
-					{
 						"id": "nsfw-gumil-yehwa-night",
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "The night before the True Bone arrives",
+						"at": "The night before",
 						"alt": "Night lamp: Gumil and Maehwa close in a poor Daeya room — teal silk open at the shoulder",
 						"refs": [
 							"/ch_gumil.png",
@@ -11111,7 +10527,7 @@
 						"ratio": 1.778,
 						"tone": "#8AAFA0",
 						"nsfw": true,
-						"at": "When he comes it is with her name",
+						"at": "She knows his",
 						"alt": "After: Maehwa on Gumil’s chest, teal silk wrecked, lamp almost dead",
 						"refs": [
 							"/ch_gumil_wife.png",
@@ -11128,7 +10544,7 @@
 						"id": "gumil-yehwa-confront",
 						"ratio": 1.778,
 						"tone": "#6b7f9e",
-						"at": "They stand in the door-slit of dawn",
+						"at": "They stand in",
 						"alt": "Solemn dawn: Gumil and Maehwa do not touch — a hard door-slit between them after the cheat",
 						"refs": [
 							"/ch_gumil.png",
@@ -11197,7 +10613,7 @@
 						"id": "daeya-door-inside",
 						"ratio": 1.778,
 						"tone": "#3E79E4",
-						"at": "opens the granary gate to Yunchung",
+						"at": "Pumsuk opens the",
 						"alt": "Daeya mountain fortress: the inner gate opening from inside as Baekje troops wait on the approach road",
 						"prompt": "Cinematic historical still, 16:9, REAL Daeya Fortress (Hapcheon-area mountain castle): stone-and-timber walls on a ridge, a wooden inner gate swinging open from inside. Yellow-bannered Baekje infantry on the approach road below. Not a storming — the door is being opened. Real Korean fortress architecture. Painterly cinema. Flat sky, no clouds. No text, no watermark.",
 						"refs": [
@@ -11239,7 +10655,7 @@
 						"ratio": 3.333,
 						"src": "/img_daeya_06.png",
 						"alt": "Gotaso in the last room",
-						"at": "What was it that girl said at her wedding",
+						"at": "In the inner",
 						"prompt": "Cinematic historical illustration of Gotaso in the last room, Three Kingdoms of Samhan / Tang era (642), scene: Daeya Fortress, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"refs": [
 							"/img_daeya_06.png",
@@ -11268,7 +10684,7 @@
 						"id": "chunchu-revenge-oath",
 						"ratio": 1,
 						"tone": "#d8258c",
-						"at": "calm fury",
+						"at": "does not shout.",
 						"alt": "K-drama emotional close-up: Chunchu swearing revenge oath, face completely calm but eyes burning with controlled fury, jaw set with cold determination",
 						"src": "/emotional_chunchu_revenge_oath.png",
 						"refs": [
@@ -11286,52 +10702,6 @@
 							"/ch_munhee.png"
 						],
 						"tempImage": "/temp/daeya_bupmin_gate.jpg"
-					},
-					{
-						"id": "steam_again_01",
-						"ratio": 3.333,
-						"tone": "#1e2a30",
-						"at": "does not sleep in the capital",
-						"alt": "Webtoon Yushin rides a night road toward a cyan-glowing cavern mouth after a hard year",
-						"src": "/img_steam_again_01.png",
-						"prompt": "Minimal iconic 16:9 still, movie scene. After a ruinous year, Kim Yushin — elite Silla Korean marshal — rides alone at night toward a glowing cyan cave mouth in the hills of ancient Korea. Korean webtoon/manhwa cartoon cel-shading (mortal = cartoonish); face matches attached bearded marshal portrait (not yet shaved for the cavern). Exhausted posture. Cave mouth matches attached cavern place with cyan steam. Natural night sky OK. No army. No text. No watermark.",
-						"tempImage": "/temp/steam_again_01.jpg",
-						"refs": [
-							"/ch_kim_yushin.png",
-							"/pl_cave.png"
-						]
-					},
-					{
-						"id": "steam_again_02",
-						"ratio": 3.333,
-						"tone": "#2f4a44",
-						"at": "Then hear it plain",
-						"alt": "Webtoon Yushin in the pool; painterly Narim and Hyullé counsel from the rock and ledge",
-						"src": "/img_steam_again_02.png",
-						"prompt": "Minimal iconic 16:9 intimate still, movie scene. STYLE SPLIT. Kim Yushin (Silla marshal) wet in cyan water receiving counsel — CLEAN-SHAVEN, wet loose hair, no ribbon, bare shoulders, Korean webtoon cartoon. Narim on far rock — painterly realistic, glowing emerald eyes, jade binyeo, olive chima. Hyullé on warmer ledge — painterly, cerulean eyes, teal binyeo, blue chima. Setting matches attached cavern. No genitals. No text. No watermark.",
-						"tempImage": "/temp/steam_again_02.jpg",
-						"nsfw": true,
-						"refs": [
-							"/ch_kim_yushin_hwarang.png",
-							"/ch_narim.png",
-							"/ch_hyullé.png",
-							"/pl_cave.png"
-						]
-					},
-					{
-						"id": "steam_again_03",
-						"ratio": 5,
-						"tone": "#22302e",
-						"at": "He sits where Hyullé pointed",
-						"alt": "Webtoon Yushin reclining on the warm ledge, wet loose hair, arm over eyes",
-						"src": "/img_steam_again_03.png",
-						"prompt": "Minimal iconic 16:9 intimate still, movie scene. Kim Yushin reclines on a wet warm ledge in a cyan steam cavern, arm over eyes, exhausted. Korean webtoon cartoon (mortal = cartoonish), CLEAN-SHAVEN, wet loose hair on stone, no ribbon, bare shoulders. Setting matches attached cavern. Waist-up. No genitals. No text. No watermark.",
-						"refs": [
-							"/ch_kim_yushin_hwarang.png",
-							"/pl_cave.png"
-						],
-						"tempImage": "/temp/steam_again_03.jpg",
-						"nsfw": true
 					},
 					{
 						"id": "golhwa-steam-emblem",
@@ -11431,13 +10801,14 @@
 						"ratio": 1.778,
 						"nsfw": true,
 						"alt": "nsfw-maehwa-goes-quiet",
-						"tempImage": "/temp/nsfw-maehwa-goes-quiet.jpg"
+						"tempImage": "/temp/nsfw-maehwa-goes-quiet.jpg",
+						"at": "She goes quiet."
 					},
 					{
 						"id": "ink-wind-bamboo-jukjuk",
 						"ratio": 0.5625,
 						"tone": "#2f4a3a",
-						"at": "that I should break before I bend",
+						"at": "You’re not wrong.",
 						"alt": "Ink bamboo in a gale after Yi Jeong: every leaf torn sideways but one stalk standing dead straight, a tiny armored Jukjuk at its root on a broken fortress wall",
 						"prompt": "A parody of Yi Jeong’s PUNGJUKDO (풍죽도, Bamboo in the Wind), painted exactly like the real Joseon ink scroll: pure black ink on dark-toned silk, sharp calligraphic leaf strokes, pale ink for distant stalks, deep ink for the near one. ICONIC MINIMAL LAYOUT: tall vertical scroll, mostly empty. ONE device: a single bamboo stalk rising DEAD STRAIGHT from bottom to top like a black vertical line while every leaf around it is whipped hard sideways by the gale; faint pale-ink stalks behind it bent low. At its root, tiny, a fragment of a stone fortress parapet with a few broken giwa tiles, and on it one small Silla officer in dark steel lamellar with a cloth sash in deep bamboo green #2f4a3a, standing just as straight as the stalk, spear grounded, facing into the wind; his face is a few strokes. Behind the parapet a faint ink smear of smoke. No other figures. One blank red seal square. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
 						"refs": [],
@@ -11451,7 +10822,7 @@
 						"ratio": 1.778,
 						"tone": "#374151",
 						"alt": "Forbidden attraction - Pumsuk and another figure in close proximity with bare shoulders visible, robes loosened showing collarbones, intense sensual tension and longing gazes, bodies leaning toward each other with palpable desire - restrained passion and internal conflict",
-						"at": "Tomorrow the boy",
+						"at": "About tomorrow’s feast…",
 						"src": "/img_pumsuk_forbidden_desire.png",
 						"refs": [
 							"/ch_pumsuk.png",
@@ -13557,38 +12928,45 @@
 					},
 					{
 						"kind": "p",
-						"html": "They ask him to choose. Gaya blood or Silla marshal. Fortress count or cavern counsel. The yard’s perfection or the one room that does not ask him for a victory.",
-						"ko": "사람들은 고르라 한다. 가야의 피인가, 신라의 원수인가. 성의 숫자인가, 동굴의 조언인가. 연병장의 완벽인가, 승리를 요구하지 않는 유일한 방인가."
-					},
-					{
-						"kind": "p",
-						"html": "He refuses the fork they keep drawing for him. Gaya blood or Silla marshal. Fortress count or cavern counsel. He rides from the cliff-fortress with the horse still smelling of the border, shaves at the cave mouth because the sisters keep that rule, and sits where the dark water meets the bright valley — three faint spirits at his back, a kingdom that still doubts his loyalty ahead.",
-						"ko": "사람들이 그어 놓은 갈림길을 고르지 않는다. 가야의 피인가, 신라의 원수인가. 성의 숫자인가, 동굴의 조언인가. 국경 냄새 남은 말을 타고 절벽 성에서 내려와, 셋이 지키는 규칙대로 동굴 입구에서 면도를 하고, 검은 물이 밝은 골짜기를 만나는 자리에 앉는다 — 등 뒤에는 희미한 세 신령, 앞에는 아직도 그의 충성을 의심하는 나라."
+						"html": "Everyone wants Yushin to choose: the Gaya blood or the Silla marshal, the yard or the cave. He comes to the spring to be alone with the question.",
+						"ko": "다들 유신더러 고르라고 한다. 가야의 피냐 신라의 원수냐, 연병장이냐 동굴이냐. 그는 그 물음과 단둘이 있으려고 샘에 온다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#5fad6e",
 						"person": "narim",
 						"en": [
-							"You do not have to pick a country to wash in.",
-							"Wash. Then go be useful to whichever one still needs you. If you get hard on the road, that was my mouth. Don’t thank the water for it."
+							"You don’t have to pick a country to take a bath.",
+							"Wash. Then go and work for whichever one still needs you."
 						],
 						"lines": [
-							"어느 나라를 고르지 않아도 씻을 수 있어요.",
-							"씻어요. 그다음, 아직 당신이 필요한 쪽을 위해 쓸모 있으세요. 길에서 서면, 제 입이에요. 그거 물한테 고맙다고 하지 마세요."
+							"목욕하는 데 나라까지 고를 필요는 없어요.",
+							"씻어요. 그다음에 아직 당신이 필요한 쪽으로 가서 일해요."
 						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#5fad6e",
+						"person": "narim",
+						"lines": [
+							"가다가 서거든, 그건 제 입 탓이에요. 물한테 고마워하지 말고요."
+						],
+						"en": [
+							"And if you get hard on the road, that was my mouth. Don’t go thanking the water for it."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"en": [
-							"…Both need me.",
-							"That is the trouble."
+							"…They both need me.",
+							"That’s the trouble."
 						],
 						"lines": [
-							"…양쪽 다 나를 필요로 하오.",
-							"그게 골치요."
+							"…둘 다 제가 필요합니다.",
+							"그게 문제지요."
 						]
 					},
 					{
@@ -13598,8 +12976,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Yushin does not bring everyone to the lake. He brings <b>Chunchu</b> — once — because a man who will invent rooms the Council never votes on should learn what steam does to cleverness.",
-						"ko": "유신은 호수에 아무나 데려오지 않는다. <b>춘추</b>를 — 단 한 번 — 데려온다. 화백이 표결하지 않는 방을 발명할 사람은, 김이 영리함에 무엇을 하는지 알아야 하니까."
+						"html": "Yushin does not bring everyone to the lake. He brings <b>Chunchu</b>, once, because a man who will invent rooms the Council never votes on should learn what steam does to cleverness.",
+						"ko": "유신은 호수에 아무나 데려오지 않는다. <b>춘추</b>를 단 한 번 데려온다. 화백이 표결하지 않는 방을 발명할 사람은, 김이 영리함에 무엇을 하는지 알아야 하니까."
 					},
 					{
 						"kind": "p",
@@ -13608,9 +12986,10 @@
 					},
 					{
 						"kind": "p",
-						"html": "They smell the name before they finish his face. Steam off Golhwa’s skin; her legs stay spread. Water down Hyullé’s chin; her knees stay pressed, eyes down. A leaf that will not fall beside Narim. He keeps the black bowl as a wall. The spring does not hide much — letter or sword, he is already standing in the water the way every Kim does when he looks at them. They do not ask his rank.",
-						"ko": "얼굴을 다 보기 전에 이름을 맡는다. 골화의 살에서 김이 난다. 다리는 벌어진 채. 혈레의 턱으로 물이 내린다. 무릎은 모으고 눈은 아래. 나림 곁에 떨어지지 않는 잎. 그는 검은 사발을 벽으로 쓴다. 샘이 감춰 주는 게 없다 — 편지든 칼이든, 셋을 보면 김은 누구나 물 속에서 선다. 셋은 신분을 묻지 않는다.",
-						"nsfw": true
+						"html": "They smell the name before they finish his face. Steam comes off Golhwa’s skin, water runs down Hyullé’s chin, and beside Narim a leaf refuses to fall. He keeps the black bowl in front of him like a wall. The spring does not hide much: letter or sword, he is already standing in the water the way every Kim does when he looks at them. They do not ask his rank.",
+						"ko": "얼굴을 다 보기 전에 이름을 맡는다. 골화의 살에서 김이 오르고, 혈레의 턱으로 물이 흐르고, 나림 곁에서는 잎 하나가 떨어지지 않는다. 그는 검은 사발을 벽처럼 앞에 둔다. 샘은 감춰 주는 게 별로 없다. 편지든 칼이든, 셋을 보는 김은 누구나 그렇듯 그도 이미 물속에서 서 있다. 셋은 신분을 묻지 않는다.",
+						"nsfw": true,
+						"art": "Golhwa’s legs spread; Hyullé’s knees pressed, eyes down."
 					},
 					{
 						"kind": "dialogue",
@@ -13639,8 +13018,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "She has been on the rock picturing a letter-soft mouth. Soft ones last. She cannot sit. She wants him to pin her until she goes insane.",
-						"ko": "편지처럼 부드러운 입을 그리며 바위에 허리를 갈대였다. 부드러운 쪽이 더 오래 가. 앉아 있질 못하겠어. 미쳐버릴 때까지 눌러 줬으면.",
+						"html": "Since he walked in she has been sitting on her rock thinking about that soft, letter-writing mouth, and about being pinned under it.",
+						"ko": "그가 들어온 뒤로 그녀는 바위에 앉아 그 편지 쓰는 부드러운 입만 생각하고 있다. 그 입 아래 꼼짝없이 눌리는 것을.",
 						"nsfw": true
 					},
 					{
@@ -13649,11 +13028,11 @@
 						"person": "chunchu",
 						"en": [
 							"I am inventing a kingdom.",
-							"…Preferably with fewer surprises in the water."
+							"…I had pictured it with fewer surprises in the water."
 						],
 						"lines": [
-							"나라를 발명하는 중이오.",
-							"…물에 놀라움이 좀 적었으면 좋겠소."
+							"나라를 하나 지어내는 중이오.",
+							"…물속에 이렇게 놀랄 일이 있을 줄은 몰랐지만."
 						]
 					},
 					{
@@ -13662,17 +13041,21 @@
 						"person": "narim",
 						"en": [
 							"Sit—",
-							"Sit down before you invent it standing. I’m Narim. We are the mouths the hill uses. Wisdom, if you ask once, from the water. The marshal already knows the door. I would like to know your mouth."
+							"Sit down before you invent it standing up. I’m Narim.",
+							"The hill talks through us. Ask it one thing, once, and the water answers.",
+							"The marshal knows how it goes. You… …just ask."
 						],
 						"lines": [
 							"앉—",
-							"서서 지어내기 전에 앉아요. 나림이에요. 언덕이 쓰는 입이에요. 지혜요, 물에서 한 번만 물으면. 원수는 이미 문을 알아요. 저는 당신 입을 알고 싶어요."
+							"서서 지어내지 말고 앉아요. 나림이에요.",
+							"언덕이 우리 입으로 말해요. 한 가지를, 한 번만 물어요. 그럼 물이 대답해요.",
+							"원수는 어떻게 하는지 알아요. 당신은… …그냥 물어요."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "He looks at her like she is a clerk who can be managed. Narim cannot finish the first Sit. Out of breath. Sit down before I ask you to put that clever mouth on me, she does not say. Fuck. She is the eldest. Hyullé says nothing. In her head he is already on her. She looks like she will explode.",
-						"ko": "그는 다룰 수 있는 서기를 보듯 본다. 나림은 첫 앉—을 끝내지 못한다. 숨이 가쁘다. 앉아요, 그 영리한 입을 내게 대기 전에 — 그 말은 안 한다. 씨발. 언니다. 혈레는 말이 없다. 머리 속에서는 이미 그가 위에 있다. 터질 것처럼 보인다.",
+						"html": "He looks at her the way he would look at a clerk he means to manage, kindly, and Narim cannot get past the first word. Sit down before I ask for that clever mouth, she does not say. She is the eldest; she is supposed to be the one who can talk. Hyullé has not said a word yet. In her head he is already on top of her, and she looks as if she might burst.",
+						"ko": "그는 다룰 작정인 서기를 보듯 다정하게 그녀를 본다. 나림은 첫마디에서 더 나아가지 못한다. 그 영리한 입을 달라고 하기 전에 앉아요, 라는 말은 끝내 하지 않는다. 언니인데. 말을 할 줄 아는 쪽이 언니여야 하는데. 혈레는 아직 한마디도 안 했다. 머릿속에서는 이미 그가 그녀 위에 있고, 금방이라도 터질 것 같은 얼굴이다.",
 						"nsfw": true
 					},
 					{
@@ -13680,41 +13063,42 @@
 						"chip": "#6ec4c9",
 						"person": "hyulle",
 						"en": [
-							"Hello. I’m already wet. Don’t make me say why."
+							"H-hello… I’m already wet. Please don’t make me say why."
 						],
 						"lines": [
-							"안녕. 나 이미 젖었어. 왜인지는 말하게 하지 마."
-						]
+							"아, 안녕하세요… 저 벌써 젖었어요. 왜인지는… 말하라고 하지 마세요."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#D8258C",
 						"person": "chunchu",
 						"en": [
-							"Will a room the Council never votes on hold.",
-							"That is the only question I have that is not a joke."
+							"A room the Council never votes on— will it hold?",
+							"Of all my questions, that is the one that isn’t a joke."
 						],
 						"lines": [
-							"화백이 표결하지 않는 방이 버티겠소.",
-							"농담이 아닌 질문은 그게 전부요."
+							"화백이 표결한 적 없는 방이— 버티겠소?",
+							"내 질문 중에 농담이 아닌 건 그것 하나요."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "The comedy goes out of the cave. All three pairs of eyes go solid — green, cyan, ember. One voice. Three mouths.",
-						"ko": "동굴에서 장난이 빠진다. 눈 셋이 통째로다 — 초록, 청록, 불씨. 목소리 하나. 입 셋."
+						"html": "Golhwa stops grinning in the middle of a breath. All three pairs of eyes go solid, green and cyan and ember, and one voice comes out of three mouths.",
+						"ko": "골화의 웃음이 숨 한가운데서 멎는다. 세 쌍의 눈이 초록, 청록, 불씨 빛으로 통째로 차오르고, 입 셋에서 목소리 하나가 나온다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#0e7490",
-						"speaker": "THE HILL",
+						"speaker": "The Hill",
 						"en": [
 							"Build the room. Do not put your name on the door.",
-							"A country will take a house and call the taking love. You already know that sentence. Use it."
+							"A country will take a house and call the taking love. You already know this. Use it."
 						],
 						"lines": [
 							"방을 지어요. 문에 이름을 쓰지 말아요.",
-							"나라가 집을 가져가고 그 가져감을 사랑이라 부를 거예요. 그 문장은 이미 알아요. 쓰세요."
+							"나라는 집을 가져가면서 그걸 사랑이라고 부를 거예요. 당신은 이미 알고 있어요. 그걸 쓰세요."
 						]
 					},
 					{
@@ -13722,19 +13106,19 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"That was the hill. This is me.",
+							"Sorry. That was the hill. This is me.",
 							"Come closer anyway. Soft ones last. I can’t sit. My legs won’t close while you’re looking."
 						],
 						"lines": [
-							"그건 언덕이었어. 이건 나야.",
-							"그래도 가까이 와. 부드러운 애는 오래 가. 나 못 앉아. 네가 보면 다리가 안 모여."
+							"미안. 방금 건 언덕이었어. 이건 나고.",
+							"그래도 가까이 와. 부드러운 애들이 오래 가. 나 못 앉아. 네가 보고 있으면 다리가 안 붙어."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "He leaves with nothing on but water until the mouth. The magenta is still on the stone. He looks at the path as if it were a map he intends to redraw. One sister watches him go. Another cannot speak. He never asks to return. He never entirely forgets the steam.",
-						"ko": "입구까지 물만 걸치고 나온다. 자홍은 아직 돌 위에 있다. 길을 바라본다 — 다시 그릴 지도처럼. 한 신은 그가 가는 것을 보고, 다른 신은 말을 못 한다. 돌아오자고 청하지는 않는다. 김을 아주 잊지도 않는다."
+						"html": "He walks out in nothing but water as far as the mouth, where the magenta is still lying on the stone, and looks down the path like a map he means to redraw. Golhwa watches him all the way out. Hyullé cannot look at him. He never asks to come back, and he never quite forgets the steam.",
+						"ko": "입구까지 물만 걸친 채 걸어 나온다. 자홍 비단은 아직 돌 위에 놓여 있다. 그는 다시 그릴 지도를 보듯 길을 내려다본다. 골화는 그가 나갈 때까지 눈을 떼지 않는다. 혈레는 그를 쳐다보지도 못한다. 그는 다시 오게 해 달라고 하지 않고, 김을 아주 잊지도 못한다."
 					},
 					{
 						"kind": "day",
@@ -13743,25 +13127,17 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>King Euija (42)</b> reads Silla’s border the way he reads everything — patiently, and only once. Daeya is young at the top and hollow underneath. He sends the General <b>Yunchung</b> with ten thousand men, and in Surabol nobody’s dreams change, because the people who should be dreaming badly are at a wedding’s afterglow.",
+						"html": "<b>King Euija (42)</b> reads Silla’s border the way he reads everything — patiently, and only once. Daeya is young at the top and hollow underneath. He sends the General <b>Yunchung</b> with ten thousand men, and in Surabol nobody’s dreams change, because the people who should be dreaming badly are still in a wedding’s afterglow.",
 						"ko": "<b>의자왕 (42)</b>은 신라의 국경을, 모든 것을 읽듯이 읽는다 — 참을성 있게, 그리고 단 한 번만. 대야성은 윗자리가 어리고 그 밑이 비어 있다. 그는 장군 <b>윤충</b>에게 군사 만 명을 주어 보낸다. 서라벌에서는 누구의 꿈자리도 사나워지지 않는다. 꿈자리가 사나워야 할 사람들이 아직 혼례의 여운 속에 있기 때문이다."
 					},
 					{
-						"kind": "quote",
-						"hanja": "百濟將軍允忠領兵攻拔大耶城 都督伊飡品釋 舍知竹竹 龍石等死之",
-						"ko": "백제 장군 윤충이 군사를 이끌고 대야성을 쳐서 함락하니, 도독 이찬 품석과 사지 죽죽·용석 등이 죽었다.",
-						"html": "The Baekje general Yunchung led troops, attacked, and took Daeya Fortress. The dodok Ichan Pumsuk, and the saji Jukjuk and Yongseok, died there.",
-						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 11 (642), 8th month; Lee Byong-do ed., vol. 1, p. 118"
-					},
-					{
 						"kind": "p",
-						"html": "<b>Pumsuk (24)</b> is the head general of Daeya, despite his young age, because he is a Noble.",
-						"ko": "<b>품석 (24)</b>은 어린 나이에도 대야성의 도독이다 — 진골이기 때문이다."
+						"html": "<b>Pumsuk (24)</b> has been Guardian of Daeya since his wedding. He is young for a border command, but he is a True Bone, and in Silla that settles it.",
+						"ko": "<b>품석 (24)</b>은 혼례를 올린 뒤로 줄곧 대야성 도독이다. 국경을 맡기엔 어리지만 진골이고, 신라에서는 그걸로 끝이다."
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#6b7f9e",
-						"speaker": "🙎",
+						"chip": "#9a7b5f",
 						"lines": [
 							"아니, 이런 귀에 피도 안 마른 놈을 국경에 놓는 게 말이 되나?"
 						],
@@ -13772,8 +13148,7 @@
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#6b7f9e",
-						"speaker": "🙎",
+						"chip": "#9a7b5f",
 						"lines": [
 							"아, 여기가 무슨 나란지 까먹었나? 우린 결국 흙만도 못한 것들이여~",
 							"진골이라고 하면 하늘이 알아서 쫙 열리는 그런 나라라구~~"
@@ -13786,8 +13161,7 @@
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#6b7f9e",
-						"speaker": "🙎",
+						"chip": "#9a7b5f",
 						"lines": [
 							"아니~~ 난 또 왜 이런 망할 나라에서 태어나서 이런 고생을 하고 있네!!"
 						],
@@ -13798,8 +13172,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Maehwa</b> is the poorest woman in Daeya and the one every eye in it finds first. She is thirty-one. She stopped pretending not to know what happens to a room when she walks into it a long time ago, and the fortress has never forgiven her for it.",
-						"ko": "<b>매화</b>는 대야에서 가장 가난한 여자이고, 성 안의 모든 눈이 가장 먼저 찾는 여자다. 서른하나. 자기가 들어서면 방이 어떻게 되는지 모르는 척하기를 그만둔 지 오래고, 이 성은 그것을 한 번도 용서한 적이 없다."
+						"html": "<b>Maehwa</b> is the poorest woman in Daeya and the one every eye in it finds first. She stopped pretending not to know what happens to a room when she walks into it a long time ago, and the fortress has never forgiven her for it.",
+						"ko": "<b>매화</b>는 대야에서 가장 가난한 여자이고, 성 안의 모든 눈이 가장 먼저 찾는 여자다. 자기가 들어서면 방이 어떻게 되는지 모르는 척하기를 그만둔 지 오래고, 이 성은 그것을 한 번도 용서한 적이 없다."
 					},
 					{
 						"kind": "dialogue",
@@ -13827,10 +13201,10 @@
 						"kind": "dialogue",
 						"chip": "#c98fb0",
 						"lines": [
-							"옷을 사 주시든가요. / 있는 거라곤 몸에 안 맞는 것뿐인데."
+							"그럼 옷을 사 주든가. / 있는 옷이 다 안 맞는데."
 						],
 						"en": [
-							"Buy me clothes, then. / Everything I own refuses to fit."
+							"Then buy me clothes. / Nothing I own fits anymore."
 						],
 						"person": "gumilwife"
 					},
@@ -13841,7 +13215,7 @@
 							"…월봉이 얼만지 알잖아."
 						],
 						"en": [
-							"…You know what I am paid."
+							"…You know what they pay me."
 						],
 						"person": "gumil"
 					},
@@ -13849,33 +13223,60 @@
 						"kind": "dialogue",
 						"chip": "#c98fb0",
 						"lines": [
-							"알죠. / 그래서 사람들이 다 보는 겁니다."
+							"알지. / 그러니까 다들 쳐다보는 거고."
 						],
 						"en": [
-							"I do. / Which is why everyone looks."
+							"I know. / That’s why they all look."
 						],
 						"person": "gumilwife"
 					},
 					{
 						"kind": "p",
-						"html": "By noon the packed-earth yard splits. Porters, smiths, the boys who haul grain cluster at the well-post as if the work had always been there. <b>Maehwa</b> crosses alone — teal-sage silk, one red sash, celebrity distance. They do not come closer. She does not invite them.",
-						"ko": "정오가 되면 다진 흙마당이 갈라진다. 짐꾼, 대장장이, 곡식을 나르는 애들 — 우물 기둥에 몰린다, 일이 원래 거기 있었던 것처럼. <b>매화</b>만 혼자 건넌다. 청록 비단, 붉은 허리끈 하나, 유명인의 거리. 그들은 다가오지 않는다. 그녀도 부르지 않는다."
+						"html": "By noon the packed-earth yard splits. Porters, smiths and grain-haulers cluster at the well-post as if the work had always been there. Only <b>Mochuk</b>, who minds the gate bar and drinks with Gumil most nights, stays on his stool. <b>Maehwa</b> crosses alone in teal-sage silk and one red sash, keeping the distance of a woman everyone already knows. They do not come closer. She does not invite them.",
+						"ko": "정오가 되면 다진 흙마당이 갈라진다. 짐꾼, 대장장이, 곡식 나르는 일꾼들이 일이 원래 거기 있었다는 듯 우물 기둥에 몰린다. 문 빗장을 지키고 밤마다 검일과 술을 마시는 <b>모척</b>만 제 걸상에 그대로 앉아 있다. <b>매화</b>가 혼자 건넌다. 청록 비단에 붉은 허리끈 하나, 모두가 이미 아는 여자의 거리를 두고. 그들은 다가오지 않는다. 그녀도 부르지 않는다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#8a8a94",
-						"speaker": "🗣",
+						"speaker": "Porter",
 						"lines": [
-							"저 자락 봐…",
-							"아니 허리. 허리라고.",
-							"검일 마누라잖아.",
+							"저 자락 봐…"
+						],
+						"en": [
+							"Look at that hem…"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a8a94",
+						"speaker": "Smith",
+						"lines": [
+							"아니 허리. 허리라고."
+						],
+						"en": [
+							"No — the waist. The waist."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8f7f6a",
+						"lines": [
+							"검일 마누라잖아."
+						],
+						"en": [
+							"That’s Gumil’s wife."
+						],
+						"person": "mochuk"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a8a94",
+						"speaker": "Porter",
+						"lines": [
 							"알아. 그래서… 그래서 더—"
 						],
 						"en": [
-							"Look at that hem…",
-							"No — the waist. The waist.",
-							"That's Gumil's wife.",
-							"I know. That's why it's worse—"
+							"I know. That’s why it’s worse—"
 						]
 					},
 					{
@@ -13888,38 +13289,47 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"거기가 길이에요.",
-							"막지는 마시고요."
+							"길 막고 서 있네요.",
+							"비키든가, 아니면 그냥 밀고 지나갈게요."
 						],
 						"en": [
-							"That is a road.",
-							"Do not stand in it."
+							"You’re standing in the road.",
+							"Move, or I walk right through you."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "One of them forgets to close his mouth. She turns just enough. The hem stays a breath too long — teal silk telling on the hip, the wooden sprig pin catching the light — and she lets him have that second like a coin she can afford to drop. Then the silk falls back. She will not let him close.",
-						"ko": "한 놈이 입을 다물 것을 잊는다. 그녀는 조금만 돌아본다. 자락이 한 숨 더 머문다 — 청록 비단이 허리를 말하고, 나무 비녀가 빛을 받고 — 그 한 초를, 떨어뜨려도 되는 동전처럼 준다. 그리고 비단이 다시 내려온다. 가까이 오라고는 하지 않는다."
+						"html": "One of them forgets to close his mouth. She turns just enough. The hem stays a breath too long, teal silk telling on the hip and the wooden sprig pin catching the light, and she lets him have that second like a coin she can afford to drop. Then the silk falls back. She will not let him close.",
+						"ko": "한 놈이 입을 다물 것을 잊는다. 그녀는 조금만 돌아본다. 자락이 한 숨 더 머문다. 청록 비단이 허리를 일러바치고, 나무 비녀가 빛을 받는다. 그 한 순간을, 떨어뜨려도 아깝지 않은 동전처럼 그에게 준다. 그리고 비단이 다시 내려온다. 가까이 오게 두지는 않는다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#8a8a94",
-						"speaker": "🗣",
+						"speaker": "Porter",
 						"lines": [
-							"방금—",
+							"방금—"
+						],
+						"en": [
+							"Just now—"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a8a94",
+						"speaker": "Smith",
+						"lines": [
 							"봤어. 나도.",
 							"…말도 안 했는데."
 						],
 						"en": [
-							"Just now—",
 							"I saw. I saw.",
-							"…She didn't even say anything."
+							"…She didn’t even say anything."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "She leaves them wrecked on the packed earth and almost smiles — a small, private thing, gone before the well-post. The yard is about the curve she takes with her.",
-						"ko": "그들을 다진 흙 위에 망가진 채로 두고 간다. 거의 웃는다 — 작은, 제 것만인 웃음. 우물 기둥 앞에서 사라진다. 마당의 일은 그녀가 가져가는 그 곡선이다."
+						"html": "She leaves them wrecked on the packed earth and almost smiles, a small private thing that is gone before she reaches the well-post. All the yard talks about afterwards is the curve she took with her.",
+						"ko": "그들을 다진 흙 위에 망가진 채 두고 가며 거의 웃는다. 작고 저만 아는 웃음이고, 우물 기둥에 닿기 전에 사라진다. 그 뒤로 마당이 하는 얘기는 그녀가 가져간 그 곡선뿐이다."
 					},
 					{
 						"kind": "scene",
@@ -13928,69 +13338,117 @@
 					},
 					{
 						"kind": "p",
-						"html": "Before the True Bone’s horse is even a rumour, the inside of Daeya already has a weather, and the weather is her. The well-post learns her hip first. Packed earth. Timber eaves. Men turn their heads as she passes. The wives they brought watch her instead of the water.",
-						"ko": "진골의 말이 소문도 되기 전에, 대야 안에는 이미 날씨가 있고, 그 날씨는 그녀다. 우물 기둥이 허리를 먼저 배운다. 다진 흙. 나무 처마. 지나갈 때 사내들이 고개를 돌린다. 데려온 아내들은 물이 아니라 그녀를 본다."
+						"html": "Daeya has its own weather, and the weather is her. The well-post learns her hip first. Men turn their heads as she passes, and the wives they brought watch her instead of the water.",
+						"ko": "대야에는 따로 날씨가 있고, 그 날씨는 그녀다. 우물 기둥이 그녀의 허리를 먼저 배운다. 지나갈 때 사내들이 고개를 돌리고, 데려온 아내들은 물 대신 그녀를 본다.",
+						"art": "Packed earth, timber eaves."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#8a8a94",
-						"speaker": "🗣",
+						"speaker": "Porter",
 						"lines": [
-							"저 가슴… 아니 허리.",
-							"둘 다야. 둘 다.",
-							"검일 마누라인데 왜 저렇게—"
+							"매일 지나가는데, 매일 뭘 떨어뜨려."
 						],
 						"en": [
-							"That chest— no, the waist.",
-							"Both. It’s both.",
-							"That’s Gumil’s wife. Why is she built like—"
+							"Every day she walks past, and every day I drop something."
 						]
-					},
-					{
-						"kind": "p",
-						"nsfw": true,
-						"html": "She does not look at them. She places a hand on the red sash as if it had slipped, and it has not slipped. The storehouse door is a dark mouth. Yellow sleeves in the shadow forget they have wives standing next to them. The wives do not forget. Thirty-one. The silk is poor. The body is not.",
-						"ko": "그들을 보지 않는다. 붉은 끈이 흘러내린 것처럼 손을 올리는데, 흘러내린 적이 없다. 창고 문이 어두운 입이다. 그늘의 노란 소매들이, 옆에 선 아내가 있는 줄을 잊는다. 아내들은 잊지 않는다. 서른하나. 비단은 가난하다. 몸은 아니다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#8a8a94",
-						"speaker": "🗣",
+						"speaker": "Smith",
 						"lines": [
-							"손 봐. 일부러야.",
-							"여보— 보지 마.",
-							"못 봐. 그게 문제야."
+							"방금 두레박 떨어뜨렸어."
 						],
 						"en": [
-							"Watch the hand. That’s on purpose.",
-							"Don’t look at her.",
-							"I can’t. That’s the problem."
+							"You just dropped the bucket."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a8a94",
+						"speaker": "Porter",
+						"lines": [
+							"검일 같은 놈이 무슨 복으로 저걸 집에 두고, 밤마다 저 여자가—"
+						],
+						"en": [
+							"How does Gumil get to go home to that? A man like him, and every night she—"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8f7f6a",
+						"lines": [
+							"끝까지 말해 봐. 검일한테 토씨 하나 안 빼고 전해 줄 테니."
+						],
+						"en": [
+							"Go on, finish it. I’ll tell Gumil word for word."
+						],
+						"person": "mochuk"
+					},
+					{
+						"kind": "p",
+						"html": "She does not look at them. She places a hand on the red sash as if it had slipped, and it has not slipped. The storehouse door is a dark mouth. Yellow sleeves in the shadow forget they have wives standing next to them. The wives do not forget.",
+						"ko": "그들을 보지 않는다. 붉은 끈이 흘러내린 것처럼 손을 올리는데, 흘러내린 적이 없다. 창고 문이 어두운 입이다. 그늘의 노란 소매들이, 옆에 선 아내가 있는 줄을 잊는다. 아내들은 잊지 않는다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a8a94",
+						"speaker": "Porter",
+						"lines": [
+							"손 봐. 일부러야."
+						],
+						"en": [
+							"Watch the hand. That’s on purpose."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a8a94",
+						"speaker": "Porter’s wife",
+						"lines": [
+							"여보— 보지 마."
+						],
+						"en": [
+							"Dear— don’t look at her."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a8a94",
+						"speaker": "Porter",
+						"lines": [
+							"안 볼 수가 없어. 그게 문제야."
+						],
+						"en": [
+							"I can’t not look. That’s the problem."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "On the inner stair she lets the jeogori fall another finger. The post takes the silhouette. Men turn on the steps. Wives on the landing go still. They will tell themselves they were looking at the stair. They were looking at the curve under the ochre.",
-						"ko": "안쪽 계단에서 저고리를 손가락 하나만큼 더 내린다. 기둥이 실루엣을 받는다. 계단의 사내들이 고개를 돌린다. 참의 아내들이 멈춘다. 계단을 봤다고 할 것이다. 황토 아래 곡선을 본 것이다."
+						"html": "On the inner stair she lets the jeogori fall another finger. Men turn on the steps. Wives on the landing go still. They will tell themselves they were looking at the stair. They were looking at the curve under the ochre.",
+						"ko": "안쪽 계단에서 저고리를 손가락 하나만큼 더 내린다. 계단의 사내들이 고개를 돌린다. 참의 아내들이 멈춘다. 계단을 봤다고 할 것이다. 황토 아래 곡선을 본 것이다.",
+						"art": "The post takes the silhouette."
 					},
 					{
 						"kind": "p",
-						"html": "The night before the True Bone arrives, the room is only a lamp and the two of them. Maehwa’s teal silk opens at the shoulder. Gumil’s yellow sleeve comes off as if the month’s pay had never been the argument. They still know how to find each other. They will not know how tomorrow.",
-						"ko": "진골이 도착하기 전날 밤, 방에는 등 하나와 두 사람뿐이다. 매화의 청록 비단이 어깨에서 열린다. 검일의 노란 소매가, 월봉이 한 번도 다툼이 아니었던 것처럼 벗어진다. 아직 서로를 찾는 법을 안다. 내일은 모를 것이다."
+						"html": "The night before the feast, the room is only a lamp and the two of them. Maehwa’s teal silk opens at the shoulder. Gumil’s yellow sleeve comes off as if the month’s pay had never been the argument. They still know how to find each other. They will not know how tomorrow.",
+						"ko": "잔치 전날 밤, 방에는 등 하나와 두 사람뿐이다. 매화의 청록 비단이 어깨에서 열린다. 검일의 노란 소매가, 월봉이 한 번도 다툼이 아니었던 것처럼 벗어진다. 아직 서로를 찾는 법을 안다. 내일은 모를 것이다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#c98fb0",
 						"lines": [
-							"내일 그 아이가 오면.",
-							"오늘은… 오늘만은.",
-							"제 허리에 손을 두세요.",
-							"진골 손이 아니어도 됩니다."
+							"내일 잔치 말인데…",
+							"오늘은… 오늘 밤만은.",
+							"허리에 손 올려.",
+							"진골 손 아니어도 돼."
 						],
 						"en": [
-							"Tomorrow the boy arrives.",
-							"Today… only today.",
-							"Keep your hand on my waist.",
-							"It does not have to be a True Bone hand."
+							"About tomorrow’s feast…",
+							"Tonight… just tonight.",
+							"Put your hand on my waist.",
+							"It doesn’t have to be a True Bone hand."
 						],
 						"person": "gumilwife"
 					},
@@ -14012,8 +13470,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "They stop talking. The lamp is too small for manners. The red sash comes off the way it always does in this room — one impatient pull — and the teal silk follows it onto the boards. His yellow sleeve is already gone. Thirty-one, and she still puts him where she wants him: on his back, her hand around him, then sitting until he is in to the hilt, the way winter has always started in this house.",
-						"ko": "말은 그만둔다. 등잔은 예절을 담기엔 너무 작다. 붉은 허리끈이 이 방에서 늘 그러하듯 참을성 없이 한 번에 풀리고, 청록 비단이 마루로 내려간다. 노란 소매는 이미 없다. 서른하나. 그래도 원하는 자리에 눕힌다: 등을 깔고, 손으로 잡고, 끝까지 앉는다. 이 집에서 겨울은 늘 그렇게 시작한다."
+						"html": "They stop talking. The lamp is too small for manners. The red sash comes off the way it always does in this room, with one impatient pull, and the teal silk follows it onto the boards. His yellow sleeve is already gone. She still puts him where she wants him: on his back, her hand guiding him, then sinking down onto him slowly, the way winter has always started in this house.",
+						"ko": "말은 그만둔다. 등잔은 예절을 담기엔 너무 작다. 붉은 허리끈이 이 방에서 늘 그러듯 참을성 없는 한 번의 손길에 풀리고, 청록 비단이 그 뒤를 따라 마루로 내려간다. 노란 소매는 이미 없다. 그래도 그녀는 원하는 자리에 그를 둔다. 등을 대고 눕히고, 손으로 이끌고, 천천히 그 위로 내려앉는다. 이 집에서 겨울은 늘 그렇게 시작한다."
 					},
 					{
 						"kind": "dialogue",
@@ -14021,60 +13479,49 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"내일은 내일.",
-							"오늘은 제 위에 있어요.",
-							"이름 부르지 말고요. / 그냥… 그대로."
+							"내일은 내일이고.",
+							"오늘은 내 밑에 있어.",
+							"이름은 부르지 마. / 그냥… 그대로 있어."
 						],
 						"en": [
 							"Tomorrow can wait.",
 							"Tonight you stay under me.",
-							"Don’t use a name. / Just… stay."
+							"Don’t say a name. / Just… stay."
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She knows his body the way a person knows a door they have opened every winter. When he nuts it is with her name, not a rank — a familiar load, nothing stupid-young about it, and she keeps him in until it is finished and then a little after, rolling her hips so none of it goes to waste. They sleep facing the same wall. In the morning the silk will go back on as if the night had been ordinary. It never is.",
-						"ko": "겨울마다 연 문처럼 그의 몸을 안다. 쌀 때 부르는 것은 품계가 아니라 이름이다 — 익숙한 한 방, 바보 같은 젊음은 없고, 다 쌀 때까지 안에 두고 조금 더, 허리를 굴려 흘리지 않는다. 같은 벽을 보고 잔다. 아침이면 비단이, 밤이 평범했다는 듯이 다시 올라갈 것이다. 한 번도 평범하지 않다."
+						"html": "She knows his body the way a person knows a door they have opened every winter. When he comes it is with her name, not a rank, and she keeps him inside her until it is finished and a little after, moving her hips slowly so that none of it is wasted. They sleep facing the same wall. In the morning the silk will go back on as if the night had been ordinary.",
+						"ko": "겨울마다 연 문처럼 그의 몸을 안다. 끝날 때 그가 부르는 것은 품계가 아니라 그녀의 이름이고, 그녀는 다 끝날 때까지, 그리고 조금 더, 그를 안에 둔 채 천천히 허리를 움직인다. 하나도 흘리지 않으려고. 같은 벽을 보고 잔다. 아침이면 비단은, 밤이 평범했다는 듯이 다시 올라갈 것이다."
 					},
 					{
 						"kind": "p",
-						"html": "Then a True Bone takes the fortress — twenty-four, clean hands, and a wife whose father is the most important man in Silla.",
-						"ko": "그리고 진골이 성을 맡는다. 스물넷. 깨끗한 손. 아내의 아버지는 신라에서 가장 중요한 사람이다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#D8258C",
-						"lines": [
-							"ㄱ-그 아기의 아버지... 문희 양의.. 그..",
-							"그게 접니다!"
-						],
-						"en": [
-							"Th-the father of that child… Lady Munhee’s… I mean…",
-							"It’s me!"
-						],
-						"person": "chunchu"
+						"html": "Tomorrow night the True Bone gives a feast for his first year at Daeya, and the whole fortress is invited to look at him. Clean hands. A wife whose father is the most important man in Silla.",
+						"ko": "내일 밤, 진골이 대야에서의 첫해를 기념하는 잔치를 연다. 성 안 사람이 모두 그를 구경하러 온다. 깨끗한 손. 아버지가 신라에서 가장 중요한 사람인 아내."
 					},
 					{
 						"kind": "p",
-						"html": "At the feast the wine finds Pumsuk first. Clean ice-blue silk. Crescent band. A cup he is not tasting. Then the lamp-line is hers — Maehwa walking the cheap hanging lamps like she built them, dirtied green jeogori, ochre chima washed too many times, the red sash tied by habit. Poor cloth against a dark hall. His clothes stay clean. Hers do not.",
-						"ko": "연회에서 술이 품석을 먼저 찾는다. 깨끗한 얼음빛 비단. 초승달 띠. 맛보지 않는 잔. 그리고 등잔 줄은 그녀 것이다 — 매화가 싼 등잔을 자기가 세워 둔 것처럼 걷는다. 때 묻은 초록 저고리, 너무 많이 빤 황토 치마, 습관으로 맨 붉은 끈. 어두운 전각에 가난한 옷. 그의 옷은 깨끗하다. 그녀의 옷은 아니다."
+						"html": "At the feast the wine finds Pumsuk first, in clean ice-blue silk, holding a cup he is not tasting. Then the lamp-line is hers. Maehwa walks under the cheap hanging lamps as if she had hung them herself, in a dirtied green jeogori and an ochre chima washed too many times, the red sash tied by habit.",
+						"ko": "연회에서 술이 품석을 먼저 찾는다. 깨끗한 얼음빛 비단 차림으로, 맛보지 않는 잔을 들고 있다. 그리고 등잔 줄은 그녀 것이다. 매화가 싸구려 등잔 아래를 제가 걸어 둔 것처럼 걷는다. 때 묻은 초록 저고리, 너무 많이 빤 황토 치마, 습관으로 맨 붉은 끈.",
+						"art": "Crescent band. Poor cloth against a dark hall."
 					},
 					{
 						"kind": "p",
-						"html": "He talks to the cup. It does not help. The training is a joke tonight. Heart-pupils. A thread of drool he will not wipe. She is only a green shape in the lamp behind him, and that is enough.",
-						"ko": "잔에 말한다. 안 된다. 오늘 밤 훈련은 농담이다. 눈 안에 하트. 닦지 않는 침 한 줄. 등잔 뒤로는 초록 실루엣뿐인데, 그걸로 충분하다."
+						"html": "He talks to the cup. It does not help. She is only a green shape in the lamp behind him, and that is enough.",
+						"ko": "잔에 말한다. 안 된다. 등잔 뒤로는 초록 실루엣뿐인데, 그걸로 충분하다.",
+						"art": "Heart-pupils. A thread of drool he will not wipe."
 					},
 					{
 						"kind": "p",
-						"html": "The feast is not a private room. It is every man in Daeya and the families they brought. She walks the aisle. Bowls stop. Necks turn. The wives watch her, not the food, and the watching is already a fight. He looks at her instead of his own table. The families are still eating. She is already working.",
-						"ko": "잔치는 밀실이 아니다. 대야의 사내들과 데려온 식구들이다. 그녀가 통로를 걷는다. 그릇이 멈춘다. 고개가 돈다. 아내들은 밥이 아니라 그녀를 보고, 그 눈이 이미 싸움이다. 그는 제 상 대신 그녀를 본다. 식구들은 아직 먹고 있다. 그녀는 이미 일하고 있다."
+						"html": "Every man in Daeya is at the feast, and so are the families they brought. She walks the aisle. Bowls stop. Necks turn. The wives watch her instead of the food, and the watching is already a fight. Pumsuk looks at her instead of at his own table. Around them the families go on eating, and she goes on working the room.",
+						"ko": "대야의 사내들이 다 잔치에 와 있고, 데려온 식구들도 와 있다. 그녀가 통로를 걷는다. 그릇이 멈춘다. 고개가 돈다. 아내들은 밥 대신 그녀를 보고, 그 눈이 이미 싸움이다. 품석은 제 상 대신 그녀를 본다. 식구들은 계속 먹고, 그녀는 계속 방을 다룬다."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She does it in public the way she does it in a dark room. A plum from a tray. A hand on her own hip, then on the sash, then — as if by accident — at the inner thigh where the ochre splits when she sits. She has practised this. The boy in ice-blue counts without meaning to. Twenty-four. The training does not cover a woman who knows where to put her hands.",
-						"ko": "어두운 방에서 하듯 사람들 앞에서 한다. 쟁반의 자두. 제 허리에 손, 끈에 손, 그리고 — 실수인 척 — 앉으면 황토가 갈라지는 허벅지 안쪽에. 연습한 것이다. 얼음빛 소년이 세고 있다, 셀 생각이 없는데. 스물넷. 훈련은 손 둘 곳을 아는 여자를 다루지 않는다."
+						"html": "She does it in public the way she does it in a dark room. A plum from a tray. A hand on her own hip, then on the sash, then, as if by accident, on the inner thigh where the ochre splits when she sits. She has practised this. Pumsuk follows every move of her hand without meaning to.",
+						"ko": "어두운 방에서 하듯 사람들 앞에서 한다. 쟁반의 자두. 제 허리에 손, 끈에 손, 그리고 실수인 척, 앉으면 황토가 갈라지는 허벅지 안쪽에. 연습한 것이다. 품석은 그럴 생각도 없이 그 손을 하나하나 따라간다."
 					},
 					{
 						"kind": "dialogue",
@@ -14082,14 +13529,14 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"자두— 아, 입이야, 잔이 아니고.",
-							"손? 여기. 일부러야.",
-							"스물넷이 다 보이네."
+							"자두요— 아, 보는 건 입이죠, 잔이 아니라.",
+							"손이요? 여기. 일부러 그런 거예요.",
+							"얼굴에 다 쓰여 있네."
 						],
 						"en": [
-							"The plum— ah, it’s the mouth, not the cup.",
+							"The plum— oh, it’s the mouth you’re watching, not the cup.",
 							"The hand? Here. I meant that.",
-							"Twenty-four and you can see all of it."
+							"It’s all over your face."
 						]
 					},
 					{
@@ -14097,12 +13544,13 @@
 						"nsfw": true,
 						"person": "pumsuk",
 						"html": "I should look at my own table. I am looking at her chest. At the split of the chima. At the place a general is not supposed to name. I like women built like that. I have always liked it. I am going to hate myself in a bed that is not hers.",
-						"ko": "제 상을 봐야 한다. 가슴을 보고 있다. 치마가 갈라진 곳을. 장군이 이름 붙이면 안 되는 곳을. 저런 몸매의 여자가 좋다. 원래 좋았다. 그 여자 것이 아닌 침상에서 나를 미워할 것이다."
+						"ko": "제 상을 봐야 한다. 가슴을 보고 있다. 치마가 갈라진 곳을. 장군이 이름 붙이면 안 되는 곳을. 저런 몸매의 여자가 좋다. 원래 좋았다. 그 여자 것이 아닌 침상에서 나를 미워할 것이다.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
-						"html": "He does the correct thing. He stands. He bows to a feast that has not asked him to leave. He goes to sleep like a man with a pink room waiting. The pallet does not take him.",
-						"ko": "옳은 일을 한다. 일어선다. 나가라고 하지 않은 잔치에 절한다. 분홍 방이 기다리는 사람처럼 자러 간다. 침상이 받지 않는다."
+						"html": "He does the correct thing. He stands, bows to a feast that has not asked him to leave, and goes off to bed like a man whose wife’s pink room is waiting for him. The pallet will not have him.",
+						"ko": "옳은 일을 한다. 일어서서, 나가라고 한 적 없는 잔치에 절하고, 아내의 분홍 방이 기다리는 사람처럼 자러 간다. 침상은 그를 받아 주지 않는다."
 					},
 					{
 						"kind": "scene",
@@ -14111,63 +13559,69 @@
 					},
 					{
 						"kind": "p",
-						"nsfw": true,
-						"html": "Ice-blue on dark timber. One dying lamp. Eyes open. The hall comes with him anyway — her hip, her mouth, the plum, the hand that was not an accident. He tries to sleep and the hall comes with him. A True Bone should be able to close his eyes. He is twenty-four and hard in the dark and he knows exactly why.",
-						"ko": "어두운 나무 위 얼음빛. 죽어 가는 등 하나. 눈은 떠 있다. 전각이 따라온다 — 허리, 입, 자두, 실수가 아니었던 손. 자려고 하면 전각이 따라온다. 진골이면 눈을 감을 수 있어야 한다. 스물넷. 어둠 속에서 서 있고, 이유를 정확히 안다."
+						"html": "He lies on dark timber under one dying lamp with his eyes open, and the hall comes with him anyway: the lamp-line, her hip, her mouth. A True Bone should be able to close his eyes.",
+						"ko": "어두운 나무 침상에 누워, 죽어 가는 등잔 하나 아래 눈을 뜨고 있다. 전각이 그래도 따라온다. 등잔 줄, 그 허리, 그 입. 진골이면 눈을 감을 수 있어야 한다."
+					},
+					{
+						"kind": "p",
+						"html": "He is hard in the dark, and he knows exactly why.",
+						"ko": "어둠 속에서 서 있고, 이유를 정확히 안다.",
+						"nsfw": true
 					},
 					{
 						"kind": "monologue",
 						"nsfw": true,
 						"person": "pumsuk",
 						"html": "This fire. I did not light it. She walked the lamps and it caught. I have a wife. I have a name. I have a cock that will not listen. The curve of her — I like that. I have always liked that. If I sleep I will dream the split of the ochre. If I do not sleep I will go back. Beasts go back. I am going back.",
-						"ko": "이 불. 내가 지핀 게 아니다. 그녀가 등잔을 걸어서 붙었다. 아내가 있다. 이름이 있다. 말을 안 듣는 것이 있다. 그 곡선 — 좋다. 원래 좋았다. 잠들면 황토가 갈라진 꿈을 꿀 것이다. 안 잠들면 돌아갈 것이다. 짐승이 돌아간다. 나는 돌아간다."
+						"ko": "이 불. 내가 지핀 게 아니다. 그녀가 등잔을 걸어서 붙었다. 아내가 있다. 이름이 있다. 말을 안 듣는 것이 있다. 그 곡선 — 좋다. 원래 좋았다. 잠들면 황토가 갈라진 꿈을 꿀 것이다. 안 잠들면 돌아갈 것이다. 짐승이 돌아간다. 나는 돌아간다.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "In the gold behind his lids she arrives with the plum. Jeogori already wrong. She arrives in the gold. He cannot close his eyes on a mouth he has already counted.",
-						"ko": "눈꺼풀 뒤 금빛으로 그녀가 자두를 들고 온다. 저고리가 이미 틀렸다. 금빛 속으로 온다. 이미 센 입 위로 눈을 감을 수가 없다."
+						"html": "In the gold behind his lids she arrives with the plum, the jeogori already wrong. He cannot close his eyes on a mouth he already knows by heart.",
+						"ko": "눈꺼풀 뒤 금빛 속으로 그녀가 자두를 들고 온다. 저고리는 이미 틀렸다. 이미 다 외운 입 위로 눈을 감을 수가 없다."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She looks back over the shoulder in the dirtied green and the dream is the same lamp as the feast. The look-back in the dark. He sits up. Palm down on taut ice-blue. Shame and hunger in the same hand. Palm on the ice-blue. The pink ribbon on the post is still there. He does not take it. He takes the hall.",
-						"ko": "때 묻은 초록 속에서 어깨 너머로 돌아보고, 꿈의 등잔이 잔치의 등잔이다. 어둠 속의 뒤돌아봄. 일어앉는다. 팽팽한 얼음빛 위에 손바닥. 같은 손에 부끄러움과 굶주림. 얼음빛 위의 손. 기둥의 분홍 리본은 아직 있다. 그것은 집어 들지 않는다. 전각을 집어 든다."
+						"html": "She looks back over her shoulder in the dirtied green, and the dream has the same lamp as the feast. He sits up with his palm pressed flat on the taut ice-blue, shame and hunger in the same hand. The pink ribbon on the post is still there. He looks at it for a long time, and then he gets up.",
+						"ko": "때 묻은 초록 속에서 그녀가 어깨 너머로 돌아보고, 꿈의 등잔은 잔치의 등잔이다. 그는 팽팽한 얼음빛 위에 손바닥을 붙인 채 일어나 앉는다. 한 손에 부끄러움과 굶주림. 기둥의 분홍 리본은 아직 거기 있다. 그는 한참 그것을 보다가 일어난다."
 					},
 					{
 						"kind": "p",
-						"html": "He goes back. The families have thinned. The screen is cheaper in this hour. She is still there. She sits as if she knew he would fail the pallet.",
-						"ko": "돌아간다. 식구들은 줄어 있다. 이 시각의 병풍은 더 싸다. 그녀는 아직 있다. 침상에서 실패할 줄 알았다는 듯이 앉는다."
+						"html": "He goes back. Most of the families have gone home, and at this hour the painted screen looks as cheap as it is. She is still there, sitting as if she knew the pallet would beat him.",
+						"ko": "그는 돌아간다. 식구들은 거의 다 돌아갔고, 이 시각의 그림 병풍은 제값만큼 싸 보인다. 그녀는 아직 거기 있다. 침상이 그를 이길 줄 알았다는 듯이 앉아서."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"여기— 아, 바람 핑계는 됐어.",
-							"앉아. 아니 거기 말고, 여기. 무릎 붙이게."
+							"여기요— 아, 바람 쐬러 다시 나왔다는 말은 됐어요.",
+							"앉아요. 거기 말고, 여기. 더 가까이. 무릎 닿게."
 						],
 						"en": [
-							"Here— ah, don’t bother with the wind.",
-							"Sit. Not there, here. Closer. Your knee can touch."
+							"Here— ah, don’t bother telling me you came back for some air.",
+							"Sit. Not there, here. Closer. Close enough that our knees touch."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "She drops beside him before he has stood. She sits like the chair was always hers. Jeogori already a little open — not court, not accident. The smirk shows teeth. His mouth is already open and he has not used it yet.",
-						"ko": "그가 일어서기도 전에 옆에 앉는다. 자리는 원래 자기 것이었다는 듯이 앉는다. 저고리가 이미 조금 열려 있다 — 궁도 아니고, 실수도 아니다. 이빨이 보이는 미소. 그의 입은 이미 열려 있고, 아직 말을 안 했다."
+						"html": "She drops down beside him before he can stand up. She sits like the chair was always hers. Her jeogori is already a little open, and not by accident. The smirk shows teeth. His mouth is open too, and nothing has come out of it yet.",
+						"ko": "그가 일어서기도 전에 옆에 털썩 앉는다. 자리가 원래 자기 것이었다는 듯이 앉는다. 저고리는 벌써 조금 열려 있고, 실수로 열린 게 아니다. 이를 드러내고 웃는다. 그의 입도 열려 있는데, 아직 아무 말도 나오지 않았다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#7aa8d8",
 						"person": "pumsuk",
 						"lines": [
-							"자네 남편은—",
-							"잠깐. 입이 먼저 열렸소. 그건 안 하려고 했는데."
+							"부인, 남편께서는—",
+							"아, 아니오. 입이 먼저 나갔소. 그 말을 하려던 게 아닌데."
 						],
 						"en": [
 							"Your husband—",
-							"Wait. My mouth opened first. I was not going to say that."
+							"No— wait. My mouth went first. I didn’t mean to say that."
 						]
 					},
 					{
@@ -14175,42 +13629,72 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"창고야, 새벽까지. 그 사람은.",
-							"손은— 내려. 가슴에. 아니, 더 아래.",
-							"봐, 이미 찢어지잖아. 네가 찢은 거 아니야. 아직.",
-							"자지가 먼저 왔구나. 착하지."
+							"창고요. 새벽까지. 거기 있어요.",
+							"손은— 내려. 가슴에."
 						],
 						"en": [
-							"Stores. Till dawn. That’s where he is.",
-							"Hand— down. On the chest. No — lower.",
-							"Look, it’s already tearing. You didn’t do that. Not yet.",
-							"Your cock got here first. Good boy."
+							"The stores. Till dawn. That’s where he is.",
+							"Hand— down. On the chest."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c98fb0",
+						"person": "gumilwife",
+						"lines": [
+							"아니, 더 아래."
+						],
+						"en": [
+							"No — lower."
+						],
+						"nsfw": true
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c98fb0",
+						"person": "gumilwife",
+						"lines": [
+							"봐, 벌써 찢어지잖아. 네가 그런 거 아니야. 아직은."
+						],
+						"en": [
+							"Look, it’s already tearing. You didn’t do that. Not yet."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c98fb0",
+						"person": "gumilwife",
+						"lines": [
+							"너 벌써 섰네. 다 느껴져."
+						],
+						"en": [
+							"You’re already hard. I can feel it."
 						],
 						"nsfw": true
 					},
 					{
 						"kind": "p",
-						"html": "She puts his clean True Bone hand on the frayed red knot herself — not the waist, the chest, where the cheap sash is already tearing. His palm finds the worn knot. More skin than a minute ago. She does not look at the hand. She looks at his face, to see the exact second it stops being a general’s face.",
-						"ko": "진골의 깨끗한 손을 헐거운 붉은 매듭 위에 제 손으로 올려 둔다 — 허리가 아니라 가슴, 싼 끈이 이미 찢어지는 곳. 손바닥이 낡은 매듭을 찾는다. 일 분 전보다 살이 더 보인다. 손은 안 본다. 얼굴을 본다. 장군 얼굴이 끝나는 그 초를 보려고."
+						"html": "She puts his clean True Bone hand on the frayed red knot herself — not the waist, the chest, where the cheap sash is already tearing. His palm finds the worn knot. More skin than a moment ago. She does not look at the hand. She looks at his face, to see the exact second it stops being a general’s face.",
+						"ko": "진골의 깨끗한 손을 헐거운 붉은 매듭 위에 제 손으로 올려 둔다 — 허리가 아니라 가슴, 싼 끈이 이미 찢어지는 곳. 손바닥이 낡은 매듭을 찾는다. 조금 전보다 살이 더 보인다. 손은 안 본다. 얼굴을 본다. 장군 얼굴이 끝나는 그 초를 보려고."
 					},
 					{
 						"kind": "monologue",
 						"person": "pumsuk",
 						"html": "I should move. I am not moving. If I look down I am finished. I am already looking down.",
 						"ko": "옮겨야 한다. 안 옮긴다. 내려다보면 끝이다. 이미 내려다보고 있다.",
-						"nsfw": true
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#7aa8d8",
 						"person": "pumsuk",
 						"lines": [
-							"옮기겠소—",
-							"다리가. 다리가 거역합니다. 미안하오. 훈련이— 오늘 밤 훈련은 농담이오."
+							"움직여야 하는데—",
+							"다리가. 다리가 말을 안 듣소. 용서하시오. 그 훈련이— 오늘 밤엔 다 우스갯거리요."
 						],
 						"en": [
 							"I should move—",
-							"My legs. My legs will not obey. Forgive me. The training is— the training is a joke tonight."
+							"My legs. My legs won’t obey. Forgive me. All that training— tonight it’s a joke."
 						]
 					},
 					{
@@ -14218,32 +13702,32 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"세고 있었지. 잔은 안 보고.",
-							"입 보는 거. 열일곱. <b>열일곱</b>이야, 내가 세었어.",
-							"진골 아씨면 눈 내렸을 텐데. 나는 그거 안 배웠거든."
+							"잔은 안 보던데요.",
+							"내 입만 보던데. 마흔 번. 방금 마흔한 번. 내가 셌어.",
+							"진골 아씨였으면 눈을 내리깔았겠지. 난 그건 안 배웠어."
 						],
 						"en": [
-							"You were counting. Not the cup.",
-							"My mouth. Seventeen. <b>Seventeen</b>, I counted.",
+							"You weren’t looking at the cup.",
+							"You were looking at my mouth. Forty times. Forty-one, just now. I counted.",
 							"A True Bone lady would have looked down. I never learned that part."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "She says seventeen with her tongue still on her tooth. Jeogori looser. The dirtied green falls another finger-width. She counts his looks out loud. A True Bone lady would have looked down. Maehwa never learned that, and she is using the gap.",
-						"ko": "열일곱을 이빨에 혀를 붙인 채로 말한다. 저고리가 더 헐겁다. 때 묻은 초록이 손가락 하나만큼 더 내린다. 그가 본 횟수를 소리 내어 센다. 진골 아씨라면 눈을 내렸을 것이다. 매화는 그걸 배운 적이 없고, 그 빈칸을 쓴다."
+						"html": "She says forty-one with her tongue still on her tooth. The jeogori is looser now. The dirtied green falls another finger-width, and she counts his looks out loud.",
+						"ko": "마흔하나를 이빨에 혀를 붙인 채로 말한다. 저고리가 더 헐겁다. 때 묻은 초록이 손가락 하나만큼 더 내려가고, 그녀는 그가 본 횟수를 소리 내어 센다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#7aa8d8",
 						"person": "pumsuk",
 						"lines": [
-							"서라벌에선 이렇게 안— 숨이.",
-							"입술이 먼저요. 미안. 그 말은 궁에서 안 쓰는 말이오."
+							"서라벌에서는 이렇게— 숨을 안 쉬오. 이렇게는.",
+							"자꾸 입부터 보게 되오. 용서하시오. 그런 걸 뭐라고 하는지는 배운 적이 없소."
 						],
 						"en": [
-							"In Surabol we do not— breathe. Like this.",
-							"The mouth is first. Sorry. That is not a sentence they taught me."
+							"In Surabol we don’t— breathe. Like this.",
+							"I keep looking at your mouth first. Forgive me. Nobody taught me what to call that."
 						]
 					},
 					{
@@ -14251,48 +13735,119 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"서라벌 얘기 그만해. 숨이— 목덜미에 있잖아.",
-							"장군 목덜미. 지금 내 거야.",
-							"아래도 내 거야. 만져. 그곳.",
-							"<b>숨이 목덜미에.</b> 기대. 기둥 있어."
+							"서라벌 얘긴 그만해. 숨이— 벌써 내 목에 닿잖아.",
+							"이건 장군 목이고. 오늘 밤엔 내 거."
 						],
 						"en": [
-							"Drop Surabol. Your breath is— it’s on my throat already.",
-							"A general’s throat. Mine tonight.",
-							"Down there is mine too. Touch. There.",
-							"<b>Breath on the throat.</b> Lean. There’s a post."
+							"Forget Surabol. Your breath’s— it’s already on my neck.",
+							"And this is a general’s neck. Mine tonight."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c98fb0",
+						"person": "gumilwife",
+						"lines": [
+							"아래도 내 거야. 만져 봐. 거기."
+						],
+						"en": [
+							"Down there’s mine too. Touch it. There."
 						],
 						"nsfw": true
 					},
 					{
+						"kind": "dialogue",
+						"chip": "#c98fb0",
+						"person": "gumilwife",
+						"lines": [
+							"기대. 뒤에 기둥 있어."
+						],
+						"en": [
+							"Lean back. There’s a post."
+						]
+					},
+					{
 						"kind": "p",
-						"html": "She leans him into the post. His ice-blue robe has come open at the chest — clean silk, still clean, stupidly clean next to her mended green. Her mouth finds the tendon. Heart-pupils, if anyone looked that close. Drool he cannot swallow. She does not move back.",
-						"ko": "그를 기둥에 기대게 한다. 얼음빛 도포가 가슴에서 열린다 — 깨끗한 비단, 여전히 깨끗하고, 기운 초록 옆에 바보같이 깨끗하다. 입이 힘줄을 찾는다. 가까이 보면 눈 안에 하트. 삼키지 못하는 침. 그녀는 물러나지 않는다."
+						"html": "She leans him into the post. His ice-blue robe has come open at the chest — clean silk, still clean, stupidly clean next to her mended green. Her mouth finds the tendon. She does not move back.",
+						"ko": "그를 기둥에 기대게 한다. 얼음빛 도포가 가슴에서 열린다 — 깨끗한 비단, 여전히 깨끗하고, 기운 초록 옆에 바보같이 깨끗하다. 입이 힘줄을 찾는다. 그녀는 물러나지 않는다.",
+						"art": "Heart-pupils, if anyone looked that close. Drool he cannot swallow."
 					},
 					{
 						"kind": "monologue",
 						"person": "gumilwife",
 						"html": "Twenty-four and he is already dripping. If I say the stupid thing now he will not survive it. I am going to say the stupid thing.",
 						"ko": "스물넷인데 이미 침이 흘러. 지금 바보 같은 말 하면 이 아이 못 버틸 거야. 바보 같은 말 할 거야.",
-						"nsfw": true
+						"nsfw": true,
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
-						"html": "The mouth goes first. He holds her like he is afraid the hall will take her back — open, hungry, wine off her tongue — and the dirtied jeogori is still on, just enough off the shoulder that the figure starts to tell. The feast keeps talking on the other side of the cheap screen.",
-						"ko": "입이 먼저다. 전각이 도로 가져갈까 봐 안는다 — 벌리고, 배고프게, 혀에서 술맛을 찾으며. 때 묻은 저고리는 아직 있다. 어깨만 조금 내려가, 몸이 말하기 시작한다. 싼 병풍 너머로 잔치는 계속 말한다."
+						"html": "Then she does the modest thing she never uses. She closes the jeogori, turns her back on him and takes one step toward the dark, like a joke that wants to be caught. His hand is already in the air.",
+						"ko": "그러고는 한 번도 안 쓰던 정숙함을 쓴다. 저고리를 여미고, 등을 돌리고, 어둠 쪽으로 한 걸음 간다. 잡히고 싶은 농담처럼. 그의 손은 이미 허공에 있다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c98fb0",
+						"person": "gumilwife",
+						"lines": [
+							"나 간다— 아니, 간다는 게 아니라.",
+							"잡으면 있을게. 아니면 장군은 잔치에 남든가. 마음대로."
+						],
+						"en": [
+							"I’m going— well. Not going.",
+							"If you catch me, I stay. Or you stay here with your feast. Up to you."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "He is already on the floor. She has sat back down as if the leaving were a game, one bare foot out from under a hem hiked just enough, and his clean blue sleeve is on her ankle. He does not remember kneeling.",
+						"ko": "그는 이미 바닥에 있다. 그녀는 가는 척이 장난이었다는 듯이 다시 앉아 있다. 조금 걷힌 싼 자락 밑으로 맨발 하나, 그 발목에 깨끗한 푸른 소매. 무릎 꿇은 기억은 없다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#7aa8d8",
 						"person": "pumsuk",
 						"lines": [
-							"잠깐— 소리 나요.",
-							"안 내려고 했는데. 내고 있소."
+							"가지 마시오.",
+							"있어 주시오— 제발. 무릎이 나보다 먼저 와 버렸소. 나는 아직—"
+						],
+						"en": [
+							"Don’t go.",
+							"Stay— please stay. My knees got here before I did. I’m still—"
+						]
+					},
+					{
+						"kind": "p",
+						"html": "She looks down at him, unrefined and a little pleased, and takes a plum from the tray instead of reaching for him. The jeogori has come open again, farther than before, on the figure the yard has been staring at since spring. She puts the plum in her mouth so he has to watch. She has never rushed a man who was already lost.",
+						"ko": "그녀는 그를 내려다본다. 곱지 않고, 조금 기분이 좋다. 그에게 손을 뻗는 대신 쟁반에서 자두를 집는다. 저고리가 다시 열려 있다. 전보다 더, 봄부터 마당이 쳐다보던 그 몸 위로. 그가 보게 하려고 자두를 입에 넣는다. 이미 넘어온 사내를 재촉해 본 적은 없다.",
+						"art": "Pink in his eyes. Drool."
+					},
+					{
+						"kind": "monologue",
+						"person": "gumilwife",
+						"html": "If I put the plum in first he has to watch the mouth. He is already watching the mouth. Good. I have not been looked at like this in ten years. I am going to ruin him a little.",
+						"ko": "자두를 먼저 넣으면 입을 볼 수밖에 없어. 이미 보고 있어. 좋아. 십 년 만에 이렇게 봐. 조금 망가뜨릴 거야.",
+						"nsfw": true,
+						"art": "Thought balloon."
+					},
+					{
+						"kind": "p",
+						"html": "The mouth goes first. He holds her as if the hall might take her back, open and hungry, the plum still on her tongue, and the dirtied jeogori stays on. The feast keeps talking on the other side of the cheap screen.",
+						"ko": "입이 먼저다. 전각이 도로 데려갈까 봐 그녀를 안는다. 벌리고, 배고프게, 혀끝에 아직 자두 맛이 남은 채로. 때 묻은 저고리는 아직 걸쳐져 있다. 싼 병풍 너머로 잔치는 계속 떠든다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#7aa8d8",
+						"person": "pumsuk",
+						"lines": [
+							"잠깐— 소리가 나겠소.",
+							"안 내려고 했는데… 벌써 내고 있소."
 						],
 						"en": [
 							"Wait— I’ll make a sound.",
-							"I was trying not to. I am."
-						]
+							"I was trying not to. I already am."
+						],
+						"nsfw": true
 					},
 					{
 						"kind": "dialogue",
@@ -14305,61 +13860,14 @@
 						"en": [
 							"I’m not waiting. Sorry. I’m not.",
 							"Put the sound in my mouth. The screen doesn’t have to hear. Or it can. I don’t care."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "Then she does the modest thing she never uses. Jeogori closed. Back to him. One step toward the dark. I should go, she says, like a joke that wants to be caught. His hand is already in the air.",
-						"ko": "한 번도 안 쓰던 정숙함을 한다. 저고리를 여민다. 등을 보인다. 어둠 쪽으로 한 걸음. 이만 갈게, 라고 한다. 잡히고 싶은 농담처럼. 그의 손은 이미 허공에 있다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#c98fb0",
-						"person": "gumilwife",
-						"lines": [
-							"이만 갈게— 아니 가라는 게 아니라.",
-							"잡히면 남는 거고. 장군은 잔치에 남아. 남아도 되고."
 						],
-						"en": [
-							"I’m going— I don’t mean go.",
-							"If you catch me I stay. You stay with the feast. Or don’t."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "He is already on the floor. She has sat back down as if the leaving were a game. Bare foot. Cheap hem hiked just enough. His clean blue sleeve on her ankle. He does not remember kneeling.",
-						"ko": "이미 바닥에 있다. 그녀는 가는 척이 장난이었다는 듯이 다시 앉는다. 맨발. 싼 자락이 조금 걷혀 있다. 깨끗한 푸른 소매가 발목에. 무릎 꿇은 줄은 모른다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#7aa8d8",
-						"person": "pumsuk",
-						"lines": [
-							"가지 마.",
-							"남아. — 남아 줘. 무릎이 먼저 왔소. 나는 아직—"
-						],
-						"en": [
-							"Don’t go.",
-							"Stay. — Stay. My knees got here first. I am still—"
-						]
-					},
-					{
-						"kind": "p",
-						"html": "We see what he cannot quite: the look down, unrefined, a little pleased. She does not start with her hands. She starts with a plum from the tray. Jeogori open again, farther than before — the figure the yard has been staring at since spring. She puts the plum in her mouth so he has to watch. Pink in his eyes. Drool. Thirty-one. She has never rushed a man who was already lost.",
-						"ko": "그가 다 못 보는 것을 본다: 내려다보는 눈, 곱지 않고, 조금 기분 좋은. 손은 나중이다. 쟁반의 자두다. 저고리가 다시 열린다, 전보다 더 — 봄부터 마당이 보던 몸. 그가 보게 하려고 자두를 입에 넣는다. 눈에 분홍. 침. 서른하나. 이미 끝난 사내를 재촉한 적은 없다."
-					},
-					{
-						"kind": "monologue",
-						"person": "gumilwife",
-						"html": "If I put the plum in first he has to watch the mouth. He is already watching the mouth. Good. I have not been looked at like this in ten years. I am going to ruin him a little.",
-						"ko": "자두를 먼저 넣으면 입을 볼 수밖에 없어. 이미 보고 있어. 좋아. 십 년 만에 이렇게 봐. 조금 망가뜨릴 거야.",
 						"nsfw": true
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "The mouth goes first. Not a polite peck. Tongues. Wet. She sucks his lower lip and he makes a stupid sound into her. Ice-blue fist in dirtied green. She is starving. Ten years of three-stroke nights and a husband who is done before she starts. She kisses him like she is going to eat him. <i>Chup. Chup.</i> Spit on the chin. His young mouth does not know how. She teaches that too.",
-						"ko": "입이 먼저다. 예의 바른 쪽 아님. 혀. 젖은. 아랫입술을 빨면 그가 바보 소리를 낸다. 때 묻은 초록을 얼음빛이 쥔다. 굶었다. 십 년, 세 번에 끝나는 밤, 시작도 전에 끝나는 남편. 잡아먹을 듯이 입맞춘다. <i>춥. 춥.</i> 턱에 침. 젊은 입은 모른다. 그것도 가르친다."
+						"html": "It stops being polite at once. Tongues, wet, her teeth on his lower lip until he makes a helpless sound into her mouth. His clean fist closes on her dirtied green. She is starving after years of quick nights with a husband who is finished before she has begun, and she kisses him as if she means to eat him. He does not know how to kiss like this. She teaches him that too.",
+						"ko": "곧 예의 같은 건 없어진다. 혀, 젖은 입, 아랫입술을 무는 이빨. 그가 그녀 입 안에 어쩔 줄 모르는 소리를 낸다. 깨끗한 주먹이 때 묻은 초록을 움켜쥔다. 시작하기도 전에 끝나 버리는 남편과 짧은 밤만 몇 해를 보낸 끝이라 그녀는 굶주려 있고, 잡아먹을 것처럼 입을 맞춘다. 그는 이렇게 입 맞추는 법을 모른다. 그것도 그녀가 가르친다."
 					},
 					{
 						"kind": "dialogue",
@@ -14367,41 +13875,27 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"혀— 그래. 더 넣어—",
-							"젊은 입 맛이야. 씨발.",
-							"옷 벗어. 등 보고 싶어. 허리도."
+							"혀— 그래. 더—",
+							"…씨발. 오늘 진짜 미쳤어.",
+							"벗어. 등 보고 싶어. 허리도."
 						],
 						"en": [
-							"Tongue— yes. Deeper—",
-							"You taste so young. Fuck.",
-							"Clothes off. I want the back. The hips too."
+							"Tongue— yes. More—",
+							"…Fuck. I’ve lost my mind tonight.",
+							"Take it off. I want to see your back. Your hips."
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "As little silk as the lamp allows. She peels the ice-blue off his shoulders with both hands — <i>ssrk</i> — and the chest is right there, twenty-four, muscle she has not had in her mouth. She bites. Jeogori off her own shoulders like it never meant to stay. Ochre hiked to the waist. Nothing left that is not skin or a cheap sash. Deep french kiss while she opens him. <i>Mmh—</i> His cock slaps her thigh, already leaking. Made for this. Both of them. She can feel it in the fit before he is even in.",
-						"ko": "등이 허락하는 만큼만 비단. 두 손으로 얼음빛을 어깨에서 벗긴다 — <i>스르륵</i> — 가슴이 있다. 스물넷. 입에 넣어 본 적 없는 근육. 문다. 제 저고리도 어깨에서, 처음부터 남을 생각 없던 것처럼. 황토는 허리까지. 살과 싼 끈 말고는 없다. 벗기면서 혀를 깊게. <i>음—</i> 자지가 허벅지에 닿고, 이미 흘린다. 이걸 위해 만들어진 몸. 둘 다. 넣기도 전에 맞춤이 느껴진다."
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#7aa8d8",
-						"person": "pumsuk",
-						"lines": [
-							"입— 더— 하아—",
-							"젖이— 등도— 보고만 있으면—"
-						],
-						"en": [
-							"Mouth— more— haa—",
-							"The tits— the back— if I just look—"
-						]
+						"html": "As little silk as the lamp allows. She peels the ice-blue off his shoulders with both hands and the chest is right there, a soldier’s chest she has not had under her mouth before, and she bites it. Her own jeogori comes off her shoulders as if it never meant to stay, and the ochre goes up around her waist. Nothing is left on either of them but skin and a cheap sash. She kisses him deep while she undresses him, and she can feel how well they fit before he is even inside her.",
+						"ko": "등잔이 허락하는 만큼만 비단. 두 손으로 얼음빛을 어깨에서 벗기자 가슴이 바로 앞에 있다. 한 번도 입 대 본 적 없는 군인의 가슴. 그녀가 문다. 제 저고리도 처음부터 남을 생각이 없었다는 듯 어깨에서 흘러내리고, 황토 치마는 허리까지 걷힌다. 둘 다 남은 것은 살과 싼 허리끈뿐이다. 그를 벗기면서 깊게 입 맞추고, 그가 들어오기도 전에 둘이 얼마나 잘 맞는지 느낀다."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "What follows is not a kiss. She sits him on the worn pine in that clean ice-blue and climbs on — ochre hiked, jeogori already a veil, the heavy chest in his face so he has to see it. She meant to lead. She takes his hands and puts them on her tits herself, like a lesson. This milf will teach you. He does not hear the lesson. He hears skin. He grabs like a dog that has never been fed, kneading, burying his mouth in the chest, a rabid animal whose whole mind is the next squeeze, the next wet, the hole he is already pushing up into. No rank. No wife in the pink room. Only this.",
-						"ko": "그다음이 입맞춤이 아니다. 깨끗한 얼음빛 그대로 낡은 마루에 앉히고 올라탄다 — 황토는 걷히고, 저고리는 이미 너울, 무거운 젖이 얼굴에 와서 안 볼 수가 없다. 이끌려고 했다. 제 손으로 그의 손을 젖에 얹는다. 수업이다. 이 아줌마가 가르쳐 줄게. 수업은 안 들린다. 살만 들린다. 안 먹여 본 개처럼 움켜쥔다. 주무르고, 젖에 입을 박고, 발정 난 짐승이다. 머릿속은 다음 움켜쥠, 다음 젖음, 이미 밀어 넣고 있는 구멍뿐이다. 계급 없다. 분홍 방의 아내 없다. 이것뿐이다."
+						"html": "She sits him down on the worn pine in what is left of the clean ice-blue and climbs onto him, the ochre hiked, the jeogori a veil, her heavy breasts in his face so he has to look. She meant to lead. She takes his hands and puts them on her breasts herself, like a lesson. He does not hear the lesson. He hears skin. He holds on like a starving man, mouth buried against her, and when she sinks down onto him he is already pushing up to meet her. For once there is no rank in it, and no wife in the pink room.",
+						"ko": "남은 깨끗한 얼음빛 그대로 낡은 마루에 그를 앉히고 올라탄다. 황토는 걷히고, 저고리는 너울이고, 무거운 가슴이 얼굴 앞에 와서 그는 안 볼 수가 없다. 이끌 생각이었다. 그의 두 손을 잡아 제 가슴에 직접 얹는다. 수업처럼. 그에게 수업은 안 들린다. 살만 들린다. 굶은 사람처럼 매달려 그녀에게 입을 묻고, 그녀가 천천히 내려앉을 때 그는 이미 밀어 올리고 있다. 이번만은 거기에 계급도 없고, 분홍 방의 아내도 없다."
 					},
 					{
 						"kind": "dialogue",
@@ -14409,14 +13903,14 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"이 아줌마가 가르쳐 줄게.",
-							"가만히 있어, 베이비. 네가 하는 거 아니야.",
-							"젖은 그렇게 쥐는 거야. 그래. 착하지."
+							"가르쳐 줄게.",
+							"가만있어. 네가 하는 거 아니야.",
+							"그렇게 쥐는 거야. 그래. 잘하네."
 						],
 						"en": [
-							"This milf will teach you.",
-							"Stay still, baby. You’re not in charge.",
-							"That’s how you grab a tit. Yes. Good boy."
+							"Let me teach you.",
+							"Stay still. You’re not in charge.",
+							"That’s how you hold me. Yes. Like that."
 						]
 					},
 					{
@@ -14425,13 +13919,11 @@
 						"chip": "#7aa8d8",
 						"person": "pumsuk",
 						"lines": [
-							"젖이… 무거워…",
-							"만지고 싶소— 입에—",
+							"숨이… 안 쉬어지오…",
 							"다른 건 안 보이오—"
 						],
 						"en": [
-							"These tits… they’re heavy…",
-							"I have to grab— mouth—",
+							"I can’t… breathe…",
 							"I can’t see anything else—"
 						]
 					},
@@ -14440,7 +13932,8 @@
 						"person": "pumsuk",
 						"nsfw": true,
 						"html": "I should stop. I am not stopping. Her tits fill both hands. Everyone in that yard wants this body. I wanted it all night. I am going to put my mouth on them until she forgets she was teaching.",
-						"ko": "멈춰야 한다. 안 멈춘다. 젖이 두 손에 가득하다. 마당이 이 몸을 원한다. 밤새 원했다. 가르친다는 걸 잊을 때까지 입에 넣을 것이다."
+						"ko": "멈춰야 한다. 안 멈춘다. 젖이 두 손에 가득하다. 마당이 이 몸을 원한다. 밤새 원했다. 가르친다는 걸 잊을 때까지 입에 넣을 것이다.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "dialogue",
@@ -14448,21 +13941,19 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"하아— 천천히, 베이비. 그렇게 세게 안 해도—",
-							"검일은 이렇게 안 해. 넌 아직 어려.",
-							"먼저 싸면 웃을 거야. 아빠는 너 아니야. 내가—"
+							"하아— 천천히. 그렇게 세게 안 해도 돼—",
+							"먼저 끝내면 웃어 줄 거야. 검일은 세 번이면 끝나거든."
 						],
 						"en": [
-							"Haa— slow, baby. You don’t have to go that hard—",
-							"Gumil never— you’re still young.",
-							"You finish first, I’ll laugh. Daddy isn’t you. I’ll—"
+							"Haa— slow. You don’t have to go that hard—",
+							"Finish first and I’ll laugh at you. Gumil’s done in three strokes."
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She keeps the teacher-voice for three drops of her hips. Then the voice thins. He is in her to the base, stupid-hard, muscle under her palms she was going to grade like fruit, and every time she lifts he follows with a thrust that knocks the cheap post. His hands never leave the chest. She meant to laugh.",
-						"ko": "세 번 앉을 때까지는 선생님 목소리다. 그러다 얇아진다. 밑까지 들어와 있고, 바보같이 서 있고, 손바닥 아래 근육은 과일처럼 평점 매기려던 것인데, 일어날 때마다 그가 받아 박아서 싼 기둥이 운다. 손은 젖에서 안 떨어진다. 웃으려 했다."
+						"html": "She keeps the teacher’s voice for the first few drops of her hips. Then the voice thins. He is all the way inside her, the muscle under her palms is something she meant to judge like fruit at a stall, and every time she rises he follows her up hard enough to knock the cheap post. His hands never leave her breasts. She meant to laugh.",
+						"ko": "처음 몇 번 허리를 내릴 때까지는 선생님 목소리다. 그러다 목소리가 얇아진다. 그는 그녀 안 깊숙이 들어와 있고, 손바닥 아래 근육은 장터 과일처럼 값을 매기려던 것인데, 그녀가 일어날 때마다 그가 따라 올라와 싼 기둥이 울린다. 그의 손은 가슴에서 떨어지지 않는다. 웃으려 했다."
 					},
 					{
 						"kind": "dialogue",
@@ -14471,7 +13962,7 @@
 						"person": "gumilwife",
 						"lines": [
 							"아… 잠깐. 그거… 거기…",
-							"아니야. 그렇게 안 해. 내가—",
+							"그건— 하라고 안 했는데—",
 							"남편보다 크다고? 아니야. 그냥— 각도야. 각도—"
 						],
 						"en": [
@@ -14483,21 +13974,22 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She says it isn’t. The next thrust makes a liar of her mouth. She opens it for the next joke — the one about three strokes, the one about teaching — and nothing comes. The post knocks. He is still in her. She looks at the back she was going to praise and does not name it.",
-						"ko": "아니라 한다. 다음 박기가 입을 거짓말쟁이로 만든다. 다음 농담을 위해 입을 연다 — 세 번, 수업 — 아무것도 안 나온다. 기둥이 운다. 아직 그 안에 있다. 칭찬하려던 등을 보고 이름을 안 붙인다."
+						"html": "She says it isn’t. The next thrust makes a liar of her mouth. She opens it for the next joke, the one about three strokes or the one about teaching, and nothing comes. The post knocks. He is still in her. She looks at the back she was going to praise and does not name it.",
+						"ko": "아니라 한다. 다음 박기가 입을 거짓말쟁이로 만든다. 세 번 얘기든 수업 얘기든, 다음 농담을 하려고 입을 여는데 아무것도 안 나온다. 기둥이 운다. 아직 그 안에 있다. 칭찬하려던 등을 보고 이름을 안 붙인다."
 					},
 					{
 						"kind": "monologue",
 						"person": "gumilwife",
 						"nsfw": true,
 						"html": "Don’t. Don’t make a sound. If I make a sound he wins. Teaching. Still teaching.",
-						"ko": "하지 마. 소리 내지 마. 소리 내면 얘가 이겨. 가르치고 있어. 아직 가르치고 있어."
+						"ko": "하지 마. 소리 내지 마. 소리 내면 얘가 이겨. 가르치고 있어. 아직 가르치고 있어.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She goes quiet. The feast keeps talking on the other side of the screen. She does not. Four drops. Five. Six. Condescension sits in her throat and will not come out. He looks up from her chest, wrecked, waiting for the next instruction. She shakes her head. Not a no. A don’t.",
-						"ko": "입을 닫는다. 병풍 너머 잔치는 아직 말한다. 그녀는 아니다. 네 번. 다섯. 여섯. 깔보던 말이 목에 걸려 안 나온다. 그가 젖에서 올려다본다, 망가지고, 다음 지시를 기다린다. 고개를 젓는다. 거절이 아니다. 하지 말라는 것이다."
+						"html": "She goes quiet. The feast keeps talking on the other side of the screen, and she does not. Four drops, five, six, and the condescension sits in her throat and will not come out. He looks up from her breasts, wrecked, waiting for the next instruction. She shakes her head. It means don’t stop.",
+						"ko": "입을 닫는다. 병풍 너머 잔치는 아직 떠드는데, 그녀는 말이 없다. 네 번, 다섯, 여섯. 깔보던 말이 목에 걸려 나오지 않는다. 그가 가슴에서 고개를 들어 올려다본다. 망가진 얼굴로 다음 지시를 기다린다. 그녀는 고개를 젓는다. 멈추지 말라는 뜻이다."
 					},
 					{
 						"kind": "dialogue",
@@ -14507,12 +13999,12 @@
 						"lines": [
 							"매화—?",
 							"말해 주오. 뭐든—",
-							"이 안이… 아내보다 존나 젖어 있소. 밤새 이거였소—"
+							"밤새 이것만 생각했소—"
 						],
 						"en": [
 							"Maehwa—?",
-							"Talk. Please—",
-							"Your cunt’s so much juicier than my wife— I wanted this all night—"
+							"Talk. Please— anything—",
+							"I wanted this all night—"
 						]
 					},
 					{
@@ -14527,21 +14019,19 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"씨발… 미쳤어…",
-							"너 미워— 존나 미워—",
-							"씨발 너— AUUAAAAUAGGH—!!"
+							"씨발… 너 미쳤어…",
+							"미워— 진짜 미워—"
 						],
 						"en": [
-							"Fuck… you’re insane…",
-							"I fucking hate you— I hate you—",
-							"Fuck you— AUUAAAAUAGGH—!!"
+							"Fuck… you’re out of your mind…",
+							"I hate you— I hate you—"
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "Teacher dies mid-sentence, late. She is panting, riding for real now, looking at his face as if she had not seen it until the cock made her look — twenty-four, ice-blue still clean, mouth open on her chest, muscle she can feel in her thighs. She comes the first time with a moan she tries to swallow and cannot. Then she looks at him and the look is the rest of the night.",
-						"ko": "선생님은 문장 중간에 죽는다. 늦게. 헐떡이며, 이제 진짜로 타고, 자지가 보게 만들어서야 얼굴을 본다 — 스물넷, 얼음빛은 아직 깨끗하고, 젖에 입이 열려 있고, 허벅지로 느껴지는 근육. 첫 번은 삼키려다 못 삼킨 신음으로 간다. 그리고 그를 본다. 그 눈이 남은 밤이다."
+						"html": "The teacher dies mid-sentence, late. She is panting, riding him for real now, and looking at his face as if she had never seen it before tonight: the ice-blue still clean, his mouth open against her breast, the muscle she can feel between her thighs. She comes the first time with a moan she tries to swallow and cannot. Then she looks at him, and the look is the rest of the night.",
+						"ko": "선생님은 문장 한가운데서, 늦게 죽는다. 헐떡이며 이제 진짜로 그를 타고, 오늘 밤 전에는 한 번도 본 적 없다는 듯이 그의 얼굴을 본다. 아직 깨끗한 얼음빛, 가슴에 대고 벌어진 입, 허벅지 사이로 느껴지는 근육. 첫 번째는 삼키려다 못 삼킨 신음과 함께 온다. 그리고 그를 본다. 그 눈이 남은 밤이다."
 					},
 					{
 						"kind": "dialogue",
@@ -14549,14 +14039,14 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"하아— 하아— 이 등— 이 근육—",
-							"남편보다 존나 커— 인정했어, 됐어—",
-							"빼지 마— 애 만들어 줘— 씨 줘—!!"
+							"하아— 하아— 이 등— 이 어깨—",
+							"그래, 남편보다 커. 말했어. 됐지—",
+							"빼지 마— 안에 있어 줘—"
 						],
 						"en": [
-							"Haa— haa— this back— these muscles—",
-							"So much bigger than my husband— I said it, fine—",
-							"Don’t pull out— give me your fucking babies—!!"
+							"Haa— haa— this back— these shoulders—",
+							"Fine. Bigger than my husband. I said it. Happy—",
+							"Don’t pull out— stay inside me—"
 						]
 					},
 					{
@@ -14565,12 +14055,12 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"고타소는— 아— 미안—",
-							"분홍 방은 이거 못 가져— 하아— 내 거야—"
+							"고타소 아씨는— 아, 미안—",
+							"분홍 방은 이런 거 못 가져— 하아— 이건 내 거야—"
 						],
 						"en": [
-							"Gotaso— ah— sorry—",
-							"The pink room doesn’t get THIS— haa— it’s mine—"
+							"Lady Gotaso— oh, sorry—",
+							"The pink room doesn’t get this— haa— this is mine—"
 						]
 					},
 					{
@@ -14579,14 +14069,12 @@
 						"chip": "#7aa8d8",
 						"person": "pumsuk",
 						"lines": [
-							"그 이름은— 입에서 빼—",
-							"베이비— 젖 내놔. 받아—",
-							"이 몸 다들 원해. 내가 박고 있소—"
+							"그 이름— 입에 올리지 마시오—",
+							"마당 사내들이 다 당신을 원하오. 그런데 당신 안에 있는 건 나요—"
 						],
 						"en": [
-							"That name— out of your mouth—",
-							"Baby— give me the tits. Take it—",
-							"Everyone wants this fucking body. I’m the one in it—"
+							"That name— keep it out of your mouth—",
+							"Every man in that yard wants you. I’m the one inside you—"
 						]
 					},
 					{
@@ -14594,13 +14082,14 @@
 						"person": "gumilwife",
 						"nsfw": true,
 						"html": "He got angry. Good. I said the wife and he is still in me, still hard, still grabbing my chest like an animal. I stole a husband out of a pink room and I was going to teach him. I am not teaching. I am going to come from this. I hate him. I want his babies.",
-						"ko": "화났어. 좋아. 아내 이름을 말했는데 아직 안에 있고, 아직 서 있고, 아직 짐승처럼 젖을 쥐고 있어. 분홍 방에서 남편을 훔쳤고, 가르치려 했어. 안 가르쳐. 이걸로 갈 거야. 미워. 애 원해."
+						"ko": "화났어. 좋아. 아내 이름을 말했는데 아직 안에 있고, 아직 서 있고, 아직 짐승처럼 젖을 쥐고 있어. 분홍 방에서 남편을 훔쳤고, 가르치려 했어. 안 가르쳐. 이걸로 갈 거야. 미워. 애 원해.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "The name does it. Whatever was left of the general leaves the hips. He holds her by the cheap sash and the tits at once and drives until there is no teacher left even as a joke. She is still astride when the sound leaves her. The laugh becomes a scream. She comes on the second scream, loud, messy, and then the water comes with it — she squirts all over him, ice-blue finally stained, his lap, his cock, the ochre, the pine, a shameful hot spray she cannot stop, and she is still saying she hates him into his mouth.",
-						"ko": "그 이름이 한다. 장군으로 남은 것이 허리에서 나간다. 싼 끈과 젖을 한꺼번에 잡고 선생님이 농담으로도 안 남게 박는다. 소리가 나와도 아직 타고 있다. 웃음이 비명이 된다. 두 번째 비명에서 가고, 크고, 지저분하고, 물이 따라온다 — 그 위에 분수처럼 싼다. 얼음빛이 드디어 젖고, 무릎, 자지, 황토, 마루. 못 멈추는 뜨거운 물. 입술에 대고 아직 미워한다고 한다."
+						"html": "The name does it. Whatever was left of the general goes out of him. He holds her by the cheap sash and by the breast at once and drives up into her until there is no teacher left, not even as a joke. She is still astride him when the sound leaves her. The laugh becomes a scream. She comes on the second scream, loud and messy, and she cannot stop what comes with it, a hot rush that soaks his lap and the ochre and the pine and finally stains the ice-blue, and the whole time she is telling him into his mouth that she hates him.",
+						"ko": "그 이름이 그렇게 만든다. 장군으로 남아 있던 것이 그에게서 빠져나간다. 싼 허리끈과 가슴을 한꺼번에 움켜쥐고, 선생님이 농담으로도 남지 않을 때까지 그녀 안으로 쳐올린다. 소리가 나올 때 그녀는 아직 그 위에 올라타 있다. 웃음이 비명이 된다. 두 번째 비명에서 크게, 지저분하게 가고, 함께 쏟아지는 것을 멈추지 못한다. 뜨거운 것이 그의 무릎과 황토와 마루를 적시고 마침내 얼음빛까지 물들인다. 그동안 내내 그녀는 그의 입에 대고 밉다고 말한다."
 					},
 					{
 						"kind": "dialogue",
@@ -14608,70 +14097,33 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"AUUAAAAUAGGH—!!",
-							"빼지 마— 빼지 마—!!",
-							"물 나와— 네 자지에 싸—!!",
-							"안에 싸 줘— 한 방울도 남기지 마—!!",
-							"씨발 미워— 사랑— 아—"
+							"멈추지 마— 멈추지 마—",
+							"씨발, 미워— 사랑— 아—"
 						],
 						"en": [
-							"AUUAAAAUAGGH—!!",
-							"DON’T PULL OUT— DON’T—!!",
-							"I’m squirting— all over your cock—!!",
-							"Cum in me— every last drop—!!",
+							"Don’t stop— don’t you dare stop—",
 							"I fucking hate you— I love— ah—"
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "He does not last the courtesy of a first finish. <i>Plap-plap-plap—</i> and he is already shaking. He buries it — a stupid, young, endless amount, gallons of thick white shooting from that juicy young cock into a woman who has been empty for a decade — and keeps thrusting through the squirt, wetter, louder, white already running down the inside of the ochre in ropes. Every last drop. She laughs into the scream. She thought that was a night. One. Thank you. Back to the feast. She starts to sit. It is still coming out of her. <i>Glk. Glk.</i>",
-						"ko": "첫 번의 예의를 지키지 못한다. <i>철벅철벅철벅—</i> 이미 떤다. 묻는다 — 바보같고, 젊고, 끝이 없는 양, 두꺼운 흰 것이 젊은 자지에서 십 년을 비워 둔 여자 안으로 — 싼 물 위로 계속 박는다. 더 젖고, 더 크고, 하얗게가 황토 안으로 줄줄. 한 방울도 남기지 않는다. 비명 속에서 웃는다. 이게 밤인 줄 알았다. 한 번. 고맙다. 잔치로. 일어나려 한다. 아직 나온다. <i>꿀꺽. 꿀꺽.</i>"
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#c98fb0",
-						"person": "gumilwife",
-						"lines": [
-							"AUUAAAAUAGGH—!!",
-							"씨발 양이— 안에 차— 임신하겠어—!!",
-							"젊은 허리 존나 좋아— 등 근육— 전부—!!"
-						],
-						"en": [
-							"AUUAAAAUAGGH—!!",
-							"FUCK the amount— filling me— you’re gonna knock me up—!!",
-							"This young waist— the back— ALL of it—!!"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#7aa8d8",
-						"person": "pumsuk",
-						"lines": [
-							"AUUAAAAUAGGH—",
-							"더— 나와— 한 방울도—!!",
-							"베이비 안에 씨— 받아—"
-						],
-						"en": [
-							"AUUAAAAUAGGH—",
-							"More— coming— every last drop—!!",
-							"Breed— take it baby—"
-						]
+						"html": "He does not last long enough to be courteous about it. He is already shaking, and he finishes deep inside her, holding her down on him and still moving through the flood, wetter and louder, until it runs down the inside of the ochre. She laughs into the scream. She thought that was the night: once, thank you, back to the feast. She starts to sit up, and it is still running out of her.",
+						"ko": "예의를 차릴 만큼 버티지 못한다. 이미 떨고 있고, 그녀를 제 위로 끌어내린 채 그녀 안 깊숙이 끝낸다. 쏟아지는 물 속에서도 계속 움직이고, 더 젖고, 소리는 더 커지고, 마침내 그것이 황토 안쪽으로 흘러내린다. 그녀는 비명 속에서 웃는다. 이게 밤인 줄 알았다. 한 번, 고마워, 이제 잔치로. 일어나 앉으려는데, 아직 흘러나온다."
 					},
 					{
 						"kind": "monologue",
 						"person": "gumilwife",
 						"nsfw": true,
 						"html": "I screamed. He stayed. I was going to thank him and send him back. I am sitting up. It is leaking down my thigh in a line. It is over. It is over. If he looks at this mess it will not be over.",
-						"ko": "소리쳤어. 남았어. 고맙다 하고 돌려보낼 거였어. 일어나. 허벅지로 줄이 흘러. 끝이야. 끝이야. 이 꼴 보면 안 끝나."
+						"ko": "소리쳤어. 남았어. 고맙다 하고 돌려보낼 거였어. 일어나. 허벅지로 줄이 흘러. 끝이야. 끝이야. 이 꼴 보면 안 끝나.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "He does not go soft. He is staring at her cunt — open, used, his first load already spilling out in a thick white sheet onto the cheap sash — and the looking is the fuck. His cock jumps. Hard again. Instant. He grabs the tits with both hands like he dropped them. Twenty-four. Starving. He slams back in through his own mess, <i>shlick</i>, all the way, and she feels the next load already climbing the shaft. A used hole and he wants it more than a clean one. She has been starved of this. He looks like he has been starved of her.",
-						"ko": "안 죽는다. 그 구멍을 본다 — 벌어지고, 쓰이고, 첫 한이 싼 끈 위로 두껍게 흘러 — 보는 게 박기다. 자지가 뛴다. 다시 선다. 즉시. 젖을 두 손으로, 떨어뜨린 것처럼. 스물넷. 굶었다. 제 것에 미끄러져 다시 넣는다, <i>찔꺽</i>, 밑까지, 다음 한이 이미 올라오는 게 느껴진다. 쓰인 구멍을 깨끗한 것보다 원한다. 그녀가 굶었다. 그는 그녀를 굶은 눈이다."
+						"html": "He does not go soft. He is looking at her, open and used and spilling onto the cheap sash, and the looking is enough. He is hard again at once. He takes her breasts in both hands as if he had dropped them, and he pushes back into her through his own mess, all the way, and she can feel it building in him again already. She has been starved of this. He looks like he has been starved of her.",
+						"ko": "그는 죽지 않는다. 벌어지고, 쓰이고, 싼 허리끈 위로 흘러넘치는 그녀를 보고 있고, 보는 것만으로 충분하다. 곧바로 다시 선다. 떨어뜨렸던 것을 줍듯 두 손으로 가슴을 쥐고, 제가 남긴 것을 헤치고 끝까지 다시 들어간다. 그 안에서 벌써 또 차오르는 것이 느껴진다. 그녀는 이것에 굶었다. 그는 그녀에게 굶은 얼굴이다."
 					},
 					{
 						"kind": "dialogue",
@@ -14679,14 +14131,24 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"끝난 줄— 벌써 또—?!!",
-							"이 젊은 몸— 등— 엉덩이까지 단단해—",
-							"빼지 마. 씨 더 줘. 다 싸—"
+							"끝난 줄 알았는데— 벌써 또—?",
+							"이 등— 이 허리— 다 내 거야—"
 						],
 						"en": [
-							"I thought you were DONE— ALREADY—?!!",
-							"This young body— the back— even the ass is hard—",
-							"Don’t pull out. Dump it. All of it—"
+							"I thought you were done— again, already—?",
+							"This back— these hips— all mine—"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"nsfw": true,
+						"chip": "#c98fb0",
+						"person": "gumilwife",
+						"lines": [
+							"말해. 나 누구 거야—"
+						],
+						"en": [
+							"Say it. Whose am I—"
 						]
 					},
 					{
@@ -14695,196 +14157,31 @@
 						"chip": "#7aa8d8",
 						"person": "pumsuk",
 						"lines": [
-							"보면— 또 나와—!!",
-							"젖만 봐도— 싸겠소— 안에—!!",
-							"아내 구멍은 이렇게 안 조여—"
+							"내 거요. 당신은 내 거요."
 						],
 						"en": [
-							"If I look I nut again—!!",
-							"Just the tits— I’m gonna fill you—!!",
-							"My wife’s hole never gripped like this—"
+							"Mine. You’re mine."
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "Cowgirl again. She drops on him — <i>PLAP. PLAP. PLAP.</i> Ochre wrecked. Ass slapping his lap. Tits bouncing in his grip. First load squelching out around the cock every time she sits. <i>Schlk-schlk-schlk.</i> She rides like a woman who has not been fucked properly since she was a girl. She loves the back under her hands. The hips. The stomach. All of it. Young man body and she is going to use every inch.",
-						"ko": "또 올라탄다. 떨어진다 — <i>철벅. 철벅. 철벅.</i> 황토 망가짐. 엉덩이가 무릎에. 젖이 쥔 대로 튐. 앉을 때마다 첫 한이 자지 옆으로 새어. <i>찔꺽찔꺽찔꺽.</i> 제대로 박힌 적 없는 여자처럼 탄다. 손 아래 등이 좋다. 허리. 배. 전부. 젊은 남자 몸. 한 치도 안 남긴다."
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#c98fb0",
-						"person": "gumilwife",
-						"lines": [
-							"등 만져— 허리 만져— 이 몸 내 거야—!!",
-							"검일은 세 번이면 싸. 넌— 씨발— 안 죽어—!!",
-							"아빠— 아니— 베이비— 씨 줘—!!"
-						],
-						"en": [
-							"Touch the back— the waist— this body is MINE—!!",
-							"Gumil lasts three strokes. You— fuck— you don’t go soft—!!",
-							"Daddy— no— baby— give me your nut—!!"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#7aa8d8",
-						"person": "pumsuk",
-						"lines": [
-							"튀겨— 젖도 튀겨—!!",
-							"이 보지에 또 쌀 거요— 씨 잔뜩—!!",
-							"AUUAAAAUAGGH—!!"
-						],
-						"en": [
-							"Bounce— bounce those tits—!!",
-							"Gonna dump another load in this cunt— breed you—!!",
-							"AUUAAAAUAGGH—!!"
-						]
+						"html": "After that she loses count of how many times. On her side, on her back with her legs over his shoulders, on her knees with the cheap post in her fists, and again on top of him facing away so that he can watch her. The ochre is a rag. The ice-blue is stained to the hip. Every time she thinks the wick is the end he looks at her and he is hard again inside her. The lamp keeps dying and he does not.",
+						"ko": "그 뒤로는 몇 번인지 모른다. 옆으로 누워서, 다리를 그의 어깨에 걸치고 등을 대고, 싼 기둥을 두 주먹에 쥐고 무릎을 꿇고, 다시 그 위에서 등을 보이고 그가 보게. 황토는 걸레가 되었다. 얼음빛은 허리까지 젖었다. 심지가 끝인 줄 알 때마다 그가 그녀를 보고, 그녀 안에서 다시 선다. 등잔은 죽어 가는데 그는 죽지 않는다."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "Second finish. He shouts it into her chest. Another load, thick, too much, overflowing the first. She thinks that is the night. It is not. He folds her in half on the pine — missionary, legs over his shoulders, her own wet on her belly — and drives. <i>Plap-plap-plap-plap.</i> She claws the back she has been talking about. Muscle. Sweat. She licks it.",
-						"ko": "두 번째. 가슴에 대고 고함친다. 또 한 번, 두껍고, 너무 많아서 첫 번을 넘친다. 이번이 밤인 줄 안다. 아니다. 마루에서 반으로 접는다 — 정상위, 다리가 어깨에, 제 물이 배에 — 박는다. <i>철벅철벅철벅철벅.</i> 말하던 등을 긁는다. 근육. 땀. 핥는다."
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#c98fb0",
-						"person": "gumilwife",
-						"lines": [
-							"AUUAAAAUAGGH— 등— 등 존나 섹시해—!!",
-							"젊은 엉덩이 움직임— 씨발— 더—!!",
-							"채워— 채워— 애 줘—!!"
-						],
-						"en": [
-							"AUUAAAAUAGGH— the BACK— your back is so fucking sexy—!!",
-							"That young ass moving— fuck— more—!!",
-							"Fill it— fill it— put a baby in it—!!"
-						]
-					},
-					{
-						"kind": "p",
-						"nsfw": true,
-						"html": "He turns her. Doggy. Cheap post in her fists. He takes the hips he has been staring at since the yard and slams. <i>CLAP. CLAP. CLAP.</i> Her tits swing. White already running down the inside of her thighs, dripping off the knees onto pine. Third load. He does not pull out. She would kill him if he pulled out. Breeding. Raw. The bodies slot like they were cut from the same want.",
-						"ko": "<b>돌린다.</b> 뒤에서. 싼 기둥이 주먹에. 마당부터 보던 허리를 잡고 박는다. <i>짝. 짝. 짝.</i> 젖이 흔들린다. 흰 것이 이미 허벅지 안으로, 무릎에서 마루로. 세 번째. 안 뺀다. 빼면 죽일 것이다. 씨. 생. 몸이 같은 욕으로 잘린 것처럼 맞는다."
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#7aa8d8",
-						"person": "pumsuk",
-						"lines": [
-							"받아— 받아— AUUAAAAUAGGH—!!",
-							"조여— 이 안이— 또 나와—!!",
-							"이 엉덩이— 마당에서부터—"
-						],
-						"en": [
-							"Take it— take it— AUUAAAAUAGGH—!!",
-							"Tighten— I’m nutting again—!!",
-							"This ass— since the yard—"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#c98fb0",
-						"person": "gumilwife",
-						"lines": [
-							"AUUAAAAUAGGH— 누구 거야— 말해—!!",
-							"젊은 자지— 젊은 등— 젊은 씨— 내 거—!!",
-							"씨발 너— 미워— 더 박아—!!"
-						],
-						"en": [
-							"AUUAAAAUAGGH— WHOSE IS IT— SAY IT—!!",
-							"Young cock— young back— young nut— MINE—!!",
-							"Fuck you— I hate you— harder—!!"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#7aa8d8",
-						"person": "pumsuk",
-						"lines": [
-							"내 거요— 이 보지— 내 거—!!",
-							"베이비— 임신해—"
-						],
-						"en": [
-							"MINE— this cunt— MINE—!!",
-							"Baby— get pregnant—"
-						]
-					},
-					{
-						"kind": "p",
-						"nsfw": true,
-						"html": "Against the wall. Her legs around the waist she keeps praising. Standing. He is twenty-four and still hard and the fourth load slops out of her when he lifts, a wet sound, <i>blorp</i>, and he puts it back before it hits the floor. She is louder than the feast. Shaking. Dripping. Asking for the next load with her mouth on his.",
-						"ko": "<b>벽.</b> 칭찬하던 허리를 다리가 감싼다. 서서. 스물넷, 아직 서 있고, 들어올릴 때 네 번째가 <i>푸슉</i> 흘렀다가, 바닥에 닿기 전에 다시 넣는다. 잔치보다 크다. 떨고. 흘리고. 입에 입을 대고 다음 한을 청한다."
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#c98fb0",
-						"person": "gumilwife",
-						"lines": [
-							"혀— 혀 넣어— 싸면서 입맞춰—!!",
-							"등 넓어— 허리 좁아— 이 몸 미치겠어—!!",
-							"더— 씨— 더— 비워—!!"
-						],
-						"en": [
-							"Tongue— tongue in— kiss me while you nut—!!",
-							"Wide back— narrow waist— I’m losing it over this body—!!",
-							"More— cum— more— drain it—!!"
-						]
-					},
-					{
-						"kind": "p",
-						"nsfw": true,
-						"html": "On her side. Then on her back again. Then her on top facing away so he can watch the ass he ruined. <i>Plap. Squelch. Drip.</i> Load after load of breeding. She loses the count. Five. Six. The pine is white. The ochre is a rag. Ice-blue is stained to the hip. Every time she thinks the wick is the end he looks at the mess between her legs and gets hard inside her. The lamp keeps dying and he does not.",
-						"ko": "옆으로. 다시 바로. 등을 보이게 타서 망가뜨린 엉덩이를 보게 한다. <i>철벅. 찔꺽. 뚝.</i> 씨가 한 번 한 번. 세는 것을 잃는다. 다섯. 여섯. 마루가 하얗다. 황토는 걸레. 얼음빛은 허리까지 젖었다. 심지가 끝인 줄 알 때마다 다리 사이를 보고 안에서 다시 선다. 등잔은 죽어 가는데 그는 안 죽는다."
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#c98fb0",
-						"person": "gumilwife",
-						"lines": [
-							"AUUAAAAUAGGH— 또— 또 나와—!!",
-							"빼지 마— 씨 넘쳐— 허벅지로—!!"
-						],
-						"en": [
-							"AUUAAAAUAGGH— again— it’s coming again—!!",
-							"Don’t pull out— it’s overflowing— down my thighs—!!"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"nsfw": true,
-						"chip": "#7aa8d8",
-						"person": "pumsuk",
-						"lines": [
-							"사랑하오— 이 몸— 이 구멍— 안 멈춰—!!",
-							"AUUAAAAUAGGH— 씨—!!"
-						],
-						"en": [
-							"I love you— this body— this hole— I can’t stop—!!",
-							"AUUAAAAUAGGH— cum—!!"
-						]
-					},
-					{
-						"kind": "p",
-						"nsfw": true,
-						"html": "They do not stop until the lamp dies. Load after load inside her — she squirts again on the last one, water and white, on the dirtied green, on the worn pine, on the frayed red sash, on the tits she cannot cover, on his stomach, on the cheap post. Hanbok still on — just straps of it. The hall smells of sex. She is hoarse. He is shaking and still in her, still holding the chest, still twitching out the last of a night that was only breeding. For the first time in this fortress they are in love in a room that cannot keep them.",
-						"ko": "등잔이 죽을 때까지 멈추지 않는다. 그 안에 한 번 한 번 — 마지막에 또 물이 나오고, 하얗고 물이고, 때 묻은 초록에, 낡은 마루에, 헐거운 붉은 끈에, 못 가리는 젖에, 그의 배에, 싼 기둥에. 한복은 아직 있다 — 끈만. 전각에 그 냄새가 있다. 목이 쉬었다. 그는 떨면서 아직 그 안에 있고, 아직 가슴을 잡고, 씨만 있던 밤의 마지막을 아직 튄다. 이 성에서 처음으로 붙잡아 둘 수 없는 방에서 사랑한다."
+						"html": "They do not stop until the lamp dies. The last time, she comes apart again and soaks the dirtied green, the worn pine, the frayed red sash, his stomach and the cheap post. What is left of the hanbok hangs off them in straps. The hall smells of them. She is hoarse. He is shaking and still inside her, still holding her, unwilling to let the night end. For the first time in this fortress they are in love, in a room that cannot keep them.",
+						"ko": "등잔이 죽을 때까지 멈추지 않는다. 마지막 한 번에 그녀는 또 무너지고, 때 묻은 초록과 낡은 마루와 헐거운 붉은 끈과 그의 배와 싼 기둥까지 적신다. 한복은 끈만 남아 매달려 있다. 전각에 둘의 냄새가 밴다. 그녀는 목이 쉬었다. 그는 떨면서 아직 그녀 안에 있고, 아직 그녀를 붙잡고 있고, 밤이 끝나는 걸 놓지 못한다. 이 성에서 처음으로, 붙잡아 둘 수 없는 방에서, 둘은 사랑한다."
 					},
 					{
 						"kind": "monologue",
 						"person": "gumilwife",
 						"nsfw": true,
 						"html": "I cannot sit up. If he looks again I will not survive it. I want him to look. I wanted the back, the hips, the young body. I was going to ruin him. I am in love with him. That is the room now.",
-						"ko": "못 일어나. 또 보면 못 버텨. 봐 줬으면 좋겠어. 등, 허리, 젊은 몸을 원했어. 그 아이를 망가뜨릴 거였어. 사랑해. 이제 방이 그거다."
+						"ko": "못 일어나. 또 보면 못 버텨. 봐 줬으면 좋겠어. 등, 허리, 젊은 몸을 원했어. 그 아이를 망가뜨릴 거였어. 사랑해. 이제 방이 그거다.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "dialogue",
@@ -14893,11 +14190,11 @@
 						"person": "gumilwife",
 						"lines": [
 							"하아— 죽겠어—",
-							"사랑해— 이 몸— 남아 줘서— 사랑해—"
+							"사랑해— 남아 줘서— 사랑해—"
 						],
 						"en": [
 							"Haa— I’m wrecked—",
-							"I love you— this body— you stayed— I love you—"
+							"I love you— you stayed— I love you—"
 						]
 					},
 					{
@@ -14907,29 +14204,28 @@
 						"person": "pumsuk",
 						"lines": [
 							"나도— 사랑하오.",
-							"젖이. 당신이. 이 방이. 이 안이."
+							"당신. 이 방. 전부."
 						],
 						"en": [
 							"I love you too.",
-							"The tits. You. This room. This inside."
+							"You. This room. All of it."
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "They look. That is the whole end. A poor woman and a True Bone boy, wrecked on cheap pine, still joined, his cock still in, last load still leaking around it. They are completely in love. The feast will not know what to do with that.",
-						"ko": "본다. 그게 끝의 전부다. 가난한 여자와 진골 소년, 싼 마루에서 망가지고, 아직 붙어 있고, 아직 그 안에, 마지막 한이 아직 옆으로 샌다. 완전히 사랑한다. 잔치는 그걸 어떻게 할지 모를 것이다."
+						"html": "They look at each other. That is the whole end of it: a poor woman and a True Bone, wrecked on cheap pine, still joined, completely in love. The feast will not know what to do with that.",
+						"ko": "서로를 본다. 그게 끝의 전부다. 가난한 여자와 진골 하나가 싼 마루 위에서 망가진 채, 아직 이어진 채, 완전히 사랑하고 있다. 잔치는 그걸 어떻게 해야 할지 모를 것이다."
 					},
 					{
 						"kind": "p",
-						"nsfw": true,
-						"html": "Afterwards she is on the worn pine. Jeogori open. Chima a wreck. White milk on the dirtied green — load after load of it, on the boards, on the cheap sash, on her, still pumping out when she tries to close her legs, catching the last of the lamp. She cannot sit up yet. She does not try. The feast on the other side of the screen has gone very quiet.",
-						"ko": "끝나고 낡은 마루 위에 있다. 저고리는 열려 있다. 치마는 망가졌다. 때 묻은 초록 위에 흰 젖 — 한 번 한 번, 마루에, 싼 끈에, 그녀에, 다리를 모으려 해도 아직 나오고, 마지막 등잔에 잡힌다. 아직 일어나지 못한다. 하려고도 하지 않는다. 병풍 너머 잔치가 아주 조용해진다."
+						"html": "Much later, in the dark, the feast beyond the screen has gone very quiet.",
+						"ko": "한참 뒤, 어둠 속에서 병풍 너머 잔치는 아주 조용해져 있다."
 					},
 					{
 						"kind": "p",
-						"html": "He stands. He looks once — the way a man looks at someone he has already lost. He does not speak. He leaves the feast without a word — through the cheap screen, through the dark hall, back into the rank that will pretend this timber never happened. The lamps do not follow him. She stays on the floor.",
-						"ko": "일어선다. 한 번 본다 — 이미 잃은 사람을 보는 눈. 말하지 않는다. 말 없이 잔치를 나선다 — 싼 병풍을 지나, 어두운 전각을 지나, 이 나무가 없었다고 할 계급 속으로. 등잔은 따라가지 않는다. 그녀는 마루에 남는다."
+						"html": "He stands and looks at her once, the way a man looks at someone he has already lost. He leaves the feast without a word, through the cheap screen and the dark hall, back into the rank that will pretend this timber never happened. She stays on the floor.",
+						"ko": "그가 일어서서, 이미 잃은 사람을 보듯 그녀를 한 번 본다. 그리고 말없이 잔치를 나선다. 싼 병풍을 지나, 어두운 전각을 지나, 이 나무 바닥이 없었던 일로 할 계급 속으로. 그녀는 마루에 남는다."
 					},
 					{
 						"kind": "day",
@@ -14961,13 +14257,13 @@
 						"chip": "#c98fb0",
 						"person": "gumilwife",
 						"lines": [
-							"등잔 줄.",
-							"앉아. 자두.",
-							"그다음엔… 마루야."
+							"등잔 있는 데서 시작됐어.",
+							"앉으라고 했어. 자두가 있었고.",
+							"그다음엔… 마루."
 						],
 						"en": [
-							"The lamp-line.",
-							"Sit. The plum.",
+							"It started at the lamps.",
+							"I told him to sit. There was a plum.",
 							"After that… the floor."
 						]
 					},
@@ -14977,20 +14273,20 @@
 						"person": "gumil",
 						"lines": [
 							"그다음.",
-							"이름.",
+							"누구 이름.",
 							"몇 번."
 						],
 						"en": [
 							"After that.",
-							"The name.",
+							"Whose name.",
 							"How many times."
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She does not wait for the rest of the questions. Same pine. Same wrecked ochre. She is still in milf mode — the voice she used on the boy, the hands on the chest, the hike. She pulls the yellow sleeve down, puts him in, and does not let go. He is already overwhelmed. Her. The smell. Last night still wet on her. Three strokes. He always was three strokes.",
-						"ko": "나머지 질문을 기다리지 않는다. 같은 마루. 같은 망가진 황토. 아직 아줌마 모드다 — 그 아이에게 쓰던 목소리, 가슴의 손, 걷어 올린 것. 노란 소매를 내리고, 넣고, <b>안 놓는다</b>. 이미 압도됐다. 그녀. 냄새. 지난밤이 아직 젖어. 세 번. 원래 세 번이었다."
+						"html": "She does not wait for the rest of the questions. Same pine, same wrecked ochre, and she is still wearing last night’s voice, the one she used on the True Bone, with her hands on her own chest and the hem hiked. She pulls the yellow sleeve down, takes him inside her and does not let go. He is overwhelmed at once by her, by the smell of the night still on her skin. He never could last.",
+						"ko": "나머지 질문을 기다리지 않는다. 같은 마루, 같은 망가진 황토. 그녀는 아직 지난밤의 목소리를 쓰고 있다. 진골에게 쓰던 그 목소리, 제 가슴에 올린 손, 걷어 올린 자락. 노란 소매를 끌어내리고, 그를 안에 받아들이고, 놓지 않는다. 그는 곧바로 압도된다. 그녀에게, 아직 살에 남은 지난밤의 냄새에. 원래 오래 버틴 적이 없다."
 					},
 					{
 						"kind": "dialogue",
@@ -14999,13 +14295,13 @@
 						"person": "gumilwife",
 						"lines": [
 							"가만히. 내가 할게.",
-							"검일아. 그렇게— 그래. 착하지.",
-							"빼지 마. 아직이야."
+							"검일아. 그렇게— 그래.",
+							"아직이야. 안 끝났어."
 						],
 						"en": [
 							"Stay still. Let me.",
-							"Gumil. Like that— yes. Good boy.",
-							"Don’t pull out. We’re not done."
+							"Gumil. Like that— yes.",
+							"Not yet. We’re not done."
 						]
 					},
 					{
@@ -15015,18 +14311,18 @@
 						"person": "gumil",
 						"lines": [
 							"하아— 매화— 잠깐—",
-							"벌써— 안 돼— AUUAAAAUAGGH—"
+							"벌써— 안 돼—"
 						],
 						"en": [
 							"Haa— Maehwa— wait—",
-							"Already— I can’t— AUUAAAAUAGGH—"
+							"Already— I can’t—"
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "He cums. Fast. A small, overwhelmed sound into her neck, <i>hnngh</i>, and it is over for him. She keeps the hips down. Milf. She rides the twitch until there is nothing left and then she still does not lift. He is shaking. She is not. This is why she was starved. This is why the boy’s loads felt like a country.",
-						"ko": "싼다. 빨리. 목덜미에 작은, 압도된 소리, <i>으응</i>, 그걸로 그는 끝. 허리는 내린 채. 아줌마. 더 나올 게 없을 때까지 타고, 그래도 안 일어난다. 그는 떤다. 그녀는 아니다. 그래서 굶었다. 그래서 그 아이 한이 나라처럼 느껴졌다."
+						"html": "He finishes fast, with a small, overwhelmed sound into her neck, and it is over for him. She keeps her hips down and rides it out until there is nothing left, and even then she does not lift. He is shaking, and she has barely started to breathe hard.",
+						"ko": "그는 빨리 끝난다. 그녀 목덜미에 대고 작고 압도된 소리를 내고, 그걸로 그에게는 끝이다. 그녀는 허리를 내린 채 더 남은 게 없을 때까지 버티고, 그러고도 일어나지 않는다. 그는 떨고 있고, 그녀는 이제 막 숨이 가빠지려던 참이다."
 					},
 					{
 						"kind": "dialogue",
@@ -15049,13 +14345,19 @@
 						"person": "gumil",
 						"nsfw": true,
 						"html": "I came. She is still on me. I cannot look at her tits without finishing. I have never lasted. She knows. She is telling me the boy lasted all night.",
-						"ko": "쌌다. 아직 타고 있다. 젖만 봐도 끝이다. 오래 가 본 적이 없다. 그녀가 안다. 그 아이는 밤새 갔다고 말하고 있다."
+						"ko": "쌌다. 아직 타고 있다. 젖만 봐도 끝이다. 오래 가 본 적이 없다. 그녀가 안다. 그 아이는 밤새 갔다고 말하고 있다.",
+						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She tells it. The walk. The knot. The scream the screen did not hide. She thought it was over after the first, and after the second, and it was not — he looked at her and it started again, load after load, and the clean silk that never stained. She tells him she said the wife’s name, and that is when the boy got angry, and that is when she liked it most — stealing a noble lady’s husband out loud. She tells him by the lamp she was the one being owned. He makes her say the leaving last — that the boy stood up, did not look, and walked out of the feast as if the room were already empty.",
-						"ko": "말한다. 걸음. 매듭. 병풍이 가리지 못한 소리. 첫 번 다음에 끝난 줄 알았고, 두 번째 다음에도, 아니었다 — 그 아이가 봐서 또 시작됐고, 그 안에 몇 번, 그리고 더러워지지 않은 비단. 아내 이름을 말했다고 하고, 그때 그 아이가 화났다고 하고, 그때가 제일 좋았다고 한다 — 진골 아씨 남편을 소리 내어 훔친 것. 등잔 옆에서는 소유당한 쪽이 자기였다고 한다. 떠나는 것을 마지막에 말하게 한다 — 그 아이가 일어서서, 보지 않고, 방이 이미 빈 것처럼 잔치를 나갔다고."
+						"html": "She tells it. The walk, the knot, the scream the screen did not hide. She thought it was over after the first time, and after the second, and it was not; every time he looked at her it began again, until the lamp died. She tells him she said the wife’s name, that this is when the True Bone got angry, and that this is when she liked it most, stealing a noble lady’s husband out loud. She tells him that by the lamp she was the one being owned, and that half a True Bone would be better than any child of his. He makes her say the leaving last: that he stood up, did not speak, and walked out of the feast as if the room were already empty.",
+						"ko": "그녀가 말한다. 걸음, 매듭, 병풍이 가리지 못한 비명. 첫 번째 뒤에 끝난 줄 알았고 두 번째 뒤에도 그랬지만, 아니었다. 그가 그녀를 볼 때마다 다시 시작됐고, 등잔이 죽을 때까지 그랬다. 아내 이름을 말했다고, 그때 진골이 화를 냈다고, 그때가 제일 좋았다고 한다. 진골 아씨의 남편을 소리 내어 훔친 것. 등잔 옆에서 소유당한 쪽은 자기였다고, 진골 반쪽이 그의 어떤 아이보다 낫겠다고 한다. 떠나는 이야기는 마지막에 하게 한다. 그가 일어서서, 말없이, 방이 이미 빈 것처럼 잔치를 나갔다고."
+					},
+					{
+						"kind": "p",
+						"html": "By the time she has told him all of it, the grey in the door-slit has turned white.",
+						"ko": "그녀가 전부 말하고 났을 때, 문틈의 회색은 하얗게 바래 있다."
 					},
 					{
 						"kind": "dialogue",
@@ -15077,13 +14379,13 @@
 						"chip": "#9a7b5f",
 						"person": "gumil",
 						"lines": [
-							"반쪽이 낫다고.",
+							"반쪽짜리 진골이 낫다고.",
 							"내 아이보다.",
 							"그 말도 했어. 했어?"
 						],
 						"en": [
-							"A half is better.",
-							"Than mine.",
+							"Half a True Bone is better.",
+							"Better than a child of mine.",
 							"You said that too. Did you."
 						]
 					},
@@ -15093,7 +14395,7 @@
 						"person": "gumilwife",
 						"lines": [
 							"했어.",
-							"이 성 사람들이 다 쓰레기니까요.",
+							"이 성 사람들이 다 쓰레기니까.",
 							"당신 부하들도. 이 성벽도. 이 나라도."
 						],
 						"en": [
@@ -15113,14 +14415,14 @@
 						],
 						"en": [
 							"…Right.",
-							"But you are here too.",
-							"You are <b>trash</b> as well."
+							"But you’re here too.",
+							"So you’re <b>trash</b> too."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "They stand in the door-slit of morning and do not touch. The heat from the feast is gone. What is left is the count of what she said, and the count of what he made her say, and a marriage that has already finished speaking.",
-						"ko": "그들은 아침 문틈에 서서 서로 닿지 않는다. 잔치의 열기는 없다. 남은 것은 그녀가 한 말의 셈과, 그가 말하게 한 말의 셈과, 이미 말하기를 끝낸 혼인이다."
+						"html": "They stand in the grey of the door-slit, an arm’s length apart, and neither of them reaches across it.",
+						"ko": "둘은 문틈의 잿빛 속에 팔 하나 길이만큼 떨어져 서 있고, 누구도 그 거리를 건너지 않는다."
 					},
 					{
 						"kind": "p",
@@ -15139,17 +14441,17 @@
 					},
 					{
 						"kind": "p",
-						"html": "Then Gumil puts the torch to the stores he counted, and opens the granary gate to Yunchung, and it is not for Baekje and it is not for money.",
-						"ko": "그리고 검일은 제가 세던 군량에 횃불을 대고, 윤충에게 곳간 문을 연다. 백제를 위해서가 아니고, 돈을 위해서도 아니다."
+						"html": "Then Gumil puts the torch to the stores he counted and opens the granary gate to Yunchung.",
+						"ko": "그리고 검일은 제가 세던 군량에 횃불을 대고, 윤충에게 곳간 문을 연다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#8f7f6a",
 						"lines": [
-							"자네 왜 그러는 건가. 진짜로."
+							"자네, 왜 이러는 건가. 진짜로."
 						],
 						"en": [
-							"Why are you doing this. Truly."
+							"Why are you doing this? Really."
 						],
 						"person": "mochuk"
 					},
@@ -15166,47 +14468,65 @@
 					},
 					{
 						"kind": "p",
-						"html": "He is quoting her. He will keep quoting her for the eighteen years he has left, until a king in Sabi has him killed.",
-						"ko": "아내의 말을 옮기는 것이다. 남은 십팔 년 동안 그는 계속 그 말을 옮길 것이고, 사비의 왕이 그를 죽일 때까지 그럴 것이다."
+						"html": "He will keep saying it for the eighteen years he has left, until a king in Sabi has him killed.",
+						"ko": "남은 십팔 년 동안 그는 그 말을 계속 옮길 것이다. 사비에 들어온 왕이 그를 죽일 때까지."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#5b7fd0",
 						"lines": [
-							"꿀걱..."
+							"모두 살려 주겠다고 맹세한다면, 항복하겠소."
 						],
 						"en": [
-							"*gulp*…"
+							"If you swear to spare us all, I will surrender."
 						],
-						"person": "pumsuk"
+						"person": "pumsuk",
+						"art": "Pumsuk on the inner wall at dawn, calling down to Yunchung’s lines."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c9932a",
+						"lines": [
+							"만일 그렇게 한다면 공과 나에게 모두 좋은 일이 될 것이오. 저 밝은 해를 두고 맹세하리다."
+						],
+						"en": [
+							"If you do, it will go well for both you and me. I swear it on that bright sun."
+						],
+						"person": "yunchung"
 					},
 					{
 						"kind": "p",
-						"html": "In the inner room <b>Gotaso</b> understands before anyone says the word. The fortress is finished. Her husband is finished. She is seventeen and the forever she promised at the wedding has run out of road.",
-						"ko": "안방에서 <b>고타소</b>는 누가 그 말을 꺼내기 전에 알아차린다. 성이 끝났다. 남편이 끝났다. 열일곱이고, 혼례에서 약속한 영원은 길이 다했다."
+						"html": "Pumsuk opens the inner gate. His men walk out first with empty hands, into the bright sun Yunchung swore on, and Baekje kills them in the road.",
+						"ko": "품석이 내성 문을 연다. 군사들이 빈손으로 먼저 걸어 나간다. 윤충이 두고 맹세한 그 밝은 해 아래로. 백제는 길 위에서 그들을 죽인다.",
+						"art": "Wide, high angle: the inner gate open, the garrison walking out empty-handed into hard sun, Baekje spears closing from both sides of the road."
+					},
+					{
+						"kind": "p",
+						"html": "In the inner room <b>Gotaso</b> understands before anyone says it: the fortress is lost, and so is her husband. She is seventeen, and the forever she promised at her wedding has run out of road.",
+						"ko": "안방에서 <b>고타소</b>는 누가 말을 꺼내기도 전에 알아차린다. 성은 끝났고, 남편도 끝났다. 열일곱이고, 혼례에서 약속한 영원은 길이 다했다."
 					},
 					{
 						"kind": "dialogue",
 						"person": "gotaso",
 						"en": [
 							"Husband…",
-							"If you are going to do it — look at me."
+							"If you’re going to do it, look at me while you do."
 						],
 						"lines": [
 							"낭군…",
-							"하실 거라면 — 저를 보세요."
+							"하실 거라면, 저를 보면서 하세요."
 						],
 						"chip": "#e8a0b8"
 					},
 					{
 						"kind": "p",
-						"html": "A man who was not in the fortress is suddenly in the fortress, ledger under one arm, crow-dark robe, standing the polite distance of a messenger. The underworld’s. Whose king is <b>Yumla</b>.",
-						"ko": "성에 없던 사내가 갑자기 성 안에 있다. 한쪽 팔에 명부, 까마귀빛 도포, 사신처럼 한 걸음 물러선 거리. 저승에서 온 것이다. 임금은 <b>염라</b>다."
+						"html": "A man who was not in the fortress a moment ago is standing in it now, ledger under one arm, crow-dark robe, at the polite distance a messenger keeps. He comes from the underworld, whose king is <b>Yumla</b>.",
+						"ko": "조금 전까지 성에 없던 사내가 지금 성 안에 서 있다. 한쪽 팔에 명부, 까마귀빛 도포, 사신이 지키는 공손한 거리. 저승에서 온 사람이고, 그곳의 임금은 <b>염라</b>다."
 					},
 					{
 						"kind": "p",
-						"html": "Kangrim reads her name aloud three times before he asks anything — Gotaso. Gotaso. Gotaso. — the underworld's way of making sure the ledger has opened the right door.",
-						"ko": "강림은 무엇을 묻기 전에 그녀의 이름을 세 번 크게 부른다 — 고타소. 고타소. 고타소. — 명부가 올바른 문을 열었는지 확인하는 저승의 방식이다."
+						"html": "Kangrim reads her name aloud three times before he asks anything: Gotaso, Gotaso, Gotaso. It is how the underworld makes sure the ledger has opened at the right page.",
+						"ko": "강림은 무엇을 묻기 전에 그녀의 이름을 세 번 소리 내어 읽는다. 고타소, 고타소, 고타소. 저승은 그렇게 명부가 맞는 장에 펼쳐졌는지 확인한다."
 					},
 					{
 						"kind": "dialogue",
@@ -15218,7 +14538,7 @@
 						],
 						"lines": [
 							"고타소 낭자.",
-							"질문 하나, 그리고 걷읍시다.",
+							"질문 하나만 드리고, 걸으시지요.",
 							"영원을 고르실 때 — 그 사람을 고르신 겁니까, 맹세를 고르신 겁니까?"
 						],
 						"chip": "#5f5f6b"
@@ -15259,7 +14579,7 @@
 						"en": [
 							"…Both.",
 							"Is that allowed?",
-							"…When he came for me there was something on his coat. He said he would change it later."
+							"…When Father came for me, there was something on his coat. He said he’d change it later."
 						],
 						"lines": [
 							"…둘 다요.",
@@ -15283,13 +14603,20 @@
 					},
 					{
 						"kind": "p",
-						"html": "She goes with him surprised to the last — not by dying, but by discovering there was a door she had never been told about.",
-						"ko": "그녀는 끝까지 놀라며 그와 함께 간다 — 죽는 것 때문이 아니라, 아무도 알려 주지 않은 문이 있었다는 발견 때문에."
+						"html": "She goes with him, surprised to the last to find there was a door nobody had told her about.",
+						"ko": "그녀는 그와 함께 간다. 아무도 알려 주지 않은 문이 있었다는 것에 끝까지 놀라면서."
 					},
 					{
 						"kind": "p",
-						"html": "He reads the husband's name three times next — Pumsuk. Pumsuk. Pumsuk. — the same ledger habit, a second door in the same fortress.",
-						"ko": "그는 이어 남편의 이름을 세 번 부른다 — 품석. 품석. 품석. — 같은 명부의 버릇, 같은 성 안의 두 번째 문."
+						"html": "On the next page of the ledger is the husband’s name. Kangrim closes the book on it.",
+						"ko": "명부의 다음 장에 남편의 이름이 있다. 강림은 그 위로 책을 덮는다.",
+						"art": "Wordless. One panel: Kangrim’s hand closing the ledger on Pumsuk’s name."
+					},
+					{
+						"kind": "p",
+						"html": "Pumsuk looks at the open gate. Then he looks at Kangrim.",
+						"ko": "품석은 열린 성문을 본다. 그리고 강림을 본다.",
+						"art": "Wordless. Two panels: Pumsuk at the inner-room door, looking down at the open gate and his men lying in the road; then he turns and finds Kangrim waiting beside him."
 					},
 					{
 						"kind": "dialogue",
@@ -15300,7 +14627,7 @@
 						],
 						"lines": [
 							"품석 화랑.",
-							"…아니. 그대에게는 없습니다."
+							"…아니오. 그대에게는 없습니다."
 						],
 						"chip": "#5f5f6b"
 					},
@@ -15320,42 +14647,73 @@
 						"chip": "#5b7fd0"
 					},
 					{
+						"kind": "scene",
+						"label": "THE INNER WALL",
+						"ko": "내성"
+					},
+					{
 						"kind": "p",
-						"html": "A messenger brings the news to Surabol. The Blue Moon — <b>Queen Sunduk</b> — receives it seated, because queens receive everything seated. <b>Seungman</b> covers her mouth. <b>Chunmyung</b> looks at <b>Munhee</b>, who is already looking at <b>Chunchu</b>, who is looking at nothing at all. <b>Bupmin</b> is the one who asks the messenger to say it again, in the voice of a boy who believes a sentence can be wrong twice.",
-						"ko": "전령이 서라벌에 비보를 전한다. 푸른 달 — <b>선덕여왕</b> — 은 앉은 채로 그것을 받는다. 여왕은 모든 것을 앉은 채로 받기 때문이다. <b>승만</b>은 입을 가린다. <b>천명</b>은 <b>문희</b>를 보고, 문희는 이미 <b>춘추</b>를 보고 있고, 춘추는 아무것도 보고 있지 않다. 전령에게 다시 한 번 말해 달라고 청하는 것은 <b>법민</b>이다 — 한 문장이 두 번 틀릴 수도 있다고 믿는 소년의 목소리로."
+						"html": "Jukjuk gathers the men who are left and bars the inner gate again.",
+						"ko": "죽죽은 남은 군사를 모아 내성 문에 다시 빗장을 지른다.",
+						"art": "Wordless."
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#5b7fd0",
+						"chip": "#7a8c6e",
 						"lines": [
-							"만약 모두 살려준다고 약조하면 항복하겠다."
+							"죽죽, 보게. 이대로는 못 버티네. 항복해서 살아남고, 이 빚은 뒷날 갚는 게 낫지 않겠나."
 						],
 						"en": [
-							"If you swear to spare us all, I will surrender."
+							"Look at it, Jukjuk. We can’t hold this. Better to surrender and live, and pay Baekje back some other year."
 						],
-						"person": "pumsuk"
+						"person": "yongseok"
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#c9932a",
+						"chip": "#3f9b6e",
 						"lines": [
-							"만일 그렇게 한다면 공과 나에게 모두 좋은 일이 될 것이요. 저 밝은 해를 두고 맹세하리다."
+							"자네 말이 틀린 건 아니네.",
+							"하지만 아버님께서 괜히 내 이름을 죽죽이라 지으신 게 아닐세."
 						],
 						"en": [
-							"If you do, it will go well for both you and me. I swear it on that bright sun."
+							"You’re not wrong.",
+							"But my father didn’t name me Jukjuk for nothing."
 						],
-						"person": "yunchung"
+						"person": "jukjuk"
+					},
+					{
+						"kind": "quote",
+						"hanja": "吾父名我以竹竹者 使我歲寒不彫 可折而不可屈 豈可畏死而生降乎",
+						"ko": "내 아버지께서 나를 죽죽이라 이름 지으신 것은, 추운 철에도 시들지 말고 꺾일지언정 굽히지 말라 하심이다. 어찌 죽음이 두려워 살아서 항복하겠는가?",
+						"html": "My father named me Jukjuk so that I would not wither in the cold season, and might be broken but never bent. How should I fear death and live by surrendering?",
+						"source": "Samguk Sagi (三國史記) bk. 47, Biographies — Jukjuk; Lee Byong-do ed., vol. 2, p. 448"
+					},
+					{
+						"kind": "p",
+						"html": "Yongseok says nothing more. He picks up his spear and goes up the wall beside Jukjuk.",
+						"ko": "용석은 더 말하지 않는다. 창을 집어 들고 죽죽 곁으로 성벽에 오른다.",
+						"art": "Wordless."
+					},
+					{
+						"kind": "scene",
+						"label": "SURABOL",
+						"ko": "서라벌"
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#8d8d95",
 						"lines": [
-							"대야성이 함락되고... 품석 화랑, 고타소 양은 염라대왕 앞으로 가셨다 합니다...!"
+							"대야성이 함락되고... 품석 화랑과 고타소 낭자께서 염라대왕 앞으로 가셨다 합니다...!"
 						],
 						"en": [
 							"Daeya has fallen… They say Hwarang Pumsuk and Lady Gotaso have gone before Yumla…!"
 						],
 						"person": "herald"
+					},
+					{
+						"kind": "p",
+						"html": "The Blue Moon, <b>Queen Sunduk</b>, receives it seated, because queens receive everything seated. <b>Seungman</b> covers her mouth. <b>Chunmyung</b> looks at <b>Munhee</b>, who is already looking at <b>Chunchu</b>, who is looking at nothing at all. <b>Bupmin</b> is the one who asks the messenger to say it again, in the voice of a boy who thinks the news might come out differently the second time.",
+						"ko": "푸른 달 <b>선덕여왕</b>은 앉은 채로 그것을 받는다. 여왕은 모든 것을 앉은 채로 받기 때문이다. <b>승만</b>은 입을 가린다. <b>천명</b>은 <b>문희</b>를 보고, 문희는 이미 <b>춘추</b>를 보고 있고, 춘추는 아무것도 보고 있지 않다. 전령에게 다시 한 번 말해 달라고 청하는 것은 <b>법민</b>이다. 두 번째에는 소식이 다르게 나올지도 모른다고 믿는 소년의 목소리로."
 					},
 					{
 						"kind": "dialogue",
@@ -15381,24 +14739,6 @@
 					},
 					{
 						"kind": "dialogue",
-						"chip": "#3f9b6e",
-						"lines": [
-							"그대의 말이 마땅하다. 그러나 아버지께서 나를 죽죽(竹竹)이라 이름 지으신 것은, 추운 날씨에도 시들지 말고 꺾일지언정 굽히지 말라는 뜻이었다. 어찌 죽음이 두려워 살아서 항복하겠는가?"
-						],
-						"en": [
-							"What you say is reasonable. But when my father named me, he meant that I should not wither in the cold, that I should break before I bend. How then could I fear death and surrender to live?"
-						],
-						"person": "jukjuk"
-					},
-					{
-						"kind": "quote",
-						"hanja": "吾父名我以竹竹者 使我歲寒不彫 可折而不可屈 豈可畏死而生降乎",
-						"ko": "내 아버지께서 나를 죽죽이라 이름 지으신 것은, 추운 철에도 시들지 말고 꺾일지언정 굽히지 말라 하심이다. 어찌 죽음이 두려워 살아서 항복하겠는가?",
-						"html": "My father named me Jukjuk so that I would not wither in the cold season, and might be broken but never bent. How should I fear death and live by surrendering?",
-						"source": "Samguk Sagi (三國史記) bk. 47, Biographies — Jukjuk; Lee Byong-do ed., vol. 2, p. 448"
-					},
-					{
-						"kind": "dialogue",
 						"chip": "#D8258C",
 						"lines": [
 							"…."
@@ -15420,7 +14760,7 @@
 						"lines": [
 							"춘추.",
 							"자네 딸을 지키겠다고 맹세한 건 품석이었네.",
-							"자네가 아니었어."
+							"자네가 아니라."
 						],
 						"en": [
 							"Chunchu.",
@@ -15443,8 +14783,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "In Surabol <b>Bupmin</b> waits at the gate the way a boy waits for a sister who promised forever. <b>Munhee</b> does not send him inside. She lets him see the empty road. Some educations are cruel on purpose.",
-						"ko": "서라벌에서 <b>법민</b>은 영원히를 약속한 누나를 기다리듯 문 앞에서 기다린다. <b>문희</b>는 그를 들여보내지 않는다. 빈 길을 보게 둔다. 어떤 교육은 일부러 잔인하다."
+						"html": "<b>Bupmin</b> waits at the gate the way a boy waits for a sister who promised forever. <b>Munhee</b> does not send him inside. She lets him see the empty road.",
+						"ko": "<b>법민</b>은 영원을 약속한 누나를 기다리듯 문 앞에서 기다린다. <b>문희</b>는 그를 들여보내지 않는다. 빈 길을 보게 둔다."
 					},
 					{
 						"kind": "dialogue",
@@ -15468,7 +14808,7 @@
 							"…I will make a country where sisters come home."
 						],
 						"lines": [
-							"…누나가 돌아오는 나라를 만들 거야."
+							"…누나가 돌아오는 나라를 만들 거예요."
 						],
 						"chip": "#3fa9c9"
 					},
@@ -15484,203 +14824,12 @@
 						"chip": "#e07fa8"
 					},
 					{
-						"kind": "day",
-						"label": "STEAM, AGAIN",
-						"ko": "다시, 김"
-					},
-					{
-						"kind": "p",
-						"html": "After Daeya, the Sword of Silla does not sleep in the capital. He rides to the cavern and strips at the lip of the rock without looking up. Narim, Golhwa, Hyullé. The same three who named themselves to him before the fortress fell.",
-						"ko": "대야 뒤, 신라의 도검은 도읍에서 자지 않는다. 동굴로 달려가, 올려다보지도 않고 바위 끝에서 옷을 벗는다. 나림, 골화, 혈레. 성이 무너지기 전에 제 이름을 알려 준 바로 그 셋."
-					},
-					{
-						"kind": "p",
-						"html": "They do not look at his face first. They smell the year on him. Hyullé’s thighs press the rock she saved for him. He came back. I kept the ledge. Golhwa swallows. Narim’s voice, when it comes, is half an octave down.",
-						"ko": "얼굴을 먼저 보지 않는다. 그에게서 그 해를 맡는다. 혈레의 허벅지가 그를 위해 남겨 둔 바위를 누른다. 돌아왔어. 턱을 데워 뒀어. 골화가 삼킨다. 나림의 목소리는, 나올 때, 반 옥타브 아래다.",
-						"nsfw": true
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0783a",
-						"person": "golhwa",
-						"en": [
-							"You’re early. How flattering.",
-							"Or desperate. I like both on you. Desperate looks better with nothing on. Take the rest off."
-						],
-						"lines": [
-							"일찍 왔네. 기분 좋은데.",
-							"아니면 필사적이거나. 둘 다 마음에 들어. 필사적인 얼굴은 아무것도 안 입었을 때 더 예뻐. 남은 것도 벗어."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0783a",
-						"person": "golhwa",
-						"en": [
-							"Come here— I want you between my knees before unnie remembers she’s eldest."
-						],
-						"lines": [
-							"이리 와— 언니가 자기가 언니인 걸 기억하기 전에 내 무릎 사이로 와."
-						],
-						"nsfw": true
-					},
-					{
-						"kind": "p",
-						"html": "She has been on that rock all year waiting, moaning at nobody. She wants him to grab her and fuck her into the stone. The queen can have the forts.",
-						"ko": "일 년 내내 그 바위에 올라앉아 기다렸다. 없는 사람한테 신음하면서. 세게 잡아 바닥에 박아 줬으면. 여왕한테는 성을 줘.",
-						"nsfw": true
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#5fad6e",
-						"person": "narim",
-						"en": [
-							"Golhwa — he buried a niece’s fortress this month.",
-							"Let him enter the water before you enter his ribs. …Then you may. I’m not made of stone tonight."
-						],
-						"lines": [
-							"골화 — 이번 달에 조카의 성을 묻었어.",
-							"갈비에 손대기 전에 물에 들어가게 해. …그다음엔 해도 돼. 나도 오늘 밤은 돌이 아니야."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6ec4c9",
-						"person": "hyulle",
-						"en": [
-							"…Here.",
-							"The far ledge is warmer. If you want. I’ll keep my knees together until you ask me not to."
-						],
-						"lines": [
-							"…여기.",
-							"저쪽 턱이 더 따뜻해요. 원하시면. 그러지 말라고 하실 때까지는 무릎 붙이고 있을게요."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#4a8fe0",
-						"person": "yushin",
-						"en": [
-							"I came for quiet.",
-							"And for whatever you three pretend is not counsel."
-						],
-						"lines": [
-							"고요를 얻으러 왔소.",
-							"그리고 당신들이 조언이 아니라 우기는 것을."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#5fad6e",
-						"person": "narim",
-						"en": [
-							"Then hear it plain.",
-							"Yeon in the north is about to finish becoming what he was always going to be.",
-							"Do not go to his door as a guest who expects to leave as a guest.",
-							"And don’t look at Hyullé’s mouth while I’m saying it. She’ll soak the stone."
-						],
-						"lines": [
-							"그럼 그냥 들어요.",
-							"북쪽의 연은 늘 될 사람이 되는 일을 막 끝내려 하고 있어요.",
-							"손님으로 문 앞에 서지 말아요. 손님으로 나올 거라 기대하면서.",
-							"그리고 제가 말하는 동안 혈레 입은 보지 마세요. 돌이 젖어요."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0783a",
-						"person": "golhwa",
-						"en": [
-							"Or stay.",
-							"Skip the north. Skip the queen’s errands.",
-							"We keep the steam hot. Hyullé keeps looking at your mouth when you talk about duty — don’t pretend you haven’t noticed, Yushin. I keep looking lower. Notice that too."
-						],
-						"lines": [
-							"아니면 있어.",
-							"북도 건너뛰고. 왕비 심부름도.",
-							"김은 우리가 뜨겁게 해 둬. 혈레는 네가 의무 얘기할 때 입을 봐 — 모르는 척하지 마, 유신. 나는 더 아래를 봐. 그것도 알아차려."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6ec4c9",
-						"person": "hyulle",
-						"en": [
-							"I don’t —",
-							"…Golhwa, please. He’ll hear that I want him. I do. Stop helping."
-						],
-						"lines": [
-							"전 —",
-							"…골화, 부탁해요. 제가 원하는 거 들릴 거예요. 원해요. 그만 도와줘요."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#4a8fe0",
-						"person": "yushin",
-						"en": [
-							"But Her Majesty sent word through Chunchu.",
-							"There are rooms in Goryeo that still have doors."
-						],
-						"lines": [
-							"허나 폐하께서 춘추를 통해 말씀을 내리셨소.",
-							"고려엔 아직 문이 있는 방이 있소."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0783a",
-						"person": "golhwa",
-						"en": [
-							"Ugh…",
-							"<i>“Her Majesty.”</i> Again.",
-							"What does that mortal have that we don’t? Say it while I’m this wet and I’ll bite you.",
-							"Stay with us, Yushin~~"
-						],
-						"lines": [
-							"으엑…",
-							"<i>«폐하.»</i> 또.",
-							"그 인간한테 우리한테 없는 게 뭐가 있는데? 나 이렇게 젖었는데 말하면 물어 버릴 거야.",
-							"우리랑 있어, 유신~~"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#e0783a",
-						"person": "golhwa",
-						"en": [
-							"Stay— on the rock, between my legs, until the list falls out of your head."
-						],
-						"lines": [
-							"있어— 바위 위에, 내 다리 사이에, 그 목록이 머리에서 빠질 때까지."
-						],
-						"nsfw": true
-					},
-					{
-						"kind": "p",
-						"html": "The title again. The rock again. She wants him in her more than the north wants a marshal.",
-						"ko": "또 존호. 또 바위. 북쪽보다 내가 더 급해. 들어와 줬으면.",
-						"nsfw": true
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#5fad6e",
-						"person": "narim",
-						"en": [
-							"He won’t.",
-							"Let the court say the queen counted. Not that the queen begged. Send Chunchu west the way she already means to — with a list, not a plea.",
-							"Hyullé — warm the ledge anyway. He’ll take it on the way out, even if he won’t say so. And if he gets hard in the doorway, Hyullé, that’s yours. I already had the mouth."
-						],
-						"lines": [
-							"안 남을 거야.",
-							"조정은 여왕이 세었다고 하게 해요. 여왕이 빌었다고 하지 말고. 춘추를 이미 보내려는 대로 서쪽으로 — 목록으로, 애원이 아니라.",
-							"혈레 — 그래도 턱은 데워 둬. 말은 안 해도 나가면서 쓸 테니. 문간에서 서면, 혈레, 그건 네 거야. 입은 내가 이미 썼어."
-						]
-					},
-					{
-						"kind": "p",
-						"html": "He sits where Hyullé pointed until the cold leaves his shoulders. Golhwa complains to the steam. Narim counts how long he stays without asking him to stay. When he dresses, none of them say goodbye — which is how he knows the counsel was real.",
-						"ko": "혈레가 가리킨 자리에 앉아 어깨에서 추위가 빠질 때까지 있는다. 골화는 김에게 투덜대고, 나림은 남아 달라 하지 않은 채 그가 얼마나 오래 있는지 센다. 옷을 입을 때 아무도 작별하지 않는다 — 그래서 조언이 진짜였음을 안다."
+						"kind": "quote",
+						"hanja": "百濟將軍允忠領兵攻拔大耶城 都督伊飡品釋 舍知竹竹 龍石等死之",
+						"ko": "백제 장군 윤충이 군사를 이끌고 대야성을 쳐서 함락하니, 도독 이찬 품석과 사지 죽죽·용석 등이 죽었다.",
+						"html": "The Baekje general Yunchung led troops, attacked, and took Daeya Fortress. The dodok Ichan Pumsuk, and the saji Jukjuk and Yongseok, died there.",
+						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 11 (642), 8th month; Lee Byong-do ed., vol. 1, p. 118",
+						"art": "Full-page end card."
 					}
 				],
 				"music": "Gotaso"
