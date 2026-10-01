@@ -249,6 +249,16 @@
 	"sunduk-star-shaft": [
 		"sunduk"
 	],
+	"parody-coronation-dukman": [
+		"bidam",
+		"sunduk"
+	],
+	"parody-sejong-sunduk": [
+		"sunduk"
+	],
+	"ink-peony-no-butterflies-sunduk": [
+		"sunduk"
+	],
 	"crescent-hwarang": [
 		"jinheung"
 	],
@@ -414,6 +424,19 @@
 	"gwanggaeto_hostages": [
 		"gwanggaeto"
 	],
+	"parody-napoleon-gwanggaeto": [
+		"gwanggaeto"
+	],
+	"parody-alexander-mosaic-gwanggaeto": [
+		"gwanggaeto"
+	],
+	"parody-ingres-throne-gwanggaeto": [
+		"gwanggaeto"
+	],
+	"parody-vercingetorix-gwanggaeto": [
+		"gaozong",
+		"gwanggaeto"
+	],
 	"bupmin-birth-white": [
 		"munhee",
 		"munmu",
@@ -537,12 +560,11 @@
 		"yushin"
 	],
 	"gotaso_07": [
-		"sunduk",
+		"chunchu",
+		"gotaso",
+		"munhee",
+		"pumsuk",
 		"yushin"
-	],
-	"pumsuk-forbidden-desire": [
-		"gumilwife",
-		"pumsuk"
 	],
 	"gotaso-determination-forward": [
 		"gotaso"
@@ -609,6 +631,20 @@
 		"chunchu",
 		"munhee"
 	],
+	"parody-wolha-chunchu-munhee": [
+		"chunchu",
+		"munhee",
+		"yun"
+	],
+	"parody-masters-pumsuk": [
+		"alchun",
+		"pumsuk"
+	],
+	"parody-inwang-surabol-flood": [
+		"bohee",
+		"munhee",
+		"namsan"
+	],
 	"stele-sunrise": [
 		"gwanggaeto"
 	],
@@ -633,6 +669,10 @@
 		"namgun",
 		"namsan",
 		"namseng"
+	],
+	"ink-stele-yeon-sons": [
+		"gesomun",
+		"gwanggaeto"
 	],
 	"poster_euija": [
 		"euija"
@@ -1691,6 +1731,13 @@
 	],
 	"nsfw-maehwa-goes-quiet": [
 		"gumilwife"
+	],
+	"ink-wind-bamboo-jukjuk": [
+		"jukjuk"
+	],
+	"pumsuk-forbidden-desire": [
+		"gumilwife",
+		"pumsuk"
 	],
 	"pyongyang-massacre-doorway": [
 		"gesomun"
@@ -5007,32 +5054,25 @@
 		"yuhwa"
 	],
 	"yuhwa-exile-sky-voice": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-appear": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-lookback": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-follow-south": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-pine": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-pass": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-fox-buyeo-see": [
-		"yuhwa",
-		"haemosu"
+		"yuhwa"
 	],
 	"yuhwa-exile-geumwa-path": [
 		"geumwa",
@@ -5083,6 +5123,20 @@
 		"jumong"
 	],
 	"jumong-buyeo-wc-palace-path-welcome": [
+		"jumong"
+	],
+	"parody-muyongchong-jumong": [
+		"jumong"
+	],
+	"parody-odysseus-bow-tabal": [
+		"jumong",
+		"yeontabal"
+	],
+	"parody-odysseus-arrow-jumong": [
+		"jumong",
+		"yeontabal"
+	],
+	"ink-turtle-bridge-jumong": [
 		"jumong"
 	],
 	"poster_yangmanchun": [
@@ -5149,6 +5203,22 @@
 		"mugwan",
 		"sadaham"
 	],
+	"sadaham-grief-clutch": [
+		"mugwan",
+		"sadaham"
+	],
+	"sadaham-grief-ecu-fist": [
+		"mugwan",
+		"sadaham"
+	],
+	"sadaham-grief-ots-back": [
+		"mugwan",
+		"sadaham"
+	],
+	"sadaham-grief-bird": [
+		"mugwan",
+		"sadaham"
+	],
 	"bupmin-hwarang-yard": [
 		"munmu",
 		"yushin"
@@ -5157,6 +5227,14 @@
 		"yushin"
 	],
 	"bupmin-five-principles": [
+		"yushin"
+	],
+	"parody-class-photo-hwarang": [
+		"munmu",
+		"yushin"
+	],
+	"parody-seodang-hwarang": [
+		"munmu",
 		"yushin"
 	],
 	"bupmin-jahee-rain": [
@@ -5226,6 +5304,15 @@
 	],
 	"bidam-defends-yushin": [
 		"bidam",
+		"yushin"
+	],
+	"parody-last-supper": [
+		"alchun",
+		"bidam",
+		"supum",
+		"yushin"
+	],
+	"parody-thinker-yushin": [
 		"yushin"
 	],
 	"poster_bidam": [
@@ -5356,6 +5443,9 @@
 	"yushin-fire-kite": [
 		"yushin"
 	],
+	"bidam-pensive-star": [
+		"bidam"
+	],
 	"bidam-rampart-confession": [
 		"bidam"
 	],
@@ -5416,6 +5506,9 @@
 		"bidam"
 	],
 	"bidam-break-close": [
+		"bidam"
+	],
+	"bidam-pensive-incense": [
 		"bidam"
 	],
 	"yushin-no-kim-close": [
@@ -5518,13 +5611,62 @@
 		"bidam",
 		"yushin"
 	],
+	"bidam-pensive-map": [
+		"bidam"
+	],
 	"bidam-yushin-tea-cold": [
+		"bidam",
+		"yushin"
+	],
+	"bidam-pensive-smile": [
 		"bidam",
 		"yushin"
 	],
 	"bidam-yushin-duel-day10": [
 		"bidam",
 		"yushin"
+	],
+	"parody-liberty-bidam": [
+		"bidam"
+	],
+	"parody-cheonmachong-bidam": [
+		"bidam"
+	],
+	"parody-dano-cavern": [
+		"golhwa",
+		"hyulle",
+		"munmu",
+		"narim",
+		"yun"
+	],
+	"parody-ssireum-yard": [
+		"bidam",
+		"yushin"
+	],
+	"parody-abbey-road-hwarang": [
+		"alchun",
+		"bidam",
+		"yushin"
+	],
+	"parody-gosa-alchun": [
+		"alchun"
+	],
+	"parody-dalmado-bidam": [
+		"bidam"
+	],
+	"parody-tiger-golhwa": [
+		"bidam",
+		"golhwa"
+	],
+	"parody-team7-hwarang": [
+		"alchun",
+		"bidam",
+		"sunduk",
+		"yushin"
+	],
+	"parody-laocoon-bidam": [
+		"bidam",
+		"hyulle"
 	],
 	"wa-mountains": [
 		"bidam",
@@ -5546,6 +5688,10 @@
 	],
 	"chunchu-strategy-meditation": [
 		"chunchu"
+	],
+	"ink-packing-munhee": [
+		"munhee",
+		"yun"
 	],
 	"heo-court-present": [
 		"heohwangok",
@@ -5938,6 +6084,12 @@
 	"secretariat-courier": [
 		"jukji"
 	],
+	"parody-jobs-chunchu": [
+		"chunchu"
+	],
+	"parody-godfather-chunchu": [
+		"chunchu"
+	],
 	"poster_muyeol": [
 		"chunchu"
 	],
@@ -6059,6 +6211,9 @@
 		"jukji"
 	],
 	"euija-coup-empty-benches": [
+		"euija"
+	],
+	"parody-coup-poster-euija": [
 		"euija"
 	],
 	"euija-descent-wide": [
@@ -6325,6 +6480,9 @@
 		"gyebek"
 	],
 	"jacheongbi": [
+		"gyebek"
+	],
+	"parody-sehando-gyebek": [
 		"gyebek"
 	],
 	"bloody-hand": [
@@ -6644,6 +6802,9 @@
 		"hwanung",
 		"ungnyeo"
 	],
+	"ink-sindansu-hwanung": [
+		"hwanung"
+	],
 	"gyebek-seq-palisade": [
 		"gyebek"
 	],
@@ -6703,6 +6864,9 @@
 		"gyebek"
 	],
 	"gyebek-vertical-blade": [
+		"gyebek"
+	],
+	"parody-300-gyebek": [
 		"gyebek"
 	],
 	"two-kings": [
@@ -6905,6 +7069,9 @@
 		"munmu",
 		"yushin"
 	],
+	"parody-admiral-yi-yushin": [
+		"yushin"
+	],
 	"andong-grid-stamp": [
 		"xuerengui"
 	],
@@ -7008,6 +7175,9 @@
 	],
 	"munmu-tide-rock": [
 		"munmu"
+	],
+	"ink-flower-field-sunduk": [
+		"sunduk"
 	],
 	"balhae-wide": [
 		"daejoyoung"
