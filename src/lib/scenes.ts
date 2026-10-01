@@ -200,7 +200,6 @@ export const SCENES: Scene[] = [
 			'/img_gotaso_03.png',
 			'/img_gotaso_04.png',
 			'/img_gotaso_06.png',
-			'/img_gotaso_pumsuk_passion.png',
 			'/scene_gotaso-pumsuk_4.jpg',
 			'/scene_gotaso-pumsuk_12.jpg',
 			'/scene_gotaso-pumsuk_35.jpg'
@@ -1371,7 +1370,6 @@ export const SCENES: Scene[] = [
 		frames: [
 			'/temp/gotaso-pumsuk-warmth.jpg',
 			'/scene_pumsuk_gotaso_sing.png',
-			'/img_gotaso_pumsuk_passion.png',
 			'/temp/gotaso-love-gaze.jpg',
 			'/img_gotaso_04.png',
 			'/scene_pumsuk-loves-gotaso_2.jpg',

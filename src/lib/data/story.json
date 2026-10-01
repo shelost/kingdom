@@ -954,7 +954,7 @@
 						"id": "munhee-folded-letter",
 						"ratio": 0.5625,
 						"tone": "#E07FA8",
-						"at": "<b>Munhee (22)</b> is a young noblewoman",
+						"at": "<b>Munhee (26)</b> is a young noblewoman",
 						"alt": "Munhee three-quarter from behind in a black void, a folded pink letter the only lit plane",
 						"prompt": "Minimal iconic 9:16 poster. Kim Munhee, witness who sews the life she means to keep. ONE geometric device: a FOLDED LETTER as a pale-pink hard rectangle held at her chest, the only lit plane. Three-quarter from behind, looking back over her left shoulder — not a side-profile clone. Face matches the attached portrait. Face mostly in shadow; thin #E07FA8 pink rim-light tracing the outer sleeve and the gold-dragon binyeo tip. Striking silky hanbok, folded wide sleeves. Eighty percent black void. Form defined by rim light. No army. No palace clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -1034,8 +1034,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "<b>Munhee (22)</b> is a young noblewoman, being attended by her low-rank servants. She is getting her hair done for an important event, while a servant takes care of her baby son <b>Inmun (3)</b>.",
-						"ko": "젊은 귀족 여인 <b>문희 (22)</b>가 하급 시녀들의 시중을 받으며 큰 행사를 앞두고 머리를 매만지고 있다. 시녀 하나는 갓난 아들 <b>인문 (3)</b>을 돌보고 있다."
+						"html": "<b>Munhee (26)</b> is a young noblewoman, being attended by her low-rank servants. She is getting her hair done for an important event, while a servant takes care of her baby son <b>Inmun (3)</b>.",
+						"ko": "젊은 귀족 여인 <b>문희 (26)</b>가 하급 시녀들의 시중을 받으며 큰 행사를 앞두고 머리를 매만지고 있다. 시녀 하나는 갓난 아들 <b>인문 (3)</b>을 돌보고 있다."
 					},
 					{
 						"kind": "dialogue",
@@ -4833,7 +4833,7 @@
 						"id": "gotaso-pumsuk-warmth",
 						"ratio": 1.778,
 						"tone": "#F0A3C0",
-						"at": "is your mouth on the inside of my wrist",
+						"at": "won’t you let go of my wrist",
 						"alt": "Tender two-shot: Gotaso and Pumsuk close in dim light — forehead warmth, her wrist in his hands, not a feast",
 						"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Princess Gotaso and Hwarang Pumsuk, purely in love. ONE geometric device: a low horizontal crop — two faces in the lower third, foreheads almost touching; the rest a dim charcoal void. Faces match the attached portraits: her oval face and pink-gold binyeo; his dark swept hair, blue headband with a white crescent, ice-blue robe. Her wrist in his hands. Warmth, not cynicism. Pink #F0A3C0 as the single accent on silk. Striking silky hanbok, few hues. Dim. Real adult proportions. Flat charcoal void. No army. No palace clutter. No clouds. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
 						"refs": [
@@ -5022,55 +5022,14 @@
 						"tempImage": "/temp/gotaso_07.jpg"
 					},
 					{
-						"id": "gotaso-pumsuk-passion",
-						"ratio": 1.778,
-						"tone": "#d0362f",
-						"alt": "Gotaso and Pumsuk in passionate embrace - bodies pressed close, bare shoulders visible, robes loosened, faces intimately close in tender kiss, warm candlelight illuminating exposed skin - passionate love and deep longing",
-						"at": "passionate love and longing",
-						"src": "/img_gotaso_pumsuk_passion.png",
-						"refs": [
-							"/ch_gotaso.png",
-							"/ch_pumsuk.png"
-						]
-					},
-					{
-						"id": "wedding-night-anticipation",
-						"ratio": 1.778,
-						"tone": "#d0362f",
-						"alt": "Wedding night intimate anticipation - bride and groom on bed partially undressed, robes loosened revealing bare shoulders and collarbones, bodies close together under red silk sheets, nervous but passionate gazes - threshold moment of intimacy",
-						"at": "the threshold moment",
-						"src": "/img_wedding_night_anticipation.png",
-						"refs": []
-					},
-					{
-						"id": "secret-meeting-night",
-						"ratio": 1.778,
-						"tone": "#3b82f6",
-						"alt": "Secret midnight meeting in hidden pavilion - lovers in close physical contact, bodies pressed together in passionate embrace, bare shoulders and exposed backs visible, intimate touching, moonlight creating shadows across exposed skin - clandestine romance",
-						"at": "secret meetings",
-						"src": "/img_secret_meeting_night.png",
-						"refs": []
-					},
-					{
 						"id": "moonlit-silhouettes-romance",
 						"ratio": 1.778,
 						"tone": "#3b82f6",
 						"alt": "Moonlit chamber silhouettes through paper screens - two lovers in intimate embrace, bodies pressed close together with curves visible through backlit screens, bare shoulders and exposed backs creating sensual silhouettes, bodies intertwined - romantic anticipation",
-						"at": "the moment before",
+						"at": "two bodies pressed to the lattice",
 						"src": "/img_moonlit_silhouettes_romance.png",
-						"refs": []
-					},
-					{
-						"id": "pumsuk-forbidden-desire",
-						"ratio": 1.778,
-						"tone": "#374151",
-						"alt": "Forbidden attraction - Pumsuk and another figure in close proximity with bare shoulders visible, robes loosened showing collarbones, intense sensual tension and longing gazes, bodies leaning toward each other with palpable desire - restrained passion and internal conflict",
-						"at": "forbidden longing",
-						"src": "/img_pumsuk_forbidden_desire.png",
-						"refs": [
-							"/ch_pumsuk.png",
-							"/ch_gumil_wife.png"
-						]
+						"refs": [],
+						"nsfw": true
 					},
 					{
 						"id": "gotaso-determination-forward",
@@ -6135,14 +6094,14 @@
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "<b>They shut the door</b> on the yard and do not open it again for a long time. What follows is not one wedding night the minutes invent later. It is weeks of fucking — her on him, him on her, the magenta and the pink in a heap by the door — until the meals go cold and Surabol can wait.",
-								"ko": "마당을 향해 <b>문을 닫고</b>, 한참을 다시 열지 않는다. 뒤따르는 것은 훗날 기록이 꾸며 낼 하룻밤이 아니다. 몇 주를 박는다 — 그녀가 타고, 그가 덮고, 자홍과 분홍이 문가에 한 더미 — 밥이 식고 서라벌은 기다려도 된다."
+								"html": "<b>They shut the door</b> on the yard and do not open it again for a long time. The minutes will later invent one decorous wedding night. What actually happens is weeks of it — her on him, him on her, the magenta and the pink in a heap by the door — until the meals go cold and Surabol learns to wait.",
+								"ko": "마당을 향해 <b>문을 닫고</b>, 한참을 다시 열지 않는다. 훗날 기록은 점잖은 첫날밤 하나를 지어낼 것이다. 실제로 있었던 일은 몇 주다 — 그녀가 위에, 그가 위에, 자홍과 분홍이 문가에 한 더미로 — 밥이 식고 서라벌이 기다리는 법을 배울 때까지."
 							},
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "The first time he is still trying to be gentle. She is not. She puts him in with her hand and sits until the hips meet, and the sound that leaves her is not a toast. He lasts like a man who has been polite too long — which is not long — and he nuts in her with her name in his mouth, a stupid first load, and she laughs because she wanted that, and because he is still hard. She does not let him pull out. On the bedding. Against the chest. On the floor when the bedding is too far. When he reaches for water she pulls him back by the cock and puts him in again. Magenta silk and pink silk last half a night before they are one wet heap by the door.",
-								"ko": "처음엔 아직 살살 하려 한다. 그녀는 아니다. 손으로 넣고 엉덩이가 맞닿을 때까지 앉는다. 나오는 소리는 축배가 아니다. 너무 오래 예의 바른 남자처럼 오래 못 가고 — 이름 부르며 안에 싼다. 바보 같은 첫 한 방. 그녀는 웃는다. 그걸 원했으니까. 그리고 아직 서 있으니까. 빼지 못하게 한다. 침상에서. 궤에. 침상이 멀면 바닥에서. 물에 손을 뻗으면 그걸 잡아 끌어 다시 넣는다. 자홍과 분홍은 반나절도 못 가 젖은 한 더미가 된다."
+								"html": "The first time he is still trying to be gentle. She is not. She takes his hand and puts it where she wants it, and the sound that leaves her is not a toast. He lasts like a man who has been polite too long, which is to say not long, and says her name at the end as if he were apologising for it. She laughs, because that was the point, and does not let him go anywhere. The bedding. The chest. The floor, when the bedding is too far away. When he reaches for the water jug she pulls him back by the wrist.",
+								"ko": "처음엔 그가 아직 살살 하려 한다. 그녀는 아니다. 그의 손을 잡아 원하는 곳에 놓고, 그녀에게서 나오는 소리는 축배가 아니다. 너무 오래 예의 바르게 굴었던 사내답게 그는 오래 가지 못하고 — 말하자면 금방이다 — 끝에 그녀의 이름을 사과하듯 부른다. 그녀는 웃는다. 바로 그걸 원했으니까. 그리고 그를 아무 데도 보내지 않는다. 침상. 궤. 침상이 멀면 바닥. 그가 물주전자로 손을 뻗으면 손목을 잡아 끌어당긴다."
 							},
 							{
 								"kind": "dialogue",
@@ -6181,14 +6140,14 @@
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "<b>For weeks they do not leave the bedding</b> except to drink, to laugh, to start again. She wakes with him still in her, last night’s cum already running when she tries to sit, and she puts him back before the laugh is finished. He fucks her through the leak. She rides him until her thighs shake and then she does not get off — she asks for the next load like a sum he is good at. Bitten lips. A strategist who can forecast a betrayal a generation out cannot forecast when he will next go soft, and does not care.",
-								"ko": "<b>몇 주 동안 침상을 떠나지 않는다</b>. 물을 마시고, 웃고, 다시 시작할 때만 잠깐. 잠에서 깨면 아직 안에 있고, 앉으려 하면 어젯밤 것이 흘러, 웃음이 끝나기 전에 다시 넣는다. 흘리는 채로 박는다. 허벅지가 떨릴 때까지 타고, 안 내린다 — 다음 한 방을 그가 잘하는 셈처럼 달라고 한다. 깨문 입술. 한 세대 뒤의 배신을 내다보는 책사가, 언제 꺼질지는 내다보지 못하고, 개의치 않는다."
+								"html": "<b>For weeks they do not leave the bedding</b> except to drink, to laugh, to start again. She wakes with him still beside her and starts again before the laugh is finished. She rides him until her thighs shake and asks for more the way she would ask for a sum he is good at. A strategist who can forecast a betrayal a generation out cannot forecast his own stamina, and does not care.",
+								"ko": "<b>몇 주 동안 침상을 떠나지 않는다</b>. 물을 마시고, 웃고, 다시 시작할 때만 잠깐. 깨어 보면 그는 아직 곁에 있고, 그녀는 웃음이 끝나기도 전에 다시 시작한다. 허벅지가 떨릴 때까지 그 위에 있다가, 그가 잘하는 셈을 청하듯 한 번 더를 청한다. 한 세대 뒤의 배신을 내다보는 책사가 제 기력은 내다보지 못하고, 개의치도 않는다."
 							},
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "The <b>neighbors on both walls</b> learn their names the wrong way — through plaster, through the wet slap, through <i>다시</i> and <i>안에</i> and a rhythm that does not stop when the lamp does. Someone hears her tell him not to pull out. Someone hears him come. Servants stop knocking. Someone on the east side moves a sleeping mat farther from the shared timber and pretends it is the draft.",
-								"ko": "<b>양쪽 담장 너머 이웃</b>은 둘의 이름을 틀린 길로 배운다 — 회벽을 통해, 젖은 소리를 통해, <i>다시</i>와 <i>안에</i>와, 등불이 꺼져도 멈추지 않는 박자를 통해. 빼지 말라는 소리가 들린다. 그가 싸는 소리가 들린다. 하인들은 노크를 그만둔다. 동쪽 누군가 잠자리를 공용 들보에서 멀리 옮기고, 외풍 탓이라 둘러댄다."
+								"html": "The <b>neighbors on both walls</b> learn their names the wrong way — through plaster, through <i>다시</i>, through a rhythm that does not stop when the lamp does. Servants stop knocking. Someone on the east side moves a sleeping mat farther from the shared timber and blames the draft.",
+								"ko": "<b>양쪽 담장 너머 이웃</b>은 둘의 이름을 틀린 길로 배운다 — 회벽을 통해, <i>다시</i>라는 소리를 통해, 등불이 꺼져도 멈추지 않는 박자를 통해. 하인들은 문 두드리기를 그만둔다. 동쪽 누군가는 잠자리를 공용 들보에서 멀리 옮기고 외풍 탓을 한다."
 							},
 							{
 								"kind": "p",
@@ -6199,8 +6158,8 @@
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "A neighbor freezes mid-step under the eaves and stares. <b>Shadow on the lattice</b> — straddling, then pressed flat, then one lifting the other as if the room had forgotten gravity. He looks away too late. By the third night half the lane has an opinion, and none of it is about politics.",
-								"ko": "처마 아래 이웃이 걸음을 멈추고 바라본다. <b>살창 위의 그림자</b> — 올라타고, 납작이 밀리고, 방이 중력을 잊은 듯 한쪽이 다른 쪽을 들어올린다. 눈을 돌리기엔 늦다. 사흘째가 되면 골목 절반이 의견을 갖고, 그중 정치 이야기는 하나도 없다."
+								"html": "A neighbor freezes mid-step under the eaves, looks up at the <b>shadow on the lattice</b>, and looks away too late. By the third night half the lane has an opinion, and none of it is about politics.",
+								"ko": "처마 아래 이웃이 걸음을 멈추고 <b>살창 위의 그림자</b>를 올려다보다가, 너무 늦게 눈을 돌린다. 사흘째가 되면 골목 절반이 의견을 갖고, 그중 정치 이야기는 하나도 없다."
 							},
 							{
 								"kind": "dialogue",
@@ -6238,15 +6197,15 @@
 							},
 							{
 								"kind": "p",
-								"html": "<b>They fit.</b> Not the polite fit of a well-arranged marriage — he bottoms out and she makes a noise like she has been waiting for that exact depth, and then she laughs into it because the next thrust is already coming. She wants the load. He wants to watch it leak and put it back. Neither pretends otherwise. Later the household calls it love. In the bed she says again, inside, don’t you dare go soft.",
-								"ko": "<b>둘이 맞는다.</b> 잘 짜인 혼사의 예의 바른 맞춤이 아니다 — 끝까지 들어가면 그 깊이를 기다리던 소리가 나고, 다음 찌름이 이미 와서 웃는다. 그녀는 그 한을 원한다. 그는 흘러나오는 걸 보고 다시 넣고 싶다. 아닌 척하지 않는다. 훗날 집안은 사랑이라 부른다. 침상에서 그녀는 또, 안에, 꺼지지 마, 한다.",
+								"html": "<b>They fit.</b> Not the polite fit of a well-arranged marriage: when he is all the way with her she makes a noise like someone who has been waiting years for exactly that, and then laughs into it, because he is already moving again. Neither pretends to be shy. Later the household will call it love, which is also true. In the bed she only says <i>again</i>, and <i>don’t you dare stop</i>.",
+								"ko": "<b>둘이 맞는다.</b> 잘 짜인 혼사의 예의 바른 맞춤이 아니다. 그가 온전히 그녀에게 닿으면 그녀는 몇 해를 바로 그것만 기다린 사람 같은 소리를 내고, 이내 그 소리 속으로 웃는다. 그가 벌써 다시 움직이고 있으니까. 둘 다 수줍은 척하지 않는다. 훗날 집안은 사랑이라 부를 테고, 그것도 맞다. 침상에서 그녀는 그저 <i>또</i>, 그리고 <i>멈추기만 해 봐요</i>, 한다.",
 								"nsfw": true
 							},
 							{
 								"kind": "p",
 								"nsfw": true,
-								"html": "<b>Morning finds them still tangled</b> — lattice light on flushed faces, her thigh over his hip, last night’s cum drying on the pink silk she never put back on. He is hard against her before he is awake. She laughs into his mouth and guides him in anyway, messy, the morning load quieter than the night ones and somehow worse. He kisses the place above her pulse the way she once kissed his. The strategist’s cleverness has nowhere to go except into her.",
-								"ko": "<b>아침이 와도 아직 엉켜 있다</b> — 살창 빛이 상기된 얼굴 위에, 허벅지가 그의 허리에, 다시 안 입은 분홍 비단에 어젯밤 것이 말라 있다. 깨기도 전에 서 있다. 입안으로 웃고 그래도 넣는다. 지저분하게. 아침 한 방은 밤보다 조용하고 그게 더 심하다. 맥 위에 입을 맞춘다. 책사의 총명은 그 안으로밖에 갈 곳이 없다."
+								"html": "<b>Morning finds them still tangled</b> — lattice light on flushed faces, her thigh over his hip, the pink silk she never put back on crumpled under them. He wants her again before he is properly awake. She laughs into his mouth and lets him, slowly this time, which is somehow worse. He kisses the place above her pulse the way she once kissed his. The strategist’s cleverness has nowhere to go but her.",
+								"ko": "<b>아침이 와도 아직 엉켜 있다</b> — 상기된 얼굴 위에 살창 빛, 그의 허리에 걸친 그녀의 허벅지, 다시 입지 않은 분홍 비단이 몸 아래 구겨져 있다. 그는 제대로 깨기도 전에 또 그녀를 원한다. 그녀는 그의 입 안으로 웃으며 그러게 둔다. 이번엔 천천히, 그래서 더 심하다. 그는 언젠가 그녀가 자기에게 그랬듯 맥 뛰는 자리 위에 입을 맞춘다. 책사의 총명은 그녀 말고는 갈 곳이 없다."
 							},
 							{
 								"kind": "dialogue",
@@ -6280,8 +6239,8 @@
 							},
 							{
 								"kind": "p",
-								"html": "<b>Months pass before either of them remembers the yard</b>. When they finally open the door she walks like someone who has been filled until walking is a joke, and the pink silk will not stay clean, and they look at each other like people who have won a private war — still in love, still hungry, and finally willing to put clothes back on for an afternoon.",
-								"ko": "<b>둘 중 누구든 마당을 다시 떠올리기까지 몇 달이 걸린다</b>. 마침내 문을 열었을 때 그녀는 채워져서 걷기가 농담이 된 사람처럼 걷고, 분홍 비단은 깨끗하지가 않고, 둘은 사사로운 전쟁에서 이긴 사람처럼 서로를 본다 — 여전히 사랑하고, 여전히 배고프며, 겨우 오후 한나절 정도는 옷을 다시 입을 마음이 생긴 채로.",
+								"html": "<b>Months pass before either of them remembers the yard</b>. When they finally open the door she walks like someone who has been thoroughly loved and does not mind the lane knowing it, and they look at each other like people who have won a private war — still in love, still hungry, and willing, for one afternoon, to put clothes back on.",
+								"ko": "<b>둘 중 누구든 마당을 다시 떠올리기까지 몇 달이 걸린다</b>. 마침내 문을 열었을 때 그녀는 실컷 사랑받았고 골목이 그걸 알아도 상관없다는 사람처럼 걷고, 둘은 사사로운 전쟁에서 이긴 사람처럼 서로를 본다 — 여전히 사랑하고, 여전히 배고프고, 오후 한나절쯤은 옷을 다시 입어 줄 마음이 든 채로.",
 								"nsfw": true
 							},
 							{
@@ -6529,11 +6488,11 @@
 						"chip": "#f472b6",
 						"lines": [
 							"손… 닿으면 안 되는 거죠?",
-							"그럼 왜… 제 손목 안쪽에 입이 와 있어요."
+							"그럼 왜… 아직 제 손목을 놓지 않으세요."
 						],
 						"en": [
 							"And I’m not supposed to… touch your hand either?",
-							"Then why… is your mouth on the inside of my wrist."
+							"Then why… won’t you let go of my wrist."
 						],
 						"person": "gotaso"
 					},
@@ -6554,8 +6513,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Rain finds them once on the palace steps. There is nowhere to look that is not the other’s mouth — and when he finally finds it, he does not kiss her politely.",
-						"ko": "비는 궁 섬돌에서 한 번 그들을 붙잡는다. 서로의 입 말고 둘 곳이 없다 — 그리고 그가 마침내 그걸 찾았을 때, 예의 바른 키스가 아니다."
+						"html": "Rain finds them once on the palace steps. Neither of them moves to go inside.",
+						"ko": "비는 궁 섬돌에서 한 번 그들을 붙잡는다. 둘 다 안으로 들어갈 생각을 하지 않는다."
 					},
 					{
 						"kind": "dialogue",
@@ -6563,12 +6522,12 @@
 						"lines": [
 							"젖으셨잖아요.",
 							"…왜 웃어요.",
-							"아. / 입술이… 제 아랫입술을 물고 계셔서요."
+							"아. / 제 머리카락이… 소매에 붙어서요?"
 						],
 						"en": [
 							"You’re soaked.",
 							"…Why are you smiling.",
-							"Ah. / Because your mouth… is on my lower lip."
+							"Ah. / Is it my hair… on your sleeve?"
 						],
 						"person": "gotaso"
 					},
@@ -6579,13 +6538,13 @@
 							"공주님 머리카락이… 제 소매에 붙어 있어서요.",
 							"떼어 드려야 하는데.",
 							"손이 안 갑니다.",
-							"입도… 안 갑니다."
+							"발도… 안 떨어집니다."
 						],
 						"en": [
 							"Your hair is… caught on my sleeve.",
 							"I should free it.",
 							"My hand won’t move.",
-							"Neither will my mouth."
+							"Neither will my feet."
 						],
 						"person": "pumsuk"
 					},
@@ -6595,14 +6554,14 @@
 						"lines": [
 							"그럼 그대로 두세요.",
 							"계속요.",
-							"소매도. 입도.",
+							"소매도. 머리카락도.",
 							"저는 이 소매 옆에 평생 서 있을 수도 있어요.",
 							"아니 — 더 가까이요."
 						],
 						"en": [
 							"Then leave it.",
 							"Leave it there.",
-							"The sleeve. The mouth.",
+							"The sleeve. The hair.",
 							"I could stand beside this sleeve for the rest of my life.",
 							"No — closer."
 						],
@@ -6614,14 +6573,12 @@
 						"lines": [
 							"공주님.",
 							"이러다간… 제가 무너집니다.",
-							"여기서. 섬돌에서.",
-							"사람들 앞에서… 당신을 더 깊이 물 것 같습니다."
+							"여기서. 섬돌에서."
 						],
 						"en": [
 							"My lady.",
 							"If this goes on… I will come apart.",
-							"Here. On the steps.",
-							"In front of everyone… I am going to bite you deeper."
+							"Here. On the steps."
 						],
 						"person": "pumsuk"
 					},
@@ -6682,8 +6639,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Her parents <b>Chunchu (38)</b> and <b>Munhee (31)</b> bless the marriage. Then, over his wife’s one quiet objection, the father asks the boy for a vow — a vow no father should make his daughter hear.",
-						"ko": "부모인 <b>춘추 (38)</b>와 <b>문희 (31)</b>는 혼인을 축복한다. 그리고 아내의 조용한 반대 한 마디를 넘겨 두고, 아버지는 사위에게 맹세를 청한다 — 딸이 듣게 하면 안 되는 맹세를."
+						"html": "Her parents <b>Chunchu (38)</b> and <b>Munhee (35)</b> bless the marriage. Then, over his wife’s one quiet objection, the father asks the boy for a vow — a vow no father should make his daughter hear.",
+						"ko": "부모인 <b>춘추 (38)</b>와 <b>문희 (35)</b>는 혼인을 축복한다. 그리고 아내의 조용한 반대 한 마디를 넘겨 두고, 아버지는 사위에게 맹세를 청한다 — 딸이 듣게 하면 안 되는 맹세를."
 					},
 					{
 						"kind": "dialogue",
@@ -6863,121 +6820,19 @@
 						"lines": [
 							"아니요.",
 							"빨리 아무도 없는 데로 가고 싶어서요.",
-							"오늘 밤… 참지 못할까 봐.",
-							"아니 — 참기 싫어서요.",
-							"옷을… 푸시기 전에 저를 한 번 더 봐 주세요."
+							"저를 한 번 더 봐 주세요."
 						],
 						"en": [
 							"No.",
 							"Because I want to be somewhere with nobody in it.",
-							"Tonight… I’m afraid I won’t be able to hold back.",
-							"No — I don’t want to hold back.",
-							"Look at me once more… before you undo anything."
-						],
-						"person": "gotaso"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#7aa8d8",
-						"lines": [
-							"…아씨.",
-							"저도 이미…",
-							"입이 말라서… 이름을 제대로 못 부르겠습니다."
-						],
-						"en": [
-							"…My lady.",
-							"I am already…",
-							"My mouth is so dry… I cannot say your name properly."
-						],
-						"person": "pumsuk"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#f472b6",
-						"lines": [
-							"이제 «아씨»라고 부르지 마세요.",
-							"오늘부터는 다르게 부르셔야지요.",
-							"혀로.",
-							"목으로.",
-							"밤새."
-						],
-						"en": [
-							"Stop calling me “my lady.”",
-							"From tonight you have to call me something else.",
-							"With your tongue.",
-							"With your throat.",
-							"All night."
+							"Look at me once more."
 						],
 						"person": "gotaso"
 					},
 					{
 						"kind": "p",
-						"html": "Behind the doors the feast falls away. He kisses her as if the year of waiting has been poured into a single breath — careful at first, then open-mouthed, then so deep she makes a sound into him that he will remember for the rest of his short life.",
-						"ko": "문 너머로 잔치가 멀어진다. 그는 일 년의 기다림을 한 호흡에 담듯 입을 맞춘다 — 처음엔 조심스레, 이내 입을 벌리고, 더 깊이, 그녀가 그 안으로 낸 소리를 그는 짧은 남은 평생 동안 기억한다."
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#7aa8d8",
-						"lines": [
-							"고타소…",
-							"손을 어디에 두어야 할지… 모르겠습니다.",
-							"여기요…?",
-							"아니면… 더 아래요."
-						],
-						"en": [
-							"Gotaso…",
-							"I don’t know… where to put my hands.",
-							"Here…?",
-							"Or… lower."
-						],
-						"person": "pumsuk"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#f472b6",
-						"lines": [
-							"알고 계시잖아요.",
-							"그냥… 참지 마세요.",
-							"제가 먼저 가르칠게요.",
-							"입술부터. 다시.",
-							"더 깊게."
-						],
-						"en": [
-							"You know.",
-							"Just… don’t hold back.",
-							"I’ll teach you first.",
-							"The mouth again. Again.",
-							"Deeper."
-						],
-						"person": "gotaso"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#7aa8d8",
-						"lines": [
-							"이러다간… 신랑 구실을 밤새 못할 것 같습니다.",
-							"한 번도… 이렇게 배가 고픈 적이 없습니다."
-						],
-						"en": [
-							"At this rate… I won’t last the night as a proper husband.",
-							"I have never… been this hungry."
-						],
-						"person": "pumsuk"
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#f472b6",
-						"lines": [
-							"그럼 처음부터 다시 하시면 되죠.",
-							"영원히 — 아까 말했잖아요.",
-							"배고프면… 저를 드세요."
-						],
-						"en": [
-							"Then start again from the beginning.",
-							"Forever — you said so.",
-							"If you’re hungry… take me."
-						],
-						"person": "gotaso"
+						"html": "Behind the doors the feast falls away.",
+						"ko": "문 너머로 잔치가 멀어진다."
 					},
 					{
 						"kind": "p",
@@ -15217,6 +15072,19 @@
 							"jukjuk"
 						],
 						"tempImage": "/temp/ink-wind-bamboo-jukjuk.jpg"
+					},
+					{
+						"id": "pumsuk-forbidden-desire",
+						"ratio": 1.778,
+						"tone": "#374151",
+						"alt": "Forbidden attraction - Pumsuk and another figure in close proximity with bare shoulders visible, robes loosened showing collarbones, intense sensual tension and longing gazes, bodies leaning toward each other with palpable desire - restrained passion and internal conflict",
+						"at": "Tomorrow the boy",
+						"src": "/img_pumsuk_forbidden_desire.png",
+						"refs": [
+							"/ch_pumsuk.png",
+							"/ch_gumil_wife.png"
+						],
+						"nsfw": true
 					}
 				],
 				"blocks": [
@@ -15399,13 +15267,13 @@
 						"en": [
 							"Ugh…",
 							"<i>“Her Majesty.” “Her Majesty.”</i>",
-							"What does that little girl have that we don’t? A chair. I’ve got my legs open and you’re still saying her name.",
+							"What does that mortal have that we don’t? A chair. I’ve got my legs open and you’re still saying her name.",
 							"Stay with us, Yushin~~"
 						],
 						"lines": [
 							"으엑…",
 							"<i>«폐하.» «폐하.»</i>",
-							"그 어린 여자한테 우리한테 없는 게 뭐가 있는데? 의자. 난 다리 벌리고 있는데 너는 아직도 그 이름을 불러.",
+							"그 인간한테 우리한테 없는 게 뭐가 있는데? 의자. 난 다리 벌리고 있는데 너는 아직도 그 이름을 불러.",
 							"우리랑 있어, 유신~~"
 						]
 					},
@@ -15478,11 +15346,11 @@
 						"person": "golhwa",
 						"en": [
 							"Hear that? He thanked the water. Not us.",
-							"Fine. Go play marshal. Next time, leave the armour — and the little girl — outside the cave. Leave the hard part in here."
+							"Fine. Go play marshal. Next time, leave the armour — and that mortal — outside the cave. Leave the hard part in here."
 						],
 						"lines": [
 							"들려? 물한테 고맙대. 우리한테가 아니라.",
-							"그래. 가서 장군 놀아. 다음엔 갑옷이랑 — 그 애도 — 동굴 밖에 두고 와. 선 건 여기 두고."
+							"그래. 가서 장군 놀아. 다음엔 갑옷이랑 — 그 인간도 — 동굴 밖에 두고 와. 선 건 여기 두고."
 						]
 					},
 					{
@@ -15650,12 +15518,12 @@
 						"en": [
 							"UNNIE.",
 							"You sent us for herbs so you could—?!",
-							"What does that little girl have that we don’t — wait. What do <i>you</i> have that <i>we</i> don’t?! Him. In you. Get off, or share."
+							"What does that mortal have that we don’t — wait. What do <i>you</i> have that <i>we</i> don’t?! Him. In you. Get off, or share."
 						],
 						"lines": [
 							"언니.",
 							"약초 시키면서 그 짓을—?!",
-							"그 애한테 우리한테 없는 게 뭐야 — 잠깐. <i>언니</i>가 <i>우리</i>한테 없는 게 뭐야?! 그 사람. 안에. 내려오든가 나눠."
+							"그 인간한테 우리한테 없는 게 뭐야 — 잠깐. <i>언니</i>가 <i>우리</i>한테 없는 게 뭐야?! 그 사람. 안에. 내려오든가 나눠."
 						]
 					},
 					{
@@ -17368,8 +17236,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "In the inner room <b>Gotaso</b> understands before anyone says the word. The fortress is finished. Her husband is finished. She is nineteen and the forever she promised at the wedding has run out of road.",
-						"ko": "안방에서 <b>고타소</b>는 누가 그 말을 꺼내기 전에 알아차린다. 성이 끝났다. 남편이 끝났다. 열아홉이고, 혼례에서 약속한 영원은 길이 다했다."
+						"html": "In the inner room <b>Gotaso</b> understands before anyone says the word. The fortress is finished. Her husband is finished. She is seventeen and the forever she promised at the wedding has run out of road.",
+						"ko": "안방에서 <b>고타소</b>는 누가 그 말을 꺼내기 전에 알아차린다. 성이 끝났다. 남편이 끝났다. 열일곱이고, 혼례에서 약속한 영원은 길이 다했다."
 					},
 					{
 						"kind": "dialogue",
@@ -17820,13 +17688,13 @@
 						"en": [
 							"Ugh…",
 							"<i>“Her Majesty.”</i> Again.",
-							"What does that little girl have that we don’t? Say it while I’m this wet and I’ll bite you.",
+							"What does that mortal have that we don’t? Say it while I’m this wet and I’ll bite you.",
 							"Stay with us, Yushin~~"
 						],
 						"lines": [
 							"으엑…",
 							"<i>«폐하.»</i> 또.",
-							"그 어린 여자한테 우리한테 없는 게 뭐가 있는데? 나 이렇게 젖었는데 말하면 물어 버릴 거야.",
+							"그 인간한테 우리한테 없는 게 뭐가 있는데? 나 이렇게 젖었는데 말하면 물어 버릴 거야.",
 							"우리랑 있어, 유신~~"
 						]
 					},
@@ -45050,8 +44918,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (39)</b> packs for him. She has packed for the Harmony Council, for Pyongyang, for the East, and will pack once more for Chang’an. Nobody writes any of this down, which is why it needs saying.",
-						"ko": "<b>문희 (39)</b>가 그의 짐을 싼다. 화백회의로 가는 짐을 쌌고, 평양으로 가는 짐을 쌌고, 동토로 가는 짐을 쌌으며, 장안으로 가는 짐을 한 번 더 쌀 것이다. 아무도 이것을 적지 않고, 그래서 말해 두어야 한다."
+						"html": "<b>Munhee (41)</b> packs for him. She has packed for the Harmony Council, for Pyongyang, for the East, and will pack once more for Chang’an. Nobody writes any of this down, which is why it needs saying.",
+						"ko": "<b>문희 (41)</b>가 그의 짐을 싼다. 화백회의로 가는 짐을 쌌고, 평양으로 가는 짐을 쌌고, 동토로 가는 짐을 쌌으며, 장안으로 가는 짐을 한 번 더 쌀 것이다. 아무도 이것을 적지 않고, 그래서 말해 두어야 한다."
 					},
 					{
 						"kind": "dialogue",
@@ -46448,8 +46316,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "The lamp makes two skins. His Gaya-gold, hers Ayuta-brown — chocolate at the hip, violet silk bunched so the ass he has been staring at since the dais is in his hands, tight, foreign, nothing this coast has a word for. He puts it in from behind. She is twenty-one and wet for a king she just taught to speak. He is a king who has never had a woman this color under him, and he says so, wrecked, like a prayer he should not say out loud.",
-						"ko": "등잔이 살 둘을 만든다. 그의 가야 금빛, 그녀의 아유타 갈색 — 허리의 초콜릿, 자줏빛 비단이 뭉쳐, 대청부터 보던 엉덩이가 손에 있다. 작고, 이 해안에 없는 것. 뒤에서 넣는다. 스물하나. 방금 말 가르친 왕에게 젖어 있다. 이런 색을 밑에 둔 적 없는 왕이고, 말하면 안 되는 기도처럼, 망가진 채로 말한다."
+						"html": "The lamp burns low. She has taught him a dozen words since the dais, and in the dark she teaches him the rest without any — her hand on his wrist, showing him where, laughing when he is slow, then not laughing at all. She is twenty-one and crossed a sea with a stone pagoda in her ship’s hold to stop the waves; he is a king who hatched from an egg and has never once been told how. Neither of them is a god tonight. They are clumsy and greedy, and by the second hour they are good at it.",
+						"ko": "등잔이 낮게 탄다. 대청에서부터 그녀는 그에게 말 열몇 개를 가르쳤고, 어둠 속에서는 나머지를 말없이 가르친다 — 그의 손목을 잡아 어디인지 보여 주고, 그가 더디면 웃고, 이내 웃지 않는다. 그녀는 스물하나, 파도를 누르려고 배 밑창에 돌탑을 싣고 바다를 건너왔다. 그는 알에서 깨어난 왕이고, 어떻게 하는지 누구에게도 배운 적이 없다. 오늘 밤 둘 다 신이 아니다. 서툴고 욕심 많고, 한 시진이 지나면 잘한다."
 					},
 					{
 						"kind": "dialogue",
@@ -46457,14 +46325,14 @@
 						"chip": "#e0a33c",
 						"person": "suro",
 						"lines": [
-							"이 초콜릿 엉덩이— 조여—",
-							"아유타— 이 갈색— 가야에 이런 거 없소—",
-							"꽉 잡아— 내 거—"
+							"그 말— 다시 해 보시오—",
+							"아유타 말로— 내 이름을—",
+							"…내 나라 이름 따위 잊었소—"
 						],
 						"en": [
-							"This tight little chocolate ass—",
-							"Ayuta brown— this coast never had this—",
-							"Squeeze— mine—"
+							"Say it— say it again—",
+							"In your Ayuta tongue— my name—",
+							"…I have forgotten what my own country is called—"
 						]
 					},
 					{
@@ -46473,21 +46341,21 @@
 						"chip": "#d98fa8",
 						"person": "heohwangok",
 						"lines": [
-							"오빠— 왕— 더—",
-							"제 왕 자지— 하아— 좋아—",
-							"안에 싸 주세요 오빠— 왕이 제 안에—"
+							"왕이시여— 더—",
+							"하아— 제 나라 말에도 이런 말은 없어요—",
+							"아직— 가지 마세요—"
 						],
 						"en": [
-							"Oppa— my king— harder—",
-							"My king’s cock— haa— I love it—",
-							"Nut inside me, oppa— the king inside his brown girl—"
+							"My king— more—",
+							"Haa— my country has no word for this either—",
+							"Not yet— don’t go—"
 						]
 					},
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "She rides him the second night. Violet off the shoulders. Gold tiger-pins in the lamp. Pale Gaya hands on dark hips. He watches her bounce and loses the language again, except the one word he should not have: chocolate. She laughs and calls him oppa while she cums, then king while he nuts, a load spent in a princess who crossed a sea to be filled by this specific man.",
-						"ko": "둘째 밤은 그녀가 탄다. 어깨에서 자줏빛. 등잔의 금 호랑이 비녀. 창백한 가야 손이 어두운 허리에. 튀기는 것을 보다가 또 말을 잃고, 하면 안 되는 그 단어만: 초콜릿. 가면서 오빠라 부르고 웃고, 그가 쌀 때는 왕이라 부른다. 이 사내에게 채워지려고 바다를 건넌 공주 안에 묻는 한 방."
+						"html": "The second night she is on top, violet silk off her shoulders and the gold tiger-pins still in her hair, because she refuses to take them out for a man who cannot yet say <i>good morning</i> in her language. He loses his own words again. She keeps hers. When she comes apart she says something in the tongue of Ayuta that nobody on this coast will ever translate, and he decides it was his name.",
+						"ko": "둘째 밤엔 그녀가 위에 있다. 자줏빛 비단은 어깨에서 흘러내리고, 금 호랑이 비녀는 머리에 그대로다 — 제 나라 말로 아침 인사도 못 하는 사내 때문에 빼 줄 생각은 없으니까. 그는 또 말을 잃는다. 그녀는 제 말을 지킨다. 무너지는 순간 그녀는 이 해안의 누구도 옮기지 못할 아유타 말을 하고, 그는 그게 제 이름이었다고 정한다."
 					},
 					{
 						"kind": "dialogue",
@@ -46495,12 +46363,12 @@
 						"chip": "#d98fa8",
 						"person": "heohwangok",
 						"lines": [
-							"오빠 거— 왕 거— 아아—",
-							"빼지 마— 제 갈색 안에 다—"
+							"왕의— 아아—",
+							"그대로— 가만히 계세요—"
 						],
 						"en": [
-							"Oppa’s— the king’s— ah—",
-							"Don’t pull out— all of it in this brown—"
+							"My king’s— ah—",
+							"Stay— just like that—"
 						]
 					},
 					{
@@ -50138,8 +50006,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (46)</b> becomes queen consort of Silla — the girl whose sister sold her a dream on a hill, who was married in disgrace to a man with no claim to anything, and who is now standing beside the throne of a country that will shortly be the only one left.",
-						"ko": "<b>문희 (46)</b>가 신라의 왕비가 된다. 언덕에서 언니에게 꿈 하나를 사들인 소녀, 아무 자격도 없는 사내에게 망신 속에 시집간 여자, 그리고 이제 곧 유일하게 남을 나라의 왕좌 곁에 서 있는 사람."
+						"html": "<b>Munhee (48)</b> becomes queen consort of Silla — the girl whose sister sold her a dream on a hill, who was married in disgrace to a man with no claim to anything, and who is now standing beside the throne of a country that will shortly be the only one left.",
+						"ko": "<b>문희 (48)</b>가 신라의 왕비가 된다. 언덕에서 언니에게 꿈 하나를 사들인 소녀, 아무 자격도 없는 사내에게 망신 속에 시집간 여자, 그리고 이제 곧 유일하게 남을 나라의 왕좌 곁에 서 있는 사람."
 					},
 					{
 						"kind": "dialogue",
@@ -53061,7 +52929,7 @@
 						"ratio": 1.778,
 						"tone": "#0f172a",
 						"nsfw": true,
-						"at": "The S-curve of a twenty-year-old hip",
+						"at": "The S-curve of a hip",
 						"alt": "Night lamp-shaft: Euija undone, a twenty-year-old maid’s hiked mint silk, hip out",
 						"refs": [
 							"/ch_buyeo_euija.png",
@@ -53294,8 +53162,8 @@
 					{
 						"kind": "p",
 						"nsfw": true,
-						"html": "The maids are twenty. Not girls. <b>She looks back, hip out</b>. <b>His hand finds the silk at her waist</b>. <b>The S-curve of a twenty-year-old hip</b> is the whole argument of the hall. Less clothes. More lamp. The robe hangs open. The jeogori does not stay on the shoulder.",
-						"ko": "궁녀들은 스물이다. 아이가 아니다. <b>그녀는 돌아보며 엉덩이를 내민다</b>. <b>그의 손이 허리의 비단을 찾는다</b>. <b>스무 살 엉덩이의 S자</b>가 전각의 전부다. 옷은 더 적다. 등은 더 많다. 도포가 열린다. 저고리는 어깨에 남아 있지 않는다."
+						"html": "<b>She looks back, hip out</b>. <b>His hand finds the silk at her waist</b>. <b>The S-curve of a hip</b> is the whole argument of the hall. Less clothes. More lamp. The robe hangs open. The jeogori does not stay on the shoulder.",
+						"ko": "<b>그녀는 돌아보며 엉덩이를 내민다</b>. <b>그의 손이 허리의 비단을 찾는다</b>. <b>엉덩이의 S자</b>가 전각의 전부다. 옷은 더 적다. 등은 더 많다. 도포가 열린다. 저고리는 어깨에 남아 있지 않는다."
 					},
 					{
 						"kind": "p",
@@ -61462,8 +61330,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (53)</b> sits where she has sat since the spring. She has buried a sister who was a queen and a brother’s youth and a daughter she never got back, and she is still here — until their son comes and stands at the foot of the bed, already wearing a king’s silence he has not yet been allowed to begin.",
-						"ko": "<b>문희 (53)</b>는 봄부터 앉아 온 자리에 앉아 있다. 여왕이었던 언니를 묻었고, 오라비의 젊음을 묻었고, 끝내 돌려받지 못한 딸을 묻었다. 그러고도 여전히 여기 있다 — 아들이 들어와 침대 맡에 서기 전까지. 아직 시작도 허락받지 못한 왕의 침묵을, 벌써 입고 있는 아들."
+						"html": "<b>Munhee (55)</b> sits where she has sat since the spring. She has buried a sister who was a queen and a brother’s youth and a daughter she never got back, and she is still here — until their son comes and stands at the foot of the bed, already wearing a king’s silence he has not yet been allowed to begin.",
+						"ko": "<b>문희 (55)</b>는 봄부터 앉아 온 자리에 앉아 있다. 여왕이었던 언니를 묻었고, 오라비의 젊음을 묻었고, 끝내 돌려받지 못한 딸을 묻었다. 그러고도 여전히 여기 있다 — 아들이 들어와 침대 맡에 서기 전까지. 아직 시작도 허락받지 못한 왕의 침묵을, 벌써 입고 있는 아들."
 					},
 					{
 						"kind": "dialogue",
@@ -65067,12 +64935,12 @@
 						"person": "golhwa",
 						"en": [
 							"Ugh… even in the Western Flower Field she gets the title.",
-							"What did that little girl have that we don’t?",
+							"What did that mortal have that we don’t?",
 							"…Don’t answer. Stay until the steam drops. I want your mouth once more before the hill keeps you."
 						],
 						"lines": [
-							"으엑… 서천꽃밭에서도 저 애는 직함을 가져.",
-							"그 어린 여자한테 우리한테 없는 게 뭐였는데?",
+							"으엑… 서천꽃밭에서도 그 인간은 직함을 가져.",
+							"그 인간한테 우리한테 없는 게 뭐였는데?",
 							"…답하지 마. 김이 식을 때까지 있어. 언덕이 널 두기 전에 입을 한 번 더 원해."
 						]
 					},
@@ -65195,8 +65063,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (65)</b> is in the courtyard when they come out. She was the girl who burned a skirt to make a marriage. She has been a queen, a queen dowager, and now the last of three children from a house that used to be a country.",
-						"ko": "<b>문희 (65)</b>가 마당에 서 있다. 혼인을 이루려 치마를 태우던 소녀였다. 왕비였고, 왕대비였고, 이제는 한때 나라였던 집안의 세 남매 중 마지막 하나다."
+						"html": "<b>Munhee (67)</b> is in the courtyard when they come out. She was the girl who burned a skirt to make a marriage. She has been a queen, a queen dowager, and now the last of three children from a house that used to be a country.",
+						"ko": "<b>문희 (67)</b>가 마당에 서 있다. 혼인을 이루려 치마를 태우던 소녀였다. 왕비였고, 왕대비였고, 이제는 한때 나라였던 집안의 세 남매 중 마지막 하나다."
 					},
 					{
 						"kind": "dialogue",
@@ -66107,8 +65975,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee (66)</b> — Queen Munmyung now, and the last person alive who remembers all of it from the inside — is straightening her son’s collar. She was twenty-two when this story started and her sister burned a skirt on a hill so that she could be married.",
-						"ko": "<b>문희 (66)</b>. 이제 문명왕후이고, 이 모든 일을 안쪽에서 기억하는 마지막 사람이다. 아들의 옷깃을 여며 주고 있다. 이 이야기가 시작될 때 그는 스물둘이었고, 언니가 언덕에서 치마를 태워 준 덕에 혼인할 수 있었다."
+						"html": "<b>Munhee (70)</b> — Queen Munmyung now, and the last person alive who remembers all of it from the inside — is straightening her son’s collar. She was twenty-two when this story started and her sister burned a skirt on a hill so that she could be married.",
+						"ko": "<b>문희 (70)</b>. 이제 문명왕후이고, 이 모든 일을 안쪽에서 기억하는 마지막 사람이다. 아들의 옷깃을 여며 주고 있다. 이 이야기가 시작될 때 그는 스물둘이었고, 언니가 언덕에서 치마를 태워 준 덕에 혼인할 수 있었다."
 					},
 					{
 						"kind": "dialogue",
@@ -66399,8 +66267,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>Munhee</b> (66), now known as <b>Queen Munmyung</b>, is getting ready for a big day.",
-						"ko": "이제 <b>문명왕후</b>라 불리는 <b>문희 (66)</b>가 큰 날을 준비하고 있다."
+						"html": "<b>Munhee</b> (70), now known as <b>Queen Munmyung</b>, is getting ready for a big day.",
+						"ko": "이제 <b>문명왕후</b>라 불리는 <b>문희 (70)</b>가 큰 날을 준비하고 있다."
 					},
 					{
 						"kind": "p",

@@ -1358,7 +1358,7 @@ export const PEOPLE: Person[] = [
 		title: 'Queen Munmyung',
 		kingdom: 'silla',
 		gender: 'f',
-		born: 610,
+		born: 606,
 		died: 681,
 		bornApprox: true,
 		clan: 'clan-geumgwan-kim',
@@ -1381,8 +1381,8 @@ export const PEOPLE: Person[] = [
 		binyeo: 'Gold dragon binyeo — coral set in the crest, pink glow at the tip; Yushin’s house in miniature.',
 		binyeoImage: '/bn_munhee.png',
 		events: [
+			{ year: 625, label: 'Buys a dream; sews a coat; marries Chunchu.' },
 			{ year: 632, label: 'A young noblewoman with three small children — Bupmin among them.' },
-			{ year: 641, label: 'Buys a dream; sews a coat; marries Chunchu.' },
 			{ year: 642, label: 'Holds the house when Gotaso dies.' },
 			{ year: 654, label: 'Becomes queen consort under Muyeol.' },
 			{ year: 661, label: 'Pays the rest at Chunchu’s deathbed.' },
