@@ -1709,7 +1709,7 @@ export const PEOPLE: Person[] = [
 		events: [
 			{ year: 632, label: 'Turns 3:3 into 6:0 — Silla’s first woman king.' },
 			{ year: 636, label: 'With Alchun, breaks Baekje spies at Jade Gate Valley (옥문곡).' },
-			{ year: 645, label: 'Alone blocks Seungman as successor — Supum holds the premier’s chair.' },
+			{ year: 645, label: 'Alone blocks Seungman as successor — Supum holds the first chair.' },
 			{ year: 647, label: 'Ten-day rebellion at Radiance; tells Yushin 피는 못 속인다; dies — “Hwarang Kim Yushin…”' }
 		],
 		sobriquets: [
@@ -1945,7 +1945,7 @@ export const PEOPLE: Person[] = [
 		nature: 'Descended from Sobuldori of the Surabol Choi — Dolsan Goheo-chon, Saryang-bu — though he cites the founder only when pressed, and never in a speech. Stuck between Bidam and Yushin since the Hwarang yard — same line, same impossible orbit around Dukman. At Okmun-gok he and Bidam still fight as one; by Radiance he answers both with hard counsel and still raises neither blade nor banner — and neutrality costs him a generation of standing.',
 		arc: 'Hwarang with Bidam and Yushin; tiger-catcher of the Council; victor with Bidam at Jade Gate Valley (옥문곡, 636) against King Mu’s spies. In 647 he is summoned to both camps before noon: he tells Yushin not to be blinded by the princess they all loved as boys, tells Bidam that arms against the crown are highest treason — then raises neither blade nor banner for ten days. After Bidam falls, the minutes file him under Neither. Later he laughs the last holdout down so Chunchu can take the throne rather than wear a crown built on that silence.',
 		events: [
-			{ year: 632, label: 'Last sleeve in the 6:0 that names Queen Sunduk — not High Councillor; Pumil chairs.' },
+			{ year: 632, label: 'Last sleeve in the 6:0 that names Queen Sunduk — not High Councillor; Euljé chairs.' },
 			{ year: 636, label: 'With Bidam, destroys Baekje spies at Jade Gate Valley (옥문곡).' },
 			{
 				year: 647,
@@ -3988,34 +3988,37 @@ export const PEOPLE: Person[] = [
 		korean: '을제',
 		kingdom: 'silla',
 		gender: 'm',
-		title: 'Councillor (대등) of the Harmony Council',
-		tagline: 'A sleeve at the 632 night — High Councillor Pumil holds the first chair.',
+		born: 572,
+		bornApprox: true,
+		title: 'High Councillor (상대등) of the Harmony Council',
+		tagline: 'Elderly statesman — High Councillor the night six sleeves named a queen.',
 		quote: 'Tonight the better option is a confession.',
-		nature: 'Sits the hung vote without taking the minutes. The first chair belongs to Pumil; Euljé is the fatigue beside him, not the nod that opens the session.',
-		arc: 'In 632 he sits while High Councillor Pumil chairs the 3:3 that Bidam and Alchun turn to 6:0. He does not succeed to the first chair; in 645 that seat passes from Pumil to Supum.',
+		nature:
+			'He chairs the Harmony Council like a man who has kept the same roof through three kings: tea, wooden pieces, the flame that must turn blue. Not a Hwarang classmate — an old hall, patient, slightly tired of the word woman being said forty times.',
+		arc: 'In 632 he is High Councillor: he names the hung 3:3, waits through Bidam’s speech, and watches Alchun — not himself — move the last piece. In 645 he yields the first chair to Supum.',
 		career: [
-			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 }
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 645 }
 		],
-		aliases: ['Euljé', 'Eulje', '을제']
+		aliases: ['Euljé', 'Eulje', '을제', 'High Councillor Euljé']
 	},
 	{
 		id: 'supum',
 		gender: 'm',
 		avatar: '/ch_supum.png',
 		name: 'Kim Supum',
-		korean: '김수범',
-		hanja: '金述品',
+		korean: '김수품',
+		hanja: '金水品',
 		title: 'High Councillor (상대등) of the Harmony Council',
 		kingdom: 'silla',
-		tagline: 'Succeeds Pumil in the first chair — the steadier hand while the yard’s old boys argue succession.',
+		tagline: 'Succeeds Euljé in the first chair — the steadier hand while the yard’s old boys argue succession.',
 		quote: 'The room must finish its vote before the country finishes its patience.',
-		nature: 'A councillor who becomes premier by outlasting argument, not by winning one. Chairs the unanimity rule without treating it as theatre — which makes Bidam’s withheld hand feel louder than a shout.',
-		arc: 'In 645 he takes the premier’s seat when Pumil steps down. Holds the council through the Seungman veto and into the season when Bidam raises men at Radiance. The chronicle names him less than the rebels; the grain ledger names him daily.',
+		nature: 'A councillor who reaches the first chair by outlasting argument, not by winning one. Chairs the unanimity rule without treating it as theatre — which makes Bidam’s withheld hand feel louder than a shout.',
+		arc: 'In 645 he takes the first chair when Euljé steps down. Holds the council through the Seungman veto and into the season when Bidam raises men at Radiance. The chronicle names him less than the rebels; the grain ledger names him daily.',
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 645 },
 			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 645, to: 647 }
 		],
-		aliases: ['Supum', 'Kim Supum', '수범', '述品', 'High Councillor Supum']
+		aliases: ['Supum', 'Kim Supum', '수품', '水品', 'High Councillor Supum']
 	},
 	{
 		id: 'murim',
@@ -4093,33 +4096,22 @@ export const PEOPLE: Person[] = [
 		korean: '김품일',
 		hanja: '金品日',
 		kingdom: 'silla',
-		born: 572,
+		born: 615,
 		bornApprox: true,
-		title: 'High Councillor (상대등) of the Harmony Council',
-		tagline: 'Elderly statesman — High Councillor the night six sleeves named a queen.',
-		quote: 'The first count is split.',
-		firstLine: {
-			en: 'Below all of them are the slaves — but those are not counted as people.',
-			ko: '그 아래로는… 노비가 있지만, 그건 사람 수에 넣지 않습니다.'
-		},
+		title: 'General (장군)',
+		tagline: 'Commands Silla’s right column at the Yellow Mountain, and sends his own son in first.',
+		quote: 'My son’s face is as if he lived.',
 		lastLine: {
 			en: 'My son’s face is as if he lived.',
 			ko: '아들의 얼굴이, 산 것과 같구나.'
 		},
 		nature:
-			'Grey when Bidam, Yushin, and Alchun are still yard-brothers. He chairs the Harmony Council like a man who has kept the same roof through three kings: tea, wooden pieces, the flame that must turn blue. Not a Hwarang classmate — an old hall, patient, slightly tired of the word woman being said forty times.',
-		arc: 'In 632 he is High Councillor: he names the hung 3:3, waits through Bidam’s speech, and watches Alchun — not himself — move the last piece. In 645 he yields the first chair to Supum. In 660 he commands Silla’s right column at Hwangsanbeol; when Gwanchang’s head comes back tied to the saddle, he takes it up by the hair.',
-		events: [
-			{ year: 632, label: 'As High Councillor, chairs the hung vote that names Queen Sunduk.' },
-			{ year: 645, label: 'Yields the first chair to Supum.' },
-			{ year: 660, label: 'Commands Silla’s right column at Hwangsanbeol.' }
-		],
+			'A field general who asks of his own house what he asks of everyone else’s. He does not make speeches about it; he puts the boy on a horse.',
+		arc: 'In 660 he commands Silla’s right column at Hwangsanbeol. When the Silla charges keep breaking on Gyebek’s camps, his son Gwanchang rides at the line alone, is sent back once, and rides again. When the boy’s head comes back tied to the saddle, Pumil takes it up by the hair.',
+		events: [{ year: 660, label: 'Commands Silla’s right column at Hwangsanbeol.' }],
 		family: [{ id: 'gwanchang', role: 'Son' }],
-		career: [
-			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 632, to: 645 },
-			{ title: 'General', korean: '장군', hanja: '將軍', from: 660, to: 660 }
-		],
-		aliases: ['Pumil', 'Kim Pumil', '품일', '品日', 'High Councillor Pumil']
+		career: [{ title: 'General', korean: '장군', hanja: '將軍', from: 660, to: 660 }],
+		aliases: ['Pumil', 'Kim Pumil', '품일', '品日']
 	},
 	{
 		id: 'daedeung_stern',
@@ -5682,12 +5674,12 @@ export const CONCEPTS: Person[] = [
 		events: [
 			{ year: 579, label: 'Deposes King Jinji for misconduct — initial vote, deliberation, final vote.' },
 			{ year: 632, label: 'Initial 3:3 → final 6:0 — Queen Sunduk named.' },
-			{ year: 645, label: 'Supum succeeds Pumil as High Councillor; Bidam alone blocks Seungman.' },
+			{ year: 645, label: 'Supum succeeds Euljé as High Councillor; Bidam alone blocks Seungman.' },
 			{ year: 651, label: 'Outflanked by the Royal Secretariat (집사부).' },
 			{ year: 654, label: 'Enthrones Kim Chunchu as King Muyeol.' }
 		],
 		orgChart: [
-			{ id: 'pumil', role: '상대등 · High Councillor (632–645)', reportsTo: null },
+			{ id: 'euljae', role: '상대등 · High Councillor (632–645)', reportsTo: null },
 			{ id: 'supum', role: '상대등 · High Councillor (from 645)', reportsTo: null },
 			{ id: 'yushin', role: '대등', reportsTo: 'supum' },
 			{ id: 'alchun', role: '대등', reportsTo: 'supum' },
@@ -7568,7 +7560,7 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	muryuk: ['gen-i'],
 	seohyeon: ['gen-i'],
 	euljae: ['gen-i'],
-	pumil: ['gen-i'],
+	pumil: ['gen-ii'],
 	daedeung_stern: ['gen-i'],
 	daedeung_old: ['gen-i'],
 	daedeung_fear: ['gen-i'],

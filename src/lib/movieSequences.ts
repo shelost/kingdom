@@ -68,16 +68,16 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	},
 	{
 		id: 'harmony-council-632',
-		title: 'Harmony Council — first night, High Councillor Pumil',
+		title: 'Harmony Council — first night, High Councillor Euljé',
 		entryTitles: ['Queen Sunduk'],
 		place: 'Eastern Palace pond pavilion (pl_eastern_palace) — tea, wooden pieces, flame red then blue',
-		why: 'The chronicle’s first council: elderly High Councillor Pumil chairs; Bidam speaks; Alchun is the last sleeve, not the chair. The three eternal hwarang are classmates, not the old first chair.',
-		canon: 'SAME pavilion every cut. High Councillor is Pumil (ch_pumil) — grey, elderly statesman, #6a8ab8 rim. Alchun is a young hwarang councillor who flips the last piece — NEVER the high councillor. Bidam, Yushin, Alchun: three eternal hwarang. Blue flame after red. Tea and wooden pieces. High contrast. One of each named person.',
+		why: 'The chronicle’s first council: elderly High Councillor Euljé chairs; Bidam speaks; Alchun is the last sleeve, not the chair. The three eternal hwarang are classmates, not the old first chair.',
+		canon: 'SAME pavilion every cut. High Councillor is Euljé (ch_eulje) — grey, elderly statesman, #6a8ab8 rim. Alchun is a young hwarang councillor who flips the last piece — NEVER the high councillor. Bidam, Yushin, Alchun: three eternal hwarang. Blue flame after red. Tea and wooden pieces. High contrast. One of each named person.',
 		shots: [
 			{ id: 'council-seq-red-wide', role: 'red flame', angle: 'dutch wide', at: 'Someone lights the small brazier' },
 			{ id: 'council-seq-blue-birth', role: 'blue tongue', angle: 'insert', at: 'The flame turns blue' },
 			{ id: 'council-tea-wide', role: 'session', angle: 'dutch pavilion', at: 'debate who the next king should be' },
-			{ id: 'council-flame-close', role: 'High Councillor Pumil', angle: 'table-rim two-shot', at: 'The first count is split' },
+			{ id: 'council-flame-close', role: 'High Councillor Euljé', angle: 'table-rim two-shot', at: 'The first count is split' },
 			{ id: 'council-tea-bidam', role: 'Bidam speaks', angle: 'close', at: 'My lords have said one word' },
 			{ id: 'council-alchun-tiger', role: 'Alchun last sleeve', angle: 'hand raised', at: 'A tiger has no sex' },
 			{ id: 'council-seq-unanimous', role: '6:0', angle: 'wide', at: 'All six sit on the yes side' }
