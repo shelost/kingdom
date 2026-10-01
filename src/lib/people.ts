@@ -1592,10 +1592,7 @@ export const PEOPLE: Person[] = [
 			'Kim Seonpum',
 			'Seonpum',
 			'선품',
-			'Pajinchan',
-			'파진찬',
-			'Councillor of Ocean Trade',
-			'波珍飡'
+			'Councillor of Ocean Trade'
 		]
 	},
 	{
