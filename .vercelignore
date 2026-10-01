@@ -7,6 +7,7 @@ node_modules
 static/temp/anapji-mirror.jpg
 static/temp/ancient_scroll_candlelight.png
 static/temp/arrow_in_tree.png
+static/temp/baekje-river-palace.jpg
 static/temp/bidam-defiance-upward.png
 static/temp/bidam-gold-shaft.jpg
 static/temp/bidam-incense-column.jpg
@@ -19,12 +20,15 @@ static/temp/bulguksa-twin-stamps.jpg
 static/temp/burning_arrow_twilight.png
 static/temp/cavalry_silhouette_golden_dust.png
 static/temp/cheomseongdae-bottle.jpg
+static/temp/cheomseongdae-moon-minimal.png
+static/temp/cheomseongdae_moon_minimal.png
 static/temp/council-seq-veto.jpg
 static/temp/council-tea-supum.jpg
 static/temp/council-veto-fist.jpg
 static/temp/dangun-sandalwood-altar.jpg
 static/temp/emille-bell-ring.jpg
 static/temp/emotional_bidam_death_betrayal.png
+static/temp/empty_throne_blue_light.png
 static/temp/euija_last_king_fading.png
 static/temp/flooded_battlefield_reflection.png
 static/temp/gaesomun_authority_portrait.png
@@ -76,11 +80,13 @@ static/temp/hyulle-thighs-claim.jpg
 static/temp/hyulle-thought-bubble.jpg
 static/temp/hyulle-thought-filled.jpg
 static/temp/hyulle-will-spill.jpg
+static/temp/img_chunchu_royal_intimacy.png
 static/temp/img_emotional_closeness_comfort.png
 static/temp/img_lovers_parting_war.png
 static/temp/img_steam_cavern_intimacy.png
 static/temp/img_wu_zetian_seduction_power.png
 static/temp/ink-flower-field-sunduk.jpg
+static/temp/jinheung_crown_moon.png
 static/temp/jumong-amnok-ink-copper-kiss.jpg
 static/temp/jumong-amnok-ink-copper-room.jpg
 static/temp/jumong-amnok-ink-dragon-banter.jpg
@@ -705,6 +711,7 @@ static/temp/tang_imperial_procession.png
 static/temp/tang_navy_fleet.png
 static/temp/tang_taizong_court.png
 static/temp/tang_tributary_gifts.png
+static/temp/three_crowns_symmetry.png
 static/temp/three_flags_triangle_sky.png
 static/temp/three_swords_memorial.png
 static/temp/two_teacups_memorial.png

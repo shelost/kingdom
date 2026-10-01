@@ -379,6 +379,8 @@ export const PEOPLE: Person[] = [
 		title: 'Elder sister of Munhee',
 		tagline: 'Dreamed she drowned the capital, and sold the dream for a silk skirt.',
 		quote: "Silence is also a stitch.",
+		voice:
+			'The elder sister: easy and a little lazy. She tells a dream like gossip, haggles only after the sale, and goes stiff and proper in front of a nobleman. Korean: 반말 to Munhee, formal 합쇼체 before men of rank.',
 		binyeo: 'Silk-wrapped wooden binyeo — plain timber under the wrap; the dream went with the skirt.',
 		events: [
 			{ year: 625, label: 'Sells the dream. Declines to sew a nobleman’s coat.' }
@@ -829,8 +831,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Insists Samhan must “learn from the West” (Tang then; another empire’s name tomorrow): Chinese-style governance — seal, speed, Secretariat, fewer uncles — without surrendering the lintel. Named for the Chinese classics (春秋, Spring and Autumn) and entirely untroubled by it. Argues modernization through westernization as survival. Avoids the Harmony Council’s chair until Gotaso dies — his father Yongsu’s stories of Jinji’s deposition taught him what unanimity does to a name; after Daeya he decides the room will have to take him.',
 		quote: 'I am the goal. Everything else is scenery.',
 		firstLine: {
-			en: '…Keep that. I may need to borrow it back when I am braver.',
-			ko: '…그건 두어라. 용기가 생기면 도로 빌릴지도 모르니.'
+			en: '…Keep that. I may borrow it, the day I am braver.',
+			ko: '…그건 잘 간직해라. 아비가 좀 더 용감해지는 날, 빌려 쓰마.'
 		},
 		lastLine: {
 			en: 'Bupmin… I love you.',
@@ -948,8 +950,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: '겨레 over courts; anti-elite, anti-tribute strongman. Hears “westernize” as kneeling with better stationery.',
 		quote: 'No one is coming to save the 겨레. So I will.',
 		firstLine: {
-			en: 'Do you know what happens to traitors, young man...?',
-			ko: '반역자에게 어떤 일이 생기는지 아느냐, 젊은이…?'
+			en: 'Know what happens to traitors?',
+			ko: '반역자가 어떻게 되는지 아냐?'
 		},
 		lastLine: {
 			en: 'Do not… fight amongst yourselves…',
@@ -1109,8 +1111,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Cynical statecraft: people need a story and a leader; historical grudges are borders you can move with a speech.',
 		quote: 'Find what they fear. Weave it into a story.',
 		firstLine: {
-			en: 'Father… I have no interest in these clan quarrels. A king should be for the country—',
-			ko: '아버지… 저는 이런 가문 싸움에 관심 없습니다. 왕은 나라를 위한 존재여야—'
+			en: 'Father, clan quarrels are cockfights. I have no interest in them. A king should be for the country—',
+			ko: '아버지, 가문 싸움은 닭싸움입니다. 저는 관심 없습니다. 임금은 나라를—'
 		},
 		lastLine: {
 			en: 'No.',
@@ -1168,7 +1170,7 @@ export const PEOPLE: Person[] = [
 		tagline: '“In all this world, wouldn’t it be good to have one person always on your side, Princess?”',
 		ideology: 'Loyalist modernizer',
 		ideologyNote: 'Confucian duty — rites, rank, the queen’s arithmetic. He stands; he does not sit in lotus. If the crown orders Tang drill and Secretariat speed, he learns them without sentiment — the West’s tools, never the West’s worship. To Bidam that is selling the country; to Yushin it is only the order.',
-		quote: 'In all this world, wouldn’t it be good to have one person always on your side, Princess?',
+		quote: 'Well or badly, I am on your side. No matter what.',
 		firstLine: {
 			en: 'Well stood. Tomorrow on the yard — the hundred-and-ninth is mine.',
 			ko: '잘 섰다. 내일 연무장 — 백아홉은 내 것이다.'
@@ -1269,7 +1271,7 @@ export const PEOPLE: Person[] = [
 		quote: '…A country that does not count people as people. How is that meant to last a thousand years?',
 		firstLine: {
 			en: '…A country that does not count people as people. How is that meant to last a thousand years?',
-			ko: '…사람을 사람으로 세지 않는 나라. 그게 어떻게 천 년을 가겠느냐?'
+			ko: '…사람을 사람 수에 넣지 않는 나라가, 어떻게 천 년을 가겠는가.'
 		},
 		lastLine: {
 			en: 'I know. Stay. I can do a little rain.',
@@ -1424,8 +1426,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Politics as packing lists and marriages; soft power that keeps Chunchu’s westernizing door fed.',
 		quote: 'Not yet. I’ll pay the rest.',
 		firstLine: {
-			en: 'Totally unfit for a Noble woman… Come on, boy, can’t you find something better?',
-			ko: '귀족 여자에게 전혀 안 어울려… 얘, 좀 더 나은 거 못 찾니?'
+			en: 'I’m to walk in as a noblewoman wearing this? …Go on, bring me another.',
+			ko: '이걸 꽂고 귀부인이라고 나가라고? …얘, 딴 걸로 가져와.'
 		},
 		lastLine: {
 			en: 'He always did round the numbers up.',
@@ -1501,8 +1503,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: '“King for all” — inclusive realm-nationalism that allies with the West, then expels it.',
 		quote: 'I want to be the king for all. Not a king for Sacred Bone. Not a king for True Bone. For all.',
 		firstLine: {
-			en: 'I want to be the king for all. Not a king for Sacred Bone. Not a king for True Bone. For all.',
-			ko: '나는 모두를 위한 왕이 되고 싶다. 성골의 왕도, 진골의 왕도 아닌. 모두를 위한.'
+			en: 'When I’m king — king for… for all — everyone has to listen to me.',
+			ko: '저 임금 되면요 — 모두를… 모두를 위한 임금 되면 — 다들 제 말 들어야 돼요.'
 		},
 		lastLine: {
 			en: 'Remember what Father always said? A kingdom that lasts a thousand years.',
@@ -1731,10 +1733,10 @@ export const PEOPLE: Person[] = [
 		tagline: '“If only three of the Sacred Bone remain, then I choose the cleverest of the three.”',
 		ideology: 'Radical nativist',
 		ideologyNote: 'Buddhist-nativist foil to Confucian Yushin — 108 beads, sutras, lotus, incense through the Radiance siege; the soil’s dharma, even while he names India’s sutras a colonization of the mind. Blood-and-soil for 삼한 — both Kim lines are imports; the Founding Six had no Kim; opposes Tang-shaped Secretariat through courtesy, not rant. Once the liberal who crowned Sunduk and shielded Gaya-blood Yushin; curdles in public. Genius and charisma never leave him. Debates over tea like a salon; meditates while the armies wait; dies still charming.',
-		quote: 'If only three of the Sacred Bone remain, then I choose the cleverest of the three.',
+		quote: 'If three of the Sacred Bone remain, choose the way a farmer chooses seed. I choose the cleverest of the three.',
 		firstLine: {
-			en: 'My lords keep repeating the one word — “woman.” I have known Princess Dukman since I was a boy.',
-			ko: '여러분께서는 “여자”라는 한 단어만 되뇌십니다. 나는 소년 시절부터 덕만공주를 압니다.'
+			en: 'My lords have said one word forty times tonight. “Woman.” I have known Princess Dukman since I was a boy.',
+			ko: '어른들께서 오늘 밤 한 마디만 마흔 번 하셨습니다. «여자». 저는 덕만공주를 어릴 적부터 뵈어 왔습니다.'
 		},
 		lastLine: {
 			en: 'Hwarang Kim Yushin…',
@@ -2013,8 +2015,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Open to women on thrones and stolen Tuesdays; modernization without Bidam’s purity test.',
 		quote: 'Judge what is best for the divine nation.',
 		firstLine: {
-			en: 'I have taken a tiger.',
-			ko: '나는 호랑이를 잡아 본 사람이오.'
+			en: 'Don’t thank her, Princess. That one doesn’t count.',
+			ko: '고마워하실 것 없습니다, 공주. 저건 사람 축에 안 듭니다.'
 		},
 		lastLine: {
 			en: 'The age of Kim Chunchu begins.',
@@ -2188,7 +2190,7 @@ export const PEOPLE: Person[] = [
 		gender: 'm',
 		clan: 'clan-satek',
 		tagline: 'The Satek house-head — berths, four generations, and a veto that sounds like weather.',
-		quote: 'Blood cools. A winter anchorage does not.',
+		quote: 'Blood cools by morning. A winter anchorage pays every year.',
 		nature: 'Not a cardboard clan elder: a patient accountant of berths who smiles like ceremony and vetoes like weather. Treats Elder Yunbi as weather too — inevitable, inconvenient, useful. Personal name Satek Jukduk — never “Jeokdeok.”',
 		voice:
 			'The smiling accountant of berths: short practical sentences about tides and anchorages, vetoes delivered like weather reports. Korean: plain 하오체 or 반말 by rank.',
@@ -3752,6 +3754,8 @@ export const PEOPLE: Person[] = [
 		boneRank: 'Sacred Bone (성골)',
 		tagline: 'Gave up her claim, and gave Silla its greatest king instead.',
 		quote: "A throne traded is still a choice.",
+		voice:
+			'Sunduk’s sister and Chunchu’s mother: exact and tart, corrects a count in one line (“Four. If Your Majesty counts honestly.”). Korean: 합쇼체 to the queen, easy 반말 to her son.',
 		binyeo: 'Gold amethyst binyeo — purple orb in filigree, violet at the tip; kept in its box, claim and all.',
 		binyeoImage: '/bn_chunmyung.png',
 		events: [{ year: 603, label: 'Mother of Kim Chunchu.' }],
@@ -3797,6 +3801,8 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-buyeo',
 		tagline: 'The sage king of Sabi, killed by a slave’s hand at Gwansanseong.',
 		quote: "It went into the marrow. Every time I thought of it.",
+		voice:
+			'A proud old king caught off guard: clipped questions and flat refusals (“What.” “A king’s head does not take a slave’s hand.”), then a plain, dignified acceptance at the end. Korean: 반말 to captors and soldiers, 하오체 for his last words.',
 		arc: 'Moved the capital to Sabi and rebuilt Baekje’s golden age; retook the Han valley with Silla, and lost it to Silla’s betrayal within a year. Riding at night to his son’s relief, he was caught by Kim Muryeok’s troops, and a stable-slave named Dodo took his head.',
 		events: [
 			{ year: 538, label: 'Moves the capital to Sabi.' },
@@ -3817,6 +3823,8 @@ export const PEOPLE: Person[] = [
 		kingdom: 'silla',
 		tagline: 'The slave who beheaded a king, as the rank system watched.',
 		quote: "Be the name the record almost forgot — and remain.",
+		voice:
+			'A low-born soldier, polite and immovable: asks permission in a few words, then does it, and answers rank with a rule he was told (“Even a king… takes it. That’s what I was told.”). Korean: humble 합쇼체 to anyone above him.',
 		events: [{ year: 554, label: 'Kills King Seong at Gwansanseong.' }],
 		aliases: ['Dodo']
 	},
@@ -4227,6 +4235,7 @@ export const PEOPLE: Person[] = [
 		died: 641,
 		tagline: 'Yamato’s king, watching the continent try a new fashion in queens.',
 		quote: "An eastern king watches western weather.",
+		voice: 'Yamato’s king, dry and a little peevish; treats the continent’s choices as fashions. Korean: royal 짐 with musing 반말 (-군, -가 보군).',
 		career: [
 			{ title: 'Emperor', korean: '천황', hanja: '天皇', org: 'nation-yamato', from: 629 }
 		],
@@ -4301,6 +4310,7 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — counted among the six when Seungman’s name circled the room.',
 		quote: 'Unanimity is a roof. One hole is rain.',
+		voice: 'Pragmatic True Bone who argues from what is left, not what is proper (“The bone has run out.”). Korean: plain 하오체.',
 		events: [{ year: 645, label: 'Raises his sleeve with the other four for Seungman’s succession.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
@@ -4337,6 +4347,8 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Harmony Councillor — not to be confused with Radiance’s Yumjong; the minutes never are.',
 		quote: 'Same surname, different banner.',
+		voice:
+			'The council’s fixer: counts hands, floats names, resigned rather than outraged (“What about Lord Chunchu?” “Only your hand is left.”). Korean: council 하오체.',
 		events: [{ year: 632, label: 'One of the six sleeves the night Dukman is named — not the rebel Yumjong of 647.' }],
 		career: [
 			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632 }
@@ -4831,8 +4843,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Defects toward Tang to survive the house’s collapse — westernization as exit.',
 		quote: 'After Gesomun, there is no one in Goryeo who can reach even his shadow.',
 		firstLine: {
-			en: 'Aw… that’s it? A big rock?',
-			ko: '에이… 그게 다야? 큰 바위?'
+			en: 'Father… is this all? It’s just a big rock.',
+			ko: '아버지… 이게 다입니까? 그냥 큰 돌인데요.'
 		},
 		lastLine: {
 			en: 'At last… I set foot on Pyongyang’s ground—',
@@ -6033,6 +6045,7 @@ export const CONCEPTS: Person[] = [
 		ideology: 'Martial aristocratic idealism',
 		ideologyNote: 'Flower youth as elite virtue politics — loyalty, beauty, and steel as curriculum. The cohort outlives the yard: old boys staff the Harmony Council.',
 		nature: 'A closed hall that sleeps six to a room, and an officer factory that feeds the state. Boys learn one another’s snores before one another’s ranks, then keep the class number for life — First Class, Class 51, Class 84 — the way a later age keeps a service number. One class a year: Class 1 entered in 560. Bidam is senior to Yushin, Yushin to Alchun; decades on they still say our class. Almost every Harmony Councillor first wore the headband. A Hwarang is expected to ride, recite, and look like the country worth dying for. Special forms — named cuts, paired drills, the 108 count — mark who trained in the yard and who merely wore a sword. On the gyuku field they measure one another with a jangsi before the court does.',
+		voice: 'The corps in unison: oaths, cheers and drill answers, formal and loud. Korean: 합쇼체 in ceremony, clipped 다나까 on the yard.',
 		arc: 'Silla’s training order for True Bone youth — part boarding school, part brotherhood, part cult of the officer. It incubates the men who later sit the Harmony Council, which is to say the Council is the yard with better chairs. It produces Yushin, Bidam, Alchun and Pumsuk: the man who saves the throne, the man who rebels against it, and the boy who loses Daeya. When two of them meet between camps, the country watches a private language of steel — and of class.',
 		events: [
 			{ year: 576, label: 'Formalised under King Jinheung.' },
@@ -7051,6 +7064,7 @@ export const NATIONS: Person[] = [
 		ideology: 'Maritime aristocratic cosmopolitanism',
 		ideologyNote: 'Sea-lane polish, clan vetoes, and a court that taught the islands manners.',
 		nature: 'Eight Great Clans and a Ministers’ Assembly that can move on a plurality — faster than Silla, bloodier in the street. Royal Buyeo sits above a permanent Satek–Yunbi knife-fight; kings who purge the chairs inherit the emptiness. Of the three, Baekje sits closest to the eastern islands in manners: polished courts, sea-lane taste, a habit of teaching neighbours how a capital should look. The crown binds the heavenly deer — lose the crown, and the deer’s door closes.',
+		voice: 'The country as a motto: one line, a rite’s invocation or a harbour proverb, never conversation. Korean: 해라체 proverb or -소서 invocation.',
 		arc: 'Founded by Onjo, a son of Jumong who came south when the throne of Goryeo went to another brother — settling where a heavenly deer showed the door between earth and the yellow sky, under stars the court would later read for loyalty. Baekje is the kingdom of the sea lanes: it gives the East writing, Buddhism and temple architects, and fights Silla for three centuries over the Han valley. Its court is owned by eight great clans, and its last king breaks the clans only to find he has broken the kingdom. It falls in 660; the Baekje Restoration Army (BRA) dies at the White River in 663.',
 		events: [
 			{ year: -18, label: 'Founded at Wiryeseong by Onjo.' },

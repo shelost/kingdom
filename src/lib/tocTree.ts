@@ -25,10 +25,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	jumong: [],
 	samhan: [
 		{
-			parent: 'Queen Sunduk',
-			children: [{ title: 'Jinheung, The Crescent Moon' }]
-		},
-		{
 			parent: 'The Eight Great Clans',
 			children: [{ title: 'Gunchogo, The Hurricane' }, { title: 'Ocean Trade' }]
 		},

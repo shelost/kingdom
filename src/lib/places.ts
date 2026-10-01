@@ -776,7 +776,6 @@ export const MAP_MARKERS = Object.values(PLACES).filter((p) => !p.offMap);
 export const ENTRY_PLACE: Record<string, string> = {
 	// Part I
 	'Queen Sunduk': 'surabol',
-	'Jinheung, The Crescent Moon': 'gwansan',
 	'The Eight Great Clans': 'sabi',
 	'Gunchogo, The Hurricane': 'pyongyang',
 	'Ocean Trade': 'sabi',

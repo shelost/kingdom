@@ -38,7 +38,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'sunduk-seq-munhee-hair',
 				role: 'Munhee attended',
 				angle: 'dutch OTS / rack-focus',
-				at: 'Totally unfit for a Noble woman'
+				at: 'walk in as a noblewoman wearing this'
 			},
 			{
 				id: 'sunduk-seq-chunchu-prep',
@@ -63,7 +63,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		canon: 'ICONIC MINIMAL. Bird’s-eye then dutch close. 2D cel. Caravaggio key. Chunchu in prince magenta from ch_chunchu.png — NO hwarang headband. Gotaso in front of him; Bupmin follows in BLUE boy hanbok (ch_bupmin_child). GRINS. No glow. Magenta #D8258C rim. Same Eastern Palace road.',
 		shots: [
 			{ id: 'family-seq-ride-wide', role: 'exposition', angle: 'bird’s-eye wide', at: 'Gotaso sits in front of him on the same horse' },
-			{ id: 'family-seq-ride-close', role: 'laughing', angle: 'dutch close', at: "That's a lawyer's horse, son." }
+			{ id: 'family-seq-ride-close', role: 'laughing', angle: 'dutch close', at: 'Spoken like a court minister, son.' }
 		]
 	},
 	{
@@ -79,7 +79,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'council-tea-wide', role: 'session', angle: 'dutch pavilion', at: 'debate who the next king should be' },
 			{ id: 'council-flame-close', role: 'High Councillor Euljé', angle: 'table-rim two-shot', at: 'The first count is split' },
 			{ id: 'council-tea-bidam', role: 'Bidam speaks', angle: 'close', at: 'My lords have said one word' },
-			{ id: 'council-alchun-tiger', role: 'Alchun last sleeve', angle: 'hand raised', at: 'A tiger has no sex' },
+			{ id: 'council-alchun-tiger', role: 'Alchun last sleeve', angle: 'hand raised', at: 'I have wrestled a tiger' },
 			{ id: 'council-seq-unanimous', role: '6:0', angle: 'wide', at: 'All six sit on the yes side' }
 		]
 	},
@@ -103,7 +103,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		why: 'Euija in commoner disguise meets a nameless boy who keeps diving. He names him Gyebek. Memory: houses burn, he runs, he begs.',
 		canon: 'Young Euija: GRAY disguise robe, NO large beard (ch_euija_young), amber #e08a2e key. Gyebek: the BOY sheet ch_gyebek_boy — WHITE hanbok, short-medium hair, consistent child, #d9b13a key. 2D cel. Caravaggio. Loud faces. NO glow. Baekgang is a trading estuary (pl_white_river, pl_sabi_port), not an empty graphic river.',
 		shots: [
-			{ id: 'sabi-seq-hall-bird', role: 'Sabi interior', angle: 'bird’s-eye', at: 'Sabi from the White River' },
+			{ id: 'sabi-seq-hall-bird', role: 'Sabi interior', angle: 'bird’s-eye', at: 'learn their names anyway' },
 			{ id: 'euija-seq-disguise-yard', role: 'sneaks out', angle: 'dutch', at: 'Euija sneaks out of the palace' },
 			{ id: 'gyebek-seq-dive-wide', role: 'another dive', angle: 'dutch wide', at: 'The boy is going back into the water' },
 			{ id: 'gyebek-seq-surface', role: 'nineteen', angle: 'dutch close', at: 'Nineteen' },
@@ -123,9 +123,9 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		shots: [
 			{ id: 'clan-tourney-grid-wide', role: 'the square', angle: 'dutch crane painting', at: 'square grid in the palace yard' },
 			{ id: 'clan-tourney-call', role: 'five in white', angle: 'worm’s-eye sleeve-plane', at: 'young men of each house step onto the grid' },
-			{ id: 'clan-tourney-sword-midstrike', role: 'Yung vs Hyo', angle: 'dutch X', at: 'Mokgeom mid-strike on the grid' },
+			{ id: 'clan-tourney-sword-midstrike', role: 'Yung vs Hyo', angle: 'dutch X', at: 'meet mid-strike on the grid' },
 			{ id: 'clan-tourney-sword-dutch', role: 'gold / ink split', angle: 'extreme dutch', at: 'Blades skim the chalk.' },
-			{ id: 'clan-tourney-sword-ots', role: 'from Yung', angle: 'OTS rack-focus', at: 'Over his shoulder the chalk holds' },
+			{ id: 'clan-tourney-sword-ots', role: 'from Yung', angle: 'OTS rack-focus', at: 'the white sleeves clap together' },
 			{ id: 'clan-tourney-sword-victory', role: 'the stripe is the crown', angle: 'shadow painting', at: 'Point to the white sleeve.' },
 			{ id: 'clan-tourney-ssireum-grip', role: 'Tae vs Yun', angle: 'dutch knot', at: 'satba locked before they stand' },
 			{ id: 'clan-tourney-ssireum-lift', role: 'white diagonal', angle: 'worm’s-eye', at: 'deulbaejigi clears the sand' },
@@ -171,7 +171,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'east-seq-planet',
 				role: 'planet not a star',
 				angle: 'OTS rack-focus',
-				at: 'That is a planet, not a star'
+				at: 'That’s no star, you idiot'
 			},
 			{
 				id: 'east-seq-vow',
