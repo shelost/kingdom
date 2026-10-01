@@ -1272,8 +1272,8 @@ export const PEOPLE: Person[] = [
 			ko: '…사람을 사람으로 세지 않는 나라. 그게 어떻게 천 년을 가겠느냐?'
 		},
 		lastLine: {
-			en: 'Yes. …And here we are. At the end.',
-			ko: '그래. …여기까지 왔구나. 끝에.'
+			en: 'I know. Stay. I can do a little rain.',
+			ko: '알아. 있어. 이 정도 비는 괜찮으니까.'
 		},
 		nature: 'Queen who reads people the way others read stars. Soft power as the harder blade; holds Yushin’s devotion without making a spectacle of it. Their bond is romantic and physical in the refined register of the chronicle — never crude, never cold. The crown she wears is not only gold: it is the right to speak for the heavenly horse.',
 		voice:
@@ -1359,8 +1359,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Holds Sacred Bone legitimacy as a bridge, not a program — lasts so True Bone can begin.',
 		quote: 'When I die, do not pretend I ruled.',
 		firstLine: {
-			en: 'Bidam…! What are you saying? Surely you don’t—',
-			ko: '비담…! 무슨 소리요? 설마—'
+			en: 'Bidam…! What is this I hear? Surely not…',
+			ko: '비담....! 그게 무슨 말인가? 설마…'
 		},
 		lastLine: {
 			en: '…I kept a seat from becoming a joke. That is all the Sacred Bone had left to do.',
@@ -1428,8 +1428,8 @@ export const PEOPLE: Person[] = [
 			ko: '귀족 여자에게 전혀 안 어울려… 얘, 좀 더 나은 거 못 찾니?'
 		},
 		lastLine: {
-			en: 'She spent her whole life watching other people love. Mine included.',
-			ko: '언니는 평생 남이 사랑하는 걸 보기만 했어. 내 것까지.'
+			en: 'He always did round the numbers up.',
+			ko: '그이는 늘 숫자를 크게 불렀다.'
 		},
 		nature: 'The household half of Chunchu’s politics: she packs the bags for every country he tries to save them with. Their marriage is affectionate and hungry in equal measure — tasteful, never coy about wanting. Related to almost every Silla name that matters — sister of the marshal, wife of the diplomat-king, mother of Munmu, aunt-by-marriage to a generation of True Bone. The story opens on her hair and closes on her watching a son wear a broken northern crown.',
 		voice:
@@ -1604,8 +1604,8 @@ export const PEOPLE: Person[] = [
 			ko: '셈이 틀렸어요. 조수는 왕자인 걸 상관하지 않아요.'
 		},
 		lastLine: {
-			en: 'Keep the harbour book open. A kingdom that cannot count will lose the sea twice.',
-			ko: '항구 장부를 열어 두세요. 셈할 줄 모르는 나라는 바다를 두 번 잃어요.'
+			en: '…So if you’re going to, do it now. Before the tide comes in.',
+			ko: '…그러니까 할 거면 지금 해요. 조수 들어오기 전에요.'
 		},
 		nature: 'Sharp, unimpressed, K-drama heroine energy without the helplessness: she steals brushes, vetoes bad arithmetic, and falls for Bupmin only after he stays for the tide book. Daughter of Pajinchan Kim Seonpum. Personal name Jahee; the court later calls her Queen Jayi. Of all the series’ romances, theirs is the one that survives the war without becoming a tragedy or a joke — partnership as a second country.',
 		voice:
@@ -1827,7 +1827,7 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Abhidharma in the name he gave his son; 108 beads in the sleeve; Surabol Son blood that does not ask Gaya to apologise for existing, and will not let a yard mock a mouth.',
 		quote: 'Son… I need you to be a man who would rather be a righteous traitor than an unrighteous king.',
 		firstLine: {
-			en: 'Bidam… do you know the meaning of your name.',
+			en: 'Bidam… Do you know the meaning of your name.',
 			ko: '비담아… 네 이름 뜻을 아느냐.'
 		},
 		lastLine: {
@@ -4847,7 +4847,7 @@ export const PEOPLE: Person[] = [
 		quote: 'Goguryeo… never dies….!',
 		firstLine: {
 			en: 'Brother.',
-			ko: '형.'
+			ko: '형님.'
 		},
 		lastLine: {
 			en: 'Goguryeo… never dies….!',
@@ -5659,8 +5659,8 @@ export const CONCEPTS: Person[] = [
 		ideologyNote: 'Death’s other clerk — jokes until the door, then silence.',
 		quote: 'Kangrim asks the Question. I ask for last words. Neither of us bargains.',
 		firstLine: {
-			en: 'The red book is open. Any last words?',
-			ko: '붉은 명부가 열렸다. 유언은?'
+			en: 'Haemosu… The night is not your domain…!',
+			ko: '해모수… 밤은 네 영역이 아니다…!'
 		},
 		lastLine: {
 			en: 'Any last words?',
