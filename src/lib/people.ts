@@ -477,7 +477,6 @@ export const PEOPLE: Person[] = [
 			'환인',
 			'桓因',
 			'Lord of Heaven',
-			'Lord',
 			'주님',
 			'The Big Man Upstairs',
 			'위에 계신 어른',
@@ -1137,7 +1136,8 @@ export const PEOPLE: Person[] = [
 			'Righteous and Merciful',
 			'the Righteous and Merciful',
 			'Thirty-first Eraha',
-			'31st Eraha'
+			'31st Eraha',
+			'Zengzi of the East'
 		]
 	},
 
@@ -3031,7 +3031,7 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Minister', korean: '재상', hanja: '宰相', org: 'tangcourt', to: 643 }
 		],
-		aliases: ['Wei Zheng', 'the imperial minister', 'The Imperial Minister', 'the minister']
+		aliases: ['Wei Zheng', 'the imperial minister', 'The Imperial Minister']
 	},
 	{
 		id: 'chusuiliang',
@@ -3111,6 +3111,8 @@ export const PEOPLE: Person[] = [
 			'White Dragon',
 			'백룡',
 			'White Tiger II',
+			'the White Tiger II',
+			'Protector-General of the East',
 			'백호 2세',
 			'White Coat',
 			'White-Robed',
@@ -3755,7 +3757,7 @@ export const PEOPLE: Person[] = [
 			{ id: 'yuri', role: 'Son' },
 			{ id: 'sosuno', role: 'Wife' }
 		],
-		aliases: ['Jumong', 'Dongmyung', 'Dongmyeong', 'King Dongmyung', '동명왕', '동명성왕', '주몽']
+		aliases: ['Jumong', 'Dongmyung', 'Dongmyeong', 'King Dongmyung', 'Bright of the East', '동명왕', '동명성왕', '주몽']
 	},
 	{
 		id: 'onjo',
@@ -4694,8 +4696,6 @@ export const PEOPLE: Person[] = [
 		aliases: [
 			'Commander Yang',
 			'Yang Manchun',
-			'the Guardian',
-			'Guardian',
 			'Guardian of Ansi',
 			'Wall that Stopped an Emperor'
 		]
@@ -4929,9 +4929,7 @@ export const PEOPLE: Person[] = [
 			'Li Zhi',
 			'이치',
 			'the young emperor',
-			'The Young Emperor',
-			'the crown prince',
-			'Crown Prince'
+			'The Young Emperor'
 		]
 	},
 	{
@@ -5551,8 +5549,7 @@ export const CONCEPTS: Person[] = [
 			'강림',
 			'저승사자',
 			'the underworld messenger',
-			'Underworld Messenger',
-			'the reaper'
+			'Underworld Messenger'
 		]
 	},
 	{
