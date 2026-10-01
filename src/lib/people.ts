@@ -2714,6 +2714,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		tagline: 'The other man outside the door. Easily surprised.',
 		quote: "Be surprised once. Learn forever.",
+		voice: 'Easily startled. Swears by Haemosu and the Holy King; cynical one-liners that crack into fear. Korean: 반말 to his mate.',
 		aliases: ['Junior Guard']
 	},
 	{
@@ -3476,6 +3477,7 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Generation that still hears Geunchogo’s hurricane as destiny, not metaphor.',
 		quote: "A Yeon name is already a warning.",
 		nature: 'Chairs the Summit like a feast: soft voice, hard arithmetic — the 막리지 as first sword, sitting the Central seat. Tells his nephew to sit down — and is the first mouth to set the word traitor on Yeon’s name. Treats alarms as youthful noise until the noise becomes a massacre.',
+		voice: 'Soft voice, hard sums: the elder who tells his nephew to sit down. Korean: 하오체 to the council, fatherly 하게체 to Gesomun (조카, 앉게).',
 		blade: 'High Commander Blade (막리지검) — haetae carved beneath the crow stamp; the Summit’s first chair, not a fifth crow.',
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; High Commander Blade taken.' }],
@@ -3500,6 +3502,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		died: 642,
 		tagline: 'The Summit’s mouth the day the word traitor was first set on Yeon’s name; he dies at the banquet with it in his mouth.',
+		voice: 'The Summit’s righteous mouthpiece: indignant fragments (“역적…!”), no wit. Korean: 하오체.',
 		events: [{ year: 642, label: 'Dies at Yeon’s banquet — “Traitor…!”' }],
 		aliases: ['Lee Gaesa', '이가사']
 	},
@@ -3517,6 +3520,7 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'March command as ideology — the frontier’s veto on capital softness.',
 		quote: "Stop counting remounts. Start counting winters.",
 		nature: 'Blunt frontier arithmetic. Sexually confident in the soldier’s way — present, not performative — and allergic to southern romance when his villages are burning.',
+		voice: 'Blunt frontier sums: horses, winters, burned villages. Korean: terse 하오체.',
 		blade: 'Northern Crow Blade (북방 오도) — Mohe-frost nicks in the edge.',
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Northern Crow Blade taken.' }],
@@ -3539,6 +3543,7 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Southern command calculus — hold, trade, survive.',
 		quote: "Send the levy — or stop naming Samhan.",
 		nature: 'Competitive, sharp-tongued, sure of his own front. Treats Eastern tribal fighting as easy work and never forgives a room that starves his border for a slogan.',
+		voice: 'Competitive and sharp-tongued: complains about his own front and wants the next levy for Yushin’s passes. Korean: 합쇼체 to the throne, brisk 하오체 to the other commanders.',
 		blade: 'Southern Crow Blade (남방 오도) — grip worn smooth against Yushin’s passes.',
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Southern Crow Blade taken.' }],
@@ -3646,6 +3651,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		tagline: 'Buddhist aristocracy’s quiet knife — the monk who opened Pyongyang from within.',
 		quote: "A gate opens from the inside.",
+		voice: 'Speaks almost only in sutra formulae (“아미타불”); patience is his answer.',
 		arc: 'Yeon tried to import Tang Taoism partly to starve the monk houses of prestige. The houses waited. When the brothers tore the kingdom, Shinsung opened what no army had opened — and proved Yeon’s fear had been aimed at the right profession.',
 		events: [
 			{ label: 'Watches Yeon’s Taoist experiment cool the temple halls.' },
@@ -4732,12 +4738,13 @@ export const PEOPLE: Person[] = [
 		quote: 'M-my name? My surname is Go—',
 		firstLine: {
 			en: 'M-my name? My surname is Go—',
-			ko: '내— 내 이름은? 성은 고—'
+			ko: 'ㅈ-제 이름이요? 성은 고(高)—'
 		},
 		lastLine: {
 			en: 'M-my name? My surname is Go—',
-			ko: '내— 내 이름은? 성은 고—'
+			ko: 'ㅈ-제 이름이요? 성은 고(高)—'
 		},
+		voice: 'Stammering and eager to please, never sure whose sentence he is in. Korean: nervous 해요체, even as king.',
 		career: [
 			{ title: 'King', korean: '보장왕', org: 'nation-goguryeo', from: 642 }
 		],

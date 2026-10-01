@@ -15027,7 +15027,7 @@
 						"id": "blade-lee",
 						"ratio": 1.778,
 						"alt": "Dutch two-shot: Gesomun keeping Lee Gaesa’s word as metal — crow pommel, wine-dark silk",
-						"at": "You gave me the word.",
+						"at": "You gave me the name.",
 						"prompt": "Minimal iconic 16:9 still. DUTCH two-shot: Yeon Gesomun wrenching a crow ring-pommel from Lee Gaesa’s belt while the Summit mouth collapses. Gesomun FACE from attached portrait — shout mid-take, NEW kinetic body. Lee Gaesa face from attached commander portrait — wine-wet mouth, not fashion plate. Steel lamellar + red-wing #d0362f as Gesomun’s plane; wine-dark #96473e cloth on the fallen as second accent only. Pyongyang banquet timber from place ref. ONE device: the hollow ring as a bright stamp between their hands. Crushed blacks, one lamp key. No army. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark. Copy: movie frame in a real place, not a graphic poster; iconic one-device layout, empty frame, lower-third; high contrast chiaroscuro, not even wash; 2D animated cel-painterly, no photoreal; cinematography: dutch, wide, bokeh, mise-en-scène. Never: halo / bloom / glow around figures; graphic split-screen or black-triangle overlay; photoreal live-action or 3D archviz; busy extras crowding an iconic frame; copy-pasted reference as a fashion plate; flat even-daylight postcard wide.",
 						"tone": "#96473e",
 						"refs": [
@@ -15314,25 +15314,25 @@
 						"blocks": [
 							{
 								"kind": "p",
-								"html": "Three nights before the lamps, Yeon climbs to <b>Jumong Cavern</b> — 국동대혈, where the holy king prayed when the river had no bridge. The marches believe the stone remembers bowstrings.",
-								"ko": "등불이 켜지기 사흘 전, 연은 <b>주몽 동굴</b> — 강에 나루가 없을 때 성왕이 기도하던 국동대혈 — 로 올라간다. 개척지 사람들은 그 돌이 활시위를 기억한다고 믿는다."
+								"html": "Three nights before the banquet, Yeon climbs to <b>Jumong Cavern</b>, 국동대혈, where the Holy King prayed when the river had no bridge. People on the frontier say the stone still remembers his bowstring.",
+								"ko": "연회 사흘 전, 연은 <b>주몽 동굴</b>로 올라간다. 강에 다리가 없던 시절 성왕이 기도했다는 국동대혈이다. 변방 사람들은 그 돌이 아직 성왕의 활시위 소리를 기억한다고 믿는다."
 							},
 							{
 								"kind": "p",
-								"html": "He leaves a crow-stamped ring-pommel at the mouth and does not ask for forgiveness. He asks for witnesses.",
-								"ko": "그는 동굴 입에 삼족오가 찍힌 환두대도를 남기고 용서를 구하지 않는다. 증인을 구한다."
+								"html": "He leaves a crow-stamped ring-pommel sword at the mouth of the cave and kneels on the wet stone.",
+								"ko": "그는 삼족오가 찍힌 환두대도를 동굴 어귀에 두고, 젖은 돌 위에 무릎을 꿇는다."
 							},
 							{
 								"kind": "dialogue",
 								"chip": "#a83b34",
 								"person": "gesomun",
 								"lines": [
-									"성왕께서 여기서 나라를 빚으셨소.",
-									"나도… 내 손으로 빚겠소."
+									"성왕이시여. 여기서 맨손으로 나라를 세우셨소.",
+									"나도 내 손으로 하겠소. 똑똑히 보시오."
 								],
 								"en": [
-									"The Holy King forged a country here.",
-									"I too… will forge with my own hands."
+									"Holy King. You built a country here with your bare hands.",
+									"Now I’ll do it with mine. Watch me."
 								]
 							}
 						]
@@ -15425,8 +15425,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The side doors were never for servants. When they open again, Yeon’s soldiers come through every one of them. Tables overturn. Wine becomes a darker color before anyone names it. For hours, blood and tears fill the banquet hall as hundreds of officials and generals are killed. Yeon does not shout orders — he walks the length of the room the way a man walks a border he has already decided to keep, and he takes each commander’s blade himself.",
-						"ko": "옆문은 원래 하인을 위한 것이 아니었다. 다시 열릴 때, 그 문마다 연의 군사들이 들이닥친다. 상이 뒤집힌다. 술이, 누가 이름 붙이기 전에, 더 어두운 색이 된다. 몇 시간 동안 연회장은 피와 눈물로 가득 찬다. 수백의 관리와 장수가 죽는다. 연은 명령을 외치지 않는다 — 이미 지키기로 한 국경을 걷듯 전각을 가로지르며, 욕살의 칼은 제 손으로 거둔다."
+						"html": "The side doors were never for servants. When they open again, Yeon’s soldiers come through every one of them. Tables overturn. Wine becomes a darker color before anyone names it. For hours, blood and tears fill the banquet hall as hundreds of officials and generals are killed. Yeon never raises his voice. He walks the length of the room and takes each commander’s blade himself.",
+						"ko": "옆문은 원래 하인을 위한 것이 아니었다. 다시 열릴 때, 그 문마다 연의 군사들이 들이닥친다. 상이 뒤집힌다. 술이, 누가 이름 붙이기 전에, 더 어두운 색이 된다. 몇 시간 동안 연회장은 피와 눈물로 가득 찬다. 수백의 관리와 장수가 죽는다. 연은 목소리 한 번 높이지 않는다. 전각을 끝까지 걸어가며 욕살들의 칼을 하나씩 제 손으로 거둔다."
 					},
 					{
 						"kind": "p",
@@ -15439,11 +15439,11 @@
 						"person": "southcmd",
 						"lines": [
 							"연…!",
-							"삼한을… 임금이 말한 삼한을—"
+							"유신이… 고개를…"
 						],
 						"en": [
 							"Yeon…!",
-							"Samhan… the Samhan His Majesty named—"
+							"Yushin… the passes…"
 						]
 					},
 					{
@@ -15452,19 +15452,19 @@
 						"person": "gesomun",
 						"lines": [
 							"손대하.",
-							"연설 말고 병력을 달라 했지.",
-							"병력은 내가 가져가오."
+							"동쪽 싸움은 쉽다며. 쉽지?",
+							"네 병력은 내가 가져간다."
 						],
 						"en": [
 							"Son Daeha.",
-							"You asked for men, not speeches.",
-							"I am taking the men."
+							"Eastern fighting’s easy, you said. Easy, isn’t it?",
+							"I’m taking your men."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "He draws the Southern ring-pommel from a belt that no longer needs it. One crow. One weight on the spine to come.",
-						"ko": "더 이상 필요하지 않은 허리띠에서 남부의 환두를 뽑는다. 삼족오 하나. 앞으로 등에 올릴 무게 하나."
+						"html": "He draws the Southern ring-pommel from a belt that no longer needs it. One crow.",
+						"ko": "더 이상 필요하지 않은 허리띠에서 남부의 환두를 뽑는다. 삼족오 하나."
 					},
 					{
 						"kind": "p",
@@ -15503,8 +15503,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The <b>Western Commander</b> — <b>Go Heumsong</b> — had warned that stripping the Liao for a southern poem would gift the Tang a road. He dies looking west, as if the road might still be argued into staying shut.",
-						"ko": "<b>서부 욕살</b> — <b>고흠송</b> — 은 요하를 벗겨 남쪽 시를 쫓으면 당에게 길을 선물한다고 경고했었다. 그는 서쪽을 보며 죽는다. 그 길이 아직 말로 닫힐 수 있다는 듯이."
+						"html": "Next the <b>Western Commander</b> — <b>Go Heumsong</b>, who had warned that stripping the Liao for a southern poem would gift the Tang a road. He dies looking west, as if the road might still be argued into staying shut.",
+						"ko": "그다음은 <b>서부 욕살</b> — <b>고흠송</b>. 남쪽 시 한 편을 좇느라 요하를 비우면 당에 길을 내주는 꼴이 된다고 경고하던 사람. 그는 서쪽을 바라보며 죽는다. 그 길을 아직 말로 막을 수 있다는 듯이."
 					},
 					{
 						"kind": "dialogue",
@@ -15532,8 +15532,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Three crows. The hall’s lamps lean as if listening.",
-						"ko": "삼족오 셋. 전각의 등불이 듣는 것처럼 기울다."
+						"html": "Three crows.",
+						"ko": "삼족오 셋."
 					},
 					{
 						"kind": "p",
@@ -15559,19 +15559,19 @@
 						"person": "gesomun",
 						"lines": [
 							"이가사.",
-							"그 말은 그대가 주었소.",
-							"내가 갖겠소."
+							"역적? 그래, 역적이다.",
+							"네가 붙여 준 이름이니, 잘 쓰마."
 						],
 						"en": [
 							"Lee Gaesa.",
-							"You gave me the word.",
-							"I am keeping it."
+							"Traitor? Fine. Traitor.",
+							"You gave me the name. I’ll make good use of it."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "Four. The word he was given becomes metal he can wear.",
-						"ko": "넷. 그에게 씌운 말이, 멜 수 있는 쇠가 된다."
+						"html": "Four.",
+						"ko": "넷."
 					},
 					{
 						"kind": "p",
@@ -15600,14 +15600,15 @@
 							"숙부.",
 							"앉으라 하셨지요.",
 							"….",
-							"이 칼은 연씨가 연씨에게서 거둡니다."
+							"이번엔 숙부가 앉으시지요."
 						],
 						"en": [
 							"Uncle.",
 							"You told me to sit down.",
 							"….",
-							"A Yeon takes this one from a Yeon."
-						]
+							"Your turn to sit, Uncle."
+						],
+						"art": "On the last line Gusesa sinks back onto his bench."
 					},
 					{
 						"kind": "p",
@@ -15616,8 +15617,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He finally approaches <b>King Youngryu</b> for the final blow. The crown has slid. The Samhan dream is still in the king’s mouth, too late to be a budget.",
-						"ko": "마침내 <b>영류왕</b> 앞에 선다 — 마지막 일격. 면류관이 비뚤어져 있다. 삼한의 꿈은 아직 왕의 입에 남아, 예산이 되기엔 너무 늦다."
+						"html": "He finally approaches <b>King Youngryu</b> for the final blow. The crown has slid.",
+						"ko": "마침내 <b>영류왕</b> 앞에 선다 — 마지막 일격. 면류관이 비뚤어져 있다."
 					},
 					{
 						"kind": "dialogue",
@@ -15640,13 +15641,13 @@
 						"person": "gesomun",
 						"lines": [
 							"폐하.",
-							"금으로 될 일이 아니었습니다. 그자는 이미 폐하의 목값을 매겨 두었으니.",
+							"금으로요? 당 황제는 진작에 폐하 목에 값을 매겨 놨습니다.",
 							"<b>만수무강하소서.</b>"
 						],
 						"en": [
 							"Your Majesty.",
-							"The gold was never going to be enough. He had already priced your head.",
-							"<b>May You live ten thousand years.</b>"
+							"Gold? The Tang emperor put a price on your head long ago.",
+							"<b>May Your Majesty live ten thousand years.</b>"
 						]
 					},
 					{
@@ -15715,26 +15716,26 @@
 						"diagram": "high-summit",
 						"step": "supreme",
 						"title": "Supreme Commander · 대막리지",
-						"caption": "After the knives: the High Commander’s chair becomes Supreme; the king dims to a puppet note.",
-						"ko": "칼 다음. 막리지 자리가 대막리지가 되고, 임금은 꼭두각시 음이 된다."
+						"caption": "After the banquet the post of High Commander becomes Supreme Commander, and the king becomes a figurehead.",
+						"ko": "연회 뒤, 막리지 자리는 대막리지가 되고 임금은 허수아비가 된다."
 					},
 					{
 						"kind": "p",
-						"html": "He makes one more appointment before the blood is dry. <b>Dosuryu</b> — an old friend of the Yeon house, one of the few men who has ever told him no and lived — is named <b>Grand Herald</b>, a post that did not exist until the banquet needed a voice that was not the throne’s.",
-						"ko": "피가 마르기 전에 임명 하나를 더 한다. <b>도수류</b> — 연씨 집안의 오랜 벗, 그에게 아니라고 말하고도 살아남은 몇 안 되는 사람 — 을 <b>대대로</b>에 앉힌다. 연회가 왕좌가 아닌 목소리를 필요로 하기 전까지는 없던 자리이다."
+						"html": "He makes one more appointment before the blood is dry. <b>Dosuryu</b> is an old friend of the Yeon house, one of the few men who have told Yeon no and lived. Yeon names him <b>Grand Herald</b>, a post that did not exist until the banquet needed a voice that was not the throne’s.",
+						"ko": "피가 마르기도 전에 임명이 하나 더 있다. <b>도수류</b>는 연씨 집안의 오랜 벗으로, 연에게 안 된다고 말하고도 살아남은 몇 안 되는 사람이다. 연은 그를 <b>대대로</b>에 앉힌다. 왕좌 말고 다른 목소리가 필요해진 이 연회 전까지는 없던 자리다."
 					},
 					{
 						"kind": "dialogue",
 						"person": "dosuryu",
 						"lines": [
 							"대대로라…",
-							"내가 네 아버지 살아 계실 때부터 네 뒷덜미를 잡던 사람인데.",
-							"이제 그 입으로 나라를 읽히라고?"
+							"네 아버지 살아 계실 때부터 내가 네 뒷덜미 잡고 다녔다, 이놈아.",
+							"그런 나더러 이제 네 말이나 전하고 다니라고?"
 						],
 						"en": [
 							"Grand Herald…",
-							"I have had you by the scruff since your father was alive.",
-							"And now you want that mouth to read the country aloud?"
+							"I’ve had you by the scruff since your father was alive, you brat.",
+							"And now I’m to go round repeating whatever you say?"
 						],
 						"chip": "#c98578"
 					},
@@ -15742,14 +15743,14 @@
 						"kind": "dialogue",
 						"person": "gesomun",
 						"lines": [
-							"형님이 안 하면 누가 하오.",
-							"저 보장이는… 이름만 필요하지.",
-							"겨레한테 말할 사람은 형님이오."
+							"그럼 누가 해. 네가 해야지.",
+							"보장이? 그놈한테선 이름만 빌리면 돼.",
+							"백성들한테 말하는 건 네가 해."
 						],
 						"en": [
-							"If you will not, who will.",
-							"That Bojang… I only need the name.",
-							"The one who speaks to the 겨레 is you."
+							"Who else? It has to be you.",
+							"Bojang? I only need the name.",
+							"You do the talking to the people."
 						],
 						"chip": "#d0362f"
 					},
@@ -15757,21 +15758,19 @@
 						"kind": "dialogue",
 						"person": "dosuryu",
 						"lines": [
-							"알겠소.",
-							"다만 — 네가 내 말을 들을 때만이야.",
-							"안 들으면 나는 전령이지, 친구가 아니야."
+							"좋다.",
+							"대신 내 말도 들어. 안 들으면 그날로 그만둔다."
 						],
 						"en": [
-							"Very well.",
-							"Only — for as long as you still listen to me.",
-							"If you stop, I am a herald, not a friend."
+							"Fine.",
+							"But you listen to me too. The day you stop, I’m done."
 						],
 						"chip": "#c98578"
 					},
 					{
 						"kind": "p",
-						"html": "Yeon listens. Not always. Often enough that the court learns which door to fear besides his.",
-						"ko": "연은 듣는다. 늘은 아니다. 그래도 조정이, 그를 빼고도 두려워할 문이 하나 더 있다는 걸 배울 만큼은."
+						"html": "Yeon listens to him more often than anyone expected, and before long the court is bowing to Dosuryu too.",
+						"ko": "연은 생각보다 자주 그의 말을 듣고, 머지않아 조정은 도수류에게도 허리를 굽힌다."
 					},
 					{
 						"kind": "dialogue",
@@ -15822,12 +15821,12 @@
 						"kind": "dialogue",
 						"person": "gesomun",
 						"en": [
-							"Pray quieter.",
-							"Or pray to something that does not own half the capital."
+							"Keep the chanting down.",
+							"You’re sitting on half the land in Pyongyang. What else are you praying for?"
 						],
 						"lines": [
-							"기도 소리 낮춰.",
-							"아니면 수도 절반을 소유하지 않은 것한테 기도해."
+							"염불 소리 좀 줄여.",
+							"평양 땅 절반을 깔고 앉아서, 뭘 더 달라고 비는 거야."
 						],
 						"chip": "#d0362f"
 					},
@@ -15850,8 +15849,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "In the markets the news arrives the way all bad news arrives — ahead of the official word, behind the smell of smoke. Grain sellers count on their fingers. Children stop racing. Someone says <b>banquet</b> and means <b>blood</b>.",
-						"ko": "저잣거리에 소식이 닿는 법은, 나쁜 소식이 늘 닿는 법과 같다 — 공식 말보다 먼저, 연기 냄새보다 늦게. 곡식 장수가 손가락을 접는다. 아이들이 달리기를 멈춘다. 누군가 <b>연회</b>라 말하고 <b>피</b>를 뜻한다."
+						"html": "In the markets the news arrives ahead of the official word and just behind the smell of smoke. The grain sellers stop haggling, and the children stop racing between the stalls.",
+						"ko": "저잣거리에는 소식이 공식 포고보다 먼저, 연기 냄새 바로 뒤에 닿는다. 곡식 장수들은 흥정을 멈추고, 좌판 사이를 뛰던 아이들도 걸음을 멈춘다."
 					},
 					{
 						"kind": "dialogue",
@@ -15859,11 +15858,11 @@
 						"speaker": "Vendor",
 						"lines": [
 							"임금이… 죽었대…",
-							"대장들도. 백이 넘는다고. 평양의 붉은 해가 — 그 칼들을 자기 등에 맸대."
+							"대신들이랑 장수들도. 백 명이 넘는대."
 						],
 						"en": [
 							"The king… they say he’s dead.",
-							"The commanders too. More than a hundred. And the Red Sun of Pyongyang — they say he strapped their blades to his back."
+							"The ministers and generals too. Over a hundred, they’re saying."
 						]
 					},
 					{
@@ -15871,12 +15870,12 @@
 						"chip": "#8d8d95",
 						"speaker": "Wall sentry",
 						"lines": [
-							"어떤 이들은 영원의 대장군이 우리를 살렸다고 해.",
-							"조정에서 먼저 칼을 갈았대. 다음은 우리였을 거고. 평민들은… 연보다 그 이름을 먼저 불러."
+							"그래도 영원의 대장군이 우릴 살렸다는 사람도 많아.",
+							"조정이 먼저 칼을 갈고 있었대. 그다음은 우리 차례였을 거라고."
 						],
 						"en": [
-							"Some say the Eternal General saved us.",
-							"The court was sharpening first. We were next. Commoners… we say that name before we say Yeon."
+							"Plenty of people say the Eternal General saved us.",
+							"They say the court was sharpening its knives first. We’d have been next."
 						]
 					},
 					{
@@ -15889,7 +15888,7 @@
 						],
 						"en": [
 							"Those blades… they say he strapped five of them to his back.",
-							"The commanders’ swords. On his own spine."
+							"The commanders’ own swords. On his back."
 						]
 					},
 					{
@@ -15897,12 +15896,12 @@
 						"chip": "#9a5c55",
 						"person": "goguard_b",
 						"lines": [
-							"해모수의 빛에 걸고… 대단하지…",
-							"아니 — 무섭지. 대단하고, 무섭지."
+							"해모수의 빛에 걸고… 대단하다, 진짜…",
+							"…아니, 무섭다. 솔직히 무서워."
 						],
 						"en": [
-							"By Haemosu’s light… incredible…",
-							"No — terrifying. Incredible, and terrifying."
+							"By Haemosu’s light… that’s really something…",
+							"…No. It’s frightening. Honestly, I’m scared."
 						]
 					},
 					{
@@ -15913,7 +15912,7 @@
 							"그래도… 연회장에서 베는 게 나라를 구하는 거냐."
 						],
 						"en": [
-							"Still… is butchering a banquet the same as saving a country."
+							"Still… cutting men down at a feast, that’s saving the country?"
 						],
 						"art": "Low."
 					},
@@ -15935,34 +15934,32 @@
 					},
 					{
 						"kind": "p",
-						"html": "The capital learns a new etiquette. Remaining officials swear loyalty not to the nephew-king’s smile but to the <b>Supreme Commander</b>’s door. Men who hesitate are removed before winter — titles stripped, names scratched from the rolls, a few bodies found where the river turns. The foreign hostels lock from the outside. Tribute missions that once bought another quiet decade are cancelled mid-packing; silk meant for Chang’an stays in the warehouses.",
-						"ko": "도읍이 새 예법을 배운다. 남은 관리들은 조카왕의 미소가 아니라 <b>대막리지</b>의 문에 충성을 맹세한다. 망설이는 자는 겨울이 오기 전에 걷힌다 — 직함 박탈, 명부에서 이름 지움, 강이 꺾이는 곳에서 발견되는 시신 몇. 사신 관사는 밖에서 잠긴다. 또 한 번의 평온한 십 년을 사던 조공 행렬은 짐 싸다 말고 취소되고, 장안으로 가려던 비단은 창고에 남는다."
+						"html": "The capital learns a new etiquette. The officials who are left swear loyalty to the <b>Supreme Commander</b>, and someone tells the nephew-king afterwards. Men who hesitate are gone before winter, and a few of them turn up where the river bends. The foreign hostels lock from the outside. Tribute missions that once bought another quiet decade are cancelled mid-packing; silk meant for Chang’an stays in the warehouses.",
+						"ko": "도읍이 새 예법을 배운다. 남은 관리들은 <b>대막리지</b>에게 충성을 맹세하고, 조카왕에게는 나중에 누가 알려 준다. 망설이던 자들은 겨울이 오기 전에 사라지고, 그중 몇은 강이 굽이도는 곳에서 떠오른다. 사신 관사는 밖에서 잠긴다. 또 한 번의 평온한 십 년을 사던 조공 행렬은 짐 싸다 말고 취소되고, 장안으로 가려던 비단은 창고에 남는다."
 					},
 					{
 						"kind": "p",
-						"html": "March boots outrank court shoes. Drums outrank flutes. Monks keep their heads down while the new Taoist masters walk the halls Yeon starved of incense. Envoys who still ask for audience are told the kingdom is closed for inventory — of grain, of blades, of who belongs inside the walls. Goguryeo under Yeon watches the roads in and trusts almost none of them.",
-						"ko": "변경의 군화가 조정의 신보다 높다. 북이 피리를 이긴다. 연이 향을 굶긴 전각을 새 도사들이 걷는 동안, 스님들은 고개를 숙인다. 알현을 청하는 사신에게는 — 곡식과 칼과, 성 안에 남을 자격의 재고 조사 중이라 돌려보낸다. 연 아래의 고구려는 들어오는 길을 보고, 거의 아무도 믿지 않는다."
+						"html": "March boots outrank court shoes. Drums outrank flutes. Monks keep their heads down while the new Taoist masters walk the halls Yeon starved of incense. Envoys who still ask for an audience are told to wait, and go on waiting until they give up and go home. Goguryeo under Yeon watches the roads in and trusts almost none of them.",
+						"ko": "변경의 군화가 조정의 신보다 높다. 북이 피리를 이긴다. 연이 향을 굶긴 전각을 새 도사들이 걷는 동안, 스님들은 고개를 숙인다. 알현을 청하는 사신들은 기다리라는 말만 듣다가, 결국 제풀에 돌아간다. 연 아래의 고구려는 들어오는 길을 보고, 거의 아무도 믿지 않는다."
 					},
 					{
 						"kind": "p",
-						"html": "At night the house is quieter than the city. <b>Yeon’s wife</b> has kept three boys from the sound of cheering that is not quite cheer. She waits until the lamps are few enough that even a Supreme Commander looks like a husband.",
-						"ko": "밤이 되면 집은 도읍보다 고요하다. <b>연씨부인</b>은 환호가 아닌 환호 소리로부터 아들 셋을 막아 두었다. 등불이 적어져 대막리지조차 남편처럼 보일 때까지 기다린다."
+						"html": "At night the house is quieter than the city. <b>Yeon’s wife</b> has kept their three boys indoors since the banquet. She waits until the lamps are few enough that even a Supreme Commander looks like a husband.",
+						"ko": "밤이 되면 집은 도읍보다 고요하다. <b>연씨부인</b>은 연회 뒤로 세 아들을 줄곧 집 안에 붙잡아 두었다. 등불이 적어져 대막리지조차 남편처럼 보일 때까지 기다린다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#c4787a",
 						"person": "yeonwife",
 						"lines": [
-							"당이… 뭐라 하겠어요.",
-							"신라도, 백제도.",
-							"학살이라. 역적이라.",
-							"바깥에서 우리 겨레를 어떻게 부를지… 생각만 해도—"
+							"당에서는 뭐라고 하겠어요.",
+							"신라도, 백제도요. 학살이라고, 역적이라고 하겠지요…",
+							"밖에서 우리 겨레를 뭐라고 부를지… 생각만 해도 무서워요."
 						],
 						"en": [
-							"What will Tang say…",
-							"Silla too. Baekje.",
-							"Massacre. Traitor.",
-							"How those outside will name our people… even thinking of it—"
+							"What will they say in Tang?",
+							"Silla and Baekje too. They’ll call it a massacre. They’ll call you a traitor…",
+							"What they’ll call our people out there… it frightens me just to think of it."
 						]
 					},
 					{
@@ -15970,12 +15967,12 @@
 						"chip": "#d0362f",
 						"person": "gesomun",
 						"lines": [
-							"들어… 저들이 우리에 대해 뭐라 하든, 상관없어.",
-							"들리냐? 전혀. 제로. 한 톨도 아니야."
+							"들어 봐. 저놈들이 우리 보고 뭐라 하든 상관없어.",
+							"눈곱만큼도. 알아들어?"
 						],
 						"en": [
-							"Listen… it doesn’t matter what they’ll say about us.",
-							"Do you hear me? It doesn’t matter at all — zero. Not even one bit."
+							"Listen. I don’t care what they call us.",
+							"Not one speck. You hear me?"
 						]
 					},
 					{
@@ -15996,13 +15993,13 @@
 						"chip": "#d0362f",
 						"person": "gesomun",
 						"lines": [
-							"그러니 바깥에서 우리 겨레를, 우리 사는 법을 뭐라 하든 —",
-							"네 인생 단 일 초도 거기 쓰지 마. 제발.",
+							"그러니까 밖에서 뭐라고 떠들든,",
+							"그걸로 밤잠 설치지 마. 제발.",
 							"날 봐. 약속해."
 						],
 						"en": [
-							"So whatever they say out there about our people, our way of living —",
-							"not one second of your life. Please.",
+							"So whatever they say out there,",
+							"don’t you lose a night’s sleep over it. Please.",
 							"Look at me. Promise me."
 						]
 					},
@@ -16012,17 +16009,17 @@
 						"person": "yeonwife",
 						"lines": [
 							"…약속할게요.",
-							"다만 — 아이들이 자라면, 당신은 그 말도 해 줘요."
+							"대신 애들이 크면, 그 말은 당신이 직접 해 줘요."
 						],
 						"en": [
 							"…I promise.",
-							"Only — when the boys are grown, tell them that too."
+							"But when the boys are grown, you tell them that yourself."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "He nods. Outside, the drums keep time for a kingdom learning to live with its doors shut.",
-						"ko": "그는 끄덕인다. 바깥에서는, 문을 닫고 사는 법을 배우는 나라의 북이 박자를 맞춘다."
+						"html": "He nods. Outside, the drums are still going, and every gate in Pyongyang is shut.",
+						"ko": "그는 고개를 끄덕인다. 바깥에서는 북소리가 아직 이어지고, 평양의 성문은 모두 닫혀 있다."
 					}
 				],
 				"music": "The Five Blades"
@@ -16235,10 +16232,12 @@
 						"kind": "dialogue",
 						"chip": "#8fb3e0",
 						"lines": [
-							"영원의 대장군이라 부릅니다 — 연, 혹은 개소문. 평민들은 조정이 못 들을 때 평양의 붉은 해라고 하지요."
+							"연개소문이라는 자요. 동부 욕살이었고.",
+							"백성들은 영원의 대장군이라 부른다 하오. 평양의 붉은 해라나 뭐라나."
 						],
 						"en": [
-							"They call him the Eternal General — Yeon, or Gesomun. Commoners say Red Sun of Pyongyang when they think courts cannot hear."
+							"A man called Yeon Gesomun. He was their Eastern Commander.",
+							"Their common folk call him the Eternal General. The Red Sun of Pyongyang, or some such."
 						],
 						"person": "alchun"
 					},
@@ -16363,12 +16362,12 @@
 						"kind": "dialogue",
 						"person": "gesomun",
 						"en": [
-							"And call it Goguryeo.",
-							"Not Goryeo. I am not tired enough to shorten my own country."
+							"And it’s Goguryeo. Not Goryeo.",
+							"Don’t you go shortening my country’s name."
 						],
 						"lines": [
-							"그리고 고구려라 불러.",
-							"고려가 아니라. 내 나라를 줄일 만큼 지치지 않았다."
+							"그리고 고구려야. 고려 말고.",
+							"남의 나라 이름 함부로 줄이지 마라."
 						],
 						"chip": "#d0362f"
 					},
@@ -16377,24 +16376,26 @@
 						"person": "chunchu",
 						"chip": "#D8258C",
 						"en": [
-							"Goguryeo, then — if the chronicles insist.",
-							"Most men I meet have already shortened it."
+							"Goguryeo, then.",
+							"Long name or short, surely all that matters is that the country lasts."
 						],
 						"lines": [
-							"그럼 고구려로 하지요 — 사가가 고집한다면.",
-							"제가 만난 대부분은 이미 줄여 부릅니다."
+							"고구려라 하지요.",
+							"이름이야 길든 짧든, 나라만 오래가면 그만 아니겠습니까."
 						]
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#D8258C",
 						"lines": [
-							"이 땅의 위기를 기회 삼아 영토를 내놓으라 하실 수 있습니까?",
-							"저는 신하이니 어쩔 수 없지요. 처분만 기다리겠습니다. 그럼, 이만…"
+							"이웃집에 불이 나 물 한 동이 얻으러 왔더니, 땅문서부터 내놓으라 하십니까.",
+							"나라 땅은 신하가 마음대로 내줄 수 있는 것이 아닙니다.",
+							"처분을 기다리겠습니다. 그럼, 이만…"
 						],
 						"en": [
-							"You would take this land’s crisis as your chance, and demand territory?",
-							"As a subject I have no say, so I await your judgement. And now — I take my leave…"
+							"The neighbour’s house is on fire, he comes to borrow a bucket of water, and you ask him for the deed to his land?",
+							"A kingdom’s land is not a subject’s to give away.",
+							"I will await your judgement. And now, if you’ll excuse me…"
 						],
 						"person": "chunchu"
 					},
@@ -16403,12 +16404,12 @@
 						"chip": "#d0362f",
 						"person": "gesomun",
 						"lines": [
-							"남의 집에 들어와 값을 거절하고도 눈을 피하지 않는구나.",
-							"신라엔 자존심이 없나? 아니면 자네만 없나?"
+							"빌러 온 놈이 내 값은 마다하고, 눈도 안 깔아?",
+							"신라 놈들은 자존심이 남아도냐? 아니면 너만 그러냐?"
 						],
 						"en": [
-							"You come into another man’s house, refuse his price, and still look me in the eye.",
-							"Has Silla no pride left? Or is it only you?"
+							"You come begging, you turn down my price, and you won’t even lower your eyes?",
+							"Do Silla men have pride to spare? Or is it just you?"
 						]
 					},
 					{
@@ -16417,13 +16418,13 @@
 						"person": "chunchu",
 						"lines": [
 							"저는 자존심 같은 건 모릅니다.",
-							"자존심은 져도 되는 사람들의 장식품이지요.",
-							"저는 제가 어디로 가는지만 압니다. 이 방에는 그 앞을 막아설 만큼 큰 것이 없습니다."
+							"바둑도 판이 급하면 돌 몇 점은 버리고 두지요.",
+							"저는 제 목표만 압니다."
 						],
 						"en": [
 							"I know no such thing as pride.",
-							"Pride is a decoration for men who can afford to lose.",
-							"I know where I am going. There is nothing in this room large enough to stand in the way."
+							"Even in go, when the game turns desperate, you give up a few stones.",
+							"I know only my goal."
 						]
 					},
 					{
@@ -16440,7 +16441,7 @@
 					{
 						"kind": "p",
 						"html": "Outside the door, two Goguryeo soldiers have been listening the way soldiers listen — professionally, and for sport.",
-						"ko": "문 밖에서는 고구려 병사 둘이, 병사들이 듣는 방식으로 — 직업적으로, 그리고 심심풀이로 — 듣고 있다."
+						"ko": "문 밖에서는 고구려 병사 둘이 아까부터 엿듣고 있다. 병사들이 늘 그렇듯, 반은 일이고 반은 구경이다."
 					},
 					{
 						"kind": "dialogue",
@@ -16448,11 +16449,11 @@
 						"person": "goguard_a",
 						"lines": [
 							"너 들었어?",
-							"…대막리지 면전에 대고 그러고도, 눈 한 번을 안 깜빡여."
+							"…대막리지 앞에서 그러고도, 목소리 한 번 안 떨리더라."
 						],
 						"en": [
 							"Did you hear him?",
-							"…Said it to the Mangniji’s face. Didn’t blink once."
+							"…Said that to the Mangniji, and his voice didn’t even shake."
 						]
 					},
 					{
@@ -16460,10 +16461,10 @@
 						"chip": "#9a5c55",
 						"person": "goguard_b",
 						"lines": [
-							"신라 놈들은 염라대왕 앞에 폼 나게 끌려가고 싶을 때 저런 소리를 하지."
+							"신라 놈들은 죽으러 갈 때도 저렇게 큰소리치더라."
 						],
 						"en": [
-							"Silla men talk like that when they want to walk into Yumla’s court stylishly."
+							"Silla men always talk big on their way to die."
 						]
 					},
 					{
@@ -16542,10 +16543,10 @@
 						"chip": "#c98578",
 						"person": "dosuryu",
 						"lines": [
-							"비키시오. 옥으로."
+							"비켜라. 옥에 가둬."
 						],
 						"en": [
-							"Move. Prison."
+							"Out of the way. Lock him up."
 						]
 					},
 					{
@@ -16553,10 +16554,10 @@
 						"chip": "#9a5c55",
 						"person": "goguard_b",
 						"lines": [
-							"옥? 저승사자 코앞까지 갔다 온 놈이 얼굴은 그대로인데."
+							"옥이요? 저승 문턱까지 갔다 온 놈이 얼굴색 하나 안 변했는데."
 						],
 						"en": [
-							"Prison? The man brushed past the death escort and he still has that face on."
+							"Prison? He’s been to death’s door and back, and his face hasn’t even changed colour."
 						]
 					},
 					{
@@ -16569,17 +16570,17 @@
 						"chip": "#D8258C",
 						"person": "chunchu",
 						"lines": [
-							"(……좋다. 봤다. 본 것을 기억할 것이다.)"
+							"(……좋다. 도장은 찍었다.)"
 						],
 						"en": [
-							"(…Good. He looked. He will remember looking.)"
+							"(…Good. The seal is set.)"
 						],
 						"art": "Thought balloon."
 					},
 					{
 						"kind": "p",
-						"html": "What the guards do not know — what nobody in the corridor knows — is whose blade opened the hand. That answer waits in another man’s memory, for another meeting.",
-						"ko": "병사들이 모르는 것 — 복도의 그 누구도 모르는 것 — 은 누구의 칼이 그 손을 열었느냐다. 그 답은 다른 사람의 기억 속에, 다른 만남을 위해 기다려 둔다."
+						"html": "Nobody in the corridor knows whose blade opened that hand. Yeon knows, and says nothing.",
+						"ko": "복도의 누구도 그 손을 누구의 칼이 열었는지 모른다. 연은 알지만, 입을 다문다."
 					},
 					{
 						"kind": "p",
@@ -16821,10 +16822,10 @@
 						"kind": "dialogue",
 						"chip": "#c98578",
 						"lines": [
-							"네?"
+							"뭐?"
 						],
 						"en": [
-							"Sir?"
+							"What?"
 						],
 						"person": "dosuryu"
 					},
@@ -16846,12 +16847,12 @@
 						"kind": "dialogue",
 						"chip": "#c98578",
 						"lines": [
-							"신라의 도검이 누군데 영원의 대장군께서 이러십니까?",
-							"설마… 두렵진 않으시죠?"
+							"신라의 도검이 누군데, 영원의 대장군께서 이러셔?",
+							"설마… 겁나?"
 						],
 						"en": [
-							"Who is this Sword of Silla, that the Eternal General behaves so?",
-							"Surely… you are not afraid?"
+							"Who’s this Sword of Silla, then, to have the Eternal General acting like this?",
+							"Don’t tell me… you’re scared?"
 						],
 						"person": "dosuryu"
 					},
@@ -16905,7 +16906,7 @@
 						"ratio": 1.778,
 						"tone": "#d0362f",
 						"alt": "OTS lamp table: Gesomun and disguised Euija across timber — two king-breakers, Pyongyang night",
-						"at": "Your people killed a king of ours on that wall out there.",
+						"at": "Your Baekje killed",
 						"prompt": "Minimal iconic 16:9 still. OVER-SHOULDER two-shot at a lamp-lit timber table inside Pyongyang (place DNA from attached fortress). TWO people only — faces AND garments from attached portraits; invent NEW seated lean-in bodies, not fashion-plate clones. Gesomun #d0362f rim; Euija as the other plane. ONE device: the table as a hard dark wedge between them. Shallow DOF, creamy bokeh hall. Crushed blacks, one oil-lamp key. No army. No clutter dump. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark.",
 						"tempImage": "/temp/secret-meeting.jpg",
 						"refs": [
@@ -16949,7 +16950,7 @@
 						"id": "chunchu_hand_seal",
 						"ratio": 2.4,
 						"tone": "#7f1d1d",
-						"at": "steel through his own hand",
+						"at": "Stuck a knife",
 						"alt": "Chunchu driving a short blade through his own left hand before Yeon, raising the wound like a seal",
 						"prompt": "Cinematic historical illustration of Chunchu's proof — the pale scholar-prince in magenta court robes driving a short blade clean through his own left palm and raising the bleeding hand up like a seal, eyes hot, dry, almost joyful, never leaving Yeon Gesomun's face across the dim Goguryeo audience hall, the bearded Supreme Commander gone utterly still, blood threading down the pale wrist in lamplight, Three Kingdoms of Samhan / Tang era (7th century), scene: Euija & Gesomun, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"refs": [
@@ -16971,7 +16972,7 @@
 						"id": "sabi_dock_grudge",
 						"ratio": 3.333,
 						"tone": "#44403c",
-						"at": "Kings who forget docks",
+						"at": "We have the",
 						"alt": "Sabi dock at twilight — labourers with sacks, crescent moon, the grudge that feeds wars",
 						"tempImage": "/temp/sabi_dock_grudge.jpg",
 						"prompt": "Cinematic historical illustration of two Baekje dock labourers with burlap sacks on a stone pier at twilight, sailing ships and crescent moon, Sabi harbour, Three Kingdoms era, painterly digital art, no text, no watermark, --ar 10:3",
@@ -17069,7 +17070,7 @@
 						"kind": "dialogue",
 						"chip": "#e08a2e",
 						"lines": [
-							"벽은 왕과 귀족세력을 싹 다 갈아엎어버렸다지요? 그거 하나만은 조금 부럽네..."
+							"장군은 왕과 귀족세력을 싹 다 갈아엎어버렸다지요? 그거 하나만은 조금 부럽네..."
 						],
 						"person": "euija",
 						"en": [
@@ -17083,7 +17084,7 @@
 							"그쪽에서도 하면 되지 않소?"
 						],
 						"en": [
-							"Could you not do the same on your side?"
+							"Can’t you just do the same over there?"
 						],
 						"person": "gesomun"
 					},
@@ -17098,18 +17099,20 @@
 						"person": "euija",
 						"en": [
 							"Look here — I am the king myself.",
-							"General Gesomun—",
-							"I would be called a tyrant and killed the next day, ah."
+							"General Gesomun can get away with that, but—",
+							"Me, I’d be called a tyrant and dead the next day. Honestly."
 						]
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#d0362f",
 						"lines": [
-							"그대들이 저 바깥 성벽에서 우리 임금을 죽였소. 이 방에서도 보이는 저기서."
+							"당신네 백제가 우리 임금을 죽였소. 바로 저 성벽에서.",
+							"여기서도 보이지."
 						],
 						"en": [
-							"Your people killed a king of ours on that wall out there. You can see it from this room."
+							"Your Baekje killed our king. On that wall, right there.",
+							"You can see it from here."
 						],
 						"person": "gesomun"
 					},
@@ -17200,14 +17203,14 @@
 						"chip": "#d0362f",
 						"person": "gesomun",
 						"lines": [
-							"이 땅은 그냥 흙이 아니오.",
+							"명분? 나는 그런 거 만들 필요 없소.",
 							"고구려는 <b>태양신의 피를 이은 성스러운 임금</b>이 세운 나라요.",
-							"성왕. 해모수의 아들. 하늘에서 내려온 줄기요."
+							"해모수의 아들이오. 하늘에서 내려온 분이오."
 						],
 						"en": [
-							"This land is not just dirt.",
+							"Justification? I don’t need to make one up.",
 							"Goguryeo is the land of the <b>holy king, descended from the sun god</b>.",
-							"The Holy King. Son of Haemosu. A line that came down from heaven."
+							"Son of Haemosu. He came down from heaven."
 						]
 					},
 					{
@@ -17234,14 +17237,14 @@
 						"chip": "#d0362f",
 						"person": "gesomun",
 						"lines": [
-							"비웃지 마시오.",
-							"그는 하늘에서 내려왔다. 활로 나라를 열었다.",
-							"그 피가 — 이 겨레의 뼈다."
+							"웃지 마시오.",
+							"그분은 진짜 하늘에서 내려왔어. 활 하나로 나라를 세웠고.",
+							"이 땅 사람들은 다 그 피야."
 						],
 						"en": [
-							"Do not laugh.",
-							"He came down from heaven. He opened a kingdom with a bow.",
-							"That blood — is the bone of this 겨레."
+							"Don’t laugh.",
+							"He really did come down from heaven. He built a kingdom with one bow.",
+							"Everyone on this land carries that blood."
 						]
 					},
 					{
@@ -17249,14 +17252,14 @@
 						"chip": "#e08a2e",
 						"person": "euija",
 						"lines": [
-							"아, 물론. 활 잘 쏘는 사내는 하나 있었겠지.",
-							"나머지는 백성 줄 세우려고 지은 이야기고.",
-							"농부를 무릎 꿇리는 데는, 칼보다 태양신이 싸게 먹히거든."
+							"아, 그래그래. 활 잘 쏘는 사내야 하나 있었겠지.",
+							"나머지는 백성들 줄 세우려고 지어낸 얘기고.",
+							"농사꾼 무릎 꿇리는 데는 칼보다 해님이 싸게 먹히거든! 하하!"
 						],
 						"en": [
-							"Oh, certainly. There was probably a man who shot well.",
-							"The rest is a story for keeping people in line.",
-							"To make a farmer kneel, a sun god is cheaper than a sword."
+							"Oh, sure, sure. There was a man who could shoot, I don’t doubt it.",
+							"The rest is a story to keep the people in line.",
+							"Want a farmer on his knees? A sun god comes cheaper than a sword! Ha!"
 						]
 					},
 					{
@@ -17264,18 +17267,18 @@
 						"chip": "#d0362f",
 						"person": "gesomun",
 						"lines": [
-							"…그대 궁궐은 그렇게 가르치는군.",
-							"나는 들에서 자랐소. 들에서 들은 건 — 거짓이 아니오."
+							"…궁에서 곱게 자란 양반들은 다 그렇게 말하지.",
+							"나는 변방에서 컸소. 거기선 아무도 성왕을 비웃지 않소."
 						],
 						"en": [
-							"…So that is what your palace teaches.",
-							"I grew up in the marches. What the marches tell — is not a lie."
+							"…Men raised soft in palaces all say that.",
+							"I grew up on the frontier. Nobody there laughs at the Holy King."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "Neither man yields. The room keeps both versions: a bowman who founded a country — and a heaven that may or may not have sent him.",
-						"ko": "둘 다 양보하지 않는다. 방 안에는 두 버전이 남는다 — 나라를 연 활잡이, 그리고 그를 보냈을 수도 있고 아닐 수도 있는 하늘."
+						"html": "Neither man yields.",
+						"ko": "둘 다 물러서지 않는다."
 					},
 					{
 						"kind": "p",
@@ -17309,14 +17312,14 @@
 						"chip": "#e08a2e",
 						"lines": [
 							"이보게, 나는 한 나라의 왕일세. 왕은 사람이 아니야.",
-							"죽을 자리까지 다 정해 두고 왔고, 바깥에도 미리 일러 두었네.",
+							"죽을 자리도 미리 봐 두고 왔고, 사비에도 다 일러 두고 왔네.",
 							"나를 죽여 봐야, 더 젊고 더 성난 백제왕이 하나 앉을 뿐이지."
 						],
 						"person": "euija",
 						"en": [
 							"Listen — I am the king of a country. A king is not a man.",
-							"I made my arrangements even for death, and gave warning abroad beforehand.",
-							"Kill me and all you get is a newer, angrier King of Baekje on the throne."
+							"I picked my place to die before I came, and left word with everyone in Sabi.",
+							"Kill me, and all you get is a younger, angrier King of Baekje."
 						]
 					},
 					{
@@ -17335,14 +17338,12 @@
 						"chip": "#e08a2e",
 						"person": "euija",
 						"lines": [
-							"신라에는 «노비는 사람 수에 넣지 않는다»는 말이 있다더군.",
-							"우습지 않소? 맨 아래도 사람이 아니고, 맨 위도 사람이 아니야.",
-							"사람인 것들은 전부 그 사이에 끼어 있고."
+							"신라 놈들은 노비를 사람 수에 안 넣는다더군.",
+							"하하! 그럼 맨 밑하고 맨 위가 한 패로구먼. 둘 다 사람이 아니니!"
 						],
 						"en": [
-							"They have a saying in Silla — that slaves are not counted as people.",
-							"Funny, is it not? The bottom is not a person, and the top is not a person either.",
-							"Everyone who gets to be a person is wedged in between."
+							"In Silla, I hear, they don’t count slaves as people.",
+							"Ha! Then the top and the bottom are in it together. Neither one’s a person!"
 						]
 					},
 					{
@@ -17364,12 +17365,12 @@
 						"kind": "dialogue",
 						"person": "euija",
 						"en": [
-							"We have our own mouth — the White River under Sabi.",
-							"Clan berths stacked like teeth. Cut Danghangseong and Silla starves for partners; keep our river and we eat either way."
+							"We have the White River below Sabi.",
+							"Cut Danghangseong, and Silla starves with its sea road shut while we eat our fill."
 						],
 						"lines": [
-							"우리에겐 우리 하구가 있다 — 사비 아래 백강.",
-							"가문 선석이 이빨처럼 겹쳐 있지. 당항성을 끊으면 신라는 짝이 굶고, 우리 강만 지키면 우리는 어느 쪽이든 먹는다."
+							"우리야 사비 아래 백강이 있지.",
+							"당항성만 끊으면, 신라는 바닷길이 막혀 굶고 우리는 배불리 먹는 거야."
 						],
 						"chip": "#e6c76a"
 					},
@@ -17377,12 +17378,12 @@
 						"kind": "dialogue",
 						"person": "gesomun",
 						"en": [
-							"You sound like a harbour clerk.",
-							"Good. Kings who forget docks start wars they cannot feed."
+							"A king, and you talk like a harbour clerk.",
+							"Fine. Danghangseong."
 						],
 						"lines": [
-							"항구 서기 같구나.",
-							"좋다. 부두를 잊는 임금은, 먹일 수 없는 전쟁을 시작한다."
+							"왕이라는 양반이 항구 서기 같은 소리를 하네.",
+							"좋소. 당항성."
 						],
 						"chip": "#d0362f"
 					},
@@ -17425,19 +17426,19 @@
 						"kind": "dialogue",
 						"chip": "#e08a2e",
 						"lines": [
-							"춘추라… 누군지는 몰라도, 그렇게 쌓아 두는 자는 만만치 않지.",
-							"허나 남에게 무릎 꿇는 자는 두렵지 않소이다."
+							"춘추라… 원한을 쌓아 두는 놈이면 만만치는 않겠군.",
+							"허나 남한테 무릎 꿇고 비는 놈은 하나도 안 무섭네. 하하!"
 						],
 						"person": "euija",
 						"en": [
-							"Chunchu… whoever he is, a man who stores things up like that is no easy sort.",
-							"But I do not fear a man who kneels to others."
+							"Chunchu… a man who hoards a grudge is never an easy one.",
+							"But a man who begs on his knees? He doesn’t frighten me at all. Ha!"
 						]
 					},
 					{
 						"kind": "p",
-						"html": "For a moment Yeon’s eyes go somewhere else — to a door, to a hand, to a stare that did not ask to be liked.",
-						"ko": "잠깐, 연의 눈이 다른 곳으로 간다 — 문과, 손과, 호감을 바라지 않던 눈빛으로."
+						"html": "Yeon is quiet for a moment.",
+						"ko": "연은 잠시 말이 없다."
 					},
 					{
 						"kind": "flashback",
@@ -17446,8 +17447,8 @@
 						"blocks": [
 							{
 								"kind": "p",
-								"html": "After the territory talk the room had gone quiet in the wrong way. Yeon had asked if the man had no pride. The answer had been worse than no.",
-								"ko": "영토 이야기가 끝난 뒤 방은 잘못된 방식으로 조용해졌다. 연이 자존심이 없느냐고 물었다. 대답은 없다는 것보다 나빴다."
+								"html": "After the talk of land had gone nowhere, Yeon had asked the man about his pride.",
+								"ko": "땅 이야기가 틀어진 뒤, 연은 그 사내에게 자존심을 물었다."
 							},
 							{
 								"kind": "dialogue",
@@ -17464,20 +17465,20 @@
 							},
 							{
 								"kind": "p",
-								"html": "Then Chunchu had reached to his own belt, drawn a short blade, and driven it through his own left hand — clean, deliberate, eyes never leaving Yeon’s face — and held the wound up like a seal.",
-								"ko": "그때 춘추는 제 허리에서 짧은 칼을 빼어, 제 왼손을 스스로 찔렀다 — 말쑥하고 고의적으로, 눈은 한 번도 연의 얼굴에서 떼지 않은 채 — 그리고 그 상처를 도장처럼 들어 올렸다."
+								"html": "Then Chunchu had drawn a short knife from his belt and driven it through his own left hand, never once taking his eyes off Yeon’s face. He had held the wound up like a seal.",
+								"ko": "그때 춘추는 허리춤에서 짧은 칼을 뽑아 제 왼손을 꿰뚫었다. 눈은 한 번도 연의 얼굴에서 떼지 않았다. 그러고는 그 상처를 도장처럼 들어 보였다."
 							},
 							{
 								"kind": "dialogue",
 								"chip": "#D8258C",
 								"person": "chunchu",
 								"lines": [
-									"제가 저를 얼마까지 쓸 수 있는지, 이것입니다.",
-									"자존심을 묻지 마십시오. 무엇을 망가뜨릴 각오인지 물으십시오."
+									"보셨습니까.",
+									"제 값은 제가 매깁니다."
 								],
 								"en": [
-									"This is how much of myself I will spend.",
-									"Do not ask me for pride. Ask me what I am willing to ruin."
+									"Did you see?",
+									"I set my own price."
 								]
 							},
 							{
@@ -17493,8 +17494,8 @@
 							},
 							{
 								"kind": "p",
-								"html": "Yeon remembers the stare more than the blood. Hot, dry, almost joyful. The stare of a man who had decided the room would believe him, and had paid in advance.",
-								"ko": "연은 피보다 그 눈빛을 더 오래 기억한다. 뜨겁고, 건조하고, 거의 기쁘기까지 한. 방이 자기를 믿게 되리라 결정한 사람의 눈빛. 값을 먼저 치른 사람의 눈빛."
+								"html": "Yeon remembers the stare longer than the blood. It had looked almost happy.",
+								"ko": "연은 피보다 그 눈빛을 더 오래 기억한다. 거의 즐거워 보이던 눈빛이었다."
 							}
 						]
 					},
@@ -17503,14 +17504,14 @@
 						"chip": "#d0362f",
 						"person": "gesomun",
 						"lines": [
-							"그 춘추란 자…",
-							"제 손을 제 칼로 뚫어서 내 귀를 열더군.",
-							"그런 눈을 한 사람을 하나 더 만났소."
+							"그 춘추란 놈…",
+							"제 손을 제 칼로 쑤시더군. 내 눈앞에서.",
+							"그런 눈을 한 놈은 딱 하나 더 봤소."
 						],
 						"en": [
 							"That Chunchu…",
-							"He put steel through his own hand to make me listen.",
-							"I have met one other man with eyes like that."
+							"Stuck a knife through his own hand. Right in front of me.",
+							"I’ve seen eyes like that on one other man."
 						]
 					},
 					{
@@ -17577,10 +17578,12 @@
 						"kind": "dialogue",
 						"chip": "#e0b155",
 						"lines": [
-							"나는 사람을 모으는 재주가 있소. 공은 사람을 줄이는 재주가 있고."
+							"하하! 내가 원래 사람 모으는 재주가 있소.",
+							"공은 줄이는 재주가 있고."
 						],
 						"en": [
-							"I have a gift for gathering people. You have a gift for reducing them."
+							"Ha! I’ve always had a knack for gathering people.",
+							"And you have a knack for thinning them out."
 						],
 						"person": "euija"
 					},
@@ -18021,11 +18024,13 @@
 						"chip": "#e08a2e",
 						"lines": [
 							"이 바보야 — 김유신이 삼한 최강의 칼이야…!",
-							"연개소문, 계백 장군 — 다 비키라고 해. 아니면 계백에게 그 칭호가 아직 다툼 중이라고 해. 웃지 않을 거다."
+							"연개소문이고 계백이고 다 비키라 그래.",
+							"…아, 계백한테는 내가 이 말 했다고 하지 마라."
 						],
 						"en": [
 							"You fool — Kim Yushin is the Greatest Blade of Samhan…!",
-							"Yeon Gesomun, General Gyebek — tell them all to stand aside. Or tell Gyebek the title is still disputed. He will not laugh."
+							"Yeon Gesomun, Gyebek, the lot of them can step aside.",
+							"…Ah, and don’t tell Gyebek I said that."
 						],
 						"person": "euija"
 					},
@@ -18037,7 +18042,7 @@
 					{
 						"kind": "p",
 						"html": "In Sabi markets they spit when they say Sword of the Divine Country. In Surabol they toast it. In both cities someone always adds, quietly, that <b>Hundred-Victories Gyebek</b> has not yet been measured against him — and until Yellow Mountain, the title Greatest Blade of Samhan remains a tavern argument with two correct answers.",
-						"ko": "사비 장터에선 <b>신국의 검</b>이라 하면 침을 뱉는다. 서라벌에선 축배를 든다. 두 도시 모두에서 누군가는 조용히 덧붙인다 — <b>백승계백</b>이 아직 그와 재어지지 않았고, 황산 전까지 삼한 최강의 칼은 정답이 둘인 주점 논쟁이라고."
+						"ko": "사비 장터에선 <b>신국의 검</b>이라는 말만 나와도 침을 뱉는다. 서라벌에선 그 이름으로 축배를 든다. 그리고 두 도시 어디서든 누군가 꼭 조용히 덧붙인다. <b>백승계백</b>은 아직 그와 겨뤄 본 적이 없다고. 그러니 황산 전까지, 삼한 최강의 칼이 누구냐는 술자리 논쟁에는 정답이 둘이다."
 					},
 					{
 						"kind": "dialogue",
@@ -18082,12 +18087,12 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"en": [
-							"You came with a question, or you came because the hill opened.",
-							"Either is fine. Sit down before you fall in again. And take the rest off. I want the question from a bare man."
+							"You again.",
+							"Sit down before you fall in again. The rest comes off too. Then I’ll hear the question."
 						],
 						"lines": [
-							"질문을 들고 왔든, 언덕이 열려서 왔든.",
-							"둘 다 괜찮아요. 다시 빠지기 전에 앉아요. 그리고 남은 것도 벗어요. 질문은 벗은 몸에서 들을래요."
+							"또 왔네요.",
+							"또 빠지기 전에 앉아요. 남은 것도 벗고요. 질문은 그다음에 들을게요."
 						]
 					},
 					{
@@ -18095,12 +18100,14 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"en": [
-							"Three things.",
-							"The northern door. The queen’s count. How long I may stay."
+							"I have three questions.",
+							"What Goguryeo will do. How best to serve Her Majesty.",
+							"…And how long I may stay here."
 						],
 						"lines": [
-							"세 가지요.",
-							"북쪽 문. 여왕의 수. 얼마나 있어도 되는지."
+							"여쭐 것이 세 가지 있습니다.",
+							"고구려가 어찌 나올지. 폐하를 어찌 도와야 할지.",
+							"…그리고 제가 여기 얼마나 있어도 되는지."
 						]
 					},
 					{
@@ -18108,12 +18115,12 @@
 						"chip": "#e0783a",
 						"person": "golhwa",
 						"en": [
-							"Stay is not a number, marshal.",
-							"Sit. Unnie will do the other two. I’ll do the one she pretends isn’t counsel."
+							"How long can you stay? Oh, that’s adorable.",
+							"Sit. Unnie can answer the first two. The last one’s mine."
 						],
 						"lines": [
-							"남는 건 숫자가 아니야, 원수.",
-							"앉아. 나머지 둘은 언니가 해. 언니가 충고가 아니라고 하는 건 내가 할게."
+							"얼마나 있어도 되냐고? 아, 귀여워.",
+							"앉아. 앞에 둘은 언니가 대답할 거고, 마지막 건 내가 할게."
 						]
 					},
 					{
@@ -18130,8 +18137,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Hyullé does not speak. She has already warmed the far ledge. Her eyes are on his mouth while Narim answers the north. He will ride before I finish a sentence.",
-						"ko": "혈레는 말이 없다. 이미 먼 턱을 데워 두었다. 나림이 북쪽을 답하는 동안 눈은 그의 입에. 문장 끝내기 전에 탈 거야.",
+						"html": "Hyullé does not speak. She has already warmed the far ledge, and while Narim answers the question about the north her eyes stay on his mouth. At the rate she talks, he will be on his horse before she finishes a sentence.",
+						"ko": "혈레는 말이 없다. 벌써 먼 쪽 바위턱을 데워 두었고, 나림이 북쪽 일을 답하는 동안 눈은 줄곧 그의 입에 가 있다. 그녀 말 속도로는, 문장 하나 끝내기도 전에 그는 말에 올라 있을 것이다.",
 						"nsfw": true
 					},
 					{
@@ -18139,14 +18146,16 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"en": [
-							"Yeon’s door is a guest-door only from one side.",
-							"The queen’s count is the one they will not let her finish. Bring her the west in numbers. Do not stand in front of the chair.",
+							"Expect nothing from the north. Yeon has no intention of helping Silla.",
+							"The queen will have enemies to the end. Bring her fortresses from the west, as many as you can.",
+							"And never stand in front of her throne. Always behind it.",
 							"Take what you need. Leave before Golhwa asks you to stay. She will ask."
 						],
 						"lines": [
-							"연의 문은 한쪽에서만 손님 문이에요.",
-							"여왕의 수는 끝내게 두지 않는 수예요. 서쪽을 숫자로 가져와요. 의자 앞에 서지 말아요.",
-							"필요한 것만 가져가요. 골화가 남으라 하기 전에 가요. 할 테니까."
+							"북쪽은 기대하지 마요. 연은 신라를 도울 생각이 없어요.",
+							"여왕 곁엔 끝까지 적이 있을 거예요. 서쪽 성을 가져다줘요, 하나라도 더.",
+							"그리고 왕좌 앞엔 서지 마요. 늘 뒤에 서요.",
+							"필요한 것만 가져가요. 골화가 남으라 하기 전에 가요. 할 테니까요."
 						]
 					},
 					{
@@ -18154,7 +18163,7 @@
 						"chip": "#5fad6e",
 						"person": "narim",
 						"lines": [
-							"앉으려고도 할 거야. 경고는 그중 하나만 하는 거고."
+							"올라앉으려고도 할 거예요. 경고는 그중 하나만 하는 거고요."
 						],
 						"en": [
 							"She will also try to sit on you. I’m only warning you about one of those."
@@ -18189,12 +18198,12 @@
 						"chip": "#4a8fe0",
 						"person": "yushin",
 						"en": [
-							"Guest-door. Numbers. Behind the chair. Leave before stay.",
-							"I have the three answers. That is enough."
+							"…Thank you.",
+							"I’ll be going now."
 						],
 						"lines": [
-							"손님 문. 숫자. 의자 뒤. 남기 전에 떠남.",
-							"답 셋이 있소. 그걸로 충분하오."
+							"…감사합니다.",
+							"이만 가 보겠습니다."
 						]
 					},
 					{
@@ -18205,7 +18214,7 @@
 							"자네 이름만 들어도 우리 애들이 밥을 안 먹어."
 						],
 						"en": [
-							"Yushin, my friend~~",
+							"Brother Yushin~~",
 							"My men stop eating at the sound of your name."
 						],
 						"person": "euija"
@@ -18240,12 +18249,12 @@
 						"kind": "dialogue",
 						"chip": "#D8258C",
 						"lines": [
-							"형님… 원한은 제 것입니다. 압니다.",
-							"그런데 뭔가 다른 것이 움직이고 있고, 그건 제가 움직이는 게 아닙니다."
+							"『춘추』에 이르기를, 아홉 대가 지나도 원수는 갚는 법이라 했습니다.",
+							"제 원한은 아직 식지도 않았습니다."
 						],
 						"en": [
-							"Brother… the grudge is mine. I know that.",
-							"But something else is moving, and it is not me moving it."
+							"The Spring and Autumn Annals say a wrong may be avenged even nine generations on.",
+							"Mine hasn’t even had time to cool."
 						],
 						"person": "chunchu"
 					},
@@ -18527,16 +18536,16 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Epilogue · Part I. Chang’an. The Second Emperor turns a name over on his tongue — the first syllable of Part II.",
-						"ko": "에필로그 · 제1부. 장안. 제2황제가 이름 하나를 혀에 굴린다 — 제2부의 첫 음절."
+						"html": "Epilogue · Part I. Chang’an. The Second Emperor turns a name over on his tongue.",
+						"ko": "에필로그 · 제1부. 장안. 제2황제가 이름 하나를 혀에 굴린다."
 					},
 					{
 						"kind": "diagram",
 						"diagram": "tang-departments",
 						"step": "machine",
 						"title": "Tang court · 당 조정",
-						"caption": "Emperor above the Three Departments and Six Ministries — the grammar Chunchu will copy and exceed.",
-						"ko": "황제 아래 삼성과 육부 — 춘추가 본따 더할 문법."
+						"caption": "The emperor above the Three Departments and Six Ministries: the system Chunchu will one day copy.",
+						"ko": "황제 아래 삼성과 육부. 훗날 춘추가 본뜰 제도다."
 					},
 					{
 						"kind": "dialogue",
