@@ -1176,7 +1176,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'The patriotism paradox: a man of the periphery — Gaya’s last princely blood — who becomes Silla’s most loyal sword, the model old-stock soldier and general. Stoic, still human; the marshal every True Bone girl invents a husband for, and the one man who will not look back. Deeply romantic, and in love with Dukman in a way he never makes cheap — eyes only for the queen he cannot have. Lifelong sparring partner to Bidam — one year younger, 108–108 — the confrontation at Radiance hurts because the score was always even, and the blood never was. Hwarang to the bone: elite-trained, beautiful in the way the order demands, with forms the yard still names after him.',
 		voice:
-			'The traditional male lead: steady, few words, earnest, protective. Yushin says the important thing plainly and once (“Stand behind me.” “I’ll go.”), then acts; his warmth shows in what he does, never in speeches. He argues from the yard and the field, from what he saw and what it will cost, and leaves wordplay to Chunchu. Dry humour with Chunchu, old-rival banter with Bidam, restraint with Dukman: the love never gets said and leaks out in a pause or a “Your Majesty—”. Shy and polite in the steam cavern, one-word orders in battle. Any line of his that could be carved on a monument should go. Korean: 하게체 to Chunchu and his juniors (자네), 하오체 to Bidam and his peers, 존댓말 to the queen and his elders; 반말 slips out only when a friendship cracks.',
+			'The traditional male lead: steady, few words, earnest, protective. Yushin says the important thing plainly and once (“Stand behind me.” “I’ll go.”), then acts; his warmth shows in what he does, never in speeches. He argues from the yard and the field, from what he saw and what it will cost, and leaves wordplay to Chunchu. Dry humour with Chunchu, old-rival banter with Bidam, restraint with Dukman: the love never gets said and leaks out in a pause or a “Your Majesty—”. Shy and polite in the steam cavern, one-word orders in battle. Any line of his that could be carved on a monument should go. Korean: 하게체 to Chunchu and his juniors (자네), 해라체 to his nephew Bupmin and the yard boys, 하오체 to Bidam and his peers, 존댓말 to the queen and his elders; 반말 slips out only when a friendship cracks.',
 		personality: ['traditional male lead', 'stoic romantic', 'few words', 'protective', 'Hwarang marshal', 'eyes only for the queen'],
 		arc: 'Grandson of the prince who surrendered Golden Gaya, Yushin is True Bone by grant — forever the man from the edge who out-loves the centre. He already knows the steam cavern his father found: Narim, Golhwa, and Hyullé keep only Kims — 김, steam and surname in the same breath — and he rides there for counsel, not discovery. Bidam names him foreigner at Radiance and tells him blood is inevitable; after the tenth day Yushin whispers the same line back when Alchun objects to annihilating Bidam’s house — Surabol Son, Gurema’s line — turning Bidam’s heritage logic against the clan that raised him. Marshal of the Hwarang for the length of the reigns he serves, High Councillor after Bidam, and Supreme General once Pyongyang is open, he trains Chunchu’s son Bupmin in the Five Principles after Daeya; conqueror of forty fortresses, the name that opens Yeon’s prison door; he marries his sister to Chunchu, holds Sunduk as she dies, faces Gyebek at the Yellow Mountain, and outlives almost everyone he swore himself to.',
 		blade: 'Ring-pommel fish sword — Gaya fish on the pommel, Silla blue in the fuller.',
@@ -2702,6 +2702,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		tagline: 'One of the two men outside Yeon’s door — comedy until the blood.',
 		quote: "Funny until it isn’t — then stand.",
+		voice: 'Door-guard gossip: rumours, dried-fish bets, double-takes. Breathless when frightened, and prays. Korean: 반말 with the other guard, plain 합쇼체 upward.',
 		aliases: ['Gate Guard', 'Goguryeo guard']
 	},
 	{
@@ -3054,6 +3055,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Sadaham’s sworn friend of the First Class — died of illness; the vow outlived him by seven days.',
 		quote: 'If I die first — you already know.',
 		nature: 'The quieter half of the first class: less sung than Sadaham, equally bound. Samguk Sagi names him 무관랑 (武官郎); later mouths sometimes say Mugeun. The chronicle gives him almost no speeches and one death — illness after the year Great Gaya fell — and that is enough, because Sadaham followed.',
+		voice: 'Quiet and curt. Says the vow plainly, once. Korean: 반말 with Sadaham.',
 		arc: 'Sworn 사우 (死友) with Sadaham from boyhood. After the Gaya campaign he falls ill and dies. Sadaham takes no food for seven days and is dead at seventeen. The yard still tells the pair as the first class’s bill: a Hwarang who outlives his vow is only a boy with a nice coat.',
 		blade: 'Ring-pommel companion sword — unnamed in the minutes; remembered because the other hung his up.',
 		events: [
@@ -3085,6 +3087,7 @@ export const PEOPLE: Person[] = [
 		died: 643,
 		tagline: 'The minister who told the emperor the truth two hundred times and lived.',
 		quote: "When I am gone, there will be no one left to tell you no.",
+		voice: 'Blunt remonstrator: no flattery, and says no even when dying. Korean: formal 합쇼체.',
 		arc: 'The mirror the emperor said he lost when the minister died. His death in 643 removes the last voice against the Goguryeo war.',
 		events: [{ year: 643, label: 'Dies; the emperor mourns his living mirror.' }],
 		career: [
@@ -3102,6 +3105,8 @@ export const PEOPLE: Person[] = [
 		born: 596,
 		died: 658,
 		tagline: 'The court diarist at the foot of Wei Zheng’s deathbed, writing down everything the emperor says.',
+		voice:
+			'Court diarist and remonstrating minister. Asks the question the emperor wants asked, objects once and politely, and is a little breathless reading out the month’s reports. Korean: formal 합쇼체 to the emperor.',
 		career: [
 			{ title: 'Remonstrance Counsellor', korean: '간의대부', hanja: '諫議大夫', org: 'tangcourt', note: 'keeps the court diary' }
 		],
@@ -3118,6 +3123,8 @@ export const PEOPLE: Person[] = [
 		born: 616,
 		tagline: 'Told a farmer the Son of Heaven was calling — and sent him to history.',
 		quote: 'Talent needs its hour. This is the hour.',
+		voice:
+			'Brisk farmer’s wife. Turns her husband’s excuses back on him and sends him off before he can talk himself out of it. Korean: short 해요체 to her husband.',
 		arc: 'Xue Rengui’s wife, née Liu — named in the Xin Tangshu, not given a personal name in the Zhengshi. Folklore and jingju later call her Liu Yingchun (柳迎春) and park her in a cold kiln (汾河灣, 武家坡-adjacent cycles). When he meant to rebury his ancestors in Longmen poverty, she named the hour: Taizong wanted fierce generals for Liaodong. Without her sentence there is no white coat, no ji, no eastern command.',
 		events: [{ year: 645, label: 'Urges Xue Rengui off the Longmen field to Zhang Shigui’s muster.' }],
 		firstLine: { en: 'I’ll shut the door.', ko: '문은 내가 닫아요.' },
@@ -3238,6 +3245,7 @@ export const PEOPLE: Person[] = [
 		died: 669,
 		tagline: 'The Blue Dragon: the old marshal who served both dragon and beast musters, and finally took Pyongyang.',
 		quote: 'Siege is weather. Wait for the season.',
+		voice: 'Old marshal reporting to the throne: dry, few words. Korean: -옵니다 throughout.',
 		arc: 'Xu Shiji, granted the imperial Li; later Li Ji, the 世 dropped for Taizong’s taboo. Taizong’s Blue Dragon in 645 — Liaodong Fortress under the emperor — and Gaozong’s Blue Dragon still, the only banner that answers both the Four Dragons and the Four Beasts. He commands the last campaign; Pyongyang falls in 668. Real-world figure: 徐世勣 / 李世勣 / 이세적 (594–669).',
 		events: [
 			{ year: 645, label: 'Takes Liaodong Fortress under the emperor — Blue Dragon of the Four Dragons.' },
@@ -4131,6 +4139,7 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-go',
 		tagline: 'Took five thousand horse onto ground he never looked at — eighteen thousand lost by dusk.',
 		quote: '…I did not look at the ground.',
+		voice: 'Proud king undone: few words, a plain admission. Korean: 반말.',
 		arc: 'Eleventh king of Goguryeo. When the Wei regent Guanqiu Jian marched in 244, Dongcheon answered with cavalry pride instead of scouts — the Yangmaek plain swallowed his host. Hwando burned; he fled east in borrowed robes while an officer walked out wearing the crown and died in his place.',
 		events: [
 			{ year: 209, label: 'Succeeds his father Sangno as king.' },
@@ -4744,7 +4753,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Wall that stopped an emperor — refused Yeon, refused Tang, held anyway.',
 		quote: "You will never be crazier than we are.",
 		voice:
-			'Plain and defiant: soldier’s banter with his men, rage in short bursts at the emperor, wry about the siege. Korean: 반말 to his men and to the enemy alike.',
+			'Plain and defiant: soldier’s banter with his men, rage in short bursts at the emperor, wry about the siege. Korean: 반말 to his men and to the enemy in a fight, wry 하오체 seeing the Tang off.',
 		arc: 'The chronicles never recorded his name; the people of Ansi simply called him the chief. He refuses to bow to the man who butchered the court, flies the old colours over his wall — and then defends that man’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. Only centuries later did writers give him a name: Yang Manchun.',
 		blade: 'Nameless wall sword — ring pommel worn smooth, no crest at all; the fortress was the signature.',
 		events: [{ year: 645, label: 'Holds Ansi against Taizong through a summer-long siege.' }],

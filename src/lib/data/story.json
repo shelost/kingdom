@@ -27291,10 +27291,10 @@
 						"kind": "dialogue",
 						"chip": "#8d8d95",
 						"lines": [
-							"쓰지도 않는다. 종이에도."
+							"쓰지도 않는다더군. 종이에도."
 						],
 						"en": [
-							"They don’t write it either. Not on paper."
+							"They don’t write it either, they say. Not even on paper."
 						],
 						"person": "herald"
 					},
@@ -27330,16 +27330,16 @@
 						"chip": "#c97a2e",
 						"person": "taizong",
 						"lines": [
-							"그러라고 자네를 20년이나 참아준 것 아닌가."
+							"그러라고 경을 20년이나 참아 준 것 아닌가."
 						],
 						"en": [
 							"Why else do you think I put up with you for twenty years."
 						],
 						"zh": [
-							"不然朕何苦容忍你二十年。"
+							"不然朕何苦容卿二十年。"
 						],
 						"zhLatn": [
-							"Bùrán zhèn hékǔ róngrěn nǐ èrshí nián."
+							"Bùrán zhèn hékǔ róng qīng èrshí nián."
 						]
 					},
 					{
@@ -27494,7 +27494,7 @@
 						"kind": "dialogue",
 						"chip": "#c97a2e",
 						"lines": [
-							"잠시만.",
+							"잠깐.",
 							"가이쑤웬…?"
 						],
 						"en": [
@@ -27570,20 +27570,24 @@
 						"speaker": "👑",
 						"lines": [
 							"내가 아직 가보지 않았잖아.",
-							"인생은 이론이 아니라, 실전이다."
+							"양제도 몸소 갔다가 나라를 잃었지.",
+							"…하지만 양제는 진왕이 아니었지."
 						],
 						"en": [
 							"Because I have not gone myself.",
-							"Life is not theory. It is practice."
+							"Emperor Yang went in person too, and lost his empire.",
+							"…But Emperor Yang was no Prince of Qin."
 						],
 						"person": "taizong",
 						"zh": [
 							"因為朕尚未親征。",
-							"人生非理論，乃實踐。"
+							"煬帝也曾親征，終至亡國。",
+							"……可煬帝不是秦王。"
 						],
 						"zhLatn": [
 							"Yīnwèi zhèn shàngwèi qīnzhēng.",
-							"Rénshēng fēi lǐlùn, nǎi shíjiàn."
+							"Yángdì yě céng qīnzhēng, zhōng zhì wángguó.",
+							"…Kě Yángdì búshì Qín Wáng."
 						]
 					},
 					{
@@ -27904,8 +27908,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The cloth on his back is plain yellow peasant hemp. Not a banner. Not the white armour the mountain will learn later. Just the cheapest dye the village still sells, the colour of millet at the wrong hour. He hoes. His wife, <b>Liu</b>, keeps the hut door.",
-						"ko": "등에 걸친 것은 평범한 노란 농부의 삼베다. 깃발이 아니다. 나중에 산이 배우게 될 흰 갑옷도 아니다. 마을이 아직 파는 가장 싼 물감, 잘못된 시각의 기장 빛. 그는 호미질한다. 아내 <b>유씨</b>가 흙집 문을 지킨다."
+						"html": "The cloth on his back is plain yellow peasant hemp, the cheapest dye the village still sells. He hoes. His wife, <b>Liu</b>, keeps the hut door.",
+						"ko": "등에 걸친 것은 마을에서 아직 파는 가장 싼 물감으로 들인, 평범한 노란 농부의 삼베다. 그는 호미질한다. 아내 <b>유씨</b>가 흙집 문을 지킨다."
 					},
 					{
 						"kind": "p",
@@ -27917,24 +27921,24 @@
 						"chip": "#e8e3d5",
 						"person": "xuerengui",
 						"lines": [
-							"봉분이… 아직이야.",
-							"흙이 모자란 게 아니라. 손이.",
-							"조서는 — 들었어. 들었는데."
+							"봉분을 아직 다 못 올렸어.",
+							"흙은 있는데, 나 혼자선 손이 모자라.",
+							"조서 얘기는… 들었어. 듣긴 들었는데."
 						],
 						"en": [
-							"The mounds… they’re not done.",
-							"Not the dirt. The hands.",
-							"The edict — I heard it. I did."
+							"I haven’t finished the mounds.",
+							"There’s earth enough. I just don’t have the hands.",
+							"The edict… I heard. I heard, all right."
 						],
 						"zh": [
-							"墳還沒圓。",
-							"不是缺土。是缺手。",
-							"詔書——聽見了。聽見了。"
+							"墳還沒築完。",
+							"土是夠的，就是我一個人，手不夠。",
+							"詔書的事……聽說了。聽是聽說了。"
 						],
 						"zhLatn": [
-							"Fén hái méi yuán.",
-							"Búshì quē tǔ. Shì quē shǒu.",
-							"Zhàoshū——tīngjiàn le. Tīngjiàn le."
+							"Fén hái méi zhù wán.",
+							"Tǔ shì gòu de, jiùshì wǒ yī gè rén, shǒu bù gòu.",
+							"Zhàoshū de shì… tīngshuō le. Tīng shì tīngshuō le."
 						]
 					},
 					{
@@ -27943,23 +27947,23 @@
 						"person": "xueliu",
 						"lines": [
 							"손 없다고 무덤이 기다려 주진 않아요.",
-							"조서는 기다려 주지도 않고.",
-							"당신은 호미가 아니라… 극을 들 사람이에요. 내가 아는 한."
+							"조서는 더 안 기다려 주고요.",
+							"당신, 그 극 괜히 헛간에 세워 둔 거 아니잖아요."
 						],
 						"en": [
 							"Mounds don’t wait because a man is short of hands.",
-							"And the edict doesn’t wait either.",
-							"You’re not a hoe. You’re a ji. As far as I can tell."
+							"And the edict waits even less.",
+							"You didn’t keep that ji in the shed for nothing."
 						],
 						"zh": [
 							"缺手，墳也不會等。",
 							"詔書更不會等。",
-							"你不是鋤。你是戟。就我看。"
+							"你那桿戟，不是白放在棚裏的。"
 						],
 						"zhLatn": [
 							"Quē shǒu, fén yě bù huì děng.",
 							"Zhàoshū gèng bù huì děng.",
-							"Nǐ búshì chú. Nǐ shì jǐ. Jiù wǒ kàn."
+							"Nǐ nà gǎn jǐ, búshì bái fàng zài péng lǐ de."
 						]
 					},
 					{
@@ -27967,24 +27971,20 @@
 						"chip": "#e8e3d5",
 						"person": "xuerengui",
 						"lines": [
-							"극은 헛간에 있어.",
-							"노란 옷은 여기 있고.",
-							"유씨. 내가 가면 — 이 문은."
+							"극은… 날도 안 세워 놨어.",
+							"유씨. 내가 가면, 밤에 이 문은 누가 닫아."
 						],
 						"en": [
-							"The ji is in the shed.",
-							"The yellow clothes are here.",
-							"Liu. If I go — this door."
+							"The ji… I haven’t even sharpened it.",
+							"Liu. If I go, who shuts this door at night?"
 						],
 						"zh": [
-							"戟在棚裏。",
-							"黃衣在這兒。",
-							"柳氏。我若走——這門。"
+							"那戟……刃都還沒磨。",
+							"柳氏。我若走了，夜裏這門誰來關？"
 						],
 						"zhLatn": [
-							"Jǐ zài péng lǐ.",
-							"Huángyī zài zhèr.",
-							"Liǔshì. Wǒ ruò zǒu——zhè mén."
+							"Nà jǐ… rèn dōu hái méi mó.",
+							"Liǔshì. Wǒ ruò zǒu le, yèlǐ zhè mén shéi lái guān?"
 						]
 					},
 					{
@@ -27993,8 +27993,8 @@
 						"person": "xueliu",
 						"lines": [
 							"문은 내가 닫아요.",
-							"당신은 문을 걱정하지 말고.",
-							"때를 만나야 빛이 나는 법이에요. 지금이 그 때면 — 가면 돼요."
+							"문 걱정은 하지 말고요.",
+							"때를 만나야 빛이 나는 법이에요. 지금이 그때면 — 가면 돼요."
 						],
 						"en": [
 							"I’ll shut the door.",
@@ -28014,8 +28014,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The chronicler does not invent her sentence. The <i>Xin Tangshu</i> already wrote it down, and it is sharper than anything a field would volunteer twice.",
-						"ko": "연대기는 아내의 말을 지어내지 않는다. <i>신당서</i>가 이미 적어 두었고, 밭이 두 번 입 밖으로 꺼내지 않을 만큼 날카롭다."
+						"html": "The chronicler does not invent her sentence. The <i>Xin Tangshu</i> already wrote it down.",
+						"ko": "연대기는 아내의 말을 지어내지 않는다. <i>신당서</i>가 이미 적어 두었다."
 					},
 					{
 						"kind": "quote",
@@ -28034,30 +28034,30 @@
 						"chip": "#e8e3d5",
 						"person": "xuerengui",
 						"lines": [
-							"…조상님. 조금만 기다려 주십시오.",
-							"이 극을 들고 돌아올 때까지요.",
-							"노란 옷은 — 여기 두고 갈게요."
+							"…조상님들, 조금만 더 기다려 주십시오.",
+							"돌아오면 봉분은 제대로 올려 드리겠습니다.",
+							"이 노란 옷은… 여기 걸어 두고 가겠습니다."
 						],
 						"en": [
 							"…Ancestors. Wait a little longer.",
-							"Until I come back carrying this ji.",
-							"The yellow clothes — I’ll leave them here."
+							"When I come home, I will raise your mounds properly.",
+							"I will hang the yellow clothes here until then."
 						],
 						"zh": [
-							"……列祖列宗。再稍待片刻。",
-							"直至我持此戟歸來。",
-							"黃衣——就留在這兒。"
+							"……列祖列宗，請再稍待些時日。",
+							"等孫兒回來，必把墳好好築起。",
+							"這身黃衣……就先掛在這兒。"
 						],
 						"zhLatn": [
-							"…Lièzǔ lièzōng. Zài shāo dài piànkè.",
-							"Zhízhì wǒ chí cǐ jǐ guīlái.",
-							"Huángyī——jiù liú zài zhèr."
+							"…Lièzǔ lièzōng, qǐng zài shāo dài xiē shírì.",
+							"Děng sūn'ér huílái, bì bǎ fén hǎohǎo zhù qǐ.",
+							"Zhè shēn huángyī… jiù xiān guà zài zhèr."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "He presents himself to general <b>Zhang Shigui</b> and signs his name under the Tang muster. The clerk writes <i>Xue Rengui</i>. The clerk does not look up. History will.",
-						"ko": "장군 <b>장사귀</b> 앞에 나가 당의 병적에 이름을 올린다. 서기는 <i>설인귀</i>라 적는다. 서기는 고개를 들지 않는다. 역사는 들 것이다."
+						"html": "He presents himself to general <b>Zhang Shigui</b> and signs his name under the Tang muster. The clerk writes <i>Xue Rengui</i> and does not look up.",
+						"ko": "장군 <b>장사귀</b> 앞에 나가 당의 병적에 이름을 올린다. 서기는 <i>설인귀</i>라 적고, 고개도 들지 않는다."
 					},
 					{
 						"kind": "quote",
@@ -28073,8 +28073,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Stages a few centuries later will not leave Liu in the hut. They will put her in a cold kiln and give her a name the official histories never wrote — <b>Liu Yingchun</b> — and a line that is opera, not Zhengshi. The chronicler files it as such.",
-						"ko": "몇 세기 뒤의 무대는 유씨를 흙집에 두지 않는다. 찬 가마에 넣고, 정사에 없는 이름 — <b>유영춘</b> — 을 붙이고, 정사가 아닌 창극의 한 줄을 준다. 연대기는 그렇게 적는다."
+						"html": "Stages a few centuries later will not leave Liu in the hut. They put her in a cold kiln, give her a name the official histories never wrote, <b>Liu Yingchun</b>, and give her a line of her own:",
+						"ko": "몇 세기 뒤의 무대는 유씨를 흙집에 두지 않는다. 찬 가마에 넣고, 정사에 없는 이름 <b>유영춘</b>을 붙이고, 그녀만의 대사 한 줄을 준다."
 					},
 					{
 						"kind": "quote",
@@ -28138,8 +28138,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Veterans spit and say the real argument is still ahead: not this eastern gate, but <b>Ansi</b>, where stone has already outlasted more emperors than the court will admit over wine.",
-						"ko": "늙은 병사들은 침을 뱉으며 말한다. 진짜 논쟁은 아직 앞이다: 이 동쪽 문보다, 술자리에서 조정이 인정하는 것보다 더 많은 황제를 돌이 이겨 낸 <b>안시</b>."
+						"html": "Veterans spit and say the real fight is still ahead, at <b>Ansi</b>, where the stone has outlasted more emperors than the court will admit over wine.",
+						"ko": "늙은 병사들은 침을 뱉으며, 진짜 싸움은 아직 남았다고 한다. <b>안시</b>다. 그 성의 돌은 조정이 술자리에서 인정하는 것보다 더 많은 황제를 버텨 냈다."
 					},
 					{
 						"kind": "p",
@@ -28151,13 +28151,13 @@
 						"chip": "#e05a3c",
 						"lines": [
 							"네놈은 그냥…",
-							"역사에 자비 없는 학살자로 남을 것이다…!",
-							"영혼이 있는 사람들은 당신을 절대로 숭배 안 해…!"
+							"피도 눈물도 없는 백정으로 역사에 남을 거다…!",
+							"사람 마음 가진 놈은 아무도 널 우러러보지 않아…!"
 						],
 						"en": [
 							"You will simply…",
-							"go down in history as a butcher without mercy…!",
-							"People with souls will never worship you…!"
+							"go down in history as a merciless butcher…!",
+							"No one with a heart will ever look up to you…!"
 						],
 						"person": "yangmanchun"
 					},
@@ -28165,17 +28165,17 @@
 						"kind": "dialogue",
 						"chip": "#c97a2e",
 						"lines": [
-							"역사에? 역사를 내가 쓰는데,",
-							"너는, 이름도 없는 오랑캐로 사라지고,",
-							"나는, 역사상 최고의 황제로 남게될 것이다.",
-							"화(華)를 밝히고, 이(夷)를",
-							"그것이, 나의 힘이다."
+							"역사에? 그 역사는 짐이 쓴다.",
+							"너는 이름도 없는 오랑캐로 사라지고,",
+							"짐은 역사상 가장 위대한 황제로 남으리라.",
+							"화(華)든 이(夷)든 고루 비추는 것—",
+							"그것이 짐의 힘이다."
 						],
 						"en": [
 							"History? I am the one writing it.",
 							"You will vanish, a nameless barbarian,",
 							"and I will remain the greatest emperor history has known.",
-							"To light up the civilised — and the savage—",
+							"To shine on the civilised and the savage alike—",
 							"that is my power."
 						],
 						"person": "taizong",
@@ -28198,12 +28198,12 @@
 						"kind": "dialogue",
 						"chip": "#e05a3c",
 						"lines": [
-							"화(華)? 이게 문명이니…?",
-							"짓밟고, 죽이고, 그 위에 올라서서 그걸 문명이라 부르는 거냐."
+							"화(華)? 이게 문명이냐…?",
+							"짓밟고, 죽이고, 그 시체 더미 위에 올라서는 게?"
 						],
 						"en": [
 							"Civilised? You call this civilisation…?",
-							"You trample them, you kill them, and then you stand on the pile and call it civilisation."
+							"Trampling them, killing them, standing on the pile of bodies?"
 						],
 						"person": "yangmanchun"
 					}
@@ -28295,8 +28295,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "By summer the farmer from Longmen is no longer a name on a muster roll. He is at Stallion Mountain, under the same Emperor who called him out of the yellow hemp.",
-						"ko": "여름이 되면 용문의 농부는 더 이상 병적의 이름 하나가 아니다. 노란 삼베에서 그를 불러낸 바로 그 황제 아래, 주필산에 있다."
+						"html": "By summer the farmer from Longmen is no longer a name on a muster roll.",
+						"ko": "여름이 되면 용문의 농부는 더 이상 병적의 이름 하나가 아니다."
 					},
 					{
 						"kind": "p",
@@ -28308,7 +28308,7 @@
 						"chip": "#c97a2e",
 						"speaker": "👑",
 						"lines": [
-							"내가 바로 <b>진지</b>다…!"
+							"짐이 곧 <b>선봉</b>이다…!"
 						],
 						"person": "taizong",
 						"en": [
@@ -28328,28 +28328,28 @@
 					},
 					{
 						"kind": "p",
-						"html": "In the Tang line a low officer decides the field needs a mark it cannot look away from. He puts on <b>white armour</b> — not for mourning, for visibility — hangs two bows at his waist, takes up the <b>fangtian ji</b>, and rides into the front so hard the relief army has to notice him or die without knowing why.",
-						"ko": "당진의 낮은 장교 하나가, 이 벌판에 눈을 떼지 못할 표식이 필요하다고 판단한다. <b>흰 갑옷</b>을 입는다 — 상중이 아니라, 보이려고 — 허리에 활 둘을 차고 <b>방천화극</b>을 들어, 구원군이 알아채거나 모른 채 죽게 되도록 선두로 달린다."
+						"html": "In the Tang line a low officer decides the field needs a mark it cannot look away from. He puts on <b>white armour</b> so that he will be seen, hangs two bows at his waist, takes up the <b>fangtian ji</b>, and rides into the front so hard the relief army has to notice him or die without knowing why.",
+						"ko": "당진의 낮은 장교 하나가, 이 벌판에 눈을 뗄 수 없는 표식이 필요하다고 판단한다. 눈에 띄라고 <b>흰 갑옷</b>을 입고, 허리에 활 둘을 차고, <b>방천화극</b>을 들고, 구원군이 그를 알아보든지 영문도 모른 채 죽든지 해야 할 만큼 세차게 선두로 달려 나간다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#e8e3d5",
 						"lines": [
-							"길을 비키시오.",
-							"안 비키면 — 극이 비킵니다."
+							"비켜라—!",
+							"안 비키면 베고 지나간다!"
 						],
 						"en": [
-							"Make a path.",
-							"If you will not — the ji will."
+							"Out of the way—!",
+							"Move, or I cut through!"
 						],
 						"person": "xuerengui",
 						"zh": [
-							"讓路。",
-							"若不讓——戟自會讓。"
+							"讓開——！",
+							"不讓，就殺過去！"
 						],
 						"zhLatn": [
-							"Ràng lù.",
-							"Ruò bù ràng——jǐ zì huì ràng."
+							"Ràngkāi——!",
+							"Bù ràng, jiù shā guòqù!"
 						]
 					},
 					{
@@ -28384,20 +28384,20 @@
 						"chip": "#4b78c9",
 						"lines": [
 							"설인귀라 하옵니다.",
-							"농부였던… 병사입니다."
+							"지난봄까지 용문에서 밭을 갈던 자이옵니다."
 						],
 						"en": [
 							"Xue Rengui, Your Majesty.",
-							"A soldier… who was a farmer."
+							"Until this spring he was ploughing a field in Longmen."
 						],
 						"person": "lishiji",
 						"zh": [
 							"薛仁貴，陛下。",
-							"一介……曾為農夫之兵。"
+							"至今春，猶在龍門耕田。"
 						],
 						"zhLatn": [
 							"Xuē Rénguì, Bìxià.",
-							"Yī jiè… céng wéi nóngfū zhī bīng."
+							"Zhì jīnchūn, yóu zài Lóngmén gēngtián."
 						]
 					},
 					{
@@ -28435,21 +28435,21 @@
 						"kind": "dialogue",
 						"chip": "#e8e3d5",
 						"lines": [
-							"농부가… 어찌 감히.",
-							"다만 이 극이, 폐하의 길을 조금 넓혀 드렸을 뿐입니다."
+							"황공하옵니다. 소인은 그저 농사꾼이옵니다.",
+							"길이 막혀 있기에… 조금 텄을 따름이옵니다."
 						],
 						"en": [
-							"A farmer… how could he dare.",
-							"This ji only widened Your Majesty’s road a little."
+							"Your Majesty is too kind. I am only a farmer.",
+							"The road was blocked… so I cleared a little of it."
 						],
 						"person": "xuerengui",
 						"zh": [
-							"農夫……安敢。",
-							"此戟不過略開陛下之路罷了。"
+							"惶恐。小人不過一介農夫。",
+							"前路受阻……小人只是略為開通罷了。"
 						],
 						"zhLatn": [
-							"Nóngfū… ān gǎn.",
-							"Cǐ jǐ bùguò lüè kāi Bìxià zhī lù bàle."
+							"Huángkǒng. Xiǎorén bùguò yī jiè nóngfū.",
+							"Qiánlù shòu zǔ… xiǎorén zhǐshì lüèwéi kāitōng bàle."
 						]
 					},
 					{
@@ -28459,8 +28459,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Fame is a short leash. Before the army even settles into the Ansi siege, Goguryeo stops trying to kill the man in white in the open and starts trying to keep him.",
-						"ko": "명성은 짧은 밧줄이다. 군이 안시 포위에 자리를 잡기도 전에, 고구려는 흰옷의 사내를 벌판에서 죽이려 하기보다 가두려 한다."
+						"html": "Before the army even settles into the Ansi siege, Goguryeo stops trying to kill the man in white in the open and starts trying to keep him.",
+						"ko": "군이 안시 포위에 자리를 잡기도 전에, 고구려는 흰옷의 사내를 벌판에서 죽이려 하기보다 가두려 한다."
 					},
 					{
 						"kind": "p",
@@ -28502,12 +28502,12 @@
 						"kind": "dialogue",
 						"chip": "#b07068",
 						"lines": [
-							"황제… 이쪽으로 온다.",
-							"오늘 밤, 이 성에. 성왕이시여, 굽어살피소서."
+							"황, 황제가… 이리로 옵니다!",
+							"오늘 밤, 바로 이 성으로요! …성왕이시여, 굽어살피소서."
 						],
 						"en": [
-							"The Second Emperor… is coming this way.",
-							"Tonight. To this fortress. Holy King, look down."
+							"The— the Second Emperor… he’s coming this way!",
+							"Tonight, to this fortress! …Holy King, look down on us."
 						],
 						"person": "goguard_a"
 					},
@@ -28520,21 +28520,21 @@
 						"kind": "dialogue",
 						"chip": "#e8e3d5",
 						"lines": [
-							"…폐하께서 오시기 전에.",
-							"내가 나가야겠군."
+							"…폐하께서 오신다.",
+							"그 전에 나가 있어야겠군."
 						],
 						"en": [
-							"…Before His Majesty arrives.",
-							"I will have to be out."
+							"…His Majesty is coming.",
+							"I had better be out before he arrives."
 						],
 						"person": "xuerengui",
 						"zh": [
-							"……陛下駕到之前。",
-							"我得出去。"
+							"……陛下要來了。",
+							"得在陛下駕到之前出去。"
 						],
 						"zhLatn": [
-							"…Bìxià jiàdào zhī qián.",
-							"Wǒ děi chūqù."
+							"…Bìxià yào lái le.",
+							"Děi zài Bìxià jiàdào zhī qián chūqù."
 						]
 					},
 					{
@@ -28574,26 +28574,26 @@
 						"chip": "#e8e3d5",
 						"lines": [
 							"폐하를 오래 기다리게 할 수 없었습니다.",
-							"사슬이… 무례해서요."
+							"잠시… 붙들려 있었을 뿐입니다."
 						],
 						"en": [
 							"I could not keep Your Majesty waiting.",
-							"The chains… were impolite."
+							"I was only… held up a little."
 						],
 						"person": "xuerengui",
 						"zh": [
 							"不敢讓陛下久候。",
-							"那些鎖鏈……太無禮了。"
+							"只是……被絆住了片刻。"
 						],
 						"zhLatn": [
 							"Bù gǎn ràng Bìxià jiǔ hòu.",
-							"Nàxiē suǒliàn… tài wúlǐ le."
+							"Zhǐshì… bèi bànzhù le piànkè."
 						]
 					},
 					{
 						"kind": "p",
-						"html": "The Second Emperor laughs once — short, relieved — and does not ask how. A sovereign who has to ask how has already lost the man.",
-						"ko": "황제는 짧게, 안도하며 한 번 웃고, 어떻게 했는지는 묻지 않는다. 어떻게를 물어야 하는 군주는 이미 그 사내를 잃은 것이다."
+						"html": "The Second Emperor laughs once — short, relieved — and does not ask how.",
+						"ko": "황제는 짧게, 안도하며 한 번 웃고, 어떻게 했는지는 묻지 않는다."
 					},
 					{
 						"kind": "p",
@@ -28607,7 +28607,7 @@
 						"lines": [
 							"가이쑤웬의 아들들이라.",
 							"너희 아비는 임금을 죽였다. 짐은 형제를 죽였고.",
-							"그러니 우리는 통하는 데가 있지."
+							"그러니 너희 아비와 짐은 통하는 데가 있지."
 						],
 						"en": [
 							"So. Gai Suwen’s sons.",
@@ -28630,22 +28630,22 @@
 						"chip": "#c97a2e",
 						"person": "taizong",
 						"lines": [
-							"제안을 하나 하지.",
-							"무릎을 꿇고 대당의 신하가 되겠다 하면, 둘 다 관작을 주마.",
+							"짐이 너희에게 은혜를 하나 베풀겠다.",
+							"무릎을 꿇고 대당의 신하가 되겠다 하면, 둘 다 관작을 내리마.",
 							"장안의 집, 비단, 이름. 고려에서는 평생 못 가질 것들이다."
 						],
 						"en": [
-							"Here is my offer.",
+							"I will show you both a kindness.",
 							"Kneel, call yourselves servants of the Great Tang, and I will give you both titles.",
 							"A house in Chang’an, silk, a name. Things Goryeo will never give you."
 						],
 						"zh": [
-							"朕有一議。",
+							"朕賜爾等一恩。",
 							"跪稱大唐臣子，朕賜爾二人官爵。",
 							"長安宅第、絲綢、名號。高麗永不能予者。"
 						],
 						"zhLatn": [
-							"Zhèn yǒu yī yì.",
+							"Zhèn cì ěr děng yī ēn.",
 							"Guì chēng Dà Táng chénzǐ, zhèn cì ěr èr rén guānjué.",
 							"Cháng'ān zháidì、sīchóu、mínghào. Gāolí yǒng bùnéng yǔ zhě."
 						]
@@ -28717,10 +28717,10 @@
 						"chip": "#9e3b32",
 						"person": "namgun",
 						"lines": [
-							"형님이 대신 맞았습니다."
+							"…형이 나 대신 맞았잖아."
 						],
 						"en": [
-							"You took it for me."
+							"…You took it for me."
 						]
 					},
 					{
@@ -29103,10 +29103,10 @@
 						"kind": "dialogue",
 						"chip": "#b45309",
 						"en": [
-							"They will not give us his name. Only the Wall that Stopped an Emperor — as if a wall could have a pulse."
+							"Ask the prisoners the chief’s name and they won’t give it. All you get is “the Wall that Stopped an Emperor.”"
 						],
 						"lines": [
-							"이름을 안 주더군. 황제를 막은 성벽이라니 — 벽에도 맥박이 있기라도 한 것처럼."
+							"포로들한테 성주 이름을 물어도 안 불어. 그저 ‘황제를 막은 성벽’이라고만 해."
 						],
 						"speaker": "Tang supply clerk",
 						"art": "Reaction panels: two Tang supply clerks at a tally table in the siege camp, under breath."
@@ -29116,11 +29116,11 @@
 						"chip": "#b45309",
 						"en": [
 							"And they say the Eternal General is standing behind him.",
-							"Just put it down in the books as “unfinished.”"
+							"Just leave his name blank."
 						],
 						"lines": [
 							"그 뒤엔 영원의 대장군이 버티고 있다더라.",
-							"장부엔 그냥 ‘미완’이라고 적어 둬."
+							"이름 칸은 그냥 비워 둬."
 						],
 						"speaker": "Another clerk",
 						"art": "Reaction panel: the second clerk, at the next table."
@@ -29134,13 +29134,13 @@
 								"kind": "dialogue",
 								"chip": "#d0362f",
 								"lines": [
-									"안시성... 그 놈이 아직도 살아있나.",
-									"감히 대막리지의 명령을 거부해?"
+									"안시성... 그놈이 아직도 살아 있단 말이지.",
+									"감히 내 명을 거역해?"
 								],
 								"speaker": "🔴",
 								"en": [
 									"Ansi… so that man is still alive.",
-									"He dares refuse the Supreme Commander’s order?"
+									"He dares defy my order?"
 								],
 								"person": "gesomun"
 							},
@@ -29382,13 +29382,13 @@
 						"kind": "dialogue",
 						"chip": "#d0362f",
 						"lines": [
-							"미친 놈...",
-							"그래도 할 일은 하네."
+							"하, 미친 놈...",
+							"그래도 제 할 일은 했군."
 						],
 						"speaker": "👑",
 						"en": [
-							"Madman…",
-							"Still — he does what must be done."
+							"Ha. Crazy bastard…",
+							"Still. He did his job."
 						],
 						"person": "gesomun"
 					},
@@ -29406,8 +29406,8 @@
 							"당신들은 절대로 우리보다 미치지는 못할 거요…!"
 						],
 						"en": [
-							"You may outnumber us. You may outthink us.",
-							"But hear this, you of the West —",
+							"I know you have the numbers. I know you’re clever, too.",
+							"But I’ll promise you one thing, gentlemen of the West —",
 							"you will never be crazier than we are…!"
 						],
 						"person": "yangmanchun",
@@ -29647,11 +29647,11 @@
 						"chip": "#4a8fe0",
 						"en": [
 							"Again.",
-							"A king for all who cannot hold a saddle is a poem, not a country."
+							"You want to be king for all, and you can’t even stay in the saddle?"
 						],
 						"lines": [
 							"다시.",
-							"안장도 못 잡는 모두를 위한 임금은 시이지, 나라가 아니다."
+							"모두를 위한 임금이 되겠다는 녀석이, 안장 위에서 버티지도 못하느냐."
 						]
 					},
 					{
@@ -29673,30 +29673,30 @@
 						"chip": "#4a8fe0",
 						"en": [
 							"Then make it true at seventeen.",
-							"The Hwarang do not train for your father’s cleverness. They train for the hour the cleverness runs out."
+							"Your father’s cleverness is no use to you here."
 						],
 						"lines": [
 							"그럼 열일곱에 참말로 만들어라.",
-							"화랑은 네 아비의 꾀를 위해 닦는 게 아니다. 꾀가 바닥날 시각을 위해 닦는다."
+							"여기선 네 아비 꾀가 아무 소용 없다."
 						]
 					},
 					{
 						"kind": "dialogue",
 						"person": "yushin",
 						"en": [
-							"We ride the eastern practice roads until the Fortress of Radiance looks small behind us.",
-							"Westward, Baekje’s Yellow Mountain pass is where their grain carts complain in dry weeks — learn a landscape before it learns your name."
+							"Tomorrow, the eastern practice road. We ride until the Fortress of Radiance behind us is the size of a thumbnail.",
+							"Then west, to the Yellow Mountain pass, where Baekje’s grain carts cross. We ride it until you know it with your eyes shut."
 						],
 						"lines": [
-							"명활산성이 작게 보일 때까지 동쪽 연무길을 달린다.",
-							"서쪽으로, 백제 황산 고개는 마른 주에 곡식 수레가 투덜대는 곳이다 — 지형이 네 이름을 배우기 전에 네가 지형을 배워라."
+							"내일은 동쪽 연무길이다. 명활산성이 손톱만 해질 때까지 달린다.",
+							"그다음은 서쪽 황산 고개. 백제 곡식 수레가 넘나드는 길이다. 눈 감고도 훤할 때까지 다닌다."
 						],
 						"chip": "#4a8fe0"
 					},
 					{
 						"kind": "p",
-						"html": "At dusk he gathers the flower youth under the eaves and speaks the <b>Five Principles</b> the way other houses recite ancestors — not as decoration, but as the only map that still works when bone rank fails. The boys mouth the words along with him, elbowing each other at <i>no retreat</i>, going quiet at <i>no needless killing</i>, each privately certain the Marshal is looking straight at him. He is looking at all of them.",
-						"ko": "해 질 녘 그는 처마 아래 꽃다운 소년들을 모으고 <b>세속오계</b>를 다른 집이 조상을 외듯 말한다 — 장식이 아니라, 골품이 실패할 때에도 남는 유일한 지도로. 소년들은 그를 따라 입을 움직인다. <i>임전무퇴</i>에서는 서로 팔꿈치를 찌르고, <i>살생유택</i>에서는 조용해지고, 저마다 장군이 바로 자기를 보고 있다고 남몰래 확신한다. 장군은 그들 모두를 보고 있다."
+						"html": "At dusk he gathers the flower youth under the eaves and speaks the <b>Five Principles</b> the way other houses recite ancestors. The boys mouth the words along with him, elbowing each other at <i>no retreat</i>, going quiet at <i>no needless killing</i>, each privately certain the Marshal is looking straight at him. He is looking at all of them.",
+						"ko": "해 질 녘 그는 처마 아래 꽃다운 소년들을 모으고 <b>세속오계</b>를 다른 집이 조상을 외듯 말한다. 소년들은 그를 따라 입을 움직인다. <i>임전무퇴</i>에서는 서로 팔꿈치를 찌르고, <i>살생유택</i>에서는 조용해지고, 저마다 장군이 바로 자기를 보고 있다고 남몰래 확신한다. 장군은 그들 모두를 보고 있다."
 					},
 					{
 						"kind": "dialogue",
@@ -29716,7 +29716,7 @@
 							"교우이신.",
 							"임전무퇴.",
 							"살생유택.",
-							"법민아 — 대야가 네 안에서 무엇을 부러뜨렸느냐."
+							"법민아 — 대야 때 너는 이 중에 무엇이 꺾였느냐."
 						]
 					},
 					{
@@ -29724,14 +29724,14 @@
 						"person": "munmu",
 						"chip": "#3fa9c9",
 						"en": [
-							"…Retreat.",
-							"I wanted to ride to the fortress myself. Mother held the gate.",
-							"If I am to be a king for all, I cannot be the boy who only watches roads."
+							"…No retreat.",
+							"I was going to ride to my sister. I had the horse out. Mother stood in the gate.",
+							"…So I watched the road. For days."
 						],
 						"lines": [
-							"…퇴각이오.",
-							"제가 성까지 달리고 싶었어요. 어머님이 문을 잡으셨지요.",
-							"모두를 위한 임금이 되려면, 길만 바라보는 아이여서는 안 됩니다."
+							"…임전무퇴입니다.",
+							"누나한테 가려고 했어요. 말까지 끌어냈는데, 어머님이 문을 막으셨어요.",
+							"…그래서 길만 봤어요. 며칠을요."
 						]
 					},
 					{
@@ -29739,14 +29739,12 @@
 						"person": "yushin",
 						"chip": "#4a8fe0",
 						"en": [
-							"Good.",
-							"Then see the country the way a Hwarang sees a field — who holds, who falters, who dies for a vow they meant.",
-							"I am marshal of this order. You will learn loyalty here before you learn how to sit on a throne."
+							"…Your mother was right.",
+							"Be at the stables before sunrise."
 						],
 						"lines": [
-							"좋다.",
-							"그럼 화랑이 벌판을 보듯 나라를 봐라 — 누가 버티고, 누가 흔들리고, 누가 뜻한 맹세를 위해 죽는지.",
-							"나는 이 무리의 원수다. 왕좌에 앉는 법을 배우기 전에, 여기서 충성을 배울 것이다."
+							"…네 어미가 옳았다.",
+							"해 뜨기 전에 마구간으로 나와라."
 						]
 					},
 					{
@@ -29759,12 +29757,12 @@
 						"person": "yushin",
 						"chip": "#4a8fe0",
 						"en": [
-							"Before your fathers were born, the first class had two.",
-							"Sadaham. Mugwan. They swore to die together. Then, the year Great Gaya fell, one of them kept the swear without asking the other."
+							"This was before your fathers were born.",
+							"In the first class there were Sadaham and Mugwan. They had sworn to die on the same day."
 						],
 						"lines": [
-							"너희 아비가 태어나기 전에, 제일기에 둘이 있었다.",
-							"사다함. 무관랑. 함께 죽기로 맹세했다. 그러고 대가야가 떨어진 해, 한 쪽이 상대에게 묻지 않고 맹세를 지켰다."
+							"너희 아비들이 태어나기도 전 일이다.",
+							"제일기에 사다함과 무관랑이 있었다. 같은 날 죽자고 맹세한 사이였지."
 						]
 					},
 					{
@@ -29803,8 +29801,8 @@
 							},
 							{
 								"kind": "p",
-								"html": "<b>Mugwan</b> died of illness not long after the campaign. Sadaham did not take food for seven days. He was seventeen. The order buried two headbands and kept the story, because a Hwarang who outlives his vow is only a boy with a nice coat.",
-								"ko": "<b>무관랑</b>은 전역이 끝난 지 얼마 되지 않아 병으로 죽었다. 사다함은 이레 동안 음식을 들지 않았다. 열일곱이었다. 화랑은 머리띠 둘을 묻고 이야기를 남겼다. 맹세보다 오래 사는 화랑은, 옷만 좋은 소년에 불과하므로."
+								"html": "<b>Mugwan</b> died of illness not long after the campaign. Sadaham did not take food for seven days. He was seventeen. The order buried two headbands and kept the story.",
+								"ko": "<b>무관랑</b>은 전역이 끝난 지 얼마 되지 않아 병으로 죽었다. 사다함은 이레 동안 음식을 들지 않았다. 열일곱이었다. 화랑은 머리띠 둘을 묻고 이야기를 남겼다."
 							}
 						]
 					},
@@ -29813,12 +29811,12 @@
 						"person": "yushin",
 						"chip": "#4a8fe0",
 						"en": [
-							"That is friends. Not a song.",
-							"If your vow is lighter than a meal, do not wear the headband."
+							"He was your age.",
+							"So don’t swear lightly."
 						],
 						"lines": [
-							"그게 벗이다. 노래가 아니다.",
-							"맹세가 밥보다 가벼우면 머리띠를 매지 마라."
+							"너희 나이였다.",
+							"그러니 맹세는 함부로 하지 마라."
 						]
 					},
 					{
@@ -29826,12 +29824,12 @@
 						"person": "yushin",
 						"chip": "#4a8fe0",
 						"en": [
-							"You will still say first class when your hair is grey. Our class. His class.",
-							"The Harmony Council is the yard with better chairs — almost every sleeve there once slept six to a hall."
+							"When your hair is grey you will still be calling each other “our class.”",
+							"Ask the old men on the Harmony Council. They still remember who snored."
 						],
 						"lines": [
-							"머리가 희어도 제일기라 말할 것이다. 우리 기. 그 기.",
-							"화백은 의자만 나은 연무장이다 — 그 소매의 거의가 한 방에 여섯으로 잤다."
+							"머리가 하얗게 세어도, 너희는 서로 ‘우리 기’ 하며 부를 거다.",
+							"화백 어른들한테 물어봐라. 누가 코를 골았는지 아직도 기억들 하신다."
 						]
 					}
 				]
@@ -29889,8 +29887,8 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Yushin posts <b>Bupmin</b> as junior Pajinchan under Kim Seonpum — a countryside season with a tide book instead of a yard. The quay does not care that he is a prince. The quay cares whether the sums close.",
-						"ko": "유신은 <b>법민</b>을 김선품 아래 파진찬 견습으로 보낸다 — 연무장 대신 조수 장부가 있는 지방 한 철. 항구는 그가 왕자인 것을 상관하지 않는다. 항구는 셈이 맞는지 상관한다."
+						"html": "Yushin posts <b>Bupmin</b> as junior Pajinchan under Kim Seonpum — a countryside season with a tide book instead of a yard.",
+						"ko": "유신은 <b>법민</b>을 김선품 아래 파진찬 견습으로 보낸다 — 연무장 대신 조수 장부가 있는 지방 한 철."
 					},
 					{
 						"kind": "p",
@@ -29918,61 +29916,65 @@
 						"kind": "dialogue",
 						"chip": "#C41E3A",
 						"lines": [
-							"…어디가.",
-							"아니 — / 가르쳐 주세요."
+							"…어디가요?",
+							"아니, 그게 아니라—",
+							"가르쳐 주세요."
 						],
 						"en": [
-							"…Where.",
-							"No — / Please show me."
+							"…Where?",
+							"No— I mean—",
+							"Please show me."
 						],
 						"person": "munmu"
 					},
 					{
 						"kind": "p",
-						"html": "She corrects the sum with a brush he was not supposed to steal. Warehouse lamp. Salt on the page. He watches her mouth instead of the numbers, and she lets him, once, because the tide will not wait for dignity.",
-						"ko": "그가 훔치면 안 되는 붓으로 그녀는 셈을 고친다. 창고 등. 페이지 위의 소금. 그는 숫자 대신 입을 보고, 그녀는 한 번 허락한다. 조수는 체면을 기다려 주지 않으니까."
+						"html": "She corrects the sum with a brush he was not supposed to steal. Warehouse lamp. Salt on the page. He watches her mouth instead of the numbers, and she lets him, once.",
+						"ko": "그가 훔치면 안 되는 붓으로 그녀는 셈을 고친다. 창고 등. 종이 위의 소금. 그는 숫자 대신 입을 보고, 그녀는 한 번 허락한다."
 					},
 					{
 						"kind": "p",
-						"html": "Rain finds the eave. They stand inside a hard rain-curtain with a wet ledger between them, and almost do the stupid thing, and do not — until there is a stolen brush between their mouths, and then they do.",
-						"ko": "비가 처마를 찾는다. 그들은 젖은 장부를 사이에 두고 단단한 빗줄기 커튼 안에 서서, 바보 같은 일을 거의 하고, 하지 않는다 — 훔친 붓이 입 사이에 놓일 때까지. 그리고 그때는 한다."
+						"html": "Rain finds the eave. They stand inside a hard rain-curtain with a wet ledger between them, and almost do the stupid thing, and do not.",
+						"ko": "비가 처마를 찾는다. 둘은 젖은 장부를 사이에 두고 장막처럼 쏟아지는 빗줄기 안쪽에 서서, 바보 같은 짓을 할 뻔하다가, 하지 않는다."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#e8a0bf",
 						"lines": [
-							"아버님이 기침하세요.",
-							"창고 그늘에서요.",
-							"…그래서 지금이 아니면 안 돼요.",
-							"조수가 들어오기 전에."
+							"아버지예요. 창고 그늘에서 기침하시는 거.",
+							"…그러니까 할 거면 지금 해요.",
+							"조수 들어오기 전에요."
 						],
 						"en": [
-							"Father is coughing.",
-							"From the warehouse shadow.",
-							"…Which is why it has to be now.",
+							"That’s my father. Coughing, back in the warehouse.",
+							"…So if you’re going to, do it now.",
 							"Before the tide comes in."
 						],
-						"person": "jayi"
+						"person": "jayi",
+						"art": "On the last line she starts to close the ledger."
 					},
 					{
 						"kind": "dialogue",
 						"chip": "#C41E3A",
 						"lines": [
-							"장부를 닫지 마세요.",
-							"닫으면 제가…",
-							"어디로 가야 할지 모릅니다."
+							"장부… 덮지 마세요.",
+							"덮으면 내일 또 올 핑계가 없잖아요."
 						],
 						"en": [
-							"Do not close the book.",
-							"If you close it I…",
-							"will not know where to go."
+							"The book— don’t close it.",
+							"If you close it, I’ve got no excuse to come back tomorrow."
 						],
 						"person": "munmu"
 					},
 					{
 						"kind": "p",
-						"html": "Seonpum coughs once from the dark and pretends he did not see a prince learning the harbour by kissing the girl who can count. Years later the court will name her Jayi. The quay already had the true name.",
-						"ko": "선품이 어둠에서 한 번 기침하고, 셈할 줄 아는 소녀에게 입 맞추며 항구를 배우는 왕자를 보지 못한 척한다. 여러 해 뒤 조정은 그녀를 자의라 부를 것이다. 항구는 이미 진짜 이름을 가지고 있었다."
+						"html": "For a moment there is a stolen brush between their mouths. Then there isn’t.",
+						"ko": "잠깐, 훔친 붓 한 자루가 두 입술 사이에 걸려 있다. 그러다 그것마저 없다."
+					},
+					{
+						"kind": "p",
+						"html": "Seonpum coughs once from the dark and pretends he did not see a prince learning the harbour by kissing the girl who can count.",
+						"ko": "선품이 어둠에서 한 번 기침하고, 셈할 줄 아는 소녀에게 입 맞추며 항구를 배우는 왕자를 보지 못한 척한다."
 					},
 					{
 						"kind": "scene",
@@ -29981,8 +29983,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Through the remaining years of Queen Sunduk — and into Jinduk’s quieter crown — Bupmin rides with the Hwarang. He does not become the best gyuku player in Surabol. He becomes the one who remembers why the game was invented. When the sentence <i>a king for all</i> finally fits a grown mouth, it already has dust on it.",
-						"ko": "선덕여왕의 남은 해 동안 — 그리고 진덕의 더 조용한 왕관 아래까지 — 법민은 화랑과 함께 말을 탄다. 서라벌 최고 격구수가 되지는 못한다. 그 대신, 왜 그 경기가 생겼는지를 기억하는 사람이 된다. <i>모두를 위한 임금</i>이라는 문장이 어른의 입에 맞을 때, 이미 먼지가 묻어 있다."
+						"html": "Through the rest of Queen Sunduk’s reign, and into Jinduk’s quieter one, Bupmin rides with the Hwarang. He never becomes the best gyuku player in Surabol. By the time the words <i>a king for all</i> fit his mouth, he is no longer sure what they mean.",
+						"ko": "선덕여왕의 남은 치세 동안, 그리고 진덕의 더 조용한 치세에 들어서까지, 법민은 화랑과 함께 말을 탄다. 서라벌 최고의 격구수는 끝내 되지 못한다. <i>모두를 위한 임금</i>이라는 말이 제 입에 맞을 무렵, 그는 그 말이 무슨 뜻인지 더는 확신하지 못한다."
 					},
 					{
 						"kind": "dialogue",
@@ -29990,11 +29992,13 @@
 						"chip": "#3fa9c9",
 						"en": [
 							"Marshal.",
-							"When I said king for all — did I mean every kingdom, or every person who bleeds for one?"
+							"When I said I’d be king for all. Who is “all”?",
+							"The kingdoms? Or the people who die for them?"
 						],
 						"lines": [
 							"대장군.",
-							"모두를 위한 임금이라 했을 때 — 모든 나라를 말한 겁니까, 아니면 하나를 위해 피 흘리는 모든 사람을 말한 겁니까."
+							"모두를 위한 임금이 되겠다고 했을 때요. 그 모두가 누굽니까?",
+							"나라들입니까? 아니면 그 나라를 위해 죽는 사람들입니까?"
 						]
 					},
 					{
@@ -30002,14 +30006,12 @@
 						"person": "yushin",
 						"chip": "#4a8fe0",
 						"en": [
-							"Ask the yard again tomorrow.",
-							"If the answer is only a speech, you are still six.",
-							"If it costs you a bruise — you are becoming Hwarang."
+							"…Ask me again tomorrow. On the yard.",
+							"Bring a practice sword."
 						],
 						"lines": [
-							"내일 연무장에 다시 물어라.",
-							"대답이 연설뿐이면 넌 아직 여섯이다.",
-							"멍이 값이면 — 화랑이 되어 가는 거다."
+							"…내일 연무장에서 다시 물어라.",
+							"목검 들고 나와라."
 						]
 					}
 				]
