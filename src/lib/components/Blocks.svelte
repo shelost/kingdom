@@ -206,6 +206,9 @@
 			<div class="verse" style:--vc={block.color}>
 				{#each block.lines as line, j (j)}
 					<span class="line">{line}</span>
+					{#if reading.lang !== 'ko' && block.en?.[j]}
+						<span class="line en sub">{block.en[j]}</span>
+					{/if}
 				{/each}
 			</div>
 		{:else if block.kind === 'table'}
