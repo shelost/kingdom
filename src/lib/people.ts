@@ -3138,7 +3138,7 @@ export const PEOPLE: Person[] = [
 		arc: 'Xue Rengui’s wife, née Liu — named in the Xin Tangshu, not given a personal name in the Zhengshi. Folklore and jingju later call her Liu Yingchun (柳迎春) and park her in a cold kiln (汾河灣, 武家坡-adjacent cycles). When he meant to rebury his ancestors in Longmen poverty, she named the hour: Taizong wanted fierce generals for Liaodong. Without her sentence there is no white coat, no ji, no eastern command.',
 		events: [{ year: 645, label: 'Urges Xue Rengui off the Longmen field to Zhang Shigui’s muster.' }],
 		firstLine: { en: 'I’ll shut the door.', ko: '문은 내가 닫아요.' },
-		lastLine: { en: 'If this is the hour — then go.', ko: '지금이 그 때면 — 가면 돼요.' },
+		lastLine: { en: 'If this is the hour — then go.', ko: '지금이 그때면 — 가면 돼요.' },
 		aliases: ['Lady Liu', '柳氏', '유씨', 'Liu Yingchun', '柳迎春', '유영춘']
 	},
 	{
