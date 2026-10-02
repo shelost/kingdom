@@ -6,13 +6,6 @@ Successfully generated **10 tasteful, cinematic romantic/intimate scenes** for t
 
 ## Images Generated
 
-### 1. **Gotaso and Pumsuk - Passionate Love** 
-`/img_gotaso_pumsuk_passion.png` (16:9)
-- **Scene**: Two lovers in close proximity, faces nearly touching, silhouetted against warm candlelight
-- **Theme**: Passionate love and deep longing through body language and dramatic lighting
-- **Added to**: 641 - Gotaso's Wedding
-- **References**: ch_gotaso.png, ch_pumsuk.png
-
 ### 2. **Forbidden Desire - Pumsuk's Longing**
 `/img_pumsuk_forbidden_desire.png` (16:9)
 - **Scene**: Stolen glances across architectural divide, separated by screens
@@ -27,23 +20,11 @@ Successfully generated **10 tasteful, cinematic romantic/intimate scenes** for t
 - **Added to**: 634 - The Summit
 - **References**: ch_chunchu.png
 
-### 4. **Wedding Night Anticipation**
-`/img_wedding_night_anticipation.png` (16:9)
-- **Scene**: Two figures on opposite sides of bridal chamber, red silk curtains between them
-- **Theme**: Symbolic union, nervous anticipation, threshold moment
-- **Added to**: 641 - Gotaso's Wedding
-
 ### 5. **Lovers' Parting Before War**
 `/img_lovers_parting_war.png` (16:9)
 - **Scene**: Warrior and beloved in emotional farewell embrace against dawn sky
 - **Theme**: Bittersweet parting, love and duty in conflict, desperation and tenderness
 - **Added to**: 642 - Daeya Fortress
-
-### 6. **Secret Midnight Meeting**
-`/img_secret_meeting_night.png` (16:9)
-- **Scene**: Two lovers meeting in hidden pavilion, hands intertwining through lattice screens under moonlight
-- **Theme**: Clandestine romance, secrecy, risk, passionate connection despite barriers
-- **Added to**: 641 - Gotaso's Wedding
 
 ### 7. **Wu Zetian's Seductive Power**
 `/img_wu_zetian_seduction_power.png` (4:3)

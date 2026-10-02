@@ -49,10 +49,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	],
 	'iron-will': [
 		{
-			parent: 'Daeya Fortress',
-			children: [{ title: 'The First Kim' }]
-		},
-		{
 			parent: 'Yeon’s Massacre',
 			children: [
 				{ title: 'Chunchu & Gesomun' },
@@ -75,7 +71,7 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		{
 			parent: 'The Hwarang',
 			children: [
-				{ title: 'Harbour Ledgers', label: 'A Girl from the Harbor', after: 'Flowering Youth' },
+				{ title: 'Harbour Ledgers', label: 'A Girl from the Harbor', after: 'Flowering Youth', expandScenes: true },
 				{
 					title: 'The Harmony Council',
 					label: 'The Three Eternal Hwarang',
@@ -131,17 +127,12 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 				{ title: 'Five Thousand' },
 				{ title: 'The Fifth Year' }
 			]
-		},
-		{
-			parent: 'The Three Loyalists',
-			children: [{ title: 'Onjo' }]
 		}
 	],
 	'fall-of-baekje': [
 		{
 			parent: 'Yellow Mountain Fields',
 			children: [
-				{ title: 'Dangun & Old Joseon' },
 				{ title: 'Sabi Palace' },
 				{ title: 'The Death of Buyeo Euija' },
 				{ title: 'The Seven Branched Sword' }
@@ -169,10 +160,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		}
 	],
 	'silla-tang-war': [
-		{
-			parent: 'The Protectorate',
-			children: [{ title: 'The Fall of Joseon' }, { title: 'Stone Gate' }]
-		},
 		{
 			parent: 'The Death of Kim Yushin',
 			children: [{ title: "The Wanggeom's Guest" }]
