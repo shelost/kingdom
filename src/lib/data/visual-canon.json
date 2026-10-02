@@ -1,5 +1,5 @@
 {
-	"about": "Visual source of truth for every GenerateImage still. Hand-authored facts only: look, dress, demeanor, carry, fighting, horse, eras, never. Derived at build time (do NOT copy here): portrait by year + binyeo + object board from src/lib/people.ts, character hex from CHARACTER_COLORS/COLOR in people.ts, sword tagline + pommel from src/lib/swords.ts, place board from src/lib/places.ts. Kingdom flag ref is derived from KINGDOMS in people.ts (flag_*.svg → flag_*.png via scripts/rasterize-flags.mjs); only the in-world banner text lives here. Build with: node scripts/visual-canon.mjs --year <Y> [--battle|--sword|--mounted|--flags] <ids…> place:<id> flag:<kingdom>. Any field may be a list of { from?, until?, text | id } to change by year; an era with \"redress\": true replaces the portrait's clothing and the base look/dress (face only). A place \"mood\" is that place's default light and hour.",
+	"about": "Visual source of truth for every GenerateImage still. Hand-authored facts only: look, dress, demeanor, presence (how the frame treats them — skipped on a redress era), carry, fighting, horse, eras, never. Derived at build time (do NOT copy here): portrait by year + binyeo + object board from src/lib/people.ts, character hex from CHARACTER_COLORS/COLOR in people.ts, sword tagline + pommel from src/lib/swords.ts, place board from src/lib/places.ts. Kingdom flag ref is derived from KINGDOMS in people.ts (flag_*.svg → flag_*.png via scripts/rasterize-flags.mjs); only the in-world banner text lives here. Build with: node scripts/visual-canon.mjs --year <Y> [--battle|--sword|--mounted|--flags] <ids…> place:<id> flag:<kingdom>. Any field may be a list of { from?, until?, text | id } to change by year; an era with \"redress\": true replaces the portrait's clothing and the base look/dress (face only). A place \"mood\" is that place's default light and hour.",
 	"armor": {
 		"common": "Battle armor: plates are METALLIC GRAY STEEL lamellar copied from the attached lamellar ref, cloth peeking at collar, sleeves, skirt, sash and plume-cord in the wearer's color only. Ignore labels and watermarks on armor refs. Not Japanese kabuto, not fantasy plate, not a gold-painted suit.",
 		"silla": {
@@ -222,15 +222,15 @@
 		},
 		"euija": {
 			"look": "Broad, bearded king; black hair in a topknot with a yellow-gold headband whose tails trail; heavy brows, cynical eyes.",
-		"dress": "Crimson robe with a dark charcoal collar and gold trim; a steel lamellar pauldron peeking at one shoulder.",
-		"eras": [
-			{
-				"from": 660,
-				"redress": true,
-				"text": "PRISONER IN THE TANG CAPITAL: broad bearded old king, heavy brows, cynical eyes. One plain undyed WHITE hemp robe and nothing else — no headband, no topknot, no crown, no gold, no crimson, no armor, no belt ornament, barefoot; his long black hair streaked grey hangs LOOSE and unbound past his shoulders; beard unkempt."
-			}
-		],
-		"demeanor": "Licensed wit: drinks, smirks, slumps on the throne, speaks in polished aphorisms. Fatalist.",
+			"dress": "Crimson robe with a dark charcoal collar and gold trim; a steel lamellar pauldron peeking at one shoulder.",
+			"eras": [
+				{
+					"from": 660,
+					"redress": true,
+					"text": "PRISONER IN THE TANG CAPITAL: broad bearded old king, heavy brows, cynical eyes. One plain undyed WHITE hemp robe and nothing else — no headband, no topknot, no crown, no gold, no crimson, no armor, no belt ornament, barefoot; his long black hair streaked grey hangs LOOSE and unbound past his shoulders; beard unkempt."
+				}
+			],
+			"demeanor": "Licensed wit: drinks, smirks, slumps on the throne, speaks in polished aphorisms. Fatalist.",
 			"armor": "baekje",
 			"fighting": "Tiger-ring sword is ceremonial; he barely draws it.",
 			"never": [
@@ -348,6 +348,7 @@
 			"look": "Bearded Tang emperor: black futou cap with an upright pin, thick black beard and moustache, fierce scowl; one hand flung out commanding.",
 			"dress": "Imperial yellow robe-cape over black brocade.",
 			"demeanor": "Commands; never asks. Conqueror's contempt that curdles at Ansi.",
+			"presence": "THE SON OF HEAVEN — every frame he is in bends around him. He is SHROUDED IN DARKNESS: the black of the hall gathers around him like a mantle, most of his body sinks into shadow, and the one hard key finds only the edge of his black futou, a cheekbone, the beard, the eyes and the gold thread of the yellow robe; often half or more of his face is lost in black. The camera sits BELOW his eyeline (low angle or worm’s-eye) and he is always placed HIGHER than anyone near him — on the dais, on a step, standing while others kneel or sit. He reads larger than life through lens and staging, not as a giant: broad shoulders, the robe spreading wide and heavy into the dark like a mountain, his shadow enormous on walls and floor. Unhurried, heavy stillness — never fidgeting, never casual, never a colleague at someone’s shoulder; when he smiles or laughs it is a predator’s ease, and the room goes quiet around it. Everyone else in frame is smaller, lower, less lit, turned toward him. The aura is darkness, scale and the hush around him — never a glow, never a halo, never rays behind his head.",
 			"eras": [
 				{
 					"until": 626,
@@ -524,7 +525,9 @@
 			"name": "Sun-Fox",
 			"ko": "해여우",
 			"owner": "haemosu",
-			"guides": ["yuhwa"],
+			"guides": [
+				"yuhwa"
+			],
 			"kind": "sun-fox, Haemosu's heat on foot",
 			"board": "/obj_haemosu_fox.png",
 			"look": "Large pale cream-white fox with long flowing fur and a full brush tail — match the board's animal, but ignore its orange glow outline: #f0b429 lives as real low sunlight on the fur, never a halo.",

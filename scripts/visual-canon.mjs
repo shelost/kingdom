@@ -148,6 +148,7 @@ function personBlock(id, opts, ctx) {
 	if (c?.dress && !redress) out.push(`Dress: ${c.dress}`);
 	for (const t of atYear(c?.eras, year)) if (t && !t.startsWith('/')) out.push(`Now: ${t}`);
 	if (c?.demeanor) out.push(`Demeanor: ${c.demeanor}`);
+	if (c?.presence && !redress) out.push(`Presence: ${c.presence}`);
 	if (c?.element) out.push(`Element: ${c.element}`);
 	if (c?.style) out.push(`Style: ${c.style}`);
 	if (c?.props) out.push(`Props: ${c.props}`);

@@ -1,18 +1,21 @@
 /**
- * Move `scene_<id>_<n>.png` from the Cursor assets folder into
- * `static/scene_<id>_<n>.jpg` and append it to that scene's `frames` in scenes.ts.
- * Usage: node scripts/.cache/install-scene-stills.mjs [n=2]
+ * Move `scene_<id>_<n>.(png|jpg)` from the Cursor assets folder into
+ * `static/scene_<id>_<n>.jpg` (centre-cropped to the house 2:1) and append it
+ * to that scene's `frames` in scenes.ts.
+ * Usage: node scripts/.cache/install-scene-stills.mjs [n=2] [ratio=2|native]
  */
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
+import { cropArgs, parseRatio } from '../crop-ratio.mjs';
 
 const ASSETS = '/Users/heewon/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/assets';
 const STATIC = path.resolve('static');
 const SCENES = path.resolve('src/lib/scenes.ts');
 
 const N = /^\d+$/.test(process.argv[2] ?? '') ? process.argv[2] : '2';
-const FILE_RE = new RegExp(`^scene_[\\w-]+_${N}\\.png$`);
+const RATIO = parseRatio(process.argv[3]);
+const FILE_RE = new RegExp(`^scene_([\\w-]+)_${N}\\.(png|jpe?g)$`);
 
 let text = fs.readFileSync(SCENES, 'utf8');
 const files = fs.readdirSync(ASSETS).filter((f) => FILE_RE.test(f));
@@ -20,22 +23,27 @@ const done = [];
 const missing = [];
 
 for (const file of files) {
-	const id = file.replace(/^scene_/, '').replace(new RegExp(`_${N}\\.png$`), '');
+	const id = file.match(FILE_RE)[1];
 	const marker = `\t\tid: '${id}',`;
 	const start = text.indexOf(marker);
 	if (start < 0) {
 		missing.push(id);
 		continue;
 	}
+	const source = path.join(ASSETS, file);
 	const out = `scene_${id}_${N}.jpg`;
-	execFileSync('sips', ['-s', 'format', 'jpeg', '-s', 'formatOptions', '84', path.join(ASSETS, file), '--out', path.join(STATIC, out)], { stdio: 'ignore' });
+	execFileSync(
+		'sips',
+		['-s', 'format', 'jpeg', '-s', 'formatOptions', '84', ...cropArgs(source, RATIO), source, '--out', path.join(STATIC, out)],
+		{ stdio: 'ignore' }
+	);
 
 	const nextScene = text.indexOf("\n\t\tid: '", start + marker.length);
 	const end = nextScene < 0 ? text.length : nextScene;
 	let block = text.slice(start, end);
 	const src = `/${out}`;
 	if (block.includes(`'${src}'`)) {
-		fs.rmSync(path.join(ASSETS, file));
+		fs.rmSync(source);
 		continue;
 	}
 	const multi = block.match(/frames: \[(\n[\s\S]*?)\n\t\t\]/);
@@ -56,7 +64,7 @@ for (const file of files) {
 		);
 	}
 	text = text.slice(0, start) + block + text.slice(end);
-	fs.rmSync(path.join(ASSETS, file));
+	fs.rmSync(source);
 	done.push(id);
 }
 

@@ -1,0 +1,68 @@
+[
+	{
+		"id": "jumong-needle-stable",
+		"entry": "Jumong",
+		"ratio": 1.778,
+		"tone": "#e8563f",
+		"at": "Put it in his tongue.",
+		"alt": "Night stable in Buyeo: Yuhwa holds out a needle between two fingers while Jumong, mid-brushstroke on the best horse, turns to stare at her",
+		"refs": ["/ch_jumong.png", "/ch_yuhwa.png", "/bn_yuhwa.png"],
+		"people": ["jumong", "yuhwa"],
+		"scene": "Minimal iconic 16:9 still. Over-shoulder two-shot inside a Buyeo royal stable at night: timber posts, straw, one hanging oil lamp. Sharp foreground: the dark flank and mane of a lean fine horse, soft in bokeh. Midground: YUHWA (face, white jeogori and garments from the attached portrait; hair ornament matches the attached binyeo ref) leaning on a stall post, holding out a single thin iron needle between two fingers, sly mother’s half-smile. Young JUMONG (face and red silk from the attached portrait, CLEAN-SHAVEN, no mustache, no facial hair) caught mid-brushstroke on the horse’s neck, turning to stare at her, laughing in disbelief. ONE device: the long dark stall partition cutting the frame diagonally, the lamp the only key. Jumong red #e8563f as the lamp’s warm bounce on his sleeve and the horse’s eye, NOT a glow aura. Crushed blacks, straw motes in the lamp shaft."
+	},
+	{
+		"id": "chunchu-rabbit-fable",
+		"entry": "Chunchu & Gesomun",
+		"ratio": 1.778,
+		"tone": "#D8258C",
+		"at": "Ever heard the one about the turtle and the rabbit?",
+		"alt": "Pyongyang cell: Seon Dohae pours wine under the barred window, Chunchu in the foreground with his bandaged left hand, listening",
+		"refs": ["/ch_chunchu.png", "/pl_pyongyang_fortress.png"],
+		"people": ["chunchu", "seondohae"],
+		"scene": "Minimal iconic 16:9 still. Over-shoulder from behind CHUNCHU (face and magenta court silk from the attached portrait) seated on a straw mat in a stone Goguryeo cell, his left hand wrapped in a blood-dark cloth resting on his knee, sharp in the foreground. Midground: SEON DOHAE, a plump middle-aged Goguryeo courtier in muted grey-blue silk and a small black court cap, sitting cross-legged, mid-story, tilting a wine jar into his own cup with a storyteller’s raised eyebrow. ONE device: a single small barred window high on the wall throwing one hard square shaft of moonlight onto the floor between them, two cups in the light, one untouched. Chunchu magenta #D8258C only as specular on his silk sleeve in that shaft, NOT a glow. Rough stone, packed earth, crushed blacks."
+	},
+	{
+		"id": "yushin-hanbyul-cheongwan-gate",
+		"entry": "Bidam’s Rebellion",
+		"ratio": 1.778,
+		"tone": "#c9a0b4",
+		"at": "with her lantern already lifted",
+		"alt": "Flashback: seventeen-year-old Yushin waking slumped in the saddle of his bay horse Hanbyul at Cheongwan’s gate, her paper lantern raised, her face glad",
+		"refs": ["/ch_kim_yushin_hwarang.png"],
+		"people": ["yushin", "cheongwan"],
+		"scene": "Minimal iconic 16:9 still, flashback night. Low worm’s-eye angle at a small Seorabeol courtyard gate: timber gate leaves, a grey giwa roof edge, a mud wall. A dark bay horse (HANBYUL) has stopped at the gate on its own; on its back a seventeen-year-old YUSHIN (face and Hwarang garments from the attached portrait, young, flushed, hair loose from sleep) is just jerking awake, slumped, one hand on the mane. In the open gate stands the courtesan CHEONGWAN, a beautiful young woman in a pale mauve silk jeogori and dark chima, holding up a round paper lantern, her face lit and glad to see him. ONE device: the lantern is the only light in the frame, a warm pool on her face and the horse’s muzzle; Yushin above in near darkness. Soft mauve #c9a0b4 in the lantern bounce on her silk, NOT a glow. Crushed blacks, night haze."
+	},
+	{
+		"id": "yushin-hangyul-forehead",
+		"entry": "Bidam’s Rebellion",
+		"ratio": 1.778,
+		"tone": "#2A5FB8",
+		"at": "This time I’m the one who brought you.",
+		"alt": "Grey dawn by Wolseong’s scorched ground: Yushin presses his forehead to the face of his white horse Hangyul, the halter off in his fist",
+		"refs": ["/ch_kim_yushin.png", "/pl_moon_palace.png"],
+		"people": ["yushin"],
+		"scene": "Intimate close 16:9 still. ECU profile two-shot: KIM YUSHIN (face and marshal garments from the attached portrait, fifty-two, weathered) presses his forehead against the long white face of his old horse HANGYUL, eyes shut, jaw clenched, the empty halter and rope hanging from his fist. The horse’s eye is open and calm, nose pushed into his chest. Behind them, out of focus in creamy bokeh: the grey stone of Wolseong’s west wall and a long black scorch on the ground, two blurred priests and a bronze basin. ONE device: the white horse’s face filling half the frame as a pale plane against the dark. Grey pre-dawn, one hard cold key; Yushin blue #2A5FB8 only as a sliver of cloth at his collar and its catch in the horse’s eye, NOT a glow aura. High contrast, grief, stillness."
+	},
+	{
+		"id": "yushin-hangyul-offering-wide",
+		"entry": "Bidam’s Rebellion",
+		"ratio": 2.39,
+		"tone": "#2A5FB8",
+		"at": "White goes down into the scorched black.",
+		"alt": "Wide: below Wolseong’s wall a long black scorch where the star fell, the white horse lying in it, a thin offering smoke rising, Yushin standing alone with his back turned",
+		"refs": ["/pl_moon_palace.png"],
+		"people": ["yushin", "chunchu"],
+		"scene": "Minimal iconic 2.39:1 still, extreme wide. Mise-en-scène: the real Wolseong palace wall at dawn (match the attached place ref: stone and earth rampart, grey giwa roofs above), a bare packed-earth field below it. ONE device: a long diagonal black scorch mark across the ground where the star fell, and inside it the white horse lying on its side, the only pure white in the frame, no blood shown. A single thin vertical thread of offering smoke rises from a small bronze basin beside it into a low grey sky. Lower third, tiny: YUSHIN standing alone with his back to the horse, sword hilt at his hip, a few paces off two tiny priests and Chunchu in magenta with heads bowed. Monumental emptiness, cold dawn haze, crushed shadows, one hard low key from the east; a sliver of blue #2A5FB8 on Yushin’s sleeve as the only accent. Not gory."
+	},
+	{
+		"id": "bidam-bisamun-smoke",
+		"entry": "Bidam’s Rebellion",
+		"ratio": 0.5625,
+		"tone": "#141C2E",
+		"at": "stand beside his own horse",
+		"alt": "Bidam on the Radiance lines with his hand on his horse Bisamun’s neck, beads put away, watching a thin smoke rise over Wolseong far off",
+		"refs": ["/ch_bidam_old.png", "/pl_radiance_fortress.png"],
+		"people": ["bidam"],
+		"scene": "Minimal iconic 9:16 still. Low over-shoulder from behind BIDAM (face and dark robes from the attached grey-haired portrait), standing in the horse lines below the Radiance fortress wall (match the attached place ref), one hand resting flat on the neck of his tall dark horse BISAMUN, his prayer beads tucked away in his sash. Far across the empty field, small and sharp, the Wolseong wall and one thin thread of offering smoke rising into a grey dawn. ONE device: the horse’s dark neck and Bidam’s shoulder as one black vertical mass on the left, the far smoke a pale line on the right. Navy #141C2E as the night-shadow in the folds of his robe and the specular on the horse’s coat, NOT a glow aura. Crushed blacks, one cold key, silence."
+	}
+]
