@@ -278,7 +278,6 @@ export const PLACES: Record<string, Place> = {
 		events: [
 			{ label: 'Seohyeon finds the lake; the three goddesses love the first Kim.' },
 			{ label: 'Yushin first finds the three in the steam; Narim sends the younger two away and is caught kissing him.' },
-			{ year: 642, label: 'After Daeya he returns for quiet counsel before the road north.' },
 			{ year: 647, label: 'Before Bidam’s tenth day — Seohyeon and Muryuk appear; “You are Kim Yushin.”' },
 			{ year: 673, label: 'Old, between paperwork wars, his father and grandfather visit once more.' },
 			{ year: 673, label: 'After Yushin’s death Munmu enters; Dangun names the wanggeom’s work.' }
@@ -777,7 +776,6 @@ export const MAP_MARKERS = Object.values(PLACES).filter((p) => !p.offMap);
 export const ENTRY_PLACE: Record<string, string> = {
 	// Part I
 	'Queen Sunduk': 'surabol',
-	'Jinheung, The Crescent Moon': 'gwansan',
 	'The Eight Great Clans': 'sabi',
 	'Gunchogo, The Hurricane': 'pyongyang',
 	'Ocean Trade': 'sabi',
@@ -791,7 +789,6 @@ export const ENTRY_PLACE: Record<string, string> = {
 	Steam: 'steam_cavern',
 	'Best of Both': 'steam_cavern',
 	'The Marshal\u2019s Steam': 'steam_cavern',
-	'Steam, Again': 'steam_cavern',
 	'Yeon’s Massacre': 'pyongyang',
 	'After the Knives': 'pyongyang',
 	'Chunchu & Gesomun': 'pyongyang',
@@ -825,7 +822,8 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'King Muyeol': 'surabol',
 	'Hyukgosé': 'surabol',
 	// Part III
-	'Gyebek’s Exile': 'mugun',
+	'Gyebek’s Exile': 'sabi',
+	'Turtle': 'mugun',
 	'Tamla, the Island of Oranges': 'mugun',
 	'Euija’s Coup': 'sabi',
 	'Euija’s Descent': 'sabi',
@@ -844,10 +842,11 @@ export const ENTRY_PLACE: Record<string, string> = {
 	'Pyongyang Fortress': 'pyongyang',
 	'Snake River': 'sasu',
 	'The Surrender of Tamla': 'mugun',
+	'Juryu Fortress': 'juryu',
 	'White River': 'baekgang',
 	'The Death of Yeon Gesomun': 'pyongyang',
 	'The Brothers’ Coup': 'pyongyang',
-	'Pyongyang, A': 'pyongyang',
+	'The Fall of Pyongyang': 'pyongyang',
 	'The Final Stand': 'pyongyang',
 	'Goguryeo Revival Society': 'surabol',
 	'Stone Gate': 'seokmun',

@@ -25,10 +25,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	jumong: [],
 	samhan: [
 		{
-			parent: 'Queen Sunduk',
-			children: [{ title: 'Jinheung, The Crescent Moon' }]
-		},
-		{
 			parent: 'The Eight Great Clans',
 			children: [{ title: 'Gunchogo, The Hurricane' }, { title: 'Ocean Trade' }]
 		},
@@ -92,7 +88,7 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 			children: [
 				{
 					title: 'Death of the Second Emperor',
-					after: 'Shimin & Chunchu',
+					after: 'On Gunhae',
 					expandScenes: true
 				}
 			]
@@ -105,52 +101,43 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	],
 	'fall-of-euija': [
 		{
-			parent: 'Gyebek’s Exile',
+			parent: 'Turtle',
 			children: [
-				{ title: 'Tamla, the Island of Oranges', label: 'Tamla' },
-				{ title: 'Big Star and Little Star' },
-				{ title: 'The Great Lady’s Apron', label: 'Sulmun & The Three Princes' },
-				{ title: 'Kangrim', label: 'Hallakgungi' },
-				{ title: 'Her Own Navel-String' },
-				{ title: 'The Girl Who Cut Her Hair' },
-				{ title: 'The Ox and the Iron Chest' },
-				{ title: 'The Ones That End in Stone' },
-				{ title: 'The Tribute of Oranges' }
+				{ title: 'Tamla, the Island of Oranges', label: 'Sulmun & The Three Princes' },
+				{ title: 'Big Star and Little Star' }
 			]
 		},
 		{
-			parent: 'Euija’s Descent',
+			parent: 'Her Own Navel-String',
+			children: [{ title: 'Black Rock' }]
+		},
+		{
+			parent: 'The Girl Who Cut Her Hair',
 			children: [
-				{ title: 'Euija’s Coup', label: 'The Coup' },
-				{ title: 'Black Rock', label: 'Nightmares' },
-				{ title: 'The Nine Plagues', label: 'Nine Omens' },
-				{ title: 'Five Thousand' },
-				{ title: 'The Fifth Year' }
+				{ title: 'The Ox and the Iron Chest' },
+				{ title: 'The Ones That End in Stone' },
+				{ title: 'Five Thousand' }
 			]
 		}
 	],
 	'fall-of-baekje': [
 		{
 			parent: 'Yellow Mountain Fields',
-			children: [
-				{ title: 'Sabi Palace' },
-				{ title: 'The Death of Buyeo Euija' },
-				{ title: 'The Seven Branched Sword' }
-			]
+			children: [{ title: 'Sabi Palace' }, { title: 'The Death of Buyeo Euija' }]
 		},
 		{
 			parent: 'The Death of Kim Chunchu',
 			children: [{ title: 'The Four Beasts' }]
-		},
-		{
-			parent: 'Baekje Restoration Society',
-			children: [{ title: 'White River' }]
 		}
 	],
 	'final-stand': [
 		{
 			parent: 'Snake River',
 			children: [{ title: 'The Surrender of Tamla', after: 'Yumla Defied' }]
+		},
+		{
+			parent: 'Juryu Fortress',
+			children: [{ title: 'The Seven Branched Sword' }, { title: 'White River' }]
 		},
 		{
 			parent: 'The Death of Yeon Gesomun',

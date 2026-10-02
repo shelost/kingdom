@@ -394,7 +394,7 @@ export const SCENES: Scene[] = [
 		id: 'white-river',
 		image: '/temp/gyebek-white-river.jpg',
 		frames: [
-			'/temp/white-river-aerial.jpg',
+			'/temp/baekgang-river.jpg',
 			'/temp/gyebek-white-river.jpg',
 			'/temp/gyebek-field-face.jpg',
 			'/temp/gyebek-last-stand-yellow.png',
@@ -416,7 +416,7 @@ export const SCENES: Scene[] = [
 		image: '/temp/gyebek-white-river.jpg',
 		frames: [
 			'/scene_battle-six-dragons_2.jpg',
-			'/temp/white-river-aerial.jpg',
+			'/temp/baekgang-river.jpg',
 			'/temp/gyebek-white-river.jpg',
 			'/temp/gyebek-field-face.jpg',
 			'/temp/gyebek-last-stand-yellow.png',
@@ -489,7 +489,6 @@ export const SCENES: Scene[] = [
 		frames: [
 			'/scene_fortress-omen_2.jpg',
 			'/temp/fortress_gate_red_omen.png',
-			'/temp/goguryeo-fortress-red-storm-v2.jpg',
 			'/temp/eastern-fortress-wide.jpg',
 			'/scene_fortress-omen_13.jpg',
 			'/scene_fortress-omen_35.jpg',

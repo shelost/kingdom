@@ -38,7 +38,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'sunduk-seq-munhee-hair',
 				role: 'Munhee attended',
 				angle: 'dutch OTS / rack-focus',
-				at: 'Totally unfit for a Noble woman'
+				at: 'walk in as a noblewoman wearing this'
 			},
 			{
 				id: 'sunduk-seq-chunchu-prep',
@@ -63,7 +63,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		canon: 'ICONIC MINIMAL. Bird’s-eye then dutch close. 2D cel. Caravaggio key. Chunchu in prince magenta from ch_chunchu.png — NO hwarang headband. Gotaso in front of him; Bupmin follows in BLUE boy hanbok (ch_bupmin_child). GRINS. No glow. Magenta #D8258C rim. Same Eastern Palace road.',
 		shots: [
 			{ id: 'family-seq-ride-wide', role: 'exposition', angle: 'bird’s-eye wide', at: 'Gotaso sits in front of him on the same horse' },
-			{ id: 'family-seq-ride-close', role: 'laughing', angle: 'dutch close', at: "That's a lawyer's horse, son." }
+			{ id: 'family-seq-ride-close', role: 'laughing', angle: 'dutch close', at: 'Spoken like a court minister, son.' }
 		]
 	},
 	{
@@ -79,7 +79,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'council-tea-wide', role: 'session', angle: 'dutch pavilion', at: 'debate who the next king should be' },
 			{ id: 'council-flame-close', role: 'High Councillor Euljé', angle: 'table-rim two-shot', at: 'The first count is split' },
 			{ id: 'council-tea-bidam', role: 'Bidam speaks', angle: 'close', at: 'My lords have said one word' },
-			{ id: 'council-alchun-tiger', role: 'Alchun last sleeve', angle: 'hand raised', at: 'A tiger has no sex' },
+			{ id: 'council-alchun-tiger', role: 'Alchun last sleeve', angle: 'hand raised', at: 'I have wrestled a tiger' },
 			{ id: 'council-seq-unanimous', role: '6:0', angle: 'wide', at: 'All six sit on the yes side' }
 		]
 	},
@@ -103,7 +103,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		why: 'Euija in commoner disguise meets a nameless boy who keeps diving. He names him Gyebek. Memory: houses burn, he runs, he begs.',
 		canon: 'Young Euija: GRAY disguise robe, NO large beard (ch_euija_young), amber #e08a2e key. Gyebek: the BOY sheet ch_gyebek_boy — WHITE hanbok, short-medium hair, consistent child, #d9b13a key. 2D cel. Caravaggio. Loud faces. NO glow. Baekgang is a trading estuary (pl_white_river, pl_sabi_port), not an empty graphic river.',
 		shots: [
-			{ id: 'sabi-seq-hall-bird', role: 'Sabi interior', angle: 'bird’s-eye', at: 'Sabi from the White River' },
+			{ id: 'sabi-seq-hall-bird', role: 'Sabi interior', angle: 'bird’s-eye', at: 'learn their names anyway' },
 			{ id: 'euija-seq-disguise-yard', role: 'sneaks out', angle: 'dutch', at: 'Euija sneaks out of the palace' },
 			{ id: 'gyebek-seq-dive-wide', role: 'another dive', angle: 'dutch wide', at: 'The boy is going back into the water' },
 			{ id: 'gyebek-seq-surface', role: 'nineteen', angle: 'dutch close', at: 'Nineteen' },
@@ -123,9 +123,9 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		shots: [
 			{ id: 'clan-tourney-grid-wide', role: 'the square', angle: 'dutch crane painting', at: 'square grid in the palace yard' },
 			{ id: 'clan-tourney-call', role: 'five in white', angle: 'worm’s-eye sleeve-plane', at: 'young men of each house step onto the grid' },
-			{ id: 'clan-tourney-sword-midstrike', role: 'Yung vs Hyo', angle: 'dutch X', at: 'Mokgeom mid-strike on the grid' },
+			{ id: 'clan-tourney-sword-midstrike', role: 'Yung vs Hyo', angle: 'dutch X', at: 'meet mid-strike on the grid' },
 			{ id: 'clan-tourney-sword-dutch', role: 'gold / ink split', angle: 'extreme dutch', at: 'Blades skim the chalk.' },
-			{ id: 'clan-tourney-sword-ots', role: 'from Yung', angle: 'OTS rack-focus', at: 'Over his shoulder the chalk holds' },
+			{ id: 'clan-tourney-sword-ots', role: 'from Yung', angle: 'OTS rack-focus', at: 'the white sleeves clap together' },
 			{ id: 'clan-tourney-sword-victory', role: 'the stripe is the crown', angle: 'shadow painting', at: 'Point to the white sleeve.' },
 			{ id: 'clan-tourney-ssireum-grip', role: 'Tae vs Yun', angle: 'dutch knot', at: 'satba locked before they stand' },
 			{ id: 'clan-tourney-ssireum-lift', role: 'white diagonal', angle: 'worm’s-eye', at: 'deulbaejigi clears the sand' },
@@ -171,7 +171,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'east-seq-planet',
 				role: 'planet not a star',
 				angle: 'OTS rack-focus',
-				at: 'That is a planet, not a star'
+				at: 'That’s no star, you idiot'
 			},
 			{
 				id: 'east-seq-vow',
@@ -226,7 +226,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'snake-river-wide', role: 'exposition', angle: 'wide winter establishing' },
 			{ id: 'sasu-seq-stab', role: 'Tang mid-stab', angle: 'over-shoulder', at: 'a Tang blade a finger from his throat' },
 			{ id: 'sasu-seq-soul-exit', role: 'soul leaves', angle: 'worm’s-eye', at: 'the air thins the way Tamla stories promised' },
-			{ id: 'sasu-seq-soul-fight', role: 'soul defeats escorts', angle: 'dutch', at: 'And neither is your business until I am done' },
+			{ id: 'sasu-seq-soul-fight', role: 'soul defeats escorts', angle: 'dutch', at: 'He cuts the escorts in the thinning air' },
 			{ id: 'sasu-seq-soul-return', role: 'soul returns', angle: 'high dutch', at: 'He stands up on will alone' },
 			{ id: 'sasu-seq-eyes', role: 'dead to alive', angle: 'ECU', at: 'The blade misses' },
 			{ id: 'sasu-seq-subdue', role: 'wrist-lock stare', angle: 'OTS close', at: 'The blade misses' }
@@ -242,9 +242,9 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		shots: [
 			{ id: 'hwangsan-wide', role: 'exposition wide', angle: 'aerial / high establishing' },
 			{ id: 'hwangsan-three-camps', role: 'three roads in', angle: 'high view' },
-			{ id: 'gyebek-seq-palisade', role: 'Gyebek holds', angle: 'worm’s-eye', at: 'Yellow lacquer holds the palisade' },
-			{ id: 'yushin-seq-gallop', role: 'Yushin arrives', angle: 'dutch low gallop', at: 'The tall Silla helm comes in at a gallop' },
-			{ id: 'hwangsan-seq-clash', role: 'two blades', angle: 'over-shoulder', at: 'Blue plume cuts yellow lacquer' },
+			{ id: 'gyebek-seq-palisade', role: 'Gyebek holds', angle: 'worm’s-eye', at: 'palisades lacquered yellow' },
+			{ id: 'yushin-seq-gallop', role: 'Yushin arrives', angle: 'dutch low gallop', at: 'you are this Hundred-Victories Gyebek' },
+			{ id: 'hwangsan-seq-clash', role: 'two blades', angle: 'over-shoulder', at: 'The fourth time Yushin rides at the head' },
 			{ id: 'hwangsan-cavalry-fourth', role: 'fourth charge', angle: 'ground tracking' },
 			{ id: 'gyebek-last-stand-yellow', role: 'aftermath iconic', angle: 'poster / lower-third' }
 		]
@@ -269,20 +269,20 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		id: 'gaya-muryuk',
 		title: 'Muryuk — fight to surrender',
 		entryTitles: ['The Severing', 'The Fall of Gaya'],
-		place: 'Gwansanseong ridge, then Jinheung’s hall',
-		why: 'Gaya’s last prince plus Sadaham’s 562 vanguard: cone helm at Gwansanseong, then Jinheung’s hall; True Bone is the price. Fight → Sadaham gate → surrender → rank.',
+		place: 'Gwansanseong ridge, then Beopheung’s hall (532)',
+		why: 'Gaya’s last prince plus Sadaham’s 562 vanguard: cone helm at Gwansanseong, then Beopheung’s hall (532); True Bone is the price. Fight → Sadaham gate → surrender → rank.',
 		canon: 'Lock the tall Gaya cone. Steel plates, purple cloth peek. Night ridge dutch, then hall. Sadaham ice-blue #6fa8ff under Silla steel.',
 		shots: [
 			{ id: 'gaya-seq-fortress-night', role: 'Gaya seong night', angle: 'wide night' },
 			{ id: 'gwansan-three-hosts', role: 'three camps', angle: 'night wide' },
 			{ id: 'muryuk-seq-ridge', role: 'ambush', angle: 'dutch night', at: 'Muryuk’s cone cuts the night ridge' },
-			{ id: 'muryuk-seq-cone-fight', role: 'last fight', angle: 'worm’s-eye', at: 'The tall Gaya cone still fights' },
+			{ id: 'muryuk-seq-cone-fight', role: 'last fight', angle: 'worm’s-eye', at: 'tall Gaya cone still fights' },
 			{ id: 'sadaham-seq-vanguard', role: 'Sadaham fifteen', angle: 'dutch charge', at: 'They said too young.' },
 			{ id: 'sadaham-seq-gate', role: 'the gate', angle: 'worm’s-eye', at: 'The gate didn’t.' },
 			{ id: 'sadaham-seq-free', role: 'prize-cages', angle: 'lower-third', at: 'Take the land. Leave the people.' },
-			{ id: 'gaya-surrender', role: 'kneel', angle: 'two-shot hall' },
+			{ id: 'gaya-surrender', role: 'kneel', angle: 'two-shot hall', at: 'they all surrendered at once' },
 			{ id: 'gaya-crown', role: 'True Bone', angle: 'insert / close' },
-			{ id: 'muryuk-seq-aged', role: 'old prince', angle: 'worm’s-eye', at: 'Very well. Your descendants shall be raised as True Bone' }
+			{ id: 'muryuk-seq-aged', role: 'old prince', angle: 'worm’s-eye', at: 'had already knelt to Silla' }
 		]
 	},
 	{
@@ -345,7 +345,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'secretariat_01', role: 'side hall begins', angle: 'interior dutch', at: 'side hall in the palace' },
 			{ id: 'secretariat_02', role: 'seal insert', angle: 'ECU still-life', at: '청원' },
 			{ id: 'secretariat_03', role: 'relay leaves', angle: 'yard dusk', at: '파발' },
-			{ id: 'tang-three-six-grid', role: 'Tang grammar', angle: 'iconic stamp-grid', at: 'Tang protocol adopted' },
+			{ id: 'tang-three-six-grid', role: 'Tang grammar', angle: 'iconic stamp-grid', at: 'copied and exceeded' },
 			{ id: 'chunchu-map-pool', role: 'Muyeol counts', angle: 'poster / lower-third', at: 'Chunchu has counted the seals' }
 		]
 	},
@@ -374,7 +374,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'taizong-meet-name',
 				role: 'Spring and Autumn',
 				angle: 'worm’s-eye ECU',
-				at: 'Your name is Spring and Autumn'
+				at: 'Your name is'
 			},
 			{
 				id: 'taizong-meet-go-wide',
@@ -386,13 +386,13 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'taizong-meet-go-up',
 				role: 'looking up from the floor',
 				angle: 'OTS worm’s-eye',
-				at: 'Yes — there is something between us that fits.'
+				at: 'hardly makes it a fair game'
 			},
 			{
 				id: 'taizong-meet-go-stone',
 				role: 'stone click',
 				angle: 'worm’s-eye ECU',
-				at: 'I prefer allies who can count'
+				at: 'Li Shimin.'
 			},
 			{
 				id: 'taizong-meet-fit',
@@ -445,7 +445,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'jumong-habek-court-wide', role: 'river court', angle: 'bird’s-eye bank', at: 'The Amnok keeps its own court' },
 			{ id: 'jumong-habek-sentence-mist', role: 'border sentence', angle: 'bird’s-eye mist', at: 'The Amnok keeps its own court' },
 			{ id: 'jumong-habek-exile-dutch', role: 'kicked out', angle: 'dutch bank', at: 'Habek kicks Yuhwa out' },
-			{ id: 'jumong-habek-exile-ots', role: 'leave the mist', angle: 'OTS walk', at: 'You don’t sleep in my mist after that' },
+			{ id: 'jumong-habek-exile-ots', role: 'leave the mist', angle: 'OTS walk', at: 'You don’t sleep' },
 			{ id: 'jumong-amnok-wc-sisters-silent', role: 'watercolor sisters silent', angle: 'watercolor', at: 'Hwahye and Wihye do not argue the sentence' }
 		]
 	},
@@ -694,9 +694,9 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'jumong-daughter-teal-well-hike', role: 'teal hike close', angle: 'intimate dutch', at: 'Teal hikes at his well' },
 			{ id: 'jumong-daughter-saffron-well-hitch', role: 'saffron hitch close', angle: 'intimate OTS', at: 'Saffron leaves the hem' },
 			{ id: 'jumong-seq-daughters-invite', role: 'invitation faces', angle: 'worm’s-eye rim', at: 'Come fetch at ours' },
-			{ id: 'jumong-daughter-teal-talk-ecu', role: 'teal talks', angle: 'ECU', at: 'Hey big boy~' },
+			{ id: 'jumong-daughter-teal-talk-ecu', role: 'teal talks', angle: 'ECU', at: 'the one who never misses' },
 			{ id: 'jumong-daughter-saffron-talk-ecu', role: 'saffron talks', angle: 'ECU', at: 'Ours is nicer. Stay.' },
-			{ id: 'jumong-daughter-plum-talk-ecu', role: 'look at me', angle: 'ECU', at: 'Don’t look at Sosuno. Look at me.' },
+			{ id: 'jumong-daughter-plum-talk-ecu', role: 'look at me', angle: 'ECU', at: 'Come fetch at' },
 			{ id: 'jumong-flirt-daughters', role: 'he flirts back', angle: 'dutch OTS wink', at: 'He flirts at the wrong well' },
 			{ id: 'jumong-daughter-plum-ass-back', role: 'plum ass-back', angle: 'dutch well', at: 'Plum does not' },
 			{ id: 'jumong-daughter-teal-aegyo-ecu', role: 'teal aegyo ECU', angle: 'ECU look-back', at: 'Aegyo look-back' },
@@ -731,8 +731,8 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'jumong-seq-turn-leave', role: 'he walks', angle: 'OTS receding red', at: 'He turns for the pine' },
 			{ id: 'jumong-then-grins', role: 'the well-grin lands', angle: 'ECU grin', at: 'Then he grins, smaller' },
 			{ id: 'jumong-sosuno-denial-heat', role: 'denial blush', angle: 'ECU denial', at: 'I don’t— I don’t like you.' },
-			{ id: 'jumong-pov-tease', role: 'his view of the slip', angle: 'OTS Jumong', at: 'So how long has it been.' },
-			{ id: 'jumong-pov-blush', role: 'his view of the blush', angle: 'OTS Jumong ECU', at: 'Then why are you furiously blushing.' },
+			{ id: 'jumong-pov-tease', role: 'his view of the slip', angle: 'OTS Jumong', at: 'So how long' },
+			{ id: 'jumong-pov-blush', role: 'his view of the blush', angle: 'OTS Jumong ECU', at: 'Then why are' },
 			{ id: 'jumong-pov-lookback', role: 'his glance back', angle: 'OTS glance', at: 'He turns for the pine' },
 			{ id: 'jumong-pov-wont-say', role: 'his view she looks down', angle: 'OTS Jumong', at: 'I wasn’t going to say it' },
 			{ id: 'jumong-stunned-ecu', role: 'he is stunned', angle: 'ECU Jumong', at: 'Jumong’s grin dies in his mouth' },
@@ -755,7 +755,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'nsfw-jumong-sosuno-dumb-idiot', role: 'climax scream', angle: 'ECU', at: 'DUMB BIG IDIOT' },
 			{ id: 'jumong-seq-dawn-shy', role: 'sleep in grain', angle: 'dutch low', at: 'He goes for' },
 			{ id: 'jumong-tabal-seq-dawn-door', role: 'caught', angle: 'OTS doorway', at: 'Tabal is in the doorway' },
-			{ id: 'jumong-tabal-seq-grumpy', role: 'son-in-law tests', angle: 'porch OTS', at: 'I am not pleased. I am also not blind.' },
+			{ id: 'jumong-tabal-seq-grumpy', role: 'son-in-law tests', angle: 'porch OTS', at: 'Tabal has been' },
 			{ id: 'jumong-seq-pine-wide', role: 'the pine', angle: 'worm’s-eye yard', at: 'The pine stands' },
 			{ id: 'jumong-seq-split', role: 'arrow splits', angle: 'worm’s-eye', at: 'The best men' },
 			{ id: 'jumong-seq-tribes-wide', role: 'five roofs', angle: 'bird’s-eye', at: 'You keep cutting each other' },
@@ -792,7 +792,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'jumong-songyang-yard-wide', role: 'exposition', angle: 'bird’s-eye pines', at: 'It is the Pine' },
 			{ id: 'jumong-songyang-draw', role: 'the draw', angle: 'worm’s-eye', at: 'Then put the name on the mark' },
 			{ id: 'jumong-songyang-shot-short', role: 'honest short', angle: 'dutch', at: 'Song Yang’s arrow is honest and short' },
-			{ id: 'jumong-songyang-win', role: 'yield', angle: 'OTS', at: 'The pine country is under this roof' },
+			{ id: 'jumong-songyang-win', role: 'yield', angle: 'OTS', at: 'The pine country' },
 			{ id: 'jumong-friends-jolbon', role: 'reunion', angle: 'dutch pine gate', at: 'the three come out of the pine hall' }
 		]
 	},
@@ -811,8 +811,8 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'onjo-seq-left-rail', role: 'left out', angle: 'OTS rail', at: 'The rail already knows' },
 			{ id: 'onjo-seq-ten-pack', role: 'ten vassals', angle: 'dutch carts', at: 'ten men start packing' },
 			{ id: 'onjo-seq-torn', role: 'Jumong torn', angle: 'dutch empty hall', at: 'I left iron under a pine' },
-			{ id: 'onjo-seq-goodbye-well', role: 'well goodbye', angle: 'dutch dusk', at: 'I kept it. For you.' },
-			{ id: 'onjo-seq-queen-king-rail', role: 'queen rail', angle: 'OTS', at: 'Yuri can have the chair' },
+			{ id: 'onjo-seq-goodbye-well', role: 'well goodbye', angle: 'dutch dusk', at: 'Wasn’t going to.' },
+			{ id: 'onjo-seq-queen-king-rail', role: 'queen rail', angle: 'OTS', at: 'Don’t be nice.' },
 			{ id: 'nsfw-onjo-ogle-body', role: 'heart-eyes ogle', angle: 'ECU', at: 'Still that mouth.' },
 			{ id: 'nsfw-onjo-last-ots', role: 'ride OTS', angle: 'OTS', at: 'Older. Hungrier. The' },
 			{ id: 'sosuno-seq-glow-south', role: 'south road', angle: 'wide dawn', at: 'At dawn ten' }
@@ -879,7 +879,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		canon: 'Muryuk FACE from ch_kim_muryuk. Tall Gaya cone. Steel lamellar + purple #8B5CF6 peek. High contrast. One device.',
 		shots: [
 			{ id: 'gaya-iron-harbour-wide', role: 'iron harbours', angle: 'exposition', at: 'league of iron harbours' },
-			{ id: 'gaya-cone-last-fight', role: 'last fight', angle: "worm’s-eye", at: 'The tall Gaya cone still fights' },
+			{ id: 'gaya-cone-last-fight', role: 'last fight', angle: "worm’s-eye", at: 'tall Gaya cone still fights' },
 			{ id: 'gaya-muryuk-surrender-dutch', role: 'surrender', angle: 'dutch kneel', at: 'If I am to surrender, I have one condition' }
 		]
 	},
@@ -940,7 +940,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'euija-coup-sons-forty-one', role: 'forty-one sons', angle: "bird’s-eye stamp", at: 'of his own sons to the Assembly' },
 			{ id: 'euija-coup-satek-stare', role: 'clan emptied', angle: 'OTS aisle', at: 'a law for emptying the Assembly' },
 			{ id: 'euija-coup-chunbok-pm', role: 'Premier named', angle: 'intimate kneel', at: 'is named Premier (상좌평)' },
-			{ id: 'euija-coup-empty-benches', role: 'aftermath', angle: 'iconic empty', at: 'The Enabling Law did not abolish the chair' }
+			{ id: 'euija-coup-empty-benches', role: 'aftermath', angle: 'iconic empty', at: 'as promised, remains undisturbed' }
 		]
 	},
 	{
@@ -951,16 +951,16 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		why: 'The two jwapyeong who named Chimhyeon and Gibeolpo. Ring-pommels in the room: hall yank, prison post, posting door, mud, Yushin’s fish-ring on the pass they begged to hold.',
 		canon: 'FACE ch_seongchung / ch_heungsu / ch_buyeo_euija / ch_gyebek / ch_kim_yushin. Baekje 환두대도 from sword_lotus; Yushin fish from sword_fish. Hex is REAL lamp/sun bounce on the hollow ring — #c9a24d, #b98f33, #d9b13a, #2A5FB8 — NOT a glow aura. Same Sabi timber; Gomamiji rammed earth; White River mud. Chronology: remonstrate → belt yanked → prison write → Gomamiji threshold → berth two-shot → courier → Euija yes → Tanhyeon already passed → Gibeolpo ring in mud → Yushin climb. 2D cel. High contrast. One device per still. No readable text.',
 		shots: [
-			{ id: 'seongchung-hall-remonstrate', role: 'remonstrance', angle: 'dutch mid-stride', at: 'Open court. Today.' },
-			{ id: 'seongchung-ring-yank', role: 'belt taken', angle: 'ECU ring', at: 'the belt comes off in the aisle' },
-			{ id: 'sungchung-prison', role: 'dying memorial', angle: 'dutch kneel', at: 'tries to stop him, but is thrown in prison' },
-			{ id: 'heungsu-gomamiji-wide', role: 'exile posting', angle: 'wide threshold', at: 'Gomamiji is a posting, not a retirement' },
+			{ id: 'seongchung-hall-remonstrate', role: 'remonstrance', angle: 'dutch mid-stride', at: 'Your Majesty. Open court.' },
+			{ id: 'seongchung-ring-yank', role: 'belt taken', angle: 'ECU ring', at: 'unbuckle his sword-belt in the aisle' },
+			{ id: 'sungchung-prison', role: 'dying memorial', angle: 'dutch kneel', at: 'starves in a cell within earshot of the feast' },
+			{ id: 'heungsu-gomamiji-wide', role: 'exile posting', angle: 'wide threshold', at: 'He sits on the threshold until the dust' },
 			{ id: 'heungsu-gyebek-listen', role: 'berth', angle: 'two-shot', at: 'Hold the White River mouth and the Tanhyeon pass' },
 			{ id: 'heungsu-gyebek-rings', role: 'berth rings', angle: 'dutch two-shot', at: 'You… you truly mean to march?' },
 			{ id: 'heungsu-messenger', role: 'courier', angle: 'OTS', at: 'The matter is urgent. What then.' },
 			{ id: 'euija-yes-so', role: 'so it is', angle: "worm’s-eye empty", at: 'So it is.' },
-			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'already the White River and the Tanhyeon pass' },
-			{ id: 'gibeolpo-ring-mud', role: 'river lost', angle: "bird’s-eye mud", at: 'Tang keels in the mud of Gibeolpo' },
+			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'held the White River or the Tanhyeon pass' },
+			{ id: 'gibeolpo-ring-mud', role: 'river lost', angle: "bird’s-eye mud", at: 'Tang keels are already in the mud of Gibeolpo' },
 			{ id: 'yushin-tanhyeon-fish-ring', role: 'Silla on the pass', angle: "worm’s-eye climb", at: 'Yushin is already on the switchback' }
 		]
 	}

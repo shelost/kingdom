@@ -16,8 +16,8 @@
  */
 
 export const LOVE_EPISODE_IDS = new Set<string>([
-	'fall-of-baekje-dangun-old-joseon',
-	'seventh-invasion-jumong',
+	'silla-tang-war-dangun-old-joseon',
+	'jumong-jumong',
 	'chunchu-era-gaya-the-lost-nations',
 	'samhan-queen-sunduk',
 	'five-principles-gotasos-wedding',

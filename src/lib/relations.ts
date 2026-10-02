@@ -1276,7 +1276,7 @@ export const RELATIONSHIPS: Person[] = [
 		title: 'The coat and the small boat',
 		tagline: 'One sat in the high cap. One went home.',
 		arc: 'On Gunhae attends the Tang embassy and, on the Yellow Sea, wears Chunchu’s high cap and great coat so the Goguryeo patrol takes the wrong man. Chunchu reaches Silla in a small boat. Jinduk posthumously names Gunhae a Daeachan.',
-		events: [{ year: 649, label: 'The patrol ship; the decoy; the small boat.' }],
+		events: [{ year: 648, label: 'The patrol ship; the decoy; the small boat.' }],
 		aliases: ['Chunchu & On Gunhae', 'On Gunhae & Chunchu']
 	}
 ];
