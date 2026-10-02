@@ -2885,7 +2885,9 @@ export const PEOPLE: Person[] = [
 		born: 645,
 		died: 660,
 		tagline: 'Sixteen at the Yellow Mountain — released once, and rode back.',
-		quote: "Youth is not an excuse. It is a deadline.",
+		quote: '…It wasn’t because I was afraid to die.',
+		voice:
+			'Young and literal: a plain “Yes”, then a report to his father of what he failed to do, never a boast. Korean: 합쇼체 to his father.',
 		arc: 'Son of general Kim Pumil. Captured charging the Baekje line alone, Gyebek unstrapped his helmet, marvelled at his age, and sent him home. He rode straight back. The second time, Gyebek sent back only his head — and the sight of it broke Silla’s hesitation. The yard never says it aloud, but Hwangsan rhymes with the first class: Bangul rides out first; Gwanchang rides out second and keeps the swear alone.',
 		blade: 'Ring-pommel colt sword — a boy’s grip on a man’s edge; drawn twice at the Yellow Mountain.',
 		events: [{ year: 660, label: 'Dies at Hwangsanbeol; the army charges in his name.' }],
@@ -2929,6 +2931,7 @@ export const PEOPLE: Person[] = [
 		bornApprox: true,
 		tagline: 'Yushin’s nephew — first to ride alone into the Baekje line, the way Mugwan went quiet before Sadaham kept the vow.',
 		quote: "Ride first. Someone has to.",
+		voice: 'Obeys in one formal line. Korean: 합쇼체 to his father.',
 		events: [{ year: 660, label: 'Dies at Hwangsanbeol before Gwanchang.' }],
 		career: [
 			{ title: 'Hwarang', korean: '화랑', hanja: '花郎', org: 'hwarang', to: 660 }
@@ -3354,6 +3357,7 @@ export const PEOPLE: Person[] = [
 		died: 685,
 		tagline: 'The Black Tortoise: burned four hundred eastern ships at the White River.',
 		quote: 'Hold what the others break.',
+		voice: 'Orders only, in two beats: hold, then the next thing. Korean: 해라체.',
 		arc: 'Gaozong’s Black Tortoise — not the Second Emperor’s Black Dragon, which was Yuchi Gong. Liu Rengui holds Baekje when the restoration tries to stand up, then anchors a hundred and seventy ships across the White River mouth in 663 and waits for the tide to turn against the East. He is the general who keeps what Su Dingfang breaks. Real-world figure: 劉仁軌 / 유인궤 (601–685).',
 		events: [{ year: 663, label: 'Wins the naval battle of Baekgang as Black Tortoise.' }],
 		career: [
@@ -3373,6 +3377,8 @@ export const PEOPLE: Person[] = [
 		died: 662,
 		tagline: 'The White Tiger, drowned at the Snake River with his thirteen sons.',
 		quote: 'The first tiger dies loud. The second learns.',
+		voice:
+			'An old soldier’s refusal in the record’s own words: favour eaten under two emperors, an oath, the boys he brought. No self-pity. Korean: 해라체.',
 		arc: 'Gaozong’s White Tiger for the Eighth Invasion. In the second month of 662 he drives a Lingnan host into the Snake River — Salsu in the mouths of old men — and Yeon Gesomun kills him there with all thirteen sons. The seat does not stay empty: Xue Rengui, already Taizong’s White Dragon, takes it as White Tiger II. Real-world figure: 龐孝泰 / 방효태 (d. 662).',
 		events: [
 			{
@@ -3447,6 +3453,7 @@ export const PEOPLE: Person[] = [
 		died: 663,
 		tagline: 'Died at the White River shouting Kudara’s name.',
 		quote: "Loyalty does not ask whose map you die on.",
+		voice: 'An oath through his teeth; Baekje is Kudara to him. Japanese layer; Korean 해라체.',
 		events: [{ year: 663, label: 'Swears to heaven on a burning deck, then falls fighting at Baekgang.' }],
 		aliases: ['Echi no Takutsu', 'Takutsu']
 	},
@@ -4379,10 +4386,12 @@ export const PEOPLE: Person[] = [
 		quote: 'My son’s face is as if he lived.',
 		lastLine: {
 			en: 'My son’s face is as if he lived.',
-			ko: '아들의 얼굴이, 산 것과 같구나.'
+			ko: '내 아들의 얼굴이 살아 있는 듯하다.'
 		},
 		nature:
 			'A field general who asks of his own house what he asks of everyone else’s. He does not make speeches about it; he puts the boy on a horse.',
+		voice:
+			'A father giving an order he knows the price of: names his son, praises him once, and asks rather than commands. Korean: 해라체 (-느냐) to his son.',
 		arc: 'In 660 he commands Silla’s right column at Hwangsanbeol. When the Silla charges keep breaking on Gyebek’s camps, his son Gwanchang rides at the line alone, is sent back once, and rides again. When the boy’s head comes back tied to the saddle, Pumil takes it up by the hair.',
 		events: [{ year: 660, label: 'Commands Silla’s right column at Hwangsanbeol.' }],
 		family: [{ id: 'gwanchang', role: 'Son' }],
@@ -4856,8 +4865,8 @@ export const PEOPLE: Person[] = [
 			ko: '아버지… 이게 다입니까? 그냥 큰 돌인데요.'
 		},
 		lastLine: {
-			en: 'At last… I set foot on Pyongyang’s ground—',
-			ko: '마침내… 평양성의 땅을 밟는다—'
+			en: '…I’m back, Namsan.',
+			ko: '…돌아왔다, 남산아.'
 		},
 		nature: 'Eldest-son rigidity with a child’s hunger for a father’s rare yes — and the weight of a name that means relief. Desire: to be the blade Gesomun forged. Wound: discovering the forge left no room for brothers, and that he was named for surviving what others did not.',
 		voice:
@@ -4900,7 +4909,7 @@ export const PEOPLE: Person[] = [
 		},
 		nature: 'Heat without the eldest’s patience. Desire: to prove Gesomun’s shadow can be worn by a second son. Wound: believing a messenger over a brother.',
 		voice:
-			'Loud, loyal, easily aimed: big declarations, and quick to repeat what he was told (“Traitor…?”). Korean: 반말 to his brothers, 합쇼체 to his father.',
+			'Loud, loyal, easily aimed: big declarations (“Pyongyang does not fall!”), and quick to repeat what he was told. Korean: 반말 to his brothers, 합쇼체 to his father.',
 		blade: 'Ring-pommel crow sword — younger brother of the Yeon hall’s crow stamp.',
 		arc: 'Raised by Jungto and Sooyoung while Namseng ate Gesomun’s rules for supper. Takes his brother’s title after the whisper war; makes the last stand at Pyongyang; dies cursing Silla’s sacred blood and vowing Goguryeo’s final victory — heat that later men will hear in Gung Ye and Wang Geon.',
 		events: [
