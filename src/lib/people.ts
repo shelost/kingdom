@@ -2024,7 +2024,7 @@ export const PEOPLE: Person[] = [
 		},
 		lastLine: {
 			en: 'The age of Kim Chunchu begins.',
-			ko: '김춘추의 시대가 시작된다.'
+			ko: '이제 김춘추의 시대다.'
 		},
 		nature: 'Descended from Sobuldori of the Surabol Choi — Dolsan Goheo-chon, Saryang-bu — though he cites the founder only when pressed, and never in a speech. Stuck between Bidam and Yushin since the Hwarang yard — same line, same impossible orbit around Dukman. At Okmun-gok he and Bidam still fight as one; by Radiance he answers both with hard counsel and still raises neither blade nor banner — and neutrality costs him a generation of standing.',
 		voice:
@@ -4477,7 +4477,7 @@ export const PEOPLE: Person[] = [
 		quote: 'I will complete my duty.',
 		firstLine: {
 			en: 'Nineteen.',
-			ko: '열아홉.'
+			ko: '열아홉 번입니다.'
 		},
 		lastLine: {
 			en: 'Your Majesty… I have completed my duty.',
@@ -5384,7 +5384,7 @@ export const CONCEPTS: Person[] = [
 		title: 'Class III · Tamla — the Great Lady who made the island',
 		realm: { en: 'Tamla · island-making', ko: '탐라 · 섬' },
 		tagline: 'Class III of Tamla — piled the sea into a mountain, and drowned in a pot of porridge feeding her sons.',
-		quote: 'They found ninety-nine. The collar was never finished.',
+		quote: 'They gathered ninety-nine. The collar was never finished, so neither was the bridge.',
 		nature:
 			'Island-maker under Little Star’s 이승, not a realm-head. Enormous, practical, a little careless with aprons and cauldrons. Tamla remembers her before it remembers any continental king.',
 		arc: 'Class III Tamla goddess — shrine particular under the living world, not Class I of 삼계. Before the island there is a woman: she scoops the seabed into Mount Halla; apron-holes become oreum; famine takes her in a porridge pot; ninety-nine rolls of silk are one short of a bridge to the mainland. Folk mouths still say Seolmundae / 설문대할망; the chronicle’s name is Sulmun.',
