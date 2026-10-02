@@ -88,7 +88,7 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 			children: [
 				{
 					title: 'Death of the Second Emperor',
-					after: 'Shimin & Chunchu',
+					after: 'On Gunhae',
 					expandScenes: true
 				}
 			]

@@ -702,6 +702,7 @@ export const PEOPLE: Person[] = [
 		korean: '수로왕',
 		hanja: '首露王',
 		kingdom: 'gaya',
+		died: 194,
 		title: 'Founder of Golden Gaya',
 		tagline: 'Came out of the first egg, and walked down to the beach himself.',
 		quote: "Hunger is honest. Meet it yourself.",
@@ -747,6 +748,8 @@ export const PEOPLE: Person[] = [
 		korean: '허황옥',
 		hanja: '許黃玉',
 		kingdom: 'gaya',
+		born: 27,
+		died: 184,
 		gender: 'f',
 		title: 'First queen of Golden Gaya',
 		clans: ['clan-geumgwan-kim'],
@@ -879,7 +882,7 @@ export const PEOPLE: Person[] = [
 			{ year: 647, label: 'Survives Bidam’s rebellion at Queen Sunduk’s side.' },
 			{ year: 647, label: 'Sails to Yamato to ask for troops. Refused.' },
 			{ year: 648, label: 'Wins the Silla–Tang alliance from Emperor Taizong.' },
-			{ year: 649, label: 'Returns from Tang; On Gunhae dies in his clothes on the Yellow Sea.' },
+			{ year: 648, label: 'Returns from Tang; On Gunhae dies in his clothes on the Yellow Sea.' },
 			{ year: 651, label: 'Founds the Royal Secretariat, ruling around the Harmony Council.' },
 			{ year: 654, label: 'Crowned King Muyeol — the first True Bone king.' },
 			{ year: 660, label: 'Sabi falls. He makes Euija pour his wine.' },
@@ -1356,19 +1359,19 @@ export const PEOPLE: Person[] = [
 		bornApprox: true,
 		clan: 'clan-gyeongju-kim',
 		boneRank: 'Sacred Bone (성골)',
-		tagline: '“When I die, do not pretend I ruled.”',
+		tagline: '“When I’m gone… I hope people won’t talk about me for long.”',
 		ideology: 'Caretaker traditionalist',
 		ideologyNote: 'Holds Sacred Bone legitimacy as a bridge, not a program — lasts so True Bone can begin.',
-		quote: 'When I die, do not pretend I ruled.',
+		quote: 'When I’m gone… I hope people won’t talk about me for long.',
 		firstLine: {
 			en: 'Bidam…! What is this I hear? Surely not…',
 			ko: '비담....! 그게 무슨 말인가? 설마…'
 		},
 		lastLine: {
-			en: '…I kept a seat from becoming a joke. That is all the Sacred Bone had left to do.',
-			ko: '…자리가 농담이 되지 않게 지켰을 뿐이다. 성골에게 남은 일은 그게 전부였다.'
+			en: 'When I’m gone… I hope people won’t talk about me for long. They’ll have plenty to say about you.',
+			ko: '내가 가거든… 사람들이 내 이야기는 오래 하지 않았으면 좋겠네. 자네 이야기 할 일이 많을 테니.'
 		},
-		nature: 'Sunduk’s cousin; Chunchu’s aunt in the way the house counts kin. She wears the crown; he wears the hours. A kind woman who knows she is a bridge, not a destination — and who lets the bridge do its work without making a speech about it.',
+		nature: 'Sunduk’s sister; Chunchu’s aunt. She wears the crown; he wears the hours. A kind woman who knows she is a bridge, not a destination — and who lets the bridge do its work without making a speech about it.',
 		voice:
 			'Gentle and brief. She worries aloud and says less than she knows. Korean: 하게체 and 반말 to Yushin and Chunchu.',
 		arc: 'Crowned after Bidam and Sunduk die in the same season. For seven years the Harmony Council still meets, and nothing of consequence leaves the room until Chunchu’s Secretariat has already sealed it. When she dies the Sacred Bone ends; the country continues under the nephew who had already been running it.',
@@ -1396,7 +1399,7 @@ export const PEOPLE: Person[] = [
 		],
 		events: [
 			{ year: 647, label: 'Crowned after Sunduk’s death.' },
-			{ year: 649, label: 'Posthumously names On Gunhae a Daeachan after the Yellow Sea decoy.' },
+			{ year: 648, label: 'Posthumously names On Gunhae a Daeachan after the Yellow Sea decoy.' },
 			{ year: 651, label: 'Watches the Royal Secretariat make the Council ornamental.' },
 			{ year: 654, label: 'Dies; the Sacred Bone line is extinct.' }
 		],
@@ -1675,6 +1678,7 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Secretariat craft — implements westernizing speed as office work, not sermon.',
 		quote: 'The Council still meets. The seals no longer wait for it.',
 		nature: 'Young enough to think a new office is elegant; old enough in the yard to know elegance is a weapon. Loyal to Chunchu the way a Hwarang is loyal to a form — precisely, without needing to be asked twice. Yes-Minister fluency: preserves the High Councillor’s chair while emptying it of consequences.',
+		voice: 'Young, quick, deadpan Hwarang who reports like a soldier and never explains his joke. Korean: crisp 합쇼체 to Chunchu.',
 		blade: 'Ring-pommel bamboo sword — light, fast, named for the virtue of bending without breaking.',
 		events: [
 			{ year: 651, label: 'Named first Premier (중시) of the Royal Secretariat (집사부).' },
@@ -2065,7 +2069,7 @@ export const PEOPLE: Person[] = [
 		hanja: '溫君解',
 		title: 'Attendant of Kim Chunchu — posthumous Daeachan',
 		kingdom: 'silla',
-		died: 649,
+		died: 648,
 		boneRank: 'True Bone (진골)',
 		tagline: 'He sat in the high cap so the small boat could leave.',
 		quote: 'Then I will wear it.',
@@ -2078,14 +2082,15 @@ export const PEOPLE: Person[] = [
 			ko: '그래서 제가 씁니다.'
 		},
 		nature: 'A retainer who does not require a second instruction. Speaks in objects — cap, coat, the smaller boat — and stops there. The annal keeps almost nothing else.',
+		voice: 'Speaks in objects and stops. Korean: 합쇼체 to his lord.',
 		arc: 'He follows Kim Chunchu into Tang and, on the Yellow Sea road home, puts on the high cap and great coat so Goguryeo’s patrol will take the wrong man. They kill him. Chunchu reaches Silla in a small boat. Queen Jinduk posthumously names him Daeachan and pays his descendants. The histories guess True Bone from that rank; they record no other deed.',
 		events: [
 			{ year: 648, label: 'Attends Chunchu’s Tang embassy.' },
-			{ year: 649, label: 'Dies as Chunchu’s decoy on a Goguryeo patrol ship; named Daeachan posthumously.' }
+			{ year: 648, label: 'Dies as Chunchu’s decoy on a Goguryeo patrol ship; named Daeachan posthumously.' }
 		],
 		career: [
-			{ title: 'Attendant', korean: '수행', hanja: '隨行', note: 'Tang embassy', from: 648, to: 649 },
-			{ title: 'Daeachan (posthumous)', korean: '대아찬', hanja: '大阿飡', from: 649 }
+			{ title: 'Attendant', korean: '수행', hanja: '隨行', note: 'Tang embassy', from: 648, to: 648 },
+			{ title: 'Daeachan (posthumous)', korean: '대아찬', hanja: '大阿飡', from: 648 }
 		],
 		aliases: [
 			'On Gunhae',
@@ -3429,6 +3434,7 @@ export const PEOPLE: Person[] = [
 		died: 654,
 		tagline: 'Yamato’s scholar of the continent, Chunchu’s host in the East.',
 		quote: "Guide a guest who will outgrow guidance.",
+		voice: 'Frank, teasing scholar-friend who turns Chunchu’s images back on him. Korean: 하게체.',
 		aliases: ['Takamuko no Kuromaro', 'Kuromaro', 'the eastern scholar', 'The Eastern Scholar']
 	},
 	{
@@ -3735,7 +3741,7 @@ export const PEOPLE: Person[] = [
 		],
 		family: [
 			{ id: 'sunduk', role: 'Daughter' },
-			{ id: 'jinduk', role: 'Granddaughter' },
+			{ id: 'jinduk', role: 'Daughter' },
 			{ id: 'chunmyung', role: 'Daughter' },
 			{ id: 'sunhwa', role: 'Daughter' }
 		],
@@ -3923,6 +3929,8 @@ export const PEOPLE: Person[] = [
 		tagline: 'First of the six — the Lee of Alcheon who found the egg at Najeong.',
 		quote: 'Dig where the horse kneels. The country begins in the hole.',
 		nature: 'Village chief of Alcheon Yangsan-chon (알천 양산촌), head of Geupnyang-bu (급량부). When the white horse bowed and cried at Najeong well in Yangsan, Alpyung was the one who ordered the earth opened — and the great egg lifted out. Surabol Lee (서라벌 이씨) begins here; modern registers call the house Gyeongju Lee (경주 이씨).',
+		voice:
+			'Elder chief: rough and practical with the other chiefs at the well (“Dig.”), then one plain, weighty question for the boy king. Korean: 반말 among the chiefs, 합쇼체 to the boy king.',
 		arc: 'One of the Founding Six Elders who raised the egg-born boy and installed him as king. His village and department survive in the bone-rank census two thousand years later — every True Bone noble who counts Lee blood still owes a fraction of their untouchable pride to the man who dug first.',
 		events: [{ year: -57, label: 'With the five other chiefs, crowns Hyukgosé at Seorabeol.' }],
 		career: [
@@ -4041,6 +4049,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Born from the egg at Najeong — bright light ruling the world, not luck.',
 		quote: 'One person to cherish, one person to serve — and the moon over Seorabeol is enough.',
 		nature: 'Egg-born, not hall-born: the white horse knelt and cried at Najeong well in Yangsan; the Founding Six Elders dug where it stood and lifted a great egg; the shell opened on a beautiful boy already kingly in the face. Named Hyukgosé —赫居世, to rule with brightness — he was prodigy before policy: quick to learn, just in judgment, the land answering him as if it had been waiting. Crowned young — tradition says thirteen — he is founding king energy, not a passive omen. Sacred Bone by exception: no elder blood, no village chief for a father; the six raised and installed him, and later True Bone nobles would claim the elders’ descent as if founding privilege were a hereditary coat.',
+		voice: 'Earnest boy-founder making solemn promises. Korean: formal 합쇼체 to the chiefs.',
 		arc: 'The six village chiefs — Alpyung, Sobuldori, Jibekho, Gurema, Jita, Hojin — find the egg, raise the boy, and crown him first king of Seorabeol (-57). He governs long beside Alyoung, the dragon-born queen from Alyeongjeong well: two omen-children who recognize each other, desire and destiny in one marriage, co-founders not ornament. Together they teach the country its first grammar — one to cherish, one to serve — before law arrives in six ranks and six clans. Their joint reign sets the moon over Surabol as quiet sign; a son Namhae succeeds in the records though the chronicle’s lens jumps forward to later crowns. When Bone Rank hardens, Hyukgosé and Alyoung remain the sacred exception — egg and dragon — while Yushin’s Gaya Kim line enters as the outsider who out-loves the centre.',
 		events: [
 			{ year: -69, label: 'Born from the egg at Najeong well, Yangsan.' },
@@ -5109,6 +5118,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'China’s smile at the banquet — fond of hierarchy, fond of wine.',
 		quote: "Even Samhan can learn which way to bow.",
 		nature: 'Socially confident, a little smug, sexually self-assured without needing to prove it. Treats foreign tears as entertainment until they move policy.',
+		voice: 'Smug court toaster with a needle in each compliment. Korean: polite 합쇼체/해요체.',
 		arc: 'Toasts Taizong, needles Chunchu, and underestimates the woman behind the screen.',
 		career: [
 			{ title: 'Tang envoy', korean: '사신', hanja: '使臣', org: 'tangcourt' }
@@ -5124,8 +5134,9 @@ export const PEOPLE: Person[] = [
 		kingdom: 'yamato',
 		gender: 'm',
 		tagline: 'Japan’s careful smile — knows empresses exist, and watches Wu too long.',
-		quote: "Power wears many sleeves.",
+		quote: 'Our islands have had empresses too. Two of them.',
 		nature: 'Refined, flirtatious in the soft register, politically cautious. More at ease with women on thrones than the Western table is — which does not make him safer.',
+		voice: 'Careful Yamato flatterer, a smile and then a fact. Korean: formal 합쇼체.',
 		arc: 'Shares the Tang banquet with Silla’s weeping prince and leaves having learned who in the room was actually dangerous.',
 		career: [
 			{ title: 'Yamato envoy', korean: '사신', hanja: '使臣', org: 'nation-yamato' }
@@ -5180,6 +5191,27 @@ export const PEOPLE: Person[] = [
 			{ year: 647, label: 'Ghost in the cavern — “You are Kim Yushin.”' }
 		],
 		aliases: ['Kim Seohyeon', 'Seohyeon', '서현', 'Kim Seohyun']
+	},
+	{
+		id: 'beopheung',
+		gender: 'm',
+		name: 'King Beopheung',
+		korean: '법흥왕',
+		hanja: '法興王',
+		title: '23rd sovereign of Silla',
+		kingdom: 'silla',
+		died: 540,
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'Sacred Bone (성골)',
+		tagline: 'Took Golden Gaya without a battle, and paid for it in bone rank.',
+		quote: 'Very well. Your descendants shall be raised as True Bones of Silla.',
+		voice:
+			'Measured, devout king who takes Gaya without a war: brief plain questions, magnanimous terms. Korean: royal 하게체/해라체 to a surrendering prince.',
+		events: [{ year: 532, label: 'Accepts Golden Gaya’s surrender and raises its royal line to True Bone.' }],
+		career: [
+			{ title: 'King', korean: '법흥왕', hanja: '法興王', org: 'sillaroyal', from: 514, to: 540 }
+		],
+		aliases: ['King Beopheung', 'Beopheung', '법흥왕', '法興王']
 	},
 	{
 		id: 'jinheung',
@@ -7411,6 +7443,7 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	jita: ['foundingsix'],
 	hojin: ['foundingsix'],
 	jinpyung: ['sillaroyal'],
+	beopheung: ['sillaroyal'],
 	jinheung: ['sillaroyal'],
 	jinji: ['sillaroyal'],
 	yongsu: ['sillaroyal', 'bonerank'],
@@ -7596,6 +7629,7 @@ const COLOR: Record<string, string> = {
 	daedeung_stern: '#6b5b4a',
 	daedeung_old: '#7a6a58',
 	daedeung_fear: '#5c6b7a',
+	beopheung: '#4f6fc0',
 	jinheung: '#2f6fd4',
 	jinji: '#3d5fa8',
 	yongsu: '#6a7cb0',

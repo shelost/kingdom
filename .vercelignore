@@ -4,6 +4,7 @@ scripts/.cache
 .DS_Store
 node_modules
 # --- generated: unreferenced static/temp (scripts/sync-temp-deploy.mjs) ---
+static/temp/alliance_hands_blue_gold.png
 static/temp/anapji-mirror.jpg
 static/temp/ancient_scroll_candlelight.png
 static/temp/arrow_in_tree.png
@@ -32,6 +33,7 @@ static/temp/empty_throne_blue_light.png
 static/temp/euija_last_king_fading.png
 static/temp/flooded_battlefield_reflection.png
 static/temp/gaesomun_authority_portrait.png
+static/temp/gija-scroll.jpg
 static/temp/goddesses-fantasy-lie.jpg
 static/temp/goddesses-heart-stare.jpg
 static/temp/goddesses-stake-him.jpg
@@ -641,6 +643,7 @@ static/temp/nsfw_pumsuk_gumilwife_overwhelm.png
 static/temp/nsfw_pumsuk_gumilwife_pressed.png
 static/temp/nsfw_pumsuk_gumilwife_surprise.png
 static/temp/onjo-seq-caravan-dawn.jpg
+static/temp/palace_roof_moonlight_vigil.png
 static/temp/parody-muyongchong-jumong.jpg
 static/temp/parody-odysseus-arrow-jumong.jpg
 static/temp/parody-odysseus-bow-tabal.jpg
@@ -657,6 +660,10 @@ static/temp/pumsuk-more-04-third.jpg
 static/temp/pumsuk-pov-body.jpg
 static/temp/pumsuk-seq-12-lose.jpg
 static/temp/radiance-siege-ring.jpg
+static/temp/secretariat_cultural_contrast.png
+static/temp/secretariat_seals_documents.png
+static/temp/secretariat_shadow_officials.png
+static/temp/secretariat_tang_bowing.png
 static/temp/seohyeon-arrival-thought.jpg
 static/temp/seohyeon-older-close.jpg
 static/temp/seohyeon-older-corner-ride.jpg
@@ -704,9 +711,11 @@ static/temp/taizong.png
 static/temp/taizong_throne_majesty.png
 static/temp/tamla_orange_tribute.png
 static/temp/tang-axis-palace.jpg
+static/temp/tang_banner_storm.png
 static/temp/tang_cavalry_charge.png
 static/temp/tang_changan_palace.png
 static/temp/tang_daming_palace_sunset.png
+static/temp/tang_imperial_decree.png
 static/temp/tang_imperial_procession.png
 static/temp/tang_navy_fleet.png
 static/temp/tang_taizong_court.png

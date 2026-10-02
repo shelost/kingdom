@@ -269,20 +269,20 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		id: 'gaya-muryuk',
 		title: 'Muryuk — fight to surrender',
 		entryTitles: ['The Severing', 'The Fall of Gaya'],
-		place: 'Gwansanseong ridge, then Jinheung’s hall',
-		why: 'Gaya’s last prince plus Sadaham’s 562 vanguard: cone helm at Gwansanseong, then Jinheung’s hall; True Bone is the price. Fight → Sadaham gate → surrender → rank.',
+		place: 'Gwansanseong ridge, then Beopheung’s hall (532)',
+		why: 'Gaya’s last prince plus Sadaham’s 562 vanguard: cone helm at Gwansanseong, then Beopheung’s hall (532); True Bone is the price. Fight → Sadaham gate → surrender → rank.',
 		canon: 'Lock the tall Gaya cone. Steel plates, purple cloth peek. Night ridge dutch, then hall. Sadaham ice-blue #6fa8ff under Silla steel.',
 		shots: [
 			{ id: 'gaya-seq-fortress-night', role: 'Gaya seong night', angle: 'wide night' },
 			{ id: 'gwansan-three-hosts', role: 'three camps', angle: 'night wide' },
 			{ id: 'muryuk-seq-ridge', role: 'ambush', angle: 'dutch night', at: 'Muryuk’s cone cuts the night ridge' },
-			{ id: 'muryuk-seq-cone-fight', role: 'last fight', angle: 'worm’s-eye', at: 'The tall Gaya cone still fights' },
+			{ id: 'muryuk-seq-cone-fight', role: 'last fight', angle: 'worm’s-eye', at: 'tall Gaya cone still fights' },
 			{ id: 'sadaham-seq-vanguard', role: 'Sadaham fifteen', angle: 'dutch charge', at: 'They said too young.' },
 			{ id: 'sadaham-seq-gate', role: 'the gate', angle: 'worm’s-eye', at: 'The gate didn’t.' },
 			{ id: 'sadaham-seq-free', role: 'prize-cages', angle: 'lower-third', at: 'Take the land. Leave the people.' },
-			{ id: 'gaya-surrender', role: 'kneel', angle: 'two-shot hall' },
+			{ id: 'gaya-surrender', role: 'kneel', angle: 'two-shot hall', at: 'they all surrendered at once' },
 			{ id: 'gaya-crown', role: 'True Bone', angle: 'insert / close' },
-			{ id: 'muryuk-seq-aged', role: 'old prince', angle: 'worm’s-eye', at: 'Very well. Your descendants shall be raised as True Bone' }
+			{ id: 'muryuk-seq-aged', role: 'old prince', angle: 'worm’s-eye', at: 'had already knelt to Silla' }
 		]
 	},
 	{
@@ -345,7 +345,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'secretariat_01', role: 'side hall begins', angle: 'interior dutch', at: 'side hall in the palace' },
 			{ id: 'secretariat_02', role: 'seal insert', angle: 'ECU still-life', at: '청원' },
 			{ id: 'secretariat_03', role: 'relay leaves', angle: 'yard dusk', at: '파발' },
-			{ id: 'tang-three-six-grid', role: 'Tang grammar', angle: 'iconic stamp-grid', at: 'Tang protocol adopted' },
+			{ id: 'tang-three-six-grid', role: 'Tang grammar', angle: 'iconic stamp-grid', at: 'copied and exceeded' },
 			{ id: 'chunchu-map-pool', role: 'Muyeol counts', angle: 'poster / lower-third', at: 'Chunchu has counted the seals' }
 		]
 	},
@@ -374,7 +374,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'taizong-meet-name',
 				role: 'Spring and Autumn',
 				angle: 'worm’s-eye ECU',
-				at: 'Your name is Spring and Autumn'
+				at: 'Your name is'
 			},
 			{
 				id: 'taizong-meet-go-wide',
@@ -386,13 +386,13 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 				id: 'taizong-meet-go-up',
 				role: 'looking up from the floor',
 				angle: 'OTS worm’s-eye',
-				at: 'Yes — there is something between us that fits.'
+				at: 'hardly makes it a fair game'
 			},
 			{
 				id: 'taizong-meet-go-stone',
 				role: 'stone click',
 				angle: 'worm’s-eye ECU',
-				at: 'I prefer allies who can count'
+				at: 'Li Shimin.'
 			},
 			{
 				id: 'taizong-meet-fit',
@@ -879,7 +879,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		canon: 'Muryuk FACE from ch_kim_muryuk. Tall Gaya cone. Steel lamellar + purple #8B5CF6 peek. High contrast. One device.',
 		shots: [
 			{ id: 'gaya-iron-harbour-wide', role: 'iron harbours', angle: 'exposition', at: 'league of iron harbours' },
-			{ id: 'gaya-cone-last-fight', role: 'last fight', angle: "worm’s-eye", at: 'The tall Gaya cone still fights' },
+			{ id: 'gaya-cone-last-fight', role: 'last fight', angle: "worm’s-eye", at: 'tall Gaya cone still fights' },
 			{ id: 'gaya-muryuk-surrender-dutch', role: 'surrender', angle: 'dutch kneel', at: 'If I am to surrender, I have one condition' }
 		]
 	},
