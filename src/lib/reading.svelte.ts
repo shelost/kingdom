@@ -86,11 +86,13 @@ export type EpisodeRef = {
 };
 
 /**
- * Out-of-range leftover `chapterId-index` hashes from before episode merges.
+ * Old ids of merged, renamed or moved entries, and out-of-range leftover
+ * `chapterId-index` hashes from before episode merges.
  * In-range numeric hashes (`iron-will-0` …) still mean the current entry at
  * that index; TOC rows use title slugs so they always name the right episode.
  */
 const EPISODE_HASH_ALIASES: Record<string, string> = {
+	'samhan-jinheung-the-crescent-moon': 'five-principles-the-severing',
 	'iron-will-5': 'iron-will-yeons-massacre',
 	'iron-will-6': 'iron-will-yeons-massacre',
 	'iron-will-7': 'iron-will-chunchu-gesomun',
@@ -98,6 +100,9 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'iron-will-9': 'iron-will-kim-yushin',
 	'iron-will-the-first-kim': 'iron-will-daeya-fortress',
 	'fall-of-euija-onjo': 'jumong-onjo',
+	'fall-of-euija-the-tribute-of-oranges': 'fall-of-euija-gyebeks-exile',
+	'fall-of-euija-the-great-ladys-apron': 'fall-of-euija-tamla-the-island-of-oranges',
+	'fall-of-euija-the-fifth-year': 'fall-of-euija-the-three-loyalists',
 	'chunchu-era-11': 'chunchu-era-hyukgose',
 	'chunchu-era-the-flower-youth': 'chunchu-era-the-hwarang',
 	'chunchu-era-silla-tang-alliance': 'chunchu-era-the-emperor',
@@ -570,6 +575,11 @@ export function resolveStoryTarget(id: string): StoryTarget | null {
 		return idx >= 0 ? { episodeIndex: idx, hashId: id } : null;
 	}
 
+	/* Old `?ep=` links carry the bare title slug of the entry that moved. */
+	const aliased =
+		EPISODE_HASH_ALIASES[id] ??
+		chapters.map((ch) => EPISODE_HASH_ALIASES[`${ch.id}-${id}`]).find(Boolean);
+
 	let best = -1;
 	let bestLen = -1;
 	for (let i = 0; i < episodes.length; i++) {
@@ -579,7 +589,8 @@ export function resolveStoryTarget(id: string): StoryTarget | null {
 			bestLen = eid.length;
 		}
 	}
-	if (best >= 0) return { episodeIndex: best, hashId: id };
+	/* A renamed entry's old id can read as a scene of a shorter title (`final-stand-pyongyang-a`). */
+	if (best >= 0 && !aliased) return { episodeIndex: best, hashId: id };
 
 	const indexMatch = /^(.*)-(\d+)$/.exec(id);
 	if (indexMatch) {
@@ -590,7 +601,6 @@ export function resolveStoryTarget(id: string): StoryTarget | null {
 		);
 		if (byIndex >= 0) return { episodeIndex: byIndex, hashId: episodes[byIndex].id };
 	}
-	const aliased = EPISODE_HASH_ALIASES[id];
 	if (aliased) {
 		const fromAlias = episodes.findIndex((e) => e.id === aliased);
 		if (fromAlias >= 0) return { episodeIndex: fromAlias, hashId: episodes[fromAlias].id };
