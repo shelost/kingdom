@@ -1175,8 +1175,8 @@ export const PEOPLE: Person[] = [
 		ideologyNote: 'Confucian duty — rites, rank, the queen’s arithmetic. He stands; he does not sit in lotus. If the crown orders Tang drill and Secretariat speed, he learns them without sentiment — the West’s tools, never the West’s worship. To Bidam that is selling the country; to Yushin it is only the order.',
 		quote: 'Well or badly, I am on your side. No matter what.',
 		firstLine: {
-			en: 'Well stood. Tomorrow on the yard — the hundred-and-ninth is mine.',
-			ko: '잘 섰다. 내일 연무장 — 백아홉은 내 것이다.'
+			en: 'I have put questions to her. I never once went without an answer.',
+			ko: '나는 그분께 여쭤 본 적이 있소. 답을 못 들은 적은 없었소.'
 		},
 		lastLine: {
 			en: 'Princess…',
