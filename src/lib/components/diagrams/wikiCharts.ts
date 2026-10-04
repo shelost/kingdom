@@ -47,8 +47,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			step: 'league',
 			title: 'The Five Tribes · 오부족',
 			caption:
-				'Jolbon’s five animal roofs — crow, tiger, boar, wolf, bear — become Goguryeo’s five commanderies. Crow is East: the Yeon hall, later Gesomun’s 대가.',
-			ko: '졸본의 다섯 짐승 지붕이 오부가 된다. 까마귀는 동부 — 연씨 지붕, 나중엔 개소문의 대가.'
+				'Jolbon’s five animal roofs — the crow and the four ka: horse, cow, pig, dog — become Goguryeo’s five commanderies. Crow is East: the Yeon hall, later Gesomun’s 대가.',
+			ko: '졸본의 다섯 짐승 지붕 — 까마귀와 마가·우가·저가·구가 — 이 오부가 된다. 까마귀는 동부 — 연씨 지붕, 나중엔 개소문의 대가.'
 		},
 		{
 			diagram: 'high-summit',
@@ -82,8 +82,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'four-dragons',
 			title: 'Four Dragons · 사룡',
 			caption:
-				'Taizong’s dragons: White Xue Rengui, Red Li Jing, Blue Li Shiji (also a Beast), Black Yuchi Gong.',
-			ko: '태종의 사룡 — 백룡 설인귀, 적룡 이정, 청룡 이세적(사신 겸임), 흑룡 울지공.'
+				'Taizong’s dragons: White Qibi Heli, Red Ashina She’er, Blue Li Shiji (also a Beast), Black Zhangsun Wuji.',
+			ko: '태종의 사룡 — 백룡 계필하력, 적룡 아사나사이, 청룡 이세적(사신 겸임), 흑룡 장손무기.'
 		},
 		{
 			diagram: 'four-beasts',
@@ -124,7 +124,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'tamla',
 			title: 'Tamla Class III · 탐라 제신',
 			caption:
-				'Island particulars under Little Star’s living world: Sulmun piled Halla; Jacheongbi, Gameunjang, and Sanbangdeok keep the shrine road.',
+				'Island particulars under Little Star’s living world: Sulmun piled Halla; Jacheongbi, Gameunjang, and Sanbangduk keep the shrine road.',
 			ko: '소별왕의 이승 아래 탐라의 개별 신격. 설문이 한라를 쌓고, 자청비·가믄장·산방덕이 당길을 지킨다.'
 		}
 	],
@@ -189,7 +189,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'tamla',
 			title: 'Tamla Class III · 탐라 제신',
 			caption:
-				'Sulmun is Tamla Class III — island-maker under the living world, not a realm-head. Jacheongbi, Gameunjang, and Sanbangdeok share the shrine road.',
+				'Sulmun is Tamla Class III — island-maker under the living world, not a realm-head. Jacheongbi, Gameunjang, and Sanbangduk share the shrine road.',
 			ko: '설문은 탐라 3등급 — 이승 아래 섬을 만든 신이지 계의 주인이 아니다. 자청비·가믄장·산방덕이 같은 당길을 쓴다.'
 		}
 	],
@@ -315,8 +315,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			step: 'league',
 			title: 'The Five Tribes · 오부족',
 			caption:
-				'Crow East, tiger West, boar South, wolf North, bear Central — the same five chairs the High Summit later names 부.',
-			ko: '까마귀 동부, 호랑이 서부, 멧돼지 남부, 늑대 북부, 곰 중부 — 제가가 나중에 부라고 부르는 그 다섯 자리.'
+				'Crow East, cow ka West, pig ka South, dog ka North, horse ka Central — the same five chairs the High Summit later names 부.',
+			ko: '까마귀 동부, 우가 서부, 저가 남부, 구가 북부, 마가 중부 — 제가가 나중에 부라고 부르는 그 다섯 자리.'
 		}
 	],
 	fivecommanders: [
@@ -377,8 +377,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'four-dragons',
 			title: 'Four Dragons · 사룡',
 			caption:
-				'White Xue Rengui, Red Li Jing, Blue Li Shiji (also a Beast), Black Yuchi Gong — four men, four colours.',
-			ko: '백룡 설인귀, 적룡 이정, 청룡 이세적(사신 겸임), 흑룡 울지공.'
+				'White Qibi Heli and Red Ashina She’er, both Turks; Blue Li Shiji (also a Beast); Black Zhangsun Wuji, the empress’s brother.',
+			ko: '백룡 계필하력과 적룡 아사나사이는 돌궐인. 청룡 이세적(사신 겸임). 흑룡 장손무기는 황후의 오라비.'
 		}
 	],
 	fourbeasts: [

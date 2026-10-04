@@ -99,6 +99,8 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'chunchu-era-11': 'chunchu-era-hyukgose',
 	'chunchu-era-the-flower-youth': 'chunchu-era-the-hwarang',
 	'chunchu-era-silla-tang-alliance': 'chunchu-era-the-emperor',
+	'chunchu-era-gaya-the-lost-nations': 'chunchu-era-suro',
+	'chunchu-era-the-fall-of-gaya': 'chunchu-era-muryuk',
 	'final-stand-7': 'final-stand-pyongyang-a',
 	'final-stand-pyongyang-fortress': 'final-stand-pyongyang',
 	'final-stand-the-final-stand': 'final-stand-pyongyang-a',

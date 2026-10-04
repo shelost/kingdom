@@ -8,12 +8,14 @@
 	import ScenePlayer from '$lib/components/ScenePlayer.svelte';
 	import SceneLoop from '$lib/components/SceneLoop.svelte';
 	import SceneFrameEdit from '$lib/components/SceneFrameEdit.svelte';
-	import FrameMenu from '$lib/components/FrameMenu.svelte';
 	import AlbumCover from '$lib/components/AlbumCover.svelte';
 	import { resolve } from '$app/paths';
 	import { replaceState } from '$app/navigation';
 	import { page } from '$app/state';
 	import { editUi } from '$lib/editUi.svelte';
+	import { isReferenceImage } from '$lib/imageStars';
+	import { starKey } from '$lib/imageStarsUi.svelte';
+	import { openImageMenu } from '$lib/imageMenu.svelte';
 	import { storyImg } from '$lib/img';
 	import { hasLyricsForScene } from '$lib/lyrics';
 	import { initMusic, playOrPause, playTrack, stopTrack, music, toggleMute } from '$lib/music.svelte';
@@ -57,8 +59,6 @@
 		void persistFrames(active.id, frames);
 	}
 
-	/** Edit-mode right-click menu on a still (sequence rail or the live frame). */
-	let frameMenu = $state<{ sceneId: string; index: number; x: number; y: number } | null>(null);
 	/** Frame the live still reported last, tagged with its scene. */
 	let shown = $state<{ id: string; index: number }>({ id: '', index: 0 });
 	/** Click in the sequence rail. `token` forces the still to jump even to the same index. */
@@ -70,10 +70,17 @@
 		frameCue = { id: active.id, index, token: (frameCue?.token ?? 0) + 1 };
 	}
 
+	/** Edit-mode right-click on a still (sequence rail or the live frame). Remove drops it from the song. */
 	function openFrameMenu(sceneId: string, event: MouseEvent, index: number) {
-		if (!editing) return;
-		event.preventDefault();
-		frameMenu = { sceneId, index, x: event.clientX, y: event.clientY };
+		const src = frameSrc(sceneId, index);
+		if (!src || isReferenceImage(src)) return;
+		const count = frameCount(sceneId);
+		openImageMenu(event, {
+			label: `Still ${index + 1} of ${count}`,
+			starKey: starKey(src),
+			remove: count > 1 ? () => removeFrame(sceneId, index) : undefined,
+			removeHint: 'A song needs at least one still'
+		});
 	}
 
 	function frameCount(sceneId: string): number {
@@ -599,19 +606,6 @@
 				onreorder={reorderActive}
 				onmenu={(e, index) => openFrameMenu(active.id, e, index)}
 				onpick={showFrame}
-			/>
-		{/if}
-		{#if frameMenu}
-			{@const menu = frameMenu}
-			{@const count = frameCount(menu.sceneId)}
-			<FrameMenu
-				x={menu.x}
-				y={menu.y}
-				label="Still {menu.index + 1} of {count}"
-				src={frameSrc(menu.sceneId, menu.index)}
-				canDelete={count > 1}
-				ondelete={() => removeFrame(menu.sceneId, menu.index)}
-				onclose={() => (frameMenu = null)}
 			/>
 		{/if}
 	</div>

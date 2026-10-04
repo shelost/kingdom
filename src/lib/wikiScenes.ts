@@ -162,10 +162,22 @@ function buildAnimalSceneIndex(): Map<string, WikiScene[]> {
 
 const SCENES_BY_ANIMAL = buildAnimalSceneIndex();
 
-/** Tagged stills for a wiki character, god, or animal. Empty when none. Poster / cover stills pin first. */
+/** Stills tagged with both people of a relationship; the bond's `still` slot pins first. */
+function scenesForBond(bond: Person): WikiScene[] {
+	const [a, b] = bond.between ?? [];
+	if (!a || !b) return [];
+	const withB = new Set((SCENES_BY_PERSON.get(b) ?? []).map((s) => s.id));
+	const list = (SCENES_BY_PERSON.get(a) ?? []).filter((s) => withB.has(s.id));
+	const idx = bond.still ? list.findIndex((s) => s.id === bond.still) : -1;
+	if (idx > 0) list.unshift(...list.splice(idx, 1));
+	return list;
+}
+
+/** Tagged stills for a wiki character, god, animal, or relationship. Empty when none. Poster / cover stills pin first. */
 export function scenesForWikiEntry(personId: string): WikiScene[] {
 	const person = byId.get(personId);
 	if (!person) return [];
+	if (person.entity === 'relationship') return scenesForBond(person);
 	if (person.entity === 'animal') {
 		const list = [...(SCENES_BY_ANIMAL.get(personId) ?? [])];
 		const cover = person.avatar ? artAttachmentKey(person.avatar) : '';

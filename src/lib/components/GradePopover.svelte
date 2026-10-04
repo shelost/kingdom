@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
-	import { editUi, permanentlyDeleteCue } from '$lib/editUi.svelte';
+	import { editUi, permanentlyDeleteImage } from '$lib/editUi.svelte';
 	import { closeImageGrade, existingGrade, imageGradeUi, saveInlineGrade } from '$lib/imageGradeUi.svelte';
+	import { ensureStars, isStarred, toggleStar } from '$lib/imageStarsUi.svelte';
 	import { STILL_EXPAND_ASPECTS, type StillEditOp } from '$lib/stillEdit';
 	import { runStillEdit, stillEditUi } from '$lib/stillEditUi.svelte';
 
@@ -10,7 +11,16 @@
 	let open = $derived(imageGradeUi.open && editUi.enabled && !!imageGradeUi.slotId);
 	let slotId = $derived(imageGradeUi.slotId);
 	let existing = $derived(existingGrade(slotId));
+	let starred = $derived(!!slotId && isStarred(slotId));
 	let boxEl: HTMLDivElement | null = null;
+
+	$effect(() => {
+		if (open) void ensureStars();
+	});
+
+	function star() {
+		if (slotId) toggleStar(slotId);
+	}
 
 	const left = $derived(imageGradeUi.x);
 	const top = $derived(imageGradeUi.y);
@@ -81,6 +91,11 @@
 			void save();
 			return;
 		}
+		if (e.key === 's' || e.key === 'S') {
+			e.preventDefault();
+			star();
+			return;
+		}
 		if (e.key >= '1' && e.key <= '9') imageGradeUi.draftScore = Number(e.key);
 		if (e.key === '0') imageGradeUi.draftScore = 10;
 	}
@@ -99,7 +114,7 @@
 		const id = slotId;
 		if (!id) return;
 		closeImageGrade();
-		await permanentlyDeleteCue(id);
+		await permanentlyDeleteImage({ kind: 'cue', slotId: id });
 	}
 </script>
 
@@ -116,7 +131,13 @@
 		aria-label="Grade and edit this still"
 		oncontextmenu={(e) => e.preventDefault()}
 	>
-		<p class="id">{slotId}</p>
+		<div class="head">
+			<p class="id">{slotId}</p>
+			<button type="button" class="star" class:on={starred} aria-pressed={starred} onclick={star}>
+				<span aria-hidden="true">{starred ? '★' : '☆'}</span>
+				{starred ? 'Starred' : 'Star'}
+			</button>
+		</div>
 		<div class="scores" role="group" aria-label="Score from 1 to 10">
 			{#each SCORES as n (n)}
 				<button
@@ -212,7 +233,7 @@
 			</div>
 		{/if}
 		<button type="button" class="kill" onclick={() => void onDelete()}>Delete cue</button>
-		<p class="hint">Esc closes · Enter saves grade · ⌘Enter in the note</p>
+		<p class="hint">Esc closes · S stars · Enter saves grade · ⌘Enter in the note</p>
 	</div>
 {/if}
 
@@ -234,13 +255,39 @@
 		outline: none;
 	}
 
-	.id {
+	.head {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 0.5rem;
 		margin: 0 0 0.45rem;
+	}
+
+	.id {
+		margin: 0;
 		font-size: 0.62rem;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
 		word-break: break-all;
+	}
+
+	.star {
+		flex-shrink: 0;
+		padding: 0.18rem 0.5rem;
+		border: 1px solid var(--hairline);
+		border-radius: 999px;
+		background: var(--panel-sunken);
+		color: var(--fg-dim);
+		font-family: inherit;
+		font-size: 0.66rem;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.star.on {
+		color: var(--gold);
+		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
 	}
 
 	.scores,

@@ -8,10 +8,14 @@
 		type OrphanedImage,
 		type StoryCueImage
 	} from '$lib/storyImages';
-	import type { GalleryDeleteItem, GalleryDeleteResponse } from '$lib/galleryDelete';
+	import type { GalleryDeleteItem } from '$lib/galleryDelete';
 	import { storyImg } from '$lib/img';
 	import { nsfwAllowed, nsfwUi } from '$lib/nsfwUi.svelte';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
+	import { deleteGalleryItems, editUi, permanentlyDeleteImage } from '$lib/editUi.svelte';
+	import { isReferenceImage } from '$lib/imageStars';
+	import { ensureStars, isStarred, starKey } from '$lib/imageStarsUi.svelte';
+	import { openImageMenu } from '$lib/imageMenu.svelte';
 	import { entryId } from '$lib/story';
 
 	type GridCell = {
@@ -32,6 +36,8 @@
 		episodeId?: string;
 		filename: string;
 		slot?: StoryCueImage['slot'];
+		/** Empty for reference boards — those never star. */
+		starKey: string;
 	};
 
 	function fileNameOf(src: string | undefined, fallback: string): string {
@@ -58,7 +64,8 @@
 			isSeedCopy: im.isSeedCopy,
 			episodeId: entryId(im.chapterId, im.entryTitle),
 			filename: fileNameOf(im.displayArt, im.slot.id),
-			slot: im.slot
+			slot: im.slot,
+			starKey: starKey(im.displayArt, im.slot.id)
 		};
 	}
 
@@ -78,13 +85,15 @@
 			hasGenuineRefs: false,
 			hasExplicitRefs: false,
 			isSeedCopy: false,
-			filename: fileNameOf(o.src, o.id)
+			filename: fileNameOf(o.src, o.id),
+			starKey: isReferenceImage(o.src) ? '' : starKey(o.src)
 		};
 	}
 
 	let images = $state.raw(flattenStoryImages());
 	let orphans = $state.raw(findOrphanedImages());
 	let query = $state('');
+	let starredOnly = $state(false);
 	let selecting = $state(false);
 	let confirmOpen = $state(false);
 	let deleting = $state(false);
@@ -102,7 +111,14 @@
 		});
 	}
 
-	const cells = $derived.by(() => [...images.map(cueCell), ...orphans.map(orphanCell)]);
+	$effect(() => {
+		void ensureStars();
+	});
+
+	const cells = $derived.by(() => [
+		...images.filter((im) => !editUi.removedCueIds.has(im.slot.id)).map(cueCell),
+		...orphans.filter((o) => !editUi.removedOrphanIds.has(o.id)).map(orphanCell)
+	]);
 	const nsfwCount = $derived(cells.filter((c) => c.isNsfw).length);
 	const allowed = $derived(
 		cells.filter((c) => {
@@ -111,10 +127,12 @@
 		})
 	);
 	const nsfwHidden = $derived(nsfwCount - allowed.filter((c) => c.isNsfw).length);
+	const starredCount = $derived(allowed.filter((c) => isStarred(c.starKey)).length);
 	const visible = $derived.by(() => {
 		const q = query.trim().toLowerCase();
-		if (!q) return allowed;
-		return allowed.filter((c) => {
+		const pool = starredOnly ? allowed.filter((c) => isStarred(c.starKey)) : allowed;
+		if (!q) return pool;
+		return pool.filter((c) => {
 			if (q === 'nsfw') return c.isNsfw;
 			const hay = [
 				c.id,
@@ -160,6 +178,19 @@
 			return;
 		}
 		openCell(cell, e.currentTarget);
+	}
+
+	function deleteItemOf(cell: GridCell): GalleryDeleteItem {
+		return cell.kind === 'cue' ? { kind: 'cue', slotId: cell.id } : { kind: 'orphan', id: cell.id };
+	}
+
+	function onThumbMenu(e: MouseEvent, cell: GridCell) {
+		if (!cell.starKey) return;
+		openImageMenu(e, {
+			label: cell.cueLabel,
+			starKey: cell.starKey,
+			remove: () => permanentlyDeleteImage(deleteItemOf(cell))
+		});
 	}
 
 	function openCell(im: GridCell, from?: EventTarget | null) {
@@ -212,40 +243,15 @@
 		if (!picked.length || deleting) return;
 		deleting = true;
 		deleteError = '';
-		const items: GalleryDeleteItem[] = picked.map((c) =>
-			c.kind === 'cue' ? { kind: 'cue', slotId: c.id } : { kind: 'orphan', id: c.id }
-		);
 		try {
-			const res = await fetch(resolve('/api/images'), {
-				method: 'POST',
-				headers: { 'content-type': 'application/json' },
-				body: JSON.stringify({ items })
-			});
-			if (!res.ok) {
-				let message = `Delete failed (${res.status})`;
-				try {
-					const body = (await res.json()) as { message?: string };
-					if (body.message) message = body.message;
-				} catch {
-					/* keep status text */
-				}
-				deleteError = message;
+			const result = await deleteGalleryItems(picked.map(deleteItemOf));
+			if (!result.ok) {
+				deleteError = result.message;
 				return;
 			}
-			const body = (await res.json()) as GalleryDeleteResponse;
-			const cueGone = new Set(
-				body.deleted.filter((d) => d.kind === 'cue').map((d) => d.slotId)
-			);
-			const orphanGone = new Set(
-				body.deleted.filter((d) => d.kind === 'orphan').map((d) => d.id)
-			);
-			images = images.filter((im) => !cueGone.has(im.slot.id));
-			orphans = orphans.filter((o) => !orphanGone.has(o.id));
 			selected.clear();
 			confirmOpen = false;
 			selecting = false;
-		} catch (err) {
-			deleteError = err instanceof Error ? err.message : 'Delete failed';
 		} finally {
 			deleting = false;
 		}
@@ -267,8 +273,12 @@
 				<a href={resolve('/grade')}>Grade</a>
 				<span class="dot" aria-hidden="true">·</span>
 				<span
-					>{query.trim() ? `${visible.length} / ${cells.length}` : cells.length} stills</span
+					>{query.trim() || starredOnly ? `${visible.length} / ${cells.length}` : cells.length} stills</span
 				>
+				{#if starredCount}
+					<span class="dot" aria-hidden="true">·</span>
+					<span>{starredCount} starred</span>
+				{/if}
 				{#if tempCount}
 					<span class="dot" aria-hidden="true">·</span>
 					<span>{tempCount} temp</span>
@@ -317,6 +327,17 @@
 					</button>
 					<button
 						type="button"
+						class={['nsfw-filter', 'star-filter', { active: starredOnly }]}
+						aria-pressed={starredOnly}
+						title={editUi.enabled ? 'Right-click a still to star it' : 'Add ?edit=true to star stills'}
+						onclick={() => (starredOnly = !starredOnly)}
+					>
+						<span aria-hidden="true">{starredOnly ? '★' : '☆'}</span> Starred{starredCount
+							? ` (${starredCount})`
+							: ''}
+					</button>
+					<button
+						type="button"
 						class={['select-toggle', { active: selecting }]}
 						aria-pressed={selecting}
 						onclick={toggleSelectMode}
@@ -346,7 +367,8 @@
 					temp: im.isTemp,
 					nsfw: im.isNsfw,
 					orphan: im.kind === 'orphan',
-					picked: selected.has(im.key)
+					picked: selected.has(im.key),
+					starred: isStarred(im.starKey)
 				}}
 			>
 				{#if selecting}
@@ -366,6 +388,7 @@
 						style:--tone={im.tone}
 						aria-label={`Open ${im.title} at original size`}
 						onclick={(e) => onThumbClick(e, im)}
+						oncontextmenu={(e) => onThumbMenu(e, im)}
 					>
 						<img
 							{...storyImg(im.src, {
@@ -376,6 +399,9 @@
 							})}
 						/>
 						<div class="badges">
+							{#if isStarred(im.starKey)}
+								<span class="badge star" aria-label="Starred">★</span>
+							{/if}
 							{#if im.isNsfw}
 								<span class="badge nsfw">nsfw</span>
 							{/if}
@@ -643,6 +669,18 @@
 		border-color: #9f1239;
 	}
 
+	.star-filter {
+		color: var(--gold);
+		border-color: color-mix(in srgb, var(--gold) 55%, var(--hairline));
+	}
+
+	.star-filter:hover,
+	.star-filter.active {
+		color: #14140f;
+		background: var(--gold);
+		border-color: var(--gold);
+	}
+
 	.grid {
 		max-width: 72rem;
 		margin: 0 auto;
@@ -661,6 +699,10 @@
 	.card.picked .thumb {
 		outline: 2px solid var(--gold);
 		outline-offset: 2px;
+	}
+
+	.card.starred .thumb {
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 70%, transparent);
 	}
 
 	.pick {
@@ -772,6 +814,12 @@
 	.badge.nsfw {
 		background: #9f1239;
 		color: #fff7f8;
+	}
+
+	.badge.star {
+		letter-spacing: 0;
+		color: var(--gold);
+		background: rgba(10, 10, 12, 0.78);
 	}
 
 	.badge.seed {

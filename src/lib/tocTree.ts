@@ -1,4 +1,4 @@
-import { chapters, entryId, scenesOf, type Chapter, type Entry } from '$lib/story';
+import { chapters, entryId, scenesOf, type Chapter, type Entry, type SceneRef } from '$lib/story';
 
 /** A nested TOC row: another episode in the same chapter, optionally relabeled. */
 export type NestedLeaf = {
@@ -8,6 +8,8 @@ export type NestedLeaf = {
 	after?: string;
 	/** Also list this child’s scene/day headers under the parent. */
 	expandScenes?: boolean;
+	/** A folk myth told inside the episode (Tamla tales) — marked apart from plain flashbacks. */
+	myth?: boolean;
 };
 
 export type NestSpec = {
@@ -22,7 +24,12 @@ export type NestSpec = {
  * not a flat dump of flashes. Labels follow the chronicle’s scene names.
  */
 export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
-	jumong: [],
+	jumong: [
+		{
+			parent: 'Jumong',
+			children: [{ title: 'Dongmyung' }]
+		}
+	],
 	samhan: [
 		{
 			parent: 'Queen Sunduk',
@@ -60,11 +67,16 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	'seventh-invasion': [
 		{
 			parent: 'Emperor of the West',
-			children: [{ title: 'Great River' }]
+			label: 'Eastern Fortress',
+			children: [
+				{ title: 'Great River' },
+				{ title: 'Longmen Field' },
+				{ title: 'Eastern Fortress', label: 'The Fall of Yodong' }
+			]
 		},
 		{
 			parent: 'Stallion Mountain',
-			children: [{ title: 'Eastern Fortress' }, { title: 'Boiling River' }]
+			children: [{ title: 'Boiling River' }]
 		}
 	],
 	'chunchu-era': [
@@ -82,8 +94,9 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		{
 			parent: 'Bidam’s Rebellion',
 			children: [
-				{ title: 'Gaya, the Lost Nations' },
-				{ title: 'The Fall of Gaya' },
+				{ title: 'Suro' },
+				{ title: 'Muryuk' },
+				{ title: 'Seohyun' },
 				{ title: 'Chunchu Goes to the East' }
 			]
 		},
@@ -100,22 +113,26 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 		{
 			parent: 'The Royal Secretariat',
 			label: 'Queen Jinduk',
-			children: [{ title: 'King Muyeol' }, { title: 'Hyukgosé' }]
+			children: [{ title: 'King Muyeol' }]
+		},
+		{
+			parent: 'Hyukgosé',
+			children: [{ title: 'Talhae' }, { title: 'Alji' }]
 		}
 	],
 	'fall-of-euija': [
 		{
 			parent: 'Gyebek’s Exile',
 			children: [
-				{ title: 'Tamla, the Island of Oranges', label: 'Tamla' },
-				{ title: 'Big Star and Little Star' },
-				{ title: 'The Great Lady’s Apron', label: 'Sulmun & The Three Princes' },
-				{ title: 'Kangrim', label: 'Hallakgungi' },
-				{ title: 'Her Own Navel-String' },
-				{ title: 'The Girl Who Cut Her Hair' },
-				{ title: 'The Ox and the Iron Chest' },
-				{ title: 'The Ones That End in Stone' },
-				{ title: 'The Tribute of Oranges' }
+				{ title: 'Sulmun and the Three Princes', myth: true },
+				{ title: 'Heaven–Earth King', myth: true },
+				{ title: 'Sulmun’s Apron', myth: true },
+				{ title: 'Kangrim', myth: true },
+				{ title: 'Gameunjang', myth: true },
+				{ title: 'Jacheongbi', myth: true },
+				{ title: 'Baekjuto and Socheon-guk', myth: true },
+				{ title: 'Sanbangduk', myth: true },
+				{ title: 'The Tribute of Oranges', myth: true }
 			]
 		},
 		{
@@ -142,10 +159,6 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 			parent: 'The Death of Kim Chunchu',
 			children: [{ title: 'The Four Beasts' }]
 		},
-		{
-			parent: 'Baekje Restoration Society',
-			children: [{ title: 'White River' }]
-		}
 	],
 	'final-stand': [
 		{
@@ -172,12 +185,30 @@ export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
 	]
 };
 
+/** TOC dot: white for a flashback, light purple for a Tamla myth. */
+export type TocMark = 'flashback' | 'myth';
+
 export type TocLeaf = {
 	id: string;
 	title: string;
 	year?: string;
 	kind: 'entry' | 'scene' | 'flashback' | 'day';
+	mark?: TocMark;
 };
+
+/** Spine-row mark: episodes stored as flashbacks to an earlier era. */
+export function entryMark(en: Entry): TocMark | undefined {
+	return en.flashback ? 'flashback' : undefined;
+}
+
+function sceneLeaf(scene: SceneRef): TocLeaf {
+	return {
+		id: scene.id,
+		title: scene.title,
+		kind: scene.kind,
+		mark: scene.kind === 'flashback' ? 'flashback' : undefined
+	};
+}
 
 const nestedTitleSets = new Map<string, Set<string>>();
 for (const [chapterId, nests] of Object.entries(CHAPTER_NESTS)) {
@@ -210,7 +241,8 @@ function childLeaf(ch: Chapter, child: NestedLeaf, ep: Entry): TocLeaf {
 		id: entryId(ch.id, ep.title),
 		title: child.label ?? ep.title,
 		year: ep.year,
-		kind: 'entry'
+		kind: 'entry',
+		mark: child.myth ? 'myth' : entryMark(ep)
 	};
 }
 
@@ -223,9 +255,7 @@ function pushChild(
 	leaves.push(childLeaf(ch, child, ep));
 	if (!child.expandScenes) return;
 	const cid = entryId(ch.id, ep.title);
-	for (const cs of scenesOf(ep.blocks, cid)) {
-		leaves.push({ id: cs.id, title: cs.title, kind: cs.kind });
-	}
+	for (const cs of scenesOf(ep.blocks, cid)) leaves.push(sceneLeaf(cs));
 }
 
 export function tocLeavesFor(ch: Chapter, en: Entry, eid: string, readingEntry: Entry): TocLeaf[] {
@@ -234,7 +264,7 @@ export function tocLeavesFor(ch: Chapter, en: Entry, eid: string, readingEntry: 
 	const placed = new Set<NestedLeaf>();
 	const leaves: TocLeaf[] = [];
 	for (const s of scenesOf(readingEntry.blocks, eid)) {
-		leaves.push({ id: s.id, title: s.title, kind: s.kind });
+		leaves.push(sceneLeaf(s));
 		for (const child of nested) {
 			if (child.after !== s.title) continue;
 			const ep = byTitle.get(child.title);

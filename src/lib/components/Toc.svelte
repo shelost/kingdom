@@ -2,7 +2,14 @@
 	import { onMount } from 'svelte';
 	import { chapters, entryId, partId } from '$lib/story';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
-	import { branchContains, spineEntries, spineLabel, tocLeavesFor } from '$lib/tocTree';
+	import {
+		branchContains,
+		entryMark,
+		spineEntries,
+		spineLabel,
+		tocLeavesFor,
+		type TocMark
+	} from '$lib/tocTree';
 	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump, tocUi, loadTocFloating, tocOverlays } from '$lib/tocUi.svelte';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
@@ -346,7 +353,15 @@
 		if (!scriptUi.inScript) return;
 		open = !open;
 	}
+
+	const MARK_LABEL: Record<TocMark, string> = { flashback: 'Flashback', myth: 'Tamla myth' };
 </script>
+
+{#snippet markDot(mark: TocMark | undefined)}
+	{#if mark}
+		<span class="toc-mark {mark}" title={MARK_LABEL[mark]} aria-label={MARK_LABEL[mark]}></span>
+	{/if}
+{/snippet}
 
 <div
 	class="progress"
@@ -470,6 +485,7 @@
 							{#if isLoveEpisode(eid)}
 								<span class="si-love" title="Love story" aria-label="Love story"></span>
 							{/if}
+							{@render markDot(entryMark(en))}
 						</button>
 						{#if leaves.length}
 							<div
@@ -492,6 +508,7 @@
 											>
 												<span class="scene-num">{si + 1}</span>
 												<span class="scene-title">{s.title}</span>
+												{@render markDot(s.mark)}
 											</button>
 										{/each}
 									</div>
@@ -900,6 +917,29 @@
 	.sub-item.on-pill .si-love {
 		background: #c45a8a;
 		box-shadow: none;
+	}
+
+	.toc-mark {
+		flex: 0 0 auto;
+		align-self: center;
+		margin-left: auto;
+		width: 0.38rem;
+		height: 0.38rem;
+		border-radius: 50%;
+		background: var(--mark);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--mark) 40%, transparent);
+	}
+
+	.toc-mark.flashback {
+		--mark: #f4f1e8;
+	}
+
+	.toc-mark.myth {
+		--mark: #c4b5fd;
+	}
+
+	.on-pill .toc-mark {
+		box-shadow: 0 0 0 1px color-mix(in srgb, #14140f 55%, transparent);
 	}
 
 	.scene-fold {

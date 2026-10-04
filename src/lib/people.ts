@@ -292,6 +292,10 @@ export interface Person {
 	between?: [string, string];
 	/** For relationships: the nature of the bond. */
 	bond?: BondKind;
+	/** For relationships: the pair's one-line dynamic (shown as the wiki “Dynamic” row). */
+	dynamic?: { en: string; ko: string };
+	/** For relationships: story image slot id of the bond's cover still (wiki hero + first in gallery). */
+	still?: string;
 	/**
 	 * For sword profiles: person ids who wield or wielded this blade
 	 * (primary / most recent first). Reverse lookup via `swordsOf` in wiki.ts.
@@ -521,68 +525,72 @@ export const PEOPLE: Person[] = [
 		aliases: ['Yeon Tabal', 'Tabal']
 	},
 	{
-		id: 'tigerchief',
+		id: 'cowchief',
 		gender: 'm',
-		avatar: '/ch_tiger_chief.png',
-		name: 'Tiger Chief',
-		korean: '호랑이 족장',
+		avatar: '/ch_cow_chief.png',
+		name: 'Cow Ka',
+		korean: '우가',
+		hanja: '牛加',
 		kingdom: 'jolbon',
-		title: 'Tiger-clan chieftain of Jolbon',
-		tagline: 'Youngest of the four roofs that are not crow — arrives with a bow and a pelt still warm.',
+		title: 'Cow-ka chieftain of Jolbon',
+		tagline: 'Youngest of the four roofs that are not crow — keeps the herds, and still arrives with a bow in his hand.',
 		quote: 'Count your ditch. I’ll count the shot.',
 		nature:
-			'Proud hunter voice. Red headband, tiger pelt, bow already in the hand. Talks like a man who wants the first look and the last word. Not Tabal — the tiger roof, not the crow.',
+			'Proud herdsman voice. Red headband, bow already in the hand; counts cattle the way the crow counts millet. Talks like a man who wants the first look and the last word. Not Tabal — the cow roof, not the crow.',
 		events: [{ label: 'Walks Tabal’s packed-earth yard for the first summit of the five tribes.' }],
-		career: [{ title: 'Tiger-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the western commandery' }],
-		aliases: ['Tiger Chief', '호랑이 족장', 'tiger chief']
+		career: [{ title: 'Cow ka', korean: '우가', hanja: '牛加', org: 'fivetribes', from: -37, note: 'Later the western commandery' }],
+		aliases: ['Cow Ka', '우가', '牛加', 'cow ka', 'Ox Ka', 'cow chief']
 	},
 	{
-		id: 'boarchief',
+		id: 'pigchief',
 		gender: 'm',
-		avatar: '/ch_boar_chief.png',
-		name: 'Boar Chief',
-		korean: '멧돼지 족장',
+		avatar: '/ch_pig_chief.png',
+		name: 'Pig Ka',
+		korean: '저가',
+		hanja: '豬加',
 		kingdom: 'jolbon',
-		title: 'Boar-clan chieftain of Jolbon',
-		tagline: 'Heavy man, boar pelt, the roof that eats first and argues later.',
+		title: 'Pig-ka chieftain of Jolbon',
+		tagline: 'Heavy man, full pens, the roof that eats first and argues later.',
 		quote: 'If the store is full I don’t care whose ditch it was.',
 		nature:
-			'Blunt, thick, practical. Talks in grain and meat. The boar pelt is not costume — it is the roof. Not Tabal’s crow, not the tiger’s pride.',
+			'Blunt, thick, practical. Talks in grain and meat. The pig pens are not a joke — they are the roof’s winter. Not Tabal’s crow, not the cow ka’s pride.',
 		events: [{ label: 'Sits the five-fire ring and votes Jumong king.' }],
-		career: [{ title: 'Boar-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the southern commandery' }],
-		aliases: ['Boar Chief', '멧돼지 족장', 'boar chief']
+		career: [{ title: 'Pig ka', korean: '저가', hanja: '豬加', org: 'fivetribes', from: -37, note: 'Later the southern commandery' }],
+		aliases: ['Pig Ka', '저가', '豬加', 'pig ka', 'pig chief']
 	},
 	{
-		id: 'wolfchief',
+		id: 'dogchief',
 		gender: 'm',
-		avatar: '/ch_wolf_chief.png',
-		name: 'Wolf Chief',
-		korean: '늑대 족장',
+		avatar: '/ch_dog_chief.png',
+		name: 'Dog Ka',
+		korean: '구가',
+		hanja: '狗加',
 		kingdom: 'jolbon',
-		title: 'Wolf-clan chieftain of Jolbon',
+		title: 'Dog-ka chieftain of Jolbon',
 		tagline: 'White-fur eldest — counts winters, not miracles.',
 		quote: 'I have held this yard longer than that boy has been dry.',
 		nature:
-			'Oldest of the four. White beard, white wolf pelt, grey headband. Seniority first. Yields in full sentences when he yields. Not Tabal.',
+			'Oldest of the four. White beard, white fur mantle, grey headband; his dogs reach the gate before he does. Seniority first. Yields in full sentences when he yields. Not Tabal.',
 		events: [{ label: 'Oldest roof at the first summit; votes with the ring.' }],
-		career: [{ title: 'Wolf-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the northern commandery' }],
-		aliases: ['Wolf Chief', '늑대 족장', 'wolf chief']
+		career: [{ title: 'Dog ka', korean: '구가', hanja: '狗加', org: 'fivetribes', from: -37, note: 'Later the northern commandery' }],
+		aliases: ['Dog Ka', '구가', '狗加', 'dog ka', 'dog chief']
 	},
 	{
-		id: 'bearchief',
+		id: 'horsechief',
 		gender: 'm',
-		avatar: '/ch_bear_chief.png',
-		name: 'Bear Chief',
-		korean: '곰 족장',
+		avatar: '/ch_horse_chief.png',
+		name: 'Horse Ka',
+		korean: '마가',
+		hanja: '馬加',
 		kingdom: 'jolbon',
-		title: 'Bear-clan chieftain of Jolbon',
-		tagline: 'Two black-bear heads on the shoulders — few words, red sash, the heaviest roof.',
+		title: 'Horse-ka chieftain of Jolbon',
+		tagline: 'First of the four ka — few words, red sash, the heaviest roof and the most horses.',
 		quote: 'I came. That is the vote.',
 		nature:
-			'Heavy, few words. Black robe, red sash, two bear heads. Does not speechify. Sits, eats, nods. The bear roof, not the crow.',
-		events: [{ label: 'Watches the vermilion cord from the bear fire.' }],
-		career: [{ title: 'Bear-clan chieftain', korean: '족장', org: 'fivetribes', from: -37, note: 'Later the central commandery' }],
-		aliases: ['Bear Chief', '곰 족장', 'bear chief']
+			'Heavy, few words. Black robe, red sash, horse-hair tassels at the shoulders. Does not speechify. Sits, eats, nods. The horse roof, not the crow.',
+		events: [{ label: 'Watches the vermilion cord from the horse fire.' }],
+		career: [{ title: 'Horse ka', korean: '마가', hanja: '馬加', org: 'fivetribes', from: -37, note: 'Later the central commandery' }],
+		aliases: ['Horse Ka', '마가', '馬加', 'horse ka', 'horse chief']
 	},
 	{
 		id: 'jomigon',
@@ -1182,6 +1190,7 @@ export const PEOPLE: Person[] = [
 		blade: 'Ring-pommel fish sword — Gaya fish on the pommel, Silla blue in the fuller.',
 		swordImage: '/sword_fish.png',
 		events: [
+			{ year: 629, label: 'Nangbi Fortress — three times in, three times out; Goguryeo names him the Sword of Silla.' },
 			{ year: 632, label: 'Pledges himself to Queen Sunduk “until the end.”' },
 			{ year: 642, label: 'Marches on Baekje to avenge Daeya.' },
 			{ year: 643, label: 'Trains Bupmin among the Hwarang — marshal of the flower youth.' },
@@ -2903,10 +2912,12 @@ export const PEOPLE: Person[] = [
 			'Dry, already tired of saying it twice. Half-sentences. He does not re-lecture Tanhyeon; he points at a dead friend’s paper. 하오체 to Gyebek, 하십시오 when the king’s man is in the yard. The ring at his belt is a posting, not a speech.',
 		firstLine: 'You… you truly mean to march?',
 		lastLine: 'It is generally the same as Jwapyeong Seongchung’s words.',
-		arc: 'One of the three loyalists with Sungchung and Gyebek. After the purge Euija posts him to Gomamiji. When the Chunchu Army is already moving, a courier asks what to do; Heungsu answers with Seongchung’s dying ground. The court calls it the bitterness of a bound man. Tang is already in the White River. Silla is already over Tanhyeon.',
+		arc: 'One of the three loyalists with Sungchung and Gyebek. After the purge Euija posts him to Gomamiji, where for four years he sweeps the yard and scratches the same map into the packed earth every morning: the White River mouth drawn twice as wide as it is, one notch for Tanhyeon. Seongchung’s death reaches him on a salt boat a season late. When the Chunchu Army is already moving, a courier asks what to do; Heungsu answers with Seongchung’s dying ground and tells the man he is standing on Tanhyeon. The court calls it the bitterness of a bound man. No second courier comes. When rain melts the map he takes the blade off the doorpost and walks north toward a pass already crossed, and the histories lose him.',
 		events: [
 			{ year: 656, label: 'Exiled to Gomamiji-hyeon after saying the purge would finish Silla’s work.' },
-			{ year: 660, label: 'Counsel ignored; White River and Tanhyeon already crossed.' }
+			{ year: 656, label: 'Hears of Seongchung’s death in the cell from a salt boat, a season late.' },
+			{ year: 660, label: 'Counsel ignored; White River and Tanhyeon already crossed.' },
+			{ year: 660, label: 'Walks north from Gomamiji in the rain; not recorded again.' }
 		],
 		career: [
 			{ title: 'Jwapyeong', korean: '좌평', hanja: '佐平', org: 'ministersassembly', from: 641, to: 656 }
@@ -3113,7 +3124,7 @@ export const PEOPLE: Person[] = [
 		quote: "Keep a road under your feet — even in the east.",
 		voice:
 			'A farmer who became a general: humble, plain, devout to his ancestors and his emperor, in short sentences that shrink his own deeds. Korean: deeply formal 합쇼체 upward.',
-		arc: 'Born poor at Longmen as Xue Li. His wife Liu sends him to Zhang Shigui’s muster when Taizong calls for Liaodong. At Stallion Mountain he wears white armour, wields the fangtian ji (the same heaven-halberd the storytellers give Lü Bu), and Taizong asks who the man in white is — then says gaining Xue matters more than gaining Liaodong. Captured once in the seventh invasion, he breaks a fortress cage before the Emperor arrives. Named White Dragon on Taizong’s banner. Inherits the White Tiger title after Pang Xiaotai dies at the Snake River; as Protector-General of the East he takes Pyongyang in 668 and governs without spectacle. At Maeso in 675 he is Tang’s last great eastern commander — competent, sympathetic, and finally out of horses. Real-world figure: 薛仁貴 / 설인귀, born Xue Li 薛禮 (614–683).',
+		arc: 'Born poor at Longmen as Xue Li. His wife Liu sends him to Zhang Shigui’s muster when Taizong calls for Liaodong. At Stallion Mountain he wears white armour, wields the fangtian ji (the same heaven-halberd the storytellers give Lü Bu), and Taizong asks who the man in white is — then says gaining Xue matters more than gaining Liaodong. Captured once in the seventh invasion, he breaks a fortress cage before the Emperor arrives. Inherits the White Tiger title after Pang Xiaotai dies at the Snake River; as Protector-General of the East he takes Pyongyang in 668 and governs without spectacle. At Maeso in 675 he is Tang’s last great eastern commander — competent, sympathetic, and finally out of horses. Real-world figure: 薛仁貴 / 설인귀, born Xue Li 薛禮 (614–683).',
 		blade: 'No ring pommel at all — the fangtian ji, the storytellers’ heaven-halberd; the white coat is his crest.',
 		events: [
 			{ year: 644, label: 'Answers Taizong’s muster at his wife’s urging.' },
@@ -3133,7 +3144,6 @@ export const PEOPLE: Person[] = [
 			'White Coat'
 		],
 		career: [
-			{ title: 'White Dragon', korean: '백룡', hanja: '白龍', org: 'fourdragons', from: 645, to: 662 },
 			{ title: 'White Tiger II', korean: '백호', hanja: '白虎', org: 'fourbeasts', from: 662, to: 668 },
 			{ title: 'Protector-General of the East', korean: '안동도호', hanja: '安東都護', org: 'tangexpedition', from: 668 }
 		],
@@ -3141,8 +3151,6 @@ export const PEOPLE: Person[] = [
 			'Xue Rengui',
 			'Xue Li',
 			'薛禮',
-			'White Dragon',
-			'백룡',
 			'White Tiger II',
 			'the White Tiger II',
 			'Protector-General of the East',
@@ -3156,27 +3164,49 @@ export const PEOPLE: Person[] = [
 		]
 	},
 	{
-		id: 'lijing',
+		id: 'ashinasheer',
 		gender: 'm',
 		name: 'Red Dragon',
-		korean: '이정',
-		hanja: '李靖',
+		korean: '아사나사이',
+		hanja: '阿史那社爾',
 		title: 'The Red Dragon',
 		kingdom: 'tang',
-		born: 571,
-		died: 649,
-		tagline: 'The Red Dragon: Taizong’s other marshal — the name the histories pair with Li Shiji.',
-		quote: 'Three thousand horse is enough, if they arrive before the news.',
-		arc: 'Li Jing, courtesy Yaoshi. With Li Shiji he is the pair the Tang histories cannot write one of without the other: Eastern Turks broken, the steppe taught to use a Tang calendar. Too old to ride the Liao roads himself in 645, he is still the Red Dragon on Taizong’s banner — the name that quiets tents. He dies in 649, the same summer as the Second Emperor; the Red Dragon does not pass to Gaozong’s beasts. Real-world figure: 李靖 / 이정 (571–649).',
+		died: 655,
+		tagline: 'The Red Dragon: a prince of the Turkic royal house, riding for the Heavenly Qaghan.',
+		quote: 'The steppe gives its word once.',
+		arc: 'Ashina She’er, a prince of the Ashina, the royal clan of the Turks. He loses a khanate of his own in the west, comes over to Tang in 635, marries the emperor’s sister and keeps his felt tents inside the capital. To the steppe the Second Emperor is the Heavenly Qaghan as much as he is Son of Heaven to the Han, and in 645 he hangs the Red Dragon banner on a Turk; at Stallion Mountain the Red Dragon rides on with Goguryeo arrows in him. When the Second Emperor dies in 649, the Red Dragon petitions to be killed and buried beside him to guard the tomb; the young emperor refuses. Real-world figure: 阿史那社爾 / 아사나사이 (d. 655).',
 		events: [
-			{ year: 630, label: 'Breaks the Eastern Turks with Li Shiji.' },
-			{ year: 645, label: 'Named Red Dragon for Taizong’s Goguryeo banners.' },
-			{ year: 649, label: 'Dies the same year as the Second Emperor.' }
+			{ year: 635, label: 'Comes over to Tang; marries the Princess of Hengyang.' },
+			{ year: 645, label: 'Red Dragon on the Liao roads; wounded at Stallion Mountain.' },
+			{ year: 649, label: 'Asks to be buried beside the Second Emperor; refused.' }
 		],
 		career: [
 			{ title: 'Red Dragon', korean: '적룡', hanja: '赤龍', org: 'fourdragons', from: 645, to: 649 }
 		],
-		aliases: ['Li Jing', 'Yaoshi', '藥師', '이정', 'Red Dragon', 'the Red Dragon']
+		aliases: ['Ashina She’er', 'Ashina Shier', '阿史那社爾', '아사나사이', 'Red Dragon', 'the Red Dragon', '적룡']
+	},
+	{
+		id: 'qibiheli',
+		gender: 'm',
+		name: 'White Dragon',
+		korean: '계필하력',
+		hanja: '契苾何力',
+		title: 'The White Dragon',
+		kingdom: 'tang',
+		died: 677,
+		tagline: 'The White Dragon: a Tiele chieftain, speared at Baegam and back in the saddle by evening.',
+		quote: 'Bind it tight. I can still ride.',
+		arc: 'Qibi Heli, chieftain of the Qibi, a Tiele people of the steppe, who brings his tribe over to Tang as a boy-khan in 632 and marries into the imperial house. Taizong’s White Dragon in 645: at Baegam a Goguryeo spear goes into his waist, and he has the wound bound and rides out again. In 649 he and the Red Dragon ask to be buried beside the Second Emperor. He rides east once more under Gaozong and is at Pyongyang in 668. Real-world figure: 契苾何力 / 계필하력 (d. 677).',
+		events: [
+			{ year: 632, label: 'Brings the Qibi over to Tang.' },
+			{ year: 645, label: 'White Dragon; speared in the waist at Baegam and rides on.' },
+			{ year: 649, label: 'Asks to be buried beside the Second Emperor; refused.' },
+			{ year: 668, label: 'At the fall of Pyongyang.' }
+		],
+		career: [
+			{ title: 'White Dragon', korean: '백룡', hanja: '白龍', org: 'fourdragons', from: 645, to: 649 }
+		],
+		aliases: ['Qibi Heli', '契苾何力', '계필하력', 'White Dragon', 'the White Dragon', '백룡']
 	},
 	{
 		id: 'sudingfang',
@@ -3191,7 +3221,7 @@ export const PEOPLE: Person[] = [
 		died: 667,
 		tagline: 'The Red Fowl: took three kingdoms’ capitals in one career.',
 		quote: 'Three capitals. One career.',
-		arc: 'Breaker of the Western Turks, commander of the 660 seaborne invasion that ended Baekje in a single season. Gaozong’s Red Fowl — not the Second Emperor’s Red Dragon, which was Li Jing. He failed only at Pyongyang, mired in snow at the Sasu while Yeon destroyed the supporting army. Real-world figure: 蘇定方 / 소정방 (592–667).',
+		arc: 'Breaker of the Western Turks, commander of the 660 seaborne invasion that ended Baekje in a single season. Gaozong’s Red Fowl — not the Second Emperor’s Red Dragon, which was the Turk Ashina She’er. He failed only at Pyongyang, mired in snow at the Sasu while Yeon destroyed the supporting army. Real-world figure: 蘇定方 / 소정방 (592–667).',
 		events: [
 			{ year: 660, label: 'Lands 130,000 men at the Geum estuary; Sabi falls.' },
 			{ year: 662, label: 'Winters outside Pyongyang, and withdraws.' }
@@ -3235,37 +3265,27 @@ export const PEOPLE: Person[] = [
 		]
 	},
 	{
-		id: 'yuchigong',
+		id: 'zhangsunwuji',
 		gender: 'm',
-		avatar: '/ch_black_dragon.png',
 		name: 'Black Dragon',
-		korean: '울지공',
-		hanja: '尉遲恭',
+		korean: '장손무기',
+		hanja: '長孫無忌',
 		title: 'The Black Dragon',
 		kingdom: 'tang',
-		born: 585,
-		died: 658,
-		tagline: 'The Black Dragon: held a palace gate, then the left-wing horse on the Liao roads.',
-		quote: 'A gate is also a war.',
-		arc: 'Yuchi Gong, courtesy Jingde — door god with Qin Shubao in the later temples, Xuanwu Gate man in the living ones. In 645 he rides Taizong’s left-wing horse army into Goguryeo as the Black Dragon. He is not Liu Rengui: the Black Tortoise is a later, different man. Yuchi dies in 658, three years before Gaozong names the beasts. Real-world figure: 尉遲恭 / 울지공, also 울지경덕 (585–658).',
+		born: 594,
+		died: 659,
+		tagline: 'The Black Dragon: the empress’s brother, the emperor’s oldest friend, the hidden wing at Stallion Mountain.',
+		quote: 'The road behind the mountain is the one they forget.',
+		arc: 'Zhangsun Wuji, brother of Empress Zhangsun and Li Shimin’s friend since boyhood; he plans the Xuanwu Gate with him and heads the Lingyan Pavilion roll of founders. He argues against war with Goguryeo when Yeon kills his king, then rides it as the Black Dragon: at Stallion Mountain his eleven thousand come out of the gorge behind Go Yeonsu’s line while the emperor raises the drums on the northern peak. Guardian of Gaozong’s accession, he is broken by Wu Zetian’s party in 659. Real-world figure: 長孫無忌 / 장손무기 (594–659).',
 		events: [
-			{ year: 626, label: 'Fights at the Xuanwu Gate for Li Shimin.' },
-			{ year: 645, label: 'Left-wing horse commander; named Black Dragon for the Liao banners.' },
-			{ year: 658, label: 'Dies; the Black Dragon banner is not inherited by the beasts.' }
+			{ year: 626, label: 'Plans the Xuanwu Gate with Li Shimin.' },
+			{ year: 645, label: 'Black Dragon; leads the hidden wing behind Go Yeonsu at Stallion Mountain.' },
+			{ year: 659, label: 'Exiled by Wu Zetian’s party; forced to die.' }
 		],
 		career: [
-			{ title: 'Black Dragon', korean: '흑룡', hanja: '黑龍', org: 'fourdragons', from: 645, to: 658 }
+			{ title: 'Black Dragon', korean: '흑룡', hanja: '黑龍', org: 'fourdragons', from: 645, to: 649 }
 		],
-		aliases: [
-			'Yuchi Gong',
-			'Yuchi Jingde',
-			'尉遲敬德',
-			'울지경덕',
-			'울지공',
-			'Black Dragon',
-			'the Black Dragon',
-			'흑룡'
-		]
+		aliases: ['Zhangsun Wuji', '長孫無忌', '장손무기', 'Black Dragon', 'the Black Dragon', '흑룡']
 	},
 	{
 		id: 'liurengui',
@@ -3275,12 +3295,16 @@ export const PEOPLE: Person[] = [
 		hanja: '劉仁軌',
 		title: 'The Black Tortoise',
 		kingdom: 'tang',
+		avatar: '/ch_black_dragon.png',
 		born: 601,
 		died: 685,
 		tagline: 'The Black Tortoise: burned four hundred eastern ships at the White River.',
 		quote: 'Hold what the others break.',
-		arc: 'Gaozong’s Black Tortoise — not the Second Emperor’s Black Dragon, which was Yuchi Gong. Liu Rengui holds Baekje when the restoration tries to stand up, then anchors a hundred and seventy ships across the White River mouth in 663 and waits for the tide to turn against the East. He is the general who keeps what Su Dingfang breaks. Real-world figure: 劉仁軌 / 유인궤 (601–685).',
-		events: [{ year: 663, label: 'Wins the naval battle of Baekgang as Black Tortoise.' }],
+		arc: 'Gaozong’s Black Tortoise — not the Second Emperor’s Black Dragon, which was Zhangsun Wuji. Liu Rengui holds Baekje when the restoration tries to stand up, then anchors a hundred and seventy ships across the White River mouth in 663 and waits for the tide to turn against the East. He is the general who keeps what the Red Fowl breaks, and he is at Pyongyang when it falls. Real-world figure: 劉仁軌 / 유인궤 (601–685).',
+		events: [
+			{ year: 663, label: 'Wins the naval battle of Baekgang as Black Tortoise.' },
+			{ year: 668, label: 'At the fall of Pyongyang.' }
+		],
 		career: [
 			{ title: 'Black Tortoise', korean: '현무', hanja: '玄武', org: 'fourbeasts', from: 661 }
 		],
@@ -3298,7 +3322,7 @@ export const PEOPLE: Person[] = [
 		died: 662,
 		tagline: 'The White Tiger, drowned at the Snake River with his thirteen sons.',
 		quote: 'The first tiger dies loud. The second learns.',
-		arc: 'Gaozong’s White Tiger for the Eighth Invasion. In the second month of 662 he drives a Lingnan host into the Snake River — Salsu in the mouths of old men — and Yeon Gesomun kills him there with all thirteen sons. The seat does not stay empty: Xue Rengui, already Taizong’s White Dragon, takes it as White Tiger II. Real-world figure: 龐孝泰 / 방효태 (d. 662).',
+		arc: 'Gaozong’s White Tiger for the Eighth Invasion. In the second month of 662 he drives a Lingnan host into the Snake River — Salsu in the mouths of old men — and Yeon Gesomun kills him there with all thirteen sons. The seat does not stay empty: Xue Rengui, the man in white from Stallion Mountain, takes it as White Tiger II. Real-world figure: 龐孝泰 / 방효태 (d. 662).',
 		events: [
 			{
 				year: 662,
@@ -3311,7 +3335,37 @@ export const PEOPLE: Person[] = [
 		aliases: ['Pang Xiaotai', 'White Tiger', 'the White Tiger', '백호']
 	},
 	{
+		id: 'xuejitou',
+		gender: 'm',
+		name: 'Sul Gedu',
+		korean: '설계두',
+		hanja: '薛罽頭',
+		title: 'Captain of the Left Militant Guard',
+		kingdom: 'silla',
+		died: 645,
+		tagline: 'A Silla man of the sixth head rank who sailed west so his bones would stop deciding for him.',
+		quote: 'Wrong bones, and you don’t get over the wall.',
+		nature:
+			'Born into Silla’s sixth head rank: good enough to serve, never good enough to rise. He says so out loud at a drinking table with four friends, each naming his ambition, and then he does the thing the others only talk about. Twenty-four years in Tang have not made him Tang; they have made him a man with nowhere to go back to and no wish to.',
+		voice:
+			'Dry, blunt, a sergeant rather than a scholar: short plain sentences, a shrug at the end, jokes about bones. Two decades of Tang Chinese with a Silla accent he has stopped apologising for. Bitterness he no longer bothers to hide, but no self-pity. Korean: easy 반말 to fellow soldiers, flat 합쇼체 upward.',
+		arc: 'Seol Gyedu (Xue Jitou), of a Silla house of the sixth head rank. Silla counts bones before talent, he tells his friends, so however great the gift or the deed, a man not born to the right clan cannot climb past it; he will go west, do something the age has not seen, and walk in and out at the Son of Heaven’s side with a cap, a sash and a sword. In 621 he slips aboard a merchant ship to Tang. Twenty-four years later, when the Second Emperor marches on Goguryeo, he puts his own name forward and is made a captain of the Left Militant Guard. At Stallion Mountain he goes deeper into the Goguryeo line than anyone and dies there. The emperor weeps, asks what he wanted, covers him with the imperial robe and names him Grand General. Real-world figure: 薛罽頭 / 설계두 (d. 645), Samguk Sagi, Biographies 7.',
+		events: [
+			{ year: 621, label: 'Stows away on a merchant ship to Tang.' },
+			{ year: 645, label: 'Volunteers for the Liao campaign; captain of the Left Militant Guard.' },
+			{ year: 645, label: 'Dies deep in the enemy line at Stallion Mountain; covered with the emperor’s robe and named Grand General.' }
+		],
+		career: [
+			{ title: 'Captain of the Left Militant Guard', korean: '좌무위과의', hanja: '左武衛果毅', from: 645, to: 645 },
+			{ title: 'Grand General (posthumous)', korean: '대장군', hanja: '大將軍', from: 645 }
+		],
+		firstLine: { en: 'Samhan. Silla.', ko: '삼한이지. 신라.' },
+		lastLine: { en: '…That’ll do me.', ko: '…그거면 돼.' },
+		aliases: ['Sul Gedu', 'Seol Gyedu', 'Xue Jitou', '설계두', '薛罽頭']
+	},
+	{
 		id: 'saimei',
+		avatar: '/ch_saimei.png',
 		name: 'The Eastern Empress',
 		korean: '사이메이 천황',
 		kingdom: 'yamato',
@@ -3333,6 +3387,7 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'tenji',
 		gender: 'm',
+		avatar: '/ch_tenji.png',
 		name: 'The Eastern Prince',
 		korean: '덴지 천황',
 		kingdom: 'yamato',
@@ -3364,7 +3419,7 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'takutsu',
 		gender: 'm',
-		avatar: '/ch_takutsu.png',
+		avatar: '/ch_echi.png',
 		name: 'Echi no Takutsu',
 		korean: '에치노 다쿠쓰',
 		kingdom: 'yamato',
@@ -3373,6 +3428,29 @@ export const PEOPLE: Person[] = [
 		quote: "Loyalty does not ask whose map you die on.",
 		events: [{ year: 663, label: 'Falls at Baekgang crying “Long live Kudara!”' }],
 		aliases: ['Echi no Takutsu', 'Takutsu']
+	},
+	{
+		id: 'abe',
+		gender: 'm',
+		avatar: '/ch_abe.png',
+		name: 'Abe no Hirafu',
+		korean: '아베노 히라부',
+		hanja: '阿倍比羅夫',
+		kingdom: 'yamato',
+		tagline: 'Yamato’s admiral of the cold north, sent west as rear general for Baekje.',
+		quote: 'I have sailed the cold sea. The western one is only warmer.',
+		events: [
+			{ year: 658, label: 'Sails north with a hundred and eighty ships against the Emishi.' },
+			{ year: 660, label: 'Fights the Mishihase on the northern coast.' },
+			{ year: 661, label: 'Named rear general of the fleet raised to restore Baekje.' },
+			{ year: 664, label: 'Holds Tsukushi against a western counterstroke that never comes.' }
+		],
+		career: [
+			{ title: 'Governor of Koshi', korean: '고시 국수', hanja: '越國守', org: 'nation-yamato', to: 661 },
+			{ title: 'Rear General', korean: '후장군', hanja: '後將軍', org: 'nation-yamato', from: 661, to: 663 },
+			{ title: 'Governor of Tsukushi', korean: '쓰쿠시 대재', hanja: '筑紫大宰帥', org: 'nation-yamato', from: 664 }
+		],
+		aliases: ['Abe no Hirafu', 'Hirafu', 'Abe']
 	},
 	{
 		id: 'gungye',
@@ -3446,7 +3524,7 @@ export const PEOPLE: Person[] = [
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; High Commander Blade taken.' }],
 		sobriquets: ['Stone Haetae of Goryeo'],
 		career: [
-			{ title: 'High Commander', korean: '막리지', hanja: '莫離支', org: 'highsummit', to: 642, note: 'Sits the bear tribe’s central 부 as first sword' }
+			{ title: 'High Commander', korean: '막리지', hanja: '莫離支', org: 'highsummit', to: 642, note: 'Sits the horse ka’s central 부 as first sword' }
 		],
 		aliases: [
 			'Yeon Gusesa',
@@ -3486,7 +3564,7 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Northern Crow Blade taken.' }],
 		career: [
-			{ title: 'Northern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Wolf tribe’s northern 부' }
+			{ title: 'Northern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Dog ka’s northern 부' }
 		],
 		aliases: ['Go Ul', 'Northern Commander', 'the Northern Commander', '고울']
 	},
@@ -3508,7 +3586,7 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Southern Crow Blade taken.' }],
 		career: [
-			{ title: 'Southern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Boar tribe’s southern 부' }
+			{ title: 'Southern Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Pig ka’s southern 부' }
 		],
 		aliases: ['Son Daeha', 'Southern Commander', 'the Southern Commander', '손대하']
 	},
@@ -3532,7 +3610,7 @@ export const PEOPLE: Person[] = [
 		swordImage: '/sword_crow.png',
 		events: [{ year: 642, label: 'Killed at Yeon’s banquet; Western Crow Blade taken.' }],
 		career: [
-			{ title: 'Western Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Tiger tribe’s western 부' }
+			{ title: 'Western Commander', korean: '대가', hanja: '大加', org: 'highsummit', to: 642, note: 'Cow ka’s western 부' }
 		],
 		aliases: ['Go Heumsong', 'Western Commander', 'the Western Commander', '고흠송']
 	},
@@ -3629,7 +3707,7 @@ export const PEOPLE: Person[] = [
 		quote: 'Tell the story until the mainland listens.',
 		voice:
 			'The island storyteller: unhurried and wry, starts at the beginning and will not be rushed, and pokes at Gyebek’s silence. Korean: oral-tale 반말 (말하마, -지).',
-		arc: 'Collector of stories and castaways. When Gyebek washes up, Yuri Dora feeds him Tamla’s myths in order — Big Star and Little Star first — and is the mouth that first frames the Three Realms (삼계) under Hwanin’s heaven as the larger map under which Samhan’s Great War looks small. History remains the chronicle’s spine; mythology arrives mostly through his island.',
+		arc: 'Collector of stories and castaways. When Gyebek washes up, Yuri Dora feeds him Tamla’s myths in order — Heaven–Earth King first — and is the mouth that first frames the Three Realms (삼계) under Hwanin’s heaven as the larger map under which Samhan’s Great War looks small. History remains the chronicle’s spine; mythology arrives mostly through his island.',
 		career: [
 			{ title: 'King of Tamla', korean: '왕', hanja: '王', org: 'nation-tamla' }
 		],
@@ -3677,9 +3755,16 @@ export const PEOPLE: Person[] = [
 		boneRank: 'Sacred Bone (성골)',
 		tagline: 'Gave up her claim, and gave Silla its greatest king instead.',
 		quote: "A throne traded is still a choice.",
+		nature:
+			'Intelligent and ageing. She reads her son faster than the court does, let his father teach him to count, and has never once been impressed that he got cleverer than her. The crown she gave up is not a subject.',
+		voice:
+			'Dry, unhurried, a mother who does not ask how you are. Short questions, an old woman’s patience, one plain order at the end (“Put your head down.”). Korean: 반말 to Chunchu, 하게체 to the court.',
 		binyeo: 'Gold amethyst binyeo — purple orb in filigree, violet at the tip; kept in its box, claim and all.',
 		binyeoImage: '/bn_chunmyung.png',
-		events: [{ year: 603, label: 'Mother of Kim Chunchu.' }],
+		events: [
+			{ year: 603, label: 'Mother of Kim Chunchu.' },
+			{ year: 642, label: 'The night Daeya falls, tells her son to stop counting.' }
+		],
 		family: [
 			{ id: 'jinpyung', role: 'Father' },
 			{ id: 'yongsu', role: 'Husband' },
@@ -5081,11 +5166,105 @@ export const PEOPLE: Person[] = [
 		blade: 'Ring-pommel fish sword — Gaya fish on the pommel; no crest louder than duty.',
 		swordImage: '/sword_fish.png',
 		events: [
+			{ label: 'Marries Manmyung without her father’s leave; Sukhuljong locks her in and the storm opens the door.' },
 			{ label: 'Finds the cavern lake; the goddesses love him first.' },
+			{ year: 595, label: 'Yushin born at Mannogun — named from the gyeongjin dream by way of the old scholar Yu Xin.' },
+			{ year: 609, label: 'Reties fifteen-year-old Yushin’s hwarang headband three times at the county gate.' },
+			{ label: 'Rises to Sopan; Governor-General of Daeyang Province, seated at Daeya Fortress.' },
 			{ label: 'Raises Yushin to serve a queen he will never meet.' },
 			{ year: 647, label: 'Ghost in the cavern — “You are Kim Yushin.”' }
 		],
 		aliases: ['Kim Seohyeon', 'Seohyeon', '서현', 'Kim Seohyun']
+	},
+	{
+		id: 'manmyung',
+		gender: 'f',
+		name: 'Lady Manmyung',
+		korean: '만명부인',
+		kingdom: 'silla',
+		boneRank: 'True Bone (진골)',
+		tagline: 'Royal Kim daughter who married the Gaya boy at the gate.',
+		quote: 'Then let it get lost again tomorrow.',
+		voice:
+			'Quick and teasing, braver than the man she is teasing; she answers her father back in one line. Korean: playful 해요체 to Seohyeon, 해요체 with a bite to her father.',
+		arc: 'Granddaughter of Galmunwang Ipjong and niece of King Jinheung. She sees Kim Seohyeon on the road and takes him in at a glance, without a go-between. Her father Sukhuljong will not have Muryuk’s grandson in the family and locks her up; lightning strikes the gatehouse and she walks out to Mannogun. She dreams of a boy in golden armour coming down on a cloud and bears Yushin, then Munhee.',
+		events: [
+			{ label: 'Meets Kim Seohyeon on the road; marries him without her father’s consent.' },
+			{ label: 'Locked in by Sukhuljong; lightning breaks the gate.' },
+			{ label: 'Dreams of a boy in golden armour riding a cloud into the hall.' },
+			{ year: 595, label: 'Bears Yushin at Mannogun after twenty months — seven stars on his back.' }
+		],
+		aliases: ['Manmyung', 'Manmyeong', '만명']
+	},
+	{
+		id: 'sukhuljong',
+		gender: 'm',
+		name: 'Kim Sukhuljong',
+		korean: '김숙흘종',
+		kingdom: 'silla',
+		clan: 'clan-gyeongju-kim',
+		boneRank: 'True Bone (진골)',
+		tagline: 'Manmyung’s father, who would not have a Gaya son-in-law.',
+		quote: 'Then you can look at the gate from the inside.',
+		voice:
+			'Short, contemptuous, an old royal who talks about people as if they were furniture. Korean: 반말 and 해라체.',
+		arc: 'Son of Galmunwang Ipjong and brother of King Jinheung. To him Muryuk’s house is a surrender with a surname. He shuts his daughter away rather than see her marry Seohyeon, and loses the argument to the weather.',
+		events: [{ label: 'Forbids Manmyung’s marriage and locks her in a separate house.' }],
+		aliases: ['Sukhuljong', '숙흘종']
+	},
+	{
+		id: 'talhae',
+		gender: 'm',
+		name: 'Seok Talhae',
+		korean: '석탈해',
+		title: '4th sovereign of Silla',
+		kingdom: 'silla',
+		died: 80,
+		tagline: 'The boy from the egg in the box who talked his way to a throne.',
+		quote: 'Prove it.',
+		voice:
+			'Cheerful and shameless, a con man with perfect manners; he states outrageous claims politely and dares you to disprove them. Korean: 하오체, dropping to 반말 when he is pleased with himself.',
+		arc: 'Laid as an egg by the queen of Dapana, a country a thousand li beyond Wa, and set adrift in a chest. A magpie follows the chest to Ajinpo, where an old woman opens it and names him for the bird (鵲 → 昔, Seok) and for slipping the box (脫解, Talhae). He loses a shapeshifting contest to King Suro of Geumgwan, cons Hogong out of his house with buried whetstones and charcoal, marries the daughter of King Namhae, and takes the throne in 57. In his ninth year a white rooster crows in the Sirim wood over a golden box with a boy inside.',
+		events: [
+			{ year: -19, label: 'The chest washes up at Ajinpo; a magpie names him.' },
+			{ label: 'Loses the shapeshift contest to Suro of Geumgwan.' },
+			{ label: 'The whetstone trick — takes Hogong’s house on the half-moon hill (Wolseong).' },
+			{ year: 57, label: 'Becomes king; names Hogong Grand Minister.' },
+			{ year: 65, label: 'Finds Kim Alji in the golden box at Sirim; renames the wood Gyerim.' }
+		],
+		aliases: ['Talhae', 'Seok Talhae', '탈해', '탈해 이사금']
+	},
+	{
+		id: 'hogong',
+		gender: 'm',
+		name: 'Hogong',
+		korean: '호공',
+		kingdom: 'silla',
+		tagline: 'The man from Wa with a gourd at his belt, who lost his house and kept his job.',
+		quote: '…You buried those last night.',
+		voice:
+			'Indignant, put-upon, always right a beat too late; he grumbles and then does what he is told. Korean: 하오체 to equals, 하옵소서체 to the king.',
+		arc: 'Of Wa birth, he crosses the sea with a gourd tied at his waist, which gives him his name. He serves Hyukgosé as envoy to Mahan, loses his house on the half-moon hill to Talhae’s buried whetstones, and is made Grand Minister by the same man. In 65 he is the one sent into the Sirim wood after a crowing rooster.',
+		events: [
+			{ year: -20, label: 'Envoy of Hyukgosé to Mahan.' },
+			{ year: 58, label: 'Named Grand Minister (대보) by Talhae.' },
+			{ year: 65, label: 'Finds the golden box hanging in Sirim.' }
+		],
+		aliases: ['Hogong', '호공', '瓠公']
+	},
+	{
+		id: 'alji',
+		gender: 'm',
+		name: 'Kim Alji',
+		korean: '김알지',
+		kingdom: 'silla',
+		clan: 'clan-gyeongju-kim',
+		born: 65,
+		tagline: 'The boy in the golden box — first of the Gyeongju Kim.',
+		quote: 'Gold (金) for the box, Alji for the child.',
+		arc: 'Found as a baby in a golden box hanging from a tree in the Sirim wood, with a white rooster crowing beneath it. Talhae raises him, names him Kim for the gold, and renames the wood Gyerim, Rooster Forest. He never takes the throne; his descendant Michu does, and the Kim kings of Silla count from him.',
+		events: [{ year: 65, label: 'Found in the golden box at Gyerim.' }],
+		aliases: ['Alji', 'Kim Alji', '알지', '김알지']
 	},
 	{
 		id: 'jinheung',
@@ -5164,10 +5343,15 @@ export const PEOPLE: Person[] = [
 		boneRank: 'True Bone (진골)',
 		tagline: 'Told his son the story of a grandfather the Council unmade — and kept him out of that room.',
 		quote: 'That room eats the men who amuse it. Stay out of that room.',
-		arc: 'Son of the deposed Jinji; husband of Princess Chunmyung; father of Kim Chunchu. True Bone because a deposed king’s son does not inherit Sacred Bone. He tells the boy the Harmony Council’s three counts until Chunchu learns to sit anywhere but the chair they vote on.',
+		nature:
+			'Brilliant and strange — the Bihyung streak in the Jinji line. Up past midnight by the stream, talking to the dark as if it answered, building things before morning that nobody remembers ordering. Faster at a ledger than any clerk; useless at being looked at. Loves his boy in a sideways, distracted, total way.',
+		voice:
+			'Murmurs to things nobody else can see, laughs a beat after everyone else, and then says one sentence so exact it ends the conversation. Korean: soft 반말 to his son, half to himself.',
+		arc: 'Son of the deposed Jinji; husband of Princess Chunmyung; father of Kim Chunchu. True Bone because a deposed king’s son does not inherit Sacred Bone. He tells the boy the Harmony Council’s three counts until Chunchu learns to sit anywhere but the chair they vote on — and one night lays a bridge of flat stones across the palace stream that the servants swear the goblins built.',
 		events: [
 			{ year: 579, label: 'Father deposed; the house drops from Sacred Bone to True Bone.' },
-			{ year: 603, label: 'Father of Kim Chunchu.' }
+			{ year: 603, label: 'Father of Kim Chunchu.' },
+			{ year: 612, label: 'The night bridge — “Stay out of that room.”' }
 		],
 		family: [
 			{ id: 'jinji', role: 'Father' },
@@ -5371,13 +5555,16 @@ export const CONCEPTS: Person[] = [
 			'Tamla cosmology’s Heaven–Earth King (천지왕): husband of Lady Chongmyeong, father of Big Star and Little Star. Dual-coded red and blue — living heat and orderly dark in one throne before he retires and the flower wager splits them. Heroic, loud, allergic to paperwork he already finished. Always under Hwanin’s heaven — steward of two mortal courts, never the Creator’s peer.',
 		voice:
 			'Bossy, exasperated and funny: exclamations and short complaints, and then he retires mid-scene. Korean: 반말.',
-		arc: '「천지왕본풀이」: Class I prior of mortals under the Big Man Upstairs — he once governed everyone who breathed and everyone who had stopped, one court for both halves of what later become two of the Three Realms. Heroic antics first; then he retires. Charge goes to his sons: elder Big Star, younger Little Star. They wager flowers for 이승; the cheat takes the warm side; the honest twin keeps 저승. Hallakgungi’s western field was never his chair. He does not reclaim the desk.',
+		arc: '「천지왕본풀이」: Class I under Hwanin, one court for the living and the dead while two suns and two moons kill people by day and night. He dreams of swallowing one sun and one moon — a son who will bring them down — and comes to earth for the Lady of Wisdom. Her borrowed rice is half sand from Sumyung Jangja; he drops the scoundrel into hell. He names the twins before they are born, leaves two gourd seeds and half a comb, and at fifteen they climb the vine to him. He has iron of a thousand geun melted into arrows; Big Star shoots a sun, Little Star a moon. Then he hands the world over and refuses to choose who takes which half. Riddles, then flowers; the younger cheats. He does not reclaim the desk.',
 		events: [
-			{ label: 'Class I under Hwanin: rules all mortals — living and dead — as one charge.' },
-			{ label: 'Retires; leaves the charge to Big Star and Little Star.' },
-			{ label: 'Sons wager flowers for 이승; Little Star cheats; Big Star keeps 저승.' }
+			{ label: 'Class I under Hwanin: rules living and dead as one charge, under two suns and two moons.' },
+			{ label: 'Dreams of swallowing one sun and one moon; comes to earth for the Lady of Wisdom.' },
+			{ label: 'Drops Sumyung Jangja into hell for the sand in the rice.' },
+			{ label: 'Leaves two gourd seeds and half a comb; the twins climb up at fifteen.' },
+			{ label: 'Has the twins shoot down the extra sun and moon; hands them the world.' }
 		],
 		family: [
+			{ id: 'chongmyeong', role: 'Wife' },
 			{ id: 'daebyeol', role: 'Son' },
 			{ id: 'sobyeol', role: 'Son' }
 		],
@@ -5409,12 +5596,13 @@ export const CONCEPTS: Person[] = [
 			'Elder twin of Little Star. 대인배 — magnanimous, wise, clear law, no appetite for cheating. Inherits half of Heaven–Earth King’s retired charge: rules 저승 as sovereign among the Three Realms — Paradise, the Ten Kings’ court, Hell nested within — while Yumla judges under his roof and Kangrim and Haewonmek fetch. Has made peace with the brother who cheated him.',
 		voice:
 			'The elder twin: calm, magnanimous, judicial. Short sentences that settle a matter, longer patient ones when he teaches his brother, and courtesy on a large scale. Korean: plain 반말 to his brother.',
-		arc: 'From 「천지왕본풀이」: Heaven–Earth King retires from ruling all mortals under Hwanin — living and dead — and leaves the charge to his sons. The twins wager flowers for 이승; Little Star swaps the blooms while Big Star sleeps; Big Star accepts the loss and takes 저승. Class I of 삼계. Retinue: Yumla, Kangrim, Haewonmek. Later he still helps his brother — shooting surplus suns and moons, silencing talking beasts — but leaves human wickedness to the cheat who wanted the warm side. First Tamla myth the island tells Gyebek — and the beat where Yuri Dora first names the Three Realms.',
+		arc: 'From 「천지왕본풀이」: born first to the Lady of Wisdom, climbs the gourd vine at fifteen with the half comb, and shoots down the extra sun with an arrow of melted iron. Father hands the twins the world and will not choose. Big Star wins both riddles and grows the better flower; Little Star swaps the blooms while he sleeps. He knows, yields 이승, and says the living law will never run clear — murder, treason, theft, adultery — while the law below will. Class I of 삼계. Later he comes up once more to silence the talking trees and beasts with pine-bark powder and to weigh everyone: a hundred geun or more stays living, the lighter ones follow him down. Human wickedness he leaves to his brother. Retinue: Yumla, Kangrim, Haewonmek. First Tamla myth the island tells Gyebek.',
 		events: [
-			{ label: 'Father (Heaven–Earth King) retires; sons inherit the mortal charge under Hwanin.' },
-			{ label: 'Wagers flowers with Little Star for the living world; loses by swap.' },
+			{ label: 'Climbs the gourd vine at fifteen; Father matches the comb halves.' },
+			{ label: 'Shoots down the extra sun with an arrow of melted iron.' },
+			{ label: 'Wins both riddles; loses the flower wager by swap.' },
 			{ label: 'Takes 저승; keeps clear law among the dead.' },
-			{ label: 'Shoots surplus suns and moons; leaves human vice to Little Star’s small law.' },
+			{ label: 'Silences talking beasts and weighs the living from the dead; leaves human vice to Little Star.' },
 			{ year: 673, label: 'Comes himself for Kim Yushin — greatest man of the age — and offers any wish.' }
 		],
 		family: [
@@ -5458,11 +5646,11 @@ export const CONCEPTS: Person[] = [
 			'Younger twin. Used to be 소인배 — petty about the flower cheat — and has matured somewhat; made up with Big Star enough to still ask for help with suns and moons. Clever, hungry for 이승, bad at admitting why it stays messy. Inherits half of Heaven–Earth King’s retired charge after the flower swap; must ask Big Star to fix suns, moons, and speaking beasts — but not human crime. Retinue: Ibiga (sky), Haemosu (sun), Samsin (life).',
 		voice:
 			'The younger twin: quick and petty, full of excuses and jokes that almost land as apologies, grown up enough now to ask for help. Korean: casual 반말, 하오체 when he begs his brother.',
-		arc: 'From 「천지왕본풀이」: after Heaven–Earth King retires under Hwanin’s heaven, he plants the withered flower, swaps it for his brother’s full bloom, and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. That is why the living world runs on thieves, quarrels, and bad hours — the cheat inherited the warm side. Tamla tells this first, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
+		arc: 'From 「천지왕본풀이」: second twin, climbs the vine at fifteen, shoots down the extra moon. Loses both riddles to his brother, then swaps the flowers while Big Star sleeps and takes 이승. Class I: sovereign of the Land of the Living among the Three Realms. He cannot tell ghosts from men or quiet the talking trees, and has to beg his brother up to fix it. Murder and theft stay — the cheat inherited the warm side. Tamla tells this first, before kinder island tales, so Gyebek will stop waiting for the world to behave.',
 		events: [
-			{ label: 'Father (Heaven–Earth King) retires; sons inherit the mortal charge under Hwanin.' },
-			{ label: 'Swaps flowers while Big Star sleeps; takes 이승.' },
-			{ label: 'Begs Big Star to restore sun, moon, and silence among beasts.' },
+			{ label: 'Climbs the gourd vine at fifteen; shoots down the extra moon.' },
+			{ label: 'Loses both riddles; swaps flowers while Big Star sleeps; takes 이승.' },
+			{ label: 'Begs Big Star to silence the beasts and part ghosts from the living.' },
 			{ label: 'Keeps the “small law” — human vice included.' }
 		],
 		family: [
@@ -5488,6 +5676,53 @@ export const CONCEPTS: Person[] = [
 				avatar: '/ch_little_star_young.png'
 			}
 		]
+	},
+	{
+		id: 'chongmyeong',
+		name: 'Lady of Wisdom',
+		korean: '총명부인',
+		gender: 'f',
+		kingdom: 'tamla',
+		title: 'Mother of Big Star and Little Star',
+		tagline: 'Too poor to feed a god, too proud to say so — she borrowed the rice.',
+		quote: 'Fifteen years.',
+		nature:
+			'A girl in the poorest house on the road when Heaven–Earth King comes down looking for the mother of his dream. Proud, plain-spoken, does not apologise for an empty jar. Raises the twins alone under two suns and two moons.',
+		voice:
+			'Short, dry, and proud; she answers what is asked and nothing more, and the hurt shows only in what she repeats back. Korean: plain 해요체 to the king, 반말 to her sons.',
+		arc: '「천지왕본풀이」: called 총명아기 before the marriage, 총명부인 after. Borrows one measure of rice from Sumyung Jangja to feed the king, owes two, and finds sand in it. Keeps the two gourd seeds and the half comb fifteen years, then sends the twins up the vine.',
+		events: [
+			{ label: 'Borrows rice from Sumyung Jangja to feed Heaven–Earth King; it is half sand.' },
+			{ label: 'Bears the twins; names them Daebyeol and Sobyeol as the king told her.' },
+			{ label: 'At fifteen, gives them the gourd seeds and the half comb.' }
+		],
+		family: [
+			{ id: 'heavenearthking', role: 'Husband' },
+			{ id: 'daebyeol', role: 'Son' },
+			{ id: 'sobyeol', role: 'Son' }
+		],
+		aliases: ['Lady of Wisdom', 'the Lady of Wisdom', 'Lady Chongmyeong', 'Chongmyeong', '총명부인', '총명아기', '총멩부인']
+	},
+	{
+		id: 'sumyeongjangja',
+		name: 'Sumyung Jangja',
+		korean: '수명장자',
+		gender: 'm',
+		kingdom: 'tamla',
+		title: 'The scoundrel',
+		tagline: 'The richest man under two suns — lends one measure, collects two, and mixes in sand.',
+		quote: 'There is nobody under heaven who can touch me.',
+		nature:
+			'Rich the way a flood is wet. Nine storehouses, a measure that shrinks when he lends and grows when he collects, and a horse and a dog that bite the poor for him. Sure that no one under heaven can punish him.',
+		voice:
+			'Smug and counting: prices first, insults second, and he grovels the instant someone bigger walks in. Korean: lordly 반말 to the poor, stammering 하오체 when caught.',
+		arc: '「천지왕본풀이」: lends the Lady of Wisdom one measure of rice at double, with sand in it. Heaven–Earth King tastes the sand and drops him into hell — the first man sent down, and the first proof that the dead world keeps honest measures.',
+		events: [
+			{ label: 'Lends the Lady of Wisdom a measure of rice at double interest, mixed with sand.' },
+			{ label: 'Boasts that no one under heaven can punish him.' },
+			{ label: 'Dropped into hell by Heaven–Earth King.' }
+		],
+		aliases: ['Sumyung Jangja', 'Sumyeongjangja', 'Sumyeong Jangja', '수명장자', 'the scoundrel']
 	},
 	{
 		id: 'yumla',
@@ -5555,11 +5790,11 @@ export const CONCEPTS: Person[] = [
 			'Most emotional and personable of the death gods — still introverted-dark office, but dry curiosity and brotherly warmth on the road. Fetches the dead for Yumla’s judgment under Big Star’s 저승 — red notebook of names (적패지), the name said three times, then the short cut that parts soul from body, one Question, loyalty without sermons. Works with Haewonmek; they bicker like brothers who share a crow. Ordinary mouths know only 저승사자. Royals, high bone, and death’s clerks know 강림.',
 		voice:
 			'Dry, courteous, curious, brotherly on the road. One precise question per soul (“One question, then we walk.”), and then he waits; he never bargains or sermonises. Ledgers and minutes are his metaphors, and he is the one speaker licensed to turn a polished phrase, about once a scene. Korean: polite 하오체 and 합쇼체 to the dying, easy 반말 with old acquaintances.',
-		arc: 'From 「차사본풀이」: heaven sent him to arrest Yumla; he stayed. Class III: a specific function — the fetch itself — under Yumla’s broader judgment. Across Samhan he collects with Haewonmek — Gotaso at Daeya who knew only the folk title, Bidam and Sunduk who knew his name, five thousand at Hwangsan who wave them in. The rite is the same on ordinary roads: open the 적패지, say the name three times, cut the cord. Then he asks Kangrim’s Question; Haewonmek asks only for last words. Wet-nurse stories say 저승사자; palace rooms and Tamla’s last telling say Kangrim. The island tells him last — after every kinder Tamla tale — because once you have heard it, every ending changes key.',
+		arc: 'From 「차사본풀이」, Hyun Yong-jun’s line: a living strongman, not a volunteer from heaven. Magistrate Kimchi cannot try the Gwayang murder — three brothers killed, reborn, dead in one bow — and sends Kangrim to bring Yumla up. Gate-god and kitchen-god put him on the road; he jumps the last pond and comes up at the underworld gate. Haewonmek is already walking that road and points; he does not retire. Yumla comes at the hour he names, revives the bones, executes the killers. Kimchi will not lend the man, so they split him: the magistrate keeps the body, Yumla takes the soul. That is the death. The red warrant said die at eighty, in order. Kangrim trusts it to a crow; the crow loses it at a slaughter-field; a snake eats the writing; the crow cries the new rule — parents after children. Dongbangsak, three thousand years old, stops to mock a man washing charcoal white, and is taken. Only then is Kangrim seated as chasa. Class III: the fetch under Yumla’s sentence. Across Samhan he collects with Haewonmek. The rite on ordinary roads stays the chronicle’s: open the 적패지, say the name three times, cut the cord, one Question. The island tells him last, because the fair hour is already lost.',
 		blade: 'Black iron death blade — ring pommel cold as red-book ink; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
-			{ label: 'Sent to arrest Yumla; stays as escort of judgment under Big Star.' },
+			{ label: 'Sent by Magistrate Kimchi to bring Yumla up. Soul taken; seated as chasa after the crow loses the warrant.' },
 			{ year: 642, label: 'Collects Gotaso at Daeya — she knows only 저승사자; Haewonmek takes Pumsuk.' },
 			{ year: 647, label: 'Two names in one night: Bidam and Sunduk — both know him as Kangrim.' },
 			{ label: 'A crow scrambles his list — which is why nobody knows their hour.' },
@@ -5612,7 +5847,7 @@ export const CONCEPTS: Person[] = [
 			'Dead silent. Kangrim’s partner on the fetch-roads — introverted, dark, minimal speech, a younger 해 who took the night-road while the other 해 still drives the day. The rite first: 적패지, the name three times, the cord. His ask after is simpler than Kangrim’s Question: Any last words? / 남길 말 있나? Common folk still say only 저승사자 — one office, two names elites know. When he must speak it is sharp, final, and a little grumpy; he does not soft-pad the hour.',
 		voice:
 			'Minimal and grave: fragments, warnings and rules (“The night is not your domain…!”), and silence when there is nothing to add. Korean: stern 반말 (“유언은?”).',
-		arc: 'Second reaper beside Kangrim under Yumla’s judgment and Big Star’s 저승 — in 「차사본풀이」 the older reaper who once showed Kangrim the trail. Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Hwangsan Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
+		arc: 'The fetch already on the road when Kangrim arrives in 「차사본풀이」 variants — Hyun Yong-jun’s collected text does not center him; the chronicle keeps the name because the road already had a walker, and he points rather than retiring. Class III with Kangrim: the fetch itself, not the judge’s chair. Same 해 as the sun’s chariot; he walked the dark instead, and the sun still outranks him — once, at Jumong’s river, Haemosu sends him off and promises the boy later. At Daeya he takes Pumsuk (last words) while Kangrim takes Gotaso (the Question). At Hwangsan Gyebek names them both. With Kangrim he fails Gesomun at Salsu; Chunchu declines them both. Romanized Haewonmek throughout the chronicle (id stable: haewonmek).',
 		blade: 'Black iron death blade — ring pommel cold as last words; drawn only as far as a cord needs.',
 		swordImage: '/sword_crysanthemum.png',
 		events: [
@@ -5771,7 +6006,7 @@ export const CONCEPTS: Person[] = [
 	{
 		id: 'sanbangdeok',
 		avatar: '/ch_sanbangdeok.png',
-		name: 'Sanbangdeok',
+		name: 'Sanbangduk',
 		korean: '산방덕',
 		entity: 'god',
 		godTier: 'III',
@@ -5781,7 +6016,7 @@ export const CONCEPTS: Person[] = [
 		realm: { en: 'Sanbang cliff', ko: '산방' },
 		tagline: 'Loved a poor man, was wanted by an official, and went back into the cliff.',
 		quote: "Better the cliff than the wrong official.",
-		aliases: ['Sanbangdeok']
+		aliases: ['Sanbangduk', 'Sanbangdeok']
 	},
 	{
 		id: 'bonerank',
@@ -6201,7 +6436,7 @@ export const CONCEPTS: Person[] = [
 		title: 'Goguryeo’s council of Commanders',
 		tagline: 'Commanders (대가) under a High Commander (막리지) — the king keeps the final vote.',
 		nature: 'Consultation with a crown: all opinions equally valued until His Majesty finalises — then equally forgotten. After 642 the Supreme Commander (대막리지) makes the final vote a formality, with a Chancellor (대대로) to issue retrospective minutes.',
-		arc: 'The Five Commanderies are the Five Animal Tribes under later names: crow East, tiger West, boar South, wolf North, bear Central. They argue as Commanders (대가); the High Commander (막리지) is first sword — Yeon Gusesa sits the old bear chair; Yeon Gesomun holds the crow’s eastern 부. The king casts the last word. Yeon’s massacre replaces the old first chair with Supreme Commander (대막리지) and seats Dosuryu as Chancellor (대대로) — force first, procedure after.',
+		arc: 'The Five Commanderies are the Five Animal Tribes under later names: crow East, cow West, pig South, dog North, horse Central. They argue as Commanders (대가) — the same 加 the four ka carried; the High Commander (막리지) is first sword — Yeon Gusesa sits the old horse chair; Yeon Gesomun holds the crow’s eastern 부. The king casts the last word. Yeon’s massacre replaces the old first chair with Supreme Commander (대막리지) and seats Dosuryu as Chancellor (대대로) — force first, procedure after.',
 		events: [
 			{ year: 642, label: 'Summit cleared at Yeon’s banquet; Supreme Commander created.' },
 			{ year: 642, label: 'Dosuryu named Chancellor (대대로).' }
@@ -6239,9 +6474,9 @@ export const CONCEPTS: Person[] = [
 		entity: 'organization',
 		kingdom: 'jolbon',
 		title: 'Five animal roofs of Jolbon',
-		tagline: 'Crow, tiger, boar, wolf, bear — the league that votes Jumong king, then becomes Goguryeo’s five commanderies.',
+		tagline: 'The crow and the four ka — horse, cow, pig, dog — the league that votes Jumong king, then becomes Goguryeo’s five commanderies.',
 		nature: 'Not a throne: five ditch-warring roofs that forgot they were Joseon. Tabal’s crow is largest. They hate sharing a yard more than they hate a stranger with a bow. The first summit is the thing they never wanted — agreement.',
-		arc: 'Bear, tiger, crow, wolf, boar sit Tabal’s packed-earth ring and vote Jumong first king of Goryeo. The animal names do not die; they are relabeled as the five 부. Crow becomes the eastern commandery — the Yeon hall keeps that roof until Yeon Gesomun sits it as 대가, then butchers the other four chairs in 642. Tiger → west (Go Heumsong), boar → south (Son Daeha), wolf → north (Go Ul), bear → central (the High Commander’s seat, Yeon Gusesa). The High Summit is this league with grey giwa and a king’s last word.',
+		arc: 'Horse, cow, crow, dog, pig sit Tabal’s packed-earth ring and vote Jumong first king of Goryeo. The four ka are the Buyeo way of naming men after herds — 馬加, 牛加, 豬加, 狗加 in the Wei annals — and the crow is Jolbon’s own. The animal names do not die; they are relabeled as the five 부. Crow becomes the eastern commandery — the Yeon hall keeps that roof until Yeon Gesomun sits it as 대가, then butchers the other four chairs in 642. Cow → west (Go Heumsong), pig → south (Son Daeha), dog → north (Go Ul), horse → central (the High Commander’s seat, Yeon Gusesa). The High Summit is this league with grey giwa and a king’s last word.',
 		events: [
 			{ year: -37, label: 'First summit on Tabal’s yard; they vote Jumong king.' },
 			{ year: -37, label: 'The five roofs become Goryeo’s five commanderies.' },
@@ -6250,10 +6485,10 @@ export const CONCEPTS: Person[] = [
 		orgChart: [
 			{ id: 'jumong', role: 'First king they vote', reportsTo: null },
 			{ id: 'yeontabal', role: 'Crow · 동부', reportsTo: 'jumong' },
-			{ id: 'tigerchief', role: 'Tiger · 서부', reportsTo: 'jumong' },
-			{ id: 'boarchief', role: 'Boar · 남부', reportsTo: 'jumong' },
-			{ id: 'wolfchief', role: 'Wolf · 북부', reportsTo: 'jumong' },
-			{ id: 'bearchief', role: 'Bear · 중부', reportsTo: 'jumong' }
+			{ id: 'cowchief', role: 'Cow ka · 우가 · 서부', reportsTo: 'jumong' },
+			{ id: 'pigchief', role: 'Pig ka · 저가 · 남부', reportsTo: 'jumong' },
+			{ id: 'dogchief', role: 'Dog ka · 구가 · 북부', reportsTo: 'jumong' },
+			{ id: 'horsechief', role: 'Horse ka · 마가 · 중부', reportsTo: 'jumong' }
 		],
 		aliases: [
 			'Five Tribes',
@@ -6263,7 +6498,10 @@ export const CONCEPTS: Person[] = [
 			'오부족',
 			'오부',
 			'Five Animal Tribes',
-			'five roofs'
+			'five roofs',
+			'four ka',
+			'사가',
+			'四加'
 		]
 	},
 	{
@@ -6394,18 +6632,18 @@ export const CONCEPTS: Person[] = [
 		title: 'The Second Emperor’s dragon generals',
 		tagline: 'White, Red, Blue, and Black Dragons — Taizong’s named blades for the Liao roads.',
 		nature:
-			'Second Emperor Taizong’s dragon banners, 645. White Dragon — Xue Rengui (薛仁貴 / 설인귀). Red Dragon — Li Jing (李靖 / 이정), not Su Dingfang. Blue Dragon — Li Shiji (李世勣 / 이세적), the sole overlap with the Four Beasts. Black Dragon — Yuchi Gong (尉遲恭 / 울지공), not Liu Rengui. Each colour is a different man except the Blue Dragon, who answers Gaozong’s beast muster as well.',
-		arc: 'Taizong’s Seventh Invasion of Goguryeo seats four dragon generals, each a real Tang name the chronicle already chose: White Dragon Xue Rengui, Red Dragon Li Jing, Blue Dragon Li Shiji, Black Dragon Yuchi Gong. Li Jing dies with the Second Emperor in 649; Yuchi dies in 658. Only Li Shiji’s Blue Dragon is inherited into Gaozong’s Four Beasts. Xue later takes a beast seat too — not by keeping a dragon colour, but by replacing the White Tiger after the Snake River.',
+			'Second Emperor Taizong’s dragon banners, 645, known by their colours far more than their names. Red Dragon — Ashina She’er (阿史那社爾 / 아사나사이), a prince of the Turkic royal clan. Black Dragon — Zhangsun Wuji (長孫無忌 / 장손무기), the empress’s brother. White Dragon — Qibi Heli (契苾何力 / 계필하력), a Tiele chieftain. Blue Dragon — Li Shiji (李世勣 / 이세적), the sole overlap with the Four Beasts. Two of the four are Turks: the steppe calls Taizong the Heavenly Qaghan (天可汗), his six chargers carry steppe names and titles, and he trusts horsemen from beyond the Wall with his banners.',
+		arc: 'Taizong’s Seventh Invasion of Goguryeo seats four dragon generals: the Red Dragon Ashina She’er, the Black Dragon Zhangsun Wuji, the White Dragon Qibi Heli and the Blue Dragon Li Shiji. The Blue Dragon is the anvil at Stallion Mountain and the Black Dragon is the hammer out of the gorge behind it; the White Dragon takes a spear at Baegam and rides on. When the Second Emperor dies in 649, the two Turkic dragons ask to be killed and buried beside him. Only the Blue Dragon is inherited into Gaozong’s Four Beasts.',
 		events: [
-			{ year: 645, label: 'Four Dragons named: Xue, Li Jing, Li Shiji, Yuchi Gong.' },
-			{ year: 649, label: 'Second Emperor and Red Dragon Li Jing die; Blue Dragon serves on under Gaozong.' }
+			{ year: 645, label: 'Four Dragons named: Ashina She’er, Zhangsun Wuji, Qibi Heli, Li Shiji.' },
+			{ year: 649, label: 'The Second Emperor dies; the Red and White Dragons ask to follow him into the tomb.' }
 		],
 		orgChart: [
 			{ id: 'taizong', role: 'Second Emperor', reportsTo: null },
-			{ id: 'xuerengui', role: 'White Dragon · 백룡 · Xue Rengui', reportsTo: 'taizong' },
-			{ id: 'lijing', role: 'Red Dragon · 적룡 · Li Jing', reportsTo: 'taizong' },
+			{ id: 'qibiheli', role: 'White Dragon · 백룡 · Qibi Heli', reportsTo: 'taizong' },
+			{ id: 'ashinasheer', role: 'Red Dragon · 적룡 · Ashina She’er', reportsTo: 'taizong' },
 			{ id: 'lishiji', role: 'Blue Dragon · 청룡 · Li Shiji', reportsTo: 'taizong' },
-			{ id: 'yuchigong', role: 'Black Dragon · 흑룡 · Yuchi Gong', reportsTo: 'taizong' }
+			{ id: 'zhangsunwuji', role: 'Black Dragon · 흑룡 · Zhangsun Wuji', reportsTo: 'taizong' }
 		],
 		aliases: ['Four Dragons', '사룡', '四龍', 'Taizong’s dragons']
 	},
@@ -6419,8 +6657,8 @@ export const CONCEPTS: Person[] = [
 		title: 'The Third Emperor’s beast generals',
 		tagline: 'White Tiger, Red Fowl, Blue Dragon, Black Tortoise — Gaozong’s inherited war machine.',
 		nature:
-			'Third Emperor Gaozong’s beast banners, 661. White Tiger — Pang Xiaotai (龐孝泰 / 방효태), fallen at the Snake River in 662; Xue Rengui (薛仁貴 / 설인귀) succeeds as White Tiger II. Red Fowl — Su Dingfang (蘇定方 / 소정방), not Li Jing’s Red Dragon. Blue Dragon — Li Shiji (李世勣 / 이세적), the sole dragon who kept his seat. Black Tortoise — Liu Rengui (劉仁軌 / 유인궤), not Yuchi Gong’s Black Dragon. Eight offices, seven men; the Blue Dragon is the overlap, and Xue is the replacement after the river.',
-		arc: 'Gaozong’s Eighth Invasion inherits his father’s war and names a new zodiac: White Tiger Pang Xiaotai, Red Fowl Su Dingfang, Blue Dragon Li Shiji, Black Tortoise Liu Rengui. In the second month of 662 Yeon Gesomun kills the White Tiger and his thirteen sons at the Snake River (Salsu in old mouths). Xue Rengui — already Taizong’s White Dragon — takes the dead man’s title as White Tiger II. Li Shiji alone sat both dragon and beast musters from the start. Liu Rengui’s tortoise holds Baekje and burns the eastern fleet at the White River. Pyongyang falls in 668 under the Blue Dragon, the Black Tortoise, and White Tiger II.',
+			'Third Emperor Gaozong’s beast banners, 661. White Tiger — Pang Xiaotai (龐孝泰 / 방효태), fallen at the Snake River in 662; Xue Rengui (薛仁貴 / 설인귀) succeeds as White Tiger II. Red Fowl — Su Dingfang (蘇定方 / 소정방), not Ashina She’er’s Red Dragon. Blue Dragon — Li Shiji (李世勣 / 이세적), the sole dragon who kept his seat. Black Tortoise — Liu Rengui (劉仁軌 / 유인궤), not Zhangsun Wuji’s Black Dragon. Eight offices, seven men; the Blue Dragon is the overlap, and Xue is the replacement after the river.',
+		arc: 'Gaozong’s Eighth Invasion inherits his father’s war and names a new zodiac: White Tiger Pang Xiaotai, Red Fowl Su Dingfang, Blue Dragon Li Shiji, Black Tortoise Liu Rengui. In the second month of 662 Yeon Gesomun kills the White Tiger and his thirteen sons at the Snake River (Salsu in old mouths). Xue Rengui — the man in white from Stallion Mountain — takes the dead man’s title as White Tiger II. Li Shiji alone sat both dragon and beast musters from the start. Liu Rengui’s tortoise holds Baekje and burns the eastern fleet at the White River. Pyongyang falls in 668 under the Blue Dragon, the Black Tortoise, and White Tiger II.',
 		events: [
 			{ year: 661, label: 'Four Beasts named: Pang, Su Dingfang, Li Shiji, Liu Rengui.' },
 			{ year: 662, label: 'White Tiger dies at the Snake River; Xue Rengui named White Tiger II.' },
@@ -6585,7 +6823,7 @@ export const GROUPS: Person[] = [
 		kingdom: 'underworld',
 		title: 'The fetch-officers of the dead',
 		tagline: 'Kangrim and Haewonmek — the two reapers who walk the living world to collect its dead.',
-		arc: 'Big Star keeps the orderly dark; these two do the walking. Kangrim, the one the myths promoted, and Haewonmek, the partner on the road — the pair every death scene in the chronicle waits for.',
+		arc: 'Big Star keeps the dark; these two do the walking. Kangrim is the living strongman whose soul Yumla kept; Haewonmek was already on that road and pointed. The pair every death scene in the chronicle waits for.',
 		aliases: ['Grim Reapers', 'The Grim Reapers', '저승사자']
 	},
 	{
@@ -6619,7 +6857,7 @@ export const GROUPS: Person[] = [
 		kingdom: 'goguryeo',
 		title: 'Four directional 대가 and the High Commander',
 		tagline: 'Four directional 대가 and the High Commander — the Five Tribes under later names.',
-		arc: 'The five animal roofs of Jolbon renamed as commanderies: Gesomun in the East (crow tribe, Eastern Crow Blade), Go Heumsong in the West (tiger), Son Daeha in the South (boar), Go Ul in the North (wolf), and Yeon Gusesa as High Commander on the bear’s central seat with the 막리지검. In 642 the Eastern Commander — crow roof, Yeon hall — butchers the other four at a banquet. He keeps the Eastern Crow Blade he brought and takes the rest. They are five swords, not one weapon.',
+		arc: 'The five animal roofs of Jolbon renamed as commanderies: Gesomun in the East (crow tribe, Eastern Crow Blade), Go Heumsong in the West (cow ka), Son Daeha in the South (pig ka), Go Ul in the North (dog ka), and Yeon Gusesa as High Commander on the horse ka’s central seat with the 막리지검. In 642 the Eastern Commander — crow roof, Yeon hall — butchers the other four at a banquet. He keeps the Eastern Crow Blade he brought and takes the rest. They are five swords, not one weapon.',
 		events: [{ year: 642, label: 'Four of the five die at Yeon’s banquet; the Eastern Commander rules.' }],
 		aliases: ['Five Commanders of Goguryeo', 'The Five Commanders of Goguryeo', '고려오대가']
 	},
@@ -7058,7 +7296,7 @@ export const NATIONS: Person[] = [
 		ideology: 'Tribal confederacy',
 		ideologyNote: 'Five ditches, one yard they hate to share — then one vote they cannot take back.',
 		nature: 'Pine, millet, salt and iron. Yeon Tabal names the place Jolbon when an exile says Buyeo. Five animal roofs feud until a wet stranger splits an arrow. Song Yang’s pine country sits next door and is not the vote — it is the roof Jumong takes after, to get his friends back.',
-		arc: 'Before Goryeo there is Jolbon: crow, tiger, boar, wolf, bear. They vote Jumong king in -37 and the name becomes a founding. The five tribes do not vanish; they become the five commanderies. The crow roof stays Yeon — eastern 대가, then Gesomun’s massacre. The cavern (국동대혈) is where the holy king prays; later commanders still come to ask permission.',
+		arc: 'Before Goryeo there is Jolbon: crow, horse, cow, pig, dog. They vote Jumong king in -37 and the name becomes a founding. The five tribes do not vanish; they become the five commanderies. The crow roof stays Yeon — eastern 대가, then Gesomun’s massacre. The cavern (국동대혈) is where the holy king prays; later commanders still come to ask permission.',
 		events: [
 			{ label: 'Five animal roofs feud in the ditches; crow is largest.' },
 			{ year: -37, label: 'First summit; they vote Jumong king of Goryeo.' },
@@ -7253,6 +7491,8 @@ const CHARACTER_COLORS: Record<string, { color: string; colorSecondary?: string 
 	heavenearthking: { color: '#C30000', colorSecondary: '#3E79E4' },
 	daebyeol: { color: '#3B6FBF' },
 	sobyeol: { color: '#C94040' },
+	chongmyeong: { color: '#c9b18f' },
+	sumyeongjangja: { color: '#8a7a3a' },
 	sara: { color: '#8FBF8A' },
 	heaven: { color: '#d4b86a' },
 	living_world: { color: '#C94040' },
@@ -7346,10 +7586,10 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	westcmd: ['highsummit'],
 	// Jolbon — five animal tribes (predecessor of the five commanderies)
 	yeontabal: ['fivetribes'],
-	tigerchief: ['fivetribes'],
-	boarchief: ['fivetribes'],
-	wolfchief: ['fivetribes'],
-	bearchief: ['fivetribes'],
+	cowchief: ['fivetribes'],
+	pigchief: ['fivetribes'],
+	dogchief: ['fivetribes'],
+	horsechief: ['fivetribes'],
 	jumong: ['fivetribes'],
 	// Tang court + eastern expedition (dragon/beast rosters moved to GROUPS_BY_ID)
 	taizong: ['tangcourt'],
@@ -7357,8 +7597,10 @@ const ORGS_BY_ID: Record<string, string[]> = {
 	wuzetian: ['tangcourt'],
 	xuerengui: ['tangcourt', 'tangexpedition'],
 	weizheng: ['tangcourt'],
-	lijing: ['tangcourt'],
-	yuchigong: ['tangcourt'],
+	ashinasheer: ['tangcourt'],
+	qibiheli: ['tangcourt'],
+	zhangsunwuji: ['tangcourt'],
+	xuejitou: ['tangcourt'],
 	sudingfang: ['tangcourt', 'tangexpedition'],
 	lishiji: ['tangcourt', 'tangexpedition'],
 	liurengui: ['tangcourt', 'tangexpedition'],
@@ -7440,9 +7682,10 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	// Tang dragon / beast rosters (moved from ORGS_BY_ID with the entity change)
 	taizong: ['fourdragons'],
 	gaozong: ['fourbeasts'],
-	xuerengui: ['fourdragons', 'fourbeasts'],
-	lijing: ['fourdragons'],
-	yuchigong: ['fourdragons'],
+	xuerengui: ['fourbeasts'],
+	ashinasheer: ['fourdragons'],
+	qibiheli: ['fourdragons'],
+	zhangsunwuji: ['fourdragons'],
 	sudingfang: ['fourbeasts'],
 	lishiji: ['fourdragons', 'fourbeasts'],
 	liurengui: ['fourbeasts'],
@@ -7459,7 +7702,7 @@ export const GROUP_ROSTERS: Record<string, readonly string[]> = {
 	brafounders: ['boksin', 'dochim', 'sangji', 'sateksangya', 'pung'],
 	// Heaven above, then the three courts of 삼계
 	fourrealms: ['heaven', 'living_world', 'underworld', 'western_flower_field'],
-	fourdragons: ['xuerengui', 'lijing', 'lishiji', 'yuchigong'],
+	fourdragons: ['qibiheli', 'ashinasheer', 'lishiji', 'zhangsunwuji'],
 	fourbeasts: ['pangxiaotai', 'sudingfang', 'lishiji', 'liurengui', 'xuerengui'],
 	// East, West, South, North, then the 막리지
 	fivecommanders: ['gesomun', 'westcmd', 'southcmd', 'northcmd', 'gusesa']
@@ -7550,8 +7793,10 @@ const COLOR: Record<string, string> = {
 	weizheng: '#9a7b4f',
 	xuerengui: '#e8e3d5',
 	xueliu: '#c4a484',
-	lijing: '#c45a38',
-	yuchigong: '#2f2f36',
+	ashinasheer: '#c45a38',
+	qibiheli: '#d8d4c8',
+	zhangsunwuji: '#2f2f36',
+	xuejitou: '#a8743a',
 	sudingfang: '#d95f4b',
 	lishiji: '#4b78c9',
 	liurengui: '#3d4a48',
@@ -7560,6 +7805,7 @@ const COLOR: Record<string, string> = {
 	tenji: '#e06a95',
 	kuromaro: '#c77ba0',
 	takutsu: '#b05575',
+	abe: '#c8463c',
 	yesikjin: '#a3813d',
 	yumjong: '#8a68c9',
 	supum: '#7f9fd0',
@@ -7638,10 +7884,10 @@ const COLOR: Record<string, string> = {
 	haemosu: '#f0b429',
 	habek: '#2f8f7a',
 	yeontabal: '#a97c4a',
-	tigerchief: '#c45a2a',
-	boarchief: '#6b4a32',
-	wolfchief: '#c8d0d4',
-	bearchief: '#2c2c30',
+	cowchief: '#c45a2a',
+	pigchief: '#6b4a32',
+	dogchief: '#c8d0d4',
+	horsechief: '#2c2c30',
 	jomigon: '#8f9c8f',
 	imja: '#b08d5a',
 	courtmaid: '#c9a0a8',
@@ -7669,6 +7915,8 @@ const COLOR: Record<string, string> = {
 	tangcourt: '#b45309',
 	daebyeol: '#3B6FBF',
 	sobyeol: '#C94040',
+	chongmyeong: '#c9b18f',
+	sumyeongjangja: '#8a7a3a',
 	yumla: '#7c3aed',
 	kangrim: '#4a4a58',
 	haewonmek: '#6b5b6e',
@@ -7686,6 +7934,11 @@ const COLOR: Record<string, string> = {
 	seocheon: '#d4a0c8',
 	herald: '#8d8d95',
 	seohyeon: '#3E8EF0',
+	manmyung: '#c98bb9',
+	sukhuljong: '#6b5b4b',
+	talhae: '#5a7fa8',
+	hogong: '#a8894a',
+	alji: '#d4b86a',
 	daejoyoung: '#c45a4a',
 	jukji: '#6a9e7a',
 	ongunhae: '#8a6240',
@@ -7825,8 +8078,10 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	yesikjin: ['gen-ii'],
 	gaozong: ['gen-ii'],
 	xuerengui: ['gen-ii'],
-	lijing: ['gen-ii'],
-	yuchigong: ['gen-ii'],
+	ashinasheer: ['gen-ii'],
+	qibiheli: ['gen-ii'],
+	zhangsunwuji: ['gen-ii'],
+	xuejitou: ['gen-ii'],
 	sudingfang: ['gen-ii'],
 	dosuryu: ['gen-ii'],
 	northcmd: ['gen-ii'],
@@ -7862,6 +8117,7 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	tenji: ['gen-ii'],
 	kuromaro: ['gen-ii'],
 	takutsu: ['gen-ii'],
+	abe: ['gen-ii'],
 	weizheng: ['gen-ii'],
 	xueliu: ['gen-ii'],
 	lishiji: ['gen-ii'],
@@ -7925,10 +8181,10 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	mari: ['founders'],
 	hyupbo: ['founders'],
 	songyang: ['founders'],
-	tigerchief: ['founders'],
-	boarchief: ['founders'],
-	wolfchief: ['founders'],
-	bearchief: ['founders'],
+	cowchief: ['founders'],
+	pigchief: ['founders'],
+	dogchief: ['founders'],
+	horsechief: ['founders'],
 	buyeojashin: ['founders'],
 	yuri: ['founders'],
 	// —— Legends (famous earlier kings / heroes — characters only) ——

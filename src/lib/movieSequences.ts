@@ -268,7 +268,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gaya-muryuk',
 		title: 'Muryuk — fight to surrender',
-		entryTitles: ['The Severing', 'The Fall of Gaya'],
+		entryTitles: ['The Severing', 'Muryuk'],
 		place: 'Gwansanseong ridge, then Jinheung’s hall',
 		why: 'Gaya’s last prince plus Sadaham’s 562 vanguard: cone helm at Gwansanseong, then Jinheung’s hall; True Bone is the price. Fight → Sadaham gate → surrender → rank.',
 		canon: 'Lock the tall Gaya cone. Steel plates, purple cloth peek. Night ridge dutch, then hall. Sadaham ice-blue #6fa8ff under Silla steel.',
@@ -277,12 +277,33 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'gwansan-three-hosts', role: 'three camps', angle: 'night wide' },
 			{ id: 'muryuk-seq-ridge', role: 'ambush', angle: 'dutch night', at: 'Muryuk’s cone cuts the night ridge' },
 			{ id: 'muryuk-seq-cone-fight', role: 'last fight', angle: 'worm’s-eye', at: 'The tall Gaya cone still fights' },
+			{ id: 'sadaham-seq-keepup', role: 'keep up', angle: 'low gallop', at: 'Then keep up.' },
 			{ id: 'sadaham-seq-vanguard', role: 'Sadaham fifteen', angle: 'dutch charge', at: 'They said too young.' },
 			{ id: 'sadaham-seq-gate', role: 'the gate', angle: 'worm’s-eye', at: 'The gate didn’t.' },
 			{ id: 'sadaham-seq-free', role: 'prize-cages', angle: 'lower-third', at: 'Take the land. Leave the people.' },
+			{ id: 'sadaham-seq-alcheon', role: 'Alcheon dirt', angle: 'low close', at: 'Alcheon dirt.' },
 			{ id: 'gaya-surrender', role: 'kneel', angle: 'two-shot hall' },
 			{ id: 'gaya-crown', role: 'True Bone', angle: 'insert / close' },
 			{ id: 'muryuk-seq-aged', role: 'old prince', angle: 'worm’s-eye', at: 'Very well. Your descendants shall be raised as True Bone' }
+		]
+	},
+	{
+		id: 'gyebek-general-killer',
+		title: 'Hundred-Victories — one cut on the pass',
+		entryTitles: ['Gyebek’s Exile'],
+		place: 'An empty stubble field on the Silla border at storm dusk',
+		why: 'How Gyebek earned the name: Gomanari, the fastest horse in Samhan, out of an empty field at one man, one reverse-grip cut, gone before the escort draws. Painted wides bracket a run of manga action frames.',
+		canon: 'Gyebek FACE from ch_gyebek but never its curved sword: straight ring-pommel blade (sw_bidam), reverse grip, ring above the thumb. Gomanari jet-black from obj_gomanari. Silla blue crescent banners, cone helms. Action beats use MANGA_ACTION (speed lines, focus lines, impact flash, extreme foreshortening). No gore.',
+		shots: [
+			{ id: 'gyebek-sig-ridge', role: 'the empty field', angle: 'far wide', at: 'goes looking for the general' },
+			{ id: 'gyebek-sig-eye', role: 'the target', angle: 'ECU focus lines', at: 'He leaves the line to other men' },
+			{ id: 'gyebek-sig-hooves', role: 'fastest in Samhan', angle: 'worm’s-eye from the dirt', at: 'the fastest thing on four legs in Samhan' },
+			{ id: 'gyebek-sig-tuck', role: 'thrown knife', angle: 'low front dutch', at: 'rides him flat along the neck like a thrown knife' },
+			{ id: 'gyebek-sig-turn', role: 'too late', angle: 'OTS dutch', at: 'starts to turn his horse' },
+			{ id: 'gyebek-sig-impact', role: 'impact', angle: 'inverted impact frame', at: 'does not finish turning' },
+			{ id: 'gyebek-sig-cut', role: 'the cut', angle: 'worm’s-eye dutch', at: 'One cut on the pass.' },
+			{ id: 'gyebek-sig-riderless', role: 'gone', angle: 'low wide', at: 'a speck on the far ridge' },
+			{ id: 'gyebek-sig-frozen', role: 'headless army', angle: 'crane down', at: 'nobody left to tell it what to do' }
 		]
 	},
 	{
@@ -306,15 +327,22 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'sadaham-hwarang',
 		title: 'Sadaham — first class',
-		entryTitles: ['The Hwarang', 'The Fall of Gaya'],
+		entryTitles: ['The Hwarang', 'Muryuk'],
 		place: 'Hwarang eaves, then Gaya seong, then empty bowl',
 		why: 'Fifteen on the vanguard; Mugwan vow; seven days without food. Ice-blue #6fa8ff is the person.',
 		canon: 'Steel on campaign stills; Hwarang coats on the vow. Intimate grief for seven days. High contrast. One of each named person.',
 		shots: [
+			{ id: 'sadaham-seq-yushin-tells', role: 'two names', angle: 'over-shoulder eaves', at: 'the two names the yard still lowers its voice for' },
 			{ id: 'sadaham-gaya-road', role: 'empty road', angle: 'iconic wide', at: '<b>Sadaham</b> was fifteen' },
+			{ id: 'sadaham-seq-ask', role: 'too young', angle: 'worm’s-eye hall', at: 'asked to ride against Great Gaya' },
+			{ id: 'sadaham-seq-keepup', role: 'keep up', angle: 'low gallop', at: 'Then keep up.' },
+			{ id: 'sadaham-seq-vanguard', role: 'the charge', angle: 'dutch charge', at: 'They said too young.' },
+			{ id: 'sadaham-seq-alcheon', role: 'Alcheon dirt', angle: 'low close', at: 'Alcheon dirt.' },
 			{ id: 'sadaham-seq-mugwan-vow', role: 'the swear', angle: 'two-shot eaves', at: 'If you die first, I will not eat.' },
-			{ id: 'sadaham-seq-vanguard', role: 'too young', angle: 'dutch charge', at: 'They said too young.' },
-			{ id: 'sadaham-seq-seven-close', role: 'seven days', angle: 'ECU', at: 'Sadaham did not take food for seven days' }
+			{ id: 'sadaham-seq-sickbed', role: 'the pulse', angle: 'candle two-shot', at: 'died of illness not long after the campaign' },
+			{ id: 'sadaham-grief-clutch', role: 'gone', angle: 'low dutch', at: 'Sadaham did not take food for seven days' },
+			{ id: 'sadaham-seq-seven-close', role: 'seven days', angle: 'ECU', at: 'Sadaham did not take food for seven days' },
+			{ id: 'sadaham-seq-headbands', role: 'two headbands', angle: 'low ground', at: 'buried two headbands' }
 		]
 	},
 	{
@@ -631,7 +659,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		entryTitles: ['Jumong', 'Onjo'],
 		place: 'Jolbon: pine road, timber hall, grain porch, SAME stone well (rim, timber beam, two buckets), packed earth, grey giwa',
 		why: 'Scouts drag a wet exile to Tabal. First look is four beats, not one crack: stern girl-boss → stupid love (Jumong in the void) → lustful Little Sosuno in her head → snap-back chin-up. Then loft, well, daughters, pine. Loft heat LOCK paint: nsfw-jumong-sosuno-loft-dutch-spread (dutch, gritted tsun flush, hiked dusty-rose, millet loft).',
-		canon: 'LOCK Tabal night hall: torch pools ONLY, crushed blacks, timber posts, no daylight leftover. LOCK Jolbon well EVERY well-cut: round granite rim, timber beam, hemp rope, two buckets on packed earth, nobody in the shaft, grey giwa hall. SAME Jolbon well every well-cut: round granite rim, timber beam, hemp rope, two buckets on packed earth, nobody in the shaft, grey giwa hall, grain porch left. Dusty-rose #e8a04a hanbok, not gold. Jumong red #e8563f. CLEAN-SHAVEN pre-king — NO mustache, NO goatee; ignore facial hair on ch_jumong. Tabal first encounter is DEAD OF NIGHT — torch pools only, crushed blacks, no daylight. First-summit coronation LOCK: /temp/crown-cord-tabal.jpg (setting/pose — vermilion thread, five fires, packed earth, giwa). King FACE ch_dongmyung. Tabal FACE ch_yeon_tabal. Four other chiefs FACE ch_tiger_chief / ch_boar_chief / ch_wolf_chief / ch_bear_chief — ONE of each, a RING of bowed backs, Jumong center, Tabal placing the cord. Queen at the rail: ch_sosuno_queen + bn_sosuno. Shot variety: bird’s-eye, top-down, ECU, dutch wide, OTS, worm’s-eye. Cavern stills lock to pl_jumong_cave.',
+		canon: 'LOCK Tabal night hall: torch pools ONLY, crushed blacks, timber posts, no daylight leftover. LOCK Jolbon well EVERY well-cut: round granite rim, timber beam, hemp rope, two buckets on packed earth, nobody in the shaft, grey giwa hall. SAME Jolbon well every well-cut: round granite rim, timber beam, hemp rope, two buckets on packed earth, nobody in the shaft, grey giwa hall, grain porch left. Dusty-rose #e8a04a hanbok, not gold. Jumong red #e8563f. CLEAN-SHAVEN pre-king — NO mustache, NO goatee; ignore facial hair on ch_jumong. Tabal first encounter is DEAD OF NIGHT — torch pools only, crushed blacks, no daylight. First-summit coronation LOCK: /temp/crown-cord-tabal.jpg (setting/pose — vermilion thread, five fires, packed earth, giwa). King FACE ch_dongmyung. Tabal FACE ch_yeon_tabal. Four other chiefs FACE ch_cow_chief / ch_pig_chief / ch_dog_chief / ch_horse_chief — ONE of each, a RING of bowed backs, Jumong center, Tabal placing the cord. Queen at the rail: ch_sosuno_queen + bn_sosuno. Shot variety: bird’s-eye, top-down, ECU, dutch wide, OTS, worm’s-eye. Cavern stills lock to pl_jumong_cave.',
 		shots: [
 			{ id: 'jumong-seq-scouts-wide', role: 'scouts find him', angle: 'bird’s-eye pines', at: 'Jolbon scouts find him first' },
 			{ id: 'jumong-scouts-hands', role: 'hands up', angle: 'dutch', at: 'Down. It’s down.' },
@@ -872,8 +900,8 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	},
 	{
 		id: 'gaya-fall-cinema',
-		title: 'The Fall of Gaya — cone and surrender',
-		entryTitles: ['The Fall of Gaya', 'Gaya, the Lost Nations'],
+		title: 'Muryuk — cone and surrender',
+		entryTitles: ['Muryuk', 'Suro'],
 		place: 'Gaya iron coast · Silla hall · night ridge',
 		why: 'Harbour league, last cone fight, Muryuk’s surrender condition.',
 		canon: 'Muryuk FACE from ch_kim_muryuk. Tall Gaya cone. Steel lamellar + purple #8B5CF6 peek. High contrast. One device.',
@@ -962,6 +990,86 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'already the White River and the Tanhyeon pass' },
 			{ id: 'gibeolpo-ring-mud', role: 'river lost', angle: "bird’s-eye mud", at: 'Tang keels in the mud of Gibeolpo' },
 			{ id: 'yushin-tanhyeon-fish-ring', role: 'Silla on the pass', angle: "worm’s-eye climb", at: 'Yushin is already on the switchback' }
+		]
+	},
+	{
+		id: 'heaven-earth-ink',
+		title: 'Heaven–Earth King — ink',
+		entryTitles: ['Heaven–Earth King'],
+		place: 'Raw paper and black ink: the poor house, the scoundrel’s storehouse, the gourd vine, the edge of the sky.',
+		why: 'The founding myth in full: two suns and two moons, the sand in the rice, the vine, the arrows, the riddles, the stolen flower, the scale that parts the living from the dead.',
+		canon: 'STRIKING INK — saturated black masses against blinding bare paper, light is the unpainted paper, almost no mid-grey, one cinnabar or indigo wash at most. Faces from ch_heaven_earth_king, ch_big_star_young / ch_little_star_young (fifteen), ch_big_star / ch_little_star (grown). the Lady of Wisdom and Sumyung Jangja have no portrait: hands, backs, shadow. No text, no seal.',
+		shots: [
+			{ id: 'hek-ink-two-suns', role: 'two suns', angle: 'low wide', at: 'two suns and two moons. By day' },
+			{ id: 'hek-ink-dream', role: 'the dream', angle: "worm’s-eye", at: 'one sun, one moon, swallowed whole' },
+			{ id: 'hek-ink-jar', role: 'the empty jar', angle: 'foreground hands', at: 'a rice jar she does not open in front of guests' },
+			{ id: 'hek-ink-measure', role: 'the scoundrel', angle: 'over-shoulder', at: 'He fills the measure himself' },
+			{ id: 'hek-ink-sand', role: 'the sand', angle: 'ECU', at: 'Your rice has a bit of bite to it.' },
+			{ id: 'hek-ink-fall', role: 'into hell', angle: "bird’s-eye", at: 'The floor of the ninth storehouse opens.' },
+			{ id: 'hek-ink-comb', role: 'the tokens', angle: 'palm close', at: 'Two gourd seeds in her palm' },
+			{ id: 'hek-ink-vine', role: 'the vine', angle: 'vertical', at: 'the vine has gone past the roof' },
+			{ id: 'hek-ink-sun', role: 'the sun breaks', angle: "worm’s-eye full draw", at: 'breaks like a plate' },
+			{ id: 'hek-ink-swap', role: 'the swap', angle: 'dutch night', at: 'counts his brother' },
+			{ id: 'hek-ink-yield', role: 'he knows', angle: 'low two-shot', at: 'Your flower did well.' },
+			{ id: 'hek-ink-scale', role: 'the weighing', angle: 'monumental', at: 'Then he hangs a scale from the sky.' },
+			{ id: 'hek-ink-descent', role: 'down', angle: 'horizontal split', at: 'the light ones following him' }
+		]
+	},
+	{
+		id: 'kangrim-folk',
+		title: 'Kangrim — folk painting',
+		entryTitles: ['Kangrim'],
+		place: 'Ochre paper. A round pond, a gate, a torn sheet, a slaughter-wall, a stream.',
+		why: 'The real bonpuri in minhwa: a living man jumps, Death keeps the soul, a crow loses the order.',
+		canon: 'KOREAN FOLK PAINTING (민화): flat, thick outline, mineral cinnabar, malachite, ochre, indigo. Not tenebrism, not webtoon. Faces from ch_kangrim, ch_yumla, ch_haewonmek. Unnamed people have no portrait faces. No text.',
+		shots: [
+			{ id: 'kr-folk-jump', role: 'the pond', angle: 'flat circle', at: 'he shut his eyes and jumped' },
+			{ id: 'kr-folk-gate', role: 'the request', angle: 'frontal gate', at: 'stood up at the underworld gate' },
+			{ id: 'kr-folk-split', role: 'body and soul', angle: 'torn sheet', at: 'So they split him.' },
+			{ id: 'kr-folk-crow', role: 'the lost order', angle: 'margin story', at: 'trusted it to a crow' },
+			{ id: 'kr-folk-charcoal', role: 'the seat', angle: 'stream band', at: 'washing charcoal' }
+		]
+	},
+	{
+		id: 'sulmun-heewon',
+		title: 'Sulmun — the apron',
+		entryTitles: ['Sulmun and the Three Princes'],
+		place: 'The sea before Tamla, then Halla and the oreum (pl_mount_halla).',
+		why: 'She piles the island, spills the hills, slips into the cauldron, and stops one roll short of a bridge.',
+		canon: 'HEEWON painterly. Enormous Sulmun from ch_sulmun — white jeogori, orange chima, cloud hair. Sea at her knee. #7f9c8b as real light on wet stone. No crowd of five hundred. No text.',
+		shots: [
+			{ id: 'sulmun-seq-scoop', role: 'Halla poured', angle: "worm’s-eye from the water", at: 'piles it in one place' },
+			{ id: 'sulmun-seq-hills', role: 'the hole', angle: 'dutch stride', at: 'three hundred and sixty-eight' },
+			{ id: 'sulmun-seq-cauldron', role: 'the slip', angle: 'low, the pot', at: 'slipped, and did not come out' },
+			{ id: 'sulmun-seq-silk', role: 'ninety-nine', angle: 'lower third', at: 'The collar was never finished' }
+		]
+	},
+	{
+		id: 'princes-heewon',
+		title: 'Three Princes — Samseonghyeol',
+		entryTitles: ['Sulmun and the Three Princes'],
+		place: 'Three holes in Jeju basalt, Halla behind (pl_mount_halla), then the shore and a pond.',
+		why: 'Go, Yang, and Bu rise, divide the island by arrow, and marry what the sea sends in a box.',
+		canon: 'HEEWON painterly. Faces and garments from ch_yang_eulna, ch_go_eulna, ch_bu_eulna. Princesses seen from behind only — no invented faces. Same basalt ground every cut. No text.',
+		shots: [
+			{ id: 'princes-seq-rise', role: 'the hollow', angle: "worm’s-eye", at: 'three divine princes named' },
+			{ id: 'princes-seq-arrows', role: 'the division', angle: "bird’s-eye", at: 'We divide the land. By arrow.' },
+			{ id: 'princes-seq-box', role: 'the sea-box', angle: 'dutch shore', at: 'a messenger and three princesses' },
+			{ id: 'princes-seq-pond', role: 'the marriages', angle: 'pond rim', at: 'They marry the three princesses at a pond.' }
+		]
+	},
+	{
+		id: 'sanbang-fresco',
+		title: 'Sanbangduk — geometric vector',
+		entryTitles: ['Sanbangduk'],
+		place: 'The cliff at Sanbang. One spring.',
+		why: 'She comes out of the rock for a poor man, and the official sends her back into it. The retreat Gyebek is offered.',
+		canon: 'GEOMETRIC VECTOR: flat hard-edged shapes, no gradients, no brush; the cliff is tessellated basalt hexagons; palette basalt black, deep sea-green, rust, cream, with her #8fb3a8 as the one accent. Face from ch_sanbangdeok, reduced to flat planes. The poor man and the official stay faceless shapes. No text.',
+		shots: [
+			{ id: 'sanbang-seq-out', role: 'she steps out', angle: 'relief in the cliff', at: 'who came down out of the rock' },
+			{ id: 'sanbang-seq-hand', role: 'not stone', angle: 'hands', at: 'feel like stone' },
+			{ id: 'sanbang-seq-return', role: 'she turns back', angle: 'mid-stride into rock', at: 'the official has the husband killed' },
+			{ id: 'sanbang-seq-spring', role: 'only the spring', angle: 'empty cliff', at: 'The spring inside it has not stopped' }
 		]
 	}
 ];

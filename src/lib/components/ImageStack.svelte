@@ -7,7 +7,7 @@
 	import { reading } from '$lib/reading.svelte';
 	import { filterNsfw } from '$lib/nsfwUi.svelte';
 	import { editUi, filterRemovedCues } from '$lib/editUi.svelte';
-	import { onEditGradeContextMenu } from '$lib/imageGradeUi.svelte';
+	import { cueMenuTarget, openImageMenu } from '$lib/imageMenu.svelte';
 	import { openLightbox, type LightboxItem } from '$lib/imageLightbox.svelte';
 	import { isNsfwCueImage } from '$lib/nsfwCue';
 	import { measureRatio, naturalRatio } from '$lib/imageRatio.svelte';
@@ -233,7 +233,7 @@
 	}
 
 	function onEditContextMenu(e: MouseEvent, slotId: string) {
-		onEditGradeContextMenu(e, slotId);
+		openImageMenu(e, cueMenuTarget(slotId));
 	}
 </script>
 
@@ -370,7 +370,7 @@
 	}
 
 	.stack.editing .frame.art::after {
-		content: 'Right-click to grade / edit';
+		content: 'Right-click to star / remove';
 		position: absolute;
 		left: 0.45rem;
 		bottom: 0.4rem;

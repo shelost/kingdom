@@ -64,6 +64,8 @@ export type StoryImgAttrs = {
 	sizes?: string;
 	width?: number;
 	height?: number;
+	/** Original site path — `src` is the optimizer URL. Read by edit-mode starring. */
+	'data-src': string;
 };
 
 /** Intrinsic box for thumbs so the browser can reserve space (2:3 portraits). */
@@ -159,7 +161,8 @@ export function storyImg(src: string, opts: StoryImgOpts = {}): StoryImgAttrs {
 		alt: opts.alt ?? '',
 		loading: opts.loading ?? (priority ? 'eager' : 'lazy'),
 		decoding: 'async',
-		fetchpriority: opts.fetchpriority ?? (priority ? 'high' : 'low')
+		fetchpriority: opts.fetchpriority ?? (priority ? 'high' : 'low'),
+		'data-src': src
 	};
 	const box = INTRINSIC[kind];
 	if (box) {

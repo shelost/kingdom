@@ -1,0 +1,461 @@
+[
+	{
+		"kind": "p",
+		"html": "Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.",
+		"ko": "유신이 있기 전에 길이 있다. 그리고 그 길 위에, 앞을 보고 다녀야 할 젊은이가 하나 있다."
+	},
+	{
+		"kind": "p",
+		"html": "Kim Seohyeon is the grandson of the last prince of Golden Gaya, which in Surabol is a fact people mention to each other just after he has left the room. His grandfather Muryuk bought the family True Bone with a kingdom. The rank is real. It opens most doors, and it opens the best ones least.",
+		"ko": "김서현은 금관가야 마지막 왕자의 손자다. 서라벌에서는 그가 방을 나서자마자 사람들이 서로에게 꺼내는 사실이다. 할아버지 무력은 나라 하나를 내주고 집안의 진골을 샀다. 그 품계는 진짜다. 대부분의 문을 열어 준다. 가장 좋은 문일수록 덜 열어 줄 뿐."
+	},
+	{
+		"kind": "p",
+		"html": "The best door in the street belongs to <b>Sukhuljong</b>, younger brother of the great king Jinheung, Sacred Bone on every side, and his daughter <b>Manmyung</b> is standing outside it when Seohyeon rides past. He looks at her. The histories, which do not usually notice such things, record exactly how.",
+		"ko": "그 거리에서 가장 좋은 문은 진흥대왕의 아우이자 사방이 성골인 <b>숙흘종</b>의 것이다. 서현이 말을 타고 지나갈 때 그의 딸 <b>만명</b>이 그 문 밖에 서 있다. 그는 그녀를 본다. 평소 그런 일에는 눈길도 주지 않는 사서가, 그가 어떻게 보았는지를 정확히 적어 두었다."
+	},
+	{
+		"kind": "quote",
+		"hanja": "初，舒玄路見葛文王立宗之子肅訖宗之女萬明，心悅而目挑之，不待媒妁而合。",
+		"html": "At first, Seohyeon saw on the road Manmyung, daughter of Sukhuljong, son of Galmun-wang Ipjong. His heart was glad, and he courted her with his eyes; and without waiting for a go-between, they came together.",
+		"ko": "처음에 서현이 길에서 갈문왕 입종의 아들 숙흘종의 딸 만명을 보고, 마음에 기뻐하여 눈으로 꾀어, 중매를 기다리지 않고 맺어졌다.",
+		"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"You’ve ridden past this gate three times today.",
+			"Is the road that bad, or are you lost?"
+		],
+		"lines": [
+			"오늘만 이 문 앞을 세 번 지나가셨어요.",
+			"길이 그렇게 험해요, 아니면 길을 잃으셨어요?"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"I— the horse—",
+			"…It’s lost. I’m only on it."
+		],
+		"lines": [
+			"저, 그게, 말이—",
+			"…말이 길을 잃었소. 나는 타고 있을 뿐이고."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"Then let it get lost again tomorrow.",
+			"Same hour."
+		],
+		"lines": [
+			"그럼 내일도 길을 잃게 하세요.",
+			"같은 시각에."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "It gets lost every day for a season. Nobody sends a matchmaker, because a matchmaker would have to walk into Sukhuljong’s hall and say the word <i>Gaya</i> out loud.",
+		"ko": "말은 한 철 내내 날마다 길을 잃는다. 아무도 중매쟁이를 보내지 않는다. 중매쟁이라면 숙흘종의 전각에 들어가 <i>가야</i>라는 말을 소리 내어 해야 할 테니까."
+	},
+	{
+		"kind": "p",
+		"html": "Then the posting comes. Seohyeon is made governor of <b>Manno</b>, a county far up the Goguryeo road, and he asks her to come with him, and she says yes before he has finished asking, and her father finds out.",
+		"ko": "그러다 임지가 정해진다. 서현은 고구려로 가는 길 저 위쪽 고을, <b>만노</b>의 태수가 된다. 그는 함께 가자고 청하고, 그녀는 그가 말을 다 끝내기도 전에 그러겠다고 한다. 그리고 그녀의 아버지가 알게 된다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "sukhuljong",
+		"chip": "#6b5b4b",
+		"en": [
+			"Gaya.",
+			"A boy whose grandfather handed his country over in a box. Him?"
+		],
+		"lines": [
+			"가야라.",
+			"할아비가 제 나라를 궤짝에 담아 넘긴 놈. 그놈이냐?"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"His grandfather kept his sword, Father.",
+			"You keep a gate."
+		],
+		"lines": [
+			"그분 할아버님은 칼을 지키셨어요, 아버지.",
+			"아버지는 문을 지키시고요."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "sukhuljong",
+		"chip": "#6b5b4b",
+		"en": [
+			"Then you can look at the gate from the inside."
+		],
+		"lines": [
+			"그럼 그 문을 안에서 실컷 보거라."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "He shuts her in a house apart and sets men on the door. Surabol has a word for what the two of them did, and it is not a polite one, and for a few weeks it is the only thing the city talks about.",
+		"ko": "그는 딸을 별채에 가두고 문에 사람을 세운다. 서라벌에는 두 사람이 한 짓을 가리키는 말이 있는데, 점잖은 말은 아니다. 몇 주 동안 도성은 그 이야기만 한다."
+	},
+	{
+		"kind": "p",
+		"html": "Then it storms. Lightning comes down on the door itself, the guards do what men do when the sky picks out the house they are guarding, and in the noise Manmyung goes out through a gap in the wall so low that she has to crawl, in her good silk, in the rain.",
+		"ko": "그러다 폭풍이 친다. 벼락이 바로 그 문에 떨어지고, 하늘이 제가 지키는 집을 골라 내리치면 사람들이 하는 짓을 경비들도 한다. 그 소란 속에 만명은 담장 밑 구멍으로 빠져나간다. 기어야 할 만큼 낮은 구멍을, 좋은 비단옷을 입은 채, 빗속에서."
+	},
+	{
+		"kind": "quote",
+		"hanja": "舒玄為萬弩郡太守，將與俱行，肅訖宗始知女子與玄野合，疾之囚於別第，使人守之。忽雷震屋門，守者驚亂，萬明從竇而出，遂與舒玄赴萬弩郡。",
+		"html": "Seohyeon was made governor of Manno commandery and meant to take her with him. Only then did Sukhuljong learn that his daughter had come together with Seohyeon outside the rites. He hated it, shut her in a separate house, and set men to guard it. Suddenly lightning struck the door of the house; the guards scattered in terror; Manmyung got out through a hole in the wall and went with Seohyeon to Manno.",
+		"ko": "서현이 만노군 태수가 되어 그녀와 함께 가려 하자, 숙흘종은 그제야 딸이 서현과 야합한 것을 알고 미워하여 별채에 가두고 사람을 시켜 지키게 하였다. 갑자기 벼락이 집 문을 치니 지키던 자들이 놀라 흩어졌고, 만명은 구멍으로 빠져나와 마침내 서현과 함께 만노군으로 갔다.",
+		"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"Don’t— don’t look at the dress.",
+			"Is the horse lost tonight?"
+		],
+		"lines": [
+			"보지 마세요, 옷은—",
+			"오늘 밤에도 말이 길을 잃었어요?"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"…No.",
+			"Tonight it knows exactly where it’s going."
+		],
+		"lines": [
+			"…아니오.",
+			"오늘 밤엔 어디로 가는지 똑똑히 알고 있소."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "They ride north to Manno together. Some months later he dreams of two stars coming down to him, and she dreams of a boy in golden armour riding a cloud into the hall. She carries the child twenty months, which is either a miracle or a clerk’s arithmetic, and in 595 she gives birth to a son on the Goguryeo road.",
+		"ko": "둘은 함께 북쪽 만노로 간다. 몇 달 뒤 그는 별 두 개가 자기에게 내려오는 꿈을 꾸고, 그녀는 금빛 갑옷을 입은 아이가 구름을 타고 대청으로 들어오는 꿈을 꾼다. 그녀는 아이를 스무 달 품는다. 기적이거나 서기의 셈법이거나. 그리고 595년, 고구려로 가는 길 위의 고을에서 아들을 낳는다."
+	},
+	{
+		"kind": "quote",
+		"hanja": "舒玄庚辰之夜，夢熒惑鎭二星降於己，萬明亦以辛丑之夜，夢見童子衣金甲，乘雲入堂中，尋而有娠，二十月而生庾信。",
+		"html": "On the night of a gyeongjin day Seohyeon dreamed that the two stars Mars and Saturn came down upon him; and Manmyung, on the night of a sinchuk day, dreamed that a boy clad in golden armour rode a cloud into the hall. Soon she was with child, and after twenty months she gave birth to Yushin.",
+		"ko": "서현은 경진일 밤에 형혹성과 진성 두 별이 자기에게 내려오는 꿈을 꾸었고, 만명도 신축일 밤에 금갑옷을 입은 동자가 구름을 타고 대청 안으로 들어오는 꿈을 꾸었다. 이윽고 아이를 배어 스무 달 만에 유신을 낳았다.",
+		"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+	},
+	{
+		"kind": "p",
+		"html": "He wants to name the boy for the night of the dream, and the rites forbid naming a child for a day. So he takes the nearest sounds. <i>Gyeong</i> looks like <i>yu</i>; <i>jin</i> sounds like <i>sin</i>. The boy is Yushin.",
+		"ko": "그는 꿈을 꾼 그 밤의 이름으로 아이를 부르고 싶었지만, 예법은 날로 이름 짓는 것을 금한다. 그래서 가장 가까운 소리를 고른다. <i>경</i>(庚)은 <i>유</i>(庾)와 글자가 닮았고, <i>진</i>(辰)은 <i>신</i>(信)과 소리가 가깝다. 아이는 유신이 된다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"Yushin.",
+			"Say it to my father, next time you’re in Surabol. Say it at his gate."
+		],
+		"lines": [
+			"유신.",
+			"다음에 서라벌에 가시거든 우리 아버지께 말씀하세요. 그 문 앞에서."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"…He won’t open it."
+		],
+		"lines": [
+			"…열어 주지 않으실 거요."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"Then say it louder."
+		],
+		"lines": [
+			"그럼 더 크게 하세요."
+		]
+	},
+	{
+		"kind": "scene",
+		"label": "The Spring",
+		"ko": "샘"
+	},
+	{
+		"kind": "p",
+		"html": "A few weeks after the birth he rides to Surabol and says the name at the gate, loudly, and the gate does not open. A steward comes out instead and says that his lordship is unwell, and will be unwell, he expects, for some years.",
+		"ko": "아이가 태어나고 몇 주 뒤 그는 서라벌로 가서 그 문 앞에서 이름을 크게 말한다. 문은 열리지 않는다. 대신 청지기가 나와, 나리께서 편찮으시다고, 아마 몇 해는 더 편찮으실 것 같다고 말한다."
+	},
+	{
+		"kind": "p",
+		"html": "He rides home the long way because he does not want to arrive yet. The road goes over a ridge beyond the city that nobody uses, and by noon he wants water more than he has ever wanted a shrine. When heat breathes out of the hillside he calls it a spring and gets down.",
+		"ko": "그는 아직 도착하고 싶지 않아서 먼 길로 돌아간다. 길은 도성 너머 아무도 쓰지 않는 능선을 넘고, 한낮이 되자 그는 어느 사당보다도 물이 간절하다. 산허리에서 열기가 훅 뿜어져 나오자 그는 그것을 샘이라 부르고 말에서 내린다."
+	},
+	{
+		"kind": "p",
+		"html": "Then he hears a laugh. It is not from any village he knows, and it comes from under his feet.",
+		"ko": "그러다 웃음소리를 듣는다. 그가 아는 어느 마을의 웃음도 아니고, 발밑에서 올라온다."
+	},
+	{
+		"kind": "p",
+		"html": "Under the hill three sisters keep the heat in the stone, the water in the dark and the moss on the roots: <b>Golhwa</b>, <b>Hyullé</b> and <b>Narim</b>, the eldest, who also keeps the rules. They have gone centuries without a man coming down to them, and the hill has just told them about hooves on the road.",
+		"ko": "언덕 아래에서 세 자매가 돌 속의 열기와 어둠 속의 물과 뿌리 위의 이끼를 지킨다. <b>골화</b>, <b>혈례</b>, 그리고 규칙까지 지키는 맏이 <b>나림</b>. 몇백 년째 사내 하나 내려온 적이 없는데, 방금 언덕이 길 위의 말발굽 소리를 일러 주었다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "golhwa",
+		"chip": "#e86820",
+		"en": [
+			"Hooves! Unni, hooves. Someone’s coming."
+		],
+		"lines": [
+			"말발굽! 언니, 말발굽 소리야. 누가 와."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "narim",
+		"chip": "#5fad6e",
+		"en": [
+			"Someone is always coming. They drink and leave."
+		],
+		"lines": [
+			"누군 늘 와. 마시고 가."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "hyulle",
+		"chip": "#2eb8c4",
+		"en": [
+			"…This one stopped."
+		],
+		"lines": [
+			"…이 사람은 멈췄어."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "They argue about what to be. A fox, Golhwa wants, for the fun of it. A crone, says Hyullé, so that he will take his water and bless them and go. Narim lets them try both, the way an eldest lets the younger ones burn their fingers, and then picks the last face herself: three young women in white jeogori over olive and coral and pale blue, sitting on the far rock as if they had always been there.",
+		"ko": "셋은 무엇이 될지를 두고 다툰다. 여우, 하고 골화가 말한다. 재미있으니까. 노파, 하고 혈례가 말한다. 그래야 물만 마시고 복을 빌어 주고 가 버릴 테니까. 나림은 맏이가 동생들이 손가락을 데어 보게 두듯 둘 다 해 보게 두고는, 마지막 얼굴은 제가 고른다. 올리브와 산호와 연한 하늘빛 치마 위에 흰 저고리를 입은 젊은 여자 셋이, 처음부터 거기 있었던 것처럼 건너편 바위에 앉아 있다."
+	},
+	{
+		"kind": "p",
+		"html": "He is still calling it a spring when the ground gives under his boot. He comes down through warm dark into a bowl of black water under stone and stands up coughing in a cloud of steam, soaked to the skin, his sword still somehow in his hand.",
+		"ko": "그가 아직 샘이라고 부르고 있을 때 발밑의 땅이 꺼진다. 따뜻한 어둠을 지나 돌 아래 검은 물웅덩이로 떨어진 그는, 김이 자욱한 속에서 기침을 하며 일어선다. 흠뻑 젖은 채로, 어째선지 칼은 아직 손에 쥐고."
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"Who— forgive me— who lives here?",
+			"I was looking for water."
+		],
+		"lines": [
+			"누구— 실례하오— 여기 누가 사시오?",
+			"물을 찾고 있었소."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "narim",
+		"chip": "#5fad6e",
+		"en": [
+			"You found it. All of it at once.",
+			"Put the sword down before you cut the steam."
+		],
+		"lines": [
+			"찾았네. 한꺼번에 몽땅.",
+			"김 베기 전에 칼부터 내려놔."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "golhwa",
+		"chip": "#e86820",
+		"en": [
+			"Hi. I’m Golhwa. That’s unni. That’s Hyullé, she won’t say hello unless you look at her first.",
+			"What’s your name? Say it slow."
+		],
+		"lines": [
+			"안녕. 난 골화. 저긴 언니. 저긴 혈례, 먼저 쳐다봐 줘야 인사해.",
+			"이름이 뭐야? 천천히 말해 봐."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"Kim. Kim Seohyeon.",
+			"Are you… I mean. People?"
+		],
+		"lines": [
+			"김. 김서현이오.",
+			"당신들은… 그러니까. 사람이오?"
+		]
+	},
+	{
+		"kind": "p",
+		"html": "At the surname all three of them go quiet. <i>Kim</i> is the sound their own steam makes coming off the water, and nobody has ever said it to them as a name.",
+		"ko": "성을 듣는 순간 셋 다 조용해진다. <i>김</i>은 그들의 물에서 피어오르는 김이 내는 바로 그 소리인데, 누구도 그것을 이름으로 그들에게 말해 준 적이 없다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "golhwa",
+		"chip": "#e86820",
+		"en": [
+			"Kim.",
+			"Say it again. No, I heard you. It just… sticks."
+		],
+		"lines": [
+			"김.",
+			"다시 말해 봐. 아니, 들었어. 그냥… 자꾸 붙어."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "narim",
+		"chip": "#5fad6e",
+		"en": [
+			"Today we are the mouths the hill uses when it is tired of being stone.",
+			"Ask it one thing, Kim. From the water. Once."
+		],
+		"lines": [
+			"오늘 우리는 언덕이 돌인 게 지겨울 때 쓰는 입이야.",
+			"하나만 물어, 김. 물속에서. 한 번."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "He thinks of the gate. He thinks of a girl crawling through a hole in a wall in her good silk.",
+		"ko": "그는 그 문을 생각한다. 좋은 비단옷을 입고 담장 구멍으로 기어 나오던 여자를 생각한다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"I have a son. A few weeks old.",
+			"My wife’s father won’t say his name. I don’t know— I don’t know what I’d ask for him."
+		],
+		"lines": [
+			"아들이 있소. 몇 주 됐소.",
+			"아내의 아버지는 그 아이 이름을 입에 올리지 않소. 모르겠소— 그 아이를 위해 무얼 물어야 할지."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "Their eyes go solid, green and cyan and ember, and the cave stops being funny.",
+		"ko": "그들의 눈이 통째로 물든다. 초록, 청록, 불씨. 동굴은 더 이상 우습지 않다."
+	},
+	{
+		"kind": "dialogue",
+		"chip": "#0e7490",
+		"speaker": "The Hill",
+		"en": [
+			"The child will be the measure two countries cannot share.",
+			"They will call him a blade and mean a border.",
+			"When they say he was never of them, the blade will still be Kim.",
+			"He will cut more than he is given. Don’t ask who bleeds."
+		],
+		"lines": [
+			"그 아이는 두 나라가 나눠 갖지 못하는 자가 될 거예요.",
+			"칼이라 부르고, 국경을 뜻할 거예요.",
+			"그들이 자기네 사람이 아니라 할 때에도, 그 칼은 김으로 남을 거예요.",
+			"받은 것보다 더 자를 거예요. 누가 피를 흘리는지는 묻지 말아요."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "Narim puts a river stone in his hand, ordinary and grey and too warm for the cave.",
+		"ko": "나림이 그의 손에 강돌 하나를 쥐여 준다. 평범한 회색 돌인데, 동굴에 있기엔 너무 따뜻하다."
+	},
+	{
+		"kind": "dialogue",
+		"chip": "#5fad6e",
+		"person": "narim",
+		"en": [
+			"If it goes cold, you did not come as a petitioner.",
+			"If it stays warm, the hill will open. Same way. Water. One question. The name. Come back every time it is warm. Until you cannot climb. Then send the name."
+		],
+		"lines": [
+			"식으면 청원으로 온 게 아니에요.",
+			"따뜻하면 언덕이 열려요. 같은 길. 물. 질문 하나. 이름. 따뜻할 때마다 다시 와요. 오르지 못할 때까지. 그다음엔 이름을 보내요."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"…Can I tell his mother?"
+		],
+		"lines": [
+			"…그 애 엄마한테 말해도 되겠소?"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "golhwa",
+		"chip": "#e86820",
+		"en": [
+			"Tell her it was a spring.",
+			"Everybody says that."
+		],
+		"lines": [
+			"샘이었다고 해.",
+			"다들 그렇게 말해."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "He rides north with a stone in his sleeve that will not cool. At Manno, Manmyung is sitting up with the baby in the lamplight, and she asks him where he has been all day, and he tells her he found a spring.",
+		"ko": "그는 식지 않는 돌을 소매에 넣고 북쪽으로 달린다. 만노에서는 만명이 등불 아래 아기를 안고 앉아 있다. 하루 종일 어디 있었느냐고 그녀가 묻자, 그는 샘을 찾았다고 말한다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"A spring.",
+			"…You’re smiling like a man who found three."
+		],
+		"lines": [
+			"샘이요.",
+			"…샘을 세 개쯤 찾은 사람처럼 웃고 계시네요."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "He goes back every time the stone is warm, for the rest of his life. The boy asleep on her arm will find the same water forty years later, and the hill will know his walk before he does.",
+		"ko": "그는 평생, 돌이 따뜻해질 때마다 돌아간다. 그녀의 팔에서 잠든 아이는 사십 년 뒤 같은 물을 찾아낼 것이고, 언덕은 그보다 먼저 그의 걸음을 알아볼 것이다."
+	}
+]

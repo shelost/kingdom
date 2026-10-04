@@ -120,19 +120,23 @@
 	/** Swords and animals list people in `owners` (wielders / rider / guided). */
 	let hasOwners = $derived(isSword || isAnimal);
 	let isNation = $derived(entry.entity === 'nation');
-	/** Nation detail hero uses the kingdom flag when present (not portrait art). */
-	let heroArt = $derived(isNation && flag ? flag : art);
-	let isNationFlagHero = $derived(isNation && !!flag);
-	/** Places and animals lead with a landscape still. */
-	let isLandscapeHero = $derived(isPlace || isAnimal);
-	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
-	let isPortraitHero = $derived(!!heroArt && !isLandscapeHero && !isNationFlagHero);
 	let kind = $derived(kindOf(entry));
 	let scenes = $derived(
-		kind === 'character' || kind === 'god' || kind === 'animal'
+		kind === 'character' || kind === 'god' || kind === 'animal' || kind === 'relationship'
 			? scenesForWikiEntry(entry.id)
 			: []
 	);
+	/** A relationship's cover still (its `still` slot), when that slot has art. */
+	let bondStill = $derived(
+		isBond && entry.still ? scenes.find((s) => s.id === entry.still && !s.nsfw)?.art : undefined
+	);
+	/** Nation detail hero uses the kingdom flag when present (not portrait art); bonds lead with their still. */
+	let heroArt = $derived(isNation && flag ? flag : (bondStill ?? art));
+	let isNationFlagHero = $derived(isNation && !!flag);
+	/** Places, animals, and bonds with a cover still lead with a landscape still. */
+	let isLandscapeHero = $derived(isPlace || isAnimal || !!bondStill);
+	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
+	let isPortraitHero = $derived(!!heroArt && !isLandscapeHero && !isNationFlagHero);
 	/** SFW stills tagged with this person. NSFW stays on /images + the modal, not the grid. */
 	let galleryScenes = $derived.by(() => {
 		const rest = scenes.filter((s) => !s.nsfw);
@@ -473,6 +477,12 @@
 				<div>
 					<dt>{isBond ? 'Bond' : isPlace ? 'Type' : 'Title'}</dt>
 					<dd>{role}</dd>
+				</div>
+			{/if}
+			{#if isBond && entry.dynamic}
+				<div>
+					<dt>Dynamic</dt>
+					<dd>{entry.dynamic.en}<span class="realm-ko"> · {entry.dynamic.ko}</span></dd>
 				</div>
 			{/if}
 			{#if entry.godTier}

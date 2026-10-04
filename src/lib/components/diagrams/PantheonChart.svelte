@@ -78,7 +78,7 @@
 		{ ko: '설문', en: 'Sulmun', x: 80 },
 		{ ko: '자청비', en: 'Jacheongbi', x: 160 },
 		{ ko: '가믄장', en: 'Gameunjang', x: 240 },
-		{ ko: '산방덕', en: 'Sanbangdeok', x: 320 }
+		{ ko: '산방덕', en: 'Sanbangduk', x: 320 }
 	] as const;
 
 	const focus = $derived(normalizeRealm(realm));
@@ -125,7 +125,7 @@
 	const showTamla = $derived(focus === 'tamla');
 	const aria = $derived(
 		showTamla
-			? 'Org chart of Tamla Class III gods under Little Star: Sulmun, Jacheongbi, Gameunjang, and Sanbangdeok.'
+			? 'Org chart of Tamla Class III gods under Little Star: Sulmun, Jacheongbi, Gameunjang, and Sanbangduk.'
 			: 'Org chart of the Three Realms under Hwanin the Creator: Big Star, Little Star, and Hallakgungi, with their courts below.'
 	);
 </script>

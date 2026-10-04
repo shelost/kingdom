@@ -59,7 +59,7 @@
 	import SpeakerPlate from './SpeakerPlate.svelte';
 	import { storyImg, optimizeSrc } from '$lib/img';
 	import { editUi } from '$lib/editUi.svelte';
-	import { onEditGradeContextMenu } from '$lib/imageGradeUi.svelte';
+	import { cueMenuTarget, openImageMenu } from '$lib/imageMenu.svelte';
 
 	/** Cinema only takes the screen once the reader is past cover + blurb. */
 	let live = $derived(reading.mode === 'cinema' && scriptUi.inScript);
@@ -515,7 +515,7 @@
 
 	function onEditPanelContextMenu(e: MouseEvent) {
 		if (!panel?.slotId) return;
-		onEditGradeContextMenu(e, panel.slotId);
+		openImageMenu(e, cueMenuTarget(panel.slotId));
 	}
 </script>
 
@@ -553,7 +553,7 @@
 							onclick={openPanelLightbox}
 							oncontextmenu={onEditPanelContextMenu}
 							aria-label="Open scene still"
-							title={editing && panel.slotId ? 'Right-click to grade / edit' : undefined}
+							title={editing && panel.slotId ? 'Right-click to star / remove' : undefined}
 						>
 							<img
 								{...storyImg(panel.src, {

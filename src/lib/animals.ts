@@ -90,9 +90,12 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		title: 'Gyebek’s war horse',
 		cover: '/temp/gomanari-dawn-yard.jpg',
 		coat: 'Jet-black war horse, long black mane and tail; plain dark tack with a yellow cord at the bridle.',
-		tagline: 'The one thing Gyebek owns that the Tang cannot sell in a slave market.',
-		arc: 'Named for the old bear ferry at Gomanaru (Ungjin) where Gyebek learned to ride. On the last morning the yard is swept and nothing in it belongs to him any more except the black horse at the post. Gomanari carries him onto the Yellow Mountain field against the white Hanseul, and stands by its master’s planted sword after the field is quiet.',
-		events: [{ year: 660, label: 'Carries Gyebek to Hwangsanbeol; stands by the planted sword.' }]
+		tagline: 'The fastest horse in Samhan, and the one thing Gyebek owns that the Tang cannot sell in a slave market.',
+		arc: 'Named for the old bear ferry at Gomanaru (Ungjin) where Gyebek learned to ride. In the border years he is how Hundred-Victories kills a general: out of an empty field at a speed no Silla horse can match, one cut on the pass, gone over the ridge before the escort draws. On the last morning the yard is swept and nothing in it belongs to him any more except the black horse at the post. Gomanari carries him onto the Yellow Mountain field against the white Hanseul, and stands by its master’s planted sword after the field is quiet.',
+		events: [
+			{ year: 648, label: 'The border years: carries Gyebek through Silla escorts to their generals, one cut on the pass.' },
+			{ year: 660, label: 'Carries Gyebek to Hwangsanbeol; stands by the planted sword.' }
+		]
 	},
 	{
 		id: 'bisamun',
@@ -143,7 +146,7 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		cover: '/temp/chunma-najeong-kneel.jpg',
 		hanja: '天馬',
 		mythic: true,
-		coat: 'White winged heavenly horse, painted as on the Cheonmachong saddle-flap.',
+		coat: 'Wingless white heavenly horse riding cloud-streamers, as on the Cheonmachong saddle-flap.',
 		tagline: 'Knelt and wept beside a purple egg at Najeong, then rose into the sky.',
 		arc: 'One morning at the Najeong well a white horse kneels and cries beside something in the grass. When it sees men coming it neighs and rises into the sky. Alpyung is the first to look down at what it was kneeling over: a purple egg, and in it Hyukgose. Much later, when the country has a name and a calendar and a clerk for everything, the horse is painted on a saddle-flap, buried with a king, and called Chunma, the heavenly horse.',
 		events: [{ year: -69, label: 'Kneels beside the purple egg at Najeong; rises into the sky.' }]
@@ -173,6 +176,71 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		tagline: 'The three-legged crow that flew ahead to show Jumong the way.',
 		arc: 'Owned by no one. The black crow keeps pace with Jumong through the pines, waits on the far bank of the Amnok when the tortoises carry him over — he counts the legs, grinning, and gets three — and sits above the cavern mouth where the road turns. Under a red sun it rides south with him, and the crow becomes Goguryeo’s mark: stamped on every commander’s ring-pommel in Pyongyang.',
 		events: [{ year: -37, label: 'Waits on the far bank of the Amnok; leads Jumong south.' }]
+	},
+	{
+		id: 'huanglong',
+		kingdom: 'tang',
+		color: '#D9A520',
+		title: 'Yellow dragon of the Tang throne',
+		cover: '/temp/guardian-taizong-huanglong.jpg',
+		hanja: '黃龍',
+		mythic: true,
+		coat: 'Lean gold Tang dragon in ink-brush — three claws, calligraphic mane, a body like a drawn bow.',
+		tagline: 'The beast at the centre of the five directions, and the only one the emperor wears.',
+		arc: 'In the old cosmology four beasts keep the four quarters — the Azure Dragon in the east, the White Tiger in the west, the Vermilion Bird in the south, the Black Tortoise in the north — and the fifth, the Yellow Dragon, keeps the centre. The centre is where the emperor sits, so the dragon sits there too. The Second Emperor wears it in gold thread on his yellow robe and lends its smaller cousins to his marshals as banner names. Nobody in Chang’an claims to have seen it. Everyone in Chang’an knows which way it faces.',
+		events: [{ year: 645, label: 'Rides over the Second Emperor’s banners toward Liaodong.' }]
+	},
+	{
+		id: 'gonyeon',
+		kingdom: 'buyeo',
+		color: '#5C3A21',
+		title: 'Brown horse of Buyeo',
+		cover: '/temp/guardian-geumwa-gonyeon.jpg',
+		hanja: '鯤淵',
+		mythic: true,
+		coat: 'Stocky chocolate-brown steppe horse, shaggy mane, a small gold frog on the halter.',
+		tagline: 'The horse that wept at a boulder and found Buyeo a king underneath it.',
+		arc: 'King Haeburu of Buyeo had no son and prayed to every mountain and river that would listen. On the way home his horse stopped at the pond of Gonyeon, looked at a large boulder, and wept. The king had the stone rolled over, and under it lay a small child, gold-coloured and shaped like a frog. Haeburu called the boy Geumwa, Gold Frog, and made him heir. The horse is named for the pond. It has walked beside the gold-frog king ever since, which in a horse kingdom is better proof of a crown than any document.',
+		events: [{ label: 'Weeps at the boulder of Gonyeon; the gold-frog child Geumwa is found beneath it.' }]
+	},
+	{
+		id: 'gom',
+		kingdom: 'joseon',
+		color: '#4A3020',
+		title: 'Great bear of Old Joseon',
+		cover: '/temp/dangun-gom-asadal.jpg',
+		hanja: '熊',
+		mythic: true,
+		coat: 'Huge dark-brown bear with a heavy shoulder hump and lighter-tipped fur.',
+		tagline: 'The shape Ungnyeo left in the cave, and the beast that walked beside her son.',
+		arc: 'A bear and a tiger asked Hwanung to make them human. He gave them a bundle of mugwort and twenty cloves of garlic and a hundred days without sunlight. The tiger left on the twenty-first day. The bear stayed, and came out a woman, Ungnyeo, and her son was Dangun. The shape she walked out of did not go back into the mountain. It sits at the edge of Asadal’s firelight, enormous and patient, and lets exactly one person put a hand in its fur.',
+		events: [{ label: 'Keeps to the cave for a hundred days; the bear becomes Ungnyeo, mother of Dangun.' }]
+	},
+	{
+		id: 'gwahama',
+		kingdom: 'tamla',
+		color: '#F4F0E6',
+		title: 'Jeju pony of Tamla',
+		cover: '/temp/yuridora-gwahama-oranges.jpg',
+		hanja: '果下馬',
+		mythic: true,
+		coat: 'Small sturdy white Jeju pony, short-legged, with a thick white mane.',
+		tagline: 'The horse small enough to ride under the fruit trees, and rude enough to eat the fruit.',
+		arc: 'The mainland books call it the fruit-tree horse, because a man can ride it under the branches of an orange grove without ducking. On Tamla it needs no book. It follows Yuri Dora from grove to shore, eats the oranges he stacks, ignores him when he tells it to hurry, and waits on the black rocks for every boat that has ever left.',
+		events: [{ year: 656, label: 'Follows Yuri Dora through the orange groves while he tells Gyebek the island’s stories.' }]
+	},
+	{
+		id: 'kinshi',
+		kingdom: 'yamato',
+		color: '#D4A12A',
+		title: 'Golden kite of Yamato',
+		cover: '/temp/takutsu-kinshi-prow.jpg',
+		hanja: '金鵄',
+		mythic: true,
+		coat: 'Large golden kite with long fingered wings and a forked tail.',
+		tagline: 'The kite that landed on the first emperor’s bow, and flew ahead of the ships to the White River.',
+		arc: 'When Jimmu fought his way into Yamato and the battle would not turn, a golden kite came down out of the sky and landed on the tip of his bow, and its flash blinded the enemy. Yamato kept the bird. Centuries later it rides the wind ahead of the eight hundred ships that sail to restore Baekje, and Echi no Takutsu, who believes in omens the way some men believe in rope, takes it for a promise.',
+		events: [{ year: 663, label: 'Flies ahead of the Yamato fleet to the White River.' }]
 	},
 	{
 		id: 'sunfox',

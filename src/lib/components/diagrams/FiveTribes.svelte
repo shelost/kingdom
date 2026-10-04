@@ -18,10 +18,10 @@
 	const TRIBES = $derived.by(() =>
 		[
 			{ ko: '까마귀', en: 'East', id: 'yeontabal' },
-			{ ko: '호랑이', en: 'West', id: 'tigerchief' },
-			{ ko: '멧돼지', en: 'South', id: 'boarchief' },
-			{ ko: '늑대', en: 'North', id: 'wolfchief' },
-			{ ko: '곰', en: 'Central', id: 'bearchief' }
+			{ ko: '우가', en: 'West', id: 'cowchief' },
+			{ ko: '저가', en: 'South', id: 'pigchief' },
+			{ ko: '구가', en: 'North', id: 'dogchief' },
+			{ ko: '마가', en: 'Central', id: 'horsechief' }
 		].map((c, i) => {
 			const a = ((-90 + i * 72) * Math.PI) / 180;
 			const person = byId.get(c.id);
@@ -47,7 +47,7 @@
 	class:play={active}
 	data-step={step}
 	role="img"
-	aria-label="Diagram of Jolbon’s five animal tribes using chief portraits: crow east, tiger west, boar south, wolf north, bear central"
+	aria-label="Diagram of Jolbon’s five animal tribes using chief portraits: crow east, cow ka west, pig ka south, dog ka north, horse ka central"
 >
 	<defs>
 		<clipPath id={`${uid}-hub`}><circle cx={CX} cy={CY} r="32" /></clipPath>

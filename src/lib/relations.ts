@@ -221,6 +221,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'silla',
 		bond: 'love',
 		between: ['yushin', 'sunduk'],
+		dynamic: { en: 'A love that cannot be — mutual, aching, wanting', ko: '이루어질 수 없는 사랑 — 서로 사랑하고, 서로 원하는' },
+		still: 'rel-sunduk-yushin',
 		title: 'The love that could not be crowned',
 		tagline: 'He would have burned the country for her. She stops him herself.',
 		arc: 'Sacred Bone cannot marry True Bone and keep the succession. Sunduk becomes queen; Yushin stays the marshal who would have been her husband in another life. When he finally says it out loud, it is she — not her sister — who names the cost, and chooses the throne over the man.',
@@ -288,6 +290,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'goguryeo',
 		bond: 'love',
 		between: ['jumong', 'sosuno'],
+		dynamic: { en: 'Laid-back, charming king · doting, hot-blooded, clingy tsundere queen', ko: '느긋하고 매력적인 왕 · 헌신적이고 뜨겁고 집착하는 츤데레 왕비' },
+		still: 'rel-jumong-sosuno',
 		title: 'Ledger and longing',
 		tagline: 'She priced the marriage; he could not count grain for looking at her.',
 		arc: 'Sosuno buys Jumong a kingdom with her father’s routes. At night the war-talk thins and he asks her to close the ledger. Twenty years later a first wife arrives from Buyeo; Sosuno walks south and founds Baekje instead.',
@@ -454,6 +458,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'baekje',
 		bond: 'mentor',
 		between: ['euija', 'gyebek'],
+		dynamic: { en: 'Extraverted, social king · the general who answers only the question', ko: '외향적이고 사교적인 왕 · 묻는 말에만 답하는 장군' },
+		still: 'rel-euija-gyebek',
 		title: 'The named general',
 		tagline: 'He gave a commoner a name — and ten thousand men at Hwangsan.',
 		arc: 'Euija elevates Gyebek when the clans will not. At Hwangsanbeol Gyebek kills his family and dies fighting. The king who named him cannot save the country.',
@@ -558,6 +564,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'silla',
 		bond: 'mentor',
 		between: ['yushin', 'munmu'],
+		dynamic: { en: 'Strong, disciplined uncle · apprentice nephew', ko: '강인하고 엄격한 외삼촌 · 수련하는 조카' },
+		still: 'rel-yushin-bupmin',
 		title: 'Marshal and flower youth',
 		tagline: 'Uncle by marriage; head of the Hwarang by oath.',
 		arc: 'After Daeya, Yushin trains Bupmin among the Hwarang — horse, bow, the Five Principles — until “a king for all” starts to mean loyalty to a country, not only a childhood sentence. The boy who becomes Munmu still salutes the marshal who taught him the yard.',
@@ -655,7 +663,7 @@ export const RELATIONSHIPS: Person[] = [
 	},
 	{
 		id: 'rel-heavenearthking-chongmyeong',
-		name: 'Heaven–Earth King & Chongmyeong',
+		name: 'Heaven–Earth King & the Lady of Wisdom',
 		korean: '천지왕 · 총명부인',
 		entity: 'relationship',
 		kingdom: 'tamla',
@@ -663,9 +671,10 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['heavenearthking', 'chongmyeong'],
 		title: 'Retired prior and the mother of the twins',
 		tagline: 'He kept both ledgers; she kept the house that later split.',
-		arc: '「천지왕본풀이」: Heaven–Earth King and Lady Chongmyeong bear Big Star and Little Star. He retires from ruling living and dead; the sons wager flowers. She does not take a realm.',
+		arc: '「천지왕본풀이」: Heaven–Earth King and the Lady of Wisdom bear Big Star and Little Star. He retires from ruling living and dead; the sons wager flowers. She does not take a realm.',
 		events: [{ label: 'Twins born; father retires; 이승 and 저승 divide.' }],
 		aliases: [
+			'Heaven–Earth King & the Lady of Wisdom',
 			'Heaven–Earth King & Chongmyeong',
 			'Chongmyeong & Heaven–Earth King',
 			'천지왕 · 총명부인'
@@ -763,6 +772,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'silla',
 		bond: 'rival',
 		between: ['yushin', 'bidam'],
+		dynamic: { en: 'Eternal friends and rivals — the two greatest men in Samhan', ko: '영원한 벗이자 맞수 — 삼한 최고의 두 사내' },
+		still: 'rel-bidam-yushin',
 		title: 'One hundred and eight',
 		tagline: 'Tied forever in the yard — until Radiance makes the count blood.',
 		arc: 'Age-mates from the Hwarang: Gaya steel against Surabol’s oldest hall, score locked at 108–108. Bidam names Yushin foreigner when the star falls; the duel that was always even becomes a rebellion’s end.',
@@ -780,6 +791,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'silla',
 		bond: 'kin',
 		between: ['sunduk', 'jinduk'],
+		dynamic: { en: 'Sisterly cousins', ko: '자매 같은 사촌' },
+		still: 'rel-sunduk-jinduk',
 		title: 'Two queens, one house',
 		tagline: 'Sister crowns; one dies in the crisis, one finishes the sentence.',
 		arc: 'Sacred Bone sisters under Jinpyung. Sunduk takes the throne first; after Bidam and the falling star, Jinduk inherits the unfinished work and the Tang question Chunchu will answer.',
@@ -811,6 +824,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'silla',
 		bond: 'kin',
 		between: ['chunchu', 'munmu'],
+		dynamic: { en: 'Loving father · optimistic, heroic son', ko: '다정한 아버지 · 낙천적이고 영웅적인 아들' },
+		still: 'rel-chunchu-bupmin',
 		title: 'Father and the stolen sentence',
 		tagline: '“A king for all” — the boy took the words; the father cleared the road.',
 		arc: 'Bupmin grows in Chunchu’s shadow and Munhee’s packing lists. He inherits a half-won war and finishes the peninsula his father opened as far as Baekje — then turns on the ally the father invited in.',
@@ -1214,6 +1229,8 @@ export const RELATIONSHIPS: Person[] = [
 		kingdom: 'tang',
 		bond: 'kin',
 		between: ['taizong', 'gaozong'],
+		dynamic: { en: 'Stern, worried father · son trying to fill his shoes', ko: '엄하고 걱정 많은 아버지 · 그 자리를 채우려 애쓰는 아들' },
+		still: 'rel-taizong-zhi',
 		title: 'Emperor and the son who finishes',
 		tagline: 'One fails at Ansi; one finishes Baekje and Goguryeo.',
 		arc: 'Taizong chooses Xue and still turns back from Ansi. Gaozong inherits the eastern war, Wu’s court, and the alliance Chunchu sealed — then overstays until Munmu expels him.',
@@ -1278,6 +1295,138 @@ export const RELATIONSHIPS: Person[] = [
 		arc: 'On Gunhae attends the Tang embassy and, on the Yellow Sea, wears Chunchu’s high cap and great coat so the Goguryeo patrol takes the wrong man. Chunchu reaches Silla in a small boat. Jinduk posthumously names Gunhae a Daeachan.',
 		events: [{ year: 649, label: 'The patrol ship; the decoy; the small boat.' }],
 		aliases: ['Chunchu & On Gunhae', 'On Gunhae & Chunchu']
+	},
+	{
+		id: 'rel-kingmu-euija',
+		name: 'King Mu & Euija',
+		korean: '무왕 · 의자',
+		entity: 'relationship',
+		kingdom: 'baekje',
+		bond: 'kin',
+		between: ['kingmu', 'euija'],
+		dynamic: { en: 'Ageing father · ambitious, cynical son', ko: '늙어 가는 아버지 · 야심 많고 냉소적인 아들' },
+		still: 'rel-mu-euija',
+		title: 'Learn their names anyway',
+		tagline: 'The old king says the clan names first. His son would rather not learn them.',
+		arc: 'King Mu bought a country with a children’s song and spent his reign fighting Silla. Euija grows up admiring the trick and despising the clans that make it necessary. The father’s one plain lesson — learn their names anyway — is the one the son keeps after he stops keeping anything else; on his coronation morning he stages a dragon over the Sabi because his father once staged a song.',
+		events: [
+			{ year: 632, label: 'Learn their names anyway.' },
+			{ year: 641, label: 'Mu dies; Euija takes the throne to finish his war.' }
+		],
+		aliases: ['King Mu & Euija', 'Euija & King Mu', 'Mu & Euija']
+	},
+	{
+		id: 'rel-munmu-gotaso',
+		name: 'Bupmin & Gotaso',
+		korean: '법민 · 고타소',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'kin',
+		between: ['munmu', 'gotaso'],
+		dynamic: { en: 'Loving siblings', ko: '다정한 남매' },
+		still: 'rel-bupmin-gotaso',
+		title: 'Not racing — following',
+		tagline: 'She shouted faster. He insisted he wasn’t racing.',
+		arc: 'A year apart and inseparable: Gotaso demands faster, Bupmin insists he is only following. She marries for love and rides to Daeya; he waits at the gate for a sister who promised forever and learns the empty road from Munhee. “I will make a country where sisters come home” is the first thing he says like a king for all.',
+		events: [
+			{ year: 632, label: 'The palace-road ride: faster, and following.' },
+			{ year: 642, label: 'Daeya falls; he waits at the gate.' }
+		],
+		aliases: ['Bupmin & Gotaso', 'Gotaso & Bupmin', 'Munmu & Gotaso']
+	},
+	{
+		id: 'rel-seohyeon-yushin',
+		name: 'Seohyeon & Yushin',
+		korean: '서현 · 유신',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'kin',
+		between: ['seohyeon', 'yushin'],
+		dynamic: { en: 'Stern father with an immigrant’s work ethic · son eager for acceptance', ko: '이주민의 근면을 지닌 엄한 아버지 · 인정받고 싶은 아들' },
+		still: 'rel-seohyeon-yushin',
+		title: 'Your helmet’s crooked',
+		tagline: 'A Gaya father who proved belonging by service, and a son who wanted him to say so.',
+		arc: 'Seohyeon made the surrender of Gaya into a Silla household by working harder than anyone born to it, and raised his son the same way: no praise, only the next order. At Nangbi Yushin takes off his helmet before him to ask leave; Seohyeon tells him to put it back on and go. When the son comes back with a general’s head, the father straightens the helmet with both hands — the most he ever says. His ghost says the rest before Radiance’s tenth day.',
+		events: [
+			{ year: 629, label: 'Nangbi: “Put your helmet on. Then go.”' },
+			{ year: 647, label: 'Ghost in the cavern — “You are Kim Yushin.”' }
+		],
+		aliases: ['Seohyeon & Yushin', 'Yushin & Seohyeon']
+	},
+	{
+		id: 'rel-sukwon-bidam',
+		name: 'Sukwon & Bidam',
+		korean: '숙원 · 비담',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'kin',
+		between: ['sukwon', 'bidam'],
+		dynamic: { en: 'Aristocratic father and son', ko: '귀족 가문의 아버지와 아들' },
+		still: 'rel-bidam-sukwon',
+		title: 'The higher teaching',
+		tagline: 'An old-hall father who sent his son to the yard with one question and a tight headband.',
+		arc: 'Son Sukwon of Musan hall named his boy after the Abhidharma and taught by asking. On Class 51’s first morning he walks Bidam to the yard gate and no further: rather a righteous traitor than an unrighteous king. He dies before Radiance; the teaching does not, and it is the sentence Bidam carries into the rebellion.',
+		events: [
+			{ year: 610, label: 'Ties the headband once, tight, at the yard gate.' },
+			{ year: 647, label: 'His son raises the banner at Radiance.' }
+		],
+		aliases: ['Sukwon & Bidam', 'Bidam & Sukwon', 'Bidam & his father']
+	},
+	{
+		id: 'rel-yongsu-chunchu',
+		name: 'Yongsu & Chunchu',
+		korean: '용수 · 춘추',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'kin',
+		between: ['yongsu', 'chunchu'],
+		dynamic: { en: 'Brilliant, odd father · intelligent son', ko: '영리하지만 기이한 아버지 · 총명한 아들' },
+		still: 'rel-yongsu-chunchu',
+		title: 'The night bridge',
+		tagline: 'A strange, brilliant father who talked to the dark, and the son who carried the lamp.',
+		arc: 'Kim Yongsu is the deposed King Jinji’s son, and the Bihyung streak runs in him: up past midnight by the stream, talking to things nobody else can see, laying a bridge of stones before dawn. He is also the cleverest man in the house. He tells nine-year-old Chunchu the Council’s three counts and one rule — stay out of the room that eats the men who amuse it — and Chunchu spends his life sitting wherever the room has to come to him.',
+		events: [
+			{ year: 612, label: 'The night bridge — “Stay out of that room.”' }
+		],
+		aliases: ['Yongsu & Chunchu', 'Chunchu & Yongsu']
+	},
+	{
+		id: 'rel-sunduk-chunchu',
+		name: 'Sunduk & Chunchu',
+		korean: '선덕 · 춘추',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'kin',
+		between: ['sunduk', 'chunchu'],
+		dynamic: { en: 'Loving aunt · nephew who comes to her for advice', ko: '다정한 이모 · 조언을 구하러 오는 조카' },
+		still: 'rel-sunduk-chunchu',
+		title: 'The aunt he asks first',
+		tagline: 'He brings her the plan. She comes down the steps to hear it.',
+		arc: 'Chunchu’s aunt by blood and his queen by vote. When the most cunning man in Samhan needs a second mind he comes to her before he comes to the Council. After Daeya he asks her again and again to send him north, and the night she finally says yes she says it sitting on the lowest step of her own dais.',
+		events: [
+			{ year: 632, label: 'She is crowned; he becomes the nephew with the plans.' },
+			{ year: 642, label: 'She lets him go north to Pyongyang.' }
+		],
+		aliases: ['Sunduk & Chunchu', 'Chunchu & Sunduk']
+	},
+	{
+		id: 'rel-chunmyung-chunchu',
+		name: 'Chunmyung & Chunchu',
+		korean: '천명 · 춘추',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'kin',
+		between: ['chunmyung', 'chunchu'],
+		dynamic: { en: 'Intelligent son · ageing mother', ko: '총명한 아들 · 늙어 가는 어머니' },
+		still: 'rel-chunmyung-chunchu',
+		title: 'Still bigger than you in this hall',
+		tagline: 'She gave up a crown for his father and never mentioned it. She mentions very little.',
+		arc: 'Princess Chunmyung stepped out of the Sacred Bone succession to marry a True Bone, and raised the son who would found the Gyeongju Kim throne anyway. She let his father teach him to count and let him grow cleverer than her without once being impressed. The night Daeya falls she finds him on the floor below the dais and tells him to stop counting.',
+		events: [
+			{ year: 603, label: 'Chunchu is born.' },
+			{ year: 642, label: 'The night Daeya falls: “Put your head down.”' }
+		],
+		aliases: ['Chunmyung & Chunchu', 'Chunchu & Chunmyung']
 	}
 ];
 

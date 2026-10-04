@@ -1,7 +1,7 @@
 /**
  * Chronicle edit mode — `?edit=true`.
- * Enables cue tools (right-click grade / image tools; delete from the grade popover). Dev APIs
- * only write locally; the flag itself is URL-driven and not persisted.
+ * Enables the image right-click menu (star / remove). Dev APIs only write
+ * locally; the flag itself is URL-driven and not persisted.
  */
 import { browser } from '$app/environment';
 import { SvelteSet } from 'svelte/reactivity';
@@ -16,6 +16,8 @@ export const editUi = $state({
 	enabled: false,
 	/** Cue slot ids removed this session (story.json already updated by the API). */
 	removedCueIds: new SvelteSet<string>(),
+	/** Orphan temp ids removed this session (file already deleted by the API). */
+	removedOrphanIds: new SvelteSet<string>(),
 	busyId: null as string | null,
 	/** After a Fal still edit, show this URL instead of locked `src` this session. */
 	previewById: {} as Record<string, string>
@@ -57,21 +59,16 @@ function markCueRemoved(slotId: string) {
 	}
 }
 
-/**
- * Permanently delete a chronicle cue (story.json + temp files via /api/images).
- * Returns true when the server accepted the delete.
- */
-export async function permanentlyDeleteCue(slotId: string): Promise<boolean> {
-	if (!browser || !slotId || editUi.busyId) return false;
-	const ok = window.confirm(
-		`Permanently delete “${slotId}”?\n\nRemoves the cue from story.json and deletes its art files on disk.`
-	);
-	if (!ok) return false;
+export type GalleryDeleteResult =
+	| { ok: true; deleted: GalleryDeleteItem[] }
+	| { ok: false; message: string };
 
-	editUi.busyId = slotId;
-	rememberReadingScroll();
+/**
+ * POST /api/images: removes cues from story.json and deletes their art files.
+ * Marks what the server confirmed as removed for this session.
+ */
+export async function deleteGalleryItems(items: GalleryDeleteItem[]): Promise<GalleryDeleteResult> {
 	try {
-		const items: GalleryDeleteItem[] = [{ kind: 'cue', slotId }];
 		const res = await fetch(resolve('/api/images'), {
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
@@ -85,15 +82,38 @@ export async function permanentlyDeleteCue(slotId: string): Promise<boolean> {
 			} catch {
 				/* keep status text */
 			}
-			window.alert(message);
-			return false;
+			return { ok: false, message };
 		}
-		await res.json().catch(() => null as GalleryDeleteResponse | null);
-		markCueRemoved(slotId);
-		return true;
+		const body = (await res.json()) as GalleryDeleteResponse;
+		for (const item of body.deleted) {
+			if (item.kind === 'cue') markCueRemoved(item.slotId);
+			else editUi.removedOrphanIds.add(item.id);
+		}
+		return { ok: true, deleted: body.deleted };
 	} catch (err) {
-		window.alert(err instanceof Error ? err.message : 'Delete failed');
-		return false;
+		return { ok: false, message: err instanceof Error ? err.message : 'Delete failed' };
+	}
+}
+
+/**
+ * Confirm, then permanently delete one cue or orphan still.
+ * Returns true when the server accepted the delete.
+ */
+export async function permanentlyDeleteImage(item: GalleryDeleteItem): Promise<boolean> {
+	const id = item.kind === 'cue' ? item.slotId : item.id;
+	if (!browser || !id || editUi.busyId) return false;
+	const what =
+		item.kind === 'cue'
+			? 'Removes the cue from story.json and deletes its art files on disk.'
+			: 'Deletes this unattached file from disk.';
+	if (!window.confirm(`Permanently delete “${id}”?\n\n${what}`)) return false;
+
+	editUi.busyId = id;
+	rememberReadingScroll();
+	try {
+		const result = await deleteGalleryItems([item]);
+		if (!result.ok) window.alert(result.message);
+		return result.ok;
 	} finally {
 		editUi.busyId = null;
 	}

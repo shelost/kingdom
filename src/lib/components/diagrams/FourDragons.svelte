@@ -6,10 +6,10 @@
 	let { active = false }: DiagramProps = $props();
 
 	const DRAGONS = [
-		{ ko: '백룡', en: 'White', han: '白龍', who: '설인귀', whoEn: 'Xue Rengui', x: 54, fill: '#c5d0dc', stroke: '#1e293b', overlap: false },
-		{ ko: '적룡', en: 'Red', han: '赤龍', who: '이정', whoEn: 'Li Jing', x: 138, fill: '#ff4444', stroke: '#7f1d1d', overlap: false },
+		{ ko: '백룡', en: 'White', han: '白龍', who: '계필하력', whoEn: 'Qibi Heli', x: 54, fill: '#c5d0dc', stroke: '#1e293b', overlap: false },
+		{ ko: '적룡', en: 'Red', han: '赤龍', who: '아사나사이', whoEn: 'Ashina She’er', x: 138, fill: '#ff4444', stroke: '#7f1d1d', overlap: false },
 		{ ko: '청룡', en: 'Blue', han: '青龍', who: '이세적', whoEn: 'Li Shiji', x: 222, fill: '#3b82ff', stroke: '#1e3a8a', overlap: true },
-		{ ko: '흑룡', en: 'Black', han: '黑龍', who: '울지공', whoEn: 'Yuchi Gong', x: 306, fill: '#4b5563', stroke: '#030712', overlap: false }
+		{ ko: '흑룡', en: 'Black', han: '黑龍', who: '장손무기', whoEn: 'Zhangsun Wuji', x: 306, fill: '#4b5563', stroke: '#030712', overlap: false }
 	] as const;
 </script>
 
@@ -18,7 +18,7 @@
 	class="dg"
 	class:play={active}
 	role="img"
-	aria-label="Four Dragons under the Second Emperor: White Xue Rengui, Red Li Jing, Blue Li Shiji, Black Yuchi Gong. Only Li Shiji continues as a Beast."
+	aria-label="Four Dragons under the Second Emperor: White Qibi Heli, Red Ashina She’er, Blue Li Shiji, Black Zhangsun Wuji. Only Li Shiji continues as a Beast."
 >
 	<g class="node emperor" style="--d: 0">
 		<rect class="dais" x="108" y="8" width="144" height="52" rx="8" />
@@ -42,7 +42,7 @@
 
 	<text class="note" style="--d: 920" x="222" y="204">also Four Beasts</text>
 	<text class="foot" style="--d: 980" x="180" y="278">사룡 · Four Dragons · 645 · Blue Dragon Li Shiji alone survives into the beasts</text>
-	<text class="foot sub" style="--d: 1020" x="180" y="290">Xue · Li Jing · Li Shiji · Yuchi — each colour a different man</text>
+	<text class="foot sub" style="--d: 1020" x="180" y="290">Two Turks, a marshal, and the empress’s brother — the Heavenly Qaghan’s banners</text>
 </svg>
 
 <style>

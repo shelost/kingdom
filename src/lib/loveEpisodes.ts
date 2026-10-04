@@ -6,8 +6,8 @@
  * - Hwanung & Ungnyeo → Dangun & Old Joseon
  * - Haemosu & Yuhwa → Jumong
  * - Jumong & Sosuno → Jumong
- * - Ibiga & Jeonggyeon → Gaya, the Lost Nations
- * - Suro & Queen Heo → Gaya, the Lost Nations
+ * - Ibiga & Jeonggyeon → Suro
+ * - Suro & Queen Heo → Suro
  * - Chunchu & Munhee → Queen Sunduk
  * - Yushin & Sunduk → Queen Sunduk
  * - Gotaso & Pumsuk → Gotaso’s Wedding
@@ -17,8 +17,8 @@
 
 export const LOVE_EPISODE_IDS = new Set<string>([
 	'fall-of-baekje-dangun-old-joseon',
-	'seventh-invasion-jumong',
-	'chunchu-era-gaya-the-lost-nations',
+	'jumong-jumong',
+	'chunchu-era-suro',
 	'samhan-queen-sunduk',
 	'five-principles-gotasos-wedding',
 	'chunchu-era-harbour-ledgers',
