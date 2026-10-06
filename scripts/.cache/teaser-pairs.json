@@ -1,0 +1,590 @@
+[
+ {
+  "n": 0,
+  "title": "Queen Sunduk",
+  "next": "Harmony Council",
+  "lastBlock": "hanja: "
+ },
+ {
+  "n": 1,
+  "title": "Harmony Council",
+  "next": "Jinheung, the Cloud",
+  "lastBlock": "p: They argue past midnight. In the end there is nothing left to argue with — the blood runs "
+ },
+ {
+  "n": 2,
+  "title": "Jinheung, the Cloud",
+  "next": "Prince Euija",
+  "lastBlock": "dialogue: It was, for about a year. / Then you look at where the shade fell. Gwansan. The Han. Gaya."
+ },
+ {
+  "n": 3,
+  "title": "Prince Euija",
+  "next": "Eight Great Clans",
+  "lastBlock": "p: Prince Yung is the favored one to win — oldest, strongest, and backed the way favorites ar"
+ },
+ {
+  "n": 4,
+  "title": "Eight Great Clans",
+  "next": "Gunchogo, the 13th",
+  "lastBlock": "dialogue: My child… learn their names anyway. / …I did not like mine either. I still say them first."
+ },
+ {
+  "n": 5,
+  "title": "Gunchogo, the 13th",
+  "next": "Commander Yeon",
+  "lastBlock": "p: Goguryeo remembers it too, and differently, and for exactly as long."
+ },
+ {
+  "n": 6,
+  "title": "Commander Yeon",
+  "next": "High Summit",
+  "lastBlock": "dialogue: I know. I sat in it for twelve years. / Half, son. Half."
+ },
+ {
+  "n": 7,
+  "title": "High Summit",
+  "next": "Gwanggaeto, the Great King",
+  "lastBlock": "dialogue: Namseng. / …Heavier than it sounds. / This country. You will have to keep it."
+ },
+ {
+  "n": 8,
+  "title": "Gwanggaeto, the Great King",
+  "next": "Bupmin",
+  "lastBlock": "quote: The common people were at peace in their work; the country was rich and the people abundan"
+ },
+ {
+  "n": 9,
+  "title": "Bupmin",
+  "next": "Gotaso",
+  "lastBlock": "dialogue: You will still say first class when your hair is grey. Our class. His class. / The Harmony"
+ },
+ {
+  "n": 10,
+  "title": "Gotaso",
+  "next": "Pumsuk",
+  "lastBlock": "dialogue: …I want to know the names."
+ },
+ {
+  "n": 11,
+  "title": "Pumsuk",
+  "next": "Chunchu & Munhee",
+  "lastBlock": "dialogue: Your southern wine came late. The carter blamed the Yellow Mountain road. / Then he blamed"
+ },
+ {
+  "n": 12,
+  "title": "Chunchu & Munhee",
+  "next": "Grand Academy",
+  "lastBlock": "dialogue: So you will."
+ },
+ {
+  "n": 13,
+  "title": "Grand Academy",
+  "next": "Stele",
+  "lastBlock": "p: Namseng is enrolled anyway. He learns the Analects first and best, and on the days the sut"
+ },
+ {
+  "n": 14,
+  "title": "Stele",
+  "next": "Dosuryu",
+  "lastBlock": "dialogue: Sixty-four fortresses are written on that rock. / When you can read, you will read them to"
+ },
+ {
+  "n": 15,
+  "title": "Dosuryu",
+  "next": "King Euija",
+  "lastBlock": "p: Dosuryu goes out the way he came in, boots and all, and stands a long time in the yard bef"
+ },
+ {
+  "n": 16,
+  "title": "King Euija",
+  "next": "Yunchung",
+  "lastBlock": "p: Twenty years later his father is a prisoner in Chang’an and Baekje sends for him after all"
+ },
+ {
+  "n": 17,
+  "title": "Yunchung",
+  "next": "The Severing",
+  "lastBlock": "dialogue: Daeya by autumn, Majesty."
+ },
+ {
+  "n": 18,
+  "title": "The Severing",
+  "next": "Gumil",
+  "lastBlock": "p: Baekje’s court never forgives the cloud that emptied itself over their side of the river. "
+ },
+ {
+  "n": 19,
+  "title": "Gumil",
+  "next": "Maehwa",
+  "lastBlock": "p: He does the correct thing. He stands. He bows to a feast that has not asked him to leave. "
+ },
+ {
+  "n": 20,
+  "title": "Maehwa",
+  "next": "Siege of Daeya",
+  "lastBlock": "p: He stands. He looks once — the way a man looks at someone he has already lost. He does not"
+ },
+ {
+  "n": 21,
+  "title": "Siege of Daeya",
+  "next": "Supreme Commander",
+  "lastBlock": "p: He sits where Hyullé pointed until the cold leaves his shoulders. Golhwa complains to the "
+ },
+ {
+  "n": 22,
+  "title": "Supreme Commander",
+  "next": "Chunchu & Yeon",
+  "lastBlock": "p: He nods. Outside, the drums keep time for a kingdom learning to live with its doors shut."
+ },
+ {
+  "n": 23,
+  "title": "Chunchu & Yeon",
+  "next": "Euija & Yeon",
+  "lastBlock": "dialogue: Boy — even a man ready to die does not poke a tiger for no reason. / The day will come whe"
+ },
+ {
+  "n": 24,
+  "title": "Euija & Yeon",
+  "next": "Nangbi",
+  "lastBlock": "p: In the morning he rides south with all five. Nobody raises the subject of the extra two. H"
+ },
+ {
+  "n": 25,
+  "title": "Nangbi",
+  "next": "Forty Fortresses",
+  "lastBlock": "p: That is where the name comes from. Not from Surabol, which likes its titles stamped and fi"
+ },
+ {
+  "n": 26,
+  "title": "Forty Fortresses",
+  "next": "The Eastern Star",
+  "lastBlock": "dialogue: Yushin, my friend~~ / My men stop eating at the sound of your name."
+ },
+ {
+  "n": 27,
+  "title": "The Eastern Star",
+  "next": "Emperor",
+  "lastBlock": "dialogue: Until every bone in me is broken. / Until every jewel in my heart is cracked through. / I "
+ },
+ {
+  "n": 28,
+  "title": "Emperor",
+  "next": "Four Dragons",
+  "lastBlock": "p: The seventh invasion of Goguryeo has not begun. It has only found its excuse."
+ },
+ {
+  "n": 29,
+  "title": "Four Dragons",
+  "next": "Yodong",
+  "lastBlock": "p: By summer the yellow hemp is on a peg in Longmen, and the man who wore it is at Stallion M"
+ },
+ {
+  "n": 30,
+  "title": "Yodong",
+  "next": "Boiling River",
+  "lastBlock": "table: "
+ },
+ {
+  "n": 31,
+  "title": "Boiling River",
+  "next": "Stallion Mountain",
+  "lastBlock": "p: Goguryeo takes forty years to be a kingdom again. It is the first time in this story that "
+ },
+ {
+  "n": 32,
+  "title": "Stallion Mountain",
+  "next": "Colossal River",
+  "lastBlock": "dialogue: I am the elder."
+ },
+ {
+  "n": 33,
+  "title": "Colossal River",
+  "next": "Ansi",
+  "lastBlock": "p: Munduk is honored with the title “The Defender” after the battle."
+ },
+ {
+  "n": 34,
+  "title": "Ansi",
+  "next": "Haemosu",
+  "lastBlock": "dialogue: You may outnumber us. You may outthink us. / But hear this, you of the West — / you will n"
+ },
+ {
+  "n": 35,
+  "title": "Haemosu",
+  "next": "Buyeo",
+  "lastBlock": "p: In time Yuhwa lays a great egg. Geumwa has the egg taken from her before the court has agr"
+ },
+ {
+  "n": 36,
+  "title": "Buyeo",
+  "next": "Jolbon",
+  "lastBlock": "p: Before the valley has a name for him he goes in, into stone and leaf-light and a country-s"
+ },
+ {
+  "n": 37,
+  "title": "Jolbon",
+  "next": "기 (起)",
+  "lastBlock": "p: The chronicles will not write that the Yeon hall never forgot weighing a Go exile. Centuri"
+ },
+ {
+  "n": 38,
+  "title": "기 (起)",
+  "next": "Suro",
+  "lastBlock": "p: He says it once more, under his breath, as if testing the weight. The word is six hundred "
+ },
+ {
+  "n": 39,
+  "title": "Suro",
+  "next": "승 (承)",
+  "lastBlock": "p: She dies at a hundred and fifty-seven. He follows ten years later and asks to be laid wher"
+ },
+ {
+  "n": 40,
+  "title": "승 (承)",
+  "next": "Muryuk",
+  "lastBlock": "flashback: "
+ },
+ {
+  "n": 41,
+  "title": "Muryuk",
+  "next": "전 (轉)",
+  "lastBlock": "dialogue: Yushin…"
+ },
+ {
+  "n": 42,
+  "title": "전 (轉)",
+  "next": "Seohyun",
+  "lastBlock": "dialogue: And one day, our descendants will prove me right. / So come at me, fate! Bidam is ready to"
+ },
+ {
+  "n": 43,
+  "title": "Seohyun",
+  "next": "결 (結)",
+  "lastBlock": "p: The histories do not record the year he died, only how high he got. He climbs the ridge be"
+ },
+ {
+  "n": 44,
+  "title": "결 (結)",
+  "next": "Queen Jinduk",
+  "lastBlock": "flashback: "
+ },
+ {
+  "n": 45,
+  "title": "Queen Jinduk",
+  "next": "Huangdi (皇帝)",
+  "lastBlock": "p: At night she sits at a loom, because her hands want work that nobody will compare. Three y"
+ },
+ {
+  "n": 46,
+  "title": "Huangdi (皇帝)",
+  "next": "Royal Secretariat",
+  "lastBlock": "p: He reaches the home shore in a boat Chang’an would not have counted. Queen Jinduk hears an"
+ },
+ {
+  "n": 47,
+  "title": "Royal Secretariat",
+  "next": "Jiabeng (駕崩)",
+  "lastBlock": "p: Emperor Kōtoku does not fill the sea. Twelve years later his successors try it at the Whit"
+ },
+ {
+  "n": 48,
+  "title": "Jiabeng (駕崩)",
+  "next": "King Muyeol",
+  "lastBlock": "dialogue: Hair grows back, Majesty. / (and already the room tilts a degree toward her)"
+ },
+ {
+  "n": 49,
+  "title": "King Muyeol",
+  "next": "Jahee",
+  "lastBlock": "p: Far west, the Third Emperor’s court learns a new gravity. The young woman who once waited "
+ },
+ {
+  "n": 50,
+  "title": "Jahee",
+  "next": "Hyukgose",
+  "lastBlock": "dialogue: Ask the yard again tomorrow. / If the answer is only a speech, you are still six. / If it "
+ },
+ {
+  "n": 51,
+  "title": "Hyukgose",
+  "next": "Talhae",
+  "lastBlock": "quote: He ruled the country sixty-one years, and the king rose up to heaven. Seven days later his"
+ },
+ {
+  "n": 52,
+  "title": "Talhae",
+  "next": "Alji",
+  "lastBlock": "dialogue: Prove it."
+ },
+ {
+  "n": 53,
+  "title": "Alji",
+  "next": "Exile",
+  "lastBlock": "p: Under a certain hill beyond the city, the steam says the same word every time it leaves th"
+ },
+ {
+  "n": 54,
+  "title": "Exile",
+  "next": "Heaven–Earth King",
+  "lastBlock": "moral: Give a literal man one person to trust and you have not given him a friend. You have given"
+ },
+ {
+  "n": 55,
+  "title": "Heaven–Earth King",
+  "next": "Sulmun",
+  "lastBlock": "moral: The world was not given to the better brother. Stop waiting for it to behave as if it was."
+ },
+ {
+  "n": 56,
+  "title": "Sulmun",
+  "next": "Three Princes",
+  "lastBlock": "moral: The bridge was not lost to the sea. It was lost to the last one per cent."
+ },
+ {
+  "n": 57,
+  "title": "Three Princes",
+  "next": "Stone Lady",
+  "lastBlock": "moral: The sea does not decide what a man is. It only decides how long he waits to be it."
+ },
+ {
+  "n": 58,
+  "title": "Stone Lady",
+  "next": "Gardener",
+  "lastBlock": "moral: Cast out what carries your fortune and you will not see it go. That is what blindness is f"
+ },
+ {
+  "n": 59,
+  "title": "Gardener",
+  "next": "Kangrim",
+  "lastBlock": "moral: The rule is smaller than you think, and the door is usually in the wording. Read it again."
+ },
+ {
+  "n": 60,
+  "title": "Kangrim",
+  "next": "Tribute",
+  "lastBlock": "moral: The warrant said die in order. A crow lost it. You do not get a fair hour. You still get t"
+ },
+ {
+  "n": 61,
+  "title": "Tribute",
+  "next": "Coup",
+  "lastBlock": "p: So when Baekje needs somewhere to put a man it cannot kill, there is an island, and the is"
+ },
+ {
+  "n": 62,
+  "title": "Coup",
+  "next": "Descent",
+  "lastBlock": "dialogue: However weak it is, it still needs one shock. / Say the Tang army is coming — the rumour a"
+ },
+ {
+  "n": 63,
+  "title": "Descent",
+  "next": "Nine Omens",
+  "lastBlock": "quote: Outwardly he cast off the ministers who spoke straight; inwardly he trusted strange women."
+ },
+ {
+  "n": 64,
+  "title": "Nine Omens",
+  "next": "Onjo",
+  "lastBlock": "dialogue: Summon Gyebek…!"
+ },
+ {
+  "n": 65,
+  "title": "Onjo",
+  "next": "Sungchung",
+  "lastBlock": "quote: With ten ministers as wings he named the country Sipje. Later, because the common people h"
+ },
+ {
+  "n": 66,
+  "title": "Sungchung",
+  "next": "Heungsu",
+  "lastBlock": "p: At the back of the hall the lord of Bear Fortress has said nothing at all. Ye Sikjin is do"
+ },
+ {
+  "n": 67,
+  "title": "Heungsu",
+  "next": "Gyebek",
+  "lastBlock": "p: The histories do not mention him again."
+ },
+ {
+  "n": 68,
+  "title": "Gyebek",
+  "next": "Three Realms",
+  "lastBlock": "dialogue: Long live Baekje….!"
+ },
+ {
+  "n": 69,
+  "title": "Three Realms",
+  "next": "Yellow Mountain",
+  "lastBlock": "p: The minutes of that meeting do not leave Heaven’s table. Part III does."
+ },
+ {
+  "n": 70,
+  "title": "Yellow Mountain",
+  "next": "Sabi",
+  "lastBlock": "dialogue: ?"
+ },
+ {
+  "n": 71,
+  "title": "Sabi",
+  "next": "Buyeo Euija†",
+  "lastBlock": "p: On the third day of the ninth month the Red Fowl sails for home with Euija, his sons, and "
+ },
+ {
+  "n": 72,
+  "title": "Buyeo Euija†",
+  "next": "Kim Chunchu†",
+  "lastBlock": "p: He asked, at the end, for someone to avenge him. Two hundred and forty years later a man c"
+ },
+ {
+  "n": 73,
+  "title": "Kim Chunchu†",
+  "next": "Ungjin Commandery",
+  "lastBlock": "table: "
+ },
+ {
+  "n": 74,
+  "title": "Ungjin Commandery",
+  "next": "King Pungjang",
+  "lastBlock": "dialogue: I have already destroyed Baekje and removed your country’s worry; yet now Goryeo trusts in"
+ },
+ {
+  "n": 75,
+  "title": "King Pungjang",
+  "next": "Pyongyang I",
+  "lastBlock": "p: The men move once, move back, and start looking at each other differently."
+ },
+ {
+  "n": 76,
+  "title": "Pyongyang I",
+  "next": "Snake River",
+  "lastBlock": "dialogue: The younger ones don’t know the road, Majesty. Hanseul and I do. / Load the carts."
+ },
+ {
+  "n": 77,
+  "title": "Snake River",
+  "next": "Tamla Surrenders",
+  "lastBlock": "p: The Red Fowl takes the rice, breaks camp within the week, and sails. The road back is Yush"
+ },
+ {
+  "n": 78,
+  "title": "Tamla Surrenders",
+  "next": "Rebellion",
+  "lastBlock": "p: The island kingdom sends its envoys to Silla and the Tang, ending seven centuries beside B"
+ },
+ {
+  "n": 79,
+  "title": "Rebellion",
+  "next": "Betrayal",
+  "lastBlock": "dialogue: …Then I will wait. / The emperor’s ships go east sooner or later. I can wait for a ship."
+ },
+ {
+  "n": 80,
+  "title": "Betrayal",
+  "next": "White River",
+  "lastBlock": "p: However, there is still a problem. Boksin was the most competent general of the movement, "
+ },
+ {
+  "n": 81,
+  "title": "White River",
+  "next": "Yeon Gesomun†",
+  "lastBlock": "p: When the water cools to ordinary colour again, the restoration has no fleet worth the word"
+ },
+ {
+  "n": 82,
+  "title": "Yeon Gesomun†",
+  "next": "Brothers’ Coup",
+  "lastBlock": "p: He held the north for a generation and left nothing behind him that could hold it for a ye"
+ },
+ {
+  "n": 83,
+  "title": "Brothers’ Coup",
+  "next": "Pyongyang II",
+  "lastBlock": "p: In the south their uncle Yeon Jungto, who raised two of them, waits to hear which nephew w"
+ },
+ {
+  "n": 84,
+  "title": "Pyongyang II",
+  "next": "Mount Gain",
+  "lastBlock": "dialogue: …As you command."
+ },
+ {
+  "n": 85,
+  "title": "Mount Gain",
+  "next": "Dangun & Old Joseon",
+  "lastBlock": "dialogue: I’m seventy, Majesty. I’ve buried three. / Find me a war instead. I’d like to go to one mo"
+ },
+ {
+  "n": 86,
+  "title": "Dangun & Old Joseon",
+  "next": "Anseung",
+  "lastBlock": "p: Han takes Wanggeom in 108 BC. Some of the people the king told to live go south over the m"
+ },
+ {
+  "n": 87,
+  "title": "Anseung",
+  "next": "Letters",
+  "lastBlock": "dialogue: A king of Goguryeo in Silla. The emperor will hate it. / Good. Give him a seal. A big one."
+ },
+ {
+  "n": 88,
+  "title": "Letters",
+  "next": "Stone Gate",
+  "lastBlock": "dialogue: Send word to the White Tiger that his rice has arrived. / Late. As usual."
+ },
+ {
+  "n": 89,
+  "title": "Stone Gate",
+  "next": "Wonsul",
+  "lastBlock": "flashback: "
+ },
+ {
+  "n": 90,
+  "title": "Wonsul",
+  "next": "Kim Yushin†",
+  "lastBlock": "dialogue: No. / …Not a good one."
+ },
+ {
+  "n": 91,
+  "title": "Kim Yushin†",
+  "next": "The Wanggeom's Guest",
+  "lastBlock": "p: She does not come to the gate. The answer is carried out by a servant who cannot look at h"
+ },
+ {
+  "n": 92,
+  "title": "The Wanggeom's Guest",
+  "next": "Inmun",
+  "lastBlock": "p: Munmu tells no one. The court records note only a day’s ride and a night’s silence. The ch"
+ },
+ {
+  "n": 93,
+  "title": "Inmun",
+  "next": "Maeso",
+  "lastBlock": "p: Munmu reads the apology over twice before he sends it. He does not show it to anyone. The "
+ },
+ {
+  "n": 94,
+  "title": "Maeso",
+  "next": "Final Ford",
+  "lastBlock": "dialogue: Then get me ships. / It’s the sea now."
+ },
+ {
+  "n": 95,
+  "title": "Final Ford",
+  "next": "The King for All",
+  "lastBlock": "dialogue: Have we… won…?"
+ },
+ {
+  "n": 96,
+  "title": "The King for All",
+  "next": "Balhae",
+  "lastBlock": "p: The court reads the name Kim Yushin, and somebody there remembers a story about him, and t"
+ },
+ {
+  "n": 97,
+  "title": "Balhae",
+  "next": null,
+  "lastBlock": "p: THE END"
+ }
+]

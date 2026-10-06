@@ -48,6 +48,7 @@ export type WikiKind =
 	| 'concept'
 	| 'sword'
 	| 'animal'
+	| 'instrument'
 	| 'organization'
 	| 'group'
 	| 'clan'
@@ -71,6 +72,7 @@ export const WIKI_KINDS: {
 	{ id: 'clan', label: 'Clan', plural: 'Clans' },
 	{ id: 'concept', label: 'Concept', plural: 'Concepts' },
 	{ id: 'sword', label: 'Sword', plural: 'Swords' },
+	{ id: 'instrument', label: 'Instrument', plural: 'Instruments' },
 	{ id: 'relationship', label: 'Relationship', plural: 'Relationships' },
 	{ id: 'other', label: 'Other', plural: 'Other' }
 ];
@@ -91,6 +93,7 @@ export function kindOf(p: Person): WikiKind {
 	if (p.entity === 'concept') return 'concept';
 	if (p.entity === 'sword') return 'sword';
 	if (p.entity === 'animal') return 'animal';
+	if (p.entity === 'instrument') return 'instrument';
 	if (p.entity === 'relationship') return 'relationship';
 	return 'other';
 }
@@ -595,7 +598,7 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 		}
 		if (!q) return true;
 		const ownerHay =
-			p.entity === 'sword' || p.entity === 'animal'
+			hasOwnerRoster(p)
 				? ownersOf(p.id)
 						.flatMap((o) => [o.name, o.korean, o.hanja, ...(o.aliases ?? [])])
 						.filter(Boolean)
@@ -656,7 +659,12 @@ export function orgsOf(p: Person): Person[] {
 	return rows;
 }
 
-/** People listed in a profile's `owners` — a sword's wielders, an animal's rider or guided. */
+/** Swords, animals and instruments list people in `owners` (wielders / rider / players). */
+export function hasOwnerRoster(p: Person): boolean {
+	return p.entity === 'sword' || p.entity === 'animal' || p.entity === 'instrument';
+}
+
+/** People listed in a profile's `owners` — a sword's wielders, an animal's rider or guided, an instrument's players. */
 export function ownersOf(profileId: string): Person[] {
 	const profile = byId.get(profileId);
 	if (!profile?.owners?.length) return [];
@@ -671,18 +679,26 @@ export function ownersOf(profileId: string): Person[] {
 	return rows;
 }
 
+/** Profiles of one owned kind (sword / animal / instrument) that list this person in `owners`. */
+function ownedProfilesOf(personId: string, entity: Person['entity']): Person[] {
+	return PROFILES.filter(
+		(p) => p.entity === entity && (p.owners ?? []).includes(personId)
+	).sort(compareWikiEntries);
+}
+
 /** Sword encyclopedia entries linked to a person (via `owners`). */
 export function swordsOf(personId: string): Person[] {
-	return PROFILES.filter(
-		(p) => p.entity === 'sword' && (p.owners ?? []).includes(personId)
-	).sort(compareWikiEntries);
+	return ownedProfilesOf(personId, 'sword');
 }
 
 /** Horses and creatures linked to a person — the animals they ride or are led by. */
 export function animalsOf(personId: string): Person[] {
-	return PROFILES.filter(
-		(p) => p.entity === 'animal' && (p.owners ?? []).includes(personId)
-	).sort(compareWikiEntries);
+	return ownedProfilesOf(personId, 'animal');
+}
+
+/** Instruments a person plays. */
+export function instrumentsOf(personId: string): Person[] {
+	return ownedProfilesOf(personId, 'instrument');
 }
 
 /** Primary sword profile for a character — `sword-{personId}` when present. */
@@ -734,6 +750,36 @@ export function groupMembersOf(groupId: string): Person[] {
 		if (ia !== ib) return ia - ib;
 		return compareWikiEntries(a, b);
 	});
+}
+
+/** A labelled slice of a wiki roster — a Hwarang class, or one nation’s members. */
+export type MemberBand = {
+	id: string;
+	label: string;
+	korean?: string;
+	color?: string;
+	members: Person[];
+};
+
+/** Roster split by each member’s kingdom, nations in the order they first appear. */
+export function membersByKingdom(members: Person[]): MemberBand[] {
+	const bands = new Map<string, MemberBand>();
+	for (const m of members) {
+		let band = bands.get(m.kingdom);
+		if (!band) {
+			const k = KINGDOMS[m.kingdom];
+			band = {
+				id: m.kingdom,
+				label: k.label,
+				korean: byId.get(`nation-${m.kingdom}`)?.korean,
+				color: k.color,
+				members: []
+			};
+			bands.set(m.kingdom, band);
+		}
+		band.members.push(m);
+	}
+	return [...bands.values()];
 }
 
 export type ClanAffiliation = 'blood' | 'marriage';

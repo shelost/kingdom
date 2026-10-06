@@ -14,6 +14,8 @@
 //
 // Costume: every Samhan person (or `dress:<kingdom>` extras) attaches that kingdom's hanbok chart;
 // a King/Queen that year, out of battle, also gets the kingdom crown.
+// Noble crown: a character `crown: "noble"` (or `noble:<kingdom>` for unnamed lords) wears the kingdom's
+// great-clan crown out of battle (costume.kingdoms.<k>.noble).
 // Jougwan: Samhan men wear the feather cap by default — out of armor, out of a crown.
 // A character `hat` ("jougwan" | false, or a year-ranged list) overrides that.
 import fs from 'node:fs';
@@ -78,6 +80,8 @@ function personFacts(id) {
 	const field = (k) => b.match(new RegExp(`\\n\\t\\t${k}: '([^']+)'`))?.[1];
 	const stages = listField(b, 'stages')
 		.map((s) => ({
+			id: s.match(/\bid: '([^']+)'/)?.[1],
+			lookOnly: /lookOnly: true/.test(s),
 			from: Number(s.match(/from: (-?\d+)/)?.[1] ?? -Infinity),
 			until: Number(s.match(/until: (-?\d+)/)?.[1] ?? Infinity),
 			avatar: s.match(/avatar: '([^']+)'/)?.[1],
@@ -110,23 +114,30 @@ function atYear(value, year) {
 }
 
 /** people.ts `stageOf`: `until` is exclusive and the last matching stage wins; a stage without an avatar keeps the base portrait. */
-const stageAt = (stages, year) => (year == null ? undefined : stages.filter((s) => s.from <= year && year < s.until).at(-1));
+const stageAt = (stages, year) =>
+	year == null ? undefined : stages.filter((s) => !s.lookOnly && s.from <= year && year < s.until).at(-1);
 
-/** Portrait + display name for the year: a canon era face wins, then the people.ts stage, then the default avatar. */
-function portrait(facts, canon, year) {
-	const stage = stageAt(facts?.stages ?? [], year);
+/** Portrait + display name: a pinned look wins, then a canon era face, then the people.ts stage for the year, then the default avatar. */
+function portrait(facts, canon, year, look) {
+	const pinned = look ? facts?.stages?.find((s) => s.id === look) : undefined;
+	if (look && !pinned) throw new Error(`${facts?.name ?? 'person'}: no stage with id "${look}"`);
+	const stage = pinned ?? stageAt(facts?.stages ?? [], year);
 	const name = stage?.name ?? facts?.name;
-	const eraFace = (canon?.eras ?? []).filter((e) => e.id?.startsWith('/ch_') && inYear(e, year)).at(-1);
+	const eraFace = pinned ? undefined : (canon?.eras ?? []).filter((e) => e.id?.startsWith('/ch_') && inYear(e, year)).at(-1);
 	return { face: eraFace?.id ?? stage?.avatar ?? facts?.avatar ?? null, name };
 }
 
 const CROWNED = /\b(King|Queen|Emperor|Empress)\b/;
 const isCrowned = (facts, year) => (facts?.career ?? []).some((o) => CROWNED.test(o.title) && inYear(o, year));
 
+/** Canon `crown: "noble"` (or a year-ranged list): the kingdom's great-clan crown, out of armor and not bare-headed. */
+const wearsNobleCrown = (c, facts, opts) =>
+	!opts.battle && opts.hat !== false && Boolean(CANON.costume?.kingdoms?.[facts?.kingdom]?.noble) && atYear(c?.crown, opts.year).at(-1) === 'noble';
+
 /** Jougwan for this person and year: explicit canon `hat`, else Samhan men out of armor and out of a crown. */
 function wearsJougwan(c, facts, opts, redress) {
 	const kit = CANON.hats?.jougwan;
-	if (!kit || opts.hat === false || opts.battle) return false;
+	if (!kit || opts.hat === false || opts.battle || wearsNobleCrown(c, facts, opts)) return false;
 	const explicit = c?.hat == null ? [] : atYear(c.hat, opts.year);
 	if (explicit.length) return explicit.at(-1) === 'jougwan';
 	if (redress || facts?.gender !== 'm' || !kit.kingdoms.includes(facts.kingdom)) return false;
@@ -173,14 +184,18 @@ function flagBlock(kingdom, ctx) {
 	return `${text ?? `${kingdom} banners.`}${ref ? ` Attached flag ${ref}.` : ''}`;
 }
 
-function personBlock(id, opts, ctx) {
+/** `chunchu:ambassador` → person `chunchu` pinned to the people.ts stage `ambassador`. */
+function personBlock(raw, opts, ctx) {
 	const { refs } = ctx;
+	const [id, look] = raw.split(':');
 	const c = CANON.characters[id];
 	const f = personFacts(id);
 	if (!c && !f) throw new Error(`unknown person ${id}`);
 	if ((opts.battle || opts.flags) && f?.kingdom) ctx.kingdoms.add(f.kingdom);
 	const year = opts.year;
-	const { face, name } = portrait(f, c, year);
+	const { face, name } = portrait(f, c, year, look);
+	const outfit = look ? c?.looks?.[look] : undefined;
+	if (outfit?.hat === false) opts = { ...opts, hat: false };
 	const redress = Array.isArray(c?.eras) && c.eras.some((e) => e?.redress && inYear(e, year));
 	const out = [];
 	const head = (name ?? id).toUpperCase();
@@ -197,7 +212,8 @@ function personBlock(id, opts, ctx) {
 		out.push(`Hair ornament matches attached ${f.binyeo} when the head is visible.`);
 	}
 	if (c?.look && !redress) out.push(`Look: ${c.look}`);
-	if (c?.dress && !redress) out.push(`Dress: ${c.dress}`);
+	if (outfit?.text) out.push(`Dress: ${outfit.text}`);
+	else if (c?.dress && !redress) out.push(`Dress: ${c.dress}`);
 	if (wearsJougwan(c, f, opts, redress)) {
 		const kit = CANON.hats.jougwan;
 		for (const r of kit.refs) refs.add(r);
@@ -209,6 +225,9 @@ function personBlock(id, opts, ctx) {
 	if (dress?.crownText && !opts.battle && isCrowned(f, year)) {
 		for (const r of dress.crown ?? []) refs.add(r);
 		out.push(`Crown: ${dress.crownText}`);
+	} else if (!redress && wearsNobleCrown(c, f, opts)) {
+		ctx.nobles.add(f.kingdom);
+		out.push(`Crown: the great-clan gilt crown (see NOBLE CROWN), no jougwan.`);
 	}
 	for (const t of atYear(c?.eras, year)) if (t && !t.startsWith('/')) out.push(`Now: ${t}`);
 	if (c?.demeanor) out.push(`Demeanor: ${c.demeanor}`);
@@ -250,22 +269,29 @@ function personBlock(id, opts, ctx) {
 }
 
 /**
- * @param {string[]} ids people ids, animal ids, `place:<id>`, `flag:<kingdom>`, or `dress:<kingdom>` (costume chart for extras)
+ * @param {string[]} ids people ids (or `<person>:<stage id>` to pin a look), animal ids, `place:<id>`, `flag:<kingdom>`, `dress:<kingdom>` (costume chart for extras), or `noble:<kingdom>` (chart + great-clan crown)
  * @param {{ year?: number, battle?: boolean, sword?: boolean, mounted?: boolean, flags?: boolean, hat?: boolean }} opts
  * @returns {{ refs: string[], text: string }}
  */
 export function buildCanon(ids, opts = {}) {
-	const ctx = { refs: new Set(), kingdoms: new Set(), costumes: new Set(), horse: false, hat: false, battle: Boolean(opts.battle) };
+	const ctx = { refs: new Set(), kingdoms: new Set(), costumes: new Set(), nobles: new Set(), horse: false, hat: false, battle: Boolean(opts.battle) };
 	const lines = [];
 	for (const raw of ids) {
 		if (raw.startsWith('place:')) lines.push(placeBlock(raw.slice(6), ctx));
 		else if (raw.startsWith('flag:')) ctx.kingdoms.add(raw.slice(5));
 		else if (raw.startsWith('dress:')) ctx.costumes.add(raw.slice(6));
+		else if (raw.startsWith('noble:')) ctx.costumes.add(raw.slice(6)), ctx.nobles.add(raw.slice(6));
 		else if (CANON.animals[raw]) lines.push(animalBlock(raw, ctx));
 		else lines.push(...personBlock(raw, opts, ctx));
 	}
 	if (ctx.horse && CANON.horses?.common) lines.push(CANON.horses.common);
 	if (ctx.hat) lines.push(`HEADWEAR: ${CANON.hats.jougwan.text}`);
+	for (const k of ctx.nobles) {
+		const kit = CANON.costume?.kingdoms?.[k]?.noble;
+		if (!kit) continue;
+		for (const r of kit.refs) ctx.refs.add(r);
+		lines.push(`NOBLE CROWN: ${kit.text}`);
+	}
 	const costumes = [...ctx.costumes].map((k) => costumeBlock(k, ctx)).filter(Boolean);
 	if (costumes.length) lines.push(`${CANON.costume.common} ${costumes.join(' ')}`);
 	const banners = [...ctx.kingdoms].map((k) => flagBlock(k, ctx)).filter(Boolean);
@@ -290,7 +316,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 		else ids.push(a);
 	}
 	if (!ids.length) {
-		console.error('usage: node scripts/visual-canon.mjs --year <Y> [--battle|--sword|--mounted|--flags|--no-hat] <ids…> [place:<id>] [flag:<kingdom>] [dress:<kingdom>]');
+		console.error('usage: node scripts/visual-canon.mjs --year <Y> [--battle|--sword|--mounted|--flags|--no-hat] <ids…|person:look> [place:<id>] [flag:<kingdom>] [dress:<kingdom>] [noble:<kingdom>]');
 		process.exit(1);
 	}
 	const { refs, text } = buildCanon(ids, opts);

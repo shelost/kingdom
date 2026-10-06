@@ -5,7 +5,7 @@
 	import { ensureStars, isStarred, starUi, toggleStar } from '$lib/imageStarsUi.svelte';
 
 	const MENU_W = 184;
-	const MENU_H = 120;
+	const MENU_H = 190;
 
 	let vw = $state(0);
 	let vh = $state(0);
@@ -23,10 +23,10 @@
 		closeImageMenu();
 	}
 
-	function remove() {
-		const run = target?.remove;
+	/** Close first, then run — the action may confirm or alert. */
+	function run(action: (() => unknown) | undefined) {
 		closeImageMenu();
-		void run?.();
+		void action?.();
 	}
 
 	/* A manual popover joins the top layer, so the menu opens above the modal lightbox too. */
@@ -94,9 +94,28 @@
 		<button
 			type="button"
 			role="menuitem"
+			class:current={target.isThumbnail}
+			disabled={!target.thumbnail || target.isThumbnail || !!editUi.busyId}
+			onclick={() => run(target?.thumbnail)}
+		>
+			<span class="glyph" aria-hidden="true">{target.isThumbnail ? '✓' : '▭'}</span>
+			{target.isThumbnail ? 'Episode thumbnail' : 'Set as thumbnail'}
+		</button>
+		<button
+			type="button"
+			role="menuitem"
+			disabled={!target.hide || !!editUi.busyId}
+			onclick={() => run(target?.hide)}
+		>
+			<span class="glyph" aria-hidden="true">◌</span>
+			Hide
+		</button>
+		<button
+			type="button"
+			role="menuitem"
 			class="danger"
 			disabled={!target.remove || !!editUi.busyId}
-			onclick={remove}
+			onclick={() => run(target?.remove)}
 		>
 			<span class="glyph" aria-hidden="true">✕</span>
 			Remove
@@ -120,9 +139,9 @@
 		display: grid;
 		gap: 0.1rem;
 		border-radius: 8px;
-		background: color-mix(in srgb, #0b0b0e 92%, transparent);
-		border: 1px solid color-mix(in srgb, #fff 14%, transparent);
-		box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+		background: color-mix(in srgb, var(--panel) 94%, transparent);
+		border: 1px solid var(--hairline);
+		box-shadow: var(--shadow-menu);
 		backdrop-filter: blur(14px);
 		font-family: var(--ui);
 		color: var(--fg);
@@ -158,7 +177,7 @@
 	button:hover:not([disabled]),
 	button:focus-visible {
 		outline: none;
-		background: color-mix(in srgb, #fff 10%, transparent);
+		background: color-mix(in srgb, var(--fg) 8%, transparent);
 	}
 
 	button[disabled] {
@@ -171,12 +190,18 @@
 		text-align: center;
 	}
 
-	.starred {
+	.starred,
+	.current {
 		color: var(--gold);
 	}
 
+	button.current[disabled] {
+		opacity: 1;
+		cursor: default;
+	}
+
 	.danger {
-		color: #ff8a8a;
+		color: var(--danger);
 	}
 
 	.hint {

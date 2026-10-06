@@ -209,7 +209,7 @@
 						}
 					>
 						{#each episodes as ep, i (ep.id)}
-							<option value={i}>{i + 1} · {episodeNavLabel(ep)}</option>
+							<option value={i}>{episodeNavLabel(ep)}</option>
 						{/each}
 					</select>
 				{/if}

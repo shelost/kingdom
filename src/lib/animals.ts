@@ -76,11 +76,13 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		title: 'Kim Yushin’s last horse',
 		cover: '/temp/hwangsan-white-horse-back.jpg',
 		coat: 'Pure white like Hangyul before him — younger, a hand lighter in the chest.',
-		tagline: 'The last horse Yushin names — white against Gyebek’s black at the Yellow Mountain.',
-		arc: 'Named on the tenth day after Hangyul, and the last horse Yushin ever names. He rides Hanseul out that day and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others. At Hwangsanbeol the white horse against Gyebek’s black Gomanari is the picture the field remembers.',
+		tagline: 'The last horse Yushin names — white against Gyebek’s black, and the blood on the lips at Mount Gain.',
+		arc: 'Named on the tenth day after Hangyul, and the last horse Yushin ever names. He rides Hanseul out that day and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others. At Hwangsanbeol the white horse against Gyebek’s black Gomanari is the picture the field remembers. In the snow of 662 the old horse carries rice to the Tang camp outside Pyongyang while Yushin walks beside him. In 665, grey at the muzzle, he is the white horse the Tang adjutant picks for the oath at Mount Gain, and Yushin leads him up the hill himself. Like Hanbyul and Hangyul before him, he does not die of age.',
 		events: [
 			{ year: 647, label: 'Named after Hangyul’s death.' },
-			{ year: 660, label: 'Carries Yushin across Hwangsanbeol against Gomanari.' }
+			{ year: 660, label: 'Carries Yushin across Hwangsanbeol against Gomanari.' },
+			{ year: 662, label: 'Hauls rice through the snow to the Tang camp at Pyongyang.' },
+			{ year: 665, label: 'Sacrificed for the blood oath at Mount Gain.' }
 		]
 	},
 	{

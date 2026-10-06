@@ -6,7 +6,9 @@ alwaysApply: true
 
 # Chronicle script voice
 
-Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/people.ts` (`voice`, `firstLine`, `lastLine`, `quote`, `nature`). Keep the chronicle’s ear. Do not flatten wit. Do not lecture the reader.
+Applies when editing `src/lib/data/story.json` or voice fields in `src/lib/people.ts` (`voice`, `firstLine`, `lastLine`, `quote`, `nature`). Do not flatten wit. Do not lecture the reader.
+
+**This is a character story, not a history book.** The reader follows people: what they want, what they hide, what it costs. The reader does not care about king numbers, reign lengths, era names, administrative units, troop counts, fortress name strings, or hanja/Korean glosses in parentheses. Keep a fact only if a character feels it, wants it, risks it, or says it. Everything else goes to the wiki (`people.ts`, `places.ts`), not the page.
 
 **Each speaker’s `voice` in `src/lib/people.ts` is the voice bible.** Read it for everyone who talks in a scene before you write their lines, and match its rhythm and Korean speech level. Where this file and a `voice` note disagree about a character, the note wins. Heewon’s handwritten passages stay word for word and outrank both.
 
@@ -16,7 +18,9 @@ Every new `p` / `dialogue` is bilingual. Korean matches the speaker (존댓말 v
 
 ## Spoken scene (default)
 
-Dialogue is what people say **to each other in a room**, the way a TV drama or a novel writes talk: questions that get answers, accusations, hedges, trailing off, people talking past each other. The narrator covers business the mouths would never volunteer (five tribes, bone ranks, who owns the pine, who dives, who stays).
+Dialogue is what people say **to each other in a room**, the way a TV drama or a novel writes talk: questions that get answers, accusations, hedges, trailing off, people talking past each other. The narrator covers only the business a reader needs to feel the scene (who outranks whom tonight, who dives, who stays), never the encyclopedia.
+
+**Sorkin × Nolan.** Sorkin: fast, overlapping, people interrupting and *winning* arguments, callbacks to a line from three scenes ago, wit under pressure, talking about the weather while the real fight runs underneath. Nolan: withheld information, threat carried by what is not said, a late line that reframes an earlier scene. A negotiation is a duel with moves and costs (someone spends a chip, someone takes it), never two position papers read aloud. If a speech has more than three sentences, someone should interrupt it.
 
 This is the **opposite** of telegram-epigram **and** of fake-literary captions. Do not compress a whole beat into three nouns. Do not let mouths narrate the camera.
 
@@ -32,7 +36,7 @@ This is the **opposite** of telegram-epigram **and** of fake-literary captions. 
 - Telegram stacks: “Han. Mohe. Khitan. The next roof over.”
 - Legal-notice: “I was wrong. I’ll leave the village. Tonight.”
 - Theme read-aloud: “save you the heartache of wanting a man you will not name.”
-- Encyclopedia quizzes (“270 years ago, have you forgotten?”). Archival Samguk Sagi debate speeches may stay.
+- Encyclopedia quizzes (“270 years ago, have you forgotten?”). Archival speeches (Samguk Sagi, Nihon Shoki, Tang edicts) do not go in mouths: turn them into a short scene with the same decision, and leave the original in a `quote` block only if the scene does not already say it.
 - Matching thesis to thesis.
 - **Caption-dialogue:** saying the camera beat out loud. Listing options for the audience. “He’s staring at us. Should I show him more.” / “Wait, why are two leaving. I’m not done looking.”
 - **Interview sisters:** explaining personality to each other. “Youngest will stay. She always does.” Show it: two dive, one stays. Mouths stay messy.
@@ -47,26 +51,90 @@ A chieftain **may** list suspects (Mohe, Khitan, Han commandery) because that is
 
 - Mortal dialogue must **not** cite AD/CE years (“in 642”). Use reigns, seasons, harvests, “the year she was crowned”, “fifteen winters past”, event names (“since Daeya fell”).
 - Exception: goddesses (`narim`, `golhwa`, `hyulle`) and other divine/mythic speakers MAY know AD years.
-- Narration and `quote` blocks MAY keep AD years (chronicler’s voice).
-- Historical `quote` blocks stay verbatim (hanja / ko / en / source). Never rewrite quotes.
+- Narration may name a year when it helps the reader feel time pass, at most once per entry. Prefer “eleven years later”. `quote` blocks keep theirs.
+- Historical `quote` blocks stay verbatim (hanja / ko / en / source). Never rewrite quotes. One quote per event, at most: never narrate a beat, dramatize it, *and* quote it.
 
-## Narration (J.K. Rowling-ish chronicle)
+## Narration: the omniscient storyteller
 
-Historical present is the default; occasional past for memory is OK.
+The narrator is a **third-person omniscient storyteller talking to the reader**, conversational, warm, sly, a little amused. He knows how every life ends and teases it. He has favourites. He has watched this pattern before (a door opened from the inside, a king who trusts the wrong wall) and says so with a raised eyebrow. He is implied to be **Hwanin**, the old sky lord, grandfather of Dangun, looking down on the peninsula: he speaks of heaven, the gods and the myths as family gossip, never as scripture. **He is never named, never says “I am”, never explains who he is.** Readers should only half-suspect it by the time Dangun’s episode arrives.
 
+- Talk to the reader: “you”, “you’d think”, “you’ve seen this kind of party”, “let’s say it, since nobody on his side is allowed to”. Questions to the reader are fine. Not every block; enough that it is a voice.
+- Opinions, not records. “The Silla annals, which like round numbers, make it four hundred thousand” is the narrator. “Silla deploys 400,000 troops” is a textbook.
+- Tease the future without spending it: “He will keep quoting her for the eighteen years he has left.” Never: “Twenty years later Baekje falls.”
+- Historical present by default; past for memory.
 - Vary sentence length: long sentences with subordinate clauses + occasional very short punches. Wit lives *inside* the sentence, not only as an end-of-block verdict.
-- Ban AI-isms: “It is not X. It is Y.” / “not because X but because Y” / “That is not cruelty. That is administration.” — except Kangrim, the one licensed aphorist.
+- Ban AI-isms: “It is not X. It is Y.” / “not because X but because Y” / “That is not cruelty. That is administration.” Kangrim is the one licensed aphorist.
 - Em-dash budget: at most one per narration block when possible.
-- Don’t end every paragraph on a drop-beat aphorism.
-- Keep dry-chronicler humor. Don’t flatten it.
+- Don’t end every paragraph on a drop-beat aphorism. One aside per scene.
 - **Action the mouths skip:** men moving to kill, a bow that will not bend, a cup not drunk. Put that in `p`.
+- **Never in narration:** image-prompt fragments or shot lists (“They hike the silk. One knee up. A twist.”), art-direction notes (“Every still of this city is that gate”), trailer cards (“The final war begins…!”), `(#26)` regnal numbers, `(관산성)` glosses, office titles strung after a name, “X is a young general in the Y army who…” file-card introductions.
+
+BAD (textbook): “At the Battle of Gwansanseong (관산성) in 554, Silla’s armies kill King Seong (#26) of Baekje… He took the throne at seven and reigned thirty-six years.”
+GOOD (storyteller): “Ask anyone in Surabol about the Cloud King and they’ll tell you about his stones. Ask anyone in Sabi and they’ll change the subject. You’ll find out why. Not yet.”
+
+## Short and memorable (the house standard)
+
+If the reader’s eyes glaze, the sentence failed. Most narration sentences are **under twelve words**. One idea per sentence. No stacked clauses, no semicolons chaining facts, no appositive strings (“X, the Y of Z, who…”). Wit comes from rhythm and the one surprising word, not from density.
+
+**Name budget.** A first-time reader meets **at most two proper nouns per sentence and three per paragraph**, and only names that matter to the scene. Replace the rest with what the reader can see or feel: “the river”, “the old capital”, “the emperor’s best general”, “the wall”. Never introduce a person, a place and an office in one breath. A name the reader will not meet again does not get said.
+
+BAD (the Commander Yeon wall paragraph): “Three summers ago the Tang levelled the mound of Sui bones at the Liao, the one Goguryeo had heaped up as a trophy, and the court took the hint: every commandery now owes the crown men and stone for a chain of border forts strung a thousand li from Buyeo Fortress down to the sea at Bisa…”
+GOOD: “Three summers ago, the Tang flattened Goguryeo’s pile of enemy bones. Goguryeo got the message. Now it builds a wall. A thousand li of it. When Yeon isn’t killing anybody, he walks it with a plumb line and kicks the crooked stones.”
+
+**Heewon’s opening lines are the standard** (in the book as block 0): “Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.” / “A Queen? Ridiculous.” / “Kim Yushin — a name that strikes fear in all of Samhan. Maybe this is why.” / “A young girl is going to do what she’s going to do.” / “There was only one man Euija knew he could trust to deliver.” / “The sad thing about betrayal… is that it never comes from your enemies.” / “A man is measured by his self-control.” Every entry opens like this: one short line, a provocation, a verdict, a list, a question. Then the scene.
+
+## Next-episode card (end of every episode)
+
+Every entry ends with a **bold manga-style lead-in** to the next episode in reading order: a final `p` block whose whole `html` (and `ko`) is wrapped in `<b>…</b>`. Template: “**The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!**”
+
+- One to three short sentences, under 25 words. Ends on “…!”, a question, or a cliffhanger fragment.
+- Teases the next episode’s hook. Never spends its reveal: no deaths, no outcomes, no mystery-box answers (an unrevealed Muryuk is “a Gaya prince nobody names”).
+- Before a flashback or myth, tease the jump: “**To understand this grudge, we have to go back seventy years…!**”
+- Names the reader already knows; at most one new one. No years.
+- Korean: plain narrator register (-다 / -는가 / -한다…!), punchy, not a calque.
+
+## Openings and plain narration (models)
+
+Every entry’s first line is a hook, not a date. Borrow the technique, never the words.
+
+| Technique | Model | Use it for |
+|---|---|---|
+| **Verdict on a person, then a twist** | Lewis, *Dawn Treader*: “There was a boy called Eustace Clarence Scrubb, and he almost deserved it.” | Character entries. Name, then one sly judgment. |
+| **Ironic “universal truth”** | Austen: “It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.” | Court, clan and marriage politics. State the rule everyone believes; the scene proves it wrong. |
+| **Characters’ own boast, quoted slyly** | Rowling: the Dursleys “were proud to say that they were perfectly normal, thank you very much.” | Kings, clans, the Tang court. Let the narrator borrow their self-image and the reader hear the crack. |
+| **Flat fact made funny by placement** | Rowling: “Mr. Dursley was the director of a firm called Grunnings, which made drills.” | Ranks and jobs. One plain clause, no gloss, and let it sit. |
+| **Future told as memory** | García Márquez: “Many years later, as he faced the firing squad, Colonel Aureliano Buendía was to remember that distant afternoon when his father took him to discover ice.” | Tease a death or a fall without spending it: a child’s afternoon that the old man will remember at the end. |
+| **Legend-teller with hindsight** | Le Guin, *A Wizard of Earthsea*: a mountain island “famous for wizards,” and the greatest of them was once a boy called Sparrowhawk. | Yushin, Gyebek, Gesomun before their fame. The narrator knows the legend; the scene shows the boy. |
+| **Simple sentence, impossible fact** | Orwell: “It was a bright cold day in April, and the clocks were striking thirteen.” / Barrie: “All children, except one, grow up.” | Myth entries and omens. Ordinary grammar, one wrong detail. |
+| **Plain object, then insistence** | Tolkien: “In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole…” | Places. Say what it is, then what it is not. |
+| **Narrator who is a presence** | Zusak, *The Book Thief*, narrated by Death: “Here is a small fact: You are going to die.” | The Hwanin voice. He reveals himself only by what he notices: weather, the sky, which deaths he watched, an old fondness for this family. Never by name. |
+| **Talking to the listener** | Kipling, *Just So Stories*: “O Best Beloved”; Lewis’s asides to the reader. | Myth frames (ink episodes): a grandfather telling a bedtime tale he was present for. |
+
+**Plain narration between hooks.** Most sentences are simple: subject, verb, one concrete thing. Rowling and Lewis spend their wit on *one* adjective or one aside per paragraph, not every clause. A good paragraph is three plain sentences and one that bites. Nobody writes “He took the throne at seven and reigned thirty-six years”; they write “He was seven when they put the crown on him, and it was too big, and nobody mentioned it.”
+
+## Suspense: plant, withhold, pay off
+
+- **Mystery box (Abrams).** Show the question, withhold the answer, open it in its own episode. The unnamed Gaya prince in a cone helm watches the Baekje king die in *The Severing*; only *Muryuk* tells us who he was. Speaker ids may stay `muryuk` but the English/Korean text and image `alt` must not name him before his reveal.
+- **Founding myths are boxes.** Jumong, Onjo, Hyukgose, Dangun and the word *Joseon* are hinted at by insult, oath, relic and joke (“we’re both Buyeo blood”, “by the Holy King’s bow”) and **explained only in their own episode**. No genealogy summary or myth recap in an earlier entry, in narration or dialogue.
+- **Chekhov’s gun.** If a thing is shown (a half sword, a bell left on a floor, a go board, a plan written in a flashback), it fires later. If it never fires, cut it. If a payoff lands, find its plant; if there is none, add one earlier.
+- **Reputations are earned through other people.** Never have a character announce a hero’s title. Build it in enemies’ fear and rumour across entries: a sentry who doesn’t finish his rice when a white horse crests the ridge, a Goguryeo rider screaming “IT’S KIM YUSHIN!” and the pursuit breaking, a scout who says “there wasn’t a side, sir, there was a horse.” Gyebek’s name grows the same way, unnamed at first (“the Baekje captain who holds his sword backwards”).
+- **Dramatic irony.** Let the reader know what a character doesn’t (the faked white deer, the dying emperor’s secret), and let the narrator wink at it once.
+- **Don’t spoil endings in passing.** No “and later he dies in Chang’an”, no rebellion that opens by announcing it failed.
 
 ## Trust the reader
 
-1. Don’t let characters speak their own subtext (Kangrim “were you X, or Y?” + thesis). Emotion via objects already loaded, not speeches. Desperate identity claims under a knife are allowed — that is what he would say.
+1. Don’t let characters speak their own subtext. Emotion via objects already loaded, not speeches. Desperate identity claims under a knife are allowed — that is what he would say. (Kangrim’s death question is the exception below.)
 2. Don’t decode the beat you just watched. One chronicler aside per scene.
 3. Distinct voices, not 109 epigram mouths. Polished aphorisms belong to Kangrim (Munhee sparingly). Chunchu and Bidam speak in metaphor and verse, each from his own world (the court for Chunchu, the temple and the soil for Bidam); Euija in proverbs, jokes and royal orders. Formal court and Tang stay formal. Goddesses keep their register. Let some people be bad at talking.
 4. Bilingual: Korean register matches the speaker.
+
+## Intentional: do not flag, do not rewrite
+
+These break the rules above on purpose. Audits and rewrite passes leave them as they are.
+
+- **Bidam’s rant at the Radiance tea** (승, the “Have you ever… even for a SECOND… considered the POSSIBILITY… that your ideas are simply terrible?” speech). The caps, the length and the modern cadence are the point.
+- **Kangrim’s death question.** The psychopomp reads the name and asks the binary “were you X, or Y?” at every major death (Gyebek, Gesomun, Yushin and the rest). It is his ritual, not an exit interview. Don’t vary it away or cut it.
+- **Euija spelling out the theme** (Yunchung: “Do you know what a country is? A country is a territory governed by a single story.”). He is the one character licensed to say the book’s idea out loud, because he is the one who will lose to it.
 
 ## Structure already in the file
 
@@ -83,7 +151,11 @@ Classes are yearly: First Class (제일기, 560), Class 51 (오십일기), Class
 
 - No AD/CE in mortal `dialogue`.
 - New `p`/`dialogue` have EN + KO; Korean sounds spoken.
-- No decoder paragraph after a climax; no new “were you X, or Y?” exit interview.
+- No decoder paragraph after a climax; no “were you X, or Y?” exit interview from anyone but Kangrim at a death.
+- No king numbers, glosses, reign lengths, territory lists, or office strings in `p`. One year at most.
+- The same event is not told twice (narration + dialogue + quote).
+- No mystery box opened early (a reveal or myth explained before its own episode).
+- The narrator sounds like a person talking to the reader, not a record.
 - The speaker sounds like their `voice` note in `people.ts`, not like the chronicler (Kangrim excepted).
 - Talk sounds like a scene, not a caption and not a telegram.
 - Image `at` still matches if you rewrote the beat.

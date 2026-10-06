@@ -1,12 +1,13 @@
 /**
- * Chronicle cue stills for wiki character / god / animal pages.
+ * Chronicle cue stills for wiki character / god / animal / instrument pages.
  * People: membership is the sidecar `image-people.json` — a still appears iff
- * its tags include that profile’s person id. Animals: the still attaches the
- * animal's board in `refs` or names it in the slot id (see `buildAnimalSceneIndex`).
+ * its tags include that profile’s person id. Animals and instruments: the still
+ * attaches the board in `refs` or names it (see `buildBoardSceneIndex`).
  */
 
 import { byId, nameOf, type Person } from '$lib/people';
 import { ANIMAL_INDEX } from '$lib/animals';
+import { INSTRUMENT_INDEX } from '$lib/instruments';
 import { peopleOfSlot } from '$lib/imagePeople';
 import { entryId } from '$lib/story';
 import {
@@ -124,22 +125,35 @@ function pinPoster(person: Person, scenes: WikiScene[]): WikiScene[] {
 	return list;
 }
 
+type BoardIndexEntry = { profileId: string; boards: string[]; names: string[] };
+
+function mentions(text: string, name: string): boolean {
+	return new RegExp(`\\b${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(text);
+}
+
 /**
- * Stills for animal profiles: a still belongs to an animal when it attaches
- * that animal's board, or its slot id carries the name (`yushin-hangyul-…`).
+ * Stills for object profiles (animals, instruments): a still belongs to one when
+ * it attaches that profile's board, or its slot id carries the name
+ * (`yushin-hangyul-…`, `scene-bidam-wolgeum`). With `matchAlt`, a name in the
+ * alt text also counts (ink frames that only describe the instrument).
  * Boards can be shared (Hanseul uses Hangyul's coat board), so when several
- * animals match, the ones named in the slot id, alt, or canon header
+ * profiles match, the ones named in the slot id, alt, or canon header
  * (`HANSEUL (한슬, …`) win; otherwise the first def keeps it.
  */
-function buildAnimalSceneIndex(): Map<string, WikiScene[]> {
+function buildBoardSceneIndex(
+	index: readonly BoardIndexEntry[],
+	matchAlt = false
+): Map<string, WikiScene[]> {
 	const buckets = new Map<string, WikiScene[]>();
 	for (const im of flattenStoryImages()) {
 		const refs = im.slot.refs ?? [];
 		const idWords = im.slot.id.toLowerCase().split(/[-_]/);
-		const hits = ANIMAL_INDEX.filter(
+		const alt = im.slot.alt ?? '';
+		const hits = index.filter(
 			(a) =>
 				a.boards.some((b) => refs.includes(b)) ||
-				a.names.some((n) => idWords.includes(n.toLowerCase()))
+				a.names.some((n) => idWords.includes(n.toLowerCase())) ||
+				(matchAlt && a.names.some((n) => mentions(alt, n)))
 		);
 		if (!hits.length) continue;
 		const scene = toWikiScene(im);
@@ -160,7 +174,10 @@ function buildAnimalSceneIndex(): Map<string, WikiScene[]> {
 	return buckets;
 }
 
-const SCENES_BY_ANIMAL = buildAnimalSceneIndex();
+const SCENES_BY_OBJECT = new Map([
+	...buildBoardSceneIndex(ANIMAL_INDEX),
+	...buildBoardSceneIndex(INSTRUMENT_INDEX, true)
+]);
 
 /** Stills tagged with both people of a relationship; the bond's `still` slot pins first. */
 function scenesForBond(bond: Person): WikiScene[] {
@@ -173,13 +190,13 @@ function scenesForBond(bond: Person): WikiScene[] {
 	return list;
 }
 
-/** Tagged stills for a wiki character, god, animal, or relationship. Empty when none. Poster / cover stills pin first. */
+/** Tagged stills for a wiki character, god, animal, instrument, or relationship. Empty when none. Poster / cover stills pin first. */
 export function scenesForWikiEntry(personId: string): WikiScene[] {
 	const person = byId.get(personId);
 	if (!person) return [];
 	if (person.entity === 'relationship') return scenesForBond(person);
-	if (person.entity === 'animal') {
-		const list = [...(SCENES_BY_ANIMAL.get(personId) ?? [])];
+	if (person.entity === 'animal' || person.entity === 'instrument') {
+		const list = [...(SCENES_BY_OBJECT.get(personId) ?? [])];
 		const cover = person.avatar ? artAttachmentKey(person.avatar) : '';
 		const idx = cover ? list.findIndex((s) => artAttachmentKey(s.art) === cover) : -1;
 		if (idx > 0) list.unshift(...list.splice(idx, 1));

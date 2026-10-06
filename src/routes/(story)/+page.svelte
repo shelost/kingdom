@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
 	import { resolve } from '$app/paths';
-	import { chapters, isFlashEntry, entryId, partId } from '$lib/story';
+	import { chapterNumber, chapters, isFlashEntry, entryId, partId } from '$lib/story';
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
+	import EpisodeThumbnail from '$lib/components/EpisodeThumbnail.svelte';
+	import TiltThumb from '$lib/components/TiltThumb.svelte';
+	import HiddenStills from '$lib/components/HiddenStills.svelte';
 	import PlaceBanner from '$lib/components/PlaceBanner.svelte';
 	import PlaceMapTile from '$lib/components/PlaceMapTile.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
-	import { ENTRY_PLACE } from '$lib/places';
 	import { buildBeats, type Beat } from '$lib/beats';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import {
@@ -24,7 +26,9 @@
 	} from '$lib/reading.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
-	import { flagOf, flagSrc } from '$lib/flags';
+	import { entryCast, entryTags } from '$lib/entryHead';
+	import { episodeThumbnail } from '$lib/thumbnail.svelte';
+	import { EPISODE_TOTAL, SEASONS, STORY_RANGE } from '$lib/episodeDirectory';
 	import { onMount } from 'svelte';
 	import type { Chapter, StackImage } from '$lib/story';
 
@@ -33,6 +37,20 @@
 	let onTitleEpisode = $derived(episodesMode && currentEp?.id === 'title');
 	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
 	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
+	/** Episode 1, right after the title page: the cover's art and its Read button. */
+	const FIRST_EPISODE_INDEX = 1;
+	const firstEp = episodes[FIRST_EPISODE_INDEX];
+	let coverThumb = $derived(
+		firstEp
+			? episodeThumbnail(chapters[firstEp.chapterIndex].entries[firstEp.entryIndex], firstEp.id)
+			: null
+	);
+
+	function startReading() {
+		goToEpisode(FIRST_EPISODE_INDEX);
+	}
+	/** Korean reading: the entry head leads with Korean titles and labels. */
+	let koHead = $derived(reading.lang === 'ko');
 	/* The mode is the layout: the script reads as a manuscript with its figures
 	   in the flow and no location cards at all; immersion and cinema keep the
 	   sticky stage column beside the text. */
@@ -125,13 +143,54 @@
 
 <main>
 	{#if !episodesMode || onTitleEpisode}
-	<!-- ————— cover: brand only. In episodes mode this is episode 0. ————— -->
+	<!-- ————— cover: key art + a way in. In episodes mode this is episode 0. ————— -->
 	<header class="cover" data-story-id="title">
-		<div class="cover-mark" use:reveal aria-hidden="true"></div>
-		<h1 class="cover-title" use:reveal={80}>King for All</h1>
-		<p class="cover-ko" use:reveal={160}>삼한왕검</p>
-		<h2 class="cover-subtitle" use:reveal={160}>A Story Told In Parts</h2>
-		<p class="cover-author" use:reveal={180}>Heewon Ahn · 안희원</p>
+		<div class="cover-hero">
+			{#if firstEp}
+				<button
+					type="button"
+					class="cover-art"
+					use:reveal
+					onclick={startReading}
+					aria-label={`Read ${episodeNavLabel(firstEp)}`}
+				>
+					<TiltThumb
+						src={coverThumb?.src}
+						sizes="(max-width: 820px) 100vw, 46rem"
+						fallback="K"
+						priority
+						max={6}
+					/>
+				</button>
+			{/if}
+
+			<div class="cover-copy">
+				<h1 class="cover-title" use:reveal={80}>King for All</h1>
+				<p class="cover-ko" use:reveal={160}>삼한왕검</p>
+				<h2 class="cover-subtitle" use:reveal={160}>A Story Told In Parts</h2>
+				<p class="cover-author" use:reveal={180}>Heewon Ahn · 안희원</p>
+				<p class="cover-meta" use:reveal={200}>
+					<span>{STORY_RANGE}</span>
+					<span aria-hidden="true">·</span>
+					<span>{SEASONS.length} {koHead ? '부' : 'Parts'}</span>
+					<span aria-hidden="true">·</span>
+					<span>{EPISODE_TOTAL} {koHead ? '편' : 'episodes'}</span>
+				</p>
+
+				<div class="cover-actions" use:reveal={240}>
+					{#if firstEp}
+						<button type="button" class="cover-read" onclick={startReading}>
+							<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+							<span class="read-label">{koHead ? '읽기' : 'Read'}</span>
+							<span class="read-ep">{episodeNavLabel(firstEp)}</span>
+						</button>
+					{/if}
+					<a class="cover-all" href={resolve('/episodes')}>
+						{koHead ? '전체 에피소드' : 'All episodes'}
+					</a>
+				</div>
+			</div>
+		</div>
 
 		<span class="scroll-cue" use:reveal={280} aria-hidden="true">
 			<span class="cue-line"></span>
@@ -197,7 +256,7 @@
 							<header class="chapter-head">
 								<div class="chapter-title">
 									<h1>
-										<span class="num">{ci + 1}</span>
+										{#if chapterNumber(ci) !== null}<span class="num">{chapterNumber(ci)}</span>{/if}
 										<span class="en">{chapter.title}</span>
 										{#if chapter.hanja}<span class="hanja">{chapter.hanja}</span>{/if}
 										{#if chapter.korean}<span class="ko">{chapter.korean}</span>{/if}
@@ -219,6 +278,8 @@
 							{@const beats = buildBeats(shown)}
 							{@const images = stackImages(beats)}
 							{@const eid = entryId(chapter.id, entry.title)}
+							{@const tags = entryTags(entry)}
+							{@const cast = entryCast(shown, years[i] ?? null)}
 							<article
 								class="entry"
 								class:flash={isFlashEntry(entry)}
@@ -226,7 +287,7 @@
 								data-year={years[i]}
 								data-flash={isFlashEntry(entry) ? '1' : undefined}
 								data-music={entry.music ?? undefined}
-								data-place={ENTRY_PLACE[entry.title] ?? undefined}
+								data-place={entry.place ?? undefined}
 								style:--tone={entry.flashTone ?? '#8a8a94'}
 							>
 								<div class="content-col">
@@ -234,12 +295,18 @@
 										<div class="entry-head-sticky" use:reveal={{ y: 0 }}>
 											<div class="head-top">
 												<p class="chapter-label">
-													<span class="num">{ci + 1}</span>
-													<span class="dot" aria-hidden="true">·</span>
-													<span class="name">{chapter.title}</span>
+													{#if chapterNumber(ci) !== null}
+														<span class="num">{chapterNumber(ci)}</span>
+														<span class="dot" aria-hidden="true">·</span>
+													{/if}
+													<span class="name">{(koHead && chapter.korean) || chapter.title}</span>
 												</p>
 												<p class="story-index">
-													Story {i + 1} out of {chapter.entries.length}
+													{#if koHead}
+														{chapter.entries.length}편 중 {i + 1}편
+													{:else}
+														Story {i + 1} out of {chapter.entries.length}
+													{/if}
 												</p>
 											</div>
 											<div class="head-main">
@@ -248,28 +315,78 @@
 														{entry.year}
 														{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
 													</div>
-													<h2 style:color={entry.accent}>{entry.title}</h2>
-													{#if entry.subtitle}<p class="episode-ko">{entry.subtitle}</p>{/if}
-													{#if entry.badges}
-														<div class="badges">
-															{#each entry.badges as badge, j (j)}
-																{@const flag = flagOf(badge)}
-																{#if flag}
-																	<span
-																		class="badge flag"
-																		use:reveal={60 + j * 55}
-																		title={flag}
-																	>
-																		<img src={flagSrc(flag)} alt="" />
-																	</span>
-																{:else}
-																	<span class="badge" use:reveal={60 + j * 55}>{badge}</span>
-																{/if}
-															{/each}
-														</div>
+													<h2 style:color={entry.accent}>
+														{(koHead && entry.subtitle) || entry.title}
+													</h2>
+													{#if entry.subtitle}
+														<p class="episode-ko">{koHead ? entry.title : entry.subtitle}</p>
 													{/if}
 												</div>
 											</div>
+										</div>
+										{#if tags.length || cast.length}
+											<div class="entry-meta">
+												{#if tags.length}
+													<ul class="tags" aria-label="Tags">
+														{#each tags as tag, j (tag.key)}
+															<li class="tag" style:--tag={tag.color} use:reveal={60 + j * 45}>
+																{#if tag.flag}
+																	<img class="tag-flag" src={tag.flag} alt="" />
+																{:else if tag.icon}
+																	<span class="tag-icon material-symbols-outlined" aria-hidden="true"
+																		>{tag.icon}</span
+																	>
+																{/if}
+																{#if koHead}
+																	<span class="tag-en">{tag.ko}</span>
+																{:else}
+																	<span class="tag-en">{tag.label}</span>
+																	<span class="tag-ko">{tag.ko}</span>
+																{/if}
+															</li>
+														{/each}
+													</ul>
+												{/if}
+												{#if cast.length}
+													<div class="cast">
+														<span class="cast-label">등장인물</span>
+														<ul class="cast-list" aria-label="Characters">
+															{#each cast as member, j (member.id)}
+																<li use:reveal={120 + j * 45}>
+																	<button
+																		type="button"
+																		class="person cast-chip"
+																		data-person={member.id}
+																		style:--who={member.color}
+																	>
+																		{#if member.avatar}
+																			<img class="cast-face" src={member.avatar} alt="" />
+																		{:else}
+																			<span class="cast-face blank" aria-hidden="true"
+																				>{(member.ko ?? member.name).slice(0, 1)}</span
+																			>
+																		{/if}
+																		{#if koHead && member.ko}
+																			<span class="cast-name">{member.ko}</span>
+																		{:else}
+																			<span class="cast-name">{member.name}</span>
+																			{#if member.ko}<span class="cast-ko">{member.ko}</span>{/if}
+																		{/if}
+																	</button>
+																</li>
+															{/each}
+														</ul>
+													</div>
+												{/if}
+											</div>
+										{/if}
+										<div class="entry-thumb">
+											<EpisodeThumbnail
+												entry={shown}
+												{eid}
+												priority={episodesMode || (ci === 0 && i === 0)}
+											/>
+											<HiddenStills entry={shown} />
 										</div>
 									</header>
 
@@ -313,19 +430,19 @@
 								<!-- The stage column belongs to the stage modes. The script
 								     has no place banner and no map tile — only its own
 								     figures, which ride inline with the prose. -->
-								{#if sideImages && (images.length || ENTRY_PLACE[entry.title])}
+								{#if sideImages && (images.length || entry.place)}
 									<aside class="images-col">
-										<div class="images-sticky" class:has-banner={!!ENTRY_PLACE[entry.title]}>
-											{#if ENTRY_PLACE[entry.title]}
+										<div class="images-sticky" class:has-banner={!!entry.place}>
+											{#if entry.place}
 												<div class="bento">
 													<div class="bento-place">
 														<PlaceBanner
-															placeId={ENTRY_PLACE[entry.title]}
+															placeId={entry.place}
 															priority={episodesMode || (ci === 0 && i === 0)}
 														/>
 													</div>
 													<div class="bento-map">
-														<PlaceMapTile placeId={ENTRY_PLACE[entry.title]} />
+														<PlaceMapTile placeId={entry.place} />
 													</div>
 												</div>
 											{/if}
@@ -382,7 +499,7 @@
 			}
 		>
 			{#each episodes as ep, i (ep.id)}
-				<option value={i}>{i + 1} · {episodeNavLabel(ep)}</option>
+				<option value={i}>{episodeNavLabel(ep)}</option>
 			{/each}
 		</select>
 		<button
@@ -419,6 +536,128 @@
 		flex-direction: column;
 		justify-content: center;
 		padding: 7rem 6rem 5rem 12%;
+	}
+
+	.cover {
+		padding: 6rem clamp(1.5rem, 6vw, 6rem) 4rem;
+	}
+
+	/* Copy on the left, key art on the right; phones stack the art on top. */
+	.cover-hero {
+		display: grid;
+		grid-template-columns: minmax(16rem, 1fr) minmax(0, 1.45fr);
+		grid-template-areas: 'copy art';
+		align-items: center;
+		gap: clamp(2rem, 4.5vw, 4.5rem);
+		width: 100%;
+		max-width: 80rem;
+		margin: 0 auto;
+	}
+
+	.cover-copy {
+		grid-area: copy;
+		min-width: 0;
+	}
+
+	.cover-art {
+		grid-area: art;
+		display: block;
+		width: 100%;
+		padding: 0;
+		border: none;
+		background: none;
+		cursor: pointer;
+	}
+
+	.cover-art:focus-visible {
+		outline: none;
+	}
+
+	.cover-art :global(.thumb) {
+		border-radius: calc(var(--radius) * 1.5);
+		box-shadow: 0 28px 60px -34px rgba(0, 0, 0, 0.75);
+	}
+
+	.cover-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.45rem;
+		margin: 1.25rem 0 0;
+		font-family: var(--ui);
+		font-size: 0.82rem;
+		font-weight: 500;
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-faint);
+	}
+
+	.cover-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem 1.25rem;
+		margin-top: 1.75rem;
+	}
+
+	.cover-read {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		padding: 0.8rem 1.3rem 0.8rem 1.05rem;
+		border: none;
+		border-radius: var(--radius);
+		background: var(--highlight);
+		color: var(--on-highlight);
+		font-family: var(--ui);
+		font-size: 0.95rem;
+		letter-spacing: var(--tracking-ui);
+		cursor: pointer;
+		transition:
+			transform 0.25s var(--ease),
+			opacity 0.25s var(--ease);
+	}
+
+	.cover-read:hover {
+		opacity: 0.88;
+	}
+
+	.cover-read:active {
+		transform: scale(0.97);
+	}
+
+	.cover-read:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 3px;
+	}
+
+	.cover-read .material-symbols-outlined {
+		font-size: 1.25rem;
+	}
+
+	.read-label {
+		font-weight: 600;
+	}
+
+	.read-ep {
+		padding-left: 0.6rem;
+		border-left: 1px solid color-mix(in srgb, var(--on-highlight) 25%, transparent);
+		font-weight: 500;
+		opacity: 0.72;
+	}
+
+	.cover-all {
+		font-family: var(--ui);
+		font-size: 0.9rem;
+		font-weight: 500;
+		color: var(--fg-dim);
+		text-decoration: underline;
+		text-decoration-color: var(--hairline);
+		text-underline-offset: 0.3em;
+		transition: color 0.2s var(--ease);
+	}
+
+	.cover-all:hover {
+		color: var(--fg-strong);
+		text-decoration-color: currentColor;
 	}
 
 	.cover-title {
@@ -464,7 +703,7 @@
 	.blurb p {
 		margin: 0 0 1.15rem;
 		font-size: 0.9rem;
-		font-weight: 100 !important;
+		font-weight: var(--weight-body);
 		line-height: 1.48;
 		color: var(--fg-dim);
 	}
@@ -809,8 +1048,8 @@
 		top: 1rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.65rem;
-		padding: 1.5rem 0 1rem;
+		gap: 1rem;
+		padding: 4.5rem 0 1.6rem;
 		background: linear-gradient(
 			to bottom,
 			var(--bg) 0%,
@@ -931,58 +1170,145 @@
 		margin: 0;
 		font-family: var(--serif);
 		font-weight: 500;
-		font-size: 1.06rem;
-		line-height: 1.08;
+		font-size: clamp(1.7rem, 2.6vw, 2.35rem);
+		line-height: 1.05;
 		letter-spacing: var(--tracking-display);
 		max-width: none;
 		color: var(--fg-strong);
+		text-wrap: balance;
 	}
 
-	.badges {
+	.episode-ko {
+		margin: 0.35rem 0 0;
+		font-family: var(--serif);
+		font-size: 0.95rem;
+		letter-spacing: 0.06em;
+		color: var(--fg-dim);
+	}
+
+	.episode-ko::after {
+		content: '';
+		display: block;
+		width: 2.4rem;
+		height: 1px;
+		margin-top: 0.85rem;
+		background: var(--gold);
+		opacity: 0.7;
+	}
+
+	.entry-meta {
 		display: flex;
-		gap: 0.35rem;
-		margin-top: 0.6rem;
+		flex-direction: column;
+		gap: 0.8rem;
+		padding: 0.4rem 0 2.75rem;
 	}
 
-	.badge {
-		display: inline-grid;
-		place-items: center;
-		min-width: 1.7rem;
-		height: 1.45rem;
-		padding: 0 0.3rem;
-		font-size: 0.9rem;
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
-		transition:
-			transform 0.3s var(--ease),
-			background 0.3s var(--ease);
+	.entry-thumb {
+		padding: 0 0 3.25rem;
 	}
 
-	.badge.flag {
+	.entry-thumb:not(:has(figure, button)) {
+		display: none;
+	}
+
+	.tags,
+	.cast-list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin: 0;
 		padding: 0;
-		overflow: hidden;
-		width: 2.1rem;
-		min-width: 2.1rem;
-		height: 1.4rem;
-		background: transparent;
+		list-style: none;
 	}
 
-	.badge.flag img {
-		width: 100%;
-		height: 100%;
+	.tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		height: 1.6rem;
+		padding: 0 0.6rem 0 0.4rem;
+		font-size: 0.74rem;
+		line-height: 1;
+		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--tag, var(--fg)) 10%, transparent);
+		border: 1px solid color-mix(in srgb, var(--tag, var(--fg)) 28%, transparent);
+		border-radius: 999px;
+	}
+
+	.tag-flag {
+		width: 1.35rem;
+		height: 0.9rem;
 		object-fit: cover;
+		border-radius: 2px;
 		display: block;
 	}
 
-	.badge:hover {
-		transform: translateY(-2px);
-		background: color-mix(in srgb, var(--fg) 12%, transparent);
+	.tag-icon {
+		font-size: 0.95rem;
+		color: var(--tag);
+		font-variation-settings: 'FILL' 1;
 	}
 
-	.badge.flag:hover {
-		background: transparent;
-		filter: brightness(1.08);
+	.tag-ko,
+	.cast-ko {
+		color: var(--fg-faint);
+		font-size: 0.92em;
+	}
+
+	.cast {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		flex-wrap: wrap;
+	}
+
+	.cast-label {
+		font-size: 0.68rem;
+		font-weight: 500;
+		letter-spacing: 0.12em;
+		color: var(--fg-faint);
+	}
+
+	.cast-chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		height: 1.75rem;
+		padding: 0 0.6rem 0 0.15rem;
+		font: inherit;
+		font-size: 0.76rem;
+		line-height: 1;
+		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--fg) 5%, transparent);
+		border: 1px solid var(--hairline);
+		border-radius: 999px;
+		cursor: pointer;
+		transition:
+			border-color 0.25s var(--ease),
+			background 0.25s var(--ease);
+	}
+
+	.cast-chip:hover,
+	.cast-chip:focus-visible {
+		border-color: color-mix(in srgb, var(--who) 60%, transparent);
+		background: color-mix(in srgb, var(--who) 12%, transparent);
+	}
+
+	.cast-face {
+		width: 1.4rem;
+		height: 1.4rem;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: 50% 18%;
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--who) 70%, transparent);
+	}
+
+	.cast-face.blank {
+		display: inline-grid;
+		place-items: center;
+		font-size: 0.7rem;
+		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--who) 35%, transparent);
 	}
 
 	.text {
@@ -1130,6 +1456,18 @@
 				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
+		.cover {
+			justify-content: flex-start;
+		}
+
+		.cover-hero {
+			grid-template-columns: minmax(0, 1fr);
+			grid-template-areas:
+				'art'
+				'copy';
+			gap: 1.75rem;
+		}
+
 		.cover-title {
 			font-size: clamp(2.1rem, 9vw, 2.8rem);
 			letter-spacing: -0.04em;
@@ -1224,13 +1562,13 @@
 
 		.entry-head {
 			order: 2;
-			padding: 1.15rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
+			padding: 3.25rem max(1.15rem, env(safe-area-inset-right, 0px)) 0
 				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
 		/* Episodes open on the entry head: clear the fixed menu and settings buttons. */
 		.script.episodes .entry-head {
-			padding-top: max(3.6rem, calc(env(safe-area-inset-top, 0px) + 3.2rem));
+			padding-top: max(5rem, calc(env(safe-area-inset-top, 0px) + 4.25rem));
 		}
 
 		.content-col {
@@ -1261,7 +1599,40 @@
 
 		.episode h2 {
 			max-width: none;
-			font-size: 1.02rem;
+			font-size: 1.6rem;
+		}
+
+		.entry-meta {
+			padding: 1.25rem 0 1.75rem;
+		}
+
+		/* One swipeable row of faces instead of three wrapped rows. */
+		.cast {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.45rem;
+		}
+
+		.cast-list {
+			flex-wrap: nowrap;
+			width: calc(100% + max(1.15rem, env(safe-area-inset-right, 0px)));
+			margin-right: calc(-1 * max(1.15rem, env(safe-area-inset-right, 0px)));
+			padding-right: max(1.15rem, env(safe-area-inset-right, 0px));
+			overflow-x: auto;
+			overscroll-behavior-x: contain;
+			scrollbar-width: none;
+		}
+
+		.cast-list::-webkit-scrollbar {
+			display: none;
+		}
+
+		.cast-list li {
+			flex: none;
+		}
+
+		.entry-thumb {
+			padding-bottom: 1.5rem;
 		}
 
 		.beats {
@@ -1307,8 +1678,8 @@
 			font-size: 0.76rem;
 		}
 
-		.badges {
-			flex-wrap: wrap;
+		.episode h2 {
+			font-size: 1.45rem;
 		}
 	}
 

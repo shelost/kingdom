@@ -100,7 +100,8 @@
 			bottom: 0;
 			z-index: 80;
 			display: grid;
-			grid-template-columns: repeat(5, minmax(0, 1fr));
+			grid-auto-flow: column;
+			grid-auto-columns: minmax(0, 1fr);
 			height: var(--tabbar-space);
 			padding: 0 max(0.25rem, env(safe-area-inset-right, 0px))
 				env(safe-area-inset-bottom, 0px) max(0.25rem, env(safe-area-inset-left, 0px));
@@ -174,7 +175,7 @@
 			border: 1px solid var(--hairline);
 			border-radius: 14px;
 			background: var(--panel);
-			box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+			box-shadow: var(--shadow-float);
 			font-family: var(--ui);
 		}
 

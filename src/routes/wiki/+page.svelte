@@ -484,9 +484,9 @@
 							{@const cardKind = kindOf(p)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
 							{@const isNationCard = cardKind === 'nation'}
-							{@const isAnimalCard = cardKind === 'animal'}
+							{@const isObjectCard = cardKind === 'animal' || cardKind === 'instrument'}
 							{@const isShowcase =
-								cardKind === 'place' || cardKind === 'city' || isNationCard || isAnimalCard}
+								cardKind === 'place' || cardKind === 'city' || isNationCard || isObjectCard}
 							{@const flagArt = isNationCard ? kingdomFlag(p.kingdom) : undefined}
 							{@const showcaseArt = isNationCard ? flagArt : art}
 							{@const isOrgCard = cardKind === 'organization'}
@@ -511,7 +511,7 @@
 									class="card tilt"
 									class:card-showcase={isShowcase}
 									class:card-character={isPortraitCard}
-									class:card-place={cardKind === 'place' || cardKind === 'city' || isAnimalCard}
+									class:card-place={cardKind === 'place' || cardKind === 'city' || isObjectCard}
 									class:card-org={isOrgCard || isGroupCard}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}

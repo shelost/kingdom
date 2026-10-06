@@ -82,14 +82,17 @@ export function compactStoryJson(): Plugin {
 			};
 		},
 		handleHotUpdate({ file, server }) {
-			/* Edit-mode deletes already patched client state. Reloading
-			   story.json / inventory / scenes.ts remounts the page and jumps to top. */
+			/* The virtual module is never the watched file, so it must be invalidated
+			   by hand on every write or the next page load serves the old chronicle. */
+			const mod =
+				path.normalize(file) === path.normalize(STORY)
+					? server.moduleGraph.getModuleById(VIRTUAL)
+					: undefined;
+			if (mod) server.moduleGraph.invalidateModule(mod);
+			/* Edit-mode saves already patched client state. Pushing the update
+			   remounts the page and jumps to top. */
 			if (isChroniclePersist(file) && chronicleHmrSkipArmed()) return [];
-			if (path.normalize(file) !== path.normalize(STORY)) return;
-			const mod = server.moduleGraph.getModuleById(VIRTUAL);
-			if (!mod) return;
-			server.moduleGraph.invalidateModule(mod);
-			return [...mod.importers];
+			if (mod) return [...mod.importers];
 		}
 	};
 }

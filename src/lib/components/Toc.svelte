@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { chapters, entryId, partId } from '$lib/story';
-	import { entryForReading } from '$lib/nsfwUi.svelte';
+	import { chapterNumber, chapters, entryId, partId } from '$lib/story';
 	import {
-		branchContains,
-		entryMark,
+		groupEpisodes,
+		partLabel,
 		spineEntries,
 		spineLabel,
-		tocLeavesFor,
-		type TocMark
+		tocEpisode,
+		type TocEpisode
 	} from '$lib/tocTree';
+	import { EPISODE_KIND_META } from '$lib/episodeKinds';
 	import { TOC_DURATION_MS, saveTocAnchor, loadTocAnchor, beginTocJump, endTocJump, tocUi, loadTocFloating, tocOverlays } from '$lib/tocUi.svelte';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
@@ -28,10 +28,12 @@
 		stripStoryHash
 	} from '$lib/reading.svelte';
 	import HudSearch from './HudSearch.svelte';
-	import { isLoveEpisode } from '$lib/loveEpisodes';
 
 	/** Bound by the story layout so the reading shell + plate shift together. */
 	let { open = $bindable(true) } = $props();
+
+	/** Korean reading: chapter, group and episode rows show their Korean titles. */
+	let ko = $derived(reading.lang === 'ko');
 
 	/** Scroll-driven markers (full scope); episodes mode overlays via derived. */
 	let scrollActive = $state(chapters[0]?.id);
@@ -61,8 +63,8 @@
 	let lastPill = { top: 0, left: 0, width: 0, height: 0, on: false };
 	let pillAt = $state('');
 
-	/** Scene if one is live; otherwise the episode; otherwise the chapter. */
-	let pillId = $derived(reading.sceneId || activeEntry || active || '');
+	/** The episode if one is live; otherwise the chapter. */
+	let pillId = $derived(activeEntry || active || '');
 
 	function findPillItem(): HTMLElement | null {
 		if (!panelEl) return null;
@@ -304,7 +306,7 @@
 	}
 
 	/**
-	 * Jump to a chapter / episode / scene / part title.
+	 * Jump to a chapter / episode / part title.
 	 * Full scope: scroll the continuous manuscript to that heading.
 	 * Episodes scope: swap the mounted entry (same as Prev/Next), then land
 	 * on the heading — never scroll through off-page siblings.
@@ -343,24 +345,35 @@
 		}
 	}
 
-	/** Scene lists sit under the current episode (or its nested branch). No toggle. */
-	function scenesOpen(id: string, leafIds: string[]) {
-		if (activeEntry === id) return true;
-		return leafIds.includes(activeEntry) || leafIds.includes(reading.sceneId ?? '');
-	}
-
 	function toggle() {
 		if (!scriptUi.inScript) return;
 		open = !open;
 	}
 
-	const MARK_LABEL: Record<TocMark, string> = { flashback: 'Flashback', myth: 'Tamla myth' };
 </script>
 
-{#snippet markDot(mark: TocMark | undefined)}
-	{#if mark}
-		<span class="toc-mark {mark}" title={MARK_LABEL[mark]} aria-label={MARK_LABEL[mark]}></span>
-	{/if}
+{#snippet episodeRow(ep: TocEpisode, nested: boolean)}
+	<button
+		type="button"
+		class={nested ? 'ep-item' : 'sub-item'}
+		class:active={activeEntry === ep.id}
+		class:on-pill={pillAt === ep.id}
+		data-toc-id={ep.id}
+		onclick={() => jump(ep.id)}
+	>
+		{#if ep.num}<span class="ep-num">{ep.num}</span>{/if}
+		<span class="si-title">{(ko && ep.ko) || ep.title || 'Untitled'}</span>
+		{#if ep.kinds.length}
+			<span class="ep-kinds" aria-hidden="true">
+				{#each ep.kinds as k (k)}
+					{@const kind = EPISODE_KIND_META[k]}
+					<span class="ep-kind material-symbols-outlined" style:--kind={kind.color} title={kind.label}
+						>{kind.icon}</span
+					>
+				{/each}
+			</span>
+		{/if}
+	</button>
 {/snippet}
 
 <div
@@ -412,7 +425,7 @@
 			aria-hidden="true"
 		></div>
 		<div class="toc-site">
-			<p class="toc-label">Explore</p>
+			<p class="toc-label">{ko ? '둘러보기' : 'Explore'}</p>
 			<div class="toc-site-links">
 				{#each SITE_LINKS as link (link.href)}
 					{#if link.href !== '/'}
@@ -425,10 +438,10 @@
 			</div>
 		</div>
 		<div class="toc-search">
-			<p class="toc-label">Search</p>
+			<p class="toc-label">{ko ? '검색' : 'Search'}</p>
 			<HudSearch placement="toc" />
 		</div>
-		<p class="toc-label">Chapters</p>
+		<p class="toc-label">{ko ? '목차' : 'Chapters'}</p>
 		{#each chapters as ch, ci (ch.id)}
 			{#if ch.part}
 				<button
@@ -437,7 +450,7 @@
 					data-toc-id={partId(ch.id)}
 					onclick={() => jump(partId(ch.id))}
 				>
-					{ch.part}
+					{partLabel(ch.part, ko)}
 				</button>
 			{/if}
 			<button
@@ -449,73 +462,39 @@
 				onclick={() => jump(ch.id)}
 			>
 				<span class="pi-title">
-					<span class="pi-num">{ci + 1}</span>
-					<span class="pi-dot" aria-hidden="true">·</span>
-					{ch.title}
+					{#if chapterNumber(ci) !== null}
+						<span class="pi-num">{chapterNumber(ci)}</span>
+						<span class="pi-dot" aria-hidden="true">·</span>
+					{/if}
+					{(ko && ch.korean) || ch.title}
 				</span>
-				{#if ch.korean}<span class="pi-ko">{ch.korean}</span>{/if}
-				{#if ch.range}<span class="pi-range">{ch.range}</span>{/if}
+				{#if ch.korean && !ko}<span class="pi-ko">{ch.korean}</span>{/if}
 			</button>
 
 			<div class="sub">
-				<p class="toc-label nested">Episodes</p>
 				{#each spineEntries(ch) as en (ch.id + en.title)}
 					{@const eid = entryId(ch.id, en.title)}
-					{@const heading = spineLabel(ch, en)}
-					<!-- Read off the sanitized entry: a scene the Intimate toggle hides
-					     has no anchor in the document, so it must not sit in the list. -->
-					{@const leaves = tocLeavesFor(ch, en, eid, entryForReading(en))}
-					{@const leafIds = leaves.map((l) => l.id)}
-					{@const isOpen = scenesOpen(eid, leafIds)}
-					{@const onBranch =
-						activeEntry === eid || branchContains(leaves, activeEntry, reading.sceneId ?? '')}
-					<div class="ep-block">
-						<button
-							type="button"
-							class="sub-item"
-							class:active={activeEntry === eid}
-							class:branch={onBranch && activeEntry !== eid}
-							class:on-pill={pillAt === eid}
-							class:love={isLoveEpisode(eid)}
-							data-toc-id={eid}
-							onclick={() => jump(eid)}
-						>
-							<span class="si-year">{en.year || '·'}</span>
-							<span class="si-title">{heading || 'Untitled'}</span>
-							{#if isLoveEpisode(eid)}
-								<span class="si-love" title="Love story" aria-label="Love story"></span>
-							{/if}
-							{@render markDot(entryMark(en))}
-						</button>
-						{#if leaves.length}
-							<div
-								class="scene-fold"
-								class:open={isOpen}
-								id="toc-scenes-{eid}"
-								aria-hidden={!isOpen}
+					{@const group = groupEpisodes(ch, en)}
+					{#if group.length}
+						<div class="ep-block">
+							<button
+								type="button"
+								class="sub-item group-head"
+								class:branch={group.some((ep) => ep.id === activeEntry)}
+								data-toc-id="{eid}~group"
+								onclick={() => jump(eid)}
 							>
-								<div class="scene-fold-inner">
-									<div class="scenes">
-										{#each leaves as s, si (s.id)}
-											<button
-												type="button"
-												class="scene-item"
-												class:active={activeEntry === s.id || reading.sceneId === s.id}
-												class:on-pill={pillAt === s.id}
-												data-toc-id={s.id}
-												tabindex={isOpen ? 0 : -1}
-												onclick={() => jump(s.id)}
-											>
-												<span class="scene-num">{si + 1}</span>
-												<span class="scene-title">{s.title}</span>
-												{@render markDot(s.mark)}
-											</button>
-										{/each}
-									</div>
-								</div>
+								<span class="si-title">{spineLabel(ch, en, ko)}</span>
+							</button>
+							<div class="ep-group">
+								{#each group as ep (ep.id)}
+									{@render episodeRow(ep, true)}
+								{/each}
 							</div>
-						{/if}
-					</div>
+						</div>
+					{:else}
+						{@render episodeRow(tocEpisode(ch, en), false)}
+					{/if}
 				{/each}
 			</div>
 		{/each}
@@ -593,10 +572,6 @@
 			transform: none;
 		}
 
-		.scene-fold {
-			transition: none;
-		}
-
 		.toc-pill {
 			transition: none;
 		}
@@ -652,10 +627,7 @@
 		-webkit-backdrop-filter: blur(22px);
 		border: 1px solid var(--hairline);
 		border-radius: 14px;
-		box-shadow:
-			0 1px 0 color-mix(in srgb, white 7%, transparent),
-			0 18px 44px rgba(0, 0, 0, 0.48),
-			0 4px 14px rgba(0, 0, 0, 0.28);
+		box-shadow: var(--shadow-float);
 		padding: 0.7rem 0.5rem 1rem;
 	}
 
@@ -683,7 +655,7 @@
 		z-index: 0;
 		border-radius: 8px;
 		background: #fff;
-		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.22);
+		box-shadow: var(--shadow-pill);
 		pointer-events: none;
 		opacity: 0;
 		transition:
@@ -717,11 +689,6 @@
 		letter-spacing: var(--tracking-toc-kicker);
 		color: color-mix(in srgb, var(--fg-faint) 82%, transparent);
 		text-transform: uppercase;
-	}
-
-	.toc-label.nested {
-		margin: 0.45rem 0.35rem 0.15rem;
-		font-size: 10px;
 	}
 
 	.toc-search .toc-label {
@@ -821,16 +788,6 @@
 		flex-shrink: 0;
 	}
 
-	.pi-range {
-		margin-left: auto;
-		font: inherit;
-		font-size: 10.5px;
-		font-weight: 500;
-		letter-spacing: var(--tracking-toc-scene);
-		opacity: 0.45;
-		flex-shrink: 0;
-	}
-
 	.sub {
 		margin-left: 0.55rem;
 		padding-left: 0.45rem;
@@ -886,17 +843,8 @@
 		color: color-mix(in srgb, var(--fg) 82%, transparent);
 	}
 
-	.si-year {
-		flex-shrink: 0;
-		width: 2.7em;
-		font: inherit;
-		font-variant-numeric: tabular-nums;
-		letter-spacing: var(--tracking-toc);
-		opacity: 0.72;
-	}
-
 	.si-title {
-		flex: 1;
+		flex: 0 1 auto;
 		min-width: 0;
 		white-space: nowrap;
 		overflow: hidden;
@@ -904,66 +852,50 @@
 		letter-spacing: var(--tracking-toc);
 	}
 
-	.si-love {
+	.ep-kinds {
 		flex: 0 0 auto;
-		align-self: center;
-		width: 0.38rem;
-		height: 0.38rem;
-		border-radius: 50%;
-		background: #e879a8;
-		box-shadow: 0 0 0 1px color-mix(in srgb, #e879a8 40%, transparent);
+		display: inline-flex;
+		align-items: center;
+		gap: 0.15rem;
+		margin-left: -0.2rem;
 	}
 
-	.sub-item.on-pill .si-love {
-		background: #c45a8a;
-		box-shadow: none;
+	.ep-kind {
+		font-size: 0.95rem;
+		color: var(--kind, transparent);
+		opacity: 0.85;
+		text-shadow: none;
+		transition:
+			color 220ms var(--toc-ease),
+			opacity 220ms var(--toc-ease);
 	}
 
-	.toc-mark {
-		flex: 0 0 auto;
-		align-self: center;
-		margin-left: auto;
-		width: 0.38rem;
-		height: 0.38rem;
-		border-radius: 50%;
-		background: var(--mark);
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--mark) 40%, transparent);
+	.on-pill .ep-kind {
+		color: color-mix(in srgb, var(--kind, transparent) 45%, #14140f);
+		opacity: 1;
 	}
 
-	.toc-mark.flashback {
-		--mark: #f4f1e8;
+	.ep-num {
+		flex-shrink: 0;
+		min-width: 2.4em;
+		font-variant-numeric: tabular-nums;
+		font-size: 11px;
+		opacity: 0.55;
+		color: var(--gold);
 	}
 
-	.toc-mark.myth {
-		--mark: #c4b5fd;
+	.on-pill .ep-num {
+		opacity: 0.72;
+		color: #14140f;
 	}
 
-	.on-pill .toc-mark {
-		box-shadow: 0 0 0 1px color-mix(in srgb, #14140f 55%, transparent);
-	}
-
-	.scene-fold {
-		display: grid;
-		grid-template-rows: 0fr;
-		transition: grid-template-rows 340ms var(--toc-ease);
-	}
-
-	.scene-fold.open {
-		grid-template-rows: 1fr;
-	}
-
-	.scene-fold-inner {
-		overflow: hidden;
-		min-height: 0;
-	}
-
-	.scenes {
+	.ep-group {
 		margin: 0.08rem 0 0.34rem 0.2rem;
 		padding-left: 0.45rem;
 		border-left: 1px solid color-mix(in srgb, var(--gold) 26%, transparent);
 	}
 
-	.scene-item {
+	.ep-item {
 		display: flex;
 		align-items: baseline;
 		gap: 0.45rem;
@@ -990,40 +922,19 @@
 			transform 220ms var(--toc-ease);
 	}
 
-	.scene-item:hover {
+	.ep-item:hover {
 		color: color-mix(in srgb, var(--fg) 88%, transparent);
 		background: color-mix(in srgb, var(--fg) 6%, transparent);
 	}
 
-	.scene-item.active {
+	.ep-item.active {
 		background: transparent;
 	}
 
-	.scene-item.on-pill {
+	.ep-item.on-pill {
 		color: #14140f;
 		background: transparent;
 		text-shadow: none;
-	}
-
-	.scene-item.on-pill .scene-num {
-		opacity: 0.72;
-		color: #14140f;
-	}
-
-	.scene-num {
-		flex-shrink: 0;
-		width: 1.15em;
-		font-variant-numeric: tabular-nums;
-		font-size: 11px;
-		opacity: 0.55;
-		color: var(--gold);
-	}
-
-	.scene-title {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		letter-spacing: var(--tracking-toc-scene);
 	}
 
 	/* Overlay (no padding push below 1000px): a sheet so inline art behind
@@ -1120,7 +1031,7 @@
 			font-size: 12.5px;
 		}
 
-		.scene-item {
+		.ep-item {
 			min-height: 2.5rem;
 			padding: 0.4rem 0.45rem;
 			font-size: 12px;

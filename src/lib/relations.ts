@@ -1270,17 +1270,17 @@ export const RELATIONSHIPS: Person[] = [
 	},
 	{
 		id: 'rel-gesomun-yangmanchun',
-		name: 'Yeon & Yang Manchun',
-		korean: '연개소문 · 양만춘',
+		name: 'Yeon & the Guardian of Ansi',
+		korean: '연개소문 · 안시성주',
 		entity: 'relationship',
 		kingdom: 'goguryeo',
 		bond: 'sworn',
 		between: ['gesomun', 'yangmanchun'],
 		title: 'Supreme Commander and Ansi’s wall',
 		tagline: 'One remakes the court; one proves the wall still works.',
-		arc: 'After 642 Yeon’s kingdom needs a legend that is not only knives. Yang Manchun holds Ansi against Taizong and joins the Hall of Heroes list Yeon has been auditioning for his whole life.',
+		arc: 'After 642 Yeon’s kingdom needs a legend that is not only knives. The nameless Guardian of Ansi holds his wall against Taizong and joins the Hall of Heroes list Yeon has been auditioning for his whole life.',
 		events: [{ year: 645, label: 'Ansi holds; Taizong turns back.' }],
-		aliases: ['Yeon & Yang Manchun', 'Gesomun & Yang Manchun']
+		aliases: ['Yeon & the Guardian of Ansi', 'Gesomun & the Guardian of Ansi']
 	},
 	{
 		id: 'rel-chunchu-ongunhae',

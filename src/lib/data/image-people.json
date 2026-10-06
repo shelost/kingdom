@@ -332,12 +332,10 @@
 	],
 	"spike-heads": [
 		"gesomun",
-		"gyebek",
 		"southcmd"
 	],
 	"nameless-boy": [
 		"gesomun",
-		"gyebek",
 		"southcmd"
 	],
 	"yeon-duel": [
@@ -347,7 +345,6 @@
 	],
 	"battlefield-corpses": [
 		"gesomun",
-		"gyebek",
 		"southcmd"
 	],
 	"five-banners": [
@@ -360,7 +357,6 @@
 	],
 	"sunset-rider": [
 		"gesomun",
-		"gyebek",
 		"southcmd"
 	],
 	"gesomun-seq-yeon-snow": [

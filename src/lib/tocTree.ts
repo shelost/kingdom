@@ -1,310 +1,173 @@
-import { chapters, entryId, scenesOf, type Chapter, type Entry, type SceneRef } from '$lib/story';
+import { chapters, entryId, episodeNumber, type Chapter, type Entry } from '$lib/story';
+import { episodeKindsOf, type EpisodeKind } from '$lib/episodeKinds';
 
-/** A nested TOC row: another episode in the same chapter, optionally relabeled. */
-export type NestedLeaf = {
-	title: string;
-	label?: string;
-	/** Place this child after the parent’s scene/day with this label; otherwise after all scenes. */
-	after?: string;
-	/** Also list this child’s scene/day headers under the parent. */
-	expandScenes?: boolean;
-	/** A folk myth told inside the episode (Tamla tales) — marked apart from plain flashbacks. */
-	myth?: boolean;
-};
+/** A named spine row and the episodes it holds, in story order. The first title anchors the row. */
+export type TocGroup = { label: string; ko: string; titles: string[] };
 
-export type NestSpec = {
-	parent: string;
-	/** Spine label when the stored episode title is the old working name. */
-	label?: string;
-	children: NestedLeaf[];
-};
+const group = (label: string, ko: string, ...titles: string[]): TocGroup => ({ label, ko, titles });
 
 /**
- * Fold sibling episodes under a scene-parent so the chapter list stays a spine,
- * not a flat dump of flashes. Labels follow the chronicle’s scene names.
+ * Chapter spines: each chapter lists its groups, so the TOC reads as a few named arcs
+ * instead of a flat run of episodes. Ungrouped episodes stay on the spine by themselves.
  */
-export const CHAPTER_NESTS: Record<string, NestSpec[]> = {
-	jumong: [
-		{
-			parent: 'Jumong',
-			children: [{ title: 'Dongmyung' }]
-		}
-	],
+export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 	samhan: [
-		{
-			parent: 'Queen Sunduk',
-			children: [{ title: 'Jinheung, The Crescent Moon' }]
-		},
-		{
-			parent: 'The Eight Great Clans',
-			children: [{ title: 'Gunchogo, The Hurricane' }, { title: 'Ocean Trade' }]
-		},
-		{
-			parent: 'The Summit',
-			children: [{ title: 'Birth of Namseng' }, { title: 'Gwanggaeto, The Conqueror' }]
-		}
+		group('Silla', '신라', 'Queen Sunduk', 'Harmony Council', 'Jinheung, the Cloud'),
+		group('Baekje', '백제', 'Prince Euija', 'Eight Great Clans', 'Gunchogo, the 13th'),
+		group('Goguryeo', '고구려', 'Commander Yeon', 'High Summit', 'Gwanggaeto, the Great King')
 	],
 	'five-principles': [
-		{
-			parent: 'Gotaso’s Wedding',
-			children: [{ title: 'Yeon’s Three Sons' }]
-		},
-		{
-			parent: 'King Euija, the 31st Eraha',
-			children: [{ title: 'The Severing' }]
-		}
+		group('Two Treasures', '두 보물', 'Bupmin', 'Gotaso', 'Pumsuk', 'Chunchu & Munhee'),
+		group('Three Sons', '세 아들', 'Grand Academy', 'Stele', 'Dosuryu'),
+		group('Five Princes', '다섯 왕자', 'King Euija', 'Yunchung', 'The Severing')
 	],
 	'iron-will': [
-		{
-			parent: 'Yeon’s Massacre',
-			children: [
-				{ title: 'Chunchu & Gesomun' },
-				{ title: 'Euija & Gesomun' },
-				{ title: 'Kim Yushin' }
-			]
-		}
+		group('Daeya', '대야성', 'Gumil', 'Maehwa', 'Siege of Daeya'),
+		group('Yeon’s Massacre', '연개소문의 정변', 'Supreme Commander', 'Chunchu & Yeon', 'Euija & Yeon'),
+		group('Kim Yushin', '김유신', 'Nangbi', 'Forty Fortresses', 'The Eastern Star')
 	],
 	'seventh-invasion': [
-		{
-			parent: 'Emperor of the West',
-			label: 'Eastern Fortress',
-			children: [
-				{ title: 'Great River' },
-				{ title: 'Longmen Field' },
-				{ title: 'Eastern Fortress', label: 'The Fall of Yodong' }
-			]
-		},
-		{
-			parent: 'Stallion Mountain',
-			children: [{ title: 'Boiling River' }]
-		}
+		group('Emperor 황제', '황제', 'Four Dragons', 'Yodong', 'Boiling River'),
+		group('Guardian 성주', '성주', 'Stallion Mountain', 'Colossal River', 'Ansi'),
+		group('Jumong', '주몽', 'Haemosu', 'Buyeo', 'Jolbon')
 	],
 	'chunchu-era': [
-		{
-			parent: 'The Hwarang',
-			children: [
-				{ title: 'Harbour Ledgers', label: 'A Girl from the Harbor', after: 'Flowering Youth', expandScenes: true },
-				{
-					title: 'The Harmony Council',
-					label: 'The Three Eternal Hwarang',
-					after: 'Flowering Youth'
-				}
-			]
-		},
-		{
-			parent: 'Bidam’s Rebellion',
-			children: [
-				{ title: 'Suro' },
-				{ title: 'Muryuk' },
-				{ title: 'Seohyun' },
-				{ title: 'Chunchu Goes to the East' }
-			]
-		},
-		{
-			parent: 'The Emperor',
-			children: [
-				{
-					title: 'Death of the Second Emperor',
-					after: 'Shimin & Chunchu',
-					expandScenes: true
-				}
-			]
-		},
-		{
-			parent: 'The Royal Secretariat',
-			label: 'Queen Jinduk',
-			children: [{ title: 'King Muyeol' }]
-		},
-		{
-			parent: 'Hyukgosé',
-			children: [{ title: 'Talhae' }, { title: 'Alji' }]
-		}
+		group('Bidam', '비담', '기 (起)', 'Suro', '승 (承)', 'Muryuk', '전 (轉)', 'Seohyun', '결 (結)'),
+		group('Seungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Royal Secretariat', 'Jiabeng (駕崩)'),
+		group('Chunchu', '춘추', 'King Muyeol', 'Jahee'),
+		group('Hyukgose', '혁거세', 'Hyukgose', 'Talhae', 'Alji')
 	],
 	'fall-of-euija': [
-		{
-			parent: 'Gyebek’s Exile',
-			children: [
-				{ title: 'Sulmun and the Three Princes', myth: true },
-				{ title: 'Heaven–Earth King', myth: true },
-				{ title: 'Sulmun’s Apron', myth: true },
-				{ title: 'Kangrim', myth: true },
-				{ title: 'Gameunjang', myth: true },
-				{ title: 'Jacheongbi', myth: true },
-				{ title: 'Baekjuto and Socheon-guk', myth: true },
-				{ title: 'Sanbangduk', myth: true },
-				{ title: 'The Tribute of Oranges', myth: true }
-			]
-		},
-		{
-			parent: 'Euija’s Descent',
-			children: [
-				{ title: 'Euija’s Coup', label: 'The Coup' },
-				{ title: 'Black Rock', label: 'Nightmares' },
-				{ title: 'The Nine Plagues', label: 'Nine Omens' },
-				{ title: 'Five Thousand' },
-				{ title: 'The Fifth Year' }
-			]
-		}
+		group(
+			'Tamla',
+			'탐라',
+			'Exile',
+			'Heaven–Earth King',
+			'Sulmun',
+			'Three Princes',
+			'Stone Lady',
+			'Gardener',
+			'Kangrim',
+			'Tribute'
+		),
+		group('Euija', '의자', 'Coup', 'Descent', 'Nine Omens', 'Onjo'),
+		group('Three Loyalists', '삼충신', 'Sungchung', 'Heungsu', 'Gyebek')
 	],
 	'fall-of-baekje': [
-		{
-			parent: 'Yellow Mountain Fields',
-			children: [
-				{ title: 'Sabi Palace' },
-				{ title: 'The Death of Buyeo Euija' },
-				{ title: 'The Seven Branched Sword' }
-			]
-		},
-		{
-			parent: 'The Death of Kim Chunchu',
-			children: [{ title: 'The Four Beasts' }]
-		},
+		group('Fall of Baekje', '백제 멸망', 'Yellow Mountain', 'Sabi', 'Buyeo Euija†', 'Kim Chunchu†'),
+		group('Baekje Restoration Army (BRA)', '백제 부흥군', 'Ungjin Commandery', 'King Pungjang')
 	],
 	'final-stand': [
-		{
-			parent: 'Snake River',
-			children: [{ title: 'The Surrender of Tamla', after: 'Yumla Defied' }]
-		},
-		{
-			parent: 'The Death of Yeon Gesomun',
-			children: [
-				{ title: 'The Brothers’ Coup', after: 'King Yumla', expandScenes: true }
-			]
-		}
+		group('Four Beasts', '사신', 'Pyongyang I', 'Snake River', 'Tamla Surrenders'),
+		group('Kudara', '구다라', 'Rebellion', 'Betrayal', 'White River'),
+		group('Brothers', '형제', 'Yeon Gesomun†', 'Brothers’ Coup', 'Pyongyang II')
 	],
 	'silla-tang-war': [
-		{
-			parent: 'The Death of Kim Yushin',
-			children: [{ title: "The Wanggeom's Guest" }]
-		},
-		{
-			parent: 'Maeso Fortress',
-			label: 'Final Battles',
-			children: [{ title: 'Strike Harbor', after: 'Maeso Fortress' }]
-		}
+		group(
+			'Protectorate-General',
+			'안동도호부',
+			'Mount Gain',
+			'Dangun & Old Joseon',
+			'Anseung',
+			'Letters',
+			'Stone Gate',
+			'Wonsul'
+		),
+		group(
+			'Supreme Marshal',
+			'태대각간',
+			'Kim Yushin†',
+			"The Wanggeom's Guest",
+			'Inmun',
+			'Maeso',
+			'Final Ford',
+			'The King for All'
+		)
 	]
 };
 
-/** TOC dot: white for a flashback, light purple for a Tamla myth. */
-export type TocMark = 'flashback' | 'myth';
-
-export type TocLeaf = {
+export type TocEpisode = {
 	id: string;
+	/** `chapter.episode` in story order — `7.13`. */
+	num: string;
 	title: string;
-	year?: string;
-	kind: 'entry' | 'scene' | 'flashback' | 'day';
-	mark?: TocMark;
+	/** Korean title (`entry.subtitle`), shown when the reader picks Korean. */
+	ko?: string;
+	/** Material Symbol categories after the title — only episodes that fit (love, battle, myth…). */
+	kinds: EpisodeKind[];
 };
 
-/** Spine-row mark: episodes stored as flashbacks to an earlier era. */
-export function entryMark(en: Entry): TocMark | undefined {
-	return en.flashback ? 'flashback' : undefined;
+function groupOf(chapterId: string, title: string): TocGroup | undefined {
+	return CHAPTER_GROUPS[chapterId]?.find((g) => g.titles.includes(title));
 }
 
-function sceneLeaf(scene: SceneRef): TocLeaf {
-	return {
-		id: scene.id,
-		title: scene.title,
-		kind: scene.kind,
-		mark: scene.kind === 'flashback' ? 'flashback' : undefined
-	};
+/** The group a spine row heads, if this entry opens one. */
+function groupHeadedBy(chapterId: string, title: string): TocGroup | undefined {
+	return CHAPTER_GROUPS[chapterId]?.find((g) => g.titles[0] === title);
 }
 
-const nestedTitleSets = new Map<string, Set<string>>();
-for (const [chapterId, nests] of Object.entries(CHAPTER_NESTS)) {
-	const set = new Set<string>();
-	for (const nest of nests) {
-		for (const child of nest.children) set.add(child.title);
-	}
-	nestedTitleSets.set(chapterId, set);
+export function spineLabel(ch: Chapter, en: Entry, ko = false): string {
+	const g = groupHeadedBy(ch.id, en.title);
+	if (ko) return g?.ko ?? en.subtitle ?? en.title;
+	return g?.label ?? en.title;
 }
 
-export function isNestedChild(chapterId: string, title: string): boolean {
-	return nestedTitleSets.get(chapterId)?.has(title) ?? false;
+const ROMAN: Record<string, number> = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6 };
+
+/** `Part II` → `제2부`. */
+export function partLabel(part: string, ko = false): string {
+	if (!ko) return part;
+	const n = ROMAN[part.replace(/^Part\s+/i, '').trim()];
+	return n ? `제${n}부` : part;
 }
 
-export function nestChildren(chapterId: string, parentTitle: string): NestedLeaf[] {
-	return CHAPTER_NESTS[chapterId]?.find((n) => n.parent === parentTitle)?.children ?? [];
-}
-
-export function spineLabel(ch: Chapter, en: Entry): string {
-	return CHAPTER_NESTS[ch.id]?.find((n) => n.parent === en.title)?.label ?? en.title;
-}
-
-/** Episode titles that stay on the chapter spine (parents + ungrouped siblings). */
+/** Spine rows: group heads plus ungrouped episodes. */
 export function spineEntries(ch: Chapter): Entry[] {
-	return ch.entries.filter((en) => !isNestedChild(ch.id, en.title));
+	return ch.entries.filter((en) => {
+		const g = groupOf(ch.id, en.title);
+		return !g || g.titles[0] === en.title;
+	});
 }
 
-function childLeaf(ch: Chapter, child: NestedLeaf, ep: Entry): TocLeaf {
+/** One numbered TOC episode row. */
+export function tocEpisode(ch: Chapter, en: Entry): TocEpisode {
 	return {
-		id: entryId(ch.id, ep.title),
-		title: child.label ?? ep.title,
-		year: ep.year,
-		kind: 'entry',
-		mark: child.myth ? 'myth' : entryMark(ep)
+		id: entryId(ch.id, en.title),
+		num: episodeNumber(chapters.indexOf(ch), ch.entries.indexOf(en)),
+		title: en.title,
+		ko: en.subtitle,
+		kinds: episodeKindsOf(en)
 	};
 }
 
-function pushChild(
-	ch: Chapter,
-	child: NestedLeaf,
-	ep: Entry,
-	leaves: TocLeaf[]
-) {
-	leaves.push(childLeaf(ch, child, ep));
-	if (!child.expandScenes) return;
-	const cid = entryId(ch.id, ep.title);
-	for (const cs of scenesOf(ep.blocks, cid)) leaves.push(sceneLeaf(cs));
+/** Every episode under a group's spine row, head included, in story order; empty for an ungrouped row. */
+export function groupEpisodes(ch: Chapter, en: Entry): TocEpisode[] {
+	const g = groupHeadedBy(ch.id, en.title);
+	if (!g) return [];
+	return ch.entries.filter((e) => g.titles.includes(e.title)).map((e) => tocEpisode(ch, e));
 }
 
-export function tocLeavesFor(ch: Chapter, en: Entry, eid: string, readingEntry: Entry): TocLeaf[] {
-	const byTitle = new Map(ch.entries.map((e) => [e.title, e]));
-	const nested = nestChildren(ch.id, en.title);
-	const placed = new Set<NestedLeaf>();
-	const leaves: TocLeaf[] = [];
-	for (const s of scenesOf(readingEntry.blocks, eid)) {
-		leaves.push(sceneLeaf(s));
-		for (const child of nested) {
-			if (child.after !== s.title) continue;
-			const ep = byTitle.get(child.title);
-			if (!ep) continue;
-			placed.add(child);
-			pushChild(ch, child, ep, leaves);
-		}
-	}
-	for (const child of nested) {
-		if (placed.has(child)) continue;
-		const ep = byTitle.get(child.title);
-		if (!ep) continue;
-		pushChild(ch, child, ep, leaves);
-	}
-	return leaves;
-}
-
-/** True if this episode or any of its TOC children is the scroll/episode target. */
-export function branchContains(leaves: TocLeaf[], activeEntry: string, sceneId: string): boolean {
-	if (!activeEntry && !sceneId) return false;
-	return leaves.some((leaf) => leaf.id === activeEntry || leaf.id === sceneId);
-}
-
-/** Dev check: nested titles exist on the chapter. */
+/** Dev check: every grouped title exists on its chapter, sits in one group, and groups are contiguous. */
 export function assertTocNests(): string[] {
-	const missing: string[] = [];
+	const problems: string[] = [];
 	const byId = new Map(chapters.map((c) => [c.id, c]));
-	for (const [chapterId, nests] of Object.entries(CHAPTER_NESTS)) {
+	for (const [chapterId, groups] of Object.entries(CHAPTER_GROUPS)) {
 		const ch = byId.get(chapterId);
 		if (!ch) {
-			missing.push(`chapter ${chapterId}`);
+			problems.push(`chapter ${chapterId}`);
 			continue;
 		}
-		const titles = new Set(ch.entries.map((e) => e.title));
-		for (const nest of nests) {
-			if (!titles.has(nest.parent)) missing.push(`${chapterId} / parent ${nest.parent}`);
-			for (const child of nest.children) {
-				if (!titles.has(child.title)) missing.push(`${chapterId} / ${child.title}`);
-			}
+		const order = ch.entries.map((e) => e.title);
+		const seen = new Set<string>();
+		for (const g of groups) {
+			const idx = g.titles.map((t) => order.indexOf(t));
+			g.titles.forEach((t, i) => {
+				if (idx[i] < 0) problems.push(`${chapterId} / ${g.label} / missing ${t}`);
+				if (seen.has(t)) problems.push(`${chapterId} / ${t} in two groups`);
+				seen.add(t);
+			});
+			if (idx.some((n, i) => i > 0 && n !== idx[i - 1] + 1)) problems.push(`${chapterId} / ${g.label} not contiguous`);
 		}
 	}
-	return missing;
+	return problems;
 }

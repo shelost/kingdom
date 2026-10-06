@@ -5,6 +5,7 @@
  */
 export const SITE_LINKS = [
 	{ href: '/', label: 'Chronicle', icon: 'auto_stories', tab: true },
+	{ href: '/episodes', label: 'Episodes', icon: 'video_library', tab: true },
 	{ href: '/wiki', label: 'Wiki', icon: 'menu_book', tab: true },
 	{ href: '/characters', label: 'Characters', icon: 'hub', tab: true },
 	{ href: '/map', label: 'Map', icon: 'map', tab: false },

@@ -69,7 +69,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'harmony-council-632',
 		title: 'Harmony Council — first night, High Councillor Euljé',
-		entryTitles: ['Queen Sunduk'],
+		entryTitles: ['Harmony Council'],
 		place: 'Eastern Palace pond pavilion (pl_eastern_palace) — tea, wooden pieces, flame red then blue',
 		why: 'The chronicle’s first council: elderly High Councillor Euljé chairs; Bidam speaks; Alchun is the last sleeve, not the chair. The three eternal hwarang are classmates, not the old first chair.',
 		canon: 'SAME pavilion every cut. High Councillor is Euljé (ch_eulje) — grey, elderly statesman, #6a8ab8 rim. Alchun is a young hwarang councillor who flips the last piece — NEVER the high councillor. Bidam, Yushin, Alchun: three eternal hwarang. Blue flame after red. Tea and wooden pieces. High contrast. One of each named person.',
@@ -98,7 +98,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gyebek-naming',
 		title: 'White River — nineteen dives, then a name',
-		entryTitles: ['The Eight Great Clans'],
+		entryTitles: ['Prince Euija'],
 		place: 'White River mouth below Sabi (pl_white_river, pl_sabi_palace)',
 		why: 'Euija in commoner disguise meets a nameless boy who keeps diving. He names him Gyebek. Memory: houses burn, he runs, he begs.',
 		canon: 'Young Euija: GRAY disguise robe, NO large beard (ch_euija_young), amber #e08a2e key. Gyebek: the BOY sheet ch_gyebek_boy — WHITE hanbok, short-medium hair, consistent child, #d9b13a key. 2D cel. Caravaggio. Loud faces. NO glow. Baekgang is a trading estuary (pl_white_river, pl_sabi_port), not an empty graphic river.',
@@ -116,7 +116,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'clan-tourney',
 		title: 'Sabi — princes in the white square',
-		entryTitles: ['The Eight Great Clans'],
+		entryTitles: ['Eight Great Clans'],
 		place: 'Sabi tournament yard (pl_sabi_tourney) — crushed-black packed earth, rotated white chalk square, gold #FFCB51 shaft, two-tier munru as a dark bar',
 		why: 'The clans keep score; the bodies on the chalk are Euija’s five named sons in white. Same square every cut. Every frame a painting.',
 		canon: 'LOCK to pl_sabi_tourney every still: wet crushed-black earth, ONE rotated white chalk square, one gold #FFCB51 sun-stripe through it, two-tier munru as a dark giwa bar. EVERY FRAME A PAINTING — one geometry owns the frame. Princes FACE from ch_yung / ch_tae / ch_hyo / ch_yun — WHITE training silk only, NEVER the red court portraits. Yung vs Hyo on the sword; Tae vs Yun on satba; Pung too small, watches from the hall bar. Chronology: square → they step → mid-strike → dutch skim → OTS → point → satba → lift → throw → steps. No army. No glow. No plaque text.',
@@ -136,7 +136,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gesomun-pyongyang',
 		title: 'Gesomun rides into Pyongyang',
-		entryTitles: ['The Summit'],
+		entryTitles: ['Commander Yeon', 'High Summit'],
 		place: 'Yeon snow fortress (pl_yeon_fortress) then Pyongyang river-city (pl_pyongyang_city)',
 		why: 'The Red Sun leaves the highland Eastern Hall and enters the capital for the High Summit. Mountain house first, then the city.',
 		canon: 'TWO PLACES. Snowy Yeon mountain fortress is NOT Pyongyang. Pyongyang is a Taedong river CITY — dense giwa, walls, quay. Grey steel, red-wing #C30000 / #d0362f. One rider. 2D cel. Caravaggio key. No glow. No army catalog. Dutch crane, then worm’s-eye gate, then hall.',
@@ -184,7 +184,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gotaso-road',
 		title: 'Gotaso — lantern market to the carry home',
-		entryTitles: ['Gotaso’s Wedding'],
+		entryTitles: ['Gotaso'],
 		place: 'Surabol lantern street → night ford → nineteen-li road. Timber shops, packed earth, then river.',
 		why: 'The chapter’s first film: she is taken, they find the road, he carries her. Existing stills skip the street and the ford.',
 		canon: 'ICONIC MINIMAL night film. DUTCH wides. Lanterns as a bokeh-orb device, not a shop dump. 2D cel, no halo. Chunchu magenta #D8258C, Gotaso pink #F0A3C0, tiny or lower-third. Two people per frame. Crushed blacks, one hard key.',
@@ -235,7 +235,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'hwangsan',
 		title: 'Yellow Mountain Fields',
-		entryTitles: ['Yellow Mountain Fields'],
+		entryTitles: ['Yellow Mountain'],
 		place: 'Hwangsanbeol / Yeonsan — yellow grass, Maebong, three palisades',
 		why: 'Baekje’s last arithmetic: 5,000 against 50,000. Steel lamellar both sides; yellow vs Confucian-blue cloth peek. Gyebek’s wait → charge → collapse.',
 		canon: 'Wide place first, then palisade, gallop, clash, last stand. Steel-gray plates, character-hex cloth, high contrast, one device per cut.',
@@ -268,7 +268,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gaya-muryuk',
 		title: 'Muryuk — fight to surrender',
-		entryTitles: ['The Severing', 'Muryuk'],
+		entryTitles: ['Muryuk', 'The Severing'],
 		place: 'Gwansanseong ridge, then Jinheung’s hall',
 		why: 'Gaya’s last prince plus Sadaham’s 562 vanguard: cone helm at Gwansanseong, then Jinheung’s hall; True Bone is the price. Fight → Sadaham gate → surrender → rank.',
 		canon: 'Lock the tall Gaya cone. Steel plates, purple cloth peek. Night ridge dutch, then hall. Sadaham ice-blue #6fa8ff under Silla steel.',
@@ -290,7 +290,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gyebek-general-killer',
 		title: 'Hundred-Victories — one cut on the pass',
-		entryTitles: ['Gyebek’s Exile'],
+		entryTitles: ['Exile'],
 		place: 'An empty stubble field on the Silla border at storm dusk',
 		why: 'How Gyebek earned the name: Gomanari, the fastest horse in Samhan, out of an empty field at one man, one reverse-grip cut, gone before the escort draws. Painted wides bracket a run of manga action frames.',
 		canon: 'Gyebek FACE from ch_gyebek but never its curved sword: straight ring-pommel blade (sw_bidam), reverse grip, ring above the thumb. Gomanari jet-black from obj_gomanari. Silla blue crescent banners, cone helms. Action beats use MANGA_ACTION (speed lines, focus lines, impact flash, extreme foreshortening). No gore.',
@@ -327,7 +327,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'sadaham-hwarang',
 		title: 'Sadaham — first class',
-		entryTitles: ['The Hwarang', 'Muryuk'],
+		entryTitles: ['Bupmin', 'Muryuk'],
 		place: 'Hwarang eaves, then Gaya seong, then empty bowl',
 		why: 'Fifteen on the vanguard; Mugwan vow; seven days without food. Ice-blue #6fa8ff is the person.',
 		canon: 'Steel on campaign stills; Hwarang coats on the vow. Intimate grief for seven days. High contrast. One of each named person.',
@@ -348,7 +348,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'yeon-massacre',
 		title: 'Yeon’s Massacre',
-		entryTitles: ['Yeon’s Massacre'],
+		entryTitles: ['Supreme Commander'],
 		place: 'Pyongyang banquet hall — same timber, one flame, then the door',
 		why: 'The coup that makes Gesomun. Already ink-red; needs a film chronology: lamps → speech → blades → red-wing door.',
 		canon: 'Locked hall. Gesomun is red #d0362f. Five pommels as a device. No army catalog.',
@@ -363,7 +363,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'secretariat',
 		title: 'Royal Secretariat',
-		entryTitles: ['The Royal Secretariat', 'King Muyeol'],
+		entryTitles: ['Huangdi (皇帝)', 'Royal Secretariat'],
 		place: 'Silla palace interior — Tang-style official silk vs Harmony Council’s empty chairs',
 		why: 'Power moves from round council to Tang bureaucracy. Dramatic interiors, rank clothes, Chunchu as Muyeol.',
 		canon: 'Same hall. Tang coat vs Silla bone. Dutch / OTS / ECU. No furniture dump — one table or none. Chunchu #D8258C is the plane.',
@@ -380,7 +380,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'taizong-chunchu-meet',
 		title: 'Taizong and Chunchu — hall, then go',
-		entryTitles: ['The Emperor'],
+		entryTitles: ['Huangdi (皇帝)'],
 		place: 'Inside Daming Palace: night audience hall (vermilion colonnade, real dais with stairs), then a side chamber of the same palace for go',
 		why: 'The 648 meeting as grounded film: court first, then one-on-one go. Li Shimin in yellow dragon yuanlingpao; Chunchu magenta. Emperor sits higher.',
 		canon: 'REAL Daming interior every cut — vermilion columns, stone floor, oil-lamp, dais with stairs attached to the floor. NOT a floating yellow box, NOT a graphic void, NOT a bird’s-eye dollhouse. Worm’s-eye. Dark, yellow silk highlights. Two people. Same hall for shots 1–4; same side chamber for shots 5–8. Chronology: enter → kneel → Spring-and-Autumn → private go → name gift.',
@@ -433,7 +433,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'jumong-amnok-myth',
 		title: 'Jumong — Amnok myth (sisters, copper, Habek)',
-		entryTitles: ['Jumong'],
+		entryTitles: ['Haemosu'],
 		place: 'Amnok / Ubal shallows — real river, wet rocks, same five-dragon gold wheeled sun-chariot; copper room on the bank. Habek’s court is INSIDE pl_amnok_pavillion (open floor, posts, railing, river only through the openings, wooden bridge off the cliff) — not a backdrop plate',
 		why: 'Haemosu falls for all three river-daughters; only Yuhwa stays. Sequential landing + sun-stare banter, then copper heat, then Habek’s exile. Film, not a one-line kick-out.',
 		canon: 'LOCK: /pl_amnok_river.png every Earth Amnok cut (braided river, ridges, alpenglow — not a night void). SAME chariot forever (two spoked wheels, rail, floor, yoke; five PLAYFUL dragons gold/crimson/azure/jade/white). Copper kiln on that bank only. Haemosu = sun: gold #f0b429 light-planes + copper reflections wherever he stands indoors — never a body-halo. SAME Amnok bank every Earth cut. SAME five-dragon gold chariot (do not invent a new one). Hwahye FACE ch_hwahye, Wihye FACE ch_wihye, Yuhwa ch_yuhwa + bn_yuhwa, Habek ch_habek, Haemosu ch_haemosu. Yuhwa blue #8fc4e0 + bn_yuhwa, Hwahye purple #8a62c4 + bn_hwahye, Wihye green #4fad72 + bn_wihye. Haemosu gold #f0b429 / #7fc4e8 as light not costume paint. Sisters dive; Yuhwa is the only one who does not run. Light is a plane/shaft, never a body-halo. Intimate sex stills stay skin-forward, faces want. Black pupils. Chronology: tiny chariot noon → look-down → three in the water → sisters dive → Yuhwa stays → falling-in-love rail → lands/wades → sun-stare banter → lead to copper → copper kiss/heat → Habek court → exile walk.',
@@ -480,7 +480,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'haemosu-yuhwa-amnok',
 		title: 'Haemosu & Yuhwa — Amnok dusk to copper',
-		entryTitles: ['Jumong'],
+		entryTitles: ['Haemosu'],
 		place: 'Amnok / Ubal shallows — real river, wet rocks; same five-dragon gold wheeled sun-chariot; copper room on the bank. Habek’s court is INSIDE pl_amnok_pavillion (open floor, posts, railing, river only through the openings, wooden bridge) — not a backdrop plate',
 		why: 'Haemosu falls; only Yuhwa stays. Sequential landing, sun-stare banter, she leads to copper. SFW/NSFW parallels on the same ats. Habek exile stays thin.',
 		canon: 'LOCK: /pl_amnok_river.png every Earth Amnok cut (braided river, ridges, alpenglow — not a night void). SAME chariot forever (two spoked wheels, rail, floor, yoke; five PLAYFUL dragons gold/crimson/azure/jade/white). Copper kiln on that bank only. Haemosu = sun: gold #f0b429 light-planes + copper reflections wherever he stands indoors — never a body-halo. SAME Amnok bank every Earth cut. SAME five-dragon gold chariot (do not invent a new one). Hwahye FACE ch_hwahye, Wihye FACE ch_wihye, Yuhwa ch_yuhwa + bn_yuhwa, Habek ch_habek, Haemosu ch_haemosu. Yuhwa blue #8fc4e0 + bn_yuhwa, Hwahye purple #8a62c4 + bn_hwahye, Wihye green #4fad72 + bn_wihye. Haemosu gold #f0b429 as light not costume paint. Sisters dive; Yuhwa is the only one who does not run. Light is a plane/shaft, never a body-halo. Intimate sex stills stay skin-forward, faces want. Black pupils. Chronology: empty bank → usual tiny chariot → sisters dive → stay → falling-in-love → lands/wades → sun-stare banter (SFW talk / NSFW hike parallel) → lead to copper → SFW kiss + NSFW heat → Habek cast-out.',
@@ -520,7 +520,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'yuhwa-fox-exile',
 		title: 'Yuhwa — kicked out, the sun-fox, Geumwa',
-		entryTitles: ['Jumong'],
+		entryTitles: ['Haemosu'],
 		place: 'Habek’s court INSIDE pl_amnok_pavillion (dark giwa, timber walkway, braided Amnok below). Exile road: real Korean earth. Arrival: pl_northern_buyeo then pl_buyeo_palace path',
 		why: 'The kick was a look; then she sits; the sky talks; the fox walks her to Buyeo. Needs film, not a gold sticker on watercolor.',
 		canon: 'LOCK pavilion to /pl_amnok_pavillion.png — same dark giwa, same walkway, same braided river. Yuhwa FACE ch_yuhwa + bn_yuhwa; ice-blue silky jeogori+chima #8fc4e0, clothed, NOT the bathing nude-back clone. Habek FACE ch_habek, ice-blue river silk, #2f8f7a as mist/bounce not a body halo. Fox BODY from /obj_haemosu_fox.png: pale cream-white sun-fox, flowing fur; ignore the orange sticker outline; #f0b429 as real light on the fur, NEVER a halo on Yuhwa. Haemosu is a sky voice — gold light-plane in cloud, no body on the voice cut. Geumwa red-burgundy from ch_geumwa, not gold-plated; #a89a72 dusty bounce. Earth skies natural. HIGH CONTRAST. 2D cel-painterly. Chronology: pavilion wide → dutch kick → walkway stumble → dejected sit → ECU → sky voice → fox appears → fox lookback → follow south → pine → pass → Buyeo ridge → Geumwa path → come in.',
@@ -538,7 +538,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'jumong-buyeo-north',
 		title: 'Jumong — Northern Buyeo, egg to the four',
-		entryTitles: ['Jumong'],
+		entryTitles: ['Haemosu', 'Buyeo'],
 		place: 'Northern Buyeo — pl_buyeo_palace is the hillside complex (path, stone terraces, giwa halls, lower thatched hut). Camera stands on the path or inside that hut; the plate is not a backdrop. City-wide cuts may still use pl_northern_buyeo daylight',
 		why: 'Open on 16:9 exposition wides of the same timber capital so Buyeo is a place, then hatch and brothers live inside that geography.',
 		canon: 'LOCK to pl_northern_buyeo every Earth cut. SAME mountain, giwa city, river, blue sky and white clouds — daylight, not dusk crushed black. Yard is sun on packed earth. All exposition 16:9 (1.778) — not 3:4 posters, not ECU-only. Geumwa red-burgundy from ch_geumwa (not gold-plated). Jumong red #e8563f, grin until the knife. CLEAN-SHAVEN — NO mustache, NO goatee; ignore facial hair on ch_jumong. Daeso #9b8f6a too close. Galsa sage #6b8f4a delayed smile. Yuhwa ice-blue court silk, FACE from ch_yuhwa, not the bathing wrap. Hatch is a WET NEWBORN plus a WIDE of room+yard through the door. Do not remake jumong-buyeo-egg. Friends anonymous silks, never clone Jumong. They split in the pines; friends do NOT ride the fish/turtles and do NOT walk into Jolbon here — reunion is the Pine Kingdom sequence. Chronology: capital → yard → roof → dutch yard → gate → river-edge → hall interior → sun-shaft → egg → hatch-room wide → hatch → hatch worm → hatch hold → childhood tiny → boys → youths → fly-wing → mark → knife → night palisade → four → pine net → split. No army. No glow-halo.',
@@ -602,7 +602,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'haemosu-haewonmek-night',
 		title: 'Jumong — Haemosu stops Haewonmek, living ford',
-		entryTitles: ['Jumong'],
+		entryTitles: ['Buyeo'],
 		place: 'Night rain Amnok (pl_white_river) — reed banks, moon-haze, SAME five-dragon gold chariot; living 자라 ford',
 		why: 'Beat-by-beat film: run → army net → trip/pass-out → encounter over an unseen Jumong → wrist-stop → whisper from behind → inspiration looking at water → shout at the ford → spaced turtles → that’s-my-boy. Jumong never sees the gods.',
 		canon: 'LOCK pl_white_river banks/reeds/hills only — NO boats, NO pier. Haemosu = sun: gold #f0b429 as a LIGHT-PLANE, never a body-halo. SAME chariot (two spoked wheels, rail, floor, yoke; dragons gold/crimson/azure/jade/white). Haewonmek: black gat, cobalt sash, black mouth-band, FACE ch_haewonmek. Jumong CLEAN-SHAVEN, red #e8563f, FACE ch_jumong (ignore facial hair). HARD RULE: Jumong cannot see either god — no look, reach, talk-to-face, or eye contact; eyeline is river / dirt / empty dark. Whisper is at the ear from behind. Army = tiny anonymous silhouettes, no catalog, no named faces. LOCKED FORD: Korean 자라 — flattened olive-brown leathery oval discs, same species every still; dark carp backs; ONE-SHELL-WIDTH water gaps (a run, not a pile). No giant leatherback. No gold-ring path. Chronology: run → spears in the dark → trip → face-in-grit → pass-out → reaper over unconscious → gold plane → wrist → god talk → whisper-behind → idea looking at water → shout at ford → turtles rise → night ford → dutch run → gods watch → jolly → boy ECU → ledger ECU → that’s-my-boy.',
@@ -640,7 +640,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'jumong-jolbon-end',
 		title: 'Jumong — founding timber, cavern dawn, succession hint',
-		entryTitles: ['Jumong'],
+		entryTitles: ['Jolbon'],
 		place: 'Jolbon timber courtyard + SAME Jumong cavern (pl_jumong_cave)',
 		why: 'The entry ended thin after the cavern joke. Founding wide, cavern OTS, king/queen timber, bow waiting.',
 		canon: 'Jolbon: real giwa, packed earth, natural sky. Cavern: lock pl_jumong_cave. Dongmyung FACE ch_dongmyung, Sosuno dusty-rose, Haemosu photoreal in the dawn plane. Jumong #e8563f. Light is a plane. Black pupils. No army.',
@@ -656,7 +656,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'jumong-sosuno-tsun',
 		title: 'Sosuno — tsundere at Jolbon well',
-		entryTitles: ['Jumong', 'Onjo'],
+		entryTitles: ['Jolbon'],
 		place: 'Jolbon: pine road, timber hall, grain porch, SAME stone well (rim, timber beam, two buckets), packed earth, grey giwa',
 		why: 'Scouts drag a wet exile to Tabal. First look is four beats, not one crack: stern girl-boss → stupid love (Jumong in the void) → lustful Little Sosuno in her head → snap-back chin-up. Then loft, well, daughters, pine. Loft heat LOCK paint: nsfw-jumong-sosuno-loft-dutch-spread (dutch, gritted tsun flush, hiked dusty-rose, millet loft).',
 		canon: 'LOCK Tabal night hall: torch pools ONLY, crushed blacks, timber posts, no daylight leftover. LOCK Jolbon well EVERY well-cut: round granite rim, timber beam, hemp rope, two buckets on packed earth, nobody in the shaft, grey giwa hall. SAME Jolbon well every well-cut: round granite rim, timber beam, hemp rope, two buckets on packed earth, nobody in the shaft, grey giwa hall, grain porch left. Dusty-rose #e8a04a hanbok, not gold. Jumong red #e8563f. CLEAN-SHAVEN pre-king — NO mustache, NO goatee; ignore facial hair on ch_jumong. Tabal first encounter is DEAD OF NIGHT — torch pools only, crushed blacks, no daylight. First-summit coronation LOCK: /temp/crown-cord-tabal.jpg (setting/pose — vermilion thread, five fires, packed earth, giwa). King FACE ch_dongmyung. Tabal FACE ch_yeon_tabal. Four other chiefs FACE ch_cow_chief / ch_pig_chief / ch_dog_chief / ch_horse_chief — ONE of each, a RING of bowed backs, Jumong center, Tabal placing the cord. Queen at the rail: ch_sosuno_queen + bn_sosuno. Shot variety: bird’s-eye, top-down, ECU, dutch wide, OTS, worm’s-eye. Cavern stills lock to pl_jumong_cave.',
@@ -811,7 +811,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'jumong-songyang',
 		title: 'Jumong — Song Yang / Pine Kingdom',
-		entryTitles: ['Jumong'],
+		entryTitles: ['Jolbon'],
 		place: 'Pine Kingdom (소나무 나라) — real Korean pines, timber giwa hall as a dark bar, packed-earth mark-yard; contest here, not Tabal’s Jolbon square',
 		why: 'After the cord: king and queen learn Oi, Mari, and Hyupbo reached the Pine Kingdom. They annex Song Yang’s pine roof to get the three back. One bow, one yard, not an army. Song Yang yields; the three return. Then the cavern.',
 		canon: 'AFTER jumong-sosuno-tsun crown shots. LOCK pine yard: real Korean pines, timber giwa hall as dark bar, packed-earth mark — not Jolbon well cousins. LOCK pine timber + real pines every Earth cut. Do NOT caption the country 비류 / Biryu. Korean display: 소나무 나라. FACE from royal sheets: King Jumong ch_dongmyung (gold crown, red dragon robe) NOT exile ch_jumong; Queen Sosuno ch_sosuno_queen + bn_sosuno NOT worker dusty-rose ch_sosuno. Song Yang FACE ch_songyang, pine-ochre #c4a35a rim not gold-plate. Friends anonymous earth-tone silks — never clone Jumong, never invent faces. Shot variety: dutch Jolbon news, bird’s-eye pine wide, worm’s-eye draw, dutch short, OTS yield, dusk reunion. No army catalog. Black pupils.',
@@ -849,7 +849,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'bidam-father-hwarang',
 		title: 'Bidam — first Hwarang morning',
-		entryTitles: ['The Harmony Council'],
+		entryTitles: ['기 (起)'],
 		place: 'Surabol Hwarang yard — packed earth, timber gate (after 645 veto, as memory)',
 		why: 'After Bidam’s solo veto, the father’s If: walk alone toward the truth.',
 		canon: 'Young Bidam FACE from ch_bidam_hwarang. Father FACE from ch_bidam_old as Son Sukwon. Navy #141C2E. Beads. Packed earth. One device. High contrast. 2D cel-painterly.',
@@ -860,7 +860,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'bidam-rebellion-splash',
 		title: 'Bidam’s Rebellion — cavern water',
-		entryTitles: ["Bidam’s Rebellion"],
+		entryTitles: ['승 (承)'],
 		place: 'Steam cavern (pl_cave) then Radiance 정자 night',
 		why: 'Bupmin at 21 first meets the goddesses; splash fails; Bidam laughs alive.',
 		canon: 'Bupmin ch_bupmin_hwarang painterly #C41E3A. Goddesses photoreal-numinous, living eyes (not oracle glow). Bidam navy beads. Yushin Confucian blue standing. Splash is political, not sex. Same 정자 as other Radiance nights.',
@@ -876,7 +876,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'bidam-rebellion-cinema',
 		title: 'Bidam’s Rebellion — lineage, tea, black bands, Radiance',
-		entryTitles: ["Bidam’s Rebellion"],
+		entryTitles: ['승 (承)', '전 (轉)', '결 (結)'],
 		place: 'Steam cavern (pl_cave) · night 정자 · Radiance fortress (pl_radiance_fortress)',
 		why: 'Cavern lineage, tabletop nights, age-scored duels, rebel black headbands, Bidam–Yumjong at the gate.',
 		canon: 'Yushin CLEAN-SHAVEN from ch_kim_yushin. Father ch_kim_seohyun, grandfather ch_kim_muryuk. Bidam navy #141C2E + BLACK HEADBAND. Yushin #2A5FB8. Place refs drive 3D layout. High contrast. One device. No army carpet.',
@@ -901,7 +901,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'gaya-fall-cinema',
 		title: 'Muryuk — cone and surrender',
-		entryTitles: ['Muryuk', 'Suro'],
+		entryTitles: ['Suro', 'Muryuk'],
 		place: 'Gaya iron coast · Silla hall · night ridge',
 		why: 'Harbour league, last cone fight, Muryuk’s surrender condition.',
 		canon: 'Muryuk FACE from ch_kim_muryuk. Tall Gaya cone. Steel lamellar + purple #8B5CF6 peek. High contrast. One device.',
@@ -914,7 +914,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'xue-longmen-field',
 		title: 'Xue Rengui — Longmen field and hut',
-		entryTitles: ['Longmen Field'],
+		entryTitles: ['Four Dragons'],
 		place: 'Jiangzhou Longmen — rammed-earth hut, millet/sorghum field (not Korean giwa)',
 		why: 'The Xin Tangshu wife speech lives here: poverty, graves, yellow peasant cloth, then the ji. Needs a dedicated farm sequence, not a Stallion Mountain cameo.',
 		canon: 'SAME hut and field every cut. Chinese ink/wash + Northern Song / Tang genre painting grammar: empty mist, one hut, tiny figures or poster-scale peasants. Xue FACE from ch_xue_rengui — NEVER the white armour; PLAIN YELLOW hemp peasant cloth (dye, not a yellow aura). Liu FACE and dusty hemp from ch_xue_liu. Hex #e8e3d5 / #c4a484 as real dawn bounce on earth, not a halo. High contrast. One device. No Korean hanbok. No photoreal. No glow.',
@@ -954,7 +954,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'euija-coup',
 		title: 'Euija’s Coup — martial law at Deer Rock',
-		entryTitles: ['Euija’s Coup'],
+		entryTitles: ['Coup'],
 		place: 'Deer Rock / Rock of Politics (pl_rock_politics) — Sabi Ministers’ Assembly',
 		why: 'Emergency martial law speech → Enabling Law → peace-or-war vote → forty-one sons → Chunbok Premier. Same rock every cut.',
 		canon: 'LOCK pl_rock_politics every still. Euija FACE/garments ch_buyeo_euija, amber #e08a2e as real torch/silk bounce not a halo. Chunbok ch_satek_chunbok. Minister Satek ch_satek_minister. Chronology: wide aisle → dutch speech → trust ECU → wet ink → enabling scroll → peace-or-war → sons grid → Satek stare → Chunbok seal → empty benches. 2D cel. High contrast. One device. No readable text. No glow.',
@@ -974,7 +974,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'seongchung-heungsu-rings',
 		title: 'Seongchung & Heungsu — the ring and the passes',
-		entryTitles: ['Euija’s Descent', 'The Three Loyalists'],
+		entryTitles: ['Descent', 'Heungsu'],
 		place: 'Sabi hall and prison (pl_sabi_palace); Gomamiji posting; White River / Gibeolpo (pl_white_river); Tanhyeon switchback',
 		why: 'The two jwapyeong who named Chimhyeon and Gibeolpo. Ring-pommels in the room: hall yank, prison post, posting door, mud, Yushin’s fish-ring on the pass they begged to hold.',
 		canon: 'FACE ch_seongchung / ch_heungsu / ch_buyeo_euija / ch_gyebek / ch_kim_yushin. Baekje 환두대도 from sword_lotus; Yushin fish from sword_fish. Hex is REAL lamp/sun bounce on the hollow ring — #c9a24d, #b98f33, #d9b13a, #2A5FB8 — NOT a glow aura. Same Sabi timber; Gomamiji rammed earth; White River mud. Chronology: remonstrate → belt yanked → prison write → Gomamiji threshold → berth two-shot → courier → Euija yes → Tanhyeon already passed → Gibeolpo ring in mud → Yushin climb. 2D cel. High contrast. One device per still. No readable text.',
@@ -1033,7 +1033,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'sulmun-heewon',
 		title: 'Sulmun — the apron',
-		entryTitles: ['Sulmun and the Three Princes'],
+		entryTitles: ['Sulmun'],
 		place: 'The sea before Tamla, then Halla and the oreum (pl_mount_halla).',
 		why: 'She piles the island, spills the hills, slips into the cauldron, and stops one roll short of a bridge.',
 		canon: 'HEEWON painterly. Enormous Sulmun from ch_sulmun — white jeogori, orange chima, cloud hair. Sea at her knee. #7f9c8b as real light on wet stone. No crowd of five hundred. No text.',
@@ -1047,7 +1047,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'princes-heewon',
 		title: 'Three Princes — Samseonghyeol',
-		entryTitles: ['Sulmun and the Three Princes'],
+		entryTitles: ['Three Princes'],
 		place: 'Three holes in Jeju basalt, Halla behind (pl_mount_halla), then the shore and a pond.',
 		why: 'Go, Yang, and Bu rise, divide the island by arrow, and marry what the sea sends in a box.',
 		canon: 'HEEWON painterly. Faces and garments from ch_yang_eulna, ch_go_eulna, ch_bu_eulna. Princesses seen from behind only — no invented faces. Same basalt ground every cut. No text.',
@@ -1061,7 +1061,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'sanbang-fresco',
 		title: 'Sanbangduk — geometric vector',
-		entryTitles: ['Sanbangduk'],
+		entryTitles: ['Stone Lady'],
 		place: 'The cliff at Sanbang. One spring.',
 		why: 'She comes out of the rock for a poor man, and the official sends her back into it. The retreat Gyebek is offered.',
 		canon: 'GEOMETRIC VECTOR: flat hard-edged shapes, no gradients, no brush; the cliff is tessellated basalt hexagons; palette basalt black, deep sea-green, rust, cream, with her #8fb3a8 as the one accent. Face from ch_sanbangdeok, reduced to flat planes. The poor man and the official stay faceless shapes. No text.',
@@ -1070,6 +1070,29 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'sanbang-seq-hand', role: 'not stone', angle: 'hands', at: 'feel like stone' },
 			{ id: 'sanbang-seq-return', role: 'she turns back', angle: 'mid-stride into rock', at: 'the official has the husband killed' },
 			{ id: 'sanbang-seq-spring', role: 'only the spring', angle: 'empty cliff', at: 'The spring inside it has not stopped' }
+		]
+	},
+	{
+		id: 'balhae-winter',
+		title: 'Balhae — the winter walk north',
+		entryTitles: ['Balhae'],
+		place: 'Manchurian mountains the winter after Pyongyang falls: snowfield, ridge, a crack-cave; memory cuts to a burned Mohe doorway and Pyongyang’s north wall.',
+		why: 'The last story in the chronicle needs the cold to be the set: the walk, the cave, the gold, the memory of Yeon, then the boy says the words and the coal goes out.',
+		canon: 'Snow outside in granulated watercolour, cave inside as a tenebrist old-master canvas lit by one small fire. Gulgul #8b3a3a, Joyoung #c45a4a, the crown-branch gold the one bright accent. Memory cuts colder and desaturated; Gesomun before 642 carries one sword. Exactly two people in every frame.',
+		shots: [
+			{ id: 'balhae-snow-ridge', role: 'exposition', angle: 'high wide', at: 'the mountains of Manchuria do not care who won' },
+			{ id: 'balhae-snow-tracks', role: 'in his tracks', angle: 'worm’s-eye from the snow', at: 'His son walks in his tracks' },
+			{ id: 'balhae-smoke-behind', role: 'looking back', angle: 'over-shoulder ridge', at: 'Behind them is the smoke' },
+			{ id: 'balhae-feet', role: 'the drift', angle: 'dutch blizzard', at: 'I can’t feel my feet' },
+			{ id: 'balhae-cave-mouth', role: 'shelter', angle: 'reverse from inside the cave', at: 'The cave is a crack in the mountain' },
+			{ id: 'balhae-gold-seam', role: 'the shine', angle: 'low firelight three-quarter', at: 'small gold shine through a split seam' },
+			{ id: 'balhae-crown-branch', role: 'the crown piece', angle: 'ECU palm', at: 'On his palm lies the gold branch' },
+			{ id: 'balhae-fb-doorway', role: 'memory: the doorway', angle: 'low wide', at: 'A doorway with no house behind it' },
+			{ id: 'balhae-fb-gloves', role: 'memory: the gloves', angle: 'low two-shot', at: 'pulls off his gloves' },
+			{ id: 'balhae-fb-wall', role: 'memory: the catchphrase', angle: 'low behind on the wall', at: 'the river frozen white below' },
+			{ id: 'balhae-coals-turn', role: 'back to the cave', angle: 'coal-light medium', at: 'The fire has sunk to coals' },
+			{ id: 'balhae-joyoung-vow', role: 'the words', angle: 'worm’s-eye from the coals', at: 'Goguryeo never dies…!' },
+			{ id: 'balhae-last-coal', role: 'cut to black', angle: 'near-black insert', at: 'The last coal goes out' }
 		]
 	}
 ];

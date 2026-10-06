@@ -4,10 +4,13 @@
 // `canon` (default on when `people` is set): { year?, battle?, sword?, mounted?, with?: ['gomanari', 'place:hwangsan'] } or false.
 // `prompt` is written back as `scene` + canon block + tail (default: the house suffix); canon refs are merged into `refs`.
 // `ratio` defaults to the house 2:1. Any scene that mentions steel gets sw_bidam.png + the sword anatomy.
+// `style: "battle"` adds HEEWON_BATTLE after the scene and the style_battle boards to `refs`.
+// `style: "ink"` (myth beats) ends the prompt on HEEWON_MYTH_INK + canon instead of the house suffix.
 import fs from 'node:fs';
 import { buildCanon } from '../visual-canon.mjs';
 import { HOUSE_RATIO } from '../crop-ratio.mjs';
 import { SWORD_BLADE_REF, SWORD_STILL_ANATOMY } from '../../src/lib/swords.ts';
+import { HEEWON_BATTLE, BATTLE_STYLE_REFS, HEEWON_MYTH_INK } from '../../src/lib/promptHouse.ts';
 
 const STORY = 'src/lib/data/story.json';
 const HOUSE = 'src/lib/data/image-prompt-house.json';
@@ -27,6 +30,8 @@ const SLOT_KEYS = ['ratio', 'tone', 'at', 'alt', 'prompt', 'refs', 'people'];
 function slotFields(item) {
 	const out = {};
 	for (const k of SLOT_KEYS) if (item[k] !== undefined) out[k] = item[k];
+	/* `chunchu:ambassador` pins a look for the canon; the slot only records who is in frame. */
+	if (out.people) out.people = [...new Set(out.people.map((p) => p.split(':')[0]))];
 	return out;
 }
 
@@ -60,8 +65,15 @@ for (const item of manifest) {
 	}
 	item.ratio ??= HOUSE_RATIO;
 	const canon = withSword(item, canonFor(item, en));
-	item.prompt = [item.scene, canon.text, tail].filter(Boolean).join(' ');
-	const refs = [...new Set([...(item.refs ?? []), ...canon.refs])].filter((r) => typeof r === 'string');
+	const battle = item.style === 'battle';
+	const ink = item.style === 'ink';
+	item.prompt = (
+		ink ? [item.scene, HEEWON_MYTH_INK, canon.text] : [item.scene, battle && HEEWON_BATTLE, canon.text, tail]
+	)
+		.filter(Boolean)
+		.join(' ');
+	const styleRefs = battle ? BATTLE_STYLE_REFS : [];
+	const refs = [...new Set([...(item.refs ?? []), ...canon.refs, ...styleRefs])].filter((r) => typeof r === 'string');
 	if (refs.length) item.refs = refs;
 	const existing = slotsById.get(item.id);
 	if (existing) {

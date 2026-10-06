@@ -29,6 +29,8 @@ export interface ImageSlot {
 	 * “Intimate scenes” on. `true` or `"erotic"` both count as NSFW.
 	 */
 	nsfw?: boolean | 'erotic';
+	/** Kept in story.json and on disk, but left out of the chronicle until reinstated (edit mode → Hide). */
+	hidden?: boolean;
 	/**
 	 * Optional people.ts ids of everyone visible in the still.
 	 * Gallery membership prefers the sidecar `image-people.json`
@@ -125,15 +127,36 @@ export interface Entry {
 	accent?: string; // episode title color — battle entries use red
 	title: string; // "Queen Sunduk"
 	subtitle?: string; // "선덕여왕"
+	/** `images[].id` of the representative still under the title. Omit to use the first landscape still. */
+	thumbnail?: string;
+	/** `'temp'`: show that cue's temp stand-in, not its final `src`. */
+	thumbnailLayer?: 'temp';
 	badges?: string[]; // emoji / flag chips under the title (`flag:silla`, `flag:baekje`, …)
 	music?: string; // track name — shows in the player tag while this entry is read
 	/** Genre voice of this episode — e.g. "political thriller", "island folklore". */
 	tone?: string;
 	/** One-line director's brief expanding on `tone`. */
 	toneNote?: string;
+	/** `PLACES` id — the map pin and place banner beside this episode. */
+	place?: string;
+	/** TOC category icons, in display order; most episodes have none. */
+	kinds?: EpisodeKind[];
+	/** 등장인물 tags under the title, in order. Omit to derive from dialogue and stills (`entryCast`). */
+	cast?: string[];
 	images: ImageSlot[];
 	blocks: Block[];
 }
+
+/** Episode categories that earn a TOC icon. `flashback` is derived from `flash`, never stored. */
+export type EpisodeKind =
+	| 'love'
+	| 'myth'
+	| 'founding'
+	| 'battle'
+	| 'siege'
+	| 'naval'
+	| 'coup'
+	| 'coronation';
 
 export interface Chapter {
 	id: string;
@@ -161,12 +184,24 @@ export function isFlashEntry(entry: Pick<Entry, 'flash' | 'flashback'>) {
 	return !!(entry.flash || entry.flashback);
 }
 
+const RR_INITIAL = ['g', 'kk', 'n', 'd', 'tt', 'r', 'm', 'b', 'pp', 's', 'ss', '', 'j', 'jj', 'ch', 'k', 't', 'p', 'h'];
+const RR_MEDIAL = ['a', 'ae', 'ya', 'yae', 'eo', 'e', 'yeo', 'ye', 'o', 'wa', 'wae', 'oe', 'yo', 'u', 'wo', 'we', 'wi', 'yu', 'eu', 'ui', 'i'];
+const RR_FINAL = ['', 'k', 'k', 'k', 'n', 'n', 'n', 't', 'l', 'k', 'm', 'l', 'l', 'l', 'p', 'l', 'm', 'p', 'p', 't', 't', 'ng', 't', 't', 'k', 't', 'p', 't'];
+
+/** Revised Romanization of Hangul syllables (final consonants simplified), for slugs. */
+function romanizeHangul(s: string): string {
+	return s.replace(/[\uac00-\ud7a3]/g, (ch) => {
+		const n = ch.charCodeAt(0) - 0xac00;
+		return RR_INITIAL[Math.floor(n / 588)] + RR_MEDIAL[Math.floor((n % 588) / 28)] + RR_FINAL[n % 28];
+	});
+}
+
 /**
  * Stable DOM / hash id fragment from an episode title.
- * Apostrophes drop so “Yeon’s Massacre” → `yeons-massacre`.
+ * Apostrophes drop so “Yeon’s Massacre” → `yeons-massacre`; Hangul romanizes so “기 (起)” → `gi`.
  */
 export function entrySlug(title: string): string {
-	return title
+	return romanizeHangul(title)
 		.normalize('NFKD')
 		.replace(/[\u0300-\u036f]/g, '')
 		.replace(/['’‘]/g, '')
@@ -178,6 +213,26 @@ export function entrySlug(title: string): string {
 /** Canonical episode id: `chapterId-slug`, used for TOC, hashes, and article roots. */
 export function entryId(chapterId: string, title: string): string {
 	return `${chapterId}-${entrySlug(title)}`;
+}
+
+export function isEpilogue(chapter: Pick<Chapter, 'id'>): boolean {
+	return chapter.id.startsWith('epilogue');
+}
+
+/** Reader-facing chapter numbers: epilogues are unnumbered and do not advance the count. */
+const CHAPTER_NUMBERS: (number | null)[] = (() => {
+	let n = 0;
+	return chapters.map((ch) => (isEpilogue(ch) ? null : ++n));
+})();
+
+export function chapterNumber(chapterIndex: number): number | null {
+	return CHAPTER_NUMBERS[chapterIndex] ?? null;
+}
+
+/** Reader-facing episode number, `chapter.episode` in story order — `7.13`; empty in an epilogue. */
+export function episodeNumber(chapterIndex: number, entryIndex: number): string {
+	const n = chapterNumber(chapterIndex);
+	return n === null ? '' : `${n}.${entryIndex + 1}`;
 }
 
 /** DOM id for a chapter's part title page — distinct from episode slugs. */

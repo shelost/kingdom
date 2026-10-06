@@ -65,7 +65,16 @@
 			"baekje": {
 				"name": "Baekje",
 				"board": "/ref_hanbok_baekje_gaya.png",
-				"crownText": "Baekje king: a black silk cap (오라관) with a pair of openwork gold flame-and-leaf ornaments (금제관식) rising from either side like twin flames; the king's robe and wide-sleeved layers as the Baekje king on the costume chart."
+				"crownText": "Baekje king, as the attached crown (ignore its studio backdrop and logo): a tall rounded black silk cap (오라관) with a plain black band at the brow, and a pair of tall openwork gold flame-and-leaf ornaments (금제관식) pinned to either side of the cap, rising above it like twin flames — thin gold blades fanning upward with leaf buds and curls; the king’s red robe and wide-sleeved layers as the Baekje king on the costume chart.",
+				"crown": [
+					"/crown_baekje.jpeg"
+				],
+				"noble": {
+					"refs": [
+						"/crown_baekje_noble.jpeg"
+					],
+					"text": "Baekje great-clan lord’s gilt-bronze crown (금동관), as the attached crown (ignore its museum stand and black backdrop): a tall pointed gilt cap shaped like a peaked hood, pierced all over with openwork dragon-and-flame scrolls, a broad engraved band across the brow, a curved openwork crest arching over the top, two small cup-shaped finials on thin stems rising at the back, a pointed bud finial at the crown, and a flat openwork leaf-plume at the front. Worn high over the topknot on court and assembly days; burnished gold-bronze catching the key light. It replaces the jougwan."
+				}
 			},
 			"gaya": {
 				"name": "Gaya",
@@ -236,9 +245,32 @@
 			],
 			"horse": "damul"
 		},
+		"yeontaejo": {
+			"look": "Gesomun's father and an old man in every still: snow-white hair in a tight topknot tied with dark red cord, long white beard and moustache, the same heavy straight Yeon brows and hard jaw as his sons, deep lines around tired, watchful eyes; shoulders once massive, now slightly stooped.",
+			"dress": "Retired High Commander's court dress, not armor: long charcoal-black silk robe crossed left over right with deep crimson #8f3a2e edging at collar, cuffs and hem, crimson sash, short dark fur-trimmed overcoat over the shoulders, black boots.",
+			"demeanor": "Quiet, unsmiling, economical; says half of what he thinks. Reads reports more than once. The only man Gesomun lowers his voice for.",
+			"carry": "A plain wooden walking staff in the right hand. He no longer wears a sword.",
+			"hat": false,
+			"never": [
+				"armor or a helm",
+				"dark hair or a black beard",
+				"a young or vigorous body",
+				"shouting",
+				"a sword at the hip"
+			]
+		},
 		"chunchu": {
 			"look": "Slim and elegant; shoulder-length loose black hair parted in the middle; thin moustache and goatee stubble; amused eyes, small knowing smile.",
 			"dress": "Magenta-crimson silk po with a charcoal sash, dark layered collar. Silk even on campaign.",
+			"looks": {
+				"ambassador": {
+					"text": "Envoy dress (attached ch_chunchu_ambassador.png): plain white silk po with wide magenta-crimson bands at the collar, cuffs and sleeves, a black sash knotted at the front; the small grey jougwan with two barred pheasant feathers. Travel-clean, unarmored, no gold."
+				},
+				"formal": {
+					"text": "Court dress (attached ch_chunchu_formal.png): crimson patterned silk po with a gold-brocade collar band down the front, a plain gold belt; purple silk cap ringed by the gilt Silla winged crown, long gold drop earrings. No jougwan.",
+					"hat": false
+				}
+			},
 			"demeanor": "Diplomat and strategist: talks with his hands, smiles while calculating, never shouts; half-lidded watchful eyes.",
 			"sword": "sword-chunchu",
 			"carry": "Imugi court sword at the hip, nearly always sheathed.",
@@ -628,6 +660,100 @@
 			"dress": "Black-lacquered lamellar armour with square shoulder guards over a maroon-red robe, a tan cross-strap and wide tan belt; a long spear with a gilt head over the shoulder; a ring-pommel sword at the hip.",
 			"demeanor": "A builder of walls who knows exactly where they are weak.",
 			"armor": "baekje",
+			"hat": false
+		},
+		"gulgul": {
+			"look": "Mohe-born, lean and weathered; dark skin, hard narrow eyes, thin moustache and a short chin beard as a man.",
+			"dress": "Goguryeo border warden: grey steel lamellar under a heavy white-grey fur mantle, dark-red sash and wrapped forearms.",
+			"demeanor": "Grim and spare. Says little, watches the door, stands one step behind whoever he serves.",
+			"hat": false,
+			"eras": [
+				{
+					"until": 641,
+					"text": "Boy (stage portrait ch_dae_gulgul_young): BEARDLESS, shaved crown with one dark centre strip, two long braids, blood-streaked defiant face, ragged fur over a white wrap."
+				},
+				{
+					"from": 668,
+					"text": "The flight north: no helm, a fur hood and layered pelts over the lamellar, frost in the beard, a leather pack on his back."
+				}
+			],
+			"never": [
+				"a Goguryeo court robe",
+				"a crown"
+			]
+		},
+		"daejoyoung": {
+			"look": "A boy in 668: round face, dark eyes under heavy brows, a soot or frost smudge on one cheek.",
+			"dress": "Red headband with a black sun-disc, brown fur collar, pale blue padded coat, red sash, tan trousers, wrapped leggings, a walking staff.",
+			"demeanor": "Restless and stubborn; complains, asks too many questions, then sets his jaw.",
+			"hat": false,
+			"never": [
+				"a beard as a boy",
+				"a crown before 698"
+			]
+		},
+		"eldersatek": {
+			"crown": "noble"
+		},
+		"ministersatek": {
+			"crown": "noble"
+		},
+		"chunbok": {
+			"crown": "noble"
+		},
+		"sateksangya": {
+			"look": "Stocky harbour lord about forty: sea-tanned skin, shrewd narrow pricing eyes, flat unimpressed mouth, clipped black beard and moustache, thick neck.",
+			"dress": "Deep red wide-sleeved Satek robe with a black crossed collar under a plain grey steel lamellar vest; a dark sash with a string of square-holed bronze coins and bamboo tally slips at the hip; a rolled harbour ledger in hand.",
+			"demeanor": "Wharf-flat: counts boats, bales and debts out loud.",
+			"crown": "noble"
+		},
+		"sateksondung": {
+			"crown": "noble"
+		},
+		"munduk": {
+			"look": "Lean, weathered Goguryeo general: narrow watchful eyes, thin moustache and small chin beard, calm unreadable face of a man counting the enemy.",
+			"dress": "Steel lamellar with a round bronze boss on the chest, a red scarf wound at the throat, red cloth sleeves and skirt; red-winged steel helm with a red plume.",
+			"demeanor": "The Defender: patient, sly, unhurried — retreats on purpose, writes the enemy a poem, then springs the river.",
+			"armor": "goguryeo",
+			"fighting": "Commands from the saddle with a long spear; a ring sword at the hip, rarely drawn.",
+			"never": [
+				"Chinese general armor",
+				"katana"
+			]
+		},
+		"boksin": {
+			"look": "Shaven-headed Baekje general: bald crown with one long black topknot tail tied in red cord and streaming behind, heavy scowling brows, black moustache and pointed black beard.",
+			"dress": "Black-lacquered lamellar with heavy rounded shoulder guards and bracers over a slate-blue wrapped robe, a grey-mauve sash knotted at the waist; a long red-lacquered shaft carried low in one fist.",
+			"demeanor": "Blunt and managerial, lethal when polite: the man who keeps the tally board.",
+			"armor": "baekje",
+			"hat": false
+		},
+		"dochim": {
+			"look": "Shaven-headed monk-general in his forties: calm narrow eyes, faint smile, a small dark goatee.",
+			"dress": "Ochre-gold monk robe under a red-orange kasaya fastened at the left shoulder with an iron ring; a long string of black 108 beads looped over one hand; a gilt monk staff with a ringed finial over the shoulder.",
+			"demeanor": "Soft voice, hard timetable: a sutra and a march order in the same breath.",
+			"hat": false,
+			"never": [
+				"armour helmet",
+				"feather cap"
+			]
+		},
+		"yunchung": {
+			"look": "Hard-bitten Baekje frontier general in his forties: full black beard, heavy scowling brows, a band of red war-paint smeared across both eyes, long black hair falling from under a dented round steel helm with a cracked crown and a short red-black plume knob.",
+			"dress": "Grey steel lamellar with red-edged shoulder guards over an ochre-yellow robe, a broad red sash with a round bronze boss, red-and-black striped bracers; a ring-pommel sword in a red-lacquered scabbard.",
+			"demeanor": "Plain speech is also a weapon: says the ugly thing without a cushion under it, and does exactly what he says he will.",
+			"armor": "baekje",
+			"hat": false
+		},
+		"yeonwife": {
+			"look": "Composed Goguryeo noblewoman in her thirties: black hair braided and coiled up with a cluster of red silk flowers at the crown, loose strands at the cheeks, calm narrow eyes, small red mouth.",
+			"dress": "Wide-sleeved cream-buff robe with rust-red crossed collar and sleeve bands, a rust-red shawl over the arms, a long black sash.",
+			"demeanor": "Quiet and precise; saves the hard questions for when the lamps are low."
+		},
+		"sumyeongjangja": {
+			"look": "Smug old rich man: long loose black hair, a long grey-green beard, half-lidded blank contemptuous eyes, a sour turned-down mouth.",
+			"dress": "Wide-sleeved white robe with an olive-gold collar band, a gold cord sash with a hanging tassel, a dark red under-sleeve.",
+			"demeanor": "Rich the way a flood is wet; counts his storehouses the way other men pray.",
 			"hat": false
 		}
 	},

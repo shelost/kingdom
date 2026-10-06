@@ -68,6 +68,14 @@ export function scriptArtFramesOf(slot: ImageSlot): ScriptArtFrame[] {
 	return frames;
 }
 
+/** `'temp'` when `src` is the stand-in shown beside a distinct final; else it is the reading art. */
+export function tempLayerOf(slot: ImageSlot, src: string | undefined): 'temp' | undefined {
+	const final = finalArtOf(slot);
+	const temp = tempArtOf(slot);
+	if (!src || !final || !temp || artKey(temp) === artKey(final)) return undefined;
+	return artKey(src) === artKey(temp) ? 'temp' : undefined;
+}
+
 /**
  * Preferred display art.
  * - `reading` (default): final `src` when present, else temp

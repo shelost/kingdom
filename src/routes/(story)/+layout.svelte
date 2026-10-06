@@ -6,7 +6,6 @@
 	import Hud from '$lib/components/Hud.svelte';
 	import SpeakerPlate from '$lib/components/SpeakerPlate.svelte';
 	import CinemaStage from '$lib/components/CinemaStage.svelte';
-	import RelationChart from '$lib/components/RelationChart.svelte';
 	import StoryMap from '$lib/components/StoryMap.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
@@ -58,7 +57,6 @@
      mode mounts neither. -->
 <SpeakerPlate />
 <CinemaStage />
-<RelationChart />
 <StoryMap />
 <Hud />
 <PersonLayer />
@@ -66,7 +64,7 @@
 <style>
 	/*
 	  Stacking: this column is a single context at z-index 1. Inline art
-	  (ImageStack frames use z-index internally), relation/map siblings, and
+	  (ImageStack frames use z-index internally), map siblings, and
 	  the speaker plate sit below the TOC layer (100+). Descendants cannot
 	  escape this context to cover the panel.
 	*/

@@ -9,7 +9,7 @@
 
 import { browser } from '$app/environment';
 import { goto, replaceState } from '$app/navigation';
-import { chapters, chapterIdFromPartId, entryId } from '$lib/story';
+import { chapters, chapterIdFromPartId, entryId, episodeNumber } from '$lib/story';
 import { isLoveEpisode } from '$lib/loveEpisodes';
 import { scriptUi } from '$lib/scriptUi.svelte';
 import { autoOpenToc, tocUi } from '$lib/tocUi.svelte';
@@ -86,27 +86,93 @@ export type EpisodeRef = {
 };
 
 /**
- * Out-of-range leftover `chapterId-index` hashes from before episode merges.
- * In-range numeric hashes (`iron-will-0` …) still mean the current entry at
- * that index; TOC rows use title slugs so they always name the right episode.
+ * Retired episode ids (and the bare `?ep=jumong`) → the episode that now holds their opening.
+ * Old scene hashes (`retired-id-scene-…`) follow by prefix when no live episode claims them.
  */
 const EPISODE_HASH_ALIASES: Record<string, string> = {
-	'iron-will-5': 'iron-will-yeons-massacre',
-	'iron-will-6': 'iron-will-yeons-massacre',
-	'iron-will-7': 'iron-will-chunchu-gesomun',
-	'iron-will-8': 'iron-will-euija-gesomun',
-	'iron-will-9': 'iron-will-kim-yushin',
-	'chunchu-era-11': 'chunchu-era-hyukgose',
-	'chunchu-era-the-flower-youth': 'chunchu-era-the-hwarang',
-	'chunchu-era-silla-tang-alliance': 'chunchu-era-the-emperor',
+	'iron-will-daeya-fortress': 'iron-will-gumil',
+	'iron-will-yeons-massacre': 'iron-will-supreme-commander',
+	'iron-will-chunchu-gesomun': 'iron-will-chunchu-yeon',
+	'iron-will-euija-gesomun': 'iron-will-euija-yeon',
+	'iron-will-kim-yushin': 'iron-will-forty-fortresses',
+	'jumong-onjo': 'fall-of-euija-onjo',
+	'onjo-onjo': 'fall-of-euija-onjo',
+	'chunchu-era-the-flower-youth': 'five-principles-bupmin',
+	'chunchu-era-silla-tang-alliance': 'chunchu-era-huangdi',
 	'chunchu-era-gaya-the-lost-nations': 'chunchu-era-suro',
 	'chunchu-era-the-fall-of-gaya': 'chunchu-era-muryuk',
-	'final-stand-7': 'final-stand-pyongyang-a',
-	'final-stand-pyongyang-fortress': 'final-stand-pyongyang',
-	'final-stand-the-final-stand': 'final-stand-pyongyang-a',
-	'final-stand-white-river': 'fall-of-baekje-white-river',
-	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-the-protectorate',
-	'silla-tang-war-8': 'silla-tang-war-the-king-for-all'
+	'final-stand-pyongyang-fortress': 'final-stand-pyongyang-i',
+	'epilogue-li-shimin-the-2nd-huangdi': 'epilogue-emperor',
+	'li-shimin-the-2nd-huangdi': 'epilogue-emperor',
+	'final-stand-the-final-stand': 'final-stand-pyongyang-ii',
+	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-anseung',
+	'samhan-jinheung-the-crescent-moon': 'samhan-jinheung-the-cloud',
+	'samhan-jinheung-the-cloud-king': 'samhan-jinheung-the-cloud',
+	'jinheung-the-cloud-king': 'samhan-jinheung-the-cloud',
+	'samhan-the-eight-great-clans': 'samhan-prince-euija',
+	'samhan-gunchogo-the-hurricane': 'samhan-gunchogo-the-13th',
+	'samhan-ocean-trade': 'samhan-gunchogo-the-13th',
+	'samhan-the-summit': 'samhan-commander-yeon',
+	'samhan-birth-of-namseng': 'samhan-high-summit',
+	'samhan-gwanggaeto-the-conqueror': 'samhan-gwanggaeto-the-great-king',
+	'five-principles-gotasos-wedding': 'five-principles-gotaso',
+	'five-principles-yeons-three-sons': 'five-principles-grand-academy',
+	'five-principles-king-euija-the-31st-eraha': 'five-principles-king-euija',
+	'iron-will-not-even-human': 'iron-will-gumil',
+	'jumong-jumong': 'seventh-invasion-haemosu',
+	'jumong-dongmyung': 'seventh-invasion-jolbon',
+	'seventh-invasion-emperor-of-the-west': 'seventh-invasion-four-dragons',
+	'seventh-invasion-great-river': 'seventh-invasion-colossal-river',
+	'seventh-invasion-longmen-field': 'seventh-invasion-four-dragons',
+	'seventh-invasion-eastern-fortress': 'seventh-invasion-yodong',
+	'chunchu-era-the-hwarang': 'five-principles-bupmin',
+	'chunchu-era-harbour-ledgers': 'chunchu-era-jahee',
+	'chunchu-era-the-harmony-council': 'chunchu-era-gi',
+	'chunchu-era-bidams-rebellion': 'chunchu-era-seung',
+	'chunchu-era-chunchu-goes-to-the-east': 'chunchu-era-gi',
+	'chunchu-era-the-emperor': 'chunchu-era-huangdi',
+	'chunchu-era-death-of-the-second-emperor': 'chunchu-era-jiabeng',
+	'chunchu-era-the-royal-secretariat': 'chunchu-era-royal-secretariat',
+	'fall-of-euija-gyebeks-exile': 'fall-of-euija-exile',
+	'fall-of-euija-euijas-coup': 'fall-of-euija-coup',
+	'fall-of-euija-euijas-descent': 'fall-of-euija-descent',
+	'fall-of-euija-sulmun-and-the-three-princes': 'fall-of-euija-three-princes',
+	'fall-of-euija-sulmuns-apron': 'fall-of-euija-sulmun',
+	'fall-of-euija-black-rock': 'fall-of-euija-exile',
+	'fall-of-euija-gameunjang': 'fall-of-euija-stone-lady',
+	'fall-of-euija-jacheongbi': 'fall-of-euija-gardener',
+	'fall-of-euija-five-thousand': 'fall-of-euija-exile',
+	'fall-of-euija-baekjuto-and-socheon-guk': 'fall-of-euija-three-princes',
+	'fall-of-euija-sanbangduk': 'fall-of-euija-stone-lady',
+	'fall-of-euija-the-nine-plagues': 'fall-of-euija-nine-omens',
+	'fall-of-euija-the-fifth-year': 'fall-of-euija-gyebek',
+	'fall-of-euija-the-tribute-of-oranges': 'fall-of-euija-tribute',
+	'fall-of-euija-the-three-loyalists': 'fall-of-euija-sungchung',
+	'epilogue-part-ii-annual-meeting-of-the-three-realms': 'epilogue-part-ii-three-realms',
+	'fall-of-baekje-the-red-fowl': 'fall-of-baekje-yellow-mountain',
+	'fall-of-baekje-yellow-mountain-fields': 'fall-of-baekje-yellow-mountain',
+	'fall-of-baekje-sabi-palace': 'fall-of-baekje-sabi',
+	'fall-of-baekje-the-death-of-buyeo-euija': 'fall-of-baekje-buyeo-euija',
+	'fall-of-baekje-the-seven-branched-sword': 'fall-of-baekje-king-pungjang',
+	'fall-of-baekje-the-death-of-kim-chunchu': 'fall-of-baekje-kim-chunchu',
+	'fall-of-baekje-the-four-beasts': 'fall-of-baekje-ungjin-commandery',
+	'fall-of-baekje-baekje-restoration-society': 'fall-of-baekje-king-pungjang',
+	'fall-of-baekje-white-river': 'final-stand-white-river',
+	'final-stand-pyongyang': 'final-stand-pyongyang-i',
+	'final-stand-the-surrender-of-tamla': 'final-stand-tamla-surrenders',
+	'final-stand-the-bear-ford-commandery': 'fall-of-baekje-ungjin-commandery',
+	'final-stand-mount-gain': 'silla-tang-war-mount-gain',
+	'final-stand-the-death-of-yeon-gesomun': 'final-stand-yeon-gesomun',
+	'final-stand-the-brothers-coup': 'final-stand-brothers-coup',
+	'final-stand-pyongyang-a': 'final-stand-pyongyang-ii',
+	'silla-tang-war-your-humble-servant': 'silla-tang-war-letters',
+	'silla-tang-war-betrayal': 'silla-tang-war-letters',
+	'silla-tang-war-the-death-of-kim-yushin': 'silla-tang-war-kim-yushin',
+	'silla-tang-war-maeso-fortress': 'silla-tang-war-inmun',
+	'silla-tang-war-strike-harbor': 'silla-tang-war-final-ford',
+	'seventh-invasion-jumong': 'seventh-invasion-haemosu',
+	'silla-tang-war-the-protectorate': 'silla-tang-war-anseung',
+	jumong: 'seventh-invasion-haemosu'
 };
 
 /** Flat episode list — slug ids match TOC / URL hashes (`chapterId-title-slug`).
@@ -154,12 +220,16 @@ export function episodeQueryId(ep: EpisodeRef): string {
 	return UNIQUE_TITLE_SLUGS.has(slug) ? slug : ep.id;
 }
 
-/** Short label for the episode picker (title page + entry titles). */
+/** Episode picker label: `7.13 · Hyukgosé` (title page is plain `Title`); Korean titles when the reader picks Korean. */
 export function episodeNavLabel(ep: EpisodeRef): string {
-	if (ep.id === TITLE_EPISODE_ID) return 'Title';
+	const ko = reading.lang === 'ko';
+	if (ep.id === TITLE_EPISODE_ID) return ko ? '표지' : 'Title';
 	const entry = chapters[ep.chapterIndex]?.entries[ep.entryIndex];
-	const title = entry?.title?.trim() || episodeTitleSlug(ep);
-	return isLoveEpisode(ep.id) ? `♡ ${title}` : title;
+	const title =
+		(ko ? entry?.subtitle?.trim() : undefined) || entry?.title?.trim() || episodeTitleSlug(ep);
+	const num = episodeNumber(ep.chapterIndex, ep.entryIndex);
+	const label = num ? `${num} · ${title}` : title;
+	return isLoveEpisode(ep.id) ? `♡ ${label}` : label;
 }
 
 export const reading = $state({
@@ -384,7 +454,7 @@ export function setViewScope(s: ViewScope) {
 			return;
 		}
 		if (ep.id === TITLE_EPISODE_ID) {
-			window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+			scrollStoryToTop();
 			window.dispatchEvent(new Event('scroll'));
 			return;
 		}
@@ -542,10 +612,8 @@ export function resolveStoryTarget(id: string): StoryTarget | null {
 	const exact = episodes.findIndex((e) => e.id === id);
 	if (exact >= 0) return { episodeIndex: exact, hashId: id };
 
-	/* Old Ansi-nested id — Jumong is its own founding chapter now. */
-	if (id === 'seventh-invasion-jumong' || id.startsWith('seventh-invasion-jumong-')) {
-		return resolveStoryTarget(`jumong-jumong${id.slice('seventh-invasion-jumong'.length)}`);
-	}
+	const aliased = EPISODE_HASH_ALIASES[id];
+	if (aliased) return aliasTarget(aliased);
 
 	/* Bare title slug from `?ep=jumong` (unique across the chronicle). */
 	const byTitleSlug = episodes.findIndex((e) => episodeTitleSlug(e) === id);
@@ -584,12 +652,16 @@ export function resolveStoryTarget(id: string): StoryTarget | null {
 		);
 		if (byIndex >= 0) return { episodeIndex: byIndex, hashId: episodes[byIndex].id };
 	}
-	const aliased = EPISODE_HASH_ALIASES[id];
-	if (aliased) {
-		const fromAlias = episodes.findIndex((e) => e.id === aliased);
-		if (fromAlias >= 0) return { episodeIndex: fromAlias, hashId: episodes[fromAlias].id };
-	}
-	return null;
+
+	const retired = Object.keys(EPISODE_HASH_ALIASES)
+		.filter((old) => id.startsWith(`${old}-`))
+		.sort((a, b) => b.length - a.length)[0];
+	return retired ? aliasTarget(EPISODE_HASH_ALIASES[retired]) : null;
+}
+
+function aliasTarget(episodeId: string): StoryTarget | null {
+	const idx = episodes.findIndex((e) => e.id === episodeId);
+	return idx >= 0 ? { episodeIndex: idx, hashId: episodeId } : null;
 }
 
 /** Canonical episode, chapter, or scene id for hashes / getElementById. */
@@ -619,12 +691,15 @@ export function storyTitleElement(el: HTMLElement): HTMLElement {
 	if (el.matches('article.entry, .entry-head, .entry-head-sticky')) {
 		const h2 = firstPainted(el, ['.episode h2', '.entry-head h2', 'h2']);
 		const head = firstPainted(el, ['.entry-head-sticky', '.entry-head']);
-		/* Desktop: the year + title bar is sticky, so land on the bar. Phones:
-		   the bar is static — land on its first row so the chapter label and
-		   story index clear the fixed menu buttons along with the title. */
+		/* Desktop: the year + title bar is sticky, so land on its static
+		   `.entry-head` wrapper — a stuck bar reports where it is pinned, not
+		   where it starts. Phones: the bar is static — land on its first row so
+		   the chapter label and story index clear the fixed menu buttons. */
 		if (h2 && head) {
 			const sticky = h2.closest<HTMLElement>('.entry-head-sticky');
-			if (sticky && getComputedStyle(sticky).position === 'sticky') return head;
+			if (sticky && getComputedStyle(sticky).position === 'sticky') {
+				return sticky.closest<HTMLElement>('.entry-head') ?? head;
+			}
 			return firstPainted(head, ['.head-top']) ?? h2;
 		}
 		return h2 ?? head ?? el;
@@ -738,7 +813,7 @@ export function storyStickyOffset(title?: HTMLElement | null): number {
 
 	for (const sticky of document.querySelectorAll<HTMLElement>('.entry-head-sticky')) {
 		if (!isPainted(sticky)) continue;
-		if (title && sticky.contains(title)) continue;
+		if (title && (sticky.contains(title) || title.contains(sticky))) continue;
 		const style = getComputedStyle(sticky);
 		if (style.position !== 'sticky' && style.position !== 'fixed') continue;
 		const r = sticky.getBoundingClientRect();
@@ -799,6 +874,13 @@ export function scrollToStoryHeading(el: HTMLElement, behavior: ScrollBehavior =
 		if (behavior === 'smooth') apply('smooth');
 		else verify();
 	});
+}
+
+/** Land on the very top of the document, cancelling any pending heading jump's follow-ups. */
+export function scrollStoryToTop() {
+	storyJumpGen += 1;
+	scrollScrollerTo(readingScroller(), 0, 'auto');
+	if (readingScroller() !== window) window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 }
 
 /** Reading position is Y-only. Never write `#id` — it trapped scroll in one entry. */
@@ -903,10 +985,16 @@ export function goToEpisode(
 	if (opts.closeToc === true) tocUi.open = false;
 
 	const scroll = opts.scroll !== false;
+	/* One mounted episode: its head is the top of the page, so episode, chapter
+	   and part jumps start there; only a scene header lands mid-entry. */
+	const isScene = (id: string) => !!storyElement(id)?.matches('[data-scene]');
 	const finish = () => {
 		if (scroll) {
-			if (ep.id === TITLE_EPISODE_ID) {
-				window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+			const toTop =
+				ep.id === TITLE_EPISODE_ID ||
+				(reading.viewScope === 'episodes' && (destId === ep.id || !isScene(destId)));
+			if (toTop) {
+				scrollStoryToTop();
 			} else {
 				const el = findStoryHeading(destId) ?? findStoryHeading(ep.id);
 				if (el) scrollToStoryHeading(el, 'auto');

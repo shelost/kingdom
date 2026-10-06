@@ -11,6 +11,7 @@ import { PLACE_PROFILES, type PlaceKind } from '$lib/places';
 import { PHRASES } from '$lib/phrases';
 import { SWORDS } from '$lib/swords';
 import { ANIMALS } from '$lib/animals';
+import { INSTRUMENTS } from '$lib/instruments';
 import { PERSONA_META } from '$lib/personaMeta';
 import { staticAsset } from '$lib/staticAsset.svelte';
 
@@ -60,6 +61,8 @@ export interface PersonStage {
 	avatar?: string;
 	/** Wiki chip — e.g. "As queen", "In his last years". */
 	label?: string;
+	/** An outfit, not a period of life: used only when a block or still pins this `id`, never by year. */
+	lookOnly?: boolean;
 }
 
 /** Hierarchy node for organization wiki charts (click → profile when `id` is a person). */
@@ -83,6 +86,7 @@ export interface Person {
 	 * `group` = named ensembles of characters (Four Dragons, Three Founders, …);
 	 * `clan` = blood houses (Yeon, Eight Clans, Kim lines, …);
 	 * `animal` = named horses and mythic creatures (Hangyul, Samjogo, …);
+	 * `instrument` = instruments the cast plays (gayageum, geomungo, …);
 	 * `phrase` / `nation` / `relationship` / `place` / `sword` as named.
 	 */
 	entity?:
@@ -96,7 +100,8 @@ export interface Person {
 		| 'relationship'
 		| 'place'
 		| 'sword'
-		| 'animal';
+		| 'animal'
+		| 'instrument';
 	/**
 	 * Organization ids this character belongs to (Hwarang, High Summit, …).
 	 * Reverse lookup on org pages via `membersOf` in wiki.ts.
@@ -300,11 +305,14 @@ export interface Person {
 	 * For sword profiles: person ids who wield or wielded this blade
 	 * (primary / most recent first). Reverse lookup via `swordsOf` in wiki.ts.
 	 * For animal profiles: the rider, or the people a guardian creature leads
-	 * (reverse lookup via `animalsOf`).
+	 * (reverse lookup via `animalsOf`). For instrument profiles: the players
+	 * (reverse lookup via `instrumentsOf`).
 	 */
 	owners?: string[];
 	/** Wiki roster heading for `owners` — defaults to “Owners” (animals: “Rider”, “Guided”). */
 	ownersLabel?: string;
+	/** Group profiles: split the wiki Members grid into bands by each member’s kingdom. */
+	rosterBy?: 'kingdom';
 	/** Chart layout hint (people nodes that appear on the relationship graph). */
 	chart?: { x: number; y: number };
 }
@@ -874,6 +882,22 @@ export const PEOPLE: Person[] = [
 				title: 'King Muyeol, 29th of Silla',
 				label: 'As King Muyeol',
 				avatar: '/ch_muyeol.png'
+			},
+			{
+				id: 'ambassador',
+				lookOnly: true,
+				name: 'Kim Chunchu',
+				title: 'Envoy of Silla',
+				label: 'As envoy',
+				avatar: '/ch_chunchu_ambassador.png'
+			},
+			{
+				id: 'formal',
+				lookOnly: true,
+				name: 'Kim Chunchu',
+				title: 'Prince of Silla',
+				label: 'In court dress',
+				avatar: '/ch_chunchu_formal.png'
 			}
 		],
 		events: [
@@ -965,12 +989,13 @@ export const PEOPLE: Person[] = [
 		voice:
 			'Crude and direct. Gesomun says the ugly thing first and lets the room catch up: short hot sentences, threats stated as facts, rude questions he answers himself, curses (이놈, 미친 놈), and a laugh like a slap. He talks about the people and the land in plain nouns (blood, grain, horses, walls, the 겨레) and always says Goguryeo, never Goryeo. His rally speeches are loud and exclamatory; everything else is clipped. No balanced clauses, no epigrams, no diplomatic hedging: if a line sounds clever, it belongs to Chunchu or Euija. Korean: rough 반말 to almost everyone; 하오체 to a crowd, or to a king he has not yet decided to kill, and it slips when he is angry.',
 		personality: ['crude', 'direct', 'volcanic will', '겨레 saviour complex', 'anti-tribute', 'terror as policy'],
-		arc: 'An Eastern Commander (대가) on the crow tribe’s old roof — the five animal tribes’ eastern 부, still Yeon. He despises the High Summit’s courage-until-the-final-vote. In 642 he butchers king and Commanders, invents Supreme Commander (대막리지) above the old High Commander (막리지), seats Dosuryu as Chancellor (대대로), and rules through Bojang. When Euija mocks gods as tools of obedience, Gesomun does not flinch — the marches taught him Jumong was real. He leaves three heirs — Yeon Namseng under his own strict roof, Yeon Namgun and Yeon Namsan under his brother Jungto and sister Sooyoung — and no institution that can hold them together. For twenty years he is proved right against Tang; he builds nothing that can outlive him. Within a year of his death the three sons are at each other’s throats and the eldest guides Tang to Pyongyang. Not kin to Baekje’s Prince Yun.',
+		arc: 'He grew up in Pyongyang while his father Yeon Taejo held the High Command, and hates the city for it: ten years of watching the old man come home from the Summit in silence taught him that the capital is where Goguryeo goes to talk instead of fight. An Eastern Commander (대가) on the crow tribe’s old roof — the five animal tribes’ eastern 부, still Yeon. He despises the High Summit’s courage-until-the-final-vote. In 642 he butchers king and Commanders, invents Supreme Commander (대막리지) above the old High Commander (막리지), seats Dosuryu as Chancellor (대대로), and rules through Bojang. When Euija mocks gods as tools of obedience, Gesomun does not flinch — the marches taught him Jumong was real. He leaves three heirs — Yeon Namseng under his own strict roof, Yeon Namgun and Yeon Namsan under his brother Jungto and sister Sooyoung — and no institution that can hold them together. For twenty years he is proved right against Tang; he builds nothing that can outlive him. Within a year of his death the three sons are at each other’s throats and the eldest guides Tang to Pyongyang. Not kin to Baekje’s Prince Yun.',
 		blade: 'Eastern Crow Blade (동방 오도) of the marches; after 642, the High Commander Blade (막리지검) taken from the Summit’s first chair.',
 		swordImage: '/sword_crow.png',
 		events: [
-			{ year: 634, label: 'Defies the High Summit at Pyongyang; the court marks him a traitor.' },
-			{ year: 642, label: 'Renews his vow at Jumong Cavern; massacres the court; takes the High Commander Blade; creates Supreme Commander (대막리지).' },
+			{ year: 629, label: 'Sees his father, the High Commander, afraid for the first time — of Kim Yushin.' },
+			{ year: 634, label: 'Goes to the High Summit in his father’s place; defies it; the court marks him a traitor.' },
+			{ year: 642, label: 'Confirmed Eastern Commander after his father’s death; massacres the court at the celebration feast; takes the High Commander Blade; creates Supreme Commander (대막리지); prays at Jumong Cavern.' },
 			{ year: 642, label: 'Imprisons Kim Chunchu, then releases him at Kim Yushin’s name.' },
 			{ year: 645, label: 'Survives Taizong’s invasion; Ansi Fortress holds.' },
 			{ year: 662, label: 'Destroys Pang Xiaotai’s army at the Snake River; refuses Kangrim and Haewonmek.' },
@@ -983,7 +1008,7 @@ export const PEOPLE: Person[] = [
 			'only real man left in Samhan'
 		],
 		career: [
-			{ title: 'Eastern Commander', korean: '대가', hanja: '大加', org: 'highsummit', from: 634, to: 642, note: 'Crow tribe’s eastern 부' },
+			{ title: 'Eastern Commander', korean: '대가', hanja: '大加', org: 'highsummit', from: 634, to: 642, note: 'Crow tribe’s eastern 부 — in his father Yeon Taejo’s name until 642' },
 			{ title: 'Supreme Commander', korean: '대막리지', hanja: '大莫離支', org: 'highsummit', from: 642 }
 		],
 		aliases: [
@@ -1002,6 +1027,7 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'yeonwife',
+		avatar: '/ch_lady_yeon.png',
 		name: "Yeon's Wife",
 		korean: '연씨부인',
 		gender: 'f',
@@ -1052,7 +1078,7 @@ export const PEOPLE: Person[] = [
 		events: [
 			{ year: 634, label: 'Taken in by Yeon as a boy; named Gulgul.' },
 			{ year: 642, label: 'Given the surname Dae and posted to the northern border.' },
-			{ year: 668, label: 'Flees north with a shard of the Goryeo crown.' },
+			{ year: 668, label: 'Flees north through the winter mountains with a gold branch of the Goguryeo crown.' },
 			{ year: 698, label: 'His son founds Balhae on that shard’s memory.' }
 		],
 		career: [
@@ -1071,6 +1097,8 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		tagline: 'The boy who repeated what the fields would not forget.',
 		quote: "A crown in shards is still a crown.",
+		voice:
+			'A boy who talks more than his father ever has: complaints, questions stacked on questions, sentences that break off when he gets excited. Korean: 해요체 to his father, slipping into a half-swallowed 반말 when he forgets himself.',
 		arc: 'Son of Dae Gulgul. Runs through Manchurian millet with a crown-shard against his ribs and a sentence in his mouth that outlives every wall.',
 		events: [
 			{ year: 668, label: 'Flees the fall with his father and a piece of the crown.' },
@@ -1106,7 +1134,9 @@ export const PEOPLE: Person[] = [
 			{
 				from: 641,
 				name: 'King Euija',
-				title: 'King Euija, 31st Eraha of Baekje'
+				title: 'King Euija, 31st Eraha of Baekje',
+				label: 'As King Euija',
+				avatar: '/ch_king_euija.png'
 			}
 		],
 		tagline: '“Find what they fear. Weave it into a story.”',
@@ -1941,6 +1971,42 @@ export const PEOPLE: Person[] = [
 		tagline: 'Gumil’s fellow yellow-sleeve at Daeya — treason as the only promotion left.',
 		quote: "Treason is only treason if you lose.",
 		aliases: ['Mochuk']
+	},
+	{
+		id: 'daeto',
+		name: 'Daeto',
+		korean: '대토',
+		hanja: '大吐',
+		kingdom: 'silla',
+		died: 673,
+		gender: 'm',
+		tagline: 'The official with a steady hand who wrote one letter too many.',
+		quote: 'A wise letter leaves a door open.',
+		voice:
+			'A reasonable-sounding court official: always the moderate in the room, always urging the softer word, the second copy, the open door. Smooth and helpful, never angry. Korean: polished 하십시오체 to the king, easy 하게체 to clerks.',
+		arc: 'He watches the Tang calendar arrive at Bear Ford and decides early which way the wind blows. In the writing room of 671 he begs Munmu for a softer letter to Xue Rengui, copies the hard one out fair, and that same night writes a short letter of his own to the Tang. In 673 it is found: he had promised them a door. He is executed and his household enslaved, in the month Kim Yushin is buried.',
+		events: [
+			{ year: 664, label: 'Studies the Tang calendar posted at Bear Ford.' },
+			{ year: 671, label: 'Copies out Munmu’s reply to Xue Rengui, and writes one of his own.' },
+			{ year: 673, label: 'Executed for plotting to defect to the Tang.' }
+		],
+		aliases: ['Daeto']
+	},
+	{
+		id: 'kimpunghun',
+		name: 'Kim Punghun',
+		korean: '김풍훈',
+		hanja: '金風訓',
+		kingdom: 'silla',
+		gender: 'm',
+		tagline: 'The executed noble’s son who piloted the Tang fleet onto his own coast.',
+		quote: 'I know these waters. My father taught me.',
+		arc: 'His father Kim Jinju is put to death with his household for pleading sickness in wartime. Punghun, away in Chang’an, survives as the only one left. In 675 he comes home at the bow of Xue Rengui’s fleet, showing the Tang the way into the coast his father once defended.',
+		events: [
+			{ year: 670, label: 'His father Kim Jinju is executed by Munmu.' },
+			{ year: 675, label: 'Pilots Xue Rengui’s fleet to Cheonseong.' }
+		],
+		aliases: ['Kim Punghun', 'Punghun']
 	},
 	{
 		id: 'daeya_a',
@@ -2829,6 +2895,7 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'yunchung',
 		gender: 'm',
+		avatar: '/ch_yunchung.png',
 		name: 'Yunchung',
 		korean: '윤충',
 		hanja: '允忠',
@@ -2937,6 +3004,8 @@ export const PEOPLE: Person[] = [
 		tagline: 'Temple-trained, clan-ignored — the monk who raised an army from leftovers.',
 		quote: 'Restore first. Argue later.',
 		nature: 'BRA before it had a banner: a warrior-monk who recruits people the Eight Clans never counted. Soft voice, hard timetable.',
+		voice:
+			'Soft, unhurried, smiling; quotes the sutras and then gives a march order in the same breath, and the order is always the point. Calls himself General of the Spirit Army without blinking. Korean: gentle 하게체 to generals and men, polite 합니다 to a king he has not yet decided to obey.',
 		arc: 'Rises with Boksin at Juryu — not from a Great Clan seat but from a monastery that taught him how to organise hunger. Builds the Baekje Restoration Army out of ferrywomen, clerks, novices, and hunters. Dies when Boksin decides the movement only needs one throat.',
 		events: [
 			{ year: 660, label: 'Rises with Boksin to restore Baekje.' },
@@ -2981,12 +3050,13 @@ export const PEOPLE: Person[] = [
 		hanja: '沙宅相如',
 		kingdom: 'baekje',
 		clan: 'clan-satek',
+		avatar: '/ch_satek_sangya.png',
 		died: 663,
 		tagline: 'Satek steel at the restoration table — berth money turned field general.',
 		quote: 'Harbour credit buys one more wall.',
 		nature: 'Not Eight-Clan theatre — Satek muscle who never held Elder Satek’s chair but held a gate. Desire: the house’s name on a victory scroll. Wound: watching restoration eat its captains.',
 		voice:
-			'Wharf-flat, no poetry.',
+			'Wharf-flat, no poetry. Counts out loud — boats, bales, arrows, who owes him — and treats every speech as an invoice he has not been paid for. Korean: flat 반말 to his equals, a grudging 하오 to a king.',
 		arc: 'Fifth pillar of the Baekje Restoration Army’s founding captains — the Satek general who raises men the Great Clans never counted beside Boksin, Dochim, and Sangji. When Pung arrives he salutes the crown and keeps the harbour lanes open. After Boksin falls he refuses the king’s arithmetic, holds Imjon with Sangji’s stubbornness, and eventually surrenders to Tang when the White River prices the last chance.',
 		events: [
 			{ year: 660, label: 'Joins the BRA at Juryu with Boksin and Dochim.' },
@@ -3221,6 +3291,8 @@ export const PEOPLE: Person[] = [
 		died: 667,
 		tagline: 'The Red Fowl: took three kingdoms’ capitals in one career.',
 		quote: 'Three capitals. One career.',
+		voice:
+			'An old steppe cavalryman, blunt and on time. He talks about terrain the way other men talk about weather (“Snow is just cold sand”, “Mud is just wet road”), counts days aloud, and treats lateness as the only real sin. No flattery up or down; to Koreans he is curt rather than cruel. Korean: clipped 반말, short declaratives.',
 		arc: 'Breaker of the Western Turks, commander of the 660 seaborne invasion that ended Baekje in a single season. Gaozong’s Red Fowl — not the Second Emperor’s Red Dragon, which was the Turk Ashina She’er. He failed only at Pyongyang, mired in snow at the Sasu while Yeon destroyed the supporting army. Real-world figure: 蘇定方 / 소정방 (592–667).',
 		events: [
 			{ year: 660, label: 'Lands 130,000 men at the Geum estuary; Sabi falls.' },
@@ -3300,6 +3372,8 @@ export const PEOPLE: Person[] = [
 		died: 685,
 		tagline: 'The Black Tortoise: burned four hundred eastern ships at the White River.',
 		quote: 'Hold what the others break.',
+		voice:
+			'Dry, patient magistrate in armour. He governs by calendar, register and census, and enjoys the paperwork more than the battle. Mild jokes at his own expense (“Heaven means to make an old man rich”), never raises his voice, and writes everything down twice. Korean: measured 하오체.',
 		arc: 'Gaozong’s Black Tortoise — not the Second Emperor’s Black Dragon, which was Zhangsun Wuji. Liu Rengui holds Baekje when the restoration tries to stand up, then anchors a hundred and seventy ships across the White River mouth in 663 and waits for the tide to turn against the East. He is the general who keeps what the Red Fowl breaks, and he is at Pyongyang when it falls. Real-world figure: 劉仁軌 / 유인궤 (601–685).',
 		events: [
 			{ year: 663, label: 'Wins the naval battle of Baekgang as Black Tortoise.' },
@@ -3374,6 +3448,8 @@ export const PEOPLE: Person[] = [
 		died: 661,
 		tagline: 'The empress who mobilised the East for Baekje — and died on the way.',
 		quote: "The sea is also a border.",
+		voice:
+			'Old, unhurried, final: lets the men argue, then decides in one or two sentences and does not repeat them. Reaches for precedent and the sea. Japanese: imperial plain form; Korean: slow royal 하오체 / 해라 to her son.',
 		binyeo: 'Wave-lacquer island pin — an eastern kanzashi pointed west; she died wearing it toward the war.',
 		events: [
 			{ year: 660, label: 'Orders the fleet raised to restore Baekje.' },
@@ -3395,6 +3471,8 @@ export const PEOPLE: Person[] = [
 		died: 672,
 		tagline: 'Sent forty thousand men to the White River and lost them.',
 		quote: "Watch western fires. Steal only the heat you need.",
+		voice:
+			'Cool and exact; asks the price before anyone has finished the request, and keeps the answer on a separate sheet. Polite to his mother, dry with everyone else. Korean: clipped 존댓말 to the empress, level 하오체 to envoys.',
 		events: [
 			{ year: 661, label: 'Takes up his mother’s war for Baekje.' },
 			{ year: 663, label: 'The fleet burns at Baekgang; the East turns inward.' }
@@ -3426,6 +3504,8 @@ export const PEOPLE: Person[] = [
 		died: 663,
 		tagline: 'Died at the White River shouting Kudara’s name.',
 		quote: "Loyalty does not ask whose map you die on.",
+		voice:
+			'Plain-spoken and unbending; says exactly what he means in few calm words, never jokes, reads tide and ground before men, and his sincerity embarrasses the cynics around him. Korean: steady 하오체; Japanese subtitle layer.',
 		events: [{ year: 663, label: 'Falls at Baekgang crying “Long live Kudara!”' }],
 		aliases: ['Echi no Takutsu', 'Takutsu']
 	},
@@ -3439,6 +3519,8 @@ export const PEOPLE: Person[] = [
 		kingdom: 'yamato',
 		tagline: 'Yamato’s admiral of the cold north, sent west as rear general for Baekje.',
 		quote: 'I have sailed the cold sea. The western one is only warmer.',
+		voice:
+			'Loud, physical, laughs into the wind; a sailor who measures everything against the cold northern sea and thinks courage is mostly a matter of going first. Short shouted sentences on deck, blunt jokes at the table, no patience for weather signs. Korean: rough 하오체 to a king, plain 반말 shouted at his own crews.',
 		events: [
 			{ year: 658, label: 'Sails north with a hundred and eighty ships against the Emishi.' },
 			{ year: 660, label: 'Fights the Mishihase on the northern coast.' },
@@ -3486,9 +3568,25 @@ export const PEOPLE: Person[] = [
 		died: 672,
 		tagline: 'The guardian of Bear Fortress who handed his king to the Tang.',
 		quote: "Serving is not the same as believing.",
+		voice:
+			'A provincial lord: literal, polite, careful with numbers and seats. He agrees with everyone in the room and commits to nothing aloud; what he decides, he does without announcing it. Korean: courteous 하십시오체 upward, short 하게체 to his own men.',
 		arc: 'His tomb epitaph, dug up in Luoyang in 2006, confirmed what the histories implied: the man sheltering Euija at Ungjin surrendered him. He died a Tang general.',
 		events: [{ year: 660, label: 'Surrenders Euija at Bear Fortress.' }],
 		aliases: ['Ye Sikjin']
+	},
+	{
+		id: 'munsa',
+		gender: 'm',
+		name: 'Buyeo Munsa',
+		korean: '부여문사',
+		hanja: '扶餘文思',
+		kingdom: 'baekje',
+		title: 'Son of Crown Prince Yung',
+		tagline: 'Looked at the size of the Tang camp and climbed down the wall on a rope.',
+		quote: 'A king who runs leaves an uncle behind.',
+		arc: 'Yung’s son, left in Sabi when Euija runs for Bear Fortress. When his uncle Tae declares himself king the next morning, Munsa does the arithmetic: a king who runs leaves behind an uncle who will kill whoever opened the gate. He climbs down the wall on a rope with his household, and half the city follows him down it. He fights for no one afterwards.',
+		events: [{ year: 660, label: 'Climbs down the wall of Sabi and goes over to the Tang.' }],
+		aliases: ['Munsa', 'Buyeo Munsa']
 	},
 	{
 		id: 'yumjong',
@@ -3534,6 +3632,36 @@ export const PEOPLE: Person[] = [
 			'Central Commander',
 			'Stone Haetae of Goryeo'
 		]
+	},
+	{
+		id: 'yeontaejo',
+		gender: 'm',
+		avatar: '/ch_yeon_taejo.png',
+		name: 'Yeon Taejo',
+		korean: '연태조',
+		hanja: '淵太祚',
+		title: 'High Commander (막리지), then Eastern Commander (대가)',
+		kingdom: 'goguryeo',
+		born: 562,
+		bornApprox: true,
+		died: 642,
+		clan: 'clan-yeon',
+		tagline: 'The old crow of the east, who read the Nangbi report three times because nobody else in Pyongyang read it once.',
+		quote: 'Say half of what you think.',
+		voice:
+			'An old general who has outlived his patience with committees. Slow, plain and dry; short commands, then one long tired sentence when something matters. He never raises his voice to his son, and he is the only person Gesomun lets interrupt him. Korean: 반말 to his son, unhurried and low.',
+		arc: 'Gesomun’s father. He fought the Sui at the Great River and came home with a banner under his arm, then held the High Command in Pyongyang for twelve years while the Summit argued about granaries. His son grew up in the big house below the palace hill, watching him come home from the chamber in silence. When the Nangbi report reaches the capital in 629 he is the only man who reads it as a warning, and the first time Gesomun sees him afraid of anything is over a banner captain named Kim Yushin. He hands the chair to his brother Gusesa and goes home to the Eastern Command, too old by 634 to ride to the Summit, so the son goes in his place with his seal. He dies in the spring of 642. The feast that celebrates his son becoming Eastern Commander is the one nobody leaves.',
+		events: [
+			{ year: 612, label: 'Fights the Sui at the Great River.' },
+			{ year: 629, label: 'As High Commander, warns his son about Kim Yushin after Nangbi.' },
+			{ year: 634, label: 'Too old to ride to the Summit; sends Gesomun with his seal.' },
+			{ year: 642, label: 'Dies in the east; the Summit confirms his son as Eastern Commander.' }
+		],
+		career: [
+			{ title: 'High Commander', korean: '막리지', hanja: '莫離支', org: 'highsummit', from: 619, to: 631 },
+			{ title: 'Eastern Commander', korean: '대가', hanja: '大加', org: 'highsummit', from: 631, to: 642 }
+		],
+		aliases: ['Yeon Taejo', 'Taejo']
 	},
 	{
 		id: 'leegaesa',
@@ -3689,6 +3817,8 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		tagline: 'Buddhist aristocracy’s quiet knife — the monk who opened Pyongyang from within.',
 		quote: "A gate opens from the inside.",
+		voice:
+			'A quiet abbot with a very long memory. Courteous, almost gentle, never threatens; he answers questions with small facts about the past (a bell set on the floor, how many years ago) and lets the listener do the arithmetic. Korean: soft, formal 하십시오체.',
 		arc: 'Yeon tried to import Tang Taoism partly to starve the monk houses of prestige. The houses waited. When the brothers tore the kingdom, Shinsung opened what no army had opened — and proved Yeon’s fear had been aimed at the right profession.',
 		events: [
 			{ label: 'Watches Yeon’s Taoist experiment cool the temple halls.' },
@@ -4122,6 +4252,63 @@ export const PEOPLE: Person[] = [
 		aliases: ['King Ugeo', 'Ugeo']
 	},
 	{
+		id: 'sam',
+		gender: 'm',
+		name: 'Sam',
+		korean: '니계상 삼',
+		hanja: '尼谿相參',
+		kingdom: 'joseon',
+		title: 'Minister of Nigye',
+		tagline: 'The minister who did not bother with the road — he sent men up the wall-stair instead.',
+		quote: 'Terms are only terms until someone carries them out.',
+		arc: 'One of the ministers who spend the year of the Han siege talking to the men outside the walls. When Noin goes over the wall and dies on the road, Sam takes the shorter way: on a night at the start of summer he sends men up the stair to where King Ugeo sleeps on the parapet. The Han make him a marquis for it.',
+		events: [{ year: -108, label: 'Has King Ugeo murdered on the wall of Wanggeom.' }],
+		aliases: ['Sam']
+	},
+	{
+		id: 'noin',
+		gender: 'm',
+		name: 'Noin',
+		korean: '노인',
+		hanja: '路人',
+		kingdom: 'joseon',
+		died: -108,
+		title: 'Minister of Joseon',
+		tagline: 'Went over the wall to the Han, and died on the road before he reached their tents.',
+		quote: 'Someone has to carry the terms.',
+		arc: 'A minister of King Ugeo, and the first of them to stop believing the wall would hold. He opens the talks with the Han camp, goes over the wall to finish them, and dies on the road before he gets there. His son Choi finishes the work for him.',
+		events: [{ year: -108, label: 'Defects to the Han; dies on the road.' }],
+		aliases: ['Noin']
+	},
+	{
+		id: 'choi',
+		gender: 'm',
+		name: 'Choi',
+		korean: '최',
+		hanja: '最',
+		kingdom: 'joseon',
+		title: 'Son of Noin',
+		tagline: 'Noin’s son, who went into the starving lanes and asked who they were starving for.',
+		quote: 'The king is dead. So who are you starving for now?',
+		arc: 'After the king is murdered, the loyal minister Seong Gi goes back up the wall and holds Wanggeom anyway. Choi and Prince Jang Hang go down into the lanes, where people have been eating bark since spring, and talk them out of it. Before morning Seong Gi is dead and someone lifts the bar. The Han reward Choi with a marquisate.',
+		events: [{ year: -108, label: 'Turns the starving city against Seong Gi; Wanggeom opens.' }],
+		aliases: ['Noin’s son Choi']
+	},
+	{
+		id: 'janghang',
+		gender: 'm',
+		name: 'Prince Jang Hang',
+		korean: '장항',
+		hanja: '長降',
+		kingdom: 'joseon',
+		title: 'Son of King Ugeo',
+		tagline: 'The king’s son, who started sleeping somewhere else.',
+		quote: 'Does it matter who?',
+		arc: 'King Ugeo’s son and heir, and the man who brings his father the Han terms. When Ugeo asks who handed them to him, he will not say. After his father is murdered he goes down into the lanes with Noin’s son Choi and helps turn the city against the last loyal minister. The Han make him a marquis of a country that no longer exists.',
+		events: [{ year: -108, label: 'Helps open Wanggeom to the Han after his father’s murder.' }],
+		aliases: ['Prince Jang Hang', 'Jang Hang']
+	},
+	{
 		id: 'kyunhwon',
 		gender: 'm',
 		avatar: '/ch_kyun_hwon.png',
@@ -4166,7 +4353,7 @@ export const PEOPLE: Person[] = [
 		hanja: '近肖古王',
 		kingdom: 'baekje',
 		died: 375,
-		tagline: 'The Hurricane — Baekje at high tide, a king of Goguryeo dead at his feet.',
+		tagline: 'The 13th — Baekje at high tide, a king of Goguryeo dead at his feet.',
 		quote: "Wealth is a kind of weather. Ride it.",
 		events: [
 			{ year: 371, label: 'Kills King Gogugwon at Pyongyang.' },
@@ -4211,7 +4398,7 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		born: 374,
 		died: 413,
-		tagline: 'The Conqueror — sixty-four fortresses, and a stele to list them.',
+		tagline: 'The Great King — sixty-four fortresses, and a stele to list them.',
 		quote: "Expand until the stele runs out of space.",
 		events: [
 			{ year: 391, label: 'Takes the throne at eighteen.' },
@@ -4237,6 +4424,29 @@ export const PEOPLE: Person[] = [
 			{ title: 'Emperor', korean: '천황', hanja: '天皇', org: 'nation-yamato', from: 629 }
 		],
 		aliases: ['King Jomei', 'Jomei']
+	},
+	{
+		id: 'kotoku',
+		gender: 'm',
+		name: 'King Kōtoku',
+		korean: '고토쿠 천황',
+		hanja: '孝德',
+		kingdom: 'yamato',
+		born: 596,
+		died: 654,
+		tagline: 'The reforming king who heard Silla out, and would not fill the sea with ships.',
+		quote: 'The sea is wide. Let it stay between us.',
+		voice:
+			'A cautious reformer who prefers new laws to old wars. Courteous and curious with foreign envoys, noncommittal with his own war party; he ends arguments by thanking everyone and deciding nothing aloud. Korean: formal 하오체, unhurried.',
+		arc: 'He takes the throne after the Isshi coup of 645 and spends his reign rewriting Yamato on the Tang model. When Chunchu crosses the sea in 647 he listens politely; when his ministers urge him in 651 to fill the strait at Tsukushi with ships and punish Silla for wearing Tang dress, he does not. His successors try it at the White River.',
+		events: [
+			{ year: 647, label: 'Receives Kim Chunchu at the Yamato court.' },
+			{ year: 651, label: 'Refuses the call to fill the sea at Tsukushi with ships.' }
+		],
+		career: [
+			{ title: 'Emperor', korean: '천황', hanja: '天皇', org: 'nation-yamato', from: 645, to: 654 }
+		],
+		aliases: ['King Kōtoku', 'Emperor Kōtoku', 'Kōtoku', 'Kotoku']
 	},
 	{
 		id: 'euljae',
@@ -4804,7 +5014,7 @@ export const PEOPLE: Person[] = [
 		quote: "You will never be crazier than we are.",
 		voice:
 			'Plain and defiant: soldier’s banter with his men, rage in short bursts at the emperor, wry about the siege. Korean: 반말 to his men and to the enemy alike.',
-		arc: 'The chronicles never recorded his name; the people of Ansi simply called him the chief. He refuses to bow to the man who butchered the court, flies the old colours over his wall — and then defends that man’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. Only centuries later did writers give him a name: Yang Manchun.',
+		arc: 'The chronicles never recorded his name; the people of Ansi simply called him the chief. He refuses to bow to the man who butchered the court, flies the old colours over his wall — and then defends that man’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. Later writers tried to give him a name. The wall kept its silence better.',
 		blade: 'Nameless wall sword — ring pommel worn smooth, no crest at all; the fortress was the signature.',
 		events: [{ year: 645, label: 'Holds Ansi against Taizong through a summer-long siege.' }],
 		sobriquets: ['Guardian of Ansi', 'Wall that Stopped an Emperor'],
@@ -4812,8 +5022,6 @@ export const PEOPLE: Person[] = [
 			{ title: 'Guardian of Ansi', korean: '안시성주', from: 645 }
 		],
 		aliases: [
-			'Commander Yang',
-			'Yang Manchun',
 			'Guardian of Ansi',
 			'Wall that Stopped an Emperor'
 		]
@@ -4928,6 +5136,38 @@ export const PEOPLE: Person[] = [
 			{ year: 668, label: 'Surrenders Pyongyang as the gates open from within.' }
 		],
 		aliases: ['Yeon Namsan', '연남산', '淵男産']
+	},
+	{
+		id: 'goyeonsu',
+		gender: 'm',
+		name: 'Go Yeonsu',
+		korean: '고연수',
+		hanja: '高延壽',
+		kingdom: 'goguryeo',
+		died: 645,
+		title: 'Commander of the relief army',
+		tagline: 'Marched to save Ansi with tens of thousands, and walked into the Tang camp instead.',
+		quote: 'Numbers are an argument.',
+		arc: 'One of the two commanders Goguryeo sends to relieve Ansi in 645, under banners that think numbers are an argument. At Stallion Mountain the Second Emperor surrounds them, and Go Yeonsu and Go Hyejin walk into the Tang camp with thirty-six thousand men behind them. The Tang give him a court title far from any border. He does not live out the year; the records say he died of grief, the only cause of death the Tang ever let a surrendered general keep.',
+		events: [
+			{ year: 645, label: 'Surrenders at Stallion Mountain.' },
+			{ year: 645, label: 'Dies of grief in Tang service.' }
+		],
+		aliases: ['Go Yeonsu']
+	},
+	{
+		id: 'gohyejin',
+		gender: 'm',
+		name: 'Go Hyejin',
+		korean: '고혜진',
+		hanja: '高惠眞',
+		kingdom: 'goguryeo',
+		title: 'Commander of the relief army',
+		tagline: 'Surrendered at Stallion Mountain and was made the Tang’s Minister of Agriculture.',
+		quote: 'A minister of grain is still a minister.',
+		arc: 'Go Yeonsu’s fellow commander at Stallion Mountain, and the one who survives it. After the surrender the Tang send him inland with a ministry of agriculture and a house nowhere near Goguryeo. He keeps the post, and lives.',
+		events: [{ year: 645, label: 'Surrenders at Stallion Mountain; taken into Tang service.' }],
+		aliases: ['Go Hyejin']
 	},
 	{
 		id: 'munduk',
@@ -5287,17 +5527,18 @@ export const PEOPLE: Person[] = [
 			{ year: 554, label: 'Kills King Seong at Gwansanseong.' },
 			{ year: 562, label: 'Conquers Daegaya.' }
 		],
-		sobriquets: ['the Crescent Moon', 'Crescent Moon', 'The Crescent Moon', '초승달'],
+		sobriquets: ['the Cloud King', 'Cloud King', 'The Cloud King', '구름왕', '법운'],
 		career: [
 			{ title: 'King', korean: '진흥왕', hanja: '眞興王', org: 'sillaroyal', from: 540 }
 		],
 		aliases: [
 			'King Jinheung',
 			'Jinheung',
-			'the Crescent Moon',
-			'Crescent Moon',
-			'The Crescent Moon',
-			'초승달'
+			'the Cloud King',
+			'Cloud King',
+			'The Cloud King',
+			'구름왕',
+			'법운'
 		]
 	},
 	{
@@ -5705,6 +5946,7 @@ export const CONCEPTS: Person[] = [
 	},
 	{
 		id: 'sumyeongjangja',
+		avatar: '/ch_sumyung.png',
 		name: 'Sumyung Jangja',
 		korean: '수명장자',
 		gender: 'm',
@@ -6278,10 +6520,10 @@ export const CONCEPTS: Person[] = [
 		kingdom: 'goguryeo',
 		title: 'The defenders in the Hall of Heroes',
 		tagline: 'The short list of men who stopped an empire at the Liao.',
-		arc: 'Goguryeo’s self-image in five or six names — Gwanggaeto who expanded it, Ulchi Munduk who drowned the Sui at the Salsu, Yang Manchun who held Ansi against Taizong. Yeon Gesomun spends his life auditioning for the list and Namseng inherits a kingdom that believes the list will always be added to.',
+		arc: 'Goguryeo’s self-image in five or six names — Gwanggaeto who expanded it, Ulchi Munduk who drowned the Sui at the Great River, the nameless Guardian of Ansi who held his wall against Taizong. Yeon Gesomun spends his life auditioning for the list and Namseng inherits a kingdom that believes the list will always be added to.',
 		events: [
 			{ year: 612, label: 'Ulchi Munduk destroys the Sui at the Great River.' },
-			{ year: 645, label: 'Yang Manchun is added after holding Ansi.' }
+			{ year: 645, label: 'The Guardian of Ansi is added after holding his wall.' }
 		],
 		aliases: ['Great Heroes of Goguryeo', 'Great Heroes']
 	},
@@ -6882,6 +7124,50 @@ export const GROUPS: Person[] = [
 		tagline: 'Alyoung, Sosuno, Heo — the three women at the root of Silla, Baekje, and Gaya.',
 		arc: 'The founders get the eggs and the arrows; these three get the kingdoms to keep. Alyoung, born of a Chicken Dragon beside Silla’s first king; Sosuno, who founded one kingdom with her husband and another with her sons; Heo, who sailed in from a country nobody had heard of and kept her own name.',
 		aliases: ['Three Great Women', 'The Three Great Women', '삼대성녀']
+	},
+	{
+		id: 'traitors',
+		name: 'The Traitors',
+		korean: '배신자들',
+		entity: 'group',
+		kingdom: 'other',
+		rosterBy: 'kingdom',
+		title: 'The men who opened the door from inside',
+		tagline: 'Every kingdom in this chronicle fell, or nearly fell, through a door someone inside unlocked.',
+		quote: 'No wall falls while everyone behind it agrees.',
+		arc: 'No wall in this chronicle is ever taken while everyone behind it agrees. Old Joseon held the Han for a year at Wanggeom until its own ministers killed the king and lifted the bar. Silla lost Daeya to two yellow-sleeve officers its bone ranks would never promote, later caught an official writing to the Tang, and watched an executed noble’s son pilot a Tang fleet onto its coast. Baekje’s capital opened from the inside, its king was handed over by the man sheltering him, its crown prince came back to govern for the Tang, and two restoration generals took Tang commissions and marched on their old comrades. Goguryeo’s heir led the emperor’s army home, its regent’s brother walked south to Silla with twelve fortresses, and in the end a monk and a general unbarred Pyongyang. These are not the men who merely surrendered: they worked for the other side. The chronicle gives each of them a reason. It does not give any of them a statue.',
+		events: [
+			{ year: -108, label: 'Sam, Noin, Choi and Prince Jang Hang open Wanggeom to the Han.' },
+			{ year: 642, label: 'Gumil and Mochuk open Daeya to Baekje.' },
+			{ year: 660, label: 'Sabi’s gate opens; Ye Sikjin hands Euija to the Red Fowl.' },
+			{ year: 663, label: 'Heukchi Sangji and Satek Sangya march for the Tang.' },
+			{ year: 664, label: 'Buyeo Yung returns as governor of the Bear Ford Commandery.' },
+			{ year: 666, label: 'Yeon Namseng goes to the Tang; Yeon Jungto takes twelve fortresses to Silla.' },
+			{ year: 668, label: 'Shinsung and Yomyo open Pyongyang.' },
+			{ year: 673, label: 'Daeto is executed for promising the Tang a door.' },
+			{ year: 675, label: 'Kim Punghun pilots the Tang fleet to Cheonseong.' }
+		],
+		aliases: ['The Traitors', 'Traitors', '배신자들']
+	},
+	{
+		id: 'defectors',
+		name: 'The Defectors',
+		korean: '귀순자들',
+		entity: 'group',
+		kingdom: 'other',
+		rosterBy: 'kingdom',
+		title: 'The ones who crossed over and stayed',
+		tagline: 'They laid down their arms, took the other country’s rank, and lived out their lives inside it.',
+		quote: 'A man can change his country once. After that it is only weather.',
+		arc: 'Not every man who changes sides opens a gate. These surrendered, or simply went, and then lived the rest of their lives as subjects of the country they had crossed into. None of them led its army back against home. A Gaya prince handed over his kingdom and his grandson became Silla’s greatest general. A Silla prince spent most of his life in Chang’an and died there. Two Goguryeo commanders walked into the Tang camp at Stallion Mountain and were given ministries far from any border. A Baekje prince climbed down his city wall on a rope, and a Goguryeo prince surrendered Pyongyang when the gate was already open. The empire collected them the way it collected horses.',
+		events: [
+			{ year: 532, label: 'Muryuk surrenders Golden Gaya and enters Silla’s True Bone.' },
+			{ year: 645, label: 'Go Yeonsu and Go Hyejin surrender at Stallion Mountain.' },
+			{ year: 660, label: 'Buyeo Munsa climbs down the wall of Sabi to the Tang camp.' },
+			{ year: 668, label: 'Yeon Namsan surrenders Pyongyang and is taken to Chang’an.' },
+			{ year: 694, label: 'Kim Inmun dies in Chang’an.' }
+		],
+		aliases: ['The Defectors', 'Defectors', '귀순자들']
 	}
 ];
 
@@ -7632,7 +7918,7 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	yushin: ['eternalhwarang', 'gayakims'],
 	alchun: ['eternalhwarang'],
 	bidam: ['eternalhwarang'],
-	muryuk: ['gayakims'],
+	muryuk: ['gayakims', 'defectors'],
 	seohyeon: ['gayakims'],
 	sunduk: ['sacredbones'],
 	jinduk: ['sacredbones'],
@@ -7651,15 +7937,37 @@ const GROUPS_BY_ID: Record<string, string[]> = {
 	kangrim: ['grimreapers'],
 	haewonmek: ['grimreapers'],
 	// Baekje — Euija’s five princes (birth order; wiki grid uses GROUP_ROSTERS)
-	yung: ['fiveprinces'],
+	yung: ['fiveprinces', 'traitors'],
 	tae: ['fiveprinces'],
 	hyo: ['fiveprinces'],
 	yun: ['fiveprinces'],
 	pung: ['fiveprinces', 'brafounders'],
 	boksin: ['brafounders'],
 	dochim: ['brafounders'],
-	sangji: ['brafounders'],
-	sateksangya: ['brafounders'],
+	sangji: ['brafounders', 'traitors'],
+	sateksangya: ['brafounders', 'traitors'],
+	// The Traitors — worked for the other side
+	sam: ['traitors'],
+	noin: ['traitors'],
+	choi: ['traitors'],
+	janghang: ['traitors'],
+	gumil: ['traitors'],
+	mochuk: ['traitors'],
+	daeto: ['traitors'],
+	kimpunghun: ['traitors'],
+	imja: ['traitors'],
+	chunbok: ['traitors'],
+	yesikjin: ['traitors'],
+	namseng: ['traitors'],
+	jungto: ['traitors'],
+	shinsung: ['traitors'],
+	yomyo: ['traitors'],
+	// The Defectors — crossed over and stayed
+	inmun: ['defectors'],
+	munsa: ['defectors'],
+	goyeonsu: ['defectors'],
+	gohyejin: ['defectors'],
+	namsan: ['defectors'],
 	// Goguryeo — four directional 대가 and the High Commander
 	gesomun: ['fivecommanders'],
 	gusesa: ['fivecommanders'],
@@ -7705,7 +8013,29 @@ export const GROUP_ROSTERS: Record<string, readonly string[]> = {
 	fourdragons: ['qibiheli', 'ashinasheer', 'lishiji', 'zhangsunwuji'],
 	fourbeasts: ['pangxiaotai', 'sudingfang', 'lishiji', 'liurengui', 'xuerengui'],
 	// East, West, South, North, then the 막리지
-	fivecommanders: ['gesomun', 'westcmd', 'southcmd', 'northcmd', 'gusesa']
+	fivecommanders: ['gesomun', 'westcmd', 'southcmd', 'northcmd', 'gusesa'],
+	// Nation bands follow first appearance: Joseon, Silla, Baekje, Goguryeo
+	traitors: [
+		'sam',
+		'noin',
+		'choi',
+		'janghang',
+		'gumil',
+		'mochuk',
+		'daeto',
+		'kimpunghun',
+		'imja',
+		'chunbok',
+		'yesikjin',
+		'sangji',
+		'sateksangya',
+		'yung',
+		'namseng',
+		'jungto',
+		'shinsung',
+		'yomyo'
+	],
+	defectors: ['muryuk', 'inmun', 'munsa', 'goyeonsu', 'gohyejin', 'namsan']
 };
 
 /** A distinct hue per profile, used for avatars, chips and the panel accent. */
@@ -7769,6 +8099,8 @@ const COLOR: Record<string, string> = {
 	muryuk: '#8B5CF6',
 	gumil: '#6b7f9e',
 	mochuk: '#7d8a99',
+	daeto: '#8a8f9e',
+	kimpunghun: '#7a8fb0',
 	// supporting cast
 	jukjuk: '#3f9b6e',
 	yunchung: '#c9932a',
@@ -7815,6 +8147,7 @@ const COLOR: Record<string, string> = {
 	suljong: '#8a6a7a',
 	yumjang: '#7a7a9a',
 	gusesa: '#b2554a',
+	yeontaejo: '#8f3a2e',
 	northcmd: '#6a8f6e',
 	southcmd: '#c46b3a',
 	westcmd: '#7a6b8a',
@@ -7862,6 +8195,7 @@ const COLOR: Record<string, string> = {
 	gwanggaeto: '#e0442e',
 	dongchun: '#8b4040',
 	jomei: '#f2a0bb',
+	kotoku: '#e89ab0',
 	euljae: '#7f9fd0',
 	ladyye: '#d98fa8',
 	yuri: '#e07a5f',
@@ -8517,7 +8851,8 @@ export const PROFILES: Person[] = [
 	...RELATIONSHIPS,
 	...PLACE_PROFILES,
 	...SWORDS,
-	...ANIMALS
+	...ANIMALS,
+	...INSTRUMENTS
 ].map(withProfileMeta);
 
 /** The identifying colour for a profile (Person.color → COLOR table → kingdom). */
@@ -8609,6 +8944,7 @@ export function stageOf(p: Person, year: number | null | undefined): PersonStage
 	if (year == null || !p.stages?.length) return null;
 	let hit: PersonStage | null = null;
 	for (const s of p.stages) {
+		if (s.lookOnly) continue;
 		if (s.from != null && year < s.from) continue;
 		if (s.until != null && year >= s.until) continue;
 		hit = s;

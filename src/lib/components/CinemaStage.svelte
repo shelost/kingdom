@@ -58,13 +58,11 @@
 	import Blocks from './Blocks.svelte';
 	import SpeakerPlate from './SpeakerPlate.svelte';
 	import { storyImg, optimizeSrc } from '$lib/img';
-	import { editUi } from '$lib/editUi.svelte';
 	import { cueMenuTarget, openImageMenu } from '$lib/imageMenu.svelte';
 
 	/** Cinema only takes the screen once the reader is past cover + blurb. */
 	let live = $derived(reading.mode === 'cinema' && scriptUi.inScript);
 	let reduce = $derived(prefersReducedMotion.current);
-	let editing = $derived(editUi.enabled);
 
 	/* ————— where we are ————— */
 	let episode = $derived(episodeContextOf(reading.entryId));
@@ -549,11 +547,9 @@
 						<button
 							type="button"
 							class="matte-open"
-							class:editing
 							onclick={openPanelLightbox}
 							oncontextmenu={onEditPanelContextMenu}
 							aria-label="Open scene still"
-							title={editing && panel.slotId ? 'Right-click to star / remove' : undefined}
 						>
 							<img
 								{...storyImg(panel.src, {
@@ -893,12 +889,6 @@
 		border: none;
 		background: transparent;
 		cursor: zoom-in;
-	}
-
-	.matte-open.editing {
-		cursor: context-menu;
-		outline: 1px dashed color-mix(in srgb, #c9a227 55%, transparent);
-		outline-offset: -3px;
 	}
 
 	.matte.empty {

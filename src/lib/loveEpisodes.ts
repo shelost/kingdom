@@ -1,30 +1,15 @@
+import { chapters, entryId } from '$lib/story';
+
 /**
- * Love-story episodes — the ten couples (excl. Jacheongbi & Mun Doryeong).
- * Pink dot in the TOC marks these entries.
- *
- * Couples → host episode:
- * - Hwanung & Ungnyeo → Dangun & Old Joseon
- * - Haemosu & Yuhwa → Jumong
- * - Jumong & Sosuno → Jumong
- * - Ibiga & Jeonggyeon → Suro
- * - Suro & Queen Heo → Suro
- * - Chunchu & Munhee → Queen Sunduk
- * - Yushin & Sunduk → Queen Sunduk
- * - Gotaso & Pumsuk → Gotaso’s Wedding
- * - Bupmin & Jahee → Harbour Ledgers
- * - Xue Rengui & Lady Liu → Longmen Field
+ * Love-story episodes — entries whose `kinds` include `"love"` in story.json.
+ * A heart marks them in the TOC and the episode switcher.
  */
+export const LOVE_EPISODE_IDS = new Set<string>(
+	chapters.flatMap((ch) =>
+		ch.entries.filter((en) => en.kinds?.includes('love')).map((en) => entryId(ch.id, en.title))
+	)
+);
 
-export const LOVE_EPISODE_IDS = new Set<string>([
-	'fall-of-baekje-dangun-old-joseon',
-	'jumong-jumong',
-	'chunchu-era-suro',
-	'samhan-queen-sunduk',
-	'five-principles-gotasos-wedding',
-	'chunchu-era-harbour-ledgers',
-	'seventh-invasion-longmen-field'
-]);
-
-export function isLoveEpisode(entryId: string): boolean {
-	return LOVE_EPISODE_IDS.has(entryId);
+export function isLoveEpisode(id: string): boolean {
+	return LOVE_EPISODE_IDS.has(id);
 }

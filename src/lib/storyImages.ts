@@ -15,7 +15,7 @@ import {
 } from '$lib/cueArt';
 import { IMAGE_PEOPLE } from '$lib/imagePeople';
 import { avatarOf, byId, isPlaceholderArt, nameOf, PROFILES } from '$lib/people';
-import { ENTRY_PLACE, PLACES } from '$lib/places';
+import { entryPlace } from '$lib/places';
 import { chapters, type Block, type Chapter, type Entry, type ImageSlot } from '$lib/story';
 import { TEMP_ART_BY_ID } from '$lib/tempArtInventory';
 import { isNsfwCueImage } from '$lib/nsfwCue';
@@ -204,11 +204,8 @@ function refsFor(slot: ImageSlot, entry: Entry, beatBlocks: Block[], year: numbe
 		}
 	}
 
-	const placeId = ENTRY_PLACE[entry.title];
-	if (placeId) {
-		const place = PLACES[placeId];
-		if (place?.avatar) push(place.avatar, place.name, place.id);
-	}
+	const place = entryPlace(entry);
+	if (place?.avatar) push(place.avatar, place.name, place.id);
 
 	return out.slice(0, 6);
 }

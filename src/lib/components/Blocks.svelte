@@ -822,12 +822,12 @@
 
 	.monologue p {
 		margin: 0;
-		font-family: var(--serif);
+		font-family: var(--sans);
 		font-size: 1.02em;
 		font-style: italic;
 		font-weight: 500;
 		line-height: 1.5;
-		letter-spacing: var(--tracking-display);
+		letter-spacing: var(--tracking-body);
 		color: color-mix(in srgb, var(--chip) 28%, var(--fg-strong));
 	}
 

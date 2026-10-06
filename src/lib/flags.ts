@@ -17,6 +17,16 @@ export const FLAG_IDS = [
 
 export type FlagId = (typeof FLAG_IDS)[number];
 
+export const FLAG_LABEL: Record<FlagId, { label: string; ko: string }> = {
+	silla: { label: 'Silla', ko: '신라' },
+	baekje: { label: 'Baekje', ko: '백제' },
+	goguryeo: { label: 'Goguryeo', ko: '고구려' },
+	tang: { label: 'Tang', ko: '당' },
+	wa: { label: 'Wa', ko: '왜' },
+	gaya: { label: 'Gaya', ko: '가야' },
+	tamla: { label: 'Tamla', ko: '탐라' }
+};
+
 /** badge token → flag id. Legacy emoji kingdom markers map here too. */
 const TOKEN: Record<string, FlagId> = {
 	'silla': 'silla',
@@ -32,6 +42,7 @@ const TOKEN: Record<string, FlagId> = {
 	'🟡': 'baekje',
 	'⚙️': 'goguryeo',
 	'唐': 'tang',
+	'🇨🇳': 'tang',
 	'🌸': 'wa',
 	'🟣': 'gaya',
 	'🟠': 'tamla'

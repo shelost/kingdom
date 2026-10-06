@@ -6,7 +6,7 @@
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
 	import { filterNsfw } from '$lib/nsfwUi.svelte';
-	import { editUi, filterRemovedCues } from '$lib/editUi.svelte';
+	import { filterVisibleCues } from '$lib/editUi.svelte';
 	import { cueMenuTarget, openImageMenu } from '$lib/imageMenu.svelte';
 	import { openLightbox, type LightboxItem } from '$lib/imageLightbox.svelte';
 	import { isNsfwCueImage } from '$lib/nsfwCue';
@@ -26,8 +26,7 @@
 
 	/** Immersion keeps the landscape phone-frame treatment; script uses normal sticky + cues. */
 	let immersion = $derived(reading.mode === 'immersion');
-	let visible = $derived(filterRemovedCues(filterNsfw(images)));
-	let editing = $derived(editUi.enabled);
+	let visible = $derived(filterVisibleCues(filterNsfw(images)));
 
 	let live = $state(0);
 	/** Sticky / inline stacks only fetch once near the viewport (or marked LCP). */
@@ -232,8 +231,8 @@
 		openLightbox(items, index >= 0 ? index : 0, host);
 	}
 
-	function onEditContextMenu(e: MouseEvent, slotId: string) {
-		openImageMenu(e, cueMenuTarget(slotId));
+	function onEditContextMenu(e: MouseEvent, slotId: string, src?: string) {
+		openImageMenu(e, cueMenuTarget(slotId, src));
 	}
 </script>
 
@@ -248,7 +247,7 @@
 	are not hidden behind a locked-in `src`.
 -->
 {#if visible.length}
-<div class="stack" class:immersion class:inline class:editing {@attach watchLive} {@attach watchNear}>
+<div class="stack" class:immersion class:inline {@attach watchLive} {@attach watchNear}>
 	{#each visible as slot, i (`${slot.id}:${i}`)}
 		{#if inline}
 			{@const frames = liveScriptFrames(slot)}
@@ -257,11 +256,11 @@
 					{@const fit = naturalRatio(frame.src)}
 					<figure
 						class="frame art live"
-						class:temp={frame.layer === 'temp'}
+						class:tall={(fit ?? slot.ratio ?? 2) < 1}
 						class:fitted={fit != null}
 						style:--tone={slot.tone ?? '#3a3a40'}
 						style:--ratio={fit ?? slot.ratio ?? 2}
-						oncontextmenu={(e) => onEditContextMenu(e, slot.id)}
+						oncontextmenu={(e) => onEditContextMenu(e, slot.id, frame.src)}
 					>
 						{#if paintSlot(i)}
 							<button
@@ -285,9 +284,6 @@
 									})}
 								/>
 							</button>
-							{#if frame.layer === 'temp'}
-								<figcaption class="temp-tag">temp</figcaption>
-							{/if}
 						{/if}
 					</figure>
 				{/each}
@@ -315,7 +311,7 @@
 				style:--ratio={immersion ? '3 / 2' : (fit ?? slot.ratio ?? 2)}
 				style:--tone={slot.tone ?? '#3a3a40'}
 				{@attach revealFrame(i)}
-				oncontextmenu={(e) => onEditContextMenu(e, slot.id)}
+				oncontextmenu={(e) => onEditContextMenu(e, slot.id, art)}
 			>
 				{#if art && paintSlot(i)}
 					<button
@@ -361,36 +357,6 @@
 		min-height: 12rem;
 		display: grid;
 		place-items: center;
-	}
-
-	.stack.editing .frame.art {
-		outline: 1px dashed color-mix(in srgb, var(--gold) 55%, transparent);
-		outline-offset: -2px;
-		cursor: context-menu;
-	}
-
-	.stack.editing .frame.art::after {
-		content: 'Right-click to star / remove';
-		position: absolute;
-		left: 0.45rem;
-		bottom: 0.4rem;
-		z-index: 3;
-		font-family: var(--ui);
-		font-size: 0.58rem;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: rgba(255, 253, 248, 0.88);
-		background: color-mix(in srgb, #14141a 72%, transparent);
-		padding: 0.18rem 0.4rem;
-		border-radius: 999px;
-		pointer-events: none;
-		opacity: 0;
-		transition: opacity 160ms var(--ease);
-	}
-
-	.stack.editing .frame.art:hover::after,
-	.stack.editing .frame.art.live::after {
-		opacity: 1;
 	}
 
 	.frame {
@@ -585,29 +551,6 @@
 		overflow: hidden;
 	}
 
-	.stack.inline .frame.temp {
-		outline: 1px dashed color-mix(in srgb, var(--gold, #c9a227) 40%, transparent);
-		outline-offset: -1px;
-	}
-
-	.stack.inline .temp-tag {
-		position: absolute;
-		z-index: 2;
-		left: 0.4rem;
-		bottom: 0.4rem;
-		margin: 0;
-		padding: 0.08rem 0.4rem;
-		font-size: 0.55rem;
-		font-weight: 700;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		line-height: 1.5;
-		color: rgba(255, 236, 179, 0.92);
-		background: rgba(0, 0, 0, 0.48);
-		border: 1px dashed color-mix(in srgb, var(--gold, #c9a227) 50%, transparent);
-		border-radius: var(--radius-pill);
-	}
-
 	.count {
 		position: absolute;
 		z-index: 2;
@@ -650,11 +593,16 @@
 			padding: 0;
 		}
 
-		/* One still per row at the column's full width; the measured ratio sizes it. */
+		/* One still per row at the column's full width; the measured ratio sizes it.
+		   Portraits pair up so a single figure never runs taller than the screen. */
 		.stack.inline .frame {
 			width: 100%;
 			height: auto;
 			max-height: none;
+		}
+
+		.stack.inline .frame.tall {
+			width: calc(50% - 0.3rem);
 		}
 
 		.stack.inline .ph {

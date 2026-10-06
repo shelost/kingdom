@@ -123,6 +123,7 @@ export function buildChatPrompt(p: Person): string {
 	if (p.boneRank) facts.push(`Bone rank / station: ${p.boneRank}`);
 	if (p.stages?.length) {
 		const stages = p.stages
+			.filter((st) => !st.lookOnly)
 			.map((st) => {
 				const label = st.title ?? st.name ?? 'stage';
 				const from = st.from != null ? formatYear(st.from) : '…';

@@ -159,8 +159,9 @@ export const PLACES: Record<string, Place> = {
 	salsu: {
 		id: 'salsu',
 		labelLeft: true,
-		name: 'Great River',
+		name: 'Colossal River',
 		korean: '살수 (청천강)',
+		aliases: ['Colossal River', 'Salsu', '살수', 'Great River'],
 		x: 248,
 		y: 487,
 		kind: 'river',
@@ -207,11 +208,11 @@ export const PLACES: Record<string, Place> = {
 		title: 'Jumong Cavern — where the holy king prayed',
 		blurb:
 			'Every northern vow begins in the cave Jumong hollowed out — 국동대혈, where every Goguryeo heir renews the vow before blood.',
-		arc: 'Before the tortoise-bridge and the founding, Jumong knelt in this hollow and asked heaven for a country that would outlast his brothers’ hatred. The cavern remembers the bow, the egg, the sun-line — and later kings come back not for scenery but for permission. Gesomun renews his vow here in the tenth month of 642, hours before the banquet knives; Yeon’s sons grow up hearing the story as weather you inherit. When Goguryeo falls, the cave does not. Later crowns still argue about who descended from the man who prayed here.',
+		arc: 'Before the tortoise-bridge and the founding, Jumong knelt in this hollow and asked heaven for a country that would outlast his brothers’ hatred. The cavern remembers the bow, the egg, the sun-line — and later kings come back not for scenery but for permission. Gesomun kneels here in the tenth month of 642, three nights after the banquet knives, and thanks the holy king for a direction; Yeon’s sons grow up hearing the story as weather you inherit. When Goguryeo falls, the cave does not. Later crowns still argue about who descended from the man who prayed here.',
 		events: [
 			{ year: -37, label: 'Jumong founds Goguryeo at Jolbon after the river gives way.' },
 			{ year: -37, label: 'He prays in the cavern (국동대혈) for a kingdom of his own.' },
-			{ year: 642, label: 'Gesomun renews his vow here before the Pyongyang massacre.' }
+			{ year: 642, label: 'Gesomun prays here after the Pyongyang massacre.' }
 		],
 		aliases: ['Jolbon', 'Jumong Cavern', '국동대혈', 'Jumong Cave', '졸본']
 	},
@@ -343,8 +344,9 @@ export const PLACES: Record<string, Place> = {
 	gibeolpo: {
 		id: 'gibeolpo',
 		labelLeft: true,
-		name: 'Strike Harbor',
+		name: 'Final Ford',
 		korean: '기벌포 (장항)',
+		aliases: ['Final Ford', 'Gibeolpo', '기벌포', 'Strike Harbor'],
 		x: 287,
 		y: 649,
 		kind: 'harbor',
@@ -773,99 +775,9 @@ export const PLACES: Record<string, Place> = {
 /** Markers drawn permanently on the map (off-map sites are omitted). */
 export const MAP_MARKERS = Object.values(PLACES).filter((p) => !p.offMap);
 
-/** entry title → place id. Titles are unique across the story. */
-export const ENTRY_PLACE: Record<string, string> = {
-	// Part I
-	'Queen Sunduk': 'surabol',
-	'Jinheung, The Crescent Moon': 'gwansan',
-	'The Eight Great Clans': 'sabi',
-	'Gunchogo, The Hurricane': 'pyongyang',
-	'Ocean Trade': 'sabi',
-	'The Summit': 'pyongyang',
-	'Gwanggaeto, The Conqueror': 'surabol',
-	'Gotaso’s Wedding': 'surabol',
-	'Yeon’s Three Sons': 'gungnae',
-	'King Euija, the 31st Eraha': 'sabi',
-	'The Severing': 'gwansan',
-	'Daeya Fortress': 'daeya',
-	Steam: 'steam_cavern',
-	'Best of Both': 'steam_cavern',
-	'The Marshal\u2019s Steam': 'steam_cavern',
-	'Steam, Again': 'steam_cavern',
-	'Yeon’s Massacre': 'pyongyang',
-	'After the Knives': 'pyongyang',
-	'Chunchu & Gesomun': 'pyongyang',
-	'Euija & Gesomun': 'pyongyang',
-	'Kim Yushin': 'steam_cavern',
-	'Li Shimin, the 2nd Huangdi': 'changan',
-	// Part II
-	'Emperor of the West': 'changan',
-	'Great River': 'salsu',
-	'Eastern Fortress': 'yodong',
-	'Stallion Mountain': 'jupil',
-	'Boiling River': 'gungnae',
-	'Jumong': 'jolbon',
-	'Dongmyung': 'jolbon',
-	'Annual Meeting of the Three Realms': 'realms_pavilion',
-	'Jacheongbi': 'western_flower_field',
-	'Ansi': 'ansi',
-	'The Hwarang': 'surabol',
-	'The Flower Youth': 'surabol',
-	'Harbour Ledgers': 'danghang',
-	'The Harmony Council': 'surabol',
-	'Chunchu Goes to the East': 'asuka',
-	'Bidam’s Rebellion': 'surabol',
-	'Suro': 'geumgwan',
-	'Muryuk': 'daegaya',
-	'Seohyun': 'daeya',
-	'The Emperor': 'changan',
-	'Silla-Tang Alliance': 'changan',
-	'Death of Taizong': 'changan',
-	'Death of the Second Emperor': 'changan',
-	'On Gunhae': 'danghang',
-	'King Muyeol': 'surabol',
-	'Hyukgosé': 'surabol',
-	'Talhae': 'surabol',
-	'Alji': 'surabol',
-	// Part III
-	'Gyebek’s Exile': 'mugun',
-	'Sulmun and the Three Princes': 'mugun',
-	'Euija’s Coup': 'sabi',
-	'Euija’s Descent': 'sabi',
-	'The Nine Plagues': 'sabi',
-	'The Three Loyalists': 'sabi',
-	'Onjo': 'michuhol',
-	'Dangun & Old Joseon': 'asadal',
-	'Yellow Mountain Fields': 'hwangsan',
-	'Sabi Palace': 'ungjin',
-	'The Death of Buyeo Euija': 'changan',
-	'The Seven Branched Sword': 'sabi',
-	'The Death of Kim Chunchu': 'surabol',
-	'Baekje Restoration Society': 'juryu',
-	'The Four Beasts': 'changan',
-	'Pyongyang': 'pyongyang',
-	'Pyongyang Fortress': 'pyongyang',
-	'Snake River': 'sasu',
-	'The Surrender of Tamla': 'mugun',
-	'White River': 'baekgang',
-	'The Death of Yeon Gesomun': 'pyongyang',
-	'The Brothers’ Coup': 'pyongyang',
-	'Pyongyang, A': 'pyongyang',
-	'The Final Stand': 'pyongyang',
-	'Goguryeo Revival Society': 'surabol',
-	'Stone Gate': 'seokmun',
-	'The Lake Remembers': 'steam_cavern',
-	"The Wanggeom's Guest": 'steam_cavern',
-	'The Death of Kim Yushin': 'surabol',
-	'Maeso Fortress': 'maeso',
-	'Strike Harbor': 'gibeolpo',
-	'The King for All': 'surabol',
-	'Balhae': 'jolbon'
-};
-
-export function placeFor(entryTitle: string): Place | null {
-	const id = ENTRY_PLACE[entryTitle];
-	return id ? (PLACES[id] ?? null) : null;
+/** The place an episode is pinned to (`entry.place`), if it names one on the map. */
+export function entryPlace(entry: { place?: string }): Place | null {
+	return entry.place ? (PLACES[entry.place] ?? null) : null;
 }
 
 /** Bridge: every map place is also a side-panel profile. */

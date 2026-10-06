@@ -53,9 +53,13 @@
 		citiesOfKingdom,
 		showsWikiAccent,
 		ownersOf,
+		hasOwnerRoster,
 		swordsOf,
 		swordOfPerson,
-		animalsOf
+		animalsOf,
+		instrumentsOf,
+		membersByKingdom,
+		type MemberBand
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
 	import { leitmotifOf, playLeitmotif, stopLeitmotif, tempsOf } from '$lib/leitmotifs';
@@ -117,12 +121,17 @@
 	let isClan = $derived(entry.entity === 'clan');
 	let isSword = $derived(entry.entity === 'sword');
 	let isAnimal = $derived(entry.entity === 'animal');
-	/** Swords and animals list people in `owners` (wielders / rider / guided). */
-	let hasOwners = $derived(isSword || isAnimal);
+	let isInstrument = $derived(entry.entity === 'instrument');
+	/** Swords, animals and instruments list people in `owners` (wielders / rider / players). */
+	let hasOwners = $derived(hasOwnerRoster(entry));
 	let isNation = $derived(entry.entity === 'nation');
 	let kind = $derived(kindOf(entry));
 	let scenes = $derived(
-		kind === 'character' || kind === 'god' || kind === 'animal' || kind === 'relationship'
+		kind === 'character' ||
+			kind === 'god' ||
+			kind === 'animal' ||
+			kind === 'instrument' ||
+			kind === 'relationship'
 			? scenesForWikiEntry(entry.id)
 			: []
 	);
@@ -133,8 +142,10 @@
 	/** Nation detail hero uses the kingdom flag when present (not portrait art); bonds lead with their still. */
 	let heroArt = $derived(isNation && flag ? flag : (bondStill ?? art));
 	let isNationFlagHero = $derived(isNation && !!flag);
-	/** Places, animals, and bonds with a cover still lead with a landscape still. */
-	let isLandscapeHero = $derived(isPlace || isAnimal || !!bondStill);
+	/** Places, animals, and bonds / instruments with a cover still lead with a landscape still. */
+	let isLandscapeHero = $derived(
+		isPlace || isAnimal || (isInstrument && entry.avatar !== entry.objectImage) || !!bondStill
+	);
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
 	let isPortraitHero = $derived(!!heroArt && !isLandscapeHero && !isNationFlagHero);
 	/** SFW stills tagged with this person. NSFW stays on /images + the modal, not the grid. */
@@ -231,12 +242,24 @@
 	);
 	let linkedSword = $derived(!isSword && entry.blade ? swordOfPerson(entry.id) : undefined);
 	let personSwords = $derived(!isSword && entry.blade ? swordsOf(entry.id) : []);
-	let personAnimals = $derived(
-		kind === 'character' || kind === 'god' ? animalsOf(entry.id) : []
+	/** Animals and instruments a character owns — one pill row each. */
+	let personOwned = $derived(
+		kind === 'character' || kind === 'god'
+			? [
+					{ label: 'Animals', items: animalsOf(entry.id) },
+					{ label: 'Instruments', items: instrumentsOf(entry.id) }
+				].filter((row) => row.items.length)
+			: []
 	);
 	let isHwarang = $derived(entry.id === 'hwarang');
 	let orgRoster = $derived(isHwarang ? sortHwarangMembers(orgMembers) : orgMembers);
-	let hwarangGroups = $derived(isHwarang ? groupByHwarangClass(orgMembers) : []);
+	let memberBands = $derived<MemberBand[]>(
+		isHwarang
+			? groupByHwarangClass(orgMembers)
+			: entry.rosterBy === 'kingdom'
+				? membersByKingdom(orgMembers)
+				: []
+	);
 	let clanLabel = $derived(isOrg || isGroup || isClan || isBond || isPlace || hasOwners ? undefined : clanOf(entry));
 	let clanEntries = $derived(
 		isOrg || isGroup || isClan || isBond || isPlace || hasOwners ? [] : clanEntriesOf(entry)
@@ -630,23 +653,23 @@
 					</dd>
 				</div>
 			{/if}
-			{#if personAnimals.length}
+			{#each personOwned as row (row.label)}
 				<div>
-					<dt>Animals</dt>
+					<dt>{row.label}</dt>
 					<dd class="pill-row">
-						{#each personAnimals as animal (animal.id)}
+						{#each row.items as owned (owned.id)}
 							<button
 								type="button"
 								class="pill link-pill"
-								style:--pill={colorOf(animal)}
-								onclick={() => onOpen(animal.id)}
+								style:--pill={colorOf(owned)}
+								onclick={() => onOpen(owned.id)}
 							>
-								{nameOf(animal)}{#if animal.korean}<span class="realm-ko"> · {animal.korean}</span>{/if}
+								{nameOf(owned)}{#if owned.korean}<span class="realm-ko"> · {owned.korean}</span>{/if}
 							</button>
 						{/each}
 					</dd>
 				</div>
-			{/if}
+			{/each}
 			{#if entry.binyeo}
 				<div class="prop-art">
 					<dt>Binyeo</dt>
@@ -660,7 +683,7 @@
 			{/if}
 			{#if entry.object || objectArt}
 				<div class={{ 'prop-art': objectArt }}>
-					<dt>{isAnimal ? 'Coat' : 'Object'}</dt>
+					<dt>{isAnimal ? 'Coat' : isInstrument ? 'Build' : 'Object'}</dt>
 					<dd class={{ 'prop-art-row': objectArt }}>
 						{#if objectArt}
 							<img class="prop-art-fig" {...storyImg(objectArt, { kind: 'hero', alt: '', sizes: '36rem' })} />
@@ -887,13 +910,15 @@
 						</button>
 					</li>
 				{/snippet}
-				{#if isHwarang}
+				{#if memberBands.length}
 					<div class="class-bands">
-						{#each hwarangGroups as g (g.id)}
+						{#each memberBands as g (g.id)}
 							<section class="class-band">
 								<h3 class="class-band-head">
-									<span class="member-clan-aff" style:--hw={g.color} title="Hwarang {g.label}"
-										>{g.label}</span
+									<span
+										class="member-clan-aff"
+										style:--hw={g.color}
+										title={isHwarang ? `Hwarang ${g.label}` : g.label}>{g.label}</span
 									>
 									{#if g.korean}<span class="clan-ko"> ({g.korean})</span>{/if}
 								</h3>
@@ -1125,9 +1150,11 @@
 									? 'About this group'
 									: isClan
 										? 'About this clan'
-										: isGod
-											? 'Myth'
-											: 'Character arc'}
+										: isInstrument
+											? 'About this instrument'
+											: isGod
+												? 'Myth'
+												: 'Character arc'}
 				</h2>
 				<p class="prose">{entry.arc}</p>
 			</section>
