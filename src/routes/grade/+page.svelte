@@ -4,7 +4,7 @@
 	import { flattenStoryImages, type StoryCueImage } from '$lib/storyImages';
 	import { storyImg } from '$lib/img';
 	import { nsfwAllowed } from '$lib/nsfwUi.svelte';
-	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import GradeForm from '$lib/components/GradeForm.svelte';
 	import {
 		EMPTY_GRADE_STORE,
@@ -154,7 +154,7 @@
 <main class="grade">
 	<header class="top">
 		<div class="mast-nav">
-			<SiteNav />
+			<SiteNavSpace />
 			<span class="dot" aria-hidden="true">·</span>
 			<a class="quiet" href={resolve('/images')}>Images</a>
 			<span class="dot" aria-hidden="true">·</span>

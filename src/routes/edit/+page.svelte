@@ -308,7 +308,7 @@
 	.canvas {
 		flex: 1;
 		max-width: 56rem;
-		padding: 3rem 3rem 8rem 5rem; /* left room for block gutters */
+		padding: 4.75rem 3rem 8rem 5rem; /* top clears the site pill; left room for block gutters */
 	}
 
 	.loading {

@@ -10,6 +10,10 @@ import { tempLayerOf } from '$lib/cueArt';
 import { busyEdit, filterVisibleCues } from '$lib/editUi.svelte';
 import { filterNsfw } from '$lib/nsfwUi.svelte';
 import { liveDisplayArt, liveScriptFrames } from '$lib/stillEditUi.svelte';
+import { starUi, stars } from '$lib/imageStarsUi.svelte';
+import { cleanStarStore } from '$lib/imageStars';
+import starFile from '$lib/data/image-stars.json';
+import type { DirectorySeason } from '$lib/episodeDirectory';
 
 type ThumbPick = { slotId: string; layer?: 'temp' };
 
@@ -41,19 +45,72 @@ function artFor(slot: ImageSlot, layer: ThumbPick['layer']): string | undefined 
 	return temp?.src ?? liveDisplayArt(slot, 'reading');
 }
 
-/** The chosen still while it is visible, else the first landscape still, else the first with art. */
-export function episodeThumbnail(entry: Entry, eid: string): EpisodeThumbnail | null {
-	const pick = chosen(entry, eid);
+/** Every visible still in the entry that has art, the chosen thumbnail on its chosen layer. */
+function entryStills(entry: Entry, pick: ThumbPick | undefined): EpisodeThumbnail[] {
 	const withArt: EpisodeThumbnail[] = [];
 	for (const slot of filterVisibleCues(filterNsfw(entry.images ?? []))) {
 		const src = artFor(slot, slot.id === pick?.slotId ? pick.layer : undefined);
 		if (src) withArt.push({ slot, src });
 	}
+	return withArt;
+}
+
+function thumbnailOf(stills: EpisodeThumbnail[], pick: ThumbPick | undefined): EpisodeThumbnail | null {
 	return (
-		withArt.find((t) => t.slot.id === pick?.slotId) ??
-		withArt.find((t) => (t.slot.ratio ?? 2) >= COVER_RATIO) ??
-		withArt[0] ??
+		stills.find((t) => t.slot.id === pick?.slotId) ??
+		stills.find((t) => (t.slot.ratio ?? 2) >= COVER_RATIO) ??
+		stills[0] ??
 		null
+	);
+}
+
+/** The chosen still while it is visible, else the first landscape still, else the first with art. */
+export function episodeThumbnail(entry: Entry, eid: string): EpisodeThumbnail | null {
+	const pick = chosen(entry, eid);
+	return thumbnailOf(entryStills(entry, pick), pick);
+}
+
+/** `count` items picked evenly across the list, in order. */
+function spread<T>(list: T[], count: number): T[] {
+	if (list.length <= count) return list;
+	return Array.from({ length: count }, (_, i) => list[Math.floor((i * list.length) / count)]);
+}
+
+/** Stars as edit mode last loaded them, else as committed to image-stars.json. */
+function starredKeys(): ReadonlySet<string> {
+	return starUi.loaded ? stars : COMMITTED_STARS;
+}
+
+const COMMITTED_STARS: ReadonlySet<string> = new Set(cleanStarStore(starFile).stars);
+
+/** Starred stills first (story order), then episode thumbnails spread evenly to fill `count`. */
+function notableStills(episodes: { entry: Entry; id: string }[], count: number): EpisodeThumbnail[] {
+	const starred = starredKeys();
+	const lead: EpisodeThumbnail[] = [];
+	const thumbs: EpisodeThumbnail[] = [];
+	for (const { entry, id } of episodes) {
+		const pick = chosen(entry, id);
+		const stills = entryStills(entry, pick);
+		lead.push(...stills.filter((t) => starred.has(t.slot.id)));
+		const thumb = thumbnailOf(stills, pick);
+		if (thumb && !starred.has(thumb.slot.id)) thumbs.push(thumb);
+	}
+	return [...lead.slice(0, count), ...spread(thumbs, Math.max(0, count - lead.length))];
+}
+
+/** Up to `count` notable stills from one Part. */
+export function seasonStills(season: DirectorySeason, count: number): EpisodeThumbnail[] {
+	return notableStills(
+		season.chapters.flatMap((ch) => ch.episodes),
+		count
+	);
+}
+
+/** Up to `count` notable stills from the whole story, for the title page. */
+export function storyStills(count: number): EpisodeThumbnail[] {
+	return notableStills(
+		chapters.flatMap((ch) => ch.entries.map((entry) => ({ entry, id: entryId(ch.id, entry.title) }))),
+		count
 	);
 }
 

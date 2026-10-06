@@ -198,7 +198,7 @@ function romanizeHangul(s: string): string {
 
 /**
  * Stable DOM / hash id fragment from an episode title.
- * Apostrophes drop so “Yeon’s Massacre” → `yeons-massacre`; Hangul romanizes so “기 (起)” → `gi`.
+ * Apostrophes drop so “Yeon’s Massacre” → `yeons-massacre`; Hangul romanizes so “기 (起)” and “Gi (起)” both → `gi`.
  */
 export function entrySlug(title: string): string {
 	return romanizeHangul(title)
@@ -238,10 +238,6 @@ export function episodeNumber(chapterIndex: number, entryIndex: number): string 
 /** DOM id for a chapter's part title page — distinct from episode slugs. */
 export function partId(chapterId: string): string {
 	return `part-${chapterId}`;
-}
-
-export function chapterIdFromPartId(id: string): string | null {
-	return id.startsWith('part-') ? id.slice('part-'.length) : null;
 }
 
 /** A named cut inside an entry — day plate, scene plate, or titled flashback. */

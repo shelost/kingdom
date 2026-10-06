@@ -32,7 +32,7 @@ export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 		group('Jumong', '주몽', 'Haemosu', 'Buyeo', 'Jolbon')
 	],
 	'chunchu-era': [
-		group('Bidam', '비담', '기 (起)', 'Suro', '승 (承)', 'Muryuk', '전 (轉)', 'Seohyun', '결 (結)'),
+		group('Bidam', '비담', 'Gi (起)', 'Suro', 'Seung (承)', 'Muryuk', 'Jeon (轉)', 'Seohyun', 'Gyeol (結)'),
 		group('Seungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Royal Secretariat', 'Jiabeng (駕崩)'),
 		group('Chunchu', '춘추', 'King Muyeol', 'Jahee'),
 		group('Hyukgose', '혁거세', 'Hyukgose', 'Talhae', 'Alji')
@@ -97,8 +97,18 @@ export type TocEpisode = {
 	kinds: EpisodeKind[];
 };
 
-function groupOf(chapterId: string, title: string): TocGroup | undefined {
+export function groupOf(chapterId: string, title: string): TocGroup | undefined {
 	return CHAPTER_GROUPS[chapterId]?.find((g) => g.titles.includes(title));
+}
+
+/** Element id on /episodes for a chapter, or for one of its groups. */
+export function tocAnchor(chapterId: string, g?: TocGroup): string {
+	if (!g) return `ch-${chapterId}`;
+	const slug = g.label
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-+|-+$/g, '');
+	return `ch-${chapterId}--${slug}`;
 }
 
 /** The group a spine row heads, if this entry opens one. */
@@ -119,6 +129,30 @@ export function partLabel(part: string, ko = false): string {
 	if (!ko) return part;
 	const n = ROMAN[part.replace(/^Part\s+/i, '').trim()];
 	return n ? `제${n}부` : part;
+}
+
+/** The Part a chapter sits in: its own, or the last one opened before it. */
+function partOf(chapterIndex: number): string | undefined {
+	for (let i = chapterIndex; i >= 0; i--) if (chapters[i]?.part) return chapters[i].part;
+	return undefined;
+}
+
+/** One breadcrumb; `anchor` is its section id on /episodes when it links there. */
+export type Crumb = { label: string; anchor?: string };
+
+/** Breadcrumbs above an episode: Part, then its group (or the chapter when ungrouped), then the episode. */
+export function episodeCrumbs(chapterIndex: number, entryIndex: number, ko = false): Crumb[] {
+	const ch = chapters[chapterIndex];
+	const en = ch?.entries[entryIndex];
+	if (!en) return [];
+	const part = partOf(chapterIndex);
+	const g = groupOf(ch.id, en.title);
+	const middle: Crumb = {
+		label: g ? (ko ? g.ko : g.label) : (ko && ch.korean) || ch.title,
+		anchor: tocAnchor(ch.id, g)
+	};
+	const title: Crumb = { label: (ko && en.subtitle) || en.title };
+	return part ? [{ label: partLabel(part, ko) }, middle, title] : [middle, title];
 }
 
 /** Spine rows: group heads plus ungrouped episodes. */

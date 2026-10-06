@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import SiteNav from '$lib/components/SiteNav.svelte';
+	import { onNavigate } from '$app/navigation';
+	import { withViewTransition } from '$lib/viewTransition';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import TiltThumb from '$lib/components/TiltThumb.svelte';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
-	import { reading } from '$lib/reading.svelte';
+	import { EP_QUERY, reading } from '$lib/reading.svelte';
 	import { episodeThumbnail } from '$lib/thumbnail.svelte';
 	import {
 		EPISODE_TOTAL,
@@ -15,6 +17,13 @@
 	} from '$lib/episodeDirectory';
 
 	let ko = $derived(reading.lang === 'ko');
+
+	/** Opening an episode: the list sinks away and the episode floats up into its place. */
+	onNavigate((navigation) => {
+		const to = navigation.to?.url;
+		if (to?.pathname !== resolve('/') || !to.searchParams.has(EP_QUERY)) return;
+		return withViewTransition(navigation, 'vt-episode-open');
+	});
 
 	function hrefOf(ep: DirectoryEpisode): string {
 		return hrefWithNsfw(`${resolve('/')}?ep=${encodeURIComponent(ep.queryId)}`, page.url);
@@ -38,88 +47,106 @@
 	/>
 </svelte:head>
 
+{#snippet heading(label: string, title?: string, korean?: string, range?: string)}
+	<span class="eyebrow">{label}</span>
+	<span class="head-line">
+		{#if title}<span class="head-title">{title}</span>{/if}
+		{#if korean}<span class="head-ko">{korean}</span>{/if}
+		{#if range}<span class="head-range">{range}</span>{/if}
+	</span>
+{/snippet}
+
+{#snippet row(ep: DirectoryEpisode)}
+	{@const thumb = episodeThumbnail(ep.entry, ep.id)}
+	{@const href = hrefOf(ep)}
+	<li>
+		<a class="row" {href}>
+			<TiltThumb src={thumb?.src} sizes="(max-width: 480px) 8rem, 11rem" fallback={ep.title.charAt(0)} max={6} />
+			<span class="body">
+				<span class="title-line">
+					<span class="num">{ep.number}</span>
+					<span class="title">
+						{ko && ep.ko ? ep.ko : ep.title}
+						{#if ep.ko && !ko}<span class="title-ko">{ep.ko}</span>{/if}
+					</span>
+				</span>
+				<span class="sub-line">
+					{#each ep.tags as tag (tag.key)}
+						{#if tag.flag}
+							<img class="flag" src={tag.flag} alt={tag.label} title={tag.label} />
+						{:else if tag.icon}
+							<span class="kind" style:color={tag.color} title={ko ? tag.ko : tag.label}>
+								<span class="material-symbols-outlined" aria-hidden="true">{tag.icon}</span>
+								<span class="visually-hidden">{ko ? tag.ko : tag.label}</span>
+							</span>
+						{/if}
+					{/each}
+					<span class="aside">
+						{#if ep.year}<span class="year">{ep.year}</span>{/if}
+						<span class="dur">{ep.minutes}{ko ? '분' : ' min'}</span>
+					</span>
+				</span>
+				{#if synopsis(ep)}<span class="synopsis">{synopsis(ep)}</span>{/if}
+			</span>
+		</a>
+	</li>
+{/snippet}
+
 <main class="episodes-page">
 	<header class="chrome">
-		<SiteNav />
+		<SiteNavSpace />
 	</header>
 
-	<header class="intro">
-		<h1>{ko ? '에피소드' : 'Episodes'}</h1>
-		<p class="meta">
-			<span>King for All · 삼한왕검</span>
-			<span class="sep" aria-hidden="true">·</span>
-			<span>{STORY_RANGE}</span>
-			<span class="sep" aria-hidden="true">·</span>
-			<span>{SEASONS.length} {ko ? '부' : 'Parts'}</span>
-			<span class="sep" aria-hidden="true">·</span>
-			<span>{EPISODE_TOTAL} {ko ? '편' : 'episodes'}</span>
-		</p>
-	</header>
+	<div class="column">
+		<header class="intro">
+			<h1>{ko ? '에피소드' : 'Episodes'}</h1>
+			<p class="meta">
+				<span>King for All · 삼한왕검</span>
+				<span class="sep" aria-hidden="true">·</span>
+				<span>{STORY_RANGE}</span>
+				<span class="sep" aria-hidden="true">·</span>
+				<span>{SEASONS.length} {ko ? '부' : 'Parts'}</span>
+				<span class="sep" aria-hidden="true">·</span>
+				<span>{EPISODE_TOTAL} {ko ? '편' : 'episodes'}</span>
+			</p>
+		</header>
 
-	{#each SEASONS as season (season.id)}
-		<section class="season" aria-labelledby={`part-${season.id}`}>
-			<h2 id={`part-${season.id}`}>
-				<span class="part-label">{season.label}</span>
-				{#if season.title}<span class="part-title">{season.title}</span>{/if}
-				{#if season.korean}<span class="part-ko">{season.korean}</span>{/if}
-				{#if season.range}<span class="part-range">{season.range}</span>{/if}
-			</h2>
+		{#each SEASONS as season (season.id)}
+			<section class="season" aria-labelledby={`part-${season.id}`}>
+				<h2 id={`part-${season.id}`}>
+					{@render heading(season.label, season.title, season.korean, season.range)}
+				</h2>
 
-			{#each season.chapters as chapter (chapter.id)}
-				<section class="chapter" aria-labelledby={`ch-${chapter.id}`}>
-					<h3 id={`ch-${chapter.id}`}>
-						<span class="ch-num">{chapterLabel(chapter)}</span>
-						{#if chapter.number}<span class="ch-title">{chapter.title}</span>{/if}
-						{#if chapter.korean}<span class="ch-ko">{chapter.korean}</span>{/if}
-						{#if chapter.range}<span class="ch-range">{chapter.range}</span>{/if}
-					</h3>
-					<ol class="grid">
-						{#each chapter.episodes as ep (ep.id)}
-							{@const thumb = episodeThumbnail(ep.entry, ep.id)}
-							{@const href = hrefOf(ep)}
-							<li>
-								<a class="card" {href}>
-									<TiltThumb
-										src={thumb?.src}
-										sizes="(max-width: 520px) 100vw, (max-width: 1100px) 50vw, 20rem"
-										fallback={ep.title.charAt(0)}
-									/>
-									<span class="body">
-										<span class="title-line">
-											<span class="num">{ep.number}</span>
-											<span class="title">
-												{ko && ep.ko ? ep.ko : ep.title}
-												{#if ep.ko && !ko}<span class="title-ko">{ep.ko}</span>{/if}
-											</span>
-										</span>
-										<span class="sub-line">
-											{#if ep.year}<span class="year">{ep.year}</span>{/if}
-											{#each ep.tags as tag (tag.key)}
-												{#if tag.flag}
-													<img class="flag" src={tag.flag} alt={tag.label} title={tag.label} />
-												{:else if tag.icon}
-													<span class="kind" style:color={tag.color} title={ko ? tag.ko : tag.label}>
-														<span class="material-symbols-outlined" aria-hidden="true">{tag.icon}</span>
-														<span class="visually-hidden">{ko ? tag.ko : tag.label}</span>
-													</span>
-												{/if}
-											{/each}
-											<span class="dur">{ep.minutes}{ko ? '분' : ' min'}</span>
-										</span>
-										{#if synopsis(ep)}<span class="synopsis">{synopsis(ep)}</span>{/if}
-										<span class="read">
-											<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
-											{ko ? '읽기' : 'Read'}
-										</span>
-									</span>
-								</a>
-							</li>
+				{#each season.chapters as chapter (chapter.id)}
+					<section class="chapter" aria-labelledby={chapter.anchor}>
+						<h3 id={chapter.anchor}>
+							{@render heading(
+								chapterLabel(chapter),
+								chapter.number ? chapter.title : undefined,
+								chapter.korean,
+								chapter.range
+							)}
+						</h3>
+						{#each chapter.sections as section, s (section.anchor ?? `${chapter.id}-${s}`)}
+							{#if section.anchor}
+								<h4 id={section.anchor}>
+									{ko ? section.ko : section.label}
+									{#if !ko && section.ko && section.ko !== section.label}<span class="group-ko"
+											>{section.ko}</span
+										>{/if}
+								</h4>
+							{/if}
+							<ol class="list">
+								{#each section.episodes as ep (ep.id)}
+									{@render row(ep)}
+								{/each}
+							</ol>
 						{/each}
-					</ol>
-				</section>
-			{/each}
-		</section>
-	{/each}
+					</section>
+				{/each}
+			</section>
+		{/each}
+	</div>
 </main>
 
 <style>
@@ -137,18 +164,18 @@
 			max(1rem, env(safe-area-inset-left));
 	}
 
-	.intro,
-	.season {
-		max-width: 80rem;
+	/* Same measure as the script, so the directory reads like the page it opens. */
+	.column {
+		box-sizing: content-box;
+		max-width: var(--script-measure);
 		margin: 0 auto;
-		padding: 0 max(1.25rem, 4vw);
+		padding: 0 max(1.25rem, env(safe-area-inset-right)) 0 max(1.25rem, env(safe-area-inset-left));
 	}
 
 	.intro {
 		display: grid;
 		gap: 0.4rem;
-		padding-top: 2.5rem;
-		padding-bottom: 1rem;
+		padding: 2.5rem 0 0.5rem;
 	}
 
 	h1 {
@@ -175,114 +202,131 @@
 		color: var(--fg-faint);
 	}
 
-	/* —— Parts and chapters —— */
+	/* —— Parts, chapters and groups —— */
+	h2,
+	h3,
+	h4 {
+		scroll-margin-top: 1.5rem;
+	}
+
 	.season {
 		margin-top: 2.75rem;
 	}
 
-	h2 {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.25rem 0.7rem;
+	/* Part and chapter headings: the label sits above, the title line below. */
+	h2,
+	h3 {
+		display: grid;
+		gap: 0.2rem;
 		margin: 0;
 		font-family: var(--serif);
-		font-size: 1.45rem;
 		font-weight: 600;
-		color: var(--fg-strong);
 	}
 
-	.part-label {
-		font-family: var(--ui);
-		font-size: 0.72rem;
-		text-transform: uppercase;
-		letter-spacing: 0.14em;
-		color: var(--gold);
-	}
-
-	.part-ko,
-	.part-range {
-		font-family: var(--ui);
-		font-size: 0.85rem;
-		font-weight: 500;
-		color: var(--fg-faint);
-	}
-
-	.part-range,
-	.ch-range {
-		margin-left: auto;
-		font-variant-numeric: tabular-nums;
-	}
-
-	.chapter {
-		margin-top: 1.6rem;
+	h2 {
+		font-size: 1.45rem;
 	}
 
 	h3 {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: 0.25rem 0.6rem;
-		margin: 0 0 1rem;
 		padding-bottom: 0.55rem;
 		border-bottom: 1px solid var(--hairline);
-		font-size: 1rem;
-		font-weight: 600;
+		font-size: 1.1rem;
 	}
 
-	.ch-num {
-		font-size: 0.7rem;
-		text-transform: uppercase;
-		letter-spacing: 0.12em;
+	.eyebrow {
+		font-size: 0.85rem;
 		color: var(--gold);
 	}
 
-	.ch-title {
+	h2 .eyebrow {
+		font-size: 0.95rem;
+	}
+
+	.head-line {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.25rem 0.65rem;
+	}
+
+	.head-title {
 		color: var(--fg-strong);
 	}
 
-	.ch-ko,
-	.ch-range {
+	.head-ko,
+	.head-range {
+		font-family: var(--ui);
 		font-size: 0.8rem;
 		font-weight: 500;
 		color: var(--fg-faint);
 	}
 
-	/* —— Episode cards —— */
-	/* Auto-fill columns no narrower than 13rem; the max() floor keeps it at
-	   four columns however wide the page gets. */
-	.grid {
-		--col-gap: 1.25rem;
-		display: grid;
-		grid-template-columns: repeat(
-			auto-fill,
-			minmax(max(13rem, calc((100% - 3 * var(--col-gap)) / 4)), 1fr)
-		);
-		gap: 1.5rem var(--col-gap);
+	h2 :is(.head-ko, .head-range) {
+		font-size: 0.85rem;
+	}
+
+	.head-range {
+		margin-left: auto;
+		font-variant-numeric: tabular-nums;
+	}
+
+	.chapter {
+		margin-top: 2.5rem;
+	}
+
+	h4 {
+		display: flex;
+		align-items: baseline;
+		gap: 0.5rem;
+		margin: 1.75rem 0 0.25rem;
+		font-family: var(--serif);
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: var(--fg-dim);
+	}
+
+	.group-ko {
+		font-family: var(--ui);
+		font-size: 0.78rem;
+		font-weight: 500;
+		color: var(--fg-faint);
+	}
+
+	/* A breadcrumb landed here: the heading takes the gold for a beat. */
+	h3:target .head-title,
+	h4:target {
+		animation: target-flash 2.6s var(--ease);
+	}
+
+	@keyframes target-flash {
+		0%,
+		45% {
+			color: var(--gold);
+		}
+	}
+
+	/* —— Episode rows —— */
+	.list {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
 
-	.grid > li {
-		display: flex;
-	}
-
-	.card {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		gap: 0.6rem;
+	.row {
+		display: grid;
+		grid-template-columns: 11rem minmax(0, 1fr);
+		gap: 1.25rem;
+		align-items: start;
+		padding: 1.4rem 0;
 		color: inherit;
 		text-decoration: none;
 	}
 
-	.card:focus-visible {
+	.row:focus-visible {
 		outline: none;
 	}
 
 	.body {
-		flex: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 0.45rem;
@@ -297,7 +341,7 @@
 
 	.num {
 		flex: 0 0 auto;
-		font-size: 0.85rem;
+		font-size: 0.8rem;
 		font-weight: 600;
 		font-variant-numeric: tabular-nums;
 		color: var(--gold);
@@ -306,16 +350,21 @@
 	.title {
 		min-width: 0;
 		font-family: var(--serif);
-		font-size: 1.1rem;
+		font-size: 1.05rem;
 		font-weight: 600;
 		line-height: 1.2;
 		color: var(--fg-strong);
+		transition: color 0.2s var(--ease);
+	}
+
+	.row:is(:hover, :focus-visible) .title {
+		color: var(--gold);
 	}
 
 	.title-ko {
 		margin-left: 0.45rem;
 		font-family: var(--ui);
-		font-size: 0.8rem;
+		font-size: 0.78rem;
 		font-weight: 500;
 		color: var(--fg-faint);
 	}
@@ -325,7 +374,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.4rem;
-		font-size: 0.75rem;
+		font-size: 0.72rem;
 		color: var(--fg-faint);
 	}
 
@@ -351,8 +400,14 @@
 		font-size: 0.95rem;
 	}
 
-	.dur {
+	.aside {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
 		margin-left: auto;
+	}
+
+	.dur {
 		font-variant-numeric: tabular-nums;
 		color: var(--fg-dim);
 	}
@@ -360,41 +415,14 @@
 	.synopsis {
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
-		-webkit-line-clamp: 2;
-		line-clamp: 2;
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
 		overflow: hidden;
-		font-size: 0.85rem;
-		line-height: 1.45;
-		color: var(--fg-dim);
-	}
-
-	.read {
-		align-self: flex-start;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-		margin-top: auto;
-		padding: 0.4rem 0.9rem 0.4rem 0.7rem;
-		border-radius: var(--radius);
-		background: var(--highlight);
-		color: var(--on-highlight);
 		font-size: 0.82rem;
-		font-weight: 600;
-		transition:
-			transform 0.25s var(--ease),
-			opacity 0.25s var(--ease);
-	}
-
-	.read .material-symbols-outlined {
-		font-size: 1.1rem;
-	}
-
-	.card:hover .read {
-		opacity: 0.86;
-	}
-
-	.card:active .read {
-		transform: scale(0.97);
+		font-weight: 500;
+		line-height: 1.55;
+		color: var(--fg-dim);
+		opacity: 0.82;
 	}
 
 	.visually-hidden {
@@ -414,10 +442,25 @@
 		.season {
 			margin-top: 2rem;
 		}
+	}
+
+	@media (max-width: 480px) {
+		.row {
+			grid-template-columns: 8rem minmax(0, 1fr);
+			gap: 0.9rem;
+			padding: 1.1rem 0;
+		}
 
 		.title-ko {
 			display: block;
-			margin: 0.15rem 0 0;
+			margin: 0.1rem 0 0;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		h3:target .head-title,
+		h4:target {
+			animation: none;
 		}
 	}
 </style>

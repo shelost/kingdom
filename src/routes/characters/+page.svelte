@@ -1,7 +1,7 @@
 <script lang="ts">
 	import RelationChart from '$lib/components/RelationChart.svelte';
 	import PersonLayer from '$lib/components/PersonLayer.svelte';
-	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 
 <main class="characters-page">
 	<header class="chrome">
-		<SiteNav />
+		<SiteNavSpace />
 		<div class="titles">
 			<h1>Characters</h1>
 			<p class="lede">The relationship map — drag, filter, and open any face.</p>
@@ -55,7 +55,6 @@
 		);
 	}
 
-	.chrome :global(.site-nav),
 	.chrome .titles {
 		pointer-events: auto;
 	}

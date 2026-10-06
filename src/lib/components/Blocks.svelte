@@ -298,12 +298,8 @@
 			{@const sid = sceneIdFor(block)}
 			<!-- the siege calendar / merged-episode scene plate -->
 			<header class="day" data-story-id={sid} data-scene={sid}>
-				<span class="day-rule" aria-hidden="true"></span>
-				<span class="day-text">
-					<span class="day-label">{block.label}</span>
-					{#if block.ko}<span class="day-ko">{block.ko}</span>{/if}
-				</span>
-				<span class="day-rule" aria-hidden="true"></span>
+				<span class="day-label">{block.label}</span>
+				{#if block.ko}<span class="day-ko">{block.ko}</span>{/if}
 			</header>
 		{:else if block.kind === 'flashback'}
 			{@const sid = sceneIdFor(block)}
@@ -586,6 +582,7 @@
 	   Whichever language the reader picked *is* the line: body size, full
 	   strength. Everything else is a gloss set beneath it. */
 	.line {
+		font-weight: calc(var(--weight-body) + 100);
 		color: var(--fg-dim);
 	}
 
@@ -912,57 +909,28 @@
 	/* ————— siege-day / scene header ————— */
 	.day {
 		display: flex;
-		align-items: center;
-		gap: 1.1rem;
-		margin: 3.4rem 0 1.9rem;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 0.2rem 0.6rem;
+		margin: 2.8rem 0 1rem;
 	}
 
 	.day:first-child {
-		margin-top: 1.4rem;
-	}
-
-	.day-rule {
-		flex: 1;
-		height: 1px;
-		background: linear-gradient(
-			to right,
-			transparent,
-			color-mix(in srgb, var(--gold) 55%, transparent)
-		);
-	}
-
-	.day-rule:last-child {
-		background: linear-gradient(
-			to left,
-			transparent,
-			color-mix(in srgb, var(--gold) 55%, transparent)
-		);
-	}
-
-	.day-text {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 0.3rem;
+		margin-top: 1rem;
 	}
 
 	.day-label {
 		font-family: var(--serif);
-		font-size: 1.65rem;
-		font-weight: 700;
-		line-height: 1;
-		letter-spacing: 0.24em;
-		text-indent: 0.24em; /* re-centres the tracked type */
-		text-transform: uppercase;
-		color: var(--gold);
-		text-shadow: 0 0 24px color-mix(in srgb, var(--gold) 35%, transparent);
+		font-size: 1.15rem;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -0.015em;
+		color: var(--fg-strong);
 	}
 
 	.day-ko {
-		font-size: 0.7rem;
-		font-weight: 600;
-		letter-spacing: 0.3em;
-		text-indent: 0.3em;
+		font-size: 0.78rem;
+		font-weight: 500;
 		color: var(--fg-faint);
 	}
 

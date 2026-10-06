@@ -5,6 +5,7 @@
 import { chapters, episodeNumber, entryId, chapterNumber, type Block, type Entry } from '$lib/story';
 import { episodeQueryId, episodes } from '$lib/reading.svelte';
 import { entryTags, type EntryTag } from '$lib/entryHead';
+import { groupOf, tocAnchor } from '$lib/tocTree';
 
 export type DirectoryEpisode = {
 	id: string;
@@ -20,13 +21,25 @@ export type DirectoryEpisode = {
 	tags: EntryTag[];
 };
 
+/** A run of episodes inside a chapter: one TOC group, or ungrouped episodes (no label). */
+export type DirectorySection = {
+	/** Element id the breadcrumbs link to; absent on ungrouped runs. */
+	anchor?: string;
+	label?: string;
+	ko?: string;
+	episodes: DirectoryEpisode[];
+};
+
 export type DirectoryChapter = {
 	id: string;
+	/** Element id of the chapter heading. */
+	anchor: string;
 	number: number | null;
 	title: string;
 	korean?: string;
 	range: string;
 	episodes: DirectoryEpisode[];
+	sections: DirectorySection[];
 };
 
 export type DirectorySeason = {
@@ -35,6 +48,7 @@ export type DirectorySeason = {
 	label: string;
 	title?: string;
 	korean?: string;
+	hanja?: string;
 	range: string;
 	chapters: DirectoryChapter[];
 	count: number;
@@ -96,29 +110,47 @@ function rangeOf(list: { range: string }[]): string {
 
 const queryIds = new Map(episodes.map((ep) => [ep.id, episodeQueryId(ep)]));
 
+function directoryEpisode(chapterIndex: number, entryIndex: number): DirectoryEpisode {
+	const ch = chapters[chapterIndex];
+	const entry = ch.entries[entryIndex];
+	const id = entryId(ch.id, entry.title);
+	return {
+		id,
+		queryId: queryIds.get(id) ?? id,
+		number: episodeNumber(chapterIndex, entryIndex),
+		entry,
+		title: entry.title,
+		ko: entry.subtitle,
+		year: entry.year,
+		minutes: Math.max(1, Math.round(wordsIn(entry.blocks) / WORDS_PER_MINUTE)),
+		synopsis: synopsisOf(entry.blocks),
+		tags: entryTags(entry)
+	};
+}
+
 function directoryChapter(chapterIndex: number): DirectoryChapter {
 	const ch = chapters[chapterIndex];
+	const episodes = ch.entries.map((_, entryIndex) => directoryEpisode(chapterIndex, entryIndex));
+	const sections: DirectorySection[] = [];
+	episodes.forEach((ep) => {
+		const g = groupOf(ch.id, ep.title);
+		const anchor = g && tocAnchor(ch.id, g);
+		let section = sections[sections.length - 1];
+		if (!section || section.anchor !== anchor) {
+			section = { anchor, label: g?.label, ko: g?.ko, episodes: [] };
+			sections.push(section);
+		}
+		section.episodes.push(ep);
+	});
 	return {
 		id: ch.id,
+		anchor: tocAnchor(ch.id),
 		number: chapterNumber(chapterIndex),
 		title: ch.title,
 		korean: ch.korean,
 		range: ch.range,
-		episodes: ch.entries.map((entry, entryIndex) => {
-			const id = entryId(ch.id, entry.title);
-			return {
-				id,
-				queryId: queryIds.get(id) ?? id,
-				number: episodeNumber(chapterIndex, entryIndex),
-				entry,
-				title: entry.title,
-				ko: entry.subtitle,
-				year: entry.year,
-				minutes: Math.max(1, Math.round(wordsIn(entry.blocks) / WORDS_PER_MINUTE)),
-				synopsis: synopsisOf(entry.blocks),
-				tags: entryTags(entry)
-			};
-		})
+		episodes,
+		sections
 	};
 }
 
@@ -132,6 +164,7 @@ export const SEASONS: DirectorySeason[] = (() => {
 				label: ch.part ?? 'Part I',
 				title: ch.partTitle,
 				korean: ch.partKorean,
+				hanja: ch.partHanja,
 				range: '',
 				chapters: [],
 				count: 0

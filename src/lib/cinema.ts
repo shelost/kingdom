@@ -69,7 +69,7 @@ export function episodeContextOf(id: string | null): EpisodeContext | null {
 	if (flat < 0) return null;
 
 	const ref = episodes[flat];
-	if (!ref || ref.chapterIndex < 0) return null;
+	if (!ref || ref.kind !== 'entry') return null;
 	const chapter = chapters[ref.chapterIndex];
 	const entry = chapter?.entries[ref.entryIndex];
 	if (!chapter || !entry) return null;

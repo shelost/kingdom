@@ -41,11 +41,12 @@
 <Toc bind:open={tocUi.open} />
 
 <!-- Reading column: padding push (Notion-style). Isolated below the TOC so
-     inline art / sticky frames cannot paint over the panel. Inner clip is the
-     content edge — overflow on .reading itself would clip at the padding edge
-     (viewport left) and still let figures draw in the TOC gutter. clip-path is
-     avoided: it would become the containing block for position:fixed chrome. -->
-<div class="reading" class:toc-open={tocUi.open && scriptUi.inScript}>
+     inline art / sticky frames cannot paint over the panel. The clip sits on
+     the padding edge (viewport left), so full-bleed still walls reach under the
+     rail and the TOC; chapters clip themselves to keep figures out of that
+     gutter. clip-path is avoided: it would become the containing block for
+     position:fixed chrome. -->
+<div class="reading">
 	<div class="reading-clip">
 		{@render children()}
 	</div>
@@ -72,35 +73,18 @@
 		position: relative;
 		z-index: 1;
 		isolation: isolate;
-		padding-left: 22px; /* clear the fixed rail */
-		transition: padding-left var(--toc-duration) var(--toc-ease);
 	}
 
 	.reading-clip {
 		overflow-x: clip;
 		min-width: 0;
-	}
-
-	.reading.toc-open {
-		padding-left: var(--toc-w);
-	}
-
-	@media (max-width: 1000px) {
-		.reading.toc-open {
-			padding-left: 22px;
-		}
-	}
-
-	/* Phones: the rail is a 4px stripe inside the text's own gutter. */
-	@media (max-width: 820px) {
-		.reading,
-		.reading.toc-open {
-			padding-left: 0;
-		}
+		/* The rail, or the open TOC (app.css); phones draw the rail in the text's own gutter. */
+		padding-left: var(--reading-inset);
+		transition: padding-left var(--toc-duration) var(--toc-ease);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.reading {
+		.reading-clip {
 			transition: none;
 		}
 	}

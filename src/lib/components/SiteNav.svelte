@@ -6,10 +6,17 @@
 	import { SITE_LINKS, isSiteLinkActive } from '$lib/siteLinks';
 	import ThemeIcon from './ThemeIcon.svelte';
 
+	/**
+	 * `inline` keeps the pill in the flow (the chronicle's settings panel). Otherwise
+	 * it floats centred over the page: the root layout renders that one for every
+	 * page but the chronicle, and pages hold its room with `SiteNavSpace`.
+	 */
+	let { inline = false }: { inline?: boolean } = $props();
+
 	let path = $derived(page.url.pathname);
 </script>
 
-<nav class="site-nav" aria-label="Site">
+<nav class="site-nav" class:inline aria-label="Site">
 	{#each SITE_LINKS as link (link.href)}
 		{@const href = hrefWithNsfw(resolve(link.href), page.url)}
 		{@const active = isSiteLinkActive(link, path, href)}
@@ -27,72 +34,102 @@
 </nav>
 
 <style>
+	/* ————— Liquid glass: one pill, the links as segments inside it ————— */
 	.site-nav {
-		display: flex;
-		flex-wrap: wrap;
+		display: inline-flex;
 		align-items: center;
-		gap: 0.35rem;
+		gap: 0.15rem;
+		padding: 0.25rem;
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
+		border: 1px solid color-mix(in srgb, white 32%, transparent);
+		border-radius: var(--radius-pill);
+		background:
+			linear-gradient(
+				180deg,
+				color-mix(in srgb, white 24%, transparent),
+				color-mix(in srgb, white 4%, transparent) 60%
+			),
+			color-mix(in srgb, var(--bg) 52%, transparent);
+		backdrop-filter: blur(18px) saturate(180%);
+		-webkit-backdrop-filter: blur(18px) saturate(180%);
+		box-shadow:
+			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
+			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
+			var(--shadow-float);
+	}
+
+	.site-nav:not(.inline) {
+		position: fixed;
+		z-index: 95;
+		top: max(0.75rem, env(safe-area-inset-top, 0px));
+		left: 50%;
+		transform: translateX(-50%);
+		max-width: calc(100vw - 1.5rem);
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
+	.site-nav.inline {
+		flex-wrap: wrap;
 	}
 
 	.site-nav a {
-		font-size: 0.7rem;
+		flex: 0 0 auto;
+		font-size: 0.72rem;
 		font-weight: 500;
 		letter-spacing: var(--tracking-ui);
 		text-decoration: none;
-		color: var(--fg-faint);
-		padding: 0.34rem 0.7rem;
-		border: 1px solid var(--hairline);
+		white-space: nowrap;
+		color: var(--fg-dim);
+		padding: 0.4rem 0.8rem;
 		border-radius: var(--radius-pill);
-		background: var(--glass);
-		backdrop-filter: blur(14px);
 		transition:
-			color 0.38s var(--toc-ease),
-			border-color 0.38s var(--toc-ease),
-			background 0.38s var(--toc-ease),
-			box-shadow 0.38s var(--toc-ease),
-			transform 0.38s var(--toc-ease);
+			color 0.3s var(--toc-ease),
+			background 0.3s var(--toc-ease),
+			box-shadow 0.3s var(--toc-ease);
 	}
 
 	.site-nav a:hover {
-		color: var(--fg);
-		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
-		transform: translateY(-1px);
-		box-shadow: 0 6px 18px color-mix(in srgb, var(--bg) 55%, transparent);
+		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--fg) 7%, transparent);
 	}
 
 	.site-nav a.active {
 		color: var(--on-highlight);
 		background: var(--highlight);
-		border-color: var(--highlight);
-		transform: translateY(0);
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--highlight) 35%, transparent);
+		box-shadow: 0 2px 8px -2px color-mix(in srgb, var(--highlight) 60%, transparent);
+	}
+
+	.site-nav a:focus-visible,
+	.theme-toggle:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 1px;
 	}
 
 	.theme-toggle {
+		flex: 0 0 auto;
 		display: grid;
 		place-items: center;
-		width: 1.9rem;
-		height: 1.9rem;
+		width: 1.85rem;
+		height: 1.85rem;
+		margin-left: 0.1rem;
 		padding: 0;
-		color: var(--fg-faint);
-		border: 1px solid var(--hairline);
+		color: var(--fg-dim);
+		border: none;
 		border-radius: var(--radius-pill);
-		background: var(--glass);
-		backdrop-filter: blur(14px);
+		background: transparent;
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
 		transition:
 			color 0.25s var(--ease),
-			border-color 0.25s var(--ease),
 			background 0.25s var(--ease);
 	}
 
 	.theme-toggle:hover {
-		color: var(--fg);
-		border-color: color-mix(in srgb, var(--fg) 22%, transparent);
+		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--fg) 7%, transparent);
 	}
 
 	.theme-toggle :global(.material-symbols-outlined) {
@@ -100,11 +137,9 @@
 		font-size: 1rem;
 	}
 
-	/* Phones navigate from the tab bar; the pill rows would only wrap. A page's
-	   separator dot right after the nav goes with it. */
+	/* Phones navigate from the tab bar; the pill would only crowd the top. */
 	@media (max-width: 720px) {
-		:global(html.has-tabbar) .site-nav,
-		:global(html.has-tabbar) .site-nav + :global(.dot) {
+		:global(html.has-tabbar) .site-nav:not(.inline) {
 			display: none;
 		}
 	}

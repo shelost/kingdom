@@ -7,11 +7,15 @@
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
 	import ImageMenu from '$lib/components/ImageMenu.svelte';
 	import MobileTabBar from '$lib/components/MobileTabBar.svelte';
+	import SiteNav from '$lib/components/SiteNav.svelte';
 	import { applyNsfwFromUrl, NSFW_QUERY, nsfwQueryOn } from '$lib/nsfwUi.svelte';
 	import { applyEditFromUrl, EDIT_QUERY, editQueryOn } from '$lib/editUi.svelte';
 	import { applyReadingFromUrl, EP_QUERY, VIEW_QUERY, reading } from '$lib/reading.svelte';
 
 	let { children } = $props();
+
+	/** The chronicle keeps its own chrome (the site links live in its settings panel). */
+	let onChronicle = $derived(page.route.id?.startsWith('/(story)') ?? false);
 
 	/* Only the URL is a dependency: the appliers read reader state, and tracking it
 	   would re-apply a stale `?ep=` the instant Prev/Next moves the index. */
@@ -83,6 +87,7 @@
 
 <div class="rail" aria-hidden="true"></div>
 
+{#if !onChronicle}<SiteNav />{/if}
 {@render children()}
 <MobileTabBar />
 <ImageLightbox />

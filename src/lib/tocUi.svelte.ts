@@ -3,7 +3,8 @@
  * Toc.svelte binds into this so chrome and reading column stay in sync.
  */
 export const tocUi = $state({
-	open: true,
+	/** Closed until the reader lands on an episode (see `loadViewScope`). */
+	open: false,
 	/** True while a TOC / hash jump is in flight — keeps chrome from treating a remount as “left the script”. */
 	jumping: false,
 	/** Sidebar as a floating card with drop shadow. Default on. */

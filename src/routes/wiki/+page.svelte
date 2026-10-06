@@ -41,7 +41,7 @@
 	import { hasLeitmotif, hasTempTrack } from '$lib/leitmotifs';
 	import WikiDetail from '$lib/components/WikiDetail.svelte';
 	import { tilt } from '$lib/attachments/tilt';
-	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
 	import { chartsForWikiEntry } from '$lib/components/diagrams/wikiCharts';
 	import { storyImg } from '$lib/img';
@@ -357,7 +357,7 @@
 <main class="wiki" class:dimmed={!!selectedId}>
 	<header class="topbar">
 		<div class="mast-nav">
-			<SiteNav />
+			<SiteNavSpace />
 			<span class="dot" aria-hidden="true">·</span>
 			<a class="quiet" href={resolve('/images')}>Images</a>
 			<span class="dot" aria-hidden="true">·</span>

@@ -11,7 +11,6 @@ export type StorySearchKind = 'title' | 'scene' | 'quote' | 'dialogue' | 'narrat
 
 export type StorySearchHit = {
 	episodeId: string;
-	episodeIndex: number;
 	destId: string;
 	episodeTitle: string;
 	episodeKo?: string;
@@ -25,7 +24,6 @@ type Chunk = { kind: StorySearchKind; text: string; nsfw?: boolean };
 
 type SearchDoc = {
 	episodeId: string;
-	episodeIndex: number;
 	destId: string;
 	episodeTitle: string;
 	episodeKo?: string;
@@ -113,18 +111,14 @@ function finishDoc(out: SearchDoc[], base: Omit<SearchDoc, 'hay' | 'hayAll'>, ex
 
 function buildIndex(): SearchDoc[] {
 	const out: SearchDoc[] = [];
-	const titleToEpisode = new Map<string, { episodeId: string; episodeIndex: number }>();
+	const titleToEpisode = new Map<string, string>();
 
-	/* Title page is episode index 0 in reading.svelte — story entries start at 1. */
-	let episodeIndex = 1;
 	for (let chapterIndex = 0; chapterIndex < chapters.length; chapterIndex++) {
 		const ch = chapters[chapterIndex];
 		for (let entryIndex = 0; entryIndex < ch.entries.length; entryIndex++) {
 			const entry: Entry = ch.entries[entryIndex];
 			const epId = entryId(ch.id, entry.title);
-			const i = episodeIndex;
-			episodeIndex += 1;
-			titleToEpisode.set(entry.title, { episodeId: epId, episodeIndex: i });
+			titleToEpisode.set(entry.title, epId);
 
 			const sceneList = scenesOf(entry.blocks, epId);
 			let sceneCursor = -1;
@@ -135,7 +129,6 @@ function buildIndex(): SearchDoc[] {
 				if (!doc) {
 					doc = {
 						episodeId: epId,
-						episodeIndex: i,
 						destId,
 						episodeTitle: entry.title,
 						episodeKo: entry.subtitle,
@@ -180,13 +173,12 @@ function buildIndex(): SearchDoc[] {
 
 	for (const seq of MOVIE_SEQUENCES) {
 		for (const title of seq.entryTitles) {
-			const ep = titleToEpisode.get(title);
-			if (!ep) continue;
+			const episodeId = titleToEpisode.get(title);
+			if (!episodeId) continue;
 			const extra = [seq.title, ...seq.shots.map((s) => s.at ?? '').filter(Boolean)];
 			const doc: Omit<SearchDoc, 'hay' | 'hayAll'> = {
-				episodeId: ep.episodeId,
-				episodeIndex: ep.episodeIndex,
-				destId: ep.episodeId,
+				episodeId,
+				destId: episodeId,
 				episodeTitle: title,
 				sceneTitle: seq.title,
 				chunks: [{ kind: 'sequence', text: extra.join(' · ') }]
@@ -272,7 +264,6 @@ export function searchStory(query: string, limit = MAX_HITS): StorySearchHit[] {
 			score: score(doc, tokens, chunk),
 			hit: {
 				episodeId: doc.episodeId,
-				episodeIndex: doc.episodeIndex,
 				destId: doc.destId,
 				episodeTitle: doc.episodeTitle,
 				episodeKo: doc.episodeKo,
@@ -299,7 +290,6 @@ export function searchStory(query: string, limit = MAX_HITS): StorySearchHit[] {
 
 export type StorySearchGroup = {
 	episodeId: string;
-	episodeIndex: number;
 	episodeTitle: string;
 	episodeKo?: string;
 	hits: StorySearchHit[];
@@ -313,7 +303,6 @@ export function groupStoryHits(hits: StorySearchHit[]): StorySearchGroup[] {
 		if (!g) {
 			g = {
 				episodeId: hit.episodeId,
-				episodeIndex: hit.episodeIndex,
 				episodeTitle: hit.episodeTitle,
 				episodeKo: hit.episodeKo,
 				hits: []

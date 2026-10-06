@@ -9,8 +9,9 @@
 
 import { browser } from '$app/environment';
 import { goto, replaceState } from '$app/navigation';
-import { chapters, chapterIdFromPartId, entryId, episodeNumber } from '$lib/story';
+import { chapters, entryId, episodeNumber, partId } from '$lib/story';
 import { isLoveEpisode } from '$lib/loveEpisodes';
+import { partLabel } from '$lib/tocTree';
 import { scriptUi } from '$lib/scriptUi.svelte';
 import { autoOpenToc, tocUi } from '$lib/tocUi.svelte';
 
@@ -78,9 +79,14 @@ export type ViewScope = 'full' | 'episodes';
 export const VIEW_QUERY = 'view';
 export const EP_QUERY = 'ep';
 
+/** `title` is the cover, `part` a Part's title page (its chapter is the one that opens it), `entry` a story episode. */
+export type EpisodeKind = 'title' | 'part' | 'entry';
+
 export type EpisodeRef = {
+	kind: EpisodeKind;
 	chapterId: string;
 	chapterIndex: number;
+	/** -1 on the title and Part pages. */
 	entryIndex: number;
 	id: string;
 };
@@ -176,24 +182,29 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 };
 
 /** Flat episode list — slug ids match TOC / URL hashes (`chapterId-title-slug`).
- * Index 0 is the title page, its own episode, not a scroll above the first entry. */
+ * Index 0 is the title page, its own episode, not a scroll above the first entry;
+ * each Part's title page (`part-chapterId`) is its own episode before that Part's first entry. */
 export const TITLE_EPISODE_ID = 'title';
 
 export const episodes: EpisodeRef[] = [
-	{ chapterId: 'title', chapterIndex: -1, entryIndex: -1, id: TITLE_EPISODE_ID },
-	...chapters.flatMap((ch, chapterIndex) =>
-		ch.entries.map((entry, entryIndex) => ({
+	{ kind: 'title', chapterId: 'title', chapterIndex: -1, entryIndex: -1, id: TITLE_EPISODE_ID },
+	...chapters.flatMap((ch, chapterIndex): EpisodeRef[] => [
+		...(ch.part
+			? [{ kind: 'part' as const, chapterId: ch.id, chapterIndex, entryIndex: -1, id: partId(ch.id) }]
+			: []),
+		...ch.entries.map((entry, entryIndex) => ({
+			kind: 'entry' as const,
 			chapterId: ch.id,
 			chapterIndex,
 			entryIndex,
 			id: entryId(ch.id, entry.title)
 		}))
-	)
+	])
 ];
 
-/** Title slug only — `jumong` from `jumong-jumong`. The title page is `title`. */
+/** Title slug only — `jumong` from `jumong-jumong`. The title and Part pages keep their whole id. */
 export function episodeTitleSlug(ep: EpisodeRef): string {
-	if (ep.id === TITLE_EPISODE_ID) return TITLE_EPISODE_ID;
+	if (ep.kind !== 'entry') return ep.id;
 	return ep.id.slice(ep.chapterId.length + 1);
 }
 
@@ -223,7 +234,13 @@ export function episodeQueryId(ep: EpisodeRef): string {
 /** Episode picker label: `7.13 · Hyukgosé` (title page is plain `Title`); Korean titles when the reader picks Korean. */
 export function episodeNavLabel(ep: EpisodeRef): string {
 	const ko = reading.lang === 'ko';
-	if (ep.id === TITLE_EPISODE_ID) return ko ? '표지' : 'Title';
+	if (ep.kind === 'title') return ko ? '표지' : 'Title';
+	if (ep.kind === 'part') {
+		const ch = chapters[ep.chapterIndex];
+		const name = (ko ? ch.partKorean : ch.partTitle) ?? '';
+		const label = partLabel(ch.part ?? '', ko);
+		return name ? `${label} · ${name}` : label;
+	}
 	const entry = chapters[ep.chapterIndex]?.entries[ep.entryIndex];
 	const title =
 		(ko ? entry?.subtitle?.trim() : undefined) || entry?.title?.trim() || episodeTitleSlug(ep);
@@ -397,9 +414,11 @@ export function loadViewScope() {
 	if (!browser) return;
 	/* Hydrate index FROM the URL before writing — otherwise episodeIndex 0
 	   (Queen Sunduk) overwrites a bookmarked `?ep=jumong` on every mount. */
+	const epParam = new URL(location.href).searchParams.get(EP_QUERY);
 	applyReadingFromUrl(new URL(location.href));
 	if (reading.viewScope === 'episodes') {
-		autoOpenToc();
+		/* A bare visit (or the title page) lands on the cover with the TOC shut. */
+		if (epParam && episodes[reading.episodeIndex]?.id !== 'title') autoOpenToc();
 		scriptUi.inScript = true;
 		syncReadingUrl();
 	}
@@ -453,7 +472,7 @@ export function setViewScope(s: ViewScope) {
 			window.dispatchEvent(new Event('scroll'));
 			return;
 		}
-		if (ep.id === TITLE_EPISODE_ID) {
+		if (ep.kind === 'title' || (s === 'episodes' && ep.kind === 'part')) {
 			scrollStoryToTop();
 			window.dispatchEvent(new Event('scroll'));
 			return;
@@ -578,7 +597,7 @@ export function applyReadingFromUrl(url: URL) {
 					return;
 				}
 				const ep = episodes[reading.episodeIndex];
-				if (ep?.id === TITLE_EPISODE_ID) {
+				if (ep && ep.kind !== 'entry') {
 					window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 					window.dispatchEvent(new Event('scroll'));
 					return;
@@ -622,13 +641,7 @@ export function resolveStoryTarget(id: string): StoryTarget | null {
 	}
 
 	if (chapters.some((ch) => ch.id === id)) {
-		const idx = episodes.findIndex((e) => e.chapterId === id);
-		return idx >= 0 ? { episodeIndex: idx, hashId: id } : null;
-	}
-
-	const partChapter = chapterIdFromPartId(id);
-	if (partChapter && chapters.some((ch) => ch.id === partChapter && ch.part)) {
-		const idx = episodes.findIndex((e) => e.chapterId === partChapter);
+		const idx = episodes.findIndex((e) => e.kind === 'entry' && e.chapterId === id);
 		return idx >= 0 ? { episodeIndex: idx, hashId: id } : null;
 	}
 
@@ -688,21 +701,12 @@ function firstPainted(root: ParentNode, selectors: string[]): HTMLElement | null
 export function storyTitleElement(el: HTMLElement): HTMLElement {
 	if (el.matches('h1, h2, .day-label, .mini-title, .part-eyebrow')) return el;
 
-	if (el.matches('article.entry, .entry-head, .entry-head-sticky')) {
-		const h2 = firstPainted(el, ['.episode h2', '.entry-head h2', 'h2']);
-		const head = firstPainted(el, ['.entry-head-sticky', '.entry-head']);
-		/* Desktop: the year + title bar is sticky, so land on its static
-		   `.entry-head` wrapper — a stuck bar reports where it is pinned, not
-		   where it starts. Phones: the bar is static — land on its first row so
-		   the chapter label and story index clear the fixed menu buttons. */
-		if (h2 && head) {
-			const sticky = h2.closest<HTMLElement>('.entry-head-sticky');
-			if (sticky && getComputedStyle(sticky).position === 'sticky') {
-				return sticky.closest<HTMLElement>('.entry-head') ?? head;
-			}
-			return firstPainted(head, ['.head-top']) ?? h2;
-		}
-		return h2 ?? head ?? el;
+	if (el.matches('article.entry, .entry-head')) {
+		/* The head scrolls with the page: land on its breadcrumb row so the
+		   whole head shows below the fixed menu buttons. */
+		const head = el.matches('.entry-head') ? el : firstPainted(el, ['.entry-head']);
+		const crumbs = head ? firstPainted(head, ['.crumbs']) : null;
+		return crumbs ?? firstPainted(el, ['.episode h2', 'h2']) ?? head ?? el;
 	}
 	if (el.matches('section.chapter, .chapter-head')) {
 		return firstPainted(el, ['.chapter-title h1', 'h1']) ?? el;
@@ -805,22 +809,12 @@ export function storyStickyOffset(title?: HTMLElement | null): number {
 
 	const overlapsX = (r: DOMRect) => r.left < x1 && r.right > x0;
 
-	for (const fixed of document.querySelectorAll<HTMLElement>('.hud.in, .toc-toggle.in')) {
+	for (const fixed of document.querySelectorAll<HTMLElement>(
+		'.hud.in, .toc-toggle.in, .title-pill.in'
+	)) {
 		if (!isPainted(fixed)) continue;
 		const r = fixed.getBoundingClientRect();
 		if (r.bottom > 0 && overlapsX(r)) chrome = Math.max(chrome, r.bottom);
-	}
-
-	for (const sticky of document.querySelectorAll<HTMLElement>('.entry-head-sticky')) {
-		if (!isPainted(sticky)) continue;
-		if (title && (sticky.contains(title) || title.contains(sticky))) continue;
-		const style = getComputedStyle(sticky);
-		if (style.position !== 'sticky' && style.position !== 'fixed') continue;
-		const r = sticky.getBoundingClientRect();
-		const stickTop = Number.parseFloat(style.top) || 0;
-		if (r.top <= stickTop + 2 && r.bottom > 0 && overlapsX(r)) {
-			chrome = Math.max(chrome, r.bottom);
-		}
 	}
 
 	return Math.max(chrome, min) + pad;
@@ -991,7 +985,7 @@ export function goToEpisode(
 	const finish = () => {
 		if (scroll) {
 			const toTop =
-				ep.id === TITLE_EPISODE_ID ||
+				ep.kind === 'title' ||
 				(reading.viewScope === 'episodes' && (destId === ep.id || !isScene(destId)));
 			if (toTop) {
 				scrollStoryToTop();
@@ -1196,12 +1190,11 @@ export function watchReading() {
 			return best;
 		};
 
-		let flash = false;
+		/* A flashback episode, mounted alone, holds the whole page in the past. */
+		let flash = reading.viewScope === 'episodes' && !!root.querySelector('article[data-flash]');
 		for (const el of root.querySelectorAll('[data-flash]')) {
-			if (inBand(el)) {
-				flash = true;
-				break;
-			}
+			if (flash) break;
+			if (inBand(el)) flash = true;
 		}
 
 		const musicHeld = (() => {

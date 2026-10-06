@@ -1,7 +1,7 @@
 <script lang="ts">
 	import StoryMap from '$lib/components/StoryMap.svelte';
 	import PersonLayer from '$lib/components/PersonLayer.svelte';
-	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 </script>
 
 <svelte:head>
@@ -14,7 +14,7 @@
 
 <main class="map-page">
 	<header class="mast">
-		<SiteNav />
+		<SiteNavSpace />
 		<h1>Map</h1>
 		<p class="lede">Samhan on one sheet — click a place for its wiki entry.</p>
 	</header>

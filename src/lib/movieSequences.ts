@@ -123,12 +123,12 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		shots: [
 			{ id: 'clan-tourney-grid-wide', role: 'the square', angle: 'dutch crane painting', at: 'square grid in the palace yard' },
 			{ id: 'clan-tourney-call', role: 'five in white', angle: 'worm’s-eye sleeve-plane', at: 'young men of each house step onto the grid' },
-			{ id: 'clan-tourney-sword-midstrike', role: 'Yung vs Hyo', angle: 'dutch X', at: 'Mokgeom mid-strike on the grid' },
+			{ id: 'clan-tourney-sword-midstrike', role: 'Yung vs Hyo', angle: 'dutch X', at: 'Swords first. Wooden ones, which' },
 			{ id: 'clan-tourney-sword-dutch', role: 'gold / ink split', angle: 'extreme dutch', at: 'Blades skim the chalk.' },
-			{ id: 'clan-tourney-sword-ots', role: 'from Yung', angle: 'OTS rack-focus', at: 'Over his shoulder the chalk holds' },
+			{ id: 'clan-tourney-sword-ots', role: 'from Yung', angle: 'OTS rack-focus', at: 'Swords first. Wooden ones, which' },
 			{ id: 'clan-tourney-sword-victory', role: 'the stripe is the crown', angle: 'shadow painting', at: 'Point to the white sleeve.' },
 			{ id: 'clan-tourney-ssireum-grip', role: 'Tae vs Yun', angle: 'dutch knot', at: 'satba locked before they stand' },
-			{ id: 'clan-tourney-ssireum-lift', role: 'white diagonal', angle: 'worm’s-eye', at: 'deulbaejigi clears the sand' },
+			{ id: 'clan-tourney-ssireum-lift', role: 'white diagonal', angle: 'worm’s-eye', at: 'A Hae boy hooks a' },
 			{ id: 'clan-tourney-ssireum-throw', role: 'gold calligraphy', angle: 'dutch freeze', at: 'Sand takes the shoulder.' },
 			{ id: 'clan-tourney-spectators', role: 'Pung from the bar', angle: 'from the munru bar', at: 'elders watch from the hall steps' }
 		]
@@ -275,7 +275,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		shots: [
 			{ id: 'gaya-seq-fortress-night', role: 'Gaya seong night', angle: 'wide night' },
 			{ id: 'gwansan-three-hosts', role: 'three camps', angle: 'night wide' },
-			{ id: 'muryuk-seq-ridge', role: 'ambush', angle: 'dutch night', at: 'Muryuk’s cone cuts the night ridge' },
+			{ id: 'muryuk-seq-ridge', role: 'ambush', angle: 'dutch night', at: 'A man in a Gaya' },
 			{ id: 'muryuk-seq-cone-fight', role: 'last fight', angle: 'worm’s-eye', at: 'The tall Gaya cone still fights' },
 			{ id: 'sadaham-seq-keepup', role: 'keep up', angle: 'low gallop', at: 'Then keep up.' },
 			{ id: 'sadaham-seq-vanguard', role: 'Sadaham fifteen', angle: 'dutch charge', at: 'They said too young.' },
@@ -447,7 +447,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'jumong-haemosu-pov-yuhwa-only', role: 'only her from the rail', angle: 'bird’s-eye rail', at: ', god of the' },
 			{ id: 'jumong-haemosu-sky-sisters', role: 'looks down', angle: 'from the chariot', at: ', god of the' },
 			{ id: 'jumong-yuhwa-sisters-bath', role: 'three bathing', angle: 'shallows wide', at: 'Hwahye and Wihye' },
-			{ id: 'jumong-sisters-kneel-well', role: 'three in the well', angle: 'straight-down well', at: 'In the Ubal' },
+			{ id: 'jumong-sisters-kneel-well', role: 'three in the well', angle: 'straight-down well', at: 'In the shallows, three river-daughters' },
 			{ id: 'jumong-sisters-kneel-ots', role: 'her OTS two sisters', angle: 'OTS well', at: 'Go. I’m here.' },
 			{ id: 'jumong-hwahye-amnok-dive-leave', role: 'eldest dives', angle: 'intimate dutch', at: 'Hwahye dives first and does not look back' },
 			{ id: 'jumong-wihye-amnok-laugh-follow', role: 'middle follows', angle: 'intimate dutch', at: 'Wihye laughs and follows' },
@@ -849,7 +849,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'bidam-father-hwarang',
 		title: 'Bidam — first Hwarang morning',
-		entryTitles: ['기 (起)'],
+		entryTitles: ['Gi (起)'],
 		place: 'Surabol Hwarang yard — packed earth, timber gate (after 645 veto, as memory)',
 		why: 'After Bidam’s solo veto, the father’s If: walk alone toward the truth.',
 		canon: 'Young Bidam FACE from ch_bidam_hwarang. Father FACE from ch_bidam_old as Son Sukwon. Navy #141C2E. Beads. Packed earth. One device. High contrast. 2D cel-painterly.',
@@ -860,7 +860,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'bidam-rebellion-splash',
 		title: 'Bidam’s Rebellion — cavern water',
-		entryTitles: ['승 (承)'],
+		entryTitles: ['Seung (承)'],
 		place: 'Steam cavern (pl_cave) then Radiance 정자 night',
 		why: 'Bupmin at 21 first meets the goddesses; splash fails; Bidam laughs alive.',
 		canon: 'Bupmin ch_bupmin_hwarang painterly #C41E3A. Goddesses photoreal-numinous, living eyes (not oracle glow). Bidam navy beads. Yushin Confucian blue standing. Splash is political, not sex. Same 정자 as other Radiance nights.',
@@ -876,14 +876,14 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'bidam-rebellion-cinema',
 		title: 'Bidam’s Rebellion — lineage, tea, black bands, Radiance',
-		entryTitles: ['승 (承)', '전 (轉)', '결 (結)'],
+		entryTitles: ['Seung (承)', 'Jeon (轉)', 'Gyeol (結)'],
 		place: 'Steam cavern (pl_cave) · night 정자 · Radiance fortress (pl_radiance_fortress)',
 		why: 'Cavern lineage, tabletop nights, age-scored duels, rebel black headbands, Bidam–Yumjong at the gate.',
 		canon: 'Yushin CLEAN-SHAVEN from ch_kim_yushin. Father ch_kim_seohyun, grandfather ch_kim_muryuk. Bidam navy #141C2E + BLACK HEADBAND. Yushin #2A5FB8. Place refs drive 3D layout. High contrast. One device. No army carpet.',
 		shots: [
 			{ id: 'radiance-exposition-wide', role: 'Radiance wide', angle: 'exposition', at: 'Fortress of Radiance' },
 			{ id: 'bidam-yumjong-gate', role: 'open gate', angle: 'dutch', at: 'Open the Radiance gate.' },
-			{ id: 'rebel-black-headband-army', role: 'black bands', angle: 'iconic lower-third', at: 'The rebel band ties black headbands' },
+			{ id: 'rebel-black-headband-army', role: 'black bands', angle: 'iconic lower-third', at: 'Bidam and Yumjong raise men' },
 			{ id: 'silla-blue-camp', role: 'Silla camp', angle: 'iconic opposite', at: 'Between the camps a small pavilion goes up' },
 			{ id: 'bidam-yushin-tea-ots', role: 'tea OTS', angle: 'OTS', at: 'Tea first.' },
 			{ id: 'bidam-yushin-tea-map', role: 'tea map', angle: 'dutch', at: 'Bidam has brought a map' },
@@ -967,7 +967,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'euija-coup-peace-or-war', role: 'the choice', angle: "worm’s-eye", at: 'peace, or war' },
 			{ id: 'euija-coup-sons-forty-one', role: 'forty-one sons', angle: "bird’s-eye stamp", at: 'of his own sons to the Assembly' },
 			{ id: 'euija-coup-satek-stare', role: 'clan emptied', angle: 'OTS aisle', at: 'a law for emptying the Assembly' },
-			{ id: 'euija-coup-chunbok-pm', role: 'Premier named', angle: 'intimate kneel', at: 'is named Premier (상좌평)' },
+			{ id: 'euija-coup-chunbok-pm', role: 'Premier named', angle: 'intimate kneel', at: 'Satek Chunbok is named Premier.' },
 			{ id: 'euija-coup-empty-benches', role: 'aftermath', angle: 'iconic empty', at: 'The Enabling Law did not abolish the chair' }
 		]
 	},
@@ -987,7 +987,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 			{ id: 'heungsu-gyebek-rings', role: 'berth rings', angle: 'dutch two-shot', at: 'You… you truly mean to march?' },
 			{ id: 'heungsu-messenger', role: 'courier', angle: 'OTS', at: 'The matter is urgent. What then.' },
 			{ id: 'euija-yes-so', role: 'so it is', angle: "worm’s-eye empty", at: 'So it is.' },
-			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'already the White River and the Tanhyeon pass' },
+			{ id: 'tanhyeon-already-passed', role: 'pass lost', angle: 'wide lower-third', at: 'The next courier is shorter.' },
 			{ id: 'gibeolpo-ring-mud', role: 'river lost', angle: "bird’s-eye mud", at: 'Tang keels in the mud of Gibeolpo' },
 			{ id: 'yushin-tanhyeon-fish-ring', role: 'Silla on the pass', angle: "worm’s-eye climb", at: 'Yushin is already on the switchback' }
 		]

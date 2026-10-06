@@ -257,7 +257,7 @@
 		<div class="hud-cluster">
 			<span class="hud-kicker">Site{#if showKo}<span class="hud-kicker-ko">사이트</span>{/if}</span>
 			<div class="nav-wrap">
-				<SiteNav />
+				<SiteNav inline />
 			</div>
 		</div>
 

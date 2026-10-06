@@ -1,11 +1,19 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
 	import { resolve } from '$app/paths';
-	import { chapterNumber, chapters, isFlashEntry, entryId, partId } from '$lib/story';
+	import {
+		chapterNumber,
+		chapters,
+		episodeNumber,
+		isFlashEntry,
+		entryId
+	} from '$lib/story';
+	import { episodeCrumbs } from '$lib/tocTree';
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
 	import EpisodeThumbnail from '$lib/components/EpisodeThumbnail.svelte';
-	import TiltThumb from '$lib/components/TiltThumb.svelte';
+	import PartTitle from '$lib/components/PartTitle.svelte';
+	import StillWall, { WALL_STILLS } from '$lib/components/StillWall.svelte';
 	import HiddenStills from '$lib/components/HiddenStills.svelte';
 	import PlaceBanner from '$lib/components/PlaceBanner.svelte';
 	import PlaceMapTile from '$lib/components/PlaceMapTile.svelte';
@@ -16,10 +24,12 @@
 		reading,
 		episodes,
 		episodeNavLabel,
+		findStoryHeading,
 		goToEpisode,
 		isInlineArt,
 		loadMode,
 		loadViewScope,
+		scrollToStoryHeading,
 		stepEpisode,
 		storyRoot,
 		watchReading
@@ -27,27 +37,62 @@
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
 	import { entryCast, entryTags } from '$lib/entryHead';
-	import { episodeThumbnail } from '$lib/thumbnail.svelte';
+	import { storyStills } from '$lib/thumbnail.svelte';
 	import { EPISODE_TOTAL, SEASONS, STORY_RANGE } from '$lib/episodeDirectory';
 	import { onMount } from 'svelte';
 	import type { Chapter, StackImage } from '$lib/story';
 
 	let episodesMode = $derived(reading.viewScope === 'episodes');
 	let currentEp = $derived(episodes[reading.episodeIndex]);
-	let onTitleEpisode = $derived(episodesMode && currentEp?.id === 'title');
+	let onTitleEpisode = $derived(episodesMode && currentEp?.kind === 'title');
 	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
 	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
-	/** Episode 1, right after the title page: the cover's art and its Read button. */
-	const FIRST_EPISODE_INDEX = 1;
+	/** The first story episode (past the title and Part I pages): the cover's art and its Read button. */
+	const FIRST_EPISODE_INDEX = episodes.findIndex((e) => e.kind === 'entry');
 	const firstEp = episodes[FIRST_EPISODE_INDEX];
-	let coverThumb = $derived(
-		firstEp
-			? episodeThumbnail(chapters[firstEp.chapterIndex].entries[firstEp.entryIndex], firstEp.id)
-			: null
+	/** Part title pages, keyed by the chapter that opens each Part. */
+	const SEASON_BY_CHAPTER = new Map(
+		SEASONS.filter((s) => chapters.find((ch) => ch.id === s.id)?.part).map((s) => [s.id, s])
 	);
+	/** A full wall, every still different: starred ones first, then episode thumbnails. */
+	let coverStills = $derived(storyStills(WALL_STILLS));
 
 	function startReading() {
 		goToEpisode(FIRST_EPISODE_INDEX);
+	}
+
+	/** Number and titles for the pill, by episode id. */
+	const PILL_INFO = new Map(
+		chapters.flatMap((ch, ci) =>
+			ch.entries.map((en, i): [string, { num: string; title: string; ko?: string }] => [
+				entryId(ch.id, en.title),
+				{ num: episodeNumber(ci, i), title: en.title, ko: en.subtitle }
+			])
+		)
+	);
+
+	/** The episode under the reading line once its head has scrolled off the top. */
+	let pinnedId = $state<string | null>(null);
+	/** Last pinned episode, so the pill keeps its words while it slides away. */
+	let pillId = $state<string | null>(null);
+	let pill = $derived(pillId ? PILL_INFO.get(pillId) : undefined);
+
+	function headScrolledPast(): string | null {
+		const root = storyRoot();
+		if (!root) return null;
+		const line = 80;
+		for (const article of root.querySelectorAll<HTMLElement>('article.entry')) {
+			const r = article.getBoundingClientRect();
+			if (r.top > line || r.bottom < line) continue;
+			const head = article.querySelector<HTMLElement>('.entry-head')?.getBoundingClientRect();
+			return head && head.height > 0 && head.bottom < 0 ? (article.dataset.storyId ?? null) : null;
+		}
+		return null;
+	}
+
+	function backToHead() {
+		const el = pillId ? findStoryHeading(pillId) : null;
+		if (el) scrollToStoryHeading(el, 'smooth');
 	}
 	/** Korean reading: the entry head leads with Korean titles and labels. */
 	let koHead = $derived(reading.lang === 'ko');
@@ -92,16 +137,32 @@
 			});
 		};
 
+		let pillRaf = 0;
+		const syncPill = () => {
+			if (pillRaf) return;
+			pillRaf = requestAnimationFrame(() => {
+				pillRaf = 0;
+				pinnedId = headScrolledPast();
+				if (pinnedId) pillId = pinnedId;
+			});
+		};
+
 		syncInScript();
+		syncPill();
 
 		window.addEventListener('scroll', syncInScript, { passive: true });
 		window.addEventListener('resize', syncInScript);
+		window.addEventListener('scroll', syncPill, { passive: true });
+		window.addEventListener('resize', syncPill);
 
 		return () => {
 			stopReading();
 			if (syncRaf) cancelAnimationFrame(syncRaf);
+			if (pillRaf) cancelAnimationFrame(pillRaf);
 			window.removeEventListener('scroll', syncInScript);
 			window.removeEventListener('resize', syncInScript);
+			window.removeEventListener('scroll', syncPill);
+			window.removeEventListener('resize', syncPill);
 			scriptUi.inScript = false;
 		};
 	});
@@ -144,58 +205,32 @@
 <main>
 	{#if !episodesMode || onTitleEpisode}
 	<!-- ————— cover: key art + a way in. In episodes mode this is episode 0. ————— -->
-	<header class="cover" data-story-id="title">
-		<div class="cover-hero">
+	<StillWall stills={coverStills} storyId="title">
+		<img class="cover-logo" src="/samhan_logo.svg" alt="삼한왕검" />
+		<h1 class="cover-title">King for All</h1>
+		<h2 class="cover-subtitle">A Story Told In Parts</h2>
+		<p class="cover-author">Heewon Ahn · 안희원</p>
+		<p class="cover-meta">
+			<span>{STORY_RANGE}</span>
+			<span aria-hidden="true">·</span>
+			<span>{SEASONS.length} {koHead ? '부' : 'Parts'}</span>
+			<span aria-hidden="true">·</span>
+			<span>{EPISODE_TOTAL} {koHead ? '편' : 'episodes'}</span>
+		</p>
+
+		<div class="cover-actions">
 			{#if firstEp}
-				<button
-					type="button"
-					class="cover-art"
-					use:reveal
-					onclick={startReading}
-					aria-label={`Read ${episodeNavLabel(firstEp)}`}
-				>
-					<TiltThumb
-						src={coverThumb?.src}
-						sizes="(max-width: 820px) 100vw, 46rem"
-						fallback="K"
-						priority
-						max={6}
-					/>
+				<button type="button" class="cover-read" onclick={startReading}>
+					<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+					<span class="read-label">{koHead ? '읽기' : 'Read'}</span>
+					<span class="read-ep">{episodeNavLabel(firstEp)}</span>
 				</button>
 			{/if}
-
-			<div class="cover-copy">
-				<h1 class="cover-title" use:reveal={80}>King for All</h1>
-				<p class="cover-ko" use:reveal={160}>삼한왕검</p>
-				<h2 class="cover-subtitle" use:reveal={160}>A Story Told In Parts</h2>
-				<p class="cover-author" use:reveal={180}>Heewon Ahn · 안희원</p>
-				<p class="cover-meta" use:reveal={200}>
-					<span>{STORY_RANGE}</span>
-					<span aria-hidden="true">·</span>
-					<span>{SEASONS.length} {koHead ? '부' : 'Parts'}</span>
-					<span aria-hidden="true">·</span>
-					<span>{EPISODE_TOTAL} {koHead ? '편' : 'episodes'}</span>
-				</p>
-
-				<div class="cover-actions" use:reveal={240}>
-					{#if firstEp}
-						<button type="button" class="cover-read" onclick={startReading}>
-							<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
-							<span class="read-label">{koHead ? '읽기' : 'Read'}</span>
-							<span class="read-ep">{episodeNavLabel(firstEp)}</span>
-						</button>
-					{/if}
-					<a class="cover-all" href={resolve('/episodes')}>
-						{koHead ? '전체 에피소드' : 'All episodes'}
-					</a>
-				</div>
-			</div>
+			<a class="cover-all" href={resolve('/episodes')}>
+				{koHead ? '전체 에피소드' : 'All episodes'}
+			</a>
 		</div>
-
-		<span class="scroll-cue" use:reveal={280} aria-hidden="true">
-			<span class="cue-line"></span>
-		</span>
-	</header>
+	</StillWall>
 
 	<!-- ————— blurb: standalone full-viewport screen ————— -->
 	<section class="blurb-page" aria-label="About this story">
@@ -242,14 +277,9 @@
 	>
 		{#each chapters as chapter, ci (chapter.id)}
 			{#if !episodesMode || chapter.id === currentEp?.chapterId}
-				{#if chapter.part && !episodesMode}
-					<section class="part-page" data-story-id={partId(chapter.id)} use:reveal>
-						<span class="part-eyebrow">{chapter.part}</span>
-						{#if chapter.partTitle}<h2 class="part-title">{chapter.partTitle}</h2>{/if}
-						{#if chapter.partKorean}<p class="part-ko">{chapter.partKorean}</p>{/if}
-						{#if chapter.partHanja}<p class="part-hanja">{chapter.partHanja}</p>{/if}
-						<span class="part-rule" aria-hidden="true"></span>
-					</section>
+				{@const season = SEASON_BY_CHAPTER.get(chapter.id)}
+				{#if season && (!episodesMode || currentEp?.kind === 'part')}
+					<PartTitle {season} ko={koHead} />
 				{/if}
 				<section class="chapter" data-story-id={chapter.id}>
 						{#if !episodesMode}
@@ -292,93 +322,97 @@
 							>
 								<div class="content-col">
 									<header class="entry-head">
-										<div class="entry-head-sticky" use:reveal={{ y: 0 }}>
-											<div class="head-top">
-												<p class="chapter-label">
-													{#if chapterNumber(ci) !== null}
-														<span class="num">{chapterNumber(ci)}</span>
-														<span class="dot" aria-hidden="true">·</span>
-													{/if}
-													<span class="name">{(koHead && chapter.korean) || chapter.title}</span>
-												</p>
-												<p class="story-index">
-													{#if koHead}
-														{chapter.entries.length}편 중 {i + 1}편
+										<div class="entry-head-main" use:reveal={{ y: 0 }}>
+											<nav class="crumbs" aria-label="Breadcrumb">
+												{#each episodeCrumbs(ci, i, koHead) as crumb, k (k)}
+													{#if k}<span class="crumb-caret material-symbols-outlined" aria-hidden="true"
+															>chevron_right</span
+														>{/if}
+													{#if crumb.anchor}
+														<a class="crumb crumb-link" href={`${resolve('/episodes')}#${crumb.anchor}`}
+															>{crumb.label}</a
+														>
 													{:else}
-														Story {i + 1} out of {chapter.entries.length}
+														<span class="crumb">{crumb.label}</span>
 													{/if}
-												</p>
-											</div>
-											<div class="head-main">
-												<div class="episode">
-													<div class="year" class:long={entry.year.length > 4}>
-														{entry.year}
-														{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
-													</div>
-													<h2 style:color={entry.accent}>
-														{(koHead && entry.subtitle) || entry.title}
-													</h2>
-													{#if entry.subtitle}
-														<p class="episode-ko">{koHead ? entry.title : entry.subtitle}</p>
-													{/if}
+												{/each}
+											</nav>
+											<div class="episode">
+												<div class="year" class:long={entry.year.length > 4}>
+													{entry.year}
+													{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
 												</div>
+												<h2>{(koHead && entry.subtitle) || entry.title}</h2>
+												{#if entry.subtitle}
+													<p class="episode-ko">{koHead ? entry.title : entry.subtitle}</p>
+												{/if}
 											</div>
 										</div>
 										{#if tags.length || cast.length}
-											<div class="entry-meta">
+											<dl class="props">
 												{#if tags.length}
-													<ul class="tags" aria-label="Tags">
-														{#each tags as tag, j (tag.key)}
-															<li class="tag" style:--tag={tag.color} use:reveal={60 + j * 45}>
-																{#if tag.flag}
-																	<img class="tag-flag" src={tag.flag} alt="" />
-																{:else if tag.icon}
-																	<span class="tag-icon material-symbols-outlined" aria-hidden="true"
-																		>{tag.icon}</span
-																	>
-																{/if}
-																{#if koHead}
-																	<span class="tag-en">{tag.ko}</span>
-																{:else}
-																	<span class="tag-en">{tag.label}</span>
-																	<span class="tag-ko">{tag.ko}</span>
-																{/if}
-															</li>
-														{/each}
-													</ul>
-												{/if}
-												{#if cast.length}
-													<div class="cast">
-														<span class="cast-label">등장인물</span>
-														<ul class="cast-list" aria-label="Characters">
-															{#each cast as member, j (member.id)}
-																<li use:reveal={120 + j * 45}>
-																	<button
-																		type="button"
-																		class="person cast-chip"
-																		data-person={member.id}
-																		style:--who={member.color}
-																	>
-																		{#if member.avatar}
-																			<img class="cast-face" src={member.avatar} alt="" />
-																		{:else}
-																			<span class="cast-face blank" aria-hidden="true"
-																				>{(member.ko ?? member.name).slice(0, 1)}</span
+													<div class="prop">
+														<dt>
+															<span class="material-symbols-outlined" aria-hidden="true">sell</span>
+															{koHead ? '태그' : 'Tags'}
+														</dt>
+														<dd>
+															<ul class="tags">
+																{#each tags as tag, j (tag.key)}
+																	<li class="tag" style:--tag={tag.color} use:reveal={60 + j * 45}>
+																		{#if tag.flag}
+																			<img class="tag-flag" src={tag.flag} alt="" />
+																		{:else if tag.icon}
+																			<span class="tag-icon material-symbols-outlined" aria-hidden="true"
+																				>{tag.icon}</span
 																			>
 																		{/if}
-																		{#if koHead && member.ko}
-																			<span class="cast-name">{member.ko}</span>
+																		{#if koHead}
+																			<span class="tag-en">{tag.ko}</span>
 																		{:else}
-																			<span class="cast-name">{member.name}</span>
-																			{#if member.ko}<span class="cast-ko">{member.ko}</span>{/if}
+																			<span class="tag-en">{tag.label}</span>
+																			<span class="tag-ko">{tag.ko}</span>
 																		{/if}
-																	</button>
-																</li>
-															{/each}
-														</ul>
+																	</li>
+																{/each}
+															</ul>
+														</dd>
 													</div>
 												{/if}
-											</div>
+												{#if cast.length}
+													<div class="prop">
+														<dt>
+															<span class="material-symbols-outlined" aria-hidden="true">group</span>
+															{koHead ? '등장인물' : 'Characters'}
+														</dt>
+														<dd>
+															<ul class="cast-list">
+																{#each cast as member, j (member.id)}
+																	<li use:reveal={120 + j * 45}>
+																		<button
+																			type="button"
+																			class="person cast-chip"
+																			data-person={member.id}
+																			style:--who={member.color}
+																		>
+																			{#if member.avatar}
+																				<img class="cast-face" src={member.avatar} alt="" />
+																			{:else}
+																				<span class="cast-face blank" aria-hidden="true"
+																					>{(member.ko ?? member.name).slice(0, 1)}</span
+																				>
+																			{/if}
+																			<span class="cast-name"
+																				>{(koHead && member.ko) || member.name}</span
+																			>
+																		</button>
+																	</li>
+																{/each}
+															</ul>
+														</dd>
+													</div>
+												{/if}
+											</dl>
 										{/if}
 										<div class="entry-thumb">
 											<EpisodeThumbnail
@@ -475,6 +509,20 @@
 		</footer>
 	{/if}
 
+	<button
+		type="button"
+		class="title-pill"
+		class:in={!!pinnedId}
+		aria-hidden={!pinnedId}
+		tabindex={pinnedId ? 0 : -1}
+		onclick={backToHead}
+	>
+		{#if pill}
+			<span class="pill-num">{pill.num}</span>
+			<span class="pill-title">{(koHead && pill.ko) || pill.title}</span>
+		{/if}
+	</button>
+
 	<nav
 		class="ep-nav"
 		class:in={scriptUi.inScript && episodesMode}
@@ -527,8 +575,7 @@
 <style>
 	/* Shell padding / TOC shift live in (story)/+layout.svelte */
 
-	/* ————— Cover + blurb: two full-viewport screens (no document snap) ————— */
-	.cover,
+	/* ————— Blurb: a full-viewport screen after the cover wall (no document snap) ————— */
 	.blurb-page {
 		min-height: 100vh;
 		min-height: 100dvh;
@@ -538,49 +585,19 @@
 		padding: 7rem 6rem 5rem 12%;
 	}
 
-	.cover {
-		padding: 6rem clamp(1.5rem, 6vw, 6rem) 4rem;
-	}
-
-	/* Copy on the left, key art on the right; phones stack the art on top. */
-	.cover-hero {
-		display: grid;
-		grid-template-columns: minmax(16rem, 1fr) minmax(0, 1.45fr);
-		grid-template-areas: 'copy art';
-		align-items: center;
-		gap: clamp(2rem, 4.5vw, 4.5rem);
-		width: 100%;
-		max-width: 80rem;
-		margin: 0 auto;
-	}
-
-	.cover-copy {
-		grid-area: copy;
-		min-width: 0;
-	}
-
-	.cover-art {
-		grid-area: art;
+	/* The cover copy sits centred on the still wall, like a Part page. */
+	.cover-logo {
 		display: block;
-		width: 100%;
-		padding: 0;
-		border: none;
-		background: none;
-		cursor: pointer;
-	}
-
-	.cover-art:focus-visible {
-		outline: none;
-	}
-
-	.cover-art :global(.thumb) {
-		border-radius: calc(var(--radius) * 1.5);
-		box-shadow: 0 28px 60px -34px rgba(0, 0, 0, 0.75);
+		width: clamp(6.5rem, 11vw, 9rem);
+		height: auto;
+		margin: 0 0 0.6rem;
+		filter: var(--logo-filter);
 	}
 
 	.cover-meta {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		gap: 0.45rem;
 		margin: 1.25rem 0 0;
 		font-family: var(--ui);
@@ -593,6 +610,7 @@
 	.cover-actions {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: center;
 		align-items: center;
 		gap: 0.75rem 1.25rem;
 		margin-top: 1.75rem;
@@ -670,21 +688,12 @@
 	}
 
 	.cover-subtitle {
-		margin: 0;
+		margin: 0.55rem 0 0;
 		font-family: var(--serif);
 		font-weight: 400;
 		font-size: 24px;
 		letter-spacing: -1px;
 		color: rgba(white, .3);
-	}
-
-	.cover-ko {
-		margin: 0.6rem 0 0;
-		font-family: var(--serif);
-		font-weight: 400;
-		font-size: 24px;
-		letter-spacing: -.5px;
-		color: var(--fg);
 	}
 
 	.cover-author {
@@ -748,54 +757,6 @@
 		100% {
 			transform: translateY(340%);
 		}
-	}
-
-	/* ————— Part title page: a held breath between acts ————— */
-	.part-page {
-		min-height: 62vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: 6rem 6rem 4.5rem 12%;
-	}
-
-	.part-eyebrow {
-		font-size: 0.68rem;
-		font-weight: 600;
-		letter-spacing: 0.38em;
-		text-transform: uppercase;
-		color: var(--gold);
-		margin-bottom: 1.1rem;
-	}
-
-	.part-title {
-		margin: 0;
-		font-family: var(--serif);
-		font-weight: 500;
-		font-size: clamp(1.7rem, 3.4vw, 2.7rem);
-		line-height: 1;
-		letter-spacing: -0.03em;
-	}
-
-	.part-ko,
-	.part-hanja {
-		margin: 0;
-		font-family: 'Noto Serif KR', serif;
-		font-weight: 500;
-		line-height: 1.25;
-		letter-spacing: 0.01em;
-	}
-
-	.part-ko {
-		margin-top: 0.5rem;
-		font-size: clamp(0.95rem, 1.7vw, 1.25rem);
-		color: var(--fg-strong);
-	}
-
-	.part-hanja {
-		font-size: clamp(0.85rem, 1.4vw, 1.05rem);
-		color: var(--gold);
-		opacity: 0.75;
 	}
 
 	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .entry-head) ————— */
@@ -872,14 +833,42 @@
 		display: none;
 	}
 
-	/* Script: no side column at all — the prose takes the full measure. */
+	/* Script: no side column at all — one column at the script measure. */
 	.script.images-inline .entry {
-		grid-template-columns: minmax(0, 1fr);
+		grid-template-columns: minmax(0, var(--script-measure));
+	}
+
+	/* Centred on the window, not on the reading column: the TOC's push
+	   (--reading-inset) comes back out of the left padding, so opening it only
+	   moves the script once the card actually reaches it. Both paddings ease
+	   on the TOC's curve, so the sum holds still while they trade. */
+	@media (min-width: 821px) {
+		.script.images-inline {
+			--script-left: max(
+				3rem,
+				calc((100vw - var(--script-measure)) / 2 - var(--reading-inset))
+			);
+		}
+
+		.script.images-inline .entry,
+		.script.images-inline .chapter-head {
+			padding-left: var(--script-left);
+			transition: padding-left var(--toc-duration) var(--toc-ease);
+		}
+
+		.script.images-inline .chapter-head {
+			max-width: calc(var(--script-left) + var(--script-measure));
+		}
 	}
 
 	/* Browser overflow-anchor + image load used to pin the reader on one entry. */
 	.script {
 		overflow-anchor: none;
+	}
+
+	/* Inline art and sticky frames stop at the column edge, never in the TOC gutter. */
+	.chapter {
+		overflow-x: clip;
 	}
 
 	/* ————— Cinema: one column over the panel —————
@@ -1042,82 +1031,68 @@
 		);
 	}
 
-	/* Year / title chrome sticks to the top of the script column. */
-	.entry-head-sticky {
-		position: sticky;
-		top: 1rem;
+	/* The head scrolls with the page; once it is gone the title pill takes over. */
+	.entry-head-main {
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
-		padding: 4.5rem 0 1.6rem;
-		background: linear-gradient(
-			to bottom,
-			var(--bg) 0%,
-			var(--bg) 72%,
-			transparent 100%
-		);
+		gap: 2.25rem;
+		padding: 2rem 0 2.25rem;
 	}
 
-	.head-top {
+	.crumbs {
 		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 1rem;
 		flex-wrap: wrap;
-	}
-
-	.head-main {
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 0;
-	}
-
-	.chapter-label {
-		margin: 0;
-		font-family: var(--serif);
+		align-items: center;
+		gap: 0.15rem 0.3rem;
+		font-family: var(--ui);
+		font-size: 0.8rem;
 		font-weight: 500;
-		font-size: 0.78rem;
-		line-height: 1.25;
-		letter-spacing: var(--tracking-micro);
+		line-height: 1.3;
+		color: var(--fg-faint);
+	}
+
+	.crumb:last-child {
 		color: var(--fg-dim);
 	}
 
-	.chapter-label .num {
-		font-variant-numeric: tabular-nums;
-		color: var(--gold);
+	.crumb-link {
+		color: inherit;
+		text-decoration: underline;
+		text-decoration-color: transparent;
+		text-underline-offset: 0.2em;
+		transition:
+			color 0.2s var(--ease),
+			text-decoration-color 0.2s var(--ease);
 	}
 
-	.chapter-label .dot {
-		margin: 0 0.28em;
-		color: var(--fg-faint);
-	}
-
-	.chapter-label .name {
+	.crumb-link:hover,
+	.crumb-link:focus-visible {
 		color: var(--fg-strong);
+		text-decoration-color: currentColor;
 	}
 
-	.story-index {
-		margin: 0;
-		font-size: 0.68rem;
-		font-weight: 500;
-		letter-spacing: 0.06em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-		white-space: nowrap;
+	.crumb-caret {
+		font-size: 1rem;
+		opacity: 0.7;
+	}
+
+	.episode {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
 	.year {
 		font-family: var(--serif);
 		font-weight: 400;
-		font-size: 0.82rem;
+		font-size: 0.92rem;
 		line-height: 1.3;
 		letter-spacing: 0.04em;
 		display: flex;
 		flex-direction: row;
 		align-items: baseline;
 		gap: 0.4rem;
-		margin: 0 0 0.28rem;
+		margin: 0 0 0.5rem;
 		color: var(--fg-dim);
 	}
 
@@ -1128,33 +1103,11 @@
 	}
 
 	/* ————— Flashback entries —————
-	   The page background itself drops to black (see watchReading); the entry
-	   only carries a thin tinted edge so you can see where the past begins. */
+	   The whole page drops into the past (html.is-flash, set by watchReading);
+	   the entry carries no tint of its own, so page and script are one colour. */
 	.entry.flash {
-		padding-top: 2.4rem;
 		padding-bottom: 3.4rem;
 		margin-bottom: 1.4rem;
-		border-block: 1px solid color-mix(in srgb, var(--tone) 22%, transparent);
-	}
-
-	.entry.flash::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		background: color-mix(in srgb, var(--tone) 7%, transparent);
-	}
-
-	/* Tint overlay only — do not promote children into relative containing
-	   blocks that can interfere with sticky side columns. */
-	.entry.flash .beats,
-	.entry.flash .entry-head-sticky,
-	.entry.flash .images-sticky {
-		position: relative;
-	}
-
-	.entry.flash .entry-head-sticky {
-		background: transparent;
 	}
 
 	.year-sub {
@@ -1170,8 +1123,8 @@
 		margin: 0;
 		font-family: var(--serif);
 		font-weight: 500;
-		font-size: clamp(1.7rem, 2.6vw, 2.35rem);
-		line-height: 1.05;
+		font-size: clamp(2.3rem, 3.6vw, 3.1rem);
+		line-height: 1.02;
 		letter-spacing: var(--tracking-display);
 		max-width: none;
 		color: var(--fg-strong);
@@ -1179,28 +1132,47 @@
 	}
 
 	.episode-ko {
-		margin: 0.35rem 0 0;
+		margin: 0.6rem 0 0;
 		font-family: var(--serif);
-		font-size: 0.95rem;
+		font-size: 1.05rem;
 		letter-spacing: 0.06em;
 		color: var(--fg-dim);
 	}
 
-	.episode-ko::after {
-		content: '';
-		display: block;
-		width: 2.4rem;
-		height: 1px;
-		margin-top: 0.85rem;
-		background: var(--gold);
-		opacity: 0.7;
-	}
-
-	.entry-meta {
+	/* Notion-style properties: a quiet label column, values beside it. */
+	.props {
 		display: flex;
 		flex-direction: column;
-		gap: 0.8rem;
-		padding: 0.4rem 0 2.75rem;
+		gap: 0.35rem;
+		margin: 0;
+		padding: 0 0 2.75rem;
+	}
+
+	.prop {
+		display: grid;
+		grid-template-columns: 8.5rem minmax(0, 1fr);
+		align-items: start;
+		gap: 0.75rem;
+	}
+
+	.prop dt {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		min-height: 1.85rem;
+		font-family: var(--ui);
+		font-size: 0.82rem;
+		font-weight: 500;
+		color: var(--fg-faint);
+	}
+
+	.prop dt .material-symbols-outlined {
+		font-size: 1.05rem;
+	}
+
+	.prop dd {
+		margin: 0;
+		min-width: 0;
 	}
 
 	.entry-thumb {
@@ -1215,7 +1187,9 @@
 	.cast-list {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
 		gap: 0.4rem;
+		min-height: 1.85rem;
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -1249,66 +1223,57 @@
 		font-variation-settings: 'FILL' 1;
 	}
 
-	.tag-ko,
-	.cast-ko {
+	.tag-ko {
 		color: var(--fg-faint);
 		font-size: 0.92em;
 	}
 
-	.cast {
-		display: flex;
-		align-items: center;
-		gap: 0.6rem;
-		flex-wrap: wrap;
-	}
-
-	.cast-label {
-		font-size: 0.68rem;
-		font-weight: 500;
-		letter-spacing: 0.12em;
-		color: var(--fg-faint);
+	/* Notion person mentions: a round face and a name, no chip around them. */
+	.cast-list {
+		gap: 0.15rem 0.35rem;
 	}
 
 	.cast-chip {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.35rem;
+		gap: 0.4rem;
 		height: 1.75rem;
-		padding: 0 0.6rem 0 0.15rem;
+		padding: 0 0.4rem 0 0.2rem;
 		font: inherit;
-		font-size: 0.76rem;
+		font-family: var(--ui);
+		font-size: 0.84rem;
+		font-weight: 500;
 		line-height: 1;
 		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--fg) 5%, transparent);
-		border: 1px solid var(--hairline);
-		border-radius: 999px;
+		background: transparent;
+		border: none;
+		border-radius: 6px;
 		cursor: pointer;
-		transition:
-			border-color 0.25s var(--ease),
-			background 0.25s var(--ease);
+		transition: background 0.2s var(--ease);
 	}
 
 	.cast-chip:hover,
 	.cast-chip:focus-visible {
-		border-color: color-mix(in srgb, var(--who) 60%, transparent);
-		background: color-mix(in srgb, var(--who) 12%, transparent);
+		background: color-mix(in srgb, var(--fg) 7%, transparent);
 	}
 
 	.cast-face {
-		width: 1.4rem;
-		height: 1.4rem;
+		width: 1.3rem;
+		height: 1.3rem;
+		flex: 0 0 auto;
 		border-radius: 50%;
 		object-fit: cover;
 		object-position: 50% 18%;
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--who) 70%, transparent);
+		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		box-shadow: 0 0 0 1px var(--hairline);
 	}
 
 	.cast-face.blank {
 		display: inline-grid;
 		place-items: center;
-		font-size: 0.7rem;
+		font-size: 0.68rem;
 		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--who) 35%, transparent);
+		background: color-mix(in srgb, var(--who) 30%, transparent);
 	}
 
 	.text {
@@ -1448,24 +1413,11 @@
 			overflow-x: clip;
 		}
 
-		.cover,
 		.blurb-page {
 			min-height: 100dvh;
 			padding: max(4.5rem, calc(env(safe-area-inset-top, 0px) + 3.4rem))
 				max(1.15rem, env(safe-area-inset-right, 0px)) 3rem
 				max(1.15rem, env(safe-area-inset-left, 0px));
-		}
-
-		.cover {
-			justify-content: flex-start;
-		}
-
-		.cover-hero {
-			grid-template-columns: minmax(0, 1fr);
-			grid-template-areas:
-				'art'
-				'copy';
-			gap: 1.75rem;
 		}
 
 		.cover-title {
@@ -1476,12 +1428,6 @@
 		.blurb {
 			margin: 0;
 			max-width: 36rem;
-		}
-
-		.part-page {
-			min-height: 72dvh;
-			padding: 3.5rem max(1.15rem, env(safe-area-inset-right, 0px)) 2.5rem
-				max(1.15rem, env(safe-area-inset-left, 0px));
 		}
 
 		/* Chapter opener scrolls away; sticky chrome lives in the entry head on desktop.
@@ -1576,16 +1522,9 @@
 			display: contents;
 		}
 
-		.entry-head-sticky {
-			position: static;
-			padding: 0;
-			gap: 0.65rem;
-			background: none;
-		}
-
-		.head-main {
-			gap: 0;
-			min-width: 0;
+		.entry-head-main {
+			padding: 0 0 1.5rem;
+			gap: 1.5rem;
 		}
 
 		.year {
@@ -1599,36 +1538,16 @@
 
 		.episode h2 {
 			max-width: none;
-			font-size: 1.6rem;
+			font-size: 2rem;
 		}
 
-		.entry-meta {
-			padding: 1.25rem 0 1.75rem;
+		.props {
+			padding: 0 0 1.75rem;
 		}
 
-		/* One swipeable row of faces instead of three wrapped rows. */
-		.cast {
-			flex-direction: column;
-			align-items: flex-start;
-			gap: 0.45rem;
-		}
-
-		.cast-list {
-			flex-wrap: nowrap;
-			width: calc(100% + max(1.15rem, env(safe-area-inset-right, 0px)));
-			margin-right: calc(-1 * max(1.15rem, env(safe-area-inset-right, 0px)));
-			padding-right: max(1.15rem, env(safe-area-inset-right, 0px));
-			overflow-x: auto;
-			overscroll-behavior-x: contain;
-			scrollbar-width: none;
-		}
-
-		.cast-list::-webkit-scrollbar {
-			display: none;
-		}
-
-		.cast-list li {
-			flex: none;
+		.prop {
+			grid-template-columns: 6.5rem minmax(0, 1fr);
+			gap: 0.5rem;
 		}
 
 		.entry-thumb {
@@ -1669,7 +1588,6 @@
 	}
 
 	@media (max-width: 480px) {
-		.cover-ko,
 		.cover-subtitle {
 			font-size: 1.05rem;
 		}
@@ -1679,7 +1597,155 @@
 		}
 
 		.episode h2 {
-			font-size: 1.45rem;
+			font-size: 1.75rem;
+		}
+	}
+
+	/* ————— Title pill: liquid glass that drops in once the head is gone ————— */
+	.title-pill {
+		position: fixed;
+		z-index: 91;
+		top: max(0.75rem, env(safe-area-inset-top, 0px));
+		left: 50%;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		max-width: min(28rem, calc(100vw - 8rem));
+		padding: 0.55rem 1.1rem;
+		border: 1px solid color-mix(in srgb, white 32%, transparent);
+		border-radius: var(--radius-pill);
+		background:
+			linear-gradient(
+				180deg,
+				color-mix(in srgb, white 24%, transparent),
+				color-mix(in srgb, white 4%, transparent) 60%
+			),
+			color-mix(in srgb, var(--bg) 52%, transparent);
+		backdrop-filter: blur(18px) saturate(180%);
+		-webkit-backdrop-filter: blur(18px) saturate(180%);
+		box-shadow:
+			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
+			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
+			var(--shadow-float);
+		color: var(--fg-strong);
+		font-family: var(--ui);
+		font-size: 0.84rem;
+		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
+		cursor: pointer;
+		opacity: 0;
+		pointer-events: none;
+		transform: translate3d(-50%, calc(-100% - 1.5rem), 0);
+		transition:
+			transform 560ms cubic-bezier(0.2, 0.9, 0.25, 1.12),
+			opacity 280ms var(--ease);
+	}
+
+	.title-pill.in {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate3d(-50%, 0, 0);
+	}
+
+	.title-pill:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
+	}
+
+	.pill-num {
+		flex: 0 0 auto;
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-faint);
+	}
+
+	.pill-title {
+		min-width: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-family: var(--serif);
+		font-size: 0.95rem;
+		font-weight: 600;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.title-pill {
+			transition: opacity 200ms ease;
+			transform: translate3d(-50%, 0, 0);
+		}
+	}
+
+	/* ————— Title pill: liquid glass that drops in once the head is gone ————— */
+	.title-pill {
+		position: fixed;
+		z-index: 91;
+		top: max(0.75rem, env(safe-area-inset-top, 0px));
+		left: 50%;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		max-width: min(28rem, calc(100vw - 8rem));
+		padding: 0.55rem 1.1rem;
+		border: 1px solid color-mix(in srgb, white 32%, transparent);
+		border-radius: var(--radius-pill);
+		background:
+			linear-gradient(
+				180deg,
+				color-mix(in srgb, white 24%, transparent),
+				color-mix(in srgb, white 4%, transparent) 60%
+			),
+			color-mix(in srgb, var(--bg) 52%, transparent);
+		backdrop-filter: blur(18px) saturate(180%);
+		-webkit-backdrop-filter: blur(18px) saturate(180%);
+		box-shadow:
+			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
+			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
+			var(--shadow-float);
+		color: var(--fg-strong);
+		font-family: var(--ui);
+		font-size: 0.84rem;
+		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
+		cursor: pointer;
+		opacity: 0;
+		pointer-events: none;
+		transform: translate3d(-50%, calc(-100% - 1.5rem), 0);
+		transition:
+			transform 560ms cubic-bezier(0.2, 0.9, 0.25, 1.12),
+			opacity 280ms var(--ease);
+	}
+
+	.title-pill.in {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translate3d(-50%, 0, 0);
+	}
+
+	.title-pill:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
+	}
+
+	.pill-num {
+		flex: 0 0 auto;
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-faint);
+	}
+
+	.pill-title {
+		min-width: 0;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-family: var(--serif);
+		font-size: 0.95rem;
+		font-weight: 600;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.title-pill {
+			transition: opacity 200ms ease;
+			transform: translate3d(-50%, 0, 0);
 		}
 	}
 

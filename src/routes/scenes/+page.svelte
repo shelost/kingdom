@@ -2,7 +2,7 @@
 	import { onMount, tick, untrack } from 'svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import { MediaQuery } from 'svelte/reactivity';
-	import SiteNav from '$lib/components/SiteNav.svelte';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import SceneMobile from '$lib/components/SceneMobile.svelte';
 	import SceneLyrics from '$lib/components/SceneLyrics.svelte';
 	import ScenePlayer from '$lib/components/ScenePlayer.svelte';
@@ -485,7 +485,7 @@
 		/>
 	{:else}
 	<header class="chrome">
-		<SiteNav />
+		<SiteNavSpace />
 		<div class="chrome-meta">
 			<span class="brand">Scenes</span>
 			{#if active}

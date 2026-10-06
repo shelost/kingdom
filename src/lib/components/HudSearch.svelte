@@ -99,7 +99,7 @@
 		<span class="material-symbols-outlined" aria-hidden="true">search</span>
 		<input
 			type="search"
-			placeholder="Scenes & quotes"
+			placeholder="Search"
 			autocomplete="off"
 			spellcheck="false"
 			aria-label="Search scenes and script quotes"

@@ -21,6 +21,7 @@
 		episodes,
 		canonicalHashId,
 		findStoryHeading,
+		goToEpisode,
 		goToEpisodeById,
 		resolveEpisodeIndex,
 		scrollToStoryHeading,
@@ -350,6 +351,13 @@
 		open = !open;
 	}
 
+	let onTitle = $derived(reading.viewScope === 'episodes' && reading.episodeIndex === 0);
+
+	function goToTitle() {
+		if (tocOverlays()) open = false;
+		goToEpisode(0);
+	}
+
 </script>
 
 {#snippet episodeRow(ep: TocEpisode, nested: boolean)}
@@ -385,16 +393,16 @@
 
 <button
 	class="toc-toggle"
-	class:in={scriptUi.inScript}
+	class:in={scriptUi.inScript && !open}
 	type="button"
 	aria-expanded={open}
 	aria-controls="toc-panel"
-	aria-hidden={!scriptUi.inScript}
-	tabindex={scriptUi.inScript ? 0 : -1}
-	aria-label={open ? 'Close table of contents' : 'Open table of contents'}
+	aria-hidden={!scriptUi.inScript || open}
+	tabindex={scriptUi.inScript && !open ? 0 : -1}
+	aria-label="Open table of contents"
 	onclick={toggle}
 >
-	{open ? '✕' : '☰'}
+	☰
 </button>
 
 {#if open && scriptUi.inScript}
@@ -414,6 +422,30 @@
 	aria-label="Table of contents"
 	aria-hidden={!open || !scriptUi.inScript}
 >
+	<div class="card">
+	<div class="toc-head">
+		<button
+			type="button"
+			class="toc-title"
+			class:active={onTitle}
+			aria-current={onTitle ? 'page' : undefined}
+			tabindex={open ? 0 : -1}
+			onclick={goToTitle}
+		>
+			<img class="toc-logo" src="/samhan_logo.svg" alt="" />
+			<span class="toc-title-en">King for All</span>
+		</button>
+		<button
+			type="button"
+			class="toc-retract"
+			aria-label="Retract table of contents"
+			title="Retract"
+			tabindex={open ? 0 : -1}
+			onclick={() => (open = false)}
+		>
+			<span class="material-symbols-outlined" aria-hidden="true">left_panel_close</span>
+		</button>
+	</div>
 	<div class="panel" bind:this={panelEl} onscroll={onPanelScroll}>
 		<div
 			class="toc-pill"
@@ -438,15 +470,15 @@
 			</div>
 		</div>
 		<div class="toc-search">
-			<p class="toc-label">{ko ? '검색' : 'Search'}</p>
 			<HudSearch placement="toc" />
 		</div>
-		<p class="toc-label">{ko ? '목차' : 'Chapters'}</p>
 		{#each chapters as ch, ci (ch.id)}
 			{#if ch.part}
 				<button
 					type="button"
 					class="panel-part"
+					class:on-pill={pillAt === partId(ch.id)}
+					aria-current={activeEntry === partId(ch.id) ? 'page' : undefined}
 					data-toc-id={partId(ch.id)}
 					onclick={() => jump(partId(ch.id))}
 				>
@@ -498,6 +530,7 @@
 				{/each}
 			</div>
 		{/each}
+	</div>
 	</div>
 </nav>
 
@@ -585,7 +618,7 @@
 		z-index: 100;
 		isolation: isolate;
 		width: min(var(--toc-w), 86vw);
-		padding: 3.6rem 0.5rem 1.5rem calc(22px + 0.35rem);
+		padding: var(--toc-gap) 0.5rem 1.5rem calc(22px + 0.35rem);
 		pointer-events: none;
 		transform: translate3d(-1.15rem, 0, 0);
 		opacity: 0;
@@ -613,22 +646,113 @@
 		transition-delay: 0s;
 	}
 
+	/* The same gap above, left of, below and right of the card: the reading
+	   column is pushed by --toc-w, so the card is --toc-w less two gaps. */
 	.toc.floating {
-		top: max(3.55rem, calc(env(safe-area-inset-top, 0px) + 3.15rem));
-		left: max(0.55rem, env(safe-area-inset-left, 0px));
-		bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
-		width: min(calc(var(--toc-w) - 0.85rem), 86vw);
+		top: max(var(--toc-gap), env(safe-area-inset-top, 0px));
+		left: max(var(--toc-gap), env(safe-area-inset-left, 0px));
+		bottom: max(var(--toc-gap), env(safe-area-inset-bottom, 0px));
+		width: min(calc(var(--toc-w) - 2 * var(--toc-gap)), 86vw);
 		padding: 0;
 	}
 
-	.toc.floating .panel {
+	.toc.floating .card {
+		overflow: hidden;
 		background: var(--glass);
 		backdrop-filter: blur(22px);
 		-webkit-backdrop-filter: blur(22px);
 		border: 1px solid var(--hairline);
 		border-radius: 14px;
 		box-shadow: var(--shadow-float);
-		padding: 0.7rem 0.5rem 1rem;
+	}
+
+	.toc.floating .toc-head {
+		padding: 0.55rem 0.5rem 0.35rem 0.6rem;
+	}
+
+	.toc.floating .panel {
+		padding: 0.2rem 0.5rem 1rem;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		min-height: 0;
+	}
+
+	.toc-head {
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		padding: 0 0.4rem 0.35rem 0;
+	}
+
+	.toc-title {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		min-width: 0;
+		padding: 0.3rem 0.5rem 0.3rem 0.3rem;
+		border: none;
+		border-radius: 8px;
+		background: transparent;
+		color: var(--fg-strong);
+		font: inherit;
+		font-family: var(--serif);
+		font-size: 15px;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		cursor: pointer;
+		transition: background 220ms var(--toc-ease);
+	}
+
+	.toc-title:hover,
+	.toc-title.active {
+		background: color-mix(in srgb, var(--fg) 7%, transparent);
+	}
+
+	.toc-logo {
+		width: 1.9rem;
+		height: 1.9rem;
+		flex: 0 0 auto;
+		filter: var(--logo-filter);
+	}
+
+	.toc-title-en {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.toc-retract {
+		flex: 0 0 auto;
+		display: grid;
+		place-items: center;
+		width: 2.1rem;
+		height: 2.1rem;
+		padding: 0;
+		border: none;
+		border-radius: 8px;
+		background: transparent;
+		color: var(--fg-dim);
+		cursor: pointer;
+		transition:
+			color 220ms var(--toc-ease),
+			background 220ms var(--toc-ease);
+	}
+
+	.toc-retract:hover {
+		color: var(--fg-strong);
+		background: color-mix(in srgb, var(--fg) 7%, transparent);
+	}
+
+	.toc-title:focus-visible,
+	.toc-retract:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 1px;
 	}
 
 	.toc.floating .toc-search {
@@ -641,7 +765,8 @@
 
 	.panel {
 		position: relative;
-		height: 100%;
+		flex: 1 1 auto;
+		min-height: 0;
 		overflow-y: auto;
 		overscroll-behavior: contain;
 		background: transparent;
@@ -691,10 +816,6 @@
 		text-transform: uppercase;
 	}
 
-	.toc-search .toc-label {
-		margin-top: 0;
-	}
-
 	.panel-part {
 		display: block;
 		width: 100%;
@@ -705,11 +826,14 @@
 		text-transform: none;
 		text-align: left;
 		color: var(--gold);
-		padding: 0.55rem 0.35rem 0.2rem;
-		margin: 0;
+		padding: 0.38rem 0.45rem;
+		margin: 0.17rem 0 0;
 		background: transparent;
 		border: none;
+		border-radius: 8px;
 		cursor: pointer;
+		position: relative;
+		z-index: 1;
 		text-shadow:
 			0 1px 2px var(--bg),
 			0 0 14px var(--bg);
@@ -717,6 +841,11 @@
 
 	.panel-part:hover {
 		color: color-mix(in srgb, var(--gold) 88%, white);
+	}
+
+	.panel-part.on-pill {
+		color: #14140f;
+		text-shadow: none;
 	}
 
 	.panel-item {
@@ -1010,9 +1139,18 @@
 		}
 
 		.toc {
-			padding: max(3.6rem, calc(env(safe-area-inset-top, 0px) + 3rem)) 0.5rem
+			padding: max(var(--toc-gap), env(safe-area-inset-top, 0px)) 0.5rem
 				max(1.5rem, env(safe-area-inset-bottom, 0px)) max(0.55rem, env(safe-area-inset-left, 0px));
 			width: min(20rem, 92vw);
+		}
+
+		.toc.floating {
+			width: min(20rem, calc(100vw - 2 * var(--toc-gap)));
+		}
+
+		.toc-retract {
+			width: 2.75rem;
+			height: 2.75rem;
 		}
 
 		.panel-item {
@@ -1022,7 +1160,7 @@
 
 		.panel-part {
 			min-height: 2.5rem;
-			padding: 0.7rem 0.5rem 0.35rem;
+			padding: 0.52rem 0.5rem;
 		}
 
 		.sub-item {

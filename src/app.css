@@ -110,11 +110,19 @@
 	--leading-ui: 1.25;
 
 	--toc-w: 19rem;
+	/* Floating TOC card: one gap on every side, the reading column included. */
+	--toc-gap: 1rem;
+	/* Script mode: the prose column, centred. */
+	--script-measure: 640px;
+	/* samhan_logo.svg is black ink; dark pages flip it to white. */
+	--logo-filter: invert(1);
 	/* Shared TOC open/close timing — keep jump settle in Toc.svelte in sync. */
 	--toc-duration: 380ms;
 	--toc-ease: cubic-bezier(0.16, 1, 0.3, 1);
 	/* Immersive plate inset; layout toggles this with the TOC. */
 	--shell-shift: 0px;
+	/* Left padding of the reading column: the rail, or the open TOC. */
+	--reading-inset: 22px;
 	/* Phone tab bar height (MobileTabBar). Zero wherever the bar is not drawn. */
 	--tabbar-space: 0px;
 
@@ -125,6 +133,7 @@
    not over the panel. Narrow keeps overlay — see below. */
 html.is-toc-open {
 	--shell-shift: var(--toc-w);
+	--reading-inset: var(--toc-w);
 	--corner-left: calc(var(--toc-w) + 1.25rem);
 }
 
@@ -269,6 +278,7 @@ html[data-theme='light'] {
 	--shadow-menu: 0 8px 24px rgba(40, 30, 12, 0.1), 0 1px 3px rgba(40, 30, 12, 0.08);
 	--shadow-pill: 0 1px 3px rgba(40, 30, 12, 0.12);
 	--danger: #b4232a;
+	--logo-filter: none;
 }
 
 /* Light immersion / flashback: step the paper a shade warmer instead of darker. */
@@ -277,7 +287,7 @@ html[data-theme='light'].is-immersion {
 }
 
 html[data-theme='light'].is-flash {
-	--bg: #f8f5ee;
+	--bg: color-mix(in srgb, #8a8a94 7%, #fffefb);
 	--bg-raised: #ffffff;
 	--panel: #faf8f2;
 	--panel-sunken: #f1eee6;
@@ -354,6 +364,7 @@ em {
 
 	html.is-toc-open {
 		--shell-shift: 0px;
+		--reading-inset: 22px;
 		--corner-left: 1.15rem;
 	}
 }
@@ -369,10 +380,12 @@ em {
 		--corner-bottom: max(0.7rem, env(safe-area-inset-bottom, 0px));
 		--map-w: 6.2rem;
 		--reel-h: min(42dvh, 20rem);
+		--reading-inset: 0px;
 	}
 
 	html.is-toc-open {
 		--shell-shift: 0px;
+		--reading-inset: 0px;
 		--corner-left: max(0.7rem, env(safe-area-inset-left, 0px));
 	}
 
@@ -505,6 +518,52 @@ em {
 
 .tilt:hover::after {
 	opacity: 1;
+}
+
+/*
+ * Episodes list → episode ($lib/viewTransition, class set only for that move).
+ * The story column gets its own layer: the list sinks back and dissolves, the
+ * page chrome fades in, and the episode floats up into place.
+ */
+html.vt-episode-open [data-story-root] {
+	view-transition-name: episode;
+}
+
+html.vt-episode-open::view-transition-old(root) {
+	animation: vt-sink 0.42s cubic-bezier(0.4, 0, 0.9, 0.6) both;
+}
+
+html.vt-episode-open::view-transition-new(root) {
+	animation: vt-fade 0.55s 0.1s ease-out both;
+}
+
+html.vt-episode-open::view-transition-new(episode) {
+	animation: vt-float-up 1s 0.16s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes vt-sink {
+	to {
+		opacity: 0;
+		transform: translateY(-14px) scale(0.975);
+		filter: blur(6px);
+	}
+}
+
+@keyframes vt-fade {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes vt-float-up {
+	from {
+		opacity: 0;
+		transform: translateY(72px) scale(0.985);
+		filter: blur(8px);
+	}
+	55% {
+		filter: blur(0);
+	}
 }
 
 /* Thin theme-following scrollbar */

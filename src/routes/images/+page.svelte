@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import { SvelteSet } from 'svelte/reactivity';
 	import {
@@ -265,13 +265,8 @@
 <main class="page">
 	<header class="mast">
 		<div class="mast-inner">
+			<SiteNavSpace />
 			<p class="eyebrow">
-				<a href={resolve('/')}>← Chronicle</a>
-				<span class="dot" aria-hidden="true">·</span>
-				<a href={resolve('/wiki')}>Wiki</a>
-				<span class="dot" aria-hidden="true">·</span>
-				<a href={resolve('/grade')}>Grade</a>
-				<span class="dot" aria-hidden="true">·</span>
 				<span
 					>{query.trim() || starredOnly ? `${visible.length} / ${cells.length}` : cells.length} stills</span
 				>
@@ -489,7 +484,7 @@
 <style>
 	.page {
 		min-height: 100dvh;
-		padding: calc(7.25rem + env(safe-area-inset-top, 0px))
+		padding: calc(9.75rem + env(safe-area-inset-top, 0px))
 			max(1.5rem, env(safe-area-inset-right, 0px) + 1rem)
 			max(3rem, env(safe-area-inset-bottom, 0px) + 2rem)
 			max(1.5rem, calc(env(safe-area-inset-left, 0px) + 1.85rem));
