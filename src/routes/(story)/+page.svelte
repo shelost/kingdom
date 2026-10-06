@@ -15,6 +15,7 @@
 	import PartTitle from '$lib/components/PartTitle.svelte';
 	import StillWall, { WALL_STILLS } from '$lib/components/StillWall.svelte';
 	import HiddenStills from '$lib/components/HiddenStills.svelte';
+	import AboutModal from '$lib/components/AboutModal.svelte';
 	import PlaceBanner from '$lib/components/PlaceBanner.svelte';
 	import PlaceMapTile from '$lib/components/PlaceMapTile.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
@@ -60,6 +61,8 @@
 	function startReading() {
 		goToEpisode(FIRST_EPISODE_INDEX);
 	}
+
+	let aboutOpen = $state(false);
 
 	/** Number and titles for the pill, by episode id. */
 	const PILL_INFO = new Map(
@@ -226,46 +229,24 @@
 					<span class="read-ep">{episodeNavLabel(firstEp)}</span>
 				</button>
 			{/if}
-			<a class="cover-all" href={resolve('/episodes')}>
-				{koHead ? '전체 에피소드' : 'All episodes'}
-			</a>
+			<div class="cover-secondary">
+				<a class="cover-glass liquid-glass" href={resolve('/episodes')}>
+					<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
+					{koHead ? '에피소드' : 'Episodes'}
+				</a>
+				<button
+					type="button"
+					class="cover-glass liquid-glass"
+					aria-haspopup="dialog"
+					onclick={() => (aboutOpen = true)}
+				>
+					<span class="material-symbols-outlined" aria-hidden="true">info</span>
+					{koHead ? '소개' : 'About'}
+				</button>
+			</div>
 		</div>
 	</StillWall>
-
-	<!-- ————— blurb: standalone full-viewport screen ————— -->
-	<section class="blurb-page" aria-label="About this story">
-		<div class="blurb" use:reveal={80}>
-			<p>
-				<em>King for All</em> is a story set in 7th-century Samhan, at the end of the Three
-				Kingdoms Period.
-			</p>
-			<p>
-				Inspired by the 2009 K-Drama series <em>The Great Queen Seondeok</em>, it was supposed to be
-				a webcomic series originally, but I’m putting the text version on here first for now.
-			</p>
-			<p>
-				One major theme of this story is political satire — highlighting the absurdities of the
-				social systems of each of the Three Kingdoms, and how they ultimately led to tragic and
-				avoidable events.
-			</p>
-			<p>
-				When I was a child, I used to watch dramas and movies about this period, which naturally tend
-				to romanticize the heroes and stories. However, as I grew older and did more research, it
-				became increasingly clear how absurd many of the situations the people of the era found
-				themselves in, actually were.
-			</p>
-			<p>
-				It also speaks to many human flaws — every character is a unique product of their
-				environment, and the course of the story makes it abundantly clear how each person’s life has
-				shaped who they are.
-			</p>
-			<p class="sign">I hope you enjoy it!</p>
-		</div>
-
-		<span class="scroll-cue" use:reveal={200} aria-hidden="true">
-			<span class="cue-line"></span>
-		</span>
-	</section>
+	<AboutModal bind:open={aboutOpen} ko={koHead} />
 	{/if}
 
 	<!-- Script: chapters after cover + blurb — fixed chrome waits on this region. -->
@@ -511,7 +492,7 @@
 
 	<button
 		type="button"
-		class="title-pill"
+		class="title-pill liquid-glass"
 		class:in={!!pinnedId}
 		aria-hidden={!pinnedId}
 		tabindex={pinnedId ? 0 : -1}
@@ -524,7 +505,7 @@
 	</button>
 
 	<nav
-		class="ep-nav"
+		class="ep-nav liquid-glass"
 		class:in={scriptUi.inScript && episodesMode}
 		aria-label="Episode navigation"
 		aria-hidden={!scriptUi.inScript || !episodesMode}
@@ -575,16 +556,6 @@
 <style>
 	/* Shell padding / TOC shift live in (story)/+layout.svelte */
 
-	/* ————— Blurb: a full-viewport screen after the cover wall (no document snap) ————— */
-	.blurb-page {
-		min-height: 100vh;
-		min-height: 100dvh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding: 7rem 6rem 5rem 12%;
-	}
-
 	/* The cover copy sits centred on the still wall, like a Part page. */
 	.cover-logo {
 		display: block;
@@ -607,19 +578,21 @@
 		color: var(--fg-faint);
 	}
 
+	/* One wide primary (Read), two glass secondaries under it, sharing its width. */
 	.cover-actions {
 		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-		gap: 0.75rem 1.25rem;
-		margin-top: 1.75rem;
+		flex-direction: column;
+		gap: 0.6rem;
+		width: min(22rem, calc(100vw - 2.5rem));
+		margin: 1.75rem auto 0;
 	}
 
 	.cover-read {
-		display: inline-flex;
+		display: flex;
+		justify-content: center;
 		align-items: center;
 		gap: 0.55rem;
+		width: 100%;
 		padding: 0.8rem 1.3rem 0.8rem 1.05rem;
 		border: none;
 		border-radius: var(--radius);
@@ -662,20 +635,47 @@
 		opacity: 0.72;
 	}
 
-	.cover-all {
+	.cover-secondary {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.6rem;
+	}
+
+	/* Liquid glass (app.css); the shape and type are the button's own. */
+	.cover-glass {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.45rem;
+		padding: 0.7rem 1rem;
+		border-radius: var(--radius);
+		color: var(--fg-strong);
 		font-family: var(--ui);
 		font-size: 0.9rem;
 		font-weight: 500;
-		color: var(--fg-dim);
-		text-decoration: underline;
-		text-decoration-color: var(--hairline);
-		text-underline-offset: 0.3em;
-		transition: color 0.2s var(--ease);
+		letter-spacing: var(--tracking-ui);
+		text-decoration: none;
+		cursor: pointer;
+		transition:
+			transform 0.25s var(--ease),
+			--glass-tint 0.25s var(--ease);
 	}
 
-	.cover-all:hover {
-		color: var(--fg-strong);
-		text-decoration-color: currentColor;
+	.cover-glass:hover {
+		--glass-tint: 72%;
+	}
+
+	.cover-glass:active {
+		transform: scale(0.97);
+	}
+
+	.cover-glass:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 3px;
+	}
+
+	.cover-glass .material-symbols-outlined {
+		font-size: 1.1rem;
 	}
 
 	.cover-title {
@@ -702,61 +702,6 @@
 		font-size: 0.95rem;
 		letter-spacing: 0.02em;
 		color: var(--fg-dim);
-	}
-
-	.blurb {
-		margin: 0;
-		max-width: 34rem;
-	}
-
-	.blurb p {
-		margin: 0 0 1.15rem;
-		font-size: 0.9rem;
-		font-weight: var(--weight-body);
-		line-height: 1.48;
-		color: var(--fg-dim);
-	}
-
-	.blurb em {
-		font-style: italic;
-		font-weight: 500;
-		color: var(--fg);
-	}
-
-	.blurb .sign {
-		margin-top: 1.6rem;
-		font-family: var(--serif);
-		font-style: italic;
-		font-size: 1.05rem;
-		color: var(--gold);
-	}
-
-	/* a quiet "keep going" hint */
-	.scroll-cue {
-		margin-top: 3.5rem;
-		display: block;
-		width: 1px;
-		height: 3.5rem;
-		overflow: hidden;
-		background: var(--hairline);
-	}
-
-	.cue-line {
-		display: block;
-		width: 1px;
-		height: 45%;
-		background: var(--gold);
-		animation: drip 2.6s var(--ease) infinite;
-	}
-
-	@keyframes drip {
-		0% {
-			transform: translateY(-100%);
-		}
-		60%,
-		100% {
-			transform: translateY(340%);
-		}
 	}
 
 	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .entry-head) ————— */
@@ -1413,21 +1358,9 @@
 			overflow-x: clip;
 		}
 
-		.blurb-page {
-			min-height: 100dvh;
-			padding: max(4.5rem, calc(env(safe-area-inset-top, 0px) + 3.4rem))
-				max(1.15rem, env(safe-area-inset-right, 0px)) 3rem
-				max(1.15rem, env(safe-area-inset-left, 0px));
-		}
-
 		.cover-title {
 			font-size: clamp(2.1rem, 9vw, 2.8rem);
 			letter-spacing: -0.04em;
-		}
-
-		.blurb {
-			margin: 0;
-			max-width: 36rem;
 		}
 
 		/* Chapter opener scrolls away; sticky chrome lives in the entry head on desktop.
@@ -1601,7 +1534,7 @@
 		}
 	}
 
-	/* ————— Title pill: liquid glass that drops in once the head is gone ————— */
+	/* ————— Title pill: liquid glass (app.css) that drops in once the head is gone ————— */
 	.title-pill {
 		position: fixed;
 		z-index: 91;
@@ -1612,95 +1545,7 @@
 		gap: 0.55rem;
 		max-width: min(28rem, calc(100vw - 8rem));
 		padding: 0.55rem 1.1rem;
-		border: 1px solid color-mix(in srgb, white 32%, transparent);
 		border-radius: var(--radius-pill);
-		background:
-			linear-gradient(
-				180deg,
-				color-mix(in srgb, white 24%, transparent),
-				color-mix(in srgb, white 4%, transparent) 60%
-			),
-			color-mix(in srgb, var(--bg) 52%, transparent);
-		backdrop-filter: blur(18px) saturate(180%);
-		-webkit-backdrop-filter: blur(18px) saturate(180%);
-		box-shadow:
-			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
-			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
-			var(--shadow-float);
-		color: var(--fg-strong);
-		font-family: var(--ui);
-		font-size: 0.84rem;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
-		cursor: pointer;
-		opacity: 0;
-		pointer-events: none;
-		transform: translate3d(-50%, calc(-100% - 1.5rem), 0);
-		transition:
-			transform 560ms cubic-bezier(0.2, 0.9, 0.25, 1.12),
-			opacity 280ms var(--ease);
-	}
-
-	.title-pill.in {
-		opacity: 1;
-		pointer-events: auto;
-		transform: translate3d(-50%, 0, 0);
-	}
-
-	.title-pill:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
-	}
-
-	.pill-num {
-		flex: 0 0 auto;
-		font-variant-numeric: tabular-nums;
-		color: var(--fg-faint);
-	}
-
-	.pill-title {
-		min-width: 0;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		font-family: var(--serif);
-		font-size: 0.95rem;
-		font-weight: 600;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.title-pill {
-			transition: opacity 200ms ease;
-			transform: translate3d(-50%, 0, 0);
-		}
-	}
-
-	/* ————— Title pill: liquid glass that drops in once the head is gone ————— */
-	.title-pill {
-		position: fixed;
-		z-index: 91;
-		top: max(0.75rem, env(safe-area-inset-top, 0px));
-		left: 50%;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.55rem;
-		max-width: min(28rem, calc(100vw - 8rem));
-		padding: 0.55rem 1.1rem;
-		border: 1px solid color-mix(in srgb, white 32%, transparent);
-		border-radius: var(--radius-pill);
-		background:
-			linear-gradient(
-				180deg,
-				color-mix(in srgb, white 24%, transparent),
-				color-mix(in srgb, white 4%, transparent) 60%
-			),
-			color-mix(in srgb, var(--bg) 52%, transparent);
-		backdrop-filter: blur(18px) saturate(180%);
-		-webkit-backdrop-filter: blur(18px) saturate(180%);
-		box-shadow:
-			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
-			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
-			var(--shadow-float);
 		color: var(--fg-strong);
 		font-family: var(--ui);
 		font-size: 0.84rem;
@@ -1764,10 +1609,7 @@
 		align-items: center;
 		gap: 0.35rem;
 		padding: 0.28rem;
-		border: 1px solid var(--hairline);
 		border-radius: var(--radius-pill);
-		background: var(--glass);
-		backdrop-filter: blur(14px);
 		opacity: 0;
 		pointer-events: none;
 		transition:

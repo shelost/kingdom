@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PLACES, MAP_MARKERS, type Place } from '$lib/places';
+	import { PLACES, MAP_MARKERS, MAP_VIEWBOX as VB, type Place } from '$lib/places';
 	import { KINGDOMS } from '$lib/people';
 	import { openStoryMap } from '$lib/mapUi.svelte';
 
@@ -8,7 +8,6 @@
 	let place = $derived<Place | null>(PLACES[placeId] ?? null);
 	let colour = $derived(place ? KINGDOMS[place.side].color : '#8a8a94');
 
-	const VB = { w: 595, h: 842 };
 	const pct = (p: Place) => ({ left: (p.x / VB.w) * 100, top: (p.y / VB.h) * 100 });
 </script>
 

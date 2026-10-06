@@ -738,7 +738,7 @@
 					<span class="end-title">{next.title}</span>
 					{#if next.subtitle}<span class="end-ko">{next.subtitle}</span>{/if}
 				</button>
-				<span class="end-run">{ep.overall} of {ep.overallCount}</span>
+				<span class="end-run">{ep.episode} of {ep.episodeCount}</span>
 			</div>
 		{/if}
 	</div>

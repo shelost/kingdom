@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Attachment } from 'svelte/attachments';
+	import { modal } from '$lib/attachments/modal';
 	import type { Entry } from '$lib/story';
 	import { storyImg } from '$lib/img';
 	import { editUi } from '$lib/editUi.svelte';
@@ -17,10 +17,6 @@
 		if (done && !hidden.length) open = false;
 	}
 
-	const modal: Attachment<HTMLDialogElement> = (node) => {
-		node.showModal();
-		return () => node.close();
-	};
 </script>
 
 {#if hidden.length}

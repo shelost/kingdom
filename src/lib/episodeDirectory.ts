@@ -2,7 +2,15 @@
  * The /episodes directory: every episode grouped the way a series page groups
  * seasons. A Part is a season; its chapters are the sections inside it.
  */
-import { chapters, episodeNumber, entryId, chapterNumber, type Block, type Entry } from '$lib/story';
+import {
+	chapters,
+	episodeNumber,
+	entryId,
+	chapterNumber,
+	EPISODE_COUNT,
+	type Block,
+	type Entry
+} from '$lib/story';
 import { episodeQueryId, episodes } from '$lib/reading.svelte';
 import { entryTags, type EntryTag } from '$lib/entryHead';
 import { groupOf, tocAnchor } from '$lib/tocTree';
@@ -179,5 +187,5 @@ export const SEASONS: DirectorySeason[] = (() => {
 	return seasons;
 })();
 
-export const EPISODE_TOTAL = SEASONS.reduce((n, s) => n + s.count, 0);
+export const EPISODE_TOTAL = EPISODE_COUNT;
 export const STORY_RANGE = rangeOf(chapters);

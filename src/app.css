@@ -521,6 +521,44 @@ em {
 }
 
 /*
+ * Liquid glass — the one recipe for floating chrome: the site nav, the title
+ * and episode pills, the TOC card, glass buttons and sheets. Components keep
+ * their own shape and size; `--glass-tint` sets how much page colour backs the
+ * glass (raise it where small text has to stay legible over prose) and
+ * `--glass-sheen` how bright the top-down highlight runs (lower it on big
+ * surfaces, where a strong gradient reads as a stripe).
+ * Registered so a hover can ease the tint instead of snapping it.
+ */
+@property --glass-tint {
+	syntax: '<percentage>';
+	inherits: true;
+	initial-value: 52%;
+}
+
+@property --glass-sheen {
+	syntax: '<percentage>';
+	inherits: true;
+	initial-value: 24%;
+}
+
+.liquid-glass {
+	border: 1px solid color-mix(in srgb, white 32%, transparent);
+	background:
+		linear-gradient(
+			180deg,
+			color-mix(in srgb, white var(--glass-sheen), transparent),
+			color-mix(in srgb, white calc(var(--glass-sheen) / 6), transparent) 60%
+		),
+		color-mix(in srgb, var(--bg) var(--glass-tint), transparent);
+	backdrop-filter: blur(32px) saturate(180%);
+	-webkit-backdrop-filter: blur(32px) saturate(180%);
+	box-shadow:
+		inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
+		inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
+		var(--shadow-float);
+}
+
+/*
  * Episodes list → episode ($lib/viewTransition, class set only for that move).
  * The story column gets its own layer: the list sinks back and dissolves, the
  * page chrome fades in, and the episode floats up into place.

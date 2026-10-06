@@ -9,13 +9,19 @@
 	import type { Snippet } from 'svelte';
 	import { storyImg } from '$lib/img';
 	import { inView } from '$lib/attachments/inView';
-	import type { EpisodeThumbnail } from '$lib/thumbnail.svelte';
-
 	let {
 		stills,
 		storyId,
+		fill = false,
 		children
-	}: { stills: EpisodeThumbnail[]; storyId: string; children: Snippet } = $props();
+	}: {
+		stills: { src: string }[];
+		/** `data-story-id` for the reader's episode tracking; omit outside the chronicle. */
+		storyId?: string;
+		/** Fill the parent box instead of standing as a full-bleed screen. */
+		fill?: boolean;
+		children: Snippet;
+	} = $props();
 
 	/** How far each row's run starts from the one above, so no two rows line up. */
 	const ROW_OFFSET = 5;
@@ -42,7 +48,7 @@
 	);
 </script>
 
-<section class="wall-page" data-story-id={storyId} {@attach inView()}>
+<section class="wall-page" class:fill data-story-id={storyId} {@attach inView()}>
 	{#if rows.length}
 		<div class="wall" aria-hidden="true">
 			<div class="plane">
@@ -82,6 +88,15 @@
 		transition:
 			margin-left var(--toc-duration) var(--toc-ease),
 			width var(--toc-duration) var(--toc-ease);
+	}
+
+	.wall-page.fill {
+		--still-w: clamp(11rem, 15vw, 17rem);
+		position: absolute;
+		inset: 0;
+		min-height: 0;
+		margin: 0;
+		width: auto;
 	}
 
 	/* ————— the wall: runs of stills on a plane tipped away into the dark ————— */

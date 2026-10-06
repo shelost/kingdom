@@ -97,7 +97,8 @@ export type EpisodeRef = {
  */
 const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'iron-will-daeya-fortress': 'iron-will-gumil',
-	'iron-will-yeons-massacre': 'iron-will-supreme-commander',
+	'iron-will-supreme-commander': 'iron-will-yeons-massacre',
+	'five-principles-chunchu-munhee': 'five-principles-munhee',
 	'iron-will-chunchu-gesomun': 'iron-will-chunchu-yeon',
 	'iron-will-euija-gesomun': 'iron-will-euija-yeon',
 	'iron-will-kim-yushin': 'iron-will-forty-fortresses',
@@ -174,7 +175,8 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'silla-tang-war-your-humble-servant': 'silla-tang-war-letters',
 	'silla-tang-war-betrayal': 'silla-tang-war-letters',
 	'silla-tang-war-the-death-of-kim-yushin': 'silla-tang-war-kim-yushin',
-	'silla-tang-war-maeso-fortress': 'silla-tang-war-inmun',
+	'silla-tang-war-maeso-fortress': 'silla-tang-war-maeso',
+	'silla-tang-war-inmun': 'silla-tang-war-maeso',
 	'silla-tang-war-strike-harbor': 'silla-tang-war-final-ford',
 	'seventh-invasion-jumong': 'seventh-invasion-haemosu',
 	'silla-tang-war-the-protectorate': 'silla-tang-war-anseung',

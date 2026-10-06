@@ -3,8 +3,9 @@
  *
  * Names and marker shapes follow the labelled map:
  *   ● fortress/city   ▲ mountain   ◆ river   ■ harbour   ◇ cavern
- * Coordinates were calibrated by sampling the map's own pixels, so each marker
- * sits inside the territory it belongs to. Identifications follow the
+ * Coordinates are real longitude/latitude projected onto the sheet through the
+ * map's three printed capital rings (Pyongyang, Sabi, Gyeongju), so the
+ * coastline and the markers agree. Identifications follow the
  * conventional ones (Samguk Sagi / namu.wiki): 대야성=합천, 황산벌=논산,
  * 안시성=요녕 해성, 살수=청천강, 백강·기벌포=금강 하구, 매소성=연천.
  *
@@ -50,13 +51,13 @@ export interface Place {
 	arc?: string;
 	/** profile portrait / location art */
 	avatar?: string;
+	/** more location boards of the same place, after the avatar */
+	gallery?: string[];
 	title?: string;
 	events?: LifeEvent[];
 	aliases?: string[];
 	/** Lived-in epithets — mirrored onto the place profile’s sobriquets. */
 	sobriquets?: string[];
-	/** draw the label to the left of the marker, to avoid collisions */
-	labelLeft?: boolean;
 	/** sits outside the map frame; not drawn as a permanent marker */
 	offMap?: boolean;
 }
@@ -65,53 +66,151 @@ export const PLACES: Record<string, Place> = {
 	// ————————————————————————— Goguryeo —————————————————————————
 	pyongyang: {
 		id: 'pyongyang',
-		labelLeft: true,
 		name: 'Pyongyang',
 		korean: '평양성',
 		x: 258,
-		y: 505,
+		y: 456,
 		kind: 'city',
 		side: 'goguryeo',
 		capital: true,
 		avatar: '/pl_pyongyang_city.png',
+		gallery: ['/pl_pyongyang_fortress.png'],
 		blurb:
 			'Red Sun’s capital — Goguryeo’s seat. Yeon Gesomun butchers the court here in 642; the walls hold every siege until they are opened from inside in 668.',
 		sobriquets: ['City of the Red Sun'],
 		aliases: ['Pyongyang', '평양성', 'City of the Red Sun']
 	},
-	yeon_east: {
-		id: 'yeon_east',
-		labelLeft: true,
-		name: 'Eastern Hall',
-		korean: '연씨 동부산성',
-		x: 300,
-		y: 430,
+	yodong: {
+		id: 'yodong',
+		name: 'Yodong',
+		korean: '요동성',
+		x: 153,
+		y: 342,
+		kind: 'city',
+		side: 'goguryeo',
+		avatar: '/pl_eastern.png',
+		blurb: 'The great western fortress guarding the Liao. Taizong storms it in the fifth month of 645.',
+		aliases: ['Yodong', '요동성', 'Eastern Fortress']
+	},
+	buyeo_fort: {
+		id: 'buyeo_fort',
+		name: 'Buyeo Fortress',
+		korean: '부여성',
+		x: 239,
+		y: 179,
 		kind: 'city',
 		side: 'goguryeo',
 		avatar: '/pl_yeon_fortress.png',
 		blurb:
-			'Yeon Gesomun’s highland fortress in the Eastern Commandery — snow, stone, one red munru above the cloud sea. Not Pyongyang: the capital is the river city; this is the mountain house that made the East safe.',
-		aliases: ['Eastern Hall', 'Yeon fortress', '연씨 동부산성']
+			'Yeon Gesomun’s home fortress, at the top of the thousand-li wall — snow, stone, one red munru above the cloud sea. As far from Pyongyang as an order can travel and still be obeyed. The steppe is the next thing north.',
+		aliases: ['Buyeo Fortress', '부여성', 'Eastern Hall', 'Yeon fortress', '연씨 동부산성']
 	},
-	yodong: {
-		id: 'yodong',
-		labelLeft: true,
-		name: 'Yodong',
-		korean: '요동성',
-		x: 167,
-		y: 388,
+	sinseong: {
+		id: 'sinseong',
+		name: 'New Fortress',
+		korean: '신성 (무순)',
+		x: 186,
+		y: 310,
 		kind: 'city',
 		side: 'goguryeo',
-		avatar: '/pl_eastern.png',
-		blurb: 'The great western fortress guarding the Liao. Taizong storms it in the fifth month of 645.'
+		blurb:
+			'The wall’s anchor on the northern road. In 645 the emperor’s cousin spends ten days under it and leaves with nothing.',
+		aliases: ['New Fortress', '신성']
+	},
+	gaemo: {
+		id: 'gaemo',
+		name: 'Gaemo',
+		korean: '개모성',
+		x: 164,
+		y: 319,
+		kind: 'city',
+		side: 'goguryeo',
+		blurb:
+			'The next fort down the line. It lasts a little over ten days in 645, and the seven hundred men Yeon sent to hold it ask to serve the emperor instead.',
+		aliases: ['Gaemo', '개모성']
+	},
+	baegam: {
+		id: 'baegam',
+		name: 'White Rock',
+		korean: '백암성',
+		x: 163,
+		y: 336,
+		kind: 'city',
+		side: 'goguryeo',
+		blurb:
+			'A cliff fort east of Yodong. Yeon’s riders break out and put a spear in a Tang general’s waist; the fort’s lord opens the gate anyway.',
+		aliases: ['White Rock', 'White Rock Fortress', '백암성']
+	},
+	geonan: {
+		id: 'geonan',
+		name: 'Geonan',
+		korean: '건안성',
+		x: 118,
+		y: 387,
+		kind: 'city',
+		side: 'goguryeo',
+		blurb:
+			'South of Ansi on the coast road. In 645 the emperor’s generals tell him to take it first. He goes to look at Ansi instead.',
+		aliases: ['Geonan', '건안성']
+	},
+	bisa: {
+		id: 'bisa',
+		name: 'Bisa',
+		korean: '비사성 (대련)',
+		x: 93,
+		y: 453,
+		kind: 'city',
+		side: 'goguryeo',
+		blurb:
+			'The last stone of the wall, on the cape where the land runs out. The Tang fleet comes at it from the sea in 645 and takes it in a month.',
+		aliases: ['Bisa Fortress', '비사성']
+	},
+	liao: {
+		id: 'liao',
+		name: 'Liao River',
+		korean: '요하',
+		x: 127,
+		y: 349,
+		kind: 'river',
+		side: 'goguryeo',
+		cityId: 'yodong',
+		blurb:
+			'Two hundred li of marsh between the empire and the wall. A Sui host once went in up to the knee and came out as a song. In 645 the Tang lay a road across it, then tear the road up behind them.',
+		aliases: ['Liao River', 'Liao marsh', '요하']
+	},
+	amnok: {
+		id: 'amnok',
+		name: 'Amnok River',
+		korean: '압록강',
+		x: 214,
+		y: 394,
+		kind: 'river',
+		side: 'goguryeo',
+		cityId: 'gungnae',
+		avatar: '/pl_amnok_river.png',
+		gallery: ['/pl_amnok_pavillion.png'],
+		blurb:
+			'Habaek’s river, with three daughters in it. The sun god crosses it on the same hour every day, until the day he looks down.',
+		aliases: ['Amnok River', 'the Amnok', 'Amnok', '압록강']
+	},
+	hwando: {
+		id: 'hwando',
+		name: 'Hwando',
+		korean: '환도산성',
+		x: 275,
+		y: 346,
+		kind: 'city',
+		side: 'goguryeo',
+		blurb:
+			'The mountain fort above Gungnae. It burns in 244, after a king picks a fight on ground he had not looked at.',
+		aliases: ['Hwando', '환도산성']
 	},
 	ansi: {
 		id: 'ansi',
-		labelLeft: true,
 		name: 'Ansi',
 		korean: '안시성',
-		x: 148,
-		y: 415,
+		x: 135,
+		y: 364,
 		kind: 'city',
 		side: 'goguryeo',
 		avatar: '/pl_ansi.png',
@@ -122,22 +221,20 @@ export const PLACES: Record<string, Place> = {
 	},
 	central: {
 		id: 'central',
-		labelLeft: true,
 		name: 'Central',
 		korean: '중부',
-		x: 272,
-		y: 400,
+		x: 285,
+		y: 405,
 		kind: 'city',
 		side: 'goguryeo',
 		blurb: 'Seat of the Central Commandery, one of Goguryeo’s Five. High Commander Yeon Gusesa shouts Yeon down from that chair at the High Summit of 634.'
 	},
 	paektu: {
 		id: 'paektu',
-		labelLeft: true,
 		name: 'Mt. Paektu',
 		korean: '백두산',
-		x: 318,
-		y: 366,
+		x: 358,
+		y: 302,
 		kind: 'mountain',
 		side: 'goguryeo',
 		cityId: 'jolbon',
@@ -148,8 +245,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'jupil',
 		name: 'Mt. Jupil',
 		korean: '주필산',
-		x: 172,
-		y: 400,
+		x: 144,
+		y: 355,
 		kind: 'mountain',
 		side: 'goguryeo',
 		cityId: 'ansi',
@@ -158,12 +255,11 @@ export const PLACES: Record<string, Place> = {
 	},
 	salsu: {
 		id: 'salsu',
-		labelLeft: true,
 		name: 'Colossal River',
 		korean: '살수 (청천강)',
 		aliases: ['Colossal River', 'Salsu', '살수', 'Great River'],
-		x: 248,
-		y: 487,
+		x: 251,
+		y: 426,
 		kind: 'river',
 		side: 'goguryeo',
 		cityId: 'pyongyang',
@@ -173,8 +269,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'sasu',
 		name: 'Snake River',
 		korean: '사수',
-		x: 266,
-		y: 519,
+		x: 267,
+		y: 462,
 		kind: 'river',
 		side: 'goguryeo',
 		cityId: 'pyongyang',
@@ -184,11 +280,10 @@ export const PLACES: Record<string, Place> = {
 	},
 	seokmun: {
 		id: 'seokmun',
-		labelLeft: true,
 		name: 'Stone Gate',
 		korean: '석문',
-		x: 278,
-		y: 524,
+		x: 275,
+		y: 487,
 		kind: 'river',
 		side: 'goguryeo',
 		cityId: 'pyongyang',
@@ -197,14 +292,15 @@ export const PLACES: Record<string, Place> = {
 	},
 	jolbon: {
 		id: 'jolbon',
-		labelLeft: true,
 		name: 'Jolbon',
 		korean: '졸본 (환인)',
 		hanja: '卒本',
-		x: 215,
-		y: 370,
+		x: 244,
+		y: 341,
 		kind: 'cave',
 		side: 'jolbon',
+		avatar: '/pl_jumong_cave.png',
+		gallery: ['/pl_jolbon.png'],
 		title: 'Jumong Cavern — where the holy king prayed',
 		blurb:
 			'Every northern vow begins in the cave Jumong hollowed out — 국동대혈, where every Goguryeo heir renews the vow before blood.',
@@ -218,12 +314,11 @@ export const PLACES: Record<string, Place> = {
 	},
 	pine_kingdom: {
 		id: 'pine_kingdom',
-		labelLeft: true,
 		name: 'Pine Kingdom',
 		korean: '소나무 나라',
 		hanja: '松國',
-		x: 198,
-		y: 358,
+		x: 250,
+		y: 324,
 		kind: 'city',
 		side: 'jolbon',
 		title: 'Song Yang’s pine roof',
@@ -237,8 +332,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'gungnae',
 		name: 'Gungnae Fortress',
 		korean: '국내성 (집안)',
-		x: 228,
-		y: 382,
+		x: 279,
+		y: 348,
 		kind: 'city',
 		side: 'goguryeo',
 		blurb: 'The second capital, and the site of the Gwanggaeto Stele. Wei troops sacked it in 244.'
@@ -249,8 +344,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'surabol',
 		name: 'Surabol',
 		korean: '서라벌 (경주)',
-		x: 390,
-		y: 630,
+		x: 400,
+		y: 618,
 		kind: 'city',
 		side: 'silla',
 		capital: true,
@@ -260,17 +355,41 @@ export const PLACES: Record<string, Place> = {
 		sobriquets: ['Capital of the Divine Country'],
 		aliases: ['Surabol', '서라벌', 'Capital of the Divine Country']
 	},
+	radiance: {
+		id: 'radiance',
+		name: 'Radiance Fortress',
+		korean: '명활성',
+		x: 404,
+		y: 617,
+		kind: 'city',
+		side: 'silla',
+		avatar: '/pl_radiance_fortress.png',
+		blurb:
+			'The mountain fort just east of Surabol, close enough to see the palace roofs. In 647 Bidam raises his banners on its wall, and the capital watches him do it.',
+		aliases: ['Radiance Fortress', 'Fortress of Radiance', 'Myeonghwal Fortress', '명활성']
+	},
+	nangbi: {
+		id: 'nangbi',
+		name: 'Nangbi Fortress',
+		korean: '낭비성',
+		x: 329,
+		y: 577,
+		kind: 'city',
+		side: 'silla',
+		blurb:
+			'Where a young Kim Yushin rides into the Goguryeo line alone, three times, in 629. The horse under him that day carries him for eighteen years.',
+		aliases: ['Nangbi Fortress', 'Nangbi', '낭비성']
+	},
 	steam_cavern: {
 		id: 'steam_cavern',
 		name: 'Steam Cavern',
 		korean: '김 동굴',
 		hanja: '蒸洞窟',
-		x: 368,
-		y: 618,
+		x: 382,
+		y: 606,
 		kind: 'cave',
 		side: 'silla',
 		cityId: 'surabol',
-		labelLeft: true,
 		avatar: '/pl_cave.png',
 		title: 'Yushin’s cavern lake in the hills',
 		blurb:
@@ -295,11 +414,10 @@ export const PLACES: Record<string, Place> = {
 	},
 	maeso: {
 		id: 'maeso',
-		labelLeft: true,
 		name: 'Maeso',
 		korean: '매소성 (연천)',
-		x: 305,
-		y: 538,
+		x: 313,
+		y: 504,
 		kind: 'city',
 		side: 'silla',
 		blurb: 'Maeso Fortress. In the ninth month of 675 Silla broke a Tang army here and turned the Silla–Tang war.'
@@ -308,8 +426,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'wirye',
 		name: 'Wirye',
 		korean: '위례성 (서울)',
-		x: 314,
-		y: 562,
+		x: 313,
+		y: 532,
 		kind: 'city',
 		side: 'silla',
 		avatar: '/pl_wirye.png',
@@ -318,11 +436,10 @@ export const PLACES: Record<string, Place> = {
 	},
 	danghang: {
 		id: 'danghang',
-		labelLeft: true,
 		name: 'Danghang',
 		korean: '당항성 (화성)',
-		x: 298,
-		y: 576,
+		x: 301,
+		y: 549,
 		kind: 'harbor',
 		side: 'silla',
 		cityId: 'wirye',
@@ -333,8 +450,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'daeya',
 		name: 'Daeya',
 		korean: '대야성 (합천)',
-		x: 336,
-		y: 640,
+		x: 356,
+		y: 632,
 		kind: 'city',
 		side: 'silla',
 		avatar: '/pl_daeya_fortress.png',
@@ -343,12 +460,11 @@ export const PLACES: Record<string, Place> = {
 	},
 	gibeolpo: {
 		id: 'gibeolpo',
-		labelLeft: true,
 		name: 'Final Ford',
 		korean: '기벌포 (장항)',
 		aliases: ['Final Ford', 'Gibeolpo', '기벌포', 'Strike Harbor'],
-		x: 287,
-		y: 649,
+		x: 292,
+		y: 610,
 		kind: 'harbor',
 		side: 'silla',
 		cityId: 'surabol',
@@ -359,15 +475,15 @@ export const PLACES: Record<string, Place> = {
 	// ————————————————————————— Baekje —————————————————————————
 	sabi: {
 		id: 'sabi',
-		labelLeft: true,
 		name: 'Sabi',
 		korean: '사비 (부여)',
 		x: 305,
-		y: 618,
+		y: 596,
 		kind: 'city',
 		side: 'baekje',
 		capital: true,
 		avatar: '/pl_sabi_palace.png',
+		gallery: ['/pl_sabi_port.png'],
 		blurb:
 			'Capital of the Heavenly Deer. Euija seats forty-one of his own sons in the Assembly here in 655, and the city falls to the Silla–Tang army in 660.',
 		sobriquets: ['Capital of the Heavenly Deer'],
@@ -392,7 +508,7 @@ export const PLACES: Record<string, Place> = {
 		id: 'hwangsan',
 		name: 'Yellow Mountain',
 		korean: '황산벌 (논산)',
-		x: 322,
+		x: 313,
 		y: 600,
 		kind: 'mountain',
 		side: 'baekje',
@@ -405,11 +521,10 @@ export const PLACES: Record<string, Place> = {
 	},
 	baekgang: {
 		id: 'baekgang',
-		labelLeft: true,
 		name: 'White River',
 		korean: '백강 (금강 하구)',
-		x: 293,
-		y: 631,
+		x: 300,
+		y: 614,
 		kind: 'river',
 		side: 'baekje',
 		cityId: 'sabi',
@@ -421,33 +536,46 @@ export const PLACES: Record<string, Place> = {
 	},
 	ungjin: {
 		id: 'ungjin',
-		labelLeft: true,
 		name: 'Bear Fortress',
 		korean: '웅진성 (공주)',
 		x: 313,
-		y: 595,
+		y: 587,
 		kind: 'city',
 		side: 'baekje',
 		avatar: '/pl_bear_fortress.png',
-		blurb: 'Ungjin. Euija fled here when Sabi fell, and its guardian Ye Sikjin handed him to the Tang.'
+		blurb: 'Ungjin. Euija fled here when Sabi fell, and its guardian Ye Sikjin handed him to the Tang.',
+		aliases: ['Bear Fortress', 'Bear Ford', 'Ungjin', '웅진성']
+	},
+	chwiri: {
+		id: 'chwiri',
+		name: 'Mount Gain',
+		korean: '취리산',
+		x: 309,
+		y: 601,
+		kind: 'mountain',
+		side: 'baekje',
+		cityId: 'ungjin',
+		offMap: true,
+		blurb:
+			'A hill outside Bear Ford. In 665 the empire makes the two men who rule the south swear to be brothers here. The clerks name it the Mountain Where One Goes for Gain.',
+		aliases: ['Mount Gain', 'Mountain Where One Goes for Gain', '취리산']
 	},
 	juryu: {
 		id: 'juryu',
 		name: 'Juryu Fortress',
 		korean: '주류성 (부안)',
-		x: 301,
-		y: 649,
+		x: 297,
+		y: 626,
 		kind: 'city',
 		side: 'baekje',
 		blurb: 'Base of the Baekje restoration. Prince Pung moved off it against advice, had to move back, and executed Boksin here.'
 	},
 	imjon: {
 		id: 'imjon',
-		labelLeft: true,
 		name: 'Imjon Fortress',
 		korean: '임존성 (예산)',
-		x: 293,
-		y: 606,
+		x: 302,
+		y: 576,
 		kind: 'city',
 		side: 'baekje',
 		blurb: 'Where Heukchi Sangji rallied thirty thousand within ten days of Sabi’s fall.'
@@ -456,8 +584,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'gwansan',
 		name: 'Gwansanseong',
 		korean: '관산성 (옥천)',
-		x: 330,
-		y: 600,
+		x: 332,
+		y: 595,
 		kind: 'city',
 		side: 'baekje',
 		blurb:
@@ -465,11 +593,10 @@ export const PLACES: Record<string, Place> = {
 	},
 	michuhol: {
 		id: 'michuhol',
-		labelLeft: true,
 		name: 'Michuhol',
 		korean: '미추홀 (인천)',
-		x: 298,
-		y: 551,
+		x: 295,
+		y: 536,
 		kind: 'city',
 		side: 'baekje',
 		blurb: 'The salt marshes Biryu chose over his brother’s ground — and regretted.'
@@ -480,8 +607,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'geumgwan',
 		name: 'Golden Gaya',
 		korean: '금관가야 (김해)',
-		x: 385,
-		y: 648,
+		x: 386,
+		y: 649,
 		kind: 'city',
 		side: 'gaya',
 		blurb:
@@ -489,22 +616,20 @@ export const PLACES: Record<string, Place> = {
 	},
 	daegaya: {
 		id: 'daegaya',
-		labelLeft: true,
 		name: 'Great Gaya',
 		korean: '대가야 (고령)',
-		x: 368,
-		y: 630,
+		x: 360,
+		y: 624,
 		kind: 'city',
 		side: 'gaya',
 		blurb: 'The last Gaya kingdom, taken by Jinheung and the young Hwarang Sadaham in 562.'
 	},
 	mugun: {
 		id: 'mugun',
-		labelLeft: true,
 		name: 'Mugun',
 		korean: '무근 (탐라)',
-		x: 288,
-		y: 743,
+		x: 287,
+		y: 739,
 		kind: 'city',
 		side: 'tamla',
 		capital: true,
@@ -516,8 +641,8 @@ export const PLACES: Record<string, Place> = {
 		id: 'manchuria',
 		name: 'The Eastern March',
 		korean: '만주 동부',
-		x: 300,
-		y: 320,
+		x: 330,
+		y: 262,
 		kind: 'mountain',
 		side: 'goguryeo',
 		cityId: 'central',
@@ -526,11 +651,10 @@ export const PLACES: Record<string, Place> = {
 	},
 	asadal: {
 		id: 'asadal',
-		labelLeft: true,
 		name: 'Asadal',
 		korean: '아사달',
-		x: 246,
-		y: 518,
+		x: 239,
+		y: 477,
 		kind: 'city',
 		side: 'other',
 		avatar: '/pl_rock_politics.png',
@@ -540,12 +664,13 @@ export const PLACES: Record<string, Place> = {
 		id: 'buyeo_north',
 		name: 'Buyeo',
 		korean: '부여',
-		x: 280,
-		y: 270,
+		x: 295,
+		y: 208,
 		kind: 'city',
 		side: 'buyeo',
 		capital: true,
 		avatar: '/pl_buyeo_yard.png',
+		gallery: ['/pl_northern_buyeo.png', '/pl_buyeo_palace.png', '/pl_yuhwa_hut.png'],
 		blurb: 'The northern kingdom Jumong fled, and where Lady Ye raised his heir alone.'
 	},
 	changan: {
@@ -557,6 +682,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'tang',
 		avatar: '/pl_daming_palace.png',
+		gallery: ['/pl_daming.png', '/pl_daming_night.png'],
 		offMap: true,
 		blurb:
 			'The Tang capital, largest city on earth. Chunchu wins his alliance here in 648; Euija dies here a prisoner in 660.'
@@ -774,6 +900,54 @@ export const PLACES: Record<string, Place> = {
 
 /** Markers drawn permanently on the map (off-map sites are omitted). */
 export const MAP_MARKERS = Object.values(PLACES).filter((p) => !p.offMap);
+
+/** The whole sheet (`/map.svg`). */
+export const MAP_VIEWBOX = { w: 595, h: 842 };
+
+/** The part of the sheet the map shows: every marker, without the empty steppe and sea. */
+export const MAP_VIEW = { x: 45, y: 150, w: 460, h: 620 };
+
+/** The whole sheet's box (in % of the visible window), scaled and shifted so only `MAP_VIEW` shows. */
+export const MAP_SHEET_BOX = {
+	left: (-MAP_VIEW.x / MAP_VIEW.w) * 100,
+	top: (-MAP_VIEW.y / MAP_VIEW.h) * 100,
+	width: (MAP_VIEWBOX.w / MAP_VIEW.w) * 100,
+	height: (MAP_VIEWBOX.h / MAP_VIEW.h) * 100
+};
+
+/** A walled site (…성) that is not a capital: drawn with the fortress glyph. */
+export function isFortress(p: Place): boolean {
+	return p.kind === 'city' && !p.capital && /성(?=$|[\s(])/.test(p.korean ?? '');
+}
+
+/** The map label: the glyph already says “fortress”. */
+export function mapLabel(p: Place): string {
+	return p.name.replace(/\s*\bFortress\b\s*/, ' ').trim();
+}
+
+/** Every location board of a place: its avatar, then its gallery. */
+export function placeImages(p: Place): string[] {
+	return [...(p.avatar ? [p.avatar] : []), ...(p.gallery ?? [])];
+}
+
+/** A line drawn through places on the map, in order. */
+export interface MapLine {
+	id: string;
+	name: string;
+	korean: string;
+	side: Person['kingdom'];
+	stops: string[];
+}
+
+export const MAP_LINES: MapLine[] = [
+	{
+		id: 'cheolli',
+		name: 'The Thousand-li Wall',
+		korean: '천리장성',
+		side: 'goguryeo',
+		stops: ['buyeo_fort', 'sinseong', 'gaemo', 'yodong', 'ansi', 'geonan', 'bisa']
+	}
+];
 
 /** The place an episode is pinned to (`entry.place`), if it names one on the map. */
 export function entryPlace(entry: { place?: string }): Place | null {

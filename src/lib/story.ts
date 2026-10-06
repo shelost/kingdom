@@ -229,10 +229,23 @@ export function chapterNumber(chapterIndex: number): number | null {
 	return CHAPTER_NUMBERS[chapterIndex] ?? null;
 }
 
-/** Reader-facing episode number, `chapter.episode` in story order — `7.13`; empty in an epilogue. */
+/** Reader-facing episode ordinals: one running count over every entry in reading order, epilogues included. */
+const EPISODE_ORDINALS: number[][] = (() => {
+	let n = 0;
+	return chapters.map((ch) => ch.entries.map(() => ++n));
+})();
+
+export const EPISODE_COUNT = EPISODE_ORDINALS.reduce((n, ch) => n + ch.length, 0);
+
+/** 1-based position of an entry in the whole run — `37`; 0 when out of range. */
+export function episodeOrdinal(chapterIndex: number, entryIndex: number): number {
+	return EPISODE_ORDINALS[chapterIndex]?.[entryIndex] ?? 0;
+}
+
+/** Reader-facing episode number as a label — `37`; empty when out of range. */
 export function episodeNumber(chapterIndex: number, entryIndex: number): string {
-	const n = chapterNumber(chapterIndex);
-	return n === null ? '' : `${n}.${entryIndex + 1}`;
+	const n = episodeOrdinal(chapterIndex, entryIndex);
+	return n ? String(n) : '';
 }
 
 /** DOM id for a chapter's part title page — distinct from episode slugs. */

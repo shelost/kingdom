@@ -16,7 +16,14 @@ import { liveDisplayArt } from '$lib/stillEditUi.svelte';
 import { entryForReading, nsfwAllowed } from '$lib/nsfwUi.svelte';
 import { PLACES } from '$lib/places';
 import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
-import { chapters, entryId, type Chapter, type Entry } from '$lib/story';
+import {
+	chapters,
+	entryId,
+	EPISODE_COUNT,
+	episodeOrdinal,
+	type Chapter,
+	type Entry
+} from '$lib/story';
 import { staticAsset } from '$lib/staticAsset.svelte';
 
 /* ————— where we are in the season ————— */
@@ -36,12 +43,9 @@ export interface EpisodeContext {
 	season: number;
 	seasonCount: number;
 	entry: Entry;
-	/** 1-based episode number inside the season */
+	/** running episode ordinal in the whole run, the same number the TOC shows */
 	episode: number;
 	episodeCount: number;
-	/** 1-based position in the whole run, for "episode 41 of 92" */
-	overall: number;
-	overallCount: number;
 	/** the episode this one hands off to, or null at the end of the run */
 	next: EpisodeCue | null;
 }
@@ -80,10 +84,8 @@ export function episodeContextOf(id: string | null): EpisodeContext | null {
 		season: ref.chapterIndex + 1,
 		seasonCount: chapters.length,
 		entry,
-		episode: ref.entryIndex + 1,
-		episodeCount: chapter.entries.length,
-		overall: flat + 1,
-		overallCount: episodes.length,
+		episode: episodeOrdinal(ref.chapterIndex, ref.entryIndex),
+		episodeCount: EPISODE_COUNT,
 		next: nextCue(ref.chapterIndex, ref.entryIndex)
 	};
 }

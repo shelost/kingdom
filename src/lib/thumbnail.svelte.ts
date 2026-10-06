@@ -106,6 +106,18 @@ export function seasonStills(season: DirectorySeason, count: number): EpisodeThu
 	);
 }
 
+/** Up to `count` notable stills from the episodes set at one place (`entry.place`). */
+export function placeStills(placeId: string, count: number): EpisodeThumbnail[] {
+	return notableStills(
+		chapters.flatMap((ch) =>
+			ch.entries
+				.filter((entry) => entry.place === placeId)
+				.map((entry) => ({ entry, id: entryId(ch.id, entry.title) }))
+		),
+		count
+	);
+}
+
 /** Up to `count` notable stills from the whole story, for the title page. */
 export function storyStills(count: number): EpisodeThumbnail[] {
 	return notableStills(

@@ -17,13 +17,13 @@ export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 		group('Goguryeo', '고구려', 'Commander Yeon', 'High Summit', 'Gwanggaeto, the Great King')
 	],
 	'five-principles': [
-		group('Two Treasures', '두 보물', 'Bupmin', 'Gotaso', 'Pumsuk', 'Chunchu & Munhee'),
+		group('Two Treasures', '두 보물', 'Bupmin', 'Sadaham', 'Gotaso', 'Pumsuk', 'Munhee'),
 		group('Three Sons', '세 아들', 'Grand Academy', 'Stele', 'Dosuryu'),
 		group('Five Princes', '다섯 왕자', 'King Euija', 'Yunchung', 'The Severing')
 	],
 	'iron-will': [
 		group('Daeya', '대야성', 'Gumil', 'Maehwa', 'Siege of Daeya'),
-		group('Yeon’s Massacre', '연개소문의 정변', 'Supreme Commander', 'Chunchu & Yeon', 'Euija & Yeon'),
+		group('Supreme Commander', '대막리지', 'Yeon’s Massacre', 'Chunchu & Yeon', 'Euija & Yeon'),
 		group('Kim Yushin', '김유신', 'Nangbi', 'Forty Fortresses', 'The Eastern Star')
 	],
 	'seventh-invasion': [
@@ -78,7 +78,6 @@ export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 			'태대각간',
 			'Kim Yushin†',
 			"The Wanggeom's Guest",
-			'Inmun',
 			'Maeso',
 			'Final Ford',
 			'The King for All'
@@ -88,7 +87,7 @@ export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 
 export type TocEpisode = {
 	id: string;
-	/** `chapter.episode` in story order — `7.13`. */
+	/** Running episode ordinal in reading order — `37`. */
 	num: string;
 	title: string;
 	/** Korean title (`entry.subtitle`), shown when the reader picks Korean. */

@@ -3782,7 +3782,7 @@
 						"id": "gunchogo_siege",
 						"ratio": 1.778,
 						"tone": "#C30000",
-						"at": "marches north to Pyongyang",
+						"at": "Siege of Pyongyang",
 						"alt": "Dutch: one fire on the Pyongyang wall — Geunchogo tiny on the near bank",
 						"tempImage": "/temp/gunchogo_siege.jpg",
 						"prompt": "Minimal iconic 16:9 still. DUTCH across a REAL Pyongyang wall/river — architecture from attached fortress and city place refs. ONE device: a single fire-plane on the stone wall as the only accent. Tiny Geunchogo mid-stride on the near bank — FACE from attached portrait, NEW body, not standing clone. Natural dusk sky. Crushed blacks, long shadows. No arrow rain. No army carpet. No text. No watermark. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock: anamorphic movie frame, shallow DOF, creamy bokeh, rack-focus, film grain. A CAMERA in a real Korean place — NEVER a graphic poster, split-screen collage, 3D archviz, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow, rim-aura, or god-ray envelope around people — light is a plane or a hard key. FACE AND GARMENTS from the attached portrait — NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: dutch, crane, worm’s-eye, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro. HIGH CONTRAST: crushed blacks + one hard key + long shadows — not even daylight wash. ICONIC MINIMAL: ONE architectural device a lens can see; empty negative space; tiny figures or lower-third; the world stays in the shot. COLOR SYMBOLISM: hex is lighting / a plane / one accent — NEVER recolor portrait garments gold. Real Korean architecture: grey giwa, timber, packed earth. No army. No readable text. No watermark.",
@@ -3809,8 +3809,13 @@
 				"blocks": [
 					{
 						"kind": "p",
-						"html": "Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.",
-						"ko": "백제의 열셋째 임금이 북쪽 평양으로 진군한다. 고구려 임금이 제 성벽 위에서 죽는다. 칠백 년 동안, 그런 일은 다시 없다."
+						"html": "At the Siege of Pyongyang, Baekje’s <b>King Geunchogo (#13)</b> kills Goguryeo’s <b>King Gogukwon (#16)</b>.",
+						"ko": "평양성 공방에서 백제의 <b>근초고왕 (#13)</b>이 고구려의 <b>고국원왕 (#16)</b>을 죽인다."
+					},
+					{
+						"kind": "p",
+						"html": "It is the only time in seven hundred years that a Baekje army stands in front of Pyongyang, and it is the only time a Goguryeo king dies on his own wall.",
+						"ko": "칠백 년 동안 백제의 군대가 평양성 앞에 선 것은 그때 한 번뿐이고, 고구려의 임금이 제 성벽 위에서 죽은 것도 그때 한 번뿐이다."
 					},
 					{
 						"kind": "p",
@@ -4129,8 +4134,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The guards talk about him the way men talk about weather. “He’s a monster, you know. Out here they call him the Red Sun of Pyongyang. He’s made the Eastern Commandery the safest in the kingdom. The barbarians run if they hear his name.”",
-						"ko": "경비병들은 날씨 얘기하듯 그를 입에 올린다. “저 사람 괴물이야, 알지? 여기선 평양의 붉은 해라고들 해. 동부 도호부를 나라에서 제일 안전한 데로 만들어 놨잖아. 오랑캐들은 이름만 들어도 도망간다니까.”"
+						"html": "He’s a monster, you know… Hey — the Red Sun of Pyongyang, they say of the East. He’s made the Eastern Commandery the safest in the entire kingdom! The barbarians run away if they even hear his name!",
+						"ko": "저 사람 괴물이야, 알지…? 이봐 — 평양의 붉은 해래, 동쪽에서는 그렇게 불러. 동부 도호부를 나라에서 제일 안전하게 만들어 놨다고! 오랑캐들은 이름만 들어도 도망친다니까!"
 					},
 					{
 						"kind": "p",
@@ -4397,7 +4402,7 @@
 						"ko": "<b>아버지께 반만 하겠다고 했다. 그는 평생 무엇이든 반만 해 본 적이 없다. 다음은 평양. 곡식을 세는 사내들로 가득한 방이다…!</b>"
 					}
 				],
-				"place": "buyeo_fort"
+				"place": "yeon_east"
 			},
 			{
 				"year": "634",
@@ -5410,7 +5415,7 @@
 				"year": "641",
 				"tone": "young-adult academy (Hwarang)",
 				"subtitle": "김법민",
-				"thumbnail": "bupmin-hwarang-yard",
+				"thumbnail": "sadaham-seq-yushin-tells",
 				"badges": [
 					"flag:silla",
 					"🌙"
@@ -5425,6 +5430,138 @@
 						"alt": "Wide empty Hwarang yard: one blue practice-line, wet sand, no crowd",
 						"prompt": "Wide cinematic EXPOSITION still, 16:9. Camera far back. REAL recognizable place. Wide empty Hwarang yard: one blue practice-line, wet sand, no crowd Tiny silky hanbok figures, few hues, one accent. Flat sky, no clouds. Painterly cinema, not photoreal, not cartoon. No readable text, no watermark.",
 						"tempImage": "/temp/flower-youth-wide.jpg"
+					},
+					{
+						"id": "sadaham-gaya-road",
+						"ratio": 1.778,
+						"tone": "#6fa8ff",
+						"at": "<b>Sadaham</b> was fifteen",
+						"alt": "Tiny Sadaham on a vast empty Gaya road — ice-blue accent, monumental emptiness",
+						"prompt": "Minimal iconic 16:9 poster. Sadaham, God of the Hwarang, fifteen, taking Great Gaya. ONE geometric device: a long empty ROAD as a pale wedge receding to a hard horizon; tiny silky Hwarang figure in the lower third, standing, not kneeling. Face matches the attached Sadaham portrait only as a tiny likeness. Ice-blue #6fa8ff as the single accent on silk. REAL empty country road, natural dusk sky. Monumental emptiness. No army catalog. No crescent halo. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_sadaham.png"
+						],
+						"people": [
+							"sadaham"
+						],
+						"tempImage": "/temp/sadaham-gaya-road.jpg"
+					},
+					{
+						"id": "sadaham-seq-ask",
+						"ratio": 2,
+						"tone": "#6fa8ff",
+						"at": "asked to ride against Great Gaya",
+						"alt": "Fifteen-year-old Sadaham kneels on the stone floor of Jinheung’s hall at night, head up, asking to ride",
+						"prompt": "Worm’s-eye from the stone floor of King Jinheung’s timber hall at night, an oil lamp set on the floor in the sharp foreground. Sadaham, fifteen, kneels mid-bow but with his head already up, chin out, refusing to look down, in his Hwarang coat; the lamp rakes up across his jaw and the ice-blue of his collar. Behind and above him, out of focus on the dais, King Jinheung leans forward on one fist, half amused, half doubtful, red robe catching the same lamp. Pillars recede at an angle; Sadaham’s shadow climbs the floor toward the dais. CANON — SADAHAM — FACE and garments from attached /ch_sadaham.png (face only; invent a new pose). Demeanor: Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief. #6fa8ff as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. | KING JINHEUNG — FACE and garments from attached /ch_jinheung.png (face only; invent a new pose). #2f6fd4 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+						"refs": [
+							"/ch_sadaham.png",
+							"/ch_jinheung.png"
+						],
+						"people": [
+							"sadaham",
+							"jinheung"
+						],
+						"tempImage": "/temp/sadaham-seq-ask.jpg"
+					},
+					{
+						"ratio": 1.778,
+						"nsfw": false,
+						"id": "sadaham-seq-mugwan-vow",
+						"tone": "#6fa8ff",
+						"at": "If you die first, I will not eat.",
+						"alt": "Two-shot under Hwarang eaves: Sadaham and Mugwan wrist-lock vow",
+						"refs": [
+							"/ch_sadaham.png",
+							"/ch_mugwan.png"
+						],
+						"people": [
+							"sadaham",
+							"mugwan"
+						],
+						"prompt": "Minimal iconic 16:9. OTS two-shot night eaves. ONE Sadaham, ONE Mugwan, wrist-lock. Ice-blue #6fa8ff and dusty-rose coats from portraits. Not standing clones. No text. No watermark.",
+						"tempImage": "/temp/sadaham-seq-mugwan-vow.jpg"
+					},
+					{
+						"id": "sadaham-seq-sickbed",
+						"ratio": 2,
+						"tone": "#6fa8ff",
+						"at": "died of illness not long after the campaign",
+						"alt": "By one candle, Sadaham sits at Mugwan’s sickbed holding his wrist, counting the pulse",
+						"prompt": "Medium close in a dark timber room at night, one candle on the floor between them. Mugwan lies on a sleeping mat, sick, pale, eyes half closed, with a tired grin as if he has just said something rude. Sadaham, sixteen, sits hunched beside him with two fingers pressed on Mugwan’s wrist, counting the pulse, jaw tight, refusing to cry. The candle rakes up across both faces and the ice-blue of Sadaham’s sleeve; their shadows climb the paper-screen wall at an angle. A bowl of untouched medicine sharp in the foreground. CANON — SADAHAM — FACE and garments from attached /ch_sadaham.png (face only; invent a new pose). Demeanor: Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief. #6fa8ff as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. | MUGWAN — FACE and garments from attached /ch_mugwan.png (face only; invent a new pose). #7aa0c8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+						"refs": [
+							"/ch_sadaham.png",
+							"/ch_mugwan.png"
+						],
+						"people": [
+							"sadaham",
+							"mugwan"
+						],
+						"tempImage": "/temp/sadaham-seq-sickbed.jpg"
+					},
+					{
+						"ratio": 1.778,
+						"nsfw": false,
+						"id": "sadaham-seq-seven-close",
+						"tone": "#6fa8ff",
+						"at": "Sadaham did not take food for seven days",
+						"alt": "ECU: Sadaham seventeen, wrecked, empty bowl sharp in the foreground",
+						"refs": [
+							"/ch_sadaham.png",
+							"/ch_mugwan.png"
+						],
+						"people": [
+							"sadaham",
+							"mugwan"
+						],
+						"prompt": "Intimate 16:9 ECU. Sadaham wrecked; empty bowl as a pale disc in the foreground. Ice-blue #6fa8ff rim. FACE ch_sadaham. No living Mugwan clone. No text. No watermark.",
+						"tempImage": "/temp/sadaham-seq-seven-close.jpg"
+					},
+					{
+						"id": "sadaham-seven-days",
+						"ratio": 1.778,
+						"tone": "#6fa8ff",
+						"at": "Sadaham did not take food for seven days",
+						"alt": "Two pale headband-stamps on charcoal; tiny Sadaham, empty bowl as a disc, seven days",
+						"prompt": "Minimal iconic 16:9 poster. Sadaham mourning Mugwan. ONE geometric device: two pale HEADBANDS as hard rectangular STAMPS on a charcoal void, side by side, no readable text. Tiny silky Hwarang figure at the lower edge, not eating, empty bowl as a small disc. Face matches the attached Sadaham portrait only as a tiny likeness. Ice-blue #6fa8ff as the single accent. Monumental emptiness. Follow the chronicle: grief, seven days, no food — not a new plot. No army. No clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
+						"refs": [
+							"/ch_sadaham.png",
+							"/ch_mugwan.png"
+						],
+						"people": [
+							"sadaham",
+							"mugwan"
+						],
+						"tempImage": "/temp/sadaham-seven-days.jpg"
+					},
+					{
+						"id": "sadaham-grief-clutch",
+						"at": "Sadaham did not take food for seven days",
+						"alt": "Low dutch: Sadaham face buried in Mugwan’s chest, fist clutching ice-blue silk",
+						"prompt": "Low dutch angle on the floor of a dark timber room just before dawn, one guttering candle set on the boards close to the lens. Mugwan lies still on the sleeping mat, dead, face calm and turned slightly away. Sadaham, seventeen, has collapsed across him, face buried in Mugwan’s chest, one fist knotted in the ice-blue silk of his own sleeve pressed against his friend’s collar, shoulders locked. The candle rakes from the side across Sadaham’s back, the knotted fist and the folds of both coats; their joined shadow climbs the paper screen at an angle. An empty rice bowl sits sharp in the dark foreground. CANON — SADAHAM — FACE and garments from attached /ch_sadaham.png (face only; invent a new pose). Demeanor: Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief. #6fa8ff as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. | MUGWAN — FACE and garments from attached /ch_mugwan.png (face only; invent a new pose). #7aa0c8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+						"people": [
+							"sadaham",
+							"mugwan"
+						],
+						"refs": [
+							"/ch_sadaham.png",
+							"/ch_mugwan.png"
+						],
+						"ratio": 2,
+						"tone": "#6fa8ff",
+						"tempImage": "/temp/sadaham-grief-clutch.jpg"
+					},
+					{
+						"id": "sadaham-seq-headbands",
+						"ratio": 2,
+						"tone": "#6fa8ff",
+						"at": "buried two headbands",
+						"alt": "Two Hwarang headbands laid side by side on fresh earth at the foot of a burial mound in the rain",
+						"prompt": "Low over the ground in grey dusk rain at the foot of a new Silla burial mound. Two Hwarang headbands lie side by side on fresh dark earth, one with a small crescent-moon emblem, rain beading on the cloth; a single shielded lantern set down beside them throws warm light across the wet silk and the clods of earth. Out of focus behind, a line of young Hwarang in rain-dark coats stand bareheaded, faces lowered. The mound rises as a dark curve against a pale break in the clouds. Ice-blue lives only as the sheen on one headband’s cloth. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+						"people": [
+							"sadaham",
+							"mugwan"
+						],
+						"tempImage": "/temp/sadaham-seq-headbands.jpg"
 					},
 					{
 						"id": "hwarang-meditation",
@@ -5500,6 +5637,23 @@
 						"alt": "a man kneeling, a few bony marks, both hands on a ring-pommel sword held point-down.",
 						"at": "Loyalty to the sovereign",
 						"prompt": "Traditional sumi on bare paper. ONE device: a man kneeling, a few bony marks, both hands on a ring-pommel sword held point-down. The sword is one thin line, small ring at the heel of the fist, blade down, no crossguard, no tsuba. One red flick on the collar. Portrait is a hint only, do not paste it. Empty paper. No text, no seal."
+					},
+					{
+						"id": "sadaham-seq-yushin-tells",
+						"ratio": 2,
+						"tone": "#2A5FB8",
+						"at": "the two names the yard still lowers its voice for",
+						"alt": "Under the dusk eaves Yushin speaks two names; the new boys lean in, Bupmin among them",
+						"prompt": "Over-the-shoulder from behind a row of young Hwarang sitting on the boards under the eaves at dusk, their shoulders dark blurred shapes in the foreground. Marshal Yushin stands at the edge of the veranda, one hand on a post, speaking low; a lantern hung on the post beside him rakes across his face and the marshal blue of his collar. Among the boys, Bupmin, seventeen, leans forward with his mouth slightly open. Behind Yushin, out of focus, the empty practice yard and its blue line fade into dusk haze, and two plain wooden name-tablets stand on a shelf in the dark. CANON — KIM YUSHIN — FACE and garments from attached /ch_kim_yushin.png (face only; invent a new pose). Look: Tall, broad-shouldered, long black hair in a high topknot-ponytail with trailing Silla-blue cloth tails; level hard brows, deep-set eyes. Dress: Silla-blue po and trousers, plum-violet sash knotted at the waist, white inner collar, dark wrapped forearms. Off duty: plain blue po, no jewelry. Now: Marshal: full black beard and moustache; a blue ribbon in the topknot instead of the headband. Demeanor: Confucian: he STANDS — never sits in lotus. Weighs, counts, frowns at sums; tight jaw, rare dry half-smile. Grief shows as stillness, not tears. The most feared warrior in all of Samhan: a line goes quiet when the tall Silla helm and the white horse appear. Massive, deliberate, terrifying at a walk; by Hwangsan (65) heavier and slower than Gyebek but still the man armies are built around. #2A5FB8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: sitting in lotus or holding prayer beads; katana, tsuba or curved blade (ignore the sword drawn on his portrait); two swords at once; blue glow aura. | BUPMIN — FACE and garments from attached /ch_bupmin_hwarang.png (face only; invent a new pose). Look: Square jaw, goatee and moustache, confident grin; arms folded when he is pleased with himself. Dress: As king: crimson robe with gold dragon embroidery, blue shoulder pieces, gold Silla crown. Earlier: prince/hwarang stage portraits. Demeanor: Cocky, warm, practical; his father's charm with his uncle's spine. #C41E3A as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: katana; Tang dragon robe in place of Silla court dress. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+						"refs": [
+							"/ch_kim_yushin.png",
+							"/ch_bupmin_hwarang.png"
+						],
+						"people": [
+							"yushin",
+							"munmu"
+						],
+						"tempImage": "/temp/sadaham-seq-yushin-tells.jpg"
 					},
 					{
 						"id": "parody-class-photo-hwarang",
@@ -5800,195 +5954,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>The yard has two names it still whispers. Tonight the Marshal says them out loud…!</b>",
-						"ko": "<b>연무장이 아직도 목소리를 낮추는 이름이 둘 있다. 오늘 밤, 장군이 그 이름을 소리 내어 말한다…!</b>"
-					}
-				],
-				"place": "surabol"
-			},
-			{
-				"year": "641",
-				"tone": "campfire tale (Hwarang)",
-				"subtitle": "사다함",
-				"thumbnail": "sadaham-seq-mugwan-vow",
-				"badges": [
-					"flag:silla",
-					"🌙"
-				],
-				"music": "The Crescent Moon",
-				"title": "Sadaham",
-				"place": "surabol",
-				"images": [
-					{
-						"id": "sadaham-gaya-road",
-						"ratio": 1.778,
-						"tone": "#6fa8ff",
-						"at": "<b>Sadaham</b> was fifteen",
-						"alt": "Tiny Sadaham on a vast empty Gaya road — ice-blue accent, monumental emptiness",
-						"prompt": "Minimal iconic 16:9 poster. Sadaham, God of the Hwarang, fifteen, taking Great Gaya. ONE geometric device: a long empty ROAD as a pale wedge receding to a hard horizon; tiny silky Hwarang figure in the lower third, standing, not kneeling. Face matches the attached Sadaham portrait only as a tiny likeness. Ice-blue #6fa8ff as the single accent on silk. REAL empty country road, natural dusk sky. Monumental emptiness. No army catalog. No crescent halo. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_sadaham.png"
-						],
-						"people": [
-							"sadaham"
-						],
-						"tempImage": "/temp/sadaham-gaya-road.jpg"
-					},
-					{
-						"id": "sadaham-seq-ask",
-						"ratio": 2,
-						"tone": "#6fa8ff",
-						"at": "asked to ride against Great Gaya",
-						"alt": "Fifteen-year-old Sadaham kneels on the stone floor of Jinheung’s hall at night, head up, asking to ride",
-						"prompt": "Worm’s-eye from the stone floor of King Jinheung’s timber hall at night, an oil lamp set on the floor in the sharp foreground. Sadaham, fifteen, kneels mid-bow but with his head already up, chin out, refusing to look down, in his Hwarang coat; the lamp rakes up across his jaw and the ice-blue of his collar. Behind and above him, out of focus on the dais, King Jinheung leans forward on one fist, half amused, half doubtful, red robe catching the same lamp. Pillars recede at an angle; Sadaham’s shadow climbs the floor toward the dais. CANON — SADAHAM — FACE and garments from attached /ch_sadaham.png (face only; invent a new pose). Demeanor: Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief. #6fa8ff as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. | KING JINHEUNG — FACE and garments from attached /ch_jinheung.png (face only; invent a new pose). #2f6fd4 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
-						"refs": [
-							"/ch_sadaham.png",
-							"/ch_jinheung.png"
-						],
-						"people": [
-							"sadaham",
-							"jinheung"
-						],
-						"tempImage": "/temp/sadaham-seq-ask.jpg"
-					},
-					{
-						"ratio": 1.778,
-						"nsfw": false,
-						"id": "sadaham-seq-mugwan-vow",
-						"tone": "#6fa8ff",
-						"at": "If you die first, I will not eat.",
-						"alt": "Two-shot under Hwarang eaves: Sadaham and Mugwan wrist-lock vow",
-						"refs": [
-							"/ch_sadaham.png",
-							"/ch_mugwan.png"
-						],
-						"people": [
-							"sadaham",
-							"mugwan"
-						],
-						"prompt": "Minimal iconic 16:9. OTS two-shot night eaves. ONE Sadaham, ONE Mugwan, wrist-lock. Ice-blue #6fa8ff and dusty-rose coats from portraits. Not standing clones. No text. No watermark.",
-						"tempImage": "/temp/sadaham-seq-mugwan-vow.jpg"
-					},
-					{
-						"id": "sadaham-seq-sickbed",
-						"ratio": 2,
-						"tone": "#6fa8ff",
-						"at": "died of illness not long after the campaign",
-						"alt": "By one candle, Sadaham sits at Mugwan’s sickbed holding his wrist, counting the pulse",
-						"prompt": "Medium close in a dark timber room at night, one candle on the floor between them. Mugwan lies on a sleeping mat, sick, pale, eyes half closed, with a tired grin as if he has just said something rude. Sadaham, sixteen, sits hunched beside him with two fingers pressed on Mugwan’s wrist, counting the pulse, jaw tight, refusing to cry. The candle rakes up across both faces and the ice-blue of Sadaham’s sleeve; their shadows climb the paper-screen wall at an angle. A bowl of untouched medicine sharp in the foreground. CANON — SADAHAM — FACE and garments from attached /ch_sadaham.png (face only; invent a new pose). Demeanor: Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief. #6fa8ff as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. | MUGWAN — FACE and garments from attached /ch_mugwan.png (face only; invent a new pose). #7aa0c8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
-						"refs": [
-							"/ch_sadaham.png",
-							"/ch_mugwan.png"
-						],
-						"people": [
-							"sadaham",
-							"mugwan"
-						],
-						"tempImage": "/temp/sadaham-seq-sickbed.jpg"
-					},
-					{
-						"ratio": 1.778,
-						"nsfw": false,
-						"id": "sadaham-seq-seven-close",
-						"tone": "#6fa8ff",
-						"at": "Sadaham did not take food for seven days",
-						"alt": "ECU: Sadaham seventeen, wrecked, empty bowl sharp in the foreground",
-						"refs": [
-							"/ch_sadaham.png",
-							"/ch_mugwan.png"
-						],
-						"people": [
-							"sadaham",
-							"mugwan"
-						],
-						"prompt": "Intimate 16:9 ECU. Sadaham wrecked; empty bowl as a pale disc in the foreground. Ice-blue #6fa8ff rim. FACE ch_sadaham. No living Mugwan clone. No text. No watermark.",
-						"tempImage": "/temp/sadaham-seq-seven-close.jpg"
-					},
-					{
-						"id": "sadaham-seven-days",
-						"ratio": 1.778,
-						"tone": "#6fa8ff",
-						"at": "Sadaham did not take food for seven days",
-						"alt": "Two pale headband-stamps on charcoal; tiny Sadaham, empty bowl as a disc, seven days",
-						"prompt": "Minimal iconic 16:9 poster. Sadaham mourning Mugwan. ONE geometric device: two pale HEADBANDS as hard rectangular STAMPS on a charcoal void, side by side, no readable text. Tiny silky Hwarang figure at the lower edge, not eating, empty bowl as a small disc. Face matches the attached Sadaham portrait only as a tiny likeness. Ice-blue #6fa8ff as the single accent. Monumental emptiness. Follow the chronicle: grief, seven days, no food — not a new plot. No army. No clutter. No text. No watermark. Graphic color-blocking, anime-painterly, monumental.",
-						"refs": [
-							"/ch_sadaham.png",
-							"/ch_mugwan.png"
-						],
-						"people": [
-							"sadaham",
-							"mugwan"
-						],
-						"tempImage": "/temp/sadaham-seven-days.jpg"
-					},
-					{
-						"id": "sadaham-grief-clutch",
-						"at": "Sadaham did not take food for seven days",
-						"alt": "Low dutch: Sadaham face buried in Mugwan’s chest, fist clutching ice-blue silk",
-						"prompt": "Low dutch angle on the floor of a dark timber room just before dawn, one guttering candle set on the boards close to the lens. Mugwan lies still on the sleeping mat, dead, face calm and turned slightly away. Sadaham, seventeen, has collapsed across him, face buried in Mugwan’s chest, one fist knotted in the ice-blue silk of his own sleeve pressed against his friend’s collar, shoulders locked. The candle rakes from the side across Sadaham’s back, the knotted fist and the folds of both coats; their joined shadow climbs the paper screen at an angle. An empty rice bowl sits sharp in the dark foreground. CANON — SADAHAM — FACE and garments from attached /ch_sadaham.png (face only; invent a new pose). Demeanor: Hwarang taken Gaya at fifteen; ice-blue #6fa8ff cloth on campaign; dies young of grief. #6fa8ff as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. | MUGWAN — FACE and garments from attached /ch_mugwan.png (face only; invent a new pose). #7aa0c8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
-						"people": [
-							"sadaham",
-							"mugwan"
-						],
-						"refs": [
-							"/ch_sadaham.png",
-							"/ch_mugwan.png"
-						],
-						"ratio": 2,
-						"tone": "#6fa8ff",
-						"tempImage": "/temp/sadaham-grief-clutch.jpg"
-					},
-					{
-						"id": "sadaham-seq-headbands",
-						"ratio": 2,
-						"tone": "#6fa8ff",
-						"at": "buried two headbands",
-						"alt": "Two Hwarang headbands laid side by side on fresh earth at the foot of a burial mound in the rain",
-						"prompt": "Low over the ground in grey dusk rain at the foot of a new Silla burial mound. Two Hwarang headbands lie side by side on fresh dark earth, one with a small crescent-moon emblem, rain beading on the cloth; a single shielded lantern set down beside them throws warm light across the wet silk and the clods of earth. Out of focus behind, a line of young Hwarang in rain-dark coats stand bareheaded, faces lowered. The mound rises as a dark curve against a pale break in the clouds. Ice-blue lives only as the sheen on one headband’s cloth. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
-						"people": [
-							"sadaham",
-							"mugwan"
-						],
-						"tempImage": "/temp/sadaham-seq-headbands.jpg"
-					},
-					{
-						"id": "sadaham-seq-yushin-tells",
-						"ratio": 2,
-						"tone": "#2A5FB8",
-						"at": "the two names the yard still lowers its voice for",
-						"alt": "Under the dusk eaves Yushin speaks two names; the new boys lean in, Bupmin among them",
-						"prompt": "Over-the-shoulder from behind a row of young Hwarang sitting on the boards under the eaves at dusk, their shoulders dark blurred shapes in the foreground. Marshal Yushin stands at the edge of the veranda, one hand on a post, speaking low; a lantern hung on the post beside him rakes across his face and the marshal blue of his collar. Among the boys, Bupmin, seventeen, leans forward with his mouth slightly open. Behind Yushin, out of focus, the empty practice yard and its blue line fade into dusk haze, and two plain wooden name-tablets stand on a shelf in the dark. CANON — KIM YUSHIN — FACE and garments from attached /ch_kim_yushin.png (face only; invent a new pose). Look: Tall, broad-shouldered, long black hair in a high topknot-ponytail with trailing Silla-blue cloth tails; level hard brows, deep-set eyes. Dress: Silla-blue po and trousers, plum-violet sash knotted at the waist, white inner collar, dark wrapped forearms. Off duty: plain blue po, no jewelry. Now: Marshal: full black beard and moustache; a blue ribbon in the topknot instead of the headband. Demeanor: Confucian: he STANDS — never sits in lotus. Weighs, counts, frowns at sums; tight jaw, rare dry half-smile. Grief shows as stillness, not tears. The most feared warrior in all of Samhan: a line goes quiet when the tall Silla helm and the white horse appear. Massive, deliberate, terrifying at a walk; by Hwangsan (65) heavier and slower than Gyebek but still the man armies are built around. #2A5FB8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: sitting in lotus or holding prayer beads; katana, tsuba or curved blade (ignore the sword drawn on his portrait); two swords at once; blue glow aura. | BUPMIN — FACE and garments from attached /ch_bupmin_hwarang.png (face only; invent a new pose). Look: Square jaw, goatee and moustache, confident grin; arms folded when he is pleased with himself. Dress: As king: crimson robe with gold dragon embroidery, blue shoulder pieces, gold Silla crown. Earlier: prince/hwarang stage portraits. Demeanor: Cocky, warm, practical; his father's charm with his uncle's spine. #C41E3A as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: katana; Tang dragon robe in place of Silla court dress. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
-						"refs": [
-							"/ch_kim_yushin.png",
-							"/ch_bupmin_hwarang.png"
-						],
-						"people": [
-							"yushin",
-							"munmu"
-						],
-						"tempImage": "/temp/sadaham-seq-yushin-tells.jpg"
-					}
-				],
-				"blocks": [
-					{
-						"kind": "scene",
-						"label": "The First Class",
-						"ko": "제일기"
-					},
-					{
-						"kind": "p",
-						"html": "Every yard has its ghosts. This one has two, and they have never missed roll call.",
-						"ko": "연무장마다 귀신이 있다. 이곳엔 둘이다. 점호에 빠진 적이 한 번도 없다."
-					},
-					{
-						"kind": "p",
-						"html": "The lamps go up under the eaves. Nobody sends the boys to bed. They decide this is an honour, and they are right, though not for the reason they think.",
-						"ko": "처마 아래 등이 걸린다. 아무도 소년들을 재우러 보내지 않는다. 소년들은 이를 영광으로 여긴다. 맞는 말이다. 다만 그들이 생각하는 이유는 아니다."
-					},
-					{
-						"kind": "p",
-						"html": "The Marshal does not let <i>trust among friends</i> stay a pretty line. He tells the new boys of the first class — the two names the yard still lowers its voice for.",
-						"ko": "장군은 <i>교우이신</i>을 예쁜 문장으로 두지 않는다. 새로 온 소년들에게 제일기를 말한다 — 연무장이 아직도 목소리를 낮추는 두 이름."
+						"html": "Under the eaves he does not let <i>trust among friends</i> stay a pretty line. He tells the new boys of the first class — the two names the yard still lowers its voice for.",
+						"ko": "처마 아래서 그는 <i>교우이신</i>을 예쁜 문장으로 두지 않는다. 새로 온 소년들에게 제일기를 말한다 — 연무장이 아직도 목소리를 낮추는 두 이름."
 					},
 					{
 						"kind": "dialogue",
@@ -6004,399 +5971,25 @@
 						]
 					},
 					{
-						"kind": "dialogue",
-						"person": "munmu",
-						"chip": "#3fa9c9",
-						"en": [
-							"Which one, Uncle?",
-							"Which one kept it?"
-						],
-						"lines": [
-							"어느 쪽이요, 외숙부?",
-							"누가 지켰는데요?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "yushin",
-						"chip": "#4a8fe0",
-						"en": [
-							"Sit down and you’ll find out."
-						],
-						"lines": [
-							"앉으면 알게 된다."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6b7280",
-						"lines": [
-							"호수 귀신 얘기예요?"
-						],
-						"en": [
-							"Is this the one about the haunted lake?"
-						],
-						"speaker": "A new boy"
-					},
-					{
-						"kind": "dialogue",
-						"person": "yushin",
-						"chip": "#4a8fe0",
-						"en": [
-							"No. That one’s about me."
-						],
-						"lines": [
-							"아니. 그건 내 얘기다."
-						]
-					},
-					{
 						"kind": "flashback",
-						"year": "560",
+						"year": "564",
 						"title": "the first class",
 						"blocks": [
 							{
 								"kind": "p",
-								"html": "Back then the yard was new, and so was the idea. The king wanted boys who would ride ahead of the army and not ask why. The first year, he got a lot of them. Two of them got each other.",
-								"ko": "그때는 연무장도 새것이었고, 그 생각도 새것이었다. 왕은 군대보다 앞서 달리면서 이유를 묻지 않을 소년들을 원했다. 첫해에 그런 소년은 많이 왔다. 그중 둘은 서로를 얻었다."
-							},
-							{
-								"kind": "p",
-								"html": "<b>Sadaham</b> is thirteen and talks like a dare. <b>Mugwan</b> is thirteen too, and says less than his horse. The hall has one gap, so they share it. They argue for a month about who snores.",
-								"ko": "<b>사다함</b>은 열셋이고, 말마다 내기를 건다. <b>무관랑</b>도 열셋인데, 자기가 타는 말보다도 말수가 적다. 방에 빈자리가 하나뿐이라 둘은 한 방에 든다. 누가 코를 고는지 한 달을 다툰다."
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"You snore.",
-									"Don’t argue. The whole hall heard you."
-								],
-								"lines": [
-									"너 코 골아.",
-									"우기지 마. 방 전체가 들었어."
-								]
+								"html": "<b>Sadaham</b> was fifteen or sixteen when he asked to ride against Great Gaya. The king thought him too young. The vanguard thought otherwise. After the city fell he freed the captives given as prize, and took only barren land by the Alcheon. The chronicle calls this virtue. His friend called it typical.",
+								"ko": "<b>사다함</b>은 열다섯, 아니면 열여섯에 대가야를 치겠다고 청했다. 왕은 너무 어리다 했다. 선봉은 그렇지 않았다. 성이 떨어진 뒤 상으로 받은 사로잡힌 사람들을 풀어 주고, 알천의 박토만 받았다. 기록은 이를 덕이라 한다. 벗은 늘 그러하다고 했다."
 							},
 							{
 								"kind": "dialogue",
 								"person": "mugwan",
 								"chip": "#7aa0c8",
-								"en": [
-									"That was you."
-								],
-								"lines": [
-									"그거 너야."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"…Then prove it. Stay up and listen."
-								],
-								"lines": [
-									"…그럼 증명해. 안 자고 들어 봐."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "Mugwan stays up. It is the first of a great many nights he will stay up for Sadaham, and the only one either of them will find funny.",
-								"ko": "무관랑은 안 자고 듣는다. 앞으로 사다함 때문에 지새울 수많은 밤 가운데 첫날이고, 둘 다 웃을 수 있는 건 그날 밤뿐이다."
-							}
-						]
-					},
-					{
-						"kind": "dialogue",
-						"chip": "#6b7280",
-						"lines": [
-							"그래서 누가 코 골았어요?"
-						],
-						"en": [
-							"So who snored?"
-						],
-						"speaker": "A new boy"
-					},
-					{
-						"kind": "dialogue",
-						"person": "yushin",
-						"chip": "#4a8fe0",
-						"en": [
-							"Both. That is not the story."
-						],
-						"lines": [
-							"둘 다. 그게 이야기가 아니다."
-						]
-					},
-					{
-						"kind": "flashback",
-						"year": "562",
-						"title": "too young",
-						"blocks": [
-							{
-								"kind": "p",
-								"html": "Two summers on, Great Gaya stops paying. The king calls the war in his hall, and the hall fills up with men old enough to have opinions.",
-								"ko": "두 해 뒤 여름, 대가야가 공물을 끊는다. 왕은 전당에서 전쟁을 정하고, 전당은 할 말이 있을 만한 나이의 사내들로 가득 찬다."
-							},
-							{
-								"kind": "p",
-								"html": "<b>Sadaham</b> was fifteen when he asked to ride against Great Gaya. He asked on his knees, in front of everyone. It is the only way a boy can ask a king for anything and not be sent outside.",
-								"ko": "<b>사다함</b>은 열다섯에 대가야를 치겠다고 청했다. 무릎을 꿇고, 모두가 보는 앞에서. 소년이 왕에게 무언가를 청하면서 쫓겨나지 않는 방법은 그것뿐이다."
-							},
-							{
-								"kind": "dialogue",
-								"person": "jinheung",
-								"chip": "#2f6fd4",
-								"en": [
-									"Go home. Grow a beard.",
-									"War is not a yard. Nobody hands the ball back."
-								],
-								"lines": [
-									"집에 가라. 수염이나 길러 오너라.",
-									"전쟁은 연무장이 아니다. 공을 돌려주는 놈이 없어."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"Then I’ll ask again tomorrow."
-								],
-								"lines": [
-									"그럼 내일 다시 여쭙겠습니다."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "He does. And the day after. The old general leading the campaign once took an island by frightening it with wooden lions. He tells the king it will be quicker to bring the boy than to keep hearing him.",
-								"ko": "청한다. 그다음 날도. 원정을 맡은 늙은 장군은 예전에 나무 사자로 겁을 줘서 섬 하나를 통째로 받아 낸 사람이다. 그가 왕에게 아뢴다. 저 아이를 데려가는 편이 저 아이 말을 계속 듣는 것보다 빠르겠다고."
-							},
-							{
-								"kind": "dialogue",
-								"person": "jinheung",
-								"chip": "#2f6fd4",
-								"en": [
-									"Fine. Take him.",
-									"If he dies, it was his idea. Write that down."
-								],
-								"lines": [
-									"좋다. 데려가라.",
-									"죽으면 제 생각이었던 거다. 적어 둬라."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "mugwan",
-								"chip": "#7aa0c8",
-								"en": [
-									"You’re going."
-								],
-								"lines": [
-									"가는구나."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"We’re going.",
-									"I told them you’re my second. Don’t make me a liar."
-								],
-								"lines": [
-									"우리가 가는 거야.",
-									"네가 내 부장이라고 했어. 나 거짓말쟁이 만들지 마."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "mugwan",
-								"chip": "#7aa0c8",
-								"en": [
-									"You didn’t ask me."
-								],
-								"lines": [
-									"나한테 안 물어봤잖아."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"I’m asking now.",
-									"…Well?"
-								],
-								"lines": [
-									"지금 묻잖아.",
-									"…그래서?"
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "mugwan",
-								"chip": "#7aa0c8",
-								"en": [
-									"…I’ll get the horses."
-								],
-								"lines": [
-									"…말 꺼내 올게."
-								]
-							}
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "munmu",
-						"chip": "#3fa9c9",
-						"en": [
-							"And the battle? Uncle, what happened at the gate?"
-						],
-						"lines": [
-							"그래서 싸움은요? 외숙부, 성문에서 어떻게 됐어요?"
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "yushin",
-						"chip": "#4a8fe0",
-						"en": [
-							"Any old man in the market will give you the gate. He’ll get it wrong, but he’ll give it to you.",
-							"I am telling you about the rice."
-						],
-						"lines": [
-							"시장 노인 아무나 붙잡아라. 성문 얘기는 해 줄 거다. 틀리게 하겠지만, 해는 줄 거다.",
-							"나는 밥 이야기를 하는 중이다."
-						]
-					},
-					{
-						"kind": "flashback",
-						"year": "562",
-						"title": "the prize",
-						"blocks": [
-							{
-								"kind": "p",
-								"html": "Afterward the king pays him the way kings pay: in people. Three hundred Gaya captives, roped in a line, his to keep. Sadaham walks down the line once. Then he starts cutting rope.",
-								"ko": "싸움이 끝나자 왕은 왕들이 늘 하는 방식으로 값을 치른다. 사람으로. 줄줄이 묶인 가야 포로 삼백, 그의 몫이다. 사다함은 줄을 따라 한 번 걸어 내려간다. 그러고는 밧줄을 끊기 시작한다."
-							},
-							{
-								"kind": "dialogue",
-								"person": "mugwan",
-								"chip": "#7aa0c8",
-								"en": [
-									"The court will say you’re showing off."
-								],
-								"lines": [
-									"조정에선 네가 잘난 척한다고 할 거다."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"Then the court can have them back.",
-									"Help me with this knot."
-								],
-								"lines": [
-									"그럼 조정이 도로 가져가든가.",
-									"이 매듭 좀 도와."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "The land they give him instead is a strip of stones by the Alcheon that nobody wanted. The chronicle calls this virtue. Mugwan calls it typical, and holds the knot.",
-								"ko": "대신 받은 땅은 알천 가의, 아무도 원하지 않던 돌밭이다. 기록은 이를 덕이라 한다. 무관랑은 늘 그렇다고 하고, 매듭을 잡아 준다."
-							}
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "munmu",
-						"chip": "#3fa9c9",
-						"en": [
-							"My father would have found a use for three hundred people."
-						],
-						"lines": [
-							"아버지셨으면 삼백 명을 어디 쓸 데를 찾으셨을 거예요."
-						]
-					},
-					{
-						"kind": "dialogue",
-						"person": "yushin",
-						"chip": "#4a8fe0",
-						"en": [
-							"Your father would have found a use for three hundred and one."
-						],
-						"lines": [
-							"네 아비라면 삼백한 명 쓸 데를 찾았을 거다."
-						]
-					},
-					{
-						"kind": "flashback",
-						"year": "563",
-						"title": "the swear",
-						"blocks": [
-							{
-								"kind": "p",
-								"html": "That winter Mugwan catches a cough he cannot put down. Sadaham sits by the mat and counts his breathing, the way they used to count snores.",
-								"ko": "그 겨울, 무관랑은 내려놓을 수 없는 기침을 얻는다. 사다함은 자리 옆에 앉아 숨소리를 센다. 예전에 코 고는 소리를 세던 것처럼."
-							},
-							{
-								"kind": "dialogue",
-								"person": "mugwan",
-								"chip": "#7aa0c8",
-								"en": [
-									"Go eat. You smell like a sickroom."
-								],
-								"lines": [
-									"가서 밥 먹어. 너한테 병자 냄새 나."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"You remember what we swore."
-								],
-								"lines": [
-									"우리 맹세한 거 기억하지."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "mugwan",
-								"chip": "#7aa0c8",
-								"en": [
-									"We were thirteen. We also swore to marry the same girl."
-								],
-								"lines": [
-									"열셋이었어. 같은 여자랑 혼인하자고도 맹세했잖아."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
 								"en": [
 									"If you die first, I will not eat.",
-									"So don’t."
+									"If I die first — you already know."
 								],
 								"lines": [
 									"네가 먼저 죽으면 나는 안 먹는다.",
-									"그러니까 죽지 마."
-								]
-							},
-							{
-								"kind": "dialogue",
-								"person": "mugwan",
-								"chip": "#7aa0c8",
-								"en": [
-									"If I die first— you already know."
-								],
-								"lines": [
 									"내가 먼저 죽으면 — 너는 이미 알지."
 								]
 							},
@@ -6413,43 +6006,10 @@
 							},
 							{
 								"kind": "p",
-								"html": "<b>Mugwan</b> died of illness not long after the campaign. He did it quietly, the way he did everything, before dawn, so as not to wake anyone.",
-								"ko": "<b>무관랑</b>은 전역이 끝난 지 얼마 되지 않아 병으로 죽었다. 무엇이든 그렇게 했듯 조용히, 새벽이 오기 전에, 아무도 깨우지 않으려는 듯이."
+								"html": "<b>Mugwan</b> died of illness not long after the campaign. Sadaham did not take food for seven days. He was seventeen. The order buried two headbands and kept the story, because a Hwarang who outlives his vow is only a boy with a nice coat.",
+								"ko": "<b>무관랑</b>은 전역이 끝난 지 얼마 되지 않아 병으로 죽었다. 사다함은 이레 동안 음식을 들지 않았다. 열일곱이었다. 화랑은 머리띠 둘을 묻고 이야기를 남겼다. 맹세보다 오래 사는 화랑은, 옷만 좋은 소년에 불과하므로."
 							}
 						]
-					},
-					{
-						"kind": "flashback",
-						"year": "564",
-						"title": "seven days",
-						"blocks": [
-							{
-								"kind": "p",
-								"html": "Sadaham did not take food for seven days. The cooks left bowls by his door. The order sent its oldest men to argue with him. He thanked them, and did not eat.",
-								"ko": "사다함은 이레 동안 음식을 들지 않았다. 부엌에선 문 앞에 그릇을 두었다. 화랑은 가장 나이 든 이들을 보내 그를 설득했다. 그는 고맙다고 하고, 먹지 않았다."
-							},
-							{
-								"kind": "dialogue",
-								"person": "sadaham",
-								"chip": "#6fa8ff",
-								"en": [
-									"…It’s quiet in here. Nobody snoring."
-								],
-								"lines": [
-									"…조용하네. 코 고는 놈이 없어."
-								]
-							},
-							{
-								"kind": "p",
-								"html": "He was seventeen. The order buried two headbands and kept the story, because a Hwarang who outlives his vow is only a boy with a nice coat.",
-								"ko": "열일곱이었다. 화랑은 머리띠 둘을 묻고 이야기를 남겼다. 맹세보다 오래 사는 화랑은, 옷만 좋은 소년에 불과하므로."
-							}
-						]
-					},
-					{
-						"kind": "p",
-						"html": "The lamp under the eaves has burned down a finger’s width. Nobody has moved. One boy is pretending he has something in his eye, and the others are kind enough to look at the lamp.",
-						"ko": "처마 아래 등잔 기름이 손가락 한 마디만큼 줄었다. 아무도 움직이지 않았다. 한 소년은 눈에 뭐가 들어간 척하고, 나머지는 친절하게도 등잔만 본다."
 					},
 					{
 						"kind": "dialogue",
@@ -6478,40 +6038,12 @@
 						]
 					},
 					{
-						"kind": "dialogue",
-						"person": "munmu",
-						"chip": "#3fa9c9",
-						"en": [
-							"Uncle.",
-							"Who would you stop eating for?"
-						],
-						"lines": [
-							"외숙부.",
-							"외숙부는 누구 때문이면 밥을 끊으시겠어요?"
-						]
-					},
-					{
-						"kind": "p",
-						"html": "Yushin looks at the boy for a long moment. You can probably name her. He doesn’t.",
-						"ko": "유신은 한참 동안 소년을 본다. 당신은 아마 그 이름을 댈 수 있을 것이다. 그는 대지 않는다."
-					},
-					{
-						"kind": "dialogue",
-						"person": "yushin",
-						"chip": "#4a8fe0",
-						"en": [
-							"…Go to bed. Gyuku at dawn."
-						],
-						"lines": [
-							"…가서 자라. 새벽에 격구다."
-						]
-					},
-					{
 						"kind": "p",
 						"html": "<b>When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!</b>",
 						"ko": "<b>누나가 너무 빨리 달리면 법민은 늘 먼저 고삐를 당긴다. 고타소는 당기지 않는다. 말 앞에서도, 누구 앞에서도…!</b>"
 					}
-				]
+				],
+				"place": "surabol"
 			},
 			{
 				"year": "641",
@@ -8188,7 +7720,7 @@
 				"flash": true,
 				"flashback": true,
 				"flashTone": "#fce7f3",
-				"title": "Munhee",
+				"title": "Chunchu & Munhee",
 				"images": [
 					{
 						"ratio": 1.778,
@@ -11689,8 +11221,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Two kings take a river back together. One is Seong of Baekje. The other is the Cloud King. The deal is simple. Baekje gets the river mouth, near the sea. Silla gets the upper valley.",
-						"ko": "두 임금이 함께 강을 되찾는다. 하나는 백제의 성왕. 하나는 구름왕. 약속은 간단하다. 바다에 가까운 하구는 백제가, 위쪽 골짜기는 신라가 갖는다."
+						"html": "In <b>551</b>, Baekje under <b>King Seong</b> and Silla under <b>Jinheung</b> — the Cloud King — with Gaya contingents — push Goguryeo out of the Han River basin. The understanding is clear enough for wartime: Baekje will keep the lower reaches, nearer the sea; Silla will take the upper valley.",
+						"ko": "<b>551년</b>, <b>성왕</b>의 백제와 <b>구름왕</b> <b>진흥</b>의 신라 — 가야 병력과 함께 — 고구려를 한강 유역에서 밀어낸다. 전시의 약속은 분명했다. 바닷가에 가까운 하류는 백제, 상류 골짜기는 신라."
 					},
 					{
 						"kind": "p",
@@ -20438,13 +19970,13 @@
 				"year": "642",
 				"sub": "October",
 				"tone": "coup horror",
-				"subtitle": "연개소문의 정변",
+				"subtitle": "대막리지",
 				"thumbnail": "king-final",
 				"badges": [
 					"flag:goguryeo"
 				],
 				"music": "The Five Blades",
-				"title": "Yeon’s Massacre",
+				"title": "Supreme Commander",
 				"images": [
 					{
 						"id": "yeon-massacre-wide",
@@ -21213,8 +20745,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "First the Southern Commander. He wanted the next levy for Yushin’s passes, and called Eastern fighting easy work.",
-						"ko": "먼저 <b>남부 욕살</b>. 유신의 고개를 막겠다며 다음 징발을 달라 했고, 동부의 싸움은 쉬운 일이라 하던 자."
+						"html": "First the <b>Southern Commander</b> — <b>Son Daeha</b>, who wanted the next levy for Yushin’s passes and called Eastern fighting easy work.",
+						"ko": "먼저 <b>남부 욕살</b> — <b>손대하</b>. 유신의 고개에 다음 징발을 달라 했고, 동부의 싸움을 쉬운 일이라 부르던 사람."
 					},
 					{
 						"kind": "dialogue",
@@ -21251,8 +20783,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Then the Northern Commander. He would not freeze another winter while the capital counted his remounts twice.",
-						"ko": "다음은 <b>북부 욕살</b>. 중앙이 보충 말을 두 번 세는 동안 또 한 겨울을 얼고 싶지는 않다던 자."
+						"html": "Then the <b>Northern Commander</b> — <b>Go Ul</b>, who would not freeze another winter while Central counted his remounts twice.",
+						"ko": "다음은 <b>북부 욕살</b> — <b>고울</b>. 중부가 보충 말을 두 번 세는 동안 또 한 겨울을 얼어 죽고 싶지 않다던 사람."
 					},
 					{
 						"kind": "dialogue",
@@ -21286,8 +20818,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The Western Commander had warned that this would gift the Tang a road. He dies looking west, as if the road might still be argued shut.",
-						"ko": "<b>서부 욕살</b>은 이러다 당에게 길을 선물하게 된다고 경고했었다. 그는 서쪽을 보며 죽는다. 그 길을 아직 말로 닫을 수 있다는 듯이."
+						"html": "The <b>Western Commander</b> — <b>Go Heumsong</b> — had warned that stripping the Liao for a southern poem would gift the Tang a road. He dies looking west, as if the road might still be argued into staying shut.",
+						"ko": "<b>서부 욕살</b> — <b>고흠송</b> — 은 요하를 벗겨 남쪽 시를 쫓으면 당에게 길을 선물한다고 경고했었다. 그는 서쪽을 보며 죽는다. 그 길이 아직 말로 닫힐 수 있다는 듯이."
 					},
 					{
 						"kind": "dialogue",
@@ -23123,8 +22655,8 @@
 						"blocks": [
 							{
 								"kind": "p",
-								"html": "Once, a Goguryeo king came south and took Baekje’s old capital. The Baekje king tried to run. They caught him and killed him at the foot of a mountain. Baekje has not forgotten. Goguryeo has not apologised.",
-								"ko": "한때 고구려 왕이 남으로 내려와 백제의 옛 도읍을 빼앗았다. 백제 왕은 달아나려 했다. 그들은 그를 붙잡아 산 아래에서 죽였다. 백제는 잊지 않았다. 고구려는 사과하지 않았다."
+								"html": "Once, a Goguryeo king came south and took Baekje's old capital. The Baekje king's head ended up on a Goguryeo wall. Baekje has not forgotten. Goguryeo has not apologised.",
+								"ko": "한때 고구려 왕이 남으로 내려와 백제의 옛 도읍을 빼앗았다. 백제 왕의 머리는 고구려 성벽에 걸렸다. 백제는 잊지 않았다. 고구려는 사과하지 않았다."
 							}
 						]
 					},
@@ -23712,7 +23244,7 @@
 				"flash": true,
 				"tone": "war-legend chronicle",
 				"subtitle": "낭비성",
-				"thumbnail": "scene-yushin-sword-46",
+				"thumbnail": "nangbi-trench-leap",
 				"badges": [
 					"flag:silla",
 					"flag:goguryeo"
@@ -24241,7 +23773,7 @@
 				"year": "642",
 				"tone": "war-legend chronicle",
 				"subtitle": "마흔 성",
-				"thumbnail": "scene-yushin-sword-59",
+				"thumbnail": "yushin-dawn-vigil",
 				"badges": [
 					"flag:silla",
 					"flag:baekje"
@@ -27550,7 +27082,7 @@
 				"flash": true,
 				"tone": "epic war legend",
 				"subtitle": "을지문덕, «수호신»",
-				"thumbnail": "scene-salsu-gesomun-33",
+				"thumbnail": "salsu-midstream",
 				"badges": [
 					"🌊",
 					"flag:goguryeo"
@@ -27808,7 +27340,7 @@
 				"sub": "September",
 				"tone": "epic war — the siege",
 				"subtitle": "안시성",
-				"thumbnail": "scene-ansi-holds-22",
+				"thumbnail": "scene-ansi-holds-13",
 				"badges": [
 					"🏯",
 					"flag:tang",
@@ -42796,14 +42328,14 @@
 				"year": "645",
 				"sub": "Autumn",
 				"tone": "envoy intrigue into chamber drama",
-				"subtitle": "기 (起)",
+				"subtitle": "비담의 난 · 기",
 				"thumbnail": "chunchu-strategy-meditation",
 				"badges": [
 					"flag:silla",
 					"flag:wa"
 				],
 				"music": "The Harmony Council",
-				"title": "Gi (起)",
+				"title": "기 (起)",
 				"images": [
 					{
 						"id": "wa-mountains",
@@ -43942,8 +43474,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "He says it once more, under his breath, as if testing the weight.",
-						"ko": "그는 숨결 아래로 한 번 더 그 말을 해 본다. 무게를 달아 보듯."
+						"html": "He says it once more, under his breath, as if testing the weight. The word is six hundred years old. To know why it can still cut a marshal of Silla, the story has to go back to a riverbank at Gimhae, to six golden eggs and a sky that looked down.",
+						"ko": "그는 숨결 아래로 한 번 더 그 말을 해 본다. 무게를 달아 보듯. 그 말은 육백 년 묵었다. 그것이 왜 아직도 신라의 장군을 벨 수 있는지 알려면, 이야기는 김해의 강가, 여섯 개의 황금 알과 내려다보던 하늘까지 거슬러 가야 한다."
 					},
 					{
 						"kind": "p",
@@ -44312,7 +43844,7 @@
 						"ratio": 3.333,
 						"src": "/img_gaya_02.png",
 						"alt": "The six eggs",
-						"at": "box of six eggs",
+						"at": "box of 6 eggs",
 						"prompt": "Cinematic historical illustration of The six eggs, Three Kingdoms of Samhan / Tang era (42), scene: Gaya, the Lost Nations, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"refs": [
 							"/img_gaya_02.png",
@@ -45026,8 +44558,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "The people find a box of six eggs. Six babies hatch, Suro and Ijinasi among them. They found six kingdoms:",
-						"ko": "사람들이 알 여섯 개가 든 궤짝을 찾아낸다. 아기 여섯이 깨어나고, 수로와 이진아시도 그중에 있다. 이들이 여섯 가야를 세운다:"
+						"html": "The people find a box of 6 eggs, and Suro and Ijinasi are among the babies to hatch from the eggs. They form 6 kingdoms:",
+						"ko": "사람들이 여섯 알이 든 궤짝을 찾아낸다. 수로와 이진아시도 그 알에서 태어난 아이들이다. 이들이 여섯 가야를 세운다:"
 					},
 					{
 						"kind": "dialogue",
@@ -45516,13 +45048,13 @@
 				"year": "647",
 				"sub": "January",
 				"tone": "political thriller — countdown",
-				"subtitle": "승 (承)",
+				"subtitle": "비담의 난 · 승",
 				"thumbnail": "radiance-exposition-wide",
 				"badges": [
 					"flag:silla"
 				],
 				"music": "Rebellion",
-				"title": "Seung (承)",
+				"title": "승 (承)",
 				"images": [
 					{
 						"id": "poster_bidam",
@@ -48208,13 +47740,13 @@
 				"year": "647",
 				"sub": "January",
 				"tone": "political thriller — countdown",
-				"subtitle": "전 (轉)",
+				"subtitle": "비담의 난 · 전",
 				"thumbnail": "yushin-cavern-lineage-wide",
 				"badges": [
 					"flag:silla"
 				],
 				"music": "Rebellion",
-				"title": "Jeon (轉)",
+				"title": "전 (轉)",
 				"images": [
 					{
 						"id": "bidam-yushin-duel-later",
@@ -50333,8 +49865,8 @@
 					},
 					{
 						"kind": "p",
-						"html": "Manno is a wooden wall, a granary, a county office with a leaking roof, and hills that have changed hands more often than the clerks can keep up with. She learns the granary. He learns the hills. Neither of them learns to cook, and by the second month the clerk’s wife has taken pity on them.",
-						"ko": "만노는 나무 성벽 하나, 곳간 하나, 지붕 새는 관아 하나, 그리고 아전들이 따라잡지 못할 만큼 자주 주인이 바뀐 언덕들이다. 그녀는 곳간을 익히고, 그는 언덕을 익힌다. 둘 다 밥 짓는 법은 못 익혀서, 두 달째부터는 아전의 아내가 딱하게 여겨 챙겨 준다."
+						"html": "Manno is a wooden wall, a granary, a county office with a leaking roof, and hills that have changed hands more often than the clerks can keep up with. Later it will be called Jincheon. She learns the granary. He learns the hills. Neither of them learns to cook, and by the second month the clerk’s wife has taken pity on them.",
+						"ko": "만노는 나무 성벽 하나, 곳간 하나, 지붕 새는 관아 하나, 그리고 아전들이 따라잡지 못할 만큼 자주 주인이 바뀐 언덕들이다. 훗날 진천이라 불리게 될 곳이다. 그녀는 곳간을 익히고, 그는 언덕을 익힌다. 둘 다 밥 짓는 법은 못 익혀서, 두 달째부터는 아전의 아내가 딱하게 여겨 챙겨 준다."
 					},
 					{
 						"kind": "p",
@@ -51298,14 +50830,14 @@
 				"year": "647",
 				"sub": "January",
 				"tone": "political thriller — countdown",
-				"subtitle": "결 (結)",
+				"subtitle": "비담의 난 · 결",
 				"thumbnail": "duel-shadows",
 				"thumbnailLayer": "temp",
 				"badges": [
 					"flag:silla"
 				],
 				"music": "Rebellion",
-				"title": "Gyeol (結)",
+				"title": "결 (結)",
 				"images": [
 					{
 						"id": "flower-brush",
@@ -51743,7 +51275,7 @@
 					},
 					{
 						"kind": "p",
-						"html": "Before the gate opens Bidam goes down to the lines and saddles <b>Bisamun</b> himself, which a High Councillor does not do. He slips nine beads off the end of his string and knots them to the bridle, under the horse’s jaw.",
+						"html": "Before the gate opens Bidam goes down to the lines and saddles <b>Bisamun</b> himself, which a Sangdaedeung does not do. He slips nine beads off the end of his string and knots them to the bridle, under the horse’s jaw.",
 						"ko": "성문이 열리기 전 비담은 진영으로 내려가 <b>비사문</b>에 손수 안장을 얹는다. 상대등이 할 일은 아니다. 염주 끝에서 아홉 알을 빼내, 말 턱 아래 굴레에 매듭지어 묶는다."
 					},
 					{
@@ -53234,7 +52766,7 @@
 						"id": "tang-court-ranks",
 						"ratio": 2,
 						"tone": "#c97a2e",
-						"at": "After the hall, a smaller room",
+						"at": "Prince Chunchu (45) approaches the Second Emperor",
 						"alt": "Dawn audience: Chunchu walks up the aisle between bowed lines of officials toward the Second Emperor, enthroned high in darkness, his shadow filling the screen behind him",
 						"prompt": "2:1 drama court shot, composed for a 2:1 letterbox crop. LOW DOLLY at knee height behind and below CHUNCHU as he walks up the central aisle of the audience hall, small in the lower third. Hard cold blue dawn backlight from the open doors behind us throws his long shadow up the aisle. Either side, two lines of Tang officials in dark robes and black futou caps bow deep, ivory tablets raised, faces hidden. ONE device: a steep stair of the dais rising out of the dark at the far end to a throne alcove that is a cave of black — and in it THE SECOND EMPEROR, seated high above the whole hall, knees wide, hands on his knees, massive and utterly still. Two gilt-bronze lamp-trees beside the throne strike gold only on the edge of his black futou, his beard, his eyes and the gold thread of the yellow robe; half his face and most of his body are swallowed in black. Behind him his own shadow is thrown up onto the painted screen, enormous, filling the whole back wall. The whole hall leans toward him. Polished dark floor reflecting the two lamp-trees. Incense haze in the dawn shafts. No writing. CANON — THE SECOND EMPEROR — FACE and garments from attached /ch_taizong.png (face only; invent a new pose). Look: Bearded Tang emperor: black futou cap with an upright pin, thick black beard and moustache, fierce scowl; one hand flung out commanding. Dress: Imperial yellow robe-cape over black brocade. Demeanor: Commands; never asks. Conqueror's contempt that curdles at Ansi. Presence: THE SON OF HEAVEN — every frame he is in bends around him. He is SHROUDED IN DARKNESS: the black of the hall gathers around him like a mantle, most of his body sinks into shadow, and the one hard key finds only the edge of his black futou, a cheekbone, the beard, the eyes and the gold thread of the yellow robe; often half or more of his face is lost in black. The camera sits BELOW his eyeline (low angle or worm’s-eye) and he is always placed HIGHER than anyone near him — on the dais, on a step, standing while others kneel or sit. He reads larger than life through lens and staging, not as a giant: broad shoulders, the robe spreading wide and heavy into the dark like a mountain, his shadow enormous on walls and floor. Unhurried, heavy stillness — never fidgeting, never casual, never a colleague at someone’s shoulder; when he smiles or laughs it is a predator’s ease, and the room goes quiet around it. Everyone else in frame is smaller, lower, less lit, turned toward him. The aura is darkness, scale and the hush around him — never a glow, never a halo, never rays behind his head. #c97a2e as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: Korean ring-pommel sword; Korean lamellar. | KIM CHUNCHU — FACE and garments from attached /ch_chunchu.png (face only; invent a new pose). Look: Slim and elegant; shoulder-length loose black hair parted in the middle; thin moustache and goatee stubble; amused eyes, small knowing smile. Dress: Magenta-crimson silk po with a charcoal sash, dark layered collar. Silk even on campaign. Demeanor: Diplomat and strategist: talks with his hands, smiles while calculating, never shouts; half-lidded watchful eyes. #D8258C as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: front-line armored warrior pose; shouting battle face; katana. | PLACE Chang’an (장안) — attached board /pl_daming_night.png; keep this exact architecture and ground. Tang palace of Chang'an, drawn from the Daming Palace (大明宮) site and reconstruction models: Hanyuan Hall's concave ensemble — an eleven-bay hall with a double-eaved hipped roof of dark grey tiles and curled owl-tail ridge ends (chiwei), red columns, white plaster walls, lattice windows, raised on three tiers of rammed-earth terraces faced in ochre-red plaster and edged with white stone balustrades; the Dragon Tail Way ramps folding up the terraces; forward on each side the Xiangluan and Qifeng que-towers (three stepped pavilions on tall battered grey-brick piers) joined to the hall by long roofed corridors; a vast paved square below, entered through the five-doored Danfeng Gate. Wide low Tang proportions, deep eaves on massive bracket sets. Tang palette is VERMILION and WHITE (red columns, white walls); roofs are black-grey tile trimmed with green-glazed ridge and eave tiles (a little yellow and blue tricolour glaze); balustrade posts painted red, blue and green. YELLOW belongs to the emperor's robe; gold is gilt-bronze fittings, lamp-trees and firelight on vermilion. Interiors: dark polished stone floors, rows of vermilion columns, gauze hangings, a raised dais with a painted screen behind the throne. Never the Forbidden City, never all-yellow glazed roofs, never the modern reconstruction or a city skyline. Mood: Staged like a Chinese historical drama (Legend of the Demon Cat, The Longest Day in Chang'an) but lit as full Heewon tenebrism: night or blue hour; ONE dominant hard key per shot — a backlight through open doors or lattice, or one lamp-tree — and 75% of the frame crushed black with no fill; colour contrast — gold-yellow flame highlights against cool blue-green in the few lit shadows; the other flames (lamp-trees, silk lanterns with no writing, braziers) are small points and round bokeh IN the black, never lighting the room evenly; red lantern light through lattice as one pattern on the floor; incense haze only inside the key shaft; polished dark floors reflecting the flames. Staged like a drama, at true human scale: camera at eye or knee height on a dolly or crane; court officials in two lines facing inward along the central aisle with tablets; banquet tables in two long facing rows with dancers in the centre and the emperor on the dais at the head; exteriors are real-scale terraces and corridors, the hall large but never a fantasy fortress. HEEWON STYLE: a Korean WEBTOON figure painted into a European OLD-MASTER canvas, composed like a Romanticist master painting. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, shaded in soft watercolor washes and translucent oil glazes instead of flat cel fill — no skin pores, no photographic detail, not photoreal, not 3D. THE WORLD is painted with European old-master technique — Renaissance and Baroque oil (Titian, Rembrandt, Tiepolo, Turner): visible broken-colour brushwork, skies scumbled from short loaded dabs, layered glazes in the darks, sfumato edges, a touch of impasto on the brightest highlights — over watercolor wet-in-wet blooms, pigment granulation and faint paper grain; edges of the frame dissolve into paint. BACKGROUND AND FOREGROUND are a high-contrast Renaissance / Baroque TENEBRIST OIL PAINTING in their own right (Caravaggio, Georges de La Tour, Rembrandt, late Titian): a warm umber-to-black ground; walls, timber, stone, drapery, tables and the dark foreground shapes modelled in glazed oil and pulled out of the darkness by the one candle, lamp or window, with soft sfumato falloff into black — the webtoon figures are set INTO that old-master oil space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is Romanticism (Delacroix, Géricault, Friedrich, Goya, Turner): heroic diagonal or pyramid composition, small figures against a sublime storm sky or vast field, extreme foreshortening (worm’s-eye from the dirt or straight down from above), one break in the clouds or one shaft as the key. LIGHT is movie tenebrism at full strength (Caravaggio, Rembrandt, night-interior cinema): an extreme value range — inky blacks right beside small near-white highlights, almost no middle grey; 70–80% of the frame in deep painted shadow (oil-glazed umber, indigo and black); ONE hard directional key (a lamp, a single cloud-break, a low sun shaft, firelight) carves the subject out of the dark. Form is modelled: the key wraps around cheekbones, armor plates, horse muscle and silk folds, then falls off at a hard terminator; a thin edge of that same real light grazes the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — a lit figure against a background pushed two steps darker, or a near-black silhouette against the one bright break; foreground shapes almost black; the eye lands on the subject first. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
 						"refs": [
@@ -53915,6 +53447,11 @@
 						"kind": "p",
 						"html": "After the hall, a smaller room. A go board. The emperor keeps the platform. Chunchu sits on the floor. Stones click in the dark.",
 						"ko": "대전 다음, 작은 방. 바둑판. 황제는 높은 자리에 그대로 앉는다. 춘추는 바닥에 앉는다. 어둠 속에서 돌이 맞는다."
+					},
+					{
+						"kind": "p",
+						"html": "Prince Chunchu (45) approaches the Second Emperor and offers an alliance, vowing revenge against Baekje.",
+						"ko": "<b>춘추 (45)</b>가 황제를 찾아가 동맹을 청하며, 백제에 대한 복수를 맹세한다."
 					},
 					{
 						"kind": "dialogue",
@@ -57140,13 +56677,13 @@
 					},
 					{
 						"kind": "p",
-						"html": "<b>King Euija</b> grows more watchful of the Great Clans. Tang has gone quiet, and quiet from that direction rarely stays put.",
-						"ko": "<b>의자왕</b>은 대성팔족을 더욱 경계한다. 당이 조용해졌고, 그쪽에서 오는 조용함은 오래 머물지 않는다."
+						"html": "<b>King Euija (49)</b> grows more watchful of the Great Clans. Tang has gone quiet, and quiet from that direction rarely stays put.",
+						"ko": "<b>의자왕 (49)</b>은 대성팔족을 더욱 경계한다. 당이 조용해졌고, 그쪽에서 오는 조용함은 오래 머물지 않는다."
 					},
 					{
 						"kind": "p",
-						"html": "<b>Gyebek</b> already knows what the silence means. A house that fights itself does not need an emperor to finish it.",
-						"ko": "<b>계백</b>은 그 고요함의 뜻을 이미 안다. 스스로와 싸우는 집은, 황제가 없어도 끝난다."
+						"html": "<b>Gyebek (29)</b> already knows what the silence means. A house that fights itself does not need an emperor to finish it.",
+						"ko": "<b>계백 (29)</b>은 그 고요함의 뜻을 이미 안다. 스스로와 싸우는 집은, 황제가 없어도 끝난다."
 					},
 					{
 						"kind": "p",
@@ -58923,7 +58460,6 @@
 				"year": "655",
 				"tone": "exile drama — into island folklore",
 				"subtitle": "유배",
-				"thumbnail": "scene-gyebek-who-am-i-27",
 				"badges": [
 					"flag:baekje",
 					"flag:tamla"
@@ -72742,7 +72278,7 @@
 						"ratio": 2,
 						"tone": "#e5e7eb",
 						"alt": "Court women collapsed in mourning at the Flower Cliffs above the water",
-						"at": "Nobody counts them. Nobody",
+						"at": "In the Flower Cliffs, the concubines of Euija throw them",
 						"prompt": "Cinematic historical illustration of collapsed mourning, Three Kingdoms of Samhan / Tang era (7th century), scene: Sabi Palace, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"tempImage": "/temp/collapsed-mourning.jpg"
 					},
@@ -73090,6 +72626,11 @@
 						"ko": "이에 왕과 태자 효와 여러 성이 모두 항복하였다.",
 						"html": "Thereupon the king and Crown Prince Hyo, together with the several fortresses, all surrendered.",
 						"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 20 (660); Lee Byong-do ed., vol. 1, p. 386"
+					},
+					{
+						"kind": "p",
+						"html": "In the Flower Cliffs, the concubines of Euija throw themselves off into the water to avoid capture.",
+						"ko": "낙화암에서 의자의 궁녀들이 사로잡히지 않으려 물로 몸을 던진다."
 					},
 					{
 						"kind": "p",
@@ -74567,7 +74108,7 @@
 						"id": "chiljido-bestowal",
 						"ratio": 2,
 						"tone": "#be185d",
-						"at": "sends the King of Wa a sword with seven branches",
+						"at": "bestows the Seven-Branched Sword",
 						"alt": "King Geunchogo bestows the Seven-Branched Sword on the King of Wa as a symbol of friendship",
 						"prompt": "Cinematic historical illustration of the bestowal of the Chiljido, Three Kingdoms of Samhan / Tang era (371), scene: King Geunchogo of Baekje presenting the seven-branched iron sword across a ceremonial hall to the King of Wa, gold inlay catching lamplight, friendship as a blade with six arms, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
 						"src": "/img_chiljido_bestowal.png"
@@ -81726,7 +81267,7 @@
 				"sub": "July",
 				"tone": "psychopomp elegy",
 				"subtitle": "김유신, 죽다",
-				"thumbnail": "love-hanja",
+				"thumbnail": "lake_remembers_01",
 				"badges": [
 					"flag:silla"
 				],
@@ -82642,11 +82183,104 @@
 					},
 					{
 						"kind": "p",
+						"html": "<b>The emperor has picked a new king of Silla. It’s Munmu’s little brother, and he’s coming home with an army…!</b>",
+						"ko": "<b>황제가 신라의 새 왕을 골랐다. 문무의 친아우다. 그리고 그는 군대를 끌고 집으로 온다…!</b>"
+					}
+				],
+				"place": "steam_cavern"
+			},
+			{
+				"year": "674",
+				"accent": "#b91c1c",
+				"tone": "brothers’ tragedy",
+				"subtitle": "김인문",
+				"badges": [
+					"flag:tang",
+					"flag:silla"
+				],
+				"music": "The Long War",
+				"title": "Inmun",
+				"images": [],
+				"blocks": [
+					{
+						"kind": "scene",
+						"label": "The Other King",
+						"ko": "또 하나의 임금"
+					},
+					{
+						"kind": "p",
+						"html": "The Third Emperor takes back every title he ever gave Munmu. Then he names a new king: Munmu's little brother, Inmun. Inmun has lived in the emperor's city since he was twenty-two. An official has to tell him he's going home. With an army.",
+						"ko": "황제는 문무에게 준 관작을 모두 거둬들인다. 그리고 새 왕을 세운다. 문무의 아우, 인문이다. 인문은 스물둘부터 황제의 도성에서 살아 왔다. 고국에 간다는 말을 관리에게서 들어야 한다. 군대를 데리고."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6fb0d8",
+						"person": "inmun",
+						"lines": [
+							"폐하, 그는 신의 형입니다.",
+							"…예. 알겠습니다. 가겠습니다."
+						],
+						"en": [
+							"Majesty, he is my brother.",
+							"…Yes. I understand. I will go."
+						],
+						"zh": [
+							"陛下，他是臣的兄長。",
+							"……是。臣明白。臣去。"
+						],
+						"zhLatn": [
+							"Bìxià, tā shì chén de xiōngzhǎng.",
+							"…Shì. Chén míngbai. Chén qù."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "The Black Tortoise gets the army. Inmun gets the title, a new robe in his country's colour, and a seat on the general's ship. It faces backwards, toward the capital. The clerks are very particular about where a puppet sits.",
+						"ko": "군대는 현무에게 간다. 인문에게는 칭호와 제 나라 빛깔의 새 도포, 그리고 장군의 배 위 자리 하나가 주어진다. 그 자리는 뒤를 본다. 황제의 도성 쪽이다. 서기들은 꼭두각시가 어디 앉는지에 무척 까다롭다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "liurengui",
+						"lines": [
+							"전하, 처소가 이 모양이라 송구합니다. 임금은 대개 제 백성을 더 많이 거느리고 다니시지요.",
+							"아마 마중들 나오겠지요."
+						],
+						"en": [
+							"Your Majesty will forgive the accommodations. A king usually travels with more of his own people.",
+							"I expect they’ll come out to meet you."
+						],
+						"chip": "#1f2937"
+					},
+					{
+						"kind": "dialogue",
+						"person": "inmun",
+						"lines": [
+							"마중 나오는 건 군대일 겁니다, 장군.",
+							"…형님이 알천에서 헤엄을 가르쳐 주셨지요. 저는 여섯 살이었습니다. 내내 제 턱을 받쳐 주시면서 안 받치고 있다고 하셨어요."
+						],
+						"en": [
+							"They will come out to meet the army, General.",
+							"…My brother taught me to swim in the Alcheon. I was six. He held my chin up the whole time and told me he wasn’t."
+						],
+						"chip": "#6fb0d8"
+					},
+					{
+						"kind": "p",
+						"html": "He goes as far as the coast. The next spring Munmu sends tribute and an apology worded so beautifully that the emperor restores his titles, and Inmun is quietly sent back to Chang’an, a king of nowhere, to live there for the rest of his life.",
+						"ko": "그는 바닷가까지 간다. 이듬해 봄, 문무가 공물과 함께 더없이 아름다운 말로 쓴 사죄문을 보내자 황제는 그의 관작을 되돌려 주고, 인문은 조용히 장안으로 돌려보내진다. 어디의 왕도 아닌 채로, 그곳에서 남은 생을 산다."
+					},
+					{
+						"kind": "p",
+						"html": "Munmu reads the apology over twice before he sends it. He does not show it to anyone. The court never learns which of the beautiful phrases was the one that worked, and the king never says whether he wrote it for the emperor or for the brother on the ship.",
+						"ko": "문무는 사죄문을 보내기 전에 두 번 읽는다. 아무에게도 보여 주지 않는다. 조정은 그 아름다운 구절 가운데 어느 것이 통했는지 끝내 모르고, 왕은 그것을 황제에게 쓴 것인지 배 위의 아우에게 쓴 것인지 끝내 말하지 않는다."
+					},
+					{
+						"kind": "p",
 						"html": "<b>Kim Punghun said he could wait for a ship. The ship is here…!</b>",
 						"ko": "<b>김풍훈은 배를 기다릴 수 있다고 했다. 그 배가 왔다…!</b>"
 					}
 				],
-				"place": "steam_cavern"
+				"place": "changan"
 			},
 			{
 				"year": "675",

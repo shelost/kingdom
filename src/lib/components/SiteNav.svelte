@@ -16,7 +16,7 @@
 	let path = $derived(page.url.pathname);
 </script>
 
-<nav class="site-nav" class:inline aria-label="Site">
+<nav class="site-nav liquid-glass" class:inline aria-label="Site">
 	{#each SITE_LINKS as link (link.href)}
 		{@const href = hrefWithNsfw(resolve(link.href), page.url)}
 		{@const active = isSiteLinkActive(link, path, href)}
@@ -34,7 +34,7 @@
 </nav>
 
 <style>
-	/* ————— Liquid glass: one pill, the links as segments inside it ————— */
+	/* ————— Liquid glass (app.css): one pill, the links as segments inside it ————— */
 	.site-nav {
 		display: inline-flex;
 		align-items: center;
@@ -43,21 +43,7 @@
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
-		border: 1px solid color-mix(in srgb, white 32%, transparent);
 		border-radius: var(--radius-pill);
-		background:
-			linear-gradient(
-				180deg,
-				color-mix(in srgb, white 24%, transparent),
-				color-mix(in srgb, white 4%, transparent) 60%
-			),
-			color-mix(in srgb, var(--bg) 52%, transparent);
-		backdrop-filter: blur(18px) saturate(180%);
-		-webkit-backdrop-filter: blur(18px) saturate(180%);
-		box-shadow:
-			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
-			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
-			var(--shadow-float);
 	}
 
 	.site-nav:not(.inline) {
