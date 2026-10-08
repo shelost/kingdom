@@ -1537,7 +1537,7 @@ export const SCENES: Scene[] = [
 		],
 		frameMs: 2800,
 		title: 'The Five Thousand',
-		place: 'Hwangsanbeol — five thousand against the arithmetic',
+		place: 'Yellow Mountain — five thousand against the arithmetic',
 		audio: youtube({
 			youtubeId: 'FLI7jJOQS5k',
 			title: 'Going the Distance',

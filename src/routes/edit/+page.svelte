@@ -106,7 +106,7 @@
 
 <div class="editor">
 	<aside class="side">
-		<a class="back" href="/">← View story</a>
+		<a class="back" href="/read">← View story</a>
 		<nav>
 			{#each story as ch (ch.__id)}
 				<button class="nav-ch" onclick={() => jump(ch.__id)}>

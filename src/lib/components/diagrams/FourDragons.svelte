@@ -1,11 +1,5 @@
-<script lang="ts">
-	/** Second Emperor’s Four Dragons — Taizong roster; Blue Dragon alone continues as a Beast. */
-	import type { DiagramProps } from './registry';
-	import ChartLabel from './ChartLabel.svelte';
-
-	let { active = false }: DiagramProps = $props();
-
-	const DRAGONS = [
+<script module lang="ts">
+	export const DRAGONS = [
 		{ ko: '백룡', en: 'White', han: '白龍', who: '계필하력', whoEn: 'Qibi Heli', x: 54, fill: '#c5d0dc', stroke: '#1e293b', overlap: false },
 		{ ko: '적룡', en: 'Red', han: '赤龍', who: '아사나사이', whoEn: 'Ashina She’er', x: 138, fill: '#ff4444', stroke: '#7f1d1d', overlap: false },
 		{ ko: '청룡', en: 'Blue', han: '青龍', who: '이세적', whoEn: 'Li Shiji', x: 222, fill: '#3b82ff', stroke: '#1e3a8a', overlap: true },
@@ -13,6 +7,18 @@
 	] as const;
 </script>
 
+<script lang="ts">
+	/** Second Emperor’s Four Dragons — Taizong roster; Blue Dragon alone continues as a Beast. */
+	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
+
+	let { active = false, flat = false }: DiagramProps = $props();
+
+</script>
+
+<KitStage id="four-dragons" {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 300"
 	class="dg"
@@ -44,6 +50,8 @@
 	<text class="foot" style="--d: 980" x="180" y="278">사룡 · Four Dragons · 645 · Blue Dragon Li Shiji alone survives into the beasts</text>
 	<text class="foot sub" style="--d: 1020" x="180" y="290">Two Turks, a marshal, and the empress’s brother — the Heavenly Qaghan’s banners</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

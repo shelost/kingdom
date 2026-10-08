@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { chapterNumber, chapters, entryId, partId } from '$lib/story';
+	import { arcNumber, chapters, entryId, partId } from '$lib/story';
 	import {
-		groupEpisodes,
+		chapterEpisodes,
 		partLabel,
 		spineEntries,
 		spineLabel,
@@ -14,7 +14,7 @@
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
-	import { SITE_LINKS } from '$lib/siteLinks';
+	import { READ_PATH, SITE_LINKS } from '$lib/siteLinks';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
 		reading,
@@ -30,8 +30,21 @@
 	} from '$lib/reading.svelte';
 	import HudSearch from './HudSearch.svelte';
 
-	/** Bound by the story layout so the reading shell + plate shift together. */
-	let { open = $bindable(true) } = $props();
+	let {
+		open = $bindable(true),
+		directory = false
+	}: {
+		/** Bound by the story layout so the reading shell + plate shift together. */
+		open?: boolean;
+		/** On /episodes: always drawn, follows that page's own sections, and jumps scroll it. */
+		directory?: boolean;
+	} = $props();
+
+	/** The reader draws the TOC once past the cover; the directory always does. */
+	let shown = $derived(directory || scriptUi.inScript);
+
+	/** Scroll position drives the markers, except in the reader's one-episode scope. */
+	const followsScroll = () => directory || reading.viewScope !== 'episodes';
 
 	/** Korean reading: chapter, group and episode rows show their Korean titles. */
 	let ko = $derived(reading.lang === 'ko');
@@ -42,21 +55,19 @@
 	let scrollProgress = $state(0);
 
 	let active = $derived(
-		reading.viewScope === 'episodes'
-			? (episodes[reading.episodeIndex]?.chapterId ?? chapters[0]?.id)
-			: scrollActive
+		followsScroll()
+			? scrollActive
+			: (episodes[reading.episodeIndex]?.chapterId ?? chapters[0]?.id)
 	);
 	let activeEntry = $derived(
-		reading.viewScope === 'episodes'
-			? (episodes[reading.episodeIndex]?.id ?? '')
-			: scrollActiveEntry
+		followsScroll() ? scrollActiveEntry : (episodes[reading.episodeIndex]?.id ?? '')
 	);
 	let progress = $derived(
-		reading.viewScope === 'episodes'
-			? episodes.length > 1
+		followsScroll()
+			? scrollProgress
+			: episodes.length > 1
 				? reading.episodeIndex / (episodes.length - 1)
 				: 1
-			: scrollProgress
 	);
 
 	let panelEl: HTMLDivElement | undefined = $state();
@@ -209,7 +220,7 @@
 		if (tocOverlays()) open = false;
 		const io = new IntersectionObserver(
 			(entries) => {
-				if (reading.viewScope === 'episodes') return;
+				if (!followsScroll()) return;
 				for (const e of entries) {
 					if (!e.isIntersecting) continue;
 					const id = (e.target as HTMLElement).dataset.storyId;
@@ -223,20 +234,21 @@
 		// entry-level tracking + reading progress
 		const ioEntry = new IntersectionObserver(
 			(entries) => {
-				if (reading.viewScope === 'episodes') return;
+				if (!followsScroll()) return;
 				for (const e of entries) {
 					if (!e.isIntersecting) continue;
 					const id = (e.target as HTMLElement).dataset.storyId;
 					if (id) scrollActiveEntry = id;
 				}
 			},
-			{ rootMargin: '-20% 0px -70% 0px' }
+			/* Directory rows are short: a thin line just under where a jump lands them. */
+			{ rootMargin: directory ? '-12% 0px -87% 0px' : '-20% 0px -70% 0px' }
 		);
 
 		refreshObservers = () => {
 			io.disconnect();
 			ioEntry.disconnect();
-			const script = storyRoot();
+			const script: ParentNode | null = directory ? document : storyRoot();
 			if (!script) return;
 			for (const ch of chapters) {
 				const el = script.querySelector(`[data-story-id="${CSS.escape(ch.id)}"]`);
@@ -258,7 +270,7 @@
 
 		let scrollRaf = 0;
 		const onScroll = () => {
-			if (reading.viewScope === 'episodes') return;
+			if (!followsScroll()) return;
 			if (scrollRaf) return;
 			scrollRaf = requestAnimationFrame(() => {
 				scrollRaf = 0;
@@ -288,7 +300,7 @@
 
 	/** Re-bind observers when returning to full scroll. */
 	$effect(() => {
-		if (reading.viewScope !== 'full') return;
+		if (directory || reading.viewScope !== 'full') return;
 		const id = requestAnimationFrame(() => refreshObservers?.());
 		return () => cancelAnimationFrame(id);
 	});
@@ -317,6 +329,11 @@
 		/* On a phone the drawer sits over the page it just jumped to. */
 		if (tocOverlays()) open = false;
 		try {
+			if (directory) {
+				jumpInDirectory(id);
+				return;
+			}
+
 			const dest = canonicalHashId(id);
 			stripStoryHash();
 
@@ -325,10 +342,7 @@
 				return;
 			}
 
-			const reduce =
-				typeof matchMedia !== 'undefined' &&
-				matchMedia('(prefers-reduced-motion: reduce)').matches;
-			const behavior: ScrollBehavior = reduce ? 'auto' : 'smooth';
+			const behavior = scrollBehavior();
 			const idx = resolveEpisodeIndex(dest);
 			if (idx >= 0) reading.episodeIndex = idx;
 
@@ -346,16 +360,37 @@
 		}
 	}
 
+	function scrollBehavior(): ScrollBehavior {
+		return typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
+			? 'auto'
+			: 'smooth';
+	}
+
+	/** The directory page tags its part, arc and episode rows with the same ids the TOC rows carry. */
+	function jumpInDirectory(id: string) {
+		const el = document.querySelector<HTMLElement>(`[data-story-id="${CSS.escape(id)}"]`);
+		if (!el) return;
+		if (el.matches('li')) {
+			scrollActiveEntry = id;
+			scrollActive = el.closest<HTMLElement>('section.arc')?.dataset.storyId ?? scrollActive;
+		} else {
+			scrollActive = el.matches('section.arc') ? id : scrollActive;
+			scrollActiveEntry = el.matches('section.arc') ? '' : id;
+		}
+		el.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
+	}
+
 	function toggle() {
-		if (!scriptUi.inScript) return;
+		if (!shown) return;
 		open = !open;
 	}
 
-	let onTitle = $derived(reading.viewScope === 'episodes' && reading.episodeIndex === 0);
+	let onTitle = $derived(!directory && reading.viewScope === 'episodes' && reading.episodeIndex === 0);
 
 	function goToTitle() {
 		if (tocOverlays()) open = false;
-		goToEpisode(0);
+		if (directory) window.scrollTo({ top: 0, behavior: scrollBehavior() });
+		else goToEpisode(0);
 	}
 
 </script>
@@ -386,26 +421,26 @@
 
 <div
 	class="progress"
-	class:in={scriptUi.inScript}
+	class:in={shown}
 	style:transform="scaleX({progress})"
 	aria-hidden="true"
 ></div>
 
 <button
 	class="toc-toggle"
-	class:in={scriptUi.inScript && !open}
+	class:in={shown && !open}
 	type="button"
 	aria-expanded={open}
 	aria-controls="toc-panel"
-	aria-hidden={!scriptUi.inScript || open}
-	tabindex={scriptUi.inScript && !open ? 0 : -1}
+	aria-hidden={!shown || open}
+	tabindex={shown && !open ? 0 : -1}
 	aria-label="Open table of contents"
 	onclick={toggle}
 >
 	☰
 </button>
 
-{#if open && scriptUi.inScript}
+{#if open && shown}
 	<button
 		type="button"
 		class="toc-scrim"
@@ -417,10 +452,10 @@
 
 <nav
 	class={['toc', { open, floating: tocUi.floating }]}
-	class:in={scriptUi.inScript}
+	class:in={shown}
 	id="toc-panel"
 	aria-label="Table of contents"
-	aria-hidden={!open || !scriptUi.inScript}
+	aria-hidden={!open || !shown}
 >
 	<div class="card" class:liquid-glass={tocUi.floating}>
 	<div class="toc-head">
@@ -432,7 +467,7 @@
 			tabindex={open ? 0 : -1}
 			onclick={goToTitle}
 		>
-			<img class="toc-logo" src="/samhan_logo.svg" alt="" />
+			<img class="toc-logo" src="/samhan_logo.png" alt="" />
 			<span class="toc-title-en">King for All</span>
 		</button>
 		<button
@@ -460,7 +495,7 @@
 			<p class="toc-label">{ko ? '둘러보기' : 'Explore'}</p>
 			<div class="toc-site-links">
 				{#each SITE_LINKS as link (link.href)}
-					{#if link.href !== '/'}
+					{#if link.href !== READ_PATH}
 						<a href={hrefWithNsfw(resolve(link.href), page.url)} tabindex={open ? 0 : -1}>
 							<span class="material-symbols-outlined" aria-hidden="true">{link.icon}</span>
 							{link.label}
@@ -494,8 +529,8 @@
 				onclick={() => jump(ch.id)}
 			>
 				<span class="pi-title">
-					{#if chapterNumber(ci) !== null}
-						<span class="pi-num">{chapterNumber(ci)}</span>
+					{#if arcNumber(ci) !== null}
+						<span class="pi-num">{arcNumber(ci)}</span>
 						<span class="pi-dot" aria-hidden="true">·</span>
 					{/if}
 					{(ko && ch.korean) || ch.title}
@@ -506,7 +541,7 @@
 			<div class="sub">
 				{#each spineEntries(ch) as en (ch.id + en.title)}
 					{@const eid = entryId(ch.id, en.title)}
-					{@const group = groupEpisodes(ch, en)}
+					{@const group = chapterEpisodes(ch, en)}
 					{#if group.length}
 						<div class="ep-block">
 							<button

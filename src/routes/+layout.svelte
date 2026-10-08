@@ -2,6 +2,7 @@
 	import '../app.css';
 	import '$lib/components/diagrams/orgChartTheme.css';
 	import { beforeNavigate, goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { untrack } from 'svelte';
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
@@ -47,12 +48,12 @@
 			dirty = true;
 		}
 
-		/* Episode encoding only travels on the chronicle home (`?ep=jumong`).
+		/* Episode encoding only travels on the chronicle reader (`/read?ep=jumong`).
 		   Carry `ep` only when the destination omitted it AND we are still in
 		   episode scope — never clobber an explicit new `ep`, and never glue
 		   the old episode back on after Full mode drops the param. */
-		const toStory = next.pathname === '/' || next.pathname === '';
-		const fromStory = from.pathname === '/' || from.pathname === '';
+		const toStory = next.pathname === resolve('/read');
+		const fromStory = from.pathname === resolve('/read');
 		if (toStory && fromStory) {
 			const ep = from.searchParams.get(EP_QUERY);
 			const view = from.searchParams.get(VIEW_QUERY);

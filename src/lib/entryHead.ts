@@ -7,7 +7,8 @@ import type { Block, Entry } from '$lib/story';
 import { EPISODE_KIND_META, episodeKindsOf } from '$lib/episodeKinds';
 import { FLAG_LABEL, flagOf, flagSrc } from '$lib/flags';
 import { peopleOfSlot } from '$lib/imagePeople';
-import { avatarOf, byId, colorOf, isPlaceholderArt, koreanOf, nameOf } from '$lib/people';
+import { avatarOf, byId, colorOf, isPlaceholderArt, koreanOf, nameOf, wearsSquare } from '$lib/people';
+import { standings } from '$lib/chat';
 
 export type EntryTag = {
 	key: string;
@@ -25,6 +26,10 @@ export type CastMember = {
 	name: string;
 	ko?: string;
 	avatar: string | null;
+	/** The avatar is a stand-in silhouette, not a likeness. */
+	silhouette: boolean;
+	/** The monarch's (or chief god's) square frame. */
+	square: boolean;
 	color: string;
 };
 
@@ -82,18 +87,29 @@ function castIds(en: Entry, limit: number): string[] {
 		.map(([id]) => id);
 }
 
-/** The few people an episode is about, named and painted as they are in its year. */
+/**
+ * The few people an episode is about, named and painted as they first speak in
+ * it: an heir under a living king is still the prince, a card's look holds.
+ */
 export function entryCast(en: Entry, year: number | null = null, limit = 5): CastMember[] {
 	const out: CastMember[] = [];
+	const standing = standings(en.blocks, year);
 	for (const id of castIds(en, limit)) {
 		const p = byId.get(id);
 		if (!p) continue;
-		const art = avatarOf(p, id, year);
+		const first = en.blocks.find(
+			(b): b is Extract<Block, { kind: 'dialogue' }> => b.kind === 'dialogue' && b.person === id
+		);
+		const stood = first ? standing.get(first) : undefined;
+		const look = first?.look ?? stood?.look;
+		const art = avatarOf(p, id, year, look);
 		out.push({
 			id,
-			name: nameOf(p, year),
-			ko: koreanOf(p, year),
-			avatar: art && !isPlaceholderArt(art) ? art : null,
+			name: nameOf(p, year, look),
+			ko: koreanOf(p, year, look),
+			avatar: art,
+			silhouette: isPlaceholderArt(art),
+			square: !stood?.heir && wearsSquare(p, year, look),
 			color: colorOf(p)
 		});
 	}

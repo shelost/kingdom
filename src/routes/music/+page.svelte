@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
+	import SiteNav from '$lib/components/SiteNav.svelte';
 	import SheetMusic from '$lib/components/SheetMusic.svelte';
 	import {
 		LEITMOTIFS,
@@ -176,7 +176,7 @@
 <main class="music">
 	<header class="mast">
 		<div class="mast-nav">
-			<SiteNavSpace />
+			<SiteNav />
 			<span class="dot" aria-hidden="true">·</span>
 			<span>{total} motifs</span>
 		</div>

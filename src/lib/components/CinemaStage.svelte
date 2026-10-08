@@ -31,6 +31,7 @@
 	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { stageText } from '$lib/stageText';
+	import { arcLabel } from '$lib/tocTree';
 	import { buildBeats } from '$lib/beats';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import {
@@ -47,6 +48,7 @@
 		byId,
 		colorOf,
 		hangulInitial,
+		wearsSquare,
 		isPlaceholderArt,
 		koreanOf,
 		nameOf,
@@ -577,7 +579,7 @@
 					in:fly={{ y: reduce ? 0 : -10, duration: reduce ? 0 : 360 }}
 					out:fade={{ duration: reduce ? 0 : 460 }}
 				>
-					<span class="season">Season {episode.season} · {episode.chapter.title}</span>
+					<span class="season">{arcLabel(episode.arc)} · {episode.chapter.title}</span>
 					<span class="ep">
 						Episode {episode.episode}
 						<span class="of">/</span>
@@ -648,7 +650,11 @@
 							{#if bust}
 								<img {...storyImg(bust, { kind: 'portrait', alt: '', sizes: '176px' })} />
 							{:else}
-								<span class="initial" aria-hidden="true">{hangulInitial(p)}</span>
+								<span
+									class="initial"
+									class:is-monarch={wearsSquare(p, reading.year, reading.look)}
+									aria-hidden="true">{hangulInitial(p)}</span
+								>
 							{/if}
 						</button>
 					{/key}
@@ -759,7 +765,7 @@
 				/>
 			{/if}
 			<div class="cold-inner" in:fly={{ y: reduce ? 0 : 16, duration: reduce ? 0 : 520 }}>
-				<span class="cold-season">Season {episode.season} · {episode.chapter.title}</span>
+				<span class="cold-season">{arcLabel(episode.arc)} · {episode.chapter.title}</span>
 				<h2 class="cold-title">
 					<span class="cold-num">Episode {episode.episode}</span>
 					<span class="cold-dot" aria-hidden="true">·</span>
@@ -1158,7 +1164,7 @@
 		place-items: center;
 		width: 4.5rem;
 		height: 4.5rem;
-		border-radius: 50%;
+		border-radius: var(--avatar-radius, 50%);
 		font-family: var(--serif);
 		font-size: 2rem;
 		font-weight: 700;

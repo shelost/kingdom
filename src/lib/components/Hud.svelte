@@ -7,9 +7,6 @@
 		loadLang,
 		loadMode,
 		loadViewScope,
-		episodes,
-		episodeNavLabel,
-		goToEpisode,
 		type Lang,
 		type ReadMode,
 		type ViewScope
@@ -19,9 +16,13 @@
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { editUi } from '$lib/editUi.svelte';
 	import { tocUi, loadTocFloating, setTocFloating } from '$lib/tocUi.svelte';
+	import { toggleTheme } from '$lib/themeUi.svelte';
+	import { dialogueUi, loadDialogueStyle, setDialogueStyle, type DialogueStyle } from '$lib/dialogueUi.svelte';
+	import ThemeIcon from './ThemeIcon.svelte';
 	import { onMount } from 'svelte';
 	import SpeakIcon from './SpeakIcon.svelte';
 	import SiteNav from './SiteNav.svelte';
+	import EpisodePicker from './EpisodePicker.svelte';
 
 	const LANGS: { id: Lang; label: string; hint: string }[] = [
 		{ id: 'both', label: 'A/한', hint: 'Show everything' },
@@ -45,6 +46,13 @@
 		}
 	];
 
+	const DIALOGUE_STYLES: { id: DialogueStyle; label: string; hint: string }[] = [
+		{ id: 'script', label: 'Script', hint: 'Lines set as a screenplay' },
+		{ id: 'comic', label: 'Comic', hint: 'Message bubbles, and balloons over the stills where the speaker is in frame' },
+		{ id: 'tweet', label: 'Tweet', hint: 'Every line a post; exchanges run as threads' },
+		{ id: 'hybrid', label: 'Hybrid', hint: 'Messages between people close to each other; posts for councils, rivals and strangers' }
+	];
+
 	const SCOPES: { id: ViewScope; label: string; short: string; hint: string }[] = [
 		{
 			id: 'episodes',
@@ -62,6 +70,7 @@
 		loadMode();
 		loadViewScope();
 		loadTocFloating();
+		loadDialogueStyle();
 		const endMusic = initMusic();
 		const endSpeech = initSpeech();
 		return () => {
@@ -104,6 +113,16 @@
 </script>
 
 <div class="hud" class:in={scriptUi.inScript} aria-hidden={!scriptUi.inScript}>
+	<button
+		type="button"
+		class="theme-text"
+		tabindex={scriptUi.inScript ? 0 : -1}
+		onclick={toggleTheme}
+		aria-label="Toggle light and dark mode"
+		title="Toggle light and dark mode"
+	>
+		<ThemeIcon />
+	</button>
 	<button
 		type="button"
 		class="settings-text"
@@ -184,6 +203,22 @@
 		</div>
 
 		<div class="hud-cluster">
+			<span class="hud-kicker">Dialogue{#if showKo}<span class="hud-kicker-ko">대사</span>{/if}</span>
+			<div class="mode" role="group" aria-label="Dialogue style">
+				{#each DIALOGUE_STYLES as d (d.id)}
+					<button
+						class:active={dialogueUi.style === d.id}
+						title={d.hint}
+						aria-pressed={dialogueUi.style === d.id}
+						onclick={() => setDialogueStyle(d.id)}
+					>
+						{d.label}
+					</button>
+				{/each}
+			</div>
+		</div>
+
+		<div class="hud-cluster">
 			<span class="hud-kicker">Episode{#if showKo}<span class="hud-kicker-ko">회차</span>{/if}</span>
 			<div class="hud-cluster-row">
 				<div class="scope" role="group" aria-label="View">
@@ -200,18 +235,9 @@
 					{/each}
 				</div>
 				{#if reading.viewScope === 'episodes'}
-					<select
-						class="ep-pick"
-						aria-label="Episode"
-						bind:value={
-							() => reading.episodeIndex,
-							(i) => goToEpisode(i)
-						}
-					>
-						{#each episodes as ep, i (ep.id)}
-							<option value={i}>{episodeNavLabel(ep)}</option>
-						{/each}
-					</select>
+					<div class="ep-pick">
+						<EpisodePicker />
+					</div>
 				{/if}
 			</div>
 		</div>
@@ -276,6 +302,9 @@
 		top: max(1rem, env(safe-area-inset-top, 0px));
 		right: max(1.15rem, env(safe-area-inset-right, 0px));
 		z-index: 96;
+		display: flex;
+		align-items: center;
+		gap: 0.55rem;
 		font-family: var(--ui);
 		font-size: 13px;
 		font-weight: 500;
@@ -302,6 +331,28 @@
 	:global(html.is-cinema) .hud.in:hover,
 	:global(html.is-cinema) .hud.in:focus-within {
 		opacity: 1;
+	}
+
+	.theme-text {
+		display: grid;
+		place-items: center;
+		padding: 0.2rem;
+		color: var(--fg-faint);
+		background: transparent;
+		border: none;
+		cursor: pointer;
+		-webkit-tap-highlight-color: transparent;
+	}
+
+	.theme-text :global(.material-symbols-outlined) {
+		font-size: 1.05rem;
+		font-variation-settings: 'wght' 500;
+	}
+
+	.theme-text:hover,
+	.theme-text:focus-visible {
+		color: var(--fg);
+		outline: none;
 	}
 
 	.settings-text {
@@ -521,34 +572,14 @@
 	}
 
 	.ep-pick {
-		font: inherit;
-		font-size: 13px;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
-		color: var(--fg);
-		max-width: min(14rem, 42vw);
-		min-height: 1.85rem;
-		padding: 0.22rem 0.7rem;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		background: color-mix(in srgb, var(--bg) 35%, transparent);
-		appearance: none;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		background-image: none;
-		cursor: pointer;
-		text-overflow: ellipsis;
+		display: flex;
+		min-width: 0;
+		max-width: min(16rem, 60vw);
 	}
 
-	.ep-pick::-ms-expand {
-		display: none;
-	}
-
-	.ep-pick:hover,
-	.ep-pick:focus-visible {
-		color: var(--fg);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
-		outline: none;
+	.ep-pick :global(.trigger) {
+		width: 100%;
+		height: 1.95rem;
 	}
 
 	.mode button,
@@ -647,7 +678,8 @@
 		.lang button,
 		.music,
 		/* Same glass pill as the menu button, so prose never reads through it. */
-		.settings-text {
+		.settings-text,
+		.theme-text {
 			min-height: 2.75rem;
 			padding: 0 0.85rem;
 			border: 1px solid var(--hairline);

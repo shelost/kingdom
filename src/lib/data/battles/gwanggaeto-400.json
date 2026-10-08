@@ -1,0 +1,801 @@
+{
+	"id": "gwanggaeto-400",
+	"title": "The Southern Campaign",
+	"ko": "경자년 남정",
+	"hanja": "庚子南征",
+	"year": 400,
+	"place": "surabol",
+	"scale": {
+		"km": 20,
+		"px": 100
+	},
+	"terrain": [
+		{
+			"kind": "sea",
+			"points": [
+				[
+					720,
+					0
+				],
+				[
+					1000,
+					0
+				],
+				[
+					1000,
+					560
+				],
+				[
+					0,
+					560
+				],
+				[
+					0,
+					535
+				],
+				[
+					200,
+					530
+				],
+				[
+					330,
+					505
+				],
+				[
+					366,
+					485
+				],
+				[
+					400,
+					515
+				],
+				[
+					470,
+					522
+				],
+				[
+					535,
+					556
+				],
+				[
+					575,
+					540
+				],
+				[
+					628,
+					505
+				],
+				[
+					690,
+					420
+				],
+				[
+					748,
+					300
+				],
+				[
+					778,
+					160
+				],
+				[
+					805,
+					50
+				],
+				[
+					730,
+					35
+				]
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					285,
+					0
+				],
+				[
+					291,
+					60
+				],
+				[
+					292,
+					180
+				],
+				[
+					310,
+					300
+				],
+				[
+					322,
+					380
+				],
+				[
+					400,
+					388
+				],
+				[
+					486,
+					372
+				],
+				[
+					530,
+					420
+				],
+				[
+					553,
+					480
+				],
+				[
+					540,
+					560
+				]
+			],
+			"width": 14,
+			"label": "Nakdong river",
+			"ko": "낙동강",
+			"labelAt": [
+				235,
+				250
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					640,
+					150
+				],
+				[
+					660,
+					110
+				],
+				[
+					690,
+					70
+				],
+				[
+					720,
+					35
+				]
+			],
+			"width": 7
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				550,
+				255
+			],
+			"r": 34
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				425,
+				60
+			],
+			"r": 30
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				400,
+				280
+			],
+			"r": 26
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				640,
+				372
+			],
+			"r": 22
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					470,
+					0
+				],
+				[
+					530,
+					58
+				],
+				[
+					600,
+					108
+				],
+				[
+					650,
+					130
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					650,
+					130
+				],
+				[
+					612,
+					210
+				],
+				[
+					606,
+					285
+				],
+				[
+					580,
+					360
+				],
+				[
+					560,
+					420
+				],
+				[
+					530,
+					455
+				],
+				[
+					504,
+					469
+				]
+			]
+		},
+		{
+			"kind": "city",
+			"at": [
+				650,
+				130
+			],
+			"side": "silla",
+			"label": "Surabol",
+			"ko": "서라벌",
+			"labelAt": [
+				700,
+				112
+			]
+		},
+		{
+			"kind": "fort",
+			"at": [
+				504,
+				469
+			],
+			"side": "wa",
+			"label": "Jongbal fortress",
+			"ko": "종발성",
+			"labelAt": [
+				395,
+				462
+			],
+			"hold": {
+				"jongbal": "goguryeo"
+			}
+		},
+		{
+			"kind": "label",
+			"at": [
+				370,
+				415
+			],
+			"label": "Imna-Gara",
+			"ko": "임나가라"
+		},
+		{
+			"kind": "label",
+			"at": [
+				395,
+				22
+			],
+			"label": "via Namgeoseong",
+			"ko": "남거성을 거쳐"
+		},
+		{
+			"kind": "label",
+			"at": [
+				890,
+				300
+			],
+			"label": "over the sea to Wa",
+			"ko": "바다 건너 왜"
+		}
+	],
+	"sides": [
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		},
+		{
+			"id": "wa",
+			"name": "Wa",
+			"ko": "왜",
+			"color": "#c2185b",
+			"kingdom": "yamato"
+		}
+	],
+	"units": [
+		{
+			"id": "gg-host",
+			"side": "goguryeo",
+			"label": "Horse and foot",
+			"ko": "보기"
+		},
+		{
+			"id": "sl-king",
+			"side": "silla",
+			"label": "Silla king",
+			"ko": "신라 왕",
+			"unrecorded": true
+		},
+		{
+			"id": "wa-west",
+			"side": "wa",
+			"label": "Wa at the walls",
+			"ko": "성 밑의 왜",
+			"unrecorded": true
+		},
+		{
+			"id": "wa-south",
+			"side": "wa",
+			"label": "Wa on the south road",
+			"ko": "남쪽 길의 왜",
+			"unrecorded": true
+		},
+		{
+			"id": "wa-north",
+			"side": "wa",
+			"label": "Wa on the north road",
+			"ko": "북쪽 길의 왜",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "wa",
+			"label": "The Wa inside the walls",
+			"ko": "성 안의 왜",
+			"caption": "The sea-raiders hold every road into the Silla capital and camp under its walls. The king counts their fires from his own parapet. There are more every night.",
+			"captionKo": "바다에서 온 도적들이 신라 도성으로 드는 길을 모두 쥐고 성 밑에 진을 쳤다. 왕은 자기 성가퀴에서 그 불을 센다. 밤마다 늘어난다.",
+			"units": {
+				"sl-king": {
+					"at": [
+						652,
+						132
+					],
+					"men": 1000
+				},
+				"wa-west": {
+					"at": [
+						612,
+						150
+					],
+					"men": 1000,
+					"shape": "scatter"
+				},
+				"wa-south": {
+					"at": [
+						640,
+						182
+					],
+					"men": 1000,
+					"shape": "scatter"
+				},
+				"wa-north": {
+					"at": [
+						585,
+						95
+					],
+					"men": 1000,
+					"shape": "scatter"
+				}
+			},
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						628,
+						160
+					],
+					"label": "more fires every night",
+					"ko": "밤마다 늘어나는 불"
+				}
+			]
+		},
+		{
+			"id": "south",
+			"label": "Fifty thousand ride south",
+			"ko": "오만이 남으로",
+			"caption": "Fifty thousand horse and foot come down the road from the north. The stele names one fortress on the way, then the Silla city, as if nothing in between was worth the chisel.",
+			"captionKo": "보병과 기병 오만이 북쪽 길로 내려온다. 비석은 도중의 성 하나를 적고 곧장 신라성으로 넘어간다. 그 사이엔 끌질할 만한 게 없었다는 듯이.",
+			"units": {
+				"gg-host": {
+					"at": [
+						540,
+						68
+					],
+					"men": 50000,
+					"shape": "column",
+					"facing": 40
+				},
+				"sl-king": {
+					"at": [
+						652,
+						132
+					],
+					"men": 1000
+				},
+				"wa-west": {
+					"at": [
+						612,
+						150
+					],
+					"men": 1000,
+					"shape": "scatter"
+				},
+				"wa-south": {
+					"at": [
+						640,
+						182
+					],
+					"men": 1000,
+					"shape": "scatter"
+				},
+				"wa-north": {
+					"at": [
+						592,
+						100
+					],
+					"men": 1000,
+					"shape": "scatter"
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							470,
+							0
+						],
+						[
+							530,
+							58
+						],
+						[
+							585,
+							96
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "relief",
+			"label": "The Wa let go",
+			"ko": "왜가 물러난다",
+			"caption": "The Goguryeo army has barely arrived and the Wa are already leaving. The red banners come through the Silla gate and keep coming.",
+			"captionKo": "고구려군이 막 닿았을 뿐인데 왜는 벌써 떠나고 있다. 붉은 깃발이 신라의 성문으로 들어오고, 계속 들어온다.",
+			"units": {
+				"gg-host": {
+					"at": [
+						620,
+						112
+					],
+					"men": 50000,
+					"facing": 110
+				},
+				"sl-king": {
+					"at": [
+						652,
+						132
+					],
+					"men": 1000
+				},
+				"wa-west": {
+					"at": [
+						598,
+						238
+					],
+					"men": 1000
+				},
+				"wa-south": {
+					"at": [
+						622,
+						262
+					],
+					"men": 1000
+				},
+				"wa-north": {
+					"at": [
+						592,
+						205
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "wa",
+					"kind": "retreat",
+					"points": [
+						[
+							630,
+							170
+						],
+						[
+							612,
+							225
+						],
+						[
+							606,
+							285
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							580,
+							92
+						],
+						[
+							625,
+							115
+						],
+						[
+							648,
+							128
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "gate",
+					"at": [
+						655,
+						140
+					],
+					"label": "the gate opens",
+					"ko": "성문이 열린다"
+				}
+			]
+		},
+		{
+			"id": "pursuit",
+			"label": "At the Wa's backs",
+			"ko": "왜의 등 뒤를",
+			"caption": "The horsemen ride at the Wa's backs all the way to the Nakdong and into Gaya country. The stele says they chased urgently. For once the stele is understating.",
+			"captionKo": "기병들이 왜의 등 뒤에 바짝 붙어 낙동강까지, 가야 땅까지 달린다. 비석은 급히 쫓았다고 적는다. 이번만큼은 비석이 줄여 말한 것이다.",
+			"units": {
+				"gg-host": {
+					"at": [
+						588,
+						335
+					],
+					"men": 50000,
+					"shape": "column",
+					"facing": 108
+				},
+				"sl-king": {
+					"at": [
+						652,
+						132
+					],
+					"men": 1000
+				},
+				"wa-west": {
+					"at": [
+						536,
+						440
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"wa-south": {
+					"at": [
+						552,
+						425
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"wa-north": {
+					"at": [
+						520,
+						456
+					],
+					"men": 1000,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "pursuit",
+					"points": [
+						[
+							608,
+							240
+						],
+						[
+							592,
+							330
+						],
+						[
+							565,
+							410
+						]
+					],
+					"label": "at their backs",
+					"ko": "등 뒤를 급히"
+				},
+				{
+					"side": "wa",
+					"kind": "retreat",
+					"points": [
+						[
+							575,
+							380
+						],
+						[
+							552,
+							430
+						],
+						[
+							522,
+							458
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "jongbal",
+			"label": "Jongbal opens its gate",
+			"ko": "종발성이 문을 연다",
+			"caption": "At Jongbal fortress the gate opens before the ladders come up. Then the stone breaks off, and most of what the carvers wrote next is gone.",
+			"captionKo": "종발성은 사다리가 올라오기도 전에 문을 연다. 그다음 비석이 깨져 나가고, 새긴 사람들이 이어 쓴 글은 대부분 사라졌다.",
+			"units": {
+				"gg-host": {
+					"at": [
+						548,
+						425
+					],
+					"men": 50000,
+					"facing": 220
+				},
+				"sl-king": {
+					"at": [
+						652,
+						132
+					],
+					"men": 1000
+				},
+				"wa-west": {
+					"at": [
+						522,
+						505
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"wa-south": {
+					"at": [
+						552,
+						512
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"wa-north": {
+					"at": [
+						494,
+						516
+					],
+					"men": 1000,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							560,
+							420
+						],
+						[
+							530,
+							448
+						],
+						[
+							512,
+							463
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						504,
+						469
+					],
+					"label": "yields at once",
+					"ko": "곧 귀복"
+				}
+			]
+		},
+		{
+			"id": "stay",
+			"label": "The horsemen stay",
+			"ko": "기병은 남는다",
+			"caption": "The horsemen ride back to the Silla capital and stay. Soon a Silla king goes north to pay court in person, which the stele notes no Silla king had ever done.",
+			"captionKo": "기병들은 신라 도성으로 돌아와 그대로 머문다. 곧 신라 왕이 몸소 북으로 가서 조공한다. 비석은 일찍이 어느 신라 왕도 그런 적이 없다고 굳이 적어 둔다.",
+			"units": {
+				"gg-host": {
+					"at": [
+						612,
+						160
+					],
+					"men": 50000,
+					"facing": 180
+				},
+				"sl-king": {
+					"at": [
+						652,
+						132
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							560,
+							420
+						],
+						[
+							600,
+							300
+						],
+						[
+							612,
+							210
+						]
+					]
+				}
+			]
+		}
+	],
+	"sources": [
+		"Gwanggaeto Stele, Yeongnak years 9 and 10 (east face)",
+		"Samguk Sagi 3, Annals of Silla, Naemul and Silseong",
+		"Chungju (Jungwon) Goguryeo Stele, on the Goguryeo garrison in Silla"
+	],
+	"note": "The stele gives fifty thousand horse and foot, a march from Namgeoseong to the Silla city full of Wa, the Wa withdrawing as soon as the army arrived, a pursuit at their backs to Jongbal fortress in Imna-Gara, and the fortress yielding at once. Namgeoseong's site is unknown. Jongbal follows the common reading as a fortress of Geumgwan Gaya at Gimhae. The phrase after the surrender, read either as 'Anra garrison troops' or as 'Silla men were posted to guard it', is disputed, and much of the rest of the year's text is lost. The Samguk Sagi says nothing of this campaign; the Goguryeo garrison staying in Silla comes from later records and the Chungju stele. The story's fifty years and hostage princes compress that longer occupation.",
+	"noteKo": "비석이 전하는 것은 보병과 기병 오만, 남거성에서 왜가 가득한 신라성까지의 진군, 관군이 닿자마자 물러난 왜, 그 등 뒤를 쫓아 임나가라 종발성에 이른 추격, 그리고 곧 귀복한 성이다. 남거성의 위치는 알 수 없다. 종발성은 김해 금관가야의 성으로 보는 통설을 따랐다. 항복 뒤에 나오는 '安羅人戍兵'은 '안라의 수비병'으로도, '신라인을 두어 지키게 했다'로도 읽혀 논쟁 중이고, 그해 기사의 나머지는 대부분 지워졌다. 『삼국사기』는 이 원정을 적지 않는다. 고구려군이 신라에 머문 일은 뒷날의 기록과 충주 고구려비에서 나온다. 이야기 속 오십 년과 볼모 왕자들은 그 긴 주둔을 압축한 것이다."
+}

@@ -1,4 +1,5 @@
 import type { Block, Entry, ImageSlot } from '$lib/story';
+import { widgetText } from '$lib/widgets';
 
 /**
  * A beat is a run of blocks plus the artwork that belongs beside it.
@@ -31,7 +32,13 @@ function textOf(b: Block): string {
 		case 'verse':
 			return b.lines.join(' ');
 		case 'hanja':
-			return b.chars.map((c) => c.char + c.gloss).join(' ') + ' ' + (b.after ?? '');
+			return b.chars.map((c) => c.char + c.gloss).join(' ') + ' ' + [b.name, b.note, b.after].filter(Boolean).join(' ');
+		case 'map':
+			return [b.title, b.caption, b.ko].filter(Boolean).join(' ');
+		case 'card':
+			return [b.write, b.sub, b.role, b.caption, b.ko].filter(Boolean).join(' ');
+		case 'term':
+			return [b.hanja, b.reading, b.term, b.html, b.ko].filter(Boolean).join(' ');
 		case 'flashback':
 			return (
 				(b.title ?? '') +
@@ -50,7 +57,7 @@ function textOf(b: Block): string {
 		case 'formation':
 			return [b.title, b.note].filter(Boolean).join(' ');
 		default:
-			return '';
+			return widgetText(b);
 	}
 }
 

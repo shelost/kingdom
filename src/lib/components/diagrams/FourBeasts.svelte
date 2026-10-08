@@ -1,11 +1,5 @@
-<script lang="ts">
-	/** Third Emperor’s Four Beasts — Blue Dragon overlaps the dragons; Xue replaces the fallen White Tiger. */
-	import type { DiagramProps } from './registry';
-	import ChartLabel from './ChartLabel.svelte';
-
-	let { active = false }: DiagramProps = $props();
-
-	const BEASTS = [
+<script module lang="ts">
+	export const BEASTS = [
 		{
 			ko: '백호',
 			en: 'White Tiger',
@@ -57,6 +51,18 @@
 	] as const;
 </script>
 
+<script lang="ts">
+	/** Third Emperor’s Four Beasts — Blue Dragon overlaps the dragons; Xue replaces the fallen White Tiger. */
+	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
+
+	let { active = false, flat = false }: DiagramProps = $props();
+
+</script>
+
+<KitStage id="four-beasts" {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 340"
 	class="dg"
@@ -99,6 +105,8 @@
 	<text class="foot" style="--d: 1080" x="180" y="318">사신 · Four Beasts · 661 · White Tiger fallen 662 · Xue succeeds</text>
 	<text class="foot sub" style="--d: 1120" x="180" y="330">Blue Dragon Li Shiji is the only man on both rosters from the start</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

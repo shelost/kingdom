@@ -33,7 +33,7 @@
 				? 12
 				: lines === 2
 					? 18
-					: 24
+					: 27
 			: size === 'lg'
 				? lines === 1
 					? 16
@@ -48,7 +48,19 @@
 	);
 	const rx = $derived(Math.min(4, h / 2));
 	const koDy = $derived(
-		lines === 1 ? (size === 'sm' ? 3 : 4) : lines === 2 ? (size === 'lg' ? -4 : -5) : size === 'lg' ? -9 : -8
+		lines === 1
+			? size === 'sm'
+				? 3
+				: 4
+			: lines === 2
+				? size === 'lg'
+					? -4
+					: -5
+				: size === 'lg'
+					? -9
+					: size === 'sm'
+						? -5
+						: -8
 	);
 	const midDy = $derived(size === 'lg' ? 4 : 3);
 	const enDy = $derived(lines === 3 ? (size === 'lg' ? 13 : 11) : size === 'lg' ? 9 : 8);

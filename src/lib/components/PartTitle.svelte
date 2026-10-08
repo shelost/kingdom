@@ -1,33 +1,35 @@
 <script lang="ts">
 	import { partId } from '$lib/story';
 	import { partLabel } from '$lib/tocTree';
-	import { seasonStills } from '$lib/thumbnail.svelte';
+	import { partStills } from '$lib/thumbnail.svelte';
 	import { episodeNavLabel, episodes, goToEpisode } from '$lib/reading.svelte';
 	import StillWall from '$lib/components/StillWall.svelte';
-	import type { DirectorySeason } from '$lib/episodeDirectory';
+	import type { DirectoryPart } from '$lib/episodeDirectory';
 
-	let { season, ko = false }: { season: DirectorySeason; ko?: boolean } = $props();
+	let { part, ko = false }: { part: DirectoryPart; ko?: boolean } = $props();
 
-	let stills = $derived(seasonStills(season, 12));
+	let stills = $derived(partStills(part, 12));
 	let firstIndex = $derived(
-		episodes.findIndex((e) => e.kind === 'entry' && e.chapterId === season.id)
+		episodes.findIndex((e) => e.kind === 'entry' && e.chapterId === part.id)
 	);
-	let lead = $derived((ko && season.korean) || season.title);
-	let second = $derived(ko ? season.title : season.korean);
+	let lead = $derived((ko && part.korean) || part.title);
+	let second = $derived(ko ? part.title : part.korean);
 </script>
 
-<StillWall {stills} storyId={partId(season.id)}>
-	<span class="part-eyebrow">{partLabel(season.label, ko)}</span>
-	{#if lead}<h2 class="part-title">{lead}</h2>{/if}
-	{#if second}<p class="part-second">{second}</p>{/if}
-	{#if season.hanja}<p class="part-hanja">{season.hanja}</p>{/if}
-	<p class="part-meta">
-		<span>{season.range}</span>
+<StillWall {stills} storyId={partId(part.id)}>
+	<span class="part-eyebrow float-up" style:--i={0}>{partLabel(part.label, ko)}</span>
+	{#if lead}<h2 class="part-title float-up" style:--i={1}>{lead}</h2>{/if}
+	{#if second}<p class="part-second float-up" style:--i={2}>{second}</p>{/if}
+	{#if part.hanja}<p class="part-hanja float-up" style:--i={3}>{part.hanja}</p>{/if}
+	<p class="part-meta float-up" style:--i={4}>
+		<span>{part.range}</span>
 		<span aria-hidden="true">·</span>
-		<span>{season.count} {ko ? '편' : 'episodes'}</span>
+		<span>{part.arcs.length} {ko ? '편' : 'arcs'}</span>
+		<span aria-hidden="true">·</span>
+		<span>{part.count} {ko ? '화' : 'episodes'}</span>
 	</p>
 	{#if firstIndex >= 0}
-		<button type="button" class="part-read" onclick={() => goToEpisode(firstIndex)}>
+		<button type="button" class="part-read float-up" style:--i={5} onclick={() => goToEpisode(firstIndex)}>
 			<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
 			<span>{episodeNavLabel(episodes[firstIndex])}</span>
 		</button>

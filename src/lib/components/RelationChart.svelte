@@ -18,6 +18,7 @@
 		accentColorsOf,
 		avatarOf,
 		hangulInitial,
+		isMonarch,
 		KINGDOMS,
 		type Person
 	} from '$lib/people';
@@ -172,6 +173,7 @@
 					position: { x: sn.x, y: sn.y },
 					width: size,
 					height: size,
+					class: isMonarch(p) ? 'is-monarch' : undefined,
 					data: {
 						label: p.name,
 						korean: p.korean,

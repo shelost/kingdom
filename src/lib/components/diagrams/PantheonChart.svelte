@@ -1,27 +1,7 @@
-<script lang="ts">
-	/**
-	 * Pantheon org-chart: Hwanin (Creator) above the Three Realms.
-	 * Steps:
-	 *   - 'realms' — Creator + three realm heads only
-	 *   - 'courts' — full tree under each head (default)
-	 * Optional `realm` prop filters to one column (centered at x=200).
-	 * `heaven` focuses Hwanin’s mandate line (Hwanung → Dangun).
-	 * `tamla` focuses Tamla Class III shrine gods under Little Star’s living world.
-	 */
-	import type { DiagramProps } from './registry';
-	import ChartLabel from './ChartLabel.svelte';
+<script module lang="ts">
+	export type RealmId = 'heaven' | 'underworld' | 'living' | 'flower' | 'tamla';
 
-	let {
-		step = 'courts',
-		active = false,
-		realm
-	}: DiagramProps = $props();
-
-	const CENTER = 200;
-
-	type RealmId = 'heaven' | 'underworld' | 'living' | 'flower' | 'tamla';
-
-	function normalizeRealm(raw: string | undefined): RealmId | null {
+	export function normalizeRealm(raw: string | undefined): RealmId | null {
 		if (!raw) return null;
 		const key = raw.toLowerCase();
 		if (key === 'heaven' || key === 'hwanin') return 'heaven';
@@ -33,7 +13,7 @@
 	}
 
 	/** Three Realms principals — Hwanin sits above, not as a peer column. */
-	const COLS = [
+	export const COLS = [
 		{
 			id: 'daebyeol' as const,
 			realm: 'underworld' as const,
@@ -63,23 +43,47 @@
 		}
 	];
 
-	const CREATOR_Y = 28;
-	const HEAD_Y = 88;
-	const MID_Y = 168;
-	const LOW_Y = 248;
-
-	const livingBase = [
+	export const livingBase = [
 		{ ko: '이비가', en: 'Ibiga', tag: '하늘', tagEn: 'sky', x: 148 },
 		{ ko: '해모수', en: 'Haemosu', tag: '태양', tagEn: 'sun', x: 200 },
 		{ ko: '삼신녀', en: 'Samsin', tag: '생명', tagEn: 'life', x: 252 }
 	] as const;
 
-	const tamlaIII = [
+	export const tamlaIII = [
 		{ ko: '설문', en: 'Sulmun', x: 80 },
 		{ ko: '자청비', en: 'Jacheongbi', x: 160 },
 		{ ko: '가믄장', en: 'Gameunjang', x: 240 },
 		{ ko: '산방덕', en: 'Sanbangduk', x: 320 }
 	] as const;
+</script>
+
+<script lang="ts">
+	/**
+	 * Pantheon org-chart: Hwanin (Creator) above the Three Realms.
+	 * Steps:
+	 *   - 'realms' — Creator + three realm heads only
+	 *   - 'courts' — full tree under each head (default)
+	 * Optional `realm` prop filters to one column (centered at x=200).
+	 * `heaven` focuses Hwanin’s mandate line (Hwanung → Dangun).
+	 * `tamla` focuses Tamla Class III shrine gods under Little Star’s living world.
+	 */
+	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
+
+	let {
+		step = 'courts',
+		active = false,
+		realm,
+		flat = false
+	}: DiagramProps = $props();
+
+	const CENTER = 200;
+
+	const CREATOR_Y = 28;
+	const HEAD_Y = 88;
+	const MID_Y = 168;
+	const LOW_Y = 248;
 
 	const focus = $derived(normalizeRealm(realm));
 
@@ -130,6 +134,8 @@
 	);
 </script>
 
+<KitStage id="pantheon" {step} {realm} {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 400 320"
 	class="dg"
@@ -268,6 +274,8 @@
 
 	<text class="foot" style="--d: {full ? 1100 : 500}" x="200" y="300">{foot}</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

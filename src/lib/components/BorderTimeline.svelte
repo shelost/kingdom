@@ -10,6 +10,7 @@
 		eventAt,
 		formatYear
 	} from '$lib/borders';
+	import { YearPlayer } from '$lib/yearPlayer.svelte';
 
 	let {
 		year = $bindable(),
@@ -20,41 +21,16 @@
 		places?: boolean;
 	} = $props();
 
-	/** Years per second while playing: the whole span in about 30 seconds. */
-	const SPEED = 32;
-
-	let playing = $state(false);
-	let frame = 0;
-	let last = 0;
-	let exact = 0;
+	/* The whole span in about 30 seconds. */
+	const player = new YearPlayer(
+		() => year,
+		(y) => (year = y)
+	);
+	const stop = () => player.stop();
 
 	let event = $derived(eventAt(year));
 	const span = YEAR_MAX - YEAR_MIN;
 	const at = (y: number) => ((y - YEAR_MIN) / span) * 100;
-
-	function tick(now: number) {
-		if (!playing) return;
-		exact = Math.min(YEAR_MAX, exact + ((now - last) / 1000) * SPEED);
-		last = now;
-		year = Math.round(exact);
-		if (year >= YEAR_MAX) playing = false;
-		else frame = requestAnimationFrame(tick);
-	}
-
-	function toggle() {
-		if (playing) return stop();
-		if (year >= YEAR_MAX) year = YEAR_MIN;
-		exact = year;
-		last = performance.now();
-		playing = true;
-		frame = requestAnimationFrame(tick);
-	}
-
-	function stop() {
-		playing = false;
-		if (frame) cancelAnimationFrame(frame);
-		frame = 0;
-	}
 
 	function jump(to: number) {
 		stop();
@@ -69,10 +45,10 @@
 		<button
 			type="button"
 			class="play"
-			onclick={toggle}
-			aria-label={playing ? 'Pause the timeline' : 'Play the timeline'}
+			onclick={() => player.toggle()}
+			aria-label={player.playing ? 'Pause the timeline' : 'Play the timeline'}
 		>
-			{#if playing}
+			{#if player.playing}
 				<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 1.5h2.5v9H2.5zM7 1.5h2.5v9H7z" /></svg>
 			{:else}
 				<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.5v9l7.5-4.5z" /></svg>

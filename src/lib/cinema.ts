@@ -1,7 +1,7 @@
 /**
- * Cinema mode: the story as a broadcast season.
+ * Cinema mode: the story as a broadcast series.
  *
- * A chapter is a season, an entry is an episode. Everything the cinema stage
+ * An Arc (a `chapters` record) plays like a season, an entry is an episode. Everything the cinema stage
  * needs that is *not* reactive lives here — where the episode sits in the run,
  * which art the scene panel should be showing, and what colour the light in
  * that place is.
@@ -17,6 +17,7 @@ import { entryForReading, nsfwAllowed } from '$lib/nsfwUi.svelte';
 import { PLACES } from '$lib/places';
 import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
 import {
+	arcNumber,
 	chapters,
 	entryId,
 	EPISODE_COUNT,
@@ -26,7 +27,7 @@ import {
 } from '$lib/story';
 import { staticAsset } from '$lib/staticAsset.svelte';
 
-/* ————— where we are in the season ————— */
+/* ————— where we are in the run ————— */
 
 export interface EpisodeCue {
 	/** entry id — chapterId-slug, the same key the TOC and hashes use */
@@ -39,9 +40,8 @@ export interface EpisodeContext {
 	/** canonical entry id — `chapterId-slug`, the key the TOC and hashes use */
 	id: string;
 	chapter: Chapter;
-	/** 1-based season number */
-	season: number;
-	seasonCount: number;
+	/** Reader-facing Arc number; null for an epilogue. */
+	arc: number | null;
 	entry: Entry;
 	/** running episode ordinal in the whole run, the same number the TOC shows */
 	episode: number;
@@ -60,13 +60,13 @@ function cueOf(chapter: Chapter, entryIndex: number): EpisodeCue | null {
 function nextCue(chapterIndex: number, entryIndex: number): EpisodeCue | null {
 	const chapter = chapters[chapterIndex];
 	if (!chapter) return null;
-	const sameSeason = cueOf(chapter, entryIndex + 1);
-	if (sameSeason) return sameSeason;
+	const sameArc = cueOf(chapter, entryIndex + 1);
+	if (sameArc) return sameArc;
 	const following = chapters[chapterIndex + 1];
 	return following ? cueOf(following, 0) : null;
 }
 
-/** Resolve an entry id (slug, leftover hash, or chapterId-index) to its place in the season run. */
+/** Resolve an entry id (slug, leftover hash, or chapterId-index) to its place in the run. */
 export function episodeContextOf(id: string | null): EpisodeContext | null {
 	if (!id) return null;
 	const flat = resolveEpisodeIndex(id);
@@ -81,8 +81,7 @@ export function episodeContextOf(id: string | null): EpisodeContext | null {
 	return {
 		id: entryId(chapter.id, entry.title),
 		chapter,
-		season: ref.chapterIndex + 1,
-		seasonCount: chapters.length,
+		arc: arcNumber(ref.chapterIndex),
 		entry,
 		episode: episodeOrdinal(ref.chapterIndex, ref.entryIndex),
 		episodeCount: EPISODE_COUNT,

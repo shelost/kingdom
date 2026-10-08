@@ -1,3 +1,11 @@
+<script module lang="ts">
+	export const PRINCES = [
+		{ ko: '양을나', en: 'Yang', x: 90 },
+		{ ko: '고을나', en: 'Go', x: 180 },
+		{ ko: '부을나', en: 'Bu', x: 270 }
+	] as const;
+</script>
+
 <script lang="ts">
 	/**
 	 * Tamla three princes rising from Samseonghyeol (삼성혈).
@@ -5,16 +13,14 @@
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
 
-	let { step = 'well', active = false }: DiagramProps = $props();
+	let { step = 'well', active = false, flat = false }: DiagramProps = $props();
 
-	const PRINCES = [
-		{ ko: '양을나', en: 'Yang', x: 90 },
-		{ ko: '고을나', en: 'Go', x: 180 },
-		{ ko: '부을나', en: 'Bu', x: 270 }
-	] as const;
 </script>
 
+<KitStage id="tamla-princes" {step} {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 260"
 	class="dg"
@@ -49,6 +55,8 @@
 
 	<text class="foot" style="--d: 1100" x="180" y="240">세 왕자 · three princes from the well</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

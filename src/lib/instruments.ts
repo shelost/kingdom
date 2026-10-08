@@ -46,10 +46,10 @@ const INSTRUMENT_DEFS: InstrumentDef[] = [
 		cover: '/scene_sunduk_gayageum.png',
 		build: 'Long hollow paulownia board, twelve silk strings on movable bridges, ram’s-horn tail at the foot; played across the lap.',
 		tagline: 'Gaya’s twelve strings, one for each month — the country did not outlast its instrument.',
-		arc: 'King Gasil of Gaya looked at the Chinese zheng and decided a country with its own language ought to have its own strings. He had one built, twelve strings for the twelve months, and set the court musician Ureuk to write twelve songs for it, one for each district. When Gaya began to come apart, Ureuk took the instrument and his pupil and walked over to Silla, where King Jinheung heard him play at Nangseong and gave him three students and a house. His ministers said the music of a fallen country was unlucky. Jinheung said Gaya had fallen because of its king, not its songs, and kept the zither. In the palace at Seorabeol, Sunduk plays it in the lamplight when nobody important is in the room.',
+		arc: 'King Gasil of Gaya looked at the Chinese zheng and decided a country with its own language ought to have its own strings. He had one built, twelve strings for the twelve months, and set the court musician Ureuk to write twelve songs for it, one for each district. When Gaya began to come apart, Ureuk took the instrument and his pupil and walked over to Silla, where King Jinheung heard him play at Nang Fortress and gave him three students and a house. His ministers said the music of a fallen country was unlucky. Jinheung said Gaya had fallen because of its king, not its songs, and kept the zither. In the palace at Seorabeol, Sunduk plays it in the lamplight when nobody important is in the room.',
 		players: ['sunduk'],
 		events: [
-			{ year: 551, label: 'Ureuk plays for King Jinheung at Nangseong; the gayageum comes to Silla.' },
+			{ year: 551, label: 'Ureuk plays for King Jinheung at Nang Fortress; the gayageum comes to Silla.' },
 			{ year: 562, label: 'Daegaya falls. The instrument stays in Silla.' }
 		]
 	},

@@ -1,88 +1,12 @@
 <script lang="ts">
-	import type { Attachment } from 'svelte/attachments';
 	import { storyImg } from '$lib/img';
 
-	let {
-		src,
-		alt = '',
-		live = false,
-		sizes = '9rem'
-	}: { src: string; alt?: string; live?: boolean; sizes?: string } = $props();
-
-	/** Resting lean, plus how far the cursor may push it. Degrees. */
-	const REST_X = 3;
-	const REST_Y = -5;
-	const PUSH_X = 7;
-	const PUSH_Y = 9;
-
-	const tilt: Attachment<HTMLElement> = (node) => {
-		const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-		if (mq.matches) {
-			node.style.transform = 'none';
-			return () => {
-				node.style.transform = '';
-			};
-		}
-
-		let rx = REST_X;
-		let ry = REST_Y;
-		let tx = REST_X;
-		let ty = REST_Y;
-		let raf = 0;
-
-		const paint = () => {
-			node.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
-		};
-
-		const step = () => {
-			rx += (tx - rx) * 0.18;
-			ry += (ty - ry) * 0.18;
-			paint();
-			if (Math.abs(tx - rx) > 0.04 || Math.abs(ty - ry) > 0.04) {
-				if (!raf) {
-					raf = requestAnimationFrame(() => {
-						raf = 0;
-						step();
-					});
-				}
-			}
-		};
-
-		const onMove = (e: PointerEvent) => {
-			if (e.pointerType && e.pointerType !== 'mouse') return;
-			const field = node.closest('.picture')?.getBoundingClientRect() ?? node.getBoundingClientRect();
-			const nx = (e.clientX - (field.left + field.width / 2)) / (field.width / 2);
-			const ny = (e.clientY - (field.top + field.height / 2)) / (field.height / 2);
-			const cx = Math.max(-1, Math.min(1, nx));
-			const cy = Math.max(-1, Math.min(1, ny));
-			ty = REST_Y + cx * PUSH_Y;
-			tx = REST_X - cy * PUSH_X;
-			step();
-		};
-
-		const onLeave = () => {
-			tx = REST_X;
-			ty = REST_Y;
-			step();
-		};
-
-		window.addEventListener('pointermove', onMove, { passive: true });
-		document.documentElement.addEventListener('pointerleave', onLeave);
-
-		paint();
-
-		return () => {
-			if (raf) cancelAnimationFrame(raf);
-			window.removeEventListener('pointermove', onMove);
-			document.documentElement.removeEventListener('pointerleave', onLeave);
-			node.style.transform = '';
-		};
-	};
+	let { src, alt = '', sizes = '9rem' }: { src: string; alt?: string; sizes?: string } = $props();
 </script>
 
 <div class="album">
 	<div class="rig">
-		<div class="box" {@attach live && tilt}>
+		<div class="box">
 			<div class="front">
 				<img
 					{...storyImg(src, {
@@ -102,8 +26,7 @@
 
 <style>
 	/*
-	 * Thin box. A few degrees of rest lean, then the live cover eases
-	 * toward the cursor across the picture. Parents resize it through
+	 * Thin box at a few degrees of rest lean. Parents resize it through
 	 * `--album-size`; the right margin leaves room for the box edge.
 	 */
 	.album {

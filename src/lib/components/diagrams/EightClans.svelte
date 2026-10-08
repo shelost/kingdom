@@ -1,3 +1,19 @@
+<script module lang="ts">
+	export const LEFT = [
+		{ ko: '사택', en: 'Satek', satek: true as const },
+		{ ko: '진모', en: 'Jinmo' },
+		{ ko: '해', en: 'Hae' },
+		{ ko: '백', en: 'Baek' }
+	];
+
+	export const RIGHT = [
+		{ ko: '연비', en: 'Yunbi', yunbi: true as const },
+		{ ko: '목리', en: 'Mokli' },
+		{ ko: '안', en: 'Ahn' },
+		{ ko: '국', en: 'Guk' }
+	];
+</script>
+
 <script lang="ts">
 	/**
 	 * The Eight Great Clans of Baekje (대성팔족) seated like the UK Commons:
@@ -8,24 +24,12 @@
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
 
-	let { step = 'court', active = false }: DiagramProps = $props();
+	let { step = 'court', active = false, flat = false }: DiagramProps = $props();
 
 	// Front benches nearest the throne face each other — the feud reads as
 	// government vs opposition. Remaining houses fill back along each side.
-	const LEFT = [
-		{ ko: '사택', en: 'Satek', satek: true as const },
-		{ ko: '진모', en: 'Jinmo' },
-		{ ko: '해', en: 'Hae' },
-		{ ko: '백', en: 'Baek' }
-	];
-	const RIGHT = [
-		{ ko: '연비', en: 'Yunbi', yunbi: true as const },
-		{ ko: '목리', en: 'Mokli' },
-		{ ko: '안', en: 'Ahn' },
-		{ ko: '국', en: 'Guk' }
-	];
-
 	const LEFT_X = 78;
 	const RIGHT_X = 282;
 	const SEAT_YS = [134, 194, 254, 314] as const;
@@ -50,6 +54,8 @@
 	const inFeud = (n: Clan) => !!(n.satek || n.yunbi);
 </script>
 
+<KitStage id="eight-clans" {step} {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 360"
 	class="dg"
@@ -113,6 +119,8 @@
 		</g>
 	{/if}
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

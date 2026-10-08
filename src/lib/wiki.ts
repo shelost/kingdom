@@ -30,6 +30,7 @@ import {
 	nameOf,
 	isPlaceholderArt,
 	avatarOf,
+	colorOf,
 	sortHwarangMembers,
 	type CareerOffice,
 	type GodTier,
@@ -37,6 +38,7 @@ import {
 } from '$lib/people';
 import { BOND_LABEL, CHART_NODES } from '$lib/relations';
 import { chapters, type Block } from '$lib/story';
+import { widgetTexts } from '$lib/widgets';
 
 export type WikiKind =
 	| 'character'
@@ -393,6 +395,64 @@ function escapeRe(s: string) {
 }
 
 /**
+ * Every profile alias as one longest-first regex, so “Kim Yushin” wins over
+ * “Yushin”. First wins on collisions (bare “Yeon” stays Gesomun, not Prince Yun).
+ */
+function buildAliasIndex(): { re: RegExp | null; aliasToId: Map<string, string> } {
+	const aliases = PROFILES.flatMap((p) =>
+		p.aliases.filter((a) => a.trim().length >= 2).map((alias) => ({ alias, id: p.id }))
+	).sort((a, b) => b.alias.length - a.alias.length);
+	const aliasToId = new Map<string, string>();
+	for (const a of aliases) {
+		if (!aliasToId.has(a.alias)) aliasToId.set(a.alias, a.id);
+	}
+	const re =
+		aliases.length === 0
+			? null
+			: new RegExp(`\\b(${aliases.map((a) => escapeRe(a.alias)).join('|')})\\b`, 'g');
+	return { re, aliasToId };
+}
+
+const ALIAS_INDEX = buildAliasIndex();
+
+/** Each profile named in `text`, once, in reading order: `{ id, index, alias }`. */
+function aliasHits(text: string): { id: string; index: number; alias: string }[] {
+	const { re, aliasToId } = ALIAS_INDEX;
+	if (!text || !re) return [];
+	const seen = new Set<string>();
+	const hits: { id: string; index: number; alias: string }[] = [];
+	re.lastIndex = 0;
+	let m: RegExpExecArray | null;
+	while ((m = re.exec(text)) !== null) {
+		const id = aliasToId.get(m[1]);
+		if (!id || seen.has(id)) continue;
+		seen.add(id);
+		hits.push({ id, index: m.index, alias: m[1] });
+	}
+	return hits;
+}
+
+/** A run of prose; `id` marks a wiki link to that profile. */
+export type WikiSegment = { text: string; id?: string };
+
+/**
+ * Wikipedia-style inline links: the first mention of each other profile in
+ * `text` becomes a link segment. `selfId` (the page being read) never links.
+ */
+export function linkSegments(text: string, selfId?: string): WikiSegment[] {
+	const segments: WikiSegment[] = [];
+	let at = 0;
+	for (const hit of aliasHits(text)) {
+		if (hit.id === selfId) continue;
+		if (hit.index > at) segments.push({ text: text.slice(at, hit.index) });
+		segments.push({ text: hit.alias, id: hit.id });
+		at = hit.index + hit.alias.length;
+	}
+	if (at < text.length) segments.push({ text: text.slice(at) });
+	return segments;
+}
+
+/**
  * Build appearance counts once from the chronicle.
  * Dialogue / monologue `person` fields count 1 each; alias matches in free text
  * also increment (capped per text blob so a repeated name in one paragraph
@@ -405,33 +465,9 @@ function buildAppearanceCounts(): Map<string, number> {
 		counts.set(id, (counts.get(id) ?? 0) + n);
 	};
 
-	const aliases = PROFILES.flatMap((p) =>
-		p.aliases
-			.filter((a) => a.trim().length >= 2)
-			.map((alias) => ({ alias, id: p.id }))
-	).sort((a, b) => b.alias.length - a.alias.length);
-
-	const nameRe =
-		aliases.length === 0
-			? null
-			: new RegExp(`\\b(${aliases.map((a) => escapeRe(a.alias)).join('|')})\\b`, 'g');
-	/** First wins on collisions (e.g. bare “Yeon” stays Gesomun, not Prince Yun). */
-	const aliasToId = new Map<string, string>();
-	for (const a of aliases) {
-		if (!aliasToId.has(a.alias)) aliasToId.set(a.alias, a.id);
-	}
-
 	function countText(text: string | undefined | null) {
-		if (!text || !nameRe) return;
-		const seen = new Set<string>();
-		nameRe.lastIndex = 0;
-		let m: RegExpExecArray | null;
-		while ((m = nameRe.exec(text)) !== null) {
-			const id = aliasToId.get(m[1]);
-			if (!id || seen.has(id)) continue;
-			seen.add(id);
-			bump(id);
-		}
+		if (!text) return;
+		for (const hit of aliasHits(text)) bump(hit.id);
 	}
 
 	function walkBlocks(blocks: Block[]) {
@@ -453,6 +489,9 @@ function buildAppearanceCounts(): Map<string, number> {
 			} else if (b.kind === 'flashback') {
 				countText(b.title);
 				walkBlocks(b.blocks);
+			} else {
+				const t = widgetTexts(b);
+				for (const s of [...(t?.ko ?? []), ...(t?.en ?? [])]) countText(s);
 			}
 		}
 	}
@@ -828,3 +867,23 @@ export const WIKI_KINGDOMS = (
 ).filter(isWikiKingdomChip);
 
 export const WIKI_TOTAL = PROFILES.length;
+
+/**
+ * Entry art for the wiki's drifting wall, most important first: portraits
+ * (2:3, lit from below in the entry's colour) two to every place board (2:1).
+ */
+export function wikiWallStills(count: number): { src: string; ratio: number; tint: string }[] {
+	const ranked = PROFILES.filter(hasRealAvatar).sort(compareWikiEntries);
+	const art = (kinds: WikiKind[], ratio: number) =>
+		ranked
+			.filter((p) => kinds.includes(kindOf(p)))
+			.map((p) => ({ src: avatarOf(p)!, ratio, tint: colorOf(p) }));
+	const faces = art(['character', 'god'], 2 / 3);
+	const boards = art(['place', 'city'], 2);
+	const out: { src: string; ratio: number; tint: string }[] = [];
+	for (let i = 0; out.length < count && (faces.length || boards.length); i++) {
+		const next = (i % 3 === 2 ? boards : faces).shift() ?? (faces.shift() || boards.shift());
+		if (next) out.push(next);
+	}
+	return out;
+}

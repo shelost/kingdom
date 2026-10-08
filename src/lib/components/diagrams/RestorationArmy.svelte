@@ -1,11 +1,5 @@
-<script lang="ts">
-	/** Baekje Restoration Army — king at apex, four general seats beneath. */
-	import type { DiagramProps } from './registry';
-	import ChartLabel from './ChartLabel.svelte';
-
-	let { active = false }: DiagramProps = $props();
-
-	const GENERALS = [
+<script module lang="ts">
+	export const GENERALS = [
 		{ x: 54 },
 		{ x: 138 },
 		{ x: 222 },
@@ -13,6 +7,23 @@
 	] as const;
 </script>
 
+<script lang="ts">
+	/**
+	 * Baekje Restoration Army — king at apex, four general seats beneath. In a scene,
+	 * `cast` names the captains (king, g0–g3) and their faces sit on the seats.
+	 */
+	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
+	import { sitter } from './cast';
+
+	let { active = false, flat = false, cast, year = null }: DiagramProps = $props();
+
+	const king = $derived(sitter(cast, 'king', year));
+</script>
+
+<KitStage id="restoration-army" {active} {flat} sceneProps={{ cast, year }}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 260"
 	class="dg"
@@ -22,21 +33,24 @@
 >
 	<g class="node king" style="--d: 0">
 		<circle cx="180" cy="42" r="28" />
-		<ChartLabel x="180" y="44" ko="왕" en="King" w={48} size="lg" />
+		<ChartLabel x="180" y="44" ko={king ? (king.ko ?? king.en) : '왕'} en={king ? king.en : 'King'} w={48} size="lg" />
 	</g>
 
 	<path class="spine" style="--d: 220" d="M 180 70 V 88" pathLength="100" />
 
 	{#each GENERALS as g, i (g.x)}
+		{@const who = sitter(cast, `g${i}`, year)}
 		<g class="node gen" style="--d: {400 + i * 110}">
 			<path class="link" style="--d: {360 + i * 110}" d="M 180 88 C 180 100 {g.x} 100 {g.x} 118" pathLength="100" />
 			<rect x={g.x - 32} y="118" width="64" height="44" rx="5" />
-			<ChartLabel x={g.x} y="140" ko="장군" en="General" w={58} />
+			<ChartLabel x={g.x} y="140" ko={who ? (who.ko ?? who.en) : '장군'} en={who ? who.en : 'General'} w={58} />
 		</g>
 	{/each}
 
 	<text class="foot" style="--d: 900" x="180" y="248">백제부흥군 · Restoration Army</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

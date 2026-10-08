@@ -13,7 +13,7 @@ import { liveDisplayArt, liveScriptFrames } from '$lib/stillEditUi.svelte';
 import { starUi, stars } from '$lib/imageStarsUi.svelte';
 import { cleanStarStore } from '$lib/imageStars';
 import starFile from '$lib/data/image-stars.json';
-import type { DirectorySeason } from '$lib/episodeDirectory';
+import type { DirectoryPart } from '$lib/episodeDirectory';
 
 type ThumbPick = { slotId: string; layer?: 'temp' };
 
@@ -99,9 +99,9 @@ function notableStills(episodes: { entry: Entry; id: string }[], count: number):
 }
 
 /** Up to `count` notable stills from one Part. */
-export function seasonStills(season: DirectorySeason, count: number): EpisodeThumbnail[] {
+export function partStills(part: DirectoryPart, count: number): EpisodeThumbnail[] {
 	return notableStills(
-		season.chapters.flatMap((ch) => ch.episodes),
+		part.arcs.flatMap((arc) => arc.episodes),
 		count
 	);
 }

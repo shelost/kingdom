@@ -1,16 +1,21 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import type { StackImage } from '$lib/story';
+	import type { ScriptArtFrame } from '$lib/cueArt';
 	import { liveDisplayArt, liveScriptFrames } from '$lib/stillEditUi.svelte';
 	import { storyImg } from '$lib/img';
 	import { reveal } from '$lib/reveal';
 	import { reading } from '$lib/reading.svelte';
 	import { filterNsfw } from '$lib/nsfwUi.svelte';
-	import { filterVisibleCues } from '$lib/editUi.svelte';
+	import { editUi, filterVisibleCues } from '$lib/editUi.svelte';
+	import { hasRealImage, isBrokenArt, markBrokenArt } from '$lib/storyImages';
 	import { cueMenuTarget, openImageMenu } from '$lib/imageMenu.svelte';
 	import { openLightbox, type LightboxItem } from '$lib/imageLightbox.svelte';
 	import { isNsfwCueImage } from '$lib/nsfwCue';
 	import { measureRatio, naturalRatio } from '$lib/imageRatio.svelte';
+	import { dialogueUi } from '$lib/dialogueUi.svelte';
+	import { sayOf } from '$lib/comicSay';
+	import { hash } from '$lib/tweet';
 
 	let {
 		images,
@@ -26,14 +31,113 @@
 
 	/** Immersion keeps the landscape phone-frame treatment; script uses normal sticky + cues. */
 	let immersion = $derived(reading.mode === 'immersion');
-	let visible = $derived(filterVisibleCues(filterNsfw(images)));
+	/* Empty slots only show (as prompt cards) in edit mode, where art is generated into them. */
+	let visible = $derived.by(() => {
+		const cues = filterVisibleCues(filterNsfw(images));
+		return editUi.enabled ? cues : cues.filter(hasRealImage);
+	});
+
+	/** Script frames of a slot, minus any that failed to load. */
+	function framesOf(slot: StackImage) {
+		return liveScriptFrames(slot).filter((f) => !isBrokenArt(f.src));
+	}
+
+	/** Reading art; a final that 404s falls back to its temp stand-in. */
+	function readingArt(slot: StackImage): string | undefined {
+		const art = liveDisplayArt(slot, 'reading');
+		return art && isBrokenArt(art) ? framesOf(slot)[0]?.src : art;
+	}
+
+	/** Panoramas this wide and portraits this tall never share a row. */
+	const WIDE_RATIO = 2.4;
+	const TALL_RATIO = 0.6;
+
+	/** One inline figure: a script frame of a slot, or (edit mode) the empty slot's prompt card. */
+	type InlineItem = {
+		key: string;
+		slot: StackImage;
+		/** Index of the slot in `visible`. */
+		index: number;
+		frame?: ScriptArtFrame;
+		first: boolean;
+		ratio: number;
+		fitted: boolean;
+		/** Reading order across the whole stack. */
+		order: number;
+	};
+
+	type InlineRow =
+		| { key: string; solo: InlineItem }
+		| { key: string; cols: [InlineItem[], InlineItem[]] };
+
+	const isExtreme = (r: number) => r >= WIDE_RATIO || r <= TALL_RATIO;
+
+	/** Shortest column first, so the pair ends level and reading order runs top to bottom. */
+	function masonry(items: InlineItem[]): [InlineItem[], InlineItem[]] {
+		const cols: [InlineItem[], InlineItem[]] = [[], []];
+		const h = [0, 0];
+		for (const it of items) {
+			const c = h[1] < h[0] ? 1 : 0;
+			cols[c].push(it);
+			h[c] += 1 / it.ratio;
+		}
+		return cols;
+	}
+
+	/**
+	 * Inline rows in reading order: extreme ratios and lone figures stand alone
+	 * at the column's width; every other run of two or more pairs up as masonry.
+	 */
+	let inlineRows = $derived.by<InlineRow[]>(() => {
+		if (!inline) return [];
+		const items: InlineItem[] = [];
+		visible.forEach((slot, index) => {
+			const frames = framesOf(slot);
+			if (!frames.length) {
+				const ratio = slot.ratio ?? 2;
+				items.push({ key: `${slot.id}:${index}`, slot, index, first: true, ratio, fitted: false, order: items.length });
+				return;
+			}
+			frames.forEach((frame, fi) => {
+				const fit = naturalRatio(frame.src);
+				items.push({
+					key: `${slot.id}:${index}:${frame.layer}`,
+					slot,
+					index,
+					frame,
+					first: fi === 0,
+					ratio: fit ?? slot.ratio ?? 2,
+					fitted: fit != null,
+					order: items.length
+				});
+			});
+		});
+
+		const rows: InlineRow[] = [];
+		let run: InlineItem[] = [];
+		const flush = () => {
+			if (run.length === 1) rows.push({ key: run[0].key, solo: run[0] });
+			else if (run.length) rows.push({ key: `pair:${run[0].key}`, cols: masonry(run) });
+			run = [];
+		};
+		for (const it of items) {
+			if (isExtreme(it.ratio)) {
+				flush();
+				rows.push({ key: it.key, solo: it });
+			} else run.push(it);
+		}
+		flush();
+		return rows;
+	});
 
 	let live = $state(0);
 	/** Sticky / inline stacks only fetch once near the viewport (or marked LCP). */
 	let near = $state(false);
 
 	const CUE_SIZES = '(max-width: 820px) 100vw, 42vw';
-	const INLINE_SIZES = '(max-width: 820px) 90vw, 280px';
+	/** Solo figures take the prose column; masonry figures half of it (one column on a phone). */
+	const SOLO_SIZES = '(max-width: 820px) 92vw, 640px';
+	const PAIR_SIZES = '(max-width: 599px) 92vw, (max-width: 820px) 46vw, 320px';
 
 	/** Same mid as the reading band in `reading.svelte.ts` — a fixed viewport line. */
 	const BAND_MID = 0.4;
@@ -207,10 +311,10 @@
 		const episodeId = episodeIdOf(host);
 		const items: LightboxItem[] = [];
 		for (const slot of visible) {
-			const frames = inline ? liveScriptFrames(slot) : [];
+			const frames = inline ? framesOf(slot) : [];
 			const srcs = frames.length
 				? frames.map((f) => f.src)
-				: [liveDisplayArt(slot, 'reading')].filter((s): s is string => !!s);
+				: [readingArt(slot)].filter((s): s is string => !!s);
 			for (const src of srcs) {
 				items.push({
 					src,
@@ -239,69 +343,100 @@
 <!--
 	Sticky single-frame stack: all slots occupy one viewport; scroll position
 	picks which frame is live (symmetric, no IO hysteresis). Reading prefers
-	final `src` over temp stand-in. Slots with no resolvable art show id + prompt.
+	final `src` over temp stand-in. Slots with no resolvable art are dropped,
+	except in edit mode, where they show id + prompt.
 
 	Inline layout (script mode): every frame sits in reading order at its own
-	proportions, capped in height and always visible — no reveal, no crop.
-	Final art leads; a distinct temp stand-in is shown beside it so references
-	are not hidden behind a locked-in `src`.
+	proportions, always visible — no reveal, no crop. Runs of ordinary frames
+	pair up as a two-column masonry; panoramas, tall portraits and lone frames
+	stand alone. Final art leads; a distinct temp stand-in is shown beside it
+	so references are not hidden behind a locked-in `src`.
 -->
+<!-- Comic mode: the speaker's line in a white balloon over the still. -->
+{#snippet balloon(slot: StackImage)}
+	{@const say = dialogueUi.style === 'comic' || dialogueUi.style === 'hybrid' ? sayOf(slot.id) : undefined}
+	{@const text = say && (reading.lang === 'ko' ? (say.ko ?? say.en) : (say.en ?? say.ko))}
+	{#if text}
+		<p class="balloon" class:right={hash(slot.id) % 2 === 1} lang={text === say?.ko ? 'ko' : undefined}>{text}</p>
+	{/if}
+{/snippet}
+
+{#snippet inlineFigure(it: InlineItem, sizes: string)}
+	{#if it.frame}
+		{@const frame = it.frame}
+		<figure
+			class="frame art live"
+			class:fitted={it.fitted}
+			class:tall={it.ratio <= TALL_RATIO}
+			style:--tone={it.slot.tone ?? '#3a3a40'}
+			style:--ratio={it.ratio}
+			style:--order={it.order}
+			oncontextmenu={(e) => onEditContextMenu(e, it.slot.id, frame.src)}
+		>
+			{#if paintSlot(it.index)}
+				<button
+					type="button"
+					class="open"
+					onclick={(e) => openAt(frame.src, e.currentTarget)}
+					aria-label={`Open ${it.slot.alt ?? it.slot.id}`}
+				>
+					<img
+						class="shot"
+						onerror={() => markBrokenArt(frame.src)}
+						{@attach measureRatio(frame.src)}
+						{...storyImg(frame.src, {
+							kind: 'cue',
+							priority: priority && it.index === 0 && it.first,
+							sizes,
+							widths: [384, 640, 828, 1200],
+							alt:
+								frame.layer === 'temp'
+									? `${it.slot.alt ?? it.slot.id} (temp)`
+									: (it.slot.alt ?? '')
+						})}
+					/>
+				</button>
+				{#if it.first}{@render balloon(it.slot)}{/if}
+			{/if}
+		</figure>
+	{:else}
+		<figure
+			class="frame live"
+			style:--tone={it.slot.tone ?? '#3a3a40'}
+			style:--ratio={it.ratio}
+			style:--order={it.order}
+		>
+			<div class="ph">
+				<div class="cue">
+					<span class="cue-id">{it.slot.id}</span>
+					<p class="cue-prompt">{cueText(it.slot)}</p>
+				</div>
+			</div>
+		</figure>
+	{/if}
+{/snippet}
+
 {#if visible.length}
 <div class="stack" class:immersion class:inline {@attach watchLive} {@attach watchNear}>
-	{#each visible as slot, i (`${slot.id}:${i}`)}
-		{#if inline}
-			{@const frames = liveScriptFrames(slot)}
-			{#if frames.length}
-				{#each frames as frame, fi (`${slot.id}:${i}:${frame.layer}`)}
-					{@const fit = naturalRatio(frame.src)}
-					<figure
-						class="frame art live"
-						class:tall={(fit ?? slot.ratio ?? 2) < 1}
-						class:fitted={fit != null}
-						style:--tone={slot.tone ?? '#3a3a40'}
-						style:--ratio={fit ?? slot.ratio ?? 2}
-						oncontextmenu={(e) => onEditContextMenu(e, slot.id, frame.src)}
-					>
-						{#if paintSlot(i)}
-							<button
-								type="button"
-								class="open"
-								onclick={(e) => openAt(frame.src, e.currentTarget)}
-								aria-label={`Open ${slot.alt ?? slot.id}`}
-							>
-								<img
-									class="shot"
-									{@attach measureRatio(frame.src)}
-									{...storyImg(frame.src, {
-										kind: 'cue',
-										priority: priority && i === 0 && fi === 0,
-										sizes: INLINE_SIZES,
-										widths: [256, 384, 640],
-										alt:
-											frame.layer === 'temp'
-												? `${slot.alt ?? slot.id} (temp)`
-												: (slot.alt ?? '')
-									})}
-								/>
-							</button>
-						{/if}
-					</figure>
-				{/each}
+	{#if inline}
+		{#each inlineRows as row (row.key)}
+			{#if 'solo' in row}
+				<div class="solo">{@render inlineFigure(row.solo, SOLO_SIZES)}</div>
 			{:else}
-				<figure
-					class="frame live"
-					style:--tone={slot.tone ?? '#3a3a40'}
-				>
-					<div class="ph">
-						<div class="cue">
-							<span class="cue-id">{slot.id}</span>
-							<p class="cue-prompt">{cueText(slot)}</p>
+				<div class="pair">
+					{#each row.cols as col, c (c)}
+						<div class="col">
+							{#each col as it (it.key)}
+								{@render inlineFigure(it, PAIR_SIZES)}
+							{/each}
 						</div>
-					</div>
-				</figure>
+					{/each}
+				</div>
 			{/if}
-		{:else}
-			{@const art = liveDisplayArt(slot, 'reading')}
+		{/each}
+	{:else}
+		{#each visible as slot, i (`${slot.id}:${i}`)}
+			{@const art = readingArt(slot)}
 			{@const fit = naturalRatio(art)}
 			<figure
 				class="frame"
@@ -322,6 +457,7 @@
 					>
 						<img
 							class="shot"
+							onerror={() => markBrokenArt(art)}
 							{@attach measureRatio(art)}
 							{...storyImg(art, {
 								kind: 'cue',
@@ -331,6 +467,7 @@
 							})}
 						/>
 					</button>
+					{@render balloon(slot)}
 				{:else if !art}
 					<div class="ph">
 						<div class="cue">
@@ -344,12 +481,63 @@
 					<figcaption class="count" aria-hidden="true">{i + 1}/{visible.length}</figcaption>
 				{/if}
 			</figure>
-		{/if}
-	{/each}
+		{/each}
+	{/if}
 </div>
 {/if}
 
 <style>
+	.balloon {
+		position: absolute;
+		top: 6%;
+		left: 5%;
+		z-index: 2;
+		max-width: min(55%, 18rem);
+		margin: 0;
+		padding: 0.4rem 0.6rem 0.45rem;
+		font-family: var(--sans);
+		font-size: 0.8rem;
+		font-weight: 700;
+		line-height: 1.25;
+		letter-spacing: 0;
+		color: #111;
+		background: #fff;
+		border: 1.5px solid #111;
+		border-radius: 2px;
+		box-shadow: 2px 2px 0 rgb(0 0 0 / 0.35);
+		pointer-events: none;
+	}
+
+	.balloon.right {
+		left: auto;
+		right: 5%;
+	}
+
+	/* The tail, pointing down toward the speaker. */
+	.balloon::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 1.1rem;
+		border: 0.45rem solid transparent;
+		border-top-color: #111;
+		border-left-width: 0;
+	}
+
+	.balloon.right::after {
+		left: auto;
+		right: 1.1rem;
+		border-left-width: 0.45rem;
+		border-right-width: 0;
+	}
+
+	@media (max-width: 30rem) {
+		.balloon {
+			font-size: 0.7rem;
+			max-width: 62%;
+		}
+	}
+
 	.stack {
 		position: relative;
 		width: 100%;
@@ -465,7 +653,7 @@
 		max-height: none;
 		aspect-ratio: 3 / 2;
 		background: #14141a;
-		border-radius: var(--radius);
+		border-radius: var(--widget-radius);
 	}
 
 	.stack.immersion .open,
@@ -483,30 +671,42 @@
 	}
 
 	/* ————— Inline (script) —————
-	   Every frame in reading order, small enough that the prose still leads.
-	   Height is locked and width follows --ratio so lazy decode cannot
-	   shove the column (that was the mid-scroll jump). */
+	   Every frame in reading order at the prose column's width. Width is the
+	   column and height follows --ratio, so lazy decode cannot shove the page
+	   (that was the mid-scroll jump). Runs of ordinary frames share a
+	   two-column masonry; panoramas, tall portraits and lone frames stand alone. */
 	.stack.inline {
-		/* The one dimension an inline figure is allowed to claim. */
-		--inline-h: 200px;
+		--inline-gap: 0.6rem;
 		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		align-items: flex-start;
-		gap: 0.6rem;
+		flex-direction: column;
+		gap: var(--inline-gap);
 		height: auto;
 		min-height: 0;
-		place-items: start;
+		place-items: stretch;
+	}
+
+	.pair {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		align-items: start;
+		gap: var(--inline-gap);
+	}
+
+	.col {
+		display: flex;
+		flex-direction: column;
+		gap: var(--inline-gap);
+		min-width: 0;
 	}
 
 	.stack.inline .frame {
 		grid-area: auto;
-		width: auto;
+		width: 100%;
 		max-width: 100%;
 		min-width: 0;
-		height: var(--inline-h);
-		max-height: var(--inline-h);
-		aspect-ratio: var(--ratio, 4 / 3);
+		height: auto;
+		max-height: none;
+		aspect-ratio: var(--ratio, 2);
 		contain: layout style;
 		opacity: 1;
 		visibility: visible;
@@ -514,8 +714,15 @@
 		z-index: auto;
 		/* Always present: nothing to fade, nothing to slide. */
 		transition: none;
-		border-radius: var(--radius);
+		border-radius: var(--widget-radius);
 		overflow: hidden;
+	}
+
+	/* A standalone portrait would run screens tall at full width: cap its height, centre it. */
+	.solo .frame.tall {
+		width: auto;
+		height: min(78dvh, 40rem);
+		margin-inline: auto;
 	}
 
 	.stack.inline .open {
@@ -534,9 +741,8 @@
 	}
 
 	.stack.inline .ph {
-		width: auto;
-		min-width: min(100%, 17rem);
-		height: var(--inline-h);
+		width: 100%;
+		height: 100%;
 		min-height: 0;
 		padding: 0.5rem 0.7rem;
 	}
@@ -549,6 +755,23 @@
 		line-clamp: 3;
 		-webkit-box-orient: vertical;
 		overflow: hidden;
+	}
+
+	/* Phones: one column. The masonry columns dissolve and each figure takes
+	   back its reading-order slot. */
+	@media (max-width: 599px) {
+		.pair {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.col {
+			display: contents;
+		}
+
+		.pair .frame {
+			order: var(--order);
+		}
 	}
 
 	.count {
@@ -593,33 +816,16 @@
 			padding: 0;
 		}
 
-		/* One still per row at the column's full width; the measured ratio sizes it.
-		   Portraits pair up so a single figure never runs taller than the screen. */
-		.stack.inline .frame {
-			width: 100%;
-			height: auto;
-			max-height: none;
-		}
-
-		.stack.inline .frame.tall {
-			width: calc(50% - 0.3rem);
-		}
-
-		.stack.inline .ph {
-			width: 100%;
-			min-width: 0;
-		}
-
 		.stack:not(.immersion):not(.inline) .frame {
 			max-height: min(38dvh, 16rem);
-			border-radius: var(--radius);
+			border-radius: var(--widget-radius);
 			overflow: hidden;
 		}
 
 		.stack.immersion .frame {
 			width: 100%;
 			margin-inline: auto;
-			border-radius: var(--radius);
+			border-radius: var(--widget-radius);
 		}
 
 		.stack.immersion .shot {

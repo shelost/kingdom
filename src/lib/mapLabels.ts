@@ -20,7 +20,18 @@ export interface LabelItem {
 	h: number;
 	/** higher places first (capitals) */
 	priority?: number;
+	/** a flag planted on the marker (MapFlag): kept clear, even of the marker's own label */
+	flag?: FlagSize;
 }
+
+export type FlagSize = { w: number; h: number };
+
+/** MapFlag's pole and cloth, in px, with the finial. */
+export const FLAG_SIZE: Record<'xs' | 'sm' | 'md', FlagSize> = {
+	xs: { w: 11, h: 15 },
+	sm: { w: 14, h: 19 },
+	md: { w: 20, h: 26 }
+};
 
 export type LabelSpot = { left: number; top: number } | null;
 
@@ -65,6 +76,10 @@ export function placeLabels(items: LabelItem[], width: number, height: number): 
 	const markers = new Map<string, Box>(
 		items.map(({ id, x, y, r }) => [id, { left: x - r - PAD, top: y - r - PAD, right: x + r + PAD, bottom: y + r + PAD }])
 	);
+	/** The flag's pole foot sits just above the marker's centre and the cloth flies to the right. */
+	const flags: Box[] = items.flatMap(({ x, y, r, flag }) =>
+		flag ? [{ left: x - PAD, top: y - r * 0.1 - flag.h - PAD, right: x + flag.w + PAD, bottom: y - r * 0.1 }] : []
+	);
 	const crowd = new Map(
 		items.map((a) => [a.id, items.filter((b) => b !== a && Math.hypot(a.x - b.x, a.y - b.y) < CROWD_RADIUS).length])
 	);
@@ -82,6 +97,7 @@ export function placeLabels(items: LabelItem[], width: number, height: number): 
 				if (box.left < 0 || box.top < 0 || box.right > width || box.bottom > height) continue;
 				if (placed.some((p) => hits(box, p))) continue;
 				if ([...markers].some(([id, m]) => id !== it.id && hits(box, m))) continue;
+				if (flags.some((f) => hits(box, f))) continue;
 				placed.push(box);
 				out[it.id] = c;
 				break search;

@@ -1,0 +1,3141 @@
+[
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Queen Sunduk",
+		"after": "The sacred-bone males were exhausted, and therefore a queen was set up.",
+		"block": {
+			"kind": "table",
+			"head": [
+				"Queen",
+				"Crown Princess",
+				"Crown Prince",
+				"High Councillor",
+				"Marshal"
+			],
+			"rows": [
+				[
+					"Sunduk (37) 선덕여왕",
+					"Kim Seungman (32)",
+					"Kim Chunchu (29)",
+					"Euljé (60) 을제",
+					"Yushin (37) 유신"
+				]
+			]
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Harmony Council",
+		"after": "Each sleeve has a cup of tea and a wooden piece on a personal mat. They vote by setting the piece on either side of the ",
+		"block": {
+			"kind": "quote",
+			"html": "Every matter must be discussed by all of them together. They call it the Hwabaek, the Harmony Council. If one man dissents, the matter is dropped.",
+			"ko": "일은 반드시 여럿과 더불어 의논하니, 이를 '화백'이라 부른다. 한 사람이라도 뜻이 다르면 그만둔다.",
+			"hanja": "事必與衆議，號「和白」，一人異則罷。",
+			"source": "Xin Tangshu (新唐書) bk. 220, Eastern Barbarians — Silla"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Harmony Council",
+		"after": "…비담 저 녀석, 겁도 없구먼.",
+		"block": {
+			"kind": "quote",
+			"html": "“A woman’s body is soiled; it is no vessel for the Dharma. How could it attain supreme awakening?” … The girl said, “Use your divine power, and watch me become a Buddha. It will be quicker still than this.”",
+			"ko": "「여자의 몸은 때 묻고 더러워 법의 그릇이 아니거늘, 어찌 위없는 깨달음을 얻을 수 있겠는가.」 …… 용녀가 말하였다. 「그대의 신통력으로 내가 성불하는 것을 보라. 이보다 더 빠르리라.」",
+			"hanja": "「女身垢穢，非是法器，云何能得無上菩提。」……女言：「以汝神力，觀我成佛，復速於此。」",
+			"source": "Lotus Sutra (妙法蓮華經) ch. 12, Devadatta (提婆達多品), tr. Kumārajīva · T09n0262, p. 35c · Sanskrit: Saddharmapuṇḍarīka ch. 11, Stūpasaṃdarśana-parivarta (Vaidya ed.)",
+			"person": "bidam",
+			"style": "sutra",
+			"native": "सम्यक्संबुद्धत्वं तु दुर्लभम् । … पञ्च स्थानानि स्त्री अद्यापि न प्राप्नोति । … यद्यहं भदन्त शारिपुत्र महर्द्धिकी स्याम्, शीघ्रतरं सम्यक्संबोधिमभिसंबुध्येयम् ।",
+			"nativeLang": "sa",
+			"nativeLatn": "samyaksaṃbuddhatvaṃ tu durlabham | … pañca sthānāni strī adyāpi na prāpnoti | … yady ahaṃ bhadanta śāriputra maharddhikī syām, śīghrataraṃ samyaksaṃbodhim abhisaṃbudhyeyam |"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Jinheung, the Cloud",
+		"after": "“Flower youths.” Noble sons in powder and silk, taught to ride, to sing, and to die, in about that order. The name is a ",
+		"block": {
+			"kind": "quote",
+			"html": "So Kim Daemun's Annals of the Hwarang says: \"Worthy ministers and loyal subjects flowered here; fine generals and brave soldiers were born of it.\"",
+			"ko": "그러므로 김대문의 『화랑세기』에 이르기를, \"어진 재상과 충성스러운 신하가 여기서 빼어나고, 훌륭한 장수와 용감한 병사가 이로 말미암아 났다\"고 하였다.",
+			"hanja": "故金大問『花郞世記』曰：「賢佐忠臣，從此而秀，良將勇卒，由是而生。」",
+			"source": "Samguk Sagi (三國史記) bk. 4, Silla Annals — King Jinheung, yr. 37 (576)"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "沙宅",
+			"reading": "사택",
+			"term": "Satek",
+			"html": "The king’s sleeve. A Satek queen, a Satek premier, and a Satek tutor behind the eldest prince’s chair.",
+			"ko": "왕의 소매. 사택 왕비, 사택 상좌평, 그리고 맏왕자 의자 뒤에 선 사택 스승.",
+			"image": "/ch_satek_elder.png"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "燕比",
+			"reading": "연비",
+			"term": "Yunbi",
+			"html": "The coast road, from Sabi to the salt. They rolled in from the north four hundred years ago, and the Satek have never let them forget it.",
+			"ko": "사비에서 소금밭까지, 해안 길. 사백 년 전 북쪽에서 굴러 들어왔고, 사택은 그걸 한 번도 잊게 두지 않았다.",
+			"image": "/ch_yunbi_elder.png"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "眞牟",
+			"reading": "진모",
+			"term": "Jinmo",
+			"html": "The prestige house. Old money and high swords: a Jinmo boy lifts his blade over his head and dares you.",
+			"ko": "명문가. 오래된 돈, 높은 칼. 진모 소년은 칼을 머리 위로 들고 덤벼 보라 한다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "木刕",
+			"reading": "목리",
+			"term": "Mokli",
+			"html": "Timber and the eastern berths. They look across the sea to Yamato more often than they look up at the throne.",
+			"ko": "목재와 동쪽 부두. 왕좌를 올려다보는 것보다 바다 건너 왜를 바라보는 일이 더 잦다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "解",
+			"reading": "해",
+			"term": "Hae",
+			"html": "Coast salt, and the oldest name on the rock. Hae boys wrestle low and hook a leg before you know you’ve lost.",
+			"ko": "해안의 소금, 그리고 바위 위에서 가장 오래된 이름. 해씨 소년은 낮게 붙어, 진 줄 알기도 전에 다리를 건다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "苩",
+			"reading": "백",
+			"term": "Baek",
+			"html": "A quiet house with a long memory. The last time a Baek lost patience with a king, the king did not survive it.",
+			"ko": "조용한 집안, 긴 기억. 백씨가 마지막으로 임금에게 참을성을 잃었을 때, 그 임금은 살아남지 못했다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "國",
+			"reading": "국",
+			"term": "Guk",
+			"html": "Their name means “country,” and they never let a meeting forget it. Guk boys win with the hip.",
+			"ko": "이름이 ‘나라’라서, 어느 회의에서도 그걸 잊게 두지 않는다. 국씨 소년은 엉덩이로 이긴다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The eight great surnames. Not a council and not a party. Eight families, each older than most kings, each with a seat on",
+		"block": {
+			"kind": "term",
+			"tab": "clan",
+			"hanja": "安",
+			"reading": "안",
+			"term": "Ahn",
+			"html": "The smallest seat on the rock, and the hardest to buy. Every close vote in Sabi ends up at an Ahn door, and leaves it unpaid.",
+			"ko": "바위 위에서 가장 작은 자리, 그리고 가장 사기 어려운 자리. 사비의 아슬아슬한 표는 결국 안씨 집 문 앞에 닿고, 값을 못 치른 채 돌아간다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "정사암 회의",
+		"block": {
+			"kind": "quote",
+			"html": "On the ninth day of the first month of the gapin year, Satek Jijuk of Naegi Fortress, grieving that the body's days slip away so easily and that its months never come back, cut gold to build a precious hall and carved jade to raise a jewelled pagoda.",
+			"ko": "갑인년 정월 9일, 내기성의 사택지적은 몸의 날이 쉬이 가는 것을 슬퍼하고 몸의 달이 다시 돌아오기 어려움을 탄식하여, 금을 뚫어 진귀한 법당을 짓고 옥을 깎아 보배로운 탑을 세웠다.",
+			"hanja": "甲寅年正月九日柰祇城砂宅智積，慷身日之易往，慨體月之難還，穿金以建珍堂，鑿玉以立寶塔。",
+			"source": "Sataek Jijeok Stele (砂宅智積碑), Buyeo (654)",
+			"person": "ministersatek",
+			"style": "stele"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Eight Great Clans",
+		"after": "The Rock of Government. Long ago Baekje’s lords chose their premier by sealing three names in a box and leaving it on th",
+		"block": {
+			"kind": "diagram",
+			"diagram": "ministers-assembly",
+			"step": "court",
+			"title": "정사암회의 · The Ministers’ Assembly",
+			"caption": "The council that meets at the rock. One Prime Minister, the Senior Ministers beside him, the Junior Ministers below. Seats go by title. Titles go by clan.",
+			"ko": "바위에서 열리는 회의. 상좌평 하나, 그 곁에 좌평들, 아래에 달솔들. 자리는 관등을 따르고, 관등은 가문을 따른다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Gunchogo, the 13th",
+		"after": "The north’s capital, and a long walk for anyone who wants it.",
+		"block": {
+			"kind": "quote",
+			"html": "In winter the king and the crown prince led thirty thousand picked troops into Goguryeo and attacked Pyongyang. The Goguryeo king, Sayu, fought hard to hold them off, and was killed by a stray arrow.",
+			"ko": "겨울, 왕이 태자와 함께 정예병 3만을 이끌고 고구려에 쳐들어가 평양성을 공격하였다. 고구려 왕 사유가 힘써 싸우며 막다가 흐르는 화살에 맞아 죽었다.",
+			"hanja": "冬，王與太子帥精兵三萬，侵高句麗，攻平壤城。麗王斯由釗，力戰拒之，中流矢死。",
+			"source": "Samguk Sagi (三國史記) bk. 24, Baekje Annals — King Geunchogo, yr. 26 (371)",
+			"event": "pyongyang-371"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Gunchogo, the 13th",
+		"after": "Baekje has the river, the coast and the sea roads east. The clans take the docks. The throne takes a cut. It is the rich",
+		"block": {
+			"kind": "quote",
+			"html": "Year fifty-two, autumn, ninth month: Baekje's envoy Kuji and his party came with Chikuma Nagahiko, and presented one seven-branched sword, one seven-child mirror, and treasures of every kind.",
+			"ko": "52년 가을 9월 병자일, 구저 등이 지쿠마나가히코를 따라 와서 칠지도 한 자루와 칠자경 한 면, 그리고 갖가지 귀한 보물을 바쳤다.",
+			"hanja": "五十二年秋九月丁卯朔丙子、久氐等從千熊長彦詣之。則獻七枝刀一口・七子鏡一面、及種々重寶。",
+			"source": "Nihon Shoki (日本書紀) bk. 9, Empress Jingū, yr. 52 (usually corrected to 372)"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Commander Yeon",
+		"after": "Gaesomun*, also called Gaegeum. His surname was Yeon. He claimed he had been born in water, to awe the crowd. He was imp",
+		"block": {
+			"kind": "quote",
+			"html": "Tang sent Zhangsun Shi, adjutant of Guangzhou, to bury the bones of the Sui soldiers, sacrifice to them, and pull down the mound of bones raised in those days. In spring, the second month, the king called out the people to build a long wall, from Buyeo Fortress in the northeast to the sea in the southwest, more than a thousand li. It took sixteen years to finish.",
+			"ko": "당이 광주사마 장손사를 보내 수나라 전사들의 해골을 묻고 제사 지내게 하고, 그때 세운 경관을 허물었다. 봄 2월, 왕이 무리를 동원하여 장성을 쌓으니, 동북으로 부여성에서 서남으로 바다에 이르기까지 천여 리였다. 무릇 16년 만에 공사를 마쳤다.",
+			"hanja": "唐遣廣州司馬長孫師，臨瘞隋戰士骸骨，祭之，毁當時所立京觀。春二月，王動衆築長城，東北自扶餘城，東西南至海千有餘里，凡一十六年畢功。",
+			"source": "Samguk Sagi (三國史記) bk. 20, Goguryeo Annals — King Yeongnyu, yr. 14 (631)",
+			"event": "long-wall-631"
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "Commander Yeon",
+		"after": "Gaesomun*, also called Gaegeum. His surname was Yeon. He claimed he had been born in water, to awe the crowd. He was imp",
+		"block": {
+			"kind": "quote",
+			"html": "In the fifth year an edict sent Zhangsun Shi, adjutant of the Guangzhou command, to gather and bury the bones of those killed in the Sui wars, and to pull down the mound of bones Goguryeo had raised. The king, Geonmu*, afraid his country would be invaded, built a long wall from Buyeo Fortress in the northeast to the sea in the southwest, more than a thousand li.",
+			"ko": "5년, 조서를 내려 광주도독부 사마 장손사를 보내 수나라 때 전사한 이들의 해골을 거두어 묻게 하고, 고구려가 세운 경관을 허물게 하였다. 건무*는 나라가 정벌당할까 두려워 장성을 쌓으니, 동북으로 부여성에서 서남으로 바다에 이르기까지 천여 리였다.",
+			"hanja": "五年，詔遣廣州都督府司馬長孫師往收瘞隋時戰亡骸骨，毀高麗所立京觀。建武懼伐其國，乃築長城，東北自扶餘城，西南至海，千有餘里。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo, Zhenguan 5 (631)",
+			"event": "long-wall-631",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "Geonmu (建武) was the king’s own name. This book calls him King Yeongnyu, the name the court gave him after he died.",
+					"ko": "건무는 왕의 이름이다. 이 책은 죽은 뒤에 받은 이름, 영류왕으로 부른다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "High Summit",
+		"after": "The meeting of the ka. A ka was a tribal chief, back when Goguryeo was five roofs in one valley. The roofs became comman",
+		"block": {
+			"kind": "diagram",
+			"diagram": "high-summit",
+			"step": "council",
+			"title": "제가회의 · The Commanders’ Council",
+			"caption": "Five commands around one table, and the High Commander at its head. The king sits just outside the ring. He has the last word, and they make sure it is the last.",
+			"ko": "한 상에 둘러앉은 다섯 부, 그 머리에 막리지. 왕은 고리 바로 바깥에 앉는다. 마지막 말은 왕의 것이고, 그들은 그 말이 정말 마지막이 되도록 한다."
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "High Summit",
+		"after": "The meeting of the ka. A ka was a tribal chief, back when Goguryeo was five roofs in one valley. The roofs became comman",
+		"block": {
+			"kind": "table",
+			"head": [
+				"King 王",
+				"Central Cmd · High Commander",
+				"Northern Cmd",
+				"Southern Cmd",
+				"Eastern Cmd",
+				"Western Cmd"
+			],
+			"rows": [
+				[
+					"Yeongnyu (51) 영류왕",
+					"Yeon Gusesa (52)",
+					"Go Ul (44)",
+					"Son Daeha (47)",
+					"Yeon Gesomun (29)",
+					"Go Heumsong (45)"
+				]
+			]
+		}
+	},
+	{
+		"chapterId": "samhan",
+		"entryTitle": "High Summit",
+		"after": "남생.",
+		"block": {
+			"kind": "quote",
+			"html": "His surname was Cheon, 'Spring'; his name, Namseng; his courtesy name, Wondeok. He was a man of Pyongyang. His distant line came out of a spring: it took its blessing from a spirit, and named its clan after the place of its birth. … His great-grandfather Jayu and his grandfather Taejo both served as Mangniji.",
+			"ko": "공의 성은 천이요, 휘는 남생이며, 자는 원덕이니, 요동군 평양성 사람이다. 그 먼 계보를 살피면 본래 샘에서 나왔으니, 신에게 의탁하여 복을 내려받고, 태어난 곳을 따라 겨레의 이름을 지었다. …… 증조 자유와 조부 태조는 모두 막리지를 지냈다.",
+			"hanja": "公姓泉，諱男生，字元德，遼東郡平壤城人也。原夫遠系，本出於泉，旣託神以隤祉，遂因生以命族。……曾祖子遊，祖太祚，並任莫離支。",
+			"source": "Epitaph of Yeon Namseng (泉男生墓誌)",
+			"style": "tomb"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "The Hwarang train under the Marshal: horse, bow, verse, and above all gyuku, a horse-ball game a lazier age will call po",
+		"block": {
+			"kind": "quote",
+			"html": "Bupmin was striking in bearing, quick of mind, and full of strategy.",
+			"ko": "법민은 풍채가 빼어나고, 총명하며 지략이 많았다.",
+			"hanja": "法敏姿表英特，聰明多智略。",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — opening portrait of Bupmin"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "그럼 열다섯에 참말로 만들어라.",
+		"block": {
+			"kind": "hanja",
+			"chars": [
+				{
+					"char": "世",
+					"gloss": "인간 세",
+					"meaning": "the world"
+				},
+				{
+					"char": "俗",
+					"gloss": "풍속 속",
+					"meaning": "custom; lay life"
+				},
+				{
+					"char": "五",
+					"gloss": "다섯 오",
+					"meaning": "five"
+				},
+				{
+					"char": "戒",
+					"gloss": "경계할 계",
+					"meaning": "precept, warning"
+				}
+			],
+			"name": "The Five Secular Precepts",
+			"ko": "세속오계",
+			"note": "A monk wrote rules for boys who would never be monks. They mostly kept them.",
+			"noteKo": "스님이, 끝내 스님이 되지 않을 소년들을 위해 쓴 계율. 소년들은 대체로 지켰다."
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "그럼 열다섯에 참말로 만들어라.",
+		"block": {
+			"kind": "verse",
+			"color": "#dc2626",
+			"lines": [
+				"사군이충 (事君以忠): 충성으로 임금을 섬긴다.",
+				"사친이효 (事親以孝): 효도로써 부모를 섬긴다.",
+				"교우이신 (交友以信): 믿음으로써 벗을 사귄다.",
+				"임전무퇴 (臨戰無退): 전쟁에 나가 물러서지 않는다.",
+				"살생유택 (殺生有擇): 살아있는 것을 죽일 때에는 가림이 있어야 한다"
+			]
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "그럼 열다섯에 참말로 만들어라.",
+		"block": {
+			"kind": "hanja",
+			"chars": [
+				{
+					"char": "事",
+					"gloss": "섬길 사",
+					"meaning": "serve"
+				},
+				{
+					"char": "君",
+					"gloss": "임금 군",
+					"meaning": "sovereign"
+				},
+				{
+					"char": "以",
+					"gloss": "써 이",
+					"meaning": "with, by means of"
+				},
+				{
+					"char": "忠",
+					"gloss": "충성 충",
+					"meaning": "loyalty"
+				}
+			],
+			"name": "Serve the king with loyalty",
+			"ko": "사군이충",
+			"note": "First on the list, so nobody can say they missed it.",
+			"noteKo": "맨 앞에 두었다. 못 들었다는 소리는 못 하게."
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "그럼 열다섯에 참말로 만들어라.",
+		"block": {
+			"kind": "hanja",
+			"chars": [
+				{
+					"char": "事",
+					"gloss": "섬길 사",
+					"meaning": "serve"
+				},
+				{
+					"char": "親",
+					"gloss": "친할 친",
+					"meaning": "parents, kin"
+				},
+				{
+					"char": "以",
+					"gloss": "써 이",
+					"meaning": "with, by means of"
+				},
+				{
+					"char": "孝",
+					"gloss": "효도 효",
+					"meaning": "filial devotion"
+				}
+			],
+			"name": "Serve your parents with devotion",
+			"ko": "사친이효",
+			"note": "Easy, until the king and your father want different things.",
+			"noteKo": "쉽다. 임금과 아버지가 서로 다른 걸 원하기 전까지는."
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "그럼 열다섯에 참말로 만들어라.",
+		"block": {
+			"kind": "hanja",
+			"chars": [
+				{
+					"char": "交",
+					"gloss": "사귈 교",
+					"meaning": "befriend"
+				},
+				{
+					"char": "友",
+					"gloss": "벗 우",
+					"meaning": "friend"
+				},
+				{
+					"char": "以",
+					"gloss": "써 이",
+					"meaning": "with, by means of"
+				},
+				{
+					"char": "信",
+					"gloss": "믿을 신",
+					"meaning": "trust"
+				}
+			],
+			"name": "Keep faith with your friends",
+			"ko": "교우이신",
+			"note": "The one boys swear to first and keep longest.",
+			"noteKo": "소년들이 제일 먼저 맹세하고, 제일 오래 지키는 것."
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "그럼 열다섯에 참말로 만들어라.",
+		"block": {
+			"kind": "hanja",
+			"chars": [
+				{
+					"char": "臨",
+					"gloss": "임할 림",
+					"meaning": "face, stand before"
+				},
+				{
+					"char": "戰",
+					"gloss": "싸움 전",
+					"meaning": "battle"
+				},
+				{
+					"char": "無",
+					"gloss": "없을 무",
+					"meaning": "no, without"
+				},
+				{
+					"char": "退",
+					"gloss": "물러날 퇴",
+					"meaning": "retreat"
+				}
+			],
+			"name": "Never retreat in battle",
+			"ko": "임전무퇴",
+			"note": "The one they elbow each other at. For now.",
+			"noteKo": "소년들이 서로 팔꿈치로 찌르는 대목. 아직은."
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "그럼 열다섯에 참말로 만들어라.",
+		"block": {
+			"kind": "hanja",
+			"chars": [
+				{
+					"char": "殺",
+					"gloss": "죽일 살",
+					"meaning": "kill"
+				},
+				{
+					"char": "生",
+					"gloss": "날 생",
+					"meaning": "living thing"
+				},
+				{
+					"char": "有",
+					"gloss": "있을 유",
+					"meaning": "have, there is"
+				},
+				{
+					"char": "擇",
+					"gloss": "가릴 택",
+					"meaning": "choice, discernment"
+				}
+			],
+			"name": "Be choosy about killing",
+			"ko": "살생유택",
+			"note": "The quiet one. Boys skip it. Old soldiers don’t.",
+			"noteKo": "조용한 계율. 소년들은 건너뛰고, 늙은 병사들은 그러지 않는다."
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Bupmin",
+		"after": "사군이충.",
+		"block": {
+			"kind": "quote",
+			"html": "Gwisan shouted, \"I once heard it from my teacher: 'A man in the army does not retreat.' How could I dare run?\"",
+			"ko": "귀산이 큰 소리로 말하였다. \"내 일찍이 스승에게서 '선비는 군에 있을 때 물러섬이 없어야 한다'고 들었다. 어찌 감히 달아나겠는가.\"",
+			"hanja": "貴山大言曰：「吾嘗聞之師曰：『士當軍無退』，豈敢奔北乎。」",
+			"source": "Samguk Sagi (三國史記) bk. 45, Biographies — Gwisan (602)"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Sadaham",
+		"after": "Ninth month. Gaya rebelled. The king ordered Isabu to punish it, with Sadaham as his second. Sadaham rode ahead with fiv",
+		"block": {
+			"kind": "quote",
+			"html": "Year twenty-three, spring, first month. Silla struck down and destroyed the Mimana office, Yamato's name for Gaya.",
+			"ko": "23년 봄 정월, 신라가 임나관가를 쳐서 멸하였다.",
+			"hanja": "廿三年春正月。新羅打滅任那官家。",
+			"source": "Nihon Shoki (日本書紀) bk. 19, Emperor Kinmei, yr. 23 (562)",
+			"event": "gaya-562"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Gotaso",
+		"after": "젖으셨잖아요.",
+		"block": {
+			"kind": "quote",
+			"html": "They wear no powder and no brow-black. Most wind their beautiful hair around the head and dress it with pearls and coloured silk.",
+			"ko": "분을 바르거나 눈썹을 그리지 않고, 대개 아름다운 머리카락을 머리에 감아 올려 구슬과 색 비단으로 꾸민다.",
+			"hanja": "不粉黛，率美髮以繚首，以珠彩飾之。",
+			"source": "Xin Tangshu (新唐書) bk. 220, Eastern Barbarians — Silla, on Silla women"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Pumsuk",
+		"after": "영원히 행복하겠습니다!",
+		"block": {
+			"kind": "quote",
+			"html": "Their wedding rites are only wine and food, more or less according to wealth. On the wedding night the bride bows first to her husband's parents, and then to her husband.",
+			"ko": "혼인의 예는 술과 음식뿐이며, 그 많고 적음은 빈부에 따른다. 혼인하는 날 저녁, 신부는 먼저 시부모에게 절하고 다음에 남편에게 절한다.",
+			"hanja": "婚嫁之禮，唯酒食而已，輕重隨貧富。新婚之夕，女先拜舅姑，次即拜夫。",
+			"source": "Sui Shu (隋書) bk. 81, Eastern Barbarians — Silla"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Academy",
+		"after": "The Grand Academy is old. It came over the river in the same season as the first Buddhas. Ever since, the school and the",
+		"block": {
+			"kind": "quote",
+			"html": "Second year, summer, sixth month. Fu Jian, king of Qin, sent envoys and the monk Sundo with Buddha images and sutras. The king sent envoys back with thanks and local tribute. He founded the Taehak, the Grand Academy, to teach the sons of good families.",
+			"ko": "2년 여름 6월, 진나라 왕 부견이 사신과 승려 순도를 보내 불상과 경문을 보내왔다. 왕이 사신을 보내 답례하고 토산물을 바쳤다. 태학을 세워 자제들을 가르쳤다.",
+			"hanja": "二年，夏六月，秦王苻堅，遣使及浮屠順道，送佛像、經文。王遣使廻謝，以貢方物。立大學，敎育子弟。",
+			"source": "Samguk Sagi (三國史記) bk. 18, Goguryeo Annals — King Sosurim, yr. 2 (372)"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Academy",
+		"after": "셋째 다리는 농장 없는 놈이면 뭐든 된다.",
+		"block": {
+			"kind": "quote",
+			"html": "The three teachings are like the legs of a tripod: you cannot do without one. Now Confucianism and Buddhism both flourish, but the Way has not prospered. That is not what you would call having all the arts of the world.",
+			"ko": "세 가르침은 솥의 세 발과 같아 하나라도 빠져서는 안 된다. 지금 유교와 불교는 나란히 일어섰으나 도교는 아직 성하지 않으니, 천하의 도술을 갖추었다 할 수 없다.",
+			"hanja": "三敎譬如鼎足，闕一不可。今儒釋並興，而道敎未盛，非所謂備天下之道術者也。",
+			"source": "Samguk Sagi (三國史記) bk. 21, Goguryeo Annals — Yeon Gaesomun's petition on the Three Teachings",
+			"person": "gesomun"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Academy",
+		"after": "Namseng is enrolled anyway. He learns the Analects first and best, and on the days the sutra master is ill he reads his ",
+		"block": {
+			"kind": "quote",
+			"html": "By custom they love books. Even the households of the poor and of servants each build a large hall on the street, called a gyeongdang, where their sons read and practise archery day and night until they marry.",
+			"ko": "풍속이 책을 좋아하여, 가난한 집이나 천한 일을 하는 집에 이르기까지 저마다 거리에 큰 집을 짓고 이를 경당이라 부르며, 자제들이 혼인하기 전까지 밤낮으로 여기서 책을 읽고 활쏘기를 익힌다.",
+			"hanja": "俗愛書籍，至於衡門廝養之家，各於街衢造大屋，謂之扃堂，子弟未婚之前，晝夜于此讀書習射。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Stele",
+		"after": "In all, the fortresses he attacked and broke: sixty-four. Villages: one thousand four hundred.",
+		"block": {
+			"kind": "quote",
+			"html": "Spring, second month. The king sent the crown prince Hwangwon to Tang with tribute. The Second Emperor welcomed him and loaded him with gifts. The king also sent young men of good family to Tang and asked that they be admitted to the imperial academy.",
+			"ko": "봄 2월, 세자 환권을 당에 보내 조공하였다. 태종이 위로하고 매우 후하게 물건을 내렸다. 왕이 자제들을 당에 보내 국학에 들어가기를 청하였다.",
+			"hanja": "春二月，遣世子桓權，入唐朝貢。太宗勞慰，賜賚之特厚。王遣子弟入唐，請入國學。",
+			"source": "Samguk Sagi (三國史記) bk. 20, Goguryeo Annals — King Yeongnyu, yr. 23 (640)",
+			"event": "hwan-gwon-640"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Stele",
+		"after": "In all, the fortresses he attacked and broke: sixty-four. Villages: one thousand four hundred.",
+		"block": {
+			"kind": "quote",
+			"html": "In the fourteenth year he sent his crown prince Hwangwon to court with local tribute, and the Second Emperor made a great deal of him.",
+			"ko": "14년, 그 태자 환권을 보내 입조하고 아울러 토산물을 바치니, 태종이 극진히 위로하였다.",
+			"hanja": "十四年，遣其太子桓權來朝，並貢方物，太宗優勞甚至。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo, Zhenguan 14 (640)",
+			"event": "hwan-gwon-640"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Dosuryu",
+		"after": "안 마셔. 그게 문제야.",
+		"block": {
+			"kind": "quote",
+			"html": "The king ordered Gaesomun, Great Man of the Eastern Division, to oversee the work on the long wall.",
+			"ko": "왕이 동부 대인 개소문에게 명하여 장성 쌓는 일을 감독하게 하였다.",
+			"hanja": "王命東部大人蓋蘇文，監長城之役。",
+			"source": "Samguk Sagi (三國史記) bk. 20, Goguryeo Annals — King Yeongnyu, yr. 25 (642)"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Dosuryu",
+		"after": "Yeon stops laughing. He does it all at once, the way a door shuts.",
+		"block": {
+			"kind": "quote",
+			"html": "Once he had succeeded to his father's post he was violent, cruel and lawless, so the great men and the king plotted in secret to kill him. The plan leaked…",
+			"ko": "자리를 이은 뒤 흉포하고 잔인하며 도리가 없으니, 여러 대인이 왕과 은밀히 의논하여 죽이려 하였다. 일이 새어 나갔다……",
+			"hanja": "嗣位而凶殘不道，諸大人與王密議欲誅。事洩……",
+			"source": "Samguk Sagi (三國史記) bk. 49, Biographies — Yeon Gaesomun",
+			"event": "plot-642"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Dosuryu",
+		"after": "Yeon stops laughing. He does it all at once, the way a door shuts.",
+		"block": {
+			"kind": "quote",
+			"html": "After Gaesomun took up the office he committed offences, and the high ministers conferred with the king, Geonmu*, on killing him. The plan leaked…",
+			"ko": "개소문이 직무를 맡은 뒤 죄를 범하니, 여러 대신이 건무*와 의논하여 그를 죽이려 하였다. 일이 새어 나갔다……",
+			"hanja": "蓋蘇文攝職有犯，諸大臣與建武議欲誅之。事泄……",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo",
+			"event": "plot-642",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "Geonmu (建武) was the king’s own name. This book calls him King Yeongnyu, the name the court gave him after he died.",
+					"ko": "건무는 왕의 이름이다. 이 책은 죽은 뒤에 받은 이름, 영류왕으로 부른다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "King Euija",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "Year forty-two, spring, third month. The king died. He was named Mu, the Martial. An envoy went to Tang in mourning white with a memorial: \"Your outer servant Buyeo Jang has died.\" The emperor held mourning at the Xuanwu Gate…",
+			"ko": "42년 봄 3월, 왕이 세상을 떠났다. 시호를 무라 하였다. 사신이 당에 들어가 흰 옷을 입고 표를 올려 \"임금의 바깥 신하 부여장이 죽었다\"고 하니, 황제가 현무문에서 애도하였다……",
+			"hanja": "四十二年，春三月，王薨。諡曰武。使者入唐，素服奉表曰：「君外臣扶餘璋卒。」帝擧哀玄武門……",
+			"source": "Samguk Sagi (三國史記) bk. 27, Baekje Annals — King Mu, yr. 42 (641)",
+			"event": "mu-death-641"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "King Euija",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "In the fifteenth year Jang died, and his son Euija sent an envoy with a memorial announcing the death. The Second Emperor put on white and wept for him, granted him the title Grand Master of Splendid Happiness, and sent two hundred bolts of silk for the funeral. He sent an envoy to invest Euija as Pillar of State, Prince of Daebang and King of Baekje.",
+			"ko": "15년, 장이 죽으니 그 아들 의자가 사신을 보내 표를 올려 부고를 알렸다. 태종이 흰 옷을 입고 곡하였으며, 광록대부를 추증하고 부의로 비단 2백 단을 내렸다. 사신을 보내 의자를 책봉하여 주국으로 삼고 대방군왕·백제왕에 봉하였다.",
+			"hanja": "十五年，璋卒，其子義慈遣使奉表告哀。太宗素服哭之，贈光祿大夫，賻物二百段，遣使冊命義慈爲柱國，封帶方郡王、百濟王。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Baekje, Zhenguan 15 (641)",
+			"event": "mu-death-641"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "King Euija",
+		"after": "His father had done it first, and better. Before he was king, King Mu paid the children of Sabi to sing a song he had wr",
+		"block": {
+			"kind": "quote",
+			"html": "He fed yams to the village children, and the children took to him. Then he made up a song and coaxed the children into singing it.",
+			"ko": "마를 마을 아이들에게 먹이니 아이들이 그를 따랐다. 이에 노래를 지어 아이들을 꾀어 부르게 하였다.",
+			"hanja": "以薯蕷餉閭里群童。群童親附之。乃作謠。誘群童而唱之云。",
+			"source": "Samguk Yusa (三國遺事) bk. 2, Marvels — King Mu (武王)"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "King Euija",
+		"after": "His father had done it first, and better. Before he was king, King Mu paid the children of Sabi to sing a song he had wr",
+		"block": {
+			"kind": "poem",
+			"person": "kingmu",
+			"title": "Seodong’s Song (薯童謠)",
+			"hanja": "善化公主主隱\n他密只嫁良置古\n薯童房乙\n夜矣卯乙抱遣去如",
+			"html": "Princess Sunhwa*<br>has married in secret,<br>and to the yam boy’s room<br>by night she goes to hold him.",
+			"ko": "선화공주님은*<br>남몰래 시집가 두고<br>서동 도련님 방을<br>밤에 몰래 안고 간다",
+			"source": "Samguk Yusa (三國遺事) bk. 2, Marvels — King Mu (武王)",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "The song promises a Silla princess. The queen this book knows, Euija’s mother, is a Satek, and a relic box from the Mireuksa pagoda names King Mu’s queen as a Satek daughter too. Either the song lied, or a king can have more than one queen. Both happen.",
+					"ko": "노래는 신라 공주를 약속한다. 그런데 이 책이 아는 왕비, 의자의 어머니는 사택씨이고, 미륵사 탑에서 나온 사리봉영기도 무왕의 왕비를 사택씨의 딸로 적는다. 노래가 거짓말을 했거나, 왕에게 왕비가 하나가 아니었거나. 둘 다 있는 일이다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "King Euija",
+		"after": "내가 너를 필요로 할 때까지.",
+		"block": {
+			"kind": "quote",
+			"html": "Third month, first day. Euija, king of Baekje, sent in Prince Pung as a hostage.",
+			"ko": "3월 초하루 경신일, 백제왕 의자가 왕자 풍장을 볼모로 들여보냈다.",
+			"hanja": "三月庚申朔，百濟王義慈，入王子豐章為質。",
+			"source": "Nihon Shoki (日本書紀) bk. 23, Emperor Jomei, yr. 3 (631)"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Yunchung",
+		"after": "Euija has already decided. Now the clans have to believe it was their idea.",
+		"block": {
+			"kind": "quote",
+			"html": "At Hoam Temple there is also the Rock of Politics. When the state was to choose a premier, they wrote the candidates' names, three or four of them, sealed them in a box and set it on the rock. After a little while they took it back and looked: the man whose name bore the mark of a seal became premier. That is how the rock got its name.",
+			"ko": "또 호암사에 정사암이 있다. 나라에서 재상을 의논할 때면 뽑힐 만한 사람의 이름을 서너 장 써서 상자에 봉해 바위 위에 둔다. 잠시 뒤 꺼내 보아 이름 위에 도장 자국이 있는 자를 재상으로 삼았다. 그래서 그렇게 이름 붙였다.",
+			"hanja": "又虎嵒寺有政事嵒。國家將議宰相。則書當選者名。或三四函封置嵒上。須臾取看。名上有印跡者為相。故名之。",
+			"source": "Samguk Yusa (三國遺事) bk. 2, Marvels — Nam-Buyeo (南扶餘)"
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "Yunchung",
+		"after": "Euija has already decided. Now the clans have to believe it was their idea.",
+		"block": {
+			"kind": "diagram",
+			"diagram": "ministers-assembly",
+			"step": "clans",
+			"title": "Rock of Politics · 정사암",
+			"caption": "The eight senior benches are the eight houses. The rock sweats before a good decision — someone always salts it.",
+			"ko": "좌평 여덟 자리가 여덟 가문이다. 좋은 결정 전에 바위가 땀을 흘린다 — 늘 같은 사람이 소금을 바른다."
+		}
+	},
+	{
+		"chapterId": "five-principles",
+		"entryTitle": "The Severing",
+		"after": "Every road into Silla’s valley squeezes through here.",
+		"block": {
+			"kind": "quote",
+			"html": "On the ninth day of the twelfth month I sent them to attack Silla. First I sent Mononobe no Makamu, commander of the Eastern Region, with that region's soldiers to attack Hamsan Fortress.",
+			"ko": "12월 9일에 보내어 신라를 치게 하였다. 신이 먼저 동방령 모노노베노 마카무노 무라지를 보내 그 방면의 군사를 이끌고 함산성을 치게 하였다.",
+			"hanja": "以十二月九日遣攻斯羅。臣先遣東方領物部莫哥武連。領其方軍士攻函山城。",
+			"source": "Nihon Shoki (日本書紀) bk. 19, Emperor Kinmei, yr. 15 (554), 12th month — King Seong's memorial to Yamato",
+			"person": "kingsung"
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Siege of Daeya",
+		"after": "«영원히 행복하겠습니다.»",
+		"block": {
+			"kind": "quote",
+			"hanja": "吾父名我以竹竹者 使我歲寒不彫 可折而不可屈 豈可畏死而生降乎",
+			"ko": "내 아버지께서 나를 죽죽이라 이름 지으신 것은, 추운 철에도 시들지 말고 꺾일지언정 굽히지 말라 하심이다. 어찌 죽음이 두려워 살아서 항복하겠는가?",
+			"html": "My father named me Jukjuk so that I would not wither in the cold season, and might be broken but never bent. How should I fear death and live by surrendering?",
+			"source": "Samguk Sagi (三國史記) bk. 47, Biographies — Jukjuk; Lee Byong-do ed., vol. 2, p. 448"
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Siege of Daeya",
+		"after": "«영원히 행복하겠습니다.»",
+		"block": {
+			"kind": "quote",
+			"html": "The Baekje general Yunchung led troops, attacked, and took Daeya Fortress. The dodok Ichan Pumsuk, and the saji Jukjuk and Yongseok, died there.",
+			"ko": "백제 장군 윤충이 군사를 이끌고 대야성을 쳐서 함락하니, 도독 이찬 품석과 사지 죽죽·용석 등이 죽었다.",
+			"hanja": "百濟將軍允忠領兵攻拔大耶城 都督伊飡品釋 舍知竹竹 龍石等死之",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 11 (642), 8th month; Lee Byong-do ed., vol. 1, p. 118"
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Yeon’s Massacre",
+		"after": "He wore five swords on his body, and no one around him dared look up at him. Every time he mounted or dismounted, he mad",
+		"block": {
+			"kind": "quote",
+			"html": "Somun's surname is Qian*. His beard and face are very fine and his frame is towering. He wears five swords, and no one around him dares look up at him.",
+			"ko": "소문의 성은 전씨*이다. 수염과 얼굴이 매우 훌륭하고 몸집이 우람하며, 몸에 칼 다섯 자루를 차니 좌우가 감히 우러러보지 못한다.",
+			"hanja": "蘇文姓錢氏，須貌甚偉，形體魁傑，身佩五刀，左右莫敢仰視。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo",
+			"event": "five-blades",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "The family name was Yeon (淵), “deep water”. Tang could not write that character, because it belonged to the dynasty’s founder, so its books swap in 泉, “spring”, or here 錢.",
+					"ko": "그의 성은 연(淵)이다. 당은 고조 이연의 이름자인 淵을 쓸 수 없어, 泉이나 여기처럼 錢으로 바꿔 적었다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Yeon’s Massacre",
+		"after": "스스로 짠 자리. 방 안의 모든 자리 위에 있다.",
+		"block": {
+			"kind": "diagram",
+			"diagram": "high-summit",
+			"step": "supreme",
+			"title": "Supreme Commander · 대막리지",
+			"caption": "After the knives: the High Commander’s chair becomes Supreme; the king dims to a puppet note.",
+			"ko": "칼 다음. 막리지 자리가 대막리지가 되고, 임금은 꼭두각시 음이 된다."
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Yeon’s Massacre",
+		"after": "Yeon listens. Not always. Often enough that the court learns which door to fear besides his.",
+		"block": {
+			"kind": "quote",
+			"html": "Autumn, ninth month. The great minister Iri Kasumi*, that is Gesomun, killed the great king, and with him Gusesa and more than a hundred and eighty others. Then he made the son of the king's younger brother king, and made Dosuryu and Geumryu, men of his own surname, great ministers.",
+			"ko": "가을 9월, 대신 이리가수미*가 대왕을 죽이고 아울러 이리거세사 등 180여 명을 죽였다. 이어 아우 왕자의 아들을 왕으로 삼고, 자기와 같은 성인 도수류와 김류를 대신으로 삼았다.",
+			"hanja": "秋九月，大臣伊梨柯須彌殺大王，并殺伊梨渠世斯等百八十餘人，仍以弟王子兒爲王，以己同姓都須流、金流爲大臣。",
+			"source": "Nihon Shoki (日本書紀) bk. 24, Empress Kōgyoku, yr. 1 (642), 2nd month — report of the Goguryeo envoys",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "Yamato wrote down what its ears caught: Iri for Yeon, Kasumi for Gaesomun.",
+					"ko": "왜는 귀에 들린 대로 적었다. 이리는 연, 가수미는 개소문이다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Yeon’s Massacre",
+		"after": "저기.. 네 이름이 뭐냐?",
+		"block": {
+			"kind": "quote",
+			"hanja": "賓至盡殺之 凡百餘人 馳入宮弑王 立王弟子藏爲王 自爲莫離支 專國",
+			"ko": "손님이 이르자 모두 죽이니 무릇 백여 명이요, 궁으로 달려들어 왕을 시해하고, 왕의 아우의 아들 장을 세워 임금으로 삼고, 스스로 막리지가 되어 나라를 오로지하였다.",
+			"html": "When the guests arrived he killed them all, some hundred men; he galloped into the palace and murdered the king, set up the king’s brother’s son Jang as sovereign, made himself Mangniji, and monopolized the state.",
+			"source": "Samguk Sagi (三國史記) bk. 49, Biographies — Yeon Gaesomun · bk. 21, Goguryeo Annals — King Yeongnyu, yr. 25 (642), 10th month; Lee Byong-do ed., vol. 1, p. 312 · cf. Zizhi Tongjian Tang Zhenguan 16"
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Euija & Yeon",
+		"after": "항구 서기 같구나.",
+		"block": {
+			"kind": "quote",
+			"html": "Eighth month. Baekje also plotted with Goguryeo to take Danghang Fortress and cut off the road to Tang.",
+			"ko": "8월, 또 고구려와 꾀하여 당항성을 빼앗아 당으로 가는 길을 끊으려 하였다.",
+			"hanja": "八月，又與高句麗謀，欲取党項城，以絶歸唐之路。",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 11 (642)",
+			"event": "danghang-642"
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Nangbi",
+		"after": "……투구 써라.",
+		"block": {
+			"kind": "quote",
+			"html": "Then he mounted, drew his sword and rode straight at the enemy line. Three times he went in and three times he came out, and each time he went in he either cut down a commander or tore down a banner.",
+			"ko": "이에 말을 타고 칼을 빼 들고는 적진으로 향하여 곧바로 나아가 세 번 들어가고 세 번 나옴에, 매번 들어갈 때마다 장수의 목을 베고 혹은 깃발을 뽑았다.",
+			"hanja": "乃跨馬拔劒 向敵陣直前 三入三出 每入或斬將或搴旗",
+			"source": "Samguk Sagi (三國史記) bk. 4, Silla Annals — King Jinpyeong, year 51 (629)"
+		}
+	},
+	{
+		"chapterId": "iron-will",
+		"entryTitle": "Forty Fortresses",
+		"after": "…멈추면, 멈춘 이유를 저들이 알아서 지어낼 테니.",
+		"block": {
+			"kind": "quote",
+			"html": "Yushin rode past his own gate without looking back. About fifty paces on he stopped his horse, had a drink of water fetched from the house, sipped it, and said, \"The water at home still tastes the way it used to.\"",
+			"ko": "유신은 집 문 앞을 지나면서도 돌아보지 않고 갔다. 오십 걸음쯤 가서 말을 세우고, 집에서 마실 물을 떠 오게 하여 마시며 말하였다. \"우리 집 물은 아직도 옛 맛이 나는구나.\"",
+			"hanja": "庾信過門，不顧而行，至五十步許，駐馬，令取漿水於宅，啜之曰：「吾家之水，尚有舊味。」",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin I (645)",
+			"person": "yushin"
+		}
+	},
+	{
+		"chapterId": "epilogue",
+		"entryTitle": "Emperor",
+		"after": "On the dingsi day, Zhang Jian, Governor-General of Yingzhou, reported that Quan Gai Suwen*, Great Man of Goguryeo's East",
+		"block": {
+			"kind": "quote",
+			"html": "Gai Suwen has murdered his lord and seized the government. It is truly not to be borne. With the forces we have today, taking the place would not be hard. But I do not wish to wear out the common people. For now I would have the Khitan and the Mohe harass them. What do you say?",
+			"ko": "개소문이 그 임금을 시해하고 나라의 정사를 오로지하니, 참으로 참을 수 없다. 오늘의 병력으로 그를 취하기는 어렵지 않으나 백성을 수고롭게 하고 싶지 않다. 우선 거란과 말갈을 시켜 그들을 어지럽히려 하는데, 어떻겠는가?",
+			"hanja": "蓋蘇文弒其君而專國政，誠不可忍。以今日兵力，取之不難，但不欲勞百姓，吾欲且使契丹、靺鞨擾之，何如？",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 197, Tang Taizong, Zhenguan 17 (643)",
+			"person": "taizong"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Four Dragons",
+		"after": "청룡. 황제의 장수 가운데 가장 참을성이 많다. 그것도 일종의 위험이다.",
+		"block": {
+			"kind": "table",
+			"head": [
+				"White Dragon",
+				"Red Dragon",
+				"Blue Dragon",
+				"Black Dragon"
+			],
+			"colors": [
+				"#f8fafc",
+				"#fee2e2",
+				"#dbeafe",
+				"#e5e7eb"
+			],
+			"rows": [
+				[
+					"계필하력",
+					"아사나사이",
+					"이세적",
+					"장손무기"
+				]
+			]
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Four Dragons",
+		"after": "문은 내가 닫아요.",
+		"block": {
+			"kind": "quote",
+			"hanja": "夫有高世之材，要須遇時乃發。今天子自征遼東，求猛將，此難得之時，君盍圖功名以自顯？富貴還鄉，葬未晚。",
+			"ko": "무릇 세상을 넘을 재주가 있어도, 때를 만나야 드러난다. 지금 천자께서 몸소 요동을 치시며 맹장을 구하시니, 이는 얻기 어려운 때이다. 공은 어찌 공명을 도모하여 스스로를 드러내지 않는가? 부귀하여 고향에 돌아온 뒤에 장사하여도 늦지 않다.",
+			"html": "A man of talent that outstrips his age must meet his hour before it can issue. Now the Son of Heaven himself campaigns against Liaodong and seeks fierce generals: this is a time rarely met. Why should you not seek merit and make yourself known? When you return in wealth and honour, it will not be too late to bury them.",
+			"source": "Xin Tangshu (新唐書) bk. 111, biography of Xue Rengui (薛仁貴) — speech of his wife, née Liu (妻柳)"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Four Dragons",
+		"after": "He presents himself to general Zhang Shigui and signs his name under the Tang muster. The clerk writes Xue Rengui. The c",
+		"block": {
+			"kind": "quote",
+			"hanja": "薛仁貴，絳州龍門人。貞觀末，太宗親征遼東，仁貴謁將軍張士貴應募，請從行。",
+			"ko": "설인귀는 강주 용문 사람이다. 정관 말에 태종*이 몸소 요동을 치니, 인귀가 장군 장사귀를 뵙고 응모하여 따라가기를 청하였다.",
+			"html": "Xue Rengui was a man of Longmen in Jiangzhou. At the end of Zhenguan, Taizong* campaigned in person against Liaodong; Rengui presented himself to General Zhang Shigui, answered the muster, and asked to go.",
+			"source": "Jiu Tangshu (舊唐書) bk. 83, biography of Xue Rengui",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "Taizong is the temple name Tang gave him after death. In this book he is the Second Emperor.",
+					"ko": "태종은 죽은 뒤 받은 묘호다. 이 책에서는 ‘두 번째 황제’다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Four Dragons",
+		"after": "He presents himself to general Zhang Shigui and signs his name under the Tang muster. The clerk writes Xue Rengui. The c",
+		"block": {
+			"kind": "quote",
+			"hanja": "兒夫投軍無音信，母子寒窯受苦情。",
+			"ko": "지아비는 종군하여 소식이 없고, 모자는 찬 가마에서 고통을 받는다.",
+			"html": "My husband enlisted; there is no word. Mother and child suffer in a cold kiln.",
+			"source": "Jingju Fenhewan (京劇《汾河灣》, also 仁貴打雁) — opening of Liu Yingchun; theatrical/folk, not the Tang official histories"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Yodong",
+		"after": "성왕께서… 웃으신다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "城中有朱蒙祠，祠有鏁甲、銛矛，妄言前燕世天所降。方圍急，飾美女以婦神，巫言朱蒙悅，城必完。",
+			"html": "In the city was a shrine to Jumong, and in the shrine a coat of chain mail and a sharp spear, which they falsely said had come down from heaven in the age of the Former Yan. When the siege grew desperate they adorned a beautiful woman as a wife for the god, and the shamans said: Jumong is pleased; the city will surely stand whole.",
+			"ko": "성안에 주몽의 사당이 있었는데, 사당에는 쇠사슬 갑옷과 날카로운 창이 있어, 전연 때 하늘에서 내려온 것이라고 망령되이 말하였다. 포위가 급해지자 미녀를 꾸며 신의 아내로 삼았고, 무당은 “주몽이 기뻐하니 성은 반드시 온전하리라” 하였다.",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 197"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Yodong",
+		"after": "흰 용의 허리에 창 하나, 곶에는 함대 하나. 기왓장은 그래도 계속 떨어진다.",
+		"block": {
+			"kind": "table",
+			"head": [
+				"Fortress 城",
+				"Month",
+				"Fate"
+			],
+			"rows": [
+				[
+					"Hyeondo 현도",
+					"4th",
+					"Stormed"
+				],
+				[
+					"Sin Fortress 신성",
+					"4th",
+					"Holds"
+				],
+				[
+					"Gaemo 개모",
+					"4th",
+					"Falls in ten days; 700 Gasi men sent home"
+				],
+				[
+					"Yodong 요동",
+					"5th",
+					"Falls on the twelfth day"
+				],
+				[
+					"Bisa 비사",
+					"5th",
+					"Taken from the sea"
+				],
+				[
+					"Baegam 백암",
+					"6th",
+					"Its lord surrenders"
+				],
+				[
+					"Geonan 건안",
+					"—",
+					"Holds"
+				],
+				[
+					"Ansi 안시",
+					"6th",
+					"Ahead"
+				]
+			]
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Boiling River",
+		"after": "A mountain capital, built for the day the plain is lost.",
+		"block": {
+			"kind": "quote",
+			"html": "The king said to his generals: “Wei’s great army is worse than our small one. Guanqiu Jian is Wei’s famous general, and today his life is in the palm of my hand.” He took five thousand armoured horse and advanced to strike. Guanqiu Jian formed a square and fought to the death; our army broke completely, and more than eighteen thousand died.",
+			"ko": "왕이 여러 장수에게 말하였다. “위의 큰 군대가 도리어 우리의 작은 군대만 못하다. 관구검은 위의 이름난 장수이나, 오늘 그 목숨이 내 손아귀에 있구나.” 이에 철기 5천을 거느리고 나아가 쳤다. 관구검이 방진을 치고 죽기로 싸우니, 우리 군사가 크게 무너져 죽은 자가 1만 8천여 명이었다.",
+			"hanja": "王謂諸將曰：「魏之大兵，反不如我之小兵。毋丘儉者魏之名將，今日命在我掌握之中乎。」乃領鐵騎五千，進而擊之。儉為方陣，決死而戰，我軍大潰，死者一萬八千餘人。",
+			"source": "Samguk Sagi (三國史記) bk. 17, Goguryeo Annals — King Dongcheon, yr. 20 (246), 8th month",
+			"event": "boiling-river-244"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Boiling River",
+		"after": "A mountain capital, built for the day the plain is lost.",
+		"block": {
+			"kind": "quote",
+			"html": "Gung, king of Goguryeo, led twenty thousand foot and horse up to the Boiling River and gave battle at Liangkou; Gung was beaten again and again and fled. Guanqiu Jian then bound up his horses and roped up his carts to climb to Hwando, put the Goguryeo capital to the sword, and took heads and captives by the thousand.",
+			"ko": "구려 왕 궁이 보병과 기병 2만을 거느리고 비류수 가로 진군하여 양구에서 크게 싸웠으나, 궁은 잇달아 패하여 달아났다. 관구검은 마침내 말을 묶고 수레를 매달아 환도에 올라 구려의 도읍을 도륙하니, 베고 사로잡은 자가 천으로 헤아려졌다.",
+			"hanja": "句驪王宮將步騎二萬人，進軍沸流水上，大戰梁口，宮連破走。儉遂束馬縣車，以登丸都，屠句驪所都，斬獲首虜以千數。",
+			"source": "Sanguo Zhi (三國志) bk. 28, Biography of Guanqiu Jian (毌丘儉傳), Zhengshi era (c. 244)",
+			"event": "boiling-river-244"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Stallion Mountain",
+		"after": "Just then came thunder and lightning. Xue Rengui, a man of Longmen, in strange clothing, broke into the enemy line with ",
+		"block": {
+			"kind": "quote",
+			"html": "Just then came thunder and lightning. Xue Rengui, a man of Longmen, in strange clothing, broke into the line with a great shout, and nothing could stand before him; our army gave way. The main army followed through, and our army broke completely…",
+			"ko": "마침 천둥과 번개가 쳤는데, 용문 사람 설인귀가 기이한 옷을 입고 크게 소리치며 진을 무너뜨리니, 향하는 곳마다 대적할 자가 없어 우리 군사가 쓰러지듯 흩어졌다. 대군이 그 틈을 타니 우리 군사가 크게 무너졌다…",
+			"hanja": "會，有雷電，龍門人薛仁貴，著奇服，大呼陷陣，所向無敵，我軍披靡。大軍乘之，我軍大潰…",
+			"source": "Samguk Sagi (三國史記) bk. 21, Goguryeo Annals — King Bojang, yr. 4 (645)",
+			"event": "white-coat-645"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Stallion Mountain",
+		"after": "There is another foreigner in the reckoning that night. Riding over the ground where the Goguryeo centre stood, the empe",
+		"block": {
+			"kind": "quote",
+			"hanja": "至遼東，與麗人戰駐蹕山下，深入疾鬪而死，功一等。皇帝問是何許人，左右奏新羅人薛罽頭也。皇帝泫然曰：「吾人尙畏死，顧望不前，而外國人爲吾死事，何以報其功乎？」問從者，聞其平生之願，脫御衣覆之，授職爲大將軍，以禮葬之。",
+			"html": "Reaching Liaodong, he fought the men of Goguryeo below Stallion Mountain; he went deep, fought hard and died, and his merit was ranked first. The emperor asked what manner of man he was, and those about him reported that he was Xue Jitou, a man of Silla. The emperor wept and said: “Our own men still fear death and look about them and will not advance, yet a man of a foreign country has died in Our cause. How shall We repay his merit?” He asked the man’s companions and learned the wish of his life; he took off the imperial robe and covered him with it, granted him the office of Grand General, and buried him with full rites.",
+			"ko": "요동에 이르러 주필산 아래에서 고구려 사람들과 싸웠는데, 깊이 들어가 맹렬히 싸우다 죽으니 공이 일등이었다. 황제가 어떤 사람이냐고 묻자, 좌우가 신라 사람 설계두라고 아뢰었다. 황제가 눈물을 흘리며 말하였다. “우리 사람들도 오히려 죽음을 두려워하여 두리번거리며 나아가지 않는데, 외국 사람이 우리를 위하여 죽었으니 무엇으로 그 공을 갚겠는가?” 따르던 자에게 물어 그의 평생 소원을 듣고는, 어의를 벗어 덮어 주고 대장군의 직을 내려 예로써 장사 지냈다.",
+			"source": "Samguk Sagi (三國史記) bk. 47, Biographies 7, Seol Gyedu"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Colossal River",
+		"after": null,
+		"block": {
+			"kind": "edict",
+			"title": "Edict for the Liao campaign",
+			"hanja": "而高麗小醜，迷昏不恭，崇聚勃、碣之間，荐食遼、獩之境。……此而可忍，孰不可容！……於是親總六師，用申九伐，拯厥阽危，協從天意，殄茲逋穢，克嗣先謨。",
+			"html": "And Goguryeo, that petty villain, sits lost in its own fog and shows no respect. It herds itself together between the Bo and the Jie and keeps eating into the lands of Liao and Ye. … If this can be borne, what cannot? … So We take the six armies in hand Ourselves and carry out the ninefold punishment: to pull the endangered back from the edge, to follow the will of Heaven, to wipe out this runaway filth, and to finish what Our fathers planned.",
+			"ko": "그런데 고구려라는 하찮은 무리가 어둡고 미혹하여 공손하지 않다. 발해와 갈석 사이에 무리를 모으고, 요동과 예의 땅을 거듭 갉아먹는다. …… 이것을 참는다면 무엇인들 참지 못하랴! …… 이에 짐이 몸소 여섯 군대를 거느리고 아홉 가지 정벌을 펴, 위태로운 이들을 건지고, 하늘의 뜻을 따르며, 이 도망친 더러운 무리를 없애고, 선대의 계획을 잇고자 한다.",
+			"source": "Sui Shu (隋書) bk. 4, Annals of Emperor Yang (煬帝下), Daye 8 (612), first month"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Colossal River",
+		"after": "평양 삼십 리 앞까지 왔다. 을지문덕이 바란 게 바로 그거였다.",
+		"block": {
+			"kind": "formation",
+			"title": "The Salsu, 612",
+			"sides": [
+				{
+					"name": "Sui",
+					"color": "#b45309",
+					"units": [
+						{
+							"label": "Yu Zhongwen · Yuwen Shu",
+							"sub": "305,000 crossing south"
+						},
+						{
+							"label": "The crossing",
+							"sub": "mid-river, mid-column"
+						}
+					]
+				},
+				{
+					"name": "Goguryeo",
+					"color": "#C30000",
+					"units": [
+						{
+							"label": "Ulchi Munduk",
+							"sub": "seven feigned retreats"
+						},
+						{
+							"label": "The dammed water",
+							"sub": "released on the crossing"
+						}
+					]
+				}
+			],
+			"note": "Of 305,000 who crossed the Liao, the record says 2,700 came back."
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Colossal River",
+		"after": "Munduk is honored with the title “The Defender” after the battle.",
+		"block": {
+			"kind": "quote",
+			"html": "Autumn, seventh month: they reached the Salsu. When the army was halfway across, our troops struck its rearguard from behind, and General Xin Shixiong of the Right Garrison fell fighting. At that all the armies broke, and nothing could stop them.",
+			"ko": "가을 7월, 살수에 이르러 군사가 반쯤 건넜을 때, 우리 군사가 뒤에서 그 후군을 치니 우둔위장군 신세웅이 싸우다 죽었다. 이에 여러 군대가 모두 무너져 막을 수가 없었다.",
+			"hanja": "秋七月，至薩水，軍半濟，我軍自後擊其後軍，右屯衛將軍辛世雄戰死。於是，諸軍俱潰，不可禁止。",
+			"source": "Samguk Sagi (三國史記) bk. 20, Goguryeo Annals — King Yeongyang, yr. 23 (612)",
+			"event": "salsu-612"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Ansi",
+		"after": "들어간 화살은 저렇게 많은데, 나온 건 점선 두 줄. 작은 성벽 하나가 한 일이다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "魏徵若在 不使我有是行也",
+			"ko": "[대신이] 살아 있었다면, 나로 하여금 이 걸음을 하게 하지 않았을 것이다.",
+			"html": "Had [the Grand Minister] been alive, he would not have let me make this expedition.",
+			"source": "Zizhi Tongjian (資治通鑑) Tang Zhenguan 19 (645), return from Liaodong; Zhonghua Shuju ed., vol. 13 · cf. Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Ansi",
+		"after": "들어간 화살은 저렇게 많은데, 나온 건 점선 두 줄. 작은 성벽 하나가 한 일이다.",
+		"block": {
+			"kind": "quote",
+			"html": "He paraded his troops below Ansi and turned for home; inside the walls everyone kept out of sight. The lord of the city climbed the wall and bowed his farewell. The emperor, admiring how stubbornly he had held, gave him a hundred bolts of silk, to encourage those who serve their lords.",
+			"ko": "이에 안시성 아래에서 군세를 뽐낸 뒤 돌아가니, 성안에서는 모두 자취를 감추고 나오지 않았다. 성주가 성에 올라 절하며 작별하니, 황제가 그 굳게 지킨 것을 가상히 여겨 비단 백 필을 내리고 임금 섬기는 일을 권하였다.",
+			"hanja": "乃耀兵於安市城下而旋，城中皆屏跡不出。城主登城拜辭，上嘉其固守，賜縑百匹，以勵事君。",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 198, Tang Zhenguan 19 (645), 9th month",
+			"event": "ansi-lord-645"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Ansi",
+		"after": "들어간 화살은 저렇게 많은데, 나온 건 점선 두 줄. 작은 성벽 하나가 한 일이다.",
+		"block": {
+			"kind": "quote",
+			"html": "The eastern campaign came to grief at Ansi, so its lord may be called a hero out of the common run. Yet history has lost his name… It is a great pity.",
+			"ko": "동쪽 정벌의 공이 안시에서 꺾였으니, 그 성주는 비상한 호걸이라 할 만하다. 그런데 역사가 그 성명을 잃었으니… 몹시 애석하다.",
+			"hanja": "東征之功，敗於安市，則其城主，可謂豪傑非常者矣。而史失其姓名…甚可惜也。",
+			"source": "Samguk Sagi (三國史記) bk. 21, Goguryeo Annals — King Bojang, yr. 4 (645), historian’s comment (論曰)",
+			"event": "ansi-lord-645"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Haemosu",
+		"after": "들어와. 빈 방이 있다.",
+		"block": {
+			"kind": "quote",
+			"html": "I am Habek’s daughter, and my name is Yuhwa. I was out with my sisters when a man who called himself Haemosu, son of the Heavenly Emperor, lured me into a room by the Amnok below Mount Ungsim and lay with me. Then he went away and did not come back. My parents blamed me for following a man without a go-between, and so I was banished to the Ubal River.",
+			"ko": "나는 하백의 딸로, 이름은 유화다. 아우들과 나가 놀 때에 한 사내가 스스로 천제의 아들 해모수라 하며, 나를 웅심산 아래 압록 가의 방으로 꾀어 정을 통하고는 가서 돌아오지 않았다. 부모는 내가 중매도 없이 남자를 따랐다고 꾸짖었고, 마침내 나는 우발수로 쫓겨나 살게 되었다.",
+			"hanja": "我是河伯之女，名柳花。與諸弟出遊，時有一男子，自言天帝子解慕漱，誘我於熊心山下鴨淥邊室中私之，卽往不返。父母責我無媒而從人，遂謫居優渤水。",
+			"source": "Samguk Sagi (三國史記) bk. 13, Goguryeo Annals — King Dongmyeong, accession: Yuhwa’s answer to King Geumwa",
+			"person": "yuhwa"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Haemosu",
+		"after": "In time Yuhwa lays a great egg. Geumwa has the egg taken from her before the court has agreed what a river-daughter is a",
+		"block": {
+			"kind": "quote",
+			"html": "Geumwa found her strange and shut her away in a room. The sunlight shone on her; she drew herself aside, and the sun’s shadow followed and shone on her again. From this she conceived, and bore an egg about the size of five pecks.",
+			"ko": "금와가 이를 기이하게 여겨 방 안에 깊이 가두었다. 햇빛이 그녀를 비추어 몸을 끌어 피하면, 해 그림자가 또 따라와 비추었다. 그로 인해 아이를 배어 알 하나를 낳으니, 크기가 닷 되들이쯤 되었다.",
+			"hanja": "金蛙異之，幽閉於室中，爲日所炤，引身避之，日影又逐而炤之。因而有孕，生一卵，大如五升許。",
+			"source": "Samguk Sagi (三國史記) bk. 13, Goguryeo Annals — King Dongmyeong, accession",
+			"event": "yuhwa-sun-egg"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Haemosu",
+		"after": "In time Yuhwa lays a great egg. Geumwa has the egg taken from her before the court has agreed what a river-daughter is a",
+		"block": {
+			"kind": "quote",
+			"html": "…Habek’s daughter was shut in a room by the king of Buyeo. The sunlight shone on her; she drew herself aside, and the sun’s shadow followed. Before long she conceived, and bore an egg the size of five pecks.",
+			"ko": "…하백의 딸은 부여 왕에 의해 방 안에 갇혔다. 햇빛이 그녀를 비추어 몸을 끌어 피하면, 해 그림자가 또 따라왔다. 얼마 뒤 아이를 배어 알 하나를 낳으니, 크기가 닷 되만 하였다.",
+			"hanja": "…河伯女，為夫餘王閉於室中，為日所照，引身避之，日影又逐。既而有孕，生一卵，大如五升。",
+			"source": "Wei Shu (魏書) bk. 100, Account of Goguryeo (高句麗傳)",
+			"event": "yuhwa-sun-egg"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Buyeo",
+		"after": "Geumwa answers his heir the way tired kings answer. He refuses the knife and gives the foundling a chore instead: Jumong",
+		"block": {
+			"kind": "quote",
+			"html": "The king did not listen, and set him to tending the horses. Jumong knew which ones were swift; he cut their feed and made them lean, and fed the sluggish ones well and made them fat. The king rode the fat ones himself and gave the lean one to Jumong.",
+			"ko": "왕은 듣지 않고 그에게 말을 기르게 하였다. 주몽은 날랜 말을 알아보고 먹이를 줄여 여위게 하고, 둔한 말은 잘 먹여 살찌게 하였다. 왕은 살찐 말을 자기가 타고, 여윈 말을 주몽에게 주었다.",
+			"hanja": "王不聽 使之養馬 朱蒙知其駿者 而減食令瘦 駑者善養令肥 王以肥者自乘 瘦者給朱蒙",
+			"source": "Samguk Sagi (三國史記) bk. 13, Goguryeo Annals — Jumong; Lee Byong-do ed., vol. 1"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Buyeo",
+		"after": "Of old, the founder King Chumo laid the foundations. He came out of North Buyeo, son of the Heavenly Emperor; his mother",
+		"block": {
+			"kind": "quote",
+			"html": "Jumong spoke to the water: “I am the son of the Sun, and Habek’s grandson through my mother. Today I flee, and the soldiers chasing me are nearly here. How can I cross?” At that the fish and turtles rose together and made a bridge for him. Jumong crossed; the fish and turtles scattered, and the riders chasing him could not cross.",
+			"ko": "주몽이 물에 고하였다. “나는 해의 아들이요 하백의 외손이다. 오늘 달아나는데 쫓는 군사가 거의 이르렀으니, 어떻게 건너겠는가?” 이에 물고기와 자라가 함께 떠올라 다리를 이루니, 주몽이 건넜다. 물고기와 자라가 곧 흩어지니, 쫓던 기병은 건너지 못하였다.",
+			"hanja": "朱蒙告水曰：「我是日子，河伯外孫，今日逃走，追兵垂及，如何得濟？」於是魚鼈並浮，為之成橋，朱蒙得渡，魚鼈乃解，追騎不得渡。",
+			"source": "Wei Shu (魏書) bk. 100, Account of Goguryeo (高句麗傳)",
+			"event": "jumong-crossing"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Buyeo",
+		"after": "Of old, the founder King Chumo laid the foundations. He came out of North Buyeo, son of the Heavenly Emperor; his mother",
+		"block": {
+			"kind": "quote",
+			"html": "I am the son of the Heavenly Emperor, Habek’s grandson. Today I flee, and those who pursue me have nearly arrived — what shall I do? Thereupon the fish and turtles formed a bridge…",
+			"ko": "나는 천제의 아들이요, 하백의 손이다. 오늘 도망하는데 쫓는 자가 거의 이르렀으니, 어찌하리오. 이에 물고기와 자라가 다리를 이루었다…",
+			"hanja": "我是天帝子河伯孫，今日逃遁，追者垂及，奈何？於是魚鼈成橋…",
+			"source": "Samguk Yusa (三國遺事) bk. 1, Wonders 1 — Goguryeo (高句麗)",
+			"event": "jumong-crossing"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Jolbon",
+		"after": "Jolbon is five roofs that will not share a yard. Cousins cut cousins over a ditch, a ford, a winter store. Jumong watche",
+		"block": {
+			"kind": "term",
+			"hanja": "五部",
+			"reading": "오부",
+			"term": "The Five Tribes",
+			"html": "Five roofs, five chiefs, five animals on five banners, and one valley too small for all of them. Remember the shape. Six hundred years from now they will be Goguryeo’s five commands, and they will still not share a yard.",
+			"ko": "지붕 다섯, 족장 다섯, 깃발마다 짐승 하나, 그리고 다 들어가기엔 좁은 골짜기 하나. 이 모양을 기억해 두라. 육백 년 뒤 이들은 고구려의 다섯 부가 되고, 그때도 마당을 나눠 쓰지 않는다.",
+			"diagram": "five-tribes"
+		}
+	},
+	{
+		"chapterId": "seventh-invasion",
+		"entryTitle": "Jolbon",
+		"after": "",
+		"block": {
+			"kind": "quote",
+			"html": "Sosuno was the daughter of Yeon Tabal, a man of Jolbon… She lived as a widow in Jolbon. Later, when Jumong was no longer tolerated in Buyeo… he fled south to Jolbon, founded a capital called Goguryeo, and took Sosuno as his consort. She gave a great deal of help in laying the foundations and building the kingdom, so Jumong favoured her with especial warmth…",
+			"ko": "소서노는 졸본 사람 연타발의 딸이다… 졸본에서 과부로 살았다. 뒤에 주몽이 부여에서 용납되지 못하여… 남쪽으로 달아나 졸본에 이르러, 도읍을 세워 고구려라 부르고 소서노를 맞아 왕비로 삼았다. 그녀가 나라의 터를 열고 업을 세우는 데 내조가 자못 컸으므로, 주몽이 그녀를 특히 두텁게 아꼈다…",
+			"hanja": "召西奴，卒本人延陁勃之女…寡居于卒本。後朱蒙不容於扶餘…南奔至卒本，立都號高句麗，娶召西奴為妃。其於開基創業，頗有内助，故朱蒙寵接之特厚…",
+			"source": "Samguk Sagi (三國史記) bk. 23, Baekje Annals — King Onjo, accession (variant account, 一云)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Gi (起)",
+		"after": "화백의 첫째 자리. 이제 모든 표가 그의 손을 지난다.",
+		"block": {
+			"kind": "quote",
+			"html": "Winter, eleventh month: the ichan Bidam was made High Councillor.",
+			"ko": "겨울 11월, 이찬 비담을 상대등으로 삼았다.",
+			"hanja": "冬十一月，拜伊飡毗曇爲上大等。",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 14 (645)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Gi (起)",
+		"after": "Under him sit the others, Yushin among them. They still decide only by unanimity. It’s the only way this council selects",
+		"block": {
+			"kind": "diagram",
+			"diagram": "harmony-council",
+			"step": "unanimous",
+			"title": "Session machine · 화백의 기법",
+			"caption": "Initial vote → deliberation → final vote. Unanimity or the name dies in the room.",
+			"ko": "초투표 → 숙고 → 최종 투표. 만장일치가 아니면 그 이름은 방에서 죽는다."
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Gi (起)",
+		"after": "Under him sit the others, Yushin among them. They still decide only by unanimity. It’s the only way this council selects",
+		"block": {
+			"kind": "table",
+			"head": [
+				"Alchun",
+				"Yushin",
+				"Murim",
+				"Imjong",
+				"Suljong",
+				"Bidam"
+			],
+			"rows": [
+				[
+					"알천",
+					"유신",
+					"무림",
+					"임종",
+					"술종",
+					"비담"
+				]
+			]
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Gi (起)",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "When Chunchu heard it, he stood leaning against a pillar all day without blinking. People and things passed before him and he did not see them. At last he said: “Alas! Is a grown man not able to swallow Baekje?”",
+			"ko": "춘추가 이를 듣고 기둥에 기대어 서서 종일 눈도 깜박이지 않았고, 사람과 물건이 앞을 지나가도 알아보지 못하였다. 이윽고 말하기를, “아! 대장부가 어찌 백제를 삼키지 못하겠는가!” 하였다.",
+			"hanja": "春秋聞之，倚柱而立，終日不瞬，人物過前而不之省。旣而言曰：「嗟乎！大丈夫豈不能呑百濟乎！」",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 11 (642), winter"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Gi (起)",
+		"after": "Earlier that summer the emperor in Chang’an marched on Goguryeo himself. Chunchu talked the queen into lending him men. ",
+		"block": {
+			"kind": "quote",
+			"html": "Summer, fifth month. Taizong of Tang marched on Goguryeo in person, and the queen raised thirty thousand troops to help him. Baekje took advantage of the gap and seized seven fortresses in the west of the country.",
+			"ko": "여름 5월, 당 태종이 친히 고구려를 치니, 왕이 군사 3만을 내어 이를 도왔다. 백제가 그 빈틈을 타 나라 서쪽의 일곱 성을 습격해 빼앗았다.",
+			"hanja": "夏五月，太宗親征高句麗，王發兵三萬以助之。百濟乘虛，襲取國西七城。",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 14 (645)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Suro",
+		"after": "On Earth, the people sing a song to call for a new king.",
+		"block": {
+			"kind": "verse",
+			"color": "#9f1239",
+			"lines": [
+				"龜何龜何 구 하 구 하 거북아 거북아",
+				"首其現也 수 기 현 야 머리를 내어라",
+				"若不現也 약 불 현 야 내어놓지 않으면",
+				"燔灼而喫也 번 작 이 끽 야 구워서 먹으리"
+			]
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seung (承)",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"hanja": "毗曇、廉宗等謂女主不能善理，因謀叛擧兵…",
+			"ko": "비담·염종 등이 이르기를, 여주(女主)는 잘 다스리지 못한다 하고, 반란을 꾀하여 군사를 일으켰다…",
+			"html": "Bidam, Yumjong and others said a woman sovereign cannot govern well, and so plotted rebellion and raised troops…",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 16 (647), 1st month; Lee Byong-do ed., vol. 1, p. 122"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seung (承)",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"hanja": "朕死於某年某月日 葬我於忉利天中",
+			"ko": "짐은 아무 해 아무 달 아무 날에 죽을 것이니, 나를 도리천 가운데에 장사 지내라.",
+			"html": "I shall die in such a year, on such a month and day. Bury me in the Heaven of the Thirty-Three.",
+			"source": "Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Queen Seondeok knows three things in advance; Ha & Mintz tr., p. 73 · Ilyeon, Lee Byong-do ed., p. 98"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seung (承)",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"hanja": "毗曇等屯於明活城 王師營於月城 攻守十日不解",
+			"ko": "비담 등이 명활성에 주둔하고, 왕사는 월성에 진을 치니, 공수한 지 열흘이 되어도 풀리지 않았다.",
+			"html": "Bidam and the others encamped at Myeonghwal Fortress; the royal army camped at the Moon Palace. Attack and defence lasted ten days without being broken.",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin (Bidam’s rebellion, 647); Lee Byong-do ed., vol. 2"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seung (承)",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "Mind is the root of all things: mind is the master, mind sets them moving. If the heart thinks evil and then speaks it and does it, guilt and suffering follow of themselves, as the wheel rolls in the rut.",
+			"ko": "마음은 모든 법의 근본이니, 마음이 주인이 되고 마음이 부린다. 속으로 악을 생각하여 그대로 말하고 그대로 행하면, 죄와 괴로움이 저절로 뒤따르니 수레바퀴가 바퀴 자국을 따라 구르는 것과 같다.",
+			"hanja": "心為法本，心尊心使，中心念惡，即言即行，罪苦自追，車轢于轍。",
+			"source": "Dhammapada (法句經) ch. 9, The Twin Verses (雙要品), tr. Weiqinan & Zhu Jiangyan · T04n0210, p. 562a · Pali: Dhammapada 1, Yamakavagga",
+			"person": "bidam",
+			"style": "sutra",
+			"native": "मनोपुब्बङ्गमा धम्मा मनोसेट्ठा मनोमया । मनसा चे पदुट्ठेन भासति वा करोति वा । ततो नं दुक्खमन्वेति चक्कं व वहतो पदं ॥",
+			"nativeLang": "pi",
+			"nativeLatn": "manopubbaṅgamā dhammā manoseṭṭhā manomayā | manasā ce paduṭṭhena bhāsati vā karoti vā | tato naṃ dukkham anveti cakkaṃ va vahato padaṃ ||"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seung (承)",
+		"after": "Alchun, arriving late with a lamp, goes pale. An officer asks whether to seize the jar. Nobody answers. Bidam is still l",
+		"block": {
+			"kind": "quote",
+			"html": "The bodhisattva relies on the perfection of wisdom, and so his mind has no hindrance. Having no hindrance, he has no fear; he passes far beyond upside-down, dreaming thought and reaches nirvana at last.",
+			"ko": "보리살타는 반야바라밀다를 의지하므로 마음에 걸림이 없고, 걸림이 없으므로 두려움이 없어서, 뒤바뀐 헛된 생각을 멀리 떠나 완전한 열반에 들어간다.",
+			"hanja": "菩提薩埵依般若波羅蜜多故，心無罣礙；無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃。",
+			"source": "Heart Sutra (般若波羅蜜多心經), tr. Xuanzang, 649 · T08n0251, p. 848c · Sanskrit: Prajñāpāramitāhṛdaya, short text (Vaidya ed.)",
+			"person": "bidam",
+			"style": "sutra",
+			"native": "बोधिसत्त्वस्य प्रज्ञापारमितामाश्रित्य विहरत्यचित्तावरणः । चित्तावरणनास्तित्वादत्रस्तो विपर्यासातिक्रान्तो निष्ठनिर्वाणः ।",
+			"nativeLang": "sa",
+			"nativeLatn": "bodhisattvasya prajñāpāramitām āśritya viharaty acittāvaraṇaḥ | cittāvaraṇanāstitvād atrasto viparyāsātikrānto niṣṭhanirvāṇaḥ |"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Jeon (轉)",
+		"after": "The three sisters are already on the far rock. Narim looks at him the way an eldest looks at a door that opened wrong.",
+		"block": {
+			"kind": "quote",
+			"html": "If there are beings much given to lust, let them keep Avalokiteśvara Bodhisattva always in mind and revere him, and they will be freed from desire.",
+			"ko": "만일 어떤 중생이 음욕이 많더라도, 늘 관세음보살을 생각하고 공경하면 곧 욕심을 여의게 된다.",
+			"hanja": "若有眾生多於婬欲，常念恭敬觀世音菩薩，便得離欲。",
+			"source": "Lotus Sutra (妙法蓮華經) ch. 25, The Universal Gate of Avalokiteśvara (觀世音菩薩普門品), tr. Kumārajīva · Sanskrit: Saddharmapuṇḍarīka ch. 24, Samantamukha-parivarta (Vaidya ed.)",
+			"person": "bidam",
+			"style": "sutra",
+			"native": "ये कुलपुत्र रागचरिताः सत्त्वाः, तेऽवलोकितेश्वरस्य बोधिसत्त्वस्य महासत्त्वस्य नमस्कारं कृत्वा विगतरागा भवन्ति ।",
+			"nativeLang": "sa",
+			"nativeLatn": "ye kulaputra rāgacaritāḥ sattvāḥ, te ’valokiteśvarasya bodhisattvasya mahāsattvasya namaskāraṃ kṛtvā vigatarāgā bhavanti |"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Jeon (轉)",
+		"after": "He flies the kite from the palace dark: a burning scarecrow rising where the star had fallen, so the night sky seems to ",
+		"block": {
+			"kind": "quote",
+			"html": "So he made a straw man, set fire in its arms, put it on a kite and flew it, so that it seemed to rise into the sky. Next day he had men spread word along the roads: “Last night the fallen star went back up.” It set the rebels doubting.",
+			"ko": "이에 허수아비를 만들어 불을 안기고 연에 실어 띄우니, 마치 하늘로 올라가는 듯하였다. 이튿날 사람을 시켜 길에 말을 퍼뜨리기를, “어젯밤 떨어진 별이 도로 올라갔다.” 하게 하여 적군을 의심하게 하였다.",
+			"hanja": "乃造偶人抱火，載於風鳶而颺之，若上天然。翌日，使人傳言於路曰：「昨夜，落星還上。」使賊軍疑焉。",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin (Bidam’s rebellion, 647)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Jeon (轉)",
+		"after": "It is the last horse he names. He rides Hanseul out on the tenth day, and across the Yellow Mountain fields thirteen yea",
+		"block": {
+			"kind": "quote",
+			"html": "From ignorance there is craving, and so my sickness is born. Because all beings are sick, therefore I am sick. If the sickness of all beings ends, then my sickness ends.",
+			"ko": "어리석음으로부터 애착이 있어 나의 병이 생겼습니다. 모든 중생이 병들었기에 나도 병든 것이니, 만일 모든 중생의 병이 사라지면 나의 병도 사라질 것입니다.",
+			"hanja": "從癡有愛，則我病生。以一切眾生病，是故我病；若一切眾生病滅，則我病滅。",
+			"source": "Vimalakīrti Sutra (維摩詰所說經) ch. 5, Mañjuśrī Asks After the Illness (文殊師利問疾品), tr. Kumārajīva · T14n0475, p. 544b · Sanskrit: Vimalakīrtinirdeśa 4.6 (Study Group on Buddhist Sanskrit Literature ed.)",
+			"person": "bidam",
+			"style": "sutra",
+			"native": "यावच्चिरमुपादाय मञ्जुश्रीः अविद्या भवतृष्णा च तावच्चिरमुपादाय ममैष व्याधिः । यदा च सर्वसत्वा विगतव्याधयो भविष्यन्ति तदा मम व्याधिः प्रश्रब्धो भविष्यति ।",
+			"nativeLang": "sa",
+			"nativeLatn": "yāvacciram upādāya mañjuśrīḥ avidyā bhavatṛṣṇā ca tāvacciram upādāya mamaiṣa vyādhiḥ | yadā ca sarvasatvā vigatavyādhayo bhaviṣyanti tadā mama vyādhiḥ praśrabdho bhaviṣyati |"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seohyun",
+		"after": "놔둬! 불붙었어, 문 놔둬, 놔두라고—",
+		"block": {
+			"kind": "quote",
+			"hanja": "舒玄為萬弩郡太守，將與俱行，肅訖宗始知女子與玄野合，疾之囚於別第，使人守之。忽雷震屋門，守者驚亂，萬明從竇而出，遂與舒玄赴萬弩郡。",
+			"html": "Seohyun was made governor of Manno commandery and meant to take her with him. Only then did Sukhuljong learn that his daughter had come together with Seohyun outside the rites. He hated it, shut her in a separate house, and set men to guard it. Suddenly lightning struck the door of the house; the guards scattered in terror; Manmyung got out through a hole in the wall and went with Seohyun to Manno.",
+			"ko": "서현이 만노군 태수가 되어 그녀와 함께 가려 하자, 숙흘종은 그제야 딸이 서현과 야합한 것을 알고 미워하여 별채에 가두고 사람을 시켜 지키게 하였다. 갑자기 벼락이 집 문을 치니 지키던 자들이 놀라 흩어졌고, 만명은 구멍으로 빠져나와 마침내 서현과 함께 만노군으로 갔다.",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seohyun",
+		"after": "푸핫— 국—",
+		"block": {
+			"kind": "quote",
+			"hanja": "舒玄庚辰之夜，夢熒惑鎭二星降於己，萬明亦以辛丑之夜，夢見童子衣金甲，乘雲入堂中，尋而有娠，二十月而生庾信。",
+			"html": "On the night of a gyeongjin day Seohyun dreamed that the two stars Mars and Saturn came down upon him; and Manmyung, on the night of a sinchuk day, dreamed that a boy clad in golden armour rode a cloud into the hall. Soon she was with child, and after twenty months she gave birth to Yushin.",
+			"ko": "서현은 경진일 밤에 형혹성과 진성 두 별이 자기에게 내려오는 꿈을 꾸었고, 만명도 신축일 밤에 금갑옷을 입은 동자가 구름을 타고 대청 안으로 들어오는 꿈을 꾸었다. 이윽고 아이를 배어 스무 달 만에 유신을 낳았다.",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seohyun",
+		"after": "…스무 달.",
+		"block": {
+			"kind": "quote",
+			"hanja": "及欲定名，謂夫人曰：「吾以庚辰夜吉夢得此兒，宜以爲名。然禮不以日月爲名，今庚與庾字相似，辰與信聲相近，況古之賢人有名庾信，盍以命之？」遂名庾信焉。",
+			"html": "When it came to choosing a name, he said to his wife: “I had a lucky dream on the <i>gyeongjin</i> night and got this child; it would be right to name him for it. But the rites do not allow a name from a day or a month. Now, <i>gyeong</i> 庚 resembles <i>yu</i> 庾 in writing, and <i>jin</i> 辰 is close to <i>sin</i> 信 in sound; what is more, there was a worthy of old named Yu Xin. Why not name him that?” So he was named Yushin.",
+			"ko": "이름을 정하려 할 때 부인에게 말하기를, “내가 경진일 밤의 길한 꿈으로 이 아이를 얻었으니 마땅히 그것으로 이름을 지어야 하겠소. 그러나 예법에 날이나 달로 이름을 짓지 않으니, 지금 경(庚)은 유(庾)와 글자가 비슷하고 진(辰)은 신(信)과 소리가 가까우며, 하물며 옛 현인 가운데 유신이라 이름한 이가 있으니 어찌 그것으로 이름 짓지 않겠소?” 하여, 마침내 이름을 유신이라 하였다.",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seohyun",
+		"after": "They bury the afterbirth on the high hill behind the county, the way you do with a child you mean to keep, and the hill ",
+		"block": {
+			"kind": "quote",
+			"hanja": "初以庾信胎藏之高山，至今謂之胎靈山。",
+			"html": "Yushin’s placenta was buried on a high hill, and to this day it is called Taeryeong, the Mountain of the Placenta Spirit.",
+			"ko": "처음에 유신의 태를 높은 산에 묻었으므로, 지금까지 그 산을 태령산이라 부른다.",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seohyun",
+		"after": "At fifteen he is made a hwarang, and the boys who follow him start calling themselves the Dragon-Flower Band. Seohyun he",
+		"block": {
+			"kind": "quote",
+			"hanja": "公年十五歲爲花郞，時人洽然服從，號龍華香徒。",
+			"html": "At fifteen the lord became a hwarang. The people of the time followed him gladly, and his band was called the Dragon-Flower Incense Band.",
+			"ko": "공은 나이 열다섯에 화랑이 되었는데, 당시 사람들이 기꺼이 따랐으며 그 무리를 용화향도라 불렀다.",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Seohyun",
+		"after": "대량주",
+		"block": {
+			"kind": "quote",
+			"hanja": "祖武力，爲新州道行軍摠管，嘗領兵獲百濟王及其將四人，斬首一萬餘級。父舒玄，官至蘇判大梁州都督安撫大梁州諸軍事。",
+			"html": "His grandfather Muryeok was Commander of the Army of the Sinju Circuit; he once led troops that captured the king of Baekje and four of his generals and took more than ten thousand heads. His father Seohyun rose to the rank of Sopan, Governor-General of Daeyang Province and Pacifier of all the armies of Daeyang Province.",
+			"ko": "할아버지 무력은 신주도 행군총관이 되어, 일찍이 군사를 거느리고 백제 왕과 그 장수 넷을 사로잡고 1만여 급의 목을 베었다. 아버지 서현은 벼슬이 소판 대량주도독 안무대량주제군사에 이르렀다.",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Gyeol (結)",
+		"after": "Alchun goes pale. Down the line an officer asks for the order to be repeated. Nobody repeats it. Yushin mounts, and the ",
+		"block": {
+			"kind": "quote",
+			"html": "Then he urged on his generals and men to strike hard, and Bidam and the rest broke and fled. They were pursued and beheaded, and their kin to the ninth degree were wiped out.",
+			"ko": "이에 여러 장수와 군사를 독려하여 힘껏 치니, 비담 등이 패하여 달아났다. 뒤쫓아 베고, 그 구족을 멸하였다.",
+			"hanja": "於是，督諸將卒奮擊之，毗曇等敗走。追斬之，夷九族。",
+			"source": "Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin (Bidam’s rebellion, 647)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Queen Jinduk",
+		"after": "Taizong* of Tang sent an envoy bearing his tally to confer on the late queen the posthumous rank of Grand Master of Sple",
+		"block": {
+			"kind": "quote",
+			"html": "In the twenty-first year, Sunduk died. She was posthumously made Grand Master of Splendid Happiness, her other offices and fiefs left as they were. Her younger sister Jinduk was then set up as king, given the added title Pillar of State, and enfeoffed as King of Lelang Commandery.",
+			"ko": "정관 21년, 선덕이 죽으니 광록대부를 추증하고 나머지 관작과 봉호는 모두 예전대로 두었다. 이어 그 누이 진덕을 왕으로 세우고, 주국을 더하여 낙랑군왕에 봉하였다.",
+			"hanja": "二十一年，善德卒，贈光祿大夫，余官封並如故。因立其妹真德爲王，加授柱國，封樂浪郡王。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Silla, Zhenguan 21 (647)",
+			"event": "jinduk-investiture"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "춘추의 둘째 아들. 당의 글자를 아버지가 바라는 것보다 잘 읽는다.",
+		"block": {
+			"kind": "diagram",
+			"diagram": "tang-imperial",
+			"step": "tribute",
+			"title": "All Under Heaven · 天下",
+			"caption": "One man at the centre. Around him the court, then the prefectures, then the kings beyond the frontier, who take his calendar and his seals and send gifts back. Silla is in the outer ring. So is the banner.",
+			"ko": "한가운데 한 사람. 그 둘레에 조정, 그 바깥에 주현, 다시 그 바깥에 변경 너머의 왕들. 그들은 황제의 달력과 인장을 받고 예물을 보낸다. 신라는 맨 바깥 고리에 있다. 저 현수막도 거기 걸려 있다."
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "알현전",
+		"block": {
+			"kind": "quote",
+			"html": "When he arrived, seeing that Chunchu’s bearing was outstanding, they treated him generously.",
+			"ko": "이미 이르니, 춘추의 위의가 영특함을 보고 후히 대접하였다.",
+			"hanja": "既至 見春秋儀表英偉 厚待之",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 2 (648); Lee Byong-do ed., vol. 1, p. 128 · cf. Jiu Tangshu (舊唐書) bk. 199上, Account of Silla"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "공자께서 이르셨지요. 이름이 바르지 않으면 말이 순하지 않다고(名不正則言不順).",
+		"block": {
+			"kind": "chengyu",
+			"hanja": "名不正言不順",
+			"pinyin": "míng bú zhèng, yán bú shùn",
+			"reading": "명부정 언불순",
+			"html": "“If the name is not correct, speech does not follow.” Call a thing by its right name first, or nothing said about it will hold.",
+			"ko": "“이름이 바르지 않으면 말이 순하지 않다.” 먼저 바른 이름으로 불러야, 그에 대해 하는 말이 선다.",
+			"origin": "Analects (論語) 13.3",
+			"story": "Zilu asked Confucius what he would do first if the lord of Wei handed him the government. “Rectify the names,” said Confucius, and Zilu told him he was being impractical. Wei was ruled just then by a son who held the throne against his own father, so “father”, “son” and “lord” all meant the wrong thing.",
+			"storyKo": "자로가 공자에게, 위나라 임금이 정사를 맡기면 무엇부터 하시겠느냐고 물었다. 공자는 “이름을 바로잡겠다”고 했고, 자로는 세상 물정 모르는 말씀이라고 했다. 그때 위나라는 아버지를 막고 왕위에 앉은 아들이 다스리고 있었다. 아버지도, 아들도, 임금도 제 뜻을 잃은 나라였다.",
+			"person": "chunchu"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "가르치신 분은 따로 계시지요. 손자께서 지피지기면 백전불태(知彼知己 百戰不殆)라 하셨습니다.",
+		"block": {
+			"kind": "chengyu",
+			"hanja": "知彼知己",
+			"pinyin": "zhī bǐ zhī jǐ",
+			"reading": "지피지기",
+			"html": "“Know the other, know yourself: a hundred battles, no danger” (知彼知己，百戰不殆). Half of any war is knowing who you are fighting.",
+			"ko": "“상대를 알고 나를 알면 백 번 싸워도 위태롭지 않다(知彼知己 百戰不殆).” 싸움의 절반은 누구와 싸우는지 아는 것이다.",
+			"origin": "Sunzi (孫子兵法) ch. 3, Attack by Stratagem (謀攻)",
+			"story": "Sunzi ends his chapter on strategy with a ladder. Know the enemy and yourself, and you are never in danger. Know only yourself, and you win one and lose one. Know neither, and every battle puts you in danger. Generals have quoted the top rung for a thousand years, and mostly lived on the second.",
+			"storyKo": "손자는 모공편 끝에 사다리 하나를 놓는다. 적을 알고 나를 알면 위태롭지 않다. 나만 알면 한 번 이기고 한 번 진다. 둘 다 모르면 싸울 때마다 위태롭다. 장수들은 천 년 동안 맨 윗칸을 인용했고, 대개는 둘째 칸에서 살았다.",
+			"person": "chunchu"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "역시, 우린 맞는 게 있어.",
+		"block": {
+			"kind": "quote",
+			"html": "Chunchu knelt and memorialized: my country lies in a corner of the sea, and Baekje, strong and cunning, has repeatedly invaded; if Your Majesty does not lend the heavenly troops to cut away this evil, the people of our humble city will all be taken captive. Taizong deeply agreed, and promised to send an army.",
+			"ko": "춘추가 무릎 꿇고 아뢰기를, 신의 본국은 바다 모퉁이에 치우쳐 있사온데, 백제가 강하고 교활하여 자주 침릉하오니, 폐하께서 천병을 빌려 흉악을 베어 없애 주시지 아니하시면 저희 고을 백성이 다 사로잡히리이다. 태종이 깊이 그러하다 여기고, 출사를 허락하였다.",
+			"hanja": "春秋跪奏曰 臣之本國僻在海隅 而百濟強猾屢肆侵凌 若陛下不借天兵翦除凶惡 則敝邑人民盡爲所虜 太宗深然之 許以出師",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 2 (648); Lee Byong-do ed., vol. 1, p. 128"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "그럼 하나만 세어 주십시오, 폐하. 순망치한(脣亡齒寒)이라 하였습니다.",
+		"block": {
+			"kind": "chengyu",
+			"hanja": "脣亡齒寒",
+			"pinyin": "chún wáng chǐ hán",
+			"reading": "순망치한",
+			"html": "“The lips gone, the teeth are cold.” Two neighbours who look separate stand or fall together.",
+			"ko": "“입술이 없으면 이가 시리다.” 따로인 듯한 두 이웃은 함께 서고 함께 쓰러진다.",
+			"origin": "Zuo zhuan (左傳), Duke Xi yr. 5 (僖公五年)",
+			"story": "Jin asked the little state of Yu to lend it a road, so its army could strike Guo on the far side. Yu’s minister begged his duke to refuse: cheekbone and jaw hold each other up, and when the lips are gone the teeth go cold. The duke said Jin was family, and lent the road. Jin took Guo, and that winter, on the way home, it took the duke as well.",
+			"storyKo": "진(晉)나라가 작은 우나라에 길을 빌려 달라고 했다. 그 너머의 괵나라를 치려는 것이었다. 우나라 신하 궁지기는 거절하시라 간했다. 광대뼈와 턱은 서로 기대고, 입술이 없으면 이가 시리다고. 임금은 진나라는 한집안이라며 길을 내주었다. 진나라는 괵을 멸했고, 그해 겨울 돌아가는 길에 우나라 임금까지 잡아갔다.",
+			"person": "chunchu"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "먼 데와 사귀고 가까운 데를 친다. 원교근공(遠交近攻)이로군.",
+		"block": {
+			"kind": "chengyu",
+			"hanja": "遠交近攻",
+			"pinyin": "yuǎn jiāo jìn gōng",
+			"reading": "원교근공",
+			"html": "“Befriend the far, attack the near.” Make peace with distant powers and swallow your neighbours one at a time.",
+			"ko": "“먼 나라와 사귀고 가까운 나라를 친다.” 먼 세력과는 화친하고, 이웃은 하나씩 삼킨다.",
+			"origin": "Shiji (史記) bk. 79, Fan Ju (范雎)",
+			"story": "Fan Ju, a fugitive from Wei smuggled into Qin, told its king to stop marching past his neighbours to fight far-off Qi. “Better to befriend the far and attack the near,” he said. “An inch won is Your Majesty’s inch.” Qin ate its neighbours one by one. The king’s great-grandson finished the meal and called himself Huangdi.",
+			"storyKo": "위나라에서 도망쳐 진나라로 숨어든 범수가 진나라 왕에게, 이웃을 지나쳐 먼 제나라를 치지 말라고 했다. “먼 나라와 사귀고 가까운 나라를 치느니만 못합니다. 한 치를 얻으면 그것이 왕의 한 치입니다.” 진나라는 이웃을 하나씩 먹어 들어갔다. 그 왕의 증손자가 식사를 마치고 스스로 황제라 불렀다.",
+			"person": "taizong"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "Inmun stays in Chang’an. He will be there, on and off, for the rest of his life.",
+		"block": {
+			"kind": "diagram",
+			"diagram": "tang-military",
+			"step": "fubing",
+			"title": "The Garrison Army · 府兵",
+			"caption": "Farmers on registered land, mustered in six hundred-odd garrisons. They take turns guarding the capital, march when a general is named for a war, and go home when it ends. The Ministry of War has every one of them by name.",
+			"ko": "나라에 등록된 땅을 받은 농부들이 육백여 곳의 절충부에 편성된다. 번갈아 도성을 지키고, 전쟁에 장수가 임명되면 출정하고, 끝나면 집으로 돌아간다. 병부는 그들 하나하나의 이름을 쥐고 있다."
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "국자감",
+		"block": {
+			"kind": "diagram",
+			"diagram": "tang-exam",
+			"step": "exam",
+			"title": "Clans and the Examination · 氏族 · 科擧",
+			"caption": "The old clans rank themselves by blood. The emperor ranks them again, by register. And beside that door the academy opens a second one: the examination, which asks what a man has read, not whose son he is.",
+			"ko": "옛 가문들은 핏줄로 서열을 매긴다. 황제는 족보로 그 서열을 다시 매긴다. 그리고 국학은 그 문 옆에 두 번째 문을 연다. 누구의 아들이냐가 아니라 무엇을 읽었느냐를 묻는 과거(科擧)."
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "그럼 폐하, 배는 누가 뒤집사옵니까?",
+		"block": {
+			"kind": "chengyu",
+			"hanja": "載舟覆舟",
+			"pinyin": "zài zhōu fù zhōu",
+			"reading": "재주복주",
+			"html": "“Water carries the boat; water overturns the boat” (水則載舟，水則覆舟). The ruler floats on the people, and the people can sink him.",
+			"ko": "“물은 배를 띄우고, 물은 배를 뒤집는다(水則載舟 水則覆舟).” 임금은 백성 위에 떠 있고, 백성은 그를 가라앉힐 수 있다.",
+			"origin": "Xunzi (荀子) ch. 9, The Regulations of a King (王制)",
+			"story": "Xunzi quotes it from an older book: the ruler is the boat, the common people are the water. Wei Zheng, the minister who contradicted the Second Emperor for seventeen years, said it to his face. The emperor liked it enough to teach it to his heir on a boat, and asked the boy if he understood boats. The boy said no.",
+			"storyKo": "순자는 더 오래된 책에서 이 말을 따온다. 임금은 배요, 백성은 물이다. 십칠 년 동안 황제에게 대든 신하 위징이 황제 면전에서 그 말을 했다. 황제는 그 말이 마음에 들어 배를 타던 날 태자에게 가르쳤고, 배가 무엇인지 아느냐고 물었다. 태자는 모른다고 했다.",
+			"person": "taizong"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "The emperor shakes his head, still smiling, and goes back to his memorials. Chunchu says nothing more. He is watching th",
+		"block": {
+			"kind": "diagram",
+			"diagram": "tang-departments",
+			"step": "flow",
+			"title": "Three Departments · 三省六部",
+			"caption": "Three departments and six boards stand between a petition and a province. None of them can say no to the man at the top. Every road on the chart ends at the same brush.",
+			"ko": "청원서와 고을 사이에 세 관청과 여섯 부서가 있다. 그중 어느 것도 맨 위의 사람에게 아니라고 하지 못한다. 도표의 모든 길은 같은 붓 하나에서 끝난다."
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "…그럼 서기를 믿겠사옵니다, 폐하.",
+		"block": {
+			"kind": "chengyu",
+			"hanja": "天子無戲言",
+			"pinyin": "tiānzǐ wú xì yán",
+			"reading": "천자무희언",
+			"html": "“The Son of Heaven speaks no idle words.” Whatever a ruler says, even in play, is law once it is said.",
+			"ko": "“천자에게는 농담이 없다.” 임금이 한 말은 장난이라도, 입 밖에 나면 곧 법이다.",
+			"origin": "Shiji (史記) bk. 39, Hereditary House of Jin (晉世家)",
+			"story": "King Cheng of Zhou, still a boy, cut a paulownia leaf into the shape of a jade tally and gave it to his little brother. “With this, I enfeoff you.” The court historian asked him to pick a day for the ceremony. “I was only playing,” said the king. “The Son of Heaven does not play,” said the historian. “What he says, the historians write.” The brother was enfeoffed in Tang.",
+			"storyKo": "주나라 성왕은 어렸을 때 오동잎을 홀 모양으로 잘라 아우 숙우에게 주며 “이것으로 너를 봉한다” 하고 놀았다. 사관 사일이 날을 잡아 봉하시라 청했다. “장난이었다.” 왕이 말하자 사일이 답했다. “천자에게는 농담이 없습니다. 말씀하시면 사관이 적습니다.” 숙우는 당(唐)에 봉해졌다.",
+			"person": "taizong"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "…그럼 서기를 믿겠사옵니다, 폐하.",
+		"block": {
+			"kind": "quote",
+			"html": "I attack Goguryeo now for no other reason than pity for you, Silla, caught between two countries, invaded every year without a year’s peace. Mountains, rivers and land are not what I covet; jade, silk, sons and daughters I already have. When I have pacified the two countries, the land south of Pyongyang and the land of Baekje shall all be given to you, Silla, for your lasting peace.",
+			"ko": "짐이 지금 고구려를 치는 것은 다른 까닭이 없다. 너희 신라가 두 나라 사이에 끼여 매번 침략을 당하여 편안한 해가 없음을 불쌍히 여겨서이다. 산천과 토지는 내가 탐하는 바가 아니며, 옥백과 자녀는 내가 가진 바이다. 내가 두 나라를 평정하면 평양 이남과 백제 땅은 모두 너희 신라에게 주어 길이 편안하게 하리라.",
+			"hanja": "朕今伐高麗 非有他故 憐你新羅 攝乎兩國 每被侵陵 靡有寧歲 山川土地 非我所貪 玉帛子女 是我所有 我平定兩國 平壤已南 百濟土地 並乞你新羅 永爲安逸",
+			"source": "Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671): Munmu’s reply to Xue Rengui, quoting the Second Emperor in the twenty-second year of Zhenguan (648)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "후궁의 무씨. 숨기는 일을 병풍이 하는 것 같지는 않다.",
+		"block": {
+			"kind": "chengyu",
+			"hanja": "牝雞之晨",
+			"pinyin": "pìn jī zhī chén",
+			"reading": "빈계지신",
+			"html": "“When the hen crows at dawn, the house is ruined” (牝雞之晨，惟家之索). The oldest proverb men have for a woman who rules.",
+			"ko": "“암탉이 새벽에 울면 집안이 망한다(牝雞之晨 惟家之索).” 다스리는 여인을 두고 사내들이 하는 가장 오래된 속담.",
+			"origin": "Book of Documents (書經), The Speech at Mu (牧誓)",
+			"story": "On the morning of the battle that ended the Shang, King Wu of Zhou stood before his army and quoted the ancients: the hen does not crow at dawn, and if she does, the house is finished. The Shang king, he said, listened only to a woman. Men have been quoting the line at women ever since, and some of the women have listened very carefully.",
+			"storyKo": "상나라를 끝낸 싸움의 아침, 주나라 무왕은 군사들 앞에서 옛사람의 말을 인용했다. 암탉은 새벽에 울지 않는다. 암탉이 새벽에 울면 집안이 망한다. 상나라 왕은 여인의 말만 듣는다고 했다. 그 뒤로 사내들은 이 말을 여인들에게 들이밀었고, 여인들 가운데 몇은 아주 주의 깊게 들었다.",
+			"person": "wuzetian"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": "The patrol closes. A shout across the water names the wrong man, and is satisfied. They board. They take the coat. The a",
+		"block": {
+			"kind": "quote",
+			"html": "On the way home, at sea, Chunchu met Goguryeo patrol soldiers. His attendant On Gunhae sat on the ship in a high cap and a great coat; the patrol took him for Chunchu and seized and killed him. Chunchu reached the country in a small boat. The queen heard, grieved, posthumously made Gunhae a Daeachan, and richly rewarded his descendants.",
+			"ko": "춘추가 돌아와 바다에 이르러 고구려의 순라병을 만났다. 수행인 온군해가 고관과 대의를 입고 배 위에 앉으니, 순라병이 보고 춘추로 여겨 잡아 죽였다. 춘추는 작은 배를 타고 나라에 이르렀다. 왕이 듣고 슬퍼하여 군해를 대아찬으로 추증하고, 그 자손에게 후한 상을 주었다.",
+			"hanja": "春秋還至海上 遇高句麗邏兵 從者溫君解 高冠大衣坐於船上 邏兵見以爲春秋 捉殺之 春秋乘小船至國 王聞之嗟痛 追贈君解爲大阿飡 優賞其子孫",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 2 (648); Lee Byong-do ed., vol. 1, p. 128"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Huangdi (皇帝)",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"hanja": "於是使御史悉案問諸生，諸生傳相告引，乃自除犯禁者四百六十餘人，皆阬之咸陽，使天下知之，以懲後。",
+			"html": "Thereupon he had the censors question every one of the scholars. The scholars informed on one another, and he himself struck off more than four hundred and sixty who had broken the prohibitions, and buried them all at Xianyang, so that all under heaven would know of it, as a warning to those who came after.",
+			"ko": "이에 어사를 시켜 여러 선비를 낱낱이 캐묻게 하니, 선비들이 서로 고발하여 끌어들였다. 이에 몸소 금령을 범한 자 사백육십여 명을 가려내어 모두 함양에 구덩이를 파 묻고, 천하가 이를 알게 하여 뒷사람을 징계하였다.",
+			"source": "Shiji (史記) bk. 6, Basic Annals of the First Emperor of Qin (秦始皇本紀), yr. 35"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Royal Secretariat",
+		"after": "For three months a border petition has been circling the Harmony Council like a bird that cannot find a roof. Chunchu ha",
+		"block": {
+			"kind": "diagram",
+			"diagram": "royal-secretariat",
+			"title": "Royal Secretariat · 집사부",
+			"caption": "Fourteen ministries under one 중시. Tang’s 三省六部 copied and exceeded. Never enough.",
+			"ko": "중시 아래 열네 부. 당의 삼성육부를 본따 더했다. 결코 충분하지 않다."
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Royal Secretariat",
+		"after": "For three months a border petition has been circling the Harmony Council like a bird that cannot find a roof. Chunchu ha",
+		"block": {
+			"kind": "diagram",
+			"diagram": "harmony-council",
+			"step": "ornamental",
+			"title": "Council, ornamental · 화백의 빈 의자",
+			"caption": "The chairs stay polished. Nothing of consequence waits for them anymore.",
+			"ko": "의자는 여전히 닦인다. 더 이상 중대한 일은 화백을 기다리지 않는다."
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Royal Secretariat",
+		"after": "상소. 인장. 파발.",
+		"block": {
+			"kind": "quote",
+			"html": "Second month: the old treasury office was remade as the Royal Secretariat, and the pajinchan Jukji was appointed its Premier, to take charge of confidential affairs.",
+			"ko": "2월, 품주를 고쳐 집사부로 삼고, 이어 파진찬 죽지를 집사 중시로 임명하여 기밀 사무를 맡게 하였다.",
+			"hanja": "二月，改稟主爲執事部，仍拜波珍飡竹旨爲執事中侍，以掌機密事務。",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 5 (651)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Royal Secretariat",
+		"after": "비단에 짠 노래",
+		"block": {
+			"kind": "quote",
+			"html": "The queen wove brocade with a five-character Ode to Great Peace, and sent Chunchu’s son Bupmin to present it to the Tang emperor.",
+			"ko": "왕이 비단을 짜서 오언 태평송을 지어 넣고, 춘추의 아들 법민을 보내 당 황제에게 바쳤다.",
+			"hanja": "王織錦作五言太平頌，遣春秋子法敏，以獻唐皇帝。",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 4 (650), 6th month",
+			"event": "taiping-ode"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Royal Secretariat",
+		"after": "새것은 다 가렵다.",
+		"block": {
+			"kind": "quote",
+			"html": "This year the Silla tribute envoys, the sachan Jiman and others, put in at Tsukushi wearing Tang clothes. The court hated this wilful change of custom, rebuked them and sent them back.",
+			"ko": "이 해에 신라의 공조사 지만 사찬 등이 당나라 옷을 입고 쓰쿠시에 배를 대었다. 조정은 제멋대로 풍속을 바꾼 것을 미워하여, 꾸짖어 쫓아 돌려보냈다.",
+			"hanja": "是歲，新羅貢調使知萬沙飡等，著唐國服泊于筑紫。朝廷惡恣移俗，訶嘖追還。",
+			"source": "Nihon Shoki (日本書紀) bk. 25, Emperor Kōtoku — Hakuchi 2 (651)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Royal Secretariat",
+		"after": "새것은 다 가렵다.",
+		"block": {
+			"kind": "edict",
+			"person": "gaozong",
+			"title": "Sealed letter to the king of Baekje",
+			"hanja": "至如海東三國，開基自久，並列疆界，地實犬牙。近代已來，遂構嫌隙。戰爭交起，略無寧歲。遂令三韓之氓，命懸刀俎，尋戈肆憤，朝夕相仍。……新羅使金法敏奏書：「高麗、百濟，脣齒相依，競舉兵戈，侵逼交至。大城重鎮，並爲百濟所並；疆宇日蹙，威力並謝。乞詔百濟，令歸所侵之城。若不奉詔，即自興兵打取。但得故地，即請交和。」……王所兼新羅之城，並宜還其本國；新羅所獲百濟俘虜，亦遣還王。……王若不從進止，朕已依法敏所請，任其與王決戰；亦令約束高麗，不許遠相救恤。高麗若不承命，即令契丹諸蕃渡遼澤入抄掠。王可深思朕言，自求多福，審圖良策，無貽後悔。",
+			"html": "The three kingdoms east of the sea were founded long ago. Their borders run side by side and bite into each other like dogs’ teeth. In recent times they have fallen out. War follows war, and there is hardly a year of peace. So the people of Samhan live with their lives on the chopping block, and spears are taken up in rage from morning to night. … Silla’s envoy, Kim Bupmin, presented a letter: “Goguryeo and Baekje lean on each other like lips and teeth. They raise arms by turns and press on us from both sides. Our great cities and strongholds have all been swallowed by Baekje; our land shrinks by the day and our strength is gone. We beg you to command Baekje to return the cities it took. If it will not obey, we will raise troops and take them back ourselves. Give us our old land, and we ask only for peace.” … The Silla cities you have taken must all go back to their own country, and the Baekje prisoners Silla holds will be sent back to you. … If you will not do as you are told, We have already granted Bupmin’s request: he may settle it with you in battle. We will also restrain Goguryeo and forbid it to come to your aid from afar. And if Goguryeo will not obey, the Khitan and the other tribes will be sent across the Liao marshes to raid it. Think hard on Our words, King. Seek your own good fortune, plan well, and leave yourself nothing to regret.",
+			"ko": "바다 동쪽의 세 나라는 나라를 연 지 오래되었고, 국경을 나란히 하여 땅이 개의 이빨처럼 맞물려 있다. 근래 들어 마침내 틈이 벌어져, 전쟁이 번갈아 일어나 편안한 해가 거의 없다. 그리하여 삼한의 백성은 목숨이 도마 위에 걸렸고, 창을 들고 분을 터뜨리는 일이 아침저녁으로 이어진다. …… 신라의 사신 김법민이 글을 올려 아뢰었다. “고구려와 백제가 입술과 이처럼 서로 기대어 다투어 군사를 일으키고, 번갈아 침범해 옵니다. 큰 성과 중요한 진은 모두 백제에게 빼앗겼고, 강토는 날로 줄어 힘이 다하였습니다. 백제에 조서를 내려 빼앗은 성을 돌려주게 하소서. 조서를 받들지 않으면 저희가 스스로 군사를 일으켜 되찾겠습니다. 옛 땅만 얻으면 곧 화친을 청하겠습니다.” …… 왕이 차지한 신라의 성은 모두 그 나라에 돌려주고, 신라가 잡은 백제 포로도 왕에게 돌려보내게 하라. …… 왕이 따르지 않는다면, 짐은 이미 법민의 청에 따라 그가 왕과 결전하도록 맡겼다. 또 고구려를 단속하여 멀리서 구원하지 못하게 할 것이다. 고구려가 명을 받들지 않으면 거란과 여러 번국에게 요택을 건너 노략하게 할 것이다. 왕은 짐의 말을 깊이 생각하여 스스로 복을 구하고, 좋은 계책을 살펴 뒷날 후회를 남기지 말라.",
+			"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Baekje, Yonghui 2 (651) · cf. Samguk Sagi bk. 28, King Uija, yr. 11"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Jiabeng (駕崩)",
+		"after": "The great emperor is given a temple name — Taizong. The clerks write it in the register and close the book.",
+		"block": {
+			"kind": "quote",
+			"html": "On the renshen day the death was announced in the Taiji Hall, the testamentary edict was proclaimed, and the crown prince took the throne. … The Liaodong campaign and all the building works were called off.",
+			"ko": "임신일, 태극전에서 상을 알리고 유조를 선포하니 태자가 즉위하였다. … 요동의 전역과 여러 토목 공사를 그만두게 하였다.",
+			"hanja": "壬申，發喪太極殿，宣遺詔，太子即位。…罷遼東之役及諸土木之功。",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 199, Tang Zhenguan 23 (649), 5th month",
+			"event": "taizong-will"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Jiabeng (駕崩)",
+		"after": "불허한다.",
+		"block": {
+			"kind": "quote",
+			"html": "Ashina She’er and Qibi Heli* asked to kill themselves and be buried with him. The emperor sent word that, by the late emperor’s own wishes, it was not permitted.",
+			"ko": "아사나사이와 계필하력*이 스스로 목숨을 끊어 순장되기를 청하였으나, 황제는 사람을 보내 선제의 뜻을 들어 허락하지 않았다.",
+			"hanja": "阿史那社爾、契苾何力請殺身殉葬，上遣人諭以先旨不許。",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 199, Tang Zhenguan 23 (649), 8th month",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "Qibi Heli: the steppe prince this book calls the White Dragon.",
+					"ko": "계필하력, 이 책의 흰 용(백룡)이다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Jiabeng (駕崩)",
+		"after": "A year later, on the anniversary, the new emperor comes to the temple to burn incense for his father. A nun in grey look",
+		"block": {
+			"kind": "quote",
+			"html": "When Taizong died, she became a nun and lived at the Ganye Temple. The new emperor saw her at the temple…",
+			"ko": "태종이 죽자 마침내 비구니가 되어 감업사에 머물렀다. 대제가 절에서 그녀를 보았다…",
+			"hanja": "及太宗崩，遂為尼，居感業寺。大帝於寺見之…",
+			"source": "Jiu Tangshu (舊唐書) bk. 6, Annals of Empress Wu (則天皇后本紀)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "King Muyeol",
+		"after": "화백회의",
+		"block": {
+			"kind": "quote",
+			"hanja": "臣老矣 無德行可稱 今之德望崇重 莫若春秋公 實可謂濟世英傑矣",
+			"ko": "신은 늙었고, 칭할 만한 덕행이 없습니다. 지금 덕망이 높고 중한 이는 춘추공만 한 이가 없으니, 실로 세상을 건질 영걸이라 이를 만합니다.",
+			"html": "Your servant is old, and has no virtuous conduct worth naming. In virtue and standing none now is weightier than Lord Chunchu; he may truly be called a hero who can save the age.",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, accession (654); Lee Byong-do ed., vol. 1, p. 134"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "King Muyeol",
+		"after": "무서워 해야 할지, 동경해야 할 지 모르겠다....",
+		"block": {
+			"kind": "quote",
+			"hanja": "國人謂始祖赫居世至眞德二十八王 謂之聖骨 自武烈至末王 謂之眞骨",
+			"ko": "나라 사람들이 이르기를, 시조 혁거세로부터 진덕에 이르는 스물여덟 왕을 성골이라 하고, 무열로부터 끝 왕에 이르기까지를 진골이라 하였다.",
+			"html": "The people of the country said: from the founder Hyeokgeose to Jindeok, twenty-eight sovereigns, they called Sacred Bone; from Muyeol to the last kings, they called True Bone.",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, death notice (654); Lee Byong-do ed., vol. 1, p. 134"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Jahee",
+		"after": "장부를 닫지 마세요.",
+		"block": {
+			"kind": "quote",
+			"html": "His queen, Queen Jayi, was the daughter of the pajinchan Seonpum. Bupmin was striking in looks, bright, and full of wise plans.",
+			"ko": "왕비 자의왕후는 파진찬 선품의 딸이다. 법민은 용모가 빼어나고, 총명하며 지략이 많았다.",
+			"hanja": "妃慈儀王后，波珍飡善品之女也。法敏姿表英特，聰明多智略。",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, accession"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Hyukgose",
+		"after": "혁거세. 알에서 태어나, 목소리가 굵어지기도 전에 왕관을 썼다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "白馬跪而悲鳴 掘地得大青卵 開之有童男 號曰赫居世",
+			"ko": "흰 말이 무릎 꿇고 슬피 울자, 그 자리를 파니 큰 푸른 알이 있었다. 알을 여니 동자가 있어, 이름하여 혁거세라 하였다.",
+			"html": "A white horse knelt and cried aloud; they dug the ground and found a great blue egg. They opened it, and there was a boy-child; they named him Hyeokgeose.",
+			"source": "Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Founding of Silla (Hyeokgeose); Ha & Mintz tr., pp. 49–50"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Hyukgose",
+		"after": "It does not spook. It lets them come close enough to see that its wings are folded the way a bird folds them and that it",
+		"block": {
+			"kind": "quote",
+			"html": "Below Mount Yang, beside Najeong well, a strange vapour like a flash of lightning hung down to the ground, and there was a white horse kneeling as if in obeisance. They went to look and found a purple egg (one account says a great blue egg). The horse saw the men, gave a long neigh, and rose up to heaven.",
+			"ko": "양산 아래 나정 곁에 번개 같은 이상한 기운이 땅에 드리웠고, 흰 말 한 마리가 절하듯 꿇어앉아 있었다. 찾아가 살펴보니 자줏빛 알 하나가 있었다(푸른 큰 알이라고도 한다). 말은 사람을 보자 길게 울고 하늘로 올라갔다.",
+			"hanja": "楊山下蘿井傍 異氣如電光垂地 有一白馬跪拜之狀 尋撿之 有一紫卵(一云靑大卵) 馬見人長嘶上天",
+			"source": "Samguk Yusa (三國遺事) bk. 1, Wonders 1 — Silla Founder Hyeokgeose (新羅始祖 赫居世王)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Hyukgose",
+		"after": "Six families end up running everything. In every new country, six families always do.",
+		"block": {
+			"kind": "table",
+			"head": [
+				"Lee Alpyung",
+				"Choi Sobuldori",
+				"Jung Jibekho",
+				"Son Gurema",
+				"Bae Jita",
+				"Seol Hojin"
+			],
+			"rows": [
+				[
+					"이알평",
+					"최소벌도리",
+					"정지백호",
+					"손구레마",
+					"배지타",
+					"설호진"
+				]
+			]
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Hyukgose",
+		"after": "오릉",
+		"block": {
+			"kind": "quote",
+			"html": "He ruled the country sixty-one years, and the king rose up to heaven. Seven days later his remains fell scattered to the ground… The people wished to bury them together, but a great serpent chased them off; so they buried the five parts separately and made the Five Tombs, also called the Serpent Tombs.",
+			"ko": "나라를 다스린 지 예순한 해에 왕이 하늘로 올라갔다. 이레 뒤 유체가 땅에 흩어져 떨어졌다… 나라 사람들이 합쳐 장사 지내려 하자 큰 뱀이 쫓아 막으므로, 다섯 몸을 따로 묻어 오릉으로 삼았다. 사릉이라고도 한다.",
+			"hanja": "理國六十一年 王升于天 七日後 遺體散落于地 … 國人欲合而葬之 有大蛇逐禁 各葬五體爲五陵 亦名蛇陵",
+			"source": "Samguk Yusa (三國遺事) bk. 1, Wonders 1 — Silla Founder Hyeokgeose (新羅始祖 赫居世王)"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Talhae",
+		"after": "Late in the first king’s reign, a chest comes in on the tide at a fishing beach. A magpie flies over it, crying.",
+		"block": {
+			"kind": "quote",
+			"hanja": "脫解本多婆那國所生也。其國在倭國東北一千里。初，其國王娶女國王女爲妻，有娠七年，乃生大卵。王曰：「人而生卵，不祥也，宜棄之。」其女不忍，以帛裏卵并寶物置於櫝中，浮於海，任其所往。",
+			"html": "Talhae was born in the land of Dapana, which lies a thousand li north-east of Wa. Its king had taken to wife the daughter of the king of the Land of Women. She was with child seven years, and then bore a great egg. The king said: “For a person to bear an egg is unlucky; it should be cast away.” She could not bear to, and wrapped the egg in silk, laid it in a chest with treasures, and set it afloat on the sea to go where it would.",
+			"ko": "탈해는 본래 다파나국에서 태어났다. 그 나라는 왜국 동북쪽 천 리에 있다. 처음에 그 나라 왕이 여국 왕의 딸을 아내로 맞았는데, 아이를 밴 지 일곱 해 만에 큰 알을 낳았다. 왕이 말하였다. “사람이 알을 낳는 것은 상서롭지 못하니 버려야 한다.” 그 여인은 차마 그러지 못하고, 비단으로 알을 싸서 보물과 함께 궤짝에 넣어 바다에 띄워, 가는 대로 맡겼다.",
+			"source": "Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Talhae",
+		"after": "She names him herself, since there is nobody else to ask. A magpie followed the chest in, so she takes the bird out of t",
+		"block": {
+			"kind": "quote",
+			"hanja": "或曰：「此兒不知姓氏。初，櫝來時，有一鵲飛鳴而隨之。宜省鵲字，以昔爲氏。又解韞櫝而出，宜名脫解。」",
+			"html": "Someone said: “Nobody knows this child’s surname. When the chest first came, a magpie flew after it, crying. Take part of the character for magpie and make Seok his surname. And since he undid the chest and came out of it, name him Talhae.”",
+			"ko": "어떤 이가 말하였다. “이 아이는 성씨를 알 수 없다. 처음 궤짝이 올 때 까치 한 마리가 울며 따라왔으니, 까치 작(鵲) 자를 줄여 석(昔)을 성으로 삼아야 한다. 또 싸인 궤짝을 풀고 나왔으니 탈해라 이름 지어야 한다.”",
+			"source": "Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Talhae",
+		"after": "증명해 보시오.",
+		"block": {
+			"kind": "quote",
+			"hanja": "望楊山下瓠公宅，以爲吉地，設詭計以取而居之，其地後爲月城。",
+			"html": "He looked at Hogong’s house below Mount Yang and judged it auspicious ground; he laid a cunning plan, took it, and lived there. That ground later became the Moon Palace.",
+			"ko": "양산 아래 호공의 집을 바라보고 길한 땅이라 여겨, 속임수를 써서 빼앗아 살았다. 그 땅이 뒤에 월성이 되었다.",
+			"source": "Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Alji",
+		"after": "At first light Hogong walks into Sirim with a lantern he no longer needs, and finds a small box of gold hanging from a b",
+		"block": {
+			"kind": "quote",
+			"hanja": "九年春三月，王夜聞金城西始林樹間有鷄鳴聲。遲明，遣瓠公視之，有金色小櫝掛樹枝，白雞鳴於其下。",
+			"html": "Ninth year, spring, third month: in the night the king heard a cock crowing among the trees of Sirim, west of the Golden Palace. At daybreak he sent Hogong to look, and there was a small gold-coloured chest hanging from a branch, and a white cock crowing beneath it.",
+			"ko": "구년 봄 삼월, 왕이 밤에 금성 서쪽 시림의 나무 사이에서 닭 우는 소리를 들었다. 날이 밝자 호공을 보내 살피게 하니, 금빛 작은 궤짝이 나뭇가지에 걸려 있고 흰 닭이 그 아래에서 울고 있었다.",
+			"source": "Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum"
+		}
+	},
+	{
+		"chapterId": "chunchu-era",
+		"entryTitle": "Alji",
+		"after": "Because he came out of a golden box, he is given the surname Kim, gold. Because he is a child, he is called Alji. The wo",
+		"block": {
+			"kind": "quote",
+			"hanja": "及長，聰明多智略，乃名閼智。以其出於金櫝，姓金氏。改始林名雞林，因以爲國號。",
+			"html": "When he grew up he was bright and full of wise plans, and he was named Alji. Since he had come out of a golden chest, his surname was Kim. Sirim was renamed Gyerim, and that became the name of the country.",
+			"ko": "자라자 총명하고 지략이 많아 알지라 이름 지었다. 금궤에서 나왔으므로 성을 김씨로 하였다. 시림을 계림으로 고치고, 그것을 나라 이름으로 삼았다.",
+			"source": "Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Exile",
+		"after": "He is put on the boat the same afternoon. Satek water at the berth; a Yunbi winter contract in the captain’s sleeve. Eve",
+		"block": {
+			"kind": "quote",
+			"html": "This year, in the first month, the king’s mother died. And his brother’s son Gyogi, with his mother’s four sisters, the Inner Minister Gimi and more than forty men of high name, were banished to an island.",
+			"ko": "올해 정월에 국주의 어머니가 죽었다. 또 아우 왕자의 아들 교기와 그 어머니의 누이 넷, 내좌평 기미, 이름 높은 사람 마흔여 명이 섬으로 쫓겨났다.",
+			"hanja": "今年正月、國主母薨。又弟王子兒翹岐及其母妹女子四人、內佐平岐味、有高名之人卌餘、被放於嶋。",
+			"source": "Nihon Shoki (日本書紀) bk. 24, Kōgyoku 1 (642), second month — report of the Baekje mourning envoys’ attendants"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Heaven–Earth King",
+		"after": "Gyebek stays standing by the door. Yuri Dora starts anyway.",
+		"block": {
+			"kind": "quote",
+			"html": "Heaven’s laying-out, set in order. Earth’s laying-out, set in order. Man’s laying-out too. The mountains’, the waters’, the kingdom’s, the king’s. And the gods take their seats at the altar.",
+			"ko": "하늘의 배포가 서고 땅의 배포가 선다. 사람의 배포도 선다. 산의 배포, 물의 배포, 나라의 배포, 임금의 배포. 이제 제청에 신들이 자리 잡는다.",
+			"source": "Chogamje (초감제), Bepo-doeop-chim, recited by Gang Sun-seon (강순선), recorded by Heo Nam-chun, Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2009 — Tapdong Yeongdeung-gut, Jeju City (Hanguk Gubimunhak Daegye, rev. ed.)",
+			"style": "shaman",
+			"native": "천앙베포 도업 지왕베포, 도업입네다 인앙베포도 도업, 산베포는 물베포, 국베포 왕베포, 제청신도업이웨다∼.",
+			"nativeLang": "ko-jeju"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Sulmun",
+		"after": "She asked the islanders for one thing: clothes her size, a hundred rolls of silk, and she would lay a bridge to the main",
+		"block": {
+			"kind": "quote",
+			"html": "Well, she said if they made her a petticoat out of a hundred rolls of silk, she’d lay them a bridge as far as Chuja. They came up one roll short and couldn’t make it, so she never built it.",
+			"ko": "뭐, 비단 백 필로 속곳 하나 지어 주면 추자도까지 다리를 놓아 주마고 했다더라. 모으다 보니 한 필이 모자라 못 지어 주니, 다리를 안 놓아 줘 버렸다고.",
+			"source": "Sulmun Halmang legend (설문대할망) told by An Yong-in (안용인), recorded by Hyeon Yong-jun and Kim Yeong-don, 1979 — Gimnyeong, Gujwa-myeon (Hanguk Gubimunhak Daegye 9-1)",
+			"style": "shaman",
+			"native": "거 뭐, 비단 백필만 허영 소중기 맨들어 주민 추ᄌᆞ도ᄁᆞ지 ᄃᆞ리 놔 주멘 허였다고. 주문ᄒᆞ단 ᄒᆞᆫ 필이 부족하여서 못허여 주니 걸 아이 허여 줘 부렀다고.",
+			"nativeLang": "ko-jeju"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Three Princes",
+		"after": "삼성혈에서 세 신인이 나와 탐라를 나눈다.",
+		"block": {
+			"kind": "quote",
+			"html": "In the beginning there were no people. Three divine men rose up out of the ground. … One day they saw a wooden chest sealed with purple clay drift ashore on the eastern beach. They opened it, and inside was a stone chest. … They opened the stone chest, and out came three maidens in blue, with foals, calves and the seeds of the five grains.",
+			"ko": "태초에 사람이 없었는데, 세 신인이 땅에서 솟아났다. … 하루는 자줏빛 진흙으로 봉한 나무 상자가 동쪽 바닷가에 떠밀려 오는 것을 보고 나아가 열었더니, 상자 안에 또 돌 상자가 있었다. … 돌 상자를 여니 푸른 옷의 처녀 셋과 망아지, 송아지, 다섯 곡식의 씨가 나왔다.",
+			"hanja": "太初無人物, 三神人, 從地聳出 … 一日見紫泥封藏木函, 浮至于東海濱, 就而開之, 函內又有石函 … 開石函, 出現靑衣處女三, 及諸駒犢五穀種.",
+			"source": "Goryeosa (高麗史) bk. 57, Treatise on Geography — Tamla County (耽羅縣), quoting the island’s old record",
+			"event": "tamla-three-clans"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Three Princes",
+		"after": "삼성혈에서 세 신인이 나와 탐라를 나눈다.",
+		"block": {
+			"kind": "quote",
+			"html": "At the Three Clans’ Hole: Go’s king at the hour of the rat, Yang’s king at the hour of the ox, Bu’s king at the hour of the tiger. An island founded by three clans.",
+			"ko": "고·양·부 삼성혈은, 자시에 고씨 왕, 축시에 양씨 왕, 인시에 부씨 왕. 세 성이 나라를 세운 섬이다.",
+			"source": "Chogamje (초감제), Nalgwa-guk-seomgim, recited by Gang Sun-seon (강순선), recorded by Heo Nam-chun, Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2009 — Tapdong Yeongdeung-gut, Jeju City (Hanguk Gubimunhak Daegye, rev. ed.)",
+			"style": "shaman",
+			"event": "tamla-three-clans",
+			"native": "고량부 삼성혈은, 자시에 고이왕 축시엔, 양이왕 인시엔 부게왕 삼성친, 도업헌 섬입네다.",
+			"nativeLang": "ko-jeju"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Stone Lady",
+		"after": "이겼는지 확인하려고.",
+		"block": {
+			"kind": "quote",
+			"html": "“Oh, sir, it’s raining blood.” He said it out loud. And the magistrate dropped dead right there. Just like that. He’d told him not to say a word.",
+			"ko": "“아이고, 판관님, 피로 비가 옵니다.” 하고 말해 버렸다. 그 자리에서 그냥 즉사해 버렸다. 아무 말도 하지 말라고 했던 건데.",
+			"source": "Gimnyeong Sagul legend (김녕사굴) told by An Yong-in (안용인), recorded by Hyeon Yong-jun and Kim Yeong-don, 1979 — Gimnyeong, Gujwa-myeon (Hanguk Gubimunhak Daegye 9-1)",
+			"style": "shaman",
+			"native": "“아이, 판관님, 피로 비가 옵니다.” 허여가지고 말해. 거기서 직ᄉᆞ허여 불었어. 그냥. 아뭇 이야기도 ᄒᆞ지 말라고 ᄒᆞᆫ 건디.",
+			"nativeLang": "ko-jeju"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Gardener",
+		"after": "두 고랑 다.",
+		"block": {
+			"kind": "quote",
+			"html": "“And this flower, what flower is it?” “This one is the flower that makes you laugh. This one is the flower that makes you fight. And this one, well — this is the flower that wipes out a line.”",
+			"ko": "“이 꽃은 무슨 꽃입니까?” “이 꽃은 웃음 웃게 하는 꽃이다. 이 꽃은 싸움하게 하는 꽃이다. 이 꽃은, 그래, 씨를 멸족시키는 꽃이다.”",
+			"source": "Igong Bonpuri (이공본풀이) recited by Lee Seung-sun (이승순), recorded by Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2011 — Sanggari, Aewol-eup (Hanguk Gubimunhak Daegye, rev. ed.)",
+			"style": "shaman",
+			"native": "“요 고 꼿은 무신 꼿입니까?” “요 꼿은 웃음 웃일 꼿이여. 요 꼿은 싸움헐 꼿이여. 요 꼿은 야 이거, 씨멜족 시길 꼿이여.”",
+			"nativeLang": "ko-jeju"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Coup",
+		"after": "Euija names forty-one of his own sons to the Assembly, firing every single existing member. Eight houses spent four gene",
+		"block": {
+			"kind": "quote",
+			"html": "Seventeenth year, spring, first month. The king made forty-one of his sons by lesser wives ministers of the first rank, and gave each of them a fief.",
+			"ko": "17년 봄 정월, 왕의 서자 마흔한 명을 좌평으로 삼고 저마다 식읍을 주었다.",
+			"hanja": "十七年, 春正月, 拜王庶子四十一人爲佐平, 各賜食邑.",
+			"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 17 (657), first month"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Coup",
+		"after": "Euija names forty-one of his own sons to the Assembly, firing every single existing member. Eight houses spent four gene",
+		"block": {
+			"kind": "diagram",
+			"diagram": "ministers-assembly",
+			"step": "purged",
+			"title": "Deer Rock, after · 정사암, 그 후",
+			"caption": "The same benches. Every one of them a son.",
+			"ko": "같은 자리. 전부 아들이다."
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Descent",
+		"after": "물때가 있습니다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "王怒，囚之獄中，由是，無敢言者。",
+			"ko": "왕이 노하여 그를 옥에 가두었다. 이로부터 감히 말하는 자가 없었다.",
+			"html": "The king was angry and threw him in prison. After that, nobody dared to speak.",
+			"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 16 (656), third month"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Nine Omens",
+		"after": null,
+		"block": {
+			"kind": "omens",
+			"title": "The nine omens, as the annals keep them",
+			"ko": "기록에 남은 아홉 가지 흉조",
+			"omens": [
+				{
+					"hanja": "衆狐入宮中，一白狐坐上佐平書案。",
+					"html": "Foxes came into the palace in a pack, and one white fox sat down on the Senior Minister’s desk.",
+					"ko": "여우 떼가 궁 안에 들어오고, 흰 여우 한 마리가 상좌평의 책상에 올라앉았다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 19 (659), second month"
+				},
+				{
+					"hanja": "太子宮，雌雞與黃雀交。",
+					"html": "In the Crown Prince’s palace, a hen mated with a sparrow.",
+					"ko": "태자궁에서 암탉이 참새와 교미하였다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 19 (659), fourth month"
+				},
+				{
+					"hanja": "王都西南泗沘河，大魚出死，長三丈。",
+					"html": "In the river at Sabi, southwest of the capital, a huge fish came up dead. It was three jang long.",
+					"ko": "도성 서남쪽 사비하에서 큰 물고기가 나와 죽었는데, 길이가 세 장이었다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 19 (659), fifth month"
+				},
+				{
+					"hanja": "有女屍浮生草津，長十八尺。",
+					"html": "A woman’s body floated up at Saengcho Ford. It was eighteen feet long.",
+					"ko": "생초진에 여자 시체가 떠올랐는데, 길이가 열여덟 자였다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 19 (659), eighth month"
+				},
+				{
+					"hanja": "宮中槐樹鳴，如人哭聲。夜，鬼哭於宮南路。",
+					"html": "A pagoda tree in the palace moaned like someone weeping. At night, ghosts wailed on the road south of the palace.",
+					"ko": "궁 안의 회화나무가 사람이 우는 소리처럼 울었다. 밤에는 궁 남쪽 길에서 귀신이 곡하였다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 19 (659), ninth month"
+				},
+				{
+					"hanja": "泗沘河水，赤如血色。",
+					"html": "The river at Sabi ran as red as blood.",
+					"ko": "사비하의 물이 핏빛처럼 붉었다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 20 (660), second month"
+				},
+				{
+					"hanja": "蝦蟆數萬，集於樹上。",
+					"html": "Tens of thousands of toads gathered in the trees.",
+					"ko": "두꺼비 수만 마리가 나무 위에 모였다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 20 (660), fourth month"
+				},
+				{
+					"hanja": "風雨暴至，震天王、道讓二寺塔，又震白石寺講堂。玄雲如龍，東西相鬪於空中。",
+					"html": "Wind and rain came all at once. Lightning struck the pagodas of Cheonwang and Doyang temples, and the lecture hall of Baekseok Temple. Black clouds like dragons fought, east against west, in the sky.",
+					"ko": "비바람이 갑자기 몰아쳐 천왕사와 도양사 두 절의 탑에 벼락이 치고, 또 백석사 강당에 벼락이 쳤다. 검은 구름이 용처럼 동쪽과 서쪽에서 공중에서 서로 싸웠다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 20 (660), fifth month"
+				},
+				{
+					"hanja": "有一鬼入宮中，大呼：「百濟亡，百濟亡！」卽入地，王怪之，使人掘地，深三尺許，有一龜。",
+					"html": "A ghost came into the palace and shouted, “Baekje is falling, Baekje is falling!” Then it went into the ground. The king thought it strange and had men dig. About three feet down, there was a turtle.",
+					"ko": "귀신 하나가 궁 안에 들어와 크게 외쳤다. “백제가 망한다, 백제가 망한다!” 그러고는 땅속으로 들어갔다. 왕이 괴이하게 여겨 사람을 시켜 땅을 파게 하니, 석 자쯤 깊이에 거북이 한 마리 있었다.",
+					"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 20 (660)"
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Nine Omens",
+		"after": "People start saying it out loud in the markets, which is how you know it is already over.",
+		"block": {
+			"kind": "quote",
+			"html": "All over Yamato, people took up weapons for no reason and went back and forth on the roads. The elders said: “Is this a sign that Baekje will lose its place?”",
+			"ko": "온 나라 백성이 까닭 없이 병기를 들고 길을 오갔다. 나라의 원로들이 말하였다. “백제가 제자리를 잃을 조짐인가.”",
+			"hanja": "舉國百姓無故持兵，往還於道。國老言：「百濟國失所之相乎。」",
+			"source": "Nihon Shoki (日本書紀) bk. 26, Saimei 6 (660), fifth month — note"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Onjo",
+		"after": "On the ninth day it takes them up Mount Buak, and from the top the brothers see all of it: a river looped across the pla",
+		"block": {
+			"kind": "quote",
+			"html": "At length they reached Hansan and climbed Mount Buak to look for land fit to live on. Biryu wished to live by the sea. The ten ministers remonstrated: “This land south of the river is belted by the Han to the north, held by high mountains to the east, looks out on fertile marshes to the south, and is barred by the great sea to the west. Such natural defences and advantages of ground are hard to come by. Would it not be fitting to make the capital here?” Biryu would not listen; he divided the people and went to Michuhol to live.",
+			"ko": "드디어 한산에 이르러 부아악에 올라 살 만한 땅을 바라보았다. 비류는 바닷가에 살고자 하였다. 열 신하가 간하였다. “오직 이 하남의 땅은 북으로 한수를 띠고, 동으로 높은 산에 의지하며, 남으로 기름진 못을 바라보고, 서로 큰 바다에 막혀 있습니다. 하늘이 내린 험함과 땅의 이로움은 얻기 어려운 형세이니, 여기에 도읍하는 것이 마땅하지 않겠습니까.” 비류는 듣지 않고 그 백성을 나누어 미추홀로 돌아가 살았다.",
+			"hanja": "遂至漢山 登負兒嶽 望可居之地 沸流欲居於海濱 十臣諫曰 惟此河南之地 北帶漢水 東據高岳 南望沃澤 西阻大海 其天險地利 難得之勢 作都於斯 不亦宜乎 沸流不聽 分其民 歸彌鄒忽以居之",
+			"source": "Samguk Sagi (三國史記) bk. 23, Baekje Annals — King Onjo, founding; Lee Byong-do ed., vol. 1"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Onjo",
+		"after": "“백제” 어떠냐?",
+		"block": {
+			"kind": "quote",
+			"hanja": "以十臣爲輔翼 國號十濟 後以來時百姓樂從 改號百濟",
+			"ko": "열 신하를 보필로 삼아 나라 이름을 십제라 하였다. 뒤에 올 때의 백성이 즐겨 따랐으므로, 고쳐 백제라 하였다.",
+			"html": "With ten ministers as wings he named the country Sipje. Later, because the common people had gladly followed at the time of coming, the name was changed to Baekje.",
+			"source": "Samguk Sagi (三國史記) bk. 23, Baekje Annals — King Onjo, founding; Lee Byong-do ed., vol. 1, p. 334"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Sungchung",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "The Red Fowl set out from Laizhou, his ships stern to prow for a thousand li, coming east on the current.",
+			"ko": "정방이 내주에서 떠나니, 뱃머리와 뱃고물이 천 리에 이어져 물결을 따라 동쪽으로 내려왔다.",
+			"hanja": "定方發自萊州，舳艫千里，隨流東下。",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, yr. 7 (660), sixth month"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Heungsu",
+		"after": "폐하께서 물으십니다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "事急矣奈何 對曰 大槪與佐平成忠之言同",
+			"ko": "일이 급하게 되었으니 어찌하면 좋으냐. 대답하기를, 대개 좌평 성충의 말과 같습니다.",
+			"html": "The matter is urgent — what then? He answered: It is generally the same as Jwapyeong Seongchung’s words.",
+			"source": "Samguk Yusa (三國遺事) bk. 1, Taejong Chunchu-gong — Uija asks the exile Heungsu"
+		}
+	},
+	{
+		"chapterId": "fall-of-euija",
+		"entryTitle": "Heungsu",
+		"after": "The answer comes back to Sabi. The ministers do not like the source.",
+		"block": {
+			"kind": "quote",
+			"hanja": "興首被縛怨君無愛國之心 其言不可用 寧使唐兵從白江而下不得方舟 新羅兵登炭峴不得竝馬 然後擊之 如籠中之雞 網中之魚 王曰然",
+			"ko": "흥수는 결박되어 있는 중이어서 임금을 원망하고 나라를 사랑하는 마음이 없습니다. 그러므로 그 의견을 마땅히 쓸 수 없습니다. 오히려 당군으로 하여금 백강을 따라 내려오게 하되 배를 벌리지 못하게 할 것이며, 신라의 군사로 하여금 탄현을 올라서 좁은 길을 따라 말을 나란히 하고 오지 못하게 할 것이며, 이런 때에 군사를 풀어서 그들을 치게 되면 삼태기 속에 든 닭이며 그물에 든 고기와 같을 것입니다. 왕이 이르되, 그렇도다.",
+			"html": "Heungsu is bound; he resents his lord and has no love of country. His words must not be used. Better to let the Tang come down the White River without spreading their boats, and let Silla climb Tanhyeon by a path too narrow for horses abreast — then strike, and they will be as chickens in a basket, fish in a net. The king said: So it is.",
+			"source": "Samguk Yusa (三國遺事) bk. 1, Taejong Chunchu-gong — ministers dismiss Heungsu; Uija agrees"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Yellow Mountain",
+		"after": "넷.",
+		"block": {
+			"kind": "quote",
+			"html": "Yushin and the others divided the army into three roads. They fought four times without advantage, and the soldiers’ strength was spent.",
+			"ko": "유신 등이 군사를 세 길로 나누어 네 번 싸웠으나 이롭지 못하여, 군사들의 힘이 다하였다.",
+			"hanja": "庾信等分軍爲三道 四戰不利 士卒力竭",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, year 7"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Yellow Mountain",
+		"after": "넷.",
+		"block": {
+			"kind": "quote",
+			"html": "He led five thousand men sworn to die out to Yellow Mountain and fought the Silla army. Four times they met, and four times he won…",
+			"ko": "결사대 오천을 거느리고 황산으로 나가 신라 군사와 싸워, 네 번 맞붙어 네 번 다 이겼다…",
+			"hanja": "帥死士五千出黄山 與羅兵戰 四合皆勝之…",
+			"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, year 20"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Yellow Mountain",
+		"after": "Behind the Silla line there is a well, dug that morning for the horses. He scoops the water out with both hands, drinks,",
+		"block": {
+			"kind": "quote",
+			"hanja": "階伯擒斬首，繫馬鞍送之。品日執其首…曰：「吾兒面目如生，能死於王事，無所悔矣。」",
+			"ko": "계백이 사로잡아 목을 베어 말안장에 매어 보냈다. 품일이 그 머리를 잡고 … 말하였다. “내 아들의 얼굴이 살아 있는 것 같구나. 나랏일에 죽을 수 있었으니 뉘우칠 것이 없다.”",
+			"html": "Gyebek took him, cut off his head, tied it to the saddle and sent it back. Pumil held the head … and said: “My son’s face is as if he were alive. He was able to die in the king’s service. I have nothing to regret.”",
+			"source": "Samguk Sagi (三國史記) bk. 47, Biographies — Gwanchang; Lee Byong-do ed., vol. 2, p. 454"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Sabi",
+		"after": "강 한 굽이 북쪽, 할아버지가 믿었던 성으로.",
+		"block": {
+			"kind": "quote",
+			"hanja": "王知不免 歎曰 悔不用成忠之言 以至於此",
+			"ko": "왕이 면할 수 없음을 알고 탄식하여 이르되, 성충의 말을 쓰지 아니하여 이에 이름에 이르렀음을 후회하노라.",
+			"html": "The king knew he could not escape, and sighed: I regret that I did not use Seongchung’s words, and have come to this.",
+			"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 20 (660); Lee Byong-do ed., vol. 1, p. 386"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Sabi",
+		"after": "By morning the king is on his way to the Red Fowl’s tent.",
+		"block": {
+			"kind": "quote",
+			"hanja": "其大將禰植又將義慈來降",
+			"html": "Its great general Ye Sik also brought Uija and came to surrender.",
+			"ko": "그 대장 예식이 또 의자를 데리고 와서 항복하였다.",
+			"source": "Jiu Tangshu (舊唐書) bk. 83, Biography of Su Dingfang",
+			"event": "ungjin-surrender"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Sabi",
+		"after": "By morning the king is on his way to the Red Fowl’s tent.",
+		"block": {
+			"kind": "quote",
+			"hanja": "於是 王及太子孝與諸城皆降",
+			"ko": "이에 왕과 태자 효와 여러 성이 모두 항복하였다.",
+			"html": "Thereupon the king and Crown Prince Hyo, together with the several fortresses, all surrendered.",
+			"source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 20 (660); Lee Byong-do ed., vol. 1, p. 386",
+			"event": "ungjin-surrender"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Sabi",
+		"after": "By morning the king is on his way to the Red Fowl’s tent.",
+		"block": {
+			"kind": "quote",
+			"html": "On the eighteenth day Euija, leading the crown prince and the troops of the Ungjin district commander, came out of Bear Fortress and surrendered.",
+			"ko": "18일, 의자가 태자와 웅진 방령의 군사들을 거느리고 웅진성에서 나와 항복하였다.",
+			"hanja": "十八日，義慈率太子及熊津方領軍等，自熊津城來降。",
+			"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, yr. 7 (660), seventh month",
+			"event": "ungjin-surrender"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Sabi",
+		"after": "By morning the king is on his way to the Red Fowl’s tent.",
+		"block": {
+			"kind": "quote",
+			"html": "Euija, king of Baekje, his wife Eungo, his son Yung and the rest, with his ministers Chunbok, Guk Byeonseong, Son Deung and others, some fifty in all, were seized by General Su* on the thirteenth day of the seventh month and sent away to Tang.",
+			"ko": "백제왕 의자와 그 아내 은고, 그 아들 융 등, 그 신하 좌평 천복·국변성·손등 등 모두 쉰여 명이 가을 7월 13일에 소 장군*에게 붙잡혀 당나라로 보내졌다.",
+			"hanja": "百濟王義慈，其妻恩古，其子隆等，其臣佐平千福、國辨成、孫登等凡五十餘。秋七月十三日，為蘇將軍所捉，而送去於唐國。",
+			"source": "Nihon Shoki (日本書紀) bk. 26, Saimei 6 (660), tenth month — note to the Baekje loyalists’ embassy",
+			"event": "ungjin-surrender",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "General Su is Su Dingfang. Chang’an calls him the Red Fowl.",
+					"ko": "소 장군은 소정방, 장안이 주작이라 부르는 사람이다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Sabi",
+		"after": "By morning the king is on his way to the Red Fowl’s tent.",
+		"block": {
+			"kind": "quote",
+			"html": "Sikjin inherited the office, as the worthy follow the worthy. When Tang took Heaven’s mandate and marched east against the defiant, he at once led his king to submit to the Third Emperor. For this he was made Grand General of the Left Guard and enfeoffed as Duke of Laiyuan.",
+			"ko": "식진에 이르러 대대로 벼슬을 이으니, 어진 이를 본받은 것이다. 당이 천명을 받아 동쪽의 복종하지 않는 자를 칠 때, 곧 그 왕을 이끌고 고종 황제에게 의리로 돌아왔다. 이로써 좌위위대장군에 제수되고 내원군 개국공에 봉해졌다.",
+			"hanja": "洎子寔進世官，象賢也。有唐受命，東討不庭，即引其王歸義于高宗皇帝。由是拜左威衛大將軍，封來遠郡開國公。",
+			"source": "Epitaph of Ye Inseu (禰仁秀墓誌), grandson of Ye Sikjin, Tang, 8th c.",
+			"style": "tomb",
+			"event": "ungjin-surrender"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Sabi",
+		"after": "By morning the king is on his way to the Red Fowl’s tent.",
+		"block": {
+			"kind": "quote",
+			"html": "In the fifth year of Xianqing, on the day the imperial army pacified his home country, he saw the moment, read the change, and, sword in hand, knew where to turn. Like You Yu leaving the Rong; like Jin Midi entering Han.",
+			"ko": "지난 현경 5년, 관군이 본국을 평정하던 날, 기미를 보고 변화를 알아 칼을 짚고 돌아갈 곳을 알았다. 유여가 융을 떠난 것과 같고, 김일제가 한에 들어간 것과 같았다.",
+			"hanja": "去顯慶五年，官軍平本藩日，見機識變，杖劍知歸。似由余之出戎，如金磾之入漢。",
+			"source": "Epitaph of Ye Gun (禰軍墓誌), elder brother of Ye Sikjin, Tang, 678",
+			"style": "tomb",
+			"event": "ungjin-surrender"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Buyeo Euija†",
+		"after": "Eleventh month, first day. The emperor went up to the Zetian Gate tower to receive the Baekje captives, and released the",
+		"block": {
+			"kind": "quote",
+			"html": "First day of the eleventh month. The king of Baekje, seized by General Su* and the rest, with Crown Prince Yung and the other princes, thirteen, Great Minister Satek Chunbok, Guk Byeonseong and thirty-seven others, some fifty people in all, were presented at the court hall and hurried before the Son of Heaven. By gracious edict the Son of Heaven released them where they stood.",
+			"ko": "11월 1일, 장군 소정방* 등에게 붙잡힌 백제왕 이하 태자 융 등 왕자 열셋, 대좌평 사택천복과 국변성 이하 서른일곱, 모두 쉰 남짓한 사람을 조당에 바쳤다. 서둘러 끌고 천자 앞으로 나아갔다. 천자가 은혜로운 칙명으로 보는 앞에서 풀어 주었다.",
+			"hanja": "十一月一日，為將軍蘇定方等所捉百濟王以下太子隆等諸王子十三人，大佐平沙宅千福、國辨成以下三十七人，并五十許人。奉進朝堂。急引趍向天子。天子恩敕見前放著。",
+			"source": "Nihon Shoki (日本書紀) bk. 26, Saimei 6 (660), seventh month — note quoting the account of Iki no Hakatoko (伊吉連博德書), a Yamato envoy who saw it",
+			"event": "baekje-captives",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "General Su is Su Dingfang. Chang’an calls him the Red Fowl.",
+					"ko": "소 장군은 소정방, 장안이 주작이라 부르는 사람이다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Kim Chunchu†",
+		"after": "",
+		"block": {
+			"kind": "quote",
+			"hanja": "文武王立 諱法敏 太宗王之元子",
+			"ko": "문무왕이 서니, 휘는 법민*이요, 태종왕†의 맏아들이다.",
+			"html": "King Munmu was set up. His taboo-name was Beopmin*; he was the eldest son of King Taejong†.",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, accession (661); Lee Byong-do ed., vol. 1, p. 140",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "Beopmin is Bupmin, spelled the other way.",
+					"ko": "영어 표기만 다를 뿐, 이 책의 법민이다."
+				},
+				{
+					"mark": "†",
+					"html": "King Taejong is Chunchu, by the temple name Silla gave him. It is the same name Tang gave the Second Emperor, and Tang will notice.",
+					"ko": "태종왕은 춘추다. 신라가 붙인 묘호인데, 당 태종과 같은 이름이라 당이 그냥 넘어가지 않는다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Kim Chunchu†",
+		"after": "",
+		"block": {
+			"kind": "table",
+			"head": [
+				"King",
+				"Crown Prince",
+				"High Councillor",
+				"Marshal"
+			],
+			"rows": [
+				[
+					"Munmu (35) 문무왕",
+					"Kim Jungmyung (14) 김정명",
+					"Kim Yushin (66) 유신",
+					"—"
+				]
+			]
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Ungjin Commandery",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "Its land was then divided into five area commands, Ungjin and the rest, each governing its prefectures and counties, and its own chieftains were set up as commanders, prefects and magistrates.",
+			"ko": "이에 그 땅을 나누어 웅진 … 등 다섯 도독부를 두고 각기 주와 현을 거느리게 하였으며, 그 우두머리들을 세워 도독·자사·현령으로 삼았다.",
+			"hanja": "至是乃以其地分置熊津…等五都督府，各統州縣，立其酋渠爲都督、刺史及縣令。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199A, Eastern Barbarians — Baekje"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Ungjin Commandery",
+		"after": "고종의 동정 색깔. 백호, 주작, 청룡, 현무.",
+		"block": {
+			"kind": "diagram",
+			"diagram": "four-dragons",
+			"title": "Four Dragons · 사룡",
+			"caption": "Taizong’s older roster — the grammar the son inherited with the war.",
+			"ko": "태종의 옛 명부 — 아들이 전쟁과 함께 물려받은 문법."
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "Ungjin Commandery",
+		"after": "고종의 동정 색깔. 백호, 주작, 청룡, 현무.",
+		"block": {
+			"kind": "table",
+			"head": [
+				"White Tiger",
+				"Red Fowl",
+				"Blue Dragon",
+				"Black Tortoise"
+			],
+			"rows": [
+				[
+					"방효태",
+					"소정방",
+					"이세적",
+					"유인궤"
+				]
+			],
+			"colors": [
+				"#f1f5f9",
+				"#fee2e2",
+				"#dbeafe",
+				"#e5e7eb"
+			]
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "King Pungjang",
+		"after": "도침입니다. 이제는 어느 절의 중도 아니고, 영군장군이라 불리지요.",
+		"block": {
+			"kind": "quote",
+			"html": "Good son, those who uphold and protect the true Dharma need not take the five precepts or keep the monk’s deportment. They should carry swords, bows and arrows, and spears, and guard the pure monks who keep the precepts.",
+			"ko": "선남자여, 바른 법을 지키는 이는 다섯 가지 계를 받지 않고 위의를 닦지 않더라도, 마땅히 칼과 활과 화살과 창을 들고 계를 지키는 청정한 비구를 수호해야 한다.",
+			"hanja": "善男子！護持正法者，不受五戒，不修威儀，應持刀劍、弓箭、鉾槊，守護持戒清淨比丘。",
+			"source": "Nirvana Sutra (大般涅槃經) fasc. 3, The Adamantine Body (金剛身品), tr. Dharmakṣema · T12n0374, p. 383b",
+			"person": "dochim",
+			"style": "sutra"
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "King Pungjang",
+		"after": null,
+		"block": {
+			"kind": "verse",
+			"color": "#dc2626",
+			"lines": [
+				"先世以來未有此刀百濟王世─奇生聖音故爲倭王旨造傳示後世",
+				"선세 이래 이런 칼은 없었다. 백제왕이 세세토록 특별히(각별히) 성음(聖音)을 내었기에 왜왕을 위하여 훌륭하게 만들었다. 후세에 전하여 보이도록 하라."
+			]
+		}
+	},
+	{
+		"chapterId": "fall-of-baekje",
+		"entryTitle": "King Pungjang",
+		"after": "군사를 청하는 일은 옛날부터 있었다. 쓰러지는 집을 붙드는 일은 그보다 더 오래되었지.",
+		"block": {
+			"kind": "quote",
+			"hanja": "乞師請救、聞之古昔。扶危繼絶、著自恆典。……雲會雷動、俱集沙㖨、翦其鯨鯢、紓彼倒懸。",
+			"ko": "군사를 빌고 구원을 청하는 일은 옛적부터 들어 온 바요, 위태로운 것을 붙들고 끊긴 것을 잇는 일은 떳떳한 법도에 적혀 있다. …… 구름처럼 모이고 우레처럼 움직여 사탁에 함께 모여, 그 고래를 베고 거꾸로 매달린 이들을 풀어 주라.",
+			"html": "To beg for troops and plead for rescue, this we have heard of from of old; to steady the falling and continue the severed line is written in the constant laws. …… Gather like clouds and move like thunder, assemble together at Sataku, cut down its whales and loosen those who hang upside down.",
+			"source": "Nihon Shoki (日本書紀) vol. 26, Empress Saimei 6 (660), 10th month — the edict to aid Baekje"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Pyongyang I",
+		"after": "…다른 사람을 보내지.",
+		"block": {
+			"kind": "quote",
+			"html": "The emperor meant to lead the great army after them himself. On the guisi day the Empress sent up a memorial against a personal campaign in Goguryeo, and an edict followed her advice.",
+			"ko": "황제는 몸소 대군을 이끌고 뒤따르려 하였다. 계사일, 황후가 표를 올려 고구려 친정을 간하니, 조서를 내려 그 말을 따랐다.",
+			"hanja": "上欲自將大軍繼之；癸巳，皇后抗表諫親征高麗；詔從之。",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 200, Tang Gaozong, Longshuo 1 (661), fourth month"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Pyongyang I",
+		"after": "얼어붙은 강",
+		"block": {
+			"kind": "quote",
+			"html": "When the White Dragon arrived, the river had frozen solid. He led his men across on the ice, drumming and shouting as they came, and our army broke and ran. He pursued for dozens of li and killed thirty thousand. The rest all surrendered; Namseng barely got away with his life.",
+			"ko": "계필하력이 이르렀을 때 마침 강물이 꽁꽁 얼어붙었다. 하력은 군사를 이끌고 얼음을 타고 강을 건너 북 치고 함성을 지르며 나아가니, 우리 군사가 무너져 달아났다. 하력은 수십 리를 쫓아가 삼만 명을 죽였다. 남은 무리는 모두 항복하고, 남생은 겨우 몸만 빠져나왔다.",
+			"hanja": "契苾何力至，値氷大合，何力引衆乘氷渡水，鼓噪而進，我軍潰奔。何力追數十里，殺三萬人。餘衆悉降，男生僅以身免。",
+			"source": "Samguk Sagi (三國史記) bk. 22, Goguryeo Annals — King Bojang, yr. 20 (661), ninth month",
+			"event": "yalu-ice-661"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Pyongyang I",
+		"after": "얼어붙은 강",
+		"block": {
+			"kind": "quote",
+			"html": "He reached the Yalu. Gaesomun had sent Namseng with tens of thousands of picked troops to hold the crossing, and no one dared ford it. Then the ice closed. Heli* led his men over with a roar; the bandits panicked and broke. Thirty thousand heads were taken and the rest surrendered. Namseng slipped away.",
+			"ko": "압록수에 이르니, 개소문이 남생에게 정병 수만을 주어 험한 곳을 막게 하여 아무도 감히 건너지 못하였다. 마침 얼음이 얼어붙자 하력*이 군사를 이끌고 함성을 지르며 건너니, 적이 놀라 마침내 무너졌다. 삼만 급을 베고 남은 무리는 항복하였으며, 남생은 몸을 빼어 달아났다.",
+			"hanja": "次鴨綠水，蓋蘇文遣男生以精兵數萬拒險，眾莫敢濟。會冰合，何力引兵噪而濟，賊驚，遂潰。斬首三萬級，余眾降，男生脫身走。",
+			"source": "Xin Tangshu (新唐書) bk. 110, Biography of Qibi Heli (契苾何力), Longshuo 1 (661)",
+			"event": "yalu-ice-661",
+			"notes": [
+				{
+					"mark": "*",
+					"html": "Qibi Heli: the steppe prince this book calls the White Dragon.",
+					"ko": "계필하력, 이 책의 흰 용(백룡)이다."
+				}
+			]
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Snake River",
+		"after": "두 황제의 은혜를 너무 많이 입었다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "龐孝泰與蓋蘇文戰於蛇水之上 擧軍沒 與其子十三人皆戰死",
+			"ko": "[백호가] 개소문과 사수 위에서 싸워, 온 군사가 몰사하고, 그 아들 열세 사람과 더불어 모두 전사하였다.",
+			"html": "[The White Tiger] fought Yeon Gaesomun on the Snake River; the whole army was lost, and he and his thirteen sons all died in battle.",
+			"source": "Samguk Sagi (三國史記) bk. 22, Goguryeo Annals — King Bojang, yr. 21 (662); Lee Byong-do ed., vol. 1 · cf. Zizhi Tongjian Tang Longshuo 2"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Tamla Surrenders",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "Dodongeumnyul (some copies say -jin), lord of Tamla and a jwapyeong, came and surrendered. Tamla had been Baekje's vassal since the Wude years, which is why its lord carried the Baekje rank of jwapyeong. Now it submitted and became a dependency.",
+			"ko": "탐라국주 좌평 도동음률〈진이라고도 한다〉이 와서 항복하였다. 탐라는 무덕 연간 이래 백제의 신하였으므로 좌평을 관호로 삼았는데, 이때에 이르러 항복하여 속국이 되었다.",
+			"hanja": "耽羅國主佐平徒冬音律〈一作津。〉來降。耽羅自武德以來，臣屬百濟，故以佐平爲官號，至是，降爲屬國。",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 2 (662), second month",
+			"event": "tamla-662"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Rebellion",
+		"after": "내 아버님은 이 전쟁에서 하루도 쉬신 적이 없다. 내 누이는 죽을 날을 고르지도 못했다.",
+		"block": {
+			"kind": "quote",
+			"html": "In the eighth month the remnant rebels of Baekje gathered at Naesaji Fortress and did harm. Heumsun and the others, nineteen generals in all, were sent and broke them. Jinju, commander of the Great Banner, and Jinheum, commander of Namcheon, had pleaded illness and idled at their ease, careless of the kingdom's business. In the end they were put to death and their clans wiped out with them.",
+			"ko": "8월, 백제의 잔적이 내사지성에 모여 악행을 저지르니, 흠순 등 열아홉 장군을 보내 쳐서 깨뜨렸다. 대당총관 진주와 남천주총관 진흠이 병을 핑계 대고 한가로이 지내며 나랏일을 돌보지 않으므로, 마침내 그들을 베고 그 일족까지 멸하였다.",
+			"hanja": "八月，百濟殘賊，屯聚内斯只城作惡，遣欽純等十九將軍，討破之。大幢摠管眞珠、南川州摠管眞欽，詐稱病，閑放不恤國事，遂誅之，并夷其族。",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 2 (662), eighth month"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Rebellion",
+		"after": "내 아버님은 이 전쟁에서 하루도 쉬신 적이 없다. 내 누이는 죽을 날을 고르지도 못했다.",
+		"block": {
+			"kind": "quote",
+			"html": "Suse, commander of Hanseong-ju, took … of Baekje …; it happened that the plot came to light, and the daeachan Jinju was sent to put him to death.",
+			"ko": "한성주총관 수세가 백제의 … 나라를 취하려 하다가 마침 그 일이 드러나니, 대아찬 진주를 보내 그를 베었다.",
+			"hanja": "漢城州摠管藪世取百濟…國，適彼事覺，遣大阿飡眞珠，誅之。",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 10 (670), twelfth month (the woodblock is damaged here)"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Yeon Gesomun†",
+		"after": "…그래서 하는 말이다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "汝等兄弟 和如魚水 勿爭爵位 若不如是 必爲隣咲",
+			"html": "You brothers, be as close as fish and water. Do not quarrel over rank. If you do not heed this, you will surely be the laughingstock of your neighbours.",
+			"ko": "너희 형제는 물고기와 물처럼 화목하고, 벼슬을 두고 다투지 마라. 그렇지 않으면 반드시 이웃의 웃음거리가 될 것이다.",
+			"source": "Nihon Shoki (日本書紀) bk. 27, Emperor Tenji, yr. 3 (664) — the dying words of the Goguryeo minister 蓋金"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Brothers’ Coup",
+		"after": "문 열어라, 남건아.",
+		"block": {
+			"kind": "quote",
+			"html": "Namseng was afraid and dared not go in. Namgun killed Namseng's son Heonchung. Namseng fled to hold Gungnae Fortress, went over to Tang with his followers and his Khitan and Mohe troops, and sent his son Heonseong to plead his case.",
+			"ko": "남생은 두려워 감히 들어가지 못하였다. 남건은 남생의 아들 헌충을 죽였다. 남생은 국내성으로 달아나 지키며, 제 무리와 거란·말갈 병사를 거느리고 당에 붙어, 아들 헌성을 보내 하소연하게 하였다.",
+			"hanja": "男生懼不敢入。男建殺其子獻忠，男生走保國內城，率其衆與契丹、靺鞨兵附唐，遣子獻誠訴之。",
+			"source": "Samguk Sagi (三國史記) bk. 49, Biographies — Yeon Gaesomun (with Namseng)",
+			"event": "brothers-quarrel-666"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Pyongyang II",
+		"after": "For five days a novice walks out of the lesser house before dawn with an alms bowl and comes back with it empty, and nob",
+		"block": {
+			"kind": "quote",
+			"html": "There is no peace in the three worlds; they are like a burning house, full of every suffering, truly to be feared. Always there are birth and age, sickness and death and grief: fires like these, blazing without end.",
+			"ko": "삼계는 편안함이 없어 불타는 집과 같으니, 온갖 괴로움이 가득하여 참으로 두렵다. 늘 나고 늙고 병들고 죽는 근심이 있어, 이러한 불길이 쉬지 않고 타오른다.",
+			"hanja": "三界無安，猶如火宅，眾苦充滿，甚可怖畏。常有生老、病死憂患，如是等火，熾然不息。",
+			"source": "Lotus Sutra (妙法蓮華經) ch. 3, Parable (譬喻品), tr. Kumārajīva · T09n0262, p. 14c · Sanskrit: Saddharmapuṇḍarīka 3.86, Aupamya-parivarta (Vaidya ed.)",
+			"person": "shinsung",
+			"style": "sutra",
+			"native": "त्रैधातुकं चो यथ तन्निवेशनं सुभैरवं दुःखशताभिकीर्णम् । अशेषतः प्रज्वलितं समन्ताज्जातीजराव्याधिशतैरनेकैः ॥",
+			"nativeLang": "sa",
+			"nativeLatn": "traidhātukaṃ co yatha tan niveśanaṃ subhairavaṃ duḥkhaśatābhikīrṇam | aśeṣataḥ prajvalitaṃ samantāj jātījarāvyādhiśatair anekaiḥ ||"
+		}
+	},
+	{
+		"chapterId": "final-stand",
+		"entryTitle": "Pyongyang II",
+		"after": "나는… 여러분의 원수가 되고 싶지 않았습니다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "九月 拔平壤城 高句麗王藏降",
+			"ko": "구월에 평양성을 함락하니, 고구려왕 장이 항복하였다.",
+			"html": "In the ninth month they took Pyongyang Fortress; King Bojang of Goguryeo surrendered.",
+			"source": "Samguk Sagi (三國史記) bk. 22, Goguryeo Annals — King Bojang, yr. 27 (668), 9th month; Lee Byong-do ed., vol. 1, p. 328 · cf. Zizhi Tongjian Tang Zongzhang 1"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Mount Gain",
+		"after": "An imperial envoy presides. The Black Tortoise wrote the oath. On one side of the altar stands Munmu. On the other stand",
+		"block": {
+			"kind": "quote",
+			"hanja": "王與勅使劉仁願 熊津都督扶餘隆 盟于熊津就利山",
+			"html": "The king, with the imperial envoy Liu Renyuan and Buyeo Yung, Commander-in-chief of Ungjin, swore a covenant on Mount Chwiri at Ungjin.",
+			"ko": "왕이 칙사 유인원, 웅진도독 부여융과 더불어 웅진 취리산에서 맹약하였다.",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 5 (665), eighth month"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Mount Gain",
+		"after": "The covenant is written out three times. One copy is buried at the altar with the horse. One goes to Chang’an. The third",
+		"block": {
+			"kind": "covenant",
+			"parties": [
+				"munmu",
+				"yung"
+			],
+			"title": "The covenant of Mount Chwiri",
+			"hanja": "往者，百濟先王迷於逆順，不敦鄰好，不睦親姻，結託高句麗，交通倭國，共爲殘暴，侵削新羅，剽邑屠城，略無寧歳。……故立前百濟大司稼正卿扶餘隆，爲熊津都督，守其祭祀，保其桑梓，依倚新羅，長爲與國，各除宿憾，結好和親，各承詔命，永爲藩服。……約之以婚姻，申之以盟誓，刑牲歃血，共敦終始，分災恤患，恩若弟兄，祗奉綸音，不敢失墜，旣盟之後，共保歳寒。若有背盟，二三其德，興兵動衆，侵犯邊陲，明神鑒之，百殃是降，子孫不育，社稷無守，禋祀磨滅，罔有遺餘。故作金書鐵券，藏之宗廟，子孫萬代，無敢違犯。神之聽之，是享是福。",
+			"html": "In days past, the late king of Baekje lost his way between loyalty and revolt. He kept no faith with his neighbours and no peace with his in-laws. He bound himself to Goguryeo and dealt with Yamato, and together they did violence: they cut into Silla, plundered its towns and butchered its forts, and there was hardly a year of peace. … Therefore Buyeo Yung, once Baekje’s minister of farming, is made Commander of Ungjin, to keep his fathers’ rites and guard the trees of his home. Let him lean on Silla and stand with it for ever. Let each put away old grudges, join in friendship and kinship, receive the imperial command, and remain a fence of the empire for all time. … They are bound by marriage and sworn by oath. The victim is killed and the blood is touched to the lips. Together they will keep faith to the end, share disaster and pity each other’s sorrows, as kind as brothers. They will keep the emperor’s word and never let it drop. After this oath they will stand together through the cold years. If either breaks the oath, turns two-faced, raises troops and crosses the border, may the bright gods see it. May a hundred calamities fall on him, may his sons not grow, may no one remain to keep his altars, and may his sacrifices be wiped out until nothing is left. So it is written in gold on iron and laid up in the ancestral temple, and for ten thousand generations no son or grandson will dare break it. Gods, hear it. Accept it, and bless it.",
+			"ko": "지난날 백제의 선왕은 순리와 역리를 헤아리지 못하여, 이웃과 좋게 지내지 않고 인척과도 화목하지 않았다. 고구려와 손잡고 왜국과 내통하여 함께 포악한 짓을 하니, 신라를 침범해 깎아 먹고 고을을 노략하고 성을 도륙하여 편안한 해가 거의 없었다. …… 그러므로 옛 백제의 대사가정경 부여융을 웅진도독으로 세워, 그 제사를 지키고 고향을 보전하게 한다. 신라에 기대어 길이 우방이 되고, 각자 묵은 원한을 풀고 좋게 지내며 화친하고, 각각 조명을 받들어 길이 번국이 되라. …… 혼인으로 묶고 맹세로 다짐하며, 희생을 잡아 피를 마시고 처음과 끝을 함께 도탑게 한다. 재앙을 나누고 근심을 서로 돌보며 은혜를 형제처럼 하고, 천자의 말씀을 받들어 감히 떨어뜨리지 않으며, 맹세한 뒤에는 추운 해를 함께 견딘다. 만약 맹세를 어기고 마음을 둘 셋으로 바꾸어, 군사를 일으키고 무리를 움직여 변경을 침범하면, 밝은 신이 굽어보시어 온갖 재앙이 내리고, 자손이 자라지 못하며, 사직을 지킬 자가 없고, 제사가 끊어져 남는 것이 없으리라. 그러므로 쇠 문서에 금으로 써서 종묘에 간직하니, 자손 만대에 감히 어기지 말라. 신이여 들으시고, 흠향하시고 복을 내리소서.",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 5 (665), eighth month · the words of Liu Rengui (劉仁軌之辭也)"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Anseung",
+		"after": "Mojam, a daehyeong of Goguryeo from Surim Fortress, gathered the surviving people, marched from Gungmo Fortress to south",
+		"block": {
+			"kind": "quote",
+			"html": "The great chief Geom Mojam led his people in revolt and set up An Shun, King Jang's grandson through a daughter, as their lord.",
+			"ko": "대장 겸모잠이 무리를 거느리고 반란을 일으켜, 장왕의 외손 안순을 세워 임금으로 삼았다.",
+			"hanja": "大長鉗牟岑率衆反，立藏外孫安舜爲主。",
+			"source": "Xin Tangshu (新唐書) bk. 220, Eastern Barbarians — Goguryeo, Zongzhang 2 / Xianheng 1 (669–670)",
+			"event": "anseung-raised-670"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Anseung",
+		"after": "신라 안에 고구려 왕이라. 황제가 질색하겠군.",
+		"block": {
+			"kind": "quote",
+			"html": "The King of Silla charges Anseung, heir of Goguryeo. … The rightful heir of the former kings is you and no one else; who but you should keep their sacrifices? … We open this patent and name you King of Goguryeo. Gather the surviving people, revive the old line, be our neighbour for ever and deal with us as a brother. Be reverent, be reverent!",
+			"ko": "신라왕은 고구려의 대를 이을 아들 안승에게 명한다. … 선왕의 바른 후사는 오직 공뿐이니, 제사를 받들 이가 공이 아니면 누구이겠는가? … 이에 책서를 펴서 공을 고구려왕으로 봉하노니, 공은 남은 백성을 어루만져 모으고 옛 왕업을 이어 일으켜, 길이 이웃 나라가 되어 형제처럼 지낼지어다. 삼가고 삼갈지어다.",
+			"hanja": "新羅王致命高句麗嗣子安勝。…先王正嗣，唯公而已，主於祭祀，非公而誰？…就披策命公爲高句麗王，公宜撫集遺民，紹興舊緖，永爲鄰國，事同昆弟，敬哉敬哉。",
+			"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 10 (670), eighth month — patent investing Anseung",
+			"person": "munmu"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Letters",
+		"after": "정관 이십이 년에 내 아버님이 장안에 가셨소. 선제께서는 아버님을 돌말들이 늘어선 회랑으로 데려가 말씀하셨지. 평양 이남과 백제 땅은 모두 신라의 것이다, 영원히.",
+		"block": {
+			"kind": "quote",
+			"html": "In the twenty-second year of Zhenguan my late father went to court and received, face to face, the gracious edict of the Second Emperor: ‘We make war on Goguryeo now for no other reason than pity for you, Silla, caught between two kingdoms, invaded again and again, never a year of peace. Mountains, rivers and land are not what We covet; jade, silk, sons and daughters We have already. When We have pacified the two kingdoms, the land south of Pyongyang and the land of Baekje shall all be given to you, Silla, to rest in for ever.’",
+			"ko": "선왕께서는 정관 22년에 입조하시어 태종 문황제의 은혜로운 칙명을 직접 받드셨습니다. ‘짐이 지금 고구려를 치는 것은 다른 까닭이 아니다. 너희 신라가 두 나라 사이에 끼여 늘 침략을 당하고 편한 해가 없음을 가엾이 여기기 때문이다. 산천과 토지는 내가 탐내는 바가 아니요, 옥백과 자녀는 나에게도 넉넉하다. 내가 두 나라를 평정하면 평양 이남과 백제 땅을 모두 너희 신라에 주어, 길이 편안하게 하리라.’",
+			"hanja": "先王貞觀二十二年，入朝，面奉太宗文皇帝恩勅。『朕今伐高麗，非有他故，憐伱新羅，攝乎兩國，毎被侵陵，靡有寧歳。山川土地，非我所貪，玉帛子女，是我所有。我平定兩國，平壤已南百濟土地、並乞伱新羅，永爲安逸。』",
+			"source": "Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), seventh month — King Munmu's reply to Xue Rengui",
+			"person": "munmu",
+			"style": "letter",
+			"to": "xuerengui"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Letters",
+		"after": "그대의 주작이 평양 밖에 앉아 제 말을 잡아먹고 있을 때, 내 외숙은 예순일곱이었소. 가슴까지 차는 눈 속을, 제 흰 말이 자기 대신 쌀을 지도록 그 곁에서 걸어갔소. 그대의 병사들은 수레를 보고 울었소. 그대의 장",
+		"block": {
+			"kind": "quote",
+			"html": "South we carried grain to Bear Ford, north we fed Pyongyang; little Silla supplied two places at once, until our people were spent and our oxen and horses dead. … The people of Silla had not even enough grass roots to eat, while the Han soldiers at Bear Ford had grain to spare. … Ten thousand Han soldiers were clothed and fed by Silla for four years. From Liu Renyuan down to the last private, their skin and bones may have been born in Han land, but their blood and flesh are all Silla's.",
+			"ko": "남으로는 웅진에 실어 나르고 북으로는 평양에 대느라, 작은 신라가 두 곳을 나누어 감당하니 사람의 힘은 다하고 소와 말은 모두 죽었습니다. … 신라 백성은 풀뿌리조차 모자랐는데, 웅진의 당병은 양식이 남아돌았습니다. … 당병 1만이 4년 동안 신라에서 입고 먹었으니, 인원부터 졸병에 이르기까지 가죽과 뼈는 비록 당나라 땅에서 났으나, 피와 살은 모두 신라의 것입니다.",
+			"hanja": "南運熊津，北供平壤，蕞小新羅，分供兩所，人力疲極，牛馬死盡。…新羅百姓，草根猶自不足，熊津漢兵，粮食有餘。…一萬漢兵，四年衣食新羅，仁願已下，兵士已上，皮骨雖生漢地，血肉倶是新羅。",
+			"source": "Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), seventh month — King Munmu's reply to Xue Rengui",
+			"person": "munmu",
+			"style": "letter",
+			"to": "xuerengui"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Stone Gate",
+		"after": "A narrow place that looks like a way out, until it isn’t.",
+		"block": {
+			"kind": "quote",
+			"html": "Our troops and the Goguryeo troops met the enemy and took several thousand heads. When Gao Kan and the rest fell back, we chased them as far as Seokmun and fought there, and our army was routed. The daeachan Hyocheon, the sachan Uimun and Sanse … and others died there.",
+			"ko": "우리 군사가 고구려 군사와 함께 맞받아 싸워 수천 급을 베었다. 고간 등이 물러나자 석문까지 뒤쫓아 싸웠는데, 우리 군사가 크게 패하여 대아찬 효천, 사찬 의문·산세 … 등이 전사하였다.",
+			"hanja": "我兵與高句麗兵逆戰，斬首數千級。高侃等退，追至石門戰之，我兵敗績，大阿飡曉川、沙飡義文、山世…等死之。",
+			"source": "Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 12 (672), eighth month",
+			"event": "seokmun-672"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Stone Gate",
+		"after": "A narrow place that looks like a way out, until it isn’t.",
+		"block": {
+			"kind": "quote",
+			"html": "Twelfth month: Gao Kan fought the Goguryeo remnants at Mount Baeksu and broke them. Silla sent troops to rescue Goguryeo, and Gao Kan broke those too.",
+			"ko": "12월, 고간이 고구려의 남은 무리와 백수산에서 싸워 깨뜨렸다. 신라가 군사를 보내 고구려를 구원하자, 고간이 그마저 쳐서 깨뜨렸다.",
+			"hanja": "十二月，高侃與高麗餘眾戰於白水山，破之。新羅遣兵救高麗，侃擊破之。",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 202, Tang Gaozong, Xianheng 3 (672), twelfth month",
+			"event": "seokmun-672"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Wonsul",
+		"after": null,
+		"block": {
+			"kind": "quote",
+			"html": "Yushin's son Wonsul, a lieutenant, also meant to die fighting. His aide Danneung stopped him: “For a true man, dying is not the hard part. Choosing where to die is. If you die and achieve nothing, better to live and earn it later.” … Danneung held the bridle and would not let go, and so he could not die.",
+			"ko": "유신의 아들 원술은 비장으로서 그 역시 싸우다 죽으려 하였다. 그를 보좌하던 담릉이 말리며 말하였다. “대장부는 죽는 것이 어려운 것이 아니라, 죽을 자리를 가리는 것이 어려운 법입니다. 죽어도 이루는 것이 없다면, 살아서 뒷날의 공을 도모하느니만 못합니다.” … 담릉이 고삐를 붙들고 놓지 않으니, 마침내 죽지 못하였다.",
+			"hanja": "庾信子元述，為裨將，亦欲戰死，其佐淡凌，止之曰：「大丈夫，非死之難，處死之為難也。若死而無成，不若生而圖後效。」…淡凌攬轡不放，遂不能死。",
+			"source": "Samguk Sagi (三國史記) bk. 43, Biographies — Kim Yushin, part 3 (Wonsul, 672)"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Kim Yushin†",
+		"after": "I humbly pray Your Highness know that to succeed is not easy, and to keep what has been won is also hard. Keep petty men",
+		"block": {
+			"kind": "quote",
+			"hanja": "寡人之有卿 如魚有水",
+			"ko": "과인에게 경이 있음은 고기가 물이 있음과 같다.",
+			"html": "That I have you is as a fish having water.",
+			"source": "Samguk Sagi (三國史記) bk. 43, Biographies — Kim Yushin (Munmu’s lament); Lee Byong-do ed., vol. 2, p. 406"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "The Wanggeom's Guest",
+		"after": "여섯 살 때 모두를 위한 임금을 원했다.",
+		"block": {
+			"kind": "quote",
+			"html": "Because Hwando Fortress had been ravaged and could not serve as capital again, the king built Pyongyang Fortress and moved the people, the ancestral temple and the altars there. Pyongyang was originally the dwelling of the immortal Wanggeom. Some say it was the king's capital, Wanggeom.",
+			"ko": "왕은 환도성이 난리를 겪어 다시 도읍으로 삼을 수 없으므로, 평양성을 쌓고 백성과 종묘사직을 옮겼다. 평양은 본래 선인 왕검이 살던 곳이다. 혹은 왕의 도읍인 왕검이라고도 한다.",
+			"hanja": "王以丸都城經亂，不可復都，築平壤城，移民及廟社。平壤者本仙人王儉之宅也。或云王之都王儉。",
+			"source": "Samguk Sagi (三國史記) bk. 17, Goguryeo Annals — King Dongcheon, yr. 21 (247)"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Maeso",
+		"after": "Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showi",
+		"block": {
+			"kind": "quote",
+			"html": "Autumn, ninth month: since Kim Jinju, father of the palace-guard student Punghun, had been executed in his own country, Xue Rengui took Punghun as his guide and came to attack Cheon Fortress.",
+			"ko": "가을 9월, 설인귀는 숙위학생 풍훈의 아버지 김진주가 본국에서 처형된 일을 빌미로 삼아, 풍훈을 길잡이로 앞세우고 천성을 치러 왔다.",
+			"hanja": "秋九月，薛仁貴以宿衛學生風訓之父金眞珠，伏誅於本國，引風訓爲鄕導，來攻泉城。",
+			"source": "Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 15 (675), ninth month"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Maeso",
+		"after": "Horses are the thing. An army that has lost thirty thousand horses on the Imjin is not riding to Surabol next spring, or",
+		"block": {
+			"kind": "quote",
+			"html": "In the eulhae year the Tang army came and attacked Maesocheon Fortress. Wonsul heard of it and meant to die there, to wash away his old shame. He fought hard and earned merit and reward; but bitter that his parents had never taken him back, he would not hold office, and so ended his days.",
+			"ko": "을해년에 이르러 당병이 와서 매소천성을 치자, 원술은 이를 듣고 거기서 죽어 지난날의 치욕을 씻고자 하였다. 마침내 힘껏 싸워 공을 세우고 상을 받았으나, 부모에게 끝내 용납받지 못한 것을 분하고 한스럽게 여겨, 벼슬하지 않고 생을 마쳤다.",
+			"hanja": "至乙亥年，唐兵來，攻買蘇川城，元述聞之，欲死之，以雪前恥，遂力戰有功賞，以不容於父母，憤恨不仕，以終其身。",
+			"source": "Samguk Sagi (三國史記) bk. 43, Biographies — Kim Yushin, part 3 (Wonsul at Maeso, 675)"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Maeso",
+		"after": "After they have lost the horses. Munmu is nearly fifty and still, occasionally, checking his father’s work against the d",
+		"block": {
+			"kind": "quote",
+			"html": "On the twenty-ninth, Li Jinxing camped at Maeso Fortress with two hundred thousand men. Our army struck and drove him off, and took thirty thousand three hundred and eighty war-horses, with weapons and gear to match.",
+			"ko": "29일, 이근행이 군사 20만을 거느리고 매소성에 주둔하였는데, 우리 군사가 쳐서 쫓아내고 전마 3만 380필을 얻었으며, 그 밖의 병장기도 그만큼 얻었다.",
+			"hanja": "二十九日，李謹行率兵二十萬，屯買肖城，我軍撃走之，得戰馬三萬三百八十匹，其餘兵仗，稱是。",
+			"source": "Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 15 (675), ninth month",
+			"event": "maeso-675"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Maeso",
+		"after": "After they have lost the horses. Munmu is nearly fifty and still, occasionally, checking his father’s work against the d",
+		"block": {
+			"kind": "quote",
+			"html": "By edict Li Jinxing was made Commissioner for Pacifying Andong and camped at Silla's Maeso Fortress to bring the country to order. He fought three battles and won them all. Silla then sent envoys with tribute and begged pardon; the emperor forgave it and restored King Bupmin of Silla to his titles.",
+			"ko": "조서를 내려 이근행을 안동진무대사로 삼아 신라의 매소성에 주둔하며 경략하게 하였다. 세 번 싸워 모두 이기니, 신라가 이에 사신을 보내 조공하고 또 사죄하였다. 황제는 이를 용서하고 신라왕 법민의 관작을 되돌려 주었다.",
+			"hanja": "詔以李謹行為安東鎮撫大使，屯新羅之買肖城以經略之，三戰皆捷，新羅乃遣使入貢，且謝罪；上赦之，復新羅王法敏官爵。",
+			"source": "Zizhi Tongjian (資治通鑑) bk. 202, Tang Gaozong, Shangyuan 2 (675), second month",
+			"event": "maeso-675"
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Final Ford",
+		"after": "…세 번째도요?",
+		"block": {
+			"kind": "formation",
+			"title": "Final Ford, eleventh month, 676",
+			"sides": [
+				{
+					"name": "Tang",
+					"color": "#b45309",
+					"units": [
+						{
+							"label": "Xue Rengui",
+							"sub": "the fleet, in the estuary"
+						}
+					]
+				},
+				{
+					"name": "Silla",
+					"color": "#3E79E4",
+					"units": [
+						{
+							"label": "Sachan Sideuk",
+							"sub": "beaten twice, then twenty-two more"
+						}
+					]
+				}
+			],
+			"note": "Nobody remembers the first two defeats. The record keeps the twenty-two."
+		}
+	},
+	{
+		"chapterId": "silla-tang-war",
+		"entryTitle": "Final Ford",
+		"after": "서쪽으로. 아무도 서명하지 않는다. 배들이 그냥 계속 간다.",
+		"block": {
+			"kind": "quote",
+			"hanja": "沙飡施得領船兵 與薛仁貴戰於所夫里州伎伐浦 敗績 又進大小二十二戰 克之 斬首四千餘級",
+			"ko": "사찬 시득이 선병을 이끌고 소부리주 기벌포에서 설인귀와 싸워 패하였다. 다시 나아가 크고 작은 스물두 번의 싸움을 하여 이기고, 사천여 급을 베었다.",
+			"html": "Sachan Sideuk led ship-troops and fought Xue Rengui at Final Ford in Soburi-ju; they were defeated. They advanced again, fought twenty-two engagements great and small, prevailed, and took more than four thousand heads.",
+			"source": "Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 16 (676), 11th month, Gibeolpo; Lee Byong-do ed., vol. 1, p. 168"
+		}
+	},
+	{
+		"chapterId": "epilogue-2",
+		"entryTitle": "Balhae",
+		"after": "His capital will be a stamped grid of halls on the Mudanjiang. Lotus tiles. A stone lantern. Nobody there will need tell",
+		"block": {
+			"kind": "quote",
+			"html": "Dae Joyoung of the Balhae Mohe was by origin a branch of the Goguryeo people. When Goguryeo was destroyed, Joyoung moved his household to Yingzhou. … At last he led his people east to hold the old land of the Gyeru, took Mount Dongmo, and built a walled town there to live in.",
+			"ko": "발해말갈의 대조영은 본래 고구려의 별종이다. 고구려가 멸망하자 조영은 가솔을 거느리고 영주로 옮겨 살았다. … 조영은 마침내 무리를 이끌고 동쪽으로 가 계루의 옛 땅을 지키고, 동모산에 의지하여 성을 쌓고 살았다.",
+			"hanja": "渤海靺鞨大祚榮者，本高麗別種也。高麗既滅，祚榮率家屬徙居營州。…祚榮遂率其衆東保桂婁之故地，據東牟山，築城以居之。",
+			"source": "Jiu Tangshu (舊唐書) bk. 199B, Northern Di — the Balhae Mohe (渤海靺鞨)",
+			"event": "balhae-goguryeo"
+		}
+	},
+	{
+		"chapterId": "epilogue-2",
+		"entryTitle": "Balhae",
+		"after": "His capital will be a stamped grid of halls on the Mudanjiang. Lotus tiles. A stone lantern. Nobody there will need tell",
+		"block": {
+			"kind": "quote",
+			"html": "Muye reports. Our mountains and rivers lie in other regions; our lands are not the same. … I, Muye, unworthily hold a place among the kingdoms and preside over the many tribes. We have restored the old home of Goguryeo, and we keep the customs handed down from Buyeo.",
+			"ko": "무예가 아룁니다. 산하는 지역이 다르고 국토는 같지 않습니다. … 무예는 황송하게도 열국의 하나를 맡아 외람되이 여러 번국을 거느리며, 고구려의 옛 터전을 되찾고 부여의 남은 풍속을 지니고 있습니다.",
+			"hanja": "武藝啓。山河異域。國土不同。…武藝忝當列國。濫惣諸蕃。復高麗之舊居。有扶餘之遺俗。",
+			"source": "Shoku Nihongi (續日本紀) bk. 10, Shōmu, Jinki 5 (728), first month — letter of Dae Muye, King of Balhae, to the Yamato court",
+			"event": "balhae-goguryeo"
+		}
+	}
+]

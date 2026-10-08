@@ -1,22 +1,89 @@
+<script module lang="ts">
+	import { holdsOffice, sitter, type Cast } from './cast';
+
+	/** Bidam's seat (the upper-right one), when the story needs him. */
+	export const BIDAM = 1;
+	/** The first chair, 상대등: Bidam's seat in his year, and a little taller than the rest. */
+	export const HIGH = BIDAM;
+	export const seatName = (i: number) =>
+		i === HIGH ? { ko: '상대등', en: 'High Councillor' } : { ko: '대등', en: 'Councillor' };
+
+	/** Seat i's id in a scene's `cast`. */
+	export const seatId = (i: number) => `s${i}`;
+
+	/**
+	 * The taller first chair. On the bare chart it is seat 1; in a scene it is whichever
+	 * sitter holds the High Councillor's office that year, and none when he is not in the room.
+	 */
+	export function highSeat(cast: Cast | undefined, year?: number | null): number {
+		if (!cast) return HIGH;
+		for (let i = 0; i < 6; i++) {
+			const who = sitter(cast, seatId(i), year);
+			if (who && holdsOffice(who.person, 'harmonycouncil', '상대등', year)) return i;
+		}
+		return -1;
+	}
+
+	export type Vote = 'yes' | 'no' | 'none';
+
+	export function voteOf(step: string, i: number): Vote {
+		if (step === 'unanimous') return 'yes';
+		// Hung jury: Bidam and two sleeves yes; three no.
+		if (step === 'split') return i === BIDAM || i === 0 || i === 2 ? 'yes' : 'no';
+		if (step === 'veto') return i === BIDAM ? 'no' : 'yes';
+		return 'none';
+	}
+
+	export function verdictOf(step: string): { ko: string; en: string } {
+		return step === 'split'
+			? { ko: '3:3', en: 'hung' }
+			: step === 'unanimous'
+				? { ko: '가결', en: 'passed' }
+				: step === 'veto'
+					? { ko: '부결', en: 'vetoed' }
+					: step === 'session'
+						? { ko: '만장일치', en: 'all or none' }
+						: step === 'rebellion'
+							? { ko: '화백', en: 'the Council' }
+							: { ko: '화백', en: 'ornamental' };
+	}
+
+	export const isVoting = (step: string) =>
+		step === 'unanimous' || step === 'veto' || step === 'split';
+
+	/** The three gates show while a vote runs, and on the bare session that explains them. */
+	export const showsGates = (step: string) => isVoting(step) || step === 'session';
+
+	/** The three gates of every session, lit in sequence while a vote is shown. */
+	export const GATES = [
+		{ ko: '초투표', en: 'initial vote', x: 78 },
+		{ ko: '숙고', en: 'deliberation', x: 180 },
+		{ ko: '최종 투표', en: 'final vote', x: 282 }
+	];
+</script>
+
 <script lang="ts">
 	/**
 	 * The Harmony Council (화백회의): one motion in the centre, six Councillor
 	 * seats around it. Steps:
-	 *   - 'split'      — initial hung vote, 3:3 (Bidam + two yes; three no)
+	 *   - 'session'    — the bare machine: six seats, one motion, three gates (first introduction)
+	 *   - 'split'      — initial hung vote, 3:3 (seats 0–2 yes; 3–5 no)
 	 *   - 'unanimous'  — seats pop in, every sleeve assents, the motion passes
 	 *   - 'veto'       — five assent, one (Bidam) objects; the motion dies
 	 *   - 'rebellion'  — Bidam's seat goes dark and breaks away from the circle
 	 *   - 'ornamental' — after the Secretariat: chairs polished, room empty of power
+	 * In a scene, `cast` names each seat's sitter (s0–s5) and their faces sit on the seats.
+	 * The 3D scene lives in three/scenes/HarmonyScene.svelte; this SVG is its fallback.
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
 
-	let { step = 'unanimous', active = false }: DiagramProps = $props();
+	let { step = 'unanimous', active = false, flat = false, cast, year = null }: DiagramProps = $props();
 
 	const CX = 180;
 	const CY = 136;
 	const R = 92;
-	const BIDAM = 1; // the upper-right seat, when the story needs him
 
 	const seats = Array.from({ length: 6 }, (_, i) => {
 		const a = ((-90 + i * 60) * Math.PI) / 180;
@@ -29,35 +96,15 @@
 		};
 	});
 
-	const voting = $derived(step === 'unanimous' || step === 'veto' || step === 'split');
-
-	function vote(i: number): 'yes' | 'no' | 'none' {
-		if (step === 'unanimous') return 'yes';
-		// Hung jury: Bidam and two sleeves yes; three no.
-		if (step === 'split') return i === BIDAM || i === 0 || i === 2 ? 'yes' : 'no';
-		if (step === 'veto') return i === BIDAM ? 'no' : 'yes';
-		return 'none';
-	}
-
-	const verdict = $derived(
-		step === 'split'
-			? { ko: '3:3', en: 'hung' }
-			: step === 'unanimous'
-				? { ko: '가결', en: 'passed' }
-				: step === 'veto'
-					? { ko: '부결', en: 'vetoed' }
-					: step === 'rebellion'
-						? { ko: '화백', en: 'the Council' }
-						: { ko: '화백', en: 'ornamental' }
-	);
-
-	// The three gates of every session, lit in sequence while a vote is shown.
-	const gates = [
-		{ ko: '초투표', en: 'initial vote', x: 78 },
-		{ ko: '숙고', en: 'deliberation', x: 180 },
-		{ ko: '최종 투표', en: 'final vote', x: 282 }
-	];
+	const gatesOn = $derived(showsGates(step));
+	const vote = (i: number) => voteOf(step, i);
+	const verdict = $derived(verdictOf(step));
+	const gates = GATES;
+	const high = $derived(highSeat(cast, year));
 </script>
+
+<KitStage id="harmony-council" {step} {active} {flat} sceneProps={{ cast, year }}>
+	{#snippet fallback()}
 
 <svg
 	viewBox="0 0 360 300"
@@ -91,6 +138,7 @@
 	<!-- the six sleeves -->
 	{#each seats as s (s.i)}
 		{@const v = vote(s.i)}
+		{@const who = sitter(cast, seatId(s.i), year)}
 		<g
 			class="seat-pos"
 			class:breakaway={step === 'rebellion' && s.i === BIDAM}
@@ -102,19 +150,19 @@
 				class:breakaway={step === 'rebellion' && s.i === BIDAM}
 				style="--d: {380 + s.i * 130}"
 			>
-				<circle cx={s.x} cy={s.y} r="19" />
+				<circle cx={s.x} cy={s.y} r={s.i === high ? 22 : 19} />
 				{#if v === 'yes'}
 					<text class="mark yes" style="--d: {1450 + s.i * 90}" x={s.x} y={s.y - 5}>✓</text>
 				{:else if v === 'no'}
 					<text class="mark nay" style="--d: {1450 + s.i * 90}" x={s.x} y={s.y - 5}>✕</text>
 				{/if}
-				<ChartLabel x={s.x} y={s.y + 8} ko="의원" w={36} size="sm" />
+				<ChartLabel x={s.x} y={s.y + 8} ko={who?.ko ?? seatName(s.i).ko} w={s.i === high || who ? 40 : 36} size="sm" />
 			</g>
 		</g>
 	{/each}
 
 	<!-- the three gates of a session -->
-	{#if voting}
+	{#if gatesOn}
 		{#each gates as g, i (g.ko)}
 			{@const fails = step === 'veto' && i === 2}
 			<g class="gate" class:fail={fails} style="--d: {2100 + i * 350}">
@@ -135,6 +183,8 @@
 		{/each}
 	{/if}
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

@@ -79,14 +79,14 @@ export type ViewScope = 'full' | 'episodes';
 export const VIEW_QUERY = 'view';
 export const EP_QUERY = 'ep';
 
-/** `title` is the cover, `part` a Part's title page (its chapter is the one that opens it), `entry` a story episode. */
-export type EpisodeKind = 'title' | 'part' | 'entry';
+/** `prologue` is Heewon's note before the story, `part` a Part's title page (its chapter is the one that opens it), `entry` a story episode. */
+export type EpisodeKind = 'prologue' | 'part' | 'entry';
 
 export type EpisodeRef = {
 	kind: EpisodeKind;
 	chapterId: string;
 	chapterIndex: number;
-	/** -1 on the title and Part pages. */
+	/** -1 on the prologue and Part pages. */
 	entryIndex: number;
 	id: string;
 };
@@ -123,7 +123,8 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'samhan-birth-of-namseng': 'samhan-high-summit',
 	'samhan-gwanggaeto-the-conqueror': 'samhan-gwanggaeto-the-great-king',
 	'five-principles-gotasos-wedding': 'five-principles-gotaso',
-	'five-principles-yeons-three-sons': 'five-principles-grand-academy',
+	'five-principles-yeons-three-sons': 'five-principles-academy',
+	'five-principles-grand-academy': 'five-principles-academy',
 	'five-principles-king-euija-the-31st-eraha': 'five-principles-king-euija',
 	'iron-will-not-even-human': 'iron-will-gumil',
 	'jumong-jumong': 'seventh-invasion-haemosu',
@@ -184,12 +185,12 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 };
 
 /** Flat episode list — slug ids match TOC / URL hashes (`chapterId-title-slug`).
- * Index 0 is the title page, its own episode, not a scroll above the first entry;
+ * Index 0 is the prologue (the default with no `?ep=`), its own episode before the first entry;
  * each Part's title page (`part-chapterId`) is its own episode before that Part's first entry. */
-export const TITLE_EPISODE_ID = 'title';
+export const PROLOGUE_EPISODE_ID = 'prologue';
 
 export const episodes: EpisodeRef[] = [
-	{ kind: 'title', chapterId: 'title', chapterIndex: -1, entryIndex: -1, id: TITLE_EPISODE_ID },
+	{ kind: 'prologue', chapterId: 'prologue', chapterIndex: -1, entryIndex: -1, id: PROLOGUE_EPISODE_ID },
 	...chapters.flatMap((ch, chapterIndex): EpisodeRef[] => [
 		...(ch.part
 			? [{ kind: 'part' as const, chapterId: ch.id, chapterIndex, entryIndex: -1, id: partId(ch.id) }]
@@ -233,10 +234,34 @@ export function episodeQueryId(ep: EpisodeRef): string {
 	return UNIQUE_TITLE_SLUGS.has(slug) ? slug : ep.id;
 }
 
-/** Episode picker label: `7.13 · Hyukgosé` (title page is plain `Title`); Korean titles when the reader picks Korean. */
+const LAST_EPISODE_KEY = 'kingdom:last-episode';
+
+/** Remember the story episode open in the reader, for the hub's Continue. Title and Part pages are skipped. */
+export function rememberLastEpisode(index: number) {
+	const ep = episodes[index];
+	if (!browser || ep?.kind !== 'entry') return;
+	try {
+		localStorage.setItem(LAST_EPISODE_KEY, ep.id);
+	} catch {
+		/* private mode */
+	}
+}
+
+/** The story episode the reader last had open, if any. */
+export function lastEpisode(): EpisodeRef | null {
+	if (!browser) return null;
+	try {
+		const id = localStorage.getItem(LAST_EPISODE_KEY);
+		return episodes.find((ep) => ep.kind === 'entry' && ep.id === id) ?? null;
+	} catch {
+		return null;
+	}
+}
+
+/** Episode picker label: `7.13 · Hyukgosé` (the prologue is plain `Prologue`); Korean titles when the reader picks Korean. */
 export function episodeNavLabel(ep: EpisodeRef): string {
 	const ko = reading.lang === 'ko';
-	if (ep.kind === 'title') return ko ? '표지' : 'Title';
+	if (ep.kind === 'prologue') return ko ? '프롤로그' : 'Prologue';
 	if (ep.kind === 'part') {
 		const ch = chapters[ep.chapterIndex];
 		const name = (ko ? ch.partKorean : ch.partTitle) ?? '';
@@ -279,7 +304,7 @@ export const reading = $state({
 	/** Yamato / Japanese native + Hepburn romaji (subtitle layers) */
 	linesJa: [] as string[],
 	linesJaLatn: [] as string[],
-	lang: 'both' as Lang,
+	lang: 'en' as Lang,
 	/** Script from first paint. Switching mid-session still persists. */
 	mode: 'script' as ReadMode,
 	/** Episodes by default — one entry mounted, far fewer cue fetches. */
@@ -354,10 +379,13 @@ export function leadLang(l: Lang = reading.lang): 'ko' | 'en' {
 	return l === 'en' ? 'en' : 'ko';
 }
 
+/** Versioned so the switch to an English default reaches readers who had saved 'both'. */
+const LANG_KEY = 'kingdom:lang:v2';
+
 export function setLang(l: Lang) {
 	reading.lang = l;
 	try {
-		localStorage.setItem('kingdom:lang', l);
+		localStorage.setItem(LANG_KEY, l);
 	} catch {
 		/* private mode — preference just won't persist */
 	}
@@ -386,7 +414,7 @@ export function setMode(m: ReadMode) {
 
 export function loadLang() {
 	try {
-		const v = localStorage.getItem('kingdom:lang');
+		const v = localStorage.getItem(LANG_KEY);
 		if (v === 'en' || v === 'ko' || v === 'both') reading.lang = v;
 	} catch {
 		/* ignore */
@@ -419,8 +447,8 @@ export function loadViewScope() {
 	const epParam = new URL(location.href).searchParams.get(EP_QUERY);
 	applyReadingFromUrl(new URL(location.href));
 	if (reading.viewScope === 'episodes') {
-		/* A bare visit (or the title page) lands on the cover with the TOC shut. */
-		if (epParam && episodes[reading.episodeIndex]?.id !== 'title') autoOpenToc();
+		/* A bare visit (or the prologue) opens with the TOC shut. */
+		if (epParam && episodes[reading.episodeIndex]?.kind !== 'prologue') autoOpenToc();
 		scriptUi.inScript = true;
 		syncReadingUrl();
 	}
@@ -474,7 +502,7 @@ export function setViewScope(s: ViewScope) {
 			window.dispatchEvent(new Event('scroll'));
 			return;
 		}
-		if (ep.kind === 'title' || (s === 'episodes' && ep.kind === 'part')) {
+		if (ep.kind === 'prologue' || (s === 'episodes' && ep.kind === 'part')) {
 			scrollStoryToTop();
 			window.dispatchEvent(new Event('scroll'));
 			return;
@@ -987,7 +1015,7 @@ export function goToEpisode(
 	const finish = () => {
 		if (scroll) {
 			const toTop =
-				ep.kind === 'title' ||
+				ep.kind === 'prologue' ||
 				(reading.viewScope === 'episodes' && (destId === ep.id || !isScene(destId)));
 			if (toTop) {
 				scrollStoryToTop();

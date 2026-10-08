@@ -35,13 +35,13 @@
 		showsWikiAccent,
 		clanSpotlightOf,
 		groupMembersOf,
+		wikiWallStills,
 		type WikiKind,
 		type WikiFilters
 	} from '$lib/wiki';
-	import { hasLeitmotif, hasTempTrack } from '$lib/leitmotifs';
 	import WikiDetail from '$lib/components/WikiDetail.svelte';
-	import { tilt } from '$lib/attachments/tilt';
-	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
+	import StillWall, { WALL_STILLS } from '$lib/components/StillWall.svelte';
+	import GlassSelect, { type GlassOption } from '$lib/components/GlassSelect.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
 	import { chartsForWikiEntry } from '$lib/components/diagrams/wikiCharts';
 	import { storyImg } from '$lib/img';
@@ -249,7 +249,8 @@
 		if (!id) return;
 		if (selectedId) saveDetailScroll(selectedId);
 		else saveIndexScroll();
-		expanded = false;
+		// Following a link inside a full-screen entry stays full-screen, like a wiki page.
+		if (!selectedId) expanded = false;
 		persistFilters();
 		// Open immediately — do not wait for pushState / page.url.
 		selectedId = id;
@@ -288,6 +289,38 @@
 		if (kid === 'all') return PROFILES.length;
 		return PROFILES.filter((p) => p.kingdom === kid).length;
 	}
+
+	const WALL = wikiWallStills(WALL_STILLS);
+
+	const KIND_OPTIONS: GlassOption<WikiFilters['kind']>[] = [
+		{ value: 'all', label: 'All', count: kindCount('all') },
+		...WIKI_KINDS.map((k) => ({ value: k.id, label: k.plural, count: kindCount(k.id) }))
+	];
+
+	const KINGDOM_OPTIONS: GlassOption<WikiFilters['kingdom']>[] = [
+		{ value: 'all', label: 'All kingdoms', count: kingdomCount('all') },
+		...[...WIKI_KINGDOMS, 'other' as const].map((kid) => ({
+			value: kid,
+			label: KINGDOMS[kid].label,
+			count: kingdomCount(kid)
+		}))
+	];
+
+	const ERA_OPTIONS: GlassOption<WikiFilters['tag']>[] = [
+		{ value: 'all', label: 'Any era', count: tagCount('all') },
+		...ERA_TAG_IDS.map((tid) => ({
+			value: tid,
+			label: ERA_TAG_META[tid]?.label ?? tid,
+			count: tagCount(tid),
+			hint: ERA_TAG_META[tid]?.hint
+		}))
+	];
+
+	let genderOptions = $derived<GlassOption<WikiFilters['gender']>[]>([
+		{ value: 'all', label: 'All', count: genderCount('all') },
+		{ value: 'm', label: 'Men', count: genderCount('m') },
+		{ value: 'f', label: 'Women', count: genderCount('f') }
+	]);
 
 	type WikiSnap = {
 		kind: WikiFilters['kind'];
@@ -355,94 +388,40 @@
 <svelte:window onkeydown={onKey} onpopstate={onPopState} />
 
 <main class="wiki" class:dimmed={!!selectedId}>
-	<header class="topbar">
-		<div class="mast-nav">
-			<SiteNavSpace />
-			<span class="dot" aria-hidden="true">·</span>
-			<a class="quiet" href={resolve('/images')}>Images</a>
-			<span class="dot" aria-hidden="true">·</span>
-			<a class="quiet" href={resolve('/grade')}>Grade</a>
-			<span class="dot" aria-hidden="true">·</span>
-			<span>{WIKI_TOTAL} entries</span>
-		</div>
-	</header>
-
 	<header class="hero">
-		<div class="hero-copy">
-			<p class="eyebrow">The Chronicle Archive</p>
-			<h1>Wiki</h1>
-			<p class="hero-ko" lang="ko">위키 <span aria-hidden="true">·</span> 百科</p>
-			<span class="ornament" aria-hidden="true"></span>
-			<p class="lede">
-				Every face, horse, place, bond, and idea named in the chronicle — drawn from the same records the
-				story reads.
-			</p>
-		</div>
-
-		<label class="search">
-			<span class="sr">Search the wiki</span>
-			<span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
-			<input
-				type="search"
-				placeholder="Search the wiki"
-				bind:value={q}
-				autocomplete="off"
-			/>
-		</label>
-
-		<div class="filters">
-			<label class="filter">
-				<span class="filter-label">Type</span>
-				<span class="select-wrap">
-					<select bind:value={kind} onchange={onKindChange}>
-						<option value="all">All · {kindCount('all')}</option>
-						{#each WIKI_KINDS as k (k.id)}
-							<option value={k.id}>{k.plural} · {kindCount(k.id)}</option>
-						{/each}
-					</select>
-				</span>
-			</label>
-
-			<label class="filter">
-				<span class="filter-label">Kingdom</span>
-				<span class="select-wrap">
-					<select bind:value={kingdom} onchange={persistFilters}>
-						<option value="all">All kingdoms · {kingdomCount('all')}</option>
-						{#each WIKI_KINGDOMS as kid (kid)}
-							<option value={kid}>{KINGDOMS[kid].label} · {kingdomCount(kid)}</option>
-						{/each}
-						<option value="other">{KINGDOMS.other.label} · {kingdomCount('other')}</option>
-					</select>
-				</span>
-			</label>
-
-			<label class="filter">
-				<span class="filter-label">Era</span>
-				<span class="select-wrap">
-					<select bind:value={tag} onchange={persistFilters}>
-						<option value="all">Any era · {tagCount('all')}</option>
-						{#each ERA_TAG_IDS as tid (tid)}
-							<option value={tid} title={ERA_TAG_META[tid]?.hint}>
-								{ERA_TAG_META[tid]?.label ?? tid} · {tagCount(tid)}
-							</option>
-						{/each}
-					</select>
-				</span>
-			</label>
-
-			{#if showGenderFilter}
-				<label class="filter">
-					<span class="filter-label">Gender</span>
-					<span class="select-wrap">
-						<select bind:value={gender} onchange={persistFilters}>
-							<option value="all">All · {genderCount('all')}</option>
-							<option value="m">Men · {genderCount('m')}</option>
-							<option value="f">Women · {genderCount('f')}</option>
-						</select>
-					</span>
+		<StillWall stills={WALL} fill>
+			<div class="finder">
+				<label class="search liquid-glass">
+					<span class="sr">Search the wiki</span>
+					<span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
+					<input
+						type="search"
+						placeholder="Search {WIKI_TOTAL} entries"
+						bind:value={q}
+						autocomplete="off"
+					/>
 				</label>
-			{/if}
-		</div>
+
+				<div class="filters">
+					<GlassSelect label="Type" bind:value={kind} options={KIND_OPTIONS} onchange={onKindChange} />
+					<GlassSelect
+						label="Kingdom"
+						bind:value={kingdom}
+						options={KINGDOM_OPTIONS}
+						onchange={persistFilters}
+					/>
+					<GlassSelect label="Era" bind:value={tag} options={ERA_OPTIONS} onchange={persistFilters} />
+					{#if showGenderFilter}
+						<GlassSelect
+							label="Gender"
+							bind:value={gender}
+							options={genderOptions}
+							onchange={persistFilters}
+						/>
+					{/if}
+				</div>
+			</div>
+		</StillWall>
 	</header>
 
 	<section class="browse" aria-label="Wiki results">
@@ -459,6 +438,7 @@
 						? '· by members'
 						: '· by importance'}</span
 			>
+			<a class="grade-link" href={resolve('/grade')}>Grade</a>
 		</p>
 
 		{#if filtered.length === 0}
@@ -485,8 +465,13 @@
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
 							{@const isNationCard = cardKind === 'nation'}
 							{@const isObjectCard = cardKind === 'animal' || cardKind === 'instrument'}
+							{@const isBondCard = cardKind === 'relationship' && !!p.avatar}
 							{@const isShowcase =
-								cardKind === 'place' || cardKind === 'city' || isNationCard || isObjectCard}
+								cardKind === 'place' ||
+								cardKind === 'city' ||
+								isNationCard ||
+								isObjectCard ||
+								isBondCard}
 							{@const flagArt = isNationCard ? kingdomFlag(p.kingdom) : undefined}
 							{@const showcaseArt = isNationCard ? flagArt : art}
 							{@const isOrgCard = cardKind === 'organization'}
@@ -508,29 +493,23 @@
 							<li>
 								<button
 									type="button"
-									class="card tilt"
+									class="card"
 									class:card-showcase={isShowcase}
 									class:card-character={isPortraitCard}
-									class:card-place={cardKind === 'place' || cardKind === 'city' || isObjectCard}
+									class:card-place={cardKind === 'place' ||
+										cardKind === 'city' ||
+										isObjectCard ||
+										isBondCard}
 									class:card-org={isOrgCard || isGroupCard}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
 									onclick={() => openEntry(p.id)}
-									{@attach tilt()}
 								>
-									{#if hasLeitmotif(p.id)}
-										<span
-											class="motif-mark material-symbols-outlined"
-											title={hasTempTrack(p.id)
-												? 'Has a leitmotif · temp reference'
-												: 'Has a leitmotif'}
-											aria-hidden="true">music_note</span
-										>
-									{/if}
 									{#if isShowcase}
 										<span
 											class="showcase"
 											class:showcase-flag={isNationCard}
+											class:showcase-bond={isBondCard}
 											class:empty={!showcaseArt}
 											aria-hidden="true"
 										>
@@ -545,9 +524,6 @@
 												/>
 											{:else}
 												<span class="showcase-initial">{hangulInitial(p)}</span>
-											{/if}
-											{#if isNationCard}
-												<span class="showcase-fade"></span>
 											{/if}
 										</span>
 									{:else if hasOrgPreview}
@@ -636,7 +612,9 @@
 										{#if p.realm}
 											<span class="card-realm">{p.realm.en}<span class="realm-ko"> · {p.realm.ko}</span></span>
 										{/if}
-										{#if titleOf(p)}
+										{#if p.summary}
+											<span class="card-summary">{p.summary.en}</span>
+										{:else if titleOf(p)}
 											<span class="card-title">{titleOf(p)}</span>
 										{:else if !isFaceCard}
 											<span class="card-title">{kindLabel(p)}</span>
@@ -693,7 +671,7 @@
 	<div class="peek missing" role="dialog" aria-modal="true" aria-label="Entry not found">
 		<header class="missing-head">
 			<button type="button" class="missing-close" onclick={clearEntry} aria-label="Close">✕</button>
-			<a href={resolve('/')}>Chronicle</a>
+			<a href={resolve('/read')}>Chronicle</a>
 		</header>
 		<div class="missing-body">
 			<h1>Not found</h1>
@@ -704,202 +682,86 @@
 
 <style>
 	.wiki {
-		--card-radius: 14px;
-		--plate: linear-gradient(
-			165deg,
-			color-mix(in srgb, var(--panel) 94%, var(--fg) 6%) 0%,
-			var(--panel) 42%,
-			color-mix(in srgb, var(--panel) 70%, var(--panel-sunken)) 100%
-		);
+		--card-radius: 8px;
+		--plate: color-mix(in srgb, var(--panel) 96%, var(--fg) 4%);
+		--gutter-l: max(1.5rem, env(safe-area-inset-left, 0px));
+		--gutter-r: max(1.5rem, env(safe-area-inset-right, 0px));
+		position: relative;
 		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
-		background:
-			radial-gradient(
-				ellipse 70% 38rem at 50% -8rem,
-				color-mix(in srgb, var(--gold) 10%, transparent),
-				transparent 72%
-			),
-			var(--bg);
+		background: var(--bg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
 		transition: filter 0.35s var(--ease);
-		padding:
-			0
-			max(1.5rem, env(safe-area-inset-right, 0px))
-			max(4rem, env(safe-area-inset-bottom, 0px) + 2rem)
-			max(1.5rem, env(safe-area-inset-left, 0px));
+		padding: 0 var(--gutter-r) max(4rem, env(safe-area-inset-bottom, 0px) + 2rem) var(--gutter-l);
 	}
 
 	.wiki.dimmed {
 		filter: saturate(0.92);
 	}
 
-	.topbar {
-		width: 100%;
-		max-width: 72rem;
-		margin: 0 auto;
-		padding-top: max(1rem, env(safe-area-inset-top, 0px) + 0.55rem);
-	}
-
-	.dot {
-		opacity: 0.5;
-	}
-
-	.mast-nav {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.4rem;
-		margin: 0;
-		font-family: var(--ui);
-		font-size: 0.72rem;
-		letter-spacing: var(--tracking-ui);
-		line-height: 1.2;
-		color: var(--fg-faint);
-	}
-
-	.mast-nav .quiet {
-		color: inherit;
-		text-decoration: none;
-	}
-
-	.mast-nav .quiet:hover {
-		color: var(--fg);
-	}
-
-	.mast-nav .dot {
-		opacity: 0.45;
-	}
-
+	/* Full-bleed band under the site nav: entry art drifts behind a glass search bar. */
 	.hero {
+		--wall-clear: 0.7;
+		position: relative;
+		height: clamp(22rem, 48svh, 31rem);
+		margin: 0 calc(-1 * var(--gutter-r)) 1.25rem calc(-1 * var(--gutter-l));
+	}
+
+	.finder {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		width: 100%;
-		margin: 0 auto;
-		padding: 4.25rem 0 2.25rem;
-		text-align: center;
+		gap: 1rem;
+		width: min(38rem, calc(100vw - 2.5rem));
 	}
 
-	.hero-copy,
 	.search {
-		width: 100%;
-		max-width: 40rem;
-	}
-
-	.eyebrow {
-		margin: 0 0 0.85rem;
-		font-family: var(--ui);
-		font-size: 0.68rem;
-		font-weight: 500;
-		letter-spacing: 0.32em;
-		text-transform: uppercase;
-		color: var(--gold);
-	}
-
-	.hero h1 {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: clamp(2.6rem, 6vw, 4rem);
-		font-weight: 500;
-		letter-spacing: -0.03em;
-		line-height: 1;
-		color: var(--fg-strong);
-	}
-
-	.hero-ko {
-		margin: 0.7rem 0 0;
-		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 0.95rem;
-		font-weight: 600;
-		letter-spacing: 0.18em;
-		color: var(--fg-faint);
-	}
-
-	.hero-ko span {
-		opacity: 0.5;
-	}
-
-	/* Thin gold rule with a centred lozenge. */
-	.ornament {
+		--glass-tint: 26%;
+		--glass-sheen: 14%;
 		position: relative;
 		display: block;
-		width: min(14rem, 60%);
-		height: 1px;
-		margin: 1.35rem auto 0;
-		background: linear-gradient(
-			to right,
-			transparent,
-			color-mix(in srgb, var(--gold) 70%, transparent) 30%,
-			color-mix(in srgb, var(--gold) 70%, transparent) 70%,
-			transparent
-		);
+		width: 100%;
+		border-radius: var(--radius-pill);
+		transition:
+			--glass-tint 0.3s var(--ease),
+			border-color 0.3s var(--ease);
 	}
 
-	.ornament::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		width: 7px;
-		height: 7px;
-		background: var(--bg);
-		border: 1px solid var(--gold);
-		transform: translate(-50%, -50%) rotate(45deg);
+	.search:hover {
+		--glass-tint: 36%;
 	}
 
-	.lede {
-		margin: 1.25rem auto 0;
-		max-width: 34rem;
-		font-family: var(--serif);
-		font-size: 1.02rem;
-		font-style: italic;
-		font-weight: 400;
-		letter-spacing: -0.01em;
-		line-height: 1.5;
-		color: var(--fg-dim);
-	}
-
-	.search {
-		position: relative;
-		margin-top: 2rem;
-		text-align: left;
+	.search:focus-within {
+		--glass-tint: 46%;
+		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
 	}
 
 	.search-icon {
 		position: absolute;
-		z-index: 1;
-		left: 1.15rem;
+		left: 1.3rem;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: 1.3rem;
-		color: var(--fg-faint);
+		font-size: 1.35rem;
+		color: var(--fg-dim);
 		pointer-events: none;
 	}
 
 	.search input {
+		display: block;
 		width: 100%;
-		height: 3.25rem;
+		height: 3.6rem;
+		padding: 0 1.5rem 0 3.4rem;
+		border: 0;
+		background: transparent;
 		font-family: var(--ui);
-		font-size: 1rem;
+		font-size: 1.05rem;
 		letter-spacing: var(--tracking-ui);
-		line-height: var(--leading-ui);
-		color: var(--fg);
-		background: color-mix(in srgb, var(--panel) 78%, transparent);
-		backdrop-filter: blur(10px);
-		border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
-		border-radius: var(--radius-pill);
-		padding: 0 1.25rem 0 3.1rem;
+		color: var(--fg-strong);
 		outline: none;
 		appearance: none;
-		box-shadow:
-			0 1px 0 color-mix(in srgb, var(--fg) 6%, transparent) inset,
-			0 12px 32px -18px rgba(0, 0, 0, 0.6);
-		transition:
-			border-color 0.25s var(--ease),
-			box-shadow 0.25s var(--ease);
 	}
 
 	.search input::-webkit-search-decoration {
@@ -907,104 +769,14 @@
 	}
 
 	.search input::placeholder {
-		color: var(--fg-faint);
-	}
-
-	.search input:focus {
-		border-color: color-mix(in srgb, var(--gold) 60%, transparent);
-		box-shadow:
-			0 1px 0 color-mix(in srgb, var(--fg) 6%, transparent) inset,
-			0 0 0 4px color-mix(in srgb, var(--gold) 14%, transparent),
-			0 12px 32px -18px rgba(0, 0, 0, 0.6);
+		color: var(--fg-dim);
 	}
 
 	.filters {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 0.75rem 0.85rem;
-		width: 100%;
-		max-width: 42rem;
-		margin-top: 1.35rem;
-	}
-
-	.filter {
-		display: grid;
-		gap: 0.4rem;
-		flex: 1 1 8.4rem;
-		min-width: 8.4rem;
-		max-width: 12.5rem;
-		text-align: left;
-	}
-
-	.filter-label {
-		margin: 0;
-		padding-left: 0.95rem;
-		font-family: var(--ui);
-		font-size: 0.62rem;
-		font-weight: 500;
-		letter-spacing: 0.2em;
-		text-transform: uppercase;
-		line-height: 1.2;
-		color: var(--fg-faint);
-	}
-
-	.select-wrap {
-		position: relative;
-		display: block;
-	}
-
-	.select-wrap::after {
-		content: '';
-		position: absolute;
-		top: 50%;
-		right: 0.72rem;
-		width: 0.7rem;
-		height: 0.7rem;
-		transform: translateY(-50%);
-		pointer-events: none;
-		background-color: var(--fg-faint);
-		mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round' d='M4 6.25 8 10.25 12 6.25'/%3E%3C/svg%3E");
-		mask-size: contain;
-		mask-repeat: no-repeat;
-		mask-position: center;
-		-webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round' d='M4 6.25 8 10.25 12 6.25'/%3E%3C/svg%3E");
-		-webkit-mask-size: contain;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-position: center;
-	}
-
-	.filter select {
-		display: block;
-		width: 100%;
-		height: 2.4rem;
-		padding: 0 2.1rem 0 0.95rem;
-		font-family: var(--ui);
-		font-size: 13px;
-		font-weight: 500;
-		letter-spacing: var(--tracking-ui);
-		line-height: 1.2;
-		color: var(--fg);
-		background: color-mix(in srgb, var(--panel) 70%, transparent);
-		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
-		border-radius: var(--radius-pill);
-		box-shadow: none;
-		appearance: none;
-		-webkit-appearance: none;
-		cursor: pointer;
-		outline: none;
-		transition:
-			border-color 0.2s var(--ease),
-			box-shadow 0.2s var(--ease);
-	}
-
-	.filter select:hover {
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
-	}
-
-	.filter select:focus {
-		border-color: color-mix(in srgb, var(--gold) 60%, transparent);
-		box-shadow: 0 0 0 4px color-mix(in srgb, var(--gold) 14%, transparent);
+		gap: 0.5rem;
 	}
 
 	.browse {
@@ -1032,6 +804,17 @@
 	.sort-hint {
 		color: var(--fg-faint) !important;
 		opacity: 0.75;
+	}
+
+	.grade-link {
+		float: right;
+		color: inherit;
+		text-decoration: none;
+		transition: color 0.2s var(--ease);
+	}
+
+	.grade-link:hover {
+		color: var(--fg);
 	}
 
 	.no-results {
@@ -1070,12 +853,7 @@
 		align-self: center;
 		height: 1px;
 		margin-left: 0.35rem;
-		background: linear-gradient(
-			to right,
-			color-mix(in srgb, var(--gold) 45%, transparent),
-			color-mix(in srgb, var(--fg) 8%, transparent) 40%,
-			transparent
-		);
+		background: var(--hairline);
 	}
 
 	.group h2 span {
@@ -1119,10 +897,10 @@
 		padding: 0;
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-		gap: 1rem;
+		gap: 1.5rem;
 	}
 
-	/* No content-visibility here: its paint containment clips the tilt and hover shadow. */
+	/* No content-visibility here: its paint containment clips the hover shadow. */
 	.grid > li {
 		min-width: 0;
 	}
@@ -1147,45 +925,23 @@
 		position: relative;
 		display: flex;
 		align-items: flex-start;
-		gap: 1rem;
+		gap: 1.15rem;
 		width: 100%;
 		height: 100%;
 		min-height: 11.25rem;
 		text-align: left;
-		padding: 0.95rem 1.05rem;
+		padding: 1.25rem 1.35rem;
 		border: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
 		border-radius: var(--card-radius);
 		background: var(--plate);
-		box-shadow:
-			0 1px 0 color-mix(in srgb, var(--fg) 5%, transparent) inset,
-			0 10px 28px -20px rgba(0, 0, 0, 0.7);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
 		isolation: isolate;
 		transition:
 			border-color 0.35s var(--ease),
-			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
 			box-shadow 0.35s var(--ease);
-	}
-
-	/* Hairline of the entry's own colour along the top edge. */
-	.card::before {
-		content: '';
-		position: absolute;
-		inset: 0 0 auto;
-		z-index: 3;
-		height: 1px;
-		background: linear-gradient(
-			to right,
-			transparent,
-			color-mix(in srgb, var(--k) 85%, transparent) 30%,
-			color-mix(in srgb, var(--k2, var(--k)) 85%, transparent) 70%,
-			transparent
-		);
-		opacity: 0.55;
-		pointer-events: none;
-		transition: opacity 0.35s var(--ease);
 	}
 
 	.card.card-showcase {
@@ -1213,19 +969,7 @@
 		height: auto;
 		min-height: 11.25rem;
 		border-radius: 0;
-		/* The entry's colour as a floor light behind the figure. */
-		background:
-			radial-gradient(
-				ellipse 95% 55% at 50% 100%,
-				color-mix(in srgb, var(--k) 34%, transparent),
-				transparent 72%
-			),
-			linear-gradient(
-				to bottom,
-				transparent 40%,
-				color-mix(in srgb, var(--k) 8%, transparent)
-			);
-		mask-image: linear-gradient(to right, #000 82%, transparent);
+		background: color-mix(in srgb, var(--k) 7%, transparent);
 	}
 
 	.card.card-character .avatar img {
@@ -1236,11 +980,9 @@
 		transform-origin: 50% 100%;
 	}
 
-	/* Art drifts against the tilt — a window onto a deeper plane. */
 	.card .avatar img,
 	.card .showcase img {
-		transform: translate3d(calc(var(--tilt-x) * -6px), calc(var(--tilt-y) * -5px), 0)
-			scale(var(--art-scale, 1));
+		transform: scale(var(--art-scale, 1));
 		transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
@@ -1249,7 +991,7 @@
 	}
 
 	.card.card-character .meta {
-		padding: 0.72rem 0.95rem 0.8rem 0.85rem;
+		padding: 1.1rem 1.25rem 1.15rem 1.1rem;
 		flex: 1;
 		min-width: 0;
 		align-self: stretch;
@@ -1262,41 +1004,15 @@
 		align-items: flex-start;
 	}
 
-	/* Lift, and a shadow that slides away from the raised corner. */
 	.card:hover {
-		--tilt-lift: -5px;
-		border-color: color-mix(in srgb, var(--k) 42%, transparent);
-		box-shadow:
-			0 1px 0 color-mix(in srgb, var(--fg) 7%, transparent) inset,
-			calc(var(--tilt-x) * -14px) calc(24px + var(--tilt-y) * -10px) 46px -24px
-				color-mix(in srgb, var(--k) 55%, rgba(0, 0, 0, 0.8));
-	}
-
-	.card:hover::before {
-		opacity: 1;
+		border-color: color-mix(in srgb, var(--k) 40%, transparent);
+		box-shadow: 0 14px 30px -20px rgba(0, 0, 0, 0.55);
 	}
 
 	.card:focus-visible {
 		outline: none;
 		border-color: color-mix(in srgb, var(--gold) 70%, transparent);
 		box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 22%, transparent);
-	}
-
-	/* Small gold music-note mark — this entry has a composed leitmotif. */
-	.motif-mark {
-		position: absolute;
-		top: 0.5rem;
-		right: 0.55rem;
-		z-index: 2;
-		font-size: 0.85rem;
-		color: var(--fg-faint);
-		opacity: 0.65;
-		pointer-events: none;
-		transition: opacity 0.2s var(--ease);
-	}
-
-	.card:hover .motif-mark {
-		opacity: 1;
 	}
 
 	.showcase {
@@ -1306,6 +1022,12 @@
 		aspect-ratio: 16 / 10;
 		overflow: hidden;
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
+	}
+
+	/* Relationship boards are 2:1 tenebrist two-shots; keep both faces and the gesture between them. */
+	.showcase.showcase-bond {
+		aspect-ratio: 2 / 1;
+		background: #0b0907;
 	}
 
 	.showcase.empty {
@@ -1325,21 +1047,8 @@
 	.showcase.showcase-flag img {
 		object-fit: contain;
 		object-position: center;
-		padding: 0.85rem 1.1rem 1.65rem;
+		padding: 1rem 1.25rem;
 		box-sizing: border-box;
-	}
-
-	.showcase-fade {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
-		background: linear-gradient(
-			to top,
-			var(--panel) 0%,
-			color-mix(in srgb, var(--panel) 88%, transparent) 34%,
-			color-mix(in srgb, var(--panel) 28%, transparent) 62%,
-			transparent 82%
-		);
 	}
 
 	.showcase-initial {
@@ -1353,15 +1062,9 @@
 	}
 
 	.card-showcase .meta {
-		padding: 0.15rem 1.05rem 1rem;
-		margin-top: -2.4rem;
+		padding: 1rem 1.35rem 1.25rem;
 		position: relative;
 		z-index: 1;
-	}
-
-	.card-showcase.card-place .meta {
-		margin-top: 0;
-		padding-top: 0.7rem;
 	}
 
 	.city-chip {
@@ -1513,6 +1216,18 @@
 		border-radius: 1px;
 	}
 
+	/* A bond's one-line summary (“Loyalty”, “Girl Dad”), in its colour. */
+	.card-summary {
+		margin-top: 0.35rem;
+		font-family: var(--serif);
+		font-size: 1rem;
+		font-style: italic;
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		line-height: 1.25;
+		color: color-mix(in srgb, var(--k) 65%, var(--fg-strong));
+	}
+
 	.card-title {
 		margin-top: 0.2rem;
 		font-family: var(--serif);
@@ -1554,9 +1269,7 @@
 		flex-shrink: 0;
 		border-radius: 50%;
 		background: var(--chip, var(--k));
-		box-shadow:
-			0 0 0 1px color-mix(in srgb, var(--fg) 14%, transparent),
-			0 0 8px color-mix(in srgb, var(--chip, var(--k)) 60%, transparent);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 14%, transparent);
 	}
 
 	.card-tier {
@@ -1571,19 +1284,18 @@
 		font-weight: 600;
 		letter-spacing: var(--tracking-ui);
 		text-transform: uppercase;
-		color: var(--on-gold);
-		background: var(--gold);
-		border: 1px solid color-mix(in srgb, var(--gold) 70%, #000);
+		--tag: var(--gold);
+		color: color-mix(in srgb, var(--tag) 80%, var(--fg-strong));
+		background: color-mix(in srgb, var(--tag) 14%, transparent);
+		border: 1px solid color-mix(in srgb, var(--tag) 26%, transparent);
 	}
 
 	.card-tier[data-tier='S'] {
-		background: #fff8e7;
-		color: #3a2a10;
+		--tag: #e8c873;
 	}
 
 	.card-tier[data-tier='demigod'] {
-		background: color-mix(in srgb, var(--k) 45%, #c4a574);
-		color: #fffdf8;
+		--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
 	}
 
 	.card-realm {
@@ -1597,9 +1309,9 @@
 		font-size: 0.62rem;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		color: #fffdf8;
-		background: color-mix(in srgb, var(--k) 62%, #111);
-		border: 1px solid color-mix(in srgb, var(--k) 75%, transparent);
+		color: color-mix(in srgb, var(--k) 72%, var(--fg-strong));
+		background: color-mix(in srgb, var(--k) 13%, transparent);
+		border: 1px solid color-mix(in srgb, var(--k) 24%, transparent);
 	}
 
 	.card-realm .realm-ko {
@@ -1748,13 +1460,8 @@
 
 	@media (max-width: 960px) {
 		.wiki {
-			padding-left: max(1.05rem, env(safe-area-inset-left, 0px));
-			padding-right: max(1.05rem, env(safe-area-inset-right, 0px));
-		}
-
-		.hero {
-			padding-top: 2.6rem;
-			padding-bottom: 1.5rem;
+			--gutter-l: max(1.05rem, env(safe-area-inset-left, 0px));
+			--gutter-r: max(1.05rem, env(safe-area-inset-right, 0px));
 		}
 
 		.group h2 {
@@ -1764,16 +1471,12 @@
 		.filters {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
-			max-width: 40rem;
-		}
-
-		.filter {
-			min-width: 0;
-			max-width: none;
+			width: 100%;
 		}
 
 		.grid {
 			grid-template-columns: 1fr;
+			gap: 1rem;
 		}
 
 		.avatar {
@@ -1790,8 +1493,12 @@
 			min-height: 9.6rem;
 		}
 
+		.card {
+			padding: 1rem 1.1rem;
+		}
+
 		.card.card-character .meta {
-			padding: 0.65rem 0.85rem 0.7rem 0.7rem;
+			padding: 0.9rem 1rem 0.95rem 0.9rem;
 		}
 
 		.peek {
@@ -1809,50 +1516,6 @@
 			bottom: 0;
 			left: 0;
 			border-radius: 0;
-		}
-	}
-
-	/* ————— Masthead entrance: staggered rise, rule draws outward ————— */
-	.hero-copy > *,
-	.search,
-	.filters {
-		animation: rise-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
-	}
-
-	.eyebrow {
-		animation-delay: 0.05s;
-	}
-
-	.hero h1 {
-		animation-delay: 0.12s;
-	}
-
-	.hero-ko {
-		animation-delay: 0.2s;
-	}
-
-	.hero .ornament {
-		animation-name: rule-draw;
-		animation-delay: 0.3s;
-	}
-
-	.lede {
-		animation-delay: 0.38s;
-	}
-
-	.search {
-		animation-delay: 0.48s;
-	}
-
-	.filters {
-		animation-delay: 0.58s;
-	}
-
-	@keyframes rise-in {
-		from {
-			opacity: 0;
-			transform: translateY(0.9rem);
-			filter: blur(6px);
 		}
 	}
 
@@ -1879,15 +1542,12 @@
 		.peek,
 		.wiki,
 		.grid > li,
-		.hero-copy > *,
 		.search,
-		.filters,
 		.group h2::after {
 			animation: none;
 			transition: none;
 		}
 
-		.card:hover,
 		.card .avatar img,
 		.card .showcase img {
 			transform: none;

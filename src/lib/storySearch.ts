@@ -6,6 +6,7 @@ import { MOVIE_SEQUENCES } from '$lib/movieSequences';
 import { nsfwUi } from '$lib/nsfwUi.svelte';
 import { chapters, entryId, isSceneHeader, scenesOf, type Block, type Entry } from '$lib/story';
 import { plainText } from '$lib/speech';
+import { widgetTexts } from '$lib/widgets';
 
 export type StorySearchKind = 'title' | 'scene' | 'quote' | 'dialogue' | 'narration' | 'sequence';
 
@@ -84,6 +85,11 @@ function walkBlocks(
 			case 'verse':
 				for (const line of b.lines) onText('narration', line, nsfw);
 				break;
+			case 'term':
+				onText('narration', `${b.hanja} ${b.reading} ${b.term}`);
+				onText('narration', b.html);
+				if (b.ko) onText('narration', b.ko);
+				break;
 			case 'day':
 			case 'scene':
 				onText('scene', b.label);
@@ -93,8 +99,13 @@ function walkBlocks(
 				onText('scene', b.title);
 				walkBlocks(b.blocks, onHeader, onText);
 				break;
-			default:
+			default: {
+				const t = widgetTexts(b);
+				if (!t) break;
+				const kind: StorySearchKind = b.kind === 'place' ? 'narration' : 'quote';
+				for (const s of [...t.hanja, ...t.ko, ...t.en]) onText(kind, s);
 				break;
+			}
 		}
 	}
 }

@@ -4,38 +4,33 @@
 	import { onNavigate } from '$app/navigation';
 	import { withViewTransition } from '$lib/viewTransition';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
-	import TiltThumb from '$lib/components/TiltThumb.svelte';
+	import RowThumb from '$lib/components/RowThumb.svelte';
+	import Toc from '$lib/components/Toc.svelte';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
 	import { EP_QUERY, reading } from '$lib/reading.svelte';
 	import { episodeThumbnail } from '$lib/thumbnail.svelte';
-	import {
-		EPISODE_TOTAL,
-		SEASONS,
-		STORY_RANGE,
-		type DirectoryChapter,
-		type DirectoryEpisode
-	} from '$lib/episodeDirectory';
+	import { arcLabel, chapterLabel, partLabel } from '$lib/tocTree';
+	import { partId } from '$lib/story';
+	import { EPISODE_TOTAL, PARTS, STORY_RANGE, type DirectoryEpisode } from '$lib/episodeDirectory';
 
 	let ko = $derived(reading.lang === 'ko');
+
+	/** The side TOC: open on arrival at desktop widths (Toc closes itself on a phone). */
+	let tocOpen = $state(true);
 
 	/** Opening an episode: the list sinks away and the episode floats up into its place. */
 	onNavigate((navigation) => {
 		const to = navigation.to?.url;
-		if (to?.pathname !== resolve('/') || !to.searchParams.has(EP_QUERY)) return;
+		if (to?.pathname !== resolve('/read') || !to.searchParams.has(EP_QUERY)) return;
 		return withViewTransition(navigation, 'vt-episode-open');
 	});
 
 	function hrefOf(ep: DirectoryEpisode): string {
-		return hrefWithNsfw(`${resolve('/')}?ep=${encodeURIComponent(ep.queryId)}`, page.url);
+		return hrefWithNsfw(`${resolve('/read')}?ep=${encodeURIComponent(ep.queryId)}`, page.url);
 	}
 
 	function synopsis(ep: DirectoryEpisode): string {
 		return ko ? ep.synopsis.ko : ep.synopsis.en;
-	}
-
-	function chapterLabel(chapter: DirectoryChapter): string {
-		if (!chapter.number) return ko ? '에필로그' : 'Epilogue';
-		return ko ? `제${chapter.number}장` : `Chapter ${chapter.number}`;
 	}
 </script>
 
@@ -43,7 +38,7 @@
 	<title>Episodes · King for All</title>
 	<meta
 		name="description"
-		content="Every episode of King for All, by Part and chapter — open any one to start reading."
+		content="Every episode of King for All, by Part, Arc and Chapter — open any one to start reading."
 	/>
 </svelte:head>
 
@@ -59,9 +54,9 @@
 {#snippet row(ep: DirectoryEpisode)}
 	{@const thumb = episodeThumbnail(ep.entry, ep.id)}
 	{@const href = hrefOf(ep)}
-	<li>
+	<li data-story-id={ep.id}>
 		<a class="row" {href}>
-			<TiltThumb src={thumb?.src} sizes="(max-width: 480px) 8rem, 11rem" fallback={ep.title.charAt(0)} max={6} />
+			<RowThumb src={thumb?.src} sizes="(max-width: 480px) 8rem, 11rem" fallback={ep.title.charAt(0)} />
 			<span class="body">
 				<span class="title-line">
 					<span class="num">{ep.number}</span>
@@ -92,7 +87,11 @@
 	</li>
 {/snippet}
 
-<main class="episodes-page">
+<div class="side-toc">
+	<Toc bind:open={tocOpen} directory />
+</div>
+
+<main class="episodes-page" class:toc-open={tocOpen}>
 	<header class="chrome">
 		<SiteNavSpace />
 	</header>
@@ -105,39 +104,42 @@
 				<span class="sep" aria-hidden="true">·</span>
 				<span>{STORY_RANGE}</span>
 				<span class="sep" aria-hidden="true">·</span>
-				<span>{SEASONS.length} {ko ? '부' : 'Parts'}</span>
+				<span>{PARTS.length} {ko ? '부' : 'Parts'}</span>
 				<span class="sep" aria-hidden="true">·</span>
-				<span>{EPISODE_TOTAL} {ko ? '편' : 'episodes'}</span>
+				<span>{EPISODE_TOTAL} {ko ? '화' : 'episodes'}</span>
 			</p>
 		</header>
 
-		{#each SEASONS as season (season.id)}
-			<section class="season" aria-labelledby={`part-${season.id}`}>
-				<h2 id={`part-${season.id}`}>
-					{@render heading(season.label, season.title, season.korean, season.range)}
+		{#each PARTS as part (part.id)}
+			<section class="part" aria-labelledby={`part-${part.id}`} data-story-id={partId(part.id)}>
+				<h2 id={`part-${part.id}`}>
+					{@render heading(partLabel(part.label, ko), part.title, part.korean, part.range)}
 				</h2>
 
-				{#each season.chapters as chapter (chapter.id)}
-					<section class="chapter" aria-labelledby={chapter.anchor}>
-						<h3 id={chapter.anchor}>
+				{#each part.arcs as arc (arc.id)}
+					<section class="arc" aria-labelledby={arc.anchor} data-story-id={arc.id}>
+						<h3 id={arc.anchor}>
 							{@render heading(
-								chapterLabel(chapter),
-								chapter.number ? chapter.title : undefined,
-								chapter.korean,
-								chapter.range
+								arcLabel(arc.number, ko),
+								arc.number ? arc.title : undefined,
+								arc.korean,
+								arc.range
 							)}
 						</h3>
-						{#each chapter.sections as section, s (section.anchor ?? `${chapter.id}-${s}`)}
-							{#if section.anchor}
-								<h4 id={section.anchor}>
-									{ko ? section.ko : section.label}
-									{#if !ko && section.ko && section.ko !== section.label}<span class="group-ko"
-											>{section.ko}</span
-										>{/if}
+						{#each arc.chapters as chapter, s (chapter.anchor ?? `${arc.id}-${s}`)}
+							{#if chapter.anchor}
+								<h4 id={chapter.anchor}>
+									{#if chapter.number}<span class="chapter-num">{chapterLabel(chapter.number, ko)}</span>{/if}
+									<span class="chapter-line">
+										{ko ? chapter.ko : chapter.label}
+										{#if !ko && chapter.ko && chapter.ko !== chapter.label}<span class="chapter-ko"
+												>{chapter.ko}</span
+											>{/if}
+									</span>
 								</h4>
 							{/if}
 							<ol class="list">
-								{#each section.episodes as ep (ep.id)}
+								{#each chapter.episodes as ep (ep.id)}
 									{@render row(ep)}
 								{/each}
 							</ol>
@@ -157,6 +159,26 @@
 		color: var(--fg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
+	}
+
+	/* Desktop only, where the reader pushes its column too; phones keep the plain list. */
+	.side-toc {
+		display: none;
+	}
+
+	@media (min-width: 1001px) {
+		.side-toc {
+			display: contents;
+		}
+
+		.episodes-page {
+			padding-left: 22px;
+			transition: padding-left var(--toc-duration) var(--toc-ease);
+		}
+
+		.episodes-page.toc-open {
+			padding-left: var(--toc-w);
+		}
 	}
 
 	.chrome {
@@ -209,11 +231,16 @@
 		scroll-margin-top: 1.5rem;
 	}
 
-	.season {
+	/* TOC jumps land below the fixed site pill. */
+	[data-story-id] {
+		scroll-margin-top: calc(max(0.85rem, env(safe-area-inset-top)) + 3.25rem);
+	}
+
+	.part {
 		margin-top: 2.75rem;
 	}
 
-	/* Part and chapter headings: the label sits above, the title line below. */
+	/* Part and Arc headings: the label sits above, the title line below. */
 	h2,
 	h3 {
 		display: grid;
@@ -270,14 +297,14 @@
 		font-variant-numeric: tabular-nums;
 	}
 
-	.chapter {
+	.arc {
 		margin-top: 2.5rem;
 	}
 
+	/* Chapter headings: the number is an eyebrow above the chapter's name, like Parts and Arcs. */
 	h4 {
-		display: flex;
-		align-items: baseline;
-		gap: 0.5rem;
+		display: grid;
+		gap: 0.15rem;
 		margin: 1.75rem 0 0.25rem;
 		font-family: var(--serif);
 		font-size: 0.95rem;
@@ -285,7 +312,21 @@
 		color: var(--fg-dim);
 	}
 
-	.group-ko {
+	.chapter-num {
+		font-family: var(--ui);
+		font-size: 0.72rem;
+		font-weight: 600;
+		color: var(--gold);
+	}
+
+	.chapter-line {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.25rem 0.5rem;
+	}
+
+	.chapter-ko {
 		font-family: var(--ui);
 		font-size: 0.78rem;
 		font-weight: 500;
@@ -418,11 +459,12 @@
 		-webkit-line-clamp: 3;
 		line-clamp: 3;
 		overflow: hidden;
-		font-size: 0.82rem;
-		font-weight: 500;
-		line-height: 1.55;
+		font-family: var(--serif);
+		font-size: 0.92rem;
+		font-weight: 400;
+		letter-spacing: -0.01em;
+		line-height: 1.45;
 		color: var(--fg-dim);
-		opacity: 0.82;
 	}
 
 	.visually-hidden {
@@ -439,7 +481,7 @@
 			padding-top: 1.5rem;
 		}
 
-		.season {
+		.part {
 			margin-top: 2rem;
 		}
 	}
@@ -461,6 +503,10 @@
 		h3:target .head-title,
 		h4:target {
 			animation: none;
+		}
+
+		.episodes-page {
+			transition: none;
 		}
 	}
 </style>

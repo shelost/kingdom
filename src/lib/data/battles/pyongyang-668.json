@@ -1,0 +1,959 @@
+{
+	"id": "pyongyang-668",
+	"title": "The Fall of Pyongyang",
+	"ko": "평양성 함락",
+	"hanja": "平壤城之戰",
+	"year": 668,
+	"place": "pyongyang",
+	"scale": {
+		"km": 5,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					70
+				],
+				[
+					860,
+					120
+				],
+				[
+					700,
+					190
+				],
+				[
+					580,
+					250
+				],
+				[
+					512,
+					292
+				],
+				[
+					500,
+					360
+				],
+				[
+					456,
+					436
+				],
+				[
+					370,
+					480
+				],
+				[
+					230,
+					505
+				],
+				[
+					0,
+					522
+				]
+			],
+			"width": 22,
+			"label": "Taedong river",
+			"ko": "대동강",
+			"labelAt": [
+				150,
+				540
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					300,
+					0
+				],
+				[
+					316,
+					110
+				],
+				[
+					326,
+					220
+				],
+				[
+					334,
+					320
+				],
+				[
+					350,
+					420
+				],
+				[
+					378,
+					474
+				]
+			],
+			"width": 8,
+			"label": "Potong stream",
+			"ko": "보통강",
+			"labelAt": [
+				262,
+				24
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					648,
+					0
+				],
+				[
+					636,
+					90
+				],
+				[
+					606,
+					170
+				],
+				[
+					582,
+					246
+				]
+			],
+			"width": 8,
+			"label": "Snake River",
+			"ko": "사수",
+			"labelAt": [
+				700,
+				22
+			]
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				728,
+				62
+			],
+			"r": 30,
+			"label": "Mount Yeongnyu",
+			"ko": "영류산"
+		},
+		{
+			"kind": "hill",
+			"at": [
+				452,
+				252
+			],
+			"r": 24
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					452,
+					236
+				],
+				[
+					492,
+					282
+				],
+				[
+					484,
+					350
+				],
+				[
+					438,
+					414
+				],
+				[
+					388,
+					432
+				],
+				[
+					352,
+					392
+				],
+				[
+					340,
+					322
+				],
+				[
+					376,
+					262
+				],
+				[
+					452,
+					236
+				]
+			],
+			"width": 5
+		},
+		{
+			"kind": "city",
+			"at": [
+				416,
+				330
+			],
+			"side": "goguryeo",
+			"label": "Pyongyang",
+			"ko": "평양성",
+			"hold": {
+				"fire": "tang"
+			}
+		},
+		{
+			"kind": "gate",
+			"at": [
+				366,
+				414
+			],
+			"side": "goguryeo",
+			"hold": {
+				"gate": "tang"
+			}
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					170,
+					0
+				],
+				[
+					250,
+					110
+				],
+				[
+					330,
+					210
+				],
+				[
+					376,
+					262
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					438,
+					446
+				],
+				[
+					540,
+					500
+				],
+				[
+					640,
+					560
+				]
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				120,
+				22
+			],
+			"label": "from the Amnok",
+			"ko": "압록에서"
+		},
+		{
+			"kind": "label",
+			"at": [
+				690,
+				546
+			],
+			"label": "from Hanseong",
+			"ko": "한성에서"
+		}
+	],
+	"sides": [
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		},
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "gg-namgun",
+			"side": "goguryeo",
+			"label": "Namgun",
+			"ko": "남건",
+			"unrecorded": true,
+			"hero": "namgun"
+		},
+		{
+			"id": "gg-namsan",
+			"side": "goguryeo",
+			"label": "Namsan, the king, 98 officials",
+			"ko": "남산과 왕, 관원 98인"
+		},
+		{
+			"id": "tg-van",
+			"side": "tang",
+			"label": "Vanguard",
+			"ko": "선봉"
+		},
+		{
+			"id": "tg-main",
+			"side": "tang",
+			"label": "Blue Dragon",
+			"ko": "청룡",
+			"hero": "lishiji"
+		},
+		{
+			"id": "tg-xue",
+			"side": "tang",
+			"label": "White Tiger II",
+			"ko": "백호",
+			"hero": "xuerengui"
+		},
+		{
+			"id": "tg-hold",
+			"side": "tang",
+			"label": "White Tiger II's garrison",
+			"ko": "백호의 수비군"
+		},
+		{
+			"id": "sl",
+			"side": "silla",
+			"label": "Prince Inmun",
+			"ko": "인문",
+			"hero": "inmun"
+		}
+	],
+	"phases": [
+		{
+			"id": "roads",
+			"label": "Three beasts, one city",
+			"ko": "세 짐승, 한 도성",
+			"caption": "Namseng rides in front in a Tang coat, because he knows every gully. The vanguard reaches the walls first, the Blue Dragon close behind. Far to the south, Silla is still marching.",
+			"captionKo": "남생이 당의 옷을 입고 앞장선다. 골짜기마다 다 아는 사람이다. 선봉이 먼저 성벽에 닿고, 청룡이 바로 뒤따른다. 저 멀리 남쪽에서 신라는 아직 행군 중이다.",
+			"units": {
+				"gg-namgun": {
+					"at": [
+						414,
+						330
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"tg-van": {
+					"at": [
+						276,
+						150
+					],
+					"men": 200000,
+					"facing": 55,
+					"r": 0.85
+				},
+				"tg-main": {
+					"at": [
+						140,
+						60
+					],
+					"men": 200000,
+					"facing": 50,
+					"r": 0.85
+				},
+				"tg-xue": {
+					"at": [
+						560,
+						82
+					],
+					"men": 100000,
+					"facing": 125,
+					"r": 0.85
+				},
+				"sl": {
+					"at": [
+						640,
+						528
+					],
+					"men": 200000,
+					"facing": 235,
+					"r": 0.85
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							190,
+							10
+						],
+						[
+							262,
+							120
+						],
+						[
+							338,
+							222
+						]
+					],
+					"label": "Namseng's road",
+					"ko": "남생의 길"
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							560,
+							140
+						],
+						[
+							520,
+							190
+						],
+						[
+							468,
+							226
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							760,
+							560
+						],
+						[
+							700,
+							520
+						],
+						[
+							640,
+							470
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "ring",
+			"label": "The ring closes",
+			"ko": "포위망이 닫힌다",
+			"caption": "The ring closes and stays closed for a month. The Blue Dragon moves his camp south of the walls. Namgun keeps sending men out of the gates, and none get far. Silla arrives from the south and takes the riverbank.",
+			"captionKo": "포위망이 닫히고, 한 달 동안 열리지 않는다. 청룡이 진영을 성 남쪽으로 옮긴다. 남건이 거듭 군사를 내보내지만 멀리 가는 자가 없다. 신라가 남쪽에서 올라와 강가를 잡는다.",
+			"units": {
+				"gg-namgun": {
+					"at": [
+						414,
+						330
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"tg-van": {
+					"at": [
+						414,
+						330
+					],
+					"men": 200000,
+					"shape": "ring",
+					"r": 140,
+					"arc": [
+						185,
+						275
+					]
+				},
+				"tg-main": {
+					"at": [
+						225,
+						425
+					],
+					"men": 200000,
+					"facing": 300,
+					"r": 0.85
+				},
+				"tg-xue": {
+					"at": [
+						552,
+						168
+					],
+					"men": 100000,
+					"facing": 215,
+					"r": 0.85
+				},
+				"sl": {
+					"at": [
+						600,
+						470
+					],
+					"men": 200000,
+					"facing": 220,
+					"r": 0.85
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							110,
+							110
+						],
+						[
+							110,
+							260
+						],
+						[
+							170,
+							360
+						]
+					],
+					"label": "camp moves south",
+					"ko": "진영을 남쪽으로"
+				},
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							760,
+							560
+						],
+						[
+							720,
+							520
+						],
+						[
+							690,
+							500
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						318,
+						290
+					],
+					"label": "sorties beaten",
+					"ko": "출격 격퇴"
+				},
+				{
+					"kind": "clash",
+					"at": [
+						470,
+						228
+					]
+				}
+			]
+		},
+		{
+			"id": "banner",
+			"label": "The white banner",
+			"ko": "백기",
+			"caption": "Namsan counts the granaries best, so Namsan walks out first: the king, ninety-eight officials and a white banner. The Blue Dragon is very polite about it. Behind them the gate shuts again.",
+			"captionKo": "곳간을 제일 잘 세는 남산이 제일 먼저 걸어 나간다. 왕, 관원 아흔여덟, 그리고 백기. 청룡은 아주 정중하게 받는다. 그들 뒤로 성문이 다시 닫힌다.",
+			"units": {
+				"gg-namgun": {
+					"at": [
+						414,
+						330
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"gg-namsan": {
+					"at": [
+						334,
+						450
+					],
+					"men": 99
+				},
+				"tg-van": {
+					"at": [
+						414,
+						330
+					],
+					"men": 200000,
+					"shape": "ring",
+					"r": 140,
+					"arc": [
+						185,
+						275
+					]
+				},
+				"tg-main": {
+					"at": [
+						225,
+						425
+					],
+					"men": 200000,
+					"facing": 300,
+					"r": 0.85
+				},
+				"tg-xue": {
+					"at": [
+						552,
+						168
+					],
+					"men": 100000,
+					"facing": 215,
+					"r": 0.85
+				},
+				"sl": {
+					"at": [
+						600,
+						470
+					],
+					"men": 200000,
+					"facing": 220,
+					"r": 0.85
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							370,
+							416
+						],
+						[
+							352,
+							434
+						],
+						[
+							340,
+							446
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						322,
+						472
+					],
+					"label": "to the banner",
+					"ko": "백기에게"
+				}
+			]
+		},
+		{
+			"id": "gate",
+			"label": "A gate opens from inside",
+			"ko": "안에서 열린 문",
+			"caption": "Namgun still has the walls and the army. He gives the gate to a monk nobody can buy. Five days later Shinsung opens it, and the Tang are inside before the bell stops ringing.",
+			"captionKo": "남건에겐 아직 성벽과 군대가 있다. 그는 아무도 살 수 없는 승려에게 성문을 맡긴다. 닷새 뒤 신성이 그 문을 연다. 종소리가 그치기도 전에 당군이 들어와 있다.",
+			"units": {
+				"gg-namgun": {
+					"at": [
+						414,
+						330
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"tg-van": {
+					"at": [
+						414,
+						330
+					],
+					"men": 200000,
+					"shape": "ring",
+					"r": 130,
+					"arc": [
+						185,
+						275
+					]
+				},
+				"tg-main": {
+					"at": [
+						290,
+						428
+					],
+					"men": 200000,
+					"facing": 320,
+					"r": 0.85
+				},
+				"tg-xue": {
+					"at": [
+						540,
+						182
+					],
+					"men": 100000,
+					"facing": 215,
+					"r": 0.85
+				},
+				"sl": {
+					"at": [
+						600,
+						470
+					],
+					"men": 200000,
+					"facing": 220,
+					"r": 0.85
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							330,
+							420
+						],
+						[
+							356,
+							412
+						],
+						[
+							384,
+							392
+						],
+						[
+							404,
+							362
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "gate",
+					"at": [
+						366,
+						414
+					],
+					"label": "Shinsung",
+					"ko": "신성"
+				}
+			]
+		},
+		{
+			"id": "fire",
+			"label": "The gate towers burn",
+			"ko": "문루가 불탄다",
+			"caption": "The gate towers catch one after another, like lamps lit for a feast. Namgun leads the last stand himself, then turns the blade on himself in his own hall. He does it badly.",
+			"captionKo": "문루가 하나씩 불붙는다. 잔치에 등불을 켜듯. 남건이 몸소 마지막 싸움을 이끌고, 제 집에서 칼을 제게 돌린다. 서툴게.",
+			"units": {
+				"gg-namgun": {
+					"at": [
+						430,
+						300
+					],
+					"men": 20000,
+					"routed": true
+				},
+				"tg-van": {
+					"at": [
+						414,
+						330
+					],
+					"men": 200000,
+					"shape": "ring",
+					"r": 112,
+					"arc": [
+						185,
+						275
+					]
+				},
+				"tg-main": {
+					"at": [
+						396,
+						372
+					],
+					"men": 200000,
+					"facing": 320,
+					"r": 0.85
+				},
+				"tg-xue": {
+					"at": [
+						520,
+						196
+					],
+					"men": 100000,
+					"facing": 215,
+					"r": 0.85
+				},
+				"sl": {
+					"at": [
+						596,
+						466
+					],
+					"men": 200000,
+					"facing": 220,
+					"r": 0.85
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							480,
+							214
+						],
+						[
+							462,
+							250
+						],
+						[
+							446,
+							280
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						452,
+						236
+					],
+					"label": "the gate towers",
+					"ko": "문루"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						490,
+						316
+					]
+				},
+				{
+					"kind": "fire",
+					"at": [
+						366,
+						414
+					]
+				},
+				{
+					"kind": "fire",
+					"at": [
+						342,
+						318
+					]
+				},
+				{
+					"kind": "surrender",
+					"at": [
+						424,
+						316
+					],
+					"label": "Namgun taken alive",
+					"ko": "남건, 산 채로 잡히다"
+				}
+			]
+		},
+		{
+			"id": "garrison",
+			"label": "The White Tiger stays",
+			"ko": "백호가 남는다",
+			"caption": "The Blue Dragon takes the captives north, to show them to a dead emperor first. Silla goes home. The empire leaves Xue Rengui and twenty thousand men to hold a broken capital.",
+			"captionKo": "청룡이 포로를 끌고 북으로 간다. 먼저 죽은 황제에게 보이러. 신라는 집으로 간다. 제국은 부서진 도성에 설인귀와 이만을 남긴다.",
+			"units": {
+				"tg-main": {
+					"at": [
+						168,
+						96
+					],
+					"men": 200000,
+					"facing": 230,
+					"r": 0.85
+				},
+				"tg-hold": {
+					"at": [
+						414,
+						330
+					],
+					"men": 20000,
+					"facing": 180
+				},
+				"sl": {
+					"at": [
+						650,
+						520
+					],
+					"men": 200000,
+					"facing": 60,
+					"r": 0.85
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							300,
+							250
+						],
+						[
+							230,
+							150
+						],
+						[
+							150,
+							20
+						]
+					],
+					"label": "captives to Zhaoling",
+					"ko": "포로는 소릉으로"
+				},
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							520,
+							440
+						],
+						[
+							600,
+							500
+						],
+						[
+							660,
+							556
+						]
+					],
+					"label": "home",
+					"ko": "귀환"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 22, Annals of Goguryeo, Bojang year 27",
+		"Samguk Sagi 6, Annals of Silla, Munmu year 8",
+		"Samguk Sagi 44, Biography of Kim Inmun",
+		"Old Book of Tang 199, Goguryeo; 109, Biography of Qibi Heli",
+		"New Book of Tang 110, Biography of Qibi Heli",
+		"Zizhi Tongjian 201, Zongzhang 1"
+	],
+	"note": "The totals are the records’ own: five hundred thousand Tang (Old Book of Tang, Qibi Heli’s biography) and two hundred thousand Silla (Samguk Sagi, Kim Inmun’s biography), both almost certainly inflated. How the Tang total split between the vanguard, the Blue Dragon and the White Tiger II is not recorded. The records do not say which gate the monk opened; the map uses the south-west one because the Blue Dragon had moved his camp south of the city. The New Book of Tang stretches the siege to seven months, and the day of the fall differs between the Tang and Silla annals. Silla’s earlier victory on the Sacheon plain is off this map. Mount Yeongnyu follows the reading of Daeseong Mountain.",
+	"noteKo": "총수는 기록 그대로다. 당군 오십만(『구당서』 계필하력전), 신라군 이십만(『삼국사기』 김인문전). 둘 다 부풀려졌을 가능성이 크다. 당군이 선봉·청룡·백호 사이에 어떻게 나뉘었는지는 기록에 없다. 승려가 어느 문을 열었는지도 기록에 없어, 청룡이 진영을 성 남쪽으로 옮겼다는 기사를 따라 남서문으로 그렸다. 『신당서』는 포위를 일곱 달로 늘려 적고, 함락 날짜는 당과 신라의 기록이 서로 다르다. 북진 중에 신라가 사천원에서 거둔 승리는 이 지도 밖이다. 영류산은 대성산으로 보는 견해를 따랐다."
+}

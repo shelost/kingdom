@@ -51,7 +51,7 @@
 		"common": "HORSE ANATOMY is a centrepiece: the whole horse body reads clearly and beautifully — arched neck, deep chest, sloping shoulder, round haunch, clean long legs in a correct gait, every muscle modelled by the one hard key with a bright edge along the topline and deep shadow under the belly; the horse is never cropped into a blob, never hidden behind dust, never stiff like a toy; mane and tail as flowing painted strokes; the coat colour exactly as the board."
 	},
 	"costume": {
-		"common": "COSTUME CHARTS (attached): cut, collar, sleeve, sash, trouser and skirt shapes of every Samhan figure follow the chart for their kingdom; it is a style chart, so ignore its labels, captions, maps, poses and faces. Named people keep their portrait face and colours; extras and soldiers dress like the chart (a commoner like its commoners, an official like its officials, a soldier like its soldiers).",
+		"common": "COSTUME CHARTS (attached): cut, collar, sleeve, sash, trouser and skirt shapes of every Samhan figure follow the chart for their kingdom; it is a style chart, so ignore its labels, captions, maps, poses and faces. Named people keep their portrait face and colours; extras and soldiers dress like the chart (a commoner like its commoners, an official like its officials, a soldier like its soldiers). COMMONERS in every Samhan kingdom wear SIMPLE WHITE: plain undyed white or off-white hemp and ramie jackets, wide trousers and skirts, a cloth sash, straw sandals or bare feet, hair in a plain topknot or braid — no dyed silk, no dots, no gold; colour belongs to rank, so a crowd of farmers, porters, servants and townsfolk reads as a field of soft white cloth with the officials' colours standing out of it.",
 		"kingdoms": {
 			"silla": {
 				"name": "Silla",
@@ -73,7 +73,7 @@
 					"refs": [
 						"/crown_baekje_noble.jpeg"
 					],
-					"text": "Baekje great-clan lord’s gilt-bronze crown (금동관), as the attached crown (ignore its museum stand and black backdrop): a tall pointed gilt cap shaped like a peaked hood, pierced all over with openwork dragon-and-flame scrolls, a broad engraved band across the brow, a curved openwork crest arching over the top, two small cup-shaped finials on thin stems rising at the back, a pointed bud finial at the crown, and a flat openwork leaf-plume at the front. Worn high over the topknot on court and assembly days; burnished gold-bronze catching the key light. It replaces the jougwan."
+					"text": "Baekje great-clan lord’s gilt-bronze crown (금동관), as the attached crown (ignore its museum stand and black backdrop): a tall pointed gilt cap shaped like a peaked hood, pierced all over with openwork dragon-and-flame scrolls, a broad engraved band across the brow, a curved openwork crest arching over the top, two small cup-shaped finials on thin stems rising at the back, a pointed bud finial at the crown, and a flat openwork leaf-plume at the front. Worn high over the topknot on court and assembly days; burnished gold-bronze catching the key light. At court audiences and sacrifices a pair of thin GOLD WING ornaments is added, one rising from each side of the cap like swept bird wings; never in war. It replaces the jougwan."
 				}
 			},
 			"gaya": {
@@ -95,7 +95,7 @@
 			"buyeo": {
 				"name": "Buyeo",
 				"board": "/ref_hanbok_goguryeo.png",
-				"note": "Buyeo dresses like early Goguryeo: the traditional left-closing jackets, dotted fabrics and trousers of the chart's first section."
+				"note": "Buyeo dresses like early Goguryeo in cut: the traditional left-closing jackets and trousers of the chart's first section. But Buyeo PREFERS WHITE: at home everyone, lords included, wears wide-sleeved robes and trousers of white cloth with leather shoes; only abroad or at feasts do great men add silk, brocade and embroidery, cloaks of fox, white monkey and black sable, and hats trimmed in gold and silver."
 			},
 			"jolbon": {
 				"name": "Jolbon",
@@ -189,8 +189,9 @@
 			"horse": "gomanari",
 			"eras": [
 				{
-					"until": 639,
-					"text": "Boyhood (ch_gyebek_boy): thin, quiet, already counting; no armor."
+					"until": 640,
+					"redress": true,
+					"text": "Boyhood (ch_gyebek_boy): a thin nameless river boy of about thirteen, barefoot, in a plain undyed WHITE hemp shirt and trousers with a rope belt; short-to-medium loose black hair, no topknot, no cap, no headband, no scarf, no armor; flat, watchful, unblinking eyes."
 				}
 			],
 			"never": [
@@ -198,6 +199,16 @@
 				"forward textbook grip once the fight starts",
 				"yellow metal cuirass",
 				"smiling in battle"
+			],
+			"hat": [
+				{
+					"until": 640,
+					"text": "none"
+				},
+				{
+					"from": 640,
+					"text": "jougwan"
+				}
 			]
 		},
 		"gesomun": {
@@ -267,8 +278,9 @@
 					"text": "Envoy dress (attached ch_chunchu_ambassador.png): plain white silk po with wide magenta-crimson bands at the collar, cuffs and sleeves, a black sash knotted at the front; the small grey jougwan with two barred pheasant feathers. Travel-clean, unarmored, no gold."
 				},
 				"formal": {
-					"text": "Court dress (attached ch_chunchu_formal.png): crimson patterned silk po with a gold-brocade collar band down the front, a plain gold belt; purple silk cap ringed by the gilt Silla winged crown, long gold drop earrings. No jougwan.",
-					"hat": false
+					"text": "Court dress (attached ch_chunchu_formal.png): crimson patterned silk po with a gold-brocade collar band down the front, a plain gold belt; purple silk cap ringed by the gilt Silla winged crown, and pinned upright at the front of the cap the Cheonmachong BUTTERFLY-SHAPED GOLD CAP ORNAMENT exactly as the attached photo (ignore its black backdrop): a thin sheet-gold ornament like a butterfly with two pairs of spread wings above a short tongue-shaped stem, pierced all over with tiny holes and hung with dozens of small round gold spangles on wire loops that shiver as he moves; long gold drop earrings. No jougwan.",
+				"refs": ["/research/silla-cheonmachong-butterfly-ornament.jpg"],
+				"hat": false
 				}
 			},
 			"demeanor": "Diplomat and strategist: talks with his hands, smiles while calculating, never shouts; half-lidded watchful eyes.",
@@ -348,6 +360,14 @@
 		"euija": {
 			"look": "Broad, bearded king; black hair in a topknot with a yellow-gold headband whose tails trail; heavy brows, cynical eyes.",
 			"dress": "Crimson robe with a dark charcoal collar and gold trim; a steel lamellar pauldron peeking at one shoulder.",
+			"crownNote": "On Euija the two side ornaments are King Muryeong's gold diadem ornaments exactly as the attached museum photo (ignore its backdrop): a pair of thin sheet-gold flame-and-honeysuckle sprays, each a central stem with curling leaf-flames fanning up and out, pierced openwork and hung with small round gold spangles, one pinned on each side of the black silk cap and rising well above it.",
+			"crownRefs": ["/research/baekje-muryeong-king-diadem.jpg"],
+			"looks": {
+				"disguise": {
+					"text": "DISGUISE: the same face, beard and yellow-gold headband as the attached portrait, but dressed only in a plain undyed GREY hemp robe with a deep GREY hood pulled up over the topknot, a rope belt, straw sandals. No crimson, no gold trim, no armor, no jewelry. A prince badly pretending to be nobody.",
+					"hat": false
+				}
+			},
 			"eras": [
 				{
 					"from": 660,
@@ -399,6 +419,10 @@
 			"armor": "silla"
 		},
 		"munhee": {
+			"jewelry": {
+				"text": "Silla gold: thick-ring gold earrings hung with chains of tiny gold leaves and spangles that tremble when she turns her head; a necklace of gold beads and blue glass beads with one green jade comma (gogok) at the centre; a thin gold bracelet.",
+				"refs": ["/research/silla-bubuchong-earrings.jpg", "/research/silla-hwangnam-gold-necklace.jpg"]
+			},
 			"demeanor": "Yushin's younger sister, Chunchu's wife; quick and warm, the one who bought the dream.",
 			"never": [
 				"fantasy tiara instead of her binyeo"
@@ -570,7 +594,7 @@
 		"manmyung": {
 			"look": "Young Sacred-Bone noblewoman, oval face, strong dark brows, amused knowing eyes, a stubborn chin; long black hair in a low coiled chignon with a plain gold pin.",
 			"dress": "Rich plum-violet silk chima with a pale ivory jeogori and a deep plum ribbon; good silk she will ruin in the rain.",
-			"demeanor": "Teasing, decisive, braver than the men around her; she makes the decisions and lets Seohyeon think he did."
+			"demeanor": "Teasing, decisive, braver than the men around her; she makes the decisions and lets Seohyun think he did."
 		},
 		"saimei": {
 			"look": "Empress past sixty with an ageless powdered face: red lips, a small vermilion mark on the brow, long grey hair falling loose past the shoulders; a white silk head-wrap with hanging braided cords under a small gold openwork crown.",
@@ -747,8 +771,35 @@
 		},
 		"yeonwife": {
 			"look": "Composed Goguryeo noblewoman in her thirties: black hair braided and coiled up with a cluster of red silk flowers at the crown, loose strands at the cheeks, calm narrow eyes, small red mouth.",
-			"dress": "Wide-sleeved cream-buff robe with rust-red crossed collar and sleeve bands, a rust-red shawl over the arms, a long black sash.",
+			"dress": "Cut after the tomb owner's wife in the Ssangyeongchong mural: a long wide-sleeved jacket to the hip, crossed left over right and belted, in cream-buff silk with a broad rust-red band (襈) at the collar, cuffs and hem, over a long full skirt to the floor; a rust-red shawl over the arms, a long black sash.",
+			"dressRefs": ["/research/goguryeo-ssangyeongchong-couple.jpg"],
+			"jewelry": {
+				"text": "Goguryeo gold earrings: a thick hollow gold ring at each lobe with a short chain and a single heart-shaped gold leaf; no necklace, no bracelets.",
+				"refs": ["/research/goguryeo-gold-earring.jpg"]
+			},
 			"demeanor": "Quiet and precise; saves the hard questions for when the lamps are low."
+		},
+		"sooyoung": {
+			"looks": {
+				"court": {
+					"text": "Out of armour, dressed after the noblewoman of the Susan-ri mural: hair gathered up into a tall looped topknot, a small red rouge dot on each cheek, a long jacket to the hip with dark contrasting bands at collar, cuffs and hem, belted at the waist, over a long finely PLEATED skirt striped in bands of red, white, ochre and green that swings when she walks; soft cloth shoes. Gold earrings like Yeon's wife's.",
+					"refs": ["/research/goguryeo-susan-ri-lady.jpg", "/research/goguryeo-gold-earring.jpg"]
+				}
+			},
+			"demeanor": "Practical tenderness; corrects cruelty more than posture. Stands like a soldier even in silk."
+		},
+		"ungo": {
+			"jewelry": {
+				"text": "The Baekje queen's gold from King Muryeong's tomb: long chain earrings, each a small gold ring with a cluster of tiny leaf spangles and a long chain of gold links ending in a heart-shaped leaf; a necklace of nine and seven jointed gold segments; one gold hairpin with a spread-wing top in the coiled hair.",
+				"refs": ["/research/baekje-muryeong-queen-earrings.jpg", "/research/baekje-muryeong-hairpin.jpg"]
+			},
+			"demeanor": "Quiet where Queen Satek was faction; moves a court without a clan crest."
+		},
+		"wuzetian": {
+			"look": "Hair piled into a tall looped Tang chignon fixed with gold combs and flower pins, painted crescent brows, a red flower mark (huadian) between the brows, red lips.",
+			"dress": "Tang court dress: a short jacket over a long skirt tied high under the bust, a long translucent silk shawl (pibo) over the shoulders and trailing on the floor; vermilion and deep red silk with gold-thread borders.",
+			"dressRefs": ["/research/abroad-yongtai-court-ladies.jpg"],
+			"never": ["Korean hanbok", "Qing dynasty headdress", "Forbidden City"]
 		},
 		"sumyeongjangja": {
 			"look": "Smug old rich man: long loose black hair, a long grey-green beard, half-lidded blank contemptuous eyes, a sour turned-down mouth.",

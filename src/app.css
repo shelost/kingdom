@@ -6,12 +6,15 @@
 	/* Corners: one small radius for cards / thumbs / inputs / panels.
 	   Pills and chips stay fully round. Portrait circles stay 50%. */
 	--radius: 4px;
+	/* Widget panels: cards, records, maps, diagrams. */
+	--widget-radius: 8px;
+	--widget-gap: 2.8rem;
 	--radius-pill: 999px;
 
-	/* Reading surface — near-black charcoal, not OLED void. Flashbacks and
-	   immersive mode step deeper; a hair of warmth keeps the page a page. */
-	--bg: #101014;
-	--bg-raised: #18181e;
+	/* Reading surface — a soft dark gray, so a flashback can drop to near-black
+	   beneath it; immersive mode steps a shade deeper. */
+	--bg: #1e1e22;
+	--bg-raised: #28282e;
 	--fg: #f3f1ec;
 	--fg-dim: #b4b2ac;
 	--fg-faint: #8a8882;
@@ -23,11 +26,13 @@
 	/* genuine lines from the record */
 	--quote: #F2E39A;
 	--rail-blue: #3b6fd4;
+	/* Wiki cross-reference links: the page's strongest ink, set apart by weight. */
+	--wiki-link: var(--fg-strong);
 
 	/* Chrome surfaces, a step above the page so a card reads as a card */
-	--panel: #16161c;
-	--panel-sunken: #0c0c10;
-	--glass: rgba(18, 18, 24, 0.88);
+	--panel: #26262c;
+	--panel-sunken: #18181c;
+	--glass: rgba(34, 34, 40, 0.88);
 	--plate-ink: #141218;
 	/* Dialogue plate type — cream on charcoal; light theme remaps to ink. */
 	--plate-fg: #f4efe4;
@@ -85,6 +90,8 @@
 	--ink: #111111;
 	--rule: #111111;
 
+	--brush: 'Nanum Brush Script', 'Noto Serif KR', serif;
+
 	/* Platypi for titles, subtitles and years; the chronicle itself reads in Inter */
 	--serif: 'Platypi', 'Noto Serif KR', Georgia, 'Times New Roman', serif;
 	--sans:
@@ -99,11 +106,16 @@
 	--on-highlight: #14140f;
 
 	/* Inter weights: body text and its bold, one step apart from the serif scale */
-	--weight-body: 400;
-	--weight-strong: 600;
+	--weight-body: 500;
+	--weight-strong: 700;
+	/* Links: the text's own tracking and colour, one step heavier */
+	--weight-link: 600;
+	/* The chronicle's own voice. Widget body text (translations, glosses, captions) uses it too. */
+	--chronicle-size: 14px;
+	--chronicle-font: normal var(--weight-body) var(--chronicle-size) / 1.5 var(--sans);
 
 	/* Tight, editorial tracking */
-	--tracking-body: -0.018em;
+	--tracking-body: -0.026em;
 	--tracking-display: -0.045em;
 	--tracking-micro: 0;
 	--tracking-ui: -0.042em;
@@ -114,7 +126,7 @@
 	--toc-gap: 1rem;
 	/* Script mode: the prose column, centred. */
 	--script-measure: 640px;
-	/* samhan_logo.svg is black ink; dark pages flip it to white. */
+	/* samhan_logo.png is black ink; dark pages flip it to white. */
 	--logo-filter: invert(1);
 	/* Shared TOC open/close timing — keep jump settle in Toc.svelte in sync. */
 	--toc-duration: 380ms;
@@ -176,7 +188,7 @@ html {
    The map opens as a modal from the stage bento tile (beside the place banner).
    The landscape 3:2 phone reel leads the reading column. */
 html.is-immersion {
-	--bg: #0c0c10;
+	--bg: #19191d;
 	--map-w: min(13rem, 22vh);
 	--corner-bottom: calc(var(--plate-box-h) + 0.9rem);
 	/* Tall enough to lead the column, short enough to sit above the plate. */
@@ -229,10 +241,10 @@ html.is-cinema .text .prose > p {
 /* The whole page drops into the past — set by watchReading().
    Declared after the immersive block so a flashback always wins the mood. */
 html.is-flash {
-	--bg: #0a0a0e;
-	--bg-raised: #141418;
-	--panel: #121218;
-	--panel-sunken: #08080c;
+	--bg: #060608;
+	--bg-raised: #0f0f12;
+	--panel: #0e0e12;
+	--panel-sunken: #040406;
 	--hairline: rgba(255, 255, 255, 0.08);
 }
 
@@ -287,7 +299,7 @@ html[data-theme='light'].is-immersion {
 }
 
 html[data-theme='light'].is-flash {
-	--bg: color-mix(in srgb, #8a8a94 7%, #fffefb);
+	--bg: #e9e6de;
 	--bg-raised: #ffffff;
 	--panel: #faf8f2;
 	--panel-sunken: #f1eee6;
@@ -302,9 +314,7 @@ body {
 	transition:
 		background-color 800ms var(--ease),
 		color 800ms var(--ease);
-	font-family: var(--sans);
-	font-size: 14px;
-	font-weight: var(--weight-body);
+	font: var(--chronicle-font);
 	line-height: 1.48;
 	letter-spacing: var(--tracking-body);
 	font-feature-settings: 'kern' 1, 'liga' 1;
@@ -486,41 +496,6 @@ em {
 }
 
 /*
- * Quasi-3D tilt surface — variables come from the `tilt` attachment
- * ($lib/attachments/tilt.ts). Components set `--tilt-lift` on hover and own
- * their transitions; the glare rides on ::after, so `.tilt` elements must not
- * use ::after themselves.
- */
-.tilt {
-	--tilt-x: 0;
-	--tilt-y: 0;
-	position: relative;
-	transform: perspective(60rem) rotateX(calc(var(--tilt-y) * var(--tilt-max, 6deg) * -1))
-		rotateY(calc(var(--tilt-x) * var(--tilt-max, 6deg))) translate3d(0, var(--tilt-lift, 0px), 0);
-}
-
-.tilt::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	z-index: 4;
-	border-radius: inherit;
-	pointer-events: none;
-	background: radial-gradient(
-		circle at var(--tilt-mx, 50%) var(--tilt-my, 0%),
-		rgba(255, 255, 255, 0.2),
-		transparent 58%
-	);
-	mix-blend-mode: soft-light;
-	opacity: 0;
-	transition: opacity 0.45s ease;
-}
-
-.tilt:hover::after {
-	opacity: 1;
-}
-
-/*
  * Liquid glass — the one recipe for floating chrome: the site nav, the title
  * and episode pills, the TOC card, glass buttons and sheets. Components keep
  * their own shape and size; `--glass-tint` sets how much page colour backs the
@@ -556,6 +531,29 @@ em {
 		inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
 		inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
 		var(--shadow-float);
+}
+
+/*
+ * Monarch avatar frame (`isMonarch` in $lib/people): a square with softened
+ * corners instead of a circle, like an official account badge. Round avatars
+ * use `border-radius: var(--avatar-radius, 50%)` and pick this up from the
+ * class on themselves or any ancestor.
+ */
+:root {
+	--monarch-radius: 2px;
+}
+
+.is-monarch {
+	--avatar-radius: var(--monarch-radius);
+}
+
+/*
+ * A god's realm (`godRingOf` in $lib/people), set as `--god-ring`: a thin ring
+ * held off the face by a hair of empty space. Follows the avatar's corners.
+ */
+.god-ring {
+	outline: 1px solid color-mix(in srgb, var(--god-ring) 72%, transparent);
+	outline-offset: 1px;
 }
 
 /*
@@ -622,4 +620,110 @@ html.vt-episode-open::view-transition-new(episode) {
 
 *::-webkit-scrollbar-thumb:hover {
 	background: var(--scroll-thumb-hover);
+}
+
+/* ————— Comic panels —————
+   Every story widget is a plain printed comic panel: an ink frame (a 9-slice
+   SVG, so the line wavers a hair instead of running a ruled CSS border), a
+   light hard offset print shadow, and a caption box for its label.
+   Material.svelte draws the frame and shadow; these tokens are all a theme
+   changes.
+
+   Hanji / sumi are the paper and ink of the calligraphy plates (HanjaName,
+   PersonCard, TermCard…): cream paper and black ink in the light theme, night
+   paper and pale ink in the dark one. */
+:root {
+	--hanji: #ece4d3;
+	--hanji-edge: #d6cbb3;
+	--sumi: #15120e;
+	--sumi-dim: #5d554a;
+	--vermilion: #b8382a;
+	--comic-line: #15120e;
+	--comic-frame: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cpath fill='%2315120e' fill-rule='evenodd' d='M2.5 3C20 1.6 40 2.8 48 2.2S80 1.4 93.6 2.6C94.6 20 93.4 40 94 48S94.8 80 93.4 93.6C76 94.6 56 93.2 48 94S16 94.8 2.4 93.4C1.4 76 2.8 56 2 48S1.2 16 2.5 3ZM9.6 10C30 9 44 10.6 48 9.6S72 8.8 86.4 9.8C85.6 30 87 44 86.2 48S85.4 72 86.6 86.4C70 87.2 54 85.8 48 86.6S24 87.4 9.8 86.2C10.4 70 9 54 9.8 48S10.6 24 9.6 10Z'/%3E%3C/svg%3E");
+	--comic-drop: 4px 5px 0 rgb(21 18 14 / 0.12);
+	--caption-bg: #fffdf7;
+	--caption-ink: #15120e;
+}
+
+html:not([data-theme='light']) {
+	--hanji: #1f1c18;
+	--hanji-edge: #3b352c;
+	--sumi: #eee6d6;
+	--sumi-dim: #b9b0a0;
+	--vermilion: #ec7560;
+	--comic-line: #b5aa95;
+	--comic-frame: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cpath fill='%23b5aa95' fill-rule='evenodd' d='M2.5 3C20 1.6 40 2.8 48 2.2S80 1.4 93.6 2.6C94.6 20 93.4 40 94 48S94.8 80 93.4 93.6C76 94.6 56 93.2 48 94S16 94.8 2.4 93.4C1.4 76 2.8 56 2 48S1.2 16 2.5 3ZM9.6 10C30 9 44 10.6 48 9.6S72 8.8 86.4 9.8C85.6 30 87 44 86.2 48S85.4 72 86.6 86.4C70 87.2 54 85.8 48 86.6S24 87.4 9.8 86.2C10.4 70 9 54 9.8 48S10.6 24 9.6 10Z'/%3E%3C/svg%3E");
+	--comic-drop: 4px 5px 0 rgb(0 0 0 / 0.5);
+	--caption-bg: #14120f;
+	--caption-ink: #eee6d6;
+}
+
+.ink-plate {
+	position: relative;
+	margin: var(--widget-gap) 0;
+	padding: 1.15rem 1.2rem 1rem;
+	border: 1px solid color-mix(in srgb, var(--hanji-edge) 60%, transparent);
+	border-radius: var(--widget-radius);
+	color: var(--sumi);
+	background:
+		radial-gradient(120% 90% at 18% 0%, rgb(255 255 255 / 0.5), transparent 60%),
+		radial-gradient(90% 120% at 100% 100%, rgb(150 120 70 / 0.1), transparent 65%),
+		var(--hanji);
+}
+
+/* :where() keeps this at plate specificity, so a card's own ground still wins. */
+:where(html:not([data-theme='light'])) .ink-plate {
+	background:
+		radial-gradient(120% 90% at 18% 0%, rgb(255 244 220 / 0.05), transparent 60%),
+		radial-gradient(90% 120% at 100% 100%, rgb(0 0 0 / 0.25), transparent 65%),
+		var(--hanji);
+}
+
+/* The caption box on a panel (용어 · TERM, 인물 · PROFILE): a boxed label
+   pinned over the top-left of the frame, inked and offset like a print. */
+.ink-plate > .plate-tab,
+.comic-caption {
+	position: absolute;
+	z-index: 2;
+	top: -0.72rem;
+	left: 0.9rem;
+	padding: 0.18rem 0.55rem 0.2rem;
+	border: none;
+	border-radius: 4px;
+	font-family: var(--ui);
+	font-size: 0.6rem;
+	font-weight: 800;
+	line-height: 1.2;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	color: var(--caption-ink);
+	background: var(--caption-bg);
+	box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
+}
+
+/* ————— Name cards (PersonCard, PlaceCard) —————
+   Korean names lead in Black Han Sans; hanja sit above as a brushed footnote.
+   The emperor plate is lacquer-black in both themes. */
+:root {
+	--display-ko: 'Black Han Sans', 'Noto Sans KR', sans-serif;
+	--name-track: -0.01em;
+	--emperor-ground: #07060a;
+	--emperor-ink: #f1e6cc;
+	--emperor-gold: #c9a24a;
+	--emperor-vermilion: #b3261e;
+}
+
+/* ————— Float-up: title-screen copy rises one element at a time —————
+   Give each element `class="float-up"` and its place in line as `--i`.
+   It moves `translate`, so the element's own `transform` hovers still work. */
+.float-up {
+	animation: float-up 1.1s calc(0.25s + var(--i, 0) * 0.12s) cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes float-up {
+	from {
+		opacity: 0;
+		translate: 0 18px;
+		filter: blur(4px);
+	}
 }

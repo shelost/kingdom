@@ -4,6 +4,7 @@
  */
 
 import { buildBeats } from '$lib/beats';
+import { widgetText } from '$lib/widgets';
 import {
 	displayArtOf,
 	finalArtOf,
@@ -11,7 +12,9 @@ import {
 	hasGenuineTempRefs,
 	isSeedCopyTemp,
 	isTempCueImage,
-	tempArtOf
+	scriptArtFramesOf,
+	tempArtOf,
+	type ScriptArtFrame
 } from '$lib/cueArt';
 import { IMAGE_PEOPLE } from '$lib/imagePeople';
 import { avatarOf, byId, isPlaceholderArt, nameOf, PROFILES } from '$lib/people';
@@ -19,6 +22,7 @@ import { entryPlace } from '$lib/places';
 import { chapters, type Block, type Chapter, type Entry, type ImageSlot } from '$lib/story';
 import { TEMP_ART_BY_ID } from '$lib/tempArtInventory';
 import { isNsfwCueImage } from '$lib/nsfwCue';
+import { SvelteSet } from 'svelte/reactivity';
 
 export {
 	artOf,
@@ -118,7 +122,13 @@ function textOf(b: Block): string {
 		case 'verse':
 			return b.lines.join(' ');
 		case 'hanja':
-			return b.chars.map((c) => c.char + ' ' + c.gloss).join(' ') + ' ' + (b.after ?? '');
+			return b.chars.map((c) => c.char + ' ' + c.gloss).join(' ') + ' ' + [b.name, b.note, b.after].filter(Boolean).join(' ');
+		case 'map':
+			return [b.title, b.caption, b.ko].filter(Boolean).join(' ');
+		case 'card':
+			return [b.write, b.sub, b.role, b.caption, b.ko].filter(Boolean).join(' ');
+		case 'term':
+			return [b.hanja, b.reading, b.term, b.html, b.ko].filter(Boolean).join(' ');
 		case 'flashback':
 			return [b.title, b.year].filter(Boolean).join(' ');
 		case 'table':
@@ -130,7 +140,7 @@ function textOf(b: Block): string {
 		case 'diagram':
 			return [b.title, b.caption, b.ko].filter(Boolean).join(' ');
 		default:
-			return '';
+			return stripHtml(widgetText(b));
 	}
 }
 
@@ -253,6 +263,50 @@ export function uniqueCueTitle(entryTitle: string, slot: ImageSlot): string {
 		return `${entryTitle} · ${label}`;
 	}
 	return `${entryTitle} · ${humanizeCueId(slot.id)}`;
+}
+
+/* ————— Real art only —————
+   A slot is drawn in the reader only when it resolves to a file: a final `src`
+   or a temp stand-in (explicit `tempImage` or the build-time temp inventory).
+   A `src` naming a file that is not on disk is only found out when it 404s,
+   so frames report failed loads here and the slot drops on the next render. */
+
+const brokenArt = new SvelteSet<string>();
+
+function artFileKey(src: string): string {
+	const q = src.indexOf('?');
+	return (q === -1 ? src : src.slice(0, q)).toLowerCase();
+}
+
+/** Record art that failed to load, so every reader stops reserving room for it. */
+export function markBrokenArt(src: string | null | undefined): void {
+	if (src) brokenArt.add(artFileKey(src));
+}
+
+export function isBrokenArt(src: string | null | undefined): boolean {
+	return !!src && brokenArt.has(artFileKey(src));
+}
+
+/** Script-view frames of a slot that point at loadable files. */
+export function realArtFramesOf(slot: ImageSlot): ScriptArtFrame[] {
+	return scriptArtFramesOf(slot).filter((f) => !isBrokenArt(f.src));
+}
+
+/** True when the slot has a real image to show (not an empty prompt card). */
+export function hasRealImage(slot: ImageSlot): boolean {
+	return realArtFramesOf(slot).length > 0;
+}
+
+/**
+ * Beats with their empty slots dropped, so no reader lays out a placeholder.
+ * `keepEmpty` (edit mode) leaves them in: that is where art gets generated.
+ */
+export function withRealImages<B extends { images: ImageSlot[] }>(beats: B[], keepEmpty = false): B[] {
+	if (keepEmpty) return beats;
+	return beats.map((beat) => {
+		const images = beat.images.filter(hasRealImage);
+		return images.length === beat.images.length ? beat : { ...beat, images };
+	});
 }
 
 /** All cue images in chronicle reading order. */

@@ -1,221 +1,392 @@
+<script module lang="ts">
+	import { byId, avatarOf, isPlaceholderArt } from '$lib/people';
+	import { reading } from '$lib/reading.svelte';
+
+	export interface Seat {
+		id: string;
+		year: number;
+		ko: string;
+		han: string;
+		en: string;
+	}
+
+	export interface Command extends Seat {
+		beast: { ko: string; en: string };
+		/** Angle round the table; -90 is the head, where the chair sits. */
+		deg: number;
+	}
+
+	/** Head of the table (the chair) and, beyond it, the king's seat. */
+	export const HEAD_DEG = -90;
+
+	/** The four commands (대가) round the table; the Central one is the chair itself. */
+	export const COMMANDS: Command[] = [
+		{ id: 'gesomun', year: 640, ko: '동부', han: '東部', en: 'East', beast: { ko: '까마귀', en: 'Crow' }, deg: -18 },
+		{ id: 'southcmd', year: 640, ko: '남부', han: '南部', en: 'South', beast: { ko: '돼지', en: 'Pig' }, deg: 54 },
+		{ id: 'westcmd', year: 640, ko: '서부', han: '西部', en: 'West', beast: { ko: '소', en: 'Cow' }, deg: 126 },
+		{ id: 'northcmd', year: 640, ko: '북부', han: '北部', en: 'North', beast: { ko: '개', en: 'Dog' }, deg: 198 }
+	];
+
+	/** The Central command and the High Commander's chair are one seat, at the head. */
+	export const CENTRAL: Seat = {
+		id: 'gusesa',
+		year: 640,
+		ko: '중부 · 막리지',
+		han: '中部 莫離支',
+		en: 'Central · High Commander'
+	};
+
+	/** The chair at the head: the Central High Commander, then Yeon once he takes it. */
+	export const chairOf = (supreme: boolean): Seat =>
+		supreme ? { id: 'gesomun', year: 642, ko: '대막리지', han: '大莫離支', en: 'Supreme Commander' } : CENTRAL;
+
+	/** The king, outside the table: the last word, then a puppet. */
+	export const kingOf = (supreme: boolean): Seat =>
+		supreme
+			? { id: 'bojang', year: 643, ko: '보장왕', han: '寶藏王', en: 'King · puppet' }
+			: { id: 'yeongnyu', year: 640, ko: '영류왕', han: '榮留王', en: 'King · last word' };
+
+	export const CHANCELLOR: Seat = { id: 'dosuryu', year: 643, ko: '대대로', han: '大對盧', en: 'Chancellor' };
+
+	/** Portrait for a seat; a silhouette stands in for the unpainted. */
+	export const face = (id: string, year: number) => {
+		const p = byId.get(id);
+		return (p && avatarOf(p, undefined, year)) || null;
+	};
+
+	export const isSilhouette = isPlaceholderArt;
+
+	/** A command's label: the 부, its beast, the hanja; English unless the reader is Korean-only. */
+	export const commandLabel = (c: Command) => ({
+		ko: `${c.ko} · ${c.beast.ko}`,
+		han: c.han,
+		en: reading.lang === 'ko' ? undefined : `${c.en} · ${c.beast.en}`
+	});
+
+	export const seatLabel = (s: Seat) => ({
+		ko: s.ko,
+		han: s.han,
+		en: reading.lang === 'ko' ? undefined : s.en
+	});
+</script>
+
 <script lang="ts">
 	/**
-	 * Goguryeo High Summit (제가會議): king at the apex, High Commander
-	 * beneath, five regional Commanders below. Steps:
-	 *   - 'council'  — classic consultation; king holds the final vote (default)
-	 *   - 'supreme'  — after 642: Supreme Commander replaces High Commander;
-	 *                  Chancellor appears; king dims to a puppet note
+	 * Goguryeo High Summit (제가회의) as an org: four commands round a table,
+	 * the Central command's High Commander in the chair at its head, the
+	 * king's seat just outside, tied to the chair by one thin line — he has
+	 * the last word.
+	 * Steps:
+	 *   - 'council' — the table as it sat before the massacre (default)
+	 *   - 'supreme' — after it: Yeon in the chair as Supreme Commander, his
+	 *                 East seat empty, the old High Commander and the other
+	 *                 three commands struck out, the new king a puppet
+	 *                 outside, the Chancellor at the table's centre
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
+	import { hangulInitial } from '$lib/people';
 
-	let { step = 'council', active = false }: DiagramProps = $props();
+	let { step = 'council', active = false, flat = false }: DiagramProps = $props();
 
 	const supreme = $derived(step === 'supreme');
 
-	const COMMANDERS = [
-		{ ko: '동부', en: 'East', x: 52 },
-		{ ko: '서부', en: 'West', x: 116 },
-		{ ko: '남부', en: 'South', x: 180 },
-		{ ko: '북부', en: 'North', x: 244 },
-		{ ko: '중부', en: 'Central', x: 308 }
-	] as const;
+	const CX = 180;
+	const CY = 190;
+	const R = 92;
+	const FACE = 21;
+	const CHAIR = { x: CX, y: CY - R, r: 25 };
+	const KING = { x: CX, y: 34, r: 18 };
+	const MID = { x: CX, y: CY - 14, r: 16 };
+	/** Where the old High Commander is shown, struck, once Yeon has his chair. */
+	const OUSTED = { x: CX - 58, y: CHAIR.y - 6, r: 14 };
+	const uid = $props.id();
+
+	const seats = COMMANDS.map((c, i) => {
+		const a = (c.deg * Math.PI) / 180;
+		return { ...c, i, x: CX + R * Math.cos(a), y: CY + R * Math.sin(a) };
+	});
+
+	const chair = $derived(chairOf(supreme));
+	const king = $derived(kingOf(supreme));
+	const fate = (id: string) => (!supreme ? 'sit' : id === 'gesomun' ? 'moved' : 'struck');
 </script>
 
+{#snippet portrait(id: string, year: number, x: number, y: number, r: number, clip: string)}
+	{@const href = face(id, year)}
+	{#if href}
+		<image
+			{href}
+			x={x - r}
+			y={y - r - (isSilhouette(href) ? 0 : 4)}
+			width={r * 2}
+			height={r * 2}
+			preserveAspectRatio={isSilhouette(href) ? 'xMidYMid meet' : 'xMidYMin slice'}
+			clip-path="url(#{uid}-{clip})"
+			class:silhouette={isSilhouette(href)}
+		/>
+	{:else}
+		{@const p = byId.get(id)}
+		<text class="initial" {x} y={y + r * 0.32} font-size={r * 0.9}>{p ? hangulInitial(p) : '·'}</text>
+	{/if}
+{/snippet}
+
+<KitStage id="high-summit" {step} {active} {flat}>
+	{#snippet fallback()}
 <svg
-	viewBox="0 0 360 320"
+	viewBox="0 0 360 330"
 	class="dg"
 	class:play={active}
+	class:supreme
 	data-step={step}
 	role="img"
-	aria-label="Diagram of the Goguryeo High Summit: the king above a High Commander and five regional Commanders"
+	aria-label={supreme
+		? 'The High Summit after the massacre: Yeon Gesomun in the chair as Supreme Commander, his East seat empty, the old High Commander and the other three commands struck out, a puppet king outside the table, the Chancellor at its centre'
+		: 'The Goguryeo High Summit: four regional commands round a table, the Central command’s High Commander in the chair at its head, and the king seated just outside with the last word'}
 >
-	<!-- king -->
-	<g class="node king" class:puppet={supreme} style="--d: 0">
-		<rect class="dais" x="118" y="12" width="124" height="58" rx="8" />
-		<circle cx="180" cy="36" r="20" />
-		<polygon points="171,28 174.5,20 178,24 180,18 182,24 185.5,20 189,28" />
-		<ChartLabel x="180" y="50" ko="왕" en="King" w={56} />
-	</g>
+	<defs>
+		<clipPath id="{uid}-chair"><circle cx={CHAIR.x} cy={CHAIR.y} r={CHAIR.r} /></clipPath>
+		<clipPath id="{uid}-ousted"><circle cx={OUSTED.x} cy={OUSTED.y} r={OUSTED.r} /></clipPath>
+		<clipPath id="{uid}-king"><circle cx={KING.x} cy={KING.y} r={KING.r} /></clipPath>
+		<clipPath id="{uid}-mid"><circle cx={MID.x} cy={MID.y} r={MID.r} /></clipPath>
+		{#each seats as s (s.id)}
+			<clipPath id="{uid}-{s.i}"><circle cx={s.x} cy={s.y} r={FACE} /></clipPath>
+		{/each}
+	</defs>
 
-	<text class="king-note" class:hollow={supreme} style="--d: 200" x="180" y="82">
-		{supreme ? '꼭두각시 · puppet' : '최종 투표 · final vote'}
-	</text>
+	<circle class="table" style="--d: 0" cx={CX} cy={CY} r={R} />
 
-	<!-- spine king → high seat -->
-	<path class="spine" style="--d: 280" d="M 180 88 V 108" pathLength="100" />
+	<!-- the king's one line into the org -->
+	<line
+		class="spoke king-line"
+		class:cut={supreme}
+		style="--d: 120"
+		x1={KING.x}
+		y1={KING.y + KING.r}
+		x2={CHAIR.x}
+		y2={CHAIR.y - CHAIR.r}
+		pathLength="100"
+	/>
 
-	<!-- High Commander / Supreme Commander -->
-	<g class="node high" style="--d: 360">
-		<rect x={supreme ? 64 : 108} y="108" width={supreme ? 120 : 144} height="48" rx="6" />
-		{#if supreme}
-			<ChartLabel x="124" y="132" ko="대막리지" en="Supreme" w={108} />
-		{:else}
-			<ChartLabel x="180" y="132" ko="막리지" en="High Commander" w={128} />
-		{/if}
-	</g>
-
-	{#if supreme}
-		<!-- Chancellor beside Supreme Commander -->
-		<g class="node chancellor" style="--d: 480">
-			<rect x="200" y="108" width="96" height="48" rx="6" />
-			<ChartLabel x="248" y="132" ko="대대로" en="Chancellor" w={88} />
-		</g>
-	{/if}
-
-	<!-- bar down to five Commanders -->
-	<path class="spine" style="--d: 620" d="M 180 156 V 188" pathLength="100" />
-	<path class="spine bar" style="--d: 700" d="M 52 188 H 308" pathLength="100" />
-
-	{#each COMMANDERS as c, i (c.en)}
-		<path
-			class="spine"
-			style="--d: {760 + i * 40}"
-			d="M {c.x} 188 V 208"
+	{#each seats as s (s.id)}
+		<line
+			class="spoke"
+			class:cut={fate(s.id) !== 'sit'}
+			style="--d: {240 + s.i * 70}"
+			x1={CHAIR.x}
+			y1={CHAIR.y}
+			x2={s.x}
+			y2={s.y}
 			pathLength="100"
 		/>
-		<g class="node commander" style="--d: {880 + i * 90}">
-			<circle cx={c.x} cy="232" r="26" />
-			<ChartLabel x={c.x} y="234" ko={c.ko} en={c.en} w={46} size="sm" />
+	{/each}
+
+	<g class="node king" class:puppet={supreme} style="--d: 60">
+		{@render portrait(king.id, king.year, KING.x, KING.y, KING.r, 'king')}
+		<circle class="face-ring thin gold" cx={KING.x} cy={KING.y} r={KING.r} />
+		{#if supreme}
+			<line class="string" x1={KING.x - 10} y1="2" x2={KING.x - 10} y2={KING.y - KING.r + 4} />
+			<line class="string" x1={KING.x + 10} y1="2" x2={KING.x + 10} y2={KING.y - KING.r + 4} />
+		{/if}
+		<ChartLabel x={KING.x + 64} y={KING.y} {...seatLabel(king)} w={74} size="sm" />
+	</g>
+
+	<g class="node chair" style="--d: 180">
+		{#key chair.id}
+			{@render portrait(chair.id, chair.year, CHAIR.x, CHAIR.y, CHAIR.r, 'chair')}
+		{/key}
+		<circle class="face-ring hub" cx={CHAIR.x} cy={CHAIR.y} r={CHAIR.r} />
+		<ChartLabel x={CHAIR.x} y={CHAIR.y + CHAIR.r + 16} {...seatLabel(chair)} w={supreme ? 84 : 100} size="sm" />
+	</g>
+
+	{#each seats as s (s.id)}
+		{@const f = fate(s.id)}
+		<g class="node" class:struck={f === 'struck'} class:gone={f === 'moved'} style="--d: {460 + s.i * 100}">
+			{#if f !== 'moved'}
+				{@render portrait(s.id, s.year, s.x, s.y, FACE, String(s.i))}
+			{/if}
+			<circle class="face-ring" cx={s.x} cy={s.y} r={FACE} />
+			{#if f === 'moved'}
+				<ChartLabel x={s.x} y={s.y + FACE + 12} ko="빈자리" en={reading.lang === 'ko' ? undefined : 'empty seat'} w={54} size="sm" />
+			{:else}
+				<ChartLabel x={s.x} y={s.y + FACE + 16} {...commandLabel(s)} w={66} size="sm" />
+			{/if}
 		</g>
 	{/each}
 
-	<text class="foot" style="--d: 1500" x="180" y="292">제가會議 · High Summit</text>
-	<text class="foot-en" style="--d: 1600" x="180" y="306">five Commanders · 오부대가</text>
+	{#if supreme}
+		{#each seats.filter((s) => fate(s.id) === 'struck') as s (s.id)}
+			<path
+				class="x"
+				style="--d: {1200 + s.i * 120}"
+				d="M {s.x - 15} {s.y - 15} L {s.x + 15} {s.y + 15} M {s.x + 15} {s.y - 15} L {s.x - 15} {s.y + 15}"
+				pathLength="100"
+			/>
+		{/each}
+		<g class="node struck" style="--d: 1100">
+			{@render portrait(CENTRAL.id, CENTRAL.year, OUSTED.x, OUSTED.y, OUSTED.r, 'ousted')}
+			<circle class="face-ring thin" cx={OUSTED.x} cy={OUSTED.y} r={OUSTED.r} />
+			<ChartLabel x={OUSTED.x - 50} y={OUSTED.y} {...seatLabel(CENTRAL)} w={70} size="sm" />
+		</g>
+		<path
+			class="x"
+			style="--d: 1250"
+			d="M {OUSTED.x - 10} {OUSTED.y - 10} L {OUSTED.x + 10} {OUSTED.y + 10} M {OUSTED.x + 10} {OUSTED.y - 10} L {OUSTED.x - 10} {OUSTED.y + 10}"
+			pathLength="100"
+		/>
+		<g class="node" style="--d: 1800">
+			{@render portrait(CHANCELLOR.id, CHANCELLOR.year, MID.x, MID.y, MID.r, 'mid')}
+			<circle class="face-ring thin" cx={MID.x} cy={MID.y} r={MID.r} />
+			<ChartLabel x={MID.x} y={MID.y + MID.r + 14} {...seatLabel(CHANCELLOR)} w={58} size="sm" />
+		</g>
+	{/if}
+
+	<text class="foot" style="--d: 1500" x={CX} y="324">
+		{supreme ? '大莫離支 · one chair where five sat' : '諸加會議 · five commands, the first in the chair, the king outside'}
+	</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {
-		--accent: #ff3d36;
 		--goguryeo: #ff3d36;
+		--gold: #e8c36a;
 		font-family: var(--serif);
 	}
 
-	.node {
-		opacity: 0;
-		transform: translateY(8px);
-		transition:
-			opacity 600ms var(--ease) calc(var(--d) * 1ms),
-			transform 700ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.play .node {
-		opacity: 1;
-		transform: translateY(0);
-	}
-
-	.play .king.puppet {
-		opacity: 0.38;
-		transition:
-			opacity 800ms var(--ease) 1400ms,
-			transform 700ms var(--ease) calc(var(--d) * 1ms);
-	}
-
-	.king .dais {
-		fill: var(--goguryeo);
-		stroke: var(--node-stroke);
-		stroke-width: var(--stroke-w);
-	}
-
-	.king circle {
-		fill: var(--goguryeo);
-		stroke: var(--node-stroke);
-		stroke-width: var(--stroke-w);
-	}
-
-	.king polygon {
-		fill: var(--goguryeo);
-	}
-
-	.foot,
-	.foot-en,
-	.king-note {
-		text-anchor: middle;
-		fill: var(--ink-muted);
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-	}
-
-	.king-note {
-		font-size: 7px;
+	.node,
+	.foot {
 		opacity: 0;
 		transition: opacity 600ms var(--ease);
 		transition-delay: calc(var(--d) * 1ms);
-		fill: var(--goguryeo);
 	}
 
-	.play .king-note {
+	.node {
+		transform: scale(0.35);
+		transform-box: fill-box;
+		transform-origin: center;
+		transition:
+			opacity 550ms var(--ease) calc(var(--d) * 1ms),
+			transform 650ms var(--ease) calc(var(--d) * 1ms),
+			filter 700ms var(--ease) calc(var(--d) * 1ms + 700ms);
+	}
+
+	.play .node,
+	.play .foot {
 		opacity: 1;
 	}
 
-	.play .king-note.hollow {
-		fill: var(--ink-muted);
-		letter-spacing: 0.14em;
+	.play .node {
+		transform: scale(1);
 	}
 
-	.high rect,
-	.chancellor rect {
-		fill: var(--goguryeo);
-		stroke: var(--node-stroke);
-		stroke-width: var(--stroke-w);
+	.play .node.struck {
+		filter: grayscale(1) brightness(0.55);
 	}
 
-	.play[data-step='supreme'] .high rect {
-		stroke: var(--node-stroke);
-		stroke-width: 3.2;
-		fill: var(--goguryeo);
+	.play .node.gone {
+		opacity: 0.55;
 	}
 
-	.chancellor rect {
-		stroke-dasharray: 4 4;
-		stroke: var(--node-stroke);
-		fill: var(--goguryeo);
+	.table {
+		fill: color-mix(in srgb, var(--goguryeo) 7%, transparent);
+		stroke: var(--goguryeo);
+		stroke-width: 2;
+		stroke-dasharray: 3 5;
+		opacity: 0;
+		transition: opacity 700ms var(--ease);
 	}
 
-	.commander circle {
-		fill: var(--goguryeo);
-		stroke: var(--node-stroke);
-		stroke-width: var(--stroke-w);
+	.play .table {
+		opacity: 1;
 	}
 
-	.spine {
+	.face-ring {
 		fill: none;
 		stroke: var(--goguryeo);
-		stroke-width: var(--link-w);
+		stroke-width: var(--stroke-w, 2.6);
+	}
+
+	.face-ring.hub {
+		stroke-width: 3.6;
+	}
+
+	.face-ring.thin {
+		stroke-width: 2;
+	}
+
+	.face-ring.gold {
+		stroke: var(--gold);
+	}
+
+	.gone .face-ring {
+		stroke-dasharray: 3 4;
+		fill: color-mix(in srgb, var(--fg, #fff) 4%, transparent);
+	}
+
+	.silhouette {
+		opacity: 0.7;
+	}
+
+	.initial {
+		font-family: 'Noto Serif KR', var(--serif);
+		font-weight: 700;
+		text-anchor: middle;
+		fill: var(--fg-dim, #aaa);
+	}
+
+	.spoke {
+		fill: none;
+		stroke: var(--goguryeo);
+		stroke-width: var(--link-w, 1.6);
 		stroke-dasharray: 100 100;
 		stroke-dashoffset: 100;
 		opacity: 0;
 		transition:
-			stroke-dashoffset 900ms var(--ease) calc(var(--d) * 1ms),
+			stroke-dashoffset 800ms var(--ease) calc(var(--d) * 1ms),
 			opacity 400ms var(--ease) calc(var(--d) * 1ms);
 	}
 
-	.play .spine {
+	.king-line {
+		stroke: var(--gold);
+		stroke-width: 1;
+	}
+
+	.play .spoke {
 		stroke-dashoffset: 0;
 		opacity: 1;
 	}
 
-	.foot,
-	.foot-en {
-		opacity: 0;
-		transition: opacity 700ms var(--ease);
-		transition-delay: calc(var(--d) * 1ms);
-		font-size: 7px;
+	.play .spoke.cut {
+		opacity: 0.22;
+	}
+
+	.x {
+		fill: none;
+		stroke: #ff3d36;
+		stroke-width: 4;
+		stroke-linecap: round;
+		stroke-dasharray: 100 100;
+		stroke-dashoffset: 100;
+		transition: stroke-dashoffset 420ms var(--ease) calc(var(--d) * 1ms);
+	}
+
+	.play .x {
+		stroke-dashoffset: 0;
+	}
+
+	.string {
+		stroke: color-mix(in srgb, var(--fg, #f4efe6) 55%, transparent);
+		stroke-width: 0.8;
 	}
 
 	.foot {
-		fill: var(--goguryeo);
-		text-transform: none;
+		font-size: 7.5px;
 		letter-spacing: 0.06em;
-	}
-
-	.foot-en {
-		font-size: 6px;
-	}
-
-	.play .foot,
-	.play .foot-en {
-		opacity: 1;
+		fill: var(--goguryeo);
+		text-anchor: middle;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -225,9 +396,9 @@
 			animation: none !important;
 		}
 
-		.play .spine {
+		.play .spoke,
+		.play .x {
 			stroke-dashoffset: 0;
-			opacity: 1;
 		}
 	}
 </style>

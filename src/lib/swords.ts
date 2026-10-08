@@ -45,7 +45,7 @@ export const SWORD_DEFS: SwordDef[] = [
 		kingdom: 'silla',
 		swordImage: '/sword_fish.png',
 		tagline: 'Ring-pommel fish sword — Gaya fish on the pommel, Silla blue in the fuller.',
-		arc: 'Geumgwan Gaya’s ring-pommel — fish on the pommel, blue in the fuller. Kim Muryuk traded a kingdom so the line could keep it; Kim Seohyeon made the surrender a household; Kim Yushin made it the Sword of Silla. Three generations, one blade.',
+		arc: 'Geumgwan Gaya’s ring-pommel — fish on the pommel, blue in the fuller. Kim Muryuk traded a kingdom so the line could keep it; Kim Seohyun made the surrender a household; Kim Yushin made it the Sword of Silla. Three generations, one blade.',
 		aliases: ['Fish sword', '어검', 'Sword of Silla']
 	},
 	{

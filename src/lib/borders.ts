@@ -83,7 +83,7 @@ export function polityName(id: PolityId, year: number): { label: string; korean:
 export const YEAR_MIN = -200;
 export const YEAR_MAX = 800;
 
-/** The span the chronicle itself covers, from Queen Seondeok's crowning to Gibeolpo. */
+/** The span the chronicle itself covers, from Queen Seondeok's crowning to Final Ford. */
 export const STORY_SPAN = { from: 632, to: 676 };
 
 export function formatYear(year: number): string {
@@ -197,7 +197,7 @@ const SITE_DEFS: SiteDef[] = [
 	},
 	{
 		id: 'hunchun',
-		name: 'Chaekseong (Hunchun)',
+		name: 'Chaek Fortress (Hunchun)',
 		lon: 130.36,
 		lat: 42.86,
 		r: 54,
@@ -331,7 +331,7 @@ const SITE_DEFS: SiteDef[] = [
 	// ——— the Han river: Baekje’s cradle, everyone’s prize ———
 	{
 		id: 'wirye',
-		name: 'Wirye / Hanseong',
+		name: 'Wirye / River Palace',
 		lon: 127.12,
 		lat: 37.52,
 		h: [[-999, 'mahan'], [-18, 'baekje'], [475, 'goguryeo'], [551, 'baekje'], [553, 'silla']]
@@ -359,7 +359,7 @@ const SITE_DEFS: SiteDef[] = [
 	},
 	{
 		id: 'danghang',
-		name: 'Danghang (Hwaseong)',
+		name: 'Danghang Fortress (Hwaseong)',
 		lon: 126.8,
 		lat: 37.2,
 		h: [[-999, 'mahan'], [250, 'baekje'], [475, 'goguryeo', '?'], [551, 'baekje'], [553, 'silla']]
@@ -380,7 +380,7 @@ const SITE_DEFS: SiteDef[] = [
 	},
 	{
 		id: 'danyang',
-		name: 'Jeokseong (Danyang)',
+		name: 'Jeok Fortress (Danyang)',
 		lon: 128.37,
 		lat: 36.98,
 		h: [[-999, null], [470, 'goguryeo'], [550, 'silla']]
@@ -642,7 +642,7 @@ export const BORDER_EVENTS: BorderEvent[] = [
 	{ year: 369, en: 'Baekje subdues the last Mahan statelets.', ko: '백제가 마한의 남은 나라들을 복속한다.' },
 	{ year: 396, en: 'Gwanggaeto takes fifty-eight Baekje fortresses.', ko: '광개토왕이 백제의 58성을 빼앗는다.' },
 	{ year: 404, en: 'Goguryeo seizes Liaodong.', ko: '고구려가 요동을 차지한다.' },
-	{ year: 475, en: 'Hanseong falls. Baekje flees south to Ungjin.', ko: '한성 함락. 백제가 웅진으로 옮긴다.' },
+	{ year: 475, en: 'The River Palace falls. Baekje flees south to Ungjin.', ko: '한성 함락. 백제가 웅진으로 옮긴다.' },
 	{ year: 494, en: 'Buyeo submits to Goguryeo.', ko: '부여가 고구려에 항복한다.' },
 	{ year: 512, en: 'Silla takes Usan.', ko: '신라가 우산국을 복속한다.' },
 	{ year: 532, en: 'Geumgwan Gaya surrenders to Silla.', ko: '금관가야가 신라에 항복한다.' },
@@ -655,7 +655,7 @@ export const BORDER_EVENTS: BorderEvent[] = [
 	{ year: 663, en: 'White River. The restoration ends.', ko: '백강 전투. 부흥군이 무너진다.' },
 	{ year: 668, en: 'Pyongyang falls. Goguryeo is gone.', ko: '평양 함락. 고구려 멸망.' },
 	{ year: 671, en: 'Silla takes Sabi from the Tang.', ko: '신라가 사비를 차지한다.' },
-	{ year: 676, en: 'Gibeolpo. Tang pulls back to Liaodong.', ko: '기벌포 전투. 당이 요동으로 물러난다.' },
+	{ year: 676, en: 'Final Ford. Tang pulls back to Liaodong.', ko: '기벌포 전투. 당이 요동으로 물러난다.' },
 	{ year: 698, en: 'Dae Jo-yeong founds Balhae.', ko: '대조영이 발해를 세운다.' },
 	{ year: 720, en: 'Balhae takes the old Goguryeo north and Buyeo’s plain.', ko: '발해가 옛 고구려 북방과 부여 땅을 차지한다.' },
 	{ year: 735, en: 'The Tang grant Silla everything south of the Taedong.', ko: '당이 대동강 이남을 신라 땅으로 인정한다.' }
@@ -673,7 +673,7 @@ export const BORDER_PEAKS: BorderPeak[] = [
 	{ polity: 'buyeo', year: 49, en: 'Buyeo at its height: the Han’s favoured ally in the north.' },
 	{ polity: 'baekje', year: 371, en: 'Baekje at its height: Geunchogo kills Goguryeo’s king at Pyongyang.' },
 	{ polity: 'gaya', year: 399, en: 'Gaya at its height: the iron league, a year before Gwanggaeto marches south.' },
-	{ polity: 'goguryeo', year: 475, en: 'Goguryeo at its height: Jangsu takes Hanseong.' },
+	{ polity: 'goguryeo', year: 475, en: 'Goguryeo at its height: Jangsu takes the River Palace.' },
 	{ polity: 'silla', year: 676, en: 'Silla at its height: the Tang are driven out.' },
 	{ polity: 'balhae', year: 762, en: 'Balhae at its height: the Tang call it a kingdom.' }
 ];
@@ -748,6 +748,8 @@ export interface BorderSite {
 	y: number;
 	groups?: [number, string | null][];
 	h: Hold[];
+	/** how far the site's land reaches from it, in sheet units */
+	r: number;
 	/** the site's land: its Voronoi cell inside its reach, as an SVG path */
 	d: string;
 	/** Delaunay neighbours whose reaches overlap this one */
@@ -766,7 +768,7 @@ function buildSites(): BorderSite[] {
 		const near = [...delaunay.neighbors(i)].filter(
 			(j) => Math.hypot(pts[i][0] - pts[j][0], pts[i][1] - pts[j][1]) < reach[i] + reach[j]
 		);
-		return { id: s.id, name: s.name, x: pts[i][0], y: pts[i][1], groups: s.groups, h: s.h, d, near };
+		return { id: s.id, name: s.name, x: pts[i][0], y: pts[i][1], groups: s.groups, h: s.h, r: reach[i], d, near };
 	});
 }
 
@@ -780,6 +782,70 @@ export interface Holding {
 export function holderAt(site: BorderSite, year: number): Holding {
 	const row = site.h.findLast(([from]) => from <= year);
 	return { polity: row?.[1] ?? null, disputed: row?.[2] === '?' };
+}
+
+/**
+ * Years a holding actually changes. The timeline scrubs every frame, but the
+ * wash only needs a new paint when one of these is crossed.
+ */
+const CHANGE_YEARS = [...new Set(SITE_DEFS.flatMap((s) => s.h.map(([from]) => from)))].sort(
+	(a, b) => a - b
+);
+
+/** The latest holding-change year at or before `year`. */
+export function settledYear(year: number): number {
+	let lo = 0;
+	let hi = CHANGE_YEARS.length - 1;
+	let ans = CHANGE_YEARS[0];
+	while (lo <= hi) {
+		const mid = (lo + hi) >> 1;
+		if (CHANGE_YEARS[mid] <= year) {
+			ans = CHANGE_YEARS[mid];
+			lo = mid + 1;
+		} else hi = mid - 1;
+	}
+	return ans;
+}
+
+const holdingsCache = new Map<number, Holding[]>();
+
+/** Who holds each site, cached by the settled year so a scrub does not rebuild it. */
+export function holdingsAt(year: number): Holding[] {
+	const settled = settledYear(year);
+	let hit = holdingsCache.get(settled);
+	if (!hit) {
+		hit = BORDER_SITES.map((s) => holderAt(s, settled));
+		holdingsCache.set(settled, hit);
+	}
+	return hit;
+}
+
+const siteCache = new Map<string, number>();
+
+/** The site whose land covers sheet point (x, y): its nearest site, if within that site's reach; −1 on open ground. */
+function siteAt(x: number, y: number): number {
+	const key = `${x},${y}`;
+	let hit = siteCache.get(key);
+	if (hit === undefined) {
+		let best = -1;
+		let bd = Infinity;
+		BORDER_SITES.forEach((s, i) => {
+			const d = Math.hypot(s.x - x, s.y - y);
+			if (d < bd) {
+				bd = d;
+				best = i;
+			}
+		});
+		hit = best >= 0 && bd <= BORDER_SITES[best].r ? best : -1;
+		siteCache.set(key, hit);
+	}
+	return hit;
+}
+
+/** Who holds the ground at sheet point (x, y) in `year`; null off every site's land. */
+export function placeHolding(x: number, y: number, year: number): Holding | null {
+	const i = siteAt(x, y);
+	return i < 0 ? null : holdingsAt(year)[i];
 }
 
 /** After Liaodong falls the commandery names are history; later Chinese ground takes the dynasty’s. */

@@ -9,7 +9,12 @@
 	import StoryMap from '$lib/components/StoryMap.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
-	import { consumeLeftoverStoryHash, consumePendingStoryJump } from '$lib/reading.svelte';
+	import {
+		consumeLeftoverStoryHash,
+		consumePendingStoryJump,
+		reading,
+		rememberLastEpisode
+	} from '$lib/reading.svelte';
 
 	let { children } = $props();
 
@@ -29,6 +34,8 @@
 		);
 		return () => document.documentElement.classList.remove('is-toc-open');
 	});
+
+	$effect(() => rememberLastEpisode(reading.episodeIndex));
 
 	/** Fixed chrome only after the reader leaves cover + blurb. */
 	$effect(() => {

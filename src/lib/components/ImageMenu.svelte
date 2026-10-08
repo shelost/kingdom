@@ -77,6 +77,10 @@
 		aria-label={target.label}
 		style:left="{left}px"
 		style:top="{top}px"
+		style:right="auto"
+		style:bottom="auto"
+		style:width="11.5rem"
+		style:height="max-content"
 		{@attach surface}
 		oncontextmenu={(e) => e.preventDefault()}
 	>
@@ -132,11 +136,13 @@
 <style>
 	.image-menu {
 		position: fixed;
-		inset: auto;
+		inset: unset;
 		margin: 0;
-		width: 11.5rem;
 		padding: 0.3rem;
-		display: grid;
+		/* The popover UA style stretches the box to the viewport. Hug the items. */
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
 		gap: 0.1rem;
 		border-radius: 8px;
 		background: color-mix(in srgb, var(--panel) 94%, transparent);
@@ -159,9 +165,12 @@
 
 	button {
 		appearance: none;
+		flex: 0 0 auto;
 		display: flex;
 		align-items: center;
 		gap: 0.45rem;
+		height: auto;
+		min-height: 0;
 		margin: 0;
 		padding: 0.42rem 0.5rem;
 		border: none;

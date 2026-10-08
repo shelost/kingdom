@@ -1,3 +1,11 @@
+<script module lang="ts">
+	export const HWARANG_XS = [48, 108, 168, 228, 288, 348] as const;
+
+	export const ROW_MID = (HWARANG_XS[0] + HWARANG_XS[5]) / 2;
+
+	export const MARSHAL = { ko: '국선', en: 'Marshal', x: ROW_MID, y: 36 };
+</script>
+
 <script lang="ts">
 	/**
 	 * Silla Hwarang order: 국선 (marshal) centered above six 화랑;
@@ -5,17 +13,17 @@
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
 
-	let { active = false }: DiagramProps = $props();
+	let { active = false, flat = false }: DiagramProps = $props();
 
 	/** Six-column row centered in viewBox; marshal x matches row midpoint. */
-	const HWARANG_XS = [48, 108, 168, 228, 288, 348] as const;
-	const ROW_MID = (HWARANG_XS[0] + HWARANG_XS[5]) / 2;
-	const MARSHAL = { ko: '국선', en: 'Marshal', x: ROW_MID, y: 36 };
 	const HW_Y = 118;
 	const DISC_YS = [172, 196, 220, 244] as const;
 </script>
 
+<KitStage id="hwarang" {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 396 360"
 	class="dg"
@@ -57,6 +65,8 @@
 
 	<text class="foot" style="--d: 1200" x={ROW_MID} y="348">6 화랑 · 24 낭도</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

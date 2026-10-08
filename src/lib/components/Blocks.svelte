@@ -8,17 +8,43 @@
 		byId,
 		colorOf,
 		hangulInitial,
+		isMonarch,
+		wearsSquare,
+		godRingOf,
+		placeholderFor,
 		type Person
 	} from '$lib/people';
 	import { reading, isKorean, isStageMode, leadLang, activateDialogue } from '$lib/reading.svelte';
 	import { filterScriptNsfw } from '$lib/nsfwUi.svelte';
+	import { dialogueUi } from '$lib/dialogueUi.svelte';
+	import { affiliationOf, badgeOf, handleOf } from '$lib/tweet';
+	import { chatForms, mailOf, speakerName, standings, type Mail } from '$lib/chat';
 	import { buildBeats } from '$lib/beats';
 	import { utteranceOf } from '$lib/speech.svelte';
 	import { storyImg } from '$lib/img';
+	import { recordBook, type Testimony } from '$lib/recordBooks';
 	import Self from './Blocks.svelte';
 	import DiagramBlock from './diagrams/DiagramBlock.svelte';
+	import HanjaName from './HanjaName.svelte';
+	import RecordQuote from './RecordQuote.svelte';
+	import MapExcerpt from './MapExcerpt.svelte';
+	import BattleMap from './BattleMap.svelte';
+	import PersonCard from './PersonCard.svelte';
+	import TermCard from './TermCard.svelte';
+	import PoemCard from './PoemCard.svelte';
+	import ChengyuCard from './ChengyuCard.svelte';
+	import EdictScroll from './EdictScroll.svelte';
+	import CovenantCard from './CovenantCard.svelte';
+	import OmenTicker from './OmenTicker.svelte';
+	import OathStone from './OathStone.svelte';
+	import PlaceCard from './PlaceCard.svelte';
 	import SpeakButton from './SpeakButton.svelte';
 	import ImageStack from './ImageStack.svelte';
+	import Replay from './Replay.svelte';
+	import VerifiedBadge from './VerifiedBadge.svelte';
+	import EmailLetter from './EmailLetter.svelte';
+	import FacebookLifeEvent from './FacebookLifeEvent.svelte';
+	import BreakingNews from './BreakingNews.svelte';
 
 	type Dialogue = Extract<Block, { kind: 'dialogue' }>;
 
@@ -28,36 +54,73 @@
 		idPrefix = '',
 		sceneFrom,
 		/** Cue art for a solo flashback beat — interleaved beside inner blocks in script mode. */
-		flashImages
+		flashImages,
+		/** Cue art for a beat that opens on a post: drawn inside that post, as attached media. */
+		media,
+		/** A war episode: Hybrid breaks its first titled map as news. */
+		breaking = false
 	}: {
 		blocks: Block[];
 		year?: number | null;
 		idPrefix?: string;
 		sceneFrom?: Block[];
 		flashImages?: ImageSlot[];
+		media?: ImageSlot[];
+		breaking?: boolean;
 	} = $props();
 
+	/** Blocks drawn whatever the reading language: plates, cards, and records (which carry every tongue together). */
+	const ALWAYS = new Set<Block['kind']>([
+		'flashback',
+		'table',
+		'hanja',
+		'verse',
+		'formation',
+		'battle',
+		'diagram',
+		'map',
+		'card',
+		'term',
+		'day',
+		'scene',
+		'quote',
+		'poem',
+		'chengyu',
+		'edict',
+		'covenant',
+		'omens',
+		'oath',
+		'place',
+		'wed'
+	]);
+
+	/** Widgets that animate in, and so carry a replay control. */
+	const REPLAYABLE = new Set<Block['kind']>([
+		'hanja',
+		'quote',
+		'map',
+		'card',
+		'term',
+		'poem',
+		'chengyu',
+		'edict',
+		'covenant',
+		'omens',
+		'oath',
+		'place',
+		'diagram'
+	]);
+
 	function visible(b: Block) {
-		if (
-			b.kind === 'flashback' ||
-			b.kind === 'table' ||
-			b.kind === 'hanja' ||
-			b.kind === 'verse' ||
-			b.kind === 'formation' ||
-			b.kind === 'diagram' ||
-			b.kind === 'day' ||
-			b.kind === 'scene'
-		)
-			return true;
-		// quotes always carry hanja / hangul / english together
-		if (b.kind === 'quote') return true;
+		if (ALWAYS.has(b.kind)) return true;
 		if (reading.lang === 'both') return true;
 		if (b.kind === 'dialogue')
 			return reading.lang === 'en'
 				? !!b.en?.length || !b.lines.some((l) => isKorean(l))
 				: b.lines.some(Boolean);
 		// narration + retrospective monologue: EN always; KO when translated
-		return reading.lang === 'en' ? true : !!b.ko || isKorean(b.html);
+		if (reading.lang === 'en' || !('html' in b) || !b.html) return true;
+		return ('ko' in b && !!b.ko) || isKorean(b.html);
 	}
 
 	/** The narration string to render for the current language. */
@@ -93,16 +156,215 @@
 		return map;
 	});
 
+	type Quote = Extract<Block, { kind: 'quote' }>;
+
+	/**
+	 * Read across the whole entry, since beats split it between stills: runs of quotes
+	 * sharing an `event` become one testimony, and letters alternate sides by sender.
+	 */
+	let records = $derived.by(() => {
+		const testimony = new Map<Block, Testimony>();
+		const side = new Map<Block, 'left' | 'right'>();
+		const senders: string[] = [];
+		const poets: string[] = [];
+		const source = sceneFrom ?? blocks;
+		for (let i = 0; i < source.length; i++) {
+			const b = source[i];
+			// A verse exchange: each poet keeps a side; an unnamed poet takes the next one.
+			if (b.kind === 'poem') {
+				const who = b.person ?? `~${i}`;
+				if (!poets.includes(who)) poets.push(who);
+				side.set(b, poets.indexOf(who) % 2 ? 'right' : 'left');
+				continue;
+			}
+			if (b.kind !== 'quote') continue;
+			if (b.style === 'letter') {
+				const who = b.person ?? b.source;
+				if (!senders.includes(who)) senders.push(who);
+				side.set(b, senders.indexOf(who) % 2 ? 'right' : 'left');
+			}
+			if (!b.event || testimony.has(b)) continue;
+			const run: Quote[] = [b];
+			for (let j = i + 1; j < source.length; j++) {
+				const next = source[j];
+				if (next.kind !== 'quote' || next.event !== b.event) break;
+				run.push(next);
+			}
+			if (run.length < 2) continue;
+			const nations = run.map((q) => recordBook(q.source).nation);
+			const sources = run.map((q) => q.source);
+			const { stance, claim, claimKo } = run[0];
+			run.forEach((q, index) =>
+				testimony.set(q, {
+					index,
+					count: run.length,
+					nations,
+					sources,
+					key: run[0],
+					stance,
+					claim,
+					claimKo
+				})
+			);
+		}
+		return { testimony, side };
+	});
+
+	/**
+	 * In an unbroken exchange, a speaker is named only the first time they talk;
+	 * after that the face carries it. Read across the whole entry, since beats
+	 * split one exchange between stills.
+	 */
+	let quietNames = $derived.by(() => {
+		const quiet = new Set<Block>();
+		let named = new Set<string>();
+		for (const b of sceneFrom ?? blocks) {
+			if (b.kind !== 'dialogue') {
+				named = new Set();
+				continue;
+			}
+			const key = `${b.person ?? b.speaker ?? ''}|${b.look ?? ''}`;
+			if (named.has(key)) quiet.add(b);
+			else named.add(key);
+		}
+		return quiet;
+	});
+
+	/** Script, message or post for each line, by the reader's dialogue style (Hybrid reads the room). */
+	let forms = $derived(chatForms(sceneFrom ?? blocks, dialogueUi.style));
+	const formOf = (b: Block) => forms.get(b) ?? 'script';
+
+	/** Who each speaker is at their line: the card that introduced them, or an heir under a living king. */
+	let standing = $derived(standings(sceneFrom ?? blocks, year));
+	const lookOf = (b: Dialogue) => b.look ?? standing.get(b)?.look;
+	const reigns = (b: Dialogue, p: Person) => !standing.get(b)?.heir && isMonarch(p, year, lookOf(b));
+	const squared = (b: Dialogue, p: Person) => !standing.get(b)?.heir && wearsSquare(p, year, lookOf(b));
+
+	let hybrid = $derived(dialogueUi.style === 'hybrid');
+
+	/** Hybrid letters: records and `chat: 'mail'` lines, threaded as an inbox. */
+	let mails = $derived(hybrid ? mailOf(sceneFrom ?? blocks, forms) : new Map<Block, Mail>());
+
+	/** A letter's lines in the reader's language first, the other tongue under it. */
+	function mailLines(b: Dialogue): { lead: string; sub?: string }[] {
+		return Array.from({ length: lineCount(b) }, (_, j) => {
+			const ko = reading.lang === 'en' ? undefined : b.lines[j];
+			const en = reading.lang === 'ko' ? undefined : b.en?.[j];
+			const [lead, sub] = koFirst ? [ko ?? en, ko ? en : undefined] : [en ?? ko, en ? ko : undefined];
+			return { lead: lead ?? '', sub };
+		}).filter((l) => l.lead);
+	}
+
+	/** Hybrid, war episode: the first map is breaking news; every later headline crawls under it. */
+	let news = $derived.by(() => {
+		if (!hybrid || !breaking) return undefined;
+		const source = sceneFrom ?? blocks;
+		const headlineOf = (b: Block) =>
+			b.kind === 'map' ? (b.title ?? b.caption) : b.kind === 'formation' ? b.title : b.kind === 'day' ? b.label : undefined;
+		const lead = source.find((b): b is Extract<Block, { kind: 'map' }> => b.kind === 'map' && !!headlineOf(b));
+		const headline = lead && headlineOf(lead);
+		if (!lead || !headline) return undefined;
+		const ticker = source
+			.filter((b) => b !== lead)
+			.map(headlineOf)
+			.filter((t): t is string => !!t);
+		return { block: lead, headline, headlineKo: lead.ko, ticker };
+	});
+
+	/** Posts always sit in a card; in Hybrid, so do messages, so every app reads as its own screen. */
+	const carded = (b: Block | undefined): b is Dialogue =>
+		b?.kind === 'dialogue' &&
+		(formOf(b) === 'post' || (formOf(b) === 'message' && dialogueUi.style === 'hybrid'));
+
+	/**
+	 * An unbroken run of carded lines in one form is one card (a post thread, a
+	 * chat screen). Each line knows whether the card runs on above or below it;
+	 * a post also knows whom it answers when the speaker changes.
+	 */
+	let threads = $derived.by(() => {
+		const map = new Map<Block, { above: boolean; below: boolean; replyTo?: Dialogue }>();
+		const source = sceneFrom ?? blocks;
+		const joins = (a: Block | undefined, b: Dialogue) => carded(a) && formOf(a) === formOf(b);
+		for (let i = 0; i < source.length; i++) {
+			const b = source[i];
+			if (!carded(b)) continue;
+			const prev = source[i - 1];
+			const above = joins(prev, b);
+			const replyTo =
+				above && formOf(b) === 'post' && prev?.kind === 'dialogue' && prev.person && prev.person !== b.person
+					? prev
+					: undefined;
+			map.set(b, { above, below: joins(source[i + 1], b), replyTo });
+		}
+		return map;
+	});
+
 	function sceneIdFor(block: Block): string | undefined {
 		return headerIdByBlock.get(block) ?? sceneIdForBlock(block, sceneFrom ?? blocks, idPrefix);
 	}
 </script>
 
+<!-- Every widget that animates in, drawn inside a replay control. -->
+{#snippet widget(block: Block)}
+	{#if block.kind === 'hanja'}
+		<HanjaName {block} />
+	{:else if block.kind === 'quote'}
+		<RecordQuote {block} {year} testimony={records.testimony.get(block)} side={records.side.get(block)} />
+	{:else if block.kind === 'map'}
+		<MapExcerpt {block} />
+	{:else if block.kind === 'card'}
+		<PersonCard {block} {year} />
+	{:else if block.kind === 'term'}
+		<TermCard {block} />
+	{:else if block.kind === 'poem'}
+		<PoemCard {block} {year} side={records.side.get(block)} />
+	{:else if block.kind === 'chengyu'}
+		<ChengyuCard {block} {year} />
+	{:else if block.kind === 'edict'}
+		<EdictScroll {block} {year} />
+	{:else if block.kind === 'covenant'}
+		<CovenantCard {block} {year} />
+	{:else if block.kind === 'omens'}
+		<OmenTicker {block} {year} />
+	{:else if block.kind === 'oath'}
+		<OathStone {block} {year} />
+	{:else if block.kind === 'place'}
+		<PlaceCard {block} {year} />
+	{:else if block.kind === 'diagram'}
+		<DiagramBlock {block} {year} />
+	{/if}
+{/snippet}
+
 <!-- The body of one dialogue block: who is talking, then the lines themselves.
      Shared by the plain rendering and the clickable immersive one. -->
 {#snippet utterance(block: Dialogue, p: Person | undefined)}
-	{#if p}
-		<span class="who">{nameOf(p, year, block.look)}</span>
+	{@const look = lookOf(block)}
+	{#if formOf(block) === 'post' && p}
+		{@const replyTo = threads.get(block)?.replyTo}
+		{@const answered = replyTo?.person ? byId.get(replyTo.person) : undefined}
+		{@const monarch = reigns(block, p)}
+		{@const badge = badgeOf(p, year, look, monarch)}
+		{@const org = affiliationOf(p, year)}
+		<span class="tweet-head">
+			<span class="tweet-name person" data-person={p.id}>{speakerName(p, year, look)}</span>
+			{#if badge}<VerifiedBadge {badge} />{/if}
+			{#if org}
+				<span class="org person" data-person={org.id} style:--org={org.color} title={org.name}>{org.glyph}</span>
+			{/if}
+			<span class="tweet-meta">{handleOf(p, year, look, monarch)}</span>
+		</span>
+		{#if answered && replyTo}
+			{@const theirLook = lookOf(replyTo)}
+			<span class="tweet-reply"
+				>Replying to <span class="handle person" data-person={answered.id}
+					>{handleOf(answered, year, theirLook, reigns(replyTo, answered))}</span
+				></span
+			>
+		{/if}
+	{:else if p && !quietNames.has(block)}
+		<span class="who"><span class="person" data-person={p.id}>{speakerName(p, year, look)}</span></span>
+	{:else if p}
+		<span class="sr-only">{speakerName(p, year, look)}</span>
 	{:else if block.speaker}
 		<span class="speaker">{block.speaker}</span>
 	{/if}
@@ -110,7 +372,9 @@
 		{@const ko = reading.lang === 'en' ? undefined : block.lines[j]}
 		{@const en = reading.lang === 'ko' ? undefined : block.en?.[j]}
 		<!-- The language the reader chose leads at body size; every other tongue
-		     follows underneath it, a step smaller and a shade through. -->
+		     follows underneath it, a step smaller and a shade through. Each line
+		     is one message: a bubble in comic mode, invisible otherwise. -->
+		<span class="msg">
 		{#if koFirst}
 			{#if ko}
 				<span class="line ko lead">{@html ko}</span>
@@ -139,8 +403,10 @@
 		{#if block.jaLatn?.[j]}
 			<span class="line ja-latn sub">{block.jaLatn[j]}</span>
 		{/if}
+		</span>
 	{/each}
 {/snippet}
+
 
 <div class="prose">
 	{#each shown as block, i (i)}
@@ -148,26 +414,64 @@
 			<p data-music={block.music || undefined}>{@html linkPeople(prose(block), year)}</p>
 		{:else if block.kind === 'cite'}
 			<p class="cite">{@html linkPeople(prose(block), year)}</p>
+		{:else if (block.kind === 'dialogue' || block.kind === 'quote') && mails.has(block)}
+			{@const mail = mails.get(block)!}
+			{@const next = mails.get(shown[i + 1])}
+			{@const from = mail.from ? byId.get(mail.from) : undefined}
+			{@const to = mail.to ? byId.get(mail.to) : undefined}
+			<EmailLetter
+				{mail}
+				{from}
+				{to}
+				{year}
+				above={!mail.head && mails.has(shown[i - 1])}
+				below={!!next && !next.head}
+				look={block.kind === 'dialogue' ? lookOf(block) : undefined}
+				lines={block.kind === 'dialogue' ? mailLines(block) : []}
+				record={block.kind === 'quote' ? block : undefined}
+			/>
+		{:else if block.kind === 'wed'}
+			{@const couple = block.couple.map((id) => byId.get(id))}
+			{#if hybrid && couple[0] && couple[1]}
+				<FacebookLifeEvent couple={[couple[0], couple[1]]} {year} />
+			{/if}
+		{:else if block.kind === 'map' && news?.block === block}
+			<BreakingNews headline={news.headline} headlineKo={news.headlineKo} ticker={news.ticker} />
+			<Replay>{@render widget(block)}</Replay>
 		{:else if block.kind === 'dialogue'}
 			{@const p = block.person ? byId.get(block.person) : undefined}
 			{@const spoken = utteranceOf(block.lines, block.en, p?.id ?? null)}
+			{@const thread = threads.get(block)}
+			{@const form = formOf(block)}
+			{@const look = lookOf(block)}
 			<div
 				class="dialogue"
+				class:as-msg={form === 'message'}
+				class:as-post={form === 'post'}
+				class:carded={carded(block)}
+				class:wechat={form === 'message' && !!block.zh?.length}
+				class:line-app={form === 'message' && !block.zh?.length && !!block.ja?.length}
+				class:thread-above={thread?.above}
+				class:thread-below={thread?.below}
 				style:--chip={p ? colorOf(p) : block.chip}
 				data-speaker={p?.id ?? undefined}
-				data-look={block.look ?? undefined}
+				data-look={look ?? undefined}
 			>
 				{#if p}
 					{@const maidSeed =
 						p.id === 'courtmaid'
 							? (block.lines ?? block.en ?? []).join('\n')
 							: undefined}
-					{@const art = avatarOf(p, maidSeed, year, block.look)}
-					{@const who = nameOf(p, year, block.look)}
+					{@const art = avatarOf(p, maidSeed, year, look)}
+					{@const who = nameOf(p, year, look)}
+					{@const ring = godRingOf(p)}
 					<button
 						type="button"
 						class="face person"
+						class:monarch={squared(block, p)}
+						class:god-ring={!!ring}
 						class:silhouette={isPlaceholderArt(art) && p.id !== 'courtmaid'}
+						style:--god-ring={ring}
 						data-person={p.id}
 						title={who}
 						aria-label={who}
@@ -179,7 +483,10 @@
 						{/if}
 					</button>
 				{:else}
-					<span class="chip"></span>
+					{@const stand = placeholderFor(block.speaker, block.gender)}
+					<span class="face silhouette unnamed" aria-hidden="true">
+						{#if stand}<img {...storyImg(stand, { kind: 'thumb', alt: '', sizes: '44px' })} />{/if}
+					</span>
 				{/if}
 				<!-- Immersion / cinema: the lines are a control — click one to put it
 				     on stage. Only speakers with a profile can hold a stage, so only
@@ -196,6 +503,11 @@
 				{:else}
 					<div class="lines">
 						{@render utterance(block, p)}
+					</div>
+				{/if}
+				{#if media?.length && form === 'post' && block === blocks[0]}
+					<div class="tweet-media">
+						<ImageStack images={media} inline />
 					</div>
 				{/if}
 				<!-- Hear the line: parked in the gutter under the face, out of the
@@ -232,29 +544,11 @@
 					</tbody>
 				</table>
 			</div>
-		{:else if block.kind === 'hanja'}
-			<div class="hanja">
-				{#each block.chars as c (c.char)}
-					<div class="hanja-char">
-						<span class="glyph">{c.char}</span>
-						<span class="gloss">{c.gloss}</span>
-					</div>
-				{/each}
-			</div>
-			{#if block.after}
+		{:else if REPLAYABLE.has(block.kind)}
+			<Replay>{@render widget(block)}</Replay>
+			{#if block.kind === 'hanja' && block.after}
 				<p class="hanja-after">{@html linkPeople(block.after, year)}</p>
 			{/if}
-		{:else if block.kind === 'quote'}
-			<figure class="quote">
-				{#if block.hanja}
-					<p class="quote-hanja">{block.hanja}</p>
-				{/if}
-				{#if block.ko}
-					<p class="quote-ko">{@html linkPeople(block.ko, year)}</p>
-				{/if}
-				<blockquote class="quote-en">{@html linkPeople(block.html, year)}</blockquote>
-				<figcaption>{block.source}</figcaption>
-			</figure>
 		{:else if block.kind === 'moral'}
 			<aside class="moral">
 				<span class="moral-label">{block.label ?? 'the warning'}</span>
@@ -271,6 +565,8 @@
 				{#if p}<span class="mono-label">{nameOf(p, year, block.look)}</span>{/if}
 				<p>{@html linkPeople(prose(block), year)}</p>
 			</aside>
+		{:else if block.kind === 'battle'}
+			<BattleMap {block} />
 		{:else if block.kind === 'formation'}
 			<figure class="formation">
 				{#if block.title}<figcaption class="fm-title">{block.title}</figcaption>{/if}
@@ -292,8 +588,6 @@
 				</div>
 				{#if block.note}<p class="fm-note">{block.note}</p>{/if}
 			</figure>
-		{:else if block.kind === 'diagram'}
-			<DiagramBlock {block} />
 		{:else if block.kind === 'day' || block.kind === 'scene'}
 			{@const sid = sceneIdFor(block)}
 			<!-- the siege calendar / merged-episode scene plate -->
@@ -448,16 +742,6 @@
 		display: none;
 	}
 
-	.chip {
-		width: 0.85rem;
-		height: 0.85rem;
-		margin: 0.35rem 0 0 0.45rem;
-		display: inline-block;
-		border-radius: 3px;
-		background: var(--chip);
-		box-shadow: 0 0 14px -2px var(--chip);
-	}
-
 	/* profile picture (or initial) for an assigned speaker */
 	.face {
 		width: 2.15rem;
@@ -474,6 +758,11 @@
 		transition:
 			transform 0.25s var(--ease),
 			box-shadow 0.25s var(--ease);
+	}
+
+	/* Whoever holds the throne that year: a square badge with softened corners. */
+	.face.monarch {
+		border-radius: var(--monarch-radius);
 	}
 
 	/* Initials sit on the same accent disk. */
@@ -500,6 +789,18 @@
 		opacity: 0.62;
 	}
 
+	/* A voice with no profile (a guard, a crowd): the silhouette, and nothing to open. */
+	.face.unnamed {
+		cursor: default;
+		background: color-mix(in srgb, var(--chip, var(--fg-faint)) 45%, transparent);
+		border-color: color-mix(in srgb, var(--chip, var(--fg-faint)) 40%, transparent);
+	}
+
+	.face.unnamed:hover {
+		transform: none;
+		box-shadow: none;
+	}
+
 	.initial {
 		font-family: var(--serif);
 		font-size: 0.82rem;
@@ -512,6 +813,233 @@
 		flex-direction: column;
 		color: var(--fg-dim);
 		min-width: 0;
+	}
+
+	/* One message per line. In the script it is invisible. */
+	.msg {
+		display: contents;
+	}
+
+	/* ————— Comic: every line a grey message bubble, the face at the foot of the stack ————— */
+	/* Mixed from the page itself, so a bubble stays a step off any ground: night, paper or flashback. */
+	.dialogue {
+		--bubble: color-mix(in srgb, var(--fg) 7%, var(--bg));
+		--bubble-ink: var(--fg);
+		--post-pad: 1.15rem;
+		--post-face: 2.5rem;
+	}
+
+	.dialogue.as-msg {
+		align-items: end;
+	}
+
+	.as-msg .lines {
+		align-items: flex-start;
+		gap: 0.2rem;
+	}
+
+	.as-msg .who {
+		margin: 0 0 0.05rem;
+	}
+
+	.as-msg .msg {
+		display: flex;
+		flex-direction: column;
+		width: fit-content;
+		max-width: min(100%, 30rem);
+		padding: 0.42rem 0.8rem 0.46rem;
+		border-radius: 1.15rem;
+		color: var(--bubble-ink);
+		background: var(--bubble);
+	}
+
+	.as-msg .msg:last-child {
+		border-bottom-left-radius: 0.3rem;
+	}
+
+	.as-msg .msg .line {
+		color: inherit;
+	}
+
+	.as-msg .msg .line.sub {
+		margin-bottom: 0;
+	}
+
+	/* ————— Cards: a post thread (and, in Hybrid, a chat) is one bordered screen ————— */
+	.dialogue.carded {
+		--post-edge: color-mix(in srgb, var(--fg) 10%, transparent);
+		margin: var(--widget-gap) 0 0;
+		padding: var(--post-pad) calc(var(--post-pad) + 0.25rem) 0.5rem var(--post-pad);
+		border: 1px solid var(--post-edge);
+		border-bottom: none;
+		border-radius: var(--widget-radius) var(--widget-radius) 0 0;
+	}
+
+	.dialogue.carded.thread-above {
+		margin-top: 0;
+		padding-top: 0.6rem;
+		border-top: none;
+		border-radius: 0;
+	}
+
+	.dialogue.carded:not(.thread-below) {
+		margin-bottom: var(--widget-gap);
+		padding-bottom: var(--post-pad);
+		border-bottom: 1px solid var(--post-edge);
+		border-bottom-left-radius: var(--widget-radius);
+		border-bottom-right-radius: var(--widget-radius);
+	}
+
+	/* ————— Tweet: a post per utterance, threaded down the avatars ————— */
+	.dialogue.as-post {
+		grid-template-columns: var(--post-face) 1fr;
+		gap: 0.85rem;
+	}
+
+	.dialogue.as-post.thread-below::before {
+		content: '';
+		position: absolute;
+		left: calc(var(--post-pad) + var(--post-face) / 2 - 1px);
+		top: calc(var(--post-pad) + var(--post-face) + 0.3rem);
+		bottom: -0.3rem;
+		width: 2px;
+		border-radius: 1px;
+		background: color-mix(in srgb, var(--fg) 20%, transparent);
+	}
+
+	.dialogue.as-post.thread-above.thread-below::before {
+		top: calc(0.6rem + var(--post-face) + 0.3rem);
+	}
+
+	.as-post .face {
+		width: var(--post-face);
+		height: var(--post-face);
+		margin-top: 0;
+	}
+
+	/* A still that opens on a post rides in it, as media under the text. */
+	.tweet-media {
+		grid-column: 2;
+		margin-top: 0.35rem;
+		overflow: hidden;
+		border: 1px solid var(--post-edge);
+		border-radius: var(--widget-radius);
+	}
+
+	.tweet-media :global(.stack) {
+		margin: 0;
+	}
+
+	.as-post .lines {
+		color: var(--fg);
+	}
+
+	.as-post .line.lead {
+		color: var(--fg);
+	}
+
+	.tweet-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.25rem;
+		margin-bottom: 0.15rem;
+		font-size: 0.9rem;
+		line-height: 1.3;
+	}
+
+	/* Names in dialogue open the wiki; they keep the dialogue's own type. */
+	.prose .who .person {
+		font-weight: inherit;
+		color: inherit;
+	}
+
+	.prose .tweet-name {
+		font-weight: 700;
+		color: var(--fg-strong);
+	}
+
+	.prose .tweet-name:hover,
+	.prose .who .person:hover {
+		text-decoration: underline;
+	}
+
+	/* An affiliation: the house's glyph brushed in white on a small square of its
+	   colour, as X tiles a company. Three classes deep, past the global .person reset. */
+	.prose .tweet-head .org {
+		display: inline-grid;
+		place-items: center;
+		width: 1.15rem;
+		height: 1.15rem;
+		border-radius: 3px;
+		font-family: 'Yuji Boku', 'LXGW WenKai TC', 'Noto Serif KR', serif;
+		font-size: 0.8rem;
+		font-weight: 700;
+		line-height: 1;
+		color: #fff;
+		-webkit-text-stroke: 0.035em #fff;
+		background: var(--org);
+	}
+
+	.prose .tweet-head .org:hover {
+		color: #fff;
+		filter: brightness(1.12);
+	}
+
+	.tweet-meta,
+	.tweet-reply {
+		font-size: 0.85rem;
+		color: var(--fg-faint);
+	}
+
+	.tweet-reply {
+		margin-bottom: 0.3rem;
+	}
+
+	.prose .tweet-reply .handle {
+		font-weight: inherit;
+		color: #1d9bf0;
+	}
+
+	/* ————— Tang speech as WeChat: square green bubbles ————— */
+	.dialogue.as-msg.wechat {
+		--bubble: #95ec69;
+		--bubble-ink: #111;
+	}
+
+	.wechat .msg,
+	.wechat .msg:last-child {
+		border-radius: 4px;
+		box-shadow: none;
+	}
+
+	.wechat .msg .line.sub {
+		color: #3c5a2c;
+		opacity: 0.85;
+	}
+
+	/* ————— Yamato speech as LINE: white rounded bubbles, the name in LINE green ————— */
+	.dialogue.as-msg.line-app {
+		--bubble: #ffffff;
+		--bubble-ink: #111;
+	}
+
+	.line-app .msg {
+		border-radius: 1.2rem;
+		box-shadow: 0 0 0 1px rgb(0 0 0 / 0.08);
+	}
+
+	.line-app .msg:last-child {
+		border-top-left-radius: 0.35rem;
+		border-bottom-left-radius: 1.2rem;
+	}
+
+	.prose .line-app .who .person {
+		color: #06c755;
+	}
+
+	.line-app .msg .line.sub {
+		color: #5c5c66;
 	}
 
 	/* ————— speak this line —————
@@ -629,6 +1157,16 @@
 		margin-bottom: 0.1rem;
 	}
 
+	/* A repeat speaker's name: kept for screen readers, gone from the page. */
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+
 	.speaker {
 		font-size: 0.85em;
 		opacity: 0.8;
@@ -662,7 +1200,7 @@
 		overflow-x: auto;
 		margin: 1.2rem 0;
 		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
+		border-radius: var(--widget-radius);
 	}
 
 	table {
@@ -701,78 +1239,8 @@
 		color: var(--fg-dim);
 	}
 
-	.hanja {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		margin: 1.5rem 0 0.8rem;
-	}
-
-	.hanja-char {
-		display: flex;
-		align-items: center;
-		gap: 0.9rem;
-	}
-
-	.glyph {
-		font-family: 'Noto Serif KR', serif;
-		font-size: 3rem;
-		font-weight: 900;
-		line-height: 1;
-		color: var(--gold);
-	}
-
-	.gloss {
-		font-size: 0.82rem;
-		font-weight: 600;
-		letter-spacing: var(--tracking-micro);
-		color: var(--fg-dim);
-	}
-
 	.hanja-after {
 		margin-top: 1.2rem;
-	}
-
-	/* ————— a genuine line from the record ————— */
-	.quote {
-		margin: 1.3rem 0;
-		padding: 0 0 0 1rem;
-		border-left: 2px solid var(--quote);
-	}
-
-	.quote-hanja {
-		margin: 0 0 0.35rem;
-		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 0.98em;
-		letter-spacing: 0.14em;
-		line-height: 1.45;
-		color: color-mix(in srgb, var(--quote) 72%, var(--fg-faint));
-	}
-
-	.quote-ko {
-		margin: 0 0 0.35rem;
-		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 1em;
-		line-height: 1.48;
-		color: color-mix(in srgb, var(--quote) 88%, var(--fg-strong));
-	}
-
-	.quote-en,
-	.quote blockquote {
-		margin: 0;
-		font-size: 0.98em;
-		font-style: italic;
-		line-height: 1.48;
-		color: color-mix(in srgb, var(--quote) 70%, var(--fg-dim));
-	}
-
-	.quote figcaption {
-		margin-top: 0.45rem;
-		font-size: 0.68rem;
-		letter-spacing: var(--tracking-micro);
-		line-height: 1.45;
-		max-width: 54rem;
-		color: color-mix(in srgb, var(--quote) 45%, var(--fg-faint));
 	}
 
 	/* ————— what the story leaves behind ————— */
@@ -833,7 +1301,7 @@
 		margin: 1.4rem 0;
 		padding: 0.9rem 1rem 0.8rem;
 		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
+		border-radius: var(--widget-radius);
 	}
 
 	.fm-title {
@@ -1003,7 +1471,8 @@
 	/* ————— person triggers ————— */
 	.prose :global(.person) {
 		font: inherit;
-		font-weight: 500;
+		font-weight: var(--weight-link);
+		letter-spacing: inherit;
 		color: var(--fg-strong);
 		background: none;
 		border: none;

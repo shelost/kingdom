@@ -1,0 +1,999 @@
+{
+	"id": "jupilsan-645",
+	"title": "Stallion Mountain",
+	"ko": "주필산 전투",
+	"hanja": "駐蹕山之戰",
+	"year": 645,
+	"place": "jupil",
+	"scale": {
+		"km": 4,
+		"px": 100
+	},
+	"terrain": [
+		{
+			"kind": "city",
+			"at": [
+				250,
+				95
+			],
+			"side": "goguryeo",
+			"label": "Ansi",
+			"ko": "안시성"
+		},
+		{
+			"kind": "camp",
+			"at": [
+				185,
+				205
+			],
+			"side": "tang",
+			"label": "Tang camp",
+			"ko": "당군 진영"
+		},
+		{
+			"kind": "ridge",
+			"points": [
+				[
+					335,
+					215
+				],
+				[
+					352,
+					330
+				],
+				[
+					338,
+					450
+				]
+			],
+			"label": "western ridge",
+			"ko": "서쪽 고개",
+			"labelAt": [
+				300,
+				478
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				480,
+				92
+			],
+			"r": 46,
+			"label": "Stallion Mountain",
+			"ko": "주필산",
+			"labelAt": [
+				480,
+				28
+			]
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				650,
+				190
+			],
+			"r": 30
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				672,
+				322
+			],
+			"r": 26
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				640,
+				478
+			],
+			"r": 24
+		},
+		{
+			"kind": "hill",
+			"at": [
+				690,
+				405
+			],
+			"r": 30
+		},
+		{
+			"kind": "label",
+			"at": [
+				612,
+				70
+			],
+			"label": "narrow valley",
+			"ko": "좁은 골짜기"
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					800,
+					0
+				],
+				[
+					760,
+					150
+				],
+				[
+					775,
+					290
+				],
+				[
+					745,
+					430
+				],
+				[
+					770,
+					560
+				]
+			],
+			"width": 9,
+			"label": "east stream",
+			"ko": "동천",
+			"labelAt": [
+				812,
+				205
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					1000,
+					292
+				],
+				[
+					880,
+					296
+				],
+				[
+					775,
+					288
+				],
+				[
+					690,
+					276
+				]
+			],
+			"label": "crow road",
+			"ko": "까마귀 길",
+			"labelAt": [
+				930,
+				268
+			]
+		}
+	],
+	"sides": [
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		},
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		},
+		{
+			"id": "mohe",
+			"name": "Mohe",
+			"ko": "말갈",
+			"color": "#4d7c6f"
+		}
+	],
+	"units": [
+		{
+			"id": "redragon",
+			"side": "tang",
+			"label": "Red Dragon",
+			"ko": "적룡",
+			"hero": "ashinasheer"
+		},
+		{
+			"id": "shiji",
+			"side": "tang",
+			"label": "Blue Dragon",
+			"ko": "청룡",
+			"hero": "lishiji"
+		},
+		{
+			"id": "wuji",
+			"side": "tang",
+			"label": "Black Dragon",
+			"ko": "흑룡",
+			"hero": "zhangsunwuji"
+		},
+		{
+			"id": "emperor",
+			"side": "tang",
+			"label": "Second Emperor",
+			"ko": "황제",
+			"hero": "taizong"
+		},
+		{
+			"id": "yeonsu",
+			"side": "goguryeo",
+			"label": "Go Yeonsu",
+			"ko": "고연수",
+			"hero": "goyeonsu"
+		},
+		{
+			"id": "hyejin",
+			"side": "goguryeo",
+			"label": "Go Hyejin",
+			"ko": "고혜진",
+			"hero": "gohyejin"
+		},
+		{
+			"id": "mohe",
+			"side": "mohe",
+			"label": "Mohe horse",
+			"ko": "말갈 기병",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "approach",
+			"label": "Forty li out",
+			"ko": "사십 리 밖",
+			"caption": "The relief army comes down the crow road, a hundred and fifty thousand strong, and camps forty li from Ansi. The emperor sends the Red Dragon out with a thousand Turkish horse to meet them, and tells him to lose.",
+			"captionKo": "구원군 십오만이 까마귀 길을 내려와 안시에서 사십 리 떨어진 곳에 진을 친다. 황제는 적룡에게 돌궐 기병 천을 주어 맞으러 내보내며, 지라고 이른다.",
+			"units": {
+				"redragon": {
+					"at": [
+						630,
+						280
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"shiji": {
+					"at": [
+						240,
+						262
+					],
+					"men": 15000,
+					"facing": 0
+				},
+				"wuji": {
+					"at": [
+						165,
+						268
+					],
+					"men": 11000,
+					"facing": 0
+				},
+				"emperor": {
+					"at": [
+						218,
+						165
+					],
+					"men": 4000,
+					"facing": 0
+				},
+				"yeonsu": {
+					"at": [
+						880,
+						205
+					],
+					"men": 75000,
+					"facing": 180
+				},
+				"hyejin": {
+					"at": [
+						895,
+						335
+					],
+					"men": 72000,
+					"facing": 180
+				},
+				"mohe": {
+					"at": [
+						815,
+						272
+					],
+					"men": 3000,
+					"shape": "wedge",
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							1000,
+							300
+						],
+						[
+							975,
+							296
+						],
+						[
+							950,
+							292
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							262,
+							222
+						],
+						[
+							450,
+							252
+						],
+						[
+							612,
+							278
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "lure",
+			"label": "Under the mountain",
+			"ko": "산 아래",
+			"caption": "The Red Dragon turns and runs, as ordered. Easy, say the Goguryeo, and they follow him to the foot of a mountain eight li from Ansi. Across the plain, under a ridge, the Tang look like a single army of fifteen thousand.",
+			"captionKo": "적룡이 명대로 등을 돌려 달아난다. 고구려는 만만하다며 그를 쫓아 안시에서 팔 리 떨어진 산기슭까지 온다. 들판 건너 고개 아래, 당군은 만오천짜리 군대 하나로 보인다.",
+			"units": {
+				"redragon": {
+					"at": [
+						255,
+						222
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"shiji": {
+					"at": [
+						368,
+						330
+					],
+					"men": 15000,
+					"shape": "line",
+					"facing": 0
+				},
+				"wuji": {
+					"at": [
+						165,
+						268
+					],
+					"men": 11000,
+					"facing": 0
+				},
+				"emperor": {
+					"at": [
+						218,
+						165
+					],
+					"men": 4000,
+					"facing": 0
+				},
+				"yeonsu": {
+					"at": [
+						522,
+						215
+					],
+					"men": 75000,
+					"facing": 180
+				},
+				"hyejin": {
+					"at": [
+						542,
+						372
+					],
+					"men": 72000,
+					"facing": 180
+				},
+				"mohe": {
+					"at": [
+						458,
+						296
+					],
+					"men": 3000,
+					"shape": "wedge",
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "feint",
+					"points": [
+						[
+							640,
+							280
+						],
+						[
+							460,
+							262
+						],
+						[
+							290,
+							226
+						]
+					],
+					"label": "losing on purpose",
+					"ko": "일부러 진다"
+				},
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							860,
+							282
+						],
+						[
+							720,
+							290
+						],
+						[
+							600,
+							296
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							250,
+							282
+						],
+						[
+							305,
+							310
+						],
+						[
+							345,
+							326
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "night",
+			"label": "The valley behind",
+			"ko": "뒤편 골짜기",
+			"caption": "That night the Black Dragon takes eleven thousand round the north of the mountain and into a narrow valley behind the Goguryeo line. The emperor climbs the northern hill with four thousand, the drums and the horns, banners furled.",
+			"captionKo": "그날 밤 흑룡이 만 천을 이끌고 산 북쪽을 돌아 고구려 진 뒤편 좁은 골짜기로 든다. 황제는 사천과 북과 뿔나팔을 데리고, 깃발을 눕힌 채 북쪽 언덕에 오른다.",
+			"units": {
+				"redragon": {
+					"at": [
+						255,
+						222
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"shiji": {
+					"at": [
+						368,
+						330
+					],
+					"men": 15000,
+					"shape": "line",
+					"facing": 0
+				},
+				"wuji": {
+					"at": [
+						712,
+						118
+					],
+					"men": 11000,
+					"shape": "column",
+					"facing": 100
+				},
+				"emperor": {
+					"at": [
+						480,
+						98
+					],
+					"men": 4000,
+					"facing": 90
+				},
+				"yeonsu": {
+					"at": [
+						522,
+						215
+					],
+					"men": 75000,
+					"facing": 180
+				},
+				"hyejin": {
+					"at": [
+						542,
+						372
+					],
+					"men": 72000,
+					"facing": 180
+				},
+				"mohe": {
+					"at": [
+						458,
+						296
+					],
+					"men": 3000,
+					"shape": "wedge",
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "flank",
+					"points": [
+						[
+							200,
+							240
+						],
+						[
+							300,
+							135
+						],
+						[
+							430,
+							30
+						],
+						[
+							600,
+							36
+						],
+						[
+							700,
+							88
+						]
+					],
+					"label": "by night",
+					"ko": "밤사이"
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							235,
+							160
+						],
+						[
+							360,
+							122
+						],
+						[
+							452,
+							104
+						]
+					],
+					"label": "banners furled",
+					"ko": "깃발을 눕히고"
+				}
+			]
+		},
+		{
+			"id": "drums",
+			"label": "Drums on the mountain",
+			"ko": "산 위의 북",
+			"caption": "At dawn the Goguryeo line goes for the fifteen thousand. Then the drums start on the mountain, and the Black Dragon's banners come out of the valley behind them. A man in white rides straight through their front. The line turns twice, and breaks.",
+			"captionKo": "새벽, 고구려 진이 만오천을 향해 나아간다. 그때 산 위에서 북이 울리고, 뒤편 골짜기에서 흑룡의 깃발이 쏟아진다. 흰옷의 사내 하나가 선두를 곧장 꿰뚫는다. 진은 두 번 돌아서고, 무너진다.",
+			"units": {
+				"redragon": {
+					"at": [
+						300,
+						250
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"shiji": {
+					"at": [
+						440,
+						322
+					],
+					"men": 15000,
+					"shape": "line",
+					"facing": 0
+				},
+				"wuji": {
+					"at": [
+						668,
+						262
+					],
+					"men": 11000,
+					"facing": 180
+				},
+				"emperor": {
+					"at": [
+						492,
+						148
+					],
+					"men": 4000,
+					"facing": 90
+				},
+				"yeonsu": {
+					"at": [
+						568,
+						236
+					],
+					"men": 65000,
+					"routed": true,
+					"r": 0.6
+				},
+				"hyejin": {
+					"at": [
+						590,
+						382
+					],
+					"men": 62000,
+					"routed": true,
+					"r": 0.6
+				},
+				"mohe": {
+					"at": [
+						520,
+						300
+					],
+					"men": 3000,
+					"routed": true,
+					"r": 0.8
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							395,
+							300
+						],
+						[
+							455,
+							292
+						],
+						[
+							530,
+							294
+						]
+					],
+					"label": "the man in white",
+					"ko": "흰 갑옷의 사내"
+				},
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							400,
+							350
+						],
+						[
+							450,
+							345
+						],
+						[
+							500,
+							338
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							712,
+							140
+						],
+						[
+							704,
+							205
+						],
+						[
+							668,
+							248
+						]
+					],
+					"label": "out of the valley",
+					"ko": "골짜기에서"
+				},
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							485,
+							122
+						],
+						[
+							500,
+							165
+						],
+						[
+							518,
+							200
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "ambush",
+					"at": [
+						446,
+						70
+					],
+					"label": "drums and horns",
+					"ko": "북과 뿔나팔"
+				},
+				{
+					"kind": "clash",
+					"at": [
+						580,
+						352
+					],
+					"label": "twenty thousand heads",
+					"ko": "머리 이만"
+				}
+			]
+		},
+		{
+			"id": "hill",
+			"label": "The burned bridges",
+			"ko": "불탄 다리",
+			"caption": "Go Yeonsu pulls what is left onto a hill to regroup. Behind the hill, the Black Dragon has already taken the bridges down and burned them. Nobody goes home the way they came. The emperor likes that trick.",
+			"captionKo": "고연수는 남은 군을 수습하려고 언덕 위로 물린다. 언덕 뒤의 다리는 흑룡이 이미 끊어 불태웠다. 왔던 길로 돌아가는 자는 없다. 황제가 아끼는 수법이다.",
+			"units": {
+				"redragon": {
+					"at": [
+						420,
+						250
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"shiji": {
+					"at": [
+						588,
+						402
+					],
+					"men": 15000,
+					"shape": "line",
+					"facing": 0
+				},
+				"wuji": {
+					"at": [
+						742,
+						325
+					],
+					"men": 11000,
+					"facing": 200
+				},
+				"emperor": {
+					"at": [
+						520,
+						250
+					],
+					"men": 4000,
+					"facing": 0
+				},
+				"yeonsu": {
+					"at": [
+						680,
+						382
+					],
+					"men": 17000,
+					"facing": 270
+				},
+				"hyejin": {
+					"at": [
+						712,
+						432
+					],
+					"men": 17000,
+					"facing": 270
+				},
+				"mohe": {
+					"at": [
+						652,
+						428
+					],
+					"men": 3000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "retreat",
+					"points": [
+						[
+							570,
+							262
+						],
+						[
+							630,
+							320
+						],
+						[
+							668,
+							360
+						]
+					],
+					"label": "onto a hill",
+					"ko": "언덕 위로"
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							672,
+							268
+						],
+						[
+							720,
+							285
+						],
+						[
+							742,
+							305
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						774,
+						288
+					],
+					"label": "bridges burned",
+					"ko": "다리가 불탄다"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						748,
+						448
+					]
+				}
+			]
+		},
+		{
+			"id": "surrender",
+			"label": "Thirty-six thousand",
+			"ko": "삼만 육천",
+			"caption": "The two commanders walk into the Tang camp and surrender, and thirty-six thousand men walk in behind them. The officers are sent inland; the soldiers are sent home. The Mohe riders are marched into a valley and buried alive.",
+			"captionKo": "두 장수가 당 진영으로 걸어 들어와 항복하고, 삼만 육천이 그 뒤를 따른다. 장교들은 내지로 보내지고 병졸들은 집으로 돌려보내진다. 말갈 기병은 골짜기로 끌려가 산 채로 묻힌다.",
+			"units": {
+				"redragon": {
+					"at": [
+						300,
+						300
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"shiji": {
+					"at": [
+						440,
+						345
+					],
+					"men": 15000,
+					"shape": "line",
+					"facing": 180
+				},
+				"wuji": {
+					"at": [
+						520,
+						272
+					],
+					"men": 11000,
+					"facing": 180
+				},
+				"emperor": {
+					"at": [
+						228,
+						178
+					],
+					"men": 4000,
+					"facing": 0
+				},
+				"yeonsu": {
+					"at": [
+						318,
+						232
+					],
+					"men": 17000,
+					"routed": true,
+					"r": 0.6
+				},
+				"hyejin": {
+					"at": [
+						350,
+						282
+					],
+					"men": 17000,
+					"routed": true,
+					"r": 0.6
+				},
+				"mohe": {
+					"at": [
+						600,
+						508
+					],
+					"men": 0
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							660,
+							392
+						],
+						[
+							500,
+							315
+						],
+						[
+							372,
+							262
+						]
+					],
+					"label": "on their knees",
+					"ko": "무릎걸음으로"
+				}
+			],
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						262,
+						212
+					],
+					"label": "36,800 surrender",
+					"ko": "삼만 육천팔백 항복"
+				},
+				{
+					"kind": "death",
+					"at": [
+						600,
+						508
+					],
+					"label": "Mohe buried alive",
+					"ko": "말갈 생매장"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Zizhi Tongjian 198, Zhenguan 19 (645), 6th month",
+		"Old Book of Tang 199A, Account of Goryeo",
+		"New Book of Tang 220, Account of Goryeo",
+		"Samguk Sagi 21, Annals of Goguryeo, Bojang year 4"
+	],
+	"note": "Heads taken: twenty thousand in the Zizhi Tongjian and the New Book of Tang, ten thousand in the Old Book of Tang (the Samguk Sagi's figure is garbled). The split between Go Yeonsu and Go Hyejin is not recorded and is drawn nearly even; of the Mohe, only the 3,300 buried afterwards are counted. What became of the ninety-odd thousand who neither died nor surrendered is not said; they simply leave the map. The records say the bridges were pulled down; the story burns them. The battlefield is unidentified; the ground follows the order of battle, and the forty-li line is drawn shorter.",
+	"noteKo": "벤 머리는 『자치통감』과 『신당서』가 이만, 『구당서』가 만이다(『삼국사기』의 숫자는 글자가 흐트러져 있다). 고연수와 고혜진 사이의 몫은 기록에 없어 거의 반반으로 그렸다. 말갈은 뒤에 생매장된 삼천삼백만 셈해져 있다. 죽지도 항복하지도 않은 구만여 명이 어떻게 되었는지는 기록에 없어, 그냥 지도 밖으로 사라진다. 기록은 다리를 걷어냈다고 하고, 이야기는 불태운다. 싸움터의 위치는 확인되지 않았다. 지형은 전투 서열에 맞춰 그렸고, 사십 리 진은 짧게 그렸다."
+}

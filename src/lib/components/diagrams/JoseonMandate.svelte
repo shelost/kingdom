@@ -1,14 +1,5 @@
-<script lang="ts">
-	/**
-	 * Old Joseon mandate lineage: Hwanin → Hwanung → Dangun → Asadal.
-	 * Compact vertical chain. Step unused beyond registry default.
-	 */
-	import type { DiagramProps } from './registry';
-	import ChartLabel from './ChartLabel.svelte';
-
-	let { step = 'lineage', active = false }: DiagramProps = $props();
-
-	const NODES = [
+<script module lang="ts">
+	export const NODES = [
 		{ ko: '환인', en: 'Hwanin', y: 36 },
 		{ ko: '환웅', en: 'Hwanung', y: 96 },
 		{ ko: '단군', en: 'Dangun', y: 156 },
@@ -16,6 +7,21 @@
 	] as const;
 </script>
 
+<script lang="ts">
+	/**
+	 * Old Joseon mandate lineage: Hwanin → Hwanung → Dangun → Asadal.
+	 * Compact vertical chain. Step unused beyond registry default.
+	 */
+	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
+
+	let { step = 'lineage', active = false, flat = false }: DiagramProps = $props();
+
+</script>
+
+<KitStage id="joseon-mandate" {step} {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 280 280"
 	class="dg"
@@ -41,6 +47,8 @@
 
 	<text class="foot" style="--d: 900" x="140" y="258">고조선 · Old Joseon</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

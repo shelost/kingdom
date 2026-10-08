@@ -1,0 +1,608 @@
+{
+	"id": "maeso-675",
+	"title": "Maeso",
+	"ko": "매소성 전투",
+	"hanja": "買肖城之戰",
+	"year": 675,
+	"place": "maeso",
+	"scale": {
+		"km": 2,
+		"px": 130
+	},
+	"terrain": [
+		{
+			"kind": "plain",
+			"points": [
+				[
+					580,
+					250
+				],
+				[
+					760,
+					196
+				],
+				[
+					930,
+					236
+				],
+				[
+					940,
+					360
+				],
+				[
+					760,
+					404
+				],
+				[
+					600,
+					378
+				]
+			],
+			"label": "the flats",
+			"ko": "들판",
+			"labelAt": [
+				890,
+				262
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					70
+				],
+				[
+					850,
+					120
+				],
+				[
+					700,
+					170
+				],
+				[
+					600,
+					212
+				],
+				[
+					540,
+					236
+				],
+				[
+					480,
+					262
+				],
+				[
+					446,
+					300
+				],
+				[
+					410,
+					340
+				],
+				[
+					290,
+					362
+				],
+				[
+					160,
+					352
+				],
+				[
+					72,
+					336
+				]
+			],
+			"width": 16,
+			"label": "Hantan river",
+			"ko": "한탄강",
+			"labelAt": [
+				880,
+				84
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					214,
+					0
+				],
+				[
+					134,
+					170
+				],
+				[
+					72,
+					336
+				],
+				[
+					42,
+					450
+				],
+				[
+					22,
+					560
+				]
+			],
+			"width": 22,
+			"label": "Imjin river",
+			"ko": "임진강",
+			"labelAt": [
+				230,
+				70
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				518,
+				302
+			],
+			"r": 44
+		},
+		{
+			"kind": "fort",
+			"at": [
+				518,
+				298
+			],
+			"side": "tang",
+			"label": "Maeso Fortress",
+			"ko": "매소성",
+			"hold": {
+				"rout": "silla"
+			}
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					460,
+					0
+				],
+				[
+					494,
+					150
+				],
+				[
+					512,
+					262
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					526,
+					336
+				],
+				[
+					560,
+					440
+				],
+				[
+					596,
+					560
+				]
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				660,
+				540
+			],
+			"label": "to Surabol",
+			"ko": "서라벌로"
+		},
+		{
+			"kind": "label",
+			"at": [
+				120,
+				520
+			],
+			"label": "to Cheon Fortress",
+			"ko": "천성으로"
+		}
+	],
+	"sides": [
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		},
+		{
+			"id": "mohe",
+			"name": "Mohe",
+			"ko": "말갈",
+			"color": "#4d7c6f"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "tg-fort",
+			"side": "tang",
+			"label": "Li Jinxing",
+			"ko": "이근행"
+		},
+		{
+			"id": "mh-flats",
+			"side": "mohe",
+			"label": "Mohe horse camp",
+			"ko": "말갈 기병 진영"
+		},
+		{
+			"id": "sl-main",
+			"side": "silla",
+			"label": "Silla",
+			"ko": "신라",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-raid",
+			"side": "silla",
+			"label": "Raiders",
+			"ko": "습격대",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "camp",
+			"label": "Two hundred thousand on the flats",
+			"ko": "들판의 이십만",
+			"caption": "Two hundred thousand, by Silla's count, camp under a fortress built for a few hundred. Most are Mohe, and most of the Mohe are horses. The grass is outside the walls, and the supply fleet has just been sent home.",
+			"captionKo": "신라의 셈으로 이십만이 몇백 명 지키라고 쌓은 성 아래에 진을 친다. 대부분 말갈이고, 말갈은 대부분 말이다. 풀은 성 밖에 있다. 보급 함대는 방금 쫓겨 돌아갔다.",
+			"units": {
+				"tg-fort": {
+					"at": [
+						500,
+						296
+					],
+					"men": 100000,
+					"facing": 90,
+					"r": 0.85
+				},
+				"mh-flats": {
+					"at": [
+						756,
+						300
+					],
+					"men": 100000,
+					"facing": 90,
+					"r": 0.85
+				},
+				"sl-main": {
+					"at": [
+						470,
+						500
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"sl-raid": {
+					"at": [
+						730,
+						500
+					],
+					"men": 10000,
+					"facing": 290
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "retreat",
+					"points": [
+						[
+							150,
+							130
+						],
+						[
+							96,
+							290
+						],
+						[
+							56,
+							430
+						]
+					],
+					"label": "no fleet coming",
+					"ko": "함대는 오지 않는다"
+				}
+			]
+		},
+		{
+			"id": "pickets",
+			"label": "Cut the picket lines",
+			"ko": "말뚝 줄을 끊어라",
+			"caption": "Silla ignores the walls. Before dawn the raiders go for the picket lines on the flats. The worst stretch, under the archers, goes to a lieutenant who asked for it.",
+			"captionKo": "신라는 성벽을 쳐다보지도 않는다. 동트기 전, 습격대가 들판의 말뚝 줄로 간다. 궁수들 바로 밑, 제일 나쁜 자리는 자청한 비장 몫이다.",
+			"units": {
+				"tg-fort": {
+					"at": [
+						500,
+						296
+					],
+					"men": 100000,
+					"facing": 90,
+					"r": 0.85
+				},
+				"mh-flats": {
+					"at": [
+						756,
+						300
+					],
+					"men": 100000,
+					"facing": 90,
+					"r": 0.85
+				},
+				"sl-main": {
+					"at": [
+						496,
+						430
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"sl-raid": {
+					"at": [
+						770,
+						430
+					],
+					"men": 10000,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							780,
+							400
+						],
+						[
+							770,
+							372
+						],
+						[
+							760,
+							344
+						]
+					],
+					"label": "cut the pickets",
+					"ko": "말뚝 줄을 끊는다"
+				},
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							470,
+							400
+						],
+						[
+							490,
+							370
+						],
+						[
+							506,
+							346
+						]
+					],
+					"label": "Wonsul, under the walls",
+					"ko": "성벽 밑의 원술"
+				}
+			],
+			"events": [
+				{
+					"kind": "ambush",
+					"at": [
+						700,
+						352
+					]
+				}
+			]
+		},
+		{
+			"id": "herd",
+			"label": "The horses are going",
+			"ko": "말들이 간다",
+			"caption": "The herd goes all at once, and not toward the fortress. Thirty thousand three hundred and eighty horses, counted later by men who could hardly believe it.",
+			"captionKo": "말 떼가 한꺼번에 움직인다. 성 쪽이 아니다. 삼만 삼백팔십 필. 나중에 센 사람들도 믿기 어려워한 숫자다.",
+			"units": {
+				"tg-fort": {
+					"at": [
+						500,
+						296
+					],
+					"men": 100000,
+					"facing": 90,
+					"r": 0.85
+				},
+				"mh-flats": {
+					"at": [
+						770,
+						286
+					],
+					"men": 100000,
+					"routed": true
+				},
+				"sl-main": {
+					"at": [
+						500,
+						420
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"sl-raid": {
+					"at": [
+						720,
+						470
+					],
+					"men": 10000,
+					"facing": 300
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							800,
+							320
+						],
+						[
+							770,
+							420
+						],
+						[
+							700,
+							530
+						]
+					],
+					"label": "30,380 horses",
+					"ko": "말 30,380필"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						760,
+						360
+					]
+				}
+			]
+		},
+		{
+			"id": "rout",
+			"label": "Li Jinxing pulls out",
+			"ko": "이근행이 물러난다",
+			"caption": "Li Jinxing pulls back across the river and leaves the rest behind: the herd, and weapons to match. Nobody writes down the dead. Everybody writes down the horses.",
+			"captionKo": "이근행이 강을 건너 물러나고 나머지는 두고 간다. 말 떼, 그리고 그만큼의 병장기. 죽은 자를 적은 사람은 없다. 말은 모두가 적었다.",
+			"units": {
+				"tg-fort": {
+					"at": [
+						470,
+						110
+					],
+					"men": 100000,
+					"routed": true
+				},
+				"mh-flats": {
+					"at": [
+						730,
+						96
+					],
+					"men": 100000,
+					"routed": true
+				},
+				"sl-main": {
+					"at": [
+						520,
+						330
+					],
+					"men": 20000,
+					"facing": 270
+				},
+				"sl-raid": {
+					"at": [
+						740,
+						300
+					],
+					"men": 10000,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "retreat",
+					"points": [
+						[
+							506,
+							260
+						],
+						[
+							492,
+							190
+						],
+						[
+							470,
+							120
+						]
+					]
+				},
+				{
+					"side": "mohe",
+					"kind": "retreat",
+					"points": [
+						[
+							760,
+							250
+						],
+						[
+							744,
+							180
+						],
+						[
+							724,
+							110
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "pursuit",
+					"points": [
+						[
+							520,
+							300
+						],
+						[
+							512,
+							250
+						],
+						[
+							500,
+							210
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						560,
+						292
+					],
+					"label": "weapons to match",
+					"ko": "병장기도 그만큼"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 7, Annals of Silla, Munmu year 15",
+		"Samguk Sagi 43, Biography of Kim Yushin (part 3), on Wonsul at Maesocheon",
+		"Zizhi Tongjian 202, Shangyuan 2",
+		"New Book of Tang 220, Silla; 110, Biography of Li Jinxing"
+	],
+	"note": "Figures from the Samguk Sagi: two hundred thousand under Li Jinxing, and on the twenty-ninth day of the ninth month 30,380 war-horses and weapons to match. Historians read the two hundred thousand as Silla counting generously; forty thousand is a common modern estimate. The split between Li Jinxing and the Mohe camp is the map’s, and neither side’s losses are recorded. The raid on the picket lines is the story’s; the record only says Silla attacked and won. Dots count men, so the herd is an arrow. The Tang histories record three Tang victories here and a Silla apology, earlier in the year. The site follows Daejeon-ri fortress in Yeoncheon; others put Maeso at Daemo fortress in Yangju.",
+	"noteKo": "숫자는 『삼국사기』를 따랐다. 이근행의 이십만, 그리고 구월 스무아흐렛날 얻은 전마 30,380필과 그만한 병장기. 이십만은 신라가 후하게 센 숫자로 보는 것이 보통이고, 현대에는 사만 안팎으로 추정하기도 한다. 이근행과 말갈 진영을 둘로 나눈 것은 지도의 선택이고, 양쪽의 손실은 기록에 없다. 말뚝 줄 습격은 이야기의 것이고, 기록은 신라가 쳐서 이겼다고만 한다. 점은 사람을 세므로 말 떼는 화살표로 그렸다. 당의 사서는 그해 앞쪽에 당이 세 번 이기고 신라가 사죄했다고 적는다. 위치는 연천 대전리산성설을 따랐다. 양주 대모산성으로 보는 견해도 있다."
+}

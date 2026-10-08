@@ -1,14 +1,5 @@
-<script lang="ts">
-	/**
-	 * Royal Secretariat (집사부): fourteen Silla ministries modeled after Tang’s
-	 * 三省六部 but exceeded. One 중시; 집사부·병부·창부·예부 + ten 府.
-	 */
-	import type { DiagramProps } from './registry';
-	import ChartLabel from './ChartLabel.svelte';
-
-	let { active = false }: DiagramProps = $props();
-
-	const MINISTRIES = [
+<script module lang="ts">
+	export const MINISTRIES = [
 		{ ko: '집사부', en: 'Secretariat', han: '執事' },
 		{ ko: '병부', en: 'War', han: '兵' },
 		{ ko: '창부', en: 'Granary', han: '倉' },
@@ -24,6 +15,18 @@
 		{ ko: '외관부', en: 'Outer', han: '外' },
 		{ ko: '태학부', en: 'Academy', han: '學' }
 	] as const;
+</script>
+
+<script lang="ts">
+	/**
+	 * Royal Secretariat (집사부): fourteen Silla ministries modeled after Tang’s
+	 * 三省六部 but exceeded. One 중시; 집사부·병부·창부·예부 + ten 府.
+	 */
+	import type { DiagramProps } from './registry';
+	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
+
+	let { active = false, flat = false }: DiagramProps = $props();
 
 	const COLS = 7;
 	const BOX_W = 44;
@@ -33,6 +36,8 @@
 	const X0 = 180 - GRID_W / 2;
 </script>
 
+<KitStage id="royal-secretariat" {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 340"
 	class="dg"
@@ -69,6 +74,8 @@
 
 	<text class="foot" style="--d: 1200" x="180" y="328">14 ministries · Tang’s six was never enough</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

@@ -20,11 +20,11 @@
 	<span class="org-preview" aria-hidden="true" inert>
 		{#if Diagram && chart}
 			<span class="org-preview-diagram">
-				<Diagram step={chart.step} realm={chart.realm} active={true} />
+				<Diagram step={chart.step} realm={chart.realm} active={true} flat />
 			</span>
 		{:else}
 			<span class="org-preview-tree">
-				<OrgChart {nodes} />
+				<OrgChart {nodes} flat />
 			</span>
 		{/if}
 	</span>

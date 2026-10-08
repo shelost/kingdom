@@ -10,13 +10,16 @@
 		mapLabel,
 		type Place
 	} from '$lib/places';
-	import { placeLabels, type LabelSpot } from '$lib/mapLabels';
+	import { FLAG_SIZE, placeLabels, type LabelSpot } from '$lib/mapLabels';
+	import { placeBanner } from '$lib/banners';
 	import { KINGDOMS } from '$lib/people';
 	import { openProfile } from '$lib/profiles.svelte';
 	import { mapUi, closeStoryMap } from '$lib/mapUi.svelte';
 	import { onDestroy, untrack } from 'svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import BorderLayer from '$lib/components/BorderLayer.svelte';
+	import MapFlag from '$lib/components/MapFlag.svelte';
+	import { FORT_GLYPH, STAR_GLYPH } from '$lib/mapPaths';
 
 	let {
 		pageMode = false,
@@ -132,6 +135,9 @@
 	}
 
 	let open = $derived(pageMode || mapUi.open);
+	/** On the border timeline, capitals and fortresses fly their holder's flag. */
+	let flagged = $derived(year !== null);
+	const flies = (p: Place) => p.capital || isFortress(p);
 	let place = $derived<Place | null>(reading.place ? (PLACES[reading.place] ?? null) : null);
 	let colour = $derived(place ? KINGDOMS[place.side].color : '#8a8a94');
 
@@ -161,6 +167,7 @@
 	/** Lays the labels out whenever the canvas changes size (and once the font is in). */
 	const placeOnResize: Attachment<HTMLElement> = (canvas) => {
 		if (!open) return;
+		const withFlags = flagged;
 		const layout = () => {
 			const w = canvas.clientWidth;
 			const h = canvas.clientHeight;
@@ -178,7 +185,8 @@
 						r,
 						w: el.offsetWidth,
 						h: el.offsetHeight,
-						priority: p.capital ? 1 : 0
+						priority: p.capital ? 1 : 0,
+						flag: withFlags && flies(p) ? FLAG_SIZE.xs : undefined
 					}
 				];
 			});
@@ -220,12 +228,20 @@
 {/if}
 
 {#snippet glyph(p: Place)}
-	{#if isFortress(p)}
+	{#if p.capital}
+		<svg class="glyph fort star" viewBox="0 0 12 12" aria-hidden="true">
+			<path d={STAR_GLYPH} />
+		</svg>
+	{:else if isFortress(p)}
 		<svg class="glyph fort" viewBox="0 0 12 12" aria-hidden="true">
-			<path d="M1 11V1.5h2.2v2h1.7v-2h2.2v2h1.7v-2H11V11H7.6V8.4a1.6 1.6 0 0 0-3.2 0V11Z" />
+			<path d={FORT_GLYPH} />
 		</svg>
 	{:else}
 		<span class="glyph"></span>
+	{/if}
+	{#if year !== null && flies(p)}
+		{@const banner = placeBanner(p, year)}
+		{#if banner}<span class="flagpost"><MapFlag {banner} size="xs" /></span>{/if}
 	{/if}
 {/snippet}
 
@@ -234,6 +250,8 @@
 		<img
 			src={year === null ? '/map.svg' : '/map-base.svg'}
 			alt="Map of the Three Kingdoms"
+			decoding="async"
+			fetchpriority={open ? 'auto' : 'low'}
 			style:left="{IMG.left}%"
 			style:top="{IMG.top}%"
 			style:width="{IMG.width}%"
@@ -633,6 +651,15 @@
 		z-index: 4;
 	}
 
+	/* the flag's pole stands on the glyph's top edge */
+	.flagpost {
+		position: absolute;
+		left: 0;
+		top: -4px;
+		width: 0;
+		height: 0;
+	}
+
 	.glyph {
 		position: absolute;
 		left: 0;
@@ -696,12 +723,18 @@
 		box-shadow: none;
 	}
 
-	.map.open .pin.capital .glyph {
-		width: 11px;
-		height: 11px;
-		box-shadow:
-			0 0 0 2px var(--ink-halo),
-			0 0 0 3px var(--ink);
+	/* Capitals are stars, readable even on the closed sheet. */
+	.glyph.star {
+		width: 9px;
+		height: 9px;
+		opacity: 1;
+		stroke-width: 1.2;
+	}
+
+	.map.open .pin.capital .glyph.star {
+		width: 14px;
+		height: 14px;
+		box-shadow: none;
 	}
 
 	button.pin {

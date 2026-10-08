@@ -1,44 +1,47 @@
-import { chapters, entryId, episodeNumber, type Chapter, type Entry } from '$lib/story';
+import { chapters as arcs, entryId, episodeNumber, type Chapter as Arc, type Entry } from '$lib/story';
 import { episodeKindsOf, type EpisodeKind } from '$lib/episodeKinds';
 
-/** A named spine row and the episodes it holds, in story order. The first title anchors the row. */
-export type TocGroup = { label: string; ko: string; titles: string[] };
-
-const group = (label: string, ko: string, ...titles: string[]): TocGroup => ({ label, ko, titles });
-
 /**
- * Chapter spines: each chapter lists its groups, so the TOC reads as a few named arcs
- * instead of a flat run of episodes. Ungrouped episodes stay on the spine by themselves.
+ * Reading hierarchy: Part → Arc → Chapter → Episode.
+ * An Arc is a top-level `story.json` record (its id keeps the old `chapterId` name in the data);
+ * its Chapters are the named runs below; each entry is an Episode.
  */
-export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
+
+/** A named Chapter inside an Arc and the episode titles it holds, in story order. The first title anchors the row. */
+export type TocChapter = { label: string; ko: string; titles: string[] };
+
+const chapter = (label: string, ko: string, ...titles: string[]): TocChapter => ({ label, ko, titles });
+
+/** Each Arc lists its Chapters. Episodes outside every Chapter stay on the spine by themselves. */
+export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 	samhan: [
-		group('Silla', '신라', 'Queen Sunduk', 'Harmony Council', 'Jinheung, the Cloud'),
-		group('Baekje', '백제', 'Prince Euija', 'Eight Great Clans', 'Gunchogo, the 13th'),
-		group('Goguryeo', '고구려', 'Commander Yeon', 'High Summit', 'Gwanggaeto, the Great King')
+		chapter('Silla', '신라', 'Queen Sunduk', 'Harmony Council', 'Jinheung, the Cloud'),
+		chapter('Baekje', '백제', 'Prince Euija', 'Eight Great Clans', 'Gunchogo, the 13th'),
+		chapter('Goguryeo', '고구려', 'Commander Yeon', 'High Summit', 'Gwanggaeto, the Great King')
 	],
 	'five-principles': [
-		group('Two Treasures', '두 보물', 'Bupmin', 'Sadaham', 'Gotaso', 'Pumsuk', 'Munhee'),
-		group('Three Sons', '세 아들', 'Grand Academy', 'Stele', 'Dosuryu'),
-		group('Five Princes', '다섯 왕자', 'King Euija', 'Yunchung', 'The Severing')
+		chapter('Two Treasures', '두 보물', 'Bupmin', 'Sadaham', 'Gotaso', 'Pumsuk', 'Munhee'),
+		chapter('Three Sons', '세 아들', 'Academy', 'Stele', 'Dosuryu'),
+		chapter('Five Princes', '다섯 왕자', 'King Euija', 'Yunchung', 'The Severing')
 	],
 	'iron-will': [
-		group('Daeya', '대야성', 'Gumil', 'Maehwa', 'Siege of Daeya'),
-		group('Supreme Commander', '대막리지', 'Yeon’s Massacre', 'Chunchu & Yeon', 'Euija & Yeon'),
-		group('Kim Yushin', '김유신', 'Nangbi', 'Forty Fortresses', 'The Eastern Star')
+		chapter('Daeya', '대야성', 'Gumil', 'Maehwa', 'Siege of Daeya'),
+		chapter('Supreme Commander', '대막리지', 'Yeon’s Massacre', 'Chunchu & Yeon', 'Euija & Yeon'),
+		chapter('Kim Yushin', '김유신', 'Nangbi', 'Forty Fortresses', 'The Eastern Star')
 	],
 	'seventh-invasion': [
-		group('Emperor 황제', '황제', 'Four Dragons', 'Yodong', 'Boiling River'),
-		group('Guardian 성주', '성주', 'Stallion Mountain', 'Colossal River', 'Ansi'),
-		group('Jumong', '주몽', 'Haemosu', 'Buyeo', 'Jolbon')
+		chapter('Emperor 황제', '황제', 'Four Dragons', 'Yodong', 'Boiling River'),
+		chapter('Guardian 성주', '성주', 'Stallion Mountain', 'Colossal River', 'Ansi'),
+		chapter('Jumong', '주몽', 'Haemosu', 'Buyeo', 'Jolbon')
 	],
 	'chunchu-era': [
-		group('Bidam', '비담', 'Gi (起)', 'Suro', 'Seung (承)', 'Muryuk', 'Jeon (轉)', 'Seohyun', 'Gyeol (結)'),
-		group('Seungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Royal Secretariat', 'Jiabeng (駕崩)'),
-		group('Chunchu', '춘추', 'King Muyeol', 'Jahee'),
-		group('Hyukgose', '혁거세', 'Hyukgose', 'Talhae', 'Alji')
+		chapter('Bidam', '비담', 'Gi (起)', 'Suro', 'Seung (承)', 'Muryuk', 'Jeon (轉)', 'Seohyun', 'Gyeol (結)'),
+		chapter('Seungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Royal Secretariat', 'Jiabeng (駕崩)'),
+		chapter('Chunchu', '춘추', 'King Muyeol', 'Jahee'),
+		chapter('Hyukgose', '혁거세', 'Hyukgose', 'Talhae', 'Alji')
 	],
 	'fall-of-euija': [
-		group(
+		chapter(
 			'Tamla',
 			'탐라',
 			'Exile',
@@ -50,20 +53,20 @@ export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 			'Kangrim',
 			'Tribute'
 		),
-		group('Euija', '의자', 'Coup', 'Descent', 'Nine Omens', 'Onjo'),
-		group('Three Loyalists', '삼충신', 'Sungchung', 'Heungsu', 'Gyebek')
+		chapter('Euija', '의자', 'Coup', 'Descent', 'Nine Omens', 'Onjo'),
+		chapter('Three Loyalists', '삼충신', 'Sungchung', 'Heungsu', 'Gyebek')
 	],
 	'fall-of-baekje': [
-		group('Fall of Baekje', '백제 멸망', 'Yellow Mountain', 'Sabi', 'Buyeo Euija†', 'Kim Chunchu†'),
-		group('Baekje Restoration Army (BRA)', '백제 부흥군', 'Ungjin Commandery', 'King Pungjang')
+		chapter('Fall of Baekje', '백제 멸망', 'Yellow Mountain', 'Sabi', 'Buyeo Euija†', 'Kim Chunchu†'),
+		chapter('Baekje Restoration Army (BRA)', '백제 부흥군', 'Ungjin Commandery', 'King Pungjang')
 	],
 	'final-stand': [
-		group('Four Beasts', '사신', 'Pyongyang I', 'Snake River', 'Tamla Surrenders'),
-		group('Kudara', '구다라', 'Rebellion', 'Betrayal', 'White River'),
-		group('Brothers', '형제', 'Yeon Gesomun†', 'Brothers’ Coup', 'Pyongyang II')
+		chapter('Four Beasts', '사신', 'Pyongyang I', 'Snake River', 'Tamla Surrenders'),
+		chapter('Kudara', '구다라', 'Rebellion', 'Betrayal', 'White River'),
+		chapter('Brothers', '형제', 'Yeon Gesomun†', 'Brothers’ Coup', 'Pyongyang II')
 	],
 	'silla-tang-war': [
-		group(
+		chapter(
 			'Protectorate-General',
 			'안동도호부',
 			'Mount Gain',
@@ -73,7 +76,7 @@ export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 			'Stone Gate',
 			'Wonsul'
 		),
-		group(
+		chapter(
 			'Supreme Marshal',
 			'태대각간',
 			'Kim Yushin†',
@@ -84,6 +87,18 @@ export const CHAPTER_GROUPS: Record<string, TocGroup[]> = {
 		)
 	]
 };
+
+/** Reader-facing Chapter numbers: one running count over every Chapter in reading order. */
+const CHAPTER_NUMBERS: Map<TocChapter, number> = (() => {
+	const map = new Map<TocChapter, number>();
+	let n = 0;
+	for (const arc of arcs) for (const c of ARC_CHAPTERS[arc.id] ?? []) map.set(c, ++n);
+	return map;
+})();
+
+export function chapterNumberOf(c: TocChapter): number | null {
+	return CHAPTER_NUMBERS.get(c) ?? null;
+}
 
 export type TocEpisode = {
 	id: string;
@@ -96,29 +111,29 @@ export type TocEpisode = {
 	kinds: EpisodeKind[];
 };
 
-export function groupOf(chapterId: string, title: string): TocGroup | undefined {
-	return CHAPTER_GROUPS[chapterId]?.find((g) => g.titles.includes(title));
+export function chapterOf(arcId: string, title: string): TocChapter | undefined {
+	return ARC_CHAPTERS[arcId]?.find((c) => c.titles.includes(title));
 }
 
-/** Element id on /episodes for a chapter, or for one of its groups. */
-export function tocAnchor(chapterId: string, g?: TocGroup): string {
-	if (!g) return `ch-${chapterId}`;
-	const slug = g.label
+/** Element id on /episodes for an Arc, or for one of its Chapters. */
+export function tocAnchor(arcId: string, c?: TocChapter): string {
+	if (!c) return `ch-${arcId}`;
+	const slug = c.label
 		.toLowerCase()
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '');
-	return `ch-${chapterId}--${slug}`;
+	return `ch-${arcId}--${slug}`;
 }
 
-/** The group a spine row heads, if this entry opens one. */
-function groupHeadedBy(chapterId: string, title: string): TocGroup | undefined {
-	return CHAPTER_GROUPS[chapterId]?.find((g) => g.titles[0] === title);
+/** The Chapter a spine row heads, if this episode opens one. */
+function chapterHeadedBy(arcId: string, title: string): TocChapter | undefined {
+	return ARC_CHAPTERS[arcId]?.find((c) => c.titles[0] === title);
 }
 
-export function spineLabel(ch: Chapter, en: Entry, ko = false): string {
-	const g = groupHeadedBy(ch.id, en.title);
-	if (ko) return g?.ko ?? en.subtitle ?? en.title;
-	return g?.label ?? en.title;
+export function spineLabel(arc: Arc, en: Entry, ko = false): string {
+	const c = chapterHeadedBy(arc.id, en.title);
+	if (ko) return c?.ko ?? en.subtitle ?? en.title;
+	return c?.label ?? en.title;
 }
 
 const ROMAN: Record<string, number> = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6 };
@@ -130,76 +145,87 @@ export function partLabel(part: string, ko = false): string {
 	return n ? `제${n}부` : part;
 }
 
-/** The Part a chapter sits in: its own, or the last one opened before it. */
-function partOf(chapterIndex: number): string | undefined {
-	for (let i = chapterIndex; i >= 0; i--) if (chapters[i]?.part) return chapters[i].part;
+/** `Arc 3` / `제3편`; epilogues (no number) read `Epilogue` / `에필로그`. */
+export function arcLabel(n: number | null, ko = false): string {
+	if (n === null) return ko ? '에필로그' : 'Epilogue';
+	return ko ? `제${n}편` : `Arc ${n}`;
+}
+
+/** `Chapter 7` / `제7장`. */
+export function chapterLabel(n: number, ko = false): string {
+	return ko ? `제${n}장` : `Chapter ${n}`;
+}
+
+/** The Part an Arc sits in: its own, or the last one opened before it. */
+function partOf(arcIndex: number): string | undefined {
+	for (let i = arcIndex; i >= 0; i--) if (arcs[i]?.part) return arcs[i].part;
 	return undefined;
 }
 
 /** One breadcrumb; `anchor` is its section id on /episodes when it links there. */
 export type Crumb = { label: string; anchor?: string };
 
-/** Breadcrumbs above an episode: Part, then its group (or the chapter when ungrouped), then the episode. */
-export function episodeCrumbs(chapterIndex: number, entryIndex: number, ko = false): Crumb[] {
-	const ch = chapters[chapterIndex];
-	const en = ch?.entries[entryIndex];
+/** Breadcrumbs above an episode: Part, Arc, Chapter (when the episode sits in one), then the episode. */
+export function episodeCrumbs(arcIndex: number, entryIndex: number, ko = false): Crumb[] {
+	const arc = arcs[arcIndex];
+	const en = arc?.entries[entryIndex];
 	if (!en) return [];
-	const part = partOf(chapterIndex);
-	const g = groupOf(ch.id, en.title);
-	const middle: Crumb = {
-		label: g ? (ko ? g.ko : g.label) : (ko && ch.korean) || ch.title,
-		anchor: tocAnchor(ch.id, g)
-	};
-	const title: Crumb = { label: (ko && en.subtitle) || en.title };
-	return part ? [{ label: partLabel(part, ko) }, middle, title] : [middle, title];
+	const part = partOf(arcIndex);
+	const c = chapterOf(arc.id, en.title);
+	const crumbs: Crumb[] = [];
+	if (part) crumbs.push({ label: partLabel(part, ko) });
+	crumbs.push({ label: (ko && arc.korean) || arc.title, anchor: tocAnchor(arc.id) });
+	if (c) crumbs.push({ label: ko ? c.ko : c.label, anchor: tocAnchor(arc.id, c) });
+	crumbs.push({ label: (ko && en.subtitle) || en.title });
+	return crumbs;
 }
 
-/** Spine rows: group heads plus ungrouped episodes. */
-export function spineEntries(ch: Chapter): Entry[] {
-	return ch.entries.filter((en) => {
-		const g = groupOf(ch.id, en.title);
-		return !g || g.titles[0] === en.title;
+/** Spine rows: Chapter heads plus episodes outside every Chapter. */
+export function spineEntries(arc: Arc): Entry[] {
+	return arc.entries.filter((en) => {
+		const c = chapterOf(arc.id, en.title);
+		return !c || c.titles[0] === en.title;
 	});
 }
 
 /** One numbered TOC episode row. */
-export function tocEpisode(ch: Chapter, en: Entry): TocEpisode {
+export function tocEpisode(arc: Arc, en: Entry): TocEpisode {
 	return {
-		id: entryId(ch.id, en.title),
-		num: episodeNumber(chapters.indexOf(ch), ch.entries.indexOf(en)),
+		id: entryId(arc.id, en.title),
+		num: episodeNumber(arcs.indexOf(arc), arc.entries.indexOf(en)),
 		title: en.title,
 		ko: en.subtitle,
 		kinds: episodeKindsOf(en)
 	};
 }
 
-/** Every episode under a group's spine row, head included, in story order; empty for an ungrouped row. */
-export function groupEpisodes(ch: Chapter, en: Entry): TocEpisode[] {
-	const g = groupHeadedBy(ch.id, en.title);
-	if (!g) return [];
-	return ch.entries.filter((e) => g.titles.includes(e.title)).map((e) => tocEpisode(ch, e));
+/** Every episode under a Chapter's spine row, head included, in story order; empty for an episode outside every Chapter. */
+export function chapterEpisodes(arc: Arc, en: Entry): TocEpisode[] {
+	const c = chapterHeadedBy(arc.id, en.title);
+	if (!c) return [];
+	return arc.entries.filter((e) => c.titles.includes(e.title)).map((e) => tocEpisode(arc, e));
 }
 
-/** Dev check: every grouped title exists on its chapter, sits in one group, and groups are contiguous. */
+/** Dev check: every Chapter title exists on its Arc, sits in one Chapter, and Chapters are contiguous. */
 export function assertTocNests(): string[] {
 	const problems: string[] = [];
-	const byId = new Map(chapters.map((c) => [c.id, c]));
-	for (const [chapterId, groups] of Object.entries(CHAPTER_GROUPS)) {
-		const ch = byId.get(chapterId);
-		if (!ch) {
-			problems.push(`chapter ${chapterId}`);
+	const byId = new Map(arcs.map((a) => [a.id, a]));
+	for (const [arcId, list] of Object.entries(ARC_CHAPTERS)) {
+		const arc = byId.get(arcId);
+		if (!arc) {
+			problems.push(`arc ${arcId}`);
 			continue;
 		}
-		const order = ch.entries.map((e) => e.title);
+		const order = arc.entries.map((e) => e.title);
 		const seen = new Set<string>();
-		for (const g of groups) {
-			const idx = g.titles.map((t) => order.indexOf(t));
-			g.titles.forEach((t, i) => {
-				if (idx[i] < 0) problems.push(`${chapterId} / ${g.label} / missing ${t}`);
-				if (seen.has(t)) problems.push(`${chapterId} / ${t} in two groups`);
+		for (const c of list) {
+			const idx = c.titles.map((t) => order.indexOf(t));
+			c.titles.forEach((t, i) => {
+				if (idx[i] < 0) problems.push(`${arcId} / ${c.label} / missing ${t}`);
+				if (seen.has(t)) problems.push(`${arcId} / ${t} in two chapters`);
 				seen.add(t);
 			});
-			if (idx.some((n, i) => i > 0 && n !== idx[i - 1] + 1)) problems.push(`${chapterId} / ${g.label} not contiguous`);
+			if (idx.some((n, i) => i > 0 && n !== idx[i - 1] + 1)) problems.push(`${arcId} / ${c.label} not contiguous`);
 		}
 	}
 	return problems;

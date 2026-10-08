@@ -2,10 +2,11 @@
 	import type { Block } from '$lib/story';
 	import { reading } from '$lib/reading.svelte';
 	import { DIAGRAMS } from './registry';
+	import Material from '../Material.svelte';
 
 	type DiagramBlockT = Extract<Block, { kind: 'diagram' }>;
 
-	let { block }: { block: DiagramBlockT } = $props();
+	let { block, year = null }: { block: DiagramBlockT; year?: number | null } = $props();
 
 	const Diagram = $derived(DIAGRAMS[block.diagram]);
 
@@ -44,9 +45,10 @@
 
 {#if Diagram}
 	<figure class="diagram" {@attach play}>
-		{#if block.title}<figcaption class="dg-title">{block.title}</figcaption>{/if}
+		<Material kind="paper" />
+		{#if block.title}<figcaption class="comic-caption">{block.title}</figcaption>{/if}
 		<div class="dg-canvas">
-			<Diagram step={block.step} realm={block.realm} {active} />
+			<Diagram step={block.step} realm={block.realm} cast={block.cast} {year} {active} />
 		</div>
 		{#if showEn || showKo}
 			<p class="dg-caption">
@@ -58,25 +60,25 @@
 {/if}
 
 <style>
+	/* An explainer panel on the page's own ground; the depth lives in the chart. */
 	.diagram {
-		margin: 1.6rem 0;
-		padding: 1rem 1rem 0.85rem;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
-		background: rgba(255, 255, 255, 0.015);
+		position: relative;
+		isolation: isolate;
+		margin: var(--widget-gap) 0;
+		padding: 1.5rem 1.1rem 0.95rem;
+		border: 1px solid color-mix(in srgb, var(--gold) 18%, var(--hairline));
+		border-radius: var(--widget-radius);
+		background:
+			radial-gradient(90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 7%, transparent), transparent 70%),
+			var(--panel);
 	}
 
-	.dg-title {
-		font-size: 0.68rem;
-		font-weight: 600;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-		margin-bottom: 0.55rem;
+	.comic-caption {
+		max-width: calc(100% - 1.8rem);
 	}
 
 	.dg-canvas {
-		max-width: 30rem;
+		max-width: 36rem;
 		margin: 0 auto;
 	}
 
@@ -87,18 +89,20 @@
 	}
 
 	.dg-caption {
-		margin: 0.65rem 0 0;
+		margin: 0.75rem 0 0;
+		padding-top: 0.6rem;
+		border-top: 1px solid color-mix(in srgb, var(--gold) 18%, transparent);
 		display: flex;
 		flex-direction: column;
 		gap: 0.18rem;
-		font-size: 0.76rem;
+		font-size: 0.875rem;
 		line-height: 1.55;
-		color: var(--fg-faint);
+		color: var(--fg-dim);
 	}
 
 	.dg-caption .ko {
 		font-family: 'Noto Serif KR', var(--serif);
-		color: var(--fg-dim);
+		color: var(--fg);
 	}
 
 	.dg-caption .en {

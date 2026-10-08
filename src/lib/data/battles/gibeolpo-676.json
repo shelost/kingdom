@@ -1,0 +1,675 @@
+{
+	"id": "gibeolpo-676",
+	"title": "Final Ford",
+	"ko": "기벌포 해전",
+	"hanja": "伎伐浦之戰",
+	"year": 676,
+	"place": "gibeolpo",
+	"scale": {
+		"km": 2,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "sea",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					160,
+					0
+				],
+				[
+					200,
+					90
+				],
+				[
+					260,
+					150
+				],
+				[
+					400,
+					180
+				],
+				[
+					600,
+					196
+				],
+				[
+					800,
+					206
+				],
+				[
+					1000,
+					214
+				],
+				[
+					1000,
+					330
+				],
+				[
+					800,
+					340
+				],
+				[
+					600,
+					360
+				],
+				[
+					400,
+					392
+				],
+				[
+					260,
+					430
+				],
+				[
+					200,
+					500
+				],
+				[
+					180,
+					560
+				],
+				[
+					0,
+					560
+				]
+			],
+			"label": "Yellow Sea",
+			"ko": "서해",
+			"labelAt": [
+				90,
+				300
+			]
+		},
+		{
+			"kind": "marsh",
+			"points": [
+				[
+					200,
+					100
+				],
+				[
+					260,
+					160
+				],
+				[
+					400,
+					190
+				],
+				[
+					600,
+					206
+				],
+				[
+					720,
+					214
+				],
+				[
+					720,
+					244
+				],
+				[
+					600,
+					250
+				],
+				[
+					440,
+					240
+				],
+				[
+					300,
+					212
+				],
+				[
+					210,
+					160
+				]
+			],
+			"label": "mudflats",
+			"ko": "갯벌",
+			"labelAt": [
+				236,
+				112
+			]
+		},
+		{
+			"kind": "marsh",
+			"points": [
+				[
+					210,
+					480
+				],
+				[
+					270,
+					420
+				],
+				[
+					400,
+					384
+				],
+				[
+					560,
+					366
+				],
+				[
+					560,
+					380
+				],
+				[
+					420,
+					404
+				],
+				[
+					300,
+					440
+				],
+				[
+					240,
+					500
+				]
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				780,
+				96
+			],
+			"r": 50
+		},
+		{
+			"kind": "hill",
+			"at": [
+				700,
+				470
+			],
+			"r": 44
+		},
+		{
+			"kind": "fort",
+			"at": [
+				620,
+				160
+			],
+			"side": "silla",
+			"label": "Gibeolpo",
+			"ko": "기벌포"
+		},
+		{
+			"kind": "label",
+			"at": [
+				900,
+				170
+			],
+			"label": "up the Geum to Sabi",
+			"ko": "금강 따라 사비로"
+		}
+	],
+	"sides": [
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "tg-fleet",
+			"side": "tang",
+			"label": "Xue Rengui",
+			"ko": "설인귀",
+			"unrecorded": true,
+			"hero": "xuerengui"
+		},
+		{
+			"id": "sl-fleet",
+			"side": "silla",
+			"label": "Sideuk",
+			"ko": "시득",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "arrive",
+			"label": "The last fleet",
+			"ko": "마지막 함대",
+			"caption": "Sixteen years ago the first Tang fleet came in through this mouth while Baekje watched from the high ground. Now Xue Rengui brings the last one. Sideuk, who has never won anything, has the Silla boats.",
+			"captionKo": "십육 년 전, 백제가 높은 땅에서 지켜보는 동안 첫 당 함대가 이 어귀로 들어왔다. 이제 설인귀가 마지막 함대를 끌고 온다. 한 번도 이겨 본 적 없는 시득이 신라의 배를 맡았다.",
+			"units": {
+				"tg-fleet": {
+					"at": [
+						120,
+						200
+					],
+					"men": 10000,
+					"shape": "fleet",
+					"facing": 20
+				},
+				"sl-fleet": {
+					"at": [
+						800,
+						270
+					],
+					"men": 5000,
+					"shape": "fleet",
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "naval",
+					"points": [
+						[
+							20,
+							40
+						],
+						[
+							80,
+							120
+						],
+						[
+							140,
+							180
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "first",
+			"label": "Beaten, twice",
+			"ko": "두 번 진다",
+			"caption": "Sideuk goes out on the ebb and loses. When the tide comes round he goes out again, and loses again. The big ships learn that he runs.",
+			"captionKo": "시득이 썰물에 나가서 진다. 물때가 돌아오자 다시 나가서 또 진다. 큰 배들은 그가 도망친다는 걸 배운다.",
+			"units": {
+				"tg-fleet": {
+					"at": [
+						340,
+						290
+					],
+					"men": 10000,
+					"shape": "fleet",
+					"facing": 0
+				},
+				"sl-fleet": {
+					"at": [
+						700,
+						290
+					],
+					"men": 5000,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "naval",
+					"points": [
+						[
+							780,
+							270
+						],
+						[
+							600,
+							280
+						],
+						[
+							420,
+							288
+						]
+					],
+					"label": "out on the ebb",
+					"ko": "썰물에 나가"
+				},
+				{
+					"side": "silla",
+					"kind": "retreat",
+					"points": [
+						[
+							420,
+							316
+						],
+						[
+							560,
+							314
+						],
+						[
+							670,
+							304
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						400,
+						292
+					],
+					"label": "beaten",
+					"ko": "패배"
+				}
+			]
+		},
+		{
+			"id": "lure",
+			"label": "The third sortie",
+			"ko": "세 번째 출격",
+			"caption": "The third time he doesn't try to win. Eight boats go close enough to insult the flagship, turn badly, and run for the mudflats. Everything big follows.",
+			"captionKo": "세 번째에는 이기려 하지 않는다. 배 여덟 척이 기함을 모욕할 만큼 다가갔다가, 서툴게 돌아서서 갯벌로 달아난다. 큰 배가 모두 따라온다.",
+			"units": {
+				"tg-fleet": {
+					"at": [
+						480,
+						258
+					],
+					"men": 10000,
+					"shape": "fleet",
+					"facing": 10
+				},
+				"sl-fleet": {
+					"at": [
+						760,
+						284
+					],
+					"men": 5000,
+					"shape": "fleet",
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "feint",
+					"points": [
+						[
+							700,
+							290
+						],
+						[
+							520,
+							296
+						],
+						[
+							420,
+							292
+						],
+						[
+							500,
+							236
+						],
+						[
+							640,
+							222
+						]
+					],
+					"label": "eight boats",
+					"ko": "여덟 척"
+				},
+				{
+					"side": "tang",
+					"kind": "naval",
+					"points": [
+						[
+							360,
+							290
+						],
+						[
+							440,
+							270
+						],
+						[
+							520,
+							246
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "aground",
+			"label": "The water goes out",
+			"ko": "물이 빠진다",
+			"caption": "Then the water goes out from under them. A Silla boat floats in a hand's depth. A tower-ship needs a man's height, and the mud finds out first.",
+			"captionKo": "그러고는 발밑에서 물이 빠진다. 신라 배는 손바닥 깊이에도 뜬다. 누선은 사람 키만큼 물이 필요하고, 갯벌이 먼저 그걸 안다.",
+			"units": {
+				"tg-fleet": {
+					"at": [
+						560,
+						228
+					],
+					"men": 10000,
+					"shape": "fleet",
+					"facing": 10
+				},
+				"sl-fleet": {
+					"at": [
+						700,
+						262
+					],
+					"men": 5000,
+					"shape": "fleet",
+					"facing": 190
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							680,
+							250
+						],
+						[
+							640,
+							236
+						],
+						[
+							610,
+							230
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							680,
+							290
+						],
+						[
+							620,
+							276
+						],
+						[
+							580,
+							256
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "flood",
+					"at": [
+						470,
+						222
+					],
+					"label": "the tide turns",
+					"ko": "물때가 바뀐다"
+				}
+			]
+		},
+		{
+			"id": "fights",
+			"label": "Twenty-two fights",
+			"ko": "스물두 번의 싸움",
+			"caption": "Twenty-two fights, large and small, across the mud on planks, oars and bellies. The tower-ships cannot turn to face any of them. Four thousand heads.",
+			"captionKo": "크고 작은 싸움 스물두 번. 널빤지로, 노로, 배를 깔고 갯벌을 건넌다. 누선은 어느 쪽으로도 돌아서지 못한다. 벤 머리가 사천.",
+			"units": {
+				"tg-fleet": {
+					"at": [
+						552,
+						228
+					],
+					"men": 6000,
+					"shape": "fleet",
+					"facing": 10
+				},
+				"sl-fleet": {
+					"at": [
+						650,
+						262
+					],
+					"men": 5000,
+					"shape": "fleet",
+					"facing": 190
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							640,
+							214
+						],
+						[
+							612,
+							212
+						],
+						[
+							588,
+							216
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							626,
+							284
+						],
+						[
+							580,
+							268
+						],
+						[
+							544,
+							250
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						604,
+						214
+					],
+					"label": "4,000 heads",
+					"ko": "사천여 급"
+				},
+				{
+					"kind": "clash",
+					"at": [
+						520,
+						220
+					]
+				},
+				{
+					"kind": "clash",
+					"at": [
+						540,
+						252
+					]
+				},
+				{
+					"kind": "clash",
+					"at": [
+						488,
+						236
+					]
+				}
+			]
+		},
+		{
+			"id": "west",
+			"label": "West",
+			"ko": "서쪽으로",
+			"caption": "At midnight the flagship lifts off on the night tide, and Xue turns her west. The war ends without a letter.",
+			"captionKo": "자정, 밤물에 기함이 갯벌에서 뜬다. 설인귀가 뱃머리를 서쪽으로 돌린다. 전쟁은 편지 한 장 없이 끝난다.",
+			"units": {
+				"tg-fleet": {
+					"at": [
+						130,
+						250
+					],
+					"men": 6000,
+					"shape": "fleet",
+					"facing": 190
+				},
+				"sl-fleet": {
+					"at": [
+						440,
+						290
+					],
+					"men": 5000,
+					"shape": "fleet",
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "retreat",
+					"points": [
+						[
+							520,
+							228
+						],
+						[
+							380,
+							232
+						],
+						[
+							240,
+							240
+						],
+						[
+							40,
+							232
+						]
+					]
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 7, Annals of Silla, Munmu year 16",
+		"Samguk Yusa 1, Taejong Chunchu-gong (Gibeolpo as the Baek river mouth)",
+		"Old Book of Tang 83, Biography of Xue Rengui"
+	],
+	"note": "The Samguk Sagi says only that in the eleventh month Sideuk fought Xue Rengui at Gibeolpo, was defeated, then won twenty-two fights large and small and took more than four thousand heads. The story makes the one defeat two sorties and stages the win on a falling tide over the mudflats; the record mentions neither. Silla probably had fewer than a hundred ships; its losses are not recorded. No Chinese history mentions the battle, and the Old Book of Tang has Xue Rengui in exile in these years. Gibeolpo follows the usual reading at Janghang, on the north shore of the Geum mouth; one recent study puts it upriver.",
+	"noteKo": "『삼국사기』가 전하는 것은 십일월 시득이 기벌포에서 설인귀와 싸워 졌고, 다시 크고 작은 싸움 스물두 번을 이겨 사천여 급을 베었다는 것뿐이다. 이야기는 한 번의 패배를 두 번의 출격으로 늘리고, 승리를 썰물 때 갯벌 위에 올려놓는다. 물때와 갯벌은 기록에 없다. 신라의 배는 백 척이 안 되었으리라고 보며, 손실은 기록에 없다. 중국 사서에는 이 싸움이 없고, 『구당서』는 이 무렵 설인귀가 유배 중이었다고 적는다. 기벌포는 금강 하구 북쪽 장항으로 보는 통설을 따랐다. 더 상류로 보는 최근 연구도 있다."
+}

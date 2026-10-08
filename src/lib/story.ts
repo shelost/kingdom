@@ -1,6 +1,7 @@
 // Types for the story data. The content itself lives in ./data/story.json
 // and is edited visually at /edit (dev only) or by hand in the JSON file.
 
+
 export interface ImageSlot {
 	id: string; // slot name, e.g. "sunduk-crown"
 	ratio: number; // width / height of the strip
@@ -43,6 +44,11 @@ export interface ImageSlot {
 	 * no anchor open the entry.
 	 */
 	at?: string;
+	/**
+	 * Comic mode's balloon over this still. Omitted: guessed from the dialogue
+	 * the still is anchored to (`$lib/comicSay`). `false`: never letter it.
+	 */
+	say?: { en?: string; ko?: string; person?: string } | false;
 }
 
 /** ImageSlot plus the beat index it was flattened against for sticky stacks. */
@@ -54,6 +60,12 @@ export type StackImage = ImageSlot & { beatIndex?: number };
  * the reader; the script export prints it beside the beat.
  */
 export type PanelNote = { art?: string };
+
+/** A footnote on a record's translation. */
+export type RecordNote = { mark: string; html: string; ko?: string };
+
+/** The material a record card is drawn on — see `RecordKind` in `recordBooks`. */
+export type QuoteStyle = 'annal' | 'myth' | 'stele' | 'tomb' | 'sutra' | 'shaman' | 'letter';
 
 export type Block = PanelNote &
 	(
@@ -74,18 +86,182 @@ export type Block = PanelNote &
 			jaLatn?: string[];
 			speaker?: string;
 			person?: string;
+			/** Which silhouette an unprofiled `speaker` wears, when their label does not say. */
+			gender?: 'm' | 'f';
 			/** Pin a life-stage portrait (`PersonStage.id`) regardless of entry year. */
 			look?: string;
 			/** Hidden when Intimate scenes are off — same gate as cue art. */
 			nsfw?: boolean;
+			/**
+			 * Hybrid style: force this line's whole exchange to messages or posts. `mail`
+			 * marks this one line as a letter (an email), whatever the room around it is.
+			 */
+			chat?: 'message' | 'post' | 'mail';
 	  }
 	| { kind: 'cite'; html: string; ko?: string } // "• 👑 King Mu (51) of Baekje"
 	// `en` is the English rendering of `lines`, index-for-index.
 	| { kind: 'verse'; color: string; lines: string[]; en?: string[] }
 	| { kind: 'table'; head: string[]; rows: string[][]; colors?: string[] }
-	| { kind: 'hanja'; chars: { char: string; gloss: string }[]; after?: string }
-	// A genuine line from the record — rendered in light yellow, with its source.
-	| { kind: 'quote'; html: string; ko?: string; hanja?: string; source: string }
+	// A name written out character by character, stroke order animated (HanjaName).
+	// `gloss` is the 훈음 ("섬돌 계"); `meaning` the English sense; `name`/`ko` caption the whole name.
+	| {
+			kind: 'hanja';
+			chars: { char: string; gloss: string; meaning?: string }[];
+			name?: string;
+			ko?: string;
+			note?: string;
+			noteKo?: string;
+			after?: string;
+	  }
+	// A character card (PersonCard): portrait beside their name in black brush calligraphy.
+	// `from` makes it a coronation: the `from` stage portrait evolves into `look`.
+	// `write` overrides what the brush writes (default: hanja, else Korean name); `sub` is a second brushed line.
+	| {
+			kind: 'card';
+			person: string;
+			look?: string;
+			from?: string;
+			write?: string;
+			sub?: string;
+			role?: string;
+			tab?: 'intro' | 'profile' | 'coronation';
+			caption?: string;
+			ko?: string;
+			/** 2:1 intro still across the head of the card: the moment they walk in (`/intro/*.jpg`). */
+			still?: string;
+	  }
+	// A term the narrator stops to explain, manga-style (TermCard): brushed hanja, reading, gloss,
+	// and optionally a reference image or a registry diagram.
+	| {
+			kind: 'term';
+			hanja: string;
+			reading: string;
+			term: string;
+			html: string;
+			ko?: string;
+			image?: string;
+			diagram?: string;
+			step?: string;
+			realm?: string;
+			/** `clan` relabels the tab and draws the small card used for a run of houses. */
+			tab?: 'term' | 'clan';
+	  }
+	// A genuine line from the record (RecordQuote): the original, its translations, and the book's seal.
+	| {
+			kind: 'quote';
+			html: string;
+			ko?: string;
+			hanja?: string;
+			source: string;
+			/** Whose words these are — their face hangs off the card's corner. A letter's sender. */
+			person?: string;
+			/** Material of the card; defaults to the source's kind in `recordBooks`. */
+			style?: QuoteStyle;
+			/** Consecutive quotes sharing an event read as one incident told by several records. */
+			event?: string;
+			/** On a run's first quote: do the records back each other up or contradict each other? */
+			stance?: 'agree' | 'differ';
+			/** On a run's first quote: the fact in question, one short line ("Chunchu was handsome."). */
+			claim?: string;
+			claimKo?: string;
+			/** A non-Chinese original: Sanskrit for a sutra, Jeju Korean for a bonpuri. */
+			native?: string;
+			nativeLang?: string;
+			nativeLatn?: string;
+			/** Letter recipient (people id or a plain label). */
+			to?: string;
+			/**
+			 * Footnotes on the translation (the original is never touched): a `mark` ("*", "†")
+			 * placed in `html`/`ko`, explained underneath — e.g. a record's 大對盧 where the story says Magniji.
+			 */
+			notes?: RecordNote[];
+	  }
+	// A poem in a verse exchange (PoemCard): two poets answer each other across the page.
+	| {
+			kind: 'poem';
+			person?: string;
+			/** The poem being answered sits on the other side. */
+			title?: string;
+			hanja: string;
+			ko?: string;
+			html: string;
+			/** Present when the poem is on record; omitted for the chronicle's own verse. */
+			source?: string;
+			notes?: RecordNote[];
+	  }
+	// A four-character idiom or a line from the classics, dropped into talk (ChengyuCard).
+	| {
+			kind: 'chengyu';
+			hanja: string;
+			/** Mandarin pinyin. */
+			pinyin?: string;
+			/** Korean reading — 와신상담. */
+			reading?: string;
+			/** Literal gloss, then the sense: "lie on brushwood, taste gall — endure to avenge". */
+			html: string;
+			ko?: string;
+			/** The classic it comes from — "Shiji (史記) bk. 41". */
+			origin?: string;
+			/** The story behind it, two or three sentences. */
+			story?: string;
+			storyKo?: string;
+			/** Who quotes it in the scene. */
+			person?: string;
+	  }
+	// An imperial edict on yellow paper that unrolls (EdictScroll).
+	| {
+			kind: 'edict';
+			person?: string;
+			title?: string;
+			hanja?: string;
+			ko?: string;
+			html: string;
+			source: string;
+			notes?: RecordNote[];
+	  }
+	// An oath sealed in blood between parties (CovenantCard).
+	| {
+			kind: 'covenant';
+			parties: string[];
+			title?: string;
+			hanja?: string;
+			ko?: string;
+			html: string;
+			source: string;
+			notes?: RecordNote[];
+	  }
+	// Portents, stamped one by one as they happen (OmenTicker).
+	| {
+			kind: 'omens';
+			title?: string;
+			ko?: string;
+			omens: { hanja?: string; html: string; ko?: string; source?: string }[];
+	  }
+	// An inscribed stone the reader can turn over (OathStone): face, then back.
+	| {
+			kind: 'oath';
+			hanja: string;
+			ko?: string;
+			html: string;
+			source: string;
+			back?: { html: string; ko?: string };
+			notes?: RecordNote[];
+	  }
+	// First appearance of a place: a calligraphy intro card (PlaceCard), drawn from places.ts.
+	| { kind: 'place'; place: string; html?: string; ko?: string }
+	// A crop of the border map in a given year, framed on `places` (MapExcerpt).
+	// `from` adds a play button that sweeps the borders from that year to `year`.
+	| {
+			kind: 'map';
+			year: number;
+			from?: number;
+			places: string[];
+			/** Journeys and troop movements drawn as animated dotted arrows — ids in `mapRoutes`. */
+			routes?: string[];
+			title?: string;
+			caption?: string;
+			ko?: string;
+	  }
 	// A battle formation: two sides of labelled units, drawn as a diagram.
 	| {
 			kind: 'formation';
@@ -93,6 +269,9 @@ export type Block = PanelNote &
 			note?: string;
 			sides: { name: string; color: string; units: { label: string; sub?: string }[] }[];
 	  }
+	// A battle map from `data/battles/<battle>.json` (one dot = 1,000 men). In the script it
+	// plays one `phase` as a scene; `full` is the whole battle, with controls, at the episode's end.
+	| { kind: 'battle'; battle: string; phase?: string; full?: boolean }
 	// The lesson a told story leaves behind — set apart, the way the islanders say it.
 	| { kind: 'moral'; label?: string; html: string; ko?: string }
 	// A character’s internal voice spoken from later — retrospective tense.
@@ -108,6 +287,13 @@ export type Block = PanelNote &
 			title?: string; // small-caps heading above the drawing
 			caption?: string; // English caption under the drawing
 			ko?: string; // Korean caption
+			/**
+			 * Who sits where, when the chart shows a scene (never on its first introduction):
+			 * seat id → `people` id, drawn as a portrait over the seat. Seat ids:
+			 * harmony-council `s0`–`s5`; ministers-assembly `king`, `premier`, `senior0`–`senior7`,
+			 * `junior0`–`junior7`; restoration-army `king`, `g0`–`g3`.
+			 */
+			cast?: Record<string, string>;
 	  }
 	// A large chapter-within-an-entry header — "DAY 1" over a siege chronicle.
 	| { kind: 'day'; label: string; ko?: string }
@@ -115,6 +301,9 @@ export type Block = PanelNote &
 	| { kind: 'scene'; label: string; ko?: string }
 	// A mini-flashback that interrupts an entry mid-scroll.
 	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] }
+	// A wedding, as the couple's relationship status (FacebookLifeEvent). Hybrid
+	// dialogue only; the narration around it already tells the beat.
+	| { kind: 'wed'; couple: [string, string] }
 	);
 
 export interface Entry {
@@ -127,6 +316,8 @@ export interface Entry {
 	accent?: string; // episode title color — battle entries use red
 	title: string; // "Queen Sunduk"
 	subtitle?: string; // "선덕여왕"
+	/** The episode's hook line on /episodes: one provocation, verdict, list or question. No outcomes. */
+	logline?: { en: string; ko: string };
 	/** `images[].id` of the representative still under the title. Omit to use the first landscape still. */
 	thumbnail?: string;
 	/** `'temp'`: show that cue's temp stand-in, not its final `src`. */
@@ -158,6 +349,7 @@ export type EpisodeKind =
 	| 'coup'
 	| 'coronation';
 
+/** One top-level record of `story.json` — an Arc to the reader (Part → Arc → Chapter → Episode). */
 export interface Chapter {
 	id: string;
 	part?: string; // "Part I" — renders a full title page before this chapter
@@ -219,14 +411,14 @@ export function isEpilogue(chapter: Pick<Chapter, 'id'>): boolean {
 	return chapter.id.startsWith('epilogue');
 }
 
-/** Reader-facing chapter numbers: epilogues are unnumbered and do not advance the count. */
-const CHAPTER_NUMBERS: (number | null)[] = (() => {
+/** Reader-facing Arc numbers (one per `chapters` record): epilogues are unnumbered and do not advance the count. */
+const ARC_NUMBERS: (number | null)[] = (() => {
 	let n = 0;
 	return chapters.map((ch) => (isEpilogue(ch) ? null : ++n));
 })();
 
-export function chapterNumber(chapterIndex: number): number | null {
-	return CHAPTER_NUMBERS[chapterIndex] ?? null;
+export function arcNumber(chapterIndex: number): number | null {
+	return ARC_NUMBERS[chapterIndex] ?? null;
 }
 
 /** Reader-facing episode ordinals: one running count over every entry in reading order, epilogues included. */

@@ -1,0 +1,1171 @@
+{
+	"id": "hwangsan",
+	"title": "Yellow Mountain",
+	"ko": "황산벌 전투",
+	"hanja": "黃山之戰",
+	"year": 660,
+	"place": "hwangsan",
+	"scale": {
+		"km": 2,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "plain",
+			"points": [
+				[
+					350,
+					40
+				],
+				[
+					960,
+					60
+				],
+				[
+					990,
+					290
+				],
+				[
+					960,
+					530
+				],
+				[
+					350,
+					520
+				]
+			],
+			"label": "Yellow Mountain Field",
+			"ko": "황산벌"
+		},
+		{
+			"kind": "ridge",
+			"points": [
+				[
+					215,
+					20
+				],
+				[
+					240,
+					150
+				],
+				[
+					228,
+					250
+				]
+			]
+		},
+		{
+			"kind": "ridge",
+			"points": [
+				[
+					230,
+					330
+				],
+				[
+					252,
+					440
+				],
+				[
+					225,
+					545
+				]
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				292,
+				140
+			],
+			"r": 52
+		},
+		{
+			"kind": "hill",
+			"at": [
+				292,
+				452
+			],
+			"r": 56
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				120,
+				120
+			],
+			"r": 34
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				110,
+				450
+			],
+			"r": 30
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				960,
+				140
+			],
+			"r": 26
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					440,
+					0
+				],
+				[
+					415,
+					140
+				],
+				[
+					430,
+					290
+				],
+				[
+					405,
+					430
+				],
+				[
+					425,
+					560
+				]
+			],
+			"width": 11,
+			"label": "Yeonsan stream",
+			"ko": "연산천",
+			"labelAt": [
+				470,
+				62
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					1000,
+					150
+				],
+				[
+					780,
+					162
+				],
+				[
+					560,
+					150
+				],
+				[
+					330,
+					140
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					1000,
+					292
+				],
+				[
+					720,
+					296
+				],
+				[
+					330,
+					290
+				],
+				[
+					150,
+					296
+				],
+				[
+					0,
+					300
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					1000,
+					440
+				],
+				[
+					790,
+					428
+				],
+				[
+					570,
+					438
+				],
+				[
+					335,
+					450
+				]
+			]
+		},
+		{
+			"kind": "fort",
+			"at": [
+				292,
+				132
+			],
+			"side": "baekje",
+			"hold": {
+				"last": "silla"
+			}
+		},
+		{
+			"kind": "fort",
+			"at": [
+				272,
+				290
+			],
+			"side": "baekje",
+			"label": "the pass",
+			"ko": "고개",
+			"hold": {
+				"last": "silla"
+			}
+		},
+		{
+			"kind": "fort",
+			"at": [
+				292,
+				448
+			],
+			"side": "baekje",
+			"hold": {
+				"last": "silla"
+			}
+		},
+		{
+			"kind": "camp",
+			"at": [
+				935,
+				292
+			],
+			"side": "silla",
+			"label": "Silla camp",
+			"ko": "신라 진영"
+		},
+		{
+			"kind": "label",
+			"at": [
+				70,
+				280
+			],
+			"label": "to Sabi",
+			"ko": "사비로"
+		},
+		{
+			"kind": "label",
+			"at": [
+				900,
+				372
+			],
+			"label": "from Tanhyeon pass",
+			"ko": "탄현에서"
+		}
+	],
+	"sides": [
+		{
+			"id": "baekje",
+			"name": "Baekje",
+			"ko": "백제",
+			"kingdom": "baekje"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "bk-l",
+			"side": "baekje",
+			"label": "Left camp",
+			"ko": "좌영"
+		},
+		{
+			"id": "bk-c",
+			"side": "baekje",
+			"label": "Gyebek",
+			"ko": "계백",
+			"hero": "gyebek"
+		},
+		{
+			"id": "bk-r",
+			"side": "baekje",
+			"label": "Right camp",
+			"ko": "우영"
+		},
+		{
+			"id": "sl-l",
+			"side": "silla",
+			"label": "Heumsun",
+			"ko": "흠순"
+		},
+		{
+			"id": "sl-c",
+			"side": "silla",
+			"label": "Yushin",
+			"ko": "유신",
+			"hero": "yushin"
+		},
+		{
+			"id": "sl-r",
+			"side": "silla",
+			"label": "Pumil",
+			"ko": "품일",
+			"hero": "pumil"
+		}
+	],
+	"phases": [
+		{
+			"id": "camps",
+			"label": "Three camps, three roads",
+			"ko": "세 진영, 세 길",
+			"caption": "Gyebek gets there first and takes the high ground: one camp on each road into the field, the centre on the pass to Sabi. Fifty thousand come down out of the eastern hills, and they have a date to keep.",
+			"captionKo": "계백이 먼저 와서 높은 땅을 잡는다. 벌판으로 드는 길마다 진영 하나, 가운데는 사비로 가는 고개. 동쪽 산에서 오만이 내려온다. 그들에겐 지켜야 할 날짜가 있다.",
+			"units": {
+				"bk-l": {
+					"at": [
+						318,
+						140
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"bk-c": {
+					"at": [
+						312,
+						290
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"bk-r": {
+					"at": [
+						318,
+						450
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"sl-l": {
+					"at": [
+						840,
+						165
+					],
+					"men": 15000,
+					"facing": 180
+				},
+				"sl-c": {
+					"at": [
+						860,
+						292
+					],
+					"men": 20000,
+					"facing": 180
+				},
+				"sl-r": {
+					"at": [
+						840,
+						428
+					],
+					"men": 15000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							1000,
+							300
+						],
+						[
+							930,
+							296
+						],
+						[
+							905,
+							292
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "first",
+			"label": "The first clash",
+			"ko": "첫 번째 접전",
+			"caption": "Silla comes down all three roads at once, uphill, in the heat. All three camps throw it back into its own dust.",
+			"captionKo": "신라가 세 길로 한꺼번에 내려온다. 오르막, 땡볕. 세 진영이 모두 그들을 제 먼지 속으로 되밀어낸다.",
+			"units": {
+				"bk-l": {
+					"at": [
+						318,
+						140
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"bk-c": {
+					"at": [
+						312,
+						290
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"bk-r": {
+					"at": [
+						318,
+						450
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"sl-l": {
+					"at": [
+						640,
+						160
+					],
+					"men": 15000,
+					"facing": 180
+				},
+				"sl-c": {
+					"at": [
+						660,
+						294
+					],
+					"men": 20000,
+					"facing": 180
+				},
+				"sl-r": {
+					"at": [
+						640,
+						434
+					],
+					"men": 15000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							780,
+							160
+						],
+						[
+							560,
+							152
+						],
+						[
+							352,
+							142
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							780,
+							296
+						],
+						[
+							560,
+							294
+						],
+						[
+							350,
+							290
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							780,
+							430
+						],
+						[
+							560,
+							438
+						],
+						[
+							352,
+							450
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						360,
+						140
+					]
+				},
+				{
+					"kind": "clash",
+					"at": [
+						358,
+						290
+					],
+					"label": "thrown back",
+					"ko": "격퇴"
+				},
+				{
+					"kind": "clash",
+					"at": [
+						360,
+						450
+					]
+				}
+			]
+		},
+		{
+			"id": "second",
+			"label": "The second clash",
+			"ko": "두 번째 접전",
+			"caption": "One fist down the northern road at the left camp, on the theory that it has shot the most arrows. The left camp has been shooting half of what it could.",
+			"captionKo": "북쪽 길로 주먹 하나. 화살을 제일 많이 쏜 진영이니 남은 화살도 제일 적으리라는 계산. 좌영은 쏠 수 있는 것의 절반만 쏘고 있었다.",
+			"units": {
+				"bk-l": {
+					"at": [
+						318,
+						140
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"bk-c": {
+					"at": [
+						312,
+						290
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"bk-r": {
+					"at": [
+						318,
+						450
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"sl-l": {
+					"at": [
+						560,
+						158
+					],
+					"men": 15000,
+					"facing": 180
+				},
+				"sl-c": {
+					"at": [
+						640,
+						238
+					],
+					"men": 20000,
+					"facing": 200
+				},
+				"sl-r": {
+					"at": [
+						650,
+						434
+					],
+					"men": 15000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							520,
+							158
+						],
+						[
+							430,
+							150
+						],
+						[
+							352,
+							141
+						]
+					],
+					"label": "hwarang in front",
+					"ko": "화랑이 앞장"
+				},
+				{
+					"side": "silla",
+					"kind": "retreat",
+					"points": [
+						[
+							372,
+							172
+						],
+						[
+							470,
+							186
+						],
+						[
+							560,
+							194
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						360,
+						140
+					],
+					"label": "the fist opens on the stakes",
+					"ko": "목책에서 풀린 주먹"
+				}
+			]
+		},
+		{
+			"id": "third",
+			"label": "The third clash",
+			"ko": "세 번째 접전",
+			"caption": "Pumil takes the southern road, where the right camp sits lowest. Except it doesn't: it moved back and higher in the night, and every pace of the difference is uphill.",
+			"captionKo": "품일이 남쪽 길을 잡는다. 우영이 가장 낮은 곳이다. 그런데 아니다. 밤사이 더 뒤로, 더 높이 옮겼다. 그 차이만큼이 전부 오르막이다.",
+			"units": {
+				"bk-l": {
+					"at": [
+						318,
+						140
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"bk-c": {
+					"at": [
+						312,
+						290
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"bk-r": {
+					"at": [
+						296,
+						462
+					],
+					"men": 1000,
+					"facing": 340
+				},
+				"sl-l": {
+					"at": [
+						640,
+						165
+					],
+					"men": 15000,
+					"facing": 180
+				},
+				"sl-c": {
+					"at": [
+						650,
+						292
+					],
+					"men": 20000,
+					"facing": 180
+				},
+				"sl-r": {
+					"at": [
+						520,
+						440
+					],
+					"men": 15000,
+					"facing": 185
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							480,
+							440
+						],
+						[
+							410,
+							446
+						],
+						[
+							342,
+							458
+						]
+					],
+					"label": "Pumil",
+					"ko": "품일"
+				},
+				{
+					"side": "silla",
+					"kind": "retreat",
+					"points": [
+						[
+							360,
+							488
+						],
+						[
+							460,
+							492
+						],
+						[
+							560,
+							470
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						338,
+						462
+					],
+					"label": "the camp is not where the scouts drew it",
+					"ko": "척후가 그린 자리가 아니다"
+				}
+			]
+		},
+		{
+			"id": "fourth",
+			"label": "The fourth clash",
+			"ko": "네 번째 접전",
+			"caption": "Yushin leads the centre himself on the white horse. Gyebek rides out of the pass to meet him, blade reversed along his arm, and both armies stop to watch two men.",
+			"captionKo": "유신이 백마를 타고 몸소 중군을 이끈다. 계백이 고개에서 달려 나와 맞선다. 칼날을 팔에 거꾸로 붙인 채. 양군이 멈춰 두 사람을 본다.",
+			"units": {
+				"bk-l": {
+					"at": [
+						318,
+						140
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"bk-c": {
+					"at": [
+						322,
+						290
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"bk-r": {
+					"at": [
+						296,
+						462
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"sl-l": {
+					"at": [
+						620,
+						170
+					],
+					"men": 15000,
+					"facing": 180
+				},
+				"sl-c": {
+					"at": [
+						520,
+						292
+					],
+					"men": 20000,
+					"facing": 180
+				},
+				"sl-r": {
+					"at": [
+						620,
+						430
+					],
+					"men": 15000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							470,
+							292
+						],
+						[
+							430,
+							291
+						],
+						[
+							402,
+							290
+						]
+					],
+					"label": "Yushin",
+					"ko": "유신"
+				},
+				{
+					"side": "baekje",
+					"kind": "charge",
+					"points": [
+						[
+							340,
+							290
+						],
+						[
+							362,
+							289
+						],
+						[
+							376,
+							290
+						]
+					],
+					"label": "Gyebek",
+					"ko": "계백"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						388,
+						290
+					],
+					"label": "two men in the gap",
+					"ko": "틈새의 두 사람"
+				}
+			]
+		},
+		{
+			"id": "boys",
+			"label": "Bangul and Gwanchang",
+			"ko": "반굴과 관창",
+			"caption": "Four failures and fifty thousand men sitting in the dust. Two fathers send their sons. Bangul rides in alone and does not come back. Gwanchang is sent home once, alive. He comes back. The second time, only his horse does.",
+			"captionKo": "네 번의 실패. 오만이 먼지 속에 주저앉았다. 두 아버지가 아들을 보낸다. 반굴은 홀로 들어가 돌아오지 않는다. 관창은 한 번 산 채로 돌려보내진다. 그는 다시 온다. 두 번째엔 말만 돌아온다.",
+			"units": {
+				"bk-l": {
+					"at": [
+						318,
+						140
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"bk-c": {
+					"at": [
+						312,
+						290
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"bk-r": {
+					"at": [
+						296,
+						462
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"sl-l": {
+					"at": [
+						590,
+						175
+					],
+					"men": 15000,
+					"facing": 180
+				},
+				"sl-c": {
+					"at": [
+						610,
+						294
+					],
+					"men": 20000,
+					"facing": 180
+				},
+				"sl-r": {
+					"at": [
+						590,
+						425
+					],
+					"men": 15000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							560,
+							262
+						],
+						[
+							460,
+							266
+						],
+						[
+							346,
+							272
+						]
+					],
+					"label": "Bangul",
+					"ko": "반굴"
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							560,
+							318
+						],
+						[
+							460,
+							314
+						],
+						[
+							346,
+							308
+						]
+					],
+					"label": "Gwanchang",
+					"ko": "관창"
+				},
+				{
+					"side": "baekje",
+					"kind": "retreat",
+					"points": [
+						[
+							350,
+							336
+						],
+						[
+							450,
+							346
+						],
+						[
+							555,
+							336
+						]
+					],
+					"label": "the horse comes home",
+					"ko": "말만 돌아온다"
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						340,
+						268
+					]
+				},
+				{
+					"kind": "death",
+					"at": [
+						340,
+						310
+					]
+				}
+			]
+		},
+		{
+			"id": "last",
+			"label": "The fifth charge",
+			"ko": "다섯 번째 돌격",
+			"caption": "A father wipes his son's face in front of the army, and the line that failed four times goes forward and does not stop. The left camp goes under first. The right folds toward the centre. Five thousand answer to their names, and then they don't.",
+			"captionKo": "아버지가 군 앞에서 아들의 얼굴을 닦는다. 네 번 실패한 줄이 나아가고, 멈추지 않는다. 좌영이 먼저 잠긴다. 우영이 가운데로 접힌다. 오천이 이름에 대답한다. 그리고 더는 대답하지 않는다.",
+			"units": {
+				"bk-l": {
+					"at": [
+						318,
+						140
+					],
+					"men": 0,
+					"facing": 0
+				},
+				"bk-c": {
+					"at": [
+						306,
+						296
+					],
+					"men": 0,
+					"facing": 0
+				},
+				"bk-r": {
+					"at": [
+						300,
+						380
+					],
+					"men": 0,
+					"facing": 0
+				},
+				"sl-l": {
+					"at": [
+						372,
+						150
+					],
+					"men": 15000,
+					"facing": 180
+				},
+				"sl-c": {
+					"at": [
+						392,
+						294
+					],
+					"men": 20000,
+					"facing": 180
+				},
+				"sl-r": {
+					"at": [
+						380,
+						440
+					],
+					"men": 15000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							600,
+							172
+						],
+						[
+							470,
+							160
+						],
+						[
+							348,
+							142
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							620,
+							296
+						],
+						[
+							480,
+							294
+						],
+						[
+							344,
+							292
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							600,
+							428
+						],
+						[
+							470,
+							440
+						],
+						[
+							345,
+							456
+						]
+					]
+				},
+				{
+					"side": "baekje",
+					"kind": "retreat",
+					"points": [
+						[
+							300,
+							450
+						],
+						[
+							292,
+							400
+						],
+						[
+							296,
+							330
+						]
+					],
+					"label": "the right folds in",
+					"ko": "우영이 접힌다"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						318,
+						140
+					],
+					"label": "used up",
+					"ko": "소진"
+				},
+				{
+					"kind": "death",
+					"at": [
+						300,
+						296
+					],
+					"label": "Gyebek",
+					"ko": "계백"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 47, Biography of Gyebek",
+		"Samguk Sagi 47, Biography of Gwanchang",
+		"Samguk Sagi 5, Annals of Silla, Muyeol year 7",
+		"Samguk Sagi 28, Annals of Baekje, Uija year 20"
+	],
+	"note": "The records give the totals (five thousand against fifty thousand), the three camps, four Silla repulses, the two boys and the last charge, on the ninth day of the seventh month. How the five thousand split between the camps and how Silla divided its columns are not recorded; the map spreads them evenly. The camp sites follow the common identification with the hill forts east of Yeonsan.",
+	"noteKo": "기록이 전하는 것은 총수(오천 대 오만), 세 진영, 신라의 네 차례 패퇴, 두 소년, 마지막 돌격, 그리고 칠월 아흐렛날이라는 날짜다. 오천이 진영마다 어떻게 나뉘었는지, 신라가 세 갈래를 어떻게 나눴는지는 기록에 없어 지도에서는 고르게 나누었다. 진영 위치는 연산 동쪽 산성들로 보는 통설을 따랐다."
+}

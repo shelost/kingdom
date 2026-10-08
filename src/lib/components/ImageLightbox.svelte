@@ -244,6 +244,48 @@
 		};
 	};
 
+	/** Distance (px) a finger must travel before a swipe counts. */
+	const SWIPE_PX = 48;
+
+	/**
+	 * Touch has no arrow keys: swipe sideways through a stack, swipe down to close.
+	 * A tap (no travel) falls through to the scrim and buttons as a click.
+	 */
+	let swipedAt = 0;
+	/** The click a browser may still send after a swipe ends on the scrim. */
+	const justSwiped = () => performance.now() - swipedAt < 400;
+
+	const swipe: Attachment<HTMLElement> = (node) => {
+		let start: { x: number; y: number; id: number } | null = null;
+		const down = (e: PointerEvent) => {
+			if (e.pointerType === 'mouse' || !e.isPrimary) return;
+			start = { x: e.clientX, y: e.clientY, id: e.pointerId };
+		};
+		const up = (e: PointerEvent) => {
+			if (!start || e.pointerId !== start.id) return;
+			const dx = e.clientX - start.x;
+			const dy = e.clientY - start.y;
+			start = null;
+			if (flipping) return;
+			if (hasStack && Math.abs(dx) > SWIPE_PX && Math.abs(dx) > Math.abs(dy) * 1.4) {
+				swipedAt = performance.now();
+				stepLightbox(dx < 0 ? 1 : -1);
+			} else if (dy > SWIPE_PX * 1.6 && dy > Math.abs(dx) * 1.4) {
+				swipedAt = performance.now();
+				requestClose();
+			}
+		};
+		const cancel = () => (start = null);
+		node.addEventListener('pointerdown', down);
+		node.addEventListener('pointerup', up);
+		node.addEventListener('pointercancel', cancel);
+		return () => {
+			node.removeEventListener('pointerdown', down);
+			node.removeEventListener('pointerup', up);
+			node.removeEventListener('pointercancel', cancel);
+		};
+	};
+
 	function onDialogClose() {
 		if (imageLightbox.open) closeLightbox();
 	}
@@ -269,9 +311,8 @@
 	function openInChronicle(episodeId: string) {
 		requestClose();
 		stripStoryHash();
-		const home = resolve('/');
-		const here = page.url.pathname;
-		const onStory = here === home || here === '/';
+		const home = resolve('/read');
+		const onStory = page.url.pathname === home;
 		if (onStory) {
 			const el = findStoryHeading(canonicalHashId(episodeId));
 			if (el) scrollToStoryHeading(el, 'smooth');
@@ -289,6 +330,7 @@
 		class="lightbox"
 		aria-labelledby="lightbox-title"
 		{@attach mountDialog}
+		{@attach swipe}
 		onclose={onDialogClose}
 	>
 		<button
@@ -296,7 +338,7 @@
 			class="lightbox-scrim"
 			aria-label="Close image"
 			{@attach mountScrim}
-			onclick={requestClose}
+			onclick={() => !justSwiped() && requestClose()}
 		></button>
 		<figure class="lightbox-frame">
 			<img
@@ -331,22 +373,6 @@
 			</figcaption>
 		</figure>
 		{#if hasStack}
-			<button
-				type="button"
-				class="lightbox-nav prev"
-				onclick={() => stepLightbox(-1)}
-				aria-label="Previous image"
-			>
-				‹
-			</button>
-			<button
-				type="button"
-				class="lightbox-nav next"
-				onclick={() => stepLightbox(1)}
-				aria-label="Next image"
-			>
-				›
-			</button>
 			<p class="lightbox-count" aria-live="polite">
 				{imageLightbox.index + 1} / {imageLightbox.items.length}
 			</p>
@@ -376,6 +402,9 @@
 			max(1.1rem, env(safe-area-inset-right, 0px)) max(1.1rem, env(safe-area-inset-bottom, 0px))
 			max(1.1rem, env(safe-area-inset-left, 0px));
 		overflow: hidden;
+		overscroll-behavior: contain;
+		/* Swipes belong to the lightbox; a pinch still zooms. */
+		touch-action: pinch-zoom;
 	}
 
 	/* Real blur lives on .lightbox-scrim (animatable). Keep native backdrop clear. */
@@ -403,8 +432,8 @@
 		display: grid;
 		justify-items: center;
 		gap: 0.7rem;
-		max-width: min(96vw, 92rem);
-		max-height: min(92dvh, 92rem);
+		max-width: min(80vw, 76rem);
+		max-height: min(80dvh, 76rem);
 		pointer-events: auto;
 	}
 
@@ -412,14 +441,15 @@
 		display: block;
 		width: auto;
 		height: auto;
-		max-width: min(96vw, 92rem);
-		max-height: min(82dvh, 88rem);
+		max-width: min(80vw, 76rem);
+		max-height: min(68dvh, 72rem);
 		object-fit: contain;
 		object-position: center;
-		border-radius: var(--radius);
-		border: 1px solid var(--hairline);
-		background: color-mix(in srgb, var(--panel-sunken) 70%, var(--bg));
+		border-radius: 12px;
 		box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+		-webkit-user-select: none;
+		user-select: none;
+		-webkit-touch-callout: none;
 	}
 
 	.lightbox-cap {
@@ -438,14 +468,14 @@
 		font-family: var(--serif);
 		font-size: 0.95rem;
 		letter-spacing: var(--tracking-display);
-		color: var(--fg-strong);
+		color: #fff;
 	}
 
 	.lightbox-id {
 		font-size: 0.68rem;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
-		color: var(--fg-faint);
+		color: #fff;
 	}
 
 	.lightbox-nsfw {
@@ -485,54 +515,22 @@
 		right: max(0.7rem, env(safe-area-inset-right, 0px));
 		display: grid;
 		place-items: center;
-		width: 2.1rem;
-		height: 2.1rem;
+		width: 2.75rem;
+		height: 2.75rem;
 		padding: 0;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		background: var(--glass);
-		color: var(--fg-strong);
+		border: none;
+		background: none;
+		color: #fff;
+		font-size: 1.6rem;
+		line-height: 1;
 		cursor: pointer;
-		backdrop-filter: blur(12px);
+		text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 		z-index: 2;
+		transition: opacity 0.15s var(--ease);
 	}
 
 	.lightbox-close:hover {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
-	}
-
-	.lightbox-nav {
-		position: absolute;
-		top: 50%;
-		z-index: 2;
-		display: grid;
-		place-items: center;
-		width: 2.4rem;
-		height: 2.4rem;
-		padding: 0;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius-pill);
-		background: var(--glass);
-		color: var(--fg-strong);
-		font-size: 1.4rem;
-		line-height: 1;
-		cursor: pointer;
-		backdrop-filter: blur(12px);
-		transform: translateY(-50%);
-	}
-
-	.lightbox-nav.prev {
-		left: max(0.7rem, env(safe-area-inset-left, 0px));
-	}
-
-	.lightbox-nav.next {
-		right: max(0.7rem, env(safe-area-inset-right, 0px));
-	}
-
-	.lightbox-nav:hover {
-		color: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
+		opacity: 0.7;
 	}
 
 	.lightbox-count {
@@ -551,6 +549,51 @@
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius-pill);
 		backdrop-filter: blur(12px);
+	}
+
+	/* Phones: the picture takes the width, the words tighten, the controls stay in thumb reach. */
+	@media (max-width: 640px) {
+		.lightbox {
+			padding: max(3.25rem, env(safe-area-inset-top, 0px)) max(0.6rem, env(safe-area-inset-right, 0px))
+				max(2.75rem, env(safe-area-inset-bottom, 0px)) max(0.6rem, env(safe-area-inset-left, 0px));
+		}
+
+		.lightbox-frame {
+			gap: 0.55rem;
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		.lightbox-shot {
+			max-width: 100%;
+			max-height: min(72dvh, calc(100dvh - 9rem));
+		}
+
+		.lightbox-cap {
+			max-width: 100%;
+			padding: 0 0.4rem;
+		}
+
+		.lightbox-title {
+			font-size: 0.88rem;
+			line-height: 1.35;
+		}
+
+		.lightbox-jump {
+			padding: 0.6rem 0.8rem;
+		}
+
+		.lightbox-close {
+			top: max(0.35rem, env(safe-area-inset-top, 0px));
+			right: max(0.35rem, env(safe-area-inset-right, 0px));
+			width: 3rem;
+			height: 3rem;
+			font-size: 1.75rem;
+		}
+
+		.lightbox-count {
+			bottom: max(0.6rem, env(safe-area-inset-bottom, 0px));
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

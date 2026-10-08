@@ -1,3 +1,20 @@
+<script module lang="ts">
+	export const DEPTS = [
+		{ ko: '중서성', en: 'Legislative', han: '中書省', x: 70 },
+		{ ko: '문하성', en: 'Examination', han: '門下省', x: 180 },
+		{ ko: '상서성', en: 'Executive', han: '尚書省', x: 290 }
+	] as const;
+
+	export const MINISTRIES = [
+		{ ko: '이', en: 'Personnel', han: '吏' },
+		{ ko: '호', en: 'Revenue', han: '戶' },
+		{ ko: '예', en: 'Rites', han: '禮' },
+		{ ko: '병', en: 'War', han: '兵' },
+		{ ko: '형', en: 'Justice', han: '刑' },
+		{ ko: '공', en: 'Works', han: '工' }
+	] as const;
+</script>
+
 <script lang="ts">
 	/**
 	 * Tang central government as Chunchu sees it: emperor at the apex,
@@ -9,23 +26,9 @@
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
+	import KitStage from './three/KitStage.svelte';
 
-	let { step = 'machine', active = false }: DiagramProps = $props();
-
-	const DEPTS = [
-		{ ko: '중서성', en: 'Legislative', han: '中書省', x: 70 },
-		{ ko: '문하성', en: 'Examination', han: '門下省', x: 180 },
-		{ ko: '상서성', en: 'Executive', han: '尚書省', x: 290 }
-	] as const;
-
-	const MINISTRIES = [
-		{ ko: '이', en: 'Personnel', han: '吏' },
-		{ ko: '호', en: 'Revenue', han: '戶' },
-		{ ko: '예', en: 'Rites', han: '禮' },
-		{ ko: '병', en: 'War', han: '兵' },
-		{ ko: '형', en: 'Justice', han: '刑' },
-		{ ko: '공', en: 'Works', han: '工' }
-	] as const;
+	let { step = 'machine', active = false, flat = false }: DiagramProps = $props();
 
 	const MIN_W = 48;
 	const MIN_GAP = 6;
@@ -33,6 +36,8 @@
 	const MIN_X0 = 180 - MIN_TOTAL / 2;
 </script>
 
+<KitStage id="tang-departments" {step} {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 320"
 	class="dg"
@@ -101,6 +106,8 @@
 	<text class="foot" style="--d: 1900" x="180" y="258">legislative · examination · executive</text>
 	<text class="foot-ko" style="--d: 2000" x="180" y="274">기안 · 심사 · 집행 — 하나의 기계</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

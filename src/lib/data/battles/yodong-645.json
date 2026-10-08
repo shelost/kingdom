@@ -1,0 +1,1154 @@
+{
+	"id": "yodong-645",
+	"title": "Yodong",
+	"ko": "요동성 전투",
+	"hanja": "遼東城之戰",
+	"year": 645,
+	"place": "yodong",
+	"scale": {
+		"km": 20,
+		"px": 110
+	},
+	"terrain": [
+		{
+			"kind": "marsh",
+			"points": [
+				[
+					70,
+					300
+				],
+				[
+					190,
+					255
+				],
+				[
+					320,
+					272
+				],
+				[
+					352,
+					380
+				],
+				[
+					318,
+					500
+				],
+				[
+					190,
+					545
+				],
+				[
+					80,
+					480
+				]
+			],
+			"label": "Liao marsh",
+			"ko": "요하의 늪",
+			"labelAt": [
+				135,
+				330
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					388,
+					0
+				],
+				[
+					364,
+					40
+				],
+				[
+					332,
+					160
+				],
+				[
+					298,
+					310
+				],
+				[
+					256,
+					450
+				],
+				[
+					232,
+					560
+				]
+			],
+			"width": 13,
+			"label": "Liao",
+			"ko": "요하",
+			"labelAt": [
+				392,
+				150
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					58
+				],
+				[
+					920,
+					80
+				],
+				[
+					800,
+					100
+				],
+				[
+					680,
+					135
+				],
+				[
+					600,
+					230
+				],
+				[
+					520,
+					330
+				],
+				[
+					470,
+					400
+				],
+				[
+					415,
+					490
+				],
+				[
+					380,
+					560
+				]
+			],
+			"width": 8
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					392
+				],
+				[
+					840,
+					418
+				],
+				[
+					700,
+					416
+				],
+				[
+					610,
+					425
+				],
+				[
+					548,
+					436
+				],
+				[
+					500,
+					470
+				],
+				[
+					462,
+					520
+				],
+				[
+					440,
+					560
+				]
+			],
+			"width": 8
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					0,
+					415
+				],
+				[
+					120,
+					425
+				],
+				[
+					230,
+					440
+				],
+				[
+					300,
+					452
+				],
+				[
+					420,
+					462
+				],
+				[
+					530,
+					466
+				]
+			]
+		},
+		{
+			"kind": "camp",
+			"at": [
+				345,
+				28
+			],
+			"side": "tang",
+			"label": "Tongding",
+			"ko": "통정진"
+		},
+		{
+			"kind": "fort",
+			"at": [
+				888,
+				72
+			],
+			"side": "goguryeo",
+			"label": "New Fortress",
+			"ko": "신성"
+		},
+		{
+			"kind": "fort",
+			"at": [
+				652,
+				273
+			],
+			"side": "goguryeo",
+			"label": "Gaemo",
+			"ko": "개모성",
+			"hold": {
+				"gaemo": "tang"
+			}
+		},
+		{
+			"kind": "town",
+			"points": [
+				[
+					538,
+					455
+				],
+				[
+					555,
+					444
+				],
+				[
+					592,
+					445
+				],
+				[
+					604,
+					462
+				],
+				[
+					596,
+					482
+				],
+				[
+					562,
+					489
+				],
+				[
+					538,
+					477
+				]
+			],
+			"side": "goguryeo",
+			"label": "Yodong",
+			"ko": "요동성",
+			"labelAt": [
+				572,
+				412
+			],
+			"hold": {
+				"fire": "tang"
+			}
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					538,
+					455
+				],
+				[
+					555,
+					444
+				],
+				[
+					592,
+					445
+				],
+				[
+					604,
+					462
+				],
+				[
+					596,
+					482
+				],
+				[
+					562,
+					489
+				],
+				[
+					538,
+					477
+				],
+				[
+					538,
+					455
+				]
+			],
+			"width": 4
+		},
+		{
+			"kind": "shrine",
+			"at": [
+				590,
+				456
+			],
+			"label": "Holy King's shrine",
+			"ko": "성왕의 사당",
+			"labelAt": [
+				668,
+				478
+			]
+		},
+		{
+			"kind": "camp",
+			"at": [
+				492,
+				522
+			],
+			"side": "tang",
+			"label": "emperor's camp",
+			"ko": "황제의 진영"
+		},
+		{
+			"kind": "label",
+			"at": [
+				395,
+				548
+			],
+			"label": "to Ansi",
+			"ko": "안시로"
+		}
+	],
+	"sides": [
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		},
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		}
+	],
+	"units": [
+		{
+			"id": "shiji",
+			"side": "tang",
+			"label": "Blue Dragon",
+			"ko": "청룡",
+			"hero": "lishiji"
+		},
+		{
+			"id": "daozong",
+			"side": "tang",
+			"label": "Emperor's cousin",
+			"ko": "황제의 사촌"
+		},
+		{
+			"id": "emperor",
+			"side": "tang",
+			"label": "Second Emperor",
+			"ko": "황제",
+			"hero": "taizong"
+		},
+		{
+			"id": "yodong",
+			"side": "goguryeo",
+			"label": "Yodong garrison",
+			"ko": "요동성 수비군"
+		},
+		{
+			"id": "gaemo",
+			"side": "goguryeo",
+			"label": "Men from Gasi",
+			"ko": "가시성 병사"
+		},
+		{
+			"id": "relief",
+			"side": "goguryeo",
+			"label": "Relief army",
+			"ko": "구원군"
+		}
+	],
+	"phases": [
+		{
+			"id": "crossing",
+			"label": "Banners on the middle road",
+			"ko": "가운데 길의 깃발",
+			"caption": "Goguryeo watches the middle road, where the banners are. The Blue Dragon turns north in the night and crosses at a ford nobody guards. By morning every fort on the river has shut its gates.",
+			"captionKo": "고구려는 깃발이 보이는 가운데 길을 지켜본다. 청룡은 밤에 북으로 꺾어, 아무도 지키지 않는 여울을 건넌다. 아침이 되자 강가의 성들은 모두 문을 닫아걸었다.",
+			"units": {
+				"shiji": {
+					"at": [
+						318,
+						54
+					],
+					"men": 56000,
+					"shape": "column",
+					"facing": 0
+				},
+				"daozong": {
+					"at": [
+						205,
+						54
+					],
+					"men": 4000,
+					"shape": "column",
+					"facing": 0
+				},
+				"yodong": {
+					"at": [
+						562,
+						472
+					],
+					"men": 10000,
+					"r": 0.8
+				},
+				"gaemo": {
+					"at": [
+						652,
+						288
+					],
+					"men": 700
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "feint",
+					"points": [
+						[
+							0,
+							330
+						],
+						[
+							110,
+							350
+						],
+						[
+							215,
+							392
+						]
+					],
+					"label": "banners only",
+					"ko": "깃발뿐"
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							395,
+							56
+						],
+						[
+							450,
+							72
+						],
+						[
+							505,
+							98
+						]
+					],
+					"label": "over the ford",
+					"ko": "여울을 건너"
+				}
+			],
+			"events": [
+				{
+					"kind": "gate",
+					"at": [
+						888,
+						92
+					]
+				},
+				{
+					"kind": "gate",
+					"at": [
+						652,
+						252
+					]
+				},
+				{
+					"kind": "gate",
+					"at": [
+						572,
+						440
+					],
+					"label": "gates shut",
+					"ko": "성문을 닫는다"
+				}
+			]
+		},
+		{
+			"id": "newfort",
+			"label": "The New Fortress",
+			"ko": "신성",
+			"caption": "The emperor's cousin rides to the New Fortress and sits under it for ten days. Nobody comes out, and nothing opens. The Blue Dragon leaves a watch on it and turns south.",
+			"captionKo": "황제의 사촌이 신성으로 달려가 열흘을 그 아래 머문다. 아무도 나오지 않고, 아무것도 열리지 않는다. 청룡은 신성에 감시병을 남기고 남으로 돈다.",
+			"units": {
+				"shiji": {
+					"at": [
+						560,
+						175
+					],
+					"men": 56000,
+					"facing": 120
+				},
+				"daozong": {
+					"at": [
+						835,
+						108
+					],
+					"men": 4000,
+					"facing": 315
+				},
+				"yodong": {
+					"at": [
+						562,
+						472
+					],
+					"men": 10000,
+					"r": 0.8
+				},
+				"gaemo": {
+					"at": [
+						652,
+						288
+					],
+					"men": 700
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							420,
+							62
+						],
+						[
+							640,
+							64
+						],
+						[
+							822,
+							98
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							420,
+							74
+						],
+						[
+							495,
+							118
+						],
+						[
+							540,
+							152
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						872,
+						86
+					],
+					"label": "nobody comes out",
+					"ko": "아무도 나오지 않는다"
+				}
+			]
+		},
+		{
+			"id": "gaemo",
+			"label": "Gaemo, eleven days",
+			"ko": "개모성, 열하루",
+			"caption": "Gaemo lasts a little over ten days. Inside are seven hundred men Yeon sent from Gasi to hold it, and they are taken in the gate. Twenty thousand people and the granary go with the fort.",
+			"captionKo": "개모성은 열흘 남짓 버틴다. 그 안에는 연이 가시성에서 보내 지키게 한 칠백 명이 있었고, 그들은 성문에서 붙잡힌다. 사람 이만과 곳간도 성과 함께 넘어간다.",
+			"units": {
+				"shiji": {
+					"at": [
+						652,
+						273
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 44,
+					"arc": [
+						0,
+						360
+					]
+				},
+				"daozong": {
+					"at": [
+						728,
+						196
+					],
+					"men": 4000,
+					"facing": 225
+				},
+				"yodong": {
+					"at": [
+						562,
+						472
+					],
+					"men": 10000,
+					"r": 0.8
+				},
+				"gaemo": {
+					"at": [
+						652,
+						273
+					],
+					"men": 700,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							830,
+							118
+						],
+						[
+							785,
+							160
+						],
+						[
+							740,
+							190
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						652,
+						273
+					],
+					"label": "seven hundred from Gasi",
+					"ko": "가시성의 칠백"
+				}
+			]
+		},
+		{
+			"id": "marsh",
+			"label": "Two hundred li of mud",
+			"ko": "이백 리의 진흙",
+			"caption": "The Blue Dragon reaches Yodong's walls. Behind him the emperor's column wades into the Liao marsh on an earth road his engineer lays as he goes. From the north and east, forty thousand Goguryeo foot and horse march to break the siege.",
+			"captionKo": "청룡이 요동성 아래에 닿는다. 그 뒤로 황제의 대열이 요하의 늪에 들어선다. 장인이 가는 대로 흙길을 깐다. 북쪽과 동쪽에서는 고구려 보병과 기병 사만이 포위를 풀러 내려온다.",
+			"units": {
+				"shiji": {
+					"at": [
+						570,
+						465
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 52,
+					"arc": [
+						60,
+						300
+					]
+				},
+				"daozong": {
+					"at": [
+						645,
+						440
+					],
+					"men": 4000,
+					"facing": 315
+				},
+				"emperor": {
+					"at": [
+						200,
+						437
+					],
+					"men": 10000,
+					"shape": "column",
+					"facing": 0
+				},
+				"yodong": {
+					"at": [
+						562,
+						472
+					],
+					"men": 10000,
+					"r": 0.8
+				},
+				"relief": {
+					"at": [
+						790,
+						250
+					],
+					"men": 40000,
+					"shape": "column",
+					"facing": 225
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							652,
+							305
+						],
+						[
+							625,
+							370
+						],
+						[
+							598,
+							410
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							30,
+							418
+						],
+						[
+							100,
+							424
+						],
+						[
+							160,
+							432
+						]
+					],
+					"label": "earth road",
+					"ko": "흙길"
+				},
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							880,
+							96
+						],
+						[
+							852,
+							165
+						],
+						[
+							820,
+							220
+						]
+					],
+					"label": "from the New Fortress",
+					"ko": "신성에서"
+				},
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							1000,
+							300
+						],
+						[
+							905,
+							286
+						],
+						[
+							840,
+							264
+						]
+					],
+					"label": "from Gungnae",
+					"ko": "국내성에서"
+				}
+			]
+		},
+		{
+			"id": "relief",
+			"label": "Four thousand against forty",
+			"ko": "사천 대 사만",
+			"caption": "The emperor's cousin is told to dig in and wait. He charges instead. His line breaks once; he climbs a rise, sees their ranks in a muddle and goes back in. The Blue Dragon joins him. A thousand heads are counted.",
+			"captionKo": "황제의 사촌은 참호를 파고 기다리라는 말을 듣는다. 그는 대신 돌격한다. 한 번 무너진 줄을 추슬러 언덕에 오르니, 저쪽 대열이 엉망이다. 다시 들어간다. 청룡이 합세한다. 머리 천여 개가 세어진다.",
+			"units": {
+				"shiji": {
+					"at": [
+						570,
+						465
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 52,
+					"arc": [
+						60,
+						300
+					]
+				},
+				"daozong": {
+					"at": [
+						690,
+						398
+					],
+					"men": 4000,
+					"facing": 30
+				},
+				"emperor": {
+					"at": [
+						320,
+						452
+					],
+					"men": 10000,
+					"shape": "column",
+					"facing": 0
+				},
+				"yodong": {
+					"at": [
+						562,
+						472
+					],
+					"men": 10000,
+					"r": 0.8
+				},
+				"relief": {
+					"at": [
+						800,
+						270
+					],
+					"men": 39000,
+					"routed": true,
+					"r": 0.7
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							650,
+							430
+						],
+						[
+							685,
+							410
+						],
+						[
+							722,
+							382
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							612,
+							420
+						],
+						[
+							662,
+							402
+						],
+						[
+							715,
+							372
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "retreat",
+					"points": [
+						[
+							745,
+							350
+						],
+						[
+							800,
+							290
+						],
+						[
+							860,
+							190
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							200,
+							438
+						],
+						[
+							262,
+							446
+						],
+						[
+							330,
+							452
+						]
+					],
+					"label": "bridge pulled up behind",
+					"ko": "건넌 다리를 걷는다"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						722,
+						380
+					],
+					"label": "a thousand heads",
+					"ko": "머리 천여"
+				}
+			]
+		},
+		{
+			"id": "ring",
+			"label": "A hundred deep",
+			"ko": "백 겹",
+			"caption": "The emperor rides to the moat with a sack of earth on his saddle, and his officers carry two. The army rings the walls. Throwers send stones the size of grain jars over the parapet. Inside, the town turns to its shrine.",
+			"captionKo": "황제가 안장에 흙 자루를 얹고 해자까지 달려간다. 장수들은 두 자루를 진다. 군대가 성벽을 에워싼다. 포차가 독만 한 돌을 성가퀴 너머로 날린다. 성안 사람들은 사당을 바라본다.",
+			"units": {
+				"shiji": {
+					"at": [
+						570,
+						465
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 52,
+					"arc": [
+						60,
+						300
+					]
+				},
+				"emperor": {
+					"at": [
+						570,
+						465
+					],
+					"men": 10000,
+					"shape": "ring",
+					"r": 52,
+					"arc": [
+						300,
+						420
+					]
+				},
+				"daozong": {
+					"at": [
+						668,
+						528
+					],
+					"men": 4000,
+					"facing": 225
+				},
+				"yodong": {
+					"at": [
+						562,
+						472
+					],
+					"men": 10000,
+					"r": 0.8
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							340,
+							452
+						],
+						[
+							420,
+							458
+						],
+						[
+							500,
+							462
+						]
+					],
+					"label": "a sack on the saddle",
+					"ko": "안장에 흙 자루"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						548,
+						462
+					],
+					"label": "stones like grain jars",
+					"ko": "독만 한 돌"
+				}
+			]
+		},
+		{
+			"id": "fire",
+			"label": "The south wind",
+			"ko": "남풍",
+			"caption": "On the twelfth day a south wind comes up. They fire the south-west tower and the wind carries it into town, street by street. The shrine is the last roof standing. Ten thousand die; ten thousand soldiers and forty thousand people are taken.",
+			"captionKo": "열이틀째 남풍이 인다. 서남쪽 망루에 불을 지르자 바람이 불길을 거리마다 성안으로 실어 간다. 사당은 마지막까지 서 있는 지붕이다. 만여 명이 죽고, 병사 만과 백성 사만이 끌려간다.",
+			"units": {
+				"shiji": {
+					"at": [
+						570,
+						465
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 44,
+					"arc": [
+						60,
+						300
+					]
+				},
+				"emperor": {
+					"at": [
+						570,
+						465
+					],
+					"men": 10000,
+					"shape": "ring",
+					"r": 44,
+					"arc": [
+						300,
+						420
+					]
+				},
+				"daozong": {
+					"at": [
+						640,
+						520
+					],
+					"men": 4000,
+					"facing": 225
+				},
+				"yodong": {
+					"at": [
+						562,
+						472
+					],
+					"men": 10000,
+					"r": 0.8,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							505,
+							515
+						],
+						[
+							530,
+							496
+						],
+						[
+							546,
+							482
+						]
+					],
+					"label": "up the poles",
+					"ko": "장대를 타고"
+				}
+			],
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						542,
+						482
+					],
+					"label": "south-west tower",
+					"ko": "서남쪽 망루"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						566,
+						462
+					]
+				},
+				{
+					"kind": "fire",
+					"at": [
+						580,
+						478
+					]
+				},
+				{
+					"kind": "surrender",
+					"at": [
+						604,
+						488
+					],
+					"label": "ten thousand taken",
+					"ko": "병사 만이 잡힌다"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Zizhi Tongjian 197, Zhenguan 19 (645), 3rd–5th months",
+		"Old Book of Tang 199A, Account of Goryeo",
+		"New Book of Tang 220, Account of Goryeo",
+		"Samguk Sagi 21, Annals of Goguryeo, Bojang year 4"
+	],
+	"note": "The records give the Blue Dragon sixty thousand foot and horse, the emperor's cousin four thousand riders against the relief army (drawn here out of the sixty), and the emperor ten thousand armoured horse at the walls (Old Book of Tang). Gaemo's garrison beyond the seven hundred from Gasi is not recorded; the twenty thousand taken there are people, not soldiers (the Samguk Sagi's figure is garbled). Yodong's defenders are drawn at the ten thousand fighting men captured; the ten thousand dead included townspeople, many in the fire. The story turns the relief army into a sortie the Blue Dragon drives back; the map follows the records. Where the relief army was met is not recorded. Sites follow the usual identifications: Tongding near Xinmin on the Liao, the New Fortress at Fushun, Gaemo at the Tashan hill fort south of Shenyang (some put it nearer Fushun), Yodong at Liaoyang. Yodong is drawn several times larger than scale so the shrine can be seen.",
+	"noteKo": "기록은 청룡에게 보병과 기병 육만, 구원군을 맞은 황제의 사촌에게 기병 사천(지도에서는 육만 안에서 떼어 그렸다), 성 아래 황제에게 철갑 기병 만(『구당서』)을 준다. 개모성 수비군은 가시성의 칠백 말고는 기록이 없고, 거기서 잡힌 이만은 병사가 아니라 백성이다(『삼국사기』의 숫자는 글자가 흐트러져 있다). 요동성 수비군은 사로잡힌 병사 만으로 그렸다. 죽은 만여 명에는 불에 탄 성안 사람들이 섞여 있다. 이야기는 구원군을 청룡이 밀어낸 출격으로 줄였지만, 지도는 기록을 따랐다. 구원군을 맞은 자리는 기록에 없다. 위치는 통설을 따랐다. 통정진은 요하 가 신민 부근, 신성은 무순, 개모성은 심양 남쪽 탑산산성(무순 쪽으로 보는 견해도 있다), 요동성은 요양이다. 요동성은 사당이 보이도록 실제보다 몇 배 크게 그렸다."
+}

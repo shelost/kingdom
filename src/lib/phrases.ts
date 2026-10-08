@@ -433,7 +433,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — the name that outranks every title',
 		tagline: 'Sword of Silla. Last Prince of Gaya. And still — more than both.',
 		quote: 'You are infinitely more than that…! You are my son. You are Kim Yushin.',
-		arc: 'In the steam cavern before the tenth day at Radiance, Seohyeon’s ghost tells his son he need not erase Gaya to serve Silla — then names him past every sobriquet. You Are Kim Yushin becomes the phrase for any identity that refuses to be only a role: the title that fits, and the person larger than the fitting.',
+		arc: 'In the steam cavern before the tenth day at Radiance, Seohyun’s ghost tells his son he need not erase Gaya to serve Silla — then names him past every sobriquet. You Are Kim Yushin becomes the phrase for any identity that refuses to be only a role: the title that fits, and the person larger than the fitting.',
 		events: [
 			{ year: 647, label: 'Spoken in the cavern the night before Bidam falls.' },
 			{ label: 'Said whenever a name outranks its titles.' }

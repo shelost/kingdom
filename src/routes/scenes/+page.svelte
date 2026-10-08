@@ -451,7 +451,7 @@
 
 {#snippet sceneCaption(scene: Scene)}
 	<span class="meta">
-		<AlbumCover src={coverOf(scene)} alt="" live={activeId === scene.id} />
+		<AlbumCover src={coverOf(scene)} alt="" />
 		<span class="shot-title">
 			{scene.title}
 			{#if isPersonScene(scene)}
@@ -623,7 +623,6 @@
 					<AlbumCover
 						src={coverOf(scene)}
 						alt=""
-						live={activeId === scene.id}
 						sizes="18rem"
 					/>
 					<span class="card-title">

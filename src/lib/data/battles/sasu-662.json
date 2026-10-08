@@ -1,0 +1,558 @@
+{
+	"id": "sasu-662",
+	"title": "The Snake River",
+	"ko": "사수 전투",
+	"hanja": "蛇水之戰",
+	"year": 662,
+	"place": "sasu",
+	"scale": {
+		"km": 1,
+		"px": 100
+	},
+	"terrain": [
+		{
+			"kind": "plain",
+			"points": [
+				[
+					0,
+					40
+				],
+				[
+					1000,
+					40
+				],
+				[
+					1000,
+					540
+				],
+				[
+					0,
+					540
+				]
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					530,
+					0
+				],
+				[
+					505,
+					120
+				],
+				[
+					520,
+					250
+				],
+				[
+					495,
+					380
+				],
+				[
+					515,
+					560
+				]
+			],
+			"width": 34,
+			"label": "Snake River",
+			"ko": "사수",
+			"labelAt": [
+				575,
+				60
+			]
+		},
+		{
+			"kind": "marsh",
+			"points": [
+				[
+					490,
+					262
+				],
+				[
+					532,
+					262
+				],
+				[
+					530,
+					306
+				],
+				[
+					488,
+					306
+				]
+			],
+			"label": "mud",
+			"ko": "진흙",
+			"labelAt": [
+				470,
+				335
+			]
+		},
+		{
+			"kind": "marsh",
+			"points": [
+				[
+					370,
+					385
+				],
+				[
+					470,
+					372
+				],
+				[
+					472,
+					470
+				],
+				[
+					385,
+					482
+				]
+			],
+			"label": "reeds",
+			"ko": "갈대",
+			"labelAt": [
+				400,
+				505
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				300,
+				190
+			],
+			"r": 54
+		},
+		{
+			"kind": "forest",
+			"points": [
+				[
+					640,
+					360
+				],
+				[
+					790,
+					340
+				],
+				[
+					810,
+					452
+				],
+				[
+					655,
+					472
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					1000,
+					300
+				],
+				[
+					800,
+					292
+				],
+				[
+					620,
+					284
+				],
+				[
+					540,
+					284
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					470,
+					284
+				],
+				[
+					300,
+					280
+				],
+				[
+					0,
+					276
+				]
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				75,
+				250
+			],
+			"label": "to Pyongyang",
+			"ko": "평양으로"
+		}
+	],
+	"sides": [
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		},
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		}
+	],
+	"units": [
+		{
+			"id": "tg",
+			"side": "tang",
+			"label": "White Tiger",
+			"ko": "백호",
+			"hero": "pangxiaotai"
+		},
+		{
+			"id": "gg-west",
+			"side": "goguryeo",
+			"label": "Yeon Gesomun",
+			"ko": "연개소문",
+			"unrecorded": true,
+			"hero": "gesomun"
+		},
+		{
+			"id": "gg-east",
+			"side": "goguryeo",
+			"label": "far bank",
+			"ko": "건너편 둑",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "march",
+			"label": "A road made of water",
+			"ko": "물로 된 길",
+			"caption": "The White Tiger is marching to join the Red Fowl outside Pyongyang, and the Snake River is in the way. Gravel at the edges, mud in the middle. Gesomun knows which is which, and both banks are already his.",
+			"captionKo": "백호가 평양 밖의 주작과 합치려고 행군한다. 사수가 길을 막는다. 가장자리는 자갈, 가운데는 진흙. 연개소문은 어느 쪽이 어느 쪽인지 안다. 양쪽 강둑은 이미 그의 것이다.",
+			"units": {
+				"tg": {
+					"at": [
+						810,
+						292
+					],
+					"men": 5000,
+					"shape": "column",
+					"facing": 180
+				},
+				"gg-west": {
+					"at": [
+						300,
+						200
+					],
+					"men": 5000,
+					"facing": 0
+				},
+				"gg-east": {
+					"at": [
+						722,
+						410
+					],
+					"men": 5000,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							990,
+							300
+						],
+						[
+							900,
+							296
+						],
+						[
+							860,
+							294
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "halfway",
+			"label": "Halfway",
+			"ko": "절반",
+			"caption": "Gesomun lets him get halfway. The middle horses sink. Both banks open up at once.",
+			"captionKo": "연개소문은 그가 절반쯤 건널 때까지 둔다. 가운데 말들이 빠진다. 양쪽 강둑이 한꺼번에 열린다.",
+			"units": {
+				"tg": {
+					"at": [
+						530,
+						285
+					],
+					"men": 5000,
+					"shape": "column",
+					"facing": 180
+				},
+				"gg-west": {
+					"at": [
+						440,
+						268
+					],
+					"men": 5000,
+					"shape": "line",
+					"facing": 0
+				},
+				"gg-east": {
+					"at": [
+						600,
+						332
+					],
+					"men": 5000,
+					"shape": "line",
+					"facing": 230
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							330,
+							215
+						],
+						[
+							395,
+							245
+						],
+						[
+							455,
+							272
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							710,
+							395
+						],
+						[
+							650,
+							350
+						],
+						[
+							585,
+							310
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "flood",
+					"at": [
+						510,
+						284
+					],
+					"label": "the middle sinks",
+					"ko": "가운데가 빠진다"
+				},
+				{
+					"kind": "ambush",
+					"at": [
+						445,
+						250
+					]
+				},
+				{
+					"kind": "ambush",
+					"at": [
+						612,
+						318
+					]
+				}
+			]
+		},
+		{
+			"id": "sons",
+			"label": "Thirteen",
+			"ko": "열셋",
+			"caption": "The river does not take them in a heap. Yeon counts them off in the shallows, one son at a time, and goes into the water himself when the archer kills his horse. He comes back out.",
+			"captionKo": "강은 그들을 한 무더기로 삼키지 않는다. 연개소문이 여울에서 아들을 하나씩 센다. 궁수가 말을 쓰러뜨리자 그 자신도 물에 빠진다. 그리고 다시 나온다.",
+			"units": {
+				"tg": {
+					"at": [
+						512,
+						300
+					],
+					"men": 5000,
+					"routed": true,
+					"facing": 180
+				},
+				"gg-west": {
+					"at": [
+						470,
+						288
+					],
+					"men": 5000,
+					"facing": 0
+				},
+				"gg-east": {
+					"at": [
+						560,
+						304
+					],
+					"men": 5000,
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							452,
+							300
+						],
+						[
+							482,
+							318
+						],
+						[
+							505,
+							336
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						500,
+						232
+					],
+					"label": "thirteen, twelve",
+					"ko": "열셋, 열둘"
+				},
+				{
+					"kind": "death",
+					"at": [
+						430,
+						420
+					],
+					"label": "eleven, in the reeds",
+					"ko": "열하나, 갈대숲"
+				},
+				{
+					"kind": "clash",
+					"at": [
+						508,
+						345
+					],
+					"label": "the archer",
+					"ko": "궁수"
+				},
+				{
+					"kind": "death",
+					"at": [
+						528,
+						200
+					],
+					"label": "the banner",
+					"ko": "깃발"
+				}
+			]
+		},
+		{
+			"id": "tiger",
+			"label": "The tiger",
+			"ko": "호랑이",
+			"caption": "Someone shouts to break east, toward any camp that is not this one. The White Tiger does not run: the boys he brought from the south are already dead. The arrows make a hedgehog of him.",
+			"captionKo": "누군가 동쪽으로 뚫고 나가자고, 여기 아닌 어느 진영으로든 가자고 외친다. 백호는 달아나지 않는다. 남쪽에서 데려온 아이들은 이미 다 죽었다. 화살이 그를 고슴도치로 만든다.",
+			"units": {
+				"tg": {
+					"at": [
+						528,
+						296
+					],
+					"men": 0,
+					"routed": true,
+					"facing": 180
+				},
+				"gg-west": {
+					"at": [
+						494,
+						290
+					],
+					"men": 5000,
+					"facing": 0
+				},
+				"gg-east": {
+					"at": [
+						568,
+						302
+					],
+					"men": 5000,
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "feint",
+					"points": [
+						[
+							548,
+							296
+						],
+						[
+							650,
+							294
+						],
+						[
+							770,
+							292
+						]
+					],
+					"label": "break east?",
+					"ko": "동쪽으로?"
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						530,
+						296
+					],
+					"label": "White Tiger",
+					"ko": "백호"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Zizhi Tongjian 200, Longshuo 2, second month",
+		"Cefu Yuangui 373 (Pang Xiaotai's refusal and his five thousand)",
+		"New Book of Tang 220, Goguryeo",
+		"Samguk Sagi 22, Annals of Goguryeo, Bojang year 21",
+		"Samguk Sagi 6, Annals of Silla, Munmu year 2"
+	],
+	"note": "The records tell this battle from the Tang side only: the White Tiger's army lay on the Snake River, Gesomun came at it with more men, and it died to the last, the general with his thirteen sons. The 5,000 is the general's own figure ('over five thousand sons of my home district', Cefu Yuangui), so the whole army may have been larger. The ford ambush and the sons' order of death are the story's; the records describe an attack on a riverside camp. 'The dead were in the tens of thousands' does not say whose. The site follows the usual identification with the Hapjang east of Pyongyang; one recent study argues for the Botong to the west, and older ones for the Chongchon. The Zizhi Tongjian dates it to the second month.",
+	"noteKo": "기록은 이 싸움을 당의 쪽에서만 전한다. 백호의 군이 사수 가에 진을 쳤고, 연개소문이 군사를 더해 들이쳤으며, 장수와 열세 아들까지 모두 죽었다. 오천은 장수 자신의 말('고향 자제 오천여 명', 책부원귀)이라 전군은 더 컸을 수 있다. 여울의 매복과 아들들이 죽는 차례는 이야기의 것이다. 기록은 강가 진영을 친 것으로 적는다. '죽은 자가 수만'이라는 말은 누구의 죽음인지 말하지 않는다. 자리는 평양 동쪽 합장강으로 보는 통설을 따랐다. 서쪽 보통강으로 보는 최근 연구, 청천강으로 보는 옛 설도 있다. 자치통감은 이월로 적는다."
+}

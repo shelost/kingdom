@@ -1,3 +1,23 @@
+<script module lang="ts">
+	import { byId, avatarOf } from '$lib/people';
+
+	/** Crow first (the Yeon hall, East), then the four ka. */
+	export const TRIBES_BASE = [
+		{ ko: '까마귀', en: 'East', id: 'yeontabal' },
+		{ ko: '우가', en: 'West', id: 'cowchief' },
+		{ ko: '저가', en: 'South', id: 'pigchief' },
+		{ ko: '구가', en: 'North', id: 'dogchief' },
+		{ ko: '마가', en: 'Central', id: 'horsechief' }
+	];
+
+	export const faceOf = (id: string) => {
+		const person = byId.get(id);
+		return (person && avatarOf(person)) || null;
+	};
+
+	export const jolbonHref = () => faceOf('jolbon') || '/pl_jumong_cave.png';
+</script>
+
 <script lang="ts">
 	/**
 	 * Jolbon five animal tribes — predecessor of Goguryeo’s five commanderies.
@@ -5,9 +25,9 @@
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
-	import { byId, avatarOf } from '$lib/people';
+	import KitStage from './three/KitStage.svelte';
 
-	let { step = 'league', active = false }: DiagramProps = $props();
+	let { step = 'league', active = false, flat = false }: DiagramProps = $props();
 
 	const CX = 180;
 	const CY = 122;
@@ -16,31 +36,23 @@
 	const uid = `ft-${Math.floor(Math.random() * 1e9)}`;
 
 	const TRIBES = $derived.by(() =>
-		[
-			{ ko: '까마귀', en: 'East', id: 'yeontabal' },
-			{ ko: '우가', en: 'West', id: 'cowchief' },
-			{ ko: '저가', en: 'South', id: 'pigchief' },
-			{ ko: '구가', en: 'North', id: 'dogchief' },
-			{ ko: '마가', en: 'Central', id: 'horsechief' }
-		].map((c, i) => {
+		TRIBES_BASE.map((c, i) => {
 			const a = ((-90 + i * 72) * Math.PI) / 180;
-			const person = byId.get(c.id);
 			return {
 				...c,
 				i,
 				x: CX + R * Math.cos(a),
 				y: CY + R * Math.sin(a),
-				href: (person && avatarOf(person)) || null
+				href: faceOf(c.id)
 			};
 		})
 	);
 
-	const hubHref = $derived.by(() => {
-		const place = byId.get('jolbon');
-		return (place && avatarOf(place)) || '/pl_jumong_cave.png';
-	});
+	const hubHref = $derived(jolbonHref());
 </script>
 
+<KitStage id="five-tribes" {step} {active} {flat}>
+	{#snippet fallback()}
 <svg
 	viewBox="0 0 360 292"
 	class="dg"
@@ -104,6 +116,8 @@
 
 	<text class="foot" style="--d: 1300" x="180" y="278">오부족 · later the five commanderies</text>
 </svg>
+	{/snippet}
+</KitStage>
 
 <style>
 	.dg {

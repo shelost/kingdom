@@ -1,0 +1,804 @@
+{
+	"id": "ansi-645",
+	"title": "Ansi",
+	"ko": "안시성 전투",
+	"hanja": "安市城之戰",
+	"year": 645,
+	"place": "ansi",
+	"scale": {
+		"km": 0.5,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "hill",
+			"at": [
+				585,
+				150
+			],
+			"r": 60
+		},
+		{
+			"kind": "town",
+			"points": [
+				[
+					250,
+					285
+				],
+				[
+					300,
+					190
+				],
+				[
+					420,
+					150
+				],
+				[
+					560,
+					165
+				],
+				[
+					620,
+					250
+				],
+				[
+					580,
+					360
+				],
+				[
+					430,
+					390
+				],
+				[
+					300,
+					365
+				]
+			],
+			"side": "goguryeo",
+			"label": "Ansi",
+			"ko": "안시성",
+			"labelAt": [
+				440,
+				232
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					560,
+					235
+				],
+				[
+					470,
+					262
+				],
+				[
+					370,
+					280
+				],
+				[
+					250,
+					287
+				],
+				[
+					130,
+					300
+				],
+				[
+					0,
+					318
+				]
+			],
+			"width": 6
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					250,
+					285
+				],
+				[
+					300,
+					190
+				],
+				[
+					420,
+					150
+				],
+				[
+					560,
+					165
+				],
+				[
+					620,
+					250
+				],
+				[
+					580,
+					360
+				],
+				[
+					430,
+					390
+				],
+				[
+					300,
+					365
+				],
+				[
+					250,
+					285
+				]
+			],
+			"width": 6
+		},
+		{
+			"kind": "gate",
+			"at": [
+				250,
+				285
+			],
+			"side": "goguryeo"
+		},
+		{
+			"kind": "gate",
+			"at": [
+				420,
+				150
+			],
+			"side": "goguryeo"
+		},
+		{
+			"kind": "gate",
+			"at": [
+				620,
+				250
+			],
+			"side": "goguryeo"
+		},
+		{
+			"kind": "mound",
+			"at": [
+				632,
+				402
+			],
+			"r": 58,
+			"rise": {
+				"wall": 0,
+				"ramp": 1,
+				"collapse": 0.7
+			},
+			"hold": {
+				"ramp": "tang",
+				"collapse": "goguryeo"
+			},
+			"label": "earthen mountain",
+			"ko": "흙산",
+			"labelAt": [
+				712,
+				378
+			]
+		},
+		{
+			"kind": "ridge",
+			"points": [
+				[
+					760,
+					40
+				],
+				[
+					800,
+					200
+				],
+				[
+					780,
+					360
+				]
+			],
+			"label": "east ridge",
+			"ko": "동쪽 고개",
+			"labelAt": [
+				835,
+				110
+			]
+		},
+		{
+			"kind": "camp",
+			"at": [
+				850,
+				300
+			],
+			"side": "tang",
+			"label": "Tang camp",
+			"ko": "당군 진영"
+		},
+		{
+			"kind": "camp",
+			"at": [
+				330,
+				520
+			],
+			"side": "tang",
+			"label": "south camp",
+			"ko": "남쪽 진영"
+		},
+		{
+			"kind": "label",
+			"at": [
+				70,
+				350
+			],
+			"label": "to Yodong",
+			"ko": "요동으로"
+		}
+	],
+	"sides": [
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		},
+		{
+			"id": "goguryeo",
+			"name": "Ansi",
+			"ko": "안시성",
+			"kingdom": "goguryeo"
+		}
+	],
+	"units": [
+		{
+			"id": "shiji",
+			"side": "tang",
+			"label": "Blue Dragon",
+			"ko": "청룡",
+			"unrecorded": true,
+			"hero": "lishiji"
+		},
+		{
+			"id": "emperor",
+			"side": "tang",
+			"label": "Second Emperor",
+			"ko": "황제",
+			"unrecorded": true,
+			"hero": "taizong"
+		},
+		{
+			"id": "daozong",
+			"side": "tang",
+			"label": "Emperor's cousin",
+			"ko": "황제의 사촌",
+			"unrecorded": true
+		},
+		{
+			"id": "garrison",
+			"side": "goguryeo",
+			"label": "Garrison",
+			"ko": "수비군",
+			"unrecorded": true
+		},
+		{
+			"id": "sortie",
+			"side": "goguryeo",
+			"label": "A few hundred",
+			"ko": "수백 명"
+		}
+	],
+	"phases": [
+		{
+			"id": "wall",
+			"label": "The wall first",
+			"ko": "먼저 성벽",
+			"caption": "The Blue Dragon takes the west wall with rams and throwers, six or seven fights a day. Every time a tower comes down, a timber fence goes up behind it. Whenever the emperor's banners show, the wall beats drums and jeers.",
+			"captionKo": "청룡이 충차와 포차로 서쪽 성벽에 붙는다. 하루 예닐곱 번이다. 망루가 무너질 때마다 그 뒤에 나무 울타리가 선다. 황제의 깃발이 보일 때마다 성벽 위에서 북을 치며 야유한다.",
+			"units": {
+				"shiji": {
+					"at": [
+						430,
+						270
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 220,
+					"arc": [
+						120,
+						240
+					]
+				},
+				"emperor": {
+					"at": [
+						850,
+						232
+					],
+					"men": 10000,
+					"facing": 180
+				},
+				"daozong": {
+					"at": [
+						700,
+						470
+					],
+					"men": 4000,
+					"facing": 315
+				},
+				"garrison": {
+					"at": [
+						432,
+						268
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 110,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							150,
+							300
+						],
+						[
+							200,
+							292
+						],
+						[
+							240,
+							287
+						]
+					],
+					"label": "six or seven a day",
+					"ko": "하루 예닐곱 번"
+				},
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							195,
+							140
+						],
+						[
+							245,
+							175
+						],
+						[
+							285,
+							205
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						268,
+						262
+					],
+					"label": "timber fills the gap",
+					"ko": "나무로 틈을 메운다"
+				}
+			]
+		},
+		{
+			"id": "ramp",
+			"label": "The earthen mountain",
+			"ko": "흙산",
+			"caption": "So the emperor tries the ground. His cousin piles a mountain of packed earth against the south-east corner: sixty days, five hundred thousand man-days. Inside, Ansi builds its own wall higher every night, out of doors and roof beams.",
+			"captionKo": "그래서 황제는 땅을 쳐 본다. 사촌이 동남쪽 모서리에 다진 흙으로 산을 쌓는다. 예순 날, 연인원 오십만. 성안은 밤마다 제 성벽을 더 높인다. 문짝과 서까래로.",
+			"units": {
+				"shiji": {
+					"at": [
+						430,
+						270
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 220,
+					"arc": [
+						120,
+						240
+					]
+				},
+				"emperor": {
+					"at": [
+						430,
+						505
+					],
+					"men": 10000,
+					"facing": 270
+				},
+				"daozong": {
+					"at": [
+						655,
+						412
+					],
+					"men": 4000,
+					"facing": 315
+				},
+				"garrison": {
+					"at": [
+						432,
+						268
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 110,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							850,
+							262
+						],
+						[
+							700,
+							470
+						],
+						[
+							500,
+							505
+						]
+					],
+					"label": "camp moves south",
+					"ko": "진영이 남으로"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						606,
+						384
+					],
+					"label": "a race of shovels",
+					"ko": "삽의 경주"
+				}
+			]
+		},
+		{
+			"id": "collapse",
+			"label": "The mountain falls",
+			"ko": "흙산이 무너진다",
+			"caption": "The mountain slumps into the wall it was built to overlook and takes a stretch of it down. Fu Fuai, who should be on top, has stepped away. A few hundred men come out through the gap, take the mound and ring it with fire.",
+			"captionKo": "흙산이 내려다보려던 성벽 쪽으로 무너지며 성벽 한 자락을 끌어내린다. 꼭대기를 지켜야 할 부복애는 자리를 비웠다. 수백 명이 틈으로 나와 흙산을 차지하고 불로 둘러친다.",
+			"units": {
+				"shiji": {
+					"at": [
+						430,
+						270
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 220,
+					"arc": [
+						120,
+						240
+					]
+				},
+				"emperor": {
+					"at": [
+						430,
+						505
+					],
+					"men": 10000,
+					"facing": 270
+				},
+				"daozong": {
+					"at": [
+						735,
+						478
+					],
+					"men": 4000,
+					"facing": 315
+				},
+				"sortie": {
+					"at": [
+						636,
+						400
+					],
+					"men": 300
+				},
+				"garrison": {
+					"at": [
+						432,
+						268
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 110,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							540,
+							330
+						],
+						[
+							585,
+							365
+						],
+						[
+							624,
+							392
+						]
+					],
+					"label": "through the gap",
+					"ko": "틈으로"
+				}
+			],
+			"events": [
+				{
+					"kind": "gate",
+					"at": [
+						588,
+						366
+					],
+					"label": "the wall gives",
+					"ko": "성벽이 무너진다"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						662,
+						422
+					]
+				},
+				{
+					"kind": "fire",
+					"at": [
+						614,
+						424
+					]
+				}
+			]
+		},
+		{
+			"id": "assault",
+			"label": "Three days",
+			"ko": "사흘",
+			"caption": "The emperor beheads Fu Fuai and throws everything at the mound for three days. It does not move. On the second day a yellow parasol comes too close to the wall, and the man on the wall borrows a bow.",
+			"captionKo": "황제는 부복애의 목을 베고 사흘 동안 흙산에 모든 것을 던진다. 흙산은 꿈쩍하지 않는다. 이틀째, 누런 일산이 성벽에 너무 가까이 오고, 성벽 위의 사내가 활을 빌린다.",
+			"units": {
+				"shiji": {
+					"at": [
+						430,
+						270
+					],
+					"men": 56000,
+					"shape": "ring",
+					"r": 220,
+					"arc": [
+						120,
+						240
+					]
+				},
+				"emperor": {
+					"at": [
+						548,
+						480
+					],
+					"men": 10000,
+					"facing": 300
+				},
+				"daozong": {
+					"at": [
+						722,
+						452
+					],
+					"men": 4000,
+					"facing": 200
+				},
+				"sortie": {
+					"at": [
+						636,
+						400
+					],
+					"men": 300
+				},
+				"garrison": {
+					"at": [
+						432,
+						268
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 110,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							480,
+							470
+						],
+						[
+							560,
+							440
+						],
+						[
+							612,
+							414
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							770,
+							440
+						],
+						[
+							705,
+							420
+						],
+						[
+							664,
+							408
+						]
+					]
+				},
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							700,
+							330
+						],
+						[
+							676,
+							362
+						],
+						[
+							652,
+							384
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						640,
+						400
+					],
+					"label": "it holds",
+					"ko": "버틴다"
+				},
+				{
+					"kind": "ambush",
+					"at": [
+						560,
+						452
+					],
+					"label": "yellow parasol",
+					"ko": "누런 일산"
+				},
+				{
+					"kind": "death",
+					"at": [
+						470,
+						525
+					],
+					"label": "Fu Fuai",
+					"ko": "부복애"
+				}
+			]
+		},
+		{
+			"id": "withdraw",
+			"label": "The bow from the wall",
+			"ko": "성벽 위의 절",
+			"caption": "The grass is gone and the cold comes early. The emperor parades his army under the wall one last time. One man climbs the parapet and bows. Forty thousand hold the rear while the rest turn for the marsh.",
+			"captionKo": "풀은 다 뜯겼고 추위는 일찍 온다. 황제는 마지막으로 성 아래에서 군을 사열한다. 한 사내가 성가퀴에 올라 절을 한다. 사만이 뒤를 막고, 나머지는 늪으로 말머리를 돌린다.",
+			"units": {
+				"shiji": {
+					"at": [
+						250,
+						470
+					],
+					"men": 56000,
+					"shape": "line",
+					"facing": 300
+				},
+				"emperor": {
+					"at": [
+						470,
+						478
+					],
+					"men": 10000,
+					"shape": "line",
+					"facing": 270
+				},
+				"daozong": {
+					"at": [
+						620,
+						490
+					],
+					"men": 4000,
+					"facing": 270
+				},
+				"garrison": {
+					"at": [
+						432,
+						268
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 110,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "retreat",
+					"points": [
+						[
+							400,
+							535
+						],
+						[
+							220,
+							530
+						],
+						[
+							30,
+							470
+						]
+					],
+					"label": "back to the marsh",
+					"ko": "다시 늪으로"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Zizhi Tongjian 198, Zhenguan 19 (645), 6th–9th months",
+		"Old Book of Tang 199A, Account of Goryeo",
+		"New Book of Tang 220, Account of Goryeo",
+		"Samguk Sagi 21, Annals of Goguryeo, Bojang year 4",
+		"Encyclopedia of Korean Culture, 'Ansi Fortress' (site)"
+	],
+	"note": "The records put the earthen mountain at the south-east corner, where a mound still stands outside the Yingchengzi hill fort near Haicheng, the usual identification of Ansi; the story says the south wall. The sortie is several hundred in the Zizhi Tongjian, a hundred in the Old Book of Tang. Forty thousand formed the rearguard on the way out. The rain that brings the mountain down is the story's; the records say only that it collapsed. The arrow at the emperor is later Korean tradition, not in the Chinese histories.",
+	"noteKo": "기록은 흙산을 동남쪽 모서리에 둔다. 안시성으로 보는 해성 영성자산성 동남쪽 바깥에 지금도 흙더미가 남아 있다. 이야기는 남쪽 성벽이라 한다. 틈으로 나온 병사는 『자치통감』에서 수백, 『구당서』에서 백이다. 돌아가는 길의 후군은 사만이었다. 흙산을 무너뜨린 비는 이야기의 것이고, 기록은 무너졌다고만 한다. 황제를 맞힌 화살은 중국 사서가 아니라 후대 한국의 전승이다."
+}

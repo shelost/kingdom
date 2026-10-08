@@ -56,7 +56,7 @@
 		position: relative;
 		width: 100%;
 		height: 100%;
-		border-radius: 50%;
+		border-radius: var(--avatar-radius, 50%);
 		pointer-events: all;
 		overflow: visible;
 		cursor: pointer;
@@ -65,7 +65,7 @@
 	.dot {
 		position: absolute;
 		inset: 0;
-		border-radius: 50%;
+		border-radius: var(--avatar-radius, 50%);
 		background: color-mix(in srgb, var(--c) 75%, #1e1e1e);
 		border: 1.25px solid rgba(0, 0, 0, 0.35);
 		box-shadow: 0 0 0 1px color-mix(in srgb, var(--c) 35%, transparent);

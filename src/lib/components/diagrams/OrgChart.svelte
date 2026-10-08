@@ -1,27 +1,61 @@
+<script module lang="ts">
+	import { byId, nameOf, type OrgChartNode } from '$lib/people';
+	import { treeLayout, type TreeItem, type View } from './three/kit.svelte';
+
+	export interface OrgItem extends TreeItem {
+		node: OrgChartNode;
+	}
+
+	/** Head-on and high, so generations read as rows and columns never cross. */
+	export const ORG_VIEW: View = { az: 0, el: 0.8 };
+	/** Tallest slab (the root tier). */
+	export const ORG_TOP = 1.45;
+
+	/** The ground layout the 3D chart uses; the card sizes its box from it. */
+	export function orgLayout(nodes: OrgChartNode[]) {
+		return treeLayout<OrgItem>(
+			nodes.map((node) => ({ id: node.id, parent: node.reportsTo ?? null, node })),
+			{ dx: 2.3, dz: 2.7, wrap: 4 }
+		);
+	}
+
+	/** Canvas width / height that fits a layout seen from ORG_VIEW, labels included. */
+	export function orgAspect({ width, depth }: { width: number; depth: number }) {
+		const tall = depth * Math.sin(ORG_VIEW.el) + (ORG_TOP + 1.6) * Math.cos(ORG_VIEW.el) + 1;
+		return Math.min(2.2, Math.max(0.9, (width + 1.6) / tall));
+	}
+
+	export function orgName(node: OrgChartNode): string {
+		const person = byId.get(node.id);
+		if (person) return nameOf(person);
+		return node.role?.split('·')[0]?.trim() || node.id.replace(/^_/, '');
+	}
+</script>
+
 <script lang="ts">
 	/**
 	 * Hierarchy chart for organization profiles — driven by `Person.orgChart`.
 	 * Click a person node to open their wiki entry; synthetic seats stay inert.
+	 * With WebGL it stands up as a 3D tree of slabs (faces as labels); the
+	 * DOM tree below is the fallback and the `flat` thumbnail.
 	 */
-	import {
-		byId,
-		avatarOf,
-		nameOf,
-		isPlaceholderArt,
-		hangulInitial,
-		colorOf,
-		type OrgChartNode,
-		type Person
-	} from '$lib/people';
+	import { avatarOf, isPlaceholderArt, hangulInitial, colorOf, type Person } from '$lib/people';
 	import { storyImg } from '$lib/img';
+	import KitStage from './three/KitStage.svelte';
+	import { ORG_SCENE } from './three/scenes';
 
 	let {
 		nodes = [],
-		onOpen
+		onOpen,
+		flat = false
 	}: {
 		nodes?: OrgChartNode[];
 		onOpen?: (id: string) => void;
+		/** DOM tree only (thumbnails): no WebGL. */
+		flat?: boolean;
 	} = $props();
+
+	const aspect = $derived(orgAspect(orgLayout(nodes)));
 
 	type TreeNode = {
 		node: OrgChartNode;
@@ -54,8 +88,7 @@
 	});
 
 	function labelOf(t: TreeNode): string {
-		if (t.person) return nameOf(t.person);
-		return t.node.role?.split('·')[0]?.trim() || t.node.id.replace(/^_/, '');
+		return orgName(t.node);
 	}
 
 	function openable(t: TreeNode): boolean {
@@ -128,8 +161,19 @@
 {/snippet}
 
 {#if roots.length}
-	<div class="org-chart" class:play={active} {@attach play} role="img" aria-label="Organization chart">
-		{@render branch(roots, 0)}
+	<div class="org-chart" class:play={active} {@attach play} role="group" aria-label="Organization chart">
+		<KitStage
+			scene={ORG_SCENE}
+			{aspect}
+			{active}
+			{flat}
+			sceneProps={{ nodes, onOpen }}
+			keepFallback={false}
+		>
+			{#snippet fallback()}
+				{@render branch(roots, 0)}
+			{/snippet}
+		</KitStage>
 	</div>
 {/if}
 

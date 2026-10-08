@@ -77,10 +77,10 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		cover: '/temp/hwangsan-white-horse-back.jpg',
 		coat: 'Pure white like Hangyul before him — younger, a hand lighter in the chest.',
 		tagline: 'The last horse Yushin names — white against Gyebek’s black, and the blood on the lips at Mount Gain.',
-		arc: 'Named on the tenth day after Hangyul, and the last horse Yushin ever names. He rides Hanseul out that day and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others. At Hwangsanbeol the white horse against Gyebek’s black Gomanari is the picture the field remembers. In the snow of 662 the old horse carries rice to the Tang camp outside Pyongyang while Yushin walks beside him. In 665, grey at the muzzle, he is the white horse the Tang adjutant picks for the oath at Mount Gain, and Yushin leads him up the hill himself. Like Hanbyul and Hangyul before him, he does not die of age.',
+		arc: 'Named on the tenth day after Hangyul, and the last horse Yushin ever names. He rides Hanseul out that day and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others. At Yellow Mountain the white horse against Gyebek’s black Gomanari is the picture the field remembers. In the snow of 662 the old horse carries rice to the Tang camp outside Pyongyang while Yushin walks beside him. In 665, grey at the muzzle, he is the white horse the Tang adjutant picks for the oath at Mount Gain, and Yushin leads him up the hill himself. Like Hanbyul and Hangyul before him, he does not die of age.',
 		events: [
 			{ year: 647, label: 'Named after Hangyul’s death.' },
-			{ year: 660, label: 'Carries Yushin across Hwangsanbeol against Gomanari.' },
+			{ year: 660, label: 'Carries Yushin across Yellow Mountain against Gomanari.' },
 			{ year: 662, label: 'Hauls rice through the snow to the Tang camp at Pyongyang.' },
 			{ year: 665, label: 'Sacrificed for the blood oath at Mount Gain.' }
 		]
@@ -96,7 +96,7 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		arc: 'Named for the old bear ferry at Gomanaru (Ungjin) where Gyebek learned to ride. In the border years he is how Hundred-Victories kills a general: out of an empty field at a speed no Silla horse can match, one cut on the pass, gone over the ridge before the escort draws. On the last morning the yard is swept and nothing in it belongs to him any more except the black horse at the post. Gomanari carries him onto the Yellow Mountain field against the white Hanseul, and stands by its master’s planted sword after the field is quiet.',
 		events: [
 			{ year: 648, label: 'The border years: carries Gyebek through Silla escorts to their generals, one cut on the pass.' },
-			{ year: 660, label: 'Carries Gyebek to Hwangsanbeol; stands by the planted sword.' }
+			{ year: 660, label: 'Carries Gyebek to Yellow Mountain; stands by the planted sword.' }
 		]
 	},
 	{
@@ -120,7 +120,7 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '夏冬',
 		coat: 'Lean rangy red bay with a fine head, black stockings and a thin black mane; court tack with magenta tassels.',
 		tagline: 'A diplomat’s horse, named for summer and winter — it has to stand in both.',
-		arc: 'Chunchu leaves by the west gate of Wolseong on Hadong, a lean red bay he named for summer and winter, because a diplomat’s horse, he says, has to stand in both. Yushin walks beside the bridle as far as the gate and no farther. When Chunchu comes back down the last hill on foot, thinner, his left hand bound, Yushin has brought the horse: Hadong tied at the front of the lines with an empty saddle, the way some armies carry an empty chair.',
+		arc: 'Chunchu leaves by the west gate of the Moon Palace on Hadong, a lean red bay he named for summer and winter, because a diplomat’s horse, he says, has to stand in both. Yushin walks beside the bridle as far as the gate and no farther. When Chunchu comes back down the last hill on foot, thinner, his left hand bound, Yushin has brought the horse: Hadong tied at the front of the lines with an empty saddle, the way some armies carry an empty chair.',
 		events: [
 			{ year: 642, label: 'Carries Chunchu out of the west gate toward Goguryeo.' },
 			{ year: 642, label: 'Waits at the border with an empty saddle for his return.' }
@@ -164,7 +164,10 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		coat: 'Pale white-gold stag with tall branching antlers.',
 		tagline: 'The guardian deer that led Onjo and Biryu south — and stayed with Onjo.',
 		arc: 'Owned by no one. The stag leads the two brothers south from Jolbon to the summit where the land can be read. Biryu laughs too loudly, says the deer has no taste, and takes his half of the people down to Michuhol and the salt flats. The stag stays. Baekje will call it Sinrok, the guardian deer, for as long as Baekje has anything to call.',
-		events: [{ year: -18, label: 'Leads Onjo and Biryu south; stays with Onjo.' }]
+		events: [
+			{ year: -18, label: 'Leads Onjo and Biryu south; stays with Onjo.' },
+			{ year: 632, label: 'Answers a stolen crown on the White River and carries a drowning boy out.' }
+		]
 	},
 	{
 		id: 'samjogo',

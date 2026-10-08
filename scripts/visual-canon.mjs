@@ -117,10 +117,13 @@ function atYear(value, year) {
 const stageAt = (stages, year) =>
 	year == null ? undefined : stages.filter((s) => !s.lookOnly && s.from <= year && year < s.until).at(-1);
 
-/** Portrait + display name: a pinned look wins, then a canon era face, then the people.ts stage for the year, then the default avatar. */
+/**
+ * Portrait + display name: a pinned look wins, then a canon era face, then the people.ts stage for the year, then the default avatar.
+ * A look that exists only in canon `looks` (a dress change, no portrait of its own) keeps the year's face.
+ */
 function portrait(facts, canon, year, look) {
 	const pinned = look ? facts?.stages?.find((s) => s.id === look) : undefined;
-	if (look && !pinned) throw new Error(`${facts?.name ?? 'person'}: no stage with id "${look}"`);
+	if (look && !pinned && !canon?.looks?.[look]) throw new Error(`${facts?.name ?? 'person'}: no stage or canon look with id "${look}"`);
 	const stage = pinned ?? stageAt(facts?.stages ?? [], year);
 	const name = stage?.name ?? facts?.name;
 	const eraFace = pinned ? undefined : (canon?.eras ?? []).filter((e) => e.id?.startsWith('/ch_') && inYear(e, year)).at(-1);
@@ -204,7 +207,9 @@ function personBlock(raw, opts, ctx) {
 		out.push(
 			redress
 				? `${head} — FACE ONLY from attached ${face}; ignore the portrait's clothing, headgear, jewelry and hair styling — dress exactly as "Now" below (invent a new pose).`
-				: `${head} — FACE and garments from attached ${face} (face only; invent a new pose).`
+				: outfit?.text
+					? `${head} — FACE ONLY from attached ${face}; ignore the portrait's clothing and dress exactly as "Dress" below (invent a new pose).`
+					: `${head} — FACE and garments from attached ${face} (face only; invent a new pose).`
 		);
 	} else out.push(`${head}.`);
 	if (f?.binyeo && !redress) {
@@ -212,8 +217,16 @@ function personBlock(raw, opts, ctx) {
 		out.push(`Hair ornament matches attached ${f.binyeo} when the head is visible.`);
 	}
 	if (c?.look && !redress) out.push(`Look: ${c.look}`);
+	for (const r of outfit?.refs ?? []) refs.add(r);
 	if (outfit?.text) out.push(`Dress: ${outfit.text}`);
-	else if (c?.dress && !redress) out.push(`Dress: ${c.dress}`);
+	else if (c?.dress && !redress) {
+		for (const r of c.dressRefs ?? []) refs.add(r);
+		out.push(`Dress: ${c.dress}`);
+	}
+	if (c?.jewelry && !redress && !opts.battle) {
+		for (const r of c.jewelry.refs ?? []) refs.add(r);
+		out.push(`Jewelry: ${c.jewelry.text}`);
+	}
 	if (wearsJougwan(c, f, opts, redress)) {
 		const kit = CANON.hats.jougwan;
 		for (const r of kit.refs) refs.add(r);
@@ -223,8 +236,8 @@ function personBlock(raw, opts, ctx) {
 	const dress = redress ? null : CANON.costume?.kingdoms?.[f?.kingdom];
 	if (dress) ctx.costumes.add(f.kingdom);
 	if (dress?.crownText && !opts.battle && isCrowned(f, year)) {
-		for (const r of dress.crown ?? []) refs.add(r);
-		out.push(`Crown: ${dress.crownText}`);
+		for (const r of [...(dress.crown ?? []), ...(c?.crownRefs ?? [])]) refs.add(r);
+		out.push(`Crown: ${dress.crownText}${c?.crownNote ? ` ${c.crownNote}` : ''}`);
 	} else if (!redress && wearsNobleCrown(c, f, opts)) {
 		ctx.nobles.add(f.kingdom);
 		out.push(`Crown: the great-clan gilt crown (see NOBLE CROWN), no jougwan.`);

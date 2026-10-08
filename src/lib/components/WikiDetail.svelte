@@ -62,15 +62,15 @@
 		type MemberBand
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
-	import { leitmotifOf, playLeitmotif, stopLeitmotif, tempsOf } from '$lib/leitmotifs';
-	import TempRefs from '$lib/components/TempRefs.svelte';
+	import { ensureStars, isStarred, starKey } from '$lib/imageStarsUi.svelte';
+	import type { Attachment } from 'svelte/attachments';
+	import WikiText from '$lib/components/WikiText.svelte';
 	import WikiOrgCharts from './diagrams/WikiOrgCharts.svelte';
 	import OrgChart from './diagrams/OrgChart.svelte';
 	import { chartsForWikiEntry, hasDiagramChart } from './diagrams/wikiCharts';
 	import { storyImg } from '$lib/img';
 	import { scenesForWikiEntry, type WikiScene } from '$lib/wikiScenes';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
-	import { tilt } from '$lib/attachments/tilt';
 
 	let {
 		entry,
@@ -139,12 +139,15 @@
 	let bondStill = $derived(
 		isBond && entry.still ? scenes.find((s) => s.id === entry.still && !s.nsfw)?.art : undefined
 	);
-	/** Nation detail hero uses the kingdom flag when present (not portrait art); bonds lead with their still. */
-	let heroArt = $derived(isNation && flag ? flag : (bondStill ?? art));
+	/** A bond's painted 2:1 board (`avatar`) leads; otherwise its cover still. */
+	let bondBoard = $derived(isBond && entry.avatar ? art : null);
+	let bondArt = $derived(bondBoard ?? bondStill);
+	/** Nation detail hero uses the kingdom flag when present (not portrait art); bonds lead with their board or still. */
+	let heroArt = $derived(isNation && flag ? flag : (bondArt ?? art));
 	let isNationFlagHero = $derived(isNation && !!flag);
 	/** Places, animals, and bonds / instruments with a cover still lead with a landscape still. */
 	let isLandscapeHero = $derived(
-		isPlace || isAnimal || (isInstrument && entry.avatar !== entry.objectImage) || !!bondStill
+		isPlace || isAnimal || (isInstrument && entry.avatar !== entry.objectImage) || !!bondArt
 	);
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
 	let isPortraitHero = $derived(!!heroArt && !isLandscapeHero && !isNationFlagHero);
@@ -155,9 +158,10 @@
 			s.id.startsWith('poster_') ||
 			s.id === 'yushin-sword-vertical' ||
 			s.id === 'chunchu-strategist';
+		const starred = (s: WikiScene) => isStarred(starKey(s.art, s.id));
 		const posters = rest.filter(isPoster);
 		const others = rest.filter((s) => !isPoster(s));
-		const ordered = [...posters, ...others];
+		const ordered = [...posters, ...others.filter(starred), ...others.filter((s) => !starred(s))];
 		if (!posterArt) return ordered;
 		const posterPath = posterArt.split('?')[0] ?? posterArt;
 		if (ordered.some((s) => (s.art.split('?')[0] ?? s.art) === posterPath)) return ordered;
@@ -280,35 +284,31 @@
 	let copiedForId = $state<string | null>(null);
 	let promptCopied = $derived(copiedForId === entry.id);
 
-	let motif = $derived(leitmotifOf(entry.id));
-	let temps = $derived(tempsOf(motif));
-	let motifPlaying = $state(false);
-	let motifTimer: ReturnType<typeof setTimeout> | undefined;
+	/** The gallery stops at this height (rem) until See all. */
+	const GALLERY_MAX = 26;
+	let galleryOpen = $state(false);
+	/** Whether the stills run past `GALLERY_MAX`, so See all has anything to show. */
+	let galleryTall = $state(false);
 
-	function quietMotif() {
-		if (!browser) return;
-		stopLeitmotif();
-		clearTimeout(motifTimer);
-		motifPlaying = false;
-	}
+	const measureGallery: Attachment<HTMLElement> = (list) => {
+		const ro = new ResizeObserver(() => {
+			const rem = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+			galleryTall = list.scrollHeight > GALLERY_MAX * rem + 1;
+		});
+		ro.observe(list);
+		for (const child of list.children) ro.observe(child);
+		return () => ro.disconnect();
+	};
 
-	function toggleMotif() {
-		if (!browser || !motif) return;
-		if (motifPlaying) {
-			quietMotif();
-			return;
-		}
-		const ms = playLeitmotif(entry.id);
-		if (ms <= 0) return;
-		motifPlaying = true;
-		motifTimer = setTimeout(() => (motifPlaying = false), ms);
-	}
+	$effect(() => {
+		void ensureStars();
+	});
 
-	// Stop playback when the entry changes or the detail view unmounts.
+	// A new entry starts on its base look with the gallery folded.
 	$effect(() => {
 		void entry.id;
 		previewLook = null;
-		return quietMotif;
+		galleryOpen = false;
 	});
 
 	async function copyChatPrompt() {
@@ -354,12 +354,14 @@
 					Expand
 				</button>
 			{/if}
-			<a class="text-btn" href={resolve('/')} title="Back to the chronicle">Chronicle</a>
+			<a class="text-btn" href={resolve('/read')} title="Back to the chronicle">Chronicle</a>
 		</div>
 	</header>
 
 	<div class="detail-scroll" {@attach bindScroll}>
 		{#key entry.id}
+		<div class="body" class:split={expanded}>
+		<div class="info">
 		{#if photo}
 			<figure class="photo">
 				<img {...storyImg(photo, { kind: 'hero', priority: true, alt: who, sizes: '40rem' })} />
@@ -372,6 +374,7 @@
 				class="hero-art"
 				class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
 				class:place={isLandscapeHero}
+				class:bond={!!bondBoard}
 				class:nation={isNationFlagHero}
 				aria-hidden="true"
 			>
@@ -420,31 +423,15 @@
 							>
 						{/if}
 					</p>
+					{#if entry.summary}
+						<p class="short-desc">
+							{entry.summary.en}<span class="short-desc-ko">{entry.summary.ko}</span>
+						</p>
+					{/if}
 					{#if entry.quote}
 						<figure class="quote">
 							<blockquote>{entry.quote}</blockquote>
 						</figure>
-					{/if}
-					{#if motif}
-						<div class="motif-row">
-							<button
-								type="button"
-								class={['motif-btn', motifPlaying && 'playing']}
-								onclick={toggleMotif}
-								aria-pressed={motifPlaying}
-								title={motif.idea}
-							>
-								<span class="material-symbols-outlined" aria-hidden="true"
-									>{motifPlaying ? 'stop' : 'music_note'}</span
-								>
-								{motifPlaying ? 'Playing' : 'Leitmotif'}
-							</button>
-						</div>
-						{#if temps.length}
-							<div class="motif-temps">
-								<TempRefs {temps} />
-							</div>
-						{/if}
 					{/if}
 				</div>
 			{/snippet}
@@ -493,6 +480,16 @@
 					{/each}
 				</div>
 			</section>
+		{/if}
+
+		{#if isPhrase}
+			<p class="phrase-mark">Household idiom · say it the way others say Trojan horse</p>
+		{/if}
+		{#if isSword}
+			<p class="phrase-mark">Ring-pommel blade · owner linked below</p>
+		{/if}
+		{#if entry.tagline}
+			<p class="tagline"><WikiText text={entry.tagline} selfId={entry.id} {onOpen} /></p>
 		{/if}
 
 		<dl class="props">
@@ -804,6 +801,61 @@
 			{/if}
 		</dl>
 
+		{#if eraTags.length}
+			<ul class="era-tags" aria-label="Era tags">
+				{#each eraTags as t (t)}
+					<li title={ERA_TAG_META[t]?.hint ?? t}>{ERA_TAG_META[t]?.label ?? t}</li>
+				{/each}
+			</ul>
+		{/if}
+
+		{#if galleryScenes.length}
+			<section class="gallery" aria-label="Gallery">
+				<ul
+					class="gallery-masonry"
+					class:clamped={!galleryOpen}
+					style:--gallery-max="{GALLERY_MAX}rem"
+					{@attach measureGallery}
+				>
+					{#each galleryScenes as scene, i (scene.id)}
+						<li>
+							<button
+								type="button"
+								class="gallery-shot"
+								onclick={(e) => openWikiGallery(galleryScenes, i, e.currentTarget)}
+								aria-label={scene.alt || scene.title}
+							>
+								<img
+									{...storyImg(scene.art, {
+										kind: 'cue',
+										alt: '',
+										sizes: '(min-width: 56rem) 28vw, (min-width: 40rem) 11rem, 45vw',
+										widths: [384, 640, 828]
+									})}
+								/>
+							</button>
+						</li>
+					{/each}
+				</ul>
+				{#if galleryTall}
+					<button
+						type="button"
+						class="gallery-more"
+						aria-expanded={galleryOpen}
+						onclick={() => (galleryOpen = !galleryOpen)}
+					>
+						{galleryOpen ? 'Show less' : `See all ${galleryScenes.length}`}
+						<span class="material-symbols-outlined" aria-hidden="true"
+							>{galleryOpen ? 'expand_less' : 'expand_more'}</span
+						>
+					</button>
+				{/if}
+			</section>
+		{/if}
+		</div><!-- expo -->
+		</div><!-- info -->
+
+		<div class="text expo">
 		{#if entry.career?.length}
 			<section class="cv">
 				<h2>CV <span class="h2-ko">이력</span></h2>
@@ -870,11 +922,10 @@
 					<li>
 						<button
 							type="button"
-							class="member-card tilt"
+							class="member-card"
 							class:place-card={m.entity === 'place'}
 							style:--mk={colorOf(m)}
 							onclick={() => onOpen(m.id)}
-							{@attach tilt()}
 						>
 							<span
 								class="member-avatar"
@@ -949,10 +1000,9 @@
 						<li>
 							<button
 								type="button"
-								class="member-card place-card tilt"
+								class="member-card place-card"
 								style:--mk={colorOf(city)}
 								onclick={() => onOpen(city.id)}
-								{@attach tilt()}
 							>
 								<span
 									class="member-avatar place-thumb"
@@ -989,10 +1039,9 @@
 						<li>
 							<button
 								type="button"
-								class="member-card place-card tilt"
+								class="member-card place-card"
 								style:--mk={colorOf(place)}
 								onclick={() => onOpen(place.id)}
-								{@attach tilt()}
 							>
 								<span
 									class="member-avatar place-thumb"
@@ -1013,48 +1062,6 @@
 										<span class="member-title">{kindLabel(place)}</span>
 									{/if}
 								</span>
-							</button>
-						</li>
-					{/each}
-				</ul>
-			</section>
-		{/if}
-
-		{#if isPhrase}
-			<p class="phrase-mark">Household idiom · say it the way others say Trojan horse</p>
-		{/if}
-		{#if isSword}
-			<p class="phrase-mark">Ring-pommel blade · owner linked below</p>
-		{/if}
-		<p class="tagline">{entry.tagline}</p>
-
-		{#if eraTags.length}
-			<ul class="era-tags" aria-label="Era tags">
-				{#each eraTags as t (t)}
-					<li title={ERA_TAG_META[t]?.hint ?? t}>{ERA_TAG_META[t]?.label ?? t}</li>
-				{/each}
-			</ul>
-		{/if}
-
-		{#if galleryScenes.length}
-			<section class="gallery" aria-label="Gallery">
-				<ul class="gallery-masonry">
-					{#each galleryScenes as scene, i (scene.id)}
-						<li>
-							<button
-								type="button"
-								class="gallery-shot"
-								onclick={(e) => openWikiGallery(galleryScenes, i, e.currentTarget)}
-								aria-label={scene.alt || scene.title}
-							>
-								<img
-									{...storyImg(scene.art, {
-										kind: 'cue',
-										alt: '',
-										sizes: '(min-width: 56rem) 28vw, (min-width: 40rem) 11rem, 45vw',
-										widths: [384, 640, 828]
-									})}
-								/>
 							</button>
 						</li>
 					{/each}
@@ -1084,7 +1091,11 @@
 			<section>
 				<h2>Political affiliation</h2>
 				<p class="prose">
-					{#if entry.ideology}<span class="ideo-label">{entry.ideology}. </span>{/if}{entry.ideologyNote}
+					{#if entry.ideology}<span class="ideo-label">{entry.ideology}. </span>{/if}<WikiText
+						text={entry.ideologyNote}
+						selfId={entry.id}
+						{onOpen}
+					/>
 				</p>
 			</section>
 		{/if}
@@ -1092,7 +1103,7 @@
 		{#if entry.nature}
 			<section>
 				<h2>Nature</h2>
-				<p class="prose">{entry.nature}</p>
+				<p class="prose"><WikiText text={entry.nature} selfId={entry.id} {onOpen} /></p>
 			</section>
 		{/if}
 
@@ -1156,7 +1167,7 @@
 												? 'Myth'
 												: 'Character arc'}
 				</h2>
-				<p class="prose">{entry.arc}</p>
+				<p class="prose"><WikiText text={entry.arc} selfId={entry.id} {onOpen} /></p>
 			</section>
 		{/if}
 
@@ -1169,7 +1180,7 @@
 							<span class="tl-year">{formatYear(ev.year)}</span>
 							<span class="tl-dot" aria-hidden="true"></span>
 							<span class="tl-text">
-								{ev.label}
+								<WikiText text={ev.label} selfId={entry.id} {onOpen} />
 								{#if entry.born != null && ev.year != null && ev.year >= entry.born}
 									<span class="tl-age">age {ev.year - entry.born}</span>
 								{/if}
@@ -1201,10 +1212,10 @@
 							.map((id) => byId.get(id))
 							.filter((x): x is Person => !!x)}
 						<li>
-							<button type="button" class="rel-card tilt" onclick={() => onOpen(bond.id)} {@attach tilt()}>
+							<button type="button" class="rel-card" onclick={() => onOpen(bond.id)}>
 								<span class="rel-name">{nameOf(bond)}</span>
 								<span class="rel-meta">
-									{kindLabel(bond)}
+									{bond.summary?.en ?? kindLabel(bond)}
 									{#if others.length}
 										· with {others.map((o) => nameOf(o)).join(', ')}
 									{/if}
@@ -1216,37 +1227,32 @@
 				</ul>
 			</section>
 		{/if}
-		</div><!-- expo -->
+		</div><!-- text -->
+		</div><!-- body -->
 		{/key}
 	</div>
 </article>
 
 <style>
 	.detail {
-		--card-radius: 12px;
-		--plate: linear-gradient(
-			165deg,
-			color-mix(in srgb, var(--panel) 94%, var(--fg) 6%) 0%,
-			var(--panel) 45%,
-			color-mix(in srgb, var(--panel) 70%, var(--panel-sunken)) 100%
-		);
+		--card-radius: 8px;
+		--plate: color-mix(in srgb, var(--panel) 96%, var(--fg) 4%);
+		/* Tinted chip: light wash of the entry colour, text in that colour. */
+		--chip-fg: color-mix(in srgb, var(--k) 72%, var(--fg-strong));
+		--chip-bg: color-mix(in srgb, var(--k) 13%, transparent);
+		--chip-line: color-mix(in srgb, var(--k) 24%, transparent);
+		/* Expanded: the chronicle's centred measure; peek: the panel's own width. */
+		--column-pad: 1.9rem;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
 		min-height: 0;
-		/* The entry's colour as a lamp behind the portrait, top right. */
-		background:
-			radial-gradient(
-				ellipse 75% 26rem at 88% -4rem,
-				color-mix(in srgb, var(--k) 20%, transparent),
-				transparent 70%
-			),
-			radial-gradient(
-				ellipse 60% 18rem at 0% 0%,
-				color-mix(in srgb, var(--gold) 5%, transparent),
-				transparent 70%
-			),
-			var(--panel);
+		background: var(--panel);
+	}
+
+	.detail.expanded {
+		--column-pad: max(1.5rem, calc((100% - var(--script-measure)) / 2));
+		background: var(--bg);
 	}
 
 	.detail-bar {
@@ -1257,6 +1263,10 @@
 		padding: 0.8rem 1.1rem;
 		border-bottom: 1px solid color-mix(in srgb, var(--fg) 7%, transparent);
 		background: transparent;
+	}
+
+	.detail.expanded .detail-bar {
+		padding-inline: var(--column-pad);
 	}
 
 	.icon-btn {
@@ -1299,28 +1309,26 @@
 
 	.badge.god-badge {
 		margin-bottom: 0.45rem;
-		color: #fffdf8;
-		background: color-mix(in srgb, var(--k) 55%, #000);
-		border-color: color-mix(in srgb, var(--k) 70%, transparent);
+		color: var(--chip-fg);
+		background: var(--chip-bg);
+		border-color: var(--chip-line);
 	}
 
 	.badge.tier-badge {
+		--tag: var(--gold);
 		margin-bottom: 0.45rem;
-		color: var(--on-gold);
-		background: var(--gold);
-		border-color: color-mix(in srgb, var(--gold) 70%, #000);
-		border-radius: var(--radius);
+		color: color-mix(in srgb, var(--tag) 80%, var(--fg-strong));
+		background: color-mix(in srgb, var(--tag) 14%, transparent);
+		border-color: color-mix(in srgb, var(--tag) 26%, transparent);
 		letter-spacing: 0.1em;
 	}
 
 	.badge.tier-badge[data-tier='S'] {
-		background: #fff8e7;
-		color: #3a2a10;
+		--tag: #e8c873;
 	}
 
 	.badge.tier-badge[data-tier='demigod'] {
-		background: color-mix(in srgb, var(--k) 45%, #c4a574);
-		color: #fffdf8;
+		--tag: color-mix(in srgb, var(--k) 55%, #c4a574);
 	}
 
 	.pill.tier-pill {
@@ -1340,10 +1348,9 @@
 		font-size: 0.68rem;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
-		color: #fffdf8;
-		background: color-mix(in srgb, var(--k) 68%, #111);
-		border: 1px solid color-mix(in srgb, var(--k) 80%, #fff);
-		box-shadow: 0 0 0 1px color-mix(in srgb, var(--k) 35%, transparent);
+		color: var(--chip-fg);
+		background: var(--chip-bg);
+		border: 1px solid var(--chip-line);
 	}
 
 	button.realm-chip {
@@ -1351,7 +1358,7 @@
 	}
 
 	button.realm-chip:hover {
-		border-color: color-mix(in srgb, var(--k) 40%, #fff);
+		border-color: color-mix(in srgb, var(--k) 50%, transparent);
 	}
 
 	.realm-chip .realm-ko,
@@ -1363,9 +1370,9 @@
 	}
 
 	.pill.realm-pill {
-		background: color-mix(in srgb, var(--k) 28%, transparent);
-		border-color: color-mix(in srgb, var(--k) 55%, transparent);
-		color: color-mix(in srgb, var(--k) 40%, var(--fg-strong));
+		background: var(--chip-bg);
+		border-color: var(--chip-line);
+		color: var(--chip-fg);
 	}
 
 	.apps {
@@ -1421,7 +1428,61 @@
 	}
 
 	.expo {
-		padding: 0 1.9rem;
+		padding: 0 var(--column-pad);
+	}
+
+	/* Expanded reads like the chronicle: art and text share one centred 640px column. */
+	.detail.expanded .detail-scroll {
+		padding-top: 1.75rem;
+	}
+
+	.detail.expanded .photo,
+	.detail.expanded .hero-art.place,
+	.detail.expanded .hero-art.nation {
+		width: auto;
+		margin: 0 var(--column-pad) 0.5rem;
+		border: none;
+		border-radius: var(--card-radius);
+		overflow: hidden;
+	}
+
+	.detail.expanded .photo figcaption {
+		padding-inline: 0.75rem;
+	}
+
+	/* Expanded on a wide screen: the infobox and pictures on the left, the writing on the right. */
+	@media (min-width: 60rem) {
+		.body.split {
+			--split-pad: max(1.5rem, calc((100% - 74rem) / 2));
+			display: grid;
+			grid-template-columns: minmax(19rem, 25rem) minmax(0, 1fr);
+			column-gap: clamp(2rem, 4vw, 3.5rem);
+			align-items: start;
+			padding-inline: var(--split-pad);
+		}
+
+		.body.split .expo {
+			padding: 0;
+		}
+
+		.detail.expanded .body.split .hero.portrait .hero-art {
+			width: 10.5rem;
+		}
+
+		.body.split .photo,
+		.body.split .hero-art.place,
+		.body.split .hero-art.nation {
+			margin: 0 0 0.5rem;
+		}
+
+		.body.split .text {
+			max-width: var(--script-measure);
+			padding-top: 1.5rem;
+		}
+
+		.body.split .text > section:first-child > h2 {
+			margin-top: 0;
+		}
 	}
 
 	.photo {
@@ -1440,7 +1501,7 @@
 	}
 
 	.photo figcaption {
-		padding: 0.45rem 1.9rem;
+		padding: 0.45rem var(--column-pad);
 		font-size: 0.62rem;
 		color: var(--fg-faint);
 		background: color-mix(in srgb, var(--fg) 3%, transparent);
@@ -1465,6 +1526,11 @@
 		object-position: center;
 	}
 
+	.hero-art.place.bond img {
+		aspect-ratio: 2 / 1;
+		background: #0b0907;
+	}
+
 	.hero-art.nation img {
 		display: block;
 		width: 100%;
@@ -1486,11 +1552,6 @@
 		margin: 0 0 0.15rem;
 	}
 
-	.detail.expanded .hero.portrait {
-		grid-template-columns: minmax(0, 26rem) auto;
-		justify-content: space-between;
-	}
-
 	.hero.portrait .hero-id {
 		grid-area: id;
 		padding: 1.5rem 0 1.25rem;
@@ -1506,12 +1567,7 @@
 		line-height: 0;
 		overflow: hidden;
 		align-self: end;
-		/* Floor light in the entry's colour; figure fades into the rule below. */
-		background: radial-gradient(
-			ellipse 90% 50% at 50% 100%,
-			color-mix(in srgb, var(--k) 32%, transparent),
-			transparent 72%
-		);
+		/* The figure fades into the rule below. */
 		mask-image: linear-gradient(to bottom, #000 80%, transparent);
 	}
 
@@ -1524,7 +1580,7 @@
 	}
 
 	.detail.expanded .hero.portrait .hero-art {
-		width: 17rem;
+		width: 13rem;
 	}
 
 	.hero.portrait .hero-art.stand-in {
@@ -1634,14 +1690,38 @@
 		background: color-mix(in srgb, var(--k) 72%, #000);
 	}
 
+	/* Wikipedia-style title: serif, ruled off from the article. */
 	.name {
 		margin: 0;
+		padding-bottom: 0.4rem;
+		border-bottom: 1px solid var(--hairline);
 		font-family: var(--serif);
-		font-size: clamp(2.2rem, 5vw, 3rem);
+		font-size: clamp(2rem, 5vw, 2.6rem);
 		font-weight: 500;
-		letter-spacing: -0.035em;
-		line-height: 1.02;
+		letter-spacing: -0.03em;
+		line-height: 1.05;
 		color: var(--fg-strong);
+	}
+
+	/* The one-line summary under the title (“Loyalty”, “Girl Dad”). */
+	.short-desc {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.5rem;
+		margin: 0.55rem 0 0;
+		font-family: var(--serif);
+		font-size: 1.15rem;
+		font-style: italic;
+		line-height: 1.3;
+		color: color-mix(in srgb, var(--k) 60%, var(--fg-strong));
+	}
+
+	.short-desc-ko {
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 0.82em;
+		font-style: normal;
+		color: var(--fg-dim);
 	}
 
 	.native {
@@ -1688,80 +1768,42 @@
 		text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 80%, transparent);
 	}
 
-	.motif-row {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		gap: 0.4rem;
-		margin-top: 0.85rem;
-	}
-
-	.motif-btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-		padding: 0.3rem 0.75rem 0.3rem 0.6rem;
-		border-radius: var(--radius-pill);
-		border: 1px solid rgba(216, 178, 106, 0.4);
-		background: var(--glass);
-		color: var(--gold);
-		font: inherit;
-		font-size: 0.66rem;
-		font-weight: 600;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		cursor: pointer;
-		transition:
-			background 0.2s var(--ease),
-			border-color 0.2s var(--ease),
-			color 0.2s var(--ease);
-	}
-
-	.motif-temps {
-		margin-top: 0.55rem;
-		max-width: 28rem;
-	}
-
-	.motif-btn .material-symbols-outlined {
-		font-size: 0.95rem;
-	}
-
-	.motif-btn:hover {
-		background: rgba(216, 178, 106, 0.12);
-		border-color: rgba(216, 178, 106, 0.65);
-	}
-
-	.motif-btn.playing {
-		color: var(--on-gold);
-		background: var(--gold);
-		border-color: var(--gold);
-	}
-
-	/* Catalogue rows separated by hairlines. */
+	/* Infobox: a bordered fact table, label column on the left. */
 	.props {
 		display: grid;
 		gap: 0;
-		margin: 0 0 1.8rem;
-		padding: 0;
-		border-top: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
+		margin: 0 0 1.6rem;
+		padding: 0.35rem 1.1rem;
+		border: 1px solid var(--hairline);
+		border-radius: var(--card-radius);
+		background: color-mix(in srgb, var(--fg) 2.5%, transparent);
+		font-size: 0.86rem;
+		line-height: 1.45;
+	}
+
+	.props:empty {
+		display: none;
 	}
 
 	.props > div {
 		display: grid;
-		grid-template-columns: 7.25rem 1fr;
-		gap: 0.75rem;
+		grid-template-columns: 7rem 1fr;
+		gap: 1rem;
 		align-items: baseline;
-		padding: 0.62rem 0;
+		padding: 0.6rem 0;
 		border-bottom: 1px solid color-mix(in srgb, var(--fg) 6%, transparent);
+	}
+
+	.props > div:last-child {
+		border-bottom: none;
 	}
 
 	.props dt {
 		margin: 0;
-		font-size: 0.62rem;
-		font-weight: 500;
-		letter-spacing: 0.18em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: var(--tracking-ui);
+		color: var(--fg-dim);
 	}
 
 	.props dd {
@@ -1850,14 +1892,15 @@
 		gap: 0.4rem;
 		padding: 0.12rem 0.55rem;
 		border-radius: var(--radius-pill);
-		border: 1px solid color-mix(in srgb, var(--k) 40%, transparent);
-		background: color-mix(in srgb, var(--k) 14%, transparent);
+		border: 1px solid var(--chip-line);
+		background: var(--chip-bg);
+		color: var(--chip-fg);
 		font-size: 0.85rem;
 	}
 
 	button.pill.link-pill {
 		font: inherit;
-		color: inherit;
+		color: var(--chip-fg);
 		cursor: pointer;
 		transition:
 			border-color 0.2s var(--ease),
@@ -1913,8 +1956,9 @@
 	}
 
 	.pill-row .pill {
-		border-color: color-mix(in srgb, var(--pill, var(--k)) 45%, transparent);
-		background: color-mix(in srgb, var(--pill, var(--k)) 16%, transparent);
+		border-color: color-mix(in srgb, var(--pill, var(--k)) 24%, transparent);
+		background: color-mix(in srgb, var(--pill, var(--k)) 13%, transparent);
+		color: color-mix(in srgb, var(--pill, var(--k)) 72%, var(--fg-strong));
 	}
 
 	.spoken {
@@ -1940,20 +1984,22 @@
 		margin: 0 0.1rem;
 	}
 
+	/* Infobox links read like the inline prose links. */
 	.linkish {
 		padding: 0;
 		border: none;
 		background: none;
-		color: color-mix(in srgb, var(--k) 55%, var(--fg-strong));
+		color: var(--wiki-link);
 		font: inherit;
-		font-weight: 600;
-		text-decoration: underline;
-		text-underline-offset: 0.15em;
+		font-weight: var(--weight-link);
+		letter-spacing: inherit;
+		text-align: left;
 		cursor: pointer;
 	}
 
 	.linkish:hover {
-		color: var(--fg-strong);
+		text-decoration: underline;
+		text-underline-offset: 0.16em;
 	}
 
 	.phrase-mark {
@@ -1966,22 +2012,14 @@
 		color: #c9a227;
 	}
 
+	/* The lead paragraph, above the infobox. */
 	.tagline {
-		margin: 0 0 1.1rem;
+		margin: 0.25rem 0 1.4rem;
 		font-family: var(--serif);
-		font-size: 1.12rem;
-		font-style: italic;
-		line-height: 1.5;
+		font-size: 1.1rem;
+		line-height: 1.55;
 		letter-spacing: -0.01em;
-		color: var(--fg);
-		border-left: 2px solid transparent;
-		border-image: linear-gradient(
-				to bottom,
-				var(--k),
-				color-mix(in srgb, var(--k) 10%, transparent)
-			)
-			1;
-		padding: 0.1rem 0 0.1rem 1rem;
+		color: var(--fg-strong);
 	}
 
 	.era-tags {
@@ -1997,41 +2035,30 @@
 		font-size: 0.72rem;
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
-		color: var(--fg-faint);
+		color: var(--fg-dim);
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius-pill);
 		padding: 0.28rem 0.65rem;
-		background: var(--glass);
+		background: color-mix(in srgb, var(--fg) 4%, transparent);
 	}
 
 	section {
 		margin: 0 0 2.2rem;
 	}
 
-	/* Gold small caps with a hairline running out to the right. */
+	/* Wikipedia section heading: serif, ruled underneath. */
 	h2 {
 		display: flex;
 		align-items: baseline;
-		margin: 0 0 0.9rem;
-		font-family: var(--ui);
-		font-size: 0.66rem;
-		font-weight: 600;
-		letter-spacing: 0.24em;
-		text-transform: uppercase;
-		color: var(--gold);
-	}
-
-	h2::after {
-		content: '';
-		flex: 1;
-		align-self: center;
-		height: 1px;
-		margin-left: 0.85rem;
-		background: linear-gradient(
-			to right,
-			color-mix(in srgb, var(--gold) 40%, transparent),
-			transparent
-		);
+		margin: 0 0 0.85rem;
+		padding-bottom: 0.3rem;
+		border-bottom: 1px solid var(--hairline);
+		font-family: var(--serif);
+		font-size: 1.3rem;
+		font-weight: 500;
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		color: var(--fg-strong);
 	}
 
 	.h2-ko {
@@ -2140,7 +2167,10 @@
 
 	.prose {
 		margin: 0;
-		line-height: 1.48;
+		font-family: var(--sans);
+		font-size: 0.95rem;
+		line-height: 1.65;
+		letter-spacing: var(--tracking-body);
 		color: var(--fg);
 	}
 
@@ -2167,11 +2197,7 @@
 		bottom: 0.9rem;
 		left: calc(var(--tl-year) + var(--tl-gap) + 3px);
 		width: 1px;
-		background: linear-gradient(
-			to bottom,
-			color-mix(in srgb, var(--k) 50%, transparent),
-			color-mix(in srgb, var(--k) 12%, transparent)
-		);
+		background: color-mix(in srgb, var(--k) 30%, transparent);
 	}
 
 	.timeline li {
@@ -2254,18 +2280,15 @@
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
-		--tilt-max: 4deg;
+		position: relative;
 		transition:
 			border-color 0.3s var(--ease),
-			box-shadow 0.3s var(--ease),
-			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+			box-shadow 0.3s var(--ease);
 	}
 
 	.rel-card:hover {
-		--tilt-lift: -3px;
 		border-color: color-mix(in srgb, var(--k) 45%, transparent);
-		box-shadow: calc(var(--tilt-x) * -10px) calc(16px + var(--tilt-y) * -8px) 34px -22px
-			color-mix(in srgb, var(--k) 60%, rgba(0, 0, 0, 0.8));
+		box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.6);
 	}
 
 	.rel-name {
@@ -2339,18 +2362,15 @@
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
-		--tilt-max: 9deg;
+		position: relative;
 		transition:
 			border-color 0.3s var(--ease),
-			box-shadow 0.3s var(--ease),
-			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+			box-shadow 0.3s var(--ease);
 	}
 
 	.member-card:hover {
-		--tilt-lift: -3px;
 		border-color: color-mix(in srgb, var(--mk, var(--k)) 45%, transparent);
-		box-shadow: calc(var(--tilt-x) * -10px) calc(16px + var(--tilt-y) * -8px) 34px -22px
-			color-mix(in srgb, var(--mk, var(--k)) 60%, rgba(0, 0, 0, 0.8));
+		box-shadow: 0 16px 34px -22px color-mix(in srgb, var(--mk, var(--k)) 60%, rgba(0, 0, 0, 0.8));
 	}
 
 	.member-avatar {
@@ -2414,6 +2434,42 @@
 		break-inside: avoid;
 		-webkit-column-break-inside: avoid;
 		page-break-inside: avoid;
+	}
+
+	/* Folded: the first rows of stills, fading out above See all. */
+	.gallery-masonry.clamped {
+		max-height: var(--gallery-max);
+		overflow: hidden;
+		mask-image: linear-gradient(to bottom, #000 78%, transparent);
+	}
+
+	.gallery-more {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.25rem;
+		width: 100%;
+		margin-top: 0.5rem;
+		padding: 0.55rem 1rem;
+		border: 1px solid var(--hairline);
+		border-radius: var(--radius-pill);
+		background: transparent;
+		color: var(--fg-strong);
+		font: inherit;
+		font-family: var(--ui);
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: var(--tracking-ui);
+		cursor: pointer;
+		transition: background-color 0.2s var(--ease);
+	}
+
+	.gallery-more:hover {
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
+	}
+
+	.gallery-more .material-symbols-outlined {
+		font-size: 1.1rem;
 	}
 
 	.gallery-shot {
@@ -2699,12 +2755,9 @@
 			padding: 0 0 max(3.5rem, calc(env(safe-area-inset-bottom, 0px) + 2rem));
 		}
 
-		.expo {
-			padding: 0 1.15rem;
-		}
-
-		.photo figcaption {
-			padding: 0.45rem 1.15rem;
+		.detail,
+		.detail.expanded {
+			--column-pad: 1.15rem;
 		}
 
 		.hero-id {

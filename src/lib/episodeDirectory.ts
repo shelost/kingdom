@@ -1,19 +1,20 @@
 /**
- * The /episodes directory: every episode grouped the way a series page groups
- * seasons. A Part is a season; its chapters are the sections inside it.
+ * The /episodes directory: every episode in the reading hierarchy
+ * Part → Arc → Chapter → Episode, the way a series page groups seasons.
  */
 import {
 	chapters,
 	episodeNumber,
 	entryId,
-	chapterNumber,
+	arcNumber,
 	EPISODE_COUNT,
 	type Block,
 	type Entry
 } from '$lib/story';
 import { episodeQueryId, episodes } from '$lib/reading.svelte';
+import { widgetTexts } from '$lib/widgets';
 import { entryTags, type EntryTag } from '$lib/entryHead';
-import { groupOf, tocAnchor } from '$lib/tocTree';
+import { chapterNumberOf, chapterOf, tocAnchor } from '$lib/tocTree';
 
 export type DirectoryEpisode = {
 	id: string;
@@ -29,28 +30,30 @@ export type DirectoryEpisode = {
 	tags: EntryTag[];
 };
 
-/** A run of episodes inside a chapter: one TOC group, or ungrouped episodes (no label). */
-export type DirectorySection = {
-	/** Element id the breadcrumbs link to; absent on ungrouped runs. */
+/** A run of episodes inside an Arc: one named Chapter, or episodes outside every Chapter (no label). */
+export type DirectoryChapter = {
+	/** Element id the breadcrumbs link to; absent on unnamed runs. */
 	anchor?: string;
+	/** Running Chapter number; absent on unnamed runs. */
+	number?: number;
 	label?: string;
 	ko?: string;
 	episodes: DirectoryEpisode[];
 };
 
-export type DirectoryChapter = {
+export type DirectoryArc = {
 	id: string;
-	/** Element id of the chapter heading. */
+	/** Element id of the Arc heading. */
 	anchor: string;
 	number: number | null;
 	title: string;
 	korean?: string;
 	range: string;
 	episodes: DirectoryEpisode[];
-	sections: DirectorySection[];
+	chapters: DirectoryChapter[];
 };
 
-export type DirectorySeason = {
+export type DirectoryPart = {
 	id: string;
 	/** "Part I" */
 	label: string;
@@ -58,7 +61,7 @@ export type DirectorySeason = {
 	korean?: string;
 	hanja?: string;
 	range: string;
-	chapters: DirectoryChapter[];
+	arcs: DirectoryArc[];
 	count: number;
 };
 
@@ -92,6 +95,8 @@ function wordsIn(blocks: Block[]): number {
 			for (const line of b.en ?? b.lines) n += count(line);
 		} else if (b.kind === 'flashback') {
 			n += wordsIn(b.blocks);
+		} else {
+			for (const s of widgetTexts(b)?.en ?? []) n += count(s);
 		}
 	}
 	return n;
@@ -118,73 +123,73 @@ function rangeOf(list: { range: string }[]): string {
 
 const queryIds = new Map(episodes.map((ep) => [ep.id, episodeQueryId(ep)]));
 
-function directoryEpisode(chapterIndex: number, entryIndex: number): DirectoryEpisode {
-	const ch = chapters[chapterIndex];
-	const entry = ch.entries[entryIndex];
-	const id = entryId(ch.id, entry.title);
+function directoryEpisode(arcIndex: number, entryIndex: number): DirectoryEpisode {
+	const arc = chapters[arcIndex];
+	const entry = arc.entries[entryIndex];
+	const id = entryId(arc.id, entry.title);
 	return {
 		id,
 		queryId: queryIds.get(id) ?? id,
-		number: episodeNumber(chapterIndex, entryIndex),
+		number: episodeNumber(arcIndex, entryIndex),
 		entry,
 		title: entry.title,
 		ko: entry.subtitle,
 		year: entry.year,
 		minutes: Math.max(1, Math.round(wordsIn(entry.blocks) / WORDS_PER_MINUTE)),
-		synopsis: synopsisOf(entry.blocks),
+		synopsis: entry.logline ?? synopsisOf(entry.blocks),
 		tags: entryTags(entry)
 	};
 }
 
-function directoryChapter(chapterIndex: number): DirectoryChapter {
-	const ch = chapters[chapterIndex];
-	const episodes = ch.entries.map((_, entryIndex) => directoryEpisode(chapterIndex, entryIndex));
-	const sections: DirectorySection[] = [];
+function directoryArc(arcIndex: number): DirectoryArc {
+	const arc = chapters[arcIndex];
+	const episodes = arc.entries.map((_, entryIndex) => directoryEpisode(arcIndex, entryIndex));
+	const runs: DirectoryChapter[] = [];
 	episodes.forEach((ep) => {
-		const g = groupOf(ch.id, ep.title);
-		const anchor = g && tocAnchor(ch.id, g);
-		let section = sections[sections.length - 1];
-		if (!section || section.anchor !== anchor) {
-			section = { anchor, label: g?.label, ko: g?.ko, episodes: [] };
-			sections.push(section);
+		const c = chapterOf(arc.id, ep.title);
+		const anchor = c && tocAnchor(arc.id, c);
+		let run = runs[runs.length - 1];
+		if (!run || run.anchor !== anchor) {
+			run = { anchor, number: (c && chapterNumberOf(c)) ?? undefined, label: c?.label, ko: c?.ko, episodes: [] };
+			runs.push(run);
 		}
-		section.episodes.push(ep);
+		run.episodes.push(ep);
 	});
 	return {
-		id: ch.id,
-		anchor: tocAnchor(ch.id),
-		number: chapterNumber(chapterIndex),
-		title: ch.title,
-		korean: ch.korean,
-		range: ch.range,
+		id: arc.id,
+		anchor: tocAnchor(arc.id),
+		number: arcNumber(arcIndex),
+		title: arc.title,
+		korean: arc.korean,
+		range: arc.range,
 		episodes,
-		sections
+		chapters: runs
 	};
 }
 
-/** Chapters without a `part` belong to the Part opened before them. */
-export const SEASONS: DirectorySeason[] = (() => {
-	const seasons: DirectorySeason[] = [];
-	chapters.forEach((ch, i) => {
-		if (ch.part || !seasons.length) {
-			seasons.push({
-				id: ch.id,
-				label: ch.part ?? 'Part I',
-				title: ch.partTitle,
-				korean: ch.partKorean,
-				hanja: ch.partHanja,
+/** Arcs without a `part` belong to the Part opened before them. */
+export const PARTS: DirectoryPart[] = (() => {
+	const parts: DirectoryPart[] = [];
+	chapters.forEach((arc, i) => {
+		if (arc.part || !parts.length) {
+			parts.push({
+				id: arc.id,
+				label: arc.part ?? 'Part I',
+				title: arc.partTitle,
+				korean: arc.partKorean,
+				hanja: arc.partHanja,
 				range: '',
-				chapters: [],
+				arcs: [],
 				count: 0
 			});
 		}
-		const season = seasons[seasons.length - 1];
-		const chapter = directoryChapter(i);
-		season.chapters.push(chapter);
-		season.count += chapter.episodes.length;
+		const part = parts[parts.length - 1];
+		const entry = directoryArc(i);
+		part.arcs.push(entry);
+		part.count += entry.episodes.length;
 	});
-	for (const s of seasons) s.range = rangeOf(s.chapters);
-	return seasons;
+	for (const p of parts) p.range = rangeOf(p.arcs);
+	return parts;
 })();
 
 export const EPISODE_TOTAL = EPISODE_COUNT;

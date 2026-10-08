@@ -9,6 +9,11 @@ export default defineConfig({
 		// Vercel Node treats gsap/Flip as CJS. A named import crashes every page.
 		noExternal: ['gsap']
 	},
+	optimizeDeps: {
+		// Threlte ships Svelte components; pre-bundled, it carries a second Svelte runtime and the canvas never mounts.
+		exclude: ['@threlte/core', '@threlte/extras'],
+		include: ['three']
+	},
 	server: {
 		watch: {
 			ignored: [

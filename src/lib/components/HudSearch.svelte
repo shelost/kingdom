@@ -40,7 +40,7 @@
 	}
 
 	function jump(hit: StorySearchHit) {
-		const onStory = page.url.pathname === '/' || page.url.pathname === '';
+		const onStory = page.url.pathname === resolve('/read');
 		if (reading.viewScope !== 'episodes') setViewScope('episodes');
 		const keepToc = placement === 'toc';
 		if (!keepToc) tocUi.open = false;
@@ -48,7 +48,7 @@
 			goToEpisodeById(hit.destId, { closeToc: !keepToc });
 		} else {
 			requestStoryJump(hit.destId);
-			const home = hrefWithNsfw(resolve('/'), page.url);
+			const home = hrefWithNsfw(resolve('/read'), page.url);
 			void goto(home, { noScroll: true, invalidateAll: false });
 		}
 		close();
