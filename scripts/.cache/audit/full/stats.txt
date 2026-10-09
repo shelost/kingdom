@@ -1,0 +1,98 @@
+# 1   Queen Sunduk                 words  1722 | dialogue 38% narration 48% records 14%
+# 2   Harmony Council              words  1356 | dialogue 45% narration 43% records 12%
+# 3 F Jinheung, the Cloud          words   863 | dialogue 34% narration 50% records 16%
+# 4   Prince Euija                 words  2616 | dialogue 44% narration 49% records 8%
+# 5   Eight Great Clans            words  1421 | dialogue 31% narration 56% records 12%
+# 6 F Gunchogo, the 13th           words   596 | dialogue 25% narration 58% records 17%
+# 7   Commander Yeon               words   883 | dialogue 25% narration 60% records 15%
+# 8   High Summit                  words  1151 | dialogue 48% narration 36% records 16%
+# 9 F Gwanggaeto, the Great King   words   560 | dialogue 28% narration 57% records 15%
+#10   Bupmin                       words   801 | dialogue 39% narration 57% records 4%
+#11 F Sadaham                      words  1510 | dialogue 30% narration 53% records 17%
+#12   Gotaso                       words  1027 | dialogue 50% narration 46% records 4%
+#13   Pumsuk                       words  1177 | dialogue 41% narration 53% records 6%
+#14 F Munhee                       words  1658 | dialogue 34% narration 61% records 5%
+#15   Academy                      words   859 | dialogue 34% narration 61% records 5%
+#16   Stele                        words   807 | dialogue 47% narration 49% records 5%
+#17   Dosuryu                      words   823 | dialogue 62% narration 38% records 0%
+#18   King Euija                   words  1457 | dialogue 48% narration 45% records 7%
+#19   Yunchung                     words   976 | dialogue 69% narration 25% records 6%
+#20 F The Severing                 words   814 | dialogue 31% narration 56% records 13%
+#21   Gumil                        words  1707 | dialogue 30% narration 63% records 7%
+#22   Maehwa                       words  1040 | dialogue 28% narration 67% records 5%
+#23   Siege of Daeya               words  1540 | dialogue 39% narration 54% records 7%
+#24   Yeon’s Massacre              words  1721 | dialogue 42% narration 48% records 9%
+#25   Chunchu & Yeon               words  1724 | dialogue 56% narration 38% records 6%
+#26   Euija & Yeon                 words  1512 | dialogue 69% narration 26% records 5%
+#27 F Nangbi                       words  1127 | dialogue 27% narration 70% records 3%
+#28   Forty Fortresses             words   859 | dialogue 45% narration 45% records 10%
+#29   The Eastern Star             words   873 | dialogue 60% narration 35% records 5%
+#30   Emperor                      words   772 | dialogue 41% narration 46% records 13%
+#31   Four Dragons                 words  1864 | dialogue 33% narration 48% records 19%
+#32   Yodong                       words  1246 | dialogue 30% narration 63% records 7%
+#33 F Boiling River                words   421 | dialogue 31% narration 61% records 8%
+#34   Stallion Mountain            words  1671 | dialogue 34% narration 59% records 7%
+#35 F Colossal River               words   723 | dialogue 23% narration 52% records 25%
+#36   Ansi                         words  1174 | dialogue 31% narration 61% records 8%
+#37 F Haemosu                      words  1771 | dialogue 28% narration 64% records 7%
+#38 F Buyeo                        words  2125 | dialogue 23% narration 67% records 10%
+#39 F Jolbon                       words  3966 | dialogue 45% narration 51% records 4%
+#40   Gi (起)                       words  3485 | dialogue 51% narration 38% records 12%
+#41 F Suro                         words  1856 | dialogue 32% narration 59% records 9%
+#42   Seung (承)                    words  2628 | dialogue 61% narration 38% records 1%
+#43 F Muryuk                       words  1027 | dialogue 31% narration 48% records 22%
+#44   Jeon (轉)                     words  1724 | dialogue 28% narration 63% records 9%
+#45 F Seohyun                      words  3750 | dialogue 44% narration 52% records 4%
+#46   Gyeol (結)                    words  2510 | dialogue 45% narration 49% records 6%
+#47   Queen Jinduk                 words   839 | dialogue 35% narration 58% records 7%
+#48   Huangdi (皇帝)                 words  5424 | dialogue 51% narration 42% records 6%
+#49   Royal Secretariat            words  1510 | dialogue 47% narration 37% records 16%
+#50   Jiabeng (駕崩)                 words   795 | dialogue 20% narration 69% records 11%
+#51   King Muyeol                  words   784 | dialogue 56% narration 41% records 3%
+#52   Jahee                        words   898 | dialogue 38% narration 57% records 4%
+#53 F Hyukgose                     words  1034 | dialogue 30% narration 65% records 5%
+#54 F Talhae                       words   892 | dialogue 18% narration 70% records 12%
+#55 F Alji                         words   642 | dialogue 38% narration 52% records 10%
+#56   Exile                        words  1811 | dialogue 31% narration 62% records 7%
+#57 F Heaven–Earth King            words  2056 | dialogue 41% narration 55% records 4%
+#58 F Sulmun                       words   670 | dialogue 30% narration 56% records 14%
+#59 F Three Princes                words   657 | dialogue 37% narration 53% records 9%
+#60 F Stone Lady                   words   630 | dialogue 47% narration 40% records 13%
+#61 F Gardener                     words  1070 | dialogue 52% narration 43% records 6%
+#62 F Kangrim                      words   816 | dialogue 33% narration 56% records 11%
+#63 F Tribute                      words   881 | dialogue 31% narration 58% records 10%
+#64   Coup                         words  1141 | dialogue 45% narration 50% records 5%
+#65   Descent                      words  1441 | dialogue 32% narration 58% records 10%
+#66   Nine Omens                   words  1107 | dialogue 45% narration 50% records 5%
+#67 F Onjo                         words  1343 | dialogue 39% narration 57% records 4%
+#68   Sungchung                    words   630 | dialogue 51% narration 46% records 3%
+#69   Heungsu                      words  1221 | dialogue 39% narration 58% records 2%
+#70   Gyebek                       words  1207 | dialogue 43% narration 53% records 4%
+#71 F Three Realms                 words   755 | dialogue 56% narration 30% records 14%
+#72   Yellow Mountain              words  3098 | dialogue 28% narration 64% records 8%
+#73   Sabi                         words  2305 | dialogue 40% narration 51% records 9%
+#74   Buyeo Euija†                 words   872 | dialogue 40% narration 50% records 10%
+#75   Kim Chunchu†                 words   794 | dialogue 57% narration 41% records 1%
+#76   Ungjin Commandery            words  1153 | dialogue 43% narration 51% records 6%
+#77   King Pungjang                words  2026 | dialogue 31% narration 59% records 10%
+#78   Pyongyang I                  words  1004 | dialogue 32% narration 58% records 9%
+#79   Snake River                  words  1349 | dialogue 27% narration 66% records 6%
+#80   Tamla Surrenders             words   768 | dialogue 42% narration 44% records 15%
+#81   Rebellion                    words   604 | dialogue 34% narration 62% records 4%
+#82   Betrayal                     words   868 | dialogue 29% narration 59% records 12%
+#83   White River                  words  2110 | dialogue 21% narration 67% records 12%
+#84   Yeon Gesomun†                words   662 | dialogue 39% narration 57% records 4%
+#85   Brothers’ Coup               words   848 | dialogue 30% narration 50% records 20%
+#86   Pyongyang II                 words  1161 | dialogue 23% narration 71% records 6%
+#87   Mount Gain                   words   996 | dialogue 29% narration 66% records 5%
+#88 F Dangun & Old Joseon          words  1293 | dialogue 19% narration 67% records 15%
+#89   Anseung                      words   608 | dialogue 23% narration 61% records 16%
+#90   Letters                      words  1219 | dialogue 51% narration 22% records 27%
+#91   Stone Gate                   words   792 | dialogue 34% narration 48% records 19%
+#92   Wonsul                       words   446 | dialogue 39% narration 57% records 4%
+#93   Kim Yushin†                  words   860 | dialogue 29% narration 63% records 8%
+#94   The Wanggeom's Guest         words   797 | dialogue 31% narration 67% records 3%
+#95   Maeso                        words   837 | dialogue 25% narration 66% records 9%
+#96   Final Ford                   words   620 | dialogue 27% narration 65% records 8%
+#97   The King for All             words  1341 | dialogue 37% narration 56% records 7%
+#98   Balhae                       words   962 | dialogue 29% narration 67% records 4%

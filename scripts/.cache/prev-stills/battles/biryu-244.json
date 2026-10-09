@@ -1,0 +1,805 @@
+{
+	"id": "biryu-244",
+	"title": "Boiling River",
+	"ko": "비류수 전투",
+	"hanja": "沸流水之戰",
+	"year": 244,
+	"place": "hwando",
+	"scale": {
+		"km": 20,
+		"px": 100
+	},
+	"terrain": [
+		{
+			"kind": "river",
+			"points": [
+				[
+					700,
+					0
+				],
+				[
+					640,
+					40
+				],
+				[
+					570,
+					110
+				],
+				[
+					500,
+					185
+				],
+				[
+					440,
+					240
+				],
+				[
+					395,
+					320
+				],
+				[
+					360,
+					430
+				],
+				[
+					325,
+					560
+				]
+			],
+			"width": 16,
+			"label": "Boiling River",
+			"ko": "비류수",
+			"labelAt": [
+				610,
+				130
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					170
+				],
+				[
+					900,
+					245
+				],
+				[
+					800,
+					352
+				],
+				[
+					700,
+					420
+				],
+				[
+					580,
+					475
+				],
+				[
+					450,
+					525
+				],
+				[
+					325,
+					560
+				]
+			],
+			"width": 18,
+			"label": "Amnok river",
+			"ko": "압록강",
+			"labelAt": [
+				640,
+				490
+			]
+		},
+		{
+			"kind": "plain",
+			"points": [
+				[
+					250,
+					175
+				],
+				[
+					330,
+					160
+				],
+				[
+					405,
+					195
+				],
+				[
+					385,
+					245
+				],
+				[
+					300,
+					255
+				],
+				[
+					240,
+					225
+				]
+			],
+			"label": "Yangmaek valley",
+			"ko": "양맥 골짜기",
+			"labelAt": [
+				300,
+				285
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				185,
+				125
+			],
+			"r": 50,
+			"label": "the slope",
+			"ko": "비탈",
+			"labelAt": [
+				120,
+				185
+			]
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				620,
+				262
+			],
+			"r": 40
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				585,
+				372
+			],
+			"r": 30
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				880,
+				150
+			],
+			"r": 34
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				140,
+				360
+			],
+			"r": 30
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				720,
+				120
+			],
+			"r": 26
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					0,
+					40
+				],
+				[
+					120,
+					80
+				],
+				[
+					250,
+					160
+				],
+				[
+					380,
+					205
+				],
+				[
+					455,
+					215
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					455,
+					215
+				],
+				[
+					520,
+					215
+				],
+				[
+					600,
+					232
+				],
+				[
+					680,
+					298
+				],
+				[
+					745,
+					325
+				]
+			]
+		},
+		{
+			"kind": "fort",
+			"at": [
+				745,
+				325
+			],
+			"side": "goguryeo",
+			"label": "Hwando",
+			"ko": "환도성",
+			"labelAt": [
+				748,
+				300
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				70,
+				105
+			],
+			"label": "from Xuantu",
+			"ko": "현도에서"
+		},
+		{
+			"kind": "label",
+			"at": [
+				945,
+				290
+			],
+			"label": "toward Okjeo",
+			"ko": "옥저 쪽으로"
+		}
+	],
+	"sides": [
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		},
+		{
+			"id": "wei",
+			"name": "Wei",
+			"ko": "위",
+			"color": "#5b6b8c"
+		}
+	],
+	"units": [
+		{
+			"id": "gg-foot",
+			"side": "goguryeo",
+			"label": "Dongcheon's army",
+			"ko": "동천왕의 군"
+		},
+		{
+			"id": "gg-horse",
+			"side": "goguryeo",
+			"label": "Iron horse",
+			"ko": "철기"
+		},
+		{
+			"id": "wei-main",
+			"side": "wei",
+			"label": "Wei army",
+			"ko": "위군"
+		},
+		{
+			"id": "wei-riders",
+			"side": "wei",
+			"label": "Wei riders",
+			"ko": "위 기병"
+		}
+	],
+	"phases": [
+		{
+			"id": "march",
+			"label": "Wei comes over the hills",
+			"ko": "위가 산을 넘어온다",
+			"caption": "The king picked this fight. Wei answers with ten thousand men over the western hills, and he marches twenty thousand out of Hwando to meet them at the Boiling River.",
+			"captionKo": "이 싸움은 왕이 걸었다. 위는 서쪽 산을 넘는 만 명으로 답하고, 왕은 이만을 이끌고 환도성을 나와 비류수에서 맞는다.",
+			"units": {
+				"wei-main": {
+					"at": [
+						250,
+						152
+					],
+					"men": 10000,
+					"shape": "column",
+					"facing": 20
+				},
+				"gg-foot": {
+					"at": [
+						628,
+						255
+					],
+					"men": 15000,
+					"shape": "column",
+					"facing": 220
+				},
+				"gg-horse": {
+					"at": [
+						700,
+						300
+					],
+					"men": 5000,
+					"shape": "column",
+					"facing": 215
+				}
+			},
+			"arrows": [
+				{
+					"side": "wei",
+					"kind": "advance",
+					"points": [
+						[
+							120,
+							80
+						],
+						[
+							250,
+							160
+						],
+						[
+							400,
+							206
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							740,
+							318
+						],
+						[
+							660,
+							285
+						],
+						[
+							540,
+							220
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "biryu",
+			"label": "First win: the Boiling River",
+			"ko": "첫 승리: 비류수",
+			"caption": "Wei tries the crossing and Goguryeo throws it back. Three thousand heads, says the annal. Goguryeo won.",
+			"captionKo": "위가 강을 건너려다 고구려에 되밀린다. 벤 머리가 삼천, 본기는 그렇게 적는다. 고구려가 이겼다.",
+			"units": {
+				"wei-main": {
+					"at": [
+						392,
+						204
+					],
+					"men": 7000,
+					"facing": 15
+				},
+				"gg-foot": {
+					"at": [
+						505,
+						225
+					],
+					"men": 15000,
+					"shape": "line",
+					"facing": 190
+				},
+				"gg-horse": {
+					"at": [
+						545,
+						195
+					],
+					"men": 5000,
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							520,
+							222
+						],
+						[
+							485,
+							216
+						],
+						[
+							445,
+							212
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						458,
+						212
+					],
+					"label": "three thousand heads",
+					"ko": "삼천 급"
+				}
+			]
+		},
+		{
+			"id": "yangmaek",
+			"label": "Second win: Yangmaek valley",
+			"ko": "두 번째 승리: 양맥",
+			"caption": "Goguryeo follows them into the Yangmaek valley and wins again: three thousand more, killed or taken. The king starts doing arithmetic out loud.",
+			"captionKo": "고구려가 양맥 골짜기까지 따라 들어가 또 이긴다. 베거나 사로잡은 것이 또 삼천. 왕이 소리 내어 셈을 하기 시작한다.",
+			"units": {
+				"wei-main": {
+					"at": [
+						238,
+						178
+					],
+					"men": 4000,
+					"facing": 20
+				},
+				"gg-foot": {
+					"at": [
+						372,
+						215
+					],
+					"men": 15000,
+					"facing": 190
+				},
+				"gg-horse": {
+					"at": [
+						392,
+						175
+					],
+					"men": 5000,
+					"facing": 195
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							450,
+							215
+						],
+						[
+							395,
+							212
+						],
+						[
+							335,
+							208
+						]
+					]
+				},
+				{
+					"side": "wei",
+					"kind": "retreat",
+					"points": [
+						[
+							305,
+							205
+						],
+						[
+							272,
+							192
+						],
+						[
+							250,
+							182
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						318,
+						208
+					],
+					"label": "three thousand more",
+					"ko": "또 삼천"
+				}
+			]
+		},
+		{
+			"id": "charge",
+			"label": "Five thousand horse",
+			"ko": "철기 오천",
+			"caption": "Five thousand iron horse go out to finish it, over ground nobody scouted. The Wei general forms a square on a slope that runs his way, and waits.",
+			"captionKo": "철기 오천이 끝을 보러 나간다. 아무도 살피지 않은 땅이다. 위의 장수는 자기 쪽으로 기운 비탈에 방진을 치고 기다린다.",
+			"units": {
+				"wei-main": {
+					"at": [
+						192,
+						130
+					],
+					"men": 4000,
+					"facing": 20
+				},
+				"gg-foot": {
+					"at": [
+						355,
+						205
+					],
+					"men": 15000,
+					"facing": 195
+				},
+				"gg-horse": {
+					"at": [
+						270,
+						162
+					],
+					"men": 5000,
+					"shape": "wedge",
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							390,
+							182
+						],
+						[
+							310,
+							168
+						],
+						[
+							228,
+							142
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							400,
+							215
+						],
+						[
+							370,
+							208
+						],
+						[
+							330,
+							198
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "square",
+			"label": "The square holds",
+			"ko": "방진이 버틴다",
+			"caption": "The square holds. The horses don't. Eighteen thousand Goguryeo men die in an afternoon, and the king gets away with about a thousand riders.",
+			"captionKo": "방진은 버틴다. 말들이 버티지 못한다. 고구려군 만 팔천이 한나절에 죽고, 왕은 기병 천여 명과 빠져나간다.",
+			"units": {
+				"wei-main": {
+					"at": [
+						198,
+						134
+					],
+					"men": 4000,
+					"facing": 20
+				},
+				"gg-foot": {
+					"at": [
+						380,
+						262
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"gg-horse": {
+					"at": [
+						445,
+						300
+					],
+					"men": 1000,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "retreat",
+					"points": [
+						[
+							262,
+							165
+						],
+						[
+							380,
+							245
+						],
+						[
+							500,
+							330
+						]
+					],
+					"label": "a thousand riders",
+					"ko": "기병 천여"
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						245,
+						152
+					],
+					"label": "eighteen thousand",
+					"ko": "만 팔천"
+				}
+			]
+		},
+		{
+			"id": "hwando",
+			"label": "Hwando burns",
+			"ko": "환도성이 불탄다",
+			"caption": "Wei climbs to Hwando and burns it. The king runs east with a handful of men, Wei riders one valley behind. At a ford in the rain, someone else puts on the king's robe.",
+			"captionKo": "위가 환도성에 올라 불태운다. 왕은 몇 안 되는 사람과 동쪽으로 달아나고, 위 기병이 한 골짜기 뒤에서 쫓는다. 빗속 여울에서 다른 누군가가 왕의 옷을 입는다.",
+			"units": {
+				"wei-main": {
+					"at": [
+						722,
+						318
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"wei-riders": {
+					"at": [
+						808,
+						340
+					],
+					"men": 1000,
+					"facing": 0
+				},
+				"gg-horse": {
+					"at": [
+						905,
+						335
+					],
+					"men": 1000,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "wei",
+					"kind": "advance",
+					"points": [
+						[
+							260,
+							155
+						],
+						[
+							455,
+							215
+						],
+						[
+							600,
+							234
+						],
+						[
+							705,
+							312
+						]
+					]
+				},
+				{
+					"side": "wei",
+					"kind": "pursuit",
+					"points": [
+						[
+							770,
+							335
+						],
+						[
+							820,
+							340
+						],
+						[
+							858,
+							338
+						]
+					],
+					"label": "one valley behind",
+					"ko": "한 골짜기 뒤"
+				},
+				{
+					"side": "goguryeo",
+					"kind": "retreat",
+					"points": [
+						[
+							880,
+							330
+						],
+						[
+							935,
+							322
+						],
+						[
+							985,
+							318
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "feint",
+					"points": [
+						[
+							880,
+							352
+						],
+						[
+							845,
+							375
+						],
+						[
+							805,
+							382
+						]
+					],
+					"label": "the king's robe",
+					"ko": "왕의 옷"
+				}
+			],
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						745,
+						325
+					],
+					"label": "burned",
+					"ko": "불탄다"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 17, Annals of Goguryeo, Dongcheon year 20",
+		"Samguk Sagi 45, Biographies of Milu and Yu Yu",
+		"Records of the Three Kingdoms, Book of Wei 28, Biography of Guanqiu Jian",
+		"Records of the Three Kingdoms, Book of Wei 30, Treatise on the Eastern Barbarians (Goguryeo)",
+		"Guanqiu Jian's victory stele, found at Ji'an"
+	],
+	"note": "The figures are the Samguk Sagi's: Wei's ten thousand under Guanqiu Jian, Goguryeo's twenty thousand, three thousand Wei dead at the Biryu and three thousand more killed or taken at Yangmaek, five thousand iron horse against a Wei square, eighteen thousand Goguryeo dead, the king fleeing with a thousand riders. They don't add up, and the Chinese record has no Goguryeo wins at all: in the Biography of Guanqiu Jian, Goguryeo is beaten at Liangkou and Hwando falls. The Samguk Sagi dates it two years after the Wei stele and the Treatise on the Eastern Barbarians, which most historians follow; the story uses their year. Wei losses in the cavalry fight are not recorded, so the map holds them. How the five thousand horse were drawn from the twenty thousand, and how Wei split its pursuers, are not recorded; the split is the map's. Biryu follows the usual reading as the Hun river; the Yangmaek valley and the slope are unlocated and drawn west of it. The captain in the king's robe is the story's; the records give the rearguard to Milu and the fatal feigned surrender to Yu Yu.",
+	"noteKo": "수치는 『삼국사기』를 따랐다. 관구검이 이끈 위군 만, 고구려군 이만, 비류수에서 벤 위군 삼천, 양맥에서 베거나 사로잡은 삼천, 위의 방진에 맞선 철기 오천, 죽은 고구려군 만 팔천, 기병 천여와 달아난 왕. 이 숫자들은 서로 맞지 않고, 중국 쪽 기록에는 고구려의 승리가 아예 없다. 『삼국지』 관구검전에서 고구려는 양구에서 지고 환도성이 함락된다. 『삼국사기』는 위의 비석과 『삼국지』 동이전보다 이 년 늦게 적는데, 학계는 대개 비석 쪽을 따르고 이야기도 그 해를 쓴다. 기병전에서 위가 잃은 수는 기록에 없어 그대로 두었다. 철기 오천이 이만에서 어떻게 나뉘었는지, 위가 추격대를 어떻게 나눴는지도 기록에 없어 지도가 정했다. 비류수는 혼강으로 보는 통설을 따랐고, 양맥 골짜기와 비탈은 위치를 알 수 없어 그 서쪽에 그렸다. 왕의 옷을 입은 장수는 이야기의 인물이다. 기록에서 뒤를 막은 이는 밀우, 거짓 항복으로 적장을 찌른 이는 유유다."
+}

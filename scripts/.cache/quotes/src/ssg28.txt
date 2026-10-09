@@ -1,0 +1,13 @@
+{{header2
+| title    = [[../]]
+| section  = 卷二十八 百濟本紀 第六
+| author   = 金富軾
+| previous = [[../卷27|百濟本紀 第五]]
+| next     = [[../卷29|年表 上]]
+| notes    = 
+}}
+<div style="margin-left:5em">
+<pages index="三國史記(玉山書院本) 卷第二十八.pdf" from="1" to="25"/>
+</div>
+== 注释  ==
+{{reflist|3}}

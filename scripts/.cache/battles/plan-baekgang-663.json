@@ -1,0 +1,7 @@
+[
+	{ "episode": 83, "battle": "baekgang-663", "phase": "anchor", "after": { "kind": "p", "text": "He anchors his hundred and seventy ships across the throat and waits." } },
+	{ "episode": 83, "battle": "baekgang-663", "phase": "shore", "after": { "kind": "p", "text": "The shore camp goes in one charge." } },
+	{ "episode": 83, "battle": "baekgang-663", "phase": "charge", "after": { "kind": "p", "text": "The second charge goes in on slack water" } },
+	{ "episode": 83, "battle": "baekgang-663", "phase": "fire", "after": { "kind": "p", "text": "Then the wings close." } },
+	{ "episode": 83, "battle": "baekgang-663", "phase": "juryu", "after": { "kind": "p", "text": "Juryu holds ten more days without its king." } }
+]

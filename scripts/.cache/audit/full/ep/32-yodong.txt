@@ -1,0 +1,51 @@
+
+=================================================================
+#32 Yodong  (645 May)
+Arc: Part II — The Dawn of War / The Seventh Invasion · place: yodong · tone: epic war
+Logline: Goguryeo spent fourteen years building a wall. The Blue Dragon simply walks around it.
+=================================================================
+[0] ¶ Every wall assumes the enemy will knock. Goguryeo has spent fourteen years building a wall of forts along the river. The Blue Dragon simply walks around it. He shows his banners on the middle road, then turns north in the night. By morning his horse are across an unwatched ford. The first fortress shuts its gates. It holds exactly as long as the gates do.
+[1] [MAP 645: Banners on the middle road, horses at the northern ford. Goguryeo watched the banners.]
+[2] ¶ The New Fortress doesn’t fall. The emperor’s cousin spends ten days under its walls and leaves with nothing. So the Blue Dragon posts a guard on it and turns south. The next fort lasts a little over ten days. Seven hundred men Yeon sent to hold it are taken in the gate. They ask to serve the emperor instead.
+[3] The Second Emperor: Their homes are all in Gasi, I am told. / If they fight for Us, the Mangniji will kill every wife and child they have. / To gain one man’s arm by wiping out his house — that We cannot bring Ourselves to do. Send them home.
+[4] ¶ They go home with grain for the road. It is a kindness, and it is also arithmetic: seven hundred men who have seen the size of this army will describe it to Gasi better than any envoy could.
+[5] ¶ Between the army and the walls lies the Liao marsh. Two hundred li of mud. A Sui host once went in up to the knee and came out as a song. The emperor’s engineer lays a road of earth across it, wide enough for carts. When the last wagon is over, the emperor has the road torn up. Nobody goes home the way they came. He wants every man in the column to know it.
+[6] ¶ Then Yodong itself, the Eastern Fortress. It held off the last dynasty for three summers and never opened. The Blue Dragon has already driven one sortie back through the gate when the emperor arrives. He rides to the moat with a sack of earth across his saddle and throws it in. His officers can’t be seen carrying less than him. They carry two. The army rings the walls a hundred deep and beats the drums until the ground answers.
+[7] [PLACE yodong: The gate the West keeps knocking on.]
+[8] ── SCENE: The Shrine ──
+[9] ¶ Inside the walls there is a shrine to the Holy King. Ask the town who he was and they say Jumong, as if that settles it. A coat of chain mail hangs in it, and a long sharp spear, and the town will tell you both came down from heaven. By the eighth day stones are coming over the parapet. The elders choose a girl from the town, wash her, paint her, dress her in red silk and a bride’s crown, and walk her up to the shrine to be given to the god.
+[10] 👰: It’s… heavy. The dress. / …Tell my mum. Tell her I didn’t cry.
+[11] 🔔: The Holy King… is smiling. / He has taken his bride! This city will stand whole!
+[12] ¶ They close the shrine door on her. The town sleeps better that night. She doesn’t.
+[13] ¶ The Holy King isn’t consulted again. The Blue Dragon’s throwers hurl rocks the size of grain jars over the walls. Towers roll up to the parapet. On the twelfth day a south wind rises. They fire the south-west tower, and the wind carries it into town.
+[14] ¶ The fire takes the town street by street. The shrine is stone, so it is the last roof standing when the gate gives. A Tang squad kicks its door in, looking for gold.
+[15] ¶ They find a girl in red silk sitting under the chain mail, holding the god’s spear the wrong way round.
+[16] 👰: Don’t. / I’m married.
+[17] ¶ The soldiers laugh. Then the emperor’s horse is in the doorway, and nobody laughs.
+[18] The Second Emperor: Whose bride is this?
+[19] 🪖: Their god’s, Majesty. The one who owns the armour.
+[20] The Second Emperor: Then We do not take another man’s wife. Not even a dead man’s. / Leave her to him. Let the city see what its god can do for her.
+[21] ¶ When the fighting stops, the clerks count ten thousand dead, then lose interest and count the grain. The fortress a million men couldn’t open has lasted twelve days.
+[22] ¶ Veterans spit and say the real argument is still ahead, at **Ansi**.
+[23] ── SCENE: Below Ansi ──
+[24] ¶ Then the Second Emperor rides on to look at Ansi, and the man who holds it comes out onto the wall to look back. Nobody on the Tang side ever writes down his name.
+[25] [CARD The Guardian: The man who holds Ansi. The other side never learns his name, and he never offers it.]
+[26] The Second Emperor: You. On the wall. Your name. / We like to know whom We are about to forgive.
+[27] The Guardian: You will simply… have to call me the man on the wall. / I hear you don’t care for names anyway.
+[28] The Second Emperor: A nameless man, then. / History will not trouble itself to remember you. We are the one writing it.
+[29] The Guardian: Write fast, then. / You’ve got two hundred li of mud behind you and no road home. I’ve got a wall and all autumn.
+[30] ¶ The emperor does not ask twice. Nobody has ever made him ask twice. He turns his horse and starts looking at the ground around Ansi the way a cook looks at a goose.
+[31] ── SCENE: The Rest of the Line ──
+[32] ¶ The rest of the line comes down like roof tiles. At White Cliff, Yeon’s riders break out and put a spear into the White Dragon’s waist. He has it bound and is back in the saddle by evening, laughing.
+[33] Lord of White Cliff: He’s back on his horse. With a hole in him. / …Open the gate. I’m not fighting a man who laughs at spears.
+[34] ¶ Of all the forts Yeon spent fourteen years hauling stone for, two still fly Goguryeo’s banners. One of them is Ansi.
+[35] [MAP 645 The rest of the line: A spear in the White Dragon, a fleet on the cape. The tiles keep falling anyway.]
+[36] ── SCENE: Pyongyang ──
+[37] ¶ In Pyongyang, Gesomun reads the Yodong report twice and feeds it to the brazier.
+[38] Yeon Gesomun: Twelve days. / The Sui sat outside that wall for three summers. This one does it in twelve days! / Go Yeonsu. How many can you march by the new moon?
+[39] Go Yeonsu: A hundred and fifty thousand, Supreme Commander. With the Mohe horse.
+[40] Yeon Gesomun: Good. Go to Ansi. Meet him in the open and break him on the plain. / And take my boys with the baggage. Let them watch an emperor run.
+[41] ¶ An old officer at the end of the table clears his throat. He has been clearing it for forty years. This time he finishes.
+[42] The old officer: The open field, sir? With respect. / The last king who met an empire in the open… didn’t look at the ground.
+[43] Yeon Gesomun: Then tell Go Yeonsu on the road. You’ve got four days. Make it short.
+[44] ¶ **On the road to Ansi, the old man tells it anyway. Once, a king won twice and went back for a third…!**

@@ -1,0 +1,52 @@
+
+=================================================================
+#19 Yunchung  (641 March)
+Arc: The Five Principles · place: sabi · tone: war council
+Logline: There was only one man Euija knew he could trust to deliver.
+=================================================================
+[0] ¶ There was only one man Euija knew he could trust to deliver.
+[1] ¶ That winter Euija sends for **Yunchung**, and nobody from the eight houses is told. Yunchung is a general from a family too small to keep a clan tutor. He has held the Silla frontier for eleven years by doing exactly what he says he will do, which the Assembly finds tiring.
+[2] [CARD Yunchung: A frontier general from a family too small to count. That is the point.]
+[3] King Euija: Sit, General. No, the good cushion. Take it before I change my mind. / Tell me. Who rules Baekje?
+[4] Yunchung: Your Majesty does. / On paper.
+[5] King Euija: Ha! And off paper?
+[6] Yunchung: Off paper, the Rock does. And whoever rubs the brine on it. / The eight houses pick the Premier, the Premier picks the ministers, and the ministers send me the grain late. They pay my men. My men know it.
+[7] King Euija: So. How does a king get his country back off the Rock without a war at home?
+[8] Yunchung: With a war abroad, Majesty. / A king who wins a fortress owns the men who took it. The clans can’t vote on a victory. They can only show up to the feast.
+[9] King Euija: Plainly put. / I like a man who says the ugly thing without a cushion under it. Even when he’s sitting on mine.
+[10] ¶ It is the first time in the reign that Euija says what he has decided before the Assembly hears it. By spring the Assembly will hear it anyway, in the form of a question he has already answered.
+[11] ── SCENE: The Assembly ──
+[12] ¶ By spring the Assembly is fighting about harbours, as it always is. Gyebek sits through three sessions. He understands every number and none of the smiles.
+[13] King Euija: Enough. / You can count berths when the frontier is settled. / Until then, the Eraha counts fortresses.
+[14] ¶ Euija has already decided. Now the clans have to believe it was their idea.
+[15] [CARD Satek Chunbok: A young Satek with good manners and a quick eye for an opening.]
+[16] Satek Chunbok: As Your Majesty well knows, / the will of the Rock is the will of Heaven. / The eight houses decide it together.
+[17] King Euija: Heaven…? Ah — the invisible committee.
+[18] Baekje: Restore the reign of the thirteenth Eraha…! / The thirteenth Eraha…! Ten thousand years!
+[19] King Euija: Do you know what a country is? / **A country is a territory governed by a single story.** / Why are we Baekje people, and not Goguryeo or Silla people? We look exactly the same. / Anywhere in Baekje, everyone knows the founders. / Speak of King Onjo — that is Baekje. / So the king makes the story. / Let us make an interesting one…!
+[20] King Euija: Goguryeo is too large to move. / Silla is too old to surprise anybody.
+[21] Satek Chunbok: The present king of Silla is a woman who cannot command an army, / and even within her country, the people’s hearts are unsettled. / Seize this opening, take a border fortress, and the great work will be within reach.
+[22] Sungchung: Your Majesty — is this the country you mean to hand the princes?
+[23] ¶ Gyebek steps forward. Nobody asked him to.
+[24] King Euija: No, Gyebek… not you. / Why use an ox-cleaver to kill a chicken?
+[25] Gyebek: Your Majesty. Does that mean you will not use me, or that you are saving me?
+[26] King Euija: …It means I am saving you.
+[27] Gyebek: Then say that. I do not follow figures of speech.
+[28] ¶ The Assembly finds him rude, which misses the point by a courtyard’s width. All he wants — every single time — is the sentence handed over with nothing folded inside it, and nobody at that court has spoken that way in their lives.
+[29] King Euija: A border fortress… / That too is good. / I have one in mind.
+[30] King Euija: In truth… the people of this country need a new story. / They have lived in the old one long enough.
+[31] King Euija: There was a time we were the greatest power in Samhan. / The thirteenth. He led armies into the heart of Pyongyang. / Then came the Severing. / After that, Baekje was a fraction. The name stayed. The size did not. / And then heaven, helpful as always, sent signs. A new king, meant to save us. / The thirty-first. Great King Euija.
+[32] [MAP 641: The thirteenth’s Baekje, and what is left of it.]
+[33] Gyebek: What is the Severing.
+[34] King Euija: You said you do not follow figures of speech. / This is not one. It is the Severing. / Today we only have to tell it.
+[35] King Euija: Baekje… is in crisis! / Then we make the crisis.
+[36] King Euija: We take back the Silla frontier.
+[37] [MAP 641: Daeya. The last wall between Baekje and the Silla capital.]
+[38] ¶ You’ve been to Daeya. You waved a cart into it.
+[39] Yunchung: Then Silla’s finished at Daeya. Plain and simple.
+[40] King Euija: Ha! Then go and finish it, General. Ten thousand men. / Bring me back the fortress. And a story to go with it.
+[41] Yunchung: Daeya by autumn, Majesty.
+[42] ¶ The hall empties. Gyebek does not.
+[43] Gyebek: Majesty. The Severing. / You said it is not a figure of speech. Then it is a fact. I do not know it. / Men will ask me why we march. I want to answer with a fact.
+[44] King Euija: Ha! A man who wants his war with the ledger attached. / Ask any grandmother in Sabi. They tell it better than I do. I add dragons.
+[45] ¶ **“What is the Severing?” Gyebek asked. Any grandmother in Sabi could tell him. We’ll go back a hundred years and see for ourselves…!**

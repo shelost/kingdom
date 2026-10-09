@@ -1,0 +1,943 @@
+{
+	"id": "salsu-612",
+	"title": "The Colossal River",
+	"ko": "살수대첩",
+	"hanja": "薩水大捷",
+	"year": 612,
+	"place": "salsu",
+	"scale": {
+		"km": 30,
+		"px": 100
+	},
+	"terrain": [
+		{
+			"kind": "sea",
+			"points": [
+				[
+					0,
+					215
+				],
+				[
+					200,
+					190
+				],
+				[
+					287,
+					172
+				],
+				[
+					340,
+					200
+				],
+				[
+					400,
+					215
+				],
+				[
+					500,
+					215
+				],
+				[
+					575,
+					255
+				],
+				[
+					625,
+					262
+				],
+				[
+					640,
+					300
+				],
+				[
+					612,
+					340
+				],
+				[
+					600,
+					450
+				],
+				[
+					612,
+					560
+				],
+				[
+					0,
+					560
+				]
+			],
+			"label": "Yellow Sea",
+			"ko": "서해",
+			"labelAt": [
+				260,
+				400
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					455,
+					-20
+				],
+				[
+					400,
+					20
+				],
+				[
+					350,
+					60
+				],
+				[
+					320,
+					110
+				],
+				[
+					290,
+					172
+				]
+			],
+			"width": 18,
+			"label": "Amnok river",
+			"ko": "압록수",
+			"labelAt": [
+				440,
+				75
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					960,
+					40
+				],
+				[
+					880,
+					100
+				],
+				[
+					800,
+					165
+				],
+				[
+					750,
+					222
+				],
+				[
+					690,
+					258
+				],
+				[
+					628,
+					264
+				]
+			],
+			"width": 20,
+			"label": "Salsu",
+			"ko": "살수",
+			"labelAt": [
+				850,
+				165
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					960,
+					320
+				],
+				[
+					860,
+					385
+				],
+				[
+					780,
+					445
+				],
+				[
+					716,
+					488
+				],
+				[
+					668,
+					522
+				],
+				[
+					625,
+					560
+				]
+			],
+			"width": 20,
+			"label": "Taedong river",
+			"ko": "대동강",
+			"labelAt": [
+				560,
+				525
+			]
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				790,
+				405
+			],
+			"r": 28
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				880,
+				260
+			],
+			"r": 36
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				530,
+				110
+			],
+			"r": 30
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				650,
+				150
+			],
+			"r": 26
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				950,
+				190
+			],
+			"r": 28
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					300,
+					40
+				],
+				[
+					360,
+					72
+				],
+				[
+					440,
+					130
+				],
+				[
+					520,
+					190
+				],
+				[
+					600,
+					232
+				],
+				[
+					680,
+					252
+				],
+				[
+					700,
+					320
+				],
+				[
+					705,
+					400
+				],
+				[
+					710,
+					455
+				]
+			]
+		},
+		{
+			"kind": "city",
+			"at": [
+				712,
+				466
+			],
+			"side": "goguryeo",
+			"label": "Pyongyang",
+			"ko": "평양성",
+			"labelAt": [
+				745,
+				515
+			]
+		},
+		{
+			"kind": "camp",
+			"at": [
+				742,
+				402
+			],
+			"side": "sui",
+			"label": "thirty li out",
+			"ko": "삼십 리 밖",
+			"labelAt": [
+				800,
+				372
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				70,
+				165
+			],
+			"label": "to Liaodong fortress",
+			"ko": "요동성으로"
+		}
+	],
+	"sides": [
+		{
+			"id": "sui",
+			"name": "Sui",
+			"ko": "수",
+			"color": "#7c5c3a"
+		},
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		}
+	],
+	"units": [
+		{
+			"id": "sui-yu",
+			"side": "sui",
+			"label": "Yu Zhongwen",
+			"ko": "우중문"
+		},
+		{
+			"id": "sui-yw",
+			"side": "sui",
+			"label": "Yuwen Shu",
+			"ko": "우문술"
+		},
+		{
+			"id": "sui-seven",
+			"side": "sui",
+			"label": "Seven more armies",
+			"ko": "나머지 일곱 군"
+		},
+		{
+			"id": "gg-munduk",
+			"side": "goguryeo",
+			"label": "Ulchi Munduk",
+			"ko": "을지문덕",
+			"unrecorded": true
+		},
+		{
+			"id": "gg-wall",
+			"side": "goguryeo",
+			"label": "Pyongyang garrison",
+			"ko": "평양성 수비",
+			"unrecorded": true
+		},
+		{
+			"id": "gg-raiders",
+			"side": "goguryeo",
+			"label": "Goguryeo riders",
+			"ko": "고구려 기병",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "camp",
+			"label": "West of the Amnok",
+			"ko": "압록수 서쪽",
+			"caption": "Three hundred and five thousand camp on the west bank, each man carrying a hundred days of rice. Ulchi Munduk walks in to surrender, notices the fresh dirt under the tents, and walks out.",
+			"captionKo": "삼십만 오천이 서쪽 강가에 진을 친다. 저마다 백 날 치 쌀을 졌다. 을지문덕이 항복하러 걸어 들어와 막사 밑의 새 흙을 보고, 걸어 나간다.",
+			"units": {
+				"sui-seven": {
+					"at": [
+						165,
+						105
+					],
+					"men": 237000,
+					"r": 0.6,
+					"facing": 35
+				},
+				"sui-yu": {
+					"at": [
+						290,
+						58
+					],
+					"men": 34000,
+					"facing": 30
+				},
+				"sui-yw": {
+					"at": [
+						248,
+						140
+					],
+					"men": 34000,
+					"facing": 30
+				},
+				"gg-munduk": {
+					"at": [
+						425,
+						115
+					],
+					"men": 1000
+				},
+				"gg-wall": {
+					"at": [
+						712,
+						466
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "feint",
+					"points": [
+						[
+							420,
+							105
+						],
+						[
+							325,
+							82
+						],
+						[
+							420,
+							125
+						]
+					],
+					"label": "comes to surrender",
+					"ko": "항복하러 온다"
+				}
+			]
+		},
+		{
+			"id": "seven",
+			"label": "Seven wins in a day",
+			"ko": "하루 일곱 번의 승리",
+			"caption": "Yu Zhongwen overrules the men who want to go home and crosses after him. Munduk fights, loses and runs, seven times in one day. Every victory is a day's walk from the buried rice.",
+			"captionKo": "우중문이 돌아가자는 이들을 누르고 그를 쫓아 강을 건넌다. 문덕은 싸우고, 지고, 달아난다. 하루에 일곱 번. 이길 때마다 묻어 둔 쌀에서 하루씩 멀어진다.",
+			"units": {
+				"sui-seven": {
+					"at": [
+						410,
+						118
+					],
+					"men": 237000,
+					"shape": "column",
+					"facing": 38,
+					"r": 0.8
+				},
+				"sui-yu": {
+					"at": [
+						565,
+						218
+					],
+					"men": 34000,
+					"shape": "column",
+					"facing": 25
+				},
+				"sui-yw": {
+					"at": [
+						488,
+						170
+					],
+					"men": 34000,
+					"shape": "column",
+					"facing": 35
+				},
+				"gg-munduk": {
+					"at": [
+						660,
+						248
+					],
+					"men": 1000
+				},
+				"gg-wall": {
+					"at": [
+						712,
+						466
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "sui",
+					"kind": "advance",
+					"points": [
+						[
+							350,
+							62
+						],
+						[
+							450,
+							136
+						],
+						[
+							585,
+							225
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "feint",
+					"points": [
+						[
+							605,
+							228
+						],
+						[
+							635,
+							242
+						],
+						[
+							668,
+							252
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						608,
+						222
+					],
+					"label": "seven wins in a day",
+					"ko": "하루 일곱 승"
+				}
+			]
+		},
+		{
+			"id": "halt",
+			"label": "Thirty li from Pyongyang",
+			"ko": "평양성 삼십 리 앞",
+			"caption": "They cross the Salsu and stop thirty li short of Pyongyang, backed against a hill. The walls look back. A poem arrives, then a plainer note: go home, and our king will come and bow.",
+			"captionKo": "그들은 살수를 건너 평양성 삼십 리 앞, 산을 등지고 멈춘다. 성벽이 마주 본다. 시가 한 편 오고, 이어 더 쉬운 글이 온다. 돌아가라, 그러면 우리 왕이 가서 절하겠다.",
+			"units": {
+				"sui-seven": {
+					"at": [
+						700,
+						368
+					],
+					"men": 237000,
+					"r": 0.7,
+					"facing": 90
+				},
+				"sui-yu": {
+					"at": [
+						812,
+						352
+					],
+					"men": 34000,
+					"facing": 110
+				},
+				"sui-yw": {
+					"at": [
+						778,
+						296
+					],
+					"men": 34000,
+					"facing": 100
+				},
+				"gg-munduk": {
+					"at": [
+						700,
+						452
+					],
+					"men": 1000
+				},
+				"gg-wall": {
+					"at": [
+						722,
+						470
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "sui",
+					"kind": "advance",
+					"points": [
+						[
+							688,
+							238
+						],
+						[
+							698,
+							285
+						],
+						[
+							702,
+							318
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "feint",
+					"points": [
+						[
+							700,
+							300
+						],
+						[
+							704,
+							380
+						],
+						[
+							706,
+							440
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "retreat",
+			"label": "The walk home",
+			"ko": "돌아가는 길",
+			"caption": "They turn for home in squares, starving, with Goguryeo riders on every side. Every li north costs men, and nobody stops to count them.",
+			"captionKo": "굶주린 채 방진을 짜고 돌아선다. 사방에 고구려 기병이 붙는다. 북으로 한 리 갈 때마다 사람이 줄고, 아무도 멈춰 세지 않는다.",
+			"units": {
+				"sui-seven": {
+					"at": [
+						702,
+						338
+					],
+					"men": 237000,
+					"r": 0.7,
+					"facing": 270
+				},
+				"sui-yu": {
+					"at": [
+						728,
+						286
+					],
+					"men": 34000,
+					"facing": 270
+				},
+				"sui-yw": {
+					"at": [
+						706,
+						418
+					],
+					"men": 34000,
+					"facing": 90
+				},
+				"gg-munduk": {
+					"at": [
+						712,
+						452
+					],
+					"men": 1000
+				},
+				"gg-wall": {
+					"at": [
+						722,
+						470
+					],
+					"men": 1000
+				},
+				"gg-raiders": {
+					"at": [
+						850,
+						330
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "sui",
+					"kind": "retreat",
+					"points": [
+						[
+							700,
+							360
+						],
+						[
+							696,
+							310
+						],
+						[
+							692,
+							272
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "flank",
+					"points": [
+						[
+							845,
+							330
+						],
+						[
+							810,
+							345
+						],
+						[
+							775,
+							345
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "pursuit",
+					"points": [
+						[
+							712,
+							448
+						],
+						[
+							710,
+							438
+						],
+						[
+							708,
+							428
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "salsu",
+			"label": "Halfway over",
+			"ko": "반쯤 건넜을 때",
+			"caption": "Half the army is across when Goguryeo hits the rearguard. The far bank can't come back; the near bank can't get over. A Sui general dies in the shallows, and every army breaks at once.",
+			"captionKo": "군대 절반이 건넜을 때 고구려가 후군을 친다. 건너편은 돌아올 수 없고, 이쪽은 건너갈 수 없다. 수의 장군 하나가 여울에서 죽고, 모든 군이 한꺼번에 무너진다.",
+			"units": {
+				"sui-yu": {
+					"at": [
+						645,
+						222
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"sui-seven": {
+					"at": [
+						690,
+						258
+					],
+					"men": 700,
+					"routed": true
+				},
+				"sui-yw": {
+					"at": [
+						712,
+						300
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"gg-munduk": {
+					"at": [
+						712,
+						338
+					],
+					"men": 1000
+				},
+				"gg-wall": {
+					"at": [
+						722,
+						470
+					],
+					"men": 1000
+				},
+				"gg-raiders": {
+					"at": [
+						768,
+						302
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							712,
+							400
+						],
+						[
+							712,
+							360
+						],
+						[
+							712,
+							322
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							830,
+							320
+						],
+						[
+							790,
+							308
+						],
+						[
+							745,
+							300
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "flood",
+					"at": [
+						688,
+						260
+					],
+					"label": "mid-crossing",
+					"ko": "도하 중"
+				},
+				{
+					"kind": "death",
+					"at": [
+						722,
+						286
+					],
+					"label": "Xin Shixiong",
+					"ko": "신세웅"
+				}
+			]
+		},
+		{
+			"id": "home",
+			"label": "Four hundred and fifty li",
+			"ko": "사백오십 리",
+			"caption": "The survivors run four hundred and fifty li in a day and a night. Of three hundred and five thousand who crossed the Liao, two thousand seven hundred walk back into Liaodong.",
+			"captionKo": "살아남은 이들은 하루 낮 하룻밤에 사백오십 리를 달아난다. 요하를 건넌 삼십만 오천 가운데 요동성으로 걸어 들어간 것은 이천칠백이다.",
+			"units": {
+				"sui-yu": {
+					"at": [
+						300,
+						62
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"sui-seven": {
+					"at": [
+						255,
+						85
+					],
+					"men": 700,
+					"routed": true
+				},
+				"sui-yw": {
+					"at": [
+						330,
+						40
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"gg-munduk": {
+					"at": [
+						660,
+						232
+					],
+					"men": 1000
+				},
+				"gg-wall": {
+					"at": [
+						722,
+						470
+					],
+					"men": 1000
+				},
+				"gg-raiders": {
+					"at": [
+						610,
+						222
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "sui",
+					"kind": "retreat",
+					"points": [
+						[
+							640,
+							218
+						],
+						[
+							520,
+							182
+						],
+						[
+							420,
+							118
+						],
+						[
+							330,
+							66
+						]
+					],
+					"label": "a day and a night",
+					"ko": "하루 밤낮"
+				},
+				{
+					"side": "goguryeo",
+					"kind": "pursuit",
+					"points": [
+						[
+							640,
+							236
+						],
+						[
+							600,
+							222
+						],
+						[
+							560,
+							205
+						]
+					]
+				}
+			]
+		}
+	],
+	"sources": [
+		"Book of Sui 60, Biography of Yu Zhongwen",
+		"Book of Sui 61, Biography of Yuwen Shu",
+		"Book of Sui 81, Eastern Barbarians (Goguryeo)",
+		"Zizhi Tongjian 181, Sui Daye 8, sixth and seventh months",
+		"Samguk Sagi 20, Annals of Goguryeo, Yeongyang year 23",
+		"Samguk Sagi 44, Biography of Eulji Mundeok"
+	],
+	"note": "The records give the nine armies at three hundred and five thousand when they crossed the Liao, a hundred days' rations per man, Munduk's visit to the camp west of the Yalu, seven Sui wins in one day, the halt thirty li from Pyongyang against a hill, the poem and the second offer to bow, the retreat in square formations, the attack on the rearguard with the army half across the Salsu, the death of Xin Shixiong, four hundred and fifty li to the Yalu in a day and a night, and two thousand seven hundred back at Liaodong fortress. The nine armies' sizes are not given either; the map spreads them evenly, about thirty-four thousand each. The 2,700 is the count at the end of the flight; the map takes it at the river where the army broke. Losses before the Yalu, on the march and in the running fights are not recorded. The Salsu follows the usual reading as the Cheongcheon; North Korean historians place it in Liaodong. In the records the seven were running fights and Munduk's surrender came twice; the story turns them into seven surrenders. Lai Huer's fleet, beaten at Pyongyang before the land armies came, is left off.",
+	"noteKo": "기록이 전하는 것은 요하를 건널 때 삼십만 오천이던 아홉 군, 한 사람당 백 날 치 군량, 압록수 서쪽 진영을 찾은 문덕, 하루 일곱 번의 수군 승리, 산을 등진 평양성 삼십 리 앞의 정지, 시와 두 번째 항복 제의, 방진을 짠 퇴각, 살수를 반쯤 건넜을 때 후군을 친 공격, 신세웅의 전사, 하루 밤낮 사백오십 리의 도주, 요동성으로 돌아온 이천칠백이다. 아홉 군 각각의 수도 없어 고르게 약 삼만 사천씩 나누었다. 이천칠백은 도주가 끝났을 때의 수인데, 지도에서는 군이 무너진 강에서 적용했다. 압록수 이전과 행군 중, 쫓고 쫓기는 싸움에서의 손실은 기록에 없다. 살수는 청천강으로 보는 통설을 따랐고, 북한 학계는 요동에 둔다. 기록에서 일곱 번은 달아나며 싸운 것이고 문덕의 항복은 두 번인데, 이야기는 이를 일곱 번의 항복으로 바꾸었다. 지상군이 닿기 전 평양에서 패한 내호아의 수군은 지도에서 뺐다."
+}

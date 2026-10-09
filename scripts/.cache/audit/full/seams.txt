@@ -1,0 +1,784 @@
+
+### #1 Queen Sunduk  (632)
+  OPEN: [0] ¶ A Queen? Ridiculous.
+        [1] [MAP 632: Three kingdoms, one peninsula, and nobody happy with the lines.]
+        [2] [PLACE surabol: Everyone here knows exactly how high they were born.]
+  CLOSE: [84] ¶ _**Sun**, for kindness._
+         [85] ¶ _**Duk**, for virtue._
+         [87] ¶ **Six men who hate the word “woman” crowned one anyway. How? Go back one night, to a brazier…!**
+
+### #2 Harmony Council  (632)
+  OPEN: [0] ── SCENE: The Night Before ──
+        [1] ¶ The Harmony Council meets to debate who the next king should be. Six nobles, one night. Nobody stands up until they all agree.
+        [2] [TERM Harmony Council (和白): Hwabaek. It means “speaking in harmony,” which is the polite way of saying nobody goes home. It is older than the bone ranks, older than the Buddha in Silla, and it still picks the kings.]
+  CLOSE: [32] Kim Yushin: Well stood. / Tomorrow on the yard, the hundred-and-ninth is mine.
+         [33] Bidam: Ha. Listen to him. / You still owe me a jar from the hundred-and-eighth. Pay that first. / Today is the country’s business. Tomorrow you can lose to me again.
+         [34] ¶ **Every sleeve in that room learned to fight in one dead king’s yard. Who was he? Back we go, to the Cloud King…!**
+
+### #3 Jinheung, the Cloud  (554 flashback)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Ask anyone in Surabol about the Cloud King and they'll tell you about his stones. Ask anyone in Sabi and they'll change the subject. You'll find out why. Not yet.
+        [1] [MAP 562: The Cloud King’s shade, and where it fell.]
+        [2] ¶ He was seven when they put the crown on him. It was too big, and nobody mentioned it. By the end, Silla had a river, a coastline and Gaya. He got there by being the best ally in Samhan, right up until the afternoon he wasn't…
+  CLOSE: [17] The Herald: That sounds like praise.
+         [18] elder: It was, for about a year. / Then you look at where the shade fell. Gwansan. The Han. Gaya. / A cloud never asks whose field it’s raining on.
+         [19] ¶ **That rain fell on Baekje’s field. Baekje kept the grudge. Now meet the prince who will inherit it…!**
+
+### #4 Prince Euija  (632)
+  OPEN: [0] ¶ In five days, Prince Euija becomes Crown Prince Euija. He is thirty-two, which is late for it. He has fifteen sons, which is early for everything else.
+        [1] [MAP 632: ]
+        [2] [CARD King Euija: Righteous and merciful. His father chose it. The son will spend his life deciding which half to keep.]
+  CLOSE: [116] ▲ end flashback
+         [117] ¶ Gyebek looks back, and up, at the royal seats. The crown prince is already looking at him.
+         [118] ¶ **Eight houses. Eight boys on the sand. And one with a borrowed name…!**
+
+### #5 Eight Great Clans  (632)
+  OPEN: [0] ¶ Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.
+        [1] ¶ The Eight Great Clans run this country, and one king sits between them. Satek fights with the king's sleeve. Yunbi fights with the coast road. The other six keep their techniques quiet.
+        [2] ❝QUOTE (Sui Shu (隋書) bk. 81, Eastern Barbarians — Baekje): The great surnames of the country are eight clans: Sa, Yeon, Hyeop, Hae, Jin, Guk, Mok and Baek.❞
+  CLOSE: [51] 🗣: They say Yunbi already knows what was said in the Satek meeting. / And Satek already knows the Yunbi one. / So both know, and both pretend not to. / That’s politics.
+         [52] ¶ Once, both houses secretly agreed to kill a grain levy. It came to the Assembly anyway. The votes lined up as counted. Then Elder Satek, who had nodded all morning, turned his thumb down at the last call. The levy died. Yun…
+         [53] ¶ **“Restore the reign of the thirteenth Eraha!” Every house in Sabi still chants it. To hear why, we go back three hundred years…!**
+
+### #6 Gunchogo, the 13th  (371)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.
+        [1] [CARD King Geunchogo: The king every later Baekje king quotes when he wants to sound brave.]
+        [2] [PLACE pyongyang: The north’s capital, and a long walk for anyone who wants it.]
+  CLOSE: [9] ¶ They will still be chanting that sentence three centuries later, in a courtyard, to a clever king who has already decided that a country is a story. It is the sentence that gets Daeya burned.
+         [10] ¶ Goguryeo remembers it too, and differently, and for exactly as long.
+         [11] ¶ **Back to the snow, and to Goguryeo’s most frightening commander. First question: do you know what happens to traitors…?**
+
+### #7 Commander Yeon  (634)
+  OPEN: [0] ¶ In the high mountains of Manchuria, a young man is caught in the snow by a Goguryeo soldier.
+        [1] [MAP 634: ]
+        [2] ¶ He is taken to the outpost of **Commander Yeon (29)**, the Eternal General — a ruthless military general.
+  CLOSE: [42] 🔴: Me? Why do I have to go to Pyongyang? / It’s a place where mouths open only to say useless things…
+         [43] Yeon Taejo: I know. I sat in it for twelve years. / Half, son. Half.
+         [44] ¶ **He promised his father half. He has never said half of anything. Next stop: Pyongyang, and a room full of men counting grain…!**
+
+### #8 High Summit  (634)
+  OPEN: [0] ¶ So Yeon rides to Pyongyang in his father's place. Five commanders, one king, one room. They call it the High Summit.
+        [1] [MAP 634: ]
+        [2] ¶ He rides in at the red two-tier gate. Pyongyang already knows the sound of those hooves.
+  CLOSE: [43] Yeon Gesomun: Namseng. / …Heavier than it sounds. / This country. You will have to keep it.
+         [44] ❝QUOTE (Epitaph of Yeon Namseng (泉男生墓誌)): His surname was Cheon, 'Spring'; his name, Namseng; his courtesy name, Wondeok. He was a man of Pyongyang. His distant line came out of a spring: it took its blessing from a spirit, a…
+         [45] ¶ **Once, Goguryeo did not argue about grain. It had a king with sixty-four fortresses. To meet him, we go back two centuries…!**
+
+### #9 Gwanggaeto, the Great King  (400)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Silla is drowning. An army from across the sea is inside its walls. Then Gwanggaeto sends fifty thousand horsemen south, and the Wa are gone.
+        [1] [CARD Gwanggaeto the Great: Goguryeo’s widest king. The stele ran out of room before he ran out of fortresses.]
+        [2] ¶ A red sun. The three-legged crow rides south on his banners. The stele will list sixty-four fortresses. It will not list the nerve it took.
+  CLOSE: [9] ¶ Two hundred and forty years later a Silla prince will stand in front of a foreign emperor and ask for an army, and every single person in Surabol will know exactly what that costs, because it has been done to them before.
+         [10] ❝QUOTE (Gwanggaeto Stele (廣開土王碑), south face, ll. 3–4 (414 CE); Best, “The Kwanggaeto Stele,” p. 147): The common people were at peace in their work; the country was rich and the people abundant; the five grains ripened in pl…
+         [11] ¶ **Bupmin is fifteen now. The Hwarang have five rules, and his uncle has one question: which will you break first…?**
+
+### #10 Bupmin  (641)
+  OPEN: [0] ── SCENE: Flowering Youth ──
+        [1] ¶ It is the spring Bupmin turns fifteen.
+        [2] [MAP 641: ]
+  CLOSE: [29] ❝QUOTE (Samguk Sagi (三國史記) bk. 45, Biographies — Gwisan (602)): Gwisan shouted, "I once heard it from my teacher: 'A man in the army does not retreat.' How could I dare run?"❞
+         [30] Kim Yushin: Good. / Then see the country the way a Hwarang sees a field — who holds, who falters, who dies for a vow they meant. / I am marshal of this order. You will learn loyalty here before you learn how to sit on a thron…
+         [31] ¶ **The yard has two names it still whispers. Tonight the Marshal says them out loud…!**
+
+### #11 Sadaham  (641)  [FLASHBACK EPISODE]
+  OPEN: [0] ── SCENE: The First Class ──
+        [1] ¶ Every yard has its ghosts. This one has two, and they have never missed roll call.
+        [2] ¶ The lamps go up under the eaves. Nobody sends the boys to bed. They decide this is an honour, and they are right, though not for the reason they think.
+  CLOSE: [26] ¶ Yushin looks at the boy for a long moment. You can probably name her. He doesn’t.
+         [27] Kim Yushin: …Go to bed. Gyuku at dawn.
+         [28] ¶ **When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!**
+
+### #12 Gotaso  (641)
+  OPEN: [0] ¶ A young girl is going to do what she’s going to do.
+        [1] ¶ It begins two springs earlier, with a girl who is not where she is supposed to be.
+        [2] ── SCENE: Two Springs Earlier ──
+  CLOSE: [56] Gotaso: You don’t want them?
+         [57] Kim Pumsuk: …I want to know the names.
+         [58] ¶ **Four children, already named. Now the boy has to ask her father. And her father wants a vow…!**
+
+### #13 Pumsuk  (641)
+  OPEN: [0] ¶ **Princess Gotaso (16)** has fallen in love with the **Hwarang Pumsuk (23)**, and the whole court can see it before either of them admits the word. The maids keep score of the accidental meetings. The guards move their posts…
+        [1] ¶ Her parents **Chunchu (38)** and **Munhee (35)** bless the marriage. Then, over his wife’s one quiet objection, the father asks the boy for a vow — a vow no father should make his daughter hear.
+        [2] Munhee: Don’t make him swear.
+  CLOSE: [63] Haesang: In the south they greet a guest before they ask his rank. / I recommend it. Rank keeps. Guests leave.
+         [64] Haesang: Your southern wine came late. The carter blamed the Yellow Mountain road. / Then he blamed the White River mouth. Then he blamed both blades. / Every harbour tavern from Funan back has that fight — the Sword of the D…
+         [65] ¶ **“Dear… have you already forgotten how we met?” Munhee hasn’t. It involves a dream, a skirt, and a coat torn on purpose…!**
+
+### #14 Munhee  (625)  [FLASHBACK EPISODE]
+  OPEN: [0] ── SCENE: How They Met ──
+        [1] 🙎: Dear… have you already forgotten how we met?
+        [2] ¶ It starts with a dream, and the dream is sold.
+  CLOSE: [74] King Muyeol: Brother. I have two sons and a daughter now. / The east star… I think I will let it just be a star.
+         [75] Kim Yushin: So you will.
+         [76] ¶ **In Surabol, one father puts down his star. In Pyongyang, another marches his son to school without taking off his boots…!**
+
+### #15 Academy  (641)
+  OPEN: [0] ¶ Yeon's wife has given him three sons. They could not be more different.
+        [1] [MAP 641: ]
+        [2] ¶ **Namseng (7)** is the careful one — the heir, eager to be approved of.
+  CLOSE: [26] ¶ Namseng is enrolled anyway. He learns the Analects first and best, and on the days the sutra master is ill he reads his father’s copy of the Daodejing, which has never been opened past the first page.
+         [27] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo): By custom they love books. Even the households of the poor and of servants each build a large hall on the street, called a gyeongdang, where their sons read …
+         [28] ¶ **Field trip. Yeon takes the boys to see a very big rock. The rock has a list on it, and a question…!**
+
+### #16 Stele  (641)
+  OPEN: [0] ¶ Yeon takes his sons to see the Great King's stone. It lists everything he ever took.
+        [1] [PLACE gungnae: The old capital, where the Great King’s stone still does the bragging.]
+        [2] [MAP 641: ]
+  CLOSE: [7] ❝QUOTE (Samguk Sagi (三國史記) bk. 20, Goguryeo Annals — King Yeongnyu, yr. 23 (640)): Spring, second month. The king sent the crown prince Hwangwon to Tang with tribute. The Second Emperor welcomed him and loaded him with gifts. …
+         [8] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo, Zhenguan 14 (640)): In the fourteenth year he sent his crown prince Hwangwon to court with local tribute, and the Second Emperor made a great deal of him.❞
+         [9] ¶ **Late in the year, old Dosuryu walks in without taking off his boots. In thirty years he has never once done that…!**
+
+### #17 Dosuryu  (641)
+  OPEN: [0] ¶ Late in the year Dosuryu comes in without knocking, which he has done since Gesomun was small enough to lift by the collar, and without taking his boots off, which he has never done.
+        [1] Yeon Gesomun: Oi. Old man. Boots.
+        [2] Dosuryu: Shut up and sit down. / No — stay standing. You listen better standing.
+  CLOSE: [15] Yeon Gesomun: Then I’ll make a list too. / Mine’ll be longer.
+         [16] ¶ Dosuryu goes out the way he came in, boots and all, and stands a long time in the yard before he can make himself mount. He has known the boy for thirty years. He knows exactly what kind of list it will be.
+         [17] ¶ **Meanwhile in Sabi, Euija is king at last. On his coronation morning, several hundred people see a dragon…!**
+
+### #18 King Euija  (641 March)
+  OPEN: [0] ¶ King Mu is dead at eighty, after a lifetime of fighting Silla.
+        [1] ❝QUOTE (Samguk Sagi (三國史記) bk. 27, Baekje Annals — King Mu, yr. 42 (641)): Year forty-two, spring, third month. The king died. He was named Mu, the Martial. An envoy went to Tang in mourning white with a memorial: "Your outer …
+        [2] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Baekje, Zhenguan 15 (641)): In the fifteenth year Jang died, and his son Euija sent an envoy with a memorial announcing the death. The Second Emperor put on white and we…
+  CLOSE: [75] ❝QUOTE (Nihon Shoki (日本書紀) bk. 23, Emperor Jomei, yr. 3 (631)): Third month, first day. Euija, king of Baekje, sent in Prince Pung as a hostage.❞
+         [76] ¶ One day Baekje will send for him after all. Nobody at the feast would have believed it, Pung least of all.
+         [77] ¶ **Euija can fake a dragon. He can’t fake a fortress. For that he needs a general who does exactly what he says…!**
+
+### #19 Yunchung  (641 March)
+  OPEN: [0] ¶ There was only one man Euija knew he could trust to deliver.
+        [1] ¶ That winter Euija sends for **Yunchung**, and nobody from the eight houses is told. Yunchung is a general from a family too small to keep a clan tutor. He has held the Silla frontier for eleven years by doing exactly what he…
+        [2] [CARD Yunchung: A frontier general from a family too small to count. That is the point.]
+  CLOSE: [47] King Euija: Ha! Then go and be done for at Daeya, General. Ten thousand men. / Bring me back the fortress. And a story to go with it.
+         [48] Yunchung: Daeya by autumn, Majesty.
+         [49] ¶ **“What is the Severing?” Gyebek asked. Any grandmother in Sabi could tell him. We’ll go back a hundred years and see for ourselves…!**
+
+### #20 The Severing  (553–554 flashback)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ The sad thing about betrayal… is that it never comes from your enemies.
+        [1] ¶ Two kings take a river back together. One is Seong of Baekje. The other is the Cloud King. The deal is simple. Baekje gets the river mouth, near the sea. Silla gets the upper valley.
+        [2] [TERM The Severing (斷): For a hundred and twenty years Baekje and Silla kept one rule: when Goguryeo comes south, we stand together. Baekje calls the day that rule broke the Severing. Silla doesn’t call it anything. Winners ra…
+  CLOSE: [25] ¶ The ditch takes the head. **Dodo** does the work the rank will not put on a prince’s hands. The record almost forgets the slave. Silla keeps the skull under the steps of the north hall, names the hall the capital court, and…
+         [26] ¶ Baekje’s court never forgives the cloud that emptied itself over their side of the river. A hundred years later, when Euija tells the story, he is still telling this one.
+         [27] ¶ **Back to now. Ten thousand Baekje men march on Daeya. Its grain clerk is called Gumil. Remember that name…!**
+
+### #21 Gumil  (642 August)
+  OPEN: [0] ══ DAY: STEAM ══
+        [1] ¶ Before Daeya — before the year that will stain his hands — the Sword of Silla rides alone to a small cavern lake in the hills: a bowl of black water under stone, cold enough to teach the bones manners. He has heard of the pl…
+        [2] [PLACE steam_cavern: Black water, warm stone, and not as empty as it looks.]
+  CLOSE: [137] (monologue) Kim Pumsuk: I should look at my own table. I am looking at her chest. At the split of the chima. At the place a general is not supposed to name. I like women built like that. I have always liked it. I am going to…
+         [138] ¶ He does the correct thing. He stands. He bows to a feast that has not asked him to leave. He goes to sleep like a man with a pink room waiting. The pallet does not take him.
+         [139] ¶ **One dying lamp. One cold pallet. One feast still lit down the hall. How long can a True Bone lie still…?**
+
+### #22 Maehwa  (642 August)
+  OPEN: [0] ¶ A man is measured by his self-control.
+        [1] ── SCENE: HE TRIES TO SLEEP ──
+        [2] ¶ Ice-blue on dark timber. One dying lamp. Eyes open. The hall comes with him anyway — her hip, her mouth, the plum, the hand that was not an accident. He tries to sleep and the hall comes with him. A True Bone should be able …
+  CLOSE: [81] ¶ He stands. He looks once — the way a man looks at someone he has already lost. He does not speak. He leaves the feast without a word — through the cheap screen, through the dark hall, back into the rank that will pretend th…
+         [82] ❝QUOTE (Samguk Sagi (三國史記) bk. 47, Biographies — Jukjuk): Before this, the commander Pumsuk had seen that the wife of his staff officer, the saji Gumil, was beautiful, and took her. Gumil resented it.❞
+         [83] ¶ **Morning comes. So does her husband, back from the stores. He wants the whole story. Every word of it…!**
+
+### #23 Siege of Daeya  (642 August)
+  OPEN: [0] ══ DAY: THE NEXT MORNING ══
+        [1] ¶ Grey in the door-slit. The feast is a cold hall. Gumil comes back from the stores and finds his wife where the True Bone left her — dirtied green still open, last night still on the boards. He does not ask if she is hurt. He…
+        [2] Gumil: From the start. / All of it. / Don’t leave any out.
+  CLOSE: [83] Narim: He won’t. / Let the court say the queen counted. Not that the queen begged. Send Chunchu west the way she already means to — with a list, not a plea. / Hyullé — warm the ledge anyway. He’ll take it on the way out, even…
+         [84] ¶ He sits where Hyullé pointed until the cold leaves his shoulders. Golhwa complains to the steam. Narim counts how long he stays without asking him to stay. When he dresses, none of them say goodbye — which is how he knows t…
+         [85] ¶ **In Pyongyang, Yeon has spent all summer bowing. Now he is throwing a party, and everyone important is invited…!**
+
+### #24 Yeon’s Massacre  (642 October)
+  OPEN: [0] ¶ Yeon's father dies in the spring, in his own bed in the east. The seal should pass to the son. The Summit takes the whole summer to admit it. When it finally does, Yeon decides to host a banquet. The king is in attendance.
+        [1] [MAP 642: ]
+        [2] ¶ All summer he has bowed. He went to every seat at the Summit one at a time and asked for his father’s seal like a younger son asking for an inheritance. Among themselves they have already agreed that he will have it for one …
+  CLOSE: [79] Yeon's Wife: …I promise. / Only — when the boys are grown, tell them that too.
+         [80] ¶ He nods. Outside, the drums keep time for a kingdom learning to live with its doors shut.
+         [81] ¶ **A kingdom with its doors shut, and a man with five swords on his back. Naturally, Chunchu wants to go and knock…!**
+
+### #25 Chunchu & Yeon  (642 October)
+  OPEN: [0] ¶ Since Daeya fell, Chunchu has had one request for the Queen: send him north to Pyongyang, to beg Goguryeo for troops against Baekje. She has not said yes.
+        [1] ¶ The news reaches Surabol about a month late, the way news from the north usually does.
+        [2] Queen Sunduk: What…! The King of Goryeo, murdered by his own subject?
+  CLOSE: [73] Dosuryu: Who is this Sword of Silla, that the Eternal General behaves so? / Surely… you are not afraid?
+         [74] 🔴: Boy — even a man ready to die does not poke a tiger for no reason. / The day will come when we face Yushin… / but not over something like Chunchu.
+         [75] ¶ **One envoy left Pyongyang bleeding. Whose blade was it? Now the King of Baekje walks in on purpose, laughing…!**
+
+### #26 Euija & Yeon  (642)
+  OPEN: [0] ¶ News of Yeon’s Massacre reaches Baekje.
+        [1] King Euija: What…! The King of Goryeo, murdered by his own subject?
+        [2] King Euija: This is an opportunity…
+  CLOSE: [62] The Court Maids: The hands… remember. / Where Your Majesty… told them to go last night.
+         [63] ¶ In the morning he rides south with all five. Nobody raises the subject of the extra two. He carries a map of Danghang Fortress in his head, and Yeon’s warning about Chunchu folded away like a knife he intends to use later.
+         [64] ¶ **Why does the Eternal General flinch at one Silla name? Go back to a ditch, a white horse, and an unknown captain…!**
+
+### #27 Nangbi  (629 flashback)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Kim Yushin — a name that strikes fear in all of Samhan. Maybe this is why.
+        [1] [MAP 629: ]
+        [2] ¶ Autumn. Silla’s army is breaking against a Goguryeo wall. The men who should be charging are sitting in the trenches. Yushin is thirty-four, a banner captain. His white horse doesn’t even have a name.
+  CLOSE: [33] Yeon Gesomun: …Kim Yushin.
+         [34] ¶ That’s where the name comes from. Not from his own capital, which likes its titles stamped and filed. From the people he beat. Goguryeo calls him the Sword of Silla first, and means it as a warning. On the border, mothers u…
+         [35] ¶ **Thirteen years on, the banner captain has a queen, a title, and a long list of Baekje fortresses. He's working through it…!**
+
+### #28 Forty Fortresses  (642)
+  OPEN: [0] ¶ In the meantime Queen Sunduk sends her general, Kim Yushin, against Baekje.
+        [1] ¶ In Sabi, the first report reaches the king at breakfast.
+        [2] King Euija: I-i-it’s Kim Yushin!!
+  CLOSE: [26] ── SCENE: Sabi ──
+         [27] King Euija: Yushin, my friend~~ / My men stop eating at the sound of your name.
+         [28] ¶ **One star over Samhan tonight. Three men are looking up at it, and every one of them wants to be the King for All…!**
+
+### #29 The Eastern Star  (642)
+  OPEN: [0] 🙎: Well — is it enough now? / We have given Baekje a proper beating…
+        [1] 🙎: So then… do you mean to drag the King of Baekje back too?
+        [2] King Muyeol: Brother… the grudge is mine. I know that. / But something else is moving, and it is not me moving it.
+  CLOSE: [22] Yeon Gesomun: …All my life I did not know what I was for. / Most men are born, and live a while, and die. / You gave me monsters. / **Thank you for giving me a direction.**
+         [23] Yeon Gesomun: Until every bone in me is broken. / Until every jewel in my heart is cracked through. / I will not let go of this. / **The “King for All”, I mean…!**
+         [24] ¶ **Gesomun wants a country. Far to the west, the man who owns half the world is trying to pronounce his name…!**
+
+### #30 Emperor  (643)
+  OPEN: [0] ¶ Far to the west, a man who owns half the world hears a new name. He turns it over on his tongue, like a grape he hasn’t decided to eat.
+        [1] [PLACE changan: Half the world sends tribute here and calls it friendship.]
+        [2] ❝QUOTE (Zizhi Tongjian (資治通鑑) bk. 196, Tang Taizong, Zhenguan 16 (642), 11th month): On the dingsi day, Zhang Jian, Governor-General of Yingzhou, reported that Quan Gai Suwen*, Great Man of Goguryeo's Eastern Division, had mur…
+  CLOSE: [3] ❝QUOTE (Zizhi Tongjian (資治通鑑) bk. 197, Tang Taizong, Zhenguan 17 (643)) [The Second Emperor]: Gai Suwen has murdered his lord and seized the government. It is truly not to be borne. With the forces we have today, taking the pl…
+         [5] The Second Emperor: Gai Suwen…?
+         [6] ¶ **The seventh invasion of Goguryeo has not begun. It has only found its excuse. Now it needs four dragons…!**
+
+### #31 Four Dragons  (643 February)
+  OPEN: [0] ¶ The Second Emperor of the West resides in the Palace. Seventeen years ago he murdered his brothers to become the Son of Heaven, and he has spent every year since folding nations under imperial rule — the Turks, the Xueyantuo…
+        [1] ¶ The inner palace is a country of its own — so many women the hall cannot hold them all at once, silk stacked like tribute, a very large harem that moves when he moves.
+        [2] ¶ He’s known by many names. The Heaven-Sent General. The Khan of Heaven.
+  CLOSE: [70] ❝QUOTE (Jingju Fenhewan (京劇《汾河灣》, also 仁貴打雁) — opening of Liu Yingchun; theatrical/folk, not the Tang official histories): My husband enlisted; there is no word. Mother and child suffer in a cold kiln.❞
+         [71] ¶ By summer the yellow hemp is on a peg in Longmen, and the man who wore it is at Stallion Mountain, under the same Emperor who called him out of the field.
+         [72] ¶ **Yodong has never opened its gates to the West. Not for the Sui. Not in three summers. Here come the dragons…!**
+
+### #32 Yodong  (645 May)
+  OPEN: [0] ¶ Goguryeo has spent fourteen years building a wall of forts along the river. The Blue Dragon simply walks around it. He shows his banners on the middle road, then turns north in the night. By morning his horse are across an u…
+        [1] [MAP 645: Banners on the middle road, horses at the northern ford. Goguryeo watched the banners.]
+        [2] ¶ The New Fortress doesn’t fall. The emperor’s cousin spends ten days under its walls and leaves with nothing. So the Blue Dragon posts a guard on it and turns south. The next fort lasts a little over ten days. Seven hundred m…
+  CLOSE: [22] ── SCENE: The Rest of the Line ──
+         [23] ¶ Meanwhile the rest of the line comes down like roof tiles. The clerks file it in a single column. At one fort Yeon’s riders break out and put a spear into the White Dragon’s waist. He has it bound and is back in the saddle …
+         [26] ¶ **Goguryeo has been here before. To learn what one bad afternoon can cost a king, we go back four hundred years…!**
+
+### #33 Boiling River  (244)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ King Dongchun picks a fight over a diplomatic spat. The war that comes back at him starts on a river named for boiling.
+        [1] [CARD King Dongcheon: A king who starts a war over a letter. This time, someone writes back.]
+        [2] [MAP 244: ]
+  CLOSE: [9] ❝QUOTE (Sanguo Zhi (三國志) bk. 28, Biography of Guanqiu Jian (毌丘儉傳), Zhengshi era (c. 244)): Gung, king of Goguryeo, led twenty thousand foot and horse up to the Boiling River and gave battle at Liangkou; Gung was beaten again a…
+         [10] ¶ Goguryeo takes forty years to be a kingdom again. It is the first time in this story that a Samhan capital burns because of one bad afternoon, and it is not the last, and every king in this record has heard about it.
+         [11] ¶ **Four hundred years later, another Goguryeo army marches to meet an emperor in the open. In the Tang line, a farmer puts on white…!**
+
+### #34 Stallion Mountain  (645 June)
+  OPEN: [0] ¶ By summer the farmer from Longmen is no longer a name on a muster roll. He is at Stallion Mountain, under the same Emperor who called him out of the yellow hemp.
+        [1] [PLACE jupil: Named for where an emperor stopped. Emperors name a lot of things.]
+        [2] [MAP 645: Goguryeo sends a hundred and fifty thousand down the crow road. The emperor sends himself.]
+  CLOSE: [53] Yeon Namgun: You took it for me.
+         [54] Yeon Namseng: I am the elder.
+         [55] ¶ **The Second Emperor isn't the first emperor to come for Goguryeo. The last one met a general who surrendered seven times…!**
+
+### #35 Colossal River  (612)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Emperor Yang of Sui invades Goguryeo in the year 612.
+        [1] [EDICT Edict for the Liao campaign (Sui Shu (隋書) bk. 4, Annals of Emperor Yang (煬帝下), Daye 8 (612), first month): And Goguryeo, that petty villain, sits lost in its own fog and shows no respect. It herds itself together betwee…
+        [2] [MAP 612: Nine armies over the Liao, a fleet up the Taedong. The Sui planned everything except the walk home.]
+  CLOSE: [10] ❝QUOTE (Samguk Sagi (三國史記) bk. 20, Goguryeo Annals — King Yeongyang, yr. 23 (612)): Autumn, seventh month: they reached the Salsu. When the army was halfway across, our troops struck its rearguard from behind, and General Xin…
+         [11] ❝QUOTE (Zizhi Tongjian (資治通鑑) bk. 181, Sui Daye 8 (612), 7th month): When the nine armies crossed the Liao there were three hundred and five thousand of them. When they got back to the Liaodong fortress there were two thousan…
+         [12] ¶ **Yodong fell. The forts fell. One wall is left, held by a madman whose name nobody wrote down…!**
+
+### #36 Ansi  (645 September)
+  OPEN: [0] ¶ The Guardian of Ansi Fortress is an eccentric man. When Yeon took the country, the Guardian refused him to his face. He kept the old king’s colours on the wall. Yeon had drowned a whole court for less. He looked at that wall…
+        [1] [PLACE ansi: One small fortress, and one stubborn man on top of it.]
+        [2] ¶ Nobody writes his name down. To the people inside the walls he is just the chief, and that turns out to be enough.
+  CLOSE: [37] ❝QUOTE (Samguk Sagi (三國史記) bk. 21, Goguryeo Annals — King Bojang, yr. 4 (645), historian’s comment (論曰)): The eastern campaign came to grief at Ansi, so its lord may be called a hero out of the common run. Yet history has los…
+         [38] The Guardian: You may outnumber us. You may outthink us. / But hear this, you of the West — / you will never be crazier than we are…!
+         [39] ¶ **Every Goguryeo wall prays to the Holy King. Who was he? We go back seven hundred years, to the day the sun stopped…!**
+
+### #37 Haemosu  (-37)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ The sky is empty first. Then come five dragons in the yoke, gold, crimson, azure, jade and white, and behind them a small gold chariot cutting the noon on the run they make every day. From the ground it is a fleck and a whee…
+        [1] [MAP -37: ]
+        [2] ¶ Dawn, noon, dusk, night, always the same route. Below, the Amnok is a line he is not supposed to break: wet stone, morning shallows with no boat in them, rocks that are only rocks.
+  CLOSE: [75] ❝QUOTE (Samguk Sagi (三國史記) bk. 13, Goguryeo Annals — King Dongmyeong, accession): Geumwa found her strange and shut her away in a room. The sunlight shone on her; she drew herself aside, and the sun’s shadow followed and shon…
+         [76] ❝QUOTE (Wei Shu (魏書) bk. 100, Account of Goguryeo (高句麗傳)): …Habek’s daughter was shut in a room by the king of Buyeo. The sunlight shone on her; she drew herself aside, and the sun’s shadow followed. Before long she conceived…
+         [77] ¶ **Dogs won't eat it. An axe won't split it. What on earth is inside Yuhwa's egg…?**
+
+### #38 Buyeo  (-37)  [FLASHBACK EPISODE]
+  OPEN: [0] ── SCENE: The Egg ──
+        [1] ¶ Dogs and pigs will not eat it; the sty refuses the guest, and the ministers pretend that is a kind of answer. In the road, cattle and horses step around it, hooves knowing better than the hall. In the open field, birds cover…
+        [2] [MAP -37: ]
+  CLOSE: [92] Jumong: …Here? / Thanks. Really. / Can’t roast you now, can I.
+         [93] ¶ Before the valley has a name for him he goes in, into stone and leaf-light and a country-shaped dark. In what will be called the Jumong cavern, he prays for a roof of his own.
+         [94] ¶ **A soaked exile, a hall full of spears, and a chieftain's daughter who won't look at him. Jumong's luck is about to get complicated…!**
+
+### #39 Jolbon  (-37)  [FLASHBACK EPISODE]
+  OPEN: [0] ── SCENE: The Scouts ──
+        [1] ¶ He is still wet from the river when the pines stop being empty. Two men in Yeon leather, spears too casual to be hunting, too careful to be lost. Jolbon scouts find him first. The bow is already in the pine needles. His hand…
+        [2] [PLACE jolbon: Pine valleys, crow clans, and nobody waiting for a king.]
+  CLOSE: [256] ¶ Jumong spends the rest of his life driving the western commanderies from the river valleys, and the country grows the way countries grow in old stories: one bowshot, one bride, one sworn brother at a time. He dies in the a…
+         [257] ¶ The chronicles will not write that the Yeon hall never forgot weighing a Go exile. Centuries later another Yeon will speak in the same short heat — and call the country by its longest name, as if shortening it were already…
+         [258] ¶ **Back in Surabol, the queen is failing and the council must name who's next. It only takes one hand to lock the door…!**
+
+### #40 Gi (起)  (645 Autumn)
+  OPEN: [0] ¶ Chunchu decides to travel to the East, guided by his friend **Takamuko no Kuromaro**.
+        [1] [MAP 645: ]
+        [2] ¶ Munhee packs for him. She has packed for every trip he’s ever taken. She will pack for one more. Nobody writes any of this down, which is why it needs saying.
+  CLOSE: [88] Bidam: A paddy is not planted in a morning, Yumjong. One shoot, and then the next, and then the water does the rest. / Enough for the Fortress of Radiance. By the time Her Majesty’s breath runs out.
+         [89] ¶ Bidam sets the cup down. Chunchu is across the sea. The queen is behind a shut gate. The Council has no one left to ask. So, for the first time in his life, Bidam decides something without a vote.
+         [90] ¶ **Gaya. A word six hundred years old that still cuts a marshal. Where did it come from? Six eggs, falling out of the sky…!**
+
+### #41 Suro  (42)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.
+        [1] ¶ Before the sons, there is a look from very high up. **Ibiga** keeps the sky the way other gods keep a hall — cloud is his body, the living world a map he does not usually read. Then he looks down.
+        [2] [CARD Ibiga: The sky god. Cloud is his body, and he does not usually look down.]
+  CLOSE: [71] King Suro: Then we keep the name. I can always make another country.
+         [72] ¶ She dies at a hundred and fifty-seven. He follows ten years later and asks to be laid where he can see her hill.
+         [73] ¶ **Ten days of grain. One dying queen. One banner on the Radiance wall. Start counting…!**
+
+### #42 Seung (承)  (647 January)
+  OPEN: [0] ❝QUOTE (Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 16 (647), 1st month; Lee Byong-do ed., vol. 1, p. 122): Bidam, Yumjong and others said a woman sovereign cannot govern well, and so plotted rebellion and rai…
+        [1] ══ DAY: DAY 1 ══
+        [2] ¶ **Queen Sunduk (52)** is in critical condition. The Eastern Palace smells of medicine and of a succession nobody has settled.
+  CLOSE: [97] ▼ FLASHBACK 618 One hundred and eight
+         [97] ▲ end flashback
+         [98] ¶ **“You were never even of Silla.” To see where that began, we go back to a Gaya prince nobody names…!**
+
+### #43 Muryuk  (562)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ For five hundred years the people of Gaya lived by iron and by six eggs, and they enjoyed great peace.
+        [1] [MAP 562: Five hundred years of iron, gone in thirty.]
+        [2] ¶ The Cloud King and his boy-general Sadaham come for Gaya.
+  CLOSE: [19] ¶ Then he says a name nobody has been given yet.
+         [20] 🙇: Yushin…
+         [21] ¶ **Back to the siege. Sixth night. Bidam has poured two cups of tea. Yushin isn't coming… is he?**
+
+### #44 Jeon (轉)  (647 January)
+  OPEN: [0] ══ DAY: DAY 6 ══
+        [1] ¶ Night rain. Bidam’s officers want a dawn assault. Bidam wants the score finished properly. He wants Yushin to come out again.
+        [2] ¶ **Sixth night.** Yushin does not come to the pavilion. Bidam sends tea anyway — two cups poured, one left steaming.
+  CLOSE: [90] Bidam: And one day, our descendants will prove me right. / So come at me, fate! **Bidam is ready to defend what is ours.**
+         [91] ❝QUOTE (Vimalakīrti Sutra (維摩詰所說經) ch. 5, Mañjuśrī Asks After the Illness (文殊師利問疾品), tr. Kumārajīva · T14n0475, p. 544b · Sanskrit: Vimalakīrtinirdeśa 4.6 (Study Group on Buddhist Sanskrit Literature ed.)) [Bidam]: From ignor…
+         [92] ¶ **Never of Silla? Then where did Yushin come from? Fifty years back: a Gaya boy, a royal gate, and a lost horse…!**
+
+### #45 Seohyun  (593)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.
+        [1] [MAP 593: ]
+        [2] ¶ Kim Seohyun is the son of Gaya’s last prince. In the capital, that’s the kind of fact people bring up just after he leaves the room. His father handed the kingdom over, then spent his life proving it had been a bargain. On o…
+  CLOSE: [173] Kim Seohyun: They say that about— every wall, I think. I’ve heard it about four. / Just— keep the granary dry. And know whose hands the keys are in. / My wife ran the granary at Manno. She’d tell you the same. She’d tell you…
+         [174] ¶ The histories do not record the year he died, only how high he got. He climbs the ridge beyond the city whenever the stone in his sleeve is warm, shaved every time, until the climb is too much for him, and then he sends th…
+         [175] ¶ **Tenth morning. The grain is gone. Two old yard-mates walk out between the camps, and the score is still a hundred and eight apiece…!**
+
+### #46 Gyeol (結)  (647 January)
+  OPEN: [0] ══ DAY: DAY 10 ══
+        [1] ¶ Before the gate opens Bidam goes down to the lines and saddles **Bisamun** himself, which a High Councillor does not do. He slips nine beads off the end of his string and knots them to the bridle, under the horse’s jaw.
+        [2] ?: Sangdaedeung, those are…
+  CLOSE: [61] ▼ FLASHBACK 647 The sixth night · 여섯째 밤
+         [61] ▲ end flashback
+         [62] ¶ **The one hand that said no is gone. Now the crown has to fit Seungman, and it was made for someone else…!**
+
+### #47 Queen Jinduk  (647 February)
+  OPEN: [0] ¶ The crown was made for her cousin and has to be padded at the temples. Seungman sits very still while the goldsmith does it, because somebody told her once that Dukman never fidgeted, and she has believed it for forty years.
+        [1] ¶ Seungman is crowned Queen Jinduk before the blood on the yard dries. The bloodline’s last polite miracle, stamped and filed while the censers are still warm. The succession Bidam died objecting to passes at last. Unanimously…
+        [2] ❝QUOTE (Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 1 (647), 2nd month): Taizong* of Tang sent an envoy bearing his tally to confer on the late queen the posthumous rank of Grand Master of Splendid Happiness, a…
+  CLOSE: [16] King Muyeol: Since the funeral, Majesty.
+         [17] ¶ At night she sits at a loom, because her hands want work that nobody will compare. Three years from now she will weave an ode to the Tang emperor into a length of silk, and it will do more for Silla than any prophecy her co…
+         [18] ¶ **Silla needs an army. Only one man alive can lend it. Chunchu goes west…!**
+
+### #48 Huangdi (皇帝)  (648 March)
+  OPEN: [0] ── SCENE: The Son of Heaven ──
+        [1] ¶ Everyone on earth wants something from the Son of Heaven. Most of them bring tribute. Chunchu brings an offer.
+        [2] [TERM Huangdi · Emperor (皇帝): Huang, the god-kings of the dawn of the world. Di, the lord of heaven. The first man to put the two words together burned the books. Every other ruler on earth is a king. This one is the Son of He…
+  CLOSE: [264] ❝QUOTE (Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 2 (648); Lee Byong-do ed., vol. 1, p. 128): On the way home, at sea, Chunchu met Goguryeo patrol soldiers. His attendant On Gunhae sat on the ship in a high…
+         [265] ¶ He reaches the home shore in a boat Chang’an wouldn’t have bothered to count.
+         [266] ¶ **Chunchu has watched one brush move an empire. Now he wants that brush in Silla. The Harmony Council hasn't noticed yet…!**
+
+### #49 Royal Secretariat  (651)
+  OPEN: [0] ¶ For three months a border petition has been circling the **Harmony Council** like a bird that cannot find a roof. Chunchu has counted the seals. He has counted the men who must touch a paper before a soldier may move. He has…
+        [1] [DIAGRAM royal-secretariat Royal Secretariat · 집사부 — Fourteen ministries under one 중시. Tang’s 三省六部 copied and exceeded. Never enough.]
+        [2] [DIAGRAM harmony-council:ornamental Council, ornamental · 화백의 빈 의자 — The chairs stay polished. Nothing of consequence waits for them anymore.]
+  CLOSE: [51] ── SCENE: The Emperor’s Letter ──
+         [52] [EDICT Sealed letter to the king of Baekje [The Third Emperor] (Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Baekje, Yonghui 2 (651) · cf. Samguk Sagi bk. 28, King Uija, yr. 11): The three kingdoms east of the sea were fo…
+         [53] ¶ **Rewind to Chang'an. The room is too warm, the crown prince hasn't moved since dawn, and someone in the anteroom is taking notes…!**
+
+### #50 Jiabeng (駕崩)  (649 July)
+  OPEN: [0] ── SCENE: The Cuiwei Palace ──
+        [1] ¶ The emperor dies in the Cuiwei Palace in the fifth month. He is fifty-one. The room is kept too warm, and the silk on the bed is the colour of late wheat.
+        [2] [TERM Jiabeng (駕崩): “The carriage collapses.” Nobody in Chang’an may say the emperor died. Kings die. The Son of Heaven’s carriage simply falls, and the whole empire is meant to hear it land.]
+  CLOSE: [33] The Third Emperor: Lady Wu. / …They cut your hair.
+         [34] Wu Zetian: Hair grows back, Majesty. / (and already the room tilts a degree toward her)
+         [35] ¶ **Seven years of a polite queen and a busy nephew. Sooner or later, Silla has to admit who's really sitting in the chair…!**
+
+### #51 King Muyeol  (654 March)
+  OPEN: [0] ¶ For seven years the crown has sat on Queen Jinduk. The work has sat on her nephew’s table. Nobody has ever called her foolish. She’s simply outnumbered by seals.
+        [1] Queen Jinduk: Nephew. / When I die, do not pretend I ruled. / Say I kept the chair warm until the country was ready to admit who was already sitting in it.
+        [2] King Muyeol: Aunt. / You ruled the only way left to Sacred Bone — by lasting.
+  CLOSE: [28] The Third Emperor: He became king. / Of course he did. / Send him horses. And tell him the dust here still has room for one more inconvenient man.
+         [29] ¶ Far west, the Third Emperor’s court learns a new gravity. The young woman who once waited in an anteroom now finishes sentences the emperor starts. Clerks say her influence is growing by the day. They say it softly.
+         [30] ¶ **Before Bupmin was anybody's heir, he was a prince with bad arithmetic. Ten years back, a harbour girl is about to tell him so…!**
+
+### #52 Jahee  (644)
+  OPEN: [0] ¶ Yushin sends Bupmin to the coast to work under Kim Seonpum. It is a season with a tide book instead of a training yard. The quay does not care that he is a prince. It cares whether the sums close.
+        [1] [PLACE danghang: Silla’s only door to the western sea. Everyone knows which door.]
+        [2] [MAP 644: ]
+  CLOSE: [15] King Munmu: Marshal. / When I said king for all — did I mean every kingdom, or every person who bleeds for one?
+         [16] Kim Yushin: Ask the yard again tomorrow. / If the answer is only a speech, you are still six. / If it costs you a bruise — you are becoming Hwarang.
+         [17] ¶ **Bupmin wants to be a king for all. So did Silla’s first. To meet him, go back to a white horse kneeling…!**
+
+### #53 Hyukgose  (-57)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ After the fall of Old Joseon, the local chiefs gather to select a new king when a **White Horse** suddenly leaves an egg — blue sky above, and later the court will keep the moon as its quiet sign.
+        [1] [MAP -57: ]
+        [2] ¶ At a well in the hills, the horse knelt and cried. Six chiefs dug where it stood. They lifted out a great egg. The shell opened on a boy who already looked like a king. He learns fast. The chiefs say the land has been waitin…
+  CLOSE: [30] ¶ Sixty-one years later, the chronicle says, the king went up into the sky, and seven days after that his body came down again in five pieces, scattered over the ground. Nobody records a horse. Everybody in Seorabeol says the…
+         [31] ❝QUOTE (Samguk Yusa (三國遺事) bk. 1, Wonders 1 — Silla Founder Hyeokgeose (新羅始祖 赫居世王)): He ruled the country sixty-one years, and the king rose up to heaven. Seven days later his remains fell scattered to the ground… The people …
+         [32] ¶ **A chest rides the tide in, a magpie screaming over it. Whatever is inside needs a house. Preferably someone else’s…!**
+
+### #54 Talhae  (-19)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Late in the first king’s reign, a chest comes in on the tide at a fishing beach. A magpie flies over it, crying.
+        [1] ¶ It has come a long way. A thousand li north-east of Wa, the queen of a country called Dapana carried a child for seven years and was delivered of an egg. The king said a person who lays an egg is an ill omen and should get r…
+        [2] ❝QUOTE (Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum): Talhae was born in the land of Dapana, which lies a thousand li north-east of Wa. Its king had taken to wife the daughter of the king of the Land of Women. She …
+  CLOSE: [33] Hogong: I knew it. You did bury them.
+         [34] Seok Talhae: Prove it.
+         [35] ¶ **“Hogong. There’s a rooster in the woods.” It is the middle of the night. Roosters don’t crow at night…!**
+
+### #55 Alji  (65)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ In the ninth year of his reign King Talhae wakes in the night to a rooster crowing in the woods west of the city, which roosters do not do at night.
+        [1] Seok Talhae: Hogong. There’s a rooster in Sirim. / Go and see what it wants.
+        [2] Hogong: Majesty, it’s a rooster. It wants— / …Yes, Majesty. Going.
+  CLOSE: [10] ¶ Talhae has sons of his own and does not give Alji the throne, and Alji, by every account, does not ask for it. It takes his line seven generations to reach the crown. When they do, they keep it for six hundred years, call t…
+         [11] ¶ Under a certain hill beyond the city, the steam says the same word every time it leaves the water. It will be a long time before anybody answers it.
+         [12] ¶ **Back to Baekje. The king can’t sign a thing for three years. And the clans have a list with one name on it…!**
+
+### #56 Exile  (655)
+  OPEN: [0] ¶ **Queen Satek,** Euija’s mother, dies. Euija begins the traditional mourning period.
+        [1] [MAP 655: ]
+        [2] ¶ Three years of it, by the rite. For three years the king may not sit in judgement, may not sign, may not overturn. Everyone in Sabi knows exactly how long three years is, and exactly what can be done inside them.
+  CLOSE: [101] ¶ He drills in units of five hundred. Four years from now he will take ten of those units to a field and leave the rest behind. The count is already in his mouth.
+         [102] [MORAL the warning: Give a literal man one person to trust and you have not given him a friend. You have given him a hinge.]
+         [103] ¶ **First night on the island. A fire, two cups, and a storyteller who never asks permission. “Sit or don’t. Once there were two suns…”**
+
+### #57 Heaven–Earth King  (태초)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Told on the first night, before he has agreed to listen to anything. Yuri Dora has a fire going, two cups, and no plan to ask permission.
+        [1] Yuri Dora: I’ll start at the beginning. / Sit or don’t.
+        [2] ¶ **Gyebek** stays standing by the door. Yuri Dora starts anyway.
+  CLOSE: [106] ¶ It is the first story on the island he does not inspect.
+         [107] [MORAL The telling: The world was not given to the better brother. Stop waiting for it to behave as if it was.]
+         [108] ¶ **The next night he hides on a roof. She tells it anyway. One woman made this island, and she was enormous…!**
+
+### #58 Sulmun  (태초)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ The next story is told to him on a roof, because he is on a roof, mending it, and Yuri Dora has decided that a man who will not sit down can still listen.
+        [1] Yuri Dora: One woman made this island. Sulmun.
+        [2] ¶ Before the island there is a woman, and she is enormous. **Sulmun**, the Great Lady. The sea comes to her knee. She scoops the seabed up in her apron and piles it in one place until it stands high enough to lean on, and that…
+  CLOSE: [19] Gyebek: …That is the worst amount to be short by.
+         [20] [MORAL the warning: The bridge was not lost to the sea. It was lost to the last one per cent.]
+         [21] ¶ **Three princes climb out of the ground. “Not from an egg,” the island insists. Then a box drifts in from the sea…!**
+
+### #59 Three Princes  (태초)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ This is the story of the kingdom of **Tamla**.
+        [1] [DIAGRAM tamla-princes Three Princes · 삼성혈 — Three divine princes rise from Samseonghyeol and divide the orange island.]
+        [2] ¶ Long after the Great Lady’s stone sons, three divine princes named Yang, Go and Bu climb out of a hole in the ground.
+  CLOSE: [38] Yuri Dora: He came home and became the god of his own land. / The god the ones who threw him out have to bow to.
+         [39] [MORAL the warning: The sea does not decide what a man is. It only decides how long he waits to be it.]
+         [40] ¶ **“Tomorrow’s isn’t a kind one, Turtle.” A serpent in a cave. A woman from the rock. A man who looks back…!**
+
+### #60 Stone Lady  (태초)  [FLASHBACK EPISODE]
+  OPEN: [0] Yuri Dora: Today’s is not a kind one.
+        [1] Gyebek: That is acceptable.
+        [2] ¶ There is **Kangrim** — but the island does not tell his full story until last. For now it is enough to know he comes for you, and that a crow once ruined his schedule.
+  CLOSE: [31] ¶ He does not answer that one. He finishes the rope, and tests it eleven times.
+         [32] [MORAL the warning: Cast out what carries your fortune and you will not see it go. That is what blindness is for.]
+         [33] ¶ **Heaven sends for a man to keep its flower field. He leaves his pregnant wife to wait. He forgets to say how long…!**
+
+### #61 Gardener  (태초)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Told in the orange grove, in the hour after the picking, when Gyebek has finally been persuaded to sit on a basket.
+        [1] Yuri Dora: There was a man called Sara Doryeong. Heaven sent for him to keep its flower field in the west. / His wife was carrying. She couldn’t walk as fast as heaven wanted, so he left her at a rich man’s house to wait.
+        [2] Gyebek: How long was she to wait.
+  CLOSE: [42] Gyebek: …I see.
+         [43] [MORAL the warning: The rule is smaller than you think, and the door is usually in the wording. Read it again.]
+         [44] ¶ **The island keeps one story for last. It is about the one who comes for you, and the crow that lost his book…!**
+
+### #62 Kangrim  (태초)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ The island keeps one story for last. After it, every ending on the mainland has a broken clock already running.
+        [1] Yuri Dora: Now the last one. / Kangrim. / Heaven did not send him.
+        [2] ¶ A magistrate named Kimchi had a murder he could not try. Three brothers were killed for their silk and sunk in a pond. They came back as three flowers on the water. Burned, they became three beads. A woman swallowed them and…
+  CLOSE: [21] Yuri Dora: The book went wrong on the road. The walk did not. / That is the key.
+         [22] [MORAL The telling: The warrant said die in order. A crow lost it. You do not get a fair hour. You still get the door.]
+         [23] ¶ **Why does an orange island take Baekje’s exiles at all? Because once, long ago, it forgot to send the oranges…!**
+
+### #63 Tribute  (498)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Tamla stops sending tribute. Rebellion would at least have been legible; this is closer to forgetting, which a large kingdom finds harder to forgive.
+        [1] ¶ Baekje’s king marches an army to the southern harbour and stops. He lets the news cross the water on its own. It gets there faster than he would have.
+        [2] ❝QUOTE (Samguk Sagi (三國史記) bk. 26, Baekje Annals — King Dongseong, yr. 20 (498), eighth month): Eighth month. Because Tamla had not sent its tribute, the king went out to punish it himself and got as far as Mujin Province. Tam…
+  CLOSE: [3] ¶ Tamla apologises. Baekje accepts. Nobody is killed, everybody is satisfied, and the oranges resume. For a hundred and fifty years, that is the whole relationship.
+         [4] ¶ So when Baekje needs somewhere to put a man it cannot kill, there is an island, and the island owes it a favour.
+         [5] ¶ **Meanwhile, in Sabi, Euija calls the Assembly. He has a smile, a speech, and a proclamation printed before anyone sat down…!**
+
+### #64 Coup  (655 February)
+  OPEN: [0] ¶ He calls the assembly the way a gambler calls a final hand — smiling, sleeves perfect, already knowing which tiles he slipped into the set.
+        [1] [MAP 655: ]
+        [2] ¶ **Euija** calls a session of the Ministers’ Assembly at Deer Rock. The rock is dry. Someone forgot the brine, or remembered it and chose not to.
+  CLOSE: [45] 👑: Then why am I needed at all?
+         [46] Satek Chunbok: However weak it is, it still needs one shock. / Say the Tang army is coming — the rumour alone will tip the country’s spirit.
+         [47] ¶ **He beat eight houses in one morning. Now he can’t sleep. In his dreams, somebody keeps counting…?**
+
+### #65 Descent  (656 March)
+  OPEN: [0] ── SCENE: Nightmares ──
+        [1] ¶ He starts dreaming about the Rock of Politics. In the dream it is dry, and he is rubbing it with brine, and the brine will not stay. Every time he lifts the cloth the stone is dry again, and the eight elders are standing rou…
+        [2] ¶ Some nights it is the white deer, come back out of the dark it was kept in, and too big for the hunting ground. Some nights it is a boat on the water with a man sitting very straight in the stern, not rowing, counting.
+  CLOSE: [59] ❝QUOTE (Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 16, dying memorial of Seongchung; Lee Byong-do ed., vol. 1, p. 384): A loyal servant does not forget his king even in death, so let me say one thing and die. I…
+         [60] ¶ The king does not take it in.
+         [61] ¶ **Foxes in the Assembly. Toads in the treetops. A river running red. Nine signs, and a king who swears he doesn’t believe in signs…!**
+
+### #66 Nine Omens  (659)
+  OPEN: [0] ¶ Around the kingdom, signs of Baekje’s impending doom gather.
+        [1] ¶ Every one of them is real, in the sense that people saw it. That was always the only sense that mattered, and the man who said so is about to find out how much he meant it.
+        [2] ¶ 1. A herd of foxes infest the Ministers’ Assembly.
+  CLOSE: [40] ¶ He jumps. The cold takes the wine off him. When he surfaces he is coughing, furious, awake — the promising prince the eight clans once feared, scraped clean by the same river that taught him friendship.
+         [41] King Euija: Summon Gyebek…!
+         [42] ¶ **Before the last stand, the first road. To understand Baekje, we have to go back to two brothers and their mother, walking south…!**
+
+### #67 Onjo  (-18)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Onjo and Biryu grow up princes in their father’s hall. Nobody there ever mentions Buyeo.
+        [1] [MAP -18: ]
+        [2] ── SCENE: Buyeo ──
+  CLOSE: [60] Onjo: “Baekje” — how does that sound?
+         [61] ❝QUOTE (Samguk Sagi (三國史記) bk. 23, Baekje Annals — King Onjo, founding; Lee Byong-do ed., vol. 1, p. 334): With ten ministers as wings he named the country Sipje. Later, because the common people had gladly followed at the ti…
+         [62] ¶ **Back to Sabi. Two armies are already on the road, and the only plan anyone has is a dead man’s letter…!**
+
+### #68 Sungchung  (660)
+  OPEN: [0] ¶ Word reaches Euija. Two armies are coming for his capital, one by sea and one over the hills. The markets already call it the Chunchu Army. He scrambles for troops.
+        [1] ❝QUOTE (Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, yr. 7 (660), sixth month): The Red Fowl set out from Laizhou, his ships stern to prow for a thousand li, coming east on the current.❞
+        [2] ¶ Loyalty, in Baekje, is a star you steer by after the door has already been opened against you.
+  CLOSE: [5] King Euija: **Who is the Eraha of this country?!** / **Buyeo Euija?** / **Or Minister Satek?** / **Send him NOW!**
+         [6] ¶ At the back of the hall, the lord of Bear Fortress says nothing. Ye Sikjin is doing the sum every provincial lord is doing. How many days from the river mouth to the capital? And how many from the capital to his own gate?
+         [7] ¶ **One man might still know what to do. Euija sent him away too. Somebody ride. Now…!**
+
+### #69 Heungsu  (660)
+  OPEN: [0] ¶ Heungsu is not in the hall. He is still at **Gomamiji**, where the posting put him. The king sends a man anyway, because the Chunchu Army is no longer a rumour and the rock has run out of plans.
+        [1] ▼ FLASHBACK 655 The berth
+        [1] ▲ end flashback
+  CLOSE: [18] ¶ On the twelfth it rains, and he stands under the eave and watches the White River and Tanhyeon run together into one brown puddle. He does not draw them again. He lifts the blade off the doorpost by its ring and starts nort…
+         [19] ¶ The histories do not mention him again.
+         [20] ¶ **Across the sea, a boat is coming for the Turtle. He is on the shore before they finish tying it up…!**
+
+### #70 Gyebek  (660)
+  OPEN: [0] ¶ Somewhere in the fourth year he notices he has stopped counting the days. It frightens him for a week. Then it does not.
+        [1] ¶ He stops correcting the people who call him Turtle, and carries water for the women who dive. For the first and last time in his life, he is in a place where being exactly what he is costs him nothing.
+        [2] ¶ A boat comes for him in the fifth year. He is on the shore before they finish tying it up.
+  CLOSE: [24] ¶ Gyebek and his five thousand set out for the Yellow Mountain. It is the last latch on the road to Sabi. Merchants have cursed its summer dust for years.
+         [25] 🙇: Long live Baekje….!
+         [26] ¶ **Five thousand march for the Yellow Mountain. High above them, in a pavilion made of clouds, someone has called a meeting…!**
+
+### #71 Three Realms  (태초)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Epilogue · Part II. The annual meeting is a small 정자: four posts, a raised floor, clouds for a yard. Living, dead, and western rows all fit if nobody stretches.
+        [1] [PLACE realms_pavilion: Four posts, clouds for a yard, and very strict seating.]
+        [2] [DIAGRAM pantheon:courts The Three Realms · 삼계 — Hwanin above; Living, Dead, and Western Flower Field below. Heaven is not a fourth peer realm.]
+  CLOSE: [36] Little Star: I cheated for the living world. / Them cutting each other… that is my small law too. / Still — when they call Dangun’s name again, does the Big Man Upstairs laugh, or sigh?
+         [37] Big Star: Let the meeting begin. / Business of the living… last item on the agenda.
+         [38] ¶ **The minutes of that meeting never leave Heaven’s table. Down below, five thousand men are counting fifty thousand…!**
+
+### #72 Yellow Mountain  (660 August)
+  OPEN: [0] ── SCENE: Snow on the Steppe ──
+        [1] ¶ Three years before he sees Samhan, Su Dingfang wins a war in a blizzard. He is sixty-five. His enemy has camped for the winter, sure that nobody fights in snow two feet deep. Su marches all night and attacks at dawn. He take…
+        [2] [CARD Red Fowl: The Red Fowl. Sixty-five, and he still prefers to march at night.]
+  CLOSE: [127] ¶ Nobody can lead the black horse off the field. It stands over the place where he went down until the Silla grooms come at dusk with ropes, and it takes six of them, and in the night it breaks the line and goes south toward…
+         [128] 👑: ?
+         [129] ¶ **The pass is open. The river is open. And in Sabi, the king’s big idea is to send the Tang dinner…!**
+
+### #73 Sabi  (660 August)
+  OPEN: [0] ¶ The court hears about the Yellow Mountain Fields the following morning.
+        [1] [MAP 660: Two arrows, one capital, and a king who has decided the answer is oxen.]
+        [2] ¶ Euija’s first move is to send the Tang camp a feast: oxen, wine, three cartloads of rice cakes. The court is told this is diplomacy.
+  CLOSE: [81] ¶ Word of the conversation reaches the Red Fowl’s tent, as it was meant to.
+         [82] ¶ A month later the Red Fowl sails home with Euija, his sons and twelve thousand captives. He leaves ten thousand men to hold the city. Beside them sits a Silla army that has stopped smiling.
+         [83] ¶ **Across the sea, a confession is waiting for Euija. It is already written, in a lovely hand. It only needs his name…!**
+
+### #74 Buyeo Euija†  (660 December)
+  OPEN: [0] ¶ In the Tang capital, Euija is brought forth before the Third Emperor.
+        [1] ❝QUOTE (Zizhi Tongjian (資治通鑑) bk. 200, Tang Gaozong, Xianqing 5 (660), eleventh month): Eleventh month, first day. The emperor went up to the Zetian Gate tower to receive the Baekje captives, and released them all, from their …
+        [2] ❝QUOTE (Nihon Shoki (日本書紀) bk. 26, Saimei 6 (660), seventh month — note quoting the account of Iki no Hakatoko (伊吉連博德書), a Yamato envoy who saw it): First day of the eleventh month. The king of Baekje, seized by General Su* an…
+  CLOSE: [40] ¶ _The Zengzi of the East. They called him that when he was young, and they meant it. The name was neither flattery nor wrong. He was never a fool. He was a clever man who won, and kept winning, until winning was the only ins…
+         [41] ¶ _He asked, at the end, for someone to avenge him. Two hundred and forty years later a man called Kyun Hwon raised his banner and used his name and lost as well. The story went on without either of them. It always does._
+         [42] ¶ **Baekje is gone. Goguryeo still stands. And the man who arranged both can no longer get out of bed…?**
+
+### #75 Kim Chunchu†  (661 June)
+  OPEN: [0] ¶ They take him first to a Buddhist temple on the edge of Surabol — not for miracle, for quiet. Incense. Stone. A monk who knows when not to speak. **Munhee** sits where wives of True Bone have always sat when history arrives …
+        [1] [MAP 661: ]
+        [2] Munhee: You reinvented a kingdom in a side hall. / Leave me the hours. I invent endings.
+  CLOSE: [33] ¶ Bupmin takes the throne. They will call him Munmu. He vows to finish it, for the country a six-year-old once named out loud.
+         [35] ❝QUOTE (Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, accession (661); Lee Byong-do ed., vol. 1, p. 140): King Munmu was set up. His taboo-name was Beopmin*; he was the eldest son of King Taejong†.❞
+         [37] ¶ **Silla won the war. So why does the emperor’s new edict call its king a clerk…?**
+
+### #76 Ungjin Commandery  (661 Autumn)
+  OPEN: [0] ── SCENE: Five Commanderies ──
+        [1] ¶ When the capital fell, the Tang threw five commanderies over the country like a net over a pond. The biggest knot sits at Bear Fortress, where Euija was handed over. So far the net catches mostly rebels.
+        [2] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 199A, Eastern Barbarians — Baekje): Its land was then divided into five area commands, Ungjin and the rest, each governing its prefectures and counties, and its own chieftains were set up as comma…
+  CLOSE: [28] ¶ Samhan never learns their names. It learns their banners, which is the entire purpose of a banner.
+         [29] 🙇: I have already destroyed Baekje and removed your country’s worry; yet now Goryeo trusts in the ruggedness of its land, joins the Yemaek in wickedness, breaks the rite of serving a great state, and abandons the duty of liv…
+         [30] ¶ **Baekje has no king. Across the sea, an exiled prince is packing his bags…!**
+
+### #77 King Pungjang  (661 September)
+  OPEN: [0] ▼ FLASHBACK 371 The Seven-Branched Sword
+        [0] ▲ end flashback
+        [1] ¶ Three hundred years on, the bill comes due. Baekje's rebels want ships.
+  CLOSE: [55] 🙎: Pisong lies a single night’s march from the enemy. So close that if the unexpected comes, regret will be useless. Starving is a later matter; ruin comes first. The reason the enemy does not come freely now is that Juryu s…
+         [56] ¶ The men move once, move back, and start looking at each other differently.
+         [57] ¶ **Baekje has its king back. Now the emperor turns north, to walls that have never fallen…!**
+
+### #78 Pyongyang I  (661 December)
+  OPEN: [0] ¶ Red Sun's capital sits on its ridge. A red two-storey gate, grey stone, and clouds that always look about to pick a side. There is only one gate anyone remembers.
+        [1] [MAP 661: A fleet up the river, an army at the Amnok, and a winter about to pick a side.]
+        [2] ¶ The impenetrable walls of Pyongyang are tested once again.
+  CLOSE: [20] King Munmu: Uncle. Not you. Send someone younger.
+         [21] Kim Yushin: The younger ones don’t know the road, Majesty. Hanseul and I do. / Load the carts.
+         [23] ¶ **The White Tiger has thirteen sons. Yeon Gesomun can count to thirteen…!**
+
+### #79 Snake River  (662 February)
+  OPEN: [0] ¶ The White Tiger drives his host into the Snake River. They still believe rivers are roads. Yeon Gesomun has been waiting for a man who thinks that. Old men in the north remember another river that ate an army. The Snake is y…
+        [1] [PLACE sasu: Shallow, slow, and patient with men who think rivers are roads.]
+        [2] [MAP 662: The White Tiger thought the river was a road. Yeon is standing in the middle of it.]
+  CLOSE: [55] Kim Yushin: We came through snow to the horse’s chest, General. / You may eat it slowly.
+         [56] ¶ The Red Fowl takes the rice, breaks camp within the week, and sails. The road back is Yushin’s problem. Goguryeo’s horsemen follow the empty carts all the way to the Imjin, and the white horse carries him across it.
+         [57] ¶ **And on an island far to the south, someone is asking: whose side are we on now?**
+
+### #80 Tamla Surrenders  (662 February)
+  OPEN: [0] ¶ After the Snake River, Tamla quietly changes sides.
+        [1] [MAP 662: ]
+        [2] ¶ The island kingdom sends its envoys to Silla and the Tang, ending seven centuries beside Baekje.
+  CLOSE: [3] ❝QUOTE (Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 2 (662), second month): Dodongeumnyul (some copies say -jin), lord of Tamla and a jwapyeong, came and surrendered. Tamla had been Baekje's vassal since the Wude …
+         [4] ❝QUOTE (Xin Tangshu (新唐書) bk. 220, Eastern Barbarians — Danluo (儋羅, Tamla), Longshuo era (661–663)): Early in Longshuo there was a land called Danluo, whose king, Yuri Dora, sent envoys to court. It lies on an island south of …
+         [5] ¶ **Baekje is supposed to be finished. Nobody told the fortresses. And in Surabol, a great lord calls in sick…!**
+
+### #81 Rebellion  (662 August)
+  OPEN: [0] ── SCENE: Naesaji ──
+        [1] ¶ Two summers after Sabi, Baekje is supposed to be finished. Nobody has told the fortresses. The leftovers gather at a hill fort east of the old capital. They do what a kingdom does with no king nearby. They collect grain. The…
+        [2] [MAP 662: ]
+  CLOSE: [17] ¶ **Kim Punghun** is at Chang’an when the news comes, in the emperor’s guard, where the sons of vassal houses are kept. He hears it from a Tang officer who is sorry for him, which is worse. He asks for leave to go home for th…
+         [18] Kim Punghun: …Then I will wait. / The emperor’s ships go east sooner or later. I can wait for a ship.
+         [19] ¶ **Back at Juryu, a monk and a general share one army. We have to go back to see who keeps it…!**
+
+### #82 Betrayal  (661)  [FLASHBACK EPISODE]
+  OPEN: [0] ── SCENE: Dochim ──
+        [1] ¶ Before Boksin and the king, there were Boksin and the monk. Dochim raised the first banner with him, the autumn Sabi fell. He put down his begging bowl for a spear. He named himself General of the Spirit Army. For a year the…
+        [2] ❝QUOTE (Dhammapada (法句經) ch. 18, Sword and Rod (刀杖品), tr. Weiqinan & Zhu Jiangyan · T04n0210, p. 565b · Pali: Dhammapada 129, Daṇḍavagga) [Dochim]: All fear death; there is none who does not dread the pain of the rod. Take you…
+  CLOSE: [20] Satek Sangya: Same thing. Less salt.
+         [21] ¶ However, there is still a problem. Boksin was the most competent general of the movement, and there is only one chance left.
+         [22] ¶ **Four banners. One river mouth. The West, Samhan and the East meet on a single tide…!**
+
+### #83 White River  (663 August)
+  OPEN: [0] ¶ Chang’an’s clerks still count to thirteen when they hear the word _river_. This mouth is not that river. The tiger already died in February water, with every son numbered. The **White River** has come for sails.
+        [1] [MAP 663: ]
+        [2] ¶ The epic battle: for the first time the West, Samhan, and the East meet in one mouth of water. Tang and Silla hold the banks; Baekje’s restoration and a Yamato expeditionary fleet come in on the tide — and discover, too late…
+  CLOSE: [68] ¶ Ji Subsin leaves his wife and children inside and goes north to Goguryeo, which by now is where Baekje’s last kings go.
+         [69] ¶ When the water cools to ordinary colour again, the restoration has no fleet worth the word. The **Black Tortoise** sits down with Kim Yushin. Neither of them believes a word the other says, and they get a great deal done — …
+         [70] ¶ **Two reapers failed to take Yeon Gesomun at the river. The ledger still has his name in it…!**
+
+### #84 Yeon Gesomun†  (665)
+  OPEN: [0] ── SCENE: King Yumla ──
+        [1] ¶ The Eternal General is dying.
+        [2] [MAP 665: ]
+  CLOSE: [27] ¶ _His last words were: do not fight one another. His eldest son answered that he had never kept a brother close: one sent to the border, the rest cut down. Both of them were telling the truth, and neither of them could hear …
+         [28] ¶ _He held the north for a generation and left nothing behind him that could hold it for a year. Nine months after they buried him his sons were at war with each other. Twenty-six months after that his eldest was riding west …
+         [29] ¶ **“Do not fight amongst yourselves.” He had three sons. How long do you think that lasts?**
+
+### #85 Brothers’ Coup  (666 December)
+  OPEN: [0] ¶ The Third Emperor invades Goguryeo again. Nobody is counting anymore. This time, he has a guide.
+        [1] ¶ He tells a Silla envoy, and tells him to repeat it.
+        [2] 🙇: I have already destroyed Baekje and removed your country’s worry; yet now Goryeo trusts in the ruggedness of its land, joins the Yemaek in wickedness, breaks the rite of serving a great state, and abandons the duty of livi…
+  CLOSE: [31] ¶ Namseng is given a Tang title, and a vanguard command against his own country.
+         [32] ¶ In the south their uncle **Yeon Jungto**, who raised two of them, waits to hear which nephew will send for him. Neither does. He takes twelve cities over to Silla, and the family is finished in three directions at once.
+         [33] ¶ **Namseng knows the road in. Now he rides it home, with the whole Tang army at his back…!**
+
+### #86 Pyongyang II  (668 September)
+  OPEN: [0] ── SCENE: The Ninth Invasion ──
+        [1] ¶ Three of the emperor's four beasts come for the city at once. The Blue Dragon leads. The Black Tortoise and the second White Tiger ride behind him.
+        [2] [MAP 667: Three beasts, three roads, one city.]
+  CLOSE: [39] King Munmu: It is the name of the man who opened this city. / Wear it. / You may keep Marshal for the boys on the yard.
+         [40] Kim Yushin: …As you command.
+         [41] ¶ **The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!**
+
+### #87 Mount Gain  (665 August)
+  OPEN: [0] ── SCENE: Bear Ford ──
+        [1] ¶ Two springs after the river, the empire names a governor for what is left of Baekje. It is Buyeo Yung. He once knelt at Bupmin's horse and was spat on. Then he went to the emperor's city and came back in imperial robes. Now …
+        [2] ¶ The court in Surabol hears the name and goes very quiet. Their men died for this ground. An emperor promised it to Chunchu by lamplight. Now a Baekje prince sits on it again, with the emperor's seal in his hand.
+  CLOSE: [29] King Munmu: I’ll find you another white horse, Uncle.
+         [30] Kim Yushin: I’m seventy, Majesty. I’ve buried three. / Find me a war instead. I’d like to go to one more before they make me swear to something else.
+         [31] ¶ **To find the first king of this land, we have to go back before there were kingdoms… to a bear in a cave…!**
+
+### #88 Dangun & Old Joseon  (Long ago)  [FLASHBACK EPISODE]
+  OPEN: [0] ¶ Before there are any kingdoms, there is a son in heaven who keeps looking down. He is **Hwanung**. His father **Hwanin**, the Lord of Heaven, notices, looks down himself at a mountain called Taebaek and the people living aro…
+        [1] [CARD Hwanin: The Lord of Heaven. He has been watching this peninsula since before it had names.]
+        [2] [DIAGRAM joseon-mandate Old Joseon · 고조선 — Heaven’s mandate made into a capital: Hwanin → Hwanung → Dangun → Asadal.]
+  CLOSE: [55] The Herald: A door was opened from the inside.
+         [56] ¶ Han takes Wanggeom. Some of the people the king told to live go south over the mountains. They settle in six villages around Surabol. Two generations later, they'll go looking for a king. The rest stay, and the empire cuts …
+         [57] ¶ **Eight hundred years later, the empire comes back to the same river to do the same thing. This time, Goguryeo has a prince left…!**
+
+### #89 Anseung  (670 June)
+  OPEN: [0] ── SCENE: The Protectorate ──
+        [1] ¶ Nearly eight hundred years after Wanggeom, the empire of the West comes back to the Taedong and does the same thing again. The Third Emperor sets up a **Protectorate** over Goguryeo, staffs it with his own officials, and see…
+        [2] ¶ Geom Mojam raises the old flag on the Taedong. He puts a royal cousin, Anseung, under it. Then they quarrel.
+  CLOSE: [13] King Munmu: A king of Goguryeo in Silla. The emperor will hate it. / Good. Give him a seal. A big one.
+         [14] ❝QUOTE (Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 10 (670), eighth month — patent investing Anseung) [King Munmu]: The King of Silla charges Anseung, heir of Goguryeo. … The rightful heir of the former kings is…
+         [15] ¶ **Xue Rengui sends a letter. Munmu has been waiting twenty years to answer it…!**
+
+### #90 Letters  (671 July)
+  OPEN: [0] ── SCENE: The First Letter ──
+        [1] ¶ In high summer, a Tang monk is rowed ashore under a white flag. He carries a letter from the fleet. The fleet belongs to Xue Rengui, the second White Tiger. He has sat off the coast all summer. If it can be managed, he'd lik…
+        [2] Imyun: The Commander sends his respects, Majesty. He asks that it be read aloud. / He says it reads better aloud.
+  CLOSE: [30] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), tenth month): Winter, the sixth day of the tenth month: we struck more than seventy Tang grain transports and captured the colonel Qianer Dahou and ov…
+         [31] King Munmu: Send word to the White Tiger that his rice has arrived. / Late. As usual.
+         [32] ¶ **The Tang are coming south. Silla is winning. That is exactly when armies start to chase…!**
+
+### #91 Stone Gate  (672 August)
+  OPEN: [0] ── SCENE: Stone Gate ──
+        [1] ¶ The Tang take Hansi and Mapeup and come south. Silla and what is left of the Goguryeo revival meet them, cut down several thousand, and then make the mistake that costs the year: they chase.
+        [2] [MAP 672: The Tang come south and turn. Silla gives chase. Watch where the chase ends.]
+  CLOSE: [11] ▼ FLASHBACK 659 A room in Surabol, a year before Baekje falls
+         [11] ▲ end flashback
+         [12] ¶ **One lieutenant came home from Stone Gate alive. His father is Kim Yushin…!**
+
+### #92 Wonsul  (672 August)
+  OPEN: [0] ¶ Wonsul, Yushin’s second son, is told to die there and does not. He comes home. His father will not see him, and his mother will not either, and he spends the rest of his life trying to give the afternoon back.
+        [1] ❝QUOTE (Samguk Sagi (三國史記) bk. 43, Biographies — Kim Yushin, part 3 (Wonsul, 672)): Yushin's son Wonsul, a lieutenant, also meant to die fighting. His aide Danneung stopped him: “For a true man, dying is not the hard part. Cho…
+        [2] [MAP 672: ]
+  CLOSE: [13] Farmer: You hold a hoe like it owes you money. / Soldier, were you?
+         [14] Wonsul: No. / …Not a good one.
+         [15] ¶ **Yushin is old now. The three sisters in the steam are not. They have kept his ledge warm for fifty years…!**
+
+### #93 Kim Yushin†  (673 July)
+  OPEN: [0] ══ DAY: THE LAKE REMEMBERS ══
+        [1] ¶ Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern. The steam is thinner. The three are not. They look the same age they always looked — which is either mercy or mockery, and he has never ask…
+        [2] ¶ Hyullé’s hand finds the water beside the ledge where he always sits, and stays there. Fifty years of the same ledge.
+  CLOSE: [35] Lady Jiso: A woman has three to follow. Her father, her husband, her son. / My husband would not call you son. How am I to be your mother?
+         [36] ¶ She does not come to the gate. The answer is carried out by a servant who cannot look at him. Wonsul stands in the road until dark and then goes back up into the hills. The record says only that he left weeping, and that he…
+         [37] ¶ **His uncle never showed him the path. Munmu finds it anyway, and something older than any kingdom is waiting on the water…!**
+
+### #94 The Wanggeom's Guest  (673 Autumn)
+  OPEN: [0] ¶ After the funeral rites, Munmu rides alone into the hills east of Surabol. Yushin never showed him the path; he found it anyway, the way sons find what uncles hid on purpose.
+        [1] ¶ He takes the **best of both** — the uncle’s steam, which no record kept, and the first king’s name, which every stone still does. The lake has not yet named the stranger on the water.
+        [2] ¶ He strips at the rock lip as if obeying an order nobody ever gave him in writing, and steps into water so black it reflects nothing.
+  CLOSE: [26] Dangun: Asadal is dust. / The mandate is not. / Finish what your uncle could not name aloud.
+         [27] ¶ Munmu tells no one. The court records note only a day’s ride and a night’s silence. The chronicle knows because the steam keeps Kim heirs, and because later, when he expels the Tang and takes the title King of Samhan, someo…
+         [28] ¶ **Kim Punghun said he could wait for a ship. The ship is here…!**
+
+### #95 Maeso  (675 September)
+  OPEN: [0] ── SCENE: The Landing ──
+        [1] ¶ Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showing the enemy fleet the way into his own coast.
+        [2] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 15 (675), ninth month): Autumn, ninth month: since Kim Jinju, father of the palace-guard student Punghun, had been executed in his own country, Xue Rengui took P…
+  CLOSE: [37] ❝QUOTE (Zizhi Tongjian (資治通鑑) bk. 202, Tang Gaozong, Shangyuan 2 (675), second month): By edict Li Jinxing was made Commissioner for Pacifying Andong and camped at Silla's Maeso Fortress to bring the country to order. He foug…
+         [38] King Munmu: Then get me ships. / It’s the sea now.
+         [39] ¶ **One last river mouth. One middling captain. Three tries to end a war…!**
+
+### #96 Final Ford  (676 November)
+  OPEN: [0] ¶ In the second month, the emperor's headquarters quietly leaves Pyongyang. Then it moves further. Then nobody mentions it. Xue still has a fleet, and a fleet doesn't need a headquarters.
+        [1] [MAP 676: The protectorate packs for Liaodong. Xue Rengui keeps one fleet and one last idea.]
+        [2] ── SCENE: Final Ford ──
+  CLOSE: [16] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 16 (676), 11th month, Gibeolpo; Lee Byong-do ed., vol. 1, p. 168): Sachan Sideuk led ship-troops and fought Xue Rengui at Final Ford in Soburi-ju; they were def…
+         [17] King Munmu: Have we… won…?
+         [18] ¶ **The boy who stole a sentence at six is about to be king of all Samhan. His mother would like him to hold still…!**
+
+### #97 The King for All  (676)
+  OPEN: [0] ¶ **Bupmin**, **King Munmu** now, stands where a six-year-old once stole a sentence. The war is won, the ally has been shown the door, and the childhood dream has had the bad manners to come true.
+        [1] [MAP 676: Sixteen years, start to finish. Watch where the blue stops.]
+        [2] King Munmu: Mother. / I kept the childhood sentence.
+  CLOSE: [21] Silla reply: Our late king had a great deal of virtue. While he lived he had a good minister, Kim Yushin, and the two of them were of one mind, and they made the three Han one. / We thought that was worth a name. We did not k…
+         [22] ¶ The court reads the name Kim Yushin, and somebody there remembers a story about him, and the complaint is dropped. The tablet still says Taejong.
+         [23] ¶ **But we left someone in the snow. The winter Pyongyang fell, a Mohe father walked north with something in his pack…!**
+
+### #98 Balhae  (698)
+  OPEN: [0] ¶ The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds every seam a coat has. **Gulgul** walks in front, bent under a le…
+        [1] [MAP 720: The north, after Goguryeo.]
+        [2] ¶ In the pack, under dried millet and a spare pair of boots, wrapped in a strip of red silk, rides a piece of the Goguryeo crown no longer than a finger: one gold branch snapped off when the palace fell, its little leaves stil…
+  CLOSE: [36] ❝QUOTE (Shoku Nihongi (續日本紀) bk. 10, Shōmu, Jinki 5 (728), first month — letter of Dae Muye, King of Balhae, to the Yamato court): Muye reports. Our mountains and rivers lie in other regions; our lands are not the same. … I, …
+         [37] ¶ The Three Kingdoms Era is over. The Northern and Southern States Era begins…!
+         [38] ¶ THE END

@@ -1,0 +1,69 @@
+
+=================================================================
+#79 Snake River  (662 February)
+Arc: The Final Stand · place: sasu · tone: grim war epic
+Logline: The White Tiger still believes rivers are roads. Yeon Gesomun has been waiting for a man who thinks that.
+=================================================================
+[0] ¶ The White Tiger drives his host into the Snake River. They still believe rivers are roads. Yeon Gesomun has been waiting for a man who thinks that. Old men in the north remember another river that ate an army. The Snake is younger. It's hungrier. And it has Yeon's teeth.
+[1] [PLACE sasu: Shallow, slow, and patient with men who think rivers are roads.]
+[2] [MAP 662: The White Tiger thought the river was a road. Yeon is standing in the middle of it.]
+[3] ── SCENE: The Ford ──
+[4] ¶ Here is the plan, such as it is. The Tiger is marching to join the Red Fowl outside Pyongyang. If he gets there, the city is in a ring.
+[5] [CARD White Tiger: The White Tiger. A Tang general who brought all his sons to war, to show them how it’s done.]
+[6] ¶ Gesomun lets him get halfway. The Snake has gravel at the edges and mud in the middle, and Gesomun knows which is which.
+[7] Yeon Gesomun: He thinks it’s a road. Let him walk on it. / When the middle horses sink — both banks. All at once.
+[8] ¶ The middle horses sink. Both banks open up at once.
+[9] ── SCENE: Thirteen Sons ──
+[10] ¶ The river does not take them in a heap. Yeon counts. Chang’an’s clerks will later write _thirteen sons_ as if a number were a grave. It is a morning. The water is February-cold.
+[11] ¶ The thirteenth and the twelfth come together at the first bend — brothers who still share a horse’s width. Yeon meets them in the shallows where the current lies. One stroke. Two bodies. The horse walks on a few steps with no one left to tell it to stop.
+[12] Yeon Gesomun: Thirteen. / Twelve.
+[13] ¶ The eleventh tries the reeds. Reeds keep a secret until a man breathes too loud. Yeon does not spend a speech on a boy hiding in grass.
+[14] Yeon Gesomun: Eleven.
+[15] ¶ The tenth and the ninth turn back toward their father. That is the expensive choice. They die reaching for a sleeve that is still too far upriver.
+[16] Yeon Gesomun: Ten. / Nine.
+[17] ¶ The eighth is the archer. He puts three shafts into the rim of Yeon’s shield and the fourth into his horse’s neck. The horse goes down, and Yeon goes into the water with it.
+[18] ── SCENE: Yumla Defied ──
+[19] ¶ In the worst hour of it — arrows spent, horse down, a Tang blade a finger from his throat — the air thins the way Tamla stories promised. The river stops moving. **Kangrim** and **Haewonmek** are standing on it, a ledger half-open between them.
+[20] Kangrim: Yeon Gesomun. / Your page is… persuasive today.
+[21] Kangrim: Commander. If you walk away now — / are you choosing Goguryeo, or choosing not to be finished by anyone else’s schedule?
+[22] Haewonmek: Any last words? / Say them now. The blade is already practicing your name.
+[23] Yeon Gesomun: Kangrim. Haewonmek. / Both. / And neither is your business until I am done.
+[24] Yeon Gesomun: Not today. / I still have sons to disappoint.
+[25] ¶ Then he turns his back on them. He takes hold of his own body the way you take a coat off a peg, and puts it back on. The river starts moving again.
+[26] ¶ He stands up on will alone. The blade misses. He breaks the spearman’s wrist before the man has finished the thrust. Behind him, the two reapers close the ledger with something like respect.
+[27] Kangrim: Hah. / Keep the country a little longer, then. / I hate refiling — and Your Majesty hates wasted parchment.
+[28] Haewonmek: Next time we bring a longer chain. / Or a taller boss.
+[29] ¶ The archer is still nocking his fifth arrow. He does not finish it. Afterward Yeon takes the bow out of the water and breaks it across his knee.
+[30] Yeon Gesomun: Eight. The bow ends here.
+[31] ¶ The seventh almost makes the far bank. Yeon’s throw finds him between the shoulder-blades, and the current carries him the rest of the way.
+[32] the seventh: Baekju… / Home…
+[33] Yeon Gesomun: Seven. Home is not that bank.
+[34] ¶ Three at once in a knot of horses: the sixth, the fifth, the fourth. They shout one father’s name in three pitches.
+[35] Yeon Gesomun: Six. Five. Four. / Some days you count in threes.
+[36] ¶ The third is old enough to bargain. He offers the banner, the southern levy, a road south, if the Mangniji will count him as a messenger instead of a son.
+[37] the third: Let me go as a messenger. / Among the thirteen I am the only one who opened his mouth.
+[38] Yeon Gesomun: You did not come as a messenger. / That is why you are three.
+[39] ¶ The second is younger. He does not speak. Yeon does not ask him to.
+[40] Yeon Gesomun: Two.
+[41] ¶ The first — the eldest — holds the White Tiger banner with both hands so the silk will not touch the water. He lasts longer than the others because he has decided to be a flagpole. Yeon cuts the pole. The cloth goes under. The boy goes with it, still holding on, which is how eldest sons are trained.
+[42] Yeon Gesomun: One. / Now the tiger.
+[43] ── SCENE: The White Tiger ──
+[44] ¶ Then only the tiger is left. He stands where his boys could still see him, if any of them still had eyes. Someone shouts to break east, toward any camp that is not this one.
+[45] aide: Commander! Toward You Boying’s camp— / Live, and leave the account!
+[46] White Tiger: I have eaten too much favour under two emperors. / I will not go home while this kingdom still stands. / The southern boys I brought are already dead — / what would this one body do, alive?
+[47] ¶ He does not run. The arrows make a hedgehog of him. Yeon walks the last three steps through the water and finishes what the shafts began.
+[48] Yeon Gesomun: White Tiger. / Titles drown too.
+[49] Yeon Gesomun: Still haven’t come to your senses, you bastards?! / I am… none other than… Yeon Gesomun!!
+[50] ── SCENE: The Rice Road ──
+[51] ¶ In the second month a train of carts comes up out of the south through snow to the axles. **Kim Yushin** is sixty-seven, and he has walked half the road beside his white horse so that Hanseul can carry a sack of rice instead of him.
+[52] ¶ The Tang camp outside Pyongyang has been eating its horses. Men sit hugging their knees in the snow and look at the carts as if they might be another rumour.
+[53] ¶ On Pyongyang’s wall that night, Gulgul counts the Tang fires twice. They have stopped going down.
+[54] Yeon Gesomun: Somebody’s feeding them. / …Find out who. Then follow him home.
+[55] Red Fowl: Silla is late. / …Unload it. All of it. Then we go home.
+[56] Kim Yushin: We came through snow to the horse’s chest, General. / You may eat it slowly.
+[57] ¶ The Red Fowl takes the rice, breaks camp within the week, and sails. The road back is Yushin’s problem. Goguryeo’s horsemen follow the empty carts all the way to the Imjin, and the white horse carries him across it.
+[58] ── SCENE: The Far West ──
+[59] ¶ A thousand miles the other way, the courier finds Xue Rengui. You may remember him: the farmer in the white coat who left his ancestors unburied to answer a muster. He has just ended a war in the far west with three arrows. Now he is given the dead man’s title, White Tiger II. And the bill.
+[60] Xue Rengui: White Tiger… I will take the name. / The dead man’s account is paid by the living.
+[61] ¶ The fangtian ji goes east again. Men who never learned his birth name learn the white coat and the crescent blade — and begin, quietly, to fear the second tiger more than the first.
+[62] ¶ **And on an island far to the south, someone is asking: whose side are we on now?**

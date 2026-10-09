@@ -1,0 +1,57 @@
+
+=================================================================
+#95 Maeso  (675 September)
+Arc: Silla-Tang War · place: maeso · tone: grim war epic
+Logline: Xue Rengui comes back by sea. His guide is a Silla boy whose father the king killed.
+=================================================================
+[0] ── SCENE: The Landing ──
+[1] ¶ Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showing the enemy fleet the way into his own coast.
+[2] [MAP 675: Horses by sea, horses by land. Silla has decided this war is about horses.]
+[3] ¶ He is older now. The white coat is a reputation he can no longer take off. Tang’s eastern command sits on his shoulders the way a yoke sits on an ox that still believes in the field. In a poor field at home, his ancestors are still waiting for their graves.
+[4] ¶ Punghun stands at the bow beside him. He left Silla a boy, a hostage in the emperor’s guard. He is coming back as a guide.
+[5] Xue Rengui: You know this coast, Master Kim.
+[6] Kim Punghun: I know my father’s coast. / The king made it mine to sell.
+[7] Xue Rengui: I am not buying anything. / I only ask where the sand is firm. For the horses.
+[8] ¶ Punghun looks at the beach below Cheon Fortress for a long time.
+[9] Kim Punghun: …There. Firm enough.
+[10] Xue Rengui: Silla… the country that once fought beside us. / And now that country is to be my last opponent.
+[11] ¶ He does not curse them. He checks the ji’s bindings, the same way he once checked plough-rope, and goes ashore.
+[12] ¶ Above the beach at Cheon Fortress, a Silla general named **Munhun** lies flat in the dune grass and watches the boats come in. He has been told to stop the landing. He has decided to let it happen first.
+[13] ¶ Beside him lies a ship captain named **Sideuk**, who has commanded boats for twelve years and never once won anything.
+[14] Sideuk: General, they’re unloading the horses. Horses first.
+[15] Munhun: Good. Let them.
+[16] Sideuk: We were told to stop the landing.
+[17] Munhun: We will. / A horse on wet sand can’t turn. Wait till the boats are empty.
+[18] Sideuk: …Wet sand. I’ll remember that.
+[19] ¶ When the last horse is off, Munhun stands up.
+[20] Xue Rengui: To the boats.
+[21] ¶ By evening Munhun has fourteen hundred heads, forty Tang ships, and a thousand horses standing in the surf with nobody to ride them. The sea road is closed again.
+[22] ¶ Nobody ever learns whether Punghun knew about the sand. Xue does not ask him. He sends him back to Chang’an on the next empty transport, and neither country writes his name down again.
+[23] ── SCENE: Maeso Fortress ──
+[24] ¶ So the war moves inland, to a fortress on the Imjin where the road to Surabol begins.
+[25] [PLACE maeso: Good walls. Terrible stables.]
+[26] [FORMATION Maeso Fortress, twenty-ninth day of the ninth month, 675: 30,380 horses were taken, and weapons to match. Historians read the 200,000 as Silla counting generously; nobody argues about the horses.]
+[27] ¶ The army at Maeso is mostly Mohe, and the Mohe are mostly horse. Thirty thousand of them graze the flats under the walls. The grass is outside. No fortress on that river was built to stable a herd.
+[28] Silla commander: Forget the walls. / Cut the picket lines. Bring me the horses.
+[29] ¶ The worst stretch of the line is under the walls, where the archers can see. A man nobody in the capital has seen for three years asks for it.
+[30] Silla commander: Name?
+[31] Wonsul: Lieutenant. Of Seokmun.
+[32] ¶ Before dawn the herd moves all at once, and not toward the fortress.
+[33] Mohe rider: The horses! The horses are going!
+[34] ¶ Horses are the thing. An army that has lost thirty thousand horses on the Imjin is not riding to Surabol next spring, or the spring after.
+[35] ¶ Afterwards the king sends for the lieutenant to give him rank. Wonsul comes in still smelling of horses.
+[36] King Munmu: Your father would have—
+[37] Wonsul: My father would have said I owe one afternoon, Majesty. I haven’t paid it yet.
+[38] ── SCENE: The Fleet ──
+[39] ¶ Out at sea off Cheon Fortress, Xue hears it from a courier: the army at Maeso has lost its horses.
+[40] Xue Rengui: …So the horses are gone. / For a farmer, losing horses… is like losing the field.
+[41] ¶ He withdraws without spectacle. The chronicle will remember Silla’s thirty thousand horses; it will remember less how quietly the White Tiger II accepted that the east was no longer his to harvest.
+[42] ── SCENE: Surabol ──
+[43] ¶ In Surabol the number arrives a day ahead of the generals.
+[44] Messenger: Thirty thousand, three hundred and eighty, Majesty.
+[45] King Munmu: …Heads?
+[46] Messenger: Horses, Majesty.
+[47] ¶ _After they have lost the horses._ Munmu is nearly fifty and still, occasionally, checking his father’s work against the day.
+[48] ¶ The Tang history says Maeso was three Tang victories, after which Silla begged pardon. It does not mention the horses.
+[49] King Munmu: Then get me ships. / It’s the sea now.
+[50] ¶ **One last river mouth. One captain who has never won a fight. Three tries to end a war…!**

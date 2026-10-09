@@ -1,0 +1,42 @@
+
+=================================================================
+#15 Academy  (641)
+Arc: The Five Principles · place: pyongyang · tone: academy intrigue
+Logline: Yeon has three sons. They could not be more different. There is only one seal.
+=================================================================
+[0] ¶ Yeon has three sons, and only one of them is old enough to annoy a monk.
+[1] [MAP 641: ]
+[2] ¶ **Namseng**, seven, is the careful one: the heir, eager to be approved of.
+[3] [CARD Yeon Namseng: Yeon’s eldest. He would very much like to be told he did well.]
+[4] ¶ **Namgun**, four, is the fierce one, who never backs down first.
+[5] [CARD Yeon Namgun: The second son. Nobody ever had to teach him to push.]
+[6] ¶ **Namsan**, two, is the quiet one, watching his brothers.
+[7] ¶ There is a fourth boy at that table who is not counted, because counting him would require a word nobody in the house wants to use. **Gulgul** eats after the others and says nothing, and Namsan — who watches everything — is the only one who notices that he never sits with his back to a door.
+[8] ── SCENE: The Taehak ──
+[9] ¶ The Grand Academy is old. It came over the river in the same season as the first Buddhas. Ever since, the school and the temple have shared Goguryeo's noble sons. Classics in the morning. Sutras after lunch. Archery whenever the masters lose their voices.
+[10] ¶ Yeon brings **Namseng** to the gate himself, in riding boots, and does not take them off on the swept stone. Namgun has come too, uninvited, clinging to the back of the saddle.
+[11] Taehak Master: Commander. The sons of the five commanderies begin with the Analects and the Lotus Sutra. / As your own father did, if I remember the register.
+[12] Yeon Gesomun: The Analects, fine. A boy should know how to bow before he decides not to. / The sutra he can skip.
+[13] Yeon Namseng: Father. / Is the Buddha not allowed?
+[14] Yeon Gesomun: The Buddha’s fine. Fat, quiet, never asked me for anything. / It’s his landlords I mind.
+[15] ¶ The landlords are not a figure of speech. Half the good valley land belongs to monasteries. The monasteries belong to the great houses whose second sons run them. None of it pays for the wall. Every spring Yeon writes to the Summit about this. Every spring the Summit thanks him for his piety.
+[16] ¶ What he wants instead is the Way of Laozi, which is an odd thing for him to want, because the Tang emperors claim Laozi as their ancestor. Yeon has heard this and does not care. He has a sentence for it, the only one he ever repeats word for word.
+[17] Yeon Gesomun: A pot stands on three legs. / Confucius is one. The Buddha’s two. We’re missing the third, and the pot’s tipping into the fire.
+[18] Taehak Master: The third leg would be… Tang priests, Commander?
+[19] Yeon Gesomun: The third leg is whatever doesn’t own a farm.
+[20] ¶ Across the courtyard a monk has stopped sweeping. His name is **Bodeok**. His monastery, up at Banryong, owns a great deal of farm.
+[21] Bodeok: Commander. The Buddha has no landlords. / He has guests. Some of them stay a long time.
+[22] Yeon Gesomun: A guest who keeps the farm, the barn and the plough? That’s a landlord, monk. / Go on, sweep. Don’t let me stop you working. Somebody here ought to.
+[23] ¶ Namgun is four. He decides this is a fight and that his side is winning. He kicks the monk’s swept pile across the stone.
+[24] Yeon Namseng: Namgun! Say sorry. / …Venerable sir. My brother is four. I will read the sutra too, if I am allowed.
+[25] Yeon Gesomun: You’re not allowed. / …Don’t look at me like that. Read it on your own time. Just don’t pay for it.
+[26] ¶ Bodeok bows to the boy, not to the father. Then he goes back to sweeping. He sweeps the same patch of stone until dark, and he does not forget a word.
+[27] ── SCENE: The Uncle’s Supper ──
+[28] ¶ The complaint reaches the High Commander’s table before Yeon has ridden home. It is written in a monk’s neat hand. Gusesa reads it at supper, between courses.
+[29] Yeon Gusesa: (mild, wiping his fingers) A Yeon telling monks what to own. / My nephew collects enemies the way other men collect horses. At least horses eat less.
+[30] ¶ Yeon is called to the table. He does not sit, because nobody offers. He does not take his boots off, because nobody asks.
+[31] Yeon Gusesa: Nephew. The monks of Banryong pray for the king every morning. / They will pray for you too, now. You won’t like what they pray.
+[32] Yeon Gesomun: Let them. Prayers are free. / Only thing in this country the monks don’t charge for.
+[33] ¶ Gusesa wipes his fingers and goes back to his soup. That is how the meeting ends. Only one of the two men at the table knows it is also how a list begins.
+[34] ¶ Namseng is enrolled anyway. He learns the Analects first and best, and on the days the sutra master is ill he reads his father’s copy of the Daodejing, which has never been opened past the first page.
+[35] ¶ **Field trip. Yeon takes the boys to see a very big rock. The rock has a list on it, and a question…!**

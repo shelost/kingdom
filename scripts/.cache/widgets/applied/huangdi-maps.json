@@ -1,0 +1,44 @@
+{
+	"ops": [
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"op": "add-map",
+			"after": "The embassy comes in at the hour the street drums stop.",
+			"block": {
+				"kind": "map",
+				"year": 648,
+				"places": [
+					"surabol",
+					"danghang",
+					"dengzhou"
+				],
+				"routes": [
+					"chunchu648-tang"
+				],
+				"caption": "Silla’s one harbour, one sea, and a road to Chang’an long enough to rehearse a speech forty times.",
+				"ko": "신라의 하나뿐인 항구, 바다 하나, 그리고 연설을 마흔 번은 연습할 만큼 긴 장안 길."
+			}
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"op": "add-map",
+			"after": "He leaves Chang’an with the alliance sealed and his son still inside the wall.",
+			"block": {
+				"kind": "map",
+				"year": 648,
+				"places": [
+					"dengzhou",
+					"danghang",
+					"surabol"
+				],
+				"routes": [
+					"chunchu648-home"
+				],
+				"caption": "The same sea home. It has Goguryeo boats on it now.",
+				"ko": "돌아가는 바다도 같은 바다다. 다만 이제는 고구려 배가 떠 있다."
+			}
+		}
+	]
+}

@@ -1,0 +1,160 @@
+[0] day {"kind":"day","label":"DAY 10","ko":"열째 날"}
+[1] p EN: Before the gate opens Bidam goes down to the lines and saddles <b>Bisamun</b> himself, which a High Councillor does not do. He slips nine beads off the end of his string and knots them to the bridle, under the horse’s jaw.
+    KO: 성문이 열리기 전 비담은 진영으로 내려가 <b>비사문</b>에 손수 안장을 얹는다. 상대등이 할 일은 아니다. 염주 끝에서 아홉 알을 빼내, 말 턱 아래 굴레에 매듭지어 묶는다.
+[2] dialogue ?
+    EN: ["Sangdaedeung, those are…"]
+    KO: ["상대등, 그건…"]
+[3] dialogue bidam
+    EN: ["Master Wongwang’s fifth precept. Be choosy about killing.","Never the animals that work for you. Horse, ox, chicken, dog.","…They burned a white horse over there the other day. Even if I lose, somebody should still be holding on to this one."]
+    KO: ["원광 스님 다섯째 계율. 살생유택.","부리는 짐승은 죽이지 마라. 말, 소, 닭, 개.","……저쪽은 그저께 흰 말을 태웠지. 내가 지더라도 이 녀석은 누가 붙잡고 있어야 해."]
+[4] p EN: Bisamun is named for the guardian king who stands at the north of every temple with a pagoda in his hand. Bidam rubs the horse’s nose once and speaks to it in the voice he keeps for sutras.
+    KO: 비사문은 탑을 손에 들고 모든 절의 북쪽에 서 있는 천왕에게서 따온 이름이다. 비담은 말의 코를 한 번 쓰다듬고, 경을 욀 때의 목소리로 말한다.
+[5] dialogue bidam
+    EN: ["You’re named for the one who guards the north.","Today just watch the west."]
+    KO: ["북쪽 지키는 분 이름이야.","오늘은 서쪽만 봐."]
+[6] quote {"kind":"quote","html":"All conditioned things are like a dream, an illusion, a bubble, a shadow; like dew, and like lightning. So should you see them.","ko":"모든 유위법은 꿈과 같고 환상과 같고 물거품과 같고 그림자와 같으며, 이슬과 같고 번개와 같으니, 마땅히 이와 같이 볼지니라.","hanja":"一切有為法，如夢、幻、泡、影，如露亦如電，應作如是觀。","source":"Diamond Sutra (金剛般若波羅
+[7] scene {"kind":"scene","label":"Between the Camps","ko":"두 진영 사이"}
+[8] p EN: They meet again between the camps — not as High Councillor and marshal, but as the yard’s two best. Dragon pommel against heavenly horse. The first exchanges are almost gentle. That is how Hwarang kill each other.
+    KO: 다시 진영 사이에서 만난다 — 상대등과 대장군이 아니라, 연무장의 두 최고로. 용 자루 머리와 천마. 처음 몇 수는 거의 다정하다. 화랑은 그렇게 서로를 죽인다.
+[9] p EN: Yushin wins the way a man wins when he would rather lose — late, ugly, through a guard he taught Bidam twenty years ago. The heavenly-horse blade drops. Blood finds the mud that used to be a scoreboard.
+    KO: 유신은 차라리 지고 싶은 사람이 이기듯 이긴다 — 늦게, 흉하게, 이십 년 전 비담에게 가르친 가드를 뚫고. 천마 칼이 떨어진다. 피가, 한때 점수판이던 진흙을 찾는다.
+[10] dialogue bidam
+    EN: ["…One hundred and nine.","Finally."]
+    KO: ["…백아홉.","드디어."]
+[11] p EN: Bidam smiles with blood in his teeth — the same boy who once offered a headband across a desk.
+    KO: 비담은 피에 젖은 이로 웃는다 — 한때 책상 너머로 머리띠를 건네던 그 아이.
+[12] dialogue bidam
+    EN: ["Hwarang Kim Yushin…"]
+    KO: ["화랑 김유신…"]
+[13] p EN: Yushin does not move to finish it, and there is nothing left to finish. For as long as the breath lasts the two of them look at each other the way they used to across the yard, back when the score was even and neither one wanted to go home.
+    KO: 유신은 끝을 내려 움직이지 않고, 끝낼 것도 남아 있지 않다. 숨이 붙어 있는 동안 둘은 서로를 본다 — 점수가 비겼고 둘 다 집에 가기 싫던 시절, 연무장 건너로 보던 그 눈으로.
+[14] p EN: The body finishes falling after the name does.
+    KO: 몸은 이름보다 늦게 쓰러진다.
+[15] p EN: Kangrim reads his name three times where the body has not yet finished falling — Bidam. Bidam. Bidam. — the ledger catching up to the last word.
+    KO: 강림은 몸이 아직 완전히 쓰러지기 전 그의 이름을 세 번 부른다 — 비담. 비담. 비담. — 마지막 말에 명부가 따라잡도록.
+[16] p EN: Bisamun comes through the lines without a rider, at a walk, and stops over him. Nine beads swing under its jaw. When a Silla groom reaches for the bridle it lays its ears flat and shows him its teeth, and the groom, who has had a long ten days, steps back.
+    KO: 비사문이 주인 없이, 걸어서 대열을 지나와 그의 곁에 멈춰 선다. 턱 아래 아홉 알이 흔들린다. 신라 마부가 굴레에 손을 뻗자 말은 귀를 납작 젖히고 이를 드러내고, 열흘이 길었던 마부는 물러선다.
+[17] dialogue yushin
+    EN: ["Leave it.","…Let it go. North."]
+    KO: ["놔둬.","……풀어 줘. 북쪽으로."]
+[18] p EN: Nobody asks him why north. The horse stands there until the body is taken, then turns and goes, past the Radiance wall and up the valley road, and afterwards the officers on the rampart cannot agree whether anyone opened the gate for it.
+    KO: 왜 북쪽이냐고 묻는 사람은 없다. 말은 시신이 옮겨질 때까지 서 있다가, 돌아서서 명활성 성벽을 지나 골짜기 길로 올라간다. 나중에 성벽 위의 장교들은 누가 그 말에게 문을 열어 주었는지를 두고 끝내 의견이 갈린다.
+[19] p EN: Yushin does not kneel. Mud still wet, he turns to the Hwarang behind him and names a house. Bidam’s own line. The one he carried in his jaw and never once claimed aloud.
+    KO: 유신은 무릎 꿇지 않는다. 진흙이 마르기도 전에 그는 뒤따른 화랑들을 돌아보고 한 집안의 이름을 댄다. 비담의 핏줄. 비담이 턱 안에 물고 다니면서도 한 번도 입 밖에 내지 않은 그 핏줄.
+[20] dialogue yushin
+    EN: ["Erase Bidam’s house.","The Son line — all Musan, all Gurema’s descendants.","Treason’s blood must be cut."]
+    KO: ["비담의 집안을 없애라.","손씨 — 무산 일대, 구르마의 후예 전부.","반역의 피는 끊어야 한다."]
+[21] dialogue alchun
+    EN: ["Yushin…","Bidam is dead. He poured tea for ten days, then took the blade.","If you burn his hall — we erase one of the Six Elders with our own hands."]
+    KO: ["유신…","비담은 죽었다. 열흘 동안 차를 따르고, 칼을 맞았다.","그의 대청까지 태우면 — 우리가 지키려던 육촌 중 하나를 스스로 지운다."]
+[22] p EN: Yushin leans close — close enough that the officers hear only breath, and Alchun hears the sentence.
+    KO: 유신이 몸을 기울인다 — 장교들에게는 숨소리만 들릴 만큼, 알천에게는 문장이 들릴 만큼.
+[23] dialogue yushin
+    EN: ["Blood is inevitable…"]
+    KO: ["피는 못 속인다…"]
+[24] p EN: Alchun goes pale. Down the line an officer asks for the order to be repeated. Nobody repeats it. Yushin mounts, and the order stands.
+    KO: 알천의 얼굴이 창백해진다. 대열 저쪽에서 한 장교가 명령을 다시 내려 달라 청한다. 아무도 되풀이하지 않는다. 유신이 말에 오르고, 명령은 선다.
+[25] quote {"kind":"quote","html":"Then he urged on his generals and men to strike hard, and Bidam and the rest broke and fled. They were pursued and beheaded, and their kin to the ninth degree were wiped out.","ko":"이에 여러 장수와 군사를 독려하여 힘껏 치니, 비담 등이 패하여 달아났다. 뒤쫓아 베고, 그 구족을 멸하였다.","hanja":"於是，督諸將卒奮擊之，毗曇等敗走。追斬之，夷
+[26] dialogue kangrim
+    EN: ["High Councillor.","Your list ends here. Walk with me — His Majesty’s kingdom keeps better minutes than Surabol."]
+    KO: ["상대등.","명부가 여기까지요. 함께 가십시다 — 폐하의 나라는 서라벌보다 회의록을 잘 남깁니다."]
+[27] dialogue kangrim
+    EN: ["High Councillor — before the minutes close.","The opposite kite. What do you want written?"]
+    KO: ["상대등 — 회의록을 닫기 전에.","반대편 연. 뭐라고 적을까요?"]
+[28] dialogue bidam
+    EN: ["…Write that I flew it.","The rest they can guess.","Tell the sacred country I loved it badly."]
+    KO: ["…띄웠다고 적으시오.","나머지는 제 알아서 짐작하겠지.","신국에 전하게 — 나는 서툴게 사랑했다고."]
+[29] p EN: Bidam falls the way a Hwarang falls — eyes open, form unbroken. The kite burns out over the wall. Somewhere behind Yushin the queen is already slipping away.
+    KO: 비담은 화랑이 쓰러지듯 쓰러진다 — 눈 뜨고, 형 깨지지 않은 채. 연은 성 위에서 사그라든다. 유신 뒤에서 여왕은 이미 떠나가고 있다.
+[30] scene {"kind":"scene","label":"The Queen’s Bedside","ko":"여왕의 머리맡"}
+[31] p EN: Rain finds the lattice before the physicians do. It is a small rain. It beads on the marshal’s sleeve and on the queen’s mouth, and neither of them has a hand free for it.
+    KO: 의원보다 비가 먼저 창살에 닿는다. 작은 비다. 원수의 소매에, 여왕의 입술에 맺힌다. 둘 다 그 비를 닦을 손이 없다.
+[32] dialogue yushin
+    EN: ["Your Majesty."]
+    KO: ["폐하."]
+[33] dialogue sunduk
+    EN: ["General."]
+    KO: ["장군."]
+[34] dialogue yushin
+    EN: ["The physicians are in the corridor.","I told them the rain can wait."]
+    KO: ["의원들이 복도에 있습니다.","비는 기다리라 했습니다."]
+[35] dialogue sunduk
+    EN: ["Leave them.","It is a small rain. It will not be what takes me."]
+    KO: ["놔두게.","작은 비야. 나를 데려갈 비는 아니네."]
+[36] dialogue yushin
+    EN: ["Your Majesty—"]
+    KO: ["폐하—"]
+[37] dialogue sunduk
+    EN: ["The year I took the crown. You remember.","You said you would serve me to the end."]
+    KO: ["왕관을 쓰던 해, 기억하지.","끝까지 모시겠다고 했지."]
+[38] dialogue yushin
+    EN: ["“I will serve you to the end.”"]
+    KO: ["“끝까지 모시겠나이다.”"]
+[39] dialogue sunduk
+    EN: ["Yes.","And here we are."]
+    KO: ["그래.","여기까지 왔구나."]
+[40] dialogue yushin
+    EN: ["Did I not promise to stay to the last moment."]
+    KO: ["최후의 순간까지 함께하리라 하지 않았습니까."]
+[41] dialogue sunduk
+    EN: ["You did. General."]
+    KO: ["했지. 장군."]
+[42] dialogue sunduk
+    EN: ["…Princess.","Say it the old way.","When you lost the count on the yard, I was a princess."]
+    KO: ["…공주.","예전처럼 불러.","네가 연무장에서 셈을 놓치던 때, 나는 공주였어."]
+[43] dialogue yushin
+    EN: ["Hwarang. That is what I was.","A hwarang who lost one count."]
+    KO: ["화랑입니다. 그때의 저는.","셈을 하나 놓은 화랑."]
+[44] dialogue sunduk
+    EN: ["You do not lose counts."]
+    KO: ["너는 셈을 놓지 않아."]
+[45] dialogue yushin
+    EN: ["I lost one.","Which one, I will not say."]
+    KO: ["하나 놓았습니다.","어느 셈인지는… 말하지 않겠습니다."]
+[46] dialogue sunduk
+    EN: ["Then stop being a general about it."]
+    KO: ["그럼 장군처럼 굴지 마."]
+[47] dialogue sunduk
+    EN: ["Dukman."]
+    KO: ["덕만."]
+[48] dialogue yushin
+    EN: ["…Don’t."]
+    KO: ["…마십시오."]
+[49] dialogue sunduk
+    EN: ["Since the vote I have been Majesty.","Say the name I had before the room."]
+    KO: ["표결 뒤로 나는 내내 폐하였다.","그 전의 이름을 불러."]
+[50] dialogue yushin
+    EN: ["Dukman."]
+    KO: ["덕만."]
+[51] dialogue sunduk
+    EN: ["Yushin."]
+    KO: ["유신."]
+[52] dialogue yushin
+    EN: ["I am here."]
+    KO: ["여기 있습니다."]
+[53] dialogue sunduk
+    EN: ["I know.","Stay.","I can do a little rain."]
+    KO: ["알아.","있어.","이 정도 비는 괜찮으니까."]
+[54] p EN: The rain keeps on, small, on the lattice and on his sleeve. Her hand stays in his until it does not. The escort waits until the marshal’s hands have finished their work.
+    KO: 비는 그대로다. 창살에, 그의 소매에, 작게. 그녀의 손은 그의 손 안에 있다가, 어느 순간 아니게 된다. 호위는 원수의 손이 일을 마칠 때까지 기다린다.
+[55] p EN: Kangrim reads her name three times — Dukman. Dukman. Dukman. — the ledger’s habit before a Sacred Bone line closes.
+    KO: 강림은 그녀의 이름을 세 번 부른다 — 덕만. 덕만. 덕만. — 성골의 혈통이 닫히기 전 명부의 버릇대로.
+[56] quote {"kind":"quote","html":"The ministers did not know where that was, and asked, “Where?” The queen said, “South of Mount Nang.” On that very month and day the queen did die, and the ministers buried her on the sunny slope of Mount Nang.","ko":"신하들이 그곳이 어디인지 몰라 “어디입니까?” 하고 아뢰니, 왕이 “낭산 남쪽이다.” 하였다. 그 달 그
+[57] p EN: That night Yushin remembers the first day of the rebellion, and it is not the way he has been telling it.
+    KO: 그날 밤 유신은 반란의 첫날을 기억한다. 그것은 그가 말해 온 방식이 아니다.
+[58] flashback {"kind":"flashback","year":"612","title":"the twist","blocks":[{"kind":"dialogue","chip":"#4a8fe0","person":"yushin","lines":["괜찮아요. 내가 스스로 이겨 내겠어요.","내 이름은 김유신! 신라의 대장군이 될 거요!!","아 — 형님 성함은?"],"en":["It’s all right. I will overcome it myself.","My name is Kim Yushin! I will be the great general of 
+[58.0] dialogue yushin
+    EN: ["It’s all right. I will overcome it myself.","My name is Kim Yushin! I will be the great general of Silla!!","Oh — and your name, hyung?"]
+    KO: ["괜찮아요. 내가 스스로 이겨 내겠어요.","내 이름은 김유신! 신라의 대장군이 될 거요!!","아 — 형님 성함은?"]
+[58.1] dialogue bidam
+    EN: ["My name? Bidam.","That kid…. he’ll be someone great."]
+    KO: ["내 이름? 비담.","저 아이…. 큰사람이 되겠군."]
+[59] scene {"kind":"scene","label":"The Empty Pavilion","ko":"빈 정자"}
+[60] p EN: That night Yushin walks out alone to the pavilion between the old camp lines. The low table is still there, and on it the cup he never touched. He sits down across from no one.
+    KO: 그날 밤 유신은 혼자 옛 진영 사이의 정자로 걸어 나간다. 낮은 상은 그대로 있고, 그 위에 그가 끝내 손대지 않은 잔이 있다. 그는 아무도 없는 맞은편을 두고 앉는다.
+[61] flashback {"kind":"flashback","year":"647","title":"The sixth night · 여섯째 밤","blocks":[{"kind":"dialogue","chip":"#7b5cd6","lines":["<b>가야 놈 새끼가…!</b>"],"en":["<b>You Gaya wretch…!</b>"],"person":"bidam","art":"Echo balloon over Yushin at the table; Bidam is not in the panel."}]}
+[61.0] dialogue bidam
+    EN: ["<b>You Gaya wretch…!</b>"]
+    KO: ["<b>가야 놈 새끼가…!</b>"]
+[62] p EN: <b>The one hand that said no is gone. Now the crown has to fit Seungman, and it was made for someone else…!</b>
+    KO: <b>반대하던 단 한 손은 사라졌다. 이제 승만이 그 왕관을 써야 한다. 다른 사람에게 맞춰 만든 왕관을…!</b>

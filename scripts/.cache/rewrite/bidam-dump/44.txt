@@ -1,0 +1,229 @@
+[0] day {"kind":"day","label":"DAY 6","ko":"여섯째 날"}
+[1] p EN: Night rain. Bidam’s officers want a dawn assault. Bidam wants the score finished properly. He wants Yushin to come out again.
+    KO: 밤비. 비담의 장교들은 새벽 돌격을 원한다. 비담은 점수를 제대로 끝내고 싶다 — 유신이 다시 나오기를 원한다.
+[2] p EN: <b>Sixth night.</b> Yushin does not come to the pavilion. Bidam sends tea anyway — two cups poured, one left steaming.
+    KO: 여섯째 밤. 유신은 정자에 오지 않는다. 비담은 그래도 차를 보낸다 — 잔 둘, 하나는 김이 오른 채.
+[3] dialogue bidam
+    EN: ["…He is not coming today.","Very well. Courtesy held until the sixth night."]
+    KO: ["…오늘은 안 오는구나.","괜찮아. 여섯 번째 밤까지는 예의를 지켰어."]
+[4] flashback {"kind":"flashback","year":"612","title":"The headband","blocks":[{"kind":"p","html":"The Hwarang hall, the new boy’s first day. Two seniors lean across his desk.","ko":"화랑 강당, 새로 온 아이의 첫날. 선배 둘이 그 아이 책상 너머로 몸을 기울인다."},{"kind":"dialogue","chip":"#6b7280","lines":["그럼 진짜 진골도 아닌 겁니데이!"],"en":["So he i
+[4.0] p EN: The Hwarang hall, the new boy’s first day. Two seniors lean across his desk.
+    KO: 화랑 강당, 새로 온 아이의 첫날. 선배 둘이 그 아이 책상 너머로 몸을 기울인다.
+[4.1] dialogue Senior Hwarang
+    EN: ["So he isn’t even a real True Bone!"]
+    KO: ["그럼 진짜 진골도 아닌 겁니데이!"]
+[4.2] dialogue bidam
+    EN: ["Hey, enough!","What did any of you do to earn True Bone?","You were merely born into it."]
+    KO: ["야, 그만둬라!","너희는 뭐, 잘한 거 있어서 진골이 됐냐?","그냥 태어났을 뿐이야—"]
+[4.3] dialogue yushin
+    EN: ["Thank you."]
+    KO: ["고마워요."]
+[4.4] dialogue bidam
+    EN: ["What is there to thank?","Take this headband. Keep it, and no one will trouble you."]
+    KO: ["야, 뭐가 고맙나?","이거 가지라. 내 머리띠인데, 이걸 가지고 있으면 아무도 안 괴롭힐 거야."]
+[5] p EN: Sixth night. The cup Yushin did not drink sits where Bidam left it. Courtesy held — and then, under the half moon, does not.
+    KO: 여섯째 밤. 유신이 마시지 않은 잔이 비담이 놓아 둔 자리에 있다. 예의는 지켜졌다 — 그리고 반달 아래에서, 더는 그렇지 않다.
+[6] p EN: Near midnight Yushin comes to the pavilion after all. He does not touch the cup.
+    KO: 자정 무렵, 유신이 끝내 정자로 온다. 잔에는 손대지 않는다.
+[7] dialogue bidam
+    EN: ["<b>You Gaya wretch…!</b>","You dare call yourself the sacred country’s saviour…."]
+    KO: ["<b>가야 놈 새끼가…!</b>","네가 감히 신국의 구원자라고…."]
+[8] dialogue yushin
+    EN: ["Lord Bidam.","Fifteen years past, in the Harmony Council — who was it that stood up for Princess Dukman?"]
+    KO: ["비담 공.","열다섯 해 전, 화백회의에서 — 덕만공주를 위해 일어선 자가 누구였소?"]
+[9] dialogue bidam
+    EN: ["……"]
+    KO: ["……"]
+[10] dialogue yushin
+    EN: ["That young Hwarang said he would choose the cleverest of the three.","Where did that man go, Lord Bidam?"]
+    KO: ["그 젊은 화랑은 셋 중 가장 총명한 이를 고르겠다고 했소.","그 사람은 어디로 갔소, 비담 공?"]
+[11] dialogue bidam
+    EN: ["…That man lived back when the sacred country was still a country."]
+    KO: ["…그 사람은 신국이 아직 나라였을 때 살았지."]
+[12] dialogue yushin
+    EN: ["But it is not I who raised a banner against the sacred country…!"]
+    KO: ["그러나 신국에 깃발을 든 것은 내가 아니오…!"]
+[13] day {"kind":"day","label":"DAY 7","ko":"일곱째 날"}
+[14] scene {"kind":"scene","label":"Not a Kim","ko":"김씨가 아니다"}
+[15] p EN: <b>Bidam</b> finds the cavern the way a man finds a rumor. Sword on the lip. Beads in the fist. The navy coat comes off because he has heard Yushin wash here, and a man who wants what Yushin has will copy the wash if he cannot copy the name.
+    KO: <b>비담</b>은 소문을 찾듯 동굴을 찾는다. 칼은 턱에. 염주는 주먹에. 남색 도포가 내린다. 유신이 여기서 씻는다는 말은 들었고, 유신이 가진 것을 원하는 남자는 이름을 베끼지 못하면 씻는 법을 베끼니까.
+[16] p EN: He walks into the steam with nothing on but water and one hundred and eight beads.
+    KO: 물과 백팔 염주만 걸치고 김 속으로 들어간다.
+[17] p EN: The three sisters are already on the far rock. Narim looks at him the way an eldest looks at a door that opened wrong.
+    KO: 세 자매는 이미 저쪽 바위에 있다. 나림은 잘못 열린 문을 보는 언니처럼 그를 본다.
+[18] p EN: Golhwa’s invitation is not meant for him, and she is wet anyway; the steam does not care whose body it is until the name is wrong.
+    KO: 골화의 초대는 그를 위한 것이 아닌데, 그래도 젖어 있다. 김은 이름이 틀리기 전까지 누구 몸인지 안 가리니까.
+[19] p EN: The spring does not hide much. Heat hits him low. He is already rock-hard in the black bowl before he has finished looking, and the waterline he is using as a wall is doing the opposite of hiding him. He recites. The beads do not help.
+    KO: 샘이 감춰 주는 게 없다. 열이 아래서 온다. 다 보기도 전에 검은 사발 안에서 이미 돌처럼 서 있고, 벽으로 쓰는 수선이 오히려 드러낸다. 염불을 한다. 염주가 도움이 안 된다.
+[20] quote {"kind":"quote","html":"If there are beings much given to lust, let them keep Avalokiteśvara Bodhisattva always in mind and revere him, and they will be freed from desire.","ko":"만일 어떤 중생이 음욕이 많더라도, 늘 관세음보살을 생각하고 공경하면 곧 욕심을 여의게 된다.","hanja":"若有眾生多於婬欲，常念恭敬觀世音菩薩，便得離欲。","source":"Lotus Sutra (妙法蓮華經) ch
+[21] monologue {"kind":"monologue","person":"bidam","html":"I came to wash. The sutra does not cover this. I am standing in a door I cannot close.","ko":"씻으러 왔다. 경이 이걸 가리지 못한다. 닫을 수 없는 문에 서 있다.","nsfw":true}
+[22] p EN: The beads stop mid-count. He stares. The waterline drops.
+    KO: 염주가 세다 만다. 본다. 수선이 내려간다.
+[23] dialogue golhwa
+    EN: ["Wrong door. He brought iron. And that."]
+    KO: ["문 잘못 들었어. 쇠를 들고 왔네. 그리고 그것도."]
+[24] dialogue narim
+    EN: ["He is not a Kim. The steam already knows."]
+    KO: ["김씨가 아니에요. 김이 이미 알아요."]
+[25] dialogue hyulle
+    EN: ["…The mouth. Before the water takes the blade."]
+    KO: ["…입구로. 물이 칼을 가져가기 전에."]
+[26] p EN: They do not stay women.
+    KO: 여자로 남지 않는다.
+[27] p EN: Golhwa goes first — fire unfolding into a tiger the size of the rock, ember pelt, steam off the fangs. Hyullé’s silk becomes a water-serpent, long as the bowl, cyan scales. Narim’s elder-shape thickens into a moss-bear, leaves in the fur, the hill’s weight on four feet.
+    KO: 골화가 먼저다 — 불이 바위만 한 호랑이로 펼쳐지고, 불씨 털, 송곳니에서 김. 혈레의 비단이 사발만큼 긴 물뱀이 되고, 청록 비늘. 나림의 언니 형상이 이끼 곰으로 두꺼워진다. 털에 잎, 네 발에 언덕의 무게.
+[28] p EN: He recoils. The beads jump. The sword is a hard black line he cannot lift in time.
+    KO: 뒷걸음친다. 염주가 튄다. 칼은 제때 들지 못하는 단단한 검은 선이다.
+[29] p EN: They kick him toward the light — tiger-shoulder, serpent-coil, bear-shove. Three beasts, one refusal. The night has him again. The lake keeps Kims. It does not keep slogans.
+    KO: 셋이 그를 빛 쪽으로 밀어낸다 — 호랑이 어깨, 뱀의 몸, 곰의 밀침. 짐승 셋, 거절 하나. 밤이 다시 그를 갖는다. 호수는 김씨를 지킨다. 구호는 지키지 않는다.
+[30] scene {"kind":"scene","label":"The Lake, Again","ko":"다시 호수로"}
+[31] p EN: On the seventh night Yushin goes to the cavern lake, as if habit could hold a country together.
+    KO: 일곱째 밤, 유신은 습관이 나라를 붙잡아 주기라도 할 것처럼 동굴 호수로 간다.
+[32] p EN: Yushin undresses without ceremony. The three are already in the steam — mentors, tormentors, the only room in Silla where no one asks him for a victory.
+    KO: 유신은 격식 없이 옷을 벗는다. 셋은 이미 김 속에 있다 — 스승이자 장난꾼, 신라에서 승리를 요구하지 않는 유일한 방.
+[33] p EN: Golhwa knows that walk and is already wet for it. The spring hides nothing; he is hard before he has finished looking, and he pretends the water is arithmetic while Golhwa watches him like a problem she means to solve with her body.
+    KO: 골화는 그 걸음을 알고, 이미 젖어 있다. 샘은 아무것도 감춰 주지 않는다. 그는 다 보기도 전에 서 버리고, 물을 산술인 척하는 동안 골화는 몸으로 풀 문제를 보듯 그를 본다.
+[34] dialogue golhwa
+    EN: ["You came early. How flattering."]
+    KO: ["일찍 왔네. 영광인걸."]
+[35] dialogue narim
+    EN: ["He came because he is about to kill a friend.","Forest etiquette: say it plain."]
+    KO: ["친구를 죽이려 해서 온 거지.","숲의 예의: 그냥 말해."]
+[36] dialogue yushin
+    EN: ["If you know that, tell me how not to."]
+    KO: ["그걸 알면, 안 하는 법을 가르치시오."]
+[37] dialogue hyulle
+    EN: ["You can’t.","…I’m sorry.","Keep the wound that remembers the headband. Lose the one that wants him to thank you for the blade."]
+    KO: ["못 해요.","…미안해요.","머리띠를 기억할 상처는 남기고. 칼에 고마워하길 바라는 상처는 버리세요."]
+[38] dialogue golhwa
+    EN: ["Unless you’re saving all your thank-yous for the Queen again.","She is not in the water, Yushin. We are."]
+    KO: ["아니면 또 여왕께 감사 인사를 아껴 두는 거겠지.","물 속에는 여왕이 없어, 유신. 우리가 있어."]
+[39] p EN: She takes his wrist under the water and does not wait for the Queen’s name to finish. For a few breaths there is only steam, and the walk they already know, and a marshal who cannot keep his arithmetic. Then Narim’s voice cuts the wick.
+    KO: 물 속에서 손목을 잡고, 여왕의 이름이 끝나기를 기다리지 않는다. 몇 숨은 김뿐이고, 이미 아는 걸음뿐이고, 셈을 지키지 못하는 장군뿐이다. 그러다 나림의 목소리가 심지를 자른다.
+[40] dialogue yushin
+    EN: ["But Her Majesty —"]
+    KO: ["하지만 폐하는 —"]
+[41] dialogue narim
+    EN: ["Enough, fire.","He will go. We knew that when he took the armour off and still kept her name on."]
+    KO: ["그만, 불꽃아.","그는 갈 거다. 갑옷을 벗고도 그 이름을 붙들고 있을 때부터 알았다."]
+[42] dialogue hyulle
+    EN: ["…Go.","Give Sunduk the victory.","Keep a little silence for us."]
+    KO: ["…가요.","선덕께 승리를 드리세요.","우리에게는 침묵을 조금만."]
+[43] p EN: Steam thins. Two shapes wait where the rock shelves into black: the father who taught him that loyalty is soil, and the grandfather who traded a kingdom so a grandson could keep a sword.
+    KO: 김이 옅어진다. 바위가 검은 물로 꺾이는 곳에 형상 둘이 기다린다 — 충성이야말로 흙이라고 가르친 아버지, 그리고 손자가 칼을 지키도록 나라를 넘겨 준 할아버지.
+[44] dialogue yushin
+    EN: ["Father. Grandfather.","In six days the same mouth has called me the sacred country’s saviour and a Gaya wretch.","Which of the two do I carry out to the tenth morning?"]
+    KO: ["아버지. 할아버지.","엿새 사이에 같은 입이 저를 신국의 구원자라 부르고, 가야 놈이라 불렀습니다.","열흘째 아침에는 그중 어느 쪽을 들고 나가야 합니까."]
+[45] dialogue seohyeon
+    EN: ["Yushin, my beloved son.","You were the light of my life, and now the nation needs you to be its savior.","I am sorry that I was not of Silla blood… I tried my hardest to forget my Gaya roots, and tried to pretend that I was something I was not.","But you don’t need to do that anymore.","Son, you are the mighty Sword of Silla, and the Last Prince of Gaya.","But you are infinitely more than that…!","You are my son. You are Kim Yushin.","Your mother and I couldn’t be more proud of you…!"]
+    KO: ["유신아, 내 사랑하는 아들아.","너는 내 인생의 빛이었고, 이제 나라는 네가 구원자가 되기를 필요로 한다.","미안하다… 내가 신라의 피가 아니어서. 가야의 뿌리를 잊으려 애썼고, 내가 아닌 무언가인 척하려 했다.","하지만 너는 더 이상 그렇게 할 필요가 없다.","아들아, 너는 강력한 신라의 도검이며, 가야의 마지막 왕자이기도 하다.","그러나 너는 그보다 무한히 더 크다…!","너는 내 아들이다. 너는 김유신이다.","네 어머니와 나는 네가 더없이 자랑스럽다…!"]
+[46] dialogue muryuk
+    EN: ["Yushin, my beloved grandson.","When I swore allegiance to the Silla crown, it was not for my own sake, but for yours.","I loved you before I knew you.","Yushin, look at me.","I am so, so proud of you…!"]
+    KO: ["유신아, 내 사랑하는 손자야.","내가 신라 왕실에 충성을 맹세했을 때, 그것은 나 자신을 위해서가 아니라 — 너를 위해서였다.","나는 너를 알기 전에 너를 사랑했다.","유신아, 나를 보아라.","나는… 정말, 정말 네가 자랑스럽다…!"]
+[47] dialogue yushin
+    EN: ["Father…","Grandfather…","Thank you."]
+    KO: ["아버지…","할아버지…","고맙습니다."]
+[48] dialogue golhwa
+    EN: ["Look at him — he’s crying."]
+    KO: ["봐, 울잖아."]
+[49] day {"kind":"day","label":"DAY 8","ko":"여덟째 날"}
+[50] p EN: On the eighth night a star falls toward <b>the Moon Palace</b> — bright enough that both camps look up. Bidam does not invent the omen. He only names it in a useful direction.
+    KO: 여덟째 밤, 별이 <b>월성</b>을 향해 떨어진다 — 양쪽 진영이 올려다볼 만큼 밝게. 비담은 징조를 발명하지 않는다. 유용한 방향으로 이름만 붙일 뿐이다.
+[51] quote {"kind":"quote","hanja":"吾聞落星之下必有流血 此殆女主敗績之兆也","ko":"내가 듣건대 별이 떨어지는 곳에는 반드시 피가 나리라. 이는 거의 여주가 패할 징조다.","html":"I have heard that where a star falls, blood will surely be shed. This is likely an omen that the woman sovereign will be defeated.","source":"Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yu
+[52] dialogue bidam
+    EN: ["You heard it.","Heaven has already voted against a woman on the throne.","女主不能善理 — and now the sky writes it in fire."]
+    KO: ["들었느냐.","하늘은 이미 여왕의 자리에 반대표를 던졌다.","女主不能善理 — 이제 하늘이 불로 쓴다."]
+[53] scene {"kind":"scene","label":"The Moon Palace","ko":"월성"}
+[54] p EN: The rebel shout shakes the ground. Inside the Moon Palace <b>Queen Sunduk</b> goes pale. <b>Yushin</b> asks for leave to speak — and for a kite, a torch, and enough lies to edit heaven.
+    KO: 반군의 함성이 땅을 흔든다. 월성 안에서 <b>선덕여왕</b>의 얼굴이 창백해진다. <b>유신</b>은 아뢰기를 청한다 — 연과 횃불, 그리고 하늘을 고칠 만큼의 거짓을.
+[55] dialogue yushin
+    EN: ["Your Majesty — do not fear a falling light.","If they can read a star, they can also unread one."]
+    KO: ["폐하 — 떨어지는 빛을 두려워 마십시오.","별을 읽을 수 있다면, 읽지 못하게 할 수도 있습니다."]
+[56] p EN: He flies the kite from the palace dark: a burning scarecrow rising where the star had fallen, so the night sky seems to take its light back.
+    KO: 궁의 어둠에서 연을 띄운다 — 별이 떨어진 자리에서 타오르는 허수아비가 올라, 밤하늘이 빛을 도로 가져가는 것처럼.
+[57] quote {"kind":"quote","html":"So he made a straw man, set fire in its arms, put it on a kite and flew it, so that it seemed to rise into the sky. Next day he had men spread word along the roads: “Last night the fallen star went back up.” It set the rebels doubting.","ko":"이에 허수아비를 만들어 불을 안기고 연에 실어 띄우니, 마치
+[58] dialogue yushin
+    EN: ["Look up.","Heaven changed its mind — or we changed heaven’s handwriting.","Hwarang, with me."]
+    KO: ["올려 보아라.","하늘이 마음을 바꿨다 — 아니면 우리가 하늘의 필체를 고쳤다.","화랑, 나를 따르라."]
+[59] scene {"kind":"scene","label":"The Stables","ko":"마구간"}
+[60] p EN: The kite buys one night. A sky can only be argued with for so long, and by the grey hour both camps are already arguing about what they saw. Before the drums, <b>Yushin</b> goes down to the palace stables alone and leads out the white horse.
+    KO: 연은 하룻밤을 번다. 하늘과는 그리 오래 다툴 수 없고, 잿빛 새벽이 되자 두 진영은 벌써 자기들이 무엇을 보았는지를 두고 다툰다. 북이 울리기 전, <b>유신</b>은 홀로 궁의 마구간으로 내려가 흰 말을 끌어낸다.
+[61] p EN: <b>Hangyul</b> has carried him for eighteen years, since the charge at Nangbi Fortress, to every border the queen sent him to and a few he went to without asking. The groom, a boy of fourteen, works out what the rope in the marshal’s other hand is for before anyone says it, and starts to cry with his mouth shut.
+    KO: <b>한결</b>은 낭비성 돌격 때부터 열여덟 해 동안 그를 태웠다. 여왕이 보낸 모든 국경으로, 묻지 않고 간 몇몇 국경으로. 열네 살 마부 아이는 대장군의 다른 손에 들린 밧줄이 무엇에 쓰일지 누가 말하기도 전에 알아차리고, 입을 꾹 다문 채 운다.
+[62] flashback {"kind":"flashback","year":"612","title":"Hanbyul","blocks":[{"kind":"p","html":"Seventeen, drunk, and asleep in the saddle. His first horse, <b>Hanbyul</b>, does what any good horse does with a sleeping rider and takes him where he always goes. He wakes at the courtesan <b>Cheongwan</b>’s gate with
+[62.0] p EN: Seventeen, drunk, and asleep in the saddle. His first horse, <b>Hanbyul</b>, does what any good horse does with a sleeping rider and takes him where he always goes. He wakes at the courtesan <b>Cheongwan</b>’s gate with her lantern already lifted and her face already glad.
+    KO: 열일곱, 취해서, 안장 위에서 잠든 채. 첫 말 <b>한별</b>은 잠든 주인을 태운 좋은 말이라면 누구나 하는 일을 한다. 늘 가던 곳으로 데려간다. 그가 눈을 뜬 곳은 기생 <b>천관</b>의 문 앞이고, 그녀의 등불은 이미 들려 있고, 얼굴은 이미 반갑다.
+[62.1] dialogue cheongwan
+    EN: ["You came?","…They said you swore to your mother you’d never come again."]
+    KO: ["오셨어요?","……어머님께 다시는 안 오신다고 맹세하셨다더니."]
+[62.2] p EN: He had sworn it. The horse had not. He gets down, draws, and takes Hanbyul’s head off at the gate in one stroke, then walks home past the lantern without looking at it. The song Cheongwan made about that night outlives both of them.
+    KO: 맹세는 그가 했다. 말은 하지 않았다. 그는 내려서 칼을 뽑아, 문 앞에서 단칼에 한별의 목을 벤다. 그리고 등불은 쳐다보지도 않고 걸어서 집으로 간다. 그날 밤을 두고 천관이 지은 노래는 두 사람보다 오래 산다.
+[63] scene {"kind":"scene","label":"The Scorched Ground","ko":"별 떨어진 자리"}
+[64] p EN: The star came down past the west wall of the Moon Palace, where the ground is still scorched in a long smear. Yushin walks Hangyul there himself. <b>Chunchu</b> is already waiting with two priests, a bronze basin, and a face that has decided not to argue.
+    KO: 별은 월성 서쪽 담 너머에 떨어졌고, 그곳 땅은 아직 길게 그을려 있다. 유신은 한결을 직접 끌고 간다. <b>춘추</b>는 이미 제관 둘과 청동 대야, 그리고 따지지 않기로 마음먹은 얼굴을 하고 기다리고 있다.
+[65] dialogue chunchu
+    EN: ["…There are other white horses. Three in the stable.","Does it have to be this one?"]
+    KO: ["……흰 말은 또 있어. 마구간에 셋이나.","꼭 얘여야 해?"]
+[66] dialogue yushin
+    EN: ["They know over there. Everyone knows which horse I ride.","Offer someone else’s horse and it isn’t heaven that laughs. It’s Bidam."]
+    KO: ["저쪽도 다 알아. 내가 무슨 말을 타는지.","남의 말을 바치면 하늘이 웃는 게 아니라 비담이 웃어."]
+[67] p EN: He takes the halter off with his own hands. Hangyul, who has been led to a great many strange places at night, puts his nose into Yushin’s chest and waits for the reason, as he always has.
+    KO: 그는 제 손으로 굴레를 벗긴다. 밤마다 낯선 곳으로 수없이 끌려가 본 한결은, 늘 그래 왔듯 유신의 가슴에 코를 묻고 이유를 기다린다.
+[68] dialogue yushin
+    EN: ["Eighteen years.","If it weren’t for you at Nangbi, I’d have ended there.","…I’m sorry. This time I’m the one who brought you."]
+    KO: ["열여덟 해.","낭비성에서 네가 아니었으면 난 거기서 끝났어.","……미안하다. 이번엔 내가 너를 데려왔구나."]
+[69] dialogue chunchu
+    EN: ["Yushin.","…Want me to do it?"]
+    KO: ["유신아.","……내가 할까."]
+[70] dialogue yushin
+    EN: ["No.","He’s mine."]
+    KO: ["아니.","내 말이야."]
+[71] p EN: He does it the way the rite asks and faster than the rite asks, so the horse never quite finishes turning his head. White goes down into the scorched black. The priests begin the prayer, and Yushin, who has never once let another man finish a sentence for him, lets them.
+    KO: 그는 의례가 시키는 대로, 그러나 의례보다 빠르게 한다. 말이 고개를 미처 다 돌리기도 전에. 흰 것이 그을린 검은 땅 위로 무너진다. 제관들이 축문을 시작하고, 평생 남이 제 말을 대신 끝맺게 둔 적 없는 유신이 이번에는 그렇게 둔다.
+[72] quote {"kind":"quote","html":"He slaughtered a white horse and offered it at the place where the star had fallen, and prayed: “In the way of Heaven, yang is firm and yin is yielding; in the way of men, the sovereign is honoured and the subject humble. Should this ever be reversed, there is great disorder.
+[73] p EN: Across the field, on the Radiance wall, <b>Bidam</b> watches the smoke of the offering go up and asks an officer what was burned. When he is told, he puts his beads away for the first time in eight days and goes down to the lines to stand beside his own horse, <b>Bisamun</b>, for a while, saying nothing to anybody.
+    KO: 들판 건너 명활성 성벽에서 <b>비담</b>은 제물 연기가 오르는 것을 보고, 무엇을 태웠느냐고 장교에게 묻는다. 대답을 듣자 그는 여드레 만에 처음으로 염주를 거두고, 진영으로 내려가 제 말 <b>비사문</b> 곁에 한동안 서 있다. 아무에게도 아무 말 없이.
+[74] p EN: At dawn the groom leads out a young grey, too green for a marshal, the only horse left in the royal stable that nobody has been afraid of all week.
+    KO: 새벽에 마부 아이가 어린 회색 말을 끌고 나온다. 대장군이 타기엔 아직 풋내기, 이번 주 내내 아무도 무서워하지 않은 왕궁 마구간의 마지막 말.
+[75] dialogue yushin
+    EN: ["Name?"]
+    KO: ["이름은?"]
+[76] p EN: The boy shakes his head. He is still crying.
+    KO: 아이는 고개를 젓는다. 아직 울고 있다.
+[77] dialogue yushin
+    EN: ["Hanseul.","…It’s easy to say. Stop crying and try it."]
+    KO: ["한슬.","……부르기 쉽게 지었다. 그만 울고 불러 봐."]
+[78] p EN: It is the last horse he names. He rides <b>Hanseul</b> out on the tenth day, and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others.
+    KO: 그가 이름을 지어 준 마지막 말이다. 열째 날 그는 <b>한슬</b>을 타고 나가고, 열세 해 뒤 황산벌도 한슬을 타고 건넌다. 그리고 다른 말보다 그 녀석을 오래 빗질하는 모습을, 마부에게 단 한 번도 들키지 않는다.
+[79] day {"kind":"day","label":"DAY 9","ko":"아홉째 날"}
+[80] p EN: Assault and counter-assault. <b>Yumjong</b> falls in the outer works — the quieter name on the banner, gone first. Bidam does not. By dusk the granary inside the Moon Palace is down to its last sacks, and men who have never prayed are learning the postures. Alchun is asked, for the last useful time, which wall he belongs to.
+    KO: 공격과 역공. <b>염종</b>이 외곽에서 쓰러진다 — 깃발의 더 조용한 이름이 먼저 간다. 비담은 쓰러지지 않는다. 해 질 무렵 월성 안 곳간은 마지막 섬만 남고, 기도해 본 적 없는 사내들이 무릎 꿇는 자세를 배운다. 알천은 — 마지막으로 쓸모 있는 질문으로 — 어느 성벽에 속하는지 질문을 받는다.
+[81] dialogue alchun
+    EN: ["I belong to the country that survives the week.","If that answer is empty — then so is the chair you will offer me afterward."]
+    KO: ["나는 이 주를 살아남는 나라에 속한다.","그 답이 공허하다면 — 너희가 나중에 내게 줄 자리도 공허할 것이다."]
+[82] p EN: He still does not draw. After Bidam falls, Surabol will remember that sentence for years — the man who caught tigers, filed under Neither.
+    KO: 그는 끝내 칼을 뽑지 않는다. 비담이 쓰러진 뒤에도 서라벌은 그 문장을 오래 기억할 것이다 — 호랑이를 잡던 남자, ‘어느 쪽도 아님’으로 분류되어.
+[83] scene {"kind":"scene","label":"The Rampart","ko":"성벽 위"}
+[84] p EN: That night, on Radiance’s rampart, Bidam speaks — to his officers, to the wall, to whichever chronicler is still awake. They expect a battle plan. They get a confession.
+    KO: 그날 밤, 명활성 성벽 위에서 비담이 말한다 — 장교들에게, 성벽에게, 아직 깨어 있는 사관에게. 그들은 작전을 기대한다. 돌아오는 것은 고백이다.
+[85] dialogue bidam
+    EN: ["You know… we call this country the “sacred country.” But our country isn’t the greatest in the world.","Its kings are not the most wise. Its armies are not the strongest.","Its men are not the most noble. Its women are not the most chaste.","Our natural scenery is beautiful, but there are more beautiful sights elsewhere.","For every good thing our nation has, there are other nations with greater things."]
+    KO: ["알겠느냐… 우리는 이 나라를 “신국”이라 부른다. 하지만 우리나라는 세상에서 가장 위대한 나라가 아니다.","그 왕들이 가장 지혜로운 것도 아니다. 그 군대가 가장 강한 것도 아니다.","그 남자들이 가장 고결한 것도, 그 여자들이 가장 정숙한 것도 아니다.","우리 산천은 아름답지만, 더 아름다운 경치는 다른 곳에 있다.","우리나라가 가진 좋은 것 하나마다, 더 큰 것을 가진 나라들이 있다."]
+[86] dialogue bidam
+    EN: ["However — that is not why we call it the sacred country."]
+    KO: ["하지만 — 그래서 신국이라 부르는 것이 아니다."]
+[87] dialogue bidam
+    EN: ["We call it the sacred country, because it is ours.","Because our kings rule over our people. Because our armies are composed of our sons.","Because our men get up every day, and try to make the next day better.","Because our women go to sleep every night, knowing that they have raised our next generation with our blood and our seed.","Because our hills and rivers are the ones that we have grown up with as children — where we used to play with our fathers, and where we will play with our sons."]
+    KO: ["우리가 신국이라 부르는 것은, 이 나라가 우리의 것이기 때문이다.","우리의 왕이 우리의 백성을 다스리기 때문이다. 우리의 군대가 우리의 아들들로 이루어져 있기 때문이다.","우리의 남자들이 매일 일어나, 내일을 오늘보다 낫게 만들려 하기 때문이다.","우리의 여자들이 매일 밤, 우리의 피와 씨로 다음 세대를 길러 냈음을 알고 잠들기 때문이다.","우리의 산과 강이, 우리가 어려서 함께 자란 곳이기 때문이다 — 아버지와 놀던 곳, 그리고 우리의 아들과 놀 곳."]
+[88] dialogue bidam
+    EN: ["That is what I am defending."]
+    KO: ["내가 지키는 것은 그것이다."]
+[89] dialogue bidam
+    EN: ["The crown may call me a traitor, a heretic, an old man who needs to adapt to the times…","…and to all of that, I simply say no.","I don’t need to say any more than that."]
+    KO: ["왕실은 나를 반역자라, 이단자라, 시대에 맞춰야 할 늙은이라 부르겠지…","…그 모든 것에 나는 그저 아니라고 말한다.","그 이상은 말할 필요가 없다."]
+[90] dialogue bidam
+    EN: ["And one day, our descendants will prove me right.","So come at me, fate! <b>Bidam is ready to defend what is ours.</b>"]
+    KO: ["그리고 언젠가, 우리의 후손들이 내가 옳았음을 증명할 것이다.","그러니 오라, 운명이여! <b>비담은 우리의 것을 지킬 준비가 되었다.</b>"]
+[91] quote {"kind":"quote","html":"From ignorance there is craving, and so my sickness is born. Because all beings are sick, therefore I am sick. If the sickness of all beings ends, then my sickness ends.","ko":"어리석음으로부터 애착이 있어 나의 병이 생겼습니다. 모든 중생이 병들었기에 나도 병든 것이니, 만일 모든 중생의 병이 사라지면 나의 병도 사라질 것입니다.","hanja":"從癡
+[92] p EN: <b>Never of Silla? Then where did Yushin come from? Fifty years back: a Gaya boy, a royal gate, and a lost horse…!</b>
+    KO: <b>신라 사람이 아니라고? 그럼 유신은 어디서 왔나? 오십여 년 전, 가야의 청년, 왕족의 대문, 그리고 길 잃은 말 한 마리…!</b>

@@ -1,0 +1,700 @@
+{
+  "part": "part-3",
+  "episodes": [
+    {
+      "chapter": "fall-of-euija",
+      "title": "Exile",
+      "add": [
+        {
+          "after": "Everyone in Sabi knows exactly how long three years is",
+          "quote": {
+            "kind": "quote",
+            "hanja": "甲寅年正月九日 奈祇城砂宅智積 慷身日之易往 慨體月之難還 穿金以建珍堂 鑿玉以立寶塔",
+            "ko": "갑인년 정월 초아흐레, 나지성의 사택지적은 몸의 날이 쉬이 가는 것을 서러워하고 몸의 달이 돌아오기 어려움을 탄식하여, 금을 뚫어 보배로운 법당을 세우고 옥을 깎아 보탑을 세운다.",
+            "html": "Ninth day of the first month, year of the Wood Tiger. Satek Jijuk of Naji Fortress, grieving that the body’s days go so easily and its months come back so hard, cut gold to build a precious hall and carved jade to raise a treasure pagoda.",
+            "source": "Stele of Satek Jijeok (砂宅智積碑), Buyeo, 654 — Buyeo National Museum",
+            "style": "stele",
+            "person": "ministersatek"
+          },
+          "url": "https://buyeo.museum.go.kr/rprsPsn/view.do?key=2302150017&rprsPsnCmdtyMngSn=2001010066&sc_exhbtnrmType=002",
+          "why": "Minister Satek’s own stone, carved a year before this episode, about how fast time runs out. It sits beside the line about everyone counting three years. Baekje record, in his own words."
+        },
+        {
+          "after": "He is put on the boat the same afternoon.",
+          "quote": {
+            "kind": "quote",
+            "hanja": "今年正月、國主母薨。又弟王子兒翹岐及其母妹女子四人、內佐平岐味、有高名之人卌餘、被放於嶋。",
+            "ko": "올해 정월에 국주의 어머니가 죽었다. 또 아우 왕자의 아들 교기와 그 어머니의 누이 넷, 내좌평 기미, 이름 높은 사람 마흔여 명이 섬으로 쫓겨났다.",
+            "html": "This year, in the first month, the king’s mother died. And his brother’s son Gyogi, with his mother’s four sisters, the Inner Minister Gimi and more than forty men of high name, were banished to an island.",
+            "source": "Nihon Shoki (日本書紀) bk. 24, Kōgyoku 1 (642), second month — report of the Baekje mourning envoys’ attendants"
+          },
+          "url": "https://seisaku.bz/nihonshoki/shoki_24.html",
+          "why": "Japan’s record of the same pattern the episode dramatizes: the queen mother dies and a boatload of notables goes to an island. The preceding clause (大佐平智積卒, ‘Jijeok died’) is left out on purpose, because the stele above and this episode both have him alive."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Heaven–Earth King",
+      "add": [
+        {
+          "after": "stays standing by the door. Yuri Dora starts anyway.",
+          "quote": {
+            "kind": "quote",
+            "native": "천앙베포 도업 지왕베포, 도업입네다 인앙베포도 도업, 산베포는 물베포, 국베포 왕베포, 제청신도업이웨다∼.",
+            "nativeLang": "ko-jeju",
+            "ko": "하늘의 배포가 서고 땅의 배포가 선다. 사람의 배포도 선다. 산의 배포, 물의 배포, 나라의 배포, 임금의 배포. 이제 제청에 신들이 자리 잡는다.",
+            "html": "Heaven’s laying-out, set in order. Earth’s laying-out, set in order. Man’s laying-out too. The mountains’, the waters’, the kingdom’s, the king’s. And the gods take their seats at the altar.",
+            "source": "Chogamje (초감제), Bepo-doeop-chim, recited by Gang Sun-seon (강순선), recorded by Heo Nam-chun, Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2009 — Tapdong Yeongdeung-gut, Jeju City (Hanguk Gubimunhak Daegye, rev. ed.)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_15862",
+          "why": "The Cheonjiwang Bonpuri is sung inside this Bepo-doeop-chim opening of the chogamje, where the simbang lays out heaven, earth and man in order. This is the frame Yuri Dora is starting. A native recitation of the bonpuri narrative itself could not be verified (see notes)."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Sulmun",
+      "add": [
+        {
+          "after": "You can go and count them. Nobody has ever got the same number twice.",
+          "quote": {
+            "kind": "quote",
+            "native": "저 산 압은 당 오벽, 이 산 압은 절 오벽, 오벽장군은 오벽선성, ᄒᆞᆫ 골이 부족허난, 왕도 범도 곰도, 못 내든 섬입네다.",
+            "nativeLang": "ko-jeju",
+            "ko": "저 산 앞에는 당이 오백, 이 산 앞에는 절이 오백. 오백 장군에 오백 선생. 골짜기 하나가 모자라서, 왕도 범도 곰도 나지 못한 섬이다.",
+            "html": "Five hundred shrines before that mountain, five hundred temples before this one. Five hundred generals, five hundred teachers. One valley short, so it is an island that could raise no king, no tiger, no bear.",
+            "source": "Chogamje (초감제), Nalgwa-guk-seomgim, recited by Gang Sun-seon (강순선), recorded by Heo Nam-chun, Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2009 — Tapdong Yeongdeung-gut, Jeju City (Hanguk Gubimunhak Daegye, rev. ed.)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_15862",
+          "why": "The ritual name for the five hundred stone sons, and the island’s other ‘one short’ (one valley short of a hundred). It plants the shortfall that the silk bridge pays off three blocks later."
+        },
+        {
+          "after": "They found ninety-nine. The collar was never finished.",
+          "quote": {
+            "kind": "quote",
+            "native": "거 뭐, 비단 백필만 허영 소중기 맨들어 주민 추ᄌᆞ도ᄁᆞ지 ᄃᆞ리 놔 주멘 허였다고. 주문ᄒᆞ단 ᄒᆞᆫ 필이 부족하여서 못허여 주니 걸 아이 허여 줘 부렀다고.",
+            "nativeLang": "ko-jeju",
+            "ko": "뭐, 비단 백 필로 속곳 하나 지어 주면 추자도까지 다리를 놓아 주마고 했다더라. 모으다 보니 한 필이 모자라 못 지어 주니, 다리를 안 놓아 줘 버렸다고.",
+            "html": "Well, she said if they made her a petticoat out of a hundred rolls of silk, she’d lay them a bridge as far as Chuja. They came up one roll short and couldn’t make it, so she never built it.",
+            "source": "Sulmun Halmang legend (설문대할망) told by An Yong-in (안용인), recorded by Hyeon Yong-jun and Kim Yeong-don, 1979 — Gimnyeong, Gujwa-myeon (Hanguk Gubimunhak Daegye 9-1)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.1_11548",
+          "why": "A Gimnyeong villager telling the bridge story in dialect, one roll short, exactly as Yuri Dora tells it. Placed before Gyebek’s ‘worst amount to be short by.’"
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Three Princes",
+      "add": [
+        {
+          "after": "anything worth having tends to arrive by sea in a container",
+          "quote": {
+            "kind": "quote",
+            "hanja": "太初無人物, 三神人, 從地聳出 … 一日見紫泥封藏木函, 浮至于東海濱, 就而開之, 函內又有石函 … 開石函, 出現靑衣處女三, 及諸駒犢五穀種.",
+            "ko": "태초에 사람이 없었는데, 세 신인이 땅에서 솟아났다. … 하루는 자줏빛 진흙으로 봉한 나무 상자가 동쪽 바닷가에 떠밀려 오는 것을 보고 나아가 열었더니, 상자 안에 또 돌 상자가 있었다. … 돌 상자를 여니 푸른 옷의 처녀 셋과 망아지, 송아지, 다섯 곡식의 씨가 나왔다.",
+            "html": "In the beginning there were no people. Three divine men rose up out of the ground. … One day they saw a wooden chest sealed with purple clay drift ashore on the eastern beach. They opened it, and inside was a stone chest. … They opened the stone chest, and out came three maidens in blue, with foals, calves and the seeds of the five grains.",
+            "source": "Goryeosa (高麗史) bk. 57, Treatise on Geography — Tamla County (耽羅縣), quoting the island’s old record",
+            "event": "tamla-three-clans"
+          },
+          "url": "https://db.history.go.kr/goryeo/compareViewer.do?levelId=kr_057r_0010_0020_0170_0010",
+          "why": "The written founding record of Tamla: out of the ground (not an egg), the chest from the sea, the calves, foals and five grains. The same paragraph also carries the Dongseong tribute campaign used in Tribute."
+        },
+        {
+          "after": "anything worth having tends to arrive by sea in a container",
+          "quote": {
+            "kind": "quote",
+            "native": "고량부 삼성혈은, 자시에 고이왕 축시엔, 양이왕 인시엔 부게왕 삼성친, 도업헌 섬입네다.",
+            "nativeLang": "ko-jeju",
+            "ko": "고·양·부 삼성혈은, 자시에 고씨 왕, 축시에 양씨 왕, 인시에 부씨 왕. 세 성이 나라를 세운 섬이다.",
+            "html": "At the Three Clans’ Hole: Go’s king at the hour of the rat, Yang’s king at the hour of the ox, Bu’s king at the hour of the tiger. An island founded by three clans.",
+            "source": "Chogamje (초감제), Nalgwa-guk-seomgim, recited by Gang Sun-seon (강순선), recorded by Heo Nam-chun, Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2009 — Tapdong Yeongdeung-gut, Jeju City (Hanguk Gubimunhak Daegye, rev. ed.)",
+            "style": "shaman",
+            "event": "tamla-three-clans"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_15862",
+          "why": "The island’s own sung version, paired with the Goryeo record. They disagree on who came first: the Goryeosa makes Yang the eldest, while the simbang sings Go up first at midnight. The story names them ‘Yang, Go and Bu’."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Stone Lady",
+      "add": [
+        {
+          "after": "To check that he had won.",
+          "quote": {
+            "kind": "quote",
+            "native": "“아이, 판관님, 피로 비가 옵니다.” 허여가지고 말해. 거기서 직ᄉᆞ허여 불었어. 그냥. 아뭇 이야기도 ᄒᆞ지 말라고 ᄒᆞᆫ 건디.",
+            "nativeLang": "ko-jeju",
+            "ko": "“아이고, 판관님, 피로 비가 옵니다.” 하고 말해 버렸다. 그 자리에서 그냥 즉사해 버렸다. 아무 말도 하지 말라고 했던 건데.",
+            "html": "“Oh, sir, it’s raining blood.” He said it out loud. And the magistrate dropped dead right there. Just like that. He’d told him not to say a word.",
+            "source": "Gimnyeong Sagul legend (김녕사굴) told by An Yong-in (안용인), recorded by Hyeon Yong-jun and Kim Yeong-don, 1979 — Gimnyeong, Gujwa-myeon (Hanguk Gubimunhak Daegye 9-1)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.1_2211",
+          "why": "Gimnyeong’s own telling of the serpent-cave magistrate, from a man born in the village. In his version the groom speaks instead of the magistrate looking back, and the price is the same."
+        },
+        {
+          "after": "The youngest said her own navel-string.",
+          "quote": {
+            "kind": "quote",
+            "native": "“너는 누구 덕으로 나왓느냐?” “첫쩨는 하나님이 덕이요, 둘쩨는 지화님이 덕이요, 셋쩨는 아바님이 덕이요, 넷쩨는 어머님 덕입니다만은 어머님 벳똥 알 선그믓이 덕입니다.”",
+            "nativeLang": "ko-jeju",
+            "ko": "“너는 누구 덕으로 태어났느냐?” “첫째는 하늘님 덕이요, 둘째는 땅님 덕이요, 셋째는 아버님 덕이요, 넷째는 어머님 덕입니다마는, 어머님 배꼽 아래 그어진 금 덕입니다.”",
+            "html": "“By whose grace did you come into the world?” “First, heaven’s. Second, earth’s. Third, Father’s. Fourth, Mother’s — but really, the line drawn under Mother’s navel.”",
+            "source": "Samgong Bonpuri (삼공본풀이) recited by Jeong Tae-jin (정태진), recorded by Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2011 — Sanggari, Aewol-eup (Hanguk Gubimunhak Daegye, rev. ed.)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_14550",
+          "why": "Gameunjang-agi’s answer in a working simbang’s mouth. This is the sentence that gets her thrown out."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Gardener",
+      "add": [
+        {
+          "after": "He went back to that rich man’s house and held a little party.",
+          "quote": {
+            "kind": "quote",
+            "native": "“요 고 꼿은 무신 꼿입니까?” “요 꼿은 웃음 웃일 꼿이여. 요 꼿은 싸움헐 꼿이여. 요 꼿은 야 이거, 씨멜족 시길 꼿이여.”",
+            "nativeLang": "ko-jeju",
+            "ko": "“이 꽃은 무슨 꽃입니까?” “이 꽃은 웃음 웃게 하는 꽃이다. 이 꽃은 싸움하게 하는 꽃이다. 이 꽃은, 그래, 씨를 멸족시키는 꽃이다.”",
+            "html": "“And this flower, what flower is it?” “This one is the flower that makes you laugh. This one is the flower that makes you fight. And this one, well — this is the flower that wipes out a line.”",
+            "source": "Igong Bonpuri (이공본풀이) recited by Lee Seung-sun (이승순), recorded by Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2011 — Sanggari, Aewol-eup (Hanguk Gubimunhak Daegye, rev. ed.)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_14554",
+          "why": "Hallakgungi walking the rows with his father in the flower field: the laughing, fighting and line-ending flowers he takes to the rich man’s party."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Kangrim",
+      "add": [
+        {
+          "after": "Since then the hour does not come in a just order.",
+          "quote": {
+            "kind": "quote",
+            "native": "“적베질 나 줍서. 어룬 올떼 아이 옵서. 아이 올 떼 어룬 옵서. 건물에 건ᄃᆞ리 헤영 오쿠다.”",
+            "nativeLang": "ko-jeju",
+            "ko": "“적배지를 나한테 주십시오. 어른 올 때 아이 오고, 아이 올 때 어른 오게 하여, 거꾸로 흐르는 물처럼 순서를 뒤집어 데려오겠습니다.”",
+            "html": "“Give me the red writ. When it’s the old one’s turn, let the child come. When it’s the child’s turn, let the old one come. I’ll bring them back like water running uphill, out of order.”",
+            "source": "Chasa Bonpuri (차사본풀이) recited by Go Yeon-ok (고연옥), recorded by Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2011 — Sanggari, Aewol-eup; sung as Cheseo Bonpuri (체서본풀이) (Hanguk Gubimunhak Daegye, rev. ed.)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_14557",
+          "why": "The crow takes Kangrim’s red writ and scrambles the order of death, the rule the episode ends on."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Tribute",
+      "add": [
+        {
+          "after": "marches an army to the southern harbour and stops",
+          "quote": {
+            "kind": "quote",
+            "hanja": "八月，王以耽羅不修貢賦，親征，至武珍州。耽羅聞之，遣使乞罪，乃止。",
+            "ko": "8월, 왕이 탐라가 공물과 부세를 바치지 않는다 하여 몸소 치러 나서 무진주에 이르렀다. 탐라가 이를 듣고 사신을 보내 죄를 비니, 그만두었다.",
+            "html": "Eighth month. Because Tamla had not sent its tribute, the king went out to punish it himself and got as far as Mujin Province. Tamla heard, sent envoys to beg pardon, and he stopped.",
+            "source": "Samguk Sagi (三國史記) bk. 26, Baekje Annals — King Dongseong, yr. 20 (498), eighth month"
+          },
+          "url": "https://zh.wikisource.org/wiki/三國史記/卷26",
+          "why": "The whole episode in one annal line: the king marches, stops at the coast, and the island apologises. The same sentence appears in the Goryeosa Tamla entry."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Coup",
+      "add": [
+        {
+          "after": "names forty-one of his own sons to the Assembly",
+          "quote": {
+            "kind": "quote",
+            "hanja": "十七年, 春正月, 拜王庶子四十一人爲佐平, 各賜食邑.",
+            "ko": "17년 봄 정월, 왕의 서자 마흔한 명을 좌평으로 삼고 저마다 식읍을 주었다.",
+            "html": "Seventeenth year, spring, first month. The king made forty-one of his sons by lesser wives ministers of the first rank, and gave each of them a fief.",
+            "source": "Samguk Sagi (三國史記) bk. 28, Baekje Annals — King Uija, yr. 17 (657), first month"
+          },
+          "url": "https://sinkipo.tistory.com/entry/삼국사기-백제-본기-원문한글-권-제-28",
+          "why": "The record behind the purge. The number forty-one is the one Ye Sikjin keeps in his drawer, and the new Ungjin scene pays it off."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Descent",
+      "add": [],
+      "scenes": [],
+      "fix": [
+        {
+          "match": "The king was angry and imprisoned him.",
+          "action": "trim",
+          "quote": {
+            "hanja": "王怒，囚之獄中，由是，無敢言者。",
+            "ko": "왕이 노하여 그를 옥에 가두었다. 이로부터 감히 말하는 자가 없었다.",
+            "html": "The king was angry and threw him in prison. After that, nobody dared to speak."
+          },
+          "why": "Verbatim correction. The current hanja (王怒囚之 由是莫有敢言者) is a paraphrase; bk. 28 reads 王怒，囚之獄中，由是，無敢言者 (https://sinkipo.tistory.com/entry/삼국사기-백제-본기-원문한글-권-제-28)."
+        },
+        {
+          "match": "A loyal servant does not forget his king even in death",
+          "action": "trim",
+          "quote": {
+            "hanja": "忠臣死不忘君，願一言而死。臣常觀時察變，必有兵革之事。凡用兵，必審擇其地，處上流以延敵，然後可以保全。若異國兵來，陸路不使過沈峴，水軍不使入伎伐浦之岸，擧其險隘以禦之，然後可也。",
+            "ko": "충신은 죽어도 임금을 잊지 않으니, 한마디 아뢰고 죽고자 합니다. 신이 늘 때를 보고 변화를 살폈는데, 반드시 전쟁이 있을 것입니다. 무릇 군사를 쓸 때는 반드시 그 땅을 잘 가려야 하니, 상류에 자리 잡고 적을 끌어들여야 보전할 수 있습니다. 만일 다른 나라 군사가 오거든, 육로로는 침현을 넘지 못하게 하고 수군은 기벌포 기슭에 들어오지 못하게 하여, 험하고 좁은 곳에 의지해 막아야 합니다.",
+            "html": "A loyal servant does not forget his king even in death, so let me say one thing and die. I have always watched the times and studied their changes, and there will surely be war. Whoever uses soldiers must choose his ground with care: take the upper stream and draw the enemy to you, and you can keep the country whole. If foreign soldiers come, do not let them cross Chimhyeon by land, and do not let their ships into the banks of Gibeolpo. Hold the narrow, difficult places, and stop them there."
+          },
+          "why": "Verbatim correction of Seongchung’s memorial. The current hanja is reworded (臣嘗觀時變 必有戰爭 … 審擇地形 上流迎敵 … 據險). The text here is bk. 28 as transcribed (https://sinkipo.tistory.com/entry/삼국사기-백제-본기-원문한글-권-제-28)."
+        },
+        {
+          "match": "Outwardly he cast off the ministers who spoke straight",
+          "action": "remove",
+          "why": "Spoiler and duplicate. This is the Tang Pacification stele, which Sabi quotes after the fall. Here, in Descent, its source line announces the Tang pacification of Baekje before the story reaches it, and 祓婦 is a typo for 妖婦. Keep the Sabi copy only."
+        }
+      ]
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Nine Omens",
+      "add": [
+        {
+          "after": "People start saying it out loud in the markets",
+          "quote": {
+            "kind": "quote",
+            "hanja": "舉國百姓無故持兵，往還於道。國老言：「百濟國失所之相乎。」",
+            "ko": "온 나라 백성이 까닭 없이 병기를 들고 길을 오갔다. 나라의 원로들이 말하였다. “백제가 제자리를 잃을 조짐인가.”",
+            "html": "All over Yamato, people took up weapons for no reason and went back and forth on the roads. The elders said: “Is this a sign that Baekje will lose its place?”",
+            "source": "Nihon Shoki (日本書紀) bk. 26, Saimei 6 (660), fifth month — note"
+          },
+          "url": "https://zh.wikisource.org/wiki/日本書紀/卷第廿六",
+          "why": "The omen talk travelling across the sea. Japan reads its own odd signs as Baekje’s doom. This is a second nation alongside the Samguk Sagi turtle already in the episode, and it reveals no outcome."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-euija",
+      "title": "Sungchung",
+      "add": [
+        {
+          "after": "one by sea and one over the hills",
+          "quote": {
+            "kind": "quote",
+            "hanja": "定方發自萊州，舳艫千里，隨流東下。",
+            "ko": "정방이 내주에서 떠나니, 뱃머리와 뱃고물이 천 리에 이어져 물결을 따라 동쪽으로 내려왔다.",
+            "html": "The Red Fowl set out from Laizhou, his ships stern to prow for a thousand li, coming east on the current.",
+            "source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, yr. 7 (660), sixth month"
+          },
+          "url": "https://zh.wikisource.org/wiki/三國史記/卷05",
+          "why": "Replaces the duplicate memorial removed below. It shows the sea army the episode opens on, with no outcome."
+        }
+      ],
+      "scenes": [],
+      "fix": [
+        {
+          "match": "do not let their navy enter the shore of Gibeolpo",
+          "action": "remove",
+          "why": "One quote per event. This is a cut-down copy of Seongchung’s memorial, already quoted in full (and corrected above) in Descent. It also drops the middle without an ellipsis."
+        }
+      ]
+    },
+    {
+      "chapter": "epilogue-part-ii",
+      "title": "Three Realms",
+      "add": [
+        {
+          "after": "there are those that regenerate new blood",
+          "quote": {
+            "kind": "quote",
+            "native": "“서천꼿밧 구경간 요 꼿은 미신 꼿입네까?” “말 ᄀᆞᆯ을 꼿, 이 꼿은 피 오를 꼿, ᄉᆞᆯ 오를 꼿 오장육부 오를 꼿 뻬 오를 꼿이로다.”",
+            "nativeLang": "ko-jeju",
+            "ko": "“서천꽃밭 구경 가서 보니, 이 꽃은 무슨 꽃입니까?” “말하게 할 꽃, 이 꽃은 피 오를 꽃, 살 오를 꽃, 오장육부 오를 꽃, 뼈 오를 꽃이로다.”",
+            "html": "“Seeing the Western Flower Field — what flower is this?” “The flower that gives back speech. This one, the flower that brings blood back. The flower that brings flesh back, the one for the organs and bowels, the flower that brings bones back.”",
+            "source": "Segyeong Bonpuri (세경본풀이) recited by Lee Seung-sun (이승순), recorded by Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2011 — Sanggari, Aewol-eup (Hanguk Gubimunhak Daegye, rev. ed.)",
+            "style": "shaman"
+          },
+          "url": "https://kdp.aks.ac.kr/inde/gubi?id=POKS.GUBI.GUBI.2_14553",
+          "why": "The resurrection-flower list Sara rattles off, as Jacheongbi hears it in the field: blood, flesh, bone. No Samguk Yusa or Dangun text is used here, so Dangun’s mystery box stays shut."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-baekje",
+      "title": "Yellow Mountain",
+      "add": [],
+      "scenes": [],
+      "fix": [
+        {
+          "match": "With the men of one country I face the great armies",
+          "action": "trim",
+          "quote": {
+            "hanja": "以一國之人 當唐羅之大兵 國之存亡 未可知也…",
+            "ko": "한 나라의 사람으로 당과 신라의 대병을 당하니, 나라의 존망을 알 수 없다…",
+            "html": "With the men of one country I face the great armies of Tang and Silla, and whether the country lives or dies cannot be known…"
+          },
+          "why": "The wife-and-children clause (恐吾妻孥…不如死快) is already quoted, with 遂盡殺之, in the Gyebek episode just before. Keep only the opening here so the same words aren’t carded twice."
+        },
+        {
+          "match": "He led five thousand men sworn to die out to Hwangsan",
+          "action": "trim",
+          "quote": {
+            "hanja": "帥死士五千出黄山 與羅兵戰 四合皆勝之…",
+            "ko": "결사대 오천을 거느리고 황산으로 나가 신라 군사와 싸워, 네 번 맞붙어 네 번 다 이겼다…",
+            "html": "He led five thousand men sworn to die out to Hwangsan and fought the Silla army. Four times they met, and four times he won…"
+          },
+          "why": "Spoiler. 兵寡力屈竟敗 堦伯死之 (‘defeated at last; Gyebek died there’) sits about forty-five blocks before the fifth clash and Kangrim’s walk. The trimmed card still plays against the Silla card above (‘four times without advantage’) and the narrator’s ‘They agree on the number, and on nothing else.’"
+        },
+        {
+          "match": "Gyebaek cut off his head, tied it to the saddle",
+          "action": "trim",
+          "quote": {
+            "hanja": "階伯擒斬首，繫馬鞍送之。品日執其首…曰：「吾兒面目如生，能死於王事，無所悔矣。」",
+            "ko": "계백이 사로잡아 목을 베어 말안장에 매어 보냈다. 품일이 그 머리를 잡고 … 말하였다. “내 아들의 얼굴이 살아 있는 것 같구나. 나랏일에 죽을 수 있었으니 뉘우칠 것이 없다.”",
+            "html": "Gyebek took him, cut off his head, tied it to the saddle and sent it back. Pumil held the head … and said: “My son’s face is as if he were alive. He was able to die in the king’s service. I have nothing to regret.”"
+          },
+          "why": "Verbatim correction from bk. 47 (https://zh.wikisource.org/wiki/三國史記/卷47): 擒斬首, not 斬其首. The ellipsis drops 袖拭血 (‘wiped the blood with his sleeve’) because the next block narrates exactly that."
+        }
+      ]
+    },
+    {
+      "chapter": "fall-of-baekje",
+      "title": "Sabi",
+      "add": [
+        {
+          "after": "together with the several fortresses, all surrendered",
+          "quote": {
+            "kind": "quote",
+            "hanja": "十八日，義慈率太子及熊津方領軍等，自熊津城來降。",
+            "ko": "18일, 의자가 태자와 웅진 방령의 군사들을 거느리고 웅진성에서 나와 항복하였다.",
+            "html": "On the eighteenth day Euija, leading the crown prince and the troops of the Ungjin district commander, came out of Bear Fortress and surrendered.",
+            "source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, yr. 7 (660), seventh month",
+            "event": "ungjin-surrender"
+          },
+          "url": "https://zh.wikisource.org/wiki/三國史記/卷05",
+          "why": "Silla’s version: the king ‘leads’ the Ungjin commander’s men out. The commander, 熊津方領, is Ye Sikjin, unnamed, walking behind his king."
+        },
+        {
+          "after": "together with the several fortresses, all surrendered",
+          "quote": {
+            "kind": "quote",
+            "hanja": "百濟王義慈，其妻恩古，其子隆等，其臣佐平千福、國辨成、孫登等凡五十餘。秋七月十三日，為蘇將軍所捉，而送去於唐國。",
+            "ko": "백제왕 의자와 그 아내 은고, 그 아들 융 등, 그 신하 좌평 천복·국변성·손등 등 모두 쉰여 명이 가을 7월 13일에 소 장군에게 붙잡혀 당나라로 보내졌다.",
+            "html": "Euija, king of Baekje, his wife Eungo, his son Yung and the rest, with his ministers Chunbok, Guk Byeonseong, Son Deung and others, some fifty in all, were seized by General Su on the thirteenth day of the seventh month and sent away to Tang.",
+            "source": "Nihon Shoki (日本書紀) bk. 26, Saimei 6 (660), tenth month — note to the Baekje loyalists’ embassy",
+            "event": "ungjin-surrender"
+          },
+          "url": "https://zh.wikisource.org/wiki/日本書紀/卷第廿六",
+          "why": "Japan’s version, from the loyalists who wanted Baekje back: nobody surrendered, the king was ‘seized’."
+        },
+        {
+          "after": "together with the several fortresses, all surrendered",
+          "quote": {
+            "kind": "quote",
+            "hanja": "洎子寔進世官，象賢也。有唐受命，東討不庭，即引其王歸義于高宗皇帝。由是拜左威衛大將軍，封來遠郡開國公。",
+            "ko": "식진에 이르러 대대로 벼슬을 이으니, 어진 이를 본받은 것이다. 당이 천명을 받아 동쪽의 복종하지 않는 자를 칠 때, 곧 그 왕을 이끌고 고종 황제에게 의리로 돌아왔다. 이로써 좌위위대장군에 제수되고 내원군 개국공에 봉해졌다.",
+            "html": "Sikjin inherited the office, as the worthy follow the worthy. When Tang took Heaven’s mandate and marched east against the defiant, he at once led his king to submit to the Third Emperor. For this he was made Grand General of the Left Guard and enfeoffed as Duke of Laiyuan.",
+            "source": "Epitaph of Ye Inseu (禰仁秀墓誌), grandson of Ye Sikjin, Tang, 8th c.",
+            "style": "tomb",
+            "event": "ungjin-surrender"
+          },
+          "url": "https://m.shufaziliao.com/maobi/7987218661b50c2164c06cab5f2eac89.html",
+          "why": "The family’s own version, in the grandson’s tomb: 即引其王, ‘he led his king.’ The Korean annals say the king surrendered; the Ye family stone says Sikjin brought him in."
+        },
+        {
+          "after": "together with the several fortresses, all surrendered",
+          "quote": {
+            "kind": "quote",
+            "hanja": "去顯慶五年，官軍平本藩日，見機識變，杖劍知歸。似由余之出戎，如金磾之入漢。",
+            "ko": "지난 현경 5년, 관군이 본국을 평정하던 날, 기미를 보고 변화를 알아 칼을 짚고 돌아갈 곳을 알았다. 유여가 융을 떠난 것과 같고, 김일제가 한에 들어간 것과 같았다.",
+            "html": "In the fifth year of Xianqing, on the day the imperial army pacified his home country, he saw the moment, read the change, and, sword in hand, knew where to turn. Like You Yu leaving the Rong; like Jin Midi entering Han.",
+            "source": "Epitaph of Ye Gun (禰軍墓誌), elder brother of Ye Sikjin, Tang, 678",
+            "style": "tomb",
+            "event": "ungjin-surrender"
+          },
+          "url": "https://ko.wikipedia.org/wiki/예군",
+          "why": "The brother who walked into the king’s room with him. Tang praise for the same night: ‘he saw the moment.’"
+        },
+        {
+          "after": "together with the several fortresses, all surrendered",
+          "quote": {
+            "kind": "quote",
+            "hanja": "公諱寔進百濟熊川人也 祖佐平譽多父佐平思善竝蕃官正一品 … 夙禀貞規早標義節占風異域就日長安",
+            "ko": "공의 휘는 식진이요, 백제 웅천 사람이다. 할아버지 좌평 예다와 아버지 좌평 사선은 모두 번국 관직 정일품이었다. … 일찍이 곧은 법도를 타고나 의로운 절개를 드러내니, 이역에서 바람을 점치고 장안의 해를 향해 나아갔다.",
+            "html": "His name was Sikjin, a man of Ungcheon in Baekje. His grandfather, Minister Yeda, and his father, Minister Saseon, both held the first rank of that vassal court. … Upright from birth and early marked for righteousness, he read the wind in a foreign land and went toward the sun in Chang’an.",
+            "source": "Epitaph of Ye Sikjin (禰寔進墓誌), Tang, 672",
+            "style": "tomb",
+            "event": "ungjin-surrender"
+          },
+          "url": "https://ko.wikipedia.org/wiki/예식진",
+          "why": "His own tomb. It says nothing about the king, only that he ‘read the wind’. It also promotes his father and grandfather to first rank, the family Coup says was never once asked to court. The new scene’s narrator winks at this just before."
+        }
+      ],
+      "scenes": [
+        {
+          "after": "…For whoever was king.",
+          "blocks": [
+            {
+              "kind": "p",
+              "html": "The first morning he counts forty sails. The second morning, sixty-two. He writes both numbers on the wall in charcoal, because that is what he does with numbers.",
+              "ko": "첫날 아침 그는 돛 마흔 개를 센다. 이튿날 아침에는 예순둘. 그는 두 숫자를 숯으로 성벽에 적어 둔다. 숫자를 보면 그렇게 하는 사람이다."
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#e08a2e",
+              "person": "euija",
+              "lines": [
+                "예순둘? 하! 뱃전에 대고 토하는 놈들이 예순두 척이로구나.",
+                "식진아, 멀미하는 소로는 밭을 못 간다. 하하!",
+                "술 가져오너라. 좋은 잔으로. 수비대 잔 말고."
+              ],
+              "en": [
+                "Sixty-two? Ha! Sixty-two boatloads of men throwing up over the side.",
+                "Sikjin, you can’t plough with a seasick ox. Ha!",
+                "Bring wine. The good cups. Not the garrison ones."
+              ]
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#a3813d",
+              "person": "yesikjin",
+              "lines": [
+                "좋은 잔은 사비에 있습니다, 폐하.",
+                "…수비대 잔으로 올리겠습니다."
+              ],
+              "en": [
+                "The good cups are in Sabi, Majesty.",
+                "…I’ll bring the garrison ones."
+              ]
+            },
+            {
+              "kind": "p",
+              "html": "On the third day a boatman comes up the river with Sabi still on his face. Ye Sikjin hears him out alone, on the wall. Then he takes him to the king, because that is the order things are done in.",
+              "ko": "사흗날, 사비에서 본 것이 아직 얼굴에 남은 사공 하나가 강을 거슬러 올라온다. 예식진은 성벽 위에서 혼자 그 말을 끝까지 듣는다. 그런 다음 그를 왕에게 데려간다. 일은 그 순서로 하는 것이니까."
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#e08a2e",
+              "person": "euija",
+              "lines": [
+                "태가 왕관을 썼다고? 그놈은 호박에 갓도 못 씌우는 놈이다!",
+                "융이는… 꿇었고.",
+                "…좋다. 꿇은 아들도 아들이지. 성을 되찾으면 한 달은 마당에 세워 두마. 하하!"
+              ],
+              "en": [
+                "Tae put on a crown? That boy couldn’t get a hat on a pumpkin!",
+                "And Yung… knelt.",
+                "…Fine. A son on his knees is still a son. When I take the city back, he can stand in the yard for a month. Ha!"
+              ]
+            },
+            {
+              "kind": "p",
+              "html": "That night his elder brother comes in by the river gate. Ye Gun is the family’s talker. He has been downriver all day, he says, looking at the weather. It has rained since noon. He comes back dry.",
+              "ko": "그날 밤 형이 강 쪽 문으로 들어온다. 예군은 집안에서 말을 맡은 사람이다. 종일 강 아래로 날씨를 보러 갔었다고 한다. 정오부터 비가 왔다. 그는 젖지 않은 채 돌아온다."
+            },
+            {
+              "kind": "dialogue",
+              "person": "yegun",
+              "lines": [
+                "그 장군은 진흙 얘기를 날씨 얘기하듯 하더라. 진흙은 젖은 길일 뿐이라나.",
+                "그리고 이 성에 방이 몇 개냐고 묻더군. 아우한테 물어봐야 한다고 했다. 세는 건 너니까."
+              ],
+              "en": [
+                "That general talks about mud the way other men talk about weather. Mud is just wet road, apparently.",
+                "And he asked how many rooms this fortress has. I said I’d have to ask my brother. You’re the one who counts."
+              ]
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#a3813d",
+              "person": "yesikjin",
+              "lines": [
+                "서른아홉입니다, 형님.",
+                "폐하 방까지 치면요."
+              ],
+              "en": [
+                "Thirty-nine, brother.",
+                "Counting the king’s."
+              ]
+            },
+            {
+              "kind": "dialogue",
+              "person": "yegun",
+              "lines": [
+                "사람은?"
+              ],
+              "en": [
+                "And men?"
+              ]
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#a3813d",
+              "person": "yesikjin",
+              "lines": [
+                "방에 따라 다릅니다."
+              ],
+              "en": [
+                "Depends on the room."
+              ]
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#e08a2e",
+              "person": "euija",
+              "lines": [
+                "수비대 술도 마시다 보니 정이 드는구나, 식진아!",
+                "끝나면 너는 조정으로 올라온다. 진짜 자리로. 앞줄로. 배 세는 짓은 그만이다.",
+                "얼굴이 왜 그러냐? 농담 아니다. 마셔라!"
+              ],
+              "en": [
+                "Garrison wine! It grows on you, Sikjin!",
+                "When this is over, you’re coming to court. A real seat. Front row. No more counting boats.",
+                "What’s that face? That wasn’t a joke. Drink!"
+              ]
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#a3813d",
+              "person": "yesikjin",
+              "lines": [
+                "황공합니다, 폐하.",
+                "…어느 자리입니까?"
+              ],
+              "en": [
+                "You honour me, Majesty.",
+                "…Which seat?"
+              ]
+            },
+            {
+              "kind": "dialogue",
+              "chip": "#e08a2e",
+              "person": "euija",
+              "lines": [
+                "하! 들었느냐? 어느 자리냐니! 아무 데나 골라라.",
+                "내 자리가 마흔하나나 있다."
+              ],
+              "en": [
+                "Ha! Listen to him. Which seat! Take your pick.",
+                "I’ve got forty-one of them."
+              ]
+            },
+            {
+              "kind": "p",
+              "html": "That night he opens the drawer. The list is where he left it. Forty-one names. None of them his. He reads it a third time, being careful with numbers, and puts it back. He does not close the drawer. One day a Tang stonecutter will carve his father and grandfather into Baekje’s first rank. Neither of them was ever asked to court. Tombstones are generous that way.",
+              "ko": "그날 밤 그는 서랍을 연다. 명단은 넣어 둔 그대로다. 이름 마흔하나. 그의 이름은 없다. 숫자에 꼼꼼한 사람이라, 그는 세 번째로 읽고 도로 넣는다. 서랍은 닫지 않는다. 언젠가 당나라 석공 하나가 그의 아버지와 할아버지를 백제의 일품으로 새겨 줄 것이다. 둘 다 조정에 한 번 불려 간 적 없는 사람들이다. 묘비란 그렇게 너그럽다."
+            }
+          ],
+          "why": "Ye Sikjin’s four days at Bear Fortress, between ‘…For whoever was king.’ and ‘On the fifth night…’. He counts sails, hears the Sabi news first, and gets the Tang question through his elder brother (‘how many rooms’ / ‘depends on the room’). Euija, drunk and generous, promises him a seat and jokes that he has forty-one. That night he rereads the forty-one-sons list from the Coup drawer. Nothing is announced, so the existing ‘the king understands before anyone speaks’ still lands. The closing tombstone line sets up the epitaph cards after the surrender quotes. 14 blocks; voices follow people.ts (Euija: royal 반말, farmyard jokes, laughs first; Sikjin: literal, polite, careful with numbers and seats, 하십시오체 upward)."
+        }
+      ],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-baekje",
+      "title": "Buyeo Euija†",
+      "add": [
+        {
+          "after": "Euija is brought forth before the Third Emperor",
+          "quote": {
+            "kind": "quote",
+            "hanja": "十一月，戊戌朔，上御則天門樓，受百濟俘，自其王義慈以下皆釋之。",
+            "ko": "11월 초하루 무술일, 황제가 칙천문 누각에 나아가 백제의 포로를 받고, 그 왕 의자 이하를 모두 풀어 주었다.",
+            "html": "Eleventh month, first day. The emperor went up to the Zetian Gate tower to receive the Baekje captives, and released them all, from their king Euija down.",
+            "source": "Zizhi Tongjian (資治通鑑) bk. 200, Tang Gaozong, Xianqing 5 (660), eleventh month",
+            "event": "baekje-captives"
+          },
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷200",
+          "why": "China’s version of the presentation of the captives."
+        },
+        {
+          "after": "Euija is brought forth before the Third Emperor",
+          "quote": {
+            "kind": "quote",
+            "hanja": "十一月一日，為將軍蘇定方等所捉百濟王以下太子隆等諸王子十三人，大佐平沙宅千福、國辨成以下三十七人，并五十許人。奉進朝堂。急引趍向天子。天子恩敕見前放著。",
+            "ko": "11월 1일, 장군 소정방 등에게 붙잡힌 백제왕 이하 태자 융 등 왕자 열셋, 대좌평 사택천복과 국변성 이하 서른일곱, 모두 쉰 남짓한 사람을 조당에 바쳤다. 서둘러 끌고 천자 앞으로 나아갔다. 천자가 은혜로운 칙명으로 보는 앞에서 풀어 주었다.",
+            "html": "First day of the eleventh month. The king of Baekje, seized by General Su and the rest, with Crown Prince Yung and the other princes, thirteen, Great Minister Satek Chunbok, Guk Byeonseong and thirty-seven others, some fifty people in all, were presented at the court hall and hurried before the Son of Heaven. By gracious edict the Son of Heaven released them where they stood.",
+            "source": "Nihon Shoki (日本書紀) bk. 26, Saimei 6 (660), seventh month — note quoting the account of Iki no Hakatoko (伊吉連博德書), a Yamato envoy who saw it",
+            "event": "baekje-captives"
+          },
+          "url": "https://zh.wikisource.org/wiki/日本書紀/卷第廿六",
+          "why": "The same morning seen by a Yamato envoy who was detained in the Tang capital and watched it. Two nations, same day, same release."
+        },
+        {
+          "after": "A man the court once called the Zengzi of the East",
+          "quote": {
+            "kind": "quote",
+            "hanja": "義慈事親以孝行聞，友于兄弟，時人號「海東曾、閔」。及至京，數日而卒。",
+            "ko": "의자는 어버이를 효성으로 섬겨 이름이 났고 형제와 우애하니, 당시 사람들이 ‘해동의 증자·민자’라 불렀다. 경사에 이르러 며칠 만에 죽었다.",
+            "html": "Euija served his parents with a devotion people talked about, and was kind to his brothers; men of his time called him the Zeng and Min of the East. He reached the capital and died a few days later.",
+            "source": "Jiu Tangshu (舊唐書) bk. 199A, Eastern Barbarians — Baekje"
+          },
+          "url": "https://zh.wikisource.org/wiki/舊唐書/卷199上",
+          "why": "The record of the nickname this epitaph block names, placed after his death."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    },
+    {
+      "chapter": "fall-of-baekje",
+      "title": "Ungjin Commandery",
+      "add": [
+        {
+          "after": "threw five commanderies over the country like a net over a pond",
+          "quote": {
+            "kind": "quote",
+            "hanja": "至是乃以其地分置熊津…等五都督府，各統州縣，立其酋渠爲都督、刺史及縣令。",
+            "ko": "이에 그 땅을 나누어 웅진 … 등 다섯 도독부를 두고 각기 주와 현을 거느리게 하였으며, 그 우두머리들을 세워 도독·자사·현령으로 삼았다.",
+            "html": "Its land was then divided into five area commands, Ungjin and the rest, each governing its prefectures and counties, and its own chieftains were set up as commanders, prefects and magistrates.",
+            "source": "Jiu Tangshu (舊唐書) bk. 199A, Eastern Barbarians — Baekje"
+          },
+          "url": "https://zh.wikisource.org/wiki/舊唐書/卷199上",
+          "why": "The net itself, with Baekje’s own chiefs as the knots. The ellipsis drops the commandery names, one of which is a founding-myth title that has its own episode."
+        }
+      ],
+      "scenes": [],
+      "fix": []
+    }
+  ],
+  "newPeople": [
+    {
+      "id": "yegun",
+      "name": "Ye Gun",
+      "korean": "예군",
+      "why": "禰軍 (613–678), Ye Sikjin’s ELDER brother and the ‘his brother’ of Sabi’s fifth night. He speaks in the new Ungjin scene. He was later a Tang envoy to Wa and Silla, and his epitaph is quoted as style 'tomb'. Proposed voice: the family’s smooth talker; reports what powerful men said as if it were weather, asks short questions, never says what he wants. Korean: easy 반말 to his younger brother, polished 하십시오체 to rank. Suggested fields: hanja 禰軍, kingdom baekje, born 613, died 678, events [{year:660, label:'Walks into the king’s room at Bear Fortress with his brother.'}]."
+    }
+  ],
+  "notes": "SOURCES AND VERBATIM. Every hanja/native string was fetched this session from the URL on its item (zh.wikisource raw pages, db.history.go.kr compareViewer, seisaku.bz, the sinkipo bk. 28 transcription, ko.wikipedia epitaph transcriptions, shufaziliao, kdp.aks.ac.kr). Editorial glosses in braces/parentheses and performance markers ([음영], [말], footnotes) were stripped from the kdp texts. The kdp transcriptions write archaic Hangul (arae-a) as Hanyang private-use codepoints. Those were transcoded to standard Unicode jamo, using only codes whose reading the transcription itself confirms through an adjacent editorial gloss: U+E1AD=ᄀᆞᆯ (gloss 말할), U+E982=ᄉᆞᆯ (일곱 ᄉᆞᆯ 난 아이), U+E97D=ᄉᆞ (gloss 卽死/四父子), U+F537=ᄒᆞ (gloss 하루는/하라고), U+F53A=ᄒᆞᆫ (gloss 한 필), U+F1FC=ᄌᆞ (gloss 楸子/一字), U+E38A=ᄃᆞ (gloss 다리), U+E202=ᄁᆞ (gloss 까지).\n\nBONPURI NATIVE TEXTS: FOUND. All are Hanguk Gubimunhak Daegye (rev. ed.) recordings of the April 2011 큰굿 at Sanggari, Aewol-eup, recorded by 강정식·강소전·송정희: 삼공본풀이 (정태진, 2_14550), 이공본풀이 (이승순, 2_14554), 세경본풀이 (이승순, 2_14553), 차사/체서본풀이 (고연옥, 2_14557). Also: 초감제 of the 2009 Tapdong 영등굿 (강순선; recorded by 허남춘·강정식·강소전·송정희; 2_15862). It supplies the 베포도업침 opening (used for Heaven–Earth King), the 오백장군 line (Sulmun) and the 고량부 삼성혈 line (Three Princes). Legends from Daegye 9-1, 1979, recorded by 현용준·김영돈: 설문대할망 and 김녕사굴, both told by 안용인 (1_11548, 1_2211).\n\nBONPURI NATIVE TEXTS: NOT FOUND. (1) A native narrative text of 천지왕본풀이 (two suns, Sumyeong Jangja, the flower contest). The 1937 박봉춘本 (赤松·秋葉), 진성기 and 안사인 texts were not available online, and the kdp corpus titles scanned this session had none. Heaven–Earth King therefore gets the 베포도업 frame the bonpuri is sung in, not the story itself. (2) 산방덕 (Stone Lady): kdp 1_10288 ‘산방산 이야기’ is listed but marked 텍스트화되지 않았습니다, and 1_10285 is a different 산방산 legend. (3) No native 삼성신화 legend text was found apart from the 초감제 line. (4) 백주또/소천국 (송당본풀이) was not searched far enough to verify; Three Princes’ second scene has no quote of its own.\n\nCROSS-NATION GROUPS: ungjin-surrender (Sabi). Existing Jiu Tangshu 83 + existing Samguk Sagi bk. 28, then the new Samguk Sagi bk. 5 (Silla), Nihon Shoki (seized), and the Ye Inseu, Ye Gun and Ye Sikjin epitaphs, all consecutive. Please also tag the two existing Sabi quotes (其大將禰植又將義慈來降 and 於是 王及太子孝與諸城皆降) with event:'ungjin-surrender'. The fix actions can’t express adding a field, so this is a manual step. baekje-captives (Buyeo Euija†): Zizhi Tongjian + Nihon Shoki/Iki no Hakatoko. gyerim-prefecture (Ungjin Commandery): Samguk Sagi bk. 6 + Jiu Tangshu 199A. tamla-three-clans (Three Princes): Goryeosa + the 초감제 line; Tamla’s own song against the Goryeo record, which disagree on which clan came first.\n\nYE SIKJIN. The contradiction is now on the page in sequence. Korean annals: ‘the king surrendered’ (bk. 28), ‘Euija led … the Ungjin commander’s troops’ (bk. 5). Tang history: ‘his general Ye Sik brought Euija’ (existing Jiu Tangshu 83). Japan: ‘seized by General Su’. Family stones: ‘he led his king’ (Ye Inseu), ‘saw the moment … knew where to turn’ (Ye Gun), ‘read the wind’ with the king unmentioned (Ye Sikjin). The scene’s narrator also catches the epitaphs promoting the Ye father and grandfather to first rank, against Coup’s ‘never once asked to court’. Ye Gun’s epitaph (曾祖福，祖譽，父善，皆是本藩一品) says the same.\n\nCORRECTIONS TO EXISTING TEXT (not quotes, so not expressible as fixes): Sabi ‘On the fifth night he comes into the king’s rooms with his brother…’ has ko ‘아우와 장정 스물’. Ye Gun (b. 613) was the ELDER brother of Ye Sikjin (b. 615), so it should read ‘형과 장정 스물’. The Gyebek quote’s source lacks the book number: ‘Samguk Sagi (三國史記) bk. 47, Biographies — Gyebek’.\n\nJUDGEMENT CALLS. (a) Gyerim: Ungjin Commandery narrates the edict and Munmu reacts to it, so the paired cards are a third telling. They are kept because the two records’ wording (‘our country’ vs ‘his country … Bupmin’) is what the king is angry about; drop them if that is too much. (b) Not used: Nihon Shoki’s 或曰 百濟自亡 由君大夫人妖女之無道 (a Japanese counterpart to the Pacification stele’s ‘bewitching woman’). Its only natural slot, after the Sabi stele card, would split the stele from Chunchu’s ‘Harmonized.’ (c) Not used: Jiu Tangshu 84’s Liu Rengui reconstruction (收斂骸骨…修錄戶口…頒宗廟忌諱). Ungjin Commandery already narrates and dramatizes that paperwork. (d) Gyebek already had its quote (the bk. 47 family killing) when this pass ran, so nothing was added there; the Yellow Mountain duplicate was trimmed instead. (e) Out of scope: King Pungjang (fall-of-baekje) also has no quote. Buyeo Euija† lost its quote at some point and gets three here.\n\nSPOILER AUDIT RESULT. Every quote in the three chapters was checked against its position. Yellow Mountain bk. 28 card trimmed (it announced the defeat and Gyebek’s death about forty-five blocks early). Descent’s Pacification-stele card removed (it named the Tang pacification before the fall and duplicates Sabi). Sungchung’s memorial card removed (duplicate) and replaced with the fleet sailing. Verbatim corrections: Descent ×2, Yellow Mountain Gwanchang; Yellow Mountain Gyebek-speech card trimmed as a duplicate. All others pass: Nine Omens turtle, Onjo ×2, Heungsu ×2, Gyebek, Yellow Mountain bk. 5, Sabi ×5, Kim Chunchu†."
+}

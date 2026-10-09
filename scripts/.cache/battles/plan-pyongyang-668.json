@@ -1,0 +1,7 @@
+[
+	{ "episode": 86, "battle": "pyongyang-668", "phase": "roads", "after": { "kind": "p", "text": "Namseng rides beside the Blue Dragon in a Tang coat" } },
+	{ "episode": 86, "battle": "pyongyang-668", "phase": "ring", "after": { "kind": "p", "text": "The ring closes. A month goes by." } },
+	{ "episode": 86, "battle": "pyongyang-668", "phase": "banner", "after": { "kind": "p", "text": "He goes out through the gate with the king and ninety-eight officials" } },
+	{ "episode": 86, "battle": "pyongyang-668", "phase": "gate", "after": { "kind": "p", "text": "The Tang come in before the bell has stopped ringing" } },
+	{ "episode": 86, "battle": "pyongyang-668", "phase": "fire", "after": { "kind": "p", "text": "When the gate towers burn, Namgun stabs himself" } }
+]

@@ -1,0 +1,195 @@
+{
+	"id": "sabi-660",
+	"title": "The Fall of Sabi",
+	"ko": "사비성 함락",
+	"hanja": "泗沘城之役",
+	"year": 660,
+	"place": "sabi",
+	"scale": { "km": 10, "px": 80 },
+	"terrain": [
+		{ "kind": "sea", "points": [[0, 0], [36, 0], [58, 89], [86, 190], [108, 266], [150, 350], [144, 444], [160, 492], [186, 512], [176, 560], [0, 560]], "label": "Western Sea", "ko": "서해", "labelAt": [55, 330] },
+		{ "kind": "marsh", "points": [[150, 470], [232, 466], [252, 498], [205, 520], [162, 512]] },
+		{ "kind": "river", "points": [[640, 40], [578, 66], [522, 86], [472, 112], [430, 140], [394, 192], [350, 226], [342, 262], [362, 300], [408, 330], [432, 356], [402, 396], [346, 426], [290, 452], [230, 486], [160, 497]], "width": 12, "label": "White River", "ko": "백강", "labelAt": [470, 395] },
+		{ "kind": "mountain", "at": [620, 190], "r": 30 },
+		{ "kind": "mountain", "at": [660, 430], "r": 30 },
+		{ "kind": "hill", "at": [600, 312], "r": 34, "label": "Yellow Mountain", "ko": "황산벌", "labelAt": [610, 365] },
+		{ "kind": "road", "points": [[700, 318], [600, 312], [520, 300], [450, 284], [392, 252]] },
+		{ "kind": "city", "at": [375, 245], "side": "baekje", "label": "Sabi", "ko": "사비" },
+		{ "kind": "city", "at": [522, 104], "side": "baekje", "label": "Bear Fortress", "ko": "웅진성" },
+		{ "kind": "camp", "at": [420, 345], "side": "tang", "label": "Tang camp", "ko": "당군 진영" },
+		{ "kind": "label", "at": [215, 445], "label": "Final Ford", "ko": "기벌포" },
+		{ "kind": "label", "at": [760, 330], "label": "from Tanhyeon pass", "ko": "탄현에서" }
+	],
+	"sides": [
+		{ "id": "tang", "name": "Tang", "ko": "당", "kingdom": "tang" },
+		{ "id": "silla", "name": "Silla", "ko": "신라", "kingdom": "silla" },
+		{ "id": "baekje", "name": "Baekje", "ko": "백제", "kingdom": "baekje" }
+	],
+	"units": [
+		{ "id": "tg-land", "side": "tang", "label": "Red Fowl", "ko": "주작" },
+		{ "id": "tg-fleet", "side": "tang", "label": "the fleet", "ko": "함대" },
+		{ "id": "sl", "side": "silla", "label": "Yushin", "ko": "유신" },
+		{ "id": "bk-mouth", "side": "baekje", "label": "river-mouth line", "ko": "강어귀 방어선" },
+		{ "id": "bk-field", "side": "baekje", "label": "Baekje's last army", "ko": "백제의 마지막 군" },
+		{ "id": "bk-euija", "side": "baekje", "label": "Euija", "ko": "의자", "unrecorded": true },
+		{ "id": "bk-tae", "side": "baekje", "label": "Tae", "ko": "태", "unrecorded": true },
+		{ "id": "bk-ungjin", "side": "baekje", "label": "Ye Sikjin", "ko": "예식진", "unrecorded": true }
+	],
+	"phases": [
+		{
+			"id": "mouth",
+			"label": "Sails at Final Ford",
+			"ko": "기벌포의 돛",
+			"caption": "The ninth day. A hundred and thirty thousand men come in off the sea at the White River's mouth, and a few thousand Baekje soldiers wait on the high ground above a mile of mud. Far to the east, Silla is busy.",
+			"captionKo": "아흐렛날. 십삼만이 바다에서 백강 어귀로 들어온다. 백제군 수천이 갯벌 위 높은 땅에서 기다린다. 멀리 동쪽에서, 신라는 바쁘다.",
+			"units": {
+				"tg-land": { "at": [85, 400], "men": 65000, "shape": "fleet", "facing": 0, "r": 0.8 },
+				"tg-fleet": { "at": [95, 505], "men": 65000, "shape": "fleet", "facing": 0, "r": 0.8 },
+				"sl": { "at": [655, 302], "men": 50000, "facing": 180 },
+				"bk-mouth": { "at": [245, 455], "men": 3000, "shape": "line", "facing": 220 },
+				"bk-euija": { "at": [375, 245], "men": 1000 },
+				"bk-ungjin": { "at": [530, 96], "men": 1000 }
+			},
+			"arrows": [
+				{ "side": "tang", "kind": "naval", "points": [[10, 470], [90, 470], [160, 488]] },
+				{ "side": "silla", "kind": "advance", "points": [[780, 320], [730, 310], [705, 304]] }
+			]
+		},
+		{
+			"id": "landing",
+			"label": "Willow mats",
+			"ko": "버들 자리",
+			"caption": "Mud is just wet road. Willow mats go down, the army walks across dry-shod, and the line on the high ground breaks by evening. Several thousand Baekje dead; the rest scatter toward the capital. The same morning, Silla meets Gyebek.",
+			"captionKo": "갯벌은 젖은 길일 뿐. 버들 자리를 깔고, 군대가 발도 안 젖고 건넌다. 저녁 전에 높은 땅의 줄이 무너진다. 백제군 수천이 죽고 나머지는 도성 쪽으로 흩어진다. 같은 아침, 신라는 계백을 만난다.",
+			"units": {
+				"tg-land": { "at": [228, 468], "men": 65000, "facing": 30 },
+				"tg-fleet": { "at": [95, 505], "men": 65000, "shape": "fleet", "facing": 0, "r": 0.8 },
+				"sl": { "at": [650, 302], "men": 50000, "facing": 180 },
+				"bk-mouth": { "at": [262, 440], "men": 0, "routed": true, "facing": 220 },
+				"bk-euija": { "at": [375, 245], "men": 1000 },
+				"bk-ungjin": { "at": [530, 96], "men": 1000 }
+			},
+			"arrows": [
+				{ "side": "tang", "kind": "charge", "points": [[150, 500], [195, 484], [240, 458]], "label": "over the mud", "ko": "갯벌을 건너" },
+				{ "side": "baekje", "kind": "retreat", "points": [[268, 438], [310, 400], [345, 330]] }
+			],
+			"events": [
+				{ "kind": "clash", "at": [248, 452], "label": "several thousand dead", "ko": "수천 전사" },
+				{ "kind": "clash", "at": [600, 300], "label": "the same morning", "ko": "같은 아침" }
+			]
+		},
+		{
+			"id": "tide",
+			"label": "Up on the tide",
+			"ko": "밀물을 타고",
+			"caption": "The tide comes in and the fleet rides it upriver, bow to stern, drums going, while the foot keeps pace along the bank. They camp south of Sabi and wait for an ally who is late.",
+			"captionKo": "밀물이 들자 함대가 그것을 타고 강을 오른다. 이물이 고물을 물고, 북을 치며. 보병은 강둑을 따라 발을 맞춘다. 사비 남쪽에 진을 치고, 늦는 동맹을 기다린다.",
+			"units": {
+				"tg-land": { "at": [440, 362], "men": 65000, "facing": 290 },
+				"tg-fleet": { "at": [362, 412], "men": 65000, "shape": "column", "facing": 320 },
+				"sl": { "at": [560, 302], "men": 50000, "shape": "column", "facing": 180 },
+				"bk-field": { "at": [382, 290], "men": 10000, "shape": "line", "facing": 120 },
+				"bk-euija": { "at": [375, 245], "men": 1000 },
+				"bk-ungjin": { "at": [530, 96], "men": 1000 }
+			},
+			"arrows": [
+				{ "side": "tang", "kind": "naval", "points": [[200, 492], [290, 452], [346, 426], [395, 398]], "label": "on the flood tide", "ko": "밀물을 타고" },
+				{ "side": "tang", "kind": "advance", "points": [[300, 476], [380, 430], [430, 372]] },
+				{ "side": "silla", "kind": "advance", "points": [[640, 310], [560, 304], [500, 296]], "label": "late", "ko": "늦었다" }
+			]
+		},
+		{
+			"id": "plain",
+			"label": "The Sabi plain",
+			"ko": "사비 벌판",
+			"caption": "Silla arrives late and keeps its officer's head. Then both armies come at the city by four roads, and Baekje throws everything it has left in their way. Ten thousand are killed or taken. The rest run for the walls.",
+			"captionKo": "신라가 늦게 도착하고, 군관의 목은 붙어 있다. 그리고 두 군대가 네 길로 도성에 다가선다. 백제는 남은 것을 모두 그 앞에 던진다. 만여 명이 죽거나 잡힌다. 나머지는 성벽으로 달아난다.",
+			"units": {
+				"tg-land": { "at": [398, 332], "men": 65000, "facing": 290 },
+				"tg-fleet": { "at": [352, 322], "men": 65000, "shape": "column", "facing": 290 },
+				"sl": { "at": [472, 284], "men": 50000, "facing": 200 },
+				"bk-field": { "at": [382, 284], "men": 0, "routed": true, "facing": 120 },
+				"bk-euija": { "at": [375, 245], "men": 1000 },
+				"bk-ungjin": { "at": [530, 96], "men": 1000 }
+			},
+			"arrows": [
+				{ "side": "tang", "kind": "charge", "points": [[425, 350], [400, 315], [386, 290]] },
+				{ "side": "silla", "kind": "charge", "points": [[480, 290], [435, 284], [398, 280]] },
+				{ "side": "tang", "kind": "naval", "points": [[372, 340], [352, 305], [346, 272]] },
+				{ "side": "tang", "kind": "pursuit", "points": [[382, 282], [378, 266], [376, 256]], "label": "into the outer wall", "ko": "외성까지" }
+			],
+			"events": [
+				{ "kind": "clash", "at": [384, 286], "label": "ten thousand killed or taken", "ko": "만여 명이 죽거나 잡힘" }
+			]
+		},
+		{
+			"id": "flight",
+			"label": "Night flight",
+			"ko": "밤의 도주",
+			"caption": "That night the king takes a boat upriver to Bear Fortress, with fewer men than he expected. The allies close round a capital that has, for the moment, no king.",
+			"captionKo": "그날 밤 왕은 배를 타고 강을 거슬러 웅진성으로 간다. 생각보다 적은 사람을 데리고. 연합군은 잠시 왕이 없는 도성을 에워싼다.",
+			"units": {
+				"tg-land": { "at": [388, 312], "men": 65000, "facing": 270 },
+				"tg-fleet": { "at": [338, 268], "men": 65000, "shape": "column", "facing": 270 },
+				"sl": { "at": [462, 240], "men": 50000, "facing": 180 },
+				"bk-euija": { "at": [512, 108], "men": 1000 },
+				"bk-tae": { "at": [375, 245], "men": 1000 },
+				"bk-ungjin": { "at": [530, 96], "men": 1000 }
+			},
+			"arrows": [
+				{ "side": "baekje", "kind": "retreat", "points": [[380, 236], [398, 190], [440, 140], [505, 108]], "label": "by night, upriver", "ko": "밤에, 강을 거슬러" }
+			]
+		},
+		{
+			"id": "gate",
+			"label": "The gate",
+			"ko": "성문",
+			"caption": "Tae crowns himself and means to fight. His nephews go down the wall on a rope, half the city after them. Tang flags go up on the parapet, the crown prince kneels in the dirt, and Chunbok opens the gate.",
+			"captionKo": "태가 스스로 왕관을 쓰고 싸우려 한다. 조카들이 밧줄을 타고 성벽을 내려가고, 도성의 절반이 뒤따른다. 성가퀴에 당의 깃발이 오르고, 태자는 흙바닥에 무릎을 꿇고, 천복이 성문을 연다.",
+			"units": {
+				"tg-land": { "at": [384, 298], "men": 65000, "facing": 270 },
+				"tg-fleet": { "at": [338, 262], "men": 65000, "shape": "column", "facing": 270 },
+				"sl": { "at": [445, 240], "men": 50000, "facing": 180 },
+				"bk-euija": { "at": [512, 108], "men": 1000 },
+				"bk-tae": { "at": [375, 245], "men": 0 },
+				"bk-ungjin": { "at": [530, 96], "men": 1000 }
+			},
+			"events": [
+				{ "kind": "gate", "at": [362, 236], "label": "down the rope", "ko": "밧줄을 타고" },
+				{ "kind": "surrender", "at": [396, 262], "label": "the crown prince kneels", "ko": "태자가 무릎 꿇다" },
+				{ "kind": "gate", "at": [388, 250], "label": "Chunbok opens the gate", "ko": "천복이 성문을 연다" }
+			]
+		},
+		{
+			"id": "ungjin",
+			"label": "Bear Fortress",
+			"ko": "웅진성",
+			"caption": "Five nights later the lord of Bear Fortress comes into the king's rooms with his brother and twenty men. By morning the king is on the road back down the river, bound, toward the Red Fowl's tent.",
+			"captionKo": "닷새째 밤, 웅진성의 주인이 형과 스무 명을 데리고 왕의 방에 들어온다. 아침이면 왕은 묶인 채 강을 따라 내려가는 길 위에 있다. 주작의 막사로.",
+			"units": {
+				"tg-land": { "at": [384, 298], "men": 65000, "facing": 270 },
+				"tg-fleet": { "at": [338, 262], "men": 65000, "shape": "column", "facing": 270 },
+				"sl": { "at": [445, 240], "men": 50000, "facing": 180 },
+				"bk-euija": { "at": [400, 262], "men": 0 },
+				"bk-ungjin": { "at": [410, 255], "men": 0 }
+			},
+			"arrows": [
+				{ "side": "baekje", "kind": "advance", "points": [[520, 112], [470, 150], [425, 212], [402, 248]], "label": "the king, bound", "ko": "묶인 왕" }
+			],
+			"events": [
+				{ "kind": "surrender", "at": [404, 264], "label": "handed over", "ko": "넘겨진다" }
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 5, Annals of Silla, Muyeol year 7",
+		"Samguk Sagi 28, Annals of Baekje, Uija year 20",
+		"Samguk Sagi 42, Biography of Kim Yushin (the willow mats)",
+		"Old Book of Tang 83, Biography of Su Dingfang",
+		"New Book of Tang 111, Biography of Su Dingfang",
+		"Zizhi Tongjian 200",
+		"Epitaph of Ye Sikjin (Tang, 672)"
+	],
+	"note": "The records give the Tang host as 130,000 by land and sea (Samguk Sagi; the Zizhi Tongjian says 100,000) and Silla's as 50,000. How the Tang split between ships and shore is not recorded, so the map halves it, and Silla's losses at Yellow Mountain are not counted. Baekje's armies are recorded only by their losses: several thousand dead at the river mouth (drawn at the low reading, 3,000) and over ten thousand killed or taken outside the city (drawn at 10,000); the survivors are not drawn. The Old Book of Tang fights the field battle on the way upriver, before Silla comes; the map puts it on the twelfth with both armies, the Silla annals' 'four roads'. By the annals Silla was one day late, not two as the story says. The Tang books have Tae open the gate after Tang flags went up, with Yung and Chunbok surrendering; the story gives the gate to Chunbok. Final Ford follows the usual identification at Janghang on the Geum estuary; the field battle, 'some twenty li from the city', is placed approximately.",
+	"noteKo": "기록은 당군을 수륙 십삼만(삼국사기, 자치통감은 십만), 신라군을 오만으로 전한다. 당군이 배와 뭍에 어떻게 나뉘었는지는 기록에 없어 반씩 나누었고, 황산벌에서 신라가 잃은 병력도 셈하지 않았다. 백제군은 잃은 수로만 남아 있다. 강어귀에서 수천이 죽었고(낮게 잡아 삼천으로 그림), 도성 밖에서 만여 명이 죽거나 잡혔다(만으로 그림). 살아남은 자는 그리지 않았다. 구당서는 도성 밖 전투를 신라가 오기 전, 강을 오르는 길에 놓는다. 지도는 신라본기의 '네 길'을 따라 열이틀 두 군대가 함께 싸운 것으로 그렸다. 신라본기로는 신라가 하루 늦었고, 이야기처럼 이틀이 아니다. 당서는 당의 깃발이 오른 뒤 태가 성문을 열고 융과 천복이 항복했다고 하나, 이야기는 성문을 천복에게 준다. 기벌포는 금강 하구 장항으로 보는 통설을 따랐고, '도성에서 이십여 리'의 전투 자리는 대략이다."
+}

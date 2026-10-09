@@ -1,0 +1,38 @@
+Built by scripts/.cache/widgets/build-huangdi.cjs from the current story.json entry (it never writes story.json; it guards against a drifted entry by checking five block fingerprints). Re-run it after edits: `node scripts/.cache/widgets/build-huangdi.cjs`.
+
+WHAT CHANGED
+- Ambassadors gone: blocks 135–138, 141, 146, 147 deleted; Chunchu's tears joke (answered them) deleted; 139, 142, 148, 149 rewritten so the banquet turns on the poem instead of tears. No image slot was anchored to an ambassador block, so removedImages is empty.
+- Scene plate “Shimin & Chunchu” renamed “The Son of Heaven” (it spoiled the name). Opening summary line replaced with a hook. New plates: “The Farewell Banquet”, “The Last Game”.
+- Name drop moved to the end. Plant: in the audience Chunchu asks (Analects 13.3) what to call the emperor; the emperor says the name is given, not asked for. Payoff: “The Last Game” (after Wu's hallway) carries the original blocks 28–34 word for word, then a callback to 名不正 and the taizong intro card (write 李世民, sub 이세민). No earlier Li Shimin / 이세민 / 李世民 anywhere in the entry; narration's four “Taizong”/“태종” became “the emperor”/“황제” (quotes untouched; the poem source keeps “Tang Taizong” as the required citation form).
+- Diagrams: tang-departments (step flow) moved from block 4 to right after the aghast-at-the-brush paragraph, new caption. New: tang-imperial (tribute) after the Co-Prosperity banner; tang-military (fubing) after the Ministry of War fails to find Saluzi; tang-exam (exam) at the Imperial Academy visit (Jiu Tangshu: Chunchu asked to watch the 釋奠 and lectures). That is three new diagrams; the brief said 1–2, the user asked for government, military and imperial. Drop tang-imperial first if it feels crowded.
+- Qin flashback (“The First Emperor”, year -213), framed by Chu Suiliang among the shelves (“Every book in this room is a copy.” / “Of what burned.”), pays off the 皇帝 term card's “burned the books”; returns to “His Majesty commissions them… Write faster”, which plants the wet-paste Jin shu.
+- Poems at the farewell banquet: Taizong recites 賜蕭瑀 (real, verbatim); Chunchu answers 次韻 on the spot (same rhyme words 臣/仁 in the same places), a regulated 五絕 of the chronicle's own (仄平平仄仄 / 平仄仄平平 / 仄仄平平仄 / 平平仄仄平, rhyme 真): 海隅生勁草，霜重見孤臣。不為狂風偃，心傾聖主仁。 Its trick is Analects 12.19 (grass bends to the virtuous wind): it refuses the “mad wind” (Baekje) and bows to the emperor. The emperor's reaction, the old “rhyme on their knees” line to Zhi, and the parcel of steles + Jin shu (moved after the banquet, now a reward) follow. New payoff: the Jinci stele honours Tang Shuyu, the brother of the paulownia-leaf story told in the Six Steeds promise.
+- Seven chengyu cards: 名不正言不順 (Chunchu), 知彼知己 (Chunchu), 脣亡齒寒 (Chunchu), 遠交近攻 (the emperor, at the go board), 載舟覆舟 (the emperor), 天子無戲言 (the emperor, at the written-promise beat), 牝雞之晨 (Wu). Used in talk without a card: 天無二日 (Mencius 5A.4), 董狐之筆 (Zuo zhuan, Duke Xuan yr. 2; paraphrased, not fetched), 疾風知勁草 (in the poem, noted).
+- Kept everything else verbatim (Six Steeds, gyuku, ward chief, Xuanwu Gate, Wu's hallway, Mingde Gate, On Gunhae, next-episode card). Fixed: typo 떼어때야 → 떼려야; chip of the “most cunning man” Taizong line (#b45309, the west ambassador's colour → #c97a2e).
+- New Tang speech carries zh + zhLatn like the existing Tang lines; Chunchu's new lines carry look: 'ambassador'.
+
+IMAGES
+- All 74 existing slots kept. Re-anchored so every anchor hits exactly one block: bowing-envoys, taizong-meet-court-wide, chunchu-strategist-shadow, silla-tang-alliance-hands, taizong-huanglong-audience → “Chunchu brings an offer” (the new hook; they already stacked at the opening); alliance-handshake (“alliance”, 4 hits) → “alliance sealed”; taizong-meet-name (dead anchor) → “Then is your younger brother called”; taizong-meet-go-stone → the 遠交近攻 go line; taizong-meet-go-up → “Sit. One game, and then you may go.” (the last game); tang-banquet (was on the dying-emperor line) → Wu behind the screen; tang-banner-storm (dead anchor “Tang forces”) → “I do not go to Liaodong for land”. taizong-meet-fit / taizong-chunchu-alone / taizong-name-gift travel with the name-drop blocks to the last game. silla-tang-wide has no `at` (opens the entry), unchanged.
+- newImages: 10 ink slots (7 chengyu, 2 Qin flashback, 1 for the poem exchange). They are NOT in `images`; merge them in when generated. Anchors sit on dialogue/p/quote text because beats.ts `textOf` has no case for `poem` or `chengyu` (anchors on those kinds would silently fall to the entry opening). Add those cases to beats.ts if you want art pinned to the cards themselves.
+
+LEAD MUST CHECK
+- CONFLICT: epilogue › Emperor (643) block 3 is a taizong card with no tab and no write → PersonCard defaults to tab 'intro' and brushes person.hanja = 李世民. It comes before Huangdi in reading order, so the reader gets his intro card and his name five episodes early, and Huangdi's end card is a second intro. Suggest giving that card write: '皇帝' (or role/tab 'profile' and a write that is not the name). Not changed.
+- Early name drop elsewhere: samhan › High Summit block 15, Gesomun: “the Second Emperor — Li Shimin — is not a tribute account…”. Not changed.
+- people.ts: west_ambassador and east_ambassador removed (entries, CHARACTER_COLORS, tag rows). Until this entry is merged, story.json still has 6 blocks with those person ids (all in Huangdi). scripts/patch_story_arc3.py would re-add both characters if re-run. static/people/west_ambassador.png and east_ambassador.png are now orphaned.
+- people.ts: added a `voice` for chusuiliang (he had none and gains lines).
+- The Gija & Wiman flashback is kept where it was (after the banquet, before the hallway); it still has no frame here. The episode audit suggests moving it to 660.
+
+SOURCES (fetched this session; ctext.org is behind a Cloudflare challenge, so zh.wikisource raw text was used)
+- Poem 賜蕭瑀: https://zh.wikisource.org/wiki/賜蕭瑀 (from 全唐詩) and https://zh.wikisource.org/wiki/御定全唐詩_(四庫全書本)/卷001 (confirms bk. 1). Variants noted there: 板蕩識 / 昏日辨, 安 / 寧; text uses the main readings.
+- 誠臣 for 忠臣 (Sui taboo): 老學庵續筆記 search hit on zh.wikisource. Dedication context: 舊唐書 卷63 蕭瑀傳 (search hit: 不可以厚利誘之，不可以刑戮懼之).
+- Shiji 6 quote (verbatim, note 阬 not 坑; Fusu sent north 使扶蘇北監蒙恬於上郡; 二世三世至于萬世): https://zh.wikisource.org/wiki/史記/卷006
+- Analects 13.3, 12.19: https://zh.wikisource.org/wiki/論語/子路第十三 , https://zh.wikisource.org/wiki/論語/顏淵第十二
+- Sunzi ch. 3: https://zh.wikisource.org/wiki/孫子兵法
+- Zuo zhuan Xi 5 (輔車相依，脣亡齒寒; 冬，晉人執虞公): https://zh.wikisource.org/wiki/春秋左氏傳/僖公
+- Shiji 79 (王不如遠交而近攻): https://zh.wikisource.org/wiki/史記/卷079
+- Shiji 39 (天子無戲言。言則史書之…遂封叔虞於唐): https://zh.wikisource.org/wiki/史記/卷039
+- Mencius 5A.4 (天無二日，民無二王): https://zh.wikisource.org/wiki/孟子/萬章上
+- Xunzi 9 (水則載舟，水則覆舟): https://zh.wikisource.org/wiki/荀子/王制篇 ; Taizong and Wei Zheng use it in 貞觀政要 卷1 and 卷4 (Taizong to the heir on a boat: 汝知舟乎？對曰：不知).
+- Documents, Mu Shi (牝雞無晨。牝雞之晨，惟家之索): https://zh.wikisource.org/wiki/尚書/牧誓
+- Hou Hanshu 20 (疾風知勁草): https://zh.wikisource.org/wiki/後漢書/卷20
+- Jiu Tangshu 199上 (Chunchu asks to see the 國學 釋奠; gifts of 溫湯, 晉祠碑, new 晉書; send-off banquet by officials of the third rank and above): scripts/.cache/quotes/src/jts199a.txt

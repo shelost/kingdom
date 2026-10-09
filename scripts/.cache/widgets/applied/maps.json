@@ -1,0 +1,558 @@
+{
+	"ops": [
+		{
+			"chapter": "seventh-invasion",
+			"title": "Four Dragons",
+			"op": "add-map",
+			"after": "The fifth banner has no name on it at all.",
+			"block": {
+				"kind": "map",
+				"year": 645,
+				"places": [
+					"yodong",
+					"ansi",
+					"pyongyang"
+				],
+				"routes": [
+					"tang645-liaodong",
+					"tang645-gaemo",
+					"tang645-main",
+					"tang645-sea"
+				],
+				"title": "The Seventh Invasion",
+				"caption": "Three roads in and five hundred hulls. Goguryeo’s wall was built to stop one army at a time.",
+				"ko": "들어오는 길 셋, 배 오백 척. 고구려의 성벽은 한 번에 한 군대씩 막으라고 쌓은 것이다."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Yodong",
+			"op": "update-map",
+			"match": "yodong",
+			"set": {
+				"places": [
+					"yodong",
+					"sinseong",
+					"gaemo"
+				],
+				"routes": [
+					"tang645-liaodong",
+					"tang645-gaemo",
+					"tang645-main",
+					"gog645-gungnae"
+				],
+				"caption": "Banners on the middle road, horses at the northern ford. Goguryeo watched the banners.",
+				"ko": "깃발은 가운데 길에, 말은 북쪽 여울에. 고구려는 깃발을 보고 있었다."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Yodong",
+			"op": "add-map",
+			"after": "Out on the southern cape, the fleet takes another in a month.",
+			"block": {
+				"kind": "map",
+				"year": 645,
+				"places": [
+					"yodong",
+					"baegam",
+					"bisa"
+				],
+				"routes": [
+					"tang645-sea",
+					"tang645-baegam"
+				],
+				"title": "The rest of the line",
+				"caption": "A spear in the White Dragon, a fleet on the cape. The tiles keep falling anyway.",
+				"ko": "흰 용의 허리에 창 하나, 곶에는 함대 하나. 기왓장은 그래도 계속 떨어진다."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Stallion Mountain",
+			"op": "update-map",
+			"match": "jupil,yodong",
+			"set": {
+				"places": [
+					"jupil",
+					"ansi",
+					"yodong"
+				],
+				"routes": [
+					"tang645-ansi",
+					"gog645-relief"
+				],
+				"caption": "Goguryeo sends a hundred and fifty thousand down the crow road. The emperor sends himself.",
+				"ko": "고구려는 까마귀 길로 십오만을 내려보낸다. 황제는 자기 자신을 보낸다."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Colossal River",
+			"op": "update-map",
+			"match": "salsu,pyongyang,liao",
+			"set": {
+				"places": [
+					"liao",
+					"yodong",
+					"salsu",
+					"pyongyang"
+				],
+				"routes": [
+					"sui612-liao",
+					"sui612-yuwen",
+					"sui612-lai"
+				],
+				"caption": "Nine armies over the Liao, a fleet up the Taedong. The Sui planned everything except the walk home.",
+				"ko": "요하를 건너는 아홉 군단, 대동강을 오르는 함대. 수나라는 돌아가는 길만 빼고 다 계획했다."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Colossal River",
+			"op": "add-map",
+			"after": "each running pulls the Western army further from its supply and closer to a river",
+			"block": {
+				"kind": "map",
+				"year": 612,
+				"places": [
+					"salsu",
+					"pyongyang"
+				],
+				"routes": [
+					"sui612-yuwen",
+					"sui612-retreat"
+				],
+				"title": "The walk home",
+				"caption": "They marched to within thirty li of Pyongyang. Munduk had been counting on exactly that.",
+				"ko": "평양 삼십 리 앞까지 왔다. 을지문덕이 바란 게 바로 그거였다."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Ansi",
+			"op": "update-map",
+			"match": "yodong,ansi,pyongyang",
+			"set": {
+				"places": [
+					"yodong",
+					"ansi",
+					"geonan",
+					"pyongyang"
+				],
+				"routes": [
+					"tang645-main",
+					"tang645-ansi",
+					"tang645-geonan"
+				]
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Ansi",
+			"op": "add-map",
+			"after": "That day, for the first time in his life, the Second Emperor knew defeat and retreat.",
+			"block": {
+				"kind": "map",
+				"year": 645,
+				"places": [
+					"yodong",
+					"ansi",
+					"bisa",
+					"gungnae",
+					"pyongyang"
+				],
+				"routes": [
+					"tang645-liaodong",
+					"tang645-gaemo",
+					"tang645-main",
+					"tang645-sea",
+					"gog645-gungnae",
+					"tang645-baegam",
+					"gog645-relief",
+					"tang645-ansi",
+					"tang645-geonan",
+					"tang645-retreat",
+					"tang645-fleet-home"
+				],
+				"title": "The Seventh Invasion, start to finish",
+				"caption": "All those arrows in, and two dotted lines out. One small wall did that.",
+				"ko": "들어간 화살은 저렇게 많은데, 나온 건 점선 두 줄. 작은 성벽 하나가 한 일이다."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Buyeo",
+			"op": "add-map",
+			"after": "take the hills with him. Behind them come the riders Daeso sent",
+			"block": {
+				"kind": "map",
+				"year": -37,
+				"places": [
+					"buyeo_north"
+				],
+				"routes": [
+					"jumong-flight"
+				],
+				"caption": "Buyeo behind him, Daeso’s riders behind that, and a river ahead with no bridge on it. Yet.",
+				"ko": "등 뒤엔 부여, 그 뒤엔 대소의 기병, 앞엔 다리 하나 없는 강. 아직은."
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "update-map",
+			"match": "jolbon",
+			"set": {
+				"places": [
+					"buyeo_north",
+					"jolbon"
+				],
+				"routes": [
+					"jumong-flight",
+					"jumong-south"
+				],
+				"caption": "From a borrowed stable to a valley of five roofs. The turtles handled the middle part.",
+				"ko": "빌린 마구간에서 지붕 다섯 개의 골짜기까지. 가운데 구간은 거북이들이 맡았다."
+			}
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Chunchu & Yeon",
+			"op": "add-map",
+			"after": "a lean red bay he named for summer and winter",
+			"block": {
+				"kind": "map",
+				"year": 642,
+				"places": [
+					"surabol",
+					"pyongyang"
+				],
+				"routes": [
+					"chunchu642-north"
+				],
+				"caption": "Sixty days there and back, through a country that has just killed its own king. He packs light.",
+				"ko": "가고 오는 데 육십 일. 방금 제 왕을 죽인 나라를 지나는 길이다. 짐은 가볍게 꾸린다."
+			}
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Chunchu & Yeon",
+			"op": "add-map",
+			"after": "Chunchu cannot close the left hand on a rein",
+			"block": {
+				"kind": "map",
+				"year": 642,
+				"places": [
+					"surabol",
+					"pyongyang"
+				],
+				"routes": [
+					"yushin642-march",
+					"chunchu642-home"
+				],
+				"caption": "One envoy coming south, ten thousand Silla men coming north, and a border between them that has gone very polite.",
+				"ko": "남쪽으로 오는 사신 하나, 북쪽으로 가는 신라군 만 명. 그 사이의 국경은 갑자기 몹시 예의 바르다."
+			}
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"op": "add-map",
+			"after": "The embassy comes in at the hour the street drums stop.",
+			"block": {
+				"kind": "map",
+				"year": 648,
+				"places": [
+					"surabol",
+					"danghang",
+					"dengzhou"
+				],
+				"routes": [
+					"chunchu648-tang"
+				],
+				"caption": "Silla’s one harbour, one sea, and a road to Chang’an long enough to rehearse a speech forty times.",
+				"ko": "신라의 하나뿐인 항구, 바다 하나, 그리고 연설을 마흔 번은 연습할 만큼 긴 장안 길."
+			}
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"op": "add-map",
+			"after": "He leaves Chang’an with the alliance sealed and his son still inside the wall.",
+			"block": {
+				"kind": "map",
+				"year": 648,
+				"places": [
+					"dengzhou",
+					"danghang",
+					"surabol"
+				],
+				"routes": [
+					"chunchu648-home"
+				],
+				"caption": "The same sea home. It has Goguryeo boats on it now.",
+				"ko": "돌아가는 바다도 같은 바다다. 다만 이제는 고구려 배가 떠 있다."
+			}
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "add-map",
+			"after": "That summer he sails east with a hundred and thirty thousand men and anchors off a small island.",
+			"block": {
+				"kind": "map",
+				"year": 660,
+				"places": [
+					"deokmul",
+					"sabi"
+				],
+				"routes": [
+					"tang660-crossing",
+					"silla660-deokmul"
+				],
+				"caption": "An empire crosses the sea. A prince rows out to meet it and tries not to stare.",
+				"ko": "제국이 바다를 건넌다. 왕자는 노를 저어 마중 나가며 빤히 쳐다보지 않으려 애쓴다."
+			}
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "update-map",
+			"match": "gibeolpo,hwangsan,sabi",
+			"set": {
+				"places": [
+					"gibeolpo",
+					"hwangsan",
+					"sabi"
+				],
+				"routes": [
+					"tang660-gibeolpo",
+					"silla660-march"
+				]
+			}
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Sabi",
+			"op": "update-map",
+			"match": "sabi,hwangsan",
+			"set": {
+				"places": [
+					"sabi",
+					"hwangsan",
+					"gibeolpo"
+				],
+				"routes": [
+					"tang660-sabi",
+					"silla660-sabi"
+				],
+				"caption": "Two arrows, one capital, and a king who has decided the answer is oxen.",
+				"ko": "화살 둘, 도성 하나, 그리고 답은 소 떼라고 정한 왕."
+			}
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Sabi",
+			"op": "add-map",
+			"after": "with fewer men than he expected to have",
+			"block": {
+				"kind": "map",
+				"year": 660,
+				"places": [
+					"sabi",
+					"ungjin"
+				],
+				"routes": [
+					"euija660-flight"
+				],
+				"caption": "One river’s length north, to a fortress his grandfather trusted.",
+				"ko": "강 한 굽이 북쪽, 할아버지가 믿었던 성으로."
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Pyongyang I",
+			"op": "update-map",
+			"match": "pyongyang,juryu",
+			"set": {
+				"places": [
+					"pyongyang",
+					"amnok"
+				],
+				"routes": [
+					"tang661-sea",
+					"tang661-yalu"
+				],
+				"caption": "A fleet up the river, an army at the Amnok, and a winter about to pick a side.",
+				"ko": "강을 거슬러 오르는 함대, 압록강의 군대, 그리고 곧 편을 고를 겨울."
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Pyongyang I",
+			"op": "add-map",
+			"after": "The younger ones don’t know the road, Majesty. Hanseul and I do.",
+			"block": {
+				"kind": "map",
+				"year": 662,
+				"places": [
+					"surabol",
+					"pyongyang"
+				],
+				"routes": [
+					"silla662-rice"
+				],
+				"caption": "Rice for the Red Fowl, through enemy country, in the dead of winter, driven by a man of sixty-seven.",
+				"ko": "주작에게 보낼 쌀. 적의 땅을 지나, 한겨울에, 예순일곱 먹은 사내가 끌고 간다."
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Snake River",
+			"op": "update-map",
+			"match": "sasu,pyongyang",
+			"set": {
+				"routes": [
+					"tang662-pang",
+					"gog662-yeon"
+				],
+				"caption": "The White Tiger thought the river was a road. Yeon is standing in the middle of it.",
+				"ko": "백호는 강을 길이라 여겼다. 연개소문은 그 한가운데 서 있다."
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "White River",
+			"op": "add-map",
+			"after": "So the armies split. Most of the generals take the land road.",
+			"block": {
+				"kind": "map",
+				"year": 663,
+				"places": [
+					"baekgang",
+					"juryu",
+					"ungjin",
+					"surabol"
+				],
+				"routes": [
+					"tang663-sun",
+					"silla663-land",
+					"tang663-liu",
+					"yamato663-fleet"
+				],
+				"title": "Four banners, one river mouth",
+				"caption": "Tang by sea twice, Silla by land, and the East arriving in a hurry. Everyone is headed for the same mud.",
+				"ko": "바다로 두 번 온 당, 땅으로 온 신라, 서둘러 오는 동쪽. 다들 같은 갯벌로 간다."
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Brothers’ Coup",
+			"op": "add-map",
+			"after": "Namseng rides west, across the river his father spent a lifetime holding.",
+			"block": {
+				"kind": "map",
+				"year": 666,
+				"places": [
+					"pyongyang",
+					"gungnae"
+				],
+				"routes": [
+					"namseng666-flight",
+					"namseng666-west"
+				],
+				"caption": "North to the old capital, then west over the Liao. His father spent a lifetime stopping men riding this road the other way.",
+				"ko": "북쪽 옛 도읍으로, 다시 서쪽으로 요하를 건너. 아버지는 평생 이 길을 반대로 달려오는 자들을 막았다."
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Pyongyang II",
+			"op": "update-map",
+			"match": "pyongyang,sinseong,yodong",
+			"set": {
+				"places": [
+					"pyongyang",
+					"sinseong",
+					"buyeo_fort"
+				],
+				"routes": [
+					"tang667-blue",
+					"tang668-white",
+					"tang668-south",
+					"silla668-north"
+				]
+			}
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Stone Gate",
+			"op": "update-map",
+			"match": "seokmun,pyongyang",
+			"set": {
+				"routes": [
+					"tang672-south",
+					"silla672-chase"
+				],
+				"caption": "The Tang come south and turn. Silla gives chase. Watch where the chase ends.",
+				"ko": "당군이 남으로 내려왔다가 돌아선다. 신라가 쫓는다. 그 추격이 어디서 끝나는지 보라."
+			}
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Maeso",
+			"op": "update-map",
+			"match": "maeso,surabol",
+			"set": {
+				"places": [
+					"maeso",
+					"cheonseong",
+					"surabol"
+				],
+				"routes": [
+					"tang675-xue",
+					"tang675-li"
+				],
+				"caption": "Horses by sea, horses by land. Silla has decided this war is about horses.",
+				"ko": "바다로 오는 말, 땅으로 오는 말. 신라는 이 전쟁이 말에 달렸다고 정했다."
+			}
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Final Ford",
+			"op": "update-map",
+			"match": "gibeolpo,maeso",
+			"set": {
+				"places": [
+					"gibeolpo",
+					"pyongyang"
+				],
+				"routes": [
+					"tang676-withdraw",
+					"tang676-xue"
+				],
+				"caption": "The protectorate packs for Liaodong. Xue Rengui keeps one fleet and one last idea.",
+				"ko": "도호부는 요동으로 짐을 싼다. 설인귀에게는 함대 하나와 마지막 생각 하나가 남았다."
+			}
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Final Ford",
+			"op": "add-map",
+			"after": "They’re heading west. None of them are turning back.",
+			"block": {
+				"kind": "map",
+				"year": 676,
+				"places": [
+					"gibeolpo"
+				],
+				"routes": [
+					"tang676-home"
+				],
+				"caption": "West. Nobody signs anything. The ships simply keep going.",
+				"ko": "서쪽으로. 아무도 서명하지 않는다. 배들이 그냥 계속 간다."
+			}
+		}
+	]
+}

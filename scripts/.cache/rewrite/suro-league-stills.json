@@ -1,0 +1,29 @@
+[
+	{
+		"id": "gaya-six-kings-laugh",
+		"entry": "Suro",
+		"at": "flat on his back in the grass where he hatched",
+		"alt": "Six young Gaya kings laughing in the grass on Turtle Peak while the nine chiefs stand over them",
+		"scene": "Turtle Peak, the next spring: six young Gaya kings in the grass on the hilltop where they hatched. Ijinasi flat on his back howling with laughter, Suro sitting up laughing last with a hand over his face, four other young kings doubled over around them; the nine grey-robed chiefs standing behind, the only ones not laughing. Crane shot looking down on the ring of bodies in the grass, storm-break dusk over the southern sea behind the peak, one low gold shaft. Heewon style, 2:1.",
+		"people": ["suro", "ijinasi"],
+		"canon": { "with": ["dress:gaya"] }
+	},
+	{
+		"id": "suro-contest-last-bead",
+		"entry": "Suro",
+		"at": "holds it up to her",
+		"alt": "Suro on his knees among scattered jade, holding up the last bead to the Mahan girl as she keeps dancing",
+		"scene": "The queen-contest feast in Golden Gaya's timber hall at night: the Mahan chief's daughter, bare-throated, still dancing in the middle of the floor while jade beads scatter across the boards and chiefs scramble under the tables; Suro in a plain coat on his knees at her feet, a wine jar in one hand, holding the last green bead up to her. Worm's-eye from the floor between the beads, oil lamp on the boards beside the lens, her shadow climbing the wall. Implied tension only. Heewon style, 2:1.",
+		"people": ["suro"],
+		"canon": { "with": ["dress:baekje"] }
+	},
+	{
+		"id": "suro-contest-diver-feet",
+		"entry": "Suro",
+		"at": "Most of it lands on his feet",
+		"alt": "The Tamla diver wrings her wet hair over the disguised king's feet, holding his eyes",
+		"scene": "Gaya beach at dusk during the queen contest: the Tamla diver, soaked, standing close in front of Suro in a plain coat in the crowd, wringing seawater out of her long hair so it falls on his feet, holding his eyes; Ijinasi in a second plain coat at his shoulder, grinning. Low over-the-shoulder from behind Suro, wet sand reflecting one low sun break. Heewon style, 2:1.",
+		"people": ["suro", "ijinasi"],
+		"canon": { "with": ["dress:gaya"] }
+	}
+]

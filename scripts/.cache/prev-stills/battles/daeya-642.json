@@ -1,0 +1,690 @@
+{
+	"id": "daeya-642",
+	"title": "Daeya",
+	"ko": "대야성 전투",
+	"hanja": "大耶城之戰",
+	"year": 642,
+	"place": "daeya",
+	"scale": {
+		"km": 0.5,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "river",
+			"points": [
+				[
+					140,
+					0
+				],
+				[
+					240,
+					110
+				],
+				[
+					320,
+					220
+				],
+				[
+					360,
+					330
+				],
+				[
+					460,
+					420
+				],
+				[
+					620,
+					445
+				],
+				[
+					770,
+					405
+				],
+				[
+					820,
+					300
+				],
+				[
+					860,
+					195
+				],
+				[
+					1000,
+					140
+				]
+			],
+			"width": 18,
+			"label": "Hwang River",
+			"ko": "황강",
+			"labelAt": [
+				640,
+				490
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				545,
+				258
+			],
+			"r": 150
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					380,
+					190
+				],
+				[
+					450,
+					160
+				],
+				[
+					540,
+					175
+				],
+				[
+					640,
+					215
+				],
+				[
+					710,
+					275
+				],
+				[
+					700,
+					330
+				],
+				[
+					620,
+					345
+				],
+				[
+					530,
+					320
+				],
+				[
+					440,
+					280
+				],
+				[
+					385,
+					240
+				],
+				[
+					380,
+					190
+				]
+			],
+			"width": 5
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					0,
+					92
+				],
+				[
+					150,
+					96
+				],
+				[
+					300,
+					120
+				],
+				[
+					452,
+					160
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					455,
+					160
+				],
+				[
+					600,
+					122
+				],
+				[
+					800,
+					96
+				],
+				[
+					1000,
+					80
+				]
+			]
+		},
+		{
+			"kind": "fort",
+			"at": [
+				560,
+				262
+			],
+			"side": "silla",
+			"label": "Daeya",
+			"ko": "대야성",
+			"labelAt": [
+				470,
+				372
+			]
+		},
+		{
+			"kind": "gate",
+			"at": [
+				452,
+				162
+			],
+			"side": "silla",
+			"label": "north gate",
+			"ko": "북문",
+			"labelAt": [
+				470,
+				136
+			]
+		},
+		{
+			"kind": "gate",
+			"at": [
+				690,
+				255
+			],
+			"side": "silla",
+			"label": "granary gate",
+			"ko": "곳간 문",
+			"labelAt": [
+				760,
+				262
+			]
+		},
+		{
+			"kind": "gate",
+			"at": [
+				505,
+				232
+			],
+			"side": "silla",
+			"label": "inner gate",
+			"ko": "안문",
+			"labelAt": [
+				470,
+				300
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				640,
+				312
+			],
+			"label": "granary",
+			"ko": "곳간"
+		},
+		{
+			"kind": "camp",
+			"at": [
+				300,
+				52
+			],
+			"side": "baekje",
+			"label": "Baekje camp",
+			"ko": "백제 진영"
+		},
+		{
+			"kind": "label",
+			"at": [
+				70,
+				60
+			],
+			"label": "from Baekje",
+			"ko": "백제에서"
+		},
+		{
+			"kind": "label",
+			"at": [
+				905,
+				52
+			],
+			"label": "to the capital",
+			"ko": "서라벌로"
+		}
+	],
+	"sides": [
+		{
+			"id": "baekje",
+			"name": "Baekje",
+			"ko": "백제",
+			"kingdom": "baekje"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "bk-yun",
+			"side": "baekje",
+			"label": "Yunchung",
+			"ko": "윤충"
+		},
+		{
+			"id": "bk-amb",
+			"side": "baekje",
+			"label": "Ambush",
+			"ko": "복병"
+		},
+		{
+			"id": "sl-gar",
+			"side": "silla",
+			"label": "Garrison",
+			"ko": "수비군",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-juk",
+			"side": "silla",
+			"label": "Jukjuk",
+			"ko": "죽죽",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "road",
+			"label": "Baekje on the road",
+			"ko": "길 위의 백제",
+			"caption": "Euija reads the border once and picks the soft door: young at the top, hollow underneath. Yunchung brings ten thousand men down the western road. Inside, Daeya is busy with a feast.",
+			"captionKo": "의자는 국경을 한 번 읽고 약한 문을 고른다. 위는 어리고 아래는 비었다. 윤충이 만 명을 이끌고 서쪽 길을 내려온다. 대야성 안은 잔치로 바쁘다.",
+			"units": {
+				"bk-yun": {
+					"at": [
+						140,
+						98
+					],
+					"men": 8000,
+					"shape": "column",
+					"facing": 0
+				},
+				"bk-amb": {
+					"at": [
+						40,
+						94
+					],
+					"men": 2000,
+					"shape": "column",
+					"facing": 0
+				},
+				"sl-gar": {
+					"at": [
+						600,
+						285
+					],
+					"men": 1000
+				},
+				"sl-juk": {
+					"at": [
+						520,
+						262
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "advance",
+					"points": [
+						[
+							190,
+							100
+						],
+						[
+							300,
+							120
+						],
+						[
+							400,
+							146
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "siege",
+			"label": "Under the wall",
+			"ko": "성벽 아래",
+			"caption": "Three weeks later the ten thousand sit under the wall. The river guards three sides, so the cookfires crowd the fourth. From the granary roof, Gumil counts them.",
+			"captionKo": "삼 주 뒤, 만 명이 성벽 아래 앉아 있다. 강이 세 면을 지키니 밥 짓는 불은 나머지 한 면에 몰린다. 곳간 지붕 위에서 검일이 그 불을 센다.",
+			"units": {
+				"bk-yun": {
+					"at": [
+						545,
+						255
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 175,
+					"arc": [
+						215,
+						325
+					]
+				},
+				"bk-amb": {
+					"at": [
+						360,
+						108
+					],
+					"men": 2000,
+					"facing": 30
+				},
+				"sl-gar": {
+					"at": [
+						600,
+						285
+					],
+					"men": 1000
+				},
+				"sl-juk": {
+					"at": [
+						520,
+						262
+					],
+					"men": 1000
+				}
+			}
+		},
+		{
+			"id": "fire",
+			"label": "The granary",
+			"ko": "곳간",
+			"caption": "Gumil lights the stores he counted, sack by sack, in the order he wrote them down. Mochuk lifts the bar of the granary gate. A wall with no winter inside it is only a wall.",
+			"captionKo": "검일이 제가 센 곡식에 불을 붙인다. 한 섬 한 섬, 적어 둔 순서대로. 모척이 곳간 문의 빗장을 든다. 겨울을 잃은 성벽은 그냥 벽이다.",
+			"units": {
+				"bk-yun": {
+					"at": [
+						545,
+						255
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 175,
+					"arc": [
+						215,
+						325
+					]
+				},
+				"bk-amb": {
+					"at": [
+						360,
+						108
+					],
+					"men": 2000,
+					"facing": 30
+				},
+				"sl-gar": {
+					"at": [
+						560,
+						232
+					],
+					"men": 1000
+				},
+				"sl-juk": {
+					"at": [
+						520,
+						262
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "advance",
+					"points": [
+						[
+							700,
+							150
+						],
+						[
+							712,
+							205
+						],
+						[
+							694,
+							248
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						636,
+						280
+					],
+					"label": "the stores burn",
+					"ko": "곳간이 탄다"
+				},
+				{
+					"kind": "gate",
+					"at": [
+						690,
+						255
+					]
+				}
+			]
+		},
+		{
+			"id": "terms",
+			"label": "Sworn by the sun",
+			"ko": "해를 두고",
+			"caption": "A purple sleeve on the wall asks the dark for terms, and Yunchung swears by the sun. The garrison files out of the gate first. The oath lasts until the last shield is down.",
+			"captionKo": "성벽 위 자줏빛 소매가 어둠에 대고 항복 조건을 묻고, 윤충은 해를 두고 맹세한다. 수비군이 먼저 성문을 줄지어 나간다. 맹세는 마지막 방패가 내려질 때까지만 간다.",
+			"units": {
+				"bk-yun": {
+					"at": [
+						545,
+						255
+					],
+					"men": 8000,
+					"shape": "ring",
+					"r": 175,
+					"arc": [
+						215,
+						325
+					]
+				},
+				"bk-amb": {
+					"at": [
+						398,
+						118
+					],
+					"men": 2000,
+					"facing": 20
+				},
+				"sl-gar": {
+					"at": [
+						432,
+						128
+					],
+					"men": 0
+				},
+				"sl-juk": {
+					"at": [
+						520,
+						262
+					],
+					"men": 1000
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							490,
+							205
+						],
+						[
+							458,
+							170
+						],
+						[
+							440,
+							138
+						]
+					],
+					"label": "out first",
+					"ko": "먼저 나선다"
+				},
+				{
+					"side": "baekje",
+					"kind": "charge",
+					"points": [
+						[
+							350,
+							100
+						],
+						[
+							392,
+							116
+						],
+						[
+							424,
+							128
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						452,
+						150
+					],
+					"label": "terms by the sun",
+					"ko": "해를 두고 한 맹세"
+				},
+				{
+					"kind": "ambush",
+					"at": [
+						410,
+						140
+					]
+				}
+			]
+		},
+		{
+			"id": "bamboo",
+			"label": "The inner gate",
+			"ko": "안문",
+			"caption": "Jukjuk shuts the inner gate on the men who are left and holds it until sundown. Then it breaks, and he doesn't bend. A thousand men and women are marched west.",
+			"captionKo": "죽죽이 남은 군사를 모아 안문을 닫고 해 질 녘까지 버틴다. 그리고 부러진다. 굽히지는 않는다. 남녀 천여 명이 서쪽으로 끌려간다.",
+			"units": {
+				"bk-yun": {
+					"at": [
+						478,
+						205
+					],
+					"men": 8000,
+					"facing": 45
+				},
+				"bk-amb": {
+					"at": [
+						420,
+						150
+					],
+					"men": 2000,
+					"facing": 20
+				},
+				"sl-juk": {
+					"at": [
+						512,
+						240
+					],
+					"men": 0
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "charge",
+					"points": [
+						[
+							455,
+							168
+						],
+						[
+							482,
+							205
+						],
+						[
+							502,
+							228
+						]
+					]
+				},
+				{
+					"side": "baekje",
+					"kind": "advance",
+					"points": [
+						[
+							430,
+							150
+						],
+						[
+							300,
+							118
+						],
+						[
+							110,
+							92
+						]
+					],
+					"label": "a thousand taken west",
+					"ko": "천여 명이 서쪽으로"
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						512,
+						240
+					]
+				},
+				{
+					"kind": "death",
+					"at": [
+						590,
+						300
+					],
+					"label": "Pumsuk and Gotaso",
+					"ko": "품석과 고타소"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 5, Annals of Silla, Seondeok year 11",
+		"Samguk Sagi 5, Annals of Silla, Muyeol year 7",
+		"Samguk Sagi 28, Annals of Baekje, Uija year 2",
+		"Samguk Sagi 47, Biography of Jukjuk"
+	],
+	"note": "The records give Yunchung's ten thousand, the burned stores, the surrender sworn by the sun, the ambush on the men who walked out, Pumsuk's death with his family, Jukjuk's stand and a thousand men and women carried west. How Yunchung split his army between the siege and the ambush is a guess. Muyeol's annals say Gumil and Mochuk let Baekje in and burned the stores; which gate they used is the story's. In the Biography of Jukjuk an aide, Seocheon, calls for terms from the wall. The site follows the hill fort on Maebong hill at Hapcheon.",
+	"noteKo": "기록이 전하는 것은 윤충의 만 명, 불탄 곳간, 해를 두고 한 항복 맹세, 걸어 나간 군사를 친 복병, 처자와 함께 죽은 품석, 죽죽의 항전, 서쪽으로 끌려간 남녀 천여 명이다. 윤충이 포위와 복병에 군사를 어떻게 나눴는지는 짐작이다. 무열왕 본기는 검일과 모척이 백제군을 끌어들이고 곳간을 불태웠다고 적는데, 어느 문으로였는지는 이야기의 것이다. 죽죽 열전에서는 성벽 위에서 항복을 청한 이가 보좌관 서천이다. 위치는 합천 매봉산 산성을 따랐다."
+}

@@ -1,0 +1,19 @@
+{
+	"refs": [
+		"/ch_munhee.png",
+		"/bn_munhee.png",
+		"/ch_chunchu_hwarang.png",
+		"/hat_jougwan_types.png",
+		"/hat_jougwan_rider.png",
+		"/ref_hanbok_silla.png"
+	],
+	"abs": [
+		"/Users/heewon/Documents/GitHub/kingdom/static/ch_munhee.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/bn_munhee.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ch_chunchu_hwarang.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/hat_jougwan_types.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/hat_jougwan_rider.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ref_hanbok_silla.png"
+	],
+	"text": "CANON — MUNHEE — FACE and garments from attached /ch_munhee.png (face only; invent a new pose). Hair ornament matches attached /bn_munhee.png when the head is visible. Demeanor: Yushin's younger sister, Chunchu's wife; quick and warm, the one who bought the dream. #E07FA8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: fantasy tiara instead of her binyeo. | KIM CHUNCHU — FACE and garments from attached /ch_chunchu_hwarang.png (face only; invent a new pose). Look: Slim and elegant; shoulder-length loose black hair parted in the middle; thin moustache and goatee stubble; amused eyes, small knowing smile. Dress: Magenta-crimson silk po with a charcoal sash, dark layered collar. Silk even on campaign. Headwear: the jougwan (see HEADWEAR). As a hwarang he keeps the crescent-moon headband across the brow, its tails trailing; the jougwan sits on the crown of the head above it. Now: Young hwarang (stage portrait): beardless, eager. Demeanor: Diplomat and strategist: talks with his hands, smiles while calculating, never shouts; half-lidded watchful eyes. #D8258C as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: front-line armored warrior pose; shouting battle face; katana. | HEADWEAR: JOUGWAN (조우관, feather cap) — copy the SHAPE from the attached hat boards and ignore their Korean labels, museum photos, paper-craft gems and dragon medallion: a small black lacquered gauze cap (변형모, a peaked or square-topped crown no bigger than the topknot it covers) set high on the crown of the head over a small knot of gathered hair (any loose hair the portrait shows still falls beneath it); a thin black band round the head with a small square opening at the front; black cords tied under the chin; two long barred pheasant tail feathers (tan with umber bars), or a spray of bird plumes, rising straight up or sweeping back from either side of the cap, much taller than the cap itself. It replaces any other hat or cap on the portrait; headbands and ribbons stay. Real lacquer and feathers lit by the scene key, never a glow. | COSTUME CHARTS (attached): cut, collar, sleeve, sash, trouser and skirt shapes of every Samhan figure follow the chart for their kingdom; it is a style chart, so ignore its labels, captions, maps, poses and faces. Named people keep their portrait face and colours; extras and soldiers dress like the chart (a commoner like its commoners, an official like its officials, a soldier like its soldiers). Silla: attached /ref_hanbok_silla.png."
+}

@@ -1,0 +1,5 @@
+[
+	{ "episode": 9, "battle": "gwanggaeto-400", "phase": "wa", "after": { "kind": "p", "text": "The Silla king stands on his own wall" } },
+	{ "episode": 9, "battle": "gwanggaeto-400", "phase": "relief", "after": { "kind": "p", "text": "The horsemen come down out of the north" } },
+	{ "episode": 9, "battle": "gwanggaeto-400", "phase": "jongbal", "after": { "kind": "p", "text": "They clear the peninsula in a season" } }
+]

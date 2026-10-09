@@ -1,0 +1,19 @@
+{
+	"refs": [
+		"/ch_munmu.png",
+		"/ref_crown_silla.jpg",
+		"/ref_muyeol.png",
+		"/ch_munmyung_old.png",
+		"/bn_munhee.png",
+		"/ref_hanbok_silla.png"
+	],
+	"abs": [
+		"/Users/heewon/Documents/GitHub/kingdom/static/ch_munmu.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ref_crown_silla.jpg",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ref_muyeol.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ch_munmyung_old.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/bn_munhee.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ref_hanbok_silla.png"
+	],
+	"text": "CANON — KING MUNMU — FACE and garments from attached /ch_munmu.png (face only; invent a new pose). Look: Square jaw, goatee and moustache, confident grin; arms folded when he is pleased with himself. Dress: As king: crimson robe with gold dragon embroidery, blue shoulder pieces, gold Silla crown. Earlier: prince/hwarang stage portraits. Crown: Silla gold crown, as the attached crown: a gold band with three tree-shaped uprights stepped like the character 出 and two antler uprights at the back, hung with round gold spangles and curved green jade gogok, long gold pendants at the temples. ref_muyeol shows it worn with the king's red robe and gold-scroll collar (ignore its painted backdrop). Demeanor: Cocky, warm, practical; his father's charm with his uncle's spine. #C41E3A as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: katana; Tang dragon robe in place of Silla court dress. | QUEEN MUNMYUNG — FACE and garments from attached /ch_munmyung_old.png (face only; invent a new pose). Hair ornament matches attached /bn_munhee.png when the head is visible. Crown: Silla gold crown, as the attached crown: a gold band with three tree-shaped uprights stepped like the character 出 and two antler uprights at the back, hung with round gold spangles and curved green jade gogok, long gold pendants at the temples. ref_muyeol shows it worn with the king's red robe and gold-scroll collar (ignore its painted backdrop). Demeanor: Yushin's younger sister, Chunchu's wife; quick and warm, the one who bought the dream. #E07FA8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: fantasy tiara instead of her binyeo. | COSTUME CHARTS (attached): cut, collar, sleeve, sash, trouser and skirt shapes of every Samhan figure follow the chart for their kingdom; it is a style chart, so ignore its labels, captions, maps, poses and faces. Named people keep their portrait face and colours; extras and soldiers dress like the chart (a commoner like its commoners, an official like its officials, a soldier like its soldiers). Silla: attached /ref_hanbok_silla.png."
+}

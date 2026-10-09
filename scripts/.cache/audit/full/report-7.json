@@ -1,0 +1,544 @@
+{
+  "slice": 7,
+  "range": "#56–#71",
+  "episodes": [
+    {
+      "n": 56,
+      "title": "Exile",
+      "logline": "Gyebek's episode: while Euija is locked in three years of mourning, the two biggest clans pause a four-generation feud to remove the king's one unbuyable man. Gyebek refuses a real name, survives an arrow, is exiled under the king's borrowed seal, and wakes on Tamla, where the storyteller-king Yuri Dora meets a man who can't hear a joke.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 2, "entertainment": 4 },
+      "verdict": "The scenes are strong (the clan pact, the name offer, the island), but the episode tells the exile three times and out of order; tell it once, in sequence, and open on the three-year hook.",
+      "opening": "‘Queen Satek, Euija’s mother, dies. Euija begins the traditional mourning period.’ A textbook line that deflates #55’s card. The real hook is [2] (‘exactly what can be done inside them’). Lead with that.",
+      "ending": "[101]–[102] land as plants (ten units of five hundred; ‘you have given him a hinge’). The card rewinds to ‘First night on the island’ after we have watched two seasons pass, but it frames the myth run cleanly.",
+      "sudden": [
+        { "block": "41", "what": "Sungchung warns Gyebek like an old ally", "setup": "#18 [30] card and #19 [30], 37 episodes back, never alongside Gyebek", "fix": "Tag him on entry (‘Sungchung, who once counted the king’s sons for him’) or give the warning to someone we know." },
+        { "block": "45", "what": "‘Nine, by then.’ Nine what: attempts on his life? exiles?", "setup": "none", "fix": "Say it (‘Nine attempts, by then’) or cut." },
+        { "block": "46", "what": "An italic proverb with no speaker and no scene", "setup": "none", "fix": "Cut, or give it to Yuri Dora on the island." },
+        { "block": "57", "what": "A Nihon Shoki record naming Gyogi, four sisters and Minister Gimi as the exiles, dated 642, with no Gyebek in it", "setup": "none; it contradicts the episode’s year and cast", "fix": "Cut it. It describes a different exile." },
+        { "block": "3", "what": "Satek Jijeok’s grief stele", "setup": "#19 [13] card names Minister Satek as Satek Jijeok, 37 episodes back", "fix": "Cut, or add one sly line: the man about to steal the king’s mourning carved a stone about his own." },
+        { "block": "69", "what": "‘A man named turtle?’ An English reader can’t hear why Gyebek sounds like ‘turtle’, yet ‘Turtle’ becomes his island name", "setup": "none", "fix": "One clause on the island word that sounds like his name." }
+      ],
+      "pacing_notes": [
+        { "blocks": "9–10, 44, 56", "issue": "Gyebek is put on the boat three times. [9] and [56] repeat the same ‘Satek water / Yunbi winter contract’ lines, and [9] ships him before the meeting that decides it.", "fix": "Cut [9]–[10] and [44]; put him on the boat once, after the sealed order [56]." },
+        { "blocks": "74, 91, 102", "issue": "Three MORAL cards decode island beats we just watched.", "fix": "Keep [91] (‘Give him the choosing’, which pays off at #72) and cut the other two." },
+        { "blocks": "77, 81", "issue": "[77] recaps the sealed order we just saw; [81] explains Euija’s fury (‘nothing theatrical in the fury’).", "fix": "Open the Sabi scene on Euija holding the order with his own seal on it; cut [77] and [81]." }
+      ],
+      "flow_notes": [
+        { "blocks": "38→39", "issue": "‘Hundred-Victories narrowly escapes an assassination attempt’ is a summary caption right before the scene that shows it.", "fix": "Cut [38]; start on the arrow [39]." },
+        { "blocks": "14–31, 49–53", "issue": "Five handles for three Sateks (Elder Satek, Minister Satek, ‘the Premier’, Satek Chunbok, later ‘Lord Satek’). Two Sateks trade lines with one Yunbi at the monastery, and Minister Satek announces his own name in [52].", "fix": "Drop ‘the Premier’ [51] and ‘Minister Satek —’ [52]; let one Satek speak at the monastery." },
+        { "blocks": "75–80", "issue": "Euija’s response is four lines of rage, and that rage is the cliffhanger the seven-episode detour leaves hanging. Nothing concrete is promised for #64 to pay off.", "fix": "End the Sabi scene on a decision with a date (the day mourning lifts, the Assembly called, Gyebek sent for)." }
+      ],
+      "romance": null,
+      "battle": "[6] is legend, not battle: Gyebek’s one-horse run at the enemy general (‘does not finish turning’) is vivid, plants Gomanari and the reverse grip, and pays off at #72.",
+      "suspense": "Pulls: will the clans get him (yes), and what will Euija do? Plants that fire: ten units of five hundred [101] (the 5,000 at Yellow Mountain), ‘Give him the choosing’ [91] (#72 picks the ground), Chunbok’s ‘worse things… to a much bigger king’ [54] (Chang’an, #64). Never fires: the footprints behind the monastery screen [18].",
+      "best": "[34]–[36] ‘The king made that one up.’ / ‘Yes. Which is why it is owed to someone.’",
+      "worst": "[44]–[57]: the exile retold, Minister Satek naming himself, then a record of a different exile.",
+      "fixes": [
+        "Put it in causal order and tell the exile once: mourning [2] → clan pact [11]–[31] → offer [33]–[36] → arrow [39]–[43] → sealed order and boat [49]–[56]. Cut [9]–[10], [38], [44], [57].",
+        "Open on [2] and fold [0] into it.",
+        "Give Euija a real scene at [77]–[80]: he finds his own seal on the order and decides something specific about Gyebek that #64 must answer."
+      ]
+    },
+    {
+      "n": 57,
+      "title": "Heaven–Earth King",
+      "logline": "Yuri Dora’s first fireside tale: a god dreams of eating one sun and one moon, fathers twins on a poor woman who was cheated with sandy rice, and sends the boys to shoot down the extra sun and moon. The younger twin steals the living world with a switched flower; the honest elder takes the dead and makes its law run clear.",
+      "scores": { "followable": 4, "context": 5, "pacing": 4, "flow": 4, "entertainment": 5 },
+      "verdict": "The best myth in the slice and a complete standalone tale; just give each twin one name in English.",
+      "opening": "‘Told on the first night, before he has agreed to listen to anything.’ A quiet frame line. The story’s hook (‘two suns and two moons’ [5]) is delayed by a chant quote [3].",
+      "ending": "Gyebek’s ‘……Rice with sand in it.’ [103] ties the tale to the borrowed seal without a word of explanation. The card mis-genders Yuri Dora (‘She tells it anyway’; #56 [61] says ‘He’) and has Gyebek hiding on a roof that #58 has him mending.",
+      "sudden": [
+        { "block": "35, 40–41", "what": "Each twin has two names (Daebyeol/Big Star, Sobyeol/Little Star), alternating between narration and speaker labels", "setup": "named at [35], carded at [40]–[41]", "fix": "Use Big Star and Little Star everywhere in the English." }
+      ],
+      "pacing_notes": [
+        { "blocks": "3", "issue": "A shaman’s chant before the story begins stalls the first beat.", "fix": "Cut, or move after [5]." },
+        { "blocks": "87–89", "issue": "Bold names plus two re-shown character cards at the climax.", "fix": "Cut [88]–[89]." }
+      ],
+      "flow_notes": [],
+      "romance": "Not a romance. The god’s stay with the Lady of Wisdom is one line [32]; her ‘I’ll be here. I’ll have rice on.’ [49] is the tender beat. Right weight for a myth.",
+      "battle": null,
+      "suspense": "Two questions pull: who is the father (answered when the comb halves fit [52]) and who gets the living world (the flower switch [78]). Plants Yumla [96] and the Three Realms [102] for #62 and #71.",
+      "best": "[27]–[28] ‘There’s nobody under heaven who can touch me.’ / ‘That’s why I came from above.’",
+      "worst": "[3] and [87]–[89]: a chant and re-shown cards around the edges, plus the doubled twin names.",
+      "fixes": [
+        "One name per twin in English.",
+        "Cut the opening chant [3] and the repeated cards [88]–[89].",
+        "Fix the card [108]: Yuri Dora is ‘he’, and Gyebek is mending the roof, not hiding on it."
+      ]
+    },
+    {
+      "n": 58,
+      "title": "Sulmun",
+      "logline": "Night two, told on a roof: the giantess Sulmun builds the island out of her apron, dies in the porridge she cooks for her five hundred sons, and loses her bridge to the mainland by one roll of silk. Gyebek inspects every number.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "Gyebek’s questions are the episode; cut the second record and give the porridge tragedy one reaction.",
+      "opening": "‘The next story is told to him on a roof, because he is on a roof, mending it.’ Dry and character-first; it works.",
+      "ending": "‘…That is the worst amount to be short by.’ [19] lands; the MORAL [20] repeats it. The card’s ‘Not from an egg’ winks at #53 nicely.",
+      "sudden": [],
+      "pacing_notes": [
+        { "blocks": "14–16", "issue": "Two records in a 531-word episode; [16] retells the one-roll-short bridge that [15] just told.", "fix": "Cut [16]." },
+        { "blocks": "12–13", "issue": "The most moving tale here (a mother boiled in her sons’ porridge) gets two summary sentences and no reaction from Gyebek.", "fix": "Give him one question, the way he asks about the apron." }
+      ],
+      "flow_notes": [
+        { "blocks": "13→15", "issue": "Two unrelated tales (the sons, the bridge) sit side by side with no link.", "fix": "One bridging line, or drop one tale." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Light. Plants ‘one roll short / the last one per cent’ [19]–[20]. At #72 Baekje wins four clashes and loses the fifth, a loose echo nobody draws.",
+      "best": "[6]–[8] ‘Was there a hole in the apron.’ / ‘…How did you know that?’",
+      "worst": "[14]–[16]: two records around a two-sentence tale.",
+      "fixes": [
+        "Cut record [16].",
+        "Add one Gyebek reaction to the porridge tragedy [12]–[13].",
+        "If ‘one short’ is meant for Yellow Mountain, let Gyebek recall it there; otherwise cut the MORAL [20]."
+      ]
+    },
+    {
+      "n": 59,
+      "title": "Three Princes",
+      "logline": "Tamla’s founding: three princes climb out of a hole, split the island by arrow and marry three princesses from a drifting box. Then a hunting god eats his wife’s plough-ox, their son is cast out to sea in an iron chest, and he comes home a god; Gyebek asks to hear that part again.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "The title tale is a telegram plus two records; the episode lives in the diver’s kindness, the ox divorce and ‘Tell that part again’.",
+      "opening": "‘This is the story of the kingdom of Tamla.’ A title, not a hook.",
+      "ending": "‘The part where he comes home.’ [37] is the best beat of the myth run so far, and the card (‘Tomorrow’s isn’t a kind one, Turtle’) pulls forward.",
+      "sudden": [
+        { "block": "2–11", "what": "Yang, Go, Bu, three princesses and a messenger arrive in a handful of blocks", "setup": "none needed, but too many names for the space", "fix": "Name nobody; ‘three princes’ is enough." }
+      ],
+      "pacing_notes": [
+        { "blocks": "7–15", "issue": "Telegram dialogue (‘Marriage. Debate later.’) and two back-to-back records [14]–[15] retelling the summary [10]–[13].", "fix": "Cut [14]–[15] and the telegram lines; tell the founding in one paragraph." }
+      ],
+      "flow_notes": [
+        { "blocks": "16→17→22", "issue": "Three separate evenings (the founding, the diver, the ox god) with no link; the title points at the weakest one.", "fix": "Lead with the diver [17]–[21] and the ox tale, and retitle for the son who comes home." }
+      ],
+      "romance": "Baekjuto and Socheon-guk [24]–[32] is a marriage played as a comedy of appetite (‘…I also ate someone else’s.’). Quick and funny; it’s a divorce, not a romance.",
+      "battle": null,
+      "suspense": "‘Tell that part again… The part where he comes home.’ [35]–[37] plants Gyebek’s wish to go home, which pays off when the boat comes at #70 [2].",
+      "best": "[35]–[37] ‘Tell that part again.’ / ‘Which part.’ / ‘The part where he comes home.’",
+      "worst": "[2]–[15]: the title tale in summary, telegram lines and two records.",
+      "fixes": [
+        "Cut records [14]–[15] and the telegram lines [7]–[12].",
+        "Build the episode on the diver scene and the son who comes home.",
+        "Fold #63’s single point (why Tamla takes Baekje’s exiles) into [16] and delete #63."
+      ]
+    },
+    {
+      "n": 60,
+      "title": "Stone Lady",
+      "logline": "Three unkind tales: a magistrate who kills a cave serpent and dies for looking back, a rock goddess whose husband is murdered by an official, and a youngest daughter thrown out for claiming her own luck who later opens her blind parents’ eyes.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "An anthology told in summary; keep Gameunjang, fix the serpent quote and the mislabeled husband.",
+      "opening": "‘Today’s is not a kind one.’ / ‘That is acceptable.’ A good dry hook.",
+      "ending": "‘He finishes the rope, and tests it eleven times.’ [31] lands better than the MORAL [32] after it. The card pulls cleanly into #61.",
+      "sudden": [
+        { "block": "8", "what": "The record has a man say ‘it’s raining blood’ aloud and the magistrate drop dead because someone spoke, not because he looked back", "setup": "[5] says he died for looking back", "fix": "Cut the record, or rewrite [5] to match it." },
+        { "block": "13", "what": "Sanbangduk’s poor husband speaks under the label ‘The Herald’", "setup": "none (The Herald is the court crier from #4)", "fix": "Relabel him ‘The Husband’." }
+      ],
+      "pacing_notes": [
+        { "blocks": "5–19", "issue": "Two tales, a record and a MORAL in fifteen blocks; the Sanbangduk romance gets four lines.", "fix": "Drop the serpent tale and give Sanbangduk room, or drop Sanbangduk." }
+      ],
+      "flow_notes": [
+        { "blocks": "19", "issue": "‘Do not turn round to confirm the victory’ is planted as a warning for Gyebek and never pays off at Yellow Mountain.", "fix": "Have Gyebek look back once at #72 and pay for it, or cut the MORAL." }
+      ],
+      "romance": "Sanbangduk [10]–[14]: one good exchange (‘when I hold your hand I don’t feel like stone’), then the murder and her return in two sentences. Told, not played; too thin to move anyone.",
+      "battle": null,
+      "suspense": "Gameunjang plants ‘It was the ones who threw her out who went blind.’ [30], a clean mirror of Baekje throwing out Gyebek. The ‘looking back’ warning [19] never fires.",
+      "best": "[29]–[30] ‘So the child they threw away was the luck.’ / ‘No. The luck was always hers.’",
+      "worst": "[5]–[8]: the serpent tale, where the record contradicts the narration.",
+      "fixes": [
+        "Cut the serpent record [8] (or the whole serpent tale).",
+        "Relabel [13] as the husband.",
+        "Cut the MORALs [19] and [32]; Gyebek’s lines already make the point."
+      ]
+    },
+    {
+      "n": 61,
+      "title": "Gardener",
+      "logline": "Hallakgungi, born a servant, walks west to his father’s flower field and comes back with flowers that destroy the rich man’s house and rebuild his murdered mother. Then Jacheongbi, disguised as a man beside a sky boy for three years, uses the same flowers to bring her lover back.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "Two good tales with real dialogue; play Jacheongbi’s loss and her lover’s return instead of summarizing them in a line each.",
+      "opening": "‘Told in the orange grove… when Gyebek has finally been persuaded to sit on a basket.’ The frame grows warmer each episode; it works.",
+      "ending": "‘…Can the dead be fetched back.’ / ‘In stories.’ / ‘…I see.’ [40]–[42] is quietly devastating. The card sets up Kangrim cleanly.",
+      "sudden": [
+        { "block": "4", "what": "The mother, Wonganghami, is named once and never again", "setup": "none", "fix": "Call her ‘his mother’." }
+      ],
+      "pacing_notes": [
+        { "blocks": "33, 39", "issue": "After a well-played seduction, Jacheongbi’s cost (‘They killed him for it.’) and payoff (the revival) are one summary sentence each.", "fix": "Give the death one beat and the revival one spoken line." },
+        { "blocks": "12", "issue": "The record repeats the row of flowers [9] just described.", "fix": "Cut." }
+      ],
+      "flow_notes": [
+        { "blocks": "17", "issue": "A MORAL card with an empty label sits between the two tales.", "fix": "Cut it." }
+      ],
+      "romance": "Jacheongbi and Mun Doryeong [26]–[39] is the best-played short romance in the slice: desire (three years at one desk), an obstacle (no women allowed), chemistry (‘…I had no eyes.’ / ‘You have them now.’) and a reveal that costs her. Then the cost [33] and the payoff [39] are told in a line each. We root for her and are denied the scene.",
+      "battle": null,
+      "suspense": "Plants ‘the flowers that bring you back and the flowers that end you grow in the same rows’ [14], ‘the door is usually in the wording’ [43], and Hallakgungi for #71. The wording plant never fires for Gyebek.",
+      "best": "[40]–[42] ‘…Can the dead be fetched back.’ / ‘In stories.’ / ‘…I see.’",
+      "worst": "[33]–[39]: the romance’s death and resurrection in summary.",
+      "fixes": [
+        "Play Mun Doryeong’s death and revival as short scenes.",
+        "Cut record [12] and the empty MORAL [17].",
+        "If the loophole Gyebek ‘asks to hear twice’ [25] matters, let him use one later; otherwise cut [43]."
+      ]
+    },
+    {
+      "n": 62,
+      "title": "Kangrim",
+      "logline": "The island’s last tale: a magistrate’s strongman, Kangrim, goes down alive to arrest the judge of the dead, is split between his two masters, loses the ledger of everyone’s hour to a hungry crow, and becomes the reaper who asks a question at every door.",
+      "scores": { "followable": 2, "context": 4, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "The origin pays off big at #72, but [2] and [10] compress a murder case into a blur; play the descent and the crow and cut the rest.",
+      "opening": "‘The island keeps one story for last. After it, every ending on the mainland has a broken clock already running.’ A good hook, though it repeats the previous card.",
+      "ending": "‘…Then a man can die before his king, and the book still opens.’ [20] is the sting. The card then pivots to tribute, a question nobody asked.",
+      "sudden": [
+        { "block": "2", "what": "Three murdered brothers, flowers, beads, a woman who swallows them, three sons who die in one bow and a petitioning mother, all in one paragraph", "setup": "none", "fix": "Three plain sentences: a murder no living court can try, so the magistrate sends his strongest man for the judge of the dead." },
+        { "block": "10", "what": "‘The couple who had killed them’: no couple was ever mentioned", "setup": "none", "fix": "Name the killers in [2] or cut the line." },
+        { "block": "2", "what": "Magistrate ‘Kimchi’ reads as the food to an English reader", "setup": "none", "fix": "Spell it Gimchi, or let Gyebek or Yuri Dora wink at it once." },
+        { "block": "13", "what": "‘chasa’, untranslated", "setup": "none", "fix": "‘a fetch of the dead’." }
+      ],
+      "pacing_notes": [
+        { "blocks": "2–18", "issue": "Four sub-tales (the murder case, the descent, the crow, Dongbangsak) in 719 words, nearly all summary; Haewonmek and Dongbangsak are names for a single beat each.", "fix": "Keep the descent [6]–[9] and the crow [16]; cut Dongbangsak [18] to the one line that explains the question." }
+      ],
+      "flow_notes": [
+        { "blocks": "22→23", "issue": "The card turns from death to tribute while the reader wants Sabi.", "fix": "Aim the card at Sabi and delete #63." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Pays off at #72 [116]–[118], where Gyebek recites Kangrim’s origin back to him, and explains the ritual question readers have watched since #23.",
+      "best": "[20] ‘…Then a man can die before his king, and the book still opens.’",
+      "worst": "[2] and [10]: the murder case nobody can follow.",
+      "fixes": [
+        "Rewrite [2] as three plain sentences; set up or cut ‘the couple’ [10].",
+        "Cut Dongbangsak [18] to one line and drop Haewonmek’s name here.",
+        "Re-aim the card [23] at Sabi."
+      ]
+    },
+    {
+      "n": 63,
+      "title": "Tribute",
+      "logline": "In 498 Tamla forgets its tribute, Baekje’s king marches to the harbour and stops, and Tamla apologises, which is why the island owes Baekje a place to put men it cannot kill.",
+      "scores": { "followable": 4, "context": 3, "pacing": 2, "flow": 2, "entertainment": 2 },
+      "verdict": "A 177-word footnote that restates #59 [16]; fold its one good line into #59 and delete it.",
+      "opening": "‘Tamla stops sending tribute.’ Clear, and ‘closer to forgetting’ in [0] has wit.",
+      "ending": "The card is the best part: back to Sabi and Euija’s proclamation. That return should come one episode sooner.",
+      "sudden": [],
+      "pacing_notes": [
+        { "blocks": "1–4", "issue": "Narration, a record [2] that says the same thing, then [4] restating #56 [60] and #59 [16].", "fix": "Delete the episode; keep the ‘closer to forgetting’ line in #59 [16]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#62→#63→#64", "issue": "A seventh flashback in a row that answers a question no reader asked, standing between the reader and the coup.", "fix": "Cut; go from #62 straight to #64." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "None; it closes a question the reader never asked.",
+      "best": "[0] ‘Rebellion would at least have been legible; this is closer to forgetting.’",
+      "worst": "[2]–[4]: a record and its restatement.",
+      "fixes": [
+        "Delete #63 and move one line into #59 [16].",
+        "Point #62’s card at Sabi."
+      ]
+    },
+    {
+      "n": 64,
+      "title": "Coup",
+      "logline": "Euija, out of mourning, beats the eight clans in one morning: a martial-law proclamation, an enabling law, forty-one sons on the benches and a Satek mole named Premier. That night he starts collecting court ladies, and months later his new Premier tells the Tang emperor Baekje will fall by itself.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "Sharp satire and a great plant (Ye Sikjin’s drawer), but interrupt the speech, stage the mole’s reveal, and mention Gyebek, the reason for the coup.",
+      "opening": "‘He calls the assembly the way a gambler calls a final hand.’ A strong hook; it promises a con.",
+      "ending": "Chunbok’s ‘the rumour alone will tip the country’s spirit’ [46] is a chilling turn, though his motive is opaque. The card (‘somebody keeps counting’) pulls straight into #65.",
+      "sudden": [
+        { "block": "2", "what": "‘Deer Rock’, the Rock of Politics under a new name", "setup": "#5 [35], #18 [28], #19 [18] call it the Rock of Politics", "fix": "Use ‘the Rock of Politics’." },
+        { "block": "26", "what": "Satek Chunbok revealed, after the fact, as the king’s spy inside his own clan", "setup": "#19 [21] (‘an inconvenient conscience’), #56 [53]", "fix": "Show it: Chunbok’s sleeve goes up first in the Assembly." },
+        { "block": "39–46", "what": "The king’s handpicked Premier tells the Third Emperor Baekje will fall, then in #65–#66 begs Euija to recall Gyebek", "setup": "#56 [54] tease", "fix": "One narrator line on his double game, so the reader enjoys it instead of doubting the text." }
+      ],
+      "pacing_notes": [
+        { "blocks": "3–8", "issue": "Six blocks of one uninterrupted speech (about 250 words of martial-law boilerplate). Readers who miss the parody just get a long, flat speech; nobody interrupts.", "fix": "Cut to two blocks and cut in the room: Chunbok’s ink line [10] mid-speech, a cough, the dry rock." },
+        { "blocks": "18–20", "issue": "Forty-one sons told in narration, then a record, then a diagram.", "fix": "Keep [18]; cut [19] or [20]." },
+        { "blocks": "25–30", "issue": "How the coup worked is summarized after it happened, including a one-line staged scene [29] with no listener.", "fix": "Move [26]–[30] into the Assembly scene as action." }
+      ],
+      "flow_notes": [
+        { "blocks": "#56 [80] → [9]", "issue": "Euija’s motive was ‘You put my man on a boat?’, yet the coup never mentions Gyebek and he is not recalled after the win; #65’s ‘That… who?’ has no bridge.", "fix": "Add one beat: Euija writes the recall and doesn’t send it (pride, or fear the clans will read it as war)." },
+        { "blocks": "header, 1", "issue": "Dated 655, but the three-year mourning began in 655 (#56) and the record [19] says 657.", "fix": "Date the coup 657–658, or shorten the mourning." }
+      ],
+      "romance": "The maids [33]–[37] are seduction, not romance, and ‘As you did for General Gyebek — take your time.’ stings: he once named a soldier, now he names concubines.",
+      "battle": "A political battle with clear stakes, a POV and a reversal (‘He has already changed who is sitting.’ [25]), but the moves are summarized after the fact. Dramatize Chunbok’s sleeve going up.",
+      "suspense": "Plants: Ye Sikjin’s drawer [21] and Chunbok in Chang’an [39]–[46] (both fire at #73), the quiet stamps [23]. ‘Will this hold?’ pulls.",
+      "best": "[10] ‘Also he printed the proclamation before the session. I can smell the ink.’",
+      "worst": "[3]–[8]: the uninterrupted proclamation.",
+      "fixes": [
+        "Cut the proclamation [3]–[8] to two blocks and cross-cut the room.",
+        "Add the Gyebek beat (a recall written and not sent).",
+        "Stage Chunbok’s turn in the Assembly instead of summarizing it [25]–[30]; cut record [19]."
+      ]
+    },
+    {
+      "n": 65,
+      "title": "Descent",
+      "logline": "The winner can’t sleep: Euija dreams of a dry rock and a man counting in a boat, exiles Heungsu for one honest sentence, sinks into a years-long harem, shrugs off Gyebek’s name, and lets Seongchung starve in a cell next to the feast.",
+      "scores": { "followable": 3, "context": 3, "pacing": 1, "flow": 3, "entertainment": 3 },
+      "verdict": "Cut the thirteen shot-list paragraphs [14]–[26]; what remains (the nightmares, ‘That… who?’, Seongchung’s death) is a strong episode.",
+      "opening": "‘He starts dreaming about the Rock of Politics.’ Atmospheric and on theme; it works without a punchline.",
+      "ending": "Seongchung’s memorial [59] and ‘The king does not take it in.’ [60] land; the omen card pulls forward.",
+      "sudden": [
+        { "block": "8", "what": "Heungsu is introduced as he is exiled, in summary", "setup": "none before #65", "fix": "Give him one spoken line in Sabi before he’s sent away." },
+        { "block": "9, 47, 54", "what": "‘The hollow ring leans on the timber’, ‘the ring at his hip’: image-prompt wording for a ring-pommel sword", "setup": "none", "fix": "Say ‘his office sword’ once and drop the ring." },
+        { "block": "41", "what": "A maid’s line labelled ‘Baekje’", "setup": "none", "fix": "Relabel ‘The Court Maids’." },
+        { "block": "47–57", "what": "‘Seongchung’ in narration, ‘Sungchung’ on his speaker label and as #68’s title", "setup": "#18 has the same split", "fix": "Pick one spelling book-wide." }
+      ],
+      "pacing_notes": [
+        { "blocks": "14–26", "issue": "Thirteen paragraphs of image-prompt shot lists (‘One knee up. A twist.’ [17], ‘Less clothes. More lamp.’ [25]); ‘hike’ alone recurs about ten times. It is the house rule’s own banned example, nearly verbatim: voiceless, repetitive, and it buries the decline.", "fix": "Replace with one narrator paragraph (keep [15]’s ‘The stories say three thousand’) and let the maids’ banter [27]–[36] carry the decadence." },
+        { "blocks": "51–52", "issue": "‘The belt comes off in the aisle’ is ambiguous (a beating? stripped of office?); the record then explains it.", "fix": "Say what happens and cut the record [52]." }
+      ],
+      "flow_notes": [
+        { "blocks": "6", "issue": "‘Euija becomes increasingly paranoid about the aftershock of his purge’ is a textbook line telling a decline that the dream [1]–[5] already shows.", "fix": "Cut." },
+        { "blocks": "38–40", "issue": "Chunbok, who just told Tang Baekje would fall (#64), now asks for Gyebek back; the reader can’t tell whose side he’s on.", "fix": "One narrator aside on his double game." }
+      ],
+      "romance": "No romance; the banquet is a harem montage. The maids’ banter [27]–[35] has real wit (‘Then Your Majesty still has room to work with.’) and could carry the decadence on its own.",
+      "battle": null,
+      "suspense": "Plants: Seongchung’s two doors [59] (fire at #69 and #72), the counting man in the dream [2], ‘That… who?’ [40]. Kangrim’s question to Seongchung [56] uses the ritual well.",
+      "best": "[36] ‘He laughs for the first time in four months. It is the last recorded instance.’",
+      "worst": "[14]–[26]: thirteen paragraphs of shot-list narration.",
+      "fixes": [
+        "Cut [14]–[26] to one paragraph.",
+        "Make Seongchung’s arrest clear at [51], cut record [52], and unify Seongchung/Sungchung.",
+        "Give Heungsu one live line before his exile [8] and drop the ‘hollow ring’ fragments."
+      ]
+    },
+    {
+      "n": 66,
+      "title": "Nine Omens",
+      "logline": "Nine omens break over Baekje, and a flashback shows Muyeol manufacturing them against the king who manufactured miracles. Euija cuts down the shaman who reads the turtle, admires the forgery (‘Well made’), then jumps into the river where he named Gyebek and comes up shouting for him.",
+      "scores": { "followable": 4, "context": 4, "pacing": 2, "flow": 4, "entertainment": 4 },
+      "verdict": "This is where Euija’s whole story pays off; tell the omens once and it is the slice’s best history episode after #69.",
+      "opening": "‘Around the kingdom, signs of Baekje’s impending doom gather.’ Textbook. The hook is [1] (‘real, in the sense that people saw it’). Swap them.",
+      "ending": "‘Summon Gyebek…!’ [41] is the slice’s biggest pull. The card then cuts away to Onjo.",
+      "sudden": [
+        { "block": "38", "what": "‘the man he sent away’, but #56 had the clans exile Gyebek against Euija’s will", "setup": "#56 [44]–[56]", "fix": "‘the man he never sent for’." },
+        { "block": "29", "what": "‘When I first took the throne’: he named Gyebek before he was even crown prince", "setup": "#4 [111]", "fix": "‘When I was a prince on a mudbank.’" },
+        { "block": "13", "what": "The ghost’s shout is labelled ‘Baekje’", "setup": "none", "fix": "Put it in narration or label it ‘A Voice’." }
+      ],
+      "pacing_notes": [
+        { "blocks": "2–11, 18–19", "issue": "The omens are listed [2]–[10], listed again in the annals widget [11], then read a third time by the shaman [18]–[19].", "fix": "Cut the numbered list [2]–[10]; let the shaman’s reading be the first time we hear them." },
+        { "blocks": "15–16, 26", "issue": "Two introductions to the shaman scene, and a Yamato record [26] that repeats [25].", "fix": "Cut [16] and [26]." }
+      ],
+      "flow_notes": [
+        { "blocks": "23–24", "issue": "He cuts her down, then shouts ‘You wretch!!!’; the line comes after the act.", "fix": "Swap [23] and [24]." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Muyeol’s ‘First you need a rumour.’ [12.6] lets the reader watch the trap close. The paper dragon and the faked white deer from #18 fire at [34], the best plant-payoff in the slice. ‘Summon Gyebek…!’ starts the clock. A missed rhyme: the omen is a turtle dug out of the palace while the island calls Gyebek ‘Turtle’.",
+      "best": "[12.2] ‘He made them himself. Which makes him the worst reader of signs alive.’",
+      "worst": "[2]–[11]: the omens told twice before the shaman tells them again.",
+      "fixes": [
+        "Cut the omen list [2]–[10] (or the widget [11]).",
+        "Open on [1], not [0].",
+        "Fix [38] (‘sent away’) and [29] (‘took the throne’)."
+      ]
+    },
+    {
+      "n": 67,
+      "title": "Onjo",
+      "logline": "Jumong’s first son Yuri walks south with half a sword and claims the crown. Sosuno spends one last night with Jumong, then takes her sons south behind a white stag to Mount Buak, where Biryu leaves for the sea and Onjo names a country Baekje.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 2, "entertainment": 4 },
+      "verdict": "A warm payoff for the Jumong arc, but it yanks the reader away right after ‘Summon Gyebek…!’, and its last-night scene re-runs #39’s lines.",
+      "opening": "‘Onjo and Biryu grow up princes in their father’s hall. Nobody there ever mentions Buyeo.’ A sly hook.",
+      "ending": "Onjo’s ‘The land of a HUNDRED tribes… Baekje!’ [59] is fun, then a record retells it [61]. The card (‘a dead man’s letter’) pulls back to Sabi well.",
+      "sudden": [
+        { "block": "8–9", "what": "Jumong left half a sword under a pine for a son not yet born", "setup": "none; in #38 [49] Lady Ye only says ‘I’ll keep the lamp’", "fix": "Plant the sword half in #38 [49], or let Jumong mention it before the halves click." },
+        { "block": "17–18, 26", "what": "‘She packs the dusty-rose’, ‘Little Sosuno’s silence’, ‘the glow’: shorthand from #39, 28 episodes back", "setup": "#39 [23], [89]", "fix": "‘her dusty-rose silk’; one clause for the glow." }
+      ],
+      "pacing_notes": [
+        { "blocks": "41–42", "issue": "[41] summarizes the deer, the heavenly door and the settling; [42] then says ‘It happens like this’ and plays it.", "fix": "Cut [41]." },
+        { "blocks": "52, 61", "issue": "Two long records retell the ten ministers’ argument and the naming we just watched.", "fix": "Cut both." }
+      ],
+      "flow_notes": [
+        { "blocks": "#66 [41] → [0]", "issue": "The jump is announced (‘Before the last stand, the first road’), but it lands on the Jumong–Sosuno farewell rather than Baekje’s fall, and never draws the link to Euija’s ‘a country is a territory governed by a single story’ (#19 [27]).", "fix": "Move #67 before #64, or open with one narrator line: every Baekje child knows this story, and the king who said so is about to lose his." }
+      ],
+      "romance": "Jumong and Sosuno [19]–[38] have real chemistry in the banter (‘That’s… a lot of buckets for one road.’ / ‘Not buckets. Grain. Boys. Me.’), a choice that costs (‘I’m not sitting in a footnote.’) and a tender exit (‘Keep the well. I’m taking the glow.’). [29] promises ‘Older. Hungrier.’, but [31]–[33] replays #39 [176]/[178] almost word for word (‘man meat’, ‘Beat up Little Sosuno’), so the farewell night reads as a rerun. Something new between them would make it count.",
+      "battle": null,
+      "suspense": "Pays off #39’s boys and #4’s pale stag (Sinrok, the guardian deer [57]). Withheld well: whom Sosuno goes with [55]–[56].",
+      "best": "[49] ‘Your father crossed a river on turtles’ backs. A deer’s practically civilised.’",
+      "worst": "[31]–[33]: the explicit exchange recycled from #39, plus the [41] spoiler and two records.",
+      "fixes": [
+        "Move #67 out of the gap after ‘Summon Gyebek…!’ (before #64 works), or cut it to the stag and the naming.",
+        "Write a new last-night exchange instead of reusing #39’s lines.",
+        "Cut [41], [52] and [61]."
+      ]
+    },
+    {
+      "n": 68,
+      "title": "Sungchung",
+      "logline": "Two armies close on Sabi. Chunbok argues there are too few troops to send Gyebek, Euija roars ‘Send him NOW!’, and Ye Sikjin silently works out how far the war is from his own gate.",
+      "scores": { "followable": 2, "context": 2, "pacing": 2, "flow": 2, "entertainment": 2 },
+      "verdict": "A 208-word stub named for a man who died two episodes ago; merge it into #69.",
+      "opening": "‘Word reaches Euija. Two armies are coming for his capital.’ News summary, no hook.",
+      "ending": "The card (‘Euija sent him away too. Somebody ride. Now…!’) pulls well into #69.",
+      "sudden": [
+        { "block": "1", "what": "‘The Red Fowl set out from Laizhou’: the Tang general’s nickname, unexplained", "setup": "none until #72 [2]–[5]", "fix": "Cut the record; let #72 introduce him." },
+        { "block": "4", "what": "‘Too few troops to send General Gyebek’ while Gyebek is still on Tamla (his boat comes in #70)", "setup": "#66 [41] ‘Summon Gyebek’", "fix": "Say where the summons stands (‘The boat for Gyebek hasn’t sailed. Chunbok has reasons.’)." },
+        { "block": "4", "what": "‘Lord Satek’s men’ after #64 fired every Satek minister", "setup": "#64 [18]", "fix": "One clause: the clan still has private levies." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–3", "issue": "Two textbook lines (‘there is panic as the Silla/Tang army is approaching the borders’), a record and a floating aphorism [2].", "fix": "Cut [1]–[3] and open on [5]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#66 [41] → [4]", "issue": "A year passes between ‘Summon Gyebek’ and the invasion with no word on the summons.", "fix": "One line on what happened to it." }
+      ],
+      "romance": null,
+      "battle": "Pre-battle: ‘Who is the Eraha of this country?!’ [5] has heat, and Ye Sikjin’s sum [6] is the sharpest line about stakes. No plan is shown.",
+      "suspense": "Ye Sikjin’s arithmetic [6] keeps the betrayal plant alive (fires at #73).",
+      "best": "[6] ‘And how many from the capital to his own gate?’",
+      "worst": "[0]–[3]: summary, a record and an aphorism.",
+      "fixes": [
+        "Merge #68 into #69 as its opening scene.",
+        "Cut [1]–[3].",
+        "Settle where Gyebek is when Chunbok objects [4]."
+      ]
+    },
+    {
+      "n": 69,
+      "title": "Heungsu",
+      "logline": "The exiled minister Heungsu has spent four years redrawing one map in the dirt of his yard. The king’s courier asks for a plan, Heungsu says Seongchung already wrote it, the ministers overrule him, the Tang land, and he walks north alone toward a pass that has already fallen.",
+      "scores": { "followable": 4, "context": 3, "pacing": 4, "flow": 3, "entertainment": 5 },
+      "verdict": "The best history episode in the slice; fix the impossible ‘655 berth’ flashback and give Euija a reason for ‘So it is’.",
+      "opening": "‘Heungsu is not in the hall.’ Plain but intriguing; it puts the hero where the court isn’t.",
+      "ending": "‘The histories do not mention him again.’ [19], after he walks toward a fallen pass, is perfect. The card turns to Gyebek’s boat.",
+      "sudden": [
+        { "block": "1", "what": "Heungsu and Gyebek talk like old friends", "setup": "never on page together; Heungsu first appears at #65 [8]", "fix": "Put Heungsu at the berth in #56 when Gyebek sails." },
+        { "block": "1.8, 2.1", "what": "‘Tanhyeon’, but Seongchung’s memorial (#65 [59]) called the pass ‘Chimhyeon’", "setup": "#65 [59]", "fix": "One name, or gloss once: ‘Tanhyeon, the old men’s Chimhyeon’." }
+      ],
+      "pacing_notes": [
+        { "blocks": "8, 14", "issue": "Record [8] repeats the line Heungsu just spoke; record [14] carries the ministers’ fatal counter-plan (let the Tang into the narrows) instead of a scene.", "fix": "Cut [8]; play [14] as two ministers and the king, ending on ‘So it is.’ [15]." }
+      ],
+      "flow_notes": [
+        { "blocks": "1", "issue": "Dated ‘655, the berth, before the paper named a county’, but Gyebek is marching to Yellow Mountain (‘Today I go to give it back to him’ [1.4]; ‘Yellow Mountain first’ [1.9]), which happens in 660, after Heungsu’s exile, while Gyebek is on Tamla.", "fix": "Make it a letter Gyebek sends in 660, or keep 655 and make it about exile, not marching." },
+        { "blocks": "14–15", "issue": "Euija, just sobered and roaring ‘Send him NOW!’ (#68), meekly agrees with the ministers, with no reason given.", "fix": "Give him one reason (Heungsu’s grudge, or pride in the ‘chickens in a basket’ trap) so the fatal choice is his." }
+      ],
+      "romance": null,
+      "battle": "The best pre-battle geography in the book. The yard map (the river mouth drawn twice as wide, one notch for the pass) teaches the reader the two doors [2.1] before #72 uses them, and ‘You’re standing on Tanhyeon.’ [10] makes the stakes physical.",
+      "suspense": "Pays off Seongchung’s memorial (#65 [59]) and sets up both doors for #72. Gyebek’s ‘My trouble is that for me they are the same person.’ [1.7] pays off the Guardian of Ansi’s line (#36 [6.1]). ‘Will anyone listen?’ is answered cruelly.",
+      "best": "[10] ‘You’re standing on Tanhyeon.’",
+      "worst": "[1]: the berth flashback that breaks the timeline.",
+      "fixes": [
+        "Re-date or rewrite the berth flashback [1].",
+        "Dramatize the ministers’ counter-plan [14] and give Euija a reason.",
+        "Use one name for the pass."
+      ]
+    },
+    {
+      "n": 70,
+      "title": "Gyebek",
+      "logline": "In his fifth island year Gyebek has stopped counting. A boat comes; he refuses Yuri Dora’s offer of a comfortable death, goes home, kills his wife and children so they can’t be enslaved, saddles Gomanari and marches five thousand men to Yellow Mountain.",
+      "scores": { "followable": 4, "context": 2, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "The defining act of Gyebek’s life happens to a family the reader has never met, in one record; plant them, and plant the vow #72 calls back.",
+      "opening": "‘Somewhere in the fourth year he notices he has stopped counting the days.’ Excellent: a counting man who stops is a whole arc in one line.",
+      "ending": "The horse beats [18]–[22] land hard; the march [24]–[25] is a summary and a shout. The card cuts away to the gods.",
+      "sudden": [
+        { "block": "17", "what": "Gyebek’s wife and children, first mentioned in the record of their deaths", "setup": "none in #1–#69", "fix": "Plant them in #56 (a wife at the berth, a child who copies his count) and once on the island (he can’t write to them)." },
+        { "block": "2", "what": "‘A boat comes for him’: sent by whom, carrying what words?", "setup": "#66 [41]", "fix": "Let it carry Euija’s words, or a token from #4." },
+        { "block": "14", "what": "‘took me in, raised me’: #4 shows a naming, not a raising", "setup": "#4 [111]", "fix": "Use #4’s terms: a name for a boy who had none." }
+      ],
+      "pacing_notes": [
+        { "blocks": "16–17", "issue": "The killing is one narrator sentence and a record. Restraint can work, but there is nothing to restrain: we never met them.", "fix": "Keep the act offstage, but give the yard before it (a wife who knows, a child counting) two blocks." },
+        { "blocks": "24–25", "issue": "The march is two lines.", "fix": "One beat of the five thousand meeting him." }
+      ],
+      "flow_notes": [
+        { "blocks": "#69 → [0]", "issue": "#69 ends after the Tang landing; #70 rewinds to the island with no time cue.", "fix": "Add one (‘A month earlier, on Tamla’)." }
+      ],
+      "romance": null,
+      "battle": "None yet; the march sets the stakes (‘the last latch on the road to Sabi’ [24]).",
+      "suspense": "‘A story is not begun with its ending already fixed.’ / ‘…Mine is fixed.’ [8]–[9] is a strong cliffhanger of character. Missing: the vow #72 calls back (‘I will complete my duty’, #72 [120]) is never spoken here or in #4, and Euija’s order from #29 [11] (‘Judge it yourself… You are still the king of your own life’) is never recalled at the moment Gyebek chooses.",
+      "best": "[21] ‘A horse can’t be made a slave. / A horse is just a horse.’",
+      "worst": "[16]–[17]: the family killing as a footnote.",
+      "fixes": [
+        "Plant the family in #56 and on the island; keep the act offstage but show the yard first.",
+        "Have Gyebek speak the vow here (‘I will complete my duty’) so #72’s callback has a source.",
+        "Let him recall Euija’s ‘Judge it yourself’ (#29 [11]) when he decides."
+      ]
+    },
+    {
+      "n": 71,
+      "title": "Three Realms",
+      "logline": "The gods hold their yearly meeting in a cloud pavilion: servants gossip and flirt, Little Star reports that mortals are talking about reuniting Dangun’s kingdom, and Kangrim asks the Gardener, a little too eagerly, whether the dead can be brought back.",
+      "scores": { "followable": 2, "context": 2, "pacing": 2, "flow": 2, "entertainment": 2 },
+      "verdict": "A god sitcom labelled ‘Epilogue’ and parked between the march and the battle; move or cut it, and pay off Kangrim’s question or drop it.",
+      "opening": "‘Epilogue · Part II. The annual meeting is a small 정자.’ Confusing: an ‘Epilogue’ at episode 71 of 98, and untranslated Korean in the English text.",
+      "ending": "Big Star’s ‘Business of the living… last item on the agenda.’ [37] is a good button, but the agenda never comes. The card points down to the battle.",
+      "sudden": [
+        { "block": "0", "what": "‘Epilogue · Part II’ with no Part I nearby (the only earlier ‘Epilogue’ arc label is on #30)", "setup": "#30’s arc label", "fix": "Drop the label from the text." },
+        { "block": "6", "what": "Haemosu and Kangrim’s old grudge, ‘the thing’", "setup": "none (Kangrim isn’t in #37–#38)", "fix": "Cut, or one clause on what it was." },
+        { "block": "23", "what": "‘You didn’t crucify him, did you?’ A Jesus gag about the sky lord’s son", "setup": "Dangun’s father is a deliberate mystery box", "fix": "Keep the tease and lose the crucifixion joke." },
+        { "block": "0, 22", "what": "‘정자’ in the English text", "setup": "none", "fix": "‘pavilion’." }
+      ],
+      "pacing_notes": [
+        { "blocks": "4–20", "issue": "Seventeen blocks of servant gossip (Samsin and Haemosu flirting about thighs and shallows) with no stakes while five thousand men are on the road.", "fix": "Cut to two or three lines." },
+        { "blocks": "9, 23, 30, 33", "issue": "Stage directions inside dialogue: ‘(awkwardly)’, ‘(joking)’, ‘(laughs)’, ‘(face hardens, becomes serious)’.", "fix": "Move them into narration or cut." }
+      ],
+      "flow_notes": [
+        { "blocks": "#70 → #71 → #72", "issue": "Placed between the march and the battle, it stalls the slice’s biggest payoff for a meeting whose business we never see.", "fix": "Move it after #72 (the gods react to Yellow Mountain) or before #57 as the frame for the island tales." },
+        { "blocks": "32–35", "issue": "Kangrim’s resurrection question is the episode’s only hook, and nothing later in the book answers it.", "fix": "Pay it off at #72 (does he want Gyebek back?) or cut it." }
+      ],
+      "romance": "Samsin and Haemosu [12]–[17] flirt about appetite. It’s banter, not a romance, and it touches no mortal story.",
+      "battle": null,
+      "suspense": "One real question: why does Kangrim want to know whether the dead can be brought back [32]–[35]? Nothing answers it.",
+      "best": "[37] ‘Let the meeting begin. / Business of the living… last item on the agenda.’",
+      "worst": "[4]–[20]: servant gossip at the doorstep of the battle.",
+      "fixes": [
+        "Move #71 out of the gap between #70 and #72.",
+        "Cut the gossip [4]–[20] to three lines; remove the stage directions and the ‘Epilogue · Part II’ label.",
+        "Pay off Kangrim’s question or cut it."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "Two spines: Euija’s fall (the king who wanted to own Baekje’s story loses it to a better storyteller) and Gyebek’s exile and return (a literal man living on one promise). They are built to run in parallel but play in sequence with long detours, and the two men never share a scene in the slice (their last talk is #29). (a) Euija’s theme pays off brilliantly in #66: Muyeol forges the omens, Euija can’t expose them without exposing his own paper dragon, and says ‘Well made’; the river jump calls back #4. The personal arc does not pay off: his #56 motive vanishes in #64, the decline is a shot list instead of a choice, and ‘Summon Gyebek…!’ leads to no reunion. Gyebek’s character builds well (counting, literalness, ‘I trusted one man’), and the island tales plant what fires at #72 (Kangrim’s origin, choosing the ground, ten units of five hundred). But his two defining acts are not built: the family is never shown, and the vow #72 calls back is never spoken. (b) The jump into myth is motivated (Yuri Dora’s fire) and every tale keeps a Gyebek reaction. #57 and #62 connect strongly; #58–#61 connect only by theme and mostly in summary; #63 doesn’t connect at all. Seven in a row, right after three Silla myths (#53–#55), means 10 of the 11 episodes from #53 to #63 are myth, and Euija is offstage from #56 [80] to #64 (and had little page time since #29). Readers come back at #64 for the satire, not for Euija. (c) The suspense machinery toward the last stand is good (Seongchung’s two doors, Heungsu’s map, Ye Sikjin’s drawer, Muyeol’s rumour, ‘Mine is fixed’), but #67 and #71 cut away at the two peak moments, and the timeline of Gyebek’s return is knotted. A reader would keep going, mostly for #57, #64, #66, #69 and #70; the quitting risk is #58–#63 and #65.",
+    "handoffs": [
+      { "from": 55, "to": 56, "works": "yes", "why": "#55’s card (‘And the clans have a list with one name on it…!’) sets #56’s premise exactly.", "fix": "Don’t deflate it: open #56 on [2], not the textbook [0]." },
+      { "from": 56, "to": 57, "works": "partly", "why": "The frame is clean (‘First night on the island’ → ‘Told on the first night’), but the card rewinds past two seasons we just watched and parks Euija’s cliffhanger for seven episodes.", "fix": "Move #56’s island training scenes [83]–[102] into later frames so #56 ends on the first night, and interleave Sabi episodes with the tales." },
+      { "from": 57, "to": 58, "works": "yes", "why": "Card and opening match.", "fix": "Fix the card’s ‘She’ (Yuri Dora is ‘he’) and ‘hides’ (#58 has him mending)." },
+      { "from": 58, "to": 59, "works": "yes", "why": "‘Not from an egg’ winks at #53 and leads straight in.", "fix": "Open #59 on Yuri Dora’s ‘Not from an egg’ instead of ‘This is the story of the kingdom of Tamla.’" },
+      { "from": 59, "to": 60, "works": "yes", "why": "‘Tomorrow’s isn’t a kind one, Turtle’ → ‘Today’s is not a kind one.’", "fix": "None." },
+      { "from": 60, "to": 61, "works": "yes", "why": "The card’s pregnant wife leads into Sara Doryeong.", "fix": "None." },
+      { "from": 61, "to": 62, "works": "yes", "why": "Clean, though #62 [0] repeats the card word for word.", "fix": "Vary #62’s first line." },
+      { "from": 62, "to": 63, "works": "no", "why": "A tribute footnote answers a question nobody asked when the reader wants Sabi.", "fix": "Cut #63 and aim #62’s card at Sabi." },
+      { "from": 63, "to": 64, "works": "yes", "why": "The card promises the proclamation and #64’s gambler hook delivers.", "fix": "In #64, mention Gyebek; his exile is why Euija is doing this." },
+      { "from": 64, "to": 65, "works": "yes", "why": "‘Somebody keeps counting’ → the man counting in the boat (#65 [2]).", "fix": "None." },
+      { "from": 65, "to": 66, "works": "yes", "why": "The omen tease leads into the omens; #65 [37] bridges the years.", "fix": "None." },
+      { "from": 66, "to": 67, "works": "partly", "why": "Announced (‘Before the last stand, the first road’), but it cuts away at ‘Summon Gyebek…!’, the slice’s peak, into the Jumong–Sosuno farewell.", "fix": "Move #67 before #64, or tie it to Euija’s ‘single story’ line." },
+      { "from": 67, "to": 68, "works": "partly", "why": "The card pulls back to Sabi, but #68 never shows the ‘dead man’s letter’ (that’s #69), and a year has passed since the summons with no word on it.", "fix": "Merge #68 into #69; add one line on the summons." },
+      { "from": 68, "to": 69, "works": "yes", "why": "‘Somebody ride. Now…!’ → the courier to Heungsu.", "fix": "None." },
+      { "from": 69, "to": 70, "works": "partly", "why": "#69 ends after the Tang landing; #70 rewinds to the island with no cue, and #69’s flashback already showed Gyebek marching.", "fix": "Add a time cue in #70 [0]; fix #69 [1]." },
+      { "from": 70, "to": 71, "works": "partly", "why": "The card motivates the jump (‘someone has called a meeting’), but the detour stalls the march and the meeting never touches Gyebek.", "fix": "Move #71 elsewhere; go from #70 straight to #72." },
+      { "from": 71, "to": 72, "works": "partly", "why": "The card promises ‘five thousand men are counting fifty thousand’; #72 opens three years earlier on the Red Fowl in a blizzard and reaches Gyebek at [25], then pays the count off well.", "fix": "Open #72 nearer the field, or trim the Red Fowl’s backstory." }
+    ],
+    "dropped_threads": [
+      "#56 [18]: a second set of footprints behind the monastery screen (‘listening for a third house. Or for the king.’) is never identified; one line could tie it to Chunbok as the king’s eyes (#64 [26]).",
+      "#56 [80]: Euija’s fury (‘You put my man on a boat?’) is never acted on. He wins in #64 and never recalls Gyebek; the thread resurfaces only as #65 [40] ‘That… who?’.",
+      "#29 [11]: Euija’s ‘Judge it yourself… You are still the king of your own life…!’ is never recalled when Gyebek obeys, kills his family and marches (#70).",
+      "#71 [32]–[35]: Kangrim asks whether the flowers can raise the dead, and Hallakgungi grows suspicious. Nothing in #72–#98 answers it.",
+      "#71 [6]: Haemosu and Kangrim’s grudge, ‘the thing’, is never explained.",
+      "#61 [25], [43]: the rule-wording loophole Gyebek ‘asks to hear twice’ is never used.",
+      "#60 [19]: ‘Do not turn round to confirm the victory’, planted for Gyebek, has no clear payoff at Yellow Mountain.",
+      "#70 [13]: Yuri Dora’s ‘Do not forget people’ never fires (it could, as bitter irony one scene before the family killing, if the text noticed).",
+      "#56 [45]: ‘Nine, by then.’ Nine what? Never revisited.",
+      "Satek Chunbok’s game: he tells the Third Emperor Baekje will fall (#64 [44]–[46]), begs Euija to recall Gyebek (#65 [39], #66 [28]), then stalls Gyebek’s troops (#68 [4]). No scene shows his side until #73.",
+      "#69 [1]: Heungsu and Gyebek’s friendship appears only in a flashback and was never on page.",
+      "Plants #72 relies on that this slice never makes: the vow ‘I will complete my duty’ (#72 [120], which claims 632 but isn’t in #4) and Gyebek’s phoenix-ring sword (#72 [41])."
+    ],
+    "repetition": [
+      "#56: Gyebek is put on the boat three times ([9], [44], [56]); [9] and [56] share the ‘Satek water / Yunbi winter contract’ lines, and [77] recaps the sealed order again.",
+      "Tamla as Baekje’s exile island: #56 [60], #59 [16], #63 [4].",
+      "The nine omens: #66 [2]–[10] list, [11] annals widget, [18]–[19] shaman reading.",
+      "Forty-one sons: #64 [18] narration, [19] record, [20] diagram (after #56 [21] and #18 [68]).",
+      "Sosuno’s explicit lines: #39 [176]/[178] reused almost verbatim in #67 [31]/[33].",
+      "Records that retell the beat just played: #58 [16], #59 [14]–[15], #60 [8], #64 [19], #67 [52] and [61], #69 [8].",
+      "Twelve MORAL cards (#56 ×3, #57, #58, #59, #60 ×2, #61 ×2, #62, #70), most restating what Gyebek’s line just made clear.",
+      "#65 [14]–[26]: the same shot (‘hike the silk’, ‘one knee up’, ‘the robe hangs open’) repeated across thirteen paragraphs.",
+      "‘The island keeps one story for last’: #61 card [44], #62 [0] and #62’s logline."
+    ],
+    "top_problems": [
+      "Structure: 9 of the 16 episodes are flashback or myth. #57–#63 run seven in a row right after three Silla myths (#53–#55), and #67 and #71 cut away at the two peak moments (right after ‘Summon Gyebek…!’, and between the march and the battle). Interleave the island evenings with the Sabi episodes, merge #63 into #59 and #68 into #69, and move #67 and #71.",
+      "The Euija–Gyebek bond, the heart of #4, has no scene: the two never meet on page from #56 to #72 (their last talk is #29). Euija’s #56 motive evaporates in #64, his decline is never a choice, and ‘Summon Gyebek…!’ (#66) leads to no reunion. Add a recall he writes and doesn’t send (#64), and a meeting, letter or token before the march (#70).",
+      "#65 [14]–[26]: thirteen paragraphs of image-prompt shot lists in the narration (‘They hike the silk. One knee up. A twist.’), the house rule’s own banned example. It is the most quit-worthy stretch in the slice and buries Euija’s decline. Cut to one paragraph.",
+      "Gyebek’s family killing (#70 [16]–[17]), the act #72’s Kangrim question hinges on, is one line and a record about a wife and children never mentioned in 70 episodes. Plant them in #56 and on the island.",
+      "Chronology and naming knots: #56 tells the exile three times out of order; #64 is dated 655 inside a three-year mourning that began in 655; #69’s ‘655 berth’ flashback has Gyebek marching to Yellow Mountain; #68 debates sending Gyebek while he is still on Tamla; and names double up (Tanhyeon/Chimhyeon, Rock of Politics/Deer Rock, Seongchung/Sungchung, Daebyeol/Big Star, five handles for three Sateks)."
+    ]
+  }
+}

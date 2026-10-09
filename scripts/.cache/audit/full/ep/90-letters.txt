@@ -1,0 +1,38 @@
+
+=================================================================
+#90 Letters  (671 July)
+Arc: Silla-Tang War · tone: epistolary duel
+Logline: Xue Rengui would like to win this war by post. The king does not go to bed.
+=================================================================
+[0] ── SCENE: The First Letter ──
+[1] ¶ In high summer, a Tang monk is rowed ashore under a white flag. He carries a letter from the fleet. The fleet belongs to Xue Rengui, the second White Tiger. He has sat off the coast all summer. If it can be managed, he'd like to win this war by post.
+[2] Imyun: The Commander sends his respects, Majesty. He asks that it be read aloud. / He says it reads better aloud.
+[3] Xue Rengui: To the King of Silla, from Xue Rengui, Commander of the Eastern Fleet, greetings. / A clear wind blows ten thousand li from the capital to your coast, and the sea between is three thousand. I have come all of it to say one thing. / Your father knelt before the Second Emperor and was raised up. He was given robes, and a brother, and an army. You were given his crown. / And now you take the land the emperor’s soldiers bled for, and you shelter his rebels, and your own brother waits in Chang’an, ashamed to be asked about you. / Turn back while there is still a road to turn on. / I have the honour to remain, in all things but this, Your Majesty’s servant — / Xue Rengui.
+[4] ¶ The copy the archives keep is longer, and has a cicada in it.
+[5] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), seventh month — Xue Rengui's letter, carried by the monk Imyun) [Xue Rengui]: It is like a man who goes out with his sling and never sees the dry well at his feet, or reaches for the cicada and never knows the oriole is behind him. That is Your Majesty, not knowing your own measure. … Alas! Once loyal and righteous, now a rebel subject. I grieve that what began in good fortune ends in ill, that what grew from one root ends in different branches. The wind is high and the air is sharp; the leaves fall and the year turns sad. I lean on the mountain and look far off, and it wounds my heart.❞
+[6] ¶ The monk is given a bed, a meal, and as long as it takes. The king does not go to bed at all.
+[7] ── SCENE: The Writing Room ──
+[8] ¶ By the second night the king’s writing room is full of men with opinions. One of them, an official named **Daeto**, has more than most.
+[9] Daeto: Majesty, a softer word here and there costs nothing. / They have a fleet off Bear Ford. They have Prince Inmun. Could we not say we were mistaken about the border? Everyone is mistaken about borders.
+[10] King Munmu: We were not mistaken. / Write it the way I say it.
+[11] ¶ There is another reason the room is careful. Nine summers ago, the king killed a great lord and his whole house for calling in sick. The lord's son wasn't in the house. He's in the emperor's guard. Somebody there will have told him by now.
+[12] ── SCENE: The Reply ──
+[13] King Munmu: To the Commander of the Eastern Fleet, from the King of Silla. / Your letter came by a monk, and was read aloud as you asked. It does read better aloud. So will this.
+[14] ¶ He dictates the rest standing up, and does not stop for most of the night.
+[15] King Munmu: In the twenty-second year of Zhenguan my father went to Chang’an. The Second Emperor took him into a gallery of stone horses and said: everything south of Pyongyang, and the whole of Baekje, shall be Silla’s, forever. / My father made me learn those words when I was twenty-two. I have them still. I expect the emperor’s clerks have them too.
+[16] King Munmu: When your Red Fowl sat outside Pyongyang eating his horses, my uncle was sixty-seven. He walked beside his own white horse through snow to its chest so the horse could carry rice instead of him. Your soldiers wept when they saw the carts. Your general took the rice and sailed home the same week. / We were late, he said. We are always late. We came anyway.
+[17] King Munmu: Then you gave Baekje back to a Baekje prince, with a Tang seal, at Bear Ford. Then you took us up a hill called Gain and made us swear to be his brother over a dead horse. / The horse was my uncle’s. He walked it up himself. I watched his hands.
+[18] King Munmu: At Pyongyang our men went through the gate first. Then your Protectorate came and wrote our share down as nothing. / You say I shelter rebels. I shelter the people your officials could not be bothered to count.
+[19] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), seventh month — King Munmu's reply to Xue Rengui) [King Munmu]: Alas! While the two kingdoms stood, we were the hounds that ran at your pointing finger. Now the game is all taken, and it is we who are threatened with the pot. Baekje, the bandits' leavings, is rewarded the way Han once paid off an old enemy; Silla, which died for Han, is cut down the way Han once killed a man for sparing it. Though the sun's light no longer turns our way, the sunflower's heart still faces the sun.❞
+[20] King Munmu: My brother is in Chang’an. Tell him I am well. Tell him I said his name. / I have the honour to remain the king of the country you came to save — / Bupmin.
+[21] ¶ Daeto copies it out fair. His hand is very steady. Later that night he writes a second letter, a short one, to a different address, and puts it in his sleeve, and does not send it yet.
+[22] ── SCENE: The Second Letter ──
+[23] Xue Rengui: Your Majesty’s letter has been received, and read aloud. It took most of an afternoon. / Nowhere in it is the word “sorry.” / I have the honour to remain your servant, in fewer things than before — / Xue.
+[24] King Munmu: The Commander’s letter has been received. It took no time at all. / Nowhere in it is the word “rice.” / I have the honour to remain the king — / B.
+[25] Xue Rengui: Then I will come and fetch the apology myself. / — X.
+[26] King Munmu: Come, then. / — B.
+[27] ── SCENE: Seventy Ships ──
+[28] ¶ He comes. In the tenth month, off the western coast, a Silla squadron finds seventy Tang transports riding low with grain for the garrison at Bear Ford, and takes them: hulls, crews, one Tang colonel, and all of the rice.
+[29] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), tenth month): Winter, the sixth day of the tenth month: we struck more than seventy Tang grain transports and captured the colonel Qianer Dahou and over a hundred soldiers. The drowned were past counting. The geupchan Dangcheon's merit was first, and he was raised to sachan.❞
+[30] King Munmu: Send word to the White Tiger that his rice has arrived. / Late. As usual.
+[31] ¶ **The Tang are coming south. Silla is winning. That is exactly when armies start to chase…!**

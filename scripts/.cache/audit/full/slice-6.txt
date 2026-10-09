@@ -1,0 +1,532 @@
+
+=================================================================
+#48 Huangdi (皇帝)  (648 March)
+Arc: The Chunchu Era · place: changan · tone: imperial intrigue
+Logline: Everyone on earth wants something from the Son of Heaven. Most of them bring tribute. Chunchu brings an offer.
+=================================================================
+[0] ── SCENE: The Son of Heaven ──
+[1] ¶ Everyone on earth wants something from the Son of Heaven. Most of them bring tribute. Chunchu brings an offer.
+[2] [TERM Huangdi · Emperor (皇帝): Huang, the god-kings of the dawn of the world. Di, the lord of heaven. The first man to put the two words together burned the books. Every other ruler on earth is a king. This one is the Son of Heaven, and he would like it said in that order.]
+[3] ¶ The embassy comes in at the hour the street drums stop. The great avenue opens ahead of it, a hundred and fifty paces wide and perfectly empty.
+[4] [MAP 648: Silla’s one harbour, one sea, and a road to Chang’an long enough to rehearse a speech forty times.]
+[5] ¶ Chang’an is a hundred and eight walled wards, locked at the drums. At the lodging a ward chief is waiting with a lamp and a register. He does not look at the prince’s face. He counts heads the way a man counts sacks, and writes a number.
+[6] Ward chief: Silla embassy. Eleven mouths. / Eleven in, eleven out. If one of you dies, report it to the ward before the morning drum. / We’ll send a man to make up the count.
+[7] King Muyeol: Make up the count. / …With whom?
+[8] Ward chief: With a man.
+[9] King Muyeol: Any man?
+[10] Ward chief: The register hasn’t got a column for names, sir. Only for the number.
+[11] [CARD Kim Inmun: Chunchu’s second son. He reads Tang characters better than his father would like.]
+[12] ¶ Inmun reads the register over the man’s shoulder. Eleven. He will live in this city for most of his life, and in every count it ever makes of him he will be one stroke in that column.
+[13] ¶ The tenth stroke is a young Hwarang called Jukji, who writes down everything. The eleventh is On Gunhae, who carries his master’s coat and has not said a word since the harbour. The ward chief does not look at him either.
+[14] ── SCENE: The Audience Hall ──
+[15] The Second Emperor: Your name is “Spring and Autumn”…? Then is your younger brother called “Warring States”?
+[16] King Muyeol: My father revered the Confucian learning, and named me after Confucius’s “Spring and Autumn Annals”.
+[17] King Muyeol: Confucius said it: if the name is not correct, speech does not follow. / So I dare to ask. Your Majesty has my name. / What is the correct name for me to call Your Majesty?
+[18] ¶ The hall stops breathing. Nobody in Chang’an says that name. A clerk by the door shuts his eyes, the way men do just before a horse kicks.
+[19] The Second Emperor: You may call Us Majesty. Everyone under heaven does. / That name is received when We give it. Not when it is asked for.
+[20] King Muyeol: Since the age of the Three Zhou, Samhan and the Central Plain have been inseparable. / And now Your Majesty has accomplished the great work of restoring the glory of Han — / are you not the Guangwu of this age?
+[21] King Muyeol: Silla will accept investiture from the Great Tang. / Your Majesty has armies beyond counting; Chunchu has knowledge of Samhan. / Samhan is known best by the people of Samhan. / To accomplish a great work, must not great men gather?
+[22] The Second Emperor: You would teach Us Samhan?
+[23] King Muyeol: Someone taught it long before me. Sunzi: know the other, know yourself, and a hundred battles hold no danger. / At Ansi, Your Majesty knew yourself. / Your Majesty did not know who was standing on the wall.
+[24] ¶ Several ministers discover something interesting on the floor. The emperor does not move for one long breath. Then he laughs, and the floor stops being interesting.
+[25] The Second Emperor: Yes — there is something between us that fits.
+[26] The Second Emperor: Your Divine Country sends me the most cunning man in Samhan. / Good. I have already spent a summer failing against the Eternal General. I prefer allies who can count.
+[27] King Muyeol: Then count one thing for me, Majesty. When the lips are gone, the teeth are cold. / If Silla is the lip, Liaodong is the tooth.
+[28] The Second Emperor: That is what a minister of Yu told his duke. / Do you know how that story ends, Spring-and-Autumn?
+[29] King Muyeol: I know how it ends for the duke who didn’t listen, Majesty.
+[30] ¶ Both men know the rest of that story. Neither says it out loud, which is the most honest thing either of them does all evening.
+[31] ¶ After the hall, a smaller room. A go board. The emperor keeps the platform. Chunchu sits on the floor. Stones click in the dark.
+[32] ¶ Chunchu opens in the far corner. Then he turns, and starts pressing the stones right beside his own.
+[33] The Second Emperor: Befriend the far, strike the near. You play it the way Qin did. / Qin ate the world with it.
+[34] King Muyeol: And how long did Qin keep the world, Majesty?
+[35] The Second Emperor: Long enough to name it. / But on this board the far one is you. You want Us to be the far friend who strikes your neighbours. / On a go board, Spring-and-Autumn, the far friend usually takes the corner as well.
+[36] King Muyeol: Then I’ll have to play the corner first, Majesty.
+[37] The Second Emperor: Chunchu. It is a waste, a man like you growing old on the frontier. / Come and serve in my imperial guard. / A house in Chang’an, a title, and bring your son as well.
+[38] King Muyeol: …You honour me, Your Majesty.
+[39] The Second Emperor: “You honour me” means “no.”
+[40] King Muyeol: Your Majesty reads people well.
+[41] The Second Emperor: I read people well. It is why I am still alive. / That, and Saluzi.
+[42] King Muyeol: Saluzi, Majesty? / …Forgive me. I don’t know the name.
+[43] The Second Emperor: No, you would not. He never held office. / No title, no fief, no son at court for me to promote. Outside Luoyang he took an arrow in the chest that had my name on it, and brought me back to camp with it still in him. / The most loyal warrior I have ever had. Perhaps I shall introduce you, before you go.
+[44] King Muyeol: …I would very much like that, Majesty.
+[45] The Second Emperor: That one means “yes.” Good.
+[46] The Second Emperor: Fine. Leave the son, then. Do not say “no” to that one.
+[47] ¶ Inmun stays in Chang’an. He will be there, on and off, for the rest of his life.
+[48] ¶ Nobody has said the word army yet. Chunchu has asked for it three ways. The emperor has answered with a house, a title and a hostage.
+[49] ¶ Between audiences he asks, as idly as a foreign envoy can ask anything, after a general named Saluzi. A clerk of the Ministry of War spends an afternoon in the rolls on his behalf and comes back apologetic. There is no Saluzi: no rank, no fief, no tomb, no widow drawing a pension. Either the emperor’s most loyal warrior is dead, or he is the only man in Chang’an without paperwork. Chunchu finds he wants to meet him more than he wanted to meet the emperor.
+[50] ── SCENE: The History Office ──
+[51] ¶ The Ministry of War can’t find him a general, so Chunchu tries the historians. Chu Suiliang receives him among the shelves. He once refused to let the emperor read his own diary. Now he’s high enough to choose what he says, and careful enough to say very little. Everyone in Chang’an knows how this emperor got the throne: at a palace gate, over two dead brothers. Nobody in Chang’an says it.
+[52] King Muyeol: Lord Chu. A small question from a small country. / His Majesty came to the throne by way of the Xuanwu Gate, I’m told. The ninth year of Wude, the sixth month, the fourth day—
+[53] Chu Suiliang: Which gate?
+[54] King Muyeol: …The Xuanwu Gate. The north one.
+[55] Chu Suiliang: There is a gate there. A very fine gate. Nothing happened at it.
+[56] King Muyeol: And the fourth day of the sixth month?
+[57] Chu Suiliang: The third was a fine day, Prince. The fifth was finer. / I can recommend either.
+[58] King Muyeol: I’d heard the account was rewritten.
+[59] Chu Suiliang: Harmonized, Prince. / Here we say harmonized.
+[60] King Muyeol: In the old state of Jin, they say, the historian Dong Hu wrote that the chief minister had killed his lord, and would not change a word. Dong Hu’s brush.
+[61] Chu Suiliang: Dong Hu was a fine historian. / And that Jin is gone.
+[62] King Muyeol: Then I’ll take the fifth. / I’ve always liked a fine day.
+[63] ── SCENE: The Imperial Academy ──
+[64] ¶ Chunchu asks one favour no envoy has asked in years. He would like to watch the rites to Confucius at the Imperial Academy, and sit in on the lectures. The clerks are so surprised that they say yes. Sons of dukes and sons of clerks sit the same examination here. A good enough answer can put any of them in a purple robe.
+[65] ¶ Chunchu was born one step below the throne, by his own council’s arithmetic, and has spent his life sitting anywhere but the chair. He watches a clerk’s son recite the Odes without one slip, and does not say a word for the rest of the afternoon.
+[66] Kim Inmun: …Father?
+[67] King Muyeol: Study, Inmun. Here it’s faster than blood.
+[68] ¶ He asks for one more thing before he goes: Tang court dress, cut to Silla measure, so that his officials at home will look like the officials in this city. The emperor is delighted, and sends a chest of it.
+[69] ¶ He thanks the emperor at his desk. The talk wanders.
+[70] King Muyeol: Your Majesty… forgive a barbarian’s question. / You mean… they all absolutely obey you, no matter what?
+[71] The Second Emperor: If they do not, they stop being useful. / Useful men live longer. I did not invent that. I only wrote it down.
+[72] King Muyeol: And if the great families were to meet, Majesty. All of them, in one room. And agree that you should no longer be emperor? / …What happens then?
+[73] ¶ The emperor looks at him for a long moment, as though Chunchu had asked what happens if the sun is voted out of the sky. Then he laughs, and it is not a polite laugh.
+[74] The Second Emperor: Agree? Agree to what, precisely? / There are not two suns in the sky, nor two kings over one people. Nobody takes a vote on the sun.
+[75] King Muyeol: In Silla, Majesty, someone did. The Harmony Council deposed a king. He was my grandfather. / They met, they agreed, and he went home.
+[76] The Second Emperor: He went home. / They told a king he was no longer king, and he… went home. He did not kill them? Not even one, to make the point?
+[77] King Muyeol: …Not even one, Majesty.
+[78] The Second Emperor: Then your kings are boats with no water under them. Anyone at all could tip one over.
+[79] King Muyeol: Then who overturns the boat, Majesty?
+[80] The Second Emperor: The water. Not the passengers. / The ruler is the boat and the people are the water. Water carries the boat, and water overturns it. / We fear the water. Your uncles are passengers.
+[81] ¶ The emperor shakes his head, still smiling, and goes back to his memorials. Chunchu says nothing more. He is watching the brush in the emperor’s hand: one man, one brush, and at the far end of it a province three months away. Nobody in this palace will ever meet in a room to vote that hand off the paper. He cannot stop looking at it, the way a poor man looks at a jade he will never afford, and he does not let one particle of it reach his face.
+[82] ── SCENE: The Gyuku Ground ──
+[83] ¶ The days between audiences belong to someone else. The crown prince — **Li Zhi**, twenty years old and still allowed to laugh with his shoulders — steals Chunchu from the memorial-hall the way a younger brother steals an older one from a funeral, and takes him to the imperial **gyuku** ground.
+[84] [CARD The Third Emperor: Li Zhi. Heir to everything, and the first man in Chang’an to laugh.]
+[85] ¶ They play gyuku until the dust makes them the same colour. Li Zhi talks like a man who has waited his whole life to be ordinary with somebody dangerous. Chunchu lets him.
+[86] The Third Emperor: When I am emperor — / No. That sounds like a curse. When the years have been kinder — / I will still want this. A friend who does not need my title to stand upright.
+[87] King Muyeol: Then keep me as I am. / When you are emperor I will still be a man from a small country with a large grudge. / That is the only honest introduction I have.
+[88] The Third Emperor: Good. / Brothers, then — of the inconvenient kind.
+[89] King Muyeol: Of the inconvenient kind.
+[90] ── SCENE: The Six Steeds ──
+[91] ¶ That night the emperor dismisses the lamp-bearers and carries the lamp himself, down a gallery behind the Liangyi Hall that no envoy has been shown. Along the wall runs a band of six stone horses, each long panel cut in low relief from drawings by the court painter. They are meant for the mountain at Zhaoling, where they will stand guard over a tomb. Nobody has told Chunchu whose.
+[92] The Second Emperor: Leave the lamp to me tonight. I have carried heavier things down darker corridors. / You have seen my clerks, Spring-and-Autumn, and my six boards, and my very tedious seal. You have not yet met the ones who actually made me emperor. / Allow me to present them.
+[93] King Muyeol: …Horses, Your Majesty?
+[94] ¶ He lifts the lamp to the first panel. Out of the black comes a horse in mid-stride, cut so shallow it seems to be passing through the wall rather than standing on it. The emperor lays his palm on its hoof, as if to keep it from leaving.
+[95] The Second Emperor: **Baitiwu**. Black from ear to tail, and white at all four feet, as though he had walked through snow and declined to wipe them. / **Baitiwu** ran all night. Two hundred li. He woke to find me at his gate, and simply… surrendered. I have never in my life been so exhausted, nor so pleased with anyone.
+[96] ¶ They walk on. The lamp swings at his side, and their two shadows climb the wall ahead of them, larger than either man, stepping over the carved hooves.
+[97] ¶ At the third panel he does not stop. The lamp slides over a horse with a man standing at its chest, and the emperor walks on as though he has not seen it.
+[98] The Second Emperor: Not that one. Not yet.
+[99] ¶ Ten paces on, the emperor stops so abruptly that Chunchu nearly walks into his sleeve. This time he holds the lamp high over his head, and a grey horse comes out of the stone at full gallop.
+[100] The Second Emperor: **Qingzhui**. Grey-dappled, and fast as a rumour. / At Hulao, a rival who called himself king came with a hundred thousand men to relieve Luoyang. I had perhaps three thousand five hundred riders, and I elected to be rude about the arithmetic. / Five arrows struck him, Chunchu. Every one of them from behind.
+[101] King Muyeol: From behind… all five?
+[102] The Second Emperor: All five. They could not hit him from the front. By the time they drew, he was already past them.
+[103] ¶ At the sixth panel he brings the lamp close enough to warm the stone, and counts along the horse’s flank with one finger, arrow by arrow, the way a man counts the graves of his own soldiers.
+[104] The Second Emperor: And **Quanmaogua**. Curly-coated, black-muzzled, quite the ugliest horse in the empire, and the most stubborn. / The last of the rebels, by the Ming River. Nine arrows: six in front, three behind. Count them, if you like; the masons were most particular. / He stood until the fighting was done. Then he lay down, as though he had only been waiting for permission.
+[105] ¶ They reach the end of the gallery. Past the sixth horse the timber frame runs on, and inside it the stone is smooth.
+[106] King Muyeol: And the seventh, Your Majesty? For Liaodong?
+[107] The Second Emperor: There is no seventh. I rode to Liaodong on a perfectly good horse whose name I find I have mislaid.
+[108] ¶ Then he turns and walks back the way they came, past the arrows, past the grey horse and the black, and Chunchu follows the lamp. He stops at the third panel, the one he would not look at, and this time he lifts the light all the way up.
+[109] The Second Emperor: **Saluzi**.
+[110] ¶ Chunchu hears the name before he understands it. He looks at the purple horse in the stone, and at the man carved at its chest, and back at the emperor, and an afternoon of the Ministry of War’s rolls rearranges itself in his head. Horse after horse, name after name, and not once has it occurred to him.
+[111] King Muyeol: …Saluzi. / Your most loyal warrior. The one who never held office. / Majesty. He is a _horse_.
+[112] The Second Emperor: The finest in the empire. I never said he was a man, Spring-and-Autumn. You supplied that yourself. / Most of my ministers make the same mistake about themselves.
+[113] King Muyeol: I had a clerk of your Ministry of War search the rolls for him. / All afternoon.
+[114] The Second Emperor: (laughs, and it carries all the way down the gallery) / Did you. Then somewhere in my ministry there is a clerk who believes the Silla prince is hunting my generals. I shall have to promote him.
+[115] ¶ Then the laugh goes out of him the way a lamp gutters, and he looks back up at the stone.
+[116] The Second Emperor: Purple, the colour of a fresh bruise, and quite as proud of himself. / Outside Luoyang I galloped too far ahead, as young men will, and found myself entirely alone with the pretender’s army, which was deciding what to do with me. An arrow took **Saluzi** in the chest. He did not fall. He stood there with it in him and waited for me to think of something. / One of my generals rode in, gave me his own horse, and drew the arrow out of mine with his bare hands while the enemy looked on. That is he, at the chest. The only man I have permitted onto these walls. / **Saluzi** carried me back to camp, and then he died. He waited until it was convenient for me. I have never quite forgiven him the courtesy.
+[117] ¶ He does not move on. He sets the lamp on the floor beneath the panel, which is not a thing emperors do in front of foreign princes, and lays his hand flat on the carved neck, and leaves it there.
+[118] The Second Emperor: I have had sons, Spring-and-Autumn. Wives. More ministers than I can name. / He is the only one who never once asked me for anything.
+[119] ¶ Chunchu does not interrupt. It is the first time in Chang’an he has seen the emperor need an audience rather than command one.
+[120] The Second Emperor: These are going to the mountain. When I am laid in Zhaoling, the six of them will stand outside the door and wait. / He shall have the place nearest. He always did insist on being out in front.
+[121] King Muyeol: Then they’ll have a long wait, Majesty. And horses do so hate waiting.
+[122] ¶ The emperor picks up the lamp and turns. It hangs low at his knee now, and from below his face is all hollows.
+[123] The Second Emperor: I am not joking, you.
+[124] ¶ He coughs into his sleeve, a small dry cough, and looks at the sleeve a moment too long before he folds it away. Chunchu has seen men do that. None of them were emperors.
+[125] The Second Emperor: Chunchu. You grew up in Samhan, so—
+[126] The Second Emperor: Chunchu… promise me this one thing. / Accomplish this one great work for me…! / Goryeo is the single failure of my life. / Baekje will be the single failure of yours. / I—your country—
+[127] ¶ He sets the lamp down again at the foot of the purple horse.
+[128] The Second Emperor: I do not go to Liaodong for land. I have mountains and rivers enough to bore a man to death. / When the two of them are settled, everything south of Pyongyang, and the whole of Baekje, is Silla’s. For your peace. Forever.
+[129] King Muyeol: …May I have that in writing, Majesty?
+[130] The Second Emperor: (laughs) An emperor’s word is the writing, Spring-and-Autumn. / Every clerk in this city will remember it for you.
+[131] The Second Emperor: The Son of Heaven makes no jokes. You know the saying. / A boy-king of Zhou once cut a paulownia leaf into a tally and handed it to his little brother as a game. ‘With this, I enfeoff you.’ / His historian wrote it down, and the brother got a country. It was called Tang.
+[132] King Muyeol: …Then I’ll trust the clerk, Majesty.
+[133] ── SCENE: The Farewell Banquet ──
+[134] ¶ At a banquet meant to impress the Silla guest, the Second Emperor’s laughter is the loudest thing in the hall. Behind a screen a concubine listens the way a strategist listens — counting who drinks, who flinches, which foreign prince the emperor calls brother.
+[135] ¶ Halfway through, the emperor calls for brushes. In Chang’an, a banquet without verse is just dinner.
+[136] The Second Emperor: Spring-and-Autumn of Silla, We give you a poem. Ministers, attend. / We wrote it for an old minister, in the years when Our brothers could not bear Us. He was the one man who could not be bought with profit or frightened with death.
+[137] [POEM Given to Xiao Yu (賜蕭瑀) [The Second Emperor] (Quan Tangshi (全唐詩) bk. 1, Tang Taizong, Given to Xiao Yu (賜蕭瑀)): The gale shows which grass is strong;* the ruined age shows which minister is true.† What does a brave man know of right? The wise man keeps benevolence close.]
+[138] ¶ The hall applauds, the way halls do. Then all of it turns toward the Silla guest. An answer is expected. A barbarian is expected to need until morning.
+[139] The Second Emperor: Answer. And use Our rhymes.
+[140] King Muyeol: Grant me the time it takes to empty one cup, Majesty.
+[141] ¶ He does not empty it. He sets it down full, asks for the brush, and writes on his knees at the low table.
+[142] [POEM Answering on the Emperor’s rhymes (奉和) · Chunchu’s own verse [King Muyeol]: At the sea’s corner a stubborn grass grows;* only under heavy frost does the lonely minister show. It will not lie down for a mad wind,† but its heart already leans to the Sage Lord’s benevolence.]
+[143] ¶ Nobody in the hall says anything, because nobody knows yet what the emperor thinks. The emperor reads it twice. The second time, his lips move on the last line.
+[144] The Second Emperor: We said the wind tests the grass. / And he takes Our grass and hands it back with Us as the wind! / “The gentleman’s virtue is the wind, the small man’s is the grass; let the wind pass over it, and the grass must bend.” He has put the Analects on Our rhymes and handed it to Us! / The mad wind is Baekje, and the place to lean is Us. We have never been asked for an army so pleasantly.
+[145] The Second Emperor: Zhi — keep this one. Men who can rhyme on their knees are rarer than honest generals.
+[146] ¶ Twenty characters. He has asked for an army, flattered an emperor out of his own classics, and called his neighbours a bad wind, without one word anybody could quote back at him.
+[147] ¶ Behind the screen **Wu** does not merely listen. She works the room without entering it: a glance that steadies a nervous maid, a smile that slows a minister’s cup, a silence that turns every eye in the hall back to the foreign prince.
+[148] [CARD Wu Zetian: Wu, a lady of the inner palace. The screen is doing very little of the hiding.]
+[149] ── SCENE: The Lodging ──
+[150] ¶ On the morning before he is to leave, a parcel comes to the lodging from the palace. Inside are rubbings of two steles in the emperor’s own hand, and a new history of the Jin dynasty, so fresh from the Historiography Office that the paste on the bindings is still soft.
+[151] Kim Inmun: The paste is still wet, Father. / Is this one… harmonized?
+[152] King Muyeol: Fresh. Here they harmonize it before the paste dries. / Read it slowly anyway. We’ll want to know what the Jin are allowed to have done.
+[153] ¶ One of the two rubbings is for a temple at Jinci, raised to a little brother who was once handed a leaf. Chunchu reads the first column and laughs out loud. He asked the emperor for that promise in writing. Here it is, in the emperor’s own hand.
+[154] ── SCENE: HALLWAY ──
+[155] ¶ Night in a long palace corridor. Red columns, white plaster, a little light leaking from the next hall. Somewhere a banquet is still going. Out here it’s quiet enough to hear footsteps behind you.
+[156] ¶ Before the embassy horses leave Chang’an, a woman from the emperor’s household asks for a moment that is not on any schedule. The clerks pretend not to see. That is how courts invent privacy.
+[157] Wu Zetian: Chunchu!
+[158] King Muyeol: ?
+[159] ¶ He turns in the dark.
+[160] Wu Zetian: Chunchu… you are the one from the country with the woman king, correct?
+[161] King Muyeol: Yes, ma’am.
+[162] Wu Zetian: How is she doing?
+[163] King Muyeol: Well, the conservative faction initially had its doubts about whether a woman could take the throne. / However, as with all things in life, the problem turned out to be more in the mind than in reality. / She has proven to be a wise and capable king, and is well-beloved by the p—
+[164] Wu Zetian: Yes, yes. But that wasn’t my question… / How is _she_ doing?
+[165] King Muyeol: …Oh. / (smiling) She is doing well. She has found a lot of peace in her life. Thank you for asking.
+[166] Wu Zetian: Can you deliver her a message for me? / Tell her to never stand down in the face of hardship. / In the violent and competitive world of men, tell her I want her to become a defiant woman — a woman who can look any man in the face and see an equal. A woman who can conquer worlds with her glance. / Tell her to stay silent — not in submission, but in strength. / For if there is anything I have learned in the Emperor’s Court, it is that silence is the true mark of power…! / (determined, fierce)
+[167] King Muyeol: (astonished) …Oh, I see. / W-who did you say you were again?
+[168] Wu Zetian: (leans over to his ear, whispers something)
+[169] ¶ Whatever she says takes less than a breath. When she draws back she is still smiling — the social smile of a woman who could host a banquet or end a lineage with the same mouth.
+[170] King Muyeol: (paralyzed in fear, wide-eyed, scurries away back toward Silla)
+[171] Wu Zetian: (waves back flirtatiously)
+[172] The Third Emperor: (calling from behind) Wu! You haven’t been scaring our guests away, have you?
+[173] ── SCENE: The Last Game ──
+[174] ¶ Chunchu gets as far as the next courtyard. A eunuch is waiting there with a lamp, as if someone had told him exactly how fast a frightened prince walks. The emperor is not asleep. The go board is out.
+[175] The Second Emperor: Sit. One game, and then you may go.
+[176] ¶ They play without talking. Chunchu takes the far corner again. This time the emperor lets him have it.
+[177] The Second Emperor: Li Shimin.
+[178] King Muyeol: …Sir?
+[179] The Second Emperor: You asked my name, did you not. / That is my name. / Li Shimin.
+[180] ¶ The room does not react, because the room does not understand what has just happened. Only two men in it do.
+[181] ¶ No law forbids what he has just done; something older and more total than law forbids it. He has handed a foreign prince the one thing his own sons cannot say out loud.
+[182] King Muyeol: A magnificent name. / So an emperor is a man like the rest of us. / …Though it will be a dreadful nuisance to avoid writing it.
+[183] ¶ Chunchu makes the joke because he can feel the man needs to be laughed with, now, or the moment will curdle into something neither of them can carry out of the room.
+[184] The Second Emperor: You told Us once: if the name is not correct, speech does not follow. / Is it correct now?
+[185] King Muyeol: …Now the speech can follow, Majesty.
+[186] [CARD The Second Emperor: Li Shimin, the Second Emperor of Tang. Nobody in Chang’an writes his name. He has just said it to a foreigner, on purpose.]
+[187] ── SCENE: The Mingde Gate ──
+[188] ¶ On the last morning Li Zhi rides down to the Mingde Gate himself, which crown princes do not do.
+[189] ¶ At the gate Chunchu does not bow like a foreign guest. He bows like a man watching his younger brother try on a coat that will never come off.
+[190] The Third Emperor: Spring and Autumn. / You really are going.
+[191] King Muyeol: I said I would. / Inconvenient brothers keep their appointments.
+[192] The Third Emperor: Then when you are king — / write to me as you wrote when we were only dust and horses. / I will need one person who remembers my name was Zhi before it was an era.
+[193] King Muyeol: Yes…! / Now—— we have won this war…!
+[194] ¶ Chunchu says it the way a man says a prayer he has been saving.
+[195] ¶ He leaves Chang’an with the alliance sealed and his son still inside the wall. The gates do not ask who was afraid.
+[196] [MAP 648: The same sea home. It has Goguryeo boats on it now.]
+[197] (monologue) King Muyeol: I’ve met many powerful people in my life. Generals, kings, emperors. But there has only been one person who I’ve been afraid of. During that short conversation, that woman’s eyes paralyzed me in fear.
+[198] ── SCENE: On Gunhae ──
+[199] ¶ A day and a night out to sea, a second hull takes their wind. Not a war fleet. A Goguryeo patrol boat, the kind that sniffs a sea-road and reports who used it. They’ve been sniffing this one since Chunchu walked out of Yeon’s prison.
+[200] [CARD On Gunhae: Chunchu’s attendant. The same height as his master, which will matter.]
+[201] On Gunhae: My lord. The small boat.
+[202] King Muyeol: That cap is heavy.
+[203] On Gunhae: Then I will wear it.
+[204] ¶ **On Gunhae** takes the high cap and the great coat — Tang’s gift, cut to be read at two li as a prince. He sits high on the deck, where the mast makes a chair of shadow, and does not wave.
+[205] ¶ The patrol closes. A shout across the water names the wrong man, and is satisfied. They board. They take the coat. The annal will say they killed him. Chunchu’s small boat is already a darker strip of sea.
+[206] ¶ He reaches the home shore in a boat Chang’an wouldn’t have bothered to count.
+[207] ¶ Eleven went in at the drum. Inmun is still inside the wall. On Gunhae is wherever the patrol left him.
+[208] King Muyeol: Nine. / …Report it to the ward before the morning drum. / He never asked me for anything either.
+[209] ¶ **Chunchu has watched one brush move an empire. Now he wants that brush in Silla. The Harmony Council hasn't noticed yet…!**
+
+=================================================================
+#49 Royal Secretariat  (651)
+Arc: The Chunchu Era · tone: statecraft drama
+Logline: One seal. One speed. Fewer uncles.
+=================================================================
+[0] ¶ For three months a border petition has been circling the **Harmony Council** like a bird that cannot find a roof. Chunchu has counted the seals. He has counted the men who must touch a paper before a soldier may move. He has stopped counting aloud, because the room mistakes counting for patience.
+[1] ¶ He has reasons to be in a hurry. The emperor who promised him an army, in a gallery of stone horses, has been dead two years. The promise went into the tomb with him, or near enough.
+[2] ¶ He clears a side hall in the palace — small enough that the old clans will call it irregular, large enough for the work. Three clerks. One courier captain. A table that has never held a feast. He practices the sentence the way other men practice a sword form.
+[3] King Muyeol: A petition.
+[4] King Muyeol: A seal.
+[5] King Muyeol: A courier.
+[6] King Muyeol: Are you getting it?
+[7] King Muyeol: These are not three separate offices.
+[8] King Muyeol: This is one office.
+[9] King Muyeol: We call it the Royal Secretariat.
+[10] King Muyeol: Today, Silla reinvents the court.
+[11] ¶ Nobody laughs. The youngest clerk writes the name down as if the words had always been waiting for ink. Outside, the Harmony Council is still debating the same petition. Inside, the petition has somewhere to land.
+[12] [CARD Kim Jukji: A Hwarang who sailed with Chunchu to Chang’an and wrote down everything. Quiet, exact, and always holding the right paper.]
+[13] Kim Jukji: Petition. Seal. Courier. / I can do that before the Council finishes clearing its throat.
+[14] King Muyeol: Then you are its Premier. The Secretariat is yours. / You’re young, you’re quick, and you already write faster than the Council talks. / In Chang’an the emperor does not wait for every uncle to agree. I watched that power and wanted it for this country — not for my vanity. For speed.
+[15] ¶ The Council finds out in the third week. Alchun is High Councillor now, because after Bidam nobody else wanted the chair. He comes to the side hall himself, with the border petition under his arm. He has been meaning to debate it.
+[16] Alchun: Oi. This petition. / We were going to argue about it at the full moon.
+[17] Kim Jukji: It’s sealed, my lord. The garrison marched yesterday.
+[18] Alchun: Yesterday. / …Then what’s the Council for, Chunchu?
+[19] King Muyeol: For the day the seal is wrong, my lord. / Somebody has to be in the room to say so.
+[20] Alchun: …That’s a very polite way of saying a chair.
+[21] ¶ He leaves the petition on the table anyway, sealed, like a man returning a borrowed bowl.
+[22] ¶ In the market a storyteller invents a joke that sticks: _Our prince is in love with the emperor._ Another version: _enamored with China._ Chunchu hears both and does not correct them. Munhee, packing a different set of bags, corrects them for him.
+[23] Munhee: He is in love with a door that opens when he knocks. / Call that China if you like. I call it not waiting for twelve men to finish a sentence.
+[24] Kim Jukji: The Council asked what my title means. / I told them: 侍中 — I stand beside the work. / They did not laugh. That was how I knew it had worked.
+[25] ── SCENE: Tang Dress ──
+[26] ¶ What Chunchu brought home from Chang’an fits on one sheet. Jukji reads it out at the Secretariat table. Chunchu answers before he reaches the end of each line.
+[27] Kim Jukji: First, address. In Chang’an only the emperor is “Your Majesty.” / So Her Majesty becomes “Your Highness.”
+[28] King Muyeol: Then she is Your Highness. A word is a cheap coat. / Let them see us wearing it.
+[29] Kim Jukji: Second, the years. Taehwa is retired. From now on we count Yonghui. / The emperor’s years.
+[30] King Muyeol: Taehwa. “Great Harmony.” A fine name. It never harmonised anything. / Retire it with honours.
+[31] Kim Jukji: Third, dress. Tang robes and caps for every official, an ivory tablet in every hand. / I once saw a camel driver in Chang’an better turned out than our whole—
+[32] King Muyeol: Officials. Only officials.
+[33] Kim Jukji: …And the people?
+[34] King Muyeol: The people keep their own clothes. / If the whole market starts dressing like Chang’an, someone in Chang’an will think he owns the market.
+[35] Kim Jukji: Fourth. Chang’an asks, very politely, about our borders. Tribute. Garrisons—
+[36] King Muyeol: We send silk and poems. We keep the country. / Write it so they can’t tell which one I said louder.
+[37] Kim Jukji: Fifth, the crowns. A court in Tang dress, they say, should not be seen in—
+[38] King Muyeol: No.
+[39] Kim Jukji: I haven’t finished the—
+[40] King Muyeol: The crowns stay. Have you looked at them? Gold trees. Antlers. Little jade commas that ring when you nod. / The emperor can have our calendar. He can’t have those.
+[41] ¶ Jukji writes every answer down. The one about the crowns, he writes twice. On the first dawn of the new year, the whole court bows to the queen at once. Silla never bothered with that before. A law office opens beside the Secretariat. Every True Bone with a post now carries an ivory tablet. He holds it like a man who has been handed a live fish.
+[42] ── SCENE: The Woven Ode ──
+[43] ¶ The queen weaves the ode herself, at the loom she sits at when nobody is comparing. It takes her a season. When Bupmin comes to collect it, she does not let go of the bolt at once.
+[44] Queen Jinduk: Tell him I wove it. / Not wrote. Wove. / …Unni could see the future. I can at least make it look nice.
+[45] King Munmu: I’ll tell him, Your Highness.
+[46] ¶ Bupmin sails west with it. The new emperor in Chang’an admires it extravagantly. He also reads the letter rolled up inside, which asks for the Baekje cities back.
+[47] [POEM Ode to Great Peace (太平頌) [Queen Jinduk] (Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 4 (650), sixth month · cf. Jiu Tangshu bk. 199上 (止戈戎衣定)): Great Tang has opened its vast work; lofty, lofty, the imperial plan shines. / The spear is stilled and its might has settled all; letters are cultivated, heir to a hundred kings. / It rules as Heaven does and honours the falling rain; it orders all things and keeps their beauty within. / Its deep kindness keeps pace with sun and moon; its fortunes outrun the years of peace. / How bright, how bright the banners blaze; how loud, how loud the gongs and drums. / Outer tribes who defy its command are cut down by Heaven’s punishment. / Pure custom settles on the seen and the unseen; near and far vie to offer good omens. / The four seasons turn in tune like a jade candle; the seven lights wheel over ten thousand lands. / The holy peaks send down ministers; the emperor trusts the loyal and good. / The Three and the Five are made one virtue: shine on, sovereign of our Tang house!*]
+[48] King Munmu: Father. The collar itches.
+[49] King Muyeol: Everything new itches. / Wear it to the Council, and watch which uncles scratch.
+[50] ── SCENE: Yamato ──
+[51] ¶ That summer a Silla tribute ship puts in at a Yamato harbour, its envoys dressed in the new robes. The Yamato court takes one look at them and sends them home.
+[52] Kose no Ōmi: If we do not strike Silla now, we will regret it later. / Fill the sea from our harbours to theirs with ships, bow to stern, and call them to account. It would be easy.
+[53] ¶ The Yamato emperor does not fill the sea. His successors will remember the idea.
+[54] ── SCENE: Sabi ──
+[55] ¶ The emperor’s answer goes to Sabi first, because it is addressed to Sabi. Euija reads it aloud to the whole hall. He reads everything aloud, insults especially.
+[56] King Euija: “Return the cities you took from Silla.” Ha! Listen to this, Gyebek. It gets better. / “If the king will not obey, We grant Bupmin’s request, and leave him to settle it with you in battle.” / In battle! The Son of Heaven writes me a whole scroll to say he’s staying home.
+[57] Gyebek: Then it is only Silla.
+[58] King Euija: Only Silla! Hear that? Heaven just counted my enemies for me. One! / Write back that we’re honoured. Then go and take another fort.
+[59] Gyebek: …For now, one.
+[60] ── SCENE: Surabol ──
+[61] ¶ In Surabol, Jukji reads the copy that came home with Bupmin. He reads the battle line twice.
+[62] Kim Jukji: He’ll let us fight them, my lord. / He doesn’t say he’ll fight with us.
+[63] King Muyeol: No. / His father said that. In a gallery full of horses, with the lamp on the floor.
+[64] ¶ **What happened to that promise? Two years back, the room is too warm, and a dying emperor has one more thing to say…!**
+
+=================================================================
+#50 Jiabeng (駕崩)  (649 July)
+Arc: The Chunchu Era · place: changan · tone: imperial deathbed drama
+Logline: The empire does not wait for grief to finish its sentence.
+=================================================================
+[0] ── SCENE: The Cuiwei Palace ──
+[1] ¶ Two summers earlier, the Son of Heaven is dying the way he did everything else: in front of witnesses.
+[2] ¶ The crown prince holds a hand that used to lift a lamp to stone horses. It has nothing left to lift. It still gives orders.
+[3] The Second Emperor: Zhi. / The six. When they go up the mountain— / Put the purple one nearest the door. …He hates waiting.
+[4] The Third Emperor: I know, Father. You told me. You’ve told me every—
+[5] ¶ The emperor dies in the Cuiwei Palace in the fifth month. He is fifty-one. The room is kept too warm, and the silk on the bed is the colour of late wheat.
+[6] [TERM Jiabeng (駕崩): “The carriage collapses.” Nobody in Chang’an may say the emperor died. Kings die. The Son of Heaven’s carriage simply falls, and the whole empire is meant to hear it land.]
+[7] ¶ The crown prince has been sitting since before dawn. He is twenty-one. He has the shoulders for the armour and not yet the face for the title. When the breathing stops, he does not move for a long time — long enough that the ministers begin to look at one another instead of at the bed.
+[8] The Third Emperor: ……Father. / Not yet——
+[9] ¶ Someone touches his elbow. Someone else is already writing. The empire does not wait for grief to finish its sentence.
+[10] ¶ The court kneels, and the young man rises — the same hands that would not leave the bed now accepting the seal, the edict, the yellow silk that means the West has a new centre.
+[11] The Third Emperor: I receive the late emperor’s last command. / From this day—— / ……We will listen.
+[12] [CARD The Third Emperor]
+[13] ¶ He does not say _I_. He says the word that empties a man of his own name. The hall answers like a single throat.
+[14] ¶ The will is long on mourning and short on everything else, except one line, which the new emperor reads twice. The war in Liaodong is to stop.
+[15] ¶ The great emperor is given a temple name — **Taizong**. The clerks write it in the register and close the book.
+[16] ❝QUOTE (Samguk Sagi (三國史記) bk. 22, Goguryeo Annals — King Bojang, yr. 8 (649)): Eighth year, summer, fourth month: Taizong* of Tang died. His testamentary edict called off the Liaodong campaign.❞
+[17] ¶ The empire is told how to grieve. The edict fixes the days of mourning by rank, and at dusk in every ward of Chang’an the ward chief walks the lanes and listens at the doors, to be sure the weeping inside is of the proper length.
+[18] ¶ Two of his dragons, the Red and the White, both of them Turks, petition to be killed and laid beside him, to guard the tomb the way the six stone horses will. It is the highest loyalty the steppe knows. The court is moved. The young emperor reads the petition twice.
+[19] The Third Emperor: Denied. / …Father already has six horses waiting at his door. / He would scold Us for wasting two good generals.
+[20] ── SCENE: Surabol ──
+[21] ¶ The news crosses the sea in the eighth month. In Surabol, Chunchu reads the will through to the line about Liaodong, and then reads that line again.
+[22] King Muyeol: He made me promise to finish it. / And then he left orders to stop. / …Very well. Then it is mine.
+[23] ── SCENE: Back at Cuiwei ──
+[24] ¶ In an anteroom a young concubine waits with the other women who must not be seen grieving too loudly. Her name is not yet heavy. Her attention already is. She watches how a seal moves from a dead hand to a living one — and files the lesson where ambition keeps its dry goods.
+[25] Wu Zetian: (soft, to no one) / So that is how an empire changes owners. / Quietly. With someone else speaking the first sentence.
+[26] ¶ The late emperor’s women who bore him no children are sent to the Ganye Temple, to shave their heads and pray for him for the rest of their lives. Wu goes with them.
+[27] ── SCENE: Ganye Temple ──
+[28] ¶ A year later, on the anniversary, the new emperor comes to the temple to burn incense for his father. A nun in grey looks up at him from the second row, and does not look down again.
+[29] The Third Emperor: Lady Wu. / …They cut your hair.
+[30] Wu Zetian: Hair grows back, Majesty. / (and already the room tilts a degree toward her)
+[31] ¶ **Seven years of a polite queen and a busy nephew. Sooner or later, Silla has to admit who's really sitting in the chair…!**
+
+=================================================================
+#51 King Muyeol  (654 March)
+Arc: The Chunchu Era · place: surabol · tone: coronation drama
+Logline: For seven years the crown has sat on the Queen. The work has sat on her nephew’s table.
+=================================================================
+[0] ¶ For seven years the crown has sat on Queen Jinduk. The work has sat on her nephew’s table. Nobody has ever called her foolish. She’s simply outnumbered by seals.
+[1] Queen Jinduk: Nephew. / When I die, do not pretend I ruled. / Say I kept the chair warm until the country was ready to admit who was already sitting in it.
+[2] King Muyeol: Aunt. / You ruled the only way left to Sacred Bone — by lasting.
+[3] ¶ Kangrim reads her name three times — Jinduk. Jinduk. Jinduk. — the ledger's habit before a Sacred Bone line closes.
+[4] Kangrim: Majesty. / Sacred Bone ends on your breath. One question. / Did you keep the crown warm for the next hand — or keep it from cooling into a man’s?
+[5] Queen Jinduk: …I kept a seat from becoming a joke. / That is all the Sacred Bone had left to do.
+[6] Kangrim: Then the minutes are clean. / Walk.
+[7] ── SCENE: The Harmony Council ──
+[8] ¶ The Harmony Council meets to choose a king. For the first time since there was a council, there is no Sacred Bone left to choose.
+[9] ¶ So the room does what rooms do with an empty chair. It offers it to the oldest man present. Alchun is High Councillor. He has been waiting seven years for this, so that he can refuse it.
+[10] Councillor: High Councillor. The room asks you first.
+[11] Alchun: Me? / Your servant is old, and has no virtue worth naming. / I told you lot on the wall. The chair you offered me afterward would be empty. / In virtue and standing nobody here weighs what Lord Chunchu weighs. He’s the one who can save the age.
+[12] Alchun: Come now~ is there anyone who doesn’t know it will be Chunchu~~
+[13] Councillor: A True Bone king. The bone has never once—
+[14] Alchun: A True Bone on the throne. First since there was a throne. / …Somebody had probably better write that down.
+[15] ¶ Alchun laughs the last hand up. Then everyone looks at the one man in the room who has spent his life sitting anywhere but that chair.
+[16] King Muyeol: My lords. I have never once wanted to sit there.
+[17] Alchun: Then sit in it, and stop making the rest of us stand.
+[18] King Muyeol: This servant can find no reason to object. / Nor could anyone else.
+[19] Alchun: The age of **Kim Chunchu** begins.
+[20] [CARD King Muyeol]
+[21] ¶ Munhee becomes queen. Years ago her sister sold her a dream on a hill. She married in disgrace, to a man with no claim to anything. Now she stands beside his throne.
+[22] [CARD Munhee]
+[23] Munhee: My sister sold me that dream for one silk skirt. / In hindsight she undercharged.
+[24] ¶ The new king’s first council is about Baekje. It is short.
+[25] Alchun: Your Majesty… even so…. / To lead the country down a road of ruin for a private grudge — that is not the act of a wise king…!
+[26] King Muyeol: ….What? A private grudge? / Is that truly how you have all seen me? / An old man maddened by his daughter’s death, sharpening revenge? / How… disappointing. / I am a man looking at the thousand-year flourishing of the sacred country. / I was raised on the study of kingship from childhood…
+[27] Kim Yushin: I do not know whether to fear him or admire him…. / And yet— / Kim Chunchu…
+[28] ¶ That night a letter leaves Surabol for Chang’an, written in a hand that still remembers the Wei River. It begins without titles: _Zhi — I kept the appointment. Do not let the coat eat you._
+[29] ── SCENE: Chang’an ──
+[30] The Third Emperor: He became king. / Of course he did. / Send him horses. And tell him the dust here still has room for one more inconvenient man.
+[31] ¶ Far west, the Third Emperor’s court learns a new gravity. The young woman who once waited in an anteroom now finishes sentences the emperor starts. Clerks say her influence is growing by the day. They say it softly.
+[32] ── SCENE: The Crown Prince’s Rooms ──
+[33] ¶ Late that night the new crown prince is still at his table, with the levy rolls for his father’s war. His wife reads them over his shoulder. She has been doing it for ten years.
+[34] Jahee: Your sums are wrong. / The rice for the western forts. You carried a one.
+[35] King Munmu: …Ten years, and you still say it the same way.
+[36] Jahee: Ten years, and you still carry the one.
+[37] ¶ **The first time she said it, he was eighteen, the quay was wet, and the brush in her hand was stolen…!**
+
+=================================================================
+#52 Jahee  (644)
+Arc: The Chunchu Era · place: danghang · tone: harbour romance (K-drama)
+Logline: The quay doesn’t care that he’s a prince. She has already decided his arithmetic is sloppy.
+=================================================================
+[0] ¶ Ten years earlier, at Silla’s only western harbour, the prince is eighteen and losing an argument with a tide book.
+[1] ¶ Yushin sent him here for the season, to work under Kim Seonpum, who runs the quay. No yard. No horses. Grain ships, tide marks, and sums that will not close.
+[2] [PLACE danghang: Silla’s only door to the western sea. Everyone knows which door.]
+[3] [MAP 644: ]
+[4] ¶ Seonpum has a daughter who keeps his inkstones. Her name is Jahee. She has watched the prince for three days, and she has already decided his arithmetic is sloppy.
+[5] [CARD Jahee: A harbour girl who counts faster than the customs men.]
+[6] Jahee: Your sums are wrong. / The tide does not care that you are a prince. / Count again. / While I am watching.
+[7] King Munmu: …Where. / No — / Please show me.
+[8] ¶ She corrects the sum with her father’s good brush. She is not supposed to touch it. She took it off his desk an hour ago, because it is the only one that writes small enough. He watches her mouth instead of the numbers, and she lets him, once.
+[9] ¶ Then a rider comes down the coast road with a letter from Yushin. The army is marching west, against seven Baekje forts. The grain sails on the morning tide. Bupmin is to sail with it.
+[10] King Munmu: The morning tide. / …Then the book has to close tonight.
+[11] Jahee: It won’t. You’re forty sacks short, somewhere between the third ship and the fifth. / Forty sacks is a company that doesn’t eat for a week.
+[12] King Munmu: Then show me where.
+[13] ¶ They count until the lamp needs oil, and then by the light from the warehouse door. Somewhere around the fourth ship she stops correcting him, because he has stopped making mistakes. Neither of them knows what to do with their hands.
+[14] ¶ Rain finds the eave. They stand inside a hard rain-curtain with a wet ledger between them, and almost do the stupid thing, and do not — until there is a stolen brush between their mouths, and then they do.
+[15] Jahee: …That’s my father coughing. / He only coughs like that when he’s pretending not to be there. / …Which is why it has to be now. / Before the tide comes in.
+[16] King Munmu: Do not close the book. / If you close it I… / will not know where to go.
+[17] ¶ Seonpum coughs once from the dark and pretends he did not see a prince learning the harbour by kissing the girl who can count.
+[18] ¶ They find it at the fifth ship, an hour before dawn. Forty sacks written down by somebody who never loaded them. The grain can sail on time and short, or a day late and whole.
+[19] King Munmu: Load them. All forty. / I’ll take the next tide.
+[20] Jahee: Yushin said the morning tide.
+[21] King Munmu: Then he can hit me for it. / At least the company that eats will be his.
+[22] Jahee: …And you’ll come back and fix your sums?
+[23] King Munmu: Only if you’re watching.
+[24] ¶ Years later the court will call her Jayi. The quay already had the true name.
+[25] ── SCENE: The Western Forts ──
+[26] ¶ He reaches the army a day late, with forty sacks of rice nobody else knew were missing. Yushin is waiting at the edge of the camp.
+[27] Kim Yushin: You missed the tide.
+[28] King Munmu: Yes, Marshal. The fifth ship was forty sacks short. I stayed and loaded them.
+[29] ¶ Yushin hits him once, open-handed, because the order was the morning tide. Then he sends the forty sacks to the company that was going to go without.
+[30] King Munmu: Marshal. / When I said king for all — did I mean every kingdom, or every person who bleeds for one?
+[31] Kim Yushin: Ask the yard again tomorrow. / If the answer is only a speech, you are still six. / If it costs you a bruise — you are becoming Hwarang.
+[32] ── SCENE: The Coronation Year ──
+[33] ¶ Ten years later the bruise is long gone. The girl from the quay is the crown prince’s wife. The whole court stands in the palace yard in Tang silk to watch his father crowned.
+[34] ¶ This king has a Secretariat, an emperor for a friend, and an army that answers to one brush. He means to make three kingdoms one. Everybody in the yard can feel a new age starting.
+[35] ¶ Along the back row stand the oldest houses in Surabol, the six families who were here before there was a king. They wear the new robes because the Secretariat says so. They wear them like borrowed skin.
+[36] The old houses: In my grandfather’s day a king wore what his grandfather wore. / In the first king’s day he came out of an egg. / Now he comes out of a Secretariat.
+[37] King Munmu: Uncle. Why do they mind so much? / It’s only a robe.
+[38] Alchun: Nothing in this country is only a robe, lad. / Their grandfathers chose the first king. So did mine. / Ask how the first one got here. Then you’ll know what they’re muttering about.
+[39] ¶ **Silla’s newest king wears Tang silk. To see why the old houses mind, go back to a white horse kneeling in the grass…!**
+
+=================================================================
+#53 Hyukgose  (-57)  [FLASHBACK EPISODE]
+Arc: The Chunchu Era · place: surabol · tone: founder fairy tale
+Logline: A white horse kneels by a well and cries. Six chiefs start digging.
+=================================================================
+[0] ¶ Seven hundred years before anyone in Surabol wore Tang silk, six old men creep up on a horse.
+[1] [MAP -57: ]
+[2] ¶ They are village chiefs, from six valleys in the hills. Their people came south over the mountains, from a kingdom in the north that stopped being a kingdom. That is another story, and an older one. This morning the six valleys have no king, and they keep arguing about it.
+[3] ¶ The chroniclers disagree about the colour of the egg and agree about the horse. Before anyone dug, the six chiefs saw it from the ridge of Mount Yang: a light hanging down beside Najeong like lightning that had forgotten to leave, and under it a white horse folded onto its knees, as if someone important were waiting in the grass.
+[4] Alpyung: That’s… a horse, right? / Why’s a horse kneeling? Who to?
+[5] Sobuldori: You ever seen a horse with wings? I haven’t. / …That one’s got wings, though.
+[6] Alpyung: Slow. Go slow. If it spooks—
+[7] ¶ It does not spook. It lets them come close enough to see that its wings are folded the way a bird folds them and that its eyes are on the grass, not on them. Then it looks up and sees six grown men creeping at it through the pines with their sleeves held out like nets.
+[8] ¶ Six chiefs stand in a wet field with their arms still out, holding nothing. Much later, when the country has a name and a calendar and a clerk for everything, the horse will be painted on a saddle-flap and buried with a king and called **Chunma**, the heavenly horse. That morning nobody calls it anything. Alpyung is the first to look down at what it was kneeling over.
+[9] Alpyung: …It left something. / Dig. What are you all doing? Dig.
+[10] ¶ They dig with their hands, then with somebody’s hoe. Under the grass is an egg the size of a gourd, and the same shape. When it cracks there is a boy inside, already looking at them as if they were late.
+[11] Sobuldori: It’s a gourd. We dug up a gourd with a baby in it.
+[12] Alpyung: Then that’s his name. Park. Gourd.
+[13] ¶ They call him Park, for the gourd, and Hyukgose, to rule with brightness. Then six practical men look at each other and crown him king while he is still a boy. A boy, they reason, cannot have taken sides yet.
+[14] [CARD Hyukgosé: Hyukgose. Born from an egg, crowned before his voice broke.]
+[15] ── SCENE: Alyeong Well ──
+[16] ¶ A few years later, at Alyeongjeong well, a dragon with a chicken’s head leaves a girl behind. She has a beak where her lips should be, until they wash her in the north stream and it falls off. They name her Alyoung, after the well.
+[17] [CARD Lady Alyoung: Lady Alyoung. Born from a dragon’s rib, and the one person in Surabol who can tell the king no.]
+[18] The Herald: One from an egg, one from a chicken.
+[19] The Herald: …Did this country start in a kitchen?
+[20] ¶ At the wedding feast the six chiefs stand up. They have a plan.
+[21] Alpyung: We’re going to make a brand new country. / Every family cares for the others like one great house. Nobody left outside the gate. / The royals watch over the people like their own children. The nobles are wise and righteous, and decide for the good of the nation. / And everyone else we divide into six ranks, according to their virtues. / A new unity…! Silla!
+[22] Lady Alyoung: According to their virtues. / Who measures the virtue?
+[23] Alpyung: Well— we do. The six of us.
+[24] Lady Alyoung: Then say “by whoever is sitting at this table.” / It’s shorter. And in three generations you’ll mean it.
+[25] ¶ The chiefs laugh, because it is a wedding. The boy king does not laugh. He looks at his bride as if somebody had finally said something interesting.
+[26] ¶ Six families end up running everything. In every new country, six families always do.
+[27] Hyukgosé: I have heard that a true man needs only / one person to cherish, / and one person to serve, / and that is enough.
+[28] ¶ They write the ranks down their way anyway. Alyoung is right, the way queens usually are, a few generations early. Ranks by virtue become ranks by birth. Ranks by birth become ranks by bone.
+[29] ¶ Here is how bones work in Surabol. The egg’s line marries the rib’s line, and marries it again, until a child is royal on every side. That child is Sacred Bone. Royal on one side only is True Bone. Below that, the ranks go down like steps, and every step knows exactly who is above it.
+[30] ¶ And the six who dug up the egg? Their grandchildren keep the oldest names in the country and, a few kings later, not the highest chairs. Kings arrive in eggs, chests and boxes. The six just came up out of the ground, like rice.
+[31] ── SCENE: The Five Tombs ──
+[32] ¶ Sixty-one years later, the chronicle says, the king went up into the sky, and seven days after that his body came down again in five pieces, scattered over the ground. Nobody records a horse. Everybody in Surabol says there was one.
+[33] ── SCENE: The Coronation Year ──
+[34] ¶ Back in the coronation yard, Alchun finishes the story the way the old houses always do, a little too pleased with the ending.
+[35] Alchun: So that’s the Six Elders, lad. My grandfather’s grandfather was one of them. So was Bidam’s. / When Bidam said he was Six-Elder blood, he meant he was here before the egg. Before any of you.
+[36] King Munmu: He also said there was no Kim.
+[37] Alchun: There wasn’t. Not that morning. / Ask your father about that one. He likes a story.
+[38] King Muyeol: The egg is the polite one, Bupmin. / The next house to wear this crown came in on the tide, and stole the house we’re standing in.
+[39] ¶ **A chest rides the tide in, a magpie screaming over it. Whatever is inside needs a house. Preferably someone else’s…!**
+
+=================================================================
+#54 Talhae  (-19)  [FLASHBACK EPISODE]
+Arc: The Chunchu Era · place: surabol · tone: founder fairy tale, con-man comedy
+Logline: A chest washes in on the tide with a magpie crying over it. What climbs out is a con man.
+=================================================================
+[0] ¶ Late in the first king’s reign, a chest comes in on the tide at a fishing beach. A magpie flies over it, crying.
+[1] ¶ It has come a long way. A thousand li north-east of Wa, the islands across the sea, the queen of a country called Dapana carried a child for seven years and was delivered of an egg. The king said a person who lays an egg is an ill omen and should get rid of it. She could not. She wrapped it in silk, packed it in a chest with treasure, and gave it to the sea.
+[2] ¶ It reaches Gaya first. The people of Golden Gaya see a strange chest bobbing off their beach and, being sensible, leave it there.
+[3] ¶ Gaya tells it differently, and with more nerve. In the Gaya chronicle Talhae comes ashore a grown man, walks into King Suro’s hall, and asks for the throne.
+[4] [CARD Seok Talhae: Seok Talhae. He arrived in a chest and talks like he owns the beach.]
+[5] Seok Talhae: I’ve come for your throne. / You can fight me for it, or you can save us both the afternoon.
+[6] King Suro: …Heaven gave it to me. / I— it isn’t mine to give. Or to… lose.
+[7] ¶ So they fight the way kings fight in that country. Talhae becomes a hawk, and Suro becomes an eagle. Talhae becomes a sparrow, and Suro becomes a falcon. When Talhae is a man again he is standing in the middle of the hall with feathers on his shoulders, and he bows.
+[8] Seok Talhae: …That was a falcon. / Fine. I’ll find a country with a smaller king.
+[9] ── SCENE: Ajinpo ──
+[10] ¶ Either way, the chest goes on. At Ajinpo an old woman on the shore hauls it in with a rope and opens it, and there is a little boy inside, sitting among the treasure as if it were his luggage.
+[11] 👵: Well. / You’re not a fish.
+[12] Seok Talhae: No. / Is this the country?
+[13] ¶ She names him herself, since there is nobody else to ask. A magpie followed the chest in, so she takes the bird out of the character for magpie, and what is left, **Seok**, is his surname. He got loose from the chest and came out of it, so he is **Talhae**, the one who got loose.
+[14] ¶ He grows nine cheok tall, fishes to feed the old woman and never once complains about it, and when she tells him that a boy with bones like his should study, he studies geography. Mostly the part about where the good ground is.
+[15] ── SCENE: The Crescent House ──
+[16] ¶ Looking over the city, he picks the best ground in it, a crescent-shaped rise above the river, and finds that someone already lives there. The house belongs to **Hogong**, a minister who came over the sea from Wa long ago with a gourd tied at his waist to float on, and has the name to prove it.
+[17] ❝QUOTE (Samguk Sagi (三國史記) bk. 1, Silla Annals — Hyeokgeose, yr. 38): As for Hogong, his clan and surname are not known. He was a man of Wa, and at first he crossed the sea with a gourd tied at his waist; hence he was called Hogong, Lord Gourd.❞
+[18] ¶ Talhae does not have a house. He has a plan. One night he buries a whetstone and a sack of charcoal beside Hogong’s gate, and in the morning he goes to the magistrate and says the house was his family’s, taken while they were away.
+[19] Hogong: I have lived in that house thirty years!
+[20] Seok Talhae: And my family lived there before you. We were smiths. / Dig by the gate, if you don’t believe me.
+[21] ¶ They dig. The whetstone and the charcoal come up out of the ground, black and convincing, and the magistrate gives Talhae the house.
+[22] Hogong: …You buried those last night.
+[23] Seok Talhae: Prove it.
+[24] ¶ The ground becomes **the Moon Palace**, where every king of Silla after him will live, which means every king of Silla lives in a stolen house, including the one who has just moved in. Nobody in the palace likes it when you mention this.
+[25] ── SCENE: Two Kings Later ──
+[26] ¶ King Namhae hears about the clever young man in the crescent house and marries him to his daughter. Two kings later Talhae is sixty-two and on the throne himself, and one of the first things he does is make Hogong his chief minister, which is either an apology or the best joke in the annals.
+[27] ❝QUOTE (Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum): Second year, spring, first month: he appointed Hogong Grand Minister.❞
+[28] Hogong: …Grand Minister.
+[29] Seok Talhae: You know the best ground in the city. I could use a man like that.
+[30] Hogong: I knew it. You did bury them.
+[31] Seok Talhae: Prove it.
+[32] ── SCENE: The Moon Palace ──
+[33] ¶ Seven hundred years later, King Muyeol spends his first night in the stolen house awake. He keeps listening for someone digging by the gate.
+[34] Munhee: Nobody is digging, Your Majesty. Go to sleep. / And if a rooster crows, it’s a rooster.
+[35] ¶ **“Hogong. There’s a rooster in the woods.” It is the middle of the night. Roosters don’t crow at night…!**
+
+=================================================================
+#55 Alji  (65)  [FLASHBACK EPISODE]
+Arc: The Chunchu Era · place: surabol · tone: founder fairy tale
+Logline: Roosters don’t crow at night. In the woods west of the city, one does.
+=================================================================
+[0] ¶ Bidam said there was no Kim. He was right for about a hundred and twenty years. Then, one spring night, King Talhae wakes to a rooster crowing in the woods west of the city.
+[1] Seok Talhae: Hogong. There’s a rooster in Sirim. / Go and see what it wants.
+[2] Hogong: Majesty, it’s a rooster. It wants— / …Yes, Majesty. Going.
+[3] ¶ At first light Hogong walks into Sirim with a lantern he no longer needs, and finds a small box of gold hanging from a branch, and a white rooster underneath it, crowing at nothing.
+[4] ¶ They bring the box to the king and open it, and inside is a little boy, handsome and wide awake, who looks at the king as if the king were the one who had turned up in a box.
+[5] Seok Talhae: Well. / I came in a box too, you know. Mine was bigger.
+[6] ❝QUOTE (Samguk Sagi (三國史記) bk. 1, Silla Annals — Talhae Isageum): Hogong came back and reported it. The king had the chest brought and opened, and inside was a little boy of remarkable looks. The king was glad and said to those around him: “Is this not Heaven sending me a fine heir?” And he took him in and raised him.❞
+[7] ¶ Because he came out of a golden box, he is given the surname **Kim**, gold. Because he is a child, he is called **Alji**. The wood where the rooster crowed is renamed Gyerim, Rooster Wood, and for a while the whole country goes by that name.
+[8] ¶ The boy grows up in the palace, quick and easy to like. The court notices. Talhae has sons of his own. He also has ministers who can count.
+[9] Seok Talhae: Alji. The ministers say Heaven sent you to me as an heir. / Heaven sends a great many things. It sent me a magpie. / So. Do you want the chair?
+[10] Kim Alji: …No, Majesty. / Your sons were here first.
+[11] Seok Talhae: Ha! First. I came in a chest. You came in a box. / Nobody in this palace was here first except six old men, and they don’t want the chair either.
+[12] Kim Alji: Then I’ll wait.
+[13] Seok Talhae: How long?
+[14] Kim Alji: As long as it takes. Gold doesn’t rust, Majesty.
+[15] ¶ So Alji does not get the throne, and by every account he never asks again. It takes his line seven generations to reach the crown. When they do, they keep it for six hundred years, call themselves the Kims of Surabol, and look down on a family from Gaya who have the same name for a different reason. Many generations after that, one of them is a man named Chunchu.
+[16] ¶ Under a certain hill beyond the city, the steam says the same word every time it leaves the water. Kim. It will be a long time before anybody answers it.
+[17] ── SCENE: Gyerim ──
+[18] ¶ In the coronation year the wood is still there, beside the Moon Palace. After dark the new king walks his son through it.
+[19] King Muyeol: Park came out of an egg. Seok came out of a chest and stole a house. We came out of a box and waited seven generations for a chair. / Every house that ever wore this crown arrived in something. That’s why they count bones here, Bupmin. / The people who were here first need something to count.
+[20] King Munmu: And you, Father? You didn’t come out of anything.
+[21] King Muyeol: No. Tired men in Tang silk voted me in. / So I’ll have to earn it the vulgar way. Three kingdoms, one crown. / Starting with the one that keeps knocking.
+[22] ¶ **Across the border in Sabi, a funeral bell. For three years the king can’t sign a thing. The clans already have a list…!**

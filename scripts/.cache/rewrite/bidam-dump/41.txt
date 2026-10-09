@@ -1,0 +1,169 @@
+[0] p EN: Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.
+    KO: 가야가 있기 전에 능선이 있었다. 그리고 그 능선을 너무 오래 내려다본 하늘신이 있었다.
+[1] p EN: Before the sons, there is a look from very high up. <b>Ibiga</b> keeps the sky the way other gods keep a hall — cloud is his body, the living world a map he does not usually read. Then he looks down.
+    KO: 아들들보다 먼저, 아주 높은 곳에서의 시선이 있다. <b>이비가</b>는 하늘이 그의 몸이므로, 이승을 굳이 읽지 않는다. 그러다 내려다본다.
+[2] card {"kind":"card","person":"ibiga","caption":"The sky god. Cloud is his body, and he does not usually look down.","ko":"하늘신. 구름이 곧 그의 몸이고, 평소엔 아래를 내려다보지 않는다."}
+[3] p EN: On her mountain the Lady of the Right View is on watch. At first she is the ridge — jade stone, mist, a woman’s shape the mountain has not admitted yet. The mountain is a woman before it has a face. Then a face comes out of the stone. She is guarding the mountain as if it were a country. She does not look up. She does not need to. Then the sky occupies the path. Cloud comes down to the ridge.
+    KO: 산 위에서 <b>정견모주</b>가 지킨다. 처음엔 능선이다 — 옥빛 돌, 안개, 산이 아직 인정하지 않은 여자의 형. 산이 얼굴보다 먼저 여자다. 그러다 돌에서 얼굴이 나온다. 나라를 지키듯 산을 지킨다. 올려다보지 않는다. 그럴 필요가 없다. 그러다 하늘이 길을 차지한다. 구름이 능선으로 내려온다.
+[4] card {"kind":"card","person":"jeonggyeon","caption":"The mountain goddess. The ridge was a woman before anyone noticed.","ko":"산신. 누가 알아채기 전부터 능선은 여인이었다."}
+[5] dialogue ibiga
+    EN: ["That ridge…","That woman.","I have flown this path a thousand times. Why is the mountain looking back."]
+    KO: ["저 능선…","저 여자.","이 길을 천 번도 더 날았는데. 왜 산이 나를 보냐."]
+[6] p EN: Love arrives as weather — sudden, unasked. He cannot keep the hour. He falls before he lands. The sky comes down to touch the mountain, and does not leave.
+    KO: 사랑은 날씨처럼 온다. 허락을 묻지 않는다. 시각을 지키지 못한다. 닿기 전에 먼저 떨어진다. 하늘이 산에 닿으러 내려오고, 떠나지 않는다.
+[7] dialogue ibiga
+    EN: ["Mountain.","Your shoulder… is warmer than cloud.","Your waist… steeper than cliff."]
+    KO: ["산이여.","네 어깨가… 구름보다 따뜻하구나.","허리가… 벼랑보다 가파르고."]
+[8] dialogue jeonggyeon
+    EN: ["Why has heaven come down.","To look?","Or… to touch.","If to touch… kneel first."]
+    KO: ["하늘이 왜 내려왔느냐.","구경이냐.","아니면… 만지려고.","만지려면… 무릎부터 꿇어라."]
+[9] dialogue ibiga
+    EN: ["To touch.","I looked… and could not hold back.","The knees… already are."]
+    KO: ["만지려고.","보다가… 참을 수가 없어서.","무릎은… 이미."]
+[10] dialogue jeonggyeon
+    EN: ["Then closer.","Ridges do not keep guests long.","Tonight I will make an exception.","I will keep your mouth… at my throat."]
+    KO: ["그럼 더 가까이.","능선은 손님을 오래 붙잡지 않으니.","오늘 밤은 예외로 두마.","네 입을… 내 목덜미에 두마."]
+[11] dialogue ibiga
+    EN: ["Your name… Right View.","The longer I look, the less rightful my thoughts become.","I want to put heaven… between your thighs."]
+    KO: ["네 이름… 바른 경치라.","보면 볼수록 바르지 않은 생각이 든다.","네 허벅지 사이로… 하늘을 넣고 싶다."]
+[12] dialogue jeonggyeon
+    EN: ["Then stay wrongful.","Nights when heaven kneels on a mountain… are not so common.","Kneel.","All the way."]
+    KO: ["그럼 그릇된 채로 있으라.","하늘이 산 위에 엎드리는 밤이… 그리 잦지 않으니.","엎드리거라.","끝까지."]
+[13] p EN: Cloud covers the ridge. What happens under it is not for the song. By the time the cloud thins, neither of them is kneeling, and neither of them has let go.
+    KO: 구름이 능선을 덮는다. 그 아래에서 일어나는 일은 노래의 것이 아니다. 구름이 옅어질 때쯤이면, 둘 다 무릎은 아니며, 둘 다 놓지 않았다.
+[14] p EN: He holds her with one arm. The other is cloud. The ridge is still a mountain; the mountain is still a woman. She does not look up. She does not have to.
+    KO: 한 팔로 안는다. 다른 팔은 구름이다. 능선은 산이고, 산은 아직 여자다. 올려다보지 않는다. 그럴 필요가 없다.
+[15] p EN: By morning the ridge remembers two gods who would not let go. From that heat come eggs, and from the eggs, kings.
+    KO: 아침이 되면 능선은 놓지 않던 두 신을 기억한다. 그 열기에서 알이 나오고, 알에서 임금이 나온다.
+[16] p EN: The sky god <b>Ibiga</b> and mountain goddess Lady of the Right View give birth to two sons, <b>King Suro</b> and <b>King Ijinasi</b>.
+    KO: 하늘신 <b>이비가</b>와 산신 <b>정견모주</b>가 두 아들을 낳으니, <b>수로왕</b>과 <b>이진아시왕</b>이다.
+[17] card {"kind":"card","person":"suro","caption":"King Suro. Born from a golden egg, and in no hurry to marry anyone local.","ko":"수로왕. 황금알에서 났고, 동네 처녀와 혼인할 생각은 없다."}
+[18] scene {"kind":"scene","label":"Mount Guji","ko":"구지봉"}
+[19] p EN: On Earth, the people sing a song to call for a new king.
+    KO: 땅에서는 사람들이 새 임금을 부르는 노래를 부른다.
+[20] verse {"kind":"verse","color":"#9f1239","lines":["龜何龜何 구 하 구 하 거북아 거북아","首其現也 수 기 현 야 머리를 내어라","若不現也 약 불 현 야 내어놓지 않으면","燔灼而喫也 번 작 이 끽 야 구워서 먹으리"]}
+[21] quote {"kind":"quote","hanja":"龜何龜何 首其現也 若不現也 燔灼而喫也","ko":"거북아 거북아 머리를 내어라. 내어놓지 않으면 구워서 먹으리.","html":"Turtle, turtle — show your head. If you do not, we will roast and eat you.","source":"Samguk Yusa (三國遺事) bk. 2, Wonder 2 — King Suro / Turtle Song; Ha & Mintz tr., p. 158"}
+[22] p EN: The people find a box of six eggs. Six babies hatch, Suro and Ijinasi among them. They found six kingdoms:
+    KO: 사람들이 알 여섯 개가 든 궤짝을 찾아낸다. 아기 여섯이 깨어나고, 수로와 이진아시도 그중에 있다. 이들이 여섯 가야를 세운다:
+[23] dialogue herald
+    EN: ["…Eggs, you said?"]
+    KO: ["…알이라고?"]
+[24] dialogue herald
+    EN: ["Six. In a box. From the sky."]
+    KO: ["여섯. 상자에. 하늘에서."]
+[25] p EN: Nobody in Samhan finds this remarkable. Silla’s founder came out of an egg. Goguryeo’s founder came out of an egg. Here are six more. At some point one has to ask what the birds were doing.
+    KO: 삼한의 누구도 이것을 이상하게 여기지 않는다. 신라의 시조가 알에서 나왔다. 고구려의 시조가 알에서 나왔다. 여기 여섯이 더 있다. 어느 지점에서는 그 새들이 대체 무엇을 하고 있었는지 물어야 한다.
+[26] p EN: Gaya doesn’t have a crown. It has a league of iron harbours, six of them, give or take. No one king can lock the vote. Surabol would find that exhausting.
+    KO: 가야에는 왕관이 없다. 쇠의 항구들이 맺은 연맹이 있다. 대략 여섯. 어느 한 왕도 표를 잠글 수 없다. 서라벌이라면 진이 빠졌을 것이다.
+[27] diagram {"kind":"diagram","diagram":"gaya-league","title":"Gaya Confederacy · 가야","caption":"Not one crown — a league of iron harbours.","ko":"왕관 하나가 아니다 — 철과 항구의 연맹."}
+[28] map {"kind":"map","year":42,"places":["geumgwan","surabol"]}
+[29] place {"kind":"place","place":"geumgwan","html":"The harbour that sells iron to everyone, enemies included.","ko":"원수에게까지 쇠를 파는 항구."}
+[30] scene {"kind":"scene","label":"The Red Sail","ko":"붉은 돛"}
+[31] p EN: <b>Queen Heo</b>, an Indian princess, becomes the first queen of Golden Gaya.
+    KO: 인도의 공주 <b>허왕후</b>가 금관가야의 첫 왕비가 된다.
+[32] card {"kind":"card","person":"heohwangok","caption":"Heo Hwang-ok. She sailed farther than anyone in Samhan had heard of, and arrived dressed for it.","ko":"허왕후. 삼한의 누구도 들어 본 적 없는 먼 곳에서 배를 타고, 그에 걸맞게 차려입고 왔다."}
+[33] p EN: She arrives on a red-sailed ship at twenty-one — foreign, luminous, built like nowhere on this coast. The beach is only a door. The first time <b>Suro</b> falls in love is not on the sand.
+    KO: 스물하나에 붉은 돛을 달고 온다. 이 해안에 없는 몸. 바다는 문일 뿐이다. <b>수로</b>가 사랑에 빠지는 첫 순간은 모래가 아니다.
+[34] p EN: In the timber court of Golden Gaya she presents herself — no servant speaking for her, her own name, silk that does not belong to this hall. He is already on the dais. He meant to receive a princess. He receives a woman, and love hits him before protocol can stand up.
+    KO: 금관가야의 나무 조정에서 스스로 선다. 대신 말하는 하인 없이, 제 이름, 이 전각에 없는 비단. 수로는 이미 자리에 있다. 공주를 받으려 했다. 한 여자를 받고, 예법이 일어서기 전에 사랑에 맞는다.
+[35] p EN: Protocol is still trying to stand. He is already off the dais. He comes down with one arm — gold around violet, the same hold the sky used on the ridge, only this time the hall has columns and a floor.
+    KO: 예법이 아직 일어서려 한다. 그는 이미 자리에서 내려온다. 한 팔로 내려온다 — 금이 자주를 안고, 하늘이 능선에 쓰던 그 안음. 다만 이번엔 기둥이 있고, 바닥이 있다.
+[36] p EN: Servants had been sent to the ship. She refused them. So the court is where they meet — and the moment he sees her, speech leaves him like heat from an open kiln.
+    KO: 배로 하인을 보냈다. 거절했다. 그래서 조정에서 만난다. 보는 순간 말이 가마의 열처럼 달아난다.
+[37] dialogue heohwangok
+    EN: ["Have you come to fetch me…","or have you already begun to take me.","With your eyes.","Your mouth… looks dry."]
+    KO: ["절 데리러 오셨습니까…","아니면… 이미 저를 먹고 계십니까.","눈으로요.","입술이… 마르신 것 같은데."]
+[38] dialogue suro
+    EN: ["…","……You.","Your mouth…"]
+    KO: ["…","……그대.","입…"]
+[39] dialogue heohwangok
+    EN: ["Yes.","My mouth.","When the king looks at me like that… I get warmer.","Your hands… where do you mean to put them.","Even if you can’t speak — your hands know."]
+    KO: ["네.","제 입요.","왕이 그렇게 보시니… 더 뜨거워지네요.","손… 어디에 두실 셈이세요.","말씀은 못 하셔도, 손은 아시잖아요."]
+[40] dialogue suro
+    EN: ["Your waist…","I mustn’t…","If I touch…"]
+    KO: ["허리…","안 되…","닿으면…"]
+[41] dialogue heohwangok
+    EN: ["Then touch.","Since the king can’t choose… I’ll choose for you.","Here.","And here.","You’re shaking."]
+    KO: ["닿으세요.","왕이 못 고르시니까… 제가 고를게요.","여기.","그리고 여기.","떨고 계시네요."]
+[42] dialogue suro
+    EN: ["…Hungry…","I can’t… speak…"]
+    KO: ["…배고프…","말이… 안…"]
+[43] dialogue heohwangok
+    EN: ["Then don’t speak.","If you’re hungry… take me first.","Slowly.","Not like a king — like a man."]
+    KO: ["말 안 하셔도 됩니다.","배고프시면… 저를 먼저 드세요.","천천히요.","왕답게 말고 — 남자답게요."]
+[44] p EN: He makes a sound that is nowhere near a word, and she smiles as if it were the only answer she came across the sea for.
+    KO: 그는 낱말이라 하기 어려운 소리를 내고, 그녀는 그것이야말로 바다를 건너온 이유의 전부라는 듯 웃는다.
+[45] p EN: On the hill she offers her silk trousers to the mountain spirit. He watches as if the rite were meant for him alone — jaw tight, hands useless at his sides.
+    KO: 언덕에서 그는 비단 바지를 산신에게 바친다. 왕은 그 의례가 자기 하나만을 위한 것처럼 본다 — 턱에 힘이 들어가고, 손은 옆구리에서 쓸 데가 없다.
+[46] dialogue suro
+    EN: ["…How will we know the mountain accepted it?"]
+    KO: ["…산신이 받았다고 어찌 아오?"]
+[47] dialogue heohwangok
+    EN: ["I can tell from the king’s eyes. / You look like someone who has already received."]
+    KO: ["왕의 눈을 보면 압니다. / 받으신 분 표정이시네요."]
+[48] dialogue suro
+    EN: ["…It is not I who received. / …I am going mad wanting to."]
+    KO: ["…과인이 받은 게 아니오. / …받고 싶어서 미치겠소."]
+[49] dialogue heohwangok
+    EN: ["This country. / And by tonight… its king."]
+    KO: ["이 나라요. / 그리고 오늘 밤 안엔… 왕까지."]
+[50] scene {"kind":"scene","label":"The Tent by the Water","ko":"물가의 장막"}
+[51] p EN: Two nights in a tent by the water before anyone may say marriage. By the second dusk he can barely keep his voice steady when she says his name — and she says it into his mouth so he has to swallow it.
+    KO: 혼인이라는 말 전에 물가 장막에서 두 밤. 둘째 날 해질녘이면, 그가 제 이름을 부를 때 왕의 목소리가 겨우 유지된다 — 그리고 그는 그 이름을 왕의 입 안으로 넣어, 삼키게 한다.
+[52] p EN: She turns so he can see the curve of her hip catching lamp, and he is kissing the throat he will marry before he has permission to call it a country.
+    KO: 그녀는 돌아서, 등이 잡은 엉덩이 곡선을 보이게 하고, 그는 그것을 나라라고 부를 허락이 생기기도 전에 혼인할 목덜미에 입을 맞춘다.
+[53] p EN: When he turns to the lamp she looks at the width of his back — muscle under purple-gold silk, a king’s body that the court never sees — and does not hide how that look sits on her mouth.
+    KO: 그가 등잔 쪽으로 돌아설 때, 그는 그 등의 너비를 본다 — 자줏빛 금사 아래의 근육, 조정이 보지 못하는 왕의 몸 — 그리고 그 시선이 제 입에 앉는 것을 숨기지 않는다.
+[54] dialogue heohwangok
+    EN: ["Slowly.","Your tongue — here.","The way you say my name.","The lower lip.","Below that.","More."]
+    KO: ["천천히.","혀를… 여기.","제 이름처럼.","아랫입술.","그 아래.","더."]
+[55] dialogue suro
+    EN: ["…At this rate I will learn the language.","Or I won’t.","I think I will fall apart first.","Inside you…"]
+    KO: ["…이러면 말을 배우겠소.","못 배우겠소.","배우기 전에 무너질 것 같소.","당신 안에서…"]
+[56] dialogue heohwangok
+    EN: ["Then fall.","That way I have to put you back together every night.","With hands.","With mouth.","Until the king is a king again."]
+    KO: ["무너지십시오.","그러면 제가 매일 밤 다시 세워야 하니까.","손으로.","입으로.","왕이 다시 왕이 될 때까지."]
+[57] p EN: The lamp burns low. She has taught him a dozen words since the dais, and in the dark she teaches him the rest without any — her hand on his wrist, showing him where, laughing when he is slow, then not laughing at all. She is twenty-one and crossed a sea with a stone pagoda in her ship’s hold to stop the waves; he is a king who hatched from an egg and has never once been told how. Neither of them is a god tonight. They are clumsy and greedy, and by the second hour they are good at it.
+    KO: 등잔이 낮게 탄다. 대청에서부터 그녀는 그에게 말 열몇 개를 가르쳤고, 어둠 속에서는 나머지를 말없이 가르친다 — 그의 손목을 잡아 어디인지 보여 주고, 그가 더디면 웃고, 이내 웃지 않는다. 그녀는 스물하나, 파도를 누르려고 배 밑창에 돌탑을 싣고 바다를 건너왔다. 그는 알에서 깨어난 왕이고, 어떻게 하는지 누구에게도 배운 적이 없다. 오늘 밤 둘 다 신이 아니다. 서툴고 욕심 많고, 한 시진이 지나면 잘한다.
+[58] dialogue suro
+    EN: ["Say it— say it again—","In your Ayuta tongue— my name—","…I have forgotten what my own country is called—"]
+    KO: ["그 말— 다시 해 보시오—","아유타 말로— 내 이름을—","…내 나라 이름 따위 잊었소—"]
+[59] dialogue heohwangok
+    EN: ["My king— more—","Haa— my country has no word for this either—","Not yet— don’t go—"]
+    KO: ["왕이시여— 더—","하아— 제 나라 말에도 이런 말은 없어요—","아직— 가지 마세요—"]
+[60] p EN: The second night she is on top, violet silk off her shoulders and the gold tiger-pins still in her hair, because she refuses to take them out for a man who cannot yet say <i>good morning</i> in her language. He loses his own words again. She keeps hers. When she comes apart she says something in the tongue of Ayuta that nobody on this coast will ever translate, and he decides it was his name.
+    KO: 둘째 밤엔 그녀가 위에 있다. 자줏빛 비단은 어깨에서 흘러내리고, 금 호랑이 비녀는 머리에 그대로다 — 제 나라 말로 아침 인사도 못 하는 사내 때문에 빼 줄 생각은 없으니까. 그는 또 말을 잃는다. 그녀는 제 말을 지킨다. 무너지는 순간 그녀는 이 해안의 누구도 옮기지 못할 아유타 말을 하고, 그는 그게 제 이름이었다고 정한다.
+[61] dialogue heohwangok
+    EN: ["My king’s— ah—","Stay— just like that—"]
+    KO: ["왕의— 아아—","그대로— 가만히 계세요—"]
+[62] dialogue suro
+    EN: ["…Wife. It is morning. / I cannot… take my hands away."]
+    KO: ["…부인. 아침이오. / 손을… 거둘 수가 없소."]
+[63] dialogue heohwangok
+    EN: ["I know. / But I have not yet learned this country’s hours."]
+    KO: ["압니다. / 그런데 저는 아직 이 나라 시각을 못 배웠습니다."]
+[64] dialogue suro
+    EN: ["…The ministers are outside. / Before I go in… once more."]
+    KO: ["…신하들이 밖에 있소. / 들어가기 전에… 한 번만 더."]
+[65] dialogue heohwangok
+    EN: ["Once? / What a modest king."]
+    KO: ["한 번이요? / 왕이 욕심이 적으시네요."]
+[66] dialogue suro
+    EN: ["I am not modest. / …I am only holding on. / Barely."]
+    KO: ["욕심이 적지 않소. / …참는 것뿐이오. / 겨우."]
+[67] dialogue heohwangok
+    EN: ["It does now. / I brought it with me — that sound, that night."]
+    KO: ["이제 있습니다. / 제가 가져왔으니까요 — 그 소리, 그 밤."]
+[68] p EN: They are married a hundred and fifty years — the record is firm about this and entirely untroubled by it — and have ten sons. She asks that two of them carry her name instead of his. He agrees without an argument, which in the whole of this history is the single strangest thing any king does.
+    KO: 둘은 백오십 년을 부부로 산다. 기록은 이 대목에 단호하고 조금도 개의치 않는다. 아들 열을 둔다. 그가 그중 둘에게 왕의 성이 아니라 제 성을 물려 달라 청하자, 왕은 두말없이 그리한다. 이 역사를 통틀어 어느 왕이 한 일 중 가장 이상한 일이다.
+[69] wed {"kind":"wed","couple":["heohwangok","suro"]}
+[70] dialogue heohwangok
+    EN: ["My country is gone. Only the name is left."]
+    KO: ["제 나라는 이제 없습니다. 이름만 남았어요."]
+[71] dialogue suro
+    EN: ["Then we keep the name. I can always make another country."]
+    KO: ["그러면 이름을 남깁시다. 나라는 내가 하나 더 만들면 되니."]
+[72] p EN: She dies at a hundred and fifty-seven. He follows ten years later and asks to be laid where he can see her hill.
+    KO: 왕비는 백쉰일곱에 세상을 떠난다. 왕은 십 년 뒤에 뒤따르며, 그의 언덕이 보이는 자리에 묻어 달라 청한다.
+[73] p EN: <b>Ten days of grain. One dying queen. One banner on the Radiance wall. Start counting…!</b>
+    KO: <b>열흘 치 곡식. 죽어 가는 여왕 하나. 명활성 위의 깃발 하나. 이제 날을 센다…!</b>

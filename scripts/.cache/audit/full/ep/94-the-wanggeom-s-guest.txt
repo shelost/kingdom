@@ -1,0 +1,37 @@
+
+=================================================================
+#94 The Wanggeom's Guest  (673 Autumn)
+Arc: Silla-Tang War · place: steam_cavern · tone: mythic coronation
+Logline: The day after the funeral, Munmu signs a traitor’s death warrant, then finds his uncle’s spring. Something older than any kingdom is waiting on the water.
+=================================================================
+[0] ── SCENE: The Second Letter ──
+[1] ¶ The day after the funeral, a letter falls out of a sleeve.
+[2] ¶ It is short. It is addressed to the Tang garrison at Bear Ford, and it promises them a door in the wall of Surabol, the way a man at Daeya once promised Baekje a granary. The hand is very steady. The king knows that hand. It copied his letter to Xue Rengui.
+[3] Daeto: Majesty. A softer word here and there—
+[4] King Munmu: You said that in the writing room. / You copied my letter very well, Daeto. Copy this one.
+[5] ¶ It is his own death warrant. Daeto copies it out fair, and his hand is still very steady. His wife and children are made slaves. Nobody mentions it at court.
+[6] ── SCENE: The Steam Cavern ──
+[7] ¶ That evening Munmu rides alone into the hills east of Surabol. His uncle never showed him the path. He finds it anyway, the way sons find what uncles hid on purpose.
+[8] ¶ He strips at the rock lip as if obeying an order nobody ever gave him in writing, and steps into water so black it reflects nothing.
+[9] ¶ Crimson leaves his shoulders the way a soldier sheds a campaign coat. Steam takes the rest. He does not look up until the water has him.
+[10] ¶ For a long time he only stands in the water. He is forty-seven, and a king, and there is nobody left alive who taught him to ride. He lets the steam have his face, so that nobody has to see it. Not even the rock.
+[11] ¶ They smell him before they see him. Uncle’s heat, father’s road-dust, both houses in one walk. He still thinks he is alone. Golhwa’s mouth opens and does not close. Hyullé cannot get a word out. Narim bites her lip and fails at being eldest.
+[12] ¶ They know him. The **best of both**: they said it first when he was twenty-one and came in with a jar, and they say it again now that the uncle is ash. Gaya in the shoulders. Surabol in the mouth. Fire comes off Golhwa’s skin. Water streams from Hyullé’s chin. A leaf turns in the steam around Narim and will not fall.
+[13] King Munmu: …You’re still here. / I brought a jar last time. I didn’t bring anything tonight.
+[14] Narim: You brought him. On your shoulders. We can smell it. / Sit. Before you fall—
+[15] ¶ He looks at her like she is kind. Narim cannot finish the sentence. She is out of breath, and pretends the steam did that. Uncle’s shoulders. Father’s mouth. She is not supposed to want both, tonight of all nights.
+[16] Golhwa: He’s the one crying and I’m the one who can’t sit. / …Sorry. Ignore me. Stay till the steam drops.
+[17] Hyullé: Hello. I’ll be quiet.
+[18] ¶ That is all Hyullé gets out. She stands near him in the water and looks like she will break. He keeps the black water as a wall. He does not climb out.
+[19] Narim: Sit down before you fall in again. / We are the mouths the hill uses. Wisdom, if you stand in the water and ask once. The uncle is gone. The hill is not.
+[20] King Munmu: I came because he died. / …Will the west stay taken.
+[21] ¶ Something goes out of the cave. When they speak again the eyes are solid: green, cyan, ember.
+[22] Narim: The west will take your name and call it peace. / Keep a sea in the other hand.
+[23] Golhwa: That was the hill. This is me. / Come back anyway. With nothing in your hands, like tonight. We like you better that way.
+[24] ── SCENE: The Man on the Water ──
+[25] ¶ Then the steam goes thin enough to see through, and a man stands on the water as if the lake were a court floor — old robes, sandalwood-coloured light, a face that has outlived every kingdom on the map. The three go still on the rock. This visitor is not theirs.
+[26] Dangun: You wanted a king for all when you were six. / The title you are looking for is older than your father’s reforms. / Wanggeom — not Sacred Bone, not True Bone. The first who stayed when heaven descended.
+[27] King Munmu: Who are you. / Which court sent you.
+[28] Dangun: Asadal is dust. / The mandate is not. / Finish what your uncle could not name aloud.
+[29] ¶ Munmu tells no one. The court records note only a day’s ride and a night’s silence. But he has heard the bear’s son’s name before, in his mother’s version, with extra garlic, and he keeps it.
+[30] ¶ **Kim Punghun said he could wait for a ship. The ship is here…!**

@@ -1,0 +1,56 @@
+[
+	{
+		"id": "ansi-fire-dance",
+		"entry": "Ansi",
+		"at": "Tonight the fire is in the yard under the east gate",
+		"alt": "Ansi's harvest fire under the east gate: the town dancing in a ring, the chief out of step with the drum",
+		"scene": "Night in the packed-earth yard under Ansi's east gate (stone seongmun, giwa munru dark above): a big bonfire, the townspeople in undyed white hanbok dancing in a ring, a drummer at the edge. The chief, a man in his thirties with one wandering eye, mid-step and clearly off the beat, laughing as an old woman shoves him; a small girl pointing at him. Low three-quarter from behind a dancer's swinging sleeve, firelight raking faces, embers as bokeh, the wall black against a starry sky. Heewon style, 2:1.",
+		"people": ["yangmanchun"],
+		"canon": { "with": ["place:ansi", "dress:goguryeo"] }
+	},
+	{
+		"id": "ansi-news-shoulders",
+		"entry": "Ansi",
+		"at": "The chief turns his back to the fire",
+		"alt": "The drum gone quiet: the chief stands with his back to the fire while a mud-spattered rider kneels at the gate",
+		"scene": "Same Ansi yard moments later: the bonfire still high, the dancing stopped, the drum lying on the earth. The chief stands with his back to the fire, a dark Rückenfigur whose shoulders carry the scene; past him a mud-spattered rider kneels beside a blown horse in the open gate. Worm's-eye from beside the abandoned drum, firelight on his back and the townspeople's still faces, cold blue night beyond the gate. Heewon style, 2:1.",
+		"people": ["yangmanchun"],
+		"canon": { "with": ["place:ansi", "dress:goguryeo"] }
+	},
+	{
+		"id": "ansi-messenger-seal",
+		"entry": "Ansi",
+		"at": "Then he’ll want it back. Send it with the head.",
+		"alt": "Yeon's young messenger holds out the red seal in Ansi's winter yard; the chief does not kneel",
+		"scene": "Winter, Ansi's yard under the wall: a young messenger in Goguryeo court riding dress holds out a red lacquered seal on both palms, smiling; the chief stands over him unmoved, one eye on the seal and the other drifting, garrison men behind in a half-ring. Low dutch angle past the seal in sharp foreground, snow on the giwa, one hard grey key from the open gate. Heewon style, 2:1.",
+		"people": ["yangmanchun"],
+		"canon": { "with": ["place:ansi", "dress:goguryeo"] }
+	},
+	{
+		"id": "ansi-town-on-the-wall",
+		"entry": "Ansi",
+		"at": "The whole town is on the wall.",
+		"alt": "The whole town on Ansi's wall in the thaw: a girl running arrows, a mason tipping a millstone, red banners climbing the valley",
+		"scene": "Thaw, Ansi's stone parapet seen along its length: townspeople and garrison together, a weaver hauling stone, a small girl sprinting with a basket of arrows bigger than she is, an old mason heaving a round millstone over the crenellation. Below in the muddy valley a column of three thousand under red Goguryeo banners, the same red flying on the wall. Over-shoulder from behind the millstone, the valley a long diagonal to a storm-broken sky. Heewon style, 2:1.",
+		"people": ["yangmanchun"],
+		"canon": { "with": ["place:ansi", "dress:goguryeo", "flag:goguryeo"] }
+	},
+	{
+		"id": "ansi-statue-basket",
+		"entry": "Ansi",
+		"at": "That winter the mason gets his way",
+		"alt": "The chief sits on an upturned basket while the mason carves him; the town supervises",
+		"scene": "Winter evening in Ansi's yard: the chief sits sulking on an upturned basket, arms folded, while an old mason chisels a half-finished stone figure of him beside a small fire; a girl leans in to point at the carved eye, an old woman watches from a doorway. Low three-quarter from beside the stone block with chips in the sharp foreground, firelight raking the carved face and the real one. Heewon style, 2:1.",
+		"people": ["yangmanchun"],
+		"canon": { "with": ["place:ansi", "dress:goguryeo"] }
+	},
+	{
+		"id": "summit-west-road",
+		"entry": "High Summit",
+		"at": "At the Western Commander’s stirrup rides a junior warrior",
+		"alt": "Dusk on the west road out of Pyongyang: the Western Commander rides home, a junior warrior at his stirrup",
+		"scene": "Dusk, the road west out of Pyongyang: the Western Commander, an older cautious officer, rides at a walk with a junior warrior of twenty-four on foot at his stirrup, looking up at him with one wandering eye. The red two-tier gate small and dissolving behind them, the road a long diagonal toward a low sun. Low angle from the roadside grass, long shadows, the commander's scabbard catching the last light. Do not show the junior's name or make him heroic. Heewon style, 2:1.",
+		"people": ["westcmd", "yangmanchun"],
+		"canon": { "with": ["place:pyongyang", "dress:goguryeo"] }
+	}
+]

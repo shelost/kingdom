@@ -1,0 +1,364 @@
+{
+  "slice": 3,
+  "range": "#21–#30",
+  "episodes": [
+    {
+      "n": 21,
+      "title": "Gumil",
+      "logline": "Nominally Gumil’s story: a low-rank grain officer at Daeya resents the 24-year-old True Bone put over him, and his broke, beautiful wife Maehwa draws every eye, the new commander’s included. In practice the first ~4,000 words follow Yushin, his father and Chunchu on erotic visits to three cavern goddesses, and Gumil gets about six lines.",
+      "scores": { "followable": 2, "context": 2, "pacing": 1, "flow": 1, "entertainment": 2 },
+      "verdict": "Length not earned: cut the cavern opening [0]–[92] (#45 Seohyun retells its origin story anyway), open at Daeya as #20’s card promised, and spend the space giving Gumil a voice and a grievance on the page.",
+      "opening": "“══ DAY: STEAM ══ / Before Daeya — before the year that will stain his hands — the Sword of Silla rides alone…” Not a hook: a 60-word sentence about an unnamed man (Yushin is first named at [13]), and it breaks #20’s promise of Gumil for 93 blocks. The narrator admits as much at [93]: “Now, the grain clerk we promised you.”",
+      "ending": "Lands. Pumsuk does “the correct thing” and leaves the feast for a cold pallet [138], and the card (“How long can a True Bone lie still…?”) is a clean, teasing lead into #22.",
+      "sudden": [
+        { "block": "1", "what": "Three cavern goddesses (Narim, Golhwa, Hyullé) and their steam lake take over the episode.", "setup": "None in #1–20. They get cards [6]–[8], but nothing ties them to Daeya, Gumil or the war.", "fix": "Cut them from #21. If they belong in the 642 arc, plant one line first (a warm stone Yushin carries in #1 or #13) and let #45 Seohyun, which tells their origin in full, introduce them." },
+        { "block": "10.0", "what": "Kim Seohyun (Yushin’s father) and a 75-block flashback to 595, including a sex scene.", "setup": "None before. And #45 [111]–[152] tells the same visit again: the ‘spring’, the fox shapes, the river stone that won’t cool.", "fix": "Cut [10] entirely; it spends #45’s payoff 24 episodes early." },
+        { "block": "97", "what": "Gumil’s card: “A yellow-sleeve officer… the purple sleeve signs it.” The whole grievance hangs on sleeve colours.", "setup": "The sleeve code was explained once, in #1 [26], twenty episodes ago.", "fix": "Show it: Gumil signing a grain tally under Pumsuk’s purple sleeve, so the colour code and the grievance land together." },
+        { "block": "138", "what": "“a pink room waiting” (Pumsuk’s wife), with no name given.", "setup": "Gotaso’s pink is one flashback line in #13 [10.0]; [131] calls her only “a wife whose father is the most important man in Silla”.", "fix": "Say “Gotaso” once at the feast so ‘pink room’ reads instantly." },
+        { "block": "24", "what": "“your friend with the pink name. Chunchu.”", "setup": "Nothing links pink to Chunchu, and two scenes later pink is Gotaso’s colour.", "fix": "Drop “pink name”." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–92", "issue": "About 4,000 words (~70% of the episode) of erotic comedy in the cavern before the title character appears, built on repeats: “The comedy goes out of the cave” ×3 ([10.40], [21], [89]), “What does that mortal have that we don’t?” ×2 ([27], [57]), “Stay with us, Yushin~~” ×2 ([29], [66]), the “Sit down before… she does not say. She is the eldest.” joke ×2 ([10.26], [86]), the fading-footprint coda ×2 ([10.61], [71]).", "fix": "Cut. If one cavern beat must stay, keep Narim’s counsel [22] as a 100-word cold open." },
+        { "blocks": "73–74", "issue": "The same list (“Gaya blood or Silla marshal. Fortress count or cavern counsel.”) in two consecutive blocks.", "fix": "Delete one, or cut the BOTH ROADS day." },
+        { "blocks": "109–122", "issue": "Maehwa crosses a yard of gawking men twice, in two scenes, with nearly the same gossip line ([111] and [119]: “That’s Gumil’s wife.”).", "fix": "Keep [113]–[114] (“That is a road. Do not stand in it.”) and cut [117]–[122]." },
+        { "blocks": "110–135", "issue": "Narration in image-prompt shorthand, which the house rules ban: “teal-sage silk, one red sash, celebrity distance” [110], “Packed earth. Timber eaves.” [118], “Heart-pupils. A thread of drool” [133].", "fix": "Rewrite in the narrator’s voice: one concrete detail per sentence, no art cues." },
+        { "blocks": "132–137", "issue": "Pumsuk’s desire is told three times in narration, then spelled out again in his monologue [137].", "fix": "Keep Maehwa’s line [136] and his exit [138]; cut [137]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#20 card→0", "issue": "#20 ends “Its grain clerk is called Gumil. Remember that name…!”, and #21 opens in a goddess cave with Yushin, who is never at Daeya.", "fix": "Open at Daeya on Gumil counting someone else’s rice (the narrator’s own line at [93])." },
+        { "blocks": "9→10→11", "issue": "One line of present-day scene, then a 75-block flashback, then back to a visit that has barely started.", "fix": "Cut the flashback." },
+        { "blocks": "72–92", "issue": "BOTH ROADS and THE MARSHAL’S STEAM have no date and no cause or effect on Daeya; Chunchu’s question (“a room the Council never votes on”) pays off some 28 episodes later.", "fix": "Cut, or move Chunchu’s visit into the Royal Secretariat arc." }
+      ],
+      "romance": "Three strands. (1) The cavern scenes are erotic comedy, not romance: there’s no obstacle except Yushin saying “Her Majesty”, and the goddesses narrate their own poses and wants, which is caption-dialogue ([10.38] “I’ll keep my knees together. That’s a lie.”, [28]). Yushin does sleep with Narim [44]–[62] a year after #13, where he refused the queen (“Then I will not take it”), and nothing reflects on it, so it cheapens his best romance. (2) Gumil and Maehwa are the real romance, and they’re good in the little room they get: poverty is the obstacle, and the banter has subtext ([106]–[107] “Buy me clothes, then. / Everything I own refuses to fit.” / “…You know what I am paid.”), plus warmth before the fall [125]. That’s about 200 words of their talk against about 4,000 for the cavern. (3) Pumsuk’s desire at the feast [130]–[137] is all told: heart-pupils, drool, then a monologue saying what he wants.",
+      "battle": null,
+      "suspense": "Pull: the #20 card and the logline ask what bone rank will do to Gumil, but the text barely asks it. By the feast, the real question is whether Pumsuk will go back for Maehwa, and the card sells that well. Plants that fire: Gumil’s grievance [98]–[100] and Maehwa’s “everyone looks” [108] pay off in #23. Plants that don’t fire in this slice: “Take Baekje’s forts… Do not take Baekje’s hurry” [22], Hyullé’s door-and-latch warning [23], the Gaya-or-Silla fork [73]–[76], and the “year that will stain his hands” [1]. Yushin is nowhere near Daeya.",
+      "best": "Maehwa, the night before: “Keep your hand on my waist. / It does not have to be a True Bone hand.” [125]",
+      "worst": "[0]–[92]: about 4,000 words of repetitive cavern erotica about three characters who aren’t in this story, sitting where the promised Gumil episode should start.",
+      "fixes": [
+        "Cut [0]–[92] from this episode and open at [93]. #45 Seohyun tells the First Kim visit properly, and #23 [67]–[84] already has a cavern scene if one is wanted after Daeya.",
+        "Make Gumil the protagonist the title promises: a scene before Pumsuk arrives (signing tallies under a purple sleeve, bowing to a 24-year-old at the gate), his [98]–[100] grievance said to someone, and the marriage beats [104]–[108] and [124]–[128] expanded into the episode’s heart.",
+        "Merge the two yard scenes ([109]–[116], [117]–[122]) into one, strip the image-prompt narration, and end the feast on Maehwa’s line [136] and Pumsuk’s exit [138]."
+      ]
+    },
+    {
+      "n": 22,
+      "title": "Maehwa",
+      "logline": "Pumsuk can’t sleep and goes back to the feast, where Maehwa mocks his rank and seduces him. The night escalates through one long sex scene, both declare love, and he walks out without a word. The record says he “took her.”",
+      "scores": { "followable": 3, "context": 4, "pacing": 1, "flow": 3, "entertainment": 2 },
+      "verdict": "Length not earned: the story moves one step (the affair happens; Gotaso’s name turns it), so cut to about 800 words. Explicitness isn’t the problem, repetition is. Decide what the night means and let the record’s “took her” bite.",
+      "opening": "“A man is measured by his self-control.” Heewon’s line, and a perfect ironic hook for what follows.",
+      "ending": "The wordless exit [81] is the right last beat, and the record [82] (“took her. Gumil resented it.”) is a sharp reframe the scene never engages. The card (“He wants the whole story. Every word of it…!”) leads cleanly into #23.",
+      "sudden": [
+        { "block": "5", "what": "“The pink ribbon on the post”: Gotaso’s token in the room.", "setup": "Only #13 [10.0]’s pink-silk line and #21 [138]’s “pink room”.", "fix": "Say “Gotaso’s ribbon” the first time." }
+      ],
+      "pacing_notes": [
+        { "blocks": "30–80", "issue": "About 2,100 words of one act escalating by position (cowgirl, missionary, doggy, against the wall, on her side…). Every climax is counted, there are about nine all-caps screams, and the onomatopoeia and porn-parody vocabulary sit in an arc whose tone line reads “K-drama tragedy”. The plot turns once ([49]–[52]: she says Gotaso’s name).", "fix": "Cut to one paragraph of narration built around the Gotaso beat; keep the act to a sentence or offstage." },
+        { "blocks": "2–5", "issue": "Prompt-fragment narration that repeats itself inside single blocks: “the hall comes with him” ×2 in [2], “She arrives in the gold” ×2 in [4], “Palm on the ice-blue” ×2 in [5].", "fix": "One clean paragraph: he lies awake, sees Gotaso’s ribbon, gets up anyway." },
+        { "blocks": "19, 28", "issue": "Manhwa art cues in the narration: “Heart-pupils… Drool he cannot swallow”, “Pink in his eyes. Drool.”", "fix": "Cut; give one human detail instead." }
+      ],
+      "flow_notes": [
+        { "blocks": "75–81", "issue": "The narrator insists they are “completely in love” [79]; two blocks later he leaves “the way a man looks at someone he has already lost” and never sees her again. Neither the love nor the leaving is motivated.", "fix": "Pick one. Either it’s love and something (a dawn drum, his wife’s name, rank) drives him out, or it’s appetite and the ‘in love’ lines go." },
+        { "blocks": "81→82", "issue": "The scene shows Maehwa choosing; the record says Pumsuk took her. That contradiction could be the episode’s sting, but nothing points at it.", "fix": "End on someone in the yard already telling it the record’s way, or on Maehwa hearing the word “took”." }
+      ],
+      "romance": "The slice’s central romance is played almost entirely as sex. Desire is vivid and the opening has real chemistry ([15] “You were counting. Not the cup. / My mouth. Seventeen.”; her fake exit [24]–[25]), and the obstacles are big: his wife is Chunchu’s daughter, her husband is his officer. But the escalation is by position, not emotion. “I love you” arrives mid-act ([74], [77]–[78]), the narrator asserts love ([75], [79]), and his silent exit [81] contradicts it. No choice costs him anything on the page; others pay in #23. A reader who rooted for Pumsuk and Gotaso in #12–#13 gets no beat of his conflict over her, so the turn reads as whiplash, not tragedy.",
+      "battle": null,
+      "suspense": "Pull: what Gumil will do when he hears (set up by the record [82] and the card). Plant that fires: saying Gotaso’s name [49] returns as Gumil’s “The name.” in #23 [4] and her retelling at [11]. Never fires: Maehwa herself, who disappears from the book after #23 [17].",
+      "best": "“You were counting. Not the cup. / My mouth. Seventeen.” [15]: a poor woman counting a noble’s glances out loud.",
+      "worst": "[30]–[80]: about 2,100 words of a single escalating sex scene that repeats one beat in porn-parody register and moves the plot once.",
+      "fixes": [
+        "Cut [30]–[80] to one paragraph around the Gotaso-name turn [49]–[52]; keep a trimmed [0]–[27] for the seduction and its banter.",
+        "Give Pumsuk one beat with Gotaso’s ribbon [5] that he consciously walks past, so his line to Kangrim in #23 [41] (“I wanted the love and the oath to be one thing”) has a plant.",
+        "Decide whether the night is seduction, coercion or love, and use the record [82] as a sting instead of a footnote."
+      ]
+    },
+    {
+      "n": 23,
+      "title": "Siege of Daeya",
+      "logline": "Gumil makes Maehwa tell him everything, calls her trash, and three weeks later opens the granary gate to Baekje. Pumsuk kills his wife and dies. In Surabol, Chunchu absorbs the loss, sleeps an hour on his mother’s knee, and asks for a road north.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 2, "entertainment": 3 },
+      "verdict": "The grief in Surabol is the best writing in the slice, but the siege never happens on the page: stage the fall from one POV, fix the order of the deaths, and cut the opening sex and the cavern coda.",
+      "opening": "After the DAY header: “He does not ask if she is hurt. He asks for the story.” [1]. A cold, strong hook.",
+      "ending": "The emotional ending is Bupmin at the empty road [63]–[66] (“I will make a country where sisters come home.” / “Good. Start by surviving your father.”). The cavern coda [67]–[84] deflates it with flirting a month after a niece’s death. The card (Yeon’s party) pulls well into #24.",
+      "sudden": [
+        { "block": "20", "what": "Mochuk lifts the bar and asks Gumil “Why are you doing this. Truly.”", "setup": "None, before or after this episode.", "fix": "Introduce him in #21 as Gumil’s friend at the granary, or give the question to a named person the reader knows." },
+        { "block": "50", "what": "Jukjuk’s famous refusal (“broken but never bent”), as a record.", "setup": "None. He never appears as a character; [53] just lists him among the dead.", "fix": "Make him a defender in the siege and put the line in his mouth as a scene." },
+        { "block": "40", "what": "Kangrim refuses Pumsuk: “No. Not for you.” Pumsuk begs to be asked.", "setup": "This is Kangrim’s first appearance, so the reader doesn’t know what being refused his question means, and it’s never explained later.", "fix": "One narrator line on what the refusal means (the oath-breaker doesn’t get asked), or let Kangrim ask." }
+      ],
+      "pacing_notes": [
+        { "blocks": "5–10", "issue": "A second sex scene (~200 words) opens the episode and plays Gumil’s inadequacy for laughs (“Three strokes”) right before the confrontation that should be his tragedy.", "fix": "Go from the interrogation [2]–[4] straight to the confrontation [11]–[17]." },
+        { "blocks": "18–25", "issue": "The fall of the fortress is about 130 words. Three weeks pass in a clause, the fire is “Yunchung’s” at [19] and Gumil’s at [21], and the gate is opened twice (Mochuk lifts the bar [20], Gumil opens it [21]).", "fix": "Dramatize a night on the granary wall from Gumil’s POV: the torch, the gate, Baekje pouring in." },
+        { "blocks": "46–54", "issue": "Chunchu’s grief is interrupted by two records and a map ([50] Jukjuk, [53] annal, [54] MAP) between “We will be happy forever” and Yushin’s line.", "fix": "Cut [53]–[54]; move Jukjuk’s words into the siege." },
+        { "blocks": "67–84", "issue": "About 530 words of cavern flirting after the climax. The one useful line is Narim on Yeon’s door [76], and [83] says “Send Chunchu west” when he goes north.", "fix": "Cut, or reduce to two lines folded into #25’s departure." },
+        { "blocks": "25", "issue": "“Kim Pumsuk: *gulp*…” is a comic beat at the moment of betrayal.", "fix": "Cut." }
+      ],
+      "flow_notes": [
+        { "blocks": "27–45", "issue": "Gotaso dies [27]–[38] before Pumsuk negotiates surrender [43]–[45], so the sequence reads backwards (why kill your wife, then ask for terms?). “Pumsuk does not wait to be next” [45] is the only hint of how he dies.", "fix": "Reorder: oath sworn → gate opens → killing starts → Pumsuk kills Gotaso at her request → Kangrim → Pumsuk dies." },
+        { "blocks": "41→42→47", "issue": "News reaches the Queen at [42], mid-siege, and the herald announces it again at [47].", "fix": "Delete [42]; let [47] carry it." },
+        { "blocks": "44–45", "issue": "Yunchung, sold in #19 [1] as the general who does exactly what he says, swears on the sun and breaks it in one sentence. Nobody notices, and he never reappears in the slice.", "fix": "Give him one beat (a shrug, a refusal to watch), or have Euija mention it in #26." }
+      ],
+      "romance": "Two marriages end, and both endings work. Gumil and Maehwa’s last exchange [13]–[17] (“You are trash as well.” / “That is the last thing they ever say to each other.”) is cruel and true. Gotaso’s death [27]–[38] pays off #12–#13: asked whether she chose the man or the vow, she says “Both. / Is that allowed?” and remembers her father’s stained coat (#12 [18]–[19]). Both are undercut by placement: comic sex before the first [5]–[10], cavern flirting after the second [67]–[84].",
+      "battle": "The stakes are clear and personal: Daeya is the last wall before the Silla capital (#19 [45]), and Chunchu’s daughter is inside. But the siege isn’t dramatized. There’s no POV on the walls, no geography (where is the granary gate relative to the inner room?), no defenders’ plan, and no staged reversal; the betrayal happens in three sentences [19]–[21]. The famous last stand (Jukjuk) exists only as records [50], [53]. The surrender and massacre [43]–[45] are two lines of dialogue and one of narration. Cost and consequence land in Surabol instead ([52]–[61] are excellent). Verdict: summarized as ‘the gate opens, they die’.",
+      "suspense": "Pull: what Chunchu will do. Plants that pay off here: “We will be happy forever” (#13 [15] → [48]–[49]), the vow Chunchu forced (#13 [5]–[7] → [55]–[56]), the stained coat (#12 [18]–[19] → [36]), Bupmin’s ‘king for everyone’ (#1 [12] → [64]–[65]), and Maehwa’s “trash” as Gumil’s motive [23]. Gumil’s death is teased cleanly [24]. Never fire: Mochuk, Kangrim’s refusal [40], Maehwa’s fate.",
+      "best": "Chunchu on his mother’s knee: “you count the territory it cost. / This one… I can’t find the edge of it.” [59]",
+      "worst": "[18]–[45]: the fall of Daeya is about 130 words of summary, with two people opening the gate and the deaths in the wrong order.",
+      "fixes": [
+        "Dramatize the fall from Gumil’s POV on the granary wall (expand [19]–[23] into a scene), with Jukjuk’s refusal as dialogue in place of the [50] record.",
+        "Reorder [27]–[47]: surrender oath → broken → Gotaso → Kangrim → Pumsuk → news in Surabol. Delete [42] and [25].",
+        "Cut the opening sex [5]–[10] and the cavern coda [67]–[84]; end on Bupmin and Munhee [66]."
+      ]
+    },
+    {
+      "n": 24,
+      "title": "Yeon’s Massacre",
+      "logline": "After a summer of bowing for his dead father’s seal, Yeon invites the Summit and the king to a banquet, locks the doors, and kills the five men who belittled him, taking each one’s crow-ring sword, then the king. He crowns a puppet and goes home to a frightened wife.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "A strong ritual set-piece that pays off #8 precisely. Cut three of the five records and the cards-and-diagram pile after it so the killing and its aftermath keep their momentum.",
+      "opening": "“Yeon decides to host a banquet. The king is in attendance.” [0]. Dry and ominous; it works.",
+      "ending": "Yeon’s plea to his wife [76]–[78] (“not one second of your life”) is a quiet human close, and the card (“Naturally, Chunchu wants to go and knock…!”) is witty and leads straight into #25.",
+      "sudden": [
+        { "block": "24", "what": "Lee Gaesa, “the Summit’s mouth the day the word traitor was first set on Yeon’s name”.", "setup": "None. In #8 [25] it was Yeon Gusesa who said “traitor”.", "fix": "Give the “You gave me the word” beat back to Gusesa, or plant Lee Gaesa at the #8 Summit." },
+        { "block": "48", "what": "Untranslated Korean in an English line: “The one who speaks to the 겨레 is you.” (also #26 [24]).", "setup": "None for an English reader.", "fix": "“the people”." },
+        { "block": "34", "what": "“He had already priced your head.” Who is ‘he’?", "setup": "Calls back #8 [19] (the Tang emperor), 16 episodes ago.", "fix": "Name him: “The Tang emperor had already priced your head.”" }
+      ],
+      "pacing_notes": [
+        { "blocks": "11", "issue": "The killing opens as summary: “For hours, blood and tears fill the banquet hall as hundreds of officials and generals are killed.”", "fix": "One concrete image (a table going over, wine darkening), then straight to the five." },
+        { "blocks": "36–37", "issue": "Two records say the same thing (five swords; nobody dared look up).", "fix": "Keep one, or neither; [35] already shows it." },
+        { "blocks": "42–55", "issue": "Enthronement, two cards, a diagram, Dosuryu, a record [51], the Bojang name beat, another record [55]. The records retell the massacre the reader just watched.", "fix": "Cut [45], [51] and [55]; move “You there… what is your name?” [52]–[54] to right after [42], where it lands hardest." },
+        { "blocks": "62–72", "issue": "The gossip repeats ‘five blades on his back’ twice ([64], [66]), and [71]–[72] is summary.", "fix": "Keep the wall-sentry argument [65]–[69]; trim [71]–[72] to the ‘closed for inventory’ line." }
+      ],
+      "flow_notes": [
+        { "blocks": "56–61", "issue": "The Daoist policy is presented as done here; then #31 [36]–[41] shows the request reaching Chang’an months later and Shinsung carrying out the temple bell.", "fix": "Tell it once, in #31, and leave Shinsung’s “Amitabha” here as the plant." }
+      ],
+      "romance": null,
+      "battle": "A massacre rather than a battle, and the best-staged violence in the slice. It has stakes (Yeon is on a death list, #17 [5]), a trap (the doors close from outside [10]) and a ritual structure: five commanders, each killed on a callback to what he said at #8’s Summit ([14], [18], [22], [30]), each sword added to Yeon’s back. Then the king [32]–[34], with “May You live ten thousand years” turned into the killing line. Weaknesses: [11] summarizes the slaughter before the ritual begins, and records retell it afterwards.",
+      "suspense": "Pull: what Yeon will do with power, and whether Dosuryu stays a friend (“If you stop, I am a herald, not a friend.” [49]). Plants paid: #8’s five grievances, #17’s “Mine’ll be longer”, #8 [19]’s “price of your head”. New plants: Shinsung’s forbearance [61], and the wife’s “tell them that too” [79].",
+      "best": "“Uncle. / You told me to sit down. / …. / A Yeon takes this one from a Yeon.” [30]",
+      "worst": "[36]–[55]: five records, cards and a diagram after the massacre, three of the records retelling what was just shown.",
+      "fixes": [
+        "Cut records [37], [51] and [55] and the diagram [45]; move the Bojang name beat [52]–[54] to follow [42].",
+        "Replace [11]’s summary with one image, and name the emperor at [34].",
+        "Give the ‘traitor’ callback to Gusesa (#8 [25]), or plant Lee Gaesa earlier."
+      ]
+    },
+    {
+      "n": 25,
+      "title": "Chunchu & Yeon",
+      "logline": "Chunchu talks the Queen into sending him to beg troops from the man who just killed his own king. Yeon demands land; Chunchu refuses and comes out with a bloody hand and into a cell. A bribed courtier tells him the story of the rabbit’s liver, he writes a lying promise, and he’s released when Yushin’s army appears at the border.",
+      "scores": { "followable": 4, "context": 4, "pacing": 4, "flow": 3, "entertainment": 4 },
+      "verdict": "A real thriller with a clock, a mystery and wit. Untangle the release order so the rabbit letter and Yushin’s army both cause it.",
+      "opening": "“Since Daeya fell, Chunchu has had one request for the Queen… She has not said yes.” [0]. A clear want; a mild hook.",
+      "ending": "It ends on Yeon’s ‘poke a tiger’ line [74], which comes after the reunion the reader has already seen, so the last beat steps backwards. The card (“Whose blade was it?”) is a strong pull into #26.",
+      "sudden": [
+        { "block": "7", "what": "“Hangyul’s hooves will trample Goryeo”", "setup": "None. The horse is named two episodes later, in #27 [13].", "fix": "“my white horse, Hangyul”, or just “my horse”." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–5", "issue": "Re-announces the massacre the reader watched in #24, and Yushin asks “So who is this subject?” after the cavern told him about Yeon in #23 [76].", "fix": "Start at [6]: the Queen says yes." },
+        { "blocks": "49–53", "issue": "The turtle tale is long but character-driven, and it earns its length.", "fix": "None needed." }
+      ],
+      "flow_notes": [
+        { "blocks": "57–74", "issue": "Told out of order: the release is announced [59], then a split-screen gag where Chunchu and Yushin talk as if in one room [60]–[63], then the border reunion [65]–[68], then Yeon’s decision to release him [70]–[74]. The rabbit letter [55]–[56] never factors in.", "fix": "Letter → Yushin musters [58] → Dosuryu brings Yeon the letter and the scout report together, and Yeon won’t fight Yushin over a liar → reunion. Cut [59]–[63]." },
+        { "blocks": "74", "issue": "Yeon calls Dosuryu “Boy”, but Dosuryu has had him “by the scruff since your father was alive” (#24 [47]).", "fix": "“Old man”." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Pull: the sixty-day clock [8] and the bloody hand (whose blade? [33]–[43]). The guards’ bet and the reveal [31]–[37] are the best suspense beat in the slice. Paid: the hand (#26 [45]), the clock (Yushin musters on day sixty [58]), Yeon’s fear of Yushin (#27). Never fires: the rabbit letter [55]–[56]. The ‘Holy King’ jokes [36], [51] tease the Jumong myth well without explaining it.",
+      "best": "Chunchu to Yeon: “Pride is a decoration for men who can afford to lose.” [26], then the guards’ bet and the bloody hand [31]–[37].",
+      "worst": "[57]–[74]: the release is scrambled, and the letter Chunchu risked writing doesn’t matter.",
+      "fixes": [
+        "Reorder the release so the rabbit letter and Yushin’s army both cause it; cut the split-screen gag [59]–[63].",
+        "Cut the re-announcement [1]–[5].",
+        "Gloss Hangyul at [7]; change “Boy” to “Old man” at [74]."
+      ]
+    },
+    {
+      "n": 26,
+      "title": "Euija & Yeon",
+      "logline": "Euija rides to Pyongyang himself to size up the new strongman. Yeon threatens him with a blade; Euija laughs, out-argues him about kings, gods and harbours, and leaves with a plan to cut Silla’s only port and a warning about a Silla man who stabbed his own hand.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "Euija at his wittiest and a satisfying payoff of the hand. Give it a real opening, and cut the two plan-restating records and the maids coda.",
+      "opening": "“News of Yeon’s Massacre reaches Baekje.” [0], then a verbatim copy of Sunduk’s line from #25 [2]. A dateline, not a hook.",
+      "ending": "[63] lands: Yeon’s warning “folded away like a knife he intends to use later”. The card sets up the #27 flashback well, though it says Yeon flinches at “one Silla name”; in this episode that name is Chunchu, while #27 explains Yushin.",
+      "sudden": [
+        { "block": "34", "what": "Danghang Fortress, Silla’s one harbour.", "setup": "New, but explained by the map [35] and the dialogue.", "fix": "None needed." }
+      ],
+      "pacing_notes": [
+        { "blocks": "38–39", "issue": "Two records restate the Danghang plan the two kings just agreed on.", "fix": "Cut both." },
+        { "blocks": "53–62", "issue": "A sexual coda with two court maids after the climax; it only explains the ‘leaving with five’ joke [51].", "fix": "Cut; [51]–[52] are funnier without it." },
+        { "blocks": "27", "issue": "A decoder line: “Neither man yields. The room keeps both versions…”", "fix": "Cut; the argument already showed it." }
+      ],
+      "flow_notes": [
+        { "blocks": "#25→0–2", "issue": "The same news and the same exclamation as #25 [2]. If it’s meant as a mirror, it reads as a copy.", "fix": "Open on Euija’s own angle, e.g. his envy line [11] (“That one thing, I rather envy…”)." },
+        { "blocks": "51→53", "issue": "Yeon’s ‘leaving with five’ joke comes before the scene that explains it.", "fix": "Cut the scene, or move the joke to the morning." }
+      ],
+      "romance": "Not romance: [53]–[62] is a short sexual aside with two maids that adds nothing.",
+      "battle": null,
+      "suspense": "Pull: will Yeon cut him down [19]? Then the hand’s answer [45], and Yeon’s fear (“which of you frightens me more” [48]). Plants: Danghang (fires later), and “a king is not a man” [31]–[33] (echoed by #29 [9]). The Holy King argument [22]–[25] is a good tease for the Jumong episodes because it’s contested, not explained. An irony is left on the table: Euija has never heard of the man whose daughter his general just killed [41], and nobody winks at it.",
+      "best": "Euija: “only one has actually murdered a king of Goryeo. It was not me.” [17]",
+      "worst": "[53]–[62]: the maids coda, plus the restating records [38]–[39].",
+      "fixes": [
+        "Replace [0]–[2] with a hook line in Euija’s voice.",
+        "Cut [38]–[39] and [27].",
+        "Cut the maids scene [53]–[62] and end on [63]."
+      ]
+    },
+    {
+      "n": 27,
+      "title": "Nangbi",
+      "logline": "In 629 a 34-year-old banner captain asks his father’s leave to charge, breaks a Goguryeo line three times, and gets his helmet straightened in silence. In Pyongyang, young Yeon’s father reads the report three times and teaches his son to fear the name Kim Yushin.",
+      "scores": { "followable": 5, "context": 4, "pacing": 4, "flow": 4, "entertainment": 4 },
+      "verdict": "The slice’s best episode: a clean standalone that earns Yushin’s legend through his enemies. Cut the record that retells the charge, and give the charge one beat from the trench.",
+      "opening": "“Kim Yushin — a name that strikes fear in all of Samhan. Maybe this is why.” Heewon’s line; it hooks immediately.",
+      "ending": "[34] earns the epithet through the enemy (“mothers use it to get children indoors”) and ties back to #25’s release. The card returns cleanly to 642.",
+      "sudden": [
+        { "block": "24", "what": "Yeon Taejo’s victory “At the Colossal River”.", "setup": "#8 [15] credits Ulchi with the Colossal River.", "fix": "Half a line: Taejo rode with Ulchi there." }
+      ],
+      "pacing_notes": [
+        { "blocks": "7–8", "issue": "The charge is one summary paragraph, then a record retells it.", "fix": "Cut [8]; give the charge one beat from the trench (the men climbing out after him)." }
+      ],
+      "flow_notes": [
+        { "blocks": "#26 card→0", "issue": "The card asks why Yeon flinches at “one Silla name”. In #26 that name was Chunchu; this episode explains Yushin.", "fix": "Card: “Why does the Eternal General flinch at the Sword of Silla?”" }
+      ],
+      "romance": null,
+      "battle": "One charge, summarized [7] and retold by a record [8]. It still works, because the stakes are personal (a son asking his father, helmet off, in front of an army [4]–[5]) and the payoff is understated: “…Your helmet’s crooked.” [10]–[11]. The heroics are reported through the enemy ([14], [18], [23]–[31]), exactly the house standard for reputations. There’s no geography or plan, but none is needed at this length.",
+      "suspense": "Pull: it answers #25’s question (why Yeon lets Chunchu go). Plants paid: Hangyul (#25 [7]), and the epithet (#1 [39]). New plants: Taejo’s rules (“Never on a field he picked. Never when you’re angry.” [29]).",
+      "best": "Seohyun, with a general’s head at his feet: “…Your helmet’s crooked.” [10], then he straightens it with both hands [11].",
+      "worst": "[7]–[8]: the charge happens in summary, and then a record says it again.",
+      "fixes": [
+        "Cut [8]; put one sensory beat of the charge into [7].",
+        "Fix the #26 card to name the sword, not “one Silla name”.",
+        "Clarify Taejo’s Colossal River role against #8 [15]."
+      ]
+    },
+    {
+      "n": 28,
+      "title": "Forty Fortresses",
+      "logline": "Yushin campaigns against Baekje and takes “more than forty fortresses” over several years, rides past his own gate, visits the cavern again, and Euija panics at his name.",
+      "scores": { "followable": 3, "context": 2, "pacing": 2, "flow": 2, "entertainment": 2 },
+      "verdict": "A summary that contradicts its neighbours: decide who is taking forty fortresses (the record in #26 says Euija; #31 says Silla is losing them), then dramatize one campaign beat instead of quoting it.",
+      "opening": "“In the meantime Queen Sunduk sends her general, Kim Yushin, against Baekje.” Textbook, no hook.",
+      "ending": "Euija’s “Yushin, my friend~~” [27] is a limp last beat. The card (one star, three men) is good, and #29 delivers it.",
+      "sudden": [
+        { "block": "5", "what": "Yushin takes “more than forty fortresses”.", "setup": "Contradicted by #26 [39] (Euija took “more than forty Silla cities” in 642), by #29 resetting to 642, and by #31 [43] (Silla “losing fortresses to Baekje faster than it can count them”).", "fix": "Tell it as the history runs: Euija takes forty in 642, and Yushin spends 644–645 taking them back. Retitle if needed." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–7", "issue": "Summary, a record and a map in eight blocks; no scene.", "fix": "Pick one fortress or one night and play it." },
+        { "blocks": "13", "issue": "The episode’s best beat (Yushin rides past his own gate and only asks for water from home) is a record.", "fix": "Dramatize it as a short scene." },
+        { "blocks": "14–25", "issue": "The fourth cavern visit: the same counsel about Yeon’s door after the Yeon visit is already over, and the same “Sit down before you fall in again” as #21 [10.24].", "fix": "Cut." }
+      ],
+      "flow_notes": [
+        { "blocks": "5→#29", "issue": "“Over the next few years” jumps to 644–645 (the record and the map), and then #29 returns to a banquet hall “scrubbed for three nights” in 642.", "fix": "Place #28 after #29, or keep #28 in 642." }
+      ],
+      "romance": "The cavern scene [14]–[25] is the same flirtation for the fourth time; not romance.",
+      "battle": "None dramatized: forty fortresses in one sentence [5], one record [6], one map [7].",
+      "suspense": "Pull: “Gyebek hasn’t met him yet” [8], a good long-range plant for the Yushin–Gyebek duel. Little else.",
+      "best": "Yushin: “If I stopped, they would invent a reason for my stopping.” [12]",
+      "worst": "[14]–[25]: a repeat cavern visit with stale counsel.",
+      "fixes": [
+        "Resolve the forty-fortress contradiction with #26 [39] and #31 [43].",
+        "Dramatize the gate-and-water anecdote [13]; cut the cavern [14]–[25].",
+        "Replace the opener [0] with a hook (start on Euija’s breakfast panic [2])."
+      ]
+    },
+    {
+      "n": 29,
+      "title": "The Eastern Star",
+      "logline": "Three short scenes, three men claiming one dream: Chunchu tells Yushin he wants the crown, Euija tells Gyebek to judge his orders for himself, and Yeon vows at the Holy King’s cave to forge a country. Each ends on “The ‘King for All’, I mean…!”",
+      "scores": { "followable": 3, "context": 3, "pacing": 4, "flow": 3, "entertainment": 3 },
+      "verdict": "A good triptych that pays off #1’s star. Anchor the cold open in a place, and plant or cut Gyebek’s “I saw Gesomun again”.",
+      "opening": "A cold open on Yushin’s “Well — is it enough now? / We have given Baekje a proper beating…” [0], with no place or time for six blocks.",
+      "ending": "The triple refrain lands as a chord, and the card (“trying to pronounce his name”) is a fun lead into #30.",
+      "sudden": [
+        { "block": "14", "what": "Gyebek: “I saw Gesomun again”, touching an old burn scar on his neck [15].", "setup": "None. There’s no Gyebek–Gesomun meeting in #1–28, and the scar is never mentioned again anywhere in the book.", "fix": "Plant the meeting (Gyebek in Euija’s escort in #26, or the night he got the burn), or cut [14]–[15]." },
+        { "block": "22", "what": "Yeon at the cave: “You gave me monsters.”", "setup": "It’s unclear who ‘you’ is (the Holy King? heaven?).", "fix": "Name the addressee once." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–7", "issue": "No setting, so it reads as two voices in a void.", "fix": "One line of place: the hill above Surabol from #1 [47]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#28→0", "issue": "#28 ended around 645; #29 is back in 642.", "fix": "See #28: reorder or redate." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Pull: which of the three will be King for All, which is the book’s spine. Paid: #1 [47]’s planet joke ([6]–[7], lovely). Plants: Euija’s “Judge it yourself” [11], a strong plant for Gyebek’s later choices. Never fires: the Gesomun sighting and the scar [14]–[15].",
+      "best": "“…I told you. That one is a planet.” / “Thirty years and you are still saying that.” [6]–[7]",
+      "worst": "[14]–[15]: an unplanted line that opens a mystery the book never answers.",
+      "fixes": [
+        "Plant or cut Gyebek’s Gesomun sighting and scar [14]–[15].",
+        "Give [0] a place and time.",
+        "Name whom Yeon addresses at the cave [22]."
+      ]
+    },
+    {
+      "n": 30,
+      "title": "Emperor",
+      "logline": "In Chang’an the Tang emperor reads that a Goguryeo strongman has murdered his king, muses on letting the Khitan and Mohe harass him, and says the name aloud.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 2 },
+      "verdict": "A 199-word stub that #31 replays: fold it into #31 as its cold open, or give the emperor one short scene in place of two records.",
+      "opening": "“Far to the west, a man who owns half the world hears a new name.” Then the grape line. An excellent hook.",
+      "ending": "One line (“Gai Suwen…?”) and a good card, but #31 [21]–[22] re-stages the same moment with the same line.",
+      "sudden": [
+        { "block": "2", "what": "“Quan Gai Suwen”", "setup": "The reader knows him as Yeon Gesomun; #31 [23] explains the Chang’an spelling only later.", "fix": "Half a line here: “Chang’an’s way of writing Yeon Gesomun”." }
+      ],
+      "pacing_notes": [
+        { "blocks": "2–4", "issue": "Two records and a card make up about 72% of the episode.", "fix": "Turn [3] into the emperor speaking to a minister; cut [2]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#30→#31", "issue": "#31 [21]–[22] repeats the news and the “Gai Suwen…?” line.", "fix": "Merge into #31 as its cold open." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Pull: when the emperor will move (“It has only found its excuse”). Plant: the Khitan and Mohe proxy idea [3].",
+      "best": "“He turns it over on his tongue, like a grape he hasn’t decided to eat.” [0]",
+      "worst": "[2]–[4]: two records and a card where a scene should be.",
+      "fixes": [
+        "Merge into #31’s opening, or give the emperor a three-line exchange that delivers [3]’s content as dialogue."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "There is a spine, and it’s Chunchu’s. Daeya takes his daughter (#23), he walks into Yeon’s hall and spends his own hand (#25–#26), and he comes home wanting the crown (#29). Yeon’s rise (#24, #27) runs beside it. The spine’s best scenes are some of the best in the book: the go-stone line (#23 [59]), the bloody hand, the planet callback. #27 Nangbi and much of #24–#25 come close to Prince Euija’s standard. But the arc opens with about 7,000 words (#21’s cavern and all of #22) of erotica that never touches the war, after making the reader wait 93 blocks for the Gumil the previous card promised. The war year’s one siege happens offstage, and Chunchu’s grief, the real engine, gets about 430 words. A reader who survives #21–#22 is rewarded by #24–#27; many won’t survive them.",
+    "handoffs": [
+      { "from": 20, "to": 21, "works": "no", "why": "#20’s card promises Daeya and its grain clerk Gumil; #21 opens in a goddess cave with Yushin and his father, and Gumil arrives at [93].", "fix": "Open #21 at Daeya on Gumil; move or cut the cavern." },
+      { "from": 21, "to": 22, "works": "yes", "why": "The cold-pallet card leads straight into “A man is measured by his self-control” and Pumsuk’s sleepless night.", "fix": "None." },
+      { "from": 22, "to": 23, "works": "yes", "why": "“He wants the whole story” is answered by Gumil’s first line: “From the start. / All of it.”", "fix": "None." },
+      { "from": 23, "to": 24, "works": "yes", "why": "Narim’s warning about Yeon [76] and the party card bridge the jump north.", "fix": "If the cavern coda goes, keep the Yeon warning as one line in Surabol." },
+      { "from": 24, "to": 25, "works": "partly", "why": "The card is perfect, but #25 [1]–[5] re-announces the massacre the reader just watched, and Yushin asks who Yeon is.", "fix": "Cut #25 [1]–[5]." },
+      { "from": 25, "to": 26, "works": "partly", "why": "Both of the card’s questions (whose blade; Euija laughing) are answered, but #26 opens with a dateline and a verbatim copy of #25 [2].", "fix": "A new opener in Euija’s voice." },
+      { "from": 26, "to": 27, "works": "partly", "why": "The flashback jump is well set up, but the card says “one Silla name” (Chunchu, in #26) while #27 explains Yushin.", "fix": "Name the sword in the card." },
+      { "from": 27, "to": 28, "works": "partly", "why": "“Thirteen years on…” returns cleanly, but #28’s flat opener and its jump to 644–645 blur when we are.", "fix": "Keep #28 in 642, or place it after #29." },
+      { "from": 28, "to": 29, "works": "partly", "why": "The three-men card is delivered, but #29 drops back to 642 and opens with no setting.", "fix": "Anchor #29’s opening; fix #28’s dates." },
+      { "from": 29, "to": 30, "works": "yes", "why": "The card’s “trying to pronounce his name” turns directly into #30’s grape line.", "fix": "None." },
+      { "from": 30, "to": 31, "works": "partly", "why": "The card (“Now it needs four dragons”) leads in, but #31 re-stages #30’s news and its “Gai Suwen…?” beat [21]–[22], so #30 is redundant.", "fix": "Merge #30 into #31’s cold open." }
+    ],
+    "dropped_threads": [
+      "Maehwa, the title character of #22, vanishes after #23 [17]; her fate when Daeya falls is never told.",
+      "Gyebek’s “I saw Gesomun again” and his burn scar (#29 [14]–[15]): no earlier meeting anywhere in #1–28, and the scar is never mentioned again in the book.",
+      "The turtle-and-rabbit letter (#25 [55]–[56]): Yeon frees Chunchu over Yushin’s army, and the letter never matters.",
+      "Yunchung, built in #19 as the general who “does exactly what he says he will do”, breaks his sun-oath in one line (#23 [44]–[45]) with no reaction, and doesn’t appear in #24–#39.",
+      "Jukjuk, Daeya’s famous last stand, exists only as two records (#23 [50], [53]).",
+      "Mochuk (#23 [20], [22]) appears for one exchange and never again.",
+      "Kangrim’s refusal of Pumsuk, “Not for you” (#23 [40]), is never explained in this slice or later.",
+      "The cavern’s ‘door’ counsel about Yeon (#21 [23], #23 [76], #28 [21]): nobody acts on it.",
+      "The ‘Gaya blood or Silla marshal’ fork (#21 [73]–[76]) and “the year that will stain his hands” (#21 [1]) are raised and dropped; Yushin is never at Daeya."
+    ],
+    "repetition": [
+      "“What…! The King of Goryeo, murdered by his own subject?”, verbatim from Sunduk (#25 [2]) and Euija (#26 [1]); the same news a third time in #31 [21]; the emperor’s “Gai Suwen…?” in both #30 [5] and #31 [22].",
+      "The massacre is shown (#24 [10]–[35]), then retold by records ([36], [37], [51], [55]) and by market gossip ([64], [66]).",
+      "Cavern beats across #21, #23 and #28: “The comedy goes out of the cave” ×3, “What does that mortal have that we don’t?” ×3, “Stay with us, Yushin~~” ×3, “Sit down before you…” ×3, the eldest’s “she does not say” ×2, “A country will take your house and call the taking love” ×2, the Yeon ‘door’ counsel ×3.",
+      "The First Kim cavern origin is told in #21 [10] and again in #45 [111]–[152].",
+      "Maehwa crosses a yard of gawking men twice in a row (#21 [109]–[116], [117]–[122]).",
+      "Gumil’s ‘three strokes’ joke: #22 [30], [62]; #23 [5], [8], [10].",
+      "Yeon’s Daoists and Shinsung: #24 [57]–[61], [72] and again #31 [36]–[41].",
+      "‘Forty fortresses’ belong to Euija in #26 [39] and to Yushin in #28 [5].",
+      "Daeya’s fall reaches the Queen twice in #23 ([42] and [47]).",
+      "The Danghang plan is agreed in dialogue (#26 [34]–[37]) and then restated by two records ([38]–[39])."
+    ],
+    "top_problems": [
+      "Sex and cavern scenes take roughly 8,300 of the slice’s ~18,600 words (#21 [0]–[92] ≈4,000; #22 ≈3,200; #23 [5]–[10] and [67]–[84] ≈730; #28 [14]–[25]; #26 [53]–[62]). They don’t move the war, they repeat the same beats in porn-parody register, and they break the arc’s K-drama-tragedy tone. #21 makes the reader wait 93 blocks for the Gumil that #20’s card promised. This, not the history, is why #21 and #22 are long, and their length isn’t earned.",
+      "The war year’s battles are summarized. Daeya falls in about 130 words (#23 [18]–[25]) with no geography, POV, plan or staged reversal; Jukjuk’s stand is only quoted; Gotaso’s death, Pumsuk’s surrender and the news arrive in a scrambled order (#23 [27]–[47]). #28’s forty fortresses are one sentence.",
+      "Gumil, the traitor whose choice drives the arc, is a cipher: three lines of grievance (#21 [98]–[100]), two of banter, then humiliation comedy (#23 [5]–[10]). The marriage-and-rank tragedy (#21 [104]–[108], [125]–[126]; #23 [11]–[17]) gets a few hundred words against about 7,000 for the cavern and Pumsuk’s night. Maehwa vanishes after #23 [17].",
+      "Continuity and chronology in the back half: #25’s release is told out of order and the rabbit letter never fires; #26 opens with a copy of #25 [2]; #28 contradicts #26 [39] and #31 [43] on who is taking forty fortresses, jumps to 645, then #29 returns to 642; #30 is a stub that #31 replays.",
+      "Record and explainer pile-ups right after the best scenes: #24 [36]–[61] (five records, three cards, a diagram), #23 [50]–[54] (two records and a map inside Chunchu’s grief), #26 [38]–[39], #28 [6] and [13], and #30 [2]–[4] (72% records)."
+    ]
+  }
+}

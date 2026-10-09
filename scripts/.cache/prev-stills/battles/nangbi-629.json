@@ -1,0 +1,530 @@
+{
+	"id": "nangbi-629",
+	"title": "Nangbi Fortress",
+	"ko": "낭비성 전투",
+	"hanja": "娘臂城之戰",
+	"year": 629,
+	"place": "nangbi",
+	"scale": {
+		"km": 1,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "plain",
+			"points": [
+				[
+					120,
+					292
+				],
+				[
+					880,
+					292
+				],
+				[
+					930,
+					530
+				],
+				[
+					70,
+					530
+				]
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				500,
+				105
+			],
+			"r": 100
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				110,
+				150
+			],
+			"r": 32
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				900,
+				120
+			],
+			"r": 30
+		},
+		{
+			"kind": "fort",
+			"at": [
+				500,
+				95
+			],
+			"side": "goguryeo",
+			"label": "Nangbi",
+			"ko": "낭비성",
+			"labelAt": [
+				600,
+				70
+			]
+		},
+		{
+			"kind": "ridge",
+			"points": [
+				[
+					200,
+					262
+				],
+				[
+					380,
+					272
+				],
+				[
+					620,
+					268
+				],
+				[
+					820,
+					256
+				]
+			],
+			"label": "the trench",
+			"ko": "참호",
+			"labelAt": [
+				880,
+				252
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					500,
+					560
+				],
+				[
+					500,
+					470
+				],
+				[
+					500,
+					300
+				],
+				[
+					500,
+					140
+				]
+			]
+		},
+		{
+			"kind": "camp",
+			"at": [
+				560,
+				478
+			],
+			"side": "silla",
+			"label": "command post",
+			"ko": "본진",
+			"labelAt": [
+				640,
+				488
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				820,
+				28
+			],
+			"label": "to Pyongyang",
+			"ko": "평양으로"
+		}
+	],
+	"sides": [
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "gg-line",
+			"side": "goguryeo",
+			"label": "Goguryeo line",
+			"ko": "고구려 진"
+		},
+		{
+			"id": "sl-line",
+			"side": "silla",
+			"label": "Silla line",
+			"ko": "신라 본대",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-cmd",
+			"side": "silla",
+			"label": "Seohyun",
+			"ko": "서현",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "out",
+			"label": "Goguryeo comes out",
+			"ko": "고구려가 나온다",
+			"caption": "Autumn. Silla marches on a Goguryeo hill fort. The garrison doesn't wait behind its wall. It comes down and forms in the open, behind a line of pits.",
+			"captionKo": "가을. 신라가 고구려의 산성으로 진군한다. 수비군은 성벽 뒤에서 기다리지 않는다. 내려와서 구덩이 줄 뒤 벌판에 진을 친다.",
+			"units": {
+				"gg-line": {
+					"at": [
+						500,
+						218
+					],
+					"men": 6000,
+					"shape": "line",
+					"facing": 90,
+					"r": 1.6
+				},
+				"sl-line": {
+					"at": [
+						500,
+						400
+					],
+					"men": 5000,
+					"shape": "line",
+					"facing": 270,
+					"r": 1.6
+				},
+				"sl-cmd": {
+					"at": [
+						520,
+						462
+					],
+					"men": 1000,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "advance",
+					"points": [
+						[
+							500,
+							150
+						],
+						[
+							500,
+							182
+						],
+						[
+							500,
+							200
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							470,
+							540
+						],
+						[
+							470,
+							470
+						],
+						[
+							470,
+							420
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "break",
+			"label": "Silla breaks",
+			"ko": "신라가 무너진다",
+			"caption": "Silla goes at the line and comes back. Goes again, comes back fewer. By the end, the men who should be charging are sitting in the trench with their heads down. Nobody wrote down how many stayed there.",
+			"captionKo": "신라가 진으로 달려들었다가 물러난다. 다시 달려들고, 더 적게 돌아온다. 끝내 돌격해야 할 군사들이 참호에 머리를 박고 주저앉는다. 거기 남은 자가 몇인지는 아무도 적지 않았다.",
+			"units": {
+				"gg-line": {
+					"at": [
+						500,
+						218
+					],
+					"men": 6000,
+					"shape": "line",
+					"facing": 90,
+					"r": 1.6
+				},
+				"sl-line": {
+					"at": [
+						500,
+						300
+					],
+					"men": 5000,
+					"routed": true
+				},
+				"sl-cmd": {
+					"at": [
+						520,
+						462
+					],
+					"men": 1000,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							430,
+							360
+						],
+						[
+							436,
+							300
+						],
+						[
+							442,
+							240
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "retreat",
+					"points": [
+						[
+							570,
+							236
+						],
+						[
+							574,
+							290
+						],
+						[
+							578,
+							340
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						500,
+						238
+					],
+					"label": "thrown back",
+					"ko": "격퇴"
+				}
+			]
+		},
+		{
+			"id": "three",
+			"label": "Three times in",
+			"ko": "세 번",
+			"caption": "Yushin takes his helmet off in front of his father, asks to be the collar, and puts it back on. The white horse takes the trench. In, out. In again. The third time, something heavy hangs from his saddle.",
+			"captionKo": "유신이 아버지 앞에서 투구를 벗고, 옷깃이 되겠다고 청한 뒤 다시 쓴다. 백마가 참호를 넘는다. 들어갔다 나온다. 다시 들어간다. 세 번째에는 안장에 무거운 것이 매달려 있다.",
+			"units": {
+				"gg-line": {
+					"at": [
+						500,
+						214
+					],
+					"men": 6000,
+					"shape": "line",
+					"facing": 90,
+					"r": 1.6
+				},
+				"sl-line": {
+					"at": [
+						500,
+						300
+					],
+					"men": 5000,
+					"shape": "line",
+					"facing": 270,
+					"r": 1.6
+				},
+				"sl-cmd": {
+					"at": [
+						520,
+						462
+					],
+					"men": 1000,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							548,
+							452
+						],
+						[
+							548,
+							330
+						],
+						[
+							522,
+							226
+						]
+					],
+					"label": "Yushin, three times",
+					"ko": "유신, 세 번"
+				},
+				{
+					"side": "silla",
+					"kind": "retreat",
+					"points": [
+						[
+							478,
+							226
+						],
+						[
+							452,
+							330
+						],
+						[
+							470,
+							446
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						500,
+						204
+					],
+					"label": "a general's head",
+					"ko": "장수의 목"
+				}
+			]
+		},
+		{
+			"id": "rout",
+			"label": "The trench empties forward",
+			"ko": "참호가 앞으로 쏟아진다",
+			"caption": "The trench empties forward. Five thousand Goguryeo men die in the field and a thousand are taken. The fort doesn't wait to be asked; its people walk out and kneel. A few get away north with the story.",
+			"captionKo": "참호가 앞으로 쏟아진다. 고구려군 오천이 벌판에서 죽고 천이 사로잡힌다. 성은 묻기를 기다리지 않는다. 사람들이 걸어 나와 무릎을 꿇는다. 몇몇만 그 이야기를 들고 북으로 빠져나간다.",
+			"units": {
+				"gg-line": {
+					"at": [
+						500,
+						160
+					],
+					"men": 0,
+					"routed": true
+				},
+				"sl-line": {
+					"at": [
+						500,
+						175
+					],
+					"men": 5000,
+					"shape": "line",
+					"facing": 270,
+					"r": 1.6
+				},
+				"sl-cmd": {
+					"at": [
+						520,
+						330
+					],
+					"men": 1000,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							500,
+							300
+						],
+						[
+							500,
+							240
+						],
+						[
+							500,
+							190
+						]
+					]
+				},
+				{
+					"side": "goguryeo",
+					"kind": "retreat",
+					"points": [
+						[
+							560,
+							78
+						],
+						[
+							660,
+							44
+						],
+						[
+							770,
+							14
+						]
+					],
+					"label": "a few get out",
+					"ko": "몇만 빠져나간다"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						420,
+						205
+					],
+					"label": "5,000 dead, 1,000 taken",
+					"ko": "오천 전사, 천 포로"
+				},
+				{
+					"kind": "surrender",
+					"at": [
+						500,
+						112
+					],
+					"label": "the fort opens",
+					"ko": "성문이 열린다"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 41, Biography of Kim Yushin, part 1",
+		"Samguk Sagi 4, Annals of Silla, Jinpyeong year 51"
+	],
+	"note": "The records give Goguryeo's losses (five thousand killed, a thousand taken), Silla's early repulse, Yushin's three charges and the surrender. Goguryeo's six thousand is the floor those losses imply, not a recorded strength; Silla's own dead are not drawn. The Annals name Yongchun and Seohyun as generals with Yushin under them; the story keeps only his father. The pits follow the Yushin biography, which has him leap them. The site is disputed: the book places Nangbi near Cheongju with the old geographies, while many scholars now prefer Banwol fortress at Pocheon, so the ground here is generic.",
+	"noteKo": "기록이 전하는 것은 고구려의 피해(전사 오천, 포로 천), 신라의 초반 패퇴, 유신의 세 번 돌격, 그리고 성의 항복이다. 고구려의 육천은 그 피해가 말해 주는 최소치일 뿐 기록된 병력이 아니며, 신라의 전사자는 그리지 않았다. 본기는 장군으로 용춘과 서현을, 그 아래 유신을 적지만 이야기는 아버지만 남겼다. 구덩이는 유신이 그것을 뛰어넘었다는 열전을 따랐다. 위치는 논란이 있다. 이 책은 옛 지리지를 따라 청주 근처에 두지만, 오늘날 많은 학자는 포천 반월산성을 꼽는다. 그래서 지형은 일반적인 모양으로 그렸다."
+}

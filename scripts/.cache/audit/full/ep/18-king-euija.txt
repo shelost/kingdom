@@ -1,0 +1,75 @@
+
+=================================================================
+#18 King Euija  (641 March)
+Arc: The Five Principles · place: sabi · tone: clan puppet-court intrigue (shonen)
+Logline: The court will style him Righteous and Merciful. He has a sense of humour about that.
+=================================================================
+[0] ¶ Several hundred people see the dragon. Only one of them can see the string.
+[1] ¶ On the morning of his coronation, a dragon is seen over the Sabi River. The court diarist writes it down, because it happened.
+[2] ¶ It was four lacquered paper kites, a low mist, six boatmen paid in advance, and one hour of the year when the light comes up the river at exactly the right angle. Euija had been planning it since the previous autumn.
+[3] ¶ King Mu is dead at eighty, still cursing Silla, and nobody at the river is thinking about him.
+[4] ¶ Euija takes the throne at forty-one. The court will style him Righteous and Merciful. He has a sense of humour about that.
+[5] [CARD King Euija]
+[6] [MAP 641: ]
+[7] [TERM Eraha (於羅瑕): What Baekje’s lords call their king. The farmers have their own word for him. The king has heard it, and prefers this one.]
+[8] [CARD Gyebek: The boy with the borrowed name, grown. He still cannot say a thing he does not believe.]
+[9] Gyebek: …Your Majesty. That is not a dragon.
+[10] King Euija: No, it isn’t. / Now go and say so to those people standing there. / See who wins.
+[11] Gyebek: Wins what. / It is paper and sticks. I can see the string. / I will go and tell them. You said to.
+[12] King Euija: They cannot see the string. / I did not say go. I said see who wins.
+[13] Gyebek: That is the same order. / I will not call it a dragon anywhere.
+[14] King Euija: Stand here for one hour. Mouth shut. / You cannot do the other thing. That is why I keep you beside me.
+[15] The Court Maids: Your Majesty. We saw the dragon too. / …From beside you.
+[16] King Euija: …You two know better.
+[17] The Court Maids: We do. / But of all Your Majesty has made… the thing that lasts longest isn’t a dragon.
+[18] King Euija: …What did you say.
+[19] The Court Maids: Miracles, Your Majesty. / The kind you keep close only at night.
+[20] ¶ His father had done it first, and better. Before he was king, King Mu paid the children of Sabi to sing a song he had written himself. By the third month the song was older than anyone could remember, and what it said about him had become a thing everybody had always known.
+[21] ¶ Nobody had to pay the children again. Euija filed that away.
+[22] King Euija: The thirtieth Eraha bought a country with a song. No army, almost no money. / I was twelve. Nothing since has impressed me that much.
+[23] ¶ So the reign begins with small wonders. All of them arranged. None of them expensive.
+[24] ¶ The white deer is the cheapest one. You take a young doe, you keep it out of the sun for a season, and you let it out on the hunting ground on a day the ministers are watching.
+[25] ¶ The stone at the Rock of Politics sweats before a good decision. It sweats because somebody rubs it with brine the night before, and the somebody is always the same man.
+[26] ¶ Rice comes up on ground where nothing was planted. Something was planted. It was planted at night.
+[27] [CARD Sungchung: The minister who asks the question the king hoped nobody would.]
+[28] Sungchung: Your Majesty. What happens when the people work it out?
+[29] King Euija: They won’t. / Nobody inspects the evidence for a thing they already want to believe.
+[30] ── SCENE: The Morning After ──
+[31] ¶ He walks the riverbank the morning after the dragon as if the mist itself had appointed him. Children point. A grandmother weeps. A clerk from the Board of Rites drops his brush and does not pick it up, because picking it up would mean deciding whether to write what he saw or what he was told.
+[32] King Euija: Look at them. / An army takes a month to move a border. / A story moves it overnight, and thanks you for the privilege.
+[33] Gyebek: Your Majesty is… enjoying this.
+[34] King Euija: I am good at it. / A man should enjoy what he is good at. Otherwise he does it badly, out of spite.
+[35] ── SCENE: The Rock ──
+[36] ¶ At the Rock of Politics he arrives last, lets the ministers wait, rests two fingers on the sweating stone as if taking a pulse, and smiles the small smile of a physician who already wrote the prescription.
+[37] King Euija: The rock agrees. / How fortunate for all of us that the rock has such good taste.
+[38] Gyebek: The rock did not agree. / It is brine. I can smell it. / I am not going to nod at a wet rock.
+[39] King Euija: The ministers are listening to the rock. Not to you. / Do not nod. Silence they can misread. Your mouth they cannot.
+[40] King Euija: Gods are props. Spirits are lighting. / And any man who believes it is already in my cast.
+[41] ¶ This is entirely correct, and it is the sentence that kills him, nineteen years later, word for word.
+[42] Sungchung: …Your Majesty.
+[43] King Euija: Sungchung. Hate the method. You have my permission. / Only do not stand there telling me it does not work.
+[44] The Court Maids: Tonight? / One miracle, or two?
+[45] King Euija: Two. / I am in a generous mood. / The country can watch the dragon. You can watch the king.
+[46] ¶ This is the Righteous and Merciful at full height: before the wine years. He wrote the sky this morning. He walks under it and does not look up.
+[47] ── SCENE: The King’s Chamber ──
+[48] ¶ Two court maids attend him — close enough that the air between them feels arranged. He is proud of the number the way a man is proud of a hunger he has not yet failed to satisfy.
+[49] King Euija: …Don’t both be greedy. / I am… looking at a map.
+[50] The Court Maids: The greed is Your Majesty’s. / You look at us… as if you already know. / Our throats… are closer than the map.
+[51] King Euija: …I was talking about the Silla border.
+[52] The Court Maids: Yes, Your Majesty. / Your voice is at its best when you talk about borders. / So we keep asking.
+[53] King Euija: …Leave.
+[54] The Court Maids: Shall we? / Your Majesty has not let go.
+[55] Baekje: Righteous and merciful — so he was named. / Land of the Heavenly Deer, Land of the Lord Buddha — keep both names warm. One is for merchants. One is for monks.
+[56] ── SCENE: The Princes ──
+[57] ¶ Gyebek is twenty-one, and seated far down the table. No market calls him Hundred-Victories. Not yet. He is passed over every season, because nobody knows what clan he comes from, and he won’t make one up.
+[58] ¶ At the coronation feast the princes sit by age, and the table has to be lengthened twice. Yung sits nearest the king, with a Satek cup-bearer at his elbow. Behind every brother's chair stands a clan tutor, like a second shadow. At the far end, servants pour for boys who don't have names worth carving yet.
+[59] King Euija: Look at that table! The thirtieth Eraha left me a country. I made a second one out of sons. / Count them, Sungchung. Go on. I lose track after thirty.
+[60] Sungchung: Forty-one, Majesty. If the two born this spring are counted. / …And each of them will need a chair, one day. There are only so many chairs, and—
+[61] King Euija: Then we’ll build more chairs. Or empty some. / Pung! Where’s Pung?
+[62] ¶ **Prince Pung** stands. He is seventeen. He is the quiet one, the one with the good handwriting, and he already knows what is coming because his mother told him the night before, crying into his collar.
+[63] [CARD Prince Pung: The quiet prince with the good handwriting. He is about to learn what a hostage is for.]
+[64] King Euija: The island king across the sea wants a prince of Baekje at his court, to show the world how close we are. You’re going. / Learn their poems. Drink their wine. Don’t marry anyone I’ll have to go to war over.
+[65] Prince Pung: As Your Majesty commands. / …For how long?
+[66] King Euija: Until I need you. / Ha! Don’t look like that. It’s a compliment. Nobody sends a prince he doesn’t mean to want back.
+[67] ¶ One day Baekje will send for him after all. Nobody at the feast would have believed it, Pung least of all.
+[68] ¶ **Euija can fake a dragon. He can’t fake a fortress. For that he needs a general who does exactly what he says…!**

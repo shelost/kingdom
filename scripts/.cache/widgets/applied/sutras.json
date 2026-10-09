@@ -1,0 +1,180 @@
+{
+	"ops": [
+		{
+			"chapter": "samhan",
+			"title": "Harmony Council",
+			"op": "add",
+			"after": "That boy Bidam has no fear in him at all.",
+			"why": "Young Bidam has just argued a woman onto the throne against a room saying “woman” forty times. The dragon girl answers Śāriputra the same way. Placed after the vote settles, not inside the debate.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0262_004 (T09n0262 p. 35c07–16)",
+			"block": {
+				"kind": "quote",
+				"html": "“A woman’s body is soiled; it is no vessel for the Dharma. How could it attain supreme awakening?” … The girl said, “Use your divine power, and watch me become a Buddha. It will be quicker still than this.”",
+				"ko": "「여자의 몸은 때 묻고 더러워 법의 그릇이 아니거늘, 어찌 위없는 깨달음을 얻을 수 있겠는가.」 …… 용녀가 말하였다. 「그대의 신통력으로 내가 성불하는 것을 보라. 이보다 더 빠르리라.」",
+				"hanja": "「女身垢穢，非是法器，云何能得無上菩提。」……女言：「以汝神力，觀我成佛，復速於此。」",
+				"source": "Lotus Sutra (妙法蓮華經) ch. 12, Devadatta (提婆達多品), tr. Kumārajīva · T09n0262, p. 35c",
+				"person": "bidam",
+				"style": "sutra"
+			}
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Seung (承)",
+			"op": "add",
+			"after": "Before the banner goes up he lights a stick of incense on the rampart",
+			"why": "Day 1: Bidam lights incense before raising the banner. The Dhammapada’s first verse — act from a bad thought and the wheel follows the track — undercuts the steady hand without spoiling the end.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0210_001 (T04n0210 p. 562a13–14, 雙要品)",
+			"block": {
+				"kind": "quote",
+				"html": "Mind is the root of all things: mind is the master, mind sets them moving. If the heart thinks evil and then speaks it and does it, guilt and suffering follow of themselves, as the wheel rolls in the rut.",
+				"ko": "마음은 모든 법의 근본이니, 마음이 주인이 되고 마음이 부린다. 속으로 악을 생각하여 그대로 말하고 그대로 행하면, 죄와 괴로움이 저절로 뒤따르니 수레바퀴가 바퀴 자국을 따라 구르는 것과 같다.",
+				"hanja": "心為法本，心尊心使，中心念惡，即言即行，罪苦自追，車轢于轍。",
+				"source": "Dhammapada (法句經) ch. 9, The Twin Verses (雙要品), tr. Weiqinan & Zhu Jiangyan · T04n0210, p. 562a",
+				"person": "bidam",
+				"style": "sutra"
+			}
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Seung (承)",
+			"op": "add",
+			"after": "Alchun, arriving late with a lamp, goes pale.",
+			"why": "Day 4: the conscience water finds no wound in him and the beads keep counting. The Heart Sutra’s ‘no hindrance, no fear’ is what he believes of himself; the reader can decide. Placed after the rant, which stays untouched.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0251_001 (T08n0251 p. 848c14–16); Sanskrit: Vaidya, Mahāyāna-sūtra-saṃgraha (DSBC), via https://dedu.dila.edu.tw/view/Prajnaparamitahrdaya",
+			"block": {
+				"kind": "quote",
+				"html": "The bodhisattva relies on the perfection of wisdom, and so his mind has no hindrance. Having no hindrance, he has no fear; he passes far beyond upside-down, dreaming thought and reaches nirvana at last.",
+				"ko": "보리살타는 반야바라밀다를 의지하므로 마음에 걸림이 없고, 걸림이 없으므로 두려움이 없어서, 뒤바뀐 헛된 생각을 멀리 떠나 완전한 열반에 들어간다.",
+				"hanja": "菩提薩埵依般若波羅蜜多故，心無罣礙；無罣礙故，無有恐怖，遠離顛倒夢想，究竟涅槃。",
+				"source": "Heart Sutra (般若波羅蜜多心經), tr. Xuanzang, 649 · T08n0251, p. 848c · Sanskrit: Prajñāpāramitāhṛdaya, short text (Vaidya ed.)",
+				"person": "bidam",
+				"style": "sutra",
+				"native": "बोधिसत्त्वस्य प्रज्ञापारमितामाश्रित्य विहरत्यचित्तावरणः । चित्तावरणनास्तित्वादत्रस्तो विपर्यासातिक्रान्तो निष्ठनिर्वाणः ।",
+				"nativeLang": "sa",
+				"nativeLatn": "bodhisattvasya prajñāpāramitām āśritya viharaty acittāvaraṇaḥ | cittāvaraṇanāstitvād atrasto viparyāsātikrānto niṣṭhanirvāṇaḥ |"
+			}
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Jeon (轉)",
+			"op": "add",
+			"after": "Bidam is ready to defend what is ours.",
+			"why": "Day 9: the ‘because it is ours’ confession. Vimalakīrti’s sickness that is everyone’s sickness — love of the many as the illness itself — sets up his last words in Gyeol (‘I loved it badly’) without spending them.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0475_002 (T14n0475 p. 544b20–22, 文殊師利問疾品)",
+			"block": {
+				"kind": "quote",
+				"html": "From ignorance there is craving, and so my sickness is born. Because all beings are sick, therefore I am sick. If the sickness of all beings ends, then my sickness ends.",
+				"ko": "어리석음으로부터 애착이 있어 나의 병이 생겼습니다. 모든 중생이 병들었기에 나도 병든 것이니, 만일 모든 중생의 병이 사라지면 나의 병도 사라질 것입니다.",
+				"hanja": "從癡有愛，則我病生。以一切眾生病，是故我病；若一切眾生病滅，則我病滅。",
+				"source": "Vimalakīrti Sutra (維摩詰所說經) ch. 5, Mañjuśrī Asks After the Illness (文殊師利問疾品), tr. Kumārajīva · T14n0475, p. 544b",
+				"person": "bidam",
+				"style": "sutra"
+			}
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Gyeol (結)",
+			"op": "add",
+			"after": "Today just watch the west.",
+			"why": "Day 10, the last thing he says to his horse before the duel, ‘in the voice he keeps for sutras’. The Diamond Sutra’s closing verse, the one every monk knows by heart.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0235_001 (T08n0235 p. 752b28–29); Sanskrit: Conze ed. §32, via http://ntireader.org/taisho/t0235_commentary_ch32.html",
+			"block": {
+				"kind": "quote",
+				"html": "All conditioned things are like a dream, an illusion, a bubble, a shadow; like dew, and like lightning. So should you see them.",
+				"ko": "모든 유위법은 꿈과 같고 환상과 같고 물거품과 같고 그림자와 같으며, 이슬과 같고 번개와 같으니, 마땅히 이와 같이 볼지니라.",
+				"hanja": "一切有為法，如夢、幻、泡、影，如露亦如電，應作如是觀。",
+				"source": "Diamond Sutra (金剛般若波羅蜜經) §32, tr. Kumārajīva · T08n0235, p. 752b · Sanskrit: Vajracchedikā §32 (Conze ed.)",
+				"person": "bidam",
+				"style": "sutra",
+				"native": "तारका तिमिरं दीपो मायावश्याय बुद्बुदम् । सुपिनं विद्युदभ्रं च एवं द्रष्टव्यं संस्कृतम् ॥",
+				"nativeLang": "sa",
+				"nativeLatn": "tārakā timiraṃ dīpo māyāvaśyāya budbudam | supinaṃ vidyud abhraṃ ca evaṃ draṣṭavyaṃ saṃskṛtam ||"
+			}
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "We march at dawn. Do sleep well tonight.",
+			"why": "Roll call: Dochim on his rock with beads and staff, a monk who has picked up a spear. The Nirvana Sutra’s licence for armed protectors of the Dharma is the scripture he would cite.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0374_003 (T12n0374 p. 383b22–24, 金剛身品)",
+			"block": {
+				"kind": "quote",
+				"html": "Good son, those who uphold and protect the true Dharma need not take the five precepts or keep the monk’s deportment. They should carry swords, bows and arrows, and spears, and guard the pure monks who keep the precepts.",
+				"ko": "선남자여, 바른 법을 지키는 이는 다섯 가지 계를 받지 않고 위의를 닦지 않더라도, 마땅히 칼과 활과 화살과 창을 들고 계를 지키는 청정한 비구를 수호해야 한다.",
+				"hanja": "善男子！護持正法者，不受五戒，不修威儀，應持刀劍、弓箭、鉾槊，守護持戒清淨比丘。",
+				"source": "Nirvana Sutra (大般涅槃經) fasc. 3, The Adamantine Body (金剛身品), tr. Dharmakṣema · T12n0374, p. 383b",
+				"person": "dochim",
+				"style": "sutra"
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Betrayal",
+			"op": "add",
+			"after": "He put down his begging bowl for a spear.",
+			"why": "Dochim’s introduction: the bowl traded for a spear. The Dhammapada’s rod-and-death verse lands as both rebuke and quiet warning before the supper he does not leave.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0210_002 (T04n0210 p. 565b02–03, 刀杖品)",
+			"block": {
+				"kind": "quote",
+				"html": "All fear death; there is none who does not dread the pain of the rod. Take yourself as the measure: do not kill, do not strike.",
+				"ko": "모든 이가 죽음을 두려워하고, 매의 아픔을 겁내지 않는 이가 없다. 제 몸에 견주어 헤아려, 죽이지 말고 매질하지 말라.",
+				"hanja": "一切皆懼死，莫不畏杖痛，恕己可為譬，勿殺勿行杖。",
+				"source": "Dhammapada (法句經) ch. 18, Sword and Rod (刀杖品), tr. Weiqinan & Zhu Jiangyan · T04n0210, p. 565b",
+				"person": "dochim",
+				"style": "sutra"
+			}
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Yeon’s Massacre",
+			"op": "add",
+			"after": "Amitabha.",
+			"why": "Shinsung’s only answer to ‘Pray quieter’. Forbearance as strength, a monk who ‘bears no grudge’ — read again after Pyongyang II, it is the long wait in a sentence.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0784_001 (T17n0784 p. 722c18–19)",
+			"block": {
+				"kind": "quote",
+				"html": "What has the most strength? Forbearance is the strongest. One who forbears bears no grudge, and is sure to be honoured among men.",
+				"ko": "무엇이 가장 힘이 센가? 참는 것이 가장 굳세다. 참는 이는 원한을 품지 않으니, 반드시 사람들의 존경을 받는다.",
+				"hanja": "何者多力？忍辱最健，忍者無怨，必為人尊。",
+				"source": "Sutra of Forty-two Sections (四十二章經), attr. Kāśyapa Mātaṅga & Zhu Falan · T17n0784, p. 722c",
+				"person": "shinsung",
+				"style": "sutra"
+			}
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Four Dragons",
+			"op": "add",
+			"after": "The bell stays on the floor for twenty-five years.",
+			"why": "The young monk sets the smallest bell on the floor. The Nirvana Sutra’s impermanence verse (the Snow Mountain boy who gave his body for its second half) is the bell’s chant, and the patience that comes due later.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0374_014 (T12n0374 p. 450a16 and p. 451a01, 聖行品)",
+			"block": {
+				"kind": "quote",
+				"html": "All conditioned things are impermanent; this is the law of arising and passing away. … When arising and passing away have themselves passed away, that stillness is bliss.",
+				"ko": "모든 지어진 것은 덧없으니, 이것이 나고 사라지는 법이다. …… 나고 사라짐이 다 사라지고 나면, 고요히 사라짐이 즐거움이 된다.",
+				"hanja": "「諸行無常，是生滅法。」……「生滅滅已，寂滅為樂。」",
+				"source": "Nirvana Sutra (大般涅槃經) fasc. 14, Noble Practice (聖行品), tr. Dharmakṣema · T12n0374, pp. 450a, 451a",
+				"person": "shinsung",
+				"style": "sutra"
+			}
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Pyongyang II",
+			"op": "add",
+			"after": "On the fifth night the bell that has sat on the floor of the lesser house",
+			"why": "The bell is struck; the gate is next. The burning-house parable is about a father who gets his children out through the gate by any means — Shinsung’s own justification, and the irony the reader sees.",
+			"url": "https://cbetaonline.dila.edu.tw/zh/T0262_002 (T09n0262 p. 14c22–25, 譬喻品)",
+			"block": {
+				"kind": "quote",
+				"html": "There is no peace in the three worlds; they are like a burning house, full of every suffering, truly to be feared. Always there are birth and age, sickness and death and grief: fires like these, blazing without end.",
+				"ko": "삼계는 편안함이 없어 불타는 집과 같으니, 온갖 괴로움이 가득하여 참으로 두렵다. 늘 나고 늙고 병들고 죽는 근심이 있어, 이러한 불길이 쉬지 않고 타오른다.",
+				"hanja": "三界無安，猶如火宅，眾苦充滿，甚可怖畏。常有生老、病死憂患，如是等火，熾然不息。",
+				"source": "Lotus Sutra (妙法蓮華經) ch. 3, Parable (譬喻品), tr. Kumārajīva · T09n0262, p. 14c",
+				"person": "shinsung",
+				"style": "sutra"
+			}
+		}
+	]
+}

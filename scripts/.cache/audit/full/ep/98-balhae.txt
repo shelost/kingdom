@@ -1,0 +1,51 @@
+
+=================================================================
+#98 Balhae  (698)
+Arc: Epilogue · place: jolbon · tone: new-dawn coda
+Logline: The winter after Pyongyang falls, an old man carries a piece of a crown through the snow.
+=================================================================
+[0] ¶ The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds every seam a coat has. **Gulgul** walks in front, bent under a leather pack and wrapped in so much fur he looks like something the forest would hunt. His son walks in his tracks, because there are no other tracks.
+[1] [MAP 720: The north, after Goguryeo.]
+[2] ¶ In the pack, under dried millet and a spare pair of boots, wrapped in a strip of red silk, rides a piece of the Goguryeo crown no longer than a finger: one gold branch snapped off when the palace fell, its little leaves still hanging on their wires. Nobody else would carry it north. Behind them is the smoke of someone else’s victory. Ahead is only the cold that Yeon once pulled a Mohe boy out of.
+[3] [CARD Dae Joyoung: Dae Joyoung. A boy with frozen feet, and a piece of a crown in the pack.]
+[4] Dae Joyoung: Father… / Father, my feet… I can’t feel my feet.
+[5] Gulgul: Good. / Better than feeling them.
+[6] Dae Joyoung: What kind of— Father!
+[7] Gulgul: There. Under the rock. / A little more.
+[8] ── SCENE: The Cave ──
+[9] ¶ The cave is a crack in the mountain’s side, deep enough to put the wind behind them. Gulgul strikes the flint four times before the moss takes. The fire is the size of two cupped hands. He sets the pack down beside it, and the boy, thawing, sees a small gold shine through a split seam in the leather, brighter than a fire that size has any right to make it.
+[10] Dae Joyoung: Father. What’s… that? / The shiny thing. That. / Is that gold? We had gold? Then why is it always millet gruel—
+[11] Gulgul: Keep your voice down.
+[12] ¶ Gulgul looks at the cave mouth for a long time, as if the snow might be listening. Then he pulls the red silk free. On his palm lies the gold branch, bent where it was torn, its leaves trembling in the heat off the fire.
+[13] Gulgul: A piece of the crown. / The Goguryeo crown.
+[14] Dae Joyoung: …Did you steal it?
+[15] Gulgul: I took it. / Nobody else was going to.
+[16] Dae Joyoung: But why you? / You’re… Mohe. Everybody says so.
+[17] Gulgul: …Yes. I’m Mohe.
+[18] ¶ Gulgul is not a man who tells stories. He tells this one the way he would report a border skirmish: in order, without adjectives, looking at the fire instead of the boy.
+[19] Gulgul: I was younger than you. Our village burned. / Goguryeo soldiers came through. General Yeon’s men. / I stood in the doorway. A doorway with no roof over it.
+[20] Dae Joyoung: …Why?
+[21] Gulgul: Don’t know. / It was our house.
+[22] ▼ FLASHBACK 634 A Mohe doorway, thirty-four winters before
+    [22.0] ¶ A doorway with no house behind it. Snow on the ash. A Mohe boy holds a stick the way he has seen men hold spears. A big man in red-edged armor gets down off a red-bay horse, walks up until the stick touches his chest, laughs, and pulls off his gloves.
+    [22.1] Yeon Gesomun: Look at this one. Guarding a house that’s already burned. / Good. Get on.
+    [22.2] ¶ Years later, on the north wall of Pyongyang in a winter worse than this one, the same man stands with the grown boy a step behind him and the river frozen white below. He says the thing he says every winter, to anyone in earshot, as if the cold might forget it otherwise.
+    [22.3] Yeon Gesomun: Cold?
+    [22.4] Gulgul: …No, sir.
+    [22.5] Yeon Gesomun: Liar. I’m cold too. / Remember it anyway. Kings die, courts get tired, walls come down— / **Goguryeo never dies.**
+[22] ▲ end flashback
+[23] ¶ The fire has sunk to coals. Gulgul turns the gold over once in his fingers.
+[24] Gulgul: I don’t know how many times he said it. / Every winter. Drunk or sober. Before a fight, after one.
+[25] ¶ He wraps the silk around the branch again and puts it in the boy’s hands.
+[26] Gulgul: Keep it under the coat. / By the Holy King’s bow — if they see gold, they will remember we were a country.
+[27] Dae Joyoung: Father — / When we stop… what do we call it?
+[28] Gulgul: He called it Goguryeo. / Everyone else got tired and said Goryeo. / You — you say it the way he would have wanted.
+[29] ¶ The boy holds the bundle to the coals. It is warm already, from the pack, from his father’s back. Outside, the snow keeps filling the cave mouth. He presses the cloth once, gold against his palm, and answers the empty north the only way the chronicle will keep.
+[30] Dae Joyoung: Goguryeo never dies…!
+[31] ¶ The last coal goes out. Cut to black.
+[32] ── SCENE: Thirty Winters On ──
+[33] ¶ They walk on. Thirty years later, in 698, the boy will raise a kingdom called Balhae on those three words, and the shard will still be warm.
+[34] ¶ His capital will be a stamped grid of halls on the Mudanjiang. Lotus tiles. A stone lantern. Nobody there will need telling what the old country was called.
+[35] ¶ So this story ends with two kings under one sky, each sure the sky meant him. In the south, a dead king lies under a rock in the sea, listening for the ones with no bone. In the north, a boy with frozen feet carries a piece of a crown. From high enough up, you can’t tell which of them is the King for All. The sky stopped trying a long time ago. It just watches the boy.
+[36] ¶ Dae Joyoung keeps walking north, one hand on the gold under his coat.
+[37] ¶ THE END

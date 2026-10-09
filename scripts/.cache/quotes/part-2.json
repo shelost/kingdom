@@ -1,0 +1,564 @@
+{
+	"part": "part-2",
+	"episodes": [
+		{
+			"chapter": "seventh-invasion",
+			"title": "Boiling River",
+			"add": [
+				{
+					"after": "Hwando is burned. The king runs east with a handful of men",
+					"quote": {
+						"kind": "quote",
+						"hanja": "王謂諸將曰：「魏之大兵，反不如我之小兵。毋丘儉者魏之名將，今日命在我掌握之中乎。」乃領鐵騎五千，進而擊之。儉為方陣，決死而戰，我軍大潰，死者一萬八千餘人。",
+						"ko": "왕이 여러 장수에게 말하였다. “위의 큰 군대가 도리어 우리의 작은 군대만 못하다. 관구검은 위의 이름난 장수이나, 오늘 그 목숨이 내 손아귀에 있구나.” 이에 철기 5천을 거느리고 나아가 쳤다. 관구검이 방진을 치고 죽기로 싸우니, 우리 군사가 크게 무너져 죽은 자가 1만 8천여 명이었다.",
+						"html": "The king said to his generals: “Wei’s great army is worse than our small one. Guanqiu Jian is Wei’s famous general, and today his life is in the palm of my hand.” He took five thousand armoured horse and advanced to strike. Guanqiu Jian formed a square and fought to the death; our army broke completely, and more than eighteen thousand died.",
+						"source": "Samguk Sagi (三國史記) bk. 17, Goguryeo Annals — King Dongcheon, yr. 20 (246), 8th month",
+						"event": "boiling-river-244"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷17",
+					"why": "Goguryeo’s own annal: the king’s boast, then the 18,000 dead the episode counts. Pairs with the Wei general’s record below."
+				},
+				{
+					"after": "Hwando is burned. The king runs east with a handful of men",
+					"quote": {
+						"kind": "quote",
+						"hanja": "句驪王宮將步騎二萬人，進軍沸流水上，大戰梁口，宮連破走。儉遂束馬縣車，以登丸都，屠句驪所都，斬獲首虜以千數。",
+						"ko": "구려 왕 궁이 보병과 기병 2만을 거느리고 비류수 가로 진군하여 양구에서 크게 싸웠으나, 궁은 잇달아 패하여 달아났다. 관구검은 마침내 말을 묶고 수레를 매달아 환도에 올라 구려의 도읍을 도륙하니, 베고 사로잡은 자가 천으로 헤아려졌다.",
+						"html": "Gung, king of Goguryeo, led twenty thousand foot and horse up to the Boiling River and gave battle at Liangkou; Gung was beaten again and again and fled. Guanqiu Jian then bound up his horses and roped up his carts to climb to Hwando, put the Goguryeo capital to the sword, and took heads and captives by the thousand.",
+						"source": "Sanguo Zhi (三國志) bk. 28, Biography of Guanqiu Jian (毌丘儉傳), Zhengshi era (c. 244)",
+						"event": "boiling-river-244"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國志/卷28",
+					"why": "The Wei side of the same campaign: no Goguryeo victories at all, just Gung beaten repeatedly and Hwando butchered. Cross-nation pair with Samguk Sagi bk. 17."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Stallion Mountain",
+			"add": [
+				{
+					"after": "The formation breaks. The mountain learns a new colour.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "會有雷電，龍門人薛仁貴著奇服，大呼陷陳，所向無敵；高麗兵披靡，大軍乘之，高麗兵大潰…",
+						"ko": "마침 천둥과 번개가 쳤는데, 용문 사람 설인귀가 기이한 옷을 입고 크게 소리치며 적진을 무너뜨리니 향하는 곳마다 대적할 자가 없었다. 고구려 군사가 쓰러지듯 흩어지자 대군이 그 틈을 타니, 고구려 군사가 크게 무너졌다…",
+						"html": "Just then came thunder and lightning. Xue Rengui, a man of Longmen, in strange clothing, broke into the enemy line with a great shout, and nothing could stand before him. The Goguryeo troops gave way; the main army followed through, and the Goguryeo troops broke completely…",
+						"source": "Zizhi Tongjian (資治通鑑) bk. 198, Tang Zhenguan 19 (645), 6th month",
+						"event": "white-coat-645"
+					},
+					"url": "https://zh.wikisource.org/wiki/資治通鑑/卷198",
+					"why": "Tang record of the man in white cutting the road at Stallion Mountain."
+				},
+				{
+					"after": "The formation breaks. The mountain learns a new colour.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "會，有雷電，龍門人薛仁貴，著奇服，大呼陷陣，所向無敵，我軍披靡。大軍乘之，我軍大潰…",
+						"ko": "마침 천둥과 번개가 쳤는데, 용문 사람 설인귀가 기이한 옷을 입고 크게 소리치며 진을 무너뜨리니, 향하는 곳마다 대적할 자가 없어 우리 군사가 쓰러지듯 흩어졌다. 대군이 그 틈을 타니 우리 군사가 크게 무너졌다…",
+						"html": "Just then came thunder and lightning. Xue Rengui, a man of Longmen, in strange clothing, broke into the line with a great shout, and nothing could stand before him; our army gave way. The main army followed through, and our army broke completely…",
+						"source": "Samguk Sagi (三國史記) bk. 21, Goguryeo Annals — King Bojang, yr. 4 (645)",
+						"event": "white-coat-645"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷21",
+					"why": "Same sentence in the Korean annal, which keeps Goguryeo’s voice: “our army gave way.” Cross-nation pair with the Tongjian."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Colossal River",
+			"add": [
+				{
+					"after": "Munduk is honored with the title",
+					"quote": {
+						"kind": "quote",
+						"hanja": "秋七月，至薩水，軍半濟，我軍自後擊其後軍，右屯衛將軍辛世雄戰死。於是，諸軍俱潰，不可禁止。",
+						"ko": "가을 7월, 살수에 이르러 군사가 반쯤 건넜을 때, 우리 군사가 뒤에서 그 후군을 치니 우둔위장군 신세웅이 싸우다 죽었다. 이에 여러 군대가 모두 무너져 막을 수가 없었다.",
+						"html": "Autumn, seventh month: they reached the Salsu. When the army was halfway across, our troops struck its rearguard from behind, and General Xin Shixiong of the Right Garrison fell fighting. At that all the armies broke, and nothing could stop them.",
+						"source": "Samguk Sagi (三國史記) bk. 20, Goguryeo Annals — King Yeongyang, yr. 23 (612)",
+						"event": "salsu-612"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷20",
+					"why": "Goguryeo’s annal of the crossing (“our troops struck from behind”). This episode lost its only quote (the Ulchi poem, now a verse block), so it needs a new one."
+				},
+				{
+					"after": "Munduk is honored with the title",
+					"quote": {
+						"kind": "quote",
+						"hanja": "初，九軍渡遼，凡三十萬五千，及還至遼東城，唯二千七百人，資儲器械巨萬計，失亡蕩盡。",
+						"ko": "처음 아홉 군대가 요수를 건넌 것이 모두 30만 5천이었는데, 요동성으로 돌아온 것은 겨우 2천 7백 명이었다. 수만을 헤아리던 군량과 기계도 모두 잃어버렸다.",
+						"html": "When the nine armies crossed the Liao there were three hundred and five thousand of them. When they got back to the Liaodong fortress there were two thousand seven hundred. Stores and weapons by the tens of thousands were lost, every one.",
+						"source": "Zizhi Tongjian (資治通鑑) bk. 181, Sui Daye 8 (612), 7th month",
+						"event": "salsu-612"
+					},
+					"url": "https://zh.wikisource.org/wiki/資治通鑑/卷181",
+					"why": "The Chinese ledger of the same river: 305,000 out, 2,700 back. Cross-nation pair with Samguk Sagi bk. 20."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Ansi",
+			"add": [
+				{
+					"after": "sent a hundred bolts of silk up to the wall",
+					"quote": {
+						"kind": "quote",
+						"hanja": "乃耀兵於安市城下而旋，城中皆屏跡不出。城主登城拜辭，上嘉其固守，賜縑百匹，以勵事君。",
+						"ko": "이에 안시성 아래에서 군세를 뽐낸 뒤 돌아가니, 성안에서는 모두 자취를 감추고 나오지 않았다. 성주가 성에 올라 절하며 작별하니, 황제가 그 굳게 지킨 것을 가상히 여겨 비단 백 필을 내리고 임금 섬기는 일을 권하였다.",
+						"html": "He paraded his troops below Ansi and turned for home; inside the walls everyone kept out of sight. The lord of the city climbed the wall and bowed his farewell. The emperor, admiring how stubbornly he had held, gave him a hundred bolts of silk, to encourage those who serve their lords.",
+						"source": "Zizhi Tongjian (資治通鑑) bk. 198, Tang Zhenguan 19 (645), 9th month",
+						"event": "ansi-lord-645"
+					},
+					"url": "https://zh.wikisource.org/wiki/資治通鑑/卷198",
+					"why": "Tang record of the farewell bow and the silk the narration has just described."
+				},
+				{
+					"after": "sent a hundred bolts of silk up to the wall",
+					"quote": {
+						"kind": "quote",
+						"hanja": "東征之功，敗於安市，則其城主，可謂豪傑非常者矣。而史失其姓名…甚可惜也。",
+						"ko": "동쪽 정벌의 공이 안시에서 꺾였으니, 그 성주는 비상한 호걸이라 할 만하다. 그런데 역사가 그 성명을 잃었으니… 몹시 애석하다.",
+						"html": "The eastern campaign came to grief at Ansi, so its lord may be called a hero out of the common run. Yet history has lost his name… It is a great pity.",
+						"source": "Samguk Sagi (三國史記) bk. 21, Goguryeo Annals — King Bojang, yr. 4 (645), historian’s comment (論曰)",
+						"event": "ansi-lord-645"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷21",
+					"why": "Kim Busik’s own comment on the same man: a hero whose name history lost. The Korean answer to the Tang silk; it lands the episode’s “nobody writes his name down.”"
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Haemosu",
+			"add": [
+				{
+					"after": "The yard can learn your name later.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "我是河伯之女，名柳花。與諸弟出遊，時有一男子，自言天帝子解慕漱，誘我於熊心山下鴨淥邊室中私之，卽往不返。父母責我無媒而從人，遂謫居優渤水。",
+						"ko": "나는 하백의 딸로, 이름은 유화다. 아우들과 나가 놀 때에 한 사내가 스스로 천제의 아들 해모수라 하며, 나를 웅심산 아래 압록 가의 방으로 꾀어 정을 통하고는 가서 돌아오지 않았다. 부모는 내가 중매도 없이 남자를 따랐다고 꾸짖었고, 마침내 나는 우발수로 쫓겨나 살게 되었다.",
+						"html": "I am Habek’s daughter, and my name is Yuhwa. I was out with my sisters when a man who called himself Haemosu, son of the Heavenly Emperor, lured me into a room by the Amnok below Mount Ungsim and lay with me. Then he went away and did not come back. My parents blamed me for following a man without a go-between, and so I was banished to the Ubal River.",
+						"source": "Samguk Sagi (三國史記) bk. 13, Goguryeo Annals — King Dongmyeong, accession: Yuhwa’s answer to King Geumwa",
+						"person": "yuhwa"
+					},
+					"url": "https://contents.history.go.kr/mobile/ht/view.do?levelId=ht_001_0030_0020_0030 (cf. https://db.history.go.kr/id/sg_013_0020_0010)",
+					"why": "Yuhwa’s own account of the Amnok, the copper room and Habek’s sentence, told to the king who just offered her a room — her side of the whole episode."
+				},
+				{
+					"after": "In time Yuhwa lays a great egg.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "金蛙異之，幽閉於室中，爲日所炤，引身避之，日影又逐而炤之。因而有孕，生一卵，大如五升許。",
+						"ko": "금와가 이를 기이하게 여겨 방 안에 깊이 가두었다. 햇빛이 그녀를 비추어 몸을 끌어 피하면, 해 그림자가 또 따라와 비추었다. 그로 인해 아이를 배어 알 하나를 낳으니, 크기가 닷 되들이쯤 되었다.",
+						"html": "Geumwa found her strange and shut her away in a room. The sunlight shone on her; she drew herself aside, and the sun’s shadow followed and shone on her again. From this she conceived, and bore an egg about the size of five pecks.",
+						"source": "Samguk Sagi (三國史記) bk. 13, Goguryeo Annals — King Dongmyeong, accession",
+						"event": "yuhwa-sun-egg"
+					},
+					"url": "https://contents.history.go.kr/mobile/ht/view.do?levelId=ht_001_0030_0020_0030",
+					"why": "The sun-shaft that follows her across Geumwa’s yard, and the egg. Korean half of the pair."
+				},
+				{
+					"after": "In time Yuhwa lays a great egg.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "…河伯女，為夫餘王閉於室中，為日所照，引身避之，日影又逐。既而有孕，生一卵，大如五升。",
+						"ko": "…하백의 딸은 부여 왕에 의해 방 안에 갇혔다. 햇빛이 그녀를 비추어 몸을 끌어 피하면, 해 그림자가 또 따라왔다. 얼마 뒤 아이를 배어 알 하나를 낳으니, 크기가 닷 되만 하였다.",
+						"html": "…Habek’s daughter was shut in a room by the king of Buyeo. The sunlight shone on her; she drew herself aside, and the sun’s shadow followed. Before long she conceived, and bore an egg the size of five pecks.",
+						"source": "Wei Shu (魏書) bk. 100, Account of Goguryeo (高句麗傳)",
+						"event": "yuhwa-sun-egg"
+					},
+					"url": "https://zh.wikisource.org/wiki/魏書/卷100",
+					"why": "The Northern Wei court wrote down the same sun and egg six centuries before Kim Busik. Cross-nation pair. Trimmed to drop the opening “朱蒙母”, so the egg’s contents stay a box until Buyeo."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Buyeo",
+			"add": [
+				{
+					"after": "Tortoises rise and lock shell to shell in the dark.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "惟昔始祖，鄒牟王之創基也。出自北夫餘，天帝之子，母河伯女郎，剖卵降世…王臨津言曰：「我是皇天之子，母河伯女郎，鄒牟王，為我連葭浮龜。」應聲，即為連葭浮龜，然後造渡。",
+						"ko": "옛날 시조 추모왕이 나라의 터를 열었다. 북부여에서 나왔으니 천제의 아들이요, 어머니는 하백의 딸로, 알을 깨고 세상에 내려왔다… 왕이 나루에 이르러 말하였다. “나는 황천의 아들이요, 어머니는 하백의 딸인 추모왕이다. 나를 위하여 갈대를 잇고 거북을 띄워라.” 그 소리에 응하여 곧 갈대가 이어지고 거북이 떠오르니, 그제야 건넜다.",
+						"html": "Of old, the founder King Chumo laid the foundations. He came out of North Buyeo, son of the Heavenly Emperor; his mother was Habek’s daughter; he broke the egg and came down into the world… The king came to the ford and said: “I am King Chumo, son of August Heaven, whose mother is Habek’s daughter. Link the reeds and float the turtles for me.” At his voice the reeds linked and the turtles floated, and so he crossed.",
+						"source": "Gwanggaeto Stele (廣開土王碑) face I, opening lines (414)",
+						"style": "stele",
+						"event": "jumong-crossing"
+					},
+					"url": "https://zh.wikisource.org/wiki/國岡上廣開土境平安好太王碑",
+					"why": "Goguryeo’s own stone, cut by Jumong’s descendant: the egg and the turtle crossing. Chumo (鄒牟) is the stele’s spelling of Jumong."
+				},
+				{
+					"after": "Tortoises rise and lock shell to shell in the dark.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "朱蒙告水曰：「我是日子，河伯外孫，今日逃走，追兵垂及，如何得濟？」於是魚鼈並浮，為之成橋，朱蒙得渡，魚鼈乃解，追騎不得渡。",
+						"ko": "주몽이 물에 고하였다. “나는 해의 아들이요 하백의 외손이다. 오늘 달아나는데 쫓는 군사가 거의 이르렀으니, 어떻게 건너겠는가?” 이에 물고기와 자라가 함께 떠올라 다리를 이루니, 주몽이 건넜다. 물고기와 자라가 곧 흩어지니, 쫓던 기병은 건너지 못하였다.",
+						"html": "Jumong spoke to the water: “I am the son of the Sun, and Habek’s grandson through my mother. Today I flee, and the soldiers chasing me are nearly here. How can I cross?” At that the fish and turtles rose together and made a bridge for him. Jumong crossed; the fish and turtles scattered, and the riders chasing him could not cross.",
+						"source": "Wei Shu (魏書) bk. 100, Account of Goguryeo (高句麗傳)",
+						"event": "jumong-crossing"
+					},
+					"url": "https://zh.wikisource.org/wiki/魏書/卷100",
+					"why": "Northern Wei’s version, in which he calls himself “son of the Sun”, the episode’s sun god. Second witness to the crossing."
+				},
+				{
+					"after": "Tortoises rise and lock shell to shell in the dark.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "我是天帝子河伯孫，今日逃遁，追者垂及，奈何？於是魚鼈成橋…",
+						"ko": "나는 천제의 아들이요, 하백의 손이다. 오늘 도망하는데 쫓는 자가 거의 이르렀으니, 어찌하리오. 이에 물고기와 자라가 다리를 이루었다…",
+						"html": "I am the son of the Heavenly Emperor, Habek’s grandson. Today I flee, and those who pursue me have nearly arrived — what shall I do? Thereupon the fish and turtles formed a bridge…",
+						"source": "Samguk Yusa (三國遺事) bk. 1, Wonders 1 — Goguryeo (高句麗)",
+						"event": "jumong-crossing"
+					},
+					"url": "https://db.history.go.kr/ancient/level.do?levelId=sy_001_0020_0150_0050",
+					"why": "MOVED here from Jolbon (see Jolbon fix). This is the existing Jolbon quote; its wording is Samguk Yusa’s, not Samguk Sagi bk. 13’s, so the source is corrected. Third witness: stone, Chinese annal, Korean tale-book."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"add": [
+				{
+					"after": "Sosuno is the first queen of a country that still smells like millet.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "召西奴，卒本人延陁勃之女…寡居于卒本。後朱蒙不容於扶餘…南奔至卒本，立都號高句麗，娶召西奴為妃。其於開基創業，頗有内助，故朱蒙寵接之特厚…",
+						"ko": "소서노는 졸본 사람 연타발의 딸이다… 졸본에서 과부로 살았다. 뒤에 주몽이 부여에서 용납되지 못하여… 남쪽으로 달아나 졸본에 이르러, 도읍을 세워 고구려라 부르고 소서노를 맞아 왕비로 삼았다. 그녀가 나라의 터를 열고 업을 세우는 데 내조가 자못 컸으므로, 주몽이 그녀를 특히 두텁게 아꼈다…",
+						"html": "Sosuno was the daughter of Yeon Tabal, a man of Jolbon… She lived as a widow in Jolbon. Later, when Jumong was no longer tolerated in Buyeo… he fled south to Jolbon, founded a capital called Goguryeo, and took Sosuno as his consort. She gave a great deal of help in laying the foundations and building the kingdom, so Jumong favoured her with especial warmth…",
+						"source": "Samguk Sagi (三國史記) bk. 23, Baekje Annals — King Onjo, accession (variant account, 一云)"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷23",
+					"why": "Replaces the river-crossing quote moved to Buyeo. The only record that names Sosuno and Yeon Tabal; it testifies to the widow, the marriage and her hand in founding the country, right after she becomes queen. Trimmed before her sons and the later heir dispute."
+				}
+			],
+			"fix": [
+				{
+					"match": "I am the son of the Heavenly Emperor, grandson of the River Earl. Today I flee",
+					"action": "remove",
+					"why": "Moved to Buyeo, right after the crossing it testifies to, where it now leads a three-witness cluster (stele, Wei Shu, Samguk Yusa) with event “jumong-crossing”. One quote per event; here it sat in the Dongmyung scene long after the beat. Its hanja is Samguk Yusa’s wording (今日逃遁…奈何…魚鼈成橋), not Samguk Sagi bk. 13’s (今日逃走…如何…魚鼈浮出成橋), so the moved copy carries the corrected source."
+				}
+			]
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Gi (起)",
+			"add": [
+				{
+					"after": "He asks for troops. He asks twice.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "新羅遣上臣大阿飡金春秋等，送博士小德高向黑麻呂、小山中中臣連押熊來，獻孔雀一隻、鸚鵡一隻。仍以春秋為質。春秋美姿顏，善談咲。",
+						"ko": "신라가 상신 대아찬 김춘추 등을 보내, 박사 소덕 다카무코노 구로마로와 소산중 나카토미노 무라지 오시쿠마를 바래다주고, 공작 한 마리와 앵무새 한 마리를 바쳤다. 이에 춘추를 볼모로 삼았다. 춘추는 용모가 아름답고 담소를 잘하였다.",
+						"html": "Silla sent its high minister, the Daeachan Kim Chunchu, with others, escorting home the scholar Takamuko no Kuromaro and Nakatomi no Oshikuma; they presented a peacock and a parrot. Chunchu was kept as a hostage. Chunchu was handsome, and good at talk and laughter.",
+						"source": "Nihon Shoki (日本書紀) bk. 25, Emperor Kōtoku — Taika 3 (647)"
+					},
+					"url": "https://zh.wikisource.org/wiki/日本書紀/卷第廿五",
+					"why": "Yamato’s record of Chunchu’s visit, guided by Kuromaro as in the episode; it adds Japan’s view (a “hostage”, and a charming one). Year is 647 in the Shoki vs 645 in the episode."
+				},
+				{
+					"after": "the queen makes High Councillor of the one man who told her council no.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "夏五月，太宗親征高句麗，王發兵三萬以助之。百濟乘虚，襲取國西七城。冬十一月，拜伊飡毗曇爲上大等。",
+						"ko": "여름 5월, 당 태종이 몸소 고구려를 치니, 왕이 군사 3만을 내어 도왔다. 백제가 그 빈틈을 타 나라 서쪽의 일곱 성을 습격하여 빼앗았다. 겨울 11월, 이찬 비담을 상대등으로 삼았다.",
+						"html": "Summer, fifth month: Taizong marched in person against Goguryeo, and the queen sent thirty thousand troops to help him. Baekje took the chance and seized seven fortresses in the west of the country. Winter, eleventh month: the ichan Bidam was made High Councillor.",
+						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 14 (645)"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷05",
+					"why": "The annal line that makes Bidam High Councillor, framed by the year’s bad news. Plants the office the rebellion turns on."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Seung (承)",
+			"add": [],
+			"fix": [
+				{
+					"match": "but did not succeed.",
+					"action": "trim",
+					"quote": {
+						"hanja": "毗曇、廉宗等謂女主不能善理，因謀叛擧兵…",
+						"ko": "비담·염종 등이 이르기를, 여주(女主)는 잘 다스리지 못한다 하고, 반란을 꾀하여 군사를 일으켰다…",
+						"html": "Bidam, Yumjong and others said a woman sovereign cannot govern well, and so plotted rebellion and raised troops…"
+					},
+					"why": "SPOILER: the episode-opening quote ended “不克 / but did not succeed”, telling the rebellion’s failure on Day 1, three episodes before Gyeol shows it. Cut 不克 (the annal’s next words are the queen’s death, also cut). Also fixes the name to the story’s “Yumjong”. Verified against zh.wikisource 三國史記/卷05."
+				}
+			]
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Muryuk",
+			"add": [],
+			"fix": [
+				{
+					"match": "and they all surrendered at once.",
+					"action": "move",
+					"after": "After the city fell he opened the prize-cages",
+					"why": "SPOILER: the quote opens the episode (right after the map) and says Gaya “all surrendered at once” before Sadaham’s charge is shown. Move it after the block where the city falls."
+				}
+			]
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Jeon (轉)",
+			"add": [
+				{
+					"after": "He recites. The beads do not help.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "若有眾生多於婬欲，常念恭敬觀世音菩薩，便得離欲。",
+						"ko": "만일 어떤 중생이 음욕이 많더라도, 늘 관세음보살을 생각하고 공경하면 곧 욕심을 여의게 된다.",
+						"html": "If there are beings much given to lust, let them keep Avalokiteśvara Bodhisattva always in mind and revere him, and they will be freed from desire.",
+						"native": "ये कुलपुत्र रागचरिताः सत्त्वाः, तेऽवलोकितेश्वरस्य बोधिसत्त्वस्य महासत्त्वस्य नमस्कारं कृत्वा विगतरागा भवन्ति ।",
+						"nativeLatn": "ye kulaputra rāgacaritāḥ sattvāḥ, te ’valokiteśvarasya bodhisattvasya mahāsattvasya namaskāraṃ kṛtvā vigatarāgā bhavanti |",
+						"nativeLang": "sa",
+						"source": "Lotus Sutra (妙法蓮華經) ch. 25, The Universal Gate of Avalokiteśvara (觀世音菩薩普門品), tr. Kumārajīva · Sanskrit: Saddharmapuṇḍarīka ch. 24, Samantamukha-parivarta (Vaidya ed.)",
+						"style": "sutra",
+						"person": "bidam"
+					},
+					"url": "https://cbetaonline.dila.edu.tw/zh/T0262_007 (T09n0262 p0057a01–03, fetched via cbdata.dila.edu.tw) + https://sa.wikisource.org/wiki/सद्धर्मपुण्डरीकसूत्रम्",
+					"why": "SUTRA: the beat where Bidam, naked in the spring and aroused, “recites. The beads do not help.” This is the verse he would reach for, Avalokiteśvara’s promise to free the lustful, and the next block answers it: “The sutra does not cover this.” Sanskrit is the matching sentence of the Universal Gate chapter (ch. 24 in the Sanskrit numbering)."
+				},
+				{
+					"after": "He flies the kite from the palace dark",
+					"quote": {
+						"kind": "quote",
+						"hanja": "乃造偶人抱火，載於風鳶而颺之，若上天然。翌日，使人傳言於路曰：「昨夜，落星還上。」使賊軍疑焉。",
+						"ko": "이에 허수아비를 만들어 불을 안기고 연에 실어 띄우니, 마치 하늘로 올라가는 듯하였다. 이튿날 사람을 시켜 길에 말을 퍼뜨리기를, “어젯밤 떨어진 별이 도로 올라갔다.” 하게 하여 적군을 의심하게 하였다.",
+						"html": "So he made a straw man, set fire in its arms, put it on a kite and flew it, so that it seemed to rise into the sky. Next day he had men spread word along the roads: “Last night the fallen star went back up.” It set the rebels doubting.",
+						"source": "Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin (Bidam’s rebellion, 647)"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷41",
+					"why": "Optional extra (Jeon already has two quotes): the record of Yushin’s burning kite 風鳶 and the rumour he spread after it, which the scene does not dramatize."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Gyeol (結)",
+			"add": [
+				{
+					"after": "Yushin mounts, and the order stands.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "於是，督諸將卒奮擊之，毗曇等敗走。追斬之，夷九族。",
+						"ko": "이에 여러 장수와 군사를 독려하여 힘껏 치니, 비담 등이 패하여 달아났다. 뒤쫓아 베고, 그 구족을 멸하였다.",
+						"html": "Then he urged on his generals and men to strike hard, and Bidam and the rest broke and fled. They were pursued and beheaded, and their kin to the ninth degree were wiped out.",
+						"source": "Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin (Bidam’s rebellion, 647)"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷41",
+					"why": "The record of Bidam’s end and the purge of his house, placed after Bidam has died and Yushin’s “erase his house” order stands."
+				},
+				{
+					"after": "Kangrim reads her name three times — Dukman.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "群臣罔知其處，奏云：「何所？」王曰：「狼山南也。」至其月日王果崩，群臣葬於狼山之陽。",
+						"ko": "신하들이 그곳이 어디인지 몰라 “어디입니까?” 하고 아뢰니, 왕이 “낭산 남쪽이다.” 하였다. 그 달 그 날에 이르러 왕이 과연 세상을 떠나니, 신하들이 낭산 남쪽 기슭에 장사 지냈다.",
+						"html": "The ministers did not know where that was, and asked, “Where?” The queen said, “South of Mount Nang.” On that very month and day the queen did die, and the ministers buried her on the sunny slope of Mount Nang.",
+						"source": "Samguk Yusa (三國遺事) bk. 1, Wonders 1 — Queen Seondeok knows three things in advance (善德王知幾三事)"
+					},
+					"url": "https://db.history.go.kr/ancient/level.do?levelId=sy_001_0020_0330_0010 (處 printed there as the variant 䖏; cf. dh.aks.ac.kr 善德王知幾三事)",
+					"why": "PAYOFF of Seung’s planted quote (“I shall die in such a year… Bury me in the Heaven of the Thirty-Three”): the same passage continues here, after her death is shown."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Queen Jinduk",
+			"add": [
+				{
+					"after": "Seungman is crowned Queen Jinduk before the blood on the yard dries.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "唐太宗遣使持節，追贈前王爲光祿大夫。仍冊命王爲柱國封樂浪郡王。",
+						"ko": "당 태종이 사신에게 부절을 주어 보내, 앞 임금에게 광록대부를 추증하고, 이어 왕을 책봉하여 주국으로 삼고 낙랑군왕에 봉하였다.",
+						"html": "Taizong of Tang sent an envoy bearing his tally to confer on the late queen the posthumous rank of Grand Master of Splendid Happiness, and to invest the new queen as Pillar of State and King of Lelang Commandery.",
+						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 1 (647), 2nd month",
+						"event": "jinduk-investiture"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷05",
+					"why": "Silla’s record of the Tang honours that come with the new crown."
+				},
+				{
+					"after": "Seungman is crowned Queen Jinduk before the blood on the yard dries.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "二十一年，善德卒，贈光祿大夫，余官封並如故。因立其妹真德爲王，加授柱國，封樂浪郡王。",
+						"ko": "정관 21년, 선덕이 죽으니 광록대부를 추증하고 나머지 관작과 봉호는 모두 예전대로 두었다. 이어 그 누이 진덕을 왕으로 세우고, 주국을 더하여 낙랑군왕에 봉하였다.",
+						"html": "In the twenty-first year, Sunduk died. She was posthumously made Grand Master of Splendid Happiness, her other offices and fiefs left as they were. Her younger sister Jinduk was then set up as king, given the added title Pillar of State, and enfeoffed as King of Lelang Commandery.",
+						"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Silla, Zhenguan 21 (647)",
+						"event": "jinduk-investiture"
+					},
+					"url": "https://zh.wikisource.org/wiki/舊唐書/卷199上",
+					"why": "The Tang court’s entry for the same investiture. Cross-nation pair. (The Tang calls Jinduk her “sister”; the story makes them cousins.)"
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"add": [],
+			"fix": [
+				{
+					"match": "Taizong deeply agreed, and promised to send an army.",
+					"action": "move",
+					"after": "Yes — there is something between us that fits.",
+					"why": "SPOILER: this quote sits before the audience, while Chunchu is still being counted by the ward chief, and already says Taizong agreed and promised an army. Move it after Chunchu’s pitch lands (“Yes — there is something between us that fits.”). The arrival quote (“When he arrived… treated him generously”) can stay where it is."
+				}
+			]
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Royal Secretariat",
+			"add": [
+				{
+					"after": "Then you are 중시 — Premier of the Royal Secretariat.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "二月，改稟主爲執事部，仍拜波珍飡竹旨爲執事中侍，以掌機密事務。",
+						"ko": "2월, 품주를 고쳐 집사부로 삼고, 이어 파진찬 죽지를 집사 중시로 임명하여 기밀 사무를 맡게 하였다.",
+						"html": "Second month: the old treasury office was remade as the Royal Secretariat, and the pajinchan Jukji was appointed its Premier, to take charge of confidential affairs.",
+						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 5 (651)"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷05",
+					"why": "The annal line founding the 執事部 and naming Jukji its first 中侍, right after Chunchu appoints him."
+				},
+				{
+					"after": "Bupmin sails west with the queen’s ode woven into a length of silk.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "王織錦作五言太平頌，遣春秋子法敏，以獻唐皇帝。",
+						"ko": "왕이 비단을 짜서 오언 태평송을 지어 넣고, 춘추의 아들 법민을 보내 당 황제에게 바쳤다.",
+						"html": "The queen wove brocade with a five-character Ode to Great Peace, and sent Chunchu’s son Bupmin to present it to the Tang emperor.",
+						"source": "Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 4 (650), 6th month",
+						"event": "taiping-ode"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷05",
+					"why": "Silla’s record of the woven ode the narration mentions."
+				},
+				{
+					"after": "Bupmin sails west with the queen’s ode woven into a length of silk.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "真德乃織錦作五言《太平頌》以獻之，其詞曰：「大唐開洪業，巍巍皇猷昌。止戈戎衣定，修文繼百王。…」帝嘉之，拜法敏爲太府卿。",
+						"ko": "진덕이 이에 비단을 짜서 오언 「태평송」을 지어 바쳤는데, 그 노래에 이르기를, “위대한 당이 큰 업을 여니, 높고 높은 황제의 계책 빛나도다. 창을 거두고 갑옷 한 번에 천하를 평정하니, 글을 닦아 백 왕의 뒤를 잇도다…” 하였다. 황제가 이를 가상히 여겨 법민을 태부경으로 삼았다.",
+						"html": "Jinduk then wove brocade with a five-character Ode to Great Peace and presented it. Its words ran: “Great Tang has opened its vast work; lofty, lofty, the imperial plan shines. The spear is stilled, the war-robe once worn and all is settled; letters are cultivated, heir to a hundred kings…” The emperor was pleased, and made Bupmin Chief Minister of the Treasury.",
+						"source": "Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Silla, Yonghui 1 (650)",
+						"person": "jinduk",
+						"event": "taiping-ode"
+					},
+					"url": "https://zh.wikisource.org/wiki/舊唐書/卷199上",
+					"why": "The Tang side of the same gift, with the opening of her poem and the emperor’s delight. Cross-nation pair; person = Jinduk for her own verse."
+				},
+				{
+					"after": "The Yamato court takes one look at them and sends them home.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "是歲，新羅貢調使知萬沙飡等，著唐國服泊于筑紫。朝廷惡恣移俗，訶嘖追還。",
+						"ko": "이 해에 신라의 공조사 지만 사찬 등이 당나라 옷을 입고 쓰쿠시에 배를 대었다. 조정은 제멋대로 풍속을 바꾼 것을 미워하여, 꾸짖어 쫓아 돌려보냈다.",
+						"html": "This year the Silla tribute envoys, the sachan Jiman and others, put in at Tsukushi wearing Tang clothes. The court hated this wilful change of custom, rebuked them and sent them back.",
+						"source": "Nihon Shoki (日本書紀) bk. 25, Emperor Kōtoku — Hakuchi 2 (651)"
+					},
+					"url": "https://zh.wikisource.org/wiki/日本書紀/卷第廿五",
+					"why": "Yamato’s own entry for the Tang-dress envoys. Third nation in the episode. The minister’s “fill the sea with ships” speech that follows in the Shoki is already dramatized, so it is left out."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Jiabeng (駕崩)",
+			"add": [
+				{
+					"after": "The great emperor’s temple name is hereby set as Taizong",
+					"quote": {
+						"kind": "quote",
+						"hanja": "壬申，發喪太極殿，宣遺詔，太子即位。…罷遼東之役及諸土木之功。",
+						"ko": "임신일, 태극전에서 상을 알리고 유조를 선포하니 태자가 즉위하였다. … 요동의 전역과 여러 토목 공사를 그만두게 하였다.",
+						"html": "On the renshen day the death was announced in the Taiji Hall, the testamentary edict was proclaimed, and the crown prince took the throne. … The Liaodong campaign and all the building works were called off.",
+						"source": "Zizhi Tongjian (資治通鑑) bk. 199, Tang Zhenguan 23 (649), 5th month",
+						"event": "taizong-will"
+					},
+					"url": "https://zh.wikisource.org/wiki/資治通鑑/卷199",
+					"why": "Tang record of the will and its one line the new emperor reads twice: stop the Liaodong war."
+				},
+				{
+					"after": "The great emperor’s temple name is hereby set as Taizong",
+					"quote": {
+						"kind": "quote",
+						"hanja": "八年，夏四月，唐太宗崩。遺詔罷遼東之役。",
+						"ko": "8년 여름 4월, 당 태종이 죽었다. 유조로 요동의 전역을 그만두게 하였다.",
+						"html": "Eighth year, summer, fourth month: Taizong of Tang died. His testamentary edict called off the Liaodong campaign.",
+						"source": "Samguk Sagi (三國史記) bk. 22, Goguryeo Annals — King Bojang, yr. 8 (649)",
+						"event": "taizong-will"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷22",
+					"why": "Goguryeo’s annal notes the same death and the same line: the war against it is over. Cross-nation pair. Placed after the temple name is set so “Taizong” is already the name on the page."
+				},
+				{
+					"after": "He would scold Us for wasting two good generals.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "阿史那社爾、契苾何力請殺身殉葬，上遣人諭以先旨不許。",
+						"ko": "아사나사이와 계필하력이 스스로 목숨을 끊어 순장되기를 청하였으나, 황제는 사람을 보내 선제의 뜻을 들어 허락하지 않았다.",
+						"html": "Ashina She’er and Qibi Heli asked to kill themselves and be buried with him. The emperor sent word that, by the late emperor’s own wishes, it was not permitted.",
+						"source": "Zizhi Tongjian (資治通鑑) bk. 199, Tang Zhenguan 23 (649), 8th month"
+					},
+					"url": "https://zh.wikisource.org/wiki/資治通鑑/卷199",
+					"why": "The Red and White Dragons’ petition to die with him, and the refusal, as Tang recorded it."
+				},
+				{
+					"after": "A nun in grey looks up at him from the second row",
+					"quote": {
+						"kind": "quote",
+						"hanja": "及太宗崩，遂為尼，居感業寺。大帝於寺見之…",
+						"ko": "태종이 죽자 마침내 비구니가 되어 감업사에 머물렀다. 대제가 절에서 그녀를 보았다…",
+						"html": "When Taizong died, she became a nun and lived at the Ganye Temple. The new emperor saw her at the temple…",
+						"source": "Jiu Tangshu (舊唐書) bk. 6, Annals of Empress Wu (則天皇后本紀)"
+					},
+					"url": "https://zh.wikisource.org/wiki/舊唐書/卷6",
+					"why": "Tang record of Wu at the Ganye Temple and the emperor seeing her there (大帝 = Gaozong). Trimmed before “復召入宮，拜昭儀” (recalled to the palace and made Zhaoyi), which the story has not shown yet."
+				}
+			],
+			"fix": []
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Jahee",
+			"add": [
+				{
+					"after": "Years later the court will name her Jayi.",
+					"quote": {
+						"kind": "quote",
+						"hanja": "妃慈儀王后，波珍飡善品之女也。法敏姿表英特，聰明多智略。",
+						"ko": "왕비 자의왕후는 파진찬 선품의 딸이다. 법민은 용모가 빼어나고, 총명하며 지략이 많았다.",
+						"html": "His queen, Queen Jayi, was the daughter of the pajinchan Seonpum. Bupmin was striking in looks, bright, and full of wise plans.",
+						"source": "Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, accession"
+					},
+					"url": "https://zh.wikisource.org/wiki/三國史記/卷06",
+					"why": "The only record of Jahee: Seonpum’s daughter, Bupmin’s queen. The annal’s “bright, full of wise plans” sits nicely against the harbour girl correcting his sums. Trimmed before “文武王立”/his reign."
+				}
+			],
+			"fix": []
+		}
+	],
+	"notes": "Story.json was being edited concurrently while I worked (maps/cards/terms added, Muryuk rewritten, the Colossal River Ulchi-poem quote removed). All after/match fragments are text-based and were re-validated against the file as of the final run. Colossal River now has no quote (its Ulchi poem quote was removed, presumably because the verse block already shows the poem), so I added a Salsu pair (Samguk Sagi bk. 20 + Zizhi Tongjian bk. 181). Spoiler audit, existing quotes left alone on purpose: Seung “ten days without being broken” (the siege length is already announced by the Day headers and the previous card, not an outcome); Seung Seondeok death prophecy (a plant; Gyeol now pays it off); Jeon “omen that the woman sovereign will be defeated” (Bidam’s claim, not the outcome); Stallion Mountain Seol Gyedu (after his body is found); Yodong shrine bride (says the city will stand; it then falls); Huangdi On Gunhae (after the boarding); King Muyeol quotes (after Jinduk’s death); Hyukgose Five Tombs (after the ascent is narrated); Seohyun Muryeok capturing a Baekje king (already narrated in block 1 and shown in an earlier chapter). Name consistency: quotes use the story’s spellings (Yumjong, Sunduk, Jinduk, Bupmin, Jukji, Jayi, Seonpum, Yeon Tabal, Habek). The Seung trim also corrects “Yeomjong” → “Yumjong”. Gi’s Nihon Shoki line keeps “仍以春秋為質” (kept as a hostage): Yamato’s spin, not a story outcome. Trim it with “…” if you’d rather not contradict the episode. Sanguo Zhi source deliberately avoids writing “魏書” (its sub-book title), because recordBooks.ts tests /魏書/ before /三國志/ and would mis-seal it as Wei Shu. Haemosu Wei Shu excerpt starts at “…河伯女” (dropping 朱蒙母) so the egg’s contents stay a mystery until Buyeo; the stele with “剖卵降世” is placed in Buyeo after the hatch and the crossing. Seung trim: the zh.wikisource text of bk. 5 has a doubled 謂 (毗曇、廉宗等謂，謂女主…); the existing quote and my trim keep the single 謂 of the standard reading. Ansi pair shares a subject (the nameless lord) rather than one identical sentence. Two Samguk Yusa passages (Buyeo crossing, Gyeol Mount Nang) were verified on db.history.go.kr pages rather than wikisource, which only has scanned proofread pages for that book. Every episode in scope now has at least one quote (or keeps its existing ones). No episode left without a quote."
+}

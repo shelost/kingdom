@@ -1,0 +1,6 @@
+[
+	{ "episode": 34, "battle": "jupilsan-645", "phase": "lure", "after": { "kind": "p", "text": "The relief army comes down the crow road" } },
+	{ "episode": 34, "battle": "jupilsan-645", "phase": "night", "after": { "kind": "p", "text": "Nobody tells Go Yeonsu about the valley" } },
+	{ "episode": 34, "battle": "jupilsan-645", "phase": "drums", "after": { "kind": "p", "text": "stops him for long" } },
+	{ "episode": 34, "battle": "jupilsan-645", "phase": "surrender", "after": { "kind": "p", "text": "When the dust settles" } }
+]

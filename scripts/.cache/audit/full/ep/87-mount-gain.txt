@@ -1,0 +1,49 @@
+
+=================================================================
+#87 Mount Gain  (665 August)
+Arc: Silla-Tang War · tone: oath and grief
+Logline: The night Pyongyang falls, Munmu goes to look at an oath. Three summers earlier, the empire made him swear it over his uncle’s white horse.
+=================================================================
+[0] ── SCENE: The Ancestral Temple ──
+[1] ¶ The night Pyongyang falls, the king of Silla goes to visit a piece of paper.
+[2] ¶ It hangs in the ancestral temple, beside his father's tablet. Gold letters on iron. An oath, sworn over a dead horse, to love Baekje's prince like a brother. Goguryeo is gone tonight. Up north, the emperor's clerks are already measuring what is left.
+[3] King Munmu: Everything south of Pyongyang, and the whole of Baekje. / My father made me learn it by heart.
+[4] Kim Yushin: The emperor will have learned a sentence too, Majesty.
+[5] King Munmu: I know. It’s hanging right here. / Uncle. Do you remember the horse?
+[6] Kim Yushin: …Every day, Majesty.
+[7] ¶ Every war starts with an insult somebody swallowed. Silla swallowed this one three summers ago. To taste it, go back to a hill outside Bear Ford, and the only white horse in the camp.
+[8] ── SCENE: Bear Ford, Three Summers Earlier ──
+[9] ¶ Two springs after the White River, the empire names a governor for what is left of Baekje. It is Buyeo Yung. He once knelt at Bupmin's horse and was spat on. Then he went to the emperor's city and came back in imperial robes. Now he will rule from the fortress where his father was arrested.
+[10] ¶ The court in Surabol hears the name and goes very quiet. Their men died for this ground. An emperor promised it to Chunchu by lamplight. Now a Baekje prince sits on it again, with the emperor's seal in his hand.
+[11] ¶ Yung moves into the commandery offices in the spring. The rooms his father was taken from have been whitewashed. The Black Tortoise shows him the registers, and the calendar, and the list of names he may not write.
+[12] Black Tortoise: Your households, Commander. Every one of them a number now. It makes them much easier to look after.
+[13] Prince Yung: …My father counted them by name. / He was wrong about most things. Not that.
+[14] ── SCENE: The Altar ──
+[15] ¶ That summer, the empire makes the two men who rule the south swear to be brothers. It picks a hill outside Bear Ford. The clerks name it the Mountain Where One Goes for Gain. They mean it kindly.
+[16] [PLACE chwiri: A hill outside Bear Ford, named by optimists.]
+[17] ¶ An imperial envoy presides. The Black Tortoise wrote the oath. On one side of the altar stands Munmu. On the other stands Yung. Munmu last saw that face at the height of his horse's knees.
+[18] ── SCENE: The White Horse ──
+[19] ¶ An oath of this weight needs a white horse. The Tang adjutant has been walking the Silla lines all morning looking for one, and stops in front of the only white horse in the camp.
+[20] Tang adjutant: That one. Whose is he?
+[21] ¶ Hanseul is past twenty. He has carried Yushin across the Yellow Mountain. He has carried rice through snow up to his chest. His muzzle has gone grey. On a white horse, only the man who feeds him notices.
+[22] King Munmu: No. Find another. That is my uncle’s—
+[23] Kim Yushin: Let them have him, Majesty.
+[24] King Munmu: Uncle.
+[25] Kim Yushin: A white horse is what they asked for. It would be a poor oath on a brown one. / …I’ll walk him up myself.
+[26] ¶ He leads Hanseul up the hill by the halter, the way he led Hangyul across the Moon Palace yard eighteen years before, talking to him in the low voice he keeps for horses and uses on no one else. At the altar he holds the head himself.
+[27] ¶ The knife is Tang. The blood goes into a bowl, and both men touch it to their lips. Yung does it without looking at anyone. Munmu does it looking at his uncle’s hands.
+[28] Black Tortoise: …Let them be as brothers, sharing disaster and pitying each other’s sorrows, forever as one. / Whoever breaks this covenant, may the gods see it; may a hundred calamities fall on him, may his sons not grow, and may no one remain to keep his altars.
+[29] ¶ The covenant is written out three times. One copy is buried at the altar with the horse. One goes to Chang’an. The third is carried to Surabol and laid up in Silla’s ancestral temple, where the kings of Silla will have to walk past it every time they visit their fathers.
+[30] ── SCENE: Surabol ──
+[31] ¶ On the road home nobody in the Silla column says anything about the horse.
+[32] ¶ In Surabol the anger is louder. Men bled for this land in three wars. An emperor promised it to them. Now they have sworn on a dead horse never to take it. The young officers say betrayal in the barracks. The older ones say nothing. They start counting Tang garrisons.
+[33] ¶ That night the king finds his uncle in the stable, cleaning a stall that is empty.
+[34] King Munmu: I’ll find you another white horse, Uncle.
+[35] Kim Yushin: I’m seventy, Majesty. I’ve buried three. / Find me a war instead. I’d like to go to one more before they make me swear to something else.
+[36] ── SCENE: The Ancestral Temple ──
+[37] ¶ Three summers later, the old man got his war. It ended tonight, with a monk at a gate. He stands beside the king in the temple now, and neither of them looks at the iron for long.
+[38] King Munmu: Uncle. Before the emperors. Before seals, and oaths, and governors with lists. / Who was the first king of this land?
+[39] Kim Yushin: Ask your mother. She tells it to every child in the house. / It starts with a bear.
+[40] King Munmu: A bear.
+[41] Kim Yushin: A patient one. Your mother always looks at me when she gets to that part.
+[42] ¶ **To find the first king of this land, we have to go back before there were kingdoms… to a bear in a cave…!**

@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-10-08T18:59:36.280Z",
+	"updatedAt": "2026-10-09T03:38:02.390Z",
 	"lines": [
 		{
 			"id": "ln-odqyyi",
@@ -7,6 +7,14 @@
 			"entryTitle": "High Summit",
 			"en": "Yeon Gusesa High Commander (막리지) of Goguryeo The High Commander. He chair",
 			"createdAt": "2026-10-08T18:59:36.253Z"
+		},
+		{
+			"id": "ln-en5zsc",
+			"episodeId": "seventh-invasion-ansi",
+			"entryTitle": "Ansi",
+			"person": "yangmanchun",
+			"en": "I have heard that a true man needs only one person to cherish, and one person to serve, and that is enough.",
+			"createdAt": "2026-10-09T03:38:02.340Z"
 		}
 	]
 }

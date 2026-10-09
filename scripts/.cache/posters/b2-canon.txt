@@ -1,0 +1,9 @@
+{
+	"refs": [
+		"/pl_yellow_mountain.png"
+	],
+	"abs": [
+		"/Users/heewon/Documents/GitHub/kingdom/static/pl_yellow_mountain.png"
+	],
+	"text": "CANON — PLACE Yellow Mountain (황산벌 (논산)) — attached board /pl_yellow_mountain.png; keep this exact architecture and ground. Low rolling yellow-dust plain under a vast sky, Baekje stockade on a rise; few trees; dust is the weather."
+}

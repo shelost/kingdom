@@ -1,0 +1,626 @@
+{
+	"id": "pyongyang-371",
+	"title": "The Wall of Pyongyang",
+	"ko": "평양성 전투",
+	"hanja": "平壤城之戰",
+	"year": 371,
+	"place": "pyongyang",
+	"scale": {
+		"km": 1,
+		"px": 100
+	},
+	"terrain": [
+		{
+			"kind": "plain",
+			"points": [
+				[
+					0,
+					480
+				],
+				[
+					230,
+					440
+				],
+				[
+					400,
+					395
+				],
+				[
+					560,
+					368
+				],
+				[
+					720,
+					348
+				],
+				[
+					860,
+					320
+				],
+				[
+					1000,
+					272
+				],
+				[
+					1000,
+					560
+				],
+				[
+					0,
+					560
+				]
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					240
+				],
+				[
+					860,
+					295
+				],
+				[
+					720,
+					325
+				],
+				[
+					560,
+					345
+				],
+				[
+					400,
+					372
+				],
+				[
+					230,
+					420
+				],
+				[
+					0,
+					462
+				]
+			],
+			"width": 24,
+			"label": "Taedong river",
+			"ko": "대동강",
+			"labelAt": [
+				870,
+				340
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					250,
+					0
+				],
+				[
+					262,
+					120
+				],
+				[
+					250,
+					250
+				],
+				[
+					232,
+					410
+				]
+			],
+			"width": 9,
+			"label": "Botong stream",
+			"ko": "보통강",
+			"labelAt": [
+				180,
+				150
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				560,
+				62
+			],
+			"r": 38
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				120,
+				80
+			],
+			"r": 32
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				880,
+				110
+			],
+			"r": 30
+		},
+		{
+			"kind": "town",
+			"points": [
+				[
+					430,
+					295
+				],
+				[
+					402,
+					220
+				],
+				[
+					432,
+					150
+				],
+				[
+					520,
+					115
+				],
+				[
+					612,
+					142
+				],
+				[
+					650,
+					220
+				],
+				[
+					618,
+					285
+				],
+				[
+					520,
+					302
+				]
+			],
+			"label": "Pyongyang",
+			"ko": "평양성",
+			"labelAt": [
+				525,
+				190
+			]
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					420,
+					308
+				],
+				[
+					388,
+					220
+				],
+				[
+					420,
+					140
+				],
+				[
+					520,
+					100
+				],
+				[
+					625,
+					130
+				],
+				[
+					668,
+					220
+				],
+				[
+					630,
+					296
+				],
+				[
+					520,
+					315
+				],
+				[
+					420,
+					308
+				]
+			]
+		},
+		{
+			"kind": "gate",
+			"at": [
+				525,
+				314
+			],
+			"side": "goguryeo"
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					522,
+					560
+				],
+				[
+					522,
+					470
+				],
+				[
+					525,
+					318
+				]
+			]
+		},
+		{
+			"kind": "camp",
+			"at": [
+				522,
+				460
+			],
+			"side": "baekje",
+			"label": "Baekje camp",
+			"ko": "백제 진영",
+			"labelAt": [
+				655,
+				470
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				640,
+				540
+			],
+			"label": "the road south",
+			"ko": "남쪽 길"
+		}
+	],
+	"sides": [
+		{
+			"id": "baekje",
+			"name": "Baekje",
+			"ko": "백제",
+			"kingdom": "baekje"
+		},
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		}
+	],
+	"units": [
+		{
+			"id": "bk-king",
+			"side": "baekje",
+			"label": "Geunchogo",
+			"ko": "근초고왕"
+		},
+		{
+			"id": "bk-prince",
+			"side": "baekje",
+			"label": "Crown prince",
+			"ko": "태자"
+		},
+		{
+			"id": "gg-wall",
+			"side": "goguryeo",
+			"label": "The wall",
+			"ko": "성벽 수비",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "road",
+			"label": "Up the frozen road",
+			"ko": "얼어붙은 길을 따라",
+			"caption": "Thirty thousand come north, the king and his son riding together. Nobody from the south has ever marched this far. The road ends at a river, and across it, a wall.",
+			"captionKo": "삼만이 북으로 올라온다. 왕과 아들이 나란히 말을 탄다. 남쪽 사람 누구도 이렇게 멀리 와 본 적이 없다. 길은 강에서 끝나고, 강 건너엔 성벽이 있다.",
+			"units": {
+				"bk-king": {
+					"at": [
+						488,
+						525
+					],
+					"men": 15000,
+					"shape": "column",
+					"facing": 270
+				},
+				"bk-prince": {
+					"at": [
+						560,
+						540
+					],
+					"men": 15000,
+					"shape": "column",
+					"facing": 270
+				},
+				"gg-wall": {
+					"at": [
+						525,
+						298
+					],
+					"men": 1000,
+					"shape": "line",
+					"facing": 90
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "advance",
+					"points": [
+						[
+							524,
+							590
+						],
+						[
+							523,
+							500
+						],
+						[
+							523,
+							420
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "camp",
+			"label": "Fires below the wall",
+			"ko": "성벽 아래의 모닥불",
+			"caption": "They camp on the south bank, in plain sight. Across the water Pyongyang counts their fires. The king inside does not leave.",
+			"captionKo": "그들은 남쪽 강가에 버젓이 진을 친다. 물 건너 평양성이 그 불을 센다. 성 안의 왕은 떠나지 않는다.",
+			"units": {
+				"bk-king": {
+					"at": [
+						455,
+						462
+					],
+					"men": 15000,
+					"facing": 270
+				},
+				"bk-prince": {
+					"at": [
+						592,
+						456
+					],
+					"men": 15000,
+					"facing": 270
+				},
+				"gg-wall": {
+					"at": [
+						525,
+						298
+					],
+					"men": 1000,
+					"shape": "line",
+					"facing": 90
+				}
+			}
+		},
+		{
+			"id": "assault",
+			"label": "The wall",
+			"ko": "성벽",
+			"caption": "Over the river and up to the wall. Arrows go both ways all day. On the parapet the Goguryeo king stands where every archer below can see him, which is the point.",
+			"captionKo": "강을 건너 성벽 밑까지. 하루 종일 화살이 오간다. 고구려 왕은 아래의 궁수 누구나 볼 수 있는 성가퀴에 서 있다. 그게 요점이다.",
+			"units": {
+				"bk-king": {
+					"at": [
+						528,
+						210
+					],
+					"men": 15000,
+					"shape": "ring",
+					"r": 128,
+					"arc": [
+						92,
+						158
+					]
+				},
+				"bk-prince": {
+					"at": [
+						528,
+						210
+					],
+					"men": 15000,
+					"shape": "ring",
+					"r": 128,
+					"arc": [
+						22,
+						88
+					]
+				},
+				"gg-wall": {
+					"at": [
+						525,
+						298
+					],
+					"men": 1000,
+					"shape": "line",
+					"facing": 90
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "charge",
+					"points": [
+						[
+							455,
+							445
+						],
+						[
+							462,
+							390
+						],
+						[
+							470,
+							335
+						]
+					]
+				},
+				{
+					"side": "baekje",
+					"kind": "charge",
+					"points": [
+						[
+							592,
+							440
+						],
+						[
+							588,
+							390
+						],
+						[
+							580,
+							335
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						470,
+						318
+					],
+					"label": "arrows both ways",
+					"ko": "화살이 오간다"
+				},
+				{
+					"kind": "clash",
+					"at": [
+						585,
+						312
+					]
+				}
+			]
+		},
+		{
+			"id": "arrow",
+			"label": "A stray arrow",
+			"ko": "날아온 화살",
+			"caption": "One arrow out of thousands, aimed at nobody. The king sits down in the mud. The gate stays shut, and the wall keeps shooting as if nothing happened.",
+			"captionKo": "수천 발 중 한 발. 누구를 노린 것도 아니다. 왕이 진흙 위에 주저앉는다. 성문은 닫힌 채고, 성벽은 아무 일 없다는 듯 계속 쏜다.",
+			"units": {
+				"bk-king": {
+					"at": [
+						528,
+						210
+					],
+					"men": 15000,
+					"shape": "ring",
+					"r": 128,
+					"arc": [
+						92,
+						158
+					]
+				},
+				"bk-prince": {
+					"at": [
+						528,
+						210
+					],
+					"men": 15000,
+					"shape": "ring",
+					"r": 128,
+					"arc": [
+						22,
+						88
+					]
+				},
+				"gg-wall": {
+					"at": [
+						525,
+						298
+					],
+					"men": 1000,
+					"shape": "line",
+					"facing": 90
+				}
+			},
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						540,
+						300
+					],
+					"label": "the Goguryeo king",
+					"ko": "고구려 왕"
+				}
+			]
+		},
+		{
+			"id": "home",
+			"label": "The road south",
+			"ko": "남쪽으로 가는 길",
+			"caption": "Wailing starts inside the walls, and the Baekje king knows the sound. He turns thirty thousand around without taking the city. They sing the whole way home.",
+			"captionKo": "성 안에서 곡소리가 시작되고, 백제 왕은 그 소리를 안다. 성을 얻지 않고 삼만을 돌려세운다. 돌아가는 내내 그들은 노래한다.",
+			"units": {
+				"bk-king": {
+					"at": [
+						488,
+						505
+					],
+					"men": 15000,
+					"shape": "column",
+					"facing": 90
+				},
+				"bk-prince": {
+					"at": [
+						562,
+						520
+					],
+					"men": 15000,
+					"shape": "column",
+					"facing": 90
+				},
+				"gg-wall": {
+					"at": [
+						525,
+						298
+					],
+					"men": 1000,
+					"shape": "line",
+					"facing": 90
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "retreat",
+					"points": [
+						[
+							524,
+							400
+						],
+						[
+							522,
+							480
+						],
+						[
+							520,
+							585
+						]
+					],
+					"label": "singing",
+					"ko": "노래하며"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 24, Annals of Baekje, Geunchogo years 24 and 26",
+		"Samguk Sagi 18, Annals of Goguryeo, Gogugwon year 41",
+		"Samguk Sagi 25, Annals of Baekje, Gaero year 18 (the memorial to Northern Wei)"
+	],
+	"note": "The records give thirty thousand picked men under the king and the crown prince, an attack on Pyongyang in winter (the Goguryeo annals say the tenth month), and a Goguryeo king killed by a stray arrow on the twenty-third day. The split of the thirty thousand between father and son is not recorded, so the map halves it. The records have the king lead his men out to meet the attack; the story keeps him on the wall. A Baekje letter a century later boasts that the crown prince took the king's head, which the annals do not say. The site follows the usual reading of Pyongyang on the Taedong; some place this Pyongyang further south. Goguryeo's capital was still Gungnae; Pyongyang was its southern stronghold. The earlier Baekje wins at Chiyang and the Pae river are left off because the story does not use them.",
+	"noteKo": "기록이 전하는 것은 왕과 태자가 이끈 정병 삼만, 겨울(고구려본기는 시월)의 평양성 공격, 그달 스무사흗날 날아온 화살에 맞아 죽은 고구려 왕이다. 삼만이 부자 사이에 어떻게 나뉘었는지도 없어 반씩 나누었다. 기록에서 왕은 군사를 이끌고 나가 막았지만, 이야기에서는 성벽 위에 남는다. 백 년 뒤 백제의 표문은 태자가 왕의 목을 베었다고 자랑하지만 본기에는 없는 말이다. 위치는 대동강가의 평양으로 보는 통설을 따랐고, 더 남쪽으로 보는 견해도 있다. 이때 고구려의 도읍은 아직 국내성이었고 평양은 남쪽의 거점이었다. 앞선 치양과 패하에서의 백제 승리는 이야기에 나오지 않아 지도에서 뺐다."
+}

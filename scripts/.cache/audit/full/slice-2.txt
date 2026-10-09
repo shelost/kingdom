@@ -1,0 +1,677 @@
+
+=================================================================
+#10 Bupmin  (641)
+Arc: The Five Principles · place: surabol · tone: young-adult academy (Hwarang)
+Logline: Fifteen is old enough for the headband, and too young to invent a country alone.
+=================================================================
+[0] ── SCENE: Flowering Youth ──
+[1] ¶ Fifteen is old enough for the headband. It is not old enough to invent a country, though Bupmin keeps trying.
+[2] [MAP 641: ]
+[3] ¶ The Hwarang train under the Marshal: horse, bow, verse, and above all gyuku, a horse-ball game a lazier age will call polo.
+[4] ¶ His father is in the Council chamber, collecting votes. His uncle keeps the yard, and the yard is where Bupmin lives now.
+[5] [DIAGRAM hwarang Yard as state · 화랑 — Class 51 still sits together — Bidam, Yushin, Alchun.]
+[6] ¶ Yushin does not soften the yard because the boy is royal. He softens nothing. The new boys sleep six to a hall and learn each other's snores before each other's ranks. They trade rumours about the Marshal like relics. He sleeps in his armour. He bathes in a haunted lake. He can hear a lie drop a shoulder at fifty paces.
+[7] ¶ Girls crowd the fence of the yard the way other towns crowd a market — not for the ball, for the Hwarang. They pretend they came for the verse.
+[8] The Herald: That club — Gaya ironwood core? / No — the Moon Palace cypress. Last season’s. / …Last season? And he brought it out?
+[9] Alchun: A True Bone does not play last season’s shaft. / Is that law? / Worse.
+[10] ── SCENE: The Turn ──
+[11] ¶ The practice road runs east along the river and bends hard at a split pine. That bend is where boys find out who they are. Gotaso is not supposed to ride it. Gotaso rides it.
+[12] Gotaso: Bupmin. To the pine and back. / Loser carries the other one’s club box for a month.
+[13] King Munmu: You’re not allowed on the practice road. / …Fine. One month.
+[14] Kim Yushin: Gotaso. Off the road.
+[15] Gotaso: One run, Uncle. He asked me.
+[16] King Munmu: I did not—
+[17] Kim Yushin: …One run.
+[18] ¶ They go off the line together. On the straight he is ahead. At the split pine the horse leans, the ground tilts, and his hands decide for him. He pulls up. Gotaso doesn’t. She takes the bend flat out, one stirrup empty, and comes back laughing with pine needles in her hair.
+[19] ¶ The girls at the fence cheer for her, which is worse than laughing. Yushin has watched from the pine the whole time. He does not cheer for anybody.
+[20] Gotaso: Club box. A month. / Carry it where the girls can see.
+[21] Kim Yushin: Again. / A king for all who cannot hold a saddle is a poem, not a country.
+[22] King Munmu: Uncle— / Father said it on the hill. I only said it louder. I was six.
+[23] Kim Yushin: Then make it true at fifteen. / The Hwarang do not train for your father’s cleverness. They train for the hour the cleverness runs out.
+[24] Kim Yushin: West of here is Baekje. / Learn a landscape before it learns your name.
+[25] ── SCENE: Under the Eaves ──
+[26] ¶ At dusk he gathers the flower youth under the eaves and speaks the **Five Principles**, the way other houses recite ancestors. A monk wrote them for boys who would never be monks. Loyalty to the king comes first, so nobody can say they missed it. Duty to your father is easy, until the king and your father want different things. The boys elbow each other at _no retreat_. They go quiet at _no needless killing_. Boys skip that one. Old soldiers don’t. Each of them is privately certain the Marshal is looking at him. He is looking at all of them.
+[27] Kim Yushin: Loyalty to the sovereign. / Filial duty to parents. / Trust among friends. / No retreat in battle. / No needless killing. / Bupmin — which one will you break first?
+[28] King Munmu: …No retreat. / I always pull up first. At the pine, today. Every time she rides too fast. / I’d rather know it now than find out on a field.
+[29] ¶ Nobody laughs. A few boys look down at their sandals. Every one of them has a pine of his own.
+[30] Kim Yushin: Good. Most boys lie. / Then see the country the way a Hwarang sees a field: who holds, who falters, who dies for a vow he meant. / Tomorrow you ride the pine again. Beside her.
+[31] ¶ Gotaso has been listening from the fence, where she is not supposed to be either.
+[32] Gotaso: You pulled up because of me?
+[33] King Munmu: No. Because of me.
+[34] Gotaso: …Tomorrow, then. Don’t you dare let me win.
+[35] ¶ She means it. She always means it. That is the trouble with Gotaso, and also the best thing about her.
+[36] ¶ **The yard has two names it still whispers. Tonight the Marshal says them out loud…!**
+
+=================================================================
+#11 Sadaham  (641)  [FLASHBACK EPISODE]
+Arc: The Five Principles · place: surabol · tone: campfire tale (Hwarang)
+Logline: Every yard has its ghosts. This one has two, and they have never missed roll call.
+=================================================================
+[0] ── SCENE: The First Class ──
+[1] ¶ Every yard has its ghosts. This one has two, and they have never missed roll call.
+[2] ¶ The lamps go up under the eaves. Nobody sends the boys to bed. They decide this is an honour, and they are right, though not for the reason they think.
+[3] ¶ The Marshal does not let _trust among friends_ stay a pretty line. He tells the new boys of the first class — the two names the yard still lowers its voice for.
+[4] Kim Yushin: Before your fathers were born, the first class had two. / Sadaham. Mugwan. They swore to die together. Then, the year Great Gaya fell, one of them kept the swear without asking the other.
+[5] King Munmu: Which one, Uncle? / Which one kept it?
+[6] Kim Yushin: Sit down and you’ll find out.
+[7] A new boy: Is this the one about the haunted lake?
+[8] Kim Yushin: No. That one’s about me.
+[9] ▼ FLASHBACK 560 the first class
+    [9.0] ¶ Back then the yard was new, and so was the idea. The king wanted boys who would ride ahead of the army and not ask why. The first year, he got a lot of them. Two of them got each other.
+    [9.1] ¶ **Sadaham** is thirteen and talks like a dare. **Mugwan** is thirteen too, and says less than his horse. The hall has one gap, so they share it. They argue for a month about who snores.
+    [9.2] [CARD Sadaham: The first class’s brightest boy. He makes promises the way other boys throw stones.]
+    [9.3] Sadaham: You snore. / Don’t argue. The whole hall heard you.
+    [9.4] [CARD Mugwan: Sadaham’s best friend in the First Class. The two of them made a promise boys should not make.]
+    [9.5] Mugwan: That was you.
+    [9.6] Sadaham: …Then prove it. Stay up and listen.
+    [9.7] ¶ Mugwan stays up. It is the first of a great many nights he will stay up for Sadaham, and the only one either of them will find funny.
+    [9.8] ¶ Their first spring, the yard sends them down to the river for stones. Mugwan turns one over and goes very still. Somebody has cut writing into it.
+    [9.9] Mugwan: Come here. / Read this.
+    [9.10] Sadaham: You read it. You’re the one who studies.
+    [9.11] [OATH (Imsin Oath Stone (壬申誓記石), Silla, year imsin (552 or 612); found 1934 at Seokjang-dong, Gyeongju; Gyeongju National Museum, Treasure No. 1411): Year imsin, sixth month, sixteenth day. The two of us swear together and write it down. We swear before Heaven: from today, for three years, we will hold fast to the way of loyalty and commit no fault. If we break this, we swear it is a great sin against Heaven. If the country is not at peace and the world falls into great disorder*, we swear we will go and do it. And apart from this: before, on the twenty-second day of the seventh month of the year sinmi, we swore a great oath, to master in turn the Odes, the Documents, the Rites and the Tradition† within three years.]
+    [9.12] ¶ No names. Two boys, before the yard even had a name, promised Heaven three years of books, and a war if the country wanted one. What became of them, the stone doesn’t say. Stones rarely do.
+    [9.13] Sadaham: Three years? / That’s all they had in them? Give me your knife.
+    [9.14] Mugwan: That’s not ours. Put it back.
+    [9.15] Sadaham: Not that one. We get our own.
+    [9.16] ¶ He finds a smaller stone, flat and grey, and scratches at it until the light goes. His characters are terrible. He leaves out the books entirely. What’s left fits in a closed hand.
+    [9.17] Sadaham: Read it.
+    [9.18] Mugwan: …“Two of us. One dies, the other follows.” / That’s it?
+    [9.19] Sadaham: What else is there?
+    [9.20] ¶ Mugwan takes the knife. Under the bad characters he cuts one more, small and neat: _friend_. Then he puts the old stone back exactly where they found it, face down, as if they had never been there.
+    [9.21] ¶ A museum in Gyeongju keeps the first stone now. Nobody has ever found the second. Good.
+[9] ▲ end flashback
+[10] A new boy: So who snored?
+[11] Kim Yushin: Both. That is not the story.
+[12] ▼ FLASHBACK 562 too young
+    [12.0] ¶ Two summers on, Great Gaya stops paying. The king calls the war in his hall, and the hall fills up with men old enough to have opinions.
+    [12.1] [PLACE daegaya: A hill kingdom that has just stopped saying yes.]
+    [12.2] ¶ **Sadaham** was fifteen when he asked to ride against Great Gaya. He asked on his knees, in front of everyone. It is the only way a boy can ask a king for anything and not be sent outside.
+    [12.3] King Jinheung: Go home. Grow a beard. / War is not a yard. Nobody hands the ball back.
+    [12.4] Sadaham: Then I’ll ask again tomorrow.
+    [12.5] ¶ He does. And the day after. The old general leading the campaign once took an island by frightening it with wooden lions. He tells the king it will be quicker to bring the boy than to keep hearing him.
+    [12.6] King Jinheung: Fine. Take him. / If he dies, it was his idea. Write that down.
+    [12.7] Mugwan: You’re going.
+    [12.8] Sadaham: We’re going. / I told them you’re my second. Don’t make me a liar.
+    [12.9] Mugwan: You didn’t ask me.
+    [12.10] Sadaham: I’m asking now. / …Well?
+    [12.11] Mugwan: …I’ll get the horses.
+[12] ▲ end flashback
+[13] King Munmu: And the battle? Uncle, what happened at the gate?
+[14] Kim Yushin: Any old man in the market will give you the gate. He’ll get it wrong, but he’ll give it to you. / I am telling you about the rice.
+[15] ❝QUOTE (Samguk Sagi (三國史記) bk. 4, Silla Annals — King Jinheung, yr. 23 (562)): Ninth month. Gaya rebelled. The king ordered Isabu to punish it, with Sadaham as his second. Sadaham rode ahead with five thousand horse, went in through the Jeondan Gate and planted a white banner. The people in the city were terrified and did not know what to do. When Isabu brought up his troops, they surrendered all at once.❞
+[16] ▼ FLASHBACK 562 the prize
+    [16.0] ¶ Afterward the king pays him the way kings pay: in people. Three hundred Gaya captives, roped in a line, his to keep. Sadaham walks down the line once. Then he starts cutting rope.
+    [16.1] Mugwan: The court will say you’re showing off.
+    [16.2] Sadaham: Then the court can have them back. / Help me with this knot.
+    [16.3] ¶ The land they give him instead is a strip of stones by the Alcheon that nobody wanted. The chronicle calls this virtue. Mugwan calls it typical, and holds the knot.
+[16] ▲ end flashback
+[17] King Munmu: My father would have found a use for three hundred people.
+[18] Kim Yushin: Your father would have found a use for three hundred and one.
+[19] ▼ FLASHBACK 563 the swear
+    [19.0] ¶ That winter Mugwan catches a cough he cannot put down. Sadaham sits by the mat and counts his breathing, the way they used to count snores.
+    [19.1] ¶ The little grey stone sits on the sill. Neither of them looks at it. Both of them know exactly where it is.
+    [19.2] Mugwan: Go eat. You smell like a sickroom.
+    [19.3] Sadaham: You remember what we swore.
+    [19.4] Mugwan: We were thirteen. We also swore to marry the same girl.
+    [19.5] Sadaham: If you die first, I will not eat. / So don’t.
+    [19.6] Mugwan: If I die first— you already know.
+    [19.7] Sadaham: Then neither of us is allowed to be late.
+    [19.8] ¶ Mugwan pushes the stone across the mat with two fingers. It is the last thing he does on purpose.
+    [19.9] ¶ **Mugwan** died of illness not long after the campaign. He did it quietly, the way he did everything, before dawn, so as not to wake anyone.
+[19] ▲ end flashback
+[20] ▼ FLASHBACK 564 seven days
+    [20.0] ¶ Sadaham did not take food for seven days. The cooks left bowls by his door. The order sent its oldest men to argue with him. He thanked them, and did not eat.
+    [20.1] ¶ He keeps the stone in his fist. At night he holds it up to the lamp, as if the bad characters might have changed.
+    [20.2] Sadaham: …It’s quiet in here. Nobody snoring.
+    [20.3] ¶ On the seventh night the bowl by the door is still full. He lies down on Mugwan’s side of the mat.
+    [20.4] Sadaham: …Wait up. / I’m not late.
+    [20.5] ¶ He was seventeen. The order buried two headbands beside him, and one small stone with terrible handwriting. It kept the story, because a Hwarang who outlives his vow is only a boy with a nice coat.
+[20] ▲ end flashback
+[21] ¶ The lamp under the eaves has burned down a finger’s width. Nobody has moved. One boy is pretending he has something in his eye, and the others are kind enough to look at the lamp.
+[22] Kim Yushin: That is friends. Not a song. / If your vow is lighter than a meal, do not wear the headband.
+[23] King Munmu: Uncle. / Who would you stop eating for?
+[24] ¶ Yushin looks at the boy for a long moment. You can probably name her. He doesn’t.
+[25] Kim Yushin: …Go to bed. Gyuku at dawn.
+[26] ¶ **When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!**
+
+=================================================================
+#12 Gotaso  (641)
+Arc: The Five Principles · place: surabol · tone: K-drama romance
+Logline: A young girl is going to do what she’s going to do.
+=================================================================
+[0] ¶ A young girl is going to do what she’s going to do.
+[1] ¶ Two springs ago she proved it, and her father has not slept properly since.
+[2] ── SCENE: Two Springs Earlier ──
+[3] ¶ **Gotaso** is fourteen. She goes out to the lantern market with two maids and does not come back with any. The maids are found first, by the river, in the morning.
+[4] Munhee: Husband. / …Husband.
+[5] ¶ Chunchu says nothing. This is the part the household remembers afterwards and none of them can describe properly: he does not shout, he does not ask a second question, he simply stops being the man who talks.
+[6] Kim Yushin: Chunchu. Sit down. / I already have men out.
+[7] King Muyeol: …
+[8] Kim Yushin: …Chunchu.
+[9] King Muyeol: How many horses do we have.
+[10] ¶ It is the only sentence he speaks for two days. Yushin will try to tell it later as a joke and will stop halfway through, every time.
+[11] ¶ They were not bandits, in the sense that bandits want money. No word came and nothing was asked for, which is worse, and Chunchu understood what it meant before anyone in the room said it aloud.
+[12] ── SCENE: The Ford ──
+[13] ¶ They find the road on the second night. What Chunchu does at the ford is in no record, because the two men who could have written it down were at the ford.
+[14] Kim Yushin: Enough. / Chunchu. Enough. / …The child is watching.
+[15] ¶ He stops. He wipes his hands on the grass, carefully, both sides, the way a man does before he picks up something clean.
+[16] King Muyeol: …Gotaso.
+[17] Gotaso: Father… there is something on your coat.
+[18] King Muyeol: So there is. / I will change it later.
+[19] ¶ He carries her the whole way home. It is nineteen li. He does not let anyone take a turn and he does not put her down to eat.
+[20] Munhee: …Put her down. / Your arms will come off.
+[21] King Muyeol: A little longer.
+[22] Kim Yushin: I have never seen you go quiet like that.
+[23] King Muyeol: …Brother. / I have two sons and one daughter. / One daughter.
+[24] ── SCENE: The Gyuku Match ──
+[25] ¶ Before anyone says the word _wedding_, there is a spring match. Gotaso attends with two new guards, and her father watches her instead of the ball.
+[26] ¶ At a **spring gyuku match** the Hwarang ride for the Queen. The stands smell of horse and expensive varnish. Servants carry club-boxes the way other households carry ancestral tablets. Gotaso is sixteen now, and only meant to watch.
+[27] Munhee: Look at that club box. / A Hwarang that young carrying that… you can see the household.
+[28] Gotaso: I am not looking at the club. / Only the man.
+[29] ¶ **Pumsuk** takes the ball on the off-side — a showy, illegal-looking, completely legal cut — and for half a breath too long catches her eye instead of the goal. His **premium gyuku club** flashes once in the sun: presentation-silk still on the headcover, five coloured rings on the shaft, vulgar as Surabol sport gets.
+[30] [CARD Kim Pumsuk: Kim Pumsuk. Rich, handsome, and legal by about an inch.]
+[31] Gotaso: …Who is that. / Mother. / Mother. I asked who that is.
+[32] Munhee: Hwarang Kim Pumsuk. / Don’t stare.
+[33] Gotaso: I already did. / And he looked back. He did, he did.
+[34] Gotaso: I am never going to look at anyone else. / For the rest of my life.
+[35] Munhee: …Sixteen years old, using the word “life.”
+[36] Gotaso: Sixteen is exactly when you are allowed to use it. / Later you get too embarrassed.
+[37] ¶ She looks at him the way a person looks at weather they have decided to live in — not bargaining, not counting rooms. Just the face.
+[38] Queen Sunduk: You are watching your daughter, Chunchu. / Your daughter is watching something else.
+[39] King Muyeol: …I see it, Majesty. / I am choosing not to.
+[40] ── SCENE: The Flowering Trees ──
+[41] ¶ They meet again under the flowering trees behind the training ground — not by accident the second time, and not the third.
+[42] ¶ Under the flowering trees they forget to be a princess and a Hwarang.
+[43] Kim Pumsuk: I shouldn’t… see Your Highness here.
+[44] Gotaso: Then why do you come every day. / I come every day. / Yesterday I came twice.
+[45] Kim Pumsuk: …I don’t know. / Your father looked at me at the match. The way a man looks at a horse he may have to shoot. / I came anyway. Knowing I shouldn’t.
+[46] Gotaso: He looks at everyone like that now. Since the ford. / The others stopped coming. You came twice.
+[47] Kim Pumsuk: That cut at the match. The one the umpires argued over. / It was for you. I have never risked a foul in my life. / …I would risk it again.
+[48] Gotaso: And I’m not supposed to… touch your hand either? / Then why… won’t you let go of my wrist.
+[49] Kim Pumsuk: You mustn’t. / …And yet you’re holding it. / And… I cannot take it back.
+[50] ── SCENE: The Palace Steps ──
+[51] ¶ Rain finds them once on the palace steps. Neither of them moves to go inside.
+[52] Gotaso: You’re soaked. / …Why are you smiling. / Ah. / Is it my hair… on your sleeve?
+[53] Kim Pumsuk: Your hair is… caught on my sleeve. / I should free it. / My hand won’t move. / Neither will my feet.
+[54] Gotaso: Then leave it. / Leave it there. / The sleeve. The hair. / I could stand beside this sleeve for the rest of my life. / No — closer.
+[55] Kim Pumsuk: My lady. / If this goes on… I will come apart. / Here. On the steps.
+[56] Gotaso: So will I. / So I settled all of it last night. / Four children. I have named them. / I am telling my parents today.
+[57] Kim Pumsuk: …Four?
+[58] Gotaso: You don’t want them?
+[59] Kim Pumsuk: …I want to know the names.
+[60] ¶ **Four children, already named. Now the boy has to ask her father. And her father wants a vow…!**
+
+=================================================================
+#13 Pumsuk  (641)
+Arc: The Five Principles · place: surabol · tone: K-drama romance
+Logline: Pumsuk asks for the girl. Chunchu asks for something else.
+=================================================================
+[0] ¶ Pumsuk asks for the girl. Chunchu asks for something else.
+[1] ── SCENE: The Study ──
+[2] ¶ Chunchu receives him in the study, not the hall. A go game sits half-played between them. Chunchu is wiping his hands on a cloth, slowly, both sides. He has not been doing anything to dirty them.
+[3] Kim Pumsuk: Sir. I— I have come about Lady Gotaso. / With your permission, I would like— that is, I would ask—
+[4] King Muyeol: Sit. You’re making the stones nervous. / She told me at breakfast. Four children, all named. She is very thorough. She gets that from me.
+[5] Kim Pumsuk: …Then you consent, sir?
+[6] King Muyeol: I consent to the girl. She was never mine to keep. / Do you know what the yard teaches, Hwarang? Five rules. / Here is a sixth.
+[7] ¶ Munhee is in the doorway. She has been there the whole time. Pumsuk only notices now, which tells you something about Pumsuk.
+[8] Munhee: Don’t make him swear.
+[9] King Muyeol: …Why not.
+[10] Munhee: If he keeps it, it was owed anyway. If he cannot, it kills him.
+[11] ¶ He makes him swear. It is the only time in this record that Chunchu misreads a room, and it is the room with his daughter in it.
+[12] King Muyeol: If anything happens to her, you know I’m going to kill you, right? Haha...
+[13] ¶ He laughs. He puts the cloth down. Pumsuk has heard, the way all of Surabol has heard, about a certain ford. Nobody else in the room is laughing.
+[14] Kim Pumsuk: On my life, I will protect Lady Gotaso!
+[15] ── SCENE: The Wedding ──
+[16] ¶ At the back of the hall, the Queen watches her great-niece marry for love.
+[17] [WEDDING Gotaso + Kim Pumsuk]
+[18] ▼ FLASHBACK 625 the girl-child
+    [18.0] ¶ **Munhee** does not watch the vows. She watches the doorway and remembers a different night in the same house: the girl-child arriving, pink silk already too sure of itself, Chunchu’s hand huge around a wrist that would never learn to be still. They named her **Gotaso** when the lantern-band was the same shape it is tonight.
+[18] ▲ end flashback
+[19] Queen Sunduk: …Your son’s girl. / That doorway has taken three of this house now.
+[20] [CARD Princess Chunmyung: The Queen’s elder sister, and Chunchu’s mother. She gave up a throne to marry for love.]
+[21] Princess Chunmyung: Four. If Your Majesty counts honestly.
+[22] Queen Sunduk: …I count honestly.
+[23] Gotaso: We will be happy forever!
+[24] ── SCENE: The Wedding Night ──
+[25] Kim Pumsuk: …My lady. Your hands are cold. / But the back of your neck… is hot.
+[26] Gotaso: Because I am shaking. / And… because yours are too warm. / The hand at my waist. / Don’t take it away.
+[27] Kim Pumsuk: Are you frightened? / If I… come closer.
+[28] Gotaso: No. / Because I want to be somewhere with nobody in it. / Look at me once more.
+[29] ¶ Behind the doors the feast falls away.
+[30] ── SCENE: The Empty Hall ──
+[31] ¶ The hall empties. The Queen does not leave, and neither does the Marshal. Neither of them has ever been the first to leave a room.
+[32] ¶ She has had twenty years to learn the back of his neck: the place the armour strap has worn shiny, the two grey hairs at his temple that were not there before the last campaign. Tonight the hall is empty and nobody is writing anything down, so she looks at all of it.
+[33] ¶ Color rises along her throat. She keeps her mouth closed so the breath will not give her away. He does not turn. That is the only mercy left in the room.
+[34] Kim Yushin: Your Majesty.
+[35] Queen Sunduk: …Not that word. Not tonight.
+[36] Kim Yushin: Then what am I to call you.
+[37] Queen Sunduk: Don’t call me anything.
+[38] ¶ He takes one step. It is the smallest thing he does in this entire record and it costs him longer than any battle in it.
+[39] Kim Yushin: Today you watched your niece marry the man she loves. / I watched your face the entire time. / Your Majesty—
+[40] Queen Sunduk: Yushin.
+[41] Kim Yushin: …You said my name.
+[42] Queen Sunduk: So stop.
+[43] Kim Yushin: One sentence. Let me have one. / Two horses. Tonight would be enough. / Three days to the border. After three days we are nobody at all.
+[44] ¶ She reaches up. He is very still, the way a man is still when he has already decided not to be the one who moves. Her fingers find his mouth before the rest of the sentence can.
+[45] Queen Sunduk: Don’t say it. / If you say it, I have to hear it for the rest of my life.
+[46] Kim Yushin: Then hear it for the rest of your life.
+[47] ¶ For a moment she does not answer, and the moment is long enough that both of them will spend years deciding what it meant.
+[48] ¶ Her fingers are still on his mouth. He does not take the next step. The lamp between them does the looking. When she speaks again she is already Queen.
+[49] Queen Sunduk: …Without you this country does not last half a year.
+[50] Kim Yushin: You are talking about the country.
+[51] Queen Sunduk: Because the country is the only thing I am permitted to talk about.
+[52] ¶ She is close enough now to count what it is costing him. She counts it. Then she takes her hand back and puts it where a queen’s hand goes.
+[53] Queen Sunduk: One more step and I do not stop.
+[54] Kim Yushin: …Then I will not take it.
+[55] Queen Sunduk: Thank you.
+[56] Kim Yushin: Don’t thank me. / That is the sound you make when you have won.
+[57] Queen Sunduk: …Then neither of us has.
+[58] ¶ He steps back into the shape of a subject. It fits, because he has worn it twenty years. It has never once fit.
+[59] Kim Yushin: Your Majesty.
+[60] Queen Sunduk: …Yes. That will do.
+[61] ¶ Neither of them mentions that night again. Thirty-two years later, on the last day of his life, he is asked whether he ever wanted anything for himself, and the record notes only that he took some time to answer.
+[62] ── SCENE: The Road to Daeya ──
+[63] ¶ Three days later the couple leave for **Daeya Fortress**, where Pumsuk has just been named Guardian. She waves from the cart until the capital is out of sight; he rides beside the wheel the whole way. Daeya is a border post. Nobody at the wedding said the word _border_ out loud.
+[64] [PLACE daeya: A border post with a fine view of Baekje. The view works both ways.]
+[65] ¶ Her parents stand at the gate until the dust settles. Then a little longer.
+[66] King Muyeol: She waved the whole way. Like someone I know.
+[67] Munhee: I never waved at you. I was busy sewing.
+[68] King Muyeol: …So you do remember.
+[69] Munhee: Don’t you start. Not at the gate.
+[70] ¶ **“Dear… have you already forgotten how we met?” Munhee hasn’t. It involves a dream, a skirt, and a coat torn on purpose…!**
+
+=================================================================
+#14 Munhee  (625)  [FLASHBACK EPISODE]
+Arc: The Five Principles · place: surabol · tone: K-drama romance
+Logline: It starts with a dream, and the dream is sold.
+=================================================================
+[0] ── SCENE: How They Met ──
+[1] King Muyeol: Dear… have you already forgotten how we met?
+[2] Munhee: Forgotten? I was there. / You were the one without a coat.
+[3] ¶ It starts with a dream, and the dream is sold.
+[4] Bohee: Last night… I climbed Namsan and I relieved myself, / and all of Surabol drowned. / The entire capital.
+[5] Munhee: Sister. Sell me that dream.
+[6] Bohee: …For what?
+[7] Munhee: My silk skirt.
+[8] ¶ Bohee takes the skirt. It is the single worst trade in Silla’s thousand years, and the two of them will both live long enough to know it.
+[9] Munhee: The capital you drowned / is mine now.
+[10] ── SCENE: The Torn Coat ──
+[11] ¶ Five days later Yushin brings a young nobleman home from the gyuku field — still dusty, still arguing about a disputed foul — and on the yard, mid-demonstration of a “proper True Bone grip,” steps on the hem of the man’s coat on purpose. The tie comes away.
+[12] Kim Yushin: Oh dear. / My apologies. / Somebody sew that for the gentleman.
+[13] Bohee: …How could I approach a nobleman over so small a thing.
+[14] Munhee: I will do it.
+[15] ¶ He has to take the coat off for her to mend it. Magenta silk leaves his shoulders. He sits disrobed in her brother’s hall with a True Bone’s embarrassment and nowhere to put his hands. She knits the tear standing close enough to feel the heat off his skin — and that is all, the first time. Needle. Breath. The slow fact of a man without his coat.
+[16] ❝QUOTE (Samguk Sagi (三國史記) bk. 6, Silla Annals — opening account of Bupmin's parents): The elder sister had some reason not to come forward, so the younger came and sewed it. Light make-up, light clothes, and a radiance that lit up the room. Chunchu saw her and was delighted…❞
+[17] King Muyeol: …Your hands are quick. / I have… not sat like this.
+[18] Munhee: Sit. / I will put the coat back on you. / Today… only that.
+[19] ¶ He comes back the next day, needing nothing sewn, and again the day after that. Each visit she finds a new place on the garment — and they sit closer. The needle slows. His breath learns the back of her hand. They do not leap. They accumulate.
+[20] ¶ On a later visit the coat is off again. She stands behind him, needle forgotten, staring at the breadth of his shoulders as if the knitting were only an excuse to keep looking. Magenta silk has slipped. She does not tell him to cover it. When the needle pauses it is because her mouth has found the place above his pulse — and Yushin is careful to be looking somewhere else the entire time.
+[21] King Muyeol: …Why. / At this rate… I will tear the coat myself.
+[22] Munhee: Because you have not left yet. / Before you leave… / your hand belongs at my waist. / Until the sewing is done.
+[23] Munhee: And what is torn today? / Or… what shall I tear for you.
+[24] King Muyeol: …Nothing. / No — / Here. / Where your mouth… was yesterday.
+[25] Munhee: Shall I tear something for you, then? / Only the coat. / Or… your restraint as well.
+[26] King Muyeol: …If you say it like that. / I won’t be able to leave tonight. / I am already… coming apart at the door.
+[27] Munhee: Then don’t. / The sewing… can wait until morning. / Spend the night… mending me.
+[28] ¶ He stays. The household learns the sound of a door that is not meant to open until dawn.
+[29] ¶ By midsummer the household staff have stopped announcing him.
+[30] ¶ Ask Munhee about the next part and she still blushes.
+[31] Munhee: N-no, why bring up that memory again…
+[32] ¶ By autumn Munhee is showing. Chunchu still hasn't proposed.
+[33] Kim Yushin: Pregnant, with no husband to name… what disgrace is this! / A sister who shames the house burns in its yard.
+[34] Munhee: Then build it, brother. / I’m not giving you a name. You already know it.
+[35] ── SCENE: The Pyre ──
+[36] ¶ Yushin builds the pyre in the yard where they played gyuku, which is not lost on anyone, and sets green wood on it so that it smokes instead of burning. Munhee stands beside it with her hands folded over the child. Nobody has tied her. Nobody has needed to.
+[37] ¶ The smoke goes straight up. It is visible from Namsan. It is visible from the terrace where a princess happens to be standing with the young nobleman who has gone the colour of paper.
+[38] Queen Sunduk: What is that smoke?
+[39] A lady-in-waiting: Kim Yushin’s yard, Highness. / His sister is with child and won’t name the father. He says she burns at noon.
+[40] Queen Sunduk: Lord… Chunchu?
+[41] ¶ Then Chunchu is running. A True Bone does not run in front of a princess. He runs the whole way: down the terrace stairs, through two gates, into the smoke.
+[42] Munhee: Don’t you dare. Not because of smoke.
+[43] King Muyeol: Th-the father of that child… Lady Munhee’s… I mean… / It’s me!
+[44] ¶ He says it to the yard, to the princess on the terrace, and to half of Surabol on its rooftops. Munhee closes her eyes. She had hoped for a quieter proposal. She will take this one.
+[45] ¶ Yushin kicks the green wood apart. It was never going to catch.
+[46] Kim Yushin: …Chunchu. / You did not choose my sister. / I chose you.
+[47] ¶ Chunchu and Munhee are married. The green-wood rumour becomes a wedding, and the wedding becomes a household that is openly fond of itself.
+[48] [WEDDING Munhee + King Muyeol]
+[49] ¶ At the feast the two of them end up where they always end up: outside, on the steps, sharing one cup.
+[50] King Muyeol: Brother.
+[51] Kim Yushin: Do you know how many years it took me / to lay Gaya blood and Silla royalty in the same bed.
+[52] King Muyeol: You should have simply become king yourself. / Surely the strongest man in Samhan ought to be the one who rules.
+[53] Kim Yushin: (laughing) Chunchu. You know exactly why not.
+[54] King Muyeol: …I do.
+[55] ¶ Neither of them says the word. It sits between them anyway, the way it always has: Gaya. His grandfather bought the family a rank. Ranks are not the same as blood.
+[56] ── SCENE: The Closed Months ──
+[57] ¶ The wedding itself is quiet. Magenta silk and pink silk share a cup. What the court will later call a clever match is, in the room, simply two adults who have already learned each other’s breath.
+[58] ¶ They shut the door on the yard and do not open it again for a long time. The minutes will later invent one decorous wedding night. What actually happens is weeks of it — her on him, him on her, the magenta and the pink in a heap by the door — until the meals go cold and Surabol learns to wait.
+[59] ¶ The first time he is still trying to be gentle. She is not. She takes his hand and puts it where she wants it, and the sound that leaves her is not a toast. He lasts like a man who has been polite too long, which is to say not long, and says her name at the end as if he were apologising for it. She laughs, because that was the point, and does not let him go anywhere. The bedding. The chest. The floor, when the bedding is too far away. When he reaches for the water jug she pulls him back by the wrist.
+[60] Munhee: Again…? / Today… don’t even try to count. / Save counting for outside.
+[61] King Muyeol: I… cannot count. / Munhee. / I have… already lost. / And… I will lose again.
+[62] ¶ The neighbors on both walls learn their names the wrong way, through plaster. At night the paper window glows, and the shadows on it are not ambiguous. Servants stop knocking. Someone on the east side moves his sleeping mat away from the shared timber and blames the draft.
+[63] Munhee: They say… they heard us through the wall. / And saw… the paper window. / Even our names.
+[64] King Muyeol: Then the wall… is on our side. / And the paper window. / If Surabol hears… / let it.
+[65] ¶ Months pass before either of them remembers the yard. When they finally open the door she walks like someone who has been thoroughly loved and does not mind the lane knowing it, and they look at each other like people who have won a private war — still in love, still hungry, and willing, for one afternoon, to put clothes back on.
+[66] ── SCENE: The Household ──
+[67] ¶ Samsin comes the way she always comes when a breath starts: in white, with nobody else in the room. The first child is a girl who talks early and never stops. They call her **Gotaso**. A year later comes a boy who walks before he talks. They call him **Bupmin**. Chunchu sits where a husband sits when he has not yet learned what children will steal from him.
+[68] ¶ For a few years, Chunchu stops going to the hill.
+[69] Kim Yushin: You have not been coming to Council lately.
+[70] King Muyeol: Brother. I have a daughter and a son now. / The east star… I think I will let it just be a star.
+[71] Kim Yushin: So you will.
+[72] ¶ Back at the gate, the dust from the Daeya road has settled. Munhee has not let go of his arm.
+[73] Munhee: You went back to the hill, of course.
+[74] King Muyeol: Somebody had to. The star wasn’t going to climb down by itself.
+[75] ¶ **Same spring, in Pyongyang, another father walks his son to school. He means to pick a fight with the Buddha…!**
+
+=================================================================
+#15 Academy  (641)
+Arc: The Five Principles · place: pyongyang · tone: academy intrigue
+Logline: Yeon has three sons. They could not be more different. There is only one seal.
+=================================================================
+[0] ¶ Yeon has three sons, and only one of them is old enough to annoy a monk.
+[1] [MAP 641: ]
+[2] ¶ **Namseng**, seven, is the careful one: the heir, eager to be approved of.
+[3] [CARD Yeon Namseng: Yeon’s eldest. He would very much like to be told he did well.]
+[4] ¶ **Namgun**, four, is the fierce one, who never backs down first.
+[5] [CARD Yeon Namgun: The second son. Nobody ever had to teach him to push.]
+[6] ¶ **Namsan**, two, is the quiet one, watching his brothers.
+[7] ¶ There is a fourth boy at that table who is not counted, because counting him would require a word nobody in the house wants to use. **Gulgul** eats after the others and says nothing, and Namsan — who watches everything — is the only one who notices that he never sits with his back to a door.
+[8] ── SCENE: The Taehak ──
+[9] ¶ The Grand Academy is old. It came over the river in the same season as the first Buddhas. Ever since, the school and the temple have shared Goguryeo's noble sons. Classics in the morning. Sutras after lunch. Archery whenever the masters lose their voices.
+[10] ¶ Yeon brings **Namseng** to the gate himself, in riding boots, and does not take them off on the swept stone. Namgun has come too, uninvited, clinging to the back of the saddle.
+[11] Taehak Master: Commander. The sons of the five commanderies begin with the Analects and the Lotus Sutra. / As your own father did, if I remember the register.
+[12] Yeon Gesomun: The Analects, fine. A boy should know how to bow before he decides not to. / The sutra he can skip.
+[13] Yeon Namseng: Father. / Is the Buddha not allowed?
+[14] Yeon Gesomun: The Buddha’s fine. Fat, quiet, never asked me for anything. / It’s his landlords I mind.
+[15] ¶ The landlords are not a figure of speech. Half the good valley land belongs to monasteries. The monasteries belong to the great houses whose second sons run them. None of it pays for the wall. Every spring Yeon writes to the Summit about this. Every spring the Summit thanks him for his piety.
+[16] ¶ What he wants instead is the Way of Laozi, which is an odd thing for him to want, because the Tang emperors claim Laozi as their ancestor. Yeon has heard this and does not care. He has a sentence for it, the only one he ever repeats word for word.
+[17] Yeon Gesomun: A pot stands on three legs. / Confucius is one. The Buddha’s two. We’re missing the third, and the pot’s tipping into the fire.
+[18] Taehak Master: The third leg would be… Tang priests, Commander?
+[19] Yeon Gesomun: The third leg is whatever doesn’t own a farm.
+[20] ¶ Across the courtyard a monk has stopped sweeping. His name is **Bodeok**. His monastery, up at Banryong, owns a great deal of farm.
+[21] Bodeok: Commander. The Buddha has no landlords. / He has guests. Some of them stay a long time.
+[22] Yeon Gesomun: A guest who keeps the farm, the barn and the plough? That’s a landlord, monk. / Go on, sweep. Don’t let me stop you working. Somebody here ought to.
+[23] ¶ Namgun is four. He decides this is a fight and that his side is winning. He kicks the monk’s swept pile across the stone.
+[24] Yeon Namseng: Namgun! Say sorry. / …Venerable sir. My brother is four. I will read the sutra too, if I am allowed.
+[25] Yeon Gesomun: You’re not allowed. / …Don’t look at me like that. Read it on your own time. Just don’t pay for it.
+[26] ¶ Bodeok bows to the boy, not to the father. Then he goes back to sweeping. He sweeps the same patch of stone until dark, and he does not forget a word.
+[27] ── SCENE: The Uncle’s Supper ──
+[28] ¶ The complaint reaches the High Commander’s table before Yeon has ridden home. It is written in a monk’s neat hand. Gusesa reads it at supper, between courses.
+[29] Yeon Gusesa: (mild, wiping his fingers) A Yeon telling monks what to own. / My nephew collects enemies the way other men collect horses. At least horses eat less.
+[30] ¶ Yeon is called to the table. He does not sit, because nobody offers. He does not take his boots off, because nobody asks.
+[31] Yeon Gusesa: Nephew. The monks of Banryong pray for the king every morning. / They will pray for you too, now. You won’t like what they pray.
+[32] Yeon Gesomun: Let them. Prayers are free. / Only thing in this country the monks don’t charge for.
+[33] ¶ Gusesa wipes his fingers and goes back to his soup. That is how the meeting ends. Only one of the two men at the table knows it is also how a list begins.
+[34] ¶ Namseng is enrolled anyway. He learns the Analects first and best, and on the days the sutra master is ill he reads his father’s copy of the Daodejing, which has never been opened past the first page.
+[35] ¶ **Field trip. Yeon takes the boys to see a very big rock. The rock has a list on it, and a question…!**
+
+=================================================================
+#16 Stele  (641)
+Arc: The Five Principles · place: gungnae · tone: house succession drama
+Logline: Every Goguryeo boy is raised on the Great King’s stone. Nobody tells them what it weighs.
+=================================================================
+[0] ¶ The Great King’s stone is taller than four men. Namseng is not impressed.
+[1] [PLACE gungnae: The old capital, where the Great King’s stone still does the bragging.]
+[2] [MAP 641: ]
+[3] ¶ Yeon has ridden two days to the old capital to show his sons this. Namseng has heard about it since before he could sit a horse. Namgun has heard nothing and is having a wonderful time. Gulgul carries Namsan, who is asleep.
+[4] Yeon Namseng: Aw… that’s it? A big rock?
+[5] ¶ Every Goguryeo boy is raised on him. He kept the west shut, and he made it look easy.
+[6] Yeon Namgun: Father! I’m going to climb it.
+[7] Yeon Gesomun: Go on. Fall off. Then you’ll remember it.
+[8] ¶ Namgun gets as high as the first crack and sits there, delighted, like a cat on a roof. Gulgul stands underneath with his arms half out. Nobody tells him to.
+[9] Yeon Gesomun: He was eighteen when they put him on the throne. You know what he did first?
+[10] Yeon Namseng: Built a temple, Father?
+[11] Yeon Gesomun: He rode west and took back every fort his grandfather lost. Then he kept going. / Nobody wrote him a letter about it.
+[12] Yeon Gesomun: Sixty-four fortresses are written on that rock. / Go on. Read me one.
+[13] ¶ Namseng reads the Analects every morning. He gets four characters into the stone and stops. The carving is old, and the Great King’s scribes did not write for boys.
+[14] ❝QUOTE (Gwanggaeto Stele (廣開土王碑), conquest record (414)): In all, the fortresses he attacked and broke: sixty-four. Villages: one thousand four hundred.❞
+[15] ¶ They are not alone on the hill. A Tang party has come up the other path: an envoy in good silk, two clerks with ink boxes, and a Goguryeo official paid to show them everything. One clerk is already copying the list.
+[16] The Tang envoy: A remarkable stone, Commander. My emperor loves history. / He asked me to see all of it. Every road, every fort, every ford. Your officials have been most generous.
+[17] ¶ Namseng knows exactly what a guest from afar is owed. He steps forward, bows the way his tutor taught him, and recites the first line of the Analects.
+[18] Yeon Namseng: “Is it not a joy to have friends come from afar?”
+[19] The Tang envoy: Charming! The Commander’s son has been well taught. / My emperor would be glad of such boys at his academy. Your crown prince has sent him several already.
+[20] ¶ Namseng goes red to the ears. He had wanted to be told he did well. He was, by the wrong man.
+[21] Yeon Gesomun: He’s not for sale. / And what did that one cost you? The one holding your horse.
+[22] ¶ The paid official finds something interesting in the grass. The envoy only smiles. He has been smiling for three provinces.
+[23] Yeon Gesomun: You. With the horse. When they’re gone, come and see me. / Bring the money. I want to count it too.
+[24] ¶ The official goes very white, which is answer enough.
+[25] Yeon Namgun: Can I push him off now?
+[26] Yeon Gesomun: Later.
+[27] Yeon Namgun: Father. I can push that one off. / The little one. With the ink.
+[28] Yeon Gesomun: Not today. / Let him copy. Let him count every one.
+[29] ¶ The clerk counts. The envoy bows, prettily, and takes his party down the hill before supper. His report will reach the emperor by autumn. It is very thorough.
+[30] Yeon Gesomun: Sixty-four. And now a man in Tang silk walks up our hill and counts them. / Here’s your lesson. Every spring and every autumn we send tribute west. Silk, horses, boys. / How does a country that took sixty-four come to bow to the Tang twice a year?
+[31] Yeon Namseng: Because… it is polite, Father?
+[32] Yeon Gesomun: Wrong. Again.
+[33] Yeon Namseng: Because we stopped… counting?
+[34] Yeon Gesomun: Closer. / Because the men in Pyongyang got old and fat and scared, and called it peace. / Remember it. One day you’ll sit where they sit.
+[35] ¶ Namseng nods as if he understands. On Gulgul’s back, Namsan has woken up. He looks at the stone, then at his father, then at the path the Tang clerks took, and says nothing at all.
+[36] Yeon Namseng: Father. Will that man come back?
+[37] Yeon Gesomun: Not him. His emperor.
+[38] Yeon Namseng: With tribute?
+[39] Yeon Gesomun: With an army, if we’re lucky. Then we find out what we’re worth.
+[40] ¶ The sun goes down behind the stone. Its shadow runs all the way down the hill, past the old tombs, to the river.
+[41] ¶ On the ride home Yeon is quiet, which his sons have never seen. Somewhere down the valley, a clerk’s brush is still moving.
+[42] ¶ **Some visitors knock. Some take their boots off. One old friend is about to do neither…!**
+
+=================================================================
+#17 Dosuryu  (641)
+Arc: The Five Principles · place: gungnae · tone: conspiracy thriller
+Logline: In thirty years, old Dosuryu has never once kept his boots on in this house. Tonight he does.
+=================================================================
+[0] ¶ In thirty years Dosuryu has never knocked at this house. Tonight, for the first time, he keeps his boots on.
+[1] ¶ Gesomun is at supper with his boots on the table, which his wife gave up on years ago. The boys are in bed. The house is warm and loud, and nobody in it is afraid of anything.
+[2] ¶ Then the door bangs open.
+[3] Yeon Gesomun: Oi. Old man. Boots.
+[4] Dosuryu: Shut up and sit down. / No — stay standing. You listen better standing.
+[5] Dosuryu: If they see my horse at your gate tonight, my name goes on the list too. So listen fast.
+[6] Dosuryu: His Majesty and your uncle. Three times this month, the same little room behind the audience hall. / Nobody else in it. Not even a boy to pour.
+[7] Yeon Gesomun: My uncle. Gusesa. / He eats with the king now? He doesn’t eat with anybody.
+[8] Dosuryu: A monk wrote him a letter this spring. Neat hand. Lots of complaints. / He has been in a mood about you since.
+[9] Yeon Gesomun: So they drink together. Good for them.
+[10] Dosuryu: They don’t drink. That’s what’s wrong with it. / Ever since you walked out of the Summit, your name comes up in that room. They mean to send you to the far end of the wall in the spring. And have you not come back from it.
+[11] Yeon Gesomun: When?
+[12] Dosuryu: Spring. The far end of the wall, past Buyeo Fortress. So far the letters take a month. / And one night out there, you fall off your horse. Very sad. Big funeral.
+[13] Yeon Gesomun: Past Buyeo Fortress. Hah. I’d fall off my horse out there too. From boredom.
+[14] Yeon Gesomun: **HAHAHAHAHAHA**
+[15] Yeon Gesomun: **Kill me? Yeon Gesomun?**
+[16] Yeon Gesomun: Sixty-four fortresses on a rock up the road, and they think one wall will hold me?
+[17] Dosuryu: Laugh. Go on. / Your father laughed at the Summit for twelve years and came home grey. You haven’t got twelve years. You’ve got till spring.
+[18] Yeon Gesomun: Why now?
+[19] Dosuryu: Because you walked out of the Summit and the whole city cheered. / Kings can count cheering. Your uncle counts it twice.
+[20] Yeon Gesomun: Who told you. The cook?
+[21] Dosuryu: The cook’s my cousin. The cook’s wife is my other cousin. / Half that palace is my cousin. That’s what forty years in Pyongyang buys you. Relatives.
+[22] Yeon Gesomun: Then I’ll go up there tonight. Ask His Majesty to his face.
+[23] Dosuryu: You go tonight with that face, you go as a traitor. They’ll thank you for saving them the trouble. / Stand still. I said stand.
+[24] ¶ Yeon stops laughing. He does it all at once, the way a door shuts.
+[25] ¶ He sits down for the first time all evening. He takes his boots off the table and sets them on the floor, side by side, the way a man lines up things he means to use.
+[26] ¶ In the doorway behind them, a seven-year-old in his sleeping robe has come to see why the old man is shouting. Namseng hears one word, _list_, and does not understand it.
+[27] Yeon Gesomun: Oi. Bed. Now.
+[28] Yeon Namseng: Father, what list—
+[29] Yeon Gesomun: The rice list. Bed.
+[30] ¶ Gulgul picks him up and carries him back to bed without turning his back on the door.
+[31] Yeon Gesomun: How many names on their list.
+[32] Dosuryu: One that I know of. Yours. / …Why are you smiling like that? Stop it. I hate it when you do that.
+[33] Yeon Gesomun: Then I’ll make a list too. / Mine’ll be longer.
+[34] Dosuryu: Whatever you put on yours, I don’t want to read it. / I’m old. I’d like to sleep.
+[35] Yeon Gesomun: Old man. / …Thanks.
+[36] Dosuryu: Don’t thank me. Put your boots back on. / You’ll need them.
+[37] ¶ Dosuryu goes out the way he came in, boots and all, and stands a long time in the yard before he can make himself mount. He has known the boy for thirty years. He knows exactly what kind of list it will be.
+[38] ¶ When the old man has gone, Yeon calls for a lamp and a brush. Gulgul brings both and stands where he can see the door. Yeon writes for a long time. Once he stops, counts on his fingers, and adds another name.
+[39] Yeon Gesomun: Don’t read it.
+[40] ¶ Gulgul cannot read. He looks at the door anyway, to be polite.
+[41] ¶ Near dawn he folds the paper twice and puts it inside his coat, against the skin, where a man keeps the things he does not mean to lose.
+[42] Yeon Gesomun: Gulgul. Saddle the bay. / Tomorrow I go and thank my uncle for supper. Then I bow to the king. All summer, if that’s what it takes.
+[43] ¶ **Far to the south, Sabi has a new king. On his coronation morning, several hundred people see a dragon…!**
+
+=================================================================
+#18 King Euija  (641 March)
+Arc: The Five Principles · place: sabi · tone: clan puppet-court intrigue (shonen)
+Logline: The court will style him Righteous and Merciful. He has a sense of humour about that.
+=================================================================
+[0] ¶ Several hundred people see the dragon. Only one of them can see the string.
+[1] ¶ On the morning of his coronation, a dragon is seen over the Sabi River. The court diarist writes it down, because it happened.
+[2] ¶ It was four lacquered paper kites, a low mist, six boatmen paid in advance, and one hour of the year when the light comes up the river at exactly the right angle. Euija had been planning it since the previous autumn.
+[3] ¶ King Mu is dead at eighty, still cursing Silla, and nobody at the river is thinking about him.
+[4] ¶ Euija takes the throne at forty-one. The court will style him Righteous and Merciful. He has a sense of humour about that.
+[5] [CARD King Euija]
+[6] [MAP 641: ]
+[7] [TERM Eraha (於羅瑕): What Baekje’s lords call their king. The farmers have their own word for him. The king has heard it, and prefers this one.]
+[8] [CARD Gyebek: The boy with the borrowed name, grown. He still cannot say a thing he does not believe.]
+[9] Gyebek: …Your Majesty. That is not a dragon.
+[10] King Euija: No, it isn’t. / Now go and say so to those people standing there. / See who wins.
+[11] Gyebek: Wins what. / It is paper and sticks. I can see the string. / I will go and tell them. You said to.
+[12] King Euija: They cannot see the string. / I did not say go. I said see who wins.
+[13] Gyebek: That is the same order. / I will not call it a dragon anywhere.
+[14] King Euija: Stand here for one hour. Mouth shut. / You cannot do the other thing. That is why I keep you beside me.
+[15] The Court Maids: Your Majesty. We saw the dragon too. / …From beside you.
+[16] King Euija: …You two know better.
+[17] The Court Maids: We do. / But of all Your Majesty has made… the thing that lasts longest isn’t a dragon.
+[18] King Euija: …What did you say.
+[19] The Court Maids: Miracles, Your Majesty. / The kind you keep close only at night.
+[20] ¶ His father had done it first, and better. Before he was king, King Mu paid the children of Sabi to sing a song he had written himself. By the third month the song was older than anyone could remember, and what it said about him had become a thing everybody had always known.
+[21] ¶ Nobody had to pay the children again. Euija filed that away.
+[22] King Euija: The thirtieth Eraha bought a country with a song. No army, almost no money. / I was twelve. Nothing since has impressed me that much.
+[23] ¶ So the reign begins with small wonders. All of them arranged. None of them expensive.
+[24] ¶ The white deer is the cheapest one. You take a young doe, you keep it out of the sun for a season, and you let it out on the hunting ground on a day the ministers are watching.
+[25] ¶ The stone at the Rock of Politics sweats before a good decision. It sweats because somebody rubs it with brine the night before, and the somebody is always the same man.
+[26] ¶ Rice comes up on ground where nothing was planted. Something was planted. It was planted at night.
+[27] [CARD Sungchung: The minister who asks the question the king hoped nobody would.]
+[28] Sungchung: Your Majesty. What happens when the people work it out?
+[29] King Euija: They won’t. / Nobody inspects the evidence for a thing they already want to believe.
+[30] ── SCENE: The Morning After ──
+[31] ¶ He walks the riverbank the morning after the dragon as if the mist itself had appointed him. Children point. A grandmother weeps. A clerk from the Board of Rites drops his brush and does not pick it up, because picking it up would mean deciding whether to write what he saw or what he was told.
+[32] King Euija: Look at them. / An army takes a month to move a border. / A story moves it overnight, and thanks you for the privilege.
+[33] Gyebek: Your Majesty is… enjoying this.
+[34] King Euija: I am good at it. / A man should enjoy what he is good at. Otherwise he does it badly, out of spite.
+[35] ── SCENE: The Rock ──
+[36] ¶ At the Rock of Politics he arrives last, lets the ministers wait, rests two fingers on the sweating stone as if taking a pulse, and smiles the small smile of a physician who already wrote the prescription.
+[37] King Euija: The rock agrees. / How fortunate for all of us that the rock has such good taste.
+[38] Gyebek: The rock did not agree. / It is brine. I can smell it. / I am not going to nod at a wet rock.
+[39] King Euija: The ministers are listening to the rock. Not to you. / Do not nod. Silence they can misread. Your mouth they cannot.
+[40] King Euija: Gods are props. Spirits are lighting. / And any man who believes it is already in my cast.
+[41] ¶ This is entirely correct, and it is the sentence that kills him, nineteen years later, word for word.
+[42] Sungchung: …Your Majesty.
+[43] King Euija: Sungchung. Hate the method. You have my permission. / Only do not stand there telling me it does not work.
+[44] The Court Maids: Tonight? / One miracle, or two?
+[45] King Euija: Two. / I am in a generous mood. / The country can watch the dragon. You can watch the king.
+[46] ¶ This is the Righteous and Merciful at full height: before the wine years. He wrote the sky this morning. He walks under it and does not look up.
+[47] ── SCENE: The King’s Chamber ──
+[48] ¶ Two court maids attend him — close enough that the air between them feels arranged. He is proud of the number the way a man is proud of a hunger he has not yet failed to satisfy.
+[49] King Euija: …Don’t both be greedy. / I am… looking at a map.
+[50] The Court Maids: The greed is Your Majesty’s. / You look at us… as if you already know. / Our throats… are closer than the map.
+[51] King Euija: …I was talking about the Silla border.
+[52] The Court Maids: Yes, Your Majesty. / Your voice is at its best when you talk about borders. / So we keep asking.
+[53] King Euija: …Leave.
+[54] The Court Maids: Shall we? / Your Majesty has not let go.
+[55] Baekje: Righteous and merciful — so he was named. / Land of the Heavenly Deer, Land of the Lord Buddha — keep both names warm. One is for merchants. One is for monks.
+[56] ── SCENE: The Princes ──
+[57] ¶ Gyebek is twenty-one, and seated far down the table. No market calls him Hundred-Victories. Not yet. He is passed over every season, because nobody knows what clan he comes from, and he won’t make one up.
+[58] ¶ At the coronation feast the princes sit by age, and the table has to be lengthened twice. Yung sits nearest the king, with a Satek cup-bearer at his elbow. Behind every brother's chair stands a clan tutor, like a second shadow. At the far end, servants pour for boys who don't have names worth carving yet.
+[59] King Euija: Look at that table! The thirtieth Eraha left me a country. I made a second one out of sons. / Count them, Sungchung. Go on. I lose track after thirty.
+[60] Sungchung: Forty-one, Majesty. If the two born this spring are counted. / …And each of them will need a chair, one day. There are only so many chairs, and—
+[61] King Euija: Then we’ll build more chairs. Or empty some. / Pung! Where’s Pung?
+[62] ¶ **Prince Pung** stands. He is seventeen. He is the quiet one, the one with the good handwriting, and he already knows what is coming because his mother told him the night before, crying into his collar.
+[63] [CARD Prince Pung: The quiet prince with the good handwriting. He is about to learn what a hostage is for.]
+[64] King Euija: The island king across the sea wants a prince of Baekje at his court, to show the world how close we are. You’re going. / Learn their poems. Drink their wine. Don’t marry anyone I’ll have to go to war over.
+[65] Prince Pung: As Your Majesty commands. / …For how long?
+[66] King Euija: Until I need you. / Ha! Don’t look like that. It’s a compliment. Nobody sends a prince he doesn’t mean to want back.
+[67] ¶ One day Baekje will send for him after all. Nobody at the feast would have believed it, Pung least of all.
+[68] ¶ **Euija can fake a dragon. He can’t fake a fortress. For that he needs a general who does exactly what he says…!**
+
+=================================================================
+#19 Yunchung  (641 March)
+Arc: The Five Principles · place: sabi · tone: war council
+Logline: There was only one man Euija knew he could trust to deliver.
+=================================================================
+[0] ¶ There was only one man Euija knew he could trust to deliver.
+[1] ¶ That winter Euija sends for **Yunchung**, and nobody from the eight houses is told. Yunchung is a general from a family too small to keep a clan tutor. He has held the Silla frontier for eleven years by doing exactly what he says he will do, which the Assembly finds tiring.
+[2] [CARD Yunchung: A frontier general from a family too small to count. That is the point.]
+[3] King Euija: Sit, General. No, the good cushion. Take it before I change my mind. / Tell me. Who rules Baekje?
+[4] Yunchung: Your Majesty does. / On paper.
+[5] King Euija: Ha! And off paper?
+[6] Yunchung: Off paper, the Rock does. And whoever rubs the brine on it. / The eight houses pick the Premier, the Premier picks the ministers, and the ministers send me the grain late. They pay my men. My men know it.
+[7] King Euija: So. How does a king get his country back off the Rock without a war at home?
+[8] Yunchung: With a war abroad, Majesty. / A king who wins a fortress owns the men who took it. The clans can’t vote on a victory. They can only show up to the feast.
+[9] King Euija: Plainly put. / I like a man who says the ugly thing without a cushion under it. Even when he’s sitting on mine.
+[10] ¶ It is the first time in the reign that Euija says what he has decided before the Assembly hears it. By spring the Assembly will hear it anyway, in the form of a question he has already answered.
+[11] ── SCENE: The Assembly ──
+[12] ¶ By spring the Assembly is fighting about harbours, as it always is. Gyebek sits through three sessions. He understands every number and none of the smiles.
+[13] King Euija: Enough. / You can count berths when the frontier is settled. / Until then, the Eraha counts fortresses.
+[14] ¶ Euija has already decided. Now the clans have to believe it was their idea.
+[15] [CARD Satek Chunbok: A young Satek with good manners and a quick eye for an opening.]
+[16] Satek Chunbok: As Your Majesty well knows, / the will of the Rock is the will of Heaven. / The eight houses decide it together.
+[17] King Euija: Heaven…? Ah — the invisible committee.
+[18] Baekje: Restore the reign of the thirteenth Eraha…! / The thirteenth Eraha…! Ten thousand years!
+[19] King Euija: Do you know what a country is? / **A country is a territory governed by a single story.** / Why are we Baekje people, and not Goguryeo or Silla people? We look exactly the same. / Anywhere in Baekje, everyone knows the founders. / Speak of King Onjo — that is Baekje. / So the king makes the story. / Let us make an interesting one…!
+[20] King Euija: Goguryeo is too large to move. / Silla is too old to surprise anybody.
+[21] Satek Chunbok: The present king of Silla is a woman who cannot command an army, / and even within her country, the people’s hearts are unsettled. / Seize this opening, take a border fortress, and the great work will be within reach.
+[22] Sungchung: Your Majesty — is this the country you mean to hand the princes?
+[23] ¶ Gyebek steps forward. Nobody asked him to.
+[24] King Euija: No, Gyebek… not you. / Why use an ox-cleaver to kill a chicken?
+[25] Gyebek: Your Majesty. Does that mean you will not use me, or that you are saving me?
+[26] King Euija: …It means I am saving you.
+[27] Gyebek: Then say that. I do not follow figures of speech.
+[28] ¶ The Assembly finds him rude, which misses the point by a courtyard’s width. All he wants — every single time — is the sentence handed over with nothing folded inside it, and nobody at that court has spoken that way in their lives.
+[29] King Euija: A border fortress… / That too is good. / I have one in mind.
+[30] King Euija: In truth… the people of this country need a new story. / They have lived in the old one long enough.
+[31] King Euija: There was a time we were the greatest power in Samhan. / The thirteenth. He led armies into the heart of Pyongyang. / Then came the Severing. / After that, Baekje was a fraction. The name stayed. The size did not. / And then heaven, helpful as always, sent signs. A new king, meant to save us. / The thirty-first. Great King Euija.
+[32] [MAP 641: The thirteenth’s Baekje, and what is left of it.]
+[33] Gyebek: What is the Severing.
+[34] King Euija: You said you do not follow figures of speech. / This is not one. It is the Severing. / Today we only have to tell it.
+[35] King Euija: Baekje… is in crisis! / Then we make the crisis.
+[36] King Euija: We take back the Silla frontier.
+[37] [MAP 641: Daeya. The last wall between Baekje and the Silla capital.]
+[38] ¶ You’ve been to Daeya. You waved a cart into it.
+[39] Yunchung: Then Silla’s finished at Daeya. Plain and simple.
+[40] King Euija: Ha! Then go and finish it, General. Ten thousand men. / Bring me back the fortress. And a story to go with it.
+[41] Yunchung: Daeya by autumn, Majesty.
+[42] ¶ The hall empties. Gyebek does not.
+[43] Gyebek: Majesty. The Severing. / You said it is not a figure of speech. Then it is a fact. I do not know it. / Men will ask me why we march. I want to answer with a fact.
+[44] King Euija: Ha! A man who wants his war with the ledger attached. / Ask any grandmother in Sabi. They tell it better than I do. I add dragons.
+[45] ¶ **“What is the Severing?” Gyebek asked. Any grandmother in Sabi could tell him. We’ll go back a hundred years and see for ourselves…!**
+
+=================================================================
+#20 The Severing  (553–554 flashback)  [FLASHBACK EPISODE]
+Arc: The Five Principles · place: gwansan · tone: fairy-tale legend, dark
+Logline: The sad thing about betrayal… is that it never comes from your enemies.
+=================================================================
+[0] ¶ The sad thing about betrayal… is that it never comes from your enemies.
+[1] ¶ Gyebek finds the chestnut seller at the west gate of Sabi. She is not his grandmother. She is everybody’s, and she has waited her whole life for a soldier to ask.
+[2] Gyebek: What is the Severing. / His Majesty said any grandmother could tell it.
+[3] A Sabi grandmother: Any grandmother? Hmph. Sit, then. Eat a chestnut. You’re too thin to march. / It starts with a river, and a friend. They always start with a friend.
+[4] Gyebek: How long ago.
+[5] A Sabi grandmother: A hundred years. My grandmother’s grandmother sold chestnuts at this gate when the news came. / She said the whole city went quiet, like snow. Nobody bought a thing all day.
+[6] [TERM The Severing (斷): For a hundred and twenty years Baekje and Silla kept one rule: when Goguryeo comes south, we stand together. Baekje calls the day that rule broke the Severing. Silla doesn’t call it anything. Winners rarely name things.]
+[7] [MAP 554: Two kings took the river together. One of them kept it.]
+[8] ¶ Two kings take a river back together: Seong of Baekje and the Cloud King of Silla. For a while their banners fly side by side. Then the Cloud King turns his army on Baekje’s half. He takes the river mouth and fills it with men who won’t ask what the alliance meant.
+[9] ¶ King Seong feels the cut in the marrow. He calls in everyone who still owes him: the last Gaya houses, a boatload of soldiers from the islands. Then he marches on the fortress that opens Silla's throat.
+[10] [battle]
+[11] [CARD King Seong: Baekje’s king. He has lost a river, and he means to get it back.]
+[12] [PLACE gwansan: Every road into Silla’s valley squeezes through here.]
+[13] ¶ For months the fight goes Baekje’s way. The crown prince holds the forward camp, half-starved; his men are boiling their saddle leather. One night his father rides out with fifty horse to steady him.
+[14] [battle]
+[15] ── SCENE: The Night Road ──
+[16] ¶ Silla’s ambush is waiting. The road to the prince is a ditch that was not there at dusk. Fifty horse stop, because the torches coming up the bank are the wrong color.
+[17] [battle]
+[18] ¶ On the ridge, the Cloud King’s hand drops. That is the signal. He has already said the rest, low, to the only man the rank will allow to finish it.
+[19] King Jinheung: You. A slave. / He is a lord with a name. / A slave does the cutting. So later mouths cannot forget it.
+[20] ¶ A man in a Gaya cone helm is already down in the cut. He wears Silla's commission over it. His cone cuts the night ridge. He does not draw. He watches.
+[21] King Seong: Gaya…? / A prince of Geumgwan — on this road, tonight, why.
+[22] Kim Muryuk: Military governor of Sinju. / Sit.
+[23] ¶ They sit him on a camp stool. Out of the cone’s shadow a man kneels twice, the way you kneel to a king, and asks.
+[24] [CARD Dodo: A slave in the Silla camp. Remember the name; the annals almost didn’t.]
+[25] Dodo: …I’m asking. / Let me take the head.
+[26] King Seong: What. / A slave’s hand— no. A king’s head does not take a slave’s hand.
+[27] Dodo: If you broke the oath. / Even a king… takes it. I was told.
+[28] ¶ Which oath, and whose, nobody on the ridge asks.
+[29] Kim Muryuk: Dodo.
+[30] King Seong: Every time I think of it… / It went into the marrow. / I cannot live on in disgrace.
+[31] ¶ He looks up. The breath that leaves him is not another sentence. He unfastens his own knife, gives it to the kneeling man, and puts his neck out.
+[32] ¶ The ditch takes the head. **Dodo** does the work the rank will not put on a prince’s hands. The record almost forgets the slave. Silla keeps the skull under the steps of the north hall, names the hall the capital court, and sends the rest of the bones home.
+[33] [battle]
+[34] ¶ The chestnuts have gone cold. Gyebek has not eaten his.
+[35] A Sabi grandmother: That’s the Severing. Silla keeps his skull under a staircase and walks on it every morning. / So. Now you know why you march.
+[36] Gyebek: That is a fact. Thank you. / Silla broke the oath. The slave said Seong did. / I will remember which.
+[37] A Sabi grandmother: Remember which. Most people only remember the stool.
+[38] ¶ A hundred years on, Baekje has not forgiven the cloud that emptied itself over its side of the river. The grandmothers tell it with chestnuts. Euija tells it with dragons. Either way, ten thousand men are about to march on it.
+[39] ¶ **Ten thousand Baekje men march on Daeya. Its grain clerk is called Gumil. Remember that name…!**

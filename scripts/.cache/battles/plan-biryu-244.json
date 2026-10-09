@@ -1,0 +1,5 @@
+[
+	{ "episode": 33, "battle": "biryu-244", "phase": "yangmaek", "after": { "kind": "p", "text": "Four hundred years back, King Dongcheon" } },
+	{ "episode": 33, "battle": "biryu-244", "phase": "square", "after": { "kind": "p", "text": "So the king took five thousand horse" } },
+	{ "episode": 33, "battle": "biryu-244", "phase": "hwando", "after": { "kind": "p", "text": "Hwando is burned." } }
+]

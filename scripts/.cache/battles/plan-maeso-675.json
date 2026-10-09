@@ -1,0 +1,5 @@
+[
+	{ "episode": 95, "battle": "maeso-675", "phase": "camp", "after": { "kind": "p", "text": "The army at Maeso is mostly Mohe" } },
+	{ "episode": 95, "battle": "maeso-675", "phase": "pickets", "after": { "kind": "p", "text": "The worst stretch of the line is under the walls" } },
+	{ "episode": 95, "battle": "maeso-675", "phase": "rout", "after": { "kind": "p", "text": "Horses are the thing." } }
+]

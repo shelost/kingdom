@@ -1,0 +1,341 @@
+{
+  "slice": 1,
+  "range": "#1–#9",
+  "episodes": [
+    {
+      "n": 1,
+      "title": "Queen Sunduk",
+      "logline": "Princess Dukman, picked overnight by a council that hates the word 'woman', is crowned Queen Sunduk, gives up Yushin with a single 'Yushin-ah', and wins her court by reading the Second Emperor's scentless peonies. Around her crowd Chunchu's family, his boyhood vow to make 'one king for all' of Samhan, and four foreign kings' sneers.",
+      "scores": { "followable": 2, "context": 2, "pacing": 2, "flow": 2, "entertainment": 3 },
+      "verdict": "Rebuild the front door around Sunduk: introduce her first, put 'Ridiculous' and the crowning on the page, and cut the cast to about six names so the Yushin romance and the 'king for all' vow can land.",
+      "opening": "'A Queen? Ridiculous.' A good provocation, but nobody on the page says or acts on it until the foreign kings at [72]–[83]. Block [4] is a file-card intro of Munhee having her hair done, the reader learns why there is a coronation at all only at [23], and the queen herself first appears, unintroduced, as a speaker at [29].",
+      "ending": "The peony reading [77]–[81] is a real payoff ('She knows she simply reads people'), though Jomei's trend joke and the hanja gloss trail after it. The card ('Six men who hate the word “woman” crowned one anyway. How?') is strong and points exactly at #2.",
+      "sudden": [
+        { "block": "4–17", "what": "Three children with two counts: baby Inmun (3), then 'their two children', then Bupmin and Gotaso, whose card calls her 'Chunchu's daughter', not Munhee's.", "setup": "none", "fix": "Cut Inmun's name (he doesn't matter until #48); say 'their son Bupmin and Chunchu's daughter Gotaso' once." },
+        { "block": "10", "what": "'His father and uncle' on the hill: the uncle is Yushin, who isn't introduced until [34] and [39].", "setup": "none", "fix": "Name him here: 'his uncle Yushin, Munhee's big brother'." },
+        { "block": "11–12", "what": "Bupmin's 'people with no bones' joke lands before bone rank is explained.", "setup": "only afterwards, at [24]–[25]", "fix": "Move the Bone Rank card ahead of the hill scene." },
+        { "block": "29–30", "what": "The title character speaks before she is introduced, then the narration calls her 'Dukman'. The text never says Dukman becomes Sunduk; the reader has to match the ages at [30] and [38].", "setup": "none", "fix": "Before her first line: 'Dukman, thirty-seven, who will be Queen Sunduk by noon.'" },
+        { "block": "34", "what": "Yushin answers 'I wonder whether I can do it at all' with 'that is what “no matter what” means', a callback to a phrase nobody said.", "setup": "none", "fix": "Give her the phrase in [33], or cut the clause." },
+        { "block": "38", "what": "Office table naming Chunchu 'Crown Prince' (never mentioned before, and #2 [13] says he is barred as a Noble) and 'High Councillor Euljé', who never appears again in the book.", "setup": "none", "fix": "Cut the table." },
+        { "block": "62", "what": "Bidam ('the yard's Second Blade') and Pumsuk (14) are named in passing during the pledge.", "setup": "none", "fix": "Cut Pumsuk; Bidam gets his real entrance in #2 [17]–[19]." },
+        { "block": "75", "what": "'The Second Emperor' speaks with no card and no country, and calls for someone named Wu.", "setup": "none in this slice; his character card first appears at #30", "fix": "Card him here as the emperor of Tang and cut 'Wu!'. He is the threat that will bind all three kingdoms; the reader should meet him properly." }
+      ],
+      "pacing_notes": [
+        { "blocks": "3–21", "issue": "Three domestic scenes (hair, the hill, the palace road) before any conflict, any queen, or any word that the old king has died. The banter is charming, but the reader doesn't know what day it is or why it matters.", "fix": "Merge into one short scene on the way to the hall, with Sunduk in it." },
+        { "blocks": "23–40", "issue": "The dead king, a bone-rank lecture with four Korean colour glosses (자색, 비색…), three daughters' names and ages, the coronation in one sentence [35], a quote, an office table and two cards. The episode's main event is buried under homework.", "fix": "Keep the Bone Rank card and 'the sleeves are the census'; cut the colour list, [37] and [38]; give the crowning three lines of scene." },
+        { "blocks": "46–47", "issue": "The 612 'king for all' flashback cuts into the romance at its peak and shifts focus from Sunduk to Chunchu.", "fix": "Move it to the hill scene [10]–[14], which is already 'the hill where adults invent countries'; the romance can then run [42]–[60] unbroken." },
+        { "blocks": "69–86", "issue": "A roll call of four foreign rulers (King Mu, Youngryu, the Second Emperor, Jomei) in fourteen blocks, then a hanja gloss after the card-worthy peony beat.", "fix": "Keep King Mu (he returns in #4) and the peonies; cut Youngryu and Jomei, or fold them into one narrator line." }
+      ],
+      "flow_notes": [
+        { "blocks": "7→16", "issue": "Chunchu is 'dressing' at [7], on the hill at [10], then rides the palace road 'before they dress for the hall' at [16].", "fix": "One place, one order." },
+        { "blocks": "41→57", "issue": "The scene is 'The Yard', but she blames 'the lamp' [45] and 'nobody in the room hears it' [57].", "fix": "Pick yard or hall." },
+        { "blocks": "61→68", "issue": "Pledge, chant, an unattributed market woman whose stage direction reads as a spoken line, then image-prompt fragments ('Blue banners. A moon no one has to point at.') and Cheomseongdae, which never returns.", "fix": "Cut [66]–[68]." }
+      ],
+      "romance": "The best writing in the episode, and it is played, not told: the maids' chorus [43]–[44], her blush at his bare back [45], 'Look at me. Not the door.', then 'Once.' / 'Once what.' / '…Yushin-ah.' [53]–[56], and her choice to shut the door: 'So from now on — «Your Majesty». Nothing else.' [60]. Desire, an obstacle and a costly choice are all there, and [57] (he will still hear it on the day he dies) is a perfect future-told-as-memory. What's missing: we have known both of them for minutes, so there is little to lose; his feeling is told at [39] ('everyone notices'); the obstacle (why a queen can't have him) is only implied by [58]; and the 612 flashback interrupts at the peak. One earlier exchange where the pull is visible (expand [33]–[34]) would make [60] hurt. The thread then goes dark until #13.",
+      "battle": null,
+      "suspense": "The episode's own question (will a 'ridiculous' queen hold?) is answered almost at once by the peonies, so the pull comes from plants: the boys' vow [47.5], 'the last time in forty-one years' [57], and the card's 'How?'. Bupmin's 'I'm following. That's different.' [20] pays off nicely at #10 [28]. Euljé [38] and Cheomseongdae [67] never fire anywhere in the book; Wu and Inmun wait 30–50 episodes.",
+      "best": "'…Once.' / 'Once what.' / 'Call me by name, not by title.' / '…Yushin-ah.' [53]–[56]",
+      "worst": "[23]–[40]: the crowning, the main event, is one sentence [35] inside a lecture, a quote, an office table and two cards.",
+      "fixes": [
+        "Start with Sunduk and make 'Ridiculous' a scene: she is being dressed while an elder outside the screen says it, and she answers. Crown her on the page in three lines instead of [35]'s summary.",
+        "Cut the cast to about six names (Sunduk, Yushin, Chunchu, Munhee, Bupmin, the Second Emperor): drop Inmun [4], the colour glosses [26], Euljé and the table [38], Pumsuk [62], the market woman and Cheomseongdae [66]–[68], Wu [75], Youngryu and Jomei [73]–[83].",
+        "Plant the book's two engines clearly: move the 612 vow [47] onto the hill scene [10]–[14], and card the Second Emperor at [75] as the emperor of Tang."
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Harmony Council",
+      "logline": "The night before the crowning, six Silla nobles must all agree on Princess Dukman; the room splits 3–3 on the word 'woman' until the youngest, Bidam, stands up, Yushin backs him and the old tiger-killer Alchun raises the last hand. A flashback shows Chunchu learning, at nine, to stay out of rooms like this one.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "Spend the words on the argument, not the rules: tell the unanimity rule once, then dramatize the 'no' votes turning, which now happens off-page between [22] and [27].",
+      "opening": "No hook line: it opens on a scene header and 'The Harmony Council meets to debate who the next king should be' [1], a textbook sentence. The logline ('Six nobles. One brazier. Nobody stands up until they all agree.') is the hook and should be block 0.",
+      "ending": "The Yushin–Bidam '108 apiece' banter [31]–[33] is a warm, specific button that plants a rivalry the Bidam arc picks up. The card then announces a jump to a dead king the reader has no reason yet to want.",
+      "sudden": [
+        { "block": "13", "what": "'Prince Chunchu' is ruled out because his father is a Noble. The reader isn't told his mother is Chunmyung, one of the three royals listed in #1 [30], and #1's table [38] has just called him Crown Prince.", "setup": "#1 [30] lists Chunmyung without linking her to Chunchu; #1 [38] contradicts this", "fix": "Say 'Chunmyung's boy' here, and cut 'Crown Prince' from #1's table." },
+        { "block": "20–24", "what": "Four councillors (Murim, Imjong, Suljong, Yumjang) speak one line each with no introduction and never return in the slice. With Yushin, that's seven speakers in a 'six-man' council.", "setup": "none (Murim, Imjong and Suljong are next named at #40; Yumjang never)", "fix": "Keep one named holdout with a face (Suljong) and make the rest 'the old man by the brazier'; say whether Yushin votes or stands at the wall." },
+        { "block": "30", "what": "A Lotus Sutra passage (a dragon girl becoming Buddha), tagged to Bidam, with no context. His Buddhism isn't established yet.", "setup": "none", "fix": "Cut it, or let Bidam say its last line inside his speech at [19]." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–11", "issue": "The rule (unanimous; one dissent stops it) and the 3–3 split are told six times: narration [1], term card [2], narration [6], quote [7], narration [8]–[9], diagram [10], Alchun [11].", "fix": "Keep the term card [2], the blue brazier [3]–[4] and the pieces on the mat [9]; cut [7], [8], [10], [11]." },
+        { "blocks": "20–27", "issue": "The actual deliberation is six lines. Suljong says 'I still… cannot raise my hand' [22]; five blocks later all six pieces are on the yes side [27], and nothing on the page turns him.", "fix": "Add the turn: Suljong moves his piece after Alchun's tiger line, or Bidam names what Suljong is afraid of." },
+        { "blocks": "26–30", "issue": "Three records in five blocks after the vote: a long tiger quote, a 6–0 diagram and the Lotus Sutra.", "fix": "Keep the tiger quote (it pays off Alchun's line); cut [28] and [30]." }
+      ],
+      "flow_notes": [
+        { "blocks": "13→14→15", "issue": "The vote stops for a seven-block flashback, then resumes with unattributed council voices written as narration ('How about the Kim of Gaya…?', 'The woman king, finally we shall see…'), so nobody knows who is talking.", "fix": "Give [13], [15] and [16] speakers, and end the flashback on a present-tense beat (Chunchu outside the pavilion, not in the room)." },
+        { "blocks": "22→27", "issue": "The swing votes flip with no cause on the page, so the climax is a gap.", "fix": "See pacing note: dramatize the one holdout." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Weak by design: #1 already showed the crowning, so the only question is 'how', and the answer is thin. The real pull is the flashback [14]: a father who builds goblin bridges and tells his son 'Wherever the room has to come to you.' That motto never comes back anywhere in the book. The 108-wins rivalry [31] is a good plant that pays off in the Bidam arc.",
+      "best": "Kim Yongsu: 'That room eats the men who amuse it.' … 'Wherever the room has to come to you.' [14.4]–[14.6]",
+      "worst": "[6]–[11]: the same rule and the same 3–3 count, told by narrator, record, diagram and character in a row.",
+      "fixes": [
+        "Cut the rule's repeats ([7], [8], [10], [11]) and spend the space on the flip: let Suljong, the one named holdout, move his piece on the page after Alchun's tiger line.",
+        "Fix the cast: name only the holdout and Alchun, settle whether Yushin votes, and tie Chunchu's royal mother to #1's 'Chunmyung'.",
+        "Open on the logline line, and give Kim Yongsu's motto a present-day echo (Chunchu waiting outside, letting the room come to him) so the best plant in the episode has somewhere to go."
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Jinheung, the Cloud",
+      "logline": "A fireside portrait of Silla's Cloud King, decades dead: crowned at seven, he marked his conquests with plain stones, invented the Hwarang yard that raised every man on the Council, and died a monk. The old men admit his 'shade' fell on Baekje.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 2 },
+      "verdict": "Turn the biography into one scene (the old men after the wine could carry it all) or fold it into #2 as a short flashback; as written it's a wiki page with a great first line.",
+      "opening": "'Ask anyone in Surabol about the Cloud King and they'll tell you about his stones.' Then Sabi changes the subject. A real hook, the best opener in the slice after #4's, though 'Sabi' means nothing until #4, and 'You'll find out why. Not yet.' tells the reader this episode won't pay it.",
+      "ending": "The elder's 'A cloud never asks whose field it's raining on' [18] is a good button, and the card ('Baekje kept the grudge. Now meet the prince who will inherit it') is the best bridge in the slice. But #4 never mentions the grudge.",
+      "sudden": [
+        { "block": "0", "what": "'Sabi', Baekje's capital.", "setup": "none until #4 [5]", "fix": "'Ask anyone in Baekje', or accept it as a tease." },
+        { "block": "5–6", "what": "'The Herald' reads Jinheung's stones in the 500s. The same chorus label is King Mu's herald in #4 (632) and a Silla voice in #9 (400).", "setup": "none", "fix": "Call him 'a scribe' here and 'a Silla elder' in #9." },
+        { "block": "11", "what": "Gwanchang and Wonsul in a seven-name list; the reader won't meet them for 60+ episodes.", "setup": "none", "fix": "Cut to the four names the reader knows." }
+      ],
+      "pacing_notes": [
+        { "blocks": "4–13", "issue": "No scene: narration, two record quotes ([7] a long stele text, [12] a Hwarang annal), the Hwarang explained twice (narration [8]–[9], then term card [10]) and a name list.", "fix": "Cut [12]; trim [7] to its ironic last line ('Neighbouring countries swore good faith'); keep [10] and drop the overlap in [9]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#2→#3", "issue": "The jump is announced ('Back we go, to the Cloud King') but unmotivated. The reader has just met the living leads and wants the queen's first day.", "fix": "Make a character raise him in #2 (Alchun or Yushin invoking 'the old king's yard' during the vote)." },
+        { "blocks": "#3→#4", "issue": "The card promises 'the prince who will inherit' Baekje's grudge against Silla; #4 never mentions Silla or a grudge.", "fix": "Add one Silla line to #4 (see #4 flow note), or retarget the card to the clans." }
+      ],
+      "romance": null,
+      "battle": "No battle on the page. Jinheung's conquests are one sentence [2], and the betrayal 'afternoon' at Gwansan is deliberately withheld (it opens at #20). Fine as a tease, but nothing replaces it: the episode has no conflict at all.",
+      "suspense": "Two plants: 'right up until the afternoon he wasn't' [an ally] [2] and Sabi changing the subject [0]. Both pay off at #20 The Severing, seventeen episodes later, which is a long way for a first reader to carry two lines.",
+      "best": "'A cloud never asks whose field it's raining on.' [18]",
+      "worst": "[7]–[12]: a long stele quote, the Hwarang explained twice and a second quote, with no person in sight.",
+      "fixes": [
+        "Give it a scene: let the old men 'after the wine' [14]–[18] carry the whole episode, with the stones, the yard and the monk's robe told as their gossip.",
+        "Cut the Hwarang annal quote [12] and the two unknown names in [11].",
+        "Or fold the episode into #2 as a five-block flashback when someone mentions the old king's yard."
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Prince Euija",
+      "logline": "Thirty-two-year-old Prince Euija has five days to field a champion who belongs to no clan. Slumming by the river, he finds a nameless eel boy diving for a noble's sunken incense burner to keep his word, nearly drowns saving him, and names him Buyeo Gyebek on the sand.",
+      "scores": { "followable": 5, "context": 5, "pacing": 5, "flow": 5, "entertainment": 5 },
+      "verdict": "The model: leave it alone. The one fix belongs outside it, honouring the Silla grudge the previous card promised.",
+      "opening": "'In five days, Prince Euija becomes Crown Prince Euija.' A clock, a character and a joke ('fifteen sons, which is early for everything else') in three sentences.",
+      "ending": "Gyebek looks up at the royal seats and 'the crown prince is already looking at him' [117]: the bond lands without a word. The card ('Eight houses. Eight boys on the sand. And one with a borrowed name…!') promises a fight on the sand.",
+      "sudden": [],
+      "pacing_notes": [],
+      "flow_notes": [
+        { "blocks": "#3→#4", "issue": "#3's card sends the reader here to meet 'the prince who will inherit' Baekje's grudge against Silla, but #4 never mentions Silla, the grudge, or Silla's new queen, crowned the same year.", "fix": "One King Mu line in the hedge scene [14]–[18], e.g. Surabol has crowned a woman and his heir is in a hedge. That ties the pilots together without slowing anything." }
+      ],
+      "romance": "Not a romance, but the Euija–Gyebek bond does a romance's work: a want, an obstacle, a rescue, and a choice that costs something ('Do you like the name, or do you like me?' [111.8]).",
+      "battle": null,
+      "suspense": "A ticking clock on two levels (the empty ninth place on the sand; the boy's five days) plus 'how can he get it back?'. Every plant fires inside the episode: the stolen crown [96]→[111.0], the floorboard joke, 'I gave my word', the deer. Samsin's joke [3] becomes a goddess in #8, and the borrowed royal surname is a long fuse.",
+      "best": "'How many times have you gone in?' 'Nineteen.' … 'At twenty I would not come back out.' [67]–[70]",
+      "worst": "Barely anything: [116]'s montage recaps lines from minutes earlier, a manhwa habit that prose readers may skim.",
+      "fixes": [
+        "No changes inside the episode beyond the one Silla line in [14]–[18], so #3's card is honoured and Baekje's pilot touches Silla's.",
+        "Optional: trim the [116] recap montage."
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Eight Great Clans",
+      "logline": "On the crown prince's day the eight Baekje houses settle nothing with wooden swords and wrestling, and Gyebek pins the Jinmo boy. In the Assembly, the Satek and Yunbi elders trade insults about blood and harbours, as they have for four generations.",
+      "scores": { "followable": 2, "context": 2, "pacing": 2, "flow": 2, "entertainment": 2 },
+      "verdict": "Open on the sand and dramatize Gyebek vs the Jinmo boy with Euija watching; cut the nine term cards to one and fold the clan fighting styles into the bouts.",
+      "opening": "'Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.' A drumroll that echoes #4's card, but it's followed by a quote listing eight different names [2] and nine term cards [3]–[11]. The hook turns into homework before anything happens.",
+      "ending": "It trails off. The levy anecdote [52] ends 'He never explained', never fires anywhere in the book, and is hard to parse: if both houses agreed to kill the levy, why does Satek killing it shock anyone? The card leans on a chant nobody has chanted on the page.",
+      "sudden": [
+        { "block": "2", "what": "A Sui Shu quote lists the eight clans under different names (Sa, Yeon, Hyeop…) from the ones the narrator just gave. 'Yeon' will be the Goguryeo commander's surname two episodes later.", "setup": "none", "fix": "Cut the quote." },
+        { "block": "14", "what": "'The same quarrel as the west bridge': the west bridge is only mentioned at [43].", "setup": "none", "fix": "Cut the clause, or move the bridge gossip ahead of the sand." },
+        { "block": "15", "what": "'The berth talks stop for a month': berths aren't explained until [38].", "setup": "none", "fix": "'The harbour talks', or move [38] up." },
+        { "block": "29–33", "what": "A 654 stele quote about a man grieving his days, then four empty speaker captions in a row (Elder Satek, Minister Satek, Queen Satek, Satek Chunbok). The reader can't tell whether the Elder and the Minister are the same man.", "setup": "none", "fix": "Cut [29]–[33]." },
+        { "block": "53", "what": "'Restore the reign of the thirteenth Eraha!' — 'every house in Sabi still chants it', but nobody did in #4 or #5, and 'Eraha' is unglossed.", "setup": "none", "fix": "Plant it at [25]: the yard chants it when the crown prince rises. Gloss Eraha once." }
+      ],
+      "pacing_notes": [
+        { "blocks": "2–11", "issue": "A quote and nine term cards (one per clan) before any scene. Only five clans matter in the episode; Mokli, Baek and Ahn never come back in it.", "fix": "Keep the Eight Great Clans card [3]; turn the Hae and Guk styles ([8], [10]) into lines in the bout [21]; cut the rest." },
+        { "blocks": "24", "issue": "The payoff of #4 (Gyebek against the boy who swore to kill him) is four sentences of summary, with no dialogue and no Euija beat beyond 'is on his feet' [25].", "fix": "Make it the climax: ten blocks, the Jinmo boy talking, Gyebek silent, the grip that won't let go, Euija rising, the yard." },
+        { "blocks": "28–38", "issue": "Textbook narration [28] that repeats card [4], the unrelated stele quote, four captions, the Rock card and an Assembly diagram: a second explainer pile.", "fix": "Cut [28]–[33] and [36]; keep [34], [37] (the nice comparison with Silla's council) and [38]." },
+        { "blocks": "39–48", "issue": "The elders trade position statements twice ([39]–[40], [45]–[48]); 'the king's sleeve' appears for the fifth time and 'rolled in from the north' repeats card [5].", "fix": "One exchange, sharpened, ideally with one of them losing." }
+      ],
+      "flow_notes": [
+        { "blocks": "21→22–23", "issue": "After a Hae–Guk bout, Elder Satek taunts Yunbi and Elder Yunbi says 'your boy's knee touched first', but no Satek or Yunbi boy wrestled.", "fix": "Make the wrestlers a Satek and a Yunbi boy." },
+        { "blocks": "42–44", "issue": "'The West Bridge' scene is one line of gossip, then 'Back on the rock'.", "fix": "Drop the scene header; keep the gossip as a beat inside the Assembly." },
+        { "blocks": "#5→#6", "issue": "The card invents the chant and the excuse for a three-century flashback in one breath.", "fix": "Plant the chant earlier (see [53])." }
+      ],
+      "romance": null,
+      "battle": "The clan tournament is the slice's only on-page fighting. The sword bout [18]–[19] and the Hae–Guk throw [21] have good physical detail ('the way a dock goes quiet when a rope snaps'), but nobody we know is fighting and the scoring is opaque ('Point to the white sleeve', when every fighter wears white). The one bout with stakes, Gyebek against a boy who threatened his life in #4 [50], is summarized at [24]. Dramatize that one and cut the others to a line each.",
+      "suspense": "None inside the episode: every bout's result is told, and the Satek–Yunbi feud is presented as permanent ('Neither house has ever won' [49]). Plants: Satek's unexplained thumb [52] (never fires); the chant [53] (fires at #18–#19).",
+      "best": "'Nobody alive can say what started it. Everybody alive can list the last six things.' [41]",
+      "worst": "[2]–[11]: a quote plus nine term cards straight after the book's best episode, before a single scene; and Euija, the hero of #4, has no lines in the whole episode.",
+      "fixes": [
+        "Open at [13] on the sand and make Gyebek vs the Jinmo boy [24] a full scene with Euija reacting (and speaking). It's the payoff #4 promised.",
+        "Cut [2], [4]–[7], [9], [11], [28]–[33] and [36]; fold the Hae and Guk styles into the bouts.",
+        "Fix the logic slips: the taunts after a Hae–Guk bout [22]–[23], 'the white sleeve' [19], the levy anecdote [52]. Plant the Eraha chant before the card uses it."
+      ]
+    },
+    {
+      "n": 6,
+      "title": "Gunchogo, the 13th",
+      "logline": "Three centuries back, Baekje's thirteenth king marches north and a Goguryeo king dies on his own wall. Baekje has chanted about it ever since, and Goguryeo has remembered it differently.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 2, "entertainment": 2 },
+      "verdict": "Either dramatize the king dying on his own wall (one Goguryeo soldier's eyes, one arrow) or fold the episode into #5 as two paragraphs; two annal entries of the same death are not an episode.",
+      "opening": "'A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.' Strong and plain, Orwell-style; then [3] and [4] repeat it twice as annal entries.",
+      "ending": "[9] is the best line ('It is the sentence that gets Daeya burned'), a sharp tease. The card's 'Back to the snow' points at a place the reader has never been, but its traitors question hooks neatly into #7 [4].",
+      "sudden": [
+        { "block": "1", "what": "The card spells him 'Geunchogo'; the title says 'Gunchogo'.", "setup": "n/a", "fix": "Pick one spelling." },
+        { "block": "7", "what": "A Nihon Shoki quote about a seven-branched sword and a mirror sent east, with no context and no character attached.", "setup": "none; it pays off only at #77, 71 episodes later", "fix": "Cut it, or add one line saying why the reader should remember the sword." },
+        { "block": "8", "what": "'Eraha' unglossed, with 'Baekje' itself as the speaker.", "setup": "#5 [53], also unglossed", "fix": "Gloss once: the old word for king." }
+      ],
+      "pacing_notes": [
+        { "blocks": "3–7", "issue": "57% records in 315 words. Two Samguk Sagi quotes [3]–[4] tell the same death back to back, then the Nihon Shoki quote [7].", "fix": "Keep one quote (the Goguryeo side, [4], is more poignant); cut [3] and [7]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#5→#6", "issue": "The jump is motivated only by a chant the previous card introduced.", "fix": "Plant the chant in #5." },
+        { "blocks": "#6→#7", "issue": "'Back to the snow': there has been no snow. This is the first visit to Goguryeo's present, and the year jumps from 632 to 634 with no bridge.", "fix": "'North, to the snow…', plus a time cue early in #7 ('two winters after Silla crowned its queen')." }
+      ],
+      "romance": null,
+      "battle": "A king killed by a stray arrow on his own wall is a great battle image, and it is told only as two annal entries [3]–[4]. No POV, no geography, no plan, no reversal, no cost felt by anyone. If the episode stays, give it one person on that wall.",
+      "suspense": "Two good forward hooks in [9]: 'a clever king who has already decided that a country is a story' (Euija on the throne) and 'the sentence that gets Daeya burned' (#23–#24). The seven-branched sword is planted 71 episodes early.",
+      "best": "'It is the sentence that gets Daeya burned.' [9]",
+      "worst": "[3]–[7]: three quotes in five blocks, two of them telling the same death.",
+      "fixes": [
+        "Fold into #5's ending as a two-paragraph flashback (the chant, the king on his wall, 'Goguryeo remembers it too'), or dramatize the wall from one Goguryeo soldier's eyes.",
+        "Cut quotes [3] and [7]; gloss 'Eraha' once; settle the spelling of the king's name.",
+        "Change the card's 'Back to the snow' to 'North, to the snow'."
+      ]
+    },
+    {
+      "n": 7,
+      "title": "Commander Yeon",
+      "logline": "Yeon, the feared commander of Goguryeo's eastern frontier, executes a traitor and adopts a Mohe orphan he names Gulgul, precisely because the boy will one day stand against him. Then his father hands him the family seat at the capital's summit with one order: 'say half of what you think'.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "Strong character, muddled first half: open on the logline, run the traitor interrogation once and in order, and cut two of the three wall records.",
+      "opening": "'In the high mountains of Manchuria, a young man is caught in the snow by a Goguryeo soldier.' A setup sentence, not a hook, with a modern place name. The header's logline ('None of them are bedtime stories') is the hook and isn't on the page.",
+      "ending": "The father–son exchange lands ('Half, son. Half.' [43]), and the card ('He promised his father half. He has never said half of anything.') is the best in the slice.",
+      "sudden": [
+        { "block": "8", "what": "'The Tang' appears for the first time, as a power that flattened Goguryeo's bone mound. Nothing links it to the 'Second Emperor' who mocked Silla's queen in #1.", "setup": "#1 [75]–[80] has the Second Emperor with no country", "fix": "One clause: the same empire whose emperor sent Silla's queen scentless peonies." },
+        { "block": "12–13", "what": "The prisoner's 'I have… no name' copies Gyebek's line from #4 [77] word for word, with no signal whether the echo is meant; Yeon's reply ('The barbarians always show more respect') is opaque.", "setup": "#4 [77]", "fix": "Make the echo pay off (Yeon: 'Then nobody will miss it.') or change the line; rewrite [13] so it means something." },
+        { "block": "15", "what": "'A month before the Summit': the Summit isn't introduced until [38]–[44] and #8.", "setup": "none", "fix": "'A month before the summons'." },
+        { "block": "2–6", "what": "Four handles for one man in six blocks: Commander Yeon, the Eternal General, Yeon Gesomun (card) and the Red Sun of Pyongyang.", "setup": "n/a", "fix": "One epithet in this episode; save the other for a rumour later." }
+      ],
+      "pacing_notes": [
+        { "blocks": "7–10", "issue": "Three record quotes in four blocks. [9] and [10] retell the wall paragraph [8] (bone mound, thousand li) nearly word for word.", "fix": "Keep [8], the house's own model paragraph; cut [9] and [10]. [7] can stay for 'born in water'." },
+        { "blocks": "29–37", "issue": "Gulgul's whole life (named, raised, the north wall years later, surnamed, thirty years on the border, his famous son) in nine blocks, with three Gulgul cards [17], [30], [37].", "fix": "Keep the north-wall scene; cut two cards and the thirty-year summary in [36] (save it for #98)." }
+      ],
+      "flow_notes": [
+        { "blocks": "4→5→11", "issue": "The traitor question is asked at [4], the execution happens at [5], then the interrogation plays again at [11]–[13], after the man is dead.", "fix": "Move [11]–[13] straight after [4], drop one of the two questions, then [5]." },
+        { "blocks": "15→32→36→39", "issue": "'A month before', 'years later', 'thirty years', then back to the summons in 634: four time frames in a short episode.", "fix": "Mark the flash-forward as one ('Years later, he will…') and come back with a hard time cue." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Good pull: who is this man (the guards' rumours [6], the laugh 'they will learn to dread' [21]), and will he keep his promise of 'half' at the summit? Gulgul's son [36] is a long tease that pays off at #98. The prisoner's echo of Gyebek [12] is never explained.",
+      "best": "'Where do you think that boy is standing when he is grown.' … 'That is why I am taking him.' [26]–[28]",
+      "worst": "[4]–[13]: the execution, rumours, three records, then the same interrogation again, out of order.",
+      "fixes": [
+        "Open on 'Everyone in the north has a story about the Eternal General. None of them are bedtime stories.' and run the interrogation once: [4], then [11]–[13], then [5].",
+        "Cut quotes [9]–[10] and two of the three Gulgul cards; keep one epithet.",
+        "Tie the Tang at [8] to the emperor who mocked Silla's queen in #1, so the third pilot touches the first."
+      ]
+    },
+    {
+      "n": 8,
+      "title": "High Summit",
+      "logline": "Sent to the capital in his father's place, Yeon finds five commanders and a king haggling over winter grain while the Second Emperor rises. He tells them so, is threatened with the word 'traitor' by his own uncle, and walks out; that night his son Namseng is born under the hand of the birth goddess.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "Give the summit two faces instead of four position papers, call back 'say half', and cut the epitaph and the art-direction narration from the birth scene.",
+      "opening": "'So Yeon rides to Pyongyang in his father's place. Five commanders, one king, one room.' A continuation more than a hook, but it works because #7's card set it up.",
+      "ending": "The birth [37]–[43] is moving ('Heavier than it sounds. This country. You will have to keep it.'), but the epitaph quote [44] that follows gives Namseng the surname 'Cheon', which contradicts everything the reader knows. The card promises a Goguryeo that 'did not argue about grain', a contrast #9 doesn't deliver.",
+      "sudden": [
+        { "block": "7", "what": "A table of the king and five commanders with ages; four of the names are new, and the king is spelled 'Yeongnyu' (he is 'Youngryu' everywhere else).", "setup": "none", "fix": "Cut the table; introduce each commander by what he wants." },
+        { "block": "15", "what": "Ulchi, the Colossal River, Salsu, Sui and Ansi in two sentences, with a gloss inside the dialogue.", "setup": "none (Colossal River is #35)", "fix": "'My grandfather still toasts the day we drowned a Sui army.'" },
+        { "block": "26", "what": "'Nephew': the High Commander is Yeon's uncle. A great twist with no setup.", "setup": "none (it pays off superbly at #24 [28]–[30])", "fix": "Plant it in #7's summons scene: 'Your uncle chairs it now.'" },
+        { "block": "39", "what": "'The portrait does not stay paint': no portrait was mentioned, except in art-direction language at [37]. 'Under Little Star' is unexplained.", "setup": "Samsin herself is nicely planted by a joke at #4 [3]; the painting is not", "fix": "Put a painted Samsin on the wall in [37]; cut 'under Little Star'." },
+        { "block": "44", "what": "Namseng's epitaph: 'His surname was Cheon', plus a great-grandfather and an office title the reader has never heard.", "setup": "none", "fix": "Cut the quote." }
+      ],
+      "pacing_notes": [
+        { "blocks": "3–7", "issue": "Narration, a long Tang record quote, a term card, a diagram and a table: five explainers before the scene starts.", "fix": "Keep [3] (four short sentences that explain the system) and the term card [5]; cut [4], [6], [7]." },
+        { "blocks": "10–22", "issue": "Each regional commander states his need twice ([10]–[12], then [20]–[22]); Yeon's [19] runs four sentences and nobody interrupts.", "fix": "One round of asks; have the king or Gusesa cut Yeon off mid-[19]." }
+      ],
+      "flow_notes": [
+        { "blocks": "14→16→17", "issue": "Yeon's 'Quiet?' [17] answers Gusesa's 'kept the marches quiet' [14], but another speaker [15] and another Yeon line [16] sit in between.", "fix": "Put [17] right after [14]; cut or move [16]." },
+        { "blocks": "#7→#8", "issue": "The 'say half' plant is never called back, even when Yeon says everything.", "fix": "Dosuryu in the yard [32]: 'That was half?'" },
+        { "blocks": "35→37", "issue": "'That night' a rider finds him, then the birth room is 'blasted white with daylight'. [37] also leaks art direction into the narration ('no extra bodies, no portrait-frame crowd'), and the scene swerves from a council room to a goddess with no transition.", "fix": "Fix the hour, cut the art-direction words, and give the birth one bridging line (the room he rides to, the wife he left)." }
+      ],
+      "romance": "Not a romance. Yeon's wife has no name and one line [38], so the birth plays as Yeon's beat, not hers.",
+      "battle": null,
+      "suspense": "The Second Emperor as a looming threat [17]–[27], and the uncle's 'Nephew. Sit down.' [26], a superb plant that pays off at #24 ('You told me to sit down…'). King Youngryu's 'I will be the King for All' [9] echoes Chunchu's vow in #1 [47.5]. It's the slice's best link between kingdoms, and nobody points at it.",
+      "best": "Yeon Gusesa, almost kindly: 'Nephew. Sit down. The Summit does not run on prophecies.' [26]",
+      "worst": "[3]–[15]: an explainer stack, then interchangeable commanders reading out budgets, with five battle names in one line.",
+      "fixes": [
+        "Cut [4], [6], [7] and give the room two faces: the uncle (planted in #7) and the southern commander who has fought Yushin. Fold the north and west asks into one line.",
+        "Call back 'half' after the walkout (Dosuryu: 'That was half?'), and let the narrator wink once at the king's 'King for All' [9]: he isn't the first man this year to say it.",
+        "In the birth scene, cut the art direction in [37], plant the Samsin painting, fix night vs daylight, and cut the epitaph [44]."
+      ]
+    },
+    {
+      "n": 9,
+      "title": "Gwanggaeto, the Great King",
+      "logline": "Two centuries back, Goguryeo's widest king answers a desperate Silla king's plea and sweeps the sea-raiders out of Silla, then stays for fifty years. Silla never forgets what it costs to ask a foreign power for an army.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 2, "entertainment": 2 },
+      "verdict": "Its one big idea (Silla knows the price of foreign help, and a Silla prince will ask for it again [9]) should be the card and the bridge into #10. The rest repeats itself in 276 words.",
+      "opening": "'Silla is drowning. An army from across the sea is inside its walls.' A good in-medias-res hook; then [2], [3] and [5] repeat the sixty-four fortresses and the fifty thousand horsemen.",
+      "ending": "[9] is excellent: a Silla prince 'will stand in front of a foreign emperor and ask for an army'. Then the stele quote [10] about plentiful harvests goes flat, and the card jumps to Bupmin at fifteen with no link to anything in the episode.",
+      "sudden": [
+        { "block": "6–7", "what": "'The Herald' again, now in 400 AD, asking 'So why are they still here?'", "setup": "the same label speaks in #3 (500s) and #4 (632)", "fix": "'A Silla elder', or 'the court'." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–5", "issue": "'Sixty-four fortresses' appears in #8's card, [2] and [3]; 'fifty thousand horsemen' in [0] and [5].", "fix": "Cut [3]; merge [0] and [5]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#8→#9", "issue": "The card promises a Goguryeo that 'did not argue about grain' (a unity contrast). The episode delivers Goguryeo occupying Silla, told from Silla's side.", "fix": "Rewrite the card to the real hook: once, Silla begged Goguryeo for an army, and it is still paying." },
+        { "blocks": "#9→#10", "issue": "Gwanggaeto to Bupmin at fifteen: a 241-year jump and a change of kingdom with no bridge.", "fix": "Use [9]: the Silla prince who will one day beg an emperor is Bupmin's father." }
+      ],
+      "romance": null,
+      "battle": "Fifty thousand horsemen clear a capital of invaders in one clause [0], told again in [5]. No POV, no geography, no fight. The episode rightly cares about the price after the battle, but it needs one human face: the begging Silla king, or a hostage prince riding north.",
+      "suspense": "One strong forward plant [9] (Chunchu's mission to the Tang emperor). Nothing pulls inside the episode.",
+      "best": "'Silla had asked. That's the part everyone forgets.' [5]",
+      "worst": "[2]–[4]: the same fortress count twice and a map card in a 276-word episode.",
+      "fixes": [
+        "Fold into #8's ending or #10's start as a short flashback, or keep it and dramatize one moment: the Silla king's plea, or a Silla hostage prince riding north.",
+        "Rewrite the card around [9]: the Silla prince who will one day beg an emperor has a son, and the son is fifteen.",
+        "Cut [3] and the stele quote [10]."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "On paper the arc has a smart skeleton. There are three pilots, one per kingdom (Silla #1–2, Baekje #4–5, Goguryeo #7–8), each satirising that kingdom's system: birth rank and a council that must agree; eight clans and an assembly for sale; five generals counting grain. Each is followed by a flashback to its greatest king whose glory becomes the next kingdom's grudge (Jinheung → Baekje, Geunchogo → Goguryeo, Gwanggaeto → Silla). By #8 a reader can tell the three kingdoms apart by texture, which is a real achievement. The title vow recurs in all three: Chunchu's 'one king for all' (#1 [47.5]), Euija's cut-off 'A king should be for the country—' (#4 [34]), King Youngryu's 'I will be the King for All' (#8 [9]). But a reader can't see the skeleton. The grudges live only in next-episode cards; no present-day character feels another kingdom; the narrator never points at the shared vow; and the shared threat is split between an uncarded 'Second Emperor' (#1) and 'the Tang' (#7), never linked. There is also no one to follow for long: Sunduk next speaks at #13, Euija and Gyebek at #18, Yeon at #15. Time runs backwards for the first three episodes (the coronation, the night before, decades before, with 612 flashbacks inside #1 and #2), and the year changes at six of the nine seams. A reader who gets through #1 will love #4 and enjoy #7; #5, #6 and the flashback stubs are where they drift. Plants that do work: Samsin's joke (#4 [3]) becomes a goddess at #8 [39]; Bupmin's 'I'm following' (#1 [20]) pays off at #10 [28]; Gusesa's 'Nephew. Sit down.' (#8 [26]) pays off at #24.",
+    "handoffs": [
+      { "from": 0, "to": 1, "works": "partly", "why": "The prologue blurb promises satire of 'the social systems of each of the Three Kingdoms', which #1–#8 deliver, and the Part title and #1's map frame three kingdoms. But nothing tells the reader whom to follow, and #1 spends its first narration on Munhee's hair [4] and its first twenty blocks on Chunchu's children before the queen appears.", "fix": "Make #1's first scene Sunduk's, and let the map caption [1] or the narrator name the three kingdoms and the vow in one breath." },
+      { "from": 1, "to": 2, "works": "yes", "why": "The card's 'How? Go back one night, to a brazier' raises exactly the question #2 answers, at the place #1 [31] planted ('six men and a brazier').", "fix": "Give #2 a hook line at block 0 (its logline)." },
+      { "from": 2, "to": 3, "works": "partly", "why": "The jump is announced ('Who was he? Back we go, to the Cloud King') but nothing made the reader wonder about him. After two episodes building the queen's court, a dead king's biography is a step backwards, and the third backward step in three episodes.", "fix": "Plant the question inside #2 (Alchun or Yushin invoking 'the old king's yard' during the vote), or fold #3 into #2." },
+      { "from": 3, "to": 4, "works": "partly", "why": "The best card in the slice ('Baekje kept the grudge. Now meet the prince who will inherit it'), but #4 never mentions Silla, the grudge or Silla's new queen. Euija inherits clan quarrels instead.", "fix": "One King Mu line in #4 [14]–[18] about Silla's queen, or retarget the card to the clans." },
+      { "from": 4, "to": 5, "works": "partly", "why": "The card promises Gyebek on the sand. #5 opens with eight names, a quote and nine term cards, and gives Gyebek's bout four sentences at [24].", "fix": "Open #5 on the sand with that bout as a full scene." },
+      { "from": 5, "to": 6, "works": "no", "why": "The card justifies the flashback with a chant ('Restore the reign of the thirteenth Eraha!') that it says every house chants, but nobody has chanted it on the page, and 'Eraha' is unglossed.", "fix": "Plant the chant in #5 (the yard chants it at [25]) and gloss Eraha." },
+      { "from": 6, "to": 7, "works": "partly", "why": "The card's traitors question is answered word for word at #7 [4], a neat hand-off. But 'Back to the snow' refers to a place the reader has never been, and the jump from Baekje in 632 to Goguryeo in 634 has no time bridge.", "fix": "'North, to the snow…', plus a time cue in #7 ('two winters after Silla crowned its queen')." },
+      { "from": 7, "to": 8, "works": "yes", "why": "'He promised his father half… Next stop: Pyongyang' leads straight into 'So Yeon rides to Pyongyang in his father's place.' The cleanest seam in the slice.", "fix": "Pay off 'half' inside #8 (Dosuryu: 'That was half?')." },
+      { "from": 8, "to": 9, "works": "partly", "why": "The card promises a Goguryeo that didn't argue about grain; #9 is about Goguryeo occupying Silla, told from Silla's side. Cutting from the birth of Yeon's heir to a king two centuries dead is abrupt.", "fix": "Rewrite the card around #9's real idea: Silla once begged for an army and is still paying." },
+      { "from": 9, "to": 10, "works": "partly", "why": "The card bridges a nine-year jump cleanly ('Bupmin is fifteen now'), and #10 delivers its question at [27]. But nothing ties Gwanggaeto to Bupmin, and #10 opens without a hook ('It is the spring Bupmin turns fifteen'). #9 [9]'s tease about a Silla prince begging an emperor is the bridge sitting unused.", "fix": "Card: that Silla prince has a son; he is fifteen now, and his uncle has a question…" }
+    ],
+    "dropped_threads": [
+      "Kim Yongsu's motto 'Wherever the room has to come to you' and his goblin bridge (#2 [14]) never return anywhere in the book; Yongsu appears only in #2.",
+      "Elder Satek's unexplained thumbs-down on the grain levy (#5 [52], 'He never explained') never fires.",
+      "Euljé, 'High Councillor' in #1's table [38], and Cheomseongdae, given a place card at #1 [67]–[68], never appear again.",
+      "'Say half of what you think' (#7 [41]–[44]) is never called back, not even in #8 when Yeon says everything.",
+      "The nameless prisoner's 'I have… no name' (#7 [12]) copies Gyebek's line from #4 [77] and is never explained.",
+      "The seven-branched sword (#6 [7]) next appears at #77, 71 episodes later: too thin to carry.",
+      "Baekje's grudge against Silla, promised by #3's card, is never felt by anyone in #4–#5; Goguryeo's memory of the king who died on his wall (#6 [10]) never surfaces in #7–#8.",
+      "The leads vanish after their pilots: Sunduk next speaks at #13 (the Yushin romance of #1 [53]–[60] resumes there), Euija and Gyebek at #18 (Euija has no lines in #5), Yeon at #15.",
+      "Named long before they matter: Inmun (#1 [4], next #48), Wu (#1 [75], next #30), Gwanchang and Wonsul (#3 [11], 60+ episodes later). The Second Emperor himself isn't carded until #30."
+    ],
+    "repetition": [
+      "The unanimity rule and the 3–3 split, told six times in #2 [1]–[11].",
+      "The Tang flattening the bone mound and Goguryeo's thousand-li wall, told three times in #7 ([8] narration, [9] and [10] quotes).",
+      "The traitor question: #6's card, then twice in #7 ([4], [11]). Gusesa turning it on Yeon in #8 [25] is a good deliberate echo, so the duplicate in #7 dulls it.",
+      "'Sixty-four fortresses' in #8's card and #9 [2] and [3]; 'fifty thousand horsemen' in #9 [0] and [5].",
+      "Satek as 'the king's sleeve' five times in #5 ([1], [4], [17], [40], [48]); 'Yunbi rolled in from the north four hundred years ago' in term card [5] and again in dialogue [45]–[47].",
+      "Each Goguryeo commander states his demand twice in #8 ([10]–[12], [20]–[22]).",
+      "Gulgul gets three character cards in one episode (#7 [17], [30], [37]).",
+      "One structural move used four times: a government lecture plus quote, term card and diagram or table before the scene starts (#1 [23]–[28], #5 [2]–[11] and [28]–[38], #8 [3]–[7]). And #3, #6 and #9 share one template: a great king, a stele or annal quote, a herald's aside, and a closing line that some kingdom does not forget."
+    ],
+    "top_problems": [
+      "#1 is the weakest possible front door. About twenty named people and a dozen new places and terms in one episode. The title character speaks first at [29] with no introduction and is then called 'Dukman' without being told that's her. Three domestic scenes come before any conflict. The hook 'A Queen? Ridiculous.' is never dramatized, and the coronation happens in one line [35], sandwiched between a bone-rank lecture and an office table.",
+      "Three unrelated pilots. The connections exist only in next-episode cards (the grudge triangle) and in a vow nobody points at ('a king for all' in #1, #4 and #8). No present-day character feels another kingdom: #4 never mentions Silla, and #7–#8 touch it only through 'Yushin's banners'. The shared antagonist is split between an uncarded 'Second Emperor' in #1 and 'the Tang' in #7, never linked.",
+      "Explainer piles stall every 'system' episode: #5 opens with a quote and nine term cards, and the same pattern runs through #8 [3]–[7], #1 [23]–[28] and [37]–[38], #2 [1]–[11] (one rule told six times) and #7 [8]–[10] (one fact told three times). Records are 20–32% of #1, #2, #5, #7 and #8, and 25–57% of the three flashbacks.",
+      "The payoffs that matter happen off-page or in summary: Gyebek beating the Jinmo boy (#5 [24], four sentences), the 'no' votes flipping (#2 [22]→[27]), the crowning (#1 [35]), a king dying on his own wall (#6, two duplicate annal quotes).",
+      "Momentum drains after #4. Its heroes vanish (Euija has no lines in #5 and doesn't speak again until #18), and three flashback stubs with no scene and no character (#3, #6, #9; 276–602 words) sit between the pilots while the year changes at six of nine seams. Fold the stubs into their neighbours, or give each one a scene."
+    ]
+  }
+}

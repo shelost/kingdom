@@ -1,0 +1,38 @@
+[
+	{
+		"episode": 20,
+		"battle": "gwansan-554",
+		"phase": "march",
+		"after": {
+			"kind": "p",
+			"text": "Then he marches on the fortress"
+		}
+	},
+	{
+		"episode": 20,
+		"battle": "gwansan-554",
+		"phase": "siege",
+		"after": {
+			"kind": "p",
+			"text": "For months the fight goes"
+		}
+	},
+	{
+		"episode": 20,
+		"battle": "gwansan-554",
+		"phase": "relief",
+		"after": {
+			"kind": "p",
+			"text": "ambush is waiting"
+		}
+	},
+	{
+		"episode": 20,
+		"battle": "gwansan-554",
+		"phase": "rout",
+		"after": {
+			"kind": "p",
+			"text": "The ditch takes the head"
+		}
+	}
+]

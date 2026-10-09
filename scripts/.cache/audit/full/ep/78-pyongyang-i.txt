@@ -1,0 +1,61 @@
+
+=================================================================
+#78 Pyongyang I  (661 December)
+Arc: The Final Stand · place: pyongyang · tone: grim war epic
+Logline: A red gate on a grey ridge. There is only one gate anyone remembers.
+=================================================================
+[0] ¶ Pyongyang has never fallen. Every child in the city will tell you so, usually twice.
+[1] ¶ Red Sun's capital sits on its ridge: a red two-storey gate, grey stone, and clouds that always look about to pick a side. The last emperor tried these walls. So did the one before him. The walls are still here.
+[2] [MAP 661: A fleet up the river, an army at the Amnok, and a winter about to pick a side.]
+[3] ── SCENE: The Wall ──
+[4] ¶ Up on the wall, Gesomun's second son is explaining this to a sentry who did not ask.
+[5] [CARD Yeon Namgun: Gesomun’s second son. Loud, loyal, and he believes everything he’s told twice.]
+[6] Yeon Namgun: Pyongyang does not fall. / Not since the Holy King strung his bow. Seven hundred years.
+[7] Yeon Namsan: You said that yesterday.
+[8] Yeon Namgun: It was true yesterday too.
+[9] ¶ Their father walks the wall behind them with a scout’s report in his fist. A Mohe man walks one step behind him, as he has for twenty-seven years. Nobody introduces Gulgul. Nobody ever has.
+[10] Yeon Gesomun: Four beasts, it says. The emperor sends animals now. / One of them brought his sons. All thirteen of them.
+[11] Yeon Namgun: Thirteen? He brought children to a war?
+[12] Yeon Gesomun: Not children. Grown men. / They came to watch their father work.
+[13] ¶ He says it the way other men mention rain. Then he goes down the stairs to send his eldest north, to hold the river.
+[14] ── SCENE: Luoyang ──
+[15] ¶ In Luoyang the Third Emperor announces that he will lead the next army himself. The Empress sends up a memorial the same night.
+[16] Wu Zetian: Your father went in person, Majesty. / Ask the six horses at Zhaoling how that went.
+[17] The Third Emperor: …We will send someone.
+[18] ── SCENE: The Taedong ──
+[19] ¶ The someone is the Red Fowl, the old steppe horseman who took Sabi. He comes up the Taedong in the eighth month and takes the river forts one by one. Then he sits down in front of Pyongyang to wait for winter to soften it. Winter has never been on anybody’s side but Goguryeo’s.
+[20] ── SCENE: The Frozen River ──
+[21] ¶ Namseng holds the Amnok. He is twenty-seven, the heir, and he has read every record of every crossing.
+[22] ¶ His orders are simple. Tens of thousands of picked men, one river, nobody across. On the far bank waits the White Dragon, the old emperor’s Turkish general. He once asked to be buried alive beside his master. They told him no. He has been looking for a useful place to die ever since.
+[23] ¶ Then the ninth month turns cold. Not autumn cold. Wrong cold.
+[24] officer: Commander. The shallows are white. / …The middle’s going too.
+[25] Yeon Namseng: The river has never frozen hard in the ninth month. / Not in any record.
+[26] officer: Sir. The river hasn’t read the records.
+[27] ¶ At dawn the drums start on the far bank. The White Dragon does not build a bridge. He walks out onto the ice himself, leading his horse, and stamps twice.
+[28] ¶ It holds. His army follows him across a river that is no longer there, drumming as it comes. The first Goguryeo arrows skitter off the ice. The second volley never comes. Men who were told to guard water do not know how to guard a floor.
+[29] Yeon Namseng: Hold the bank! Hold— the bank is—
+[30] ¶ There is no bank. There is only ice, and then there is everywhere. Thirty thousand men die defending a line that has gone white. Namseng gets away with his life and very little else.
+[31] ── SCENE: The Gate ──
+[32] ¶ He comes home through the fortress gate at dusk, on a borrowed horse. His father is waiting under the red gate. Gulgul holds the lamp.
+[33] Yeon Gesomun: One river, Namseng. I gave you one river. / Don’t tell me you didn’t know it would freeze. It freezes every year.
+[34] Yeon Namseng: Not in the ninth month, Father. There is no precedent—
+[35] Yeon Gesomun: Precedent! The river can’t read, you idiot.
+[36] Yeon Namgun: Father, he brought the men home. Half of them—
+[37] Yeon Gesomun: Half. He left with all of them.
+[38] ¶ Nobody speaks. Namseng waits for the blow. He has been waiting for one since he was eleven, at the Liao, when an emperor’s men gave it to him instead.
+[39] ¶ It does not come. Gesomun lays a hand on the iron studs of the gate, the way you would test a horse’s leg.
+[40] Yeon Gesomun: Listen. Walls don’t fall. Nobody’s ever knocked these down. / Gates get opened. From the inside. / This one’s yours now. Remember which side of it you’re standing on.
+[41] Yeon Namseng: …Yes, Father.
+[42] ¶ Remember this gate. All three of his sons will.
+[43] ── SCENE: The Campfires ──
+[44] ¶ The Red Fowl’s army freezes in the snow outside the walls. Every night Gesomun counts its campfires from the parapet. Every night there are fewer.
+[45] Yeon Gesomun: They’re eating the horses. Fires go down when the horses run out. / Keep counting, Gulgul. The night they stop going down, somebody’s feeding them.
+[46] Gulgul: …Yes, sir.
+[47] ── SCENE: Surabol ──
+[48] ¶ In the twelfth month a letter comes down from the north. The Red Fowl is out of rice. Munmu reads it to his generals. Everyone in the room knows that road in winter. Nobody offers.
+[49] King Munmu: If they starve out there, the emperor will remember who let them. / And everything my father was promised starves with them.
+[50] ¶ Silence. Then Kim Yushin, who is sixty-six, gets up.
+[51] King Munmu: Uncle. Not you. Send someone younger.
+[52] Kim Yushin: The younger ones don’t know the road, Majesty. Hanseul and I do. / Load the carts.
+[53] [MAP 662: Rice for the Red Fowl, through enemy country, in the dead of winter, driven by the oldest general in Silla.]
+[54] ¶ **The White Tiger has thirteen sons. Yeon Gesomun can count to thirteen…!**

@@ -1,0 +1,7 @@
+[
+	{ "episode": 21, "battle": "daeya-642", "phase": "road", "after": { "kind": "p", "text": "He sends Yunchung with ten thousand men" } },
+	{ "episode": 23, "battle": "daeya-642", "phase": "siege", "after": { "kind": "p", "text": "ten thousand are under the wall" } },
+	{ "episode": 23, "battle": "daeya-642", "phase": "fire", "after": { "kind": "p", "text": "Gumil puts his shoulder to the other leaf" } },
+	{ "episode": 23, "battle": "daeya-642", "phase": "terms", "after": { "kind": "p", "text": "The gate opens. The oath lasts" } },
+	{ "episode": 23, "battle": "daeya-642", "phase": "bamboo", "after": { "kind": "p", "text": "He holds the inner gate until sundown" } }
+]

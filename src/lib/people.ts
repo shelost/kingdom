@@ -745,7 +745,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'Came out of the first egg, and walked down to the beach himself.',
 		quote: "Hunger is honest. Meet it yourself.",
 		voice:
-			'Overwhelmed and honest: halting, hungry, barely finishing a sentence, and still a king. Korean: 과인 and 하오체.',
+			'Overwhelmed and honest: halting, hungry, barely finishing a sentence, and still a king. Korean: 과인 and 하오체. As a ghost in the steam cavern (647) he is four hundred years old and enjoying it: whimsical, laughing at his own jokes, a broad unashamed Gaya accent, and he answers questions with better questions (“Whose iron?” “Do YOU?”). He never says who he is. Korean: playful 하오체, no 과인.',
 		events: [
 			{ year: 42, label: 'Hatches from the box of six eggs; founds Golden Gaya.' },
 			{ year: 48, label: 'Meets a princess off a red-sailed ship and does not send a servant.' },
@@ -771,6 +771,8 @@ export const PEOPLE: Person[] = [
 		tagline: 'The other egg — Suro’s brother, who walked a different valley.',
 		quote: "Six eggs. Six thrones. Take the larger hill.",
 		nature: 'Twin-born of the mountain night with Suro; less charming, more territorial. Where Suro waits on a beach for a red sail, Ijinasi builds a court that will one day outlast Golden Gaya’s fame and still lose the war that matters.',
+		voice:
+			'Blunt, quick and territorial: counts, measures and claims, answers a feeling with a number and a joke with a bet. Teases Suro like a twin who got there half a breath late. Korean: easy 반말 with his brothers, 과인 only in court.',
 		events: [
 			{ year: 42, label: 'Hatches among the six; founds Great Gaya.' }
 		],
@@ -1282,8 +1284,8 @@ export const PEOPLE: Person[] = [
 			{ year: 632, label: 'Pledges himself to Queen Sunduk “until the end.”' },
 			{ year: 642, label: 'Marches on Baekje to avenge Daeya.' },
 			{ year: 643, label: 'Trains Bupmin among the Hwarang — marshal of the flower youth.' },
-			{ year: 647, label: 'Puts down Bidam’s rebellion; named High Councillor (상대등); orders annihilation of Surabol Son; holds Sunduk as she dies.' },
-			{ year: 660, label: 'Faces Gyebek at the Yellow Mountain Fields.' },
+			{ year: 647, label: 'Puts down Bidam’s rebellion; orders annihilation of Surabol Son; holds Sunduk as she dies.' },
+			{ year: 660, label: 'Named High Councillor (상대등); faces Gyebek at the Yellow Mountain Fields.' },
 			{ year: 668, label: 'After Goguryeo falls, Munmu names him Supreme General (태대각간) — a grade cut above the seventeen, and above 대각간.' },
 			{ year: 673, label: 'Dies — Big Star comes himself; offers any wish; the wish is not written.' }
 		],
@@ -1304,7 +1306,7 @@ export const PEOPLE: Person[] = [
 			{ title: 'Hwarang disciple', korean: '낭도', hanja: '郎徒', org: 'hwarang', from: 610, to: 613, note: 'youth' },
 			{ title: 'Hwarang', korean: '화랑', hanja: '花郎', org: 'hwarang', from: 613, to: 632 },
 			{ title: 'Marshal', korean: '국선', hanja: '國仙', org: 'hwarang', from: 632, to: 668, note: 'head of the Hwarang' },
-			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 647, to: 668 },
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 660, to: 668 },
 			{ title: 'Supreme General', korean: '태대각간', hanja: '太大角干', org: 'nation-silla', from: 668 }
 		],
 		aliases: [
@@ -1782,9 +1784,13 @@ export const PEOPLE: Person[] = [
 		ideology: 'Technocratic reformer',
 		ideologyNote: 'Secretariat craft — implements westernizing speed as office work, not sermon.',
 		quote: 'The Council still meets. The seals no longer wait for it.',
-		nature: 'Young enough to think a new office is elegant; old enough in the yard to know elegance is a weapon. Loyal to Chunchu the way a Hwarang is loyal to a form — precisely, without needing to be asked twice. Yes-Minister fluency: preserves the High Councillor’s chair while emptying it of consequences.',
+		nature: 'Bupmin’s friend from the yard, a few years older, the one who beat him at archery and then wrote down why. Sailed to Chang’an as the tenth head in the ward count and filled a notebook; Chunchu notices him when he says the one useful thing in a room full of mourners. Young enough to think a new office is elegant; old enough in the yard to know elegance is a weapon. Loyal to Chunchu the way a Hwarang is loyal to a form — precisely, without needing to be asked twice. Yes-Minister fluency: preserves the High Councillor’s chair while emptying it of consequences.',
+		voice:
+			'Quiet and exact. He answers with a number or the right paper, and says the useful thing nobody asked for in one sentence, usually to the wrong person. Dry when amused; a little stiff when praised, and he goes back to writing. Never speeches. Korean: careful 합쇼체 to Chunchu and his elders that turns plain when he knows he is right; easy yard 반말 and teasing with Bupmin.',
 		blade: 'Ring-pommel bamboo sword — light, fast, named for the virtue of bending without breaking.',
 		events: [
+			{ year: 648, label: 'Sails to Chang’an with Chunchu; the tenth head in the ward count.' },
+			{ year: 649, label: 'Chunchu pulls him aside to the study and offers him a purple robe.' },
 			{ year: 651, label: 'Named first Premier (중시) of the Royal Secretariat (집사부).' },
 			{ year: 654, label: 'Keeps the seals moving under King Muyeol.' }
 		],
@@ -2183,8 +2189,9 @@ export const PEOPLE: Person[] = [
 			{ year: 636, label: 'With Bidam, destroys Baekje spies at Jade Gate Valley (옥문곡).' },
 			{
 				year: 647,
-				label: 'Counsels both camps at Radiance; loses standing for neutrality.'
+				label: 'Counsels both camps at Radiance; loses standing for neutrality. Named High Councillor (상대등) after Bidam, because nobody else wanted the chair.'
 			},
+			{ year: 651, label: 'Raises the first sleeve for the Royal Secretariat, and keeps the chair it empties.' },
 			{ year: 654, label: 'Laughs down the last holdout; the age of Kim Chunchu begins.' }
 		],
 
@@ -2196,7 +2203,8 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Hwarang disciple', korean: '낭도', hanja: '郎徒', org: 'hwarang', from: 610, to: 613 },
 			{ title: 'Hwarang', korean: '화랑', hanja: '花郎', org: 'hwarang', from: 613, to: 632 },
-			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 654 }
+			{ title: 'Councillor', korean: '대등', hanja: '大等', org: 'harmonycouncil', from: 632, to: 647 },
+			{ title: 'High Councillor', korean: '상대등', hanja: '上大等', org: 'harmonycouncil', from: 647, to: 654 }
 		],
 		aliases: [
 			'Alchun',
@@ -3315,8 +3323,10 @@ export const PEOPLE: Person[] = [
 		born: 616,
 		tagline: 'Told a farmer the Son of Heaven was calling — and sent him to history.',
 		quote: 'Talent needs its hour. This is the hour.',
-		arc: 'Xue Rengui’s wife, née Liu — named in the Xin Tangshu, not given a personal name in the Zhengshi. Folklore and jingju later call her Liu Yingchun (柳迎春) and park her in a cold kiln (汾河灣, 武家坡-adjacent cycles). When he meant to rebury his ancestors in Longmen poverty, she named the hour: Taizong wanted fierce generals for Liaodong. Without her sentence there is no white coat, no ji, no eastern command.',
-		events: [{ year: 645, label: 'Urges Xue Rengui off the Longmen field to Zhang Shigui’s muster.' }],
+		voice:
+			'Practical, dry and quick. She teases her husband the way you tease someone you have already decided about, finishes his sentences, and hides her plans in household things (eggs, oil, a door). Korean: warm 해요체 to him, with the odd clipped 반말 ending when she is winning.',
+		arc: 'Xue Rengui’s wife, née Liu — named in the Xin Tangshu, not given a personal name in the Zhengshi. Folklore and jingju later call her Liu Yingchun (柳迎春) and park her in a cold kiln (汾河灣, 武家坡-adjacent cycles). In the story she spends four winters of egg money buying back the family ji his father sold for seed, oils it in secret, and lays it across his arms the day the muster edict goes up. When he meant to rebury his ancestors in Longmen poverty, she named the hour: Taizong wanted fierce generals for Liaodong. Without her sentence there is no white coat, no ji, no eastern command.',
+		events: [{ year: 645, label: 'Gives Xue Rengui his grandfather’s ji and sends him off the Longmen field to Zhang Shigui’s muster.' }],
 		firstLine: { en: 'I’ll shut the door.', ko: '문은 내가 닫아요.' },
 		lastLine: { en: 'If this is the hour — then go.', ko: '지금이 그 때면 — 가면 돼요.' },
 		aliases: ['Lady Liu', '柳氏', '유씨', 'Liu Yingchun', '柳迎春', '유영춘']
@@ -3336,8 +3346,8 @@ export const PEOPLE: Person[] = [
 		quote: "Keep a road under your feet — even in the east.",
 		voice:
 			'A farmer who became a general: humble, plain, devout to his ancestors and his emperor, in short sentences that shrink his own deeds. Korean: deeply formal 합쇼체 upward.',
-		arc: 'Born poor at Longmen as Xue Li. His wife Liu sends him to Zhang Shigui’s muster when Taizong calls for Liaodong. At Stallion Mountain he wears white armour, wields the fangtian ji (the same heaven-halberd the storytellers give Lü Bu), and Taizong asks who the man in white is — then says gaining Xue matters more than gaining Liaodong. Captured once in the seventh invasion, he breaks a fortress cage before the Emperor arrives. Inherits the White Tiger title after Pang Xiaotai dies at the Snake River; as Protector-General of the East he takes Pyongyang in 668 and governs without spectacle. At Maeso in 675 he is Tang’s last great eastern commander — competent, sympathetic, and finally out of horses. Real-world figure: 薛仁貴 / 설인귀, born Xue Li 薛禮 (614–683).',
-		blade: 'No ring pommel at all — the fangtian ji, the storytellers’ heaven-halberd; the white coat is his crest.',
+		arc: 'Born poor at Longmen as Xue Li. His wife Liu buys back his grandfather’s old ji with four winters of egg money and sends him to Zhang Shigui’s muster when Taizong calls for Liaodong. At Stallion Mountain he charges in white armour with that ji, and Taizong asks who the man in white is — then says gaining Xue matters more than gaining Liaodong, and gives him the fangtian huaji from the imperial armoury, tagged as Lü Bu’s. The soldiers start calling him Lu Bu come back; by Pyongyang and Maeso his enemies say it too. The old ji rides behind his saddle to the end. Captured once in the seventh invasion, he breaks a fortress cage before the Emperor arrives. Inherits the White Tiger title after Pang Xiaotai dies at the Snake River; as Protector-General of the East he takes Pyongyang in 668 and governs without spectacle. At Maeso in 675 he is Tang’s last great eastern commander — competent, sympathetic, and finally out of horses. Real-world figure: 薛仁貴 / 설인귀, born Xue Li 薛禮 (614–683).',
+		blade: 'No ring pommel at all — the fangtian huaji, Lü Bu’s heaven-halberd from the imperial armoury, given by the Second Emperor at Stallion Mountain; his grandfather’s plain old ji rides behind the saddle. The white coat is his crest.',
 		events: [
 			{ year: 644, label: 'Answers Taizong’s muster at his wife’s urging.' },
 			{ year: 645, label: 'White armour & fangtian ji at Stallion Mountain; noticed by Taizong.' },
@@ -3353,7 +3363,9 @@ export const PEOPLE: Person[] = [
 			'백포장군',
 			'白袍将军',
 			'백의',
-			'White Coat'
+			'White Coat',
+			'Lu Bu Reborn',
+			'여포의 환생'
 		],
 		career: [
 			{ title: 'White Tiger II', korean: '백호', hanja: '白虎', org: 'fourbeasts', from: 662, to: 668 },
@@ -3575,8 +3587,8 @@ export const PEOPLE: Person[] = [
 			{ title: 'Captain of the Left Militant Guard', korean: '좌무위과의', hanja: '左武衛果毅', from: 645, to: 645 },
 			{ title: 'Grand General (posthumous)', korean: '대장군', hanja: '大將軍', from: 645 }
 		],
-		firstLine: { en: 'Samhan. Silla.', ko: '삼한이지. 신라.' },
-		lastLine: { en: '…That’ll do me.', ko: '…그거면 돼.' },
+		firstLine: { en: 'Samhan. Silla.', ko: '삼한이제. 신라.' },
+		lastLine: { en: '…That’ll do me.', ko: '…그거믄 된다.' },
 		aliases: ['Sul Gedu', 'Seol Gyedu', 'Xue Jitou', '설계두', '薛罽頭']
 	},
 	{
@@ -4574,6 +4586,59 @@ export const PEOPLE: Person[] = [
 		aliases: ['King Dongcheon', 'Dongcheon', 'Dongchun', '동천왕', '東川王']
 	},
 	{
+		id: 'simayi',
+		gender: 'm',
+		name: 'Sima Yi',
+		korean: '사마의',
+		hanja: '司馬懿',
+		kingdom: 'other',
+		born: 179,
+		died: 251,
+		title: 'Grand Commandant of Wei',
+		tagline: 'The most patient man of his century. He let the rain do the siege.',
+		quote: 'A man who sits in a city has already been caught.',
+		voice:
+			'Unhurried and dry. Talks in conditions and counts (days, men, grain), answers a question with a question about hunting or farming, and never raises his voice. His jokes are cold and arrive late (“So does the cold, this year”). Fewer words than anyone in the tent. Korean: even 하게체 (자네) to a young officer or an ally, 하라체 to soldiers.',
+		arc: 'Wei’s Grand Commandant. In 238 he marches on Gongsun Yuan of Liaodong with forty thousand men, leaves his banners in the south, crosses the Liao in the north, and sits out a month of floods before Xiangping, beheading the one officer who asks to move camp. When the rain stops he takes the city, kills Gongsun Yuan at the Liang River where a falling star came down, and heaps the heads of seven thousand men by the gate. Goguryeo sends riders to help him (a thousand by its own record, several thousand by Wei’s). His grandson founds the Jin; four centuries later the Tang Second Emperor writes his verdict in the Jin Shu with his own brush. Real-world figure: 司馬懿 / 사마의 (179–251), posthumously Emperor Xuan of Jin.',
+		events: [{ year: 238, label: 'Takes Xiangping from Gongsun Yuan, with Goguryeo riders beside him.' }],
+		aliases: ['Sima Yi', '사마의', '司馬懿', 'Sima Xuanwang', '司馬宣王']
+	},
+	{
+		id: 'gongsunyuan',
+		gender: 'm',
+		name: 'Gongsun Yuan',
+		korean: '공손연',
+		hanja: '公孫淵',
+		kingdom: 'other',
+		died: 238,
+		title: 'King of Yan',
+		tagline: 'Lord of Liaodong who sold his friendship to everyone, then crowned himself to see who would object.',
+		quote: 'Kill me tonight, and tomorrow who’s your neighbour?',
+		voice:
+			'Theatrical, quick and charming: a salesman of alliances who has sold everyone something. Grand when winning (“Heaven has always liked me”), wheedling and clever when losing, never dignified. Korean: grand 하라체 that slides into pleading 반말.',
+		arc: 'Third of the Gongsun lords of Liaodong. He takes titles from Wu, sends Wu’s envoys’ heads to Wei, then calls himself King of Yan in 237 and watches a Wei army drown in the rain. In 238 Sima Yi comes back for him. He sits in Xiangping through a month of floods, starves, sends envoys to bargain, and breaks out south-east with his son Xiu; both are cut down at the Liang River. The Jin Shu, written under the Tang, calls him Wenyi to keep the taboo character 淵 off the page. Real-world figure: 公孫淵 / 공손연 (d. 238).',
+		events: [
+			{ year: 237, label: 'Calls himself King of Yan.' },
+			{ year: 238, label: 'Killed at the Liang River as Xiangping falls.' }
+		],
+		aliases: ['Gongsun Yuan', '공손연', '公孫淵', 'Gongsun Wenyi', '公孫文懿']
+	},
+	{
+		id: 'wangqi',
+		gender: 'm',
+		name: 'Wang Qi',
+		korean: '왕기',
+		hanja: '王頎',
+		kingdom: 'other',
+		tagline: 'A Wei officer from the coast who dug the ditches at Xiangping, and never wrote down his Goguryeo friend’s name.',
+		quote: 'Look at the ground first. Always.',
+		voice:
+			'Talkative coast man: jokes, complaints, food, the sea he misses. Practical to the bone; he never makes a speech, and when something has to be done he stops talking and does it. Korean: rough, friendly 반말 with friends, plain 하오체 upward.',
+		arc: 'A junior Wei officer at the siege of Xiangping in 238 (the story’s placing; the records first name him later, as Wei’s governor of Xuantu on the Goguryeo border). He shares forty words and a ditch with a Goguryeo captain, maps the gravel ridge that dries first, and kills Gongsun Yuan at the Liang River while the captain is still listening to him. Real-world figure: 王頎 / 왕기.',
+		events: [{ year: 238, label: 'At the siege of Xiangping; befriends a Goguryeo captain.' }],
+		aliases: ['Wang Qi', '왕기', '王頎']
+	},
+	{
 		id: 'gwanggaeto',
 		gender: 'm',
 		avatar: '/ch_gwanggaeto.png',
@@ -5209,17 +5274,24 @@ export const PEOPLE: Person[] = [
 		tagline: 'Wall that stopped an emperor — refused Yeon, refused Tang, held anyway.',
 		quote: "You will never be crazier than we are.",
 		voice:
-			'Plain and defiant: soldier’s banter with his men, rage in short bursts at the emperor, wry about the siege. Korean: 반말 to his men and to the enemy alike.',
-		arc: 'The chronicles never recorded his name; the people of Ansi simply called him the chief. He refuses to bow to the man who butchered the court, flies the old colours over his wall — and then defends that man’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. Later writers tried to give him a name. The wall kept its silence better.',
+			'Plain and defiant: soldier’s banter with his men, rage in short bursts at the emperor, wry about the siege. His town teases him about his wandering eye (Lazy-eye, 짝눈이) and he jokes back. Korean: 반말 to his men and to the enemy alike; 해요체 to the old women of Ansi, 존댓말 to his old commander, and formal 존댓말 when he sends an answer to Yeon.',
+		arc: 'The chronicles never recorded his name; the people of Ansi called him Lazy-eye for the eye that wanders. As a junior warrior of the Western Command he held the horses outside the High Summit and heard his commander say a ruthless man is good or bad depending on the age he is born into. When Yeon butchers the court, that commander among it, the chief beheads Yeon’s messenger, beats Yeon’s small army with his garrison and his townspeople, keeps the old colours on his wall — and then defends Yeon’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. His town carves him in stone that winter. Nobody wrote down what became of him after. Later writers tried to give him a name. The wall kept its silence better.',
 		blade: 'Nameless wall sword — ring pommel worn smooth, no crest at all; the fortress was the signature.',
-		events: [{ year: 645, label: 'Holds Ansi against Taizong through a summer-long siege.' }],
-		sobriquets: ['Guardian of Ansi', 'Wall that Stopped an Emperor'],
+		events: [
+			{ year: 634, label: 'A junior warrior under the Western Commander at the High Summit.' },
+			{ year: 642, label: 'Beheads Yeon’s messenger rather than kneel to the seal.' },
+			{ year: 643, label: 'Ansi’s garrison and townspeople beat the small army Yeon sends.' },
+			{ year: 645, label: 'Holds Ansi against Taizong through a summer-long siege.' }
+		],
+		sobriquets: ['Lazy-eye', 'Guardian of Ansi', 'Wall that Stopped an Emperor'],
 		career: [
-			{ title: 'Guardian of Ansi', korean: '안시성주', from: 645 }
+			{ title: 'Warrior of the Western Command', korean: '서부 무사', from: 634, to: 642 },
+			{ title: 'Guardian of Ansi', korean: '안시성주', from: 642 }
 		],
 		aliases: [
 			'Guardian of Ansi',
-			'Wall that Stopped an Emperor'
+			'Wall that Stopped an Emperor',
+			'Lazy-eye'
 		]
 	},
 	{
@@ -5576,6 +5648,25 @@ export const PEOPLE: Person[] = [
 
 	// ————————————————————————— Gaya —————————————————————————
 	{
+		id: 'guhae',
+		gender: 'm',
+		name: 'King Guhae',
+		korean: '구해왕',
+		hanja: '仇亥王',
+		title: 'Last king of Golden Gaya',
+		kingdom: 'gaya',
+		clan: 'clan-geumgwan-kim',
+		tagline: 'Promised his youngest son everything the sun touched, then knelt to keep him a seat at Silla’s table.',
+		quote: 'Everything the sun touches from here.',
+		voice:
+			'Warm and theatrical with his sons, a storyteller who times his sunrises and teases while he teaches; on his knees he bargains plainly and begs without shame. Korean: 반말 to his sons, 합쇼체 to the Silla king.',
+		arc: 'Last king of Golden Gaya, of Suro’s line. Before dawn he walks his youngest down the painted hall (Ibiga, the six eggs, Suro, Queen Heo) and promises him the harbour. When Silla’s army breaks his own at the river, he kneels to King Beopheung and spends the kingdom on one condition: that his son live in Silla as True Bone, neither a prisoner nor a prince of nothing. Muryuk hears it from behind a pine and never tells him so.',
+		events: [{ year: 532, label: 'Surrenders Golden Gaya to Silla with his queen and three sons.' }],
+		career: [{ title: 'King of Golden Gaya', korean: '왕', hanja: '王', org: 'nation-gaya', to: 532 }],
+		family: [{ id: 'muryuk', role: 'Son' }],
+		aliases: ['King Guhae', 'Kim Guhae', 'Guhae', 'King Guhyeong', '구해왕', '구형왕', '김구해']
+	},
+	{
 		id: 'muryuk',
 		gender: 'm',
 		avatar: '/ch_kim_muryuk.png',
@@ -5606,6 +5697,10 @@ export const PEOPLE: Person[] = [
 			{ year: 532, label: 'Golden Gaya surrenders to Silla.' },
 			{ year: 647, label: 'Ghost in the cavern — “I loved you before I knew you.”' }
 		],
+		family: [
+			{ id: 'guhae', role: 'Father' },
+			{ id: 'seohyeon', role: 'Son' }
+		],
 		aliases: ['Kim Muryuk', 'Muryuk']
 	},
 	{
@@ -5624,7 +5719,7 @@ export const PEOPLE: Person[] = [
 		quote: 'You are my son. You are Kim Yushin.',
 		voice:
 			'Polite, confused, out of his depth: he breaks off mid-sentence and reaches for his horse and his officers. Korean: formal 하오체 to strangers.',
-		arc: 'Son of Muryuk; father of Yushin and Munhee. Loyal Silla patriot to the end — the middle generation that made the surrender into a household. In the steam beyond Surabol he is the first of the line: Narim, Golhwa, and Hyullé fall for him under the house rule that keeps only Kims — surname and steam, same sound — and every Kim who finds the lake afterward is heirloom. Before Radiance’s tenth day his ghost names the boy past every title: Sword of Silla, Last Prince of Gaya, and still — Kim Yushin. Your mother and I couldn’t be more proud.',
+		arc: 'Son of Muryuk; father of Yushin and Munhee. Loyal Silla patriot to the end — the middle generation that made the surrender into a household. In the steam beyond Surabol he is the first of the line: Narim, Golhwa, and Hyullé fall for him under the house rule that keeps only Kims — surname and steam, same sound — and every Kim who finds the lake afterward is heirloom. On the eighth night of Radiance he dies in his own bed with his boots beside it, his Gaya vowels back at last, in the middle of a sentence: “No matter what you do…” Before light his ghost names the boy past every title in the steam (Sword of Silla, Last Prince of Gaya, and still Kim Yushin) and is cut off again. Yushin hears the end of it pinned under Bidam’s blade: I am so proud of you.',
 		blade: 'Ring-pommel fish sword — Gaya fish on the pommel; no crest louder than duty.',
 		swordImage: '/sword_fish.png',
 		events: [
@@ -5726,10 +5821,85 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-gyeongju-kim',
 		born: 65,
 		tagline: 'The boy in the golden box — first of the Gyeongju Kim.',
-		quote: 'Gold (金) for the box, Alji for the child.',
-		arc: 'Found as a baby in a golden box hanging from a tree in the Sirim wood, with a white rooster crowing beneath it. Talhae raises him, names him Kim for the gold, and renames the wood Gyerim, Rooster Forest. He never takes the throne; his descendant Michu does, and the Kim kings of Silla count from him.',
-		events: [{ year: 65, label: 'Found in the golden box at Gyerim.' }],
+		quote: 'Gold doesn’t rust, Majesty.',
+		voice:
+			'Quiet, patient and polite; says less than he knows and notices more than he says. A boy who answers a con man with one plain sentence and wins. Korean: 합쇼체 to the king and the elders, never a word wasted.',
+		arc: 'Found as a baby in a golden box hanging from a tree in the Sirim wood, with a white rooster crowing beneath it. Talhae raises him, names him Kim for the gold, and renames the wood Gyerim, Rooster Forest. Talhae names him heir; before the elders after Talhae’s death he declines, and they raise Pasa of the Park line. His descendant Michu takes the crown seven generations later, and the Kim kings of Silla count from him.',
+		events: [
+			{ year: 65, label: 'Found in the golden box at Gyerim.' },
+			{ year: 80, label: 'Declines the throne before the elders’ council; Pasa is raised instead.' }
+		],
 		aliases: ['Alji', 'Kim Alji', '알지', '김알지']
+	},
+	{
+		id: 'aejin',
+		gender: 'f',
+		name: 'Aejin',
+		korean: '아진의선',
+		hanja: '阿珍義先',
+		kingdom: 'silla',
+		tagline: 'The fishwife of Ajinpo who hauled in a chest and kept what was inside.',
+		quote: 'Fish don’t leave you a house.',
+		voice:
+			'Dry, practical fishwife; talks to the boy like a catch she has not yet decided to keep, and is soft only when nobody is watching. Korean: 반말 and 해라체.',
+		arc: 'Mother of the first king’s fisherman, living alone on the shore at Ajinpo. She sees magpies circling a rock that was never in the sea, rows out, and drags in a chest with a boy inside. She names him Seok Talhae, feeds him until he feeds her, and tells him to study because his bones are too good for nets.',
+		events: [{ year: -19, label: 'Hauls in the chest at Ajinpo and names the boy inside.' }],
+		aliases: ['Aejin', 'Aejin-uiseon', '아진의선']
+	},
+	{
+		id: 'namhae',
+		gender: 'm',
+		name: 'King Namhae',
+		korean: '남해 차차웅',
+		hanja: '南解次次雄',
+		title: '2nd sovereign of Silla',
+		kingdom: 'silla',
+		died: 24,
+		tagline: 'The egg-king’s son, a shaman who read omens and married his daughter to a con man.',
+		quote: 'Better inside the family than outside the gate.',
+		voice:
+			'A shaman-king: mild, superstitious, worried aloud, reading an omen in every bird; shrewd once he stops fretting. Korean: 하오체 at court, 반말 to his children.',
+		arc: 'Son of Hyukgose and Alyoung, styled Chachaung, the shaman. He hears of the clever young man in the crescent house, marries him to his daughter, and on his deathbed tells his son Yuri and his son-in-law Talhae that the elder of them should rule, which leaves the six houses to count teeth.',
+		events: [{ year: 24, label: 'Dies; tells Yuri and Talhae that the elder should succeed.' }],
+		aliases: ['Namhae', 'King Namhae', '남해왕', '남해 차차웅']
+	},
+	{
+		id: 'yuri_isageum',
+		gender: 'm',
+		name: 'Yuri Isageum',
+		korean: '유리 이사금',
+		hanja: '儒理尼師今',
+		title: '3rd sovereign of Silla',
+		kingdom: 'silla',
+		died: 57,
+		tagline: 'Won the throne with his teeth, and handed it to the man who let him.',
+		quote: 'You bit soft. Didn’t you.',
+		voice:
+			'Gentle, honest and a little shy; yields first, laughs at himself, sees more than he lets on. Korean: 하오체 with his brother-in-law, slipping into 반말 when he teases.',
+		arc: 'Son of Namhae. When his father dies he and his brother-in-law Talhae bite a rice cake and the elders count the marks; Yuri has more teeth, so the kings of Silla are called Isageum, tooth-marks, ever after. He gives the six old villages surnames. Dying, he passes over his own sons and names Talhae, and the six houses gather to decide whether a dead king’s word is enough.',
+		events: [
+			{ year: 24, label: 'Wins the tooth-count against Talhae; becomes the first Isageum.' },
+			{ year: 32, label: 'Gives the six villages their surnames.' },
+			{ year: 57, label: 'Dies naming Talhae; the elders’ first vote.' }
+		],
+		aliases: ['Yuri Isageum', 'King Yuri of Silla', '유리 이사금']
+	},
+	{
+		id: 'michu',
+		gender: 'm',
+		name: 'King Michu',
+		korean: '미추 이사금',
+		hanja: '味鄒尼師今',
+		title: '13th sovereign of Silla',
+		kingdom: 'silla',
+		clan: 'clan-gyeongju-kim',
+		died: 284,
+		tagline: 'Seventh from the golden box, and the first Kim the council sat on the throne.',
+		quote: '…Why me?',
+		voice: 'Careful, plain and startled to be asked; thinks about his sons before his crown. Korean: 하오체.',
+		arc: 'Seventh-generation descendant of Kim Alji, married to a Seok princess. When King Cheomhae dies without a son, the six houses raise Michu, the first Kim to wear the crown. The Seok line takes it back after him; the Kims return with Naemul and keep it.',
+		events: [{ year: 262, label: 'Raised to the throne by the six houses; the first Kim king.' }],
+		aliases: ['King Michu', '미추왕', '미추 이사금']
 	},
 	{
 		id: 'jinheung',
@@ -6649,8 +6819,8 @@ export const CONCEPTS: Person[] = [
 			{ id: 'euljae', role: '상대등 · High Councillor (632–636)', reportsTo: null },
 			{ id: 'supum', role: '상대등 · High Councillor (636–645)', reportsTo: null },
 			{ id: 'bidam', role: '상대등 · High Councillor (645–647) · the 645 veto', reportsTo: null },
+			{ id: 'alchun', role: '상대등 · High Councillor (647–654) · the 651 Secretariat vote', reportsTo: null },
 			{ id: 'yushin', role: '대등', reportsTo: 'supum' },
-			{ id: 'alchun', role: '대등', reportsTo: 'supum' },
 			{ id: 'murim', role: '대등', reportsTo: 'supum' },
 			{ id: 'imjong', role: '대등', reportsTo: 'supum' },
 			{ id: 'suljong', role: '대등', reportsTo: 'supum' }
@@ -8383,6 +8553,9 @@ const COLOR: Record<string, string> = {
 	weizheng: '#9a7b4f',
 	xuerengui: '#e8e3d5',
 	xueliu: '#c4a484',
+	simayi: '#4a4f63',
+	gongsunyuan: '#a08040',
+	wangqi: '#6b8fa3',
 	ashinasheer: '#c45a38',
 	qibiheli: '#d8d4c8',
 	zhangsunwuji: '#2f2f36',

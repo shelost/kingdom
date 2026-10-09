@@ -1,0 +1,1002 @@
+{
+	"ops": [
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "세 나라, 한 반도, 그리고 그 선에 만족하는 이는 아",
+			"block": {
+				"kind": "place",
+				"place": "surabol",
+				"html": "Everyone here knows exactly how high they were born.",
+				"ko": "여기선 다들 자기가 얼마나 높이 태어났는지 정확히 안다."
+			},
+			"why": "first scene set in Surabol; after the opening map, before the first scene"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "Blue banners. A moon no one has to point",
+			"block": {
+				"kind": "place",
+				"place": "cheomseongdae",
+				"html": "A tower for reading the sky, in case the sky has opinions.",
+				"ko": "하늘에도 할 말이 있을지 몰라 세운 탑."
+			},
+			"why": "first mention of Cheomseongdae"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Prince Euija",
+			"op": "add",
+			"after": "In Sabi the clans read the stars the way",
+			"block": {
+				"kind": "place",
+				"place": "sabi",
+				"html": "The king lives here. So do eight families who think that’s a detail.",
+				"ko": "임금이 사는 곳. 그걸 사소한 일로 여기는 여덟 가문도 산다."
+			},
+			"why": "first scene set in Sabi (Jinheung’s opener only names it in passing)"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Prince Euija",
+			"op": "add",
+			"after": "<b>White River</b> — the wide mouth belo",
+			"block": {
+				"kind": "place",
+				"place": "baekgang",
+				"html": "Wide, slow, and fought over one berth at a time.",
+				"ko": "넓고 느리고, 선착장 한 칸씩 싸움이 붙는 강."
+			},
+			"why": "first introduction of the White River"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Gunchogo, the 13th",
+			"op": "add",
+			"after": "Baekje’s thirteenth king marches north t",
+			"block": {
+				"kind": "place",
+				"place": "pyongyang",
+				"html": "The north’s capital, and a long walk for anyone who wants it.",
+				"ko": "북쪽의 수도. 탐내는 자에겐 먼 길이다."
+			},
+			"why": "first mention of Pyongyang; a king dies on its wall here"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Pumsuk",
+			"op": "add",
+			"after": "The new couple move to <b>Daeya Fortress",
+			"block": {
+				"kind": "place",
+				"place": "daeya",
+				"html": "A border post with a fine view of Baekje. The view works both ways.",
+				"ko": "백제가 훤히 보이는 국경 초소. 저쪽에서도 훤히 보인다."
+			},
+			"why": "first plot introduction of Daeya (Gunchogo only teases the name)"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Stele",
+			"op": "add",
+			"after": "Yeon takes his sons to see the Great Kin",
+			"block": {
+				"kind": "place",
+				"place": "gungnae",
+				"html": "The old capital, where the Great King’s stone still does the bragging.",
+				"ko": "옛 수도. 자랑은 아직도 대왕의 비석이 대신 한다."
+			},
+			"why": "first scene set at Gungnae (the stele); place is unnamed in the text"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "The Severing",
+			"op": "add",
+			"after": "Seong feels the cut in the marrow. He ca",
+			"block": {
+				"kind": "place",
+				"place": "gwansan",
+				"html": "Every road into Silla’s valley squeezes through here.",
+				"ko": "신라 골짜기로 드는 길은 모두 여기서 좁아진다."
+			},
+			"why": "“the fortress that opens Silla’s throat”: first scene at Gwansan (Jinheung names it only in a list)"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Gumil",
+			"op": "add",
+			"after": "Before Daeya — before the year that will",
+			"block": {
+				"kind": "place",
+				"place": "steam_cavern",
+				"html": "Black water, warm stone, and not as empty as it looks.",
+				"ko": "물은 검고 바위는 따뜻하다. 보이는 것만큼 비어 있지 않다."
+			},
+			"why": "first visit to the cavern lake"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Siege of Daeya",
+			"op": "add",
+			"after": "A man who was not in the fortress is sud",
+			"block": {
+				"kind": "place",
+				"place": "underworld",
+				"html": "It keeps a ledger, and it is never late.",
+				"ko": "명부를 쥐고 있고, 늦는 법이 없다."
+			},
+			"why": "first appearance of the underworld (Kangrim arrives)"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Nangbi",
+			"op": "add",
+			"after": "Autumn. Silla’s army is breaking against",
+			"block": {
+				"kind": "place",
+				"place": "nangbi",
+				"html": "A Goguryeo wall that is about to make somebody famous.",
+				"ko": "곧 누군가를 유명하게 만들 고구려의 성벽."
+			},
+			"why": "first scene at Nangbi"
+		},
+		{
+			"chapter": "epilogue",
+			"title": "Emperor",
+			"op": "add",
+			"after": "Far to the west, a man who owns half the",
+			"block": {
+				"kind": "place",
+				"place": "changan",
+				"html": "Half the world sends tribute here and calls it friendship.",
+				"ko": "세상의 절반이 조공을 바치고, 그걸 우정이라 부르는 곳."
+			},
+			"why": "first scene set in Chang’an (earlier mentions are passing)"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Yodong",
+			"op": "add",
+			"after": "Then the Eastern Fortress itself. It hel",
+			"block": {
+				"kind": "place",
+				"place": "yodong",
+				"html": "The gate the West keeps knocking on.",
+				"ko": "서쪽이 자꾸 두드리는 문."
+			},
+			"why": "first scene at the Eastern Fortress (Four Dragons’ closing card only teases it)"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Boiling River",
+			"op": "add",
+			"after": "Hwando is burned. The king runs east wit",
+			"block": {
+				"kind": "place",
+				"place": "hwando",
+				"html": "A mountain capital, built for the day the plain is lost.",
+				"ko": "들판을 잃는 날을 위해 지은 산 위의 수도."
+			},
+			"why": "first mention of Hwando"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Stallion Mountain",
+			"op": "add",
+			"after": "mmer the farmer from Longmen is no longe",
+			"block": {
+				"kind": "place",
+				"place": "jupil",
+				"html": "Named for where an emperor stopped. Emperors name a lot of things.",
+				"ko": "황제가 멈춰 선 자리라 붙은 이름. 황제들은 이름 붙이길 좋아한다."
+			},
+			"why": "first scene at Stallion Mountain"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Colossal River",
+			"op": "add",
+			"after": "On the Colossal River, Ulchi Munduk brea",
+			"block": {
+				"kind": "place",
+				"place": "salsu",
+				"html": "Ask a Goguryeo grandfather. He will raise a cup first.",
+				"ko": "고구려 할아버지에게 물어보라. 잔부터 들 것이다."
+			},
+			"why": "first scene at the Salsu (High Summit / Nangbi only toast it)"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Ansi",
+			"op": "add",
+			"after": "The Guardian of Ansi Fortress is an ecce",
+			"block": {
+				"kind": "place",
+				"place": "ansi",
+				"html": "One small fortress, and one stubborn man on top of it.",
+				"ko": "작은 성 하나, 그 위에 고집 센 사내 하나."
+			},
+			"why": "first scene at Ansi (earlier mentions are passing)"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Haemosu",
+			"op": "add",
+			"after": "Dawn, noon, dusk, night, always the same",
+			"block": {
+				"kind": "place",
+				"place": "amnok",
+				"html": "Every god’s road crosses it. Most of them keep going.",
+				"ko": "신들의 길은 모두 이 강을 건넌다. 대개는 그냥 지나간다."
+			},
+			"why": "first mention of the Amnok"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Haemosu",
+			"op": "add",
+			"after": "From the river, Buyeo’s capital is a pal",
+			"block": {
+				"kind": "place",
+				"place": "buyeo_north",
+				"html": "An old kingdom that takes in strays and keeps count.",
+				"ko": "떠돌이를 받아 주고, 셈은 해 두는 오래된 나라."
+			},
+			"why": "first sight of Buyeo’s capital"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "add",
+			"after": "l wet from the river when the pines stop",
+			"block": {
+				"kind": "place",
+				"place": "jolbon",
+				"html": "Pine valleys, crow clans, and nobody waiting for a king.",
+				"ko": "소나무 골짜기, 까마귀 가문, 그리고 임금을 기다리는 이는 아무도 없다."
+			},
+			"why": "first scene in Jolbon (Four Dragons names it only in passing)"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "add",
+			"after": "It is the Pine Kingdom, a stand of old p",
+			"block": {
+				"kind": "place",
+				"place": "pine_kingdom",
+				"html": "Old trees, older pride, and a king who got here first.",
+				"ko": "오래된 나무, 더 오래된 자존심, 그리고 먼저 와 있던 임금."
+			},
+			"why": "first introduction of the Pine Kingdom"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Suro",
+			"op": "add",
+			"after": "Gaya doesn’t have a crown. It has a leag",
+			"block": {
+				"kind": "place",
+				"place": "geumgwan",
+				"html": "The harbour that sells iron to everyone, enemies included.",
+				"ko": "원수에게까지 쇠를 파는 항구."
+			},
+			"why": "first scene set in Golden Gaya (The Severing’s mention belongs to an unrevealed prince)"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Sadaham",
+			"op": "add",
+			"after": "Two summers on, Great Gaya stops paying.",
+			"block": {
+				"kind": "place",
+				"place": "daegaya",
+				"html": "A hill kingdom that has just stopped saying yes.",
+				"ko": "막 “예”라고 하기를 그만둔 산골 왕국."
+			},
+			"why": "first plot introduction of Great Gaya (inside the flashback)"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Seung (承)",
+			"op": "add",
+			"after": "Bidam and Yumjong raise men at the Fortr",
+			"block": {
+				"kind": "place",
+				"place": "radiance",
+				"html": "Close enough to the palace to shout at it.",
+				"ko": "궁궐에 고함이 들릴 만큼 가까운 성."
+			},
+			"why": "first scene at the Fortress of Radiance (Bupmin names it only as a practice road)"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Jahee",
+			"op": "add",
+			"after": "Yushin sends Bupmin to the coast to work",
+			"block": {
+				"kind": "place",
+				"place": "danghang",
+				"html": "Silla’s only door to the western sea. Everyone knows which door.",
+				"ko": "서쪽 바다로 난 신라의 단 하나뿐인 문. 다들 그 문이 어딘지 안다."
+			},
+			"why": "first scene set at Danghang (Euija & Yeon already has a map right on its mention)"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Exile",
+			"op": "add",
+			"after": "He wakes on a beach with sand in his tee",
+			"block": {
+				"kind": "place",
+				"place": "mugun",
+				"html": "The island where Baekje sends men it can’t afford to kill.",
+				"ko": "백제가 죽이기엔 아까운 사내들을 보내는 섬."
+			},
+			"why": "Gyebek lands on Tamla: first scene there"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Sulmun",
+			"op": "add",
+			"after": "e the island there is a woman, and she i",
+			"block": {
+				"kind": "place",
+				"place": "halla",
+				"html": "The island’s spine, and a giantess’s favourite chair.",
+				"ko": "섬의 등뼈이자, 거인 할망이 즐겨 앉던 의자."
+			},
+			"why": "first mention of Mount Halla"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Gardener",
+			"op": "add",
+			"after": "d him for it. Heaven does not care for t",
+			"block": {
+				"kind": "place",
+				"place": "western_flower_field",
+				"html": "Every flower here does something. Ask before you pick.",
+				"ko": "여기 꽃은 다 하는 일이 있다. 꺾기 전에 물어보라."
+			},
+			"why": "first mention of the Western Flower Field"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Coup",
+			"op": "add",
+			"after": "Forty-one sons need forty-one seats. Non",
+			"block": {
+				"kind": "place",
+				"place": "ungjin",
+				"html": "Four generations of the Ye family, and not one invitation.",
+				"ko": "예씨 가문 사 대, 초대장은 한 장도 없었다."
+			},
+			"why": "first plot introduction of Bear Fortress (Exile’s drill-ground mention is passing)"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Onjo",
+			"op": "add",
+			"after": "y answers him. The stag, which has stood",
+			"block": {
+				"kind": "place",
+				"place": "michuhol",
+				"html": "Salt flats and sea wind. Biryu calls it a view.",
+				"ko": "갯벌과 바닷바람. 비류는 그걸 경치라 부른다."
+			},
+			"why": "Biryu’s half goes to Michuhol: first plot introduction"
+		},
+		{
+			"chapter": "epilogue-part-ii",
+			"title": "Three Realms",
+			"op": "add",
+			"after": "Epilogue · Part II. The annual meeting i",
+			"block": {
+				"kind": "place",
+				"place": "realms_pavilion",
+				"html": "Four posts, clouds for a yard, and very strict seating.",
+				"ko": "기둥 넷, 구름 마당, 그리고 아주 엄격한 자리 배치."
+			},
+			"why": "the annual meeting place, introduced in block 0"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "add",
+			"after": "On the ninth day, the Tang fleet sails i",
+			"block": {
+				"kind": "place",
+				"place": "gibeolpo",
+				"html": "A river mouth made of mud, and Sabi’s front door.",
+				"ko": "진흙으로 된 강어귀, 사비의 앞문."
+			},
+			"why": "first scene at Gibeolpo (Heungsu and the Descent quote only name it)"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "add",
+			"after": "ed-Victories gets to the <b>Yellow Mount",
+			"block": {
+				"kind": "place",
+				"place": "hwangsan",
+				"html": "Good ground for whoever gets there first.",
+				"ko": "먼저 온 자에게 좋은 땅."
+			},
+			"why": "first scene on the field (Bupmin / Pumsuk only name the road)"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "Asuka, the tenth month. The Baekje envoy",
+			"block": {
+				"kind": "place",
+				"place": "asuka",
+				"html": "The court across the cold sea, where favours are counted in ships.",
+				"ko": "차가운 바다 건너의 궁정. 은혜는 배로 센다."
+			},
+			"why": "first scene in Asuka (inside the flashback)"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "Juryu, the ninth month of 661. Prince Pu",
+			"block": {
+				"kind": "place",
+				"place": "juryu",
+				"html": "Bad farmland, good cliffs. Rebels pick the cliffs.",
+				"ko": "농사엔 나쁘고 벼랑은 좋다. 반란군은 벼랑을 고른다."
+			},
+			"why": "first scene at Juryu"
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Snake River",
+			"op": "add",
+			"after": "The White Tiger drives his host into the",
+			"block": {
+				"kind": "place",
+				"place": "sasu",
+				"html": "Shallow, slow, and patient with men who think rivers are roads.",
+				"ko": "얕고 느리며, 강을 길로 아는 자에게 참을성이 많다."
+			},
+			"why": "first mention of the Snake River"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Mount Gain",
+			"op": "add",
+			"after": "The next summer, the empire makes the tw",
+			"block": {
+				"kind": "place",
+				"place": "chwiri",
+				"html": "A hill outside Bear Ford, named by optimists.",
+				"ko": "웅진 밖의 언덕. 낙관주의자들이 붙인 이름."
+			},
+			"why": "first introduction of Mount Gain"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Dangun & Old Joseon",
+			"op": "add",
+			"after": "Their son is Dangun. The name on the sto",
+			"block": {
+				"kind": "place",
+				"place": "asadal",
+				"html": "Where the mountain meets the plain, and the first crown met both.",
+				"ko": "산이 들을 만나는 곳. 첫 왕관이 둘 다를 만난 곳."
+			},
+			"why": "first narration of Asadal (the diagram above only lists it)"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Stone Gate",
+			"op": "add",
+			"after": "At Seokmun the Tang turn around. The Moh",
+			"block": {
+				"kind": "place",
+				"place": "seokmun",
+				"html": "A narrow place that looks like a way out, until it isn’t.",
+				"ko": "빠져나갈 길처럼 보이다가, 아니게 되는 좁은 곳."
+			},
+			"why": "first narration of Seokmun; the episode is set there"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Maeso",
+			"op": "add",
+			"after": "So the war moves inland, to a fortress o",
+			"block": {
+				"kind": "place",
+				"place": "maeso",
+				"html": "Good walls. Terrible stables.",
+				"ko": "성벽은 좋다. 마구간이 형편없다."
+			},
+			"why": "first scene at Maeso Fortress"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Bupmin",
+			"op": "add",
+			"after": "The Hwarang follow a set of <b>Five Prin",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "世",
+						"gloss": "인간 세",
+						"meaning": "the world"
+					},
+					{
+						"char": "俗",
+						"gloss": "풍속 속",
+						"meaning": "custom; lay life"
+					},
+					{
+						"char": "五",
+						"gloss": "다섯 오",
+						"meaning": "five"
+					},
+					{
+						"char": "戒",
+						"gloss": "경계할 계",
+						"meaning": "precept, warning"
+					}
+				],
+				"name": "The Five Secular Precepts",
+				"ko": "세속오계",
+				"note": "A monk wrote rules for boys who would never be monks. They mostly kept them.",
+				"noteKo": "스님이, 끝내 스님이 되지 않을 소년들을 위해 쓴 계율. 소년들은 대체로 지켰다."
+			},
+			"why": "first introduction of the Five Principles (세속오계)"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Bupmin",
+			"op": "add",
+			"after": "사군이충 (事君以忠): 충성으로 임금을 섬긴다.",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "事",
+						"gloss": "섬길 사",
+						"meaning": "serve"
+					},
+					{
+						"char": "君",
+						"gloss": "임금 군",
+						"meaning": "sovereign"
+					},
+					{
+						"char": "以",
+						"gloss": "써 이",
+						"meaning": "with, by means of"
+					},
+					{
+						"char": "忠",
+						"gloss": "충성 충",
+						"meaning": "loyalty"
+					}
+				],
+				"name": "Serve the king with loyalty",
+				"ko": "사군이충",
+				"note": "First on the list, so nobody can say they missed it.",
+				"noteKo": "맨 앞에 두었다. 못 들었다는 소리는 못 하게."
+			},
+			"why": "first naming of 사군이충 (the verse lists all five at once)",
+			"seq": 1
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Bupmin",
+			"op": "add",
+			"after": "사친이효 (事親以孝): 효도로써 부모를 섬긴다.",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "事",
+						"gloss": "섬길 사",
+						"meaning": "serve"
+					},
+					{
+						"char": "親",
+						"gloss": "친할 친",
+						"meaning": "parents, kin"
+					},
+					{
+						"char": "以",
+						"gloss": "써 이",
+						"meaning": "with, by means of"
+					},
+					{
+						"char": "孝",
+						"gloss": "효도 효",
+						"meaning": "filial devotion"
+					}
+				],
+				"name": "Serve your parents with devotion",
+				"ko": "사친이효",
+				"note": "Easy, until the king and your father want different things.",
+				"noteKo": "쉽다. 임금과 아버지가 서로 다른 걸 원하기 전까지는."
+			},
+			"why": "first naming of 사친이효 (the verse lists all five at once)",
+			"seq": 2
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Bupmin",
+			"op": "add",
+			"after": "교우이신 (交友以信): 믿음으로써 벗을 사귄다.",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "交",
+						"gloss": "사귈 교",
+						"meaning": "befriend"
+					},
+					{
+						"char": "友",
+						"gloss": "벗 우",
+						"meaning": "friend"
+					},
+					{
+						"char": "以",
+						"gloss": "써 이",
+						"meaning": "with, by means of"
+					},
+					{
+						"char": "信",
+						"gloss": "믿을 신",
+						"meaning": "trust"
+					}
+				],
+				"name": "Keep faith with your friends",
+				"ko": "교우이신",
+				"note": "The one boys swear to first and keep longest.",
+				"noteKo": "소년들이 제일 먼저 맹세하고, 제일 오래 지키는 것."
+			},
+			"why": "first naming of 교우이신 (the verse lists all five at once)",
+			"seq": 3
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Bupmin",
+			"op": "add",
+			"after": "임전무퇴 (臨戰無退): 전쟁에 나가 물러서지 않는다.",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "臨",
+						"gloss": "임할 림",
+						"meaning": "face, stand before"
+					},
+					{
+						"char": "戰",
+						"gloss": "싸움 전",
+						"meaning": "battle"
+					},
+					{
+						"char": "無",
+						"gloss": "없을 무",
+						"meaning": "no, without"
+					},
+					{
+						"char": "退",
+						"gloss": "물러날 퇴",
+						"meaning": "retreat"
+					}
+				],
+				"name": "Never retreat in battle",
+				"ko": "임전무퇴",
+				"note": "The one they elbow each other at. For now.",
+				"noteKo": "소년들이 서로 팔꿈치로 찌르는 대목. 아직은."
+			},
+			"why": "first naming of 임전무퇴 (the verse lists all five at once)",
+			"seq": 4
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Bupmin",
+			"op": "add",
+			"after": "살생유택 (殺生有擇): 살아있는 것을 죽일 때에는 가림이 있어야 한다",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "殺",
+						"gloss": "죽일 살",
+						"meaning": "kill"
+					},
+					{
+						"char": "生",
+						"gloss": "날 생",
+						"meaning": "living thing"
+					},
+					{
+						"char": "有",
+						"gloss": "있을 유",
+						"meaning": "have, there is"
+					},
+					{
+						"char": "擇",
+						"gloss": "가릴 택",
+						"meaning": "choice, discernment"
+					}
+				],
+				"name": "Be choosy about killing",
+				"ko": "살생유택",
+				"note": "The quiet one. Boys skip it. Old soldiers don’t.",
+				"noteKo": "조용한 계율. 소년들은 건너뛰고, 늙은 병사들은 그러지 않는다."
+			},
+			"why": "first naming of 살생유택 (the verse lists all five at once)",
+			"seq": 5
+		}
+	],
+	"alternativeOps": [
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "add",
+			"after": "신하로서는 충만 한 것이 없고, 자식으로서는",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "事",
+						"gloss": "섬길 사",
+						"meaning": "serve"
+					},
+					{
+						"char": "君",
+						"gloss": "임금 군",
+						"meaning": "sovereign"
+					},
+					{
+						"char": "以",
+						"gloss": "써 이",
+						"meaning": "with, by means of"
+					},
+					{
+						"char": "忠",
+						"gloss": "충성 충",
+						"meaning": "loyalty"
+					}
+				],
+				"name": "Serve the king with loyalty",
+				"ko": "사군이충",
+				"note": "First on the list, so nobody can say they missed it.",
+				"noteKo": "맨 앞에 두었다. 못 들었다는 소리는 못 하게."
+			},
+			"why": "Heumsun to Bangul: “For a subject, nothing is greater than loyalty…”"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "add",
+			"after": "신하로서는 충만 한 것이 없고, 자식으로서는",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "事",
+						"gloss": "섬길 사",
+						"meaning": "serve"
+					},
+					{
+						"char": "親",
+						"gloss": "친할 친",
+						"meaning": "parents, kin"
+					},
+					{
+						"char": "以",
+						"gloss": "써 이",
+						"meaning": "with, by means of"
+					},
+					{
+						"char": "孝",
+						"gloss": "효도 효",
+						"meaning": "filial devotion"
+					}
+				],
+				"name": "Serve your parents with devotion",
+				"ko": "사친이효",
+				"note": "Easy, until the king and your father want different things.",
+				"noteKo": "쉽다. 임금과 아버지가 서로 다른 걸 원하기 전까지는."
+			},
+			"why": "…“For a son, nothing is greater than filial piety.” (insert after the 사군이충 block)"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Sadaham",
+			"op": "add",
+			"after": "arshal does not let <i>trust among frien",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "交",
+						"gloss": "사귈 교",
+						"meaning": "befriend"
+					},
+					{
+						"char": "友",
+						"gloss": "벗 우",
+						"meaning": "friend"
+					},
+					{
+						"char": "以",
+						"gloss": "써 이",
+						"meaning": "with, by means of"
+					},
+					{
+						"char": "信",
+						"gloss": "믿을 신",
+						"meaning": "trust"
+					}
+				],
+				"name": "Keep faith with your friends",
+				"ko": "교우이신",
+				"note": "The one boys swear to first and keep longest.",
+				"noteKo": "소년들이 제일 먼저 맹세하고, 제일 오래 지키는 것."
+			},
+			"why": "“The Marshal does not let trust among friends stay a pretty line.”"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Bupmin",
+			"op": "add",
+			"after": "고타소가 말을 너무 빨리 몰면 제가 늘 먼저 고삐를 당",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "臨",
+						"gloss": "임할 림",
+						"meaning": "face, stand before"
+					},
+					{
+						"char": "戰",
+						"gloss": "싸움 전",
+						"meaning": "battle"
+					},
+					{
+						"char": "無",
+						"gloss": "없을 무",
+						"meaning": "no, without"
+					},
+					{
+						"char": "退",
+						"gloss": "물러날 퇴",
+						"meaning": "retreat"
+					}
+				],
+				"name": "Never retreat in battle",
+				"ko": "임전무퇴",
+				"note": "The one they elbow each other at. For now.",
+				"noteKo": "소년들이 서로 팔꿈치로 찌르는 대목. 아직은."
+			},
+			"why": "Bupmin answers “…Retreat.” — the one he will break first"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Gyeol (結)",
+			"op": "add",
+			"after": "부리는 짐승은 죽이지 마라. 말, 소, 닭,",
+			"block": {
+				"kind": "hanja",
+				"chars": [
+					{
+						"char": "殺",
+						"gloss": "죽일 살",
+						"meaning": "kill"
+					},
+					{
+						"char": "生",
+						"gloss": "날 생",
+						"meaning": "living thing"
+					},
+					{
+						"char": "有",
+						"gloss": "있을 유",
+						"meaning": "have, there is"
+					},
+					{
+						"char": "擇",
+						"gloss": "가릴 택",
+						"meaning": "choice, discernment"
+					}
+				],
+				"name": "Be choosy about killing",
+				"ko": "살생유택",
+				"note": "The quiet one. Boys skip it. Old soldiers don’t.",
+				"noteKo": "조용한 계율. 소년들은 건너뛰고, 늙은 병사들은 그러지 않는다."
+			},
+			"why": "Bidam: “Master Wongwang’s fifth precept. Be choosy about killing.”"
+		}
+	],
+	"missingHanja": [
+		"surabol",
+		"cheomseongdae",
+		"sabi",
+		"baekgang",
+		"pyongyang",
+		"daeya",
+		"gungnae",
+		"gwansan",
+		"underworld",
+		"nangbi",
+		"changan",
+		"yodong",
+		"hwando",
+		"jupil",
+		"salsu",
+		"ansi",
+		"amnok",
+		"buyeo_north",
+		"geumgwan",
+		"daegaya",
+		"radiance",
+		"danghang",
+		"mugun",
+		"halla",
+		"ungjin",
+		"michuhol",
+		"gibeolpo",
+		"hwangsan",
+		"asuka",
+		"juryu",
+		"sasu",
+		"chwiri",
+		"asadal",
+		"seokmun",
+		"maeso"
+	],
+	"hanjaSuggestions": {
+		"surabol": "徐羅伐",
+		"cheomseongdae": "瞻星臺",
+		"sabi": "泗沘",
+		"baekgang": "白江",
+		"pyongyang": "平壤城",
+		"daeya": "大耶城",
+		"gungnae": "國內城",
+		"gwansan": "管山城",
+		"underworld": "冥府",
+		"nangbi": "娘臂城",
+		"changan": "長安",
+		"yodong": "遼東城",
+		"hwando": "丸都山城",
+		"jupil": "駐蹕山",
+		"salsu": "薩水",
+		"ansi": "安市城",
+		"amnok": "鴨綠江",
+		"buyeo_north": "夫餘",
+		"geumgwan": "金官加耶",
+		"daegaya": "大加耶",
+		"radiance": "明活城",
+		"danghang": "党項城",
+		"mugun": "耽羅",
+		"halla": "漢拏山",
+		"ungjin": "熊津城",
+		"michuhol": "彌鄒忽",
+		"gibeolpo": "伎伐浦",
+		"hwangsan": "黃山伐",
+		"asuka": "飛鳥",
+		"juryu": "周留城",
+		"sasu": "蛇水",
+		"chwiri": "就利山",
+		"asadal": "阿斯達",
+		"seokmun": "石門",
+		"maeso": "買肖城"
+	},
+	"notes": "Ops are in reading order. The five precept ops (seq 1–5) all anchor to lines of the same Bupmin verse block, so they resolve to one insertion point: insert them in seq order, each after the previous insert, so the run reads 사군이충 → 살생유택 after the verse. The 世俗五戒 title block goes after the “Five Principles” p, i.e. just before the verse.\nThe verse already spells out all five precepts in Korean+hanja; with six calligraphy blocks right there the editor may want to drop the verse, or use alternativeOps instead, which spread each precept to the first beat that dramatizes it (Yellow Mountain loyalty/filial speech, Sadaham “trust among friends”, Bupmin’s “…Retreat.”, Bidam quoting Wongwang’s fifth precept in Gyeol). Both alternative Yellow Mountain ops share an anchor: put 사군이충 first.\nNo hanja block for the precepts exists anywhere yet (story-wide hanja blocks: 善德, 階伯), so nothing duplicated.\nmissingHanja lists every carded place without `hanja` in places.ts. hanjaSuggestions are the standard record forms for review only (not written anywhere); mugun’s is the island name 耽羅 (Tamla), underworld’s 冥府 is a gloss for native 저승. Heaven (天界) was skipped.\nMax 2 cards per episode held: Queen Sunduk, Prince Euija, Haemosu, Jolbon, Yellow Mountain, King Pungjang carry two.\nSkipped on purpose: buyeo_fort (Commander Yeon’s map already introduces a minor outpost); deer_rock (Eight Great Clans already has a `term` card, “The Rock of Government”); samseonghyeol (Three Princes diagram “Three Princes · 삼성혈” introduces it); imjon (would be a 3rd card in King Pungjang; Heukchi Sangji carries it); sinseong, liao, gaemo, baegam, geonan, bisa, wirye, paektu, manchuria, central, sabi_tourney, flower_cliff, moon_palace, heaven, living_world (passing mentions, unnamed, or not visited). Huangdi (皇帝) untouched.\nPlaces unnamed at their anchor (set by the entry’s `place` field): gungnae (Stele), changan (Emperor), danghang (Jahee), gwansan (The Severing, “the fortress that opens Silla’s throat”). The card names them.\nRenderer note: Blocks.svelte has no `place` branch yet, so these cards render nothing until the PlaceCard lands."
+}

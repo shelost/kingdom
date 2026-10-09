@@ -1,0 +1,294 @@
+#1 Queen Sunduk (632)
+  FIRST [p] A Queen? Ridiculous.
+  LAST  [p BOLD 24w] Six men who hate the word “woman” crowned one anyway. One of them carried the crown. How? Go back one night, to a brazier…!
+#2 Harmony Council (632)
+  FIRST [p] One night earlier. Six nobles, one brazier, and nobody stands up until they all agree.
+  LAST  [p BOLD 21w] Every man who voted that night grew up in her great-grandfather’s yard. Who was the Cloud King? Ask anyone in Surabol…!
+#3 Jinheung, the Cloud (554)
+  FIRST [p] Ask anyone in Surabol about the Cloud King and they'll tell you about his stones. Ask anyone in Sabi and they'll change the subject. You'll find out why. Not yet.
+  LAST  [p BOLD 22w] The rain fell on Baekje’s field, and Baekje kept the grudge. In five days, it names the prince who will inherit it…!
+#4 Prince Euija (632)
+  FIRST [p] In five days, Prince Euija becomes Crown Prince Euija. He is thirty-two, which is late for it. He has fifteen sons, which is early for everything else.
+  LAST  [p BOLD 13w] Eight houses. Eight boys on the sand. And one with a borrowed name…!
+#5 Eight Great Clans (632)
+  FIRST [p] Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.
+  LAST  [p BOLD 22w] Why is one dead king the only thing eight houses still agree on? To find out, we go back three hundred years…!
+#6 Gunchogo, the 13th (371)
+  FIRST [p] Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.
+  LAST  [p BOLD 23w] North, then, three hundred years on, to the snow and Goguryeo’s most frightening commander. First question: do you know what happens to traitors…?
+#7 Commander Yeon (634)
+  FIRST [p] Everyone in the north has a story about the Eternal General. None of them are bedtime stories.
+  LAST  [p BOLD 23w] He promised his father half. He has never said half of anything. Next stop: Pyongyang, and a room full of men counting grain…!
+#8 High Summit (634)
+  FIRST [p] Half, his father said. Yeon manages it until the second pot of tea.
+  LAST  [p BOLD 21w] Once, Silla begged Goguryeo for an army, and Goguryeo came. To meet the king who answered, we go back two centuries…!
+#9 Gwanggaeto, the Great King (400)
+  FIRST [p] Silla is drowning. An army from across the sea is inside its walls, and its king has one move left.
+  LAST  [p BOLD 24w] The prince who will beg has a son. Bupmin is fifteen now, and his uncle has one question: which rule will you break first…?
+#10 Bupmin (641)
+  FIRST [p] Fifteen is old enough for the headband. It is not old enough to invent a country, though Bupmin keeps trying.
+  LAST  [p BOLD 15w] The yard has two names it still whispers. Tonight the Marshal says them out loud…!
+#11 Sadaham (641)
+  FIRST [p] Every yard has its ghosts. This one has two, and they have never missed roll call.
+  LAST  [p BOLD 21w] When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!
+#12 Gotaso (641)
+  FIRST [p] A young girl is going to do what she’s going to do.
+  LAST  [p BOLD 18w] Four children, already named. Now the boy has to ask her father. And her father wants a vow…!
+#13 Pumsuk (641)
+  FIRST [p] Pumsuk asks for the girl. Chunchu asks for something else.
+  LAST  [p BOLD 22w] “Dear… have you already forgotten how we met?” Munhee hasn’t. It involves a dream, a skirt, and a coat torn on purpose…!
+#14 Munhee (625)
+  FIRST [dialogue:chunchu] Dear… have you already forgotten how we met?
+  LAST  [p BOLD 20w] Same spring, in Pyongyang, another father walks his son to school. He means to pick a fight with the Buddha…!
+#15 Academy (641)
+  FIRST [p] Yeon has three sons, and only one of them is old enough to annoy a monk.
+  LAST  [p BOLD 22w] Field trip. Yeon takes the boys to see a very big rock. The rock has a list on it, and a question…!
+#16 Stele (641)
+  FIRST [p] The Great King’s stone is taller than four men. Namseng is not impressed.
+  LAST  [p BOLD 16w] Some visitors knock. Some take their boots off. One old friend is about to do neither…!
+#17 Dosuryu (641)
+  FIRST [p] In thirty years Dosuryu has never knocked at this house. Tonight, for the first time, he keeps his boots on.
+  LAST  [p BOLD 19w] Far to the south, Sabi has a new king. On his coronation morning, several hundred people see a dragon…!
+#18 King Euija (641)
+  FIRST [p] Several hundred people see the dragon. Only one of them can see the string.
+  LAST  [p BOLD 22w] Euija can fake a dragon. He can’t fake a fortress. For that he needs a general who does exactly what he says…!
+#19 Yunchung (641)
+  FIRST [p] There was only one man Euija knew he could trust to deliver.
+  LAST  [p BOLD 23w] “What is the Severing?” Gyebek asked. Any grandmother in Sabi could tell him. We’ll go back a hundred years and see for ourselves…!
+#20 The Severing (553–554)
+  FIRST [p] The sad thing about betrayal… is that it never comes from your enemies.
+  LAST  [p BOLD 16w] Ten thousand Baekje men march on Daeya. Its grain clerk is called Gumil. Remember that name…!
+#21 Gumil (642)
+  FIRST [p] Gumil counts rice for a living. None of it has ever been his.
+  LAST  [p BOLD 24w] One husband counting sacks till dawn. One cold pallet. One feast still lit down the hall. How long can a True Bone lie still…?
+#22 Maehwa (642)
+  FIRST [p] A man is measured by his self-control.
+  LAST  [p BOLD 19w] Morning comes. So does her husband, back from the stores. He wants the whole story. Every word of it…!
+#23 Siege of Daeya (642)
+  FIRST [p] Gumil comes home at dawn with every sack in Daeya counted. He sits down to count one more thing.
+  LAST  [p BOLD 19w] In Pyongyang, Yeon has spent all summer bowing. Now he is throwing a party, and everyone important is invited…!
+#24 Yeon’s Massacre (642)
+  FIRST [p] Everyone in Pyongyang agrees that a man who bows all summer has learned his place.
+  LAST  [p BOLD 22w] A kingdom with its doors shut, and a man with five swords on his back. Naturally, Chunchu wants to go and knock…!
+#25 Chunchu & Yeon (642)
+  FIRST [p] Every morning since Daeya, Chunchu asks the Queen for the same thing. Every morning she says no.
+  LAST  [p BOLD 19w] One envoy left Pyongyang bleeding. Whose blade was it? Now the King of Baekje walks in on purpose, laughing…!
+#26 Euija & Yeon (642)
+  FIRST [p] King Euija hears how Goguryeo’s king died, and feels the one thing a king should never admit to. Envy.
+  LAST  [p BOLD 22w] Why does the Eternal General flinch at one Silla name? Go back to a ditch, a white horse, and an unknown captain…!
+#27 Nangbi (629)
+  FIRST [p] Kim Yushin — a name that strikes fear in all of Samhan. Maybe this is why.
+  LAST  [p BOLD 23w] Thirteen years on, the banner captain has a queen, a title, and forty fortresses Baekje just took from her. He wants them back…!
+#28 Forty Fortresses (642)
+  FIRST [p] Baekje took forty Silla fortresses in one autumn. Silla’s answer reaches Sabi at breakfast.
+  LAST  [p BOLD 24w] One star over Samhan tonight. Three men are looking up at it, and every one of them wants to be the King for All…!
+#29 The Eastern Star (642)
+  FIRST [p] There is a hill above Surabol where two boys once lay on their backs and argued about a star. Thirty years on, they climb it again.
+  LAST  [p BOLD 21w] Gesomun wants a country. Far to the west, the man who owns half the world is trying to pronounce his name…!
+#30 Emperor (643)
+  FIRST [p] Far to the west, a man who owns half the world hears a new name. He turns it over on his tongue, like a grape he hasn’t decided to eat.
+  LAST  [p BOLD 21w] He has his excuse. What he doesn’t have yet is a war worth leading himself. For that he’ll need four dragons…!
+#31 Four Dragons (643)
+  FIRST [p] In Chang’an there is one word nobody says. It is the emperor’s name.
+  LAST  [p BOLD 21w] Yodong has never opened its gates to the West. Not for the Sui. Not in three summers. Here come the dragons…!
+#32 Yodong (645)
+  FIRST [p] Every wall assumes the enemy will knock. Goguryeo has spent fourteen years building a wall of forts along the river. The Blue Dragon simply walks around it. He shows his banners on the middle road, then turns north in the night. By morning his horse are across an unwatched ford. The first fortress shuts its gates. It holds exactly as long as the gates do.
+  LAST  [p BOLD 22w] On the road to Ansi, the old man tells it anyway. Once, a king won twice and went back for a third…!
+#33 Boiling River (244)
+  FIRST [p] The old officer starts with the part kings like to hear. Goguryeo won. Twice.
+  LAST  [p BOLD 20w] A hundred and fifty thousand men march toward an open plain. On a hill above it, the emperor is waiting…!
+#34 Stallion Mountain (645)
+  FIRST [p] Go Yeonsu liked the old man’s story. He just didn’t think it was about him.
+  LAST  [p BOLD 17w] Why isn’t Gesomun afraid? Go back thirty-three years, to a general who surrendered seven times and won…!
+#35 Colossal River (612)
+  FIRST [p] Ulchi Munduk surrenders seven times on the way south. Every time, the river gets closer.
+  LAST  [p BOLD 18w] Yodong fell. The forts fell. One wall is left, held by a madman whose name nobody wrote down…!
+#36 Ansi (645)
+  FIRST [p] The Guardian of Ansi Fortress is an eccentric man. When Yeon took the country, the Guardian refused him to his face. He kept the old king’s colours on the wall. Yeon had drowned a whole court for less. He looked at that wall, weighed the siege, and rode away. Ansi answers to no one.
+  LAST  [p BOLD 20w] Who was the Holy King, and why does Goguryeo give him brides? Seven hundred years back, the sun looked down…!
+#37 Haemosu (-37)
+  FIRST [p] Every day the sun crosses the sky on the same road. Today he looks down.
+  LAST  [p BOLD 16w] Dogs won't eat it. An axe won't split it. What on earth is inside Yuhwa's egg…?
+#38 Buyeo (-37)
+  FIRST [p] Buyeo tries very hard to get rid of the egg. The egg declines.
+  LAST  [p BOLD 24w] A soaked exile, a hall full of spears, and a chieftain's daughter who won't look at him. Jumong's luck is about to get complicated…!
+#39 Jolbon (-37)
+  FIRST [p] He is still wet from the river when the pines stop being empty. Two men in Yeon leather, spears too casual to be hunting, too careful to be lost. Jolbon scouts find him first. The bow is already in the pine needles. His hands are empty and shaking anyway.
+  LAST  [p BOLD 23w] Back in Surabol, the queen is failing and the council must name who's next. It only takes one hand to lock the door…!
+#40 Gi (起) (645)
+  FIRST [p] The Harmony Council has one rule. Nothing moves unless the circle closes. Everyone agrees, or nobody goes home.
+  LAST  [p BOLD 19w] A sky that looks too long at a mountain. Six eggs. A red sail. Here is how Gaya began…!
+#41 Suro (42)
+  FIRST [p] Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.
+  LAST  [p BOLD 18w] Nine days of grain. One folded note. Will the Marshal of Silla come to tea with a traitor…?
+#42 Seung (承) (647)
+  FIRST [p] Of course he comes. Yushin has never once refused Bidam a rematch. Between the camps a small pavilion goes up, open on every side, so nobody can say the other side hid archers. A low table. Tea already poured. A half moon in an empty sky. They meet the way they used to after sparring: gloves off, courtesy on.
+  LAST  [p BOLD 19w] A cone helm, a king on a camp stool, and a name Yushin won’t say. Who was his grandfather…?
+#43 Muryuk (562)
+  FIRST [p] His name was Muryuk. He was the youngest of three sons in a cart, and the only one who looked back.
+  LAST  [p BOLD 17w] Five days of grain. Two cups poured. Will the grandson of the cone helm come to tea…?
+#44 Jeon (轉) (647)
+  FIRST [p] Night rain. Five days of grain behind the palace gate. Bidam’s officers want a dawn assault. Bidam wants the score finished properly. He wants Yushin to come out again.
+  LAST  [p BOLD 22w] A warm stone, a spring under a hill, and a father who once got very lost on purpose. Who was Kim Seohyun…?
+#45 Seohyun (593)
+  FIRST [p] Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.
+  LAST  [p BOLD 20w] Ninth morning, before light. The stone in his son’s sleeve is warm at last. Down Yushin goes, to the water…!
+#46 Gyeol (結) (647)
+  FIRST [p] The water under the hill has been warm for thirty years. Before light on the ninth day, so is the stone in Yushin’s sleeve.
+  LAST  [p BOLD 22w] The one hand that said no is gone. Now the crown has to fit Seungman, and it was made for someone else…!
+#47 Queen Jinduk (647)
+  FIRST [p] The crown was made for her cousin and has to be padded at the temples. Seungman sits very still while the goldsmith does it, because somebody told her once that Dukman never fidgeted, and she has believed it for forty years.
+  LAST  [p BOLD 22w] Silla needs an army. Only one man alive can lend it, and he has never lent anything for free. Chunchu goes west…!
+#48 Huangdi (皇帝) (648)
+  FIRST [p] Everyone on earth wants something from the Son of Heaven. Most of them bring tribute. Chunchu brings an offer.
+  LAST  [p BOLD 21w] Chunchu has watched one brush move an empire. Now he wants that brush in Silla. The Harmony Council hasn't noticed yet…!
+#49 Royal Secretariat (651)
+  FIRST [p] For three months a border petition has been circling the Harmony Council like a bird that cannot find a roof. Chunchu has counted the seals. He has counted the men who must touch a paper before a soldier may move. He has stopped counting aloud, because the room mistakes counting for patience.
+  LAST  [p BOLD 23w] What happened to that promise? Two years back, the room is too warm, and a dying emperor has one more thing to say…!
+#50 Jiabeng (駕崩) (649)
+  FIRST [p] Two summers earlier, the Son of Heaven is dying the way he did everything else: in front of witnesses.
+  LAST  [p BOLD 23w] Seven years of a polite queen and a busy nephew. Sooner or later, Silla has to admit who's really sitting in the chair…!
+#51 King Muyeol (654)
+  FIRST [p] For seven years the crown has sat on Queen Jinduk. The work has sat on her nephew’s table. Nobody has ever called her foolish. She’s simply outnumbered by seals.
+  LAST  [p BOLD 21w] The first time she said it, he was eighteen, the quay was wet, and the brush in her hand was stolen…!
+#52 Jahee (644)
+  FIRST [p] Ten years earlier, at Silla’s only western harbour, the prince is eighteen and losing an argument with a tide book.
+  LAST  [p BOLD 23w] Silla’s newest king wears Tang silk. To see why the old houses mind, go back to a white horse kneeling in the grass…!
+#53 Hyukgose (-57)
+  FIRST [p] Seven hundred years before anyone in Surabol wore Tang silk, six old men creep up on a horse.
+  LAST  [p BOLD 20w] A chest rides the tide in, a magpie screaming over it. Whatever is inside needs a house. Preferably someone else’s…!
+#54 Talhae (-19)
+  FIRST [p] Late in the first king’s reign, a chest comes in on the tide at a fishing beach. A magpie flies over it, crying.
+  LAST  [p BOLD 19w] “Hogong. There’s a rooster in the woods.” It is the middle of the night. Roosters don’t crow at night…!
+#55 Alji (65)
+  FIRST [p] Bidam said there was no Kim. He was right for about a hundred and twenty years. Then, one spring night, King Talhae wakes to a rooster crowing in the woods west of the city.
+  LAST  [p BOLD 23w] Across the border in Sabi, a funeral bell. For three years the king can’t sign a thing. The clans already have a list…!
+#56 Exile (655)
+  FIRST [p] Queen Satek dies, and the king, her son, loses the right to say no.
+  LAST  [p BOLD 24w] First night on the island. A fire, two cups, and a storyteller who never asks permission. “Sit or don’t. Once there were two suns…”
+#57 Heaven–Earth King (태초)
+  FIRST [p] The first night, the king of Tamla pours two cups. His guest stays by the door, busy being wronged.
+  LAST  [p BOLD 23w] The next night Gyebek finds a roof to mend. Yuri Dora finds a ladder. One woman made this island, and she was enormous…!
+#58 Sulmun (태초)
+  FIRST [p] The next story is told to him on a roof, because he is on a roof, mending it, and Yuri Dora has decided that a man who will not sit down can still listen.
+  LAST  [p BOLD 22w] Three princes climb out of the ground. “Not from an egg,” the island insists. Then a box drifts in from the sea…!
+#59 Three Princes (태초)
+  FIRST [p] Half the kingdoms on the mainland have a first king who hatched from an egg. Tamla is proud to say its kings climbed out of a hole.
+  LAST  [p BOLD 21w] “Tomorrow’s isn’t a kind one, Turtle.” A serpent in a cave. A woman from the rock. A man who looks back…!
+#60 Stone Lady (태초)
+  FIRST [dialogue:yuridora] Today’s is not a kind one.
+  LAST  [p BOLD 23w] Heaven sends for a man to keep its flower field. He leaves his pregnant wife to wait. He forgets to say how long…!
+#61 Gardener (태초)
+  FIRST [p] Told in the orange grove, in the hour after the picking, when Gyebek has finally been persuaded to sit on a basket.
+  LAST  [p BOLD 23w] The island keeps one story for last. It is about the one who comes for you, and the crow that lost his book…!
+#62 Kangrim (태초)
+  FIRST [p] On this island, a death gets a fire on the shore and one story.
+  LAST  [p BOLD 20w] In spring the tribute boat comes back from Sabi with news of the king. Gyebek has one question for it…!
+#63 Tribute (498)
+  FIRST [p] The tribute boat comes home light. The oranges stayed in Sabi. The news did not.
+  LAST  [p BOLD 21w] Meanwhile, in Sabi, Euija calls the Assembly. He has a smile, a speech, and a proclamation printed before anyone sat down…!
+#64 Coup (657)
+  FIRST [p] He calls the assembly the way a gambler calls a final hand — smiling, sleeves perfect, already knowing which tiles he slipped into the set.
+  LAST  [p BOLD 17w] He beat eight houses in one morning. Now he can’t sleep. In his dreams, somebody keeps counting…?
+#65 Descent (657)
+  FIRST [p] He starts dreaming about the Rock of Politics. In the dream it is dry, and he is rubbing it with brine, and the brine will not stay. Every time he lifts the cloth the stone is dry again, and the eight elders are standing round it waiting for it to sweat.
+  LAST  [p BOLD 24w] Foxes in the Assembly. Toads in the treetops. A river running red. Nine signs, and a king who swears he doesn’t believe in signs…!
+#66 Nine Omens (659)
+  FIRST [p] Every one of the nine signs is real, in the sense that people saw it. That was always the only sense that mattered, and the man who taught Baekje so is about to find out how much he meant it.
+  LAST  [p BOLD 23w] Will Baekje survive? To answer that, go back to how it began: a mother, two sons, and a father who already had one…!
+#67 Onjo (-18)
+  FIRST [p] Every child in Baekje can tell you this story. Most of them get the beginning wrong.
+  LAST  [p BOLD 23w] Back to Sabi. Two armies are on the road, the boat for Gyebek still hasn’t sailed, and the king wants to know why…!
+#68 Sungchung (660)
+  FIRST [p] The war reaches Sabi the way bad news always does: through the fish market first.
+  LAST  [p BOLD 16w] One man might still know what to do. Euija sent him away too. Somebody ride. Now…!
+#69 Heungsu (660)
+  FIRST [p] Heungsu has drawn the same map in the dirt every morning for three years. Today the king has finally sent someone to look at it.
+  LAST  [p BOLD 21w] Across the sea, a boat is coming for the Turtle. He is on the shore before they finish tying it up…!
+#70 Gyebek (660)
+  FIRST [p] Somewhere in the fourth year he notices he has stopped counting the days. It frightens him for a week. Then it does not.
+  LAST  [p BOLD 22w] Somewhere, Kangrim closes his ledger on a swept yard. Then he goes up to a meeting with one question he shouldn’t ask…!
+#71 Three Realms (태초)
+  FIRST [p] Once a year the gods hold a meeting. Kangrim is late to this one, because of a yard in Baekje.
+  LAST  [p BOLD 18w] The minutes of that meeting never leave Heaven’s table. Down below, five thousand men are counting fifty thousand…!
+#72 Yellow Mountain (660)
+  FIRST [p] Gyebek can count to fifty thousand. He has done it twice since dawn. The answer has not improved.
+  LAST  [p BOLD 21w] The pass is open. The river is open. And in Sabi, a runner is climbing the palace steps with one word…!
+#73 Sabi (660)
+  FIRST [p] The runner has one word. Euija makes him say it twice.
+  LAST  [p BOLD 22w] Across the sea, a confession is waiting for Euija. It is already written, in a lovely hand. It only needs his name…!
+#74 Buyeo Euija† (660)
+  FIRST [p] An empire is not finished with a king until he has signed something.
+  LAST  [p BOLD 19w] Baekje is gone. Goguryeo still stands. And the man who arranged both can no longer get out of bed…?
+#75 Kim Chunchu† (661)
+  FIRST [p] Chunchu has talked his way out of every room in Samhan. This one has no other door.
+  LAST  [p BOLD 16w] Silla won the war. So why does the emperor’s new edict call its king a clerk…?
+#76 Ungjin Commandery (661)
+  FIRST [p] In Chang’an, the cheapest way to conquer a country is to rename it.
+  LAST  [p BOLD 14w] Baekje has no king. Across the sea, an exiled prince is packing his bags…!
+#77 King Pungjang (661)
+  FIRST [p] Baekje is finished, says everyone except Baekje.
+  LAST  [p BOLD 23w] Baekje has its king back, and a general who already regrets it. Now the emperor turns north, to walls that have never fallen…!
+#78 Pyongyang I (661)
+  FIRST [p] Pyongyang has never fallen. Every child in the city will tell you so, usually twice.
+  LAST  [p BOLD 12w] The White Tiger has thirteen sons. Yeon Gesomun can count to thirteen…!
+#79 Snake River (662)
+  FIRST [p] The White Tiger drives his host into the Snake River. They still believe rivers are roads. Yeon Gesomun has been waiting for a man who thinks that. Old men in the north remember another river that ate an army. The Snake is younger. It's hungrier. And it has Yeon's teeth.
+  LAST  [p BOLD 17w] And on an island far to the south, someone is asking: whose side are we on now?
+#80 Tamla Surrenders (662)
+  FIRST [p] “Whose side are we on now?” On Tamla, the one who asks is usually holding a fish.
+  LAST  [p BOLD 16w] Baekje refuses to stay dead. And in Surabol, a great lord feels a fever coming on…!
+#81 Rebellion (662)
+  FIRST [p] Kim Jinju has a fever. Half of Surabol has watched it play gyuku.
+  LAST  [p BOLD 19w] Meanwhile at Juryu, the general who crowned Baekje’s king has taken to his bed. He would love a visit…!
+#82 Betrayal (663)
+  FIRST [p] Boksin is sick. It is the healthiest he has looked in years.
+  LAST  [p BOLD 16w] Four banners. One river mouth. The West, Samhan and the East meet on a single tide…!
+#83 White River (663)
+  FIRST [p] Four banners come to one river mouth. Only the tide has been here before.
+  LAST  [p BOLD 18w] Two reapers failed to take Yeon Gesomun at the river. The ledger still has his name in it…!
+#84 Yeon Gesomun† (665)
+  FIRST [p] The Eternal General is dying.
+  LAST  [p BOLD 16w] “Do not fight amongst yourselves.” He had three sons. How long do you think that lasts?
+#85 Brothers’ Coup (666)
+  FIRST [p] Nine months. That is how long it lasts.
+  LAST  [p BOLD 18w] Namseng knows the road in. Now he rides it home, with the whole Tang army at his back…!
+#86 Pyongyang II (668)
+  FIRST [p] Every son comes home in the end. Namseng brings the empire with him.
+  LAST  [p BOLD 18w] The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!
+#87 Mount Gain (665)
+  FIRST [p] The night Pyongyang falls, the king of Silla goes to visit a piece of paper.
+  LAST  [p BOLD 23w] To find the first king of this land, we have to go back before there were kingdoms… to a bear in a cave…!
+#88 Dangun & Old Joseon (Long ago)
+  FIRST [p] Before there are any kingdoms, there is a son in heaven who keeps looking down. He is Hwanung. His father Hwanin, the Lord of Heaven, notices, looks down himself at a mountain called Taebaek and the people living around it, and decides the world could use his son.
+  LAST  [p BOLD 24w] Eight hundred years later, the empire comes back to the same river to do the same thing. This time, Goguryeo has a prince left…!
+#89 Anseung (670)
+  FIRST [p] Every revival needs two things: a flag and a royal. Geom Mojam has the flag.
+  LAST  [p BOLD 21w] The emperor hears there is a king of Goguryeo in Silla. His general reaches for a brush instead of a sword…!
+#90 Letters (671)
+  FIRST [p] In high summer, a Tang monk is rowed ashore under a white flag. He carries a letter from the fleet. The fleet belongs to Xue Rengui, the second White Tiger. He has sat off the coast all summer. If it can be managed, he'd like to win this war by post.
+  LAST  [p BOLD 16w] The Tang are coming south. Silla is winning. That is exactly when armies start to chase…!
+#91 Stone Gate (672)
+  FIRST [p] Winning is the most dangerous thing an army can do.
+  LAST  [p BOLD 12w] Wonsul came home alive. In his father’s house, that is the crime…!
+#92 Wonsul (672)
+  FIRST [p] Wonsul gets home a day before the news does. It doesn’t help.
+  LAST  [p BOLD 21w] Yushin is old now. The three sisters in the steam are not. They have kept his ledge warm for fifty years…!
+#93 Kim Yushin† (673)
+  FIRST [p] Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern. The steam is thinner. The three are not. They look the same age they always looked — which is either mercy or mockery, and he has never asked which.
+  LAST  [p BOLD 20w] The king has buried his uncle. He still has one letter to answer, and a path nobody ever showed him…!
+#94 The Wanggeom's Guest (673)
+  FIRST [p] The day after the funeral, a letter falls out of a sleeve.
+  LAST  [p BOLD 13w] Kim Punghun said he could wait for a ship. The ship is here…!
+#95 Maeso (675)
+  FIRST [p] Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showing the enemy fleet the way into his own coast.
+  LAST  [p BOLD 18w] One last river mouth. One captain who has never won a fight. Three tries to end a war…!
+#96 Final Ford (676)
+  FIRST [p] In the second month, the emperor's headquarters quietly leaves Pyongyang. Then it moves further. Then nobody mentions it. Xue still has a fleet, and a fleet doesn't need a headquarters.
+  LAST  [p BOLD 24w] The boy who stole a sentence at six is about to be king of all Samhan. His mother would like him to hold still…!
+#97 The King for All (676)
+  FIRST [p] Bupmin, King Munmu now, stands where a six-year-old once stole a sentence. The war is won, the ally has been shown the door, and the childhood dream has had the bad manners to come true.
+  LAST  [p BOLD 21w] But we left someone in the snow. The winter Pyongyang fell, a Mohe father walked north with something in his pack…!
+#98 Balhae (698)
+  FIRST [p] The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds every seam a coat has. Gulgul walks in front, bent under a leather pack and wrapped in so much fur he looks like something the forest would hunt. His son walks in his tracks, because there are no other tracks.
+  LAST  [p 2w] THE END

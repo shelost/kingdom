@@ -1,0 +1,89 @@
+.mw-parser-output .wst-header .wst-header-mainblock{border:1px solid var(--border-color-success,#ACA);background-color:var(--background-color-success-subtle,#E6F2E6);color:var(--color-base,#202122)}.mw-parser-output .wst-header .wst-header-notes{border-bottom:1px solid var(--border-color-notice,#A0A0A0);background-color:var(--background-color-neutral-subtle,#FAFAFF);color:var(--color-base,#202122)}.mw-parser-output .wst-header #header-title-text{font-weight:bold}.mw-parser-output .wst-header #ws-data{display:none}.mw-parser-output .wst-header #ws-data.ws-data-show{display:block}.mw-parser-output .wst-header-mainblock{margin:4px auto 4px auto;padding:0 3px;display:flex;align-items:center}.mw-parser-output .wst-header-back,.mw-parser-output .wst-header-forward{display:flex;flex:1 4 100%;min-width:min-content;align-items:center;font-size:.9em}.mw-parser-output .wst-header-nav-empty{visibility:hidden}.mw-parser-output .wst-header-back{justify-content:flex-start;text-align:left}.mw-parser-output .wst-header-central-cell{flex:4 1 100%;max-width:max-content;text-align:center}.mw-parser-output .wst-header-forward{justify-content:flex-end;text-align:right}@media(max-width:768px){.mw-parser-output .wst-header-mainblock{flex-wrap:wrap}.mw-parser-output .wst-header-central-cell{flex:0 0 100%;order:-2;width:auto}.mw-parser-output .wst-header-back,.mw-parser-output .wst-header-forward{width:auto}}.mw-parser-output .wst-header-notes{display:inline-block;border-collapse:collapse;border-spacing:0;empty-cells:hide;font-size:.9em;line-height:1.4;margin:0 auto 4px auto;width:100%}.mw-parser-output .wst-header-left{float:left}←壬申誓記石(임신서기석)→.mw-parser-output .plainSister{display:block;font-size:93%;line-height:normal;list-style-type:none;list-style-image:none;list-style-position:outside;border:1px solid var(--border-color-interactive--hover,#AAA);float:right;clear:right;margin:0.5ex 0 0.5ex 0.5ex;padding:0;background:var(--background-color-base,#FFFFFF);color:var(--color-base,#202122)}.mw-parser-output .sisicon,.mw-parser-output .dabicon{padding-right:1ex}자매 프로젝트: 위키백과 문서, 위키데이터 항목
+신라 시대 두 청년이 하늘 앞에 충도를 지키고, 유교 경전을 학습할 것을 맹세한 내용을 담은 비문으로, 한문으로 기록되었지만 어순 자체는 한국어에 맞춘 변격 한문으로 기록되어 있다.
+
+72438壬申誓記石
+
+.mw-parser-output ruby.witju{text-align:justify;text-justify:inter-character;justify-content:space-around}.mw-parser-output ruby.witju.large{font-size:250%}.mw-parser-output ruby.witju>rt,.mw-parser-output ruby.witju>rtc{font-size:65%;font-weight:normal}.mw-parser-output ruby.witju.large>rt,.mw-parser-output ruby.witju.large>rtc{font-size:25%;font-weight:normal}壬(임)申(신)年(년)六(육)月(월)十(십)六(육)日(일)二(이)人(인)幷(병)誓(서)記(기)天(천)前(전)誓(서)今(금)自(자)
+三(삼)年(년)以(이)後(후)忠(충)道(도)執(집)持(지)過(과)失(실)无(무)誓(서)若(약)此(차)事(사)失(실)
+天(천)大(대)罪(죄)淂(득)誓(서)若(약)國(국)不(불)安(안)大(대)舐(지)世(세)可(가)容(용)
+行(행)誓(서)之(지)又(우)別(별)先(선)辛(신)未(미)年(년)七(칠)月(월).mw-parser-output .wst-tooltip{cursor:help;border-bottom:thin dotted cornflowerblue}.mw-parser-output .wst-tooltip-nodash{border-bottom:none}卄(이십)二(이)日(일)大(대)誓(서)
+詩(시)尙(상)書(서)礼(예)傳(전)倫(윤)淂(득)誓(서)三(삼)年(년)
+
+
+
+임신년 6월 16일에 두 사람이 같이 하늘 앞에 맹세하여 기록한다.
+3년 후 충도(忠道)를 지키고 허물이 없기를 맹세한다. 만일 이 맹세를 어기면
+하늘에 큰 죄를 지는 것이라고 맹세한다. 만일 나라가 불안하고 세상이 크게 어지러우면 행하는 것을 용납하기로
+맹세한다. 또한 특히 앞서 신미년 7월 22일에 크게 맹세하였는데,
+시경(詩經)·상서(尙書)·예기(禮記)·춘추전(春秋傳)을 차례로 3년 동안 습득하기로 맹세하였다.
+
+
+
+라이선스
+.mw-parser-output .wst-license-tags{border-collapse:collapse;border-spacing:0;empty-cells:hide;margin:3px 0 0 0;width:100%}.mw-parser-output .wst-license-tags th{padding:0 1ex;text-align:right;font-weight:bold;vertical-align:middle}.mw-parser-output .wst-license-tags td{padding:0;text-align:left;width:90%;vertical-align:middle}.mw-parser-output .licenseContainer{box-sizing:border-box;margin-top:1em;margin-bottom:0.25em;clear:both;width:auto;page-break-before:always;break-before:page}.mw-parser-output .licenseContainer>div:first-of-type{display:table;border:2px solid var(--border-color-subtle,#88A);border-collapse:collapse;border-spacing:0 0;empty-cells:hide;box-sizing:border-box;margin:0 auto 0 auto;width:100%;background-color:var(--background-color-neutral-subtle,#F7F8FF);color:var(--color-base,#202122)}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child{display:table-row-group}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child{display:table-row}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div{display:table-cell;padding:5px;vertical-align:middle;width:auto}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:first-child{text-align:left}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(2){text-align:center}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(2)>div{width:100%}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(2)>div:first-child{display:block;margin:0 auto 0 auto;text-align:left}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(2)>div:nth-child(2){display:table;border-top:1px solid #88A}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(2)>div:nth-child(2)>div{display:table-cell;vertical-align:middle}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(2)>div:nth-child(2)>div:first-child{text-align:center;padding:5px 0;width:40px}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(2)>div:nth-child(2)>div:nth-child(2){text-align:left;padding:5px;font-size:92%}.mw-parser-output .licenseContainer>div:first-of-type>div:first-child>div:first-child>div:nth-child(3){text-align:right}.mw-parser-output .licensetpl{display:none}.mw-parser-output .licenseContainer.wst-collapsible-box{clear:both;margin:0.25em 0 0.25em 0;font-size:95%;background-color:var(--background-color-progressive-subtle,#f7f8ff);color:var(--color-base,#202122);border:2px solid var(--border-color-progressive,#88A);text-align:left;line-height:1.6}.mw-parser-output .wst-license-container-title{display:inline-block;padding:0.5em}.mw-parser-output .wst-license-container-content{background:transparent;color:inherit;margin:0;padding:3px;text-align:left}.mw-parser-output .licenseContainer.warningLicenseContainer>div:first-child{border-color:#b22222;background-color:#ffeeee;color:#202122}.mw-parser-output .licenseContainer.warningLicenseContainer>div:first-child>div:first-child>div:first-child>div:nth-child(2)>div:nth-child(2){border-color:#b22222;color:#202122}.mw-parser-output .wst-collapsible-box{margin:0.5em auto;padding:0.5em}.mw-parser-output .wst-collapsible-box.wst-collapsible-box-with-title{padding-top:0}.mw-parser-output .wst-collapsible-box-title>p:first-child{margin-top:0}
+
+  이 저작물은 번역문으로서 원문과 다른 저작권의 적용을 받습니다. 원문과 번역문의 저작권은 다음과 같습니다.
+
+
+
+
+
+원문:
+
+
+
+
+
+
+
+이 저작물은 저자가 사망한 지 100년이 지났으므로, 미국을 포함하여 저자가 사망한 후 100년(또는 그 이하)이 지나면 저작권이 소멸하는 국가에서 퍼블릭 도메인입니다.
+
+
+
+
+
+
+
+
+단, 나중에 출판된 판본이나 원본을 다른 언어로 옮긴 번역물은 시기와 지역에 따라 저작권의 보호를 받을 수 있습니다. 또한 이 저작물이 미국에서도 자유 라이선스 또는 퍼블릭 도메인인 이유를 별도로 명시하여야 합니다.
+
+
+
+
+
+
+
+
+Public domainPublic domainfalsefalse
+
+
+
+
+번역:
+
+
+
+
+
+
+
+나는 이 저작물의 저작권자로서, 이 저작물을 퍼블릭 도메인으로 모두에게 공개합니다. 이 공개 선언은 전 세계적으로 유효합니다.만약 저작권의 포기가 법률적으로 가능하지 않은 경우,나는 이 저작물을 법적으로 허용되는 한도 내에서 누구나 자유롭게 어떤 목적으로도 제한없이 사용할 수 있도록 허용합니다.
+
+
+
+
+
+
+
+Public domainPublic domainfalsefalse
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,88 @@
+
+=================================================================
+#26 Euija & Yeon  (642)
+Arc: Iron Will · place: pyongyang · tone: summit intrigue
+Logline: Two new strongmen, one table. Yeon is surprised the King of Baekje came himself.
+=================================================================
+[0] ¶ King Euija hears how Goguryeo’s king died, and feels the one thing a king should never admit to. Envy.
+[1] ── SCENE: Sabi ──
+[2] King Euija: What…! The King of Goryeo, murdered by his own subject?
+[3] King Euija: This is an opportunity…
+[4] King Euija: A whole Summit, in one dinner. / If I tried that, the Satek would serve me in the soup. / Gyebek. We’re going north.
+[5] Gyebek: How many days.
+[6] King Euija: As long as it takes. Forever, if he’s charming.
+[7] Gyebek: Forever is not a number, Majesty. / I will pack for twenty.
+[8] ¶ Other kings would write for troops. Euija rides north himself, with three men, one of them Gyebek counting the days. The man at the door does not give his name.
+[9] ── SCENE: Pyongyang ──
+[10] Yeon Gesomun: Have you come to see the king?
+[11] King Euija: No… I have come to see the one with real power.
+[12] Yeon Gesomun: He does not grant an audience to just anyone.
+[13] King Euija: Tell him who I am, and he will come at once.
+[14] ¶ Yeon is surprised that the new King of Baekje has come personally.
+[15] King Euija: I hear you ploughed under the king and the whole noble faction? That one thing, I rather envy…
+[16] Yeon Gesomun: Could you not do the same on your side?
+[17] King Euija: Look here — I am the king myself. / General Gesomun— / I would be called a tyrant and killed the next day, ah.
+[18] Yeon Gesomun: Your people killed a king of ours on that wall out there. You can see it from this room.
+[19] King Euija: And Hansung? You put our king’s head on your own wall and called it a season’s work.
+[20] ▼ FLASHBACK 475 Hansung
+    [20.0] ¶ Once, a Goguryeo king came south and took Baekje’s old capital. The Baekje king tried to run. They caught him and killed him at the foot of a mountain. Baekje has not forgotten. Goguryeo has not apologised.
+[20] ▲ end flashback
+[21] King Euija: Besides… of the two men in this room, only one has actually murdered a king of Goryeo. It was not me.
+[22] ¶ Yeon puts the blade on the table between them. Not pointed at anything. Just there.
+[23] ¶ Behind the king, Gyebek’s hand is already on his own hilt. Nobody saw it get there.
+[24] Yeon Gesomun: Give me one reason I should not cut you down with this blade where you stand…!
+[25] Gyebek: Four steps.
+[26] Yeon Gesomun: Three.
+[27] Gyebek: Four. You are leaning back.
+[28] King Euija: Pfft—hahahahahaha!!
+[29] King Euija: Gesomun… you may know how to command an army, but in politics you are plainly a novice. Do you know what politics is? / **Politics is alchemy. The alchemy of manufacturing a justification for what I already want to do.** / Do you know how many people in the surrounding countries admire you right now? / Yeon Gesomun — the man who ploughed under the corrupt officials and will bring a new age. / But… kill the King of Baekje now, and word reaches every one of those countries. / You become a madman who enjoys killing kings. Nothing else.
+[30] Yeon Gesomun: This land is not just dirt. / Goguryeo is the land of the **holy king, descended from the sun god**. / The Holy King. Son of Haemosu. A line that came down from heaven.
+[31] King Euija: Pfft—!! / Hahahahaha!! / Wait… wait. The Supreme Commander of a country — / a grown man, a man who leads a kingdom — / still believes in **spirits and sun chariots**?
+[32] Yeon Gesomun: Do not laugh. / He came down from heaven. He opened a kingdom with a bow. / That blood is the bone of these people.
+[33] King Euija: Oh, certainly. There was probably a man who shot well. / The rest is a story for keeping people in line. / To make a farmer kneel, a sun god is cheaper than a sword.
+[34] Yeon Gesomun: …So that is what your palace teaches. / I grew up in the marches. What the marches tell — is not a lie.
+[35] ¶ Yeon asks for the same thing he asked Chunchu for. He has only ever had one price.
+[36] Yeon Gesomun: The land north of the pass was Goguryeo’s. Return it, and I will send relief troops.
+[37] Dosuryu: What nerve, to come before him like that…!
+[38] King Euija: Listen — I am the king of a country. A king is not a man. / I made my arrangements even for death, and gave warning abroad beforehand. / Kill me and all you get is a newer, angrier King of Baekje on the throne.
+[39] Yeon Gesomun: Not a man, you say…
+[40] King Euija: They have a saying in Silla — that slaves are not counted as people. / Funny, is it not? The bottom is not a person, and the top is not a person either. / Everyone who gets to be a person is wedged in between.
+[41] King Euija: Look at this map. / Silla has no trade route at all — for Tang, for Tianzhu, for the western regions, there is only this one harbour. / **Danghang Fortress** would be the right target.
+[42] [MAP 642: One harbour. Silla’s only door to the Tang.]
+[43] King Euija: We have our own mouth — the White River under Sabi. / Clan berths stacked like teeth. Cut Danghang Fortress and Silla starves for partners; keep our river and we eat either way.
+[44] Yeon Gesomun: You sound like a harbour clerk. / Good. Kings who forget docks start wars they cannot feed.
+[45] Yeon Gesomun: Do you know a “Kim Chunchu” of Silla?
+[46] King Euija: Kim Chunchu? First I have heard of him… royalty? Why?
+[47] Yeon Gesomun: Just… curious. He does not seem to care for you much. / He spoke of being rid of you, hands folded in prayer.
+[48] King Euija: Chunchu… whoever he is, a man who stores things up like that is no easy sort. / But I do not fear a man who kneels to others.
+[49] ¶ For a moment Yeon’s eyes go somewhere else — to a door, to a hand, to a stare that did not ask to be liked.
+[50] ▼ FLASHBACK 642 the hand
+    [50.0] ¶ After the territory talk the room had gone quiet in the wrong way. Yeon had asked if the man had no pride. The answer had been worse than no.
+    [50.1] King Muyeol: I know no such thing as pride. / I know only my goal.
+    [50.2] ¶ Then Chunchu had reached to his own belt, drawn a short blade, and driven it through his own left hand — clean, deliberate, eyes never leaving Yeon’s face — and held the wound up like a seal.
+    [50.3] King Muyeol: This is how much of myself I will spend. / Do not ask me for pride. Ask me what I am willing to ruin.
+    [50.4] Yeon Gesomun: ……
+    [50.5] ¶ Yeon remembers the stare more than the blood. Hot, dry, almost joyful. The stare of a man who had decided the room would believe him, and had paid in advance.
+[50] ▲ end flashback
+[51] Yeon Gesomun: That Chunchu… / He put steel through his own hand to make me listen. / I have met one other man with eyes like that.
+[52] King Euija: Oh?
+[53] Yeon Gesomun: You. / I do not yet know which of you frightens me more.
+[54] King Euija: Flattery. Keep going.
+[55] Yeon Gesomun: It was not flattery.
+[56] King Euija: And the other one? Their sword. Kim Yushin.
+[57] ¶ Yeon’s cup stops an inch from his mouth. Just for a breath. Then he drinks.
+[58] King Euija: Ha! Did you see that, Gyebek? His cup stopped.
+[59] Yeon Gesomun: I don’t flinch.
+[60] Gyebek: It stopped, Majesty.
+[61] Yeon Gesomun: You came with three. You’re leaving with five. / …Did Your Majesty come as an envoy, or to do some shopping?
+[62] King Euija: I have a gift for gathering people. You have a gift for reducing them.
+[63] Yeon Gesomun: You. The one who counts steps. / Stay in Pyongyang. I’ll give you a horse worth riding.
+[64] Gyebek: I gave my word.
+[65] King Euija: Don’t bother. He only ever says it once.
+[66] ¶ In the morning he rides south with all five. Nobody raises the subject of the extra two. He carries a map of Danghang Fortress in his head, and Yeon’s warning about Chunchu folded away like a knife he intends to use later.
+[67] ¶ On the road home, Euija is still laughing.
+[68] King Euija: His cup stopped! Find out why.
+[69] Gyebek: Yes, Majesty.
+[70] ¶ He does not wait for the answer. By the first frost, forty-odd Silla fortresses are flying Baekje yellow. He takes them in one autumn, and he laughs the whole way.
+[71] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Baekje, Zhenguan 16 (642)): In the sixteenth year Euija raised troops, attacked more than forty Silla cities and sent men to hold them. He made peace and friendship with Goguryeo, and plotted to take Danghang Fortress and cut off Silla's road to court.❞
+[72] ¶ **Why does the Eternal General flinch at one Silla name? Go back to a ditch, a white horse, and an unknown captain…!**

@@ -1,0 +1,64 @@
+
+=================================================================
+#36 Ansi  (645 September)
+Arc: Part II — The Dawn of War / The Seventh Invasion · place: ansi · tone: epic war — the siege
+Logline: The Guardian of Ansi refused Yeon to his face. Now the Emperor of the West is at his gate.
+=================================================================
+[0] ¶ The Guardian of Ansi Fortress is an eccentric man. When Yeon took the country, the Guardian refused him to his face. He kept the old king’s colours on the wall. Yeon had drowned a whole court for less. He looked at that wall, weighed the siege, and rode away. Ansi answers to no one.
+[1] [PLACE ansi: One small fortress, and one stubborn man on top of it.]
+[2] ¶ Nobody writes his name down. To the people inside the walls he is just the chief, and that turns out to be enough.
+[3] [MAP 645: The emperor wants Pyongyang. One small fortress is in the way.]
+[4] ▼ FLASHBACK 642 Yeon at Ansi
+    [4.0] Yeon Gesomun: Ansi… so that man is still alive. / He dares refuse the Supreme Commander’s order?
+    [4.1] The Guardian: I have heard that a true man needs only / one person to cherish, / and one person to serve, / and that is enough.
+[4] ▲ end flashback
+[5] ── SCENE: The Earthen Mountain ──
+[6] ¶ The Second Emperor tries the wall first. When the wall does not work he tries the ground, which is the sort of thing only an empire can afford to try. Goguryeo archers watch him do it from the parapet.
+[7] Tang hauler: How many baskets is that now?
+[8] Another hauler: Don’t count. It gets heavier when you count.
+[9] Ansi soldier: Chief, that’s sixty days they’ve been at it.
+[10] The Guardian: Then it’s sixty nights for us. Pass the stone.
+[11] ¶ Inside the walls the stone runs out first. Then the doors. Then the roof beams of the houses nearest the south wall. Families sleep in the open and pass their own lintels up the ladder.
+[12] ¶ Five hundred thousand man-days, sixty days of hauling, and a mountain of packed earth rises outside the south wall until its crown looks down into the fortress. From up there you can count the cook fires.
+[13] [FORMATION Ansi Fortress, sixth to ninth month, 645: Every night the defenders built their wall higher than the mound had grown that day. The siege became a race between shovels.]
+[14] ¶ Then it rains, and the mountain slumps — sideways, into the wall it was built to overlook, taking a stretch of Ansi down with it. Both sides stare at the gap.
+[15] Ansi soldier: Chief, the wall—
+[16] The Guardian: Never mind the wall. Who’s up on that thing right now?
+[17] ¶ The officer who was supposed to be holding the mound has stepped away.
+[18] Ansi soldier: …There’s nobody up there.
+[19] The Guardian: Then it’s ours.
+[20] ¶ A few hundred men come out through the gap, take the mountain, pile timber on its slope and set it alight. The Tang cannot get near it for three days.
+[21] ¶ The Second Emperor has Fu Fuai, the officer who left the mound, beheaded, and orders three days of assault.
+[22] ¶ The emperor rides up to watch. Too close.
+[23] ¶ On the second day the Guardian sees him: a yellow parasol on the near slope, closer than any emperor should be. He takes the bow from the archer beside him.
+[24] The Guardian: Hold still, you.
+[25] ¶ The arrow takes the helmet clean off. The lacquered bowl leaves his head and rings once on packed earth, then keeps rolling. For the first time in the siege, the two men look straight at each other.
+[26] The Second Emperor: …That man. / Find out his name.
+[27] ¶ Nobody can. A cut over the emperor’s eye bleeds into his beard. The surgeons say it is nothing, and he lets them.
+[28] ── SCENE: The Retreat ──
+[29] ¶ Then the cold comes early. Sixty days of hauling earth were sixty days of horses eating the plain, and the plain is bare. There is nothing left to feed them.
+[30] ¶ On the morning he turns for home, the emperor parades his army under the wall one last time, so the wall can see what it beat. Inside, nobody shows a face. Then one man climbs the parapet and bows.
+[31] ¶ A proper bow, from the waist. The kind you give a guest who stayed too long.
+[32] The Second Emperor: Bring up the silk. A hundred bolts. / For a man who serves his lord well. Let every wall in Our empire hear of it. / And ask him his name. Once more.
+[33] The Guardian: Tell him thanks for the silk. / And tell him this. You may outnumber us. You may outthink us. / But you will never be crazier than we are…!
+[34] ¶ The silk goes up the wall on a rope. The name does not come down.
+[35] ¶ Then the marsh. Two hundred li of mud, and the road across it is the road he tore up himself. Nobody goes home the way they came. He said that.
+[36] ¶ Snow comes down on the column in the mud. The emperor gets off his horse and cuts brush with his own hands to fill the ruts. His officers can’t be seen carrying less.
+[37] The Second Emperor: With all the armies under heaven, how was I humiliated by so small a barbarian land? / …If the old minister were alive, he would never have let me come. / Somebody tell me no. Anybody.
+[38] ¶ Nobody does. That was the whole trouble.
+[39] [MAP 645 The Seventh Invasion, start to finish: All those arrows in, and two dotted lines out. One small wall did that.]
+[40] ── SCENE: The Gate ──
+[41] ¶ Three weeks later a rider in red comes up the empty road from Pyongyang, alone. The last time he came, he looked at this wall and rode away.
+[42] The Guardian: Supreme Commander! Come for my head, now the work’s done?
+[43] Yeon Gesomun: Madman… / Still — you did what had to be done.
+[44] Yeon Gesomun: Keep your head. Keep your old colours. Keep your gate shut, I don’t care. / I came to see what stopped him. It’s smaller than I thought.
+[45] The Guardian: So’s the emperor, up close.
+[46] ¶ Gesomun laughs, a laugh like a slap, and turns his horse. He does not ask to come in. The Guardian does not offer.
+[47] ── SCENE: Yodong ──
+[48] ¶ He rides home by way of Yodong. The Tang marched its people west when they left, seventy thousand of them, roped in lines. What is left is ash, and a stone shrine on the hill with its door open.
+[49] ¶ Under the chain mail sits a girl in red silk gone the colour of rust. A lamp beside her. She has kept it lit for three months on what the soldiers left behind.
+[50] 👰: You’re not him either.
+[51] Yeon Gesomun: Who?
+[52] 👰: My husband. Everybody else went west. The emperor said I belonged to him, so they left me here. / …Nobody ever told me who he is. They just gave me to him.
+[53] Yeon Gesomun: Nobody told you. / …Ha. Move over. It’s a long one. It starts with a god looking down at a girl in a river.
+[54] ¶ **Who was the Holy King, and why does Goguryeo give him brides? Seven hundred years back, the sun looked down…!**

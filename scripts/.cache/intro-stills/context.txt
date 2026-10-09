@@ -1,0 +1,1806 @@
+### yushin-marshal--queen-sunduk  (Queen Sunduk, 632)
+  person=yushin look=marshal from= place=surabol scene=Coronation Morning
+  [p] The corridor suddenly remembers it has somewhere else to be.
+  [undefined] Tie it tight. If I’m going to be ridiculous, I won’t be late as well.
+  [p] One man stays at the door, where a guard would stand if the guard were the most famous swordsman in Silla. Kim Yushin is thirty-seven. He runs the Hwarang yard: horse, bow, gyuku, the place boys learn whether they matter. People call him the Sword of Silla. He is also, everyone notices, very fond of the princess.
+  >>> CARD [card yushin:marshal] Thirty-seven. Gaya blood, Silla rank, and the yard is his.
+  [undefined] You heard him. / I put on this confident face, but honestly — me, a king… / I’ll do it no matter what. I just don’t know if I can.
+  [#4a8fe0] Whether you do it well or badly — / that is what “no matter what” means. / In all this world, wouldn’t it be good to have one person always on your side, Princess? / Hwarang Kim Yushin. / I will serve you to the end.
+  [p] She laughs. Nobody else will hear her do that today. Then the bells start.
+  [scene] The Palace Road
+  FIRST LINES:
+    "Whether you do it well or badly — / that is what “no matter what” means. / In all this world, wouldn’t it be good to have one person always on your side, Princess? / Hwarang Kim Yushin. / I will serve you to the end."
+    "Slaves, Princess. They aren’t in the count."
+    "Are you feeling alright, your majesty?"
+
+### munhee--queen-sunduk  (Queen Sunduk, 632)
+  person=munhee look= from= place=surabol scene=The Palace Road
+  [p] She laughs. Nobody else will hear her do that today. Then the bells start.
+  [scene] The Palace Road
+  [p] Across the palace, Yushin’s little sister is late. Munhee is getting her hair done at the gate, because her husband has already saddled the horses.
+  >>> CARD [card munhee] Twenty-six, sharp-tongued, and married to the wrong man on purpose.
+  [#e07fa8] Totally unfit for a Noble woman… Come on, boy, can’t you find something better?
+  [p] Her husband Chunchu is twenty-nine, and already the most cunning man in Samhan. Only the quiet rooms know it yet.
+  [card chunchu:prince] Spring and autumn. Also the name of the oldest chronicle Confucius ever edited. He means to be in the next one.
+  [p] Gotaso sits in front of him on the same horse. Bupmin, six, has his own, and will not share the saddle.
+  FIRST LINES:
+    "Totally unfit for a Noble woman… Come on, boy, can’t you find something better?"
+    "Listen to him. / He gets the sentences from you. The volume is his own."
+
+### chunchu-prince--queen-sunduk  (Queen Sunduk, 632)
+  person=chunchu look=prince from= place=surabol scene=The Palace Road
+  [card munhee] Twenty-six, sharp-tongued, and married to the wrong man on purpose.
+  [#e07fa8] Totally unfit for a Noble woman… Come on, boy, can’t you find something better?
+  [p] Her husband Chunchu is twenty-nine, and already the most cunning man in Samhan. Only the quiet rooms know it yet.
+  >>> CARD [card chunchu:prince] Spring and autumn. Also the name of the oldest chronicle Confucius ever edited. He means to be in the next one.
+  [p] Gotaso sits in front of him on the same horse. Bupmin, six, has his own, and will not share the saddle.
+  [card gotaso] Chunchu’s daughter. Whatever it is, she wants it faster.
+  [#F0A3C0] Faster. / Father. Faster.
+  [#D8258C] You'll bite your tongue. / Then you'll talk less, which — wait, that's the joke? Fine. Hold on.
+  FIRST LINES:
+    "You'll bite your tongue. / Then you'll talk less, which — wait, that's the joke? Fine. Hold on."
+    "That's a lawyer's horse, son. / Look at you. I'm going to tell your mother you invented a new kind of slow."
+    "…Keep that. / I may need to borrow it back when I am braver."
+
+### gotaso--queen-sunduk  (Queen Sunduk, 632)
+  person=gotaso look= from= place=surabol scene=The Palace Road
+  [p] Her husband Chunchu is twenty-nine, and already the most cunning man in Samhan. Only the quiet rooms know it yet.
+  [card chunchu:prince] Spring and autumn. Also the name of the oldest chronicle Confucius ever edited. He means to be in the next one.
+  [p] Gotaso sits in front of him on the same horse. Bupmin, six, has his own, and will not share the saddle.
+  >>> CARD [card gotaso] Chunchu’s daughter. Whatever it is, she wants it faster.
+  [#F0A3C0] Faster. / Father. Faster.
+  [#D8258C] You'll bite your tongue. / Then you'll talk less, which — wait, that's the joke? Fine. Hold on.
+  [#C41E3A] I'm not racing. / I'm following. That's different.
+  [#D8258C] That's a lawyer's horse, son. / Look at you. I'm going to tell your mother you invented a new kind of slow.
+  FIRST LINES:
+    "Faster. / Father. Faster."
+
+### munmu-child--queen-sunduk  (Queen Sunduk, 632)
+  person=munmu look=child from= place=surabol scene=The Palace Road
+  [#C41E3A] I'm not racing. / I'm following. That's different.
+  [#D8258C] That's a lawyer's horse, son. / Look at you. I'm going to tell your mother you invented a new kind of slow.
+  [p] The road climbs past the hill where adults invent countries. Bupmin reins in and looks down at the city, where the slaves are already sweeping the coronation road.
+  >>> CARD [card munmu:child] Six years old, and already drafting laws for the people with no bones.
+  [#3fa9c9] When I’m king everyone has to listen to me. / Even the bone people. / …And the ones with no bone. Those most, there’s more of them.
+  [#e07fa8] Listen to him. / He gets the sentences from you. The volume is his own.
+  [#D8258C] …Keep that. / I may need to borrow it back when I am braver.
+  [p] Chunchu looks up the hill. He made a country up there once, with Yushin, when he was nine and the stars were still negotiable. Neither of them tells it the same way twice.
+  FIRST LINES:
+    "When I’m king everyone has to listen to me. / Even the bone people. / …And the ones with no bone. Those most, there’s more of them."
+
+### sunduk-queen--queen-sunduk  (Queen Sunduk, 632)
+  person=sunduk look=queen from=princess place=surabol scene=The Throne Hall
+  [undefined] So am I.
+  [p] He sets it on her head. It fits. Nobody mentions it.
+  [p] And so she becomes the first Queen of Silla. They will call her Queen Sunduk, the Blue Moon of the Divine Country.
+  >>> CARD [card sunduk:queen]
+  [quote] Deokman was generous and humane by nature, clear-sighted and quick.
+  [quote] The sacred-bone males were exhausted, and therefore a queen was set up.
+  [scene] The Yard
+  [p] The capital’s daughters follow the Sword of Silla around the yard. He does not look at them. He looks only at the Queen.
+  FIRST LINES:
+    "Hm? (startled)"
+    "Once what."
+    "…Yushin-ah."
+
+### kingmu--queen-sunduk  (Queen Sunduk, 632)
+  person=kingmu look= from= place=surabol scene=The Envoys
+  [p] May the heavenly White Horse bless this queen… Long live the Queen! Long live the Hwarang spirit! Long live Silla!
+  [scene] The Envoys
+  [p] Silla sends envoys to tell the neighbours. The neighbours have opinions.
+  >>> CARD [card kingmu] Baekje’s old king. He has buried a great many Silla plans and keeps the shovel handy.
+  [#b8862c] So that old brat Jinpyung is finally dead… Bah! Good riddance. And they have seated a daughter, eh…?
+  [p] In Pyongyang a tired king laughs into his wine and bets on how long her council lasts. Across the eastern sea, a king with an empress for an aunt calls it a trend.
+  [card taizong] The emperor of Tang. The largest empire under heaven, run by a man who has never lost a war.
+  [quote] “The bearing of a dragon and a phoenix, the face of heaven’s sun. Before he is twenty he will rescue the age and give the people peace.”
+  FIRST LINES:
+    "So that old brat Jinpyung is finally dead… Bah! Good riddance. And they have seated a daughter, eh…?"
+
+### taizong--queen-sunduk  (Queen Sunduk, 632)
+  person=taizong look= from= place=surabol scene=The Envoys
+  [card kingmu] Baekje’s old king. He has buried a great many Silla plans and keeps the shovel handy.
+  [#b8862c] So that old brat Jinpyung is finally dead… Bah! Good riddance. And they have seated a daughter, eh…?
+  [p] In Pyongyang a tired king laughs into his wine and bets on how long her council lasts. Across the eastern sea, a king with an empress for an aunt calls it a trend.
+  >>> CARD [card taizong] The emperor of Tang. The largest empire under heaven, run by a man who has never lost a war.
+  [quote] “The bearing of a dragon and a phoenix, the face of heaven’s sun. Before he is twenty he will rescue the age and give the people peace.”
+  [#c97a2e] A woman king… those Samhan barbarians are at it again, aren’t they? / Send her flowers. Something that suits her.
+  [scene] The Peonies
+  [p] He sends her a gift: a painting of peonies in three colours, and a packet of their seeds.
+  FIRST LINES:
+    "A woman king… those Samhan barbarians are at it again, aren’t they? / Send her flowers. Something that suits her."
+
+### alchun--harmony-council  (Harmony Council, 632)
+  person=alchun look= from= place= scene=The Night Before
+  [undefined] The Kim of Gaya, then. The Marshal’s blood is royal.
+  [undefined] Royal in a country that no longer exists. / If we start counting kingdoms that no longer exist, half this room is royal.
+  [p] By the wall, Yushin does not move. He has heard it before. He will hear it again.
+  >>> CARD [card alchun] Yushin’s old yardmate. Blunt, folksy, and the only man on the Council who has killed a tiger.
+  [undefined] Three left, and all of them in skirts. / Well. Somebody say something new, or we’re here till the frost.
+  [p] The newest member of the Council — a Hwarang barely seated among them — stands up.
+  [card bidam:young] The youngest sleeve in the room. He has never once waited his turn.
+  [#7b5cd6] My lords have said one word forty times tonight. “Woman.” / I have known Princess Dukman since I was a boy. / Not one of you has ever put a question to her that she could not answer. / In the Lotus Sutra a dragon girl becomes a Buddha faster than the monks can object. I’ve read it. So have you, my l
+  FIRST LINES:
+    "Three left, and all of them in skirts. / Well. Somebody say something new, or we’re here till the frost."
+    "I have taken a tiger. / A tiger has no sex. It has teeth. / …I raise it."
+    "…That boy Bidam has no fear in him at all."
+
+### bidam-young--harmony-council  (Harmony Council, 632)
+  person=bidam look=young from= place= scene=The Night Before
+  [card alchun] Yushin’s old yardmate. Blunt, folksy, and the only man on the Council who has killed a tiger.
+  [undefined] Three left, and all of them in skirts. / Well. Somebody say something new, or we’re here till the frost.
+  [p] The newest member of the Council — a Hwarang barely seated among them — stands up.
+  >>> CARD [card bidam:young] The youngest sleeve in the room. He has never once waited his turn.
+  [#7b5cd6] My lords have said one word forty times tonight. “Woman.” / I have known Princess Dukman since I was a boy. / Not one of you has ever put a question to her that she could not answer. / In the Lotus Sutra a dragon girl becomes a Buddha faster than the monks can object. I’ve read it. So have you, my l
+  [#6b7280] …If cleverness picks a king, whose cleverness do we hear tomorrow. / Bone is the measure. Bone does not change.
+  [#78716c] The bone has run out. / Holding a country on empty bone is more dangerous than a clever woman.
+  [p] Murim looks at the brazier for a long time. Then he moves his piece without a word, the way a man pays a debt he has decided not to argue about. Four to two.
+  FIRST LINES:
+    "My lords have said one word forty times tonight. “Woman.” / I have known Princess Dukman since I was a boy. / Not one of you has ever put a question to her that she could not answer. / In the Lotus Sutra a dragon girl becomes a Buddha faste"
+    "Alchun. You’ve wrestled worse than a woman."
+    "No, my lord. Nobody does. / A raft isn’t ashamed of the river. You don’t have to believe in her. Just move the piece to the other side of the cup. / Then call it ridiculous all the way home. Nobody counts the grumbling. They count the piece"
+
+### jinheung--jinheung-the-cloud  (Jinheung, the Cloud, 554)
+  person=jinheung look= from= place= scene=Coronation Night
+  [#8a8a94] Majesty. You wanted the Cloud King. / Everyone loses to him, you know. He’s dead. The dead stop making mistakes.
+  [undefined] Then tell me his mistakes. I’ve heard the rest all day.
+  [p] He was seven when they put the crown on him. It was too big, and nobody mentioned it. By the end, Silla had a river, a coastline and Gaya. He got there by being the best ally in Samhan, right up until the afternoon he wasn't.
+  >>> CARD [card jinheung] The Cloud King. Wherever he rides, the border rides after him.
+  [p] He put up stones wherever he stopped — four of them, on mountains, at the edges of what he had taken — and the stones do not boast. They say who came, and when, and that the land is now inside the border. They are property deeds.
+  [#8a8a94] There’s no boasting on those stones at all. I’ve read them. I climbed two mountains to do it. / Boasting is for men who are worried about losing it.
+  [quote] On the twenty-first day of the eighth month, in the first year of Taechang, the Great King Jinheung toured the lands in his keeping, and had this cut into stone. … And so the borders were carried out 
+  [p] Late in his reign he invents the Hwarang. Take the noblest boys and put them in one yard. Make them ride, sing and rank each other until the ranking feels like fate. Nearly every man who matters later comes out of that yard.
+  FIRST LINES: (none)
+
+### euija-prince--prince-euija  (Prince Euija, 632)
+  person=euija look=prince from= place= scene=
+  [p] In five days, Prince Euija becomes Crown Prince Euija. He is thirty-two, which is late for it. He has fifteen sons, which is early for everything else.
+  >>> CARD [card euija:prince] Righteous and merciful. His father chose it. The son will spend his life deciding which half to keep.
+  [undefined] Fifteen, they say. Sixteen by spring. / His Majesty had fifty at that age. They say Samsin keeps a night shift just for Sabi — don’t repeat that.
+  [p] This is said admiringly. It is that kind of court.
+  [place sabi]
+  [scene] The Rear Garden
+  FIRST LINES:
+    "Your move. / And if you shift my stone while I drink, my lady, do it better than last time. If I’m to be cheated, I want a professional. Ha! / Pour."
+    "Let Silla crown a heifer, Father. It still owes us a river. Ha! / Meanwhile I’m practising. A crown prince ought to hit what he aims at."
+    "Cleverness is an ox, Father. / Let the village see it, and by morning somebody’s hitched it to his plough."
+
+### gyebek-boy--prince-euija  (Prince Euija, 632)
+  person=gyebek look=boy from= place=baekgang scene=The Sand
+  [undefined] For the house of Satek…! / For the house of Yunbi…! / For the house of Jinmo…! / And for His Highness the Crown Prince—
+  [undefined] — Buyeo Gyebek!
+  >>> CARD [card gyebek:boy] A boy with no name until a prince lent him one. He means to pay it back.
+  [p] The yard says the surname back to itself, louder each time. A royal name on an eel boy. At the edge of the sand the Jinmo boy goes the colour of his burner.
+  [p] Gyebek looks back, and up, at the royal seats. The crown prince is already looking at him.
+  FIRST LINES: (none)
+
+### elderyunbi--eight-great-clans  (Eight Great Clans, 632)
+  person=elderyunbi look= from= place= scene=The Sand
+  [p] On the crown prince’s day, the court chalks a square grid in the palace yard. Four hard lines. No banners. The young men of each house step onto the grid in white.
+  [#8a8a94] The Yunbi boys turned a Satek cart over at the west bridge yesterday. / Then tonight the Satek go over a Yunbi wall. / Same as the lantern festival last year. / Last year three of them died.
+  [#d9b13a] White cloth. Wooden swords. / If anyone bleeds the wrong colour, the harbour talks stop for a month.
+  >>> CARD [card elderyunbi] Head of the Yunbi. The family business is knowing things first.
+  [#c4a35a] Then keep your boys’ wrists honest. / The chalk does not care whose sleeve they hold.
+  [p] Swords first. Wooden ones, which still remember steel. The Jinmo boy holds his blade high over his head, the Jinmo way, daring you. A Hae boy takes the dare. On the call they both move. Blades skim the chalk. The white sleeves clap together so close that the steps gasp.
+  [#8a8a94] That Jinmo boy? / Fast wrists. / Faster feet than the Hae, too. / Point to Jinmo.
+  [p] The Jinmo boy bows to the steps and looks straight past the Hae boy, to the edge of the sand, where the crown prince’s nobody is waiting.
+  FIRST LINES:
+    "Then keep your boys’ wrists honest. / The chalk does not care whose sleeve they hold."
+    "Your boy’s knee touched first. / Ask the chalk."
+    "You hold the king’s sleeve and call it a harbour. / We don’t hold the sleeve. We hold the arm."
+
+### gyeonggeunchogo--gunchogo-the-13th  (Gunchogo, the 13th, 371)
+  person=gyeonggeunchogo look= from= place= scene=
+  [p] Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.
+  >>> CARD [card gyeonggeunchogo] The king every later Baekje king quotes when he wants to sound brave.
+  [place pyongyang]
+  [p] Baekje has the river, the coast and the sea roads east. The clans take the docks. The throne takes a cut. It is the richest kingdom in Samhan, and the strongest. Neither lasts.
+  [p] What its king wants is the one thing Baekje doesn’t have: the north’s capital. One winter he takes thirty thousand men up the frozen roads to get it.
+  FIRST LINES:
+    "Good. I’d hate to walk this far for an empty one. / Nobody from the south has ever stood on that wall. Our grandsons will want to know who was first."
+    "Then he’s braver than I am, and we’ll find out what that’s worth."
+    "That’s a king’s funeral. / …Turn them around. We came for a city. We’re going home with something better."
+
+### gesomun--commander-yeon  (Commander Yeon, 634)
+  person=gesomun look= from= place= scene=
+  [p] Everyone in the north has a story about the Eternal General. None of them are bedtime stories.
+  [p] This one starts in the snow, two winters after Silla crowned its queen. A young man is caught on the border and dragged to Commander Yeon, who is twenty-nine and holds the east in his father’s name.
+  >>> CARD [card gesomun] Twenty-nine. He holds the eastern border in his father’s name, and nobody here calls him a son.
+  [#d0362f] Do you know what happens to traitors, young man...?
+  [#d0362f] They say you… leaked our secrets to the enemy.
+  [#8d8d95] I have… no name.
+  [#d0362f] Good. Then nobody will miss it.
+  FIRST LINES:
+    "Do you know what happens to traitors, young man...?"
+    "They say you… leaked our secrets to the enemy."
+    "Good. Then nobody will miss it."
+
+### gulgul--commander-yeon  (Commander Yeon, 634)
+  person=gulgul look= from= place= scene=The Burned Village
+  [scene] The Burned Village
+  [p] A month before the summons, in a Mohe village the Eastern Command has finished with, there is a boy who will not move out of the doorway of a house that no longer has a roof. Snow is settling on the ash. He has a shaved crown and two braids, and he holds a stick the way he has seen men hold spears. Yeon gets down off the red bay and walks up until the stick touches his chest.
+  [#d0362f] Move.
+  >>> CARD [card gulgul] A Mohe boy Yeon pulled out of the snow. He has followed him ever since.
+  [#8fa87a] …
+  [#d0362f] Do you understand me.
+  [#8fa87a] …
+  [p] He does not. Yeon looks at him for what his officers later agree was an unreasonable length of time. Then he laughs, the slap of a laugh they will learn to dread, and pulls off his gloves.
+  FIRST LINES:
+    "…"
+    "…"
+    "…No, sir."
+
+### dosuryu--commander-yeon  (Commander Yeon, 634)
+  person=dosuryu look= from= place= scene=The Burned Village
+  [p] He does not. Yeon looks at him for what his officers later agree was an unreasonable length of time. Then he laughs, the slap of a laugh they will learn to dread, and pulls off his gloves.
+  [#d0362f] Look at this one. Guarding a house that’s already burned. / Good. This is what Goguryeo looks like. / Get on. The second horse.
+  [p] He hands the gloves down. They do not fit. The boy gets on the second horse anyway, the stick still in his fist.
+  >>> CARD [card dosuryu] An old Yeon friend. The one man at the outpost who asks the commander questions.
+  [#c98578] …You are taking him?
+  [#d0362f] Where do you think that boy is standing when he is grown.
+  [#c98578] …Opposite us, I should think.
+  [#d0362f] That is why I am taking him.
+  FIRST LINES:
+    "…You are taking him?"
+    "…Opposite us, I should think."
+
+### yeontaejo--commander-yeon  (Commander Yeon, 634)
+  person=yeontaejo look= from= place= scene=The Summons
+  [p] Gulgul grows up quiet. Years from now, Yeon will send him north to guard the marches and give him a surname to take along. Dae. Big, as big as the country.
+  [scene] The Summons
+  [p] Back in that first winter, the summons comes. The summons isn't addressed to him. It's addressed to his father, who still holds the Eastern seal. Yeon Taejo sat in the capital's big chair for twelve years. Now he is too old to ride that far. The son has done the work for years. The seal is still the old man's.
+  >>> CARD [card yeontaejo] The old Eastern Commander. He sat in the big chair long enough to know what it costs.
+  [#8f3a2e] Take the seal. You sit in my place this year. / …And say half of what you think.
+  [#d0362f] Me? Why do I have to go to Pyongyang? / It’s a place where mouths open only to say useless things…
+  [#8f3a2e] I know. I sat in it for twelve years. / Your uncle chairs it now. He’ll be kind to you. That’s worse. / Half, son. Half.
+  [p] He promised his father half. He has never said half of anything. Next stop: Pyongyang, and a room full of men counting grain…!
+  FIRST LINES:
+    "Take the seal. You sit in my place this year. / …And say half of what you think."
+    "I know. I sat in it for twelve years. / Your uncle chairs it now. He’ll be kind to you. That’s worse. / Half, son. Half."
+
+### gusesa--high-summit  (High Summit, 634)
+  person=gusesa look= from= place= scene=
+  [p] He is not the first man this year to want to be king for all. He is the first to want it on a budget.
+  [#c46b3a] Then the Southern Command takes the next levy. / Yushin’s banners have been testing the passes. If His Majesty wants Samhan, give me men — not speeches.
+  [p] The north wants horses. The west wants timber and iron. Both want them from Central, and both say so twice.
+  >>> CARD [card gusesa] The High Commander. He chairs the room like a feast and counts it like a granary.
+  [#b2554a] (mild, as if chairing a feast) / Each front believes it is the only front. That is why we meet. / Eastern Command has kept the marches quiet. Let us not reward noise over results.
+  [#d0362f] Quiet? / I have been killing tribes so this room can argue about who gets the horses. / Meanwhile the Second Emperor is not a tribute account. He is a man who murders brothers for a throne and then invents a reason.
+  [#a83b34] Commander Yeon. Watch your tongue about foreign kings. / We have bought decades with gold. We will buy more — and spend the peace on Samhan.
+  [#d0362f] You cannot buy a man who has already decided the price of your head. / I have watched how courts die. They starve the wall that is screaming, and fatten the wall that—
+  FIRST LINES:
+    "(mild, as if chairing a feast) / Each front believes it is the only front. That is why we meet. / Eastern Command has kept the marches quiet. Let us not reward noise over results."
+    "Daeha. Put it away. / If this room ever cuts my nephew, it will do it properly. In writing."
+    "If you keep defying the king, Commander Yeon… / we may have to name you a traitor."
+
+### samsin--high-summit  (High Summit, 634)
+  person=samsin look= from= place= scene=Birth of Namseng
+  [p] He reaches the house after midnight. One lamp, one midwife, and the mother. On the wall hangs a painting of Samsin, the birth goddess, prayed at so often that the paint has gone pale where the hands touch it.
+  [#c4787a] Samsin… / This child alone — please. / …This time — please.
+  [p] The painting does not stay paint. Samsin steps from the frame the way steam steps from a kettle, and lays a hand where mortal hands have failed.
+  >>> CARD [card samsin] The birth goddess. She does not knock.
+  [#c084a0] Do not weep. / I will open the breath. / The name — that is yours to give.
+  [p] So the first heir arrives under Samsin's hand, the year of the Summit. They call him Namseng. Nobody wanted a poem in the name. It's the sound the room makes when the baby breathes.
+  [#d0362f] Namseng. / …Heavier than it sounds. / This country. You will have to keep it.
+  [p] He holds the boy up to the lamp and tells him the only bedtime story he knows: the one about the king who rode south and never counted grain.
+  FIRST LINES:
+    "Do not weep. / I will open the breath. / The name — that is yours to give."
+
+### gwanggaeto--gwanggaeto-the-great-king  (Gwanggaeto, the Great King, 400)
+  person=gwanggaeto look= from= place= scene=
+  [p] Silla is drowning. An army from across the sea is inside its walls, and its king has one move left.
+  >>> CARD [card gwanggaeto] Goguryeo’s widest king. The stele ran out of room before he ran out of fortresses.
+  [quote] He was born big and imposing, with a will that would not be bridled.
+  [scene] The Burning Capital
+  [p] The Silla king stands on his own wall and counts the sea-raiders’ fires. There are more every night. Below, in the hall, his court is arguing about pride.
+  FIRST LINES:
+    "Servant. He wrote that word himself?"
+    "Then they’ll come. Fifty thousand of them. / Tell him one thing more, so he hears it from me first. Servants don’t decide when the master’s horsemen go home."
+
+### sadaham--sadaham  (Sadaham, 641, flashback 560)
+  person=sadaham look= from= place= scene=
+  [p] Back then the yard was new, and so was the idea. The king wanted boys who would ride ahead of the army and not ask why. The first year, he got a lot of them. Two of them got each other.
+  [p] Sadaham is thirteen and talks like a dare. Mugwan is thirteen too, and says less than his horse. The hall has one gap, so they share it. They argue for a month about who snores.
+  >>> CARD [card sadaham] The first class’s brightest boy. He makes promises the way other boys throw stones.
+  [#6fa8ff] You snore. / Don’t argue. The whole hall heard you.
+  [card mugwan] Sadaham’s best friend in the First Class. The two of them made a promise boys should not make.
+  [#7aa0c8] That was you.
+  [#6fa8ff] …Then prove it. Stay up and listen.
+  FIRST LINES:
+    "You snore. / Don’t argue. The whole hall heard you."
+    "…Then prove it. Stay up and listen."
+    "You read it. You’re the one who studies."
+
+### mugwan--sadaham  (Sadaham, 641, flashback 560)
+  person=mugwan look= from= place= scene=
+  [p] Sadaham is thirteen and talks like a dare. Mugwan is thirteen too, and says less than his horse. The hall has one gap, so they share it. They argue for a month about who snores.
+  [card sadaham] The first class’s brightest boy. He makes promises the way other boys throw stones.
+  [#6fa8ff] You snore. / Don’t argue. The whole hall heard you.
+  >>> CARD [card mugwan] Sadaham’s best friend in the First Class. The two of them made a promise boys should not make.
+  [#7aa0c8] That was you.
+  [#6fa8ff] …Then prove it. Stay up and listen.
+  [p] Mugwan stays up. It is the first of a great many nights he will stay up for Sadaham, and the only one either of them will find funny.
+  [p] Their first spring, the yard sends them down to the river for stones. Mugwan turns one over and goes very still. Somebody has cut writing into it.
+  FIRST LINES:
+    "That was you."
+    "Come here. / Read this."
+    "That’s not ours. Put it back."
+
+### pumsuk--gotaso  (Gotaso, 641)
+  person=pumsuk look= from= place= scene=The Gyuku Match
+  [#e07fa8] Look at that club box. / A Hwarang that young carrying that… you can see the household.
+  [#f472b6] I am not looking at the club. / Only the man.
+  [p] Pumsuk takes the ball on the off-side — a showy, illegal-looking, completely legal cut — and for half a breath too long catches her eye instead of the goal. His premium gyuku club flashes once in the sun: presentation-silk still on the headcover, five coloured rings on the shaft, vulgar as Surabol sport gets.
+  >>> CARD [card pumsuk] Kim Pumsuk. Rich, handsome, and legal by about an inch.
+  [#f472b6] …Who is that. / Mother. / Mother. I asked who that is.
+  [#e07fa8] Hwarang Kim Pumsuk. / Don’t stare.
+  [#f472b6] I already did. / And he looked back. He did, he did.
+  [#f472b6] I am never going to look at anyone else. / For the rest of my life.
+  FIRST LINES:
+    "I shouldn’t… see Your Highness here."
+    "…I don’t know. / Your father looked at me at the match. The way a man looks at a horse he may have to shoot. / I came anyway. Knowing I shouldn’t."
+    "That cut at the match. The one the umpires argued over. / It was for you. I have never risked a foul in my life. / …I would risk it again."
+
+### chunmyung--pumsuk  (Pumsuk, 641)
+  person=chunmyung look= from= place= scene=The Wedding
+  [#E8552B] …Your son’s girl. / That doorway has taken three of this house now.
+  >>> CARD [card chunmyung] The Queen’s elder sister, and Chunchu’s mother. She gave up a throne to marry for love.
+  [#d8a0e8] Four. If Your Majesty counts honestly.
+  [#E8552B] …I count honestly.
+  [#f0a3c0] We will be happy forever!
+  [scene] The Wedding Night
+  FIRST LINES:
+    "Four. If Your Majesty counts honestly."
+
+### namseng-heir--academy  (Academy, 641)
+  person=namseng look=heir from= place= scene=
+  [p] Yeon has three sons, and only one of them is old enough to annoy a monk.
+  [p] Namseng, seven, is the careful one: the heir, eager to be approved of.
+  >>> CARD [card namseng:heir] Yeon’s eldest. He would very much like to be told he did well.
+  [p] Namgun, four, is the fierce one, who never backs down first.
+  [card namgun] The second son. Nobody ever had to teach him to push.
+  [p] Namsan, two, is the quiet one, watching his brothers.
+  [p] There is a fourth boy at that table who is not counted, because counting him would require a word nobody in the house wants to use. Gulgul eats after the others and says nothing, and Namsan — who watches everything — is the only one who notices that he never sits with his back to a door.
+  FIRST LINES:
+    "Father. / Is the Buddha not allowed?"
+    "Namgun! Say sorry. / …Venerable sir. My brother is four. I will read the sutra too, if I am allowed."
+
+### namgun--academy  (Academy, 641)
+  person=namgun look= from= place= scene=
+  [p] Namseng, seven, is the careful one: the heir, eager to be approved of.
+  [card namseng:heir] Yeon’s eldest. He would very much like to be told he did well.
+  [p] Namgun, four, is the fierce one, who never backs down first.
+  >>> CARD [card namgun] The second son. Nobody ever had to teach him to push.
+  [p] Namsan, two, is the quiet one, watching his brothers.
+  [p] There is a fourth boy at that table who is not counted, because counting him would require a word nobody in the house wants to use. Gulgul eats after the others and says nothing, and Namsan — who watches everything — is the only one who notices that he never sits with his back to a door.
+  [scene] The Taehak
+  [p] The Grand Academy is old. It came over the river in the same season as the first Buddhas. Ever since, the school and the temple have shared Goguryeo's noble sons. Classics in the morning. Sutras after lunch. Archery whenever the masters lose their voices.
+  FIRST LINES: (none)
+
+### euija-king--king-euija  (King Euija, 641)
+  person=euija look=king from=prince place= scene=
+  [p] It was four lacquered paper kites, a low mist, six boatmen paid in advance, and one hour of the year when the light comes up the river at exactly the right angle. Euija had been planning it since the previous autumn.
+  [p] King Mu is dead at eighty, still cursing Silla, and nobody at the river is thinking about him.
+  [p] Euija takes the throne at forty-one. The court will style him Righteous and Merciful. He has a sense of humour about that.
+  >>> CARD [card euija:king]
+  [card gyebek:general] The boy with the borrowed name, grown. He still cannot say a thing he does not believe.
+  [#8a6f3f] …Your Majesty. That is not a dragon.
+  FIRST LINES:
+    "No, it isn’t. / Now go and say so to those people standing there. / See who wins."
+    "They cannot see the string. / I did not say go. I said see who wins."
+    "Stand here for one hour. Mouth shut. / You cannot do the other thing. That is why I keep you beside me."
+
+### gyebek-general--king-euija  (King Euija, 641)
+  person=gyebek look=general from=boy place= scene=
+  [card euija:king] 
+  >>> CARD [card gyebek:general] The boy with the borrowed name, grown. He still cannot say a thing he does not believe.
+  [#8a6f3f] …Your Majesty. That is not a dragon.
+  [#e0b155] No, it isn’t. / Now go and say so to those people standing there. / See who wins.
+  [#8a6f3f] Wins what. / It is paper and sticks. I can see the string. / I will go and tell them. You said to.
+  [#e0b155] They cannot see the string. / I did not say go. I said see who wins.
+  FIRST LINES:
+    "…Your Majesty. That is not a dragon."
+    "Wins what. / It is paper and sticks. I can see the string. / I will go and tell them. You said to."
+    "That is the same order. / I will not call it a dragon anywhere."
+
+### seongchung--king-euija  (King Euija, 641)
+  person=seongchung look= from= place= scene=
+  [p] The white deer is the cheapest one. You take a young doe, you keep it out of the sun for a season, and you let it out on the hunting ground on a day the ministers are watching.
+  [p] The stone at the Rock of Politics sweats before a good decision. It sweats because somebody rubs it with brine the night before, and the somebody is always the same man.
+  [p] Rice comes up on ground where nothing was planted. Something was planted. It was planted at night.
+  >>> CARD [card seongchung] The minister who asks the question the king hoped nobody would.
+  [#9fb4c9] Your Majesty. What happens when the people work it out?
+  [#e0b155] They won’t. / Nobody inspects the evidence for a thing they already want to believe.
+  [scene] The Morning After
+  [p] He walks the riverbank the morning after the dragon as if the mist itself had appointed him. Children point. A grandmother weeps. A clerk from the Board of Rites drops his brush and does not pick it up, because picking it up would mean deciding whether to write what he saw or what he was told.
+  FIRST LINES:
+    "Your Majesty. What happens when the people work it out?"
+    "…Your Majesty."
+    "Forty-one, Majesty. If the two born this spring are counted. / …And each of them will need a chair, one day. There are only so many chairs, and—"
+
+### pung-prince--king-euija  (King Euija, 641)
+  person=pung look=prince from= place= scene=The Princes
+  [#c9a24d] Forty-one, Majesty. If the two born this spring are counted. / …And each of them will need a chair, one day. There are only so many chairs, and—
+  [#e08a2e] Then we’ll build more chairs. Or empty some. / Pung! Where’s Pung?
+  [p] Prince Pung stands. He is seventeen. He is the quiet one, the one with the good handwriting, and he already knows what is coming because his mother told him the night before, crying into his collar.
+  >>> CARD [card pung:prince] The quiet prince with the good handwriting. He is about to learn what a hostage is for.
+  [#e08a2e] The island king across the sea wants a prince of Baekje at his court, to show the world how close we are. You’re going. / Learn their poems. Drink their wine. Don’t marry anyone I’ll have to go to war over.
+  [#e6c76a] As Your Majesty commands. / …For how long?
+  [#e08a2e] Until I need you. / Ha! Don’t look like that. It’s a compliment. Nobody sends a prince he doesn’t mean to want back.
+  [p] One day Baekje will send for him after all. Nobody at the feast would have believed it, Pung least of all.
+  FIRST LINES:
+    "As Your Majesty commands. / …For how long?"
+
+### yunchung--yunchung  (Yunchung, 641)
+  person=yunchung look= from= place= scene=
+  [p] There was only one man Euija knew he could trust to deliver.
+  [p] That winter Euija sends for Yunchung, and nobody from the eight houses is told. Yunchung is a general from a family too small to keep a clan tutor. He has held the Silla frontier for eleven years by doing exactly what he says he will do, which the Assembly finds tiring.
+  >>> CARD [card yunchung] A frontier general from a family too small to count. That is the point.
+  [#e08a2e] Sit, General. No, the good cushion. Take it before I change my mind. / Tell me. Who rules Baekje?
+  [#c9932a] Your Majesty does. / On paper.
+  [#e08a2e] Ha! And off paper?
+  [#c9932a] Off paper, the Rock does. And whoever rubs the brine on it. / The eight houses pick the Premier, the Premier picks the ministers, and the ministers send me the grain late. They pay my men. My men know it.
+  FIRST LINES:
+    "Your Majesty does. / On paper."
+    "Off paper, the Rock does. And whoever rubs the brine on it. / The eight houses pick the Premier, the Premier picks the ministers, and the ministers send me the grain late. They pay my men. My men know it."
+    "With a war abroad, Majesty. / A king who wins a fortress owns the men who took it. The clans can’t vote on a victory. They can only show up to the feast."
+
+### chunbok--yunchung  (Yunchung, 641)
+  person=chunbok look= from= place= scene=The Assembly
+  [p] By spring the Assembly is fighting about harbours, as it always is. Gyebek sits through three sessions. He understands every number and none of the smiles.
+  [#e6c76a] Enough. / You can count berths when the frontier is settled. / Until then, the Eraha counts fortresses.
+  [p] Euija has already decided. Now the clans have to believe it was their idea.
+  >>> CARD [card chunbok] A young Satek with good manners and a quick eye for an opening.
+  [#d4a94e] As Your Majesty well knows, / the will of the Rock is the will of Heaven. / The eight houses decide it together.
+  [#e08a2e] Heaven…? Ah — the invisible committee.
+  [#a16207] Restore the reign of the thirteenth Eraha…! / The thirteenth Eraha…! Ten thousand years!
+  [#e08a2e] Do you know what a country is? / <b>A country is a territory governed by a single story.</b> / Why are we Baekje people, and not Goguryeo or Silla people? We look exactly the same. / Anywhere in Baekje, everyone knows the founders. / Speak of King Onjo — that is Baekje. / So the king makes the story
+  FIRST LINES:
+    "As Your Majesty well knows, / the will of the Rock is the will of Heaven. / The eight houses decide it together."
+    "The present king of Silla is a woman who cannot command an army, / and even within her country, the people’s hearts are unsettled. / Seize this opening, take a border fortress, and the great work will be within reach."
+
+### kingsung--the-severing  (The Severing, 553–554)
+  person=kingsung look= from= place= scene=
+  [p] Two kings take a river back together: Seong of Baekje and the Cloud King of Silla. For a while their banners fly side by side. Then the Cloud King turns his army on Baekje’s half. He takes the river mouth and fills it with men who won’t ask what the alliance meant.
+  [p] King Seong feels the cut in the marrow. He calls in everyone who still owes him: the last Gaya houses, a boatload of soldiers from the islands. Then he marches on the fortress that opens Silla's throat.
+  >>> CARD [card kingsung] Baekje’s king. He has lost a river, and he means to get it back.
+  [place gwansan]
+  [p] For months the fight goes Baekje’s way. The crown prince holds the forward camp, half-starved; his men are boiling their saddle leather. One night his father rides out with fifty horse to steady him.
+  [scene] The Night Road
+  FIRST LINES:
+    "Gaya…? / A prince of Geumgwan — on this road, tonight, why."
+    "What. / A slave’s hand— no. A king’s head does not take a slave’s hand."
+    "Every time I think of it… / It went into the marrow. / I cannot live on in disgrace."
+
+### dodo--the-severing  (The Severing, 553–554)
+  person=dodo look= from= place=gwansan scene=The Night Road
+  [#e5b83a] Gaya…? / A prince of Geumgwan — on this road, tonight, why.
+  [#8B5CF6] Military governor of Sinju. / Sit.
+  [p] They sit him on a camp stool. Out of the cone’s shadow a man kneels twice, the way you kneel to a king, and asks.
+  >>> CARD [card dodo] A slave in the Silla camp. Remember the name; the annals almost didn’t.
+  [#7f96b5] …I’m asking. / Let me take the head.
+  [#e5b83a] What. / A slave’s hand— no. A king’s head does not take a slave’s hand.
+  [#7f96b5] If you broke the oath. / Even a king… takes it. I was told.
+  [p] Which oath, and whose, nobody on the ridge asks.
+  FIRST LINES:
+    "…I’m asking. / Let me take the head."
+    "If you broke the oath. / Even a king… takes it. I was told."
+
+### gumil--gumil  (Gumil, 642)
+  person=gumil look= from= place=daeya scene=
+  [place daeya]
+  [p] The granary at Daeya can feed the garrison through a winter siege. Gumil knows the exact number of sacks. He counted them. Every tally he writes goes up the stair to a young man in a purple sleeve, who seals it without reading it.
+  >>> CARD [card gumil] A yellow-sleeve officer. He does the work, and the purple sleeve signs it.
+  [p] In Silla the sleeve tells you everything. Purple is True Bone, the old royal blood. Yellow is a man who will die at the rank he was born to. Nobody has to explain it twice. You can see it from across a yard.
+  [scene] The Stair
+  [p] This morning Gumil climbs the stair with the harvest tally and one more sheet under it. The second sheet is his. Four years of border pay, owed and never paid, added up to the last measure.
+  [p] Pumsuk is twenty-four. He has held the fortress for a year, because his blood is right and his wife’s father is Chunchu. He is not a bad man. He is just a man who has never had to read the second sheet.
+  FIRST LINES:
+    "My pay, Commander. Four years of it. / The capital sends the rice. Somewhere between the capital and me, it gets eaten."
+    "After the feast. / Putting a boy this green in charge of the border — does that make any sense?"
+    "Ah, forgotten what country this is? To them we’re not even dirt~ / Say “True Bone” and the heavens part on their own~~"
+
+### gumilwife--gumil  (Gumil, 642)
+  person=gumilwife look= from= place=daeya scene=Home
+  [#9a7b5f] My wife says a lot of things. / She wants a new jeogori for the feast. Silk. Green. I said yes. / …With what, I didn’t say.
+  [scene] Home
+  [p] Maehwa is the poorest woman in Daeya and the one every eye in it finds first. She is thirty-one. She stopped pretending not to know what happens to a room when she walks into it a long time ago, and the fortress has never forgiven her for it.
+  >>> CARD [card gumilwife] Maehwa. Plum blossom: the flower that does not wait for spring.
+  [#c98fb0] The men in this fortress. They all smell the same. / Dirt, drink… and looking when they think I won’t notice.
+  [#9a7b5f] Cover yourself when you go out.
+  [#c98fb0] Buy me clothes, then. / Everything I own refuses to fit.
+  [#9a7b5f] …You know what I am paid.
+  FIRST LINES:
+    "The men in this fortress. They all smell the same. / Dirt, drink… and looking when they think I won’t notice."
+    "Buy me clothes, then. / Everything I own refuses to fit."
+    "I do. / Which is why everyone looks."
+
+### kangrim--siege-of-daeya  (Siege of Daeya, 642)
+  person=kangrim look= from= place=underworld scene=The Inner Room
+  [p] A man who was not in the fortress is suddenly in the fortress, ledger under one arm, crow-dark robe, standing the polite distance of a messenger. The underworld’s. Whose king is Yumla.
+  [place underworld]
+  [p] Kangrim reads her name aloud three times before he asks anything. Gotaso. Gotaso. Gotaso. It is the underworld’s way of making sure the ledger has opened the right door.
+  >>> CARD [card kangrim] The underworld’s fetch. He asks one question at the door, and he waits for the answer.
+  [#5f5f6b] Lady Gotaso. / One question, then we walk. / When you chose forever — did you choose the man, or the vow?
+  [#e8a0b8] Who… are you? / I don’t know your face. I don’t know your house. / Are you Baekje? Are you—
+  [#5f5f6b] Neither. I collect. / You do not need to know me. Almost nobody does, until they do. / The question stands.
+  [#e8a0b8] …Both. / Is that allowed? / …When he came for me there was something on his coat. He said he would change it later.
+  FIRST LINES:
+    "Lady Gotaso. / One question, then we walk. / When you chose forever — did you choose the man, or the vow?"
+    "Neither. I collect. / You do not need to know me. Almost nobody does, until they do. / The question stands."
+    "Honest. Rare. / Come. Nobody where we are going will ask you to swear anything."
+
+### bojang--yeons-massacre  (Yeon’s Massacre, 642)
+  person=bojang look= from= place= scene=The Banquet
+  [#d0362f] You there… what is your name?
+  [#8f4a44] M-my name? My surname is Go—
+  [#d0362f] You there… what is your name?
+  >>> CARD [card bojang] The old king’s nephew. He has been given a crown and very little to do with it.
+  [card gesomun:supreme] A chair he built himself, above every other chair in the room.
+  [p] He makes one more appointment before the blood is dry. Dosuryu — an old friend of the Yeon house, one of the few men who has ever told him no and lived — is named Grand Herald, a post that did not exist until the banquet needed a voice that was not the throne’s.
+  [#c98578] Grand Herald… / I have had you by the scruff since your father was alive. / And now you want that mouth to read the country aloud?
+  [#d0362f] If you will not, who will. / That Bojang… I only need the name. / The one who speaks to the people is you.
+  FIRST LINES: (none)
+
+### gesomun-supreme--yeons-massacre  (Yeon’s Massacre, 642)
+  person=gesomun look=supreme from=commander place= scene=The Banquet
+  [#8f4a44] M-my name? My surname is Go—
+  [#d0362f] You there… what is your name?
+  [card bojang] The old king’s nephew. He has been given a crown and very little to do with it.
+  >>> CARD [card gesomun:supreme] A chair he built himself, above every other chair in the room.
+  [p] He makes one more appointment before the blood is dry. Dosuryu — an old friend of the Yeon house, one of the few men who has ever told him no and lived — is named Grand Herald, a post that did not exist until the banquet needed a voice that was not the throne’s.
+  [#c98578] Grand Herald… / I have had you by the scruff since your father was alive. / And now you want that mouth to read the country aloud?
+  [#d0362f] If you will not, who will. / That Bojang… I only need the name. / The one who speaks to the people is you.
+  [#c98578] Very well. / Only — for as long as you still listen to me. / If you stop, I am a herald, not a friend.
+  FIRST LINES:
+    "If you will not, who will. / That Bojang… I only need the name. / The one who speaks to the people is you."
+    "Pray quieter. / Or pray to something that does not own half the capital."
+    "Listen… it doesn’t matter what they’ll say about us. / Do you hear me? It doesn’t matter at all — zero. Not even one bit."
+
+### shinsung--yeons-massacre  (Yeon’s Massacre, 642)
+  person=shinsung look= from= place= scene=The Temples
+  [scene] The Temples
+  [p] After the blood dries, Yeon looks at the temples. They are rich, and they pray for whoever is winning. He has an idea about that, which can wait. One young monk named Shinsung learns how to wait too.
+  [#d0362f] Pray quieter. / Or pray to something that does not own half the capital.
+  >>> CARD [card shinsung] A monk of Pyongyang. Very quiet, and very well connected.
+  [#8f7b70] Amitabha.
+  [quote] What has the most strength? Forbearance is the strongest. One who forbears bears no grudge, and is sure to be honoured among men.
+  [p] In the markets the news arrives the way all bad news arrives — ahead of the official word, behind the smell of smoke. Grain sellers count on their fingers. Children stop racing. Someone says banquet and means blood.
+  FIRST LINES:
+    "Amitabha."
+
+### taizong--emperor  (Emperor, 643)
+  person=taizong look= from= place=changan scene=
+  [quote] On the dingsi day, Zhang Jian, Governor-General of Yingzhou, reported that Quan Gai Suwen*, Great Man of Goguryeo's Eastern Division, had murdered his king, Wu†.
+  [quote] In autumn, the ninth month, the great minister Iri Kasumi murdered the great king, and killed Iri Kosesi and others with him, more than a hundred and eighty men.
+  [p] One character of that name nobody in this palace may write, because it belonged to the emperor’s late father. So a clerk wrote another one. The man in Pyongyang will be furious when he hears. That is a story for later.
+  >>> CARD [card taizong] The Second Emperor of Tang. He owns half the world, and he is curious about the other half.
+  [p] He has never lost a battle he led himself. He mentions this rarely, and only to people who already know.
+  [scene] The Night Audience
+  [card chusuiliang] The court diarist. He writes down everything the emperor says, which makes him the bravest man in the room.
+  [#c97a2e] Gai… Suwen. / He murdered his lord and seized the government. It is truly not to be borne.
+  FIRST LINES:
+    "Gai… Suwen. / He murdered his lord and seized the government. It is truly not to be borne."
+    "With what we have today, taking the place would not be hard. / But I do not wish to wear out the people. For now, let the Khitan and the Mohe harass him. What do you say?"
+    "When I have taken everything, nobody will be left to tell me no. / …That was a joke."
+
+### chusuiliang--emperor  (Emperor, 643)
+  person=chusuiliang look= from= place=changan scene=The Night Audience
+  [card taizong] The Second Emperor of Tang. He owns half the world, and he is curious about the other half.
+  [p] He has never lost a battle he led himself. He mentions this rarely, and only to people who already know.
+  [scene] The Night Audience
+  >>> CARD [card chusuiliang] The court diarist. He writes down everything the emperor says, which makes him the bravest man in the room.
+  [#c97a2e] Gai… Suwen. / He murdered his lord and seized the government. It is truly not to be borne.
+  [#8c7a5b] The report is dated the ninth month, Majesty. It took the summer to arrive.
+  [p] You may notice who is saying “not to be borne.” He did not get his own chair by waiting for it either. Nobody at this court mentions that. Nobody is allowed to.
+  [#c97a2e] With what we have today, taking the place would not be hard. / But I do not wish to wear out the people. For now, let the Khitan and the Mohe harass him. What do you say?
+  FIRST LINES:
+    "The report is dated the ninth month, Majesty. It took the summer to arrive."
+    "The Khitan were given silk last spring, Majesty. They harassed the Mohe. / The last time Majesty asked what anyone said was the spring Gaochang fell. I have the date."
+    "It is noted, Majesty. As a joke."
+
+### weizheng--four-dragons  (Four Dragons, 643)
+  person=weizheng look= from= place= scene=The Sickroom
+  [p] So the Second Emperor of the West is a man who has not heard another person say his own name since he was crowned, and there is nobody left alive who is allowed to.
+  [scene] The Sickroom
+  [p] The Imperial Minister is dying. At the foot of the bed the court diarist, Chu Suiliang, writes down everything the emperor says.
+  >>> CARD [card weizheng] The emperor’s minister. His job is to say no, and he is very good at his job.
+  [#9a7b4f] Your Majesty. When I am gone, there will be no one left to tell you no.
+  [#c97a2e] Why else do you think I put up with you for twenty years.
+  [#c97a2e] With bronze for a mirror, a man straightens his robes. / With history for a mirror, he sees the rise and fall of states. / With a man for a mirror, he sees his own faults. / …Today I lose one of my mirrors.
+  [p] All that month the eastern reports keep coming in. In Goryeo, a king has been murdered by his own minister.
+  FIRST LINES:
+    "Your Majesty. When I am gone, there will be no one left to tell you no."
+
+### lishiji--four-dragons  (Four Dragons, 643)
+  person=lishiji look= from= place= scene=The Muster
+  [p] He launches the Seventh Invasion of Goguryeo. It’s the seventh army out of the West, and the first he leads himself. The clerks need three days to read the muster aloud. Horse from the frontier. Foot from the rivers. Five hundred hulls riding low with a year of grain.
+  [p] Four dragon banners go up over the muster: white, red, blue and black.
+  >>> CARD [card lishiji] The Blue Dragon. The emperor’s most patient general, which is its own kind of danger.
+  [p] The fifth banner has no name on it at all. Everyone knows whose it is.
+  [p] Two of the four dragons were born on the steppe. The Red Dragon keeps felt tents inside the capital walls and sleeps better in them. The White Dragon walked his whole tribe across the border as a boy. He has been proving it was worth it ever since. The Black Dragon is the empress’s brother. He argued against this war in council. He’s riding to it anyway.
+  [scene] Longmen Field
+  FIRST LINES: (none)
+
+### xuerengui--four-dragons  (Four Dragons, 643)
+  person=xuerengui look= from= place= scene=Longmen Field
+  [p] Two of the four dragons were born on the steppe. The Red Dragon keeps felt tents inside the capital walls and sleeps better in them. The White Dragon walked his whole tribe across the border as a boy. He has been proving it was worth it ever since. The Black Dragon is the empress’s brother. He argued against this war in council. He’s riding to it anyway.
+  [scene] Longmen Field
+  [p] In a poor field at Longmen, a farmer named Xue Rengui is planning to rebury his ancestors. Millet, rammed earth, a hut that doesn’t pretend to be anything. He has the right soil for graves. He doesn’t yet know he has the wrong year for quiet.
+  >>> CARD [card xuerengui] A poor farmer with good soil for graves. His wife thinks he could do better.
+  [p] The cloth on his back is plain yellow peasant hemp, the cheapest dye the village still sells, the colour of millet at the wrong hour. He hoes. His wife, Liu, keeps the hut door.
+  [p] The Son of Heaven is calling up troops for Liaodong. The edict reaches villages that have never seen a palace, and wives who have never left the furrow.
+  [p] The edict comes on red paper, pasted to the well-house wall at the height of a man’s eyes: SERVE THE EMPEROR. Under it, in smaller characters, the quota. It does not ask for him by name. It asks for one man from every household with the right number of hands, and any man with hands will do.
+  [#e8e3d5] The mounds… they’re not done. / Not the dirt. The hands. / The edict — I heard it. I did.
+  FIRST LINES:
+    "The mounds… they’re not done. / Not the dirt. The hands. / The edict — I heard it. I did."
+    "The ji is in the shed. / The yellow clothes are here. / Liu. If I go — this door."
+    "…Ancestors. Wait a little longer. / Until I come back carrying this ji. / The yellow clothes — I’ll leave them here."
+
+### xueliu--four-dragons  (Four Dragons, 643)
+  person=xueliu look= from= place= scene=Longmen Field
+  [p] The Son of Heaven is calling up troops for Liaodong. The edict reaches villages that have never seen a palace, and wives who have never left the furrow.
+  [p] The edict comes on red paper, pasted to the well-house wall at the height of a man’s eyes: SERVE THE EMPEROR. Under it, in smaller characters, the quota. It does not ask for him by name. It asks for one man from every household with the right number of hands, and any man with hands will do.
+  [#e8e3d5] The mounds… they’re not done. / Not the dirt. The hands. / The edict — I heard it. I did.
+  >>> CARD [card xueliu] A farmer’s wife. The farmer has no idea what she has planned for him.
+  [#c4a484] Mounds don’t wait because a man is short of hands. / And the edict doesn’t wait either. / You’re not a hoe. You’re a ji. As far as I can tell.
+  [#e8e3d5] The ji is in the shed. / The yellow clothes are here. / Liu. If I go — this door.
+  [#c4a484] I’ll shut the door. / Don’t you start worrying about doors. / Talent needs its hour. If this is the hour — then go.
+  [p] He goes. She is right, and a man who can lift a ji should not spend the invasion stacking earth for the dead.
+  FIRST LINES:
+    "Mounds don’t wait because a man is short of hands. / And the edict doesn’t wait either. / You’re not a hoe. You’re a ji. As far as I can tell."
+    "I’ll shut the door. / Don’t you start worrying about doors. / Talent needs its hour. If this is the hour — then go."
+
+### yangmanchun--yodong  (Yodong, 645)
+  person=yangmanchun look= from= place=yodong scene=Below Ansi
+  [p] Veterans spit and say the real argument is still ahead, at Ansi.
+  [scene] Below Ansi
+  [p] Then the Second Emperor rides on to look at Ansi, and the man who holds it comes out onto the wall to look back. Nobody on the Tang side ever writes down his name.
+  >>> CARD [card yangmanchun] The man who holds Ansi. The other side never learns his name, and he never offers it.
+  [#c97a2e] You. On the wall. Your name. / We like to know whom We are about to forgive.
+  [#e05a3c] You will simply… have to call me the man on the wall. / I hear you don’t care for names anyway.
+  [#c97a2e] A nameless man, then. / History will not trouble itself to remember you. We are the one writing it.
+  [#e05a3c] Write fast, then. / You’ve got two hundred li of mud behind you and no road home. I’ve got a wall and all autumn.
+  FIRST LINES:
+    "You will simply… have to call me the man on the wall. / I hear you don’t care for names anyway."
+    "Write fast, then. / You’ve got two hundred li of mud behind you and no road home. I’ve got a wall and all autumn."
+
+### dongchun--boiling-river  (Boiling River, 244)
+  person=dongchun look= from= place= scene=
+  [p] The old officer starts with the part kings like to hear. Goguryeo won. Twice.
+  >>> CARD [card dongchun] A king who starts a war over a letter. This time, someone writes back.
+  [p] Four hundred years back, King Dongcheon picked a fight with the northern empire of Wei. Wei sent its most famous general to explain why that was a mistake. Goguryeo met him at the Boiling River and won. Then it won again.
+  [#C30000] Wei’s great army is worse than our small one. / Their famous general? His life is in the palm of my hand. / Five thousand horse. We ride now.
+  FIRST LINES:
+    "Wei’s great army is worse than our small one. / Their famous general? His life is in the palm of my hand. / Five thousand horse. We ride now."
+    "One afternoon is all I need to win."
+    "…I did not look at the ground."
+
+### haemosu--haemosu  (Haemosu, -59)
+  person=haemosu look= from= place=amnok scene=
+  [p] Dawn, noon, dusk, night, always the same route. Below, the Amnok is a line he is not supposed to break: wet stone, morning shallows with no boat in them, rocks that are only rocks.
+  [place amnok]
+  [p] Haemosu, god of the sun, has kept this hour since before the river had daughters. Today the Amnok flashes under the wheel. He looks down, and the hour breaks.
+  >>> CARD [card haemosu] The sun god. Punctual since before the rivers, until this afternoon.
+  [p] In the shallows, three river-daughters are bathing: Yuhwa and her two sisters. Wet hair down their backs, the river at their hips. Nobody dressed for heaven. He falls in love and in lust in the same glance.
+  [card yuhwa] The river’s youngest daughter, a nymph of the Amnok. Heaven is about to ruin her afternoon, or make it.
+  [card hwahye] The eldest river-daughter. First into the water, every time.
+  [card wihye] The middle sister. She laughs first and dives second.
+  FIRST LINES:
+    "…Stop. Stop the chariot."
+    "Those thighs… / The water…"
+    "Hey— / Wait. Hey. You. / Why aren’t you hiding? Look at me like that and I’m coming down."
+
+### yuhwa--haemosu  (Haemosu, -59)
+  person=yuhwa look= from= place=amnok scene=
+  [p] Haemosu, god of the sun, has kept this hour since before the river had daughters. Today the Amnok flashes under the wheel. He looks down, and the hour breaks.
+  [card haemosu] The sun god. Punctual since before the rivers, until this afternoon.
+  [p] In the shallows, three river-daughters are bathing: Yuhwa and her two sisters. Wet hair down their backs, the river at their hips. Nobody dressed for heaven. He falls in love and in lust in the same glance.
+  >>> CARD [card yuhwa] The river’s youngest daughter, a nymph of the Amnok. Heaven is about to ruin her afternoon, or make it.
+  [card hwahye] The eldest river-daughter. First into the water, every time.
+  [card wihye] The middle sister. She laughs first and dives second.
+  [p] Hwahye and Wihye have left their silk on the rocks. The eldest folded hers once; the middle did not bother. Yuhwa’s ice-blue is still on her shoulder, wet.
+  [p] Yuhwa kneels in the shallows with her hair in one fist like a dark rope and rinses the river out of it without hurrying. Heaven can wait on a rinse; she has decided that without saying it. With her back to the sky she looks over her shoulder, as if someone up there had said her name.
+  FIRST LINES:
+    "Unni. / Go. I’m here. / …I was going to say don’t look up."
+    "Heaven looks down every day. / So today I’m supposed to blush? / …Come closer, if you want to see. / Into the water. / And decide… where your hands are going."
+    "Come down first. / From the sky it’s an order. / At the water… I’ll hear it as a request. / Ask with your mouth… and I’ll answer with my name."
+
+### hwahye--haemosu  (Haemosu, -59)
+  person=hwahye look= from= place=amnok scene=
+  [card haemosu] The sun god. Punctual since before the rivers, until this afternoon.
+  [p] In the shallows, three river-daughters are bathing: Yuhwa and her two sisters. Wet hair down their backs, the river at their hips. Nobody dressed for heaven. He falls in love and in lust in the same glance.
+  [card yuhwa] The river’s youngest daughter, a nymph of the Amnok. Heaven is about to ruin her afternoon, or make it.
+  >>> CARD [card hwahye] The eldest river-daughter. First into the water, every time.
+  [card wihye] The middle sister. She laughs first and dives second.
+  [p] Hwahye and Wihye have left their silk on the rocks. The eldest folded hers once; the middle did not bother. Yuhwa’s ice-blue is still on her shoulder, wet.
+  [p] Yuhwa kneels in the shallows with her hair in one fist like a dark rope and rinses the river out of it without hurrying. Heaven can wait on a rinse; she has decided that without saying it. With her back to the sky she looks over her shoulder, as if someone up there had said her name.
+  [#7fc4e8] …Stop. Stop the chariot.
+  FIRST LINES:
+    "Hey. In. / Now. You hear me?"
+
+### wihye--haemosu  (Haemosu, -59)
+  person=wihye look= from= place=amnok scene=
+  [p] In the shallows, three river-daughters are bathing: Yuhwa and her two sisters. Wet hair down their backs, the river at their hips. Nobody dressed for heaven. He falls in love and in lust in the same glance.
+  [card yuhwa] The river’s youngest daughter, a nymph of the Amnok. Heaven is about to ruin her afternoon, or make it.
+  [card hwahye] The eldest river-daughter. First into the water, every time.
+  >>> CARD [card wihye] The middle sister. She laughs first and dives second.
+  [p] Hwahye and Wihye have left their silk on the rocks. The eldest folded hers once; the middle did not bother. Yuhwa’s ice-blue is still on her shoulder, wet.
+  [p] Yuhwa kneels in the shallows with her hair in one fist like a dark rope and rinses the river out of it without hurrying. Heaven can wait on a rinse; she has decided that without saying it. With her back to the sky she looks over her shoulder, as if someone up there had said her name.
+  [#7fc4e8] …Stop. Stop the chariot.
+  [#7fc4e8] Those thighs… / The water…
+  FIRST LINES:
+    "Pfft— wait up. / You, seriously— / Whatever, I’m going—"
+
+### habek--haemosu  (Haemosu, -59)
+  person=habek look= from= place=amnok scene=Habek's Court
+  [p] He goes up in a flash of copper. Heaven fines the sun the only way it can: while he is in the sky, he may not set foot on the earth. He may look. He may talk. That is all.
+  [scene] Habek's Court
+  [p] The copper is still warm when the river notices. The Amnok keeps its own court: Habek, god of the river and father of three daughters, stands on the wet stones as if the current were a hall. Mist is the dais. He does not need a chair.
+  >>> CARD [card habek] The Amnok’s river god. He keeps his borders the way kings do, and his daughters the same way.
+  [#3E79E4] Who stopped the chariot. Say a name.
+  [#8fc4e0] I… looked up. / I just— looked. That’s all it was.
+  [#3E79E4] You don’t sleep in my mist after that. / You smell like copper.
+  [#3E79E4] Go. The bank is closed.
+  FIRST LINES:
+    "Who stopped the chariot. Say a name."
+    "You don’t sleep in my mist after that. / You smell like copper."
+    "Go. The bank is closed."
+
+### geumwa--haemosu  (Haemosu, -59)
+  person=geumwa look= from= place=amnok scene=Buyeo
+  [p] The fox is already on the packed earth, pale gold-white, looking back once as if she might miss the joke. Yuhwa follows it south, barefoot, the ice-blue gone dull with dust: pine shade, a river-bend that is not the Amnok, a pass of bare stone where she is smaller than the ridge. The fox does not explain the map.
+  [scene] Buyeo
+  [p] From the river, Buyeo’s capital is a palisade of timber teeth and a hill of grey roofs. The studded doors open. King Geumwa, the gold-frog king, comes out to the yard himself.
+  >>> CARD [card geumwa] The gold-frog king. Found under a rock, raised in a palace, kind to strays.
+  [place buyeo_north]
+  [#a89a72] Come in. I’ve got a room free. / The yard can learn your name later.
+  [p] A sun-shaft finds her where she kneels to wring the river out of her sleeve. When she crosses the yard at night it moves with her, a bar of gold keeping her sleeve.
+  [p] Yuhwa’s ice-blue sleeve is the first roof the boy will remember, though he is not a boy yet.
+  FIRST LINES:
+    "Come in. I’ve got a room free. / The yard can learn your name later."
+
+### jumong-exile--buyeo  (Buyeo, -40)
+  person=jumong look=exile from= place= scene=The Egg
+  [p] They name him Jumong, the good shot, because in those days people were named for what heaven had plainly already decided. He grows up with Geumwa’s sons, Daeso and Galsa.
+  [p] They are boys first, three princes at one stake in one square, before anybody is an heir on purpose. They shoot with borrowed bows, too long in the arm.
+  [p] Jumong can find a fly’s wing with an arrow before the bow fits his arm.
+  >>> CARD [card jumong:exile] The best archer in Buyeo. The princes have noticed.
+  [quote] His frame and face were striking and strange. At seven he was already unlike other children; he made his own bow and arrows, and of a hundred shots, a hundred hit. In the Buyeo tongue a good archer is
+  [#e8563f] I’ll take the fly.
+  [p] Daeso teaches the grip, then resents the hit. The lesson ends the moment the arrow is better than the teacher.
+  [p] The yard hears the wood take it, a clean tick, and the praise does not arrive. Daeso keeps his hands on his own bow as if applause were a confession. Galsa looks at the dirt instead of the hit.
+  FIRST LINES:
+    "I’ll take the fly."
+    "Then put the mark farther."
+    "…How’d you know? / I didn’t tell anyone."
+
+### daeso--buyeo  (Buyeo, -40)
+  person=daeso look= from= place= scene=The Mark-Stake
+  [p] Only two come back talking from the stake. The third has already started a country in his head.
+  [scene] The Mark-Stake
+  [p] Grown, they still shoot at the princes’ mark-stake. Daeso stands too close when Jumong’s arrow lands.
+  >>> CARD [card daeso] Buyeo’s crown prince. Good with a bow, until someone is better.
+  [#9b8f6a] Do not outshoot the house that feeds you.
+  [#e8563f] Then put the mark farther.
+  [card galsa] Geumwa’s younger son. He smiles at everything, for now.
+  [#6b8f4a] If it lands, I meant to applaud.
+  FIRST LINES:
+    "Do not outshoot the house that feeds you."
+    "Do it before the next hunt. / Quiet is fine."
+
+### galsa--buyeo  (Buyeo, -40)
+  person=galsa look= from= place= scene=The Mark-Stake
+  [card daeso] Buyeo’s crown prince. Good with a bow, until someone is better.
+  [#9b8f6a] Do not outshoot the house that feeds you.
+  [#e8563f] Then put the mark farther.
+  >>> CARD [card galsa] Geumwa’s younger son. He smiles at everything, for now.
+  [#6b8f4a] If it lands, I meant to applaud.
+  [p] Jumong keeps the grin because grinning is cheaper than asking why, and Daeso hates the price.
+  [p] Jumong’s arranged marriage to Lady Ye is a hall’s solution: a wife, a lamp, a door that still opens onto Buyeo.
+  FIRST LINES:
+    "If it lands, I meant to applaud."
+
+### ladyye--buyeo  (Buyeo, -40)
+  person=ladyye look= from= place= scene=The Knife
+  [scene] The Knife
+  [p] Before the next hunt, a knife comes through the dark of his room. Lady Ye’s lamp is still lit, so the shadow moves on the wall before the man does. Jumong rolls. The blade goes into the quilt up to the hilt.
+  [p] The man runs. He wears a palace sleeve, and he runs toward Daeso’s end of the hall.
+  >>> CARD [card ladyye] A Buyeo girl with a steady hand and a long memory.
+  [#c4a882] Leave Buyeo. Tonight. / I’ll keep the lamp.
+  [p] He takes his sword down from the wall and breaks it across the seven-sided stone under the pine pillar. It takes two tries. He is not a swordsman.
+  [#e8563f] Half stays. In the crack, under the pillar. / If it’s a boy, tell him: under the pine, on the seven-sided stone. He’ll work it out.
+  [#c4a882] And if it’s a girl?
+  FIRST LINES:
+    "Leave Buyeo. Tonight. / I’ll keep the lamp."
+    "And if it’s a girl?"
+
+### haewonmek--buyeo  (Buyeo, -40)
+  person=haewonmek look= from= place= scene=The Flight
+  [p] Something keeps pace with him above the trees, black on black, going from branch to branch without seeming to hurry. A crow. He is too frightened to count its legs.
+  [p] Jumong reaches the water alone, his death already written down for that day. No ford. No boat. The friends are a ridge away, on purpose.
+  [p] Haewonmek, the reaper who collects each day’s dead, is already in the air. He skims the river toward him. Black hat, black silk, mouth bound shut. Jumong doesn’t see him. He’s looking at the water and the rain.
+  >>> CARD [card haewonmek] A fetch of the underworld. Black hat, black silk, and a mouth bound shut so he can’t haggle.
+  [p] A root takes his foot. He goes down on the wet stones, pine needles in his mouth, the bow a pace off as if it had been the first thing taken. Haewonmek crouches over him to collect what is owed, and the blow is already coming down.
+  [p] The cloak arrives before the face. Rain fills it. A hand closes on Haewonmek’s wrist from behind, and the strike simply stops — the way an elder stops a sleeve that has gone too far.
+  [p] Jumong’s cheek is in the mud. Haewonmek looks back. Behind him, in a dark hood, the sun god is holding his wrist and laughing, as if the night had grabbed the wrong man. The night is Haewonmek’s road. The joke is Haemosu’s.
+  [#6b5b6e] Haemosu… / The night is not your domain…!
+  FIRST LINES:
+    "Haemosu… / The night is not your domain…!"
+    "This man is fated to die today… / You are not to interfere with Yumla’s domain…!"
+    "He is still mortal…"
+
+### yeontabal--jolbon  (Jolbon, -37)
+  person=yeontabal look= from= place=jolbon scene=Tabal’s Hall
+  [p] They bring him in at dusk, not as a guest. One scout keeps looking back like the pines might grow more men. The valley opens under grey giwa. On the porch Yeon Tabal, chieftain of Jolbon, holds a cup he is not drinking.
+  [scene] Tabal’s Hall
+  [p] Tabal walks him across the packed earth like a man showing a storeroom to a thief: grain porch, well, pine, five roofs that will not share a yard.
+  >>> CARD [card yeontabal] The chief of Jolbon. He shows thieves his storeroom on purpose.
+  [p] Inside, the hall is torches and a man who has not offered a mat. They put Jumong on his knees, packed earth in the weave of his red silk. He tries a grin. It does not survive the torches.
+  [#a97c4a] So who sent you.
+  [#e8563f] Nobody sent me. / Your men grabbed me. I was just— here.
+  [#a97c4a] I asked for a name.
+  FIRST LINES:
+    "So who sent you."
+    "I asked for a name."
+    "Your clothes don’t look like anything nearby. / Mohe? Khitan? Or the commandery?"
+
+### sosuno-widow--jolbon  (Jolbon, -37)
+  person=sosuno look=widow from= place=jolbon scene=The Hunt Muster
+  [#a97c4a] Then go fetch. Out.
+  [scene] The Hunt Muster
+  [p] Tabal’s daughter Sosuno, a widow, is already on the grain porch, running Jolbon before she has priced the exile: spear-count, west line, who eats, who rides. The yard answers her first and her father second.
+  >>> CARD [card sosuno:widow] Tabal’s daughter. She has priced every man in the yard, and she has not finished with this one.
+  [#e8a04a] West line. Two short. / You. Spear. Not that one, the one that isn’t bent. / We leave at first light. If you’re late I leave you.
+  [#8d8d95] Yes—
+  [#e8a04a] Not yes. The count. / East, you’re overlapping. Split. / If I have to say it twice you sit the hunt out.
+  [#8d8d95] —Split. Sorry.
+  FIRST LINES:
+    "West line. Two short. / You. Spear. Not that one, the one that isn’t bent. / We leave at first light. If you’re late I leave you."
+    "Not yes. The count. / East, you’re overlapping. Split. / If I have to say it twice you sit the hunt out."
+    "…Next. / I said next. / Don’t look at me. Look at the line."
+
+### jumong-king--jolbon  (Jolbon, -37)
+  person=jumong look=king from=exile place=jolbon scene=The First King
+  [scene] The First King
+  [p] After the marriage the five tribes sit in Tabal’s hall and do the thing they hate more than a ditch: they agree. They vote Jumong first king. Nobody remembers him asking; the grin had already become a roof.
+  >>> CARD [card jumong:king]
+  [#a97c4a] …Fine. / King, then. / If the ditches start again I will say I told you. / Eat. Stay. Wear it.
+  [#e8563f] I will. / Not for the chair. / For the roof.
+  [p] Sosuno is the first queen of a country that still smells like millet. The cord is still new. The sacks have not learned to be tribute.
+  [card sosuno:queen] 
+  FIRST LINES:
+    "I will. / Not for the chair. / For the roof."
+    "Father! / If you’re listening— they made me king. Me. Of a whole valley. What am I supposed to do with it?"
+    "Father… are you even listening to me?"
+
+### sosuno-queen--jolbon  (Jolbon, -37)
+  person=sosuno look=queen from=widow place=jolbon scene=The First King
+  [#a97c4a] …Fine. / King, then. / If the ditches start again I will say I told you. / Eat. Stay. Wear it.
+  [#e8563f] I will. / Not for the chair. / For the roof.
+  [p] Sosuno is the first queen of a country that still smells like millet. The cord is still new. The sacks have not learned to be tribute.
+  >>> CARD [card sosuno:queen]
+  [scene] Dawn in the Cavern
+  [p] Later he goes back to the mouth in the hill to pray, the way a man prays when a hall has named him and he still does not quite believe the name. At dawn the light breaks through.
+  [#e8563f] Father! / If you’re listening— they made me king. Me. Of a whole valley. What am I supposed to do with it?
+  [p] Gold where the dark had been, and too tall for a lamp. Haemosu lets himself be seen at last: silver-white hair, the sun’s hour delayed on purpose, looking at his son the way he once looked down from a chariot rail.
+  FIRST LINES: (none)
+
+### bidam-elder--gi  (Gi (起), 645)
+  person=bidam look=elder from=young place= scene=The Harmony Council
+  [p] The Harmony Council has one rule. Nothing moves unless the circle closes. Everyone agrees, or nobody goes home.
+  [scene] The Harmony Council
+  [p] This winter the first chair has a new occupant. Old Supum is thanked for his years and sent home, and the queen gives his seat to the one councillor who has never once told her what she wanted to hear.
+  >>> CARD [card bidam:elder] First chair of the Harmony Council. Every vote now passes through his hands.
+  [p] Under him sit the others, Yushin among them. They still decide only by unanimity. It’s the only way this council selects anything.
+  [p] Then the room turns to the question everyone has been circling: when Her Majesty fails, who next. The Sacred Bone has thinned to one cousin. Someone says the name Princess Seungman the way you set a cup down that you expect everyone to drink from. She is forty-five, kind, careful with servants, and has never once surprised anybody.
+  [p] One by one the hands go up. In a unanimous council a raised hand is a kind of weather — once it starts, it finishes. Yushin’s hand is among them. He has served one queen; he will serve her cousin.
+  [p] Only one hand stays down.
+  FIRST LINES:
+    "I object."
+    "Princess Seungman is not as clear-sighted as Her Majesty. / We cannot hand the country over for Sacred Bone alone. / Thirteen years ago, when I stood for Princess Dukman, it was because she was the cleverest. / Now you ask me to throw that "
+    "Which is exactly why I’m saying no, you Gaya ox. / Don’t give me that face. A hundred and eight to a hundred and eight, remember? Neither of us ever got to be right for long. / A country is not a scoreboard. / And on a night when Lord Chunc"
+
+### sukwon--gi  (Gi (起), 645, flashback 610)
+  person=sukwon look= from= place= scene=
+  [p] Class 51’s first morning. Packed earth still dark. Bidam is sixteen. His father walks him as far as the yard gate and no further — Musan hall does not hover.
+  >>> CARD [card sukwon] Bidam’s father. A man of few words, and he has saved them all for his son.
+  [#3d4654] Bidam… / Do you know the meaning of your name.
+  [#7b5cd6] Yes, father… / I was named after the Abhidharma, the higher teaching. It—
+  [#3d4654] Yes… the higher teaching. / And as a young man, and as a Hwarang, your duty is to uphold that. / And remember this: / Even if no one else agrees with the truth… even if speaking it out loud causes others to defame and mock you… / You must always walk toward the truth, in isolation if you must. There
+  [p] He does not name the Gaya-born boy who will share the class. He only ties Bidam’s headband once, tight, and lets the gate take him.
+  FIRST LINES:
+    "Bidam… / Do you know the meaning of your name."
+    "Yes… the higher teaching. / And as a young man, and as a Hwarang, your duty is to uphold that. / And remember this: / Even if no one else agrees with the truth… even if speaking it out loud causes others to defame and mock you… / You must a"
+
+### jinduk-princess--gi  (Gi (起), 645)
+  person=jinduk look=princess from= place= scene=Princess Seungman
+  [scene] Princess Seungman
+  [p] Princess Seungman catches him at the palace gate. Word has reached her before he has.
+  >>> CARD [card jinduk:princess] The queen’s cousin, and the last of the Sacred Bone.
+  [#9d7bd0] Bidam…! What is this I hear? / Surely not…
+  [#7b5cd6] You heard right, Princess. One hand. Mine.
+  [#9d7bd0] She can barely sit up, Bidam. The physicians say a season. Less. / Couldn’t you let her have one quiet winter?
+  [#7b5cd6] I gave her thirteen quiet winters. I put her on the chair. / She was chosen because she was the cleverest. Now the room wants the nearest. / Forgive me, Princess. You are kind. Kindness does not hold a pass.
+  FIRST LINES:
+    "Bidam…! What is this I hear? / Surely not…"
+    "She can barely sit up, Bidam. The physicians say a season. Less. / Couldn’t you let her have one quiet winter?"
+    "…Then who holds it? You?"
+
+### kotoku--gi  (Gi (起), 645)
+  person=kotoku look= from= place= scene=The Eastern Court
+  [scene] The Eastern Court
+  [p] Across the sea, Chunchu has no idea. The King of the East receives him politely, which is its own kind of answer.
+  >>> CARD [card kotoku] The King of the East. His politeness comes with a price list.
+  [#e89ab0] Baekje — the Land of the Heavenly Deer, Land of the Lord Buddha — is our ally. / With respect — I must refuse peace with the Divine Country.
+  [#D8258C] Baekje is a country on its way to ruin…
+  [#D8258C] Our sacred country has produced no end of talent, / and yet not one man the equal of Goryeo’s Gesomun.
+  [#e89ab0] You… speak our language remarkably well.
+  FIRST LINES:
+    "Baekje — the Land of the Heavenly Deer, Land of the Lord Buddha — is our ally. / With respect — I must refuse peace with the Divine Country."
+    "You… speak our language remarkably well."
+
+### yumjong--gi  (Gi (起), 645)
+  person=yumjong look= from= place= scene=Yumjong
+  [p] The guards look at their spears. Chunchu is across the sea. His orders, apparently, are not.
+  [scene] Yumjong
+  [p] Bidam does not recruit with speeches, whatever the Council thinks of him. He recruits with tea and long silences, and the first man to drink the tea is Yumjong, a True Bone whom nobody has ever accused of anything, because nobody has ever noticed him.
+  >>> CARD [card yumjong] A quiet True Bone who drinks his tea slowly and listens fast.
+  [undefined] The islands, now. Last summer it was the emperor’s war. / Your Lord Chunchu does get around.
+  [undefined] Chunchu wants absolute power…!
+  [undefined] What’s the difference between the West and the East anyway? / In both nations, their emperors cannot be removed by a vote. / Their people live as slaves.
+  FIRST LINES:
+    "The islands, now. Last summer it was the emperor’s war. / Your Lord Chunchu does get around."
+    "And the Marshal?"
+    "He’s not even Silla, you know. / Gaya. His great-grandfather handed over Geumgwan with the keys still warm. The men in the outer works would like hearing that."
+
+### ibiga--suro  (Suro, 42)
+  person=ibiga look= from= place= scene=
+  [p] Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.
+  [p] Ibiga keeps the sky the way other gods keep a hall — cloud is his body, the living world a map he does not usually read. Then he looks down.
+  >>> CARD [card ibiga] The sky god. Cloud is his body, and he does not usually look down.
+  [p] On her mountain the Lady of the Right View is on watch. At first she is the ridge — jade stone, mist, a woman’s shape the mountain has not admitted yet. The mountain is a woman before it has a face. Then a face comes out of the stone. She is guarding the mountain as if it were a country. She does not look up. She does not need to. Then the sky occupies the path. Cloud comes down to the ridge.
+  [card jeonggyeon] The mountain goddess. The ridge was a woman before anyone noticed.
+  [#1e4d9c] That ridge… / That woman. / I have flown this path a thousand times. Why is the mountain looking back.
+  [p] Love arrives as weather — sudden, unasked. He cannot keep the hour. He falls before he lands. The sky comes down to touch the mountain, and does not leave.
+  FIRST LINES:
+    "That ridge… / That woman. / I have flown this path a thousand times. Why is the mountain looking back."
+    "Mountain. / Your shoulder… is warmer than cloud. / Your waist… steeper than cliff."
+    "To touch. / I looked… and could not hold back. / The knees… already are."
+
+### jeonggyeon--suro  (Suro, 42)
+  person=jeonggyeon look= from= place= scene=
+  [p] Ibiga keeps the sky the way other gods keep a hall — cloud is his body, the living world a map he does not usually read. Then he looks down.
+  [card ibiga] The sky god. Cloud is his body, and he does not usually look down.
+  [p] On her mountain the Lady of the Right View is on watch. At first she is the ridge — jade stone, mist, a woman’s shape the mountain has not admitted yet. The mountain is a woman before it has a face. Then a face comes out of the stone. She is guarding the mountain as if it were a country. She does not look up. She does not need to. Then the sky occupies the path. Cloud comes down to the ridge.
+  >>> CARD [card jeonggyeon] The mountain goddess. The ridge was a woman before anyone noticed.
+  [#1e4d9c] That ridge… / That woman. / I have flown this path a thousand times. Why is the mountain looking back.
+  [p] Love arrives as weather — sudden, unasked. He cannot keep the hour. He falls before he lands. The sky comes down to touch the mountain, and does not leave.
+  [#7c6cf0] Mountain. / Your shoulder… is warmer than cloud. / Your waist… steeper than cliff.
+  [#c084fc] Why has heaven come down. / To look? / Or… to touch. / If to touch… kneel first.
+  FIRST LINES:
+    "Why has heaven come down. / To look? / Or… to touch. / If to touch… kneel first."
+    "Then closer. / Ridges do not keep guests long. / Tonight I will make an exception. / I will keep your mouth… at my throat."
+    "Then stay wrongful. / Nights when heaven kneels on a mountain… are not so common. / Kneel. / All the way."
+
+### suro--suro  (Suro, 42)
+  person=suro look= from= place= scene=
+  [p] He holds her with one arm. The other is cloud. The ridge is still a mountain; the mountain is still a woman. She does not look up. She does not have to.
+  [p] By morning the ridge remembers two gods who would not let go. From that heat come eggs, and from the eggs, kings.
+  [p] Their eggs fall to earth on a hill called Guji, and wait for someone to sing.
+  >>> CARD [card suro] King Suro. Born from a golden egg, and in no hurry to marry anyone local.
+  [quote] He stood nine feet tall, like Tang of Yin. His face was a dragon’s, like the High Ancestor of Han. His eyebrows shone in eight colours, like Yao. His eyes had double pupils, like Shun.
+  [scene] Mount Guji
+  [p] On Earth, the people sing a song to call for a new king.
+  [quote] Turtle, turtle — show your head. If you do not, we will roast and eat you.
+  FIRST LINES:
+    "… / ……You. / Your mouth…"
+    "Your waist… / I mustn’t… / If I touch…"
+    "…Hungry… / I can’t… speak…"
+
+### heohwangok--suro  (Suro, 42)
+  person=heohwangok look= from= place=geumgwan scene=The Red Sail
+  [place geumgwan]
+  [scene] The Red Sail
+  [p] Queen Heo, an Indian princess, becomes the first queen of Golden Gaya.
+  >>> CARD [card heohwangok] Heo Hwang-ok. She sailed farther than anyone in Samhan had heard of, and arrived dressed for it.
+  [p] She arrives on a red-sailed ship at twenty-one — foreign, luminous, built like nowhere on this coast. The beach is only a door. The first time Suro falls in love is not on the sand.
+  [p] In the timber court of Golden Gaya she presents herself — no servant speaking for her, her own name, silk that does not belong to this hall. He is already on the dais. He meant to receive a princess. He receives a woman, and love hits him before protocol can stand up.
+  [p] Protocol is still trying to stand. He is already off the dais. He comes down with one arm — gold around violet, the same hold the sky used on the ridge, only this time the hall has columns and a floor.
+  [p] Servants had been sent to the ship. She refused them. So the court is where they meet — and the moment he sees her, speech leaves him like heat from an open kiln.
+  FIRST LINES:
+    "Have you come to fetch me… / or have you already begun to take me. / With your eyes. / Your mouth… looks dry."
+    "Yes. / My mouth. / When the king looks at me like that… I get warmer. / Your hands… where do you mean to put them. / Even if you can’t speak — your hands know."
+    "Then touch. / Since the king can’t choose… I’ll choose for you. / Here. / And here. / You’re shaking."
+
+### muryuk--muryuk  (Muryuk, 562)
+  person=muryuk look= from= place= scene=The Surrender
+  [#8B5CF6] Then remember it quietly. Kings don’t like being reminded what they bought.
+  [p] He keeps looking back until the river bends out of sight.
+  [quote] The lord of Geumgwan, Kim Guhae, came with his queen and three sons, bringing the treasury and precious things of the country, and surrendered.
+  >>> CARD [card muryuk] The youngest son in the cart. Gaya handed over its crown. It did not hand over him.
+  [p] The king on the dais has bought harbours before. He has never bought one that talks back.
+  [#9b6fd8] If we are to surrender, I have one condition… / Let my father’s sons live in Silla without shame…
+  [#2f6fd4] And what do you mean by that?
+  [#9b6fd8] In Silla… I know a man’s blood decides everything… / Sacred Bone, True Bone… I know it all… / If my descendants — the sons and daughters of Suro and Heo — can take a worthy place… / then I too am ready to give Silla my life…
+  FIRST LINES:
+    "If we are to surrender, I have one condition… / Let my father’s sons live in Silla without shame…"
+    "In Silla… I know a man’s blood decides everything… / Sacred Bone, True Bone… I know it all… / If my descendants — the sons and daughters of Suro and Heo — can take a worthy place… / then I too am ready to give Silla my life…"
+    "…Even south."
+
+### jinduk-queen--queen-jinduk  (Queen Jinduk, 647)
+  person=jinduk look=queen from=princess place= scene=
+  [p] The crown was made for her cousin and has to be padded at the temples. Seungman sits very still while the goldsmith does it, because somebody told her once that Dukman never fidgeted, and she has believed it for forty years.
+  [p] Seungman is crowned Queen Jinduk before the blood on the yard dries. The bloodline’s last polite miracle, stamped and filed while the censers are still warm. The succession Bidam died objecting to passes at last. Unanimously.
+  [quote] Taizong* of Tang sent an envoy bearing his tally to confer on the late queen the posthumous rank of Grand Master of Splendid Happiness, and to invest the new queen as Pillar of State and King of Lelan
+  >>> CARD [card jinduk:queen]
+  [quote] Seungman was full-figured and beautiful, seven feet tall, and her hands hung down past her knees.
+  [p] Alchun is not at the coronation. The court writes his absence down as illness. Everyone knows the illness’s name. It lasted ten days.
+  [p] The court does not mean to compare. It simply cannot stop. The old Queen read the peony seeds before they were planted. She heard frogs at Jade Gate Pond in midwinter and sent two thousand men to the exact valley where five hundred Baekje soldiers were hiding. She named the day of her own death and was right about it. The new Queen is gentle, and good at a loom, and has never once predicted anything.
+  [#c9a0a8] The old Queen would have known it was going to rain. / Shh. / …She would have, though.
+  FIRST LINES:
+    "Yushin… preserve the sacred country…"
+    "Bidam…"
+    "Yushin… surely Bidam’s words are not weighing on you…?"
+
+### inmun--huangdi  (Huangdi (皇帝), 648)
+  person=inmun look= from= place= scene=The Son of Heaven
+  [#b45309] With a man.
+  [#D8258C] Any man?
+  [#b45309] The register hasn’t got a column for names, sir. Only for the number.
+  >>> CARD [card inmun] Chunchu’s second son. He reads Tang characters better than his father would like.
+  [p] Inmun reads the register over the man’s shoulder. Eleven. He will live in this city for most of his life, and in every count it ever makes of him he will be one stroke in that column.
+  [p] The tenth stroke is a young Hwarang called Jukji, who writes down everything. The eleventh is On Gunhae, who carries his master’s coat and has not said a word since the harbour. The ward chief does not look at him either.
+  [scene] The Audience Hall
+  [#c97a2e] Your name is “Spring and Autumn”…? Then is your younger brother called “Warring States”?
+  FIRST LINES:
+    "…Father?"
+    "The paste is still wet, Father. / Is this one… harmonized?"
+
+### gaozong-prince--huangdi  (Huangdi (皇帝), 648)
+  person=gaozong look=prince from= place= scene=The Gyuku Ground
+  [p] The emperor shakes his head, still smiling, and goes back to his memorials. Chunchu says nothing more. He is watching the brush in the emperor’s hand: one man, one brush, and at the far end of it a province three months away. Nobody in this palace will ever meet in a room to vote that hand off the paper. He cannot stop looking at it, the way a poor man looks at a jade he will never afford, and he does not let one par
+  [scene] The Gyuku Ground
+  [p] The days between audiences belong to someone else. The crown prince — Li Zhi, twenty years old and still allowed to laugh with his shoulders — steals Chunchu from the memorial-hall the way a younger brother steals an older one from a funeral, and takes him to the imperial gyuku ground.
+  >>> CARD [card gaozong:prince] Li Zhi. Heir to everything, and the first man in Chang’an to laugh.
+  [p] They play gyuku until the dust makes them the same colour. Li Zhi talks like a man who has waited his whole life to be ordinary with somebody dangerous. Chunchu lets him.
+  [#b8935a] When I am emperor — / No. That sounds like a curse. When the years have been kinder — / I will still want this. A friend who does not need my title to stand upright.
+  [#D8258C] Then keep me as I am. / When you are emperor I will still be a man from a small country with a large grudge. / That is the only honest introduction I have.
+  [#b8935a] Good. / Brothers, then — of the inconvenient kind.
+  FIRST LINES:
+    "When I am emperor — / No. That sounds like a curse. When the years have been kinder — / I will still want this. A friend who does not need my title to stand upright."
+    "Good. / Brothers, then — of the inconvenient kind."
+    "(calling from behind) Wu! You haven’t been scaring our guests away, have you?"
+
+### wuzetian-consort--huangdi  (Huangdi (皇帝), 648)
+  person=wuzetian look=consort from= place= scene=The Farewell Banquet
+  [#c97a2e] Zhi — keep this one. Men who can rhyme on their knees are rarer than honest generals.
+  [p] Twenty characters. He has asked for an army, flattered an emperor out of his own classics, and called his neighbours a bad wind, without one word anybody could quote back at him.
+  [p] Behind the screen Wu does not merely listen. She works the room without entering it: a glance that steadies a nervous maid, a smile that slows a minister’s cup, a silence that turns every eye in the hall back to the foreign prince.
+  >>> CARD [card wuzetian:consort] Wu, a lady of the inner palace. The screen is doing very little of the hiding.
+  [scene] The Lodging
+  [p] On the morning before he is to leave, a parcel comes to the lodging from the palace. Inside are rubbings of two steles in the emperor’s own hand, and a new history of the Jin dynasty, so fresh from the Historiography Office that the paste on the bindings is still soft.
+  [#6fb0d8] The paste is still wet, Father. / Is this one… harmonized?
+  [#D8258C] Fresh. Here they harmonize it before the paste dries. / Read it slowly anyway. We’ll want to know what the Jin are allowed to have done.
+  FIRST LINES:
+    "Chunchu!"
+    "Chunchu… you are the one from the country with the woman king, correct?"
+    "How is she doing?"
+
+### taizong--huangdi  (Huangdi (皇帝), 648)
+  person=taizong look= from= place= scene=The Last Game
+  [p] Chunchu makes the joke because he can feel the man needs to be laughed with, now, or the moment will curdle into something neither of them can carry out of the room.
+  [#c97a2e] You told Us once: if the name is not correct, speech does not follow. / Is it correct now?
+  [#D8258C] …Now the speech can follow, Majesty.
+  >>> CARD [card taizong] Li Shimin, the Second Emperor of Tang. Nobody in Chang’an writes his name. He has just said it to a foreigner, on purpose.
+  [scene] The Mingde Gate
+  [p] On the last morning Li Zhi rides down to the Mingde Gate himself, which crown princes do not do.
+  [p] At the gate Chunchu does not bow like a foreign guest. He bows like a man watching his younger brother try on a coat that will never come off.
+  [#b8935a] Spring and Autumn. / You really are going.
+  FIRST LINES: (none)
+
+### ongunhae--huangdi  (Huangdi (皇帝), 648)
+  person=ongunhae look= from= place= scene=On Gunhae
+  [scene] On Gunhae
+  [p] A day and a night out to sea, a second hull takes their wind. Not a war fleet. A Goguryeo patrol boat, the kind that sniffs a sea-road and reports who used it. They’ve been sniffing this one since Chunchu walked out of Yeon’s prison.
+  >>> CARD [card ongunhae] Chunchu’s attendant. The same height as his master, which will matter.
+  [#8a6240] My lord. The small boat.
+  [#D8258C] That cap is heavy.
+  [#8a6240] Then I will wear it.
+  [p] On Gunhae takes the high cap and the great coat — Tang’s gift, cut to be read at two li as a prince. He sits high on the deck, where the mast makes a chair of shadow, and does not wave.
+  FIRST LINES:
+    "My lord. The small boat."
+    "Then I will wear it."
+
+### jukji--royal-secretariat  (Royal Secretariat, 651)
+  person=jukji look= from= place= scene=
+  [#D8258C] We call it the Royal Secretariat.
+  [#D8258C] Today, Silla reinvents the court.
+  [p] Nobody laughs. The youngest clerk writes the name down as if the words had always been waiting for ink. Outside, the Harmony Council is still debating the same petition. Inside, the petition has somewhere to land.
+  >>> CARD [card jukji] A Hwarang who sailed with Chunchu to Chang’an and wrote down everything. Quiet, exact, and always holding the right paper.
+  [#6a9e7a] Petition. Seal. Courier. / I can do that before the Council finishes clearing its throat.
+  [#D8258C] Then you are its Premier. The Secretariat is yours. / You’re young, you’re quick, and you already write faster than the Council talks. / In Chang’an the emperor does not wait for every uncle to agree. I watched that power and wanted it for this country — not for my vanity. For speed.
+  [p] The Council finds out in the third week. Alchun is High Councillor now, because after Bidam nobody else wanted the chair. He comes to the side hall himself, with the border petition under his arm. He has been meaning to debate it.
+  [#8fb3e0] Oi. This petition. / We were going to argue about it at the full moon.
+  FIRST LINES:
+    "Petition. Seal. Courier. / I can do that before the Council finishes clearing its throat."
+    "It’s sealed, my lord. The garrison marched yesterday."
+    "The Council asked what my title means. / I told them: 侍中 — I stand beside the work. / They did not laugh. That was how I knew it had worked."
+
+### gaozong-emperor--jiabeng  (Jiabeng (駕崩), 649)
+  person=gaozong look=emperor from=prince place= scene=The Cuiwei Palace
+  [p] Someone touches his elbow. Someone else is already writing. The empire does not wait for grief to finish its sentence.
+  [p] The court kneels, and the young man rises — the same hands that would not leave the bed now accepting the seal, the edict, the yellow silk that means the West has a new centre.
+  [#b8935a] I receive the late emperor’s last command. / From this day—— / ……We will listen.
+  >>> CARD [card gaozong:emperor]
+  [p] He does not say I. He says the word that empties a man of his own name. The hall answers like a single throat.
+  [p] The will is long on mourning and short on everything else, except one line, which the new emperor reads twice. The war in Liaodong is to stop.
+  [p] The great emperor is given a temple name — Taizong. The clerks write it in the register and close the book.
+  [quote] Eighth year, summer, fourth month: Taizong* of Tang died. His testamentary edict called off the Liaodong campaign.
+  FIRST LINES:
+    "Denied. / …Father already has six horses waiting at his door. / He would scold Us for wasting two good generals."
+    "Lady Wu. / …They cut your hair."
+
+### chunchu-king--king-muyeol  (King Muyeol, 654)
+  person=chunchu look=king from=prince place= scene=The Harmony Council
+  [#8fb3e0] Then sit in it, and stop making the rest of us stand.
+  [#D8258C] This servant can find no reason to object. / Nor could anyone else.
+  [#8fb3e0] The age of <b>Kim Chunchu</b> begins.
+  >>> CARD [card chunchu:king]
+  [quote] The king was splendid in looks and bearing, and from boyhood he meant to set the world right.
+  [quote] Emperor Taizong sent Liu Heng, Chamberlain for the Palace Larder, out past the walls to welcome him. When Chunchu arrived, the emperor saw how splendid his looks and bearing were, and treated him gene
+  [quote] Chunchu was handsome, and good at talk and laughter.
+  [p] Munhee becomes queen. Years ago her sister sold her a dream on a hill. She married in disgrace, to a man with no claim to anything. Now she stands beside his throne.
+  FIRST LINES:
+    "….What? A private grudge? / Is that truly how you have all seen me? / An old man maddened by his daughter’s death, sharpening revenge? / How… disappointing. / I am a man looking at the thousand-year flourishing of the sacred country. / I wa"
+
+### munhee-queen--king-muyeol  (King Muyeol, 654)
+  person=munhee look=queen from=young place= scene=The Harmony Council
+  [quote] Emperor Taizong sent Liu Heng, Chamberlain for the Palace Larder, out past the walls to welcome him. When Chunchu arrived, the emperor saw how splendid his looks and bearing were, and treated him gene
+  [quote] Chunchu was handsome, and good at talk and laughter.
+  [p] Munhee becomes queen. Years ago her sister sold her a dream on a hill. She married in disgrace, to a man with no claim to anything. Now she stands beside his throne.
+  >>> CARD [card munhee:queen]
+  [#e07fa8] My sister sold me that dream for one silk skirt. / In hindsight she undercharged.
+  [p] The new king’s first council is about Baekje. It is short.
+  [#8fb3e0] Your Majesty… even so…. / To lead the country down a road of ruin for a private grudge — that is not the act of a wise king…!
+  [#D8258C] ….What? A private grudge? / Is that truly how you have all seen me? / An old man maddened by his daughter’s death, sharpening revenge? / How… disappointing. / I am a man looking at the thousand-year flourishing of the sacred country. / I was raised on the study of kingship from childhood…
+  FIRST LINES:
+    "My sister sold me that dream for one silk skirt. / In hindsight she undercharged."
+
+### jayi--jahee  (Jahee, 644)
+  person=jayi look= from= place=danghang scene=
+  [place danghang]
+  [p] Seonpum has a daughter who keeps his inkstones. Her name is Jahee. She has watched the prince for three days, and she has already decided his arithmetic is sloppy.
+  >>> CARD [card jayi] A harbour girl who counts faster than the customs men.
+  [#e8a0bf] Your sums are wrong. / The tide does not care that you are a prince. / Count again. / While I am watching.
+  [#C41E3A] …Where. / No — / Please show me.
+  [p] She corrects the sum with her father’s good brush. She is not supposed to touch it. She took it off his desk an hour ago, because it is the only one that writes small enough. He watches her mouth instead of the numbers, and she lets him, once.
+  [p] Then a rider comes down the coast road with a letter from Yushin. The army is marching west, against seven Baekje forts. The grain sails on the morning tide. Bupmin is to sail with it.
+  FIRST LINES:
+    "Your sums are wrong. / The tide does not care that you are a prince. / Count again. / While I am watching."
+    "It won’t. You’re forty sacks short, somewhere between the third ship and the fifth. / Forty sacks is a company that doesn’t eat for a week."
+    "…That’s my father coughing. / He only coughs like that when he’s pretending not to be there. / …Which is why it has to be now. / Before the tide comes in."
+
+### hyukgose--hyukgose  (Hyukgose, -57)
+  person=hyukgose look= from= place= scene=
+  [#5a8fc4] It’s a gourd. We dug up a gourd with a baby in it.
+  [#7a9e6b] Then that’s his name. Park. Gourd.
+  [p] They call him Park, for the gourd, and Hyukgose, to rule with brightness. Then six practical men look at each other and crown him king while he is still a boy. A boy, they reason, cannot have taken sides yet.
+  >>> CARD [card hyukgose] Hyukgose. Born from an egg, crowned before his voice broke.
+  [quote] They bathed him in the eastern spring. His body gave off light, the birds and beasts danced together, heaven and earth shook, and the sun and moon turned clear and bright.
+  [scene] Alyeong Well
+  [p] A few years later, at Alyeongjeong well, a dragon with a chicken’s head leaves a girl behind. She has a beak where her lips should be, until they wash her in the north stream and it falls off. They name her Alyoung, after the well.
+  [card alyoung] Lady Alyoung. Born from a dragon’s rib, and the one person in Surabol who can tell the king no.
+  FIRST LINES:
+    "I have heard that a true man needs only / one person to cherish, / and one person to serve, / and that is enough."
+
+### alyoung--hyukgose  (Hyukgose, -57)
+  person=alyoung look= from= place= scene=Alyeong Well
+  [quote] They bathed him in the eastern spring. His body gave off light, the birds and beasts danced together, heaven and earth shook, and the sun and moon turned clear and bright.
+  [scene] Alyeong Well
+  [p] A few years later, at Alyeongjeong well, a dragon with a chicken’s head leaves a girl behind. She has a beak where her lips should be, until they wash her in the north stream and it falls off. They name her Alyoung, after the well.
+  >>> CARD [card alyoung] Lady Alyoung. Born from a dragon’s rib, and the one person in Surabol who can tell the king no.
+  [#8d8d95] One from an egg, one from a chicken.
+  [#8d8d95] …Did this country start in a kitchen?
+  [p] At the wedding feast the six chiefs stand up. They have a plan.
+  [#7a9e6b] We’re going to make a brand new country. / Every family cares for the others like one great house. Nobody left outside the gate. / The royals watch over the people like their own children. The nobles are wise and righteous, and decide for the good of the nation. / And everyone else we divide into si
+  FIRST LINES:
+    "According to their virtues. / Who measures the virtue?"
+    "Then say “by whoever is sitting at this table.” / It’s shorter. And in three generations you’ll mean it."
+
+### talhae--talhae  (Talhae, -19)
+  person=talhae look= from= place= scene=
+  [p] It has come a long way. A thousand li north-east of Wa, the islands across the sea, the queen of a country called Dapana carried a child for seven years and was delivered of an egg. The king said a person who lays an egg is an ill omen and should get rid of it. She could not. She wrapped it in silk, packed it in a chest with treasure, and gave it to the sea.
+  [p] It reaches Gaya first. The people of Golden Gaya see a strange chest bobbing off their beach and, being sensible, leave it there.
+  [p] Gaya tells it differently, and with more nerve. In the Gaya chronicle Talhae comes ashore a grown man, walks into King Suro’s hall, and asks for the throne.
+  >>> CARD [card talhae] Seok Talhae. He arrived in a chest and talks like he owns the beach.
+  [quote] He stood nine feet tall, fine and bright in bearing, and cleverer than other men.
+  [#5a7fa8] I’ve come for your throne. / You can fight me for it, or you can save us both the afternoon.
+  [#8B5CF6] …Heaven gave it to me. / I— it isn’t mine to give. Or to… lose.
+  [p] So they fight the way kings fight in that country. Talhae becomes a hawk, and Suro becomes an eagle. Talhae becomes a sparrow, and Suro becomes a falcon. When Talhae is a man again he is standing in the middle of the hall with feathers on his shoulders, and he bows.
+  FIRST LINES:
+    "I’ve come for your throne. / You can fight me for it, or you can save us both the afternoon."
+    "…That was a falcon. / Fine. I’ll find a country with a smaller king."
+    "No. / Is this the country?"
+
+### yuridora--exile  (Exile, 655)
+  person=yuridora look= from= place=mugun scene=Tamla
+  [scene] Tamla
+  [p] He wakes on a beach with sand in his teeth and no idea how many days it has been. The not-knowing is worse than the beach.
+  [place mugun]
+  >>> CARD [card yuridora] Yuri Dora, king of Tamla. He tells stories to men nobody else will talk to.
+  [#8a6f3f] How many days.
+  [#f97316] Ah. Not one for greetings, then.
+  [#8a6f3f] …How many days.
+  [#f97316] Eleven. Better?
+  FIRST LINES:
+    "Ah. Not one for greetings, then."
+    "Eleven. Better?"
+    "Until what?"
+
+### heavenearthking--heaven-earth-king  (Heaven–Earth King, 태초)
+  person=heavenearthking look= from= place= scene=Two Suns
+  [scene] Two Suns
+  [p] In the beginning there were two suns and two moons. By day people dropped in the fields with their hoes still in their hands; by night they froze in their own doorways. Nobody ever had a decent night’s sleep or a decent harvest, and the old died faster than anyone could bury them.
+  [p] Above all of it sat Heaven–Earth King, who ran the living and the dead out of one office and therefore never went home. One night he fell asleep at the desk anyway, and dreamed he was eating: one sun, one moon, swallowed whole, one of each.
+  >>> CARD [card heavenearthking] The god with two jobs and one desk. He dreams about breakfast.
+  [#C30000] ……Huh. / One each. / I ate one of each. / Ha— that’s a son. Someone’s going to shoot those down.
+  [p] He comes down to the world to find the mother of that dream, and finds her in the poorest house on the road: a girl the village calls the Lady of Wisdom, a hearth with no fire in it, and a rice jar she does not open in front of guests.
+  [#c9b18f] Who are you.
+  [#C30000] Someone passing. / A hungry one.
+  FIRST LINES:
+    "……Huh. / One each. / I ate one of each. / Ha— that’s a son. Someone’s going to shoot those down."
+    "Someone passing. / A hungry one."
+    "…… / Your rice has a bit of bite to it."
+
+### sumyeongjangja--heaven-earth-king  (Heaven–Earth King, 태초)
+  person=sumyeongjangja look= from= place= scene=Two Suns
+  [p] She goes round the back and lifts the lid of the jar. The bottom of it looks up at her. She puts the lid back as if that might help, ties up her hair, and walks across the road.
+  [p] Across the road lives Sumyung Jangja, who is rich the way a flood is wet. He has nine storehouses, a horse that kicks beggars, a dog that bites whatever the horse misses, and a rice measure that comes out a little smaller when he lends and a little larger when he collects.
+  [#c9b18f] Lend me one measure of rice. / I have a guest.
+  >>> CARD [card sumyeongjangja] The richest man under two suns. He lends one measure and collects two.
+  [#8a7a3a] One measure. / Two when you pay it back. / A guest? Anyone who’d come to your house, I can guess.
+  [#c9b18f] Two, then.
+  [p] He fills the measure himself, with his back to her.
+  [p] She washes it nine times at the well and spends the last of her firewood on it. The king takes the first spoonful. Something in his mouth grinds.
+  FIRST LINES:
+    "One measure. / Two when you pay it back. / A guest? Anyone who’d come to your house, I can guess."
+    "Who’s there. / There’s nobody under heaven who can touch me."
+    "……W-what is it you want. / Rice? If it’s rice— two measures, no, ten, the whole storehouse—"
+
+### daebyeol-young--heaven-earth-king  (Heaven–Earth King, 태초)
+  person=daebyeol look=young from= place= scene=Two Suns
+  [#c9b18f] ……Fifteen years.
+  [#C30000] …… / Thanks for the rice.
+  [p] She has twins. The elder comes out quiet and looks at everything. The younger comes out already complaining. They grow up under two suns and two moons, and get asked whose sons they are in every yard in the village.
+  >>> CARD [card daebyeol:young] Big Star, the elder twin. He would rather be right than first.
+  [card sobyeol:young] Little Star, the younger twin. He would rather be first.
+  [#C94040] Mom. Who’s our father. / The other kids are at it again.
+  [#3B6FBF] Leave it. Mom’s tired.
+  [#c9b18f] ……When you’re fifteen.
+  FIRST LINES:
+    "Leave it. Mom’s tired."
+    "I saw."
+    "Which trees keep their leaves all their lives, and which ones drop them?"
+
+### sobyeol-young--heaven-earth-king  (Heaven–Earth King, 태초)
+  person=sobyeol look=young from= place= scene=Two Suns
+  [#C30000] …… / Thanks for the rice.
+  [p] She has twins. The elder comes out quiet and looks at everything. The younger comes out already complaining. They grow up under two suns and two moons, and get asked whose sons they are in every yard in the village.
+  [card daebyeol:young] Big Star, the elder twin. He would rather be right than first.
+  >>> CARD [card sobyeol:young] Little Star, the younger twin. He would rather be first.
+  [#C94040] Mom. Who’s our father. / The other kids are at it again.
+  [#3B6FBF] Leave it. Mom’s tired.
+  [#c9b18f] ……When you’re fifteen.
+  [scene] The Gourd Vine
+  FIRST LINES:
+    "Mom. Who’s our father. / The other kids are at it again."
+    "What about you?"
+    "You never came down. Not once."
+
+### sulmun--sulmun  (Sulmun, 태초)
+  person=sulmun look= from= place= scene=
+  [#f97316] One woman made this island. Sulmun.
+  [p] Before the island there is a woman, and she is enormous. Sulmun, the Great Lady. The sea comes to her knee. She scoops the seabed up in her apron and piles it in one place until it stands high enough to lean on, and that is Mount Halla.
+  [p] Some fell out on the way. The island counts three hundred and sixty-eight hills.
+  >>> CARD [card sulmun] Grandmother Sulmun. The sea comes to her knee, and she has opinions about the view.
+  [place halla]
+  [#8a6f3f] Was there a hole in the apron.
+  [#f97316] …How did you know that?
+  [#8a6f3f] You said there are three hundred and sixty-eight hills. / If it were poured in one place there would be one.
+  FIRST LINES: (none)
+
+### baekjuto--three-princes  (Three Princes, 태초)
+  person=baekjuto look= from= place= scene=Baekjuto and Socheon-guk
+  [#8a6f3f] He ate it.
+  [#f97316] …Have you heard this one?
+  [#8a6f3f] No. But he is a hunter.
+  >>> CARD [card baekjuto] A farming goddess who crossed the sea to find a husband. She is about to find one.
+  [#c084fc] You ate the ox. The one I gave you to plough with. The <em>whole</em> ox?
+  [card socheonguk] The hunt god. A big appetite. Bigger than you’re thinking.
+  [#a16207] …I also ate someone else’s.
+  [p] They separated. It is the first divorce in the record, the grounds are livestock, and the islanders tell it as a comedy because it is one.
+  FIRST LINES:
+    "You ate the ox. The one I gave you to plough with. The <em>whole</em> ox?"
+
+### socheonguk--three-princes  (Three Princes, 태초)
+  person=socheonguk look= from= place= scene=Baekjuto and Socheon-guk
+  [#8a6f3f] No. But he is a hunter.
+  [card baekjuto] A farming goddess who crossed the sea to find a husband. She is about to find one.
+  [#c084fc] You ate the ox. The one I gave you to plough with. The <em>whole</em> ox?
+  >>> CARD [card socheonguk] The hunt god. A big appetite. Bigger than you’re thinking.
+  [#a16207] …I also ate someone else’s.
+  [p] They separated. It is the first divorce in the record, the grounds are livestock, and the islanders tell it as a comedy because it is one.
+  [p] Their son kicked his father in the chest at three years old. So they put the boy in an iron chest, locked it, and set it on the water.
+  [p] It drifted for years and washed up in a foreign country, and the boy came out of it a warrior, and won that country’s wars, and married its princess. And then he came home.
+  FIRST LINES:
+    "…I also ate someone else’s."
+
+### sanbangdeok--stone-lady  (Stone Lady, 태초)
+  person=sanbangdeok look= from= place= scene=Sanbangdeok
+  [#8a6f3f] That is not back. / That is Sabi.
+  [scene] Sanbangdeok
+  [p] There is Sanbangduk, who came down out of the rock to love a poor man.
+  >>> CARD [card sanbangdeok] A goddess who stepped out of the Sanbang cliff to see the world. The world noticed.
+  [#8fb3a8] I came out of the rock… / and when I hold your hand I don’t feel like stone.
+  [#8a8a94] Then don’t let go. / Whatever the official says.
+  [p] Then an official on a tax round sees her at the spring.
+  [#5f5a52] A woman out of the rock belongs to the government. / Like the rock.
+  FIRST LINES:
+    "I came out of the rock… / and when I hold your hand I don’t feel like stone."
+    "You wanted me because I wasn’t stone. / Look again."
+
+### sara--gardener  (Gardener, 태초)
+  person=sara look= from= place= scene=
+  [#8a6f3f] How long was she to wait.
+  [#f97316] He didn’t say. / That’s the first mistake. Count it if you like.
+  [p] The rich man wanted her. She said no, and went on saying no for fifteen years, through every kind of work a rich man can find for a servant who says no. Her son was born in that house and grew up a servant in it. His name was Hallakgungi.
+  >>> CARD [card sara] Hallakgungi. Born a servant, and he means to find his father.
+  [#f97316] When he was old enough she told him where his father was. He went west that night. / And the rich man, when he found the boy gone, killed the mother instead and threw her into a bamboo grove.
+  [#8a6f3f] …She knew he would.
+  [#f97316] She knew. / She told him anyway.
+  [p] Hallakgungi found the flower field at the far end of the west, where the living maps run out, and his father at the gate of it. Sara Doryeong took him down the rows. Here, the flowers that put back bone, and flesh, and blood, and breath, and the soul last of all. Over there, the flowers that laugh a man to death, and the ones that make a house fight itself, and at the end of the row the one that ends a line altogethe
+  FIRST LINES:
+    "Father retired. / This gate answers to Hallakgungi now. / What are you looking for."
+    "Don’t touch the stem wrong. / Five — bone, flesh, blood, breath, soul. / Pick them out of order and even the living wilt."
+
+### jacheongbi--gardener  (Gardener, 태초)
+  person=jacheongbi look= from= place= scene=Jacheongbi
+  [scene] Jacheongbi
+  [p] Told in the rain, in a doorway, which is the only time anyone gets him to stand still.
+  [#f97316] Jacheongbi wanted to study beside a boy from the sky. / Women were not allowed in the room, so she cut her hair and put on a man’s clothes.
+  >>> CARD [card jacheongbi] Jacheongbi. Disguise, scholarship, and not one ounce of patience.
+  [#8a6f3f] Did she break the rule.
+  [#f97316] No. The rule never said a woman could not wear a man’s clothes.
+  [#8a6f3f] …Ah.
+  [p] Three years at the same desk. She beat him at everything and let him believe it was close. On the last night at the parting stream she washed upstream of him and told him to look.
+  FIRST LINES:
+    "Three years at the same table — eating, sleeping, reading — and you notice <em>now</em>?"
+    "You have them now. / …Will you only look? / After three years of holding back."
+    "Then stay rough. / Touch my hair. / The hair I cut short for you."
+
+### mundoryeong--gardener  (Gardener, 태초)
+  person=mundoryeong look= from= place= scene=Jacheongbi
+  [#8a6f3f] …Ah.
+  [p] Three years at the same desk. She beat him at everything and let him believe it was close. On the last night at the parting stream she washed upstream of him and told him to look.
+  [#e879a6] Three years at the same table — eating, sleeping, reading — and you notice <em>now</em>?
+  >>> CARD [card mundoryeong] A boy from the sky, sent down to study. Very good at books, very bad at noticing things.
+  [#7dd3fc] …I had no eyes.
+  [#e879a6] You have them now. / …Will you only look? / After three years of holding back.
+  [#7dd3fc] I was not holding back. / I did not know. / Now that I do… my breath is rough.
+  [#e879a6] Then stay rough. / Touch my hair. / The hair I cut short for you.
+  FIRST LINES:
+    "…I had no eyes."
+    "I was not holding back. / I did not know. / Now that I do… my breath is rough."
+    "…How long was I gone."
+
+### yumla--kangrim  (Kangrim, 태초)
+  person=yumla look= from= place= scene=The Road Down
+  [scene] The Road Down
+  [p] His wife kept the gate-god and the kitchen-god fed, so they put him on the road. At the last pond he shut his eyes and jumped, and stood up at the underworld gate. Someone was already walking that road with a red book. Haewonmek, the oldest fetch there is. Kangrim asked the way. Haewonmek pointed, and kept walking. Kangrim waited, and addressed King Yumla with court courtesy.
+  [#5f5f6b] Your Majesty. The living court requests you. / There is a case. Living law cannot close it.
+  >>> CARD [card yumla] The judge of the dead. Every ledger in the dark ends on his desk.
+  [#7c3aed] Go home. / I will come at the hour I name.
+  [p] He came. The pond dried. The bones came up. The three brothers went home to their parents. The couple who had killed them did not. Yumla keeps the sentence. Then he turned to the magistrate and asked to borrow the man who had fetched him.
+  [#7c3aed] Lend me that man. I still have errands.
+  [#f97316] The magistrate refused. He did not believe in a soul. / So they split him. The magistrate kept the body. Yumla took the soul.
+  FIRST LINES:
+    "Go home. / I will come at the hour I name."
+    "Lend me that man. I still have errands."
+
+### chunbok--coup  (Coup, 657)
+  person=chunbok look= from= place= scene=
+  [p] Euija names forty-one of his own sons to the Assembly, firing every single existing member. Eight houses spent four generations sharpening tricks on each other. Marriages. Roads. Clerks planted in rival counting-rooms. In one morning the king clears the board. He simply changes the pieces. By noon nobody has an answer.
+  [p] Satek Chunbok is named Premier. His own clan watches him walk to the chair. The Enabling Law did not abolish the chair. It only changed who sits in it.
+  >>> CARD [card chunbok] A Satek in the Satek chair, sitting for the king.
+  [p] Forty-one sons need forty-one seats. None goes to the Ye family. They have held Bear Fortress for four generations and never once been asked to court. Ye Sikjin reads the list at home, twice. Then he puts it in a drawer.
+  [place ungjin]
+  [p] Then he hands out the quiet money that really runs Baekje. Harbour warehouses. River pilot fees. The stamp a ship needs before it sails east. The martial law was the noise. The stamps are what change.
+  [p] He cannot do what Yeon did. Baekje would not forgive it, and more to the point, he would not. He does not need a banquet. He needs a majority that looks like kinship.
+  FIRST LINES:
+    "Your Majesty… as Your Majesty well knows, the houses are counting tonight. / If a boat leaves for Tamla before the benches are cold, they will read it as war. / Let them get used to losing first. A month. Then send for him."
+    "Do not trouble yourself over Baekje."
+    "Baekje will fall on its own. / Where blood ties are strong, the state grows weak. / The Baekje clans love a family feud — they will envy each other into ruin."
+
+### yuri-prince--onjo  (Onjo, -18)
+  person=yuri look=prince from= place= scene=Buyeo
+  [scene] Buyeo
+  [p] In Buyeo, Lady Ye has raised Jumong’s first son alone.
+  [p] Yuri is a boy with a sling and bad aim, or good aim and bad luck. The pebble cracks a woman’s water jar on her way back from the well.
+  >>> CARD [card yuri:prince] Yuri. Bad aim or bad luck, and a mother who will not answer one question.
+  [#8d8d95] Whose son are you, anyway? No father, no manners.
+  [#f0c04a] What kind of man was my father? Where is he now?
+  [#d98fa8] Your father was no ordinary man. The country couldn’t hold him. / He went south and made himself a king. / He left something under the pine on the seven-sided stone. / Find it, and he’ll know you.
+  [p] There is no pine on any hill he climbs. He finds it at home: the house’s pine pillar stands on a seven-sided foundation stone, and in the crack beneath it lies half a sword.
+  FIRST LINES:
+    "What kind of man was my father? Where is he now?"
+    "Father…!"
+
+### heungsu--heungsu  (Heungsu, 660, flashback 655)
+  person=heungsu look= from= place= scene=
+  [p] It was a berth on Satek water, the afternoon the clans put Gyebek on a boat. Heungsu still had his office then. He came down to the water because nobody else from court did.
+  >>> CARD [card heungsu] A Baekje minister sent far from court for saying what the king didn’t want to hear.
+  [p] Gyebek’s wife came too, with their boy at her side and a small girl on her hip. She had packed his bag. He had unpacked it on the dock and packed it again, in order.
+  [#b98f33] You… you truly mean to go? / Without a word to the king—
+  [#8a6f3f] The king is in mourning. He cannot sign. / The order has his seal. I am a loyal servant of Baekje.
+  [#8a6f3f] His Majesty gave me a name. / A name — to a child who had none. / If he wants it back, he will send for it.
+  FIRST LINES:
+    "You… you truly mean to go? / Without a word to the king—"
+    "…Do you know the story of the Guardian of Ansi?"
+    "Then hear one thing that is not a story. / If they ever send for you, hold the White River mouth and the Tanhyeon pass — or there will be no Sabi left to be loyal to. / The Tang do not need our clans’ permission to land. They need our absen"
+
+### sudingfang--yellow-mountain  (Yellow Mountain, 660)
+  person=sudingfang look= from= place=hwangsan scene=Yellow Mountain Fields
+  [#d9b13a] And the sea, General. Sails at the river mouth. The boatmen gave up counting them.
+  [#8a6f3f] Then I will count them later.
+  [p] Here is the man the boatmen gave up on. His name is Su Dingfang, and he is sixty-five. Three winters ago he took a qaghan’s camp in a blizzard, before anyone in it had found his boots. His regiment painted a red bird on his tent afterwards, and Chang’an calls him the Red Fowl.
+  >>> CARD [card sudingfang] The Red Fowl. Sixty-five, and he still prefers to march at night.
+  [#d95f4b] Snow is just cold sand. / Nobody expects you in it. That’s the only good thing about it.
+  [scene] Deokmul Island
+  [p] That summer he sails east with a hundred and thirty thousand men and anchors off a small island. A hundred Silla ships come out to meet him. At their head is the crown prince, Bupmin. He is thirty-four, and trying not to stare at the size of the Tang flagship.
+  FIRST LINES:
+    "Snow is just cold sand. / Nobody expects you in it. That’s the only good thing about it."
+    "You’re the son?"
+    "Tenth day of the seventh month. South of Sabi. Your army and mine, on the same field, on the same morning. / Tell your father. Tell him twice."
+
+### bangul--yellow-mountain  (Yellow Mountain, 660)
+  person=bangul look= from= place=gibeolpo scene=Bangul & Gwanchang
+  [scene] Bangul & Gwanchang
+  [p] Heumsun calls his son to his stirrup. Bangul is fifteen, near enough, and Yushin’s nephew; he comes at a run, because he has been watching his father look at him since the white horse came back.
+  [#4f7fc4] For a subject, nothing is greater than loyalty. For a son, nothing is greater than filial piety. / To see the danger and give your life to it — that keeps both, whole, at once.
+  >>> CARD [card bangul] Yushin’s nephew. Young, brave, and in a hurry.
+  [#5e9dd8] I have heard you, Father.
+  [p] Bangul rides out alone and does not come back. He goes into the Baekje line where it is thickest and fights there until it closes over him, and the place where it closed is the place Silla aims at next.
+  [p] Pumil does not call his son. He has him brought to stand in front of his horse, before all the generals, and points at him the way a man points at a map.
+  [card gwanchang] Gwanchang. A hwarang so young they had to pad the helmet.
+  FIRST LINES:
+    "I have heard you, Father."
+
+### gwanchang--yellow-mountain  (Yellow Mountain, 660)
+  person=gwanchang look= from= place=gibeolpo scene=Bangul & Gwanchang
+  [#5e9dd8] I have heard you, Father.
+  [p] Bangul rides out alone and does not come back. He goes into the Baekje line where it is thickest and fights there until it closes over him, and the place where it closed is the place Silla aims at next.
+  [p] Pumil does not call his son. He has him brought to stand in front of his horse, before all the generals, and points at him the way a man points at a map.
+  >>> CARD [card gwanchang] Gwanchang. A hwarang so young they had to pad the helmet.
+  [card pumil] A Silla general with a son in the ranks. He knows exactly where the boy is standing.
+  [#6a8ab8] My son is only sixteen, but his spirit is brave enough. / In today’s battle — can he be the mark the three armies aim by?
+  [#79b6f2] Yes.
+  [p] He takes an armoured horse and one spear and goes straight at the Baekje centre. He gets further than Bangul did. Then they pull him off the horse alive and bring him to Gyebek.
+  FIRST LINES:
+    "Yes."
+    "I went into their midst and could not cut down their general or take their banner. / It was not because I was afraid to die."
+
+### pumil--yellow-mountain  (Yellow Mountain, 660)
+  person=pumil look= from= place=gibeolpo scene=Bangul & Gwanchang
+  [p] Bangul rides out alone and does not come back. He goes into the Baekje line where it is thickest and fights there until it closes over him, and the place where it closed is the place Silla aims at next.
+  [p] Pumil does not call his son. He has him brought to stand in front of his horse, before all the generals, and points at him the way a man points at a map.
+  [card gwanchang] Gwanchang. A hwarang so young they had to pad the helmet.
+  >>> CARD [card pumil] A Silla general with a son in the ranks. He knows exactly where the boy is standing.
+  [#6a8ab8] My son is only sixteen, but his spirit is brave enough. / In today’s battle — can he be the mark the three armies aim by?
+  [#79b6f2] Yes.
+  [p] He takes an armoured horse and one spear and goes straight at the Baekje centre. He gets further than Bangul did. Then they pull him off the horse alive and bring him to Gyebek.
+  [p] Gyebek has the helmet taken off. Inside it is a boy’s face, sweat-striped, furious at being alive.
+  FIRST LINES:
+    "My son is only sixteen, but his spirit is brave enough. / In today’s battle — can he be the mark the three armies aim by?"
+    "Look at him. His face is as if he were alive. / He died in the king’s service. …I have nothing to regret."
+
+### munmu-king--kim-chunchu  (Kim Chunchu†, 661)
+  person=munmu look=king from=hwarang place= scene=The Sickroom
+  [p] He died with Baekje gone and Goguryeo still standing. Halfway. The last two names he said were his daughter’s and his son’s. Not the kingdom’s.
+  [p] Twelve years earlier an emperor had told him that Goguryeo was the one failure of his life, and that Baekje would be Chunchu’s. Only one of them was wrong.
+  [p] They give him a name for the dead: Muyeol. His temple name is Taejong, the same name the Tang gave their Second Emperor. Chang’an will notice.
+  >>> CARD [card munmu:king]
+  [quote] He was striking in looks and bearing, quick-witted and full of stratagems.
+  [p] Bupmin takes the throne. They will call him Munmu.
+  [p] Silla won the war. So why does the emperor’s new edict call its king a clerk…?
+  FIRST LINES: (none)
+
+### wuzetian-empress--ungjin-commandery  (Ungjin Commandery, 661)
+  person=wuzetian look=empress from=consort place= scene=Chang’an
+  [#b8935a] You were there with an army. Why didn’t you take Silla while you were at it?
+  [#d95f4b] Their king is kind and loves his people. His ministers serve the country loyally. Below, they serve those above like fathers and elder brothers. / It is a small country, Majesty. But it cannot be schemed against.
+  [#b8935a] Can’t be schemed against. Hm. / Then we won’t scheme. We’ll write. Make their king a governor of ours — no. That sounds like a slap. / …Write it anyway.
+  >>> CARD [card wuzetian:empress]
+  [#9d7bd0] Make it sound like an honour, Majesty. / A slap they have to bow for is worth two they can return.
+  [scene] Gyerim
+  [p] Then an edict arrives for the new king. It makes him Grand Commander of the Gyerim Prefecture. Gyerim is his country’s oldest name, the wood where a rooster crowed over a golden box. In the edict it is one province of the empire. And the king is its governor.
+  [#3fa9c9] A prefecture, Uncle. They have made my father’s country into a prefecture, and me its clerk.
+  FIRST LINES:
+    "Make it sound like an honour, Majesty. / A slap they have to bow for is worth two they can return."
+    "Then don’t say it like him. Say it like you. / Four generals. One for each side of the map, so none of them can come home claiming he did it alone."
+
+### liurengui--ungjin-commandery  (Ungjin Commandery, 661)
+  person=liurengui look= from= place= scene=The Black Tortoise
+  [scene] The Black Tortoise
+  [p] Someone has to hold what the Tang broke. Nobody in Chang’an expected to see Liu Rengui in uniform again. He is sixty. Last year he lost a grain fleet in a storm and was stripped of office. Now he comes east as a commoner in white, to earn it back. In his baggage: the Tang calendar, and the list of names nobody may write.
+  >>> CARD [card liurengui] The Black Tortoise. Sixty, disgraced last year, and in an excellent mood.
+  [#1f2937] Heaven means to make an old man rich, it seems. / Send me the calendar for this country, and the list of names one must not write. If we are going to sweep the east clean, the east should at least know what year it is.
+  [p] Between skirmishes the Black Tortoise does what he actually came for, which is paperwork. He counts the households of Baekje village by village and writes them down as numbers. He mends dykes and bridges. He posts the Tang calendar at every crossroads, with the list of names that may not be written, so that the people of Baekje will know which characters to leave out of their letters home.
+  [#1f2937] A village that knows what year it is pays its tax on time. / Put one up at the ferry as well. People read while they wait for the boat.
+  [scene] The Ferry
+  FIRST LINES:
+    "Heaven means to make an old man rich, it seems. / Send me the calendar for this country, and the list of names one must not write. If we are going to sweep the east clean, the east should at least know what year it is."
+    "A village that knows what year it is pays its tax on time. / Put one up at the ferry as well. People read while they wait for the boat."
+    "Read it to me first."
+
+### boksin--king-pungjang  (King Pungjang, 661, flashback 660)
+  person=boksin look= from= place=asuka scene=
+  [p] Asuka, the winter Sabi falls. A Baekje envoy has come the whole way with frost in his beard and a hundred Tang soldiers roped neck to neck behind him, a present, which is a polite word for proof. The empress is sixty-six. She has buried two husbands, held this throne twice and sat through a great many envoys, and she lets this one finish.
+  [place asuka]
+  [p] The envoy comes from Gwishil Boksin, who has been raising a dead country in the hills since summer. Boksin wants two things: an army, and the king’s quiet son, who was sent across the sea as a boy and never sent for.
+  >>> CARD [card boksin] Gwishil Boksin. He raised a dead country once, and he kept the receipts.
+  [card tenji] The Eastern Prince. He does the arithmetic before anyone asks for it.
+  [undefined] A hundred prisoners. Generous. / …That’s the first page, though. When do they show us the rest of the bill?
+  [p] The envoy tells him. Soldiers, and the prince. Every head in the hall turns to the prince, who has lived in this palace for twenty years and who discovers that he has been sitting very straight.
+  [card abe] Yamato’s admiral of the cold north. He has fought on ice. He has not fought on this river.
+  FIRST LINES: (none)
+
+### tenji--king-pungjang  (King Pungjang, 661, flashback 660)
+  person=tenji look= from= place=asuka scene=
+  [place asuka]
+  [p] The envoy comes from Gwishil Boksin, who has been raising a dead country in the hills since summer. Boksin wants two things: an army, and the king’s quiet son, who was sent across the sea as a boy and never sent for.
+  [card boksin] Gwishil Boksin. He raised a dead country once, and he kept the receipts.
+  >>> CARD [card tenji] The Eastern Prince. He does the arithmetic before anyone asks for it.
+  [undefined] A hundred prisoners. Generous. / …That’s the first page, though. When do they show us the rest of the bill?
+  [p] The envoy tells him. Soldiers, and the prince. Every head in the hall turns to the prince, who has lived in this palace for twenty years and who discovers that he has been sitting very straight.
+  [card abe] Yamato’s admiral of the cold north. He has fought on ice. He has not fought on this river.
+  [undefined] Send me! I’ve crossed the cold sea. / I’ve taken Mishihase arrows. The western sea’s only warmer. I’ll bring you back their emperor’s hat!
+  FIRST LINES:
+    "A hundred prisoners. Generous. / …That’s the first page, though. When do they show us the rest of the bill?"
+    "Before anyone asks him anything, Mother, I will. / Prince. Do they want you, or your name?"
+
+### abe--king-pungjang  (King Pungjang, 661, flashback 660)
+  person=abe look= from= place=asuka scene=
+  [card tenji] The Eastern Prince. He does the arithmetic before anyone asks for it.
+  [undefined] A hundred prisoners. Generous. / …That’s the first page, though. When do they show us the rest of the bill?
+  [p] The envoy tells him. Soldiers, and the prince. Every head in the hall turns to the prince, who has lived in this palace for twenty years and who discovers that he has been sitting very straight.
+  >>> CARD [card abe] Yamato’s admiral of the cold north. He has fought on ice. He has not fought on this river.
+  [undefined] Send me! I’ve crossed the cold sea. / I’ve taken Mishihase arrows. The western sea’s only warmer. I’ll bring you back their emperor’s hat!
+  [undefined] Before anyone asks him anything, Mother, I will. / Prince. Do they want you, or your name?
+  [#e6c76a] …Both, I expect. The name first. / I am still a son of Baekje. I have only… forgotten some of the words.
+  [p] The empress has let all of it run: her son’s arithmetic, the admiral’s hat, the prince’s missing words. Then she speaks once.
+  FIRST LINES:
+    "Send me! I’ve crossed the cold sea. / I’ve taken Mishihase arrows. The western sea’s only warmer. I’ll bring you back their emperor’s hat!"
+
+### saimei--king-pungjang  (King Pungjang, 661, flashback 660)
+  person=saimei look= from= place=asuka scene=
+  [undefined] Before anyone asks him anything, Mother, I will. / Prince. Do they want you, or your name?
+  [#e6c76a] …Both, I expect. The name first. / I am still a son of Baekje. I have only… forgotten some of the words.
+  [p] The empress has let all of it run: her son’s arithmetic, the admiral’s hat, the prince’s missing words. Then she speaks once.
+  >>> CARD [card saimei] The Eastern Empress. She has outlived two reigns and most of her ministers’ opinions.
+  [#c0504d] My son wants to know what we owe Baekje. / Bring him the sword. The one with seven branches.
+  [p] Three hundred years ago a Baekje king sent the King of Wa a sword with seven branches. It was a gift. It was also a message.
+  [p] It is iron, two and a half feet long, with six branches off a central blade and sixty-one characters inlaid in gold down both sides. It has never been sharpened. It was never going to be.
+  [p] The inscription is the interesting part, because the two countries have spent fifteen hundred years disagreeing about a single verb: whether Baekje presented it upward, or bestowed it downward.
+  FIRST LINES:
+    "My son wants to know what we owe Baekje. / Bring him the sword. The one with seven branches."
+    "Asking for soldiers is old. Holding up a falling house is older. / The sea is also a border, my son. When the western roof catches, our eaves are next. / Give them the ships. Give the boy a cap of rank and a wife, so he does not arrive look"
+
+### takutsu--king-pungjang  (King Pungjang, 661)
+  person=takutsu look= from= place=juryu scene=Roll Call
+  [undefined] Abe no Hirafu! General of the cold northern sea! / A hundred and eighty ships against the Emishi, and I caught Mishihase arrows in my teeth! Tang’s next! Ha!
+  [#a8781f] You’re not on the board, Admiral. / …Lovely entrance, though.
+  [p] Echi no Takutsu waits until the admiral has finished, which takes a while. Then he walks up the shingle, turns his back on the Baekje generals and bows to the sea he has just crossed, low and long, the tails of his white headband lifting in the wind, before he turns round and says the one thing he has prepared.
+  >>> CARD [card takutsu] A Yamato captain. Loud, loyal, and fond of a country that isn’t his.
+  [#b05575] No one in this country knows my name. So instead of mine, I will say yours. / Long live Kudara. If Kudara needs a life, begin with mine.
+  [#a8781f] …He means it.
+  [p] Dochim introduces himself sitting down. He has found a flat rock above the tideline and settled on it in his red kasaya, the beads running through one hand and the gilt staff across his knees, and he smiles at the new king the way a monk smiles at a donor whose gift has not yet arrived.
+  [card dochim] Dochim. A monk with a general’s staff, in no hurry about either.
+  FIRST LINES:
+    "No one in this country knows my name. So instead of mine, I will say yours. / Long live Kudara. If Kudara needs a life, begin with mine."
+    "They will starve slower than they will die down there, Majesty."
+    "Pisong is one night’s march from the enemy."
+
+### dochim--king-pungjang  (King Pungjang, 661)
+  person=dochim look= from= place=juryu scene=Roll Call
+  [#b05575] No one in this country knows my name. So instead of mine, I will say yours. / Long live Kudara. If Kudara needs a life, begin with mine.
+  [#a8781f] …He means it.
+  [p] Dochim introduces himself sitting down. He has found a flat rock above the tideline and settled on it in his red kasaya, the beads running through one hand and the gilt staff across his knees, and he smiles at the new king the way a monk smiles at a donor whose gift has not yet arrived.
+  >>> CARD [card dochim] Dochim. A monk with a general’s staff, in no hurry about either.
+  [undefined] Dochim. A monk of no temple, now. They call me General of the Spirit Army. / The Buddha taught that all things are impermanent. The Tang garrison at Sabi is one of those things. / We march at dawn. Do sleep well tonight.
+  [p] Boksin, who did not write “General of the Spirit Army” on the board, makes a small mark beside it.
+  [p] Heukchi Sangji is seven feet tall. The autumn Sabi fell he walked into Imjon with a handful of men and walked out ten days later with thirty thousand, and he regards the whole business of a roll call as a kind of weather. When his turn comes he steps forward exactly one pace.
+  [card sangji] Heukchi Sangji. The biggest man on the beach, and the hardest to line up.
+  FIRST LINES:
+    "Dochim. A monk of no temple, now. They call me General of the Spirit Army. / The Buddha taught that all things are impermanent. The Tang garrison at Sabi is one of those things. / We march at dawn. Do sleep well tonight."
+
+### sangji--king-pungjang  (King Pungjang, 661)
+  person=sangji look= from= place=juryu scene=Roll Call
+  [undefined] Dochim. A monk of no temple, now. They call me General of the Spirit Army. / The Buddha taught that all things are impermanent. The Tang garrison at Sabi is one of those things. / We march at dawn. Do sleep well tonight.
+  [p] Boksin, who did not write “General of the Spirit Army” on the board, makes a small mark beside it.
+  [p] Heukchi Sangji is seven feet tall. The autumn Sabi fell he walked into Imjon with a handful of men and walked out ten days later with thirty thousand, and he regards the whole business of a roll call as a kind of weather. When his turn comes he steps forward exactly one pace.
+  >>> CARD [card sangji] Heukchi Sangji. The biggest man on the beach, and the hardest to line up.
+  [#8a6b1f] Heukchi Sangji. Imjon. / …That’s it.
+  [#a8781f] The arms, General. We discussed the arms.
+  [#8a6b1f] You discussed the arms.
+  [card sateksangya] A Satek with harbour money and a general’s patience.
+  FIRST LINES:
+    "Heukchi Sangji. Imjon. / …That’s it."
+    "You discussed the arms."
+
+### sateksangya--king-pungjang  (King Pungjang, 661)
+  person=sateksangya look= from= place=juryu scene=Roll Call
+  [#8a6b1f] Heukchi Sangji. Imjon. / …That’s it.
+  [#a8781f] The arms, General. We discussed the arms.
+  [#8a6b1f] You discussed the arms.
+  >>> CARD [card sateksangya] A Satek with harbour money and a general’s patience.
+  [p] Satek Sangya has worn the tall gilt cap of his house for the occasion, which is the only concession he makes to it. He does not look up from the ledger.
+  [#b8933f] Satek Sangya. Forty boats, eleven hundred bales of rice, thirty thousand arrows, and I stopped counting the rope. / Nobody has paid me yet. That’s my pose.
+  [p] Then Gwishil Boksin, who wrote the board, steps out in front of all of them, plants the red shaft in the shingle and does the arms exactly as rehearsed.
+  [#a8781f] Gwishil Boksin. I raised this country once when it fell, and if it falls twice I’ll raise it twice. / Your father asked for this, Majesty. In Chang’an, at the end. We heard. / Welcome home. Your army.
+  FIRST LINES:
+    "Satek Sangya. Forty boats, eleven hundred bales of rice, thirty thousand arrows, and I stopped counting the rope. / Nobody has paid me yet. That’s my pose."
+
+### pung-king--king-pungjang  (King Pungjang, 661)
+  person=pung look=king from=prince place=juryu scene=Roll Call
+  [#a8781f] Gwishil Boksin. I raised this country once when it fell, and if it falls twice I’ll raise it twice. / Your father asked for this, Majesty. In Chang’an, at the end. We heard. / Welcome home. Your army.
+  [p] Everyone looks at the king. Nobody has given Pung a line. He has been in the country for less than an hour and has spent most of it being bowed at, and he ad-libs.
+  [#e6c76a] I am Buyeo Pung, son of King Euija, and… king of— of Baekje. / …Is that right? Is “restoration” the word?
+  >>> CARD [card pung:king]
+  [#a8781f] Close enough, Majesty.
+  [p] Boksin counts them in. “Baekje— Restoration— Army!” Takutsu and the admiral land it perfectly, which is embarrassing for everyone else. Dochim does half and goes back to his beads. Sangya is still counting. Sangji folds his arms, which is at least an arm. The new king is a beat late and on the wrong foot.
+  [p] They try it twice more before supper. For the second, Boksin puts the king on a rock in the middle so that everyone is at least pointing at the same man, and Abe lifts Sangji off the ground to make the shape symmetrical, which nobody asked for and Sangji does not forgive. For the third, Dochim declines to stand, Sangya sits down on the rice, and the king, finally, gets the arms right, a beat after everyone else has s
+  FIRST LINES:
+    "My father sent me away with a sentence. “Until I need you.” / …He did not say it would be somebody else who needed me."
+    "This Juryu lies far from farmland. The soil is stone. The people will starve up here."
+    "Pisong has water. Rice. Embankments all round it—"
+
+### namgun--pyongyang-i  (Pyongyang I, 661)
+  person=namgun look= from= place= scene=The Wall
+  [scene] The Wall
+  [p] Up on the wall, Gesomun's second son is explaining this to a sentry who did not ask.
+  >>> CARD [card namgun] Gesomun’s second son. Loud, loyal, and he believes everything he’s told twice.
+  [#9e3b32] Pyongyang does not fall. / Not since the Holy King strung his bow. Seven hundred years.
+  [#d4776a] You said that yesterday.
+  [#9e3b32] It was true yesterday too.
+  [p] Their father walks the wall behind them with a scout’s report in his fist. A Mohe man walks one step behind him, as he has for twenty-seven years. Nobody introduces Gulgul. Nobody ever has.
+  FIRST LINES:
+    "Pyongyang does not fall. / Not since the Holy King strung his bow. Seven hundred years."
+    "It was true yesterday too."
+    "Thirteen? He brought children to a war?"
+
+### pangxiaotai--snake-river  (Snake River, 662)
+  person=pangxiaotai look= from= place=sasu scene=The Ford
+  [scene] The Ford
+  [p] Here is the plan, such as it is. The Tiger is marching to join the Red Fowl outside Pyongyang. If he gets there, the city is in a ring.
+  >>> CARD [card pangxiaotai] The White Tiger. A Tang general who brought all his sons to war, to show them how it’s done.
+  [p] Gesomun lets him get halfway. The Snake has gravel at the edges and mud in the middle, and Gesomun knows which is which.
+  [#d0362f] He thinks it’s a road. Let him walk on it. / When the middle horses sink — both banks. All at once.
+  [p] The middle horses sink. Both banks open up at once.
+  FIRST LINES:
+    "I have eaten too much favour under two emperors. / I will not go home while this kingdom still stands. / The southern boys I brought are already dead — / what would this one body do, alive?"
+
+### yung--white-river  (White River, 663)
+  person=yung look= from= place= scene=The Throat of the River
+  [p] Euija’s eldest. He knelt at Sabi three summers ago, was taken to Chang’an with his father, and has come back in a Tang officer’s coat to fight his younger brother for the right to tell the survivors what happened to them. Nobody on the deck says this. Everybody on the deck knows it.
+  [#1f2937] Your brother’s banner will be on that fleet. / When it comes, can you look at it?
+  >>> CARD [card yung] Euija’s eldest son. Born to be crown prince. Born is not the same as stays.
+  [#d4b45a] I have looked at worse. / …I looked at my father.
+  [p] The Black Tortoise has already learned the river's grammar. A narrow mouth. Sandbars that shift like lies. A current that punishes anyone who charges out of line. He anchors his hundred and seventy ships across the throat and waits. On the east bank, Kim Yushin's army keeps the shore from becoming a pier.
+  [scene] The Shore
+  FIRST LINES:
+    "I have looked at worse. / …I looked at my father."
+    "…My brother’s. / Our father gave it to him the year they sent him east. He was seven."
+    "…North is Goguryeo. Let Goguryeo keep him. / He was always better at being sent away than I was."
+
+### namseng-supreme--yeon-gesomun  (Yeon Gesomun†, 665)
+  person=namseng look=supreme from=heir place= scene=King Yumla
+  [p] Then he dies in his sleep, sitting up, which is not how anyone expected it to go.
+  [#c25a4e] Well… even a man like that stands before Yumla in the end.
+  [p] His eldest, Namseng, takes on the title of Supreme Commander. He is thirty-one, and it is very heavy.
+  >>> CARD [card namseng:supreme] His father’s chair. It was built for one man, and it shows.
+  [scene] The Chair
+  [p] Namseng sits in the chair the next morning. It is too big. Everyone pretends not to notice, which is how you know they have.
+  [#9e3b32] The old man… he really did have a gift, didn’t he.
+  [#d4776a] He had one. We don’t.
+  FIRST LINES: (none)
+
+### namsan--pyongyang-ii  (Pyongyang II, 668)
+  person=namsan look= from= place= scene=Brothers
+  [#c25a4e] At last… I set foot on Pyongyang’s ground—
+  [p] On the wall, Namgun can see him. Everyone on the wall can see him.
+  >>> CARD [card namsan] Gesomun’s youngest son, and the one who listens at doors.
+  [#d4776a] Brother… he’s wearing their coat.
+  [#b91c1c] Goguryeo… never dies….!
+  [p] That is the only conversation the three of them have that year. A whisper, a shout, and a man on a horse who does not answer.
+  [scene] The White Banner
+  FIRST LINES:
+    "Brother… he’s wearing their coat."
+    "To the banner, Majesty. He’s only holding it."
+
+### yushin-elder--pyongyang-ii  (Pyongyang II, 668)
+  person=yushin look=elder from=marshal place= scene=The New Rank
+  [#C41E3A] You have been Marshal since before I could hold a bow. / The yard still says it. / The seventeen grades do not reach you anymore.
+  [#2A5FB8] The word is enough. / I know what I am.
+  [#C41E3A] There was already a grade above the seventeen. / I had them cut one above that. / Supreme General.
+  >>> CARD [card yushin:elder] A rank above every rank. They had to invent it for him.
+  [#2A5FB8] A new name for an old man.
+  [#C41E3A] It is the name of the man who fed this war through the snow. / Wear it. / You may keep Marshal for the boys on the yard.
+  [#2A5FB8] …As you command.
+  [p] The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!
+  FIRST LINES:
+    "A new name for an old man."
+    "…As you command."
+
+### hwanin--dangun-old-joseon  (Dangun & Old Joseon, Long ago)
+  person=hwanin look= from= place= scene=
+  [p] Before there are any kingdoms, there is a son in heaven who keeps looking down. He is Hwanung. His father Hwanin, the Lord of Heaven, notices, looks down himself at a mountain called Taebaek and the people living around it, and decides the world could use his son.
+  >>> CARD [card hwanin] The Lord of Heaven. He has been watching this peninsula since before it had names.
+  [p] Hwanin does not plough — he opens the sky. Three seals go down with his son, so that nobody on the ground can mistake him for a prince playing at exile. Every later king in this chronicle will cut seals of his own, and every one of them is copying these.
+  [p] Hwanung lands on a mountain under the sacred birch. He names the ground beneath it the Divine City. Three thousand followers come down with him. Among them are the lords of wind, rain and cloud. Someone has to argue with the weather.
+  [card hwanung] Hwanung. A son of heaven who kept looking down until his father let him go.
+  FIRST LINES: (none)
+
+### hwanung--dangun-old-joseon  (Dangun & Old Joseon, Long ago)
+  person=hwanung look= from= place= scene=
+  [p] Hwanin does not plough — he opens the sky. Three seals go down with his son, so that nobody on the ground can mistake him for a prince playing at exile. Every later king in this chronicle will cut seals of his own, and every one of them is copying these.
+  [p] Hwanung lands on a mountain under the sacred birch. He names the ground beneath it the Divine City. Three thousand followers come down with him. Among them are the lords of wind, rain and cloud. Someone has to argue with the weather.
+  >>> CARD [card hwanung] Hwanung. A son of heaven who kept looking down until his father let him go.
+  [p] From there he hands out civilisation in instalments. Laws. Punishments. Lifespans. Illness. Good and evil. Medicine. Three hundred and sixty matters in all. Somebody counted.
+  [p] There is a short way to tell the rest, the way it is carved on stones. The long way begins, as long ways do, with a bear who wanted something so badly that she outlasted a tiger for it.
+  [p] A bear and a tiger come to him and ask to be made human. He gives them a bundle of mugwort, twenty cloves of garlic, and one instruction: stay out of the sun for a hundred days.
+  [scene] The Sacred Birch
+  FIRST LINES:
+    "…Not today."
+    "I saw you. / The garlic reached this far."
+    "Too late. / Stay. I mean— don't go. Your hand—"
+
+### ungnyeo--dangun-old-joseon  (Dangun & Old Joseon, Long ago)
+  person=ungnyeo look= from= place= scene=The Sacred Birch
+  [p] A bear and a tiger come to him and ask to be made human. He gives them a bundle of mugwort, twenty cloves of garlic, and one instruction: stay out of the sun for a hundred days.
+  [scene] The Sacred Birch
+  [p] The bear stays. She comes out a woman on the twenty-first morning, garlic still on her breath, and finds the mountain already staffed — wind, rain, cloud, and not one of them a husband. So she stands under the sacred tree. Not once. Every day, on the path he has to take if he means to reach the hall.
+  >>> CARD [card ungnyeo] Ungnyeo. Twenty-one days in a cave, and the tiger left first. A husband should be easy.
+  [p] He means to reach the hall. On the third evening he gets as far as the birch, and the seal in his hand becomes a thing he is holding for no reason he can name.
+  [#c9b18f] You're going to walk past again.
+  [#d4b86a] …Not today.
+  [#c9b18f] Yesterday you did. / And the day before. I was standing right here.
+  FIRST LINES:
+    "You're going to walk past again."
+    "Yesterday you did. / And the day before. I was standing right here."
+    "Twenty-one days of that, and this is what came out. / …I was going to say don't come closer."
+
+### dangun--dangun-old-joseon  (Dangun & Old Joseon, Long ago)
+  person=dangun look= from= place= scene=Asadal
+  [#c9b18f] Marry me in the morning. / Right now I'm here.
+  [scene] Asadal
+  [p] Their son is Dangun. The name on the stone is Wanggeom: a king who governs, not one who inherits a bone rank. He founds Asadal where the mountain meets the plain. He rules for fifteen hundred years, and then he becomes the mountain.
+  >>> CARD [card dangun] Dangun. Half heaven, half bear, and all the paperwork of a first king.
+  [quote] He granted three heavenly seals and sent him to govern. Hwanung led a following of three thousand and descended under the sacred altar-tree on the summit of Mount Taebaek; this was called the Divine C
+  [place asadal]
+  [p] Every later crown in these kingdoms argues, one way or another, back to the woman who used to be a bear. Her son’s city keeps his name long after he has become a mountain.
+  [scene] The Fall of Joseon
+  FIRST LINES: (none)
+
+### daejoyoung--balhae  (Balhae, 698)
+  person=daejoyoung look= from= place= scene=
+  [p] The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds every seam a coat has. Gulgul walks in front, bent under a leather pack and wrapped in so much fur he looks like something the forest would hunt. His son walks in his tracks, because there are no other tracks.
+  [p] In the pack, under dried millet and a spare pair of boots, wrapped in a strip of red silk, rides a piece of the Goguryeo crown no longer than a finger: one gold branch snapped off when the palace fell, its little leaves still hanging on their wires. Nobody else would carry it north. Behind them is the smoke of someone else’s victory. Ahead is only the cold that Yeon once pulled a Mohe boy out of.
+  >>> CARD [card daejoyoung] Dae Joyoung. A boy with frozen feet, and a piece of a crown in the pack.
+  [#c45a4a] Father… / Father, my feet… I can’t feel my feet.
+  [#8b3a3a] Good. / Better than feeling them.
+  [#c45a4a] What kind of— Father!
+  [#8b3a3a] There. Under the rock. / A little more.
+  FIRST LINES:
+    "Father… / Father, my feet… I can’t feel my feet."
+    "What kind of— Father!"
+    "Father. What’s… that? / The shiny thing. That. / Is that gold? We had gold? Then why is it always millet gruel—"

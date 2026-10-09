@@ -1,0 +1,434 @@
+{
+  "headers": [
+    {
+      "episode": "Exile",
+      "before": "So the two largest houses in Baekje meet, which has not happened",
+      "label": "The Monastery",
+      "ko": "산사",
+      "why": "Sabi court gossip cuts to a night meeting at a neutral monastery with no marker"
+    },
+    {
+      "episode": "Exile",
+      "before": "They try the ordinary way first: they offer him a name.",
+      "label": "The Offer",
+      "ko": "제안",
+      "why": "monastery table cuts to the clans facing Gyebek himself; new cast, new room"
+    },
+    {
+      "episode": "Exile",
+      "before": "Hundred-Victories narrowly escapes an assassination attempt",
+      "label": "The Drill Ground",
+      "ko": "연병장",
+      "why": "jumps to the Ungjin drill ground and the arrow through the tent"
+    },
+    {
+      "episode": "Exile",
+      "before": "Gyebek is summoned to the hall and told to kneel",
+      "label": "The Sealed Order",
+      "ko": "봉인된 교서",
+      "why": "drill ground and truce aside cut to the Assembly hall where the order is read"
+    },
+    {
+      "episode": "Exile",
+      "before": "He wakes on a beach with sand in his teeth",
+      "label": "Tamla",
+      "ko": "탐라",
+      "why": "Sabi hall → an island beach days later; the biggest place jump in the episode"
+    },
+    {
+      "episode": "Exile",
+      "before": "Euija completes his mourning period — and discovers",
+      "label": "Sabi",
+      "ko": "사비",
+      "why": "island → back to the king in Sabi, years later, then back to the island at Black Rock"
+    },
+    {
+      "episode": "Heaven–Earth King",
+      "before": "In the beginning there were two suns and two moons.",
+      "label": "Two Suns",
+      "ko": "두 개의 해",
+      "why": "island fire frame → the myth itself; reader needs to see the tale begin"
+    },
+    {
+      "episode": "Heaven–Earth King",
+      "before": "At fifteen she puts the seeds in their hands",
+      "label": "The Gourd Vine",
+      "ko": "박 넝쿨",
+      "why": "fifteen-year skip and the move from the village up into the sky"
+    },
+    {
+      "episode": "Heaven–Earth King",
+      "before": "They decide it the way brothers decide things.",
+      "label": "The Contest",
+      "ko": "내기",
+      "why": "sun-shooting done; new beat (riddles and flowers) that decides the two worlds"
+    },
+    {
+      "episode": "Heaven–Earth King",
+      "before": "The fire has gone low. Gyebek sat down at some point",
+      "label": "The Fire",
+      "ko": "모닥불",
+      "why": "myth → back to the island frame; currently unmarked"
+    },
+    {
+      "episode": "Three Princes",
+      "before": "Ordinary Tamla does not play the mainland’s endless status games.",
+      "label": "The Diver",
+      "ko": "해녀",
+      "why": "founding myth → present-day island life with Gyebek and a haenyeo"
+    },
+    {
+      "episode": "Stone Lady",
+      "before": "There is Sanbangduk, who came down out of the rock",
+      "label": "Sanbangdeok",
+      "ko": "산방덕",
+      "why": "serpent-cave tale → a separate tale; matches the existing per-tale header Gameunjang"
+    },
+    {
+      "episode": "Kangrim",
+      "before": "His wife kept the gate-god and the kitchen-god fed",
+      "label": "The Road Down",
+      "ko": "저승길",
+      "why": "magistrate's court → the journey into the underworld"
+    },
+    {
+      "episode": "Coup",
+      "before": "Your Majesty. How many did you dismiss today?",
+      "label": "That Night",
+      "ko": "그날 밤",
+      "why": "Assembly morning → the king's chamber that night with a court maid"
+    },
+    {
+      "episode": "Coup",
+      "before": "So… Baekje? What of Baekje—",
+      "label": "Chang’an",
+      "ko": "장안",
+      "why": "Sabi bedchamber → Tang emperor's court with no marker at all"
+    },
+    {
+      "episode": "Descent",
+      "before": "Among the first sent away, by decree this time, is Heungsu.",
+      "label": "Gomamiji",
+      "ko": "고마미지",
+      "why": "king's nightmares → a minister's exile posting far south"
+    },
+    {
+      "episode": "Descent",
+      "before": "He stops holding court. The wine comes earlier each day",
+      "label": "The Banquet Hall",
+      "ko": "연회장",
+      "why": "Gomamiji → back to Euija's hall"
+    },
+    {
+      "episode": "Descent",
+      "before": "Seongchung starves in a cell within earshot of the feast.",
+      "label": "The Cell",
+      "ko": "옥",
+      "why": "feast hall → prison cell and Kangrim's collection"
+    },
+    {
+      "episode": "Nine Omens",
+      "before": "He keeps a shaman on retainer the way other kings keep song-girls.",
+      "label": "The Shaman",
+      "ko": "무당",
+      "why": "Surabol flashback + market shout → Euija's private audience with a shaman"
+    },
+    {
+      "episode": "Nine Omens",
+      "before": "That night he leaves the palace the way he left it as a boy",
+      "label": "The White River",
+      "ko": "백마강",
+      "why": "palace → the river at night, the episode's turn"
+    },
+    {
+      "episode": "Onjo",
+      "before": "In Buyeo, Lady Ye has raised Jumong’s first son alone.",
+      "label": "Buyeo",
+      "ko": "부여",
+      "why": "Jolbon hall → Buyeo and a new cast (Yuri, Lady Ye) in the second sentence of the episode"
+    },
+    {
+      "episode": "Onjo",
+      "before": "In the hall at Jolbon he lays the half-sword on the boards.",
+      "label": "The Half Sword",
+      "ko": "부러진 칼",
+      "why": "Buyeo → Jolbon hall after a long walk south"
+    },
+    {
+      "episode": "Onjo",
+      "before": "At dawn ten men start packing carts before anyone tells them to.",
+      "label": "The Road South",
+      "ko": "남쪽 길",
+      "why": "grain room at night → dawn departure and the road"
+    },
+    {
+      "episode": "Onjo",
+      "before": "On the ninth day it takes them up Mount Buak",
+      "label": "Mount Buak",
+      "ko": "부아악",
+      "why": "nine days on the road → the summit where the brothers split"
+    },
+    {
+      "episode": "Heungsu",
+      "before": "The courier does not sit. Dust still on him.",
+      "label": "The Courier",
+      "ko": "파발",
+      "why": "two stacked flashbacks (655, 656–659) → present 660; the return to now is unmarked"
+    },
+    {
+      "episode": "Gyebek",
+      "before": "Before he marches he goes home. What he does there",
+      "label": "Home",
+      "ko": "집",
+      "why": "Tamla shore → his house on the mainland; sea crossing is skipped"
+    },
+    {
+      "episode": "Gyebek",
+      "before": "Gyebek and his five thousand set out for the Yellow Mountain.",
+      "label": "The March",
+      "ko": "출정",
+      "why": "dawn yard with the groom → the army on the road"
+    },
+    {
+      "episode": "Sabi",
+      "before": "Euija leaves Sabi at night for Bear Fortress",
+      "label": "Night Flight",
+      "ko": "야반도주",
+      "why": "Tang tent → the king fleeing the capital by night"
+    },
+    {
+      "episode": "Sabi",
+      "before": "Euija’s second son, left behind, crowns himself the next morning.",
+      "label": "The City Gate",
+      "ko": "사비 성문",
+      "why": "fleeing king → back in the capital the next morning; the surrender at the gate"
+    },
+    {
+      "episode": "Sabi",
+      "before": "Chunchu finally arrives at the scene. He makes Euija pour his wine",
+      "label": "The Victory Feast",
+      "ko": "승전 잔치",
+      "why": "Bear Fortress betrayal (and stray Falling Flower lines) → the victors' wine in Sabi"
+    },
+    {
+      "episode": "Sabi",
+      "before": "In the Tang lines the Red Fowl’s staff officers are seen pacing",
+      "label": "Two Camps",
+      "ko": "두 진영",
+      "why": "pagoda / Chunchu and Bupmin → the allied armies eyeing each other"
+    },
+    {
+      "episode": "Kim Chunchu†",
+      "before": "It is the sixth month of 661. Baekje has fallen",
+      "label": "The Sickroom",
+      "ko": "병석",
+      "why": "opener is at a temple; the deathbed scene starts here in a different room"
+    },
+    {
+      "episode": "King Pungjang",
+      "before": "Boksin sends a messenger to the Tang walls with a question.",
+      "label": "The Tang Walls",
+      "ko": "당군 성벽",
+      "why": "Juryu council → an exchange with Liu Rengui at the garrison"
+    },
+    {
+      "episode": "King Pungjang",
+      "before": "Then Prince Pung wants to move house. The hill is barren",
+      "label": "Pisong",
+      "ko": "피성",
+      "why": "garrison taunt → the move to the plain and back, months of time"
+    }
+  ],
+  "bridges": [
+    {
+      "episode": "Exile",
+      "after": "A man who cannot hear a joke will hear an order perfectly.",
+      "en": "Back on the mainland, the king's three years run out.",
+      "ko": "뭍에서는 왕의 삼 년이 다 끝난다.",
+      "why": "island beat cuts straight to Euija finishing mourning; the reader doesn't know years have passed or where we are"
+    },
+    {
+      "episode": "Sulmun",
+      "after": "Before the island there is a woman, and she is enormous.",
+      "en": "Some fell out on the way. The island counts three hundred and sixty-eight hills.",
+      "ko": "오다가 흘린 흙도 있다. 섬은 오름을 삼백예순여덟 개로 센다.",
+      "why": "Gyebek quotes 'You said there are three hundred and sixty-eight hills', but nobody said it"
+    },
+    {
+      "episode": "Coup",
+      "after": "He’s also recruited the other clans — the houses Satek had crowded",
+      "en": "Then, for the benches, the king stages a little scene.",
+      "ko": "그다음 왕은 대신들 보라고 작은 연극을 한 판 벌인다.",
+      "why": "'You too! You're a Satek lackey??!!' lands with no addressee; the reader can't tell it's theatre aimed at Chunbok"
+    },
+    {
+      "episode": "Coup",
+      "after": "Eleven of them by nightfall.",
+      "en": "Months later, the new Premier is in Chang’an, talking too much.",
+      "ko": "몇 달 뒤, 새 상좌평은 장안에서 말이 많다.",
+      "why": "Euija's bedchamber → Gaozong and Chunbok in China with no time, place or reason"
+    },
+    {
+      "episode": "Yellow Mountain",
+      "after": "Long ago Goujian of the Central Plain shattered Wu’s host",
+      "en": "Dust on the ridge. The Silla marshal rides out ahead of his army.",
+      "ko": "고갯마루에 먼지가 인다. 신라 장수가 군대보다 앞서 나온다.",
+      "why": "Yushin starts talking to Gyebek with no arrival beat; also the 'And theirs? / Fifty thousand' lines are both tagged Gyebek"
+    },
+    {
+      "episode": "Sabi",
+      "after": "The rock is called the Falling Flowers afterwards",
+      "en": "Back in the palace, the winners want their wine poured.",
+      "ko": "궁에서는 이긴 쪽이 술을 따르라 한다.",
+      "why": "maids / Falling Flower Rock lines → Chunchu suddenly present in Sabi"
+    },
+    {
+      "episode": "Buyeo Euija†",
+      "after": "He is shouting at the man who won. Later men will call it",
+      "en": "Then the room fills with men only he can see.",
+      "ko": "그때 방이 그에게만 보이는 이들로 찬다.",
+      "why": "'so you guys are real after all' and Haewonmek appear with no signal that the death escorts have arrived"
+    },
+    {
+      "episode": "King Pungjang",
+      "after": "FLASHBACK 371 The Seven-Branched Sword",
+      "en": "Three hundred years on, the bill comes due. Baekje's rebels want ships.",
+      "ko": "삼백 년 뒤, 그 값을 받을 때가 온다. 백제 반군은 배가 필요하다.",
+      "why": "opens on a 371 flashback, then Boksin (never introduced) is mid-errand in Yamato; nothing says the capital has fallen and a rebellion exists"
+    }
+  ],
+  "stories": [
+    {
+      "episode": "Exile",
+      "logline": "With the queen dead and the king bound by three years of mourning, Baekje's two feuding great houses make a one-night truce to remove the king's clanless champion Gyebek; bribes fail, an arrow misses, so they exile him under the king's own borrowed seal, and he washes up on Tamla, where an island king starts telling him stories.",
+      "works": "partly",
+      "fixes": "The plot is strong but told out of order and twice: block 9 already puts him on the ship before the monastery meeting, and 'put on a boat' plus the 'Satek water at the berth / Yunbi winter contract' line recur at 41 and 52. Cut block 9, and make 41 the hand-off into the reading scene (45–52). Blocks 42 ('Nine, by then') and 43 (the aphorism) are orphans; cut them or tie 42 to a counted attempt. The Euija rage (70–74) sits between island scenes; either give it its own Sabi header (proposed) or move it to Coup's opening, where it would also explain why he purges. Timeline conflict: this episode has Euija finish three years of mourning, yet Coup and Descent are dated 655–656, and Gyebek spends five years on Tamla. Pick one count. Block 93's speaker is undefined (a fisher). The last beat ('First night on the island… two suns') rewinds four years after 'Four years from now'; turn it into a bold next-episode card that says we are going back to that first night."
+    },
+    {
+      "episode": "Heaven–Earth King",
+      "logline": "On Gyebek's first night on Tamla, Yuri Dora tells how a god's twin sons shot down the extra sun and moon, then how the younger cheated his honest brother out of the living world, so the elder took the dead.",
+      "works": "yes",
+      "fixes": "Clean, funny, self-contained, and the jump in is set up by Exile's last line. Its weakness is that the frame vanishes for 90 blocks: add the 'Two Suns' and 'The Fire' headers so the reader knows when we leave and return to the island. The closing 'Rice with sand in it' is a perfect payoff; keep it."
+    },
+    {
+      "episode": "Sulmun",
+      "logline": "Mending a roof, Gyebek hears how the giantess built the island and lost her sons, and how her bridge to the mainland failed for one roll of silk; the literal man fixes on being 'one short'.",
+      "works": "partly",
+      "fixes": "Gyebek cites 368 hills nobody mentioned (bridge proposed). The silk-bridge beat is told twice (narration 14 plus quote 15); keep one. The 'one roll short' line wants a later payoff, perhaps one man short at the Yellow Mountain."
+    },
+    {
+      "episode": "Three Princes",
+      "logline": "The island's founding (three princes from the earth, three brides from a box) and the hunter-god divorce, and in between Gyebek meets ordinary Tamla kindness that will keep him five years.",
+      "works": "partly",
+      "fixes": "Two myths and one present-day beat with no through-line. Mark the haenyeo beat with a header (proposed). Give Gyebek one want, such as the question 'the part where he comes home'; that is the strongest moment, so end the episode near it rather than on the card. Yuri Dora interjects inside the myth at block 6 without a frame cue; harmless, but a narration line before it would help."
+    },
+    {
+      "episode": "Stone Lady",
+      "logline": "Three unkind tales (the magistrate who looked back, the cliff goddess who returned to stone, the daughter thrown out who was the family's luck) and Gyebek reading each as a rule.",
+      "works": "partly",
+      "fixes": "An anthology, not a story. The title belongs to Sanbangdeok, whose tale is the thinnest (four blocks), and her husband is tagged 'herald' (block 12); fix the speaker. Block 2 teases Kangrim, but it is buried as a parenthesis; either cut it or make it the closing hook. Consider retitling for Gameunjang, the tale Gyebek reacts to most."
+    },
+    {
+      "episode": "Gardener",
+      "logline": "A servant boy, Hallakgungi, finds his father's flower field and restores his murdered mother, then Jacheongbi beats a rule with its wording and fetches back her dead lover; Gyebek asks whether the dead can be fetched back.",
+      "works": "yes",
+      "fixes": "Works as a pair with a clear frame (orchard, then rain-doorway). Data fix: the card at block 5 uses person 'sara' but is captioned Hallakgungi, and 'sara' speaks as Hallakgungi at 35. Gyebek's last question is a good plant for the Yellow Mountain; keep it."
+    },
+    {
+      "episode": "Kangrim",
+      "logline": "A living magistrate's runner fetches the judge of the dead, is split between both worlds, and loses the death-ledger to a crow, which is why no one knows his hour.",
+      "works": "yes",
+      "fixes": "Self-contained and the key origin for every death scene. Blocks 2, 5, 15 and 17 are very long summary paragraphs; break each into two or three beats with one line of dialogue. Add the 'Road Down' header."
+    },
+    {
+      "episode": "Tribute",
+      "logline": "In 498 Tamla forgets its oranges, Baekje marches to the shore and stops, and the island owes a favour, which is why it takes Baekje's exiles.",
+      "works": "partly",
+      "fixes": "A six-block footnote with no character. Fold it into Exile at the moment the boat leaves ('there is an island, and the island owes it a favour') or into Gyebek's first night, and cut the episode. Its card 'Meanwhile in Sabi' jumps forward 157 years; if kept, mark the jump back."
+    },
+    {
+      "episode": "Coup",
+      "logline": "Euija, finally free of the clans' grip, stages martial law and an enabling law, replaces the whole Assembly with forty-one sons, and turns a Satek into his Premier; then that Premier tells the Tang emperor Baekje will fall on its own.",
+      "works": "partly",
+      "fixes": "The turn is great but the episode never shows why Euija acts now; open on his rage over Gyebek's exile (move Exile 70–74 here) so the purge is revenge with a face. The martial-law speeches (3–8, 13–14) are modern-statute pastiche at length; cut to two lines and let Chunbok's wet-ink joke carry it. Block 28 needs setup (bridge proposed). The Chang'an coda (37–42) has no header, time or reason Chunbok is there; mark it, or move it to Descent as a cold-open betrayal. Block 21–22 (Ye Sikjin's drawer) is a good plant; keep it."
+    },
+    {
+      "episode": "Descent",
+      "logline": "The king who beat eight houses can't sleep: he drinks, exiles Heungsu, drowns in a harem, and starves the one minister (Seongchung) who demands open court, then ignores his dying letter.",
+      "works": "partly",
+      "fixes": "Blocks 14–24 are image-prompt shot lists ('They hike the silk. One knee up. A twist.'), which the narration rules forbid; cut them to one paragraph and the maids' dialogue. Mark Gomamiji and the cell (headers proposed). The speaker 'nation-baekje' at 39 has no identity. The best story spine is Seongchung (entrance at 45, death at 51–56); plant him earlier (one line in Coup or at 7–8) so his death lands."
+    },
+    {
+      "episode": "Nine Omens",
+      "logline": "Chunchu manufactures nine omens to break Baekje's nerve; Euija, a lifelong maker of fake miracles, kills the shaman who reads them truly, can't admit they were made, and finally jumps into the White River and wakes up: 'Summon Gyebek'.",
+      "works": "yes",
+      "fixes": "Strong arc with a real turn. The omens are told twice (numbered list 2–10 plus the omens block 11); keep the list or the block, not both. Move the Surabol flashback (12) to just after block 1 so the reader knows the omens are made before seeing them, or keep it after for irony but add the headers. The Yamato quote (25) is a stray; cut it."
+    },
+    {
+      "episode": "Onjo",
+      "logline": "When Jumong's first son walks in with half a sword, Sosuno takes her two boys south rather than live in a footnote; a white stag leads them to Mount Buak, Biryu chooses the sea, and Onjo founds Baekje.",
+      "works": "partly",
+      "fixes": "A complete founding tale, but the jump in from 'Summon Gyebek!' is jarring and the jump out ('two armies… a dead man's letter') points at the wrong episode. Opening says 'Nobody there ever mentions Buyeo' and then cuts to Buyeo; headers proposed. Block 38 summarises the stag arrival before block 39 tells it; cut 38. The explicit grain-room scene (26–34) runs long against the rest; trim it so the farewell at 35–36 stays the emotional peak."
+    },
+    {
+      "episode": "Sungchung",
+      "logline": "With two armies converging, Euija bullies Chunbok into sending Gyebek out with too few men, while Ye Sikjin quietly does his own sums.",
+      "works": "no",
+      "fixes": "Eight blocks, titled for a man who died two episodes ago and never appears. The previous card promises 'a dead man's letter', so open on Seongchung's letter being read aloud in the panicking court and keep the title, or merge this into Heungsu as its cold open. 'Send General Gyebek' is premature: he is still on Tamla until the next two episodes; reorder so the summons comes first."
+    },
+    {
+      "episode": "Heungsu",
+      "logline": "The exiled minister who drew the same map every morning for four years is asked for a plan, says 'Seongchung already wrote it', is ignored, and walks north toward a pass already crossed.",
+      "works": "partly",
+      "fixes": "The Gomamiji flashback and the courier scene are the best writing in the range. The first flashback is labelled 655 'The berth', but Gyebek talks about marching to the Yellow Mountain, which is 660 and after his exile; either redate it to 660 or rewrite it as the 655 farewell. The return to the present (block 3) needs a header (proposed). The card ('a boat is coming for the Turtle') repeats Gyebek's block 2 nearly word for word."
+    },
+    {
+      "episode": "Gyebek",
+      "logline": "In his fifth year on Tamla the boat comes; Gyebek refuses comfort, promises Yuri Dora he will not forget people, goes home, kills his own family so the Tang can't enslave them, and rides for the Yellow Mountain.",
+      "works": "partly",
+      "fixes": "The emotional middle is missing: he was summoned by the king who named him, but the episode never shows Euija and Gyebek together. Add one short reunion beat at Sabi between the shore and home; it is the payoff of the whole Exile arc. Block 0 starts on the island with no place cue. The family-killing (15–16) arrives with no setup; one line of Gyebek seeing the odds first would earn it."
+    },
+    {
+      "episode": "Three Realms",
+      "logline": "At heaven's annual pavilion meeting, gods gossip and flirt while Kangrim quietly asks the Gardener if the dead can be brought back, and the brothers note mortals talk of reuniting Dangun's land.",
+      "works": "partly",
+      "fixes": "It opens 'Epilogue · Part II', which is wrong here, placed between Gyebek's march and the battle. Retitle the opener. The Samsin/Haemosu sex chatter (12–17) is a long detour; cut it to one exchange so Kangrim's resurrection question, the real plant, is the centre. The 'crucify' joke is out of world. Placement breaks the march → battle momentum; consider moving it after Yellow Mountain, so Kangrim's question follows Gyebek's death."
+    },
+    {
+      "episode": "Yellow Mountain",
+      "logline": "Five thousand men who have already waved at death hold three camps against fifty thousand, win four times, until two Silla boys die on purpose and their fathers' grief breaks the line; Kangrim asks Gyebek his question and Gyebek finishes his duty.",
+      "works": "yes",
+      "fixes": "The best-structured episode in the range: clear clash headers and a count. Fixes are local. 'And theirs? / Fifty thousand, my lord' (34–35) are both tagged Gyebek. Yushin speaks at 45 with no arrival (bridge proposed), and later rides out alone again at 66; keep the second. Block 122 repeats 112's 'unfinished weather' line. Block 127 ('gaozong: ?') is an orphan; cut it. The Thermopylae aside (42) breaks period voice."
+    },
+    {
+      "episode": "Sabi",
+      "logline": "Euija tries to feed off the Tang, flees to Bear Fortress, and is sold to the Red Fowl by the Ye brother he never seated, while his son kneels, the palace women jump, and Chunchu makes him pour the wine.",
+      "works": "partly",
+      "fixes": "Ye Sikjin's arc (the drawer from Coup, 'Which seat?', the charcoal count) is a great self-contained betrayal and should be the spine. Cut the 'KIM CHUNCHU!!!' shout (16–19); it appears again in Buyeo Euija† with its setup, and here Chunchu answers 'Hm?' from nowhere. Move the maid lines and the second Falling Flower line (55–58) up next to the cliff scene (25–27). Seven quotes in a row (48–54) stall the climax; keep one or two. Headers proposed for the flight, the gate, the feast and the two camps."
+    },
+    {
+      "episode": "Buyeo Euija†",
+      "logline": "In Chang'an the captive king reads aloud a confession he mocks as a bad story, signs it, curses Chunchu across the sea, and dies asking for an avenger, with Kangrim reminding him of the boy he named.",
+      "works": "partly",
+      "fixes": "The confession scene (3–8) is excellent. Death arrives with two escorts (Haewonmek at 19–22, then Kangrim at 23–26) and no cue; bridge proposed, or drop Haewonmek. The narration after death runs fourteen blocks of epitaph, some repeating themselves (27–30, 32–33, 39); keep 35–38 and cut the rest. Block 35 says he spoke at forty-one to a boy he named, but he named Gyebek at thirty-two; fix it. Block 40 spends a future reveal (Kyun Hwon, 240 years); trim to the tease in 30."
+    },
+    {
+      "episode": "Kim Chunchu†",
+      "logline": "Dying at fifty-eight with half the job done, Chunchu admits the war was for his daughter, hands his son the dream 'a king for all', and walks west with Kangrim.",
+      "works": "yes",
+      "fixes": "Works. The opener at a temple and the deathbed are different rooms (header proposed). Block 3 restates Buyeo Euija†'s closing card almost verbatim; cut one. Parenthetical ages (Munhee (55), Bupmin (35), Muyeol (58)) and the regnal table read as textbook. Blocks 17–18 repeat each other."
+    },
+    {
+      "episode": "Ungjin Commandery",
+      "logline": "The Tang net Baekje into commanderies under a cheerful disgraced old general, demote Silla's king to a prefectural clerk, and Gaozong, coached by Wu Zetian, picks four generals to finish his father's war on Goguryeo.",
+      "works": "partly",
+      "fixes": "Well-headed, but no protagonist: four short scenes in three countries. Make Munmu's 'sign as its clerk, and keep a copy' the spine and end on it, or give Liu Rengui a want. Two diagrams plus a table for the Four Beasts (25–27) is one too many. Gaozong's edict (29) is archival text in a mouth; shorten it. The card hands off to Pung well."
+    },
+    {
+      "episode": "King Pungjang",
+      "logline": "Rebel general Boksin buys back Baekje's exiled prince from Yamato with a hundred Tang prisoners, stages a roll call on the beach that goes comically wrong, and finds the king he crowned already slipping out of his hands.",
+      "works": "partly",
+      "fixes": "The Roll Call is a delightful standalone scene. The episode buries it: it opens on a 371 sword flashback, and Boksin and the restoration are never set up (bridge proposed; better, move the flashback after the Asuka scene, where the 'favour' is asked). Block 7 says the empress 'dies the next year', but block 9 is 661, the same year; fix the order. Blocks 42–45 restate the same Boksin–Pung rift four times; keep one. The Pisong beat is told backwards (block 50 says they moved back before 51–52 argue the move); reorder to argue, move, and return. The card says 'Baekje has its king back' after an episode about him not really being king; sharpen it to the rift."
+    }
+  ]
+}

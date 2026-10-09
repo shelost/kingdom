@@ -1,0 +1,1863 @@
+[
+ {
+  "n": 1,
+  "chapter": "samhan",
+  "title": "Queen Sunduk",
+  "year": "632",
+  "first": {
+   "kind": "p",
+   "en": "A Queen? Ridiculous.",
+   "ko": "여왕? 웃기지도 않는군.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Six men who hate the word “woman” crowned one anyway. How? Go back one night, to a brazier…!",
+   "ko": "“여자”라는 말을 질색하는 사내 여섯이, 끝내 여자를 왕으로 세웠다. 어떻게? 하룻밤 전, 화로 하나 앞으로 돌아가 보자…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 2,
+  "chapter": "samhan",
+  "title": "Harmony Council",
+  "year": "632",
+  "first": {
+   "kind": "p",
+   "en": "The Harmony Council meets to debate who the next king should be. Six nobles, one night. Nobody stands up until they all agree.",
+   "ko": "화백회의가 다음 왕을 누구로 할지 논한다. 귀족 여섯, 밤 하나. 뜻이 하나로 모이기 전엔 아무도 일어서지 못한다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Every sleeve in that room learned to fight in one dead king’s yard. Who was he? Back we go, to the Cloud King…!",
+   "ko": "그 방의 소매들은 모두 한 죽은 왕의 연무장에서 컸다. 그는 누구였나? 거슬러 올라가자. 구름왕에게로…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 3,
+  "chapter": "samhan",
+  "title": "Jinheung, the Cloud",
+  "year": "554",
+  "first": {
+   "kind": "p",
+   "en": "Ask anyone in Surabol about the Cloud King and they'll tell you about his stones. Ask anyone in Sabi and they'll change the subject. You'll find out why. Not yet.",
+   "ko": "서라벌 사람에게 구름왕을 물으면 그의 비석 이야기를 할 것이다. 사비 사람에게 물으면 말을 돌릴 것이다. 왜인지는 알게 된다. 아직은 아니다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "That rain fell on Baekje’s field. Baekje kept the grudge. Now meet the prince who will inherit it…!",
+   "ko": "그 비가 내린 밭은 백제의 것이었다. 백제는 그 원한을 간직했다. 이제 그 원한을 물려받을 왕자를 만나 보자…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 4,
+  "chapter": "samhan",
+  "title": "Prince Euija",
+  "year": "632",
+  "first": {
+   "kind": "p",
+   "en": "In five days, Prince Euija becomes Crown Prince Euija. He is thirty-two, which is late for it. He has fifteen sons, which is early for everything else.",
+   "ko": "닷새 뒤, 의자왕자는 의자태자가 된다. 서른둘이니 늦은 편이다. 아들은 열다섯이니, 다른 건 다 이른 편이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Eight houses. Eight boys on the sand. And one with a borrowed name…!",
+   "ko": "여덟 가문. 모래판의 아이 여덟. 그리고 이름을 빌린 아이 하나…!",
+   "bold": true
+  },
+  "lastWords": 13
+ },
+ {
+  "n": 5,
+  "chapter": "samhan",
+  "title": "Eight Great Clans",
+  "year": "632",
+  "first": {
+   "kind": "p",
+   "en": "Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.",
+   "ko": "사택. 연비. 진모. 목리. 해. 백. 국. 안.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "“Restore the reign of the thirteenth Eraha!” Every house in Sabi still chants it. To hear why, we go back three hundred years…!",
+   "ko": "“열셋째 어라하의 치세를 다시 이루소서!” 사비의 가문들은 지금도 그 말을 외친다. 왜인지 들으려면 삼백 년을 거슬러 가야 한다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 6,
+  "chapter": "samhan",
+  "title": "Gunchogo, the 13th",
+  "year": "371",
+  "first": {
+   "kind": "p",
+   "en": "Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.",
+   "ko": "백제의 열셋째 임금이 북쪽 평양으로 진군한다. 고구려 임금이 제 성벽 위에서 죽는다. 칠백 년 동안, 그런 일은 다시 없다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Back to the snow, and to Goguryeo’s most frightening commander. First question: do you know what happens to traitors…?",
+   "ko": "다시 눈 속으로, 고구려에서 가장 무서운 장수에게로. 첫 번째 질문이다. 반역자가 어떻게 되는지 아느냐…?",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 7,
+  "chapter": "samhan",
+  "title": "Commander Yeon",
+  "year": "634",
+  "first": {
+   "kind": "p",
+   "en": "In the high mountains of Manchuria, a young man is caught in the snow by a Goguryeo soldier.",
+   "ko": "만주의 높은 산속, 한 청년이 눈밭에서 고구려 병사에게 붙잡힌다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "He promised his father half. He has never said half of anything. Next stop: Pyongyang, and a room full of men counting grain…!",
+   "ko": "아버지께 반만 하겠다고 했다. 그는 평생 무엇이든 반만 해 본 적이 없다. 다음은 평양. 곡식을 세는 사내들로 가득한 방이다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 8,
+  "chapter": "samhan",
+  "title": "High Summit",
+  "year": "634",
+  "first": {
+   "kind": "p",
+   "en": "So Yeon rides to Pyongyang in his father's place. Five commanders, one king, one room. They call it the High Summit.",
+   "ko": "그래서 연이 아버지 대신 평양으로 간다. 대가 다섯, 왕 하나, 방 하나. 제가회의라 부른다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Once, Goguryeo did not argue about grain. It had a king with sixty-four fortresses. To meet him, we go back two centuries…!",
+   "ko": "한때 고구려는 곡식을 두고 다투지 않았다. 성 예순넷을 가진 왕이 있었으니까. 그를 만나려면 이백 년을 거슬러 가야 한다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 9,
+  "chapter": "samhan",
+  "title": "Gwanggaeto, the Great King",
+  "year": "400",
+  "first": {
+   "kind": "p",
+   "en": "Silla is drowning. An army from across the sea is inside its walls. Then Gwanggaeto sends fifty thousand horsemen south, and the Wa are gone.",
+   "ko": "신라가 무너지고 있다. 바다 건너 온 군대가 도성 안에 있다. 그때 광개토가 기병 오만을 남으로 내려보내고, 왜는 사라진다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Bupmin is fifteen now. The Hwarang have five rules, and his uncle has one question: which will you break first…?",
+   "ko": "법민이 열다섯이 되었다. 화랑에게는 계율이 다섯, 외숙에게는 질문이 하나 있다. 너는 무엇을 제일 먼저 어길 것 같으냐…?",
+   "bold": true
+  },
+  "lastWords": 20
+ },
+ {
+  "n": 10,
+  "chapter": "five-principles",
+  "title": "Bupmin",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "It is the spring Bupmin turns fifteen.",
+   "ko": "법민이 열다섯이 되는 봄이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The yard has two names it still whispers. Tonight the Marshal says them out loud…!",
+   "ko": "연무장이 아직도 목소리를 낮추는 이름이 둘 있다. 오늘 밤, 장군이 그 이름을 소리 내어 말한다…!",
+   "bold": true
+  },
+  "lastWords": 15
+ },
+ {
+  "n": 11,
+  "chapter": "five-principles",
+  "title": "Sadaham",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "Every yard has its ghosts. This one has two, and they have never missed roll call.",
+   "ko": "연무장마다 귀신이 있다. 이곳엔 둘이다. 점호에 빠진 적이 한 번도 없다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!",
+   "ko": "누나가 너무 빨리 달리면 법민은 늘 먼저 고삐를 당긴다. 고타소는 당기지 않는다. 말 앞에서도, 누구 앞에서도…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 12,
+  "chapter": "five-principles",
+  "title": "Gotaso",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "A young girl is going to do what she’s going to do.",
+   "ko": "어린 여자애는 하고 싶은 건 결국 하고 만다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Four children, already named. Now the boy has to ask her father. And her father wants a vow…!",
+   "ko": "아이 넷, 이름까지 다 지어 두었다. 이제 그 사내가 아버지께 청할 차례다. 그리고 아버지는 맹세를 원한다…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 13,
+  "chapter": "five-principles",
+  "title": "Pumsuk",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "Princess Gotaso (16) has fallen in love with the Hwarang Pumsuk (23), and the whole court can see it before either of them admits the word. The maids keep score of the accidental meetings. The guards move their posts to give the flowering trees more privacy than any regulation requires. The entire palace is, quietly, on her side.",
+   "ko": "고타소 (16)는 화랑 품석 (23)과 사랑에 빠진다. 둘 중 누가 그 말을 입 밖에 내기 전에, 궁 안이 먼저 안다. 시녀들은 그 ‘우연한’ 마주침의 횟수를 세고 있다. 위병들은 어떤 규정에도 없는 만큼 꽃나무 뒤에 그늘을 내어 주려 초소를 옮긴다. 온 궁이, 조용히, 그녀의 편이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "“Dear… have you already forgotten how we met?” Munhee hasn’t. It involves a dream, a skirt, and a coat torn on purpose…!",
+   "ko": "“여보… 우리가 어떻게 만났는지는 벌써 까먹었나?” 문희는 잊지 않았다. 꿈 하나, 치마 하나, 그리고 일부러 찢긴 저고리 하나…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 14,
+  "chapter": "five-principles",
+  "title": "Munhee",
+  "year": "625",
+  "first": {
+   "kind": "dialogue",
+   "who": "chunchu",
+   "en": "Dear… have you already forgotten how we met?",
+   "ko": "여보.... 우리가 어떻게 만났는지는 벌써 까먹었나?"
+  },
+  "last": {
+   "kind": "p",
+   "en": "In Surabol, one father puts down his star. In Pyongyang, another marches his son to school without taking off his boots…!",
+   "ko": "서라벌에서 한 아버지가 별을 내려놓는다. 평양에서는 다른 아버지가 아들을 학당으로 끌고 간다. 신발도 벗지 않은 채로…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 15,
+  "chapter": "five-principles",
+  "title": "Academy",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "Yeon's wife has given him three sons. They could not be more different.",
+   "ko": "연의 아내는 아들 셋을 낳았다. 셋이 이보다 다를 수가 없다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Field trip. Yeon takes the boys to see a very big rock. The rock has a list on it, and a question…!",
+   "ko": "소풍이다. 연이 아들들을 데리고 아주 큰 바위를 보러 간다. 바위에는 목록이 하나 새겨져 있고, 질문이 하나 숨어 있다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 16,
+  "chapter": "five-principles",
+  "title": "Stele",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "Yeon takes his sons to see the Great King's stone. It lists everything he ever took.",
+   "ko": "연이 아들들을 데리고 대왕의 비석을 보러 간다. 그 왕이 가져간 것이 전부 적혀 있다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Late in the year, old Dosuryu walks in without taking off his boots. In thirty years he has never once done that…!",
+   "ko": "그해 저물녘, 도수류 영감이 신을 신은 채로 들어온다. 삼십 년 동안 한 번도 없던 일이다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 17,
+  "chapter": "five-principles",
+  "title": "Dosuryu",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "Late in the year Dosuryu comes in without knocking, which he has done since Gesomun was small enough to lift by the collar, and without taking his boots off, which he has never done.",
+   "ko": "그해 늦게 도수류가 문도 두드리지 않고 들어온다. 개소문이 멱살 잡아 들어 올릴 만큼 작았을 때부터 늘 그랬다. 장화도 벗지 않는다. 그건 처음이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Meanwhile in Sabi, Euija is king at last. On his coronation morning, several hundred people see a dragon…!",
+   "ko": "한편 사비에서는 마침내 의자가 왕이 된다. 즉위하던 날 아침, 수백 명이 용을 본다…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 18,
+  "chapter": "five-principles",
+  "title": "King Euija",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "King Mu is dead at eighty, after a lifetime of fighting Silla.",
+   "ko": "무왕이 여든에 세상을 떠난다. 평생 신라와 싸우다가.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Euija can fake a dragon. He can’t fake a fortress. For that he needs a general who does exactly what he says…!",
+   "ko": "의자는 용을 지어낼 수 있다. 성은 지어낼 수 없다. 그러려면 말한 대로만 하는 장수가 하나 필요하다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 19,
+  "chapter": "five-principles",
+  "title": "Yunchung",
+  "year": "641",
+  "first": {
+   "kind": "p",
+   "en": "There was only one man Euija knew he could trust to deliver.",
+   "ko": "의자가 믿고 맡길 수 있는 사람은 단 한 명뿐이었다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "“What is the Severing?” Gyebek asked. Any grandmother in Sabi could tell him. We’ll go back a hundred years and see for ourselves…!",
+   "ko": "“斷이 뭡니까.” 계백이 물었다. 사비의 할머니라면 누구나 말해 줄 수 있다. 우리는 백 년을 거슬러 가서 직접 보자…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 20,
+  "chapter": "five-principles",
+  "title": "The Severing",
+  "year": "553–554",
+  "first": {
+   "kind": "p",
+   "en": "The sad thing about betrayal… is that it never comes from your enemies.",
+   "ko": "배신이 슬픈 건… 그게 절대 적에게서 오지 않는다는 거다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Back to now. Ten thousand Baekje men march on Daeya. Its grain clerk is called Gumil. Remember that name…!",
+   "ko": "다시 지금으로. 백제군 만 명이 대야성으로 향한다. 그 성의 곳간지기 이름은 검일. 기억해 두라…!",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 21,
+  "chapter": "iron-will",
+  "title": "Gumil",
+  "year": "642",
+  "first": {
+   "kind": "p",
+   "en": "Before Daeya — before the year that will stain his hands — the Sword of Silla rides alone to a small cavern lake in the hills: a bowl of black water under stone, cold enough to teach the bones manners. He has heard of the place the way a son hears of a hill his father once named a spring. His father came until the hill learned his walk. He comes the same way. Water. One question. The name.",
+   "ko": "대야 전 — 손을 더럽힐 해 전 — 신라의 도검은 홀로 산중의 작은 동굴 호수로 간다. 돌 아래 검은 물의 사발, 뼈에 예의를 가르치는 냉기. 아버지가 샘이라 이름 붙인 언덕을 아들이 듣듯 그곳은 들어 보았다. 아버지는 언덕이 걸음을 배울 때까지 왔다. 같은 길로 온다. 물. 질문 하나. 이름.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "One dying lamp. One cold pallet. One feast still lit down the hall. How long can a True Bone lie still…?",
+   "ko": "꺼져 가는 등잔 하나. 차가운 잠자리 하나. 복도 끝엔 아직 불 밝힌 잔치. 진골은 얼마나 오래 누워 버틸 수 있을까…?",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 22,
+  "chapter": "iron-will",
+  "title": "Maehwa",
+  "year": "642",
+  "first": {
+   "kind": "p",
+   "en": "A man is measured by his self-control.",
+   "ko": "사내의 그릇은 자제력으로 잰다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Morning comes. So does her husband, back from the stores. He wants the whole story. Every word of it…!",
+   "ko": "아침이 온다. 곳간에서 남편도 돌아온다. 그는 전부 듣고 싶어 한다. 한 마디도 빼지 말고…!",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 23,
+  "chapter": "iron-will",
+  "title": "Siege of Daeya",
+  "year": "642",
+  "first": {
+   "kind": "p",
+   "en": "Grey in the door-slit. The feast is a cold hall. Gumil comes back from the stores and finds his wife where the True Bone left her — dirtied green still open, last night still on the boards. He does not ask if she is hurt. He asks for the story.",
+   "ko": "문틈의 회색. 잔치는 차가운 전각이다. 검일이 창고에서 돌아와 진골이 두고 간 자리에 아내를 본다 — 때 묻은 초록은 아직 열려 있고, 지난밤은 아직 마루에 있다. 다쳤느냐고 묻지 않는다. 이야기를 묻는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "In Pyongyang, Yeon has spent all summer bowing. Now he is throwing a party, and everyone important is invited…!",
+   "ko": "평양에서 연은 여름 내내 고개를 숙였다. 이제 그가 잔치를 연다. 중요한 사람은 빠짐없이 초대받았다…!",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 24,
+  "chapter": "iron-will",
+  "title": "Yeon’s Massacre",
+  "year": "642",
+  "first": {
+   "kind": "p",
+   "en": "Yeon's father dies in the spring, in his own bed in the east. The seal should pass to the son. The Summit takes the whole summer to admit it. When it finally does, Yeon decides to host a banquet. The king is in attendance.",
+   "ko": "봄에 연의 아버지가 동쪽 제 집 자리에서 숨을 거둔다. 인장은 아들에게 가야 마땅하다. 제가회의는 그걸 인정하는 데 여름 한 철을 다 쓴다. 마침내 인정하자, 연은 연회를 열기로 한다. 왕도 자리한다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "A kingdom with its doors shut, and a man with five swords on his back. Naturally, Chunchu wants to go and knock…!",
+   "ko": "문을 걸어 잠근 나라, 그리고 칼 다섯 자루를 등에 멘 사내. 그러니 당연히, 춘추는 그 문을 두드리러 가겠다고 한다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 25,
+  "chapter": "iron-will",
+  "title": "Chunchu & Yeon",
+  "year": "642",
+  "first": {
+   "kind": "p",
+   "en": "Since Daeya fell, Chunchu has had one request for the Queen: send him north to Pyongyang, to beg Goguryeo for troops against Baekje. She has not said yes.",
+   "ko": "대야성이 떨어진 뒤로 춘추가 여왕께 올리는 청은 하나뿐이다. 자기를 북쪽 평양으로 보내 달라는 것, 고구려에 가서 백제를 칠 군사를 빌려 오겠다는 것. 여왕은 아직 허락하지 않았다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "One envoy left Pyongyang bleeding. Whose blade was it? Now the King of Baekje walks in on purpose, laughing…!",
+   "ko": "사신 하나가 피를 흘리며 평양을 떠났다. 누구의 칼이었을까? 이번엔 백제의 왕이 제 발로 걸어 들어온다. 웃으면서…!",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 26,
+  "chapter": "iron-will",
+  "title": "Euija & Yeon",
+  "year": "642",
+  "first": {
+   "kind": "p",
+   "en": "News of Yeon’s Massacre reaches Baekje.",
+   "ko": "연개소문의 난 소식이 백제에 닿는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Why does the Eternal General flinch at one Silla name? Go back to a ditch, a white horse, and an unknown captain…!",
+   "ko": "영원의 대장군은 왜 신라의 이름 하나에 움찔하는가? 참호 하나, 흰 말 한 마리, 이름 없는 대장 하나에게로 거슬러 가 보자…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 27,
+  "chapter": "iron-will",
+  "title": "Nangbi",
+  "year": "629",
+  "first": {
+   "kind": "p",
+   "en": "Kim Yushin — a name that strikes fear in all of Samhan. Maybe this is why.",
+   "ko": "김유신. 삼한 어디서든 두려움을 부르는 이름. 아마 이래서일 것이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Thirteen years on, the banner captain has a queen, a title, and a long list of Baekje fortresses. He's working through it…!",
+   "ko": "십삼 년 뒤, 그 깃발 대장에게는 여왕과 칭호, 그리고 백제 성들의 긴 목록이 있다. 그는 그 목록을 하나씩 지워 나가는 중이다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 28,
+  "chapter": "iron-will",
+  "title": "Forty Fortresses",
+  "year": "642",
+  "first": {
+   "kind": "p",
+   "en": "In the meantime Queen Sunduk sends her general, Kim Yushin, against Baekje.",
+   "ko": "그사이 선덕여왕은 장군 김유신을 백제로 보낸다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "One star over Samhan tonight. Three men are looking up at it, and every one of them wants to be the King for All…!",
+   "ko": "오늘 밤 삼한 위에 별 하나. 세 사내가 그 별을 올려다본다. 셋 다 “삼한왕검”이 되고 싶다…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 29,
+  "chapter": "iron-will",
+  "title": "The Eastern Star",
+  "year": "642",
+  "first": {
+   "kind": "dialogue",
+   "who": "yushin",
+   "en": "Well — is it enough now? / We have given Baekje a proper beating…",
+   "ko": "자, 이제 됐나? / 백제도 확실히 두들겨팼고"
+  },
+  "last": {
+   "kind": "p",
+   "en": "Gesomun wants a country. Far to the west, the man who owns half the world is trying to pronounce his name…!",
+   "ko": "개소문은 나라를 원한다. 저 멀리 서쪽, 천하의 절반을 가진 사내가 그 이름을 입속으로 굴려 보는 중이다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 30,
+  "chapter": "epilogue",
+  "title": "Emperor",
+  "year": "643",
+  "first": {
+   "kind": "p",
+   "en": "Far to the west, a man who owns half the world hears a new name. He turns it over on his tongue, like a grape he hasn’t decided to eat.",
+   "ko": "저 멀리 서쪽, 천하의 절반을 가진 사내가 새 이름 하나를 듣는다. 그는 삼킬지 말지 아직 정하지 않은 포도알처럼 그 이름을 혀 위에서 굴린다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The seventh invasion of Goguryeo has not begun. It has only found its excuse. Now it needs four dragons…!",
+   "ko": "고구려 일곱 번째 침공은 아직 시작되지 않았다. 구실을 찾았을 뿐이다. 이제 용 네 마리만 있으면 된다…!",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 31,
+  "chapter": "seventh-invasion",
+  "title": "Four Dragons",
+  "year": "643",
+  "first": {
+   "kind": "p",
+   "en": "The Second Emperor of the West resides in the Palace. Seventeen years ago he murdered his brothers to become the Son of Heaven, and he has spent every year since folding nations under imperial rule — the Turks, the Xueyantuo, the Tibetans.",
+   "ko": "서토의 황제가 궁에 있다. 17년 전 형제들을 죽이고 천자가 된 그는, 그 뒤의 모든 해를 나라들을 제국의 지배 아래 접어 넣는 데 썼다 — 돌궐, 설연타, 토번.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Yodong has never opened its gates to the West. Not for the Sui. Not in three summers. Here come the dragons…!",
+   "ko": "요동성은 서쪽에 문을 열어 준 적이 없다. 수나라에게도. 세 번의 여름 내내. 이제 용들이 온다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 32,
+  "chapter": "seventh-invasion",
+  "title": "Yodong",
+  "year": "645",
+  "first": {
+   "kind": "p",
+   "en": "Goguryeo has spent fourteen years building a wall of forts along the river. The Blue Dragon simply walks around it. He shows his banners on the middle road, then turns north in the night. By morning his horse are across an unwatched ford. The first fortress shuts its gates. It holds exactly as long as the gates do.",
+   "ko": "고구려는 십사 년 동안 강을 따라 성의 벽을 쌓았다. 청룡은 그 벽을 그냥 돌아간다. 가운데 길에 깃발을 보여 주고, 밤에 북으로 꺾는다. 아침이 되자 그의 기병은 아무도 지키지 않던 여울을 건너 있다. 첫 성이 문을 닫는다. 딱 그 문이 버티는 만큼만 버틴다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Goguryeo has been here before. To learn what one bad afternoon can cost a king, we go back four hundred years…!",
+   "ko": "고구려는 전에도 이런 적이 있다. 나쁜 오후 한 번이 왕에게 얼마를 치르게 하는지 알려면, 사백 년을 거슬러 가야 한다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 33,
+  "chapter": "seventh-invasion",
+  "title": "Boiling River",
+  "year": "244",
+  "first": {
+   "kind": "p",
+   "en": "King Dongchun picks a fight over a diplomatic spat. The war that comes back at him starts on a river named for boiling.",
+   "ko": "동천왕은 외교 시비 하나로 싸움을 건다. 되돌아온 전쟁은 ‘끓는 강’이라는 이름의 강에서 시작된다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Four hundred years later, another Goguryeo army marches to meet an emperor in the open. In the Tang line, a farmer puts on white…!",
+   "ko": "사백 년 뒤, 또 한 고구려 군대가 들판에서 황제를 맞으러 나선다. 당나라 진영에서는 한 농부가 흰 갑옷을 입는 중이다…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 34,
+  "chapter": "seventh-invasion",
+  "title": "Stallion Mountain",
+  "year": "645",
+  "first": {
+   "kind": "p",
+   "en": "By summer the farmer from Longmen is no longer a name on a muster roll. He is at Stallion Mountain, under the same Emperor who called him out of the yellow hemp.",
+   "ko": "여름이 되면 용문의 농부는 더 이상 병적의 이름 하나가 아니다. 노란 삼베에서 그를 불러낸 바로 그 황제 아래, 주필산에 있다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The Second Emperor isn't the first emperor to come for Goguryeo. The last one met a general who surrendered seven times…!",
+   "ko": "고구려를 노린 황제는 그가 처음이 아니다. 앞선 황제는 일곱 번이나 항복하는 장수를 만났다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 35,
+  "chapter": "seventh-invasion",
+  "title": "Colossal River",
+  "year": "612",
+  "first": {
+   "kind": "p",
+   "en": "Emperor Yang of Sui invades Goguryeo in the year 612.",
+   "ko": "서기 612년, 수 양제가 고구려를 침공한다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Yodong fell. The forts fell. One wall is left, held by a madman whose name nobody wrote down…!",
+   "ko": "요동이 무너졌다. 성들이 무너졌다. 남은 성벽은 하나. 그 성을 지키는 미치광이의 이름은 아무도 적어 두지 않았다…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 36,
+  "chapter": "seventh-invasion",
+  "title": "Ansi",
+  "year": "645",
+  "first": {
+   "kind": "p",
+   "en": "The Guardian of Ansi Fortress is an eccentric man. When Yeon took the country, the Guardian refused him to his face. He kept the old king’s colours on the wall. Yeon had drowned a whole court for less. He looked at that wall, weighed the siege, and rode away. Ansi answers to no one.",
+   "ko": "안시성의 성주는 괴짜다. 연이 나라를 쥐었을 때, 성주는 그의 면전에서 복종을 거부했다. 성벽 위에는 옛 왕의 깃발을 그대로 두었다. 연은 그보다 못한 일로 조정 하나를 물에 잠기게 한 사내다. 그는 그 성벽을 바라보고, 공성의 값을 셈해 본 뒤, 말머리를 돌렸다. 안시는 누구의 명도 받지 않는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Every Goguryeo wall prays to the Holy King. Who was he? We go back seven hundred years, to the day the sun stopped…!",
+   "ko": "고구려의 모든 성벽은 성왕께 빈다. 그는 누구였나? 칠백 년 전, 해가 멈춘 그날로 거슬러 간다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 37,
+  "chapter": "seventh-invasion",
+  "title": "Haemosu",
+  "year": "-37",
+  "first": {
+   "kind": "p",
+   "en": "The sky is empty first. Then come five dragons in the yoke, gold, crimson, azure, jade and white, and behind them a small gold chariot cutting the noon on the run they make every day. From the ground it is a fleck and a wheel, nothing a bather could call a face. The driver stands in it the way a man stands in a doorway he owns, one palm on the rail, laughing at nothing in particular.",
+   "ko": "하늘이 먼저 비어 있다. 그러고 멍에를 멘 용 다섯이 온다. 금빛, 진홍, 푸른빛, 비취, 흰빛. 그 뒤로 작은 금 수레가 매일 하는 그 운행으로 한낮을 가른다. 땅에서 보면 금빛 점 하나와 바퀴 하나, 목욕하는 사람이 얼굴이라 부를 만한 것은 없다. 몰이꾼은 제 문간에 선 사내처럼 수레에 서서, 난간에 손바닥을 얹고, 딱히 누구한테랄 것 없이 웃는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Dogs won't eat it. An axe won't split it. What on earth is inside Yuhwa's egg…?",
+   "ko": "개도 먹지 않는다. 도끼로도 쪼개지지 않는다. 유화의 알 속에는 대체 무엇이 들어 있는가…?",
+   "bold": true
+  },
+  "lastWords": 16
+ },
+ {
+  "n": 38,
+  "chapter": "seventh-invasion",
+  "title": "Buyeo",
+  "year": "-37",
+  "first": {
+   "kind": "p",
+   "en": "Dogs and pigs will not eat it; the sty refuses the guest, and the ministers pretend that is a kind of answer. In the road, cattle and horses step around it, hooves knowing better than the hall. In the open field, birds cover it with their wings instead of pecking, and the yard goes quiet at that.",
+   "ko": "개와 돼지가 먹지 않는다. 돼지우리가 손님을 거절하고, 신하들은 그걸 대답인 척한다. 길에 버리면 소와 말이 피해서 간다. 발굽이 대청보다 낫다. 들에 두면 새들이 쪼지 않고 날개로 덮는다. 마당이 그걸 보고 조용해진다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "A soaked exile, a hall full of spears, and a chieftain's daughter who won't look at him. Jumong's luck is about to get complicated…!",
+   "ko": "흠뻑 젖은 망명자, 창이 가득한 전각, 그리고 끝까지 그를 쳐다보지 않는 족장의 딸. 주몽의 운이 복잡해지기 시작한다…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 39,
+  "chapter": "seventh-invasion",
+  "title": "Jolbon",
+  "year": "-37",
+  "first": {
+   "kind": "p",
+   "en": "He is still wet from the river when the pines stop being empty. Two men in Yeon leather, spears too casual to be hunting, too careful to be lost. Jolbon scouts find him first. The bow is already in the pine needles. His hands are empty and shaking anyway.",
+   "ko": "강물기가 채 마르기 전에 소나무가 빈 곳이 아니게 된다. 연씨 가죽 두 사람, 사냥이라기엔 창이 너무 대충이고, 길 잃었다기엔 너무 조심스럽다. 졸본 척후가 먼저 찾는다. 활은 이미 솔잎 위. 손은 비었는데도 떤다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Back in Surabol, the queen is failing and the council must name who's next. It only takes one hand to lock the door…!",
+   "ko": "다시 서라벌. 여왕은 기울고, 화백은 다음 왕을 정해야 한다. 문을 잠그는 데는 손 하나면 충분하다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 40,
+  "chapter": "chunchu-era",
+  "title": "Gi (起)",
+  "year": "645",
+  "first": {
+   "kind": "p",
+   "en": "Chunchu decides to travel to the East, guided by his friend Takamuko no Kuromaro.",
+   "ko": "춘추는 벗 다카무코노 구로마로의 안내로 왜국으로 건너간다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Gaya. A word six hundred years old that still cuts a marshal. Where did it come from? Six eggs, falling out of the sky…!",
+   "ko": "가야. 육백 년 묵은 말 한마디가 아직도 장군을 벤다. 그 말은 어디서 왔나? 하늘에서 떨어진 알 여섯 개에서…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 41,
+  "chapter": "chunchu-era",
+  "title": "Suro",
+  "year": "42",
+  "first": {
+   "kind": "p",
+   "en": "Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.",
+   "ko": "가야가 있기 전에 능선이 있었다. 그리고 그 능선을 너무 오래 내려다본 하늘신이 있었다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Ten days of grain. One dying queen. One banner on the Radiance wall. Start counting…!",
+   "ko": "열흘 치 곡식. 죽어 가는 여왕 하나. 명활성 위의 깃발 하나. 이제 날을 센다…!",
+   "bold": true
+  },
+  "lastWords": 15
+ },
+ {
+  "n": 42,
+  "chapter": "chunchu-era",
+  "title": "Seung (承)",
+  "year": "647",
+  "first": {
+   "kind": "quote",
+   "en": "Bidam, Yumjong and others said a woman sovereign cannot govern well, and so plotted rebellion and raised troops…",
+   "ko": "비담·염종 등이 이르기를, 여주(女主)는 잘 다스리지 못한다 하고, 반란을 꾀하여 군사를 일으켰다…"
+  },
+  "last": {
+   "kind": "p",
+   "en": "“You were never even of Silla.” To see where that began, we go back to a Gaya prince nobody names…!",
+   "ko": "“애초에 신라 사람도 아니잖아.” 그 말이 어디서 시작됐는지 보려면, 아무도 이름을 대지 않는 가야의 왕자에게로 거슬러 가야 한다…!",
+   "bold": true
+  },
+  "lastWords": 20
+ },
+ {
+  "n": 43,
+  "chapter": "chunchu-era",
+  "title": "Muryuk",
+  "year": "562",
+  "first": {
+   "kind": "p",
+   "en": "For five hundred years the people of Gaya lived by iron and by six eggs, and they enjoyed great peace.",
+   "ko": "오백 년 동안 가야 사람들은 쇠와 여섯 알로 살며 태평을 누렸다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Back to the siege. Sixth night. Bidam has poured two cups of tea. Yushin isn't coming… is he?",
+   "ko": "다시 포위전. 여섯째 밤. 비담은 찻잔 두 개를 채워 두었다. 유신은 오지 않는다… 정말 그럴까?",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 44,
+  "chapter": "chunchu-era",
+  "title": "Jeon (轉)",
+  "year": "647",
+  "first": {
+   "kind": "p",
+   "en": "Night rain. Bidam’s officers want a dawn assault. Bidam wants the score finished properly. He wants Yushin to come out again.",
+   "ko": "밤비. 비담의 장교들은 새벽 돌격을 원한다. 비담은 점수를 제대로 끝내고 싶다 — 유신이 다시 나오기를 원한다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Never of Silla? Then where did Yushin come from? Fifty years back: a Gaya boy, a royal gate, and a lost horse…!",
+   "ko": "신라 사람이 아니라고? 그럼 유신은 어디서 왔나? 오십여 년 전, 가야의 청년, 왕족의 대문, 그리고 길 잃은 말 한 마리…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 45,
+  "chapter": "chunchu-era",
+  "title": "Seohyun",
+  "year": "593",
+  "first": {
+   "kind": "p",
+   "en": "Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.",
+   "ko": "유신이 있기 전에 길이 있다. 그리고 그 길 위에, 앞을 보고 다녀야 할 젊은이가 하나 있다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Tenth morning. The grain is gone. Two old yard-mates walk out between the camps, and the score is still a hundred and eight apiece…!",
+   "ko": "열째 날 아침. 곳간은 비었다. 옛 동기 둘이 진영 사이로 걸어 나온다. 점수는 아직 백팔 대 백팔…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 46,
+  "chapter": "chunchu-era",
+  "title": "Gyeol (結)",
+  "year": "647",
+  "first": {
+   "kind": "p",
+   "en": "Before the gate opens Bidam goes down to the lines and saddles Bisamun himself, which a High Councillor does not do. He slips nine beads off the end of his string and knots them to the bridle, under the horse’s jaw.",
+   "ko": "성문이 열리기 전 비담은 진영으로 내려가 비사문에 손수 안장을 얹는다. 상대등이 할 일은 아니다. 염주 끝에서 아홉 알을 빼내, 말 턱 아래 굴레에 매듭지어 묶는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The one hand that said no is gone. Now the crown has to fit Seungman, and it was made for someone else…!",
+   "ko": "반대하던 단 한 손은 사라졌다. 이제 승만이 그 왕관을 써야 한다. 다른 사람에게 맞춰 만든 왕관을…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 47,
+  "chapter": "chunchu-era",
+  "title": "Queen Jinduk",
+  "year": "647",
+  "first": {
+   "kind": "p",
+   "en": "The crown was made for her cousin and has to be padded at the temples. Seungman sits very still while the goldsmith does it, because somebody told her once that Dukman never fidgeted, and she has believed it for forty years.",
+   "ko": "왕관은 사촌 언니에게 맞춰 만든 것이라 관자놀이에 솜을 대야 한다. 금장이 그 일을 하는 동안 승만은 꼼짝 않고 앉아 있다. 덕만은 한 번도 몸을 비튼 적이 없다고 누가 말해 준 적이 있고, 그녀는 마흔 해 동안 그 말을 믿어 왔다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Silla needs an army. Only one man alive can lend it. Chunchu goes west…!",
+   "ko": "신라에는 군대가 필요하다. 그것을 빌려줄 사람은 세상에 단 하나. 춘추가 서쪽으로 간다…!",
+   "bold": true
+  },
+  "lastWords": 14
+ },
+ {
+  "n": 48,
+  "chapter": "chunchu-era",
+  "title": "Huangdi (皇帝)",
+  "year": "648",
+  "first": {
+   "kind": "p",
+   "en": "Everyone on earth wants something from the Son of Heaven. Most of them bring tribute. Chunchu brings an offer.",
+   "ko": "땅 위의 모든 이가 천자에게 바라는 것이 있다. 대개는 공물을 들고 온다. 춘추는 제안을 들고 온다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Chunchu has watched one brush move an empire. Now he wants that brush in Silla. The Harmony Council hasn't noticed yet…!",
+   "ko": "춘추는 붓 한 자루가 제국을 움직이는 것을 보았다. 이제 그 붓을 신라에 들이려 한다. 화백은 아직 눈치채지 못했다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 49,
+  "chapter": "chunchu-era",
+  "title": "Royal Secretariat",
+  "year": "651",
+  "first": {
+   "kind": "p",
+   "en": "For three months a border petition has been circling the Harmony Council like a bird that cannot find a roof. Chunchu has counted the seals. He has counted the men who must touch a paper before a soldier may move. He has stopped counting aloud, because the room mistakes counting for patience.",
+   "ko": "석 달째, 변방의 청원이 화백회의를 지붕 못 찾는 새처럼 돈다. 춘추는 어보를 세어 보았다. 병사가 움직이려면 몇 사람이 종이를 만져야 하는지도 세어 보았다. 이제는 소리 내어 세지 않는다. 방이 그걸 인내로 알아듣기 때문이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Rewind to Chang'an. The room is too warm, the crown prince hasn't moved since dawn, and someone in the anteroom is taking notes…!",
+   "ko": "다시 장안. 방은 너무 덥고, 태자는 새벽부터 꼼짝하지 않으며, 곁방의 누군가는 그 모든 것을 눈에 담고 있다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 50,
+  "chapter": "chunchu-era",
+  "title": "Jiabeng (駕崩)",
+  "year": "649",
+  "first": {
+   "kind": "p",
+   "en": "The emperor dies in the Cuiwei Palace in the fifth month. He is fifty-one. The room is kept too warm, and the silk on the bed is the colour of late wheat.",
+   "ko": "오월, 취위궁에서 황제가 붕어한다. 쉰한 살. 방은 너무 덥게 데워져 있고, 침상의 비단은 늦은 밀 빛이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Seven years of a polite queen and a busy nephew. Sooner or later, Silla has to admit who's really sitting in the chair…!",
+   "ko": "칠 년 동안 점잖은 여왕과 바쁜 조카. 언젠가 신라는 그 자리에 정말 누가 앉아 있는지 인정해야 한다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 51,
+  "chapter": "chunchu-era",
+  "title": "King Muyeol",
+  "year": "654",
+  "first": {
+   "kind": "p",
+   "en": "For seven years the crown has sat on Queen Jinduk. The work has sat on her nephew’s table. Nobody has ever called her foolish. She’s simply outnumbered by seals.",
+   "ko": "칠 년 동안 왕관은 진덕여왕의 머리에 있었다. 일은 그녀 조카의 탁자 위에 있었다. 아무도 그녀를 어리석다 한 적 없다. 그저 도장 수에서 밀렸을 뿐이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Before Bupmin was anybody's heir, he was a prince with bad arithmetic. Ten years back, a harbour girl is about to tell him so…!",
+   "ko": "법민이 누구의 후계자이기도 전, 그는 셈이 서툰 왕자였다. 십 년 전 어느 항구, 한 아가씨가 그 사실을 대놓고 말해 주려 한다…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 52,
+  "chapter": "chunchu-era",
+  "title": "Jahee",
+  "year": "644",
+  "first": {
+   "kind": "p",
+   "en": "Yushin sends Bupmin to the coast to work under Kim Seonpum. It is a season with a tide book instead of a training yard. The quay does not care that he is a prince. It cares whether the sums close.",
+   "ko": "유신은 법민을 바닷가로 보내 김선품 밑에서 일하게 한다. 연무장 대신 조수 장부를 붙든 한 철이다. 항구는 그가 왕자든 말든 상관없다. 셈이 맞는지만 따진다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Bupmin wants to be a king for all. So did Silla’s first. To meet him, go back to a white horse kneeling…!",
+   "ko": "법민은 모두의 왕이 되고 싶다. 첫 임금도 그랬다. 그를 만나려면, 들판에 무릎 꿇은 흰 말에게로 거슬러 올라가야 한다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 53,
+  "chapter": "chunchu-era",
+  "title": "Hyukgose",
+  "year": "-57",
+  "first": {
+   "kind": "p",
+   "en": "After the fall of Old Joseon, the local chiefs gather to select a new king when a White Horse suddenly leaves an egg — blue sky above, and later the court will keep the moon as its quiet sign.",
+   "ko": "고조선이 무너진 뒤, 여섯 마을의 촌장들이 새 임금을 뽑으러 모였을 때 — 흰 말 한 마리가 알을 남기고 푸른 하늘로 오른다. 훗날 조정은 그 고요한 표지로 달을 지킬 것이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "A chest rides the tide in, a magpie screaming over it. Whatever is inside needs a house. Preferably someone else’s…!",
+   "ko": "밀물을 타고 궤짝 하나가 들어온다. 까치 한 마리가 그 위에서 울어 댄다. 안에 든 놈은 집이 필요하다. 되도록이면 남의 집이…!",
+   "bold": true
+  },
+  "lastWords": 20
+ },
+ {
+  "n": 54,
+  "chapter": "chunchu-era",
+  "title": "Talhae",
+  "year": "-19",
+  "first": {
+   "kind": "p",
+   "en": "Late in the first king’s reign, a chest comes in on the tide at a fishing beach. A magpie flies over it, crying.",
+   "ko": "첫 임금의 치세도 저물 무렵, 밀물을 타고 궤짝 하나가 갯마을 바닷가로 들어온다. 그 위로 까치 한 마리가 울며 난다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "“Hogong. There’s a rooster in the woods.” It is the middle of the night. Roosters don’t crow at night…!",
+   "ko": "“호공. 숲에서 닭이 운다.” 한밤중이다. 닭은 밤에 울지 않는다…!",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 55,
+  "chapter": "chunchu-era",
+  "title": "Alji",
+  "year": "65",
+  "first": {
+   "kind": "p",
+   "en": "In the ninth year of his reign King Talhae wakes in the night to a rooster crowing in the woods west of the city, which roosters do not do at night.",
+   "ko": "즉위 아홉 해, 탈해왕은 밤중에 도성 서쪽 숲에서 닭이 우는 소리에 잠을 깬다. 닭은 밤에 울지 않는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Back to Baekje. The king can’t sign a thing for three years. And the clans have a list with one name on it…!",
+   "ko": "다시 백제. 임금은 삼 년 동안 도장 하나 찍지 못한다. 그리고 가문들 손에는 이름 하나만 적힌 명단이 있다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 56,
+  "chapter": "fall-of-euija",
+  "title": "Exile",
+  "year": "655",
+  "first": {
+   "kind": "p",
+   "en": "Queen Satek, Euija’s mother, dies. Euija begins the traditional mourning period.",
+   "ko": "의자의 어머니 사택왕후가 승하한다. 의자는 관례대로 상을 치르기 시작한다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "First night on the island. A fire, two cups, and a storyteller who never asks permission. “Sit or don’t. Once there were two suns…”",
+   "ko": "섬의 첫날 밤. 불 하나, 잔 둘, 그리고 허락 따윈 구하지 않는 이야기꾼. “앉든 말든. 옛날에 해가 둘이었지…”",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 57,
+  "chapter": "fall-of-euija",
+  "title": "Heaven–Earth King",
+  "year": "태초",
+  "first": {
+   "kind": "p",
+   "en": "Told on the first night, before he has agreed to listen to anything. Yuri Dora has a fire going, two cups, and no plan to ask permission.",
+   "ko": "첫날 밤, 그가 무엇이든 듣겠다고 하기도 전에 들려진 이야기. 유리도라에게는 피워 둔 불과 잔 두 개가 있고, 허락을 구할 생각은 없다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The next night he hides on a roof. She tells it anyway. One woman made this island, and she was enormous…!",
+   "ko": "다음 날 그는 지붕 위로 숨는다. 그래도 이야기는 올라온다. 이 섬은 한 여자가 만들었다. 어마어마하게 큰 여자가…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 58,
+  "chapter": "fall-of-euija",
+  "title": "Sulmun",
+  "year": "태초",
+  "first": {
+   "kind": "p",
+   "en": "The next story is told to him on a roof, because he is on a roof, mending it, and Yuri Dora has decided that a man who will not sit down can still listen.",
+   "ko": "다음 이야기는 지붕 위에서 들려진다. 그가 지붕 위에서 그것을 고치고 있기 때문이고, 유리도라는 앉지 않으려는 사내도 듣기는 한다고 판단했기 때문이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Three princes climb out of the ground. “Not from an egg,” the island insists. Then a box drifts in from the sea…!",
+   "ko": "땅에서 왕자 셋이 솟아난다. “알에서 나온 게 아이다,” 섬은 힘주어 말한다. 그리고 바다에서 궤짝 하나가 떠밀려 온다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 59,
+  "chapter": "fall-of-euija",
+  "title": "Three Princes",
+  "year": "태초",
+  "first": {
+   "kind": "p",
+   "en": "This is the story of the kingdom of Tamla.",
+   "ko": "이것은 탐라국의 이야기다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "“Tomorrow’s isn’t a kind one, Turtle.” A serpent in a cave. A woman from the rock. A man who looks back…!",
+   "ko": "“내일 건 순한 얘기가 아이다, 거북아.” 동굴 속의 뱀. 바위에서 나온 여자. 그리고 뒤를 돌아본 사내…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 60,
+  "chapter": "fall-of-euija",
+  "title": "Stone Lady",
+  "year": "태초",
+  "first": {
+   "kind": "dialogue",
+   "who": "yuridora",
+   "en": "Today’s is not a kind one.",
+   "ko": "오늘은 좋은 이야기가 아니다."
+  },
+  "last": {
+   "kind": "p",
+   "en": "Heaven sends for a man to keep its flower field. He leaves his pregnant wife to wait. He forgets to say how long…!",
+   "ko": "하늘이 제 꽃밭을 맡길 사내를 부른다. 그는 아이 밴 아내를 남겨 두고 떠난다. 얼마나 기다리라는 말은 하지 않는다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 61,
+  "chapter": "fall-of-euija",
+  "title": "Gardener",
+  "year": "태초",
+  "first": {
+   "kind": "p",
+   "en": "Told in the orange grove, in the hour after the picking, when Gyebek has finally been persuaded to sit on a basket.",
+   "ko": "귤밭에서, 따기가 끝난 뒤 한 시간, 귤 바구니에 앉으라는 설득에 그가 마침내 넘어갔을 때 들려진 이야기.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The island keeps one story for last. It is about the one who comes for you, and the crow that lost his book…!",
+   "ko": "섬은 이야기 하나를 맨 끝까지 아껴 둔다. 당신을 데리러 오는 자, 그리고 그의 책을 잃어버린 까마귀 이야기다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 62,
+  "chapter": "fall-of-euija",
+  "title": "Kangrim",
+  "year": "태초",
+  "first": {
+   "kind": "p",
+   "en": "The island keeps one story for last. After it, every ending on the mainland has a broken clock already running.",
+   "ko": "섬은 이야기 하나를 마지막까지 아껴 둔다. 그 뒤로 육지의 모든 결말에는, 이미 고장난 시계가 돌아가고 있다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Why does an orange island take Baekje’s exiles at all? Because once, long ago, it forgot to send the oranges…!",
+   "ko": "귤 섬은 왜 백제의 유배객을 받아 주는가? 아주 오래전, 귤 보내는 걸 한 번 잊었기 때문이다…!",
+   "bold": true
+  },
+  "lastWords": 20
+ },
+ {
+  "n": 63,
+  "chapter": "fall-of-euija",
+  "title": "Tribute",
+  "year": "498",
+  "first": {
+   "kind": "p",
+   "en": "Tamla stops sending tribute. Rebellion would at least have been legible; this is closer to forgetting, which a large kingdom finds harder to forgive.",
+   "ko": "탐라가 조공을 끊는다. 반란이었다면 차라리 읽어 낼 수는 있었을 것이다. 이것은 잊어버림에 가깝고, 큰 나라에게는 그쪽이 더 용서하기 어렵다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Meanwhile, in Sabi, Euija calls the Assembly. He has a smile, a speech, and a proclamation printed before anyone sat down…!",
+   "ko": "그 무렵 사비. 의자가 회의를 소집한다. 미소 하나, 연설 하나, 그리고 다들 앉기도 전에 찍어 둔 포고문 한 장…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 64,
+  "chapter": "fall-of-euija",
+  "title": "Coup",
+  "year": "655",
+  "first": {
+   "kind": "p",
+   "en": "He calls the assembly the way a gambler calls a final hand — smiling, sleeves perfect, already knowing which tiles he slipped into the set.",
+   "ko": "그는 마지막 패를 부르는 노름꾼처럼 어전회의를 소집한다 — 웃고, 소매는 반듯하고, 패 속에 자기가 섞어 둔 패가 무엇인지 이미 아는 얼굴로.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "He beat eight houses in one morning. Now he can’t sleep. In his dreams, somebody keeps counting…?",
+   "ko": "하루아침에 여덟 가문을 꺾었다. 그런데 이제 잠이 오지 않는다. 꿈속에서 누군가 자꾸 수를 센다…?",
+   "bold": true
+  },
+  "lastWords": 17
+ },
+ {
+  "n": 65,
+  "chapter": "fall-of-euija",
+  "title": "Descent",
+  "year": "656",
+  "first": {
+   "kind": "p",
+   "en": "He starts dreaming about the Rock of Politics. In the dream it is dry, and he is rubbing it with brine, and the brine will not stay. Every time he lifts the cloth the stone is dry again, and the eight elders are standing round it waiting for it to sweat.",
+   "ko": "그는 정사암 꿈을 꾸기 시작한다. 꿈속에서 바위는 말라 있고, 그는 소금물을 문지르는데 소금물이 배지 않는다. 천을 들 때마다 돌은 다시 말라 있고, 여덟 원로가 그 둘레에 서서 바위가 땀 흘리기를 기다린다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Foxes in the Assembly. Toads in the treetops. A river running red. Nine signs, and a king who swears he doesn’t believe in signs…!",
+   "ko": "정사암에 여우 떼. 나무 꼭대기에 두꺼비. 핏빛으로 흐르는 강. 징조가 아홉, 그리고 징조 따윈 믿지 않는다는 임금…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 66,
+  "chapter": "fall-of-euija",
+  "title": "Nine Omens",
+  "year": "659",
+  "first": {
+   "kind": "p",
+   "en": "Around the kingdom, signs of Baekje’s impending doom gather.",
+   "ko": "나라 곳곳에 백제 멸망의 징조가 나타난다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Before the last stand, the first road. To understand Baekje, we have to go back to two brothers and their mother, walking south…!",
+   "ko": "마지막 싸움에 앞서, 첫 길부터. 백제를 알려면 남쪽으로 걷던 두 형제와 그 어머니에게로 거슬러 가야 한다…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 67,
+  "chapter": "fall-of-euija",
+  "title": "Onjo",
+  "year": "-18",
+  "first": {
+   "kind": "p",
+   "en": "Onjo and Biryu grow up princes in their father’s hall. Nobody there ever mentions Buyeo.",
+   "ko": "온조와 비류는 아버지의 궁에서 왕자로 자란다. 거기서는 아무도 부여 얘기를 꺼내지 않는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Back to Sabi. Two armies are already on the road, and the only plan anyone has is a dead man’s letter…!",
+   "ko": "다시 사비. 두 나라 군대가 이미 길 위에 있다. 쓸 만한 계책이라곤 죽은 자가 남긴 편지 한 장뿐이다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 68,
+  "chapter": "fall-of-euija",
+  "title": "Sungchung",
+  "year": "660",
+  "first": {
+   "kind": "p",
+   "en": "Word reaches Euija. Two armies are coming for his capital, one by sea and one over the hills. The markets already call it the Chunchu Army. He scrambles for troops.",
+   "ko": "소식이 의자에게 닿는다. 군대 둘이 도성을 향해 온다. 하나는 바다로, 하나는 산을 넘어. 저잣거리는 벌써 그걸 ‘춘추군’이라 부른다. 그는 허겁지겁 군사를 긁어모은다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "One man might still know what to do. Euija sent him away too. Somebody ride. Now…!",
+   "ko": "어찌해야 할지 아는 사람이 하나 남았을지 모른다. 그도 의자가 내쫓았다. 누가 말을 달려라. 지금…!",
+   "bold": true
+  },
+  "lastWords": 16
+ },
+ {
+  "n": 69,
+  "chapter": "fall-of-euija",
+  "title": "Heungsu",
+  "year": "660",
+  "first": {
+   "kind": "p",
+   "en": "Heungsu is not in the hall. He is still at Gomamiji, where the posting put him. The king sends a man anyway, because the Chunchu Army is no longer a rumour and the rock has run out of plans.",
+   "ko": "흥수는 전각에 없다. 부임이 데려간 고마미지에 있다. 왕은 그래도 사람을 보낸다. 춘추군이 이미 소문이 아니고, 반석에는 계책이 떨어졌기 때문이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Across the sea, a boat is coming for the Turtle. He is on the shore before they finish tying it up…!",
+   "ko": "바다 건너, 거북이를 데리러 배가 온다. 밧줄을 다 매기도 전에 그는 이미 물가에 서 있다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 70,
+  "chapter": "fall-of-euija",
+  "title": "Gyebek",
+  "year": "660",
+  "first": {
+   "kind": "p",
+   "en": "Somewhere in the fourth year he notices he has stopped counting the days. It frightens him for a week. Then it does not.",
+   "ko": "넷째 해 어디쯤에서, 그는 날수 세기를 그만두었음을 알아차린다. 한 주 동안 그것이 그를 겁먹게 한다. 그 뒤로는 아니다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Five thousand march for the Yellow Mountain. High above them, in a pavilion made of clouds, someone has called a meeting…!",
+   "ko": "오천이 황산으로 간다. 그 까마득한 위, 구름으로 지은 정자에서 누군가 회의를 열었다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 71,
+  "chapter": "epilogue-part-ii",
+  "title": "Three Realms",
+  "year": "태초",
+  "first": {
+   "kind": "p",
+   "en": "Epilogue · Part II. The annual meeting is a small 정자: four posts, a raised floor, clouds for a yard. Living, dead, and western rows all fit if nobody stretches.",
+   "ko": "에필로그 · 제2부. 연례회의는 작은 정자에서 열린다. 기둥 넷, 마루 하나, 마당은 구름. 이승과 저승과 서쪽 이랑이 발을 들여놓을 자리는 그 정도면 된다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The minutes of that meeting never leave Heaven’s table. Down below, five thousand men are counting fifty thousand…!",
+   "ko": "그 회의록은 하늘의 탁자를 떠나지 않는다. 저 아래에서는 오천이 오만을 세고 있다…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 72,
+  "chapter": "fall-of-baekje",
+  "title": "Yellow Mountain",
+  "year": "660",
+  "first": {
+   "kind": "p",
+   "en": "Three years before he sees Samhan, Su Dingfang wins a war in a blizzard. He is sixty-five. His enemy has camped for the winter, sure that nobody fights in snow two feet deep. Su marches all night and attacks at dawn. He takes the whole camp before anyone in it has found his boots.",
+   "ko": "삼한을 보기 세 해 전, 소정방은 눈보라 속에서 전쟁 하나를 이긴다. 그는 예순다섯이다. 적은 두 자 깊이 눈 속에서 싸울 놈은 없다고 믿고 겨울 진을 쳤다. 소정방은 밤새 행군해 새벽에 들이친다. 진 안의 누구도 신발을 찾기 전에 진영 전체를 손에 넣는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The pass is open. The river is open. And in Sabi, the king’s big idea is to send the Tang dinner…!",
+   "ko": "고개가 열렸다. 강도 열렸다. 그리고 사비에서 임금이 낸 묘수는, 당군에게 저녁상을 보내는 것이다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 73,
+  "chapter": "fall-of-baekje",
+  "title": "Sabi",
+  "year": "660",
+  "first": {
+   "kind": "p",
+   "en": "The court hears about the Yellow Mountain Fields the following morning.",
+   "ko": "조정은 이튿날 아침 황산벌 소식을 듣는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Across the sea, a confession is waiting for Euija. It is already written, in a lovely hand. It only needs his name…!",
+   "ko": "바다 건너, 의자 앞으로 자백서 한 장이 기다린다. 고운 글씨로 이미 다 써 두었다. 이름 하나만 비어 있다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 74,
+  "chapter": "fall-of-baekje",
+  "title": "Buyeo Euija†",
+  "year": "660",
+  "first": {
+   "kind": "p",
+   "en": "In the Tang capital, Euija is brought forth before the Third Emperor.",
+   "ko": "당의 도성에서, 의자가 황제 앞에 끌려 나온다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Baekje is gone. Goguryeo still stands. And the man who arranged both can no longer get out of bed…?",
+   "ko": "백제는 사라졌다. 고구려는 아직 서 있다. 그리고 그 둘을 꾸민 사내가, 더는 자리에서 일어나지 못한다…?",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 75,
+  "chapter": "fall-of-baekje",
+  "title": "Kim Chunchu†",
+  "year": "661",
+  "first": {
+   "kind": "p",
+   "en": "They take him first to a Buddhist temple on the edge of Surabol — not for miracle, for quiet. Incense. Stone. A monk who knows when not to speak. Munhee sits where wives of True Bone have always sat when history arrives as a fever.",
+   "ko": "먼저 서라벌 가장자리 절로 옮긴다 — 기적이 아니라 고요를 위해. 향. 돌. 말없이 있을 때를 아는 스님. 문희는 진골의 아내들이 역사가 열병으로 올 때 항상 앉던 자리에 앉는다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Silla won the war. So why does the emperor’s new edict call its king a clerk…?",
+   "ko": "전쟁은 신라가 이겼다. 그런데 황제의 새 칙서는 왜 신라 왕을 고을 원님으로 적는가…?",
+   "bold": true
+  },
+  "lastWords": 16
+ },
+ {
+  "n": 76,
+  "chapter": "fall-of-baekje",
+  "title": "Ungjin Commandery",
+  "year": "661",
+  "first": {
+   "kind": "p",
+   "en": "When the capital fell, the Tang threw five commanderies over the country like a net over a pond. The biggest knot sits at Bear Fortress, where Euija was handed over. So far the net catches mostly rebels.",
+   "ko": "도성이 떨어지자 당은 연못에 그물을 덮듯 나라 위에 도독부 다섯을 씌웠다. 가장 큰 매듭은 의자가 넘겨진 웅진성에 있다. 아직까지 그 그물에 걸리는 건 대개 반란군이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Baekje has no king. Across the sea, an exiled prince is packing his bags…!",
+   "ko": "백제에는 임금이 없다. 바다 건너, 쫓겨난 왕자 하나가 짐을 꾸린다…!",
+   "bold": true
+  },
+  "lastWords": 14
+ },
+ {
+  "n": 77,
+  "chapter": "fall-of-baekje",
+  "title": "King Pungjang",
+  "year": "661",
+  "first": {
+   "kind": "p",
+   "en": "Three hundred years on, the bill comes due. Baekje's rebels want ships.",
+   "ko": "삼백 년 뒤, 그 값을 받을 때가 온다. 백제 반군은 배가 필요하다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Baekje has its king back. Now the emperor turns north, to walls that have never fallen…!",
+   "ko": "백제는 왕을 되찾았다. 이제 황제의 눈은 북쪽으로 향한다. 한 번도 무너진 적 없는 성벽으로…!",
+   "bold": true
+  },
+  "lastWords": 16
+ },
+ {
+  "n": 78,
+  "chapter": "final-stand",
+  "title": "Pyongyang I",
+  "year": "661",
+  "first": {
+   "kind": "p",
+   "en": "Red Sun's capital sits on its ridge. A red two-storey gate, grey stone, and clouds that always look about to pick a side. There is only one gate anyone remembers.",
+   "ko": "붉은 해의 도성이 능선 위에 앉아 있다. 붉은 이층 문루, 회색 돌, 어느 편을 들지 막 정하려는 듯한 구름. 사람들이 기억하는 문은 그 하나뿐이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The White Tiger has thirteen sons. Yeon Gesomun can count to thirteen…!",
+   "ko": "백호에게는 아들이 열셋 있다. 연개소문은 열셋까지 셀 줄 안다…!",
+   "bold": true
+  },
+  "lastWords": 12
+ },
+ {
+  "n": 79,
+  "chapter": "final-stand",
+  "title": "Snake River",
+  "year": "662",
+  "first": {
+   "kind": "p",
+   "en": "The White Tiger drives his host into the Snake River. They still believe rivers are roads. Yeon Gesomun has been waiting for a man who thinks that. Old men in the north remember another river that ate an army. The Snake is younger. It's hungrier. And it has Yeon's teeth.",
+   "ko": "백호가 군대를 몰아 사수로 들어온다. 그들은 아직 강을 길이라고 믿는다. 연개소문은 그렇게 믿는 자를 기다려 왔다. 북쪽 늙은이들은 군대를 삼킨 강을 하나 더 기억한다. 사수는 그보다 젊다. 더 굶주렸다. 그리고 연의 이빨을 가졌다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "And on an island far to the south, someone is asking: whose side are we on now?",
+   "ko": "그리고 저 남쪽 섬에서, 누군가 묻는다. 이제 우리는 누구 편인가?",
+   "bold": true
+  },
+  "lastWords": 17
+ },
+ {
+  "n": 80,
+  "chapter": "final-stand",
+  "title": "Tamla Surrenders",
+  "year": "662",
+  "first": {
+   "kind": "p",
+   "en": "After the Snake River, Tamla quietly changes sides.",
+   "ko": "사수의 싸움이 끝나자, 탐라는 조용히 편을 바꾼다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Baekje is supposed to be finished. Nobody told the fortresses. And in Surabol, a great lord calls in sick…!",
+   "ko": "백제는 끝났어야 했다. 아무도 성들에게 그 말을 전하지 않았다. 그리고 서라벌에서는 한 대귀족이 병을 핑계 댄다…!",
+   "bold": true
+  },
+  "lastWords": 19
+ },
+ {
+  "n": 81,
+  "chapter": "final-stand",
+  "title": "Rebellion",
+  "year": "662",
+  "first": {
+   "kind": "p",
+   "en": "Two summers after Sabi, Baekje is supposed to be finished. Nobody has told the fortresses. The leftovers gather at a hill fort east of the old capital. They do what a kingdom does with no king nearby. They collect grain. They hang collaborators. They send boys to watch the Silla roads.",
+   "ko": "사비가 떨어지고 두 해 여름. 백제는 끝났어야 했다. 아무도 성들에게 그 말을 전하지 않았다. 남은 자들이 옛 도읍 동쪽의 산성에 모인다. 임금이 곁에 없는 나라가 하는 일을 한다. 곡식을 걷는다. 부역자를 매단다. 신라 길목에 소년들을 세워 망을 보게 한다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Back at Juryu, a monk and a general share one army. We have to go back to see who keeps it…!",
+   "ko": "주류에서는 승려와 장군이 한 군대를 나눠 쥐고 있다. 누가 그 군대를 갖게 되는지, 조금 거슬러 올라가 보자…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 82,
+  "chapter": "final-stand",
+  "title": "Betrayal",
+  "year": "661",
+  "first": {
+   "kind": "p",
+   "en": "Before Boksin and the king, there were Boksin and the monk. Dochim raised the first banner with him, the autumn Sabi fell. He put down his begging bowl for a spear. He named himself General of the Spirit Army. For a year the two held the west between them. The enemy garrison couldn't even go out for water.",
+   "ko": "복신과 왕 이전에, 복신과 승려가 있었다. 사비가 떨어진 가을, 도침이 그와 함께 첫 깃발을 들었다. 바리때를 내려놓고 창을 든 승려였다. 스스로 영군장군이라 불렀다. 한 해 동안 둘은 서쪽을 나눠 쥐었다. 적의 수비대는 물 길으러도 못 나왔다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Four banners. One river mouth. The West, Samhan and the East meet on a single tide…!",
+   "ko": "깃발 넷. 하구 하나. 서쪽과 삼한과 동쪽이, 한 물때 위에서 만난다…!",
+   "bold": true
+  },
+  "lastWords": 16
+ },
+ {
+  "n": 83,
+  "chapter": "final-stand",
+  "title": "White River",
+  "year": "663",
+  "first": {
+   "kind": "p",
+   "en": "Chang’an’s clerks still count to thirteen when they hear the word river. This mouth is not that river. The tiger already died in February water, with every son numbered. The White River has come for sails.",
+   "ko": "장안의 서기들은 아직도 강이라는 말만 들어도 열셋까지 센다. 이 하구는 그 강이 아니다. 호랑이는 이미 이월의 물에서, 아들마다 번호를 매긴 채로 죽었다. 백강이 온 것은 돛을 위해서다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Two reapers failed to take Yeon Gesomun at the river. The ledger still has his name in it…!",
+   "ko": "두 저승사자는 강에서 연개소문을 데려가지 못했다. 장부에는 아직 그의 이름이 적혀 있다…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 84,
+  "chapter": "final-stand",
+  "title": "Yeon Gesomun†",
+  "year": "665",
+  "first": {
+   "kind": "p",
+   "en": "The Eternal General is dying.",
+   "ko": "영원의 대장군이 죽어 가고 있다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "“Do not fight amongst yourselves.” He had three sons. How long do you think that lasts?",
+   "ko": "“서로 싸우지 마라.” 아들은 셋이었다. 그 말이 얼마나 갈 것 같은가?",
+   "bold": true
+  },
+  "lastWords": 16
+ },
+ {
+  "n": 85,
+  "chapter": "final-stand",
+  "title": "Brothers’ Coup",
+  "year": "666",
+  "first": {
+   "kind": "p",
+   "en": "The Third Emperor invades Goguryeo again. Nobody is counting anymore. This time, he has a guide.",
+   "ko": "황제가 또 고구려를 친다. 몇 번째인지 이제 아무도 세지 않는다. 이번에는 길잡이가 있다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Namseng knows the road in. Now he rides it home, with the whole Tang army at his back…!",
+   "ko": "남생은 들어가는 길을 안다. 이제 그는 당의 대군을 등 뒤에 달고, 그 길로 집에 돌아온다…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 86,
+  "chapter": "final-stand",
+  "title": "Pyongyang II",
+  "year": "668",
+  "first": {
+   "kind": "p",
+   "en": "Three of the emperor's four beasts come for the city at once. The Blue Dragon leads. The Black Tortoise and the second White Tiger ride behind him.",
+   "ko": "황제의 네 짐승 가운데 셋이 한꺼번에 이 성으로 온다. 청룡이 앞장선다. 현무와 두 번째 백호가 뒤를 따른다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!",
+   "ko": "이야기는 아직 끝나지 않았다. 황제는 여전히 삼한의 넓은 땅을 쥐고 있다. 마지막 전쟁이 시작된다…!",
+   "bold": true
+  },
+  "lastWords": 18
+ },
+ {
+  "n": 87,
+  "chapter": "silla-tang-war",
+  "title": "Mount Gain",
+  "year": "665",
+  "first": {
+   "kind": "p",
+   "en": "Two springs after the river, the empire names a governor for what is left of Baekje. It is Buyeo Yung. He once knelt at Bupmin's horse and was spat on. Then he went to the emperor's city and came back in imperial robes. Now he will rule from the fortress where his father was arrested.",
+   "ko": "강의 싸움이 끝나고 두 번째 봄, 제국은 남은 백제를 맡을 도독을 세운다. 부여융이다. 그는 한때 법민의 말 앞에 꿇어 침을 맞았다. 그러고는 황제의 도성에 갔다가 황제의 관복을 입고 돌아왔다. 이제 그는 아버지가 붙잡혀 간 바로 그 성에서 다스린다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "To find the first king of this land, we have to go back before there were kingdoms… to a bear in a cave…!",
+   "ko": "이 땅의 첫 임금을 찾으려면, 나라가 생기기도 전으로 거슬러 올라가야 한다. 동굴 속 곰 한 마리에게로…!",
+   "bold": true
+  },
+  "lastWords": 23
+ },
+ {
+  "n": 88,
+  "chapter": "silla-tang-war",
+  "title": "Dangun & Old Joseon",
+  "year": "Long ago",
+  "first": {
+   "kind": "p",
+   "en": "Before there are any kingdoms, there is a son in heaven who keeps looking down. He is Hwanung. His father Hwanin, the Lord of Heaven, notices, looks down himself at a mountain called Taebaek and the people living around it, and decides the world could use his son.",
+   "ko": "나라라는 것이 하나도 없던 때, 하늘에 자꾸 아래를 내려다보는 아들이 있다. 환웅이다. 아버지인 하늘의 임금 환인이 그것을 알아채고, 저도 태백이라는 산과 그 둘레에 사는 사람들을 내려다본 뒤, 세상에 아들이 쓸모 있겠다고 정한다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Eight hundred years later, the empire comes back to the same river to do the same thing. This time, Goguryeo has a prince left…!",
+   "ko": "팔백 년 뒤, 제국이 같은 강으로 돌아와 같은 짓을 한다. 이번에는 고구려에 왕족 하나가 남아 있다…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 89,
+  "chapter": "silla-tang-war",
+  "title": "Anseung",
+  "year": "670",
+  "first": {
+   "kind": "p",
+   "en": "Nearly eight hundred years after Wanggeom, the empire of the West comes back to the Taedong and does the same thing again. The Third Emperor sets up a Protectorate over Goguryeo, staffs it with his own officials, and seems surprised that anyone minds.",
+   "ko": "왕검성으로부터 팔백 년 가까이 지나, 서토의 제국이 다시 대동강으로 와서 같은 일을 되풀이한다. 황제는 고구려 땅에 안동도호부를 세우고 제 관리들로 채운 뒤, 누가 싫어하는 걸 보고 놀란 눈치다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Xue Rengui sends a letter. Munmu has been waiting twenty years to answer it…!",
+   "ko": "설인귀가 편지를 보낸다. 문무는 그 답장을 스무 해 동안 기다려 왔다…!",
+   "bold": true
+  },
+  "lastWords": 14
+ },
+ {
+  "n": 90,
+  "chapter": "silla-tang-war",
+  "title": "Letters",
+  "year": "671",
+  "first": {
+   "kind": "p",
+   "en": "In high summer, a Tang monk is rowed ashore under a white flag. He carries a letter from the fleet. The fleet belongs to Xue Rengui, the second White Tiger. He has sat off the coast all summer. If it can be managed, he'd like to win this war by post.",
+   "ko": "한여름, 당나라 승려 하나가 흰 깃발을 단 배로 뭍에 오른다. 함대에서 온 편지를 들고서. 함대의 주인은 두 번째 백호, 설인귀다. 그는 여름 내내 해안 밖에 떠 있었다. 될 수만 있다면, 이 전쟁을 편지로 이기고 싶다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The Tang are coming south. Silla is winning. That is exactly when armies start to chase…!",
+   "ko": "당군이 남쪽으로 내려온다. 신라가 이기고 있다. 군대가 쫓기 시작하는 건, 꼭 그런 때다…!",
+   "bold": true
+  },
+  "lastWords": 16
+ },
+ {
+  "n": 91,
+  "chapter": "silla-tang-war",
+  "title": "Stone Gate",
+  "year": "672",
+  "first": {
+   "kind": "p",
+   "en": "The Tang take Hansi and Mapeup and come south. Silla and what is left of the Goguryeo revival meet them, cut down several thousand, and then make the mistake that costs the year: they chase.",
+   "ko": "당군이 한시성과 마읍성을 취하고 남하한다. 신라와 고구려 부흥군의 남은 이들이 맞서 수천을 베고, 그리고 그해를 대가로 치를 실수를 저지른다. 뒤를 쫓은 것이다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "One lieutenant came home from Stone Gate alive. His father is Kim Yushin…!",
+   "ko": "석문에서 살아 돌아온 비장이 하나 있다. 그의 아버지는 김유신이다…!",
+   "bold": true
+  },
+  "lastWords": 13
+ },
+ {
+  "n": 92,
+  "chapter": "silla-tang-war",
+  "title": "Wonsul",
+  "year": "672",
+  "first": {
+   "kind": "p",
+   "en": "Wonsul, Yushin’s second son, is told to die there and does not. He comes home. His father will not see him, and his mother will not either, and he spends the rest of his life trying to give the afternoon back.",
+   "ko": "유신의 둘째 아들 원술은 그 자리에서 죽으라는 말을 듣고도 죽지 않는다. 살아 돌아온다. 아버지는 그를 보지 않고, 어머니도 보지 않는다. 그는 남은 평생 그 한나절을 되돌리려 애쓰며 산다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Yushin is old now. The three sisters in the steam are not. They have kept his ledge warm for fifty years…!",
+   "ko": "유신은 이제 늙었다. 김 속의 세 자매는 아니다. 그들은 쉰 해 동안 그의 바위 자리를 데워 두었다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 93,
+  "chapter": "silla-tang-war",
+  "title": "Kim Yushin†",
+  "year": "673",
+  "first": {
+   "kind": "p",
+   "en": "Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern. The steam is thinner. The three are not. They look the same age they always looked — which is either mercy or mockery, and he has never asked which.",
+   "ko": "이제 늙어, 대부분 문서인 원정 사이에서도 유신은 동굴을 찾는다. 김은 옅어졌다. 셋은 아니다. 늘 그 나이로 보인다 — 자비인지 조롱인지, 그는 끝내 묻지 않았다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "His uncle never showed him the path. Munmu finds it anyway, and something older than any kingdom is waiting on the water…!",
+   "ko": "숙부는 그 길을 한 번도 보여 주지 않았다. 문무는 어쨌든 찾아낸다. 그리고 물 위에서, 어느 나라보다 오래된 누군가가 기다린다…!",
+   "bold": true
+  },
+  "lastWords": 22
+ },
+ {
+  "n": 94,
+  "chapter": "silla-tang-war",
+  "title": "The Wanggeom's Guest",
+  "year": "673",
+  "first": {
+   "kind": "p",
+   "en": "After the funeral rites, Munmu rides alone into the hills east of Surabol. Yushin never showed him the path; he found it anyway, the way sons find what uncles hid on purpose.",
+   "ko": "장례가 끝난 뒤 문무는 서라벌 동쪽 언덕으로 홀로 말을 탄다. 유신은 길을 가르쳐 주지 않았다. 아들은 외숙이 일부러 숨긴 것을 어쨌든 찾아낸다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "Kim Punghun said he could wait for a ship. The ship is here…!",
+   "ko": "김풍훈은 배를 기다릴 수 있다고 했다. 그 배가 왔다…!",
+   "bold": true
+  },
+  "lastWords": 13
+ },
+ {
+  "n": 95,
+  "chapter": "silla-tang-war",
+  "title": "Maeso",
+  "year": "675",
+  "first": {
+   "kind": "p",
+   "en": "Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showing the enemy fleet the way into his own coast.",
+   "ko": "설인귀가 아홉째 달에 바다로 돌아온다. 길잡이는 김풍훈이다. 문무가 그의 아버지를 죽였다. 이제 그 아들이 적의 함대에게 제 나라 해안으로 드는 길을 일러 준다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "One last river mouth. One middling captain. Three tries to end a war…!",
+   "ko": "마지막 강어귀. 어중간한 관등의 장수 하나. 전쟁을 끝낼 기회는 세 번…!",
+   "bold": true
+  },
+  "lastWords": 13
+ },
+ {
+  "n": 96,
+  "chapter": "silla-tang-war",
+  "title": "Final Ford",
+  "year": "676",
+  "first": {
+   "kind": "p",
+   "en": "In the second month, the emperor's headquarters quietly leaves Pyongyang. Then it moves further. Then nobody mentions it. Xue still has a fleet, and a fleet doesn't need a headquarters.",
+   "ko": "이월, 황제의 도호부가 슬그머니 평양을 떠난다. 그러고는 더 멀리 간다. 그러고는 아무도 입에 올리지 않는다. 설인귀에게는 아직 함대가 있고, 함대에는 도호부가 필요 없다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "The boy who stole a sentence at six is about to be king of all Samhan. His mother would like him to hold still…!",
+   "ko": "여섯 살에 한 문장을 훔친 소년이 이제 삼한 모두의 왕이 된다. 어머니는 그에게 가만히 좀 있으라고 한다…!",
+   "bold": true
+  },
+  "lastWords": 24
+ },
+ {
+  "n": 97,
+  "chapter": "silla-tang-war",
+  "title": "The King for All",
+  "year": "676",
+  "first": {
+   "kind": "p",
+   "en": "Bupmin, King Munmu now, stands where a six-year-old once stole a sentence. The war is won, the ally has been shown the door, and the childhood dream has had the bad manners to come true.",
+   "ko": "법민, 이제는 문무왕인 그가 여섯 살 아이가 문장을 훔치던 자리에 선다. 전쟁은 이겼고, 동맹은 문밖으로 내보내졌고, 어린 시절의 꿈은 무례하게도 이루어지고 말았다.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "But we left someone in the snow. The winter Pyongyang fell, a Mohe father walked north with something in his pack…!",
+   "ko": "그런데 눈 속에 두고 온 사람이 있다. 평양이 떨어진 그 겨울, 말갈 사내 하나가 등짐에 무언가를 지고 북쪽으로 걸었다…!",
+   "bold": true
+  },
+  "lastWords": 21
+ },
+ {
+  "n": 98,
+  "chapter": "epilogue-2",
+  "title": "Balhae",
+  "year": "698",
+  "first": {
+   "kind": "p",
+   "en": "The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds every seam a coat has. Gulgul walks in front, bent under a leather pack and wrapped in so much fur he looks like something the forest would hunt. His son walks in his tracks, because there are no other tracks.",
+   "ko": "평양이 무너진 그해 겨울, 만주의 산은 누가 이겼는지 관심이 없다. 눈은 무릎까지 차오르다 허벅지까지 차오르고, 능선에서 내려오는 바람은 옷의 솔기마다 기어이 파고든다. 걸걸이 앞서 걷는다. 가죽 등짐에 허리를 굽히고, 털가죽을 하도 껴입어서 숲이 사냥할 짐승처럼 보인다. 아들은 아버지의 발자국을 밟고 걷는다. 다른 발자국은 없으니까.",
+   "bold": false
+  },
+  "last": {
+   "kind": "p",
+   "en": "THE END",
+   "ko": "끝",
+   "bold": false
+  },
+  "lastWords": 2
+ }
+]

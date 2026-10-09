@@ -1,0 +1,59 @@
+
+=================================================================
+#86 Pyongyang II  (668 September)
+Arc: The Final Stand · place: pyongyang · tone: grim war epic — the siege
+Logline: When the ring closes, the city needs one man nobody can buy. They pick a monk.
+=================================================================
+[0] ¶ Every son comes home in the end. Namseng brings the empire with him.
+[1] ── SCENE: The Ninth Invasion ──
+[2] ¶ Three of the emperor’s four beasts come for the city at once. The Blue Dragon leads, the old marshal who has been at this war since the last emperor. The Black Tortoise and the second White Tiger ride behind him.
+[3] [MAP 667: Three beasts, three roads, one city.]
+[4] Xue Rengui: Breaking a fortress… is like farming. / You know the season, you bring the water, you harvest. / Today is a harvest day.
+[5] ¶ There is no cruelty in him, which is precisely what makes him difficult: the men of Goguryeo can hate a butcher, but they cannot quite hate a farmer who treats siege-work as weather.
+[6] ── SCENE: Brothers ──
+[7] ¶ Namseng rides beside the Blue Dragon in a Tang coat, to show him the road. He knows every gully. He used to hunt them. At the top of the last one he reins in and looks at the red gate.
+[8] Yeon Namseng: At last… I set foot on Pyongyang’s ground—
+[9] ¶ On the wall, Namgun can see him. Everyone on the wall can see him.
+[10] [CARD Yeon Namsan: Gesomun’s youngest son, and the one who listens at doors.]
+[11] Yeon Namsan: Brother… he’s wearing their coat.
+[12] Yeon Namgun: Goguryeo… never dies….!
+[13] ¶ That is the only conversation the three of them have that year. A whisper, a shout, and a man on a horse who does not answer.
+[14] ── SCENE: The White Banner ──
+[15] ¶ The ring closes. A month goes by. Inside, the granaries go down the way the Tang campfires did, seven winters ago, and someone on the wall is counting.
+[16] ¶ Namsan counts best. So it is Namsan who walks out first.
+[17] ¶ He goes out through the gate with the king and ninety-eight officials, carrying a white banner. The king of Goguryeo has worn the crown twenty-six years. For most of them a Yeon told him what to say. Today a Yeon is telling him again.
+[18] King Bojang: Do I— do I kneel to him, or to the banner?
+[19] Yeon Namsan: To the banner, Majesty. He’s only holding it.
+[20] ¶ The king kneels. The Blue Dragon accepts the surrender very politely. Then he looks up at the walls, where the gate has already shut again behind them.
+[21] ── SCENE: Betrayal from Inside ──
+[22] ¶ Namgun has not surrendered. He has the walls, the army and the gate. What he needs is one man nobody can buy. He picks a monk. Shinsung has kept a small temple at the foot of the hill for twenty-five years. He has never asked anyone for anything.
+[23] Yeon Namgun: You have no clan, no faction, no sons. / You’re the only man in this city I can’t imagine selling it.
+[24] Shinsung: Then I shall try to be worthy of your imagination, Mangniji.
+[25] ¶ For five days a novice walks out of the lesser house before dawn with an alms bowl and comes back with it empty, and nobody thinks to ask why a monk’s bowl should come back empty from the direction of the Tang lines. On the fifth night the bell that has sat on the floor of the lesser house since the year the Daoists came is struck once.
+[26] ¶ Yeon once tried to starve the temples with the emperor’s Daoists. The monks have waited a generation. Shinsung doesn’t make a speech about doctrine. He opens a gate.
+[27] ¶ The Tang come in before the bell has stopped ringing. Quietly at first, then not quietly at all. The gate towers catch one after another, like lamps being lit for a feast.
+[28] ── SCENE: Last Words ──
+[29] ¶ Namgun is thirty-one. He leads the last stand against the Blue Dragon himself.
+[30] Yeon Namgun: Silla’s sacred blood — rot! / Goguryeo will take the final victory! / You may rule this soil — our name will have the last word!
+[31] ¶ The wall is already lost. He knows it. He says it anyway, to the men who can still hear, and to a bloodline across the river he can’t see.
+[32] Yeon Namgun: Goguryeo… never dies….!
+[33] ¶ When the gate towers burn, Namgun stabs himself in his own hall. He does it badly, the first thing he has done badly in the whole war, and the Tang surgeons save him so that he can be sent alive to the farthest edge of the empire.
+[34] ¶ In the burning palace, a Mohe man with a border sabre walks into a treasury nobody is guarding any more. He comes out with a piece of gold no longer than a finger, snapped off something that used to be worn on a head. Nobody stops him. Nobody ever looks at Gulgul.
+[35] ¶ Among the captives is a Baekje king with a Yamato accent. Pung ran north to the last kingdom left. The kingdoms ran out before he did.
+[36] ¶ When the city falls, the empire doesn't send a stranger to hold it. It sends Xue Rengui. The white coat becomes a banner over a broken capital. He governs well enough that even the conquered prefer him to chaos.
+[37] Xue Rengui: I… did not wish to be your enemy. / But I could not leave His Majesty’s east empty-handed.
+[38] ¶ Goguryeo had stood seven hundred years. The record, for its part, writes only the month and the surrender.
+[39] ── SCENE: Zhaoling ──
+[40] ¶ Before the captives are shown to the living emperor, the Blue Dragon takes them up the mountain to show them to the dead one. The king of Goguryeo is made to bow at Zhaoling, in front of the door the Second Emperor said his horses would guard. The six stone horses stand in their row. The purple one is nearest the door.
+[41] ── SCENE: The New Rank ──
+[42] ¶ The seventeen grades stop at one another. In the tenth month, after the city is open, **King Munmu** cuts a rank the grades did not have, and gives it to the man who has been Marshal since the yard.
+[43] King Munmu: Marshal.
+[44] Kim Yushin: Majesty.
+[45] King Munmu: You have been Marshal since before I could hold a bow. / The yard still says it. / The seventeen grades do not reach you anymore.
+[46] Kim Yushin: The word is enough. / I know what I am.
+[47] King Munmu: There was already a grade above the seventeen. / I had them cut one above that. / Supreme General.
+[48] [CARD Kim Yushin: A rank above every rank. They had to invent it for him.]
+[49] Kim Yushin: A new name for an old man.
+[50] King Munmu: It is the name of the man who fed this war through the snow. / Wear it. / You may keep Marshal for the boys on the yard.
+[51] Kim Yushin: …As you command.
+[52] ¶ **The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!**

@@ -1,0 +1,305 @@
+{
+  "slice": 6,
+  "range": "#48–#55",
+  "episodes": [
+    {
+      "n": 48,
+      "title": "Huangdi",
+      "logline": "Chunchu goes to Chang’an to win an army with wit and verse; the emperor tries to poach him and keeps his son, then, dying, promises Silla the south of the peninsula if Chunchu finishes his war. Chunchu leaves with the alliance, the emperor’s forbidden name and a fear of one woman, and his attendant dies in his coat at sea.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 4 },
+      "verdict": "The best material in the slice is here, buried in a 7,900-word tour: cut the two history flashbacks, the duplicate Wu scene and most widgets (about 1,500 words), hold the emperor’s yes until the Six Steeds so the army is the question, or split the episode at [177].",
+      "opening": "‘Everyone on earth wants something from the Son of Heaven. Most of them bring tribute. Chunchu brings an offer.’ [1] is a good Austen-style hook, immediately buried under a TERM card [2] and a telegram thesis [3] (‘One office drafts. One checks…’). The first dialogue is the anachronistic ‘Greater China Co-Prosperity Sphere’ banner [9]; with SERVE THE PEOPLE [6] and LUXURY IS THE ENEMY [180] it is a running wink over the characters’ heads. Readers who know the slogans will laugh or wince (the Co-Prosperity one carries WWII baggage); others will just find the banners odd. Judgment call.",
+      "ending": "On Gunhae’s decoy [256]–[263] is the right last beat, underplayed: four blocks, no reaction from Chunchu, then a quote [264] that retells it. ‘A boat Chang’an wouldn’t have bothered to count’ [265] is a lovely callback to the ward chief. The card [266] (‘Now he wants that brush in Silla’) leads cleanly into #49.",
+      "sudden": [
+        { "block": "6", "what": "‘The second banner was lettered…’: there is no first banner, so the reader stalls on the order before the name-taboo joke lands.", "setup": "none", "fix": "‘The banner over the lodging gate once read SERVE THE PEOPLE…’" },
+        { "block": "68–75", "what": "The Xuanwu Gate. ‘Nothing happened at it’ is funny only if you know something did; the coup (he killed his brothers to take the throne) is never said.", "setup": "a hint 110 blocks later at [182] (‘in the years when Our brothers could not bear Us’)", "fix": "One narrator line before [68]: he came to the throne over two brothers at a gate, and the record now says otherwise." },
+        { "block": "210–211", "what": "Jizi, Wiman, King Jun, Yan, the Eight Prohibitions and Joseon: a 300-word flashback with five new names that connects to nothing Chunchu wants. It is also the book’s first mention of Joseon, a founding-myth box meant to open at #88.", "setup": "none; Joseon is next leaned on at #53 [0] and explained only at #88", "fix": "Cut [210]–[211]." },
+        { "block": "218", "what": "Wu asks ‘you are the one from the country with the woman king, correct?’ as if meeting him for the first time, after a whole banquet conversation on that subject [195]–[204].", "setup": "the banquet exchange contradicts it", "fix": "Cut the banquet dialogue [195]–[204]; keep her silent work behind the screen [193] so the hallway is their first talk." },
+        { "block": "258", "what": "On Gunhae is carded four blocks before he dies for Chunchu.", "setup": "none", "fix": "Plant him in the ward count [15] (one of the ‘eleven mouths’) or watching the gyuku game beside Inmun [128]." },
+        { "block": "209", "what": "The Jinci rubbing: Chunchu laughs and ‘does not explain it’, and neither does the text. It pays off ‘May I have that in writing?’ [172] and the leaf tally [174] (the emperor’s promise, in writing after all), but too obliquely to register.", "setup": "[172], [174], 35 blocks earlier", "fix": "Add one line: he had asked for it in writing; this is the writing." }
+      ],
+      "pacing_notes": [
+        { "blocks": "2, 13, 26, 33, 39, 46, 65, 92, 109, 111, 176, 202", "issue": "Twelve explainer widgets (a term, four diagrams, seven idiom cards) on top of five quotes, two poems and two maps. Most idiom cards follow a line that already explained the idiom ([25]→[26], [32]→[33], [38]→[39], [45]→[46]).", "fix": "Keep the tribute-ring diagram [13] and the two poems; cut the fubing, exam and three-departments diagrams [65], [92], [111] and every idiom card whose line explains itself." },
+        { "blocks": "62–96", "issue": "About 1,100 words of Tang institutions after the army is already promised at [36]: a machinery recap that repeats [3], the fubing diagram, the History Office with a 250-word First Emperor flashback and a Shiji quote [82], then the Academy with an exam diagram.", "fix": "Keep ‘Nothing happened at it’ [68]–[78] and ‘Study, Inmun. Here it’s faster than blood’ [93]–[95]. Cut [62], [64]–[65], [79]–[87], [89]–[92]." },
+        { "blocks": "135–147", "issue": "Five horse monologues in the same shape (name, colour, battle, wound, praise), about 560 words before the Saluzi turn.", "fix": "Keep Baitiwu, Qingzhui (‘Every one of them from behind’) and Quanmaogua; cut Telebiao [137] and Shifachi [145]." },
+        { "blocks": "193–204, 212–230", "issue": "Two Wu-and-Chunchu scenes about the woman king in one episode; the second ignores the first.", "fix": "Cut [195]–[204] (about 270 words)." },
+        { "blocks": "205–211", "issue": "The lodging parcel plus the Gija & Wiman flashback, about 430 words between the banquet and the hallway, with no link to the plot.", "fix": "Keep [206]–[209] (the ‘harmonized’ callback and the rubbing, with the fix above); cut [210]–[211]." },
+        { "blocks": "167, 177, 264", "issue": "The emotional peaks are told. ‘The Second Emperor reveals he is dying.’ [167] is a stage direction at the climax; the promise [171] is retold by the [177] quote; the decoy [262]–[263] is retold by the [264] quote.", "fix": "Replace [167] with a shown beat (a cough into the sleeve, the lamp hanging at his knee); cut [177] and [264]." }
+      ],
+      "flow_notes": [
+        { "blocks": "3→4", "issue": "Chunchu ‘watches a machine’ before the embassy has even arrived; the theme is stated before any scene shows it.", "fix": "Cut [3]; the ward chief [14]–[20] shows the machine better." },
+        { "blocks": "36→37", "issue": "The quote says the emperor ‘promised to send an army’; the episode’s question is spent 230 blocks before the end.", "fix": "Cut [36]; keep the emperor interested but uncommitted until the Six Steeds." },
+        { "blocks": "106→107", "issue": "Two Chunchu lines in a row; ‘Then who overturns the boat, Majesty?’ answers something nobody said.", "fix": "Give the emperor a line in between, or have Chunchu put the proverb as a question." },
+        { "blocks": "209→210", "issue": "From the rubbing straight into ‘Samhan has its own story about westerners who came east’: a non-sequitur into a flashback.", "fix": "Cut with [210]–[211]." }
+      ],
+      "romance": "No romance. Wu’s encounters are flirtation as threat (‘a little too close’ [197], the whisper [226], ‘paralyzed in fear’ [228]) and work as menace; the hallway turn, ‘How is she doing?’ [222], is the best Wu beat. The Li Zhi friendship [115]–[127], [246]–[251] has real chemistry (‘Brothers, then — of the inconvenient kind’ [126]) but no friction, so it charms rather than grips.",
+      "battle": "No battle on stage. The Six Steeds [135]–[147], [159] are five told battle memories, vivid and wounded but monologue summary in identical shape. The Goguryeo patrol [256]–[263] is the only action and is over in four blocks.",
+      "suspense": "Two mystery boxes carry the episode: who is Saluzi (planted [54], searched [63], paid off with ‘He is a horse’ [154]) and the emperor’s name (taboo planted [6], [27], asked [25], given ‘Li Shimin’ [235]). Both pay off beautifully and fire again later (#78 and #86 for the horses, #91 for the name). The Tang court dress [96] becomes the decoy coat [262], a neat plant. The question that should be the spine, will Tang send an army, is answered by a quote at [36]. Wu’s whisper [226] is a box the book never opens (fine if deliberate; [255] and #51 [26] lean on it). The leaf-tally plant [174] fires at [209] too quietly to register.",
+      "best": "‘…Saluzi. / Your most loyal warrior. The one who never held office. / Majesty. He is a horse.’ [154], after 100 blocks of setup and a clerk’s wasted afternoon, capped by ‘You supplied that yourself’ [155].",
+      "worst": "[210]–[211], the Gija & Wiman flashback: 300 words, five new names and a herald chorus, no link to Chunchu, and it opens the Joseon box 40 episodes early. Close behind: the First Emperor flashback [82].",
+      "fixes": [
+        "Cut about 1,500 words that don’t serve the ask: [79]–[87] with the First Emperor flashback [82], the Gija & Wiman flashback [210]–[211], Wu’s banquet dialogue [195]–[204], [62] and [64]–[65], [89]–[92], two of the six horses, the three later diagrams, four idiom cards and the retelling quotes [177], [264]. If the author wants to keep the Tang texture, split at [177] instead: ‘Huangdi’ ends on ‘Baekje will be the single failure of yours’; a second episode runs banquet, hallway, the name, the gate and the sea.",
+        "Make the army the spine: cut the [36] quote and keep the emperor’s answer back (he wants Chunchu in his guard [50], keeps Inmun [60]) until the Six Steeds, so the dying man’s promise [169]–[171] is the turn. Replace the stage direction [167] with something shown.",
+        "Land On Gunhae: plant him in the ward count [15], give Chunchu one reaction in the small boat that echoes Saluzi (‘the only one who never once asked me for anything’ [161]), and end on the count (eleven came in; fewer go home) instead of the [264] quote."
+      ]
+    },
+    {
+      "n": 49,
+      "title": "Royal Secretariat",
+      "logline": "Back home, Chunchu builds a one-seal Royal Secretariat around the slow Harmony Council and dresses Silla’s court in Tang robes, keeping only the crowns. Yamato sends his Tang-dressed envoys home, and the new Tang emperor orders Baekje to give back Silla’s cities.",
+      "scores": { "followable": 3, "context": 2, "pacing": 2, "flow": 2, "entertainment": 3 },
+      "verdict": "Swap it with #50, put the Harmony Council in the room to lose, and stage the Baekje edict as a scene instead of ending on 300 words of record.",
+      "opening": "‘…a border petition has been circling the Harmony Council like a bird that cannot find a roof.’ [0] hooks. Then two diagrams [1]–[2] stall it before the first scene.",
+      "ending": "Ends on a 300-word Tang edict [52] that nobody on stage receives, then ‘Rewind to Chang’an. The room is too warm, the crown prince hasn’t moved since dawn…’ [53]. The card is a good tease, but it exposes the order problem: the reader has already seen the new emperor’s calendar [27] and edict [52] before seeing the old one die.",
+      "sudden": [
+        { "block": "52", "what": "‘The Third Emperor’ signs an edict, and [27] adopts ‘the emperor’s years’. On the site Li Zhi was labelled ‘Li Zhi’ in #48; his accession is shown only in #50. A first-time reader assumes the emperor admiring the ode [41] is the Second Emperor they just met.", "setup": "shown after this episode, in #50", "fix": "Swap #49 and #50, or add one line: the old emperor is two years dead, and his son reads the ode." },
+        { "block": "15", "what": "Kim Jukji, ‘a Hwarang of Pumsuk’s class’, is carded, made Premier, gets four lines, and never appears again in the book.", "setup": "none", "fix": "Plant him in #48 (one of the embassy’s eleven) or give him the council scene in fix 2." },
+        { "block": "47–50", "what": "Tsukushi, Yamato, Kose no Ōmi, Naniwa, Emperor Kōtoku: five Japanese names in four blocks.", "setup": "Kōtoku spoke once at #40; Yamato is named in passing at #5, #11, #20, #40", "fix": "Keep ‘The Yamato court… sends them home’ and Kose’s line; drop the place names." },
+        { "block": "12", "what": "‘Today, the king will reinvent the kingdom.’ Chunchu is not king until #51 and the queen is alive, so readers stop to work out who ‘the king’ is.", "setup": "n/a", "fix": "‘Today, Silla reinvents the court.’" }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–2", "issue": "Two diagrams before the first scene, with untranslated 중시 and 三省六部 in the English text.", "fix": "Cut them, or move them after [13]." },
+        { "blocks": "0, 4, 13, 17, 19", "issue": "The point ‘the council is slow, the Secretariat is fast’ is made five times in narration and speech, and the council itself never appears.", "fix": "Dramatize it once (fix 2) and cut [4] and [19]." },
+        { "blocks": "5–14", "issue": "Eight one-line keynote blocks (‘A petition. / A seal. / A courier. / Are you getting it?’), then [14] explains it again in textbook voice (‘Chunchu establishes the Royal Secretariat — an institution that reports to the king alone’).", "fix": "Keep the parody; cut [14]’s first sentence." },
+        { "blocks": "40–52", "issue": "A quote, a 10-couplet poem, a Nihon Shoki quote and a 300-word edict: four records in 12 blocks, 42% of the episode, and no character reacts to any of them. Jinduk’s woven ode, planted in #47 [17] as her one great act, pays off with Jinduk offstage.", "fix": "Trim the ode to two lines, sung or woven by Jinduk on stage; stage the edict in Sabi (fix 3)." }
+      ],
+      "flow_notes": [
+        { "blocks": "23→40→46→51", "issue": "Four vignettes linked by theme (things Tang), not by cause: dress, ode, Yamato, edict. Nothing escalates.", "fix": "Order by consequence: Tang dress, then Yamato’s rejection, then Tang’s edict to Baekje (Silla’s gain is Baekje’s threat), ending on Euija reading it." },
+        { "blocks": "52→53", "issue": "Ends on a record, then rewinds two years (see the #49→#50 handoff).", "fix": "Swap the episodes." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Will the uncles notice they’ve been bypassed? #48’s card says they haven’t, but the council never comes on stage, so the question never tightens. Plants: Kose’s ‘fill the sea’ and ‘His successors will remember the idea’ [49]–[50] fire at #83 White River with no verbal callback; the crowns staying [38] is a nice line of identity. The edict to Baekje [52] is the real cliffhanger and nobody reads it.",
+      "best": "‘The crowns stay. Have you looked at them? Gold trees. Antlers. Little jade commas that ring when you nod.’ [38]",
+      "worst": "[40]–[52]: four records in a row, ending the episode on a 300-word edict with no one on stage.",
+      "fixes": [
+        "Swap #49 and #50 in reading order so the old emperor dies and Chunchu says ‘Then it is mine’ (#50 [25]) before he builds the Secretariat; move this ‘brush’ idea into #50’s card and give #48 a card that teases the emperor’s health.",
+        "Put the council on stage once: a councillor arrives with the border petition ready to debate it, and Jukji hands it back already sealed (this dramatizes [19]). Cut the opening diagrams [1]–[2] and [14].",
+        "Turn the edict [52] into a short Sabi scene: Euija reads ‘he may settle it with you in battle’ aloud with Gyebek in the room. It gives Baekje’s leads, offstage since #29, a beat before #56."
+      ]
+    },
+    {
+      "n": 50,
+      "title": "Jiabeng",
+      "logline": "The Second Emperor dies; his son takes the throne and the will cancels the Liaodong war, voiding the promise Chunchu just won, so Chunchu decides to finish it himself. Lady Wu is sent to a nunnery and catches the new emperor’s eye.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "A strong short montage hurt by an offstage death and three quotes that repeat what we just saw; give the emperor one line before he goes, and play this episode before #49.",
+      "opening": "‘The emperor dies in the Cuiwei Palace in the fifth month. He is fifty-one.’ [1] Plain and effective, a shock after #48. The logline line ‘The empire does not wait for grief to finish its sentence’ [5] is the stronger hook.",
+      "ending": "‘Hair grows back, Majesty.’ [34] lands. The card [35] (‘Seven years of a polite queen and a busy nephew…’) leads straight into #51’s opener.",
+      "sudden": [
+        { "block": "21–22", "what": "Euija and Gyebek return as two bold summary sentences (‘grows more watchful of the Great Clans’, ‘already knows what the silence means’).", "setup": "last on stage at #29, 21 episodes back", "fix": "Dramatize three lines in Sabi, or cut them and give Baekje the edict scene in #49." }
+      ],
+      "pacing_notes": [
+        { "blocks": "10–18", "issue": "The will, the temple name told twice in a row [11]–[12], two quotes for one death and one cancelled war [13]–[14], the mourning edict, the dragons’ petition, and a third quote retelling the denial [18].", "fix": "Cut [12] (or [11]), one of [13]/[14], and [18]." },
+        { "blocks": "31–32", "issue": "The [32] quote retells [31] and is cut off mid-sentence.", "fix": "Cut [32]." }
+      ],
+      "flow_notes": [
+        { "blocks": "0–1", "issue": "The slice’s biggest character dies between episodes and [1] reports it. #48 [163]–[169] set up his death, and the reader gets no last word.", "fix": "One line before the breathing stops: ‘Saluzi’, or ‘Li Shimin’ said to his son, which also sets up [9] (‘He does not say I’)." },
+        { "blocks": "18→19→23→26", "issue": "Chang’an, Sabi, Surabol, Cuiwei, Ganye: five places in 900 words. It works as a montage of the news travelling, except Sabi [19]–[22], which is summary.", "fix": "Dramatize Sabi or cut it." }
+      ],
+      "romance": "Li Zhi and Wu at Ganye [31]–[34]: two lines carry desire and taboo (she was his father’s woman, set up at [27]–[29]). ‘Lady Wu. …They cut your hair.’ / ‘Hair grows back, Majesty.’ is played, not told. Short and good.",
+      "battle": null,
+      "suspense": "What happens to the promise now that the will stops the war? Chunchu answers it himself (‘…Very well. Then it is mine.’ [25]), and that line is the engine for the rest of the arc. Wu’s slow rise (anteroom [27]–[28], temple [31]–[34]) pays off in #51 [29]. The six horses from #48 [163] pay off at [17].",
+      "best": "‘He made me promise to finish it. And then he left orders to stop. …Very well. Then it is mine.’ [25]",
+      "worst": "[10]–[22]: three quotes, a temple name said twice and a two-sentence Sabi summary between the deathbed and Chunchu’s decision.",
+      "fixes": [
+        "Give the dying emperor one line on the page before [1]’s death (Saluzi, or his own name to his son), so his exit lands.",
+        "Cut [12] or [11] (the temple name twice) and the retelling quotes [13] or [14], [18] and [32].",
+        "Play this episode before #49, and either dramatize Sabi [19]–[22] in three lines of dialogue or cut it."
+      ]
+    },
+    {
+      "n": 51,
+      "title": "King Muyeol",
+      "logline": "Queen Jinduk dies, the Sacred Bone line ends, and the council crowns Chunchu the first True Bone king; his first council accuses him of a private grudge against Baekje, and he writes to his friend the new Tang emperor.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "The arc’s biggest payoff, Chunchu taking the chair he has avoided since #2, is a summary sentence and a chorus of anonymous emoji speakers; dramatize Alchun being offered the crown and handing it to Chunchu.",
+      "opening": "‘For seven years the crown has sat on Queen Jinduk. The work has sat on her nephew’s table.’ [0] A sly verdict-and-twist hook; it works.",
+      "ending": "The Zhi letter [25] and Li Zhi’s reply [28] land warmly, and Wu’s rise [29] is a good tease. The card [30] signposts the ten-year jump clearly but abandons the Baekje war question raised at [20]–[23].",
+      "sudden": [
+        { "block": "10", "what": "‘Until Alchun laughs the holdout down’: who held out, and why, is never said.", "setup": "none", "fix": "Name him, or show one line of resistance." },
+        { "block": "11", "what": "The quote ‘Your servant is old… none now is weightier than Lord Chunchu’ has no speaker. It is Alchun refusing the crown, but the text never says the crown was offered to him.", "setup": "#44 [81] plants it (‘the chair you will offer me afterward’) and it never visibly fires", "fix": "Make it Alchun’s dialogue after the council offers him the throne; cut the quote." },
+        { "block": "12–23", "what": "Emoji speakers: 🙎 three times and 👑 once in the coronation, then 🙎 three times in the Baekje council, where the middle one is the new king himself [22]. The crown emoji sits on a man calling himself ‘this servant’ [14].", "setup": "n/a", "fix": "Name the councillors and tag [22] as the king." }
+      ],
+      "pacing_notes": [
+        { "blocks": "8–15", "issue": "Rushed climax. Chunchu’s coronation, the end of a thread running since the council deposed his grandfather (#2 [14.4]), is one summary sentence [10], an unattributed quote and four anonymous lines.", "fix": "Give it a scene (fix 1)." },
+        { "blocks": "3–7, 10, 13, 24", "issue": "The end of Sacred Bone is told four times: Kangrim [3]–[6], narration [7], ‘A True Bone on the throne. First since there was a throne’ [13], and the quote [24].", "fix": "Keep Kangrim; cut [7] and [24]." }
+      ],
+      "flow_notes": [
+        { "blocks": "23→24", "issue": "The Sacred/True Bone quote (from Jinduk’s death notice) drops in after the Baekje council, out of order.", "fix": "Cut it." },
+        { "blocks": "29→30", "issue": "The war question raised at [20]–[23] is shelved for a romance set ten years earlier.", "fix": "End on the Baekje question or the Zhi letter; move Jahee (see #52)." }
+      ],
+      "romance": "Munhee and Chunchu get one beat [17]–[19], a marriage rather than a romance; the dream-for-a-skirt callback to #14 lands (‘In hindsight she undercharged’).",
+      "battle": null,
+      "suspense": "Will the council crown a True Bone? It does, in a sentence. The live question is the council’s accusation that he wants war for his dead daughter [21]–[22]: a good question, one answer, then the episode moves on. The Zhi letter [25] and Wu’s rise [29] keep the Tang thread warm; Wu’s eyes [26] repeat #48 [255].",
+      "best": "Munhee: ‘My sister sold me that dream for one silk skirt. In hindsight she undercharged.’ [19]",
+      "worst": "[8]–[15]: the coronation as summary, an unattributed quote and anonymous emoji lines.",
+      "fixes": [
+        "Dramatize the succession: the council offers Alchun the crown (firing #44 [81]); he laughs and names Chunchu, speaking the [11] words as dialogue. Cut the quote.",
+        "Replace the emoji speakers [12]–[15], [21]–[23] with named people, and tag [22] as the king.",
+        "Tell the end of Sacred Bone once: keep Kangrim [3]–[6]; cut [7] and [24]."
+      ]
+    },
+    {
+      "n": 52,
+      "title": "Jahee",
+      "logline": "Ten years earlier, Yushin sends Bupmin to the harbour, where a clerk’s daughter corrects his sums and kisses him in the rain; years skip by, and he asks Yushin what ‘king for all’ means.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 2, "entertainment": 3 },
+      "verdict": "Either grow this into a real romance with an obstacle and a cost and bring Jahee back later, or fold it into Bupmin’s next scene as a flashback; as a standalone it is a sketch that stalls the war.",
+      "opening": "‘Yushin sends Bupmin to the coast to work under Kim Seonpum.’ [0] is setup, not a hook. The hook (‘she has already decided his arithmetic is sloppy’) is buried at [3].",
+      "ending": "Yushin’s ‘If it costs you a bruise — you are becoming Hwarang’ [16] is a good line, but it belongs to a different story than the romance. The card [17] makes a thin thematic bridge (‘Bupmin wants to be a king for all. So did Silla’s first.’) to Hyukgose.",
+      "sudden": [
+        { "block": "7", "what": "‘A brush he was not supposed to steal’: whose brush, and why it was stolen, is never shown.", "setup": "none", "fix": "Show the theft in a line, or cut it." },
+        { "block": "14", "what": "‘He becomes the one who remembers why the game was invented’: why gyuku was invented is never told.", "setup": "gyuku is explained at #10 [3], [9] as a horse-ball ranking game, not its origin", "fix": "Cut, or say why." }
+      ],
+      "pacing_notes": [
+        { "blocks": "5–11", "issue": "Meet, banter, kiss and the father’s cough in seven blocks; the kiss arrives inside one narration sentence [8]. [7] uses shot-list fragments (‘Warehouse lamp. Salt on the page.’) and [9] is caption-dialogue (‘Father is coughing. / From the warehouse shadow.’).", "fix": "Play the escalation over three or four more exchanges, with an obstacle." },
+        { "blocks": "13–16", "issue": "A time-skip summary (‘Two queens come and go’) and a Bupmin–Yushin exchange that has nothing to do with Jahee.", "fix": "Cut it, or tie Jahee into it." }
+      ],
+      "flow_notes": [
+        { "blocks": "12→13", "issue": "Jumps from 644 to about 654 with no bridge; Jahee vanishes mid-episode.", "fix": "End on Jahee." },
+        { "blocks": "#51→#52", "issue": "An unmotivated jump back ten years, right after the Baekje war question.", "fix": "Move the episode to its year (near #31–#36), or fold it into Bupmin’s next scene as an inline flashback." }
+      ],
+      "romance": "A sketch, not a romance. Desire is there (he watches her mouth [7]) and so is chemistry in the first exchange (‘Count again. / While I am watching.’ [5]; his ‘Please show me’ [6]). But there is no obstacle beyond a coughing father, the escalation from correction to kiss takes one paragraph [8], nobody chooses anything that costs, and the payoff is a record [12]. ‘Years later the court will name her Jayi’ [11] promises a future she never gets: Jahee never appears again in the book. We like her; we get no time to root for them.",
+      "battle": null,
+      "suspense": "Little: will they kiss (yes, at [8]). The Jayi tease [11] never fires.",
+      "best": "Jahee: ‘Your sums are wrong. / The tide does not care that you are a prince. / Count again.’ [5]",
+      "worst": "[13]–[16]: a time-skip summary and a ‘king for all’ exchange that belongs to a different episode.",
+      "fixes": [
+        "Open on Jahee’s ‘Your sums are wrong.’ [5] and fold [0] into a later line.",
+        "Give the romance an obstacle and a cost (rank: a True Bone prince and a clerk’s daughter; or his recall to the yard) and play the kiss over a few exchanges. Cut the shot-list fragments [7] and the caption lines [9].",
+        "Pay her off: bring Jahee back when Bupmin is crowned or goes to war (she never reappears), or move this episode to its year and let Bupmin’s later scenes carry her."
+      ]
+    },
+    {
+      "n": 53,
+      "title": "Hyukgose",
+      "logline": "A winged white horse kneels by a well; six chiefs dig up an egg, crown the boy inside, marry him to a girl born from a dragon’s rib and found a country of six ranks. Sixty-one years later he goes up into the sky and comes down in five pieces.",
+      "scores": { "followable": 3, "context": 2, "pacing": 2, "flow": 2, "entertainment": 3 },
+      "verdict": "Open on the six chiefs creeping at the winged horse, cut the four summaries and the unattributed manifesto, and name the surname Park so the three myths add up.",
+      "opening": "‘After the fall of Old Joseon, the local chiefs gather… when a White Horse suddenly leaves an egg’ [0], then trails off into ‘blue sky above’ and the moon. Garbled, textbook, and it leans on an ‘Old Joseon’ the reader has never been told about. It doesn’t hook.",
+      "ending": "The Five Tombs [30] (the king goes up and comes down in five pieces; ‘Nobody records a horse. Everybody in Seorabeol says there was one.’) is a strange, strong close. The card [32] (‘A chest rides the tide in, a magpie screaming over it… Preferably someone else’s…!’) is the best card in the slice and lands on #54’s opener.",
+      "sudden": [
+        { "block": "0, 20", "what": "‘After the fall of Old Joseon…’ and ‘Why did Old Joseon fall?’ are never explained; Joseon’s own episode is #88.", "setup": "only #48 [211], an unrelated flashback; explained at #88", "fix": "Cut ‘Old Joseon’ here, or say ‘after the old kingdom in the north fell’." },
+        { "block": "24", "what": "‘6 ranks, according to their virtues’: the link to the Sacred/True Bone ranks the reader just watched end in #51 is never drawn.", "setup": "bone rank runs through the book from #1", "fix": "One narrator line: ranks by virtue, which within a few generations became ranks by blood." },
+        { "block": "27", "what": "A table of six chiefs with Korean names; four of the six never appear.", "setup": "none", "fix": "Cut it, or replace with one line: every Lee, Choi and Jung in Korea today claims one of these six." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–13", "issue": "The egg is found five times: summary [0], summary [2], summary [3], quote [5], then the actual scene [6]–[13], with a second quote [11] inside it.", "fix": "Open at [6]; cut [0], [2], [3], [5], [11]." },
+        { "blocks": "19–24", "issue": "The chiefs’ manifesto is written as unattributed first-person narration blocks (‘We’re going to create a brand new country…’ ending ‘…Silla!’).", "fix": "Make it Alpyung’s dialogue, and cut [20]." },
+        { "blocks": "26, 28", "issue": "‘One person to cherish, one person to serve’ is said twice.", "fix": "Keep [28]." }
+      ],
+      "flow_notes": [
+        { "blocks": "0→6", "issue": "Summary first kills the scene’s own question (‘…It left something. Dig.’ [13]).", "fix": "Start on the ridge." },
+        { "blocks": "13→15", "issue": "The crowning and the marriage both happen in summary; the boy never does anything on the page.", "fix": "Give Hyukgose one scene with Alyoung, whose card promises she can tell the king no [16]." }
+      ],
+      "romance": "Hyukgose and Alyoung: told in one sentence (‘They marry because they want each other. The omens agree.’ [15]), echoed by the same line twice [26], [28]. Her card promises friction (‘the one person in Seorabeol who can tell the king no’ [16]) and the text never plays it.",
+      "battle": null,
+      "suspense": "What did the horse kneel over? Spoiled by [0]–[5] before the scene asks it [13]. The Five Tombs [30] is a strange, good close. Plant: Chunma, ‘painted on a saddle-flap and buried with a king’ [12].",
+      "best": "The chiefs creeping at the horse: ‘You ever seen a horse with wings? I haven’t. / …That one’s got wings, though.’ [8]",
+      "worst": "[0]–[5] and [19]–[27]: the egg told four times before its scene, then an unattributed manifesto and a name table.",
+      "fixes": [
+        "Open on the ridge [6]–[13]; cut [0], [2], [3], [5], [11].",
+        "Give the manifesto [21]–[24] to Alpyung as dialogue; cut ‘Why did Old Joseon fall?’ [20] and the name table [27].",
+        "Name the surname Park (from the gourd-shaped egg) so the triad pays off as Park, Seok and Kim, and spell the city Surabol as #51, #52 and #55 do, not Seorabeol."
+      ]
+    },
+    {
+      "n": 54,
+      "title": "Talhae",
+      "logline": "An egg-born boy floats ashore in a chest, loses a shapeshifting duel for Gaya’s throne, then cons his way into the best house in Silla’s capital with a buried whetstone; once king, he makes the man he robbed his chief minister.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "Nearly there: cut three of the five quotes that restate the paragraph before them, and it is the best standalone in the slice.",
+      "opening": "‘…a chest comes in on the tide at a fishing beach. A magpie flies over it, crying.’ [0] Simple sentence, odd fact. It hooks.",
+      "ending": "A perfect button: ‘I knew it. You did bury them.’ / ‘Prove it.’ [33]–[34]. The card [35] (‘Roosters don’t crow at night…!’) hooks into #55.",
+      "sudden": [
+        { "block": "1", "what": "‘Wa’ is never glossed; in #49 the same country is called Yamato.", "setup": "#9 [0] uses ‘the Wa’ once", "fix": "‘…north-east of Wa, the islands across the sea…’" }
+      ],
+      "pacing_notes": [
+        { "blocks": "2, 15, 19, 26, 30", "issue": "Five quotes, each restating the paragraph before it; records are 29% of a comedy.", "fix": "Cut [2], [15], [26]; keep [19] (Lord Gourd) and/or [30]." }
+      ],
+      "flow_notes": [],
+      "romance": null,
+      "battle": "The Talhae–Suro shapeshift duel [6]–[9] is a one-paragraph mini-battle with a clear prize (the throne), an escalation (hawk against eagle, sparrow against falcon) and a funny concession (‘That was a falcon. / Fine. I’ll find a country with a smaller king.’). Short, played, good.",
+      "suspense": "What does the con man want, and how will he get it? The whetstone trick [20]–[25] and the double ‘Prove it’ [25], [34] pay off perfectly. Callbacks: Suro from #41; the stolen ground becomes the Moon Palace [27], where Chunchu now lives, which quietly explains #48’s ‘Moon Palace pine’.",
+      "best": "Hogong: ‘…You buried those last night.’ / Talhae: ‘Prove it.’ [24]–[25]",
+      "worst": "The five quotes [2], [15], [19], [26], [30], which stop a comedy five times to repeat it.",
+      "fixes": [
+        "Cut quotes [2], [15] and [26].",
+        "Gloss ‘Wa’ once at [1].",
+        "At [27] (‘every king of Silla lives in a stolen house’), add a half-line that lands on the present: including the one who sits there now."
+      ]
+    },
+    {
+      "n": 55,
+      "title": "Alji",
+      "logline": "King Talhae hears a rooster crow at night; Hogong finds a gold box in the woods with a boy inside, who becomes Alji, the first Kim, and whose line takes seven generations to reach the throne.",
+      "scores": { "followable": 4, "context": 3, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "Cut two of the three quotes and say plainly that this boy’s line leads to Chunchu, so the myth triad lands on the arc’s hero.",
+      "opening": "‘…King Talhae wakes in the night to a rooster crowing in the woods west of the city, which roosters do not do at night.’ [0] Hooks, though it nearly repeats #54’s card word for word.",
+      "ending": "[10] ties Alji’s line to ‘the Kims of Surabol’ and wryly to Yushin’s Gaya Kims, but never names Chunchu; [11] is a cryptic echo of the steam’s ‘Kim’. The card [12] pivots hard to Baekje and does its job.",
+      "sudden": [
+        { "block": "11", "what": "‘The steam says the same word every time it leaves the water’: the word is Kim. Rewarding for readers who remember the cavern, cryptic for anyone who doesn’t.", "setup": "#21 [10.33] and #45 [128] (‘Kim is the sound their own steam makes’), 10–34 episodes back", "fix": "Name it: the steam says Kim." },
+        { "block": "10", "what": "‘The Kims of Surabol’ never names Chunchu, the Kim on the throne in the reader’s present.", "setup": "implicit only", "fix": "Add: and many generations later, a man named Chunchu." }
+      ],
+      "pacing_notes": [
+        { "blocks": "3–9", "issue": "Three quotes in seven blocks, each restating the beat before it (36% records in a 490-word episode).", "fix": "Keep one." }
+      ],
+      "flow_notes": [
+        { "blocks": "11→12", "issue": "A cryptic line about the steam, then a hard pivot 590 years forward to Baekje; the triad never returns to the Kim on the throne it was explaining.", "fix": "Close the triad on Chunchu (see arc), then hand to Baekje." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "What’s in the box? A boy, quickly. Alji wants nothing and says nothing; the energy is the Talhae–Hogong double act carried over from #54. The steam line [11] is a long-range echo for readers who remember #21 and #45.",
+      "best": "Talhae: ‘Well. / I came in a box too, you know. Mine was bigger.’ [6]",
+      "worst": "[7]–[9]: quote, naming, quote.",
+      "fixes": [
+        "Cut two of the three quotes [4], [7], [9].",
+        "Make the Kim link explicit at [10]: this boy’s line leads to Chunchu.",
+        "Name the steam’s word at [11] (Kim), and close on the present before the Baekje card."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "Yes for #48–#51: this is Chunchu’s rise. He goes west for an army, falls for the emperor’s one-brush machine, builds his own, loses the emperor and his promise, and takes the chair he has avoided since #2, with Li Zhi and Wu as a Tang subplot that keeps paying (gyuku and the gate in #48, the deathbed and the nunnery in #50, the letter in #51). A first-time reader keeps going through #51 on the Second Emperor, Chunchu’s wit and the Saluzi and name mysteries, although the biggest moments are told rather than played. The spine breaks after #51. The war question the coronation raises (a ‘private grudge’ against Baekje) is shelved for four backward episodes: #52 in 644, then three founding myths, about 2,900 words. #56 then resumes with Baekje leads last on stage at #29, and seven more myth episodes (#57–#63) follow it, so from #52 to #63 only #56 is set in the present (about 11,000 words). The out-of-order years don’t lose a reader about when, because every card signposts its jump; they cost cause and effect (#49 before #50) and momentum (#52–#55).",
+    "handoffs": [
+      { "from": 47, "to": 48, "works": "yes", "why": "#47’s card (‘Silla needs an army. Only one man alive can lend it. Chunchu goes west…!’) lands on #48’s ‘Everyone on earth wants something from the Son of Heaven… Chunchu brings an offer.’ Clean.", "fix": "None needed. (#47 [17]’s plant, Jinduk’s woven ode, pays off offstage in #49; see there.)" },
+      { "from": 48, "to": 49, "works": "partly", "why": "The card (‘Now he wants that brush in Silla’) and #49’s opener (the petition circling the council) match. But the three-year jump hides the Second Emperor’s death, so #49 shows ‘the emperor’s years’ [27] and a ‘Third Emperor’ edict [52] the reader can’t place.", "fix": "Play #50 next: give #48 a card that teases the emperor’s health, and move the ‘brush’ card to the end of #50, after ‘Then it is mine’." },
+      { "from": 49, "to": 50, "works": "partly", "why": "‘Rewind to Chang’an…’ is a clear signpost, so nobody is lost about when. But the rewind shows how something already implied happened, and it puts Chunchu’s motive (‘Then it is mine’ #50 [25]) after its consequence (the Secretariat). No twist depends on the reversed order.", "fix": "Swap #49 and #50." },
+      { "from": 50, "to": 51, "works": "yes", "why": "‘Seven years of a polite queen and a busy nephew…’ leads straight into ‘For seven years the crown has sat on Queen Jinduk.’", "fix": "None." },
+      { "from": 51, "to": 52, "works": "partly", "why": "‘Ten years back’ signposts the jump clearly, but it drops the question #51 just raised (war with Baekje, a ‘private grudge’) for a romance whose heroine never returns.", "fix": "Move Jahee to its year or fold it into Bupmin’s next scene; let #51’s card point at Baekje or at the founders." },
+      { "from": 52, "to": 53, "works": "partly", "why": "The bridge is thematic (‘Bupmin wants to be a king for all. So did Silla’s first.’), and #53’s opener fumbles the landing with a garbled sentence about an unexplained ‘Old Joseon’.", "fix": "Frame the triad with Chunchu: the new king, first of his bone, bowing at the founder’s tombs; open #53 on the ridge." },
+      { "from": 53, "to": 54, "works": "yes", "why": "The best seam in the slice: ‘A chest rides the tide in, a magpie screaming over it…’ lands on ‘a chest comes in on the tide… A magpie flies over it, crying.’", "fix": "None." },
+      { "from": 54, "to": 55, "works": "yes", "why": "‘Roosters don’t crow at night…!’ hands straight to the rooster in Sirim, although #55’s first line repeats the card almost word for word.", "fix": "Trim #55 [0] so it doesn’t restate the card; start on Talhae’s ‘Hogong. There’s a rooster in Sirim.’" },
+      { "from": 55, "to": 56, "works": "partly", "why": "The card (‘The king can’t sign a thing for three years… the clans have a list with one name on it’) sets up #56’s premise, and #56 [28] pays off the list (‘The one with no house.’). But it jumps from Silla in 65 AD to Baekje in 655, to leads last on stage at #29 (two summary lines in #50 since), and #56 opens on a synopsis line (‘Queen Satek, Euija’s mother, dies.’).", "fix": "Give Baekje a scene inside this slice (the edict in #49 or Sabi in #50), and open #56 on a hook rather than the synopsis line." }
+    ],
+    "dropped_threads": [
+      "Jahee (#52 [3]–[12]): carded, kissed, promised a future (‘Years later the court will name her Jayi’ [11]) and never mentioned again in the book.",
+      "Kim Jukji (#49 [15]): carded as the first Premier of the Royal Secretariat, four lines, never seen again.",
+      "Alchun’s chair: #44 [81] plants an offer (‘the chair you will offer me afterward’); #51 [10]–[11] never shows it, only an unattributed quote of his refusal.",
+      "Wu’s whisper (#48 [226]): leaned on at #48 [255] and #51 [26] and never revealed anywhere through #98. Fine if it is meant to stay closed; it is invoked three times.",
+      "Baekje’s leads: Euija and Gyebek, the stars of #4, are off stage from #30 to #55 except two summary sentences (#50 [21]–[22]), and the Tang edict to Baekje (#49 [52]) is never received by anyone.",
+      "The ward count: ‘Eleven in, eleven out. If one of you dies, report it’ (#48 [15]) is a plant that On Gunhae’s death [262]–[264] could fire and doesn’t.",
+      "Kose no Ōmi’s ‘fill the sea… His successors will remember the idea’ (#49 [49]–[50]) fires only implicitly at #83 White River, 34 episodes later, with no verbal callback.",
+      "Jinduk’s woven ode, planted in #47 [17] as her one great act, pays off in #49 [41]–[43] with Jinduk offstage.",
+      "Hyukgose’s surname, Park, is never given, so the Park, Seok and Kim triad (#53–#55) explains only two of Silla’s three royal names."
+    ],
+    "repetition": [
+      "Tang’s one-brush machine against the slow council: #48 [3], [62], [110], [111]; #49 [0], [4], [13], [17], [19]. ‘One seal. One speed.’ appears at #48 [3] and #49 [4]; ‘a province three months away’ at #48 [62] and [110]; ‘a table that has never held a feast’ twice in a row at #49 [3]–[4].",
+      "Wu meets Chunchu about the woman king twice in #48 ([195]–[204], then [215]–[224] as if for the first time); his fear of ‘that woman’s eyes’ is narrated at #48 [255] and again at #51 [26].",
+      "The end of the Sacred Bone line is told four times in #51: [3]–[7], [10], [13], [24].",
+      "The egg is found five times in #53: [0], [2], [3], [5], [6]–[13], plus the quote [11].",
+      "Quotes that restate the block before them: about 20 of the slice’s 26 quote blocks (#48 [177], [264]; #49 [18], [42], [48]; #50 [13], [14], [18], [32]; #51 [24]; #52 [12]; #53 [5], [11], [31]; #54 [2], [15], [19], [26], [30]; #55 [4], [7], [9]).",
+      "Synopsis lines at turning points, in bold-name outline voice: #48 [167] (‘The Second Emperor reveals he is dying.’), #49 [14], #50 [11], [21]–[22], #51 [7], [9], #53 [0], [3], [15].",
+      "One city, two spellings: Seorabeol (#53 [16], [26], [30]) and Surabol (#51, #52, #55). One country, two names: Wa (#54) and Yamato (#49).",
+      "Joseon: #48 [211] tells its fall through Wiman’s coup and #53 [0], [20] lean on ‘the fall of Old Joseon’ as known, both well before its own episode (#88)."
+    ],
+    "top_problems": [
+      "Huangdi (#48) is 7,900 words with its central question spent early: a quote at [36] says Tang ‘promised to send an army’, and the next 230 blocks ride on two excellent mystery boxes (Saluzi, the emperor’s name) through about 2,000 words of detour. That detour is the First Emperor flashback [82], the Gija & Wiman flashback [210]–[211], the History Office and Academy tails, a duplicate Wu scene [195]–[204], two extra horses and 12 explainer widgets. Cut about 1,500 words and hold the emperor’s yes until the Six Steeds, or split at [177].",
+      "The slice tells its biggest moments instead of playing them. The emperor’s dying is a stage direction (#48 [167]) and his death happens between episodes (#50 [1]). Chunchu’s coronation, the end of a thread running since #2, is a summary sentence, an unattributed quote and emoji speakers (#51 [10]–[15]). On Gunhae dies in four blocks with no reaction (#48 [262]–[264]), and Tang’s threat to Baekje is a 300-word edict nobody receives (#49 [52]).",
+      "The chronology costs cause and effect, not orientation; every card signposts its jump. But #49 (651) shows the new emperor’s calendar and edict before #50 (649) shows the old one die and Chunchu decide ‘Then it is mine’, so swap them. After #51 raises the Baekje war, four backward episodes (#52 in 644, then three myths, about 2,900 words) stall the present, with seven Tamla myth episodes (#57–#63) right behind #56: from #52 to #63 only #56 is set in the present.",
+      "Records restate scenes. About 20 of the slice’s 26 quote blocks repeat the paragraph or dialogue right before them, and #49 is 42% records, ending on a 300-word edict. The myths suffer most: #54 has five quotes in a comedy, #55 three in twelve blocks.",
+      "The myth triad doesn’t make its point or lead anywhere. Hyukgose, Talhae and Alji are Silla’s three royal houses (Park, Seok, Kim), told right after the first True Bone Kim takes the throne, but Park is never named, Chunchu is never linked to Alji, #53 opens on a garbled sentence about an unexplained ‘Old Joseon’, and nothing in them sets up Gyebek’s exile in #56. Frame them with Chunchu (a new king at the founder’s tombs), compress #53 and #55, or merge all three into one episode of about 1,800 words."
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+
+=================================================================
+#71 Three Realms  (태초)  [FLASHBACK EPISODE]
+Arc: Epilogue · place: realms_pavilion · tone: divine comedy
+Logline: Once a year the gods meet in a pavilion on the clouds. This year the reaper comes late from a swept yard in Baekje, with a question about the dead.
+=================================================================
+[0] ¶ Once a year the gods hold a meeting. Kangrim is late to this one, because of a yard in Baekje.
+[1] ¶ The annual meeting is a small pavilion: four posts, a raised floor, clouds for a yard. Living, dead and western rows all fit if nobody stretches.
+[2] [PLACE realms_pavilion: Four posts, clouds for a yard, and very strict seating.]
+[3] [DIAGRAM pantheon:courts The Three Realms · 삼계 — Hwanin above; Living, Dead, and Western Flower Field below. Heaven is not a fourth peer realm.]
+[4] ¶ Before the principals sit — servants first. The Three Realms under the Big Man Upstairs still gossip like any court.
+[5] Haemosu: Ah, Kangrim…. Looking as young as ever, eh?
+[6] Kangrim: Shut it, sun. I’ve had a long morning.
+[7] Yumla: H-hey, Samsin.
+[8] Samsin: Oh, long time no see, Yumla! How's the Underworld these days?
+[9] Yumla: Y-you know… full of dead people.
+[10] ¶ Then the midwife and the sun find the same rail. The rest of the pavilion develops a sudden, devout interest in clouds.
+[11] Samsin: Hey, Haemosu. / Did you see Yumla’s face? Went straight purple. / And I barely hiked the skirt.
+[12] Haemosu: Barely? I felt that from the chariot. / Anyone in this pavilion hungrier than us? Name one.
+[13] Samsin: Ibiga? He flirts with weather. / Kangrim stares at his notebook. Yumla goes purple if I breathe. / We’re the only ones actually hot in here. / Man or not — I like that I can gossip like this with you.
+[14] Kangrim: …Nothing for the ledger. / And that’s correct.
+[15] ¶ Then the principals duck the lintel — Hallakgungi alone, Big Star with his dark court, Little Star with sky and sun and birth.
+[16] ¶ The pavilion was not built for three sovereignties. They sit anyway.
+[17] Hallakgungi: Hey Little Star… didn’t the Big Man Upstairs send his son down to the mortal domain a while back? / Whatever happened to him?
+[18] Little Star: Speaking of which… / Big things are happening in the mortal realm. / The mortals are starting to speak of reunifying Dangun's kingdom.
+[19] Big Star: …
+[20] Hallakgungi: Elder brother of the dead goes quiet again. / In my field, resurrection and ruin grow in the same rows. Reunification probably does too.
+[21] ¶ Kangrim has not sat down. This morning he collected a woman and two children from a swept yard in Baekje. The girl asked if her father was coming too. Kangrim does not lie, so he said, “Later.” He has been thinking about the flower field ever since.
+[22] Kangrim: Sir.
+[23] Hallakgungi: Yes?
+[24] Kangrim: I've always been curious… what sorts of flowers grow in your fields?
+[25] Hallakgungi: Haha… well, there are those that regenerate new blood, grow new skin, grow new bones… / To be honest, I can't even keep track of all of them anymore. / Why do you ask?
+[26] ❝QUOTE (Segyeong Bonpuri (세경본풀이) recited by Lee Seung-sun (이승순), recorded by Gang Jeong-sik, Gang So-jeon and Song Jeong-hui, 2011 — Sanggari, Aewol-eup (Hanguk Gubimunhak Daegye, rev. ed.)): “Seeing the Western Flower Field — what flower is this?” “The flower that gives back speech. This one, the flower that brings blood back. The flower that brings flesh back, the one for the organs and bowels, the flower that brings bones back.”❞
+[27] Kangrim: I was just curious… using all of these flowers at once… / Is it… is it possible to resurrect a dead person?
+[28] ¶ Hallakgungi’s face hardens.
+[29] Hallakgungi: Grim Reaper Kangrim. What is this line of questioning? / Do you have something you need to tell me?
+[30] Kangrim: No, sir. I was—
+[31] Hallakgungi: Well, to answer your question. It is possible. / I've done it… only for one person. / But I do not get involved in mortal affairs.
+[32] Kangrim: Only one. / …And who decides which one?
+[33] Hallakgungi: I do. Cheerfully. And I already have. / Rule of the field, reaper: pick a flower for one mortal and the whole row wilts. Sit down.
+[34] ¶ Kangrim sits down at the end of the dead’s row. He opens his ledger to a page headed Yellow Mountain, and does not like how long it is.
+[35] Little Star: I cheated for the living world. / Them cutting each other… that is my small law too. / Still — when they call Dangun’s name again, does the Big Man Upstairs laugh, or sigh?
+[36] Big Star: Let the meeting begin. / Business of the living… last item on the agenda.
+[37] ¶ **The minutes of that meeting never leave Heaven’s table. Down below, five thousand men are counting fifty thousand…!**

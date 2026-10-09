@@ -1,0 +1,1330 @@
+
+##### samhan | Queen Sunduk | 632
+0	p	A Queen? Ridiculous.
+1	map	map
+2	p	Munhee (26) is a young noblewoman, being attended by her low-rank servants. She is getting her hair done for an important event, while a servant takes care of her baby son Inmun (3).
+3	card	card
+4	dialogue	[munhee] Totally unfit for a Noble woman… Come on, boy, can’t you find something better?
+5	p	Her husband Chunchu is dressing too. He is twenty-nine, and already the most cunning man in Samhan. Only the quiet rooms know it yet. Their two children are getting under everyone's feet.
+6	card	card
+7	p	Bupmin is six. He finds his father and uncle on the hill where adults invent countries and sits down without being asked.
+8	dialogue	[munmu] When I’m king everyone has to listen to me. / Even the bone people. / …And the ones with no bone. Those most, there’s more of them.
+9	dialogue	[munhee] Listen to him. / He gets the sentences from you. The volume is his own.
+10	dialogue	[chunchu] …Keep that. / I may need to borrow it back when I am braver.
+11	p	Before they dress for the hall he takes the two of them around the palace road. Gotaso sits in front of him on the same horse. Bupmin has his own, and will not share the saddle.
+12	dialogue	[gotaso] Faster. / Father. Faster.
+13	dialogue	[chunchu] You'll bite your tongue. / Then you'll talk less, which — wait, that's the joke? Fine. Hold on.
+14	dialogue	[munmu] I'm not racing. / I'm following. That's different.
+15	dialogue	[chunchu] That's a lawyer's horse, son. / Look at you. I'm going to tell your mother you invented a new kind of slow.
+16	p	King Jinpyung (65) is dead, after years of expanding Silla against Baekje.
+17	p	Silla runs on bone. Your rank is your birth, and your birth is your life. Six common ranks at the bottom. Above them, the nobles. Above them, the royals.
+18	term	term
+19	p	In the hall the sleeves are the census. True Bone wears purple 자색. Head Rank Six wears scarlet 비색. Five wears blue 청색. Four and below wear yellow 황색. You can read a man before he speaks.
+20	dialogue	[alchun] Below all of them are the slaves — but those are not counted as people.
+21	dialogue	[sunduk] …A country that does not count people as people. How is that meant to last a thousand years?
+22	p	Three royals are left. All three are the old king's daughters. Dukman, thirty-seven. Seungman, thirty-two. Chunmyung, fifty-two. That is the whole bloodline, and all of it is women.
+23	p	Which of the three it will be is settled the night before, in a pavilion off the pond, by six men and a brazier. By morning the palace has a name, and the name has to be dressed.
+24	dialogue	[sunduk] I put on this confident face, / but honestly — me, becoming king… / I wonder whether I can do it at all…
+25	dialogue	[yushin] Whether you do it well or badly — / that is what “no matter what” means. / In all this world, wouldn’t it be good to have one person always on your side, Princess? / Hwarang Kim Yushin. / I will serve you to the end.
+26	p	And so she becomes the first Queen of Silla. They will call her Queen Sunduk, the Blue Moon of the Divine Country.
+27	card	card
+28	quote	QUOTE 聖骨男盡 故女王立
+29	table	table
+30	p	Munhee's big brother is Yushin. He is thirty-seven, and he runs the yard. Horse, bow, gyuku: that is where boys learn whether they matter. People call him the Sword of Silla. He is also, everyone notices, very fond of the princess.
+31	card	card
+32	p	The capital’s daughters follow the Sword of Silla around the yard. He does not look at them. He looks only at the Queen.
+33	dialogue	[courtmaid] The marshal walked past. / I know. Don’t look. / …I’m looking.
+34	dialogue	[courtmaid] The most popular man in Silla, and he will not even turn his head. / If he smiled once the colonnade would fall over.
+35	p	Then the yard-coat is open down the spine, and She sees the width of his back — muscle the court is not supposed to want — and the Queen’s face goes vermilion before she can pretend it is the lamp.
+36	p	He and Chunchu had known each other since they were boys. There is a story about that, though neither of them tells it the same way twice.
+37	flashback	FLASHBACK(8)
+38	dialogue	[yushin] Are you feeling alright, your majesty?
+39	dialogue	[sunduk] Hm? (startled)
+40	dialogue	[yushin] Look at me. / Not the door. (smiles)
+41	p	For a moment neither of them says anything. Then she straightens, and she is the Queen again.
+42	dialogue	[yushin] …Once.
+43	dialogue	[sunduk] Once what.
+44	dialogue	[yushin] Call me by name, not by title. / Today, since it is the last day for it.
+45	dialogue	[sunduk] …Yushin-ah.
+46	p	Nobody in the room hears it. It is the last time in forty-one years that anyone calls him that, and he will still be able to hear it on the day he dies.
+47	dialogue	[sunduk] Lord Yushin. / My sister married for love and got a son out of it. / I got a council that sat until dawn.
+48	dialogue	[yushin] …Your Majesty.
+49	dialogue	[sunduk] So from now on — «Your Majesty». Nothing else. / …That is what I have.
+50	p	Then the young knights kneel and pledge themselves to the throne. Bidam kneels in front, already the yard's Second Blade. Pumsuk is fourteen, and trying very hard not to look it.
+51	dialogue	[hwarang] By Hyukgosé’s light, we, the young Hwarang knights of Silla, pledge eternal allegiance to the Queen!
+52	p	At the end of the ceremony, everyone chants for their new queen.
+53	p	May the heavenly White Horse bless this queen… Long live the Queen! Long live the Hwarang spirit! Long live Silla!
+54	dialogue	[undefined] (market woman, to a child) / Remember where you live. The Divine Country. The Rooster Forest. / Kings change. Get the name right.
+55	p	Blue banners. A moon no one has to point at. In the capital they have already raised a tower to read the stars — Cheomseongdae.
+56	p	Silla sends envoys to the other kingdoms to let them know of their new queen.
+57	dialogue	[kingmu] So that old brat Jinpyung is finally dead… Bah! Good riddance. And they have seated a daughter, eh…?
+58	dialogue	[yeongnyu] Let us see how long that Council of theirs lasts.
+59	dialogue	[taizong] A woman king… those Samhan barbarians are at it again, aren’t they? Wu! Prepare my robes.
+60	p	He sends her a gift: a painting of peonies in three colours, and a packet of their seeds.
+61	dialogue	[sunduk] …There are no butterflies on these flowers.
+62	dialogue	[alchun] Your Majesty?
+63	dialogue	[sunduk] It means no scent. / …And the Second Emperor would like me to know he has noticed I have no husband.
+64	p	She has the seeds planted anyway. When they bloom, they have no scent. The court decides she is a sage. She knows she simply reads people.
+65	dialogue	[jomei] First my aunt, and now Silla as well…? It must be a new trend.
+66	p	Sun, for kindness.
+67	p	Duk, for virtue.
+68	hanja	hanja
+69	p	Six men who hate the word “woman” crowned one anyway. How? Go back one night, to a brazier…!
+
+##### samhan | Harmony Council | 632
+0	scene	scene
+1	p	The Harmony Council meets to debate who the next king should be. Six nobles, one night. Nobody stands up until they all agree.
+2	term	term
+3	p	Night in a small pavilion off the pond. Someone lights the small brazier. The flame is red first.
+4	p	It runs hotter. The flame turns blue. Only then may the session start.
+5	p	Each sleeve has a cup of tea and a wooden piece on a personal mat. They vote by setting the piece on either side of the cup.
+6	p	The Council decides by unanimity. One voice against is enough to stop a name. That is why it takes all night, and why the room fears the newest member almost as much as it fears a woman on the throne.
+7	p	The first count is three to three. A hung jury in silk. Initial vote, then deliberation, then a final vote that cannot move until every sleeve agrees.
+8	p	Three pieces go to the yes side of the cup. Three go to the no side.
+9	diagram	diagram
+10	dialogue	[alchun] The first count is split. / Half this room still says a woman cannot rule.
+11	p	How about Prince Chunchu…? Chunchu’s mother is a Royal, but his father is a Noble… In that case, the child becomes a Noble as well.
+12	flashback	FLASHBACK(8)
+13	p	How about the Kim of Gaya…? The Marshal’s blood is royal — in a country that no longer exists. Yes, and if we begin counting kingdoms that no longer exist, half this room is royal.
+14	p	The Royal blood, there remain only three… The woman king, finally we shall see…
+15	p	The newest member of the Council — a Hwarang barely seated among them — stands up.
+16	card	card
+17	dialogue	[bidam] My lords have said one word forty times tonight. “Woman.” / I have known Princess Dukman since I was a boy. / Not one of you has ever put a question to her that she could not answer. / If only three of the Sacred Bone remain, then I choose the cleverest of the three.
+18	dialogue	[murim] …If cleverness picks a king, whose cleverness do we hear tomorrow. / Bone is the measure. Bone does not change.
+19	dialogue	[imjong] The bone has run out. / Holding a country on empty bone is more dangerous than a clever woman.
+20	dialogue	[suljong] I still… cannot raise my hand. / This room is too old to be turned by one night’s speech.
+21	dialogue	[yushin] I have put questions to her. / They were answered. Half this room never asked — they only repeated the word woman. / That is what deliberation is for. To overturn the first count.
+22	dialogue	[yumjang] …Alchun. Only your hand is left.
+23	dialogue	[alchun] I have taken a tiger. / A tiger has no sex. It has teeth. / …I raise it. Final vote.
+24	p	Alchun moves his piece. All six sit on the yes side.
+25	diagram	diagram
+26	dialogue	[alchun] …That boy Bidam has no fear in him at all.
+27	p	Across the floor, Yushin catches the Second Blade's eye. He and Bidam have been trading wins since they were boys in the yard. The count stands at one hundred and eight apiece. Neither lets the other stay ahead for long.
+28	dialogue	[yushin] Well stood. / Tomorrow on the yard — the hundred-and-ninth is mine.
+29	dialogue	[bidam] Come now, brother. / Today is the country’s business. The blade can wait till tomorrow.
+30	p	Every sleeve in that room learned to fight in one dead king’s yard. Who was he? Back we go, to the Cloud King…!
+
+##### samhan | Jinheung, the Cloud | 554
+0	p	Ask anyone in Surabol about the Cloud King and they'll tell you about his stones. Ask anyone in Sabi and they'll change the subject. You'll find out why. Not yet.
+1	map	map
+2	p	He was seven when they put the crown on him. It was too big, and nobody mentioned it. By the end, Silla had a river, a coastline and Gaya. He got there by being the best ally in Samhan, right up until the afternoon he wasn't.
+3	p	He put up stones wherever he stopped — four of them, on mountains, at the edges of what he had taken — and the stones do not boast. They say who came, and when, and that the land is now inside the border. They are property deeds.
+4	dialogue	[herald] There is no boasting on this stone at all.
+5	dialogue	[herald] Boasting is for men who are worried about losing it.
+6	p	Late in his reign he invents the Hwarang. Take the noblest boys and put them in one yard. Make them ride, sing and rank each other until the ranking feels like fate. Nearly every man who matters later comes out of that yard.
+7	p	One class a year. The number sticks to a man for life. Almost every sleeve on the Council first slept in that hall.
+8	term	term
+9	p	Chunchu. Yushin. Bidam. Pumsuk. Alchun. Gwanchang. Wonsul. They are all, in the end, one old man’s idea about what to do with teenage boys.
+10	p	Near the end he shaved his head. The king of the four mountain stones put on a monk's robe and took a new name: Dharma Cloud. His queen went into a nunnery beside him. The court kept calling him Majesty. He kept answering to the other thing.
+11	p	Long after the stones are mossed over, the old men of the capital still argue about what to call him. Not in the official registers — those keep to temple names — but in the quiet after the wine.
+12	dialogue	[undefined] Jinheung… we called him the Cloud King. After the name he took at the end. / A cloud has no border, you see. It goes where it likes, and for an afternoon the ground underneath is its ground.
+13	dialogue	[herald] That sounds like praise.
+14	dialogue	[undefined] It was, for about a year. / Then you look at where the shade fell. Gwansan. The Han. Gaya. / A cloud never asks whose field it’s raining on.
+15	p	That rain fell on Baekje’s field. Baekje kept the grudge. Now meet the prince who will inherit it…!
+
+##### samhan | Prince Euija | 632
+0	p	Thirty-two is late to be named crown prince. By the time his father gets around to it, Euija has more than fifteen sons. The clans have had years to decide which ones they own.
+1	map	map
+2	card	card
+3	quote	QUOTE 事親以孝 與兄弟以友 時號海東曾子
+4	p	In Sabi the clans read the stars the way other courts read ledgers. Loyalty is the word they use when the door between king and house is still closed; after it opens, they use other words.
+5	dialogue	[herald] …Fifteen?
+6	dialogue	[herald] His Majesty has over fifty — Samsin must keep a night shift just for Sabi. The Crown Prince is still comfortably behind.
+7	p	This is said admiringly. It is that kind of court.
+8	p	The young princes grow up already spoken for. Yung is the eldest. Pung is eight and has good handwriting. Each boy wears a clan's ring, hears a clan's tutor, and finds a clan's grudge folded into his allowance.
+9	dialogue	[kingmu] Crown Prince. / There. Now they have to bow to you first and complain about you second.
+10	dialogue	[euija] They complained first for thirty-two years, Father. / I’ll take the bow.
+11	cite	cite
+12	p	Euija sneaks out of the palace to explore the life of the common people.
+13	p	The boy is going back into the water. He has been at it since morning, and he is not a strong swimmer.
+14	dialogue	[euija] How many times have you gone in?
+15	dialogue	[gyebek] Nineteen.
+16	dialogue	[euija] …You were counting?
+17	dialogue	[gyebek] At twenty I would not come back out. That is why I count.
+18	dialogue	[euija] <b>Are you insane?! In that much of a hurry to stand before Yumla?!</b>
+19	dialogue	[gyebek] I gave my word.
+20	p	It takes a while to get it out of him.
+21	flashback	FLASHBACK(3)
+22	dialogue	[euija] A fine young man… what is your name?
+23	dialogue	[gyebek] I have… no name.
+24	dialogue	[euija] …What? You think it makes sense to have no name, here in Baekje?
+25	dialogue	[euija] It’s the name of a great man. / How about — “Gyebek”?
+26	hanja	hanja
+27	p	It is the White River — the wide mouth below Sabi where clan barges quarrel over winter space, and where boys who cannot swim keep trying anyway.
+28	dialogue	[gyebek] …Do you like the name, or do you like me?
+29	dialogue	[euija] …People don’t usually ask that.
+30	dialogue	[gyebek] I have to ask, or I do not know.
+31	p	Prince Yung is the favored one to win — oldest, strongest, and backed the way favorites are always backed: by houses that have already counted what he will owe them. In the succession the clans are not watching. They are holding the brackets.
+32	p	Eight houses. Eight fighting styles. One king between them. And every house has already picked a prince…!
+
+##### samhan | Eight Great Clans | 632
+0	p	Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.
+1	p	The Eight Great Clans run this country, and one king sits between them. Satek fights with the king's sleeve. Yunbi fights with the coast road. The other six keep their techniques quiet.
+2	term	term
+3	term	term
+4	term	term
+5	term	term
+6	term	term
+7	term	term
+8	term	term
+9	term	term
+10	term	term
+11	p	Once a year, the court chalks a square grid in the palace yard. Four hard lines. No banners. The young men of each house step onto the grid in white. It's the same quarrel as the west bridge, only without the carts.
+12	dialogue	[eldersatek] White cloth. Wooden swords. / If anyone bleeds the wrong colour, the berth talks stop for a month.
+13	dialogue	[elderyunbi] Then keep your boys’ wrists honest. / The chalk does not care whose sleeve they hold.
+14	p	Swords first. Wooden ones, which still remember steel. A Jinmo boy holds his blade high. A Satek boy answers from the middle. On the call they both move. Blades skim the chalk. The white sleeves clap together so close that the steps gasp.
+15	dialogue	[undefined] That Jinmo boy? / Short wrists. / Feet faster than the Satek though. / Point to the white sleeve.
+16	p	When the wooden points are tallied, the sand comes out. A circle of grit inside the same square. Ssireum — satba locked before they stand, knees in the grit, equal grips on waist and thigh, then up without letting go. No circling for a hold. The bout is the hold.
+17	p	A Hae boy hooks a leg. A Guk boy answers with his hip. He lifts, he turns, and the other boy's feet leave the earth. The yard goes quiet the way a dock goes quiet when a rope snaps. Sand takes the shoulder. The chalk does not argue.
+18	dialogue	[eldersatek] See? / Even Yunbi can fall without a cart.
+19	dialogue	[elderyunbi] Your boy’s knee touched first. / Ask the chalk. / Elders watch from the hall steps — they always do — and still count wrong when it is their sleeve.
+20	p	By dusk the white is grey with chalk and grit. Nobody has settled four generations of anything. The throne likes it that way. The boys go home with a score instead of a funeral.
+21	p	The Satek clan is currently the most powerful. Both the Queen and the Premier are from the Satek clan, making them a key rival to the royal Buyeo clan.
+22	cite	cite
+23	cite	cite
+24	cite	cite
+25	cite	cite
+26	p	In the Assembly they fight for power, each house holding a share of the king's sons. They fight in the street too. Same fight. The street version is older.
+27	term	term
+28	p	Unlike Silla’s Harmony Council, the Assembly does not require every voice. A plurality of houses is enough — which is why the street fights matter. Votes can be bought in pieces. In Surabol they must be bought entire, or not at all.
+29	p	What the Assembly votes on, more often than war, is water. Who loads first. Whose ships winter in the river mouth. Who gets the orange levy, and who gets the silk berth. In this country, a clan without a harbour can't feed a fight.
+30	dialogue	[eldersatek] Yunbi talks of blood. / We talk of berths. / Blood cools. A winter anchorage does not.
+31	dialogue	[elderyunbi] You hold the king’s sleeve and call it a harbour. / We hold the coast road. Sabi to the salt. Every cart that fears rain pays us in quiet.
+32	p	Satek and Yunbi have been at it for four generations. Nobody alive can say what started it. Everybody alive can list the last six things.
+33	dialogue	[undefined] The Yunbi boys turned a Satek cart over at the west bridge yesterday. / Then tonight the Satek go over a Yunbi wall. / Same as the lantern festival last year. / Last year three of them died.
+34	dialogue	[eldersatek] Yunbi is not Baekje blood. They rolled in from the north.
+35	dialogue	[elderyunbi] We rolled in four hundred years ago. / Does that not make us Baekje by now?
+36	dialogue	[eldersatek] Four hundred years rolling in. Four hundred rolling out.
+37	dialogue	[elderyunbi] Satek is a house that lives by holding the king’s sleeve. / We do not hold the sleeve. We hold the arm.
+38	p	Neither house has ever won, and nothing about that is accidental: the throne needs both of them standing. A clan with no rival starts watching the throne.
+39	p	The rivalry has a quieter register, too — the kind that never makes the street. Each house keeps a clerk in the other’s counting-room. Each house denies it. Every third Assembly, someone finds a cup under a floorboard that was not there when the session opened, and both sides pretend to be shocked.
+40	dialogue	[undefined] They say Yunbi already knows what was said in the Satek meeting. / And Satek already knows the Yunbi one. / So both know, and both pretend not to. / That’s politics.
+41	p	Once, both houses secretly agreed to kill a grain levy. It came to the Assembly anyway. The votes lined up as counted. Then Elder Satek, who had nodded all morning, turned his thumb down at the last call. The levy died. Yunbi's men stared. His own men stared harder. He never explained.
+42	cite	cite
+43	dialogue	[kingmu] Lord Yunbi… an honour to— / Lord Satek… a new—
+44	dialogue	[euija] Father… I have no interest in these clan quarrels. / A king should be for the country—
+45	dialogue	[kingmu] My child… learn their names anyway. / …I did not like mine either. I still say them first.
+46	p	“Restore the reign of the thirteenth Eraha!” Every house in Sabi still chants it. To hear why, we go back three hundred years…!
+
+##### samhan | Gunchogo, the 13th | 371
+0	p	Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.
+1	map	map
+2	p	Baekje has the river, the coast and the sea roads east. The clans take the docks. The throne takes a cut. It is the richest kingdom in Samhan, and the strongest. Neither lasts.
+3	dialogue	[nation-baekje] Restore the reign of the thirteenth Eraha.
+4	p	They will still be chanting that sentence three centuries later, in a courtyard, to a clever king who has already decided that a country is a story. It is the sentence that gets Daeya burned.
+5	p	Goguryeo remembers it too, and differently, and for exactly as long.
+6	p	Back to the snow, and to Goguryeo’s most frightening commander. First question: do you know what happens to traitors…?
+
+##### samhan | Commander Yeon | 634
+0	p	In the high mountains of Manchuria, a young man is caught in the snow by a Goguryeo soldier.
+1	map	map
+2	p	He is taken to the outpost of Commander Yeon (29), the Eternal General — a ruthless military general.
+3	card	card
+4	dialogue	[gesomun] Do you know what happens to traitors, young man...?
+5	p	It is over quickly, and it is not clean. Nobody in the yard looks away, because looking away is also a report.
+6	p	The guards talk about him the way men talk about weather. “He’s a monster, you know. Out here they call him the Red Sun of Pyongyang. He’s made the Eastern Commandery the safest in the kingdom. The barbarians run if they hear his name.”
+7	p	The outpost is also a building site. Three summers ago, the Tang flattened Goguryeo's pile of enemy bones. Goguryeo got the message. Now it builds a wall. A thousand li of it. When Yeon isn't killing anybody, he walks it with a plumb line and kicks the crooked stones.
+8	dialogue	[gesomun] They say you… leaked our secrets to the enemy. / Do you know what punishment is given to a traitor?
+9	dialogue	[undefined] I have… no name.
+10	dialogue	[gesomun] Of course. The barbarians always show more respect.
+11	p	A month before the Summit, in a Mohe village the Eastern Command has finished with, there is a boy who will not move out of the doorway of a house that no longer has a roof. Snow is settling on the ash. He has a shaved crown and two braids, and he holds a stick the way he has seen men hold spears. Yeon gets down off the red bay and walks up until the stick touches his chest.
+12	dialogue	[gesomun] Move.
+13	dialogue	[gulgul] …
+14	dialogue	[gesomun] Do you understand me.
+15	dialogue	[gulgul] …
+16	p	He does not. Yeon looks at him for what his officers later agree was an unreasonable length of time. Then he laughs, the slap of a laugh they will learn to dread, and pulls off his gloves.
+17	dialogue	[gesomun] Look at this one. Guarding a house that’s already burned. / Good. This is what Goguryeo looks like. / Get on. The second horse.
+18	p	He hands the gloves down. They do not fit. The boy gets on the second horse anyway, the stick still in his fist.
+19	dialogue	[dosuryu] …You are taking him?
+20	dialogue	[gesomun] Where do you think that boy is standing when he is grown.
+21	dialogue	[dosuryu] …Opposite us, I should think.
+22	dialogue	[gesomun] That is why I am taking him.
+23	p	He gives him the name Gulgul, which is not a Goguryeo name and is not a Mohe one either, and raises him in Pyongyang alongside his own sons — one step behind them at every meal.
+24	p	Years later, on the north wall of Pyongyang in a winter worse than this one, Yeon stands with the grown boy a step behind him and the river frozen white below. He says the thing he says every winter, to anyone in earshot, as if the cold might forget it otherwise.
+25	dialogue	[gesomun] Cold?
+26	dialogue	[gulgul] …No, sir.
+27	dialogue	[gesomun] Liar. I’m cold too. / Remember it anyway. Kings die, courts get tired, walls come down— / <b>Goguryeo never dies.</b>
+28	p	Gulgul grows up quiet. When Yeon sends him to guard the northern marches, he gives him a surname. Dae. Big, as big as the country. Dae Gulgul watches that border for thirty years, and nobody writes down anything else about him. They write a great deal about his son.
+29	p	The summons isn't addressed to him. It's addressed to his father, who still holds the Eastern seal. Yeon Taejo sat in the capital's big chair for twelve years. Now he is too old to ride that far. The son has done the work for years. The seal is still the old man's.
+30	dialogue	[yeontaejo] Take the seal. You sit in my place this year. / …And say half of what you think.
+31	dialogue	[gesomun] Me? Why do I have to go to Pyongyang? / It’s a place where mouths open only to say useless things…
+32	dialogue	[yeontaejo] I know. I sat in it for twelve years. / Half, son. Half.
+33	p	He promised his father half. He has never said half of anything. Next stop: Pyongyang, and a room full of men counting grain…!
+
+##### samhan | High Summit | 634
+0	p	So Yeon rides to Pyongyang in his father's place. Five commanders, one king, one room. They call it the High Summit.
+1	map	map
+2	p	He rides in at the red two-tier gate. Pyongyang already knows the sound of those hooves.
+3	p	Goguryeo works like this. Five commanders argue. The High Commander holds the first sword. The king has the last word.
+4	term	term
+5	table	table
+6	p	The chamber is already loud when Yeon arrives — not with strategy, with arithmetic. Every banner wants a larger share of the same winter grain.
+7	dialogue	[yeongnyu] Enough. / I did not call five commands to Pyongyang to divide a granary. / I will be the “King for All” — Samhan under one roof. Silla and Baekje first.
+8	dialogue	[southcmd] Then the Southern Command takes the next levy. / Yushin’s banners have been testing the passes. If His Majesty wants Samhan, give me men — not speeches.
+9	dialogue	[northcmd] And leave the north bare? / The Mohe burned three villages last frost — Haemosu’s sun does not reach the north in winter, and neither do Central’s warehouses. I need the cavalry remounts promised at the last Summit.
+10	dialogue	[westcmd] The Liao watch needs timber and iron, not another southern adventure. / If we strip the west to chase Samhan, we gift the Tang a road.
+11	dialogue	[gusesa] (mild, as if chairing a feast) / Each front believes it is the only front. That is why we meet. / Eastern Command has kept the marches quiet. Let us not reward noise over results.
+12	dialogue	[westcmd] My grandfather still toasts Ulchi at the Colossal River — Salsu, the old men say — as if a drowned Sui host were a harvest. / Ansi’s walls are not a toast. They are a bill we keep paying in stone.
+13	dialogue	[gesomun] Then stop paying the West in gold for another quiet decade. / Rivers remember who feeds them. So do fortresses.
+14	dialogue	[gesomun] Quiet? / I have been killing tribes so this room can argue about who gets the horses. / Meanwhile the Second Emperor — Li Shimin — is not a tribute account. He is a man who murders brothers for a throne and then invents a reason.
+15	dialogue	[yeongnyu] Commander Yeon. Watch your tongue about foreign kings. / We have bought decades with gold. We will buy more — and spend the peace on Samhan.
+16	dialogue	[gesomun] You cannot buy a man who has already decided the price of your head. / I have watched how courts die: they starve the wall that is screaming, and fatten the wall that flatters. / Give the west grain. Give the north horses. Give the south whatever fairy tale you like — / but do not sit here pretending the Second Emperor is a weather we can ignore because tribute is habit.
+17	dialogue	[southcmd] Easy for the East to lecture. You fight people without cities. / I fight Kim Yushin. Send me the next levy or stop talking about Samhan.
+18	dialogue	[northcmd] And I will not freeze another winter while Central counts my remounts twice.
+19	dialogue	[westcmd] Nor will I strip the Liao for a king’s poem about one peninsula.
+20	p	Yeon’s hands are flat on the table. The nails have gone white. This is the face of a man who has already fought the war the room refuses to schedule.
+21	dialogue	[gesomun] Listen to yourselves. / Horses. Timber. Bodies. A crown-word. / When the Second Emperor comes he will not ask which of you was most polite in committee.
+22	dialogue	[gusesa] If you keep defying the king, Commander Yeon… / we may have to name you a traitor.
+23	dialogue	[gusesa] (to Yeon, almost kindly — which is worse) / Nephew. Sit down. The Summit does not run on prophecies.
+24	dialogue	[gesomun] …. / Then keep your Summit. / Keep your tribute. Keep your Samhan dream carved into a budget fight. / When the Second Emperor’s drums reach the Liao, remember who tried to spoil the feast.
+25	p	He walks out before it ends. Outside, the corridor is very long and very cold. Behind him the chamber returns to numbers — as if he had never brought an emperor into the room.
+26	dialogue	[gesomun] Heaven above… help this foolish country…!
+27	p	In the yard the Eastern banners answer him anyway — a roar that has nothing to do with the Summit’s minutes.
+28	dialogue	[dosuryu] Look at that — see how Pyongyang loves you.
+29	dialogue	[gesomun] Of course. The people have never once abandoned me. / It is the politicians…!
+30	dialogue	[gesomun] His Majesty wants Samhan under one roof. / The Summit wants the roof itemised. / …Get the horses. I would rather sleep in a tent tonight.
+31	scene	scene
+32	p	Yeon’s wife labours in a Goguryeo timber chamber blasted white with daylight — no extra bodies, no portrait-frame crowd. Only the midwife who opens a birth, and the mother. The rest of the world falls out of the light.
+33	dialogue	[yeonwife] Samsin… / This child alone — please. / …This time — please.
+34	p	The portrait does not stay paint. Samsin steps from the frame the way steam steps from a kettle — one midwife of the living world under Little Star — and lays a hand where mortal hands have failed.
+35	dialogue	[samsin] Do not weep. / I will open the breath. / The name — that is yours to give.
+36	p	So the first heir arrives under Samsin's hand, the year of the Summit. They call him Namseng. A son is born. Nobody wanted a poem in the name. It's the sound the room makes when the baby breathes.
+37	dialogue	[gesomun] Namseng. / …Heavier than it sounds. / This country. You will have to keep it.
+38	p	Once, Goguryeo did not argue about grain. It had a king with sixty-four fortresses. To meet him, we go back two centuries…!
+
+##### samhan | Gwanggaeto, the Great King | 400
+0	p	Silla is drowning. An army from across the sea is inside its walls. Then Gwanggaeto sends fifty thousand horsemen south, and the Wa are gone.
+1	p	A red sun. The three-legged crow rides south on his banners. The stele will list sixty-four fortresses. It will not list the nerve it took.
+2	p	Sixty-four fortresses, one reign. The stele at his tomb lists them all.
+3	map	map
+4	p	Silla had asked. That's the part everyone forgets. A Silla king, with foreigners inside his capital, sent north and begged. Fifty thousand horsemen came down and cleared the peninsula. Then they didn't leave for fifty years.
+5	dialogue	[herald] They did save us.
+6	dialogue	[herald] So why are they still here?
+7	p	Silla’s crown princes go north as hostages. Silla’s court takes Goguryeo titles. Silla’s army takes Goguryeo orders. It lasts two generations. Silla does not forget it.
+8	p	Two hundred and forty years later a Silla prince will stand in front of a foreign emperor and ask for an army, and every single person in Surabol will know exactly what that costs, because it has been done to them before.
+9	quote	QUOTE 庶寧其業 國富民殷 五穀豊熟
+10	p	Bupmin is fifteen now. The Hwarang have five rules, and his uncle has one question: which will you break first…?
+
+##### five-principles | Bupmin | 641
+0	scene	scene
+1	p	It is the spring Bupmin turns fifteen.
+2	map	map
+3	p	The Hwarang train under the Marshal: horse, bow, verse, and above all gyuku, a horse-ball game a lazier age will call polo.
+4	p	Bupmin (15) is old enough for the headband and too young to invent a country alone. His father is in the Council chamber collecting votes. His uncle keeps the yard.
+5	diagram	diagram
+6	p	Yushin does not soften the yard because the boy is royal. He softens nothing. The new boys sleep six to a hall and learn each other's snores before each other's ranks. They trade rumours about the Marshal like relics. He took forty fortresses. He bathes in a haunted lake. He can hear a lie drop a shoulder at fifty paces.
+7	p	Girls crowd the fence of the yard the way other towns crowd a market — not for the ball, for the Hwarang. They pretend they came for the verse.
+8	p	Nobody in Surabol would dream of calling gyuku a pastime — it is a ranking system with horses, and a boy’s seat among the Hwarang is half his blood and half his swing. Handicaps are argued the way ministers argue borders, only with less honesty.
+9	p	Then there are the clubs. A premium gyuku club is not a stick. Third-growth cypress from the south ridge of Namsan, seasoned seven years in the shade of Hwangnyong, the grip wrapped in indigo the Queen’s seamstresses will not sell. The head travels in its own box. If you cannot name the forest, you are not asked back.
+10	dialogue	[herald] That club — Gaya ironwood core? / No — Wolseong cypress. Last season’s. / …Last season? And he brought it out?
+11	dialogue	[alchun] A True Bone does not play last season’s shaft. / Is that law? / Worse.
+12	dialogue	[yushin] Again. / A king for all who cannot hold a saddle is a poem, not a country.
+13	dialogue	[munmu] Uncle— / I said that when I was six.
+14	dialogue	[yushin] Then make it true at fifteen. / The Hwarang do not train for your father’s cleverness. They train for the hour the cleverness runs out.
+15	dialogue	[yushin] We ride the eastern practice roads until the Fortress of Radiance looks small behind us. / Westward, Baekje’s Yellow Mountain pass is where their grain carts complain in dry weeks — learn a landscape before it learns your name.
+16	p	The Hwarang follow a set of Five Principles.
+17	verse	verse
+18	p	At dusk he gathers the flower youth under the eaves and speaks the Five Principles the way other houses recite ancestors — not as decoration, but as the only map that still works when bone rank fails. The boys mouth the words along with him, elbowing each other at no retreat, going quiet at no needless killing, each privately certain the Marshal is looking straight at him. He is looking at all of them.
+19	dialogue	[yushin] Loyalty to the sovereign. / Filial duty to parents. / Trust among friends. / No retreat in battle. / No needless killing. / Bupmin — which one will you break first?
+20	dialogue	[munmu] …Retreat. / When Gotaso rides too fast I always pull up first. Every time. / If I am to be a king for all, I cannot be the boy who only follows.
+21	dialogue	[yushin] Good. / Then see the country the way a Hwarang sees a field — who holds, who falters, who dies for a vow they meant. / I am marshal of this order. You will learn loyalty here before you learn how to sit on a throne.
+22	p	The yard has two names it still whispers. Tonight the Marshal says them out loud…!
+
+##### five-principles | Sadaham | 641
+0	scene	scene
+1	p	Every yard has its ghosts. This one has two, and they have never missed roll call.
+2	p	The lamps go up under the eaves. Nobody sends the boys to bed. They decide this is an honour, and they are right, though not for the reason they think.
+3	p	The Marshal does not let trust among friends stay a pretty line. He tells the new boys of the first class — the two names the yard still lowers its voice for.
+4	dialogue	[yushin] Before your fathers were born, the first class had two. / Sadaham. Mugwan. They swore to die together. Then, the year Great Gaya fell, one of them kept the swear without asking the other.
+5	dialogue	[munmu] Which one, Uncle? / Which one kept it?
+6	dialogue	[yushin] Sit down and you’ll find out.
+7	dialogue	[undefined] Is this the one about the haunted lake?
+8	dialogue	[yushin] No. That one’s about me.
+9	flashback	FLASHBACK(6)
+10	dialogue	[undefined] So who snored?
+11	dialogue	[yushin] Both. That is not the story.
+12	flashback	FLASHBACK(11)
+13	dialogue	[munmu] And the battle? Uncle, what happened at the gate?
+14	dialogue	[yushin] Any old man in the market will give you the gate. He’ll get it wrong, but he’ll give it to you. / I am telling you about the rice.
+15	flashback	FLASHBACK(4)
+16	dialogue	[munmu] My father would have found a use for three hundred people.
+17	dialogue	[yushin] Your father would have found a use for three hundred and one.
+18	flashback	FLASHBACK(8)
+19	flashback	FLASHBACK(3)
+20	p	The lamp under the eaves has burned down a finger’s width. Nobody has moved. One boy is pretending he has something in his eye, and the others are kind enough to look at the lamp.
+21	dialogue	[yushin] That is friends. Not a song. / If your vow is lighter than a meal, do not wear the headband.
+22	dialogue	[yushin] You will still say first class when your hair is grey. Our class. His class. / The Harmony Council is the yard with better chairs — almost every sleeve there once slept six to a hall.
+23	dialogue	[munmu] Uncle. / Who would you stop eating for?
+24	p	Yushin looks at the boy for a long moment. You can probably name her. He doesn’t.
+25	dialogue	[yushin] …Go to bed. Gyuku at dawn.
+26	p	When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!
+
+##### five-principles | Gotaso | 641
+0	p	A young girl is going to do what she’s going to do.
+1	p	It begins two springs earlier, with a girl who is not where she is supposed to be.
+2	p	Gotaso (16) goes out to the lantern market with two maids and does not come back with any. The maids are found first, by the river, in the morning.
+3	dialogue	[munhee] Husband. / …Husband.
+4	p	Chunchu says nothing. This is the part the household remembers afterwards and none of them can describe properly: he does not shout, he does not ask a second question, he simply stops being the man who talks.
+5	monologue	monologue
+6	dialogue	[yushin] Chunchu. Sit down. / I already have men out.
+7	dialogue	[chunchu] …
+8	dialogue	[yushin] …Chunchu.
+9	dialogue	[chunchu] How many horses do we have.
+10	p	It is the only sentence he speaks for two days. Yushin will try to tell it later as a joke and will stop halfway through, every time.
+11	p	They were not bandits, in the sense that bandits want money. No word came and nothing was asked for, which is worse, and Chunchu understood what it meant before anyone in the room said it aloud.
+12	p	They find the road on the second night. What Chunchu does at the ford is in no record, because the two men who could have written it down were at the ford.
+13	dialogue	[yushin] Enough. / Chunchu. Enough. / …The child is watching.
+14	p	He stops. He wipes his hands on the grass, carefully, both sides, the way a man does before he picks up something clean.
+15	dialogue	[chunchu] …Gotaso.
+16	dialogue	[gotaso] Father… there is something on your coat.
+17	dialogue	[chunchu] So there is. / I will change it later.
+18	p	He carries her the whole way home. It is nineteen li. He does not let anyone take a turn and he does not put her down to eat.
+19	dialogue	[munhee] …Put her down. / Your arms will come off.
+20	dialogue	[chunchu] A little longer.
+21	dialogue	[yushin] I have never seen you go quiet like that.
+22	dialogue	[chunchu] …Brother. / I have two sons and one daughter. / One daughter.
+23	p	Before the wedding, there is a year that nobody writes down — except, privately, in the scorebooks of the spring gyuku match.
+24	p	At a spring gyuku match the Hwarang ride for the Queen. The stands smell of horse and expensive varnish. Servants carry club-boxes the way other households carry ancestral tablets. Princess Gotaso (16) is only meant to watch.
+25	dialogue	[munhee] Look at that club box. / Namsan cypress, Hwangnyong shade-dried. / A Hwarang that young carrying that… you can see the household.
+26	dialogue	[gotaso] I am not looking at the club. / Only the man.
+27	p	Pumsuk (23) takes the ball on the off-side — a showy, illegal-looking, completely legal cut — and for half a breath too long catches her eye instead of the goal. His premium gyuku club flashes once in the sun: presentation-silk still on the headcover, five coloured rings on the shaft, vulgar as Surabol sport gets.
+28	dialogue	[gotaso] …Who is that. / Mother. / Mother. I asked who that is.
+29	dialogue	[munhee] Hwarang Kim Pumsuk. / Don’t stare.
+30	dialogue	[gotaso] I already did. / And he looked back. He did, he did.
+31	dialogue	[gotaso] I am never going to look at anyone else. / For the rest of my life.
+32	dialogue	[munhee] …Sixteen years old, using the word “life.”
+33	dialogue	[gotaso] Sixteen is exactly when you are allowed to use it. / Later you get too embarrassed.
+34	p	She looks at him the way a person looks at weather they have decided to live in — not bargaining, not counting rooms. Just the face.
+35	p	They meet again under the flowering trees behind the training ground — not by accident the second time, and not the third.
+36	p	Under the flowering trees they forget to be a princess and a Hwarang.
+37	dialogue	[pumsuk] I shouldn’t… see Your Highness here.
+38	dialogue	[gotaso] Then why do you come every day. / I come every day. / Yesterday I came twice.
+39	dialogue	[pumsuk] …I don’t know. / Knowing I shouldn’t.
+40	dialogue	[gotaso] And I’m not supposed to… touch your hand either? / Then why… won’t you let go of my wrist.
+41	dialogue	[pumsuk] You mustn’t. / …And yet you’re holding it. / And… I cannot take it back.
+42	p	Rain finds them once on the palace steps. Neither of them moves to go inside.
+43	dialogue	[gotaso] You’re soaked. / …Why are you smiling. / Ah. / Is it my hair… on your sleeve?
+44	dialogue	[pumsuk] Your hair is… caught on my sleeve. / I should free it. / My hand won’t move. / Neither will my feet.
+45	dialogue	[gotaso] Then leave it. / Leave it there. / The sleeve. The hair. / I could stand beside this sleeve for the rest of my life. / No — closer.
+46	dialogue	[pumsuk] My lady. / If this goes on… I will come apart. / Here. On the steps.
+47	dialogue	[gotaso] So will I. / So I settled all of it last night. / Four children. I have named them. / I am telling my parents today.
+48	dialogue	[pumsuk] …Four?
+49	dialogue	[gotaso] You don’t want them?
+50	dialogue	[pumsuk] …I want to know the names.
+51	p	Four children, already named. Now the boy has to ask her father. And her father wants a vow…!
+
+##### five-principles | Pumsuk | 641
+0	p	Princess Gotaso (16) has fallen in love with the Hwarang Pumsuk (23), and the whole court can see it before either of them admits the word. The maids keep score of the accidental meetings. The guards move their posts to give the flowering trees more privacy than any regulation requires. The entire palace is, quietly, on her side.
+1	p	Her parents Chunchu (38) and Munhee (35) bless the marriage. Then, over his wife’s one quiet objection, the father asks the boy for a vow — a vow no father should make his daughter hear.
+2	dialogue	[munhee] Don’t make him swear.
+3	dialogue	[chunchu] …Why not.
+4	dialogue	[munhee] If he keeps it, it was owed anyway. If he cannot, it kills him.
+5	p	He makes him swear. It is the only time in this record that Chunchu misreads a room, and it is the room with his daughter in it.
+6	dialogue	[chunchu] If anything happens to her, you know I’m going to kill you, right? Haha...
+7	dialogue	[pumsuk] On my life, I will protect Lady Gotaso!
+8	p	At the back of the hall, the Queen watches her niece marry for love.
+9	flashback	FLASHBACK(2)
+10	dialogue	[sunduk] …Your son’s girl. / That doorway has taken three of this house now.
+11	dialogue	[chunmyung] Four. If Your Majesty counts honestly.
+12	dialogue	[sunduk] …I count honestly.
+13	dialogue	[gotaso] We will be happy forever!
+14	dialogue	[pumsuk] …My lady. Your hands are cold. / But the back of your neck… is hot.
+15	dialogue	[gotaso] Because I am shaking. / And… because yours are too warm. / The hand at my waist. / Don’t take it away.
+16	dialogue	[pumsuk] Are you frightened? / If I… come closer.
+17	dialogue	[gotaso] No. / Because I want to be somewhere with nobody in it. / Look at me once more.
+18	p	Behind the doors the feast falls away.
+19	p	The new couple move to Daeya Fortress, where Pumsuk has just been named Guardian. She waves from the cart until the capital is out of sight; he rides beside the wheel the whole way. Daeya is a border post. Nobody at the wedding said the word border out loud.
+20	p	The hall empties. The Queen does not leave, and neither does the Marshal. Neither of them has ever been the first to leave a room.
+21	p	She has had twenty years to learn the back of his neck: the place the armour strap has worn shiny, the two grey hairs at his temple that were not there before the last campaign. Tonight the hall is empty and nobody is writing anything down, so she looks at all of it.
+22	p	Color rises along her throat. She keeps her mouth closed so the breath will not give her away. He does not turn. That is the only mercy left in the room.
+23	dialogue	[yushin] Your Majesty.
+24	dialogue	[sunduk] …Not that word. Not tonight.
+25	dialogue	[yushin] Then what am I to call you.
+26	dialogue	[sunduk] Don’t call me anything.
+27	p	He takes one step. It is the smallest thing he does in this entire record and it costs him longer than any battle in it.
+28	dialogue	[yushin] Today you watched your niece marry the man she loves. / I watched your face the entire time. / Your Majesty—
+29	dialogue	[sunduk] Yushin.
+30	dialogue	[yushin] …You said my name.
+31	dialogue	[sunduk] So stop.
+32	dialogue	[yushin] One sentence. Let me have one. / Two horses. Tonight would be enough. / Three days to the border. After three days we are nobody at all.
+33	p	She reaches up. He is very still, the way a man is still when he has already decided not to be the one who moves. Her fingers find his mouth before the rest of the sentence can.
+34	dialogue	[sunduk] Don’t say it. / If you say it, I have to hear it for the rest of my life.
+35	dialogue	[yushin] Then hear it for the rest of your life.
+36	p	For a moment she does not answer, and the moment is long enough that both of them will spend years deciding what it meant.
+37	p	Her fingers are still on his mouth. He does not take the next step. The lamp between them does the looking. When she speaks again she is already Queen.
+38	dialogue	[sunduk] …Without you this country does not last half a year.
+39	dialogue	[yushin] You are talking about the country.
+40	dialogue	[sunduk] Because the country is the only thing I am permitted to talk about.
+41	p	She is close enough now to count what it is costing him. She counts it. Then she takes her hand back and puts it where a queen’s hand goes.
+42	dialogue	[sunduk] One more step and I do not stop.
+43	dialogue	[yushin] …Then I will not take it.
+44	dialogue	[sunduk] Thank you.
+45	dialogue	[yushin] Don’t thank me. / That is the sound you make when you have won.
+46	dialogue	[sunduk] …Then neither of us has.
+47	p	He steps back into the shape of a subject. It fits, because he has worn it twenty years. It has never once fit.
+48	dialogue	[yushin] Your Majesty.
+49	dialogue	[sunduk] …Yes. That will do.
+50	p	Neither of them mentions that night again. Thirty-two years later, on the last day of his life, he is asked whether he ever wanted anything for himself, and the record notes only that he took some time to answer.
+51	p	Outside the hall, two lantern-sellers argue the way Surabol argues anything that matters — by nickname first.
+52	dialogue	[undefined] The Legend of the Hwarang — Bidam — still sits at one hundred and eight with the Last Son of Gaya. / And the most cunning man in Samhan packed his daughter’s wedding like a campaign. Watch the roads, not the vows.
+53	p	At the feast's edge, a southern merchant named Haesang pours a story instead of wine. He has seen harbours where the ships have eyes painted on the prow. He has bought glass from men who swore it came from past the edge of every map. He never boasts. He doesn't have to.
+54	dialogue	[haesang] In the south they greet a guest before they ask his rank. / I recommend it. Rank keeps. Guests leave.
+55	dialogue	[haesang] Your southern wine came late. The carter blamed the Yellow Mountain road. / Then he blamed the White River mouth. Then he blamed both blades. / Every harbour tavern from Funan back has that fight — the Sword of the Divine Country, or Hundred-Victories out of the Land of the Heavenly Deer. / Nobody has ever settled it. Which is why the wine is late.
+56	p	“Dear… have you already forgotten how we met?” Munhee hasn’t. It involves a dream, a skirt, and a coat torn on purpose…!
+
+##### five-principles | Munhee | 625
+0	scene	scene
+1	dialogue	[chunchu] Dear… have you already forgotten how we met?
+2	p	It starts with a dream, and the dream is sold.
+3	dialogue	[bohee] Last night… I climbed Namsan and I relieved myself, / and all of Surabol drowned. / The entire capital.
+4	dialogue	[munhee] Sister. Sell me that dream.
+5	dialogue	[bohee] …For what?
+6	dialogue	[munhee] My silk skirt.
+7	p	Bohee takes the skirt. It is the single worst trade in Silla’s thousand years, and the two of them will both live long enough to know it.
+8	dialogue	[munhee] The capital you drowned / is mine now.
+9	p	Five days later Yushin brings a young nobleman home from the gyuku field — still dusty, still arguing about a disputed foul — and on the yard, mid-demonstration of a “proper True Bone grip,” steps on the hem of the man’s coat on purpose. The tie comes away.
+10	dialogue	[yushin] Oh dear. / My apologies. / Somebody sew that for the gentleman.
+11	dialogue	[bohee] …How could I approach a nobleman over so small a thing.
+12	dialogue	[munhee] I will do it.
+13	p	He has to take the coat off for her to mend it. Magenta silk leaves his shoulders. He sits disrobed in her brother’s hall with a True Bone’s embarrassment and nowhere to put his hands. She knits the tear standing close enough to feel the heat off his skin — and that is all, the first time. Needle. Breath. The slow fact of a man without his coat.
+14	dialogue	[chunchu] …Your hands are quick. / I have… not sat like this.
+15	dialogue	[munhee] Sit. / I will put the coat back on you. / Today… only that.
+16	p	He comes back the next day, needing nothing sewn, and again the day after that. Each visit she finds a new place on the garment — and they sit closer. The needle slows. His breath learns the back of her hand. They do not leap. They accumulate.
+17	p	On a later visit the coat is off again. She stands behind him, needle forgotten, staring at the breadth of his shoulders as if the knitting were only an excuse to keep looking. Magenta silk has slipped. She does not tell him to cover it. When the needle pauses it is because her mouth has found the place above his pulse — and Yushin is careful to be looking somewhere else the entire time.
+18	dialogue	[chunchu] …Why. / At this rate… I will tear the coat myself.
+19	dialogue	[munhee] Because you have not left yet. / Before you leave… / your hand belongs at my waist. / Until the sewing is done.
+20	dialogue	[munhee] And what is torn today? / Or… what shall I tear for you.
+21	dialogue	[chunchu] …Nothing. / No — / Here. / Where your mouth… was yesterday.
+22	dialogue	[munhee] Shall I tear something for you, then? / Only the coat. / Or… your restraint as well.
+23	dialogue	[chunchu] …If you say it like that. / I won’t be able to leave tonight. / I am already… coming apart at the door.
+24	dialogue	[munhee] Then don’t. / The sewing… can wait until morning. / Spend the night… mending me.
+25	p	He stays. The household learns the sound of a door that is not meant to open until dawn.
+26	p	By midsummer the household staff have stopped announcing him.
+27	dialogue	[munhee] N-no, why bring up that memory again…
+28	p	Yushin invites him back onto the gyuku field. Chunchu is not especially good at gyuku — his club is respectable Mid-Bone pine, which the Hwarang notice immediately — and Yushin knows it.
+29	dialogue	[yushin] Pregnant, with no husband to name… what disgrace is this!
+30	p	Yushin builds the pyre in the yard where they played gyuku, which is not lost on anyone, and sets green wood on it so that it smokes instead of burning.
+31	p	The smoke goes straight up. It is visible from Namsan. It is visible from the terrace where a princess happens to be standing with the young nobleman who has gone the colour of paper.
+32	dialogue	[sunduk] What is that smoke?
+33	dialogue	[chunchu] I-it’s me!
+34	dialogue	[yushin] …Chunchu. / You did not choose my sister. / I chose you.
+35	dialogue	[chunchu] Brother.
+36	dialogue	[yushin] Do you know how many years it took me / to lay Gaya blood and Silla royalty in the same bed.
+37	dialogue	[chunchu] You should have simply become king yourself. / Surely the strongest man in Samhan ought to be the one who rules.
+38	dialogue	[yushin] (laughing) Chunchu. You know exactly why not.
+39	dialogue	[chunchu] …I do.
+40	p	Neither of them says the word. It sits between them anyway, the way it always has: Gaya. His grandfather bought the family a rank. Ranks are not the same as blood.
+41	dialogue	[sunduk] Lord… Chunchu?
+42	dialogue	[chunchu] Th-the father of that child… Lady Munhee’s… I mean… / It’s me!
+43	p	Chunchu &amp; Munhee are married — the burnt-skirt rumour becomes a wedding, and the wedding becomes a household that is openly fond of itself.
+44	scene	scene
+45	p	The wedding itself is quiet. Magenta silk and pink silk share a cup. What the court will later call a clever match is, in the room, simply two adults who have already learned each other’s breath.
+46	p	They shut the door on the yard and do not open it again for a long time. The minutes will later invent one decorous wedding night. What actually happens is weeks of it — her on him, him on her, the magenta and the pink in a heap by the door — until the meals go cold and Surabol learns to wait.
+47	p	The first time he is still trying to be gentle. She is not. She takes his hand and puts it where she wants it, and the sound that leaves her is not a toast. He lasts like a man who has been polite too long, which is to say not long, and says her name at the end as if he were apologising for it. She laughs, because that was the point, and does not let him go anywhere. The bedding. The chest. The floor, when the bedding is too far away. When he reaches for the water jug she pulls him back by the wrist.
+48	dialogue	[munhee] Again…? / Today… don’t even try to count. / Save counting for outside.
+49	dialogue	[chunchu] I… cannot count. / Munhee. / I have… already lost. / And… I will lose again.
+50	p	For weeks they do not leave the bedding except to drink, to laugh, to start again. She wakes with him still beside her and starts again before the laugh is finished. She rides him until her thighs shake and asks for more the way she would ask for a sum he is good at. A strategist who can forecast a betrayal a generation out cannot forecast his own stamina, and does not care.
+51	p	The neighbors on both walls learn their names the wrong way — through plaster, through 다시, through a rhythm that does not stop when the lamp does. Servants stop knocking. Someone on the east side moves a sleeping mat farther from the shared timber and blames the draft.
+52	p	At night the courtyard looks up and learns worse. The paper window glows — warm lamp inside, blue-black street outside — and on the 창호지 the shadows are unmistakable: one figure straddling the other; two bodies pressed to the lattice; upright, tangled, a lift that makes a silhouette into a confession. No faces needed. The pose is the gossip.
+53	p	A neighbor freezes mid-step under the eaves, looks up at the shadow on the lattice, and looks away too late. By the third night half the lane has an opinion, and none of it is about politics.
+54	dialogue	[munhee] They say… they heard us through the wall. / And saw… the paper window. / Even our names.
+55	dialogue	[chunchu] Then the wall… is on our side. / And the paper window. / If Surabol hears… / let it.
+56	p	They fit. Not the polite fit of a well-arranged marriage: when he is all the way with her she makes a noise like someone who has been waiting years for exactly that, and then laughs into it, because he is already moving again. Neither pretends to be shy. Later the household will call it love, which is also true. In the bed she only says again, and don’t you dare stop.
+57	p	Morning finds them still tangled — lattice light on flushed faces, her thigh over his hip, the pink silk she never put back on crumpled under them. He wants her again before he is properly awake. She laughs into his mouth and lets him, slowly this time, which is somehow worse. He kisses the place above her pulse the way she once kissed his. The strategist’s cleverness has nowhere to go but her.
+58	dialogue	[munhee] Dear. / Outside… later. / For now, count only me.
+59	dialogue	[chunchu] That… / is the one sum I am good at.
+60	p	Months pass before either of them remembers the yard. When they finally open the door she walks like someone who has been thoroughly loved and does not mind the lane knowing it, and they look at each other like people who have won a private war — still in love, still hungry, and willing, for one afternoon, to put clothes back on.
+61	p	When they reappear, the marriage is already a fact the city has stopped gossiping about — replaced by the quieter envy of people who heard the walls, saw the glowing lattice, and wished their own houses were that lucky.
+62	scene	scene
+63	p	Samsin is there the way she is always there when a breath starts — and no one else. Pitch white. Mother and midwife. The rest of the house can wait outside the light.
+64	p	Years later the same house keeps a different quiet. Munhee holds the boy against her collarbone. They will call him Bupmin. The lantern makes a low band of light across the bedding and leaves the rest of the rooms uncounted. Chunchu sits where a husband sits when he has not yet learned what the child will steal from him.
+65	p	The household fills with Bupmin, who walks early, and Gotaso, who talks early and never stops.
+66	p	After that, Chunchu stopped going to the hill.
+67	dialogue	[yushin] You have not been coming to Council lately.
+68	dialogue	[chunchu] Brother. I have two sons and a daughter now. / The east star… I think I will let it just be a star.
+69	dialogue	[yushin] So you will.
+70	p	In Surabol, one father puts down his star. In Pyongyang, another marches his son to school without taking off his boots…!
+
+##### five-principles | Grand Academy | 641
+0	p	Yeon's wife has given him three sons. They could not be more different.
+1	map	map
+2	p	Namseng (7) is the careful one — the heir, eager to be approved of.
+3	p	Namgun (4) is the fierce one, who never backs down first.
+4	p	Namsan (2) is the quiet one, watching his brothers.
+5	p	There is a fourth boy at that table who is not counted, because counting him would require a word nobody in the house wants to use. Gulgul eats after the others and says nothing, and Namsan — who watches everything — is the only one who notices that he never sits with his back to a door.
+6	scene	scene
+7	p	The Grand Academy is old. It came over the river in the same season as the first Buddhas. Ever since, the school and the temple have shared Goguryeo's noble sons. Classics in the morning. Sutras after lunch. Archery whenever the masters lose their voices.
+8	p	Yeon brings Namseng (7) to the gate himself, in riding boots, and does not take them off on the swept stone.
+9	dialogue	[undefined] Commander. The sons of the five commanderies begin with the Analects and the Lotus Sutra. / As your own father did, if I remember the register.
+10	dialogue	[gesomun] The Analects, fine. A boy should know how to bow before he decides not to. / The sutra he can skip.
+11	dialogue	[namseng] Father. / Is the Buddha not allowed?
+12	dialogue	[gesomun] The Buddha’s fine. Fat, quiet, never asked me for anything. / It’s his landlords I mind.
+13	p	The landlords are not a figure of speech. Half the good valley land belongs to monasteries. The monasteries belong to the great houses whose second sons run them. None of it pays for the wall. Every spring Yeon writes to the Summit about this. Every spring the Summit thanks him for his piety.
+14	p	What he wants instead is the Way of Laozi, which is an odd thing for him to want, because the Tang emperors claim Laozi as their ancestor. Yeon has heard this and does not care. He has a sentence for it, the only one he ever repeats word for word.
+15	dialogue	[gesomun] A pot stands on three legs. / Confucius is one. The Buddha’s two. We’re missing the third, and the pot’s tipping into the fire.
+16	dialogue	[undefined] The third leg would be… Tang priests, Commander?
+17	dialogue	[gesomun] The third leg is whatever doesn’t own a farm.
+18	p	Across the courtyard a monk named Bodeok has stopped sweeping. He is from the monastery at Banryong, which owns a great deal of farm, and he will remember the sentence longer than anyone else who hears it.
+19	p	The complaint reaches the High Commander’s table before Yeon has ridden home. Gusesa reads it at supper, between courses.
+20	dialogue	[gusesa] (mild, wiping his fingers) A Yeon telling monks what to own. / My nephew collects enemies the way other men collect horses. At least horses eat less.
+21	p	Namseng is enrolled anyway. He learns the Analects first and best, and on the days the sutra master is ill he reads his father’s copy of the Daodejing, which has never been opened past the first page.
+22	p	Field trip. Yeon takes the boys to see a very big rock. The rock has a list on it, and a question…!
+
+##### five-principles | Stele | 641
+0	p	Yeon takes his sons to see the Great King's stone. It lists everything he ever took.
+1	map	map
+2	dialogue	[namseng] Aw… that’s it? A big rock?
+3	p	Every Goguryeo boy is raised on him. He kept the west shut, and he made it look easy.
+4	dialogue	[gesomun] Sixty-four fortresses are written on that rock. / When you can read, you will read them to me. / …And then you can ask how a country that took sixty-four came to bow to Chang’an twice a year.
+5	p	Late in the year, old Dosuryu walks in without taking off his boots. In thirty years he has never once done that…!
+
+##### five-principles | Dosuryu | 641
+0	p	Late in the year Dosuryu comes in without knocking, which he has done since Gesomun was small enough to lift by the collar, and without taking his boots off, which he has never done.
+1	dialogue	[gesomun] Oi. Old man. Boots.
+2	dialogue	[dosuryu] Shut up and sit down. / No — stay standing. You listen better standing.
+3	dialogue	[dosuryu] His Majesty and your uncle. Three times this month, the same little room behind the audience hall. / Nobody else in it. Not even a boy to pour.
+4	dialogue	[gesomun] So they drink together. Good for them.
+5	dialogue	[dosuryu] They don’t drink. That’s what’s wrong with it. / Ever since you walked out of the Summit, your name comes up in that room. They mean to send you to the far end of the wall in the spring. And have you not come back from it.
+6	dialogue	[gesomun] <b>HAHAHAHAHAHA</b>
+7	dialogue	[gesomun] <b>Kill me? Yeon Gesomun?</b>
+8	dialogue	[dosuryu] Laugh. Go on. / Your father laughed at the Summit for twelve years and came home grey. You haven’t got twelve years. You’ve got till spring.
+9	p	Yeon stops laughing. He does it all at once, the way a door shuts.
+10	dialogue	[gesomun] How many names on their list.
+11	dialogue	[dosuryu] One that I know of. Yours. / …Why are you smiling like that? Stop it. I hate it when you do that.
+12	dialogue	[gesomun] Then I’ll make a list too. / Mine’ll be longer.
+13	p	Dosuryu goes out the way he came in, boots and all, and stands a long time in the yard before he can make himself mount. He has known the boy for thirty years. He knows exactly what kind of list it will be.
+14	p	Meanwhile in Sabi, Euija is king at last. On his coronation morning, several hundred people see a dragon…!
+
+##### five-principles | King Euija | 641
+0	p	King Mu is dead at eighty, after a lifetime of fighting Silla.
+1	map	map
+2	p	Euija takes the throne at forty-one. The court will style him Righteous and Merciful. He has a sense of humour about that.
+3	card	card
+4	term	term
+5	p	On the morning of his coronation a dragon is seen over the Sabi River. Several hundred people see it. The court diarist writes it down, because it happened.
+6	p	It was four lacquered paper kites, a low mist, six boatmen paid in advance, and one hour of the year when the light comes up the river at exactly the right angle. Euija had been planning it since the previous autumn.
+7	dialogue	[gyebek] …Your Majesty. That is not a dragon.
+8	dialogue	[euija] No, it isn’t. / Now go and say so to those people standing there. / See who wins.
+9	dialogue	[gyebek] Wins what. / It is paper and sticks. I can see the string. / I will go and tell them. You said to.
+10	dialogue	[euija] They cannot see the string. / I did not say go. I said see who wins.
+11	dialogue	[gyebek] That is the same order. / I will not call it a dragon anywhere.
+12	dialogue	[euija] Stand here for one hour. Mouth shut. / You cannot do the other thing. That is why I keep you beside me.
+13	dialogue	[courtmaid] Your Majesty. We saw the dragon too. / …From beside you.
+14	dialogue	[euija] …You two know better.
+15	dialogue	[courtmaid] We do. / But of all Your Majesty has made… the thing that lasts longest isn’t a dragon.
+16	dialogue	[euija] …What did you say.
+17	dialogue	[courtmaid] Miracles, Your Majesty. / The kind you keep close only at night.
+18	p	His father had done it first, and better. Before he was king, King Mu paid the children of Sabi to sing a song he had written himself. By the third month the song was older than anyone could remember, and what it said about him had become a thing everybody had always known.
+19	p	Nobody had to pay the children again. Euija filed that away.
+20	dialogue	[euija] The thirtieth Eraha bought a country with a song. No army, almost no money. / I was twelve. Nothing since has impressed me that much.
+21	p	So the reign begins with small wonders. All of them arranged. None of them expensive.
+22	p	The white deer is the cheapest one. You take a young doe, you keep it out of the sun for a season, and you let it out on the hunting ground on a day the ministers are watching.
+23	p	The stone at the Rock of Politics sweats before a good decision. It sweats because somebody rubs it with brine the night before, and the somebody is always the same man.
+24	p	Rice comes up on ground where nothing was planted. Something was planted. It was planted at night.
+25	dialogue	[seongchung] Your Majesty. What happens when the people work it out?
+26	dialogue	[euija] They won’t. / Nobody inspects the evidence for a thing they already want to believe.
+27	p	He walks the riverbank the morning after the dragon as if the mist itself had appointed him. Children point. A grandmother weeps. A clerk from the Board of Rites drops his brush and does not pick it up, because picking it up would mean deciding whether to write what he saw or what he was told.
+28	dialogue	[euija] Look at them. / An army takes a month to move a border. / A story moves it overnight, and thanks you for the privilege.
+29	dialogue	[gyebek] Your Majesty is… enjoying this.
+30	dialogue	[euija] I am good at it. / A man should enjoy what he is good at. Otherwise he does it badly, out of spite.
+31	p	At the Rock of Politics he arrives last, lets the ministers wait, rests two fingers on the sweating stone as if taking a pulse, and smiles the small smile of a physician who already wrote the prescription.
+32	dialogue	[euija] The rock agrees. / How fortunate for all of us that the rock has such good taste.
+33	dialogue	[gyebek] The rock did not agree. / It is brine. I can smell it. / I am not going to nod at a wet rock.
+34	dialogue	[euija] The ministers are listening to the rock. Not to you. / Do not nod. Silence they can misread. Your mouth they cannot.
+35	dialogue	[euija] Gods are props. Spirits are lighting. / And any man who believes it is already in my cast.
+36	dialogue	[seongchung] …Your Majesty.
+37	dialogue	[euija] Seongchung. Hate the method. You have my permission. / Only do not stand there telling me it does not work.
+38	dialogue	[courtmaid] Tonight? / One miracle, or two?
+39	dialogue	[euija] Two. / I am in a generous mood. / The country can watch the dragon. You can watch the king.
+40	p	This is the Righteous and Merciful at full height: before the wine years. He wrote the sky this morning. He walks under it and does not look up.
+41	p	This is entirely correct, and it is the sentence that kills him, nineteen years later, word for word.
+42	p	Two court maids attend him — close enough that the air between them feels arranged. He is proud of the number the way a man is proud of a hunger he has not yet failed to satisfy.
+43	p	He does not count faces. He counts the hem — how far the long chima rides when she pours, whether the stair takes the silk to the thigh.
+44	dialogue	[euija] Two is enough. / One is lonely, and three… the room grows small. / And when it is small… hands forget where they belong.
+45	dialogue	[courtmaid] Your Majesty. / Which of us sits beside you today? / Or… shall both of us only share your breath.
+46	dialogue	[courtmaid] With Your Majesty’s wrist… between our knees.
+47	dialogue	[euija] …Don’t both be greedy. / I am… looking at a map.
+48	dialogue	[courtmaid] The greed is Your Majesty’s. / You look at us… as if you already know. / Our throats… are closer than the map.
+49	dialogue	[euija] …I was talking about the Silla border.
+50	dialogue	[courtmaid] Yes, Your Majesty. / Your voice is at its best when you talk about borders. / So we keep asking.
+51	dialogue	[courtmaid] If you say our names… in that voice, / the ties… come undone first.
+52	dialogue	[euija] …Leave.
+53	dialogue	[courtmaid] Shall we? / Your Majesty has not let go.
+54	dialogue	[nation-baekje] Righteous and merciful — so he was named. / Land of the Heavenly Deer, Land of the Lord Buddha — keep both names warm. One is for merchants. One is for monks.
+55	p	Gyebek is twenty-one. No market calls him Hundred-Victories. Not yet. He is passed over every season, because nobody knows what clan he comes from, and he won't make one up.
+56	scene	scene
+57	p	At the coronation feast the princes sit by age, and the table has to be lengthened twice. Yung sits nearest the king, with a Satek cup-bearer at his elbow. Behind every brother's chair stands a clan tutor, like a second shadow. At the far end, servants pour for boys who don't have names worth carving yet.
+58	dialogue	[euija] Look at that table! The thirtieth Eraha left me a country. I made a second one out of sons. / Count them, Seongchung. Go on. I lose track after thirty.
+59	dialogue	[seongchung] Forty-one, Majesty. If the two born this spring are counted. / …And each of them will need a chair, one day. There are only so many chairs, and—
+60	dialogue	[euija] Then we’ll build more chairs. Or empty some. / Pung! Where’s Pung?
+61	p	Prince Pung (17) stands. He is the quiet one, the one with the good handwriting, and he already knows what is coming because his mother told him the night before, crying into his collar.
+62	dialogue	[euija] The East wants a prince of Baekje at its court, to show the world how close we are. You’re going. / Learn their poems. Drink their wine. Don’t marry anyone I’ll have to go to war over.
+63	dialogue	[pung] As Your Majesty commands. / …For how long?
+64	dialogue	[euija] Until I need you. / Ha! Don’t look like that. It’s a compliment. Nobody sends a prince he doesn’t mean to want back.
+65	p	One day Baekje will send for him after all. Nobody at the feast would have believed it, Pung least of all.
+66	p	Euija can fake a dragon. He can’t fake a fortress. For that he needs a general who does exactly what he says…!
+
+##### five-principles | Yunchung | 641
+0	p	There was only one man Euija knew he could trust to deliver.
+1	p	That winter Euija sends for Yunchung, and nobody from the eight houses is told. Yunchung is a general from a family too small to keep a clan tutor. He has held the Silla frontier for eleven years by doing exactly what he says he will do, which the Assembly finds tiring.
+2	dialogue	[euija] Sit, General. No, the good cushion. Take it before I change my mind. / Tell me. Who rules Baekje?
+3	dialogue	[yunchung] Your Majesty does. / On paper.
+4	dialogue	[euija] Ha! And off paper?
+5	dialogue	[yunchung] Off paper, the Rock does. And whoever rubs the brine on it. / The eight houses pick the Premier, the Premier picks the ministers, and the ministers send me the grain late. They pay my men. My men know it.
+6	dialogue	[euija] So. How does a king get his country back off the Rock without a war at home?
+7	dialogue	[yunchung] With a war abroad, Majesty. / A king who wins a fortress owns the men who took it. The clans can’t vote on a victory. They can only show up to the feast.
+8	dialogue	[euija] Plainly put. / I like a man who says the ugly thing without a cushion under it. Even when he’s sitting on mine.
+9	p	It is the first time in the reign that Euija says what he has decided before the Assembly hears it. By spring the Assembly will hear it anyway, in the form of a question he has already answered.
+10	p	That winter, the Assembly's loud fight isn't about war. It's about a shipping writ. A Satek cousin has died without a son, and somebody has to inherit the salt, the iron and the run to the islands. Gyebek sits through three sessions. He understands every number and none of the smiles.
+11	dialogue	[ministersatek] The writ stays in the house. / A harbour that changes clans mid-monsoon is how grain rots in the hold.
+12	dialogue	[elderyunbi] Then say clan, not country. / We are tired of hearing harbour when you mean Satek.
+13	dialogue	[euija] Enough. / When the frontier is settled, you may resume counting berths. / Until then — the Eraha counts fortresses.
+14	p	Euija has already decided. Now the clans have to believe it was their idea.
+15	p	The Premier is chosen via the Rock of Politics — a ritual the Great Clans have controlled for generations.
+16	diagram	diagram
+17	dialogue	[chunbok] As Your Majesty well knows, / the will of the Rock is the will of Heaven. / The eight houses decide it together.
+18	dialogue	[euija] Heaven…? Ah — the invisible committee. / Spirits and gods — the cheapest civil servants. / They never ask for berths, they never read the ledger, and the people kneel without being told twice.
+19	dialogue	[nation-baekje] Restore the reign of the thirteenth Eraha…! / The thirteenth Eraha…! Ten thousand years!
+20	dialogue	[euija] Ah… in Silla, they worship the Cloud King like a god. / Do you know what kind of man the Cloud King was…?
+21	dialogue	[euija] He signed an alliance with us, and then he took the river. / Surabol carved him four stones for it.
+22	dialogue	[euija] Do you know what a country is? / <b>A country is a territory governed by a single story.</b> / Why are we Baekje people, and not Goryeo or Silla people? We look exactly the same. / Anywhere in Baekje, everyone knows the founders. / Speak of King Onjo — that is Baekje. / So the king makes the story. / Let us make an interesting one…!
+23	dialogue	[euija] Goryeo is too large to move. / Silla is too old to surprise anybody.
+24	dialogue	[chunbok] The present king of Silla is a woman who cannot command an army, / and even within her country, the people’s hearts are unsettled. / Seize this opening, take a border fortress, and the great work will be within reach.
+25	dialogue	[seongchung] Your Majesty — is this the country you mean to hand the princes?
+26	dialogue	[euija] No, Gyebek… not you. / Why use an ox-cleaver to kill a chicken?
+27	dialogue	[gyebek] Your Majesty. Does that mean you will not use me, or that you are saving me?
+28	dialogue	[euija] …It means I am saving you.
+29	dialogue	[gyebek] Then say that. I do not follow figures of speech.
+30	p	The Assembly finds him rude, which misses the point by a courtyard’s width. All he wants — every single time — is the sentence handed over with nothing folded inside it, and nobody at that court has spoken that way in their lives.
+31	dialogue	[euija] A border fortress… / That too is good. / Daeya… how about it?
+32	dialogue	[euija] In truth… the people of this country need a new story. / They have lived in the old one long enough.
+33	dialogue	[euija] There was a time we were the greatest power in Samhan. / The thirteenth. He led armies into the heart of Pyongyang. / Then came the Severing. / After that, Baekje was a fraction. The name stayed. The size did not. / And then heaven, helpful as always, sent signs. A new king, meant to save us. / The thirty-first. Great King Euija.
+34	map	map
+35	dialogue	[gyebek] What is the Severing.
+36	dialogue	[euija] You said you do not follow figures of speech. / This is not one. It is the Severing. / Today we only have to tell it.
+37	dialogue	[euija] Baekje… is in crisis! / Then we make the crisis.
+38	dialogue	[euija] We take back the Silla frontier.
+39	map	map
+40	dialogue	[yunchung] Then we’re done for, plain and simple.
+41	dialogue	[euija] Ha! Then go and be done for at Daeya, General. Ten thousand men. / Bring me back the fortress. And a story to go with it.
+42	dialogue	[yunchung] Daeya by autumn, Majesty.
+43	p	“What is the Severing?” Gyebek asked. Any grandmother in Sabi could tell him. We’ll go back a hundred years and see for ourselves…!
+
+##### five-principles | The Severing | 553–554
+0	p	The sad thing about betrayal… is that it never comes from your enemies.
+1	p	Two kings take a river back together. One is Seong of Baekje. The other is the Cloud King. The deal is simple. Baekje gets the river mouth, near the sea. Silla gets the upper valley.
+2	term	term
+3	map	map
+4	p	For a while the two banners still fly side by side. Then the Cloud King turns his army on Baekje's half. He takes the river mouth and gives it a new name. He fills it with men who won't ask what the alliance meant.
+5	p	King Seong feels the cut in the marrow. He calls in everyone who still owes him: the last Gaya houses, a boatload of soldiers from the islands. Then he marches on the fortress that opens Silla's throat.
+6	quote	QUOTE 百濟王聖 與伽倻倭兵 攻管山城
+7	p	For months the fight goes Baekje's way. The crown prince holds the forward camp, half-starved. One night his father rides out with fifty horse to steady him.
+8	p	Silla’s ambush is waiting. The road to the prince is a ditch that was not there at dusk. Fifty horse stop, because the torches coming up the bank are the wrong color.
+9	p	On the ridge, Jinheung’s hand drops. That is the signal. He has already said the rest, low, to the only man the rank will allow to finish it.
+10	dialogue	[jinheung] You. A slave. / He is a lord with a name. / A slave does the cutting. So later mouths cannot forget it.
+11	p	A man in a Gaya cone helm is already down in the cut. He wears Silla's commission over it. His cone cuts the night ridge. He does not draw. He watches.
+12	dialogue	[kingsung] Gaya…? / A prince of Geumgwan — on this road, tonight, why.
+13	dialogue	[muryuk] Military governor of Sinju. / Sit.
+14	p	They sit him on a camp stool. Out of the cone’s shadow a man kneels twice, the way you kneel to a king, and asks.
+15	dialogue	[dodo] …I’m asking. / Let me take the head.
+16	dialogue	[kingsung] What. / A slave’s hand— no. A king’s head does not take a slave’s hand.
+17	dialogue	[dodo] If you broke the oath. / Even a king… takes it. I was told.
+18	dialogue	[muryuk] Dodo.
+19	dialogue	[kingsung] Every time I think of it… / It went into the marrow. / I cannot live on in disgrace.
+20	p	He looks up. The breath that leaves him is not another sentence. He unfastens his own knife, gives it to the kneeling man, and puts his neck out.
+21	p	The ditch takes the head. Dodo does the work the rank will not put on a prince’s hands. The record almost forgets the slave. Silla keeps the skull under the steps of the north hall, names the hall the capital court, and sends the rest of the bones home.
+22	p	Baekje’s court never forgives the cloud that emptied itself over their side of the river. A hundred years later, when Euija tells the story, he is still telling this one.
+23	p	Back to now. Ten thousand Baekje men march on Daeya. Its grain clerk is called Gumil. Remember that name…!
+
+##### iron-will | Gumil | 642
+0	day	day
+1	p	Before Daeya — before the year that will stain his hands — the Sword of Silla rides alone to a small cavern lake in the hills: a bowl of black water under stone, cold enough to teach the bones manners. He has heard of the place the way a son hears of a hill his father once named a spring. His father came until the hill learned his walk. He comes the same way. Water. One question. The name.
+2	map	map
+3	p	The marshal’s robe falls at the rock lip before the steam has a name for him. Confucian blue on wet stone. He does not look up; looking up would be a request.
+4	p	Steam lifts. They are already on the far rock: Narim with her ankles crossed like an elder sister who has seen this entrance before; Golhwa legs spread wide in the mist, chima hiked, as if the mist owed her heat; Hyullé a half-step behind them, knees pressed, eyes down on the water, not yet on him.
+5	dialogue	[golhwa] You have his shoulders.
+6	flashback	FLASHBACK(74)
+7	p	Now the name stands waist-deep in the same black water, scrubbing the road off his forearms.
+8	p	Golhwa’s legs stay spread wide on the wet rock, chima hiked. She is wet enough to take him from here. A thread of it finds her lip and she does not wipe it. His father’s shoulders. Worse. Hyullé’s knees stay pressed, eyes down, silk soaked through between them, and she answers nothing because if she opens her mouth it will be a sound. Narim’s silk clings and her next breath is late. Kim. Ours. Fuck him. The marshal looks once and the spring does not hide much — he is rock-hard in the black bowl and pretends the water is a wall. His father would have teased. He quotes the queen.
+9	dialogue	[narim] Kim Yushin. You wash like a man who thinks dirt is the only thing that sticks. / It isn’t. The water’s on your stomach and I haven’t looked away.
+10	dialogue	[golhwa] Leave the sermon, unnie. He’s naked. We can be honest. / Come closer, Yushin— I want that on my tongue before she makes it a lesson.
+11	p	She has been on that rock since his father left, moaning at nobody, picturing him under her. She wants him to grab her and fuck her into the stone. If he stays put she will come across. The most popular man in Silla, and he came back to their water. Hyullé’s eyes go to the waterline and stay. Narim forgets the sermon for one breath.
+12	p	She goes in like a tiger. Wink. Knees open. Steam that looks like it is coming off her skin.
+13	dialogue	[golhwa] Don’t stand there like that. I can see all of you and you’re just letting me. / I will come across. Open your knees. I’m not swimming over to talk.
+14	dialogue	[hyulle] …Golhwa. / He came to rest.
+15	dialogue	[hyulle] I still want my mouth on him. I’m sorry. I’m not.
+16	dialogue	[yushin] …Who are you three. / If this is a dream, make it shorter. I have a border to cut.
+17	p	The comedy goes out of the cave again. He asked who they are. That is not a question they answer.
+18	dialogue	[narim] That is not a question we answer. Stand where you are. One question. What you will do. / You came as your father came. The flirting is free. The hill is not. / Take Baekje’s forts if you must. Do not take Baekje’s hurry. / And stop standing there wet, like you don’t know what that does to the three of us.
+19	dialogue	[hyulle] And… if a man from the north offers you a door… / …look who holds the latch on the other side. / Sorry. I — I was staring at your chest. The latch too. I meant both.
+20	dialogue	[golhwa] She meant it. Don’t apologise for being right, Hyullé. / Also — your friend with the pink name. Chunchu. / He will kneel in rooms you would burn. That is not weakness. It cuts later.
+21	dialogue	[golhwa] You, though. If you’re going to kneel, kneel here, where I can feel it.
+22	dialogue	[yushin] I hear you. / But Her Majesty —
+23	dialogue	[golhwa] Ugh… / <i>“Her Majesty.” “Her Majesty.”</i> / What does that mortal have that we don’t? A chair.
+24	dialogue	[golhwa] I’ve got my legs open and you’re still saying her name.
+25	dialogue	[golhwa] Stay with us, Yushin~~
+26	dialogue	[golhwa] Stay— in my lap. Don’t make me beg when my legs are already open.
+27	p	She wants him in her, not bowing. The title can keep the forts. Unnie can keep the sermon.
+28	dialogue	[narim] Golhwa. / When they ask if a woman can hold the west, do not answer for her. Take the forts on her count. Slow. She will look like she planned it. / And when the count is done, come back dripping. I am not finished with you.
+29	dialogue	[hyulle] …The binyeo is pretty. The face is tired. / …He can go.
+30	dialogue	[hyulle] I only — wanted my thighs around him before the road. Warm was the polite word.
+31	dialogue	[yushin] Forts. Slow. Her count. I have it. / Dedication is not a flirtation you three get to bill me for. / …But the water helps. Already.
+32	dialogue	[golhwa] Hear that? He thanked the water. Not us. / Fine. Go play marshal. Next time, leave the armour — and that mortal — outside the cave.
+33	dialogue	[golhwa] Leave the hard part in here.
+34	dialogue	[narim] Golhwa. Hyullé. / The warm ledge around the bend — and the herbs in the cleft. Both of you. / Go on. The marshal still has ears for counsel… and I still have a mouth for it.
+35	dialogue	[narim] I’m going to use the mouth.
+36	dialogue	[golhwa] Herbs? For a bath? / …Unnie. If you’re about to sermon him alone, I’m billing you for boredom. If you’re about to sit on him, I’m billing you for theft.
+37	dialogue	[hyulle] …Yes, unnie. / We’ll — we’ll be quick.
+38	dialogue	[hyulle] Don’t you dare finish him before I hear it.
+39	p	They go. Mist takes the younger two the way water takes a thrown stone — a bright disturbance, then nothing. Yushin is alone with Narim, and for the first time he understands that being alone with any of them is not the same as being safe.
+40	dialogue	[narim] You thanked the water. / I am not water. / Come here, Kim Yushin
+41	dialogue	[narim] — I want you in my mouth before the border teaches you how to refuse.
+42	dialogue	[yushin] Narim— / You just told them we are steam.
+43	dialogue	[narim] I told <i>them</i>. / The counsel was real. So is this. / Stay. Not for the queen. Not for the road.
+44	dialogue	[narim] For the part of you that’s hard, pretending the steam has no mouth.
+45	p	She crosses the black water as if it owes her a path. Close enough that the steam becomes her breath on his mouth. Her palm finds the wet line of his collarbone — not Golhwa’s tease, not Hyullé’s apology — a quiet claim, and when she kisses him there is laughter under it, and hunger, and the patience of someone who has been watching him undress for longer than this visit.
+46	dialogue	[yushin] …This is not counsel. / And I — I still have to leave.
+47	dialogue	[narim] Of course you do. / Mainland boys always do. / So kiss me like someone who will be late for the border
+48	dialogue	[narim] — and put your hand under the silk while you still can.
+49	p	He does. Or she makes him. Hard to tell, in water that warm. Her mouth opens under his; her thigh finds his hip against the rock; for a few breaths the marshal of Silla is only a guest who has drifted too far from shore — and likes it, disastrously.
+50	dialogue	[narim] There. / Deeper. The steam won’t tell. / …Unless my sisters do. Don’t you dare be gentle.
+51	dialogue	[golhwa] The herbs were already— unnie, his mouth is on you. I can see it. Move.
+52	p	Mist tears. Golhwa first, arms full of nothing useful; Hyullé a half-step behind, eyes huge. Narim’s hand is still on him. Nobody moves for one long, ridiculous second — then the cavern remembers how to be loud.
+53	dialogue	[golhwa] UNNIE. / You sent us for herbs so you could—?! / What does that mortal have that we don’t — wait. What do <i>you</i> have that <i>we</i> don’t?!
+54	dialogue	[golhwa] Him. In you. Get off, or share.
+55	dialogue	[hyulle] …Unnie. / You said we were his steam. / Steam doesn’t… hold like that.
+56	dialogue	[hyulle] I was going to. I kept my knees together so I wouldn’t, and you sat down first.
+57	dialogue	[narim] Put the herbs down. / And close your mouths before the marshal remembers he can still dress. / …Hyullé. The ledge. Warm it anyway — he will run, and he will pretend this was weather.
+58	dialogue	[narim] You can still taste where I was.
+59	dialogue	[yushin] …I should go. / The Queen will need me before the year turns.
+60	dialogue	[golhwa] Oh <i>now</i> he thanks the exit. / Fine. Next time nobody leaves the rock. I mean it.
+61	dialogue	[golhwa] I’ll sit on his face until the queen’s numbers fall out.
+62	dialogue	[golhwa] Stay with us, Yushin~~
+63	dialogue	[golhwa] — or at least stop letting unnie eat first.
+64	dialogue	[hyulle] …The ledge is still warm. / If you want. Before the road. / I won’t — look. Much.
+65	dialogue	[hyulle] I’ll look lower.
+66	dialogue	[hyulle] I’m sorry. Come here anyway.
+67	p	He dresses in the cold with three pairs of eyes on him and one mouth still tasting of forest. When he looks again they are back on the far rock — as if nothing happened — except Golhwa’s foot swings harder, and Hyullé’s footprint takes longer to fade, and Narim’s smile is the smallest, most dangerous thing in the cave. He rides south with counsel under his ribs… and an invitation he can no longer pretend not to have answered.
+68	day	day
+69	p	They ask him to choose. Gaya blood or Silla marshal. Fortress count or cavern counsel. The yard’s perfection or the one room that does not ask him for a victory.
+70	p	He refuses the fork they keep drawing for him. Gaya blood or Silla marshal. Fortress count or cavern counsel. He rides from the cliff-fortress with the horse still smelling of the border, shaves at the cave mouth because the sisters keep that rule, and sits where the dark water meets the bright valley — three faint spirits at his back, a kingdom that still doubts his loyalty ahead.
+71	dialogue	[narim] You do not have to pick a country to wash in. / Wash. Then go be useful to whichever one still needs you. If you get hard on the road, that was my mouth. Don’t thank the water for it.
+72	dialogue	[yushin] …Both need me. / That is the trouble.
+73	day	day
+74	p	Yushin does not bring everyone to the lake. He brings Chunchu — once — because a man who will invent rooms the Council never votes on should learn what steam does to cleverness.
+75	p	At the mouth he borrows a razor and makes a mess of dignity. Magenta silk leaves his shoulders. He walks in with nothing on but water. He still thinks a lake cannot surprise a man who invents rooms.
+76	p	They smell the name before they finish his face. Steam off Golhwa’s skin; her legs stay spread. Water down Hyullé’s chin; her knees stay pressed, eyes down. A leaf that will not fall beside Narim. He keeps the black bowl as a wall. The spring does not hide much — letter or sword, he is already standing in the water the way every Kim does when he looks at them. They do not ask his rank.
+77	dialogue	[golhwa] Oh — a soft one. / Yushin, you brought us a letter instead of a sword. Hi. I’m Golhwa. Don’t look at me like that or I’ll say what I want to do with the soft one.
+78	dialogue	[golhwa] Come closer— I want to feel if the letter made you shy or hard.
+79	p	She has been on the rock picturing a letter-soft mouth. Soft ones last. She cannot sit. She wants him to pin her until she goes insane.
+80	dialogue	[chunchu] I am inventing a kingdom. / …Preferably with fewer surprises in the water.
+81	dialogue	[narim] Sit— / Sit down before you invent it standing. I’m Narim. We are the mouths the hill uses. Wisdom, if you ask once, from the water. The marshal already knows the door. I would like to know your mouth.
+82	p	He looks at her like she is a clerk who can be managed. Narim cannot finish the first Sit. Out of breath. Sit down before I ask you to put that clever mouth on me, she does not say. Fuck. She is the eldest. Hyullé says nothing. In her head he is already on her. She looks like she will explode.
+83	dialogue	[hyulle] Hello. I’m already wet. Don’t make me say why.
+84	dialogue	[chunchu] Will a room the Council never votes on hold. / That is the only question I have that is not a joke.
+85	p	The comedy goes out of the cave. All three pairs of eyes go solid — green, cyan, ember. One voice. Three mouths.
+86	dialogue	[undefined] Build the room. Do not put your name on the door. / A country will take a house and call the taking love. You already know that sentence. Use it.
+87	dialogue	[golhwa] That was the hill. This is me. / Come closer anyway. Soft ones last. I can’t sit. My legs won’t close while you’re looking.
+88	p	He leaves with nothing on but water until the mouth. The magenta is still on the stone. He looks at the path as if it were a map he intends to redraw. One sister watches him go. Another cannot speak. He never asks to return. He never entirely forgets the steam.
+89	day	day
+90	p	King Euija (42) reads Silla’s border the way he reads everything — patiently, and only once. Daeya is young at the top and hollow underneath. He sends the General Yunchung with ten thousand men, and in Surabol nobody’s dreams change, because the people who should be dreaming badly are at a wedding’s afterglow.
+91	quote	QUOTE 百濟將軍允忠領兵攻拔大耶城 都督伊飡品釋 舍知竹竹 龍石等死之
+92	p	Pumsuk (24) is the head general of Daeya, despite his young age, because he is a Noble.
+93	dialogue	[gumil] Putting a boy this green in charge of the border — does that make any sense?
+94	dialogue	[gumil] Ah, forgotten what country this is? To them we’re not even dirt~ / Say “True Bone” and the heavens part on their own~~
+95	dialogue	[gumil] Why was I even born in this wretched country, to suffer like this!!
+96	p	Maehwa is the poorest woman in Daeya and the one every eye in it finds first. She is thirty-one. She stopped pretending not to know what happens to a room when she walks into it a long time ago, and the fortress has never forgiven her for it.
+97	dialogue	[gumilwife] The men in this fortress. They all smell the same. / Dirt, drink… and looking when they think I won’t notice.
+98	dialogue	[gumil] Cover yourself when you go out.
+99	dialogue	[gumilwife] Buy me clothes, then. / Everything I own refuses to fit.
+100	dialogue	[gumil] …You know what I am paid.
+101	dialogue	[gumilwife] I do. / Which is why everyone looks.
+102	p	By noon the packed-earth yard splits. Porters, smiths, the boys who haul grain cluster at the well-post as if the work had always been there. Maehwa crosses alone — teal-sage silk, one red sash, celebrity distance. They do not come closer. She does not invite them.
+103	dialogue	[undefined] Look at that hem… / No — the waist. The waist. / That's Gumil's wife. / I know. That's why it's worse—
+104	p	She hears every unfinished sentence. Bored chin, and the men keep looking anyway — dirt under the nails, the same sour drink on the breath. Lower class, all of them, and she is tired of being their festival. Tired, and still walking as if the yard were built around her.
+105	dialogue	[gumilwife] That is a road. / Do not stand in it.
+106	p	One of them forgets to close his mouth. She turns just enough. The hem stays a breath too long — teal silk telling on the hip, the wooden sprig pin catching the light — and she lets him have that second like a coin she can afford to drop. Then the silk falls back. She will not let him close.
+107	dialogue	[undefined] Just now— / I saw. I saw. / …She didn't even say anything.
+108	p	She leaves them wrecked on the packed earth and almost smiles — a small, private thing, gone before the well-post. The yard is about the curve she takes with her.
+109	scene	scene
+110	p	Before the True Bone’s horse is even a rumour, the inside of Daeya already has a weather, and the weather is her. The well-post learns her hip first. Packed earth. Timber eaves. Men turn their heads as she passes. The wives they brought watch her instead of the water.
+111	dialogue	[undefined] That chest— no, the waist. / Both. It’s both. / That’s Gumil’s wife. Why is she built like—
+112	p	She does not look at them. She places a hand on the red sash as if it had slipped, and it has not slipped. The storehouse door is a dark mouth. Yellow sleeves in the shadow forget they have wives standing next to them. The wives do not forget. Thirty-one. The silk is poor. The body is not.
+113	dialogue	[undefined] Watch the hand. That’s on purpose. / Don’t look at her. / I can’t. That’s the problem.
+114	p	On the inner stair she lets the jeogori fall another finger. The post takes the silhouette. Men turn on the steps. Wives on the landing go still. They will tell themselves they were looking at the stair. They were looking at the curve under the ochre.
+115	p	The night before the True Bone arrives, the room is only a lamp and the two of them. Maehwa’s teal silk opens at the shoulder. Gumil’s yellow sleeve comes off as if the month’s pay had never been the argument. They still know how to find each other. They will not know how tomorrow.
+116	dialogue	[gumilwife] Tomorrow the boy arrives. / Today… only today. / Keep your hand on my waist. / It does not have to be a True Bone hand.
+117	dialogue	[gumil] I know. / I know. / …Leave tomorrow for tomorrow.
+118	p	They stop talking. The lamp is too small for manners. The red sash comes off the way it always does in this room — one impatient pull — and the teal silk follows it onto the boards. His yellow sleeve is already gone. Thirty-one, and she still puts him where she wants him: on his back, her hand around him, then sitting until he is in to the hilt, the way winter has always started in this house.
+119	dialogue	[gumilwife] Tomorrow can wait. / Tonight you stay under me. / Don’t use a name. / Just… stay.
+120	p	She knows his body the way a person knows a door they have opened every winter. When he nuts it is with her name, not a rank — a familiar load, nothing stupid-young about it, and she keeps him in until it is finished and then a little after, rolling her hips so none of it goes to waste. They sleep facing the same wall. In the morning the silk will go back on as if the night had been ordinary. It never is.
+121	p	Then a True Bone takes the fortress — twenty-four, clean hands, and a wife whose father is the most important man in Silla.
+122	p	At the feast the wine finds Pumsuk first. Clean ice-blue silk. Crescent band. A cup he is not tasting. Then the lamp-line is hers — Maehwa walking the cheap hanging lamps like she built them, dirtied green jeogori, ochre chima washed too many times, the red sash tied by habit. Poor cloth against a dark hall. His clothes stay clean. Hers do not.
+123	p	He talks to the cup. It does not help. The training is a joke tonight. Heart-pupils. A thread of drool he will not wipe. She is only a green shape in the lamp behind him, and that is enough.
+124	p	The feast is not a private room. It is every man in Daeya and the families they brought. She walks the aisle. Bowls stop. Necks turn. The wives watch her, not the food, and the watching is already a fight. He looks at her instead of his own table. The families are still eating. She is already working.
+125	p	She does it in public the way she does it in a dark room. A plum from a tray. A hand on her own hip, then on the sash, then — as if by accident — at the inner thigh where the ochre splits when she sits. She has practised this. The boy in ice-blue counts without meaning to. Twenty-four. The training does not cover a woman who knows where to put her hands.
+126	dialogue	[gumilwife] The plum— ah, it’s the mouth, not the cup. / The hand? Here. I meant that. / Twenty-four and you can see all of it.
+127	monologue	monologue
+128	p	He does the correct thing. He stands. He bows to a feast that has not asked him to leave. He goes to sleep like a man with a pink room waiting. The pallet does not take him.
+129	p	One dying lamp. One cold pallet. One feast still lit down the hall. How long can a True Bone lie still…?
+
+##### iron-will | Maehwa | 642
+0	p	A man is measured by his self-control.
+1	scene	scene
+2	p	Ice-blue on dark timber. One dying lamp. Eyes open. The hall comes with him anyway — her hip, her mouth, the plum, the hand that was not an accident. He tries to sleep and the hall comes with him. A True Bone should be able to close his eyes. He is twenty-four and hard in the dark and he knows exactly why.
+3	monologue	monologue
+4	p	In the gold behind his lids she arrives with the plum. Jeogori already wrong. She arrives in the gold. He cannot close his eyes on a mouth he has already counted.
+5	p	She looks back over the shoulder in the dirtied green and the dream is the same lamp as the feast. The look-back in the dark. He sits up. Palm down on taut ice-blue. Shame and hunger in the same hand. Palm on the ice-blue. The pink ribbon on the post is still there. He does not take it. He takes the hall.
+6	p	He goes back. The families have thinned. The screen is cheaper in this hour. She is still there. She sits as if she knew he would fail the pallet.
+7	dialogue	[gumilwife] Here— ah, don’t bother with the wind. / Sit. Not there, here. Closer. Your knee can touch.
+8	p	She drops beside him before he has stood. She sits like the chair was always hers. Jeogori already a little open — not court, not accident. The smirk shows teeth. His mouth is already open and he has not used it yet.
+9	dialogue	[pumsuk] Your husband— / Wait. My mouth opened first. I was not going to say that.
+10	dialogue	[gumilwife] Stores. Till dawn. That’s where he is. / Hand— down. On the chest. No — lower. / Look, it’s already tearing. You didn’t do that. Not yet. / Your cock got here first. Good boy.
+11	p	She puts his clean True Bone hand on the frayed red knot herself — not the waist, the chest, where the cheap sash is already tearing. His palm finds the worn knot. More skin than a minute ago. She does not look at the hand. She looks at his face, to see the exact second it stops being a general’s face.
+12	monologue	monologue
+13	dialogue	[pumsuk] I should move— / My legs. My legs will not obey. Forgive me. The training is— the training is a joke tonight.
+14	dialogue	[gumilwife] You were counting. Not the cup. / My mouth. Seventeen. <b>Seventeen</b>, I counted. / A True Bone lady would have looked down. I never learned that part.
+15	p	She says seventeen with her tongue still on her tooth. Jeogori looser. The dirtied green falls another finger-width. She counts his looks out loud. A True Bone lady would have looked down. Maehwa never learned that, and she is using the gap.
+16	dialogue	[pumsuk] In Surabol we do not— breathe. Like this. / The mouth is first. Sorry. That is not a sentence they taught me.
+17	dialogue	[gumilwife] Drop Surabol. Your breath is— it’s on my throat already. / A general’s throat. Mine tonight. / Down there is mine too. Touch. There. / <b>Breath on the throat.</b> Lean. There’s a post.
+18	p	She leans him into the post. His ice-blue robe has come open at the chest — clean silk, still clean, stupidly clean next to her mended green. Her mouth finds the tendon. Heart-pupils, if anyone looked that close. Drool he cannot swallow. She does not move back.
+19	monologue	monologue
+20	p	The mouth goes first. He holds her like he is afraid the hall will take her back — open, hungry, wine off her tongue — and the dirtied jeogori is still on, just enough off the shoulder that the figure starts to tell. The feast keeps talking on the other side of the cheap screen.
+21	dialogue	[pumsuk] Wait— I’ll make a sound. / I was trying not to. I am.
+22	dialogue	[gumilwife] I’m not waiting. Sorry. I’m not. / Put the sound in my mouth. The screen doesn’t have to hear. Or it can. I don’t care.
+23	p	Then she does the modest thing she never uses. Jeogori closed. Back to him. One step toward the dark. I should go, she says, like a joke that wants to be caught. His hand is already in the air.
+24	dialogue	[gumilwife] I’m going— I don’t mean go. / If you catch me I stay. You stay with the feast. Or don’t.
+25	p	He is already on the floor. She has sat back down as if the leaving were a game. Bare foot. Cheap hem hiked just enough. His clean blue sleeve on her ankle. He does not remember kneeling.
+26	dialogue	[pumsuk] Don’t go. / Stay. — Stay. My knees got here first. I am still—
+27	p	We see what he cannot quite: the look down, unrefined, a little pleased. She does not start with her hands. She starts with a plum from the tray. Jeogori open again, farther than before — the figure the yard has been staring at since spring. She puts the plum in her mouth so he has to watch. Pink in his eyes. Drool. Thirty-one. She has never rushed a man who was already lost.
+28	monologue	monologue
+29	p	The mouth goes first. Not a polite peck. Tongues. Wet. She sucks his lower lip and he makes a stupid sound into her. Ice-blue fist in dirtied green. She is starving. Ten years of three-stroke nights and a husband who is done before she starts. She kisses him like she is going to eat him. Chup. Chup. Spit on the chin. His young mouth does not know how. She teaches that too.
+30	dialogue	[gumilwife] Tongue— yes. Deeper— / You taste so young. Fuck. / Clothes off. I want the back. The hips too.
+31	p	As little silk as the lamp allows. She peels the ice-blue off his shoulders with both hands — ssrk — and the chest is right there, twenty-four, muscle she has not had in her mouth. She bites. Jeogori off her own shoulders like it never meant to stay. Ochre hiked to the waist. Nothing left that is not skin or a cheap sash. Deep french kiss while she opens him. Mmh— His cock slaps her thigh, already leaking. Made for this. Both of them. She can feel it in the fit before he is even in.
+32	dialogue	[pumsuk] Mouth— more— haa— / The tits— the back— if I just look—
+33	p	What follows is not a kiss. She sits him on the worn pine in that clean ice-blue and climbs on — ochre hiked, jeogori already a veil, the heavy chest in his face so he has to see it. She meant to lead. She takes his hands and puts them on her tits herself, like a lesson. This milf will teach you. He does not hear the lesson. He hears skin. He grabs like a dog that has never been fed, kneading, burying his mouth in the chest, a rabid animal whose whole mind is the next squeeze, the next wet, the hole he is already pushing up into. No rank. No wife in the pink room. Only this.
+34	dialogue	[gumilwife] This milf will teach you. / Stay still, baby. You’re not in charge. / That’s how you grab a tit. Yes. Good boy.
+35	dialogue	[pumsuk] These tits… they’re heavy… / I have to grab— mouth— / I can’t see anything else—
+36	monologue	monologue
+37	dialogue	[gumilwife] Haa— slow, baby. You don’t have to go that hard— / Gumil never— you’re still young. / You finish first, I’ll laugh. Daddy isn’t you. I’ll—
+38	p	She keeps the teacher-voice for three drops of her hips. Then the voice thins. He is in her to the base, stupid-hard, muscle under her palms she was going to grade like fruit, and every time she lifts he follows with a thrust that knocks the cheap post. His hands never leave the chest. She meant to laugh.
+39	dialogue	[gumilwife] Ah… wait. That… there… / That’s not— I didn’t say you could— / Bigger than my husband? It’s not. It’s just— the angle. The angle—
+40	p	She says it isn’t. The next thrust makes a liar of her mouth. She opens it for the next joke — the one about three strokes, the one about teaching — and nothing comes. The post knocks. He is still in her. She looks at the back she was going to praise and does not name it.
+41	monologue	monologue
+42	p	She goes quiet. The feast keeps talking on the other side of the screen. She does not. Four drops. Five. Six. Condescension sits in her throat and will not come out. He looks up from her chest, wrecked, waiting for the next instruction. She shakes her head. Not a no. A don’t.
+43	dialogue	[pumsuk] Maehwa—? / Talk. Please— / Your cunt’s so much juicier than my wife— I wanted this all night—
+44	p	A sound finally leaves her — small, wrecked, nothing she meant to give him. Since the plum she has been teaching. This is just a sound.
+45	dialogue	[gumilwife] Fuck… you’re insane… / I fucking hate you— I hate you— / Fuck you— AUUAAAAUAGGH—!!
+46	p	Teacher dies mid-sentence, late. She is panting, riding for real now, looking at his face as if she had not seen it until the cock made her look — twenty-four, ice-blue still clean, mouth open on her chest, muscle she can feel in her thighs. She comes the first time with a moan she tries to swallow and cannot. Then she looks at him and the look is the rest of the night.
+47	dialogue	[gumilwife] Haa— haa— this back— these muscles— / So much bigger than my husband— I said it, fine— / Don’t pull out— give me your fucking babies—!!
+48	dialogue	[gumilwife] Gotaso— ah— sorry— / The pink room doesn’t get THIS— haa— it’s mine—
+49	dialogue	[pumsuk] That name— out of your mouth— / Baby— give me the tits. Take it— / Everyone wants this fucking body. I’m the one in it—
+50	monologue	monologue
+51	p	The name does it. Whatever was left of the general leaves the hips. He holds her by the cheap sash and the tits at once and drives until there is no teacher left even as a joke. She is still astride when the sound leaves her. The laugh becomes a scream. She comes on the second scream, loud, messy, and then the water comes with it — she squirts all over him, ice-blue finally stained, his lap, his cock, the ochre, the pine, a shameful hot spray she cannot stop, and she is still saying she hates him into his mouth.
+52	dialogue	[gumilwife] AUUAAAAUAGGH—!! / DON’T PULL OUT— DON’T—!! / I’m squirting— all over your cock—!! / Cum in me— every last drop—!! / I fucking hate you— I love— ah—
+53	p	He does not last the courtesy of a first finish. Plap-plap-plap— and he is already shaking. He buries it — a stupid, young, endless amount, gallons of thick white shooting from that juicy young cock into a woman who has been empty for a decade — and keeps thrusting through the squirt, wetter, louder, white already running down the inside of the ochre in ropes. Every last drop. She laughs into the scream. She thought that was a night. One. Thank you. Back to the feast. She starts to sit. It is still coming out of her. Glk. Glk.
+54	dialogue	[gumilwife] AUUAAAAUAGGH—!! / FUCK the amount— filling me— you’re gonna knock me up—!! / This young waist— the back— ALL of it—!!
+55	dialogue	[pumsuk] AUUAAAAUAGGH— / More— coming— every last drop—!! / Breed— take it baby—
+56	monologue	monologue
+57	p	He does not go soft. He is staring at her cunt — open, used, his first load already spilling out in a thick white sheet onto the cheap sash — and the looking is the fuck. His cock jumps. Hard again. Instant. He grabs the tits with both hands like he dropped them. Twenty-four. Starving. He slams back in through his own mess, shlick, all the way, and she feels the next load already climbing the shaft. A used hole and he wants it more than a clean one. She has been starved of this. He looks like he has been starved of her.
+58	dialogue	[gumilwife] I thought you were DONE— ALREADY—?!! / This young body— the back— even the ass is hard— / Don’t pull out. Dump it. All of it—
+59	dialogue	[pumsuk] If I look I nut again—!! / Just the tits— I’m gonna fill you—!! / My wife’s hole never gripped like this—
+60	p	Cowgirl again. She drops on him — PLAP. PLAP. PLAP. Ochre wrecked. Ass slapping his lap. Tits bouncing in his grip. First load squelching out around the cock every time she sits. Schlk-schlk-schlk. She rides like a woman who has not been fucked properly since she was a girl. She loves the back under her hands. The hips. The stomach. All of it. Young man body and she is going to use every inch.
+61	dialogue	[gumilwife] Touch the back— the waist— this body is MINE—!! / Gumil lasts three strokes. You— fuck— you don’t go soft—!! / Daddy— no— baby— give me your nut—!!
+62	dialogue	[pumsuk] Bounce— bounce those tits—!! / Gonna dump another load in this cunt— breed you—!! / AUUAAAAUAGGH—!!
+63	p	Second finish. He shouts it into her chest. Another load, thick, too much, overflowing the first. She thinks that is the night. It is not. He folds her in half on the pine — missionary, legs over his shoulders, her own wet on her belly — and drives. Plap-plap-plap-plap. She claws the back she has been talking about. Muscle. Sweat. She licks it.
+64	dialogue	[gumilwife] AUUAAAAUAGGH— the BACK— your back is so fucking sexy—!! / That young ass moving— fuck— more—!! / Fill it— fill it— put a baby in it—!!
+65	p	He turns her. Doggy. Cheap post in her fists. He takes the hips he has been staring at since the yard and slams. CLAP. CLAP. CLAP. Her tits swing. White already running down the inside of her thighs, dripping off the knees onto pine. Third load. He does not pull out. She would kill him if he pulled out. Breeding. Raw. The bodies slot like they were cut from the same want.
+66	dialogue	[pumsuk] Take it— take it— AUUAAAAUAGGH—!! / Tighten— I’m nutting again—!! / This ass— since the yard—
+67	dialogue	[gumilwife] AUUAAAAUAGGH— WHOSE IS IT— SAY IT—!! / Young cock— young back— young nut— MINE—!! / Fuck you— I hate you— harder—!!
+68	dialogue	[pumsuk] MINE— this cunt— MINE—!! / Baby— get pregnant—
+69	p	Against the wall. Her legs around the waist she keeps praising. Standing. He is twenty-four and still hard and the fourth load slops out of her when he lifts, a wet sound, blorp, and he puts it back before it hits the floor. She is louder than the feast. Shaking. Dripping. Asking for the next load with her mouth on his.
+70	dialogue	[gumilwife] Tongue— tongue in— kiss me while you nut—!! / Wide back— narrow waist— I’m losing it over this body—!! / More— cum— more— drain it—!!
+71	p	On her side. Then on her back again. Then her on top facing away so he can watch the ass he ruined. Plap. Squelch. Drip. Load after load of breeding. She loses the count. Five. Six. The pine is white. The ochre is a rag. Ice-blue is stained to the hip. Every time she thinks the wick is the end he looks at the mess between her legs and gets hard inside her. The lamp keeps dying and he does not.
+72	dialogue	[gumilwife] AUUAAAAUAGGH— again— it’s coming again—!! / Don’t pull out— it’s overflowing— down my thighs—!!
+73	dialogue	[pumsuk] I love you— this body— this hole— I can’t stop—!! / AUUAAAAUAGGH— cum—!!
+74	p	They do not stop until the lamp dies. Load after load inside her — she squirts again on the last one, water and white, on the dirtied green, on the worn pine, on the frayed red sash, on the tits she cannot cover, on his stomach, on the cheap post. Hanbok still on — just straps of it. The hall smells of sex. She is hoarse. He is shaking and still in her, still holding the chest, still twitching out the last of a night that was only breeding. For the first time in this fortress they are in love in a room that cannot keep them.
+75	monologue	monologue
+76	dialogue	[gumilwife] Haa— I’m wrecked— / I love you— this body— you stayed— I love you—
+77	dialogue	[pumsuk] I love you too. / The tits. You. This room. This inside.
+78	p	They look. That is the whole end. A poor woman and a True Bone boy, wrecked on cheap pine, still joined, his cock still in, last load still leaking around it. They are completely in love. The feast will not know what to do with that.
+79	p	Afterwards she is on the worn pine. Jeogori open. Chima a wreck. White milk on the dirtied green — load after load of it, on the boards, on the cheap sash, on her, still pumping out when she tries to close her legs, catching the last of the lamp. She cannot sit up yet. She does not try. The feast on the other side of the screen has gone very quiet.
+80	p	He stands. He looks once — the way a man looks at someone he has already lost. He does not speak. He leaves the feast without a word — through the cheap screen, through the dark hall, back into the rank that will pretend this timber never happened. The lamps do not follow him. She stays on the floor.
+81	p	Morning comes. So does her husband, back from the stores. He wants the whole story. Every word of it…!
+
+##### iron-will | Siege of Daeya | 642
+0	day	day
+1	p	Grey in the door-slit. The feast is a cold hall. Gumil comes back from the stores and finds his wife where the True Bone left her — dirtied green still open, last night still on the boards. He does not ask if she is hurt. He asks for the story.
+2	dialogue	[gumil] From the start. / All of it. / Don’t leave any out.
+3	dialogue	[gumilwife] The lamp-line. / Sit. The plum. / After that… the floor.
+4	dialogue	[gumil] After that. / The name. / How many times.
+5	p	She does not wait for the rest of the questions. Same pine. Same wrecked ochre. She is still in milf mode — the voice she used on the boy, the hands on the chest, the hike. She pulls the yellow sleeve down, puts him in, and does not let go. He is already overwhelmed. Her. The smell. Last night still wet on her. Three strokes. He always was three strokes.
+6	dialogue	[gumilwife] Stay still. Let me. / Gumil. Like that— yes. Good boy. / Don’t pull out. We’re not done.
+7	dialogue	[gumil] Haa— Maehwa— wait— / Already— I can’t— AUUAAAAUAGGH—
+8	p	He cums. Fast. A small, overwhelmed sound into her neck, hnngh, and it is over for him. She keeps the hips down. Milf. She rides the twitch until there is nothing left and then she still does not lift. He is shaking. She is not. This is why she was starved. This is why the boy’s loads felt like a country.
+9	dialogue	[gumilwife] Already. / I know. You always are. / You’re still in. Because I’m not letting go.
+10	monologue	monologue
+11	p	She tells it. The walk. The knot. The scream the screen did not hide. She thought it was over after the first, and after the second, and it was not — he looked at her and it started again, load after load, and the clean silk that never stained. She tells him she said the wife’s name, and that is when the boy got angry, and that is when she liked it most — stealing a noble lady’s husband out loud. She tells him by the lamp she was the one being owned. He makes her say the leaving last — that the boy stood up, did not look, and walked out of the feast as if the room were already empty.
+12	dialogue	[gumilwife] He didn’t speak. / He just left. / I… stayed on the floor.
+13	dialogue	[gumil] A half is better. / Than mine. / You said that too. Did you.
+14	dialogue	[gumilwife] I did. / Because everyone in this fortress is trash. / Your men. These walls. This country.
+15	dialogue	[gumil] …Right. / But you are here too. / You are <b>trash</b> as well.
+16	p	They stand in the door-slit of morning and do not touch. The heat from the feast is gone. What is left is the count of what she said, and the count of what he made her say, and a marriage that has already finished speaking.
+17	p	That is the last thing they ever say to each other.
+18	p	Three weeks later Yunchung’s fire through the gate is the first thing the inner court sees — ten thousand men, and the wall still theoretically Silla’s.
+19	p	Mochuk lifts the bar. The leaf swings. The approach road fills. He does not look at the men coming in. He looks at the man who asked him to.
+20	p	Then Gumil puts the torch to the stores he counted, and opens the granary gate to Yunchung, and it is not for Baekje and it is not for money.
+21	dialogue	[mochuk] Why are you doing this. Truly.
+22	dialogue	[gumil] Because everyone in this fortress is trash.
+23	p	He is quoting her. He will keep quoting her for the eighteen years he has left, until a king in Sabi has him killed.
+24	dialogue	[pumsuk] *gulp*…
+25	p	In the inner room Gotaso understands before anyone says the word. The fortress is finished. Her husband is finished. She is seventeen and the forever she promised at the wedding has run out of road.
+26	dialogue	[gotaso] Husband… / If you are going to do it — look at me.
+27	p	A man who was not in the fortress is suddenly in the fortress, ledger under one arm, crow-dark robe, standing the polite distance of a messenger. The underworld’s. Whose king is Yumla.
+28	p	Kangrim reads her name aloud three times before he asks anything — Gotaso. Gotaso. Gotaso. — the underworld's way of making sure the ledger has opened the right door.
+29	dialogue	[kangrim] Lady Gotaso. / One question, then we walk. / When you chose forever — did you choose the man, or the vow?
+30	dialogue	[gotaso] Who… are you? / I don’t know your face. I don’t know your house. / Are you Baekje? Are you—
+31	dialogue	[kangrim] Neither. I collect. / You do not need to know me. Almost nobody does, until they do. / The question stands.
+32	dialogue	[gotaso] …Both. / Is that allowed? / …When he came for me there was something on his coat. He said he would change it later.
+33	dialogue	[kangrim] Honest. Rare. / Come. Nobody where we are going will ask you to swear anything.
+34	p	She goes with him surprised to the last — not by dying, but by discovering there was a door she had never been told about.
+35	p	He reads the husband's name three times next — Pumsuk. Pumsuk. Pumsuk. — the same ledger habit, a second door in the same fortress.
+36	dialogue	[kangrim] Hwarang Pumsuk. / …No. Not for you.
+37	dialogue	[pumsuk] …Ask me. / I wanted the love and the oath to be one thing. / They were not. Ask me.
+38	p	A messenger brings the news home. The Queen receives it seated, because queens receive everything seated. Munhee is already looking at Chunchu. Chunchu is looking at nothing at all. Bupmin asks the messenger to say it again, in the voice of a boy who thinks a sentence can be wrong twice.
+39	dialogue	[pumsuk] If you swear to spare us all, I will surrender.
+40	dialogue	[yunchung] If you do, it will go well for both you and me. I swear it on that bright sun.
+41	dialogue	[herald] Daeya has fallen… They say Hwarang Pumsuk and Lady Gotaso have gone before Yumla…!
+42	dialogue	[munhee] …What was it that girl said at her wedding.
+43	dialogue	[chunchu] “We will be happy forever.”
+44	quote	QUOTE 吾父名我以竹竹者 使我歲寒不彫 可折而不可屈 豈可畏死而生降乎
+45	dialogue	[chunchu] ….
+46	p	Chunchu (39) does not shout. He asks, very calmly, for the names of everyone who was inside the fortress.
+47	map	map
+48	dialogue	[yushin] Chunchu. / It was Pumsuk who swore to protect your daughter. / Not you.
+49	dialogue	[chunchu] Brother. / I am the one who made him swear it.
+50	p	That night his mother finds him in the empty audience hall, sitting on the floor below the dais the way he used to sit there when he was small enough to be overlooked. Princess Chunmyung is sixty-two. She gave up a throne to marry his father and has never once brought it up. She lowers herself down beside him slowly, one hand on his shoulder for the knees, and does not ask how he is.
+51	dialogue	[chunchu] Mother. / In go, when you lose a stone, you count the territory it cost. / This one… I can’t find the edge of it.
+52	dialogue	[chunmyung] Then stop counting. / You’ve been counting since you were nine. Your father taught you, and I let him. / …Put your head down. Just tonight. In this hall I’m still bigger than you.
+53	p	He does. The most cunning man in Samhan sleeps an hour with his head on his mother’s knee, and in the morning he asks the Queen for a road north.
+54	p	In Surabol Bupmin waits at the gate the way a boy waits for a sister who promised forever. Munhee does not send him inside. She lets him see the empty road. Some educations are cruel on purpose.
+55	dialogue	[munhee] Look at the road. Don’t look away. / You said you would be king for everyone. / Everyone includes the ones who do not come back.
+56	dialogue	[munmu] …I will make a country where sisters come home.
+57	dialogue	[munhee] Good. Start by surviving your father.
+58	day	day
+59	p	After Daeya, the Sword of Silla does not sleep in the capital. He rides to the cavern and strips at the lip of the rock without looking up. Narim, Golhwa, Hyullé. The same three who named themselves to him before the fortress fell.
+60	p	They do not look at his face first. They smell the year on him. Hyullé’s thighs press the rock she saved for him. He came back. I kept the ledge. Golhwa swallows. Narim’s voice, when it comes, is half an octave down.
+61	dialogue	[golhwa] You’re early. How flattering. / Or desperate. I like both on you. Desperate looks better with nothing on. Take the rest off.
+62	dialogue	[golhwa] Come here— I want you between my knees before unnie remembers she’s eldest.
+63	p	She has been on that rock all year waiting, moaning at nobody. She wants him to grab her and fuck her into the stone. The queen can have the forts.
+64	dialogue	[narim] Golhwa — he buried a niece’s fortress this month. / Let him enter the water before you enter his ribs. …Then you may. I’m not made of stone tonight.
+65	dialogue	[hyulle] …Here. / The far ledge is warmer. If you want. I’ll keep my knees together until you ask me not to.
+66	dialogue	[yushin] I came for quiet. / And for whatever you three pretend is not counsel.
+67	dialogue	[narim] Then hear it plain. / Yeon in the north is about to finish becoming what he was always going to be. / Do not go to his door as a guest who expects to leave as a guest. / And don’t look at Hyullé’s mouth while I’m saying it. She’ll soak the stone.
+68	dialogue	[golhwa] Or stay. / Skip the north. Skip the queen’s errands. / We keep the steam hot. Hyullé keeps looking at your mouth when you talk about duty — don’t pretend you haven’t noticed, Yushin. I keep looking lower. Notice that too.
+69	dialogue	[hyulle] I don’t — / …Golhwa, please. He’ll hear that I want him. I do. Stop helping.
+70	dialogue	[yushin] But Her Majesty sent word through Chunchu. / There are rooms in Goryeo that still have doors.
+71	dialogue	[golhwa] Ugh… / <i>“Her Majesty.”</i> Again. / What does that mortal have that we don’t? Say it while I’m this wet and I’ll bite you. / Stay with us, Yushin~~
+72	dialogue	[golhwa] Stay— on the rock, between my legs, until the list falls out of your head.
+73	p	The title again. The rock again. She wants him in her more than the north wants a marshal.
+74	dialogue	[narim] He won’t. / Let the court say the queen counted. Not that the queen begged. Send Chunchu west the way she already means to — with a list, not a plea. / Hyullé — warm the ledge anyway. He’ll take it on the way out, even if he won’t say so. And if he gets hard in the doorway, Hyullé, that’s yours. I already had the mouth.
+75	p	He sits where Hyullé pointed until the cold leaves his shoulders. Golhwa complains to the steam. Narim counts how long he stays without asking him to stay. When he dresses, none of them say goodbye — which is how he knows the counsel was real.
+76	p	In Pyongyang, Yeon has spent all summer bowing. Now he is throwing a party, and everyone important is invited…!
+
+##### iron-will | Yeon’s Massacre | 642
+0	p	Yeon's father dies in the spring, in his own bed in the east. The seal should pass to the son. The Summit takes the whole summer to admit it. When it finally does, Yeon decides to host a banquet. The king is in attendance.
+1	map	map
+2	p	All summer he has bowed. He went to every seat at the Summit one at a time and asked for his father’s seal like a younger son asking for an inheritance. Among themselves they have already agreed that he will have it for one winter, out on the border forts, and not come back.
+3	p	October cold sits under the eaves. The lamps are already lit when the Five Commanderies take their seats — wine first, then meat, then the old joke that Pyongyang never runs out of either. Each commander wears a ring-pommel sword at his hip, the three-legged crow stamped in the ring. The hall smells of sesame oil and autumn horse-sweat brought in on Eastern boots.
+4	dialogue	[yeongnyu] Ah — so even the renowned Gesomun has learned to bow… / Your father would have liked to see it.
+5	dialogue	[yeongnyu] Good — everyone is here. / We settle the succession today.
+6	dialogue	[yeongnyu] Gesomun! So you kneel at last!
+7	dialogue	[yeongnyu] Ah—
+8	dialogue	[gesomun] I… will take responsibility for my own fate from now on…! / <b>May Your Majesty live ten thousand years….!</b>
+9	p	Every door in the hall closes at once, from the outside.
+10	p	The side doors were never for servants. When they open again, Yeon’s soldiers come through every one of them. Tables overturn. Wine becomes a darker color before anyone names it. For hours, blood and tears fill the banquet hall as hundreds of officials and generals are killed. Yeon does not shout orders — he walks the length of the room the way a man walks a border he has already decided to keep, and he takes each commander’s blade himself.
+11	p	First the Southern Commander. He wanted the next levy for Yushin’s passes, and called Eastern fighting easy work.
+12	dialogue	[southcmd] Yeon…! / Samhan… the Samhan His Majesty named—
+13	dialogue	[gesomun] Son Daeha. / You asked for men, not speeches. / I am taking the men.
+14	p	He draws the Southern ring-pommel from a belt that no longer needs it. One crow. One weight on the spine to come.
+15	p	Then the Northern Commander. He would not freeze another winter while the capital counted his remounts twice.
+16	dialogue	[northcmd] The horses… still in… the warehouses…
+17	dialogue	[gesomun] Go Ul. / …The three villages. I remember them.
+18	p	The Northern crow joins the first. Outside, a horse screams in the yard and then does not.
+19	p	The Western Commander had warned that this would gift the Tang a road. He dies looking west, as if the road might still be argued shut.
+20	dialogue	[westcmd] The Liao… / The Emperor’s drums…
+21	dialogue	[gesomun] You were right about the road.
+22	p	Three crows. The hall’s lamps lean as if listening.
+23	p	Lee Gaesa is not a commandery banner, but he was the Summit’s mouth the day the word traitor was first set on Yeon’s name. Tonight the mouth has wine in it, and then nothing.
+24	dialogue	[leegaesa] Traitor…! / That day… I…
+25	dialogue	[gesomun] Lee Gaesa. / You gave me the word. / I am keeping it.
+26	p	Four. The word he was given becomes metal he can wear.
+27	p	Last of the banners: his uncle. The soft voice that told a nephew to sit down, because the Summit does not run on prophecies.
+28	dialogue	[gusesa] Nephew… / A feast… like this…
+29	dialogue	[gesomun] Uncle. / You told me to sit down. / …. / A Yeon takes this one from a Yeon.
+30	p	Five ring-pommels. Five crows. Yeon wipes none of them clean.
+31	p	He finally approaches King Youngryu for the final blow. The crown has slid. The Samhan dream is still in the king’s mouth, too late to be a budget.
+32	dialogue	[yeongnyu] Gesomun… / With gold… decades… / The King for All…
+33	dialogue	[gesomun] Your Majesty. / The gold was never going to be enough. He had already priced your head. / <b>May You live ten thousand years.</b>
+34	p	Yeon places each of the Five Blades onto his own back.
+35	p	He steps into the doorway with the blades on his back. Red-wing chalgap fills the door.
+36	dialogue	[gesomun] Loyal men of Goguryeo — hear the words of Yeon Gesomun! / In the south, Baekje and Silla covet us, / and in the west the Second Emperor comes this way, butchering nation after nation! / And all the while an incompetent king and rotten ministers shut their eyes to the world and lead this country down the road to ruin!! / Silla and the East, then Baekje the next day, then the Tang!
+37	dialogue	[gesomun] But what of the people? We have nowhere else to go! / We live on this land, we die on it, and we are the ones who bleed every time they come! / The world will call us mad! Of course — to take your own fate in your own hands has always looked like madness to the world!
+38	dialogue	[gesomun] <b>No one is coming to save us!!</b> Only we can do it — with our own hands!!
+39	p	In the aftermath, Yeon enthrones the king’s nephew as King Bojang and creates a new position for himself, as the Supreme Commander.
+40	card	card
+41	diagram	diagram
+42	p	He makes one more appointment before the blood is dry. Dosuryu — an old friend of the Yeon house, one of the few men who has ever told him no and lived — is named Grand Herald, a post that did not exist until the banquet needed a voice that was not the throne’s.
+43	dialogue	[dosuryu] Grand Herald… / I have had you by the scruff since your father was alive. / And now you want that mouth to read the country aloud?
+44	dialogue	[gesomun] If you will not, who will. / That Bojang… I only need the name. / The one who speaks to the 겨레 is you.
+45	dialogue	[dosuryu] Very well. / Only — for as long as you still listen to me. / If you stop, I am a herald, not a friend.
+46	p	Yeon listens. Not always. Often enough that the court learns which door to fear besides his.
+47	dialogue	[gesomun] You there… what is your name?
+48	dialogue	[bojang] M-my name? My surname is Go—
+49	dialogue	[gesomun] You there… what is your name?
+50	quote	QUOTE 賓至盡殺之 凡百餘人 馳入宮弑王 立王弟子藏爲王 自爲莫離支 專國
+51	p	After the blood dries Yeon does something the temples will not forgive and the chronicles barely record: he sends for Tang masters of the Way. The point is to starve the Buddhist monk aristocracy of the prestige they wear like armour. Incense changes. Halls cool. One young monk named Shinsung learns how to wait.
+52	dialogue	[gesomun] Pray quieter. / Or pray to something that does not own half the capital.
+53	dialogue	[shinsung] Amitabha.
+54	day	day
+55	p	In the markets the news arrives the way all bad news arrives — ahead of the official word, behind the smell of smoke. Grain sellers count on their fingers. Children stop racing. Someone says banquet and means blood.
+56	dialogue	[undefined] The king… they say he’s dead. / The commanders too. More than a hundred. And the Red Sun of Pyongyang — they say he strapped their blades to his back.
+57	dialogue	[undefined] Some say the Eternal General saved us. / The court was sharpening first. We were next. Commoners… we say that name before we say Yeon.
+58	dialogue	[goguard_a] Those blades… they say he strapped five of them to his back. / The commanders’ swords. On his own spine.
+59	dialogue	[goguard_b] By Haemosu’s light… incredible… / No — terrifying. Incredible, and terrifying.
+60	dialogue	[undefined] Still… is butchering a banquet the same as saving a country.
+61	dialogue	[undefined] Don’t say that on the wall.
+62	p	On the barracks steps the same argument runs until the drum tells them to stop arguing and start marching.
+63	p	The capital learns a new etiquette. Remaining officials swear loyalty not to the nephew-king’s smile but to the Supreme Commander’s door. Men who hesitate are removed before winter — titles stripped, names scratched from the rolls, a few bodies found where the river turns. The foreign hostels lock from the outside. Tribute missions that once bought another quiet decade are cancelled mid-packing; silk meant for Chang’an stays in the warehouses.
+64	p	March boots outrank court shoes. Drums outrank flutes. Monks keep their heads down while the new Taoist masters walk the halls Yeon starved of incense. Envoys who still ask for audience are told the kingdom is closed for inventory — of grain, of blades, of who belongs inside the walls. Goguryeo under Yeon watches the roads in and trusts almost none of them.
+65	p	At night the house is quieter than the city. Yeon’s wife has kept three boys from the sound of cheering that is not quite cheer. She waits until the lamps are few enough that even a Supreme Commander looks like a husband.
+66	dialogue	[yeonwife] What will Tang say… / Silla too. Baekje. / Massacre. Traitor. / How those outside will name our people… even thinking of it—
+67	dialogue	[gesomun] Listen… it doesn’t matter what they’ll say about us. / Do you hear me? It doesn’t matter at all — zero. Not even one bit.
+68	dialogue	[gesomun] Did their ancestors die for this dirt? / Will they be standing here when it is our turn to bleed?
+69	dialogue	[gesomun] So whatever they say out there about our people, our way of living — / not one second of your life. Please. / Look at me. Promise me.
+70	dialogue	[yeonwife] …I promise. / Only — when the boys are grown, tell them that too.
+71	p	He nods. Outside, the drums keep time for a kingdom learning to live with its doors shut.
+72	p	A kingdom with its doors shut, and a man with five swords on his back. Naturally, Chunchu wants to go and knock…!
+
+##### iron-will | Chunchu & Yeon | 642
+0	p	Since Daeya fell, Chunchu has had one request for the Queen: send him north to Pyongyang, to beg Goguryeo for troops against Baekje. She has not said yes.
+1	p	The news reaches Surabol about a month late, the way news from the north usually does.
+2	dialogue	[sunduk] What…! The King of Goryeo, murdered by his own subject?
+3	dialogue	[yushin] Well I never… I thought our country would fall first, and Goryeo goes ahead of us. So who is this subject?
+4	dialogue	[alchun] They call him the Eternal General — Yeon, or Gesomun. Commoners say Red Sun of Pyongyang when they think courts cannot hear.
+5	dialogue	[chunchu] “Yeon Gesomun”…
+6	p	Chunchu asks again, and this time the Queen lets him go. Nobody offers to go instead.
+7	dialogue	[yushin] If you go and do not return, Hangyul’s hooves will trample Goryeo underfoot without fail.
+8	dialogue	[chunchu] I will return within sixty days. If I have not returned by then, there will be no promise of meeting again.
+9	p	He leaves by the west gate of Wolseong on Hadong, a lean red bay he named for summer and winter, because a diplomat’s horse, he says, has to stand in both. Yushin walks beside the bridle as far as the gate and no farther, which for Yushin is a speech.
+10	dialogue	[yushin] Sixty days. / He knows the way back. Even if you forget.
+11	dialogue	[chunchu] You’re saying he’s smarter than me. / …Hear that, Hadong? Yushin trusts you.
+12	dialogue	[yushin] It’s you I don’t trust.
+13	p	Pyongyang lets him in through the red gate and keeps him waiting on the stair. When someone finally comes down, it is Dosuryu, the Grand Herald.
+14	dialogue	[chunchu] Your Excellency…
+15	p	Chunchu requests to see the king.
+16	p	King Bojang makes his request — though the word his is doing generous work, and everyone in the room knows for whom.
+17	dialogue	[gesomun] Oi, Silla — why the long face?
+18	dialogue	[gesomun] And call it Goguryeo. / Not Goryeo. I am not tired enough to shorten my own country.
+19	dialogue	[chunchu] Goguryeo, then — if the chronicles insist. / Most men I meet have already shortened it.
+20	dialogue	[chunchu] You would take this land’s crisis as your chance, and demand territory? / As a subject I have no say, so I await your judgement. And now — I take my leave…
+21	dialogue	[gesomun] You come into another man’s house, refuse his price, and still look me in the eye. / Has Silla no pride left? Or is it only you?
+22	dialogue	[chunchu] I know no such thing as pride. / Pride is a decoration for men who can afford to lose. / I know where I am going. There is nothing in this room large enough to stand in the way.
+23	dialogue	[gesomun] …
+24	p	Outside the door, two Goguryeo soldiers have been listening the way soldiers listen — professionally, and for sport.
+25	dialogue	[goguard_a] Did you hear him? / …Said it to the Mangniji’s face. Didn’t blink once.
+26	dialogue	[goguard_b] Silla men talk like that when they want to walk into Yumla’s court stylishly.
+27	dialogue	[goguard_a] Bet you a dried fish he crawls out on his knees.
+28	dialogue	[goguard_b] Bet you two he cries.
+29	p	The door opens. Chunchu is escorted out between two attendants. His left hand is a red glove. Blood runs off the wrist and dots the stone like a trail someone meant to follow.
+30	dialogue	[goguard_b] …Ah?
+31	dialogue	[goguard_a] Ah——??
+32	dialogue	[goguard_b] Why is there blood. By the Holy King’s bow, why is there so much blood.
+33	dialogue	[goguard_a] Did—— did the Mangniji cut him?
+34	dialogue	[dosuryu] Move. Prison.
+35	dialogue	[goguard_b] Prison? The man brushed past the death escort and he still has that face on.
+36	p	They put him in a cell with a window. That is meant to be a courtesy. The courtesy does not include a physician.
+37	dialogue	[chunchu] (…Good. He looked. He will remember looking.)
+38	p	What the guards do not know — what nobody in the corridor knows — is whose blade opened the hand. That answer waits in another man’s memory, for another meeting.
+39	p	Chunchu has no physician, but he has a sleeve, and sewn into it is what a Silla envoy carries when he expects to be robbed. Somehow it reaches Seon Dohae, the king’s favourite, without passing through any door the Mangniji is watching.
+40	quote	QUOTE 春秋以靑布三百步 密贈王之寵臣先道解
+41	p	Seon Dohae arrives with a jar of wine and no guards, which is either courage or an arrangement. He pours two cups, drinks both when Chunchu does not reach for his, and starts talking about the sea.
+42	dialogue	[seondohae] Can’t hold a cup with a hand like that. I’ll drink it for you. / …Tell me, my lord. Ever heard the one about the turtle and the rabbit?
+43	dialogue	[chunchu] …Even if I had, I’d like to hear it from you.
+44	dialogue	[seondohae] The Dragon King of the Eastern Sea had a daughter with a sick heart. The physician said a rabbit’s liver would cure her. / No rabbits in the sea. So the turtle climbs up on land and strikes up a conversation with a rabbit. / “Out in the middle of the sea there’s an island. Clear water, fruit everywhere, no hawks, no eagles. Come on. Get on my back.”
+45	dialogue	[chunchu] And the rabbit got on.
+46	dialogue	[seondohae] Got right on. The Holy King ran across a river on turtles’ backs, so turtles are generally trustworthy. Generally. / Two or three li out, the turtle turns his head and confesses. Actually, we need your liver. / And do you know what the rabbit said?
+47	dialogue	[chunchu] …
+48	dialogue	[seondohae] “Oh dear. I’m descended from spirits, I can take out my insides and wash them. My chest’s been tight lately, so I left my liver drying under a rock. Let’s go back and fetch it.” / The turtle believed him and turned around. The moment they touched the shore, the rabbit was into the grass. / “Idiot. Who lives without a liver?”
+49	p	Seon Dohae refills his own cup and looks at nothing in particular. Chunchu looks at his ruined hand for a long time, then laughs once, quietly, the way a man laughs when a lock he has been picking turns over.
+50	dialogue	[chunchu] …Could I trouble you for paper? / The left one’s in no state, so I’ll use the right.
+51	p	The letter goes to the king, not the Mangniji. The passes were Goguryeo's to begin with, it says, and once Chunchu is home he will ask his sovereign to give them back. He signs with a flourish. He has no intention of doing any such thing. His drinking partner, finishing the jar, has no intention of mentioning it.
+52	p	On the sixtieth day Yushin starts counting out men. He does not ask the Queen first.
+53	p	However, when the Eternal General hears of the Sword of Silla, he lets the most cunning man in Samhan go immediately.
+54	dialogue	[chunchu] Huh?
+55	dialogue	[chunchu] Yushin is coming!
+56	dialogue	[yushin] I don’t quite know either… perhaps he lost his nerve when he heard you were coming!
+57	dialogue	[chunchu] (The Eternal General… a more fearsome man than I expected…)
+58	p	On the Silla side of the border, in a camp that should not exist, Yushin has brought the horse. Hadong is tied at the front of the lines with an empty saddle, the way some armies carry an empty chair. When Chunchu comes down the last hill on foot, thinner, the left hand bound against his chest, the horse sees him before the men do.
+59	dialogue	[chunchu] …Hadong. / You got fat. Yushin fed you better than they fed me.
+60	dialogue	[yushin] Hand. / …Give it here. The right one.
+61	p	Chunchu cannot close the left hand on a rein, so Yushin ties both reins around his right wrist himself, in a knot he learned in the drill yard for men who have been shot. He says nothing about the hand, and Chunchu says nothing about the camp.
+62	dialogue	[gesomun] …What? The Sword of the Divine Country is coming? / …Let him go.
+63	dialogue	[dosuryu] Sir?
+64	dialogue	[gesomun] Did you not hear me? Release Chunchu. / But truly… who is this Chunchu — the most cunning man in Samhan — that the Sword of Silla comes for him himself?
+65	dialogue	[dosuryu] Who is this Sword of Silla, that the Eternal General behaves so? / Surely… you are not afraid?
+66	dialogue	[gesomun] Boy — even a man ready to die does not poke a tiger for no reason. / The day will come when we face Yushin… / but not over something like Chunchu.
+67	p	One envoy left Pyongyang bleeding. Whose blade was it? Now the King of Baekje walks in on purpose, laughing…!
+
+##### iron-will | Euija & Yeon | 642
+0	p	News of Yeon’s Massacre reaches Baekje.
+1	dialogue	[euija] What…! The King of Goryeo, murdered by his own subject?
+2	dialogue	[euija] This is an opportunity…
+3	p	He asks for troops. He asks twice.
+4	dialogue	[gesomun] Have you come to see the king?
+5	dialogue	[euija] No… I have come to see the one with real power.
+6	dialogue	[gesomun] He does not grant an audience to just anyone.
+7	dialogue	[euija] Tell him who I am, and he will come at once.
+8	p	Yeon is surprised that the new King of Baekje has come personally.
+9	dialogue	[euija] I hear you ploughed under the king and the whole noble faction? That one thing, I rather envy…
+10	dialogue	[gesomun] Could you not do the same on your side?
+11	dialogue	[euija] Look here — I am the king myself. / General Gesomun— / I would be called a tyrant and killed the next day, ah.
+12	dialogue	[gesomun] Your people killed a king of ours on that wall out there. You can see it from this room.
+13	dialogue	[euija] And Hansung? You put our king’s head on your own wall and called it a season’s work.
+14	flashback	FLASHBACK(1)
+15	dialogue	[euija] Besides… of the two men in this room, only one has actually murdered a king of Goryeo. It was not me.
+16	p	Yeon puts the blade on the table between them. Not pointed at anything. Just there.
+17	dialogue	[gesomun] Give me one reason I should not cut you down with this blade where you stand…!
+18	dialogue	[euija] Pfft—hahahahahaha!!
+19	dialogue	[euija] Gesomun… you may know how to command an army, but in politics you are plainly a novice. Do you know what politics is? / <b>Politics is alchemy. The alchemy of manufacturing a justification for what I already want to do.</b> / Do you know how many people in the surrounding countries admire you right now? / Yeon Gesomun — the man who ploughed under the corrupt officials and will bring a new age. / But… kill the King of Baekje now, and word reaches every one of those countries. / You become a madman who enjoys killing kings. Nothing else.
+20	dialogue	[gesomun] This land is not just dirt. / Goguryeo is the land of the <b>holy king, descended from the sun god</b>. / The Holy King. Son of Haemosu. A line that came down from heaven.
+21	dialogue	[euija] Pfft—!! / Hahahahaha!! / Wait… wait. The Supreme Commander of a country — / a grown man, a man who leads a kingdom — / still believes in <b>spirits and sun chariots</b>?
+22	dialogue	[gesomun] Do not laugh. / He came down from heaven. He opened a kingdom with a bow. / That blood — is the bone of this 겨레.
+23	dialogue	[euija] Oh, certainly. There was probably a man who shot well. / The rest is a story for keeping people in line. / To make a farmer kneel, a sun god is cheaper than a sword.
+24	dialogue	[gesomun] …So that is what your palace teaches. / I grew up in the marches. What the marches tell — is not a lie.
+25	p	Neither man yields. The room keeps both versions: a bowman who founded a country — and a heaven that may or may not have sent him.
+26	p	Yeon asks for the same thing he asked Chunchu for. He has only ever had one price.
+27	dialogue	[gesomun] The land north of the pass was Goguryeo’s. Return it, and I will send relief troops.
+28	dialogue	[dosuryu] What nerve, to come before him like that…!
+29	dialogue	[euija] Listen — I am the king of a country. A king is not a man. / I made my arrangements even for death, and gave warning abroad beforehand. / Kill me and all you get is a newer, angrier King of Baekje on the throne.
+30	dialogue	[gesomun] Not a man, you say…
+31	dialogue	[euija] They have a saying in Silla — that slaves are not counted as people. / Funny, is it not? The bottom is not a person, and the top is not a person either. / Everyone who gets to be a person is wedged in between.
+32	dialogue	[euija] Look at this map. / Silla has no trade route at all — for Tang, for Tianzhu, for the western regions, there is only this one harbour. / <b>Danghangseong</b> would be the right target.
+33	map	map
+34	dialogue	[euija] We have our own mouth — the White River under Sabi. / Clan berths stacked like teeth. Cut Danghangseong and Silla starves for partners; keep our river and we eat either way.
+35	dialogue	[gesomun] You sound like a harbour clerk. / Good. Kings who forget docks start wars they cannot feed.
+36	dialogue	[gesomun] Do you know a “Kim Chunchu” of Silla?
+37	dialogue	[euija] Kim Chunchu? First I have heard of him… royalty? Why?
+38	dialogue	[gesomun] Just… curious. He does not seem to care for you much. / He spoke of being rid of you, hands folded in prayer.
+39	dialogue	[euija] Chunchu… whoever he is, a man who stores things up like that is no easy sort. / But I do not fear a man who kneels to others.
+40	p	For a moment Yeon’s eyes go somewhere else — to a door, to a hand, to a stare that did not ask to be liked.
+41	flashback	FLASHBACK(6)
+42	dialogue	[gesomun] That Chunchu… / He put steel through his own hand to make me listen. / I have met one other man with eyes like that.
+43	dialogue	[euija] Oh?
+44	dialogue	[gesomun] You. / I do not yet know which of you frightens me more.
+45	dialogue	[euija] Flattery. Keep going.
+46	dialogue	[gesomun] It was not flattery.
+47	dialogue	[gesomun] You came with three. You’re leaving with five. / …Did Your Majesty come as an envoy, or to do some shopping?
+48	dialogue	[euija] I have a gift for gathering people. You have a gift for reducing them.
+49	dialogue	[courtmaid] Your Majesty. Goryeo is cold. / Shall we… warm you?
+50	dialogue	[courtmaid] With mouths. With thighs. / Even while you look at the map.
+51	dialogue	[euija] I am aware. / …Both of you, come. / Quietly. / Before Commander Yeon… hears.
+52	dialogue	[courtmaid] So tonight two of us will come in.
+53	dialogue	[courtmaid] One body isn’t enough… to hold Your Majesty. / From both sides… at once.
+54	dialogue	[euija] …Don’t flatter.
+55	dialogue	[euija] The body… is already answering.
+56	dialogue	[courtmaid] It isn’t flattery.
+57	dialogue	[courtmaid] The hands… remember. / Where Your Majesty… told them to go last night.
+58	p	In the morning he rides south with all five. Nobody raises the subject of the extra two. He carries a map of Danghangseong in his head, and Yeon’s warning about Chunchu folded away like a knife he intends to use later.
+59	p	Why does the Eternal General flinch at one Silla name? Go back to a ditch, a white horse, and an unknown captain…!
+
+##### iron-will | Nangbi | 629
+0	p	Kim Yushin — a name that strikes fear in all of Samhan. Maybe this is why.
+1	map	map
+2	p	Autumn. Silla’s army is breaking against a Goguryeo wall. The men who should be charging are sitting in the trenches. Yushin is thirty-four, a banner captain. His white horse doesn’t even have a name.
+3	p	He rides back to his father’s command post, gets down, and takes off his helmet, which is how a son asks permission in front of an army.
+4	dialogue	[yushin] Father. We’re losing. / They say you shake a coat by the collar to make it hang straight, and lift the head-rope to open a net. / …Let me be the collar.
+5	dialogue	[seohyeon] …Put your helmet on. / Then go.
+6	p	The white horse takes the trench in one jump that the men in it will describe for the rest of their lives, usually with their hands. In, out. In again. The third time Yushin comes back there is something heavy hanging from his saddle, and the men in the trench are already climbing out.
+7	quote	QUOTE 乃跨馬拔劒 向敵陣直前 三入三出 每入或斬將或搴旗
+8	p	He brings the weight on his saddle back to the command post and sets it down in the mud in front of his father, wrapped in a torn banner, because he does not know what else a son is supposed to do with a general’s head. The staff officers wait for the speech. Seohyeon looks at the bundle, then at the boy, for long enough that someone coughs.
+9	dialogue	[seohyeon] …Your helmet’s crooked.
+10	p	He reaches up and straightens it himself, both hands, the way you fix a boy’s collar before a feast, and then turns away and shouts for his officers before anyone can see his face. It is the most Kim Seohyeon has ever said to his son about anything, and Yushin will carry it longer than the helmet.
+11	p	That night he asks the groom what the white horse is called. The groom says it has no name; it came from the royal stable as a spare. Yushin looks at it for a long time, at the mud on its chest and the way it still will not quite stand still.
+12	dialogue	[yushin] Hangyul. / …It means steady. It came back steady. All three times.
+13	p	The few who get out of Nangbi walk north for nine days with the story, and it grows a little at every well. By Pyongyang the white horse has cleared the trench at a gallop with a general’s head in one hand and a banner in the other, and the man on it has a name the Goguryeo clerks must write down for the first time.
+14	p	In Pyongyang the report is read to the king twice, the second time because he asks for it. At the back of the hall the Yeon heir, twenty-four, stands with his arms folded, the way he stands everywhere.
+15	dialogue	[yeongnyu] Kim Yushin… a banner captain. / We have never heard the name.
+16	dialogue	[gesomun] You’ll hear it again. / One man jumps one ditch and five thousand of ours lie down. That’s a captain? That’s a sword. / Silla’s sword.
+17	scene	scene
+18	p	Gesomun’s family lives in the big house below the palace hill. His father, Yeon Taejo, has run the Summit for ten years. Long enough to outlive most of the men who voted for him. None of the ones who voted against. Most nights he comes home in a silence the servants have learned to walk around.
+19	p	Tonight he does not take off his boots. He sits at the low table with a copy of the Nangbi report, the one the king asked to hear twice, and reads it a third time with his finger under the lines.
+20	dialogue	[gesomun] Father. You’re still on that? / It’s one fortress. We take it back by spring.
+21	dialogue	[yeontaejo] Sit. / …Five thousand heads. Off one charge. How many men have you seen do that?
+22	dialogue	[gesomun] One. / You. At the Colossal River.
+23	dialogue	[yeontaejo] I had thirty thousand men and a river on my side. / He had a ditch and a horse.
+24	p	Gesomun has seen his father angry, drunk and bleeding, and once, when he was seven, riding home from the Colossal River with a Sui banner rolled under his arm like a bolt of cloth. He has never seen him frightened of a piece of paper. He finds he does not know where to put his hands.
+25	dialogue	[yeontaejo] Thirty-four, and still a banner captain. Silla won’t let a Gaya grandson climb any faster. / They’re wasting him. They won’t waste him forever.
+26	dialogue	[gesomun] Then I’ll kill him before they stop.
+27	dialogue	[yeontaejo] You’ll try. / Listen to me. Never on a field he picked. Never when you’re angry. And when this city tells you he’s only a captain, don’t believe it.
+28	dialogue	[gesomun] His Majesty already did.
+29	dialogue	[yeontaejo] His Majesty heard it twice and asked the Summit what to do. / Do you know what the Summit did? Argued half a day over who pays to rebuild the fort. Nobody said his name. Not once. / Ten years I’ve sat in that room. They’ll lose this country one granary at a time and call it caution.
+30	p	Each of them learns his country at home. Euija learns the great clans at his father’s table. Chunchu learns the council from the day it walked his grandfather off the throne. And Gesomun learns this city here, from an old man reading one report three times by lamplight. Nobody else in the city would read it once.
+31	dialogue	[gesomun] …Kim Yushin.
+32	p	That’s where the name comes from. Not from his own capital, which likes its titles stamped and filed. From the people he beat. Goguryeo calls him the Sword of Silla first, and means it as a warning. On the border, mothers use it to get children indoors before dark. Thirteen years later, Gesomun will hear that sword is riding for the prince in his prison. He’ll remember a hall, a report read twice, and his father reading it a third time.
+33	p	Thirteen years on, the banner captain has a queen, a title, and a long list of Baekje fortresses. He's working through it…!
+
+##### iron-will | Forty Fortresses | 642
+0	p	In the meantime Queen Sunduk sends her general, Kim Yushin, against Baekje.
+1	dialogue	[euija] I-i-it’s Kim Yushin!!
+2	dialogue	[euija] You’ve never heard of Kim Yushin…?
+3	dialogue	[euija] You fool — Kim Yushin is the Greatest Blade of Samhan…! / Yeon Gesomun, General Gyebek — tell them all to stand aside. Or tell Gyebek the title is still disputed. He will not laugh.
+4	p	Over the next few years Yushin takes more than forty fortresses.
+5	map	map
+6	p	In Baekje’s markets they spit when they say his title. At home they toast it. Both sides add, quietly, that Gyebek hasn’t met him yet. Until he does, “greatest blade” is a tavern argument with two right answers.
+7	dialogue	[yushin] After the twentieth, nobody was counting.
+8	dialogue	[chunchu] And you kept taking them anyway.
+9	dialogue	[yushin] …If I stopped, they would invent a reason for my stopping.
+10	p	Between campaigns he still goes alone to the cavern lake. The stone in the story is his father’s. His own pocket is empty. He undresses anyway.
+11	dialogue	[narim] You came with a question, or you came because the hill opened. / Either is fine. Sit down before you fall in again. And take the rest off. I want the question from a bare man.
+12	dialogue	[yushin] Three things. / The northern door. The queen’s count. How long I may stay.
+13	dialogue	[golhwa] Stay is not a number, marshal. / Sit. Unnie will do the other two. I’ll do the one she pretends isn’t counsel.
+14	dialogue	[golhwa] It involves my mouth.
+15	p	Hyullé does not speak. She has already warmed the far ledge. Her eyes are on his mouth while Narim answers the north. He will ride before I finish a sentence.
+16	dialogue	[narim] Yeon’s door is a guest-door only from one side. / The queen’s count is the one they will not let her finish. Bring her the west in numbers. Do not stand in front of the chair. / Take what you need. Leave before Golhwa asks you to stay. She will ask.
+17	dialogue	[narim] She will also try to sit on you. I’m only warning you about one of those.
+18	dialogue	[golhwa] Stay. In the water.
+19	dialogue	[golhwa] On me, if you can bear the youngest being first.
+20	dialogue	[yushin] Guest-door. Numbers. Behind the chair. Leave before stay. / I have the three answers. That is enough.
+21	dialogue	[euija] Yushin, my friend~~ / My men stop eating at the sound of your name.
+22	p	One star over Samhan tonight. Three men are looking up at it, and every one of them wants to be the King for All…!
+
+##### iron-will | The Eastern Star | 642
+0	dialogue	[yushin] Well — is it enough now? / We have given Baekje a proper beating…
+1	dialogue	[yushin] So then… do you mean to drag the King of Baekje back too?
+2	dialogue	[chunchu] Brother… the grudge is mine. I know that. / But something else is moving, and it is not me moving it.
+3	dialogue	[chunchu] Brother… I had little interest in any of it. / A wife I loved, a peaceful household. / I believed that much would be enough. / But the world—
+4	dialogue	[yushin] Chunchu, what on earth are you saying…
+5	dialogue	[chunchu] The eastern star shines especially bright tonight… / Brother… let us go and take it now. / That old palace of ours… / the dream we had when we were young… / <b>The “King for All”, I mean…!</b>
+6	dialogue	[yushin] …I told you. That one is a planet.
+7	dialogue	[chunchu] Thirty years and you are still saying that.
+8	dialogue	[euija] Gyebek. You grew up inside that palace. / You have watched men go mad reaching for a chair. / <b>A man is one of two things — a king, or a slave.</b> / There are slaves in crowns and kings begging at the west gate. / One request.
+9	dialogue	[gyebek] I will obey.
+10	dialogue	[euija] No. Do not follow me. / One day I will give you a stupid order. More than one. / Judge it yourself. / I wear the crown. You are still the king of your own life…!
+11	dialogue	[gyebek] Your Majesty… why are you telling me this?
+12	dialogue	[euija] Gyebek… a man should hold a larger dream. / <b>The “King for All”, I mean…!</b>
+13	dialogue	[gyebek] Your Majesty. / I saw Gesomun again.
+14	p	He touches the left side of his neck when he says it, where the old burn scar runs down under his collar.
+15	map	map
+16	p	The banquet hall has been scrubbed for three nights. Yeon climbs to a cave in the hill above the river. Nobody prays there lightly. The marches say the stone still remembers bowstrings.
+17	p	He kneels at the mouth and lays a crow-stamped ring-pommel on the stone. He does not ask forgiveness for the hall. He asks for witnesses.
+18	dialogue	[gesomun] The Holy King forged a country here. / I too… will forge one with my own hands.
+19	dialogue	[gesomun] …All my life I did not know what I was for. / Most men are born, and live a while, and die. / You gave me monsters. / <b>Thank you for giving me a direction.</b>
+20	dialogue	[gesomun] Until every bone in me is broken. / Until every jewel in my heart is cracked through. / I will not let go of this. / <b>The “King for All”, I mean…!</b>
+21	p	Gesomun wants a country. Far to the west, the man who owns half the world is trying to pronounce his name…!
+
+##### epilogue | Emperor | 643
+0	p	Far to the west, a man who owns half the world hears a new name. He turns it over on his tongue, like a grape he hasn’t decided to eat.
+1	card	card
+2	dialogue	[taizong] Gai Suwen…?
+3	p	The seventh invasion of Goguryeo has not begun. It has only found its excuse. Now it needs four dragons…!

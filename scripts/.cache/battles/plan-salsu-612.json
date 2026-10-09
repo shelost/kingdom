@@ -1,0 +1,6 @@
+[
+	{ "episode": 35, "battle": "salsu-612", "phase": "camp", "after": { "kind": "p", "text": "Munduk walks into the enemy camp himself" } },
+	{ "episode": 35, "battle": "salsu-612", "phase": "seven", "after": { "kind": "p", "text": "He surrenders seven times on the way south and runs" } },
+	{ "episode": 35, "battle": "salsu-612", "phase": "halt", "after": { "kind": "p", "text": "Thirty li from Pyongyang, the army stops" } },
+	{ "episode": 35, "battle": "salsu-612", "phase": "salsu", "after": { "kind": "p", "text": "When the army is halfway over" } }
+]

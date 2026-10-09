@@ -1,0 +1,841 @@
+
+=================================================================
+#40 Gi (起)  (645 Autumn)
+Arc: The Chunchu Era · place: surabol · tone: envoy intrigue into chamber drama
+Logline: Bidam takes the Council’s first chair and keeps his hand down alone against the queen’s cousin. The queen falls, the gate shuts, and on the first day the black headbands go up on the Radiance wall.
+=================================================================
+[0] ¶ The Harmony Council has one rule. Nothing moves unless the circle closes. Everyone agrees, or nobody goes home.
+[1] ── SCENE: The Harmony Council ──
+[2] ¶ This winter the first chair has a new occupant. Old Supum is thanked for his years and sent home, and the queen gives his seat to the one councillor who has never once told her what she wanted to hear.
+[3] [CARD Bidam — High Councillor of Silla: First chair of the Harmony Council. Every vote now passes through his hands.]
+[4] ¶ Under him sit the others, Yushin among them. They still decide only by unanimity. It’s the only way this council selects anything.
+[5] ¶ Then the room turns to the question everyone has been circling: when Her Majesty fails, who next. The Sacred Bone has thinned to one cousin. Someone says the name **Princess Seungman** the way you set a cup down that you expect everyone to drink from. She is forty-five, kind, careful with servants, and has never once surprised anybody.
+[6] ¶ One by one the hands go up. In a unanimous council a raised hand is a kind of weather — once it starts, it finishes. **Yushin**’s hand is among them. He has served one queen; he will serve her cousin.
+[7] ¶ Only one hand stays down.
+[8] ¶ Five pieces go to the yes side of the cup. Bidam’s piece stays on the no side.
+[9] [DIAGRAM harmony-council:veto Harmony Veto · 화백 거부 — Five assent, Bidam’s hand stays down. The cousin’s name cannot pass.]
+[10] Kim Murim: Bidam. This is the initial vote. / Five are up. What is there to deliberate. / We cannot even open the final vote. / You locked the door.
+[11] Kim Suljong: One hand down and this room is finished. / You know that, and you still put it down?
+[12] Bidam: I object.
+[13] ¶ The room does the small silence of men who have already counted themselves finished. Unanimity has failed. The name cannot pass. Someone laughs once, short, the laugh you make when the host spoils his own dinner.
+[14] Alchun: Bidam… alone? / It is Princess Seungman.
+[15] Bidam: Princess Seungman is not as clear-sighted as Her Majesty. / We cannot hand the country over for Sacred Bone alone. / Thirteen years ago, when I stood for Princess Dukman, it was because she was the cleverest. / Now you ask me to throw that measure away.
+[16] Kim Yushin: Bidam. Come on. / Same blood. Same house. / Thirteen years ago you put her cousin on that chair yourself.
+[17] Bidam: Which is exactly why I’m saying no, you Gaya ox. / Don’t give me that face. A hundred and eight to a hundred and eight, remember? Neither of us ever got to be right for long. / A country is not a scoreboard. / And on a night when Lord Chunchu’s eyes turn toward Chang’an, you want another soft Sacred Bone on that chair? Then who sells this country?
+[18] ¶ Yushin does not answer the count. Something in his face closes that has been open since they were boys on the yard. The Council adjourns with no successor named.
+[19] ¶ In the emptied hall the incense has burned down to a stub. Bidam has not left the table. His fist is still on the wood, the way his father’s was on the morning he walked him to the yard.
+[20] Bidam: …Alone, Father. Just as you said.
+[21] ▼ FLASHBACK 610 The higher teaching · 아비달마
+    [21.0] ¶ Class 51’s first morning. Packed earth still dark. Bidam is sixteen. His father walks him as far as the yard gate and no further — Musan hall does not hover.
+    [21.1] [CARD Son Sukwon: Bidam’s father. A man of few words, and he has saved them all for his son.]
+    [21.2] Son Sukwon: Bidam… / Do you know the meaning of your name.
+    [21.3] Bidam: Yes, father… / I was named after the Abhidharma, the higher teaching. It—
+    [21.4] Son Sukwon: Yes… the higher teaching. / And as a young man, and as a Hwarang, your duty is to uphold that. / And remember this: / Even if no one else agrees with the truth… even if speaking it out loud causes others to defame and mock you… / You must always walk toward the truth, in isolation if you must. There is no other way. / You may have heard the saying: upon victory, a king; upon defeat, a traitor. / Son… I need you to be a man who would rather be a **righteous traitor** than an unrighteous king. / Bidam… I love you…! / Go make us proud, son…!
+    [21.5] ¶ He does not name the Gaya-born boy who will share the class. He only ties Bidam’s headband once, tight, and lets the gate take him.
+[21] ▲ end flashback
+[22] ── SCENE: Princess Seungman ──
+[23] ¶ Princess Seungman catches him at the palace gate. Word has reached her before he has.
+[24] [CARD Queen Jinduk: The queen’s cousin, and the last of the Sacred Bone.]
+[25] Queen Jinduk: Bidam…! What is this I hear? / Surely not…
+[26] Bidam: You heard right, Princess. One hand. Mine.
+[27] Queen Jinduk: She can barely sit up, Bidam. The physicians say a season. Less. / Couldn’t you let her have one quiet winter?
+[28] Bidam: I gave her thirteen quiet winters. I put her on the chair. / She was chosen because she was the cleverest. Now the room wants the nearest. / Forgive me, Princess. You are kind. Kindness does not hold a pass.
+[29] Queen Jinduk: …Then who holds it? You?
+[30] ¶ He bows the full bow, the one owed to the Sacred Bone, and does not answer. Seungman watches him go the way you watch weather you can’t stop.
+[31] ── SCENE: Alchun’s Door ──
+[32] ¶ He starts counting who would come with him, and the first door he knocks on is Alchun’s.
+[33] Bidam: The problem is these rotten ministers!
+[34] Alchun: Oi. Enough of that ignorant talk. / The level of the ministers is the level of the country. / If the people were clear-sighted, the ministers would notice and do their jobs.
+[35] Bidam: What are you talking about! / Do you look down on the people of this sacred country? / They have always—
+[36] Alchun: Yes. I look down on them. So what? / If everything is this rotten and you lie there doing nothing, some of the blame is yours. / Why is it always the most ignorant in a country who shout loudest that it is the greatest…
+[37] Alchun: …And use your head. If Princess Seungman doesn’t take the throne, who sits there? / There’s one more royal neck in Surabol. Chunchu’s.
+[38] Bidam: Precisely.
+[39] Alchun: Ah, he doesn’t want it. Told me so himself, over wine. / Laughed at the whole idea, he did.
+[40] Bidam: Chunchu is the most cunning man in Samhan…! / Never — not for one moment — believe a word that comes out of that mouth…!
+[41] ── SCENE: The Harbour ──
+[42] ¶ Chunchu is sailing east to ask the islands for ships. Munhee packs for him. She has packed for every trip he’s ever taken. She will pack for one more. Nobody writes any of this down, which is why it needs saying.
+[43] Munhee: How many months this time?
+[44] King Muyeol: …I don’t know.
+[45] Munhee: Then I will pack for more.
+[46] ¶ At the harbour the wine merchant Haesang sees him off with advice nobody asked for.
+[47] Haesang: If you reach the eastern islands, my lord, ask after their lacquer. / And if you ever reach Chang’an — ask after a woman who finishes the emperor’s sentences. Merchants hear weather early.
+[48] ── SCENE: The Queen’s Chamber ──
+[49] ¶ Bidam hears it from a harbour clerk, which is the worst way to hear anything. Chunchu has sailed east. The queen signed the order herself. Nobody asked the Council.
+[50] ¶ He finds her in the small hall, not the throne room. She is sitting very straight, the way people sit when they no longer trust themselves to lie down.
+[51] Bidam: …Why wasn’t this told to the Council? / Lord Chunchu isn’t even a member of the Council… he’s just… / …your nephew…
+[52] Queen Sunduk: Lord Bidam… I-I need to lie down…
+[53] ¶ She tries to stand and doesn’t finish. Bidam catches her before the floor does.
+[54] Bidam: Y-Your Majesty! GUARDS! THE QUEEN IS DOWN!
+[55] ¶ Physicians. Doors. By evening the palace has stopped answering questions.
+[56] ── SCENE: The Eastern Court ──
+[57] [MAP 645: ]
+[58] ¶ Across the sea, Chunchu has no idea. The King of the East receives him politely, which is its own kind of answer.
+[59] [CARD King Kōtoku: The King of the East. His politeness comes with a price list.]
+[60] King Kōtoku: Baekje — the Land of the Heavenly Deer, Land of the Lord Buddha — is our ally. / With respect — I must refuse peace with the Divine Country.
+[61] King Muyeol: Baekje is a country on its way to ruin…
+[62] King Muyeol: Our sacred country has produced no end of talent, / and yet not one man the equal of Goryeo’s Gesomun.
+[63] King Kōtoku: You… speak our language remarkably well.
+[64] King Muyeol: Sun Tzu says the highest strategy is to win without fighting. / If Chunchu may add one word: if fight you must, the highest strategy is to fight by borrowing another’s hand. / Too many of Silla’s young men have already died…! / How am I to face their parents?
+[65] ¶ He asks for troops. He asks twice.
+[66] ❝QUOTE (Nihon Shoki (日本書紀) bk. 25, Emperor Kōtoku — Taika 3 (647)): Silla sent its high minister, the Daeachan Kim Chunchu, with others, escorting home the scholar Takamuko no Kuromaro and Nakatomi no Oshikuma; they presented a peacock and a parrot. Chunchu was kept as a hostage. Chunchu was handsome, and good at talk and laughter.❞
+[67] The Eastern Scholar: Chunchu… do you truly mean to go begging to every country around you? / Even Yamato has heard of the Eternal General and the Sword of the Divine Country. Silla may not be the power it once was, but we have strength enough to fight Baekje and Goryeo ourselves.
+[68] ── SCENE: That Night ──
+[69] ¶ That night Bidam takes the old black headband out of the chest where he keeps it. There is still blood on it, gone brown with the years. Two seniors’ noses, the first morning on the yard.
+[70] Bidam: …I offered this to that boy, back then. / Told him nobody would trouble him if he had it.
+[71] Bidam: I did not know the one troubling him would turn out to be the country.
+[72] Bidam: As young Hwarang, they told us we’d be the future of this nation… / to protect the Sacred Bone class… / Bullshit… / “Sacred Bone class”? You mean the two dying grandmas?
+[73] ── SCENE: The Moon Palace ──
+[74] ¶ Nine days later the gate of the Moon Palace is still shut. The guards have orders to open it for no one. No one, it turns out, includes the Harmony Council.
+[75] Bidam: WE’RE THE HARMONY COUNCIL! WHY CAN’T WE ENTER THE PALACE?? / WHAT AUTHORITY DO YOU HAVE? / SHE’S DEAD, ISN’T SHE? / THE QUEEN IS DEAD, AND YOU’RE HIDING IT FROM THE PEOPLE!! / DID CHUNCHU ORDER THIS?
+[76] ¶ The guards look at their spears. Chunchu is across the sea. His orders, apparently, are not.
+[77] ── SCENE: Yumjong ──
+[78] ¶ Bidam does not recruit with speeches, whatever the Council thinks of him. He recruits with tea and long silences, and the first man to drink the tea is **Yumjong**, a True Bone whom nobody has ever accused of anything, because nobody has ever noticed him.
+[79] [CARD Yumjong: A quiet True Bone who drinks his tea slowly and listens fast.]
+[80] Yumjong: The islands, now. Last summer it was the emperor’s war. / Your Lord Chunchu does get around.
+[81] ▼ FLASHBACK 645 Thirty thousand · 삼만
+    [81.0] ¶ Earlier that summer the emperor in Chang’an marched on Goguryeo himself. Chunchu talked the queen into lending him men. Silla did not have the men to lend. Baekje noticed.
+    [81.1] Bidam: Thirty thousand of our sons, Lord Chunchu. For another man’s war.
+    [81.2] King Muyeol: Not a gift, Bidam. A loan. / Empires keep their ledgers longer than kings keep their thrones.
+    [81.3] Bidam: Leave your own field to plough another man’s, and it grows weeds by autumn. / Baekje is the weeds.
+[81] ▲ end flashback
+[82] Bidam: Chunchu wants absolute power…!
+[83] Bidam: What’s the difference between the West and the East anyway? / In both nations, their emperors cannot be removed by a vote. / Their people live as slaves.
+[84] Yumjong: And the Marshal?
+[85] Bidam: Yushin stands where the Queen stands. He always has. / When she is gone he will stand where the next one stands, and he will call it loyalty, and he will even be right.
+[86] Yumjong: He’s not even Silla, you know. / Gaya. His great-grandfather handed over Geumgwan with the keys still warm. The men in the outer works would like hearing that.
+[87] ¶ Bidam’s beads stop. He has said the word to Yushin’s face a hundred times on the yard, and Yushin has laughed every time. He has never heard it said like this, by a man who means it as a door.
+[88] Bidam: …Careful, Yumjong. / A word you shout at a man’s gate comes back to your own. Gaya.
+[89] ¶ He says it once more, under his breath, as if testing the weight.
+[90] Yumjong: So. How many men, Councillor?
+[91] Bidam: A paddy is not planted in a morning, Yumjong. One shoot, and then the next, and then the water does the rest. / Enough for the Fortress of Radiance. By the time Her Majesty’s breath runs out.
+[92] ¶ Bidam sets the cup down. Chunchu is across the sea. The queen is behind a shut gate. The Council has no one left to ask. So, for the first time in his life, Bidam decides something without a vote.
+[93] ══ DAY: DAY 1 ══
+[94] ¶ **Queen Sunduk** is in critical condition. The Eastern Palace smells of medicine and of a succession nobody has settled.
+[95] ❝QUOTE (Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Queen Seondeok knows three things in advance; Ha & Mintz tr., p. 73 · Ilyeon, Lee Byong-do ed., p. 98): I shall die in such a year, on such a month and day. Bury me in the Heaven of the Thirty-Three.❞
+[96] ¶ Princess Seungman sits on the edge of the sickbed with a comb, because somebody has to do the Queen’s hair and the maids’ hands shake. They are cousins, five years apart, the last two Sacred Bone women in the world, and they have been doing each other’s hair since the younger one was tall enough to reach.
+[97] Queen Jinduk: Hold still, unni. / …You’ve gone thin at the temple. When did that happen.
+[98] Queen Sunduk: While you weren’t looking. That’s when everything happens. / Pin it high. If I’m going to the Thirty-Three Heavens I want to look taller than the gods.
+[99] Queen Jinduk: Don’t. / Don’t talk about where you’re going like it’s the market.
+[100] Queen Sunduk: …Seungman-ah. You’ll have to sit in it. / I’m sorry. It’s a hard chair. I’ll leave you a cushion.
+[101] ¶ Seungman pins the binyeo high, exactly where the Queen asked, and does not answer, which is the only way she has ever won an argument with her.
+[102] ── SCENE: The Fortress of Radiance ──
+[103] ¶ Bidam and Yumjong raise men at the Fortress of Radiance. The slogan is old. They only give it a banner. Yumjong holds the outer muster. Bidam walks the rampart as if the stones owed him rent. Inside the palace, the stewards count the grain and arrive at ten days. Nobody says the number aloud. Everybody schedules by it. The rebels tie on black headbands, Bidam’s old colour from the yard, so they can tell their own from the palace blue. Bidam ties on the old one, brown stain and all.
+[104] [battle]
+[105] [PLACE radiance: Close enough to the palace to shout at it.]
+[106] ¶ He carries the heavenly-horse sword in the dark. The robe eats the lamp. Only the ring pommel holds the light — a gold circle at the end of old-hall steel.
+[107] ❝QUOTE (Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin (Bidam’s rebellion, 647); Lee Byong-do ed., vol. 2): Bidam and the others encamped at Myeonghwal Fortress; the royal army camped at the Moon Palace. Attack and defence lasted ten days without being broken.❞
+[108] ¶ Before the banner goes up he lights a stick of incense on the rampart and waits for it to take, because a man raised on this soil’s sutras does not begin a thing without the smoke. His hand is steady. Under the sleeve the beads have not moved once since the muster began.
+[109] ❝QUOTE (Dhammapada (法句經) ch. 9, The Twin Verses (雙要品), tr. Weiqinan & Zhu Jiangyan · T04n0210, p. 562a · Pali: Dhammapada 1, Yamakavagga) [Bidam]: Mind is the root of all things: mind is the master, mind sets them moving. If the heart thinks evil and then speaks it and does it, guilt and suffering follow of themselves, as the wheel rolls in the rut.❞
+[110] Yumjong: Put it on the banner. ‘A woman cannot rule well.’ / The men in the outer works don’t march for councils. They’ll march for that.
+[111] Bidam: I crowned a woman, Yumjong. I stood up in that room and did it.
+[112] Yumjong: Then you know exactly what the slogan is worth.
+[113] Bidam: …女主不能善理. The room said it the year she was crowned and pretended it was weather. / Put it up. Let them march for the weather. / We won’t storm the palace. We wait.
+[114] Yumjong: For what?
+[115] Bidam: Ten days of grain in there. On the tenth morning the gate opens from the inside. / The Council sits with every chair full, and the succession goes back to the room where it belongs.
+[116] Yumjong: Open the Radiance gate. / High Councillor Bidam comes — today it is the banner, not courtesy.
+[117] ── SCENE: Between the Camps ──
+[118] ¶ Before noon **Alchun** is summoned twice — once by the Sword of Silla, once by the High Councillor with a banner — and he answers both.
+[119] Alchun: Yushin… / Of course we all loved the princess as young Hwarang. She was a beautiful princess, and we were young men. / But those days are over now. / You need to judge what is best for the nation — and the nation demands that you not be blinded by your personal loyalties, and judge what is best for the divine nation.
+[120] Alchun: Bidam… / You swore allegiance to the Hwarang, and the divine nation has vested you with the authority of the High Councillor — the highest office in the land. / For you to take up arms against the crown would be an act of highest treason.
+[121] Alchun: I will not raise a blade against Bidam. / I will not raise a banner against Her Majesty. / Ask me again on the tenth day. I may still be a coward — but I will be a precise one.
+[122] ¶ Neither man answers him in a way that would satisfy a clerk. Yushin stares at the eastern palace. Bidam smiles as if treason were a word invented by cowards. Alchun walks back to the space between the camps and eats alone.
+[123] ── SCENE: Dusk on the Wall ──
+[124] ¶ By dusk Yumjong’s men have found a word they like. They shout it across the field at the blue lines, the way boys throw stones at a dog to see if it bites. Gaya.
+[125] ¶ On the rampart a young officer brings Bidam his rice. The black headband on him is an hour old. So is his nerve.
+[126] A young rebel officer: Councillor— forgive me. / What is Gaya, anyway? My father says it was a kind of iron.
+[127] Bidam: Your father isn’t wrong. / Six harbours down the southern river, selling iron to anyone with rice. Us. Baekje. The islands. Enemies included. / No one king. Six chiefs and a great deal of arguing. Rather like our Council, only richer.
+[128] A young rebel officer: And they lost?
+[129] Bidam: They were bought. One harbour at a time. / The Marshal’s great-grandfather drove the oldest one to Surabol in a cart and set his crown on our king’s floor.
+[130] A young rebel officer: Then why does it still—
+[131] Bidam: Sting? / Because they have a better story than we do. / Their first king came down out of the sky in a golden egg. His queen sailed in from the end of the world under a red sail. / We tell our beginnings at funerals. They tell theirs at weddings.
+[132] ¶ Below the wall his horse, Bisamun, shifts in the lines. Across the field, under the blue banners, a man with Gaya eyes is not shouting back.
+[133] ¶ **A sky that looks too long at a mountain. Six eggs. A red sail. Here is how Gaya began…!**
+
+=================================================================
+#41 Suro  (42)  [FLASHBACK EPISODE]
+Arc: The Chunchu Era · place: geumgwan · tone: founder fairy tale
+Logline: Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.
+=================================================================
+[0] ¶ Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.
+[1] ¶ **Ibiga** keeps the sky the way other gods keep a hall — cloud is his body, the living world a map he does not usually read. Then he looks down.
+[2] [CARD Ibiga: The sky god. Cloud is his body, and he does not usually look down.]
+[3] ¶ On her mountain the Lady of the Right View is on watch. At first she is the ridge — jade stone, mist, a woman’s shape the mountain has not admitted yet. The mountain is a woman before it has a face. Then a face comes out of the stone. She is guarding the mountain as if it were a country. She does not look up. She does not need to. Then the sky occupies the path. Cloud comes down to the ridge.
+[4] [CARD Lady of the Right View: The mountain goddess. The ridge was a woman before anyone noticed.]
+[5] Ibiga: That ridge… / That woman. / I have flown this path a thousand times. Why is the mountain looking back.
+[6] ¶ Love arrives as weather — sudden, unasked. He cannot keep the hour. He falls before he lands. The sky comes down to touch the mountain, and does not leave.
+[7] Ibiga: Mountain. / Your shoulder… is warmer than cloud. / Your waist… steeper than cliff.
+[8] Lady of the Right View: Why has heaven come down. / To look? / Or… to touch. / If to touch… kneel first.
+[9] Ibiga: To touch. / I looked… and could not hold back. / The knees… already are.
+[10] Lady of the Right View: Then closer. / Ridges do not keep guests long. / Tonight I will make an exception. / I will keep your mouth… at my throat.
+[11] Ibiga: Your name… Right View. / The longer I look, the less rightful my thoughts become. / I want to put heaven… between your thighs.
+[12] Lady of the Right View: Then stay wrongful. / Nights when heaven kneels on a mountain… are not so common. / Kneel. / All the way.
+[13] ¶ Cloud covers the ridge. What happens under it is not for the song. By the time the cloud thins, neither of them is kneeling, and neither of them has let go.
+[14] ¶ He holds her with one arm. The other is cloud. The ridge is still a mountain; the mountain is still a woman. She does not look up. She does not have to.
+[15] ¶ By morning the ridge remembers two gods who would not let go. From that heat come eggs, and from the eggs, kings.
+[16] ¶ Their eggs fall to earth on a hill called Guji, and wait for someone to sing.
+[17] [CARD King Suro: King Suro. Born from a golden egg, and in no hurry to marry anyone local.]
+[18] ── SCENE: Mount Guji ──
+[19] ¶ On Earth, the people sing a song to call for a new king.
+[20] ❝QUOTE (Samguk Yusa (三國遺事) bk. 2, Wonder 2 — King Suro / Turtle Song; Ha & Mintz tr., p. 158): Turtle, turtle — show your head. If you do not, we will roast and eat you.❞
+[21] ¶ The people dig where the song tells them and find a box of six eggs, gold as the sun. Six babies hatch. The first one out is Suro. Each of the six founds a harbour kingdom:
+[22] The Herald: …Eggs, you said?
+[23] A villager: Six. In a box. From the sky.
+[24] ¶ Nobody in Samhan finds this remarkable. Silla’s founder came out of an egg. Goguryeo’s founder came out of an egg. Here are six more. At some point one has to ask what the birds were doing.
+[25] ¶ Gaya doesn’t have a crown. It has a league of iron harbours, six of them, give or take. No one king can lock the vote. Surabol would find that exhausting.
+[26] [DIAGRAM gaya-league Gaya Confederacy · 가야 — Not one crown — a league of iron harbours.]
+[27] [PLACE geumgwan: The harbour that sells iron to everyone, enemies included.]
+[28] ── SCENE: The Red Sail ──
+[29] ¶ **Queen Heo**, an Indian princess, becomes the first queen of Golden Gaya.
+[30] [CARD Queen Heo: Heo Hwang-ok. She sailed farther than anyone in Samhan had heard of, and arrived dressed for it.]
+[31] ¶ She arrives on a red-sailed ship at twenty-one — foreign, luminous, built like nowhere on this coast. The beach is only a door. The first time **Suro** falls in love is not on the sand.
+[32] ¶ In the timber court of Golden Gaya she presents herself — no servant speaking for her, her own name, silk that does not belong to this hall. He is already on the dais. He meant to receive a princess. He receives a woman, and love hits him before protocol can stand up.
+[33] ¶ Protocol is still trying to stand. He is already off the dais. He comes down with one arm — gold around violet, the same hold the sky used on the ridge, only this time the hall has columns and a floor.
+[34] ¶ Servants had been sent to the ship. She refused them. So the court is where they meet — and the moment he sees her, speech leaves him like heat from an open kiln.
+[35] Queen Heo: Have you come to fetch me… / or have you already begun to take me. / With your eyes. / Your mouth… looks dry.
+[36] King Suro: … / ……You. / Your mouth…
+[37] Queen Heo: Yes. / My mouth. / When the king looks at me like that… I get warmer. / Your hands… where do you mean to put them. / Even if you can’t speak — your hands know.
+[38] King Suro: Your waist… / I mustn’t… / If I touch…
+[39] Queen Heo: Then touch. / Since the king can’t choose… I’ll choose for you. / Here. / And here. / You’re shaking.
+[40] King Suro: …Hungry… / I can’t… speak…
+[41] Queen Heo: Then don’t speak. / If you’re hungry… take me first. / Slowly. / Not like a king — like a man.
+[42] ¶ He makes a sound that is nowhere near a word, and she smiles as if it were the only answer she came across the sea for.
+[43] ¶ On the hill she offers her silk trousers to the mountain spirit. He watches as if the rite were meant for him alone — jaw tight, hands useless at his sides.
+[44] King Suro: …How will we know the mountain accepted it?
+[45] Queen Heo: I can tell from the king’s eyes. / You look like someone who has already received.
+[46] King Suro: …It is not I who received. / …I am going mad wanting to.
+[47] Queen Heo: This country. / And by tonight… its king.
+[48] ── SCENE: The Tent by the Water ──
+[49] ¶ Two nights in a tent by the water before anyone may say marriage. By the second dusk he can barely keep his voice steady when she says his name — and she says it into his mouth so he has to swallow it.
+[50] ¶ She turns so he can see the curve of her hip catching lamp, and he is kissing the throat he will marry before he has permission to call it a country.
+[51] ¶ When he turns to the lamp she looks at the width of his back — muscle under purple-gold silk, a king’s body that the court never sees — and does not hide how that look sits on her mouth.
+[52] Queen Heo: Slowly. / Your tongue — here. / The way you say my name. / The lower lip. / Below that. / More.
+[53] King Suro: …At this rate I will learn the language. / Or I won’t. / I think I will fall apart first. / Inside you…
+[54] Queen Heo: Then fall. / That way I have to put you back together every night. / With hands. / With mouth. / Until the king is a king again.
+[55] ¶ The lamp burns low. She has taught him a dozen words since the dais, and in the dark she teaches him the rest without any — her hand on his wrist, showing him where, laughing when he is slow, then not laughing at all. She is twenty-one and crossed a sea with a stone pagoda in her ship’s hold to stop the waves; he is a king who hatched from an egg and has never once been told how. Neither of them is a god tonight. They are clumsy and greedy, and by the second hour they are good at it.
+[56] King Suro: Say it— say it again— / In your Ayuta tongue— my name— / …I have forgotten what my own country is called—
+[57] Queen Heo: My king— more— / Haa— my country has no word for this either— / Not yet— don’t go—
+[58] ¶ The second night she is on top, violet silk off her shoulders and the gold tiger-pins still in her hair, because she refuses to take them out for a man who cannot yet say _good morning_ in her language. He loses his own words again. She keeps hers. When she comes apart she says something in the tongue of Ayuta that nobody on this coast will ever translate, and he decides it was his name.
+[59] Queen Heo: My king’s— ah— / Stay— just like that—
+[60] King Suro: …Wife. It is morning. / I cannot… take my hands away.
+[61] Queen Heo: I know. / But I have not yet learned this country’s hours.
+[62] King Suro: …The ministers are outside. / Before I go in… once more.
+[63] Queen Heo: Once? / What a modest king.
+[64] King Suro: I am not modest. / …I am only holding on. / Barely.
+[65] Queen Heo: It does now. / I brought it with me — that sound, that night.
+[66] ¶ They are married a hundred and fifty years — the record is firm about this and entirely untroubled by it — and have ten sons. She asks that two of them carry her name instead of his. He agrees without an argument, which in the whole of this history is the single strangest thing any king does.
+[67] [WEDDING Queen Heo + King Suro]
+[68] Queen Heo: My country is gone. Only the name is left.
+[69] King Suro: Then we keep the name. I can always make another country.
+[70] ¶ She dies at a hundred and fifty-seven. He follows ten years later and asks to be laid where he can see her hill.
+[71] ¶ Her sons have her eyes, the colour of the far side of the sea. Gaya will marry into Silla and lose almost everything else. The eyes keep turning up anyway, a generation here and there, like a word nobody can quite translate.
+[72] ══ DAY: DAY 2 ══
+[73] ¶ Back on the Radiance road, the second morning comes up grey. Nine days of grain behind the palace gate. Bidam sends a runner across the field with a folded note. It says one word: tea.
+[74] ¶ **Nine days of grain. One folded note. Will the Marshal of Silla come to tea with a traitor…?**
+
+=================================================================
+#42 Seung (承)  (647 January)
+Arc: The Chunchu Era · place: surabol · tone: political thriller — countdown
+Logline: Five nights of tea between the camps, and a score still tied. On the fifth, Bidam asks the one question Yushin has never answered in Surabol.
+=================================================================
+[0] ══ DAY: DAY 2 ══
+[1] ¶ Of course he comes. Yushin has never once refused Bidam a rematch. Between the camps a small pavilion goes up, open on every side, so nobody can say the other side hid archers. A low table. Tea already poured. A half moon in an empty sky. They meet the way they used to after sparring: gloves off, courtesy on.
+[2] Bidam: Yushin. / Tea first. / …When the Six Elders raised Surabol — Lee, Choi, Jeong, Son, Bae, Seol. / Park came from an egg. / There was no Kim.
+[3] Kim Yushin: …And?
+[4] Bidam: And now the two Kim houses inside this wall — / Surabol Kim, Alji Kim — / both imports. / I alone… am Six-Elder blood.
+[5] ¶ The tea cools between them. Neither man drinks enough to call it peace. Bidam smiles as if nothing ugly had been said — the same smile he wore when he crowned a woman king. Yushin sets his cup down unfinished.
+[6] Bidam: Alchun sends his regards. From the middle of the field. / He’s eating alone again.
+[7] Kim Yushin: He always did eat between us.
+[8] ¶ Three Hwarang. One princess. The yard remembers what the Council never wrote down.
+[9] ▼ FLASHBACK 615 The cleverest of the three
+    [9.0] ¶ Bidam, Alchun, and Yushin — same Hwarang line, same bruised knuckles, same impossible orbit around **Princess Dukman**. They do not say the word love. The gyuku field says it for them, badly.
+    [9.1] Bidam: If the Sacred Bone runs out of men, pick the cleverest woman. / I have known Dukman since we were children. Cleverness is not a gender.
+    [9.2] Kim Yushin: Well stood. / Tomorrow on the yard — the hundred-and-ninth is mine.
+    [9.3] Alchun: You two will kill each other over a score. / I will kill myself over the girl in the middle. / …That was a joke. File it as a joke.
+    [9.4] Queen Sunduk: If you three are finished deciding my life— / the ball is still on the field.
+    [9.5] ¶ Even their names take sides. Bidam’s sounds like this soil and its sutras. Chunchu’s is a foreign classic. Any clerk across the sea could file it without asking. Nobody notices yet. Names are patient.
+    [9.6] Bidam: Yushin. / Alchun. / If either of you ever makes her cry for a small reason — I will even the score on your face.
+[9] ▲ end flashback
+[10] ══ DAY: DAY 3 ══
+[11] ¶ Arrows trade; messengers lie; the Harmony Council discovers it can convene without deciding anything, which is its highest form. Chunchu’s clerks call the unanimity rule quaint. Bidam calls it ours. Inside the palace, the stewards count eight days of grain.
+[12] [battle]
+[13] ¶ **Third night.** Same pavilion. Same half moon. Bidam has brought a map — not of the siege, of the roads west.
+[14] Bidam: Samhan is being colonized — in blood, and in the mind. / Tang sends institutions. India sends… / …through Queen Heo’s blood, sutras. / Yushin — your eyes are handsome. They are a western colour. / …When I stood first, they called me the liberal.
+[15] Kim Yushin: Gaya blood came from the west too. / I… stood up. / Fifteen winters past, when you spoke — you told me to stand.
+[16] Bidam: That was when you were weak. / …A joke. Drink your tea.
+[17] ¶ On the wall Bidam looks west and remembers a cleaner war — Jade Gate Valley, when the enemy still had the courtesy to be foreign.
+[18] ▼ FLASHBACK 636 Jade Gate Valley · 옥문곡
+    [18.0] ¶ Baekje sends five hundred armoured men to slip through a valley in the dark and bite a fortress from behind. In midwinter the toads in the palace pond start croaking, which toads do not do. The queen listens for one night. Then she sends steel instead of prayers.
+    [18.1] Alchun: Bidam — left ridge. I take the dry creek. / If their captain loosens a saddle, we do not wait for a committee.
+    [18.2] Bidam: Finally — an enemy I am allowed to hate in public. / Alchun. On my mark.
+    [18.3] ¶ They fall on the Baekje camp at dusk. Their captain climbs a boulder and empties a quiver; the quiver ends before the argument does. Alchun takes the general. Bidam takes the valley’s silence.
+    [18.4] Alchun: We make a good pair when the target is outside the wall. / Inside the wall… we will see.
+    [18.5] Bidam: Inside the wall is still the sacred country. / I do not miss.
+    [18.6] ¶ Eleven years later, on Radiance’s rampart, Bidam will remember the Jade Gate as the last time Alchun stood on his side without hesitating.
+[18] ▲ end flashback
+[19] ¶ Before the fourth night’s tea, the Moon Palace tries a quieter weapon. Chunchu sends his son **Bupmin**, twenty-one, to the steam — the water that shows a man’s inner conscience, the past that is driving his hand. Yushin is told only to **keep him talking**.
+[20] ¶ Chunchu is home from the islands. They kept him just long enough to be rude about it, then sent him back with compliments and no ships.
+[21] King Muyeol: Bupmin. / Take a jar. / The spring is a place your uncle knows. You’re a Kim — the door will open. / Splash him.
+[22] King Munmu: Father… / What does the water do to a man… / I understand. I’ll go.
+[23] ── SCENE: The Steam Cavern ──
+[24] ¶ This is the first time the cavern goddesses meet Bupmin. He is twenty-one. He does not yet have a king’s name. He has a jar and Chunchu’s weather.
+[25] Narim: A Kim. / Sit. No — the jar first. / You… He is the best of both. Gaya in the shoulders. Surabol in the mouth. Golhwa is going to climb you if you stay standing. Sit.
+[26] Golhwa: Oh. / A Kim we haven’t had. He’s both. / Take the water. Conscience sticks to it. Trauma. Grudge. Whatever’s driving the hand. / …And stop standing like that.
+[27] Golhwa: I’m trying to be a hill and you are shaped like a problem I want in my lap.
+[28] Hyullé: …Be careful. / If you splash it, you see why he’s doing it. / If you don’t see anything… that’s its own answer. / …He’s pretty. I’ll be quiet. I won’t be calm.
+[29] King Munmu: Goddesses… / Thank you. I was only— / I’ll just take the water.
+[30] ¶ He fills the jar. He does not stay for the lake’s other lessons. He is the best of both, and he leaves because his father told him to.
+[31] ══ DAY: DAY 4 ══
+[32] ¶ Seven days of grain. The Moon Palace’s wells drop. Rumour rises to replace them. Chunchu files contingency letters the way other men file prayers.
+[33] ¶ Fourth night. Same low table under the half moon. Bidam reads a rumoured draft — never enough secretariat, never enough emperor. His voice stays pleasant. The sentences do not.
+[34] Bidam: What Chunchu wants… / is a country that fits inside a Tang envelope. / Central rule. Emperor. Clerks. / He would burn the Harmony Council’s unanimity — the one thing we kept.
+[35] Kim Yushin: Baekje comes with swords, not sentences.
+[36] Bidam: Yes — and that is why you always win. / On the yard, and here. / Effort… speaks louder than my blood. / …The year they crowned her, I was the liberal who stood for the woman king. / Now they call me the blood-and-soil man. Ironic, Yushin?
+[37] Kim Yushin: …That young Hwarang is still here.
+[38] Bidam: Where?
+[39] ¶ He folds the rumoured draft. The next sentences have been waiting in the sleeve all night.
+[40] Bidam: Princess Seungman, and the tyranny of Kim Chunchu — I stand against both. / He speaks of a thousand-year kingdom. / If his faction wins, Samhan will spend those thousand years as a Chinese vassal. / A country that never again turns its own wheel.
+[41] Kim Yushin: Under Seungman, with these reforms, Silla could be the strongest country in Samhan in a few harvests.
+[42] Bidam: I do not need the strongest nation. / I want neighbours who still know one another’s names. / The young lifting the old. / A true people — not strangers who happen to share a wall.
+[43] Kim Yushin: The people’s livelihood hangs on the nation’s fullness. / Fullness hangs on institutions — on a government that can still stand. / If Silla falls behind Baekje and Goryeo, what comes through the pass is spear and famine. / Then tell me how the neighbours keep their names.
+[44] Bidam: Yushin. / Has the royal house spent one year outside the capital? Has Chunchu? / I have. / Out there, nobody wants a foreign emperor’s yoke.
+[45] Kim Yushin: As for outsiders, Lord Bidam, I will always be more outsider than you. / You, of Six-Elder blood, speak poorly of the halls that raised this land, / while I, last son of a conquered kingdom, would die for it.
+[46] ¶ Yushin does not close the argument. He asks again about the pass, about names, about harvests — anything that keeps Bidam’s back to the dark. Behind the pavilion, Bupmin’s jar ticks once against a post.
+[47] Kim Yushin: Bidam. / Say it once more. / The people have no wish for an emperor. Where did you hear that?
+[48] ¶ Bupmin comes from behind to **splash the water**. It is ugly and precise — cavern water as a hard sheet across Bidam’s shoulders, beads and all.
+[49] Bidam: Ha… / What is this…
+[50] King Munmu: Your trauma…. / Yushin… why isn’t it doing anything…?
+[51] ¶ Nothing rises. No childhood. No princess. No grudge-film in the steam. The water runs off the black robe as if it had mistaken a man for a wound. Chunchu, at the pavilion’s edge, does not move. The stoic act holds; the eyes do not.
+[52] King Muyeol: ……
+[53] Bidam: Oh… haha… / I’ve heard of this… this is that water, isn’t it…?
+[54] Bidam: HAHAHAHAHA!
+[55] Bidam: Behold, the arrogance of the sacred bone class!! / You really thought I had to have some sort of personal trauma?? / That that was the reason I was doing all of this? / That I hated the princess? The queen? / That I hated you, Chunchu, or Yushin? / Have you ever… even for a SECOND… considered the POSSIBILITY… / that your ideas are simply terrible? / That they’ll lead this nation to ruin? / That ANY reasonable man would oppose them? / Or are you so ARROGANT to assume… that EVERYTHING you lot do is correct… / and that the ONLY reason for ANYONE to disagree… is because they were suffering some sort of mental disease? Because they were angry and bitter? / Ha… well, my friends, I’m afraid all you’ve done tonight is prove your point. / You’ve proven yourself to be unworthy of leading any country. / So please… my friends… step aside…!
+[56] ¶ Alchun, arriving late with a lamp, goes pale. An officer asks whether to seize the jar. Nobody answers. Bidam is still laughing, and still alive, and the beads are still counting.
+[57] ── SCENE: Chunchu’s Rooms ──
+[58] King Muyeol: If Bidam wins, the Secretariat becomes a quaint hobby. / If Bidam loses, we still have a dying queen and a Tang-shaped hole in the west. / The man would burn a good idea for arriving in a Tang envelope. That is the whole platform — and it polls well. / Munhee — pack for either weather.
+[59] Munhee: I already packed. / I packed the year the Queen was crowned. You only notice in sieges.
+[60] ¶ Alchun eats alone between the camps. Both sides send him wine. He drinks neither. Surabol will later call it treason with better stationery.
+[61] ══ DAY: DAY 5 ══
+[62] ¶ Fifth night — the pavilion again. They sit on the floor, alone, the way they used to meet on the training ground. The tea is cold before anyone raises a blade. Six days of grain.
+[63] Kim Yushin: Second Blade of Samhan — Bidam!! Lay down your arms and give your loyalty back to the Blue Moon!!
+[64] ¶ For a breath they are only the old score again — one hundred and eight to one hundred and eight — two boys who never let the other keep a lead. Then Bidam speaks, and the yard is gone.
+[65] ▼ FLASHBACK 618 One hundred and eight
+    [65.0] ¶ The yard after rain. Two Hwarang, neither willing to leave the mud with the score uneven.
+    [65.1] Bidam: One hundred and eight…! / Today I take the lead, Gaya!
+    [65.2] Kim Yushin: One hundred and eight. / Get up, hyung. An uneven number does not sleep.
+    [65.3] Bidam: Ha! / Afraid it will be written that Gaya blood lost to Silla blood?
+    [65.4] Kim Yushin: Written or not. / Again.
+    [65.5] Bidam: …And don’t call me hyung when you’re winning.
+    [65.6] ¶ They end the evening even. They always do.
+[65] ▲ end flashback
+[66] Bidam: Yushin. / In this country the smartest people hate this country, / and the most patriotic people… are all stupid. / That’s Silla. / The country you’re trying to sell.
+[67] Bidam: Yushin…. / And besides — you… / **you were never even of Silla…!**
+[68] Bidam: Blood is inevitable.
+[69] ¶ The tea has not been touched. He says it like a compliment that curdled — still the gentleman, still the black robe, still the voice that once shielded this same man from the yard.
+[70] Kim Yushin: Lord Bidam… I remember we swore our lives to this together…
+[71] Bidam: You never had a country of your own — selling this one must cost you nothing… / But we are different. We cannot be cut from this land… / Would you hand the country my ancestors built to an emperor…! / I am a son of the sacred country.
+[72] Kim Yushin: Selling — I have sold nothing. / Lord Chunchu only asks that we learn Tang’s institutions. Baekje comes with swords, not sentences.
+[73] Bidam: Chunchu — 春秋. The man is named after a Chinese book. / And you would let him write the sacred country’s tomorrow. / Learn another country’s institutions long enough — and one morning, the learning is all that is left.
+[74] Bidam: I will raise the sacred country’s glory again, / I will return the sacred country’s future to its own people!
+[75] ¶ Yushin does not answer the speech. He looks at the cold tea as if the answer were at the bottom of the cup.
+[76] Bidam: Yumjong says your great-grandfather drove Geumgwan to Surabol in a cart. / Fine. Everyone knows the cart. / Nobody talks about the grandfather. What did he hand over, Yushin?
+[77] Kim Yushin: Leave the dead in their rooms, Bidam.
+[78] Bidam: No. / Five nights you’ve drunk my tea and told me nothing that was yours. / Give me one thing. Then call me a traitor.
+[79] ¶ For a long time the only sound is the wind through the open pavilion. Yushin has not said this aloud in Surabol since he was fifteen.
+[80] Kim Yushin: …Baekje has a name for one night on the Gwansan road. / Ask any soldier over the western hills. They call it the Severing.
+[81] Bidam: The night their king lost his head. Everyone knows it. A slave held the knife.
+[82] Kim Yushin: A slave held the knife. / A man in a Gaya cone helm sat their king on a camp stool and told him to sit. / …That was my grandfather.
+[83] ¶ Bidam’s beads stop for the second time this winter.
+[84] Bidam: …A Gaya prince broke the oldest peace in Samhan. / For us.
+[85] Kim Yushin: For Silla. / And his grandson sits at your table and hears he was never of it.
+[86] Bidam: …Drink your tea, Marshal.
+[87] ¶ Neither of them drinks. Bidam does not ask the grandfather’s name, and Yushin does not offer it. Some names a family keeps in a box.
+[88] ¶ **A cone helm, a king on a camp stool, and a name Yushin won’t say. Who was his grandfather…?**
+
+=================================================================
+#43 Muryuk  (562)  [FLASHBACK EPISODE]
+Arc: The Chunchu Era · place: daegaya · tone: elegiac legend
+Logline: The youngest son in the cart surrenders Gaya on one condition, then spends his life riding for Silla. Even south.
+=================================================================
+[0] ¶ His name was Muryuk. He was the youngest of three sons in a cart, and the only one who looked back.
+[1] [MAP 562: Five hundred years of iron, gone in thirty.]
+[2] ¶ For five hundred years the people of Gaya lived by iron and by six eggs, and they enjoyed great peace. Then Silla came shopping.
+[3] ── SCENE: The Surrender ──
+[4] ¶ The lord of Geumgwan did the arithmetic first. Baekje to the west, Silla to the north, a river of iron and no army worth the name.
+[5] ¶ The cart is slow. The road to Surabol is long enough for a boy to change his mind several times.
+[6] The lord of Geumgwan: Face front, Muryuk. / Your brothers are facing front.
+[7] Kim Muryuk: Somebody should remember what it looked like. / …The harbour. Before.
+[8] The lord of Geumgwan: Then remember it quietly. Kings don’t like being reminded what they bought.
+[9] ¶ He keeps looking back until the river bends out of sight.
+[10] ❝QUOTE (Samguk Sagi (三國史記) bk. 4, Silla Annals — King Beopheung, yr. 19 (532); Lee Byong-do ed., vol. 1, p. 86): The lord of Geumgwan, Kim Guhae, came with his queen and three sons, bringing the treasury and precious things of the country, and surrendered.❞
+[11] [CARD Kim Muryuk: The youngest son in the cart. Gaya handed over its crown. It did not hand over him.]
+[12] ¶ The king on the dais has bought harbours before. He has never bought one that talks back.
+[13] Kim Muryuk: If we are to surrender, I have one condition… / Let my father’s sons live in Silla without shame…
+[14] King Beopheung: And what do you mean by that?
+[15] Kim Muryuk: In Silla… I know a man’s blood decides everything… / Sacred Bone, True Bone… I know it all… / If my descendants — the sons and daughters of Suro and Heo — can take a worthy place… / then I too am ready to give Silla my life…
+[16] King Beopheung: Very well. Your descendants shall be raised as True Bones of Silla.
+[17] King Beopheung: In return you ride for me. North, west. Wherever the border itches. / …Even south.
+[18] Kim Muryuk: …Even south.
+[19] ¶ Three generations later, his grandson will still be told he is not really one of them.
+[20] Kim Muryuk: Your grace is boundless… Your Majesty…!
+[21] ── SCENE: The Night Road ──
+[22] ¶ Twenty-two years later he is a Silla governor in a Gaya helm, because nobody has managed to make him take it off. One night on the Gwansan road, the King of Baekje rides into his ditch.
+[23] ¶ You have seen that night from the king’s side. From the cone’s side it is shorter. A man who once begged at a king’s feet sits another king on a camp stool and does not draw his sword. The slave does the rest.
+[24] ❝QUOTE (Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1): His grandfather Muryeok was Commander of the Army of the Sinju Circuit; he once led troops that captured the king of Baekje and four of his generals and took more than ten thousand heads. His father Seohyun rose to the rank of Sopan, Governor-General of Daeyang Province and Pacifier of all the armies of Daeyang Province.❞
+[25] ¶ Ten thousand heads, says the record, and makes him a hero. He goes home and does not eat for two days.
+[26] ¶ Before that, the slave who did the cutting comes to his tent with the king’s knife, because nobody else will take it.
+[27] Dodo: My lord. They said give it to the Gaya one. / …That’s you, isn’t it?
+[28] Kim Muryuk: Keep it. / A knife that’s done that once shouldn’t go home to a man with sons.
+[29] ── SCENE: The Last Gate ──
+[30] ¶ Eight years after that, the Cloud King comes for what is left of Gaya. He brings a boy-general, Sadaham. He brings Muryuk.
+[31] Sadaham: They said too young. / The gate didn’t.
+[32] Mugwan: Don’t die first.
+[33] Sadaham: Then keep up.
+[34] ¶ The tall Gaya cone still fights. The men on Daegaya’s gate wear the same helm Muryuk does.
+[35] Kim Muryuk: Those are my father’s helms. / Let me walk up first. Alone.
+[36] Sadaham: They’ll shoot you.
+[37] Kim Muryuk: Then keep the gate warm for me.
+[38] ¶ He walks to the gate with his helm in his hand. Nobody on the wall knows what to do with a Gaya face under a Silla banner. By the time they decide, he is talking. Gaya has always listened to a good price.
+[39] ❝QUOTE (Samguk Sagi (三國史記) bk. 4, Silla Annals — King Jinheung, yr. 23 (562), 9th month; Lee Byong-do ed., vol. 1, p. 98): In the ninth month Gaya rebelled. The king ordered Isabu to punish them, with Sadaham as deputy. Isabu brought up the army, and they all surrendered at once.❞
+[40] ¶ The boy took his prize anyway. After the city fell he opened the prize-cages and kept only Alcheon dirt. Take the land. Leave the people.
+[41] Sadaham: Alcheon dirt. / That’s enough.
+[42] ¶ Muryuk watches the cages open and says nothing. It is the first Silla habit he has ever liked.
+[43] ── SCENE: The Name ──
+[44] ¶ He grows old in Surabol with a True Bone seal and a Gaya accent he never loses. His son Seohyun is clever and polite, and keeps walking into things while looking at clouds.
+[45] Kim Muryuk: Seohyun. When you have a son— / Don’t give him a Silla name to make them like him. They won’t. / Give him one that keeps faith.
+[46] Kim Seohyun: Father, I’m not even— there isn’t even a girl, I—
+[47] Kim Muryuk: There will be. You walk into walls looking at clouds. / Some girl will find that charming. One.
+[48] ¶ Then he says a name nobody has been given yet.
+[49] Kim Muryuk: Yushin…
+[50] ══ DAY: DAY 6 ══
+[51] ¶ On the sixth night there are two cups on the pavilion table. Bidam poured them himself. Last night he found out whose grandson he has been calling a Gaya ox.
+[52] ¶ **Five days of grain. Two cups poured. Will the grandson of the cone helm come to tea…?**
+
+=================================================================
+#44 Jeon (轉)  (647 January)
+Arc: The Chunchu Era · place: surabol · tone: political thriller — countdown
+Logline: The sixth night’s tea turns to insult, the cavern throws Bidam out, a white horse burns for a falling star, and Yushin’s father’s stone goes warm.
+=================================================================
+[0] ══ DAY: DAY 6 ══
+[1] ¶ Night rain. Five days of grain behind the palace gate. Bidam’s officers want a dawn assault. Bidam wants the score finished properly. He wants Yushin to come out again.
+[2] ¶ **Sixth night.** Yushin does not come to the pavilion. Bidam sends tea anyway — two cups poured, one left steaming.
+[3] Bidam: …He is not coming today. / Very well. Courtesy held until the sixth night.
+[4] ▼ FLASHBACK 610 The headband
+    [4.0] ¶ The Hwarang hall, the new boy’s first day. Two seniors lean across his desk.
+    [4.1] Senior Hwarang: So he isn’t even a real True Bone!
+    [4.2] Bidam: Hey, enough! / What did any of you do to earn True Bone? / You were merely born into it.
+    [4.3] ¶ He punches the nearer one before the other can answer, then the second for good measure. Then he wipes his knuckles on his own black headband.
+    [4.4] Kim Yushin: Thank you.
+    [4.5] Bidam: What is there to thank? / Take this headband. Keep it, and no one will trouble you.
+[4] ▲ end flashback
+[5] ¶ Near midnight Yushin comes to the pavilion after all. He does not touch the cup.
+[6] Bidam: **You Gaya wretch…!** / You dare call yourself the sacred country’s saviour….
+[7] Kim Yushin: Lord Bidam. / Fifteen years past, in the Harmony Council — who was it that stood up for Princess Dukman?
+[8] Bidam: ……
+[9] Kim Yushin: That young Hwarang said he would choose the cleverest of the three. / Where did that man go, Lord Bidam?
+[10] Bidam: …That man lived back when the sacred country was still a country.
+[11] Kim Yushin: But it is not I who raised a banner against the sacred country…!
+[12] ══ DAY: DAY 7 ══
+[13] ¶ Seven days in, nobody pours. Four days of grain. Last night’s two cups are still on the pavilion table, and one of them was never touched.
+[14] ── SCENE: Not a Kim ──
+[15] ¶ **Bidam** finds the cavern the way a man finds a rumor. Sword on the lip. Beads in the fist. The navy coat comes off because he has heard Yushin wash here, and a man who wants what Yushin has will copy the wash if he cannot copy the name.
+[16] ¶ He walks into the steam with nothing on but water and one hundred and eight beads.
+[17] ¶ The three sisters are already on the far rock. Narim looks at him the way an eldest looks at a door that opened wrong.
+[18] ¶ The spring does not hide much. Heat hits him low. He recites. The beads do not help.
+[19] (monologue) Bidam: I came to wash. The sutra does not cover this. I am standing in a door I cannot close.
+[20] ¶ The beads stop mid-count. He stares. The waterline drops.
+[21] Golhwa: Wrong door. He brought iron. And that.
+[22] Narim: He is not a Kim. The steam already knows.
+[23] Hyullé: …The mouth. Before the water takes the blade.
+[24] ¶ They do not stay women.
+[25] ¶ Golhwa goes first — fire unfolding into a tiger the size of the rock, ember pelt, steam off the fangs. Hyullé’s silk becomes a water-serpent, long as the bowl, cyan scales. Narim’s elder-shape thickens into a moss-bear, leaves in the fur, the hill’s weight on four feet.
+[26] ¶ He recoils. The beads jump. The sword is a hard black line he cannot lift in time.
+[27] ¶ They kick him toward the light — tiger-shoulder, serpent-coil, bear-shove. Three beasts, one refusal. The night has him again. The lake keeps Kims. It does not keep slogans.
+[28] ══ DAY: DAY 8 ══
+[29] ¶ On the eighth night a star falls toward **the Moon Palace** — bright enough that both camps look up. Bidam does not invent the omen. He only names it in a useful direction.
+[30] ❝QUOTE (Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin; Lee Byong-do ed., vol. 2 (Bidam’s rebellion, 647)): I have heard that where a star falls, blood will surely be shed. This is likely an omen that the woman sovereign will be defeated.❞
+[31] Bidam: You heard it. / Heaven has already voted against a woman on the throne. / 女主不能善理 — and now the sky writes it in fire.
+[32] ── SCENE: The Moon Palace ──
+[33] ¶ The rebel shout shakes the ground. Inside the Moon Palace **Queen Sunduk** goes pale. **Yushin** asks for leave to speak — and for a kite, a torch, and enough lies to edit heaven.
+[34] Kim Yushin: Your Majesty — do not fear a falling light. / If they can read a star, they can also unread one.
+[35] ¶ He flies the kite from the palace dark: a burning scarecrow rising where the star had fallen, so the night sky seems to take its light back.
+[36] Kim Yushin: Look up. / Heaven changed its mind — or we changed heaven’s handwriting. / Hwarang, with me.
+[37] ── SCENE: The Stables ──
+[38] ¶ The kite buys one night. A sky can only be argued with for so long, and by midnight both camps are already arguing about what they saw. While the drums are still asleep, **Yushin** goes down to the palace stables alone and leads out the white horse.
+[39] ¶ **Hangyul** has carried him for eighteen years, since the charge at Nangbi Fortress, to every border the queen sent him to and a few he went to without asking. The groom, a boy of fourteen, works out what the rope in the marshal’s other hand is for before anyone says it, and starts to cry with his mouth shut.
+[40] ▼ FLASHBACK 612 Hanbyul
+    [40.0] ¶ Seventeen, drunk, and asleep in the saddle. His first horse, **Hanbyul**, does what any good horse does with a sleeping rider and takes him where he always goes. He wakes at the courtesan **Cheongwan**’s gate with her lantern already lifted and her face already glad.
+    [40.1] Cheongwan: You came? / …They said you swore to your mother you’d never come again.
+    [40.2] ¶ He had sworn it. The horse had not. He gets down, draws, and takes Hanbyul’s head off at the gate in one stroke, then walks home past the lantern without looking at it. The song Cheongwan made about that night outlives both of them.
+[40] ▲ end flashback
+[41] ── SCENE: The Scorched Ground ──
+[42] ¶ The star came down past the west wall of the Moon Palace, where the ground is still scorched in a long smear. Yushin walks Hangyul there himself. **Chunchu** is already waiting with two priests, a bronze basin, and a face that has decided not to argue.
+[43] King Muyeol: …There are other white horses. Three in the stable. / Does it have to be this one?
+[44] Kim Yushin: They know over there. Everyone knows which horse I ride. / Offer someone else’s horse and it isn’t heaven that laughs. It’s Bidam.
+[45] ¶ He takes the halter off with his own hands. Hangyul, who has been led to a great many strange places at night, puts his nose into Yushin’s chest and waits for the reason, as he always has.
+[46] Kim Yushin: Eighteen years. / If it weren’t for you at Nangbi, I’d have ended there. / …I’m sorry. This time I’m the one who brought you.
+[47] King Muyeol: Yushin. / …Want me to do it?
+[48] Kim Yushin: No. / He’s mine.
+[49] ¶ He does it the way the rite asks and faster than the rite asks, so the horse never quite finishes turning his head. White goes down into the scorched black. The priests begin the prayer, and Yushin, who has never once let another man finish a sentence for him, lets them.
+[50] ❝QUOTE (Samguk Sagi (三國史記) bk. 41, Biographies — Kim Yushin; Lee Byong-do ed., vol. 2 (Bidam’s rebellion, 647)): He slaughtered a white horse and offered it at the place where the star had fallen, and prayed: “In the way of Heaven, yang is firm and yin is yielding; in the way of men, the sovereign is honoured and the subject humble. Should this ever be reversed, there is great disorder.”❞
+[51] ¶ Across the field, on the Radiance wall, **Bidam** watches the smoke of the offering go up and asks an officer what was burned. When he is told, he puts his beads away for the first time in eight days and goes down to the lines to stand beside his own horse, **Bisamun**, for a while, saying nothing to anybody.
+[52] [battle]
+[53] ¶ Afterwards the groom leads out a young grey, too green for a marshal, the only horse left in the royal stable that nobody has been afraid of all week.
+[54] Kim Yushin: Name?
+[55] ¶ The boy shakes his head. He is still crying.
+[56] Kim Yushin: Hanseul. / …It’s easy to say. Stop crying and try it.
+[57] ¶ It is the last horse he names. He rides **Hanseul** out on the tenth day, and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others.
+[58] ── SCENE: The Stone ──
+[59] ¶ Near midnight, at his desk in the palace, Yushin feels something warm against his wrist. He has carried his father’s stone in his sleeve for thirty years. It has never once been warm.
+[60] ¶ He sets it on the desk between the lamp and the grain tally. Chunchu came in to say there are three days of rice left and not to tell the kitchen. He looks at the stone the way he looks at a letter in a script he can’t read.
+[61] King Muyeol: …It’s a rock. / Why is your rock warm?
+[62] Kim Yushin: My father had it from a spring under the hill. It warmed when the hill wanted him. / It hasn’t since he died.
+[63] King Muyeol: And you’re going. With a rebel on the wall and three days of rice. To ask a spring something.
+[64] Kim Yushin: Bidam says I was never of Silla. / Six nights I let him say it. I want to know— / …whether I am.
+[65] King Muyeol: You’re asking a rock.
+[66] Kim Yushin: I’m asking him.
+[67] ¶ Chunchu doesn’t argue. He has just watched this man kill his own horse for a sky. He pours out the last of the wine, drinks half, and leaves the other half for whoever comes back.
+[68] ¶ Yushin puts the stone back in his sleeve. He will go down before light.
+[69] ¶ **A warm stone, a spring under a hill, and a father who once got very lost on purpose. Who was Kim Seohyun…?**
+
+=================================================================
+#45 Seohyun  (593)  [FLASHBACK EPISODE]
+Arc: The Chunchu Era · place: daeya · tone: forbidden romance into cavern legend
+Logline: Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.
+=================================================================
+[0] ¶ Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.
+[1] [MAP 593: ]
+[2] ¶ Kim Seohyun is the son of Gaya’s last prince. In the capital, that’s the kind of fact people bring up just after he leaves the room. His father rode in the cart that handed the kingdom over, then spent his life proving it had been a bargain. On one road he took an enemy king, four generals and ten thousand heads. The family is True Bone now. The rank opens most doors in the capital. It opens the best ones least.
+[3] ¶ He is young and polite and so used to being the Gaya boy in the room that he apologises before anyone has accused him of anything. He sits a horse better than he sits a banquet.
+[4] ¶ The best gate on the street belongs to Sukhuljong, the great king’s younger brother. Royal on every side. His daughter Manmyung is standing in it when Seohyun rides past. He looks. The histories, which don’t usually notice such things, record exactly how.
+[5] ❝QUOTE (Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1): At first, Seohyun saw on the road Manmyung, daughter of Sukhuljong, son of Galmun-wang Ipjong. His heart was glad, and he courted her with his eyes; and without waiting for a go-between, they came together.❞
+[6] ── SCENE: The Gate ──
+[7] ¶ The first time, he looks and keeps riding and nearly puts his horse into a charcoal cart. The second time he has an errand ready at the far end of the street, which does not exist. By the third the errand has run out, and he is only a man on a horse going the wrong way slowly.
+[8] Manmyung’s maid: Agassi. It’s him again. / Same horse. Same— he’s pretending he isn’t looking.
+[9] Manmyung: He’s terrible at it. / Don’t look. …No, look. I want to see what he does.
+[10] ¶ Then she does something nobody on that street has seen a Sacred Bone daughter do. She steps down off the threshold into the dust.
+[11] Manmyung: You’ve ridden past this gate three times today. / Is the road that bad, or are you lost?
+[12] Kim Seohyun: I— the horse— / …It’s lost. I’m only on it.
+[13] Manmyung: It looked fine the first time. / Nearly ate a charcoal cart. But fine.
+[14] Kim Seohyun: That was— the cart was in the wrong— / Kim Seohyun. That’s— I should have said that first. Is it rude? I don’t know the rule for this.
+[15] Manmyung: There isn’t one. That’s why it’s fun. / And I know who you are. Everyone on this street knows who you are.
+[16] Kim Seohyun: …Ah. / The Gaya one.
+[17] Manmyung: The one with the nice horse. / Then let it get lost again tomorrow. Same hour.
+[18] Manmyung’s maid: Agassi—!
+[19] ── SCENE: Getting Lost ──
+[20] ¶ It gets lost every day for a season. The maid starts timing her errands by it. The charcoal man learns to pull over. Nobody sends a matchmaker, because a matchmaker would have to walk into Sukhuljong’s hall and say the word _Gaya_ out loud.
+[21] ¶ By the end of summer they have stopped pretending about the horse. He leaves it at the bottom of the lane and walks up, and she talks to him through the side gate with the bar still down, because a gate with the bar down is technically closed.
+[22] Manmyung: You’re late. / The horse?
+[23] Kim Seohyun: The horse is fine. The horse is better than me. / They kept us at the Ministry. There’s talk of a posting.
+[24] Manmyung: Where?
+[25] Kim Seohyun: They haven’t said. North, probably. They send Gaya men north. / Somewhere with a lot of Goguryeo and not much—
+[26] Manmyung: Not much me.
+[27] Kim Seohyun: …I was going to say not much rice.
+[28] Manmyung: Liar.
+[29] ¶ Then she lifts the bar. Nobody on that street has seen a Sacred Bone daughter lift her own bar, either.
+[30] Manmyung: Come in. / Not the front, idiot. The mulberry shed. Nobody goes in there after dark.
+[31] Kim Seohyun: Agassi, I— your father— if anyone— / There are rules for this. I don’t know them, but there are—
+[32] Manmyung: Then they’ll have something to talk about besides your horse.
+[33] ¶ The shed smells of leaves and silkworms. She has his collar open before he has finished apologising for it. He is a careful man, and she is not a careful woman, and somewhere past midnight he stops being careful too.
+[34] Kim Seohyun: That was— I should have— a go-between, a proper— / Your father should have been asked first.
+[35] Manmyung: Shh. You talk a lot for a man with no shirt on. / Same hour tomorrow. Bring the horse, so it looks like an errand.
+[36] ¶ He comes the next night, and the next. A go-between would have taken a season. They do not have a season. Some nights they barely have the walk up from the lane.
+[37] ¶ The posting comes in the autumn: governor of **Manno**, a county far up the Goguryeo road, a wooden wall and a granary and a great many hills that change hands. He comes to the side gate with the seal still in his sleeve.
+[38] Kim Seohyun: Manno. / It’s— a long way. Ten days if the passes are open. The house is small. I haven’t seen it, but they said small, and the way they said it— / I’m asking badly. I’m asking if you would—
+[39] Manmyung: Yes.
+[40] Kim Seohyun: —come with— I haven’t finished.
+[41] Manmyung: Then finish. It’s still yes.
+[42] ¶ The maid tells nobody. The charcoal man tells everybody. Her father knows by the next morning.
+[43] ── SCENE: Sukhuljong’s Hall ──
+[44] ¶ Sukhuljong takes the news sitting down, the way he takes most things, without looking up from his cup. He is a king’s son and a king’s brother, and he has never once in his life been the one left standing.
+[45] Kim Sukhuljong: Muryuk’s boy. / The one whose grandfather carried his country here in a box and set it on the floor in front of my grandfather. / Him?
+[46] Manmyung: His father kept his sword, Father. / You keep a gate.
+[47] Kim Sukhuljong: A Gaya chair in a Kim hall. / Every guest who came would sit on it just to hear it creak. / Then you can look at the gate from the inside.
+[48] Manmyung: You can’t keep me in a room forever.
+[49] Kim Sukhuljong: I don’t need forever. / I need until he leaves for Manno.
+[50] Manmyung: It was me, you know. Not him. He’d still be apologising to the horse. / I lifted the bar. Every night.
+[51] Kim Sukhuljong: Take her to the back house.
+[52] ¶ He shuts her in a house apart at the back of the compound and sets men on the door. Surabol has a word for what the two of them did, and it is not a polite one, and for a few weeks it is the only thing the city talks about.
+[53] ── SCENE: The House Apart ──
+[54] ¶ The guards are two cousins off one of Sukhuljong’s farms, chosen because they cannot be bribed and cannot read, and by the fourth night they have run out of things to say to each other.
+[55] First guard: You think he’ll come?
+[56] Second guard: The Gaya one? He says sorry to his own horse. / He’s not coming over a wall.
+[57] First guard: I heard he leaves for the north day after tomorrow. First light.
+[58] Second guard: Good. Then we go home.
+[59] ¶ Inside, Manmyung has stopped eating to make a point and started again because the point was only hurting her. She has counted the boards in the ceiling. At the foot of the back wall, where the drain runs out, there is a gap, and she has been looking at it for three days the way her father looks at furniture.
+[60] ¶ On the last night it storms. Lightning comes down on the door itself, and the guards do what men do when the sky picks out the house they are guarding, which is run. In the noise Manmyung goes out through a gap in the wall so low that she has to crawl, in her good silk, in the mud.
+[61] Second guard: Heaven— it hit the door, it hit the DOOR—
+[62] First guard: Leave it! It’s burning, leave the door, leave it—
+[63] ¶ He is at the bottom of the lane with two horses, because he has been there every one of the four nights, in case. He sees a shape come out of the drain on its elbows, stand up and walk toward him through the rain like a woman going to market.
+[64] Manmyung: Don’t— don’t look at the dress. / Is the horse lost tonight?
+[65] Kim Seohyun: You— the lightning— are you hurt? Your hands—
+[66] Manmyung: My hands are fine. Answer the question.
+[67] Kim Seohyun: …No. / Tonight it knows exactly where it’s going.
+[68] ¶ She kisses him before he can get her on the horse. Hard, in the rain, with drain-mud on her chin and both hands in his hair. The horses wait like men who have seen this before.
+[69] Manmyung: …There. Now we can go.
+[70] ¶ They ride north in the rain. Behind them, two cousins are trying to explain a door to Sukhuljong.
+[71] ── SCENE: Manno ──
+[72] ¶ Manno is a wooden wall, a granary, a county office with a leaking roof, and hills that have changed hands more often than the clerks can keep up with. She learns the granary. He learns the hills. Neither of them learns to cook, and by the second month the clerk’s wife has taken pity on them.
+[73] ¶ The county house has one room with a door that shuts. The clerks learn not to knock before noon.
+[74] ¶ He has a dream on a _gyeongjin_ night and tells nobody for three weeks, because a Gaya man who dreams of stars coming down on him does not say so in a county office. Then, on a _sinchuk_ night, she sits up in the dark and shakes him.
+[75] Manmyung: Wake up. Wake up, I had— there was a boy. / In gold. Armour, all gold. He came in on a cloud, right into the hall, through the door like he owned the house. He looked at me.
+[76] Kim Seohyun: …I had one too. Three weeks ago. / Two stars. A red one and a yellow one. They came down on me. Not on the house. On me.
+[77] Manmyung: Three weeks. / Stars fell on you and you didn’t tell me for three weeks.
+[78] Kim Seohyun: I thought it might be the soup.
+[79] Manmyung: Pfft— the soup— / Come here, you. Come here.
+[80] ¶ She is with child by spring. She is still with child the following spring, and the clerk’s wife, who has delivered half the county, stops coming to check and starts coming to stare.
+[81] ¶ Word reaches Surabol before the spring rains do. A Sacred Bone daughter, with child, in a county house, and no wedding anyone was invited to. The city has been waiting for exactly this. Three banquets in a row talk about nothing else.
+[82] Kim Seohyun: They’re saying things in Surabol. About you. About— there was no wedding, and now—
+[83] Manmyung: Let them. They’re only saying what we did. / And we did it very well.
+[84] The clerk’s wife: Twenty months, my lady. / I’ve had cows do it faster. / Either that child is something, or somebody counted wrong at the start, and I won’t say which. You’re the governor’s.
+[85] Manmyung: Say it. I want to hear you say it.
+[86] The clerk’s wife: …The child’s something.
+[87] ¶ The boy is born in the county house at Manno. The clerk’s wife turns him over to wash him. She stops with the cloth in her hand.
+[88] The clerk’s wife: My lady. His back. / Look— there. There’s seven. Like someone pressed them in with a thumb.
+[89] Kim Seohyun: Seven what?
+[90] The clerk’s wife: Stars, sir. The Dipper. On a baby. / I’m going to sit down.
+[91] Manmyung: Sit, then. Sit. / And his eyes are some grandmother’s, a long way back. Seohyun says there was a boat.
+[92] ❝QUOTE (Samguk Yusa (三國遺事) bk. 1, Marvels — Kim Yushin): Lord Yushin was born in the _eulmyo_ year, the seventeenth of King Jinpyeong. He was endowed with the essence of the Seven Luminaries, and so his back bore a pattern of seven stars; and there were many other wonders about him.❞
+[93] ¶ Naming him takes longer than carrying him did.
+[94] Kim Seohyun: Gyeongjin. / I want to call him for the night I dreamed. That’s where he came from.
+[95] Manmyung: You can’t name a child after a day. / Even I know that, and I ran away from all my tutors.
+[96] Kim Seohyun: I know. I know. / But _gyeong_, written down, looks like _yu_. And _jin_, said quickly, is nearly _sin_. / And there was a man in the old books. A scholar. Yu Xin. A good man, they say. / So it isn’t a day. It’s a scholar. Nobody can say anything.
+[97] Manmyung: You’ve been working on this for months.
+[98] Kim Seohyun: …Twenty.
+[99] ¶ They bury the afterbirth on the high hill behind the county, the way you do with a child you mean to keep, and the hill keeps the name.
+[100] Manmyung: Yushin. / Say it to my father, next time you’re in Surabol. Say it at his gate.
+[101] Kim Seohyun: …He won’t open it.
+[102] Manmyung: Then say it louder.
+[103] ── SCENE: The Name at the Gate ──
+[104] ¶ A few weeks after the birth he rides to Surabol and says the name at Sukhuljong’s gate, loudly, to a street that has stopped to listen. The gate does not open. A steward comes out instead.
+[105] Sukhuljong’s steward: His lordship is unwell. / He expects to be unwell for some years. He asked me to say it in exactly those words.
+[106] Kim Seohyun: Tell him— / Tell him the boy has his mother’s mouth. / He’ll know what that means.
+[107] Sukhuljong’s steward: …I’ll tell him, sir. / He won’t like it.
+[108] ── SCENE: The Spring ──
+[109] ¶ He rides home the long way because he does not want to arrive yet. The road goes over a ridge beyond the city that nobody uses, and by noon he wants water more than he has ever wanted a shrine. When heat breathes out of the hillside he calls it a spring and gets down.
+[110] ¶ Under the hill three sisters keep the heat in the stone, the water in the dark and the moss on the roots: **Golhwa**, **Hyullé**, and **Narim**, the eldest, who also keeps the rules. They have gone centuries without a man coming down to them, and the hill has just told them about hooves on the road.
+[111] Golhwa: Hooves! Unni. Unni, hooves. Someone stopped.
+[112] Narim: Someone always stops. They drink, they piss in the stream, they leave.
+[113] Hyullé: …This one’s crying a little.
+[114] Golhwa: Crying? Let me see— move your elbow—
+[115] Golhwa: Fox. Let’s be a fox. Foxes are fun.
+[116] Hyullé: A grandmother. Then he drinks and bows and goes, and nobody… nobody gets hurt.
+[117] Narim: Try both. Then I pick.
+[118] ¶ They try both. The fox frightens the horse. The grandmother makes him kneel and offer her his waterskin with both hands, which is so polite that Golhwa groans out loud through the rock. Narim picks the last face herself: three young women in white jeogori over moss-green and ember and pale water-blue, sitting on the far rock as if they had always been there.
+[119] ¶ He is still calling it a spring when the ground gives under his boot. He comes down through warm dark into a bowl of black water under stone and stands up coughing in a cloud of steam, soaked to the skin, his sword still somehow in his hand.
+[120] Kim Seohyun: Who— forgive me— who lives here? / I was looking for water. There was an old woman just now, up there—
+[121] Hyullé: …That was me. Sorry.
+[122] Narim: You found your water. All of it at once. / Put the sword down, please. You’ll cut the steam.
+[123] Golhwa: Hi. I’m Golhwa. That’s unni. That’s Hyullé, she won’t say hello unless you look at her first. / What’s your name? Say it slow.
+[124] Kim Seohyun: Kim. Kim Seohyun. / Are you… I mean. People?
+[125] ¶ At the surname all three of them go quiet. _Kim_ is the sound their own steam makes coming off the water, and nobody has ever said it to them as a name.
+[126] Golhwa: Kim. / Say it again. No, I heard you. It just… sticks.
+[127] Narim: Kim. / …Then the house rules apply. Golhwa. Chin.
+[128] ¶ Golhwa is across the pool before he can step back, a wet hand under his jaw, turning his face to the light like a horse trader.
+[129] Golhwa: Smooth. Shaved this morning? For who— oh. For the gate. Poor thing. / Chin passes, unni.
+[130] Narim: Second rule. Nobody stands in this water dressed. / The steam doesn’t talk to cloth.
+[131] Kim Seohyun: I— I have a wife. She’s— we have a son, he’s— / I’m sorry. I should have said that first.
+[132] Golhwa: We didn’t ask about her.
+[133] Hyullé: …You can turn around. We won’t— we won’t look.
+[134] Golhwa: Speak for yourself.
+[135] ¶ He turns his back, takes off the wet clothes and folds them badly on a rock, because he does not know what else to do with his hands. Hyullé does not look, mostly. Golhwa does not pretend. Narim waits until he is in the water to the chest and then lets out a breath, which nobody remarks on.
+[136] Narim: Today we are the mouths the hill uses when it gets tired of being stone. / Ask it one thing, Kim. From the water. Once.
+[137] ¶ He thinks of the gate. He thinks of a girl crawling through a hole in a wall in her good silk.
+[138] Kim Seohyun: I have a son. A few weeks old. / My wife’s father won’t say his name. I stood at his gate this morning and said it for him, and— / I don’t know what to ask for him. I don’t know what you ask for a boy like that.
+[139] ¶ Their eyes go solid, green and cyan and ember, and the cave stops being funny.
+[140] The Hill: The child will be the measure two countries cannot share. / They will call him a blade and mean a border. / When they say he was never of them, the blade will still be Kim. / He will cut more than he is given. Don’t ask who bleeds.
+[141] ¶ Narim puts a river stone in his hand, ordinary and grey and too warm for the cave.
+[142] Narim: Keep it in your sleeve. / When it’s warm, come back. Same road, same water. One question. / When you’re too old to climb, send the boy.
+[143] Golhwa: Shaved.
+[144] Kim Seohyun: …Can I tell his mother?
+[145] Golhwa: Tell her it was a spring. / Everybody says that.
+[146] ── SCENE: Home to Manno ──
+[147] ¶ He rides north with a stone in his sleeve that will not cool. At Manno, Manmyung is sitting up with the baby in the lamplight, and she asks him where he has been all day, and he tells her he found a spring.
+[148] Manmyung: A spring. / …You’re smiling like a man who found three.
+[149] Kim Seohyun: …It was a very good spring.
+[150] Manmyung: Mm. / Your hair’s wet. It hasn’t rained in a week.
+[151] ── SCENE: Fifteen ──
+[152] ¶ The boy grows up at the edge of things, in county houses on the northern road. There’s a younger brother, and two little sisters the house calls by baby names. They’ll grow up to cause a great deal of trouble over a skirt. One of them is Munhee.
+[153] ¶ At fifteen he is made a hwarang, and the boys who follow him start calling themselves the Dragon-Flower Band. Seohyun hears it from a clerk before he hears it from his son.
+[154] ¶ The morning Yushin leaves for Surabol, his father stops him at the gate of the county house to look at his headband.
+[155] Kim Seohyun: You’ve got it on crooked.
+[156] Kim Yushin: It’s fine, Father.
+[157] Kim Seohyun: It’s crooked. Hold still. / In Surabol they’ll look at the headband before they look at you. They’ll look for anything.
+[158] Kim Yushin: Because we’re Gaya.
+[159] Kim Seohyun: …Because you’re new. / Mostly because you’re new.
+[160] ¶ He reties it with both hands, too tight, and then does it a third time. Manmyung watches from the doorway and lets him.
+[161] Manmyung: Let him go. He’ll be late for his own band.
+[162] Kim Yushin: Mother—
+[163] Manmyung: And stop at your grandfather’s gate on the way. / Don’t knock. Just let them see you.
+[164] ── SCENE: Daeyang ──
+[165] ¶ Seohyun rises the way a Gaya man rises in the capital. One rank at a time, each signed by someone who remembers the box. By the end he is third rank in the kingdom. He governs the march that faces the enemy, from the fortress at Daeya.
+[166] ¶ In the evenings he walks the wall at Daeya. Baekje is a line of hills to the west that the sun goes down behind.
+[167] A Daeya officer: They say this wall can’t be taken, sir.
+[168] Kim Seohyun: They say that about— every wall, I think. I’ve heard it about four. / Just— keep the granary dry. And know whose hands the keys are in. / My wife ran the granary at Manno. She’d tell you the same. She’d tell you better.
+[169] ¶ The histories do not record the year he died, only how high he got. He climbs the ridge beyond the city whenever the stone in his sleeve is warm, shaved every time, until the climb is too much for him. Then the stone goes to his son. The boy with seven stars on his back finds the same water on his own and bathes in it for thirty years, and the stone in his sleeve stays cold the whole time, as if the hill were waiting for a better question.
+[170] ¶ **Ninth morning, before light. The stone in his son’s sleeve is warm at last. Down Yushin goes, to the water…!**
+
+=================================================================
+#46 Gyeol (結)  (647 January)
+Arc: The Chunchu Era · place: surabol · tone: political thriller — countdown
+Logline: Yushin asks the water who he is. Then the gate opens from the inside, the yard’s two best meet between the camps, and the score finally breaks.
+=================================================================
+[0] ══ DAY: DAY 9 ══
+[1] ¶ The water under the hill has been warm for thirty years. Before light on the ninth day, so is the stone in Yushin’s sleeve.
+[2] ── SCENE: The Lake, Again ──
+[3] ¶ So Yushin goes to the cavern lake, as if habit could hold a country together.
+[4] ¶ Yushin undresses without ceremony. The three are already in the steam — mentors, tormentors, the only room in Silla where no one asks him for a victory.
+[5] ¶ Golhwa knows that walk and is already wet for it. She watches him like a problem she means to solve with her body.
+[6] Golhwa: You came early. How flattering.
+[7] Narim: He came because he is about to kill a friend. / Forest etiquette: say it plain.
+[8] Kim Yushin: If you know that, tell me how not to.
+[9] Hyullé: You can’t. / …I’m sorry. / Keep the wound that remembers the headband. Lose the one that wants him to thank you for the blade.
+[10] Golhwa: Unless you’re saving all your thank-yous for the Queen again. / She is not in the water, Yushin. We are.
+[11] ¶ She takes his wrist under the water and does not wait for the Queen’s name to finish. For a few breaths there is only steam, and the walk they already know, and a marshal who cannot keep his arithmetic. Then Narim’s voice cuts the wick.
+[12] Kim Yushin: But Her Majesty —
+[13] Narim: Enough, fire. / He will go. We knew that when he took the armour off and still kept her name on.
+[14] Hyullé: …Go. / Give Sunduk the victory. / Keep a little silence for us.
+[15] Narim: So the stone woke you. / One question, Kim. From the water. Once.
+[16] ¶ Steam thins. Two shapes wait where the rock shelves into black: the father who taught him that loyalty is soil, and the grandfather who traded a kingdom so a grandson could keep a sword.
+[17] Kim Yushin: Father. Grandfather. / In eight days the same mouth has called me the sacred country’s saviour and a Gaya wretch. / Which of the two do I carry out to the tenth morning?
+[18] Kim Seohyun: Yushin, my beloved son. / You were the light of my life, and now the nation needs you to be its savior. / I am sorry that I was not of Silla blood… I tried my hardest to forget my Gaya roots, and tried to pretend that I was something I was not. / But you don’t need to do that anymore. / Son, you are the mighty Sword of Silla, and the Last Prince of Gaya. / But you are infinitely more than that…! / You are my son. You are Kim Yushin. / Your mother and I couldn’t be more proud of you…!
+[19] Kim Muryuk: Yushin, my beloved grandson. / When I swore allegiance to the Silla crown, it was not for my own sake, but for yours. / I loved you before I knew you. / Yushin, look at me. / I am so, so proud of you…!
+[20] Kim Yushin: Father… / Grandfather… / Thank you.
+[21] Golhwa: Look at him — he’s crying.
+[22] ¶ He comes up out of the water with the stone gone cold again in his fist. He does not need it warm any more.
+[23] ── SCENE: The Outer Works ──
+[24] ¶ By midday the ninth day has turned into the battle both sides spent eight days pretending they could avoid. Assault and counter-assault in the outer works.
+[25] ¶ Yumjong goes down in the outer ditch with a Silla spear under his arm. Bidam reaches him before the rebels finish falling back.
+[26] [battle]
+[27] Yumjong: Don’t— don’t make that face, Councillor. / They marched. You said they wouldn’t. They marched… / …It was a good word, though. Gaya. They liked shouting it.
+[28] Bidam: Yumjong. / …Yumjong.
+[29] ¶ The quieter name on the banner goes first. Bidam closes his eyes for him and does not let anyone see his hand.
+[30] ¶ By dusk the granary inside the Moon Palace is down to its last sacks, and men who have never prayed are learning the postures. Alchun is asked, for the last useful time, which wall he belongs to.
+[31] Alchun: I belong to the country that survives the week. / If that answer is empty — then so is the chair you will offer me afterward.
+[32] ¶ He still does not draw. Surabol will remember that sentence for years: the man who caught tigers, filed under Neither.
+[33] ── SCENE: The Rampart ──
+[34] ¶ That night, on Radiance’s rampart, Bidam speaks — to his officers, to the wall, to whichever chronicler is still awake. They expect a battle plan. They get a confession.
+[35] Bidam: You know… we call this country the “sacred country.” But our country isn’t the greatest in the world. / Its kings are not the most wise. Its armies are not the strongest. / Its men are not the most noble. Its women are not the most chaste. / Our natural scenery is beautiful, but there are more beautiful sights elsewhere. / For every good thing our nation has, there are other nations with greater things.
+[36] Bidam: However — that is not why we call it the sacred country.
+[37] Bidam: We call it the sacred country, because it is ours. / Because our kings rule over our people. Because our armies are composed of our sons. / Because our men get up every day, and try to make the next day better. / Because our women go to sleep every night, knowing that they have raised our next generation with our blood and our seed. / Because our hills and rivers are the ones that we have grown up with as children — where we used to play with our fathers, and where we will play with our sons.
+[38] Bidam: That is what I am defending.
+[39] Bidam: The crown may call me a traitor, a heretic, an old man who needs to adapt to the times… / …and to all of that, I simply say no. / I don’t need to say any more than that.
+[40] Bidam: And one day, our descendants will prove me right. / So come at me, fate! **Bidam is ready to defend what is ours.**
+[41] ══ DAY: DAY 10 ══
+[42] ¶ Before the gate opens Bidam goes down to the lines and saddles **Bisamun** himself, which a High Councillor does not do. He slips nine beads off the end of his string and knots them to the bridle, under the horse’s jaw.
+[43] ?: Sangdaedeung, those are…
+[44] Bidam: Master Wongwang’s fifth precept. Be choosy about killing. / Never the animals that work for you. Horse, ox, chicken, dog. / …They burned a white horse over there two nights ago. Even if I lose, somebody should still be holding on to this one.
+[45] ¶ Bisamun is named for the guardian king who stands at the north of every temple with a pagoda in his hand. Bidam rubs the horse’s nose once and speaks to it in the voice he keeps for sutras.
+[46] Bidam: You’re named for the one who guards the north. / Today just watch the west.
+[47] ❝QUOTE (Diamond Sutra (金剛般若波羅蜜經) §32, tr. Kumārajīva · T08n0235, p. 752b · Sanskrit: Vajracchedikā §32 (Conze ed.)) [Bidam]: All conditioned things are like a dream, an illusion, a bubble, a shadow; like dew, and like lightning. So should you see them.❞
+[48] ── SCENE: Between the Camps ──
+[49] ¶ On the tenth morning the grain is gone, and the palace gate opens from the inside, exactly as Bidam said it would. Out of it comes the Marshal of Silla at a gallop, on a grey horse that had no name the day before yesterday.
+[50] ¶ Bidam rides out to meet him and stops halfway. He gets down, slaps Bisamun on the rump and sends him back to the lines. A spear’s length off, Yushin gets down too. They learned this on foot.
+[51] ¶ They meet again between the camps — not as High Councillor and marshal, but as the yard’s two best. Dragon pommel against heavenly horse. The first exchanges are almost gentle. That is how Hwarang kill each other.
+[52] ¶ The yard drill first. High guard, cut, step, return. Bidam is fifty-three and moves like it, until he doesn’t.
+[53] Bidam: You still drop your left shoulder.
+[54] Kim Yushin: You still talk.
+[55] ¶ Bidam’s third cut is a feint and the fourth isn’t. It opens a line above Yushin’s brow, right where a Hwarang headband sits. Yushin’s hand goes to his forehead, the way a new boy’s does in the hall when the seniors start in on him.
+[56] ¶ Yushin steps inside the next cut, too close for either blade. Bidam’s bead string catches on the dragon ring of his hilt. For one breath they are tied together at the wrist.
+[57] Bidam: …Let go, Gaya.
+[58] Kim Yushin: You let go.
+[59] ¶ Neither does. The string does instead.
+[60] ¶ Yushin wins the way a man wins when he would rather lose — late, ugly, through a guard he taught Bidam twenty years ago. The heavenly-horse blade drops. Blood finds the mud that used to be a scoreboard.
+[61] ¶ Ninety-nine beads go into the mud after the blood, one at a time, like somebody counting.
+[62] Bidam: …One hundred and nine. / Finally.
+[63] ¶ Bidam smiles with blood in his teeth — the same boy who once offered a headband across a desk.
+[64] Bidam: Hwarang Kim Yushin…
+[65] ¶ Yushin does not move to finish it, and there is nothing left to finish. For as long as the breath lasts the two of them look at each other the way they used to across the yard, back when the score was even and neither one wanted to go home.
+[66] ¶ Kangrim reads his name three times where the body has not yet finished falling — Bidam. Bidam. Bidam. — the ledger catching up to the last word.
+[67] Kangrim: High Councillor. / Your list ends here. Walk with me — His Majesty’s kingdom keeps better minutes than Surabol.
+[68] Kangrim: One question, then we walk. / Were you a righteous traitor, or an unrighteous king?
+[69] Bidam: …My father asked me that at a gate. / Write that I was his son. / Tell the sacred country I loved it badly.
+[70] ¶ The body finishes falling after the name does.
+[71] ¶ Bisamun comes through the lines without a rider, at a walk, and stops over him. Nine beads swing under its jaw. When a Silla groom reaches for the bridle it lays its ears flat and shows him its teeth, and the groom, who has had a long ten days, steps back.
+[72] Kim Yushin: Leave it. / …Let it go. North.
+[73] ¶ Nobody asks him why north. The horse stands there until the body is taken, then turns and goes, past the Radiance wall and up the valley road, and afterwards the officers on the rampart cannot agree whether anyone opened the gate for it.
+[74] [battle]
+[75] ¶ Yushin kneels once, only to untie the black headband from the body. Then he stands, mud still wet, turns to the Hwarang behind him and names a house. Bidam’s own line. The one he carried in his jaw and never once claimed aloud.
+[76] Kim Yushin: Erase Bidam’s house. / The Son line, every one of them. / Treason’s blood must be cut.
+[77] Alchun: Yushin… / Bidam is dead. He poured tea for ten days, then took the blade. / If you burn his hall — we erase one of the Six Elders with our own hands.
+[78] ¶ Yushin leans close — close enough that the officers hear only breath, and Alchun hears the sentence.
+[79] Kim Yushin: Blood is inevitable…
+[80] ¶ Alchun goes pale. Down the line an officer asks for the order to be repeated. Nobody repeats it. Yushin mounts, and the order stands.
+[81] ¶ Somewhere behind the palace wall, the queen is already slipping away.
+[82] ── SCENE: The Queen’s Bedside ──
+[83] ¶ Rain finds the lattice before the physicians do. It is a small rain. It beads on the marshal’s sleeve and on the queen’s mouth, and neither of them has a hand free for it.
+[84] Kim Yushin: Your Majesty.
+[85] Queen Sunduk: General.
+[86] Kim Yushin: The physicians are in the corridor. / I told them the rain can wait.
+[87] Queen Sunduk: Leave them. / It is a small rain. It will not be what takes me.
+[88] Kim Yushin: Your Majesty—
+[89] Queen Sunduk: The year I took the crown. You remember. / You said you would serve me to the end.
+[90] Kim Yushin: “I will serve you to the end.”
+[91] Queen Sunduk: Yes. / And here we are.
+[92] Kim Yushin: Did I not promise to stay to the last moment.
+[93] Queen Sunduk: You did. General.
+[94] Queen Sunduk: …Princess. / Say it the old way. / When you lost the count on the yard, I was a princess.
+[95] Kim Yushin: Hwarang. That is what I was. / A hwarang who lost one count.
+[96] Queen Sunduk: You do not lose counts.
+[97] Kim Yushin: I lost one. / Which one, I will not say.
+[98] Queen Sunduk: Then stop being a general about it.
+[99] Queen Sunduk: Dukman.
+[100] Kim Yushin: …Don’t.
+[101] Queen Sunduk: Since the vote I have been Majesty. / Say the name I had before the room.
+[102] Kim Yushin: Dukman.
+[103] Queen Sunduk: Yushin.
+[104] Kim Yushin: I am here.
+[105] Queen Sunduk: I know. / Stay. / I can do a little rain.
+[106] ¶ The rain keeps on, small, on the lattice and on his sleeve. Her hand stays in his until it does not. The escort waits until the marshal’s hands have finished their work.
+[107] ¶ Kangrim reads her name three times — Dukman. Dukman. Dukman. — the ledger’s habit before a Sacred Bone line closes.
+[108] ❝QUOTE (Samguk Yusa (三國遺事) bk. 1, Wonders 1 — Queen Seondeok knows three things in advance (善德王知幾三事)): The ministers did not know where that was, and asked, “Where?” The queen said, “South of Mount Nang.” On that very month and day the queen did die, and the ministers buried her on the sunny slope of Mount Nang.❞
+[109] ¶ That night Yushin remembers the first morning on the yard, and it is not the way he has been telling it.
+[110] ▼ FLASHBACK 610 the twist
+    [110.0] ¶ The same desk. The same headband held out across it, still wet at the knuckle end.
+    [110.1] Kim Yushin: It’s all right. I will overcome it myself. / My name is Kim Yushin! I will be the great general of Silla!! / Oh — and your name, hyung?
+    [110.2] Bidam: My name? Bidam. / That kid…. he’ll be someone great.
+[110] ▲ end flashback
+[111] ── SCENE: The Empty Pavilion ──
+[112] ¶ That night Yushin walks out alone to the pavilion between the old camp lines. The low table is still there, and on it the cup he never touched. He lays the black headband beside it and sits down across from no one.
+[113] ▼ FLASHBACK 647 The sixth night · 여섯째 밤
+    [113.0] Bidam: **You Gaya wretch…!**
+[113] ▲ end flashback
+[114] ¶ **The one hand that said no is gone. Now the crown has to fit Seungman, and it was made for someone else…!**
+
+=================================================================
+#47 Queen Jinduk  (647 February)
+Arc: The Chunchu Era · place: surabol · tone: coronation drama
+Logline: The crown was made for her cousin and has to be padded at the temples.
+=================================================================
+[0] ¶ The crown was made for her cousin and has to be padded at the temples. Seungman sits very still while the goldsmith does it, because somebody told her once that Dukman never fidgeted, and she has believed it for forty years.
+[1] ¶ Seungman is crowned Queen Jinduk before the blood on the yard dries. The bloodline’s last polite miracle, stamped and filed while the censers are still warm. The succession Bidam died objecting to passes at last. Unanimously.
+[2] ❝QUOTE (Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Jindeok, yr. 1 (647), 2nd month): Taizong* of Tang sent an envoy bearing his tally to confer on the late queen the posthumous rank of Grand Master of Splendid Happiness, and to invest the new queen as Pillar of State and King of Lelang Commandery.❞
+[3] [CARD Queen Jinduk]
+[4] ¶ Alchun is not at the coronation. The court writes his absence down as illness. Everyone knows the illness’s name. It lasted ten days.
+[5] ¶ The court does not mean to compare. It simply cannot stop. The old Queen read the peony seeds before they were planted. She heard frogs at Jade Gate Pond in midwinter and sent two thousand men to the exact valley where five hundred Baekje soldiers were hiding. She named the day of her own death and was right about it. The new Queen is gentle, and good at a loom, and has never once predicted anything.
+[6] The Court Maids: The old Queen would have known it was going to rain. / Shh. / …She would have, though.
+[7] ¶ After the rites, the new queen keeps two men behind. One of them has not had time to wash the mud off his boots.
+[8] Queen Jinduk: Yushin… preserve the sacred country…
+[9] Queen Jinduk: Bidam…
+[10] ¶ She does not finish the name. Everyone in Surabol has heard what Bidam called him by the end. Gaya. Never of Silla.
+[11] Queen Jinduk: Yushin… surely Bidam’s words are not weighing on you…?
+[12] Kim Yushin: No — what could there be to weigh on me. / I am a loyal servant of the sacred country.
+[13] ¶ He says it the way he says the oath on the yard, every word where it belongs. His right hand has closed on his sword belt and does not open. She grew up beside Dukman. She notices hands.
+[14] Queen Jinduk: Then let go of the belt, General. / Nobody here is going to draw on you.
+[15] ¶ He lets go. It takes him a moment to remember how.
+[16] Queen Jinduk: Chunchu. / Unni knew about the frogs before the frogs did. I can’t even tell when it’s going to rain.
+[17] King Muyeol: Majesty, nobody asks the moon to be the sun. / They love it because it lets them look straight at it.
+[18] Queen Jinduk: …You had that ready.
+[19] King Muyeol: Since the funeral, Majesty.
+[20] ¶ Then the border spoils the moment, the way borders do. A runner comes in still wearing the road. Baekje is over the western line again, three forts at once. The court turns to the new queen the way it used to turn to the old one, waiting for her to already know.
+[21] Queen Jinduk: I don’t know. / Unni would have dreamed it last week. I didn’t dream anything. I slept badly, that’s all.
+[22] Kim Yushin: Give me the men, Majesty. I’ll go. / I won’t need a dream to find three forts.
+[23] King Muyeol: He’ll win them back. He always does. / And next spring they’ll come for three more. And the spring after that. / Majesty, we can hold the door forever. We can’t make it stop knocking.
+[24] Queen Jinduk: Then what stops it?
+[25] King Muyeol: A bigger door. / One man alive has an army that size. He lost a summer at Ansi, and he hates losing. / Let me go west and ask him.
+[26] ¶ The old queen would have decided this with a smile, as if she had read it in the stars the night before. The new one has read nothing. She looks at Yushin’s hand, which is back on the belt. She looks at Chunchu, who has clearly had this ready since the funeral too.
+[27] Queen Jinduk: Yushin, take the men. / Chunchu, go west. / …If you’re both wrong, I want to hear it from you. Not from a runner.
+[28] ¶ Outside, it starts to rain. Nobody predicted it.
+[29] The Court Maids: …It’s raining. / Did anybody know? / Shh.
+[30] ¶ Nobody says a word about the old queen. For the maids, that is the coronation.
+[31] ¶ At night she sits at a loom, because her hands want work that nobody will compare. Three years from now she will weave an ode to the Tang emperor into a length of silk, and it will do more for Silla than any prophecy her cousin made. Nobody at court thinks to compare that.
+[32] ¶ **Silla needs an army. Only one man alive can lend it, and he has never lent anything for free. Chunchu goes west…!**

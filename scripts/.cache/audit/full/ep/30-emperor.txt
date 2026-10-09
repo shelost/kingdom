@@ -1,0 +1,41 @@
+
+=================================================================
+#30 Emperor  (643)
+Arc: Epilogue · place: changan · tone: imperial intrigue
+Logline: Far to the west, a man who owns half the world hears a new name. He turns it over on his tongue, like a grape he hasn’t decided to eat.
+=================================================================
+[0] ¶ Far to the west, a man who owns half the world hears a new name. He turns it over on his tongue, like a grape he hasn’t decided to eat.
+[1] [PLACE changan: Half the world sends tribute here and calls it friendship.]
+[2] ¶ The grapes are from Gaochang. Three summers ago it was a kingdom. Now it is a province with very good grapes.
+[3] 🗣: From Yingzhou, Majesty. Urgent.
+[4] The Second Emperor: Everything from Yingzhou is urgent. Give it here.
+[5] ¶ The courier has ridden from the far north-east with a report in a lacquered tube. The emperor reads it himself, which his ministers dread. He reads the name twice.
+[6] ❝QUOTE (Zizhi Tongjian (資治通鑑) bk. 196, Tang Taizong, Zhenguan 16 (642), 11th month): On the dingsi day, Zhang Jian, Governor-General of Yingzhou, reported that Quan Gai Suwen*, Great Man of Goguryeo's Eastern Division, had murdered his king, Wu†.❞
+[7] ¶ One character of that name nobody in this palace may write, because it belonged to the emperor’s late father. So a clerk wrote another one. The man in Pyongyang will be furious when he hears. That is a story for later.
+[8] [CARD The Second Emperor: The Second Emperor of Tang. He owns half the world, and he is curious about the other half.]
+[9] ¶ He has never lost a battle he led himself. He mentions this rarely, and only to people who already know.
+[10] ── SCENE: The Night Audience ──
+[11] [CARD Chu Suiliang: The court diarist. He writes down everything the emperor says, which makes him the bravest man in the room.]
+[12] The Second Emperor: Gai… Suwen. / He murdered his lord and seized the government. It is truly not to be borne.
+[13] Chu Suiliang: The report is dated the ninth month, Majesty. It took the summer to arrive.
+[14] ¶ You may notice who is saying “not to be borne.” He did not get his own chair by waiting for it either. Nobody at this court mentions that. Nobody is allowed to.
+[15] The Second Emperor: With what we have today, taking the place would not be hard. / But I do not wish to wear out the people. For now, let the Khitan and the Mohe harass him. What do you say?
+[16] Chu Suiliang: The Khitan were given silk last spring, Majesty. They harassed the Mohe. / The last time Majesty asked what anyone said was the spring Gaochang fell. I have the date.
+[17] The Second Emperor: When I have taken everything, nobody will be left to tell me no. / …That was a joke.
+[18] Chu Suiliang: It is noted, Majesty. As a joke.
+[19] The Second Emperor: Who else lives on that peninsula?
+[20] Chu Suiliang: Two more kingdoms, Majesty. All three send tribute. All three complain about each other. / Silla sends the most letters.
+[21] The Second Emperor: Then Silla wants something.
+[22] Chu Suiliang: Silla always wants something, Majesty. This year it is soldiers.
+[23] Chu Suiliang: The last dynasty went to that country four times. I have the dates.
+[24] The Second Emperor: The last dynasty was led by a fool. / …Who beat them at the river?
+[25] Chu Suiliang: A minister named Ulchi, Majesty. The man in this report had a father in the line that day. / It was a fine day, I am told. For them.
+[26] The Second Emperor: Then the son has a reason to hate us. / And we have a reason to hurry.
+[27] ¶ Before bed he does something he has not done in years. He asks for the old map of the north-east, the one the last dynasty drew, with the river crossings marked in dead men’s hands.
+[28] The Second Emperor: Where is the river?
+[29] Chu Suiliang: There, Majesty. Where the ink is thickest. / The clerks kept redrawing the line. Men kept dying on it.
+[30] ¶ He puts his finger on the thick ink and leaves it there a while, the way you test whether a stove is still warm.
+[31] ¶ Down the hall a lamp still burns where his generals sleep when they are in the capital. He does not send for them. Not yet. A man who owns half the world can afford to sleep on a decision.
+[32] ¶ The grape bowl is empty. He did not notice eating them. The diarist did, and writes nothing down, which at this court is a kind of courage.
+[33] ¶ Half the world is asleep when he goes to bed. The name is still on his tongue. He hasn’t decided to eat it yet.
+[34] ¶ **He has his excuse. What he doesn’t have yet is a war worth leading himself. For that he’ll need four dragons…!**

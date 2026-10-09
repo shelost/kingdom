@@ -1,0 +1,92 @@
+
+=================================================================
+#11 Sadaham  (641)  [FLASHBACK EPISODE]
+Arc: The Five Principles · place: surabol · tone: campfire tale (Hwarang)
+Logline: Every yard has its ghosts. This one has two, and they have never missed roll call.
+=================================================================
+[0] ── SCENE: The First Class ──
+[1] ¶ Every yard has its ghosts. This one has two, and they have never missed roll call.
+[2] ¶ The lamps go up under the eaves. Nobody sends the boys to bed. They decide this is an honour, and they are right, though not for the reason they think.
+[3] ¶ The Marshal does not let _trust among friends_ stay a pretty line. He tells the new boys of the first class — the two names the yard still lowers its voice for.
+[4] Kim Yushin: Before your fathers were born, the first class had two. / Sadaham. Mugwan. They swore to die together. Then, the year Great Gaya fell, one of them kept the swear without asking the other.
+[5] King Munmu: Which one, Uncle? / Which one kept it?
+[6] Kim Yushin: Sit down and you’ll find out.
+[7] A new boy: Is this the one about the haunted lake?
+[8] Kim Yushin: No. That one’s about me.
+[9] ▼ FLASHBACK 560 the first class
+    [9.0] ¶ Back then the yard was new, and so was the idea. The king wanted boys who would ride ahead of the army and not ask why. The first year, he got a lot of them. Two of them got each other.
+    [9.1] ¶ **Sadaham** is thirteen and talks like a dare. **Mugwan** is thirteen too, and says less than his horse. The hall has one gap, so they share it. They argue for a month about who snores.
+    [9.2] [CARD Sadaham: The first class’s brightest boy. He makes promises the way other boys throw stones.]
+    [9.3] Sadaham: You snore. / Don’t argue. The whole hall heard you.
+    [9.4] [CARD Mugwan: Sadaham’s best friend in the First Class. The two of them made a promise boys should not make.]
+    [9.5] Mugwan: That was you.
+    [9.6] Sadaham: …Then prove it. Stay up and listen.
+    [9.7] ¶ Mugwan stays up. It is the first of a great many nights he will stay up for Sadaham, and the only one either of them will find funny.
+    [9.8] ¶ Their first spring, the yard sends them down to the river for stones. Mugwan turns one over and goes very still. Somebody has cut writing into it.
+    [9.9] Mugwan: Come here. / Read this.
+    [9.10] Sadaham: You read it. You’re the one who studies.
+    [9.11] [OATH (Imsin Oath Stone (壬申誓記石), Silla, year imsin (552 or 612); found 1934 at Seokjang-dong, Gyeongju; Gyeongju National Museum, Treasure No. 1411): Year imsin, sixth month, sixteenth day. The two of us swear together and write it down. We swear before Heaven: from today, for three years, we will hold fast to the way of loyalty and commit no fault. If we break this, we swear it is a great sin against Heaven. If the country is not at peace and the world falls into great disorder*, we swear we will go and do it. And apart from this: before, on the twenty-second day of the seventh month of the year sinmi, we swore a great oath, to master in turn the Odes, the Documents, the Rites and the Tradition† within three years.]
+    [9.12] ¶ No names. Two boys, before the yard even had a name, promised Heaven three years of books, and a war if the country wanted one. What became of them, the stone doesn’t say. Stones rarely do.
+    [9.13] Sadaham: Three years? / That’s all they had in them? Give me your knife.
+    [9.14] Mugwan: That’s not ours. Put it back.
+    [9.15] Sadaham: Not that one. We get our own.
+    [9.16] ¶ He finds a smaller stone, flat and grey, and scratches at it until the light goes. His characters are terrible. He leaves out the books entirely. What’s left fits in a closed hand.
+    [9.17] Sadaham: Read it.
+    [9.18] Mugwan: …“Two of us. One dies, the other follows.” / That’s it?
+    [9.19] Sadaham: What else is there?
+    [9.20] ¶ Mugwan takes the knife. Under the bad characters he cuts one more, small and neat: _friend_. Then he puts the old stone back exactly where they found it, face down, as if they had never been there.
+    [9.21] ¶ A museum in Gyeongju keeps the first stone now. Nobody has ever found the second. Good.
+[9] ▲ end flashback
+[10] A new boy: So who snored?
+[11] Kim Yushin: Both. That is not the story.
+[12] ▼ FLASHBACK 562 too young
+    [12.0] ¶ Two summers on, Great Gaya stops paying. The king calls the war in his hall, and the hall fills up with men old enough to have opinions.
+    [12.1] [PLACE daegaya: A hill kingdom that has just stopped saying yes.]
+    [12.2] ¶ **Sadaham** was fifteen when he asked to ride against Great Gaya. He asked on his knees, in front of everyone. It is the only way a boy can ask a king for anything and not be sent outside.
+    [12.3] King Jinheung: Go home. Grow a beard. / War is not a yard. Nobody hands the ball back.
+    [12.4] Sadaham: Then I’ll ask again tomorrow.
+    [12.5] ¶ He does. And the day after. The old general leading the campaign once took an island by frightening it with wooden lions. He tells the king it will be quicker to bring the boy than to keep hearing him.
+    [12.6] King Jinheung: Fine. Take him. / If he dies, it was his idea. Write that down.
+    [12.7] Mugwan: You’re going.
+    [12.8] Sadaham: We’re going. / I told them you’re my second. Don’t make me a liar.
+    [12.9] Mugwan: You didn’t ask me.
+    [12.10] Sadaham: I’m asking now. / …Well?
+    [12.11] Mugwan: …I’ll get the horses.
+[12] ▲ end flashback
+[13] King Munmu: And the battle? Uncle, what happened at the gate?
+[14] Kim Yushin: Any old man in the market will give you the gate. He’ll get it wrong, but he’ll give it to you. / I am telling you about the rice.
+[15] ❝QUOTE (Samguk Sagi (三國史記) bk. 4, Silla Annals — King Jinheung, yr. 23 (562)): Ninth month. Gaya rebelled. The king ordered Isabu to punish it, with Sadaham as his second. Sadaham rode ahead with five thousand horse, went in through the Jeondan Gate and planted a white banner. The people in the city were terrified and did not know what to do. When Isabu brought up his troops, they surrendered all at once.❞
+[16] ▼ FLASHBACK 562 the prize
+    [16.0] ¶ Afterward the king pays him the way kings pay: in people. Three hundred Gaya captives, roped in a line, his to keep. Sadaham walks down the line once. Then he starts cutting rope.
+    [16.1] Mugwan: The court will say you’re showing off.
+    [16.2] Sadaham: Then the court can have them back. / Help me with this knot.
+    [16.3] ¶ The land they give him instead is a strip of stones by the Alcheon that nobody wanted. The chronicle calls this virtue. Mugwan calls it typical, and holds the knot.
+[16] ▲ end flashback
+[17] King Munmu: My father would have found a use for three hundred people.
+[18] Kim Yushin: Your father would have found a use for three hundred and one.
+[19] ▼ FLASHBACK 563 the swear
+    [19.0] ¶ That winter Mugwan catches a cough he cannot put down. Sadaham sits by the mat and counts his breathing, the way they used to count snores.
+    [19.1] ¶ The little grey stone sits on the sill. Neither of them looks at it. Both of them know exactly where it is.
+    [19.2] Mugwan: Go eat. You smell like a sickroom.
+    [19.3] Sadaham: You remember what we swore.
+    [19.4] Mugwan: We were thirteen. We also swore to marry the same girl.
+    [19.5] Sadaham: If you die first, I will not eat. / So don’t.
+    [19.6] Mugwan: If I die first— you already know.
+    [19.7] Sadaham: Then neither of us is allowed to be late.
+    [19.8] ¶ Mugwan pushes the stone across the mat with two fingers. It is the last thing he does on purpose.
+    [19.9] ¶ **Mugwan** died of illness not long after the campaign. He did it quietly, the way he did everything, before dawn, so as not to wake anyone.
+[19] ▲ end flashback
+[20] ▼ FLASHBACK 564 seven days
+    [20.0] ¶ Sadaham did not take food for seven days. The cooks left bowls by his door. The order sent its oldest men to argue with him. He thanked them, and did not eat.
+    [20.1] ¶ He keeps the stone in his fist. At night he holds it up to the lamp, as if the bad characters might have changed.
+    [20.2] Sadaham: …It’s quiet in here. Nobody snoring.
+    [20.3] ¶ On the seventh night the bowl by the door is still full. He lies down on Mugwan’s side of the mat.
+    [20.4] Sadaham: …Wait up. / I’m not late.
+    [20.5] ¶ He was seventeen. The order buried two headbands beside him, and one small stone with terrible handwriting. It kept the story, because a Hwarang who outlives his vow is only a boy with a nice coat.
+[20] ▲ end flashback
+[21] ¶ The lamp under the eaves has burned down a finger’s width. Nobody has moved. One boy is pretending he has something in his eye, and the others are kind enough to look at the lamp.
+[22] Kim Yushin: That is friends. Not a song. / If your vow is lighter than a meal, do not wear the headband.
+[23] King Munmu: Uncle. / Who would you stop eating for?
+[24] ¶ Yushin looks at the boy for a long moment. You can probably name her. He doesn’t.
+[25] Kim Yushin: …Go to bed. Gyuku at dawn.
+[26] ¶ **When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!**

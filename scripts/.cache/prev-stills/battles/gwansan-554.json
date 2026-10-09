@@ -1,0 +1,789 @@
+{
+	"id": "gwansan-554",
+	"title": "Gwansan Fortress",
+	"ko": "관산성 전투",
+	"hanja": "管山城之戰",
+	"year": 554,
+	"place": "gwansan",
+	"scale": {
+		"km": 4,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "river",
+			"points": [
+				[
+					930,
+					560
+				],
+				[
+					905,
+					420
+				],
+				[
+					880,
+					300
+				],
+				[
+					820,
+					180
+				],
+				[
+					700,
+					110
+				],
+				[
+					560,
+					70
+				],
+				[
+					400,
+					40
+				],
+				[
+					260,
+					0
+				]
+			],
+			"width": 14,
+			"label": "Geum River",
+			"ko": "금강",
+			"labelAt": [
+				945,
+				470
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					350,
+					560
+				],
+				[
+					410,
+					500
+				],
+				[
+					455,
+					466
+				],
+				[
+					510,
+					440
+				]
+			],
+			"width": 6,
+			"label": "Dog Stream",
+			"ko": "구천",
+			"labelAt": [
+				360,
+				520
+			]
+		},
+		{
+			"kind": "ridge",
+			"points": [
+				[
+					420,
+					408
+				],
+				[
+					478,
+					428
+				],
+				[
+					520,
+					478
+				]
+			]
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				300,
+				250
+			],
+			"r": 30
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				570,
+				520
+			],
+			"r": 26
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				800,
+				330
+			],
+			"r": 28
+		},
+		{
+			"kind": "hill",
+			"at": [
+				650,
+				245
+			],
+			"r": 48
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					0,
+					410
+				],
+				[
+					180,
+					425
+				],
+				[
+					360,
+					448
+				],
+				[
+					455,
+					456
+				],
+				[
+					530,
+					395
+				],
+				[
+					580,
+					330
+				],
+				[
+					640,
+					262
+				]
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					655,
+					238
+				],
+				[
+					720,
+					150
+				],
+				[
+					820,
+					80
+				],
+				[
+					1000,
+					30
+				]
+			]
+		},
+		{
+			"kind": "fort",
+			"at": [
+				650,
+				240
+			],
+			"side": "silla",
+			"label": "Gwansan",
+			"ko": "관산성",
+			"labelAt": [
+				700,
+				205
+			]
+		},
+		{
+			"kind": "camp",
+			"at": [
+				575,
+				322
+			],
+			"side": "baekje",
+			"label": "forward camp",
+			"ko": "전진 진영",
+			"labelAt": [
+				610,
+				352
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				60,
+				385
+			],
+			"label": "to Sabi",
+			"ko": "사비로"
+		},
+		{
+			"kind": "label",
+			"at": [
+				930,
+				55
+			],
+			"label": "from the north",
+			"ko": "북쪽에서"
+		}
+	],
+	"sides": [
+		{
+			"id": "baekje",
+			"name": "Baekje and Gaya",
+			"ko": "백제·가야",
+			"kingdom": "baekje"
+		},
+		{
+			"id": "wa",
+			"name": "Wa",
+			"ko": "왜",
+			"color": "#c2185b"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "bk-host",
+			"side": "baekje",
+			"label": "Crown prince",
+			"ko": "태자"
+		},
+		{
+			"id": "bk-seong",
+			"side": "baekje",
+			"label": "King Seong",
+			"ko": "성왕"
+		},
+		{
+			"id": "wa",
+			"side": "wa",
+			"label": "Wa troops",
+			"ko": "왜군"
+		},
+		{
+			"id": "sl-gar",
+			"side": "silla",
+			"label": "Gwansan garrison",
+			"ko": "관산성 수비군",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-sinju",
+			"side": "silla",
+			"label": "Sinju army",
+			"ko": "신주군",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-amb",
+			"side": "silla",
+			"label": "Ambush",
+			"ko": "복병",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "march",
+			"label": "Every debt called in",
+			"ko": "빚을 다 거두다",
+			"caption": "King Seong calls in everyone who owes him: the last Gaya houses, a boatload of island soldiers. His son leads them up the road to the fortress that opens Silla's valley.",
+			"captionKo": "성왕이 빚진 자를 모두 부른다. 가야의 마지막 가문들, 섬에서 온 배 한 척 분의 군사. 아들이 그들을 이끌고 신라의 골짜기를 여는 성으로 길을 오른다.",
+			"units": {
+				"bk-host": {
+					"at": [
+						250,
+						432
+					],
+					"men": 30000,
+					"shape": "column",
+					"facing": 0
+				},
+				"wa": {
+					"at": [
+						100,
+						418
+					],
+					"men": 1000,
+					"shape": "column",
+					"facing": 0
+				},
+				"sl-gar": {
+					"at": [
+						655,
+						250
+					],
+					"men": 3000,
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "advance",
+					"points": [
+						[
+							330,
+							446
+						],
+						[
+							455,
+							456
+						],
+						[
+							530,
+							395
+						],
+						[
+							588,
+							318
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "siege",
+			"label": "Months of winning",
+			"ko": "이기는 몇 달",
+			"caption": "For months it goes Baekje's way. The garrison comes out and is sent back in. Island archers shoot fire over the wall. At the forward camp, the prince's men are boiling saddle leather.",
+			"captionKo": "몇 달 동안 싸움은 백제 쪽으로 기운다. 수비군이 나왔다가 도로 성안으로 쫓겨 들어간다. 섬의 궁수들이 성벽 너머로 불을 쏜다. 전진 진영에서는 태자의 군사들이 안장 가죽을 삶는다.",
+			"units": {
+				"bk-host": {
+					"at": [
+						650,
+						245
+					],
+					"men": 30000,
+					"shape": "ring",
+					"r": 60,
+					"arc": [
+						100,
+						260
+					]
+				},
+				"wa": {
+					"at": [
+						590,
+						335
+					],
+					"men": 1000,
+					"facing": 300
+				},
+				"sl-gar": {
+					"at": [
+						658,
+						248
+					],
+					"men": 3000,
+					"facing": 180
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "retreat",
+					"points": [
+						[
+							598,
+							262
+						],
+						[
+							622,
+							256
+						],
+						[
+							642,
+							250
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						596,
+						238
+					],
+					"label": "sent back in",
+					"ko": "다시 성안으로"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						664,
+						228
+					],
+					"label": "fire arrows",
+					"ko": "불화살"
+				}
+			]
+		},
+		{
+			"id": "relief",
+			"label": "Help from the north",
+			"ko": "북쪽의 원군",
+			"caption": "Then the Sinju army comes down from the north, under a man in a Gaya cone helm. Part of it peels off through the hills and lies down by the Dog Stream, on the road behind the prince.",
+			"captionKo": "그때 신주군이 북쪽에서 내려온다. 앞에 선 사내는 가야의 고깔 투구를 썼다. 그 일부가 산을 돌아 태자 뒤의 길, 구천 가에 엎드린다.",
+			"units": {
+				"bk-host": {
+					"at": [
+						650,
+						245
+					],
+					"men": 30000,
+					"shape": "ring",
+					"r": 60,
+					"arc": [
+						100,
+						260
+					]
+				},
+				"wa": {
+					"at": [
+						590,
+						335
+					],
+					"men": 1000,
+					"facing": 300
+				},
+				"sl-gar": {
+					"at": [
+						658,
+						248
+					],
+					"men": 3000,
+					"facing": 180
+				},
+				"sl-sinju": {
+					"at": [
+						800,
+						115
+					],
+					"men": 5000,
+					"facing": 210
+				},
+				"sl-amb": {
+					"at": [
+						490,
+						472
+					],
+					"men": 1000,
+					"shape": "scatter"
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							1000,
+							30
+						],
+						[
+							900,
+							62
+						],
+						[
+							835,
+							96
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "flank",
+					"points": [
+						[
+							790,
+							150
+						],
+						[
+							780,
+							300
+						],
+						[
+							700,
+							470
+						],
+						[
+							540,
+							482
+						]
+					],
+					"label": "around by the hills",
+					"ko": "산을 돌아서"
+				}
+			]
+		},
+		{
+			"id": "night",
+			"label": "The night road",
+			"ko": "밤길",
+			"caption": "One night the king rides out with fifty horse to steady his son. The road has a ditch in it that wasn't there at dusk. A slave named Dodo asks for the head, and gets it.",
+			"captionKo": "어느 밤 왕이 아들을 다독이러 기병 쉰을 데리고 나선다. 해 질 녘엔 없던 도랑이 길에 패어 있다. 도도라는 노비가 목을 청하고, 얻는다.",
+			"units": {
+				"bk-host": {
+					"at": [
+						650,
+						245
+					],
+					"men": 30000,
+					"shape": "ring",
+					"r": 60,
+					"arc": [
+						100,
+						260
+					]
+				},
+				"bk-seong": {
+					"at": [
+						440,
+						454
+					],
+					"men": 50,
+					"facing": 0
+				},
+				"wa": {
+					"at": [
+						590,
+						335
+					],
+					"men": 1000,
+					"facing": 300
+				},
+				"sl-gar": {
+					"at": [
+						658,
+						248
+					],
+					"men": 3000,
+					"facing": 180
+				},
+				"sl-sinju": {
+					"at": [
+						780,
+						140
+					],
+					"men": 5000,
+					"facing": 210
+				},
+				"sl-amb": {
+					"at": [
+						478,
+						476
+					],
+					"men": 1000,
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "baekje",
+					"kind": "advance",
+					"points": [
+						[
+							140,
+							424
+						],
+						[
+							300,
+							442
+						],
+						[
+							425,
+							453
+						]
+					],
+					"label": "fifty horse",
+					"ko": "기병 쉰"
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							500,
+							494
+						],
+						[
+							474,
+							470
+						],
+						[
+							452,
+							458
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "ambush",
+					"at": [
+						470,
+						446
+					]
+				},
+				{
+					"kind": "death",
+					"at": [
+						446,
+						456
+					],
+					"label": "a slave's knife",
+					"ko": "노비의 칼"
+				}
+			]
+		},
+		{
+			"id": "rout",
+			"label": "Not one horse",
+			"ko": "말 한 마리도",
+			"caption": "A dead king travels faster than horses. The host breaks around the forward camp, and Silla counts twenty-nine thousand six hundred heads. Not one horse goes home. The prince does, by a back track, behind the island archers.",
+			"captionKo": "죽은 왕의 소식은 말보다 빠르다. 전진 진영을 둘러싼 대군이 무너지고, 신라는 목 이만 구천육백을 센다. 말 한 마리 돌아가지 못한다. 태자만이 섬 궁수들 뒤에서 샛길로 빠져 돌아간다.",
+			"units": {
+				"bk-host": {
+					"at": [
+						570,
+						300
+					],
+					"men": 0,
+					"routed": true
+				},
+				"bk-seong": {
+					"at": [
+						446,
+						456
+					],
+					"men": 0
+				},
+				"wa": {
+					"at": [
+						330,
+						340
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"sl-gar": {
+					"at": [
+						628,
+						240
+					],
+					"men": 3000,
+					"facing": 180
+				},
+				"sl-sinju": {
+					"at": [
+						640,
+						290
+					],
+					"men": 5000,
+					"facing": 200
+				},
+				"sl-amb": {
+					"at": [
+						520,
+						400
+					],
+					"men": 1000,
+					"facing": 300
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							770,
+							160
+						],
+						[
+							700,
+							240
+						],
+						[
+							640,
+							285
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							480,
+							450
+						],
+						[
+							520,
+							392
+						],
+						[
+							552,
+							336
+						]
+					]
+				},
+				{
+					"side": "wa",
+					"kind": "retreat",
+					"points": [
+						[
+							560,
+							330
+						],
+						[
+							440,
+							318
+						],
+						[
+							300,
+							336
+						],
+						[
+							90,
+							385
+						]
+					],
+					"label": "the prince slips out",
+					"ko": "태자가 빠져나간다"
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						585,
+						292
+					],
+					"label": "29,600 dead",
+					"ko": "2만 9600 전사"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 4, Annals of Silla, Jinheung year 15",
+		"Samguk Sagi 26, Annals of Baekje, Seong year 32",
+		"Nihon Shoki 19, Kinmei year 15"
+	],
+	"note": "The Annals of Silla give the dead (four ministers and 29,600 men) and say not one horse went home; no starting strength is recorded. The allied host is drawn at the recorded dead, rounded; how many of its men were Gaya is unknown. The thousand Wa, the fire arrows, the prince's fort and his escape behind a Tsukushi archer come from the Nihon Shoki. The Annals date the battle to the seventh month and the Nihon Shoki to the twelfth; the story's months of siege sit between. The king's death follows the traditional site at Gujin cliff in Okcheon.",
+	"noteKo": "신라본기는 전사자(좌평 넷과 군사 2만 9600)와 말 한 마리도 돌아가지 못했다는 것만 전하고, 처음 병력은 적지 않았다. 연합군은 기록된 전사자 수를 반올림해 그렸고, 그 가운데 가야 군사가 몇이었는지는 알 수 없다. 왜군 천 명, 불화살, 태자의 보루, 쓰쿠시 궁수 뒤로 빠져나간 태자의 탈출은 일본서기에서 왔다. 신라본기는 이 싸움을 칠월로, 일본서기는 십이월로 적는데, 이야기 속 몇 달의 포위는 그 사이에 놓인다. 왕이 죽은 자리는 옥천 구진벼루라는 전승을 따랐다."
+}

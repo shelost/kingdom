@@ -1,0 +1,17 @@
+{
+	"refs": [
+		"/ch_bidam_old.png",
+		"/hat_jougwan_types.png",
+		"/hat_jougwan_rider.png",
+		"/pl_radiance_fortress.png",
+		"/ref_hanbok_silla.png"
+	],
+	"abs": [
+		"/Users/heewon/Documents/GitHub/kingdom/static/ch_bidam_old.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/hat_jougwan_types.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/hat_jougwan_rider.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/pl_radiance_fortress.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ref_hanbok_silla.png"
+	],
+	"text": "CANON — BIDAM — FACE and garments from attached /ch_bidam_old.png (face only; invent a new pose). Look: Tall, handsome, clean-shaven; short slicked-back black hair; warm brown eyes, faint self-amused smile. Dress: Long white outer robe whose sleeves are embroidered with galloping horses, over a plum-magenta inner robe and white sash. Navy #141C2E lives in the room and on the beads, not on his clothes. Headwear: the jougwan (see HEADWEAR). Now: Older Sangdaedeung (stage portrait): grey at the temples, same smile. Demeanor: Buddhist: 108 beads wrapped on the wrist or rolling through his fingers, lotus seat, incense, a sutra under his breath; calm, ironic, never hurried. In anger the smile stays and the eyes go flat. #141C2E as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: headband; Confucian rank tablet; navy glow aura; dual swords. | PLACE Radiance Fortress (명활성) — attached board /pl_radiance_fortress.png; keep this exact architecture and ground. Myeonghwal (Radiance) Fortress: Bidam's mountain wall facing Wolseong across the field. | HEADWEAR: JOUGWAN (조우관, feather cap) — copy the SHAPE from the attached hat boards and ignore their Korean labels, museum photos, paper-craft gems and dragon medallion: a small black lacquered gauze cap (변형모, a peaked or square-topped crown no bigger than the topknot it covers) set high on the crown of the head over a small knot of gathered hair (any loose hair the portrait shows still falls beneath it); a thin black band round the head with a small square opening at the front; black cords tied under the chin; two long barred pheasant tail feathers (tan with umber bars), or a spray of bird plumes, rising straight up or sweeping back from either side of the cap, much taller than the cap itself. It replaces any other hat or cap on the portrait; headbands and ribbons stay. Real lacquer and feathers lit by the scene key, never a glow. | COSTUME CHARTS (attached): cut, collar, sleeve, sash, trouser and skirt shapes of every Samhan figure follow the chart for their kingdom; it is a style chart, so ignore its labels, captions, maps, poses and faces. Named people keep their portrait face and colours; extras and soldiers dress like the chart (a commoner like its commoners, an official like its officials, a soldier like its soldiers). Silla: attached /ref_hanbok_silla.png."
+}

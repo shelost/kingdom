@@ -1,0 +1,5 @@
+[
+	{ "episode": 27, "battle": "nangbi-629", "phase": "break", "after": { "kind": "p", "text": "army is breaking against a Goguryeo wall" } },
+	{ "episode": 27, "battle": "nangbi-629", "phase": "three", "after": { "kind": "p", "text": "The white horse takes the trench" } },
+	{ "episode": 27, "battle": "nangbi-629", "phase": "rout", "after": { "kind": "p", "text": "The few who get out of Nangbi" } }
+]

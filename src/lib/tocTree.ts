@@ -30,13 +30,13 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 		chapter('Kim Yushin', '김유신', 'Nangbi', 'Forty Fortresses', 'The Eastern Star')
 	],
 	'seventh-invasion': [
-		chapter('Emperor 황제', '황제', 'Four Dragons', 'Yodong', 'Boiling River'),
+		chapter('Emperor 황제', '황제', 'Four Dragons', 'Sima Yi', 'Yodong', 'Boiling River'),
 		chapter('Guardian 성주', '성주', 'Stallion Mountain', 'Colossal River', 'Ansi'),
 		chapter('Jumong', '주몽', 'Haemosu', 'Buyeo', 'Jolbon')
 	],
 	'chunchu-era': [
 		chapter('Bidam', '비담', 'Gi (起)', 'Suro', 'Seung (承)', 'Muryuk', 'Jeon (轉)', 'Seohyun', 'Gyeol (結)'),
-		chapter('Seungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Royal Secretariat', 'Jiabeng (駕崩)'),
+		chapter('Seungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Jiabeng (駕崩)', 'Royal Secretariat'),
 		chapter('Chunchu', '춘추', 'King Muyeol', 'Jahee'),
 		chapter('Hyukgose', '혁거세', 'Hyukgose', 'Talhae', 'Alji')
 	],

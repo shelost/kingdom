@@ -1,0 +1,1341 @@
+{
+	"ops": [
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "is six. He finds his father and uncle on the hill",
+			"block": {
+				"kind": "card",
+				"person": "munmu",
+				"look": "child",
+				"caption": "Six years old, and already drafting laws for the people with no bones.",
+				"ko": "여섯 살. 벌써 뼈 없는 사람들을 위한 법을 짜고 있다."
+			},
+			"why": "intro: munmu"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "Before they dress for the hall he takes the two of them",
+			"block": {
+				"kind": "card",
+				"person": "gotaso",
+				"caption": "Chunchu’s daughter. Whatever it is, she wants it faster.",
+				"ko": "춘추의 딸. 무엇이든 더 빨리 가길 원한다."
+			},
+			"why": "intro: gotaso"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "In the hall the sleeves are the census",
+			"block": {
+				"kind": "card",
+				"person": "alchun",
+				"caption": "A True Bone elder who has sat through every kind of meeting. He still sits up straight.",
+				"ko": "온갖 회의를 다 견뎌 낸 진골 원로. 아직도 허리를 펴고 앉는다."
+			},
+			"why": "intro: alchun"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "Silla sends envoys to the other kingdoms",
+			"block": {
+				"kind": "card",
+				"person": "kingmu",
+				"caption": "Baekje’s old king. He has buried a great many Silla plans and keeps the shovel handy.",
+				"ko": "백제의 늙은 임금. 신라의 계획을 수없이 묻었고, 삽은 늘 손 닿는 데 둔다."
+			},
+			"why": "intro: kingmu"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "So that old brat Jinpyung is finally dead",
+			"block": {
+				"kind": "card",
+				"person": "yeongnyu",
+				"caption": "Goguryeo’s king. He builds walls, pays for peace, and enjoys other people’s councils.",
+				"ko": "고구려의 임금. 성을 쌓고, 평화에 값을 치르고, 남의 나라 회의 구경을 즐긴다."
+			},
+			"why": "intro: yeongnyu"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Queen Sunduk",
+			"op": "add",
+			"after": "She has the seeds planted anyway",
+			"block": {
+				"kind": "card",
+				"person": "jomei",
+				"caption": "The king across the eastern sea. He collects envoys the way other kings collect swords.",
+				"ko": "동쪽 바다 건너의 왕. 남들이 칼을 모으듯 사신을 모은다."
+			},
+			"why": "intro: jomei"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Jinheung, the Cloud",
+			"op": "add",
+			"after": "He was seven when they put the crown on him",
+			"block": {
+				"kind": "card",
+				"person": "jinheung",
+				"caption": "The Cloud King. Wherever he rides, the border rides after him.",
+				"ko": "구름의 왕. 그가 말을 달리면 국경이 뒤따라 달린다."
+			},
+			"why": "intro: jinheung"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Prince Euija",
+			"op": "add",
+			"after": "It’s the name of a great man",
+			"block": {
+				"kind": "card",
+				"person": "gyebek",
+				"look": "boy",
+				"caption": "A boy with no name until a prince lent him one. He means to pay it back.",
+				"ko": "왕자가 이름을 빌려주기 전까지 이름이 없던 아이. 그는 그 빚을 갚을 작정이다."
+			},
+			"why": "intro: gyebek"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Eight Great Clans",
+			"op": "add",
+			"after": "If anyone bleeds the wrong colour",
+			"block": {
+				"kind": "card",
+				"person": "elderyunbi",
+				"caption": "Head of the Yunbi. The family business is knowing things first.",
+				"ko": "연비 가문의 어른. 이 집안의 생업은 남보다 먼저 아는 것이다."
+			},
+			"why": "intro: elderyunbi"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Gunchogo, the 13th",
+			"op": "add",
+			"after": "marches north to Pyongyang. A Goguryeo king dies",
+			"block": {
+				"kind": "card",
+				"person": "gyeonggeunchogo",
+				"caption": "The king every later Baekje king quotes when he wants to sound brave.",
+				"ko": "후대 백제 임금들이 용감해 보이고 싶을 때마다 들먹이는 임금."
+			},
+			"why": "intro: gyeonggeunchogo"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Commander Yeon",
+			"op": "add",
+			"after": "He hands the gloves down",
+			"block": {
+				"kind": "card",
+				"person": "dosuryu",
+				"caption": "An old Yeon friend. The one man at the outpost who asks the commander questions.",
+				"ko": "연의 오랜 벗. 초소에서 장군에게 질문을 하는 단 한 사람."
+			},
+			"why": "intro: dosuryu"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Commander Yeon",
+			"op": "add",
+			"after": "which is not a Goguryeo name and is not a Mohe one either",
+			"block": {
+				"kind": "card",
+				"person": "gulgul",
+				"look": "young",
+				"caption": "A Mohe boy who guarded a burned house. Now he guards whatever Yeon points at.",
+				"ko": "타 버린 집을 지키던 말갈 아이. 이제는 연이 가리키는 것을 지킨다."
+			},
+			"why": "intro: gulgul"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Commander Yeon",
+			"op": "add",
+			"after": "Gulgul grows up quiet",
+			"block": {
+				"kind": "card",
+				"person": "gulgul",
+				"from": "young",
+				"look": "dae",
+				"write": "大乞乞",
+				"sub": "대걸걸",
+				"caption": "A surname at last. Big, as big as the country.",
+				"ko": "드디어 성이 생겼다. 크다. 나라만큼."
+			},
+			"why": "evolution: gulgul young → dae"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Commander Yeon",
+			"op": "add",
+			"after": "The summons isn't addressed to him",
+			"block": {
+				"kind": "card",
+				"person": "yeontaejo",
+				"caption": "The old Eastern Commander. He sat in the big chair long enough to know what it costs.",
+				"ko": "늙은 동부 대가. 큰 자리에 오래 앉아 봐서, 그 값을 안다."
+			},
+			"why": "intro: yeontaejo"
+		},
+		{
+			"chapter": "samhan",
+			"title": "High Summit",
+			"op": "add",
+			"after": "The Liao watch needs timber and iron",
+			"block": {
+				"kind": "card",
+				"person": "gusesa",
+				"caption": "The High Commander. He chairs the room like a feast and counts it like a granary.",
+				"ko": "막리지. 잔치처럼 회의를 주재하고, 곳간처럼 셈한다."
+			},
+			"why": "intro: gusesa"
+		},
+		{
+			"chapter": "samhan",
+			"title": "High Summit",
+			"op": "add",
+			"after": "The portrait does not stay paint",
+			"block": {
+				"kind": "card",
+				"person": "samsin",
+				"caption": "The birth goddess. She does not knock.",
+				"ko": "아이를 점지하는 여신. 문을 두드리지 않는다."
+			},
+			"why": "intro: samsin"
+		},
+		{
+			"chapter": "samhan",
+			"title": "High Summit",
+			"op": "convert",
+			"match": "A ka was a tribal chief, back when Goguryeo was five roofs",
+			"block": {
+				"kind": "term",
+				"hanja": "諸加會議",
+				"reading": "제가회의",
+				"term": "High Summit",
+				"html": "The meeting of the ka. A ka was a tribal chief, back when Goguryeo was five roofs in one valley. The roofs became commands, the chiefs became generals, and the meeting kept its old name, the way old men keep their nicknames.",
+				"ko": "가(加)들의 모임. 가는 고구려가 한 골짜기의 지붕 다섯이던 시절의 부족장이다. 지붕은 군단이 되고, 족장은 장군이 됐지만, 모임은 옛 이름을 그대로 썼다. 노인들이 어릴 적 별명을 버리지 않듯이."
+			},
+			"why": "High Summit: the term keeps its gloss; the org chart becomes its own diagram block"
+		},
+		{
+			"chapter": "samhan",
+			"title": "High Summit",
+			"op": "add",
+			"after": "A ka was a tribal chief, back when Goguryeo was five roofs",
+			"block": {
+				"kind": "diagram",
+				"diagram": "high-summit",
+				"step": "council",
+				"title": "제가회의 · The Commanders’ Council",
+				"caption": "Five commands around one table, and the High Commander at its head. The king sits just outside the ring. He has the last word, and they make sure it is the last.",
+				"ko": "한 상에 둘러앉은 다섯 부, 그 머리에 막리지. 왕은 고리 바로 바깥에 앉는다. 마지막 말은 왕의 것이고, 그들은 그 말이 정말 마지막이 되도록 한다."
+			},
+			"why": "High Summit as an org: the council seats with the king outside"
+		},
+		{
+			"chapter": "samhan",
+			"title": "Gwanggaeto, the Great King",
+			"op": "add",
+			"after": "Then Gwanggaeto sends fifty thousand horsemen south",
+			"block": {
+				"kind": "card",
+				"person": "gwanggaeto",
+				"caption": "Goguryeo’s widest king. The stele ran out of room before he ran out of fortresses.",
+				"ko": "고구려에서 가장 넓은 임금. 성이 바닥나기 전에 비석 자리가 먼저 바닥났다."
+			},
+			"why": "intro: gwanggaeto"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Sadaham",
+			"op": "add",
+			"after": "is thirteen and talks like a dare",
+			"block": {
+				"kind": "card",
+				"person": "sadaham",
+				"caption": "The first class’s brightest boy. He makes promises the way other boys throw stones.",
+				"ko": "제일기에서 가장 빛나던 소년. 다른 아이들이 돌을 던지듯 약속을 던진다."
+			},
+			"why": "intro: sadaham"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Gotaso",
+			"op": "add",
+			"after": "takes the ball on the off-side",
+			"block": {
+				"kind": "card",
+				"person": "pumsuk",
+				"caption": "Kim Pumsuk. Rich, handsome, and legal by about an inch.",
+				"ko": "김품석. 돈 많고, 잘생겼고, 딱 한 뼘 차이로 반칙이 아니다."
+			},
+			"why": "intro: pumsuk"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Grand Academy",
+			"op": "add",
+			"after": "is the careful one — the heir",
+			"block": {
+				"kind": "card",
+				"person": "namseng",
+				"look": "heir",
+				"caption": "Yeon’s eldest. He would very much like to be told he did well.",
+				"ko": "연의 맏아들. 잘했다는 말을, 정말로 듣고 싶다."
+			},
+			"why": "intro: namseng"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Grand Academy",
+			"op": "add",
+			"after": "is the fierce one, who never backs down first",
+			"block": {
+				"kind": "card",
+				"person": "namgun",
+				"caption": "The second son. Nobody ever had to teach him to push.",
+				"ko": "둘째. 밀어붙이는 법은 누구도 가르칠 필요가 없었다."
+			},
+			"why": "intro: namgun"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "King Euija",
+			"op": "add",
+			"after": "It was four lacquered paper kites",
+			"block": {
+				"kind": "card",
+				"person": "gyebek",
+				"from": "boy",
+				"look": "general",
+				"write": "將軍",
+				"sub": "계백",
+				"caption": "The boy with the borrowed name, grown. He still cannot say a thing he does not believe.",
+				"ko": "이름을 빌린 아이가 자랐다. 아직도 믿지 않는 말은 입에 올리지 못한다."
+			},
+			"why": "evolution: gyebek boy → general"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "King Euija",
+			"op": "add",
+			"after": "Rice comes up on ground where nothing was planted",
+			"block": {
+				"kind": "card",
+				"person": "seongchung",
+				"caption": "The minister who asks the question the king hoped nobody would.",
+				"ko": "임금이 아무도 묻지 않기를 바란 질문을 묻는 신하."
+			},
+			"why": "intro: seongchung"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "King Euija",
+			"op": "add",
+			"after": "stands. He is the quiet one, the one with the good handwriting",
+			"block": {
+				"kind": "card",
+				"person": "pung",
+				"look": "prince",
+				"caption": "The quiet prince with the good handwriting. He is about to learn what a hostage is for.",
+				"ko": "글씨 잘 쓰는 조용한 왕자. 볼모가 무엇에 쓰이는지 곧 배운다."
+			},
+			"why": "intro: pung"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Yunchung",
+			"op": "add",
+			"after": "and nobody from the eight houses is told",
+			"block": {
+				"kind": "card",
+				"person": "yunchung",
+				"caption": "A frontier general from a family too small to count. That is the point.",
+				"ko": "셈에도 안 들 만큼 작은 집안의 변방 장수. 바로 그게 요점이다."
+			},
+			"why": "intro: yunchung"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "Yunchung",
+			"op": "add",
+			"after": "the Assembly's loud fight isn't about war",
+			"block": {
+				"kind": "card",
+				"person": "ministersatek",
+				"caption": "Satek Jijeok, first minister and first Satek. He holds the shipping writs and the king’s sleeve.",
+				"ko": "사택지적. 첫째 재상이자 사택의 첫째. 뱃길 문서와 임금의 소매를 함께 쥔다."
+			},
+			"why": "intro: ministersatek"
+		},
+		{
+			"chapter": "five-principles",
+			"title": "The Severing",
+			"op": "add",
+			"after": "King Seong feels the cut in the marrow",
+			"block": {
+				"kind": "card",
+				"person": "kingsung",
+				"caption": "Baekje’s king. He has lost a river, and he means to get it back.",
+				"ko": "백제의 임금. 강 하나를 잃었고, 되찾을 작정이다."
+			},
+			"why": "intro: kingsung"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Gumil",
+			"op": "add",
+			"after": "They are already on the far rock",
+			"block": {
+				"kind": "card",
+				"person": "narim",
+				"caption": "The eldest. Moss, roots, and the rules nobody else keeps.",
+				"ko": "맏언니. 이끼와 뿌리, 그리고 아무도 안 지키는 규칙."
+			},
+			"why": "intro: narim"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Gumil",
+			"op": "add",
+			"after": "They are already on the far rock",
+			"block": {
+				"kind": "card",
+				"person": "golhwa",
+				"caption": "Fire in the stone. She has been bored for a very long time.",
+				"ko": "돌 속의 불. 아주 오래 심심했다."
+			},
+			"why": "intro: golhwa"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Gumil",
+			"op": "add",
+			"after": "They are already on the far rock",
+			"block": {
+				"kind": "card",
+				"person": "hyulle",
+				"caption": "The water sister. She says nothing and misses nothing.",
+				"ko": "물을 맡은 동생. 아무 말도 안 하고, 아무것도 놓치지 않는다."
+			},
+			"why": "intro: hyulle"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Gumil",
+			"op": "add",
+			"after": "has been riding since dawn, the bright-blue robe",
+			"block": {
+				"kind": "card",
+				"person": "seohyeon",
+				"caption": "Kim Seohyeon, long before anyone called him Yushin’s father. Mostly, he is thirsty.",
+				"ko": "아직 누구의 아버지도 아닌 김서현. 지금은 그저 목이 마르다."
+			},
+			"why": "intro: seohyeon"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Gumil",
+			"op": "add",
+			"after": "is the head general of Daeya, despite his young age",
+			"block": {
+				"kind": "card",
+				"person": "gumil",
+				"caption": "A yellow-sleeve officer. He does the work, and the purple sleeve signs it.",
+				"ko": "누런 소매의 관리. 일은 그가 하고, 서명은 자줏빛 소매가 한다."
+			},
+			"why": "intro: gumil"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Gumil",
+			"op": "add",
+			"after": "is the poorest woman in Daeya",
+			"block": {
+				"kind": "card",
+				"person": "gumilwife",
+				"caption": "Maehwa. Plum blossom: the flower that does not wait for spring.",
+				"ko": "매화. 봄을 기다리지 않는 꽃."
+			},
+			"why": "intro: gumilwife"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Siege of Daeya",
+			"op": "add",
+			"after": "reads her name aloud three times",
+			"block": {
+				"kind": "card",
+				"person": "kangrim",
+				"caption": "The underworld’s fetch. He asks one question at the door, and he waits for the answer.",
+				"ko": "저승차사. 문 앞에서 질문 하나를 묻고, 대답을 기다린다."
+			},
+			"why": "intro: kangrim"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Yeon’s Massacre",
+			"op": "add",
+			"after": "In the aftermath, Yeon enthrones the king",
+			"block": {
+				"kind": "card",
+				"person": "bojang",
+				"caption": "The old king’s nephew. He has been given a crown and very little to do with it.",
+				"ko": "옛 임금의 조카. 왕관은 받았는데, 그걸로 할 일은 별로 받지 못했다."
+			},
+			"why": "intro: bojang"
+		},
+		{
+			"chapter": "iron-will",
+			"title": "Yeon’s Massacre",
+			"op": "convert",
+			"match": "A chair he built himself, above every other chair in the room",
+			"block": {
+				"kind": "card",
+				"person": "gesomun",
+				"write": "大莫離支",
+				"sub": "연개소문",
+				"role": "Supreme Commander of Goguryeo",
+				"caption": "A chair he built himself, above every other chair in the room.",
+				"ko": "스스로 짠 자리. 방 안의 모든 자리 위에 있다.",
+				"from": "commander",
+				"look": "supreme"
+			},
+			"why": "evolution: gesomun commander → supreme (was a profile card)"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Four Dragons",
+			"op": "add",
+			"after": "Four dragon banners go up over the muster",
+			"block": {
+				"kind": "card",
+				"person": "lishiji",
+				"caption": "The Blue Dragon. The emperor’s most patient general, which is its own kind of danger.",
+				"ko": "청룡. 황제의 장수 가운데 가장 참을성이 많다. 그것도 일종의 위험이다."
+			},
+			"why": "intro: lishiji"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Four Dragons",
+			"op": "add",
+			"after": "a farmer named Xue Rengui",
+			"block": {
+				"kind": "card",
+				"person": "xuerengui",
+				"caption": "A poor farmer with good soil for graves. His wife thinks he could do better.",
+				"ko": "무덤 쓰기 좋은 땅을 가진 가난한 농부. 아내는 그가 더 큰일을 할 사람이라고 본다."
+			},
+			"why": "intro: xuerengui"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Yodong",
+			"op": "add",
+			"after": "rides on to look at Ansi",
+			"block": {
+				"kind": "card",
+				"person": "yangmanchun",
+				"caption": "The man who holds Ansi. The other side never learns his name, and he never offers it.",
+				"ko": "안시를 지키는 사람. 저쪽은 끝내 그의 이름을 모르고, 그도 알려 주지 않는다."
+			},
+			"why": "intro: yangmanchun"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Boiling River",
+			"op": "add",
+			"after": "picks a fight over a diplomatic spat",
+			"block": {
+				"kind": "card",
+				"person": "dongchun",
+				"caption": "A king who starts a war over a letter. This time, someone writes back.",
+				"ko": "편지 한 장으로 싸움을 거는 임금. 이번엔 답장이 온다."
+			},
+			"why": "intro: dongchun"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Haemosu",
+			"op": "add",
+			"after": "god of the sun, has kept this hour",
+			"block": {
+				"kind": "card",
+				"person": "haemosu",
+				"caption": "The sun god. Punctual since before the rivers, until this afternoon.",
+				"ko": "태양신. 강이 생기기 전부터 시간을 지켰다. 오늘 오후까지는."
+			},
+			"why": "intro: haemosu"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Haemosu",
+			"op": "add",
+			"after": "three river-daughters are bathing",
+			"block": {
+				"kind": "card",
+				"person": "yuhwa",
+				"caption": "The river’s eldest daughter. Heaven is about to ruin her afternoon, or make it.",
+				"ko": "강의 맏딸. 하늘이 그녀의 오후를 망치려 한다. 아니면 만들어 주거나."
+			},
+			"why": "intro: yuhwa"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Haemosu",
+			"op": "add",
+			"after": "capital is a palisade",
+			"block": {
+				"kind": "card",
+				"person": "geumwa",
+				"caption": "The gold-frog king. Found under a rock, raised in a palace, kind to strays.",
+				"ko": "금개구리 임금. 바위 밑에서 발견되어 궁에서 자랐고, 떠돌이에게 너그럽다."
+			},
+			"why": "intro: geumwa"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Buyeo",
+			"op": "add",
+			"after": "can find a fly’s wing with an arrow",
+			"block": {
+				"kind": "card",
+				"person": "jumong",
+				"look": "exile",
+				"caption": "The best archer in Buyeo. The princes have noticed.",
+				"ko": "부여에서 활을 제일 잘 쏘는 아이. 왕자들도 눈치챘다."
+			},
+			"why": "intro: jumong"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Buyeo",
+			"op": "add",
+			"after": "the reaper who collects each day’s dead",
+			"block": {
+				"kind": "card",
+				"person": "haewonmek",
+				"caption": "A fetch of the underworld. Black hat, black silk, and a mouth bound shut so he can’t haggle.",
+				"ko": "저승의 차사. 검은 갓, 검은 비단, 흥정 못 하게 묶인 입."
+			},
+			"why": "intro: haewonmek"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "add",
+			"after": "walks him across the packed earth",
+			"block": {
+				"kind": "card",
+				"person": "yeontabal",
+				"caption": "The chief of Jolbon. He shows thieves his storeroom on purpose.",
+				"ko": "졸본의 우두머리. 일부러 도둑에게 곳간을 보여 준다."
+			},
+			"why": "intro: yeontabal"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "add",
+			"after": "a widow, is already on the grain porch",
+			"block": {
+				"kind": "card",
+				"person": "sosuno",
+				"look": "widow",
+				"caption": "Tabal’s daughter. She has priced every man in the yard, and she has not finished with this one.",
+				"ko": "타발의 딸. 마당의 사내 값을 모두 매겼고, 이 사내는 아직 셈이 안 끝났다."
+			},
+			"why": "intro: sosuno"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "add",
+			"after": "watch the well the way other boys watch a hunt",
+			"block": {
+				"kind": "card",
+				"person": "onjo",
+				"caption": "Sosuno’s younger boy. He watches everything, including his brother.",
+				"ko": "소서노의 작은아들. 모든 걸 지켜본다. 형까지도."
+			},
+			"why": "intro: onjo"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "add",
+			"after": "they agree. They vote Jumong first king",
+			"block": {
+				"kind": "card",
+				"person": "jumong",
+				"from": "exile",
+				"look": "king",
+				"write": "東明聖王",
+				"sub": "주몽"
+			},
+			"why": "evolution: jumong exile → king"
+		},
+		{
+			"chapter": "seventh-invasion",
+			"title": "Jolbon",
+			"op": "add",
+			"after": "is the first queen of a country that still smells like millet",
+			"block": {
+				"kind": "card",
+				"person": "sosuno",
+				"from": "widow",
+				"look": "queen",
+				"write": "王妃",
+				"sub": "소서노"
+			},
+			"why": "evolution: sosuno widow → queen"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Gi (起)",
+			"op": "add",
+			"after": "receives him politely, which is its own kind of answer",
+			"block": {
+				"kind": "card",
+				"person": "kotoku",
+				"caption": "The King of the East. His politeness comes with a price list.",
+				"ko": "동쪽의 왕. 그의 정중함에는 값이 매겨져 있다."
+			},
+			"why": "intro: kotoku"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Gi (起)",
+			"op": "convert",
+			"match": "First chair of the Harmony Council. Every vote now passes",
+			"block": {
+				"kind": "card",
+				"person": "bidam",
+				"look": "elder",
+				"write": "上大等",
+				"sub": "비담",
+				"role": "High Councillor of Silla",
+				"caption": "First chair of the Harmony Council. Every vote now passes through his hands.",
+				"ko": "화백의 첫째 자리. 이제 모든 표가 그의 손을 지난다.",
+				"from": "young"
+			},
+			"why": "evolution: bidam young → elder (was a profile card)"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Suro",
+			"op": "add",
+			"after": "Before the sons, there is a look from very high up",
+			"block": {
+				"kind": "card",
+				"person": "ibiga",
+				"caption": "The sky god. Cloud is his body, and he does not usually look down.",
+				"ko": "하늘신. 구름이 곧 그의 몸이고, 평소엔 아래를 내려다보지 않는다."
+			},
+			"why": "intro: ibiga"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Suro",
+			"op": "add",
+			"after": "On her mountain the Lady of the Right View is on watch",
+			"block": {
+				"kind": "card",
+				"person": "jeonggyeon",
+				"caption": "The mountain goddess. The ridge was a woman before anyone noticed.",
+				"ko": "산신. 누가 알아채기 전부터 능선은 여인이었다."
+			},
+			"why": "intro: jeonggyeon"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Suro",
+			"op": "add",
+			"after": "give birth to two sons",
+			"block": {
+				"kind": "card",
+				"person": "suro",
+				"caption": "King Suro. Born from a golden egg, and in no hurry to marry anyone local.",
+				"ko": "수로왕. 황금알에서 났고, 동네 처녀와 혼인할 생각은 없다."
+			},
+			"why": "intro: suro"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Suro",
+			"op": "add",
+			"after": "an Indian princess, becomes the first queen of Golden Gaya",
+			"block": {
+				"kind": "card",
+				"person": "heohwangok",
+				"caption": "Heo Hwang-ok. She sailed farther than anyone in Samhan had heard of, and arrived dressed for it.",
+				"ko": "허왕후. 삼한의 누구도 들어 본 적 없는 먼 곳에서 배를 타고, 그에 걸맞게 차려입고 왔다."
+			},
+			"why": "intro: heohwangok"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Muryuk",
+			"op": "add",
+			"after": "The youngest was Muryuk",
+			"block": {
+				"kind": "card",
+				"person": "muryuk",
+				"caption": "The youngest son in the cart. Gaya handed over its crown. It did not hand over him.",
+				"ko": "수레에 탄 막내아들. 가야는 왕관을 내주었다. 그까지 내준 건 아니다."
+			},
+			"why": "intro: muryuk"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"op": "add",
+			"after": "Inmun. That one over the lodging gate",
+			"block": {
+				"kind": "card",
+				"person": "inmun",
+				"caption": "Chunchu’s second son. He reads Tang characters better than his father would like.",
+				"ko": "춘추의 둘째 아들. 당의 글자를 아버지가 바라는 것보다 잘 읽는다."
+			},
+			"why": "intro: inmun"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"op": "add",
+			"after": "steals Chunchu from the memorial-hall",
+			"block": {
+				"kind": "card",
+				"person": "gaozong",
+				"look": "prince",
+				"caption": "Li Zhi. Heir to everything, and the first man in Chang’an to laugh.",
+				"ko": "이치. 모든 것의 후계자, 그리고 장안에서 제일 먼저 웃는 사람."
+			},
+			"why": "intro: gaozong"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Huangdi (皇帝)",
+			"op": "add",
+			"after": "does not merely listen. She works the room",
+			"block": {
+				"kind": "card",
+				"person": "wuzetian",
+				"look": "consort",
+				"caption": "Wu, a lady of the inner palace. The screen is doing very little of the hiding.",
+				"ko": "후궁의 무씨. 숨기는 일을 병풍이 하는 것 같지는 않다."
+			},
+			"why": "intro: wuzetian"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Jiabeng (駕崩)",
+			"op": "add",
+			"after": "I receive the late emperor’s last command",
+			"block": {
+				"kind": "card",
+				"person": "gaozong",
+				"from": "prince",
+				"look": "emperor",
+				"write": "皇帝",
+				"sub": "이치"
+			},
+			"why": "evolution: gaozong prince → emperor"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "King Muyeol",
+			"op": "add",
+			"after": "Munhee becomes queen",
+			"block": {
+				"kind": "card",
+				"person": "munhee",
+				"from": "young",
+				"look": "queen",
+				"write": "文明王后",
+				"sub": "김문희"
+			},
+			"why": "evolution: munhee young → queen"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Hyukgose",
+			"op": "add",
+			"after": "A young boy is born from the egg",
+			"block": {
+				"kind": "card",
+				"person": "hyukgose",
+				"caption": "Hyukgose. Born from an egg, crowned before his voice broke.",
+				"ko": "혁거세. 알에서 태어나, 목소리가 굵어지기도 전에 왕관을 썼다."
+			},
+			"why": "intro: hyukgose"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Hyukgose",
+			"op": "add",
+			"after": "is born from a Chicken Dragon’s rib",
+			"block": {
+				"kind": "card",
+				"person": "alyoung",
+				"caption": "Lady Alyoung. Born from a dragon’s rib, and the one person in Seorabeol who can tell the king no.",
+				"ko": "알영부인. 계룡의 갈비뼈에서 났고, 서라벌에서 임금에게 안 된다고 말할 수 있는 단 한 사람."
+			},
+			"why": "intro: alyoung"
+		},
+		{
+			"chapter": "chunchu-era",
+			"title": "Talhae",
+			"op": "add",
+			"after": "Gaya tells it differently, and with more nerve",
+			"block": {
+				"kind": "card",
+				"person": "talhae",
+				"caption": "Seok Talhae. He arrived in a chest and talks like he owns the beach.",
+				"ko": "석탈해. 궤짝에 실려 왔는데, 말투는 해변 주인이다."
+			},
+			"why": "intro: talhae"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Exile",
+			"op": "add",
+			"after": "The island where Baekje sends men it can",
+			"block": {
+				"kind": "card",
+				"person": "yuridora",
+				"caption": "Yuri Dora, king of Tamla. He tells stories to men nobody else will talk to.",
+				"ko": "탐라의 임금 유리도라. 아무도 말을 걸지 않는 사내들에게 이야기를 들려준다."
+			},
+			"why": "intro: yuridora"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Heaven–Earth King",
+			"op": "add",
+			"after": "ran the living and the dead out of one office",
+			"block": {
+				"kind": "card",
+				"person": "heavenearthking",
+				"caption": "The god with two jobs and one desk. He dreams about breakfast.",
+				"ko": "일 두 개에 책상 하나인 신. 꿈에서 아침을 먹는다."
+			},
+			"why": "intro: heavenearthking"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Heaven–Earth King",
+			"op": "add",
+			"after": "She has twins. The elder comes out quiet",
+			"block": {
+				"kind": "card",
+				"person": "daebyeol",
+				"look": "young",
+				"caption": "Big Star, the elder twin. He would rather be right than first.",
+				"ko": "대별, 맏이. 먼저인 쪽보다 옳은 쪽을 고른다."
+			},
+			"why": "intro: daebyeol"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Heaven–Earth King",
+			"op": "add",
+			"after": "She has twins. The elder comes out quiet",
+			"block": {
+				"kind": "card",
+				"person": "sobyeol",
+				"look": "young",
+				"caption": "Little Star, the younger twin. He would rather be first.",
+				"ko": "소별, 동생. 먼저인 쪽을 고른다."
+			},
+			"why": "intro: sobyeol"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Heaven–Earth King",
+			"op": "add",
+			"after": "goes down. <b>Little Star</b> keeps the warm side",
+			"block": {
+				"kind": "card",
+				"person": "daebyeol",
+				"from": "young",
+				"look": "king",
+				"write": "저승",
+				"sub": "대별왕"
+			},
+			"why": "evolution: daebyeol young → king"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Heaven–Earth King",
+			"op": "add",
+			"after": "goes down. <b>Little Star</b> keeps the warm side",
+			"block": {
+				"kind": "card",
+				"person": "sobyeol",
+				"from": "young",
+				"look": "king",
+				"write": "이승",
+				"sub": "소별왕"
+			},
+			"why": "evolution: sobyeol young → king"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Sulmun",
+			"op": "add",
+			"after": "Before the island there is a woman, and she is enormous",
+			"block": {
+				"kind": "card",
+				"person": "sulmun",
+				"caption": "Grandmother Sulmun. The sea comes to her knee, and she has opinions about the view.",
+				"ko": "설문대할망. 바다가 무릎까지밖에 안 오고, 경치에 대해 할 말이 많다."
+			},
+			"why": "intro: sulmun"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Three Princes",
+			"op": "add",
+			"after": "three divine princes named Yang, Go and Bu",
+			"block": {
+				"kind": "card",
+				"person": "go_tamla",
+				"caption": "Prince Go. Climbed out of the earth already arguing about who climbed first.",
+				"ko": "고을나. 땅에서 나오자마자 누가 먼저 나왔는지 따지기 시작했다."
+			},
+			"why": "intro: go_tamla"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Three Princes",
+			"op": "add",
+			"after": "three divine princes named Yang, Go and Bu",
+			"block": {
+				"kind": "card",
+				"person": "yang_tamla",
+				"caption": "Prince Yang. He hunts, he shoots, and he would like a wife, please.",
+				"ko": "양을나. 사냥하고, 활 쏘고, 아내가 있었으면 좋겠다."
+			},
+			"why": "intro: yang_tamla"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Three Princes",
+			"op": "add",
+			"after": "three divine princes named Yang, Go and Bu",
+			"block": {
+				"kind": "card",
+				"person": "bu_tamla",
+				"caption": "Prince Bu. The quiet one, who looks out to sea first.",
+				"ko": "부을나. 조용한 쪽. 바다를 제일 먼저 내다본다."
+			},
+			"why": "intro: bu_tamla"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Gardener",
+			"op": "add",
+			"after": "Jacheongbi wanted to study beside a boy from the sky",
+			"block": {
+				"kind": "card",
+				"person": "jacheongbi",
+				"caption": "Jacheongbi. Disguise, scholarship, and not one ounce of patience.",
+				"ko": "자청비. 변장, 학문, 그리고 인내심은 한 톨도 없음."
+			},
+			"why": "intro: jacheongbi"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Gardener",
+			"op": "add",
+			"after": "Her son was born in that house and grew up a servant",
+			"block": {
+				"kind": "card",
+				"person": "sara",
+				"caption": "Hallakgungi. Born a servant, and he means to find his father.",
+				"ko": "할락궁이. 종으로 태어났고, 아버지를 찾아갈 작정이다."
+			},
+			"why": "intro: sara"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Kangrim",
+			"op": "add",
+			"after": "The living court requests you",
+			"block": {
+				"kind": "card",
+				"person": "yumla",
+				"caption": "The judge of the dead. Every ledger in the dark ends on his desk.",
+				"ko": "죽은 자의 재판관. 어둠 속 모든 장부는 그의 책상에서 끝난다."
+			},
+			"why": "intro: yumla"
+		},
+		{
+			"chapter": "fall-of-euija",
+			"title": "Onjo",
+			"op": "add",
+			"after": "is a boy with a sling and bad aim",
+			"block": {
+				"kind": "card",
+				"person": "yuri",
+				"caption": "Yuri. Bad aim or bad luck, and a mother who will not answer one question.",
+				"ko": "유리. 조준이 나쁘거나 운이 나쁘거나. 그리고 질문 하나에 대답하지 않는 어머니."
+			},
+			"why": "intro: yuri"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "add",
+			"after": "Three years before he sees Samhan, Su Dingfang",
+			"block": {
+				"kind": "card",
+				"person": "sudingfang",
+				"caption": "The Red Fowl. Sixty-five, and he still prefers to march at night.",
+				"ko": "주작. 예순다섯, 아직도 밤에 진군하는 걸 좋아한다."
+			},
+			"why": "intro: sudingfang"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Yellow Mountain",
+			"op": "add",
+			"after": "does not call his son",
+			"block": {
+				"kind": "card",
+				"person": "gwanchang",
+				"caption": "Gwanchang. A hwarang so young they had to pad the helmet.",
+				"ko": "관창. 투구 안에 솜을 덧대야 할 만큼 어린 화랑."
+			},
+			"why": "intro: gwanchang"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Ungjin Commandery",
+			"op": "add",
+			"after": "takes over the Tang garrison",
+			"block": {
+				"kind": "card",
+				"person": "liurengui",
+				"caption": "The Black Tortoise. Sixty, disgraced last year, and in an excellent mood.",
+				"ko": "현무. 예순, 작년에 파직당했고, 기분이 아주 좋다."
+			},
+			"why": "intro: liurengui"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "Ungjin Commandery",
+			"op": "add",
+			"after": "Father went east three times",
+			"block": {
+				"kind": "card",
+				"person": "wuzetian",
+				"from": "consort",
+				"look": "empress",
+				"write": "皇后",
+				"sub": "무후"
+			},
+			"why": "evolution: wuzetian consort → empress"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "sends to Yamato the East with a hundred Tang prisoners",
+			"block": {
+				"kind": "card",
+				"person": "boksin",
+				"caption": "Gwishil Boksin. He raised a dead country once, and he kept the receipts.",
+				"ko": "귀실복신. 쓰러진 나라를 한 번 일으켰고, 영수증은 다 챙겨 두었다."
+			},
+			"why": "intro: boksin"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "The court across the cold sea, where favours are counted in ships",
+			"block": {
+				"kind": "card",
+				"person": "tenji",
+				"caption": "The Eastern Prince. He does the arithmetic before anyone asks for it.",
+				"ko": "동쪽의 왕자. 누가 묻기 전에 셈부터 한다."
+			},
+			"why": "intro: tenji"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "The empress has let all of it run",
+			"block": {
+				"kind": "card",
+				"person": "saimei",
+				"caption": "The Eastern Empress. She has outlived two reigns and most of her ministers’ opinions.",
+				"ko": "동쪽의 여제. 두 번의 치세와 대신들 의견 대부분보다 오래 살았다."
+			},
+			"why": "intro: saimei"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "introduces himself sitting down",
+			"block": {
+				"kind": "card",
+				"person": "dochim",
+				"caption": "Dochim. A monk with a general’s staff, in no hurry about either.",
+				"ko": "도침. 장수의 지팡이를 든 승려. 둘 다 서두르지 않는다."
+			},
+			"why": "intro: dochim"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "is seven feet tall. The autumn Sabi fell",
+			"block": {
+				"kind": "card",
+				"person": "sangji",
+				"caption": "Heukchi Sangji. The biggest man on the beach, and the hardest to line up.",
+				"ko": "흑치상지. 해변에서 제일 큰 사내, 그리고 줄 세우기 제일 어려운 사내."
+			},
+			"why": "intro: sangji"
+		},
+		{
+			"chapter": "fall-of-baekje",
+			"title": "King Pungjang",
+			"op": "add",
+			"after": "I am Buyeo Pung, son of King Euija",
+			"block": {
+				"kind": "card",
+				"person": "pung",
+				"from": "prince",
+				"look": "king",
+				"write": "豐章王",
+				"sub": "부여풍"
+			},
+			"why": "evolution: pung prince → king"
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Yeon Gesomun†",
+			"op": "add",
+			"after": "takes on the title of Supreme Commander",
+			"block": {
+				"kind": "card",
+				"person": "namseng",
+				"from": "heir",
+				"look": "supreme",
+				"write": "大莫離支",
+				"sub": "연남생",
+				"caption": "His father’s chair. It was built for one man, and it shows.",
+				"ko": "아버지의 자리. 한 사람을 위해 짠 자리라, 티가 난다."
+			},
+			"why": "evolution: namseng heir → supreme"
+		},
+		{
+			"chapter": "final-stand",
+			"title": "Pyongyang II",
+			"op": "add",
+			"after": "There was already a grade above the seventeen",
+			"block": {
+				"kind": "card",
+				"person": "yushin",
+				"from": "marshal",
+				"look": "elder",
+				"write": "太大角干",
+				"sub": "김유신",
+				"caption": "A rank above every rank. They had to invent it for him.",
+				"ko": "모든 품계 위의 품계. 그를 위해 새로 만들어야 했다."
+			},
+			"why": "evolution: yushin marshal → elder"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Dangun & Old Joseon",
+			"op": "add",
+			"after": "Before there are any kingdoms, there is a son in heaven",
+			"block": {
+				"kind": "card",
+				"person": "hwanin",
+				"caption": "The Lord of Heaven. He has been watching this peninsula since before it had names.",
+				"ko": "하늘의 주인. 이 반도에 이름이 생기기 전부터 내려다보고 있었다."
+			},
+			"why": "intro: hwanin"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Dangun & Old Joseon",
+			"op": "add",
+			"after": "lands on a mountain under the sacred birch",
+			"block": {
+				"kind": "card",
+				"person": "hwanung",
+				"caption": "Hwanung. A son of heaven who kept looking down until his father let him go.",
+				"ko": "환웅. 자꾸 아래를 내려다보다가, 끝내 아버지가 보내 준 하늘의 아들."
+			},
+			"why": "intro: hwanung"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Dangun & Old Joseon",
+			"op": "add",
+			"after": "She comes out a woman on the twenty-first morning",
+			"block": {
+				"kind": "card",
+				"person": "ungnyeo",
+				"caption": "Ungnyeo. Twenty-one days in a cave, and the tiger left first. A husband should be easy.",
+				"ko": "웅녀. 동굴에서 스무하루, 먼저 나간 건 호랑이였다. 지아비 하나쯤이야."
+			},
+			"why": "intro: ungnyeo"
+		},
+		{
+			"chapter": "silla-tang-war",
+			"title": "Dangun & Old Joseon",
+			"op": "add",
+			"after": "Their son is Dangun. The name on the stone",
+			"block": {
+				"kind": "card",
+				"person": "dangun",
+				"caption": "Dangun. Half heaven, half bear, and all the paperwork of a first king.",
+				"ko": "단군. 반은 하늘, 반은 곰, 그리고 첫 임금의 서류는 전부 그의 몫."
+			},
+			"why": "intro: dangun"
+		},
+		{
+			"chapter": "epilogue-2",
+			"title": "Balhae",
+			"op": "add",
+			"after": "under dried millet and a spare pair of boots",
+			"block": {
+				"kind": "card",
+				"person": "daejoyoung",
+				"caption": "Dae Joyoung. A boy with frozen feet, and a piece of a crown in the pack.",
+				"ko": "대조영. 발이 언 아이. 봇짐 속에는 왕관 한 조각이 있다."
+			},
+			"why": "intro: daejoyoung"
+		}
+	],
+	"notes": {
+		"scheme": "Evolution cards use people.ts stage ids. A coronation stage renames (name/korean/hanja + its own portrait); a promotion stage keeps the name, puts the rank in title/titleKo and omits avatar so the portrait carries over (gesomun commander→supreme, namseng heir→supreme, yushin marshal→elder, bidam young→elder, gyebek boy→general, wuzetian consort→empress). Pin-only stages are lookOnly (jumong exile/king, sosuno widow/queen, daebyeol/sobyeol young/king).",
+		"renderer": "PersonCard animates an evolution only when the two portraits differ (fromSrc !== src). Promotions that share a portrait (gesomun, namseng, wuzetian, daebyeol, sobyeol, gulgul) need the redesign to animate the title/titleKo change instead. titleKo is new on PersonStage and not read by any component yet.",
+		"highSummit": "Roster for the High Summit council diagram (634): king yeongnyu sits outside the ring; High Commander (막리지) gusesa chairs; East gesomun (sitting in his father yeontaejo’s seat); West westcmd; South southcmd; North northcmd. The story’s seat table also lists Yeon Gusesa as Central Command, so there is no separate Central commander person yet. Block #3’s Korean calls the High Commander 대대로, while people.ts uses 막리지 for High Commander and 대대로 for Chancellor (dosuryu, after the massacre).",
+		"skipped": "No intro for taizong in Queen Sunduk (his name is a Huangdi reveal; he already has cards). No intro naming the Gaya prince in The Severing (Muryuk reveal). No evolution for namgun (no on-page promotion beat), onjo (no second portrait), or the cavern goddesses’ shapeshift forms (no portraits)."
+	}
+}

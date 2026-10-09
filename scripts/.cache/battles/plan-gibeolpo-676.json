@@ -1,0 +1,7 @@
+[
+	{ "episode": 96, "battle": "gibeolpo-676", "phase": "arrive", "after": { "kind": "p", "text": "The last of it happens at the mouth of the Geum" } },
+	{ "episode": 96, "battle": "gibeolpo-676", "phase": "first", "after": { "kind": "p", "text": "He goes out again and loses again." } },
+	{ "episode": 96, "battle": "gibeolpo-676", "phase": "lure", "after": { "kind": "p", "text": "He takes eight boats up the estuary" } },
+	{ "episode": 96, "battle": "gibeolpo-676", "phase": "fights", "after": { "kind": "p", "text": "What follows is twenty-two fights" } },
+	{ "episode": 96, "battle": "gibeolpo-676", "phase": "west", "after": { "kind": "p", "text": "He does not curse Silla. He never has." } }
+]

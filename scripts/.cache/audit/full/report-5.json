@@ -1,0 +1,314 @@
+{
+  "slice": 5,
+  "range": "#40–#47",
+  "episodes": [
+    {
+      "n": 40,
+      "title": "Gi (起)",
+      "logline": "Bidam, just made first chair of the Harmony Council, wants to stop a 'soft' Sacred Bone successor and Chunchu's drift toward Tang. His lone veto of Princess Seungman, the queen's collapse and a palace gate shut against the council push him to raise men: for the first time in his life he decides something without a vote.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "A strong inciting episode buried under a cold open in Yamato: start on the council veto and Bidam owns the episode from its first line.",
+      "opening": "“Chunchu decides to travel to the East, guided by his friend Takamuko no Kuromaro.” Not a hook: a textbook sentence, a name the reader never meets again, and not Bidam's story. The line at [8] (“receives him politely, which is its own kind of answer”) is better; the veto at [30] (“Only one hand stays down.”) is best.",
+      "ending": "[89] lands hard: the man who lives by unanimity decides alone. The card [90] (“Six eggs, falling out of the sky…!”) leads mechanically into #41, but it swaps the arc's first cliffhanger for a detour. The reader wants Day 1.",
+      "sudden": [
+        { "block": "0, 17", "what": "Takamuko no Kuromaro, then 'The Eastern Scholar' (the same man) saying 'we have strength enough to fight Baekje and Goryeo ourselves'. It reads as a Silla speaker, and it is really Bidam's argument.", "setup": "none; never seen again", "fix": "Cut the name from [0]. Cut [17], or give its 'we can fight them ourselves' to Bidam in the [19] flashback." },
+        { "block": "18", "what": "Haesang the merchant advises Chunchu about lacquer and 'a woman who finishes the emperor's sentences'. 'If you reach Chang'an again' implies a Chang'an trip that never happened on the page.", "setup": "#13 [62]–[64], one scene 27 episodes back", "fix": "Move [18] before the voyage (it is advice, but it sits after the audience). Tag him in a clause ('the wine merchant who hears weather early'). Drop 'again'." },
+        { "block": "27", "what": "Princess Seungman, the successor the whole episode turns on.", "setup": "#1 [30], one sentence, and the [38] table, 39 episodes earlier; never on the page since", "fix": "Give her one beat before the vote: what the room thinks of her (gentle, good at a loom, predicts nothing). #47 [6] already has the material." },
+        { "block": "48", "what": "Bidam answers Seungman's 'Surely not…' with Chunchu's line from the Yamato court [12] about Gesomun, at a court Bidam never attended. Only a reader who decodes 'Gesomun = the man who killed his king' (#24) gets the threat.", "setup": "the line exists only at [12], in another country", "fix": "Give Bidam his own reply, or make the threat readable: 'Lord Chunchu tells foreign kings we have no Gesomun. He may be wrong.'" },
+        { "block": "67–68", "what": "The old black headband with brown blood: 'I gave this to that boy, back then.' Yet Bidam still has it in his chest.", "setup": "none before this; #44 [4.4] shows him giving it, #46 [58.0] has the boy refuse it", "fix": "Decide once. If Yushin refused it, write 'I tried to give this to that boy.' Explain the blood or drop it." },
+        { "block": "78", "what": "Yumjong: 'Last summer it was Chang'an.'", "setup": "no Chang'an trip before #48; the 645 troop loan [19.0] is probably meant", "fix": "'Last summer it was the emperor's war.'" }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–18", "issue": "Nineteen blocks in Yamato (two records, a card, an unknown scholar, a merchant) before Bidam appears. The audience itself [10]–[14] is four disconnected lines: a refusal, 'Baekje is… on its way to ruin', praise of Gesomun, a compliment on Chunchu's Japanese. The reader is just back from three Jumong episodes and still doesn't know whose story this is.", "fix": "Cut to three blocks (Munhee packing [2]–[5], one line of the audience, the 'handsome, good at talk and laughter' record) and place them after Bidam learns of the voyage at [60]." },
+        { "blocks": "24–32", "issue": "The council scene stops to explain a voting machine #2 already taught, with two diagrams [26], [32] and a table [28].", "fix": "Cut [24]–[26] and [28]. Keep the veto diagram [32] and let [33]–[40] carry the scene." },
+        { "blocks": "6.0–6.1, 19.0–19.1", "issue": "Narrated, then quoted: the pillar and the 30,000-man loan are each told twice.", "fix": "Keep the narration and cut both records, or keep only 'Is a grown man not able to swallow Baekje?' as Chunchu's own line." },
+        { "blocks": "42.4, 62–64", "issue": "The father's speech stops for a Korean transliteration inside the English ('성즉군왕 패즉역적'). The collapse is staged with screenplay directions: '(eyes widen)', '(collapses)', '(stunned)'.", "fix": "Cut the transliteration. Turn the directions into one ¶ of business." }
+      ],
+      "flow_notes": [
+        { "blocks": "7–16 → 60", "issue": "We watch Chunchu at the Yamato court, then 44 blocks later Bidam 'hears it from a harbour clerk' that Chunchu has sailed. The cold open is an unmarked flash-forward, so the timeline reads backwards.", "fix": "Move the voyage after [60], or cut it down to what Bidam hears." },
+        { "blocks": "44–48", "issue": "Seungman stops Bidam, asks one question, gets a borrowed line, and the scene ends. Neither of them wants anything on the page, and they never speak again in the arc.", "fix": "Give it a cost (she asks him to let the queen die in peace, he refuses) or cut it." }
+      ],
+      "romance": "Only Munhee packing for Chunchu [2]–[5]: 'Then I will pack for more.' Married shorthand in three lines, played, not told. Nothing else.",
+      "battle": null,
+      "suspense": "Is the queen dead behind the shut gate [73]? Will Bidam break the council, and what is Chunchu doing abroad without asking it? Plants that fire: Yumjong's 'Gaya' [83] (#42 [89], #44 [7]); the 108 score [40] (#46 [10]); the father's 'righteous traitor' [42.4], which half-fires in the #44 rampart speech and never at the death. Muddled: the headband [67].",
+      "best": "[89] “So, for the first time in his life, Bidam decides something without a vote.” Close second: [74] “Chunchu is across the sea. His orders, apparently, are not.”",
+      "worst": "[0]–[18], the Yamato cold open: two unknown names, two records and a merchant's tips out of order. None of it is Bidam's, and it stands between the reader and the episode's spine.",
+      "fixes": [
+        "Open on the veto ([29]–[41]) with a one-line hook (“In a council that needs every hand, one stays down.”). Fold the voyage into Bidam's discovery at [60] in three blocks.",
+        "Rewrite the Seungman gate scene [45]–[48]: give Bidam his own reply, not Chunchu's Gesomun line from [12].",
+        "Cut the council explainer [24]–[26] and the table [28]; keep the veto diagram [32]."
+      ]
+    },
+    {
+      "n": 41,
+      "title": "Suro",
+      "logline": "Gaya's origin myth. A sky god falls for a mountain goddess, eggs hatch kings, and King Suro, struck speechless, is seduced and married by Queen Heo, a princess who sails in from India. Nobody's want meets an obstacle; it ends with a long marriage and a line about keeping a lost country's name.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 2, "entertainment": 3 },
+      "verdict": "A pleasant erotic fairy tale in the wrong place: it stops the rebellion one block after Bidam decides to rebel and gives the reader nothing the siege needs. Move it out of the arc or cut it to a 400-word ink interlude.",
+      "opening": "“Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.” A good fairy-tale hook, restated straight away at [1] (“Before the sons, there is a look from very high up”).",
+      "ending": "[71]–[72] land softly (“Then we keep the name. I can always make another country.”). The card [73] (“Ten days of grain… Start counting…!”) is a good restart for the siege, but it has nothing to do with this episode, which shows how loosely the episode is attached.",
+      "sudden": [
+        { "block": "16, 22", "what": "Two births for Suro back to back: born to Ibiga and the Lady, then hatched from a box of six eggs. Ijinasi is named twice and dropped.", "setup": "none", "fix": "Merge them: the gods' night makes the eggs. Cut Ijinasi." },
+        { "block": "31", "what": "Queen Heo 'an Indian princess': the only reason this episode sits inside the rebellion is Bidam's 'western colour' taunt three episodes later (#42 [36]), and nothing here points at it.", "setup": "#40 [90] card ('Gaya… Where did it come from?')", "fix": "End on a line that carries Heo's foreign blood forward to Yushin, so #42 [36] has a plant." }
+      ],
+      "pacing_notes": [
+        { "blocks": "5–15", "issue": "Ten blocks of god-on-mountain erotic exchange ('Kneel. All the way.') with no stakes, before the reader knows why we've left Surabol.", "fix": "Cut to two blocks: the look [6] and the cloud coming down [13]." },
+        { "blocks": "33–67", "issue": "The Suro–Heo seduction runs 35 blocks and repeats one beat: he can't speak, she leads ('Your mouth…', 'I can't… speak…', 'I think I will fall apart first'). There are three sex passages ([51]–[57], [58]–[61], [62]–[67]).", "fix": "Keep the court meeting [37]–[44], the silk-trousers rite [45]–[49] and the morning [62]–[66]; cut [51]–[61] to one ¶." },
+        { "blocks": "20–21, 27–29", "issue": "The Turtle Song appears as a verse widget and then as a record saying the same thing; then a diagram, a map and a place card stack up.", "fix": "Keep the verse or the record, not both. Cut the map [28]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#40 [89] → [0]", "issue": "Bidam has just decided to rebel; the next 1,800 words are a creation myth. The cut answers a question the reader hasn't asked ('where did Gaya come from?').", "fix": "Move #41 before #40 or after #47, or fold it into #43 as one short Gaya interlude." },
+        { "blocks": "23–24", "issue": "The Herald asks 'Eggs, you said?' and answers himself 'Six. In a box.' The app hides the repeated speaker name, so it reads as one man talking to himself.", "fix": "Give the answer to a second voice or to the narrator." }
+      ],
+      "romance": "Two romances, both desire with no obstacle. Ibiga and the Lady [5]–[15] is pure appetite; there is nothing to root for. Suro and Heo has real chemistry because she leads and he can't speak: 'Once? What a modest king.' [65] / 'I am not modest. …I am only holding on.' [66]. But the only obstacle, language, is played for heat, not cost, and nobody chooses anything that costs them. The best beat, 'My country is gone. Only the name is left.' [70], arrives after the sex as an afterthought. Played rather than told, but repetitive.",
+      "battle": null,
+      "suspense": "None inside the episode: it's a myth with a known ending. Plants: Heo's foreign blood (fires as Bidam's 'western colour' taunt, #42 [36]); 'we keep the name' resonates with Yushin carrying Gaya in his name (#44 [45]). Only the card restarts the ten-day clock.",
+      "best": "[71] “Then we keep the name. I can always make another country.” Also the narrator at [25]: “At some point one has to ask what the birds were doing.”",
+      "worst": "[51]–[61]: the second and third sex passages repeat the first, with no new information and no turn, while the rebellion waits.",
+      "fixes": [
+        "Take it out of the rebellion: place it before #40 or after #47 (or merge it with #43), so #40 [89] cuts straight to Day 1.",
+        "Cut it by half: two blocks for Ibiga ([6], [13]); keep the court meeting [37]–[44] and the morning [62]–[67]; one ¶ for the tent.",
+        "Merge the two births ([16], [22]) and make the last beat point at Yushin, so the episode earns a slot in his story."
+      ]
+    },
+    {
+      "n": 42,
+      "title": "Seung (承)",
+      "logline": "Bidam raises black headbands at the Fortress of Radiance while the palace counts ten days of grain. Each night he and Yushin take tea in a pavilion between the camps and the courtesy curdles, until Chunchu's conscience-water gambit shows nothing and Bidam tells Yushin he was 'never even of Silla.'",
+      "scores": { "followable": 4, "context": 3, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "The arc's engine works (a ten-day clock and a nightly tea duel that escalates); open on the sickbed instead of a record, and halve the Day 4 debate so the rant hits harder.",
+      "opening": "A Samguk Sagi record [0] (“Bidam, Yumjong and others… plotted rebellion and raised troops…”): it states the plot before the scene, and it is not a hook. The real hook is [2]: “The Eastern Palace smells of medicine and of a succession nobody has settled.”",
+      "ending": "[89]–[90] land: “you were never even of Silla…!” then “Blood is inevitable.” The 618 flashback to the even score [97] is a sharp sting. The card [98] promises 'a Gaya prince nobody names', a deliberate box, and it pulls.",
+      "sudden": [
+        { "block": "41, 48", "what": "The cavern water that 'shows a man's inner conscience' when splashed on him. In #21, #23 and #28 the cavern is a one-question oracle; this power is new.", "setup": "none before this episode; explained at [41] and [48], just before it's used", "fix": "Plant it once earlier, e.g. a Narim line in #21 or #28: 'the water shows what drives the hand.'" },
+        { "block": "4", "what": "Seungman and Sunduk are 'cousins, five years apart'.", "setup": "Contradicts #1 [30] and #40 [29], [46], which make them sisters.", "fix": "Pick one. 'Sister' is what the reader has been told twice." },
+        { "block": "32.4", "what": "'Bidam's hall shares blood-whisper with the great Sadaham': a kinship claim from nowhere that never fires (unless 'the line he carried in his jaw', #46 [19], is meant to pay it, which is too faint).", "setup": "none", "fix": "Cut [32.4]–[32.5]." },
+        { "block": "36", "what": "'Yushin — your eyes are handsome. They are a western colour.' Yushin's eyes have never been described.", "setup": "only #41 (Heo from India)", "fix": "Plant it in #45: the clerk's wife notices the baby's eyes." },
+        { "block": "40.1", "what": "Uso, a new name inside a flashback battle.", "setup": "none", "fix": "Cut the name." },
+        { "block": "97.4", "what": "Yushin: 'I am still your elder brother', and Bidam calls him 형님 at [97.1].", "setup": "Contradicted: Bidam is the senior (#40 [42.0] he is sixteen at Class 51's first morning; #44 [4]) and Yushin calls him 'hyung' (#46 [58.0]).", "fix": "Swap the lines: Bidam says 'I am still your elder brother.'" }
+      ],
+      "pacing_notes": [
+        { "blocks": "0, 3, 14, 16, 79", "issue": "Five records, two of them sutras for Bidam. [0] and [14] restate what the scene shows; the Heart Sutra [79] lands right after the rant and deflates it.", "fix": "Cut [0] and [14]. Keep one sutra ([16]) as Bidam's habit; cut or move [79]." },
+        { "blocks": "62–67", "issue": "Six speeches of three to six sentences each, alternating Bidam and Yushin like position papers ('Fullness hangs on institutions…'). Nobody interrupts or wins a point. Two Korean glosses ride inside the English ('Haedong — 해동', '정자' at [68]).", "fix": "Cut to three exchanges and let Bupmin's jar [68] interrupt. Yushin is stalling, so show him stalling: short questions, not essays." },
+        { "blocks": "26, 31, 32.5", "issue": "Shot-list narration ('No chairs. Only a low wooden table. No banner on the ridgepole. Tea already poured.'), a telegram line [31], and a narrator essay on names [32.5].", "fix": "One sentence of set. Cut [31] and [32.5]." },
+        { "blocks": "40", "issue": "The Jade Gate Valley flashback is a second battle dropped into a tea episode. Its only payload is [40.6], Alchun's last unhesitating day.", "fix": "Cut it to [40.4]–[40.6], or move it to #44 where Alchun's 'Neither' lands." }
+      ],
+      "flow_notes": [
+        { "blocks": "11, 17", "issue": "Bidam, who crowned a woman because 'cleverness is not a gender', now raises the banner 'A woman cannot rule well.' [11] calls it an old slogan, but his own line [17] sounds like belief. A first-time reader can't tell whether he's cynical or converted, and that turn is his whole arc.", "fix": "Let Yumjong carry the slogan and Bidam tolerate it, or have Bidam own the cynicism in one line: 'They won't march for the Council. They'll march for that.'" },
+        { "blocks": "11, 41–42", "issue": "Bidam's endgame is never stated. What happens on the tenth morning if he wins? Who sits on the chair? The clock only threatens the palace, so the stakes run one way.", "fix": "One line on Day 1 or Day 3 naming what winning means for him: the succession reopened, the Council restored, himself as regent, whatever it is." }
+      ],
+      "romance": "The Dukman triangle is told, not played: [32] 'same impossible orbit around Princess Dukman. They do not say the word love.' A good line, and Bidam's threat at [32.6] is charming, but it is the only Bidam–Dukman beat in the whole arc. Bupmin's cavern cameo [47]–[51] is light flirtation ('you are shaped like a problem I want in my lap'), harmless and funny.",
+      "battle": "No battle on the page: the siege is 'Arrows trade; messengers lie' [34]. The real combat is the tea duel, and as a duel it works: stakes (the grain clock), two people we care about, escalation (blood [27]–[29], then colonisation [36], policy [56]–[67], 'never of Silla' [89]), and a plan with a reversal (keep him talking, splash him, nothing rises). The Jade Gate flashback [40] is summary.",
+      "suspense": "Strong. The day headers count down the palace's grain, and each night asks whether they will still sit down. The splash [70] poses a question (what drives him?) and answers it with a reversal: nothing does; 'your ideas are simply terrible'. Plants that fire: 'Blood is inevitable' [90] (turned on Bidam's family, #46 [23]); the 108 score [87], [97] (#46 [10]). Unfired: the Sadaham kinship [32.4].",
+      "best": "[77] “Have you ever… even for a SECOND… considered the POSSIBILITY… that your ideas are simply terrible?” The palace's psychological gambit backfires; it is the arc's best turn.",
+      "worst": "[62]–[67]: six alternating position papers on Day 4. They carry the arc's thesis, but nobody interrupts and nobody wins a point.",
+      "fixes": [
+        "Open on [2] and the sickbed [4]–[9]; cut the opening record [0].",
+        "Halve the Day 4 debate [62]–[67] and let Bupmin's jar interrupt it.",
+        "Plant the conscience water before this episode, cut the Sadaham aside [32.4]–[32.5], and fix 'cousins' [4] and 'elder brother' [97.4]."
+      ]
+    },
+    {
+      "n": 43,
+      "title": "Muryuk",
+      "logline": "Gaya's last days. Sadaham takes one Gaya; thirty years earlier the youngest prince of another, Geumgwan, surrenders it to Silla on one condition (that his descendants live without shame as True Bone) and says a name nobody has been given yet: Yushin.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 2 },
+      "verdict": "Too thin to pay off the mystery box: cut the Sadaham opener and open on #20's night road, so the reader learns who the cone-helm man was.",
+      "opening": "“For five hundred years the people of Gaya lived by iron and by six eggs, and they enjoyed great peace.” A good set-up line that the next block spends on Sadaham, not on the prince the card promised.",
+      "ending": "[19]–[20] (“Then he says a name nobody has been given yet.” / “Yushin…”) is a real chill. The card [21] (“Bidam has poured two cups of tea. Yushin isn't coming… is he?”) snaps back to the siege cleanly.",
+      "sudden": [
+        { "block": "2–8", "what": "Sadaham, Mugwan and 'Alcheon dirt'. The reader needs #11 to understand 'kept only Alcheon dirt', and this is Great Gaya in 562, not Muryuk's Geumgwan.", "setup": "#11 [17], 32 episodes back", "fix": "Cut [2]–[8]; open at [10]." },
+        { "block": "10", "what": "Muryuk is revealed but never tied to the cone-helm man who watched King Seong die in #20 [14]–[22]. The link surfaces only in #45 [2] ('On one road he took an enemy king') and a record at #45 [170].", "setup": "#20 [14], [16], [22]: the plant exists and is good", "fix": "Open on #20's night road ('A man in a Gaya cone helm…'), then name him." },
+        { "block": "10", "what": "'But before the hall, the field. The tall Gaya cone still fights.' The field never appears.", "setup": "none", "fix": "Dramatize it in two blocks or cut the sentence." }
+      ],
+      "pacing_notes": [
+        { "blocks": "7, 12", "issue": "Two records in 407 words (32% of the episode); [12] restates [10].", "fix": "Keep [12] at most." }
+      ],
+      "flow_notes": [
+        { "blocks": "8 → 10", "issue": "It jumps from 562 back to 532 with only 'Thirty years earlier', just after the reader has settled into Sadaham's 562.", "fix": "Use one time frame: the 554 night road, then 532." }
+      ],
+      "romance": null,
+      "battle": "Sadaham's 'They said too young. The gate didn't.' [3] stands in for a battle. The real fight is the surrender [13]–[18], a negotiation with one move each, and it is the best part.",
+      "suspense": "The card's question ('Yushin isn't coming… is he?') pulls the reader back. The mystery box opens, but onto a surrender scene rather than the #20 cone helm, so the reveal doesn't click. Note: #20 [16] and [22] are tagged with the person 'muryuk', so the app already prints 'Muryuk' as the speaker there, and his profile opens on click; the box leaks 23 episodes early. Plant that fires: the surrender condition [13]–[16] pays off in his ghost's 'not for my own sake, but for yours' (#44 [46]).",
+      "best": "[17] “Three generations later, his grandson will still be told he is not really one of them.”",
+      "worst": "[0]–[8]: a recap of Sadaham's episode and a record about a different Gaya, before the prince appears.",
+      "fixes": [
+        "Open on the #20 night road: the cone helm in the ditch, King Seong on the camp stool, then the name Muryuk. In #20, give those two lines an anonymous speaker so the name holds until here.",
+        "Cut [2]–[8] and one of the two records.",
+        "Give Muryuk one more bargaining line [13]–[16] so the deal visibly costs him something."
+      ]
+    },
+    {
+      "n": 44,
+      "title": "Jeon (轉)",
+      "logline": "Days 6–9. Bidam calls Yushin a 'Gaya wretch'; the cavern goddesses throw Bidam out as 'not a Kim' and send Yushin back blessed by his father's and grandfather's ghosts; a falling star gives the rebels heaven's verdict until Yushin reverses it with a burning kite and sacrifices his horse; Yumjong falls and Bidam answers with a credo on the rampart.",
+      "scores": { "followable": 4, "context": 3, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "The reversal episode delivers (the kite and the horse sacrifice are the arc's best sequence), but Day 7's two long cavern scenes and the ghost speeches stall it, and Day 9's battle is one sentence.",
+      "opening": "DAY 6, then “Night rain. Bidam's officers want a dawn assault. Bidam wants the score finished properly.” In scene, and it states Bidam's real want, the personal one.",
+      "ending": "The rampart speech [85]–[90] lands (“We call it the sacred country, because it is ours.”); the Vimalakīrti record [91] then stalls it. The card [92] sends the reader fifty years back on the eve of the duel: strong as a question, bad as timing.",
+      "sudden": [
+        { "block": "4", "what": "The headband flashback: Yushin says 'Thank you' and takes it.", "setup": "#40 [67]–[68] (Bidam still owns it); #46 [58.0] has Yushin refuse it. Three versions, none reconciled.", "fix": "Make it one object with one history: he took it and gave it back, or he refused it. Say which at #46." },
+        { "block": "43–46", "what": "The ghosts of Seohyun and Muryuk. Muryuk was met one episode ago; Seohyun has only been seen in #21's flashback, and #45 introduces him properly after this.", "setup": "#21 [10] (thin), #43", "fix": "Run #45 before #44." },
+        { "block": "62", "what": "Hanbyul, the first horse, and the courtesan Cheongwan.", "setup": "none", "fix": "Fine as a one-off rhyme with Hangyul; trim to two sentences." },
+        { "block": "73", "what": "Bisamun, Bidam's horse, named for the first time.", "setup": "none; fires in #46", "fix": "Name him once in #42 when Bidam walks the rampart." }
+      ],
+      "pacing_notes": [
+        { "blocks": "15–48", "issue": "Day 7 is two cavern scenes back to back (Bidam aroused and expelled, then Yushin flirted with and visited by ghosts): 34 blocks with the countdown frozen, and the same arousal sentence twice ([19], [33]; also #21 [12]). In a political thriller the explicit humiliation is a tonal swerve.", "fix": "Cut Bidam's scene to ~5 blocks ending on 'The lake keeps Kims. It does not keep slogans.' [29]. Cut Yushin's flirt [33]–[39] to two blocks." },
+        { "blocks": "45–46", "issue": "The ghost speeches state the emotion outright ('You were the light of my life', 'I am so, so proud of you…!'). Next to the Hangyul scene's restraint they read like a greeting card.", "fix": "One line each. Muryuk's 'I loved you before I knew you.' is enough." },
+        { "blocks": "51–52, 56–57", "issue": "The star omen and the kite are each narrated (or spoken) and then quoted.", "fix": "Cut the kite record [57]. Keep the star record [51] only if Bidam doesn't repeat it at [52]." },
+        { "blocks": "80", "issue": "Day 9, the only fighting in ten days, is one sentence, and Yumjong, the rebellion's co-leader, dies in a clause.", "fix": "One short scene: an assault on the outer works, Yumjong's death seen by Bidam." }
+      ],
+      "flow_notes": [
+        { "blocks": "2–6", "issue": "'Yushin does not come…', 'Courtesy held until the sixth night', 'Courtesy held — and then… does not', 'Near midnight Yushin comes after all.' The repeated 'Sixth night' and 'Courtesy held' blur whether he came.", "fix": "Cut [5]; go straight from the flashback to 'Near midnight he comes anyway.'" },
+        { "blocks": "15", "issue": "Bidam goes to the cavern to 'copy the wash' of the man he envies, right after insisting (#42 [77]) he has no personal grievance. Sharp irony, but nobody points at it, so it reads as a contradiction.", "fix": "Give Narim one line: 'No grudge, he said.'" }
+      ],
+      "romance": "Yushin in the cavern [31]–[42] is Golhwa's want against his queen ('She is not in the water, Yushin. We are.' [38]). Narim's 'he took the armour off and still kept her name on' [41] is the arc's best line about Yushin and Sunduk. The Cheongwan flashback [62] is a dark mini-romance told in three sentences (he beheads the horse that carried him to her door). Bidam's cavern scene [15]–[29] is humiliation, not romance.",
+      "battle": "The psychological battle is the best in the arc: a plan (the star omen, 'Heaven has already voted' [52]), a reversal (the burning kite [56]), a cost (Hangyul, [64]–[71]) and a consequence on the other side (Bidam puts his beads away [73]). The physical battle is missing: 'Assault and counter-assault' [80] is the only fighting in ten days, with no geography, no point of view, and the co-leader's death in a clause.",
+      "suspense": "Will heaven's verdict break the palace? It's answered with a reversal. Plants that fire: Hangyul from #27 (eighteen years since Nangbi), a well-set payoff; the untouched cup [6] (#46 [60]); Bisamun [73] (#46). Tease: Hanseul 'across the Yellow Mountain fields thirteen years later' [78].",
+      "best": "[68] Yushin to Hangyul: “…I'm sorry. This time I'm the one who brought you.” With [61], the groom who “starts to cry with his mouth shut.”",
+      "worst": "[15]–[48], Day 7: an explicit humiliation, then a flirt, then ghosts, freezing the countdown between the Day 6 insult and the Day 8 omen.",
+      "fixes": [
+        "Cut Day 7 by two-thirds: Bidam's expulsion ending on 'The lake keeps Kims. It does not keep slogans.', the ghosts at one line each.",
+        "Dramatize Day 9 [80]: one assault, and Yumjong dying on the page.",
+        "Resolve the headband so #40 [67], [4] here and #46 [58] agree."
+      ]
+    },
+    {
+      "n": 45,
+      "title": "Seohyun",
+      "logline": "Seohyun, the capital's polite 'Gaya boy', keeps getting his horse lost past a royal daughter's gate. Manmyung chooses him, her father locks her up, lightning splits the door and she crawls out through a drain to ride north with him; their son is born after twenty months with seven stars on his back and named, by a careful pun, Yushin.",
+      "scores": { "followable": 4, "context": 4, "pacing": 2, "flow": 3, "entertainment": 4 },
+      "verdict": "The best romance in the slice and the most Prince Euija-shaped episode, wedged into the worst slot (between Day 9 and Day 10, after his own ghost has spoken) and bloated by a rerun of #21 and a pile of records. Move it before #44 and cut it by a third.",
+      "opening": "“Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.” A good hook, though it reuses #41's 'Before there is a Gaya…' template.",
+      "ending": "The last third drifts: the spring [111]–[148] is a rerun and [168]–[174] is a career summary with a record. The card [175] (“Tenth morning. The grain is gone… still a hundred and eight apiece…!”) re-hooks the siege well after 4,100 words.",
+      "sudden": [
+        { "block": "2", "what": "'On one road he took an enemy king, four generals and ten thousand heads': the payoff of #20's cone-helm ambush lands here, in a subordinate clause about the hero's father's father.", "setup": "#20 [14]–[22]", "fix": "Move the payoff to #43 and leave this clause as the echo." },
+        { "block": "111–148", "what": "Not sudden but a near-verbatim rerun: the fox and grandmother try-outs, 'Kim. Say it again… It just… sticks', the oracle (word for word #21 [10.49]) and the warm river stone.", "setup": "#21 [10.0]–[10.62]", "fix": "Replace with two lines (he finds a spring; he comes home wet) and keep [150]–[153]." }
+      ],
+      "pacing_notes": [
+        { "blocks": "5, 63, 81, 93, 100, 102, 157, 170", "issue": "Eight records, and six retell the scene just played: [63] interrupts the escape mid-run, [81] repeats the dreams, [100] repeats the naming nearly word for word.", "fix": "Keep [5] ('courted her with his eyes' is a delight) and perhaps [93] for the seven stars; cut the rest." },
+        { "blocks": "111–148", "issue": "38 blocks re-staging #21's cavern scene, a quarter of the episode.", "fix": "Cut to a callback." },
+        { "blocks": "168–174", "issue": "Career summary and a record about ranks; the narrator admits the historian 'writes both down, and moves on.'", "fix": "Keep only [171]–[173], Seohyun on the Daeya wall ('keep the granary dry'), which quietly plants #23's fall." }
+      ],
+      "flow_notes": [
+        { "blocks": "#44 [92] → [0]", "issue": "It sits between Day 9 and Day 10, so the duel waits 4,100 words, and Seohyun's ghost already spoke in #44 [45] before the reader meets him alive.", "fix": "Place it after #43 and before #44." },
+        { "blocks": "158–164", "issue": "Seohyun retying Yushin's headband rhymes with Bidam's father tying his (#40 [42.5]), a great pairing that the arc never points at.", "fix": "Keep it, and at #46 let Yushin's hand go to his headband once." }
+      ],
+      "romance": "The real thing. Desire ('He looks. The histories… record exactly how.' [4]); an obstacle with teeth (a royal father, the Gaya stigma, a lock); escalation (lost horse, side gate, mulberry shed, proposal); chemistry in the talk ('Is the road that bad, or are you lost?' / 'It's lost. I'm only on it.' [11]–[12]; 'Not much me.' / '…I was going to say not much rice.' / 'Liar.' [26]–[28]); a costly choice (she crawls through a drain in her good silk [60]); and a payoff that calls back the first joke [65]–[68]. Played, not told. The clerk's wife is a gift.",
+      "battle": null,
+      "suspense": "Will she get out (the lightning answers), and what will the boy be? Plants: the Daeya wall, 'know whose hands the keys are in' [173] (dramatic irony against #23's fall); the headband retie [161] (rhymes with #40 [42.5]). The oracle 'When they say he was never of them' [143] fires on Bidam's taunt, but #21 already planted it.",
+      "best": "[65]–[68] “Is the horse lost tonight?” / “…No. Tonight it knows exactly where it's going.”",
+      "worst": "[111]–[148]: a near-verbatim replay of #21's cavern flashback, down to the oracle's words and the warm stone.",
+      "fixes": [
+        "Move it out of the Day 9 to Day 10 gap: run it after #43, so #44 and #46 play straight through and the #44 ghosts are people we've met.",
+        "Cut the spring rerun [111]–[148] to a two-line callback; keep 'Your hair's wet. It hasn't rained in a week.' [153].",
+        "Cut the six records that retell the scene: [63], [81], [100], [102], [157], [170]."
+      ]
+    },
+    {
+      "n": 46,
+      "title": "Gyeol (結)",
+      "logline": "Day 10. Bidam ties nine beads to his horse and meets Yushin between the camps. Yushin wins the 109th bout and orders Bidam's whole house erased in Bidam's own words; that night Queen Sunduk dies asking Yushin to say her girlhood name.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "The emotional payoffs are the best in the slice (109, Bisamun going north, 'Dukman', the untouched cup), but the duel is two sentences and Bidam's death is told three times out of order. Stage the fight and fix the sequence.",
+      "opening": "DAY 10, then Bidam saddling Bisamun himself and knotting nine beads to the bridle. A quiet, strong hook that sets up the episode's best image.",
+      "ending": "Lands: Yushin alone at the pavilion across from no one, the untouched cup [60], then a one-line echo of 'You Gaya wretch' [61]. The card [62] (“The one hand that said no is gone…”) calls back #40's veto and sets up #47's padded crown perfectly.",
+      "sudden": [
+        { "block": "27", "what": "Kangrim's question: 'The opposite kite. What do you want written?' Bidam never flew a kite; the only kite is Yushin's (#44 [56]). A reader can't parse it at the climax.", "setup": "none", "fix": "Use the ritual's binary with the father's words from #40 [42.4]: 'A righteous traitor, or an unrighteous king?'" },
+        { "block": "20", "what": "'The Son line — all Musan, all Gurema's descendants.'", "setup": "'Musan' once in #40 [42.0]; 'Gurema' never", "fix": "'Erase his house. Every Son.'" },
+        { "block": "57–58", "what": "'The twist': Yushin turns down Bidam's help ('I will overcome it myself'). The narration calls this 'the first day of the rebellion'; it is their first day on the yard, in 612.", "setup": "#44 [4.3]–[4.4] shows him accepting the headband; #40 [67]–[68]", "fix": "Fix the label ('the first day on the yard') and add one line that makes the reversal readable: who offered what, and who kept it." },
+        { "block": "15", "what": "Kangrim appears with no tag.", "setup": "#23 [31]–[37] with a card, 23 episodes earlier", "fix": "Add 'the underworld's fetch' once." }
+      ],
+      "pacing_notes": [
+        { "blocks": "8–9", "issue": "The climax of four episodes, and of a score planted 44 episodes back, gets two sentences of fighting ('Yushin wins the way a man wins when he would rather lose…'). We don't know if they're mounted, what either tries, or how it turns.", "fix": "Write the duel: an opening exchange from the yard days, the guard Yushin taught him, Bidam reading it a beat late. Say whether they ride." },
+        { "blocks": "25, 56", "issue": "Two records cut into the emotional scenes, and [25] contradicts the duel.", "fix": "Cut [25]. Cut [56] or move it after the pavilion." }
+      ],
+      "flow_notes": [
+        { "blocks": "13–29", "issue": "Bidam dies at [14] ('The body finishes falling'), his horse comes and goes 'until the body is taken' [18], Yushin orders the purge [20]–[24], then Bidam talks to Kangrim [26]–[28] and 'falls' again [29]. The reader can't tell when he dies.", "fix": "Order: duel, Kangrim's question and Bidam's answer (time stopped), the fall [14], Bisamun [16]–[18], the purge [19]–[24]. Cut [29]." },
+        { "blocks": "25", "issue": "The Samguk Sagi record says Bidam 'broke and fled' and was 'pursued and beheaded', right after we watched him die in a duel.", "fix": "Cut it, or keep only 'their kin to the ninth degree were wiped out' as the scale of the purge." }
+      ],
+      "romance": "The arc's best payoff. Forty-five episodes after #1, where she calls him 'Yushin-ah' for the last time, the dying queen asks him to say her name: 'Say the name I had before the room.' / 'Dukman.' / 'Yushin.' / 'I am here.' [49]–[52]. Subtext carries it ('I lost one. Which one, I will not say.' [45]). Played, restrained, earned. Its weakness is upstream: the 'queen between them' is all Yushin's; Bidam's love for her is told once (#42 [32]) and never played.",
+      "battle": "The duel [8]–[9] is summary: no plan, no reversal, no geography, no beat-by-beat. What hurts is the aftermath, not the fight: 'One hundred and nine. Finally.' [10], Bisamun standing over him and walking north [16]–[18], the purge in Bidam's own words [19]–[24]. Cost and consequence are excellent; the fight itself is missing.",
+      "suspense": "Who takes the 109th, and will Yushin spare the house? Payoffs: the 108 score (#2) in 'One hundred and nine. Finally.' [10]; 'Blood is inevitable' (#42 [90]) turned on Bidam's family [23]; 'I will serve you to the end' (#1 [34]) at [37]–[40]; the untouched cup (#44 [6]) at [60]. Unfired: the father's 'righteous traitor' (#40 [42.4]), the obvious question for Kangrim.",
+      "best": "[49]–[52] “Say the name I had before the room.” / “Dukman.” / “Yushin.” / “I am here.”",
+      "worst": "[8]–[29]: a two-sentence duel, then a death told three times in the wrong order, then a record that contradicts it.",
+      "fixes": [
+        "Stage the duel ([8]–[9]) as a scene with a reversal that uses the yard and the score.",
+        "Reorder the death: Kangrim's exchange before the fall; cut the second fall [29] and the contradicting record [25].",
+        "Replace 'the opposite kite' with the father's binary ('A righteous traitor, or an unrighteous king?') and fix the 'twist' label [57]."
+      ]
+    },
+    {
+      "n": 47,
+      "title": "Queen Jinduk",
+      "logline": "Seungman is crowned Queen Jinduk, unanimously, in a crown padded to fit, and spends her first days being compared to a predecessor who could predict the weather; Chunchu comforts her with a line he has been saving since the funeral.",
+      "scores": { "followable": 4, "context": 3, "pacing": 3, "flow": 4, "entertainment": 3 },
+      "verdict": "A clean, witty bridge with one dead stretch: cut one of the two identical investiture records and turn the fragmentary private audience into a short scene.",
+      "opening": "“The crown was made for her cousin and has to be padded at the temples.” Strong: a flat fact with a whole character in it. ('Cousin' contradicts 'sister' in #1 and #40.)",
+      "ending": "The loom [17] and its tease (“it will do more for Silla than any prophecy her cousin made”) land quietly. The card [18] (“Silla needs an army. Only one man alive can lend it. Chunchu goes west…!”) sets up #48 cleanly.",
+      "sudden": [
+        { "block": "6", "what": "'She heard frogs at Jade Gate Pond in midwinter and sent two thousand men…': one of Sunduk's famous prophecies, presented as something everyone remembers.", "setup": "#42 [40.0], half a line ('The queen hears about it from a pond of toads')", "fix": "Plant the frogs properly earlier, or keep only the peonies (#1 [76]–[81]) and the death-day (#42 [3])." },
+        { "block": "0, 17", "what": "'Her cousin'.", "setup": "Contradicts #1 [30] and #40 [29], [46] (sister).", "fix": "Pick one and fix it in #42 [4] too." }
+      ],
+      "pacing_notes": [
+        { "blocks": "2–3", "issue": "Two records in a row saying the same thing (Tang honours the dead queen and invests the new one), a quarter of a 500-word episode, full of office strings ('Pillar of State', 'King of Lelang Commandery').", "fix": "Keep one, or replace both with a narrator line: 'Chang'an sent her a title and a seal, and the dead woman a better one.'" },
+        { "blocks": "9–12", "issue": "Three fragmentary lines from the queen ('Yushin… preserve the sacred country…' / 'Bidam…' / 'surely Bidam's words are not weighing on you…?') and a flat denial: telegraphic and on the nose.", "fix": "One real exchange: she asks if 'never of Silla' stung; he answers with the loyalty line; the narrator notes his hand." }
+      ],
+      "flow_notes": [
+        { "blocks": "5", "issue": "'Everyone understands the illness's true name: Day 1 through Day 10, unanswered.' The narrator quotes the chapter headers back at the reader.", "fix": "'Everyone knows the illness's name. It lasted ten days.'" }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Can a gentle queen without prophecies hold the chair? The narrator half-answers it with a tease (the silk ode [17]); the card hands the question to Chunchu.",
+      "best": "[1] “The succession Bidam died objecting to passes at last. Unanimously.” Also [15]–[16]: “…You had that ready.” / “Since the funeral, Majesty.”",
+      "worst": "[2]–[3]: two investiture records in a row saying the same thing.",
+      "fixes": [
+        "Cut one of the two investiture records [2]/[3].",
+        "Make [9]–[12] one real exchange about Bidam's 'never of Silla'.",
+        "Settle 'cousin' or 'sister' across #1, #40, #42 and #47."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "Yes, and it's the best spine in this slice; the author's hunch holds. Bidam's rebellion plays as a four-act thriller. Want (#40): stop a soft successor and Chunchu's 'Tang envelope'. Escalation on a clock (#42): ten days of palace grain and five nights of tea that curdle from courtesy to 'you were never even of Silla'. Reversal (#44): heaven's omen turned with a burning kite and paid for with Hangyul. Cost (#46): the 109th bout, Bidam's house erased in his own words, the queen dead the same night. It starts as Bidam's story and ends as Yushin's, and that handoff works because Yushin ends it with Bidam's line. Its best beats (the veto, the rant, Hangyul, 'One hundred and nine. Finally.', 'Dukman') are as good as anything in Prince Euija. Three things hold every episode at 3–4. (1) The interleaved flashbacks: #43 earns its slot (short, it answers the taunt, its card returns to the siege); #41 and #45 don't, and between them they take 5,900 of the arc's 15,900 words at its two tensest moments. (2) The fighting is summarised: the siege gets one sentence of combat, the duel two. (3) The setup is thin: before #40 the friendship is one short exchange and the 108 score in #2, Seungman is one sentence in #1, and Bidam and Sunduk never share a scene, so the queen 'between them' is only Yushin's. Romance is the arc's quiet strength (Seohyun and Manmyung; the deathbed); battle is its weakness. A reader keeps going through #40, #42, #44 and #46, and skims #41 and the back half of #45. The titles Gi/Seung/Jeon/Gyeol don't tell a first-time reader these four are one story: add 'Bidam's Rebellion' to them.",
+    "handoffs": [
+      { "from": 39, "to": 40, "works": "partly", "why": "#39's card promises the council and 'one hand to lock the door'; #40 opens in Yamato with Takamuko no Kuromaro and doesn't reach the council until [20]. After three Jumong episodes (~9,250 words) the reader needs re-anchoring in Surabol and gets a foreign court.", "fix": "Open #40 on the council and the hand that stays down, which is exactly what the card promised." },
+      { "from": 40, "to": 41, "works": "partly", "why": "The card's 'Gaya… Six eggs' leads mechanically into #41's 'Before there is a Gaya', but it follows the arc's first cliffhanger (Bidam decides to rebel) with an 1,800-word myth.", "fix": "Move #41 out of the arc; let #40 hand straight to Day 1." },
+      { "from": 41, "to": 42, "works": "yes", "why": "'Ten days of grain… Start counting…!' is delivered by #42's DAY 1 header and the grain count [11], though #42 opens on a record rather than a scene.", "fix": "Open #42 on [2]." },
+      { "from": 42, "to": 43, "works": "partly", "why": "The card promises 'a Gaya prince nobody names'; #43 spends its first nine blocks on Sadaham in a different Gaya and decade, and never ties the prince to #20's cone helm.", "fix": "Open #43 on #20's night road." },
+      { "from": 43, "to": 44, "works": "yes", "why": "'Sixth night. Bidam has poured two cups of tea. Yushin isn't coming… is he?' is picked up exactly in #44 [1]–[3].", "fix": "None needed; trim the repeated 'Sixth night' in #44 [2]–[5]." },
+      { "from": 44, "to": 45, "works": "partly", "why": "The card asks a real question ('where did Yushin come from?') but parks the reader on the eve of the duel for the slice's longest episode, after Seohyun has already appeared as a ghost in #44 [45]. It's also the second card in three episodes to use 'never of Silla' to send the reader to Gaya.", "fix": "Run #45 after #43, so #44 hands straight to #46." },
+      { "from": 45, "to": 46, "works": "yes", "why": "'Tenth morning… still a hundred and eight apiece…!' re-orients after 4,100 words, and #46 opens on Day 10.", "fix": "None." },
+      { "from": 46, "to": 47, "works": "yes", "why": "'The one hand that said no is gone. Now the crown has to fit Seungman…' into 'The crown was made for her cousin and has to be padded at the temples.' The best seam in the slice.", "fix": "None." },
+      { "from": 47, "to": 48, "works": "yes", "why": "'Chunchu goes west…!' into 'Everyone on earth wants something from the Son of Heaven… Chunchu brings an offer.' A year passes unmarked, which is fine.", "fix": "None." }
+    ],
+    "dropped_threads": [
+      "Bidam's father's 'righteous traitor' (#40 [42.4]), the arc's key plant for Bidam, is never called back at his death; Kangrim asks about 'the opposite kite' instead (#46 [27]). Bidam never appears after #47, so it stays unfired.",
+      "The black headband with old blood 'he does not remember whose' (#40 [67]): the blood is never explained, and who owns the headband is contradicted by #44 [4.4] (Yushin takes it) and #46 [58.0] (Yushin refuses it).",
+      "Muryuk as the cone-helm man at King Seong's death (#20 [14]–[22]): #43 never connects them; only #45 [2] and the record at #45 [170] imply it. And #20 already shows his name as a speaker label.",
+      "Bidam's 'blood-whisper' kinship with Sadaham (#42 [32.4]) never fires (unless 'the line he carried in his jaw', #46 [19], is meant to, which is too faint).",
+      "Chunchu 'kept as a hostage' in Yamato (#40 [16]) is contradicted by 'home from the islands. Empty-handed, and early' (#42 [42]); the mission's outcome gets one line.",
+      "Seungman confronts Bidam at the gate (#40 [45]–[48]) and they never speak again; she only says his name in #47 [10].",
+      "Yumjong, the rebellion's co-leader and the man who weaponises 'Gaya' (#40 [83]), gets one line in #42 [18] and dies in a clause (#44 [80]).",
+      "Bidam and Sunduk: he crowned her (#2), raises a banner against her (#42), and they never have a scene beyond her collapse (#40 [62]–[63]).",
+      "One-off names that go nowhere: Takamuko (#40 [0]), Ijinasi (#41 [16]), Uso (#42 [40.1]), Cheongwan and her song (#44 [62.2]), Gurema (#46 [20])."
+    ],
+    "repetition": [
+      "#45 [111]–[148] replays #21 [10.0]–[10.62]: the same fox and grandmother try-outs, 'Kim. Say it again… It just… sticks', an identical oracle (#45 [143] = #21 [10.49]), the warm river stone and 'send the name'.",
+      "Cards #42 [98] and #44 [92] both hook on 'never of Silla' and both send the reader back to Gaya.",
+      "Harmony Council voting is re-explained with diagrams in #40 [24]–[26], [32] after #2 [2]–[10], [28].",
+      "The arousal beat 'rock-hard in the black bowl… before he has finished looking': #21 [12], #44 [19] (Bidam), #44 [33] (Yushin).",
+      "The same opening template: #41 [0] 'Before there is a Gaya, there is a ridge…' and #45 [0] 'Before there is a Yushin there is a road…'.",
+      "Narrated or dramatized, then quoted: #40 [6.0]/[6.1], [19.0]/[19.1]; #44 [56]/[57]; #45 [60]/[63], [75]–[80]/[81], [95]–[99]/[100], [101]/[102], [156]/[157]; #47 [2]/[3].",
+      "Bidam's sutra records: #42 [16], [79]; #44 [20], [91]; #46 [6]. Five in four episodes, usually right after a speech, each one stalling its ending.",
+      "'The cleverest of the three' (#2 [19]) is called back in #40 [38], #42 [32.1] and #44 [10]. A good motif, used three times in one arc."
+    ],
+    "top_problems": [
+      "The flashbacks break the thriller at its two tensest points. #41 Suro (1,800 words of myth and sex, no conflict) comes one block after Bidam decides to rebel; #45 Seohyun (4,100 words, the slice's longest) sits between Day 9 and Day 10, after Seohyun's ghost has already spoken in #44, and a quarter of it replays #21. Take #41 out of the arc, and run a trimmed #45 after #43.",
+      "The climax is summarised and scrambled. Ten days of siege get one sentence of combat (#44 [80]); the duel is two sentences (#46 [8]–[9]); Bidam dies at [14], speaks at [28] and falls again at [29]; and a record [25] says he fled and was beheaded.",
+      "The rivalry and the triangle are back-filled inside the arc. Before #40, Bidam and Yushin share one short exchange (#2 [31]–[33], 38 episodes earlier), Seungman gets one sentence (#1 [30]), and Bidam and Sunduk never share a scene. Five short flashbacks in #40–#46 have to build the friendship while the plot breaks it, and the queen in the middle is only Yushin's.",
+      "Bidam's want shifts and his endgame is never stated: merit (#40 [38]), anti-Tang (#40 [40]), 'A woman cannot rule well' (#42 [17]), blood (#42 [29]), soil (#44 [87]). The radicalisation is deliberate, but nobody says what winning looks like, and the misogynist banner raised by the man who crowned a woman is never owned on the page.",
+      "Muddled plants and contradictions undercut the payoffs: the headband (kept, given, refused), Seungman as sister and cousin, Yushin as 'elder brother', 'the opposite kite', a 'twist' labelled 'the first day of the rebellion', and Muryuk's name already on screen as a speaker label in #20."
+    ]
+  }
+}

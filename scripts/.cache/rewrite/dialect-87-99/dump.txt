@@ -1,0 +1,1490 @@
+
+######## #87 Pyongyang II (668)
+  ~ Every son comes home in the end. Namseng brings the empire with him.
+  == The Ninth Invasion
+  ~ Three of the emperor’s four beasts come for the city at once. The Blue Dragon leads, the old marshal who has been at this war since the last emperor. The Black 
+[L0.4] xuerengui (tang)
+   ko0: 성을 부수는 일은… 농사와 같습니다.
+   en0: Breaking a fortress… is like farming.
+   ko1: 때를 알고, 물을 대고, 거둡니다.
+   en1: You know the season, you bring the water, you harvest.
+   ko2: 오늘은 거둘 날입니다.
+   en2: Today is a harvest day.
+  ~ There is no cruelty in him, which is precisely what makes him difficult: the men of Goguryeo can hate a butcher, but they cannot quite hate a farmer who treats 
+[L0.6] speaker:Pyongyang sentry (?)
+   ko0: 저놈이다. 흰옷에, 막대기에 달 두 개 단 놈.
+   en0: That’s him. The white one, with the two moons on a stick.
+   ko1: 우리 삼촌이 주필산에 있었거든. 저건 사람이 아니래. 여포래. 여포는 지치지도 않는대.
+   en1: My uncle was at Stallion Mountain. He says that isn’t a man. It’s Lu Bu, and Lu Bu doesn’t get tired.
+  == Brothers
+  ~ Namseng rides at the head of the column in a Tang coat, down the north-west road, to show the Blue Dragon the way. He knows every gully. He used to hunt them. A
+[L0.10] namseng (goguryeo)
+   ko0: 마침내… 평양성의 땅을 밟는다—
+   en0: At last… I set foot on Pyongyang’s ground—
+  ~ On the wall, Namgun can see him. Everyone on the wall can see him.
+[L0.13] namsan (goguryeo)
+   ko0: 형… 저 사람, 저쪽 옷을 입었어.
+   en0: Brother… he’s wearing their coat.
+[L0.14] namgun (?)
+   ko0: 고구려는… 죽지 않는다….!
+   en0: Goguryeo… never dies….!
+  ~ That is the only conversation the three of them have that year. A whisper, a shout, and a man on a horse who does not answer.
+  == The White Banner
+  ~ The ring closes. Every few days Namgun sends men out of a gate to break it, and fewer come back. Then the Blue Dragon moves his whole camp round to the south-we
+[L0.19] namsan (goguryeo)
+   ko0: 형. 강 건너에 신라 깃발이야.
+   en0: Brother. Silla banners on the far bank.
+   ko1: …남은 쪽이 거기 하나였는데.
+   en1: …That was the last side we had.
+  ~ A month goes by. Inside, the granaries go down the way the Tang campfires did, seven winters ago, and someone on the wall is counting.
+  ~ Namsan counts best. So it is Namsan who walks out first.
+  ~ He goes out through the south-west gate with the king and ninety-eight officials, carrying a white banner. The king of Goguryeo has worn the crown twenty-six ye
+[L0.24] bojang (goguryeo)
+   ko0: 내— 내가 저자에게 꿇는 건가, 아니면 깃발에?
+   en0: Do I— do I kneel to him, or to the banner?
+[L0.25] namsan (goguryeo)
+   ko0: 깃발에 꿇으십시오, 전하. 저 사람은 들고 있을 뿐입니다.
+   en0: To the banner, Majesty. He’s only holding it.
+  ~ The king kneels. The Blue Dragon accepts the surrender very politely. Then he looks up at the walls, where the gate has already shut again behind them.
+  == Betrayal from Inside
+  ~ Namgun has not surrendered. He has the walls, the army and the gate. What he needs is one man nobody can buy. He picks a monk. Shinsung has kept a small temple 
+[L0.29] namgun (?)
+   ko0: 스님은 가문도 없고, 파벌도 없고, 자식도 없소.
+   en0: You have no clan, no faction, no sons.
+   ko1: 이 성에서 성을 팔아넘기는 게 상상이 안 되는 사람은 스님뿐이오.
+   en1: You’re the only man in this city I can’t imagine selling it.
+[L0.30] shinsung (?)
+   ko0: 그럼 대막리지의 상상에 걸맞도록 애써 보겠습니다.
+   en0: Then I shall try to be worthy of your imagination, Mangniji.
+  ~ For five days a novice walks out of the lesser house before dawn with an alms bowl and comes back with it empty, and nobody thinks to ask why a monk’s bowl shou
+  ~ Yeon once tried to starve the temples with the emperor’s Daoists. The monks have waited a generation. Shinsung doesn’t make a speech about doctrine. He opens a 
+  ~ The Tang come in through the south-west gate before the bell has stopped ringing. Quietly at first, then not quietly at all.
+[L0.35] speaker:Goguryeo guard (?)
+   ko0: 막리지! 서남문이— 문이 열렸습니다! 안에서 열었습니다!
+   en0: Mangniji! The south-west gate— it’s open! They opened it from inside!
+[L0.36] namgun (?)
+   ko0: 문을 누가 맡았지?
+   en0: Who had the gate?
+[L0.37] speaker:Goguryeo guard (?)
+   ko0: …스님이었습니다, 막리지.
+   en0: …The monk, Mangniji.
+[L0.38] namgun (?)
+   ko0: 스님이…?
+   en0: The monk…?
+  == Last Words
+  ~ Namgun is thirty-one. He leads the last stand against the Blue Dragon himself.
+[L0.41] namgun (?)
+   ko0: 신라 성골의 피 — 썩어라!
+   en0: Silla’s sacred blood — rot!
+   ko1: 고구려가… 마지막 승리를… 가져가리라!
+   en1: Goguryeo will take the final victory!
+   ko2: 이 땅을 다스린다 해도 — 우리 이름이… 마지막에…!
+   en2: You may rule this soil — our name will have the last word!
+  ~ The wall is already lost. He knows it. He says it anyway, to the men who can still hear, and to a bloodline across the river he can’t see.
+[L0.43] namgun (?)
+   ko0: 고구려는… 죽지 않는다….!
+   en0: Goguryeo… never dies….!
+  ~ The gate towers catch one after another, like lamps being lit for a feast. In his own hall, Namgun turns his sword on himself. He does it badly, the first thing
+[L0.46] lishiji (tang)
+   ko0: 곳간부터 끄시오. 문루는 타게 두고.
+   en0: Put out the granaries. Let the towers burn.
+   ko1: 막리지의 시신은— 살아 있다고? 그럼 의원을 붙이시오.
+   en1: And the Mangniji’s body— alive? Then find him a surgeon.
+   ko2: 도랑이 아니라 명부에 올릴 사람이오.
+   en2: I want him in the register, not the ditch.
+  ~ The surgeons save him, so that he can be sent alive to the farthest edge of the empire.
+  ~ In the burning palace, a Mohe man with a border sabre walks into a treasury nobody is guarding any more. He comes out with a piece of gold no longer than a fing
+  ~ Among the captives is a Baekje king with a Yamato accent. Pung ran north to the last kingdom left. The kingdoms ran out before he did.
+  ~ When the city falls, the empire doesn't send a stranger to hold it. It sends Xue Rengui. The white coat becomes a banner over a broken capital. He governs well 
+[L0.52] xuerengui (tang)
+   ko0: 나는… 여러분의 원수가 되고 싶지 않았습니다.
+   en0: I… did not wish to be your enemy.
+   ko1: 다만 폐하의 동쪽을, 빈손으로 둘 수는 없었습니다.
+   en1: But I could not leave His Majesty’s east empty-handed.
+  ~ Goguryeo had stood seven hundred years. The record, for its part, writes only the month and the surrender.
+  == Zhaoling
+  ~ Before the captives are shown to the living emperor, the Blue Dragon takes them up the mountain to show them to the dead one. The king of Goguryeo is made to bo
+  == The New Rank
+  ~ The seventeen grades stop at one another. In the tenth month, after the city is open, King Munmu cuts a rank the grades did not have, and gives it to the man wh
+[L0.58] munmu (?)
+   ko0: 대장군.
+   en0: Marshal.
+[L0.59] yushin (silla)
+   ko0: 폐하.
+   en0: Majesty.
+[L0.60] munmu (?)
+   ko0: 내가 활을 쥐기 전부터 대장군이었소.
+   en0: You have been Marshal since before I could hold a bow.
+   ko1: 연무장은 아직도 그리 부르지.
+   en1: The yard still says it.
+   ko2: 열일곱 관등으로는 이제 모자란다.
+   en2: The seventeen grades do not reach you anymore.
+[L0.61] yushin (silla)
+   ko0: 그 말로 충분합니다.
+   en0: The word is enough.
+   ko1: 내가 무엇인지는 압니다.
+   en1: I know what I am.
+[L0.62] munmu (?)
+   ko0: 열일곱 위에도 이미 하나 있었소.
+   en0: There was already a grade above the seventeen.
+   ko1: 그 위에 하나를 더 베었소.
+   en1: I had them cut one above that.
+   ko2: 태대각간. 대장군 위의 대장군이오.
+   en2: Supreme General.
+[L0.64] yushin (silla)
+   ko0: 늙은이에게 새 이름이군요.
+   en0: A new name for an old man.
+[L0.65] munmu (?)
+   ko0: 눈 속을 뚫고 이 전쟁을 먹여 살린 사람의 이름이오.
+   en0: It is the name of the man who fed this war through the snow.
+   ko1: 받으시오.
+   en1: Wear it.
+   ko2: 연무장 아이들에게는 대장군으로 남아도 좋소.
+   en2: You may keep Marshal for the boys on the yard.
+[L0.66] yushin (silla)
+   ko0: …분부대로.
+   en0: …As you command.
+  ~ The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!
+  @img bojang-captive: The king kneels.
+  @img red-armor: There is no cruelty in him
+  @img three-riders: At last… I set foot on Pyongyang’s ground—
+  @img three-dragons: Yeon once tried to starve
+  @img final-three-dragons: Three of the emperor’s four beasts come for the city at once.
+  @img pyongyang-last-ring: Namgun is thirty-one. He leads
+  @img shinsung-opens-gate: He opens a gate
+  @img namseng-namgun-wedge: At last… I set foot on Pyongyang’s ground—
+  @img yushin-supreme-wide: cuts a rank the grades did not have
+  @img yushin-supreme-ecu: Supreme General
+  @img parody-admiral-yi-yushin: cuts a rank the grades did not have
+
+######## #88 Mount Gain (665)
+  == The Ancestral Temple
+  ~ The night Pyongyang falls, the king of Silla goes to visit a piece of paper.
+  ~ It hangs in the ancestral temple, beside his father's tablet. Gold letters on iron. An oath, sworn over a dead horse, to love Baekje's prince like a brother. Go
+[L0.3] munmu (?)
+   ko0: 평양 이남과 백제 땅 전부.
+   en0: Everything south of Pyongyang, and the whole of Baekje.
+   ko1: 아버님이 그걸 외우게 하셨소.
+   en1: My father made me learn it by heart.
+[L0.4] yushin (silla)
+   ko0: 황제께서도 외우시는 문장이 있겠지요, 전하.
+   en0: The emperor will have learned a sentence too, Majesty.
+[L0.5] munmu (?)
+   ko0: 알고 있소. 바로 여기 걸려 있으니까.
+   en0: I know. It’s hanging right here.
+   ko1: 외숙. 그 말, 기억하시오?
+   en1: Uncle. Do you remember the horse?
+[L0.6] yushin (silla)
+   ko0: …날마다요, 전하.
+   en0: …Every day, Majesty.
+  ~ Every war starts with an insult somebody swallowed. Silla swallowed this one three summers ago. To taste it, go back to a hill outside Bear Ford, and the only w
+  == Bear Ford, Three Summers Earlier
+  ~ Two springs after the White River, the empire names a governor for what is left of Baekje. It is Buyeo Yung. He once knelt at Bupmin's horse and was spat on. Th
+  ~ The court in Surabol hears the name and goes very quiet. Their men died for this ground. An emperor promised it to Chunchu by lamplight. Now a Baekje prince sit
+  ~ Yung moves into the commandery offices in the spring. The rooms his father was taken from have been whitewashed. The Black Tortoise shows him the registers, and
+[L0.12] liurengui (tang)
+   ko0: 도독의 백성이오. 이제 모두 숫자요. 돌보기가 훨씬 쉬워지지.
+   en0: Your households, Commander. Every one of them a number now. It makes them much easier to look after.
+[L0.13] yung (baekje)
+   ko0: …아버님은 이름으로 세셨소.
+   en0: …My father counted them by name.
+   ko1: 대부분은 틀리셨지만. 그건 아니었소.
+   en1: He was wrong about most things. Not that.
+  == The Altar
+  ~ That summer, the empire makes the two men who rule the south swear to be brothers. It picks a hill outside Bear Ford. The clerks name it the Mountain Where One 
+  ~ An imperial envoy presides. The Black Tortoise wrote the oath. On one side of the altar stands Munmu. On the other stands Yung. Munmu last saw that face at the 
+  == The White Horse
+  ~ An oath of this weight needs a white horse. The Tang adjutant has been walking the Silla lines all morning looking for one, and stops in front of the only white
+[L0.20] speaker:Tang adjutant (?)
+   ko0: 저 말. 누구 것이오?
+   en0: That one. Whose is he?
+  ~ Hanseul is past twenty. He has carried Yushin across the Yellow Mountain. He has carried rice through snow up to his chest. His muzzle has gone grey. On a white
+[L0.22] munmu (?)
+   ko0: 안 되오. 다른 말을 찾으시오. 저건 외숙의—
+   en0: No. Find another. That is my uncle’s—
+[L0.23] yushin (silla)
+   ko0: 내주십시오, 전하.
+   en0: Let them have him, Majesty.
+[L0.24] munmu (?)
+   ko0: 외숙.
+   en0: Uncle.
+[L0.25] yushin (silla)
+   ko0: 흰 말을 달라 했습니다. 갈색 말로 하면 맹세가 초라하지요.
+   en0: A white horse is what they asked for. It would be a poor oath on a brown one.
+   ko1: …제가 끌고 올라가겠습니다.
+   en1: …I’ll walk him up myself.
+  ~ He leads Hanseul up the hill by the halter, the way he led Hangyul across the Moon Palace yard eighteen years before, talking to him in the low voice he keeps f
+  ~ The knife is Tang. The blood goes into a bowl, and both men touch it to their lips. Yung does it without looking at anyone. Munmu does it looking at his uncle’s
+[L0.28] liurengui (tang)
+   ko0: …형제처럼 지내며 재앙을 나누고 근심을 서로 보살펴, 길이 하나가 될지어다.
+   en0: …Let them be as brothers, sharing disaster and pitying each other’s sorrows, forever as one.
+   ko1: 이 맹약을 어기는 자는 신명이 굽어보시어 온갖 재앙이 내리고, 자손이 자라지 못하며, 그 사직을 지킬 자가 남지 않으리라.
+   en1: Whoever breaks this covenant, may the gods see it; may a hundred calamities fall on him, may his sons not grow, and may no one remain to keep his altars.
+  ~ The covenant is written out three times. One copy is buried at the altar with the horse. One goes to Chang’an. The third is carried to Surabol and laid up in Si
+  == Surabol
+  ~ On the road home nobody in the Silla column says anything about the horse.
+  ~ In Surabol the anger is louder. Men bled for this land in three wars. An emperor promised it to them. Now they have sworn on a dead horse never to take it. The 
+  ~ That night the king finds his uncle in the stable, cleaning a stall that is empty.
+[L0.34] munmu (?)
+   ko0: 흰 말은 내가 다시 구해 드리겠소, 외숙.
+   en0: I’ll find you another white horse, Uncle.
+[L0.35] yushin (silla)
+   ko0: 일흔입니다, 전하. 셋을 묻었습니다.
+   en0: I’m seventy, Majesty. I’ve buried three.
+   ko1: 말 대신 전쟁을 하나 찾아 주십시오. 또 무슨 맹세를 시키기 전에, 한 번만 더 가 보고 싶습니다.
+   en1: Find me a war instead. I’d like to go to one more before they make me swear to something else.
+  == The Ancestral Temple
+  ~ Three summers later, the old man got his war. It ended tonight, with a monk at a gate. He stands beside the king in the temple now, and neither of them looks at
+[L0.38] munmu (?)
+   ko0: 외숙. 황제들보다 먼저. 도장이니 맹세니, 명단 든 도독이니 하는 것들보다 먼저.
+   en0: Uncle. Before the emperors. Before seals, and oaths, and governors with lists.
+   ko1: 이 땅의 첫 임금은 누구였소?
+   en1: Who was the first king of this land?
+[L0.39] yushin (silla)
+   ko0: 어머님께 여쭤 보십시오. 집안 아이마다 들려주십니다.
+   en0: Ask your mother. She tells it to every child in the house.
+   ko1: 곰 이야기로 시작하지요.
+   en1: It starts with a bear.
+[L0.40] munmu (?)
+   ko0: 곰이라.
+   en0: A bear.
+[L0.41] yushin (silla)
+   ko0: 참을성 많은 곰입니다. 어머님은 그 대목만 오면 꼭 저를 보십니다.
+   en0: A patient one. Your mother always looks at me when she gets to that part.
+  ~ To find the first king of this land, we have to go back before there were kingdoms… to a bear in a cave…!
+  @img yushin-empty-stall: cleaning a stall that is empty
+
+######## #89 Dangun & Old Joseon (Long ago)
+  ~ Before there are any kingdoms, there is a son in heaven who keeps looking down. He is Hwanung. His father Hwanin, the Lord of Heaven, notices, looks down himsel
+  ~ Hwanin does not plough — he opens the sky. Three seals go down with his son, so that nobody on the ground can mistake him for a prince playing at exile. Every l
+  ~ Hwanung lands on a mountain under the sacred birch. He names the ground beneath it the Divine City. Three thousand followers come down with him. Among them are 
+  ~ From there he hands out civilisation in instalments. Laws. Punishments. Lifespans. Illness. Good and evil. Medicine. Three hundred and sixty matters in all. Som
+  ~ There is a short way to tell the rest, the way it is carved on stones. The long way begins, as long ways do, with a bear who wanted something so badly that she 
+  ~ A bear and a tiger come to him and ask to be made human. He gives them a bundle of mugwort, twenty cloves of garlic, and one instruction: stay out of the sun fo
+  == The Sacred Birch
+  ~ The bear stays. She comes out a woman on the twenty-first morning, garlic still on her breath, and finds the mountain already staffed — wind, rain, cloud, and n
+  ~ He means to reach the hall. On the third evening he gets as far as the birch, and the seal in his hand becomes a thing he is holding for no reason he can name.
+[L0.13] ungnyeo (joseon)
+   ko0: 또 지나치실 거요.
+   en0: You're going to walk past again.
+[L0.14] hwanung (joseon)
+   ko0: …오늘은 아니오.
+   en0: …Not today.
+[L0.15] ungnyeo (joseon)
+   ko0: 어제는 그랬소.
+   en0: Yesterday you did.
+   ko1: 그저께도. 나는 여기 서 있었는데.
+   en1: And the day before. I was standing right here.
+[L0.16] hwanung (joseon)
+   ko0: 봤소.
+   en0: I saw you.
+   ko1: 마늘 냄새가 여기까지 왔소.
+   en1: The garlic reached this far.
+[L0.17] ungnyeo (joseon)
+   ko0: 스무하루를 그렇게 먹고 나왔소.
+   en0: Twenty-one days of that, and this is what came out.
+   ko1: …가까이 오지 마시오, 라고 하려고 했는데.
+   en1: …I was going to say don't come closer.
+[L0.18] hwanung (joseon)
+   ko0: 늦었소.
+   en0: Too late.
+   ko1: 가지 마. 아니— 가지 마시오. 손이—
+   en1: Stay. I mean— don't go. Your hand—
+[L0.19] ungnyeo (joseon)
+   ko0: 손은 이미 잡았소.
+   en0: You already have the hand.
+   ko1: …나머지는 무서우시오?
+   en1: …Scared of the rest?
+[L0.20] hwanung (joseon)
+   ko0: 무섭소.
+   en0: I am.
+   ko1: 당신이 보고 있으니까.
+   en1: Because you're looking at me.
+[L0.21] ungnyeo (joseon)
+   ko0: 그럼 내려와요.
+   en0: Then come down.
+   ko1: 나무는 보고 있을 테니까. 나는… 더.
+   en1: The tree can watch. I want… more.
+  ~ The kiss is clumsy. Beard, a new mouth, birch bark at her back. She makes a small furious sound and tries again, and the second one lands.
+  ~ White silk goes down among the roots. The fur at her throat opens under his mouth. She laughs once, startled at the sound, and pulls him down by the hair.
+  ~ By the time the moon clears the snow on the peak, the rust-red sash is somewhere in the moss, and neither of them has gone back up the path.
+[L0.25] ungnyeo (joseon)
+   ko0: …벌써 가시오?
+   en0: …You're going already?
+[L0.26] hwanung (joseon)
+   ko0: 못 가오.
+   en0: I can't.
+   ko1: 인장을 어디에 뒀는지 모르겠소.
+   en1: I don't know where I put the seal.
+[L0.27] ungnyeo (joseon)
+   ko0: 내 머리 밑이야.
+   en0: Under my head.
+   ko1: 아까 내가 뺐어. …가지 마.
+   en1: I took it. …Don't go.
+[L0.28] hwanung (joseon)
+   ko0: …도둑.
+   en0: …Thief.
+[L0.29] ungnyeo (joseon)
+   ko0: 아침에 아내로 맞추시오.
+   en0: Marry me in the morning.
+   ko1: 지금은 여기 있소.
+   en1: Right now I'm here.
+  == Asadal
+  ~ Their son is Dangun. The name on the stone is Wanggeom: a king who governs, not one who inherits a bone rank. He founds Asadal where the mountain meets the plai
+  ~ Every later crown in these kingdoms argues, one way or another, back to the woman who used to be a bear. Her son’s city keeps his name long after he has become 
+  == The Fall of Joseon
+  ~ Joseon outlives its founder by a long way. Two thousand years on it is still there, run by other kings now, from a walled city on the Taedong that has kept his 
+  ~ It takes the empire of the West a year to take one fortress, and they do not take it. Wanggeom holds through a siege that begins in the autumn and is still goin
+  ~ So they stop attacking the walls and start talking to the men behind them, which is cheaper and has never once failed.
+  == The King's Wall
+  ~ King Ugeo has stopped sleeping in the palace. He sleeps on the wall, where he can hear the Han camp coughing, and his son, the prince, has started sleeping some
+[L0.42] janghang (joseon)
+   ko0: 아버님. 저들이 또 조건을 보내왔습니다.
+   en0: Father. They’ve sent terms again.
+   ko1: 성문만 열면 성 안 사람은 아무도 건드리지 않겠답니다.
+   en1: Open the gate, they say, and nobody inside gets hurt.
+[L0.43] ugeo (joseon)
+   ko0: 작년 가을에도 그 말을 했다.
+   en0: They said that last autumn.
+   ko1: 누가 가져왔느냐.
+   en1: Who brought it to you?
+[L0.44] janghang (joseon)
+   ko0: …그게 중요합니까.
+   en0: …Does it matter who?
+[L0.45] ugeo (joseon)
+   ko0: 중요하다.
+   en0: It matters.
+   ko1: 내 성벽에서 내려가라.
+   en1: Get off my wall.
+  ~ One of the ministers who have been doing the talking goes over the wall that week and dies on the road before he reaches the Han tents. Another does not bother 
+[L0.47] speaker:Seong Gi (?)
+   ko0: 폐하—!
+   en0: Majesty—!
+[L0.48] ugeo (joseon)
+   ko0: …성기냐.
+   en0: …Seong Gi?
+   ko1: 성은 지키지 마라. 나 때문이라면.
+   en1: Don’t hold the city. Not for me.
+   ko2: 사람들 데리고 나가. 살아서… 어디서든, 새로 나라를 세워라.
+   en2: Get the people out. Live… and make a new country. Anywhere.
+  ~ Seong Gi closes the king’s eyes, goes back up to the parapet, and holds the city anyway.
+  ~ He holds it until the dead minister’s son and the prince go down into the lanes, where people have been eating bark since the spring.
+[L0.51] choi (joseon)
+   ko0: 임금은 죽었소.
+   en0: The king is dead.
+   ko1: 그럼 이제 누구 때문에 굶는 거요? 저 사람?
+   en1: So who are you starving for now? Him?
+  ~ Before morning Seong Gi is dead too.
+  ~ Someone lifts the bar.
+[L0.54] herald (other)
+   ko0: 성이 무너진 게 아니야.
+   en0: The wall did not come down.
+[L0.55] herald (other)
+   ko0: 문이 안에서 열린 거지.
+   en0: A door was opened from the inside.
+  ~ Han takes Wanggeom. Some of the people the king told to live go south over the mountains. They settle in six villages around Surabol. Two generations later, the
+  ~ That is the story Munmu gets, in his mother’s version, with extra garlic. He came for the bear. He keeps thinking about the door.
+  ~ Eight hundred years later, the empire comes back to the same river to do the same thing. This time, Goguryeo has a prince left…!
+  @img hwanung-descent: Hwanung lands on
+  @img bear-tiger-cave: A bear and a tiger come to him
+  @img dangun-mountain: twenty-first morning
+  @img scene-dangun-founding-4: twenty-first morning
+  @img dangun-asadal: founds Asadal
+  @img scene-dangun-founding-36: founds Asadal
+  @img hwanin-opens-sky: Hwanin does not plough
+  @img dangun-wanggeom: Their son is
+  @img ungnyeo-cave-vigil: outlasted a tiger
+  @img hwanin-above: Hwanin does not plough
+  @img hwanin-ivory-void: Three seals go down
+  @img ungnyeo-cave-shaft: The bear stays.
+  @img hwanung-ungnyeo-birch-wide: stands under the sacred tree
+  @img scene-birch-old-joseon-36: stands under the sacred tree
+  @img ungnyeo-dont-closer: don't come closer
+  @img hwanung-seal-forgotten: the seal in his hand
+  @img hwanung-ungnyeo-kiss: The kiss is clumsy
+  @img hwanung-ungnyeo-night: pulls him down by the hair
+  @img dangun-sandalwood-altar: Hwanung lands on a mountain
+  @img ungnyeo-pass-again: You're going to walk past again
+  @img hwanung-garlic-far: The garlic reached this far
+  @img ungnyeo-hand-claim: You already have the hand
+  @img hwanung-come-down: Then come down
+  @img ungnyeo-tree-watch: The tree can watch
+  @img hwanung-ungnyeo-sash-moss: rust-red sash is somewhere in the moss
+  @img ungnyeo-seal-thief: Under my head.
+  @img ungnyeo-marry-morning: Marry me in the morning
+  @img ink-sindansu-hwanung: Hwanung lands on a mountain
+  @img joseon-fall: Someone lifts the
+  @img scene-fall-of-joseon-4: Someone lifts the
+  @img scene-fall-of-joseon-43: Someone lifts the
+  @img joseon-fall-gate: Han takes Wanggeom
+  @img scene-fall-of-joseon-26: Han takes Wanggeom
+  @img dangun-gom-asadal: Their son is
+  @img dangun-gom-taebaek: holds through a siege
+  @img scene-dangun-founding-3: Before there are any kingdoms,
+  @img scene-dangun-founding-39: Before there are any kingdoms,
+  @img scene-dangun-founding-13: There is a short way to tell
+  @img scene-dangun-founding-2: From there he hands out
+  @img scene-birch-old-joseon-2: to reach the hall. On
+  @img scene-birch-old-joseon-3: Every later crown in these
+  @img scene-fall-of-joseon-3: He holds it until the dead minister
+  @img scene-fall-of-joseon-37: He holds it until the dead minister
+  @img scene-fall-of-joseon-2: Someone lifts the bar.
+  @img scene-fall-of-joseon-39: Someone lifts the bar.
+
+######## #90 Anseung (670)
+  == The Protectorate
+  ~ Every revival needs two things: a flag and a royal. Geom Mojam has the flag.
+  ~ The empire has done it again on the Taedong. Pyongyang is a Protectorate now, run by Tang clerks who seem surprised that anyone minds. Mojam minds. He kills the
+  ~ He finds one on an island in the western sea, mending a net. His name is Anseung. His father is Yeon Jungto, the uncle who took twelve cities over to Silla. His
+  == The River Camp
+  ~ By the next spring the revival has a court, a royal, and four thousand households camped along the river. It also has a Tang army coming down the north road. Th
+[L0.7] speaker:Geom Mojam (?)
+   ko0: 강을 지키오. 평양을 지키오.
+   en0: We hold the river. We hold Pyongyang.
+   ko1: 도로 가져가려면 우리 시체를 넘어오라 하시오.
+   en1: If they want it back, they can climb over us.
+[L0.8] speaker:Anseung (?)
+   ko0: 두 해 전에 저들은 평양도 넘었소. 우리 것보다 나은 성벽을 두고도.
+   en0: They climbed over Pyongyang two years ago. With better walls than ours in the way.
+[L0.9] speaker:Geom Mojam (?)
+   ko0: 평양 땅에는 사백 년 묵은 임금들이 묻혀 계시오. 그분들을 두고 신라 사랑채로 가겠다는 거요?
+   en0: Pyongyang has kings in its soil four hundred years deep. You want to leave them for a Silla guest room?
+[L0.10] speaker:Anseung (?)
+   ko0: 땅속의 임금들은 기다려 주실 거요. 그 위의 사천 호는 못 기다리오.
+   en0: The kings in the soil will keep. The four thousand households above it won’t.
+[L0.11] speaker:Geom Mojam (?)
+   ko0: 그럼 가시오. 그 사천 호 데리고.
+   en0: Then go. Take your households.
+   ko1: 나는 남는 자들과 지키겠소.
+   en1: I’ll hold it with whoever stays.
+  ~ He says it loud, to the fires. Around the fires, men stop eating. Anseung looks at them. Nobody stands up. Nobody sits down either. He understands what that mea
+[L0.13] speaker:Anseung (?)
+   ko0: …장군 말이 맞소.
+   en0: …You’re right, General.
+   ko1: 하룻밤 자고 생각합시다.
+   en1: Let’s sleep on it.
+  ~ That night Anseung has him killed in his tent. It is the first Goguryeo blood the revival spills, and it is spilled by Goguryeo.
+  ~ In the morning the men by the fires do not ask where the general is. They pack.
+  ~ Then he takes four thousand households south, to Silla.
+  == Silla's Guest
+  ~ Munmu gives him a title, a district, and a name for the thing: Goguryeo, still standing, inside Silla. It is a useful fiction and both sides know exactly how us
+  ~ Silla settles him in a town that was somebody else's kingdom ten years ago. Within the year he is called King of Goguryeo. In time he gets a bride, and a seat a
+[L0.20] munmu (?)
+   ko0: 신라 안에 고구려 왕이라. 황제가 질색하겠군.
+   en0: A king of Goguryeo in Silla. The emperor will hate it.
+   ko1: 좋다. 인장을 줘라. 큰 걸로.
+   en1: Good. Give him a seal. A big one.
+[L0.21] munmu (?)
+   ko0: 책서 끝은 황제가 쓰는 대로 맺어라. ‘삼가고 삼갈지어다.’
+   en0: And end the patent the way the emperor ends his. “Be reverent.”
+   ko1: 두 번. 그게 제일 싫을 거다.
+   en1: Twice. He’ll hate that most of all.
+  ~ Anseung bows when the seal comes, very low: a king of Goguryeo in a Silla hall. Far north, on the Taedong, a tent is still standing with nobody in it.
+  ~ The emperor hears there is a king of Goguryeo in Silla. His general reaches for a brush instead of a sword…!
+  @img andong-grid-stamp: Pyongyang is a Protectorate now
+  @img white-tiger-banner: raises Goguryeo’s colours
+  @img revival-torch: Geom Mojam has the flag
+  @img tang-navy-fleet: Geom Mojam has the flag
+  @img tang-daming-palace-sunset: Geom Mojam has the flag
+  @img tang-imperial-procession: Geom Mojam has the flag
+
+######## #91 Letters (671)
+  == The First Letter
+  ~ In high summer, a Tang monk is rowed ashore under a white flag. He carries a letter from the fleet. The fleet belongs to Xue Rengui, the second White Tiger. He 
+[L0.2] speaker:Imyun (?)
+   ko0: 대총관께서 문안을 여쭙니다, 전하. 소리 내어 읽어 주십사 하셨습니다.
+   en0: The Commander sends his respects, Majesty. He asks that it be read aloud.
+   ko1: 소리 내어 읽어야 더 좋다고요.
+   en1: He says it reads better aloud.
+[L0.3] xuerengui (tang)
+   ko0: 신라 왕께, 동방 행군대총관 설인귀가 문안드립니다.
+   en0: To the King of Silla, from Xue Rengui, Commander of the Eastern Fleet, greetings.
+   ko1: 맑은 바람은 도성에서 그대 해안까지 만 리를 불고, 그 사이 바다는 삼천 리입니다. 그 길을 다 건너와 드릴 말씀은 하나뿐입니다.
+   en1: A clear wind blows ten thousand li from the capital to your coast, and the sea between is three thousand. I have come all of it to say one thing.
+   ko2: 그대의 아버님은 선제 앞에 무릎을 꿇었고, 일으켜 세워졌습니다. 관복을 받고, 형제를 얻고, 군대를 얻었지요. 그대는 그분의 왕관을 받았고요.
+   en2: Your father knelt before the Second Emperor and was raised up. He was given robes, and a brother, and an army. You were given his crown.
+   ko3: 그런데 이제 그대는 황제의 병사들이 피 흘린 땅을 차지하고, 황제의 반역자들을 감싸 주고 있습니다. 그대의 아우는 장안에서, 형님 소식을 물을까 봐 고개를 들지 못합니다.
+   en3: And now you take the land the emperor’s soldiers bled for, and you shelter his rebels, and your own brother waits in Chang’an, ashamed to be asked about you.
+   ko4: 돌아설 길이 남아 있을 때 돌아서십시오.
+   en4: Turn back while there is still a road to turn on.
+   ko5: 이 일 하나만 빼고 모든 일에서, 전하의 종으로 남기를 영광으로 여기며 —
+   en5: I have the honour to remain, in all things but this, Your Majesty’s servant —
+   ko6: 설인귀.
+   en6: Xue Rengui.
+  ~ The copy the archives keep is longer, and has a cicada in it.
+  ~ The monk is given a bed, a meal, and as long as it takes. The king does not go to bed at all.
+  == The Writing Room
+  ~ By the second night the king’s writing room is full of men with opinions. One of them, an official named Daeto, has more than most.
+[L0.9] daeto (silla)
+   ko0: 전하, 여기저기 말 한두 마디 누그러뜨린다고 손해 볼 건 없습니다.
+   en0: Majesty, a softer word here and there costs nothing.
+   ko1: 그 편지를 쓴 자가 바로 그 흰옷입니다. 포구에서는 여포가 살아 돌아와 우리 바다에 떠 있다고들 합니다.
+   en1: The man who wrote it is the one in white. In the ports they say Lu Bu has come back and is sitting off our coast.
+   ko2: 저들은 웅진 앞바다에 함대가 있고, 인문 공도 데리고 있습니다. 국경을 잘못 알았다고 하면 안 되겠습니까? 국경이야 다들 잘못 아는 거잖습니까.
+   en2: They have a fleet off Bear Ford. They have Prince Inmun. Could we not say we were mistaken about the border? Everyone is mistaken about borders.
+[L0.10] munmu (?)
+   ko0: 잘못 알지 않았소.
+   en0: We were not mistaken.
+   ko1: 내가 말하는 대로 쓰시오.
+   en1: Write it the way I say it.
+  ~ There is another reason the room is careful. Nine summers ago, the king killed a great lord and his whole house for calling in sick. The lord's son wasn't in th
+  == The Reply
+[L0.13] munmu (?)
+   ko0: 동방 행군대총관께, 신라 왕이 보내오.
+   en0: To the Commander of the Eastern Fleet, from the King of Silla.
+   ko1: 그대의 편지는 승려 편에 왔고, 청한 대로 소리 내어 읽었소. 과연 소리 내어 읽으니 낫더이다. 이 편지도 그럴 것이오.
+   en1: Your letter came by a monk, and was read aloud as you asked. It does read better aloud. So will this.
+  ~ He dictates the rest standing up, and does not stop for most of the night.
+[L0.15] munmu (?)
+   ko0: 정관 이십이 년에 내 아버님이 장안에 가셨소. 선제께서는 아버님을 돌말들이 늘어선 회랑으로 데려가 말씀하셨지. 평양 이남과 백제 땅은 모두 신라의 것이다, 영원히.
+   en0: In the twenty-second year of Zhenguan my father went to Chang’an. The Second Emperor took him into a gallery of stone horses and said: everything south of Pyongyang, and the whole of Baekje, shall be Silla’s, forever.
+   ko1: 아버님은 내가 스물둘일 때 그 말을 외우게 하셨소. 나는 지금도 외우오. 황제의 서기들도 외우고 있으리라 믿소.
+   en1: My father made me learn those words when I was twenty-two. I have them still. I expect the emperor’s clerks have them too.
+[L0.16] munmu (?)
+   ko0: 그대의 주작이 평양 밖에 앉아 제 말을 잡아먹고 있을 때, 내 외숙은 예순일곱이었소. 가슴까지 차는 눈 속을, 제 흰 말이 자기 대신 쌀을 지도록 그 곁에서 걸어갔소. 그대의 병사들은 수레를 보고 울었소. 그대의 장군은 쌀을 받고 그 주에 배를 타고 돌아갔고.
+   en0: When your Red Fowl sat outside Pyongyang eating his horses, my uncle was sixty-seven. He walked beside his own white horse through snow to its chest so the horse could carry rice instead of him. Your soldiers wept when they saw the carts. Your general took the rice and sailed home the same week.
+   ko1: 늦었다 하더이다. 우리는 늘 늦소. 그래도 갔소.
+   en1: We were late, he said. We are always late. We came anyway.
+[L0.17] munmu (?)
+   ko0: 그러고 나서 그대들은 백제를 백제 왕자에게 돌려주었소. 당의 도장을 찍어서, 웅진에. 그러고는 우리를 취리산이라는 산으로 데려가, 죽은 말 위에서 그자의 형제가 되겠다고 맹세하게 했지.
+   en0: Then you gave Baekje back to a Baekje prince, with a Tang seal, at Bear Ford. Then you took us up a hill called Gain and made us swear to be his brother over a dead horse.
+   ko1: 그 말은 내 외숙의 말이었소. 외숙이 손수 끌고 올라갔소. 나는 그 손을 보았소.
+   en1: The horse was my uncle’s. He walked it up himself. I watched his hands.
+[L0.18] munmu (?)
+   ko0: 평양에서는 우리 군사가 먼저 성문을 넘었소. 그러자 그대들의 도호부가 와서 우리 몫을 없음이라 적었지.
+   en0: At Pyongyang our men went through the gate first. Then your Protectorate came and wrote our share down as nothing.
+   ko1: 그대는 내가 반역자를 감싼다 하오. 나는 그대의 관리들이 세어 볼 생각도 하지 않은 백성을 감싸는 것이오.
+   en1: You say I shelter rebels. I shelter the people your officials could not be bothered to count.
+[L0.20] munmu (?)
+   ko0: 내 아우는 장안에 있소. 잘 있다고 전해 주시오. 내가 그 이름을 불렀다고도.
+   en0: My brother is in Chang’an. Tell him I am well. Tell him I said his name.
+   ko1: 그대들이 구하러 왔다던 그 나라의 왕으로 남기를 영광으로 여기며 —
+   en1: I have the honour to remain the king of the country you came to save —
+   ko2: 법민.
+   en2: Bupmin.
+  ~ Daeto copies it out fair. His hand is very steady. Later that night he writes a second letter, a short one, to a different address, and puts it in his sleeve, a
+  == The Second Letter
+[L0.23] xuerengui (tang)
+   ko0: 전하의 편지를 받아, 소리 내어 읽었습니다. 오후 한나절이 걸리더군요.
+   en0: Your Majesty’s letter has been received, and read aloud. It took most of an afternoon.
+   ko1: 그 어디에도 ‘송구하다’는 말은 없었습니다.
+   en1: Nowhere in it is the word “sorry.”
+   ko2: 전보다는 적은 일에서, 전하의 종으로 남기를 영광으로 여기며 —
+   en2: I have the honour to remain your servant, in fewer things than before —
+   ko3: 설.
+   en3: Xue.
+[L0.24] munmu (?)
+   ko0: 대총관의 편지를 받았소. 읽는 데 시간이 하나도 안 걸렸소.
+   en0: The Commander’s letter has been received. It took no time at all.
+   ko1: 그 어디에도 ‘쌀’이라는 말은 없더이다.
+   en1: Nowhere in it is the word “rice.”
+   ko2: 왕으로 남기를 영광으로 여기며 —
+   en2: I have the honour to remain the king —
+   ko3: 법.
+   en3: B.
+[L0.25] xuerengui (tang)
+   ko0: 그럼 사과는 제가 직접 받으러 가겠습니다.
+   en0: Then I will come and fetch the apology myself.
+   ko1: — 설.
+   en1: — X.
+[L0.26] munmu (?)
+   ko0: 오시오.
+   en0: Come, then.
+   ko1: — 법.
+   en1: — B.
+  == Seventy Ships
+  ~ He comes. In the tenth month, off the western coast, a Silla squadron finds seventy Tang transports riding low with grain for the garrison at Bear Ford, and tak
+[L0.30] munmu (?)
+   ko0: 백호에게 기별하시오. 그의 쌀이 도착했다고.
+   en0: Send word to the White Tiger that his rice has arrived.
+   ko1: 늦게. 늘 그렇듯이.
+   en1: Late. As usual.
+  ~ The Tang are coming south. Silla is winning. That is exactly when armies start to chase…!
+  @img munmu-dictates-hounds: Alas! While the two kingdoms stood
+  @img xue-letter-cabin: It is like a man who goes out with his sling
+
+######## #92 Stone Gate (672)
+  == Stone Gate
+  ~ Winning is the most dangerous thing an army can do.
+  ~ Silla and what is left of the Goguryeo revival hit the Tang camp under Baeksu Fortress together, and cut down several thousand. By noon the Tang are running bac
+  ~ Among the riders is a lieutenant barely old enough for the rank, with a famous father and a borrowed horse. His name is Wonsul. Like every boy in his father’s y
+[L0.6] speaker:Wonsul (?)
+   ko0: 무너진다! 저것 봐—
+   en0: They’re breaking! Look at them go—
+   ko1: 타! 다들 타, 고개 넘어가기 전에!
+   en1: Mount up! Everyone up, before they’re over the hill!
+  ~ Every banner wants its own three thousand prisoners, so every banner rides off to find them. Nobody watches the Mohe horse leave the road.
+[L0.9] speaker:Danneung (?)
+   ko0: 비장님. 대열이 이 리나 늘어졌습니다. 진이 안 섰어요.
+   en0: Lieutenant. The column’s strung out over two li. We’re not in line.
+   ko1: …그리고 저놈들 기병은 어디 갔습니까?
+   en1: …And where did their horse go?
+[L0.10] speaker:Wonsul (?)
+   ko0: 저놈들 달아나잖아. 달아나는 놈 쫓는 데 무슨 진이야.
+   en0: They’re running. You don’t form a line to chase a man who’s running.
+  ~ At Seokmun the Tang turn around. Out of the side valleys, north and south of the road, come the Mohe cavalry, into a Silla army that has not yet formed up. It i
+  ~ Wonsul sees the general ahead of him go down, and then the next one. He turns his horse toward the Mohe, which is the direction a son of Kim Yushin is supposed 
+[L0.15] speaker:Wonsul (?)
+   ko0: 놔.
+   en0: Let go.
+  ~ His aide, Danneung, has the bridle in both fists.
+[L0.17] speaker:Danneung (?)
+   ko0: 못 놓습니다.
+   en0: No.
+   ko1: 죽는 건 어려운 게 아닙니다, 비장님. 바보도 열 숨 안에 합니다.
+   en1: Dying’s not the hard part, Lieutenant. Any fool can do it in the next ten breaths.
+   ko2: 죽을 자리를 고르는 게 어렵지요. 여긴 도랑입니다. 여기서 죽으면 아무것도 못 삽니다.
+   en2: Picking where is hard. This is a ditch. Die here and you’ve bought nothing.
+[L0.18] speaker:Wonsul (?)
+   ko0: 우리 아버지가—
+   en0: My father—
+   ko1: 놔. 안 놓으면 손목을 자른다.
+   en1: Let go, or I’ll cut your hand off.
+[L0.19] speaker:Danneung (?)
+   ko0: 자르십시오. 그래도 쥐고 있을 겁니다.
+   en0: Then cut it. I’ll still be holding.
+  ~ He doesn’t cut it. Danneung turns the horse himself and runs it back down the road, east, through the dust, with a lieutenant on its back who screams at him the
+[L0.22] speaker:Wonsul (?)
+   ko0: 돌려—
+   en0: Turn around—
+   ko1: 담릉, 아버지 이름을 걸고 말한다, 말 돌려!
+   en1: Danneung, I swear on my father, turn this horse around!
+  ~ Danneung doesn’t answer. Seven Silla generals die in that valley. Wonsul is not one of them.
+  == The Apology
+  ~ Silla sends an apology to Chang’an and hands back the prisoners. Then it goes quiet, and starts building.
+  ~ The draft comes to the king’s table that winter. The court has read it. The court would like a word.
+[L0.29] speaker:True Bone minister (?)
+   ko0: 전하. ‘신의 몸을 찢으소서’라니요? 아침 싸움은 우리가 이겼습니다.
+   en0: Majesty. “Tear your servant limb from limb”? We won the morning.
+   ko1: 이긴 걸 사죄합니까?
+   en1: We are apologizing for the morning?
+[L0.30] munmu (?)
+   ko0: 오후를 사죄하는 거요.
+   en0: We’re apologizing for the afternoon.
+   ko1: 그리고 다음 성도. 그다음 성도.
+   en1: And for the next fortress. And the one after that.
+[L0.31] speaker:True Bone minister (?)
+   ko0: …이걸 누가 썼습니까?
+   en0: …Who wrote this?
+[L0.32] munmu (?)
+   ko0: 아버님이. 열세 해 전에.
+   en0: My father. Thirteen years ago.
+   ko1: 나는 서명만 하는 거요.
+   en1: I’m only signing it.
+  ~ The minister thinks it is a joke. It is a room in Surabol, a year before Baekje fell, and a father asking his son a question.
+  ~ Munmu signs. The ink is still wet when the first stones of the new walls go in.
+  ~ Wonsul came home alive. In his father’s house, that is the crime…!
+[L1.0] chunchu (silla)
+   ko0: 법민아. 백제가 무너진 다음에 무슨 일이 일어날 것 같으냐?
+   en0: Bupmin. What do you think happens after Baekje falls?
+[L1.1] munmu (?)
+   ko0: 고려를 칩니다.
+   en0: We move on Goryeo.
+[L1.2] chunchu (silla)
+   ko0: 그 다음은.
+   en0: And after that.
+[L1.3] munmu (?)
+   ko0: …통일입니다.
+   en0: …Unification.
+[L1.4] chunchu (silla)
+   ko0: 아니다. / 그 다음은 <b>우리 차례</b>다.
+   en0: No. / After that, <b>it is our turn</b>.
+  ~ He lays it out the way another man would lay out a field. The Tang will not go home. They will put a governor in Sabi and call it a commandery. They will give y
+[L1.6] chunchu (silla)
+   ko0: 그때 절대로 먼저 치지 마라. / 저들이 고려에서 지칠 때까지 기다려라. / 성은 하나씩 되찾고, 되찾을 때마다 사죄 사절을 보내라. / 저들이 원하는 건 땅이 아니라 문서니까.
+   en0: When it comes, never strike first. / Wait until they have exhausted themselves in the north. / Take the fortresses back one at a time, and send an apology after each one. / What they want is not the land. It is the paperwork.
+[L1.7] munmu (?)
+   ko0: …바다는요.
+   en0: …And the sea?
+[L1.8] chunchu (silla)
+   ko0: 바다는 마지막이다. / 저들이 말을 다 잃은 뒤에.
+   en0: The sea is last. / After they have lost the horses.
+[L1.9] munmu (?)
+   ko0: 아버지. 그걸 어떻게 다 아십니까.
+   en0: Father. How do you know all of this?
+[L1.10] chunchu (silla)
+   ko0: 이세민한테 배웠다. / 그자가 나한테 하려던 걸 그대로 적어 뒀거든.
+   en0: Li Shimin taught me. / I wrote down everything he intended to do to me.
+  @img seokmun-map: Silla is running after them
+  @img mohe-ambush: At Seokmun the Tang turn around
+  @img seokmun-feint-hook: At Seokmun the Tang turn around
+  @img chunchu-forecast: A room in Surabol, a year before Baekje falls
+  @img munmu-guilty-seal: Your servant, guilty unto death
+
+######## #93 Wonsul (672)
+  ~ Wonsul gets home a day before the news does. It doesn’t help.
+  ~ His father’s gate stays shut. The lamp above it is his mother’s. Lady Jiso is King Muyeol’s daughter, and she keeps it lit every night her men are at war. Tonig
+  == Father's House
+  ~ Inside, Yushin is told his son is at the gate. He doesn’t get up.
+[L0.5] speaker:Steward (?)
+   ko0: 나리. 작은 도련님이십니다. 다치신 것 같습니다. 말이—
+   en0: My lord. It’s the young master. He’s hurt, I think. His horse is—
+[L0.6] yushin (silla)
+   ko0: 왕명을 욕되게 하고 가문의 이름까지 더럽혔으니, 내 아들이 아니다.
+   en0: He shamed the king’s command and the family name with it. He is not my son.
+  ~ The retreat is almost beside the point. A hundred men ran that afternoon and kept their fathers. But a house that came into Silla by treaty does not get to be o
+[L0.8] yushin (silla)
+   ko0: 남의 아들은 물러나도 되네. / 내 아들은 안 되고.
+   en0: Another man’s son may retreat. / Mine may not.
+  == The King's Hall
+  ~ Yushin goes to the king and asks, in so many words, for his son to be put to death. It is the most formal request he has made in fifty years of service, and he 
+[L0.11] munmu (?)
+   ko0: 외숙. 그 애는 비장이었습니다. 비장은 따라가는 자리입니다.
+   en0: Uncle. He was a lieutenant. Lieutenants follow.
+   ko1: 석문에서 살아 돌아온 자를 다 죽이면, 다음 싸움에서 질 군사도 안 남습니다.
+   en1: If I execute every man who lived through Seokmun, I won’t have an army left to lose the next one with.
+[L0.12] yushin (silla)
+   ko0: 법은 법입니다, 전하. 화랑은 물러서지 않습니다.
+   en0: The law is the law, Majesty. A Hwarang does not retreat.
+[L0.13] munmu (?)
+   ko0: 외숙의 연무장에서, 다섯 가운데 무엇을 먼저 깨겠느냐고 물으신 적이 있소.
+   en0: On your yard you once asked me which of the five I would break first.
+   ko1: 나는 물러섬이라 했소. 열다섯이었지. 외숙은 아버님께 나를 죽이라 청하지 않으셨소.
+   en1: I said retreat. I was fifteen. You didn’t ask my father to kill me.
+[L0.14] yushin (silla)
+   ko0: …전하는 제 아들이 아니었으니까요.
+   en0: …You were not my son.
+  ~ The king has no answer to that. The old man knows it. Neither of them looks away first.
+[L0.16] yushin (silla)
+   ko0: 그럼 죽이지는 마십시오, 전하.
+   en0: Then do not execute him, Majesty.
+   ko1: 다만 제 집에 다시 들이라고는 하지 마십시오.
+   en1: But do not ask me to call him back into my house.
+[L0.17] munmu (?)
+   ko0: …뜻대로 하시오, 대장군.
+   en0: …As you wish, Marshal.
+  == The Hill Farms
+  ~ Wonsul does not go home. He goes into the hill farms east of the capital and works another man’s fields under no name at all, which is the one punishment his fa
+[L0.20] speaker:Farmer (?)
+   ko0: 괭이를 무슨 빚쟁이 잡듯 쥐네.
+   en0: You hold a hoe like it owes you money.
+   ko1: 군인이었소?
+   en1: Soldier, were you?
+[L0.21] speaker:Wonsul (?)
+   ko0: 아니오.
+   en0: No.
+   ko1: …좋은 군인은 아니었소.
+   en1: …Not a good one.
+  ~ Yushin is old now. The three sisters in the steam are not. They have kept his ledge warm for fifty years…!
+  @img seokmun-title: The retreat is almost beside the point
+  @img wonsul-gate: Another man’s son may retreat.
+
+######## #94 Kim Yushin† (673)
+  ~ Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern. The steam is thinner. The three are not. They look the same age they always
+  ~ Hyullé’s hand finds the water beside the ledge where he always sits, and stays there. Fifty years of the same ledge.
+[L0.3] narim (silla)
+   ko0: 아직도 상처 확인하듯 옷을 벗는군요.
+   en0: You still undress like a soldier checking for wounds.
+   ko1: 앉아요. 요즘은 충고도 짧고, 전쟁도. 천천히 해요. 얼굴 좀 보게요.
+   en1: Sit. The counsel is shorter these days. So is the war. Slower. Let me look at you.
+[L0.4] golhwa (silla)
+   ko0: 말할 거야.
+   en0: He’s going to say it.
+   ko1: 봐 — 셋, 둘 —
+   en1: Watch — three, two —
+[L0.5] yushin (silla)
+   ko0: 허나 폐하는 가셨소.
+   en0: But Her Majesty is gone.
+   ko1: …입에서는 아직도 그 말이 나오오.
+   en1: …I still hear myself saying it.
+[L0.6] golhwa (silla)
+   ko0: 으엑… 서천꽃밭에서도 그 인간은 직함을 가져.
+   en0: Ugh… even in the Western Flower Field she gets the title.
+   ko1: 그 인간한테 우리한테 없는 게 뭐였는데?
+   en1: What did that mortal have that we don’t?
+   ko2: …답하지 마. 김이 식을 때까지 있어. 언덕이 널 두기 전에.
+   en2: …Don’t answer. Stay until the steam drops. Before the hill keeps you.
+[L0.7] hyulle (silla)
+   ko0: 제가 — 가져온 게 —
+   en0: I didn’t — bring —
+   ko1: …그냥 거기가 더 따뜻해서요.
+   en1: …It’s just warmer there.
+   ko2: 항상 좋아하셨잖아요. 와서 앉아요. 제발요.
+   en2: You always liked it. Come sit. Please.
+  ~ The steam thins. For a breath his father’s mouth is in the water — not the counsel, only the name — and then it is steam again.
+  ~ He sits. For once he does not rush the border. Narim talks about a tree that outlived three kings. Golhwa falls asleep against the stone mid-complaint. Hyullé s
+  == The Deathbed
+  ~ Seventh month, 673. He is seventy-nine. He has fought for sixty of those years and outlived nearly everyone worth outliving.
+  ~ The King comes to the house himself, which kings do not do. Munmu does it anyway — he has known this man his entire life, and for most of it has not been sure w
+  ~ The old man's eyes are already somewhere younger.
+[L0.14] munmu (?)
+   ko0: 유신...
+   en0: Yushin…
+  ~ Nobody has called him by his bare name in forty-one years. The last one was a queen, on her coronation morning.
+[L0.16] yushin (silla)
+   ko0: 공주…
+   en0: Princess…
+[L0.17] yushin (silla)
+   ko0: …그 아이는. 밥은 먹습니까?
+   en0: …The boy. Is he eating?
+[L0.18] munmu (?)
+   ko0: 밭을 갈고 있소. 서툴게. 부를까요?
+   en0: He’s farming. Badly. Shall I send for him?
+[L0.19] yushin (silla)
+   ko0: …아닙니다.
+   en0: …No.
+   ko1: 됐습니다. 먹고 있다니.
+   en1: Good. That he’s eating.
+  ~ Kangrim reads his name three times at the bedside — Yushin. Yushin. Yushin. — before the marshal's last answer.
+[L0.22] kangrim (underworld)
+   ko0: 대장군.
+   en0: Marshal.
+   ko1: 백여덟 무승부, 친구를 끝낸 한 승, 육십 년의 쓸모.
+   en1: One hundred and eight draws, one win that ended a friend, sixty years of being useful.
+   ko2: 질문: 신라가 되려 한 겁니까 — 아니면 그들 피 없이도 더 섬길 수 있음을 증명한 겁니까?
+   en2: Question: were you becoming Silla — or proving you never needed their blood to outserve them?
+[L0.23] yushin (silla)
+   ko0: …들어가고 싶었네.
+   en0: …I wanted in.
+   ko1: 들어가고 싶은 건 부끄러운 게 아니야. 아니라고 꾸미는 게 부끄러운 거지.
+   en1: Wanting in is not shameful. Pretending I did not is.
+[L0.24] kangrim (underworld)
+   ko0: 깨끗한 대답이군.
+   en0: Clean answer.
+   ko1: 폐하의 나라엔 늦게 진실을 말한 사내를 둘 자리가 있네.
+   en1: His Majesty’s kingdom has room for men who told the truth late.
+  ~ When the escort walks out through the courtyard, Munhee is standing by the well. She is sixty-seven. She sees her brother walking beside the stranger. Nobody el
+[L0.26] munhee (?)
+   ko0: 오라버니. 이제 신라 사람이에요?
+   en0: Brother. Are you a Silla man now?
+[L0.27] yushin (silla)
+   ko0: …모르겠다. 물어봐 다오, 저들에게.
+   en0: …I don’t know. Ask them for me.
+  ~ She lets him go without asking twice. There is nobody left now who calls her little sister.
+  ~ He is buried at Geumsan with the honours of a king and the rank of a subject. Somebody will close that gap. It takes a hundred and sixty years.
+  ~ — Kim Yushin —
+  ~ His grandfather bought the family a rank with a kingdom. Everyone honoured the deal, and everyone remembered it. So he made himself the one thing they could not
+  == Lady Jiso
+  ~ After the funeral Wonsul comes down from the hills at last and asks at the gate for his mother. The lamp is out. Lady Jiso has already cut her hair for the nunn
+[L0.34] speaker:Lady Jiso (?)
+   ko0: 여자는 셋을 따른다 했다. 아비, 지아비, 아들.
+   en0: A woman has three to follow. Her father, her husband, her son.
+   ko1: 네 아버지가 너를 아들이라 부르지 않았는데, 내가 어찌 네 어미가 되겠느냐.
+   en1: My husband would not call you son. How am I to be your mother?
+  ~ She does not come to the gate. The answer is carried out by a servant who cannot look at him. Wonsul stands in the road until dark and then goes back up into th
+  ~ The king has buried his uncle. He still has one letter to answer, and a path nobody ever showed him…!
+  @img yushin-death-black: Kangrim reads his name three times at the bedside
+  @img munmu-visits-yushin: The King comes to the house himself
+  @img yushin-sketch: …I wanted in.
+  @img love-hanja: He is buried at Geumsan with the honours of a king and t
+  @img lake_remembers_01: Old now, between campaigns
+  @img lake_remembers_02: He sits. For once he does not rush
+  @img statue-yushin-equestrian: He is buried at Geumsan
+  @img statue-yushin-niche: He is buried at Geumsan with the honours of a king
+  @img wonsul-road-dark: Wonsul stands in the road until dark
+
+######## #95 The Wanggeom's Guest (673)
+  == The Second Letter
+  ~ The day after the funeral, a letter falls out of a sleeve.
+  ~ It is short. It is addressed to the Tang garrison at Bear Ford, and it promises them a door in the wall of Surabol, the way a man at Daeya once promised Baekje 
+[L0.3] daeto (silla)
+   ko0: 전하. 여기저기 말 한두 마디만 누그러뜨리면—
+   en0: Majesty. A softer word here and there—
+[L0.4] munmu (?)
+   ko0: 글방에서도 그 말을 했지.
+   en0: You said that in the writing room.
+   ko1: 내 편지를 아주 잘 옮겨 적었소, 대토. 이것도 옮겨 적으시오.
+   en1: You copied my letter very well, Daeto. Copy this one.
+  ~ It is his own death warrant. Daeto copies it out fair, and his hand is still very steady. His wife and children are made slaves. Nobody mentions it at court.
+  == The Steam Cavern
+  ~ That evening Munmu rides alone into the hills east of Surabol. His uncle never showed him the path. He finds it anyway, the way sons find what uncles hid on pur
+  ~ He strips at the rock lip as if obeying an order nobody ever gave him in writing, and steps into water so black it reflects nothing.
+  ~ Crimson leaves his shoulders the way a soldier sheds a campaign coat. Steam takes the rest. He does not look up until the water has him.
+  ~ For a long time he only stands in the water. He is forty-seven, and a king, and there is nobody left alive who taught him to ride. He lets the steam have his fa
+  ~ They smell him before they see him. Uncle’s heat, father’s road-dust, both houses in one walk. He still thinks he is alone. Golhwa’s mouth opens and does not cl
+  ~ They know him. The best of both: they said it first when he was twenty-one and came in with a jar, and they say it again now that the uncle is ash. Gaya in the 
+[L0.13] munmu (?)
+   ko0: …아직 계셨구려.
+   en0: …You’re still here.
+   ko1: 지난번엔 항아리를 들고 왔었소. 오늘 밤엔 아무것도 안 가져왔소.
+   en1: I brought a jar last time. I didn’t bring anything tonight.
+[L0.14] narim (silla)
+   ko0: 그분을 데려왔잖아요. 어깨에. 냄새가 나요.
+   en0: You brought him. On your shoulders. We can smell it.
+   ko1: 앉아요. 쓰러지기 전에—
+   en1: Sit. Before you fall—
+  ~ He looks at her like she is kind. Narim cannot finish the sentence. She is out of breath, and pretends the steam did that. Uncle’s shoulders. Father’s mouth. Sh
+[L0.16] golhwa (silla)
+   ko0: 우는 건 쟤인데 못 앉는 건 나야.
+   en0: He’s the one crying and I’m the one who can’t sit.
+   ko1: …미안. 나 무시해. 김 식을 때까지 있어.
+   en1: …Sorry. Ignore me. Stay till the steam drops.
+[L0.17] hyulle (silla)
+   ko0: 안녕. 조용히 있을게요.
+   en0: Hello. I’ll be quiet.
+  ~ That is all Hyullé gets out. She stands near him in the water and looks like she will break. He keeps the black water as a wall. He does not climb out.
+[L0.19] narim (silla)
+   ko0: 또 빠지기 전에 앉아요.
+   en0: Sit down before you fall in again.
+   ko1: 언덕이 쓰는 입이에요. 지혜요, 물에 서서 한 번만 물으면. 외숙은 갔어요. 언덕은 안 가요.
+   en1: We are the mouths the hill uses. Wisdom, if you stand in the water and ask once. The uncle is gone. The hill is not.
+[L0.20] munmu (?)
+   ko0: 그가 죽어서 왔소.
+   en0: I came because he died.
+   ko1: …서쪽은 가져온 채로 남겠소.
+   en1: …Will the west stay taken.
+  ~ Something goes out of the cave. When they speak again the eyes are solid: green, cyan, ember.
+[L0.22] narim (silla)
+   ko0: 서쪽이 당신 이름을 가져가고 평화라 부를 거예요.
+   en0: The west will take your name and call it peace.
+   ko1: 다른 손에 바다를 두어요.
+   en1: Keep a sea in the other hand.
+[L0.23] golhwa (silla)
+   ko0: 그건 언덕이었어. 이건 나야.
+   en0: That was the hill. This is me.
+   ko1: 그래도 또 와. 오늘처럼 빈손으로. 그게 더 좋아.
+   en1: Come back anyway. With nothing in your hands, like tonight. We like you better that way.
+  == The Man on the Water
+  ~ Then the steam goes thin enough to see through, and a man stands on the water as if the lake were a court floor — old robes, sandalwood-coloured light, a face t
+[L0.26] dangun (joseon)
+   ko0: 여섯 살 때 모두를 위한 임금을 원했다.
+   en0: You wanted a king for all when you were six.
+   ko1: 네가 찾는 칭호는 아버지의 개혁보다 오래되었다.
+   en1: The title you are looking for is older than your father’s reforms.
+   ko2: 왕검 — 성골도, 진골도 아닌. 하늘이 내려왔을 때 머문 첫 임금.
+   en2: Wanggeom — not Sacred Bone, not True Bone. The first who stayed when heaven descended.
+[L0.27] munmu (?)
+   ko0: 누구십니까.
+   en0: Who are you.
+   ko1: 어느 조정에서 보내신 겁니까.
+   en1: Which court sent you.
+[L0.28] dangun (joseon)
+   ko0: 아사달은 흙이 되었다.
+   en0: Asadal is dust.
+   ko1: 명은 아니다.
+   en1: The mandate is not.
+   ko2: 외숙이 입 밖에 내지 못한 것을 끝내라.
+   en2: Finish what your uncle could not name aloud.
+  ~ Munmu tells no one. The court records note only a day’s ride and a night’s silence. But he has heard the bear’s son’s name before, in his mother’s version, with
+  ~ Kim Punghun said he could wait for a ship. The ship is here…!
+  @img best_of_both_01: best of both
+  @img bupmin-robe-falls: Crimson leaves his shoulders
+  @img munmu-cave-profile: He strips at
+  @img munmu-cave-low: steps into water so black
+  @img dangun-over-shoulder: a man stands on the water
+  @img dangun-cave-numinous: Wanggeom — not Sacred Bone
+  @img munmu-dangun-cavern: a man stands on the water
+  @img goddesses-see-bupmin: Gaya in the shoulders
+  @img bupmin-surprised-bare: He still thinks he is alone
+  @img goddesses-bupmin-glow: The west will take your name
+  @img narim-sentence-dies: Narim cannot finish the sentence
+  @img hyulle-near-him: She stands near him
+
+######## #96 Maeso (675)
+  == The Landing
+  ~ Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showing the enemy fleet the way into his own 
+  ~ He is older now. The white coat is a reputation he can no longer take off. Tang’s eastern command sits on his shoulders the way a yoke sits on an ox that still 
+  ~ Punghun stands at the bow beside him. He left Silla a boy, a hostage in the emperor’s guard. He is coming back as a guide.
+[L0.5] xuerengui (tang)
+   ko0: 이 해안을 아십니까, 김 공.
+   en0: You know this coast, Master Kim.
+[L0.6] speaker:Kim Punghun (?)
+   ko0: 아버지의 해안을 압니다.
+   en0: I know my father’s coast.
+   ko1: 왕이 그걸 제가 팔 물건으로 만들어 주었지요.
+   en1: The king made it mine to sell.
+[L0.7] xuerengui (tang)
+   ko0: 저는 아무것도 사지 않습니다.
+   en0: I am not buying anything.
+   ko1: 말을 내릴 모래가 단단한 곳을 여쭐 뿐입니다.
+   en1: I only ask where the sand is firm. For the horses.
+  ~ Punghun looks at the beach below Cheon Fortress for a long time.
+[L0.9] speaker:Kim Punghun (?)
+   ko0: …저기요. 그만하면 단단합니다.
+   en0: …There. Firm enough.
+[L0.10] xuerengui (tang)
+   ko0: 신라… 예전에 우리와 같이 싸웠던 나라.
+   en0: Silla… the country that once fought beside us.
+   ko1: 이제 그 나라가, 나의 마지막 상대인가.
+   en1: And now that country is to be my last opponent.
+  ~ He does not curse them. He checks the ji’s bindings, the same way he once checked plough-rope, and goes ashore.
+  ~ Above the beach at Cheon Fortress, a Silla general named Munhun lies flat in the dune grass and watches the boats come in. He has been told to stop the landing.
+  ~ Beside him lies a ship captain named Sideuk, who has commanded boats for twelve years and never once won anything.
+[L0.14] speaker:Sideuk (?)
+   ko0: 장군, 말을 내립니다. 말부터요.
+   en0: General, they’re unloading the horses. Horses first.
+[L0.15] speaker:Munhun (?)
+   ko0: 그래. 내리게 둬.
+   en0: Good. Let them.
+[L0.16] speaker:Sideuk (?)
+   ko0: 상륙을 막으라고 하셨는데요.
+   en0: We were told to stop the landing.
+[L0.17] speaker:Munhun (?)
+   ko0: 막을 거다.
+   en0: We will.
+   ko1: 젖은 모래에 선 말은 못 돈다. 배가 빌 때까지 기다려.
+   en1: A horse on wet sand can’t turn. Wait till the boats are empty.
+[L0.18] speaker:Sideuk (?)
+   ko0: …젖은 모래라. 기억해 두겠습니다.
+   en0: …Wet sand. I’ll remember that.
+[L0.19] speaker:Sideuk (?)
+   ko0: 장군. 뱃머리에요. 흰옷 입은 자.
+   en0: General. At the bow. The one in white.
+   ko1: 당나라 놈들은 여포가 환생한 거라고 합니다. 우리 애들도 다 들었고요.
+   en1: The Tang call him Lu Bu reborn. Our boys have heard it too.
+[L0.20] speaker:Munhun (?)
+   ko0: 그럼 여포도 남들처럼 발 좀 적시라지.
+   en0: Then Lu Bu can get his feet wet like everybody else.
+   ko1: 가만 엎드려 있어.
+   en1: Lie still.
+  ~ When the last horse is off, Munhun stands up.
+[L0.22] xuerengui (tang)
+   ko0: 배로.
+   en0: To the boats.
+  ~ By evening Munhun has fourteen hundred heads, forty Tang ships, and a thousand horses standing in the surf with nobody to ride them. The sea road is closed agai
+  ~ Nobody ever learns whether Punghun knew about the sand. Xue does not ask him. He sends him back to Chang’an on the next empty transport, and neither country wri
+  == Maeso Fortress
+  ~ So the war moves inland, to a fortress on the Imjin where the road to Surabol begins.
+  ~ The army at Maeso is mostly Mohe, and the Mohe are mostly horse. Thirty thousand of them graze the flats east of the walls. The grass is outside. No fortress on
+[L0.31] speaker:Silla commander (?)
+   ko0: 성벽은 두고.
+   en0: Forget the walls.
+   ko1: 말뚝 줄을 끊어. 말부터 데려와.
+   en1: Cut the picket lines. Bring me the horses.
+  ~ The worst stretch of the line is under the walls, where the archers can see. A man nobody in the capital has seen for three years asks for it.
+[L0.34] speaker:Silla commander (?)
+   ko0: 이름은?
+   en0: Name?
+[L0.35] speaker:Wonsul (?)
+   ko0: 비장입니다. 석문의.
+   en0: Lieutenant. Of Seokmun.
+  ~ Before dawn the herd moves all at once, and not toward the fortress.
+[L0.38] speaker:Mohe rider (?)
+   ko0: 말! 말이 간다!
+   en0: The horses! The horses are going!
+  ~ Horses are the thing. An army that has lost thirty thousand horses on the Imjin is not riding to Surabol next spring, or the spring after. Li Jinxing knows it b
+[L0.41] speaker:Silla commander (?)
+   ko0: 보내 줘라.
+   en0: Let them go.
+   ko1: 말부터 세. 창은 그다음이다.
+   en1: Count the horses first. Then the spears.
+  ~ Afterwards the king sends for the lieutenant to give him rank. Wonsul comes in still smelling of horses.
+[L0.43] munmu (?)
+   ko0: 그대 아버지였다면—
+   en0: Your father would have—
+[L0.44] speaker:Wonsul (?)
+   ko0: 아버지라면 제가 한나절을 빚졌다 하셨을 겁니다, 전하. 아직 다 못 갚았습니다.
+   en0: My father would have said I owe one afternoon, Majesty. I haven’t paid it yet.
+  == The Fleet
+  ~ Out at sea off Cheon Fortress, Xue hears it from a courier: the army at Maeso has lost its horses.
+[L0.47] xuerengui (tang)
+   ko0: …말을 잃었군.
+   en0: …So the horses are gone.
+   ko1: 농부에게 말을 잃는 일은… 밭을 잃는 일과 같소.
+   en1: For a farmer, losing horses… is like losing the field.
+  ~ He withdraws without spectacle. The chronicle will remember Silla’s thirty thousand horses; it will remember less how quietly the White Tiger II accepted that t
+  == Surabol
+  ~ In Surabol the number arrives a day ahead of the generals.
+[L0.51] speaker:Messenger (?)
+   ko0: 삼만 삼백팔십입니다, 전하.
+   en0: Thirty thousand, three hundred and eighty, Majesty.
+[L0.52] munmu (?)
+   ko0: …목이?
+   en0: …Heads?
+[L0.53] speaker:Messenger (?)
+   ko0: 말입니다, 전하.
+   en0: Horses, Majesty.
+  ~ After they have lost the horses. Munmu is nearly fifty and still, occasionally, checking his father’s work against the day.
+  ~ The Tang history says Maeso was three Tang victories, after which Silla begged pardon. It does not mention the horses.
+[L0.56] munmu (?)
+   ko0: 그럼 배를 모아라.
+   en0: Then get me ships.
+   ko1: 이제 바다다.
+   en1: It’s the sea now.
+  ~ One last river mouth. One captain who has never won a fight. Three tries to end a war…!
+  @img maeso-map: He does not curse them. He checks the ji’s bindings, the
+  @img munhun-rises: When the last horse is off, Munhun stands up.
+  @img maeso-title: Horses are the thing. An army that has lost thirty thous
+  @img white-tiger-withdraws: He withdraws without spectacle
+  @img munmu-crimson-tide: After they have
+
+######## #97 Final Ford (676)
+  ~ In the second month, the emperor's headquarters quietly leaves Pyongyang. Then it moves further. Then nobody mentions it. Xue still has a fleet, and a fleet doe
+  == Final Ford
+  ~ The last of it happens at the mouth of the Geum, in the eleventh month. Sixteen years ago the Tang came in through this same water, onto a mile of grey mud, whi
+[L0.5] speaker:Silla helmsman (?)
+   ko0: 사찬님, 배 위에 망루를 올렸어요. 망루를요.
+   en0: Sachan, they’ve built towers. On the ships. Towers.
+[L0.6] speaker:Sideuk (?)
+   ko0: 그럼 무겁겠군.
+   en0: Then they’re heavy.
+  ~ The Silla ships belong to Sideuk, the captain who has never won anything. He takes them out on the ebb and loses.
+[L0.8] speaker:Silla helmsman (?)
+   ko0: 사찬님, 또 나갑니까?
+   en0: Sachan, we’re going out again?
+[L0.9] speaker:Sideuk (?)
+   ko0: 물때 바뀌면.
+   en0: When the tide turns.
+  ~ He goes out again and loses again.
+[L0.12] speaker:Silla helmsman (?)
+   ko0: …세 번째도요?
+   en0: …And a third time?
+[L0.13] speaker:Sideuk (?)
+   ko0: 저놈들 배는 크다.
+   en0: Their ships are big.
+   ko1: 큰 배는 개펄에서 못 돈다. 끌고 들어와.
+   en1: A big ship can’t turn on the mudflats. Draw them in.
+   ko2: 젖은 모래 위의 말처럼.
+   en2: Like a horse on wet sand.
+  == The Third Sortie
+  ~ The third time, Sideuk does not try to win. He runs.
+  ~ He takes eight boats out toward the Tang flagship on the last of the flood, close enough to be insulting. Arrows thud into his deck. He lets them. Then he turns
+[L0.18] speaker:Silla helmsman (?)
+   ko0: 옵니다! 다— 사찬님, 큰 놈들이 다 따라옵니다!
+   en0: They’re coming! All of them— Sachan, the big ones are coming!
+[L0.19] speaker:Sideuk (?)
+   ko0: 당연하지. 두 번이나 이겼으니까.
+   en0: Of course they are. They’ve beaten us twice.
+   ko1: 계속 달려. 겁먹은 척해.
+   en1: Keep running. Look scared.
+[L0.20] speaker:Silla helmsman (?)
+   ko0: 척하는 거 아닙니다, 사찬님.
+   en0: I’m not pretending, sir.
+  ~ The tide turns under them. Sideuk’s boats float in a hand’s depth of water. The Tang tower-ships need a man’s height. One by one, the great hulls feel the mud t
+[L0.23] speaker:Sideuk (?)
+   ko0: 지금이다. 돌아. 다들 돌아!
+   en0: Now. Turn. Everyone, turn!
+  ~ What follows is twenty-two fights, large and small, in water too shallow for the ships that started them. Silla men cross the mud on planks, on oars, on their o
+  == The Flagship
+  ~ On the flagship, Xue Rengui stands at the rail and watches his fleet sit down in the mud like oxen in a flooded field. He is sixty-two. He knows exactly what he
+[L0.28] speaker:Tang officer (?)
+   ko0: 대총관. 밤 물때에 기함은 띄울 수 있습니다. 나머지는—
+   en0: Commander. We can still float the flagship on the night tide. The others—
+[L0.29] xuerengui (tang)
+   ko0: 나머지는 철을 잘못 맞춰 심은 밭이오.
+   en0: The others are a field we planted in the wrong season.
+   ko1: 뜨는 것만 띄우시오. 나머지 배에서는 사람만 내리시오. 진흙에 아무도 두고 가지 마시오.
+   en1: Float what floats. Take the men off the rest. Leave no one in the mud.
+  ~ He does not curse Silla. He never has. At midnight the flagship lifts off the mud, and he turns her west.
+[L0.32] xuerengui (tang)
+   ko0: 조상님.
+   en0: Ancestors.
+   ko1: 조금만 기다려 달라 말씀드렸지요. 말씀드린 것보다 길어졌습니다.
+   en1: I asked you to wait a little longer. It was longer than I said.
+   ko2: 동쪽은 못 가져갑니다. 할아버님 극은 아직 있습니다.
+   en2: I am coming home without the east. I still have Grandfather’s ji.
+  ~ No treaty comes after it, and no envoy. The Tang ships simply keep going west, and nobody on them looks back.
+  == Surabol
+  ~ In Surabol the king waits a month for a letter from the west, so that he will at least have something to refuse. None comes.
+[L0.36] munmu (?)
+   ko0: 우리가… 이긴 거냐…?
+   en0: Have we… won…?
+[L0.37] speaker:Court scribe (?)
+   ko0: 졌다고 알려 온 사람은 아무도 없습니다, 전하.
+   en0: Nobody has told us we haven’t, Majesty.
+  ~ He laughs, for the first time since the funeral, and goes to tell his mother.
+  ~ The boy who stole a sentence at six is about to be king of all Samhan. His mother would like him to hold still…!
+  @img emperor-back: Have we… won…?
+  @img emperor-robe-ribbon: In the second
+  @img gibeolpo-title: The last of it happens at the mouth of the Geum, in the 
+  @img munmu-chunma-sea: The last of it happens at the mouth of the Geum
+
+######## #98 The King for All (676)
+  ~ Bupmin, King Munmu now, stands where a six-year-old once stole a sentence. The war is won, the ally has been shown the door, and the childhood dream has had the
+  == The Collar
+  ~ It ends where it began: a woman in a room, getting someone else ready.
+  ~ Munhee is seventy. She is the last person alive who remembers all of it from the inside, and she is straightening her son's collar. She was twenty-six when this
+[L0.5] munhee (?) look=elder
+   ko0: 가만있어라. 목이 삐뚤다.
+   en0: Hold still. Your collar is crooked.
+[L0.6] munmu (?)
+   ko0: 어머니. 저 오늘 삼한의 왕이 됩니다.
+   en0: Mother. Today I become king of all Samhan.
+[L0.7] munhee (?)
+   ko0: 그러니까 더 가만있어야지.
+   en0: Then all the more reason to hold still.
+[L0.8] munmu (?) look=king
+   ko0: 어머니.
+   en0: Mother.
+   ko1: 어린 문장을 지켰어요.
+   en1: I kept the childhood sentence.
+[L0.9] munhee (?)
+   ko0: 알아.
+   en0: I know.
+   ko1: 너를 막으려던 나라마다 짐을 싸 줬으니까.
+   en1: I packed for every country that tried to stop you.
+  ~ She has been in the room for every single one of them. The sword was never in her hand, and she is the only one still standing.
+[L0.11] munhee (?)
+   ko0: 네 누이는 이 방에서 대야로 떠났다.
+   en0: Your sister rode out of this room to Daeya.
+   ko1: 가만있어. 문 하나에 자식을 또 잃을 생각은 없다.
+   en1: Hold still. I’m not losing another one to a door.
+  ~ A letter has come from Chang’an. It is the first in Inmun’s hand in twenty years, and it is very short.
+[L0.13] inmun (silla)
+   ko0: 형님.
+   en0: Brother.
+   ko1: 황제가 한 철 동안 저를 신라 왕으로 삼았습니다. 해안 길까지 갔는데 황제가 마음을 바꾸었지요. 제가 물러났다고들 합니다. 저도 그렇다 했습니다.
+   en1: The emperor made me King of Silla for a season. I got as far as the coast road before he changed his mind. I am told I abdicated. I agreed.
+   ko2: 형님이 제 이름을 불렀다는 말을 들었습니다. 들었습니다.
+   en2: Word came that you said my name. I heard it.
+   ko3: — 인문
+   en3: — Inmun
+[L0.14] munhee (?)
+   ko0: 글씨는 하나도 안 늘었구나.
+   en0: His handwriting hasn’t improved.
+  ~ She folds it into his sleeve, next to his arm, where he will feel it all day.
+[L0.16] munmu (?)
+   ko0: 아버지가 늘 하시던 말씀이 있었잖습니까. 천 년 가는 나라.
+   en0: Father used to say a thing. A kingdom that lasts a thousand years.
+[L0.17] munhee (?)
+   ko0: 그이는 늘 숫자를 크게 불렀다.
+   en0: He always did round the numbers up.
+  ~ Silla lasts nine hundred and ninety-two years. He was, as usual, very slightly optimistic and essentially correct.
+  == The Hall
+  ~ The hall is full of bone. True Bone in the front rows, Head-rank Six behind them, and behind them the new men nobody has a rank for yet: Baekje captains who fou
+[L0.21] munmu (?)
+   ko0: 문을 여시오.
+   en0: Open the doors.
+   ko1: 전부. 마당 쪽도.
+   en1: All of them. The yard too.
+  ~ The doors open. The yard comes up to the threshold and stops there, the way people stop at a river.
+[L0.23] munmu (?)
+   ko0: 열여섯 해 전쟁은 가진 것 없는 백성에게서 꾼 곡식으로 치렀소.
+   en0: Sixteen years of war were paid for with grain borrowed from people who had none.
+   ko1: 전쟁 동안 진 곡식 빚은 모두 없던 것으로 하오. 오늘부로.
+   en1: Every grain debt from the war years is cancelled. Today.
+   ko2: 우리 깃발 아래 피 흘린 백제와 고구려 사람은 신라의 관등을 받소. 같은 관등을.
+   en2: The men of Baekje and Goguryeo who bled under our banners will hold Silla ranks. The same ranks.
+[L0.24] speaker:True Bone elder (?)
+   ko0: 전하. 골품은 왕좌보다 오래되었습니다. 백제 장수 따위가 앉는 자리에—
+   en0: Majesty. The bone ranks are older than the throne. If a Baekje captain sits where—
+[L0.25] munmu (?)
+   ko0: 여섯 살 때 내가 그랬소. 모두 내 말을 들어야 한다고. 뼈 있는 사람들도.
+   en0: When I was six I said everyone would have to listen to me. Even the bone people.
+   ko1: …경을 두고 한 말이었소.
+   en1: …I meant you, my lord.
+  ~ Somebody in the yard laughs. Then the whole yard does. The elder sits down. It is the first time that hall has ever heard the yard.
+[L0.27] munmu (?)
+   ko0: 외숙께 여쭌 적이 있소. 나라 전부냐, 나라를 위해 피 흘리는 사람 전부냐. 끝내 대답을 안 해 주셨지.
+   en0: I asked my uncle once. Every kingdom, or every person who bleeds for one. He never answered.
+   ko1: 둘 다요. 그렇게 적으시오.
+   en1: Both. Write that down.
+  == The Eastern Star
+  ~ Thirty-four winters ago, three men looked up at one star and wanted the same title. One died a guest in Chang’an, still calling himself a king. One died in his 
+  ~ That night the son climbs the hill above Surabol where two boys once lay on their backs, arguing about the sky.
+[L0.31] munmu (?)
+   ko0: 외숙은 늘 저게 행성이라 하셨지.
+   en0: Uncle always said it was a planet.
+  ~ It sits among the stars without being one of them. He looks at it until the cold gets into his knees. Then he walks down to his own house, like anybody.
+  == The Ancestral Temple
+  ~ In the morning he reports to his father. The tablet stands in the ancestral temple, and beside it hangs the iron oath from Mount Gain, the one he swore over his
+[L0.35] munmu (?)
+   ko0: 아버님. 깼습니다. 한 줄도 남김없이.
+   en0: Father. I broke it. Every line.
+   ko1: 백제는 우리 것입니다. 그 왕자는 낙양에서 땅 없는 작위를 받았습니다.
+   en1: Baekje is ours. Its prince is in Luoyang, with a title and no country.
+   ko2: 그 아들들은 잘 자란답니다. 알아봤습니다. 신들이 우리 둘 다를 봐주신 모양입니다.
+   en2: His sons are growing. I asked. The gods have been lenient with us both.
+  ~ He leaves the oath where it hangs. The kings of Silla will have to walk past it every time they visit their fathers. He wants them to read it.
+  == Five Summers Later
+  ~ Five summers later the king for all is dying, and he has left instructions his ministers do not like. No mound in the hills beside his fathers. Burn him, and pu
+[L0.39] munmu (?)
+   ko0: 전쟁은 끝났소. 칼을 녹이시오. 보습을 만드시오.
+   en0: The war is over. Melt the swords. Make ploughs.
+   ko1: 장터와 나루의 세금을 가볍게 하시오.
+   en1: Lighten the tax at the markets and the ferries.
+   ko2: 그리고 내 무덤은 짓지 마시오. 그 돌을 날라야 하는 건 백성이오.
+   en2: And don’t build me a tomb. The people would only have to carry the stones.
+  ~ Kangrim reads his name three times at the bedside — Bupmin. Bupmin. Bupmin. — the name the boy stole a sentence with, not the one the ledger writes.
+[L0.41] kangrim (underworld)
+   ko0: 문무왕.
+   en0: King Munmu.
+   ko1: 열여섯 해의 전쟁, 언덕 하나, 문밖으로 내보낸 동맹 하나, 그리고 전각에 들인 마당 하나.
+   en1: Sixteen years of war, one hill, one ally shown the door, and a yard you let into the hall.
+   ko2: 하나만 묻고 갑시다. 신라의 왕이었소 — 아니면 모두의 왕이었소?
+   en2: One question, then we walk. Were you a king of Silla — or a king for all?
+[L0.42] munmu (?)
+   ko0: …뼈 없는 사람들한테 물으시오.
+   en0: …Ask the ones with no bone.
+   ko1: 그쪽이 더 많으니까.
+   en1: There are more of them.
+[L0.43] kangrim (underworld)
+   ko0: 장부는 그들에게 무엇 하나 물어본 적이 없소.
+   en0: The ledger has never asked them anything.
+   ko1: …내가 시작해야겠군. 갑시다. 바다는 이쪽이오.
+   en1: …I suppose I’ll start. Come. The sea is this way.
+  ~ They burn him on the shore and put his bones under a rock a hundred paces out to sea, which is still there, and is the only royal tomb in the world with tides.
+  == The Tablet
+  ~ Eleven years after the tide closes over him, an envoy comes from the Empress’s court with a complaint that is thirty years late. King Muyeol’s tablet in Silla’s
+[L0.48] speaker:Tang envoy (?)
+   ko0: 그대들의 선왕이 선제의 묘호를 빌려 쓰고 있소.
+   en0: Your late king has borrowed a name that belongs to the Second Emperor.
+   ko1: 고치시오.
+   en1: Change it.
+  ~ Munmu’s son answers in writing.
+[L0.50] speaker:Silla reply (?)
+   ko0: 선왕께서는 덕이 자못 높으셨고, 살아 계실 때 김유신이라는 어진 신하를 얻어 한마음으로 다스려 삼한을 하나로 만드셨습니다.
+   en0: Our late king had a great deal of virtue. While he lived he had a good minister, Kim Yushin, and the two of them were of one mind, and they made the three Han one.
+   ko1: 그만하면 이름 하나 값은 된다고 여겼습니다. 이미 임자가 있는 줄은 몰랐습니다.
+   en1: We thought that was worth a name. We did not know it was already taken.
+  ~ The court reads the name Kim Yushin, and an old archivist goes looking. He finds a note in the late emperor’s own hand, from his boyhood: a voice in the sky onc
+  ~ But we left someone in the snow. The winter Pyongyang fell, a Mohe father walked north with something in his pack…!
+  @img two-kings-crowns: Munhee is seventy. She is
+  @img three-crowns: She has been in the room for every single one of them. T
+  @img thrones-succession-blue: last person alive who remembers
+  @img three-kingdoms-flags-unified: getting someone else ready
+  @img unified-silla-wide: They burn him on the shore
+  @img munhee-witness: They burn him on the shore
+  @img munmu-king-for-all: They burn him on the shore
+  @img three-kingdoms-unity: They burn him on the shore
+  @img peace-moon-crane: They burn him on the shore
+  @img unified-silla-day: They burn him on the shore
+  @img unified-silla-banners: They burn him on the shore
+  @img unified-silla-two-thrones: They burn him on the shore
+  @img munhee-witness-profile: They burn him on the shore
+  @img seokguram-disc: They burn him on the shore
+  @img bulguksa-twin-stamps: They burn him on the shore
+  @img emille-bell-ring: They burn him on the shore
+  @img cheomseongdae-bottle: They burn him on the shore
+  @img anapji-mirror: They burn him on the shore
+  @img munmu-tide-rock: They burn him
+  @img ink-flower-field-sunduk: They burn him
+  @img munmu-chunma-hill: stands where a six-year-old once stole a sentence
+
+######## #99 Balhae (698)
+  ~ The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds e
+  ~ In the pack, under dried millet and a spare pair of boots, wrapped in a strip of red silk, rides a piece of the Goguryeo crown no longer than a finger: one gold
+[L0.4] daejoyoung (?)
+   ko0: 아버지…
+   en0: Father…
+   ko1: 아버지, 발이… 발이 안 느껴져요.
+   en1: Father, my feet… I can’t feel my feet.
+[L0.5] gulgul (goguryeo)
+   ko0: 그럼 됐다.
+   en0: Good.
+   ko1: 아픈 것보단 낫다.
+   en1: Better than feeling them.
+[L0.6] daejoyoung (?)
+   ko0: 그게 무슨— 아버지!
+   en0: What kind of— Father!
+[L0.7] gulgul (goguryeo)
+   ko0: 저기. 바위 밑.
+   en0: There. Under the rock.
+   ko1: 조금만 더 가.
+   en1: A little more.
+  == The Cave
+  ~ The cave is a crack in the mountain’s side, deep enough to put the wind behind them. Gulgul strikes the flint four times before the moss takes. The fire is the 
+[L0.10] daejoyoung (?)
+   ko0: 아버지. 그거… 뭐예요?
+   en0: Father. What’s… that?
+   ko1: 반짝이는 거. 그거요.
+   en1: The shiny thing. That.
+   ko2: 금이에요? 우리 금 있었어요? 그럼 왜 맨날 조죽만—
+   en2: Is that gold? We had gold? Then why is it always millet gruel—
+[L0.11] gulgul (goguryeo)
+   ko0: 목소리 낮춰.
+   en0: Keep your voice down.
+  ~ Gulgul looks at the cave mouth for a long time, as if the snow might be listening. Then he pulls the red silk free. On his palm lies the gold branch, bent where
+[L0.13] gulgul (goguryeo)
+   ko0: 왕관 조각이다.
+   en0: A piece of the crown.
+   ko1: 고구려 왕관.
+   en1: The Goguryeo crown.
+[L0.14] daejoyoung (?)
+   ko0: …훔친 거예요?
+   en0: …Did you steal it?
+[L0.15] gulgul (goguryeo)
+   ko0: 가져온 거다.
+   en0: I took it.
+   ko1: 아무도 안 가져가길래.
+   en1: Nobody else was going to.
+[L0.16] daejoyoung (?)
+   ko0: 근데 왜 아버지가요?
+   en0: But why you?
+   ko1: 아버지는… 말갈이잖아요. 다들 그러던데.
+   en1: You’re… Mohe. Everybody says so.
+[L0.17] gulgul (goguryeo)
+   ko0: …그래. 말갈이다.
+   en0: …Yes. I’m Mohe.
+  ~ Gulgul is not a man who tells stories. He tells this one the way he would report a border skirmish: in order, without adjectives, looking at the fire instead of
+[L0.19] gulgul (goguryeo)
+   ko0: 내가 너보다 어렸을 때다. 마을이 불탔다.
+   en0: I was younger than you. Our village burned.
+   ko1: 고구려 군사들이 왔다 갔지. 연 장군의 군사들.
+   en1: Goguryeo soldiers came through. General Yeon’s men.
+   ko2: 나는 문간에 서 있었다. 지붕도 없는 집 문간에.
+   en2: I stood in the doorway. A doorway with no roof over it.
+[L0.20] daejoyoung (?)
+   ko0: …왜요?
+   en0: …Why?
+[L0.21] gulgul (goguryeo)
+   ko0: 몰라.
+   en0: Don’t know.
+   ko1: 거기가 우리 집이었으니까.
+   en1: It was our house.
+  ~ The fire has sunk to coals. Gulgul turns the gold over once in his fingers.
+[L0.24] gulgul (goguryeo)
+   ko0: 그 말을 몇 번이나 했는지 모른다.
+   en0: I don’t know how many times he said it.
+   ko1: 겨울마다. 술 마실 때도, 안 마실 때도. 싸우기 전에도, 싸운 뒤에도.
+   en1: Every winter. Drunk or sober. Before a fight, after one.
+  ~ He wraps the silk around the branch again and puts it in the boy’s hands.
+[L0.26] gulgul (goguryeo)
+   ko0: 웃옷 안에 넣어라.
+   en0: Keep it under the coat.
+   ko1: 성왕의 활에 걸고 — 금을 보면, 우리가 나라였다는 걸 기억할 테니까.
+   en1: By the Holy King’s bow — if they see gold, they will remember we were a country.
+[L0.27] daejoyoung (?)
+   ko0: 아버지 —
+   en0: Father —
+   ko1: 멈추면… 뭐라고 불러요?
+   en1: When we stop… what do we call it?
+[L0.28] gulgul (goguryeo)
+   ko0: 그는 고구려라 불렀다.
+   en0: He called it Goguryeo.
+   ko1: 나머지는 지쳐서 고려라 했다.
+   en1: Everyone else got tired and said Goryeo.
+   ko2: 너는 — 그가 원했을 방식으로 말해라.
+   en2: You — you say it the way he would have wanted.
+  ~ The boy holds the bundle to the coals. It is warm already, from the pack, from his father’s back. Outside, the snow keeps filling the cave mouth. He presses the
+[L0.30] daejoyoung (?)
+   ko0: 고구려는… 죽지 않는다…!
+   en0: Goguryeo never dies…!
+  ~ The last coal goes out. Cut to black.
+  == Thirty Winters On
+  ~ They walk on. Thirty years later, in 698, the boy will raise a kingdom called Balhae on those three words, and the shard will still be warm.
+  ~ His capital will be a stamped grid of halls on the Mudanjiang. Lotus tiles. A stone lantern. Nobody there will need telling what the old country was called.
+  ~ So this story ends with two kings under one sky, each sure the sky meant him. In the south, a dead king lies under a rock in the sea, listening for the ones wit
+  ~ Dae Joyoung keeps walking north, one hand on the gold under his coat.
+  ~ THE END
+  ~ A doorway with no house behind it. Snow on the ash. A Mohe boy holds a stick the way he has seen men hold spears. A big man in red-edged armor gets down off a r
+[L1.1] gesomun (goguryeo)
+   ko0: 이놈 봐라. 다 타 버린 집을 지키고 섰네.
+   en0: Look at this one. Guarding a house that’s already burned.
+   ko1: 좋다. 타라.
+   en1: Good. Get on.
+  ~ Years later, on the north wall of Pyongyang in a winter worse than this one, the same man stands with the grown boy a step behind him and the river frozen white
+[L1.3] gesomun (goguryeo)
+   ko0: 춥냐.
+   en0: Cold?
+[L1.4] gulgul (goguryeo)
+   ko0: …아닙니다.
+   en0: …No, sir.
+[L1.5] gesomun (goguryeo)
+   ko0: 거짓말 마라. 나도 춥다.
+   en0: Liar. I’m cold too.
+   ko1: 그래도 기억해. 왕은 죽고, 조정은 지치고, 성은 무너져도—
+   en1: Remember it anyway. Kings die, courts get tired, walls come down—
+   ko2: <b>고구려는 죽지 않는다.</b>
+   en2: <b>Goguryeo never dies.</b>
+  @img balhae-wide: He called it Goguryeo.
+  @img balhae-statue: He called it Goguryeo.
+  @img balhae-new-dawn: Thirty years later
+  @img balhae-two-courts: two kings under one sky
+  @img balhae-north-walk: When we stop… what do we call it?
+  @img sanggyeong-grid: stamped grid of halls on the Mudanjiang
+  @img balhae-lotus-tile: Lotus tiles
+  @img balhae-stone-lantern: A stone lantern
+  @img balhae-snow-ridge: the mountains of Manchuria do not care who won
+  @img balhae-snow-tracks: His son walks in his tracks
+  @img balhae-smoke-behind: Behind them is the smoke
+  @img balhae-feet: I can’t feel my feet
+  @img balhae-cave-mouth: The cave is a crack in the mountain
+  @img balhae-gold-seam: small gold shine through a split seam
+  @img balhae-crown-branch: On his palm lies the gold branch
+  @img balhae-fb-doorway: A doorway with no house behind it
+  @img balhae-fb-gloves: pulls off his gloves
+  @img balhae-fb-wall: the river frozen white below
+  @img balhae-coals-turn: The fire has sunk to coals
+  @img balhae-joyoung-vow: Goguryeo never dies…!
+  @img balhae-last-coal: The last coal goes out

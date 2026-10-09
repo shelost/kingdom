@@ -1,0 +1,29 @@
+
+=================================================================
+#92 Wonsul  (672 August)
+Arc: Silla-Tang War · place: surabol · tone: family tragedy
+Logline: Wonsul came home alive from Stone Gate. His father asks the king to execute him, and the king answers with something he said at fifteen.
+=================================================================
+[0] ¶ Wonsul gets home a day before the news does. It doesn’t help.
+[1] ¶ His father’s gate stays shut. The lamp above it is his mother’s. **Lady Jiso** is King Muyeol’s daughter, and she keeps it lit every night her men are at war. Tonight it burns, and she does not come down.
+[2] [MAP 672: ]
+[3] ── SCENE: Father's House ──
+[4] ¶ Inside, Yushin is told his son is at the gate. He doesn’t get up.
+[5] Steward: My lord. It’s the young master. He’s hurt, I think. His horse is—
+[6] Kim Yushin: He shamed the king’s command and the family name with it. He is not my son.
+[7] ¶ The retreat is almost beside the point. A hundred men ran that afternoon and kept their fathers. But a house that came into Silla by treaty does not get to be ordinary, or it is simply Gaya again.
+[8] Kim Yushin: Another man’s son may retreat. / Mine may not.
+[9] ── SCENE: The King's Hall ──
+[10] ¶ Yushin goes to the king and asks, in so many words, for his son to be put to death. It is the most formal request he has made in fifty years of service, and he makes it standing.
+[11] King Munmu: Uncle. He was a lieutenant. Lieutenants follow. / If I execute every man who lived through Seokmun, I won’t have an army left to lose the next one with.
+[12] Kim Yushin: The law is the law, Majesty. A Hwarang does not retreat.
+[13] King Munmu: On your yard you once asked me which of the five I would break first. / I said retreat. I was fifteen. You didn’t ask my father to kill me.
+[14] Kim Yushin: …You were not my son.
+[15] ¶ The king has no answer to that. The old man knows it. Neither of them looks away first.
+[16] Kim Yushin: Then do not execute him, Majesty. / But do not ask me to call him back into my house.
+[17] King Munmu: …As you wish, Marshal.
+[18] ── SCENE: The Hill Farms ──
+[19] ¶ Wonsul does not go home. He goes into the hill farms east of the capital and works another man’s fields under no name at all, which is the one punishment his father did not think to ask for. He does not write. Twice he comes as far as the road below his father’s gate and turns back at the sight of his mother’s lamp.
+[20] Farmer: You hold a hoe like it owes you money. / Soldier, were you?
+[21] Wonsul: No. / …Not a good one.
+[22] ¶ **Yushin is old now. The three sisters in the steam are not. They have kept his ledge warm for fifty years…!**

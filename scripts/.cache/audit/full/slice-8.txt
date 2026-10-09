@@ -1,0 +1,513 @@
+
+=================================================================
+#72 Yellow Mountain  (660 August)
+Arc: Part III — Kingfall / The Fall of Baekje · place: hwangsan · tone: epic last stand
+Logline: Five thousand men against an empire and a kingdom. Gyebek has already done the arithmetic.
+=================================================================
+[0] ¶ Gyebek can count to fifty thousand. He has done it twice since dawn. The answer has not improved.
+[1] [MAP 660: ]
+[2] ── SCENE: Yellow Mountain Fields ──
+[3] ¶ Hundred-Victories gets to the **Yellow Mountain Fields** first and picks his ground. Then he waits, for the Sword of Silla or for arithmetic, whichever arrives with a banner.
+[4] [PLACE hwangsan: Good ground for whoever gets there first.]
+[5] ¶ He sets three camps across the three ways in. There is no fourth way in; that is why he chose the place.
+[6] ¶ He walked the ground for two days before choosing it, in the same direction each time, and he can still tell you the number of paces between the eastern camp and the stream.
+[7] Gyebek: Four hundred and twelve.
+[8] Gyebek: …Nobody asked. I know.
+[9] ¶ His adjutant is Seokdal, a ferryman’s son from the bear ferry. He has kept Gyebek’s tallies since the border and has never once been thanked for it. He does not expect to start today.
+[10] Seokdal: Scouts are back, General. Over the Tanhyeon pass. Yushin’s banner in front.
+[11] Gyebek: How many.
+[12] Seokdal: Fifty thousand, my lord.
+[13] Gyebek: And ours.
+[14] Seokdal: …You know ours, General.
+[15] Gyebek: Say it. I want it said once.
+[16] Seokdal: Five thousand.
+[17] Gyebek: Five thousand against fifty thousand….
+[18] ❝QUOTE (Samguk Sagi (三國史記) bk. 47, Biographies — Gyebek; Lee Byong-do ed., vol. 2, p. 452): With the men of one country I face the great armies of Tang and Silla, and whether the country lives or dies cannot be known…❞
+[19] Seokdal: And the sea, General. Sails at the river mouth. The boatmen gave up counting them.
+[20] Gyebek: Then I will count them later.
+[21] ¶ Here is the man the boatmen gave up on. His name is Su Dingfang, and he is sixty-five. Three winters ago he took a qaghan’s camp in a blizzard, before anyone in it had found his boots. His regiment painted a red bird on his tent afterwards, and Chang’an calls him the **Red Fowl**.
+[22] [CARD Red Fowl: The Red Fowl. Sixty-five, and he still prefers to march at night.]
+[23] Red Fowl: Snow is just cold sand. / Nobody expects you in it. That’s the only good thing about it.
+[24] ── SCENE: Deokmul Island ──
+[25] ¶ That summer he sails east with a hundred and thirty thousand men and anchors off a small island. A hundred Silla ships come out to meet him. At their head is the crown prince, Bupmin. He is thirty-four, and trying not to stare at the size of the Tang flagship.
+[26] [MAP 660: An empire crosses the sea. A prince rows out to meet it and tries not to stare.]
+[27] Red Fowl: You’re the son?
+[28] King Munmu: Kim Bupmin, General. My father the king sends his—
+[29] Red Fowl: Tenth day of the seventh month. South of Sabi. Your army and mine, on the same field, on the same morning. / Tell your father. Tell him twice.
+[30] King Munmu: We will be there, General.
+[31] ¶ Bupmin is rowed back to his own ship. Behind him the Red Fowl says something to his staff that makes them laugh.
+[32] Red Fowl: They’ll be late. Small countries always are. They have to ask too many uncles.
+[33] ── SCENE: Geumdol Fortress ──
+[34] ¶ The king rides as far as a hill fort and no farther. The field belongs to his son and to Yushin. Under Yushin ride two more generals. Heumsun is his younger brother, with a boy of fifteen in the ranks. Pumil has one of sixteen. Fifty thousand men march west with a date in their heads, and between them and the date sits a man called Gyebek.
+[35] King Muyeol: The tenth day, then. / …Yushin. Don’t let the Tang get there first. They’ll write it down that way for a thousand years.
+[36] ── SCENE: Final Ford ──
+[37] ¶ On the ninth day, the Tang fleet sails into the river mouth at Final Ford. The shore there is a mile of grey mud. Baekje’s soldiers wait on the high ground. They watch the first Tang companies wade in up to the thigh.
+[38] [PLACE gibeolpo: A river mouth made of mud, and Sabi’s front door.]
+[39] Red Fowl: Mud is just wet road. / Give it something to hold.
+[40] ¶ His men lay willow mats on the mud, one after another, a road made of baskets, and the army walks across it dry-shod. By evening the Baekje line is broken and the river is open to Sabi.
+[41] ¶ The same morning, forty miles east, the Silla army comes down out of the hills onto the Yellow Mountain Fields, and finds five thousand men already standing in its way.
+[42] [MAP 660: One army from the sea, one from the hills, and one road to the capital between them.]
+[43] [FORMATION Yellow Mountain, ninth day of the seventh month, 660: 5,000 against 50,000. Three camps across three roads, and no fourth way in.]
+[44] [battle]
+[45] ¶ Then the air above the Yellow Mountain does what air should not. **Kangrim** hangs there in plain day — visible not to one dying man but to all five thousand at once. They have already finished negotiating with life.
+[46] ¶ They cheer. They wave. Someone shouts a greeting as if King Yumla’s escort were a popular general arriving late to his own war. Kangrim, who has collected kings with less fuss for His Majesty, actually blinks.
+[47] Kangrim: …You can all see me. / That is — new. / Ah. You have already decided. Of course.
+[48] Gyebek: Men of Baekje — / If even death showed up early, we must be on time. / Spears.
+[49] ¶ Gyebek kneels. He plants his sword in the yellow dust, point down. Inside its ring pommel sits a phoenix, the same bird that rode the incense burner he once dove for. He keeps his hand on it. Gyebek stands when the dust has learned the shape.
+[50] ¶ Seventh-month heat sits on the Yellow Mountain like a second army. Dust rises white off the three roads. Downstream, Tang sails already crowd the river mouth. They are waiting for the inland door to open. This field is that door.
+[51] ¶ Dust on the ridge. The Silla marshal rides out ahead of his army.
+[52] Kim Yushin: So — you are this Hundred-Victories Gyebek I have heard of? / The taverns still split the Greatest Blade of Samhan between us. Shall we settle their argument?
+[53] Gyebek: Then you must be the Sword of the Divine Country. / I do not drink in taverns. I count. Today the count is five against fifty — and titles after.
+[54] Kim Yushin: Fifty thousand is a number. / Five thousand that already waved at death is another kind of number. / Hold your ground, then. We will come and measure it.
+[55] ── SCENE: The First Clash ──
+[56] ¶ Silla comes on the first time in three columns: Yushin centre, Heumsun left, Pumil right. Down the three roads at once, exactly as the arithmetic says. Uphill. In the heat. Into yellow shields set edge to edge. The archers wait to see which column is thickest, and loose at that one. All three camps throw them back into their own dust.
+[57] Gyebek: One.
+[58] [battle]
+[59] ── SCENE: The Second Clash ──
+[60] ¶ The second time Silla does not spread itself across three roads. It comes down the northern road in one fist at the left camp, hwarang in front, on the theory that the camp which shot the most is the camp with the fewest arrows left. It is a good theory. The left camp has counted its arrows too, and has been shooting half of what it could. The fist opens on the stakes and goes back up the road carrying its own.
+[61] Gyebek: Two.
+[62] [battle]
+[63] Gyebek: Report.
+[64] Seokdal: …Left camp still has arrows. / Centre has men. / Right has both, and less of each than an hour ago.
+[65] ── SCENE: The Third Clash ──
+[66] ¶ The third time Pumil takes the southern road, where the ground is softest and the right camp sits lowest, and for the length of a held breath the right road almost opens — and closes again on spears counted in the night. The camp is not quite where Pumil’s scouts drew it at dawn. It is further back and higher, every pace of the difference is uphill, and the Silla line arrives at the stakes with nothing left in its legs.
+[67] Gyebek: Three.
+[68] [battle]
+[69] ── SCENE: The Fourth Clash ──
+[70] ¶ The fourth time Yushin rides at the head of the centre himself, on the white horse, and meets Hundred-Victories in the gap between the camps. Both armies stop to watch two men, which armies are not supposed to do.
+[71] ¶ Gyebek comes the way the border remembers him. Gomanari at full stretch, Gyebek flat along the black neck like a thrown knife. His blade lies reversed along his forearm, edge out. There is no sword in his hand to watch. That is the point.
+[72] ¶ The tall Silla helm comes in at a gallop. Yushin has heard the tavern stories. He watches the hand, the way the stories say to, and reads the reversed blade half a beat late.
+[73] ¶ They meet in the dust. Nobody hears steel. They hear the white horse scream.
+[74] ¶ Then the white horse is going back the way it came with a red line along its shoulder, and the Sword of Silla is holding his left arm against his ribs. Gyebek turns Gomanari in his own length and walks him home. He came for one cut. He got half of one.
+[75] ¶ Behind him the fifty thousand sit down where they stand. Four times up the same slope in the same heat — the clerks will write that the soldiers’ strength was spent, which is the polite way to say that grown men are lying in the dust of their own road and cannot be made to get up.
+[76] Gyebek: Four.
+[77] [battle]
+[78] ¶ After the fourth time there is a lull, the kind both sides pretend is for water. Yushin rides out alone into the gap on the white horse, his sleeve tied off with his own sash, and stops at a distance where a bow would be bad manners. After a while the black horse comes out of the centre camp to meet him. Nobody is near enough to hear. The chronicle has it anyway, the way it has most things, from men who swore afterwards they had not been listening.
+[79] ¶ Black horse, white horse, nose to nose in the yellow dust. From either line they look like a pair of go stones someone has forgotten to play.
+[80] Kim Yushin: Your right camp. You moved it in the night.
+[81] Gyebek: Forty paces. / …You noticed.
+[82] Kim Yushin: On the third time. Not before. / …How old are you.
+[83] Gyebek: Forty. Near enough. Nobody wrote it down.
+[84] Kim Yushin: Sixty-five. / If we had met when I was forty, I would have had you. / …No. I would not have.
+[85] ¶ Gyebek looks at the tied sleeve and does not say anything polite about it.
+[86] Gyebek: You came yourself, the fourth time. You did not have to.
+[87] Kim Yushin: The boys needed to see it could be done.
+[88] Gyebek: Could it?
+[89] Kim Yushin: Not by me. Not today. / I came with fifty thousand. I still have forty-some. You came with five.
+[90] Gyebek: Four. Now.
+[91] Kim Yushin: I know. I can count too.
+[92] Gyebek: Then go home.
+[93] Kim Yushin: You first.
+[94] ¶ Neither of them laughs, but it is close.
+[95] Gyebek: Your taverns.
+[96] Kim Yushin: What about them.
+[97] Gyebek: Nothing. They will have a long winter.
+[98] ¶ They turn the horses at the same moment, black and white, as if somebody had rehearsed it, and ride back to their counts.
+[99] Kim Heumsun: Brother. The Tang are at the river mouth. / Tomorrow is the tenth.
+[100] Kim Yushin: I know what day it is.
+[101] ¶ Heumsun looks at the slope. Then, for longer, at his son.
+[102] ── SCENE: Bangul & Gwanchang ──
+[103] ¶ Heumsun calls his son to his stirrup. Bangul is fifteen, near enough, and Yushin’s nephew; he comes at a run, because he has been watching his father look at him since the white horse came back.
+[104] Kim Heumsun: For a subject, nothing is greater than loyalty. For a son, nothing is greater than filial piety. / To see the danger and give your life to it — that keeps both, whole, at once.
+[105] [CARD Bangul: Yushin’s nephew. Young, brave, and in a hurry.]
+[106] Bangul: I have heard you, Father.
+[107] ¶ Bangul rides out alone and does not come back. He goes into the Baekje line where it is thickest and fights there until it closes over him, and the place where it closed is the place Silla aims at next.
+[108] ¶ Pumil does not call his son. He has him brought to stand in front of his horse, before all the generals, and points at him the way a man points at a map.
+[109] [CARD Gwanchang: Gwanchang. A hwarang so young they had to pad the helmet.]
+[110] [CARD Kim Pumil: A Silla general with a son in the ranks. He knows exactly where the boy is standing.]
+[111] Kim Pumil: My son is only sixteen, but his spirit is brave enough. / In today’s battle — can he be the mark the three armies aim by?
+[112] Gwanchang: Yes.
+[113] ¶ He takes an armoured horse and one spear and goes straight at the Baekje centre. He gets further than Bangul did. Then they pull him off the horse alive and bring him to Gyebek.
+[114] ¶ Gyebek has the helmet taken off. Inside it is a boy’s face, sweat-striped, furious at being alive.
+[115] Gyebek: Silla cannot be withstood. / If a boy is like this — what are its grown men? / Go home.
+[116] ¶ They put him back on his horse and point it at the Silla line. At his father’s stirrup Gwanchang does not get down.
+[117] Gwanchang: I went into their midst and could not cut down their general or take their banner. / It was not because I was afraid to die.
+[118] ¶ Behind the Silla line there is a well, dug that morning for the horses. He scoops the water out with both hands, drinks, and rides back the way he came. Gyebek sends him home once. He comes back.
+[119] ¶ The second time, Gyebek has his helmet unstrapped again, and looks at the face inside it for a while. He has looked at faces like this once already this week, in his own house, before the light was up. Then he does what he has to. He ties the head to the saddle and sends the horse back.
+[120] ¶ Pumil holds the head up in front of the army and wipes the blood from its face with his own sleeve, so that the three armies can see whose son it is.
+[121] [battle]
+[122] Kim Pumil: Look at him. His face is as if he were alive. / He died in the king’s service. …I have nothing to regret.
+[123] ── SCENE: The Fifth Clash · The Final Stand ──
+[124] ¶ Nobody gives an order. The drums start on their own, one column and then the next, and fifty thousand men who could not be made to get up an hour ago are on their feet and shouting.
+[125] ¶ The Silla line, which has failed four times that morning, goes forward and does not stop. A father’s wet sleeve is worth more than a fourth failure. The left camp goes under first — not broken so much as used up. The right holds one more breath, then folds toward the centre like a hinge that has decided to finish.
+[126] ¶ On the Baekje side, nobody says five.
+[127] ¶ By the fifth charge the left camp is a rumour of men. Spears shorten. Names stop answering. Seokdal stops somewhere between one tally and the next. Gyebek calls the name twice, then says the next number himself.
+[128] [battle]
+[129] ¶ Kangrim, who has been hanging in the day like unfinished weather, comes down to speaking distance.
+[130] ¶ He reads the general's name three times across the field — Gyebek. Gyebek. Gyebek. — though five thousand throats have already answered.
+[131] Kangrim: General. / Your five thousand already waved. So I ask you alone. / When you killed your family to keep your oath: was that loyalty, or terror of becoming soft?
+[132] Gyebek: …Loyalty. / If it was terror, do not tell them. Let them keep the prettier word. / A magistrate sent you down to arrest King Yumla. Yumla kept you.
+[133] Kangrim: …The island told you. / Living men are not supposed to finish that sentence.
+[134] Kangrim: Upstairs, I asked a gardener whether the dead can be put back. / He said it can be done.
+[135] Gyebek: Don’t.
+[136] Kangrim: …No. I didn’t think you would want it. / I asked anyway.
+[137] ¶ Gyebek turns his head toward the river road, toward Sabi, where nobody is coming.
+[138] ▼ FLASHBACK 632 The bank · 강둑
+    [138.0] ¶ A mudbank on the White River at night. A boy who has gone into the water nineteen times, and a prince in a grey hood with a jar he has not opened.
+    [138.1] King Euija: Why do you do all of this?
+    [138.2] Gyebek: I gave my word.
+    [138.3] King Euija: Gyebek, would you like to serve a higher purpose?
+    [138.4] Gyebek: …Do you like the name, or do you like me?
+    [138.5] King Euija: …People don’t usually ask that.
+    [138.6] Gyebek: Yes.
+[138] ▲ end flashback
+[139] ¶ The field returns.
+[140] Gyebek: Your Majesty… I gave my word.
+[141] ¶ He says it in exactly the same words, the way you set a stone back where it was. Kangrim closes the distance.
+[142] Kangrim: Walk, then. The underworld kingdom keeps better hours than Sabi ever did.
+[143] ¶ The man who counted everything finishes counting, and walks. The Yellow Mountain keeps the dust. The White River, downstream, opens.
+[144] ¶ The Silla clerks count too. Twenty-odd taken alive, two ministers among them. Nobody writes down how many of the five thousand were left to take.
+[145] ¶ Nobody can lead the black horse off the field. It stands over the place where he went down until the Silla grooms come at dusk with ropes, and it takes six of them, and in the night it breaks the line and goes south toward the ferry it was named for. Nobody on either side ever reports seeing it again.
+[146] ¶ **The pass is open. The river is open. And in Sabi, a runner is climbing the palace steps with one word…!**
+
+=================================================================
+#73 Sabi  (660 August)
+Arc: Part III — Kingfall / The Fall of Baekje · place: sabi · tone: fall-of-a-capital tragedy
+Logline: Euija’s first move is to send the Tang a feast. The oxen come back untouched.
+=================================================================
+[0] ¶ The runner has one word. Euija makes him say it twice.
+[1] ¶ He has run all night, and he falls on the palace steps instead of kneeling. The court hears about the Yellow Mountain Fields before the king does. Courts always do.
+[2] Runner: Hwangsan, Majesty.
+[3] King Euija: Again.
+[4] Runner: Hwangsan. The Yellow Mountain Fields.
+[5] King Euija: And? How many came back? Don’t give me a face, boy. Give me a number.
+[6] Runner: …There’s nobody left to count them, Majesty. / The man who counts—
+[7] King Euija: Yes. I know who counts.
+[8] ¶ Euija sits down on the top step, in front of everyone, which kings do not do. The court waits for an order. For the first time in twenty years he does not have one ready. So he reaches for the next thing he owns, which is an idea.
+[9] King Euija: …They’ve been at sea. Men off boats are always hungry. / Nobody burns a city on a full stomach. Feed them. Then we’ll talk about what they want.
+[10] ¶ So his first move is to send the Tang camp a feast: oxen, wine, three cartloads of rice cakes. The court is told this is diplomacy.
+[11] [MAP 660: Two arrows, one capital, and a king who has decided the answer is oxen.]
+[12] ¶ The oxen come back that afternoon, untouched, with the drovers walking behind them.
+[13] ── SCENE: The Red Fowl’s Tent ──
+[14] ¶ The Silla army reaches the Tang camp two days late. The Red Fowl has the Silla supply officer, Kim Munyeong, dragged to his tent gate. They open his collar for the sword.
+[15] Red Fowl: The tenth day. South of Sabi. I said it twice. / Take his head. Then we can start.
+[16] ¶ **Kim Yushin** walks into the tent with a battle-axe in his hand.
+[17] Kim Yushin: The general did not see the Yellow Mountain Fields. / If you mean to punish us for being late, I will not be shamed for a crime I did not commit. I will fight the Tang first, and Baekje after.
+[18] ❝QUOTE (Samguk Sagi (三國史記) bk. 5, Silla Annals — King Muyeol, yr. 7 (660), seventh month): Then he stood at the camp gate leaning on his axe; his angry hair stood up like planted stakes, and the precious sword at his waist leapt of itself from its scabbard.❞
+[19] ¶ The Red Fowl’s second-in-command steps on his commander’s foot.
+[20] Dong Baoliang: (low) The Silla army is about to turn on us, General.
+[21] ¶ Kim Munyeong’s collar is closed again. Nobody in the tent mentions the date for the rest of the war.
+[22] ── SCENE: Night Flight ──
+[23] ¶ Euija leaves Sabi at night for **Bear Fortress**, with fewer men than he expected to have.
+[24] [MAP 660: One river’s length north, to a fortress his grandfather trusted.]
+[25] ¶ On the river he sits in the bow and says nothing for a long time. The boatmen will remember it, because nobody had ever seen him do that before.
+[26] King Euija: Seongchung said hold the pass. Hold the river mouth. Wrote it out for me from his cell, in a hand that was going. / I put him in that cell. …Ha. / He’d love this. He’d be unbearable.
+[27] ── SCENE: The City Gate ──
+[28] ¶ Back in Sabi, the king’s second son, Tae, puts on a crown the next morning and means to fight. His nephews don’t. They go down the wall on a rope with their households, and half the city follows them down it.
+[29] ¶ The crown prince comes out of the gate. Chunbok walks a careful pace behind him. Bupmin has the prince knelt in the dirt before his horse, and spits in his face.
+[30] King Munmu: Look at me. / My sister. Gotaso. Your father’s general killed her at Daeya and buried her under a prison floor. / Eighteen years I’ve carried that. Look at me when I say her name.
+[31] ¶ Yung lies flat on the ground and says nothing.
+[32] ¶ It was Chunbok who opened the gate. He would like that understood as a favour.
+[33] Satek Chunbok: As the generals will surely appreciate, the gate was opened for the sake of the people, and in full accordance with—
+[34] ── SCENE: Falling Flower Rock ──
+[35] ¶ When the gate opens the palace women do not wait to be counted. They go out the back of the palace and up the ridge path to the cliff above the White River, where the rock drops straight into the water, and the soldiers coming up behind them find nobody at the top.
+[36] ¶ The stories that gave Euija three thousand women give them this cliff as well, and three thousand is the number they say went over it, their skirts opening on the way down like petals. Nobody who was there wrote down how many it really was. There was no one left on the cliff to count.
+[37] ¶ Two of them go together, holding hands. They are the two who sat in a prince’s garden with a go board and a jar of wine, a lifetime ago. Nobody counts them. Nobody has counted them for years. It had been two, once, and a joke, and a modest number a man was proud of.
+[38] The Court Maids: He’ll reach for us today, like yesterday.
+[39] The Court Maids: He isn’t here today. / …But the body remembers.
+[40] ¶ The rock is called the Falling Flowers afterwards, **Nakhwaam**, which is a kind way of saying it, and Baekje’s last invention.
+[41] ── SCENE: Ungjin ──
+[42] ¶ Bear Fortress belongs to the king the way a borrowed house belongs to a guest. The Ye family has held it for four generations. **Ye Sikjin** gives the king his own rooms, and goes up on the wall every morning to count the Tang sails on the river.
+[43] King Euija: Sikjin! Good man. Your grandfather held this rock for my grandfather, eh? / We’ll hold it again. The Red Fowl can’t sit in the mud forever.
+[44] Ye Sikjin: My grandfather held it, Majesty. / …For whoever was king.
+[45] ¶ The first morning he counts forty sails. The second morning, sixty-two. He writes both numbers on the wall in charcoal, because that is what he does with numbers.
+[46] King Euija: Sixty-two? Ha! Sixty-two boatloads of men throwing up over the side. / Sikjin, you can’t plough with a seasick ox. Ha! / Bring wine. The good cups. Not the garrison ones.
+[47] Ye Sikjin: The good cups are in Sabi, Majesty. / …I’ll bring the garrison ones.
+[48] ¶ On the third day a boatman comes up the river with Sabi still on his face. Ye Sikjin hears him out alone, on the wall. Then he takes him to the king, because that is the order things are done in.
+[49] King Euija: Tae put on a crown? That boy couldn’t get a hat on a pumpkin! / And Yung… knelt. / …Fine. A son on his knees is still a son. When I take the city back, he can stand in the yard for a month. Ha!
+[50] ¶ That night his elder brother comes in by the river gate. Ye Gun is the family’s talker. He has been downriver all day, he says, looking at the weather. It has rained since noon. He comes back dry.
+[51] Ye Gun: That general talks about mud the way other men talk about weather. Mud is just wet road, apparently. / And he asked how many rooms this fortress has. I said I’d have to ask my brother. You’re the one who counts.
+[52] Ye Sikjin: Thirty-nine, brother. / Counting the king’s.
+[53] Ye Gun: And men?
+[54] Ye Sikjin: Depends on the room.
+[55] King Euija: Garrison wine! It grows on you, Sikjin! / When this is over, you’re coming to court. A real seat. Front row. No more counting boats. / What’s that face? That wasn’t a joke. Drink!
+[56] Ye Sikjin: You honour me, Majesty. / …Which seat?
+[57] King Euija: Ha! Listen to him. Which seat! Take your pick. / I’ve got forty-one of them.
+[58] ¶ That night he opens the drawer. The list is where he left it. Forty-one names. None of them his. He reads it a third time, being careful with numbers, and puts it back. He does not close the drawer. One day a Tang stonecutter will carve his father and grandfather into Baekje’s first rank. Neither of them was ever asked to court. Tombstones are generous that way.
+[59] ¶ On the fifth night he comes into the king’s rooms with his brother and twenty men, and the king understands before anyone speaks.
+[60] King Euija: …Which seat. Ha. / The list. You read the list.
+[61] Ye Sikjin: Three times, Majesty. I am careful with numbers.
+[62] King Euija: Nobody inspects the evidence for a thing they already want to believe. / I said that, you know. Nineteen years ago, in a hall full of men like you. / …Well? Bring the good rope, at least. Not the garrison one.
+[63] ¶ By morning the king is on his way to the Red Fowl’s tent.
+[64] ❝QUOTE (Epitaph of Ye Sikjin (禰寔進墓誌), Tang, 672): His name was Sikjin, a man of Ungcheon in Baekje. His grandfather, Minister Yeda, and his father, Minister Saseon, both held the first rank of that vassal court. … Upright from birth and early marked for righteousness, he read the wind in a foreign land and went toward the sun in Chang’an.❞
+[65] ¶ Back in the palace, the winners want their wine poured.
+[66] ── SCENE: The Victory Feast ──
+[67] ¶ Chunchu finally arrives at the scene. He makes Euija pour his wine, and the Tang general’s beside it.
+[68] King Muyeol: So… you are Euija. / The one who started all of this… Buyeo Euija. / Do you know what it cost me to bring you in? / Nearly my whole life, you bastard.
+[69] ¶ A cup is put into Euija’s hands, and he is made to pour.
+[70] ¶ He pours for the Red Fowl first, slowly, with a small host’s bow, and only then turns to the Silla king.
+[71] King Euija: Guests who came furthest are served first. That’s manners. / You live next door. You can wait.
+[72] King Euija: …Do you know what I said to Gesomun, once. / “I do not fear a man who kneels to another man.”
+[73] King Muyeol: I know. / I was the man he said it about.
+[74] King Euija: …And so — who is kneeling today?
+[75] King Muyeol: I am. I knelt to an emperor for this cup, and I would kneel again for the next one. / A man who kneels gets up afterwards, Euija. You never stayed to watch that part.
+[76] King Euija: Chunchu… / One day you will kneel before someone too.
+[77] King Muyeol: Take this man away.
+[78] ¶ There is one more prisoner. He has been kept for the end of the feast, the way a host keeps back the dish he cares about.
+[79] ¶ Gumil is older. The yellow sleeve is gone. Eighteen years in Baekje have not taught him to stand up straight, and they have not taught him to stop talking.
+[80] Gumil: Ah~ so the father came after all. / I heard you ask him what it cost. Go on, then. Tell me. / From the start. All of it. Don’t leave any out.
+[81] King Muyeol: No.
+[82] Gumil: No? Aigo~ the great talker of Silla, and he says no. / Everyone in that fortress was trash, you know. Your son-in-law took my wife, and the rest of them watched—
+[83] King Muyeol: My daughter was in that fortress.
+[84] ¶ Gumil opens his mouth, and for once in eighteen years nothing comes out of it.
+[85] King Muyeol: You’ll get no story from me. Nobody is going to tell yours. / Take him down to the river.
+[86] ¶ They put him to death on the riverbank before the wine is finished. Chunchu does not go down to watch. He drinks the cup Euija poured him instead, slowly, the way you finish a thing that took twenty years to pour.
+[87] ── SCENE: The Pagoda ──
+[88] ¶ A month later the Tang carve their victory into a stone pagoda. They put it low, where anyone walking round has to read it. It calls the conquest a deliverance. About Baekje’s king it says:
+[89] ❝QUOTE (Datang ping Baekje guo beiming (大唐平百濟國碑銘), carved on the five-storey stone pagoda of Jeongnimsa, Buyeo (660)): Abroad he cast off his upright ministers; at home he trusted a bewitching woman.❞
+[90] King Muyeol: Harmonized.
+[91] ¶ Then the Tang divide Baekje into five commanderies, with a Tang governor over each and Baekje men under them. Nothing in the arrangement is labelled Silla.
+[92] King Munmu: Father. Everything south of Pyongyang and the whole of Baekje. He said it in front of the horses. You told me.
+[93] King Muyeol: I did. / He also said an emperor’s word was the writing. I should have brought a brush.
+[94] ── SCENE: Two Camps ──
+[95] ¶ In the Tang lines the Red Fowl’s staff officers are seen pacing out the distance to the Silla camp, which is not a thing allies measure. In the Silla council a man proposes that their soldiers put on Baekje clothes and fall on the Tang by night.
+[96] Kim Yushin: A dog fears its master, Majesty. / But step on its foot and it bites. Even a dog knows that much.
+[97] ¶ Word of the conversation reaches the Red Fowl’s tent, as it was meant to.
+[98] ¶ A month later the Red Fowl sails home with Euija, his sons and twelve thousand captives. He leaves ten thousand men to hold the city. Beside them sits a Silla army that has stopped smiling.
+[99] ¶ **Across the sea, a confession is waiting for Euija. It is already written, in a lovely hand. It only needs his name…!**
+
+=================================================================
+#74 Buyeo Euija†  (660 December)
+Arc: Part III — Kingfall / The Fall of Baekje · place: changan · tone: psychopomp ritual
+Logline: In the Tang capital, a confession is already written. There’s a space at the bottom for his name.
+=================================================================
+[0] ¶ An empire is not finished with a king until he has signed something.
+[1] ¶ In Chang’an, on the first morning of winter, Euija is brought forth before the Third Emperor.
+[2] ¶ First, paperwork. A palace clerk hands the prisoner a confession, already written out in a fair hand. There is a space at the bottom for his name.
+[3] Tang clerk: Aloud, please. Clearly. The scribes are taking it down.
+[4] King Euija: ‘I, the criminal Euija, having been liberated by the Great Tang—’ / Liberated. Hm. So that’s what that was. / ‘—confess with gratitude that without the Great Tang there would be no New Baekje—’ / There isn’t one. You burned it. / ‘—and resolve to serve the Emperor for ten thousand years.’ / Ten thousand? I’m sixty. Ambitious fellow, your clerk.
+[5] King Euija: It’s a bad story. Nobody’s afraid of anything, there’s no villain, and the hero is a building. / Who wrote this? I’ve done better drunk.
+[6] Tang clerk: Your name, please. Here.
+[7] ¶ He signs in a hand so large the name runs off the edge of the paper, and gives it back. The clerk files it without looking. A confession only needs a name, and has never much minded whose.
+[8] ❝QUOTE (Zizhi Tongjian (資治通鑑) bk. 200, Tang Gaozong, Xianqing 5 (660), eleventh month): Eleventh month, first day. The emperor went up to the Zetian Gate tower to receive the Baekje captives, and released them all, from their king Euija down.❞
+[9] King Euija: Kim Chunchu… / **KIM CHUNCHU!!!**
+[10] ¶ Across the sea, in Surabol, King Muyeol is eating his supper.
+[11] King Muyeol: Hm?
+[12] King Euija: **Kim Chunchu, you wretch!!** / **You vile traitor of the ages, who dragged a foreign power onto the soil of Samhan!!** / **Heaven’s punishment will find you!!**
+[13] ¶ The shouting burns out. What remains is a man who has finally run out of stories to sell — and one last story he cannot afford to keep.
+[14] King Euija: Let someone… avenge me…! / Let someone… raise Baekje again…! / Chunchu — what you finished… may it never stay finished…!
+[15] ¶ He is shouting at the man who won. Across the sea, a quiet son with lovely handwriting is still waiting to be needed.
+[16] ¶ Then the room fills with men only he can see.
+[17] King Euija: Gods are props. Spirits are lighting. / Heh… so you guys are real after all…
+[18] Haewonmek: Any last words?
+[19] ¶ Euija waits. He has always been good at making a room lean in.
+[20] King Euija: No.
+[21] ¶ Kangrim reads his name three times in the Tang capital — Euija. Euija. Euija. — the underworld's receipt before the humiliation finishes.
+[22] Kangrim: Eraha. King. / One question, then we walk. / They called you the Zengzi of the East. You hung a dragon over the Sabi for a crowd. Which were you?
+[23] King Euija: …The dragon. Obviously. / Several hundred people saw the dragon. Nobody ever saw a Zengzi do anything.
+[24] Kangrim: The boy at the White River. / The name you gave him is still in the ledger.
+[25] King Euija: …A friend. / Put the miracle on the cheap side of the page.
+[26] ▼ FLASHBACK 632 The river · 백강
+    [26.0] ¶ A jar in a hedge, and a prince who ought to be at his own investiture.
+    [26.1] ¶ A grey hood at the back of a crowd. A boy going into black water on a rope.
+    [26.2] King Euija: How many times have you gone in?
+    [26.3] Gyebek: Nineteen.
+    [26.4] ¶ A pale deer in the reeds, standing where nobody else is up to see it.
+    [26.5] Gyebek: …Do you like the name, or do you like me?
+[26] ▲ end flashback
+[27] King Euija: …You. / It was you, you idiot. The name was just the best thing I had on me.
+[28] Kangrim: He is waiting at the ford. Tell him yourself. He will want it said exactly. / Then you die richer than the record will admit. / Come.
+[29] ¶ Euija dies, vengeful and emptied. Then, at the very last, neither.
+[30] ¶ _Thus was the end of Buyeo Euija._
+[31] ¶ _A man the court once called the Zengzi of the East._
+[32] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 199A, Eastern Barbarians — Baekje): Euija served his parents with a devotion people talked about, and was kind to his brothers; men of his time called him the Zeng and Min of the East. He reached the capital and died a few days later.❞
+[33] ¶ — Buyeo Euija —
+[34] ¶ _Seongchung told him. He put Seongchung in a cell. Heungsu told him. He had already exiled Heungsu. Gyebek would have told him, and he had put Gyebek on a boat. A man does not fall because nobody warned him. He falls because he arranged, patiently and over years, to be somewhere the warnings could not reach._
+[35] ¶ _The Zengzi of the East. They called him that when he was young, and they meant it. The name was neither flattery nor wrong. He was never a fool. He was a clever man who won, and kept winning, until winning was the only instrument he had left, and then he tried to play a dying country on it._
+[36] ¶ **Baekje is gone. Goguryeo still stands. And the man who arranged both can no longer get out of bed…?**
+
+=================================================================
+#75 Kim Chunchu†  (661 June)
+Arc: Part III — Kingfall / The Fall of Baekje · place: surabol · tone: psychopomp ritual
+Logline: The man who arranged all of it is fifty-eight, and cannot get out of bed.
+=================================================================
+[0] ¶ Chunchu has talked his way out of every room in Samhan. This one has no other door.
+[1] [MAP 661: ]
+[2] ── SCENE: The Sickroom ──
+[3] ¶ It is the sixth month of 661. Baekje has fallen, Goguryeo has not, and the man who arranged both is fifty-eight and cannot get out of bed.
+[4] ¶ Yushin comes in the afternoon, still in his riding boots, and stands where a marshal stands, which is too close to the door.
+[5] Kim Yushin: The Tang want us at Pyongyang by winter. / I told them you were busy.
+[6] King Muyeol: Busy. Yes. Dying turns out to be a full day’s work. / Brother, sit down for once. You make the room look like a gate.
+[7] Kim Yushin: I’ll stand.
+[8] King Muyeol: Of course you will. / …Take him north for me. Bupmin. He’ll want to charge the walls. Don’t let him charge the walls.
+[9] Kim Yushin: I won’t.
+[10] ¶ That is the whole goodbye. They have been saying the rest of it for forty years.
+[11] ¶ **Munhee (55)** sits where she has sat since the spring. Outside the door a monk who knows when not to speak keeps the incense going. Forty years ago she bought a dream off her sister for a silk skirt. This is where the dream comes out: a sickroom, a husband, and a son at the foot of the bed.
+[12] King Muyeol: Munhee. Have I… paid all of it?
+[13] Munhee: Not yet. I’ll pay the rest.
+[14] King Muyeol: Do you remember the skirt?
+[15] Munhee: It was a very good skirt. / Don’t make me cry in front of the boy.
+[16] King Muyeol: Best bargain in Silla.
+[17] Munhee: Second best. Bupmin, don’t stand in the door. Come in.
+[18] ¶ He looks past her, to the boy who is no longer a boy. **Bupmin (35)** has his mother’s stillness and his father’s hunger, and for a moment the room holds all three of them the way a hill once held a promise.
+[19] King Muyeol: Bupmin.
+[20] King Munmu: Father.
+[21] King Muyeol: People will say… this whole war was only for your sister. / Gotaso. / And they will not be wrong. Daeya never left this room for a single day.
+[22] King Muyeol: But that was never the only debt. / On a hill once, with your uncle, I said a thing. “A king for all.” / Not a king of Silla. Of everyone.
+[23] King Munmu: And I stole it. I was six. I used to say it at dinner—
+[24] King Muyeol: You said it wrong. The word sat crooked in your mouth. / I said it first. You took it. That is how children steal. They take the largest thing in the room. / I cleared the road as far as Baekje. Goguryeo is still standing, and the Tang will be smiling. / The rest — walk it as king. Not as my revenge. As the country you wanted when you were six.
+[25] King Munmu: …I promise.
+[26] King Muyeol: Bupmin… I love you.
+[27] ¶ The escort arrives on schedule.
+[28] ¶ Kangrim reads the name three times — Muyeol. Muyeol. Muyeol. The room still knows him as Chunchu.
+[29] Kangrim: King Muyeol. / We have met before, at Daeya. You weren’t looking at me. You were looking at a list of names.
+[30] King Muyeol: Euija swore heaven would find me. / …Is this heaven?
+[31] Kangrim: No. This is a fever. Heaven does not make house calls. I do. / One question, then we walk. Was it for Gotaso, or for the king for all?
+[32] King Muyeol: …Yes.
+[33] Kangrim: That is not one of the two.
+[34] King Muyeol: In go, nobody plays a stone for one reason. / Write it in both columns. Your ledger has two, I assume.
+[35] Kangrim: It does. I will. / Come. The road is long, and you will want to talk the whole way.
+[36] ¶ King Muyeol (58) dies.
+[37] Munhee: …He knelt to everyone. Gesomun. The emperor. Anyone who would hold a door. / Never once to Baekje. / Get up, Bupmin. You’re the king. Kings don’t kneel by beds.
+[38] ¶ He died with Baekje gone and Goguryeo still standing. Halfway. The last two names he said were his daughter’s and his son’s. Not the kingdom’s.
+[39] ¶ Twelve years earlier an emperor had told him that Goguryeo was the one failure of his life, and that Baekje would be Chunchu’s. Only one of them was wrong.
+[40] ¶ They give him a name for the dead: Muyeol. His temple name is Taejong, the same name the Tang gave their Second Emperor. Chang’an will notice.
+[41] [CARD King Munmu]
+[42] ¶ Bupmin takes the throne. They will call him Munmu.
+[43] ¶ **Silla won the war. So why does the emperor’s new edict call its king a clerk…?**
+
+=================================================================
+#76 Ungjin Commandery  (661 Autumn)
+Arc: Part III — Kingfall / The Fall of Baekje · place: ungjin · tone: occupation chronicle
+Logline: The Tang throw a net over the country. A sixty-year-old in white comes to mend it.
+=================================================================
+[0] ¶ In Chang’an, the cheapest way to conquer a country is to rename it.
+[1] ── SCENE: Chang’an ──
+[2] ¶ The Red Fowl is home with his captives. The emperor asks him a question in front of the whole court, which is how emperors ask questions they already know the answer to.
+[3] The Third Emperor: You were there with an army. Why didn’t you take Silla while you were at it?
+[4] Red Fowl: Their king is kind and loves his people. His ministers serve the country loyally. Below, they serve those above like fathers and elder brothers. / It is a small country, Majesty. But it cannot be schemed against.
+[5] The Third Emperor: Can’t be schemed against. Hm. / Then we won’t scheme. We’ll write. Make their king a governor of ours — no. That sounds like a slap. / …Write it anyway.
+[6] [CARD Wu Zetian]
+[7] Wu Zetian: Make it sound like an honour, Majesty. / A slap they have to bow for is worth two they can return.
+[8] ── SCENE: Gyerim ──
+[9] ¶ Then an edict arrives for the new king. It makes him Grand Commander of the Gyerim Prefecture. Gyerim is his country’s oldest name, the wood where a rooster crowed over a golden box. In the edict it is one province of the empire. And the king is its governor.
+[10] King Munmu: A prefecture, Uncle. They have made my father’s country into a prefecture, and me its clerk.
+[11] Kim Yushin: Then sign as its clerk, Majesty. / And keep a copy.
+[12] ¶ The court is angrier than the king. Men in the Council hall who have not agreed on anything since the old queen died agree that a prefecture is an insult, and say so loudly, in rooms where no Tang officer is present.
+[13] ¶ Only Daeto, a smooth councillor who always urges the softer word, keeps his voice down.
+[14] Daeto: They’re not wrong about everything, you know. / Have you seen their calendar? Every day accounted for. Our almanac can’t even agree with itself about the solstice.
+[15] ¶ Nobody answers him. A few men remember afterwards that he said it.
+[16] ── SCENE: The Black Tortoise ──
+[17] [MAP 661: ]
+[18] ¶ Someone has to hold what the Tang broke. Nobody in Chang’an expected to see Liu Rengui in uniform again. He is sixty. Last year he lost a grain fleet in a storm and was stripped of office. Now he comes east as a commoner in white, to earn it back. In his baggage: the Tang calendar, and the list of names nobody may write.
+[19] [CARD Black Tortoise: The Black Tortoise. Sixty, disgraced last year, and in an excellent mood.]
+[20] Black Tortoise: Heaven means to make an old man rich, it seems. / Send me the calendar for this country, and the list of names one must not write. If we are going to sweep the east clean, the east should at least know what year it is.
+[21] ¶ Between skirmishes the Black Tortoise does what he actually came for, which is paperwork. He counts the households of Baekje village by village and writes them down as numbers. He mends dykes and bridges. He posts the Tang calendar at every crossroads, with the list of names that may not be written, so that the people of Baekje will know which characters to leave out of their letters home.
+[22] Black Tortoise: A village that knows what year it is pays its tax on time. / Put one up at the ferry as well. People read while they wait for the boat.
+[23] ── SCENE: The Ferry ──
+[24] ¶ The ferry calendar lasts four days. On the fifth morning it is still on its post, untouched, which is worse. Someone has added a line to the bottom of the list of names one must not write. The charcoal is still soft.
+[25] Tang clerk: Shall I scrape it off, General?
+[26] Black Tortoise: Read it to me first.
+[27] Tang clerk: “Buyeo Pung.” And under it: “Gwishil Boksin, who sends his regards.”
+[28] Black Tortoise: A prince, and a man who signs his notes. / Who is the prince?
+[29] Tang clerk: Euija’s son, General. The quiet one. They sent him to the Yamato court as a boy.
+[30] Black Tortoise: Then they are telling me which name I will soon be forbidden to write. / Copy it. Twice. And leave the original up. I want him to know I read it.
+[31] ── SCENE: The Fires ──
+[32] ¶ That night the hills around Sabi light up. One fire, then forty. Boksin has brought the restoration to the Tang’s front door, and the garrison inside has ten days of rice.
+[33] ¶ The Black Tortoise has no cavalry to speak of and no reputation left to lose. What he has is a census. He counted those villages a month ago. He knows which of them fed the fires, and which are short of men tonight.
+[34] Black Tortoise: Not the hills. The villages behind them. / Close the roads they bring the rice on. Politely. Write down every cart.
+[35] ¶ It takes nine days. On the tenth the fires around Sabi go out one by one, the way they were lit, and the rebels walk back up into the hills to a fortress called Imjon. They are not beaten. They are waiting for somebody.
+[36] Black Tortoise: He’ll be back. He has to fetch a king first.
+[37] ── SCENE: The Maps ──
+[38] ¶ In Chang’an the Third Emperor is told that Baekje is finished and that its king has died in the capital of a broken heart, and he takes out his father’s maps.
+[39] The Third Emperor: Father went east three times and came home coughing. / Baekje was the knife at Goguryeo’s back, and now we’re holding it — no. That sounds like something he would say. Write it down anyway.
+[40] Wu Zetian: Then don’t say it like him. Say it like you. / Four generals. One for each side of the map, so none of them can come home claiming he did it alone.
+[41] ¶ That is how the Four Beasts are chosen: by a woman who knows how generals talk at banquets.
+[42] ── SCENE: The Four Beasts ──
+[43] ¶ The Third Emperor launches the Eighth Invasion of Goguryeo — his father’s war, inherited along with everything else.
+[44] [DIAGRAM four-beasts Four Beasts · 사신 — Gaozong’s expeditionary colours: White Tiger, Red Fowl, Blue Dragon, Black Tortoise.]
+[45] ¶ Samhan never learns their names. It learns their banners, which is the entire purpose of a banner.
+[46] ¶ The Silla envoy is still in the hall. The emperor turns to him last.
+[47] The Third Emperor: Baekje is done. I have taken your king’s worry off his hands. / Now Goguryeo. Go home and tell him to bring his army north. / He has our calendar now. Tell him the date.
+[48] ¶ **Baekje has no king. Across the sea, an exiled prince is packing his bags…!**
+
+=================================================================
+#77 King Pungjang  (661 September)
+Arc: Part III — Kingfall / The Fall of Baekje · place: juryu · tone: resistance drama
+Logline: Baekje is finished, says everyone except Baekje. Its last prince has lived across the sea for twenty years.
+=================================================================
+[0] ¶ Baekje is finished, says everyone except Baekje.
+[1] [MAP 661: ]
+[2] ── SCENE: The Crossing ──
+[3] ¶ Its last prince is on a Yamato boat off Juryu, with a new cap of rank in a box on his knees. He has been rehearsing one sentence since the islands. It keeps coming out in the wrong language.
+[4] Prince Pung: Takutsu. The Baekje word for coming home to a place. The proper one. / …I used to know it.
+[5] Echi no Takutsu: I don’t know it either, Majesty. I am told they will just be glad you came.
+[6] ¶ He has been losing words for twenty years. He only noticed last winter, in front of the whole Yamato court.
+[7] ▼ FLASHBACK 660 Asuka, that winter · 아스카, 그해 겨울
+    [7.0] ¶ Asuka, the winter Sabi falls. A Baekje envoy has come the whole way with frost in his beard and a hundred Tang soldiers roped neck to neck behind him, a present, which is a polite word for proof. The empress is sixty-six. She has buried two husbands, held this throne twice and sat through a great many envoys, and she lets this one finish.
+    [7.1] [PLACE asuka: The court across the cold sea, where favours are counted in ships.]
+    [7.2] ¶ The envoy comes from **Gwishil Boksin**, who has been raising a dead country in the hills since summer. Boksin wants two things: an army, and the king’s quiet son, who was sent across the sea as a boy and never sent for.
+    [7.3] [CARD Gwishil Boksin: Gwishil Boksin. He raised a dead country once, and he kept the receipts.]
+    [7.4] [CARD The Eastern Prince: The Eastern Prince. He does the arithmetic before anyone asks for it.]
+    [7.5] The Eastern Prince: A hundred prisoners. Generous. / …That’s the first page, though. When do they show us the rest of the bill?
+    [7.6] ¶ The envoy tells him. Soldiers, and the prince. Every head in the hall turns to the prince, who has lived in this palace for twenty years and who discovers that he has been sitting very straight.
+    [7.7] [CARD Abe no Hirafu: Yamato’s admiral of the cold north. He has fought on ice. He has not fought on this river.]
+    [7.8] Abe no Hirafu: Send me! I’ve crossed the cold sea. / I’ve taken Mishihase arrows. The western sea’s only warmer. I’ll bring you back their emperor’s hat!
+    [7.9] The Eastern Prince: Before anyone asks him anything, Mother, I will. / Prince. Do they want you, or your name?
+    [7.10] Prince Pung: …Both, I expect. The name first. / I am still a son of Baekje. I have only… forgotten some of the words.
+    [7.11] ¶ The empress has let all of it run: her son’s arithmetic, the admiral’s hat, the prince’s missing words. Then she speaks once.
+    [7.12] [CARD The Eastern Empress: The Eastern Empress. She has outlived two reigns and most of her ministers’ opinions.]
+    [7.13] The Eastern Empress: My son wants to know what we owe Baekje. / Bring him the sword. The one with seven branches.
+    [7.14] ¶ Three hundred years ago a Baekje king sent the King of Wa a sword with seven branches. It was a gift. It was also a message.
+    [7.15] ¶ It is iron, two and a half feet long, with six branches off a central blade and sixty-one characters inlaid in gold down both sides. It has never been sharpened. It was never going to be.
+    [7.16] ¶ The inscription is the interesting part, because the two countries have spent fifteen hundred years disagreeing about a single verb: whether Baekje _presented_ it upward, or _bestowed_ it downward.
+    [7.17] The Herald: Which is it?
+    [7.18] The Herald: That depends on which country is doing the reading.
+    [7.19] ¶ What is not in dispute: Baekje sent scholars, craftsmen, weavers, horse-handlers, potters and the written word across that water for three hundred years. Nobody on either shore ever sent a bill.
+    [7.20] The Eastern Empress: Asking for soldiers is old. Holding up a falling house is older. / The sea is also a border, my son. When the western roof catches, our eaves are next. / Give them the ships. Give the boy a cap of rank and a wife, so he does not arrive looking like a hostage.
+    [7.21] ¶ Abe is out of the hall before the edict is copied. The prince goes to find a tailor. The eastern prince, who agrees with his mother on everything she has decided, writes the cost of it down on a separate sheet anyway.
+[7] ▲ end flashback
+[8] ¶ The empress died this summer, on her way west to see the fleet off. Her son keeps her promise anyway. Baekje’s refugees are coming home from everywhere they ran.
+[9] ── SCENE: Roll Call ──
+[10] ¶ Juryu, the ninth month of 661. Prince Pung comes ashore below the fortress with a cap of rank, a Yamato wife, five thousand eastern soldiers and an admiral nobody asked for, and finds the founders of the restoration drawn up on the shingle to meet him. Boksin has written the order of introductions on a tally board. He has made them rehearse it twice.
+[11] [PLACE juryu: Bad farmland, good cliffs. Rebels pick the cliffs.]
+[12] ¶ The board begins with Boksin. The order lasts until **Abe no Hirafu**, who is not on it, leaps from the gunwale of the first boat into surf up to his knees, flings his arms wide in his wolf-fur and his red cape, and introduces himself to the fortress, the gulls and the Tang scouts on the far ridge.
+[13] Abe no Hirafu: Abe no Hirafu! General of the cold northern sea! / A hundred and eighty ships against the Emishi, and I caught Mishihase arrows in my teeth! Tang’s next! Ha!
+[14] Gwishil Boksin: You’re not on the board, Admiral. / …Lovely entrance, though.
+[15] ¶ **Echi no Takutsu** waits until the admiral has finished, which takes a while. Then he walks up the shingle, turns his back on the Baekje generals and bows to the sea he has just crossed, low and long, the tails of his white headband lifting in the wind, before he turns round and says the one thing he has prepared.
+[16] [CARD Echi no Takutsu: A Yamato captain. Loud, loyal, and fond of a country that isn’t his.]
+[17] Echi no Takutsu: No one in this country knows my name. So instead of mine, I will say yours. / Long live Kudara. If Kudara needs a life, begin with mine.
+[18] Gwishil Boksin: …He means it.
+[19] ¶ **Dochim** introduces himself sitting down. He has found a flat rock above the tideline and settled on it in his red kasaya, the beads running through one hand and the gilt staff across his knees, and he smiles at the new king the way a monk smiles at a donor whose gift has not yet arrived.
+[20] [CARD Dochim: Dochim. A monk with a general’s staff, in no hurry about either.]
+[21] Dochim: Dochim. A monk of no temple, now. They call me General of the Spirit Army. / The Buddha taught that all things are impermanent. The Tang garrison at Sabi is one of those things. / We march at dawn. Do sleep well tonight.
+[22] ¶ Boksin, who did not write “General of the Spirit Army” on the board, makes a small mark beside it.
+[23] ¶ **Heukchi Sangji** is seven feet tall. The autumn Sabi fell he walked into Imjon with a handful of men and walked out ten days later with thirty thousand, and he regards the whole business of a roll call as a kind of weather. When his turn comes he steps forward exactly one pace.
+[24] [CARD Heukchi Sangji: Heukchi Sangji. The biggest man on the beach, and the hardest to line up.]
+[25] Heukchi Sangji: Heukchi Sangji. Imjon. / …That’s it.
+[26] Gwishil Boksin: The arms, General. We discussed the arms.
+[27] Heukchi Sangji: You discussed the arms.
+[28] [CARD Satek Sangya: A Satek with harbour money and a general’s patience.]
+[29] ¶ **Satek Sangya** has worn the tall gilt cap of his house for the occasion, which is the only concession he makes to it. He does not look up from the ledger.
+[30] Satek Sangya: Satek Sangya. Forty boats, eleven hundred bales of rice, thirty thousand arrows, and I stopped counting the rope. / Nobody has paid me yet. That’s my pose.
+[31] ¶ Then **Gwishil Boksin**, who wrote the board, steps out in front of all of them, plants the red shaft in the shingle and does the arms exactly as rehearsed.
+[32] Gwishil Boksin: Gwishil Boksin. I raised this country once when it fell, and if it falls twice I’ll raise it twice. / Your father asked for this, Majesty. In Chang’an, at the end. We heard. / Welcome home. Your army.
+[33] ¶ Everyone looks at the king. Nobody has given **Pung** a line. He has been in the country for less than an hour and has spent most of it being bowed at, and he ad-libs.
+[34] Prince Pung: I am Buyeo Pung, son of King Euija, and… king of— of Baekje. / …Is that right? Is “restoration” the word?
+[35] [CARD Prince Pung]
+[36] Gwishil Boksin: Close enough, Majesty.
+[37] ¶ Boksin counts them in. “Baekje— Restoration— Army!” Takutsu and the admiral land it perfectly, which is embarrassing for everyone else. Dochim does half and goes back to his beads. Sangya is still counting. Sangji folds his arms, which is at least an arm. The new king is a beat late and on the wrong foot.
+[38] ¶ They try it twice more before supper. For the second, Boksin puts the king on a rock in the middle so that everyone is at least pointing at the same man, and Abe lifts Sangji off the ground to make the shape symmetrical, which nobody asked for and Sangji does not forgive. For the third, Dochim declines to stand, Sangya sits down on the rice, and the king, finally, gets the arms right, a beat after everyone else has stopped.
+[39] [DIAGRAM restoration-army Restoration Army · 백제부흥군 — King at the apex and four founding generals beneath — five captains, one lost country.]
+[40] ¶ On the far ridge two Tang scouts watch the whole performance, and that night Liu Rengui files their report under morale.
+[41] ¶ That evening, on the wall, the new king finds his general alone.
+[42] Prince Pung: My father sent me away with a sentence. “Until I need you.” / …He did not say it would be somebody else who needed me.
+[43] Gwishil Boksin: Somebody always does, Majesty. / Sleep. We crown you tomorrow.
+[44] ¶ Pung was the only prince left, so they crowned him the next day, in the fortress hall, in a cap the Yamato tailor made. Boksin did the crowning. The Yamato men call him Pungjang. Baekje learns to.
+[45] ¶ The crown is Pung’s. The army is Boksin’s. Everyone can see the arithmetic of that, including both of them.
+[46] ── SCENE: The Tang Walls ──
+[47] ¶ Boksin sends a messenger to the Tang walls with a question.
+[48] Gwishil Boksin: When are you gentlemen going home, Ambassador? / Name the day. We’d like to see you off properly.
+[49] Black Tortoise: Tell him we are guests. / Guests leave when the host can keep his own house. This host has two kings, one army and no roof. We’ll stay for dinner.
+[50] ── SCENE: Pisong ──
+[51] ¶ Then Prince Pung wants to move house.
+[52] Prince Pung: This Juryu lies far from farmland. The soil is stone. The people will starve up here.
+[53] Echi no Takutsu: They will starve slower than they will die down there, Majesty.
+[54] Prince Pung: Pisong has water. Rice. Embankments all round it—
+[55] Echi no Takutsu: Pisong is one night’s march from the enemy.
+[56] Prince Pung: I am the king. We move.
+[57] Gwishil Boksin: Then we move, Majesty.
+[58] ¶ They move. Two months later Silla takes the towns to the south in an afternoon, and the whole restoration climbs back up to the barren hill it left.
+[59] ¶ The men move once, move back, and start looking at each other differently.
+[60] ¶ Boksin says nothing on the road back up. He doesn’t need to. Everyone saw who was right, and everyone saw who wore the crown.
+[61] ¶ **Baekje has its king back, and a general who already regrets it. Now the emperor turns north, to walls that have never fallen…!**

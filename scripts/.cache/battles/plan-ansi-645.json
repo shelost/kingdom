@@ -1,0 +1,7 @@
+[
+	{ "episode": 36, "battle": "ansi-645", "phase": "wall", "after": { "kind": "p", "text": "tries the wall first" } },
+	{ "episode": 36, "battle": "ansi-645", "phase": "ramp", "after": { "kind": "p", "text": "Inside the walls the stone runs out first" } },
+	{ "episode": 36, "battle": "ansi-645", "phase": "collapse", "after": { "kind": "p", "text": "come out through the gap" } },
+	{ "episode": 36, "battle": "ansi-645", "phase": "assault", "after": { "kind": "p", "text": "The emperor rides up to watch" } },
+	{ "episode": 36, "battle": "ansi-645", "phase": "withdraw", "after": { "kind": "p", "text": "On the morning he turns for home" } }
+]

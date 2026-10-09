@@ -1,0 +1,113 @@
+[
+	{
+		"id": "muryuk-painted-wall",
+		"entry": "Muryuk",
+		"at": "Muryuk-a. Wake up. Look.",
+		"alt": "Dawn through the east doors of the Golden Gaya hall: King Guhae holds little Muryuk up toward a painted wall where Ibiga comes down through cloud",
+		"scene": "Worm’s-eye from the floorboards: a long timber hall, painted walls floor to rafters (sky god in cloud, a purple rope with a gold box, a red-sailed ship), still half dark. One hard shaft of sunrise through the opened east doors rakes along the wall. Guhae, warm and grinning, lifts the boy in sleeping clothes toward the paintings; the boy’s face open, dazzled.",
+		"people": ["guhae", "muryuk"],
+		"canon": { "with": ["place:geumgwan", "dress:gaya"] }
+	},
+	{
+		"id": "muryuk-helm-too-big",
+		"entry": "Muryuk",
+		"at": "You’ll grow into it.",
+		"alt": "On the threshold facing the harbour, the tall Gaya cone helm sits down over little Muryuk’s eyes; his father laughs behind him",
+		"scene": "Over-the-shoulder from behind the father: the boy on the threshold in an oversized tall conical Gaya helm that covers his eyes, the harbour below in morning haze, ships and iron-shed smoke tiny in bokeh. Low sun as the key.",
+		"people": ["guhae", "muryuk"],
+		"canon": { "with": ["place:geumgwan"] }
+	},
+	{
+		"id": "muryuk-behind-pine",
+		"entry": "Muryuk",
+		"at": "Behind the pine, the boy who held the ford all morning",
+		"alt": "Muryuk, red to the elbow, hides behind a pine trunk with silent tears running into his helm strap; far off under a canopy his father kneels before the Silla king",
+		"scene": "Vertical pine trunk as the one device splitting the frame. Foreground: Muryuk (about fifteen) pressed to the bark in steel lamellar and tall Gaya cone, sword down, tears wet on the strap, mouth shut. Background in soft focus: a canopy, Guhae kneeling, King Beopheung seated. Storm light breaking over the ford.",
+		"people": ["muryuk", "guhae", "beopheung"],
+		"canon": { "battle": true, "with": ["place:geumgwan"] }
+	},
+	{
+		"id": "muryuk-first-son",
+		"entry": "Muryuk",
+		"at": "He should hear Silla first.",
+		"alt": "Dawn in the yard of the Gaya house: Muryuk in full armour holds his newborn son and says nothing, his wife in the doorway",
+		"scene": "Two-shot across a lamp-lit doorway at blue dawn: armoured Muryuk holding a swaddled newborn awkwardly in gauntleted hands, helm on its stand inside; his Silla wife on the threshold, tired and amused.",
+		"people": ["muryuk"],
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "seohyun-egg-basket",
+		"entry": "Seohyun",
+		"at": "Today the egg is Seohyun.",
+		"alt": "In a Surabol lane, little Seohyun sits in a basket while a ring of children chant at him to hatch",
+		"scene": "Bird’s-eye down into a narrow earthen lane between giwa walls: a small boy in undyed white sitting in a wide basket, a ring of jeering children around him, long late-afternoon shadows. The boy is the only still thing.",
+		"people": ["seohyeon"],
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "seohyun-supper-helm",
+		"entry": "Seohyun",
+		"at": "The chopsticks stop.",
+		"alt": "Supper at the Gaya house: chopsticks stopped, the cone helm on its stand by the door watching the table",
+		"scene": "Low table, one oil lamp on the floor raking across three faces: the boy asking, the mother looking at the father, the father looking past them at the tall Gaya cone helm on its stand by the door, which catches the lamplight like a fourth diner.",
+		"people": ["muryuk", "seohyeon"]
+	},
+	{
+		"id": "seohyun-moon-gyuku",
+		"entry": "Seohyun",
+		"at": "plays alone by moonlight against nobody",
+		"alt": "Boy Seohyun alone on the palace gyuku field at night, swinging at the ball on a borrowed horse under the moon",
+		"scene": "Wide, minimal: an empty packed-earth polo field, palace giwa roofs dark at the edge, a full moon in torn cloud. One small rider mid-swing, the ball a pale dot, the horse’s long moon shadow the device across the field.",
+		"people": ["seohyeon"],
+		"canon": { "mounted": true }
+	},
+	{
+		"id": "sukhuljong-gate-bow",
+		"entry": "Seohyun",
+		"at": "Now he bows to a man half his age",
+		"alt": "At the Gaya house gate, old general Muryuk bows perfectly to young Sukhuljong while his son watches from behind the gatepost",
+		"scene": "Rack-focus from the boy’s eye and the gatepost (foreground, sharp) to the gate: young royal Sukhuljong in rich silk, chin up; Muryuk in the cone helm bent in a deep exact bow. Hard noon sun, short black shadows.",
+		"people": ["seohyeon", "muryuk", "sukhuljong"]
+	},
+	{
+		"id": "seohyun-cut-rope-horses",
+		"entry": "Seohyun",
+		"at": "Seohyun follows with the horses",
+		"alt": "Night in the Silla camp: Muryuk and Sadaham sit on a coil of cut rope while young Seohyun holds the horses in the dark",
+		"scene": "Campfire as the practical key, low and to the side: Sadaham eating rice from his helmet on a coil of cut rope, Muryuk sitting beside him looking back across a river at smoking roofs. Foreground silhouette: a boy holding two horses’ reins.",
+		"people": ["muryuk", "sadaham", "seohyeon"],
+		"canon": { "with": ["place:daegaya"] }
+	},
+	{
+		"id": "muryuk-holds-yushin",
+		"entry": "Seohyun",
+		"at": "…Yushin…",
+		"alt": "In the county house at Manno, dying Muryuk holds newborn Yushin, who has hold of his finger",
+		"scene": "ECU-to-medium: an old man under blankets propped on a cart-cushion, the cone helm beside him, a swaddled baby in his arms gripping one of his fingers. Seohyun leaning in, Manmyung behind. One lamp on the floor.",
+		"people": ["muryuk", "seohyeon", "manmyung"]
+	},
+	{
+		"id": "kangrim-muryuk-doorway",
+		"entry": "Seohyun",
+		"at": "Were you the last prince of Gaya, or the first grandfather of Silla?",
+		"alt": "Kangrim in the doorway with his red book; old Muryuk looks back once at the baby in his son’s arms",
+		"scene": "Doorway as a black frame: Kangrim polite and dark with the red book open, not entering; inside, the old man’s head turned back toward the baby in Seohyun’s arms. Cold night light from behind Kangrim, warm lamp inside.",
+		"people": ["kangrim", "muryuk", "seohyeon"]
+	},
+	{
+		"id": "seohyun-yard-gate",
+		"entry": "Seohyun",
+		"at": "It’s straight. You did it three times.",
+		"alt": "At the hwarang yard gate, fifteen-year-old Yushin catches his father’s hands before he can retie the headband a fourth time",
+		"scene": "Pre-dawn yard gate, packed earth still dark. Two-shot: Seohyun’s hands raised toward the boy’s headband, Yushin catching them. Far side of the gate, tiny: another father walking away from a boy in a black headband.",
+		"people": ["seohyeon", "yushin"]
+	},
+	{
+		"id": "seohyun-wedding-cup",
+		"entry": "Seohyun",
+		"at": "the accent he was raised not to have",
+		"alt": "At Munhee’s wedding feast, Seohyun pours half a cup out at the edge of the stone step for his father",
+		"scene": "Low angle from the stone step: Seohyun crouched at the edge, pouring wine onto the stone, lips moving; behind him the feast hall glowing with lanterns in bokeh. Night.",
+		"people": ["seohyeon"]
+	}
+]

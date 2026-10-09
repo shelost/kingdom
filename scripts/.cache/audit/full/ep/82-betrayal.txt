@@ -1,0 +1,50 @@
+
+=================================================================
+#82 Betrayal  (663 June)
+Arc: The Final Stand · place: juryu · tone: resistance tragedy
+Logline: The general who crowned Baekje’s king is sick in bed and asking for a visit. The king remembers another supper.
+=================================================================
+[0] ¶ Boksin is sick. It is the healthiest he has looked in years.
+[1] ¶ For nine days he has not left his bed at Juryu. Every morning he sends the same message up the hill. The king should come. He has something to say that cannot be said in a hall.
+[2] [MAP 663: ]
+[3] ── SCENE: The King’s Room ──
+[4] ¶ King Pung reads the message nine times. Then he sends for **Heukchi Sangji**, who took back two hundred fortresses for Boksin in a single season and has never once made a speech about it.
+[5] Prince Pung: He is your general, Sangji. Should I go?
+[6] Heukchi Sangji: He’s your general, Majesty. Not mine.
+[7] Prince Pung: …Do you know what happened to the monk?
+[8] Heukchi Sangji: He went on a retreat, Majesty. That’s what we were told.
+[9] Prince Pung: That is what I was told too. The morning after a supper.
+[10] ¶ He was new then, and did not know much. He knew what a supper was, though.
+[11] ▼ FLASHBACK 661 the monk’s supper
+    [11.0] ¶ Before Boksin and the king, there were Boksin and the monk. Dochim raised the first banner with him, the autumn Sabi fell. He put down his begging bowl for a spear. He named himself General of the Spirit Army. For a year the two held the west between them. The enemy garrison couldn't even go out for water.
+    [11.1] ❝QUOTE (Dhammapada (法句經) ch. 18, Sword and Rod (刀杖品), tr. Weiqinan & Zhu Jiangyan · T04n0210, p. 565b · Pali: Dhammapada 129, Daṇḍavagga) [Dochim]: All fear death; there is none who does not dread the pain of the rod. Take yourself as the measure: do not kill, do not strike.❞
+    [11.2] ¶ Then a Tang envoy came to the walls with a letter, and Dochim sent him back with it unread and a message that the General of the Spirit Army did not receive men of so small a rank. It was a good line. Boksin heard it and understood that the monk had begun to think of himself as the one in charge.
+    [11.3] Dochim: The Buddha gave me this army, Boksin. You only fed it. / Feed it well. It is going to Sabi.
+    [11.4] Gwishil Boksin: Of course, General. Whatever the Spirit Army needs. / Supper tonight, then. Just the two of us. We’ll talk about Sabi.
+    [11.5] ¶ Dochim comes to supper. He does not leave it. By morning his men have been folded into Boksin’s army without a vote, and Prince Pung, newly crowned and still learning the names, is told that the monk has gone on a long retreat.
+    [11.6] Prince Pung: A retreat. In the middle of a war. / …I see. And who commands his men now?
+    [11.7] Gwishil Boksin: I do, Majesty. So that Your Majesty need never worry about it.
+[11] ▲ end flashback
+[12] ¶ Pung remembers the answer. He has had two years to think about it.
+[13] ── SCENE: The Sickbed ──
+[14] ¶ Sangji goes down the hill instead. He finds Boksin propped on cushions, eating well. There is a screen behind the bed. Under the screen, Sangji counts four pairs of boots.
+[15] Gwishil Boksin: Sangji. Sit. Is His Majesty coming?
+[16] Heukchi Sangji: At dusk, General.
+[17] Gwishil Boksin: You know, it’s I who raised this country. Twice. / And it’s he who wears the crown.
+[18] Heukchi Sangji: Four pairs of boots under that screen, General.
+[19] Gwishil Boksin: Guests. A sick man gets lonely. / …And he’ll want to move the court again. You know he will.
+[20] ¶ Sangji looks at the boots a while longer. Then he goes back up the hill. He is up there a long time.
+[21] ── SCENE: Dusk ──
+[22] ¶ The king comes at dusk, as promised. He brings the Yamato guard, which was not promised.
+[23] Prince Pung: General. You look terribly well.
+[24] Gwishil Boksin: Majesty. Forgive me for not rising.
+[25] Prince Pung: I hear you have risen twice already. That is plenty.
+[26] ¶ Boksin looks past the king, at Sangji. Sangji is looking at the screen.
+[27] ¶ The guards pull the screen down. The four guests are holding knives, which is an odd thing to bring to a sickroom.
+[28] ¶ That night Pung has the general who crowned him bound with a leather thong through the palms. He asks the room whether a man like that should be cut down. The room says yes. A courtier named Jipdeuk says it first and loudest. Boksin spits at him.
+[29] ❝QUOTE (Nihon Shoki (日本書紀) bk. 27, Tenji 2 (663), sixth month): Boksin at once spat at Jipdeuk and said: “Rotten dog, idiot slave!” The king ordered his strong men to behead him, and had the head pickled.❞
+[30] ¶ Two generals stand at the back while the head is salted. **Heukchi Sangji**, who took two hundred fortresses back for Boksin in a single season, watches the king’s hands. **Satek Sangya** watches the jar.
+[31] Heukchi Sangji: The man who crowned him. In a jar. / …What do you think he does with the ones who didn’t?
+[32] Satek Sangya: Same thing. Less salt.
+[33] ¶ Neither of them says what the whole hill is thinking. Boksin was the only general they had who ever won anything.
+[34] ¶ **Four banners. One river mouth. The West, Samhan and the East meet on a single tide…!**

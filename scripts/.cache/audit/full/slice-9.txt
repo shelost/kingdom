@@ -1,0 +1,1036 @@
+
+=================================================================
+#78 Pyongyang I  (661 December)
+Arc: The Final Stand · place: pyongyang · tone: grim war epic
+Logline: A red gate on a grey ridge. There is only one gate anyone remembers.
+=================================================================
+[0] ¶ Pyongyang has never fallen. Every child in the city will tell you so, usually twice.
+[1] ¶ Red Sun's capital sits on its ridge: a red two-storey gate, grey stone, and clouds that always look about to pick a side. The last emperor tried these walls. So did the one before him. The walls are still here.
+[2] [MAP 661: A fleet up the river, an army at the Amnok, and a winter about to pick a side.]
+[3] ── SCENE: The Wall ──
+[4] ¶ Up on the wall, Gesomun's second son is explaining this to a sentry who did not ask.
+[5] [CARD Yeon Namgun: Gesomun’s second son. Loud, loyal, and he believes everything he’s told twice.]
+[6] Yeon Namgun: Pyongyang does not fall. / Not since the Holy King strung his bow. Seven hundred years.
+[7] Yeon Namsan: You said that yesterday.
+[8] Yeon Namgun: It was true yesterday too.
+[9] ¶ Their father walks the wall behind them with a scout’s report in his fist. A Mohe man walks one step behind him, as he has for twenty-seven years. Nobody introduces Gulgul. Nobody ever has.
+[10] Yeon Gesomun: Four beasts, it says. The emperor sends animals now. / One of them brought his sons. All thirteen of them.
+[11] Yeon Namgun: Thirteen? He brought children to a war?
+[12] Yeon Gesomun: Not children. Grown men. / They came to watch their father work.
+[13] ¶ He says it the way other men mention rain. Then he goes down the stairs to send his eldest north, to hold the river.
+[14] ── SCENE: Luoyang ──
+[15] ¶ In Luoyang the Third Emperor announces that he will lead the next army himself. The Empress sends up a memorial the same night.
+[16] Wu Zetian: Your father went in person, Majesty. / Ask the six horses at Zhaoling how that went.
+[17] The Third Emperor: …We will send someone.
+[18] ── SCENE: The Taedong ──
+[19] ¶ The someone is the Red Fowl, the old steppe horseman who took Sabi. He comes up the Taedong in the eighth month and takes the river forts one by one. Then he sits down in front of Pyongyang to wait for winter to soften it. Winter has never been on anybody’s side but Goguryeo’s.
+[20] ── SCENE: The Frozen River ──
+[21] ¶ Namseng holds the Amnok. He is twenty-seven, the heir, and he has read every record of every crossing.
+[22] ¶ His orders are simple. Tens of thousands of picked men, one river, nobody across. On the far bank waits the White Dragon, the old emperor’s Turkish general. He once asked to be buried alive beside his master. They told him no. He has been looking for a useful place to die ever since.
+[23] ¶ Then the ninth month turns cold. Not autumn cold. Wrong cold.
+[24] officer: Commander. The shallows are white. / …The middle’s going too.
+[25] Yeon Namseng: The river has never frozen hard in the ninth month. / Not in any record.
+[26] officer: Sir. The river hasn’t read the records.
+[27] ¶ At dawn the drums start on the far bank. The White Dragon does not build a bridge. He walks out onto the ice himself, leading his horse, and stamps twice.
+[28] ¶ It holds. His army follows him across a river that is no longer there, drumming as it comes. The first Goguryeo arrows skitter off the ice. The second volley never comes. Men who were told to guard water do not know how to guard a floor.
+[29] Yeon Namseng: Hold the bank! Hold— the bank is—
+[30] ¶ There is no bank. There is only ice, and then there is everywhere. Thirty thousand men die defending a line that has gone white. Namseng gets away with his life and very little else.
+[31] ── SCENE: The Gate ──
+[32] ¶ He comes home through the fortress gate at dusk, on a borrowed horse. His father is waiting under the red gate. Gulgul holds the lamp.
+[33] Yeon Gesomun: One river, Namseng. I gave you one river. / Don’t tell me you didn’t know it would freeze. It freezes every year.
+[34] Yeon Namseng: Not in the ninth month, Father. There is no precedent—
+[35] Yeon Gesomun: Precedent! The river can’t read, you idiot.
+[36] Yeon Namgun: Father, he brought the men home. Half of them—
+[37] Yeon Gesomun: Half. He left with all of them.
+[38] ¶ Nobody speaks. Namseng waits for the blow. He has been waiting for one since he was eleven, at the Liao, when an emperor’s men gave it to him instead.
+[39] ¶ It does not come. Gesomun lays a hand on the iron studs of the gate, the way you would test a horse’s leg.
+[40] Yeon Gesomun: Listen. Walls don’t fall. Nobody’s ever knocked these down. / Gates get opened. From the inside. / This one’s yours now. Remember which side of it you’re standing on.
+[41] Yeon Namseng: …Yes, Father.
+[42] ¶ Remember this gate. All three of his sons will.
+[43] ── SCENE: The Campfires ──
+[44] ¶ The Red Fowl’s army freezes in the snow outside the walls. Every night Gesomun counts its campfires from the parapet. Every night there are fewer.
+[45] Yeon Gesomun: They’re eating the horses. Fires go down when the horses run out. / Keep counting, Gulgul. The night they stop going down, somebody’s feeding them.
+[46] Gulgul: …Yes, sir.
+[47] ── SCENE: Surabol ──
+[48] ¶ In the twelfth month a letter comes down from the north. The Red Fowl is out of rice. Munmu reads it to his generals. Everyone in the room knows that road in winter. Nobody offers.
+[49] King Munmu: If they starve out there, the emperor will remember who let them. / And everything my father was promised starves with them.
+[50] ¶ Silence. Then Kim Yushin, who is sixty-six, gets up.
+[51] King Munmu: Uncle. Not you. Send someone younger.
+[52] Kim Yushin: The younger ones don’t know the road, Majesty. Hanseul and I do. / Load the carts.
+[53] [MAP 662: Rice for the Red Fowl, through enemy country, in the dead of winter, driven by the oldest general in Silla.]
+[54] ¶ **The White Tiger has thirteen sons. Yeon Gesomun can count to thirteen…!**
+
+=================================================================
+#79 Snake River  (662 February)
+Arc: The Final Stand · place: sasu · tone: grim war epic
+Logline: The White Tiger still believes rivers are roads. Yeon Gesomun has been waiting for a man who thinks that.
+=================================================================
+[0] ¶ The White Tiger drives his host into the Snake River. They still believe rivers are roads. Yeon Gesomun has been waiting for a man who thinks that. Old men in the north remember another river that ate an army. The Snake is younger. It's hungrier. And it has Yeon's teeth.
+[1] [PLACE sasu: Shallow, slow, and patient with men who think rivers are roads.]
+[2] [MAP 662: The White Tiger thought the river was a road. Yeon is standing in the middle of it.]
+[3] ── SCENE: The Ford ──
+[4] ¶ Here is the plan, such as it is. The Tiger is marching to join the Red Fowl outside Pyongyang. If he gets there, the city is in a ring.
+[5] [CARD White Tiger: The White Tiger. A Tang general who brought all his sons to war, to show them how it’s done.]
+[6] ¶ Gesomun lets him get halfway. The Snake has gravel at the edges and mud in the middle, and Gesomun knows which is which.
+[7] Yeon Gesomun: He thinks it’s a road. Let him walk on it. / When the middle horses sink — both banks. All at once.
+[8] ¶ The middle horses sink. Both banks open up at once.
+[9] ── SCENE: Thirteen Sons ──
+[10] ¶ The river does not take them in a heap. Yeon counts. Chang’an’s clerks will later write _thirteen sons_ as if a number were a grave. It is a morning. The water is February-cold.
+[11] ¶ The thirteenth and the twelfth come together at the first bend — brothers who still share a horse’s width. Yeon meets them in the shallows where the current lies. One stroke. Two bodies. The horse walks on a few steps with no one left to tell it to stop.
+[12] Yeon Gesomun: Thirteen. / Twelve.
+[13] ¶ The eleventh tries the reeds. Reeds keep a secret until a man breathes too loud. Yeon does not spend a speech on a boy hiding in grass.
+[14] Yeon Gesomun: Eleven.
+[15] ¶ The tenth and the ninth turn back toward their father. That is the expensive choice. They die reaching for a sleeve that is still too far upriver.
+[16] Yeon Gesomun: Ten. / Nine.
+[17] ¶ The eighth is the archer. He puts three shafts into the rim of Yeon’s shield and the fourth into his horse’s neck. The horse goes down, and Yeon goes into the water with it.
+[18] ── SCENE: Yumla Defied ──
+[19] ¶ In the worst hour of it — arrows spent, horse down, a Tang blade a finger from his throat — the air thins the way Tamla stories promised. The river stops moving. **Kangrim** and **Haewonmek** are standing on it, a ledger half-open between them.
+[20] Kangrim: Yeon Gesomun. / Your page is… persuasive today.
+[21] Kangrim: Commander. If you walk away now — / are you choosing Goguryeo, or choosing not to be finished by anyone else’s schedule?
+[22] Haewonmek: Any last words? / Say them now. The blade is already practicing your name.
+[23] Yeon Gesomun: Kangrim. Haewonmek. / Both. / And neither is your business until I am done.
+[24] Yeon Gesomun: Not today. / I still have sons to disappoint.
+[25] ¶ Then he turns his back on them. He takes hold of his own body the way you take a coat off a peg, and puts it back on. The river starts moving again.
+[26] ¶ He stands up on will alone. The blade misses. He breaks the spearman’s wrist before the man has finished the thrust. Behind him, the two reapers close the ledger with something like respect.
+[27] Kangrim: Hah. / Keep the country a little longer, then. / I hate refiling — and Your Majesty hates wasted parchment.
+[28] Haewonmek: Next time we bring a longer chain. / Or a taller boss.
+[29] ¶ The archer is still nocking his fifth arrow. He does not finish it. Afterward Yeon takes the bow out of the water and breaks it across his knee.
+[30] Yeon Gesomun: Eight. The bow ends here.
+[31] ¶ The seventh almost makes the far bank. Yeon’s throw finds him between the shoulder-blades, and the current carries him the rest of the way.
+[32] the seventh: Baekju… / Home…
+[33] Yeon Gesomun: Seven. Home is not that bank.
+[34] ¶ Three at once in a knot of horses: the sixth, the fifth, the fourth. They shout one father’s name in three pitches.
+[35] Yeon Gesomun: Six. Five. Four. / Some days you count in threes.
+[36] ¶ The third is old enough to bargain. He offers the banner, the southern levy, a road south, if the Mangniji will count him as a messenger instead of a son.
+[37] the third: Let me go as a messenger. / Among the thirteen I am the only one who opened his mouth.
+[38] Yeon Gesomun: You did not come as a messenger. / That is why you are three.
+[39] ¶ The second is younger. He does not speak. Yeon does not ask him to.
+[40] Yeon Gesomun: Two.
+[41] ¶ The first — the eldest — holds the White Tiger banner with both hands so the silk will not touch the water. He lasts longer than the others because he has decided to be a flagpole. Yeon cuts the pole. The cloth goes under. The boy goes with it, still holding on, which is how eldest sons are trained.
+[42] Yeon Gesomun: One. / Now the tiger.
+[43] ── SCENE: The White Tiger ──
+[44] ¶ Then only the tiger is left. He stands where his boys could still see him, if any of them still had eyes. Someone shouts to break east, toward any camp that is not this one.
+[45] aide: Commander! Toward You Boying’s camp— / Live, and leave the account!
+[46] White Tiger: I have eaten too much favour under two emperors. / I will not go home while this kingdom still stands. / The southern boys I brought are already dead — / what would this one body do, alive?
+[47] ¶ He does not run. The arrows make a hedgehog of him. Yeon walks the last three steps through the water and finishes what the shafts began.
+[48] Yeon Gesomun: White Tiger. / Titles drown too.
+[49] Yeon Gesomun: Still haven’t come to your senses, you bastards?! / I am… none other than… Yeon Gesomun!!
+[50] ── SCENE: The Rice Road ──
+[51] ¶ In the second month a train of carts comes up out of the south through snow to the axles. **Kim Yushin** is sixty-seven, and he has walked half the road beside his white horse so that Hanseul can carry a sack of rice instead of him.
+[52] ¶ The Tang camp outside Pyongyang has been eating its horses. Men sit hugging their knees in the snow and look at the carts as if they might be another rumour.
+[53] ¶ On Pyongyang’s wall that night, Gulgul counts the Tang fires twice. They have stopped going down.
+[54] Yeon Gesomun: Somebody’s feeding them. / …Find out who. Then follow him home.
+[55] Red Fowl: Silla is late. / …Unload it. All of it. Then we go home.
+[56] Kim Yushin: We came through snow to the horse’s chest, General. / You may eat it slowly.
+[57] ¶ The Red Fowl takes the rice, breaks camp within the week, and sails. The road back is Yushin’s problem. Goguryeo’s horsemen follow the empty carts all the way to the Imjin, and the white horse carries him across it.
+[58] ── SCENE: The Far West ──
+[59] ¶ A thousand miles the other way, the courier finds Xue Rengui. You may remember him: the farmer in the white coat who left his ancestors unburied to answer a muster. He has just ended a war in the far west with three arrows. Now he is given the dead man’s title, White Tiger II. And the bill.
+[60] Xue Rengui: White Tiger… I will take the name. / The dead man’s account is paid by the living.
+[61] ¶ The fangtian ji goes east again. Men who never learned his birth name learn the white coat and the crescent blade — and begin, quietly, to fear the second tiger more than the first.
+[62] ¶ **And on an island far to the south, someone is asking: whose side are we on now?**
+
+=================================================================
+#80 Tamla Surrenders  (662 February)
+Arc: The Final Stand · place: mugun · tone: island coda
+Logline: Two envoys, one fire, and an island king who won’t pick only one side.
+=================================================================
+[0] ¶ “Whose side are we on now?” On Tamla, the one who asks is usually holding a fish.
+[1] [MAP 662: An island off the bottom of the map, with two kingdoms’ boats in its harbour.]
+[2] ¶ This time it is a diver, still wet from the morning, with an octopus in one fist. She asks it in the king’s hall, loudly, because the king’s hall is also where the island dries its nets.
+[3] ¶ Yuri Dora does not answer at once. He never answers anything at once. He has a fire, two cups, and two envoys who will not sit down.
+[4] ¶ One came down from the last Baekje hill fort. The other came from Silla, with a Tang officer behind him like a second shadow.
+[5] ── SCENE: Two Envoys ──
+[6] Baekje envoy: Seven hundred years, my lord. Your fathers carried our ranks. / Boksin asks for boats. Grain. Any man who can hold an oar.
+[7] Silla envoy: The Snake River went badly for the Tang, my lord. It will not go badly twice. / My king asks for nothing but your name on a list.
+[8] Yuri Dora: Only my name. You hear that? Only a name. / Names are the dearest thing on this island. We have so few.
+[9] Tang officer: The emperor’s fleet sails past this island on its way to everywhere, my lord. / It could stop.
+[10] Yuri Dora: Then it can stop for oranges. Everyone does.
+[11] The Divers: Feed them first, my lord. Nobody decides anything hungry.
+[12] ¶ So they eat. Raw octopus, barley, a bowl of something orange. The Baekje envoy eats like a man who has not seen a full bowl since Sabi. The Silla envoy eats like a man being watched, which he is.
+[13] ── SCENE: The Turtle ──
+[14] ¶ Then the Baekje envoy plays the only card he brought.
+[15] Baekje envoy: My lord. The general they called Hundred-Victories lived here five years. / He died at the Yellow Mountain, for Baekje. Fighting these men’s army. / Will you bow to the side that killed him?
+[16] ¶ The hall goes quiet. Even the divers stop chewing. Every one of them remembers the Turtle.
+[17] ¶ Yuri Dora turns his cup in his hands for a long time.
+[18] Yuri Dora: The first night, he asked me how many days. Not hello. How many days. / Five years. He never once sat down by this fire.
+[19] ¶ He fills the second cup anyway and sets it by the door, where a man used to stand.
+[20] Baekje envoy: Then you owe him—
+[21] Yuri Dora: I told him one thing when he left. Do not forget people. / I didn’t say, don’t forget kings. Kings he remembered fine. Look where it got him.
+[22] ¶ He points his cup at the door. Outside, on the black rock by the eastern shore, a handful of children are drilling in fives, badly, out of step. Nobody taught them. They learned it by standing behind a man who never turned round.
+[23] Yuri Dora: Those are my people. That’s who I’m not forgetting.
+[24] ── SCENE: Two Boats ──
+[25] ¶ So the king of Tamla makes his choice the way the island does everything: sideways.
+[26] Yuri Dora: Get two boats ready. / One goes to Silla with my name for their list. Make them spell it right. / The other takes him back up to his hill fort. Barley, oranges, whatever the divers can spare.
+[27] Silla envoy: My lord— you cannot bow to both.
+[28] Yuri Dora: Watch me. I’m an island. I don’t have a side. I have a harbour. / And a story isn’t begun with its ending already fixed.
+[29] The Divers: …So whose side are we on?
+[30] Yuri Dora: Ours. Eat your octopus.
+[31] ¶ The two boats leave on the same tide, one east, one north. From the black rock the children wave at both. Nobody has told them which one to wave at.
+[32] ¶ In the emperor’s city, a clerk writes the visit down. He has never seen the island. It shows.
+[33] ❝QUOTE (Xin Tangshu (新唐書) bk. 220, Eastern Barbarians — Danluo (儋羅, Tamla), Longshuo era (661–663)): Early in Longshuo there was a land called Danluo, whose king, Yuri Dora, sent envoys to court. It lies on an island south of Silla's Muju. Its ways are plain and rough: they wear the hides of great pigs, live in leather huts in summer and in pit-houses in winter. … At first it was attached to Baekje. … Later it attached itself to Silla.❞
+[34] ¶ **Baekje refuses to stay dead. And in Surabol, a great lord feels a fever coming on…!**
+
+=================================================================
+#81 Rebellion  (662 August)
+Arc: The Final Stand · place: surabol · tone: court purge drama
+Logline: Nineteen generals are named for the campaign. Two of them call in sick, and are seen at a gyuku match.
+=================================================================
+[0] ¶ Kim Jinju has a fever. Half of Surabol has watched it play gyuku.
+[1] ── SCENE: Naesaji ──
+[2] ¶ Two summers after Sabi, Baekje is supposed to be finished. Baekje has not been informed. Its leftovers hold a hill fort east of the old capital. They collect grain. They hang collaborators. They send boys to watch the Silla roads.
+[3] [MAP 662: ]
+[4] ¶ Munmu names nineteen generals for it. One of them is Kim Jinju. He is True Bone, from a good family. He led men at the Yellow Mountain. He has a son in the emperor's guard.
+[5] ── SCENE: Sick Leave ──
+[6] ¶ Jinju sends word that he is ill. So does his friend **Jinheum**. Neither of them is ill. They stay home through the whole campaign, eat well, and receive visitors.
+[7] Kim Jinju: Nineteen generals for one hill fort. They don’t need a twentieth. / Besides. The war’s over. Somebody should say so.
+[8] ¶ The gyuku field is full that week. Jinju plays well for a sick man. Between rounds, Jinheum leans on the rail beside him.
+[9] Jinheum: The king’s man is in the stands. Third row. He hasn’t watched the ball once.
+[10] Kim Jinju: Let him count. My son stands at the emperor’s door. / Munmu won’t touch a house with a boy in Chang’an. He needs the emperor too much.
+[11] ¶ It is a good argument. It is the argument every lord in the city would make. Munmu has been king for one year, and nobody knows yet what he is.
+[12] ── SCENE: The Moon Palace ──
+[13] ¶ Naesaji falls without him. Kim Heumsun takes it in a fortnight and reports it to the king in two lines, and then, because he is honest and it is his duty, he reports who was missing.
+[14] ¶ Before he sends for them, Munmu asks his uncle one question.
+[15] King Munmu: Uncle. If I spare them?
+[16] Kim Yushin: Then next year you name nineteen generals, Majesty, and seventeen come.
+[17] King Munmu: And when Jinju’s son hears of it in Chang’an?
+[18] Kim Yushin: He’ll hear either way. Better he hears you meant it.
+[19] King Munmu: Ill. / The whole campaign. Both of them. And well enough for gyuku.
+[20] Kim Jinju: Majesty, the fever came and went. A man cannot choose his days—
+[21] King Munmu: My father never had a day off from this war. My sister didn’t get to choose hers. / Take them out.
+[22] Kim Jinju: Majesty— my son. He’s in the emperor’s guard. / Someone has to write to him—
+[23] King Munmu: I’ll write to him myself.
+[24] ¶ Jinju and Jinheum are beheaded, and their households with them, down to the cousins. It is the first time Munmu kills his own nobility. After it, nobody in Surabol mistakes the new king for a soft one.
+[25] ¶ He writes the letter that night. It is short. He does not ask a secretary to do it.
+[26] ── SCENE: Chang’an ──
+[27] ¶ **Kim Punghun** is in Chang’an when the letter comes, in the emperor’s guard, where vassal houses keep their sons. He reads it twice. He hears the rest from a Tang officer who is sorry for him, which is worse. He asks for leave to go home for the mourning and is told, kindly, that he has no home to go to.
+[28] Kim Punghun: …Then I will wait. / The emperor’s ships go east sooner or later. I can wait for a ship.
+[29] ¶ Remember the boy. The emperor’s ships do go east, eventually.
+[30] ¶ **Meanwhile at Juryu, the general who crowned Baekje’s king has taken to his bed. He would love a visit…!**
+
+=================================================================
+#82 Betrayal  (663 June)
+Arc: The Final Stand · place: juryu · tone: resistance tragedy
+Logline: The general who crowned Baekje’s king is sick in bed and asking for a visit. The king remembers another supper.
+=================================================================
+[0] ¶ Boksin is sick. It is the healthiest he has looked in years.
+[1] ¶ For nine days he has not left his bed at Juryu. Every morning he sends the same message up the hill. The king should come. He has something to say that cannot be said in a hall.
+[2] [MAP 663: ]
+[3] ── SCENE: The King’s Room ──
+[4] ¶ King Pung reads the message nine times. Then he sends for **Heukchi Sangji**, who took back two hundred fortresses for Boksin in a single season and has never once made a speech about it.
+[5] Prince Pung: He is your general, Sangji. Should I go?
+[6] Heukchi Sangji: He’s your general, Majesty. Not mine.
+[7] Prince Pung: …Do you know what happened to the monk?
+[8] Heukchi Sangji: He went on a retreat, Majesty. That’s what we were told.
+[9] Prince Pung: That is what I was told too. The morning after a supper.
+[10] ¶ He was new then, and did not know much. He knew what a supper was, though.
+[11] ▼ FLASHBACK 661 the monk’s supper
+    [11.0] ¶ Before Boksin and the king, there were Boksin and the monk. Dochim raised the first banner with him, the autumn Sabi fell. He put down his begging bowl for a spear. He named himself General of the Spirit Army. For a year the two held the west between them. The enemy garrison couldn't even go out for water.
+    [11.1] ❝QUOTE (Dhammapada (法句經) ch. 18, Sword and Rod (刀杖品), tr. Weiqinan & Zhu Jiangyan · T04n0210, p. 565b · Pali: Dhammapada 129, Daṇḍavagga) [Dochim]: All fear death; there is none who does not dread the pain of the rod. Take yourself as the measure: do not kill, do not strike.❞
+    [11.2] ¶ Then a Tang envoy came to the walls with a letter, and Dochim sent him back with it unread and a message that the General of the Spirit Army did not receive men of so small a rank. It was a good line. Boksin heard it and understood that the monk had begun to think of himself as the one in charge.
+    [11.3] Dochim: The Buddha gave me this army, Boksin. You only fed it. / Feed it well. It is going to Sabi.
+    [11.4] Gwishil Boksin: Of course, General. Whatever the Spirit Army needs. / Supper tonight, then. Just the two of us. We’ll talk about Sabi.
+    [11.5] ¶ Dochim comes to supper. He does not leave it. By morning his men have been folded into Boksin’s army without a vote, and Prince Pung, newly crowned and still learning the names, is told that the monk has gone on a long retreat.
+    [11.6] Prince Pung: A retreat. In the middle of a war. / …I see. And who commands his men now?
+    [11.7] Gwishil Boksin: I do, Majesty. So that Your Majesty need never worry about it.
+[11] ▲ end flashback
+[12] ¶ Pung remembers the answer. He has had two years to think about it.
+[13] ── SCENE: The Sickbed ──
+[14] ¶ Sangji goes down the hill instead. He finds Boksin propped on cushions, eating well. There is a screen behind the bed. Under the screen, Sangji counts four pairs of boots.
+[15] Gwishil Boksin: Sangji. Sit. Is His Majesty coming?
+[16] Heukchi Sangji: At dusk, General.
+[17] Gwishil Boksin: You know, it’s I who raised this country. Twice. / And it’s he who wears the crown.
+[18] Heukchi Sangji: Four pairs of boots under that screen, General.
+[19] Gwishil Boksin: Guests. A sick man gets lonely. / …And he’ll want to move the court again. You know he will.
+[20] ¶ Sangji looks at the boots a while longer. Then he goes back up the hill. He is up there a long time.
+[21] ── SCENE: Dusk ──
+[22] ¶ The king comes at dusk, as promised. He brings the Yamato guard, which was not promised.
+[23] Prince Pung: General. You look terribly well.
+[24] Gwishil Boksin: Majesty. Forgive me for not rising.
+[25] Prince Pung: I hear you have risen twice already. That is plenty.
+[26] ¶ Boksin looks past the king, at Sangji. Sangji is looking at the screen.
+[27] ¶ The guards pull the screen down. The four guests are holding knives, which is an odd thing to bring to a sickroom.
+[28] ¶ That night Pung has the general who crowned him bound with a leather thong through the palms. He asks the room whether a man like that should be cut down. The room says yes. A courtier named Jipdeuk says it first and loudest. Boksin spits at him.
+[29] ❝QUOTE (Nihon Shoki (日本書紀) bk. 27, Tenji 2 (663), sixth month): Boksin at once spat at Jipdeuk and said: “Rotten dog, idiot slave!” The king ordered his strong men to behead him, and had the head pickled.❞
+[30] ¶ Two generals stand at the back while the head is salted. **Heukchi Sangji**, who took two hundred fortresses back for Boksin in a single season, watches the king’s hands. **Satek Sangya** watches the jar.
+[31] Heukchi Sangji: The man who crowned him. In a jar. / …What do you think he does with the ones who didn’t?
+[32] Satek Sangya: Same thing. Less salt.
+[33] ¶ Neither of them says what the whole hill is thinking. Boksin was the only general they had who ever won anything.
+[34] ¶ **Four banners. One river mouth. The West, Samhan and the East meet on a single tide…!**
+
+=================================================================
+#83 White River  (663 August)
+Arc: The Final Stand · place: baekgang · tone: grim war epic — naval
+Logline: For the first time, the West, Samhan and the East meet in one mouth of water. The tide is nobody’s friend.
+=================================================================
+[0] ¶ Four banners come to one river mouth. Only the tide has been here before.
+[1] ¶ The White River empties into the western sea through sandbars that move like rumours. Whoever holds its mouth holds what is left of Baekje.
+[2] [MAP 663: ]
+[3] ── SCENE: Four Banners ──
+[4] ¶ The Tang come by sea. The Black Tortoise has held the old capital for two winters with too few men. The emperor offered to bring him home. He wrote back that he’d rather not. So the emperor sent more.
+[5] ¶ Silla comes by land. King Munmu rides out with Kim Yushin and every general he has. Yushin is sixty-eight and still sits a horse as if the horse had asked him to.
+[6] ¶ Baekje is what is left of it: a hill fort called Juryu, a king raised overseas, and no Boksin.
+[7] ¶ So the East sends sails. Hundreds of them, packed too tight to row. Takutsu is among the captains. He brought Pung home two years ago. Last winter he told him not to move the court down to the plain. He was right, and was thanked for it the way men usually are.
+[8] ── SCENE: The King Leaves ──
+[9] ¶ On the thirteenth day of the eighth month, with the Silla army already on the road to Juryu, the king of Baekje announces that he will leave it.
+[10] Prince Pung: Yamato’s relief general is crossing the sea with ten thousand men and more. / Generals, make ready for him. / I shall go down to the river mouth myself, and receive them there with a feast.
+[11] 🙇: Majesty. And Juryu?
+[12] Prince Pung: Juryu has walls.
+[13] 🙇: …It had a general, too.
+[14] ── SCENE: The Throat of the River ──
+[15] ¶ At Ungjin the allied generals argue about where to begin. One fortress sits where the road crosses the river, and most of the room wants it first.
+[16] Black Tortoise: That fort is steep and strong. / Rush it and we bleed men. Sit under it and we bleed days. / Juryu is the nest. Pull the root, and the branches come down by themselves.
+[17] ¶ So the armies split. Most of the generals take the land road. The Black Tortoise takes the water: a hundred and seventy warships, heading for the river mouth. On his deck stands Buyeo Yung.
+[18] [MAP 663 Four banners, one river mouth: Tang by sea twice, Silla by land, and the East arriving in a hurry. Everyone is headed for the same mud.]
+[19] ¶ Euija’s eldest. He knelt at Sabi three summers ago, was taken to Chang’an with his father, and has come back in a Tang officer’s coat to fight his younger brother for the right to tell the survivors what happened to them. Nobody on the deck says this. Everybody on the deck knows it.
+[20] Black Tortoise: Your brother’s banner will be on that fleet. / When it comes, can you look at it?
+[21] [CARD Prince Yung: Euija’s eldest son. Born to be crown prince. Born is not the same as stays.]
+[22] Prince Yung: I have looked at worse. / …I looked at my father.
+[23] ¶ The Black Tortoise has already learned the river's grammar. A narrow mouth. Sandbars that shift like lies. A current that punishes anyone who charges out of line. He anchors his hundred and seventy ships across the throat and waits. On the east bank, Kim Yushin's army keeps the shore from becoming a pier.
+[24] ── SCENE: The Shore ──
+[25] ¶ On the bank the Baekje horsemen guard the landing. They are the last mounted men the restoration can field, drawn up in front of the beached hulls the way you stand in front of a door you cannot afford to lose. Silla’s cavalry comes at them first, out ahead of the Tang foot, because the king of Silla wants it written down later who went first.
+[26] Kim Yushin: Good riders. Guarding boats. / Men guard boats when they mean to leave in them.
+[27] King Munmu: Riders. With me. / When they write this down in Chang’an, I want Silla in the first line.
+[28] ¶ The shore camp goes in one charge. Yushin watches it from the ridge with the reins loose in one hand, which is how old generals watch something they no longer need to do themselves.
+[29] ── SCENE: The Twenty-Seventh Day ──
+[30] ¶ The first Yamato ships to arrive do not wait for the rest. They row straight at the Tang line on the evening water, and the Tang line does not move. It does not chase them, either. When the Yamato boats fall back, the hundred and seventy are exactly where they were that morning, in the same order, at anchor.
+[31] ¶ The Black Tortoise has seen men of Wa once before, in the emperor's city. They were envoys in court silk, and they bowed in all the right places. The court kept them in a guesthouse for two winters, so they couldn't carry home where the fleet was going. These are their cousins. They row standing up. They shout from too far away. They charge a hundred and seventy anchored hulls in boats built for rice. Nobody in his army has fought them before. He watches the first wave break on his line like a scholar reading a new script. He is looking for the grammar.
+[32] 🙇: General— those are Wa? They’re… / …they’re rowing standing up.
+[33] Black Tortoise: The last Wa I saw were bowing to the Son of Heaven. / Watch their oars, not their faces. The faces will stay brave all day.
+[34] Black Tortoise: Nobody chases. / Tomorrow they will all come back together, and they will come angry.
+[35] ── SCENE: The Twenty-Eighth Day ──
+[36] ¶ That night the Yamato captains and the king of Baekje hold council on a deck, and nobody looks at the sky. Abe no Hirafu does most of the talking. He is the rear general, a big man in a wolf-fur mantle who spent three summers chasing the Emishi along the cold northern coast, and he has the habit of men who have lived through bad water: he believes the sea gives way to whoever moves first.
+[37] Abe no Hirafu: Yesterday was the vanguard. Today it’s all of us! / Ha— we go first. Whoever hits first, the other side gives way. That’s the sea. Every sea.
+[38] Prince Pung: …Yes. First. / Let them see the king’s ship at the front.
+[39] Echi no Takutsu: The tide turns before noon. / …Nobody is listening. Good. Then I will go first too.
+[40] [FORMATION The Baekgang, eighth month, 663: Four charges into a formed Tang line, against the tide, in a river mouth too narrow for the eastern numbers. Smoke, flame, and a cinnabar sea.]
+[41] ── SCENE: The Tide ──
+[42] ¶ Takutsu’s ship is in the first line. His rowers pull standing. The Tang hulls come up out of the haze like a wall, and do not move.
+[43] ¶ The first charge hits a wall of hulls and stops dead. Grapnels go over. Crossbows fire down from Tang decks built a man’s height higher. Takutsu’s men climb, fall back, and climb again.
+[44] Echi no Takutsu: Back oars. Form again. / …The water is going slack.
+[45] ¶ The second charge goes in on slack water and comes out against the ebb, the current turning against them. Now the river is pushing the eastern ships back onto each other. Hulls grind. Oars snap against a neighbour’s oars. Nobody can turn.
+[46] ¶ On the Tang flagship, the Black Tortoise has waited all morning for exactly this. He says one word.
+[47] Black Tortoise: Now.
+[48] ¶ The arrows wrapped for flame go up white and come down burning. Ships pressed together turn one burning deck into a neighbourhood. On the third charge and the fourth, fire travels faster than orders. Four hundred eastern ships do not sink so much as spend themselves into light.
+[49] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 84, Liu Renkui (劉仁軌) — Battle of the White River mouth (663) · cf. Samguk Sagi bk. 28, Baekje Annals: 煙炎灼天 海水爲丹): They burned four hundred of their ships; smoke and flame filled the sky, and the seawater was all red.❞
+[50] ¶ Then the wings close. The Tang ships that looked like a wall turn out to have been a door with two leaves, and they swing shut from left and right around the Yamato centre, so tight that the eastern ships cannot turn bow or stern, and men who cannot row and cannot climb go into the water in their armour.
+[51] ¶ From the king’s ship Pung can see the Tang flagship. On its deck, in a Tang coat, stands his elder brother.
+[52] Prince Pung: Yung… you wear their coat on our river…!
+[53] Echi no Takutsu: Long live Kudara — Land of the Heavenly Deer….!
+[54] ¶ His ship is burning under him and he does not leave it. He fights on the deck until there is not enough deck left to fight on.
+[55] Echi no Takutsu: Baekje must survive….
+[56] ❝QUOTE (Nihon Shoki (日本書紀) bk. 27, Tenji 2 (663), eighth month): Echi no Takutsu looked up to heaven and swore an oath, gnashed his teeth in fury, killed some dozens of men, and there fell in battle.❞
+[57] Black Tortoise: Hold the line. Let the tide finish what the bowstrings began. / A river mouth is a judge. Today it judged the East.
+[58] ¶ At the back of the fleet Abe no Hirafu’s ships are still afloat. He has seen a lost tide before, on a colder sea. He turns them for home and hauls in every swimmer the hulls will carry, men in half their armour, men with no oars, and he does not laugh again until Tsukushi.
+[59] ── SCENE: Brothers ──
+[60] ¶ In the smoke a small boat gets away from the king’s ship with a handful of men in it and turns north. It is Pung. He leaves behind his fleet, his allies, his capital on the hill, and his sword.
+[61] ¶ They bring the sword to the Tang flagship. It is a Baekje ring-pommel blade with the ring worn smooth, nothing like a king’s, and the Black Tortoise hands it to the one man aboard who would know.
+[62] Black Tortoise: Whose?
+[63] Prince Yung: …My brother’s. / Our father gave it to him the year they sent him east. He was seven.
+[64] Black Tortoise: Shall I send boats after him?
+[65] Prince Yung: …North is Goguryeo. Let Goguryeo keep him. / He was always better at being sent away than I was.
+[66] ── SCENE: Juryu ──
+[67] ¶ Juryu holds ten more days without its king. Then it opens its gate. Pung’s younger brothers walk out at the head of what is left: soldiers, women, the Yamato men who missed the boats, and an envoy from **Tamla** who came up the hill to bargain for an island and is now surrendering for it.
+[68] ¶ The people who are not surrendering go south, to the port where the Yamato ships will take them off. On the road they say the thing to one another that the Yamato chronicle wrote down, because nobody was left in Baekje to write it.
+[69] ❝QUOTE (Nihon Shoki (日本書紀) bk. 27, Tenji 2 (663), ninth month): Juryu has surrendered. Nothing more can be done. The name of Baekje ends today. The place of our ancestors’ graves — how can we ever go back to it?❞
+[70] ── SCENE: Imjon ──
+[71] ¶ One fortress doesn’t hear it. Its commander shuts the gate and holds all autumn, and the siege goes home. Then two Baekje generals walk into the Tang camp and ask for their armour back.
+[72] Black Tortoise: Heukchi Sangji. Your name is in my register already. / It reads better with you alive. Why now?
+[73] Heukchi Sangji: I watched the king’s hands at Juryu. / Then I watched them row north.
+[74] ¶ The Black Tortoise hands back their armour and points them up the slope.
+[75] Heukchi Sangji: The north wall is the low one. / I built it.
+[76] ¶ Imjon falls to its own people’s hands. Its commander leaves his wife and children inside and goes north to Goguryeo, which by now is where Baekje’s last kings go.
+[77] ¶ When the water cools to ordinary colour again, the restoration has no fleet worth the word. The **Black Tortoise** sits down with Kim Yushin. Neither of them believes a word the other says, and they get a great deal done — which is how alliances sound after four hundred ships have paid for the silence.
+[78] ¶ **Two reapers failed to take Yeon Gesomun at the river. The ledger still has his name in it…!**
+
+=================================================================
+#84 Yeon Gesomun†  (665)
+Arc: The Final Stand · place: pyongyang · tone: deathbed drama
+Logline: The Eternal General is dying.
+=================================================================
+[0] ── SCENE: King Yumla ──
+[1] ¶ The Eternal General is dying.
+[2] [MAP 665: ]
+[3] ¶ He is sixty, which in his line of work is an insult to everyone he fought. The room in Pyongyang is small and too warm. His three sons stand at the bed. Gulgul stands by the door with his back to the wall. In his whole life he has never once sat with his back to a door.
+[4] Yeon Gesomun: Do not… fight amongst yourselves…
+[5] Yeon Namseng: Father. / You never kept a brother close. / One you sent to the far end of the southern border. The rest you cut down.
+[6] Yeon Gesomun: …That is precisely why I am telling you.
+[7] Yeon Namsan: …He means it, brother.
+[8] Yeon Namseng: He always means it. That has never been the trouble.
+[9] ¶ Then he does something nobody in the room expects. He sits up.
+[10] Yeon Gesomun: Gulgul. The chair. Put me in the chair. / I’m not meeting anybody lying down.
+[11] ¶ Gulgul carries him across the room like a sack of grain he is fond of. The swords go on the wall behind the chair, all five, where a visitor will see them.
+[12] Yeon Gesomun: I said it once. Until every bone in me is broken. / Count them, Gulgul. How many are left?
+[13] Gulgul: Enough, sir.
+[14] ¶ He expects one of them — Kangrim with his Question, or Haewonmek with his last words. He has been rehearsing a refusal.
+[15] Yeon Gesomun: …Which of you failed me at the Snake River? / Come on. Ask. I am ready to say no again.
+[16] ¶ It is not either of them. Purple of sentence, not crow-dark of the fetch — **Yumla** himself stands in the room. The judge, not the clerks. A king for a king.
+[17] Yumla: Yeon Gesomun. / My two best men could not bring you at the Snake River. / A man like you — only another king could carry you off. / Consider the courtesy returned.
+[18] Yeon Gesomun: …Hah. / So the clerks failed, and the boss clocked in. / Fine. I always preferred dealing with the top.
+[19] Yumla: The minutes will remember the joke. / Now — walk. Judgment keeps better hours than Supreme Commanders.
+[20] Yeon Gesomun: One thing first. My sons—
+[21] Yumla: Are not my department. / …Yet.
+[22] ¶ At the very end Yeon catches a vision of something. A young man, centuries off, standing in a gate and saying Goryeo as if it had never gone.
+[23] Yeon Gesomun: …Goguryeo, you idiot. Say the whole thing.
+[24] ¶ Then he dies in his sleep, sitting up, which is not how anyone expected it to go.
+[25] Yeon Namseng: Well… even a man like that stands before Yumla in the end.
+[26] ¶ His eldest, Namseng, takes on the title of Supreme Commander. He is thirty-one, and it is very heavy.
+[27] [CARD Yeon Namseng: His father’s chair. It was built for one man, and it shows.]
+[28] ── SCENE: The Chair ──
+[29] ¶ Namseng sits in the chair the next morning. It is too big. Everyone pretends not to notice, which is how you know they have.
+[30] Yeon Namgun: The old man… he really did have a gift, didn’t he.
+[31] Yeon Namsan: He had one. We don’t.
+[32] ¶ Gulgul does not sit at all. He rides north that afternoon, to the border the old man gave him. Nobody tells him to.
+[33] ¶ He outlasted the Second Emperor’s war. He broke the White Tiger in the Snake River with his own hands. Every victory made the kingdom lean on him a little harder, until the whole weight of it rested on one man’s spine. A spine is a magnificent thing. No one has ever built a house on one.
+[34] ¶ Once, three men looked up at the same star and wanted the same thing. He is the last of them to go.
+[35] ¶ **“Do not fight amongst yourselves.” He had three sons. How long do you think that lasts?**
+
+=================================================================
+#85 Brothers’ Coup  (666 December)
+Arc: The Final Stand · place: pyongyang · tone: succession thriller
+Logline: Three brothers, one seal, and men whispering in both directions.
+=================================================================
+[0] ¶ Nine months. That is how long it lasts.
+[1] ── SCENE: The Provinces ──
+[2] ¶ In the spring Namseng rides out to tour the provinces, as a new Supreme Commander should. He leaves his two younger brothers to keep the capital.
+[3] ¶ Within a month there are men whispering in both directions. To Namgun and Namsan: your brother means to be rid of you when he comes back. To Namseng, at every post station: your brothers do not mean to let you back in.
+[4] Yeon Namseng: Nonsense. They are my brothers. / …Send someone back anyway. Quietly. I want to know what they say at supper.
+[5] ── SCENE: The Pyongyang Gate ──
+[6] ¶ The man he sends is caught at the Pyongyang gate within the week. Namgun reads the orders found on him twice, and the second time he reads them as a confession.
+[7] Yeon Namgun: He sends spies. To his own brothers. / Shut the gates! Tell the king the Supreme Commander has rebelled!
+[8] ¶ Namseng’s son is in the capital that spring, with his mother. He is nine years old and wears a little gold ring his grandfather gave him.
+[9] ── SCENE: The Shut Gate ──
+[10] ¶ He rides back to his own capital and finds the gate shut. His brother comes up onto the wall.
+[11] Yeon Namseng: Open the gate, Namgun. / You are speaking to the Supreme Commander.
+[12] Yeon Namgun: Supreme Commander! You send spies to your brothers’ supper and call it command!
+[13] Yeon Namseng: I sent a man to ask how you were. You hanged him.
+[14] Yeon Namseng: Namgun. Look at me. At the Liao, who took the flogging?
+[15] Yeon Namgun: …You did.
+[16] Yeon Namseng: And why?
+[17] Yeon Namgun: Because you’re the elder. You’ve been the elder every single day since. / And they told me you were coming back with a seal for my head.
+[18] Yeon Namseng: And you believed them. Traitor.
+[19] Yeon Namgun: Traitor…? Me?
+[20] Yeon Namseng: Open the gate. My wife is in there. My son—
+[21] ¶ Namgun does not answer. He looks at Namsan. Namsan looks at the ground.
+[22] ¶ Something small comes over the wall and lands in the mud at the horse’s feet. A gold ring, a child’s size.
+[23] Yeon Namgun: He was carrying a letter to you. Out through the water gate. / The guards didn’t— I didn’t—
+[24] ¶ Namseng gets down from his horse and picks the ring out of the mud. He wipes it on his sleeve. He does not look at the wall again.
+[25] ¶ That night he rides north to the old capital at Gungnae. From there he sends his other son west, to Chang’an, to ask the Third Emperor for an army.
+[26] ── SCENE: Defection of Yeon Namseng ──
+[27] ¶ Namseng rides west, across the river his father spent a lifetime holding.
+[28] [MAP 666: North to the old capital, then west over the Liao. His father spent a lifetime stopping men riding this road the other way.]
+[29] ── SCENE: Chang’an ──
+[30] Yeon Namseng: Goryeo is nothing but swindlers and thieves — / a people beyond hope.
+[31] The Third Emperor: …My father spoke of a boy he met at the Liao. / One who would not kneel.
+[32] Yeon Namseng: Twenty years ago, Majesty. Your father and I, when he crossed the Liao. / I did not kneel then.
+[33] ¶ He is thirty-two years old, and his brother has taken his title, his city and his father’s seat, and this is the second time in his life he has been offered a house in Chang’an. Nobody flogs him for the answer this time.
+[34] Yeon Namseng: Your Majesty will never conquer Samhan alone.
+[35] Yeon Namseng: Emperor… Your Majesty… ten thousand years…!
+[36] ¶ Namseng is given a Tang title, and a vanguard command against his own country.
+[37] ¶ The Third Emperor has wanted this war since he was a boy, watching his father come home from it. Now it arrives with a guide.
+[38] ¶ In the south their uncle **Yeon Jungto**, who raised two of them, waits to hear which nephew will send for him. Neither does. He takes twelve cities over to Silla, and the family is finished in three directions at once.
+[39] ¶ Years later, in the emperor’s country, Namseng’s tombstone will tell the story his way.
+[40] ❝QUOTE (Epitaph of Yeon Namseng (泉男生墓誌) — Luoyang, 679; transcription in the Korean Ancient History DB (한국 고대 사료 DB)): His heart was loyal, but matters went wrong at the centre. He had just gone out to comfort the border folk and tour the wild marches, to survey the old lands of the dawn country and ask for new officers to govern them. Then his two younger brothers, Namsan and Namgun, turned vicious and rebellious in a single morning. Heartless to their own blood, they raised troops and shut him out from within. His little son with the gold ring fell suddenly into the whale's jaws, and left the long table and his parents' arms for ever.❞
+[41] ¶ **Namseng knows the road in. Now he rides it home, with the whole Tang army at his back…!**
+
+=================================================================
+#86 Pyongyang II  (668 September)
+Arc: The Final Stand · place: pyongyang · tone: grim war epic — the siege
+Logline: When the ring closes, the city needs one man nobody can buy. They pick a monk.
+=================================================================
+[0] ¶ Every son comes home in the end. Namseng brings the empire with him.
+[1] ── SCENE: The Ninth Invasion ──
+[2] ¶ Three of the emperor’s four beasts come for the city at once. The Blue Dragon leads, the old marshal who has been at this war since the last emperor. The Black Tortoise and the second White Tiger ride behind him.
+[3] [MAP 667: Three beasts, three roads, one city.]
+[4] Xue Rengui: Breaking a fortress… is like farming. / You know the season, you bring the water, you harvest. / Today is a harvest day.
+[5] ¶ There is no cruelty in him, which is precisely what makes him difficult: the men of Goguryeo can hate a butcher, but they cannot quite hate a farmer who treats siege-work as weather.
+[6] ── SCENE: Brothers ──
+[7] ¶ Namseng rides beside the Blue Dragon in a Tang coat, to show him the road. He knows every gully. He used to hunt them. At the top of the last one he reins in and looks at the red gate.
+[8] Yeon Namseng: At last… I set foot on Pyongyang’s ground—
+[9] ¶ On the wall, Namgun can see him. Everyone on the wall can see him.
+[10] [CARD Yeon Namsan: Gesomun’s youngest son, and the one who listens at doors.]
+[11] Yeon Namsan: Brother… he’s wearing their coat.
+[12] Yeon Namgun: Goguryeo… never dies….!
+[13] ¶ That is the only conversation the three of them have that year. A whisper, a shout, and a man on a horse who does not answer.
+[14] ── SCENE: The White Banner ──
+[15] ¶ The ring closes. A month goes by. Inside, the granaries go down the way the Tang campfires did, seven winters ago, and someone on the wall is counting.
+[16] ¶ Namsan counts best. So it is Namsan who walks out first.
+[17] ¶ He goes out through the gate with the king and ninety-eight officials, carrying a white banner. The king of Goguryeo has worn the crown twenty-six years. For most of them a Yeon told him what to say. Today a Yeon is telling him again.
+[18] King Bojang: Do I— do I kneel to him, or to the banner?
+[19] Yeon Namsan: To the banner, Majesty. He’s only holding it.
+[20] ¶ The king kneels. The Blue Dragon accepts the surrender very politely. Then he looks up at the walls, where the gate has already shut again behind them.
+[21] ── SCENE: Betrayal from Inside ──
+[22] ¶ Namgun has not surrendered. He has the walls, the army and the gate. What he needs is one man nobody can buy. He picks a monk. Shinsung has kept a small temple at the foot of the hill for twenty-five years. He has never asked anyone for anything.
+[23] Yeon Namgun: You have no clan, no faction, no sons. / You’re the only man in this city I can’t imagine selling it.
+[24] Shinsung: Then I shall try to be worthy of your imagination, Mangniji.
+[25] ¶ For five days a novice walks out of the lesser house before dawn with an alms bowl and comes back with it empty, and nobody thinks to ask why a monk’s bowl should come back empty from the direction of the Tang lines. On the fifth night the bell that has sat on the floor of the lesser house since the year the Daoists came is struck once.
+[26] ¶ Yeon once tried to starve the temples with the emperor’s Daoists. The monks have waited a generation. Shinsung doesn’t make a speech about doctrine. He opens a gate.
+[27] ¶ The Tang come in before the bell has stopped ringing. Quietly at first, then not quietly at all. The gate towers catch one after another, like lamps being lit for a feast.
+[28] ── SCENE: Last Words ──
+[29] ¶ Namgun is thirty-one. He leads the last stand against the Blue Dragon himself.
+[30] Yeon Namgun: Silla’s sacred blood — rot! / Goguryeo will take the final victory! / You may rule this soil — our name will have the last word!
+[31] ¶ The wall is already lost. He knows it. He says it anyway, to the men who can still hear, and to a bloodline across the river he can’t see.
+[32] Yeon Namgun: Goguryeo… never dies….!
+[33] ¶ When the gate towers burn, Namgun stabs himself in his own hall. He does it badly, the first thing he has done badly in the whole war, and the Tang surgeons save him so that he can be sent alive to the farthest edge of the empire.
+[34] ¶ In the burning palace, a Mohe man with a border sabre walks into a treasury nobody is guarding any more. He comes out with a piece of gold no longer than a finger, snapped off something that used to be worn on a head. Nobody stops him. Nobody ever looks at Gulgul.
+[35] ¶ Among the captives is a Baekje king with a Yamato accent. Pung ran north to the last kingdom left. The kingdoms ran out before he did.
+[36] ¶ When the city falls, the empire doesn't send a stranger to hold it. It sends Xue Rengui. The white coat becomes a banner over a broken capital. He governs well enough that even the conquered prefer him to chaos.
+[37] Xue Rengui: I… did not wish to be your enemy. / But I could not leave His Majesty’s east empty-handed.
+[38] ¶ Goguryeo had stood seven hundred years. The record, for its part, writes only the month and the surrender.
+[39] ── SCENE: Zhaoling ──
+[40] ¶ Before the captives are shown to the living emperor, the Blue Dragon takes them up the mountain to show them to the dead one. The king of Goguryeo is made to bow at Zhaoling, in front of the door the Second Emperor said his horses would guard. The six stone horses stand in their row. The purple one is nearest the door.
+[41] ── SCENE: The New Rank ──
+[42] ¶ The seventeen grades stop at one another. In the tenth month, after the city is open, **King Munmu** cuts a rank the grades did not have, and gives it to the man who has been Marshal since the yard.
+[43] King Munmu: Marshal.
+[44] Kim Yushin: Majesty.
+[45] King Munmu: You have been Marshal since before I could hold a bow. / The yard still says it. / The seventeen grades do not reach you anymore.
+[46] Kim Yushin: The word is enough. / I know what I am.
+[47] King Munmu: There was already a grade above the seventeen. / I had them cut one above that. / Supreme General.
+[48] [CARD Kim Yushin: A rank above every rank. They had to invent it for him.]
+[49] Kim Yushin: A new name for an old man.
+[50] King Munmu: It is the name of the man who fed this war through the snow. / Wear it. / You may keep Marshal for the boys on the yard.
+[51] Kim Yushin: …As you command.
+[52] ¶ **The story isn’t over yet. The Third Emperor still controls large swaths of Samhan. The final war begins…!**
+
+=================================================================
+#87 Mount Gain  (665 August)
+Arc: Silla-Tang War · tone: oath and grief
+Logline: The night Pyongyang falls, Munmu goes to look at an oath. Three summers earlier, the empire made him swear it over his uncle’s white horse.
+=================================================================
+[0] ── SCENE: The Ancestral Temple ──
+[1] ¶ The night Pyongyang falls, the king of Silla goes to visit a piece of paper.
+[2] ¶ It hangs in the ancestral temple, beside his father's tablet. Gold letters on iron. An oath, sworn over a dead horse, to love Baekje's prince like a brother. Goguryeo is gone tonight. Up north, the emperor's clerks are already measuring what is left.
+[3] King Munmu: Everything south of Pyongyang, and the whole of Baekje. / My father made me learn it by heart.
+[4] Kim Yushin: The emperor will have learned a sentence too, Majesty.
+[5] King Munmu: I know. It’s hanging right here. / Uncle. Do you remember the horse?
+[6] Kim Yushin: …Every day, Majesty.
+[7] ¶ Every war starts with an insult somebody swallowed. Silla swallowed this one three summers ago. To taste it, go back to a hill outside Bear Ford, and the only white horse in the camp.
+[8] ── SCENE: Bear Ford, Three Summers Earlier ──
+[9] ¶ Two springs after the White River, the empire names a governor for what is left of Baekje. It is Buyeo Yung. He once knelt at Bupmin's horse and was spat on. Then he went to the emperor's city and came back in imperial robes. Now he will rule from the fortress where his father was arrested.
+[10] ¶ The court in Surabol hears the name and goes very quiet. Their men died for this ground. An emperor promised it to Chunchu by lamplight. Now a Baekje prince sits on it again, with the emperor's seal in his hand.
+[11] ¶ Yung moves into the commandery offices in the spring. The rooms his father was taken from have been whitewashed. The Black Tortoise shows him the registers, and the calendar, and the list of names he may not write.
+[12] Black Tortoise: Your households, Commander. Every one of them a number now. It makes them much easier to look after.
+[13] Prince Yung: …My father counted them by name. / He was wrong about most things. Not that.
+[14] ── SCENE: The Altar ──
+[15] ¶ That summer, the empire makes the two men who rule the south swear to be brothers. It picks a hill outside Bear Ford. The clerks name it the Mountain Where One Goes for Gain. They mean it kindly.
+[16] [PLACE chwiri: A hill outside Bear Ford, named by optimists.]
+[17] ¶ An imperial envoy presides. The Black Tortoise wrote the oath. On one side of the altar stands Munmu. On the other stands Yung. Munmu last saw that face at the height of his horse's knees.
+[18] ── SCENE: The White Horse ──
+[19] ¶ An oath of this weight needs a white horse. The Tang adjutant has been walking the Silla lines all morning looking for one, and stops in front of the only white horse in the camp.
+[20] Tang adjutant: That one. Whose is he?
+[21] ¶ Hanseul is past twenty. He has carried Yushin across the Yellow Mountain. He has carried rice through snow up to his chest. His muzzle has gone grey. On a white horse, only the man who feeds him notices.
+[22] King Munmu: No. Find another. That is my uncle’s—
+[23] Kim Yushin: Let them have him, Majesty.
+[24] King Munmu: Uncle.
+[25] Kim Yushin: A white horse is what they asked for. It would be a poor oath on a brown one. / …I’ll walk him up myself.
+[26] ¶ He leads Hanseul up the hill by the halter, the way he led Hangyul across the Moon Palace yard eighteen years before, talking to him in the low voice he keeps for horses and uses on no one else. At the altar he holds the head himself.
+[27] ¶ The knife is Tang. The blood goes into a bowl, and both men touch it to their lips. Yung does it without looking at anyone. Munmu does it looking at his uncle’s hands.
+[28] Black Tortoise: …Let them be as brothers, sharing disaster and pitying each other’s sorrows, forever as one. / Whoever breaks this covenant, may the gods see it; may a hundred calamities fall on him, may his sons not grow, and may no one remain to keep his altars.
+[29] ¶ The covenant is written out three times. One copy is buried at the altar with the horse. One goes to Chang’an. The third is carried to Surabol and laid up in Silla’s ancestral temple, where the kings of Silla will have to walk past it every time they visit their fathers.
+[30] ── SCENE: Surabol ──
+[31] ¶ On the road home nobody in the Silla column says anything about the horse.
+[32] ¶ In Surabol the anger is louder. Men bled for this land in three wars. An emperor promised it to them. Now they have sworn on a dead horse never to take it. The young officers say betrayal in the barracks. The older ones say nothing. They start counting Tang garrisons.
+[33] ¶ That night the king finds his uncle in the stable, cleaning a stall that is empty.
+[34] King Munmu: I’ll find you another white horse, Uncle.
+[35] Kim Yushin: I’m seventy, Majesty. I’ve buried three. / Find me a war instead. I’d like to go to one more before they make me swear to something else.
+[36] ── SCENE: The Ancestral Temple ──
+[37] ¶ Three summers later, the old man got his war. It ended tonight, with a monk at a gate. He stands beside the king in the temple now, and neither of them looks at the iron for long.
+[38] King Munmu: Uncle. Before the emperors. Before seals, and oaths, and governors with lists. / Who was the first king of this land?
+[39] Kim Yushin: Ask your mother. She tells it to every child in the house. / It starts with a bear.
+[40] King Munmu: A bear.
+[41] Kim Yushin: A patient one. Your mother always looks at me when she gets to that part.
+[42] ¶ **To find the first king of this land, we have to go back before there were kingdoms… to a bear in a cave…!**
+
+=================================================================
+#88 Dangun & Old Joseon  (Long ago)  [FLASHBACK EPISODE]
+Arc: Silla-Tang War · place: asadal · tone: founder fairy tale, then a dark legend
+Logline: Before there are any kingdoms, there is a son in heaven who keeps looking down.
+=================================================================
+[0] ¶ Before there are any kingdoms, there is a son in heaven who keeps looking down. He is **Hwanung**. His father **Hwanin**, the Lord of Heaven, notices, looks down himself at a mountain called Taebaek and the people living around it, and decides the world could use his son.
+[1] [CARD Hwanin: The Lord of Heaven. He has been watching this peninsula since before it had names.]
+[2] [DIAGRAM joseon-mandate Old Joseon · 고조선 — Heaven’s mandate made into a capital: Hwanin → Hwanung → Dangun → Asadal.]
+[3] ¶ Hwanin does not plough — he opens the sky. Three seals go down with his son, so that nobody on the ground can mistake him for a prince playing at exile. Every later king in this chronicle will cut seals of his own, and every one of them is copying these.
+[4] ¶ Hwanung lands on a mountain under the sacred birch. He names the ground beneath it the Divine City. Three thousand followers come down with him. Among them are the lords of wind, rain and cloud. Someone has to argue with the weather.
+[5] [CARD Hwanung: Hwanung. A son of heaven who kept looking down until his father let him go.]
+[6] ¶ From there he hands out civilisation in instalments. Laws. Punishments. Lifespans. Illness. Good and evil. Medicine. Three hundred and sixty matters in all. Somebody counted.
+[7] ¶ There is a short way to tell the rest, the way it is carved on stones. The long way begins, as long ways do, with a bear who wanted something so badly that she outlasted a tiger for it.
+[8] ¶ A bear and a tiger come to him and ask to be made human. He gives them a bundle of mugwort, twenty cloves of garlic, and one instruction: stay out of the sun for a hundred days.
+[9] ── SCENE: The Sacred Birch ──
+[10] ¶ The bear stays. She comes out a woman on the twenty-first morning, garlic still on her breath, and finds the mountain already staffed — wind, rain, cloud, and not one of them a husband. So she stands under the sacred tree. Not once. Every day, on the path he has to take if he means to reach the hall.
+[11] [CARD Ungnyeo: Ungnyeo. Twenty-one days in a cave, and the tiger left first. A husband should be easy.]
+[12] ¶ He means to reach the hall. On the third evening he gets as far as the birch, and the seal in his hand becomes a thing he is holding for no reason he can name.
+[13] Ungnyeo: You're going to walk past again.
+[14] Hwanung: …Not today.
+[15] Ungnyeo: Yesterday you did. / And the day before. I was standing right here.
+[16] Hwanung: I saw you. / The garlic reached this far.
+[17] Ungnyeo: Twenty-one days of that, and this is what came out. / …I was going to say don't come closer.
+[18] Hwanung: Too late. / Stay. I mean— don't go. Your hand—
+[19] Ungnyeo: You already have the hand. / …Scared of the rest?
+[20] Hwanung: I am. / Because you're looking at me.
+[21] Ungnyeo: Then come down. / The tree can watch. I want… more.
+[22] ¶ The kiss is clumsy. Beard, a new mouth, birch bark at her back. She makes a small furious sound and tries again, and the second one lands.
+[23] ¶ White silk goes down among the roots. The fur at her throat opens under his mouth. She laughs once, startled at the sound, and pulls him down by the hair.
+[24] ¶ By the time the moon clears the snow on the peak, the rust-red sash is somewhere in the moss, and neither of them has gone back up the path.
+[25] Ungnyeo: …You're going already?
+[26] Hwanung: I can't. / I don't know where I put the seal.
+[27] Ungnyeo: Under my head. / I took it. …Don't go.
+[28] Hwanung: …Thief.
+[29] Ungnyeo: Marry me in the morning. / Right now I'm here.
+[30] ── SCENE: Asadal ──
+[31] ¶ Their son is Dangun. The name on the stone is Wanggeom: a king who governs, not one who inherits a bone rank. He founds Asadal where the mountain meets the plain. He rules for fifteen hundred years, and then he becomes the mountain.
+[32] [CARD Dangun: Dangun. Half heaven, half bear, and all the paperwork of a first king.]
+[33] ❝QUOTE (Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Old Joseon (Dangun); Ha & Mintz tr., pp. 32–33): He granted three heavenly seals and sent him to govern. Hwanung led a following of three thousand and descended under the sacred altar-tree on the summit of Mount Taebaek; this was called the Divine City. He married the bear-woman, and she bore a son named Dangun Wanggeom.❞
+[34] [PLACE asadal: Where the mountain meets the plain, and the first crown met both.]
+[35] ¶ Every later crown in these kingdoms argues, one way or another, back to the woman who used to be a bear. Her son’s city keeps his name long after he has become a mountain.
+[36] ── SCENE: The Fall of Joseon ──
+[37] ¶ Joseon outlives its founder by a long way. Two thousand years on it is still there, run by other kings now, from a walled city on the Taedong that has kept his name: **Wanggeom**. In the autumn of 109 BC, Han comes to the gate.
+[38] ¶ It takes the empire of the West a year to take one fortress, and they do not take it. Wanggeom holds through a siege that begins in the autumn and is still going the following autumn.
+[39] ¶ So they stop attacking the walls and start talking to the men behind them, which is cheaper and has never once failed.
+[40] ── SCENE: The King's Wall ──
+[41] ¶ **King Ugeo** has stopped sleeping in the palace. He sleeps on the wall, where he can hear the Han camp coughing, and his son, the prince, has started sleeping somewhere else.
+[42] Prince Jang Hang: Father. They’ve sent terms again. / Open the gate, they say, and nobody inside gets hurt.
+[43] King Ugeo: They said that last autumn. / Who brought it to you?
+[44] Prince Jang Hang: …Does it matter who?
+[45] King Ugeo: It matters. / Get off my wall.
+[46] ¶ One of the ministers who have been doing the talking goes over the wall that week and dies on the road before he reaches the Han tents. Another does not bother with the road. One night at the start of summer he sends men up the wall-stair instead.
+[47] Seong Gi: Majesty—!
+[48] King Ugeo: …Seong Gi? / Don’t hold the city. Not for me. / Get the people out. Live… and make a new country. Anywhere.
+[49] ¶ Seong Gi closes the king’s eyes, goes back up to the parapet, and holds the city anyway.
+[50] ¶ He holds it until the dead minister’s son and the prince go down into the lanes, where people have been eating bark since the spring.
+[51] Choi: The king is dead. / So who are you starving for now? Him?
+[52] ¶ Before morning Seong Gi is dead too.
+[53] ¶ Someone lifts the bar.
+[54] The Herald: The wall did not come down.
+[55] The Herald: A door was opened from the inside.
+[56] ¶ Han takes Wanggeom. Some of the people the king told to live go south over the mountains. They settle in six villages around Surabol. Two generations later, they'll go looking for a king. The rest stay, and the empire cuts them into four pieces. The last piece is still collecting taxes four hundred years later.
+[57] ¶ That is the story Munmu gets, in his mother’s version, with extra garlic. He came for the bear. He keeps thinking about the door.
+[58] ¶ **Eight hundred years later, the empire comes back to the same river to do the same thing. This time, Goguryeo has a prince left…!**
+
+=================================================================
+#89 Anseung  (670 June)
+Arc: Silla-Tang War · place: pyongyang · tone: exile court drama
+Logline: Geom Mojam raises Goguryeo’s flag and finds a royal to stand under it. They disagree about dying, and only one of them sees the morning.
+=================================================================
+[0] ── SCENE: The Protectorate ──
+[1] ¶ Every revival needs two things: a flag and a royal. Geom Mojam has the flag.
+[2] ¶ The empire has done it again on the Taedong. Pyongyang is a Protectorate now, run by Tang clerks who seem surprised that anyone minds. Mojam minds. He kills the clerks, raises Goguryeo’s colours, and goes looking for someone royal to stand under them.
+[3] ¶ He finds one on an island in the western sea, mending a net. His name is Anseung. His father is Yeon Jungto, the uncle who took twelve cities over to Silla. His mother was a king’s daughter. Mojam only needs the second half.
+[4] ❝QUOTE (Samguk Sagi (三國史記) bk. 6, Silla Annals — King Munmu, yr. 10 (670), sixth month): Mojam, a daehyeong of Goguryeo from Surim Fortress, gathered the surviving people, marched from Gungmo Fortress to south of the Pae River, and killed the Tang officials and the monk Beop'an. Heading for Silla, he reached Saya Island in the western sea, found Anseung, son of the Goguryeo minister Yeon Jungto, brought him into the River Palace, and set him up as lord.❞
+[5] ── SCENE: The River Camp ──
+[6] ¶ By the next spring the revival has a court, a royal, and four thousand households camped along the river. It also has a Tang army coming down the north road. The two men argue about it in front of everyone, because a revival has no rooms with doors.
+[7] Geom Mojam: We hold the river. We hold Pyongyang. / If they want it back, they can climb over us.
+[8] Anseung: They climbed over Pyongyang two years ago. With better walls than ours in the way.
+[9] Geom Mojam: Pyongyang has kings in its soil four hundred years deep. You want to leave them for a Silla guest room?
+[10] Anseung: The kings in the soil will keep. The four thousand households above it won’t.
+[11] Geom Mojam: Then go. Take your households. / I’ll hold it with whoever stays.
+[12] ¶ He says it loud, to the fires. Around the fires, men stop eating. Anseung looks at them. Nobody stands up. Nobody sits down either. He understands what that means before Mojam does. In the morning they will follow whoever is still alive.
+[13] Anseung: …You’re right, General. / Let’s sleep on it.
+[14] ¶ That night Anseung has him killed in his tent. It is the first Goguryeo blood the revival spills, and it is spilled by Goguryeo.
+[15] ¶ In the morning the men by the fires do not ask where the general is. They pack.
+[16] ¶ Then he takes four thousand households south, to Silla.
+[17] ── SCENE: Silla's Guest ──
+[18] ¶ Munmu gives him a title, a district, and a name for the thing: Goguryeo, still standing, inside Silla. It is a useful fiction and both sides know exactly how useful.
+[19] ¶ Silla settles him in a town that was somebody else's kingdom ten years ago. Within the year he is called King of Goguryeo. In time he gets a bride, and a seat at Munmu's feasts. Well below the king's.
+[20] King Munmu: A king of Goguryeo in Silla. The emperor will hate it. / Good. Give him a seal. A big one.
+[21] King Munmu: And end the patent the way the emperor ends his. “Be reverent.” / Twice. He’ll hate that most of all.
+[22] ¶ Anseung bows when the seal comes, very low: a king of Goguryeo in a Silla hall. Far north, on the Taedong, a tent is still standing with nobody in it.
+[23] ¶ **The emperor hears there is a king of Goguryeo in Silla. His general reaches for a brush instead of a sword…!**
+
+=================================================================
+#90 Letters  (671 July)
+Arc: Silla-Tang War · tone: epistolary duel
+Logline: Xue Rengui would like to win this war by post. The king does not go to bed.
+=================================================================
+[0] ── SCENE: The First Letter ──
+[1] ¶ In high summer, a Tang monk is rowed ashore under a white flag. He carries a letter from the fleet. The fleet belongs to Xue Rengui, the second White Tiger. He has sat off the coast all summer. If it can be managed, he'd like to win this war by post.
+[2] Imyun: The Commander sends his respects, Majesty. He asks that it be read aloud. / He says it reads better aloud.
+[3] Xue Rengui: To the King of Silla, from Xue Rengui, Commander of the Eastern Fleet, greetings. / A clear wind blows ten thousand li from the capital to your coast, and the sea between is three thousand. I have come all of it to say one thing. / Your father knelt before the Second Emperor and was raised up. He was given robes, and a brother, and an army. You were given his crown. / And now you take the land the emperor’s soldiers bled for, and you shelter his rebels, and your own brother waits in Chang’an, ashamed to be asked about you. / Turn back while there is still a road to turn on. / I have the honour to remain, in all things but this, Your Majesty’s servant — / Xue Rengui.
+[4] ¶ The copy the archives keep is longer, and has a cicada in it.
+[5] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), seventh month — Xue Rengui's letter, carried by the monk Imyun) [Xue Rengui]: It is like a man who goes out with his sling and never sees the dry well at his feet, or reaches for the cicada and never knows the oriole is behind him. That is Your Majesty, not knowing your own measure. … Alas! Once loyal and righteous, now a rebel subject. I grieve that what began in good fortune ends in ill, that what grew from one root ends in different branches. The wind is high and the air is sharp; the leaves fall and the year turns sad. I lean on the mountain and look far off, and it wounds my heart.❞
+[6] ¶ The monk is given a bed, a meal, and as long as it takes. The king does not go to bed at all.
+[7] ── SCENE: The Writing Room ──
+[8] ¶ By the second night the king’s writing room is full of men with opinions. One of them, an official named **Daeto**, has more than most.
+[9] Daeto: Majesty, a softer word here and there costs nothing. / They have a fleet off Bear Ford. They have Prince Inmun. Could we not say we were mistaken about the border? Everyone is mistaken about borders.
+[10] King Munmu: We were not mistaken. / Write it the way I say it.
+[11] ¶ There is another reason the room is careful. Nine summers ago, the king killed a great lord and his whole house for calling in sick. The lord's son wasn't in the house. He's in the emperor's guard. Somebody there will have told him by now.
+[12] ── SCENE: The Reply ──
+[13] King Munmu: To the Commander of the Eastern Fleet, from the King of Silla. / Your letter came by a monk, and was read aloud as you asked. It does read better aloud. So will this.
+[14] ¶ He dictates the rest standing up, and does not stop for most of the night.
+[15] King Munmu: In the twenty-second year of Zhenguan my father went to Chang’an. The Second Emperor took him into a gallery of stone horses and said: everything south of Pyongyang, and the whole of Baekje, shall be Silla’s, forever. / My father made me learn those words when I was twenty-two. I have them still. I expect the emperor’s clerks have them too.
+[16] King Munmu: When your Red Fowl sat outside Pyongyang eating his horses, my uncle was sixty-seven. He walked beside his own white horse through snow to its chest so the horse could carry rice instead of him. Your soldiers wept when they saw the carts. Your general took the rice and sailed home the same week. / We were late, he said. We are always late. We came anyway.
+[17] King Munmu: Then you gave Baekje back to a Baekje prince, with a Tang seal, at Bear Ford. Then you took us up a hill called Gain and made us swear to be his brother over a dead horse. / The horse was my uncle’s. He walked it up himself. I watched his hands.
+[18] King Munmu: At Pyongyang our men went through the gate first. Then your Protectorate came and wrote our share down as nothing. / You say I shelter rebels. I shelter the people your officials could not be bothered to count.
+[19] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), seventh month — King Munmu's reply to Xue Rengui) [King Munmu]: Alas! While the two kingdoms stood, we were the hounds that ran at your pointing finger. Now the game is all taken, and it is we who are threatened with the pot. Baekje, the bandits' leavings, is rewarded the way Han once paid off an old enemy; Silla, which died for Han, is cut down the way Han once killed a man for sparing it. Though the sun's light no longer turns our way, the sunflower's heart still faces the sun.❞
+[20] King Munmu: My brother is in Chang’an. Tell him I am well. Tell him I said his name. / I have the honour to remain the king of the country you came to save — / Bupmin.
+[21] ¶ Daeto copies it out fair. His hand is very steady. Later that night he writes a second letter, a short one, to a different address, and puts it in his sleeve, and does not send it yet.
+[22] ── SCENE: The Second Letter ──
+[23] Xue Rengui: Your Majesty’s letter has been received, and read aloud. It took most of an afternoon. / Nowhere in it is the word “sorry.” / I have the honour to remain your servant, in fewer things than before — / Xue.
+[24] King Munmu: The Commander’s letter has been received. It took no time at all. / Nowhere in it is the word “rice.” / I have the honour to remain the king — / B.
+[25] Xue Rengui: Then I will come and fetch the apology myself. / — X.
+[26] King Munmu: Come, then. / — B.
+[27] ── SCENE: Seventy Ships ──
+[28] ¶ He comes. In the tenth month, off the western coast, a Silla squadron finds seventy Tang transports riding low with grain for the garrison at Bear Ford, and takes them: hulls, crews, one Tang colonel, and all of the rice.
+[29] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 11 (671), tenth month): Winter, the sixth day of the tenth month: we struck more than seventy Tang grain transports and captured the colonel Qianer Dahou and over a hundred soldiers. The drowned were past counting. The geupchan Dangcheon's merit was first, and he was raised to sachan.❞
+[30] King Munmu: Send word to the White Tiger that his rice has arrived. / Late. As usual.
+[31] ¶ **The Tang are coming south. Silla is winning. That is exactly when armies start to chase…!**
+
+=================================================================
+#91 Stone Gate  (672 August)
+Arc: Silla-Tang War · place: seokmun · tone: grim war epic
+Logline: Silla wins the morning, then makes the mistake that costs the year: it chases.
+=================================================================
+[0] ── SCENE: Stone Gate ──
+[1] ¶ Winning is the most dangerous thing an army can do.
+[2] ¶ Silla and what is left of the Goguryeo revival meet the Tang coming south, break them, and cut down several thousand. By noon the Tang are running north. Soon after, Silla is running after them.
+[3] [MAP 672: The Tang come south and turn. Silla gives chase. Watch where the chase ends.]
+[4] ¶ Among the riders is a lieutenant barely old enough for the rank, with a famous father and a borrowed horse. His name is **Wonsul**. Like every boy in his father’s yard, he has been taught that a Hwarang does not retreat. Nobody has taught him where a chase ends.
+[5] Danneung: Lieutenant. The column’s strung out over two li. We’re not in line.
+[6] Wonsul: They’re running. You don’t form a line to chase a man who’s running.
+[7] [PLACE seokmun: A narrow place that looks like a way out, until it isn’t.]
+[8] ¶ At Seokmun the Tang turn around. Out of the side valleys come the Mohe cavalry, into a Silla army that has not yet formed up. It is over in an afternoon.
+[9] ¶ Wonsul sees the general ahead of him go down, and then the next one. He turns his horse toward the Mohe, which is the direction a son of Kim Yushin is supposed to turn.
+[10] Wonsul: Let go.
+[11] ¶ His aide, Danneung, has the bridle in both fists.
+[12] Danneung: No. / Dying’s not the hard part, Lieutenant. Any fool can do it in the next ten breaths. / Picking where is hard. This is a ditch. Die here and you’ve bought nothing.
+[13] Wonsul: My father— / Let go, or I’ll cut your hand off.
+[14] Danneung: Then cut it. I’ll still be holding.
+[15] ¶ He doesn’t cut it. Danneung turns the horse himself and runs it south through the dust, with a lieutenant on its back who screams at him the whole way. Seven Silla generals die in that valley. Wonsul is not one of them.
+[16] [FORMATION Seokmun, eighth month, 672: Seven named commanders died at Seokmun. Silla stopped attacking after it, and spent three years building walls instead.]
+[17] ── SCENE: The Apology ──
+[18] ¶ Silla sends an apology to Chang’an and hands back the prisoners. Then it goes quiet, and starts building.
+[19] ¶ The draft comes to the king’s table that winter. The court has read it. The court would like a word.
+[20] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 12 (672), ninth month — memorial of apology to the Tang court) [King Munmu]: Your servant, guilty unto death, respectfully reports. … All the bamboo of the Southern Mountain would not be enough to write down your servant's crimes, nor all the forests of Baoxie to make his shackles. Flood our ancestral temple, tear your servant limb from limb: in this I await the imperial decision, and accept execution with a willing heart.❞
+[21] True Bone minister: Majesty. “Tear your servant limb from limb”? We won the morning. / We are apologizing for the morning?
+[22] King Munmu: We’re apologizing for the afternoon. / And for the next fortress. And the one after that.
+[23] True Bone minister: …Who wrote this?
+[24] King Munmu: My father. Thirteen years ago. / I’m only signing it.
+[25] ¶ The minister thinks it is a joke. It is a room in Surabol, a year before Baekje fell, and a father asking his son a question.
+[26] ▼ FLASHBACK 659 A room in Surabol, a year before Baekje falls
+    [26.0] King Muyeol: Bupmin. What do you think happens after Baekje falls?
+    [26.1] King Munmu: We move on Goryeo.
+    [26.2] King Muyeol: And after that.
+    [26.3] King Munmu: …Unification.
+    [26.4] King Muyeol: No. / After that, **it is our turn**.
+    [26.5] ¶ He lays it out the way another man would lay out a field. The Tang will not go home. They will put a governor in Sabi and call it a commandery. They will give you a title with the word _province_ in it and expect you to be flattered. They will keep your brother in Chang’an and call him a guest.
+    [26.6] King Muyeol: When it comes, never strike first. / Wait until they have exhausted themselves in the north. / Take the fortresses back one at a time, and send an apology after each one. / What they want is not the land. It is the paperwork.
+    [26.7] King Munmu: …And the sea?
+    [26.8] King Muyeol: The sea is last. / After they have lost the horses.
+    [26.9] King Munmu: Father. How do you know all of this?
+    [26.10] King Muyeol: Li Shimin taught me. / I wrote down everything he intended to do to me.
+[26] ▲ end flashback
+[27] ¶ Munmu signs. The ink is still wet when the first stones of the new walls go in.
+[28] ¶ **Wonsul came home alive. In his father’s house, that is the crime…!**
+
+=================================================================
+#92 Wonsul  (672 August)
+Arc: Silla-Tang War · place: surabol · tone: family tragedy
+Logline: Wonsul came home alive from Stone Gate. His father asks the king to execute him, and the king answers with something he said at fifteen.
+=================================================================
+[0] ¶ Wonsul gets home a day before the news does. It doesn’t help.
+[1] ¶ His father’s gate stays shut. The lamp above it is his mother’s. **Lady Jiso** is King Muyeol’s daughter, and she keeps it lit every night her men are at war. Tonight it burns, and she does not come down.
+[2] [MAP 672: ]
+[3] ── SCENE: Father's House ──
+[4] ¶ Inside, Yushin is told his son is at the gate. He doesn’t get up.
+[5] Steward: My lord. It’s the young master. He’s hurt, I think. His horse is—
+[6] Kim Yushin: He shamed the king’s command and the family name with it. He is not my son.
+[7] ¶ The retreat is almost beside the point. A hundred men ran that afternoon and kept their fathers. But a house that came into Silla by treaty does not get to be ordinary, or it is simply Gaya again.
+[8] Kim Yushin: Another man’s son may retreat. / Mine may not.
+[9] ── SCENE: The King's Hall ──
+[10] ¶ Yushin goes to the king and asks, in so many words, for his son to be put to death. It is the most formal request he has made in fifty years of service, and he makes it standing.
+[11] King Munmu: Uncle. He was a lieutenant. Lieutenants follow. / If I execute every man who lived through Seokmun, I won’t have an army left to lose the next one with.
+[12] Kim Yushin: The law is the law, Majesty. A Hwarang does not retreat.
+[13] King Munmu: On your yard you once asked me which of the five I would break first. / I said retreat. I was fifteen. You didn’t ask my father to kill me.
+[14] Kim Yushin: …You were not my son.
+[15] ¶ The king has no answer to that. The old man knows it. Neither of them looks away first.
+[16] Kim Yushin: Then do not execute him, Majesty. / But do not ask me to call him back into my house.
+[17] King Munmu: …As you wish, Marshal.
+[18] ── SCENE: The Hill Farms ──
+[19] ¶ Wonsul does not go home. He goes into the hill farms east of the capital and works another man’s fields under no name at all, which is the one punishment his father did not think to ask for. He does not write. Twice he comes as far as the road below his father’s gate and turns back at the sight of his mother’s lamp.
+[20] Farmer: You hold a hoe like it owes you money. / Soldier, were you?
+[21] Wonsul: No. / …Not a good one.
+[22] ¶ **Yushin is old now. The three sisters in the steam are not. They have kept his ledge warm for fifty years…!**
+
+=================================================================
+#93 Kim Yushin†  (673 July)
+Arc: Silla-Tang War · place: surabol · tone: psychopomp elegy
+Logline: Old now, Yushin still finds the cavern. The three in the steam look exactly the age they always looked.
+=================================================================
+[0] ══ DAY: THE LAKE REMEMBERS ══
+[1] ¶ Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern. The steam is thinner. The three are not. They look the same age they always looked — which is either mercy or mockery, and he has never asked which.
+[2] ¶ Hyullé’s hand finds the water beside the ledge where he always sits, and stays there. Fifty years of the same ledge.
+[3] Narim: You still undress like a soldier checking for wounds. / Sit. The counsel is shorter these days. So is the war. Slower. Let me look at you.
+[4] Golhwa: He’s going to say it. / Watch — three, two —
+[5] Kim Yushin: But Her Majesty is gone. / …I still hear myself saying it.
+[6] Golhwa: Ugh… even in the Western Flower Field she gets the title. / What did that mortal have that we don’t? / …Don’t answer. Stay until the steam drops. Before the hill keeps you.
+[7] Hyullé: I didn’t — bring — / …It’s just warmer there. / You always liked it. Come sit. Please.
+[8] ¶ The steam thins. For a breath his father’s mouth is in the water — not the counsel, only the name — and then it is steam again.
+[9] ¶ He sits. For once he does not rush the border. Narim talks about a tree that outlived three kings. Golhwa falls asleep against the stone mid-complaint. Hyullé says nothing, and that is the visit he will remember when the biographies start lying.
+[10] ── SCENE: The Deathbed ──
+[11] ¶ Seventh month, 673. He is seventy-nine. He has fought for sixty of those years and outlived nearly everyone worth outliving.
+[12] ¶ The King comes to the house himself, which kings do not do. Munmu does it anyway — he has known this man his entire life, and for most of it has not been sure whether to call him _Marshal_ or _uncle_.
+[13] ¶ The old man's eyes are already somewhere younger.
+[14] King Munmu: Yushin…
+[15] ¶ Nobody has called him by his bare name in forty-one years. The last one was a queen, on her coronation morning.
+[16] Kim Yushin: Princess…
+[17] Kim Yushin: …The boy. Is he eating?
+[18] King Munmu: He’s farming. Badly. Shall I send for him?
+[19] Kim Yushin: …No. / Good. That he’s eating.
+[20] ❝QUOTE (Samguk Sagi (三國史記) bk. 43, Biographies — Kim Yushin (final counsel); Lee Byong-do ed., vol. 2, p. 404): I humbly pray Your Highness know that to succeed is not easy, and to keep what has been won is also hard. Keep petty men far and good men near.❞
+[21] ¶ Kangrim reads his name three times at the bedside — Yushin. Yushin. Yushin. — before the marshal's last answer.
+[22] Kangrim: Marshal. / One hundred and eight draws, one win that ended a friend, sixty years of being useful. / Question: were you becoming Silla — or proving you never needed their blood to outserve them?
+[23] Kim Yushin: …I wanted in. / Wanting in is not shameful. Pretending I did not is.
+[24] Kangrim: Clean answer. / His Majesty’s kingdom has room for men who told the truth late.
+[25] ¶ When the escort walks out through the courtyard, Munhee is standing by the well. She is sixty-seven. She sees her brother walking beside the stranger. Nobody else in the yard does. Above the roof the eastern star is up, the one that sits among the stars without being one of them.
+[26] Munhee: Brother. Are you a Silla man now?
+[27] Kim Yushin: …I don’t know. Ask them for me.
+[28] ¶ She lets him go without asking twice. There is nobody left now who calls her little sister.
+[29] ¶ He is buried at Geumsan with the honours of a king and the rank of a subject. Somebody will close that gap. It takes a hundred and sixty years.
+[30] ¶ — Kim Yushin —
+[31] ¶ _His grandfather bought the family a rank with a kingdom. Everyone honoured the deal, and everyone remembered it. So he made himself the one thing they could not do without, and he was very, very good at it. He loved a queen for forty years and never once said so where it could be heard. They would not let him all the way in while he lived. Once he was safely dead, they made him a king._
+[32] ── SCENE: Lady Jiso ──
+[33] ¶ After the funeral Wonsul comes down from the hills at last and asks at the gate for his mother. The lamp is out. **Lady Jiso** has already cut her hair for the nunnery.
+[34] Lady Jiso: A woman has three to follow. Her father, her husband, her son. / My husband would not call you son. How am I to be your mother?
+[35] ¶ She does not come to the gate. The answer is carried out by a servant who cannot look at him. Wonsul stands in the road until dark and then goes back up into the hills. The record says only that he left weeping, and that he never stopped trying to give the afternoon back.
+[36] ¶ **The king has buried his uncle. He still has one letter to answer, and a path nobody ever showed him…!**
+
+=================================================================
+#94 The Wanggeom's Guest  (673 Autumn)
+Arc: Silla-Tang War · place: steam_cavern · tone: mythic coronation
+Logline: The day after the funeral, Munmu signs a traitor’s death warrant, then finds his uncle’s spring. Something older than any kingdom is waiting on the water.
+=================================================================
+[0] ── SCENE: The Second Letter ──
+[1] ¶ The day after the funeral, a letter falls out of a sleeve.
+[2] ¶ It is short. It is addressed to the Tang garrison at Bear Ford, and it promises them a door in the wall of Surabol, the way a man at Daeya once promised Baekje a granary. The hand is very steady. The king knows that hand. It copied his letter to Xue Rengui.
+[3] Daeto: Majesty. A softer word here and there—
+[4] King Munmu: You said that in the writing room. / You copied my letter very well, Daeto. Copy this one.
+[5] ¶ It is his own death warrant. Daeto copies it out fair, and his hand is still very steady. His wife and children are made slaves. Nobody mentions it at court.
+[6] ── SCENE: The Steam Cavern ──
+[7] ¶ That evening Munmu rides alone into the hills east of Surabol. His uncle never showed him the path. He finds it anyway, the way sons find what uncles hid on purpose.
+[8] ¶ He strips at the rock lip as if obeying an order nobody ever gave him in writing, and steps into water so black it reflects nothing.
+[9] ¶ Crimson leaves his shoulders the way a soldier sheds a campaign coat. Steam takes the rest. He does not look up until the water has him.
+[10] ¶ For a long time he only stands in the water. He is forty-seven, and a king, and there is nobody left alive who taught him to ride. He lets the steam have his face, so that nobody has to see it. Not even the rock.
+[11] ¶ They smell him before they see him. Uncle’s heat, father’s road-dust, both houses in one walk. He still thinks he is alone. Golhwa’s mouth opens and does not close. Hyullé cannot get a word out. Narim bites her lip and fails at being eldest.
+[12] ¶ They know him. The **best of both**: they said it first when he was twenty-one and came in with a jar, and they say it again now that the uncle is ash. Gaya in the shoulders. Surabol in the mouth. Fire comes off Golhwa’s skin. Water streams from Hyullé’s chin. A leaf turns in the steam around Narim and will not fall.
+[13] King Munmu: …You’re still here. / I brought a jar last time. I didn’t bring anything tonight.
+[14] Narim: You brought him. On your shoulders. We can smell it. / Sit. Before you fall—
+[15] ¶ He looks at her like she is kind. Narim cannot finish the sentence. She is out of breath, and pretends the steam did that. Uncle’s shoulders. Father’s mouth. She is not supposed to want both, tonight of all nights.
+[16] Golhwa: He’s the one crying and I’m the one who can’t sit. / …Sorry. Ignore me. Stay till the steam drops.
+[17] Hyullé: Hello. I’ll be quiet.
+[18] ¶ That is all Hyullé gets out. She stands near him in the water and looks like she will break. He keeps the black water as a wall. He does not climb out.
+[19] Narim: Sit down before you fall in again. / We are the mouths the hill uses. Wisdom, if you stand in the water and ask once. The uncle is gone. The hill is not.
+[20] King Munmu: I came because he died. / …Will the west stay taken.
+[21] ¶ Something goes out of the cave. When they speak again the eyes are solid: green, cyan, ember.
+[22] Narim: The west will take your name and call it peace. / Keep a sea in the other hand.
+[23] Golhwa: That was the hill. This is me. / Come back anyway. With nothing in your hands, like tonight. We like you better that way.
+[24] ── SCENE: The Man on the Water ──
+[25] ¶ Then the steam goes thin enough to see through, and a man stands on the water as if the lake were a court floor — old robes, sandalwood-coloured light, a face that has outlived every kingdom on the map. The three go still on the rock. This visitor is not theirs.
+[26] Dangun: You wanted a king for all when you were six. / The title you are looking for is older than your father’s reforms. / Wanggeom — not Sacred Bone, not True Bone. The first who stayed when heaven descended.
+[27] King Munmu: Who are you. / Which court sent you.
+[28] Dangun: Asadal is dust. / The mandate is not. / Finish what your uncle could not name aloud.
+[29] ¶ Munmu tells no one. The court records note only a day’s ride and a night’s silence. But he has heard the bear’s son’s name before, in his mother’s version, with extra garlic, and he keeps it.
+[30] ¶ **Kim Punghun said he could wait for a ship. The ship is here…!**
+
+=================================================================
+#95 Maeso  (675 September)
+Arc: Silla-Tang War · place: maeso · tone: grim war epic
+Logline: Xue Rengui comes back by sea. His guide is a Silla boy whose father the king killed.
+=================================================================
+[0] ── SCENE: The Landing ──
+[1] ¶ Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showing the enemy fleet the way into his own coast.
+[2] [MAP 675: Horses by sea, horses by land. Silla has decided this war is about horses.]
+[3] ¶ He is older now. The white coat is a reputation he can no longer take off. Tang’s eastern command sits on his shoulders the way a yoke sits on an ox that still believes in the field. In a poor field at home, his ancestors are still waiting for their graves.
+[4] ¶ Punghun stands at the bow beside him. He left Silla a boy, a hostage in the emperor’s guard. He is coming back as a guide.
+[5] Xue Rengui: You know this coast, Master Kim.
+[6] Kim Punghun: I know my father’s coast. / The king made it mine to sell.
+[7] Xue Rengui: I am not buying anything. / I only ask where the sand is firm. For the horses.
+[8] ¶ Punghun looks at the beach below Cheon Fortress for a long time.
+[9] Kim Punghun: …There. Firm enough.
+[10] Xue Rengui: Silla… the country that once fought beside us. / And now that country is to be my last opponent.
+[11] ¶ He does not curse them. He checks the ji’s bindings, the same way he once checked plough-rope, and goes ashore.
+[12] ¶ Above the beach at Cheon Fortress, a Silla general named **Munhun** lies flat in the dune grass and watches the boats come in. He has been told to stop the landing. He has decided to let it happen first.
+[13] ¶ Beside him lies a ship captain named **Sideuk**, who has commanded boats for twelve years and never once won anything.
+[14] Sideuk: General, they’re unloading the horses. Horses first.
+[15] Munhun: Good. Let them.
+[16] Sideuk: We were told to stop the landing.
+[17] Munhun: We will. / A horse on wet sand can’t turn. Wait till the boats are empty.
+[18] Sideuk: …Wet sand. I’ll remember that.
+[19] ¶ When the last horse is off, Munhun stands up.
+[20] Xue Rengui: To the boats.
+[21] ¶ By evening Munhun has fourteen hundred heads, forty Tang ships, and a thousand horses standing in the surf with nobody to ride them. The sea road is closed again.
+[22] ¶ Nobody ever learns whether Punghun knew about the sand. Xue does not ask him. He sends him back to Chang’an on the next empty transport, and neither country writes his name down again.
+[23] ── SCENE: Maeso Fortress ──
+[24] ¶ So the war moves inland, to a fortress on the Imjin where the road to Surabol begins.
+[25] [PLACE maeso: Good walls. Terrible stables.]
+[26] [FORMATION Maeso Fortress, twenty-ninth day of the ninth month, 675: 30,380 horses were taken, and weapons to match. Historians read the 200,000 as Silla counting generously; nobody argues about the horses.]
+[27] ¶ The army at Maeso is mostly Mohe, and the Mohe are mostly horse. Thirty thousand of them graze the flats under the walls. The grass is outside. No fortress on that river was built to stable a herd.
+[28] Silla commander: Forget the walls. / Cut the picket lines. Bring me the horses.
+[29] ¶ The worst stretch of the line is under the walls, where the archers can see. A man nobody in the capital has seen for three years asks for it.
+[30] Silla commander: Name?
+[31] Wonsul: Lieutenant. Of Seokmun.
+[32] ¶ Before dawn the herd moves all at once, and not toward the fortress.
+[33] Mohe rider: The horses! The horses are going!
+[34] ¶ Horses are the thing. An army that has lost thirty thousand horses on the Imjin is not riding to Surabol next spring, or the spring after.
+[35] ¶ Afterwards the king sends for the lieutenant to give him rank. Wonsul comes in still smelling of horses.
+[36] King Munmu: Your father would have—
+[37] Wonsul: My father would have said I owe one afternoon, Majesty. I haven’t paid it yet.
+[38] ── SCENE: The Fleet ──
+[39] ¶ Out at sea off Cheon Fortress, Xue hears it from a courier: the army at Maeso has lost its horses.
+[40] Xue Rengui: …So the horses are gone. / For a farmer, losing horses… is like losing the field.
+[41] ¶ He withdraws without spectacle. The chronicle will remember Silla’s thirty thousand horses; it will remember less how quietly the White Tiger II accepted that the east was no longer his to harvest.
+[42] ── SCENE: Surabol ──
+[43] ¶ In Surabol the number arrives a day ahead of the generals.
+[44] Messenger: Thirty thousand, three hundred and eighty, Majesty.
+[45] King Munmu: …Heads?
+[46] Messenger: Horses, Majesty.
+[47] ¶ _After they have lost the horses._ Munmu is nearly fifty and still, occasionally, checking his father’s work against the day.
+[48] ¶ The Tang history says Maeso was three Tang victories, after which Silla begged pardon. It does not mention the horses.
+[49] King Munmu: Then get me ships. / It’s the sea now.
+[50] ¶ **One last river mouth. One captain who has never won a fight. Three tries to end a war…!**
+
+=================================================================
+#96 Final Ford  (676 November)
+Arc: Silla-Tang War · place: gibeolpo · tone: grim war epic — naval
+Logline: At the river mouth where the Tang landed sixteen years ago, a captain who has never won anything loses twice on purpose. Xue Rengui watches his fleet sit down in the mud.
+=================================================================
+[0] ¶ In the second month, the emperor's headquarters quietly leaves Pyongyang. Then it moves further. Then nobody mentions it. Xue still has a fleet, and a fleet doesn't need a headquarters.
+[1] [MAP 676: The protectorate packs for Liaodong. Xue Rengui keeps one fleet and one last idea.]
+[2] ── SCENE: Final Ford ──
+[3] ¶ The last of it happens at the mouth of the Geum, in the eleventh month. Sixteen years ago the Tang came in through this same water, onto a mile of grey mud, while Baekje watched from the high ground. Seongchung had begged a different king to hold it.
+[4] ¶ The Silla ships belong to **Sideuk**, the captain who has never won anything. He takes them out on the ebb and loses.
+[5] Silla helmsman: Sachan, we’re going out again?
+[6] Sideuk: When the tide turns.
+[7] ¶ He goes out again and loses again.
+[8] Silla helmsman: …And a third time?
+[9] Sideuk: Their ships are big. / A big ship can’t turn on the mudflats. Draw them in. / Like a horse on wet sand.
+[10] ── SCENE: The Third Sortie ──
+[11] ¶ The third time, Sideuk does not try to win. He runs.
+[12] ¶ He takes eight boats up the estuary on the last of the flood, close enough to the Tang flagship to be insulting. Arrows thud into his deck. He lets them. Then he turns, badly, the way a beaten man turns, and makes for the mudflats.
+[13] Silla helmsman: They’re coming! All of them— Sachan, the big ones are coming!
+[14] Sideuk: Of course they are. They’ve beaten us twice. / Keep running. Look scared.
+[15] Silla helmsman: I’m not pretending, sir.
+[16] ¶ The tide turns under them. Sideuk’s boats float in a hand’s depth of water. The Tang tower-ships need a man’s height. One by one, the great hulls feel the mud take their keels, and stop, and lean.
+[17] Sideuk: Now. Turn. Everyone, turn!
+[18] ¶ What follows is twenty-two fights, large and small, in water too shallow for the ships that started them. Silla men cross the mud on planks, on oars, on their own bellies. The tower-ships cannot turn to face them. They can only lean further.
+[19] ── SCENE: The Flagship ──
+[20] ¶ On the flagship, Xue Rengui stands at the rail and watches his fleet sit down in the mud like oxen in a flooded field. He is sixty-two. He knows exactly what he is looking at. He grew up looking at it.
+[21] Tang officer: Commander. We can still float the flagship on the night tide. The others—
+[22] Xue Rengui: The others are a field we planted in the wrong season. / Float what floats. Take the men off the rest. Leave no one in the mud.
+[23] ¶ He does not curse Silla. He never has. At midnight the flagship lifts off the mud, and he turns her west.
+[24] Xue Rengui: Ancestors. / I asked you to wait a little longer. It was longer than I said. / I am coming home without the east. I still have the ji.
+[25] ¶ No treaty comes after it, and no envoy. The Tang ships simply keep going west, and nobody on them looks back.
+[26] [MAP 676: West. Nobody signs anything. The ships simply keep going.]
+[27] ── SCENE: Surabol ──
+[28] ¶ In Surabol the king waits a month for a letter from the west, so that he will at least have something to refuse. None comes.
+[29] King Munmu: Have we… won…?
+[30] Court scribe: Nobody has told us we haven’t, Majesty.
+[31] ¶ He laughs, for the first time since the funeral, and goes to tell his mother.
+[32] ¶ **The boy who stole a sentence at six is about to be king of all Samhan. His mother would like him to hold still…!**
+
+=================================================================
+#97 The King for All  (676)
+Arc: Silla-Tang War · place: surabol · tone: hard-won resolution
+Logline: On the morning he becomes king of all Samhan, Munmu opens the hall to the yard. Five summers later, Kangrim asks him the question.
+=================================================================
+[0] ¶ **Bupmin**, **King Munmu** now, stands where a six-year-old once stole a sentence. The war is won, the ally has been shown the door, and the childhood dream has had the bad manners to come true.
+[1] [MAP 676: Sixteen years, start to finish. Watch where the blue stops.]
+[2] ── SCENE: The Collar ──
+[3] ¶ It ends where it began: a woman in a room, getting someone else ready.
+[4] ¶ Munhee is seventy. She is the last person alive who remembers all of it from the inside, and she is straightening her son's collar. She was twenty-six when this story started. Her sister burned a skirt on a hill so that she could be married.
+[5] Munhee: Hold still. Your collar is crooked.
+[6] King Munmu: Mother. Today I become king of all Samhan.
+[7] Munhee: Then all the more reason to hold still.
+[8] King Munmu: Mother. / I kept the childhood sentence.
+[9] Munhee: I know. / I packed for every country that tried to stop you.
+[10] ¶ She has been in the room for every single one of them. The sword was never in her hand, and she is the only one still standing.
+[11] Munhee: Your sister rode out of this room to Daeya. / Hold still. I’m not losing another one to a door.
+[12] ¶ A letter has come from Chang’an. It is the first in Inmun’s hand in twenty years, and it is very short.
+[13] Kim Inmun: Brother. / The emperor made me King of Silla for a season. I got as far as the coast road before he changed his mind. I am told I abdicated. I agreed. / Word came that you said my name. I heard it. / — Inmun
+[14] Munhee: His handwriting hasn’t improved.
+[15] ¶ She folds it into his sleeve, next to his arm, where he will feel it all day.
+[16] King Munmu: Father used to say a thing. A kingdom that lasts a thousand years.
+[17] Munhee: He always did round the numbers up.
+[18] ¶ Silla lasts nine hundred and ninety-two years. He was, as usual, very slightly optimistic and essentially correct.
+[19] ── SCENE: The Hall ──
+[20] ¶ The hall is full of bone. True Bone in the front rows, Head-rank Six behind them, and behind them the new men nobody has a rank for yet: Baekje captains who fought for Silla, Goguryeo’s guest king and his officers, a Mohe interpreter. Out in the yard stand the ones with no bone at all. They have come to see what a king for all looks like. Mostly he looks tired.
+[21] King Munmu: Open the doors. / All of them. The yard too.
+[22] ¶ The doors open. The yard comes up to the threshold and stops there, the way people stop at a river.
+[23] King Munmu: Sixteen years of war were paid for with grain borrowed from people who had none. / Every grain debt from the war years is cancelled. Today. / The men of Baekje and Goguryeo who bled under our banners will hold Silla ranks. The same ranks.
+[24] True Bone elder: Majesty. The bone ranks are older than the throne. If a Baekje captain sits where—
+[25] King Munmu: When I was six I said everyone would have to listen to me. Even the bone people. / …I meant you, my lord.
+[26] ¶ Somebody in the yard laughs. Then the whole yard does. The elder sits down. It is the first time that hall has ever heard the yard.
+[27] King Munmu: I asked my uncle once. Every kingdom, or every person who bleeds for one. He never answered. / Both. Write that down.
+[28] ── SCENE: The Eastern Star ──
+[29] ¶ Thirty-four winters ago, three men looked up at one star and wanted the same title. One died a guest in Chang’an, still calling himself a king. One died in his bed, and the king of the dead came to fetch him in person. One left the title in his son’s mouth.
+[30] ¶ That night the son climbs the hill above Surabol where two boys once lay on their backs, arguing about the sky.
+[31] King Munmu: Uncle always said it was a planet.
+[32] ¶ It sits among the stars without being one of them. He looks at it until the cold gets into his knees. Then he walks down to his own house, like anybody.
+[33] ── SCENE: The Ancestral Temple ──
+[34] ¶ In the morning he reports to his father. The tablet stands in the ancestral temple, and beside it hangs the iron oath from Mount Gain, the one he swore over his uncle’s horse.
+[35] King Munmu: Father. I broke it. Every line. / Baekje is ours. Its prince is in Luoyang, with a title and no country. / His sons are growing. I asked. The gods have been lenient with us both.
+[36] ¶ He leaves the oath where it hangs. The kings of Silla will have to walk past it every time they visit their fathers. He wants them to read it.
+[37] ── SCENE: Five Summers Later ──
+[38] ¶ Five summers later the king for all is dying, and he has left instructions his ministers do not like. No mound in the hills beside his fathers. Burn him, and put what is left in the sea the Wa come across.
+[39] King Munmu: The war is over. Melt the swords. Make ploughs. / Lighten the tax at the markets and the ferries. / And don’t build me a tomb. The people would only have to carry the stones.
+[40] ¶ Kangrim reads his name three times at the bedside — Bupmin. Bupmin. Bupmin. — the name the boy stole a sentence with, not the one the ledger writes.
+[41] Kangrim: King Munmu. / Sixteen years of war, one hill, one ally shown the door, and a yard you let into the hall. / One question, then we walk. Were you a king of Silla — or a king for all?
+[42] King Munmu: …Ask the ones with no bone. / There are more of them.
+[43] Kangrim: The ledger has never asked them anything. / …I suppose I’ll start. Come. The sea is this way.
+[44] ❝QUOTE (Samguk Yusa (三國遺事) bk. 2, Wonder 2 — King Munmu becomes a dragon; Ha & Mintz tr., p. 95): After I am gone I wish to become a great dragon that guards the country, to uphold the Buddha’s law and protect the realm.❞
+[45] ¶ They burn him on the shore and put his bones under a rock a hundred paces out to sea, which is still there, and is the only royal tomb in the world with tides.
+[46] ── SCENE: The Tablet ──
+[47] ¶ Eleven years after the tide closes over him, an envoy comes from the Empress’s court with a complaint that is thirty years late. King Muyeol’s tablet in Silla’s ancestral temple says Taejong, and Taejong is the Second Emperor’s temple name, and a vassal may not share a name with the Son of Heaven. Nobody from the Empress’s court mentions the iron oath hanging beside the tablet, broken in every line.
+[48] Tang envoy: Your late king has borrowed a name that belongs to the Second Emperor. / Change it.
+[49] ¶ Munmu’s son answers in writing.
+[50] Silla reply: Our late king had a great deal of virtue. While he lived he had a good minister, Kim Yushin, and the two of them were of one mind, and they made the three Han one. / We thought that was worth a name. We did not know it was already taken.
+[51] ¶ The court reads the name Kim Yushin, and an old archivist goes looking. He finds a note in the late emperor’s own hand, from his boyhood: a voice in the sky once told him that one of the Thirty-Three Heavens had been born in the east as a general. Nobody ever learned whose voice it was. Heaven gossips more than it lets on. The complaint is dropped. The tablet still says Taejong.
+[52] ¶ **But we left someone in the snow. The winter Pyongyang fell, a Mohe father walked north with something in his pack…!**
+
+=================================================================
+#98 Balhae  (698)
+Arc: Epilogue · place: jolbon · tone: new-dawn coda
+Logline: The winter after Pyongyang falls, an old man carries a piece of a crown through the snow.
+=================================================================
+[0] ¶ The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds every seam a coat has. **Gulgul** walks in front, bent under a leather pack and wrapped in so much fur he looks like something the forest would hunt. His son walks in his tracks, because there are no other tracks.
+[1] [MAP 720: The north, after Goguryeo.]
+[2] ¶ In the pack, under dried millet and a spare pair of boots, wrapped in a strip of red silk, rides a piece of the Goguryeo crown no longer than a finger: one gold branch snapped off when the palace fell, its little leaves still hanging on their wires. Nobody else would carry it north. Behind them is the smoke of someone else’s victory. Ahead is only the cold that Yeon once pulled a Mohe boy out of.
+[3] [CARD Dae Joyoung: Dae Joyoung. A boy with frozen feet, and a piece of a crown in the pack.]
+[4] Dae Joyoung: Father… / Father, my feet… I can’t feel my feet.
+[5] Gulgul: Good. / Better than feeling them.
+[6] Dae Joyoung: What kind of— Father!
+[7] Gulgul: There. Under the rock. / A little more.
+[8] ── SCENE: The Cave ──
+[9] ¶ The cave is a crack in the mountain’s side, deep enough to put the wind behind them. Gulgul strikes the flint four times before the moss takes. The fire is the size of two cupped hands. He sets the pack down beside it, and the boy, thawing, sees a small gold shine through a split seam in the leather, brighter than a fire that size has any right to make it.
+[10] Dae Joyoung: Father. What’s… that? / The shiny thing. That. / Is that gold? We had gold? Then why is it always millet gruel—
+[11] Gulgul: Keep your voice down.
+[12] ¶ Gulgul looks at the cave mouth for a long time, as if the snow might be listening. Then he pulls the red silk free. On his palm lies the gold branch, bent where it was torn, its leaves trembling in the heat off the fire.
+[13] Gulgul: A piece of the crown. / The Goguryeo crown.
+[14] Dae Joyoung: …Did you steal it?
+[15] Gulgul: I took it. / Nobody else was going to.
+[16] Dae Joyoung: But why you? / You’re… Mohe. Everybody says so.
+[17] Gulgul: …Yes. I’m Mohe.
+[18] ¶ Gulgul is not a man who tells stories. He tells this one the way he would report a border skirmish: in order, without adjectives, looking at the fire instead of the boy.
+[19] Gulgul: I was younger than you. Our village burned. / Goguryeo soldiers came through. General Yeon’s men. / I stood in the doorway. A doorway with no roof over it.
+[20] Dae Joyoung: …Why?
+[21] Gulgul: Don’t know. / It was our house.
+[22] ▼ FLASHBACK 634 A Mohe doorway, thirty-four winters before
+    [22.0] ¶ A doorway with no house behind it. Snow on the ash. A Mohe boy holds a stick the way he has seen men hold spears. A big man in red-edged armor gets down off a red-bay horse, walks up until the stick touches his chest, laughs, and pulls off his gloves.
+    [22.1] Yeon Gesomun: Look at this one. Guarding a house that’s already burned. / Good. Get on.
+    [22.2] ¶ Years later, on the north wall of Pyongyang in a winter worse than this one, the same man stands with the grown boy a step behind him and the river frozen white below. He says the thing he says every winter, to anyone in earshot, as if the cold might forget it otherwise.
+    [22.3] Yeon Gesomun: Cold?
+    [22.4] Gulgul: …No, sir.
+    [22.5] Yeon Gesomun: Liar. I’m cold too. / Remember it anyway. Kings die, courts get tired, walls come down— / **Goguryeo never dies.**
+[22] ▲ end flashback
+[23] ¶ The fire has sunk to coals. Gulgul turns the gold over once in his fingers.
+[24] Gulgul: I don’t know how many times he said it. / Every winter. Drunk or sober. Before a fight, after one.
+[25] ¶ He wraps the silk around the branch again and puts it in the boy’s hands.
+[26] Gulgul: Keep it under the coat. / By the Holy King’s bow — if they see gold, they will remember we were a country.
+[27] Dae Joyoung: Father — / When we stop… what do we call it?
+[28] Gulgul: He called it Goguryeo. / Everyone else got tired and said Goryeo. / You — you say it the way he would have wanted.
+[29] ¶ The boy holds the bundle to the coals. It is warm already, from the pack, from his father’s back. Outside, the snow keeps filling the cave mouth. He presses the cloth once, gold against his palm, and answers the empty north the only way the chronicle will keep.
+[30] Dae Joyoung: Goguryeo never dies…!
+[31] ¶ The last coal goes out. Cut to black.
+[32] ── SCENE: Thirty Winters On ──
+[33] ¶ They walk on. Thirty years later, in 698, the boy will raise a kingdom called Balhae on those three words, and the shard will still be warm.
+[34] ¶ His capital will be a stamped grid of halls on the Mudanjiang. Lotus tiles. A stone lantern. Nobody there will need telling what the old country was called.
+[35] ¶ So this story ends with two kings under one sky, each sure the sky meant him. In the south, a dead king lies under a rock in the sea, listening for the ones with no bone. In the north, a boy with frozen feet carries a piece of a crown. From high enough up, you can’t tell which of them is the King for All. The sky stopped trying a long time ago. It just watches the boy.
+[36] ¶ Dae Joyoung keeps walking north, one hand on the gold under his coat.
+[37] ¶ THE END

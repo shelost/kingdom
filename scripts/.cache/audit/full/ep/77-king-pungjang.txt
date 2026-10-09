@@ -1,0 +1,91 @@
+
+=================================================================
+#77 King Pungjang  (661 September)
+Arc: Part III — Kingfall / The Fall of Baekje · place: juryu · tone: resistance drama
+Logline: Baekje is finished, says everyone except Baekje. Its last prince has lived across the sea for twenty years.
+=================================================================
+[0] ¶ Baekje is finished, says everyone except Baekje.
+[1] [MAP 661: ]
+[2] ── SCENE: The Crossing ──
+[3] ¶ Its last prince is on a Yamato boat off Juryu, with a new cap of rank in a box on his knees. He has been rehearsing one sentence since the islands. It keeps coming out in the wrong language.
+[4] Prince Pung: Takutsu. The Baekje word for coming home to a place. The proper one. / …I used to know it.
+[5] Echi no Takutsu: I don’t know it either, Majesty. I am told they will just be glad you came.
+[6] ¶ He has been losing words for twenty years. He only noticed last winter, in front of the whole Yamato court.
+[7] ▼ FLASHBACK 660 Asuka, that winter · 아스카, 그해 겨울
+    [7.0] ¶ Asuka, the winter Sabi falls. A Baekje envoy has come the whole way with frost in his beard and a hundred Tang soldiers roped neck to neck behind him, a present, which is a polite word for proof. The empress is sixty-six. She has buried two husbands, held this throne twice and sat through a great many envoys, and she lets this one finish.
+    [7.1] [PLACE asuka: The court across the cold sea, where favours are counted in ships.]
+    [7.2] ¶ The envoy comes from **Gwishil Boksin**, who has been raising a dead country in the hills since summer. Boksin wants two things: an army, and the king’s quiet son, who was sent across the sea as a boy and never sent for.
+    [7.3] [CARD Gwishil Boksin: Gwishil Boksin. He raised a dead country once, and he kept the receipts.]
+    [7.4] [CARD The Eastern Prince: The Eastern Prince. He does the arithmetic before anyone asks for it.]
+    [7.5] The Eastern Prince: A hundred prisoners. Generous. / …That’s the first page, though. When do they show us the rest of the bill?
+    [7.6] ¶ The envoy tells him. Soldiers, and the prince. Every head in the hall turns to the prince, who has lived in this palace for twenty years and who discovers that he has been sitting very straight.
+    [7.7] [CARD Abe no Hirafu: Yamato’s admiral of the cold north. He has fought on ice. He has not fought on this river.]
+    [7.8] Abe no Hirafu: Send me! I’ve crossed the cold sea. / I’ve taken Mishihase arrows. The western sea’s only warmer. I’ll bring you back their emperor’s hat!
+    [7.9] The Eastern Prince: Before anyone asks him anything, Mother, I will. / Prince. Do they want you, or your name?
+    [7.10] Prince Pung: …Both, I expect. The name first. / I am still a son of Baekje. I have only… forgotten some of the words.
+    [7.11] ¶ The empress has let all of it run: her son’s arithmetic, the admiral’s hat, the prince’s missing words. Then she speaks once.
+    [7.12] [CARD The Eastern Empress: The Eastern Empress. She has outlived two reigns and most of her ministers’ opinions.]
+    [7.13] The Eastern Empress: My son wants to know what we owe Baekje. / Bring him the sword. The one with seven branches.
+    [7.14] ¶ Three hundred years ago a Baekje king sent the King of Wa a sword with seven branches. It was a gift. It was also a message.
+    [7.15] ¶ It is iron, two and a half feet long, with six branches off a central blade and sixty-one characters inlaid in gold down both sides. It has never been sharpened. It was never going to be.
+    [7.16] ¶ The inscription is the interesting part, because the two countries have spent fifteen hundred years disagreeing about a single verb: whether Baekje _presented_ it upward, or _bestowed_ it downward.
+    [7.17] The Herald: Which is it?
+    [7.18] The Herald: That depends on which country is doing the reading.
+    [7.19] ¶ What is not in dispute: Baekje sent scholars, craftsmen, weavers, horse-handlers, potters and the written word across that water for three hundred years. Nobody on either shore ever sent a bill.
+    [7.20] The Eastern Empress: Asking for soldiers is old. Holding up a falling house is older. / The sea is also a border, my son. When the western roof catches, our eaves are next. / Give them the ships. Give the boy a cap of rank and a wife, so he does not arrive looking like a hostage.
+    [7.21] ¶ Abe is out of the hall before the edict is copied. The prince goes to find a tailor. The eastern prince, who agrees with his mother on everything she has decided, writes the cost of it down on a separate sheet anyway.
+[7] ▲ end flashback
+[8] ¶ The empress died this summer, on her way west to see the fleet off. Her son keeps her promise anyway. Baekje’s refugees are coming home from everywhere they ran.
+[9] ── SCENE: Roll Call ──
+[10] ¶ Juryu, the ninth month of 661. Prince Pung comes ashore below the fortress with a cap of rank, a Yamato wife, five thousand eastern soldiers and an admiral nobody asked for, and finds the founders of the restoration drawn up on the shingle to meet him. Boksin has written the order of introductions on a tally board. He has made them rehearse it twice.
+[11] [PLACE juryu: Bad farmland, good cliffs. Rebels pick the cliffs.]
+[12] ¶ The board begins with Boksin. The order lasts until **Abe no Hirafu**, who is not on it, leaps from the gunwale of the first boat into surf up to his knees, flings his arms wide in his wolf-fur and his red cape, and introduces himself to the fortress, the gulls and the Tang scouts on the far ridge.
+[13] Abe no Hirafu: Abe no Hirafu! General of the cold northern sea! / A hundred and eighty ships against the Emishi, and I caught Mishihase arrows in my teeth! Tang’s next! Ha!
+[14] Gwishil Boksin: You’re not on the board, Admiral. / …Lovely entrance, though.
+[15] ¶ **Echi no Takutsu** waits until the admiral has finished, which takes a while. Then he walks up the shingle, turns his back on the Baekje generals and bows to the sea he has just crossed, low and long, the tails of his white headband lifting in the wind, before he turns round and says the one thing he has prepared.
+[16] [CARD Echi no Takutsu: A Yamato captain. Loud, loyal, and fond of a country that isn’t his.]
+[17] Echi no Takutsu: No one in this country knows my name. So instead of mine, I will say yours. / Long live Kudara. If Kudara needs a life, begin with mine.
+[18] Gwishil Boksin: …He means it.
+[19] ¶ **Dochim** introduces himself sitting down. He has found a flat rock above the tideline and settled on it in his red kasaya, the beads running through one hand and the gilt staff across his knees, and he smiles at the new king the way a monk smiles at a donor whose gift has not yet arrived.
+[20] [CARD Dochim: Dochim. A monk with a general’s staff, in no hurry about either.]
+[21] Dochim: Dochim. A monk of no temple, now. They call me General of the Spirit Army. / The Buddha taught that all things are impermanent. The Tang garrison at Sabi is one of those things. / We march at dawn. Do sleep well tonight.
+[22] ¶ Boksin, who did not write “General of the Spirit Army” on the board, makes a small mark beside it.
+[23] ¶ **Heukchi Sangji** is seven feet tall. The autumn Sabi fell he walked into Imjon with a handful of men and walked out ten days later with thirty thousand, and he regards the whole business of a roll call as a kind of weather. When his turn comes he steps forward exactly one pace.
+[24] [CARD Heukchi Sangji: Heukchi Sangji. The biggest man on the beach, and the hardest to line up.]
+[25] Heukchi Sangji: Heukchi Sangji. Imjon. / …That’s it.
+[26] Gwishil Boksin: The arms, General. We discussed the arms.
+[27] Heukchi Sangji: You discussed the arms.
+[28] [CARD Satek Sangya: A Satek with harbour money and a general’s patience.]
+[29] ¶ **Satek Sangya** has worn the tall gilt cap of his house for the occasion, which is the only concession he makes to it. He does not look up from the ledger.
+[30] Satek Sangya: Satek Sangya. Forty boats, eleven hundred bales of rice, thirty thousand arrows, and I stopped counting the rope. / Nobody has paid me yet. That’s my pose.
+[31] ¶ Then **Gwishil Boksin**, who wrote the board, steps out in front of all of them, plants the red shaft in the shingle and does the arms exactly as rehearsed.
+[32] Gwishil Boksin: Gwishil Boksin. I raised this country once when it fell, and if it falls twice I’ll raise it twice. / Your father asked for this, Majesty. In Chang’an, at the end. We heard. / Welcome home. Your army.
+[33] ¶ Everyone looks at the king. Nobody has given **Pung** a line. He has been in the country for less than an hour and has spent most of it being bowed at, and he ad-libs.
+[34] Prince Pung: I am Buyeo Pung, son of King Euija, and… king of— of Baekje. / …Is that right? Is “restoration” the word?
+[35] [CARD Prince Pung]
+[36] Gwishil Boksin: Close enough, Majesty.
+[37] ¶ Boksin counts them in. “Baekje— Restoration— Army!” Takutsu and the admiral land it perfectly, which is embarrassing for everyone else. Dochim does half and goes back to his beads. Sangya is still counting. Sangji folds his arms, which is at least an arm. The new king is a beat late and on the wrong foot.
+[38] ¶ They try it twice more before supper. For the second, Boksin puts the king on a rock in the middle so that everyone is at least pointing at the same man, and Abe lifts Sangji off the ground to make the shape symmetrical, which nobody asked for and Sangji does not forgive. For the third, Dochim declines to stand, Sangya sits down on the rice, and the king, finally, gets the arms right, a beat after everyone else has stopped.
+[39] [DIAGRAM restoration-army Restoration Army · 백제부흥군 — King at the apex and four founding generals beneath — five captains, one lost country.]
+[40] ¶ On the far ridge two Tang scouts watch the whole performance, and that night Liu Rengui files their report under morale.
+[41] ¶ That evening, on the wall, the new king finds his general alone.
+[42] Prince Pung: My father sent me away with a sentence. “Until I need you.” / …He did not say it would be somebody else who needed me.
+[43] Gwishil Boksin: Somebody always does, Majesty. / Sleep. We crown you tomorrow.
+[44] ¶ Pung was the only prince left, so they crowned him the next day, in the fortress hall, in a cap the Yamato tailor made. Boksin did the crowning. The Yamato men call him Pungjang. Baekje learns to.
+[45] ¶ The crown is Pung’s. The army is Boksin’s. Everyone can see the arithmetic of that, including both of them.
+[46] ── SCENE: The Tang Walls ──
+[47] ¶ Boksin sends a messenger to the Tang walls with a question.
+[48] Gwishil Boksin: When are you gentlemen going home, Ambassador? / Name the day. We’d like to see you off properly.
+[49] Black Tortoise: Tell him we are guests. / Guests leave when the host can keep his own house. This host has two kings, one army and no roof. We’ll stay for dinner.
+[50] ── SCENE: Pisong ──
+[51] ¶ Then Prince Pung wants to move house.
+[52] Prince Pung: This Juryu lies far from farmland. The soil is stone. The people will starve up here.
+[53] Echi no Takutsu: They will starve slower than they will die down there, Majesty.
+[54] Prince Pung: Pisong has water. Rice. Embankments all round it—
+[55] Echi no Takutsu: Pisong is one night’s march from the enemy.
+[56] Prince Pung: I am the king. We move.
+[57] Gwishil Boksin: Then we move, Majesty.
+[58] ¶ They move. Two months later Silla takes the towns to the south in an afternoon, and the whole restoration climbs back up to the barren hill it left.
+[59] ¶ The men move once, move back, and start looking at each other differently.
+[60] ¶ Boksin says nothing on the road back up. He doesn’t need to. Everyone saw who was right, and everyone saw who wore the crown.
+[61] ¶ **Baekje has its king back, and a general who already regrets it. Now the emperor turns north, to walls that have never fallen…!**

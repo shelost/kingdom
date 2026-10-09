@@ -1,0 +1,7 @@
+[
+	{ "episode": 73, "battle": "sabi-660", "phase": "landing", "after": { "kind": "dialogue", "text": "Men off boats are always hungry." } },
+	{ "episode": 73, "battle": "sabi-660", "phase": "plain", "after": { "kind": "p", "text": "collar is closed again" } },
+	{ "episode": 73, "battle": "sabi-660", "phase": "flight", "after": { "kind": "dialogue", "text": "unbearable" } },
+	{ "episode": 73, "battle": "sabi-660", "phase": "gate", "after": { "kind": "p", "text": "It was Chunbok who opened the gate." } },
+	{ "episode": 73, "battle": "sabi-660", "phase": "ungjin", "after": { "kind": "p", "text": "By morning the king is on his way" } }
+]

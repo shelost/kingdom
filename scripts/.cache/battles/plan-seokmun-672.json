@@ -1,0 +1,5 @@
+[
+	{ "episode": 91, "battle": "seokmun-672", "phase": "baeksu", "after": { "kind": "p", "text": "Among the riders is a lieutenant barely old enough" } },
+	{ "episode": 91, "battle": "seokmun-672", "phase": "seokmun", "after": { "kind": "p", "text": "At Seokmun the Tang turn around." } },
+	{ "episode": 91, "battle": "seokmun-672", "phase": "bridle", "after": { "kind": "dialogue", "text": "Then cut it. I’ll still be holding." } }
+]

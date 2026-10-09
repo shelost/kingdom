@@ -1,0 +1,393 @@
+{
+  "slice": 2,
+  "range": "#10–#20",
+  "episodes": [
+    {
+      "n": 10,
+      "title": "Bupmin",
+      "logline": "Bupmin, fifteen, enters the Hwarang yard under his uncle Yushin wanting to be a ‘king for all’; Yushin recites the Five Principles and asks which he will break first, and Bupmin admits he always pulls up first when his sister rides too fast. Nothing stands in his way and nothing turns.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 2 },
+      "verdict": "An establishing episode with no scene in it: cut the club and principle widgets to one each, and give Bupmin a ride he fails so Yushin’s question lands on something we saw.",
+      "opening": "“It is the spring Bupmin turns fifteen.” No hook: a date line, then ten blocks of texture. The logline sentence at [4] (“old enough for the headband and too young to invent a country alone”) is the hook and should open the episode.",
+      "ending": "Bupmin’s answer at [28] is muddled and Yushin’s “Good.” at [30] doesn’t follow from it, so the episode ends flat. The card (“two names it still whispers”) leads cleanly into #11.",
+      "sudden": [
+        { "block": "13", "what": "Yushin’s “Again.” corrects something the reader never saw: no fall, no failed ride on the page.", "setup": "none", "fix": "Add one ¶ before [13]: Bupmin pulls up at the turn, or comes off, and the girls at the fence laugh." },
+        { "block": "16", "what": "“Fortress of Radiance” and “Yellow Mountain pass” in one sentence of geography lecture.", "setup": "none; they pay off at #40–46 and #72, 30 to 60 episodes later", "fix": "Keep Yellow Mountain only, as something Bupmin can see from the ridge; drop Radiance here." },
+        { "block": "19", "what": "The VERSE block is Korean-only: English readers get five lines of hangul and hanja with no translation.", "setup": "n/a", "fix": "Add English lines or cut the VERSE; Yushin recites the five in English at [27]." },
+        { "block": "14", "what": "“I said that when I was six.” The six-year-old in #1 [12] said “everyone has to listen to me”; “king for all” was Chunchu’s line on the hill (#1 [47.5]).", "setup": "#1 [12] and [47.5], loosely", "fix": "“Father said it on the hill. I said it louder.”" }
+      ],
+      "pacing_notes": [
+        { "blocks": "3–12", "issue": "Ten blocks of world texture (a record of Bupmin’s virtues, a class diagram, gyuku as a ranking system, girls at the fence, the premium club’s provenance, two quips about shafts) before Bupmin or Yushin says a word.", "fix": "Keep [7] (the Marshal rumours) and one club quip; cut [5], [9] and [10], or move the club gag to #12 where it characterises Pumsuk." },
+        { "blocks": "17–27", "issue": "The Five Principles arrive five times in a row: the heading line [17], the HANJA set [18], the Korean VERSE [19], five HANJA cards [20]–[24], the narrated recital [26], then Yushin’s recital [27].", "fix": "Keep [26]–[27] only; fold the two best HANJA notes (“Easy, until the king and your father want different things”; “Boys skip it. Old soldiers don’t.”) into [26] as narration." },
+        { "blocks": "29", "issue": "The Gwisan record stops the exchange between Bupmin’s answer and Yushin’s reply.", "fix": "Cut, or move it after [30]." }
+      ],
+      "flow_notes": [
+        { "blocks": "27→28→30", "issue": "Asked which principle he’ll break, Bupmin says ‘retreat’ because he always pulls up first, then says he cannot be ‘the boy who only follows’. The two halves pull against each other, and Yushin’s ‘Good’ approves neither.", "fix": "One clear thought: “No retreat. I always pull up first. I’d rather know it now.” Then Yushin: “Good. Most boys lie.”" },
+        { "blocks": "7", "issue": "The rumour that the Marshal ‘took forty fortresses’ comes before the deed: #28 says he takes them ‘over the next few years’ after 642.", "fix": "Swap it for something he has already done by 641." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "#9’s card asks “which will you break first?” and [28] answers it in the same episode, so nothing pulls. The live plants are Gotaso riding too fast (fires at Daeya, #23) and the haunted lake (fires at #21’s cavern). Yellow Mountain and Radiance are too thin to register.",
+      "best": "“A king for all who cannot hold a saddle is a poem, not a country.” [13]",
+      "worst": "[17]–[27]: the Five Principles in five formats back to back, one of them untranslated Korean, with no scene around them.",
+      "fixes": [
+        "Open on [4]’s line, then dramatize a ride (Bupmin and Gotaso racing; he pulls up, she doesn’t) so [28] answers something we watched.",
+        "Collapse [17]–[24] into [26]–[27]; cut or translate the Korean VERSE [19].",
+        "Cut [9]–[12] to one club joke and drop the Radiance/Yellow Mountain lecture at [16]."
+      ]
+    },
+    {
+      "n": 11,
+      "title": "Sadaham",
+      "logline": "Yushin tells the new boys about the first class: Sadaham and Mugwan swear at thirteen that if one dies the other follows, and ride to war together. When Mugwan dies of a cough, Sadaham stops eating and keeps the vow at seventeen.",
+      "scores": { "followable": 5, "context": 5, "pacing": 4, "flow": 5, "entertainment": 5 },
+      "verdict": "The best episode in the slice, near Prince Euija level; trim the two battle records and the Council lecture so the fast lands clean.",
+      "opening": "“Every yard has its ghosts. This one has two, and they have never missed roll call.” A real hook: a ghost story promised in one sentence.",
+      "ending": "Bupmin’s “Who would you stop eating for?” and Yushin’s non-answer is a perfect close, and it plants #13’s empty hall. The card (“Gotaso never pulls up”) hands off to #12 well.",
+      "sudden": [],
+      "pacing_notes": [
+        { "blocks": "9.11", "issue": "The full Imsin Oath Stone text, footnote marks included, is long for a campfire tale.", "fix": "Cut it to the first two sentences and the war clause; [9.12] already sums it up." },
+        { "blocks": "15–16", "issue": "Yushin refuses to tell the battle (“I am telling you about the rice”), then two records tell it anyway. The Nihon Shoki line about the ‘Mimana office’ means nothing to this reader.", "fix": "Cut [16]; keep [15] or move it to the end." },
+        { "blocks": "24", "issue": "After the climax, Yushin lectures about class numbers and the Harmony Council as ‘the yard with better chairs’.", "fix": "Cut [24]; go straight from [23] to Bupmin’s question at [25]." }
+      ],
+      "flow_notes": [
+        { "blocks": "9.12", "issue": "“Two boys from before the yard had a name promised Heaven…” is a garden-path sentence.", "fix": "“Two boys, before the yard even had a name, promised Heaven…”" }
+      ],
+      "romance": "Not a romance, but the slice’s best-played love story. It has shared shorthand from the first line (who snores), an object that carries the feeling (the grey stone, pushed across the mat at [20.8]), a vow that costs everything, and a payoff in five words (“…Wait up. / I’m not late.” [21.4]). Measure the two romances that follow against it.",
+      "battle": "The Gaya campaign is skipped on purpose (“Any old man in the market will give you the gate” [14]). That works because the frame tells you why. The captives beat at [17] does the battle’s character work better than a charge would.",
+      "suspense": "“Which one kept it?” [5] pulls the boys and the reader through, and pays off at [21.4]. The stone is planted at [9.16]–[9.20] and fires at [20.1], [20.8] and [21.5]. “You can probably name her” [26] plants #13’s empty hall.",
+      "best": "“…Wait up. / I’m not late.” [21.4]",
+      "worst": "[15]–[16] and [24]: records and a lecture right where the frame has promised the opposite.",
+      "fixes": [
+        "Cut the Nihon Shoki quote [16] and Yushin’s Council line [24].",
+        "Trim the OATH widget [9.11] to its first lines.",
+        "Leave the rest alone; this is the template for the arc."
+      ]
+    },
+    {
+      "n": 12,
+      "title": "Gotaso",
+      "logline": "Two springs before her wedding, Gotaso is abducted, and Chunchu goes silent until he gets her back at a ford. Then, at a gyuku match, she sees the showy Hwarang Pumsuk, chases him under the flowering trees and in the rain, and announces she has already named their four children.",
+      "scores": { "followable": 4, "context": 4, "pacing": 4, "flow": 3, "entertainment": 4 },
+      "verdict": "A gripping prologue and a vivid heroine paired with a blank hero: tie the abduction to the romance and give Pumsuk one line that shows who he is.",
+      "opening": "“A young girl is going to do what she’s going to do.” A good verdict-hook. But [1] (“It begins two springs earlier”) promises that the abduction is where the romance begins, and it isn’t.",
+      "ending": "“…Four?” / “You don’t want them?” / “…I want to know the names.” is the best romance beat in the slice. The card sets up the father’s vow well.",
+      "sudden": [
+        { "block": "3", "what": "Gotaso is ‘(16)’ two springs before the match where she is again ‘(16)’ [27]; #13 [0] also has her at 16 at the wedding.", "setup": "n/a", "fix": "Make her 14 at [3]." },
+        { "block": "26", "what": "“Before the wedding” presumes a wedding nobody has mentioned yet.", "setup": "none until this episode’s card", "fix": "“Before anyone says the word wedding, there is a year…”" }
+      ],
+      "pacing_notes": [
+        { "blocks": "26–30", "issue": "The club-box and premium-club detail from #10 returns and slows the first sighting.", "fix": "Keep one detail (the five rings on the shaft) as Pumsuk’s vanity; cut Munhee’s club appraisal at [28]." },
+        { "blocks": "50", "issue": "A Xin Tangshu note on Silla hairstyles interrupts the hair-on-sleeve beat.", "fix": "Cut." },
+        { "blocks": "6", "issue": "Chunchu’s future monologue (“silence was the loudest vow I would ever make”) explains the scene the reader is watching.", "fix": "Cut; [5] and [10] already show it." }
+      ],
+      "flow_notes": [
+        { "blocks": "24→25", "issue": "The episode goes from a killing at a ford and “One daughter.” straight to a polo flirtation with no bridge. Gotaso shows no aftermath, and the abduction never touches the romance.", "fix": "One line in the match scene: Gotaso at the match with two new guards and her father watching her instead of the ball, or she picks Pumsuk partly because he’s the first boy who isn’t afraid of her father." },
+        { "blocks": "39–46", "issue": "Pumsuk speaks only in ellipsis-fog (“You mustn’t. / …And yet you’re holding it.”), so we can’t tell who he is. That matters because #21 makes him lust after another man’s wife.", "fix": "Give him one specific line that shows his vanity or recklessness (the card’s ‘legal by about an inch’), e.g. he admits the illegal-looking cut was for her." }
+      ],
+      "romance": "Desire is loud and fun, all on Gotaso’s side (“I already did. And he looked back. He did, he did.” [34]), and Munhee’s “Sixteen years old, using the word life” [36] is good banter. Escalation is a clean ladder: glance [30], daily meetings [43], hand [45], rain [48]–[57]. But there is no obstacle on the page (no rank bar, no rival; the frightening father exists only in the card), no choice that costs anything, and Pumsuk has no voice. The four-named-children joke [54]–[57] is charming. We root for her, not for them.",
+      "battle": null,
+      "suspense": "Who took Gotaso, and what did Chunchu do at the ford? Withheld on purpose; it pays off in tone at #23 [52] (“does not shout… asks, very calmly, for the names”). The card asks whether her father will give her away. The four named children set up the irony of Daeya.",
+      "best": "“Father… there is something on your coat.” / “So there is. / I will change it later.” [18]–[19]",
+      "worst": "[39]–[46]: the flowering-trees exchange is all pauses, with nobody home on his side.",
+      "fixes": [
+        "Fix [1] so the abduction reads as why her father will demand a vow, not as where the romance ‘begins’; bridge [24]→[25] with one line of aftermath.",
+        "Give Pumsuk a voice in [42]–[46]: one boast, one risk, one thing only he would say.",
+        "Cut [6] and [50]; make Gotaso 14 at [3]."
+      ]
+    },
+    {
+      "n": 13,
+      "title": "Pumsuk",
+      "logline": "Chunchu blesses Gotaso’s marriage but makes Pumsuk swear to protect her, over Munhee’s objection. After the wedding the couple leave for the border fort of Daeya, and in the empty hall Queen Sunduk and Yushin come one step from running away together, then choose the crown.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 2, "entertainment": 4 },
+      "verdict": "The episode belongs to Sunduk and Yushin: play the father’s vow as a full scene and cut the lantern-sellers and Haesang.",
+      "opening": "“Princess Gotaso (16) has fallen in love with the Hwarang Pumsuk (23)…” A recap of #12, not a hook. The logline (“Then her father asks the boy for a vow.”) is the hook.",
+      "ending": "The real ending is [57] (“the record notes only that he took some time to answer”), and it’s superb. Two tail scenes follow, one jumping back in time, then a card that leaps to Munhee’s courtship with nothing in #13 motivating it.",
+      "sudden": [
+        { "block": "11–13", "what": "Sunduk says “Your son’s girl… That doorway has taken three of this house now”, and Chunmyung answers “Four.” The reader doesn’t know Chunmyung is Chunchu’s mother, or what the doorway has taken.", "setup": "#1 [30] lists Chunmyung only as one of three royals; #2 [13] says Chunchu’s mother is ‘a Royal’, unnamed. Explained at #23 [58], ten episodes later.", "fix": "Card [12]: “Chunchu’s mother. She gave up a throne to marry for love.” Or cut [11]–[14]." },
+        { "block": "60", "what": "“Bidam still sits at one hundred and eight with the Last Son of Gaya”: a nickname for Yushin that appears nowhere else, in a stranger’s mouth.", "setup": "The 108 count is at #2 [31], eleven episodes back.", "fix": "Cut [58]–[60], or say “with the Marshal”." },
+        { "block": "62–64", "what": "A merchant, Haesang, and a tavern fight over “the Sword of the Divine Country” and “Hundred-Victories”.", "setup": "None. Haesang returns only at #40, and #18 [64] says “No market calls him Hundred-Victories. Not yet.” in the same year.", "fix": "Cut [61]–[64]; move the blade-rivalry rumour to after Gyebek earns the name." },
+        { "block": "10.0", "what": "“Again the white, again only Samsin and Munhee”: ‘again’ points to a birth scene we haven’t seen yet (Bupmin’s is in #14). The block also reads like an image prompt (“a void that has no furniture to flatter it”).", "setup": "none", "fix": "Cut [10.0]; [10.1] says the same thing better." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–7", "issue": "#12’s card promised a confrontation: the boy asks the father who did something unspeakable at a ford. It is summarized in [1] and played in five short lines, with the vow itself as a single shout.", "fix": "Make it a scene: Pumsuk alone with Chunchu; Chunchu wipes his hands the way he did at the ford; the “Haha…” lands as a threat because we know what he did." },
+        { "blocks": "16", "issue": "The Sui Shu wedding-rites quote sits between “We will be happy forever!” and the wedding night.", "fix": "Cut." },
+        { "blocks": "58–64", "issue": "Two scenes after the climax: lantern-sellers trading nicknames, then, ‘Earlier that evening’, a merchant’s monologue. Neither is about this episode.", "fix": "Cut both; end on [57]." }
+      ],
+      "flow_notes": [
+        { "blocks": "22→23→25→26", "issue": "The episode hops from the wedding night forward to the move to Daeya, back to the hall (“But that is days off”), and back again to ‘Earlier that evening’ at [61].", "fix": "Put the Daeya cart [23]–[24] last, after the empty hall, as the closing image." },
+        { "blocks": "64→65", "issue": "The card jumps to how Chunchu and Munhee met, but nothing in #13 makes them remember it.", "fix": "Add a beat in the hall: Munhee watching the vows, Chunchu murmuring “Have you forgotten how we met?”, so #14 starts from a moment we saw." }
+      ],
+      "romance": "Two romances. Gotaso and Pumsuk: the wedding and wedding night [17]–[21] are brief and tender but generic. Gotaso loses the comic voice she had in #12, and “We will be happy forever!” [15] is a strong irony plant that pays off at #23 [48]–[49]. Sunduk and Yushin [26]–[57] is the best romance writing in the slice: twenty years of desire, an obstacle that is the crown itself, escalation in one step and one sentence (“Two horses. Tonight would be enough.”), a choice with a cost (“One more step and I do not stop.” / “…Then I will not take it.”), and a sting (“That is the sound you make when you have won.” / “…Then neither of us has.”). It is earned by #1 [55]–[60] and #11 [26], and it is played, not told.",
+      "battle": null,
+      "suspense": "Will Pumsuk keep a vow he swore to a laughing father? It pays off at #23 [55]–[56]. Daeya as “a border post with a fine view of Baekje. The view works both ways.” [24] is the slice’s best plant. “Thirty-two years later” [57] teases Yushin’s death question. Haesang’s blade rivalry does not fire in this slice.",
+      "best": "“Don’t thank me. / That is the sound you make when you have won.” [52]",
+      "worst": "[58]–[64]: two after-the-climax scenes that go back in time and introduce a merchant who doesn’t matter until #40.",
+      "fixes": [
+        "Dramatize the father’s vow [1]–[7] as a two-hander between Chunchu and Pumsuk.",
+        "Cut [58]–[64] and end on [57], or on the Daeya cart [23]–[24] moved to the end.",
+        "Cut [10.0] and the cryptic aunt exchange [11]–[14], or card Chunmyung as Chunchu’s mother."
+      ]
+    },
+    {
+      "n": 14,
+      "title": "Munhee",
+      "logline": "Munhee buys her sister’s dream of drowning the capital for a silk skirt, then mends the coat Yushin tears off Chunchu on purpose. Their affair leaves her pregnant and unwed until Yushin lights a pyre where the princess can see it and Chunchu blurts that the child is his. They marry and vanish into their bedroom for months.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 4 },
+      "verdict": "A strong courtship that loses its shape at the pyre and overstays in bed: put Munhee in danger at the pyre, confess once, and cut ‘The Closed Months’ to a third.",
+      "opening": "“Dear… have you already forgotten how we met?” then “It starts with a dream, and the dream is sold.” A strong hook that frames the episode as the couple’s own story.",
+      "ending": "Chunchu letting “the east star… just be a star” [74] is a lovely beat, but it contradicts #1 [10] (he is on that hill in 632) and #10 [4] (in 641 he is collecting votes). The card bridges to Pyongyang with the boots image; the leap from 625 Silla to 641 Goguryeo rests on it entirely.",
+      "sudden": [
+        { "block": "48", "what": "“The burnt-skirt rumour”: no skirt burns; the skirt was traded for the dream at [6].", "setup": "none", "fix": "Cut ‘burnt-skirt’, or have the pyre threaten the very skirt she bought the dream with." },
+        { "block": "70", "what": "“Years later… They will call him Bupmin.” After an unwed pregnancy and a wedding, ‘years later’ leaves the reader asking which child the pregnancy was.", "setup": "n/a; #13 [10] puts Gotaso’s birth in 626, the same year as Bupmin’s", "fix": "Make the pregnancy Bupmin and drop ‘Years later’, or name the first child." },
+        { "block": "72–74", "what": "“After that, Chunchu stopped going to the hill.”", "setup": "Contradicted by #1 [10], where in 632 Bupmin finds Chunchu and Yushin on that hill.", "fix": "“For a few years, Chunchu stopped going to the hill.”" }
+      ],
+      "pacing_notes": [
+        { "blocks": "50–67", "issue": "Eighteen blocks of one beat (again, again, the lattice, the neighbours, the morning), told in summary, with art-direction phrasing (“No faces needed. The pose is the gossip.” [58]) and untranslated Korean (창호지, 다시) in the English.", "fix": "Keep [53], [54]–[55], [57] and [66]; cut the rest. The wit (“cannot forecast his own stamina”) survives at a third of the length." },
+        { "blocks": "31", "issue": "Chunchu’s Mid-Bone pine club is a dangling aside between the affair and the pregnancy.", "fix": "Cut." },
+        { "blocks": "68–71", "issue": "The birth coda repeats #13’s Samsin-in-white image and spends four blocks reaching the ending.", "fix": "One sentence: the household fills with Bupmin and Gotaso." }
+      ],
+      "flow_notes": [
+        { "blocks": "33–47", "issue": "The pyre scene is out of order. Chunchu confesses at [38], then talks Gaya politics with Yushin (who is at the pyre while Chunchu is on the terrace), then confesses again at [47]. Munhee never appears at the pyre, so the stakes, her life, are never felt.", "fix": "Stage it in one line of sight: Munhee in the yard by the green wood, the princess’s question, one stammered confession. Move the Gaya exchange [41]–[45] to after the wedding." },
+        { "blocks": "35–38", "issue": "A first-time reader is never told the pyre is meant for Munhee.", "fix": "Yushin at [33]: “A sister who shames the house burns in its yard.”" }
+      ],
+      "romance": "Desire is played on both sides: she buys the dream and steps forward to sew [13], and he keeps coming back ‘needing nothing sewn’ [18]. The escalation (needle, breath, her mouth above his pulse [19]) is the best slow burn in the slice. Munhee leads the dialogue with real wit (“Only the coat. / Or… your restraint as well.” [24]); Chunchu speaks in breathy fragments that sound like Pumsuk’s (“coming apart at the door” [25]). The obstacle (he won’t propose; the disgrace) and the costly choice (his public confession) are there but muddled at the pyre. Yushin’s “You did not choose my sister. I chose you.” [39] is a great turn. The payoff overstays: weeks of bedroom summary instead of one scene. We root for Munhee.",
+      "battle": null,
+      "suspense": "This is a closed question (we know they marry), so the tension has to come from the pyre, and the pyre plays as farce with Munhee absent. “The single worst trade in Silla’s thousand years” [7] and “what the child will steal from him” [70] are good long teases.",
+      "best": "“Sister. Sell me that dream.” / “…For what?” / “My silk skirt.” [4]–[6]",
+      "worst": "[50]–[67]: ‘The Closed Months’ restates one beat for eighteen blocks in summary and shot-list language.",
+      "fixes": [
+        "Rebuild the pyre [33]–[47]: Munhee by the green wood, one confession, the Gaya talk moved after.",
+        "Cut ‘The Closed Months’ [50]–[67] to about six blocks of actual scene.",
+        "Fix the continuity at [48], [70] and [72]."
+      ]
+    },
+    {
+      "n": 15,
+      "title": "Academy",
+      "logline": "Yeon Gesomun walks his seven-year-old heir into the Grand Academy in riding boots and refuses the sutras, because the monasteries own the land and pay nothing toward the wall. He makes enemies of a monk and of his uncle, the High Commander.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "Yeon’s voice is a joy but the scene has no stakes: merge it with #16 and #17 so the monk’s grudge and the uncle’s supper lead straight into Dosuryu’s warning.",
+      "opening": "“Yeon’s wife has given him three sons. They could not be more different.” Serviceable list-hook, but the three sons are then introduced and never used.",
+      "ending": "Gusesa’s quip [25] is a good sting, then a records quote [27] blunts it. The card (“a very big rock… a list on it, and a question”) is fun and leads into #16.",
+      "sudden": [
+        { "block": "22", "what": "Bodeok of Banryong “will remember the sentence longer than anyone else who hears it.”", "setup": "none, and he never appears again anywhere in the book", "fix": "Pay it off (he defects, he informs) or cut the promise." }
+      ],
+      "pacing_notes": [
+        { "blocks": "9–10", "issue": "The Academy’s founding in 372 is narrated, then quoted.", "fix": "Keep [9]; cut [10]." },
+        { "blocks": "21", "issue": "The record of the tripod petition repeats the line Yeon has just said at [18].", "fix": "Cut." },
+        { "blocks": "27", "issue": "The ‘they love books’ record follows the punchline, so the episode ends on a record.", "fix": "Cut, or move it before [26]." }
+      ],
+      "flow_notes": [
+        { "blocks": "2–7", "issue": "Each son gets a personality (approval-seeker, fighter, watcher), but none of it is used in the scene, and the logline’s “There is only one seal” never appears.", "fix": "Give Namgun or Namsan one line at the gate (Namsan noticing Bodeok stop sweeping) so a trait does some work." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Will Yeon’s contempt for the monasteries cost him? Gusesa’s quip feeds #17. Bodeok’s promised memory never fires. Gulgul’s back-to-the-door detail [7] is planted for #98.",
+      "best": "“The Buddha’s fine. Fat, quiet, never asked me for anything. / It’s his landlords I mind.” [15]",
+      "worst": "[21] and [27]: records that repeat or blunt the scene’s own lines.",
+      "fixes": [
+        "Merge #15–#17 into one episode: academy gate, then the stone, then Dosuryu’s boots.",
+        "Cut the quotes at [10], [21] and [27].",
+        "Use one son’s trait in the scene, or cut the son cards to one line each."
+      ]
+    },
+    {
+      "n": 16,
+      "title": "Stele",
+      "logline": "Yeon takes his sons to the Great King’s stone, which lists sixty-four conquered fortresses, and asks how such a country came to bow to Chang’an twice a year.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 2 },
+      "verdict": "A 241-word stop with three records and no scene: fold its one good question into #15 or #17.",
+      "opening": "“Yeon takes his sons to see the Great King’s stone. It lists everything he ever took.” Flat; the previous card already promised exactly this.",
+      "ending": "Yeon’s question [5] is the real ending, and nobody reacts to it. The card repeats #17’s first line almost word for word, so the reader reads the boots sentence twice in a row.",
+      "sudden": [
+        { "block": "5", "what": "“Chang’an”: the first mention of the Tang capital, in Yeon’s mouth.", "setup": "Tang and the Second Emperor are set up in #1 and #8, but the city is never named", "fix": "“…came to bow to the Tang twice a year.”" }
+      ],
+      "pacing_notes": [
+        { "blocks": "6–8", "issue": "Three records in a ten-block episode. [7] and [8] both say Goguryeo sent its crown prince to Tang with tribute in 640. ‘Sixty-four fortresses’ was already told in #8 [45] and twice in #9.", "fix": "Cut [6] and [8]; keep [7] only if a son reacts to it." }
+      ],
+      "flow_notes": [
+        { "blocks": "5→9", "issue": "Yeon asks his question and the episode ends on records; Namseng’s “that’s it? A big rock?” [3] goes nowhere.", "fix": "Let Namseng try to read the stone and fail, or Namsan ask the question back to his father." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Yeon’s question (how did sixty-four fortresses become tribute?) is exactly the right one for his coup, but it hangs with no reaction.",
+      "best": "“Aw… that’s it? A big rock?” [3]",
+      "worst": "[6]–[8]: three quotes, two of them the same fact, filling most of the episode.",
+      "fixes": [
+        "Fold [3]–[5] into the end of #15 or the start of #17 and retire #16 as an episode.",
+        "Cut the duplicate tribute quotes [7]/[8].",
+        "Give the stone scene one reaction from a son."
+      ]
+    },
+    {
+      "n": 17,
+      "title": "Dosuryu",
+      "logline": "Old Dosuryu walks in with his boots on to warn Yeon that the king and his uncle are plotting to send him to the far end of the wall and have him not come back. Yeon laughs, stops laughing, and says he’ll make a list of his own.",
+      "scores": { "followable": 4, "context": 4, "pacing": 4, "flow": 4, "entertainment": 4 },
+      "verdict": "The tightest scene in the slice; move the two ‘plan leaked’ records out of the middle so the laugh, the stop and the list run together.",
+      "opening": "“Late in the year Dosuryu comes in without knocking… and without taking his boots off, which he has never done.” A strong hook built on a broken habit, though #16’s card has just said it.",
+      "ending": "Dosuryu standing in the yard, unable to make himself mount, because “he knows exactly what kind of list it will be” [16], is chilling. The card pivots to Sabi’s dragon cleanly.",
+      "sudden": [],
+      "pacing_notes": [
+        { "blocks": "11–12", "issue": "Two records saying the same thing (“The plan leaked…”) sit between “Yeon stops laughing” [10] and “How many names on their list.” [13], the episode’s best run.", "fix": "Cut both, or put one after [16]." },
+        { "blocks": "6", "issue": "The wall-overseer record interrupts Dosuryu’s warning before Yeon’s laugh.", "fix": "Cut; Dosuryu’s line already says it." }
+      ],
+      "flow_notes": [
+        { "blocks": "17→#18", "issue": "‘Late in the year’ is followed by ‘Meanwhile in Sabi’, but #18 is set in March of the same year: the story slips back nine months.", "fix": "Drop ‘Late in the year’ here, or put #18–#20 before #15–#17." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Will Yeon strike first, and whose names go on his list? The strongest forward pull in the slice; it pays off in #24.",
+      "best": "“Then I’ll make a list too. / Mine’ll be longer.” [15]",
+      "worst": "[11]–[12]: duplicate records interrupting the turn.",
+      "fixes": [
+        "Cut [6], [11] and [12].",
+        "Absorb #16’s stone question as part of Yeon’s laugh (“Sixty-four fortresses, and they think a wall will hold me?”).",
+        "Fix the ‘late in the year’ to March slip at the seam into #18."
+      ]
+    },
+    {
+      "n": 18,
+      "title": "King Euija",
+      "logline": "Euija is crowned at forty-one and opens his reign with a fake dragon made of kites, a sweating rock and a white deer, enjoying every trick while Gyebek refuses to nod at any of them. At the coronation feast he sends his quiet son Pung abroad as a hostage.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "Euija’s voice carries it: open on the dragon instead of the death notice, cut the maids’ chamber to a few lines, and point the ‘sentence that kills him’ tease at the right line.",
+      "opening": "“King Mu is dead at eighty, after a lifetime of fighting Silla.” A death notice, then two records. The real hook (“a dragon is seen over the Sabi River. Several hundred people see it.”) waits until [7].",
+      "ending": "Pung’s “For how long?” / “Until I need you.” and the tease at [76] land. The card (“He can’t fake a fortress”) is one of the slice’s best handoffs.",
+      "sudden": [
+        { "block": "45", "what": "Euija calls the minister ‘Seongchung’; his card and on-page speaker label at [30], [31], [44] and [68] say ‘Sungchung’. A new reader can take them for two men.", "setup": "n/a", "fix": "Pick one spelling." },
+        { "block": "63", "what": "A line spoken by ‘Baekje’, the country itself, about keeping both its names warm.", "setup": "only the chant in #6 [8]", "fix": "Cut, or give it to a market voice." },
+        { "block": "72–75", "what": "“The East wants a prince of Baekje”: the reader isn’t told the East is Yamato. The record under it is dated 631, ten years before this scene.", "setup": "King Jomei is carded once, at #1 [82]", "fix": "“The island king across the sea wants a prince…”; drop the 631 quote." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–6", "issue": "A death notice, two records, a map, the hook line, a bare card and a term card before anything happens.", "fix": "Open on [7]–[8]; give King Mu’s death one clause after the dragon." },
+        { "blocks": "50–62", "issue": "Thirteen blocks of the court maids’ innuendo while Euija looks at a map: one joke (“I was talking about the Silla border”) stretched.", "fix": "Keep [56]–[59]; cut the rest. The earlier maid beats [16]–[20] and [46]–[47] already establish his appetite." },
+        { "blocks": "21–25", "issue": "The Seodong song digression, with a record and a poem, sits between the dragon and the other miracles.", "fix": "Keep [21] and [24]; cut [22]–[23]." }
+      ],
+      "flow_notes": [
+        { "blocks": "43→48→49", "issue": "“This is entirely correct, and it is the sentence that kills him” comes after the narrator’s own line at [48], so ‘this’ points at the narrator, not at Euija.", "fix": "Move [49] to directly after [43] (“Gods are props…”) or after [32]." },
+        { "blocks": "62→63→64", "issue": "From the bedroom to a talking nation to Gyebek’s age, with no bridge.", "fix": "Cut [63]; open [64] in the feast hall." }
+      ],
+      "romance": "Not a romance. The maids’ banter characterizes Euija’s appetite (‘before the wine years’) and has wit, but it is three scenes with no arc and should be one.",
+      "battle": null,
+      "suspense": "Will the people see through the miracles? Sungchung asks [31], and the ‘nineteen years later’ tease [49] answers obliquely. The white deer [27] fires at #65–66. Pung’s exile pays off #4’s plant and sets up #77. Gyebek passed over [64] creates a want: when does he get his chance?",
+      "best": "“It was four lacquered paper kites, a low mist, six boatmen paid in advance…” [8]",
+      "worst": "[50]–[62]: the maids’ chamber, an innuendo loop that stops the episode.",
+      "fixes": [
+        "Open on the dragon [7]–[8]; cut the records [1]–[2].",
+        "Cut the chamber [50]–[62] to four lines and remove the nation’s line [63].",
+        "Move the tease [49] next to the line it means; unify Sungchung/Seongchung."
+      ]
+    },
+    {
+      "n": 19,
+      "title": "Yunchung",
+      "logline": "Euija privately recruits the frontier general Yunchung, who tells him a king beats his clans with a war abroad. At the Assembly, Euija turns a quarrel about a shipping writ into a crusade, declares that a country is a story, and sends Yunchung with ten thousand men to take the Silla fortress of Daeya.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "A sharp war council buried in an Assembly lecture: cut the shipping-writ false start and the third Rock explainer, fix ‘Goryeo’ and Yunchung’s ‘done for’, and let the narrator wink that Daeya is where Gotaso lives.",
+      "opening": "“There was only one man Euija knew he could trust to deliver.” A good, intriguing hook (the author’s own line), and [3]–[9] pay it off fast.",
+      "ending": "“Daeya by autumn, Majesty.” [48] lands. The card (Gyebek’s question; “Any grandmother in Sabi could tell him”) is a model flashback tease.",
+      "sudden": [
+        { "block": "27–28", "what": "‘Goryeo’, a short name for Goguryeo, appears for the first time; a new reader can take it for a fourth kingdom.", "setup": "none; explained only at #25 [22] (“call it Goguryeo. Not Goryeo.”)", "fix": "Say ‘Goguryeo’ here." },
+        { "block": "21", "what": "Satek Chunbok is carded as having ‘an inconvenient conscience’, then defends the Rock [22] and argues for war [29].", "setup": "#5 [33] only cites him", "fix": "Give the war speech to Minister Satek, or give Chunbok the conscience line Sungchung has at [30]." }
+      ],
+      "pacing_notes": [
+        { "blocks": "12–17", "issue": "The Assembly opens on a Satek inheritance and a shipping writ that have nothing to do with the war.", "fix": "Cut to [16]–[17]: “the Eraha counts fortresses.”" },
+        { "blocks": "18–20", "issue": "The Rock of Politics is explained a third time (narration, record, diagram), after #5 [35]–[36] and #18 [28], [38]–[41].", "fix": "Cut all three." },
+        { "blocks": "23, 25–26", "issue": "Euija restates #18’s ‘gods are props’ (“the cheapest civil servants”) and pre-tells the Cloud King’s betrayal that #20 dramatizes.", "fix": "Cut [25]–[26]; trim [23] to its first line so the theme line [27] hits fresh." }
+      ],
+      "flow_notes": [
+        { "blocks": "46→48", "issue": "Yunchung, who proposed the war at [8], says “Then we’re done for, plain and simple,” then promises Daeya by autumn. The Korean is closer to ‘then it’s f—ed, what else’, which doesn’t say whose side is doomed.", "fix": "Make it clearly Silla, or clearly gallows humour: “Then Silla’s finished. Plain and simple.”" },
+        { "blocks": "37→45", "issue": "Daeya is named at [37], the Severing speech follows, then Daeya is named again with a map at [45]. A reader who remembers the newlyweds’ cart in #13 gets no wink.", "fix": "Name Daeya once, at the end, and add one narrator line: “You’ve been to Daeya. You waved a cart into it.”" }
+      ],
+      "romance": null,
+      "battle": "War setup, not battle. The stakes are clear and personal: a king who needs a victory to own his own army [7]–[8]. The target gets a one-line map (“The last wall between Baekje and the Silla capital” [45]), and the general is believable. Missing: any plan or geography beyond ‘ten thousand men, by autumn’, and the dramatic irony that the reader knows who lives there.",
+      "suspense": "Where will Euija strike? Daeya, where the reader knows Gotaso and Pumsuk live. That is the slice’s strongest dread, if anyone points at it. What is the Severing? Answered in the next episode.",
+      "best": "“Tell me. Who rules Baekje?” / “Your Majesty does. / On paper.” [3]–[4]",
+      "worst": "[11]–[20]: a false-start quarrel about berths, then the Rock explained for the third time.",
+      "fixes": [
+        "Cut [12]–[15] and [18]–[20]; go from the private meeting to the chant [24] and the theme line [27].",
+        "Replace ‘Goryeo’ at [27]–[28] and fix Yunchung’s line at [46].",
+        "Add one narrator line at Daeya [45] tying it to Gotaso’s cart at #13 [23]."
+      ]
+    },
+    {
+      "n": 20,
+      "title": "The Severing",
+      "logline": "A century earlier, Baekje’s King Seong and the Cloud King take a river together, and the Cloud King keeps it all. When Seong rides out at night to steady his son, he is ambushed, sat on a camp stool beside a silent Gaya prince, and beheaded by a slave with his own knife.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "A grim, effective legend once it reaches the night road: tell the betrayal once, drop the Nihon Shoki memorial, and use one name for the Cloud King.",
+      "opening": "“The sad thing about betrayal… is that it never comes from your enemies.” A good verdict-hook that fits a betrayal by an ally.",
+      "ending": "The skull under the steps [25] and “he is still telling this one” [26] close it hard. The card returns to now cleanly but promises Daeya and Gumil, which #21 delays by about 4,300 words.",
+      "sudden": [
+        { "block": "12", "what": "“Jinheung’s hand drops”: [1] and [4] call him the Cloud King, and the two names are joined only in #3, seventeen episodes back.", "setup": "#3 [3], [16]", "fix": "“The Cloud King’s hand drops.”" },
+        { "block": "16, 22", "what": "The text keeps the Gaya prince unnamed, but on the page both his lines carry the speaker label ‘Muryuk’ (the blocks have person muryuk and no speaker override; the dump prints ‘Kim Muryuk’). That names him 23 episodes before #43.", "setup": "deliberate mystery box, leaked by the label", "fix": "Give both blocks a speaker override such as ‘The Gaya prince’ until #43." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–4", "issue": "The betrayal is told three times in four blocks (narration, the Severing term card, map caption, narration), after #3 and #19 [25]–[26] already told it.", "fix": "Keep the term card [2] and one line of [4]." },
+        { "blocks": "8", "issue": "Seong’s Nihon Shoki memorial (“Mononobe no Makamu, commander of the Eastern Region… Hamsan Fortress”) is a name-storm before the scene.", "fix": "Cut." },
+        { "blocks": "9", "issue": "Months of a war Baekje is winning are summarized in two sentences.", "fix": "Fine for a legend; one image of the starving forward camp would give the night ride its reason." }
+      ],
+      "flow_notes": [
+        { "blocks": "21", "issue": "Dodo says “If you broke the oath… I was told,” but it was Silla that broke the alliance. The irony, that Silla scripted the slave’s accusation, is there but easy to miss.", "fix": "One narrator aside: “Which oath, and whose, nobody on the ridge asks.”" }
+      ],
+      "romance": null,
+      "battle": "Not a battle: a summarized campaign, then one dramatized ambush and execution. The stakes (a king’s life, Baekje’s pride) are clear. The POV character, Seong, is carded at [6], so we care about him for about eighteen blocks. Geography is evocative but vague (“a ditch that was not there at dusk” [11]). The plan and reversal (Silla’s ambush) happen offstage. Cost and consequence are strong and concrete: the knife, the neck, the skull under the north hall steps. It works as legend, but it doesn’t show Baekje why it lost.",
+      "suspense": "Why does Baekje hate Silla? Answered here, paying off #3’s “Ask anyone in Sabi and they’ll change the subject” seventeen episodes later. Who is the silent Gaya prince? The text holds the box until #43, but the speaker label leaks it.",
+      "best": "“He unfastens his own knife, gives it to the kneeling man, and puts his neck out.” [24]",
+      "worst": "[1]–[8]: three tellings of the betrayal and a record full of names before the night road.",
+      "fixes": [
+        "Cut [1]/[3]/[4] to one telling and drop the memorial [8].",
+        "Mask Muryuk’s speaker label on [16] and [22].",
+        "Call him the Cloud King at [12] and sharpen Dodo’s ‘oath’ irony at [21]."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "There is a spine, but it’s buried. The spine is Daeya: Silla marries its princess into a border fort (#12–13), and Baekje’s new king picks that same fort to make his name (#18–20). The convergence is strong and pays off hard in #23 (“We will be happy forever.” / “I am the one who made him swear it.”), but the slice never says it out loud. Five episodes separate Gotaso’s cart (#13 [23]) from Euija’s “Daeya… how about it?” (#19 [37]). Three of them are a Goguryeo side-arc (#15–17) that feeds Yeon’s coup in #24 rather than Daeya, and no narrator line joins the two threads. The arc’s title promise, the Five Principles, drives #10–11 and is then dropped. In practice this is three households (Chunchu’s, Yeon’s and Euija’s), with Chunchu’s family closest to the reader’s heart. A first-time reader keeps going on #11, the empty hall in #13, #17, and Euija’s voice in #18–19. The places they might stop are #10’s explainer opening, #14’s long bedroom passage and #16. Against the author’s suspicion, #11 Sadaham reads at nearly Prince Euija level, and #17 and #18 are strong.",
+    "handoffs": [
+      { "from": 9, "to": 10, "works": "yes", "why": "The card names Bupmin, fifteen, the five rules and the question, and #10 delivers all four; the card carries the jump from 400 to 641 on its own.", "fix": "Don’t spend the question in the card: “…and his uncle has a question for him.”" },
+      { "from": 10, "to": 11, "works": "yes", "why": "“Two names it still whispers. Tonight the Marshal says them out loud” opens straight into the frame tale.", "fix": "none needed" },
+      { "from": 11, "to": 12, "works": "yes", "why": "“Gotaso never pulls up” hands the reader a character, and #12’s first line pays it off.", "fix": "none needed" },
+      { "from": 12, "to": 13, "works": "partly", "why": "The card promises the boy facing a father who wants a vow; #13 summarizes that in [1] and plays five lines.", "fix": "Make #13 [1]–[7] a full scene." },
+      { "from": 13, "to": 14, "works": "partly", "why": "The tease (“a dream, a skirt, and a coat torn on purpose”) is irresistible, but nothing in #13 makes Chunchu and Munhee remember; the jump back to 625 rests on the card alone.", "fix": "Plant the question in #13’s hall: Chunchu to Munhee during the vows." },
+      { "from": 14, "to": 15, "works": "yes", "why": "The boots image bridges 625 Silla to 641 Pyongyang, and #15 [11] pays it off.", "fix": "Name the time shift: “Sixteen years on, in Pyongyang…”" },
+      { "from": 15, "to": 16, "works": "yes", "why": "The ‘very big rock’ card is fun and accurate.", "fix": "Better still, merge #16 into #15." },
+      { "from": 16, "to": 17, "works": "partly", "why": "It works, but the card is #17’s opening line nearly word for word, so the reader reads it twice.", "fix": "Card: “Some visitors knock. Some take their boots off. One old friend does neither…!” Or merge the two." },
+      { "from": 17, "to": 18, "works": "partly", "why": "The card promises the dragon; #18 opens on King Mu’s death and two records, and ‘Meanwhile’ hides a jump back from late 641 to March.", "fix": "Open #18 on the dragon; drop ‘Late in the year’ from #17 or reorder." },
+      { "from": 18, "to": 19, "works": "yes", "why": "“He can’t fake a fortress” into “only one man Euija knew he could trust to deliver” is a clean cause-and-effect handoff.", "fix": "none needed" },
+      { "from": 19, "to": 20, "works": "yes", "why": "Gyebek’s “What is the Severing?” is a question the reader now shares; the flashback answers it and returns with “Back to now.”", "fix": "none needed" },
+      { "from": 20, "to": 21, "works": "partly", "why": "The card promises ten thousand men marching on Daeya and its clerk Gumil. #21 opens on Yushin at the goddess cavern and a flashback to 595, and reaches Daeya and Gumil only at [94], about 4,300 words in.", "fix": "Open #21 on the march and Gumil, and move the steam cavern later or into its own episode; or retarget #20’s card to the cavern." }
+    ],
+    "dropped_threads": [
+      "Bodeok (#15 [22]): “he will remember the sentence longer than anyone else who hears it”, and he never appears again anywhere in the book.",
+      "Haesang and his tavern blade rivalry (#13 [61]–[64]): no payoff in the slice; Haesang returns at #40, and ‘Hundred-Victories’ contradicts #18 [64].",
+      "The Five Principles (#10 [17]–[27]): the arc is named for them, but after #11 none is invoked again. Pumsuk’s vow (#13 [7]), Gyebek’s loyalty (#18–19) and Yeon’s list (#17) each could carry one.",
+      "Yeon’s three sons’ traits and the logline’s “There is only one seal” (#15 [2]–[7]): no rivalry or seal appears in #15–17.",
+      "Gyebek’s question “What is the Severing?” (#19 [41]): answered for the reader in #20, but we never see Gyebek hear it.",
+      "Chunchu ‘puts down his star’ (#14 [72]–[76]): contradicted by #1 [10] and #10 [4] rather than paid off.",
+      "Gotaso’s abduction (#12): deliberately unexplained and paid off in tone at #23 [52], which is fine, but the romance that follows never refers to it."
+    ],
+    "repetition": [
+      "‘Sixty-four fortresses’: #8 [45], #9 [2], [3], #16 [5], [6].",
+      "The Rock of Politics and its brine: #5 [35]–[36], #18 [28], [38]–[41], #19 [6], [18]–[20].",
+      "Euija’s ‘gods are cheap props’ idea: #18 [32], [35], [43] and #19 [23], all before the licensed theme line at #19 [27].",
+      "The Cloud King’s betrayal: #3 [2], [18]; #19 [25]–[26]; #20 [1], [2], [3], [4].",
+      "Duplicate records back to back: #16 [7]/[8] (the same 640 tribute), #17 [11]/[12] (‘the plan leaked’), #18 [1]/[2] (two notices of King Mu’s death), #11 [15]/[16] (the same 562 conquest).",
+      "The Five Principles five times in one episode: #10 [17]–[27].",
+      "Romance idioms shared by two couples: ‘come apart’ (#12 [53], #14 [25]); ‘the rest of my/your life’ (#12 [35], [52]; #13 [41]–[42]).",
+      "Birth in white with only Samsin: #8 [37]–[39], #13 [10.0] and [10.1] (twice in one flashback), #14 [69].",
+      "The premium gyuku club gag: #10 [10]–[12], #12 [27]–[30], #14 [31].",
+      "The boots sentence: #16 card [9], #17 logline and #17 [0]."
+    ],
+    "top_problems": [
+      "The slice’s best suspense engine goes unvoiced, then gets delayed. Gotaso and Pumsuk move to Daeya (#13 [23]–[24]); Euija picks Daeya five episodes later (#19 [37], [45]) with no wink to the reader; and #21 makes the reader wade through about 4,300 words of goddess cavern before the march arrives. Fix: a narrator line at #19 [45]; merge #15–17 into one episode (or move them next to their payoff in #24) so the gap shrinks; open #21 on Daeya.",
+      "Records and explainer widgets stall openings and turns, often in duplicate: #10 [17]–[24], #16 [6]–[8], #17 [11]–[12], #18 [1]–[2], #19 [18]–[20], #20 [1]–[8], #11 [15]–[16]. A first-time reader meets the same fact twice in a row in five of these eleven episodes.",
+      "Both romances skip the scenes that would make us root for the couple. The father-asks-the-boy vow is summarized (#13 [1]–[7]). Pumsuk has no voice or flaw on the page (#12 [39]–[57]), though #21 depends on one. #14’s pyre has no Munhee in it and a doubled confession ([38], [47]), and ‘The Closed Months’ (#14 [50]–[67]) repeats one beat for eighteen blocks. The best-played love stories here are the side ones: Sadaham and Mugwan, and Sunduk and Yushin.",
+      "Timeline slips a careful reader trips on. Gotaso is 16 two springs apart (#12 [3], [27]). #13 hops forward to Daeya and back, then to ‘Earlier that evening’. #14’s ‘Years later’ birth blurs which child the pregnancy was, and ‘stopped going to the hill’ contradicts #1 [10]. #13 [64] has taverns arguing about Hundred-Victories while #18 [64] says nobody calls him that yet. #17’s ‘late in the year’ is followed by #18 in March.",
+      "Name friction: ‘Goryeo’ is unexplained until #25 (#19 [27]–[28]); Sungchung and Seongchung in one episode (#18); Jinheung and the Cloud King in one scene (#20 [1]/[12]); ‘Last Son of Gaya’ (#13 [60]); Chunmyung’s “Your son’s girl” (#13 [11]–[13]); and the on-page speaker label ‘Muryuk’ spoils the mystery box at #20 [16] and [22]."
+    ]
+  }
+}

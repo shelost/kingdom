@@ -1,0 +1,359 @@
+{
+  "slice": 4,
+  "range": "#31–#39",
+  "episodes": [
+    {
+      "n": 31,
+      "title": "Four Dragons",
+      "logline": "The Second Emperor, a man nobody may name, loses the one minister who told him no, hears that Goguryeo's king has been murdered, and launches his seventh invasion out of something close to boredom; on the side, a poor farmer, Xue Rengui, is pushed out the door by his wife to enlist. There is no protagonist: it is eight setup vignettes that end with the army on the march.",
+      "scores": { "followable": 2, "context": 3, "pacing": 2, "flow": 2, "entertainment": 3 },
+      "verdict": "A setup anthology with no one to follow: open on the name taboo, keep the dying minister and the farmer's wife, and cut the news roundup, the Korean-only dragon table and the Longmen record pile.",
+      "opening": "'The Second Emperor of the West resides in the Palace.' [0] is a textbook bio line followed by three nation names. The real hook is buried at [3] ('nobody says his name'), and the header logline ('He has many names, and he is running out of countries') beats both.",
+      "ending": "[71] jumps ahead to summer at Stallion Mountain and spends #34's opening, which then repeats it almost word for word (#34 [0]). The card [72] ('Here come the dragons…!') is good and hands off cleanly to #32.",
+      "sudden": [
+        { "block": "10–12", "what": "The dying minister is 'the Grand Minister' in narration [10] but 'The Imperial Minister' on his card and speaker label [11]–[12]; #36 [31] calls him 'the Grand Minister' again.", "setup": "none: one man, two titles, no name", "fix": "Use one title here and in #36 [31] so the payoff is recognisable." },
+        { "block": "6–7", "what": "The Herald asks 'They don't say his name? At all?' and then answers himself.", "setup": "speaker-label error", "fix": "Give [7] to a Tang clerk or a court lady." },
+        { "block": "17", "what": "'And here I am. The Prince of Qin!' closes a rant about the Han, the Sui and 'four hundred years of being savaged by barbarians'.", "setup": "none", "fix": "Cut [15]–[17] after the mirror speech [14], or end the rant on 'And here I am.'" },
+        { "block": "29–34", "what": "The four dragon generals, the episode's title, arrive as a table with Korean-only names [31] and one paragraph [34]. Only the Blue Dragon gets a card.", "setup": "none; in this slice only the Blue Dragon ever speaks (#34 [18])", "fix": "One English line each with a face and a want (the Black Dragon who argued against the war and rides anyway is a scene in waiting), or retitle and drop the table." },
+        { "block": "55", "what": "'It does not ask for Xue Li.' The reader met him four blocks earlier as Xue Rengui.", "setup": "none", "fix": "Write 'It does not ask for him by name.'" }
+      ],
+      "pacing_notes": [
+        { "blocks": "15–22", "issue": "After the mirror speech, the emperor's 'western dream' rant [15]–[17] is a history lecture, and Chu Suiliang's world-news roundup [21] (Xuanzang, flying monkeys, Islam, Rome) is caption-dialogue. Its payoff, 'Gai Suwen…?' [22], repeats the last line of #30 [5].", "fix": "Cut [15]–[17] and [20]–[21]; let the news of Gai Suwen arrive in one line." },
+        { "blocks": "54–70", "issue": "Longmen: an edict widget [56]; Liu says her line [61]; the narrator says the chronicler didn't invent it [62]; a quote says it again [63]; narration says he enlists [66]; a quote says it again [67]; then a Lü Bu aside [68] and an opera aside with its own quote [69]–[70]. Six record or explainer blocks in seventeen bury a good little marriage scene.", "fix": "Keep [57]–[61] and [64]–[66]; cut [62]–[63] and [67]–[70]; move the five-ways edict [56] to the muster at [28], where it belongs." },
+        { "blocks": "28–34", "issue": "Muster summary, dragon card, table, map and dragon paragraph: five blocks of inventory between the decision and the next scene.", "fix": "Keep [28], [29] and [32] ('The fifth banner has no name on it at all'), which quietly pays off the name taboo." }
+      ],
+      "flow_notes": [
+        { "blocks": "28→36→54", "issue": "The muster is read and the dragon banners raised at [28]–[29]; the story then steps back through the previous year's diplomacy ([36] third month, [43] ninth, [48] twelfth), and only after that does the call-up reach the villages [54]. The army musters before anyone is called up.", "fix": "Put the Daoists and the Silla envoy before the muster, and end the episode on the muster." },
+        { "blocks": "49→50", "issue": "Hard cut from Bidam folding a letter in Surabol to a millet field in Longmen, with nothing connecting them.", "fix": "Bridge with the edict travelling east and west, or reorder so Longmen follows the muster." },
+        { "blocks": "17→25", "issue": "The motive flips from a grand 'dream' [17] to 'he was simply waiting to be bored enough' [25]. The second is funnier, but the reader gets both.", "fix": "Pick boredom; it's shorter and it's character." }
+      ],
+      "romance": "Xue Rengui and Lady Liu [57]–[65] is a marriage, not a romance, but it is the episode's warmest beat: she pushes him out the door ('You're not a hoe. You're a ji.') and he asks the ancestors to wait. It is undercut when the narrator and a quote retell her line ([62]–[63]) and an opera aside follows ([69]–[70]); Liu and the unburied ancestors never come back.",
+      "battle": null,
+      "suspense": "The only question is 'will he invade?', answered at [28]. Plants that pay off later: the minister's 'no one left to tell you no' [12] (#36 [31], but only as a quote), Shinsung's bell on the floor [40] (#86 [14], a fine long-range payoff), Bidam folding the offer small [49] (#40), Yeon Tabal weighing 'a soaked exile called Jumong' [23] (#39), and the nameless fifth banner [32]. Plants that never fire: Xue's 'Ancestors. Wait a little longer.' [65] and Lady Liu.",
+      "best": "The mirror speech: 'With a man for a mirror, he sees his own faults. …Today I lose one of my mirrors.' [14]",
+      "worst": "[54]–[70]: the Longmen field buries a nice marriage scene under an edict, three quotes and two asides about later opera and Lü Bu.",
+      "fixes": [
+        "Open on the name taboo [3]–[8] (fix the speaker at [7]) and cut the bio [0]–[2]. It hooks, and it plants the slice's best motif: the emperor nobody may name against the Guardian nobody wrote down.",
+        "Cut the rant and the news roundup ([15]–[17], [20]–[21]) and the Longmen record pile ([62]–[63], [67]–[70]); cut [71], which spends #34.",
+        "Either make the four dragons people (one English line each, with a want) or retitle the episode and drop the table [31]."
+      ]
+    },
+    {
+      "n": 32,
+      "title": "Yodong",
+      "logline": "The Tang army outflanks Goguryeo's wall of forts. Yodong, the fortress that held off the last dynasty for three summers, gives a girl in a bride's crown to its dead founder-god and still falls in twelve days. The emperor rides on to Ansi, where a nameless commander insults him from the wall.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "A strong hook and one great human beat (the shrine bride), but the fall of Yodong and 'the rest of the line' are summary: let the bride carry the fall and cut the table.",
+      "opening": "'Goguryeo has spent fourteen years building a wall of forts along the river. The Blue Dragon simply walks around it.' [0] Good: a verdict and a twist, paying off the wall planted in #7.",
+      "ending": "[23]–[25] end on a summary paragraph, a map and an eight-row fortress table. The card [26] ('To learn what one bad afternoon can cost a king, we go back four hundred years') announces a jump that nothing in the episode motivates: no Goguryeo king or army is about to have a bad afternoon on the page.",
+      "sudden": [
+        { "block": "6", "what": "'the Eastern Fortress': the reader isn't told this is Yodong, the episode's title. Only the table [25] connects them.", "setup": "none", "fix": "Write 'Yodong, the Eastern Fortress' once." },
+        { "block": "9", "what": "'in the days of the old Yan'", "setup": "none", "fix": "Cut the phrase." },
+        { "block": "23", "what": "Three unnamed forts in one paragraph ('At one fort', 'the southern cape'), then eight named ones in the table [25].", "setup": "none", "fix": "Dramatize one fort or cut to one line; drop the table." }
+      ],
+      "pacing_notes": [
+        { "blocks": "9–13", "issue": "The shrine bride is narrated [9], played [10]–[12], then retold by the Zizhi Tongjian quote [13], which also calls the relics fake and repeats the shaman's promise.", "fix": "Cut [13]; the scene already did the work." },
+        { "blocks": "14", "issue": "Twelve days of siege, a fire, ten thousand dead and the fall of the most famous fortress in the north, all in one paragraph.", "fix": "Give the fall two beats from inside: the south wind reaching the shrine door, and what the Tang find when they open it." },
+        { "blocks": "22–25", "issue": "'The clerks file it in a single column', and so does the text: a summary paragraph, a map and an eight-row table stand in for a month of war.", "fix": "Cut the table; keep the White Dragon's spear and the lord who opens the gate anyway as one live beat." }
+      ],
+      "flow_notes": [
+        { "blocks": "12→14", "issue": "'The record does not say whether anyone opens it again' [12]; two blocks later the city burns and the bride is never mentioned.", "fix": "One sentence when the gate gives: the shrine door, open or shut." },
+        { "blocks": "17–21→22", "issue": "The Guardian and the emperor trade position papers ('History? I am the one writing it.') and nothing follows; the next scene opens 'Meanwhile'.", "fix": "Make it a duel with a cost: the emperor asks his name and the Guardian won't give it." },
+        { "blocks": "25→26", "issue": "Nothing in the present triggers the jump to 244.", "fix": "End on Goguryeo's relief army marching out to meet the emperor in the open, and an old officer who remembers the Boiling River." }
+      ],
+      "romance": null,
+      "battle": "Stakes are told by the narrator rather than felt. The wall [0], the road torn up behind the army [5] ('Nobody goes home the way they came') and the emperor throwing earth into the moat [6] are good commander beats. But nobody inside Yodong has a face except the bride (two lines); the fall [14] is a paragraph of catapults, towers and a south wind; and 'the rest of the line' [23]–[25] is a list. No defender POV, no plan, no reversal: X falls, Y falls.",
+      "suspense": "Will Yodong hold? Answered inside one paragraph. The bride's fate [12] is the real question, and it's dropped. Ansi is set up well ([15], [17]–[18]). The torn-up road [5] is a fine plant that #36's retreat never uses.",
+      "best": "'It's… heavy. The dress. / …Tell my mum. Tell her I didn't cry.' [10]",
+      "worst": "[22]–[25]: a summary paragraph, a map and an eight-row table stand in for a month of war.",
+      "fixes": [
+        "Let the shrine bride carry the fall: cut the quote [13] and add one beat in [14] where the fire or the Tang reach the shrine door.",
+        "Replace [23]–[25] with one dramatized fort (the White Dragon's spear, the lord who opens the gate anyway) and cut the table.",
+        "Rewrite the Ansi exchange [19]–[21] as a duel of wit about names, then end the episode on the relief army choosing the open field, so #33's lesson has a target."
+      ]
+    },
+    {
+      "n": 33,
+      "title": "Boiling River",
+      "logline": "Flashback to 244: King Dongcheon beats an imperial general twice at the Boiling River, rides out a third time onto ground he hasn't looked at, and loses eighteen thousand men in an afternoon. His capital burns, and an officer dies in the royal robes so the king can escape.",
+      "scores": { "followable": 3, "context": 2, "pacing": 2, "flow": 2, "entertainment": 2 },
+      "verdict": "A 390-word note, half of it records, whose one lesson ('I did not look at the ground') never fires in the battle it foreshadows: fold it into #34, or make the officer who dies in the king's robes the story.",
+      "opening": "'King Dongchun picks a fight over a diplomatic spat.' [0] A decent verdict hook, but the name is spelled 'Dongcheon' on his card [1] and speaker label [5].",
+      "ending": "[10] is a nice wide shot ('the first time in this story that a Samhan capital burns'). The card [11] ties the lesson to #34 ('another Goguryeo army marches to meet an emperor in the open'), but #34 never shows that army's commanders choosing the open ground, so the comparison isn't paid off.",
+      "sudden": [
+        { "block": "3", "what": "'the empire sent a general called Guanqiu Jian'. The only empire the reader knows is Tang; this one is Wei, named only inside the quote [8].", "setup": "none", "fix": "Name it once in narration ('the northern empire of Wei')." },
+        { "block": "0–5", "what": "The king is 'Dongchun' at [0] and 'Dongcheon' at [1] and [5].", "setup": "n/a", "fix": "One spelling." },
+        { "block": "6", "what": "An officer dresses in the royal robes and walks out to be killed in the king's place: the best story in the episode, in half a sentence.", "setup": "none", "fix": "Make him the episode (fix 2)." }
+      ],
+      "pacing_notes": [
+        { "blocks": "8–9", "issue": "Two record quotes retell [3]–[4]. The episode is 47% records with one line of dialogue.", "fix": "Cut both, or keep [8] for the king's boast ('his life is in the palm of my hand') and cut [9]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#32 [26]→[0]", "issue": "The jump is announced by #32's card but caused by nothing on #32's page.", "fix": "See #32 fix 3." },
+        { "blocks": "[11]→#34", "issue": "The lesson never returns in #34: Go Yeonsu has no scene and nobody warns him about the open field.", "fix": "In #34, give an old officer the Boiling River warning before Stallion Mountain." }
+      ],
+      "romance": null,
+      "battle": "Summarized: two wins in a clause, the loss in a sentence [4], Hwando burning in a sentence [6], then two quotes. The single dramatic image, a king admitting 'I did not look at the ground' [5], works. The officer in the royal robes is a battle-ending sacrifice told in half a line.",
+      "suspense": "None: the logline and [0] tell you he loses. The only plant is the lesson, aimed at #34, and #34 doesn't use it.",
+      "best": "'…I did not look at the ground.' [5]",
+      "worst": "[8]–[9]: two record quotes that repeat what [3]–[4] just said.",
+      "fixes": [
+        "Fold this into #34 as three or four blocks: an old Goguryeo officer tells Go Yeonsu the Boiling River story before Stallion Mountain, and Go Yeonsu ignores him.",
+        "If it stays an episode, dramatize the officer in the king's robes [6] (who he is, why he volunteers, the walk out) and cut the quotes [8]–[9].",
+        "Fix the Dongchun/Dongcheon spelling ([0], [1], [5]) and name the empire so the reader doesn't think it's Tang."
+      ]
+    },
+    {
+      "n": 34,
+      "title": "Stallion Mountain",
+      "logline": "Goguryeo's relief army meets the emperor in the open. Xue Rengui, the farmer in white armour, breaks their line; Sul Gedu, a Silla exile in Tang service, dies deepest in the charge and finally gets the honours he crossed the sea for; Xue escapes a Goguryeo cell with a joke; and Gesomun's eleven-year-old son takes a flogging so his little brother won't have to kneel.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "Three good human stories (Sul Gedu, Xue, the Yeon boys) wrapped around a battle that is three sentences and two identical quotes: dramatize the battle from Goguryeo's side and cut the duplicate record.",
+      "opening": "'By summer the farmer from Longmen is no longer a name on a muster roll.' [0] A bridge, not a hook, and almost a repeat of #31 [71].",
+      "ending": "The boys' exchange [53]–[54] ('You took it for me.' / 'I am the elder.') lands beautifully and pays off 51 episodes later (#85 [28]). The card [55] then jumps to a second precedent flashback just as the Ansi siege should begin.",
+      "sudden": [
+        { "block": "5", "what": "Go Yeonsu and Go Hyejin, whose army is destroyed, are two names with no face, no line and no decision.", "setup": "none", "fix": "Give Go Yeonsu one scene: the choice to fight in the open." },
+        { "block": "8", "what": "'Tang clerks spell his name Xue. He is not the other Xue.' Two Xues in one battle.", "setup": "n/a", "fix": "Cut the line." },
+        { "block": "31", "what": "Xue Rengui is captured 'in a night fight east of the Liao' between two paragraphs.", "setup": "none", "fix": "Show it in a beat, or cut the cell sequence." },
+        { "block": "44", "what": "Gesomun's sons in the Tang baggage train.", "setup": "carded at #15 [2]–[5] at seven and four, 19 episodes back; why their father sent them south is one clause", "fix": "One reminder line (the careful heir, the brother who never backs down first)." }
+      ],
+      "pacing_notes": [
+        { "blocks": "14–16", "issue": "The battle is one paragraph [14], then the Zizhi Tongjian [15] and the Samguk Sagi [16] say the same thing in nearly the same words.", "fix": "Cut [16] (or both) and spend the words on the battle." },
+        { "blocks": "26–28", "issue": "The emperor finding Sul Gedu and covering him with the imperial robe is told by a long quote [27] instead of played.", "fix": "Play it in three lines and keep [28] ('He gets them lying down.')." },
+        { "blocks": "29–42", "issue": "The cell break-out is fourteen blocks of a Tang hero snapping irons inside a Goguryeo fort, in the middle of Goguryeo's worst defeat.", "fix": "Cut to the two jokes [40]–[41] or drop it." }
+      ],
+      "flow_notes": [
+        { "blocks": "34→35", "issue": "The emperor happens to visit that lesser fortress on the one night Xue is held there.", "fix": "Motivate it (he's come to ransom his officer) or cut." },
+        { "blocks": "28→29", "issue": "'Fame is a short leash' jumps from a burial to a capture with no time or place bridge.", "fix": "Bridge it or cut the sequence." },
+        { "blocks": "#33 [11]→[5]", "issue": "#33 promised a Goguryeo army choosing the open field; this episode never shows the choice.", "fix": "See fix 1." }
+      ],
+      "romance": null,
+      "battle": "This is the invasion's big field battle, and it is summarized. Goguryeo's stakes (its only field army; if it loses, Ansi stands alone) are never said. The POV is entirely Tang: the emperor, Xue, Sul Gedu. There is no geography beyond 'the crow road' and a mountain, no plan and no reversal, and the thunderstorm survives only in the quotes. In the real battle the emperor signalled from the mountain with drums while his generals closed from behind: the four dragons' moment, in an arc that named an episode after them. Cost is told in a clause (thirty-six thousand surrender, three thousand Mohe buried alive [23]). Sul Gedu is the best device, a Silla man fighting 'Samhan men' for a sash and found deepest in the line, but we never see him fight or choose.",
+      "suspense": "Will the relief army save Ansi? Answered in a paragraph. Will the Yeon boys kneel? A real question, and its answer pays off at #85 [28] ('Nobody flogs him for the answer this time'). Sul Gedu's wish for 'a cap and a sash and a sword' [10] pays off at [28]. Xue's escape has no doubt in it.",
+      "best": "'You took it for me.' / 'I am the elder.' [53]–[54]",
+      "worst": "[12]–[16]: the battle is three sentences and two duplicate quotes.",
+      "fixes": [
+        "Dramatize Stallion Mountain from Goguryeo's side: Go Yeonsu chooses the open field over an old officer's Boiling River warning (paying off #33), the emperor's drums on the mountain, the dragons closing behind, Xue's charge as the turn. Cut quote [16].",
+        "Play Sul Gedu's death and the imperial robe [26]–[27] as a scene and keep [28]; trim or cut the cell break-out [29]–[42].",
+        "Replace [0] with a real hook, e.g. Sul Gedu's 'In Silla they count your bones before they hire you.'"
+      ]
+    },
+    {
+      "n": 35,
+      "title": "Colossal River",
+      "logline": "Flashback to 612: Emperor Yang of Sui invades with 305,000 men; Ulchi Munduk walks into the enemy camp, fakes surrender seven times, sends the Sui general a mocking poem, and destroys the army at the Salsu River. 2,700 come home.",
+      "scores": { "followable": 3, "context": 3, "pacing": 1, "flow": 2, "entertainment": 1 },
+      "verdict": "One of the great trickster stories delivered as an edict, two maps, a formation card, a poem widget and two quotes, with no dialogue at all: dramatize the seven surrenders and the poem, or fold it into Ansi.",
+      "opening": "'Emperor Yang of Sui invades Goguryeo in the year 612.' [0] A textbook date line. The header logline ('Ulchi Munduk surrenders seven times on the way south. Every time, the river gets closer.') is the hook the page should open on.",
+      "ending": "[11] ends on a body count. The card [12] ('One wall is left, held by a madman whose name nobody wrote down…!') is good and hands off cleanly to #36.",
+      "sudden": [
+        { "block": "3", "what": "Ulchi Munduk has no card and no introduction.", "setup": "one line at #8 [15] ('My grandfather still toasts Ulchi at the Colossal River'), 27 episodes back: too thin to carry an episode", "fix": "Give him a card and a voice." },
+        { "block": "1", "what": "The edict's 'the Bo and the Jie', 'Liao and Ye' and 'the ninefold punishment'.", "setup": "none", "fix": "Cut the edict or keep one sentence ('If this can be borne, what cannot?')." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–11", "issue": "Seven widgets and records in twelve blocks (edict, two maps, place card, formation, poem, two quotes): 76% records, 0% dialogue. The result arrives at [3], before the method at [5].", "fix": "Open on Munduk walking into the Sui camp, play the seven surrenders as a comic run, deliver the poem in a scene, end on the river. Cut [1], [7] and one of [10]/[11]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#34 [55]→[0]", "issue": "The second 'an emperor came before' flashback in four episodes, placed just as the Ansi siege should begin, and it changes nothing in 645.", "fix": "Fold it into #36 as a memory (an Ansi soldier's grandfather toasting Ulchi, the callback to #8 [15]), or move it ahead of #31 as the 'last time' cold open." },
+        { "blocks": "3→5", "issue": "Result before method: he 'breaks the Western Army' before we learn how.", "fix": "Reverse the order." }
+      ],
+      "romance": null,
+      "battle": "Not dramatized. The seven fake surrenders, the poem, the half-crossed river and the strike on the rearguard exist only as summary [5], a widget [8] and a quote [10]. No POV, no scene, no voice.",
+      "suspense": "None on the page; the outcome comes at [3]. The 'madman' card [12] is the only forward pull.",
+      "best": "The poem's last line: 'know it is enough, and I pray you stop.' [8], the only moment with a personality in it.",
+      "worst": "[1]–[11]: the whole episode is records and widgets.",
+      "fixes": [
+        "Dramatize it: Munduk walking into the Sui camp, the seven surrenders, the general reading the poem, the river half-crossed. That is a Prince Euija-shaped story (a want, an obstacle, a trick, a payoff).",
+        "Or cut it as an episode and fold three blocks into #36 as an Ansi soldier's memory.",
+        "Open on a hook instead of '…in the year 612' [0]; cut the edict [1] and one of the two closing quotes [10]/[11]."
+      ]
+    },
+    {
+      "n": 36,
+      "title": "Ansi",
+      "logline": "The Guardian of Ansi, who once refused Yeon Gesomun to his face and whose name nobody wrote down, holds one small fortress against the emperor through a sixty-day race between the Tang earth mound and his own wall, seizes the mound when it collapses, and outlasts the season. The emperor retreats and sends him a hundred bolts of silk.",
+      "scores": { "followable": 4, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "The earthen-mountain sequence is the best battle writing in the slice, but the climax evaporates into a shot-list fragment, weather and three quotes: stage the emperor's wounding, the retreat through the marsh, and the farewell bow.",
+      "opening": "'The Guardian of Ansi Fortress is an eccentric man.' [0] A verdict on a person, followed by a good backstory (he refused Yeon; Yeon looked at the wall and rode away). It works.",
+      "ending": "The real ending (the Guardian bows from the wall; the emperor sends silk) is narrated [35] and then quoted [36], never staged, and the Guardian's boast [38] comes after the emperor has gone, addressed to no one. The card [39] ('Every Goguryeo wall prays to the Holy King. Who was he?') is a fair hook, set up by the Yodong shrine (#32 [9]–[12]) and 'Holy King, look down' (#34 [35]), though nobody at Ansi prays to him.",
+      "sudden": [
+        { "block": "4–5", "what": "Before the siege starts, Tang clerks call Ansi 'the Wall that Stopped an Emperor' and file it as 'unfinished'.", "setup": "n/a: it spoils the outcome", "fix": "Cut both lines; let the siege earn the title." },
+        { "block": "5", "what": "'the Eternal General is standing behind him', meaning Yeon, one block after [0] says the Guardian defied Yeon.", "setup": "Yeon is set up (#7, #24, #25) but has no scene in the war, so the reader can't tell whether the clerks are wrong or Yeon is helping", "fix": "Make it a rumour the Guardian scoffs at, or cut." },
+        { "block": "7, 10", "what": "'The ring at his hip is Goguryeo iron — a hollow circle the same red as the wall' and 'Red wings on the parapet' read as art-direction notes.", "setup": "none", "fix": "Cut [7]; say 'Goguryeo archers' at [10]." },
+        { "block": "8", "what": "The narrator links the Guardian's line to 'a Silla marshal' speaking to 'a queen' on her coronation day.", "setup": "#1 [34] (Yushin), 35 episodes back, and only loosely the same line", "fix": "Cut [8]; it decodes a callback the reader can't check." },
+        { "block": "26", "what": "The emperor's wounding: 'Sweat. Yellow camp light. For the first time the face is simply there.'", "setup": "none; it is written as a shot list", "fix": "Stage it (fix 1)." },
+        { "block": "34", "what": "Yeon Gesomun's only line in the whole war, 'Madman… Still — he does what must be done.', with no place and no scene.", "setup": "Gesomun was last on the page in #29", "fix": "Put him somewhere (Pyongyang, reading the report) and give him a reaction." }
+      ],
+      "pacing_notes": [
+        { "blocks": "9–24", "issue": "This works: a hauler's joke, the Guardian's 'sixty nights for us', the collapse, 'Who's up on that thing right now?', the counter-raid. A real reversal in sixteen blocks.", "fix": "Keep. If anything, add one beat of cost inside the walls." },
+        { "blocks": "27–37", "issue": "The climax and aftermath: the retreat in two sentences [28]–[29], then a map [30], a quote [31], a flat 'added to the Great Heroes of Goguryeo' [33], narration of the silk [35], and two quotes [36]–[37] that retell it.", "fix": "Cut [30], [33], [36], [37]; turn [31] into the emperor's own line in a scene." }
+      ],
+      "flow_notes": [
+        { "blocks": "26→28", "issue": "The emperor's helmet is knocked off and nothing follows; the next block, the cold comes.", "fix": "Make the wound matter (he is hurt, looks up at the wall, sees the Guardian) and let wound and winter together end the siege." },
+        { "blocks": "23→28", "issue": "Ansi is saved by weather, told in one line; nothing the defenders do after taking the mound causes the retreat.", "fix": "Tie the cold to the mound: sixty days spent hauling earth were sixty days of grass eaten." },
+        { "blocks": "#32 [5]→[28]", "issue": "The road the emperor tore up behind his army ('Nobody goes home the way they came') never comes back in the retreat.", "fix": "Set the retreat in the marsh he destroyed; that pays off the road and gives the minister's quote [31] a place." },
+        { "blocks": "35→38", "issue": "'You will never be crazier than we are' comes after the emperor has left and after the records.", "fix": "Move it to the wall before the silk, or cut it and end on the bow." }
+      ],
+      "romance": null,
+      "battle": "The only fully dramatized battle beat in the slice. The race between shovels [10]–[16] and the collapse-and-seize reversal [17]–[23] have geography (mound, wall, gap), a plan, a reversal and a cost (Fu Fuai beheaded [24]). The Guardian is a good POV but a thin one, with seven lines here. Then the climax deflates: the emperor's wounding [26] is hedged ('Whether it was the wall or a stone') and written like an image prompt, the retreat [28]–[29] is weather, and 'for the first time in his life, the Second Emperor knew defeat' is told. The Guardian never makes a choice that costs him, and the two men never face each other again, though the slice spent six episodes setting up the man nobody may name against the man nobody wrote down.",
+      "suspense": "'Will Ansi hold?' is spent at [4]–[5] by the clerks. The 'how' (the mound) is genuinely suspenseful. Plants that pay off: the dead minister's 'no' (#31 [12] → [31], but only as a quote) and 'madman' (#35 [12] → [34], [38]). Plants that don't: the torn-up road (#32 [5]), the emperor's exposed face [26], and the name motif (the emperor never asks his name).",
+      "best": "'Never mind the wall. Who's up on that thing right now?' [19]",
+      "worst": "[25]–[37]: the climax is a shot-list fragment, a weather report, a map and three record quotes.",
+      "fixes": [
+        "Stage the climax: the emperor rides too close, an arrow comes from the wall (the Guardian's), and the exposed face [26] becomes a moment between the two men instead of a camera note. Cut the spoilers [4]–[5] and the decoder [8].",
+        "Make the retreat a scene in the marsh he tore up (#32 [5]) and put 'Had he been alive, he would not have let me make this expedition' [31] in his mouth there.",
+        "End on one staged farewell: the Guardian bows from the wall, the silk goes up, the emperor asks for a name and gets none. Cut [33], [36], [37]; move or cut [38]."
+      ]
+    },
+    {
+      "n": 37,
+      "title": "Haemosu",
+      "logline": "Haemosu, the sun god, breaks his punctual route to stare at a river-daughter, Yuhwa, who refuses to hide. She makes him come down and trade his descent for her name; they spend the afternoon in a copper room, and her father, the river god, throws her out. A fox leads her to King Geumwa of Buyeo, where she lays an egg.",
+      "scores": { "followable": 4, "context": 4, "pacing": 4, "flow": 3, "entertainment": 4 },
+      "verdict": "A genuinely fun, sexy myth built on a real game (her name for his descent), but Haemosu's side of the cost is missing: show why he leaves, and cut the three quotes that retell and contradict the scene.",
+      "opening": "'The sky is empty first.' [0] A painterly opening, but [0] runs sixty words before anything happens. The header logline ('Every day the sun crosses the sky on the same road. Today he looks down.') is the better first line.",
+      "ending": "The egg [74] and the card [77] ('What on earth is inside Yuhwa's egg…?') pull into #38, but the episode ends on two near-identical quotes [75]–[76] saying she conceived from sunlight in Geumwa's locked room, after we watched the copper room.",
+      "sudden": [
+        { "block": "63–65", "what": "Haemosu, who simply vanished after [51], talks to Yuhwa from the sky and sends a fox.", "setup": "nothing shows him leave", "fix": "Add one beat after [51] showing why he goes." },
+        { "block": "71", "what": "Yuhwa's quote says he 'went away and did not come back' and that she was banished 'to the Ubal River', which contradicts the fox and the walk to Buyeo.", "setup": "contradicts [64]–[67]", "fix": "Cut the quote." },
+        { "block": "75–76", "what": "Two quotes say she conceived from sunlight in Geumwa's locked room.", "setup": "[72] half-sets it up, but it reads as a second, competing conception", "fix": "Keep [72]–[74] and cut both quotes, or wink at the double paternity in one line." }
+      ],
+      "pacing_notes": [
+        { "blocks": "71–76", "issue": "Three record quotes in six blocks: [71] retells the whole episode in Yuhwa's mouth; [75] and [76] say the same thing twice.", "fix": "Cut [71] and [76]; [75] is optional." },
+        { "blocks": "38–50", "issue": "The copper room stays in scene and pays off the name game, but 'the copper is hot' is said three times ([38], [43], [46]).", "fix": "Lose one." }
+      ],
+      "flow_notes": [
+        { "blocks": "51→53", "issue": "After the copper room, Haemosu simply isn't there; the next scene is Habek's court.", "fix": "Show the god leave and what it costs him (the sun late across the sky, heaven noticing)." },
+        { "blocks": "62→64", "issue": "If he can talk to her from the sky, why doesn't he come? The reader can't tell whether he's a cad or a lover until #39 [255].", "fix": "One line: he can't come down twice, or he is being punished for the broken hour." }
+      ],
+      "romance": "The best-built seduction in the slice. Desire is instant ('Stop. Stop the chariot.' [12]). The obstacle is a rule (the sun's hour, the sisters diving, the father). Escalation runs on a real game: he wants her name before he comes down, she makes him come down first ('From the sky it's an order. At the water… I'll hear it as a request.' [24]), and she gives it only at the climax [48]–[49]. The banter has chemistry ('Then I should blink.' / 'I'm not a lamp.' [30]–[31]). She chooses, staying when her sisters dive [19], and she pays: banishment [55]–[62], with Habek's 'Say a name' turning the motif against her. What's missing is his choice and his cost. We never see him leave or learn why, so the romance's second act (his absence) reads as a contradiction rather than an obstacle. The payoff arrives two episodes later in #39 [255].",
+      "battle": null,
+      "suspense": "Will she give her name? (Paid at [49].) What will her father do? (Banishment.) What's in the egg? (Card.) The hour 'he is not supposed to break' [2] is planted and broken ('I broke the hour.' [48]) but never costs him anything.",
+      "best": "'Come down first. / From the sky it's an order. / At the water… I'll hear it as a request.' [24]",
+      "worst": "[71]–[76]: a quote retells the episode in Yuhwa's mouth, then two identical quotes give a different conception.",
+      "fixes": [
+        "Add one beat after [51] showing why Haemosu leaves (the hour, heaven calling, a punishment) so his absence is an obstacle, not a contradiction.",
+        "Cut the quotes [71] and [76] (and probably [75]); let the sun-shaft [72] do the work.",
+        "Open on the logline's two sentences and fold [0]'s chariot description in after."
+      ]
+    },
+    {
+      "n": 38,
+      "title": "Buyeo",
+      "logline": "The egg can't be broken. Jumong hatches and grows up the best archer in Buyeo, resented by his brother Daeso. When Daeso plots his murder, Jumong and his mother starve the fastest horse so the king gives it to him; he flees, gives the horse to his friends, and is cornered at a river by an underworld reaper until his father the sun god steps in and turtles carry him across. A three-legged crow leads him to a cave.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "Propulsive and funny, with a clean chain of cause and effect: cut the three turtle quotes at the climax and the stable quote that spoils the stable scene, and plant the half-sword Lady Ye will need in #67.",
+      "opening": "'Dogs and pigs will not eat it; the sty refuses the guest, and the ministers pretend that is a kind of answer.' [1] It pays off the last card directly, with wit.",
+      "ending": "Strong. The crow-legs joke pays off [88]–[92] and the card [94] ('a chieftain's daughter who won't look at him') is the best handoff in the slice.",
+      "sudden": [
+        { "block": "52", "what": "Jumong's friends Oi, Mari and Hyupbo: three new names in one line as the escape starts.", "setup": "none", "fix": "Show them once in the childhood or stable scenes." },
+        { "block": "63–71", "what": "Haewonmek is a second underworld fetch (the reader met Kangrim at #23), and 'I'll leave my little brother alone while he's at his new job' [71] reads like a third person until [79] says 'the two brothers'.", "setup": "Yumla at #4 [86] and #23; Haewonmek is new", "fix": "Make it second person: 'You're my little brother and it's your first week.'" },
+        { "block": "26", "what": "Galsa founds 'Galsa-Buyeo'.", "setup": "none; it never matters in the slice", "fix": "Cut." }
+      ],
+      "pacing_notes": [
+        { "blocks": "76–78", "issue": "Three quotes (the stele, the Wei Shu, the Samguk Yusa) retell the crossing the scene just played [74]–[75], at the climax.", "fix": "Cut all three, or keep the stele alone." },
+        { "blocks": "34", "issue": "The Samguk Sagi quote describes the horse trick before the stable scene [35]–[45] plays it, so the scene's reveal is spoiled.", "fix": "Move [34] after [45] or cut it." },
+        { "blocks": "7–17", "issue": "Childhood is a summary montage, and the jealousy is told ('the smaller their smiles become').", "fix": "Trim to [9]–[14] and let the mark-stake exchange [21]–[22] carry the rivalry." }
+      ],
+      "flow_notes": [
+        { "blocks": "45→47", "issue": "The murder attempt that drives the whole flight is one sentence ('a knife finds Jumong in the dark and misses').", "fix": "Two beats: whose knife, and how he gets away." },
+        { "blocks": "49–50", "issue": "The farewell with Lady Ye doesn't plant the half-sword under the seven-sided stone that #67 [8] depends on.", "fix": "Add it here." },
+        { "blocks": "57–59", "issue": "Jumong gives away the horse the whole stable plot built. It's a good sacrifice, but the horse never comes back (see #39).", "fix": "Pay it off when he finds his friends." }
+      ],
+      "romance": "Jumong and Lady Ye get a widget [28], one sentence [29] and two lines [49]–[50]: 'a hall's solution'. The farewell ('Leave the door half open. So I know which way is still yours.') is lovely, and it plants an obstacle that #39's romance ignores.",
+      "battle": "Not a battle but a chase: Daeso's riders 'less a hunt than a net' [52], a split at the ridge [55]–[59], a fall, a reaper [63]–[65], a rescue. The geography is clear (pines, ridge, river) and the stakes are personal. The rescue is a god from the machine, but it plays as comedy between two brothers, and Jumong does the decisive thing himself by shouting his lineage [74].",
+      "suspense": "Will Daeso kill him? How will he cross? Why does the crow have three legs? All answered on the page. Plants that pay off: the crow's legs [61] → [88]; the fast horse [36]–[45] → the flight [55]–[59] (subverted: he gives it away); the turtle joke from #25 [51] → [75]; the three-legged crow on Goguryeo sword rings (#24 [4]) → [86]. Haemosu's 'I'll give it back' [84] promises a later reckoning. Lady Ye's lamp [49] waits until #67.",
+      "best": "'You just robbed a ledger.' / 'I borrowed a day. / I'll give it back.' [83]–[84]",
+      "worst": "[76]–[78]: three record quotes of the same turtle bridge interrupt the escape at its peak.",
+      "fixes": [
+        "Cut the turtle quotes [76]–[78] (or keep one) and move the stable quote [34] after the stable scene.",
+        "Plant the half-sword in Lady Ye's farewell [49]–[50] so #67's payoff has a setup, and give the knife attempt [47] two real beats.",
+        "Introduce Oi, Mari and Hyupbo before the flight [52] and cut Galsa-Buyeo [26]."
+      ]
+    },
+    {
+      "n": 39,
+      "title": "Jolbon",
+      "logline": "Jumong, caught by Jolbon scouts, is made the slave of the chieftain Yeon Tabal's daughter Sosuno: a sharp, proud widow who runs the valley and falls for him on sight. She fights it with insults, chores and jealousy at the well until he lays down his bow to leave, and she shoots an arrow past his ear to stop him and confesses. Tabal tests him and gives her to him, the five feuding clans vote him king, and the episode closes on his father's blessing, his mother's death and his own.",
+      "scores": { "followable": 4, "context": 3, "pacing": 2, "flow": 3, "entertainment": 4 },
+      "verdict": "The best romance-comedy scenes in the slice live here, but at 5,200 words it's twice its story: cut the repeated tsundere beats and the extra bedroom sequences, dramatize the founding, use Jumong's wife as the obstacle, and end on Yuhwa's ascension instead of five codas.",
+      "opening": "'He is still wet from the river when the pines stop being empty.' [1] It picks up #38's card cleanly, and the scouts' panic [4]–[11] is fun.",
+      "ending": "It sprawls. After the wedding come the Pine Kingdom [228]–[238], a father-son reunion [240]–[246], the two sons [247]–[252], a floating Sosuno line that spoils #67 [254], Yuhwa's ascension labelled as a flashback [255], Jumong's whole reign and death in one paragraph [256], and a cryptic Yeon coda [257]: about 800 words, nearly the length of the whole Ansi episode. The card [258] ('Back in Surabol, the queen is failing…') then jumps 680 years and to another kingdom, and #40 opens on a different scene.",
+      "sudden": [
+        { "block": "26 / 42", "what": "Two Sosuno cards sixteen blocks apart: 'A merchant's daughter' [26] and 'Tabal's daughter' [42].", "setup": "they contradict each other", "fix": "Keep [42], cut [26]." },
+        { "block": "152", "what": "Sosuno shoots Jumong's bow, the bow her father could not bend [31].", "setup": "[31]–[34]; the payoff is only hinted ('The bow is the bow. Don't.' [201])", "fix": "One sentence when she draws it, or let Tabal finish his line at [200]." },
+        { "block": "167", "what": "'Only you. From the first look.' Jumong has a pregnant wife in Buyeo.", "setup": "#38 [27]–[29], [49]–[50]; this episode never mentions her", "fix": "Make her the obstacle (fix 2)." },
+        { "block": "229–237", "what": "Song Yang and the Pine Kingdom: a new king, a new place, and an archery contest in which Jumong's own shot isn't shown.", "setup": "none", "fix": "Cut, or keep two lines that pay off the fattened horse." },
+        { "block": "254", "what": "'You learn something from founding a country twice.' No time, no listener, and it spoils #67.", "setup": "none", "fix": "Cut." },
+        { "block": "255", "what": "A 'FLASHBACK -24 … five winters before' inside an episode set in -37: it is a flash-forward, and 'before' points at nothing on the page.", "setup": "n/a", "fix": "Make it a plain coda: 'Thirteen years later, word comes from Buyeo.'" },
+        { "block": "257", "what": "'a Go exile': Jumong's surname is never given anywhere in the text.", "setup": "the Gesomun callback ('not Goryeo') is #25 [22], 14 episodes back", "fix": "Say 'Jumong' and give the Gesomun link one clear clause, or cut [257]." }
+      ],
+      "pacing_notes": [
+        { "blocks": "57–82", "issue": "One beat (she bosses, he grins, she blushes) played about six times. 'Big idiot', 'don't grin', 'it's not like that' and 'Little Sosuno' occur 29 times in the episode, and the same compliment lands three times ('pretty when you're mean' [79], 'sexy when you threaten me' [141], 'beautiful when you lie' [148]).", "fix": "Keep [57], [63]–[65] and [77]–[82]; cut [58]–[62] and [66]–[76]." },
+        { "blocks": "83–97", "issue": "Two solo bedroom scenes ([85]–[88], [89]–[91]) plant the same joke the yard already planted at [51]–[52].", "fix": "Keep one, ideally the comic one Tabal interrupts [89]–[97]." },
+        { "blocks": "163–191", "issue": "The grain room is a real payoff (her hidden voice comes out and he accepts it: 'I'm keeping you. Both.' [184]), but the dirty talk runs four long blocks [176]–[180] that repeat each other.", "fix": "Halve [172]–[182]; keep the aftermath [183]–[191]." },
+        { "blocks": "205–214", "issue": "The founding of the country, five feuding clans becoming one, is a TERM widget [206], one exchange, two summary paragraphs and a wedding widget.", "fix": "Dramatize one ditch: Jumong between two cousins with an unstrung bow [210] is a scene waiting to be written." },
+        { "blocks": "224–257", "issue": "A third bedroom beat [224]–[227] adds nothing, and then five codas follow.", "fix": "Cut [224]–[227] and the Pine Kingdom (or shrink it to a line); end on Yuhwa [255]." }
+      ],
+      "flow_notes": [
+        { "blocks": "148→150", "issue": "Jumong goes from teasing ('You're beautiful when you lie.') to laying down his bow and leaving in one block. 'Not angry. Done.' doesn't say what he's done with.", "fix": "Give him a reason: he won't stay a slave she's ashamed of, or she has just learned about Lady Ye." },
+        { "blocks": "227→229", "issue": "The friends, forgotten for the whole episode, are suddenly fetched.", "fix": "Plant word of them early (around [36]) or cut the Pine Kingdom." },
+        { "blocks": "246→257", "issue": "Five time jumps in a dozen blocks: years later, Sosuno after founding a second country, Yuhwa's death in -24, Jumong's death, then forward to 645.", "fix": "One coda, in order." }
+      ],
+      "romance": "The slice's best romance and the nearest thing in it to the Prince Euija standard. Desire runs both ways from the first hall scene ('Pretty. Just—' / 'Eyes. Front.' / 'Count the dirt. Not him.' [24]–[27]). The obstacles are status (he is her slave [35]), her pride and her father. Escalation is real: the nickname, jealousy at the well ([110]–[126]; 'They can do sexy. She can do eldest' [112]), her name given at the well [131] (a clean echo of Yuhwa's name game), the kiss, the stolen keepsakes [144], his walk-away [150], her arrow past his ear [152], the confession into the dirt [160]. That confession is earned and funny, and the hundred paces [193]–[203] gives her father a great reluctant blessing. Problems: the first kiss is narrated in one sentence [136] while lesser beats get full scenes; the walk-away is unmotivated; Jumong's wife and unborn son (#38) are never mentioned, so 'Only you. From the first look.' [167] reads as a lie the book doesn't know it's telling; the escalation loops in [57]–[82]; and the bedroom sequences ([87], [89]–[91], [171]–[182], [224]–[227]) repeat one joke four times. The grain room does pay off structurally (her hidden voice exposed and accepted), so trim it rather than cut it. Haemosu and Yuhwa's payoff from #37 also lands here: 'You're late. / The copper room… stayed warm.' [255.3] is the most moving line in the slice, buried in a coda.",
+      "battle": null,
+      "suspense": "Will Sosuno admit it? A strong pull, paid at [160]. Will Tabal accept him? Paid at [202]. Will he be king? Summarized. Plants that pay off: the bow nobody else can bend [31] (half-paid at [152]/[201]); 'big idiot' (comic payoff at [180]); Yeon Tabal weighing the exile (#31 [23] → [13]–[37]). Plants that misfire: the fattened horse from #38 [59] ('Fatten him up for me') goes unmentioned when he finds his friends [237]; Lady Ye is ignored; Sosuno's widowhood [41] never matters and muddles whose sons Onjo and Biryu are [248].",
+      "best": "The arrow past his ear and the confession: 'I wasn't going to say it. / I was gonna let you leave. Stupid. Fine.' [152]–[160]",
+      "worst": "[228]–[257]: an errand to a new kingdom, a generic blessing ('Build a world of your own'), a cameo by the sons, a spoiler line, a mislabelled flashback, a death in a subordinate clause and a cryptic coda.",
+      "fixes": [
+        "Cut about 2,000 words: [58]–[62] and [66]–[76] (the loop), [85]–[88] (one loft scene is enough), half of [172]–[182], [224]–[227], and [228]–[238] unless the horse pays off there.",
+        "Use Lady Ye: let Sosuno learn that Jumong left a pregnant wife in Buyeo, and make that the fight that ends with his bow on the ground [150]. It motivates the walk-away and plants #67.",
+        "Dramatize the founding (one ditch, two cousins, Jumong with an unstrung bow [210]) and end on Yuhwa's ascension [255] as a clean coda. Cut [254] and the 'year Yuri comes south' clause in [256], which spoil #67, and either explain or cut 'Go exile' [257]."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "The Seventh Invasion has a spine on paper (the greatest emperor alive rolls over Goguryeo's forts and is stopped by one small wall and a man nobody wrote down) and a superb motif that ties it to the Jumong arc: names. The emperor whose name may not be said (#31 [3]–[8]), the Guardian nobody recorded (#32 [17]–[18], #36 [2], [35]), Yuhwa trading her name for a god's descent (#37 [23]–[24], [49]), Habek's 'Say a name' (#37 [55]), Sosuno giving hers at the well (#39 [131]). But nobody carries the invasion. The emperor is a voice between quotes; the Guardian has about a dozen lines across two episodes; Yeon Gesomun, whose regicide is the excuse and who closed Part I vowing to forge a country 'with my own hands' (#29 [21]), gets one unlocated line after the war is over (#36 [34]); and the battles are filed as summaries and duplicate records. (a) Battles: Yodong, the rest of the line and Stallion Mountain are summaries told from the invader's side; only Ansi's earthen mountain is dramatized, with geography, a plan and a reversal, and its climax then dissolves into weather. (b) Flashbacks: #33 and #35 are record dumps (47% and 76% records) that interrupt the invasion at its two turning points without changing anything in 645. The Jumong detour is set up (the Yodong shrine bride, 'Holy King, look down', Gesomun's cave in #29) and doesn't strand the siege's suspense, because Ansi already ended in #36. But that suspense was spent early by the Tang clerks (#36 [4]–[5]) and resolved by the cold, and Ansi gets about 900 words while Jolbon's courtship alone runs about 2,700. After 9,250 words of myth the story never returns to Goguryeo; #40 opens in Silla, so the invasion arc has no closing beat. (c) The Jumong arc is the most alive writing in the slice: a real seduction game, a chase with jokes, a tsundere romance with an earned confession, and long-range plants that pay (the turtle joke, the three-legged crow, Yeon Tabal). It isn't yet the equal of Prince Euija. #37 skips Haemosu's side of the cost, #38 smothers its climax in three quotes, and #39 is a 3,000-word story in 5,200 words with five codas. Cut #39 by 40% and the author's claim holds. A first-time reader stays for the human inserts in #31–#36 (the shrine bride, Sul Gedu, the Yeon boys, the earthen mountain), skims the records, and is pulled hard through #37–#38 until #39's middle.",
+    "handoffs": [
+      { "from": 30, "to": 31, "works": "partly", "why": "#30's card promises four dragons, and #31 delivers them as a table. #31 also re-runs #30's only scene: the emperor hearing 'Gai Suwen…?' (#30 [5] → #31 [22]), with the regicide report in both (#30 [2]–[3], #31 [21]). #30 is 72% quotes, so the reader gets the same beat twice.", "fix": "Merge #30 into #31's opening (one quote, one 'Gai Suwen…?'), or cut #31 [20]–[22]." },
+      { "from": 31, "to": 32, "works": "yes", "why": "'Here come the dragons…!' → 'The Blue Dragon simply walks around it.' Clean, though #31 [71] has already jumped ahead to Stallion Mountain.", "fix": "Cut #31 [71]." },
+      { "from": 32, "to": 33, "works": "partly", "why": "The card announces a lesson ('what one bad afternoon can cost a king'), but nothing in #32 sets up an afternoon about to go wrong; the relief army isn't mentioned until #34 [5].", "fix": "End #32 on the relief army choosing the open field, so the jump answers a question the reader already has." },
+      { "from": 33, "to": 34, "works": "partly", "why": "The farmer-in-white half of the card lands. The 'another Goguryeo army marches to meet an emperor in the open' half is never dramatized: Go Yeonsu has no scene, so #33's lesson doesn't fire. #34 [0] also repeats #31 [71].", "fix": "Give Go Yeonsu the decision, and an old officer the Boiling River warning." },
+      { "from": 34, "to": 35, "works": "partly", "why": "Motivated as precedent ('The last one met a general who surrendered seven times'), but it's the second precedent flashback in four episodes, it lands just as the Ansi siege should start, and #35 is a record dump that changes nothing in 645.", "fix": "Fold #35 into #36 as a memory, or move it ahead of #31 as the 'last time' cold open." },
+      { "from": 35, "to": 36, "works": "yes", "why": "'One wall is left, held by a madman whose name nobody wrote down…!' → 'The Guardian of Ansi Fortress is an eccentric man.' Clean and intriguing.", "fix": "None needed." },
+      { "from": 36, "to": 37, "works": "partly", "why": "The jump ('Every Goguryeo wall prays to the Holy King. Who was he?') is planted by the Yodong shrine bride (#32 [9]–[12]), 'Holy King, look down' (#34 [35]) and Gesomun's cave (#29 [18]–[21]). But the invasion has just ended, so there's no open question to carry across, and nobody at Ansi prays to Jumong; the question is the narrator's, not a character's.", "fix": "Plant a prayer at Ansi (the Guardian at Jumong's shrine before the mound collapses) and close the Jumong arc with a short return to that wall." },
+      { "from": 37, "to": 38, "works": "yes", "why": "'Dogs won't eat it. An axe won't split it.' → 'Dogs and pigs will not eat it…' The card's promise is paid in the first line.", "fix": "None needed." },
+      { "from": 38, "to": 39, "works": "yes", "why": "'A soaked exile, a hall full of spears, and a chieftain's daughter who won't look at him' → 'He is still wet from the river when the pines stop being empty.' The best seam in the slice.", "fix": "None needed." },
+      { "from": 39, "to": 40, "works": "partly", "why": "The card promises the council naming a successor ('It only takes one hand to lock the door…!'); #40 opens on Chunchu setting off east 'guided by his friend Takamuko no Kuromaro' (a man the reader has never met), then two flashbacks, and the council arrives only at [20]. The jump also goes from Jumong's Goguryeo straight to Silla in 645 without ever returning to Ansi or Pyongyang, so the Seventh Invasion arc never closes.", "fix": "Open #40 on the council (move the voyage after it) or reword the card to tease the voyage; and end #39 with two blocks back in Goguryeo in 645 (the Guardian at Jumong's shrine, or Gesomun reading the report)." }
+    ],
+    "dropped_threads": [
+      "Yeon Gesomun, the war's cause, who closed Part I vowing to forge a country (#29 [21]–[23]), has no scene in the invasion: a two-line flashback (#36 [6.0]) and one unlocated line after it's over (#36 [34]). The clerks' 'the Eternal General is standing behind him' (#36 [5]) and the emperor's later 'I have already spent a summer failing against the Eternal General' (#48 [37]) claim a duel the slice never shows.",
+      "The Yodong shrine bride (#32 [9]–[12]): 'The record does not say whether anyone opens it again.' The city burns two blocks later and she is never mentioned.",
+      "The road torn up behind the army (#32 [5], 'Nobody goes home the way they came') never returns in the retreat (#36 [28]–[30]).",
+      "The four dragons (#31's title): one card, a Korean-only table, one paragraph. The White Dragon is speared in a clause (#32 [23]), the Blue Dragon speaks once (#34 [18]), and the Red and Black never appear again in the slice.",
+      "Xue Rengui's unburied ancestors and Lady Liu (#31 [51]–[65], 'Ancestors. Wait a little longer.') never return; no later episode mentions Longmen, Liu or the reburial.",
+      "Go Yeonsu and the relief army (#34 [5], [23]–[24]): the decision #33 was built to foreshadow is never shown.",
+      "The emperor's exposed face at Ansi (#36 [26], 'For the first time the face is simply there') has no consequence.",
+      "The fattened horse Jumong gives Oi (#38 [57]–[59], 'Fatten him up for me… I'll come find you') isn't mentioned when he finds them (#39 [237]).",
+      "Lady Ye and the unborn Yuri (#38 [27]–[29], [49]–[50]) are ignored through #39's romance, and the half-sword #67 [8] relies on is never planted at the farewell.",
+      "Sosuno drawing the bow her father couldn't bend (#39 [31] vs [152]) is left to one cryptic line (#39 [201]).",
+      "Haemosu's broken hour (#37 [2], [48] 'I broke the hour') costs him nothing on the page."
+    ],
+    "repetition": [
+      "'Gai Suwen…?': the emperor hears the name at #30 [5] and again at #31 [22]; the regicide report is in #30 [2]–[3] and #31 [21].",
+      "Xue at Stallion Mountain: #31 [71] and #34 [0] are the same sentence twice, and the white armour is pre-announced at #31 [53] and #33 [11] before it happens at #34 [12].",
+      "Duplicate record quotes: #34 [15]/[16] (Zizhi Tongjian and Samguk Sagi, nearly word for word); #37 [75]/[76] (the same conception twice); #38 [76]/[77]/[78] (three versions of the turtle bridge); #33 [8]/[9] and #35 [10]/[11] (two quotes each, retelling the narration).",
+      "Events told three ways (narrated, played, then quoted), against the house rule: Liu's 'talent needs its hour' (#31 [61], [62], [63]); Xue's enlistment (#31 [66], [67]); the shrine bride (#32 [9], [10]–[12], [13]); the Ansi silk (#36 [35], [36]); Yuhwa's seduction and banishment (played in #37, retold in her mouth at [71]); the stable trick (quoted at #38 [34] before it's played at [35]–[45]).",
+      "Precedent flashbacks: #33 and #35 both answer 'an emperor came before', each with a card, two quotes and a body count.",
+      "Sosuno's tsundere beat in #39: the four tags occur 29 times; the same compliment lands three times ([79], [141], [148]); she hides her red face three times ([82], [143], [189]); two Sosuno cards ([26], [42]); four bedroom sequences ([87], [89]–[91], [171]–[182], [224]–[227]).",
+      "Ansi's outcome is announced before the siege: #32 [15] ('stone has already outlasted more emperors') and #36 [4]–[5] ('the Wall that Stopped an Emperor', 'unfinished')."
+    ],
+    "top_problems": [
+      "The invasion is filed, not dramatized. Its battles are one-paragraph roll-ups plus duplicate records (Yodong #32 [14]; the rest of the line #32 [23]–[25]; Stallion Mountain #34 [12]–[16]). The POV belongs to the invader (the emperor, Xue Rengui, Sul Gedu), Goguryeo's defenders are faceless apart from the Guardian's dozen lines, and Yeon Gesomun, the war's cause, gets one unlocated line after it's over (#36 [34]).",
+      "The two precedent flashbacks are record dumps that stall the invasion at its turning points: #33 (390 words, 47% records, one line of dialogue) and #35 (453 words, 76% records, no dialogue). #33's lesson ('I did not look at the ground') never fires in #34, and #35 tells one of history's great tricks, seven fake surrenders and a mocking poem, as widgets.",
+      "Ansi's climax deflates. The outcome is spoiled by the clerks at #36 [4]–[5]; the emperor's wounding is an image-prompt fragment ([26] 'Sweat. Yellow camp light.'); the retreat is weather told in one line ([28]–[29]); and the arc's best plants pay off as a quote or not at all: the dead minister's 'no' (#31 [12] → #36 [31]), the torn-up road (#32 [5]), and the two nameless men who never confront each other over names.",
+      "#39 Jolbon is a 3,000-word story in 5,200 words: the tsundere loop [57]–[82], four bedroom sequences repeating the 'Little Sosuno' joke, a summarized founding [205]–[214], the Pine Kingdom errand [228]–[238], and five codas [240]–[257] that spoil #67 (Sosuno's 'second country', 'the year Yuri comes south'). Jumong's pregnant wife from #38 is never mentioned while he tells Sosuno 'Only you. From the first look.' [167].",
+      "#31 overloads a first-time reader and has no protagonist: eight vignettes and about twenty named people (one minister with two titles, a herald who answers himself, four generals in a Korean-only table, the 'Prince of Qin', Xue Rengui suddenly called 'Xue Li'), the army mustering before anyone is called up, and a Longmen scene buried under an edict, three quotes and two asides."
+    ]
+  }
+}

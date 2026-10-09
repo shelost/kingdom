@@ -1,0 +1,84 @@
+
+=================================================================
+#21 Gumil  (642 August)
+Arc: Iron Will · place: daeya · tone: K-drama tragedy
+Logline: In Silla, bone decides how high a man can climb. Gumil has climbed exactly that high.
+=================================================================
+[0] ¶ Gumil counts rice for a living. None of it has ever been his.
+[1] ══ DAY: DAEYA FORTRESS ══
+[2] [PLACE daeya: The last wall between Baekje and the capital, and the granary behind it.]
+[3] [MAP 642: ]
+[4] ¶ The granary at Daeya can feed the garrison through a winter siege. Gumil knows the exact number of sacks. He counted them. Every tally he writes goes up the stair to a young man in a purple sleeve, who seals it without reading it.
+[5] [CARD Gumil: A yellow-sleeve officer. He does the work, and the purple sleeve signs it.]
+[6] ¶ In Silla the sleeve tells you everything. Purple is True Bone, the old royal blood. Yellow is a man who will die at the rank he was born to. Nobody has to explain it twice. You can see it from across a yard.
+[7] ── SCENE: The Stair ──
+[8] ¶ This morning Gumil climbs the stair with the harvest tally and one more sheet under it. The second sheet is his. Four years of border pay, owed and never paid, added up to the last measure.
+[9] ¶ Pumsuk is twenty-four. He has held the fortress for a year, because his blood is right and his wife’s father is Chunchu. He is not a bad man. He is just a man who has never had to read the second sheet.
+[10] Kim Pumsuk: The harvest count. Good. / And this?
+[11] Gumil: My pay, Commander. Four years of it. / The capital sends the rice. Somewhere between the capital and me, it gets eaten.
+[12] Kim Pumsuk: Four years… / I— that should not happen. I will write to Surabol. / After the feast. Everything is after the feast this week.
+[13] ¶ He seals the harvest count. He hands the second sheet back, unsealed, with a kind smile. He does not ask Gumil’s name. In a year he has never needed it.
+[14] ── SCENE: The Granary ──
+[15] ¶ Down in the granary Mochuk is waiting. He is yellow too: same rank, same pay, same four years. He reads Gumil’s face before Gumil sits.
+[16] Mochuk: After the feast?
+[17] Gumil: After the feast. / Putting a boy this green in charge of the border — does that make any sense?
+[18] Mochuk: Keep your voice down. / It makes sense to them. That’s the whole trouble.
+[19] Gumil: Ah, forgotten what country this is? To them we’re not even dirt~ / Say “True Bone” and the heavens part on their own~~
+[20] Gumil: Why was I even born in this wretched country, to suffer like this!!
+[21] ❝QUOTE (Samguk Sagi (三國史記) bk. 47, Biographies — Seol Gyedu (621)): Silla uses men by bone rank. If you are not of the right lineage, then however great your talent and however outstanding your deeds, you cannot rise past it.❞
+[22] Mochuk: Your wife says the same thing. Prettier.
+[23] Gumil: My wife says a lot of things. / She wants a new jeogori for the feast. Silk. Green. I said yes. / …With what, I didn’t say.
+[24] ── SCENE: Home ──
+[25] ¶ **Maehwa** is the poorest woman in Daeya and the one every eye in it finds first. She is thirty-one. She stopped pretending not to know what happens to a room when she walks into it a long time ago, and the fortress has never forgiven her for it.
+[26] [CARD Maehwa: Maehwa. Plum blossom: the flower that does not wait for spring.]
+[27] Maehwa: The men in this fortress. They all smell the same. / Dirt, drink… and looking when they think I won’t notice.
+[28] Gumil: Cover yourself when you go out.
+[29] Maehwa: Buy me clothes, then. / Everything I own refuses to fit.
+[30] Gumil: …You know what I am paid.
+[31] Maehwa: I do. / Which is why everyone looks.
+[32] Gumil: I asked today. For the four years.
+[33] Maehwa: And?
+[34] Gumil: He smiled at me.
+[35] Maehwa: Did he. / What colour was the smile?
+[36] Gumil: …Purple.
+[37] Maehwa: Then I’ll wear the old green. / Let them all see what you’re paid.
+[38] ── SCENE: The Well-Post ──
+[39] ¶ By noon the yard splits. Porters, smiths and the grain boys find work at the well-post. Maehwa crosses alone, in the green jeogori washed too many times and one red sash. They do not come closer. She does not invite them.
+[40] 🗣: Look at that hem… / No — the waist. The waist. / That's Gumil's wife. / I know. That's why it's worse—
+[41] ¶ She hears every unfinished sentence. Bored chin, and the men keep looking anyway. Dirt under the nails, the same sour drink on every breath. She is tired of being their festival. She walks as if the yard were built around her anyway.
+[42] Maehwa: That is a road. / Do not stand in it.
+[43] ¶ One of them forgets to close his mouth. She turns just enough. The hem stays a breath too long, and she lets him have that second like a coin she can afford to drop. Then the silk falls back.
+[44] 🗣: Just now— / I saw. I saw. / …She didn't even say anything.
+[45] ¶ She leaves them wrecked on the packed earth and almost smiles. Up on the stair, a purple sleeve has stopped in the middle of a sentence. The yard is about the curve she takes with her.
+[46] ¶ Over the hills, King Euija reads Silla’s border the way he reads everything: patiently, and only once. Daeya is young at the top and hollow underneath. He sends Yunchung with ten thousand men.
+[47] [battle]
+[48] ¶ Surabol’s dreams don’t change. Its famous sword is far from here this week, in a warm cave in the hills, being told by three women who should not exist to watch a door in the north. That is another night’s story. Nobody tells Daeya anything.
+[49] ── SCENE: The Night Before ──
+[50] ¶ The night before the feast, the room is only a lamp and the two of them. The old green jeogori hangs on its peg, mended at the seam for tomorrow. They still know how to find each other. They will not know how tomorrow.
+[51] Maehwa: Tomorrow they all look. / Today… only today. / Keep your hand on my waist. / It does not have to be a True Bone hand.
+[52] Gumil: I know. / I know. / …Leave tomorrow for tomorrow.
+[53] Gumil: I’ll get the four years. I will. / You’ll have silk by the first frost.
+[54] Maehwa: Liar. / …Say it again anyway.
+[55] ¶ They stop talking. The lamp is too small for manners. The red sash comes off the way it always does in this room, one impatient pull, and the old silk follows it onto the boards. Thirty-one, and she still puts him where she wants him.
+[56] Maehwa: Tomorrow can wait. / Tonight you stay under me. / Don’t use a name. / Just… stay.
+[57] ¶ She knows his body the way a person knows a door they have opened every winter. He says her name at the end, not a rank. They sleep facing the same wall. In the morning the silk goes back on as if the night had been ordinary. It never is.
+[58] ── SCENE: The Feast ──
+[59] ¶ The harvest feast fills the long hall. Purple at the top table, yellow at the back, families on the floor between. Lady Gotaso sits beside her husband for the first cup and goes up at the first drum. She is seventeen, and wine makes her sleepy.
+[60] ¶ At the feast the wine finds Pumsuk first. Clean ice-blue silk, a cup he is not tasting. Then the lamp-line is hers. Maehwa walks the cheap hanging lamps like she built them, in the old green and the red sash tied by habit. Every head at the top table turns. His turns last, and stays.
+[61] ¶ The feast is not a private room. It is every man in Daeya and the families they brought. Bowls stop. Necks turn. The wives watch her, not the food, and the watching is already a fight. The families are still eating. She is already working.
+[62] ¶ She takes a plum from a tray and eats it slowly, because a plum is cheaper than silk. She has practised this. At the back of the hall, among the yellow sleeves, Gumil watches the purple sleeve watch his wife.
+[63] ¶ Pumsuk talks to his cup. It does not help. The training is a joke tonight. Nine years of Hwarang drill, and nobody taught him what to do with his eyes.
+[64] ¶ Then he does something he has not done in a year. He sends for the grain clerk.
+[65] Kim Pumsuk: You. The— grain tallies. You are… / I am sorry. Your name.
+[66] Gumil: Gumil, Commander. / Four years.
+[67] Kim Pumsuk: Gumil. Yes. / That woman. In the green. Who is she?
+[68] ¶ Gumil has waited four years for the purple sleeve to learn his name. It has taken a plum.
+[69] Gumil: My wife, Commander.
+[70] ¶ Pumsuk goes very red. He looks into his cup. Then he does the worst kind thing a man in his chair can do.
+[71] Kim Pumsuk: Your pay. The four years. / Bring the sheet to me tomorrow. I will seal it myself. / And— tonight. Baekje is on the road. Every sack in the stores counted by dawn. You are the only one who can do it right.
+[72] ¶ It may be an honest order. Baekje really is on the road. Gumil will spend the rest of his life deciding which it was.
+[73] Gumil: …By dawn, Commander.
+[74] ¶ On his way out he passes Maehwa. He does not tell her to cover herself. She does not ask where he is going. She saw him on the stair, and she can count too.
+[75] Maehwa: The plum— ah, it’s the mouth, Commander, not the cup. / Your lady went up early. / Twenty-four, and still sitting here.
+[76] ¶ He does the correct thing. He stands. He bows to a feast that has not asked him to leave. He goes up past Gotaso’s pink door to a cold pallet of his own. It does not take him.
+[77] ¶ **One husband counting sacks till dawn. One cold pallet. One feast still lit down the hall. How long can a True Bone lie still…?**

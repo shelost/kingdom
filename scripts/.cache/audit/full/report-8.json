@@ -1,0 +1,274 @@
+{
+  "slice": 8,
+  "range": "#72–#77",
+  "episodes": [
+    {
+      "n": 72,
+      "title": "Yellow Mountain",
+      "logline": "Gyebek takes five thousand men to the one field between Silla's fifty thousand and the capital. He counts off four repulses and breaks on the fifth, after two Silla generals spend their own sons. He dies explaining Kangrim's origin to Kangrim and reporting his duty done to a king who is nowhere in the episode.",
+      "scores": { "followable": 4, "context": 3, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "The four clashes, the parley and Gwanchang make this the best episode in the slice. But the first third belongs to the Red Fowl, a widget announces the result before the fight, and Gyebek's last line pays off a vow the reader never heard while Euija is absent.",
+      "opening": "'Three years before he sees Samhan, Su Dingfang wins a war in a blizzard.' A good line about the wrong man. #71's card promised Gyebek counting fifty thousand; the reader gets 23 blocks of a new Tang general, a Silla prince and a hill fort before the Yellow Mountain appears at [23]. The unused logline ('Gyebek has already done the arithmetic') is the better hook.",
+      "ending": "The black horse that won't leave the body [127] lands beautifully and pays off Gomanari and the bear ferry (#70 [18]). Then [128] gives the Tang emperor a lone '?' line, a comic non-sequitur on the most solemn beat in the book; cut it. The card [129] ('the king's big idea is to send the Tang dinner') is witty and leads straight into #73 [2].",
+      "sudden": [
+        { "block": "120", "what": "The flashback vow 'I will complete my duty' and Euija's reply 'That is a sharper vow than most crowns get.'", "setup": "None. #4 has no such exchange: Gyebek's words there were 'I gave my word' (#4 [72], [74]) and 'Yes.' (#4 [111.11]); #69 [1.4] has 'Today I go to give it back to him'. The line exists only as the people.ts tagline.", "fix": "Replay #4's real words: 'Do you like the name, or do you like me?' (#4 [111.8]) and 'Gyebek, would you like to serve a higher purpose?' / 'Yes.' Keep [122], or make it 'Your Majesty… I am giving back the name.'" },
+        { "block": "116", "what": "Gyebek tells Kangrim 'you were heaven's messenger… You stayed.'", "setup": "Contradicted: #62 [1] says 'Heaven did not send him'. A magistrate sent him, and Yumla split his soul from his body (#62 [12]–[13]).", "fix": "'A magistrate sent you to arrest King Yumla. Yumla kept you.' Then cut [117]–[119] to one exchange." },
+        { "block": "115", "what": "Kangrim: 'When you killed your family to keep your oath'", "setup": "Thin. #70 [16]–[17] gives it one sentence plus a Samguk Sagi quote; the wife and children never appear on the page.", "fix": "Give #70 one seen beat (a child's sandal by the post, a name he won't say). At [106], have Gyebek look at Gwanchang's face the way he looked at that." },
+        { "block": "41", "what": "'He plants the phoenix ring in the yellow dust'", "setup": "None. 'Phoenix' last appeared on the incense burner (#4 [42]); his sword's ring pommel is never described on the page.", "fix": "'He plants his sword by its ring, a phoenix worked inside it.' Better still, tie it to the burner phoenix he dove for in #4." },
+        { "block": "50", "what": "Heumsun and Pumil, Silla's other two commanders, arrive as bare names.", "setup": "Neither appears before this episode. Heumsun never speaks under his own name: his one line, to his son at [91], is labelled '?'.", "fix": "Introduce both at [16] in a clause each ('Yushin's younger brother Heumsun, who has a son of fifteen; Pumil, who has one of sixteen'), and label [91] as Heumsun." },
+        { "block": "88", "what": "'The hwarang yard still tells its oldest story in two names: two boys who swore'", "setup": "A callback to Sadaham and Mugwan (#11 [4]), 61 episodes back. Bangul and Gwanchang never swore anything to each other on the page.", "fix": "Cut [88]. It also spends both deaths before they happen." },
+        { "block": "34", "what": "[34]–[36] 'And theirs?' / 'Fifty thousand, my lord.' are both attributed to Gyebek, so he asks and answers himself.", "setup": "There is no Baekje adjutant anywhere in the episode.", "fix": "Name a lieutenant here, reuse him for the report at [56], and let him be one of the names that 'stop answering' at [113]." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–22", "issue": "The cold open on Su Dingfang's steppe war, Deokmul Island and Geumdol fortress runs about 700 words before the field. The wit is good ('Snow is just cold sand'), but it's in the wrong place in the book's signature battle.", "fix": "Keep [4], [9]–[14], [17] and [21]–[22]. Fold [1]–[3] and [5] into one line on his card, or open on Gyebek's paces beat [28]–[31] and cut to the Red Fowl after it." },
+        { "blocks": "33", "issue": "The FORMATION widget says 'Baekje held the first four; the fifth broke them' before the first clash, which kills the suspense of the count.", "fix": "Move [33] to after [125], or strip its caption to the ground plan." },
+        { "blocks": "26, 42, 113", "issue": "Image-prompt fragments ('Yellow lacquer holds the palisade… Blue plume cuts yellow lacquer') and over-written figures ('a sentence written in bodies', 'the last grammar the field still understands', the Thermopylae aside). [26] also spends the Yushin–Gyebek duel before the battle has begun.", "fix": "Cut [26] after its first sentence, cut [42], and trim [113] to 'Spears shorten. Names stop answering.'" },
+        { "blocks": "40, 44", "issue": "Two pre-battle speeches. [44] is the Samguk Sagi Goujian speech in the mouth of a man who 'cannot even read' (#70 [14]) and whose voice note bans speeches and allusions.", "fix": "Cut [44]. [40] ('If even death showed up early, we must be on time. Spears.') is his speech." },
+        { "blocks": "61", "issue": "The duel the taverns have argued about since #13 [64] and #28 [8] gets one sentence. It never shows Gyebek's reverse grip or his one-cut charge at the general (#56 [6]).", "fix": "Four or five beats: Gomanari flat along the neck, the reversed blade, Yushin reading it a half-beat late, the red line opening on the white horse." },
+        { "blocks": "64–66", "issue": "Two quotes retell the four clashes the reader just watched.", "fix": "Cut [64]–[65]. Keep [66] ('They agree on the number, and on nothing else') or fold it into [62]." },
+        { "blocks": "106–108", "issue": "Narration shows the beheading, the quote [107] retells it, and Pumil's best line is trapped inside the quote.", "fix": "Cut [107] and give Pumil the line as dialogue at [108]: 'My son's face is as if he were alive.'" },
+        { "blocks": "113, 123", "issue": "The same sentence appears twice: 'Kangrim, who has been hanging in the day like unfinished weather'.", "fix": "Delete it from [123]." },
+        { "blocks": "115–119", "issue": "At the moment of death the scene becomes a quiz on Kangrim's origin, and it runs longer than Gyebek's farewell to Euija.", "fix": "Keep [115] and the first answer in [116] ('Let them keep the prettier word') plus one line of origin. Cut [118]–[119]." }
+      ],
+      "flow_notes": [
+        { "blocks": "17→50", "issue": "Muyeol's deadline ('Don't let the Tang get there first') never comes up during the battle. So the only motive given for Heumsun and Pumil spending their sons is 'the soldiers' strength was spent'.", "fix": "Add one line in the lull, at [67] or [87]: Heumsun looks west, 'The Tang are on the river. Tomorrow is the tenth.'" },
+        { "blocks": "102→106", "issue": "Gyebek killed his own children the night before (#70) and now looks at a boy's face, twice. The text never connects the two, though it's the strongest reversal available.", "fix": "At [106]: 'He has looked at a face like this once already this week.'" },
+        { "blocks": "119→122", "issue": "Euija appears only in a flashback to words he never said. No glance toward Sabi, no thought of the king who shouted 'Summon Gyebek…!' (#66 [41]).", "fix": "Use #4's real words in [120] and turn Gyebek toward the river road at [122]." },
+        { "blocks": "127→128", "issue": "The Third Emperor's '?' comes right after the horse's vigil and makes no sense there.", "fix": "Cut [128]." }
+      ],
+      "romance": null,
+      "battle": "A real battle, and in its middle a very good one. Stakes are clear: this field is 'that door' to Sabi [43], and Silla has a date [11], [17]. The geography is easy to follow: three camps, three roads, 'no fourth way in' [28]. The plan and its reversals work clash by clash. The left camp had been shooting half its arrows [53], the right camp moved forty paces in the night [58], [70], and Yushin is cut in the fourth [61]. Kangrim visible to all five thousand, who cheer him [37]–[39], is an unforgettable image. The count 'One… Four' and 'nobody says five' [112] is a superb device. The parley [67]–[87] is the best dialogue in the slice, and Gwanchang [95]–[108] gives the cost a face; a father's wet sleeve turns the battle [110]–[111]. Three things weaken it. The outcome is announced at [33] and pre-spent at [26] and [88]. Baekje's losses have no face: the only Baekje voice besides Gyebek is unnamed, so 'Four. Now.' [79] is arithmetic, not grief. And the duel is summarized [61] while the death drifts into lore [116]–[119].",
+      "suspense": "The pull is 'how long can he hold, and how will he die'. The count carries it until the widget at [33] gives it away. Plants that pay off: the Greatest Blade tavern argument (#13 [64], #28 [8]) at [46] and [84]–[86]; choosing his own ground (#56 [91]) at [28]; drilling in units of five hundred (#56 [101]); Yushin's white horse (#44 [78]); Gomanari (#70 [18]) at [127]; the Tamla stories (#62) at [118]. Plants that never fire: Euija's 'One day I will give you a stupid order… Judge it yourself' (#29 [11]), which is exactly the question Kangrim should ask; 'Summon Gyebek…!' (#66 [41]), with no reunion before the march; and #4's 'Do you like the name, or do you like me?'",
+      "best": "'Four. Now.' / 'I know. I can count too.' / 'Then go home.' / 'You first.' [79]–[82]; and 'On the Baekje side, nobody says five.' [112]",
+      "worst": "[113]–[124]. The last minute of the last stand is split between a duplicated weather sentence, a Kangrim-origin exchange that contradicts #62, and a flashback to a vow #4 never contained. It belongs to lore instead of to Gyebek and Euija.",
+      "fixes": [
+        "Rebuild the death on what the reader actually saw. In [120], replay #4 [111.8]–[111.11] ('Do you like the name, or do you like me?' … 'Yes.'). Have Kangrim ask the question #29 [11] planted: 'He told you to judge his orders yourself. Did you?' Cut [117]–[119] to one line of origin.",
+        "Clear the runway. Trim the Red Fowl cold open [1]–[5] to a card. Move the FORMATION spoiler [33] to the end. Cut [26], [42], [44], [64]–[65], [88] and [107]. Spend the room on the duel at [61], played in five beats with the reverse grip from #56 [6].",
+        "Give the cost a Baekje face and a mirror. Name the adjutant of [34]–[36] and [56], and let him be one of the names that stop answering at [113]. At [106], tie Gwanchang's face to the children Gyebek killed in #70."
+      ]
+    },
+    {
+      "n": 73,
+      "title": "Sabi",
+      "logline": "With Gyebek dead, Euija tries to buy off the Tang with oxen and flees to Bear Fortress. Ye Sikjin, the lord he left off his list of forty-one, hands him to the enemy. Chunchu makes him pour the victory wine, and the allies start measuring each other.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "The Ye Sikjin betrayal is the best-built mini-story in the slice. Around it, the episode skips Euija's reaction to Gyebek's death, cuts away from every big confrontation after a few lines, and stops dead for seven quotes in a row.",
+      "opening": "'The court hears about the Yellow Mountain Fields the following morning.' Flat, and it skips the one beat the reader needs: Euija learning that the eel boy he named is dead. The next block is 'Euija's first move is to send the Tang camp a feast.' The logline's 'The oxen come back untouched' is the real hook.",
+      "ending": "The two camps beat lands Yushin's 'step on its foot and it bites' [80] well. The card [83] ('a confession… already written, in a lovely hand') sets up #74 neatly.",
+      "sudden": [
+        { "block": "0–2", "what": "Euija's reaction to Gyebek's death is missing. #72 ends on the field and #73 begins with oxen.", "setup": "Everything sets it up: #4, Euija's fury at the exile (#56 [78]–[81]), and #66 [39]–[41] ('I named you here… Summon Gyebek…!').", "fix": "Open on it: a runner, the word 'Hwangsan', Euija asking 'How many came back?', and the runner unable to give a number. Then the oxen read as denial, not policy." },
+        { "block": "22", "what": "The second son crowns himself, an unnamed grandson climbs down the wall, and 'An uncle who stays will kill whoever opens the gate'.", "setup": "Tae and Yung were last seen in #18; the grandson is new; the sentence logic is hard to parse.", "fix": "Name Tae here, not first at [38]. Drop the grandson and say it plainly: 'Tae means to fight. His nephews don't. They go down a rope.'" },
+        { "block": "57–59", "what": "'Nobody counts them… It had been two, once', followed by two Court Maids who speak as if they are dead.", "setup": "Callbacks to #18 [53] ('Two is enough') and #65 [29] ('The body still remembers'). But the beat sits 28 blocks after the cliff [29], behind seven quotes, so 'them' has no antecedent.", "fix": "Move [57]–[60] to follow [29] directly, and make plain that these are the two maids from the garden in #4 [7], going over the cliff together." },
+        { "block": "63", "what": "Gumil, the Daeya traitor who led #21–#23, is executed in a subordinate clause.", "setup": "Heavy: three episodes, and the grief behind Chunchu's whole war (#75 [11]).", "fix": "A three-line scene. Gumil asks for the story the way he asked Maehwa (#23 [2]); Chunchu declines to tell it." },
+        { "block": "51–52", "what": "The quotes say Crown Prince Hyo surrendered with the king at Bear Fortress, but [23]–[25] showed 'the crown prince' Yung kneeling at Sabi's gate.", "setup": "Yung is the only crown prince the reader knows (#18 [66]).", "fix": "Cut the quotes (see pacing), which removes the contradiction." }
+      ],
+      "pacing_notes": [
+        { "blocks": "50–56", "issue": "Seven record quotes in a row: three retell the surrender, then three epitaphs follow. Records are 25% of the episode, and the reader wades through paperwork right after the best scene.", "fix": "Keep one epitaph, [56] ('went toward the sun in Chang'an'), which pays off [47]'s 'Tombstones are generous that way'. Cut [50]–[55]." },
+        { "blocks": "18–20", "issue": "The 'KIM CHUNCHU!!!' outburst appears here with no cut to Chunchu, so his 'Hm?' is baffling. It returns word for word in #74 [12]–[15], where it works.", "fix": "Cut it here." },
+        { "blocks": "17", "issue": "Euija's regret ('I did not use Seongchung's words') is the emotional beat of the night flight, and it sits in a quote.", "fix": "Give it to him as a line in the boat, to Ye Sikjin or to nobody." },
+        { "blocks": "63–70", "issue": "Twenty-eight years of rivalry get seven lines: Chunchu and Euija meet for the first time and part.", "fix": "Double it. Have Euija pour for the Tang general first, so 'who is kneeling today?' [68] points at Chunchu's own bow to Tang, and give Chunchu one real answer before 'Take this man away.'" },
+        { "blocks": "29, 60", "issue": "The Falling Flowers naming is told twice.", "fix": "Keep [29] and fold [60]'s 'Baekje's last invention' into it." },
+        { "blocks": "24", "issue": "Bupmin's speech over Yung is the Samguk Sagi text in his mouth ('my heart sore and my head aching for twenty years').", "fix": "Make it said: 'My sister. Twenty years. Look at me when I say her name.'" }
+      ],
+      "flow_notes": [
+        { "blocks": "26→27", "issue": "Chunbok's line trails off into the cliff scene, and it's unclear whether he or the prince opened the gate.", "fix": "One clause: 'Chunbok opened the gate. He would like that understood as a favour.'" },
+        { "blocks": "6→13", "issue": "The Silla officer is 'the supply officer' at [6] and only gets a name, Kim Munyeong, at [13] when he is spared.", "fix": "Name him at [6] or not at all." },
+        { "blocks": "75 → #76 [1]", "issue": "The five commanderies are told here and again in #76 [1]–[2].", "fix": "Keep them here and open #76 on Liu Rengui." }
+      ],
+      "romance": "The only intimate thread is the two Court Maids, at Euija's side since #4 [7]. Their last beat [58]–[59] ('He isn't here today. …But the body remembers.') could be a haunting end to that relationship. Stranded after the quote pile, it reads as a stray line. Move it to the cliff.",
+      "battle": "No battle is shown. Sabi falls by surrender, which fits history and the book's theme of doors opened from inside, and Yushin's axe in the Red Fowl's tent [8]–[13] supplies the confrontation, with a good comic button in Dong Baoliang stepping on his commander's foot [11]. The flaw is that the capital's actual fall happens in two summary paragraphs [22]–[23] while the camera stays on oxen and records.",
+      "suspense": "The pull is 'who will betray Euija', and the Ye Sikjin story answers it beautifully. It's planted at #64 [21] (the list in the drawer) and #68 [6] (doing the sum), with dramatic irony at [44]–[46] ('Which seat?') and the payoff at [47]–[48]. Other payoffs: 'a man who kneels' (#26 [43]) at [66]–[69]; 'harmonized' (#48 [75]) at [74]; the emperor's promise (#48 [171]–[173]) at [76]–[77]. Unfired: #18 [32] and [49] promised that Euija's own maxim 'Nobody inspects the evidence for a thing they already want to believe' would kill him 'word for word'. Trusting Ye Sikjin is exactly that moment, and the line never comes back.",
+      "best": "'You honour me, Majesty. …Which seat?' / 'Ha! Listen to him. Which seat! Take your pick. I've got forty-one of them.' [45]–[46]",
+      "worst": "[50]–[60]: seven quotes, then a detached 'Nobody counts them' with no antecedent, then a repeat of the Falling Flowers naming. The momentum dies right after the episode's best scene.",
+      "fixes": [
+        "Open on Euija hearing about Gyebek. One short scene before the oxen pays off #4, #56 and #66, and it is the beat the whole thread has been building toward.",
+        "Cut [50]–[55] and the duplicate outburst [18]–[20]. Move [57]–[60] to follow [29] as the two maids' last beat.",
+        "Fire the #18 plant inside the Ye Sikjin scene: at [48], Euija understands, and the narrator (or Euija) says 'Nobody inspects the evidence for a thing they already want to believe.' Then expand the Chunchu–Euija feast [63]–[70] and give Gumil one face-to-face line."
+      ]
+    },
+    {
+      "n": 74,
+      "title": "Buyeo Euija†",
+      "logline": "In Chang'an, the captive Euija reads aloud a confession the Tang wrote for him and signs it so large the name runs off the page. He curses Chunchu, begs for an avenger, and meets the death messengers he never believed in; Kangrim reminds him of the boy he named.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "The confession scene is the best Euija since #4, and his last lines are earned. Cut the duplicated curse, actually show the life that 'flashes before his eyes', and shrink the six-paragraph eulogy to the two paragraphs that bite.",
+      "opening": "'In the Tang capital, Euija is brought forth before the Third Emperor.' A stage direction, not a hook, followed by two quotes. Start at [3]: 'First, paperwork.'",
+      "ending": "The eulogy has real lines ('He falls because he arranged… to be somewhere the warnings could not reach' [39]). But six italic paragraphs explain a death the scene already played, which the house rules forbid. The card [42] ('the man who arranged both can no longer get out of bed…?') leads cleanly into #75.",
+      "sudden": [
+        { "block": "9–11", "what": "The emperor asks the Red Fowl why he didn't take Silla too, and the Red Fowl's archival answer praises Silla in the middle of Euija's death episode.", "setup": "Not needed here.", "fix": "Move it to #76's Chang'an scene, or cut it." },
+        { "block": "28", "what": "'His life flashes before his eyes.'", "setup": "Nothing follows: the flashback is announced and never shown.", "fix": "Show it as a montage mirroring #4 [116]: the jar in the hedge, the grey hood, 'Nineteen', 'Do you like the name, or do you like me?', a deer in the reeds." },
+        { "block": "25", "what": "Kangrim addresses him as 'Eraha.'", "setup": "Defined once as a term card at #18 [6] and used at #68 [5]. Thin but present.", "fix": "Optional: 'Eraha. King.' for readers who have forgotten." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–2", "issue": "Two quotes say the emperor 'released them all' before the scene shows the humiliation.", "fix": "Keep one as an ironic coda after [8], or cut both." },
+        { "blocks": "12–15", "issue": "A word-for-word duplicate of #73 [18]–[20].", "fix": "Keep it here, where the cut to Chunchu at supper [13] makes it work, and cut it from #73." },
+        { "blocks": "28–31", "issue": "Summary retells [17]–[18]: 'He pleads for someone… to finally avenge him'; 'a stranger is already reaching for his banner'.", "fix": "Cut [29]–[31] and replace them with the flashback." },
+        { "blocks": "36–41", "issue": "A six-paragraph italic essay decodes the life. Kyun Hwon and Later Baekje come up three times ([18], [31], [41]).", "fix": "Keep [39] and [40]. Cut [36]–[38] and [41]; [18] already has the one line about Later Baekje." }
+      ],
+      "flow_notes": [
+        { "blocks": "8→9", "issue": "The story jumps from Euija's signature to the emperor quizzing his general about Silla, a change of subject and point of view.", "fix": "Cut [9]–[11], or let Euija overhear 'it cannot be schemed against' about the country that beat him." },
+        { "blocks": "17→31", "issue": "Euija's dying wish 'Let someone… raise Baekje again' is pointed 240 years ahead, though the restoration starts two episodes later.", "fix": "Make [31] tease Pung ('across the sea, a quiet son with good handwriting…') and keep Kyun Hwon to one line." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "The episode is a held breath: will he sign, what will he say, will he die proud? The reader gets a payoff for each. 'A country is a story' (#19 [27]) pays off in 'the hero is a building' [6]. His contempt for gods (#18 [43], #26 [23]) pays off in 'so you guys are real after all' [20], close to the 'word for word' death #18 [49] promised but not quite it. The #4 bond gets its only answer in '…A friend.' [26]. Unfired: Kangrim's 'were you X, or Y?' ritual, given to Seongchung (#65 [56]) and Gyebek, is skipped for the king.",
+      "best": "'Ten thousand? I'm sixty. Ambitious fellow, your clerk.' [5]; and 'Any last words?' … 'No.' [21]–[23]",
+      "worst": "[28]–[41]: 'His life flashes before his eyes' with nothing shown, three summary lines that repeat the curse, then a six-paragraph eulogy.",
+      "fixes": [
+        "Replace [28]–[31] with the flashback the narration promises: three or four lines from #4 (the hedge, the river, 'Nineteen', the name), ending on Gyebek.",
+        "Cut [1]–[2], [9]–[11] and the eulogy down to [39]–[40]. The episode should run confession, curse, messengers, Gyebek, end.",
+        "Keep #18's promise word for word at [20]: 'Gods are props. Spirits are lighting.' / 'Heh… so you guys are real after all…' Then give Kangrim his binary, e.g. 'Were you the Zengzi of the East, or the man who faked the dragon?', and let Euija's answer be his last joke."
+      ]
+    },
+    {
+      "n": 75,
+      "title": "Kim Chunchu†",
+      "logline": "Dying at fifty-eight, with Baekje gone and Goguryeo still standing, Chunchu asks his wife whether he has paid everything and hands his son the dream of 'a king for all'. Kangrim collects him, and Bupmin becomes King Munmu.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 4, "entertainment": 3 },
+      "verdict": "A tender father–son deathbed that pays off the book's title. It's weakened by a doubled opening, duplicated lines, a cryptic Kangrim, and the same name-read-three-times-plus-italic-eulogy template #74 used one episode earlier.",
+      "opening": "'They take him first to a Buddhist temple on the edge of Surabol — not for miracle, for quiet.' A soft scene-setter with telegram fragments ('Incense. Stone.'). Then [3]–[5] opens again, in the sickroom. #74's card already supplied the hook.",
+      "ending": "The card [37] ('So why does the emperor's new edict call its king a clerk…?') is a sharp question, answered at #76 [11]–[13]. Before it, an empty card, a dry accession quote and a roster table [34]–[36] stall the landing.",
+      "sudden": [
+        { "block": "5", "what": "'She has buried a sister who was a queen'", "setup": "Contradicted: Munhee herself became queen (#51 [17]), and her sister Bohee never was (#14, #93 [22]).", "fix": "'a sister who once sold her a dream for a skirt'." },
+        { "block": "20–22", "what": "'Your son is packing. The West is already in the hall.' / 'just going to keep walking west' / 'the packing list is his'", "setup": "None. A reader can't tell whether 'the West' means Tang or the Buddhist western paradise, or what is being packed.", "fix": "Say it plainly: 'Your son is ready. The Tang are already in your hall.'" },
+        { "block": "21", "what": "'I saw a room where they all absolutely obeyed one man'", "setup": "A callback to the emperor's brush (#48 [110]), 27 episodes back, in a clumsy line.", "fix": "'I saw one brush move an empire. I wanted it here.'" },
+        { "block": "26", "what": "'His temple name borrows the Second Emperor's two characters.'", "setup": "The reader has never been told the Second Emperor's temple name, so the point is lost.", "fix": "'They call him Taejong, the same name the Tang gave their Second Emperor. Chang'an will notice.'" }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–5", "issue": "Two openings (temple, then sickroom), and Munhee 'sits where' twice ([0], [5]).", "fix": "Cut [0]–[2] and start at [4]." },
+        { "blocks": "18–19", "issue": "'The room still knows him as Chunchu' twice in consecutive blocks; the 'He' who reads the name at [18] has no antecedent.", "fix": "Merge: 'Kangrim reads the name three times — Muyeol. Muyeol. Muyeol. The room still knows him as Chunchu.'" },
+        { "blocks": "28–33", "issue": "A five-paragraph eulogy (with [30] not even italicized), then [33] restates the promise from [14]–[15].", "fix": "Keep [30] and [32]; cut [28], [29], [31] and [33]." },
+        { "blocks": "34–36", "issue": "An empty card, an accession quote and a roster table sit between the death and the card.", "fix": "Cut all three." }
+      ],
+      "flow_notes": [
+        { "blocks": "12→14", "issue": "'What you used to say when you were small' followed by 'I said it first. You took it.' briefly muddles who coined 'a king for all'.", "fix": "Lead with 'I said it first' and let Bupmin's 'your dream first' be the interruption." },
+        { "blocks": "#74 → #75", "issue": "Name read three times, Kangrim, death, '— Name —', italic eulogy: the same shape as #74, so the second king's death feels mass-produced.", "fix": "Break the template here. No eulogy, or let Munhee speak the epitaph in one line." }
+      ],
+      "romance": "Munhee and Chunchu get one exchange, 'Have I… paid all of it?' / 'Not yet. I'll pay the rest.' [6]–[7], and it carries a whole marriage. One more beat between them before Bupmin enters would make it a goodbye rather than a handoff.",
+      "battle": null,
+      "suspense": "Little suspense, since it's a deathbed and the card announced it. Payoffs: 'A king for all' (#29 [13], #52 [17]); Daeya and Gotaso (#23); the emperor's prophecy (#48) at [25]; Euija's 'I do not fear a man who kneels' (#26 [43], #73 [66]) at [30]. Unfired: Euija's curse one episode earlier ('Heaven's punishment will find you!!', #74 [15]) is never tied to the sickness. Kangrim's ritual question is skipped again, though [11]–[14] set it up perfectly.",
+      "best": "'Munhee. Have I… paid all of it?' / 'Not yet. I'll pay the rest.' [6]–[7]",
+      "worst": "[17]–[23]. Kangrim's scene is a string of riddles ('The West is already in the hall', 'the packing list is his', 'Walk, Spring-and-Autumn') with a duplicated sentence, and a first-time reader can't tell what was asked or answered.",
+      "fixes": [
+        "Give Kangrim the binary the scene has already built: 'Was it for Gotaso, or for the king for all?' Let Chunchu answer 'Yes.' Cut the West and packing riddles [20]–[22].",
+        "Cut the double opening [0]–[2], the duplicate [19], and the widget tail [34]–[36].",
+        "Drop the italic eulogy, since #74 just used the form, or reduce it to [30] and [32] in plain narration."
+      ]
+    },
+    {
+      "n": 76,
+      "title": "Ungjin Commandery",
+      "logline": "The Tang carve occupied Baekje into commanderies, and the disgraced Liu Rengui (the Black Tortoise) comes east to count households and post calendars. Silla's new king is insulted with a prefect's title, and Gaozong and Wu Zetian pick four generals for another invasion of Goguryeo.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 3, "entertainment": 2 },
+      "verdict": "A transitional collage with no protagonist and no Baekje point of view: three witty vignettes, then three widgets and an archival edict. It needs one through-line, ideally the first Baekje rebel, to start the restoration question its card promises.",
+      "opening": "'When the capital fell, the Tang threw five commanderies over the country like a net over a pond.' A good image, but the commanderies were already told at #73 [75], and the next block quotes the same fact again.",
+      "ending": "The card [30] ('Baekje has no king. Across the sea, an exiled prince is packing his bags…!') is the first moment this episode suggests anyone in Baekje wants anything. It lands, but nothing set it up.",
+      "sudden": [
+        { "block": "1, 8", "what": "'So far the net catches mostly rebels' / 'The rebels come and go like weather'", "setup": "No Baekje rebel has appeared since Sabi fell. Boksin, who raised them, first appears in #77 [2].", "fix": "Show one rebel beat: Boksin's men burning a posted Tang calendar, or Liu Rengui reading a list of burned posts with Boksin's name on it." },
+        { "block": "29", "what": "The emperor's edict calls Goguryeo 'Goryeo' and talks of 'the Yemaek'.", "setup": "The narration says Goguryeo everywhere; 'Goryeo' reads like a new country.", "fix": "Paraphrase the edict into two spoken lines and use 'Goguryeo'." },
+        { "block": "26–27", "what": "A Four Dragons diagram and a table of the four generals' names in hangul (방효태 | 소정방 | 이세적 | 유인궤).", "setup": "The Four Dragons were #31, 45 episodes back, and an English reader can't read the table.", "fix": "Cut both. [28] says Samhan never learns their names, and the table right above contradicts it." },
+        { "block": "15", "what": "Daeto speaks with no introduction.", "setup": "A deliberate plant that fires in #90 [7] and #93 [26]. Fine as Chekhov's gun.", "fix": "One descriptive clause, so the reader can find him again in #90." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–3", "issue": "Narration, a quote and an empty map say the same thing, which #73 [75] already said.", "fix": "Cut [2] and [3], and cut either #73 [75] or [1] here." },
+        { "blocks": "24–28", "issue": "Three explainer widgets in a row ([25]–[27]) for a naming scheme the narration explains in one line.", "fix": "Keep [22] and [28]; cut [25]–[27]." },
+        { "blocks": "29", "issue": "The episode closes on a full archival edict in the emperor's mouth.", "fix": "Two lines: 'Baekje is done. Tell your king to bring his army north.'" }
+      ],
+      "flow_notes": [
+        { "blocks": "9→10→17", "issue": "Liu Rengui's calendars, the Gyerim insult and the Chang'an council don't connect. Each scene starts from zero.", "fix": "Thread them through the calendar: the Black Tortoise posts the Tang year; Silla's court finds its own almanac wrong (Daeto [15]); the emperor dates the invasion by it." },
+        { "blocks": "28→30", "issue": "The card pivots to Pung, whom the episode never mentions.", "fix": "Plant him at [8]: a posted list of 'names one must not write' with a Baekje prince's name torn off it." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Weak. The live questions are 'Will Silla bite back at Tang?' (from #73 [79]–[82]) and 'What happens to Goguryeo?' The restoration is mentioned only as weather. Payoffs: the Gyerim gold box (#55) at [11]; 'And keep a copy' answers #73 [77] ('I should have brought a brush'); Euija's curse 'One day you will kneel' (#73 [69]) quietly lands in the prefecture insult. Plants: Daeto [15]–[16], which fires in #90 and #93, and the Black Tortoise, who returns in #77 [40] and #83.",
+      "best": "'Then sign as its clerk, Majesty. / And keep a copy.' [13]",
+      "worst": "[24]–[29]: another invasion of Goguryeo announced in one line, then three widgets and an edict. Nobody on screen wants anything.",
+      "fixes": [
+        "Add a Baekje point of view. One scene of Boksin's rebels, or Boksin tearing down a posted Tang calendar, gives the restoration its first face and sets up #77's 'He raised a dead country once'.",
+        "Cut [2]–[3] and [25]–[27], and paraphrase the edict [29] into two lines.",
+        "Link the vignettes through the calendar and taboo-name list Liu Rengui brings ([5], [7]–[9]). It is already the episode's best idea, and it echoes Euija's 'a country is a story'."
+      ]
+    },
+    {
+      "n": 77,
+      "title": "King Pungjang",
+      "logline": "Baekje's rebels trade Tang prisoners for Yamato ships and the hostage prince Pung. After an Asuka court scene and a comic beach roll call of the new restoration army, Pung is crowned by Boksin, who already resents him, and Pung's first decision, moving the camp to farmland, has to be reversed.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 4 },
+      "verdict": "The Asuka scene and the roll call are a delightful reset with a clear new question: the crown is Pung's, the army is Boksin's. Three flashbacks, four repeated lines, a spoiler and two archival speeches bury it, and Pung never mentions his father.",
+      "opening": "'A Baekje king sends the King of Wa a sword with seven branches. It is a gift. It is also a message.' A decent hook, but it's a flashback to 371, followed at once by a textbook sentence ([0.1] 'Wang In spreads western literature') and a verse in hanja and Korean with no English [0.2]. The logline ('Baekje is finished, says everyone except Baekje') is a better first line and never appears in the text.",
+      "ending": "The episode ends on its weakest beat: at Pisong [52]–[56] the result comes first [53], then two walls of archival speech. The card [57] ('Now the emperor turns north, to walls that have never fallen…!') hands off cleanly to #78 but parks the new question.",
+      "sudden": [
+        { "block": "0.7", "what": "'the East sent forty-two thousand men to die in a river for it'", "setup": "This spends the outcome of the White River battle (#83) six episodes early.", "fix": "'…and when Baekje finally needed ships, the East sent them.'" },
+        { "block": "2", "what": "Gwishil Boksin leads the rebels and trades prisoners to Yamato.", "setup": "First appearance; #76 only mentioned 'rebels'.", "fix": "Plant him in #76 (see #76's fixes)." },
+        { "block": "42", "what": "A flashback to 643: Chunchu orders Yushin to find Baekje's Gumil, and a spy, Jomi-gon, turns the minister Imja.", "setup": "Jomi-gon and Imja appear nowhere else in the book, and this is a pre-fall operation shown after the fall.", "fix": "Move it to #68 or #69, where a turned minister would matter, or cut it." },
+        { "block": "44", "what": "'Chunchu had put it in a sentence… where blood ties are strong, the state grows weak.'", "setup": "Contradicted: in #64 [44] Satek Chunbok says this line to the Third Emperor.", "fix": "Attribute it to Chunbok, or cut [43]–[44]." },
+        { "block": "35", "what": "The title says 'King Pungjang', but the text only ever says Pung or Buyeo Pung.", "setup": "'Pungjang' first appears in #82 and #83.", "fix": "One line at the crowning: 'The East calls him Pungjang. Baekje will too, for a while.'" },
+        { "block": "35", "what": "Pung's only mention of his father is 'son of King Euija'. His father died months ago begging for someone to 'raise Baekje again' (#74 [17]).", "setup": "Strong plants go unused: 'Until I need you' (#18 [74]); his good handwriting (#4 [23], #18 [70]).", "fix": "Give Pung one line at Juryu: 'He said, until I need you. …He didn't say it would be somebody else who needed me.'" }
+      ],
+      "pacing_notes": [
+        { "blocks": "0.1–0.2", "issue": "A textbook sentence plus a verse with no English.", "fix": "Cut [0.1]. Translate [0.2], or cut it down to the one disputed verb." },
+        { "blocks": "6.11–7", "issue": "The empress's speech, then the Nihon Shoki edict retelling it, then [7] retelling it again.", "fix": "Cut [6.12] and [7]." },
+        { "blocks": "41–46", "issue": "Four blocks say Boksin resents the king he crowned ([41], [43], [45], [46]), and [43]–[44] repeat 'a sentence his son kept'. 'Revival Society' is a third name for the army.", "fix": "Keep [41]; cut [42]–[46]." },
+        { "blocks": "52–55", "issue": "[53] gives the result before the debate ('After 2 months, they're forced to move back'). [54]–[55] are archival speeches by Pung and Echi, about 130 and 90 words, and 'Goryeondangyeong' is unreadable.", "fix": "Play it in six short lines. Pung: 'The people will starve up here.' Echi: 'They'll starve slower than they'll die down there.' Then the move, then the move back." },
+        { "blocks": "5, 23", "issue": "A restoration-army diagram introduces the captains before the roll call does, and a sutra quote interrupts Dochim's entrance.", "fix": "Move [5] to after [39]; cut [23] or keep one sentence of it." }
+      ],
+      "flow_notes": [
+        { "blocks": "41→42", "issue": "The roll call ends on its best line, then the story jumps back eighteen years to a Silla spy plot.", "fix": "Cut [42] and go straight to the Tang walls [47]." },
+        { "blocks": "18→30", "issue": "Satek Sangya's card and line ('…He means it.') come before his own introduction at [30].", "fix": "Give [19] to Boksin, or move Sangya's card to [30]." },
+        { "blocks": "#74 [17] → [33]", "issue": "Euija's dying wish ('Let someone… raise Baekje again') is answered by this episode, and nobody says so.", "fix": "Boksin at [33]: 'Your father asked for this, Majesty. In Chang'an. We heard.'" }
+      ],
+      "romance": null,
+      "battle": "No battle, but the roll call [9]–[41] does what a pre-battle muster should. Each captain gets a distinct body and one trait (Abe loud, Echi devoted, Dochim serene, Sangji a wall, Sangya the money, Boksin the board). It sets out a chain-of-command problem [41] and an enemy watching from the ridge [40], and it sets up #83 well. Its only flaw is that [0.7] has already told the reader how the war ends.",
+      "suspense": "A real new question lands. Can a prince who has 'forgotten some of the words' [6.8] hold a crown when the army belongs to the man who crowned him [41]? And will the Tang leave ([49]–[50])? Plants: Boksin's mark beside 'General of the Spirit Army' [24], which seeds Boksin against Dochim; Echi's 'begin with mine' [17], which fires at #83 [51]; Liu Rengui's morale file [40]. Spent too early: [0.7] (the White River dead), [43] ('They will do it to each other unassisted'), [53] (Pisong reversed before it is argued). Unfired from earlier: Pung's 'Until I need you' (#18 [74]) and his handwriting.",
+      "best": "'Heukchi Sangji. Imjon. …That's it.' / 'The arms, General. We discussed the arms.' / 'You discussed the arms.' [27]–[29]",
+      "worst": "[42]–[56]: an out-of-place 643 spy flashback, four blocks repeating one idea (one with a misattributed quote), and the Pisong move told before it is argued, in two archival walls.",
+      "fixes": [
+        "Cut [0.1]–[0.2], [6.12]–[7], [42]–[46] and [53], and play Pisong [54]–[55] as a six-line argument between Pung and Echi. The episode becomes Asuka, the beach, the walls, and the first fight over the crown.",
+        "Connect Pung to Euija: one line calling back 'Until I need you' (#18 [74]), and Boksin naming the dying wish (#74 [17]). That gives the restoration its emotional reason.",
+        "Remove the spoilers: [0.7]'s 'forty-two thousand men to die in a river' and [43]'s 'They will do it to each other unassisted'."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "#72–#75 close Part II's three great lives (Gyebek, Euija, Chunchu) in four episodes; #76–#77 open the occupation and the restoration. The first half has a spine, the fall of Euija's Baekje, but its emotional centre is hollow. Euija is absent from Gyebek's last stand. The two never meet after #29, despite 'Summon Gyebek…!' in #66, and Euija never reacts to Gyebek's death. A reader keeps going for Yellow Mountain and the confession. After #75 the pull drops sharply until the roll call, because #76 has no protagonist and #77 never ties the restoration to the king who begged for it. The restoration does raise a question worth following in #77 (the crown is Pung's, the army is Boksin's), but it arrives late and is parked for Goguryeo at once.",
+    "handoffs": [
+      { "from": 71, "to": 72, "works": "partly", "why": "#71's card ('Down below, five thousand men are counting fifty thousand…!') is delivered only at #72 [23], after a 23-block cold open on a new Tang general. The bawdy gods' meeting is a jarring last breath before the book's signature battle. Its plant, Kangrim asking whether the dead can be resurrected (#71 [32]), primes a rescue that never comes, here or later.", "fix": "Open #72 on Gyebek's ground (the 'Four hundred and twelve' paces beat [28]–[31]) and put the Red Fowl after it. Pay off Kangrim's resurrection question or cut it." },
+      { "from": 72, "to": 73, "works": "partly", "why": "The card's promise ('send the Tang dinner') is delivered at #73 [2], but the seam skips Euija learning of Gyebek's death, the beat the whole thread was building toward.", "fix": "Open #73 on the news reaching Euija." },
+      { "from": 73, "to": 74, "works": "yes", "why": "'A confession… already written, in a lovely hand' leads straight into #74 [3], 'First, paperwork.'", "fix": "Cut the duplicated curse from #73 so #74's version lands fresh." },
+      { "from": 74, "to": 75, "works": "yes", "why": "'Can no longer get out of bed…?' leads straight into #75 [4], though #75 then reuses #74's death template.", "fix": "Vary #75's death form; drop its italic eulogy." },
+      { "from": 75, "to": 76, "works": "yes", "why": "'Why does the emperor's new edict call its king a clerk…?' is answered at #76 [11]–[13].", "fix": "Move the Gyerim scene earlier in #76 so the answer comes quickly." },
+      { "from": 76, "to": 77, "works": "yes", "why": "'An exiled prince is packing his bags…!' leads to Pung in Asuka [6], but #77 first opens three centuries earlier on a sword.", "fix": "Open #77 on Asuka or the beach and fold the Seven-Branched Sword into one line." },
+      { "from": 77, "to": 78, "works": "partly", "why": "'The emperor turns north, to walls that have never fallen…!' cuts cleanly to Pyongyang [0], but the crown-versus-army question #77 just raised is parked until #81–#82.", "fix": "End #77 on the crown-versus-army beat ([41] or the Tang walls [50]) and keep the Goguryeo pivot to one sentence in the card." }
+    ],
+    "dropped_threads": [
+      "#18 [49]: the narrator promises that Euija's own maxim ('Nobody inspects the evidence…' [32] or 'Gods are props…' [43]) kills him 'word for word' nineteen years later. Neither line recurs. #73's Ye Sikjin scene and #74 [20] are the natural places.",
+      "#29 [11]: Euija tells Gyebek 'One day I will give you a stupid order… Judge it yourself.' It never fires at Yellow Mountain or in Kangrim's question.",
+      "#66 [41]: 'Summon Gyebek…!' The two never meet on the page again; their last shared scene is #29.",
+      "#18 [74] Pung's 'Until I need you' and his good handwriting (#4 [23], #18 [70]) are never called back in #77.",
+      "#74 [17]: Euija's dying plea 'Let someone… raise Baekje again' is redirected to Kyun Hwon 240 years later, and the restoration two episodes on never claims it.",
+      "#71 [32]: Kangrim asks whether the dead can be resurrected. Nothing in #72–#77, or later in the book, fires it.",
+      "#77 [42]: the spy Jomi-gon and the turned minister Imja are never seen again.",
+      "#56 [6]: Gyebek's reverse-grip, one-cut charge at the enemy general is not shown in the duel at #72 [61].",
+      "#21–#23: Gumil, the Daeya traitor, gets a one-clause execution (#73 [63]).",
+      "The two Court Maids (#4 [7], #18 [53], #65): their fate at Falling Flower Rock (#73 [57]–[59]) is ambiguous and displaced.",
+      "Kangrim's 'were you X, or Y?' ritual (#65 [56], #72 [115], #93 [19]) is skipped for both kings (#74, #75).",
+      "#77 [10]: Pung's Yamato wife is mentioned once and never appears."
+    ],
+    "repetition": [
+      "'KIM CHUNCHU!!! / Hm? / Kim Chunchu, you wretch!!' appears word for word in #73 [18]–[20] and #74 [12]–[15].",
+      "Five thousand against fifty thousand is stated at #72 [23], [33], [36], [42], [47], [48] and [78], plus the logline.",
+      "The death template (name read three times, Kangrim, '— Name —', italic eulogy) runs in #74 [24]–[41] and #75 [18]–[32] back to back.",
+      "The five commanderies appear at #73 [75], #76 [1] and #76 [2].",
+      "Within-episode duplicates: #72 [113]/[123] ('hanging in the day like unfinished weather'); #73 [29]/[60] (Falling Flowers naming); #74 [17]/[30] and [18]/[31]/[41] (avenge me, Kyun Hwon); #75 [0]/[5] and [18]/[19]; #77 [41]/[43]/[45]/[46] and [43]/[44]; #77 [6.11]/[6.12]/[7].",
+      "Counting as a character tic spreads from Gyebek to Ye Sikjin (#73 [34], [41], [47]), the Eastern Prince (#77 [6.2]), Satek Sangya (#77 [31], [38]), the Silla clerks (#72 [126]) and Liu Rengui's household counts (#76 [8]). Gyebek's signature is diluted in the very stretch where he dies.",
+      "'Bill' and 'paid' metaphors: #75 [6]–[7], [12]; #77 [0.8], [1], [6.3]."
+    ],
+    "top_problems": [
+      "The Euija–Gyebek payoff happens off-page. There is no reunion after 'Summon Gyebek…!' (#66 [41]); Euija is absent from Yellow Mountain except for a flashback to a vow #4 never contained (#72 [120]); and #73 opens without any reaction to the death. The book's best relationship ends on one oblique '…A friend.' (#74 [26]).",
+      "Climaxes are cluttered and pre-spent. #72's outcome is announced by a widget [33], the duel is pre-spent in prompt fragments [26] and then summarized [61], the sons' deaths are foretold [88], and quotes retell what the scene just showed ([64]–[65], [107]). #73 stops for seven quotes [50]–[56]. #77 spends the White River [0.7], the restoration's self-destruction [43] and Pisong [53].",
+      "The deaths explain themselves. #74 and #75 run the same template and end in italic essays ([36]–[41], [28]–[32]). #74 announces 'His life flashes before his eyes' and shows nothing. Kangrim's question ritual is skipped for both kings.",
+      "The restoration starts without a heart. #76 has no point of view and no Baekje character. #77's lovely roll call sits between a textbook 371 flashback, an out-of-place 643 spy flashback, four repeated lines and two archival speeches, and Pung never mentions the father whose dying wish he is fulfilling.",
+      "Draft residue and continuity slips that a careful reader will trip on: a '?' speaker (#72 [91]); the Tang emperor's stray '?' (#72 [128]); Gyebek asking and answering himself (#72 [34]–[36]); Kangrim as 'heaven's messenger' against #62 [1]; the blood-ties line misattributed to Chunchu (#77 [44] against #64 [44]); Munhee's 'sister who was a queen' (#75 [5]); untranslated verse (#77 [0.2]); a hangul table (#76 [27]); 'Goryeo' (#76 [29]); 'Revival Society' (#77 [46])."
+    ]
+  }
+}

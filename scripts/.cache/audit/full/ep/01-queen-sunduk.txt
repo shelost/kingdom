@@ -1,0 +1,106 @@
+
+=================================================================
+#1 Queen Sunduk  (632)
+Arc: Part I — The Three Kingdoms / The King for All · place: surabol · tone: royal court drama
+Logline: A Queen? Ridiculous.
+=================================================================
+[0] ¶ A Queen? Ridiculous.
+[1] [MAP 632: Three kingdoms, one peninsula, and nobody happy with the lines.]
+[2] [PLACE surabol: Everyone here knows exactly how high they were born.]
+[3] ── SCENE: Coronation Morning ──
+[4] ¶ Somebody says it in the corridor, not quite quietly enough. Behind the screen, Princess Dukman is being dressed for a crown. She is thirty-seven, and by noon she will be Queen Sunduk. The maid with the sash stops breathing.
+[5] ¶ The old king is dead, and in Silla only Sacred Bone may wear the crown. The Sacred Bone men have run out. What is left is women: Dukman, her older sister, and a cousin named Seungman who is very glad it isn’t her.
+[6] [TERM Bone Rank (骨品): Bone, as in the bone you were born with. Sacred Bone may wear the crown. True Bone may run the country. Everyone else may count the robes.]
+[7] ¶ Which of the three it will be is settled the night before, in a pavilion off the pond, by six men and a brazier. By morning the palace has a name, and the name has to be dressed.
+[8] Queen Sunduk: Ridiculous. Yes. / Name me the man, my lord. The Sacred Bone one. I’ll wait.
+[9] ¶ The corridor suddenly remembers it has somewhere else to be.
+[10] Queen Sunduk: Tie it tight. If I’m going to be ridiculous, I won’t be late as well.
+[11] ¶ One man stays at the door, where a guard would stand if the guard were the most famous swordsman in Silla. Kim Yushin is thirty-seven. He runs the Hwarang yard: horse, bow, gyuku, the place boys learn whether they matter. People call him the Sword of Silla. He is also, everyone notices, very fond of the princess.
+[12] [CARD Kim Yushin: Thirty-seven. Gaya blood, Silla rank, and the yard is his.]
+[13] Queen Sunduk: You heard him. / I put on this confident face, but honestly — me, a king… / I’ll do it no matter what. I just don’t know if I can.
+[14] Kim Yushin: Whether you do it well or badly — / that is what “no matter what” means. / In all this world, wouldn’t it be good to have one person always on your side, Princess? / Hwarang Kim Yushin. / I will serve you to the end.
+[15] ¶ She laughs. Nobody else will hear her do that today. Then the bells start.
+[16] ── SCENE: The Palace Road ──
+[17] ¶ Across the palace, Yushin’s little sister is late. Munhee is getting her hair done at the gate, because her husband has already saddled the horses.
+[18] [CARD Munhee: Twenty-six, sharp-tongued, and married to the wrong man on purpose.]
+[19] Munhee: Totally unfit for a Noble woman… Come on, boy, can’t you find something better?
+[20] ¶ Her husband Chunchu is twenty-nine, and already the most cunning man in Samhan. Only the quiet rooms know it yet.
+[21] [CARD King Muyeol: Spring and autumn. Also the name of the oldest chronicle Confucius ever edited. He means to be in the next one.]
+[22] ¶ Gotaso sits in front of him on the same horse. Bupmin, six, has his own, and will not share the saddle.
+[23] [CARD Gotaso: Chunchu’s daughter. Whatever it is, she wants it faster.]
+[24] Gotaso: Faster. / Father. Faster.
+[25] King Muyeol: You'll bite your tongue. / Then you'll talk less, which — wait, that's the joke? Fine. Hold on.
+[26] King Munmu: I'm not racing. / I'm following. That's different.
+[27] King Muyeol: That's a lawyer's horse, son. / Look at you. I'm going to tell your mother you invented a new kind of slow.
+[28] ¶ The road climbs past the hill where adults invent countries. Bupmin reins in and looks down at the city, where the slaves are already sweeping the coronation road.
+[29] [CARD King Munmu: Six years old, and already drafting laws for the people with no bones.]
+[30] King Munmu: When I’m king everyone has to listen to me. / Even the bone people. / …And the ones with no bone. Those most, there’s more of them.
+[31] Munhee: Listen to him. / He gets the sentences from you. The volume is his own.
+[32] King Muyeol: …Keep that. / I may need to borrow it back when I am braver.
+[33] ¶ Chunchu looks up the hill. He made a country up there once, with Yushin, when he was nine and the stars were still negotiable. Neither of them tells it the same way twice.
+[34] ▼ FLASHBACK 612 the east star
+    [34.0] ¶ Two boys on a hill above Surabol, lying on their backs, arguing about the sky.
+    [34.1] King Muyeol: Brother. That star, in the east. / That one’s the brightest, isn’t it?
+    [34.2] Kim Yushin: That is a planet, not a star, you idiot.
+    [34.3] King Muyeol: Even better. It sits among the stars without being one of them. / Just like you.
+    [34.4] Kim Yushin: ……
+    [34.5] King Muyeol: Brother. Let us make Samhan one country. / No Goguryeo, no Baekje, no Silla. Just… people. / And over them, one king for all of them.
+    [34.6] Kim Yushin: “A king for all.” / …You be that. I will stand beside you.
+    [34.7] King Muyeol: That is a promise, then.
+[34] ▲ end flashback
+[35] ¶ Then the bells change, and the whole family is late for a coronation.
+[36] ── SCENE: The Throne Hall ──
+[37] ¶ In the hall the sleeves are the census. Purple at the front for True Bone, then scarlet, blue and yellow, down to the doors. You can read a man before he speaks.
+[38] ¶ Past the yellow there is no colour at all. The men holding the canopy poles wear undyed hemp. Nobody counts them.
+[39] Kim Yushin: Slaves, Princess. They aren’t in the count.
+[40] Queen Sunduk: …A country that does not count people as people. How is that meant to last a thousand years?
+[41] ¶ Then she walks the length of the hall alone. Two hundred sleeves bow, some of them late.
+[42] ¶ The crown is carried by the oldest man on the Council. She knows the voice. This morning it said “ridiculous” in her corridor.
+[43] Queen Sunduk: Still ridiculous, my lord?
+[44] Kim Suljong: …Entirely, Majesty. / Hold still. It’s heavier than it looks.
+[45] Queen Sunduk: So am I.
+[46] ¶ He sets it on her head. It fits. Nobody mentions it.
+[47] ¶ And so she becomes the first Queen of Silla. They will call her Queen Sunduk, the Blue Moon of the Divine Country.
+[48] [CARD Queen Sunduk]
+[49] ❝QUOTE (Samguk Yusa (三國遺事) bk. 1, Royal Chronology (王曆) — Queen Seondeok): The sacred-bone males were exhausted, and therefore a queen was set up.❞
+[50] ── SCENE: The Yard ──
+[51] ¶ The capital’s daughters follow the Sword of Silla around the yard. He does not look at them. He looks only at the Queen.
+[52] The Court Maids: The marshal walked past. / I know. Don’t look. / …I’m looking.
+[53] The Court Maids: The most popular man in Silla, and he will not even turn his head. / If he smiled once the colonnade would fall over.
+[54] ¶ Then the yard-coat is open down the spine, and she sees the width of his back — muscle the court is not supposed to want — and the Queen’s face goes vermilion before she can pretend it is the sun.
+[55] ¶ The Queen has forgotten to look away.
+[56] Kim Yushin: Are you feeling alright, your majesty?
+[57] Queen Sunduk: Hm? (startled)
+[58] Kim Yushin: Look at me. / Not the door. (smiles)
+[59] ¶ For a moment neither of them says anything. Then she straightens, and she is the Queen again.
+[60] Kim Yushin: …Once.
+[61] Queen Sunduk: Once what.
+[62] Kim Yushin: Call me by name, not by title. / Today, since it is the last day for it.
+[63] Queen Sunduk: …Yushin-ah.
+[64] ¶ Nobody in the yard hears it. She will not say it again until a night of small rain, years from now. He will still hear it on the day he dies.
+[65] Queen Sunduk: Lord Yushin. / My sister married for love and got a son out of it. / I got a council that sat until dawn.
+[66] Kim Yushin: …Your Majesty.
+[67] Queen Sunduk: So from now on — «Your Majesty». Nothing else. / …That is what I have.
+[68] ── SCENE: The Pledge ──
+[69] ¶ Then the young knights kneel and pledge themselves to the throne. In front kneels the yard’s Second Blade, a cool young man who has never once waited his turn. You’ll meet him properly last night.
+[70] The Hwarang: By Hyukgosé’s light, we, the young Hwarang knights of Silla, pledge eternal allegiance to the Queen!
+[71] ¶ At the end of the ceremony, everyone chants for their new queen.
+[72] ¶ _May the heavenly White Horse bless this queen… Long live the Queen! Long live the Hwarang spirit! Long live Silla!_
+[73] ── SCENE: The Envoys ──
+[74] ¶ Silla sends envoys to tell the neighbours. The neighbours have opinions.
+[75] [CARD King Mu: Baekje’s old king. He has buried a great many Silla plans and keeps the shovel handy.]
+[76] King Mu: So that old brat Jinpyung is finally dead… Bah! Good riddance. And they have seated a daughter, eh…?
+[77] ¶ In Pyongyang a tired king laughs into his wine and bets on how long her council lasts. Across the eastern sea, a king with an empress for an aunt calls it a trend.
+[78] [CARD The Second Emperor: The emperor of Tang. The largest empire under heaven, run by a man who has never lost a war.]
+[79] The Second Emperor: A woman king… those Samhan barbarians are at it again, aren’t they? / Send her flowers. Something that suits her.
+[80] ── SCENE: The Peonies ──
+[81] ¶ He sends her a gift: a painting of peonies in three colours, and a packet of their seeds.
+[82] Queen Sunduk: …There are no butterflies on these flowers.
+[83] King Muyeol: Lovely work. Tang brushwork, three colours of— Majesty?
+[84] Queen Sunduk: It means no scent. / …And the Second Emperor would like me to know he has noticed I have no husband.
+[85] King Muyeol: …I’d have hung it in the hall. / Somebody remind me never to play go with Her Majesty.
+[86] ¶ She has the seeds planted anyway. When they bloom, they have no scent. The court decides she is a sage. She knows she simply reads people.
+[87] ¶ _**Sun**, for kindness._
+[88] ¶ _**Duk**, for virtue._
+[89] [HANJA 善德]
+[90] ¶ **Six men who hate the word “woman” crowned one anyway. One of them carried the crown. How? Go back one night, to a brazier…!**

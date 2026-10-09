@@ -1,0 +1,103 @@
+
+=================================================================
+#38 Buyeo  (-37)  [FLASHBACK EPISODE]
+Arc: Part II — The Dawn of War / The Seventh Invasion · place: buyeo_north · tone: founder fairy tale
+Logline: Dogs won’t eat it. Hooves step around it. An axe won’t split it. Nobody in the hall wants to say what it is.
+=================================================================
+[0] ── SCENE: The Egg ──
+[1] ¶ Buyeo tries very hard to get rid of the egg. The egg declines.
+[2] ¶ Dogs and pigs will not eat it; the sty refuses the guest, and the ministers pretend that is a kind of answer. In the road, cattle and horses step around it, hooves knowing better than the hall. In the open field, birds cover it with their wings instead of pecking, and the yard goes quiet at that.
+[3] [MAP -37: ]
+[4] ¶ An axe is brought. The axe will not split the egg. The edge sings and the shell does not bother to crack.
+[5] ¶ Someone winds up with both arms and hurls it off the palisade. It meets the stones and stays whole.
+[6] ¶ Yuhwa wraps it warm in her own sleeve and takes it back upstairs, and nobody reaches for the axe again.
+[7] ¶ Then the shell gives, and out comes a baby boy, wet and furious, already trying to focus. He looks up as if the room had owed him an explanation.
+[8] ¶ They name him **Jumong**, the good shot, because in those days people were named for what heaven had plainly already decided. He grows up with Geumwa’s sons, Daeso and Galsa.
+[9] ¶ They are boys first, three princes at one stake in one square, before anybody is an heir on purpose. They shoot with borrowed bows, too long in the arm.
+[10] ¶ Jumong can find a fly’s wing with an arrow before the bow fits his arm.
+[11] [CARD Jumong: The best archer in Buyeo. The princes have noticed.]
+[12] Jumong: I’ll take the fly.
+[13] ¶ Daeso teaches the grip, then resents the hit. The lesson ends the moment the arrow is better than the teacher.
+[14] ¶ The yard hears the wood take it, a clean tick, and the praise does not arrive. Daeso keeps his hands on his own bow as if applause were a confession. Galsa looks at the dirt instead of the hit.
+[15] ¶ They sleep in a pile like dogs under one quilt, and in the morning the quilt has taken sides. Jumong steals the last millet and grins through it, which is worse than the theft.
+[16] ¶ Yuhwa watches from the hall door, ice-blue sleeve on the post, not stepping into the boys’ weather.
+[17] ¶ Only two come back talking from the stake. The third has already started a country in his head.
+[18] ── SCENE: The Mark-Stake ──
+[19] ¶ Grown, they still shoot at the princes’ mark-stake. Daeso stands too close when Jumong’s arrow lands.
+[20] [CARD Daeso: Buyeo’s crown prince. Good with a bow, until someone is better.]
+[21] Daeso: Do not outshoot the house that feeds you.
+[22] Jumong: Then put the mark farther.
+[23] [CARD Galsa: Geumwa’s younger son. He smiles at everything, for now.]
+[24] Galsa: If it lands, I meant to applaud.
+[25] ¶ Jumong keeps the grin because grinning is cheaper than asking why, and Daeso hates the price.
+[26] ¶ Jumong’s arranged marriage to Lady Ye is a hall’s solution: a wife, a lamp, a door that still opens onto Buyeo.
+[27] [WEDDING Jumong + Lady Ye]
+[28] ¶ Lady Ye gets pregnant with their son Yuri while the yard is still pretending the foundling is a guest.
+[29] ── SCENE: The Side Room ──
+[30] ¶ Geumwa will not take the heir’s counsel, so Daeso takes the ministers into a side room. Lamp low. If they write it down, the scandal arrives before the knife.
+[31] Daeso: Do it before the next hunt. / Quiet is fine.
+[32] ¶ **Geumwa** answers his heir the way tired kings answer. He refuses the knife and gives the foundling a chore instead: Jumong is sent to the royal stables, which in Buyeo is where a hall keeps a prince it would rather not see at dinner.
+[33] ¶ The stables come with three boys who smell worse than he does. Oi, who is always already packing. Mari, who asks why. Hyupbo, who carries the extra. By the end of the month they are his.
+[34] ── SCENE: The Stable ──
+[35] ¶ **Yuhwa** comes to the stable after the lamps are out, a river-daughter in a frog-king’s straw, and finds her son brushing the best horse in Buyeo as if he could apologise to it in advance.
+[36] Lady Yuhwa: This one, isn’t it? / The fast one.
+[37] Jumong: …How’d you know? / I didn’t tell anyone.
+[38] Lady Yuhwa: You brush this one longer than the others. / I’ll give you a needle. Put it in his tongue. / Say sorry later, and feed him till he bursts.
+[39] Jumong: Mother, you’re terrifying. / …For how many days?
+[40] Lady Yuhwa: Until Daeso’s done sharpening.
+[41] ¶ By the next moon the fastest horse in the yard looks like a rack of kindling with a mane, and the slow ones shine like lacquer. Geumwa walks the stalls, picks the fattest for himself, and tosses the thin one to the foundling with a joke about how well they match. Daeso laughs loudest, which is a pity, because he is the one man in Buyeo who should have looked twice.
+[42] King Geumwa: Suits you. / You both eat my rice and still stay thin.
+[43] Jumong: Thank you, Majesty. / I’ll take good care of him.
+[44] ¶ He pulls the needle out that night. The horse eats until dawn.
+[45] ── SCENE: The Knife ──
+[46] ¶ Before the next hunt, a knife comes through the dark of his room. Lady Ye’s lamp is still lit, so the shadow moves on the wall before the man does. Jumong rolls. The blade goes into the quilt up to the hilt.
+[47] ¶ The man runs. He wears a palace sleeve, and he runs toward Daeso’s end of the hall.
+[48] [CARD Lady Ye: A Buyeo girl with a steady hand and a long memory.]
+[49] Lady Ye: Leave Buyeo. Tonight. / I’ll keep the lamp.
+[50] ¶ He takes his sword down from the wall and breaks it across the seven-sided stone under the pine pillar. It takes two tries. He is not a swordsman.
+[51] Jumong: Half stays. In the crack, under the pillar. / If it’s a boy, tell him: under the pine, on the seven-sided stone. He’ll work it out.
+[52] Lady Ye: And if it’s a girl?
+[53] Jumong: Then she’ll work it out faster.
+[54] Jumong: Leave the door half open. / So I know which way is still yours.
+[55] ¶ Night at the palisade. Iron studs, a red sleeve, and a wife who does not come out to wave.
+[56] ¶ His friends **Oi**, **Mari** and **Hyupbo** take the hills with him. Behind them come the riders Daeso sent, less a hunt than a net, and under the pines it closes from above.
+[57] [MAP -37: Buyeo behind him, Daeso’s riders behind that, and a river ahead with no bridge on it. Yet.]
+[58] ── SCENE: The Flight ──
+[59] ¶ They split in the pines before the river, four men and one horse between them, the one Geumwa thought was thin.
+[60] Oi: We’ll take the ridge. / Find us when you still have a bow.
+[61] Jumong: Take him. / Your road over the ridge is longer. I’ll do the river alone.
+[62] Oi: Are you crazy? He’s your horse.
+[63] Jumong: Exactly. Fatten him up for me. / …I’ll come find you.
+[64] ¶ He runs until the pines smear. Behind him the net is spears in the dark, points only, no faces he is allowed to know.
+[65] ¶ Something keeps pace with him above the trees, black on black, going from branch to branch without seeming to hurry. A crow. He is too frightened to count its legs.
+[66] ¶ Jumong reaches the water alone, his death already written down for that day. No ford. No boat. The friends are a ridge away, on purpose.
+[67] ¶ Haewonmek, the reaper who collects each day’s dead, is already in the air. He skims the river toward him. Black hat, black silk, mouth bound shut. Jumong doesn’t see him. He’s looking at the water and the rain.
+[68] [CARD Haewonmek: A fetch of the underworld. Black hat, black silk, and a mouth bound shut so he can’t haggle.]
+[69] ¶ A root takes his foot. He goes down on the wet stones, pine needles in his mouth, the bow a pace off as if it had been the first thing taken. Haewonmek crouches over him to collect what is owed, and the blow is already coming down.
+[70] ¶ The cloak arrives before the face. Rain fills it. A hand closes on Haewonmek’s wrist from behind, and the strike simply stops — the way an elder stops a sleeve that has gone too far.
+[71] ¶ Jumong’s cheek is in the mud. Haewonmek looks back. Behind him, in a dark hood, the sun god is holding his wrist and laughing, as if the night had grabbed the wrong man. The night is Haewonmek’s road. The joke is Haemosu’s.
+[72] Haewonmek: Haemosu… / The night is not your domain…!
+[73] Haemosu: Heh… / Do you really think the sun disappears at night? / I was just crossing the ocean when I heard you coming over.
+[74] Haewonmek: This man is fated to die today… / You are not to interfere with Yumla’s domain…!
+[75] Haemosu: Hey, Haewonmek. / You’re my little brother and it’s your first week. I’ll go easy on you. / But this is my son. / And he still hasn’t completed his purpose in this world. / And besides… I outrank you. / If Yumla has any complaints, tell him to come see me himself.
+[76] ¶ He puts Haewonmek aside and leans to Jumong’s ear. Jumong cannot see him, only the night, the river, a warmth that should not be there. The idea arrives as breath.
+[77] ── SCENE: The Crossing ──
+[78] Jumong: I am the son of the great Haemosu, the lord of the sun! / Make way for me!
+[79] ¶ The river answers. Tortoises rise and lock shell to shell in the dark. Jumong runs the wet backs as if they had always been a road.
+[80] ❝QUOTE (Gwanggaeto Stele (廣開土王碑) face I, opening lines (414)): Of old, the founder King Chumo laid the foundations. He came out of North Buyeo, son of the Heavenly Emperor; his mother was Habek’s daughter; he broke the egg and came down into the world… The king came to the ford and said: “I am King Chumo, son of August Heaven, whose mother is Habek’s daughter. Link the reeds and float the turtles for me.” At his voice the reeds linked and the turtles floated, and so he crossed.❞
+[81] ¶ The two brothers stay on the near stones. Jumong is already a red speck on the far dark. Haemosu throws an arm across Haewonmek’s shoulder and laughs like the job is done. Haewonmek’s gat is still askew — the look of a clerk whose ledger just walked off.
+[82] Haewonmek: He is still mortal…
+[83] Haemosu: Yes, of course. / But you know… every man comes into this world for a purpose. / He’s going to do great things. / When his time comes, I’ll let you take him.
+[84] Haemosu: Look at him go. / That's my boy.
+[85] Haewonmek: You just robbed a ledger.
+[86] Haemosu: I borrowed a day. / I'll give it back.
+[87] Haewonmek: Yumla isn’t going to like this…
+[88] ¶ The bird that watches him is not an ordinary crow. On Goguryeo’s banners it will stand on three legs under a red sun, the **samjoko**, the bird that can look at the day without blinking.
+[89] ¶ It is sitting on a rock on the far bank when he comes off the last shell, soaked, laughing like an idiot because he is alive. This time he counts.
+[90] Jumong: …One, two. / Three? / Hey. Why’ve you got three legs?
+[91] ¶ The crow looks at him without blinking, which is either rude or holy, then drops off the rock, flies ten paces into the pines, lands again, and looks back.
+[92] Jumong: Follow you? / …If you’re leading me to a bear, I swear I’m roasting you. / Three legs. There’d be one to spare.
+[93] ¶ He follows it all afternoon, uphill, through pines that stop being Buyeo’s and start being nobody’s. It keeps ten paces ahead and never once lets him catch up. At dusk it lands on a stone lip above a dark opening in the hill and stays there, folded, like a doorman whose shift is over.
+[94] Jumong: …Here? / Thanks. Really. / Can’t roast you now, can I.
+[95] ¶ Before the valley has a name for him he goes in, into stone and leaf-light and a country-shaped dark. In what will be called the Jumong cavern, he prays for a roof of his own.
+[96] ¶ **A soaked exile, a hall full of spears, and a chieftain's daughter who won't look at him. Jumong's luck is about to get complicated…!**

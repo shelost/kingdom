@@ -1,0 +1,53 @@
+
+=================================================================
+#64 Coup  (657 February)
+Arc: The Fall of Euija · place: sabi · tone: coup satire — martial law as theatre
+Logline: He calls the assembly the way a gambler calls a final hand.
+=================================================================
+[0] ¶ He calls the assembly the way a gambler calls a final hand — smiling, sleeves perfect, already knowing which tiles he slipped into the set.
+[1] [MAP 657: ]
+[2] ¶ Mourning ends at dawn. By breakfast **Euija** has called the Ministers’ Assembly to the Rock of Politics. The rock is dry. Someone forgot the brine, or remembered it and chose not to.
+[3] King Euija: Beloved people. / As Eraha, I appeal to you with a heart that spits blood. / To eradicate in one stroke the shameless pro-Tang anti-state forces that plunder our people’s freedom and happiness — / I hereby declare emergency martial law.
+[4] ¶ Somebody coughs. Nobody looks at the rock. On the Satek bench a young man leans to his elder and whispers, loud enough to carry two benches over.
+[5] Satek Chunbok: King Onjo preserve us — he’s lost his mind… / Also he printed the proclamation before the session. I can smell the ink. / The characters for “in one stroke” are still wet.
+[6] King Euija: There may be some inconveniences for the good people who have followed the lawful order of this country. / We will strive to minimize such inconveniences. / I place my trust solely in you. / Please trust me.
+[7] Minister Satek: Majesty. For how long?
+[8] King Euija: This is temporary. / Temporary is how permanent things begin when you are afraid to say permanent.
+[9] ¶ Then he unrolls a second scroll — shorter, denser, the kind of law that fits on one sheet because the power is in what it erases. The clerks name it before he does: the Law to Remedy the Distress of the People and the Country.
+[10] King Euija: Laws of Baekje may also be enacted by the Eraha’s command. / Such laws may deviate from old custom — insofar as the Assembly as such is not abolished. / The existence of the Assembly is not endangered. The Premier’s chair remains undisturbed.
+[11] Minister Satek: Your Majesty. That is… a law for emptying the Assembly. / It keeps the name. It changes the people.
+[12] King Euija: If the name remains, the country remains. / If the people remain, the people eat the country. / May you now choose for yourselves — peace, or war.
+[13] ¶ Nobody chooses war out loud. Choosing peace means raising a sleeve for the scroll, and for a long moment nobody does that either. Then a sleeve goes up on the Satek bench. It belongs to **Satek Chunbok**, the young man who was whispering about wet ink.
+[14] Minister Satek: Chunbok. Put your arm down.
+[15] Satek Chunbok: As my lord well knows, His Majesty asked for peace or war. / I am choosing peace.
+[16] ¶ The old men try to rally, Satek calling in four generations of favors. Too late. The other houses, the ones Satek kept out of the light for a century, raise their sleeves one after another, delighted. Some are already paid. Some are already afraid. Some are the king’s own sons, waiting in the corridor.
+[17] ¶ A face-off only works if you know your opponent’s style, and Euija has spent twenty years teaching them his. They lined up for a duel. He had already changed who was sitting.
+[18] ¶ Euija names forty-one of his own sons to the Assembly, firing every single existing member. Eight houses spent four generations sharpening tricks on each other. Marriages. Roads. Clerks planted in rival counting-rooms. In one morning the king clears the board. He simply changes the pieces. By noon nobody has an answer.
+[19] [DIAGRAM ministers-assembly:purged The Rock of Politics, after · 정사암, 그 후 — The same benches. Every one of them a son.]
+[20] ¶ **Satek Chunbok** is named Premier. His own clan watches him walk to the chair. The Enabling Law did not abolish the chair. It only changed who sits in it.
+[21] [CARD Satek Chunbok — Premier of Baekje: A Satek in the Satek chair, sitting for the king.]
+[22] ¶ Forty-one sons need forty-one seats. None goes to the Ye family. They have held Bear Fortress for four generations and never once been asked to court. Ye Sikjin reads the list at home, twice. Then he puts it in a drawer.
+[23] [PLACE ungjin: Four generations of the Ye family, and not one invitation.]
+[24] ¶ Then he hands out the quiet money that really runs Baekje. Harbour warehouses. River pilot fees. The stamp a ship needs before it sails east. The martial law was the noise. The stamps are what change.
+[25] ¶ He cannot do what Yeon did. Baekje would not forgive it, and more to the point, he would not. He does not need a banquet. He needs a majority that looks like kinship.
+[26] ── SCENE: That Night ──
+[27] ¶ That night he writes one letter himself, with no clerk in the room. It is short, because the man it is for cannot read. A boatman will have to say it to him aloud.
+[28] King Euija: Tamla. The fastest boat in the harbour. / Tonight, Chunbok. Before the old men finish counting what they lost.
+[29] Satek Chunbok: Your Majesty… as Your Majesty well knows, the houses are counting tonight. / If a boat leaves for Tamla before the benches are cold, they will read it as war. / Let them get used to losing first. A month. Then send for him.
+[30] King Euija: …A month. / Fine. A month. He’s good at waiting. He counts.
+[31] ¶ He folds the letter into his sleeve. It will stay there a good deal longer than a month.
+[32] The Court Maids: Your Majesty. How many did you dismiss today? / …And how many of us will you keep.
+[33] King Euija: All of them. / You… I keep.
+[34] The Court Maids: …How frightening. / And yet — that kind of Majesty… feels nearer.
+[35] King Euija: …What was your name again.
+[36] The Court Maids: I don’t have one yet. / Make me one tonight. / As you did for General Gyebek — take your time.
+[37] ¶ Eleven of them by morning.
+[38] ¶ Months later, the new Premier is in Chang’an, talking too much. A spy who learns his trade that well rarely works for only one house.
+[39] ── SCENE: Chang’an ──
+[40] The Third Emperor: So… Baekje? What of Baekje—
+[41] Satek Chunbok: Do not trouble yourself over Baekje.
+[42] The Third Emperor: ?
+[43] Satek Chunbok: Baekje will fall on its own. / Where blood ties are strong, the state grows weak. / The Baekje clans love a family feud — they will envy each other into ruin.
+[44] The Third Emperor: Then why am I needed at all?
+[45] Satek Chunbok: However weak it is, it still needs one shock. / Say the Tang army is coming — the rumour alone will tip the country’s spirit.
+[46] ¶ **He beat eight houses in one morning. Now he can’t sleep. In his dreams, somebody keeps counting…?**

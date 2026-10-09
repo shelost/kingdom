@@ -1,0 +1,89 @@
+[
+	{
+		"id": "talhae-ink-dapana-farewell",
+		"entry": "Talhae",
+		"at": "she talks to the egg the whole way down to the water",
+		"alt": "Night shore of Dapana: the queen walks a silk-wrapped egg down to a chest at the waterline, a red dragon's coil in the black sea beyond",
+		"scene": "Myth beat, ink. A young queen in loose court silk walks barefoot down a night beach cradling a silk-wrapped egg against her cheek, mouth moving, toward an open treasure chest at the waterline; far out, one coil of a red dragon breaks the black water. Huge ink masses, bare-paper moon on wet sand, one translucent red wash on the dragon only.",
+		"style": "ink",
+		"canon": false
+	},
+	{
+		"id": "talhae-ink-five-hundred-ships",
+		"entry": "Talhae",
+		"at": "sends five hundred ships after him",
+		"alt": "A single small boat flees across open water ahead of a vast fan of Gaya ships",
+		"scene": "Myth beat, ink. Bird's-eye over a grey sea: one tiny skiff with a single grinning rower in the lower third, and behind it a fan of five hundred oared Gaya boats in splashed dry-brush ink, sails like drops; one translucent purple wash on the lead pennant. Topknots, no brimmed hats.",
+		"style": "ink",
+		"canon": false
+	},
+	{
+		"id": "talhae-horn-cup",
+		"entry": "Talhae",
+		"at": "the horn cup is stuck to his mouth",
+		"alt": "On Mount Toham's pine slope a servant tugs at a horn cup stuck to his lips while young Talhae watches, amused",
+		"scene": "Mount Toham, a mountain spring under old pines at dusk. Young Talhae, tall, clean-shaven, leaning on a walking stick, watches with a deadpan half-smile as his servant Baegui, in plain white hemp, tugs with both hands at a horn drinking cup stuck fast to his mouth, eyes bulging. Low three-quarter, a spring trickling over stones in the sharp foreground, pine trunks and haze dissolving behind, one low gold sun shaft raking across both faces.",
+		"people": ["talhae"],
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "talhae-rice-cake",
+		"entry": "Talhae",
+		"at": "holds the cake up to the lamp",
+		"alt": "By a deathbed lamp an old headman holds up a bitten rice cake and counts the tooth marks while Yuri and Talhae wait",
+		"scene": "Night, a royal sickroom in Surabol, the late king's bed in shadow behind. An old village headman in white holds a bitten white rice cake up to a clay oil lamp, squinting at the tooth marks; in soft focus behind him, the young prince Yuri waiting earnestly and Talhae, tall, with a too-innocent face. The lamp on the floor rakes up across the cake and the old man's hands; the shadow of the cake climbs the wall.",
+		"people": ["talhae"],
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "talhae-first-vote-sleeves",
+		"entry": "Talhae",
+		"at": "Four go up, at four different heights",
+		"alt": "Six old men on a dark floor at night; four sleeves raised at four different heights, two hands still in laps",
+		"scene": "Night, a bare timber hall in early Surabol, the door shut. Six old men in white and muted silk sit in a ring on the floor around one clay lamp; four raise a wide sleeve, each at a different awkward height, two keep their hands in their laps and look away. Top-down from the rafters, the lamp a hot point in the centre, long sleeves throwing shadows like spokes across the boards. Topknots, no brimmed hats.",
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "talhae-bow-to-floor",
+		"entry": "Talhae",
+		"at": "he bows to the six old men on the floor",
+		"alt": "Dawn: Talhae bows low to six old men seated on the floor, the empty throne behind them",
+		"scene": "Dawn light through an opened door in a timber hall. Talhae, past sixty, tall, in royal-blue court silk, bows low from the waist toward six old men seated on the floor in a row; behind them, small and empty, a raised throne seat. Worm's-eye from the floorboards past an elder's shoulder in the dark foreground, the cold dawn shaft through the door raking along the bowed back.",
+		"people": ["talhae"],
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "alji-pine-cup",
+		"entry": "Alji",
+		"at": "sniffs the rim",
+		"alt": "A small boy sniffs the rim of a horn cup while the old king Talhae watches him sideways",
+		"scene": "Evening in the Moon Palace by Gyerim wood. A ten-year-old boy in neat white-and-gold silk turns a horn cup over and sniffs its rim, eyes narrowed; the old king Talhae, white-bearded, sits beside him pretending to look elsewhere, mouth twitching. Medium two-shot, a small brazier in the sharp foreground lighting both faces from below, pine trunks of the wood dissolving into bokeh through the open lattice.",
+		"people": ["talhae"],
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "alji-kangrim-talhae",
+		"entry": "Alji",
+		"at": "a man in black is standing at the foot of the bed",
+		"alt": "A man in black with an open red book stands at the foot of the old king Talhae's bed",
+		"scene": "Winter night in a royal bedchamber. Very old Talhae half sits up in bed, startled for the first time in his life; at the foot of the bed stands Kangrim in black, an open red book in one hand. In the next room, through a half-open door, an old weathered sea chest. One oil lamp on the floor between them rakes up both faces; Kangrim's shadow climbs the wall over the bed.",
+		"people": ["talhae", "kangrim"]
+	},
+	{
+		"id": "alji-cup-pieces",
+		"entry": "Alji",
+		"at": "set the dead king’s horn cup in the middle of the floor",
+		"alt": "A horn cup in the middle of a dark floor with six small wooden pieces around it; a boy watches from the wall",
+		"scene": "Night, the elders' timber room. ECU from floor level: a horn cup standing in the centre of the boards, six small wooden pieces being placed to its left and right by old hands at the frame edges; in soft focus by the far wall, fifteen-year-old Alji sitting very still. One clay lamp beside the cup is the only key; its bokeh and the boy's face float in the dark.",
+		"canon": { "with": ["dress:silla"] }
+	},
+	{
+		"id": "alji-michu-summoned",
+		"entry": "Alji",
+		"at": "a careful man named Michu",
+		"alt": "At dawn a careful middle-aged man stands in the doorway, expecting the worst; six elders on the floor look up at him",
+		"scene": "Dawn at the elders' room in Surabol. Michu, a careful middle-aged Silla noble in plain dark silk, stops in the doorway braced for bad news; six weary elders on the floor around a horn cup look up at him after a sleepless night. Over-the-shoulder from behind one elder in the dark foreground, the pale door shaft framing Michu.",
+		"people": ["michu"],
+		"canon": { "with": ["dress:silla"] }
+	}
+]

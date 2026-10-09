@@ -1,0 +1,11 @@
+{
+	"refs": [
+		"/ch_dae_gulgul.png",
+		"/ref_hanbok_goguryeo.png"
+	],
+	"abs": [
+		"/Users/heewon/Documents/GitHub/kingdom/static/ch_dae_gulgul.png",
+		"/Users/heewon/Documents/GitHub/kingdom/static/ref_hanbok_goguryeo.png"
+	],
+	"text": "CANON — DAE GULGUL — FACE and garments from attached /ch_dae_gulgul.png (face only; invent a new pose). Look: Mohe-born, lean and weathered; dark skin, hard narrow eyes, thin moustache and a short chin beard as a man. Dress: Goguryeo border warden: grey steel lamellar under a heavy white-grey fur mantle, dark-red sash and wrapped forearms. Now: The flight north: no helm, a fur hood and layered pelts over the lamellar, frost in the beard, a leather pack on his back. Demeanor: Grim and spare. Says little, watches the door, stands one step behind whoever he serves. #8b3a3a as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: a Goguryeo court robe; a crown. | COSTUME CHARTS (attached): cut, collar, sleeve, sash, trouser and skirt shapes of every Samhan figure follow the chart for their kingdom; it is a style chart, so ignore its labels, captions, maps, poses and faces. Named people keep their portrait face and colours; extras and soldiers dress like the chart (a commoner like its commoners, an official like its officials, a soldier like its soldiers). Goguryeo: attached /ref_hanbok_goguryeo.png."
+}

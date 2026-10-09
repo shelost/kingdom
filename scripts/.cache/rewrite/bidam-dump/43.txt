@@ -1,0 +1,49 @@
+[0] p EN: For five hundred years the people of Gaya lived by iron and by six eggs, and they enjoyed great peace.
+    KO: 오백 년 동안 가야 사람들은 쇠와 여섯 알로 살며 태평을 누렸다.
+[1] map {"kind":"map","year":562,"places":["geumgwan","daegaya","surabol"],"from":530,"caption":"Five hundred years of iron, gone in thirty.","ko":"오백 년의 쇠, 서른 해 만에 사라지다."}
+[2] p EN: The Cloud King and his boy-general Sadaham come for Gaya.
+    KO: 구름왕과 그의 소년 장수 사다함이 가야로 쳐들어온다.
+[3] dialogue sadaham
+    EN: ["They said too young.","The gate didn’t."]
+    KO: ["너무 어리다고 했다.","문은 안 그랬다."]
+[4] dialogue mugwan
+    EN: ["Don’t die first."]
+    KO: ["먼저 죽지 마."]
+[5] dialogue sadaham
+    EN: ["Then keep up."]
+    KO: ["그럼 따라와."]
+[6] p EN: The vanguard thought otherwise. After the city fell he opened the prize-cages and kept only Alcheon dirt. Take the land. Leave the people.
+    KO: 선봉은 그렇지 않았다. 성이 떨어진 뒤 상으로 받은 우리를 열고 알천의 박토만 받았다. 땅은 가져라. 사람은 놔둬라.
+[7] quote {"kind":"quote","hanja":"九月 加耶叛 王命異斯夫討之 斯多含副之 異斯夫引兵臨之 一時盡降","ko":"구월에 가야가 배반하니, 왕이 이사부에게 토벌하라 명하고 사다함으로 보좌하게 하였다. 이사부가 군사를 이끌고 이르니, 일시에 모두 항복하였다.","html":"In the ninth month Gaya rebelled. The king ordered Isabu to punish them, with Sadaham as deputy. Isabu brought up the army, and they all surrende
+[8] dialogue sadaham
+    EN: ["Alcheon dirt.","That’s enough."]
+    KO: ["알천 흙이다.","그거면 된다."]
+[9] scene {"kind":"scene","label":"The Surrender","ko":"항복"}
+[10] p EN: Thirty years earlier, the last lord of Geumgwan had already handed his kingdom over, to the king before this one. Three sons rode in the cart behind him. The youngest was Muryuk. His grandson will be Kim Yushin. But before the hall, the field. The tall Gaya cone still fights.
+    KO: 그보다 서른 해 전, 금관의 마지막 임금은 이미 나라를 넘겼다. 지금 임금의 앞 임금에게. 그의 수레 뒤에 아들 셋이 탔다. 막내가 무력이다. 무력의 손자가 김유신이 된다. 하지만 전각보다 먼저, 들판. 높은 가야 고깔은 아직 싸운다.
+[11] card {"kind":"card","person":"muryuk","caption":"The youngest son in the cart. Gaya handed over its crown. It did not hand over him.","ko":"수레에 탄 막내아들. 가야는 왕관을 내주었다. 그까지 내준 건 아니다."}
+[12] quote {"kind":"quote","hanja":"金官國主金仇亥 與妃及三子 以國帑寶物來降","ko":"금관국주 김구해가 왕비 및 세 아들과 더불어 나라의 곳간과 보물을 가지고 와서 항복하였다.","html":"The lord of Geumgwan, Kim Guhae, came with his queen and three sons, bringing the treasury and precious things of the country, and surrendered.","source":"Samguk Sagi (三國史記) bk. 4, Silla
+[13] dialogue muryuk
+    EN: ["If we are to surrender, I have one condition…","Let my father’s sons live in Silla without shame…"]
+    KO: ["항복해야 한다면, 조건이 하나 있습니다…","제 아버지의 아들들이 신라에서 부끄럽지 않게 살게 해 주십시오…"]
+[14] dialogue beopheung
+    EN: ["And what do you mean by that?"]
+    KO: ["그건 또 무슨 말인가?"]
+[15] dialogue muryuk
+    EN: ["In Silla… I know a man’s blood decides everything…","Sacred Bone, True Bone… I know it all…","If my descendants — the sons and daughters of Suro and Heo — can take a worthy place…","then I too am ready to give Silla my life…"]
+    KO: ["신라에서는... 사람의 성분이 모든 걸 좌지우지한다고 알고 있습니다...","성골, 진골... 이미 다 알고 있습니다...","제 자손... 수로왕과 허왕후의 아들과 딸들이 좋은 자리에 자리잡을 수만 있다면...","저 또한 신라를 목숨을 바칠 준비가 되어있습니다..."]
+[16] dialogue beopheung
+    EN: ["Very well. Your descendants shall be raised as True Bones of Silla."]
+    KO: ["알겠다. 너희 후손들은 신라의 진골로 추대해주마."]
+[17] p EN: Three generations later, his grandson will still be told he is not really one of them.
+    KO: 세 대가 지난 뒤에도, 그의 손자는 여전히 «진짜 우리 편은 아니다»라는 말을 듣게 된다.
+[18] dialogue muryuk
+    EN: ["Your grace is boundless… Your Majesty…!"]
+    KO: ["성은이 망극하옵니다... 폐하...!"]
+[19] p EN: Then he says a name nobody has been given yet.
+    KO: 그러고는 아직 아무도 받지 않은 이름을 부른다.
+[20] dialogue muryuk
+    EN: ["Yushin…"]
+    KO: ["유신..."]
+[21] p EN: <b>Back to the siege. Sixth night. Bidam has poured two cups of tea. Yushin isn't coming… is he?</b>
+    KO: <b>다시 포위전. 여섯째 밤. 비담은 찻잔 두 개를 채워 두었다. 유신은 오지 않는다… 정말 그럴까?</b>

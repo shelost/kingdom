@@ -1,0 +1,725 @@
+{
+	"id": "bidam-647",
+	"title": "Bidam's Rebellion",
+	"ko": "비담의 난",
+	"hanja": "毗曇之亂",
+	"year": 647,
+	"place": "radiance",
+	"scale": {
+		"km": 1,
+		"px": 150
+	},
+	"terrain": [
+		{
+			"kind": "town",
+			"points": [
+				[
+					90,
+					112
+				],
+				[
+					470,
+					108
+				],
+				[
+					480,
+					282
+				],
+				[
+					400,
+					300
+				],
+				[
+					150,
+					300
+				],
+				[
+					90,
+					240
+				]
+			],
+			"label": "Surabol",
+			"ko": "서라벌",
+			"labelAt": [
+				190,
+				150
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					40
+				],
+				[
+					820,
+					30
+				],
+				[
+					620,
+					38
+				],
+				[
+					420,
+					50
+				],
+				[
+					220,
+					64
+				],
+				[
+					0,
+					80
+				]
+			],
+			"width": 10,
+			"label": "North Stream",
+			"ko": "북천",
+			"labelAt": [
+				330,
+				30
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					1000,
+					520
+				],
+				[
+					760,
+					480
+				],
+				[
+					540,
+					440
+				],
+				[
+					380,
+					398
+				],
+				[
+					260,
+					386
+				],
+				[
+					120,
+					380
+				],
+				[
+					0,
+					372
+				]
+			],
+			"width": 10,
+			"label": "Mun Stream",
+			"ko": "문천",
+			"labelAt": [
+				110,
+				408
+			]
+		},
+		{
+			"kind": "plain",
+			"points": [
+				[
+					480,
+					160
+				],
+				[
+					700,
+					140
+				],
+				[
+					720,
+					300
+				],
+				[
+					500,
+					318
+				]
+			],
+			"label": "between the camps",
+			"ko": "두 진영 사이",
+			"labelAt": [
+				610,
+				330
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				546,
+				418
+			],
+			"r": 44
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				890,
+				96
+			],
+			"r": 34
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					150,
+					345
+				],
+				[
+					190,
+					320
+				],
+				[
+					260,
+					310
+				],
+				[
+					330,
+					318
+				],
+				[
+					375,
+					340
+				],
+				[
+					340,
+					362
+				],
+				[
+					260,
+					368
+				],
+				[
+					180,
+					364
+				],
+				[
+					150,
+					345
+				]
+			],
+			"width": 4
+		},
+		{
+			"kind": "fort",
+			"at": [
+				262,
+				338
+			],
+			"side": "royal",
+			"label": "Moon Palace",
+			"ko": "월성",
+			"labelAt": [
+				262,
+				290
+			]
+		},
+		{
+			"kind": "fort",
+			"at": [
+				858,
+				125
+			],
+			"side": "rebels",
+			"label": "Radiance",
+			"ko": "명활성",
+			"labelAt": [
+				912,
+				172
+			]
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					738,
+					148
+				],
+				[
+					726,
+					200
+				],
+				[
+					748,
+					250
+				]
+			],
+			"width": 4,
+			"label": "outer works",
+			"ko": "외곽 보루",
+			"labelAt": [
+				780,
+				276
+			]
+		},
+		{
+			"kind": "shrine",
+			"at": [
+				600,
+				212
+			],
+			"label": "tea pavilion",
+			"ko": "찻자리",
+			"labelAt": [
+				600,
+				190
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					340,
+					330
+				],
+				[
+					480,
+					270
+				],
+				[
+					620,
+					222
+				],
+				[
+					740,
+					190
+				],
+				[
+					850,
+					130
+				]
+			]
+		}
+	],
+	"sides": [
+		{
+			"id": "royal",
+			"name": "Royal army",
+			"ko": "왕군",
+			"kingdom": "silla"
+		},
+		{
+			"id": "rebels",
+			"name": "Rebels",
+			"ko": "반군",
+			"color": "#2f3545"
+		}
+	],
+	"units": [
+		{
+			"id": "ry",
+			"side": "royal",
+			"label": "Yushin",
+			"ko": "유신",
+			"unrecorded": true
+		},
+		{
+			"id": "rb-bidam",
+			"side": "rebels",
+			"label": "Bidam",
+			"ko": "비담",
+			"unrecorded": true
+		},
+		{
+			"id": "rb-yum",
+			"side": "rebels",
+			"label": "Yumjong",
+			"ko": "염종",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "banners",
+			"label": "Banners on the Radiance wall",
+			"ko": "명활성의 깃발",
+			"caption": "Day one. Bidam raises his banners on the Radiance wall, close enough to shout at the palace. Yumjong holds the outer muster. In the Moon Palace there is grain for ten days, and Yushin.",
+			"captionKo": "첫째 날. 비담이 명활성 성벽에 깃발을 올린다. 궁에 대고 소리치면 들릴 거리다. 염종이 바깥 모병을 맡는다. 월성 안에는 열흘 치 곡식과 유신이 있다.",
+			"units": {
+				"ry": {
+					"at": [
+						262,
+						336
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"rb-bidam": {
+					"at": [
+						858,
+						130
+					],
+					"men": 2000,
+					"facing": 200
+				},
+				"rb-yum": {
+					"at": [
+						792,
+						205
+					],
+					"men": 1000,
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "rebels",
+					"kind": "advance",
+					"points": [
+						[
+							970,
+							15
+						],
+						[
+							920,
+							60
+						],
+						[
+							880,
+							102
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "arrows",
+			"label": "Arrows by day, tea by night",
+			"ko": "낮에는 화살, 밤에는 차",
+			"caption": "Days two to seven. Arrows trade, messengers lie, and nothing breaks. Every night two old yard rivals drink tea in an open pavilion between the camps. Every morning the palace has a day less rice.",
+			"captionKo": "둘째 날부터 이레째까지. 화살이 오가고, 전령은 거짓말을 하고, 아무것도 깨지지 않는다. 밤마다 두 옛 맞수가 두 진영 사이 트인 정자에서 차를 마신다. 아침마다 궁의 쌀은 하루씩 준다.",
+			"units": {
+				"ry": {
+					"at": [
+						300,
+						324
+					],
+					"men": 3000,
+					"facing": 340
+				},
+				"rb-bidam": {
+					"at": [
+						858,
+						130
+					],
+					"men": 2000,
+					"facing": 200
+				},
+				"rb-yum": {
+					"at": [
+						770,
+						210
+					],
+					"men": 1000,
+					"facing": 200
+				}
+			},
+			"arrows": [
+				{
+					"side": "rebels",
+					"kind": "feint",
+					"points": [
+						[
+							752,
+							220
+						],
+						[
+							640,
+							258
+						],
+						[
+							530,
+							292
+						]
+					]
+				},
+				{
+					"side": "royal",
+					"kind": "feint",
+					"points": [
+						[
+							336,
+							314
+						],
+						[
+							440,
+							282
+						],
+						[
+							540,
+							252
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						540,
+						274
+					],
+					"label": "nothing breaks",
+					"ko": "아무것도 깨지지 않는다"
+				}
+			]
+		},
+		{
+			"id": "star",
+			"label": "The falling star",
+			"ko": "떨어지는 별",
+			"caption": "Day eight. A star falls by the palace's west wall, and the Radiance wall cheers until the ground shakes. That night a burning scarecrow climbs back up on a kite. At dawn a white horse is offered where the star came down.",
+			"captionKo": "여드레째. 별 하나가 월성 서쪽 담 곁에 떨어지고, 명활성의 함성이 땅을 흔든다. 그 밤 불붙은 허수아비가 연에 매달려 하늘로 되돌아간다. 새벽에는 별이 떨어진 자리에 흰 말이 바쳐진다.",
+			"units": {
+				"ry": {
+					"at": [
+						262,
+						336
+					],
+					"men": 3000,
+					"facing": 0
+				},
+				"rb-bidam": {
+					"at": [
+						858,
+						130
+					],
+					"men": 2000,
+					"facing": 200
+				},
+				"rb-yum": {
+					"at": [
+						752,
+						212
+					],
+					"men": 1000,
+					"facing": 200
+				}
+			},
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						150,
+						330
+					],
+					"label": "a star falls",
+					"ko": "별이 떨어진다"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						310,
+						250
+					],
+					"label": "the burning kite",
+					"ko": "불붙은 연"
+				}
+			]
+		},
+		{
+			"id": "works",
+			"label": "The outer works",
+			"ko": "외곽 보루",
+			"caption": "Day nine. The fight both sides spent eight days avoiding finally arrives: assault and counter-assault in the outer works. Yumjong goes down in the ditch with a Silla spear under his arm.",
+			"captionKo": "아흐레째. 양쪽이 여드레 동안 피해 온 싸움이 마침내 온다. 외곽 보루에서 공격과 반격. 염종이 신라 창을 옆구리에 맞고 도랑에 쓰러진다.",
+			"units": {
+				"ry": {
+					"at": [
+						600,
+						238
+					],
+					"men": 3000,
+					"facing": 340
+				},
+				"rb-bidam": {
+					"at": [
+						800,
+						156
+					],
+					"men": 2000,
+					"facing": 200
+				},
+				"rb-yum": {
+					"at": [
+						800,
+						196
+					],
+					"men": 1000,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "royal",
+					"kind": "charge",
+					"points": [
+						[
+							340,
+							318
+						],
+						[
+							540,
+							254
+						],
+						[
+							714,
+							202
+						]
+					]
+				},
+				{
+					"side": "rebels",
+					"kind": "charge",
+					"points": [
+						[
+							836,
+							140
+						],
+						[
+							790,
+							162
+						],
+						[
+							752,
+							184
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						726,
+						196
+					],
+					"label": "assault and counter",
+					"ko": "공격과 반격"
+				},
+				{
+					"kind": "death",
+					"at": [
+						742,
+						226
+					]
+				}
+			]
+		},
+		{
+			"id": "gate",
+			"label": "The tenth morning",
+			"ko": "열흘째 아침",
+			"caption": "Day ten. The grain is gone, and the palace gate opens from the inside, exactly as Bidam said it would. Out comes the marshal. The yard's two best meet between the camps, and the Radiance wall empties behind the loser.",
+			"captionKo": "열흘째. 곡식이 떨어지고, 비담이 말한 그대로 궁문이 안에서 열린다. 대장군이 달려 나온다. 화랑 마당의 두 최고수가 두 진영 사이에서 만나고, 진 쪽의 등 뒤에서 명활성이 빈다.",
+			"units": {
+				"ry": {
+					"at": [
+						668,
+						202
+					],
+					"men": 3000,
+					"facing": 340
+				},
+				"rb-bidam": {
+					"at": [
+						880,
+						88
+					],
+					"men": 2000,
+					"routed": true
+				},
+				"rb-yum": {
+					"at": [
+						940,
+						56
+					],
+					"men": 1000,
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "royal",
+					"kind": "charge",
+					"points": [
+						[
+							330,
+							322
+						],
+						[
+							470,
+							270
+						],
+						[
+							580,
+							232
+						]
+					],
+					"label": "the gate opens",
+					"ko": "궁문이 열린다"
+				},
+				{
+					"side": "royal",
+					"kind": "pursuit",
+					"points": [
+						[
+							700,
+							190
+						],
+						[
+							790,
+							146
+						],
+						[
+							850,
+							112
+						]
+					]
+				},
+				{
+					"side": "rebels",
+					"kind": "retreat",
+					"points": [
+						[
+							860,
+							110
+						],
+						[
+							910,
+							60
+						],
+						[
+							970,
+							12
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						600,
+						232
+					],
+					"label": "the score breaks",
+					"ko": "점수가 깨진다"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 41, Biography of Kim Yushin, part 1",
+		"Samguk Sagi 5, Annals of Silla, Seondeok year 16",
+		"Samguk Sagi 5, Annals of Silla, Jindeok year 1"
+	],
+	"note": "No record numbers either side. The Biography of Kim Yushin gives the two camps (Myeonghwal Fortress and the Moon Palace), ten days of fighting without a break, the falling star, the burning kite, the white horse and the attack that routed the rebels; the order of those beats across the ten days is the story's. In the records Bidam flees and is executed on the seventeenth day of the first month with thirty of his kin; the duel between the camps, the tea pavilion and the outer works are the story's.",
+	"noteKo": "어느 기록도 양쪽 병력을 적지 않았다. 김유신 열전이 전하는 것은 두 진영(명활성과 월성), 승부 없이 이어진 열흘의 싸움, 떨어진 별, 불붙은 연, 흰 말, 그리고 반군을 무너뜨린 공격이고, 그 일들을 열흘에 어떻게 나눴는지는 이야기의 것이다. 기록에서 비담은 달아났다가 정월 열이렛날 일족 서른 명과 함께 처형된다. 두 진영 사이의 결투, 찻자리 정자, 외곽 보루는 이야기의 것이다."
+}

@@ -1,0 +1,705 @@
+{
+  "slice": 9,
+  "range": "#78–#98",
+  "episodes": [
+    {
+      "n": 78,
+      "title": "Pyongyang I",
+      "logline": "The Tang open a winter war on Pyongyang: the empress talks the emperor out of leading it, the White Dragon crosses the frozen river and routs Namseng, and the Red Fowl's army starves outside the walls until 66-year-old Yushin volunteers to haul rice to it.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "A title that promises a siege delivers a chronicle; stage one real scene at the walls and cut the duplicate quotes.",
+      "opening": "\"Red Sun's capital sits on its ridge.\" [0] is atmosphere, not a hook; its best line (\"There is only one gate anyone remembers\") is never paid in the episode, and [2] (\"The impenetrable walls of Pyongyang are tested once again\") is a textbook sentence.",
+      "ending": "Yushin's \"Load the carts\" [21] is a strong character beat. The card [23] (\"The White Tiger has thirteen sons. Yeon Gesomun can count to thirteen\") is one of the best cards in the book and pulls hard into #79.",
+      "sudden": [
+        { "block": "3", "what": "Yeon Namgun speaks the episode's first line with no card; the reader last saw him as a small boy.", "setup": "thin: #15 [6], #34.", "fix": "Give him a card here (not in #86), or give the line to Yeon." },
+        { "block": "12", "what": "\"The White Dragon\" crosses the ice, but the reader's current roster is the emperor's four beasts (#76), and the next card names a White Tiger.", "setup": "#31 [30]–[34], #50: 28+ episodes back.", "fix": "One clause of reminder (the old emperor's Turkish general, still alive), or use his name." },
+        { "block": "19", "what": "Why Silla must feed its ally through enemy country is never framed.", "setup": "the alliance in #76 only.", "fix": "One line from Munmu on what refusing would cost (the promise, the land south of Pyongyang)." }
+      ],
+      "pacing_notes": [
+        { "blocks": "5–8", "issue": "The empress's memorial is told in narration [5], played in dialogue [6]–[7], then quoted [8]: one beat three times.", "fix": "Keep [6]–[7] (\"Ask the six horses at Zhaoling how that went\"); cut [8]." },
+        { "blocks": "12–14", "issue": "The frozen-river rout is narrated [12], then quoted twice [13], [14] with the same thirty thousand dead.", "fix": "Keep [12]; cut [14]; drop or trim [13] to one sentence." },
+        { "blocks": "9–17", "issue": "No scene at Pyongyang itself; the siege is three summary lines.", "fix": "Make the gate meeting [15]–[16] the episode's centre and add one beat on the wall." }
+      ],
+      "flow_notes": [
+        { "blocks": "4→9→11→18", "issue": "Four locations in 23 blocks (Luoyang, the Taedong, the frozen river, Surabol), each a fragment.", "fix": "Cut Luoyang to [6]–[7] and let the frozen river and the gate carry the episode." },
+        { "blocks": "19→22", "issue": "Yushin is sixty-six in [19] and sixty-seven in the MAP [22] three blocks later.", "fix": "Pick one age." }
+      ],
+      "romance": null,
+      "battle": "The frozen-river rout is the only fighting and it is reported, not shown: no POV inside it, no plan beyond 'it froze', cost given as a number [12]–[14]. The best beat is the aftermath, Yeon's \"It freezes every year\" [16], which is character, not battle.",
+      "suspense": "Questions: will Pyongyang hold, and will Silla feed the Tang? Namgun's \"Pyongyang does not fall\" [3] plants #86. Yushin's offer [19]–[21] pays off in #79 [52]–[56]. \"There is only one gate anyone remembers\" [0] is an orphan unless it is tied to Shinsung's gate in #86.",
+      "best": "\"Don't tell me you didn't know it would freeze. It freezes every year.\" [16]",
+      "worst": "[12]–[14]: one rout told three times with the same numbers.",
+      "fixes": [
+        "Cut [8] and [14] (and trim [13]); those beats are already narrated or played.",
+        "Build the gate meeting [15]–[16] into a real exchange between Yeon and Namseng, so the episode titled Pyongyang has a scene at Pyongyang.",
+        "Name the White Dragon on re-entry [12] and give Namgun a card at [3]."
+      ]
+    },
+    {
+      "n": 79,
+      "title": "Snake River",
+      "logline": "Yeon Gesomun traps the Tang White Tiger in the Snake River and kills his thirteen sons one by one before killing him; Xue Rengui inherits the dead man's title; two reapers fail to collect Yeon; Yushin's rice train reaches the starving Tang camp and sends it home.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "The thirteen-sons count is a set piece readers will remember, but the episode braids four stories and rewinds mid-way; tighten the prose and put the reaper scene where it happened.",
+      "opening": "\"The White Tiger drives his host into the Snake River.\" [0] hooks with a clear threat, and the voice lands (\"It's hungrier. And it has Yeon's teeth.\").",
+      "ending": "The rice road lands (\"Silla is late.\" / \"You may eat it slowly.\" [54]–[55]). The card [57] (\"whose side are we on now?\") is a good tease, but #80 never shows anyone asking it.",
+      "sudden": [
+        { "block": "26–28", "what": "The White Tiger's card arrives after all his sons are dead.", "setup": "a single table cell in #76.", "fix": "Plant him in #78 (an old general who brought his sons to show them how it's done) so the count costs something." },
+        { "block": "35", "what": "Xue Rengui returns after ~45 episodes with a new title and a fangtian ji.", "setup": "#31 [51]–[67], #34.", "fix": "One reminder clause of who he is to the reader (the white-coated soldier with unburied ancestors)." }
+      ],
+      "pacing_notes": [
+        { "blocks": "4–24", "issue": "The count runs 20 blocks of increasingly ornate prose (\"Almost is the dearest word a river sells\" [13]; \"the current finishes the courtesy\" [13]).", "fix": "Cut a third: merge [16]–[17] and [21]–[22], drop the aphorisms that explain the image." },
+        { "blocks": "34–38", "issue": "The Xue interlude halts the river story at its climax.", "fix": "Move [34]–[38] to the end, after the rice road, as the threat that rolls into the next arc." },
+        { "blocks": "30–31", "issue": "Narration [30] and quote [31] both report the White Tiger's death.", "fix": "Cut [31]; the count already told it." }
+      ],
+      "flow_notes": [
+        { "blocks": "33→39", "issue": "\"Back to the river, then. Earlier that morning, Yeon nearly died.\" [39] rewinds after his victory cry and deflates the near-death.", "fix": "Put the reaper scene [40]–[50] inside the count, when the archer [11] nearly gets him." },
+        { "blocks": "47", "issue": "\"He cuts the escorts in the thinning air, ledger and last-words both\" reads as Yeon killing the reapers, who then talk [48]–[50].", "fix": "Rewrite [47] in plain action: what he does, what they do." },
+        { "blocks": "18", "issue": "\"Magreji\" is a typo for Mangniji.", "fix": "Correct the spelling." }
+      ],
+      "romance": null,
+      "battle": "The best-staged fight in the first half of the slice: one POV (Yeon), a clear device (the count), escalating obstacles (the archer, the bargainer, the flag-bearer), and a cost the enemy feels. Weak on stakes and geography: the White Tiger is a stranger, so his sons' deaths carry horror but not grief, and the ambush itself (the Tang host, the plan) is never shown [0]–[2].",
+      "suspense": "Plants that pay off: the reapers' failure [48]–[50] → Yumla in #84; Xue's new title [35]–[38] → #86, #90, #95; the rice road → #90 [16], [31]. The Tamla question in the card [57] never becomes a scene in #80.",
+      "best": "\"One. Now the tiger.\" [24], then \"Titles drown too.\" [32]",
+      "worst": "[34]–[39]: the Xue interlude plus the rewind, between the climax and the near-death that should precede it.",
+      "fixes": [
+        "Move the reaper scene [40]–[50] into the count and the Xue interlude [34]–[38] to the end.",
+        "Plant the White Tiger and his sons in #78 so the count has a face.",
+        "Prune the count's aphorisms by a third and cut quote [31]."
+      ]
+    },
+    {
+      "n": 80,
+      "title": "Tamla Surrenders",
+      "logline": "After the Snake River, the island kingdom of Tamla switches its allegiance from Baekje to Silla and the Tang, told in two narration lines and two quotes.",
+      "scores": { "followable": 2, "context": 2, "pacing": 1, "flow": 2, "entertainment": 1 },
+      "verdict": "A 186-word stub that buries a beloved character's payoff inside a quote; merge it into #81 or dramatize Yuri Dora's choice.",
+      "opening": "\"After the Snake River, Tamla quietly changes sides.\" [0] is a summary, not a hook.",
+      "ending": "There is no ending beat. The card [5] (\"Nobody told the fortresses\") is a good line, but #81 [1] repeats it almost word for word.",
+      "sudden": [
+        { "block": "4", "what": "Yuri Dora, Tamla's storyteller-king, is named only inside a Tang quote.", "setup": "strong: #56 [61] card, the #57–#63 frame, #70 [13] \"Do not forget people.\"", "fix": "Give Yuri Dora the scene: the king who sheltered Gyebek decides to bow to the side that killed him." },
+        { "block": "3", "what": "A second name for Tamla's ruler (Dodongeumnyul) in the first quote.", "setup": "none.", "fix": "Cut the name or reconcile it in one narrator clause." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–4", "issue": "75% records: an empty MAP [1], one sentence of narration [2], and two quotes that say the same thing [3]–[4].", "fix": "Cut both quotes, or keep one sentence of [4] under a real scene." }
+      ],
+      "flow_notes": [
+        { "blocks": "#79 [57]→[0]", "issue": "The #79 card asks \"whose side are we on now?\"; nobody in #80 asks it.", "fix": "Open on that question asked aloud in Tamla's hall." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "None on the page. The Tamla thread (Gyebek's exile, Yuri Dora's tales, \"Do not forget people\") deserves a last beat here and gets none; the island returns only as an envoy surrendering at Juryu (#83 [62]).",
+      "best": "The card line \"Nobody told the fortresses.\" [5]",
+      "worst": "[3]–[4]: two quotes are the whole episode.",
+      "fixes": [
+        "Write a one-scene episode: Yuri Dora, told Gyebek is dead and the Snake River went to Goguryeo, chooses the side that will still be standing, and remembers Gyebek in one line.",
+        "Or fold #80 into #81 as a three-line opening and cut the quotes.",
+        "Rewrite the card [5] so that #81 [1] doesn't repeat it."
+      ]
+    },
+    {
+      "n": 81,
+      "title": "Rebellion",
+      "logline": "With Baekje's leftovers holding a hill fort, two True Bone generals call in sick and are seen at a gyuku match; Munmu, barely a year on the throne, executes them with their households, and one lord's son, a hostage in Chang'an, decides to wait for a Tang ship.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "A clean little court story with a real decision and a plant; cut the two-Jinjus lecture and it works.",
+      "opening": "\"Two summers after Sabi, Baekje is supposed to be finished.\" [1] is a decent hook, but it repeats the #80 card and sits under a bare SCENE header [0].",
+      "ending": "Punghun's \"I can wait for a ship\" [18] is a strong plant. The card [19] cleanly announces a flashback.",
+      "sudden": [
+        { "block": "5", "what": "Jinheum gets one clause and is executed.", "setup": "none.", "fix": "Fine as a name, or cut him and keep it Jinju alone." }
+      ],
+      "pacing_notes": [
+        { "blocks": "12–13", "issue": "The execution is narrated [12] and then quoted in full [13].", "fix": "Cut [13]." },
+        { "blocks": "14–15", "issue": "A historiography aside about two Jinjus and a damaged woodblock stops the story just before its best beat.", "fix": "Cut [14]–[15]; at most keep \"Only one person never mixes them up: his son.\" as the bridge to [17]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#80 [5]→[1]", "issue": "Verbatim repeat across the seam.", "fix": "Rewrite one of the two lines." }
+      ],
+      "romance": null,
+      "battle": "Naesaji falls offstage in one sentence [8]. The episode is a purge, not a rebellion, so the title misleads.",
+      "suspense": "Will Munmu be soft? [11] answers no. The plant (Punghun waiting for a ship [18]) pays off in #95 [1], but only as a name; he never gets a scene.",
+      "best": "\"My father never had a day off from this war… Take them out.\" [11]",
+      "worst": "[13]–[15]: two quotes and a lecture on whether Silla had two Jinjus.",
+      "fixes": [
+        "Cut [13]–[15] and go from [12] straight to Punghun in Chang'an.",
+        "Retitle the episode: there is no rebellion on the page (\"Sick Leave\" is already the scene title).",
+        "Give Jinju one more line at the execution so the man, not the clerical puzzle, is what the reader remembers."
+      ]
+    },
+    {
+      "n": 82,
+      "title": "Betrayal",
+      "logline": "In flashback, Boksin has his co-leader, the monk Dochim, killed at supper and takes his army; two years later he plots against King Pung from a sickbed, is caught, and has his head salted in a jar while the generals Sangji and Sangya draw their own conclusions.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "Great small lines frame a betrayal whose actual turn is summarized in one wiki sentence; dramatize the sickbed.",
+      "opening": "\"Before Boksin and the king, there were Boksin and the monk.\" [1] is a serviceable hook with a clear triangle.",
+      "ending": "\"Same thing. Less salt.\" [20] lands; then [21] (\"However, there is still a problem…\") is a textbook sentence. The card [22] is strong.",
+      "sudden": [
+        { "block": "16", "what": "Jipdeuk is named by the room and spat at.", "setup": "none.", "fix": "Cut the name, or give him a clause (the courtier who reported the plot)." },
+        { "block": "16", "what": "The flashback (headed 661) runs past #81 (662) into 663 without a marker.", "setup": "\"Two summers later\" only.", "fix": "End the flashback at [10] and open a present-day scene at [11]." }
+      ],
+      "pacing_notes": [
+        { "blocks": "14–16", "issue": "\"Boksin plots to kill the king by pretending to be sick, but is caught and executed instead.\" [15] summarizes the climax between the setup and the payoff.", "fix": "Dramatize [14]–[15]: Pung comes to the sickbed, or doesn't, and we see which man sees the trap." },
+        { "blocks": "21", "issue": "A flat recap line after the best exchange.", "fix": "Cut [21]; the card does the job." }
+      ],
+      "flow_notes": [
+        { "blocks": "10→12", "issue": "\"He has two years to think about it\" [10] is a good plant, then [12]–[13] are Boksin talking to no one.", "fix": "Give [12]–[13] a listener (Sangji), so the plot is spoken to someone who will remember it." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "\"Pung remembers the answer\" [10] pays off at [16]; Sangji watching the king's hands [18]–[19] pays off in #83 [66]–[67]. The sickbed trap is withheld and then skipped, not revealed.",
+      "best": "\"Same thing. Less salt.\" [20]",
+      "worst": "[14]–[15]: the betrayal the episode is named for happens in one summary sentence.",
+      "fixes": [
+        "Replace [15] with the sickbed scene.",
+        "Cut [21], and name or cut Jipdeuk at [16].",
+        "Mark the time jump at [11] so the flashback ends before 662."
+      ]
+    },
+    {
+      "n": 83,
+      "title": "White River",
+      "logline": "Baekje's restoration and a Yamato fleet attack the Tang–Silla blockade at the White River mouth; the Black Tortoise holds his line, waits for the tide, burns four hundred ships and closes his wings, Takutsu dies on his deck, Pung flees north leaving his sword for his brother Yung on the Tang flagship, and Juryu and Imjon fall.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "The best-built battle in the slice (plan, tide, reversal, cost, a brother on each side), held back by a numbers-heavy opening and a summarized aftermath.",
+      "opening": "\"Chang'an's clerks still count to thirteen when they hear the word river.\" [0] spends the hook on #79 instead of this battle, and [2] (\"The epic battle: for the first time…\") is a trailer card.",
+      "ending": "The Black Tortoise and Yushin agreeing on nothing [69] is a wry close; the card [70] (\"The ledger still has his name in it\") is excellent.",
+      "sudden": [
+        { "block": "12", "what": "Lord Iohara and Baekchon, then Garim [17], the princes Chungseung and Chungji [62], Terye [63], Ji Subsin [68]: one-scene names.", "setup": "none.", "fix": "Keep the people and places the reader will see again; say 'the princes', 'the port'." },
+        { "block": "66", "what": "Sangji and Sangya change sides in one sentence.", "setup": "#82 [18]–[20] (good).", "fix": "Give the defection one beat on the page: why Sangji takes the armour back." }
+      ],
+      "pacing_notes": [
+        { "blocks": "4–9", "issue": "Six paragraphs of order of battle (seven thousand, four hundred thousand, twenty-eight generals, thirty in another copy, a thousand ships, forty-two thousand men) before the first scene.", "fix": "One short paragraph per banner, no numbers except the hundred and seventy ships." },
+        { "blocks": "43–45", "issue": "The battle's turn is two summary paragraphs around a quote.", "fix": "Stay on one deck (Takutsu's or the Black Tortoise's) for the second charge and the tide turning." },
+        { "blocks": "62–68", "issue": "Two falls (Juryu, Imjon) in summary.", "fix": "Keep the Nihon Shoki line [64] and Sangji's [67]; cut the rest to a sentence." }
+      ],
+      "flow_notes": [
+        { "blocks": "29→30", "issue": "Yushin's \"The unification of Samhan is not far off…\" [30] is a thesis caption.", "fix": "Cut it, or give him something he'd actually say about the horsemen." },
+        { "blocks": "46→47", "issue": "Pung curses Chunchu, who has been dead two years.", "fix": "Aim the curse at the banners or at Yung, whom he can see." }
+      ],
+      "romance": null,
+      "battle": "Stakes: the restoration's last chance (\"The name of Baekje ends today\" [64]). POV: split between the Black Tortoise, the patient strategist we watch think [33]–[36], and Takutsu, whose death pays off #77. Plan and reversal are clear: hold, don't chase, wait for the tide, close the wings like a door with two leaves [45]. Cost: four hundred ships, Takutsu, Pung's sword. The brothers' sword beat [56]–[60] is the emotional payoff. Weaknesses: the turn is told, not played, and Silla is decoration (Munmu's charge [27]–[28] is fun but disconnected).",
+      "suspense": "Will Pung's gamble work, and what will Yung do when he sees his brother's banner? [22]–[24] plants it and [58]–[60] pays it off beautifully. Pung's flight north [60] never fires again: he isn't mentioned when Pyongyang falls in #86.",
+      "best": "\"He was always better at being sent away than I was.\" [60]",
+      "worst": "[4]–[9]: a roll call of numbers before the first scene.",
+      "fixes": [
+        "Cut [2] and compress [4]–[9] to three short paragraphs with no troop counts.",
+        "Play the tide's turn [43]–[45] from one deck instead of summarizing it.",
+        "Cut Yushin's caption line [30] and give the Sangji defection [66] one beat on the page."
+      ]
+    },
+    {
+      "n": 84,
+      "title": "Yeon Gesomun†",
+      "logline": "Dying, Yeon tells his sons not to fight each other and Namseng throws his father's own record back at him; Yeon braces to refuse the reapers again, but Yumla, king of the dead, comes in person, and Yeon dies in his sleep, leaving Namseng a chair built for one man.",
+      "scores": { "followable": 4, "context": 3, "pacing": 3, "flow": 3, "entertainment": 3 },
+      "verdict": "Yumla's courtesy call is a satisfying payoff to the Snake River, but the death itself is undramatized, and a five-paragraph obituary decodes the man and spoils the next two episodes.",
+      "opening": "\"The Eternal General is dying.\" [1] is short and clear, but it's a statement, not a provocation.",
+      "ending": "The card [29] (\"He had three sons. How long do you think that lasts?\") is good, but the obituary [28] has already answered it.",
+      "sudden": [
+        { "block": "19", "what": "Yeon Jungto, who raised the younger boys, is introduced in Yeon's death episode.", "setup": "none found before #84.", "fix": "Plant him once earlier (#34 or #78), or save him for #85." },
+        { "block": "13", "what": "A vision of \"a young man, centuries off, saying Goryeo\".", "setup": "none, and it never fires.", "fix": "Cut it, or tie it to Gulgul's \"Everyone else got tired and said Goryeo\" in #98." }
+      ],
+      "pacing_notes": [
+        { "blocks": "24–28", "issue": "A five-paragraph italic essay in a 711-word episode decodes what the deathbed just showed; the last words appear four times [3], [6], [27], [29].", "fix": "Cut to [26] (the spine image) and end, or cut the essay entirely." },
+        { "blocks": "3–6", "issue": "Last words played [3] and quoted [6].", "fix": "Cut [6]." }
+      ],
+      "flow_notes": [
+        { "blocks": "21–22", "issue": "Namgun's grief arrives by letter, then [22] states the theme (\"If the old man were alive…\").", "fix": "Keep [20]–[21]; cut [22]." },
+        { "blocks": "28", "issue": "\"Twenty-six months after that his eldest was riding west to show the Third Emperor the road in\" spoils #85.", "fix": "Cut the last two sentences of [28]." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Yumla [9]–[12] pays off the reapers' failure (#79 [48]–[50]) and #62's underworld. What doesn't fire: Yeon's own King for All vow (#29 [23], \"Until every bone in me is broken\") is not recalled at his death, and Gulgul, the Mohe boy he adopted and the hero of #98, isn't at the bedside.",
+      "best": "\"So the clerks failed, and the boss clocked in.\" [11]",
+      "worst": "[24]–[28]: an essay that explains the man and spoils the next episode.",
+      "fixes": [
+        "Cut the obituary to one paragraph and remove the spoiler in [28].",
+        "Give Yeon one last act of will before Yumla takes him (a callback to #29's vow), and put Gulgul silently in the room as a plant for #98.",
+        "Cut [6] and [22] so the last words are said once."
+      ]
+    },
+    {
+      "n": 85,
+      "title": "Brothers' Coup",
+      "logline": "While Namseng tours the provinces, whisperers turn his brothers against him; his spy is caught, Namgun shuts Pyongyang's gate on him and kills his son, and Namseng defects to Chang'an, where this time he kneels to the emperor.",
+      "scores": { "followable": 2, "context": 3, "pacing": 3, "flow": 2, "entertainment": 3 },
+      "verdict": "The Chang'an callback to the boy who wouldn't kneel is superb, but the coup itself is muddled, and its worst crime, a child's murder, is buried in two quotes.",
+      "opening": "\"The Third Emperor invades Goguryeo again. Nobody is counting anymore. This time, he has a guide.\" [0] hooks, but \"he has a guide\" spoils the defection the episode builds to.",
+      "ending": "\"Nobody flogs him for the answer this time.\" [28] lands hard. Jungto's twelve cities [32] are a tidy close, and the card [33] pulls into #86.",
+      "sudden": [
+        { "block": "10", "what": "\"A messenger comes to the provincial camp with an urgent message\": the message is never stated.", "setup": "none.", "fix": "Say what it is (the gate is shut, his spy is dead), or cut the line." },
+        { "block": "17", "what": "Namseng invokes the fall of Joseon, which the book hasn't told yet.", "setup": "#88 tells it later.", "fix": "Fine as a plant, but only if the gate argument makes sense around it; otherwise cut." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–2", "issue": "The emperor's speech is a verbatim repeat of #76 [29].", "fix": "Cut [1]–[2]." },
+        { "blocks": "19–20", "issue": "Two quotes carry the episode's darkest event (Namgun kills Namseng's son).", "fix": "Put the killing on the page in one line at the gate and cut both quotes, or keep only the epitaph's \"little son with the gold ring\"." }
+      ],
+      "flow_notes": [
+        { "blocks": "13–17", "issue": "The gate exchange is garbled (\"Insolent— no. Then what would you have me do?\"; \"Traitor.\" / \"Traitor…?\") and misses the obvious callback: Namseng took a flogging for Namgun in #34 [46]–[54].", "fix": "Rewrite it as a real argument that turns on the flogging (\"You took it for me.\" / \"I am the elder.\")." },
+        { "blocks": "22→25", "issue": "Namseng goes from a proud son to \"Goryeo is nothing but swindlers and thieves\" with no beat of decision.", "fix": "Make the son's death the hinge between [18] and [22]." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "#34's refusal pays off at [26]–[28]. Never fires: Namsan is only a name, and the flogging is not used at the gate.",
+      "best": "\"He is thirty-two years old… Nobody flogs him for the answer this time.\" [28]",
+      "worst": "[13]–[20]: an incoherent shouting match, then two quotes doing the drama.",
+      "fixes": [
+        "Rewrite the gate scene [13]–[17] around the #34 flogging, and put the son's murder on the page.",
+        "Cut the repeated imperial speech [1]–[2] and the dangling messenger [10].",
+        "Change [0] so it doesn't announce the defection."
+      ]
+    },
+    {
+      "n": 86,
+      "title": "Pyongyang II",
+      "logline": "Three Tang beasts close on Pyongyang with Namseng guiding them; Namgun trusts the monk Shinsung to hold a gate, Shinsung strikes the bell Yeon's Daoists displaced and opens it, Namgun fails even at suicide, Goguryeo's king is made to bow before Taizong's stone horses, and Munmu invents a rank above every rank for Yushin.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "Shinsung's bell and the bow before the purple horse are two of the best payoffs in the book; trim the triple-told betrayal and fix the claim that Yushin opened the city.",
+      "opening": "\"Three of the emperor's four beasts come for the city at once.\" [1] is clear, and Xue's farming line [3] gives the siege a voice.",
+      "ending": "The rank scene [31]–[40] is warm but anticlimactic after the fall; the card [41] promises the final war.",
+      "sudden": [
+        { "block": "6", "what": "Namsan gets his first card in his last scene and never acts.", "setup": "#15 [6], as a child.", "fix": "Give him one action (he carries the surrender) or cut the card." },
+        { "block": "17", "what": "General Yomyo co-opens the gate.", "setup": "none.", "fix": "Cut him; the monk is the story." }
+      ],
+      "pacing_notes": [
+        { "blocks": "14–17", "issue": "The bell [14] is the payoff; [16] explains the motive and [17] restates the event as a wiki line.", "fix": "Keep [14] and one sentence of [16]; cut [15] and [17]." },
+        { "blocks": "26–27", "issue": "The fall of a 700-year kingdom is a summary and a one-line quote.", "fix": "Give Bojang or Namgun a beat at the moment of surrender; cut [27]." }
+      ],
+      "flow_notes": [
+        { "blocks": "5–9", "issue": "The three brothers speak from three places in three fragments; Namseng is outside with the Tang, so \"two brothers watch the eldest come home\" is unclear.", "fix": "Make it one moment: Namseng sees the walls from the Tang line, Namgun sees him from the wall." },
+        { "blocks": "39", "issue": "\"It is the name of the man who opened this city\" contradicts [17], where Shinsung opened it, and Silla's part in the siege is never shown. [36] also puts Hangul (태대각간) in an English line.", "fix": "Change the line, or show Silla at the walls; say 'Supreme General' only." }
+      ],
+      "romance": null,
+      "battle": "A siege with three good beats (Xue's patience [3]–[4], the bell [14], Namgun's last stand and botched suicide [19]–[23]) and no POV inside the walls between them. The plan (starve, wait, buy a gate) is clear; the cost is told in [26]. Namseng's return as a traitor, the reader's biggest question from #85, gets three fragments.",
+      "suspense": "Payoffs: Shinsung and the bell (#24, #31 [36]–[41]); the purple horse at Zhaoling (#48, #50); Namgun's \"Pyongyang does not fall\" (#78 [3]). Never fire: Pung, who fled to Goguryeo (#83 [60]), is absent at its fall; Gulgul, who #98 [2] says took a crown shard \"when the palace fell\", isn't in the scene.",
+      "best": "\"On the fifth night the bell… is struck once.\" [14]",
+      "worst": "[5]–[9]: the brothers' reunion across a siege line in three disconnected lines.",
+      "fixes": [
+        "Cut [15]–[17] down to one sentence after the bell.",
+        "Give the brothers one real face-to-face moment (at the gate or after the fall), using Namsan or cutting his card.",
+        "Fix [39], and put Gulgul in the burning palace snapping off the gold branch (one line) to plant #98."
+      ]
+    },
+    {
+      "n": 87,
+      "title": "Mount Gain",
+      "logline": "Tang makes Buyeo Yung governor of conquered Baekje and forces Munmu to swear brotherhood with him on Mount Gain; the oath needs a white horse, the only one is Yushin's old Hanseul, and Yushin walks him up the hill himself, then asks the king for one more war.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "The most moving beat in the slice, placed in the wrong spot on the timeline and slowed by a 300-word covenant block that repeats the oath just spoken.",
+      "opening": "\"Two springs after the river, the empire names a governor for what is left of Baekje.\" [1] is plain, and coming right after Pyongyang's fall (668) it silently rewinds to 665.",
+      "ending": "\"Find me a war instead.\" [30] is a perfect last line. The card [31] (back to a bear in a cave) is announced but unmotivated.",
+      "sudden": [
+        { "block": "4–5", "what": "Liu Rengui [4], \"Black Tortoise\" [5], and the envoy Liu Renyuan in quote [11]: three labels, two men.", "setup": "the #76 beasts roster.", "fix": "Use one name for the Black Tortoise and leave the envoy unnamed." }
+      ],
+      "pacing_notes": [
+        { "blocks": "24", "issue": "A ~300-word COVENANT record right after the Black Tortoise reads its key clause [22].", "fix": "Cut [24]; [22]–[23] already carry it." },
+        { "blocks": "11", "issue": "A quote that repeats [10].", "fix": "Cut [11]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#86→[1]", "issue": "Unmarked rewind from 668 to 665: Yushin is promoted after Pyongyang's fall, then is seventy and losing his horse three years earlier.", "fix": "Move #87 to follow #83, or open with an explicit rewind (\"Three years before Pyongyang fell…\")." },
+        { "blocks": "23", "issue": "The copy \"laid up in Silla's ancestral temple, where the kings of Silla will have to walk past it\" is a loaded gun that never fires, even though #97's Taejong scene happens in that temple.", "fix": "Fire it in #97." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Payoffs: Yung spat on (#73 [23]) → [1], [10]; the emperor's promise (#48) → [3]; Hanseul and Hangyul (#44) → [13]–[21]. Left loose: the temple copy [23], and Yung himself, who never appears again.",
+      "best": "\"I'm seventy, Majesty. I've buried three. Find me a war instead.\" [30]",
+      "worst": "[24]: a wall of record between the oath and the ride home.",
+      "fixes": [
+        "Fix the timeline: move the episode or open with a rewind cue.",
+        "Cut the COVENANT block [24] and quote [11].",
+        "Pay off the temple copy [23] in #97 and give Yung one last appearance before the war ends."
+      ]
+    },
+    {
+      "n": 88,
+      "title": "Dangun & Old Joseon",
+      "logline": "In myth, the bear-woman Ungnyeo waits three evenings on Hwanung's path until he stops, steals his seal and marries him; their son Dangun Wanggeom founds Joseon. Two thousand years later Han besieges Wanggeom city and wins not by the wall but through men who open a door from inside.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "A charming, played romance and a tight tragedy that don't connect to each other or to #87; link the jump and trim the name pile.",
+      "opening": "\"Before there are any kingdoms, there is a son in heaven who keeps looking down.\" [0] is a good myth opening with Barrie-like simplicity.",
+      "ending": "\"A door was opened from the inside.\" [55] lands as a refrain. The card [57] links cleanly to #89.",
+      "sudden": [
+        { "block": "41–51", "what": "King Ugeo, Prince Jang Hang, Noin, Sam, Seong Gi and Choi: six new names in eleven blocks.", "setup": "none (myth episode).", "fix": "Keep Ugeo and Seong Gi; call the rest the prince, the ministers, the minister's son." }
+      ],
+      "pacing_notes": [
+        { "blocks": "7–9", "issue": "Out of order: [7] starts the bear's story, [8] goes back to Hwanung's laws, [9] restarts the bear.", "fix": "Swap [7] and [8]." },
+        { "blocks": "6", "issue": "The quote tells the whole myth before the scene plays it.", "fix": "Cut [6] or move it after [32]." }
+      ],
+      "flow_notes": [
+        { "blocks": "#87→[0]", "issue": "From a horse oath straight to heaven; nothing in #87 raises the question this episode answers.", "fix": "End #87 on a line that makes Wanggeom matter (what is a king, if not the emperor's vassal?)." },
+        { "blocks": "35→36", "issue": "The two halves are joined only by theme.", "fix": "One bridging line about the city that kept the founder's name." }
+      ],
+      "romance": "Played, not told, and good: desire (she stands on his path every day [11]), obstacle (his duty, the seal [13]), escalation over three evenings, banter with real wit (\"The garlic reached this far.\" [17]), and a cost and payoff (the stolen seal [27]–[29], marriage, Dangun). The explicit beats [23]–[25] are tender and brief. The best romance in the slice.",
+      "battle": "The Han siege [38]–[53] is a door-opened-from-inside tragedy with a clear plan (talk, not walls) and a moving loyalist (Seong Gi), but the name pile blurs it.",
+      "suspense": "Plants: Wanggeom [32] pays off in #94 [23]; the six villages [56] call back #53. The Hwanin card [1] (\"He has been watching this peninsula since before it had names\") is the narrator's best wink, and the book never comes back to it.",
+      "best": "\"Under my head. I took it. …Don't go.\" / \"…Thief.\" [28]–[29]",
+      "worst": "[41]–[52]: six new names in a siege that's over in a page.",
+      "fixes": [
+        "Swap [7] and [8], and cut or move the summary quote [6].",
+        "Trim the Joseon cast to two named people.",
+        "Give #87's ending a line that motivates the jump."
+      ]
+    },
+    {
+      "n": 89,
+      "title": "Anseung",
+      "logline": "Under the new Tang protectorate, Geom Mojam raises Goguryeo's flag around a royal cousin, Anseung; they quarrel over whether to die holding the Taedong, Anseung kills him and takes four thousand households to Silla, and Munmu crowns him King of Goguryeo to spite the emperor.",
+      "scores": { "followable": 3, "context": 2, "pacing": 2, "flow": 3, "entertainment": 2 },
+      "verdict": "A record-heavy sketch whose protagonist has three contradictory identities; cut a quote and dramatize the quarrel.",
+      "opening": "\"Nearly eight hundred years after Wanggeom, the empire of the West comes back to the Taedong\" [1] links well to #88 but is summary.",
+      "ending": "\"Good. Give him a seal. A big one.\" [13] is the episode's one spark. The card [15] (\"waiting twenty years to answer it\") is confusing, since the letter hasn't arrived yet.",
+      "sudden": [
+        { "block": "2–4", "what": "Anseung is \"a royal cousin\" [2], Yeon Jungto's son [3], and King Jang's grandson through a daughter [4].", "setup": "none.", "fix": "Pick one in narration. If he is Jungto's son, say so: it ties to #84–#85 and explains why Silla takes him in." }
+      ],
+      "pacing_notes": [
+        { "blocks": "3–4", "issue": "Two quotes back to back, one with five place names.", "fix": "Cut [4]; trim [3] to one line." },
+        { "blocks": "14", "issue": "A long patent quote after Munmu has already made the point.", "fix": "Cut [14], or keep its last line (\"Be reverent, be reverent!\") as a joke." }
+      ],
+      "flow_notes": [
+        { "blocks": "5–8", "issue": "The murder that splits the revival is one exchange and a sentence.", "fix": "Stage the quarrel as a scene with a cost (Mojam's men watching Anseung)." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Will the revival hold? Answered in two lines. The Jungto link (#84 [19], #85 [32]) is the episode's buried payoff and is never made in narration.",
+      "best": "\"The kings in the soil will keep. The four thousand households above it won't.\" [7]",
+      "worst": "[2]–[4]: three versions of who Anseung is in three blocks.",
+      "fixes": [
+        "Settle Anseung's identity in narration and tie it to Jungto.",
+        "Cut [4] and [14].",
+        "Rewrite the card [15] (e.g. Munmu has had twenty years to draft the answer)."
+      ]
+    },
+    {
+      "n": 90,
+      "title": "Letters",
+      "logline": "Xue Rengui, offshore with a fleet, writes to shame Munmu into backing down; Munmu stays up all night dictating a reply that lists every Tang promise and every Silla sack of rice, the two trade ever shorter notes, and Silla answers by seizing seventy Tang grain ships, while an official named Daeto pockets a letter of his own.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "The slice's best episode, a Sorkin duel by post with stakes, callbacks and a punchline; cut the quotes that repeat Munmu's own words.",
+      "opening": "\"In high summer, a Tang monk is rowed ashore under a white flag.\" [1] is a clean setup, and \"he'd like to win this war by post\" is the hook.",
+      "ending": "\"Send word to the White Tiger that his rice has arrived. Late. As usual.\" [31] pays off #79's \"Silla is late\". The card [32] pulls straight into #91.",
+      "sudden": [],
+      "pacing_notes": [
+        { "blocks": "14–20", "issue": "Munmu's speech is cut by three quotes [15], [17], [20] that restate what he just said (the promise, the rice) in archival form.", "fix": "Cut [15] and [17]; keep [20] (the sunflower), which the scene doesn't say." },
+        { "blocks": "10", "issue": "The Punghun reminder interrupts the writing room.", "fix": "Fine as a plant; one sentence is enough." }
+      ],
+      "flow_notes": [
+        { "blocks": "3→4", "issue": "Xue's letter is dramatized, then quoted in different words, so a reader may think there are two letters.", "fix": "Keep one, or flag [4] as the record's version in a narrator clause." }
+      ],
+      "romance": null,
+      "battle": "The seventy-ship raid [29]–[31] is offstage, and that's right: the letters are the battle. The duel has a POV (Munmu), stakes (the land, the brother in Chang'an), moves and costs.",
+      "suspense": "Plants that pay off: the emperor's promise (#48), the rice road (#79), the horse at Mount Gain (#87), counting people (#1 [29], #76). New plants: Daeto's second letter [22] (paid off in #93 [26], in one sentence) and \"Tell him I said his name\" [21] (Inmun; never answered).",
+      "best": "\"Nowhere in it is the word 'sorry.'\" / \"Nowhere in it is the word 'rice.'\" [24]–[25]",
+      "worst": "[14]–[17]: two record blocks sit inside the speech and blunt its rhythm.",
+      "fixes": [
+        "Cut quotes [15] and [17].",
+        "Pay off \"Tell him I said his name\" [21]: Inmun should appear before the war ends.",
+        "Make Daeto's arrest a scene rather than a funeral aside in #93."
+      ]
+    },
+    {
+      "n": 91,
+      "title": "Stone Gate",
+      "logline": "Silla and the Goguryeo revival beat the Tang, chase them, and are routed at Seokmun; Silla sends a grovelling apology and starts building walls, and a flashback reveals that Chunchu planned exactly this: never strike first, apologize after each win, and save the sea for last.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "A defeat that exists only as records, rescued by a brilliant flashback; dramatize the chase from Wonsul's saddle.",
+      "opening": "\"The Tang take Hansi and Mapeup and come south.\" [1] is a summary with two unfamiliar place names, though \"the mistake that costs the year: they chase\" is a good hook.",
+      "ending": "\"Li Shimin taught me. I wrote down everything he intended to do to me.\" [11.10] is a top-tier reframe. The card [12] cleanly introduces Wonsul.",
+      "sudden": [
+        { "block": "5–6", "what": "Gao Kan, Hyocheon, Uimun, Sanse and Mount Baeksu: names that exist only in quotes.", "setup": "none.", "fix": "Cut [6], which describes a different battle in a different month, and name no one in [5] the reader won't meet." }
+      ],
+      "pacing_notes": [
+        { "blocks": "1–10", "issue": "The battle and its aftermath are two narration lines, two battle quotes, a formation card and an apology quote (47% records).", "fix": "Replace [3]–[7] with a short scene of the chase and the rout." }
+      ],
+      "flow_notes": [
+        { "blocks": "10→11", "issue": "The humiliating apology, then the plan that explains it: a smart Nolan order, but the reader isn't cued that the apology is strategy.", "fix": "Keep the order; add one narrator line before the flashback." }
+      ],
+      "romance": null,
+      "battle": "No POV, no geography beyond \"a narrow place that looks like a way out\" [4], no moment. The defeat matters (it sets up #92 and the wall-building), but the reader never sees the chase, and Wonsul, the next episode's subject, isn't in it.",
+      "suspense": "The flashback plants \"After they have lost the horses\" [11.8], which pays off in #95 [35] and [38]: the best plant-and-payoff pair in the war arc.",
+      "best": "\"What they want is not the land. It is the paperwork.\" [11.6]",
+      "worst": "[3]–[7]: a battle that is only a map, two quotes and a formation card.",
+      "fixes": [
+        "Dramatize the chase into Seokmun from Wonsul's POV, including Danneung holding his bridle (now a quote in #92 [1]).",
+        "Cut quote [6] and the commander names in [5].",
+        "Add one narrator line before the flashback so the reader suspects the apology is a move."
+      ]
+    },
+    {
+      "n": 92,
+      "title": "Wonsul",
+      "logline": "Yushin disowns his son Wonsul for surviving Stone Gate and asks the king to execute him; Munmu refuses, Yushin won't take him back, and Wonsul vanishes into the hill farms.",
+      "scores": { "followable": 4, "context": 2, "pacing": 3, "flow": 4, "entertainment": 3 },
+      "verdict": "Strong lines for Yushin, but the reader meets Wonsul only after his shame, and the key moment lives in a quote.",
+      "opening": "\"Wonsul, Yushin's second son, is told to die there and does not.\" [0] is a strong hook, but the paragraph then summarizes his whole life (\"spends the rest of his life trying to give the afternoon back\").",
+      "ending": "The farmer's exchange [13]–[14] is lovely. The card [15] swings sharply from a disowned son to the cavern goddesses.",
+      "sudden": [
+        { "block": "0", "what": "Wonsul himself.", "setup": "a name in a list in #3 [11]; absent from #91.", "fix": "Put him on the page at Stone Gate (#91)." }
+      ],
+      "pacing_notes": [
+        { "blocks": "0–1", "issue": "Narration summarizes the arc [0], then a quote retells it [1], including the best moment (Danneung won't let go of the bridle).", "fix": "Move the bridle beat into #91 as a scene; cut [1]." }
+      ],
+      "flow_notes": [
+        { "blocks": "5", "issue": "A decoder paragraph explaining why Yushin's house must be exemplary.", "fix": "Keep the last clause (\"or it is simply Gaya again\"), which earns its place; trim the rest." },
+        { "blocks": "9", "issue": "As a boy, Munmu said he'd break \"No retreat\" first (#10 [27]–[28]); the callback is missing.", "fix": "Let Munmu answer Yushin with it." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Will Yushin relent before he dies? The book answers no (#93), but never puts the question at the deathbed. Wonsul's debt pays off at Maeso (#95 [24]).",
+      "best": "\"Another man's son may retreat. Mine may not.\" [6]",
+      "worst": "[0]–[1]: the whole arc summarized, then quoted.",
+      "fixes": [
+        "Move Danneung and the bridle into #91 as a scene; cut [1].",
+        "Have Munmu answer [8] with his own boyhood \"Retreat\" (#10 [28]).",
+        "Trim [0] to its first two sentences."
+      ]
+    },
+    {
+      "n": 93,
+      "title": "Kim Yushin†",
+      "logline": "Old Yushin pays a last visit to the cavern goddesses; on his deathbed he answers the king with \"Princess\", tells Kangrim he only ever wanted in, and leaves Munhee unsure whether he died a Silla man; he is buried as a king in all but rank, a traitor is quietly executed, and his widow refuses to see their disowned son.",
+      "scores": { "followable": 3, "context": 4, "pacing": 3, "flow": 3, "entertainment": 4 },
+      "verdict": "The death mostly lands (Kangrim, the 108 draws, \"I wanted in\", Munhee's question), but an obituary says it all a third time and the book's opening promises are too quiet.",
+      "opening": "\"Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern.\" [1] is gentle, and Golhwa's countdown [4]–[5] (\"He's going to say it\") is funny and sad at once.",
+      "ending": "Lady Jiso's refusal [35]–[36] is a strong, cold close. The card [37] is repeated almost word for word in #94 [0].",
+      "sudden": [
+        { "block": "26", "what": "Daeto's treason and execution arrive in one sentence in the middle of the funeral.", "setup": "#76 [15]–[16], #90 [7]–[8], [22] (three plants).", "fix": "Give him a short scene, or move this beat to #94/#95 so it doesn't break the elegy." },
+        { "block": "34", "what": "Lady Jiso, Yushin's widow and Chunchu's daughter, appears for the first time.", "setup": "only \"He married a princess himself, late\" [30].", "fix": "Plant her in #92 (the gate Wonsul turns back from is hers)." }
+      ],
+      "pacing_notes": [
+        { "blocks": "16–17", "issue": "Two quotes at the climax, between \"Princess…\" and Kangrim.", "fix": "Cut [17]; keep [16] or fold its advice into one spoken line." },
+        { "blocks": "28–32", "issue": "The obituary restates \"wanting in\" a third time after [20] and [23]–[24].", "fix": "Cut [30]'s last sentence and [31], or the whole essay; the scene already said it." }
+      ],
+      "flow_notes": [
+        { "blocks": "14–15", "issue": "The payoff of #1 [55]–[57] (\"he will still be able to hear it on the day he dies\") is there (Munmu says his bare name; Yushin answers \"Princess…\"), but too quiet to register 92 episodes later.", "fix": "One narrator clause: nobody has said his name without a title in forty-one years." },
+        { "blocks": "22", "issue": "\"When they come out\": who? The king and Kangrim? Yushin's soul? And \"the last of three children\" leaves out Heumsun, implied as Yushin's brother in #72 [90].", "fix": "Say plainly whether Munhee is speaking to the living man or his ghost; check the sibling count." }
+      ],
+      "romance": "The cavern farewell [1]–[9] is a quiet, earned love scene in the house register: Hyullé's hand finding the water beside his ledge [2], Golhwa asleep mid-complaint [9]. His forty-year love for Sunduk is honoured by \"Princess…\" [15] and Golhwa's jealousy [6].",
+      "battle": null,
+      "suspense": "Payoffs: the 108 draws and Bidam (#46), \"You were never even of Silla\" (#42 [87]–[98]), the burnt skirt (#1), Gumil's granary (#21). Missed: the east star of #1 [47.1]–[47.3] (\"It sits among the stars without being one of them. Just like you.\") is the book's first image of exactly Kangrim's question and is not recalled; the disowned son isn't in the deathbed scene, so forgiveness is never put to Yushin.",
+      "best": "\"…I wanted in. Wanting in is not shameful. Pretending I did not is.\" [20]",
+      "worst": "[25]–[32]: the burial, a stray traitor, and a five-paragraph essay between Munhee's question and Lady Jiso.",
+      "fixes": [
+        "Cut the obituary [28]–[32] to one paragraph at most.",
+        "Make #1's promises audible: one clause at [14]–[15] that nobody has said his bare name in forty-one years, and the east star from #1 [47] over the house that night.",
+        "Move Daeto [26] out of the funeral, and let Yushin ask after Wonsul once on his deathbed."
+      ]
+    },
+    {
+      "n": 94,
+      "title": "The Wanggeom's Guest",
+      "logline": "After the funeral Munmu finds Yushin's hidden spring; the three goddesses lose their composure over him, then speak as the hill (\"Keep a sea in the other hand\"), and Dangun himself appears on the water to give Munmu the title the book is named for: Wanggeom, the king for all.",
+      "scores": { "followable": 3, "context": 2, "pacing": 3, "flow": 2, "entertainment": 3 },
+      "verdict": "The oracle and Dangun are the right beats, but the episode replays #42's meet-cute as if it never happened, swings into explicit comedy right after a funeral, and tells the war's ending in advance.",
+      "opening": "\"After the funeral rites, Munmu rides alone into the hills east of Surabol.\" [0], and the rest of [0] repeats the #93 card almost word for word.",
+      "ending": "The card [28] (\"Kim Punghun said he could wait for a ship. The ship is here\") is a sharp callback to #81.",
+      "sudden": [
+        { "block": "6–9", "what": "The goddesses introduce themselves (\"Hi. I'm Golhwa.\") and Munmu asks who lives here, though they met him with the jar in #42 and [5] says so.", "setup": "#42 [41]–[52].", "fix": "Play it as a reunion: he remembers them, they remember the jar." }
+      ],
+      "pacing_notes": [
+        { "blocks": "4–15", "issue": "Twelve blocks of heat comedy that recycle #42's lines (\"best of both\", \"Gaya in the shoulders. Surabol in the mouth\").", "fix": "Cut to three or four blocks and reach the oracle [17] faster." },
+        { "blocks": "24", "issue": "A quote explaining Pyongyang as Wanggeom's dwelling.", "fix": "Cut it; #88 already told it." }
+      ],
+      "flow_notes": [
+        { "blocks": "#93 [36]→[0]–[15]", "issue": "From Wonsul weeping in the road to \"The stupid thing is I want to sit on you\" [10] with no breath between.", "fix": "Open on Munmu's grief (one beat alone in the water) before the comedy." },
+        { "blocks": "27", "issue": "\"later, when he expels the Tang and takes the title King of Samhan\" spoils #95–#97.", "fix": "Cut the clause." }
+      ],
+      "romance": "Heat comedy rather than romance. It's in character for the goddesses, but it reruns #42; the free-indirect \"Fuck.\" [8] and \"pin her until she goes insane\" [12] clash with the funeral just before; and Munmu never responds as a person. No desire on his side, no exchange, no cost.",
+      "battle": null,
+      "suspense": "Payoffs: Wanggeom (#88 [32]) → [23]; \"You wanted a king for all when you were six\" (#1 [12]). Plant: \"Keep a sea in the other hand\" [19] pays off quietly in #95 [38] (\"It's the sea now\") and in #97's sea burial.",
+      "best": "\"The west will take your name and call it peace. Keep a sea in the other hand.\" [19]",
+      "worst": "[8]–[15]: a replayed meet-cute in the wrong key, right after a funeral.",
+      "fixes": [
+        "Rewrite [6]–[9] as a reunion and cut the comedy to a few blocks.",
+        "Cut the spoiler in [27] and the quote [24].",
+        "Rewrite [0] so it doesn't repeat the #93 card."
+      ]
+    },
+    {
+      "n": 95,
+      "title": "Maeso",
+      "logline": "Xue Rengui returns by sea with Punghun as his pilot; a Silla general lets the Tang unload their horses onto wet sand before striking, the war moves inland to Maeso, Silla cuts the Mohe picket lines and takes thirty thousand horses with Wonsul leading the cut, and Xue withdraws as Munmu realizes it's the sea now.",
+      "scores": { "followable": 3, "context": 3, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "The best war-craft in the Silla–Tang arc (two real plans and a great punchline), but the traitor-pilot who opens it never appears, and Wonsul's redemption is summarized and then quoted.",
+      "opening": "\"Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun.\" [1] hooks by paying off #81's plant.",
+      "ending": "\"Heads?\" / \"Horses, Majesty.\" [33]–[34], then \"After they have lost the horses.\" [35]: the best payoff chain in the arc. Two quotes [36]–[37] then step on it; the card [39] is fine.",
+      "sudden": [
+        { "block": "7", "what": "Munhun, a new general, gets the episode's best scene.", "setup": "none.", "fix": "Fine; he earns it on the page." },
+        { "block": "20", "what": "The \"Silla commander\" at Maeso is unnamed, and the Tang commander, Li Jinxing, exists only in quotes [36]–[37].", "setup": "none.", "fix": "Name one commander on the page, or keep both unnamed and cut the quotes." }
+      ],
+      "pacing_notes": [
+        { "blocks": "24–25", "issue": "Wonsul's redemption is narrated [24], then quoted [25].", "fix": "Play two lines of it (the king offers rank; Wonsul refuses) and cut [25]." },
+        { "blocks": "36–37", "issue": "Two quotes after the punchline, the second claiming Tang won three battles.", "fix": "Cut both, or turn [37] into one narrator wink (the Tang version forgets the horses)." }
+      ],
+      "flow_notes": [
+        { "blocks": "1→13", "issue": "Punghun is the stated hook and never appears: no line, no face, no fate.", "fix": "Put him on Xue's deck for one exchange; that's the payoff #81 [18] promised." }
+      ],
+      "romance": null,
+      "battle": "Two small battles with clear plans: Munhun waits until the horses are on wet sand [7]–[14]; Silla ignores the walls and cuts the picket lines [20]–[22]. Reversal and cost are clear (\"For a farmer, losing horses… is like losing the field\" [28]). Missing: a POV inside either fight that the reader cares about; Wonsul's horse-cut is narrated after the fact [24].",
+      "suspense": "Payoffs: \"After they have lost the horses\" (#91 [11.8]); Punghun (#81 [18]), as a name only; Wonsul (#92). Xue's personal want (his unburied ancestors, #31) is never touched.",
+      "best": "\"Thirty thousand, three hundred and eighty, Majesty.\" / \"…Heads?\" / \"Horses, Majesty.\" [32]–[34]",
+      "worst": "[24]–[25]: Wonsul's redemption, the payoff of #92, told twice and never shown.",
+      "fixes": [
+        "Give Punghun a scene with Xue, and a fate.",
+        "Show Wonsul at the picket lines in two lines and cut quote [25].",
+        "Cut [36]–[37], or turn [37] into a one-line wink."
+      ]
+    },
+    {
+      "n": 96,
+      "title": "Final Ford",
+      "logline": "The Tang headquarters leaves Pyongyang; at the mouth of the Geum a low-ranked captain, Sideuk, loses twice to Xue's fleet, lures the big ships onto the mudflats on the third try and wins twenty-two fights, and the Tang sail west without a treaty while Munmu asks whether they've won.",
+      "scores": { "followable": 3, "context": 3, "pacing": 2, "flow": 3, "entertainment": 2 },
+      "verdict": "The war's last battle is a sketch, with an unknown captain, an absent antagonist and a messenger; it needs a scene.",
+      "opening": "\"In the second month, the emperor's headquarters quietly leaves Pyongyang.\" [0] has a nice wry rhythm (\"Then nobody mentions it\"), but it's summary.",
+      "ending": "\"Have we… won…?\" [17] is a deliberate anticlimax that reads as the book running out of breath. The card [18] is lovely and pulls into #97.",
+      "sudden": [
+        { "block": "4", "what": "Sideuk is introduced to win the war.", "setup": "none.", "fix": "Plant him in #95 (a junior captain at Cheon Fortress), or give the battle to someone the reader knows (Munhun, Wonsul)." }
+      ],
+      "pacing_notes": [
+        { "blocks": "10–16", "issue": "\"What follows is twenty-two fights\" [10], a FORMATION card [11], a MAP [15] and a quote [16] all report the same result.", "fix": "Play the third sortie for five or six blocks; cut [11] and [16]." }
+      ],
+      "flow_notes": [
+        { "blocks": "3", "issue": "Seongchung is recalled, but not the stronger bookend: the Tang landed at this same ford in 660 (#72 [18]–[20]).", "fix": "One line: sixteen years ago they came in through this water." },
+        { "blocks": "13–14", "issue": "The messenger-to-Munmu beat repeats #95 [31]–[34].", "fix": "Put Munmu on the shore, or cut to Xue instead." }
+      ],
+      "romance": null,
+      "battle": "The plan (draw big ships onto the mudflats [9]) and the reversal (the third sortie [10]) are clear, but there is no POV inside the fight, no face on the enemy, no cost, and the climax is a number. Xue Rengui, the arc's antagonist since #79, never appears at his own defeat.",
+      "suspense": "Will the war end? It ends offstage. Plants that should fire here and don't: Xue's exit, Punghun aboard his ships, the 660 landing at this ford.",
+      "best": "\"Their ships are big. A big ship can't turn on the mudflats. Draw them in.\" [9]",
+      "worst": "[10]–[16]: the end of a sixteen-year war told as a count and a messenger.",
+      "fixes": [
+        "Dramatize the third sortie from Sideuk's deck, then cut to Xue watching his ships ground; give him a last line and an exit.",
+        "Bookend the 660 landing (#72) in one line at [3].",
+        "Cut [11] and [16]."
+      ]
+    },
+    {
+      "n": 97,
+      "title": "The King for All",
+      "logline": "On the morning he becomes king of all Samhan, Munmu tells his mother he kept the childhood sentence, and Munhee straightens his collar as she once dressed for a coronation at the book's start; five years later he is burned and laid under a rock in the sea, and eleven years after that Kim Yushin's name saves Muyeol's temple name from a Tang complaint.",
+      "scores": { "followable": 4, "context": 4, "pacing": 2, "flow": 3, "entertainment": 3 },
+      "verdict": "The collar bookend is lovely, but the title episode never shows what a king for all does, skips the coronation, and gives the title character a two-line death.",
+      "opening": "\"Bupmin, King Munmu now, stands where a six-year-old once stole a sentence.\" [0] calls back #1 well, and \"the childhood dream has had the bad manners to come true\" is the narrator at his best.",
+      "ending": "The Taejong anecdote [18]–[22] is witty, but \"somebody there remembers a story about him\" [22] is vague. The card [23] (\"But we left someone in the snow\") is a strong turn into #98.",
+      "sudden": [
+        { "block": "18", "what": "Taejong, Muyeol's temple name.", "setup": "thin: #75 [26] (\"His temple name borrows the Second Emperor's two characters\"), never named.", "fix": "Fine; make [22] specific about which story the court remembers." },
+        { "block": "9", "what": "\"A name nobody else was allowed to say\" is cryptic until [18].", "setup": "in-episode.", "fix": "Acceptable plant; consider naming it so it doesn't read as a riddle." }
+      ],
+      "pacing_notes": [
+        { "blocks": "13–16", "issue": "The title character's death is a narration line, a quote and a fact about the tomb.", "fix": "Give it a scene (see fixes)." },
+        { "blocks": "9", "issue": "A list of everything Munhee witnessed, told rather than evoked.", "fix": "Keep one item and let her say it." }
+      ],
+      "flow_notes": [
+        { "blocks": "7→13", "issue": "From the eve of becoming king of all Samhan straight to his death five years later; the moment the book is named for never happens on the page.", "fix": "Put one scene between them: the first act of the king for all." },
+        { "blocks": "18–22", "issue": "The scene is set at Muyeol's tablet in the ancestral temple, where #87 [23] laid up the Mount Gain covenant, and the loaded gun isn't fired.", "fix": "Let the oath hang beside the tablet." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Payoffs: #1's opening (Munhee dressing; \"a thousand years\" [10]–[12]) and #94's \"Keep a sea\" (the sea tomb). Never fire: six-year-old Bupmin's sentence (\"the ones with no bone. Those most\" #1 [12]) and his question to Yushin (\"every kingdom, or every person who bleeds for one?\" #52 [15]) get no act in answer; the three-way King for All race (#28–#29: Chunchu, Euija, Yeon) and the eastern star are not recalled; Kangrim, who has asked his question at every major death, is absent at Munmu's.",
+      "best": "\"Mother. Today I become king of all Samhan.\" / \"Then all the more reason to hold still.\" [7]–[8]",
+      "worst": "[13]–[16]: the king for all dies in a sentence and a quote.",
+      "fixes": [
+        "Add one scene that answers #1 [12] and #52 [15]: the first act of the king for all, counting or listening to the people with no bone. His testamentary edict in the Samguk Sagi (weapons cast into farm tools, taxes lightened) is a ready record.",
+        "Give Munmu's death Kangrim's ritual (his name three times, then a question such as a king of Silla, or a king for all?) and let him answer by choosing the sea.",
+        "Close the race from #29 in a few lines (Euija's \"a king, or a slave\", Yeon's vow, the eastern star), and make [22] name the story the Tang court remembers."
+      ]
+    },
+    {
+      "n": 98,
+      "title": "Balhae",
+      "logline": "The winter Pyongyang falls, Yeon's adopted Mohe son Gulgul walks north through the snow with his boy Dae Joyoung and a gold branch broken from the Goguryeo crown; in a cave he tells the boy how Yeon took him in and taught him that Goguryeo never dies, and the boy says it back. Thirty years later he founds Balhae.",
+      "scores": { "followable": 4, "context": 4, "pacing": 3, "flow": 4, "entertainment": 4 },
+      "verdict": "A moving father-son scene that pays off a plant from #7; the last page deflates it with a flash-forward, two quotes and a textbook era label.",
+      "opening": "\"The winter after Pyongyang falls, the mountains of Manchuria do not care who won.\" [0] is a strong hook in the narrator's voice.",
+      "ending": "\"Goguryeo never dies…!\" [30] and \"The last coal goes out. Cut to black.\" [31] are the real ending. Then [33]–[37] add a flash-forward, a capital description, two quotes and \"The Three Kingdoms Era is over. The Northern and Southern States Era begins…!\" [37], so the book ends on a textbook label.",
+      "sudden": [
+        { "block": "0", "what": "Gulgul returns after appearing only in #7 and #15.", "setup": "#7 [15]–[37], #15 [7].", "fix": "The flashback reintroduces him well; still, plant him once in #84 or #86." }
+      ],
+      "pacing_notes": [
+        { "blocks": "22.0–22.4", "issue": "The flashback replays #7's doorway scene nearly verbatim.", "fix": "Compress [22.0]–[22.4] to two lines and keep the new wall scene [22.5]–[22.8]." },
+        { "blocks": "33–38", "issue": "Four kinds of coda (flash-forward, description, two quotes, era label) after \"Cut to black\".", "fix": "End on [31], or on a two-line narrator coda built from [33]; cut [35]–[37]." }
+      ],
+      "flow_notes": [
+        { "blocks": "header/[1]/[0]", "issue": "The header says 698, the MAP says 720, and the scene is 668.", "fix": "Match the header and MAP to the scene, or explain the jump in [33]." }
+      ],
+      "romance": null,
+      "battle": null,
+      "suspense": "Payoffs: Gulgul's doorway (#7), Yeon's \"Goguryeo never dies\" (#7 [35], #86 [9], [22]), \"By the Holy King's bow\" (#78 [3]). Missing: the narrator's last word. The implied sky lord who opened the book never gets a closing glance, and Balhae's survival is never set against Munmu's \"king for all\", though it quietly contradicts it: the north was never his.",
+      "best": "\"I took it. Nobody else was going to.\" [15]",
+      "worst": "[33]–[38]: the book's last page is a quote and an era label.",
+      "fixes": [
+        "End on [31], or on a short narrator coda that ties Balhae to the title (two kingdoms under one sky, each claiming it); cut [35]–[37].",
+        "Compress the replayed flashback [22.0]–[22.4].",
+        "Plant Gulgul in the endgame (Yeon's deathbed in #84 or the burning palace in #86)."
+      ]
+    }
+  ],
+  "arc": {
+    "throughline": "Three spines run in sequence: Goguryeo's fall (Yeon's last river, his death, his sons' war, #78–#86), Baekje's last stand (#80–#83), and Munmu's war against his Tang ally (#87–#97), with Balhae as the coda. Munmu is the nominal hero, but the vivid POVs are Yeon, Yushin and Xue; Munmu mostly receives letters and messengers. A reader keeps going through #79–#87 for the deaths, the bell and the horse, loses momentum in the record-heavy run #89–#91, and reaches a quiet, unclimactic finish (#96–#97) rescued by #98's cave. Overall the ending reads more like a summary than a climax: the deaths land (Yeon's wryly, Yushin's mostly), but the war the title depends on is won offstage, and the title episode never shows the king for all being one.",
+    "handoffs": [
+      { "from": 77, "to": 78, "works": "yes", "why": "#77's card (\"the emperor turns north, to walls that have never fallen\") lands on #78's Pyongyang ridge.", "fix": "Keep; make #78 deliver an actual scene at those walls." },
+      { "from": 78, "to": 79, "works": "yes", "why": "The thirteen-sons card is answered exactly by #79's count.", "fix": "Plant the White Tiger in #78's body, not only the card." },
+      { "from": 79, "to": 80, "works": "partly", "why": "The card asks \"whose side are we on now?\"; #80 is records and nobody asks.", "fix": "Open #80 on that question in Yuri Dora's hall." },
+      { "from": 80, "to": 81, "works": "partly", "why": "\"Nobody told the fortresses\" carries over, but #81 [1] repeats the card verbatim.", "fix": "Rewrite one of the two lines." },
+      { "from": 81, "to": 82, "works": "yes", "why": "The card announces the flashback and its triangle (monk, general, army).", "fix": "Mark inside #82 where the flashback ends." },
+      { "from": 82, "to": 83, "works": "yes", "why": "\"Four banners. One river mouth.\" is delivered.", "fix": "Cut #83's own trailer line [2], which repeats the card." },
+      { "from": 83, "to": 84, "works": "yes", "why": "The reaper-ledger card is paid by Yumla.", "fix": "None." },
+      { "from": 84, "to": 85, "works": "partly", "why": "The card asks how long the brothers' peace lasts, but the obituary [28] has already answered it, and #85 [0] spoils the defection again.", "fix": "Cut the spoiler in #84 [28] and \"he has a guide\" in #85 [0]." },
+      { "from": 85, "to": 86, "works": "yes", "why": "\"Now he rides it home\" leads into the siege.", "fix": "Give Namseng's homecoming a real scene in #86." },
+      { "from": 86, "to": 87, "works": "no", "why": "The card promises the final war; #87 rewinds three years to 665 with no marker, so Yushin's promotion comes before his seventieth year.", "fix": "Move #87 after #83, or open it with an explicit rewind." },
+      { "from": 87, "to": 88, "works": "partly", "why": "The myth jump is announced, but nothing in #87 motivates a trip to Dangun.", "fix": "End #87 on a question the myth answers (what is a king, if not the emperor's vassal?)." },
+      { "from": 88, "to": 89, "works": "yes", "why": "\"Eight hundred years later, the empire comes back to the same river\" is mirrored by #89 [1].", "fix": "None." },
+      { "from": 89, "to": 90, "works": "partly", "why": "\"Munmu has been waiting twenty years to answer it\" muddles who writes first.", "fix": "Rephrase the card." },
+      { "from": 90, "to": 91, "works": "yes", "why": "\"That is exactly when armies start to chase\" sets up Stone Gate.", "fix": "None." },
+      { "from": 91, "to": 92, "works": "yes", "why": "\"His father is Kim Yushin\" is a strong hook, though Wonsul was never shown at Stone Gate.", "fix": "Put Wonsul in #91." },
+      { "from": 92, "to": 93, "works": "yes", "why": "The card turns to the cavern and #93 opens there; a tonal swing, but signposted.", "fix": "None." },
+      { "from": 93, "to": 94, "works": "partly", "why": "The card is repeated nearly verbatim in #94 [0], and #94 then treats the goddesses as strangers despite #42.", "fix": "Rewrite #94 [0]; play the cavern as a reunion." },
+      { "from": 94, "to": 95, "works": "yes", "why": "The Punghun card is paid in #95 [1], though only as a name.", "fix": "Put Punghun on the page." },
+      { "from": 95, "to": 96, "works": "yes", "why": "\"One last river mouth. One middling captain. Three tries\" is delivered exactly.", "fix": "None for the seam; #96 itself needs a scene." },
+      { "from": 96, "to": 97, "works": "yes", "why": "\"His mother would like him to hold still\" lands on the collar scene.", "fix": "None." },
+      { "from": 97, "to": 98, "works": "yes", "why": "\"But we left someone in the snow\" is a strong, clearly signposted rewind to 668.", "fix": "None." },
+      { "from": 98, "to": null, "works": "partly", "why": "The last page. The true ending is [31] (\"Cut to black\"); the flash-forward, two quotes and era label [33]–[38] end the book like a textbook.", "fix": "End on [31], or on a short narrator coda that ties Balhae back to the king for all." }
+    ],
+    "dropped_threads": [
+      "Kim Punghun: planted in #81 [17]–[18] (\"I can wait for a ship\"), named as Xue's pilot in #95 [1], never on the page and given no fate.",
+      "Xue Rengui: his personal want (burying his ancestors, #31 [51]–[67]) never resolves, and he is absent at his own final defeat (#96); his last line is #95 [28].",
+      "Inmun: Munmu's hostage brother in Chang'an (#1, #48, #90 [3], [8], [21] \"Tell him I said his name\") never appears.",
+      "Buyeo Yung vanishes after Mount Gain (#87); the covenant's curse and the copy laid up in Silla's ancestral temple (#87 [23]) never fire, even in #97's temple scene.",
+      "The three-way King for All race (#28 card; #29 [5], [13], [23]: Chunchu, Euija, Yeon) and the eastern star (#1 [47.1]–[47.3], #29 [5]–[7]) are never recalled at Yeon's death (#84), Yushin's (#93) or Munmu's triumph (#97).",
+      "Six-year-old Bupmin's sentence (#1 [12]) and his question to Yushin (#52 [15]) are never answered by an act in #97.",
+      "Kangrim's death ritual (Gotaso, Bidam, Jinduk, Seongchung, Euija, Chunchu, Yushin) is absent at Munmu's death (#97 [14]–[16]).",
+      "Yuri Dora, Tamla's storyteller-king (#56 [61], #57–#63, #70 \"Do not forget people\"), surrenders only inside a quote (#80 [4]).",
+      "Gulgul is absent from #15 to #98, including Yeon's deathbed (#84) and the fall of the palace (#86), where #98 [2] says he took the crown shard.",
+      "Pung flees north to Goguryeo (#83 [55]–[60]) and isn't mentioned when Goguryeo falls (#86).",
+      "Namsan gets his first card in #86 [6] and does nothing; the Namseng–Namgun flogging (#34 [46]–[54]) isn't used at the shut gate (#85 [13]–[17]); the brothers never meet after the fall.",
+      "Yeon's vision of \"a young man, centuries off, saying Goryeo\" (#84 [13]) and Namgun's \"Somebody, centuries from now, will be listening\" (#86 [21]) never fire.",
+      "Daeto: planted three times (#76 [15]–[16], #90 [7]–[8], [22]) and paid off in one sentence at a funeral (#93 [26]).",
+      "Heukchi Sangji's defection (#83 [66]) happens offstage after a strong setup (#77, #82 [18]–[19]).",
+      "Munmu's boyhood \"Retreat\" (#10 [27]–[28]) is never called back when he spares Wonsul (#92 [9]).",
+      "The Tang landing at Final Ford in 660 (#72 [18]–[20]) isn't bookended by the Tang leaving from the same ford (#96).",
+      "The narrator's frame: the implied sky lord (#88 [1] card) gets no closing glance on the last page."
+    ],
+    "repetition": [
+      "The Third Emperor's speech (\"I have already destroyed Baekje…\") appears verbatim in #76 [29] and #85 [2].",
+      "\"Baekje is supposed to be finished. Nobody told the fortresses\": #80 [5] card and #81 [1].",
+      "\"Yushin never showed him the path\": #93 [37] card and #94 [0].",
+      "The cavern meet-cute with Bupmin: #42 [47]–[50] and #94 [4]–[15] reuse the same lines (\"best of both\", \"Gaya in the shoulders. Surabol in the mouth\", \"I'll be quiet\").",
+      "Gulgul's doorway: #7 [15]–[35] replayed nearly verbatim in #98 [22.0]–[22.4].",
+      "The emperor's promise (\"everything south of Pyongyang, and the whole of Baekje\"): #48, #87 [3], #90 [14] and quote #90 [15].",
+      "One event narrated, played and quoted: #78 [5]–[8] and [12]–[14]; #81 [12]–[13]; #84's last words four times ([3], [6], [27], [29]); #86 [14], [16], [17]; #92 [0]–[1]; #95 [24]–[25]; #96 [10], [11], [16]; #90's letter vs quotes ([14]/[15], [16]/[17]).",
+      "\"Wanting in\" three times in #93: [20], [23]–[24], [30]–[31].",
+      "A messenger brings the war's result to Munmu: #95 [31]–[34] and #96 [13]–[14].",
+      "Boksin's head in a jar: #82 [16]–[20] and #83 [6].",
+      "\"Thirteen\": #78 [23] card, all of #79, and again as #83's opening [0].",
+      "\"A door opened from the inside\": #77 [42.0], #86 [16], #88 [55], #93 [26]. An effective refrain, but #86 and #93 explain it."
+    ],
+    "top_problems": [
+      "The climaxes are told, not shown. Stone Gate (#91), the fall of Pyongyang (#86 [26]–[27]), Wonsul's redemption (#95 [24]–[25]) and Final Ford (#96 [10]–[16]) arrive as summaries, quotes, formation cards and messengers, and the war ends on \"Have we… won…?\" with its antagonist offstage. Record pile-ups (#80 75%, #91 47%, #89 43%, #78 42%) and narrated-played-quoted triple tellings stall the endgame.",
+      "#97 doesn't pay off the title. It skips the coronation, never shows the king for all acting on the six-year-old's sentence (#1 [12], #52 [15]), forgets the three-way race (#29), and gives Munmu a two-line death without Kangrim.",
+      "Planted threads vanish at the finish: Punghun (a name only), Xue (no exit, ancestors unburied), Inmun, Yung and the temple covenant, Yuri Dora, Pung, and Gulgul until the last episode.",
+      "Chronology and continuity breaks: the unmarked rewind from #86 (668) to #87 (665); #94 treating the goddesses as strangers despite #42; #86 [39] crediting Yushin with opening a city Shinsung opened; #79's reaper scene told out of order; #82's flashback running past #81.",
+      "Tone and spoilers: #94's explicit comedy right after Yushin's funeral; obituaries that decode the scene and spoil the next episode (#84 [28], #94 [27]); and a last page that ends on a textbook era label after the real ending (\"Cut to black\", #98 [31])."
+    ]
+  }
+}

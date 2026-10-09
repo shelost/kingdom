@@ -1,0 +1,2939 @@
+
+######## #1 Queen Sunduk (632)
+[0] ¶ A Queen? Ridiculous.
+[1] <map> 
+[2] <place> Everyone here knows exactly how high they were born.
+[3] <scene> Coronation Morning
+[4] ¶ Somebody says it in the corridor, not quite quietly enough. Behind the screen, Princess Dukman is being dressed for a crown. She is thirty-seven, and by noon she will be Queen Sunduk. The maid with th
+[5] ¶ The old king is dead, and in Silla only Sacred Bone may wear the crown. The Sacred Bone men have run out. What is left is women: Dukman, her older sister, and a cousin named Seungman who is very glad 
+[6] <term> Bone, as in the bone you were born with. Sacred Bone may wear the crown. True Bo
+[7] ¶ Which of the three it will be is settled the night before, in a pavilion off the pond, by six men and a brazier. By morning the palace has a name, and the name has to be dressed.
+[8] sunduk{silla}:
+   0| Ridiculous. Yes.
+    | 웃기지. 그렇지.
+   1| Name me the man, my lord. The Sacred Bone one. I’ll wait.
+    | 그럼 그 사내 이름을 대 보게. 성골 사내 말일세. 기다리겠네.
+[9] ¶ The corridor suddenly remembers it has somewhere else to be.
+[10] sunduk{silla}:
+   0| Tie it tight. If I’m going to be ridiculous, I won’t be late as well.
+    | 단단히 매거라. 우스운 건 그렇다 쳐도, 늦기까지 할 순 없지.
+[11] ¶ One man stays at the door, where a guard would stand if the guard were the most famous swordsman in Silla. Kim Yushin is thirty-seven. He runs the Hwarang yard: horse, bow, gyuku, the place boys learn
+[12] <card> 
+[13] sunduk{silla}:
+   0| You heard him.
+    | 자네도 들었지.
+   1| I put on this confident face, but honestly — me, a king…
+    | 난 이렇게 당당한 척은 하지만, 솔직히… 내가 왕이라니.
+   2| I’ll do it no matter what. I just don’t know if I can.
+    | 무슨 일이 있어도 할 걸세. 다만 해낼 수 있을지를 모르겠어.
+[14] yushin{silla}:
+   0| Whether you do it well or badly —
+    | 잘하든, 못하든,
+   1| that is what “no matter what” means.
+    | 그게 “무조건”이라는 거니까요.
+   2| In all this world, wouldn’t it be good to have one person always on your side, Princess?
+    | 이 세상에서, 항상 공주님 편인 한 명이라도 있으면 좋지 않겠습니까?
+   3| Hwarang Kim Yushin.
+    | 화랑 김유신.
+   4| I will serve you to the end.
+    | 끝까지 섬기겠습니다.
+[15] ¶ She laughs. Nobody else will hear her do that today. Then the bells start.
+[16] <scene> The Palace Road
+[17] ¶ Across the palace, Yushin’s little sister is late. Munhee is getting her hair done at the gate, because her husband has already saddled the horses.
+[18] <card> 
+[19] munhee{silla}:
+   0| Totally unfit for a Noble woman… Come on, boy, can’t you find something better?
+    | 귀족 여인에게 영 어울리지 않는구나… 얘야, 더 나은 걸 못 찾겠니?
+[20] ¶ Her husband Chunchu is twenty-nine, and already the most cunning man in Samhan. Only the quiet rooms know it yet.
+[21] <card> 
+[22] ¶ Gotaso sits in front of him on the same horse. Bupmin, six, has his own, and will not share the saddle.
+[23] <card> 
+[24] gotaso{silla}:
+   0| Faster.
+    | 빨리.
+   1| Father. Faster.
+    | 아버지. 빨리.
+[25] chunchu{silla}:
+   0| You'll bite your tongue.
+    | 혀 깨문다.
+   1| Then you'll talk less, which — wait, that's the joke? Fine. Hold on.
+    | 그러면 말이 줄지 — 잠깐, 그게 농담이냐? 그래. 잡아.
+[26] munmu{silla}(prince):
+   0| I'm not racing.
+    | 나 경주 아니야.
+   1| I'm following. That's different.
+    | 따라가는 거야. 그건 달라.
+[27] chunchu{silla}:
+   0| That's a lawyer's horse, son.
+    | 그건 변호사의 말이다, 얘야.
+   1| Look at you. I'm going to tell your mother you invented a new kind of slow.
+    | 봐봐. 어머니한테 네가 느린 걸 새로 발명했다고 이를 거야.
+[28] ¶ The road climbs past the hill where adults invent countries. Bupmin reins in and looks down at the city, where the slaves are already sweeping the coronation road.
+[29] <card> 
+[30] munmu{silla}(prince):
+   0| When I’m king everyone has to listen to me.
+    | 나 임금 되면 다들 내 말 들어야 돼.
+   1| Even the bone people.
+    | 뼈 있는 사람들도.
+   2| …And the ones with no bone. Those most, there’s more of them.
+    | …뼈 없는 사람들도. 그 사람들이 더 많으니까 더 들어야 돼.
+[31] munhee{silla}:
+   0| Listen to him.
+    | 저 아이 말 좀 들어 봐요.
+   1| He gets the sentences from you. The volume is his own.
+    | 문장은 당신한테서 가져가는데, 목청은 지 거예요.
+[32] chunchu{silla}:
+   0| …Keep that.
+    | …그건 간직해라.
+   1| I may need to borrow it back when I am braver.
+    | 내가 더 용감해지면 다시 빌릴지도 모르니.
+[33] ¶ Chunchu looks up the hill. He made a country up there once, with Yushin, when he was nine and the stars were still negotiable. Neither of them tells it the same way twice.
+[34] FLASHBACK  612
+[34.0] ¶ Two boys on a hill above Surabol, lying on their backs, arguing about the sky.
+[34.1] chunchu{silla}:
+   0| Brother. That star, in the east.
+    | 형님. 저 동쪽 별.
+   1| That one’s the brightest, isn’t it?
+    | 저게 제일 밝지요?
+[34.2] yushin{silla}:
+   0| That is a planet, not a star, you idiot.
+    | 그건 별이 아니라 행성이다, 이 녀석아.
+[34.3] chunchu{silla}:
+   0| Even better. It sits among the stars without being one of them.
+    | 그럼 더 좋지요. 별들 사이에 섞여 있으면서 별이 아니잖습니까.
+   1| Just like you.
+    | 형님이랑 똑같네.
+[34.4] yushin{silla}:
+   0| ……
+    | ……
+[34.5] chunchu{silla}:
+   0| Brother. Let us make Samhan one country.
+    | 형님. 우리가 삼한을 하나로 만듭시다.
+   1| No Goguryeo, no Baekje, no Silla. Just… people.
+    | 고려도, 백제도, 신라도 없이. 그냥… 사람들만.
+   2| And over them, one king for all of them.
+    | 그리고 그 위에, 모두를 위한 임금 하나.
+[34.6] yushin{silla}:
+   0| “A king for all.”
+    | «모두를 위한 임금.»
+   1| …You be that. I will stand beside you.
+    | …자네가 하게. 나는 자네 옆에 서지.
+[34.7] chunchu{silla}:
+   0| That is a promise, then.
+    | 약속입니다.
+[35] ¶ Then the bells change, and the whole family is late for a coronation.
+[36] <scene> The Throne Hall
+[37] ¶ In the hall the sleeves are the census. Purple at the front for True Bone, then scarlet, blue and yellow, down to the doors. You can read a man before he speaks.
+[38] ¶ Past the yellow there is no colour at all. The men holding the canopy poles wear undyed hemp. Nobody counts them.
+[39] yushin{silla}:
+   0| Slaves, Princess. They aren’t in the count.
+    | 노비입니다, 공주님. 셈에 들지 않습니다.
+[40] sunduk{silla}:
+   0| …A country that does not count people as people. How is that meant to last a thousand years?
+    | …사람을 사람 수에 넣지 않는 나라가, 어떻게 천 년을 가겠는가.
+[41] ¶ Then she walks the length of the hall alone. Two hundred sleeves bow, some of them late.
+[42] ¶ The crown is carried by the oldest man on the Council. She knows the voice. This morning it said “ridiculous” in her corridor.
+[43] sunduk{silla}:
+   0| Still ridiculous, my lord?
+    | 아직도 우스운가, 공?
+[44] suljong{silla}:
+   0| …Entirely, Majesty.
+    | ……전적으로 그렇습니다, 폐하.
+   1| Hold still. It’s heavier than it looks.
+    | 가만히 계십시오. 보기보다 무겁습니다.
+[45] sunduk{silla}:
+   0| So am I.
+    | 나도 그렇다네.
+[46] ¶ He sets it on her head. It fits. Nobody mentions it.
+[47] ¶ And so she becomes the first Queen of Silla. They will call her Queen Sunduk, the Blue Moon of the Divine Country.
+[48] <card> 
+[49] <quote> Deokman was generous and humane by nature, clear-sighted and quick.
+[50] <quote> The sacred-bone males were exhausted, and therefore a queen was set up.
+[51] <scene> The Yard
+[52] ¶ The capital’s daughters follow the Sword of Silla around the yard. He does not look at them. He looks only at the Queen.
+[53] courtmaid{baekje}:
+   0| The marshal walked past.
+    | 장군님이 지나가셨어요.
+   1| I know. Don’t look.
+    | 알아요. 보지 마요.
+   2| …I’m looking.
+    | …보고 있잖아요.
+[54] courtmaid{baekje}:
+   0| The most popular man in Silla, and he will not even turn his head.
+    | 신라에서 제일 인기 있는 남자인데, 고개도 안 돌리네요.
+   1| If he smiled once the colonnade would fall over.
+    | 한 번만 웃으면 회랑이 쓰러질 거예요.
+[55] ¶ Then the yard-coat is open down the spine, and she sees the width of his back — muscle the court is not supposed to want — and the Queen’s face goes vermilion before she can pretend it is the sun.
+[56] ¶ The Queen has forgotten to look away.
+[57] yushin{silla}:
+   0| Are you feeling alright, your majesty?
+    | 옥체 편안하십니까, 폐하?
+[58] sunduk{silla}:
+   0| Hm? (startled)
+    | 음? (흠칫)
+[59] yushin{silla}:
+   0| Look at me.
+    | 저를 보십시오.
+   1| Not the door. (smiles)
+    | 문 말고요. (미소)
+[60] ¶ For a moment neither of them says anything. Then she straightens, and she is the Queen again.
+[61] yushin{silla}:
+   0| …Once.
+    | …한 번만.
+[62] sunduk{silla}:
+   0| Once what.
+    | 무엇을.
+[63] yushin{silla}:
+   0| Call me by name, not by title. / Today, since it is the last day for it.
+    | «폐하»가 아니라 이름으로. / 오늘이 마지막일 테니.
+[64] sunduk{silla}:
+   0| …Yushin-ah.
+    | …유신아.
+[65] ¶ Nobody in the yard hears it. She will not say it again until a night of small rain, years from now. He will still hear it on the day he dies.
+[66] sunduk{silla}:
+   0| Lord Yushin.
+    | 유신 공.
+   1| My sister married for love and got a son out of it.
+    | 언니는 사랑해서 혼인했고, 아들을 얻었지.
+   2| I got a council that sat until dawn.
+    | 나는 새벽까지 앉아 있는 회의를 얻었고.
+[67] yushin{silla}:
+   0| …Your Majesty.
+    | …폐하.
+[68] sunduk{silla}:
+   0| So from now on — «Your Majesty». Nothing else.
+    | 그러니 앞으로는 «폐하». 그것뿐일세.
+   1| …That is what I have.
+    | …내가 가진 게 그것뿐이라서.
+[69] <scene> The Pledge
+[70] ¶ Then the young knights kneel and pledge themselves to the throne. In front kneels the yard’s Second Blade, a cool young man who has never once waited his turn. You’ll meet him properly last night.
+[71] hwarang{silla}:
+   0| By Hyukgosé’s light, we, the young Hwarang knights of Silla, pledge eternal allegiance to the Queen!
+    | 혁거세 성조의 빛에 걸고, 신라의 젊은 화랑들은 여왕 폐하께 영원한 충성을 맹세합니다!
+[72] ¶ At the end of the ceremony, everyone chants for their new queen.
+[73] ¶ May the heavenly White Horse bless this queen… Long live the Queen! Long live the Hwarang spirit! Long live Silla!
+[74] <scene> The Envoys
+[75] ¶ Silla sends envoys to tell the neighbours. The neighbours have opinions.
+[76] <card> 
+[77] kingmu{baekje}:
+   0| So that old brat Jinpyung is finally dead… Bah! Good riddance. And they have seated a daughter, eh…?
+    | 그 진평이 늙은이가 드디어 죽었다고… 흥! 잘됐군. 그런데 딸을 앉혔다고, 어…?
+[78] ¶ In Pyongyang a tired king laughs into his wine and bets on how long her council lasts. Across the eastern sea, a king with an empress for an aunt calls it a trend.
+[79] <card> 
+[80] <quote> “The bearing of a dragon and a phoenix, the face of heaven’s sun. Before he is t
+[81] taizong{tang}:
+   0| A woman king… those Samhan barbarians are at it again, aren’t they?
+    | 여자 임금이라… 동이 오랑캐들이 또 시작이로구나.
+   1| Send her flowers. Something that suits her.
+    | 꽃이나 보내 주어라. 그 여인에게 어울리는 것으로.
+[82] <scene> The Peonies
+[83] ¶ He sends her a gift: a painting of peonies in three colours, and a packet of their seeds.
+[84] sunduk{silla}:
+   0| …There are no butterflies on these flowers.
+    | …이 꽃에는 나비가 없구나.
+[85] chunchu{silla}:
+   0| Lovely work. Tang brushwork, three colours of— Majesty?
+    | 훌륭한 솜씨입니다. 당나라 붓놀림에, 세 가지 빛깔의— 폐하?
+[86] sunduk{silla}:
+   0| It means no scent.
+    | 향이 없다는 뜻이다.
+   1| …And the Second Emperor would like me to know he has noticed I have no husband.
+    | …그리고 황제께서는, 내게 지아비가 없는 걸 알아채셨다고 내가 알아주기를 바라시는 게지.
+[87] chunchu{silla}:
+   0| …I’d have hung it in the hall.
+    | ……저라면 대전에 걸어 놓았을 겁니다.
+   1| Somebody remind me never to play go with Her Majesty.
+    | 폐하와는 바둑을 두지 말라고, 누가 좀 일러 주십시오.
+[88] ¶ She has the seeds planted anyway. When they bloom, they have no scent. The court decides she is a sage. She knows she simply reads people.
+[89] ¶ Sun, for kindness.
+[90] ¶ Duk, for virtue.
+[91] <hanja> 
+[92] ¶ Six men who hate the word “woman” crowned one anyway. One of them carried the crown. How? Go back one night, to a brazier…!
+  @sunduk-seq-palace-wide: getting her hair done
+  @sunduk-seq-munhee-hair: Totally unfit for a Noble woman
+  @sunduk-seq-chunchu-prep: the most cunning man in Samhan
+  @sunduk-seq-bupmin-hill: the hill where adults invent countries
+  @family-seq-ride-wide: Gotaso sits in front of him on the same horse
+  @family-seq-ride-close: That's a lawyer's horse, son.
+  @moon-seq-hall-bird: becomes the first Queen of Silla
+  @sunduk-seq-coronation-sym: the Blue Moon of the Divine Country
+  @guardian-sunduk-chunma: becomes the first Queen of Silla
+  @silla-rank-sleeves: In the hall the sleeves are the census.
+  @silla-rank-colonnade: In the hall the sleeves are the census.
+  @council-blue-table: six men and a brazier
+  @three-princesses: What is left is women
+  @scene-three-princesses-sing: What is left is women
+  @yushin-chunchu-munhee: Kim Yushin is thirty-seven
+  @scene-yushin-chunchu-bad-boy-5: Kim Yushin is thirty-seven
+  @yushin-fans-sunduk-only: He looks only at the Queen
+  @yushin-fangirl-colonnade: The most popular man in Silla
+  @sunduk-flirt-walkby: He looks only at the Queen
+  @sunduk-flirt-blush: He looks only at the Queen
+  @scene-sunduk-sing: He looks only at the Queen
+  @scene-sunduk-loves-yushin-36: He looks only at the Queen
+  @scene-yushin-sing: He looks only at the Queen
+  @scene-young-yushin-loves-sunduk-36: He looks only at the Queen
+  @scene-yushin-always-dukman-37: He looks only at the Queen
+  @sunduk-yushin-back-blush: she sees the width of his back
+  @scene-sunduk-gayageum: she sees the width of his back
+  @scene-sunduk-loves-yushin-38: she sees the width of his back
+  @east-star-vow-minimal: the east star
+  @east-star-hill: the east star
+  @east-seq-hill-wide: Two boys on a hill above Surabol
+  @east-seq-point: That star, in the east
+  @east-seq-planet: That is a planet, not a star
+  @east-seq-vow: Let us make Samhan one country
+  @kim-family: Her husband Chunchu
+  @bupmin-future-king: Her husband Chunchu
+  @sunduk-poster: bets on how long her council lasts
+  @sunduk-observatory-twilight: Long live the Queen!
+  @dukman-reaching-stars: Queen Sunduk
+  @scene-sunduk-loves-yushin-5: Queen Sunduk
+  @scene-three-princesses-invite-35: Queen Sunduk
+  @cheomseongdae_01: Long live the Queen!
+  @cheomseongdae_02: Long live the Queen!
+  @cheomseongdae-moon-iconic: Long live the Queen!
+  @three-crowns-symmetry: The neighbours have opinions
+  @cheomseongdae-moon-minimal: Long live the Queen!
+  @munhee-folded-letter: Yushin’s little sister is late
+  @sunduk-star-shaft: the Blue Moon of the Divine Country
+  @ink-peony-no-butterflies-sunduk: …There are no butterflies on these flowers.
+  @sunduk-chunma-stars: Long live the Queen!
+  @sunduk-chunma-peony: He sends her a gift: a painting of peonies in three colours
+  @rel-chunchu-bupmin: I may need to borrow it back
+  @rel-bupmin-gotaso: I'm not racing
+  @scene-three-princesses-invite-2: What is left is women
+  @scene-three-princesses-invite-39: What is left is women
+  @scene-sunduk-loves-yushin-10: I put on this confident
+  @scene-sunduk-loves-yushin-16: I put on this confident
+  @scene-sunduk-loves-yushin-2: , for kindness.
+  @scene-sunduk-loves-yushin-24: , for kindness.
+  @scene-yushin-always-dukman-12: So from now on —
+  @scene-yushin-always-dukman-2: Nobody in the yard hears
+  @scene-young-yushin-loves-sunduk-2: The marshal walked past.
+  @scene-young-yushin-loves-sunduk-12: Kim Yushin is thirty-seven
+  @scene-yushin-sunduk-flower-2: Whether you do it well
+  @scene-yushin-chunchu-bad-boy-2: He made a country up there once
+  @scene-yushin-chunchu-bad-boy-37: He made a country up there once
+  @munhee-profile-blue-light: Yushin’s little sister is late
+
+######## #2 Harmony Council (632)
+[0] ¶ One night earlier. Six nobles, one brazier, and nobody stands up until they all agree.
+[1] <scene> The Night Before
+[2] <term> Hwabaek. It means “speaking in harmony,” which is the polite way of saying nobod
+[3] ¶ Night in a small pavilion off the pond. Someone lights the small brazier. The flame is red first.
+[4] ¶ It runs hotter. The flame turns blue. Only then may the session start.
+[5] ¶ Each sleeve has a cup of tea and a wooden piece on a personal mat. They vote by setting the piece on either side of the cup.
+[6] ¶ The Council decides by unanimity. One voice against is enough to stop a name. That is why it takes all night.
+[7] <diagram> 
+[8] ¶ Six seats. Yushin has none. He has a wall, and he is leaning on it, because the Marshal was invited to answer questions, not to ask them.
+[9] ¶ The first count is three to three. A hung jury in silk.
+[10] ¶ Three pieces go to the yes side of the cup. Three go to the no side.
+[11] <diagram> 
+[12] ¶ Then the names start. Somebody always tries a man first.
+[13] murim{silla}:
+   0| Prince Chunchu, then. His mother is royal.
+    | 그럼 춘추 공은 어떻소. 어머니가 성골이오.
+[14] imjong{silla}:
+   0| And his father isn’t. Chunmyung’s boy is a Noble, Murim. By your own rule.
+    | 아버지는 아니잖소. 천명 공주의 아들은 진골이오, 무림 공. 공의 규칙대로라면.
+[15] ¶ Chunchu is not in the room. He was nine when he learned why.
+[16] FLASHBACK  612
+[16.0] ¶ Chunchu is nine. His father wakes him past midnight, which is normal, and walks him to the stream below the palace, which isn't. Kim Yongsu is the son of a king the Council threw out. The capital has 
+[16.1] ¶ Tonight he is laying flat stones across the water by lamplight, one at a time, as if someone on the far bank were waiting for the bridge to be finished before dawn.
+[16.2] yongsu{silla}:
+   0| Shh. They’re working.
+    | 쉿. 일하는 중이야.
+   1| …No, don’t look for them. They hate being looked at. Like me.
+    | ……아니, 찾지 마. 쳐다보는 거 싫어해. 나처럼.
+[16.3] chunchu{silla}:
+   0| Father… who is?
+    | 아버지… 누가요?
+[16.4] yongsu{silla}:
+   0| Your grandfather sat in the big chair four years. Three counts, and the room took it back.
+    | 네 할아버지가 그 큰 자리에 네 해 앉았다. 세 번 세고 나서, 방이 도로 가져갔지.
+   1| That room eats the men who amuse it.
+    | 그 방은 자길 즐겁게 해 주는 사람을 먹어.
+   2| So— stay out of that room. Sit anywhere else. Sit on the bridge.
+    | 그러니까— 그 방엔 들어가지 마. 다른 데 앉아. 다리 위에 앉든가.
+[16.5] chunchu{silla}:
+   0| …If not in the room, where does a person sit?
+    | ……그 방 아니면, 사람은 어디 앉아요?
+[16.6] yongsu{silla}:
+   0| (laughs, a beat late)
+    | (한 박자 늦게 웃는다)
+   1| Wherever the room has to come to you.
+    | 방이 너한테 오게 되는 데.
+[16.7] ¶ By morning there is a bridge of flat stones across the stream that nobody in the palace remembers ordering. The servants say goblins. Chunchu, who carried the lamp, says nothing at all, and finds he i
+[17] ¶ Tonight Chunchu is sitting on the rail of the little bridge over the pond. Every man who leaves the pavilion will have to pass him.
+[18] murim{silla}:
+   0| The Kim of Gaya, then. The Marshal’s blood is royal.
+    | 그럼 가야 김씨는. 대장군의 피는 왕족이오.
+[19] imjong{silla}:
+   0| Royal in a country that no longer exists.
+    | 이제 없는 나라의 왕족이지.
+   1| If we start counting kingdoms that no longer exist, half this room is royal.
+    | 없어진 나라까지 세기 시작하면, 이 방 절반이 왕족이오.
+[20] ¶ By the wall, Yushin does not move. He has heard it before. He will hear it again.
+[21] <card> 
+[22] alchun{silla}:
+   0| Three left, and all of them in skirts.
+    | 남은 피는 셋, 셋 다 치마요.
+   1| Well. Somebody say something new, or we’re here till the frost.
+    | 자. 누가 새 말 좀 하시오. 아니면 서리 올 때까지 여기 있을 거요.
+[23] ¶ The newest member of the Council — a Hwarang barely seated among them — stands up.
+[24] <card> 
+[25] bidam{silla}:
+   0| My lords have said one word forty times tonight. “Woman.”
+    | 어른들께서 오늘 밤 한 마디만 마흔 번 하셨습니다. «여자».
+   1| I have known Princess Dukman since I was a boy.
+    | 저는 덕만공주를 어릴 적부터 뵈어 왔습니다.
+   2| Not one of you has ever put a question to her that she could not answer.
+    | 이 방 어느 분도, 그분이 답하지 못할 물음을 던져 보신 적이 없습니다.
+   3| In the Lotus Sutra a dragon girl becomes a Buddha faster than the monks can object. I’ve read it. So have you, my lords.
+    | 법화경에서는 용녀가, 비구들이 반대하기도 전에 성불합니다. 저도 읽었고, 어르신들도 읽으셨지요.
+   4| If only three of the Sacred Bone remain, then I choose the cleverest of the three.
+    | 성골이 셋뿐이라면, 저는 그 셋 중 가장 총명한 분을 택하겠습니다.
+[26] murim{silla}:
+   0| …If cleverness picks a king, whose cleverness do we hear tomorrow.
+    | …총명하다는 걸로 왕을 고르면, 내일은 누구 말을 듣소.
+   1| Bone is the measure. Bone does not change.
+    | 뼈가 기준이오. 뼈는 안 바뀌오.
+[27] imjong{silla}:
+   0| The bone has run out.
+    | 뼈가 바닥났소.
+   1| Holding a country on empty bone is more dangerous than a clever woman.
+    | 바닥난 뼈로 나라를 버티는 게, 총명한 여왕보다 더 위험하지 않소.
+[28] ¶ Murim looks at the brazier for a long time. Then he moves his piece without a word, the way a man pays a debt he has decided not to argue about. Four to two.
+[29] suljong{silla}:
+   0| I still… cannot raise my hand.
+    | 나는 아직… 손을 못 올리겠소.
+   1| This room is too old to be turned by one night’s speech.
+    | 한 밤의 연설로 삼백 년을 뒤집기엔, 이 방이 너무 오래됐소.
+[30] yushin{silla}:
+   0| I have put questions to her.
+    | 나는 그분에게 질문을 던져 봤소.
+   1| They were answered. Half this room never asked — they only repeated the word woman.
+    | 답이 왔소. 이 방의 절반은 질문도 안 던져 보고 여자라는 단어만 반복했소.
+   2| That is what deliberation is for. To overturn the first count.
+    | 숙고가 그래서 있는 거요. 초투표를 뒤집으라고.
+[31] bidam{silla}:
+   0| Alchun. You’ve wrestled worse than a woman.
+    | 알천. 자네는 여자보다 무서운 것과도 붙어 봤잖나.
+[32] alchun{silla}:
+   0| I have taken a tiger.
+    | 나는 호랑이를 잡아 본 사람이오.
+   1| A tiger has no sex. It has teeth.
+    | 호랑이는 암수가 없소. 이빨이 있지.
+   2| …I raise it.
+    | ……올리겠소.
+[33] <quote> Then a great tiger burst in among the seats. The lords leapt up. Lord Alchun bar
+[34] ¶ Five to one. Every face in the pavilion turns to the oldest sleeve in it. One voice against is still enough.
+[35] ¶ Suljong’s hand is on his piece. It stays there. The brazier, which was blue, is going red again.
+[36] suljong{silla}:
+   0| You want me to say she can do it. I don’t know that.
+    | 그분이 해낼 수 있다고 말하라는 거요. 나는 그걸 모르오.
+   1| Nobody in this room knows that.
+    | 이 방 누구도 모르오.
+[37] bidam{silla}:
+   0| No, my lord. Nobody does.
+    | 예, 모르지요. 아무도 모릅니다.
+   1| A raft isn’t ashamed of the river. You don’t have to believe in her. Just move the piece to the other side of the cup.
+    | 뗏목은 강을 부끄러워하지 않습니다. 그분을 믿으실 필요는 없습니다. 패만 잔 건너편으로 옮기십시오.
+   2| Then call it ridiculous all the way home. Nobody counts the grumbling. They count the pieces.
+    | 그리고 댁에 가시는 내내 우습다고 하십시오. 투덜거림은 아무도 세지 않습니다. 세는 건 패입니다.
+[38] suljong{silla}:
+   0| …Ridiculous.
+    | ……웃기지도 않는군.
+[39] ¶ He moves the piece. All six sit on the yes side. He will say the word again in the morning, in a corridor, not quite quietly enough.
+[40] <diagram> 
+[41] alchun{silla}:
+   0| …That boy Bidam has no fear in him at all.
+    | …비담 저 녀석, 겁도 없구먼.
+[42] ¶ Across the floor, Yushin catches the Second Blade's eye. He and Bidam have been trading wins since they were boys in the yard. The count stands at one hundred and eight apiece. Neither lets the other 
+[43] yushin{silla}:
+   0| Well stood.
+    | 잘 버텼소.
+   1| Tomorrow on the yard, the hundred-and-ninth is mine.
+    | 내일 연무장에서, 백아홉째는 내 거요.
+[44] bidam{silla}:
+   0| Ha. Listen to him.
+    | 하. 이 사람 말하는 것 좀 보게.
+   1| You still owe me a jar from the hundred-and-eighth. Pay that first.
+    | 백여덟째 판 술 한 동이부터 갚아.
+   2| Today is the country’s business. Tomorrow you can lose to me again.
+    | 오늘은 나라 일이고. 내일 또 지게 해 주지.
+[45] <scene> Dawn
+[46] ¶ The brazier is out by the time Alchun carries the six pieces to the princess’s door. He carries them in his fist, because nobody told him there was a box.
+[47] sunduk{silla}:
+   0| All six?
+    | 여섯 다?
+[48] alchun{silla}:
+   0| All six, Princess. Took till the fire went out.
+    | 여섯 다요, 공주님. 불 꺼질 때까지 걸렸소.
+   1| There’ll be talk. The old men are already at it. “There hasn’t been a real king since the Cloud King.”
+    | 말이 많을 거요. 늙은이들은 벌써 그러고 있소. “구름왕 이후로 임금다운 임금이 없었다”고.
+[49] sunduk{silla}:
+   0| My great-grandfather. They say that at every crowning.
+    | 증조부님 말이지. 즉위식마다 하는 소리야.
+   1| …Four stones on four mountains, and a yard full of boys. And now me.
+    | ……네 산에 비석 넷, 사내아이로 가득한 마당. 그리고 이제 나.
+[50] alchun{silla}:
+   0| We all came out of that yard. Every man who voted tonight.
+    | 우리 다 그 마당에서 나왔소. 오늘 밤 패를 놓은 사내들 전부.
+[51] sunduk{silla}:
+   0| Then find me someone who remembers him. Not the stones. The man.
+    | 그럼 그분을 기억하는 사람을 찾아 줘. 비석 말고, 사람으로.
+   1| If I’m going to be measured against him, I’d like to see the ruler.
+    | 그분한테 재어질 거라면, 그 자부터 봐야겠어.
+[52] ¶ Every man who voted that night grew up in her great-grandfather’s yard. Who was the Cloud King? Ask anyone in Surabol…!
+  @harmony-council: Three left, and all of them in skirts
+  @council-flame-close: The Council decides by
+  @council-jury-lamp: hung jury in silk
+  @council-split-light: The first count is three to three
+  @council-bidam-rise: The newest member of the Council
+  @council-bidam-coat: I have known Princess Dukman
+  @council-across-stare: catches the Second Blade
+  @council-across-flame: Across the floor
+  @council-alchun-tiger: A tiger has no sex
+  @council-yushin-coat: Well stood.
+  @council-tea-wide: nobody stands up until they all agree
+  @council-tea-overhead: Bone is the measure
+  @council-tea-worm: The bone has run out
+  @council-tea-cups: cannot raise my hand
+  @council-tea-bidam: My lords have said one word
+  @council-tea-rise: a Hwarang barely seated
+  @council-tea-across: Today is the country’s business
+  @council-tea-alchun: You’ve wrestled worse than a woman
+  @council-tea-yushin: That is what deliberation is for
+  @council-seq-light: The flame is red first
+  @council-seq-red-wide: Someone lights the small brazier
+  @council-seq-blue-birth: The flame turns blue
+  @council-seq-session: Only then may the session start
+  @council-seq-overhead: wooden piece on a personal mat
+  @council-seq-worm: either side of the cup
+  @council-seq-split: Three go to the no side
+  @council-seq-bidam: Not one of you has ever put a question
+  @council-seq-across: the hundred-and-ninth is mine
+  @council-seq-alchun: …I raise it.
+  @council-seq-unanimous: All six sit on the yes side
+  @yushin-sword-vertical: Across the floor, Yushin catches
+  @bidam-cleverest: I choose the cleverest of the three.
+  @empty-throne-blue-light: Three left, and all of them in skirts
+  @parody-coronation-dukman: All six sit on the yes side
+  @rel-yongsu-chunchu: laying flat stones across the water
+  @rel-bidam-yushin: the hundred-and-ninth is mine
+
+######## #3 Jinheung, the Cloud (554)
+[0] ¶ Ask anyone in Surabol about the Cloud King and they'll tell you about his stones. Ask anyone in Sabi and they'll change the subject. You'll find out why. Not yet.
+[1] <map> 
+[2] <scene> Coronation Night
+[3] ¶ On her first night as queen, Sunduk does not sleep. Alchun has found her a man who remembers. He is seventy-one, the last boy left from the Cloud King’s yard, and he arrives in a litter, complaining a
+[4] -{?} "The Old Hwarang":
+   0| Majesty. You wanted the Cloud King.
+    | 폐하. 구름왕을 찾으셨다지요.
+   1| Everyone loses to him, you know. He’s dead. The dead stop making mistakes.
+    | 다들 그분한테 집니다. 돌아가셨으니까요. 죽은 사람은 더 실수를 안 하거든요.
+[5] sunduk{silla}:
+   0| Then tell me his mistakes. I’ve heard the rest all day.
+    | 그럼 그분 실수를 말해 주게. 나머지는 하루 종일 들었네.
+[6] ¶ He was seven when they put the crown on him. It was too big, and nobody mentioned it. By the end, Silla had a river, a coastline and Gaya. He got there by being the best ally in Samhan, right up until
+[7] <card> 
+[8] ¶ He put up stones wherever he stopped — four of them, on mountains, at the edges of what he had taken — and the stones do not boast. They say who came, and when, and that the land is now inside the bor
+[9] -{?} "The Old Hwarang":
+   0| There’s no boasting on those stones at all. I’ve read them. I climbed two mountains to do it.
+    | 그 비석들엔 자랑이 하나도 없습니다. 제가 읽어 봤지요. 그거 읽자고 산을 둘이나 올랐습니다.
+   1| Boasting is for men who are worried about losing it.
+    | 자랑은 뺏길 걱정을 하는 사람이나 하는 겁니다.
+[10] <quote> On the twenty-first day of the eighth month, in the first year of Taechang, the 
+[11] ¶ Late in his reign he invents the Hwarang. Take the noblest boys and put them in one yard. Make them ride, sing and rank each other until the ranking feels like fate. Nearly every man who matters later
+[12] <term> “Flower youths.” Noble sons in powder and silk, taught to ride, to sing, and to 
+[13] ¶ Every man who voted for her last night came out of that yard. So did the old man in the litter, in its first years, when it was still mostly bruises.
+[14] ¶ Near the end he shaved his head. The king of the four mountain stones put on a monk's robe and took a new name: Dharma Cloud. His queen went into a nunnery beside him. The court kept calling him Majes
+[15] sunduk{silla}:
+   0| Why the robe? He had everything.
+    | 왜 승복을 입으셨나? 다 가지셨는데.
+[16] -{?} "The Old Hwarang":
+   0| I asked him that. I was fifteen and stupid. Same question, worse manners.
+    | 저도 여쭸습니다. 열다섯에, 멍청했지요. 같은 질문인데, 버릇은 더 없었고요.
+[17] FLASHBACK  576
+[17.0] ¶ A boy is losing in the yard when a bald monk leans on the fence and laughs at him. Everyone else is kneeling. The boy is too busy losing to notice.
+[17.1] jinheung{silla}:
+   0| You drop your shoulder before you swing. He knows what you’ll do before you do.
+    | 휘두르기 전에 어깨가 먼저 떨어지는구나. 네가 뭘 할지 저놈이 너보다 먼저 안다.
+[17.2] -{?} "The Boy":
+   0| Who asked you, monk?
+    | 누가 물어봤소, 스님?
+[17.3] jinheung{silla}:
+   0| Nobody. That’s the nice thing about this robe.
+    | 아무도. 이 옷의 좋은 점이 그거다.
+[17.4] ¶ Then the boy sees the kneeling yard, and the face under the shaved head, and goes down in the dust so fast he bruises a knee.
+[17.5] -{?} "The Boy":
+   0| Majesty— why— the robe, Majesty, why?
+    | 전하— 어찌— 그 옷은, 전하, 어찌하여?
+[17.6] jinheung{silla}:
+   0| They put a crown on me at seven. It was too big. I grew into it.
+    | 일곱 살에 왕관을 씌우더구나. 너무 컸지. 자라서 맞췄다.
+   1| Then I filled it. A river. A coast. A kingdom.
+    | 그다음엔 채웠다. 강 하나. 바닷가 하나. 나라 하나.
+   2| Everything I won, I won from a friend first.
+    | 얻은 건 전부, 먼저 벗한테서 얻은 것이다.
+   3| …The robe is lighter. Get up. Fix your shoulder.
+    | ……이 옷이 더 가볍다. 일어나라. 어깨나 고쳐라.
+[18] sunduk{silla}:
+   0| From a friend. Which friend?
+    | 벗한테서. 어느 벗?
+[19] -{?} "The Old Hwarang":
+   0| He never said. He died that same year.
+    | 말씀 안 하셨습니다. 그해에 돌아가셨지요.
+   1| Ask in Sabi, Majesty. They’ll change the subject. That’s how you know.
+    | 사비에 가서 물어보십시오, 폐하. 말을 돌릴 겁니다. 그걸로 아는 거지요.
+[20] -{?} "The Old Hwarang":
+   0| We called him the Cloud King, after the name he took at the end.
+    | 우리는 그분을 구름왕이라 불렀지요. 마지막에 받은 그 이름 따라서.
+   1| A cloud has no border, you see. It goes where it likes, and for an afternoon the ground underneath is its ground.
+    | 구름엔 경계가 없거든요. 가고 싶은 데로 가고, 한나절은 그 아래 땅이 다 제 땅입니다.
+   2| A cloud never asks whose field it’s raining on.
+    | 구름은 누구 밭에 비를 뿌리는지 묻지 않습니다.
+[21] ¶ The queen sits with that a long time. Her great-grandfather marked the edges of what he took. She has nothing to take, and a council that counts her every step.
+[22] sunduk{silla}:
+   0| He put his stones at the edges.
+    | 그분은 가장자리에 돌을 세우셨지.
+   1| …I’ll put one in the middle, and point it at the sky. Nobody can say I took that from a friend.
+    | ……나는 한가운데 세우겠네. 하늘을 향해서. 그건 벗한테서 뺏었다고 아무도 못 하겠지.
+[23] ¶ Within a year there is a stone tower in the middle of Surabol for reading the stars. It boasts about nothing. It just looks up.
+[24] ¶ The rain fell on Baekje’s field, and Baekje kept the grudge. In five days, it names the prince who will inherit it…!
+  @crescent-hwarang: Ask anyone in Surabol about
+
+######## #4 Prince Euija (632)
+[0] ¶ In five days, Prince Euija becomes Crown Prince Euija. He is thirty-two, which is late for it. He has fifteen sons, which is early for everything else.
+[1] <map> 
+[2] <card> 
+[3] herald{other}:
+   0| Fifteen, they say. Sixteen by spring.
+    | 열다섯이라더군. 봄이면 열여섯이고.
+   1| His Majesty had fifty at that age. They say Samsin keeps a night shift just for Sabi — don’t repeat that.
+    | 전하께선 그 나이에 쉰이셨다네. 삼신할미가 사비 때문에 밤일을 따로 한다지 — 이건 못 들은 걸로 하게.
+[4] ¶ This is said admiringly. It is that kind of court.
+[5] <place> The king lives here. So do eight families who think that’s a detail.
+[6] <scene> The Rear Garden
+[7] ¶ At mid-morning the prince is in the rear garden with a bow, a go board, a jar of wine and two court ladies, and he is winning at all four.
+[8] ¶ The arrow goes in without his looking. He is already reaching for a stone.
+[9] <cite> Prince Euija (32)
+[10] euija{baekje}:
+   0| Your move.
+    | 네 차례다.
+   1| And if you shift my stone while I drink, my lady, do it better than last time. If I’m to be cheated, I want a professional. Ha!
+    | 내가 마시는 동안 돌을 옮길 거면 지난번보다는 잘해라. 속아도 장인한테 속고 싶구나. 하하!
+   2| Pour.
+    | 따라라.
+[11] courtmaid{baekje}:
+   0| Your Highness moved it yourself—
+    | 저하께서 직접 옮기셨는데요—
+   1| —twice—
+    | —두 번이나요—
+   2| —and blamed the wind.
+    | —그러고는 바람 탓을 하셨지요.
+[12] <cite> 👑 King Mu (71)
+[13] ¶ The ladies stop giggling all at once, the way sparrows stop when a hawk goes over.
+[14] kingmu{baekje}:
+   0| Up, boy.
+    | 일어나라, 이놈아.
+   1| The houses are parading their wrestlers in my yard, and the man they’re wrestling for is in a hedge with a jar.
+    | 가문마다 씨름꾼을 내 마당에 끌고 와 자랑하는데, 그 씨름의 주인은 술 단지 끼고 덤불 속에 있구나.
+   2| Over the mountains, Silla crowned a woman this spring. Even she gets up before noon.
+    | 산 너머 신라는 올봄 여자를 왕으로 세웠다. 그 여자도 한낮 전엔 일어난다더라.
+[15] euija{baekje}:
+   0| Let Silla crown a heifer, Father. It still owes us a river. Ha!
+    | 신라가 암소를 왕으로 세운들 어떻습니까, 아바마마. 그래도 우리한테 강 하나 빚진 건 그대로지요. 하하!
+   1| Meanwhile I’m practising. A crown prince ought to hit what he aims at.
+    | 그동안 저는 연습 중입니다. 태자라면 겨눈 데는 맞혀야지요.
+[16] kingmu{baekje}:
+   0| Then aim at the hall.
+    | 그럼 대전을 겨눠라.
+   1| Analects by heart at seven. My ministers beaten at go at twelve.
+    | 일곱에 논어를 외웠지. 열둘에 내 대신들을 바둑으로 이겼고.
+   2| And twenty years since, making very sure nobody asks you to do either again.
+    | 그러고 이십 년을, 아무도 다시는 시키지 않게 애쓰며 보냈지.
+[17] euija{baekje}:
+   0| Cleverness is an ox, Father.
+    | 영리함은 소 같은 겁니다, 아바마마.
+   1| Let the village see it, and by morning somebody’s hitched it to his plough.
+    | 마을에 보이면, 아침엔 누가 벌써 제 쟁기에 매어 놓지요.
+[18] kingmu{baekje}:
+   0| Today it gets hitched.
+    | 오늘 매인다.
+   1| Bring the jar. You’ll want it.
+    | 단지는 들고 와라. 필요할 게다.
+[19] <scene> The Yard
+[20] ¶ Five days before a crown prince is made, each of the eight houses brings a boy to the palace yard to be looked at, the way you bring a horse to market. On the day itself they wrestle. The crown prince
+[21] ¶ Eight boys in white stand on the sand. The ninth place is empty, and everyone is looking at it.
+[22] kingmu{baekje}:
+   0| Your man for the sand.
+    | 모래판에 세울 네 사람.
+   1| Pick a son. Yung’s big enough to fall on somebody.
+    | 아들 하나 골라라. 융이는 누구 위에 넘어질 만큼은 크다.
+[23] ¶ His sons grow up already spoken for. Yung wears a Satek ring. Tae has a Jinmo grandmother. Little Pung has lovely handwriting and a Mokli tutor.
+[24] euija{baekje}:
+   0| Put one of mine on the sand and I’m only telling the yard which house I’ve lost him to.
+    | 제 아들을 모래판에 세우면, 어느 가문에 빼앗겼는지 마당에 알리는 것뿐입니다.
+[25] kingmu{baekje}:
+   0| Then find someone who isn’t anybody’s.
+    | 그럼 누구 것도 아닌 놈을 찾아라.
+   1| Five days. After that I pick for you, and you’ll hate who I pick.
+    | 닷새다. 그 뒤엔 내가 고른다. 내가 고른 놈은 네가 싫어할 게다.
+[26] ¶ Two old men reach the prince before the king has finished speaking.
+[27] kingmu{baekje} "🙇":
+   0| Lord Yunbi… an honour to—
+    | 연비 공… 만나 뵙게 되어 영광이—
+   1| Lord Satek… a new—
+    | 사택 공… 새로
+[28] eldersatek{baekje}:
+   0| Highness. The tide is with you this week.
+    | 저하. 이번 주 물때가 저하 편이오.
+   1| Up and down the river they say it. Filial to his father, kind to his brothers. The Zengzi of the East of the Sea.
+    | 강 위아래로 다들 그러지요. 아버지께 효성스럽고 형제에게 우애롭다고. 해동증자라고.
+[29] elderyunbi{baekje}:
+   0| We said it first. On the coast road, into a headwind.
+    | 우리가 먼저 했소. 바닷길에서, 맞바람 맞아 가며.
+   1| Satek heard it from us. He usually does. Through a floorboard.
+    | 사택은 우리한테서 들었소. 늘 그렇듯. 마룻바닥 너머로.
+[30] eldersatek{baekje}:
+   0| Floorboards are cheap in Yunbi.
+    | 연비가는 마룻바닥이 싸지요.
+   1| Everything is.
+    | 다른 것도 다 싸고.
+[31] <quote> He served his parents with filial piety and treated his brothers with fraternal 
+[32] ¶ The Zengzi of the East of the Sea was cheating at go an hour ago. He smiles at both of them like a man being sold his own horse.
+[33] ¶ When they have bowed themselves away, he says what he thinks. His father has been trying to cure him of that for thirty-two years.
+[34] euija{baekje} "👦":
+   0| Father… I have no interest in these clan quarrels.
+    | 아버지... 이런 가문 싸움에 전 관심이 없습니다.
+   1| A king should be for the country—
+    | 임금은 나라를
+[35] kingmu{baekje} "👑":
+   0| My child… learn their names anyway.
+    | 얘야… 그래도 저들 이름은 외워 두어라.
+   1| …I did not like mine either. I still say them first.
+    | …나도 좋아서 외운 게 아니다. 그래도 내가 먼저 부른다.
+[36] kingmu{baekje}:
+   0| You think I like them? I’ve buried three Satek elders, and I’d dance at a fourth.
+    | 내가 그놈들을 좋아하는 줄 아느냐? 사택 노인을 셋이나 묻었다. 넷째 땐 춤이라도 출 게다.
+   1| But a king rules the country he has, boy. Not the one he wants.
+    | 허나 임금은 가진 나라를 다스리는 거다, 이놈아. 바라는 나라가 아니라.
+   2| Fifteen sons—
+    | 아들이 열다섯—
+[37] euija{baekje}:
+   0| Sixteen by spring.
+    | 봄이면 열여섯입니다.
+   1| The lady of the Hae house says it’s twins.
+    | 해씨 부인 말로는 쌍둥이랍니다.
+[38] kingmu{baekje}:
+   0| …Gods help the Hae.
+    | …해씨 집안에 신의 가호를.
+   1| Every son is a door, boy, and some house will try to walk through each one.
+    | 아들 하나하나가 문이다, 이놈아. 어느 가문이든 그 문으로 걸어 들어오려 할 게다.
+   2| Be a father to the boys. Be a king to the doors.
+    | 아이들한텐 아비가 되고, 문들한텐 임금이 되거라.
+[39] <scene> The White River
+[40] ¶ That night Euija sneaks out of the palace in a grey hood and a grey robe. He tells himself it is to see how the common people live. Mostly it is to get away from a list with an empty ninth line.
+[41] <place> Wide, slow, and fought over one berth at a time.
+[42] ¶ On the landing a Jinmo boy is shouting at four porters and a great gilt-bronze incense burner. The burner is wrapped in silk for the crown prince’s day. It is as tall as a child, with mountains on the
+[43] ¶ A barefoot boy with a basket of eels comes round the stack at a run. The Jinmo boy steps back into him. The burner goes over the rail. It does not float.
+[44] jinmoboy{baekje}:
+   0| Do you know what that WAS?
+    | 저게 뭔 줄 알아?!
+   1| My grandfather had it cast! It’s for the crown prince! It’s for the YARD—
+    | 우리 할아버지가 부어 만든 거야! 태자 거라고! 마당에 놓을 거라고—
+[45] jinmoboy{baekje}:
+   0| Do you know who my father is, you little peasant twat?
+    | 우리 아버지가 누군지 알아, 이 천한 놈아?
+[46] gyebek{baekje}:
+   0| No.
+    | 모릅니다.
+[47] jinmoboy{baekje}:
+   0| Jinmo. JINMO.
+    | 진모. 진모라고!
+   1| My father sits on the rock. I can have you thrown in after it, and nobody will even write it down.
+    | 우리 아버지는 바위에 앉는 분이야. 너 같은 건 저거 따라 던져 넣어도 아무도 적지도 않아.
+[48] ¶ Nobody on the landing moves. The porters find their feet very interesting.
+[49] gyebek{baekje}:
+   0| I will get it back.
+    | 되찾아 오겠습니다.
+[50] jinmoboy{baekje}:
+   0| …You?
+    | …네가?
+   1| Fine. Five days. If it isn’t on my doorstep in five days, I’ll have you killed in front of the whole street.
+    | 좋아. 닷새. 닷새 안에 우리 집 문 앞에 없으면, 온 동네 앞에서 죽여 버릴 거야.
+[51] gyebek{baekje}:
+   0| Five days.
+    | 닷새.
+[52] <scene> The Diving Boy
+[53] ¶ There is an old willow on the bank with a rock wedged in its roots. Gyebek ties one end of a rope round the rock and the other round his ankle, so the river can’t keep him. Then he goes in.
+[54] ¶ The boy is going back into the water. He has been at it since morning, and he is not a strong swimmer.
+[55] -{?} "🗣":
+   0| That’s the eel boy. Been going in since dawn.
+    | 저거 장어 파는 애잖아. 새벽부터 들어가더라.
+   1| For the Jinmo pot? That’s down with the catfish by now.
+    | 진모네 향로 건지려고? 그거 벌써 메기들이랑 뻘 속에 있지.
+   2| Hey, look at that idiot! Jumping into the freezing river, haha!
+    | 야, 저 바보 좀 봐! 그 차가운 강에 뛰어드네, 하하!
+   3| Give it a day. The river’s got all the time in the world.
+    | 하루만 기다려 봐. 강은 급할 게 없어.
+[56] ¶ On the second day a man in a grey hood stops at the back of the crowd. He stays longer than he means to.
+[57] euija{baekje}:
+   0| What’s he after down there?
+    | 저 아래서 뭘 찾는 게냐?
+[58] -{?} "🗣":
+   0| The Jinmo pot. Five days, or they kill him.
+    | 진모네 향로요. 닷새 안에 못 건지면 죽인대요.
+[59] euija{baekje}:
+   0| Then why hasn’t he run?
+    | 그럼 왜 아직 안 도망쳤느냐?
+[60] -{?} "🗣":
+   0| Ask him yourself. He doesn’t talk.
+    | 직접 물어보슈. 저 애는 말을 안 해요.
+[61] ¶ In the palace, the crown prince has been missing for two days. King Mu has the city turned over, and says several things about his son that the herald is asked not to write down.
+[62] kingmu{baekje}:
+   0| Start with the wine houses.
+    | 술집부터 뒤져라.
+   1| Then the other houses.
+    | 그다음엔 다른 집들.
+[63] herald{other}:
+   0| The other— ah.
+    | 다른 집이라 하심은— 아.
+   1| Yes, Majesty.
+    | 예, 전하.
+[64] ¶ Gyebek does not eat. Nobody sees him sleep. Each time he comes up, the rock in the willow roots has shifted a finger’s width, and he reties the knot and goes back down.
+[65] <scene> Night on the Bank
+[66] ¶ On the third night the crowd has gone home. Euija comes down the bank with rice balls in a leaf and a jar he has not opened, which for him is a sacrifice.
+[67] euija{baekje}:
+   0| How many times have you gone in?
+    | 몇 번째냐.
+[68] gyebek{baekje}:
+   0| Nineteen.
+    | 열아홉 번입니다.
+[69] euija{baekje}:
+   0| …You were counting?
+    | …세고 있었어?
+[70] gyebek{baekje}:
+   0| At twenty I would not come back out. That is why I count.
+    | 스물이면 못 나옵니다. 그래서 셉니다.
+[71] euija{baekje}:
+   0| Eat.
+    | 먹어라.
+   1| Then tell me. Why do you do all of this?
+    | 그리고 말해 봐. 왜 이런 짓을 하는 게냐?
+[72] gyebek{baekje}:
+   0| I gave my word.
+    | 약조를 했습니다.
+[73] euija{baekje}:
+   0| To a Jinmo brat who’ll have you killed either way? Ha!
+    | 어차피 너를 죽일 진모가 꼬맹이한테? 하!
+   1| Run. Tonight. There’s nothing for you in Sabi. There’s nothing for you in all of Baekje.
+    | 도망쳐라. 오늘 밤. 사비엔 너를 위한 게 없다. 백제 어디에도 없다.
+   2| Nobody here will even notice you’ve gone.
+    | 네가 사라져도 여기선 아무도 모를 게다.
+[74] gyebek{baekje}:
+   0| I gave my word.
+    | 약조를 했습니다.
+[75] ¶ He says it in exactly the same words, the way you set a stone back where it was.
+[76] euija{baekje} "👦":
+   0| A fine young man… what is your name?
+    | 훌륭한 사내여.... 자네의 이름이 무엇인가?
+[77] gyebek{baekje}:
+   0| I have… no name.
+    | 이름... 없습니다.
+[78] euija{baekje} "👦":
+   0| …What? You think it makes sense to have no name, here in Baekje?
+    | ...어? 백제 땅에서 이름이 없는 게 말이 된다고 생각해?
+[79] ¶ Gyebek does not answer. He goes back in. Far down, in the black, something catches the moon: a curve of gold.
+[80] ¶ Then the rock comes out of the willow roots. The willow, which has been leaning on that rock for a hundred years, comes after it. The rope goes taut, and the river takes the boy, the rock and the tree
+[81] euija{baekje}:
+   0| Hey— HEY—!
+    | 야— 야!—
+[82] ¶ The crown prince of Baekje goes in after him in a grey robe, with a knife in his teeth. He finds the rope by feel and cuts it.
+[83] ¶ They come up onto the mud together and lie there like two fish.
+[84] gyebek{baekje}:
+   0| …Thank you.
+    | …고맙습니다.
+[85] ¶ Then he gets up, picks up the cut end of the rope, and starts looking for another rock.
+[86] euija{baekje} "👦":
+   0| <b>Are you insane?! In that much of a hurry to stand before Yumla?!</b>
+    | <b>아, 이 미친 새끼야!! 그렇게 빨리 염라대왕 앞에 끌려가고 싶은거냐?!</b>
+[87] ¶ Euija hits him once, properly, in a way princes are not taught. Gyebek goes down on the mud and stays there.
+[88] ¶ He lies with his eyes open, and the tears just come, without a sound, the way the river does.
+[89] ¶ It takes a while to get it out of him.
+[90] FLASHBACK  
+[90.0] ¶ The houses go first. Silk burns faster than timber. He is still wearing the clothes they dressed him in for the morning meal.
+[90.1] ¶ Men come over the wall with torches and a list. Every name on the list is his family’s.
+[90.2] -{?} "👨":
+   0| Run away… forget me, forget all of this!
+    | 도망쳐라… 나를 잊어라, 이 모든 걸 잊어!
+   1| Your name too. Forget it. The name is what they are hunting.
+    | 이름도. 잊어버려. 저놈들이 쫓는 건 이름이다.
+[90.3] ¶ They tell him to run and not say the name. He says it once, into his sleeve, and then he does not.
+[90.4] ¶ They hunt him for a season. He learns which ditches drain and which porters don’t ask questions.
+[90.5] ¶ After that he begs. The noble collar is dirty enough that nobody bows.
+[91] gyebek{baekje}:
+   0| No name. No house.
+    | 이름도 없습니다. 집안도 없습니다.
+   1| I have my word.
+    | 약조는 있습니다.
+   2| If I break it, I have nothing.
+    | 그걸 어기면, 저는 아무것도 없습니다.
+[92] ¶ Euija says nothing for a long time. All week he has been called the Zengzi of the East of the Sea by men who would sell him by the pound, and he had decided there were no honourable men left in Baekje
+[93] euija{baekje}:
+   0| All right. Your word. That one belongs to the Jinmo brat.
+    | 그래. 약조. 그건 진모가 꼬맹이 거고.
+   1| What’s yours? What do you want?
+    | 네 건 뭐냐? 너는 뭘 원하느냐?
+[94] gyebek{baekje}:
+   0| Nothing.
+    | 없습니다.
+[95] euija{baekje}:
+   0| Ha! Nobody wants nothing. My father wants a boy on the sand. The Jinmo want their pot. I want this jar, and I’m not opening it, which is killing me.
+    | 하! 아무것도 안 바라는 놈은 없다. 아버지는 모래판에 세울 아이를 원하고, 진모가는 향로를 원하고, 나는 이 술 단지를 원하는데 안 따고 있다. 죽을 맛이지.
+   1| Do you want to die?
+    | 죽고 싶으냐?
+[96] gyebek{baekje}:
+   0| No.
+    | 아닙니다.
+[97] euija{baekje}:
+   0| Run, then?
+    | 그럼 도망치고 싶으냐?
+[98] gyebek{baekje}:
+   0| No.
+    | 아닙니다.
+[99] euija{baekje}:
+   0| Back to the eels?
+    | 장어 팔던 데로 돌아가고 싶으냐?
+[100] gyebek{baekje}:
+   0| …No.
+    | …아닙니다.
+[101] euija{baekje}:
+   0| No, no, no. That’s your whole life, isn’t it. Nobody ever asked you the other question.
+    | 아니다, 아니다, 아니다. 평생 그 소리만 했구나. 다른 걸 물어본 놈이 아무도 없었지.
+   1| I’m asking. Say it.
+    | 내가 묻는다. 말해 봐.
+[102] ¶ The boy opens his mouth, and nothing comes. A man he loved told him to forget everything, and he did as he was told. He put the words away somewhere safe when he was small. He has not looked since.
+[103] gyebek{baekje}:
+   0| …I want to live.
+    | …살고 싶습니다.
+[104] ¶ It comes out as a whisper. The second time, it doesn’t.
+[105] gyebek{baekje}:
+   0| <b>I want to live…!</b>
+    | <b>살고 싶어요…!</b>
+   1| Not in a ditch. Not without a name.
+    | 도랑에서 말고. 이름도 없이 말고.
+   2| I want to be someone they have to write down…!
+    | 저도… 누가 적어 둬야 하는 사람이 되고 싶어요…!
+[106] ¶ Euija stands. He is soaked to the waist, the hood is gone, and for once in his life he does not laugh first.
+[107] euija{baekje}:
+   0| Good. Then live.
+    | 됐다. 그럼 살아라.
+   1| And here’s mine. Whatever you could be, all of it, to the last inch — I’ll get you there.
+    | 그리고 이건 내 거다. 네가 될 수 있는 것, 그 끝의 끝까지 — 내가 데려다 놓으마.
+   2| I’ll stand you where no house in Baekje can pretend not to see you. They’ll write you down whether they like it or not.
+    | 백제 어느 가문도 못 본 척 못 할 자리에 세워 주마. 싫든 좋든 너를 적게 될 게다.
+   3| You have your word. Now you have mine.
+    | 너한텐 네 약조가 있지. 이제 내 약조도 있다.
+[108] gyebek{baekje}:
+   0| You are a man in a grey hood.
+    | 회색 두건 쓰신 분이십니다.
+[109] euija{baekje}:
+   0| Ha! Tonight I am.
+    | 하! 오늘 밤은 그렇지.
+   1| Now leave the pot to the catfish.
+    | 이제 향로는 메기들한테 맡겨 둬라.
+[110] gyebek{baekje}:
+   0| No.
+    | 아닙니다.
+[111] euija{baekje}:
+   0| …Of course not.
+    | …그럼 그렇지.
+[112] ¶ Before dawn Gyebek goes in one more time, with no rope at all. He reaches the gold. He gets both arms round it. Halfway up, with the surface a body’s length away, his eyes close.
+[113] ¶ Under the water, there is a flash of light.
+[114] <scene> The Deer
+[115] ¶ On the bank the crown prince-to-be is wearing a crown he has no business wearing. He took it out of his father’s chest that afternoon, the way he has been taking things out of his father’s chest since
+[116] ¶ Out of the river, as if the water were a door, walks a pale stag with tall antlers. Across its back lies a boy with no name, both arms still locked round a gilt-bronze incense burner.
+[117] ¶ Nobody else sees it. Nobody else is up.
+[118] <scene> The Fifth Morning
+[119] ¶ On the fifth morning Gyebek knocks at the Jinmo gate with the incense burner on his back, wrapped in his own shirt.
+[120] jinmoboy{baekje}:
+   0| That’s— how did you—
+    | 그거— 어떻게—
+   1| Nobody could— it’s twenty feet of river down there—
+    | 아무도 못— 거기 물 깊이가 스무 자야—
+[121] gyebek{baekje}:
+   0| I said I would get it back.
+    | 되찾아 오겠다고 했습니다.
+[122] jinmoboy{baekje}:
+   0| …There’s mud in the mountains.
+    | …산에 뻘이 묻었잖아.
+[123] gyebek{baekje}:
+   0| Yes.
+    | 예.
+[124] <scene> The Sand
+[125] ¶ The investiture takes less time than the wine did. A seal, a robe, and the whole hall bowing at once, like barley under wind.
+[126] kingmu{baekje}:
+   0| Crown Prince.
+    | 태자.
+   1| There. Now they have to bow to you first and complain about you second.
+    | 됐다. 이제 저것들이 너한테 먼저 절하고, 흉은 그다음에 볼 게다.
+[127] euija{baekje}:
+   0| They complained first for thirty-two years, Father.
+    | 서른두 해 동안 흉부터 봤지요, 아바마마.
+   1| I’ll take the bow.
+    | 절은 받겠습니다.
+[128] ¶ Then the yard. The houses’ boys stand at the edge of the sand in white. The herald reads the board.
+[129] herald{other}:
+   0| For the house of Satek…!
+    | 사택가에서…!
+   1| For the house of Yunbi…!
+    | 연비가에서…!
+   2| For the house of Jinmo…!
+    | 진모가에서…!
+   3| And for His Highness the Crown Prince—
+    | 그리고 태자 저하를 대신하여—
+[130] FLASHBACK  
+[130.0] ¶ When he woke on the bank, the man in the grey hood was still wearing the crown.
+[130.1] euija{baekje}:
+   0| First, a surname.
+    | 먼저 성부터.
+   1| How about… Buyeo?
+    | 부여… 어떠냐?
+[130.2] gyebek{baekje}:
+   0| Buyeo…
+    | 부여…
+   1| Is that not the royal surname? How can you…
+    | 그건 왕실의 성이 아닙니까? 어떻게…
+[130.3] ¶ Behind him, in the reeds, the deer is standing.
+[130.4] euija{baekje}:
+   0| I’ll say it again.
+    | 다시 말하마.
+   1| Do you accept my royal edict…?
+    | 내 왕명을 받겠느냐…?
+[130.5] ¶ Gyebek does not answer. He has never been given anything he did not have to pay back.
+[130.6] euija{baekje} "👦":
+   0| Now you’ll need a name as well.
+    | 이제 이름도 있어야겠지.
+   1| Gye, for Utmost. Bek, for Nobility.
+    | 계는 지극함이요, 백은 고귀함이라.
+   2| How about — “Gyebek”?
+    | “계백”. 어떠냐?
+   3| Gyebek… a name only for men of the utmost nobility.
+    | 계백… 지극히 고귀한 사내에게만 어울리는 이름이지.
+[130.7] euija{baekje}:
+   0| Gyebek, would you like to serve a higher purpose?
+    | 계백, 더 큰 뜻을 섬겨 보겠느냐?
+[130.8] gyebek{baekje}:
+   0| …Do you like the name, or do you like me?
+    | …그 이름이 마음에 드십니까, 제가 마음에 드십니까?
+[130.9] euija{baekje}:
+   0| …People don’t usually ask that.
+    | …보통은 그런 걸 안 묻는데.
+[130.10] gyebek{baekje}:
+   0| I have to ask, or I do not know.
+    | 저는 물어야 압니다.
+[130.11] gyebek{baekje}:
+   0| Yes.
+    | 예.
+[131] herald{other}:
+   0| — Buyeo Gyebek!
+    | — 부여 계백!
+[132] <card> 
+[133] <hanja> 
+[134] ¶ The yard says the surname back to itself, louder each time. A royal name on an eel boy. At the edge of the sand the Jinmo boy goes the colour of his burner.
+[135] FLASHBACK  
+[135.0] -{?} "👨":
+   0| Run away… forget me, forget all of this!
+    | 도망쳐라… 나를 잊어라, 이 모든 걸 잊어!
+[135.1] jinmoboy{baekje}:
+   0| Do you know who my father is, you little peasant twat?
+    | 우리 아버지가 누군지 알아, 이 천한 놈아?
+[135.2] -{?} "🗣":
+   0| Hey, look at that idiot! Jumping into the freezing river, haha!
+    | 야, 저 바보 좀 봐! 그 차가운 강에 뛰어드네, 하하!
+[135.3] euija{baekje}:
+   0| Why do you do all of this?
+    | 왜 이런 짓을 하는 게냐?
+[135.4] euija{baekje}:
+   0| Gyebek, would you like to serve a higher purpose?
+    | 계백, 더 큰 뜻을 섬겨 보겠느냐?
+[136] ¶ Gyebek looks back, and up, at the royal seats. The crown prince is already looking at him.
+[137] ¶ Eight houses. Eight boys on the sand. And one with a borrowed name…!
+  @baekje-river: Wide, slow, and fought over
+  @baekje-river-palace: Wide, slow, and fought over
+  @young-princes: grow up already spoken for
+  @clan-jinmo: The boy is going back into the water. He has been at it 
+  @clan-mokli: …You were counting?
+  @clan-guk: I gave my word.
+  @gyebek-white-river: A fine young man… what is your name?
+  @sabi-seq-hall-bird: The king lives here.
+  @euija-seq-disguise-yard: Euija sneaks out of the palace
+  @gyebek-seq-dive-wide: The boy is going back into the water
+  @gyebek-seq-surface: Nineteen
+  @gyebek-seq-name: How about — “Gyebek”?
+  @gyebek-fb-burn: Silk burns faster than timber
+  @gyebek-fb-run: not say the name
+  @gyebek-fb-beg: The noble collar is dirty enough
+  @king-mu: King Mu (71)
+  @clan-yunbi: Lord Yunbi… an honour to—
+  @rel-mu-euija: learn their names anyway
+  @euija-garden-wide: At mid-morning the prince is in the rear garden
+  @euija-garden-arrow: The arrow goes in without his looking
+  @euija-garden-hawk: the way sparrows stop when a hawk goes over
+  @euija-yard-wide: The ninth place is empty, and everyone is looking at it
+  @euija-elders-flank: like a man being sold his own horse
+  @euija-mu-doors: Be a king to the doors
+  @euija-hood-steps: Euija sneaks out of the palace
+  @euija-landing-burner: It does not float.
+  @jinmo-threat-close: you little peasant twat
+  @gyebek-willow-rope: so the river can’t keep him
+  @euija-crowd-hood: He stays longer than he means to
+  @mu-search-gate: Start with the wine houses.
+  @bank-rice-balls: rice balls in a leaf
+  @river-gold-glimpse: a curve of gold
+  @willow-falls: Then the rock comes out of the willow roots
+  @euija-knife-dive: with a knife in his teeth
+  @mud-two-fish: like two fish
+  @euija-punch: Euija hits him once, properly
+  @gyebek-tears-mud: the tears just come
+  @sinrok-river-door: walks a pale stag with tall antlers
+  @jinmo-gate-dawn: knocks at the Jinmo gate
+  @investiture-barley: like barley under wind
+  @naming-edict: Do you accept my royal edict
+  @sand-look-up: The crown prince is already looking at him
+
+######## #5 Eight Great Clans (632)
+[0] ¶ Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.
+[1] ¶ The Eight Great Clans run this country, and one king sits between them. Today, on the crown prince’s day, they settle nothing on the sand. They never do.
+[2] <term> The eight great surnames. Not a council and not a party. Eight families, each ol
+[3] ¶ The Chinese wrote the eight names down too, and got half of them wrong. That tells you how often the clans let outsiders count them.
+[4] <quote> The great surnames of the country are eight clans: Sa, Yeon, Hyeop, Hae, Jin, Gu
+[5] <scene> The Sand
+[6] ¶ On the crown prince’s day, the court chalks a square grid in the palace yard. Four hard lines. No banners. The young men of each house step onto the grid in white.
+[7] -{?} "🗣":
+   0| The Yunbi boys turned a Satek cart over at the west bridge yesterday.
+    | 연비네 애들이 어제 서시 다리에서 사택네 짐수레를 엎었다더라.
+   1| Then tonight the Satek go over a Yunbi wall.
+    | 그럼 오늘 밤엔 사택네가 연비네 담을 넘겠구먼.
+   2| Same as the lantern festival last year.
+    | 작년 등절에도 그랬잖아.
+   3| Last year three of them died.
+    | 작년엔 셋 죽었지.
+[8] eldersatek{baekje}:
+   0| White cloth. Wooden swords.
+    | 흰옷. 목검.
+   1| If anyone bleeds the wrong colour, the harbour talks stop for a month.
+    | 엉뚱한 색으로 피 보면, 항구 얘기는 한 달 쉰다.
+[9] <card> 
+[10] elderyunbi{baekje}:
+   0| Then keep your boys’ wrists honest.
+    | 그럼 너희 애들 손목을 바르게 두게.
+   1| The chalk does not care whose sleeve they hold.
+    | 분필은 누구 소매를 잡았는지 안 본다.
+[11] ¶ Swords first. Wooden ones, which still remember steel. The Jinmo boy holds his blade high over his head, the Jinmo way, daring you. A Hae boy takes the dare. On the call they both move. Blades skim th
+[12] -{?} "🗣":
+   0| That Jinmo boy?
+    | 저거 진모 애지?
+   1| Fast wrists.
+    | 손목 빠르네.
+   2| Faster feet than the Hae, too.
+    | 발도 해씨보다 빨라.
+   3| Point to Jinmo.
+    | 점 — 진모.
+[13] ¶ The Jinmo boy bows to the steps and looks straight past the Hae boy, to the edge of the sand, where the crown prince’s nobody is waiting.
+[14] ¶ When the wooden points are tallied, the sand comes out. A circle of grit inside the same square. Ssireum — satba locked before they stand, knees in the grit, equal grips on waist and thigh, then up wi
+[15] ¶ A Yunbi boy hooks a leg, low, the coast-road way. The Satek boy answers with his hip. He lifts, he turns, and the Yunbi boy’s feet leave the earth. The yard goes quiet the way a dock goes quiet when a
+[16] eldersatek{baekje}:
+   0| See?
+    | 봤지?
+   1| Even Yunbi can fall without a cart.
+    | 연비도 짐수레 없이 넘어지더군.
+[17] elderyunbi{baekje}:
+   0| Your boy’s knee touched first.
+    | 너희 애 무릎이 먼저야.
+   1| Ask the chalk.
+    | 분필한테 물어봐.
+[18] ¶ The elders watch from the hall steps. They always do, and they still count wrong when it is their sleeve.
+[19] ¶ One step below the elders sit the crown prince’s sons. Each one sits on his mother’s side of the stair. If you know the houses, you can read the whole Assembly off that stair.
+[20] <card> 
+[21] yung{baekje}:
+   0| That’s one.
+    | 하나.
+   1| …Father didn’t clap.
+    | …아버지는 손뼉 안 치셨네.
+[22] <card> 
+[23] tae{baekje}:
+   0| Jinmo one. Satek one. Yunbi owes my grandmother a boat.
+    | 진모 하나. 사택 하나. 연비는 우리 할머니한테 배 한 척 빚졌고.
+[24] <card> 
+[25] hyo{baekje}:
+   0| When the eel boy comes on, are we allowed to cheer for Father’s man? Or is that— is that taking a side?
+    | 장어 파는 애 나오면, 아버지 사람한테 환호해도 되나? 아니면 그게— 편드는 건가?
+[26] tae{baekje}:
+   0| Cheer quietly. It’s cheaper.
+    | 조용히 해. 그게 싸.
+[27] <card> 
+[28] herald{other}:
+   0| Prince Yung, your cushion—
+    | 융 왕자님, 방석을—
+[29] yun{baekje}:
+   0| Yun. Yung is over there. He’s the one with the ring.
+    | 연이다. 융 형님은 저쪽. 반지 낀 쪽.
+[30] <card> 
+[31] ¶ Pung has a strip of wood on his knees and a brush in his fist. He is copying down every name the herald reads, because nobody told him not to.
+[32] <scene> The Last Bout
+[33] ¶ Last on the sand: the Jinmo boy, and the crown prince’s nobody. For five days the Jinmo boy has told the steps what he will do to a peasant. Now the peasant has a royal surname, and the steps want to 
+[34] jinmoboy{baekje}:
+   0| Buyeo. BUYEO.
+    | 부여. 부여라고.
+   1| You got that name off a drunk on a riverbank, eel boy. I’ll hand it back to him in pieces.
+    | 강가에서 술 취한 놈한테 얻은 이름이잖아, 장어 새끼야. 조각내서 돌려주마.
+[35] gyebek{baekje}:
+   0| It was given.
+    | 받은 것이오.
+[36] jinmoboy{baekje}:
+   0| …What?
+    | ……뭐?
+[37] gyebek{baekje}:
+   0| You said I got it. It was given. That is different.
+    | 얻었다고 했소. 받은 것이오. 다르오.
+[38] ¶ Satba. Equal grips, knees in the grit, then up together. The Jinmo boy is a head taller, and he knows it. He leans.
+[39] -{?} "🗣":
+   0| Jinmo’s got him—
+    | 진모가 잡았다—
+   1| Look at the eel boy’s feet, he’s going—
+    | 장어 놈 발 좀 봐, 밀린다—
+   2| He’s not going anywhere. Look.
+    | 안 밀려. 봐 봐.
+[40] ¶ Gyebek’s heels slide back a finger’s width, and stop. He does not try to throw. He holds, the way he held a rope in a river for five days, and he waits.
+[41] euija{baekje}:
+   0| Ha! Look at him, Father. He isn’t wrestling.
+    | 하하! 보십시오, 아바마마. 저건 씨름이 아닙니다.
+   1| He’s waiting for the other one to get bored of breathing.
+    | 저쪽이 숨 쉬는 데 질릴 때까지 기다리는 거지요.
+[42] kingmu{baekje}:
+   0| Sit down. You’ll frighten the Satek.
+    | 앉아라. 사택이 놀라겠다.
+[43] jinmoboy{baekje}:
+   0| Let— go— you—
+    | 놔— 이— 놓으라고—
+[44] gyebek{baekje}:
+   0| No.
+    | 아니오.
+[45] ¶ The Jinmo boy runs out of breath first. Gyebek turns him the way you turn over a full basket: carefully, so nothing spills.
+[46] ¶ Sand takes a Jinmo shoulder. On the royal steps, a crown prince with no interest in clan quarrels is on his feet.
+[47] ¶ Then someone in the crowd starts the old chant, the one every house in Sabi knows by heart, because a royal name has just won on the sand. Eraha is the old Baekje word for king.
+[48] -{?} "🗣":
+   0| Restore the reign of the thirteenth Eraha!
+    | 열셋째 어라하의 치세를 다시 이루소서!
+[49] ¶ Euija hears it and stops smiling. Nobody notices, except Gyebek, who is still on his knees in the sand and looking straight at him.
+[50] ¶ By dusk the white is grey with chalk and grit. Nobody has settled four generations of anything. The throne likes it that way. The boys go home with a score instead of a funeral.
+[51] ¶ On his way off the sand, Gyebek passes the bottom step. The littlest prince holds up his strip of wood.
+[52] gyebek{baekje}:
+   0| I cannot read.
+    | 저는 글을 못 읽습니다.
+[53] pung{baekje}:
+   0| It says you. Buyeo Gyebek. I wrote it the herald’s way, only neater.
+    | 너라고 쓰여 있어. 부여 계백. 전령이 읽은 대로 썼는데, 더 반듯하게.
+   1| Keep it. I’ll write another.
+    | 가져. 난 또 쓰면 돼.
+[54] ¶ Gyebek looks at the marks for a long time. Then he puts the wood inside his shirt, where the burner went, and bows to a boy of eight as if he were the king.
+[55] gyebek{baekje}:
+   0| …Thank you.
+    | …고맙습니다.
+[56] <scene> The Assembly
+[57] ¶ In the Assembly they fight for power, each house holding a share of the king's sons. They fight in the street too. Same fight. The street version is older.
+[58] <term> The Rock of Government. Long ago Baekje’s lords chose their premier by sealing t
+[59] ¶ Unlike Silla’s Harmony Council, the Assembly does not require every voice. A plurality of houses is enough — which is why the street fights matter. Votes can be bought in pieces. In Surabol they must 
+[60] ¶ What the Assembly votes on, more often than war, is water. Who loads first. Whose ships winter in the river mouth. Who gets the orange levy, and who gets the silk berth. In this country, a clan withou
+[61] eldersatek{baekje}:
+   0| Yunbi talks of blood.
+    | 윤비는 피를 말하지.
+   1| We talk of berths.
+    | 우리는 선석을 말한다.
+   2| Blood cools. A winter anchorage does not.
+    | 피는 식는다. 겨울 정박은 안 식는다.
+[62] elderyunbi{baekje}:
+   0| You hold the king’s sleeve and call it a harbour.
+    | 너희는 임금의 소매를 잡고 그걸 항구라 부르는군.
+   1| We don’t hold the sleeve. We hold the arm.
+    | 우리는 소매를 안 잡소. 팔을 잡지.
+[63] ¶ Satek and Yunbi have been at it for four generations. Nobody alive can say what started it. Everybody alive can list the last six things.
+[64] ¶ Two men on the rock are not lords. They keep the Assembly honest, or try to. One keeps the tide tables. One keeps the maps.
+[65] <card> 
+[66] eldersatek{baekje}:
+   0| Clerk. The spring tide at the Satek berth.
+    | 서기. 봄 사리 때 사택 선석 물 깊이.
+[67] seongchung{baekje}:
+   0| Four hands at the low, my lord. Which is— forgive me— not enough for a winter hull, so if the vote is about wintering, then—
+    | 썰물에 네 뼘입니다, 대감. 그건— 송구하오나— 겨울 배를 대기엔 모자라니, 표결이 겨울 정박에 관한 것이라면, 그—
+[68] eldersatek{baekje}:
+   0| Write five.
+    | 다섯으로 적게.
+[69] seongchung{baekje}:
+   0| I— the river says four, my lord. I can write it larger. It will still be four.
+    | 저— 강이 넷이라 합니다, 대감. 크게 적을 수는 있습니다. 그래도 넷입니다.
+[70] <card> 
+[71] heungsu{baekje}:
+   0| He’s right. Here.
+    | 맞습니다. 여기.
+   1| The sandbar. Vote whatever you like. Silt doesn’t come to meetings.
+    | 모래톱입니다. 표결은 마음대로 하십시오. 뻘은 회의에 안 옵니다.
+[72] ¶ He scratches the river mouth into the packed earth with his stick, wider than it really is, so the lords at the back can see it. Elder Yunbi laughs out loud. Elder Satek writes four.
+[73] ¶ Today, for once, they agree on something. They don’t like the boy on the sand.
+[74] eldersatek{baekje}:
+   0| Buyeo, on an eel boy.
+    | 장어 파는 놈한테 부여라니.
+   1| Every house on this rock owns one of the crown prince’s sons. Now he has a man none of us own.
+    | 이 바위 위 가문마다 태자의 아들 하나씩은 쥐고 있소. 그런데 이제 그한테 우리 누구 것도 아닌 사내가 생겼단 말이오.
+[75] elderyunbi{baekje}:
+   0| Then we buy him. Before you do.
+    | 그럼 사지. 당신네보다 먼저.
+[76] eldersatek{baekje}:
+   0| You’ll overpay. You always do.
+    | 값을 더 쳐주겠지. 늘 그러니까.
+[77] ¶ Neither house has ever won, and nothing about that is accidental: the throne needs both of them standing. A clan with no rival starts watching the throne.
+[78] -{?} "🗣":
+   0| They say Yunbi already knows what was said in the Satek meeting.
+    | 연비 쪽에서 사택 회의 내용을 벌써 안다더라.
+   1| And Satek already knows the Yunbi one.
+    | 사택 쪽도 연비 회의를 안다더라.
+   2| So both know, and both pretend not to.
+    | 그럼 둘 다 알고, 둘 다 모르는 척하는 거지.
+   3| That’s politics.
+    | 그게 정치지 뭐.
+[79] <scene> The Rock at Dusk
+[80] ¶ When the rock is empty, the crown prince is still sitting on it, which is not allowed. His new man stands beside him, which is not allowed either.
+[81] ¶ Below the rock, the two clerks are rolling up the day’s maps. The crown prince whistles them over like a man calling dogs. They come anyway.
+[82] euija{baekje}:
+   0| You. The tide.
+    | 너. 물때.
+   1| Four hands. You could have written five and gone home with a Satek purse. Why didn’t you?
+    | 네 뼘. 다섯이라 적고 사택 돈주머니 들고 집에 갈 수도 있었지. 왜 안 그랬느냐?
+[83] seongchung{baekje}:
+   0| Because in the eleventh month a hull sits down on that bar, Highness, and somebody asks who wrote five, and—
+    | 동짓달에 배 한 척이 그 모래톱에 주저앉으면, 저하, 누가 다섯이라 적었느냐 묻게 될 것이고, 그러면—
+[84] euija{baekje}:
+   0| And it’s you.
+    | 너로구나.
+[85] seongchung{baekje}:
+   0| It is always the clerk.
+    | 늘 서기입니다.
+[86] euija{baekje}:
+   0| Ha! Everybody on this rock wants something. What do you want, tide man?
+    | 하! 이 바위 위에선 다들 뭘 원하지. 너는 뭘 원하느냐, 물때쟁이?
+[87] seongchung{baekje}:
+   0| …A king who hears a bad number and does something about it. Before the hull, Highness. Just the once would—
+    | …나쁜 숫자를 듣고 뭔가 하시는 임금입니다. 배가 주저앉기 전에요, 저하. 딱 한 번이라도—
+[88] euija{baekje}:
+   0| And you? The stick.
+    | 너는? 지팡이.
+[89] heungsu{baekje}:
+   0| Same as him.
+    | 저 사람과 같습니다.
+   1| Earlier.
+    | 좀 더 일찍요.
+[90] ¶ Remember that answer. He will give it again, at the worst possible time.
+[91] euija{baekje}:
+   0| They want to buy you, you know. All three of you. Both houses will bid all winter.
+    | 저치들이 너희를 사려고 한다. 셋 다. 두 집안이 겨울 내내 값을 부를 거다.
+[92] gyebek{baekje}:
+   0| I am not for sale.
+    | 저는 팔 것이 아닙니다.
+[93] seongchung{baekje}:
+   0| Nor— nor am I, Highness. I think. Nobody has actually offered.
+    | 저— 저도 아닙니다, 저하. 아마도요. 아직 아무도 값을 안 불렀지만요.
+[94] heungsu{baekje}:
+   0| They will.
+    | 부를 겁니다.
+[95] euija{baekje}:
+   0| Ha! Three men on this rock nobody owns. That’s what frightens them.
+    | 하하! 이 바위 위에 누구 것도 아닌 사내가 셋. 그래서 저치들이 겁을 먹는 거다.
+   1| You heard the chant on the sand?
+    | 모래판에서 그 구호 들었느냐?
+[96] gyebek{baekje}:
+   0| Yes. Everyone knows it.
+    | 예. 다들 압니다.
+[97] euija{baekje}:
+   0| Do you know what it’s about?
+    | 무슨 뜻인지는 아느냐?
+[98] gyebek{baekje}:
+   0| No.
+    | 모릅니다.
+[99] euija{baekje}:
+   0| Neither do they. That’s the trouble.
+    | 저치들도 모른다. 그게 문제지.
+   1| Eight houses, one river, and the only thing they’ll shout together is a king three hundred years dead.
+    | 가문 여덟, 강 하나. 그런데 다 같이 외치는 거라곤 삼백 년 전에 죽은 임금 하나뿐이다.
+   2| This country needs a new story, Gyebek. The old one is wearing out.
+    | 이 나라엔 새 이야기가 필요하다, 계백아. 옛것은 닳아 가고 있어.
+[100] gyebek{baekje}:
+   0| Who will tell it?
+    | 누가 합니까?
+[101] ¶ Euija laughs, and does not answer, which for him is a kind of answer.
+[102] ¶ Why is one dead king the only thing eight houses still agree on? To find out, we go back three hundred years…!
+  @baekje-eight-seats: The Eight Great Clans
+  @dudung: Unlike Silla’s Harmony Council, the Assembly does not re
+  @heartbeat: We don’t hold the sleeve. We hold the arm.
+  @clan-satek: They say Yunbi already knows what was said in the Satek 
+  @satek-crowns-steps: Every house on this rock owns one
+  @satek-berths: Blood cools. A winter anchorage does not.
+  @council-chamber-smoke: The Eight Great Clans
+  @clan-tourney-grid-wide: square grid in the palace yard
+  @clan-tourney-call: young men of each house step onto the grid
+  @clan-tourney-sword-midstrike: Swords first. Wooden ones, which
+  @clan-tourney-sword-dutch: Blades skim the chalk.
+  @clan-tourney-sword-ots: Swords first. Wooden ones, which
+  @clan-tourney-sword-victory: Point to Jinmo.
+  @clan-tourney-ssireum-grip: satba locked before they stand
+  @clan-tourney-ssireum-lift: A Yunbi boy hooks a leg
+  @clan-tourney-ssireum-throw: Sand takes the shoulder.
+  @clan-tourney-spectators: elders watch from the hall steps
+
+######## #6 Gunchogo, the 13th (371)
+[0] ¶ Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.
+[1] <card> 
+[2] <place> The north’s capital, and a long walk for anyone who wants it.
+[3] <map> 
+[4] ¶ Baekje has the river, the coast and the sea roads east. The clans take the docks. The throne takes a cut. It is the richest kingdom in Samhan, and the strongest. Neither lasts.
+[5] ¶ What its king wants is the one thing Baekje doesn’t have: the north’s capital. One winter he takes thirty thousand men up the frozen roads to get it.
+[6] <battle> 
+[7] <scene> The Camp
+[8] ¶ The night before, the Baekje king sits by a fire on the south bank with his son, the crown prince. Across the water is the wall. The boy has never seen a city this big and is trying not to show it.
+[9] -{?} "The Crown Prince":
+   0| They have a wall, Father. A real one. And a king on it.
+    | 성벽이 있습니다, 아바마마. 진짜 성벽이요. 그 위엔 임금도 있고요.
+[10] gyeonggeunchogo{baekje}:
+   0| Good. I’d hate to walk this far for an empty one.
+    | 잘됐다. 빈 성 보자고 이 먼 길을 왔으면 서운할 뻔했지.
+   1| Nobody from the south has ever stood on that wall. Our grandsons will want to know who was first.
+    | 남쪽 사람이 저 성벽에 서 본 적은 한 번도 없다. 손자들이 누가 처음이었는지 알고 싶어 할 거다.
+[11] -{?} "The Crown Prince":
+   0| And if he won’t come down?
+    | 그 임금이 안 내려오면요?
+[12] gyeonggeunchogo{baekje}:
+   0| Then he’s braver than I am, and we’ll find out what that’s worth.
+    | 그럼 나보다 용감한 거지. 그게 얼마짜리인지 알게 되겠지.
+[13] <scene> The Wall
+[14] ¶ At first light the Baekje army wades the river and comes at the wall. On the wall of Pyongyang there is a Goguryeo boy with a bow and not enough arrows. Beside him, in the same frozen mud, is his king
+[15] <battle> 
+[16] -{?} "A Goguryeo Archer":
+   0| Majesty, get down— they’ve found the range—
+    | 전하, 엎드리십시오— 저놈들 사정거리를 잡았습니다—
+[17] -{?} "The Goguryeo King":
+   0| So have we.
+    | 우리도 잡았다.
+   1| A king who climbs off his wall teaches the whole wall to climb off. Shoot.
+    | 임금이 성벽에서 내려가면, 성벽 전체가 내려가는 법을 배운다. 쏴라.
+[18] ¶ The arrow that finds him isn’t aimed at anyone. It comes over the parapet the way rain does. He sits down in the mud as if he had decided to.
+[19] <battle> 
+[20] -{?} "The Goguryeo King":
+   0| …Don’t tell them.
+    | ……알리지 마라.
+   1| Not until they’ve gone home. Keep shooting.
+    | 저놈들이 돌아갈 때까지는. 계속 쏴라.
+[21] ¶ The boy tells no one. The gate stays shut. Below it, the Baekje king hears the wailing start inside the walls, and knows exactly what that sound is.
+[22] gyeonggeunchogo{baekje}:
+   0| That’s a king’s funeral.
+    | 저건 임금의 장례다.
+   1| …Turn them around. We came for a city. We’re going home with something better.
+    | ……돌려라. 성 하나 얻으러 왔지만, 그보다 나은 걸 갖고 돌아간다.
+[23] <battle> 
+[24] -{?} "The Crown Prince":
+   0| Father, the gate would have opened by spring. Why are we going home?
+    | 아바마마, 봄이면 성문이 열렸을 겁니다. 왜 돌아갑니까?
+[25] gyeonggeunchogo{baekje}:
+   0| Listen.
+    | 들어 봐라.
+[26] ¶ Down the column, the men are already singing about it.
+[27] <quote> Winter, tenth month. The king of Baekje came with thirty thousand men and attack
+[28] ¶ Back in the south they give him a chant, and the chant outlives everything else he won.
+[29] nation-baekje{baekje}:
+   0| Restore the reign of the thirteenth Eraha.
+    | 열셋째 어라하의 치세를 다시 이루소서.
+[30] ¶ They will still be chanting that sentence three centuries later, in a courtyard, to a clever king who has already decided that a country is a story. It is the sentence that gets Daeya burned.
+[31] ¶ Goguryeo remembers it too, and differently, and for exactly as long. The boy from the wall lives to be old. He tells it to his grandsons, and they tell theirs.
+[32] <battle> 
+[33] ¶ North, then, three hundred years on, to the snow and Goguryeo’s most frightening commander. First question: do you know what happens to traitors…?
+  @gunchogo: Restore the reign of the thirteenth Eraha.
+  @gunchogo_siege: marches north to Pyongyang
+  @gunchogo_curse: Restore the reign of the thirteenth Eraha.
+
+######## #7 Commander Yeon (634)
+[0] ¶ Everyone in the north has a story about the Eternal General. None of them are bedtime stories.
+[1] <map> 
+[2] ¶ This one starts in the snow, two winters after Silla crowned its queen. A young man is caught on the border and dragged to Commander Yeon, who is twenty-nine and holds the east in his father’s name.
+[3] <card> 
+[4] gesomun{goguryeo}:
+   0| Do you know what happens to traitors, young man...?
+    | 반역자가 어떻게 되는지 아느냐, 젊은이…?
+[5] gesomun{goguryeo} "🔴":
+   0| They say you… leaked our secrets to the enemy.
+    | 네가… 우리 기밀을 적에게 흘렸다더구나.
+[6] -{?} "Prisoner":
+   0| I have… no name.
+    | 이름... 없습니다.
+[7] gesomun{goguryeo} "🔴":
+   0| Good. Then nobody will miss it.
+    | 잘됐군. 그럼 아쉬워할 놈도 없겠다.
+[8] ¶ It is over quickly, and it is not clean. Nobody in the yard looks away, because looking away is also a report.
+[9] ¶ The guards talk about him the way men talk about weather. “He’s a monster, you know. He’s made the Eastern Commandery the safest in the kingdom. The barbarians run if they hear his name.”
+[10] <quote> Gaesomun*, also called Gaegeum. His surname was Yeon. He claimed he had been bor
+[11] ¶ The outpost is also a building site. Three summers ago, the Tang flattened Goguryeo’s pile of enemy bones. It is the same emperor who sent Silla’s new queen flowers with no scent. Goguryeo got the mes
+[12] <scene> The Burned Village
+[13] ¶ A month before the summons, in a Mohe village the Eastern Command has finished with, there is a boy who will not move out of the doorway of a house that no longer has a roof. Snow is settling on the a
+[14] gesomun{goguryeo}:
+   0| Move.
+    | 비켜라.
+[15] <card> 
+[16] gulgul{goguryeo} "🧒":
+   0| …
+    | …
+[17] gesomun{goguryeo}:
+   0| Do you understand me.
+    | 말은 아느냐.
+[18] gulgul{goguryeo} "🧒":
+   0| …
+    | …
+[19] ¶ He does not. Yeon looks at him for what his officers later agree was an unreasonable length of time. Then he laughs, the slap of a laugh they will learn to dread, and pulls off his gloves.
+[20] gesomun{goguryeo}:
+   0| Look at this one. Guarding a house that’s already burned.
+    | 이놈 봐라. 다 타 버린 집을 지키고 섰네.
+   1| Good. This is what Goguryeo looks like.
+    | 좋다. 이런 놈이 고구려다.
+   2| Get on. The second horse.
+    | 타라. 두 번째 말.
+[21] ¶ He hands the gloves down. They do not fit. The boy gets on the second horse anyway, the stick still in his fist.
+[22] <card> 
+[23] dosuryu{goguryeo}:
+   0| …You are taking him?
+    | …데려가시게요?
+[24] gesomun{goguryeo}:
+   0| Where do you think that boy is standing when he is grown.
+    | 저 아이가 크면 어디에 서 있을 것 같으냐.
+[25] dosuryu{goguryeo}:
+   0| …Opposite us, I should think.
+    | …우리 반대편이겠지요.
+[26] gesomun{goguryeo}:
+   0| That is why I am taking him.
+    | 그러니까 데려간다.
+[27] ¶ He gives him the name Gulgul, which is not a Goguryeo name and is not a Mohe one either, and raises him in Pyongyang alongside his own sons — one step behind them at every meal.
+[28] <scene> The North Wall
+[29] ¶ Years later, on the north wall of Pyongyang in a winter worse than this one, Yeon stands with the grown boy a step behind him and the river frozen white below. He says the thing he says every winter, 
+[30] gesomun{goguryeo}:
+   0| Cold?
+    | 춥냐.
+[31] gulgul{goguryeo}:
+   0| …No, sir.
+    | …아닙니다.
+[32] gesomun{goguryeo}:
+   0| Liar. I’m cold too.
+    | 거짓말 마라. 나도 춥다.
+   1| A king of ours died up here once. Baekje arrow. The wall held anyway.
+    | 우리 임금 한 분이 여기서 돌아가셨다. 백제 화살이었지. 그래도 성은 버텼다.
+   2| Remember it. Kings die, courts get tired, walls come down—
+    | 기억해라. 왕은 죽고, 조정은 지치고, 성은 무너져도—
+   3| <b>Goguryeo never dies.</b>
+    | <b>고구려는 죽지 않는다.</b>
+[33] ¶ Gulgul grows up quiet. Years from now, Yeon will send him north to guard the marches and give him a surname to take along. Dae. Big, as big as the country.
+[34] <scene> The Summons
+[35] ¶ Back in that first winter, the summons comes. The summons isn't addressed to him. It's addressed to his father, who still holds the Eastern seal. Yeon Taejo sat in the capital's big chair for twelve y
+[36] <card> 
+[37] yeontaejo{goguryeo}:
+   0| Take the seal. You sit in my place this year.
+    | 인장 가져가라. 올해는 네가 내 자리에 앉는다.
+   1| …And say half of what you think.
+    | …그리고 생각한 것의 반만 말해.
+[38] gesomun{goguryeo} "🔴":
+   0| Me? Why do I have to go to Pyongyang?
+    | 제가요? 평양엔 제가 왜 가야 합니까?
+   1| It’s a place where mouths open only to say useless things…
+    | 어차피 쓸데없는 소리나 하려고 주둥이 벌리는 데인데...
+[39] yeontaejo{goguryeo}:
+   0| I know. I sat in it for twelve years.
+    | 안다. 내가 열두 해를 앉아 있었다.
+   1| Your uncle chairs it now. He’ll be kind to you. That’s worse.
+    | 지금은 네 숙부가 그 자리를 맡고 있다. 너한테 다정하게 굴 거다. 그게 더 나쁘다.
+   2| Half, son. Half.
+    | 반만이다, 개소문아. 반만.
+[40] ¶ He promised his father half. He has never said half of anything. Next stop: Pyongyang, and a room full of men counting grain…!
+  @mountain-outpost: Eastern Commandery the safest
+  @spike-heads: It is over quickly, and it is not clean.
+  @nameless-boy: A month before the summons
+  @cy-gulgul-stick: walks up until the stick touches his chest
+  @battlefield-corpses: Yeon looks at him for what his officers later agree
+  @sunset-rider: You are taking him?
+  @gesomun-seq-yeon-snow: Eastern Commandery the safest
+  @chunchu-royal-intimacy: royal chambers
+  @summit-taejo-seal: Take the seal. You sit in my place this year.
+  @summit-taejo-doorway: Half, son. Half.
+  @cy-gulgul-wall: the river frozen white below
+  @scene-gesomun-promise-2: Years later, on the north
+  @xue-eastern-shaft: Eastern Commandery the safest
+
+######## #8 High Summit (634)
+[0] ¶ Half, his father said. Yeon manages it until the second pot of tea.
+[1] <map> 
+[2] ¶ He rides in at the red two-tier gate, in his father’s place. Pyongyang already knows the sound of those hooves.
+[3] ¶ Goguryeo works like this. Five commanders argue at the High Summit. The High Commander holds the first sword. The king has the last word.
+[4] <term> The meeting of the ka. A ka was a tribal chief, back when Goguryeo was five roof
+[5] ¶ The chamber is already loud when Yeon arrives — not with strategy, with arithmetic. Every banner wants a larger share of the same winter grain.
+[6] ¶ Five swords sit at this table, a crow stamped in every ring. Nobody draws at the Summit. Everybody comes armed anyway. The South’s grip is worn smooth by Yushin’s passes. The North’s edge is nicked fr
+[7] ¶ The clerk who only keeps the minutes wears one too, because the rules say so. Ink on the grip, none on the edge. By the High Commander’s teacup lies the first sword, a small stone haetae carved under 
+[8] yeongnyu{goguryeo}:
+   0| Enough.
+    | 그만.
+   1| I did not call five commands to Pyongyang to divide a granary.
+    | 곳간이나 나누자고 오부를 평양에 부른 것이 아니다.
+   2| I will be the “King for All” — Samhan under one roof. Silla and Baekje first.
+    | 짐이 “삼한왕검”이 되리라 — 삼한을 한 지붕 아래로. 신라와 백제부터.
+[9] ¶ He is not the first man this year to want to be king for all. He is the first to want it on a budget.
+[10] southcmd{goguryeo}:
+   0| Then the Southern Command takes the next levy.
+    | 그러면 다음 징발은 남부대가 받겠습니다.
+   1| Yushin’s banners have been testing the passes. If His Majesty wants Samhan, give me men — not speeches.
+    | 유신의 깃발이 고개를 두드리고 있습니다. 폐하께서 삼한을 원하시면 병력을 주십시오 — 연설이 아니라.
+[11] ¶ The north wants horses. The west wants timber and iron. Both want them from Central, and both say so twice.
+[12] <card> 
+[13] gusesa{goguryeo}:
+   0| (mild, as if chairing a feast)
+    | (잔치 주재하듯 부드럽게)
+   1| Each front believes it is the only front. That is why we meet.
+    | 전선마다 자기만 전선이라 믿지. 그래서 모이는 것이오.
+   2| Eastern Command has kept the marches quiet. Let us not reward noise over results.
+    | 동부대는 변방을 조용히 지켜 왔소. 성과보다 목소리를 상 주지 맙시다.
+[14] gesomun{goguryeo}:
+   0| Quiet?
+    | 조용하다?
+   1| I have been killing tribes so this room can argue about who gets the horses.
+    | 이 방이 말 배분을 놓고 다투라고 내가 오랑캐를 베어 온 줄 아시오.
+   2| Meanwhile the Second Emperor is not a tribute account. He is a man who murders brothers for a throne and then invents a reason.
+    | 그사이 당 황제는 조공 장부가 아니오. 왕좌를 위해 형제를 죽이고 나서 이유를 발명하는 사내요.
+[15] yeongnyu{goguryeo}:
+   0| Commander Yeon. Watch your tongue about foreign kings.
+    | 연 장군. 외국 임금 혀를 조심하게.
+   1| We have bought decades with gold. We will buy more — and spend the peace on Samhan.
+    | 금으로 수십 년을 샀고, 더 살 것이다 — 그 평화로 삼한을 사겠다는 뜻이야.
+[16] gesomun{goguryeo}:
+   0| You cannot buy a man who has already decided the price of your head.
+    | 제 목값을 이미 정한 사내는 살 수 없소.
+   1| I have watched how courts die. They starve the wall that is screaming, and fatten the wall that—
+    | 조정이 죽는 꼴을 봤소. 비명 지르는 성벽은 굶기고, 아첨하는 성벽은—
+[17] yeongnyu{goguryeo}:
+   0| Enough, Commander. We heard you the first time. The whole hall heard you the first time.
+    | 그만하게, 연 장군. 처음에 다 들었네. 온 전각이 처음에 다 들었어.
+[18] southcmd{goguryeo}:
+   0| Easy for the East to lecture. You fight people without cities.
+    | 동부가 훈계하긴 쉽지. 당신들은 성 없는 놈들과 싸우니까.
+   1| I fight Kim Yushin. Send me the next levy or stop talking about Samhan.
+    | 나는 김유신과 싸운다. 다음 징발을 주든지, 삼한 이야기는 그만두시오.
+[19] ¶ Yeon’s hands are flat on the table. The nails have gone white. This is the face of a man who has already fought the war the room refuses to schedule.
+[20] gesomun{goguryeo}:
+   0| Listen to yourselves.
+    | 당신들 말하는 꼴 좀 들어 보시오.
+   1| Horses. Timber. Bodies. A crown-word.
+    | 말. 목재. 사람. 그리고 관호.
+   2| When the Second Emperor comes he will not ask which of you was most polite in committee.
+    | 황제가 오면, 이 중 누가 회의에서 제일 공손했는지는 묻지 않을 거요.
+[21] ¶ The Southern Commander is up before the sentence is finished. The smooth grip turns once in his palm. Then the blade is out, resting a finger’s width under Yeon’s jaw.
+[22] southcmd{goguryeo}:
+   0| Polite?
+    | 공손?
+   1| Say it again. Say “polite” to the South.
+    | 다시 해 보시오. 남부 앞에서 ‘공손’이라고.
+[23] gesomun{goguryeo}:
+   0| …Nice edge. You keep it sharp.
+    | …날 잘 세웠네. 관리 잘했어.
+   1| Pity about the arm holding it.
+    | 그걸 쥔 팔이 아깝다.
+[24] yeongnyu{goguryeo}:
+   0| Commander Son.
+    | 손 장군.
+   1| Not in my hall.
+    | 과인의 전각에서는 아니 된다.
+[25] ¶ The blade does not move. The High Commander does not stand. He reaches over and sets two fingers on the flat of it, the way you’d steady a cup about to spill.
+[26] gusesa{goguryeo}:
+   0| Daeha. Put it away.
+    | 대하. 넣게.
+   1| If this room ever cuts my nephew, it will do it properly. In writing.
+    | 이 방이 언젠가 내 조카를 벤다면, 제대로 할 걸세. 글로.
+[27] ¶ It goes back in on the second try. Yeon touches his throat, looks at his fingers, and finds nothing on them. He watches that scabbard for the rest of the afternoon.
+[28] gusesa{goguryeo}:
+   0| If you keep defying the king, Commander Yeon…
+    | 계속 어명을 거스른다면, 연 장군…
+   1| we may have to name you a traitor.
+    | 그대를 역적으로 지목할 수밖에 없소.
+[29] gusesa{goguryeo}:
+   0| (to Yeon, almost kindly — which is worse)
+    | (연에게, 거의 다정하게 — 그게 더 나쁘다)
+   1| Nephew. Sit down. The Summit does not run on prophecies.
+    | 조카. 앉게. 제가회의는 예언으로 돌지 않네.
+[30] gesomun{goguryeo}:
+   0| ….
+    | ….
+   1| Then keep your Summit.
+    | 그럼 당신들 제가회의를 지키시오.
+   2| Keep your tribute. Keep your Samhan dream carved into a budget fight.
+    | 조공도, 예산 싸움으로 깎아 낸 삼한의 꿈도.
+   3| When the Second Emperor’s drums reach the Liao, remember who tried to spoil the feast.
+    | 황제의 북이 요하에 닿거든 — 잔치를 망치려 한 자가 누구였는지 기억하시오.
+[31] ¶ He walks out before it ends. Outside, the corridor is very long and very cold. Behind him the chamber returns to numbers — as if he had never brought an emperor into the room.
+[32] gesomun{goguryeo}:
+   0| Heaven above… help this foolish country…!
+    | 하늘이시여… 이 어리석은 나라를 도우소서…!
+[33] ¶ The Tang keep notes on this room. Theirs are less polite.
+[34] <quote> Their highest office is called Daedaero, the High Commander. It ranks with our f
+[35] <scene> The Palace Yard
+[36] ¶ In the yard the Eastern banners answer him anyway — a roar that has nothing to do with the Summit’s minutes.
+[37] dosuryu{goguryeo}:
+   0| Look at that — see how Pyongyang loves you.
+    | 봐봐, 평양이 널 얼마나 사랑하는지..
+[38] gesomun{goguryeo}:
+   0| Of course. The people have never once abandoned me.
+    | 당연하지. 백성은 날 버린 적이 없어.
+   1| It is the politicians…!
+    | 문제는 정치인들이야…!
+[39] dosuryu{goguryeo}:
+   0| So. That was half?
+    | 그래서. 그게 반이냐?
+[40] gesomun{goguryeo}:
+   0| That was a quarter. You should’ve heard what I didn’t say.
+    | 그게 사분의 일이다. 안 한 말을 들었어야 해.
+[41] gesomun{goguryeo}:
+   0| His Majesty wants Samhan under one roof.
+    | 폐하께서는 삼한을 한 지붕 아래 두고 싶어 하시지.
+   1| The Summit wants the roof itemised.
+    | 제가회의는 그 지붕을 항목별로 적고 싶어 하고.
+   2| …Get the horses. I would rather sleep in a tent tonight.
+    | …말 준비해라. 오늘 밤은 천막에서 자는 게 낫겠다.
+[42] gesomun{goguryeo}:
+   0| Gold to the Tang for quiet. Grain counted twice. A king who’d rather pay than ride.
+    | 조용하게 해 달라고 당에 금을 바치고. 곡식은 두 번 세고. 말 타느니 돈 내겠다는 임금이고.
+   1| There was a time Goguryeo didn’t pay anybody, Dosuryu. Other kings paid us. Silla came begging on its knees, and we rode south and saved it.
+    | 고구려가 아무한테도 바치지 않던 때가 있었어, 도수류. 다른 임금들이 우리한테 바쳤지. 신라가 무릎 꿇고 빌러 왔고, 우리가 남으로 내려가 구해 줬다.
+   2| Now look at us.
+    | 그런데 지금 꼴을 봐라.
+[43] dosuryu{goguryeo}:
+   0| That was two hundred years ago.
+    | 이백 년 전 얘기잖아.
+[44] gesomun{goguryeo}:
+   0| Then we’re two hundred years late. Get the horses.
+    | 그럼 이백 년 늦은 거지. 말 가져와.
+[45] <scene> The West Road
+[46] ¶ The Summit ends at dusk, without him. The commanders ride home the way they came in, by rank. The West goes last. The West always has the farthest to go.
+[47] ¶ At the Western Commander’s stirrup rides a junior warrior of twenty-four, with one eye that wanders. He held the horses by the gate all afternoon. He saw the man from the East come out early, take his
+[48] -{?} "Junior warrior":
+   0| Sir. The one from the East…
+    | 장군님. 그 동쪽 분 말입니다…
+   1| Is he mad?
+    | 미친 겁니까?
+[49] westcmd{goguryeo}:
+   0| No.
+    | 아니오.
+   1| He is a man who finishes the job in front of him. Whatever it costs. Whoever pays.
+    | 제 앞에 놓인 일은 기어이 끝내고 마는 사람이오. 값이 얼마든. 누가 치르든.
+[50] -{?} "Junior warrior":
+   0| Isn’t that good? In a soldier?
+    | 그럼 좋은 것 아닙니까? 군인한테는.
+[51] westcmd{goguryeo}:
+   0| Depends on the age he’s born into.
+    | 어느 시절에 났느냐에 달렸소.
+   1| In a quiet one, a man like that burns the house down. In a bad one…
+    | 태평한 때라면 그런 사람은 집을 태워 먹지. 험한 때라면…
+   2| …And stop looking at me with that eye. I can never tell which half of you is listening.
+    | …그리고 그 눈으로 날 보지 마시오. 어느 쪽이 듣고 있는지 통 모르겠으니.
+[52] -{?} "Junior warrior":
+   0| Both, sir.
+    | 둘 다입니다, 장군님.
+[53] ¶ The commander never finishes the other half of his sentence. It is a long way to the Liao. The road is quiet, and he would like it to stay that way for whatever time he has left.
+[54] ¶ That night, in Yeon’s tent, a rider finds him. His wife’s time has come, and it has gone badly before.
+[55] <scene> Birth of Namseng
+[56] ¶ He reaches the house after midnight. One lamp, one midwife, and the mother. On the wall hangs a painting of Samsin, the birth goddess, prayed at so often that the paint has gone pale where the hands t
+[57] yeonwife{goguryeo}:
+   0| Samsin…
+    | 삼신이시여…
+   1| This child alone — please.
+    | 이 아이만은 — 부디.
+   2| …This time — please.
+    | …이번엔, 부디.
+[58] ¶ The painting does not stay paint. Samsin steps from the frame the way steam steps from a kettle, and lays a hand where mortal hands have failed.
+[59] <card> 
+[60] samsin{other}:
+   0| Do not weep.
+    | 울지 마.
+   1| I will open the breath.
+    | 숨은 내가 열어 줄게.
+   2| The name — that is yours to give.
+    | 이름은 — 너희가 지어.
+[61] ¶ So the first heir arrives under Samsin's hand, the year of the Summit. They call him Namseng. Nobody wanted a poem in the name. It's the sound the room makes when the baby breathes.
+[62] gesomun{goguryeo}:
+   0| Namseng.
+    | 남생.
+   1| …Heavier than it sounds.
+    | …들리는 것보다 무거운 이름이다.
+   2| This country. You will have to keep it.
+    | 이 나라. 네가 지켜야 한다.
+[63] ¶ He holds the boy up to the lamp and tells him the only bedtime story he knows: the one about the king who rode south and never counted grain.
+[64] ¶ Once, Silla begged Goguryeo for an army, and Goguryeo came. To meet the king who answered, we go back two centuries…!
+  @yeon-duel: The north wants horses
+  @five-banners: Half, his father said
+  @goguryeo-five-blocks: Half, his father said
+  @gesomun-seq-pyongyang-wide: He rides in at the red two-tier gate
+  @gesomun-seq-pyongyang-gate: Pyongyang already knows the sound of those hooves
+  @pyongyang-seq-hall-bird: High Summit
+  @hs-pentagon: Half, his father said
+  @daeka-pentagon-swords: Goguryeo works like this. Five
+  @daeka-yeon-plunges: The chamber is already loud when Yeon arrives
+  @hs-hands-flat: Yeon’s hands are flat on the table.
+  @hs-sit-down: Nephew. Sit down.
+  @daeka-four-blades: He walks out before it ends.
+  @youngryu-samjogo-summit: Goguryeo works like this. Five
+  @namseng-birth-white: One lamp, one midwife, and the mother
+  @samsin-namseng-birth: One lamp, one midwife, and the mother
+  @samsin-life-office: One lamp, one midwife, and the mother
+  @samsin-open-desire: The painting does not stay paint
+  @nsfw-samsin-hall-lookback: I will open the breath.
+  @nsfw-samsin-hall-thighs: I will open the breath.
+  @samsin-cascade: steps from the frame the way steam
+  @samsin-threefold: I will open the breath.
+
+######## #9 Gwanggaeto, the Great King (400)
+[0] ¶ Silla is drowning. An army from across the sea is inside its walls, and its king has one move left.
+[1] <card> 
+[2] <quote> He was born big and imposing, with a will that would not be bridled.
+[3] <map> 
+[4] <scene> The Burning Capital
+[5] ¶ The Silla king stands on his own wall and counts the sea-raiders’ fires. They sit on the north road, on the south road, and under the west wall. There are more every night. Below, in the hall, his cou
+[6] <battle> 
+[7] -{?} "A Silla Elder":
+   0| If we ask the north, they will come. And then they will stay.
+    | 북에 청하면 옵니다. 그리고 눌러앉습니다.
+[8] -{?} "The Silla King":
+   0| And if we don’t ask, the Wa stay. Which guest would you rather feed?
+    | 안 청하면 왜가 눌러앉지. 어느 손님을 먹이고 싶은가?
+[9] -{?} "A Silla Elder":
+   0| Majesty, the letter will have to say… they’ll want a word. A low word.
+    | 전하, 서신에는… 그쪽이 바라는 말이 있을 겁니다. 낮은 말이요.
+[10] -{?} "The Silla King":
+   0| I know the word. Bring the brush.
+    | 그 말은 안다. 붓 가져와라.
+   1| I’ll write it myself, so nobody else has to.
+    | 내가 직접 쓰마. 다른 누가 쓰지 않아도 되게.
+[11] <scene> The Plea
+[12] ¶ His envoy rides north for nine days and kneels in the tent of a Goguryeo king who is twenty-six and has never lost.
+[13] -{?} "Silla’s Envoy":
+   0| The Wa are inside our walls, Great King. My king writes in his own hand.
+    | 왜가 우리 성 안에 들어와 있습니다, 대왕. 저희 임금께서 친필로 쓰셨습니다.
+   1| “Silla is your servant. Save your servant.”
+    | “신라는 대왕의 종입니다. 종을 구해 주소서.”
+[14] gwanggaeto{goguryeo}:
+   0| Servant. He wrote that word himself?
+    | 종이라. 그 글자를 제 손으로 썼단 말이냐?
+[15] -{?} "Silla’s Envoy":
+   0| …In his own hand.
+    | ……친필입니다.
+[16] gwanggaeto{goguryeo}:
+   0| Then they’ll come. Fifty thousand of them.
+    | 그럼 보내 주마. 오만이다.
+   1| Tell him one thing more, so he hears it from me first. Servants don’t decide when the master’s horsemen go home.
+    | 하나 더 전해라. 나한테서 먼저 듣게. 주인의 기병이 언제 돌아갈지는 종이 정하는 게 아니다.
+[17] ¶ The Silla king reads the answer twice. The first half saves his kingdom. The second half he does not read aloud.
+[18] <scene> The Horsemen
+[19] ¶ The horsemen come down out of the north like weather.
+[20] <battle> 
+[21] -{?} "A Silla Lookout":
+   0| Majesty— the north road. That dust isn’t Wa.
+    | 전하— 북쪽 길입니다. 저 먼지는 왜가 아닙니다.
+[22] -{?} "The Silla King":
+   0| No. That’s my letter.
+    | 아니지. 내 편지다.
+[23] ¶ From his wall he watches the raiders’ fires go out one by one. Then he watches the red banners come through his own gate, and keep coming.
+[24] <battle> 
+[25] -{?} "A Silla Elder":
+   0| They’re still coming in, Majesty.
+    | 아직도 들어옵니다, 전하.
+[26] -{?} "The Silla King":
+   0| I wrote the word. Let them in.
+    | 그 말은 내가 썼다. 들여라.
+[27] ¶ A red sun. The three-legged crow rides south on his banners. The stele will list sixty-four fortresses. It will not list the nerve it took.
+[28] ¶ The horsemen ride at the raiders’ backs, southwest over the big river and into Gaya country. At the last fortress the gate opens before the ladders are even up.
+[29] <battle> 
+[30] -{?} "A Goguryeo Rider":
+   0| That’s it? I didn’t even get off my horse.
+    | 이게 끝이야? 말에서 내리지도 않았는데.
+[31] ¶ Silla had asked. That’s the part everyone forgets. Then the horsemen ride back to the Silla capital, and don’t leave for fifty years.
+[32] ¶ Silla’s crown princes go north as hostages. The first one is twelve. Silla’s court takes Goguryeo titles. Silla’s army takes Goguryeo orders. It lasts two generations. Silla does not forget it.
+[33] ¶ He goes with a pony and a tutor. At the border he asks how long. Nobody answers him, which is how he finds out.
+[34] -{?} "The Silla Court":
+   0| They did save us.
+    | 구해 준 건 맞지.
+   1| So why are they still here?
+    | 그런데 왜 아직 여기 있나?
+[35] ¶ His stele, naturally, remembers it more kindly.
+[36] <quote> The common people were at peace in their work; the country was rich and the peop
+[37] ¶ Two hundred and forty years later a Silla prince will stand in front of a foreign emperor and ask for an army, and every single person in Surabol will know exactly what that costs, because it has been
+[38] <battle> 
+[39] ¶ The prince who will beg has a son. Bupmin is fifteen now, and his uncle has one question: which rule will you break first…?
+  @gwanggaeto_ride: Silla is drowning. An army
+  @gwanggaeto_hostages: crown princes go north as hostages
+  @parody-alexander-mosaic-gwanggaeto: Silla is drowning. An army
+  @parody-vercingetorix-gwanggaeto: crown princes go north as hostages
+
+######## #10 Bupmin (641)
+[0] <scene> Flowering Youth
+[1] ¶ Fifteen is old enough for the headband. It is not old enough to invent a country, though Bupmin keeps trying.
+[2] <map> 
+[3] ¶ The Hwarang train under the Marshal: horse, bow, verse, and above all gyuku, a horse-ball game a lazier age will call polo.
+[4] ¶ His father is in the Council chamber, collecting votes. His uncle keeps the yard, and the yard is where Bupmin lives now.
+[5] <diagram> 
+[6] ¶ Yushin does not soften the yard because the boy is royal. He softens nothing. The new boys sleep six to a hall and learn each other's snores before each other's ranks. They trade rumours about the Mar
+[7] ¶ Girls crowd the fence of the yard the way other towns crowd a market — not for the ball, for the Hwarang. They pretend they came for the verse.
+[8] herald{other}:
+   0| That club — Gaya ironwood core?
+    | 저 채, 가야 쇠심 박은 거냐?
+   1| No — the Moon Palace cypress. Last season’s.
+    | 아니 — 월성 측백이지. 작년 시즌 거.
+   2| …Last season? And he brought it out?
+    | …작년? 그거 들고 나와?
+[9] alchun{silla}:
+   0| A True Bone does not play last season’s shaft.
+    | 진골은 지난 시즌 채를 안 든다.
+   1| Is that law?
+    | 그게 법인가?
+   2| Worse.
+    | 법보다 무섭지.
+[10] <scene> The Turn
+[11] ¶ The practice road runs east along the river and bends hard at a split pine. That bend is where boys find out who they are. Gotaso is not supposed to ride it. Gotaso rides it.
+[12] gotaso{silla}:
+   0| Bupmin. To the pine and back.
+    | 법민아. 소나무까지 갔다 오기.
+   1| Loser carries the other one’s club box for a month.
+    | 지는 사람이 한 달 동안 채 함 들기.
+[13] munmu{silla}:
+   0| You’re not allowed on the practice road.
+    | 누님은 연습로에 나오면 안 되잖아요.
+   1| …Fine. One month.
+    | …좋아요. 한 달.
+[14] yushin{silla}:
+   0| Gotaso. Off the road.
+    | 고타소. 길에서 나와라.
+[15] gotaso{silla}:
+   0| One run, Uncle. He asked me.
+    | 한 번만요, 외숙. 얘가 하자고 했어요.
+[16] munmu{silla}:
+   0| I did not—
+    | 제가 언제—
+[17] yushin{silla}:
+   0| …One run.
+    | …한 번만.
+[18] ¶ They go off the line together. On the straight he is ahead. At the split pine the horse leans, the ground tilts, and his hands decide for him. He pulls up. Gotaso doesn’t. She takes the bend flat out,
+[19] ¶ The girls at the fence cheer for her, which is worse than laughing. Yushin has watched from the pine the whole time. He does not cheer for anybody.
+[20] gotaso{silla}:
+   0| Club box. A month.
+    | 채 함. 한 달.
+   1| Carry it where the girls can see.
+    | 아가씨들 보는 데서 들고 다녀.
+[21] yushin{silla}:
+   0| Again.
+    | 다시.
+   1| A king for all who cannot hold a saddle is a poem, not a country.
+    | 안장도 못 잡는 모두를 위한 임금은 시이지, 나라가 아니다.
+[22] munmu{silla}:
+   0| Uncle—
+    | 외숙부—
+   1| Father said it on the hill. I only said it louder. I was six.
+    | 아버지가 언덕에서 하신 말이에요. 저는 더 크게 말했을 뿐이고요. 여섯 살 때.
+[23] yushin{silla}:
+   0| Then make it true at fifteen.
+    | 그럼 열다섯에 참말로 만들어라.
+   1| The Hwarang do not train for your father’s cleverness. They train for the hour the cleverness runs out.
+    | 화랑은 네 아비의 꾀를 위해 닦는 게 아니다. 꾀가 바닥날 시각을 위해 닦는다.
+[24] yushin{silla}:
+   0| West of here is Baekje.
+    | 여기서 서쪽이 백제다.
+   1| Learn a landscape before it learns your name.
+    | 땅이 자네 이름을 익히기 전에, 자네가 먼저 그 땅을 익히게.
+[25] <scene> Under the Eaves
+[26] ¶ At dusk he gathers the flower youth under the eaves and speaks the Five Principles, the way other houses recite ancestors. A monk wrote them for boys who would never be monks. Loyalty to the king come
+[27] yushin{silla}:
+   0| Loyalty to the sovereign.
+    | 사군이충.
+   1| Filial duty to parents.
+    | 사친이효.
+   2| Trust among friends.
+    | 교우이신.
+   3| No retreat in battle.
+    | 임전무퇴.
+   4| No needless killing.
+    | 살생유택.
+   5| Bupmin — which one will you break first?
+    | 법민아 — 너는 무엇을 제일 먼저 어길 것 같으냐.
+[28] munmu{silla}:
+   0| …No retreat.
+    | …임전무퇴요.
+   1| I always pull up first. At the pine, today. Every time she rides too fast.
+    | 저는 늘 먼저 고삐를 당겨요. 오늘도 소나무에서요. 누님이 너무 빨리 달릴 때마다요.
+   2| I’d rather know it now than find out on a field.
+    | 들판에서 알게 되느니, 지금 아는 게 나아요.
+[29] ¶ Nobody laughs. A few boys look down at their sandals. Every one of them has a pine of his own.
+[30] yushin{silla}:
+   0| Good. Most boys lie.
+    | 좋네. 대개는 거짓말을 하거든.
+   1| Then see the country the way a Hwarang sees a field: who holds, who falters, who dies for a vow he meant.
+    | 그럼 화랑이 들판을 보듯 나라를 보게. 누가 버티고, 누가 흔들리고, 누가 진심으로 한 맹세에 죽는지.
+   2| Tomorrow you ride the pine again. Beside her.
+    | 내일 다시 소나무까지 달리게. 누님 옆에서.
+[31] ¶ Gotaso has been listening from the fence, where she is not supposed to be either.
+[32] gotaso{silla}:
+   0| You pulled up because of me?
+    | 나 때문에 당긴 거야?
+[33] munmu{silla}:
+   0| No. Because of me.
+    | 아니요. 저 때문에요.
+[34] gotaso{silla}:
+   0| …Tomorrow, then. Don’t you dare let me win.
+    | …그럼 내일. 봐주기만 해 봐.
+[35] ¶ She means it. She always means it. That is the trouble with Gotaso, and also the best thing about her.
+[36] ¶ The yard has two names it still whispers. Tonight the Marshal says them out loud…!
+  @hwarang-meditation: Yushin does not soften the
+  @bupmin-hwarang-yard: does not soften the yard because the boy is royal
+  @scene-bupmin-resolve-37: does not soften the yard because the boy is royal
+  @hwarang-female-fans: crowd the fence of the yard
+  @scene-hwarang-oxygen-37: crowd the fence of the yard
+  @bupmin-five-principles: Loyalty to the sovereign
+  @hands-sword-blue-determination: Loyalty to the sovereign
+  @scene-bupmin-resolve-43: Loyalty to the sovereign
+  @parody-class-photo-hwarang: Yushin does not soften the
+  @parody-seodang-hwarang: which one will you break first
+  @rel-yushin-bupmin: Then make it true at fifteen
+  @scene-bupmin-resolve-2: A king for all who
+  @scene-bupmin-sing: …No retreat.
+  @scene-bupmin-resolve-3: Then see the country the
+  @scene-hwarang-oxygen-2: crowd the fence of the yard
+
+######## #11 Sadaham (641)
+[0] <scene> The First Class
+[1] ¶ Every yard has its ghosts. This one has two, and they have never missed roll call.
+[2] ¶ The lamps go up under the eaves. Nobody sends the boys to bed. They decide this is an honour, and they are right, though not for the reason they think.
+[3] ¶ The Marshal does not let trust among friends stay a pretty line. He tells the new boys of the first class — the two names the yard still lowers its voice for.
+[4] yushin{silla}:
+   0| Before your fathers were born, the first class had two.
+    | 너희 아비가 태어나기 전에, 제일기에 둘이 있었다.
+   1| Sadaham. Mugwan. They swore to die together. Then, the year Great Gaya fell, one of them kept the swear without asking the other.
+    | 사다함. 무관랑. 함께 죽기로 맹세했다. 그러고 대가야가 떨어진 해, 한 쪽이 상대에게 묻지 않고 맹세를 지켰다.
+[5] munmu{silla}:
+   0| Which one, Uncle?
+    | 어느 쪽이요, 외숙부?
+   1| Which one kept it?
+    | 누가 지켰는데요?
+[6] yushin{silla}:
+   0| Sit down and you’ll find out.
+    | 앉으면 알게 된다.
+[7] -{?} "A new boy":
+   0| Is this the one about the haunted lake?
+    | 호수 귀신 얘기예요?
+[8] yushin{silla}:
+   0| No. That one’s about me.
+    | 아니. 그건 내 얘기다.
+[9] FLASHBACK  560
+[9.0] ¶ Back then the yard was new, and so was the idea. The king wanted boys who would ride ahead of the army and not ask why. The first year, he got a lot of them. Two of them got each other.
+[9.1] ¶ Sadaham is thirteen and talks like a dare. Mugwan is thirteen too, and says less than his horse. The hall has one gap, so they share it. They argue for a month about who snores.
+[9.2] <card> 
+[9.3] sadaham{silla}:
+   0| You snore.
+    | 너 코 골아.
+   1| Don’t argue. The whole hall heard you.
+    | 우기지 마. 방 전체가 들었어.
+[9.4] <card> 
+[9.5] mugwan{silla}:
+   0| That was you.
+    | 그거 너야.
+[9.6] sadaham{silla}:
+   0| …Then prove it. Stay up and listen.
+    | …그럼 증명해. 안 자고 들어 봐.
+[9.7] ¶ Mugwan stays up. It is the first of a great many nights he will stay up for Sadaham, and the only one either of them will find funny.
+[9.8] ¶ Their first spring, the yard sends them down to the river for stones. Mugwan turns one over and goes very still. Somebody has cut writing into it.
+[9.9] mugwan{silla}:
+   0| Come here.
+    | 이리 와 봐.
+   1| Read this.
+    | 이거 읽어 봐.
+[9.10] sadaham{silla}:
+   0| You read it. You’re the one who studies.
+    | 네가 읽어. 공부는 네가 하잖아.
+[9.11] <oath> Year imsin, sixth month, sixteenth day. The two of us swear together and write i
+[9.12] ¶ No names. Two boys, before the yard even had a name, promised Heaven three years of books, and a war if the country wanted one. What became of them, the stone doesn’t say. Stones rarely do.
+[9.13] sadaham{silla}:
+   0| Three years?
+    | 3년?
+   1| That’s all they had in them? Give me your knife.
+    | 겨우 그거야? 칼 줘 봐.
+[9.14] mugwan{silla}:
+   0| That’s not ours. Put it back.
+    | 그거 우리 거 아니야. 도로 놔.
+[9.15] sadaham{silla}:
+   0| Not that one. We get our own.
+    | 그거 말고. 우리 건 따로 만들 거야.
+[9.16] ¶ He finds a smaller stone, flat and grey, and scratches at it until the light goes. His characters are terrible. He leaves out the books entirely. What’s left fits in a closed hand.
+[9.17] sadaham{silla}:
+   0| Read it.
+    | 읽어.
+[9.18] mugwan{silla}:
+   0| …“Two of us. One dies, the other follows.”
+    | …“우리 둘. 하나가 죽으면, 하나가 따라간다.”
+   1| That’s it?
+    | 이게 다야?
+[9.19] sadaham{silla}:
+   0| What else is there?
+    | 그거 말고 뭐가 더 있는데.
+[9.20] ¶ Mugwan takes the knife. Under the bad characters he cuts one more, small and neat: friend. Then he puts the old stone back exactly where they found it, face down, as if they had never been there.
+[9.21] ¶ A museum in Gyeongju keeps the first stone now. Nobody has ever found the second. Good.
+[10] -{?} "A new boy":
+   0| So who snored?
+    | 그래서 누가 코 골았어요?
+[11] yushin{silla}:
+   0| Both. That is not the story.
+    | 둘 다. 그게 이야기가 아니다.
+[12] FLASHBACK  562
+[12.0] ¶ Two summers on, Great Gaya stops paying. The king calls the war in his hall, and the hall fills up with men old enough to have opinions.
+[12.1] <place> A hill kingdom that has just stopped saying yes.
+[12.2] ¶ Sadaham was fifteen when he asked to ride against Great Gaya. He asked on his knees, in front of everyone. It is the only way a boy can ask a king for anything and not be sent outside.
+[12.3] jinheung{silla}:
+   0| Go home. Grow a beard.
+    | 집에 가라. 수염이나 길러 오너라.
+   1| War is not a yard. Nobody hands the ball back.
+    | 전쟁은 연무장이 아니다. 공을 돌려주는 놈이 없어.
+[12.4] sadaham{silla}:
+   0| Then I’ll ask again tomorrow.
+    | 그럼 내일 다시 여쭙겠습니다.
+[12.5] ¶ He does. And the day after. The old general leading the campaign once took an island by frightening it with wooden lions. He tells the king it will be quicker to bring the boy than to keep hearing him
+[12.6] jinheung{silla}:
+   0| Fine. Take him.
+    | 좋다. 데려가라.
+   1| If he dies, it was his idea. Write that down.
+    | 죽으면 제 생각이었던 거다. 적어 둬라.
+[12.7] mugwan{silla}:
+   0| You’re going.
+    | 가는구나.
+[12.8] sadaham{silla}:
+   0| We’re going.
+    | 우리가 가는 거야.
+   1| I told them you’re my second. Don’t make me a liar.
+    | 네가 내 부장이라고 했어. 나 거짓말쟁이 만들지 마.
+[12.9] mugwan{silla}:
+   0| You didn’t ask me.
+    | 나한테 안 물어봤잖아.
+[12.10] sadaham{silla}:
+   0| I’m asking now.
+    | 지금 묻잖아.
+   1| …Well?
+    | …그래서?
+[12.11] mugwan{silla}:
+   0| …I’ll get the horses.
+    | …말 꺼내 올게.
+[13] munmu{silla}:
+   0| And the battle? Uncle, what happened at the gate?
+    | 그래서 싸움은요? 외숙부, 성문에서 어떻게 됐어요?
+[14] yushin{silla}:
+   0| Any old man in the market will give you the gate. He’ll get it wrong, but he’ll give it to you.
+    | 시장 노인 아무나 붙잡아라. 성문 얘기는 해 줄 거다. 틀리게 하겠지만, 해는 줄 거다.
+   1| I am telling you about the rice.
+    | 나는 밥 이야기를 하는 중이다.
+[15] <quote> Ninth month. Gaya rebelled. The king ordered Isabu to punish it, with Sadaham as
+[16] <quote> Silla is a petty villain of the western barbarians. It defies Heaven and knows n
+[17] FLASHBACK  562
+[17.0] ¶ Afterward the king pays him the way kings pay: in people. Three hundred Gaya captives, roped in a line, his to keep. Sadaham walks down the line once. Then he starts cutting rope.
+[17.1] mugwan{silla}:
+   0| The court will say you’re showing off.
+    | 조정에선 네가 잘난 척한다고 할 거다.
+[17.2] sadaham{silla}:
+   0| Then the court can have them back.
+    | 그럼 조정이 도로 가져가든가.
+   1| Help me with this knot.
+    | 이 매듭 좀 도와.
+[17.3] ¶ The land they give him instead is a strip of stones by the Alcheon that nobody wanted. The chronicle calls this virtue. Mugwan calls it typical, and holds the knot.
+[18] munmu{silla}:
+   0| My father would have found a use for three hundred people.
+    | 아버지셨으면 삼백 명을 어디 쓸 데를 찾으셨을 거예요.
+[19] yushin{silla}:
+   0| Your father would have found a use for three hundred and one.
+    | 네 아비라면 삼백한 명 쓸 데를 찾았을 거다.
+[20] FLASHBACK  563
+[20.0] ¶ That winter Mugwan catches a cough he cannot put down. Sadaham sits by the mat and counts his breathing, the way they used to count snores.
+[20.1] ¶ The little grey stone sits on the sill. Neither of them looks at it. Both of them know exactly where it is.
+[20.2] mugwan{silla}:
+   0| Go eat. You smell like a sickroom.
+    | 가서 밥 먹어. 너한테 병자 냄새 나.
+[20.3] sadaham{silla}:
+   0| You remember what we swore.
+    | 우리 맹세한 거 기억하지.
+[20.4] mugwan{silla}:
+   0| We were thirteen. We also swore to marry the same girl.
+    | 열셋이었어. 같은 여자랑 혼인하자고도 맹세했잖아.
+[20.5] sadaham{silla}:
+   0| If you die first, I will not eat.
+    | 네가 먼저 죽으면 나는 안 먹는다.
+   1| So don’t.
+    | 그러니까 죽지 마.
+[20.6] mugwan{silla}:
+   0| If I die first— you already know.
+    | 내가 먼저 죽으면 — 너는 이미 알지.
+[20.7] sadaham{silla}:
+   0| Then neither of us is allowed to be late.
+    | 그럼 우리 둘 다 늦으면 안 된다.
+[20.8] ¶ Mugwan pushes the stone across the mat with two fingers. It is the last thing he does on purpose.
+[20.9] ¶ Mugwan died of illness not long after the campaign. He did it quietly, the way he did everything, before dawn, so as not to wake anyone.
+[21] FLASHBACK  564
+[21.0] ¶ Sadaham did not take food for seven days. The cooks left bowls by his door. The order sent its oldest men to argue with him. He thanked them, and did not eat.
+[21.1] ¶ He keeps the stone in his fist. At night he holds it up to the lamp, as if the bad characters might have changed.
+[21.2] sadaham{silla}:
+   0| …It’s quiet in here. Nobody snoring.
+    | …조용하네. 코 고는 놈이 없어.
+[21.3] ¶ On the seventh night the bowl by the door is still full. He lies down on Mugwan’s side of the mat.
+[21.4] sadaham{silla}:
+   0| …Wait up.
+    | …기다려.
+   1| I’m not late.
+    | 나 안 늦었어.
+[21.5] ¶ He was seventeen. The order buried two headbands beside him, and one small stone with terrible handwriting. It kept the story, because a Hwarang who outlives his vow is only a boy with a nice coat.
+[22] ¶ The lamp under the eaves has burned down a finger’s width. Nobody has moved. One boy is pretending he has something in his eye, and the others are kind enough to look at the lamp.
+[23] yushin{silla}:
+   0| That is friends. Not a song.
+    | 그게 벗이다. 노래가 아니다.
+   1| If your vow is lighter than a meal, do not wear the headband.
+    | 맹세가 밥보다 가벼우면 머리띠를 매지 마라.
+[24] munmu{silla}:
+   0| Uncle.
+    | 외숙부.
+   1| Who would you stop eating for?
+    | 외숙부는 누구 때문이면 밥을 끊으시겠어요?
+[25] ¶ Yushin looks at the boy for a long moment. You can probably name her. He doesn’t.
+[26] yushin{silla}:
+   0| …Go to bed. Gyuku at dawn.
+    | …가서 자라. 새벽에 격구다.
+[27] ¶ When his sister rides too fast, Bupmin always pulls up first. Gotaso never pulls up. Not for horses. Not for anyone…!
+  @sadaham-gaya-road: <b>Sadaham</b> was fifteen
+  @sadaham-seq-ask: asked to ride against Great Gaya
+  @sadaham-rope-cut: Then he starts cutting rope.
+  @sadaham-seq-mugwan-vow: If you die first, I will not eat.
+  @sadaham-seq-sickbed: died of illness not long after the campaign
+  @sadaham-seq-seven-close: Sadaham did not take food for seven days
+  @sadaham-seventh-night: He lies down on Mugwan’s side of the mat.
+  @sadaham-seven-days: Sadaham did not take food for seven days
+  @sadaham-grief-clutch: Sadaham did not take food for seven days
+  @sadaham-seq-headbands: buried two headbands
+  @sadaham-seq-yushin-tells: the two names the yard still lowers its voice for
+  @sadaham-stone-found: Mugwan turns one over and goes very still
+  @sadaham-stone-cut: scratches at it until the light goes
+
+######## #12 Gotaso (641)
+[0] ¶ A young girl is going to do what she’s going to do.
+[1] ¶ Two springs ago she proved it, and her father has not slept properly since.
+[2] <scene> Two Springs Earlier
+[3] ¶ Gotaso is fourteen. She goes out to the lantern market with two maids and does not come back with any. The maids are found first, by the river, in the morning.
+[4] munhee{silla}:
+   0| Husband.
+    | 여보.
+   1| …Husband.
+    | …여보.
+[5] ¶ Chunchu says nothing. This is the part the household remembers afterwards and none of them can describe properly: he does not shout, he does not ask a second question, he simply stops being the man wh
+[6] yushin{silla}:
+   0| Chunchu. Sit down.
+    | 춘추야. 앉게.
+   1| I already have men out.
+    | 사람은 벌써 풀었네.
+[7] chunchu{silla}:
+   0| …
+    | …
+[8] yushin{silla}:
+   0| …Chunchu.
+    | …춘추야.
+[9] chunchu{silla}:
+   0| How many horses do we have.
+    | 말은 몇 필입니까.
+[10] ¶ It is the only sentence he speaks for two days. Yushin will try to tell it later as a joke and will stop halfway through, every time.
+[11] ¶ They were not bandits, in the sense that bandits want money. No word came and nothing was asked for, which is worse, and Chunchu understood what it meant before anyone in the room said it aloud.
+[12] <scene> The Ford
+[13] ¶ They find the road on the second night. What Chunchu does at the ford is in no record, because the two men who could have written it down were at the ford.
+[14] yushin{silla}:
+   0| Enough.
+    | 그만하게.
+   1| Chunchu. Enough.
+    | 춘추야. 그만.
+   2| …The child is watching.
+    | …아이가 보고 있네.
+[15] ¶ He stops. He wipes his hands on the grass, carefully, both sides, the way a man does before he picks up something clean.
+[16] chunchu{silla}:
+   0| …Gotaso.
+    | …고타소.
+[17] gotaso{silla}:
+   0| Father… there is something on your coat.
+    | 아버지 옷에… 뭐 묻었어요.
+[18] chunchu{silla}:
+   0| So there is.
+    | 그러게.
+   1| I will change it later.
+    | 이따 갈아입으마.
+[19] ¶ He carries her the whole way home. It is nineteen li. He does not let anyone take a turn and he does not put her down to eat.
+[20] munhee{silla}:
+   0| …Put her down.
+    | …내려놓으세요.
+   1| Your arms will come off.
+    | 팔 떨어지겠어요.
+[21] chunchu{silla}:
+   0| A little longer.
+    | 조금만 더.
+[22] yushin{silla}:
+   0| I have never seen you go quiet like that.
+    | 자네가 그렇게 조용해지는 건 처음 봤네.
+[23] chunchu{silla}:
+   0| …Brother.
+    | …형님.
+   1| I have two sons and one daughter.
+    | 저는 아들이 둘이고 딸이 하나입니다.
+   2| One daughter.
+    | 딸은 하나입니다.
+[24] <scene> The Gyuku Match
+[25] ¶ Before anyone says the word wedding, there is a spring match. Gotaso attends with two new guards, and her father watches her instead of the ball.
+[26] ¶ At a spring gyuku match the Hwarang ride for the Queen. The stands smell of horse and expensive varnish. Servants carry club-boxes the way other households carry ancestral tablets. Gotaso is sixteen n
+[27] munhee{silla}:
+   0| Look at that club box.
+    | 저 채 함 보렴.
+   1| A Hwarang that young carrying that… you can see the household.
+    | 저 나이 화랑이 저런 걸 들고 나오면… 집안이 보여.
+[28] gotaso{silla}:
+   0| I am not looking at the club.
+    | 채는 안 보여요.
+   1| Only the man.
+    | 사람만요.
+[29] ¶ Pumsuk takes the ball on the off-side — a showy, illegal-looking, completely legal cut — and for half a breath too long catches her eye instead of the goal. His premium gyuku club flashes once in the 
+[30] <card> 
+[31] gotaso{silla}:
+   0| …Who is that.
+    | …저 사람, 누구예요.
+   1| Mother.
+    | 어머니.
+   2| Mother. I asked who that is.
+    | 어머니. 저 사람 누구냐고요.
+[32] munhee{silla}:
+   0| Hwarang Kim Pumsuk. / Don’t stare.
+    | 화랑 김품석. / 쳐다보지 마라.
+[33] gotaso{silla}:
+   0| I already did.
+    | 이미 봤는데요.
+   1| And he looked back. He did, he did.
+    | 저 사람도 봤어요. 봤다니까요.
+[34] gotaso{silla}:
+   0| I am never going to look at anyone else.
+    | 저 이제 다른 사람은 안 볼 거예요.
+   1| For the rest of my life.
+    | 평생요.
+[35] munhee{silla}:
+   0| …Sixteen years old, using the word “life.”
+    | …열여섯짜리가 평생이라는 말을 쓰는구나.
+[36] gotaso{silla}:
+   0| Sixteen is exactly when you are allowed to use it.
+    | 열여섯이니까 쓰는 거죠.
+   1| Later you get too embarrassed.
+    | 나중엔 부끄러워서 못 쓰잖아요.
+[37] ¶ She looks at him the way a person looks at weather they have decided to live in — not bargaining, not counting rooms. Just the face.
+[38] sunduk{silla}:
+   0| You are watching your daughter, Chunchu.
+    | 자네는 딸을 보고 있군, 춘추.
+   1| Your daughter is watching something else.
+    | 자네 딸은 다른 걸 보고 있고.
+[39] chunchu{silla}:
+   0| …I see it, Majesty.
+    | …보입니다, 폐하.
+   1| I am choosing not to.
+    | 안 보기로 했을 뿐입니다.
+[40] <scene> The Flowering Trees
+[41] ¶ They meet again under the flowering trees behind the training ground — not by accident the second time, and not the third.
+[42] ¶ Under the flowering trees they forget to be a princess and a Hwarang.
+[43] pumsuk{silla}:
+   0| I shouldn’t… see Your Highness here.
+    | 공주님을… 여기서 뵈면 안 됩니다.
+[44] gotaso{silla}:
+   0| Then why do you come every day.
+    | 그럼 왜 매일 오세요.
+   1| I come every day.
+    | 저는 매일 와요.
+   2| Yesterday I came twice.
+    | 어제는 두 번 왔어요.
+[45] pumsuk{silla}:
+   0| …I don’t know.
+    | …모르겠습니다.
+   1| Your father looked at me at the match. The way a man looks at a horse he may have to shoot.
+    | 경기 때 아버님께서 저를 보셨습니다. 쏘아야 할지도 모르는 말을 보듯이.
+   2| I came anyway. Knowing I shouldn’t.
+    | 그래도 왔습니다. 오면 안 되는 줄 알면서.
+[46] gotaso{silla}:
+   0| He looks at everyone like that now. Since the ford.
+    | 아버지는 요즘 다들 그렇게 봐요. 그 나루 일 뒤로.
+   1| The others stopped coming. You came twice.
+    | 다른 사람들은 다 안 왔어요. 당신은 두 번 왔고요.
+[47] pumsuk{silla}:
+   0| That cut at the match. The one the umpires argued over.
+    | 경기 때 그 컷 말입니다. 심판들이 다투던.
+   1| It was for you. I have never risked a foul in my life.
+    | 아씨 보시라고 한 겁니다. 평생 반칙을 무릅써 본 적이 없습니다.
+   2| …I would risk it again.
+    | …또 무릅쓰겠습니다.
+[48] gotaso{silla}:
+   0| And I’m not supposed to… touch your hand either?
+    | 손… 닿으면 안 되는 거죠?
+   1| Then why… won’t you let go of my wrist.
+    | 그럼 왜… 아직 제 손목을 놓지 않으세요.
+[49] pumsuk{silla}:
+   0| You mustn’t.
+    | 안 됩니다.
+   1| …And yet you’re holding it.
+    | …그런데 지금 잡고 계십니다.
+   2| And… I cannot take it back.
+    | 그리고… 제가 거두지 못하고 있습니다.
+[50] <scene> The Palace Steps
+[51] ¶ Rain finds them once on the palace steps. Neither of them moves to go inside.
+[52] gotaso{silla}:
+   0| You’re soaked.
+    | 젖으셨잖아요.
+   1| …Why are you smiling.
+    | …왜 웃어요.
+   2| Ah. / Is it my hair… on your sleeve?
+    | 아. / 제 머리카락이… 소매에 붙어서요?
+[53] pumsuk{silla}:
+   0| Your hair is… caught on my sleeve.
+    | 공주님 머리카락이… 제 소매에 붙어 있어서요.
+   1| I should free it.
+    | 떼어 드려야 하는데.
+   2| My hand won’t move.
+    | 손이 안 갑니다.
+   3| Neither will my feet.
+    | 발도… 안 떨어집니다.
+[54] gotaso{silla}:
+   0| Then leave it.
+    | 그럼 그대로 두세요.
+   1| Leave it there.
+    | 계속요.
+   2| The sleeve. The hair.
+    | 소매도. 머리카락도.
+   3| I could stand beside this sleeve for the rest of my life.
+    | 저는 이 소매 옆에 평생 서 있을 수도 있어요.
+   4| No — closer.
+    | 아니 — 더 가까이요.
+[55] pumsuk{silla}:
+   0| My lady.
+    | 공주님.
+   1| If this goes on… I will come apart.
+    | 이러다간… 제가 무너집니다.
+   2| Here. On the steps.
+    | 여기서. 섬돌에서.
+[56] gotaso{silla}:
+   0| So will I.
+    | 저도요.
+   1| So I settled all of it last night.
+    | 그래서 어젯밤에 다 정해 뒀어요.
+   2| Four children. I have named them.
+    | 아이는 넷이고, 이름도 지었어요.
+   3| I am telling my parents today.
+    | 오늘 부모님께 말씀드릴 거예요.
+[57] pumsuk{silla}:
+   0| …Four?
+    | …넷이요?
+[58] gotaso{silla}:
+   0| You don’t want them?
+    | 싫으세요?
+[59] pumsuk{silla}:
+   0| …I want to know the names.
+    | …이름이 궁금합니다.
+[60] ¶ Four children, already named. Now the boy has to ask her father. And her father wants a vow…!
+  @gotaso-seq-ford: They find the road on the second night
+  @gotaso-seq-wipe: wipes his hands on the grass
+  @gotaso-carried-home: He carries her the whole way home
+  @gotaso-love-longing: Only the man
+  @scene-gotaso-hers-43: Only the man
+  @gotaso-love-gaze: weather they have decided to live in
+  @scene-pumsuk-loves-gotaso-37: weather they have decided to live in
+  @gotaso-pumsuk-warmth: won’t you let go of my wrist
+  @scene-pumsuk-loves-gotaso-38: won’t you let go of my wrist
+  @scene-gotaso-sing: goes out to the lantern market
+  @scene-gotaso-pumsuk-4: She looks at him the
+  @scene-gotaso-pumsuk-2: Under the flowering trees they
+  @scene-pumsuk-gotaso-sing: …Who is that.
+  @scene-pumsuk-loves-gotaso-2: Then why do you come
+  @scene-gotaso-hers-2: So will I.
+
+######## #13 Pumsuk (641)
+[0] ¶ Pumsuk asks for the girl. Chunchu asks for something else.
+[1] <scene> The Study
+[2] ¶ Chunchu receives him in the study, not the hall. A go game sits half-played between them. Chunchu is wiping his hands on a cloth, slowly, both sides. He has not been doing anything to dirty them.
+[3] pumsuk{silla}:
+   0| Sir. I— I have come about Lady Gotaso.
+    | 대감. 저— 고타소 아씨 일로 왔습니다.
+   1| With your permission, I would like— that is, I would ask—
+    | 허락해 주신다면, 제가— 그러니까, 청을 드리고자—
+[4] chunchu{silla}:
+   0| Sit. You’re making the stones nervous.
+    | 앉게. 바둑돌이 다 긴장하겠네.
+   1| She told me at breakfast. Four children, all named. She is very thorough. She gets that from me.
+    | 아침에 그 애가 말하더군. 아이 넷, 이름까지. 아주 꼼꼼해. 나를 닮아서.
+[5] pumsuk{silla}:
+   0| …Then you consent, sir?
+    | …그럼 허락하시는 겁니까, 대감?
+[6] chunchu{silla}:
+   0| I consent to the girl. She was never mine to keep.
+    | 딸은 허락하네. 그 애는 애초에 내가 붙잡아 둘 수 있는 아이가 아니었어.
+   1| Do you know what the yard teaches, Hwarang? Five rules.
+    | 화랑, 연무장에서 뭘 가르치는지 아나? 계율 다섯.
+   2| Here is a sixth.
+    | 여기 여섯째가 있네.
+[7] ¶ Munhee is in the doorway. She has been there the whole time. Pumsuk only notices now, which tells you something about Pumsuk.
+[8] munhee{silla}:
+   0| Don’t make him swear.
+    | 맹세는 시키지 맙시다.
+[9] chunchu{silla}:
+   0| …Why not.
+    | …왜요.
+[10] munhee{silla}:
+   0| If he keeps it, it was owed anyway. If he cannot, it kills him.
+    | 지키면 당연한 것이고, 못 지키면 그이가 죽습니다.
+[11] ¶ He makes him swear. It is the only time in this record that Chunchu misreads a room, and it is the room with his daughter in it.
+[12] chunchu{silla}:
+   0| If anything happens to her, you know I’m going to kill you, right? Haha...
+    | 그 아이한테 무슨 일이 생기면, 내가 자네를 죽일 거라는 건 알지? 하하…
+[13] ¶ He laughs. He puts the cloth down. Pumsuk has heard, the way all of Surabol has heard, about a certain ford. Nobody else in the room is laughing.
+[14] pumsuk{silla} "🙇":
+   0| On my life, I will protect Lady Gotaso!
+    | 제 목숨을 걸고 고타소 양을 보호하겠습니다!
+[15] <scene> The Wedding
+[16] ¶ At the back of the hall, the Queen watches her great-niece marry for love.
+[17] <wed> 
+[18] FLASHBACK  625
+[18.0] ¶ Munhee does not watch the vows. She watches the doorway and remembers a different night in the same house: the girl-child arriving, pink silk already too sure of itself, Chunchu’s hand huge around a w
+[19] sunduk{silla}:
+   0| …Your son’s girl.
+    | …자네 아들의 딸이로군.
+   1| That doorway has taken three of this house now.
+    | 저 문간을 지나간 게 이 집안에서만 벌써 셋일세.
+[20] <card> 
+[21] chunmyung{silla}:
+   0| Four. If Your Majesty counts honestly.
+    | 넷입니다. 폐하께서 정직하게 세신다면.
+[22] sunduk{silla}:
+   0| …I count honestly.
+    | …나는 정직하게 세네.
+[23] gotaso{silla}:
+   0| We will be happy forever!
+    | 영원히 행복하겠습니다!
+[24] <scene> The Wedding Night
+[25] pumsuk{silla}:
+   0| …My lady. Your hands are cold.
+    | …아씨. 손이 차십니다.
+   1| But the back of your neck… is hot.
+    | 그런데 목덜미는… 뜨겁습니다.
+[26] gotaso{silla}:
+   0| Because I am shaking.
+    | 떨려서요.
+   1| And… because yours are too warm.
+    | 그리고… 품석 공 손이 너무 뜨거워서요.
+   2| The hand at my waist.
+    | 허리에 두신 손이요.
+   3| Don’t take it away.
+    | 거두지 마세요.
+[27] pumsuk{silla}:
+   0| Are you frightened?
+    | 무서우십니까?
+   1| If I… come closer.
+    | 제가… 더 가까이 가면.
+[28] gotaso{silla}:
+   0| No.
+    | 아니요.
+   1| Because I want to be somewhere with nobody in it.
+    | 빨리 아무도 없는 데로 가고 싶어서요.
+   2| Look at me once more.
+    | 저를 한 번 더 봐 주세요.
+[29] ¶ Behind the doors the feast falls away.
+[30] <scene> The Empty Hall
+[31] ¶ The hall empties. The Queen does not leave, and neither does the Marshal. Neither of them has ever been the first to leave a room.
+[32] ¶ She has had twenty years to learn the back of his neck: the place the armour strap has worn shiny, the two grey hairs at his temple that were not there before the last campaign. Tonight the hall is em
+[33] ¶ Color rises along her throat. She keeps her mouth closed so the breath will not give her away. He does not turn. That is the only mercy left in the room.
+[34] yushin{silla}:
+   0| Your Majesty.
+    | 폐하.
+[35] sunduk{silla}:
+   0| …Not that word. Not tonight.
+    | …오늘은 그 말 말게.
+[36] yushin{silla}:
+   0| Then what am I to call you.
+    | 그럼 무어라 부릅니까.
+[37] sunduk{silla}:
+   0| Don’t call me anything.
+    | 부르지 말게.
+[38] ¶ He takes one step. It is the smallest thing he does in this entire record and it costs him longer than any battle in it.
+[39] yushin{silla}:
+   0| Today you watched your niece marry the man she loves.
+    | 오늘 조카딸이 사랑하는 사내와 혼인하는 것을 보셨습니다.
+   1| I watched your face the entire time.
+    | 저는 내내 폐하 얼굴만 보고 있었습니다.
+   2| Your Majesty—
+    | 폐하—
+[40] sunduk{silla}:
+   0| Yushin.
+    | 유신.
+[41] yushin{silla}:
+   0| …You said my name.
+    | …이름을 부르셨습니다.
+[42] sunduk{silla}:
+   0| So stop.
+    | 그러니 그만하게.
+[43] yushin{silla}:
+   0| One sentence. Let me have one.
+    | 한 마디만 하겠습니다. 딱 한 마디만.
+   1| Two horses. Tonight would be enough.
+    | 말 두 필이면 됩니다. 오늘 밤이면 됩니다.
+   2| Three days to the border. After three days we are nobody at all.
+    | 국경까지 사흘이고, 사흘 뒤면 우리는 아무도 아닙니다.
+[44] ¶ She reaches up. He is very still, the way a man is still when he has already decided not to be the one who moves. Her fingers find his mouth before the rest of the sentence can.
+[45] sunduk{silla}:
+   0| Don’t say it.
+    | 말하지 말게.
+   1| If you say it, I have to hear it for the rest of my life.
+    | 말이 되어 버리면, 내가 그걸 평생 듣고 살아야 하네.
+[46] yushin{silla}:
+   0| Then hear it for the rest of your life.
+    | 듣고 사십시오.
+[47] ¶ For a moment she does not answer, and the moment is long enough that both of them will spend years deciding what it meant.
+[48] ¶ Her fingers are still on his mouth. He does not take the next step. The lamp between them does the looking. When she speaks again she is already Queen.
+[49] sunduk{silla}:
+   0| …Without you this country does not last half a year.
+    | …자네가 없으면 이 나라가 반년을 못 가.
+[50] yushin{silla}:
+   0| You are talking about the country.
+    | 나라 얘기를 하고 계십니다.
+[51] sunduk{silla}:
+   0| Because the country is the only thing I am permitted to talk about.
+    | 나라 얘기밖에 할 수 있는 게 없으니까.
+[52] ¶ She is close enough now to count what it is costing him. She counts it. Then she takes her hand back and puts it where a queen’s hand goes.
+[53] sunduk{silla}:
+   0| One more step and I do not stop.
+    | 한 발만 더 오면 내가 못 멈추네.
+[54] yushin{silla}:
+   0| …Then I will not take it.
+    | …그럼 오지 않겠습니다.
+[55] sunduk{silla}:
+   0| Thank you.
+    | 고맙네.
+[56] yushin{silla}:
+   0| Don’t thank me.
+    | 고맙다는 말씀은 마십시오.
+   1| That is the sound you make when you have won.
+    | 그건 폐하께서 이기셨을 때 나는 소리입니다.
+[57] sunduk{silla}:
+   0| …Then neither of us has.
+    | …그럼 둘 다 못 이긴 걸세.
+[58] ¶ He steps back into the shape of a subject. It fits, because he has worn it twenty years. It has never once fit.
+[59] yushin{silla}:
+   0| Your Majesty.
+    | 폐하.
+[60] sunduk{silla}:
+   0| …Yes. That will do.
+    | …그래. 그거면 됐네.
+[61] ¶ Neither of them mentions that night again. Thirty-two years later, on the last day of his life, he is asked whether he ever wanted anything for himself, and the record notes only that he took some tim
+[62] <scene> The Road to Daeya
+[63] ¶ Three days later the couple leave for Daeya Fortress, where Pumsuk has just been named Guardian. She waves from the cart until the capital is out of sight; he rides beside the wheel the whole way. Dae
+[64] <place> A border post with a fine view of Baekje. The view works both ways.
+[65] ¶ Her parents stand at the gate until the dust settles. Then a little longer.
+[66] chunchu{silla}:
+   0| She waved the whole way. Like someone I know.
+    | 끝까지 손을 흔드는군. 누굴 닮았는지.
+[67] munhee{silla}:
+   0| I never waved at you. I was busy sewing.
+    | 난 당신한테 손 흔든 적 없어요. 바느질하느라 바빴거든요.
+[68] chunchu{silla}:
+   0| …So you do remember.
+    | …그럼 기억은 하는군.
+[69] munhee{silla}:
+   0| Don’t you start. Not at the gate.
+    | 시작하지 마세요. 대문 앞에서는.
+[70] ¶ “Dear… have you already forgotten how we met?” Munhee hasn’t. It involves a dream, a skirt, and a coat torn on purpose…!
+  @gotaso-birth-white: the girl-child arriving, pink silk
+  @gotaso-birth-lantern: the girl-child arriving, pink silk
+  @gotaso_03: She told me at breakfast
+  @scene-gotaso-pumsuk-12: She told me at breakfast
+  @gotaso_04: On my life, I will protect
+  @scene-gotaso-pumsuk-35: On my life, I will protect
+  @gotaso_05: At the back of the hall
+  @sunduk-regret-love: marry for love
+  @sunduk-yushin-flush: Color rises along her throat
+  @gotaso_06: …I count honestly.
+  @gotaso_07: We will be happy forever
+  @rel-sunduk-yushin: One more step and I do not stop.
+  @scene-yushin-always-dukman-22: The hall empties. The Queen
+  @scene-yushin-always-dukman-4: Her fingers are still on
+  @scene-sunduk-loves-yushin-14: Color rises along her throat.
+  @scene-pumsuk-loves-gotaso-11: …My lady. Your hands are
+
+######## #14 Munhee (625)
+[0] <scene> How They Met
+[1] chunchu{silla} "🙎":
+   0| Dear… have you already forgotten how we met?
+    | 여보.... 우리가 어떻게 만났는지는 벌써 까먹었나?
+[2] munhee{silla}:
+   0| Forgotten? I was there.
+    | 잊어요? 내가 거기 있었는데.
+   1| You were the one without a coat.
+    | 웃옷 벗고 있던 건 당신이었고요.
+[3] ¶ It starts with a dream, and the dream is sold.
+[4] bohee{silla}:
+   0| Last night… I climbed Namsan and I relieved myself, / and all of Surabol drowned. / The entire capital.
+    | 어젯밤에… 남산에 올라가서 오줌을 눴는데, / 서라벌이 전부 잠겼어. / 온 도성이.
+[5] munhee{silla}:
+   0| Sister. Sell me that dream.
+    | 언니. 그 꿈 나한테 팔아.
+[6] bohee{silla}:
+   0| …For what?
+    | …뭘 주고?
+[7] munhee{silla}:
+   0| My silk skirt.
+    | 비단 치마.
+[8] ¶ Bohee takes the skirt. It is the single worst trade in Silla’s thousand years, and the two of them will both live long enough to know it.
+[9] munhee{silla}:
+   0| The capital you drowned / is mine now.
+    | 언니가 잠기게 한 도성은, / 이제 내 거야.
+[10] <scene> The Torn Coat
+[11] ¶ Five days later Yushin brings a young nobleman home from the gyuku field — still dusty, still arguing about a disputed foul — and on the yard, mid-demonstration of a “proper True Bone grip,” steps on 
+[12] yushin{silla}:
+   0| Oh dear. / My apologies. / Somebody sew that for the gentleman.
+    | 어이쿠. / 이거 실례를. / 누가 좀 꿰매 드려라.
+[13] bohee{silla}:
+   0| …How could I approach a nobleman over so small a thing.
+    | …이런 사소한 일로 어찌 귀인께 다가가겠습니까.
+[14] munhee{silla}:
+   0| I will do it.
+    | 제가 하겠습니다.
+[15] ¶ He has to take the coat off for her to mend it. Magenta silk leaves his shoulders. He sits disrobed in her brother’s hall with a True Bone’s embarrassment and nowhere to put his hands. She knits the t
+[16] <quote> The elder sister had some reason not to come forward, so the younger came and se
+[17] chunchu{silla}:
+   0| …Your hands are quick.
+    | …손이 빠르시군.
+   1| I have… not sat like this.
+    | 나는… 이렇게 앉아 본 적이 없소.
+[18] munhee{silla}:
+   0| Sit.
+    | 앉아 계시면 됩니다.
+   1| I will put the coat back on you.
+    | 옷은 제가 입혀 드릴 테니.
+   2| Today… only that.
+    | 오늘은… 그것만.
+[19] ¶ He comes back the next day, needing nothing sewn, and again the day after that. Each visit she finds a new place on the garment — and they sit closer. The needle slows. His breath learns the back of h
+[20] ¶ On a later visit the coat is off again. She stands behind him, needle forgotten, staring at the breadth of his shoulders as if the knitting were only an excuse to keep looking. Magenta silk has slippe
+[21] chunchu{silla}:
+   0| …Why.
+    | …왜요.
+   1| At this rate… I will tear the coat myself.
+    | 이러다… 제가 공을 찢겠습니다.
+[22] munhee{silla}:
+   0| Because you have not left yet.
+    | 공께서 아직 안 가셨으니까요.
+   1| Before you leave…
+    | 가시기 전에…
+   2| your hand belongs at my waist.
+    | 제 허리에 손을 두셔야죠.
+   3| Until the sewing is done.
+    | 바느질이 끝날 때까지요.
+[23] munhee{silla}:
+   0| And what is torn today?
+    | 오늘은 어디가 찢어지셨습니까?
+   1| Or… what shall I tear for you.
+    | 아니면… 어디를 찢어 드릴까요.
+[24] chunchu{silla}:
+   0| …Nothing.
+    | …아무 데도.
+   1| No —
+    | 아니 —
+   2| Here.
+    | 여기요.
+   3| Where your mouth… was yesterday.
+    | 입이… 어제 닿았던 데요.
+[25] munhee{silla}:
+   0| Shall I tear something for you, then?
+    | 그럼 제가 찢어 드릴까요?
+   1| Only the coat.
+    | 옷만요.
+   2| Or… your restraint as well.
+    | 아니면… 공의 참는 것도요.
+[26] chunchu{silla}:
+   0| …If you say it like that.
+    | …그렇게 말씀하시면.
+   1| I won’t be able to leave tonight.
+    | 오늘 밤엔 못 갑니다.
+   2| I am already… coming apart at the door.
+    | 문 앞에서… 이미 무너지고 있습니다.
+[27] munhee{silla}:
+   0| Then don’t.
+    | 그럼 가지 마세요.
+   1| The sewing… can wait until morning.
+    | 바느질은… 내일 해도 되니까.
+   2| Spend the night… mending me.
+    | 밤은… 저를 꿰매는 데 쓰세요.
+[28] ¶ He stays. The household learns the sound of a door that is not meant to open until dawn.
+[29] ¶ By midsummer the household staff have stopped announcing him.
+[30] ¶ Ask Munhee about the next part and she still blushes.
+[31] munhee{silla}:
+   0| N-no, why bring up that memory again…
+    | 아-아니, 웬 그런 기억을 또…
+[32] ¶ By autumn Munhee is showing. Chunchu still hasn't proposed.
+[33] yushin{silla} "🙍":
+   0| Pregnant with an unknown man’s child… what a disgrace!
+    | 누군지도 모를 사내의 아이를 배다니… 이 무슨 망신이냐!
+   1| A sister who shames the house burns in its yard.
+    | 집안을 욕보인 누이는 그 집 마당에서 태운다.
+[34] munhee{silla}:
+   0| Then build it, brother.
+    | 그럼 쌓아, 오라버니.
+   1| I’m not giving you a name. You already know it.
+    | 이름은 안 대. 오라버니도 이미 알잖아.
+[35] <scene> The Pyre
+[36] ¶ Yushin builds the pyre in the yard where they played gyuku, which is not lost on anyone, and sets green wood on it so that it smokes instead of burning. Munhee stands beside it with her hands folded o
+[37] ¶ The smoke goes straight up. It is visible from Namsan. It is visible from the terrace where a princess happens to be standing with the young nobleman who has gone the colour of paper.
+[38] sunduk{silla}:
+   0| What is that smoke?
+    | 저건 무슨 연기인가?
+[39] -{?} "A lady-in-waiting":
+   0| Kim Yushin’s yard, Highness.
+    | 김유신 댁 마당이옵니다, 마마.
+   1| His sister is with child and won’t name the father. He says she burns at noon.
+    | 누이가 아이를 뱄는데 아비 이름을 대지 않는답니다. 정오에 태운다 하옵니다.
+[40] sunduk{silla} "🙍":
+   0| Lord… Chunchu?
+    | 춘추 궁?
+[41] ¶ Then Chunchu is running. A True Bone does not run in front of a princess. He runs the whole way: down the terrace stairs, through two gates, into the smoke.
+[42] munhee{silla}:
+   0| Don’t you dare. Not because of smoke.
+    | 하지 마세요. 연기 때문이라면.
+[43] chunchu{silla}:
+   0| Th-the father of that child… Lady Munhee’s… I mean…
+    | ㄱ-그 아기의 아버지... 문희 양의.. 그..
+   1| It’s me!
+    | 그게 접니다!
+[44] ¶ He says it to the yard, to the princess on the terrace, and to half of Surabol on its rooftops. Munhee closes her eyes. She had hoped for a quieter proposal. She will take this one.
+[45] ¶ Yushin kicks the green wood apart. It was never going to catch.
+[46] yushin{silla}:
+   0| …Chunchu.
+    | …춘추.
+   1| You did not choose my sister.
+    | 자네가 내 누이를 택한 게 아니라,
+   2| I chose you.
+    | 내가 자네를 택한 걸세.
+[47] ¶ Chunchu and Munhee are married. The green-wood rumour becomes a wedding, and the wedding becomes a household that is openly fond of itself.
+[48] <wed> 
+[49] ¶ At the feast the two of them end up where they always end up: outside, on the steps, sharing one cup.
+[50] chunchu{silla}:
+   0| Brother.
+    | 형님.
+[51] yushin{silla}:
+   0| Do you know how many years it took me
+    | 가야의 피와 신라의 왕족을 한 침상에 눕히는 데,
+   1| to lay Gaya blood and Silla royalty in the same bed.
+    | 내가 몇 해를 썼는지 아나.
+[52] chunchu{silla}:
+   0| You should have simply become king yourself.
+    | 형님이 왕을 하시면 될 걸 그랬습니다.
+   1| Surely the strongest man in Samhan ought to be the one who rules.
+    | 삼한에서 제일 강한 사내가 왕이 되는 게 이치 아닙니까.
+[53] yushin{silla}:
+   0| (laughing) Chunchu. You know exactly why not.
+    | (웃으며) 춘추. 자네도 이유를 알잖나.
+[54] chunchu{silla}:
+   0| …I do.
+    | …알지요.
+[55] ¶ Neither of them says the word. It sits between them anyway, the way it always has: Gaya. His grandfather bought the family a rank. Ranks are not the same as blood.
+[56] <scene> The Closed Months
+[57] ¶ The wedding itself is quiet. Magenta silk and pink silk share a cup. What the court will later call a clever match is, in the room, simply two adults who have already learned each other’s breath.
+[58] ¶ They shut the door on the yard and do not open it again for a long time. The minutes will later invent one decorous wedding night. What actually happens is weeks of it — her on him, him on her, the ma
+[59] ¶ The first time he is still trying to be gentle. She is not. She takes his hand and puts it where she wants it, and the sound that leaves her is not a toast. He lasts like a man who has been polite too
+[60] munhee{silla}:
+   0| Again…?
+    | 또…?
+   1| Today… don’t even try to count.
+    | 오늘은… 세지도 마세요.
+   2| Save counting for outside.
+    | 셈은 바깥에서 하세요.
+[61] chunchu{silla}:
+   0| I… cannot count.
+    | 계산이… 안 됩니다.
+   1| Munhee.
+    | 문희.
+   2| I have… already lost.
+    | 나는… 이미 졌소.
+   3| And… I will lose again.
+    | 그리고… 또 지겠소.
+[62] ¶ The neighbors on both walls learn their names the wrong way, through plaster. At night the paper window glows, and the shadows on it are not ambiguous. Servants stop knocking. Someone on the east side
+[63] munhee{silla}:
+   0| They say… they heard us through the wall.
+    | 담장 너머에서… 들었대요.
+   1| And saw… the paper window.
+    | 창호지까지… 봤대요.
+   2| Even our names.
+    | 우리 이름까지.
+[64] chunchu{silla}:
+   0| Then the wall… is on our side.
+    | 담장은… 우리 편이오.
+   1| And the paper window.
+    | 창호지도.
+   2| If Surabol hears…
+    | 서라벌이 듣거든…
+   3| let it.
+    | 듣게 두시오.
+[65] ¶ Months pass before either of them remembers the yard. When they finally open the door she walks like someone who has been thoroughly loved and does not mind the lane knowing it, and they look at each 
+[66] <scene> The Household
+[67] ¶ Samsin comes the way she always comes when a breath starts: in white, with nobody else in the room. The first child is a girl who talks early and never stops. They call her Gotaso. A year later comes 
+[68] ¶ For a few years, Chunchu stops going to the hill.
+[69] yushin{silla}:
+   0| You have not been coming to Council lately.
+    | 자네, 요즘 회의에 통 안 나오더군.
+[70] chunchu{silla}:
+   0| Brother. I have a daughter and a son now.
+    | 형님. 저는 이제 딸 하나에 아들 하나입니다.
+   1| The east star… I think I will let it just be a star.
+    | 동쪽 별은… 그냥 별로 두렵니다.
+[71] yushin{silla}:
+   0| So you will.
+    | 그러게.
+[72] ¶ Back at the gate, the dust from the Daeya road has settled. Munhee has not let go of his arm.
+[73] munhee{silla}:
+   0| You went back to the hill, of course.
+    | 결국 언덕엔 다시 갔죠, 당신.
+[74] chunchu{silla}:
+   0| Somebody had to. The star wasn’t going to climb down by itself.
+    | 누군가는 가야지. 별이 제 발로 내려올 리는 없으니.
+[75] ¶ Same spring, in Pyongyang, another father walks his son to school. He means to pick a fight with the Buddha…!
+  @bupmin-birth-white: Samsin comes the way she always comes
+  @munhee-knit-disrobe: He has to take the coat off
+  @munhee-knit-close: He has to take the coat off
+  @bupmin-birth-lantern: Samsin comes the way she always comes
+  @moonlit-silhouettes-romance: the paper window glows
+  @munhee-sewing-first: He has to take the coat off
+  @scene-munhee-sing: He has to take the coat off
+  @munhee-sewing-later: He comes back the next day
+  @munhee-chunchu-back: On a later visit the coat is off again
+  @scene-chunchu-munhee-moonlight-16: On a later visit the coat is off again
+  @munhee-chunchu-months-quiet: The wedding itself is quiet
+  @nsfw-munhee-chunchu-door-shut: They shut the door
+  @nsfw-munhee-chunchu-tangled-silk: They shut the door
+  @nsfw-munhee-chunchu-neighbors-wall: neighbors on both walls
+  @nsfw-munhee-chunchu-they-fit: The first time he is still trying to be gentle
+  @nsfw-munhee-chunchu-lattice-morning: Months pass before either of them remembers the yard
+  @nsfw-munhee-chunchu-months-door: Months pass before either of them remembers the yard
+  @nsfw-munhee-chunchu-window-straddle: the paper window glows
+  @nsfw-munhee-chunchu-window-pressed: the shadows on it are not ambiguous
+  @nsfw-munhee-chunchu-window-lift: the shadows on it are not ambiguous
+  @nsfw-munhee-chunchu-window-neighbor-eye: neighbors on both walls
+  @parody-wolha-chunchu-munhee: They do not leap. They accumulate.
+  @scene-chunchu-munhee-moonlight-2: I will do it.
+  @scene-chunchu-munhee-moonlight-3: and again the day after that
+  @scene-chunchu-munhee-moonlight-25: They say… they heard us
+  @scene-yushin-chunchu-sing: Five days later Yushin brings

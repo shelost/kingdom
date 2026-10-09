@@ -1,0 +1,57 @@
+[
+	{
+		"id": "seohyeon-deathbed-boots",
+		"entry": "Jeon (轉)",
+		"at": "his riding boots beside the bed",
+		"alt": "Small hours in the Kim house: old Seohyun under two quilts, gripping Yushin's sleeve; riding boots by the bed in the lamp's foreground",
+		"scene": "Intimate low three-quarter from the floor beside one oil lamp set down by the bed: old Seohyun propped on a bolster, gripping his kneeling son's sleeve; Yushin in campaign blue, ear bent to his father's mouth; a pair of riding boots sharp in the foreground; the room's timber and paper doors falling into umber dark.",
+		"people": ["seohyeon", "yushin"],
+		"canon": { "with": ["place:surabol"] }
+	},
+	{
+		"id": "suro-rock-humming",
+		"entry": "Gyeol (結)",
+		"at": "Turtle, turtle, show your head",
+		"alt": "An old ghost-king humming on the rock lip beside Yushin's fish sword, feet in the steaming water; Yushin turning chest-deep",
+		"scene": "Over-the-shoulder from behind chest-deep Yushin (wet bare shoulder in foreground bokeh) in the black steam pool: on the rock lip an old man with a long beard in his lap, feet in the water, grinning, beside a ring-pommel sword and folded blue clothes; the three sisters tiny and quiet on the far rock.",
+		"people": ["suro", "yushin"],
+		"canon": { "sword": true, "hat": false, "with": ["place:steam_cavern"] }
+	},
+	{
+		"id": "yushin-water-mirror",
+		"entry": "Gyeol (結)",
+		"at": "the face in it isn’t quite his any more",
+		"alt": "Yushin looks down into lacquer-still water; the reflection is an older face with a cone helm",
+		"scene": "Straight down over Yushin's shoulder onto black lacquer-still water: his reflection has become an older bearded soldier's face with a Gaya cone helm, steam crossing it; the rock lip at the frame edge is empty except for the sword and wet footprints.",
+		"people": ["yushin", "muryuk"],
+		"canon": { "hat": false, "with": ["place:steam_cavern"] }
+	},
+	{
+		"id": "yushin-embrace-steam",
+		"entry": "Gyeol (結)",
+		"at": "they close on steam",
+		"alt": "Yushin, crying, throws his arms around his father's ghost and holds only steam; Muryuk behind, Golhwa turned to the wall",
+		"scene": "Two-shot in the pool: Yushin lunging through the water, arms closing on a figure that is already steam; Seohyun barefoot in a white night-robe, hands half raised; Muryuk with the cone helm under his arm a step behind; far left, Golhwa turned to the rock wall.",
+		"people": ["yushin", "seohyeon", "muryuk", "golhwa"],
+		"canon": { "hat": false, "with": ["place:steam_cavern"] }
+	},
+	{
+		"id": "duel-pinned-beads",
+		"entry": "Gyeol (結)",
+		"at": "A knee on the sword arm",
+		"alt": "Worm's-eye from the mud: Bidam kneels on Yushin's sword arm, heavenly-horse blade point-down over his throat, prayer beads scattered",
+		"scene": "Worm's-eye from the mud beside Yushin's head: scattered prayer beads sharp in the foreground; Bidam above him, knee on the sword arm, black headband, the ring-pommel blade raised point-down; storm sky with one break behind Bidam.",
+		"people": ["bidam", "yushin"],
+		"canon": { "battle": true, "sword": true }
+	},
+	{
+		"id": "yushin-cavern-seohyeon-hand",
+		"entry": "Gyeol (結)",
+		"at": "You are my son. You are Kim Yushin.",
+		"alt": "RETAKE: the existing still shows Seohyun's hand on Yushin's jaw, but the ghost can no longer be touched; reshoot as a hand stopping a finger's width from his cheek",
+		"scene": "Intimate ECU in the cavern: Seohyun's ghost hand stops a finger's width from Yushin's wet jaw, steam between them; Yushin's eyes full.",
+		"people": ["seohyeon", "yushin"],
+		"canon": { "hat": false, "with": ["place:steam_cavern"] },
+		"retake": true
+	}
+]

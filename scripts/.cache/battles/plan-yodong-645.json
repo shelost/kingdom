@@ -1,0 +1,6 @@
+[
+	{ "episode": 32, "battle": "yodong-645", "phase": "gaemo", "after": { "kind": "p", "text": "The New Fortress" } },
+	{ "episode": 32, "battle": "yodong-645", "phase": "marsh", "after": { "kind": "p", "text": "Between the army and the walls lies the Liao marsh" } },
+	{ "episode": 32, "battle": "yodong-645", "phase": "ring", "after": { "kind": "p", "text": "Then Yodong itself" } },
+	{ "episode": 32, "battle": "yodong-645", "phase": "fire", "after": { "kind": "p", "text": "consulted again" } }
+]

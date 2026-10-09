@@ -1,0 +1,235 @@
+[0] p EN: Chunchu decides to travel to the East, guided by his friend <b>Takamuko no Kuromaro</b>.
+    KO: 춘추는 벗 <b>다카무코노 구로마로</b>의 안내로 왜국으로 건너간다.
+[1] map {"kind":"map","year":645,"places":["surabol"]}
+[2] p EN: Munhee packs for him. She has packed for every trip he’s ever taken. She will pack for one more. Nobody writes any of this down, which is why it needs saying.
+    KO: 문희가 그의 짐을 싼다. 그가 떠난 모든 길의 짐을 그녀가 쌌다. 한 번 더 쌀 것이다. 아무도 이걸 적어 두지 않는다. 그래서 말해 둘 필요가 있다.
+[3] dialogue munhee
+    EN: ["How many months this time?"]
+    KO: ["이번엔 몇 달입니까?"]
+[4] dialogue chunchu
+    EN: ["…I don’t know."]
+    KO: ["…모르겠소."]
+[5] dialogue munhee
+    EN: ["Then I will pack for more."]
+    KO: ["그럼 옷은 넉넉히 넣겠습니다."]
+[6] flashback {"kind":"flashback","year":"642","title":"The pillar · 기둥","blocks":[{"kind":"p","html":"Three winters ago a rider came in from Daeya. Chunchu heard the news standing up. The fortress. His daughter. Her husband. He leaned on a pillar of the hall and did not move again until dark.","ko":"세 해 전 겨울, 대야
+[6.0] p EN: Three winters ago a rider came in from Daeya. Chunchu heard the news standing up. The fortress. His daughter. Her husband. He leaned on a pillar of the hall and did not move again until dark.
+    KO: 세 해 전 겨울, 대야에서 말 탄 전령이 들어왔다. 춘추는 선 채로 소식을 들었다. 성. 딸. 사위. 그는 대청 기둥에 기대섰고, 해가 질 때까지 움직이지 않았다.
+[6.1] quote {"kind":"quote","html":"When Chunchu heard it, he stood leaning against a pillar all day without blinking. People and things passed before him and he did not see them. At last he said: “Alas! Is a grown man not able to swallow Baekje?”","ko":"춘추가 이를 듣고 기둥에 기대어 서서 종일 눈도 깜박이지 않았고, 사람과 물건이 앞을 지나가도 알아보지
+[6.2] p EN: Goguryeo answered him with a cell. Now he is trying the islands. Somewhere in him a list is being kept, one country to a line, and the last name on it is the biggest.
+    KO: 고구려는 감옥으로 답했다. 이제 그는 섬나라를 두드린다. 그의 속 어딘가에 명단이 하나 있다. 한 줄에 한 나라씩. 맨 끝의 이름이 제일 크다.
+[7] scene {"kind":"scene","label":"The Eastern Court","ko":"동쪽 조정"}
+[8] p EN: The King of the East receives him politely, which is its own kind of answer.
+    KO: <b>왜왕</b>이 그를 정중히 맞는다. 그 정중함 자체가 하나의 대답이다.
+[9] card {"kind":"card","person":"kotoku","caption":"The King of the East. His politeness comes with a price list.","ko":"동쪽의 왕. 그의 정중함에는 값이 매겨져 있다."}
+[10] dialogue kotoku
+    EN: ["Baekje — the Land of the Heavenly Deer, Land of the Lord Buddha — is our ally.","With respect — I must refuse peace with the Divine Country."]
+    KO: ["백제 — 천록의 나라, 부처님의 나라 — 는 우리의 동맹이오.","송구하나 — 신국과의 화친은 거절하겠소."]
+[11] dialogue chunchu
+    EN: ["Baekje is a country on its way to ruin…"]
+    KO: ["백제는 망해가는 나라입니다..."]
+[12] dialogue chunchu
+    EN: ["Our sacred country has produced no end of talent,","and yet not one man the equal of Goryeo’s Gesomun."]
+    KO: ["우리 신국은 수많은 인재를 생성하였지만,","개소문 한 명 만큼 훌륭한 사내가 없구려."]
+[13] dialogue kotoku
+    EN: ["You… speak our language remarkably well."]
+    KO: ["자네... 우리 언어를 훌륭하게 구사하는구려."]
+[14] dialogue chunchu
+    EN: ["Sun Tzu says the highest strategy is to win without fighting.","If Chunchu may add one word: if fight you must, the highest strategy is to fight by borrowing another’s hand.","Too many of Silla’s young men have already died…!","How am I to face their parents?"]
+    KO: ["손자병법에 의하면, 최고의 전략은, 싸우지 않고 이기라는 거라고 했습니다.","이 춘추가 한마디만 더하자면, 결코 싸워야 한다면, 최고의 전략은 남의 손을 빌려서 싸우는 것입니다.","신라의 청년들이 벌써 너무 많이 숨졌습니다...!","제가 어떻게 그 부모들을 보고 체면을 서겠습니까?"]
+[15] p EN: He asks for troops. He asks twice.
+    KO: 그는 군사를 청한다. 두 번 청한다.
+[16] quote {"kind":"quote","html":"Silla sent its high minister, the Daeachan Kim Chunchu, with others, escorting home the scholar Takamuko no Kuromaro and Nakatomi no Oshikuma; they presented a peacock and a parrot. Chunchu was kept as a hostage. Chunchu was handsome, and good at talk and laughter.","ko":"신라가
+[17] dialogue kuromaro
+    EN: ["Chunchu… do you truly mean to go begging to every country around you?","Even Yamato has heard of the Eternal General and the Sword of the Divine Country. Silla may not be the power it once was, but we have strength enough to fight Baekje and Goryeo ourselves."]
+    KO: ["춘추… 정말 주변 나라에 다 빌러 다닐 셈인가?","야마토에도 영원의 대장군과 신국의 검 소문은 들어 왔다. 신라가 예전만 못해도, 백제와 고구려는 우리 힘으로도 싸울 수 있어."]
+[18] dialogue haesang
+    EN: ["If you reach the eastern islands, my lord, ask after their lacquer.","And if you reach Chang’an again — ask after a woman who finishes the emperor’s sentences. Merchants hear weather early."]
+    KO: ["동국에 가시거든 옻칠을 물어보십시오.","장안에 다시 가시거든 — 황제 문장을 끝내는 여인을 물어보십시오. 상인은 날씨를 일찍 듣습니다."]
+[19] flashback {"kind":"flashback","year":"645","title":"Thirty thousand · 삼만","blocks":[{"kind":"p","html":"Earlier that summer the emperor in Chang’an marched on Goguryeo himself. Chunchu talked the queen into lending him men. Silla did not have the men to lend. Baekje noticed.","ko":"그해 여름, 장안의 황제가 몸소 고구려를 치러 나
+[19.0] p EN: Earlier that summer the emperor in Chang’an marched on Goguryeo himself. Chunchu talked the queen into lending him men. Silla did not have the men to lend. Baekje noticed.
+    KO: 그해 여름, 장안의 황제가 몸소 고구려를 치러 나섰다. 춘추는 여왕을 설득해 군사를 빌려주게 했다. 신라에는 빌려줄 군사가 없었다. 백제가 그걸 알아챘다.
+[19.1] quote {"kind":"quote","html":"Summer, fifth month. Taizong of Tang marched on Goguryeo in person, and the queen raised thirty thousand troops to help him. Baekje took advantage of the gap and seized seven fortresses in the west of the country.","ko":"여름 5월, 당 태종이 친히 고구려를 치니, 왕이 군사 3만을 내어 이를 도왔다. 백제가 그 빈틈을
+[19.2] dialogue bidam
+    EN: ["Thirty thousand of our sons, Lord Chunchu. For another man’s war."]
+    KO: ["남의 전쟁에 우리 아들 삼만이라니요, 춘추 공."]
+[19.3] dialogue chunchu
+    EN: ["Not a gift, Bidam. A loan.","Empires keep their ledgers longer than kings keep their thrones."]
+    KO: ["선물이 아니오, 비담 공. 빚이지.","제국의 장부는 왕의 옥좌보다 오래가는 법이오."]
+[19.4] dialogue bidam
+    EN: ["Leave your own field to plough another man’s, and it grows weeds by autumn.","Baekje is the weeds."]
+    KO: ["남의 밭 갈러 제 논을 비워 두면, 가을엔 잡초가 나오.","백제가 그 잡초요."]
+[20] scene {"kind":"scene","label":"The Harmony Council","ko":"화백회의"}
+[21] p EN: The first chair has a new occupant. Old Supum is thanked for his years and sent home, and the queen gives his seat to the one councillor who has never once told her what she wanted to hear.
+    KO: 첫 자리의 주인이 바뀌었다. 늙은 수품은 그간의 노고를 치하받고 물러났고, 여왕은 그 자리를 한 번도 듣기 좋은 말을 해 준 적 없는 화백에게 내준다.
+[22] card {"kind":"card","person":"bidam","look":"elder","write":"上大等","sub":"비담","role":"High Councillor of Silla","caption":"First chair of the Harmony Council. Every vote now passes through his hands.","ko":"화백의 첫째 자리. 이제 모든 표가 그의 손을 지난다.","from":"young"}
+[23] quote {"kind":"quote","html":"Winter, eleventh month: the ichan Bidam was made High Councillor.","ko":"겨울 11월, 이찬 비담을 상대등으로 삼았다.","hanja":"冬十一月，拜伊飡毗曇爲上大等。","source":"Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, yr. 14 (645)"}
+[24] p EN: Under him sit the others, Yushin among them. They still decide only by unanimity. It’s the only way this council selects anything.
+    KO: 그 아래 나머지가 앉는다. 유신도 그중에 있다. 그들은 여전히 만장일치로만 정한다. 이 회의가 무엇을 고르는 방법은 그것뿐이다.
+[25] p EN: The technique has not changed since they crowned Dukman: initial vote, deliberation, final vote. Nothing moves unless the circle closes.
+    KO: 기법은 덕만을 세울 때부터 같다. 초투표, 숙고, 최종 투표. 원이 닫히지 않으면 아무것도 안 움직인다.
+[26] diagram {"kind":"diagram","diagram":"harmony-council","step":"unanimous","title":"Session machine · 화백의 기법","caption":"Initial vote → deliberation → final vote. Unanimity or the name dies in the room.","ko":"초투표 → 숙고 → 최종 투표. 만장일치가 아니면 그 이름은 방에서 죽는다."}
+[27] p EN: Then the room turns to the question everyone has been circling: when Her Majesty fails, who next. The Sacred Bone has thinned to a sister. Someone says the name <b>Princess Seungman</b> the way you set a cup down that you expect everyone to drink from.
+    KO: 그다음 방은 모두가 돌고만 있던 질문으로 돌아선다. 폐하가 못 하시게 되면, 다음은 누구인가. 성골은 누이로 줄어 있다. 누군가 <b>승만공주</b>라는 이름을, 모두가 마실 줄 알고 잔을 내려놓듯 말한다.
+[28] table {"kind":"table","head":["Alchun","Yushin","Murim","Imjong","Suljong","Bidam"],"rows":[["알천","유신","무림","임종","술종","비담"]]}
+[29] p EN: One by one the hands go up. In a unanimous council a raised hand is a kind of weather — once it starts, it finishes. <b>Yushin</b>’s hand is among them. He has served one queen; he will serve her sister.
+    KO: 손이 하나씩 오른다. 만장일치 회의에서 손이란 일종의 날씨다 — 한 번 시작되면 끝난다. <b>유신</b>의 손도 그 안에 있다. 여왕 하나를 섬겼으면 그 누이도 섬긴다.
+[30] p EN: Only one hand stays down.
+    KO: 손 하나만 내려와 있다.
+[31] p EN: Five pieces go to the yes side of the cup. Bidam’s piece stays on the no side.
+    KO: 패 다섯은 잔의 찬성 쪽. 비담의 패만 반대 쪽에 남는다.
+[32] diagram {"kind":"diagram","diagram":"harmony-council","step":"veto","title":"Harmony Veto · 화백 거부","caption":"Five assent, Bidam’s hand stays down. The sister’s name cannot pass.","ko":"다섯이 찬성하고 비담의 손이 내린다. 누이의 이름은 통과하지 못한다."}
+[33] dialogue murim
+    EN: ["Bidam. This is the initial vote.","Five are up. What is there to deliberate.","We cannot even open the final vote.","You locked the door."]
+    KO: ["비담. 초투표요.","다섯이 들었소. 숙고할 거리가 뭐요.","최종 투표를 열 수조차 없소.","당신이 문을 잠근 거요."]
+[34] dialogue suljong
+    EN: ["One hand down and this room is finished.","You know that, and you still put it down?"]
+    KO: ["손 하나만 내리면 이 방은 끝나요.","그걸 알면서 내리는 거요?"]
+[35] dialogue bidam
+    EN: ["I object."]
+    KO: ["반대합니다."]
+[36] p EN: The room does the small silence of men who have already counted themselves finished. Unanimity has failed. The name cannot pass. Someone laughs once, short, the laugh you make when the host spoils his own dinner.
+    KO: 방은, 이미 끝났다고 세어 둔 사내들의 짧은 침묵을 한다. 만장일치가 깨졌다. 그 이름은 통과할 수 없다. 누군가 짧게 한 번 웃는다 — 잔치 주인이 제 잔치를 망쳤을 때 내는 웃음.
+[37] dialogue alchun
+    EN: ["Bidam… alone?","It is Princess Seungman."]
+    KO: ["비담이… 혼자?","승만공주님인데?"]
+[38] dialogue bidam
+    EN: ["Princess Seungman is not as clear-sighted as Her Majesty.","We cannot hand the country over for Sacred Bone alone.","Thirteen years ago, when I stood for Princess Dukman, it was because she was the cleverest.","Now you ask me to throw that measure away."]
+    KO: ["승만공주는 폐하만큼 총명하진 않습니다.","성골이라는 이유만으로 나라를 맡길 수는 없습니다.","열세 해 전, 제가 덕만공주를 밀었을 때는, 그분이 제일 총명해서였습니다.","지금은… 그 기준을 버리라는 겁니까."]
+[39] dialogue yushin
+    EN: ["Bidam. Come on.","Same blood. Same house.","Thirteen years ago you put her sister on that chair yourself."]
+    KO: ["비담, 이 사람아.","같은 피요. 같은 집안이고.","열세 해 전에 그 언니를 저 자리에 올린 게 당신 아니오."]
+[40] dialogue bidam
+    EN: ["Which is exactly why I’m saying no, you Gaya ox.","Don’t give me that face. A hundred and eight to a hundred and eight, remember? Neither of us ever got to be right for long.","A country is not a scoreboard.","And on a night when Lord Chunchu’s eyes turn toward Chang’an, you want another soft Sacred Bone on that chair? Then who sells this country?"]
+    KO: ["그러니까 더 반대하는 거다, 이 가야 황소야.","그런 얼굴 하지 마. 백팔 대 백팔, 기억하지? 우리 둘 다 오래 이겨 본 적이 없어.","나라는 점수판이 아니다.","춘추 공이 장안으로 눈을 돌리는 이 밤에, 또 무른 성골을 저 자리에 앉히자고? 그럼 이 나라는 누가 팔아먹나."]
+[41] p EN: Yushin does not answer the count. Something in his face closes that has been open since they were boys on the yard. The Council adjourns with no successor named.
+    KO: 유신은 그 수에 대답하지 않는다. 연무장 소년 시절부터 열려 있던 얼굴의 한 곳이 닫힌다. 화백은 후계 없이 파한다.
+[42] flashback {"kind":"flashback","year":"610","title":"The higher teaching · 아비달마","blocks":[{"kind":"p","html":"Class 51’s first morning. Packed earth still dark. Bidam is sixteen. His father walks him as far as the yard gate and no further — Musan hall does not hover.","ko":"오십일기의 첫 아침. 다진 흙은 아직 어둡다. 비담은 열여섯. 
+[42.0] p EN: Class 51’s first morning. Packed earth still dark. Bidam is sixteen. His father walks him as far as the yard gate and no further — Musan hall does not hover.
+    KO: 오십일기의 첫 아침. 다진 흙은 아직 어둡다. 비담은 열여섯. 아버지는 연무장 문까지만 걷는다. 무산 대청은 달라붙지 않는다.
+[42.1] card {"kind":"card","person":"sukwon","caption":"Bidam’s father. A man of few words, and he has saved them all for his son.","ko":"비담의 아버지. 말수가 적은 사람인데, 그 말을 모두 아들을 위해 아껴 두었다."}
+[42.2] dialogue sukwon
+    EN: ["Bidam…","Do you know the meaning of your name."]
+    KO: ["비담아…","네 이름 뜻을 아느냐."]
+[42.3] dialogue bidam[hwarang]
+    EN: ["Yes, father…","I was named after the Abhidharma, the higher teaching. It—"]
+    KO: ["예, 아버지…","아비달마, 더 높은 가르침에서 따온 이름입니다. 그건—"]
+[42.4] dialogue sukwon
+    EN: ["Yes… the higher teaching.","And as a young man, and as a Hwarang, your duty is to uphold that.","And remember this:","Even if no one else agrees with the truth… even if speaking it out loud causes others to defame and mock you…","You must always walk toward the truth, in isolation if you must. There is no other way.","You may have heard the saying: upon victory, a king; upon defeat, a traitor.","성즉군왕 패즉역적.","Son… I need you to be a man who would rather be a <b>righteous traitor</b> than an unrighteous king.","Bidam… I love you…!","Go make us proud, son…!"]
+    KO: ["그래… 더 높은 가르침.","젊은이로서, 화랑으로서, 그걸 지키는 게 네 일이다.","그리고 이걸 기억해라.","아무도 그 진실에 동의하지 않아도… 그걸 입 밖에 내면 사람들이 너를 헐뜯고 비웃어도…","너는 진실을 향해 걸어야 한다. 혼자라도. 다른 길은 없다.","이런 말, 들어 봤을 거다. 이기면 임금, 지면 역적.","성즉군왕 패즉역적.","아들아… 나는 네가 불의한 임금보다, <b>의로운 역적</b>이 되기를 바란다.","비담아… 내가 너를 사랑한다…!","가서, 우리를 자랑스럽게 해다오, 아들아…!"]
+[42.5] p EN: He does not name the Gaya-born boy who will share the class. He only ties Bidam’s headband once, tight, and lets the gate take him.
+    KO: 같은 기수를 나눌 가야 난 아이는 이름 대지 않는다. 머리띠만 한 번, 팽팽히 매 주고, 문에 맡긴다.
+[43] p EN: In the emptied hall the incense has burned down to a stub. Bidam has not left the table. His fist is still on the wood.
+    KO: 텅 빈 회의장에서 향은 끄트머리만 남기고 다 탔다. 비담은 아직 탁자를 떠나지 않았다. 주먹은 여전히 나무 위에 있다.
+[44] scene {"kind":"scene","label":"Princess Seungman","ko":"승만공주"}
+[45] p EN: Princess Seungman catches him at the palace gate. Word has reached her before he has.
+    KO: 승만공주가 궁문에서 그를 붙잡는다. 소문이 그보다 먼저 와 있었다.
+[46] card {"kind":"card","person":"jinduk","look":"princess","caption":"The queen’s sister, and the last of the Sacred Bone.","ko":"여왕의 누이이자 마지막 성골."}
+[47] dialogue jinduk
+    EN: ["Bidam…! What is this I hear?","Surely not…"]
+    KO: ["비담....! 그게 무슨 말인가?","설마…"]
+[48] dialogue bidam
+    EN: ["Our sacred country has produced no end of talent,","and yet not one man the equal of Goryeo’s Gesomun."]
+    KO: ["우리 신국은 수많은 인재를 생성하였지만,","고려의 개소문 한 명 만큼 훌륭한 사내가 없구려."]
+[49] scene {"kind":"scene","label":"Alchun’s Door","ko":"알천의 집"}
+[50] p EN: He starts counting who would come with him, and the first door he knocks on is Alchun’s.
+    KO: 그는 자기를 따를 사람을 꼽아 보기 시작하고, 맨 먼저 두드리는 문은 알천의 문이다.
+[51] dialogue bidam
+    EN: ["The problem is these rotten ministers!"]
+    KO: ["문제는 썩어빠진 대신들일세!"]
+[52] dialogue alchun
+    EN: ["Oi. Enough of that ignorant talk.","The level of the ministers is the level of the country.","If the people were clear-sighted, the ministers would notice and do their jobs."]
+    KO: ["야, 임마. 무식한 소리 좀 고마해라.","대신 수준이 나라 수준인거지.","백성이 총명했다면, 대신들도 눈치채고 일을 잘하겠지."]
+[53] dialogue bidam
+    EN: ["What are you talking about!","Do you look down on the people of this sacred country?","They have always—"]
+    KO: ["아니, 무슨 소리인가!","자네, 신국의 백성을 업신여겨보는 것이야?","원래"]
+[54] dialogue alchun
+    EN: ["Yes. I look down on them. So what?","If everything is this rotten and you lie there doing nothing, some of the blame is yours.","Why is it always the most ignorant in a country who shout loudest that it is the greatest…"]
+    KO: ["웅, 그래. 업신여겨본다, 왜?","아니, 이렇게까지 썩었는데 아무것도 안하고 누워있으면, 지도 어느 정도 책임을 져야지.","왜 항상 나라에서 제일 무식한 것들이 맨날 “내 나라 최고”라고 하는 걸까...."]
+[55] dialogue alchun
+    EN: ["…And use your head. If Princess Seungman doesn’t take the throne, who sits there?","There’s one more royal neck in Surabol. Chunchu’s."]
+    KO: ["…그라고 머리 좀 써 봐라. 승만공주가 못 오르면 그 자리에 누가 앉노?","서라벌에 왕족 목이 하나 더 있제. 춘추."]
+[56] dialogue bidam
+    EN: ["Precisely."]
+    KO: ["바로 그걸세."]
+[57] dialogue alchun
+    EN: ["Ah, he doesn’t want it. Told me so himself, over wine.","Laughed at the whole idea, he did."]
+    KO: ["에이, 지는 싫다 카더라. 술자리에서 지 입으로 그랬다.","그 얘기 듣고 웃기까지 하던데."]
+[58] dialogue bidam
+    EN: ["Chunchu is the most cunning man in Samhan…!","Never — not for one moment — believe a word that comes out of that mouth…!"]
+    KO: ["춘추는 삼한에서 제일 교활한 자일세...!","절대로, 한 순간도 그 입에서 나오는 말을 믿어선 안 되네...!"]
+[59] scene {"kind":"scene","label":"The Queen’s Chamber","ko":"여왕의 침전"}
+[60] p EN: Bidam hears it from a harbour clerk, which is the worst way to hear anything. Chunchu has sailed east. The queen signed the order herself. Nobody asked the Council.
+    KO: 비담은 그 소식을 포구의 서기에게서 듣는다. 무슨 소식이든 듣기 가장 나쁜 경로다. 춘추가 동쪽으로 배를 띄웠다. 여왕이 손수 명을 내렸다. 화백에 물은 사람은 없다.
+[61] p EN: He finds her in the small hall, not the throne room. She is sitting very straight, the way people sit when they no longer trust themselves to lie down.
+    KO: 그는 옥좌가 있는 정전이 아니라 작은 전각에서 그녀를 찾는다. 그녀는 아주 꼿꼿이 앉아 있다. 누우면 다시 못 일어날까 봐 겁나는 사람처럼.
+[62] dialogue bidam
+    EN: ["…Why wasn’t this told to the Council?","Lord Chunchu isn’t even a member of the Council… he’s just…","(eyes widen) …your nephew…"]
+    KO: ["…어째서 이 일을 화백에 알리지 않으셨습니까?","춘추 공은 화백의 일원도 아닙니다… 그저…","(눈이 커진다) …폐하의 조카일 뿐…"]
+[63] dialogue sunduk
+    EN: ["Lord Bidam… I-I need to lie down… (collapses)"]
+    KO: ["비담 공… 나, 나 좀 누워야겠네… (쓰러진다)"]
+[64] dialogue bidam
+    EN: ["(stunned) Y-Your Majesty! GUARDS! THE QUEEN IS DOWN!"]
+    KO: ["(얼어붙는다) 폐, 폐하! 게 누구 없느냐! 폐하께서 쓰러지셨다!"]
+[65] p EN: Physicians. Doors. By evening the palace has stopped answering questions.
+    KO: 의원들. 닫히는 문들. 저녁이 되자 궁은 더는 물음에 답하지 않는다.
+[66] scene {"kind":"scene","label":"That Night","ko":"그날 밤"}
+[67] p EN: That night Bidam takes the old black headband out of the chest where he keeps it. There is still blood on it, gone brown with the years. He does not remember whose.
+    KO: 그날 밤 비담은 궤짝에서 낡은 검은 머리띠를 꺼낸다. 아직도 피가 묻어 있다. 세월이 흘러 갈색으로 변한 피다. 누구의 피였는지는 기억나지 않는다.
+[68] dialogue bidam
+    EN: ["…I gave this to that boy, back then.","Told him nobody would trouble him if he had it."]
+    KO: ["…그때 이걸 그 애한테 줬지.","아무도 안 괴롭힐 거라고."]
+[69] dialogue bidam
+    EN: ["I did not know the one troubling him would turn out to be the country."]
+    KO: ["괴롭히는 사람이 나라가 될 줄은 몰랐고."]
+[70] dialogue bidam
+    EN: ["As young Hwarang, they told us we’d be the future of this nation…","to protect the Sacred Bone class…","Bullshit…","“Sacred Bone class”? You mean the two dying grandmas?"]
+    KO: ["어린 화랑 시절, 우리가 이 나라의 미래라고들 했지…","성골을 지키라고…","개소리…","“성골”? 죽어 가는 할망구 둘 말이냐?"]
+[71] scene {"kind":"scene","label":"The Moon Palace","ko":"월성"}
+[72] p EN: Nine days later the gate of the Moon Palace is still shut. The guards have orders to open it for no one. No one, it turns out, includes the Harmony Council.
+    KO: 아흐레가 지나도 월성의 문은 닫혀 있다. 문지기들은 아무에게도 열지 말라는 명을 받았다. 그 아무에는 화백도 들어 있다.
+[73] dialogue bidam
+    EN: ["WE’RE THE HARMONY COUNCIL! WHY CAN’T WE ENTER THE PALACE??","WHAT AUTHORITY DO YOU HAVE?","(pauses)","SHE’S DEAD, ISN’T SHE?","THE QUEEN IS DEAD, AND YOU’RE HIDING IT FROM THE PEOPLE!!","DID CHUNCHU ORDER THIS?"]
+    KO: ["우리는 화백이다! 어째서 궁에 들어갈 수 없단 말이냐??","너희가 무슨 권한으로 막는 게냐?","(멈칫한다)","돌아가신 게지?","폐하께서 돌아가셨는데, 백성에게 숨기고 있는 게지!!","춘추가 시킨 것이냐?"]
+[74] p EN: The guards look at their spears. Chunchu is across the sea. His orders, apparently, are not.
+    KO: 문지기들은 제 창끝만 본다. 춘추는 바다 건너에 있다. 그의 명은, 아무래도, 아닌 모양이다.
+[75] scene {"kind":"scene","label":"Yumjong","ko":"염종"}
+[76] p EN: Bidam does not recruit with speeches, whatever the Council thinks of him. He recruits with tea and long silences, and the first man to drink the tea is <b>Yumjong</b>, a True Bone whom nobody has ever accused of anything, because nobody has ever noticed him.
+    KO: 평의회가 어떻게 여기든, 비담은 연설로 사람을 모으지 않는다. 차와 긴 침묵으로 모은다. 그 차를 처음 마신 사람은 <b>염종</b>이다. 아무도 그를 무엇으로 탓한 적이 없는 진골. 아무도 그를 눈여겨본 적이 없어서다.
+[77] card {"kind":"card","person":"yumjong","caption":"A quiet True Bone who drinks his tea slowly and listens fast.","ko":"차는 천천히 마시고 듣는 건 빠른, 조용한 진골."}
+[78] dialogue yumjong
+    EN: ["The islands, now. Last summer it was Chang’an.","Your Lord Chunchu does get around."]
+    KO: ["이번엔 섬나라랍니다. 지난여름엔 장안이었고.","춘추 공은 참 부지런도 하십니다."]
+[79] dialogue bidam
+    EN: ["Chunchu wants absolute power…!"]
+    KO: ["춘추는 절대 권력을 원하는 거요...!"]
+[80] dialogue bidam
+    EN: ["What’s the difference between the West and the East anyway?","In both nations, their emperors cannot be removed by a vote.","Their people live as slaves."]
+    KO: ["서쪽이나 동쪽이나, 대체 뭐가 다르오?","두 나라 다 황제를 표결로 끌어내릴 수 없소.","백성은 노비처럼 살고."]
+[81] dialogue yumjong
+    EN: ["And the Marshal?"]
+    KO: ["장군은요?"]
+[82] dialogue bidam
+    EN: ["Yushin stands where the Queen stands. He always has.","When she is gone he will stand where the next one stands, and he will call it loyalty, and he will even be right."]
+    KO: ["유신은 폐하가 서신 자리에 서오. 늘 그랬지.","폐하가 가시면 다음 분이 서는 자리에 설 거고, 그걸 충이라 부를 거요. 심지어 맞는 말이기도 하고."]
+[83] dialogue yumjong
+    EN: ["He’s not even Silla, you know.","Gaya. His great-grandfather handed over Geumgwan with the keys still warm. The men in the outer works would like hearing that."]
+    KO: ["그 사람은 신라 사람도 아니잖습니까.","가야요. 증조부가 금관을 열쇠도 식기 전에 넘겼지요. 외성 군사들이 들으면 좋아할 겁니다."]
+[84] p EN: Bidam’s beads stop. He has said the word to Yushin’s face a hundred times on the yard, and Yushin has laughed every time. He has never heard it said like this, by a man who means it as a door.
+    KO: 비담의 염주가 멈춘다. 연무장에서 유신의 얼굴에 대고 그 말을 백 번은 했고, 유신은 그때마다 웃었다. 그 말을 문으로 쓰려는 사내의 입에서 이렇게 나오는 것을 들은 적은 없다.
+[85] dialogue bidam
+    EN: ["…Careful, Yumjong.","A word you shout at a man’s gate comes back to your own. Gaya."]
+    KO: ["…조심하오, 염종.","남의 대문에 대고 외친 말은 제 집으로 돌아오는 법이오. 가야라."]
+[86] p EN: He says it once more, under his breath, as if testing the weight.
+    KO: 그는 숨결 아래로 한 번 더 그 말을 해 본다. 무게를 달아 보듯.
+[87] dialogue yumjong
+    EN: ["So. How many men, Councillor?"]
+    KO: ["그래서. 몇이나 됩니까, 상대등."]
+[88] dialogue bidam
+    EN: ["A paddy is not planted in a morning, Yumjong. One shoot, and then the next, and then the water does the rest.","Enough for the Fortress of Radiance. By the time Her Majesty’s breath runs out."]
+    KO: ["논은 한나절에 심는 게 아니오, 염종. 모 하나, 또 하나, 그다음은 물이 알아서 하지.","명활성을 채울 만큼. 폐하의 숨이 다하실 무렵까지는."]
+[89] p EN: Bidam sets the cup down. Chunchu is across the sea. The queen is behind a shut gate. The Council has no one left to ask. So, for the first time in his life, Bidam decides something without a vote.
+    KO: 비담이 잔을 내려놓는다. 춘추는 바다 건너에 있다. 여왕은 닫힌 문 뒤에 있다. 화백은 더 물을 사람이 없다. 그래서 비담은 난생처음, 표결 없이 무언가를 정한다.
+[90] p EN: <b>Gaya. A word six hundred years old that still cuts a marshal. Where did it come from? Six eggs, falling out of the sky…!</b>
+    KO: <b>가야. 육백 년 묵은 말 한마디가 아직도 장군을 벤다. 그 말은 어디서 왔나? 하늘에서 떨어진 알 여섯 개에서…!</b>

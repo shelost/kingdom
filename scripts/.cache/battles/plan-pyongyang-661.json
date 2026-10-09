@@ -1,0 +1,7 @@
+[
+	{ "episode": 78, "battle": "pyongyang-661", "phase": "taedong", "after": { "kind": "p", "text": "The someone is the Red Fowl" } },
+	{ "episode": 78, "battle": "pyongyang-661", "phase": "ice", "after": { "kind": "p", "text": "There is no bank. There is only ice" } },
+	{ "episode": 78, "battle": "pyongyang-661", "phase": "snow", "after": { "kind": "p", "text": "freezes in the snow outside the walls" } },
+	{ "episode": 79, "battle": "pyongyang-661", "phase": "convoy", "after": { "kind": "p", "text": "In the second month a train of carts" } },
+	{ "episode": 79, "battle": "pyongyang-661", "phase": "home", "after": { "kind": "p", "text": "The Red Fowl takes the rice, breaks camp" } }
+]

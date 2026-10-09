@@ -1,0 +1,71 @@
+
+=================================================================
+#31 Four Dragons  (643 February)
+Arc: Part II — The Dawn of War / The Seventh Invasion · place: changan · tone: imperial war council
+Logline: The Heaven-Sent General. The Khan of Heaven. He has many names, and he is running out of countries.
+=================================================================
+[0] ¶ In Chang’an there is one word nobody says. It is the emperor’s name.
+[1] ¶ He never quite forbids it. The two characters of his given name simply vanish from the empire, quietly: a ministry renamed because one of them sat in its title, a bodhisattva’s name shortened by a syllable, scribes copying old books leaving one stroke off — and everyone understands.
+[2] ¶ He has plenty of other names, and those you may say all day. The Heaven-Sent General. The Khan of Heaven.
+[3] ¶ Tell that to a herald from Samhan. Watch his face.
+[4] The Herald: …They don’t say his name? At all?
+[5] Chu Suiliang: Nor written, sir. We leave off a stroke. / It saves everyone a great deal of trouble.
+[6] ¶ So the Second Emperor of the West is a man who has not heard another person say his own name since he was crowned, and there is nobody left alive who is allowed to.
+[7] ── SCENE: The Sickroom ──
+[8] ¶ The Imperial Minister is dying. At the foot of the bed the court diarist, Chu Suiliang, writes down everything the emperor says.
+[9] [CARD The Imperial Minister: The emperor’s minister. His job is to say no, and he is very good at his job.]
+[10] The Imperial Minister: Your Majesty. When I am gone, there will be no one left to tell you no.
+[11] The Second Emperor: Why else do you think I put up with you for twenty years.
+[12] The Second Emperor: With bronze for a mirror, a man straightens his robes. / With history for a mirror, he sees the rise and fall of states. / With a man for a mirror, he sees his own faults. / …Today I lose one of my mirrors.
+[13] ¶ All that month the eastern reports keep coming in. In Goryeo, a king has been murdered by his own minister.
+[14] The Second Emperor: Gai Suwen. / I have been turning that name over for a month. It does not get any sweeter.
+[15] ¶ Chang’an writes the name without the Yeon. Yeon was the given name of the emperor’s late father, so the word is gone from the palace. A whole family loses its surname to a dead man’s dignity. It is an old family, too. Older than Goguryeo, if you ask them. They will tell you anyway.
+[16] The Second Emperor: The King of Goryeo was a friend I valued. / His name… ah… / …Yeongnyu! King Yeongnyu!
+[17] ¶ Everything is in place. It has been for some time; he was simply waiting to be bored enough.
+[18] Chu Suiliang: Majesty, we have invaded six times already — and you would go again?
+[19] The Second Emperor: Because I have not gone myself. / Life is not theory. It is practice.
+[20] ── SCENE: The Third Leg ──
+[21] ¶ In the third month an envoy arrives from Pyongyang with a request nobody in the Ministry of Rites has seen before. The new master of Goguryeo would like some Daoists.
+[22] Goguryeo envoy: The Mangniji says a cauldron stands on three legs. / We have the Buddha. We have Confucius. / He would like the third leg, if the Son of Heaven can spare one.
+[23] The Second Emperor: He wants Laozi? / Give him Laozi. Our house descends from the old man anyway. Let Goguryeo bow to my ancestor and call it theology.
+[24] ¶ Eight Daoists go east with a copy of the _Daodejing_. In Pyongyang the Mangniji gives them lodgings, and the lodgings he gives them are temples. The monks are moved out the same week, with their bells.
+[25] ¶ A young monk named **Shinsung** carries the smallest bell down the hill himself, to a lesser house that has no frame to hang it from, and sets it on the floor. He does not complain to anyone. The bell stays on the floor for twenty-five years.
+[26] ❝QUOTE (Nirvana Sutra (大般涅槃經) fasc. 14, Noble Practice (聖行品), tr. Dharmakṣema · T12n0374, pp. 450a, 451a · Sanskrit: the same verse in the Mahāparinirvāṇasūtra (Waldschmidt ed.)) [Shinsung]: All conditioned things are impermanent; this is the law of arising and passing away. … When arising and passing away have themselves passed away, that stillness is bliss.❞
+[27] ── SCENE: Three Choices ──
+[28] ¶ In the ninth month an envoy comes from Silla, which is losing fortresses to Baekje faster than it can count them, and asks for an army. The Second Emperor offers him a choice of three.
+[29] The Second Emperor: One. I send the Khitan and the Mohe into Liaodong, and Goguryeo looks north for a year. / Two. I give you a few thousand red coats and Tang banners. Stand them on your walls. Baekje will think I have come, and run. / Three.
+[30] The Second Emperor: Your country is ruled by a woman, and your neighbours despise you for it. That is why they keep coming. / I could send you one of my own clan to be your king, with a few soldiers to look after him. When the country is safe, you may have it back.
+[31] ¶ The envoy says yes, and then no, and then nothing at all. The emperor watches him for a while.
+[32] The Second Emperor: A mediocre man. Not the sort a country sends when it is drowning.
+[33] ¶ The report reaches Surabol in the twelfth month. The Harmony Council has the third option read aloud twice. **Bidam** reads it once, and folds it small.
+[34] Bidam: He offers us a king the way a temple puts out rice for a stray. / …And there are men in this hall who would bow for the bowl.
+[35] ── SCENE: Five Hundred Li ──
+[36] ¶ In the new year the emperor sends a man to Pyongyang to tell Goguryeo to leave Silla alone. Gesomun receives him standing up, and does not offer a mat.
+[37] Tang envoy: The Son of Heaven asks that Goguryeo stop troubling Silla. / They are his vassals. As you are.
+[38] Yeon Gesomun: Vassals. Ha! / When the Sui were sitting on our chest, Silla crept in and took five hundred li of our land. / Give back the dirt. Then talk to me about peace.
+[39] Tang envoy: That was long ago. Why quarrel over old things?
+[40] Yeon Gesomun: Old? / It’s dirt. Dirt doesn’t get old, you fool. / Go tell him that. Use small words.
+[41] ¶ The envoy carries it west word for word. The Second Emperor has it read to him twice and smiles. A refusal in writing is worth an army. Now he can raise one.
+[42] ── SCENE: The Muster ──
+[43] ¶ He launches the Seventh Invasion of Goguryeo. It’s the seventh army out of the West, and the first he leads himself. The clerks need three days to read the muster aloud. Horse from the frontier. Foot from the rivers. Five hundred hulls riding low with a year of grain.
+[44] [EDICT Handwritten edict to the realm [The Second Emperor] (Zizhi Tongjian (資治通鑑) bk. 197, Tang Taizong, Zhenguan 18 (644), eleventh month · cf. Samguk Sagi bk. 21 (以理乘亂)): Gesomun of Goguryeo has murdered his lord and savages his people. Who could bear it? We mean to ride out to You and Ji and call Liao and Jie to account. Wherever We camp or halt, let nothing be wasted and no one be burdened. … Emperor Yang of Sui was cruel to those beneath him, and the king of Goguryeo was kind to his people. An army that longed for revolt struck a people at peace, and so it failed. Now, in short, there are five ways We are certain to win. One: the great strikes the small. Two: the loyal punishes the rebel. Three: order rides down disorder. Four: the rested meets the weary. Five: the glad meets the bitter. Why fear we will not prevail? Tell it to all the people. Let no one doubt, and no one be afraid.]
+[45] ¶ Four dragon banners go up over the muster: white, red, blue and black.
+[46] [CARD Blue Dragon: The Blue Dragon. The emperor’s most patient general, which is its own kind of danger.]
+[47] ¶ The fifth banner has no name on it at all. Everyone knows whose it is.
+[48] [MAP 645 The Seventh Invasion: Three roads in and five hundred hulls. Goguryeo’s wall was built to stop one army at a time.]
+[49] ¶ Two of the four dragons were born on the steppe. The Red Dragon keeps felt tents inside the capital walls and sleeps better in them. The White Dragon walked his whole tribe across the border as a boy. He has been proving it was worth it ever since. The Black Dragon is the empress’s brother. He argued against this war in council. He’s riding to it anyway.
+[50] ── SCENE: Longmen Field ──
+[51] ¶ In a poor field at Longmen, a farmer named Xue Rengui is planning to rebury his ancestors. Millet, rammed earth, a hut that doesn’t pretend to be anything. He has the right soil for graves. He doesn’t yet know he has the wrong year for quiet.
+[52] [CARD Xue Rengui: A poor farmer with good soil for graves. His wife thinks he could do better.]
+[53] ¶ The cloth on his back is plain yellow peasant hemp, the cheapest dye the village still sells, the colour of millet at the wrong hour. He hoes. His wife, **Liu**, keeps the hut door.
+[54] ¶ The Son of Heaven is calling up troops for Liaodong. The edict reaches villages that have never seen a palace, and wives who have never left the furrow.
+[55] ¶ The edict comes on red paper, pasted to the well-house wall at the height of a man’s eyes: SERVE THE EMPEROR. Under it, in smaller characters, the quota. It does not ask for him by name. It asks for one man from every household with the right number of hands, and any man with hands will do.
+[56] Xue Rengui: The mounds… they’re not done. / Not the dirt. The hands. / The edict — I heard it. I did.
+[57] [CARD Lady Liu: A farmer’s wife. The farmer has no idea what she has planned for him.]
+[58] Lady Liu: Mounds don’t wait because a man is short of hands. / And the edict doesn’t wait either. / You’re not a hoe. You’re a ji. As far as I can tell.
+[59] Xue Rengui: The ji is in the shed. / The yellow clothes are here. / Liu. If I go — this door.
+[60] Lady Liu: I’ll shut the door. / Don’t you start worrying about doors. / Talent needs its hour. If this is the hour — then go.
+[61] ¶ He goes. She is right, and a man who can lift a **ji** should not spend the invasion stacking earth for the dead.
+[62] Xue Rengui: …Ancestors. Wait a little longer. / Until I come back carrying this ji. / The yellow clothes — I’ll leave them here.
+[63] ¶ He presents himself to general **Zhang Shigui** and signs his name under the Tang muster. The clerk writes _Xue Rengui_. The clerk does not look up. History will.
+[64] ¶ **Yodong has never opened its gates to the West. Not for the Sui. Not in three summers. Here come the dragons…!**

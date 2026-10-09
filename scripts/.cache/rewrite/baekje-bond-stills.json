@@ -1,0 +1,56 @@
+[
+	{
+		"id": "gyebek-want-to-live",
+		"entry": "Prince Euija",
+		"at": "I want to live…!",
+		"alt": "On the night mudbank, the soaked eel boy shouts up at the hooded man, tears running, fists in the mud.",
+		"scene": "Night mudbank on the White River. Worm's-eye from the mud: Gyebek as a boy, soaked, kneeling, head thrown back, mouth open in a raw shout with tears streaming; the uprooted willow a black diagonal behind him; Euija standing over him in a wet grey robe, hood gone, face in shadow, a knife in his belt. One cold moon break as the key, a sliver of Euija orange #e08a2e from a far lantern on the water.",
+		"people": ["gyebek", "euija"],
+		"canon": { "with": ["place:baekgang"], "hat": false }
+	},
+	{
+		"id": "euija-mud-promise",
+		"entry": "Prince Euija",
+		"at": "Now you have mine.",
+		"alt": "The crown prince, hood gone, holds out a hand to the boy on the mud. For once he is not laughing.",
+		"scene": "Two-shot low on the mud: Euija crouched to the boy's height, one hand out, face serious for once; Gyebek looking at the hand, not yet taking it. River mist behind, the black water a flat band, the far Sabi bank dissolving into wash.",
+		"people": ["euija", "gyebek"],
+		"canon": { "with": ["place:baekgang"], "hat": false }
+	},
+	{
+		"id": "princes-on-the-steps",
+		"entry": "Eight Great Clans",
+		"at": "One step below the elders sit the crown prince’s sons.",
+		"alt": "Five princes on the palace stair, each on his mother's side: a proud seventeen-year-old, a dry scorekeeper, a careful boy, a quiet twelve-year-old, an eight-year-old with a brush.",
+		"scene": "Low dutch angle up a stone palace stair: five Baekje princes of different ages (17, 16, 15, 12, 8) seated one step below shadowed clan elders, each on a different side of the stair; the youngest writing on a wooden slip on his knees. The chalk-and-sand yard a pale band below. Dusk raking light.",
+		"people": ["yung", "tae", "hyo", "yun", "pung"],
+		"canon": { "with": ["place:sabi_tourney", "dress:baekje"] }
+	},
+	{
+		"id": "pung-wooden-slip",
+		"entry": "Eight Great Clans",
+		"at": "It says you.",
+		"alt": "An eight-year-old prince holds a wooden slip up to the grit-grey eel boy at the bottom of the stair.",
+		"scene": "Over-the-shoulder from behind Gyebek (boy, wrestling whites grey with sand): small Prince Pung on the bottom step holding up a narrow wooden slip with brushed characters (not readable). Dusk, long shadows across the sand.",
+		"people": ["gyebek", "pung"],
+		"canon": { "with": ["place:sabi_tourney"] }
+	},
+	{
+		"id": "tide-clerk-four-hands",
+		"entry": "Eight Great Clans",
+		"at": "It will still be four.",
+		"alt": "At the Rock of Government a sweating clerk refuses to change a number while a mapmaker scratches the river mouth into the dirt.",
+		"scene": "The Assembly rock, cool morning. Sungchung, a young clerk, sweating, tide tablet clutched to his chest, facing the shadowed Satek elder; beside him Heungsu crouched, scratching a wide river mouth into packed earth with a stick. Lords as dark shapes at the edge.",
+		"people": ["seongchung", "heungsu", "eldersatek"],
+		"canon": { "with": ["dress:baekje"] }
+	},
+	{
+		"id": "gomanari-gift-stable",
+		"entry": "King Euija",
+		"at": "He is counting to ten.",
+		"alt": "In the lamplit royal stable Gyebek rests his forehead against the neck of a black horse; the king in coronation silk looks away at a saddle.",
+		"scene": "Royal stable at night, one oil lamp on a post. Gyebek (21) with his forehead pressed to the neck of the jet-black horse Gomanari, eyes shut, lips moving; King Euija in coronation silk in the straw behind, deliberately staring at a saddle on the wall. Lamp rakes across the horse's muscle and the silk; bokeh of a second lamp in the dark stalls.",
+		"people": ["gyebek", "euija"],
+		"canon": { "with": ["gomanari"], "mounted": false }
+	}
+]

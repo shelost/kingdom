@@ -1,0 +1,65 @@
+
+=================================================================
+#69 Heungsu  (660)
+Arc: The Fall of Euija · place: sabi · tone: tragic loyalty drama
+Logline: The king sends for the one man he sent away for being right.
+=================================================================
+[0] ¶ Heungsu has drawn the same map in the dirt every morning for three years. Today the king has finally sent someone to look at it.
+[1] ▼ FLASHBACK 657–660 Gomamiji
+    [1.0] ¶ The county is a day’s ride from the sea and a month from anyone who matters. Heungsu arrives with one chest and his office sword, hangs the sword on the doorpost, and on the first morning, before the clerk has finished his bow, scratches a map into the packed earth of the yard with the end of a broom handle.
+    [1.1] ¶ A coastline. One river mouth, the White River’s, drawn twice as wide as it is. One notch in the eastern hills for **Tanhyeon**. Sabi as a thumbprint. Every morning the chickens and the children walk it out of shape, and every morning he sweeps it flat and draws it again, the same lines in the same order, like a monk at his morning sutra.
+    [1.2] ?: Mister, is that a snake?
+    [1.3] Heungsu: A river.
+    [1.4] ?: What river?
+    [1.5] Heungsu: One I hope you never see.
+    [1.6] ¶ Nobody from Sabi writes. The news about Sungchung comes a season after the cell, on a salt boat, folded in between the price of salt and the price of rice, and the clerk reads it out because he reads everything out.
+    [1.7] ?: The councillor in Sabi. The one who— in the cell. / …Was he someone you knew, sir?
+    [1.8] Heungsu: …Better handwriting than mine.
+    [1.9] ¶ That morning he does not draw the map. The next morning he does, and adds nothing to it, which the clerk takes as grief and the children take as permission to walk on Tanhyeon.
+    [1.10] ¶ In the last year the rumours come down the coast faster than the salt: foxes in the Ministers’ Assembly, a river gone red. Heungsu hears each one out and goes back to his broom.
+[1] ▲ end flashback
+[2] ── SCENE: The Courier ──
+[3] ¶ The courier does not sit. Dust is still on him. The sword on the doorpost is the only bright thing in the yard.
+[4] ¶ He has stopped in the middle of the yard, which is to say in the middle of the map.
+[5] The Courier: His Majesty asks. / The matter is urgent. What then.
+[6] Heungsu: …Sungchung already wrote it. / Same paper. I don’t have a second one.
+[7] The Courier: …That is all? / His Majesty asked for a plan, sir. Not a—
+[8] Heungsu: You’re standing on Tanhyeon.
+[9] ¶ The courier looks down and steps off a notch in the dirt, as if it might give way under him.
+[10] Heungsu: And Gyebek? / Has anybody sent for Gyebek?
+[11] The Courier: A boat went for him this week, sir. To Tamla.
+[12] Heungsu: This week. / Five years, and this week.
+[13] ¶ He looks down at the river mouth he has drawn too wide, and remembers the last time he saw the man they have finally sent for.
+[14] ▼ FLASHBACK 655 The berth
+    [14.0] ¶ It was a berth on Satek water, the afternoon the clans put Gyebek on a boat. Heungsu still had his office then. He came down to the water because nobody else from court did.
+    [14.1] [CARD Heungsu: A Baekje minister sent far from court for saying what the king didn’t want to hear.]
+    [14.2] ¶ Gyebek’s wife came too, with their boy at her side and a small girl on her hip. She had packed his bag. He had unpacked it on the dock and packed it again, in order.
+    [14.3] Heungsu: You… you truly mean to go? / Without a word to the king—
+    [14.4] Gyebek: The king is in mourning. He cannot sign. / The order has his seal. I am a loyal servant of Baekje.
+    [14.5] Gyebek: His Majesty gave me a name. / A name — to a child who had none. / If he wants it back, he will send for it.
+    [14.6] Gyebek’s Son: Father. How many days is Tamla?
+    [14.7] Gyebek: Four, with a good wind.
+    [14.8] Gyebek’s Son: Then I’ll count to four.
+    [14.9] Gyebek: Count to five. The wind is not always good.
+    [14.10] Heungsu: …Do you know the story of the Guardian of Ansi?
+    [14.11] Gyebek: I do. / One person to cherish. One person to serve.
+    [14.12] Gyebek: My trouble is that for me they are the same person.
+    [14.13] ¶ His wife was standing close enough to hear it. She shifted the girl to her other hip and looked at the water. Heungsu has never forgotten that she did not look surprised.
+    [14.14] Heungsu: Then hear one thing that is not a story. / If they ever send for you, hold the White River mouth and the Tanhyeon pass — or there will be no Sabi left to be loyal to. / The Tang do not need our clans’ permission to land. They need our absence.
+    [14.15] Gyebek: I know the roads. / Yellow Mountain first — if that door holds, the river still has a kingdom behind it. / If it does not… then the berths you all fought over will belong to whoever can spell our names.
+    [14.16] ¶ Then the captain with the Yunbi contract called the tide. Gyebek stepped aboard and did not look back, because looking back was not on the list. The boy counted out loud until the sail was gone. He got to four hundred and something before his mother made him stop.
+[14] ▲ end flashback
+[15] Heungsu: Tell His Majesty— / …No. He has the paper.
+[16] ── SCENE: Sabi ──
+[17] ¶ The answer comes back to Sabi. The ministers do not like the source.
+[18] Satek Chunbok: Majesty, Heungsu is a man in exile. He resents his lord. / A man who resents his lord has no love of country. As Your Majesty well knows, his words must not be used.
+[19] A Minister: Let them in, Majesty. / Let the Tang come up the river single file, with no room to spread their boats. Let Silla climb Tanhyeon, a path too narrow for two horses abreast. / Then strike. Chickens in a basket. Fish in a net.
+[20] King Euija: Chickens in a basket. / …Ha. That’s good. That’s the kind of thing I used to think of. / Heungsu would say—
+[21] Satek Chunbok: Heungsu says what Sungchung said, Majesty. / And Your Majesty did not take Sungchung’s advice either.
+[22] ¶ It is very quiet. To take the advice now, the king would have to admit what it cost the last man who gave it. Kings will pay almost anything not to admit that.
+[23] King Euija: So it is.
+[24] ¶ The next courier is shorter. Tang keels are already in the mud of Final Ford. Yushin is already on the switchback. The White River and the Tanhyeon pass are already theirs.
+[25] ¶ No second courier comes to Gomamiji. Heungsu sweeps the yard and draws the map for eleven more mornings, the river mouth still twice as wide as it is, because nobody has told him it is already full of Tang keels.
+[26] ¶ On the twelfth it rains, and he stands under the eave and watches the White River and Tanhyeon run together into one brown puddle. He does not draw them again. He lifts the sword off the doorpost and starts north on foot, toward a pass that has already been crossed.
+[27] ¶ The histories do not mention him again.
+[28] ¶ **Across the sea, a boat is coming for the Turtle. He is on the shore before they finish tying it up…!**

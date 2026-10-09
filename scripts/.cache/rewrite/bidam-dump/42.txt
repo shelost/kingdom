@@ -1,0 +1,283 @@
+[0] quote {"kind":"quote","hanja":"毗曇、廉宗等謂女主不能善理，因謀叛擧兵…","ko":"비담·염종 등이 이르기를, 여주(女主)는 잘 다스리지 못한다 하고, 반란을 꾀하여 군사를 일으켰다…","html":"Bidam, Yumjong and others said a woman sovereign cannot govern well, and so plotted rebellion and raised troops…","source":"Samguk Sagi (三國史記) bk. 5, Silla Annals — Queen Seondeok, y
+[1] day {"kind":"day","label":"DAY 1","ko":"첫째 날"}
+[2] p EN: <b>Queen Sunduk (52)</b> is in critical condition. The Eastern Palace smells of medicine and of a succession nobody has settled.
+    KO: <b>선덕여왕 (52)</b>이 위독하다. 동궁에는 약 냄새와, 아무도 정하지 못한 후계의 냄새가 난다.
+[3] quote {"kind":"quote","hanja":"朕死於某年某月日 葬我於忉利天中","ko":"짐은 아무 해 아무 달 아무 날에 죽을 것이니, 나를 도리천 가운데에 장사 지내라.","html":"I shall die in such a year, on such a month and day. Bury me in the Heaven of the Thirty-Three.","source":"Samguk Yusa (三國遺事) bk. 1, Wonder 1 — Queen Seondeok knows three things in advance; Ha & 
+[4] p EN: Princess Seungman sits on the edge of the sickbed with a comb, because somebody has to do the Queen’s hair and the maids’ hands shake. They are cousins, five years apart, the last two Sacred Bone women in the world, and they have been doing each other’s hair since the younger one was tall enough to reach.
+    KO: 승만 공주가 빗을 들고 병상 가장자리에 앉는다. 누군가는 여왕의 머리를 해야 하고, 시녀들은 손이 떨린다. 둘은 다섯 살 터울의 사촌, 세상에 남은 마지막 두 성골 여인이고, 동생 쪽 키가 닿을 만해졌을 때부터 서로의 머리를 해 왔다.
+[5] dialogue jinduk
+    EN: ["Hold still, unni.","…You’ve gone thin at the temple. When did that happen."]
+    KO: ["가만있어, 언니.","……관자놀이가 많이 비었네. 언제 이렇게 됐어."]
+[6] dialogue sunduk
+    EN: ["While you weren’t looking. That’s when everything happens.","Pin it high. If I’m going to the Thirty-Three Heavens I want to look taller than the gods."]
+    KO: ["네가 안 볼 때. 다 그때 일어나.","높이 꽂아. 도리천 가는데 신들보다는 커 보여야지."]
+[7] dialogue jinduk
+    EN: ["Don’t.","Don’t talk about where you’re going like it’s the market."]
+    KO: ["그러지 마.","어디 가는 걸 장 보러 가는 것처럼 말하지 마."]
+[8] dialogue sunduk
+    EN: ["…Seungman-ah. You’ll have to sit in it.","I’m sorry. It’s a hard chair. I’ll leave you a cushion."]
+    KO: ["……승만아. 네가 앉아야 할 거야.","미안해. 딱딱한 자리야. 방석은 하나 두고 갈게."]
+[9] p EN: Seungman pins the binyeo high, exactly where the Queen asked, and does not answer, which is the only way she has ever won an argument with her.
+    KO: 승만은 여왕이 말한 바로 그 자리, 높이 비녀를 꽂는다. 그리고 대답하지 않는다. 그녀가 언니를 상대로 말다툼에서 이겨 본 방법은 그것뿐이다.
+[10] scene {"kind":"scene","label":"The Fortress of Radiance","ko":"명활성"}
+[11] p EN: Bidam and Yumjong raise men at the Fortress of Radiance. The slogan is old. They only give it a banner. Yumjong holds the outer muster. Bidam walks the rampart as if the stones owed him rent. Inside the palace, the stewards count the grain and arrive at ten days. Nobody says the number aloud. Everybody schedules by it. The rebels tie on black headbands, Bidam’s old colour from the yard, so they can tell their own from the palace blue.
+    KO: 비담과 염종이 명활성에서 군사를 일으킨다. 구호는 오래된 것이다. 그들은 거기에 깃발만 달아 줄 뿐이다. 염종이 바깥 소집을 맡는다. 비담은 돌들이 자기에게 세라도 밀린 듯 성벽 위를 걷는다. 궁 안에서는 집사들이 곡식을 세다가 열흘이라는 답에 이른다. 아무도 그 숫자를 소리 내어 말하지 않는다. 모두가 그 숫자에 맞춰 일정을 짠다. 반란군은 비담이 화랑 시절 쓰던 검은 머리띠를 맨다. 궁의 푸른색과 제 편을 가리기 위해서다.
+[12] place {"kind":"place","place":"radiance","html":"Close enough to the palace to shout at it.","ko":"궁궐에 고함이 들릴 만큼 가까운 성."}
+[13] p EN: He carries the heavenly-horse sword in the dark. The robe eats the lamp. Only the ring pommel holds the light — a gold circle at the end of old-hall steel.
+    KO: 어둠 속에서 그는 천마환도를 든다. 도포가 등을 삼킨다. 고리 손잡이만 빛을 받는다 — 옛 전당의 강철 끝에 금빛 원.
+[14] quote {"kind":"quote","hanja":"毗曇等屯於明活城 王師營於月城 攻守十日不解","ko":"비담 등이 명활성에 주둔하고, 왕사는 월성에 진을 치니, 공수한 지 열흘이 되어도 풀리지 않았다.","html":"Bidam and the others encamped at Myeonghwal Fortress; the royal army camped at the Moon Palace. Attack and defence lasted ten days without being broken.","source":"Samguk Sagi (三國史記
+[15] p EN: Before the banner goes up he lights a stick of incense on the rampart and waits for it to take, because a man raised on this soil’s sutras does not begin a thing without the smoke. His hand is steady. Under the sleeve the beads have not moved once since the muster began.
+    KO: 깃발을 올리기 전, 그는 성벽 위에서 향 한 대에 불을 붙이고 연기가 잡히기를 기다린다. 이 땅의 불경으로 자란 사람은 연기 없이 일을 시작하지 않는다. 손은 흔들리지 않는다. 집결이 시작된 뒤로 소매 아래 염주는 한 번도 움직이지 않았다.
+[16] quote {"kind":"quote","html":"Mind is the root of all things: mind is the master, mind sets them moving. If the heart thinks evil and then speaks it and does it, guilt and suffering follow of themselves, as the wheel rolls in the rut.","ko":"마음은 모든 법의 근본이니, 마음이 주인이 되고 마음이 부린다. 속으로 악을 생각하여 그대로 말하고 그대로 행하면,
+[17] dialogue bidam
+    EN: ["A woman cannot rule well.","女主不能善理 — the room said it the year she was crowned and pretended it was weather.","Today we stop pretending."]
+    KO: ["여주는 능히 잘 다스리지 못한다.","女主不能善理 — 여주가 즉위하던 해에 방이 말했고, 날씨인 척했다.","오늘은 그 척을 그만둔다."]
+[18] dialogue yumjong
+    EN: ["Open the Radiance gate.","High Councillor Bidam comes — today it is the banner, not courtesy."]
+    KO: ["명활성 문을 열어라.","비담 상대등께서 오신다 — 오늘은 예의가 아니라 깃발이다."]
+[19] scene {"kind":"scene","label":"Between the Camps","ko":"두 진영 사이"}
+[20] p EN: Before noon <b>Alchun</b> is summoned twice — once by the Sword of Silla, once by the High Councillor with a banner — and he answers both.
+    KO: 정오 전에 <b>알천</b>은 두 번 불린다 — 신라의 도검에게 한 번, 깃발을 든 상대등에게 한 번 — 그리고 둘 다에게 답한다.
+[21] dialogue alchun
+    EN: ["Yushin…","Of course we all loved the princess as young Hwarang. She was a beautiful princess, and we were young men.","But those days are over now.","You need to judge what is best for the nation — and the nation demands that you not be blinded by your personal loyalties, and judge what is best for the divine nation."]
+    KO: ["유신아…","물론 우리 모두 어린 화랑 시절엔 공주를 사랑했지. 아름다운 공주였고, 우리는 젊은 사내였으니까.","하지만 그런 날은 이제 끝났다.","나라를 위해 무엇이 최선인지 판단해야 한다. 신국은 네가 사적 충성심에 눈이 가려지지 않기를 요구한다 — 신국을 위해 무엇이 최선인지 판결하라."]
+[22] dialogue alchun
+    EN: ["Bidam…","You swore allegiance to the Hwarang, and the divine nation has vested you with the authority of the High Councillor — the highest office in the land.","For you to take up arms against the crown would be an act of highest treason."]
+    KO: ["비담아…","너는 화랑에 충성을 맹세했고, 신국은 너에게 상대등 — 이 땅 최고의 직 — 의 권한을 맡겼다.","왕실을 향해 무기를 드는 것은 최고의 반역이다."]
+[23] dialogue alchun
+    EN: ["I will not raise a blade against Bidam.","I will not raise a banner against Her Majesty.","Ask me again on the tenth day. I may still be a coward — but I will be a precise one."]
+    KO: ["비담에게 칼을 들지는 않겠다.","폐하께 깃발을 들지도 않겠다.","열흘째에 다시 물어라. 그때도 겁쟁이일 수 있다 — 다만 정확한 겁쟁이로."]
+[24] p EN: Neither man answers him in a way that would satisfy a clerk. Yushin stares at the eastern palace. Bidam smiles as if treason were a word invented by cowards. Alchun walks back to the space between the camps and eats alone.
+    KO: 어느 쪽도 서기가 만족할 만한 답을 하지 않는다. 유신은 동궁을 바라본다. 비담은 반역이 겁쟁이가 만든 단어인 양 웃는다. 알천은 진영 사이 공간으로 돌아가 혼자 먹는다.
+[25] day {"kind":"day","label":"DAY 2","ko":"둘째 날"}
+[26] p EN: Night. Between the camps a small pavilion goes up, open on every side. No chairs. Only a low wooden table. No banner on the ridgepole. Tea already poured. A half moon in an empty sky. They meet the way they used to after sparring: gloves off, courtesy on.
+    KO: 밤. 두 진영 사이에 사방이 트인 작은 정자가 선다. 의자는 없다. 낮은 나무 탁자 하나뿐. 용마루엔 어느 편 깃발도 없다. 차는 이미 따라져 있다. 빈 하늘에 반달. 그들은 예전 대련이 끝난 뒤처럼 만난다. 장갑은 벗고, 예의는 갖추고.
+[27] dialogue bidam
+    EN: ["Yushin.","Tea first.","…When the Six Elders raised Surabol — Lee, Choi, Jeong, Son, Bae, Seol.","Park came from an egg.","There was no Kim."]
+    KO: ["유신.","차부터.","…육촌이 서라벌을 세울 때 — 이, 최, 정, 손, 배, 설.","박씨는 알에서 나왔고.","김씨는… 없었다."]
+[28] dialogue yushin
+    EN: ["…And?"]
+    KO: ["…그리고?"]
+[29] dialogue bidam
+    EN: ["And now the two Kim houses inside this wall —","Surabol Kim, Alji Kim —","both imports.","I alone… am Six-Elder blood."]
+    KO: ["그리고 지금 이 성 안의 두 김 가문은 —","서라벌 김, 알지 김 —","둘 다 수입품이야.","나만… 육촌 피다."]
+[30] p EN: The tea cools between them. Neither man drinks enough to call it peace. Bidam smiles as if nothing ugly had been said — the same smile he wore when he crowned a woman king. Yushin sets his cup down unfinished.
+    KO: 차가 그 사이 식는다. 둘 다 평화라 부를 만큼은 마시지 않는다. 비담은 못된 말을 한 적 없는 것처럼 웃는다 — 여왕을 세울 때 쓰던 그 미소다. 유신은 잔을 비우지 않은 채 내려놓는다.
+[31] p EN: Three Hwarang. One princess. The yard remembers what the Council never wrote down.
+    KO: 화랑 셋. 공주 하나. 연무장은 화백이 끝내 적지 않은 것을 기억한다.
+[32] flashback {"kind":"flashback","year":"615","title":"The cleverest of the three","blocks":[{"kind":"p","html":"Bidam, Alchun, and Yushin — same Hwarang line, same bruised knuckles, same impossible orbit around <b>Princess Dukman</b>. They do not say the word love. The gyuku field says it for them, badly.","ko"
+[32.0] p EN: Bidam, Alchun, and Yushin — same Hwarang line, same bruised knuckles, same impossible orbit around <b>Princess Dukman</b>. They do not say the word love. The gyuku field says it for them, badly.
+    KO: 비담, 알천, 유신 — 같은 화랑 계보, 같은 멍든 손등, <b>덕만공주</b>를 도는 같은 불가능한 궤도. 사랑이라는 말은 하지 않는다. 격구장이 대신 서툴게 말한다.
+[32.1] dialogue bidam
+    EN: ["If the Sacred Bone runs out of men, pick the cleverest woman.","I have known Dukman since we were children. Cleverness is not a gender."]
+    KO: ["성골에 남자가 바닥나면, 가장 총명한 여자를 고르시오.","나는 어린 시절부터 덕만을 안다. 총명함에는 성별이 없다."]
+[32.2] dialogue yushin
+    EN: ["Well stood.","Tomorrow on the yard — the hundred-and-ninth is mine."]
+    KO: ["잘 섰다.","내일 연무장 — 백아홉은 내 것이다."]
+[32.3] dialogue alchun
+    EN: ["You two will kill each other over a score.","I will kill myself over the girl in the middle.","…That was a joke. File it as a joke."]
+    KO: ["너희 둘은 점수 때문에 서로를 죽일 거다.","나는 가운데 있는 아이 때문에 나를 죽일 거다.","…농담이다. 농담으로 정리해 둬라."]
+[32.4] p EN: Nobody writes down that Bidam’s hall shares blood-whisper with the great <b>Sadaham</b> — the Hwarang who conquered Gaya and refused a slave girl as prize. The chronicle only lets the resemblance show in the jaw, and in the way Bidam treats victory as something that must stay clean.
+    KO: 비담의 대청이 가야를 정복하고 노비를 상으로 거절한 화랑 <b>사다함</b>과 핏줄 소문을 나눈다는 것은 아무도 적지 않는다. 기록은 턱선과, 승리를 깨끗하게 유지하려는 버릇으로만 닮음을 보여 준다.
+[32.5] p EN: Even their names take sides. Bidam’s sounds like this soil and its sutras. Chunchu’s is a foreign classic. Any clerk across the sea could file it without asking. Nobody notices yet. Names are patient.
+    KO: 이름들조차 편을 든다. 비담의 이름은 이 땅과 그 경전의 소리가 난다. 춘추의 이름은 남의 나라 고전이다. 바다 건너 어느 서기라도 묻지 않고 철해 둘 수 있다. 아직은 아무도 눈치채지 못한다. 이름은 참을성이 많다.
+[32.6] dialogue bidam
+    EN: ["Yushin.","Alchun.","If either of you ever makes her cry for a small reason — I will even the score on your face."]
+    KO: ["유신.","알천.","너희 중 누가 사소한 이유로 저 아이를 울리면 — 얼굴로 점수를 맞추겠다."]
+[33] day {"kind":"day","label":"DAY 3","ko":"셋째 날"}
+[34] p EN: Arrows trade; messengers lie; the Harmony Council discovers it can convene without deciding anything, which is its highest form. Chunchu’s clerks call the unanimity rule quaint. Bidam calls it ours.
+    KO: 화살이 오가고, 전령이 거짓말하고, 화백회의는 아무것도 결정하지 않고도 모일 수 있음을 발견한다. 그것이 회의의 최고 형태다. 춘추의 서기들은 만장일치 규칙을 예스럽다고 부른다. 비담은 우리 것이라고 부른다.
+[35] p EN: <b>Third night.</b> Same pavilion. Same half moon. Bidam has brought a map — not of the siege, of the roads west.
+    KO: 셋째 밤. 같은 정자. 같은 반달. 비담은 포위도가 아니라 — 서쪽 길 지도를 가져왔다.
+[36] dialogue bidam
+    EN: ["Samhan is being colonized — in blood, and in the mind.","Tang sends institutions. India sends…","…through Queen Heo’s blood, sutras.","Yushin — your eyes are handsome. They are a western colour.","…When I stood first, they called me the liberal."]
+    KO: ["삼한은 피로도, 마음으로도 식민지가 되고 있어.","당은 제도를, 인도는…","…허황옥 여왕의 피를 통해, 불경을.","유신 — 네 눈 색은 예쁘다. 서쪽에서 온 색이다.","…내가 먼저 일어섰을 때는, 그들이 나를 개화파라 불렀지."]
+[37] dialogue yushin
+    EN: ["Gaya blood came from the west too.","I… stood up.","Fifteen winters past, when you spoke — you told me to stand."]
+    KO: ["가야 피도 서쪽에서 왔소.","나는… 일어났소.","열다섯 해 전, 네가 그렇게 말했을 때 — 일어나라고 했소."]
+[38] dialogue bidam
+    EN: ["That was when you were weak.","…A joke. Drink your tea."]
+    KO: ["그때는 네가 약했으니까.","…농담이다. 차를 마셔."]
+[39] p EN: On the wall Bidam looks west and remembers a cleaner war — Jade Gate Valley, when the enemy still had the courtesy to be foreign.
+    KO: 성벽 위에서 비담은 서쪽을 보며 더 깨끗했던 전쟁을 떠올린다 — 옥문곡, 적이 아직 외국인이라는 예의를 지키던 때.
+[40] flashback {"kind":"flashback","year":"636","title":"Jade Gate Valley · 옥문곡","blocks":[{"kind":"p","html":"Baekje sends five hundred armoured men to slip through a valley in the dark. Their job is to bite a fortress from behind. The queen hears about it from a pond of toads. She sends steel instead of prayers.
+[40.0] p EN: Baekje sends five hundred armoured men to slip through a valley in the dark. Their job is to bite a fortress from behind. The queen hears about it from a pond of toads. She sends steel instead of prayers.
+    KO: 백제가 갑옷 입은 오백 명을 보낸다. 어둠을 틈타 골짜기를 지나, 성 하나를 뒤에서 물어뜯으라고. 여왕은 그 소식을 두꺼비 우는 연못에서 듣는다. 그리고 기도 대신 칼을 보낸다.
+[40.1] dialogue alchun
+    EN: ["Bidam — left ridge. I take the dry creek.","If Uso loosens a saddle, we do not wait for a committee."]
+    KO: ["비담 — 왼쪽 능선. 나는 마른 시내.","우소가 안장을 풀면, 위원회를 기다리지 않는다."]
+[40.2] dialogue bidam
+    EN: ["Finally — an enemy I am allowed to hate in public.","Alchun. On my mark."]
+    KO: ["드디어 — 공공연히 미워해도 되는 적이다.","알천. 내 신호에."]
+[40.3] p EN: They fall on the Baekje camp at dusk. Uso climbs a boulder and empties a quiver; the quiver ends before the argument does. Alchun takes the general. Bidam takes the valley’s silence.
+    KO: 해 질 녘 백제 진영을 덮친다. 우소는 큰 돌 위에 올라가 화살을 비운다. 화살이 먼저 바닥난다. 알천이 장군을 잡고, 비담이 골짜기의 침묵을 갖는다.
+[40.4] dialogue alchun
+    EN: ["We make a good pair when the target is outside the wall.","Inside the wall… we will see."]
+    KO: ["목표가 성 밖이면 우리는 좋은 짝이다.","성 안에서는… 두고 보자."]
+[40.5] dialogue bidam
+    EN: ["Inside the wall is still the sacred country.","I do not miss."]
+    KO: ["성 안도 여전히 신국이다.","나는 빗나가지 않는다."]
+[40.6] p EN: Eleven years later, on Radiance’s rampart, Bidam will remember Okmun-gok as the last time Alchun stood on his side without hesitating.
+    KO: 십일 년 뒤 명활성 성벽에서, 비담은 옥문곡을 — 알천이 망설임 없이 자기 편에 섰던 마지막 순간으로 — 기억할 것이다.
+[41] p EN: Before the fourth night’s tea, the Moon Palace tries a quieter weapon. Chunchu sends <b>Bupmin (21)</b> to the steam — the water that shows a man’s inner conscience, the past that is driving his hand. Yushin is told only to <b>keep him talking</b>.
+    KO: 넷째 밤의 차 전에, 월성은 더 조용한 무기를 쓴다. 춘추가 <b>법민 (21)</b>을 김으로 보낸다 — 사람의 속마음과, 그 손을 움직이는 과거를 보여주는 물. 유신에게는 말만 붙들어 두라고만 한다.
+[42] p EN: Chunchu is home from the islands. Empty-handed, and early.
+    KO: 춘추는 섬에서 돌아왔다. 빈손으로, 일찍.
+[43] dialogue chunchu
+    EN: ["Bupmin.","Take a jar.","The spring is a place your uncle knows. You’re a Kim — the door will open.","Splash him."]
+    KO: ["법민.","항아리 하나 가져가.","샘은 네 외숙이 아는 곳이다. 네가 김씨니까 문이 열릴 거다.","비담에게 그 물을 끼얹어라."]
+[44] dialogue munmu[hwarang]
+    EN: ["Father…","What does the water do to a man…","I understand. I’ll go."]
+    KO: ["아버지…","그 물이, 사람을 어떻게…","알겠습니다. 다녀오겠습니다."]
+[45] scene {"kind":"scene","label":"The Steam Cavern","ko":"온천 동굴"}
+[46] p EN: This is the first time the cavern goddesses meet Bupmin. He is twenty-one. He does not yet have a king’s name. He has a jar and Chunchu’s weather.
+    KO: 동굴 여신들이 법민을 만나는 첫날이다. 스물하나. 아직 왕의 이름은 없다. 항아리와, 춘추의 날씨만 있다.
+[47] dialogue narim
+    EN: ["A Kim.","Sit. No — the jar first.","You… He is the best of both. Gaya in the shoulders. Surabol in the mouth. Golhwa is going to climb you if you stay standing. Sit."]
+    KO: ["김이네.","앉아. 아니 — 항아리 먼저.","너… 너는 양쪽의 최선이야. 어깨는 가야. 입은 서라벌. 서 있으면 골화가 타고 오를 거야. 앉아."]
+[48] dialogue golhwa
+    EN: ["Oh.","A Kim we haven’t had. He’s both.","Take the water. Conscience sticks to it. Trauma. Grudge. Whatever’s driving the hand.","…And stop standing like that."]
+    KO: ["아.","처음 보는 김이야. 둘 다야.","물 받아. 양심이 달라붙어. 트라우마. 원한. 그 손을 움직이는 거.","…그리고 그렇게 서 있지 마."]
+[49] dialogue golhwa
+    EN: ["I’m trying to be a hill and you are shaped like a problem I want in my lap."]
+    KO: ["나 언덕이려 하는데, 너는 무릎 위에 두고 싶은 문제처럼 생겼어."]
+[50] dialogue hyulle
+    EN: ["…Be careful.","If you splash it, you see why he’s doing it.","If you don’t see anything… that’s its own answer.","…He’s pretty. I’ll be quiet. I won’t be calm."]
+    KO: ["…조심해요.","튀기면, 왜 이러는지 보여요.","아무것도 안 보이면… 그것도 답이에요.","…예뻐요. 조용히 있을게요. 차분할 수는 없어요."]
+[51] dialogue munmu[hwarang]
+    EN: ["Goddesses…","Thank you. I was only—","I’ll just take the water."]
+    KO: ["여신들…","감사합니다. 전 그냥—","물만 담아 가겠습니다."]
+[52] p EN: He fills the jar. He does not stay for the lake’s other lessons. He is the best of both, and he leaves because his father told him to.
+    KO: 항아리를 채운다. 호수의 다른 수업은 받지 않는다. 그는 <b>양쪽의 최선</b>이고, 아버지가 시키니까 돌아간다.
+[53] day {"kind":"day","label":"DAY 4","ko":"넷째 날"}
+[54] p EN: The Moon Palace’s wells drop. Rumour rises to replace them. Chunchu files contingency letters the way other men file prayers.
+    KO: 월성의 우물이 준다. 소문이 그 자리를 채운다. 춘추는 다른 사람이 기도를 정리하듯 비상 서한을 정리한다.
+[55] p EN: Fourth night. Same low table under the half moon. Bidam reads a rumoured draft — never enough secretariat, never enough emperor. His voice stays pleasant. The sentences do not.
+    KO: 넷째 밤. 반달 아래 같은 낮은 상. 비담은 소문난 초안을 읽는다 — 집사부는 늘 부족하고, 황제는 늘 부족하다. 목소리는 여전히 부드럽다. 문장만 그렇지 않다.
+[56] dialogue bidam
+    EN: ["What Chunchu wants…","is a country that fits inside a Tang envelope.","Central rule. Emperor. Clerks.","He would burn the Harmony Council’s unanimity — the one thing we kept."]
+    KO: ["춘추가 원하는 건…","당나라 봉투 안의 나라야.","중앙집권. 황제. 서기.","화백의 만장일치 — 우리가 남긴 유일한 것 — 을 태울 셈이지."]
+[57] dialogue yushin
+    EN: ["Baekje comes with swords, not sentences."]
+    KO: ["백제는 문장이 아니라 칼로 오니까."]
+[58] dialogue bidam
+    EN: ["Yes — and that is why you always win.","On the yard, and here.","Effort… speaks louder than my blood.","…The year they crowned her, I was the liberal who stood for the woman king.","Now they call me the blood-and-soil man. Ironic, Yushin?"]
+    KO: ["그래 — 그래서 네가 항상 이겼지.","연무장에서도, 여기서도.","노력이… 내 혈통보다 시끄럽게 말해.","…그 여인이 즉위하던 해엔 나도, 여주를 위해 일어선 개화파였는데.","지금은 삼한 피를 지키는 자라 부르는구나. 아이러니하지, 유신?"]
+[59] dialogue yushin
+    EN: ["…That young Hwarang is still here."]
+    KO: ["…그 젊은 화랑은 아직 여기 있다."]
+[60] dialogue bidam
+    EN: ["Where?"]
+    KO: ["어디에?"]
+[61] p EN: He folds the rumoured draft. The next sentences have been waiting in the sleeve all night.
+    KO: 그는 소문난 초안을 접는다. 다음에 올 문장은 밤 내내 소매 안에 있었다.
+[62] dialogue bidam
+    EN: ["Princess Seungman, and the tyranny of Kim Chunchu — I stand against both.","He speaks of a thousand-year kingdom.","If his faction wins, Samhan will spend those thousand years as a Chinese vassal.","A country that never again turns its own wheel."]
+    KO: ["승만공주와, 김춘추의 횡포 — 둘 다 반대다.","그자는 천년의 나라를 말하지.","저 파가 이기면 삼한은 그 천 해를 중국의 번국으로 살게 된다.","제 앞날을 제 손으로 정하지 못하는 나라로."]
+[63] dialogue yushin
+    EN: ["With these reforms, under Princess Seungman’s guidance —","a few harvests more, and Silla may stand first in Samhan.","First, even, in all of Haedong — 해동, the East."]
+    KO: ["이 개혁이 서고, 승만공주의 인도로 가면 —","몇 해 안에 신라가 삼한에서 가장 강한 나라가 될 수도 있소.","해동 전체에서 — 동쪽 끝까지 — 일등일 수도 있소."]
+[64] dialogue bidam
+    EN: ["I do not need the strongest nation.","I want neighbours who still know one another’s names.","The young lifting the old.","A true people — not strangers who happen to share a wall."]
+    KO: ["제일 강한 나라는 필요 없어.","이웃이 서로의 이름을 아는 나라를 원하지.","젊은이가 늙은이를 부축하고.","한 담장을 나누는 남이 아니라 — 진짜 겨레."]
+[65] dialogue yushin
+    EN: ["The people’s livelihood hangs on the nation’s fullness.","Fullness hangs on institutions — on a government that can still stand.","If Silla falls behind Baekje and Goryeo, what comes through the pass is spear and famine.","Then tell me how the neighbours keep their names."]
+    KO: ["백성의 생업은 나라의 풍요에 달렸소.","풍요는 제도와 정사에 달렸고.","신라가 백제와 고려에 뒤처지면, 고개로 들어오는 것은 칼과 기근이오.","그때 이웃의 이름을 어떻게 부르겠소."]
+[66] dialogue bidam
+    EN: ["Yushin.","Do you — does the royal house — know how common people live?","Have the princesses, or even Chunchu, spent so much as one year beyond the capital?","I have.","Surabol is scarcely ten square miles, ringed by the true Silla.","While we argue here, the common people — the real Sillans — have no wish to live under a foreign emperor’s yoke."]
+    KO: ["유신.","너나 왕실이, 백성이 어떻게 사는지 아느냐.","공주들이 — 춘추조차 — 도성 밖에서 한 해를 살아 본 적 있느냐.","나는 있다.","서라벌은 사방 십 리도 못 된다. 진짜 신라가 그 둘레를 두르고 있지.","우리가 여기서 다투는 동안, 백성 — 진짜 신라인 — 은 외황제의 횡포 아래 살기를 원하지 않는다."]
+[67] dialogue yushin
+    EN: ["Surabol is where Hyukgosé was crowned.","Where the Six Elders laid this country’s first stone.","How, then, is Surabol not the real Silla?","As for standing outside — Lord Bidam, I will forever be more outsider than you.","You, of Six-Elder blood, speak so poorly of the halls that raised this land —","while I, last son of a conquered kingdom, am prepared to defend it with my life."]
+    KO: ["서라벌은 혁거세가 즉위한 땅이고,","육촌이 신라의 초석을 놓은 땅이오.","그런데 서라벌이 어찌 진짜 신라가 아니란 말이오.","바깥사람 이야기로 치자면 — 비담 공, 바깥사람은 평생 공이 아니라 나일 것이오.","육촌의 피를 이은 공이 그 높은 집을 그리 얕보시는데,","정복당한 나라의 막내아들인 나는 목숨을 바쳐 이 땅을 지킬 각오가 돼 있소."]
+[68] p EN: Yushin does not close the argument. He asks again about the pass, about names, about harvests — anything that keeps Bidam’s back to the dark. Behind the 정자, Bupmin’s jar ticks once against a post.
+    KO: 유신은 논쟁을 닫지 않는다. 고개, 이름, 수확 — 비담의 등이 어둠을 향하게 붙들어 두는 것이면 된다. 정자 뒤에서 법민의 항아리가 기둥에 한 번 닿는다.
+[69] dialogue yushin
+    EN: ["Bidam.","That ten-mile story. Once more.","The people have no wish for an emperor — where did you hear that."]
+    KO: ["비담.","그 십 리 바깥 이야기, 한 번만 더.","백성이 황제를 원치 않는다 — 그 말은, 어디서 들었소."]
+[70] p EN: Bupmin comes from behind to <b>splash the water</b>. It is ugly and precise — cavern water as a hard sheet across Bidam’s shoulders, beads and all.
+    KO: 법민이 뒤에서 와 <b>물을 끼얹는다</b>. 흉하고 정확하다 — 동굴 물이 비담의 어깨와 염주 위로 딱딱한 면처럼 떨어진다.
+[71] dialogue bidam
+    EN: ["Ha…","What is this…"]
+    KO: ["하…","이게 뭐지…"]
+[72] dialogue munmu[hwarang]
+    EN: ["Your trauma….","Yushin… why isn’t it doing anything…?"]
+    KO: ["당신의 트라우마….","유신 공… 왜 아무 일도 없는데…?"]
+[73] p EN: Nothing rises. No childhood. No princess. No grudge-film in the steam. The water runs off the black robe as if it had mistaken a man for a wound. Chunchu, at the pavilion’s edge, does not move. The stoic act holds; the eyes do not.
+    KO: 아무것도 안 뜬다. 어린 시절도, 공주도, 김 속의 한 필름도. 물은 흑의를 타고 내린다. 사람을 상처로 착각한 것처럼. 정자 가장자리의 춘추는 움직이지 않는다. 담담한 연기는 유지된다. 눈만 아니다.
+[74] dialogue chunchu
+    EN: ["……"]
+    KO: ["……"]
+[75] dialogue bidam
+    EN: ["Oh… haha…","I’ve heard of this… this is that water, isn’t it…?"]
+    KO: ["아… 하하…","들어 본 적 있어… 이 물이지…?"]
+[76] dialogue bidam
+    EN: ["HAHAHAHAHA!"]
+    KO: ["하하하하하!"]
+[77] dialogue bidam
+    EN: ["Behold, the arrogance of the sacred bone class!!","You really thought I had to have some sort of personal trauma??","That that was the reason I was doing all of this?","That I hated the princess? The queen?","That I hated you, Chunchu, or Yushin?","Have you ever… even for a SECOND… considered the POSSIBILITY…","that your ideas are simply terrible?","That they’ll lead this nation to ruin?","That ANY reasonable man would oppose them?","Or are you so ARROGANT to assume… that EVERYTHING you lot do is correct…","and that the ONLY reason for ANYONE to disagree… is because they were suffering some sort of mental disease? Because they were angry and bitter?","Ha… well, my friends, I’m afraid all you’ve done tonight is prove your point.","You’ve proven yourself to be unworthy of leading any country.","So please… my friends… step aside…!"]
+    KO: ["보라, 성골 계급의 오만함을!!","정녕 내가 무슨 개인적 트라우마가 있어야 한다고 생각했느냐??","그게 이 모든 일의 이유라고?","공주를 미워해서? 여왕을?","춘추 너를, 유신을 — 미워해서?","한순간이라도… 단 일 초라도… 너희 생각이 그냥 형편없을 가능성…","이 나라를 망치게 될 가능성…","제정신인 사내라면 누구나 반대할 가능성… 생각해 본 적 있느냐?","아니면 너희가 하는 일은 전부 옳고…","누구든 반대하는 이유는 정신의 병 뿐이라고…","화가 나고 비틀려서라고… 그렇게 오만하냐?","하… 친구들, 오늘 밤 너희가 한 일이라곤 제 논리를 증명한 것뿐이다.","어느 나라도 이끌 자격이 없다는 걸 스스로 증명했어.","그러니… 친구들… 비키시지…!"]
+[78] p EN: Alchun, arriving late with a lamp, goes pale. An officer asks whether to seize the jar. Nobody answers. Bidam is still laughing, and still alive, and the beads are still counting.
+    KO: 늦게 등을 들고 온 알천의 얼굴이 하얘진다. 장교 하나가 항아리를 빼앗을지 묻는다. 대답하는 사람이 없다. 비담은 아직 웃고, 아직 살아 있고, 염주는 아직 세고 있다.
+[79] quote {"kind":"quote","html":"The bodhisattva relies on the perfection of wisdom, and so his mind has no hindrance. Having no hindrance, he has no fear; he passes far beyond upside-down, dreaming thought and reaches nirvana at last.","ko":"보리살타는 반야바라밀다를 의지하므로 마음에 걸림이 없고, 걸림이 없으므로 두려움이 없어서, 뒤바뀐 헛된 생각을 멀리 떠
+[80] scene {"kind":"scene","label":"Chunchu’s Rooms","ko":"춘추의 방"}
+[81] dialogue chunchu
+    EN: ["If Bidam wins, the Secretariat becomes a quaint hobby.","If Bidam loses, we still have a dying queen and a Tang-shaped hole in the west.","The man would burn a good idea for arriving in a Tang envelope. That is the whole platform — and it polls well.","Munhee — pack for either weather."]
+    KO: ["비담이 이기면 집사부는 고상한 취미가 된다.","비담이 져도, 우리에게는 죽어 가는 여왕과 서쪽의 당 모양 구멍이 남는다.","그 사람은 좋은 생각도 당나라 봉투에 담겨 오면 태울 사람이다. 강령의 전부가 그것이고 — 인기는 좋다.","문희 — 어느 날씨든 싸 둬라."]
+[82] dialogue munhee
+    EN: ["I already packed.","I packed the year the Queen was crowned. You only notice in sieges."]
+    KO: ["이미 쌌다.","여왕이 즉위하던 해에 쌌다. 너는 포위 때만 눈치챈다."]
+[83] p EN: Alchun eats alone between the camps. Both sides send him wine. He drinks neither. Surabol will later call it treason with better stationery.
+    KO: 알천은 진영 사이에서 혼자 먹는다. 양쪽이 술을 보낸다. 그는 어느 쪽도 마시지 않는다. 서라벌은 나중에 더 좋은 편지지의 반역이라 부를 것이다.
+[84] day {"kind":"day","label":"DAY 5","ko":"다섯째 날"}
+[85] p EN: Fifth night — the pavilion again. They sit on the floor, alone, the way they used to meet on the training ground. The tea is cold before anyone raises a blade.
+    KO: 다섯째 밤 — 다시 그 정자. 두 사람은 바닥에서 단둘이 앉는다. 옛날 연무장에서 만나던 것과 같은 방식으로. 차가 식고 나서야 누군가 칼을 든다.
+[86] dialogue yushin
+    EN: ["Second Blade of Samhan — Bidam!! Lay down your arms and give your loyalty back to the Blue Moon!!"]
+    KO: ["삼한의 둘째 칼 — 비담이여!! 무기를 내려놓고 푸른 달께 충성을 돌려드려라!!"]
+[87] p EN: For a breath they are only the old score again — one hundred and eight to one hundred and eight — two boys who never let the other keep a lead. Then Bidam speaks, and the yard is gone.
+    KO: 한순간 둘은 다시 옛 점수판일 뿐이다 — 백팔 대 백팔 — 상대를 앞서 두지 않던 소년 둘. 그러다 비담이 입을 열고, 연무장은 사라진다.
+[88] dialogue bidam
+    EN: ["Yushin.","In this country the smartest people hate this country,","and the most patriotic people… are all stupid.","That’s Silla.","The country you’re trying to sell."]
+    KO: ["유신아.","이 나라에서 제일 똑똑한 자들은 이 나라를 미워하고,","제일 애국적인 자들은… 전부 바보야.","그게 신라고.","네가 팔아먹으려는 그 나라."]
+[89] dialogue bidam
+    EN: ["Yushin….","And besides — you…","<b>you were never even of Silla…!</b>"]
+    KO: ["유신아....","게다가 너는....","<b>애초에 신라 사람도 아니잖아...!</b>"]
+[90] dialogue bidam
+    EN: ["Blood is inevitable."]
+    KO: ["피는 못 속인다."]
+[91] p EN: The tea has not been touched. He says it like a compliment that curdled — still the gentleman, still the black robe, still the voice that once shielded this same man from the yard.
+    KO: 차는 손대지 않았다. 상처 주는 칭찬처럼 말한다 — 여전히 군자, 여전히 흑의, 여전히 연무장에서 이 같은 사람을 막아 세던 그 목소리.
+[92] dialogue yushin
+    EN: ["Lord Bidam… I remember we swore our lives to this together…"]
+    KO: ["비담 공... 우리는 함께 인생에 맹세로 한 걸로 기억하는데..."]
+[93] dialogue bidam
+    EN: ["You never had a country of your own — selling this one must cost you nothing…","But we are different. We cannot be cut from this land…","Would you hand the country my ancestors built to an emperor…!","I am a son of the sacred country."]
+    KO: ["너한테는 원래 나라가 없으니, 이 나라를 팔아먹는 것도 거슬리지 않겠지...","하지만 우리는 다르다. 우리는 이 땅에서 뗄 수 없는 관계야…","내 조상이 세운 나라를 황제한테 넘겨줄 셈이냐...!","나는 신국의 아들이다."]
+[94] dialogue yushin
+    EN: ["Selling — I have sold nothing.","Lord Chunchu only asks that we learn Tang’s institutions. Baekje comes with swords, not sentences."]
+    KO: ["판다니 — 나는 아무것도 팔지 않았소.","춘추 공은 당의 제도를 배우자는 것뿐이오. 백제는 문장이 아니라 칼로 오니까."]
+[95] dialogue bidam
+    EN: ["Chunchu — 春秋. The man is named after a Chinese book.","And you would let him write the sacred country’s tomorrow.","Learn another country’s institutions long enough — and one morning, the learning is all that is left."]
+    KO: ["춘추 — 春秋. 이름부터가 중국 책이다.","그런 자에게 신국의 내일을 쓰게 하겠단 말이냐.","남의 제도를 오래 배우다 보면 — 어느 아침엔, 배운 것만 남아 있을 것이다."]
+[96] dialogue bidam
+    EN: ["I will raise the sacred country’s glory again,","I will return the sacred country’s future to its own people!"]
+    KO: ["신국의 영광을 다시 세우고,","신국의 미래를, 다시 신국인에게 돌려줄테다!"]
+[97] flashback {"kind":"flashback","year":"618","title":"One hundred and eight","blocks":[{"kind":"p","html":"The yard after rain. Two Hwarang, neither willing to leave the mud with the score uneven.","ko":"비 온 뒤 연무장. 화랑 둘. 점수가 기우는 채로 진흙을 떠나려 하지 않는다."},{"kind":"dialogue","chip":"#7b5cd6","person":"bidam","lines":[
+[97.0] p EN: The yard after rain. Two Hwarang, neither willing to leave the mud with the score uneven.
+    KO: 비 온 뒤 연무장. 화랑 둘. 점수가 기우는 채로 진흙을 떠나려 하지 않는다.
+[97.1] dialogue bidam
+    EN: ["One hundred and seven…!","Brother — today I take the lead!"]
+    KO: ["백칠…!","형님, 오늘 내가 앞서오!"]
+[97.2] dialogue yushin
+    EN: ["One hundred and eight.","Get up. An uneven number does not sleep."]
+    KO: ["백팔.","일어서라. 기우는 숫자는 밤에 못 잔다."]
+[97.3] dialogue bidam
+    EN: ["Ha!","Afraid it will be written that Gaya blood lost to Silla blood?"]
+    KO: ["하!","가야 피가 신라 피한테 졌다고 적히면 창피해서 그러시오?"]
+[97.4] dialogue yushin
+    EN: ["Written or not.","I am still your elder brother.","Again."]
+    KO: ["적히든 말든.","나는 네 형님이다.","다시."]
+[97.5] p EN: They end the evening even. They always do.
+    KO: 그날 저녁도 비긴다. 언제나 그랬다.
+[98] p EN: <b>“You were never even of Silla.” To see where that began, we go back to a Gaya prince nobody names…!</b>
+    KO: <b>“애초에 신라 사람도 아니잖아.” 그 말이 어디서 시작됐는지 보려면, 아무도 이름을 대지 않는 가야의 왕자에게로 거슬러 가야 한다…!</b>

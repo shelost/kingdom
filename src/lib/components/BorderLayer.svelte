@@ -152,7 +152,7 @@
 		gap: 0.45em;
 		font-size: 0.95rem;
 		font-weight: 700;
-		letter-spacing: 0.32em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		white-space: nowrap;
 		color: color-mix(in srgb, var(--c) 60%, #fff);
@@ -178,7 +178,7 @@
 
 	.realm.small {
 		font-size: 0.55rem;
-		letter-spacing: 0.16em;
+		letter-spacing: 0.06em;
 	}
 
 	.realm.small .name {

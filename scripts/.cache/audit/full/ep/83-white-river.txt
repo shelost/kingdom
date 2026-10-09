@@ -1,0 +1,85 @@
+
+=================================================================
+#83 White River  (663 August)
+Arc: The Final Stand · place: baekgang · tone: grim war epic — naval
+Logline: For the first time, the West, Samhan and the East meet in one mouth of water. The tide is nobody’s friend.
+=================================================================
+[0] ¶ Four banners come to one river mouth. Only the tide has been here before.
+[1] ¶ The White River empties into the western sea through sandbars that move like rumours. Whoever holds its mouth holds what is left of Baekje.
+[2] [MAP 663: ]
+[3] ── SCENE: Four Banners ──
+[4] ¶ The Tang come by sea. The Black Tortoise has held the old capital for two winters with too few men. The emperor offered to bring him home. He wrote back that he’d rather not. So the emperor sent more.
+[5] ¶ Silla comes by land. King Munmu rides out with Kim Yushin and every general he has. Yushin is sixty-eight and still sits a horse as if the horse had asked him to.
+[6] ¶ Baekje is what is left of it: a hill fort called Juryu, a king raised overseas, and no Boksin.
+[7] ¶ So the East sends sails. Hundreds of them, packed too tight to row. Takutsu is among the captains. He brought Pung home two years ago. Last winter he told him not to move the court down to the plain. He was right, and was thanked for it the way men usually are.
+[8] ── SCENE: The King Leaves ──
+[9] ¶ On the thirteenth day of the eighth month, with the Silla army already on the road to Juryu, the king of Baekje announces that he will leave it.
+[10] Prince Pung: Yamato’s relief general is crossing the sea with ten thousand men and more. / Generals, make ready for him. / I shall go down to the river mouth myself, and receive them there with a feast.
+[11] 🙇: Majesty. And Juryu?
+[12] Prince Pung: Juryu has walls.
+[13] 🙇: …It had a general, too.
+[14] ── SCENE: The Throat of the River ──
+[15] ¶ At Ungjin the allied generals argue about where to begin. One fortress sits where the road crosses the river, and most of the room wants it first.
+[16] Black Tortoise: That fort is steep and strong. / Rush it and we bleed men. Sit under it and we bleed days. / Juryu is the nest. Pull the root, and the branches come down by themselves.
+[17] ¶ So the armies split. Most of the generals take the land road. The Black Tortoise takes the water: a hundred and seventy warships, heading for the river mouth. On his deck stands Buyeo Yung.
+[18] [MAP 663 Four banners, one river mouth: Tang by sea twice, Silla by land, and the East arriving in a hurry. Everyone is headed for the same mud.]
+[19] ¶ Euija’s eldest. He knelt at Sabi three summers ago, was taken to Chang’an with his father, and has come back in a Tang officer’s coat to fight his younger brother for the right to tell the survivors what happened to them. Nobody on the deck says this. Everybody on the deck knows it.
+[20] Black Tortoise: Your brother’s banner will be on that fleet. / When it comes, can you look at it?
+[21] [CARD Prince Yung: Euija’s eldest son. Born to be crown prince. Born is not the same as stays.]
+[22] Prince Yung: I have looked at worse. / …I looked at my father.
+[23] ¶ The Black Tortoise has already learned the river's grammar. A narrow mouth. Sandbars that shift like lies. A current that punishes anyone who charges out of line. He anchors his hundred and seventy ships across the throat and waits. On the east bank, Kim Yushin's army keeps the shore from becoming a pier.
+[24] ── SCENE: The Shore ──
+[25] ¶ On the bank the Baekje horsemen guard the landing. They are the last mounted men the restoration can field, drawn up in front of the beached hulls the way you stand in front of a door you cannot afford to lose. Silla’s cavalry comes at them first, out ahead of the Tang foot, because the king of Silla wants it written down later who went first.
+[26] Kim Yushin: Good riders. Guarding boats. / Men guard boats when they mean to leave in them.
+[27] King Munmu: Riders. With me. / When they write this down in Chang’an, I want Silla in the first line.
+[28] ¶ The shore camp goes in one charge. Yushin watches it from the ridge with the reins loose in one hand, which is how old generals watch something they no longer need to do themselves.
+[29] ── SCENE: The Twenty-Seventh Day ──
+[30] ¶ The first Yamato ships to arrive do not wait for the rest. They row straight at the Tang line on the evening water, and the Tang line does not move. It does not chase them, either. When the Yamato boats fall back, the hundred and seventy are exactly where they were that morning, in the same order, at anchor.
+[31] ¶ The Black Tortoise has seen men of Wa once before, in the emperor's city. They were envoys in court silk, and they bowed in all the right places. The court kept them in a guesthouse for two winters, so they couldn't carry home where the fleet was going. These are their cousins. They row standing up. They shout from too far away. They charge a hundred and seventy anchored hulls in boats built for rice. Nobody in his army has fought them before. He watches the first wave break on his line like a scholar reading a new script. He is looking for the grammar.
+[32] 🙇: General— those are Wa? They’re… / …they’re rowing standing up.
+[33] Black Tortoise: The last Wa I saw were bowing to the Son of Heaven. / Watch their oars, not their faces. The faces will stay brave all day.
+[34] Black Tortoise: Nobody chases. / Tomorrow they will all come back together, and they will come angry.
+[35] ── SCENE: The Twenty-Eighth Day ──
+[36] ¶ That night the Yamato captains and the king of Baekje hold council on a deck, and nobody looks at the sky. Abe no Hirafu does most of the talking. He is the rear general, a big man in a wolf-fur mantle who spent three summers chasing the Emishi along the cold northern coast, and he has the habit of men who have lived through bad water: he believes the sea gives way to whoever moves first.
+[37] Abe no Hirafu: Yesterday was the vanguard. Today it’s all of us! / Ha— we go first. Whoever hits first, the other side gives way. That’s the sea. Every sea.
+[38] Prince Pung: …Yes. First. / Let them see the king’s ship at the front.
+[39] Echi no Takutsu: The tide turns before noon. / …Nobody is listening. Good. Then I will go first too.
+[40] [FORMATION The Baekgang, eighth month, 663: Four charges into a formed Tang line, against the tide, in a river mouth too narrow for the eastern numbers. Smoke, flame, and a cinnabar sea.]
+[41] ── SCENE: The Tide ──
+[42] ¶ Takutsu’s ship is in the first line. His rowers pull standing. The Tang hulls come up out of the haze like a wall, and do not move.
+[43] ¶ The first charge hits a wall of hulls and stops dead. Grapnels go over. Crossbows fire down from Tang decks built a man’s height higher. Takutsu’s men climb, fall back, and climb again.
+[44] Echi no Takutsu: Back oars. Form again. / …The water is going slack.
+[45] ¶ The second charge goes in on slack water and comes out against the ebb, the current turning against them. Now the river is pushing the eastern ships back onto each other. Hulls grind. Oars snap against a neighbour’s oars. Nobody can turn.
+[46] ¶ On the Tang flagship, the Black Tortoise has waited all morning for exactly this. He says one word.
+[47] Black Tortoise: Now.
+[48] ¶ The arrows wrapped for flame go up white and come down burning. Ships pressed together turn one burning deck into a neighbourhood. On the third charge and the fourth, fire travels faster than orders. Four hundred eastern ships do not sink so much as spend themselves into light.
+[49] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 84, Liu Renkui (劉仁軌) — Battle of the White River mouth (663) · cf. Samguk Sagi bk. 28, Baekje Annals: 煙炎灼天 海水爲丹): They burned four hundred of their ships; smoke and flame filled the sky, and the seawater was all red.❞
+[50] ¶ Then the wings close. The Tang ships that looked like a wall turn out to have been a door with two leaves, and they swing shut from left and right around the Yamato centre, so tight that the eastern ships cannot turn bow or stern, and men who cannot row and cannot climb go into the water in their armour.
+[51] ¶ From the king’s ship Pung can see the Tang flagship. On its deck, in a Tang coat, stands his elder brother.
+[52] Prince Pung: Yung… you wear their coat on our river…!
+[53] Echi no Takutsu: Long live Kudara — Land of the Heavenly Deer….!
+[54] ¶ His ship is burning under him and he does not leave it. He fights on the deck until there is not enough deck left to fight on.
+[55] Echi no Takutsu: Baekje must survive….
+[56] ❝QUOTE (Nihon Shoki (日本書紀) bk. 27, Tenji 2 (663), eighth month): Echi no Takutsu looked up to heaven and swore an oath, gnashed his teeth in fury, killed some dozens of men, and there fell in battle.❞
+[57] Black Tortoise: Hold the line. Let the tide finish what the bowstrings began. / A river mouth is a judge. Today it judged the East.
+[58] ¶ At the back of the fleet Abe no Hirafu’s ships are still afloat. He has seen a lost tide before, on a colder sea. He turns them for home and hauls in every swimmer the hulls will carry, men in half their armour, men with no oars, and he does not laugh again until Tsukushi.
+[59] ── SCENE: Brothers ──
+[60] ¶ In the smoke a small boat gets away from the king’s ship with a handful of men in it and turns north. It is Pung. He leaves behind his fleet, his allies, his capital on the hill, and his sword.
+[61] ¶ They bring the sword to the Tang flagship. It is a Baekje ring-pommel blade with the ring worn smooth, nothing like a king’s, and the Black Tortoise hands it to the one man aboard who would know.
+[62] Black Tortoise: Whose?
+[63] Prince Yung: …My brother’s. / Our father gave it to him the year they sent him east. He was seven.
+[64] Black Tortoise: Shall I send boats after him?
+[65] Prince Yung: …North is Goguryeo. Let Goguryeo keep him. / He was always better at being sent away than I was.
+[66] ── SCENE: Juryu ──
+[67] ¶ Juryu holds ten more days without its king. Then it opens its gate. Pung’s younger brothers walk out at the head of what is left: soldiers, women, the Yamato men who missed the boats, and an envoy from **Tamla** who came up the hill to bargain for an island and is now surrendering for it.
+[68] ¶ The people who are not surrendering go south, to the port where the Yamato ships will take them off. On the road they say the thing to one another that the Yamato chronicle wrote down, because nobody was left in Baekje to write it.
+[69] ❝QUOTE (Nihon Shoki (日本書紀) bk. 27, Tenji 2 (663), ninth month): Juryu has surrendered. Nothing more can be done. The name of Baekje ends today. The place of our ancestors’ graves — how can we ever go back to it?❞
+[70] ── SCENE: Imjon ──
+[71] ¶ One fortress doesn’t hear it. Its commander shuts the gate and holds all autumn, and the siege goes home. Then two Baekje generals walk into the Tang camp and ask for their armour back.
+[72] Black Tortoise: Heukchi Sangji. Your name is in my register already. / It reads better with you alive. Why now?
+[73] Heukchi Sangji: I watched the king’s hands at Juryu. / Then I watched them row north.
+[74] ¶ The Black Tortoise hands back their armour and points them up the slope.
+[75] Heukchi Sangji: The north wall is the low one. / I built it.
+[76] ¶ Imjon falls to its own people’s hands. Its commander leaves his wife and children inside and goes north to Goguryeo, which by now is where Baekje’s last kings go.
+[77] ¶ When the water cools to ordinary colour again, the restoration has no fleet worth the word. The **Black Tortoise** sits down with Kim Yushin. Neither of them believes a word the other says, and they get a great deal done — which is how alliances sound after four hundred ships have paid for the silence.
+[78] ¶ **Two reapers failed to take Yeon Gesomun at the river. The ledger still has his name in it…!**

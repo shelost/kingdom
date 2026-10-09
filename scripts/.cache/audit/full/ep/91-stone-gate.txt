@@ -1,0 +1,47 @@
+
+=================================================================
+#91 Stone Gate  (672 August)
+Arc: Silla-Tang War · place: seokmun · tone: grim war epic
+Logline: Silla wins the morning, then makes the mistake that costs the year: it chases.
+=================================================================
+[0] ── SCENE: Stone Gate ──
+[1] ¶ Winning is the most dangerous thing an army can do.
+[2] ¶ Silla and what is left of the Goguryeo revival meet the Tang coming south, break them, and cut down several thousand. By noon the Tang are running north. Soon after, Silla is running after them.
+[3] [MAP 672: The Tang come south and turn. Silla gives chase. Watch where the chase ends.]
+[4] ¶ Among the riders is a lieutenant barely old enough for the rank, with a famous father and a borrowed horse. His name is **Wonsul**. Like every boy in his father’s yard, he has been taught that a Hwarang does not retreat. Nobody has taught him where a chase ends.
+[5] Danneung: Lieutenant. The column’s strung out over two li. We’re not in line.
+[6] Wonsul: They’re running. You don’t form a line to chase a man who’s running.
+[7] [PLACE seokmun: A narrow place that looks like a way out, until it isn’t.]
+[8] ¶ At Seokmun the Tang turn around. Out of the side valleys come the Mohe cavalry, into a Silla army that has not yet formed up. It is over in an afternoon.
+[9] ¶ Wonsul sees the general ahead of him go down, and then the next one. He turns his horse toward the Mohe, which is the direction a son of Kim Yushin is supposed to turn.
+[10] Wonsul: Let go.
+[11] ¶ His aide, Danneung, has the bridle in both fists.
+[12] Danneung: No. / Dying’s not the hard part, Lieutenant. Any fool can do it in the next ten breaths. / Picking where is hard. This is a ditch. Die here and you’ve bought nothing.
+[13] Wonsul: My father— / Let go, or I’ll cut your hand off.
+[14] Danneung: Then cut it. I’ll still be holding.
+[15] ¶ He doesn’t cut it. Danneung turns the horse himself and runs it south through the dust, with a lieutenant on its back who screams at him the whole way. Seven Silla generals die in that valley. Wonsul is not one of them.
+[16] [FORMATION Seokmun, eighth month, 672: Seven named commanders died at Seokmun. Silla stopped attacking after it, and spent three years building walls instead.]
+[17] ── SCENE: The Apology ──
+[18] ¶ Silla sends an apology to Chang’an and hands back the prisoners. Then it goes quiet, and starts building.
+[19] ¶ The draft comes to the king’s table that winter. The court has read it. The court would like a word.
+[20] ❝QUOTE (Samguk Sagi (三國史記) bk. 7, Silla Annals — King Munmu, yr. 12 (672), ninth month — memorial of apology to the Tang court) [King Munmu]: Your servant, guilty unto death, respectfully reports. … All the bamboo of the Southern Mountain would not be enough to write down your servant's crimes, nor all the forests of Baoxie to make his shackles. Flood our ancestral temple, tear your servant limb from limb: in this I await the imperial decision, and accept execution with a willing heart.❞
+[21] True Bone minister: Majesty. “Tear your servant limb from limb”? We won the morning. / We are apologizing for the morning?
+[22] King Munmu: We’re apologizing for the afternoon. / And for the next fortress. And the one after that.
+[23] True Bone minister: …Who wrote this?
+[24] King Munmu: My father. Thirteen years ago. / I’m only signing it.
+[25] ¶ The minister thinks it is a joke. It is a room in Surabol, a year before Baekje fell, and a father asking his son a question.
+[26] ▼ FLASHBACK 659 A room in Surabol, a year before Baekje falls
+    [26.0] King Muyeol: Bupmin. What do you think happens after Baekje falls?
+    [26.1] King Munmu: We move on Goryeo.
+    [26.2] King Muyeol: And after that.
+    [26.3] King Munmu: …Unification.
+    [26.4] King Muyeol: No. / After that, **it is our turn**.
+    [26.5] ¶ He lays it out the way another man would lay out a field. The Tang will not go home. They will put a governor in Sabi and call it a commandery. They will give you a title with the word _province_ in it and expect you to be flattered. They will keep your brother in Chang’an and call him a guest.
+    [26.6] King Muyeol: When it comes, never strike first. / Wait until they have exhausted themselves in the north. / Take the fortresses back one at a time, and send an apology after each one. / What they want is not the land. It is the paperwork.
+    [26.7] King Munmu: …And the sea?
+    [26.8] King Muyeol: The sea is last. / After they have lost the horses.
+    [26.9] King Munmu: Father. How do you know all of this?
+    [26.10] King Muyeol: Li Shimin taught me. / I wrote down everything he intended to do to me.
+[26] ▲ end flashback
+[27] ¶ Munmu signs. The ink is still wet when the first stones of the new walls go in.
+[28] ¶ **Wonsul came home alive. In his father’s house, that is the crime…!**

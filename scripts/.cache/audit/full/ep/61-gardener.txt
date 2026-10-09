@@ -1,0 +1,68 @@
+
+=================================================================
+#61 Gardener  (태초)  [FLASHBACK EPISODE]
+Arc: The Fall of Euija · place: western_flower_field · tone: island folklore
+Logline: At the far end of the west, where the maps run out, there is a field of flowers that put the dead back together.
+=================================================================
+[0] ¶ Told in the orange grove, in the hour after the picking, when Gyebek has finally been persuaded to sit on a basket.
+[1] ¶ The baskets are for the tribute boat. It leaves for Sabi in the morning, full of oranges and empty of him.
+[2] Gyebek: Can the boat carry a word.
+[3] Yuri Dora: To your king?
+[4] ¶ He does not answer, which is new.
+[5] Yuri Dora: Hm. Then sit. Here’s one about a man who left somebody waiting.
+[6] Yuri Dora: There was a man called Sara Doryeong. Heaven sent for him to keep its flower field in the west. / His wife was carrying. She couldn’t walk as fast as heaven wanted, so he left her at a rich man’s house to wait.
+[7] Gyebek: How long was she to wait.
+[8] Yuri Dora: He didn’t say. / That’s the first mistake. Count it if you like.
+[9] ¶ The rich man wanted her. She said no, and went on saying no for fifteen years, through every kind of work a rich man can find for a servant who says no. Her son was born in that house and grew up a servant in it. His name was **Hallakgungi**.
+[10] [CARD Hallakgungi: Hallakgungi. Born a servant, and he means to find his father.]
+[11] Yuri Dora: When he was old enough she told him where his father was. He went west that night. / And the rich man, when he found the boy gone, killed the mother instead and threw her into a bamboo grove.
+[12] Gyebek: …She knew he would.
+[13] Yuri Dora: She knew. / She told him anyway.
+[14] ¶ Hallakgungi found the flower field at the far end of the west, where the living maps run out, and his father at the gate of it. Sara Doryeong took him down the rows. Here, the flowers that put back bone, and flesh, and blood, and breath, and the soul last of all. Over there, the flowers that laugh a man to death, and the ones that make a house fight itself, and at the end of the row the one that ends a line altogether.
+[15] Gyebek: Which did he take.
+[16] Yuri Dora: Both rows. / He went back to that rich man’s house and held a little party. Laughing flower, fighting flower, and the last one. Then he went to the bamboo grove and found his mother’s bones, and put her back together in order. Bone, flesh, blood, breath, soul.
+[17] Gyebek: In order. / …Good.
+[18] ¶ Afterwards the son took the flower field over from his father and keeps it still. The island calls him the Gardener when it does not want to say his name, which is most of the time. The flowers that bring you back and the flowers that end you grow in the same rows, and he is the only one who knows which is which in the dark.
+[19] Gyebek: Did the father go home with them.
+[20] Yuri Dora: No. He kept the gate till the boy was ready for it. / …You ask the right questions in the wrong places, Turtle.
+[21] Gyebek: I did not say either.
+[22] Yuri Dora: Say what?
+[23] Gyebek: How long. / My wife asked at the berth. I said I did not know.
+[24] ¶ Yuri Dora puts down his orange.
+[25] Yuri Dora: You have a wife.
+[26] Gyebek: And a son. And a daughter.
+[27] Yuri Dora: A whole year of evenings, and you never said.
+[28] Gyebek: You did not ask.
+[29] Yuri Dora: ……So. The word on the boat.
+[30] Gyebek: Tell her three hundred and forty-one days. / Then His Majesty can sign. Then he sends for me.
+[31] ¶ It is the first number he has ever given her. It is the king’s.
+[32] ── SCENE: Jacheongbi ──
+[33] ¶ Told in the rain, in a doorway, which is the only time anyone gets him to stand still.
+[34] Yuri Dora: Jacheongbi wanted to study beside a boy from the sky. / Women were not allowed in the room, so she cut her hair and put on a man’s clothes.
+[35] [CARD Jacheongbi: Jacheongbi. Disguise, scholarship, and not one ounce of patience.]
+[36] Gyebek: Did she break the rule.
+[37] Yuri Dora: No. The rule never said a woman could not wear a man’s clothes.
+[38] Gyebek: …Ah.
+[39] ¶ Three years at the same desk. She beat him at everything and let him believe it was close. On the last night at the parting stream she washed upstream of him and told him to look.
+[40] Jacheongbi: Three years at the same table — eating, sleeping, reading — and you notice _now_?
+[41] [CARD Mun Doryeong: A boy from the sky, sent down to study. Very good at books, very bad at noticing things.]
+[42] Mun Doryeong: …I had no eyes.
+[43] Jacheongbi: You have them now. / …Will you only look? / After three years of holding back.
+[44] Mun Doryeong: I was not holding back. / I did not know. / Now that I do… my breath is rough.
+[45] Jacheongbi: Then stay rough. / Touch my hair. / The hair I cut short for you.
+[46] ¶ Heaven does not care for that sort of marriage. They kill him for it, and send his body down the parting stream, past her.
+[47] Jacheongbi: You noticed me late. / You don’t get to leave early.
+[48] ¶ So she walks west, past every gate, into the Western Flower Field.
+[49] [PLACE western_flower_field: Every flower here does something. Ask before you pick.]
+[50] Hallakgungi: Father retired. / This gate answers to Hallakgungi now. / What are you looking for.
+[51] Jacheongbi: The resurrection flower. / The one that puts bones back together.
+[52] Hallakgungi: Don’t touch the stem wrong. / Five — bone, flesh, blood, breath, soul. / Pick them out of order and even the living wilt.
+[53] Jacheongbi: I’ll pick them in order.
+[54] ¶ She picks the five flowers in order and puts him back together bone by bone. Bone, flesh, blood, breath, soul. He sits up on the bank like a man woken too early.
+[55] Mun Doryeong: …How long was I gone.
+[56] Jacheongbi: Long enough. Don’t do it again.
+[57] ¶ Then she brings the five grains down to Tamla, because a woman who has been to the end of the west does not come home empty-handed.
+[58] Gyebek: …Can the dead be fetched back.
+[59] Yuri Dora: In stories.
+[60] Gyebek: …I see.
+[61] ¶ **The island keeps one story for last. It is about the one who comes for you, and the crow that lost his book…!**

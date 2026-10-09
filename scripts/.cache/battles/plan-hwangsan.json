@@ -1,0 +1,9 @@
+[
+	{ "episode": 72, "battle": "hwangsan", "phase": "camps", "after": { "kind": "formation", "text": "Yellow Mountain, ninth day" } },
+	{ "episode": 72, "battle": "hwangsan", "phase": "first", "after": { "kind": "dialogue", "text": "One." } },
+	{ "episode": 72, "battle": "hwangsan", "phase": "second", "after": { "kind": "dialogue", "text": "Two." } },
+	{ "episode": 72, "battle": "hwangsan", "phase": "third", "after": { "kind": "dialogue", "text": "Three." } },
+	{ "episode": 72, "battle": "hwangsan", "phase": "fourth", "after": { "kind": "dialogue", "text": "Four." } },
+	{ "episode": 72, "battle": "hwangsan", "phase": "boys", "after": { "kind": "p", "text": "Pumil holds the head up" } },
+	{ "episode": 72, "battle": "hwangsan", "phase": "last", "after": { "kind": "p", "text": "By the fifth charge" } }
+]

@@ -1,0 +1,55 @@
+
+=================================================================
+#76 Ungjin Commandery  (661 Autumn)
+Arc: Part III — Kingfall / The Fall of Baekje · place: ungjin · tone: occupation chronicle
+Logline: The Tang throw a net over the country. A sixty-year-old in white comes to mend it.
+=================================================================
+[0] ¶ In Chang’an, the cheapest way to conquer a country is to rename it.
+[1] ── SCENE: Chang’an ──
+[2] ¶ The Red Fowl is home with his captives. The emperor asks him a question in front of the whole court, which is how emperors ask questions they already know the answer to.
+[3] The Third Emperor: You were there with an army. Why didn’t you take Silla while you were at it?
+[4] Red Fowl: Their king is kind and loves his people. His ministers serve the country loyally. Below, they serve those above like fathers and elder brothers. / It is a small country, Majesty. But it cannot be schemed against.
+[5] The Third Emperor: Can’t be schemed against. Hm. / Then we won’t scheme. We’ll write. Make their king a governor of ours — no. That sounds like a slap. / …Write it anyway.
+[6] [CARD Wu Zetian]
+[7] Wu Zetian: Make it sound like an honour, Majesty. / A slap they have to bow for is worth two they can return.
+[8] ── SCENE: Gyerim ──
+[9] ¶ Then an edict arrives for the new king. It makes him Grand Commander of the Gyerim Prefecture. Gyerim is his country’s oldest name, the wood where a rooster crowed over a golden box. In the edict it is one province of the empire. And the king is its governor.
+[10] King Munmu: A prefecture, Uncle. They have made my father’s country into a prefecture, and me its clerk.
+[11] Kim Yushin: Then sign as its clerk, Majesty. / And keep a copy.
+[12] ¶ The court is angrier than the king. Men in the Council hall who have not agreed on anything since the old queen died agree that a prefecture is an insult, and say so loudly, in rooms where no Tang officer is present.
+[13] ¶ Only Daeto, a smooth councillor who always urges the softer word, keeps his voice down.
+[14] Daeto: They’re not wrong about everything, you know. / Have you seen their calendar? Every day accounted for. Our almanac can’t even agree with itself about the solstice.
+[15] ¶ Nobody answers him. A few men remember afterwards that he said it.
+[16] ── SCENE: The Black Tortoise ──
+[17] [MAP 661: ]
+[18] ¶ Someone has to hold what the Tang broke. Nobody in Chang’an expected to see Liu Rengui in uniform again. He is sixty. Last year he lost a grain fleet in a storm and was stripped of office. Now he comes east as a commoner in white, to earn it back. In his baggage: the Tang calendar, and the list of names nobody may write.
+[19] [CARD Black Tortoise: The Black Tortoise. Sixty, disgraced last year, and in an excellent mood.]
+[20] Black Tortoise: Heaven means to make an old man rich, it seems. / Send me the calendar for this country, and the list of names one must not write. If we are going to sweep the east clean, the east should at least know what year it is.
+[21] ¶ Between skirmishes the Black Tortoise does what he actually came for, which is paperwork. He counts the households of Baekje village by village and writes them down as numbers. He mends dykes and bridges. He posts the Tang calendar at every crossroads, with the list of names that may not be written, so that the people of Baekje will know which characters to leave out of their letters home.
+[22] Black Tortoise: A village that knows what year it is pays its tax on time. / Put one up at the ferry as well. People read while they wait for the boat.
+[23] ── SCENE: The Ferry ──
+[24] ¶ The ferry calendar lasts four days. On the fifth morning it is still on its post, untouched, which is worse. Someone has added a line to the bottom of the list of names one must not write. The charcoal is still soft.
+[25] Tang clerk: Shall I scrape it off, General?
+[26] Black Tortoise: Read it to me first.
+[27] Tang clerk: “Buyeo Pung.” And under it: “Gwishil Boksin, who sends his regards.”
+[28] Black Tortoise: A prince, and a man who signs his notes. / Who is the prince?
+[29] Tang clerk: Euija’s son, General. The quiet one. They sent him to the Yamato court as a boy.
+[30] Black Tortoise: Then they are telling me which name I will soon be forbidden to write. / Copy it. Twice. And leave the original up. I want him to know I read it.
+[31] ── SCENE: The Fires ──
+[32] ¶ That night the hills around Sabi light up. One fire, then forty. Boksin has brought the restoration to the Tang’s front door, and the garrison inside has ten days of rice.
+[33] ¶ The Black Tortoise has no cavalry to speak of and no reputation left to lose. What he has is a census. He counted those villages a month ago. He knows which of them fed the fires, and which are short of men tonight.
+[34] Black Tortoise: Not the hills. The villages behind them. / Close the roads they bring the rice on. Politely. Write down every cart.
+[35] ¶ It takes nine days. On the tenth the fires around Sabi go out one by one, the way they were lit, and the rebels walk back up into the hills to a fortress called Imjon. They are not beaten. They are waiting for somebody.
+[36] Black Tortoise: He’ll be back. He has to fetch a king first.
+[37] ── SCENE: The Maps ──
+[38] ¶ In Chang’an the Third Emperor is told that Baekje is finished and that its king has died in the capital of a broken heart, and he takes out his father’s maps.
+[39] The Third Emperor: Father went east three times and came home coughing. / Baekje was the knife at Goguryeo’s back, and now we’re holding it — no. That sounds like something he would say. Write it down anyway.
+[40] Wu Zetian: Then don’t say it like him. Say it like you. / Four generals. One for each side of the map, so none of them can come home claiming he did it alone.
+[41] ¶ That is how the Four Beasts are chosen: by a woman who knows how generals talk at banquets.
+[42] ── SCENE: The Four Beasts ──
+[43] ¶ The Third Emperor launches the Eighth Invasion of Goguryeo — his father’s war, inherited along with everything else.
+[44] [DIAGRAM four-beasts Four Beasts · 사신 — Gaozong’s expeditionary colours: White Tiger, Red Fowl, Blue Dragon, Black Tortoise.]
+[45] ¶ Samhan never learns their names. It learns their banners, which is the entire purpose of a banner.
+[46] ¶ The Silla envoy is still in the hall. The emperor turns to him last.
+[47] The Third Emperor: Baekje is done. I have taken your king’s worry off his hands. / Now Goguryeo. Go home and tell him to bring his army north. / He has our calendar now. Tell him the date.
+[48] ¶ **Baekje has no king. Across the sea, an exiled prince is packing his bags…!**

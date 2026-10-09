@@ -1,0 +1,47 @@
+[
+	{
+		"episode": 40,
+		"battle": "bidam-647",
+		"phase": "banners",
+		"after": {
+			"kind": "p",
+			"text": "Bidam and Yumjong raise men at the Fortress of Radiance"
+		}
+	},
+	{
+		"episode": 42,
+		"battle": "bidam-647",
+		"phase": "arrows",
+		"after": {
+			"kind": "p",
+			"text": "Arrows trade; messengers lie"
+		}
+	},
+	{
+		"episode": 44,
+		"battle": "bidam-647",
+		"phase": "star",
+		"after": {
+			"kind": "p",
+			"text": "Across the field, on the Radiance wall"
+		}
+	},
+	{
+		"episode": 46,
+		"battle": "bidam-647",
+		"phase": "works",
+		"after": {
+			"kind": "p",
+			"text": "Yumjong goes down in the outer ditch"
+		}
+	},
+	{
+		"episode": 46,
+		"battle": "bidam-647",
+		"phase": "gate",
+		"after": {
+			"kind": "p",
+			"text": "Nobody asks him why north"
+		}
+	}
+]

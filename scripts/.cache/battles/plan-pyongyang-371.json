@@ -1,0 +1,5 @@
+[
+	{ "episode": 6, "battle": "pyongyang-371", "phase": "road", "after": { "kind": "p", "text": "What its king wants is the one thing Baekje" } },
+	{ "episode": 6, "battle": "pyongyang-371", "phase": "arrow", "after": { "kind": "p", "text": "The arrow that finds him" } },
+	{ "episode": 6, "battle": "pyongyang-371", "phase": "home", "after": { "kind": "p", "text": "On the road south the crown prince" } }
+]

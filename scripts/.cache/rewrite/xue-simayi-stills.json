@@ -1,0 +1,65 @@
+[
+	{
+		"id": "xue-liu-egg-ji",
+		"entry": "Four Dragons",
+		"at": "Liu goes into the hut without a word",
+		"alt": "Lady Liu lays an old ji wrapped in oiled hemp across Xue Rengui's arms at the hut door",
+		"scene": "Longmen hut door at dusk, one oil lamp on the threshold raking up across the hemp bundle and two faces; she is calm, he is stunned; millet field and unfinished grave mounds dissolving behind",
+		"people": ["xueliu", "xuerengui"],
+		"canon": { "with": ["dress:tang"] }
+	},
+	{
+		"id": "xue-fangtian-gift",
+		"entry": "Stallion Mountain",
+		"at": "The one from the armoury is a",
+		"alt": "The Second Emperor's guards carry Lu Bu's painted fangtian huaji to the kneeling man in dirty white armour",
+		"scene": "Worm's-eye from the dirt beside the kneeling Xue; the two-crescent halberd crossing the frame as the one device; storm break after the battle, imperial yellow in the background bokeh",
+		"people": ["xuerengui", "taizong"],
+		"canon": { "battle": true }
+	},
+	{
+		"id": "simayi-ditch-friends",
+		"entry": "Sima Yi",
+		"at": "The officer in charge of the ditch is called",
+		"alt": "A Goguryeo captain on horseback and Wei officer Wang Qi knee-deep in a ditch, holding two ends of a rope",
+		"scene": "Wei camp on the Liao plain in summer haze, a long ditch as the diagonal device, thousands of tiny diggers dissolving into wash; the captain in a Goguryeo riding coat with feathered cap, Wang Qi muddy and grinning",
+		"people": ["wangqi"],
+		"canon": { "with": ["dress:goguryeo"] }
+	},
+	{
+		"id": "simayi-rain-lake",
+		"entry": "Sima Yi",
+		"at": "Then it rains. It rains for a month.",
+		"alt": "Forty thousand Wei soldiers standing in a flooded plain before the walls of Xiangping",
+		"scene": "Iconic wide: a flat sheet of floodwater as the device, the walled city a dark low strip, a head on a pole in the foreground, rain veils, one pale break over the city",
+		"people": ["simayi"],
+		"canon": false
+	},
+	{
+		"id": "simayi-falling-star",
+		"entry": "Sima Yi",
+		"at": "A long white star with a tail like a horse",
+		"alt": "A white meteor falls behind Xiangping into the river while two sentries watch from the gravel",
+		"scene": "Night, two tiny figures on a gravel spine in the lower third, the meteor's white streak as the one diagonal, city wall black against it, reflection in the floodwater",
+		"people": ["wangqi"],
+		"canon": false
+	},
+	{
+		"id": "simayi-liang-river",
+		"entry": "Sima Yi",
+		"at": "Goguryeo! You’re— you’re Goguryeo",
+		"alt": "Gongsun Yuan, muddy to the eyes in silk, bargains in the shallows with a Goguryeo captain's half-drawn bow",
+		"scene": "Torchlit shallows of the Liang River at night, low angle over the water, the half-drawn bow as the foreground device, Wei banners coming down the gravel in bokeh",
+		"people": ["gongsunyuan"],
+		"canon": { "with": ["dress:goguryeo"] }
+	},
+	{
+		"id": "simayi-ford-coat",
+		"entry": "Sima Yi",
+		"at": "At the water the captain pulls off his own coat",
+		"alt": "At the Liao ford before the first snow, the Goguryeo captain throws his fur-lined riding coat to Wang Qi",
+		"scene": "Grey river ford, first snow beginning, the coat mid-air as the device between two horses, a column of Goguryeo riders tiny on the far bank",
+		"people": ["wangqi"],
+		"canon": { "with": ["dress:goguryeo"] }
+	}
+]

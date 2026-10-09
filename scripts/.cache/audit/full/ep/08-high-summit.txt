@@ -1,0 +1,53 @@
+
+=================================================================
+#8 High Summit  (634)
+Arc: Part I — The Three Kingdoms / The King for All · place: pyongyang · tone: summit theater
+Logline: Five commanders, one king, one room. Pyongyang already knows the sound of his hooves.
+=================================================================
+[0] ¶ Half, his father said. Yeon manages it until the second pot of tea.
+[1] [MAP 634: ]
+[2] ¶ He rides in at the red two-tier gate, in his father’s place. Pyongyang already knows the sound of those hooves.
+[3] ¶ Goguryeo works like this. Five commanders argue at the High Summit. The High Commander holds the first sword. The king has the last word.
+[4] [TERM High Summit (諸加會議): The meeting of the ka. A ka was a tribal chief, back when Goguryeo was five roofs in one valley. The roofs became commands, the chiefs became generals, and the meeting kept its old name, the way old men keep their nicknames.]
+[5] ¶ The chamber is already loud when Yeon arrives — not with strategy, with arithmetic. Every banner wants a larger share of the same winter grain.
+[6] King Youngryu: Enough. / I did not call five commands to Pyongyang to divide a granary. / I will be the “King for All” — Samhan under one roof. Silla and Baekje first.
+[7] ¶ He is not the first man this year to want to be king for all. He is the first to want it on a budget.
+[8] Son Daeha: Then the Southern Command takes the next levy. / Yushin’s banners have been testing the passes. If His Majesty wants Samhan, give me men — not speeches.
+[9] ¶ The north wants horses. The west wants timber and iron. Both want them from Central, and both say so twice.
+[10] [CARD Yeon Gusesa: The High Commander. He chairs the room like a feast and counts it like a granary.]
+[11] Yeon Gusesa: (mild, as if chairing a feast) / Each front believes it is the only front. That is why we meet. / Eastern Command has kept the marches quiet. Let us not reward noise over results.
+[12] Yeon Gesomun: Quiet? / I have been killing tribes so this room can argue about who gets the horses. / Meanwhile the Second Emperor is not a tribute account. He is a man who murders brothers for a throne and then invents a reason.
+[13] King Youngryu: Commander Yeon. Watch your tongue about foreign kings. / We have bought decades with gold. We will buy more — and spend the peace on Samhan.
+[14] Yeon Gesomun: You cannot buy a man who has already decided the price of your head. / I have watched how courts die. They starve the wall that is screaming, and fatten the wall that—
+[15] King Youngryu: Enough, Commander. We heard you the first time. The whole hall heard you the first time.
+[16] Son Daeha: Easy for the East to lecture. You fight people without cities. / I fight Kim Yushin. Send me the next levy or stop talking about Samhan.
+[17] ¶ Yeon’s hands are flat on the table. The nails have gone white. This is the face of a man who has already fought the war the room refuses to schedule.
+[18] Yeon Gesomun: Listen to yourselves. / Horses. Timber. Bodies. A crown-word. / When the Second Emperor comes he will not ask which of you was most polite in committee.
+[19] Yeon Gusesa: If you keep defying the king, Commander Yeon… / we may have to name you a traitor.
+[20] Yeon Gusesa: (to Yeon, almost kindly — which is worse) / Nephew. Sit down. The Summit does not run on prophecies.
+[21] Yeon Gesomun: …. / Then keep your Summit. / Keep your tribute. Keep your Samhan dream carved into a budget fight. / When the Second Emperor’s drums reach the Liao, remember who tried to spoil the feast.
+[22] ¶ He walks out before it ends. Outside, the corridor is very long and very cold. Behind him the chamber returns to numbers — as if he had never brought an emperor into the room.
+[23] Yeon Gesomun: Heaven above… help this foolish country…!
+[24] ¶ The Tang keep notes on this room. Theirs are less polite.
+[25] ❝QUOTE (Jiu Tangshu (舊唐書) bk. 199上, Eastern Barbarians — Goguryeo): Their highest office is called Daedaero, the High Commander. It ranks with our first grade, and its holder oversees all the business of the state. It changes hands every three years, though a man who does the job well is not held to the term. On the day of handover, if the parties will not submit to each other, they all call out their troops and fight, and the winner takes the post. Their king simply shuts the palace gates and guards himself. He cannot stop it.❞
+[26] ── SCENE: The Palace Yard ──
+[27] ¶ In the yard the Eastern banners answer him anyway — a roar that has nothing to do with the Summit’s minutes.
+[28] Dosuryu: Look at that — see how Pyongyang loves you.
+[29] Yeon Gesomun: Of course. The people have never once abandoned me. / It is the politicians…!
+[30] Dosuryu: So. That was half?
+[31] Yeon Gesomun: That was a quarter. You should’ve heard what I didn’t say.
+[32] Yeon Gesomun: His Majesty wants Samhan under one roof. / The Summit wants the roof itemised. / …Get the horses. I would rather sleep in a tent tonight.
+[33] Yeon Gesomun: Gold to the Tang for quiet. Grain counted twice. A king who’d rather pay than ride. / There was a time Goguryeo didn’t pay anybody, Dosuryu. Other kings paid us. Silla came begging on its knees, and we rode south and saved it. / Now look at us.
+[34] Dosuryu: That was two hundred years ago.
+[35] Yeon Gesomun: Then we’re two hundred years late. Get the horses.
+[36] ¶ That night, in the tent, a rider finds him. His wife’s time has come, and it has gone badly before.
+[37] ── SCENE: Birth of Namseng ──
+[38] ¶ He reaches the house after midnight. One lamp, one midwife, and the mother. On the wall hangs a painting of Samsin, the birth goddess, prayed at so often that the paint has gone pale where the hands touch it.
+[39] Yeon's Wife: Samsin… / This child alone — please. / …This time — please.
+[40] ¶ The painting does not stay paint. **Samsin** steps from the frame the way steam steps from a kettle, and lays a hand where mortal hands have failed.
+[41] [CARD Samsin: The birth goddess. She does not knock.]
+[42] Samsin: Do not weep. / I will open the breath. / The name — that is yours to give.
+[43] ¶ So the first heir arrives under Samsin's hand, the year of the Summit. They call him Namseng. Nobody wanted a poem in the name. It's the sound the room makes when the baby breathes.
+[44] Yeon Gesomun: Namseng. / …Heavier than it sounds. / This country. You will have to keep it.
+[45] ¶ He holds the boy up to the lamp and tells him the only bedtime story he knows: the one about the king who rode south and never counted grain.
+[46] ¶ **Once, Silla begged Goguryeo for an army, and Goguryeo came. To meet the king who answered, we go back two centuries…!**

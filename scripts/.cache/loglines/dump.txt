@@ -1,0 +1,490 @@
+#1 [samhan] Queen Sunduk / 선덕여왕 (632) tone=royal court drama
+  P1: A Queen? Ridiculous.
+  P2: Munhee (26) is a young noblewoman, being attended by her low-rank servants. She is getting her hair done for an important event, while a servant takes care of her baby son Inmun (3).
+  P3: Her husband Chunchu is dressing too. He is twenty-nine, and already the most cunning man in Samhan. Only the quiet rooms know it yet. Their two children are getting under everyone's feet.
+  Q: The sacred-bone males were exhausted, and therefore a queen was set up.
+#2 [samhan] Harmony Council / 화백회의 (632) tone=chamber deliberation drama
+  P1: The Harmony Council meets to debate who the next king should be. Six nobles, one night. Nobody stands up until they all agree.
+  P2: Night in a small pavilion off the pond. Someone lights the small brazier. The flame is red first.
+  P3: It runs hotter. The flame turns blue. Only then may the session start.
+  Q: Every matter must be discussed by all of them together. They call it the Hwabaek, the Harmony Council. If one man dissents, the matter is dropped.
+#3 [samhan] Jinheung, the Cloud / 진흥왕, <법운> (554) tone=fairy-tale legend
+  P1: Ask anyone in Surabol about the Cloud King and they'll tell you about his stones. Ask anyone in Sabi and they'll change the subject. You'll find out why. Not yet.
+  P2: He was seven when they put the crown on him. It was too big, and nobody mentioned it. By the end, Silla had a river, a coastline and Gaya. He got there by being the best ally in Samhan, right up until the afternoon he wasn't.
+  P3: He put up stones wherever he stopped — four of them, on mountains, at the edges of what he had taken — and the stones do not boast. They say who came, and when, and that the land is now inside the border. They are property deeds.
+  Q: On the twenty-first day of the eighth month, in the first year of Taechang, the Great King Jinheung toured the lands in his keeping, and had this cut into stone
+#4 [samhan] Prince Euija / 의자태자 (632) tone=palace coming-of-age
+  P1: Thirty-two is late to be named crown prince. By the time his father gets around to it, Euija has more than fifteen sons. The clans have had years to decide which ones they own.
+  P2: In Sabi the clans read the stars the way other courts read ledgers. Loyalty is the word they use when the door between king and house is still closed; after it opens, they use other words.
+  P3: This is said admiringly. It is that kind of court.
+  Q: He served his parents with filial piety and treated his brothers with fraternal love; in his time he was called the Zengzi of the East of the Sea.
+#5 [samhan] Eight Great Clans / 대성팔족 (632) tone=clan face-off (shonen)
+  P1: Satek. Yunbi. Jinmo. Mokli. Hae. Baek. Guk. Ahn.
+  P2: The Eight Great Clans run this country, and one king sits between them. Satek fights with the king's sleeve. Yunbi fights with the coast road. The other six keep their techniques quiet.
+  P3: Once a year, the court chalks a square grid in the palace yard. Four hard lines. No banners. The young men of each house step onto the grid in white. It's the same quarrel as the west bridge, only without the carts.
+  Q: The great surnames of the country are eight clans: Sa, Yeon, Hyeop, Hae, Jin, Guk, Mok and Baek.
+#6 [samhan] Gunchogo, the 13th / 근초고왕 (371) tone=fairy-tale legend
+  P1: Baekje’s thirteenth king marches north to Pyongyang. A Goguryeo king dies on his own wall. In seven hundred years, it never happens again.
+  P2: Baekje has the river, the coast and the sea roads east. The clans take the docks. The throne takes a cut. It is the richest kingdom in Samhan, and the strongest. Neither lasts.
+  P3: They will still be chanting that sentence three centuries later, in a courtyard, to a clever king who has already decided that a country is a story. It is the sentence that gets Daeya burned.
+  Q: In winter the king and the crown prince led thirty thousand picked troops into Goguryeo and attacked Pyongyang. The Goguryeo king, Sayu, fought hard to hold the
+#7 [samhan] Commander Yeon / 연개소문 (634) tone=frontier military drama
+  P1: In the high mountains of Manchuria, a young man is caught in the snow by a Goguryeo soldier.
+  P2: He is taken to the outpost of Commander Yeon (29), the Eternal General — a ruthless military general.
+  P3: It is over quickly, and it is not clean. Nobody in the yard looks away, because looking away is also a report.
+  Q: Gaesomun*, also called Gaegeum. His surname was Yeon. He claimed he had been born in water, to awe the crowd. He was imposing to look at, and bold and free in s
+#8 [samhan] High Summit / 제가회의 (634) tone=summit theater
+  P1: So Yeon rides to Pyongyang in his father's place. Five commanders, one king, one room. They call it the High Summit.
+  P2: He rides in at the red two-tier gate. Pyongyang already knows the sound of those hooves.
+  P3: Goguryeo works like this. Five commanders argue. The High Commander holds the first sword. The king has the last word.
+  Q: Their highest office is called Daedaero, the High Commander. It ranks with our first grade, and its holder oversees all the business of the state. It changes ha
+#9 [samhan] Gwanggaeto, the Great King / 광개토대왕 (400) tone=fairy-tale legend
+  P1: Silla is drowning. An army from across the sea is inside its walls. Then Gwanggaeto sends fifty thousand horsemen south, and the Wa are gone.
+  P2: A red sun. The three-legged crow rides south on his banners. The stele will list sixty-four fortresses. It will not list the nerve it took.
+  P3: Sixty-four fortresses, one reign. The stele at his tomb lists them all.
+  Q: The common people were at peace in their work; the country was rich and the people abundant; the five grains ripened in plenty.
+#10 [five-principles] Bupmin / 김법민 (641) tone=young-adult academy (Hwarang)
+  P1: It is the spring Bupmin turns fifteen.
+  P2: The Hwarang train under the Marshal: horse, bow, verse, and above all gyuku, a horse-ball game a lazier age will call polo.
+  P3: Bupmin (15) is old enough for the headband and too young to invent a country alone. His father is in the Council chamber collecting votes. His uncle keeps the yard.
+  Q: Bupmin was striking in bearing, quick of mind, and full of strategy.
+#11 [five-principles] Sadaham / 사다함 (641) tone=campfire tale (Hwarang)
+  P1: Every yard has its ghosts. This one has two, and they have never missed roll call.
+  P2: The lamps go up under the eaves. Nobody sends the boys to bed. They decide this is an honour, and they are right, though not for the reason they think.
+  P3: The Marshal does not let trust among friends stay a pretty line. He tells the new boys of the first class — the two names the yard still lowers its voice for.
+  Q: Ninth month. Gaya rebelled. The king ordered Isabu to punish it, with Sadaham as his second. Sadaham rode ahead with five thousand horse, went in through the Je
+#12 [five-principles] Gotaso / 김고타소 (641) tone=K-drama romance
+  P1: A young girl is going to do what she’s going to do.
+  P2: It begins two springs earlier, with a girl who is not where she is supposed to be.
+  P3: Gotaso (16) goes out to the lantern market with two maids and does not come back with any. The maids are found first, by the river, in the morning.
+  Q: They wear no powder and no brow-black. Most wind their beautiful hair around the head and dress it with pearls and coloured silk.
+#13 [five-principles] Pumsuk / 품석 (641) tone=K-drama romance
+  P1: Princess Gotaso (16) has fallen in love with the Hwarang Pumsuk (23), and the whole court can see it before either of them admits the word. The maids keep score of the accidental meetings. The guards move their posts to give the flowering trees more privacy th
+  P2: Her parents Chunchu (38) and Munhee (35) bless the marriage. Then, over his wife’s one quiet objection, the father asks the boy for a vow — a vow no father should make his daughter hear.
+  P3: He makes him swear. It is the only time in this record that Chunchu misreads a room, and it is the room with his daughter in it.
+  Q: Their wedding rites are only wine and food, more or less according to wealth. On the wedding night the bride bows first to her husband's parents, and then to he
+#14 [five-principles] Munhee / 문희 (625) tone=K-drama romance
+  P1: It starts with a dream, and the dream is sold.
+  P2: Bohee takes the skirt. It is the single worst trade in Silla’s thousand years, and the two of them will both live long enough to know it.
+  P3: Five days later Yushin brings a young nobleman home from the gyuku field — still dusty, still arguing about a disputed foul — and on the yard, mid-demonstration of a “proper True Bone grip,” steps on the hem of the man’s coat on purpose. The tie comes away.
+  Q: The elder sister had some reason not to come forward, so the younger came and sewed it. Light make-up, light clothes, and a radiance that lit up the room. Chunc
+#15 [five-principles] Academy / 태학 (641) tone=academy intrigue
+  P1: Yeon's wife has given him three sons. They could not be more different.
+  P2: Namseng (7) is the careful one — the heir, eager to be approved of.
+  P3: Namgun (4) is the fierce one, who never backs down first.
+  Q: Second year, summer, sixth month. Fu Jian, king of Qin, sent envoys and the monk Sundo with Buddha images and sutras. The king sent envoys back with thanks and 
+#16 [five-principles] Stele / 광개토대왕릉비 (641) tone=house succession drama
+  P1: Yeon takes his sons to see the Great King's stone. It lists everything he ever took.
+  P2: Every Goguryeo boy is raised on him. He kept the west shut, and he made it look easy.
+  P3: Late in the year, old Dosuryu walks in without taking off his boots. In thirty years he has never once done that…!
+  Q: In all, the fortresses he attacked and broke: sixty-four. Villages: one thousand four hundred.
+#17 [five-principles] Dosuryu / 도수류 (641) tone=conspiracy thriller
+  P1: Late in the year Dosuryu comes in without knocking, which he has done since Gesomun was small enough to lift by the collar, and without taking his boots off, which he has never done.
+  P2: Yeon stops laughing. He does it all at once, the way a door shuts.
+  P3: Dosuryu goes out the way he came in, boots and all, and stands a long time in the yard before he can make himself mount. He has known the boy for thirty years. He knows exactly what kind of list it will be.
+  Q: The king ordered Gaesomun, Great Man of the Eastern Division, to oversee the work on the long wall.
+#18 [five-principles] King Euija / 의자왕 (641) tone=clan puppet-court intrigue (shonen)
+  P1: King Mu is dead at eighty, after a lifetime of fighting Silla.
+  P2: Euija takes the throne at forty-one. The court will style him Righteous and Merciful. He has a sense of humour about that.
+  P3: On the morning of his coronation a dragon is seen over the Sabi River. Several hundred people see it. The court diarist writes it down, because it happened.
+  Q: Year forty-two, spring, third month. The king died. He was named Mu, the Martial. An envoy went to Tang in mourning white with a memorial: "Your outer servant B
+#19 [five-principles] Yunchung / 윤충 (641) tone=war council
+  P1: There was only one man Euija knew he could trust to deliver.
+  P2: That winter Euija sends for Yunchung, and nobody from the eight houses is told. Yunchung is a general from a family too small to keep a clan tutor. He has held the Silla frontier for eleven years by doing exactly what he says he will do, which the Assembly fin
+  P3: It is the first time in the reign that Euija says what he has decided before the Assembly hears it. By spring the Assembly will hear it anyway, in the form of a question he has already answered.
+  Q: At Hoam Temple there is also the Rock of Politics. When the state was to choose a premier, they wrote the candidates' names, three or four of them, sealed them 
+#20 [five-principles] The Severing / 단 (斷) (553–554) tone=fairy-tale legend, dark
+  P1: The sad thing about betrayal… is that it never comes from your enemies.
+  P2: Two kings take a river back together. One is Seong of Baekje. The other is the Cloud King. The deal is simple. Baekje gets the river mouth, near the sea. Silla gets the upper valley.
+  P3: For a while the two banners still fly side by side. Then the Cloud King turns his army on Baekje's half. He takes the river mouth and gives it a new name. He fills it with men who won't ask what the alliance meant.
+  Q: On the ninth day of the twelfth month I sent them to attack Silla. First I sent Mononobe no Makamu, commander of the Eastern Region, with that region's soldiers
+#21 [iron-will] Gumil / 검일 (642) tone=K-drama tragedy
+  P1: Before Daeya — before the year that will stain his hands — the Sword of Silla rides alone to a small cavern lake in the hills: a bowl of black water under stone, cold enough to teach the bones manners. He has heard of the place the way a son hears of a hill hi
+  P2: The marshal’s robe falls at the rock lip before the steam has a name for him. Confucian blue on wet stone. He does not look up; looking up would be a request.
+  P3: Steam lifts. They are already on the far rock: Narim with her ankles crossed like an elder sister who has seen this entrance before; Golhwa legs spread wide in the mist, chima hiked, as if the mist owed her heat; Hyullé a half-step behind them, knees pressed, 
+  Q: Silla uses men by bone rank. If you are not of the right lineage, then however great your talent and however outstanding your deeds, you cannot rise past it.
+#22 [iron-will] Maehwa / 매화 (642) tone=K-drama tragedy
+  P1: A man is measured by his self-control.
+  P2: He goes back. The families have thinned. The screen is cheaper in this hour. She is still there. She sits as if she knew he would fail the pallet.
+  P3: She drops beside him before he has stood. She sits like the chair was always hers. Jeogori already a little open — not court, not accident. The smirk shows teeth. His mouth is already open and he has not used it yet.
+  Q: Before this, the commander Pumsuk had seen that the wife of his staff officer, the saji Gumil, was beautiful, and took her. Gumil resented it.
+#23 [iron-will] Siege of Daeya / 대야성 (642) tone=K-drama tragedy
+  P1: Grey in the door-slit. The feast is a cold hall. Gumil comes back from the stores and finds his wife where the True Bone left her — dirtied green still open, last night still on the boards. He does not ask if she is hurt. He asks for the story.
+  P2: They stand in the door-slit of morning and do not touch. The heat from the feast is gone. What is left is the count of what she said, and the count of what he made her say, and a marriage that has already finished speaking.
+  P3: That is the last thing they ever say to each other.
+  Q: My father named me Jukjuk so that I would not wither in the cold season, and might be broken but never bent. How should I fear death and live by surrendering?
+#24 [iron-will] Yeon’s Massacre / 연개소문의 정변 (642) tone=coup horror
+  P1: Yeon's father dies in the spring, in his own bed in the east. The seal should pass to the son. The Summit takes the whole summer to admit it. When it finally does, Yeon decides to host a banquet. The king is in attendance.
+  P2: All summer he has bowed. He went to every seat at the Summit one at a time and asked for his father’s seal like a younger son asking for an inheritance. Among themselves they have already agreed that he will have it for one winter, out on the border forts, and
+  P3: October cold sits under the eaves. The lamps are already lit when the Five Commanderies take their seats — wine first, then meat, then the old joke that Pyongyang never runs out of either. Each commander wears a ring-pommel sword at his hip, the three-legged c
+  Q: He wore five swords on his body, and no one around him dared look up at him. Every time he mounted or dismounted, he made nobles and generals lie on the ground 
+#25 [iron-will] Chunchu & Yeon / 자의악마 (642) tone=enemy-parley thriller
+  P1: Since Daeya fell, Chunchu has had one request for the Queen: send him north to Pyongyang, to beg Goguryeo for troops against Baekje. She has not said yes.
+  P2: The news reaches Surabol about a month late, the way news from the north usually does.
+  P3: Chunchu asks again, and this time the Queen lets him go. Nobody offers to go instead.
+  Q: Chunchu secretly gave three hundred measures of blue cloth to the king’s favourite, Seon Dohae.
+#26 [iron-will] Euija & Yeon / 해동증자 (642) tone=summit intrigue
+  P1: News of Yeon’s Massacre reaches Baekje.
+  P2: He asks for troops. He asks twice.
+  P3: Yeon is surprised that the new King of Baekje has come personally.
+  Q: Eighth month. Baekje also plotted with Goguryeo to take Danghang Fortress and cut off the road to Tang.
+#27 [iron-will] Nangbi / 낭비성 (629) tone=war-legend chronicle
+  P1: Kim Yushin — a name that strikes fear in all of Samhan. Maybe this is why.
+  P2: Autumn. Silla’s army is breaking against a Goguryeo wall. The men who should be charging are sitting in the trenches. Yushin is thirty-four, a banner captain. His white horse doesn’t even have a name.
+  P3: He rides back to his father’s command post, gets down, and takes off his helmet, which is how a son asks permission in front of an army.
+  Q: Then he mounted, drew his sword and rode straight at the enemy line. Three times he went in and three times he came out, and each time he went in he either cut 
+#28 [iron-will] Forty Fortresses / 마흔 성 (642) tone=war-legend chronicle
+  P1: In the meantime Queen Sunduk sends her general, Kim Yushin, against Baekje.
+  P2: Over the next few years Yushin takes more than forty fortresses.
+  P3: In Baekje’s markets they spit when they say his title. At home they toast it. Both sides add, quietly, that Gyebek hasn’t met him yet. Until he does, “greatest blade” is a tavern argument with two right answers.
+  Q: Autumn, ninth month. The queen made him Supreme General and sent him with troops against seven Baekje fortresses, Gahye, Seongyeol, Donghwa and the rest. He won
+#29 [iron-will] The Eastern Star / 동쪽 별 (642) tone=war-legend chronicle
+  P1: He touches the left side of his neck when he says it, where the old burn scar runs down under his collar.
+  P2: The banquet hall has been scrubbed for three nights. Yeon climbs to a cave in the hill above the river. Nobody prays there lightly. The marches say the stone still remembers bowstrings.
+  P3: He kneels at the mouth and lays a crow-stamped ring-pommel on the stone. He does not ask forgiveness for the hall. He asks for witnesses.
+  Q: East of the capital there is a great cave called the Sacred Tunnel. Every tenth month the king sacrifices there himself.
+#30 [epilogue] Emperor / 에필로그 · 황제 (643) tone=imperial intrigue
+  P1: Far to the west, a man who owns half the world hears a new name. He turns it over on his tongue, like a grape he hasn’t decided to eat.
+  P2: The seventh invasion of Goguryeo has not begun. It has only found its excuse. Now it needs four dragons…!
+  P3: 
+  Q: On the dingsi day, Zhang Jian, Governor-General of Yingzhou, reported that Quan Gai Suwen*, Great Man of Goguryeo's Eastern Division, had murdered his king, Wu†
+#31 [seventh-invasion] Four Dragons / 사룡 (四龍) (643) tone=imperial war council
+  P1: The Second Emperor of the West resides in the Palace. Seventeen years ago he murdered his brothers to become the Son of Heaven, and he has spent every year since folding nations under imperial rule — the Turks, the Xueyantuo, the Tibetans.
+  P2: The inner palace is a country of its own — so many women the hall cannot hold them all at once, silk stacked like tribute, a very large harem that moves when he moves.
+  P3: He’s known by many names. The Heaven-Sent General. The Khan of Heaven.
+  Q: All conditioned things are impermanent; this is the law of arising and passing away. … When arising and passing away have themselves passed away, that stillness
+#32 [seventh-invasion] Yodong / 요동성 (645) tone=epic war
+  P1: Goguryeo has spent fourteen years building a wall of forts along the river. The Blue Dragon simply walks around it. He shows his banners on the middle road, then turns north in the night. By morning his horse are across an unwatched ford. The first fortress sh
+  P2: The New Fortress doesn’t fall. The emperor’s cousin spends ten days under its walls and leaves with nothing. So the Blue Dragon posts a guard on it and turns south. The next fort lasts a little over ten days. Seven hundred men Yeon sent to hold it are taken in
+  P3: They go home with grain for the road. It is a kindness, and it is also arithmetic: seven hundred men who have seen the size of this army will describe it to Gasi better than any envoy could.
+  Q: In the city was a shrine to Jumong, and in the shrine a coat of chain mail and a sharp spear, which they falsely said had come down from heaven in the age of th
+#33 [seventh-invasion] Boiling River / 동천왕 (244) tone=epic war legend
+  P1: King Dongchun picks a fight over a diplomatic spat. The war that comes back at him starts on a river named for boiling.
+  P2: The spat is this: Goguryeo raided the western commandery, the empire sent a general called Guanqiu Jian to explain why that was a mistake, and Goguryeo met him at the Boiling River and won, and then won again.
+  P3: So the king took five thousand horse out to win a third time, on ground he had not looked at, and lost eighteen thousand men in an afternoon.
+  Q: The king said to his generals: “Wei’s great army is worse than our small one. Guanqiu Jian is Wei’s famous general, and today his life is in the palm of my hand
+#34 [seventh-invasion] Stallion Mountain / 주필산 (645) tone=epic war — clash of heroes
+  P1: By summer the farmer from Longmen is no longer a name on a muster roll. He is at Stallion Mountain, under the same Emperor who called him out of the yellow hemp.
+  P2: At Stallion Mountain the Second Emperor does not wait behind the line.
+  P3: Goguryeo sends a relief army — Go Yeonsu and Go Hyejin, tens of thousands under banners that think numbers are an argument.
+  Q: Just then came thunder and lightning. Xue Rengui, a man of Longmen, in strange clothing, broke into the enemy line with a great shout, and nothing could stand b
+#35 [seventh-invasion] Colossal River / 을지문덕, «수호신» (612) tone=epic war legend
+  P1: Emperor Yang of Sui invades Goguryeo in the year 612.
+  P2: On the Colossal River, Ulchi Munduk breaks the Western Army. A century later, men will still point at other rivers and hope for the same appetite.
+  P3: Munduk walks into the enemy camp himself first, to look at them. He surrenders seven times on the way south and runs seven times, and each running pulls the Western army further from its supply and closer to a river.
+  Q: Autumn, seventh month: they reached the Salsu. When the army was halfway across, our troops struck its rearguard from behind, and General Xin Shixiong of the Ri
+#36 [seventh-invasion] Ansi / 안시성 (645) tone=epic war — the siege
+  P1: The Guardian of Ansi Fortress is an eccentric man. When Yeon took the country, the Guardian refused him to his face. He kept the old king’s colours on the wall. Yeon had drowned a whole court for less. He looked at that wall, weighed the siege, and rode away. 
+  P2: Nobody writes his name down. To the people inside the walls he is just the chief, and that turns out to be enough.
+  P3: The ring at his hip is Goguryeo iron — a hollow circle the same red as the wall.
+  Q: Had [the Grand Minister] been alive, he would not have let me make this expedition.
+#37 [seventh-invasion] Haemosu / 해모수 (-37) tone=founder fairy tale
+  P1: The sky is empty first. Then come five dragons in the yoke, gold, crimson, azure, jade and white, and behind them a small gold chariot cutting the noon on the run they make every day. From the ground it is a fleck and a wheel, nothing a bather could call a fac
+  P2: Dawn, noon, dusk, night, always the same route. Below, the Amnok is a line he is not supposed to break: wet stone, morning shallows with no boat in them, rocks that are only rocks.
+  P3: Haemosu, god of the sun, has kept this hour since before the river had daughters. Today the Amnok flashes under the wheel. He looks down, and the hour breaks.
+  Q: I am Habek’s daughter, and my name is Yuhwa. I was out with my sisters when a man who called himself Haemosu, son of the Heavenly Emperor, lured me into a room 
+#38 [seventh-invasion] Buyeo / 부여 (-37) tone=founder fairy tale
+  P1: Dogs and pigs will not eat it; the sty refuses the guest, and the ministers pretend that is a kind of answer. In the road, cattle and horses step around it, hooves knowing better than the hall. In the open field, birds cover it with their wings instead of peck
+  P2: An axe is brought. The axe will not split the egg. The edge sings and the shell does not bother to crack.
+  P3: Someone winds up with both arms and hurls it off the palisade. It meets the stones and stays whole.
+  Q: The king did not listen, and set him to tending the horses. Jumong knew which ones were swift; he cut their feed and made them lean, and fed the sluggish ones w
+#39 [seventh-invasion] Jolbon / 졸본 (-37) tone=founder fairy tale
+  P1: He is still wet from the river when the pines stop being empty. Two men in Yeon leather, spears too casual to be hunting, too careful to be lost. Jolbon scouts find him first. The bow is already in the pine needles. His hands are empty and shaking anyway.
+  P2: He looks past the spear. The pine behind the man is a better door than the man’s face.
+  P3: They bring him in at dusk, not as a guest. One scout keeps looking back like the pines might grow more men. The valley opens under grey giwa. On the porch Yeon Tabal, chieftain of Jolbon, holds a cup he is not drinking.
+  Q: Sosuno was the daughter of Yeon Tabal, a man of Jolbon… She lived as a widow in Jolbon. Later, when Jumong was no longer tolerated in Buyeo… he fled south to Jo
+#40 [chunchu-era] Gi (起) / 기 (起) (645) tone=envoy intrigue into chamber drama
+  P1: Chunchu decides to travel to the East, guided by his friend Takamuko no Kuromaro.
+  P2: Munhee packs for him. She has packed for every trip he’s ever taken. She will pack for one more. Nobody writes any of this down, which is why it needs saying.
+  P3: The King of the East receives him politely, which is its own kind of answer.
+  Q: Silla sent its high minister, the Daeachan Kim Chunchu, with others, escorting home the scholar Takamuko no Kuromaro and Nakatomi no Oshikuma; they presented a 
+#41 [chunchu-era] Suro / 가야 연맹 (42) tone=founder fairy tale
+  P1: Before there is a Gaya, there is a ridge, and a sky god who looks at it too long.
+  P2: Before the sons, there is a look from very high up. Ibiga keeps the sky the way other gods keep a hall — cloud is his body, the living world a map he does not usually read. Then he looks down.
+  P3: On her mountain the Lady of the Right View is on watch. At first she is the ridge — jade stone, mist, a woman’s shape the mountain has not admitted yet. The mountain is a woman before it has a face. Then a face comes out of the stone. She is guarding the mount
+  Q: Turtle, turtle — show your head. If you do not, we will roast and eat you.
+#42 [chunchu-era] Seung (承) / 승 (承) (647) tone=political thriller — countdown
+  P1: Queen Sunduk (52) is in critical condition. The Eastern Palace smells of medicine and of a succession nobody has settled.
+  P2: Princess Seungman sits on the edge of the sickbed with a comb, because somebody has to do the Queen’s hair and the maids’ hands shake. They are cousins, five years apart, the last two Sacred Bone women in the world, and they have been doing each other’s hair s
+  P3: Seungman pins the binyeo high, exactly where the Queen asked, and does not answer, which is the only way she has ever won an argument with her.
+  Q: Bidam, Yumjong and others said a woman sovereign cannot govern well, and so plotted rebellion and raised troops…
+#43 [chunchu-era] Muryuk / 김무력 (562) tone=elegiac legend
+  P1: For five hundred years the people of Gaya lived by iron and by six eggs, and they enjoyed great peace.
+  P2: The Cloud King and his boy-general Sadaham come for Gaya.
+  P3: The vanguard thought otherwise. After the city fell he opened the prize-cages and kept only Alcheon dirt. Take the land. Leave the people.
+  Q: In the ninth month Gaya rebelled. The king ordered Isabu to punish them, with Sadaham as deputy. Isabu brought up the army, and they all surrendered at once.
+#44 [chunchu-era] Jeon (轉) / 전 (轉) (647) tone=political thriller — countdown
+  P1: Night rain. Bidam’s officers want a dawn assault. Bidam wants the score finished properly. He wants Yushin to come out again.
+  P2: Sixth night. Yushin does not come to the pavilion. Bidam sends tea anyway — two cups poured, one left steaming.
+  P3: Sixth night. The cup Yushin did not drink sits where Bidam left it. Courtesy held — and then, under the half moon, does not.
+  Q: If there are beings much given to lust, let them keep Avalokiteśvara Bodhisattva always in mind and revere him, and they will be freed from desire.
+#45 [chunchu-era] Seohyun / 김서현 (593) tone=forbidden romance into cavern legend
+  P1: Before there is a Yushin there is a road, and a young man on it who should be looking where he is going.
+  P2: Kim Seohyun is the son of Gaya’s last prince. In the capital, that’s the kind of fact people bring up just after he leaves the room. His father handed the kingdom over, then spent his life proving it had been a bargain. On one road he took an enemy king, four 
+  P3: He is young and polite and so used to being the Gaya boy in the room that he apologises before anyone has accused him of anything. He sits a horse better than he sits a banquet.
+  Q: At first, Seohyun saw on the road Manmyung, daughter of Sukhuljong, son of Galmun-wang Ipjong. His heart was glad, and he courted her with his eyes; and without
+#46 [chunchu-era] Gyeol (結) / 결 (結) (647) tone=political thriller — countdown
+  P1: Before the gate opens Bidam goes down to the lines and saddles Bisamun himself, which a High Councillor does not do. He slips nine beads off the end of his string and knots them to the bridle, under the horse’s jaw.
+  P2: Bisamun is named for the guardian king who stands at the north of every temple with a pagoda in his hand. Bidam rubs the horse’s nose once and speaks to it in the voice he keeps for sutras.
+  P3: They meet again between the camps — not as High Councillor and marshal, but as the yard’s two best. Dragon pommel against heavenly horse. The first exchanges are almost gentle. That is how Hwarang kill each other.
+  Q: All conditioned things are like a dream, an illusion, a bubble, a shadow; like dew, and like lightning. So should you see them.
+#47 [chunchu-era] Queen Jinduk / 진덕여왕 (647) tone=coronation drama
+  P1: The crown was made for her cousin and has to be padded at the temples. Seungman sits very still while the goldsmith does it, because somebody told her once that Dukman never fidgeted, and she has believed it for forty years.
+  P2: Seungman is crowned Queen Jinduk before the blood on the yard dries. The bloodline’s last polite miracle, stamped and filed while the censers are still warm. The succession Bidam died objecting to passes at last. Unanimously.
+  P3: Alchun is not at the coronation. The court writes his absence down as illness. Everyone understands the illness’s true name: Day 1 through Day 10, unanswered.
+  Q: Taizong* of Tang sent an envoy bearing his tally to confer on the late queen the posthumous rank of Grand Master of Splendid Happiness, and to invest the new qu
+#48 [chunchu-era] Huangdi (皇帝) / 황제 (648) tone=imperial intrigue
+  P1: Everyone on earth wants something from the Son of Heaven. Most of them bring tribute. Chunchu brings an offer.
+  P2: In Chang’an he watches a machine that doesn’t wait for uncles. One office drafts. One checks. One carries it out through six boards. One seal. One speed.
+  P3: The embassy comes in at the hour the street drums stop. The great avenue opens ahead of it, a hundred and fifty paces wide and perfectly empty.
+  Q: When he arrived, seeing that Chunchu’s bearing was outstanding, they treated him generously.
+#49 [chunchu-era] Royal Secretariat / 집사부 (651) tone=statecraft drama
+  P1: For three months a border petition has been circling the Harmony Council like a bird that cannot find a roof. Chunchu has counted the seals. He has counted the men who must touch a paper before a soldier may move. He has stopped counting aloud, because the roo
+  P2: He clears a side hall in the palace — small enough that the old clans will call it irregular, large enough for the work. Three clerks. One courier captain. A table that has never held a feast. He practices the sentence the way other men practice a sword form.
+  P3: What he brought home from the west is a grammar. One seal. One speed. Fewer uncles. When the old council finally falls, nobody will proclaim it. It will just be a table that has never held a feast.
+  Q: Second month: the old treasury office was remade as the Royal Secretariat, and the pajinchan Jukji was appointed its Premier, to take charge of confidential aff
+#50 [chunchu-era] Jiabeng (駕崩) / 가붕 (駕崩) (649) tone=imperial deathbed drama
+  P1: The emperor dies in the Cuiwei Palace in the fifth month. He is fifty-one. The room is kept too warm, and the silk on the bed is the colour of late wheat.
+  P2: The crown prince has been sitting since before dawn. He is twenty-one. He has the shoulders for the armour and not yet the face for the title. When the breathing stops, he does not move for a long time — long enough that the ministers begin to look at one anot
+  P3: Someone touches his elbow. Someone else is already writing. The empire does not wait for grief to finish its sentence.
+  Q: On the renshen day the death was announced in the Taiji Hall, the testamentary edict was proclaimed, and the crown prince took the throne. … The Liaodong campai
+#51 [chunchu-era] King Muyeol / 무열왕 (654) tone=coronation drama
+  P1: For seven years the crown has sat on Queen Jinduk. The work has sat on her nephew’s table. Nobody has ever called her foolish. She’s simply outnumbered by seals.
+  P2: Kangrim reads her name three times — Jinduk. Jinduk. Jinduk. — the ledger's habit before a Sacred Bone line closes.
+  P3: Queen Jinduk is dead. With her, the Sacred Bone bloodline has finally gone extinct.
+  Q: Your servant is old, and has no virtuous conduct worth naming. In virtue and standing none now is weightier than Lord Chunchu; he may truly be called a hero who
+#52 [chunchu-era] Jahee / 김자희 (644) tone=harbour romance (K-drama)
+  P1: Yushin sends Bupmin to the coast to work under Kim Seonpum. It is a season with a tide book instead of a training yard. The quay does not care that he is a prince. It cares whether the sums close.
+  P2: Her name is Jahee. Tonight she is the daughter who keeps Seonpum’s inkstones, and she has already decided his arithmetic is sloppy.
+  P3: She corrects the sum with a brush he was not supposed to steal. Warehouse lamp. Salt on the page. He watches her mouth instead of the numbers, and she lets him, once, because the tide will not wait for dignity.
+  Q: His queen, Queen Jayi, was the daughter of the pajinchan Seonpum. Bupmin was striking in looks, bright, and full of wise plans.
+#53 [chunchu-era] Hyukgose / 혁거세 거서간 (-57) tone=founder fairy tale
+  P1: After the fall of Old Joseon, the local chiefs gather to select a new king when a White Horse suddenly leaves an egg — blue sky above, and later the court will keep the moon as its quiet sign.
+  P2: At a well in the hills, the horse knelt and cried. Six chiefs dug where it stood. They lifted out a great egg. The shell opened on a boy who already looked like a king. He learns fast. The chiefs say the land has been waiting.
+  P3: A young boy is born from the egg, whom the chiefs name Hyukgosé — to rule with brightness — and crown as king while he is still a boy; tradition says thirteen.
+  Q: A white horse knelt and cried aloud; they dug the ground and found a great blue egg. They opened it, and there was a boy-child; they named him Hyeokgeose.
+#54 [chunchu-era] Talhae / 탈해 (-19) tone=founder fairy tale, con-man comedy
+  P1: Late in the first king’s reign, a chest comes in on the tide at a fishing beach. A magpie flies over it, crying.
+  P2: It has come a long way. A thousand li north-east of Wa, the queen of a country called Dapana carried a child for seven years and was delivered of an egg. The king said a person who lays an egg is an ill omen and should get rid of it. She could not. She wrapped
+  P3: It reaches Gaya first. The people of Golden Gaya see a strange chest bobbing off their beach and, being sensible, leave it there.
+  Q: Talhae was born in the land of Dapana, which lies a thousand li north-east of Wa. Its king had taken to wife the daughter of the king of the Land of Women. She 
+#55 [chunchu-era] Alji / 알지 (65) tone=founder fairy tale
+  P1: In the ninth year of his reign King Talhae wakes in the night to a rooster crowing in the woods west of the city, which roosters do not do at night.
+  P2: At first light Hogong walks into Sirim with a lantern he no longer needs, and finds a small box of gold hanging from a branch, and a white rooster underneath it, crowing at nothing.
+  P3: They bring the box to the king and open it, and inside is a little boy, handsome and wide awake, who looks at the king as if the king were the one who had turned up in a box.
+  Q: Ninth year, spring, third month: in the night the king heard a cock crowing among the trees of Sirim, west of the Golden Palace. At daybreak he sent Hogong to l
+#56 [fall-of-euija] Exile / 유배 (655) tone=exile drama — into island folklore
+  P1: Queen Satek, Euija’s mother, dies. Euija begins the traditional mourning period.
+  P2: Three years of it, by the rite. For three years the king may not sit in judgement, may not sign, may not overturn. Everyone in Sabi knows exactly how long three years is, and exactly what can be done inside them.
+  P3: The Queen was Satek. Her death removes the clan’s hand from the king’s sleeve, and the clan understands, before the funeral rites are finished, that the sleeve is now free.
+  Q: Ninth day of the first month, year of the Wood Tiger. Satek Jijuk of Naji Fortress, grieving that the body’s days go so easily and its months come back so hard,
+#57 [fall-of-euija] Heaven–Earth King / 천지왕 (태초) tone=island folklore
+  P1: Told on the first night, before he has agreed to listen to anything. Yuri Dora has a fire going, two cups, and no plan to ask permission.
+  P2: Gyebek stays standing by the door. Yuri Dora starts anyway.
+  P3: In the beginning there were two suns and two moons. By day people dropped in the fields with their hoes still in their hands; by night they froze in their own doorways. Nobody ever had a decent night’s sleep or a decent harvest, and the old died faster than an
+  Q: Heaven’s laying-out, set in order. Earth’s laying-out, set in order. Man’s laying-out too. The mountains’, the waters’, the kingdom’s, the king’s. And the gods 
+#58 [fall-of-euija] Sulmun / 설문대할망 (태초) tone=island folklore
+  P1: The next story is told to him on a roof, because he is on a roof, mending it, and Yuri Dora has decided that a man who will not sit down can still listen.
+  P2: Before the island there is a woman, and she is enormous. Sulmun, the Great Lady. The sea comes to her knee. She scoops the seabed up in her apron and piles it in one place until it stands high enough to lean on, and that is Mount Halla.
+  P3: Yuri Dora looks at him for a while.
+  Q: Five hundred shrines before that mountain, five hundred temples before this one. Five hundred generals, five hundred teachers. One valley short, so it is an isl
+#59 [fall-of-euija] Three Princes / 삼성혈 (태초) tone=island folklore
+  P1: This is the story of the kingdom of Tamla.
+  P2: Long after the Great Lady’s stone sons, three divine princes named Yang, Go and Bu climb out of a hole in the ground.
+  P3: They each shoot an arrow and rule over each piece of the island.
+  Q: In the beginning there were no people. Three divine men rose up out of the ground. … One day they saw a wooden chest sealed with purple clay drift ashore on the
+#60 [fall-of-euija] Stone Lady / 산방덕 (태초) tone=island folklore
+  P1: There is Kangrim — but the island does not tell his full story until last. For now it is enough to know he comes for you, and that a crow once ruined his schedule.
+  P2: There is the serpent in the cave at Gimnyeong that took a girl a year until a young magistrate went in and killed it, and was told on the way out not to look back, and looked back.
+  P3: There is Sanbangduk, who came down out of the rock to love a poor man.
+  Q: “Oh, sir, it’s raining blood.” He said it out loud. And the magistrate dropped dead right there. Just like that. He’d told him not to say a word.
+#61 [fall-of-euija] Gardener / 할락궁이 (태초) tone=island folklore
+  P1: Told in the orange grove, in the hour after the picking, when Gyebek has finally been persuaded to sit on a basket.
+  P2: The rich man wanted her. Wonganghami said no, and went on saying no for fifteen years, through every kind of work a rich man can find for a servant who says no. Her son was born in that house and grew up a servant in it. His name was Hallakgungi.
+  P3: Hallakgungi found the flower field at the far end of the west, where the living maps run out, and his father at the gate of it. Sara Doryeong took him down the rows. Here, the flowers that put back bone, and flesh, and blood, and breath, and the soul last of a
+  Q: “And this flower, what flower is it?” “This one is the flower that makes you laugh. This one is the flower that makes you fight. And this one, well — this is th
+#62 [fall-of-euija] Kangrim / 강림 (태초) tone=psychopomp ritual
+  P1: The island keeps one story for last. After it, every ending on the mainland has a broken clock already running.
+  P2: A magistrate named Kimchi had a murder he could not try. Three brothers were killed for their silk and sunk in a pond. They came back as three flowers on the water. Burned, they became three beads. A woman swallowed them and bore three sons. The sons came home
+  P3: His wife kept the gate-god and the kitchen-god fed, so they put him on the road. At the last pond he shut his eyes and jumped, and stood up at the underworld gate. Someone was already walking that road with a red book. Haewonmek, the oldest fetch there is. Kan
+  Q: “Give me the red writ. When it’s the old one’s turn, let the child come. When it’s the child’s turn, let the old one come. I’ll bring them back like water runni
+#63 [fall-of-euija] Tribute / 탐라와 백제 (498) tone=island folklore chronicle
+  P1: Tamla stops sending tribute. Rebellion would at least have been legible; this is closer to forgetting, which a large kingdom finds harder to forgive.
+  P2: Baekje’s king marches an army to the southern harbour and stops. He lets the news cross the water on its own. It gets there faster than he would have.
+  P3: Tamla apologises. Baekje accepts. Nobody is killed, everybody is satisfied, and the oranges resume. For a hundred and fifty years, that is the whole relationship.
+  Q: Eighth month. Because Tamla had not sent its tribute, the king went out to punish it himself and got as far as Mujin Province. Tamla heard, sent envoys to beg p
+#64 [fall-of-euija] Coup / 혁명 (655) tone=coup satire — martial law as theatre
+  P1: He calls the assembly the way a gambler calls a final hand — smiling, sleeves perfect, already knowing which tiles he slipped into the set.
+  P2: Euija calls a session of the Ministers’ Assembly at Deer Rock. The rock is dry. Someone forgot the brine, or remembered it and chose not to.
+  P3: He has a script ready: dissolve the Assembly, seat his own blood, call the pause a rescue. The clans stare. He expected applause. The room stays quiet.
+  Q: Seventeenth year, spring, first month. The king made forty-one of his sons by lesser wives ministers of the first rank, and gave each of them a fief.
+#65 [fall-of-euija] Descent / 삼천궁녀 (656) tone=clan face-off (shonen)
+  P1: He starts dreaming about the Rock of Politics. In the dream it is dry, and he is rubbing it with brine, and the brine will not stay. Every time he lifts the cloth the stone is dry again, and the eight elders are standing round it waiting for it to sweat.
+  P2: Some nights it is the white deer, come back out of the dark it was kept in, and too big for the hunting ground. Some nights it is a boat on the water with a man sitting very straight in the stern, not rowing, counting.
+  P3: Euija becomes increasingly paranoid about the aftershock of his purge. He beat eight houses in a single morning, and now he lives inside the winner’s arithmetic: eight grudges, forty-one sons, and not one loyalty left that he did not create by decree.
+  Q: The king was angry and threw him in prison. After that, nobody dared to speak.
+#66 [fall-of-euija] Nine Omens / 망국 (659) tone=omen dread
+  P1: Around the kingdom, signs of Baekje’s impending doom gather.
+  P2: Every one of them is real, in the sense that people saw it. That was always the only sense that mattered, and the man who said so is about to find out how much he meant it.
+  P3: 1. A herd of foxes infest the Ministers’ Assembly.
+  Q: They obtained a tortoise; on its back was writing that said: Baekje is like the full moon; Silla is like the new moon.
+#67 [fall-of-euija] Onjo / 온조왕 (-18) tone=founder fairy tale
+  P1: Onjo and Biryu grow up princes in their father’s hall. Nobody there ever mentions Buyeo.
+  P2: In Buyeo, Lady Ye has raised Jumong’s first son alone.
+  P3: Yuri is a boy with a sling and bad aim, or good aim and bad luck. The pebble cracks a woman’s water jar on her way back from the well.
+  Q: At length they reached Hansan and climbed Mount Buak to look for land fit to live on. Biryu wished to live by the sea. The ten ministers remonstrated: “This lan
+#68 [fall-of-euija] Sungchung / 성충 (660) tone=tragic loyalty drama
+  P1: Word reaches Euija. Two armies are coming for his capital, one by sea and one over the hills. The markets already call it the Chunchu Army. He scrambles for troops.
+  P2: Loyalty, in Baekje, is a star you steer by after the door has already been opened against you.
+  P3: In the Baekje court, there is panic as the Silla/Tang army is approaching the borders.
+  Q: The Red Fowl set out from Laizhou, his ships stern to prow for a thousand li, coming east on the current.
+#69 [fall-of-euija] Heungsu / 흥수 (660) tone=tragic loyalty drama
+  P1: Heungsu is not in the hall. He is still at Gomamiji, where the posting put him. The king sends a man anyway, because the Chunchu Army is no longer a rumour and the rock has run out of plans.
+  P2: The courier does not sit. Dust still on him. Heungsu’s ring is the first bright thing in the yard.
+  P3: He has stopped in the middle of the yard, which is to say in the middle of the map.
+  Q: The matter is urgent — what then? He answered: It is generally the same as Jwapyeong Seongchung’s words.
+#70 [fall-of-euija] Gyebek / 계백 (660) tone=tragic loyalty drama
+  P1: Somewhere in the fourth year he notices he has stopped counting the days. It frightens him for a week. Then it does not.
+  P2: He stops correcting the people who call him Turtle, and carries water for the women who dive. For the first and last time in his life, he is in a place where being exactly what he is costs him nothing.
+  P3: A boat comes for him in the fifth year. He is on the shore before they finish tying it up.
+  Q: I fear my wife and children will be taken and made slaves. Better a quick death than a life of shame. And so he killed them all.
+#71 [epilogue-part-ii] Three Realms / 삼계 (태초) tone=divine comedy
+  P1: Epilogue · Part II. The annual meeting is a small 정자: four posts, a raised floor, clouds for a yard. Living, dead, and western rows all fit if nobody stretches.
+  P2: Before the principals sit — servants first. The Three Realms under the Big Man Upstairs still gossip like any court.
+  P3: Then the midwife and the sun find the same rail. The rest of the pavilion develops a sudden, devout interest in clouds.
+  Q: “Seeing the Western Flower Field — what flower is this?” “The flower that gives back speech. This one, the flower that brings blood back. The flower that brings
+#72 [fall-of-baekje] Yellow Mountain / 황산벌 (660) tone=epic last stand
+  P1: Three years before he sees Samhan, Su Dingfang wins a war in a blizzard. He is sixty-five. His enemy has camped for the winter, sure that nobody fights in snow two feet deep. Su marches all night and attacks at dawn. He takes the whole camp before anyone in it
+  P2: He comes home with the qaghan in a cart and a red banner over his own tent, a bird with its wings spread, painted by a regiment that had decided he needed one. Chang’an is calling him the Red Fowl long before anyone official does.
+  P3: That summer he sails east with a hundred and thirty thousand men and anchors off a small island. A hundred Silla ships come out to meet him. At their head is the crown prince, Bupmin. He is thirty-four, and trying not to stare at the size of the Tang flagship.
+  Q: With the men of one country I face the great armies of Tang and Silla, and whether the country lives or dies cannot be known…
+#73 [fall-of-baekje] Sabi / 사비성 · 웅진성 (660) tone=fall-of-a-capital tragedy
+  P1: The court hears about the Yellow Mountain Fields the following morning.
+  P2: Euija’s first move is to send the Tang camp a feast: oxen, wine, three cartloads of rice cakes. The court is told this is diplomacy.
+  P3: The oxen come back that afternoon, untouched, with the drovers walking behind them.
+  Q: Then he stood at the camp gate leaning on his axe; his angry hair stood up like planted stakes, and the precious sword at his waist leapt of itself from its sca
+#74 [fall-of-baekje] Buyeo Euija† / 부여의자, 죽다 (660) tone=psychopomp ritual
+  P1: In the Tang capital, Euija is brought forth before the Third Emperor.
+  P2: First, paperwork. A palace clerk hands the prisoner a confession, already written out in a fair hand. There is a space at the bottom for his name.
+  P3: He signs in a hand so large the name runs off the edge of the paper, and gives it back. The clerk files it without looking. A confession only needs a name, and has never much minded whose.
+  Q: Eleventh month, first day. The emperor went up to the Zetian Gate tower to receive the Baekje captives, and released them all, from their king Euija down.
+#75 [fall-of-baekje] Kim Chunchu† / 김춘추 (661) tone=psychopomp ritual
+  P1: They take him first to a Buddhist temple on the edge of Surabol — not for miracle, for quiet. Incense. Stone. A monk who knows when not to speak. Munhee sits where wives of True Bone have always sat when history arrives as a fever.
+  P2: It is the sixth month of 661. Baekje has fallen, Goguryeo has not, and the man who arranged both is fifty-eight and cannot get out of bed.
+  P3: Munhee (55) sits where she has sat since the spring. She has buried a sister who was a queen and a brother’s youth and a daughter she never got back, and she is still here — until their son comes and stands at the foot of the bed, already wearing a king’s sile
+  Q: King Munmu was set up. His taboo-name was Beopmin*; he was the eldest son of King Taejong†.
+#76 [fall-of-baekje] Ungjin Commandery / 웅진도독부 (661) tone=occupation chronicle
+  P1: When the capital fell, the Tang threw five commanderies over the country like a net over a pond. The biggest knot sits at Bear Fortress, where Euija was handed over. So far the net catches mostly rebels.
+  P2: That spring a new man takes over the Tang garrison. Nobody in Chang’an expected to see him in uniform again. Liu Rengui is sixty. Last year he lost a grain fleet in a storm and was stripped of office. Now he comes east as a commoner in white, to earn it back. 
+  P3: The rebels come and go like weather, and between storms the Black Tortoise does what he actually came for, which is paperwork. He counts the households of Baekje village by village and writes them down as numbers. He mends dykes and bridges. He posts the Tang 
+  Q: Its land was then divided into five area commands, Ungjin and the rest, each governing its prefectures and counties, and its own chieftains were set up as comma
+#77 [fall-of-baekje] King Pungjang / 부여풍 (661) tone=resistance drama
+  P1: Gwishil Boksin sends to Yamato the East with a hundred Tang prisoners as a present, and asks for two things: an army, and Prince Pung, who has lived there for twenty years.
+  P2: The eastern empress raises ships, grain and soldiers for the restoration.
+  P3: She dies the next year. Her son takes the throne and keeps her promise. Baekje's refugees start coming home from everywhere they ran.
+  Q: Good son, those who uphold and protect the true Dharma need not take the five precepts or keep the monk’s deportment. They should carry swords, bows and arrows,
+#78 [final-stand] Pyongyang I / 평양 (661) tone=grim war epic
+  P1: Red Sun's capital sits on its ridge. A red two-storey gate, grey stone, and clouds that always look about to pick a side. There is only one gate anyone remembers.
+  P2: The impenetrable walls of Pyongyang are tested once again.
+  P3: In Luoyang the Third Emperor announces that he will lead the next army himself. The Empress sends up a memorial the same night.
+  Q: The emperor meant to lead the great army after them himself. On the guisi day the Empress sent up a memorial against a personal campaign in Goguryeo, and an edi
+#79 [final-stand] Snake River / 사수 전투 (662) tone=grim war epic
+  P1: The White Tiger drives his host into the Snake River. They still believe rivers are roads. Yeon Gesomun has been waiting for a man who thinks that. Old men in the north remember another river that ate an army. The Snake is younger. It's hungrier. And it has Ye
+  P2: The river does not take them in a heap. Yeon counts. Chang’an’s clerks will later write thirteen sons as if a number were a grave. It is a morning. The water is February-cold and already learning names.
+  P3: The thirteenth and the twelfth come together at the first bend — brothers who still share a horse’s width. Yeon meets them in the shallows where the current lies. One stroke. Two bodies. The horse walks on a few steps with no one left to tell it to stop.
+  Q: [The White Tiger] fought Yeon Gaesomun on the Snake River; the whole army was lost, and he and his thirteen sons all died in battle.
+#80 [final-stand] Tamla Surrenders / 탐라 항복 (662) tone=island coda
+  P1: After the Snake River, Tamla quietly changes sides.
+  P2: The island kingdom sends its envoys to Silla and the Tang, ending seven centuries beside Baekje.
+  P3: Baekje is supposed to be finished. Nobody told the fortresses. And in Surabol, a great lord calls in sick…!
+  Q: Dodongeumnyul (some copies say -jin), lord of Tamla and a jwapyeong, came and surrendered. Tamla had been Baekje's vassal since the Wude years, which is why its
+#81 [final-stand] Rebellion / 내사지성 (662) tone=court purge drama
+  P1: Two summers after Sabi, Baekje is supposed to be finished. Nobody has told the fortresses. The leftovers gather at a hill fort east of the old capital. They do what a kingdom does with no king nearby. They collect grain. They hang collaborators. They send boys
+  P2: Munmu names nineteen generals for it. One of them is Kim Jinju. He is True Bone, from a good family. He led men at the Yellow Mountain. He has a son in the emperor's guard.
+  P3: Jinju sends word that he is ill. So does Jinheum, governor of Namcheon. Neither of them is ill. They stay at home through the whole of the campaign, eat well, receive visitors, and are seen at a gyuku match.
+  Q: In the eighth month the remnant rebels of Baekje gathered at Naesaji Fortress and did harm. Heumsun and the others, nineteen generals in all, were sent and brok
+#82 [final-stand] Betrayal / 배신 (661) tone=resistance tragedy
+  P1: Before Boksin and the king, there were Boksin and the monk. Dochim raised the first banner with him, the autumn Sabi fell. He put down his begging bowl for a spear. He named himself General of the Spirit Army. For a year the two held the west between them. The
+  P2: Then a Tang envoy came to the walls with a letter, and Dochim sent him back with it unread and a message that the General of the Spirit Army did not receive men of so small a rank. It was a good line. Boksin heard it and understood that the monk had begun to t
+  P3: Dochim comes to supper. He does not leave it. By morning his men have been folded into Boksin’s army without a vote, and Prince Pung, newly crowned and still learning the names, is told that the monk has gone on a long retreat.
+  Q: All fear death; there is none who does not dread the pain of the rod. Take yourself as the measure: do not kill, do not strike.
+#83 [final-stand] White River / 백강 (663) tone=grim war epic — naval
+  P1: Chang’an’s clerks still count to thirteen when they hear the word river. This mouth is not that river. The tiger already died in February water, with every son numbered. The White River has come for sails.
+  P2: The epic battle: for the first time the West, Samhan, and the East meet in one mouth of water. Tang and Silla hold the banks; Baekje’s restoration and a Yamato expeditionary fleet come in on the tide — and discover, too late, that tide is not a friend you can 
+  P3: Count the banners before the water does. Tang comes by sea, twice. The Black Tortoise has held the old capital for two winters with a garrison too small to deserve the word. The emperor wrote that he could come home. He wrote back that he'd rather not. So in s
+  Q: They burned four hundred of their ships; smoke and flame filled the sky, and the seawater was all red.
+#84 [final-stand] Yeon Gesomun† / 연개소문, 죽다 (665) tone=deathbed drama
+  P1: The Eternal General is dying.
+  P2: He expects one of them — Kangrim with his Question, or Haewonmek with his last words. He has been rehearsing a refusal.
+  P3: It is not either of them. Purple of sentence, not crow-dark of the fetch — Yumla himself stands in the room. The judge, not the clerks. A king for a king.
+  Q: You brothers, be as close as fish and water. Do not quarrel over rank. If you do not heed this, you will surely be the laughingstock of your neighbours.
+#85 [final-stand] Brothers’ Coup / 형제의 난 (666) tone=succession thriller
+  P1: The Third Emperor invades Goguryeo again. Nobody is counting anymore. This time, he has a guide.
+  P2: In the spring Namseng goes out to inspect the provinces, as a new Supreme Commander should, and leaves his two younger brothers to keep the capital.
+  P3: Within a month there are men whispering in both directions. To Namgun and Namsan: your brother means to be rid of you when he comes back. To Namseng, at every post station: your brothers do not mean to let you back in.
+  Q: Namseng was afraid and dared not go in. Namgun killed Namseng's son Heonchung. Namseng fled to hold Gungnae Fortress, went over to Tang with his followers and h
+#86 [final-stand] Pyongyang II / 평양성 함락 (668) tone=grim war epic — the siege
+  P1: Three of the emperor's four beasts come for the city at once. The Blue Dragon leads. The Black Tortoise and the second White Tiger ride behind him.
+  P2: There is no cruelty in him, which is precisely what makes him difficult: the men of Goguryeo can hate a butcher, but they cannot quite hate a farmer who treats siege-work as weather.
+  P3: When the Tang ring closes, Namgun needs one man nobody can buy. He picks a monk. Shinsung has kept a small temple at the foot of the hill for twenty-five years. He has never asked anyone for anything.
+  Q: There is no peace in the three worlds; they are like a burning house, full of every suffering, truly to be feared. Always there are birth and age, sickness and 
+#87 [silla-tang-war] Mount Gain / 취리산 회맹 (665) tone=oath and grief
+  P1: Two springs after the river, the empire names a governor for what is left of Baekje. It is Buyeo Yung. He once knelt at Bupmin's horse and was spat on. Then he went to the emperor's city and came back in imperial robes. Now he will rule from the fortress where
+  P2: The court in Surabol hears the name and goes very quiet. Their men died for this ground. An emperor promised it to Chunchu by lamplight. Now a Baekje prince sits on it again, with the emperor's seal in his hand.
+  P3: Yung moves into the commandery offices in the spring. The rooms his father was taken from have been whitewashed. Liu Rengui shows him the registers, and the calendar, and the list of names he may not write.
+  Q: The king, with the imperial envoy Liu Renyuan and Buyeo Yung, Commander-in-chief of Ungjin, swore a covenant on Mount Chwiri at Ungjin.
+#88 [silla-tang-war] Dangun & Old Joseon / 고조선 (Long ago) tone=founder fairy tale, then a dark legend
+  P1: Before there are any kingdoms, there is a son in heaven who keeps looking down. He is Hwanung. His father Hwanin, the Lord of Heaven, notices, looks down himself at a mountain called Taebaek and the people living around it, and decides the world could use his 
+  P2: Hwanin does not plough — he opens the sky. Three seals go down with his son, so that nobody on the ground can mistake him for a prince playing at exile. Every later king in this chronicle will cut seals of his own, and every one of them is copying these.
+  P3: Hwanung lands on a mountain under the sacred birch. He names the ground beneath it the Divine City. Three thousand followers come down with him. Among them are the lords of wind, rain and cloud. Someone has to argue with the weather.
+  Q: He granted three heavenly seals and sent him to govern. Hwanung led a following of three thousand and descended under the sacred altar-tree on the summit of Mou
+#89 [silla-tang-war] Anseung / 안승 (670) tone=exile court drama
+  P1: Nearly eight hundred years after Wanggeom, the empire of the West comes back to the Taedong and does the same thing again. The Third Emperor sets up a Protectorate over Goguryeo, staffs it with his own officials, and seems surprised that anyone minds.
+  P2: Geom Mojam raises the old flag on the Taedong. He puts a royal cousin, Anseung, under it. Then they quarrel.
+  P3: The quarrel is about whether to fight. Geom Mojam wants to hold the Taedong and die on it if he has to. Anseung has seen what the Tang do to cities that hold, and would rather be a guest somewhere than a corpse in a capital.
+  Q: Mojam, a daehyeong of Goguryeo from Surim Fortress, gathered the surviving people, marched from Gungmo Fortress to south of the Pae River, and killed the Tang o
+#90 [silla-tang-war] Letters / 답설인귀서 (671) tone=epistolary duel
+  P1: In high summer, a Tang monk is rowed ashore under a white flag. He carries a letter from the fleet. The fleet belongs to Xue Rengui, the second White Tiger. He has sat off the coast all summer. If it can be managed, he'd like to win this war by post.
+  P2: The monk is given a bed, a meal, and as long as it takes. The king does not go to bed at all.
+  P3: By the second night the king’s writing room is full of men with opinions. One of them, an official named Daeto, has more than most.
+  Q: It is like a man who goes out with his sling and never sees the dry well at his feet, or reaches for the cicada and never knows the oriole is behind him. That i
+#91 [silla-tang-war] Stone Gate / 석문 (672) tone=grim war epic
+  P1: The Tang take Hansi and Mapeup and come south. Silla and what is left of the Goguryeo revival meet them, cut down several thousand, and then make the mistake that costs the year: they chase.
+  P2: At Seokmun the Tang turn around. The Mohe cavalry come in on a Silla army that has not yet formed up, and it is over in an afternoon.
+  P3: Silla sends an apology to Chang’an and hands back the prisoners. Then it goes quiet, and starts building.
+  Q: Our troops and the Goguryeo troops met the enemy and took several thousand heads. When Gao Kan and the rest fell back, we chased them as far as Seokmun and foug
+#92 [silla-tang-war] Wonsul / 원술 (672) tone=family tragedy
+  P1: Wonsul, Yushin’s second son, is told to die there and does not. He comes home. His father will not see him, and his mother will not either, and he spends the rest of his life trying to give the afternoon back.
+  P2: The retreat is almost beside the point. Wonsul ran and lived; a hundred men did the same that afternoon and kept their fathers. But a house that arrived in Silla by treaty rather than by birth does not get to be ordinary — it has to be exemplary, permanently, 
+  P3: Yushin goes to the king and asks, in so many words, for his son to be put to death. It is the most formal request he has made in fifty years of service, and he makes it standing.
+  Q: Yushin's son Wonsul, a lieutenant, also meant to die fighting. His aide Danneung stopped him: “For a true man, dying is not the hard part. Choosing where to die
+#93 [silla-tang-war] Kim Yushin† / 김유신, 죽다 (673) tone=psychopomp elegy
+  P1: Old now, between campaigns that are mostly paperwork, Yushin still finds the cavern. The steam is thinner. The three are not. They look the same age they always looked — which is either mercy or mockery, and he has never asked which.
+  P2: Hyullé’s hand finds the water beside the ledge where he always sits, and stays there. Fifty years of the same ledge.
+  P3: The steam thins. For a breath his father’s mouth is in the water — not the counsel, only the name — and then it is steam again.
+  Q: I humbly pray Your Highness know that to succeed is not easy, and to keep what has been won is also hard. Keep petty men far and good men near.
+#94 [silla-tang-war] The Wanggeom's Guest / 단군왕검 (673) tone=mythic coronation
+  P1: After the funeral rites, Munmu rides alone into the hills east of Surabol. Yushin never showed him the path; he found it anyway, the way sons find what uncles hid on purpose.
+  P2: He takes the best of both — the uncle’s steam, which no record kept, and the first king’s name, which every stone still does. The lake has not yet named the stranger on the water.
+  P3: He strips at the rock lip as if obeying an order nobody ever gave him in writing, and steps into water so black it reflects nothing.
+  Q: Because Hwando Fortress had been ravaged and could not serve as capital again, the king built Pyongyang Fortress and moved the people, the ancestral temple and 
+#95 [silla-tang-war] Maeso / 매소성 전투 (675) tone=grim war epic
+  P1: Xue Rengui comes back by sea in the ninth month. His pilot is Kim Punghun. Munmu killed his father. Now the son is showing the enemy fleet the way into his own coast.
+  P2: He is older now. The white coat is a reputation he can no longer take off. Tang’s eastern command sits on his shoulders the way a yoke sits on an ox that still believes in the field.
+  P3: He does not curse them. He checks the ji’s bindings, the same way he once checked plough-rope, and goes ashore.
+  Q: Autumn, ninth month: since Kim Jinju, father of the palace-guard student Punghun, had been executed in his own country, Xue Rengui took Punghun as his guide and
+#96 [silla-tang-war] Final Ford / 기벌포 전투 (676) tone=grim war epic — naval
+  P1: In the second month, the emperor's headquarters quietly leaves Pyongyang. Then it moves further. Then nobody mentions it. Xue still has a fleet, and a fleet doesn't need a headquarters.
+  P2: The last of it happens at the mouth of the Geum, in the eleventh month, in water Seongchung had begged a different king to hold twenty years earlier.
+  P3: The Silla ships belong to a sachan named Sideuk, a middling rank for a man about to be handed the end of a war. He takes them out on the ebb and loses.
+  Q: Sachan Sideuk led ship-troops and fought Xue Rengui at Final Ford in Soburi-ju; they were defeated. They advanced again, fought twenty-two engagements great and
+#97 [silla-tang-war] The King for All / 삼한왕검 (676) tone=hard-won resolution
+  P1: Bupmin, King Munmu now, stands where a six-year-old once stole a sentence. The war is won, the ally has been shown the door, and the childhood dream has had the bad manners to come true.
+  P2: It ends where it began: a woman in a room, getting someone else ready.
+  P3: Munhee is seventy. She is the last person alive who remembers all of it from the inside, and she is straightening her son's collar. She was twenty-six when this story started. Her sister burned a skirt on a hill so that she could be married.
+  Q: After I am gone I wish to become a great dragon that guards the country, to uphold the Buddha’s law and protect the realm.
+#98 [epilogue-2] Balhae / 에필로그 · 발해 (698) tone=new-dawn coda
+  P1: The winter after Pyongyang falls, the mountains of Manchuria do not care who won. Snow comes to the knee, then to the thigh, and the wind off the ridges finds every seam a coat has. Gulgul walks in front, bent under a leather pack and wrapped in so much fur he
+  P2: In the pack, under dried millet and a spare pair of boots, wrapped in a strip of red silk, rides a piece of the Goguryeo crown no longer than a finger: one gold branch snapped off when the palace fell, its little leaves still hanging on their wires. Nobody els
+  P3: The cave is a crack in the mountain’s side, deep enough to put the wind behind them. Gulgul strikes the flint four times before the moss takes. The fire is the size of two cupped hands. He sets the pack down beside it, and the boy, thawing, sees a small gold s
+  Q: Dae Joyoung of the Balhae Mohe was by origin a branch of the Goguryeo people. When Goguryeo was destroyed, Joyoung moved his household to Yingzhou. … At last he
