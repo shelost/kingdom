@@ -1,0 +1,111 @@
+[
+	{
+		"id": "scenes-baekje-mu-sluice",
+		"entry": "Prince Euija",
+		"at": "Two villages share one timber sluice.",
+		"alt": "Dawn below Sabi: the old king up to his shins in an irrigation ditch at a timber sluice, farmers with lowered sticks on one bank, a silk-robed steward on the other.",
+		"scene": "Wide establishing shot at dawn, low from the waterline of an irrigation ditch below the walls of Sabi. A heavy timber sluice gate with iron pins divides the frame vertically. King Mu, seventy-one, grey beard, sleeves tied back, stands in the ditch to his shins, one hand on the gate beam, head tilted, amused. On the left bank, three farmers in undyed white with sticks lowered; on the right bank, a steward in blue silk stiff with outrage. Above them on the ridge, the giwa roofs of Sabi palace dissolving into morning mist. Low sun breaking through cloud on the water; gold #b8862c catching the wet timber, not a glow.",
+		"people": ["kingmu"],
+		"with": ["place:sabi", "dress:baekje"],
+		"hat": false
+	},
+	{
+		"id": "scenes-baekje-mu-barley",
+		"entry": "Prince Euija",
+		"at": "I was raised on yams.",
+		"alt": "The king eats a barley ball out of a leaf, standing in the ditch, while two village children watch him chew.",
+		"scene": "Medium two-plane shot, worm's-eye from the ditch water. King Mu standing in the muddy ditch, grinning with his mouth full, a leaf-wrapped barley ball in his weathered hand, sleeves tied back, mud on his white trousers. In the sharp foreground, the blurred shoulders and heads of two small village children in undyed white, staring up at him. Behind him a farmer laughing, the timber sluice open and water pouring through. Early morning sun low from the left raking across his face and beard; warm gold #b8862c in the wet light on the water.",
+		"people": ["kingmu"],
+		"with": ["dress:baekje"],
+		"hat": false
+	},
+	{
+		"id": "scenes-baekje-mu-looks-back",
+		"entry": "Prince Euija",
+		"at": "Somebody else will have to oil it.",
+		"alt": "Halfway up the bank, the old king stops and looks back down at the sluice he has kept working for thirty years.",
+		"scene": "Over-the-shoulder from behind King Mu, halfway up a grassy riverbank, one hand on his knee, turning to look back down. Below him, small in the frame, the timber sluice and the ditch, farmers tiny at the gate, the wide slow river silver beyond. Above the frame edge, a hint of the palace wall. His profile in half shadow, the face of a tired man adding something up. Morning haze, long shadows across the grass, a single shaft of sun on the sluice; gold #b8862c as the light on the water.",
+		"people": ["kingmu"],
+		"with": ["dress:baekje"],
+		"hat": false
+	},
+	{
+		"id": "scenes-baekje-eungo-lamp",
+		"entry": "Descent",
+		"at": "The light comes before the wine does.",
+		"alt": "Night. The queen sits on the edge of the king's bed with a lamp, and the sweating king half-sits up to look at her.",
+		"scene": "Night, the king's bedchamber in Sabi. Low three-quarter from the floor beside an oil lamp the queen has just set down on the floorboards. Queen Eungo in a pale sleeping robe, hair down with one jade pin, sits on the edge of the bed, calm, half-amused, watching him. King Euija, heavy, half-risen on one elbow among rumpled silk, sweating, eyes wide from a nightmare. The lamp rakes up across both faces; deep umber dark behind, a paper lattice door ajar with two maids' shadows leaving. Dusty rose #c9a0a8 in the lamp catch on her silk, orange #e08a2e on his.",
+		"people": ["ungo", "euija:king"],
+		"hat": false
+	},
+	{
+		"id": "scenes-baekje-rock-screen",
+		"entry": "Descent",
+		"at": "Forty heads turn to the screen",
+		"alt": "On the Rock of Politics, rows of princes on benches turn toward a painted screen; behind it, the queen's profile.",
+		"scene": "Interior of an open timber pavilion built over a great flat boulder, the Rock of Politics, in Sabi. Worm's-eye from the rock surface. Tiers of low benches crowded with princes in Baekje court robes and feather caps, all heads turned toward a tall painted folding screen at the side. Prince Yung, cold and proud in pale gold, in the foreground half-turned, smirking. Prince Hyo, earnest, standing mid-word. Behind the screen's edge, Queen Eungo's face in profile, composed, eyes lowered. Daylight shaft through the eaves cutting the screen in half; dusty rose #c9a0a8 catching her silk at the gap.",
+		"people": ["yung", "hyo", "ungo"],
+		"with": ["dress:baekje"]
+	},
+	{
+		"id": "scenes-baekje-hillfort-falls",
+		"entry": "Descent",
+		"at": "While Sabi drinks, Silla takes the hill forts one at a time.",
+		"alt": "Dusk on the eastern frontier: a small Baekje hill fort burning on a ridge as Silla banners climb toward it.",
+		"scene": "Wide establishing battle shot at dusk. A small stone hill fort on a pine ridge in the Sobaek foothills, its wooden gate tower burning, one column of black smoke leaning across the sky. Up the slope, a dense mass of Silla spearmen as painted shapes in smoke and haze, their banners climbing; a few Baekje defenders as tiny silhouettes on the wall. Foreground: dark pine trunks and dry grass out of focus. Sun breaking low under storm cloud behind the ridge, fire orange against slate.",
+		"battle": true,
+		"with": ["dress:silla", "dress:baekje"]
+	},
+	{
+		"id": "scenes-baekje-feast-smoke",
+		"entry": "Descent",
+		"at": "Nobody sends them.",
+		"alt": "The banquet hall roars with lamps and maids around the laughing king; through the far door, a thin column of smoke on the horizon.",
+		"scene": "Deep interior shot down the length of the Sabi banquet hall at night. Sharp foreground: a lacquer table with wine jars and a cup tipping. Midground: King Euija sprawled on his dais, laughing, robe loose, court maids in silk around him pouring. At the far end of the hall, through an open door, the night sky over distant hills with one thin red column of smoke from a burning fort. A courier kneeling small in the doorway, ignored. Many lamps as bokeh; orange #e08a2e lamp light on the king's silk.",
+		"people": ["euija:king"],
+		"with": ["place:sabi"]
+	},
+	{
+		"id": "scenes-baekje-baskets",
+		"entry": "Descent",
+		"at": "The right basket is always fuller.",
+		"alt": "In her ink-scented rooms the queen reads the king's memorials between two baskets while her grown son stands waiting.",
+		"scene": "The queen's rooms in Sabi, quiet afternoon. Low three-quarter across a low writing table. Queen Eungo kneeling, reading an unrolled memorial, two woven baskets of folded papers either side, the right one overflowing. An inkstone and brush near her hand. Prince Hyo, forty, in a crown prince's robe, standing at the edge of frame, anxious, hands clasped. A little girl in the foreground eating a pear, out of focus. Window light from a paper lattice raking across the papers; dusty rose #c9a0a8 on her silk, a pale jade pin in her hair.",
+		"people": ["ungo", "hyo"],
+		"with": ["dress:baekje"]
+	},
+	{
+		"id": "scenes-baekje-elders",
+		"entry": "Descent",
+		"at": "Your grandfather’s day had a king in the room.",
+		"alt": "Two deposed old lords at a monastery table at night, one mid-sentence, the other cutting him off.",
+		"scene": "Night in a mountain monastery hall in Baekje. Low dutch angle across a small table with two wine cups and a single lamp between them. Elder Satek, heavy, smiling a thin smile, mid-sentence with a raised finger. Elder Yunbi, lean and dry, leaning back, cutting him off with a flat look. Both in the dark silk of great lords without office. Behind them a gilt Buddha in shadow, incense smoke curling. Lamp from below raking their faces; deep umber room.",
+		"people": ["eldersatek", "elderyunbi"],
+		"with": ["dress:baekje"]
+	},
+	{
+		"id": "scenes-baekje-queen-banquet",
+		"entry": "Descent",
+		"at": "The music stops by itself.",
+		"alt": "The queen stands in the doorway of the banquet hall; the musicians have stopped, the maids look down, the king looks up.",
+		"scene": "The Sabi banquet hall at night, from behind a musician's still zither in the sharp foreground. Queen Eungo standing alone in the open doorway in formal court dress with a jade pin, upright, unsmiling. Down the hall, maids frozen mid-pour, eyes lowered. King Euija on his dais, cup halfway to his mouth, looking up at her, caught. A wide aisle of floor between them, lamps reflected in it. Cold night blue behind her, lamp gold inside; dusty rose #c9a0a8 catching her silk.",
+		"people": ["ungo", "euija:king"]
+	},
+	{
+		"id": "scenes-baekje-pass-scouts",
+		"entry": "Descent",
+		"at": "Who builds a door this size",
+		"alt": "Two Silla scouts measure an empty mountain pass with a knotted rope at dawn.",
+		"scene": "Dawn in a narrow mountain pass in the Baekje hills, a rough road between steep rock walls and pines. Two Silla scouts in light armour and Silla dress, one kneeling to stretch a knotted measuring rope across the road, the other standing with a wooden tablet and brush, looking around at the empty slopes in disbelief. No guards, no fire, no banners. High angle from a rock above. Mist pouring through the pass, one cold shaft of sunrise on the rope.",
+		"with": ["dress:silla"]
+	},
+	{
+		"id": "scenes-baekje-empty-rock",
+		"entry": "Descent",
+		"at": "Then she blows it out.",
+		"alt": "At night on the empty Rock of Politics, the queen holds a lamp over the Premier's empty chair; her son watches from the steps.",
+		"scene": "Night on the Rock of Politics in Sabi: an open timber pavilion over a great flat boulder, empty benches in tiers. Low angle from the stone floor. Queen Eungo alone at the top tier, holding an oil lamp over an empty carved chair, face lit from below, unreadable. Prince Hyo below on the steps, small, looking up at her. Beyond the eaves the night river and a few lights of the city as bokeh. The lamp the only key; dusty rose #c9a0a8 in her silk, crushed darks everywhere else.",
+		"people": ["ungo", "hyo"],
+		"with": ["dress:baekje"]
+	}
+]

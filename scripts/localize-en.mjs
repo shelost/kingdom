@@ -56,7 +56,7 @@ export const GLOSSARY = [
 
 /** JSON keys that are never English prose. */
 const SKIP_KEYS = new Set([
-	'ko', 'lines', 'hanja', 'zh', 'ja', 'zhLatn', 'jaLatn', 'korean', 'prompt', 'source',
+	'ko', 'lines', 'hanja', 'zh', 'ja', 'zhLatn', 'jaLatn', 'mnc', 'korean', 'prompt', 'source',
 	'aliases', 'id', 'person', 'music', 'tempImage', 'image', 'src', 'sub', 'write'
 ]);
 

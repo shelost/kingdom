@@ -1,0 +1,100 @@
+[
+	{
+		"id": "scenes-simayi-hwando-trader",
+		"entry": "Sima Yi",
+		"at": "a young king is listening to a horse trader lie",
+		"alt": "In a pine-smoke hall at Hwando, a horse trader acts out a story while the young king of Goguryeo laughs on his dais",
+		"scene": "Low three-quarter medium-wide inside a Goguryeo timber hall at Hwando, dusk. A brazier on the floor in the foreground rakes warm light up across the scene; pine smoke hangs in layers. A weathered horse trader in undyed white Goguryeo riding clothes is mid-gesture, holding up an imaginary lady's dress against his own chest, grinning. On the low dais behind him the young king Dongcheon leans forward on one knee, head thrown back, laughing hard, red silk catching the brazier light. A few courtiers in feathered caps dissolve into the dark at the edges. Red #C30000 lives only in the king's silk and the brazier spill on the floorboards. Timber posts angle away from the lens.",
+		"people": ["dongchun"],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-camp-wide",
+		"entry": "Sima Yi",
+		"at": "bigger than a mountain and flatter than a lake",
+		"alt": "Goguryeo riders on a low rise look down at a vast Wei camp of diggers on the summer Liao plain",
+		"scene": "Wide establishing shot from behind a low grassy rise on the Liao plain in heavy summer haze, late afternoon. In the dark foreground, three Goguryeo riders seen from behind, feathered jougwan caps and riding coats, horses' manes catching a low sun shaft. Below them the Wei camp spreads to the horizon: one long straight ditch cuts the frame as a diagonal, and thousands of tiny Han-dynasty soldiers in brown-red jackets dig along it, dissolving into watercolour haze. Earth spoil heaps, wooden carts, small black-and-red Wei pennants. Half the frame is granulated storm-heavy sky with one pale break. No tents with modern shapes, no Tang or Japanese armour.",
+		"people": [],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-rumour",
+		"entry": "Sima Yi",
+		"at": "Everywhere the Goguryeo thousand ride, the Western Chancellor has just left",
+		"alt": "At an empty ford, a Goguryeo captain kneels by a folded camp stool; far off on a ridge a thin figure in a plain robe walks away",
+		"scene": "Worm's-eye from the wet gravel of an empty river ford at dawn mist. Sharp in the foreground: a folded wooden camp stool left standing in the shallows, and a gloved Goguryeo hand reaching for it. Midground: a young Goguryeo captain in a riding coat and feathered cap, kneeling, looking up the far bank. Far behind, tiny and dissolving in haze on a grass ridge, one thin old figure in a plain dark robe walking away with his hands behind his back, face never visible, one attendant holding a plain parasol over him. A single cold silver break in the clouds over the ridge is the key light. Mostly empty sky and water. Mystery, not threat.",
+		"people": [],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-tent-reveal",
+		"entry": "Sima Yi",
+		"at": "The man on the camp stool does not stand",
+		"alt": "Inside a plain Wei tent, an old thin general on a camp stool looks up at the dusty young king of Goguryeo standing in the flap",
+		"scene": "Over-the-shoulder from behind the young king Dongcheon, dusty to the knees in red silk riding clothes, standing in a tent flap with dusk light behind him. Inside the plain canvas tent, one oil lamp on the floor beside a low writing table rakes up across the face of Sima Yi: old, thin, sparse grey beard, plain dark robe with ink on one cuff, seated on a folding camp stool, not standing, studying the king with dry amusement. A secretary half-risen in the shadow at the edge. Slate #4a4f63 lives in the lamp-cooled canvas and the old man's robe; the king's red catches the lamp. Brushes, a map board, a jug. Tenebrist interior.",
+		"people": ["simayi", "dongchun"],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-rain-lake",
+		"entry": "Sima Yi",
+		"at": "Then it rains. It rains for a month.",
+		"alt": "Forty thousand Wei soldiers stand in floodwater on the plain before the dark walls of the Liaodong city",
+		"scene": "Iconic wide siege establishing shot in driving rain. A flat sheet of grey floodwater fills the lower half of the frame as the one device, broken by the dark low strip of a walled Liaodong city on the horizon: stone walls, a timber gate tower with tiled roof. Thousands of tiny Han-dynasty soldiers stand knee-deep in the water in ranks, dissolving into rain veils; banners hang soaked. In the foreground a single tall pole stands out of the water, a rag of red cloth tied to it. One pale break in the storm sky lights the city wall. Watercolour granulation, cold slate and umber palette, one red accent.",
+		"people": []
+	},
+	{
+		"id": "scenes-simayi-ground",
+		"entry": "Sima Yi",
+		"at": "rides around a besieged city in water to his horse",
+		"alt": "The king of Goguryeo, knee-deep in floodwater on horseback, probes the mud with a spear butt while his captain sketches a map",
+		"scene": "Low angle from just above the waterline, rain easing at grey dusk. Foreground: a spear butt plunging into brown water, ripples. Midground: young king Dongcheon on a red-bay horse standing to its knees in floodwater, leaning out of the saddle to probe the mud, face intent and mischievous, red silk soaked dark. Behind him his captain on a grey horse holds a wooden board and a stick of charcoal, mid-complaint. The besieged city wall is a dark strip far behind, dissolving. One low sun break from the south-east rakes across the water and catches the king's red sleeve. Empty water, wide sky.",
+		"people": ["dongchun"],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-board",
+		"entry": "Sima Yi",
+		"at": "the old man has the stone board out",
+		"alt": "The old Wei general and the young Goguryeo king play at the stone board by one lamp, wine cups beside them, rain on the canvas",
+		"scene": "Close two-shot from the floor, rain night in the plain tent. A single oil lamp set on the floor beside a wooden go board throws light upward across both faces and the black and white stones in the foreground. Young king Dongcheon, wet to the thigh, leans over the board with a stone pinched between two fingers, grinning, about to attack. Across from him old Sima Yi sits very still, sleeves folded, a small cup of wine untouched, one eyebrow raised. A wine jug, the rain-streaked canvas wall angled away from the lens with their shadows climbing it. Red #C30000 on the king's silk, slate #4a4f63 on the old man's robe, both only as lamp-lit cloth.",
+		"people": ["simayi", "dongchun"],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-star",
+		"entry": "Sima Yi",
+		"at": "A long white star with a tail like a horse",
+		"alt": "A white meteor falls behind the besieged city into the river while two tiny Goguryeo riders watch from the gravel",
+		"scene": "Night, iconic wide. Two tiny Goguryeo riders on a spine of wet gravel in the lower third, seen from behind, one pointing up, the other grabbing his arm. A long white meteor with a mane-like tail cuts the black-blue sky as the one diagonal and drops behind the dark silhouette of the walled city into a small river, its streak mirrored in floodwater in the foreground. A few watch-fires on the wall as bokeh. Indigo night wash, one white streak, nothing else. Feathered caps as small silhouettes.",
+		"people": [],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-siege",
+		"entry": "Sima Yi",
+		"at": "The rain stops. Within a week Wei has ramps",
+		"alt": "Wei siege engines hurl stones over the walls of the starving Liaodong city at dusk",
+		"scene": "Wide siege shot at smoky dusk after rain. Earth ramps climb against the stone walls of the Liaodong city from the lower left as the heroic diagonal; wooden traction catapults with long throwing arms silhouetted against a burning orange sky, one stone in flight. Ladders and a roofed battering ram at the gate. Masses of small Han-dynasty Wei soldiers as painted shapes in smoke, black-and-red Wei pennants. On the wall, tiny defenders in Liaodong dress. Mud and standing water still on the ground reflecting fire. Hand-painted battle-scroll look: sculpted smoke columns lit from below, cream paper sky breaking through. 3rd-century only: no gunpowder, no cannon, no Tang or Japanese armour.",
+		"people": [],
+		"battle": true
+	},
+	{
+		"id": "scenes-simayi-river",
+		"entry": "Sima Yi",
+		"at": "The king’s bow stays half drawn",
+		"alt": "Lord Gongsun kneels muddy in the shallows of a little river while the king of Goguryeo holds his bow half drawn above him",
+		"scene": "Low dutch angle from the shallows at night, torches. Foreground: Lord Gongsun on his hands and knees in the river, mud to the eyes, still in rich gold-brown silk, face pleading and theatrical. Midground on the gravel bank: young king Dongcheon on foot, bow half drawn, arrow nocked, jaw set, doing the arithmetic. Behind and above him, dissolving in torch-smoke, Wei banners coming down the gravel slope and a thin old rider under them. Torchlight from the left rakes across the water and the king's red silk; a dead horse dark at the water's edge. Gold #a08040 only on the muddy silk.",
+		"people": ["dongchun", "gongsunyuan"],
+		"with": ["dress:goguryeo"]
+	},
+	{
+		"id": "scenes-simayi-vow",
+		"entry": "Sima Yi",
+		"at": "They drink to it at the ford",
+		"alt": "At the autumn ford of the Liao, the old Wei general in a too-big Goguryeo fur coat and the young king pour wine into the river",
+		"scene": "Medium two-shot at the river ford at golden autumn dusk, first snow clouds building. Old Sima Yi wears a Goguryeo riding coat with the fur turned in, far too big in the shoulders, holding a small cup out over the water. Young king Dongcheon beside him, in red silk, coatless, pouring wine from a jug into the river, laughing. Their horses wait behind; a line of Goguryeo riders dissolves into haze across the water, a secretary small and disapproving on the bank. Low sun from across the river rakes both faces and makes the poured wine a gold thread. Wide river and sky take half the frame.",
+		"people": ["simayi", "dongchun"],
+		"with": ["dress:goguryeo"]
+	}
+]

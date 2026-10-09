@@ -1,0 +1,169 @@
+[
+	{
+		"id": "scenes-variety-last-bout-hold",
+		"entry": "Eight Great Clans",
+		"at": "Gyebek’s heels slide back a finger’s width",
+		"alt": "Teenage Gyebek in chalk-grey white holds a taller clan boy in a ssireum grip on the sand, heels dug in",
+		"scene": "Low worm's-eye two-shot from the grit at knee height in the palace yard of Sabi, late afternoon. Teenage Gyebek in dusty undyed white, locked chest to chest in a ssireum satba grip with a taller clan boy who leans over him and strains, face hidden by his own shoulder. Gyebek's jaw is set, eyes calm and level, heels sliding back a finger's width in the sand, sand spraying off his heel. The chalked square line cuts the foreground as the one device. Behind, out of focus, the stone hall steps crowded with silk-robed elders and young princes in bokeh. Low sun from the west rakes across both straining backs, long shadows across the grit, warm gold catching the sweat on Gyebek's neck.",
+		"people": ["gyebek"],
+		"with": ["place:sabi", "dress:baekje"]
+	},
+	{
+		"id": "scenes-variety-pung-wood-strip",
+		"entry": "Eight Great Clans",
+		"at": "The littlest prince holds up his strip of wood.",
+		"alt": "Eight-year-old Prince Pung holds up a strip of wood with a name on it to sand-covered Gyebek at the bottom step",
+		"scene": "Medium close two-shot at the bottom of the stone palace steps in Sabi at dusk. Prince Pung, a small boy of eight in a red robe with gold-striped black sleeves, sits on the lowest step holding up a thin strip of pale wood covered in neat brush characters with both hands, earnest and proud. Teenage Gyebek stands below him in chalk-grey white, sand on his shoulders, bent at the waist, staring at the marks he cannot read, his face very still. The strip of wood is the bright centre of the frame between their faces. One low sunset shaft from the left lights the wood and the boy's face; steps and silk crowds fall into umber shadow behind.",
+		"people": ["pung:prince", "gyebek"],
+		"with": ["place:sabi", "dress:baekje"]
+	},
+	{
+		"id": "scenes-variety-rock-purse",
+		"entry": "Eight Great Clans",
+		"at": "like a man who has picked up a snake by the wrong end",
+		"alt": "Crown Prince Euija lounges on the Rock of Government at dusk while the tide clerk holds his purse at arm's length and Gyebek stands by",
+		"scene": "Wide-medium dutch-angle shot on a flat granite outcrop above the river at Sabi at dusk, the Rock of Government. Crown Prince Euija sprawls on the rock where nobody may sit, grinning, one knee up, laughing at his own joke. Below him the anxious tide clerk Seongchung holds a small silk purse out at full arm's length, like something alive, leaning away from it. Teenage Gyebek stands upright beside the prince, one palm flat on the front of his white jacket. The river bends behind them into violet haze with tiny boats. A low orange sun behind the rock throws long shadows toward the lens and catches the purse's gold thread.",
+		"people": ["euija", "seongchung", "gyebek"],
+		"with": ["place:sabi", "dress:baekje"]
+	},
+	{
+		"id": "scenes-variety-jupil-noon-wide",
+		"entry": "Stallion Mountain",
+		"at": "The plain under the mountain is one long noise",
+		"alt": "Wide shot of the battle below Stallion Mountain: Goguryeo's relief army pushing a Tang line in dust while drums sound on the ridge above",
+		"scene": "Establishing extreme wide shot, raging battle at noon on the plain below a steep pine-dark mountain in Liaodong. Tens of thousands of Goguryeo infantry and cavalry as massed painted shapes press against a long Tang line, red Goguryeo banners against Tang vermilion-and-white, dust standing up off the field like a second army in sculpted gouache columns. On the ridge above, tiny drummers beside furled banners. In the middle distance one tiny rider in white armour cuts a bright seam into the Goguryeo mass. A single shaft of sun breaks the dust cloud onto that seam. Ink-outlined smoke curls, speed of the crowd, flung dirt in the foreground.",
+		"people": [],
+		"with": ["dress:goguryeo"],
+		"battle": true
+	},
+	{
+		"id": "scenes-variety-robe-over-sulgedu",
+		"entry": "Stallion Mountain",
+		"at": "Then he takes off the imperial robe",
+		"alt": "The Second Emperor kneels on the night battlefield and lays his own imperial robe over a dead Silla-born captain",
+		"scene": "Low three-quarter medium shot on the battlefield at night, among the dead where the Goguryeo centre stood. Emperor Taizong of Tang, bare-headed in his inner robe, kneels on one knee and spreads his own heavy yellow imperial robe over a dead guard captain lying face down in lamellar armour, his face not shown. The emperor's expression is grave, unguarded, jaw tight. A single torch held by an unseen attendant at the left edge of frame rakes across the falling silk, so the yellow folds blaze against the black field. Bodies and broken spears dissolve into blue darkness and drifting smoke; distant campfire bokeh along the horizon.",
+		"people": ["taizong"],
+		"year": 645
+	},
+	{
+		"id": "scenes-variety-gesomun-thumb-ansi",
+		"entry": "Stallion Mountain",
+		"at": "puts his thumb on the one fort",
+		"alt": "Gesomun in the Pyongyang hall presses his thumb onto Ansi on a map while his officers wait for him to break something",
+		"scene": "Overhead three-quarter close shot looking down onto a large painted silk map spread across a low table in the Pyongyang hall at night. Yeon Gaesomun, the Supreme Commander, leans over it with both fists on the table edge, then presses one thumb down hard on a single fort marked in red, his face lit from below, eyes fierce and unblinking, a dangerous half-grin. Around the table edge officers stand frozen in shadow, waiting. A brazier just out of frame at the bottom throws red-orange light up across the map, his knuckles and his beard; the hall pillars recede into black with ember bokeh.",
+		"people": ["gesomun:supreme"],
+		"with": ["place:pyongyang", "dress:goguryeo"]
+	},
+	{
+		"id": "scenes-variety-six-kings-laugh",
+		"entry": "Suro",
+		"at": "flat on his back in the grass where he hatched",
+		"alt": "On Turtle Peak, Ijinasi lies flat on his back in the grass howling with laughter while Suro laughs last beside him",
+		"scene": "High-angle wide-medium shot on the grassy summit of Turtle Peak above the southern sea, spring afternoon. Six young Gaya kings in plain early iron-age dress sprawl in the long grass, laughing helplessly. In the centre Ijinasi lies flat on his back, arms flung wide, howling at the sky. Beside him Suro sits up, laughing last and a little surprised at himself, one hand on his chest. Four other young kings in a loose ring roll and wheeze, one doubled over. The dug earth from the turtle-song ritual in the foreground. Behind, the bright sea and small boats dissolve into watercolour haze, one cloud-break shaft lighting the summit.",
+		"people": ["ijinasi", "suro"],
+		"with": ["dress:gaya"],
+		"year": 42
+	},
+	{
+		"id": "scenes-variety-last-bead",
+		"entry": "Suro",
+		"at": "He picks up the last bead from beside her foot",
+		"alt": "On his knees in the scrambling feast hall, Suro in a plain coat holds up the last jade bead to the dancing Mahan girl",
+		"scene": "Worm's-eye close shot from the floor of a timber feast hall at night. King Suro in a plain undyed coat kneels among scattered green jade beads, a wine jar still in one hand, holding up a single bead between finger and thumb toward a young Mahan woman who stands above him bare-throated, still mid-dance, looking down at him, her face caught between pride and surprise. Around them chiefs scramble on hands and knees after rolling beads, blurred. An oil lamp set on the floor beside the bead rakes up across his face and her silk, jade beads glinting as round bokeh in the foreground.",
+		"people": ["suro"],
+		"with": ["dress:gaya"],
+		"year": 48
+	},
+	{
+		"id": "scenes-variety-one-torch",
+		"entry": "Jeon (轉)",
+		"at": "Let him go home.",
+		"alt": "Bidam on the Radiance wall at night watches a single torch ride south from the palace and tells his officer to let it go",
+		"scene": "Over-the-shoulder medium shot from behind Bidam on the stone rampart of Radiance Fortress at night. Bidam, an older Silla noble in a navy coat, empty hands resting on the parapet, his beads put away, watches far below and across the dark valley a single torch moving south fast along the road away from the palace lights. Beside him a rebel officer in black headband leans in urgently, mouth open, pointing. Bidam's profile is calm and tired. A brazier on the wall walk just behind them throws warm light across his shoulder and the stone; the valley falls to deep blue-black with the one tiny torch as the only bright point.",
+		"people": ["bidam"],
+		"with": ["place:radiance", "dress:silla"]
+	},
+	{
+		"id": "scenes-variety-deathbed-boots",
+		"entry": "Jeon (轉)",
+		"at": "his riding boots beside the bed",
+		"alt": "Old Kim Seohyun under two quilts with his riding boots beside the bed, gripping Yushin's sleeve as his son bends close",
+		"scene": "Intimate low medium shot at floor level in a Silla house bedroom in the small hours. Old Kim Seohyun lies under two heavy quilts on a raised bed, grey-haired, gaunt, eyes bright, gripping his son's sleeve hard with one hand. Kim Yushin, the marshal, in a dark riding coat, bends low with his ear near his father's mouth, face still and wet-eyed. In the sharp foreground a pair of worn leather riding boots stands upright beside the bed. A single oil lamp on the floor between boots and bed rakes up across the boots, the quilts and both faces; physicians wait as dim shapes in the doorway behind, dissolving in shadow.",
+		"people": ["seohyeon", "yushin"],
+		"with": ["dress:silla"]
+	},
+	{
+		"id": "scenes-variety-hanseul-naming",
+		"entry": "Jeon (轉)",
+		"at": "Stop crying and try it.",
+		"alt": "In the palace stable at night, Yushin hands the lead of a young grey horse to a crying fourteen-year-old groom",
+		"scene": "Medium two-shot inside the royal stables of the Moon Palace before dawn. Kim Yushin, unarmoured in a dark coat, stands at the head of a young dapple-grey horse, one hand flat on its neck, offering the lead rope to a fourteen-year-old stable boy who is still crying with his mouth shut, wiping his face on his sleeve. Yushin's face is tired and gentle, almost a smile. Empty stalls recede behind them; one stall door hangs open where the white horse used to stand. A lantern hung on a post at the right rakes across the grey's coat and the boy's wet cheek; straw dust floats in the beam.",
+		"people": ["yushin"],
+		"with": ["dress:silla"]
+	},
+	{
+		"id": "scenes-variety-suro-rock-humming",
+		"entry": "Gyeol (結)",
+		"at": "An old man is sitting on the lip beside his sword",
+		"alt": "In the steam cavern an old spirit-king sits humming on the rock lip beside Yushin's sword while Yushin turns in the water",
+		"scene": "Wide-medium shot inside a dark steam cavern before light. On the wet rock lip of a hot spring an old man sits with his bare feet in the water, a long white beard in his lap, humming with his eyes half closed and a mischievous smile, the same face as the attached Suro portrait aged four hundred years, in plain old Gaya robes. Beside him on the rock lie a folded coat and a sheathed ring-pommel sword, his wet toe nudging the hilt. In the chest-deep water Kim Yushin, unclothed, wet hair loose, has just spun round, water slapping the rock, startled. One oil lamp on the rock lip lights the old man, the sword ring and the ripples; steam and floating motes in the dark.",
+		"people": ["suro", "yushin"],
+		"with": ["place:steam_cavern"],
+		"sword": true
+	},
+	{
+		"id": "scenes-variety-water-mirror",
+		"entry": "Gyeol (結)",
+		"at": "the face in it isn’t quite his any more",
+		"alt": "Yushin looks down into still cavern water and the reflected face is his grandfather's",
+		"scene": "Top-down overhead close shot over still black lacquer-smooth water in a steam cavern. Kim Yushin, unclothed, wet hair loose, grey at the temple, leans over the water from the top of the frame looking down, only his face, shoulders and hands visible. In the water below, his reflection is not quite him: an older bearded Gaya soldier's face, Kim Muryuk's, looks back up with the same eyes. A thin wisp of steam crosses the line between the two faces as the one device. A lamp on the rock just out of frame grazes Yushin's cheek with warm light and lays a pale streak across the water.",
+		"people": ["yushin", "muryuk"],
+		"with": ["place:steam_cavern"]
+	},
+	{
+		"id": "scenes-variety-outer-works-wide",
+		"entry": "Gyeol (結)",
+		"at": "two rivers trying to go through one gate",
+		"alt": "Wide shot of the ninth-day battle: Silla blue pushing up the road to the outer works as rebel black pours down from the Radiance wall",
+		"scene": "Establishing extreme wide shot of a raging battle at midday under the Radiance mountain fortress near Surabol. A long stone wall on the ridge with a gate pavilion; below it outer earthworks and ditches. The royal Silla army in blue streams up the road as massed small figures under blue banners, ladders raised; rebels in black headbands pour down off the rampart under black banners, the two masses colliding at the ditches like two rivers forced through one gate. Gouache smoke columns, dust, arrows in arcs, a sculpted cloud break dropping one hard shaft onto the collision. Foreground: a broken ladder and churned mud.",
+		"people": [],
+		"with": ["place:radiance", "dress:silla"],
+		"battle": true
+	},
+	{
+		"id": "scenes-variety-yumjong-ditch",
+		"entry": "Gyeol (結)",
+		"at": "Don’t— don’t make that face, Councillor.",
+		"alt": "In the outer ditch Bidam kneels holding the dying Yumjong, a Silla spear under his arm",
+		"scene": "Low close two-shot in a muddy earthwork ditch under the Radiance wall during the battle. Bidam, an older Silla noble in navy coat and black headband, kneels in the mud cradling Yumjong, a grey-bearded rebel lord with a broken spear shaft under his arm, who is smiling weakly up at him and talking. Bidam's face is fighting not to show anything; his free hand hidden. Smoke rolls along the ditch lip above them; tiny running figures and banners blur against a pale broken sky. Low sun cuts through the smoke across both faces, mud and blood dark, one hard edge of light along Bidam's cheek.",
+		"people": ["bidam", "yumjong"],
+		"with": ["place:radiance", "dress:silla"]
+	},
+	{
+		"id": "scenes-variety-purple-sleeves",
+		"entry": "Royal Secretariat",
+		"at": "like a scarecrow somebody has promoted",
+		"alt": "Jukji stands in Chunchu's paper-strewn study in a purple Tang robe with sleeves too long, arms out, while Chunchu laughs",
+		"scene": "Medium wide shot in a cluttered scholar's study at night in Surabol. Papers cover the floor, the walls and a chair; Tang maps and register sheets are pinned up in pieces; a go board with a half-played game under a lattice window. In the middle Jukji, a young Silla official, stands in a brand-new purple Tang official robe with sleeves far too long, arms held out stiffly like a scarecrow, looking down at himself with dry alarm. Kim Chunchu sits on a chest of folded robes nearby, laughing, magenta silk at his collar. A lamp on the floor among the papers rakes up across the purple silk and the pinned sheets.",
+		"people": ["jukji", "chunchu"],
+		"with": ["dress:silla"]
+	},
+	{
+		"id": "scenes-variety-alchun-sleeve",
+		"entry": "Royal Secretariat",
+		"at": "Then he raises his sleeve, first",
+		"alt": "In a palace hall, old Alchun in the first chair raises his sleeve first to vote while the other lords watch",
+		"scene": "Low three-quarter medium shot in a palace side hall in Surabol, a council vote. Alchun, a broad grey-bearded Silla elder in court robes, sits in the first chair and raises one wide sleeve high, abruptly, before anyone can watch him decide, his face wry and resigned. Along the hall five other elders in True Bone robes, ivory tablets in hand, turn to look at him, mid-reaction. A clerk with a brush waits by the door. Morning light through a high lattice window falls in one hard shaft across Alchun's raised sleeve; the rest of the hall in warm umber shadow.",
+		"people": ["alchun"],
+		"with": ["place:surabol", "dress:silla"]
+	},
+	{
+		"id": "scenes-variety-munhee-persimmons",
+		"entry": "Royal Secretariat",
+		"at": "He’s never once found the pillow.",
+		"alt": "In the East Market Munhee chooses dried persimmons while a storyteller's joke about her husband dies in front of the crowd",
+		"scene": "Medium shot in a busy Silla market street at late afternoon. Kim Munhee, an elegant woman in a good dark cloak over a rose hanbok, gold-and-glass necklace, stands at a stall of strings of dried orange persimmons, choosing one, not looking up, a small dry smile. Behind her and slightly out of focus a street storyteller on an upturned crate freezes mid-gesture, mouth open, while the crowd around him turns to look at her and starts to laugh at him. Strings of persimmons hang in the sharp foreground. A low sun down the street rakes across the persimmons and her face; market roofs dissolve into haze.",
+		"people": ["munhee"],
+		"with": ["place:surabol", "dress:silla"]
+	}
+]

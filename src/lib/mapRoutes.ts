@@ -269,6 +269,44 @@ export const MAP_ROUTES: MapRoute[] = [
 		source: `${ZZTJ} 198 (Zhenguan 19)`
 	},
 
+	// ———————————————— 657–659 · Silla at the eastern frontier ————————————————
+	{
+		id: 'silla657-hillforts',
+		label: 'The hill forts',
+		ko: '산성들',
+		year: 657,
+		side: 'silla',
+		kind: 'attack',
+		points: ['geumdol', 'gwansan', [321, 590]],
+		order: 0,
+		note: 'Small forts east of Charcoal Pass change hands while Sabi drinks.',
+		source: `${SGSG} 5 (Muyeol 2: Yushin takes Dobicheon Fortress); the story`
+	},
+	{
+		id: 'silla658-daeya',
+		label: 'Cutting Daeya’s road',
+		ko: '대야 길을 끊다',
+		year: 658,
+		side: 'silla',
+		kind: 'attack',
+		points: ['seongsan', [352, 619], [344, 626]],
+		order: 0,
+		note: 'Two forts on the road between Daeya and Sabi fall; no relief comes.',
+		source: 'the story'
+	},
+	{
+		id: 'silla659-pass',
+		label: 'Scouts at the pass',
+		ko: '고개의 척후',
+		year: 659,
+		side: 'silla',
+		kind: 'attack',
+		points: ['geumdol', [340, 593], 'tanhyeon'],
+		order: 0,
+		note: 'Silla measures Charcoal Pass, the pass in Sungchung’s last page. Nobody is guarding it.',
+		source: `${SGSG} 28 (Uija 16: Seongchung’s memorial names Tanhyeon); the story`
+	},
+
 	// ———————————————— 660 · the fall of Baekje ————————————————
 	{
 		id: 'tang660-crossing',

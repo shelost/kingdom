@@ -282,7 +282,7 @@ edit('Final Ford', (story) => {
 edit('Sima Yi', (story) => {
 	const { ep, D, S, at } = helpers(story);
 	const e = ep('seventh-invasion', 'Sima Yi');
-	if (has(e, 'Shut up and write')) return false;
+	if (has(e, 'Shut up and write') || has(e, 'the Western Chancellor')) return false;
 	at(e, '(Draft in progress.)');
 	const CAP = 'The captain';
 

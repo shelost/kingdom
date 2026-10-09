@@ -41,6 +41,9 @@ export const stageText = {
 	get jaLatn() {
 		return paragraph(reading.linesJaLatn);
 	},
+	get mnc() {
+		return paragraph(reading.linesMnc);
+	},
 
 	get showKo() {
 		return reading.lang === 'ko' || reading.lang === 'both';
@@ -61,6 +64,9 @@ export const stageText = {
 	get hasJa() {
 		return this.ja.length > 0;
 	},
+	get hasMnc() {
+		return this.mnc.length > 0;
+	},
 
 	/** Nothing sayable is on stage in the reader's language. */
 	get empty() {
@@ -68,7 +74,8 @@ export const stageText = {
 			(this.showKo ? !this.hasKo : true) &&
 			(this.showEn ? !this.hasEn : true) &&
 			!this.hasZh &&
-			!this.hasJa
+			!this.hasJa &&
+			!this.hasMnc
 		);
 	},
 
@@ -85,7 +92,8 @@ export const stageText = {
 			this.zh,
 			this.zhLatn,
 			this.ja,
-			this.jaLatn
+			this.jaLatn,
+			this.mnc
 		].join('\u0000');
 	}
 };

@@ -304,6 +304,8 @@ export const reading = $state({
 	/** Yamato / Japanese native + Hepburn romaji (subtitle layers) */
 	linesJa: [] as string[],
 	linesJaLatn: [] as string[],
+	/** Mohe speech in romanized Manchu (subtitle layer) */
+	linesMnc: [] as string[],
 	lang: 'en' as Lang,
 	/** Script from first paint. Switching mid-session still persists. */
 	mode: 'script' as ReadMode,
@@ -1124,6 +1126,7 @@ function applyUtterance(el: HTMLElement | null, speaker: string | null) {
 	reading.linesZhLatn = readLines(el, '.line.zh-latn');
 	reading.linesJa = readLines(el, '.line.ja');
 	reading.linesJaLatn = readLines(el, '.line.ja-latn');
+	reading.linesMnc = readLines(el, '.line.mnc');
 }
 
 /** Move the live-line marker onto `el` — only the stage modes wear it. */
@@ -1320,13 +1323,15 @@ export function watchReading() {
 			const zhLatn = readLines(dialogue, '.line.zh-latn');
 			const ja = readLines(dialogue, '.line.ja');
 			const jaLatn = readLines(dialogue, '.line.ja-latn');
+			const mnc = readLines(dialogue, '.line.mnc');
 			const sameLines =
 				ko.join('\0') === reading.linesKo.join('\0') &&
 				en.join('\0') === reading.linesEn.join('\0') &&
 				zh.join('\0') === reading.linesZh.join('\0') &&
 				zhLatn.join('\0') === reading.linesZhLatn.join('\0') &&
 				ja.join('\0') === reading.linesJa.join('\0') &&
-				jaLatn.join('\0') === reading.linesJaLatn.join('\0');
+				jaLatn.join('\0') === reading.linesJaLatn.join('\0') &&
+				mnc.join('\0') === reading.linesMnc.join('\0');
 			if (reading.speaker !== nextSpeaker || !sameLines) {
 				applyUtterance(dialogue, nextSpeaker);
 			}

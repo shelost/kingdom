@@ -1,0 +1,137 @@
+[
+	{
+		"id": "scenes-gaya-great-gaya-wide",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "Great Gaya sits on its ridge behind a timber gate",
+		"alt": "The Battle of Great Gaya: a hill city in rain and smoke, its gate shut, Silla horse massed below.",
+		"scene": "Huge establishing wide, low on the muddy hill road looking up. Great Gaya, 562, ninth month: a walled hill city on a long ridge, a heavy timber gate with a curved giwa gate-tower, every roof inside the wall dotted with tiny archers. Rain slanting across the frame, black smoke columns rising off two burning roofs and lit orange from below. In the lower third, five thousand Silla riders massed in the mud as painted silhouettes, blue Silla banners whipping on poles; on the wall, Gaya banners. Steel lamellar and tall cone helms on both sides. One break in the storm cloud drops a cold shaft on the gate. Nobody has moved yet; the whole field is waiting for one word.",
+		"with": ["flag:silla", "flag:gaya", "dress:gaya"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-bareheaded",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "walks up the gate road alone.",
+		"alt": "A Silla general walks up the gate road alone, his cone helm under his arm, every bow on the wall turning to him.",
+		"scene": "Rückenfigur, low from behind and slightly to one side: a Silla general in steel lamellar walks alone up a muddy gate road toward Great Gaya's shut timber gate, his tall Gaya cone helm tucked under one arm, head bare in the rain. Foreground out of focus: horses' legs and the wet backs of the waiting Silla riders. Up on the wall, a row of archers in the same tall cone helms all turn their bows toward this one man. Smoke and rain haze, one cold shaft on the road ahead of him. Purple #8B5CF6 only as cloth peeking at his collar and the cord of the helm, caught by the grey light. The road is a single diagonal from his boots to the gate.",
+		"people": ["muryuk:unnamed"],
+		"with": ["flag:silla"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-charge",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "He takes five thousand horse at the Jeondan gate",
+		"alt": "Fifteen-year-old Sadaham leads the charge through the Jeondan Gate, laughing; Mugwan one horse behind.",
+		"scene": "Worm's-eye from the mud under the gate arch, extreme foreshortening: fifteen-year-old Sadaham bursts through the half-open timber gate of Great Gaya at full gallop, ring-pommel sword raised, mouth open in a laugh, ice-blue #6fa8ff cloth flying at his collar and sleeve under steel lamellar, crescent-moon hwarang headband under the helm brim. One horse length behind him, quiet Mugwan, eyes on the rooftops, sword low. Mud and rain flung at the lens, arrows streaking past, the heavy iron-bossed gate leaves swinging. Firelit smoke behind, a pale storm break above. Speed lines in dry-brush ink along the gallop.",
+		"people": ["sadaham", "mugwan"],
+		"with": ["flag:silla"],
+		"battle": true,
+		"sword": true
+	},
+	{
+		"id": "scenes-gaya-rope-line",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "Mam. Mam, what’s he doing to the rope?",
+		"alt": "Sadaham cuts the rope on a line of three hundred Gaya captives in the square of the fallen city.",
+		"scene": "Low three-quarter angle along a long line of Gaya captives in undyed white, roped wrist to wrist, kneeling and standing in the wet square of the fallen hill city. In the midground Sadaham, fifteen, still in mud-spattered steel lamellar with ice-blue #6fa8ff cloth at the collar, saws through a rope knot with a short knife, jaw set, not looking up. A Gaya mother pulls her small daughter's face into her skirt; the girl peeks anyway. Foreground: a cut rope end falling out of frame, sharp. Background: smoking giwa roofs dissolving into wash, Silla soldiers watching uncertainly. Late-afternoon light breaking low through smoke, long shadows across the stones.",
+		"people": ["sadaham"],
+		"with": ["dress:gaya"]
+	},
+	{
+		"id": "scenes-gaya-watcher",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "watches him watch.",
+		"alt": "The general with the Gaya cone helm watches from his horse at the edge of the square; a thin boy holds his bridle.",
+		"scene": "Medium shot from low at the edge of the square: a Silla general sits his tall horse in steel lamellar, his tall Gaya cone helm back on, face still and unreadable, watching something off-frame. Purple #8B5CF6 cloth peeks at his collar. At the horse's head a thin twelve-year-old boy in plain Silla dress holds the bridle in both hands, too tightly, looking up at the general rather than at the square. Foreground out of focus: cut rope coils on wet stone. Background: the line of freed captives as soft white shapes, smoke over the roofs. One low sun shaft through smoke catches the helm plates and the horse's neck.",
+		"people": ["muryuk:unnamed"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-rope-coil",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "It’s in my helmet.",
+		"alt": "Night in the Silla camp: Sadaham eats rice out of his helmet on a coil of cut rope while the general sits down beside him.",
+		"scene": "Night, Silla camp below the fallen city. Low two-shot across a campfire: Sadaham, fifteen, sits on a big coil of cut rope eating rice out of his upturned helmet with his fingers, grinning sideways, ice-blue #6fa8ff cloth at his collar catching firelight. The older Silla general lowers himself onto the rope beside him, tall Gaya cone helm on, a dry half-smile. Behind them Mugwan asleep sitting up against a cart wheel. Foreground: fire sparks and a blurred rope end. Background: freed captives asleep under blankets as soft shapes, the hill city's roofs still smoking orange across the river, bokeh of embers.",
+		"people": ["sadaham", "muryuk:unnamed"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-face-front",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "for longer than a man needs to look at roofs",
+		"alt": "The general looks across the river at Great Gaya's smoking roofs; the boy-general, for once, says nothing.",
+		"scene": "Over-the-shoulder from behind the two of them on the rope coil at night: the general's tall Gaya cone helm and steel shoulder in sharp foreground, Sadaham's profile beside him, quiet for once, firelight on his cheek. Across a dark river, the burning roofs of Great Gaya glow on their ridge, smoke climbing into a black sky with one torn patch of moonlit cloud. The river is a single horizontal band of reflected orange. The general's face is barely visible, three-quarter from behind, eyes on the far roofs. Minimal: two figures low in the frame, the city small and far, most of the frame dark sky.",
+		"people": ["muryuk:unnamed", "sadaham"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-golden-wide",
+		"entry": "Muryuk",
+		"year": 532,
+		"at": "The river is full of men, and none of them are swimming.",
+		"alt": "The Battle of Golden Gaya: Silla spears pour down both banks of the river below the iron harbour, smoke rising off the iron sheds.",
+		"scene": "Huge establishing wide from a high bank: the Battle of Golden Gaya, 532. A broad river mouth below a harbour town of timber and giwa, iron-smelting sheds pouring black smoke columns lit orange from below. Down both banks pour masses of Silla spearmen as painted silhouettes under blue banners; at the water's edge a thinner Gaya line in tall cone helms under purple-and-gold banners. Men fighting knee-deep in the shallows. Moored ships with furled sails in the harbour, a bell tower on the quay. Dawn light breaking cold through the smoke, rain-wet everything. No hero yet: the river is the picture.",
+		"with": ["flag:silla", "flag:gaya", "dress:gaya"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-golden-bank",
+		"entry": "Muryuk",
+		"year": 532,
+		"at": "Bank’s gone! West bank’s gone",
+		"alt": "Gaya shieldmen give way on the riverbank as Silla spears come over the top.",
+		"scene": "Dutch angle, low in the mud of the riverbank: a Gaya shield line in tall cone helms and steel lamellar buckling backward as Silla spearmen come over the top of the bank above them. One Gaya shieldman shouts over his shoulder, mouth wide; a Gaya archer behind him reaches out an empty hand for arrows. Spear points angle in from the top of frame. Foreground: a dropped shield and churned water, sharp. Background: the river full of struggling figures, smoke from the iron sheds, a far blue Silla banner. Hard grey dawn key raking from the side, splashes frozen in the air.",
+		"with": ["flag:silla", "flag:gaya"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-ford",
+		"entry": "Muryuk",
+		"year": 532,
+		"at": "Muryuk holds the ford with his father’s guard at his back",
+		"alt": "Young Muryuk, in his father's tall cone helm, holds the ford alone at the front of the Gaya guard.",
+		"scene": "Worm's-eye from the water of the ford: young Muryuk, about sixteen, stands knee-deep at the head of the crossing in steel lamellar and his father's tall Gaya cone helm, ring-pommel sword held low and ready, water streaming off him, breathing hard, eyes fixed on the bank. Behind him a few royal guardsmen in the same helms. Purple #8B5CF6 cloth peeks at his collar and the helm cords. Ahead, Silla spearmen hesitating at the top of the bank, not coming down again. Foreground: churning water and a floating spear shaft. One cold shaft through the smoke lands on the helm and the blade.",
+		"people": ["muryuk"],
+		"with": ["flag:silla"],
+		"battle": true,
+		"sword": true
+	},
+	{
+		"id": "scenes-gaya-old-lords",
+		"entry": "Muryuk",
+		"year": 562,
+		"at": "Not mine to sell. I’ll not lie to you about it.",
+		"alt": "In Great Gaya's hall Muryuk, helm in hand, faces the old lords who have decided to die well.",
+		"scene": "Interior, the timber hall of fallen Great Gaya, dusk. Low three-quarter: Muryuk, a grey-templed Silla general in steel lamellar, stands bareheaded with his tall Gaya cone helm in one hand, facing a row of old Gaya lords seated very straight on the floor in faded silk, white beards, hands on knees. The nearest old lord looks up at him hard. A single brazier on the floor between them is the only light, raking across faces and helm plates. Smoke from outside drifts through the open doors behind. Painted pillars and a long beam receding into darkness. Purple #8B5CF6 only as cloth at his collar in the brazier light.",
+		"people": ["muryuk"],
+		"with": ["dress:gaya"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-ride-home",
+		"entry": "Muryuk",
+		"year": 562,
+		"at": "Halfway to Surabol he notices he hasn’t been trying not to.",
+		"alt": "Riding north from Gaya, Muryuk rides behind his twelve-year-old son and watches him.",
+		"scene": "Morning on a long road north through autumn hills. Low wide from behind and to the side: Muryuk on his horse, tall Gaya cone helm on, steel lamellar under a travel coat, riding a few lengths behind a thin twelve-year-old boy on a smaller horse who sits too carefully, back stiff. Muryuk's face in three-quarter, watching the boy, not the road and not back over his shoulder. The road is one long diagonal into misty hills; behind them, far and small, a thin smoke smudge on a ridge. Low gold morning sun raking across both riders and the grass. Most of the frame is quiet sky and hill.",
+		"people": ["muryuk"],
+		"battle": true
+	},
+	{
+		"id": "scenes-gaya-horse-lines",
+		"entry": "Seohyun",
+		"year": 562,
+		"at": "Seohyun moves his hands on the reins.",
+		"alt": "Twelve-year-old Seohyun holds two horses at the edge of the firelight while his father talks with the boy-general.",
+		"scene": "Night, Silla camp. Rückenfigur close behind a thin twelve-year-old boy in plain Silla dress holding the reins of two horses, his hands tight on the leather, sharp in the foreground. Beyond him, soft at the edge of the firelight, two figures sit on a coil of rope by a campfire: an older general in a tall Gaya cone helm and a laughing boy-general with ice-blue cloth at his collar. Embers drift up as bokeh. Behind them, across the river, a hill city's roofs still glow and smoke. The firelight is the one warm key; the boy and the horses are mostly in shadow, one horse's eye catching the fire.",
+		"battle": false
+	}
+]

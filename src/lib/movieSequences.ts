@@ -337,17 +337,16 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		why: 'Fifteen on the vanguard; Mugwan vow; seven days without food. Ice-blue #6fa8ff is the person.',
 		canon: 'Steel on campaign stills; Hwarang coats on the vow. Intimate grief for seven days. High contrast. One of each named person.',
 		shots: [
-			{ id: 'sadaham-seq-yushin-tells', role: 'two names', angle: 'over-shoulder eaves', at: 'the two names the yard still lowers its voice for' },
-			{ id: 'sadaham-gaya-road', role: 'empty road', angle: 'iconic wide', at: '<b>Sadaham</b> was fifteen' },
-			{ id: 'sadaham-seq-ask', role: 'too young', angle: 'worm’s-eye hall', at: 'asked to ride against Great Gaya' },
+			{ id: 'sadaham-gaya-road', role: 'empty road', angle: 'iconic wide', at: '<b>Sadaham</b> is fifteen' },
+			{ id: 'sadaham-seq-ask', role: 'too young', angle: 'worm’s-eye hall', at: 'asks to ride against Great Gaya' },
 			{ id: 'sadaham-seq-keepup', role: 'keep up', angle: 'low gallop', at: 'Then keep up.' },
 			{ id: 'sadaham-seq-vanguard', role: 'the charge', angle: 'dutch charge', at: 'They said too young.' },
 			{ id: 'sadaham-seq-alcheon', role: 'Alcheon dirt', angle: 'low close', at: 'Alcheon dirt.' },
 			{ id: 'sadaham-seq-mugwan-vow', role: 'the swear', angle: 'two-shot eaves', at: 'If you die first, I will not eat.' },
-			{ id: 'sadaham-seq-sickbed', role: 'the pulse', angle: 'candle two-shot', at: 'died of illness not long after the campaign' },
-			{ id: 'sadaham-grief-clutch', role: 'gone', angle: 'low dutch', at: 'Sadaham did not take food for seven days' },
-			{ id: 'sadaham-seq-seven-close', role: 'seven days', angle: 'ECU', at: 'Sadaham did not take food for seven days' },
-			{ id: 'sadaham-seq-headbands', role: 'two headbands', angle: 'low ground', at: 'buried two headbands' }
+			{ id: 'sadaham-seq-sickbed', role: 'the pulse', angle: 'candle two-shot', at: 'dies of illness not long after the campaign' },
+			{ id: 'sadaham-grief-clutch', role: 'gone', angle: 'low dutch', at: 'Sadaham does not take food for seven days' },
+			{ id: 'sadaham-seq-seven-close', role: 'seven days', angle: 'ECU', at: 'Sadaham does not take food for seven days' },
+			{ id: 'sadaham-seq-headbands', role: 'two headbands', angle: 'low ground', at: 'buries two headbands' }
 		]
 	},
 	{

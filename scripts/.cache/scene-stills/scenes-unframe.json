@@ -1,0 +1,59 @@
+[
+	{
+		"id": "scenes-unframe-jinheung-first-yard",
+		"entry": "Jinheung, the Cloud",
+		"at": "So he tries boys.",
+		"alt": "The young king watches from a timber porch as a thirteen-year-old Sadaham stands over a bigger boy he has just thrown in the dust of the first Hwarang yard.",
+		"scene": "Low three-quarter shot from the packed-earth yard of a Silla palace compound at late afternoon, a timber porch with giwa eaves on the left third. On the porch the young King Jinheung, twenty-six, in red court silk and gold crown, leans forward on one knee, chin on his fist, amused. In the right-third midground a thirteen-year-old Sadaham, crescent headband, sleeves tied back, stands over a bigger noble boy sprawled in the dust and does not offer a hand. Other powdered boys in pale silk watch, blurred. One low sun shaft rakes across the yard, long shadows, dust hanging gold in the light. Foreground: an out-of-focus wooden practice sword on the ground.",
+		"people": ["jinheung", "sadaham"],
+		"with": ["dress:silla"],
+		"year": 560
+	},
+	{
+		"id": "scenes-unframe-jinheung-ridge-stone",
+		"entry": "Jinheung, the Cloud",
+		"at": "a mason is cutting a stone taller than himself",
+		"alt": "On a bare northern ridge, King Jinheung stands in the wind beside a tall half-carved boundary stone while a mason argues with his chisel raised.",
+		"scene": "Wide worm's-eye shot from the grass of a bare mountain ridge in the far north, storm sky in granulated watercolor filling the upper half, one cloud-break shaft falling on the stone. A tall rough granite boundary stele, half its face cut with columns of characters that stay illegible texture, stands on the ridge line as the one vertical device. King Jinheung, thirty-four, in red silk travelling robe and gold crown, cloak whipping in the wind, one hand flat on the stone, looks down at a wiry commoner mason in undyed white hemp who argues up at him with his chisel raised. Two tiny spear guards far down the slope dissolving in haze. Dry grass bending.",
+		"people": ["jinheung"],
+		"with": ["dress:silla"],
+		"year": 568
+	},
+	{
+		"id": "scenes-unframe-jinheung-yard-fence",
+		"entry": "Jinheung, the Cloud",
+		"at": "…Which friend, Majesty?",
+		"alt": "The old king, head shaved and in a grey monk's robe, leans on the Hwarang yard fence above a boy kneeling in the dust.",
+		"scene": "Medium two-shot across a weathered timber yard fence at dusk. King Jinheung, forty-two, head completely shaved, wearing a plain grey Buddhist monk's robe with no crown, no cap and no jewelry, leans both forearms on the top rail, a wry half-smile, wooden prayer beads looped on one wrist. Below him on the other side a fifteen-year-old hwarang boy in dusty pale silk, crescent headband, kneels with a bruised knee and looks up, mouth open mid-question. Behind them the Hwarang yard is full of kneeling boys melting into warm bokeh, giwa roofs dark against an amber sky. A low sun from the left grazes the shaved scalp and the fence rail. Foreground: a blurred fence post.",
+		"people": ["jinheung"],
+		"with": ["dress:silla"],
+		"year": 576
+	},
+	{
+		"id": "scenes-unframe-hyuk-six-villages",
+		"entry": "Hyukgose",
+		"at": "Every spring the king and queen walk the six villages",
+		"alt": "Barefoot in a flooded paddy, the young king straightens rice seedlings while the queen, on the bank, inspects a mulberry branch and a nervous village head.",
+		"scene": "Low-angle wide shot at the edge of a flooded spring rice paddy in a hill valley near Surabol, early morning mist, thatched village roofs and pines dissolving in watercolor haze behind. Hyukgose, young king, robe hitched up, barefoot and shin-deep in the mirror-bright water, bends to straighten a leaning row of seedlings, grinning. On the earthen bank in the right third, Lady Alyoung in white silk jeogori, porcelain egg binyeo, holds a mulberry branch up to the light and looks sideways at a nervous village head in undyed white who bows. A farmer in white hemp waves an alarmed arm from the far dyke. One low sun shaft breaks through the mist and glitters on the water.",
+		"people": ["hyukgose", "alyoung"],
+		"with": ["dress:silla"]
+	},
+	{
+		"id": "scenes-unframe-hyuk-mahan-hall",
+		"entry": "Hyukgose",
+		"at": "Get the man with the gourd out of my hall",
+		"alt": "In the dim hall of Mahan, two ministers hold back their furious king's sword arm while the envoy from Surabol, a dried gourd at his belt, bows without hurry.",
+		"scene": "Dutch-angle medium-wide shot inside an ancient timber-and-thatch great hall, packed-earth floor, heavy round posts, a single brazier near the dais throwing hard orange light upward. On a low raised platform the stout King of Mahan, bearded, topknot, in dark hemp robes with bronze ornaments, half rises with one hand on a short bronze sword hilt while two older ministers in white robes clutch his sleeves. In the lower-left foreground, back three-quarter to the camera, a lean envoy in simple white travelling clothes, a dried round gourd tied at his belt, bows calmly, a faint smile catching the firelight. Deep umber shadows, smoke hanging under the rafters, embers drifting as bokeh.",
+		"people": [],
+		"with": ["dress:baekje"]
+	},
+	{
+		"id": "scenes-unframe-talhae-first-night",
+		"entry": "Talhae",
+		"at": "His first night as king, Talhae lies awake",
+		"alt": "On his first night as king, Talhae lies awake on his mat in the stolen house, listening toward the gate, while Hogong grumbles from the doorway with a lamp.",
+		"scene": "Low floor-level shot across a dark timber room in the crescent-hill house at night, a single oil lamp set on the floorboards in the foreground throwing raking light across the room. Talhae, a very tall cheerful man past sixty, lies on his back on a sleeping mat with his eyes wide open, head turned toward the shuttered window, listening, an old weathered sea chest beside his bed. In the doorway, Hogong, an elderly lean man in a nightrobe, a dried gourd hanging on a peg beside him, holds a second lamp and scowls. Moonlight through the lattice paints a cold pale grid across the floor. Long shadows climb the wall.",
+		"people": ["talhae", "hogong"],
+		"with": ["dress:silla"]
+	}
+]

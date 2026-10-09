@@ -97,6 +97,7 @@
 	let textZhLatn = $derived(stageText.zhLatn);
 	let textJa = $derived(stageText.ja);
 	let textJaLatn = $derived(stageText.jaLatn);
+	let textMnc = $derived(stageText.mnc);
 
 	let hasZh = $derived(stageText.hasZh);
 	let hasJa = $derived(stageText.hasJa);
@@ -268,6 +269,9 @@
 									{#if textJaLatn}
 										<p class="line ja-latn sub">{textJaLatn}</p>
 									{/if}
+								{/if}
+								{#if textMnc}
+									<p class="line mnc sub">{textMnc}</p>
 								{/if}
 							{/if}
 						</div>
@@ -586,7 +590,8 @@
 	}
 
 	.line.zh-latn,
-	.line.ja-latn {
+	.line.ja-latn,
+	.line.mnc {
 		font-size: 0.78rem;
 		font-style: italic;
 		letter-spacing: 0.02em;
@@ -753,7 +758,8 @@
 		}
 
 		.line.zh-latn,
-		.line.ja-latn {
+		.line.ja-latn,
+		.line.mnc {
 			font-size: 0.72rem;
 		}
 

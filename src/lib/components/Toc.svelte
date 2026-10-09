@@ -1028,8 +1028,9 @@
 
 	.ep-kind {
 		font-size: 0.95rem;
+		-webkit-text-stroke: 0.5px currentColor;
 		color: var(--kind, transparent);
-		opacity: 0.85;
+		opacity: 1;
 		text-shadow: none;
 		transition:
 			color 220ms var(--toc-ease),

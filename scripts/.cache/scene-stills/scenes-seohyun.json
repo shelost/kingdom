@@ -1,0 +1,128 @@
+[
+	{
+		"id": "scenes-seohyun-hem-window",
+		"entry": "Munhee",
+		"at": "He holds the hem up to the window",
+		"alt": "Their father holds the unpicked hem of a magenta coat up to the paper window while his daughter waits with a needle.",
+		"scene": "Medium low three-quarter shot inside a Silla noble house hall in spring afternoon, timber posts and paper lattice window, dark umber floorboards. The grey-bearded father, still in dusty riding clothes, stands at the lattice holding the hem of a magenta silk coat up to the window light, squinting at the seam with a dry, unreadable face. Behind him, soft in the midground, his daughter stands very still with a threaded needle, chin up, trying not to look guilty. The window is the one hard key: a raking shaft of afternoon light through the paper lattice, catching the magenta silk and the needle's glint; the father's blue #3E8EF0 lives only as a cool reflection on his sleeve. Foreground: an out-of-focus wooden post edge.",
+		"people": [
+			"seohyeon",
+			"munhee"
+		],
+		"with": [
+			"place:surabol"
+		],
+		"year": 625
+	},
+	{
+		"id": "scenes-seohyun-collar",
+		"entry": "Munhee",
+		"at": "fixes the gentleman’s collar with both hands",
+		"alt": "The old man straightens the young nobleman’s collar with both hands; the young man stands stiff and red-faced.",
+		"scene": "Close two-shot, slight worm's-eye, in the same timber hall by the paper lattice. The grey-bearded father in riding clothes reaches up and straightens the collar of a young nobleman with both hands, careful and firm, like a father before a feast; his face is deadpan, eyes on the collar, not the man. The young nobleman, in a freshly mended magenta silk coat, stands rigid, ears red, eyes sliding sideways toward someone out of frame. One low lamp set on the floor at the left edge rakes up across both faces and the magenta folds; dark umber falloff behind. Magenta #D8258C as real light in the silk sheen, not a glow.",
+		"people": [
+			"seohyeon",
+			"chunchu"
+		],
+		"with": [
+			"place:surabol"
+		],
+		"year": 625
+	},
+	{
+		"id": "scenes-seohyun-half-cup",
+		"entry": "Munhee",
+		"at": "The other half goes on the step, and nobody asks him why",
+		"alt": "At the wedding feast the bride’s father pours half his cup out on the stone step.",
+		"scene": "Medium shot at night on the stone steps outside a Silla wedding hall, red lanterns and the lit doorway behind melting into warm bokeh. The grey-bearded father, in True Bone court silk, crouches on one knee at the edge of the step and tips half a cup of wine onto the stone, the way you pour for the dead; his lips move, eyes lowered, an old private grief on a happy night. Foreground: a blurred lantern frame. One hard key: the lantern behind the doorway spilling gold across the wet stone and the thin stream of wine; cool blue #3E8EF0 only as the sheen on his sleeve. Quiet, lots of dark negative space above.",
+		"people": [
+			"seohyeon"
+		],
+		"with": [
+			"place:surabol"
+		],
+		"year": 625
+	},
+	{
+		"id": "scenes-seohyun-magenta-horse",
+		"entry": "Seohyun",
+		"at": "finds a horse tied at it",
+		"alt": "Seohyun on his own horse in the lane looks at a fine horse with a magenta saddlecloth tied at his gate.",
+		"scene": "Wide establishing over-the-shoulder shot down a narrow Surabol lane at late afternoon: earthen walls topped with giwa tiles, a timber gate with iron bosses at the far end. TWO horses. In the near foreground, seen from behind and to one side, the bearded father sits on his own dark bay horse with a plain brown saddle, in dusty blue travelling robes, turned in the saddle, very still, looking down the lane. Far ahead in the midground, an empty riderless chestnut horse stands tied at the gate wearing a bright magenta saddlecloth, nobody on it; a bareheaded groom in undyed white with a plain topknot stands beside it, shrugging. Low sun shaft down the lane, long raking shadows, dust in the air; the magenta saddlecloth is the one colour accent. Watercolor sky, roofs dissolving in haze.",
+		"people": [
+			"seohyeon"
+		],
+		"with": [
+			"place:surabol"
+		],
+		"year": 625
+	},
+	{
+		"id": "scenes-seohyun-charcoal-laugh",
+		"entry": "Seohyun",
+		"at": "Out loud, at his own gate.",
+		"alt": "Seohyun laughs at his gate while Yushin stares at him; down the lane a young nobleman swerves past a charcoal cart.",
+		"scene": "Medium-wide shot at a Surabol house gate, late afternoon, timber gate and earthen walls with giwa tiles. In the foreground the father, his face exactly the LEFT sheet face with the same blue headband and dark beard, in dusty blue riding clothes, laughs out loud, head back, a hand on the gatepost. Beside him his grown son, a tall soldierly man in a plain blue po, stares at him astonished. Deep down the lane, small and soft in the haze, a young nobleman in a magenta coat, both hands tight on the reins, swerves his chestnut horse away from a heavy charcoal cart, while the carter on foot beside the cart waves both arms at him. Low sun from the lane's end, long shadows, dust motes; magenta is the one bright accent.",
+		"people": [
+			"seohyeon",
+			"yushin"
+		],
+		"with": [
+			"place:surabol"
+		],
+		"year": 625
+	},
+	{
+		"id": "scenes-seohyun-nangbi-rise",
+		"entry": "Nangbi",
+		"at": "the general’s staff have been arguing for an hour",
+		"alt": "On a rise behind the trenches at Nangbi, the old general holds a cold cup and watches a white horse on the line below.",
+		"scene": "Wide establishing battle shot from behind and above a Silla command post on a grassy rise in autumn: below, a long line of muddy trenches, and beyond them a massed Goguryeo battle line in smoke and haze before a stone hill fort, red banners against slate cloud; Silla blue banners sag along the trench. Every banner is plain solid-coloured cloth with NO writing, NO characters, NO symbols. On the rise, small in the lower third, a grey-bearded general in steel lamellar stands among arguing staff officers, holding a small cup, gazing at one tiny white horse moving along the trench line. One cloud-break shaft lights the field; the rest is storm.",
+		"people": [
+			"seohyeon"
+		],
+		"battle": true,
+		"year": 629
+	},
+	{
+		"id": "scenes-seohyun-nangbi-cup",
+		"entry": "Nangbi",
+		"at": "counting under his breath",
+		"alt": "At the third charge, the old general sets his cold cup down on the ground.",
+		"scene": "Close low shot from the grass at ground level on the command rise at Nangbi: in the sharp foreground a weathered hand in a lamellar sleeve sets a small earthenware cup of cold tea down onto the trampled grass, very carefully. Above, slightly soft, the grey-bearded general's face in steel lamellar and helm, eyes fixed far off on the battle, lips moving as he counts. Behind him, dissolving in smoke and haze, the battle line and banners in kingdom colours. Storm light with one pale break raking across the cup rim and his knuckles; blue #3E8EF0 as the cloth peeking at his collar.",
+		"people": [
+			"seohyeon"
+		],
+		"battle": true,
+		"year": 629
+	},
+	{
+		"id": "scenes-seohyun-letter",
+		"entry": "Seohyun",
+		"at": "A magenta coat. It kept tearing.",
+		"alt": "At Daeya, Manmyung snatches Yushin’s letter while Seohyun sits caught out.",
+		"scene": "Medium two-shot inside a governor's quarters in a stone-walled border fortress at evening, timber beams, one oil lamp on a low table. A grey-bearded man in house robes sits caught, a short letter just plucked from his hand. His wife, sharp-eyed and quick, a royal-born woman in late middle age in elegant Silla hanbok, leans over the table holding the letter up to the lamp, glaring at him with amused accusation. Lamp low at the table edge rakes up both faces; deep umber room behind, a window showing dusk hills. Blue #3E8EF0 only in his sleeve sheen.",
+		"people": [
+			"seohyeon",
+			"manmyung"
+		],
+		"with": [
+			"place:daeya"
+		],
+		"year": 625
+	},
+	{
+		"id": "scenes-seohyun-saddle",
+		"entry": "Seohyun",
+		"at": "stands with his forehead against a saddle until it is dark enough",
+		"alt": "Behind the horse lines at dusk, Seohyun rests his forehead against the unnamed white horse.",
+		"scene": "Medium close shot at dusk behind the horse lines of a Silla camp after battle at Nangbi, trampled grass, a distant smoking hill fort dissolving in haze. The grey-bearded general in mud-spattered steel lamellar stands with his forehead pressed against the saddle of a tall white warhorse, eyes shut, one hand flat on its mud-caked neck. The white horse stands perfectly still, ear turned back to him, full body readable with edge light along its topline. One last low sun shaft from the left grazes the horse's white coat and the steel plates; everything else dark blue dusk. Grief held in, private.",
+		"people": [
+			"seohyeon"
+		],
+		"with": [
+			"dress:silla"
+		],
+		"year": 629
+	}
+]

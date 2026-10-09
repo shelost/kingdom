@@ -403,6 +403,9 @@
 		{#if block.jaLatn?.[j]}
 			<span class="line ja-latn sub">{block.jaLatn[j]}</span>
 		{/if}
+		{#if block.mnc?.[j]}
+			<span class="line mnc sub">{block.mnc[j]}</span>
+		{/if}
 		</span>
 	{/each}
 {/snippet}
@@ -1141,7 +1144,8 @@
 	}
 
 	.line.zh-latn,
-	.line.ja-latn {
+	.line.ja-latn,
+	.line.mnc {
 		font-size: 0.78em;
 		font-style: italic;
 		letter-spacing: 0.02em;
@@ -1406,27 +1410,7 @@
 	.mini {
 		position: relative;
 		margin: 2rem 0 2.2rem;
-		padding: 1.1rem 0 1.1rem 1.6rem;
-		border-left: 1px solid rgba(216, 178, 106, 0.28);
-	}
-
-	.mini::before,
-	.mini::after {
-		content: '';
-		position: absolute;
-		left: -1px;
-		width: 1px;
-		height: 1.6rem;
-		background: var(--gold);
-	}
-
-	.mini::before {
-		top: 0;
-	}
-
-	.mini::after {
-		bottom: 0;
-		background: var(--gold);
+		padding: 1.1rem 0;
 	}
 
 	.mini-head {

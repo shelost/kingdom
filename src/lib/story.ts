@@ -73,8 +73,9 @@ export type Block = PanelNote &
 	| { kind: 'p'; html: string; ko?: string; nsfw?: boolean; /** Soundtrack cue while this paragraph is the latest one reached. */ music?: string }
 	// `en` is the English rendering of `lines`, index-for-index.
 	// Tang / Chinese speech may add `zh` + `zhLatn` (pinyin); Yamato / Japanese
-	// speech may add `ja` + `jaLatn` (Hepburn romaji) — subtitle layers shown
-	// regardless of the reader's ko/en preference.
+	// speech may add `ja` + `jaLatn` (Hepburn romaji); Mohe speech may add `mnc`
+	// (Manchu in Möllendorff romanization) — subtitle layers shown regardless of
+	// the reader's ko/en preference.
 	| {
 			kind: 'dialogue';
 			chip: string;
@@ -84,6 +85,7 @@ export type Block = PanelNote &
 			zhLatn?: string[];
 			ja?: string[];
 			jaLatn?: string[];
+			mnc?: string[];
 			speaker?: string;
 			person?: string;
 			/** Which silhouette an unprofiled `speaker` wears, when their label does not say. */

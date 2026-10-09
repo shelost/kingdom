@@ -1104,7 +1104,7 @@ export const PEOPLE: Person[] = [
 		tagline: 'A Mohe boy Yeon pulled from the snow — and later, Dae Joyoung’s father.',
 		quote: "Loyalty needs no invitation.",
 		voice:
-			'Grim and spare; he speaks for the dead country. Korean: 반말.',
+			'Grim and spare; he speaks for the dead country. A language arc: in 634 he speaks only Mohe (dialogue carries `mnc`, Manchu in Möllendorff: “Ume jidere!”, “Ere mini boo”), Yeon answers him anyway without understanding a word, and his first Goguryeo word is Yeon’s own question parroted back (“…춥네.” / “…Cold.”). By 641 he understands everything and spends it like a miser: broken nouns and orders (“예. 안장.”), Mohe muttered to horses and to himself. From the 660s fluent, with light 평안 picked up in Yeon’s house (‑습네다, ‑디요) and a flat northern accent. With his son in 698 fluent 반말 with a 함경 edge (‑지비); at the most private moment he slips back into Mohe the boy cannot follow. Korean: 반말 to boys and equals, 평안 존대 to Yeon.',
 		arc: 'Yeon finds him young on a northern raid and brings him to Pyongyang under the name Gulgul — not Goguryeo, not Mohe, just his. He is raised one step behind Yeon’s sons until the commander posts him to the northern marches and writes the surname Dae on him. When Pyongyang falls he carries a broken piece of the crown into the Manchurian fields — and teaches his son the words Yeon would not let die.',
 		blade: 'Border sabre — plain ring pommel, notch from a Liao winter.',
 		stages: [
@@ -2544,13 +2544,16 @@ export const PEOPLE: Person[] = [
 		id: 'ungo',
 		avatar: '/ch_eungo.png',
 		name: 'Queen Eungo',
-		korean: '웅고왕후',
+		korean: '은고왕후',
+		hanja: '恩古',
 		kingdom: 'baekje',
 		gender: 'f',
 		clan: 'Royal consort faction (not Eight-Clan)',
 		tagline: 'Euija’s wife, Hyo’s mother — consort rooms against the Satek sleeve.',
 		quote: 'A crown prince is not a eldest son. He is a choice.',
 		nature: 'Quiet where Queen Satek was faction; political where a court maid is only warmth. Not Jinmo or Yunbi furniture — a royal-consort faction that moves without an Eight-Clan crest. Loves Hyo without apologising for the love looking like policy.',
+		voice:
+			'Low, unhurried and dry. She says less than she knows, answers the question she prefers or hands you a task instead, and ends a bargain with one word (“Done.”). She teases the king like a wife and the court like a creditor, and never raises her voice. Korean: crisp 하오체 at court and from behind the screen, 해요체 sliding into 반말 with Euija in private, 반말 to Hyo.',
 		arc: 'Mother of Prince Hyo — third of Euija’s five important sons. Whispers what Euija already fears: Yung has grown too used to Satek tutors, Satek berths, Satek inevitability. When Euija swaps the crown-prince mark from Yung to Hyo, Eungo does not cheer in public — she only stops looking afraid of the sleeve.',
 		binyeo: 'Pale jade court pin — soft light, hard decision.',
 		events: [
@@ -2563,7 +2566,7 @@ export const PEOPLE: Person[] = [
 		career: [
 			{ title: 'Queen consort', korean: '왕후', hanja: '王后', org: 'nation-baekje' }
 		],
-		aliases: ['Queen Eungo', 'Eungo', 'Queen Ungo', 'Ungo', 'Ungyo', 'Queen Ungyo', '웅고', '웅고왕후']
+		aliases: ['Queen Eungo', 'Eungo', 'Queen Ungo', 'Ungo', 'Ungyo', 'Queen Ungyo', '은고', '은고왕후', '웅고', '웅고왕후', '恩古']
 	},
 	{
 		id: 'hyo',
@@ -2579,6 +2582,8 @@ export const PEOPLE: Person[] = [
 		tagline: 'Third of the five — crown prince via Eungo’s rooms, not an Eight-Clan sleeve.',
 		quote: 'I did not take the mark. Father moved it.',
 		nature: 'Younger-son carefulness with a sudden target on his back. Mother’s faction is royal-consort, not Satek or Jinmo — which is exactly why Euija moves the mark to him. Wants to be worthy without sounding like he asked.',
+		voice:
+			'Careful and earnest, a beat behind the room. He states the obvious plan first (“We send men. Today.”), gets cut off, and asks one question too many. Korean: formal 하오체 on the Rock, 해요체 to his mother.',
 		arc: 'Third among Euija’s five important princes (of fifty-odd). Second-tier in the swarm until Eungo’s counsel and Euija’s Satek-fear promote him over Yung. Gains a title and a lifelong rival in one afternoon. The rivalry with Yung outlives the coup, the wine, and Sabi — and ends with brothers on opposite banks of the White River.',
 		events: [
 			{ year: 655, label: 'Named crown prince in Yung’s place.' },
@@ -2915,6 +2920,28 @@ export const PEOPLE: Person[] = [
 		tagline: 'One of the two men outside Yeon’s door — comedy until the blood.',
 		quote: "Funny until it isn’t — then stand.",
 		aliases: ['Gate Guard', 'Goguryeo guard']
+	},
+	{
+		id: 'munheemaid',
+		gender: 'f',
+		name: 'Munhee’s Maids',
+		korean: '문희의 몸종들',
+		kingdom: 'silla',
+		tagline: 'Four girls with combs and one opinion each, usually about the marshal.',
+		voice:
+			'A Silla chorus: gossip passed comb to comb, half-lines that finish each other, a squeal when the marshal walks in. Korean: Gyeongsang 해요체 to Munhee (-예, -꼬), giggling 반말 among themselves.',
+		aliases: ['Munhee’s maids', 'the maids']
+	},
+	{
+		id: 'sillaveteran',
+		gender: 'm',
+		name: 'Old Soldier',
+		korean: '늙은 병사',
+		kingdom: 'silla',
+		tagline: 'Has marched behind three kings and one very angry father.',
+		voice:
+			'A grizzled Silla foot soldier who talks down to young Hwarang and enjoys it: slow, dramatic, every pause a lesson. Korean: Gyeongsang 반말 (-제, -데이, 마).',
+		aliases: ['Old Soldier', 'Silla veteran']
 	},
 	{
 		id: 'goguard_b',
@@ -4012,11 +4039,11 @@ export const PEOPLE: Person[] = [
 		name: 'Yuri Dora',
 		korean: '유리도라',
 		kingdom: 'tamla',
-		tagline: 'King of the orange island — first to name the Three Realms (삼계) for Gyebek.',
+		tagline: 'King of the orange island, who keeps the men Baekje cannot kill and tells them stories.',
 		quote: 'Tell the story until the mainland listens.',
 		voice:
 			'The island storyteller: unhurried and wry, starts at the beginning and will not be rushed, and pokes at Gyebek’s silence. Korean: oral-tale 반말 (말하마, -지).',
-		arc: 'Collector of stories and castaways. When Gyebek washes up, Yuri Dora feeds him Tamla’s myths in order — Heaven–Earth King first — and is the mouth that first frames the Three Realms (삼계) under Hwanin’s heaven as the larger map under which Samhan’s Great War looks small. History remains the chronicle’s spine; mythology arrives mostly through his island.',
+		arc: 'Collector of stories and castaways. When Gyebek washes up, Yuri Dora pours two cups every night and tells him one of the island’s myths; Gyebek hears them all standing by the door, and by the tribute boat (Tribute) there are none left. The myth episodes themselves (Heaven–Earth King through Kangrim) are told straight by the chronicler, not by Yuri Dora. He sends Gyebek home with one request, Do not forget people, and later bows to Silla and feeds Boksin with the same tide.',
 		career: [
 			{ title: 'King of Tamla', korean: '왕', hanja: '王', org: 'nation-tamla' }
 		],
@@ -4574,6 +4601,8 @@ export const PEOPLE: Person[] = [
 		clan: 'clan-go',
 		tagline: 'Took five thousand horse onto ground he never looked at — eighteen thousand lost by dusk.',
 		quote: '…I did not look at the ground.',
+		voice:
+			'Young, quick and delighted with himself: a cavalry king who laughs first and thinks on the gallop. Teases, interrupts, wants things loudly, and is generous the moment he likes you. Short lines, royal impatience, never a speech. Korean: royal 반말/하라체 to his own people; 하오체 to a foreign equal, slipping to 반말 when he is having fun.',
 		arc: 'Eleventh king of Goguryeo. When the Wei regent Guanqiu Jian marched in 244, Dongcheon answered with cavalry pride instead of scouts — the Yangmaek plain swallowed his host. Hwando burned; he fled east in borrowed robes while an officer walked out wearing the crown and died in his place.',
 		events: [
 			{ year: 209, label: 'Succeeds his father Sangno as king.' },
@@ -4600,6 +4629,16 @@ export const PEOPLE: Person[] = [
 		voice:
 			'Unhurried and dry. Talks in conditions and counts (days, men, grain), answers a question with a question about hunting or farming, and never raises his voice. His jokes are cold and arrive late (“So does the cold, this year”). Fewer words than anyone in the tent. Korean: even 하게체 (자네) to a young officer or an ally, 하라체 to soldiers.',
 		arc: 'Wei’s Grand Commandant. In 238 he marches on Gongsun Yuan of Liaodong with forty thousand men, leaves his banners in the south, crosses the Liao in the north, and sits out a month of floods before Xiangping, beheading the one officer who asks to move camp. When the rain stops he takes the city, kills Gongsun Yuan at the Liang River where a falling star came down, and heaps the heads of seven thousand men by the gate. Goguryeo sends riders to help him (a thousand by its own record, several thousand by Wei’s). His grandson founds the Jin; four centuries later the Tang Second Emperor writes his verdict in the Jin Shu with his own brush. Real-world figure: 司馬懿 / 사마의 (179–251), posthumously Emperor Xuan of Jin.',
+		stages: [
+			{
+				id: 'chancellor',
+				lookOnly: true,
+				name: 'The Western Chancellor',
+				korean: '서쪽 승상',
+				title: 'A legend in the West',
+				label: 'Before his name'
+			}
+		],
 		events: [{ year: 238, label: 'Takes Xiangping from Gongsun Yuan, with Goguryeo riders beside him.' }],
 		aliases: ['Sima Yi', '사마의', '司馬懿', 'Sima Xuanwang', '司馬宣王']
 	},
@@ -4617,6 +4656,16 @@ export const PEOPLE: Person[] = [
 		voice:
 			'Theatrical, quick and charming: a salesman of alliances who has sold everyone something. Grand when winning (“Heaven has always liked me”), wheedling and clever when losing, never dignified. Korean: grand 하라체 that slides into pleading 반말.',
 		arc: 'Third of the Gongsun lords of Liaodong. He takes titles from Wu, sends Wu’s envoys’ heads to Wei, then calls himself King of Yan in 237 and watches a Wei army drown in the rain. In 238 Sima Yi comes back for him. He sits in Xiangping through a month of floods, starves, sends envoys to bargain, and breaks out south-east with his son Xiu; both are cut down at the Liang River. The Jin Shu, written under the Tang, calls him Wenyi to keep the taboo character 淵 off the page. Real-world figure: 公孫淵 / 공손연 (d. 238).',
+		stages: [
+			{
+				id: 'lord',
+				lookOnly: true,
+				name: 'Lord Gongsun',
+				korean: '공손씨',
+				title: 'Lord of Liaodong',
+				label: 'As Goguryeo calls him'
+			}
+		],
 		events: [
 			{ year: 237, label: 'Calls himself King of Yan.' },
 			{ year: 238, label: 'Killed at the Liang River as Xiangping falls.' }
@@ -5275,7 +5324,7 @@ export const PEOPLE: Person[] = [
 		quote: "You will never be crazier than we are.",
 		voice:
 			'Plain and defiant: soldier’s banter with his men, rage in short bursts at the emperor, wry about the siege. His town teases him about his wandering eye (Lazy-eye, 짝눈이) and he jokes back. Korean: 반말 to his men and to the enemy alike; 해요체 to the old women of Ansi, 존댓말 to his old commander, and formal 존댓말 when he sends an answer to Yeon.',
-		arc: 'The chronicles never recorded his name; the people of Ansi called him Lazy-eye for the eye that wanders. As a junior warrior of the Western Command he held the horses outside the High Summit and heard his commander say a ruthless man is good or bad depending on the age he is born into. When Yeon butchers the court, that commander among it, the chief beheads Yeon’s messenger, beats Yeon’s small army with his garrison and his townspeople, keeps the old colours on his wall — and then defends Yeon’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. His town carves him in stone that winter. Nobody wrote down what became of him after. Later writers tried to give him a name. The wall kept its silence better.',
+		arc: 'The chronicles never recorded his name; the people of Ansi called him Lazy-eye for the eye that wanders. As a young levy on the long wall he refused to re-lay a leaning stone for Commander Yeon, who kicked it, hurt his foot and never got the name. As a junior warrior of the Western Command he held the horses outside the High Summit and heard his commander say a ruthless man is good or bad depending on the age he is born into. When Yeon butchers the court, that commander among it, the chief beheads Yeon’s messenger, beats Yeon’s small army with his garrison and his townspeople, keeps the old colours on his wall — and then defends Yeon’s kingdom against the greatest army on earth, handing Taizong the first defeat of his life. His town carves him in stone that winter. Nobody wrote down what became of him after. Later writers tried to give him a name. The wall kept its silence better.',
 		blade: 'Nameless wall sword — ring pommel worn smooth, no crest at all; the fortress was the signature.',
 		events: [
 			{ year: 634, label: 'A junior warrior under the Western Commander at the High Summit.' },
@@ -8585,6 +8634,8 @@ const COLOR: Record<string, string> = {
 	dosuryu: '#c98578',
 	goguard_a: '#b07068',
 	goguard_b: '#9a5c55',
+	munheemaid: '#e0a8c0',
+	sillaveteran: '#8a7a5a',
 	seondohae: '#5f7fa6',
 	cheongwan: '#c9a0b4',
 	narim: '#3d9e52',
@@ -8799,6 +8850,8 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	// —— Generation I ——
 	sunduk: ['gen-i'],
 	jinduk: ['gen-i'],
+	munheemaid: ['gen-i'],
+	sillaveteran: ['gen-i'],
 	jinpyung: ['gen-i'],
 	chunmyung: ['gen-i'],
 	yongsu: ['gen-i'],

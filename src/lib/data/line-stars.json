@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-10-09T03:38:02.390Z",
+	"updatedAt": "2026-10-09T04:51:17.196Z",
 	"lines": [
 		{
 			"id": "ln-odqyyi",
@@ -15,6 +15,13 @@
 			"person": "yangmanchun",
 			"en": "I have heard that a true man needs only one person to cherish, and one person to serve, and that is enough.",
 			"createdAt": "2026-10-09T03:38:02.340Z"
+		},
+		{
+			"id": "ln-186gv29",
+			"episodeId": "chunchu-era-muryuk",
+			"entryTitle": "Muryuk",
+			"en": "They name him Seohyun. The first voice he hears is his mother’s, in a Surabol accent. His father says nothing until the boy is asleep. Then he leans over the cradle and says something very quietly, in the accent of a harbour that isn’t there any more.",
+			"createdAt": "2026-10-09T04:51:17.106Z"
 		}
 	]
 }

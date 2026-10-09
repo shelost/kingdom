@@ -1,0 +1,69 @@
+[
+	{
+		"id": "scenes-yeon-doorway-mohe",
+		"entry": "Commander Yeon",
+		"at": "This is my house. You go.",
+		"alt": "In a roofless Mohe doorway in the snow, a small boy with a shaved crown and braids shouts at Yeon, who crouches in front of him grinning.",
+		"scene": "Low two-shot at a child's eye level, winter dusk in a burned Mohe village on the eastern border. A charred timber doorframe with no roof, snow settling on black ash. The Mohe boy, about nine, shaved crown and two long braids, fur-trimmed coat, plants a stick against the commander's chest and shouts with his whole body, mouth wide, furious and terrified. Yeon Gesomun, twenty-nine, in Goguryeo steel lamellar with red cloth at the collar, crouches on one knee so the stick touches his breastplate, head tilted, grinning, plainly not understanding a word. Behind them a red-bay horse and two blurred soldiers in falling snow. One hard key: the low red-orange of embers still glowing in the ash, catching the boy's cheek and the steel plates; red #d0362f as ember light, never a glow.",
+		"people": ["gulgul:young", "gesomun"],
+		"year": 634
+	},
+	{
+		"id": "scenes-yeon-long-wall",
+		"entry": "Commander Yeon",
+		"at": "Every command owes the wall a gang.",
+		"alt": "A half-built stone wall snakes over winter hills; a levy gang hauls stones while a tall commander walks the top with a plumb line and a small boy follows.",
+		"scene": "Wide establishing shot, late winter afternoon on the Goguryeo frontier. A half-built dry-stone border wall of grey cut blocks climbs a long brown ridge in one diagonal, scaffold poles and earth ramps along it, snow in the hollows. A levy gang of young farm soldiers in undyed white hemp with wrapped shins hauls stones on carrying frames and A-frame litters, tiny painted shapes. On top of the wall, small in the upper third, Yeon Gesomun walks the course with a plumb line swinging from his fist, a small Mohe boy with braids one step behind him holding the bob in both hands. Huge pale winter sky in granulated wash, one low sun shaft raking the ridge and throwing long shadows from every stone; red Goguryeo pennants on scaffold poles.",
+		"people": ["gesomun", "gulgul:young"],
+		"with": ["dress:goguryeo"],
+		"year": 634
+	},
+	{
+		"id": "scenes-yeon-plumb-stone",
+		"entry": "Commander Yeon",
+		"at": "The line drops against a stone in the third course",
+		"alt": "Yeon holds a plumb line against a leaning stone while a young soldier with one wandering eye looks back at him, unbothered.",
+		"scene": "Medium two-shot across a leaning grey wall stone, low three-quarter angle from the wall's foot. A plumb line hangs from Yeon Gesomun's raised fist and swings a thumb's width clear of the tilted stone face in the foreground. Opposite him, a young soldier of twenty-four, the attached Guardian face but younger: no full beard, only light stubble, hair tied in a plain topknot, no helmet, undyed white hemp work coat with sleeves tied back and mud to the elbows. One of his eyes looks straight at Yeon; the other drifts off to the side, a lazy eye. He is calm, faintly amused, a stone-hauling strap over one shoulder. Yeon in steel lamellar with red cloth at the collar, ring-pommel sword at his hip, scowling. Low sun from the side rakes the stone texture; levy gang blurred behind.",
+		"people": ["gesomun", "yangmanchun"],
+		"sword": true,
+		"year": 634
+	},
+	{
+		"id": "scenes-yeon-kick",
+		"entry": "Commander Yeon",
+		"at": "Yeon kicks the stone.",
+		"alt": "Yeon kicks the leaning stone and it does not move; the young soldier watches with one eye while the Mohe boy points at the stone.",
+		"scene": "Worm's-eye view from the base of the half-built wall, the leaning grey stone huge in the foreground. Yeon Gesomun's armoured boot strikes it mid-kick, dust and grit flying, the stone not moving at all; his face above is a wince he is trying to turn into anger. To the right, the young soldier with one wandering eye (the attached Guardian face, younger, stubble only, bare head with topknot, undyed white work hemp) stands with arms folded, deadpan. Between them a small Mohe boy with a shaved crown and braids, holding a plumb bob in both hands, points at the stone, mouth open, naming it. Ring-pommel sword at Yeon's hip. Low winter sun from the left, long shadows up the wall face, pale storm sky in wash.",
+		"people": ["gesomun", "yangmanchun", "gulgul:young"],
+		"sword": true,
+		"year": 634
+	},
+	{
+		"id": "scenes-yeon-first-word",
+		"entry": "Commander Yeon",
+		"at": "He said cold.",
+		"alt": "At a stable door at dawn, the Mohe boy in oversized gloves holds the bridle of Yeon's red bay while Yeon, in the saddle, laughs down at him.",
+		"scene": "Low angle at a timber stable door at first light, frost on the packed earth, breath steaming. The Mohe boy, shaved crown and braids, wears leather gloves far too big for him and holds the bridle of a red-bay horse with both hands, looking up, lips just parted on his first word. Yeon Gesomun sits the horse above him in steel lamellar and a dark travelling cloak, head thrown back in a laugh, one gloveless hand reaching down toward the boy's head. An older man in a grey robe and fur hat stands behind in the doorway, half in shadow. One hard key: low cold dawn through the door behind, a small lamp hung on the post warming the boy's face; red #d0362f only in Yeon's collar cloth.",
+		"people": ["gulgul:young", "gesomun"],
+		"year": 634
+	},
+	{
+		"id": "scenes-yeon-ansi-leaning-stone",
+		"entry": "Ansi",
+		"at": "with a tilt you could see from the emperor’s tent",
+		"alt": "On Ansi's battered wall the Guardian sets a stone at a deliberate tilt while a young archer frowns at it; the Tang earthen mountain rises beyond.",
+		"scene": "Over-the-shoulder shot from behind a young archer on the inside of Ansi's stone wall during the siege, summer dusk. The Guardian of Ansi, the attached face, bearded, in steel Goguryeo lamellar with red wing shoulder-cloth, no helmet, kneels on the parapet and sets a heavy grey stone into the gap with both hands, deliberately tilted into the hill, his face calm, one eye looking at the stone and the other wandering. Beyond the wall rises the raw brown slope of the Tang earthen mountain, hauling baskets on it, smoke and yellow Tang banners in haze. Torches along the parapet throw warm bokeh; one low red-gold sun shaft through smoke lands on his hands and the stone.",
+		"people": ["yangmanchun"],
+		"with": ["place:ansi"],
+		"sword": true
+	},
+	{
+		"id": "scenes-yeon-balhae-lullaby",
+		"entry": "Balhae",
+		"at": "My boy. Sleep.",
+		"alt": "In a snowbound cave, Gulgul bends over his sleeping son by a tiny fire and speaks to the top of his head in Mohe.",
+		"scene": "Close two-shot inside a narrow mountain cave in Manchuria, deep winter night. A fire the size of two cupped hands burns low on the stone floor in the foreground, sharp, with ember bokeh. The boy Dae Joyoung, about twelve, asleep curled against his father under heavy furs, both fists closed around a bundle of red silk with a glint of gold. Dae Gulgul, the attached grown face, weathered, thin moustache and short beard, heavy white-grey fur mantle over grey lamellar, bends his head to the top of the boy's head, eyes half closed, lips moving on a word, the hardest face softened for once. The coals light them from below; the cave mouth behind is a pale blue wall of falling snow. Rough rock walls angled to the lens, their two shadows climbing the stone.",
+		"people": ["gulgul", "daejoyoung"],
+		"year": 668
+	}
+]

@@ -183,6 +183,15 @@
 					oninput={(v) =>
 						set(() => (block.jaLatn = v.trim() ? v.split('\n') : undefined))}
 				/>
+			{:else if block.mnc || who?.id === 'gulgul'}
+				<Editable
+					plain
+					value={(block.mnc ?? []).join('\n')}
+					placeholder={'Manchu (Möllendorff) — one line per row…'}
+					class="bdlg ben"
+					oninput={(v) =>
+						set(() => (block.mnc = v.trim() ? v.split('\n') : undefined))}
+				/>
 			{/if}
 		</div>
 	</div>
