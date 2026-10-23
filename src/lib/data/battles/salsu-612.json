@@ -170,7 +170,7 @@
 				]
 			],
 			"width": 20,
-			"label": "Taedong river",
+			"label": "Tedong river",
 			"ko": "대동강",
 			"labelAt": [
 				560,
@@ -259,11 +259,13 @@
 			]
 		},
 		{
-			"kind": "city",
+			"kind": "town",
+			"model": "pyongyang",
 			"at": [
 				712,
 				466
 			],
+			"size": 30,
 			"side": "goguryeo",
 			"label": "Pyongyang",
 			"ko": "평양성",
@@ -936,9 +938,10 @@
 		"Book of Sui 61, Biography of Yuwen Shu",
 		"Book of Sui 81, Eastern Barbarians (Goguryeo)",
 		"Zizhi Tongjian 181, Sui Daye 8, sixth and seventh months",
-		"Samguk Sagi 20, Annals of Goguryeo, Yeongyang year 23",
-		"Samguk Sagi 44, Biography of Eulji Mundeok"
+		"Samguk Sagi 20, Annals of Goguryeo, Yungyang year 23",
+		"Samguk Sagi 44, Biography of Ulji Munduk"
 	],
 	"note": "The records give the nine armies at three hundred and five thousand when they crossed the Liao, a hundred days' rations per man, Munduk's visit to the camp west of the Yalu, seven Sui wins in one day, the halt thirty li from Pyongyang against a hill, the poem and the second offer to bow, the retreat in square formations, the attack on the rearguard with the army half across the Salsu, the death of Xin Shixiong, four hundred and fifty li to the Yalu in a day and a night, and two thousand seven hundred back at Liaodong fortress. The nine armies' sizes are not given either; the map spreads them evenly, about thirty-four thousand each. The 2,700 is the count at the end of the flight; the map takes it at the river where the army broke. Losses before the Yalu, on the march and in the running fights are not recorded. The Salsu follows the usual reading as the Cheongcheon; North Korean historians place it in Liaodong. In the records the seven were running fights and Munduk's surrender came twice; the story turns them into seven surrenders. Lai Huer's fleet, beaten at Pyongyang before the land armies came, is left off.",
-	"noteKo": "기록이 전하는 것은 요하를 건널 때 삼십만 오천이던 아홉 군, 한 사람당 백 날 치 군량, 압록수 서쪽 진영을 찾은 문덕, 하루 일곱 번의 수군 승리, 산을 등진 평양성 삼십 리 앞의 정지, 시와 두 번째 항복 제의, 방진을 짠 퇴각, 살수를 반쯤 건넜을 때 후군을 친 공격, 신세웅의 전사, 하루 밤낮 사백오십 리의 도주, 요동성으로 돌아온 이천칠백이다. 아홉 군 각각의 수도 없어 고르게 약 삼만 사천씩 나누었다. 이천칠백은 도주가 끝났을 때의 수인데, 지도에서는 군이 무너진 강에서 적용했다. 압록수 이전과 행군 중, 쫓고 쫓기는 싸움에서의 손실은 기록에 없다. 살수는 청천강으로 보는 통설을 따랐고, 북한 학계는 요동에 둔다. 기록에서 일곱 번은 달아나며 싸운 것이고 문덕의 항복은 두 번인데, 이야기는 이를 일곱 번의 항복으로 바꾸었다. 지상군이 닿기 전 평양에서 패한 내호아의 수군은 지도에서 뺐다."
+	"noteKo": "기록이 전하는 것은 요하를 건널 때 삼십만 오천이던 아홉 군, 한 사람당 백 날 치 군량, 압록수 서쪽 진영을 찾은 문덕, 하루 일곱 번의 수군 승리, 산을 등진 평양성 삼십 리 앞의 정지, 시와 두 번째 항복 제의, 방진을 짠 퇴각, 살수를 반쯤 건넜을 때 후군을 친 공격, 신세웅의 전사, 하루 밤낮 사백오십 리의 도주, 요동성으로 돌아온 이천칠백이다. 아홉 군 각각의 수도 없어 고르게 약 삼만 사천씩 나누었다. 이천칠백은 도주가 끝났을 때의 수인데, 지도에서는 군이 무너진 강에서 적용했다. 압록수 이전과 행군 중, 쫓고 쫓기는 싸움에서의 손실은 기록에 없다. 살수는 청천강으로 보는 통설을 따랐고, 북한 학계는 요동에 둔다. 기록에서 일곱 번은 달아나며 싸운 것이고 문덕의 항복은 두 번인데, 이야기는 이를 일곱 번의 항복으로 바꾸었다. 지상군이 닿기 전 평양에서 패한 내호아의 수군은 지도에서 뺐다.",
+	"winner": "goguryeo"
 }

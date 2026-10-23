@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { chapters, arcNumber } from '$lib/story';
-	import { arcLabel } from '$lib/tocTree';
+	import { chapters } from '$lib/story';
+	import { arcLabelAt } from '$lib/tocTree';
 	import { reading, episodes, episodeNavLabel, goToEpisode } from '$lib/reading.svelte';
 	import GlassSelect, { type GlassOption } from './GlassSelect.svelte';
 
@@ -34,7 +34,7 @@
 			if (ep.kind !== 'entry') return { value: ep.id, label, strong: ep.kind === 'part' };
 			const ch = chapters[ep.chapterIndex];
 			const name = (ko && ch.korean) || ch.title;
-			const arc = arcLabel(arcNumber(ep.chapterIndex), ko);
+			const arc = arcLabelAt(ep.chapterIndex, ko);
 			return { value: ep.id, label, group: name === arc ? arc : `${arc} · ${name}` };
 		})
 	);

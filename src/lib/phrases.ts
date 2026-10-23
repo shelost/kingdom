@@ -4,7 +4,7 @@
  * out loud, not the literal person / place / institution that coined it.
  *
  * Alias discipline: prefer multi-word forms so they do not steal bare place
- * or person links (Surabol the city, Geunchogo the king, Ansi the fortress).
+ * or person links (Surabol the city, Gunchogo the king, Ansi the fortress).
  */
 
 import type { Person } from '$lib/people';
@@ -151,7 +151,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — a catastrophe that changes everything',
 		tagline: 'The private wound that redraws the map — before and after, nothing is the same.',
 		quote: 'Before Daeya. After Daeya. There is no third tense.',
-		arc: 'In the eighth month of 642 Daeya Fortress falls, Gotaso dies, and Chunchu’s revenge begins — the Tang alliance, the end of Baekje, the end of Goryeo, all running back through one betrayed gate. The Daeya Incident is what people say for a single day that splits history: a 9/11 of Samhan, after which every sentence is dated. The fortress keeps the place; the phrase keeps the before-and-after.',
+		arc: 'In the eighth month of 642 Daeya Fortress falls, Gotaso dies, and Chunchu’s revenge begins — the West alliance, the end of Baekje, the end of Goryeo, all running back through one betrayed gate. The Daeya Incident is what people say for a single day that splits history: a 9/11 of Samhan, after which every sentence is dated. The fortress keeps the place; the phrase keeps the before-and-after.',
 		events: [
 			{ year: 642, label: 'Daeya falls; Gotaso dies.' },
 			{ label: 'Becomes the name for a world-splitting catastrophe.' }
@@ -176,7 +176,7 @@ export const PHRASES: Person[] = [
 		quote: 'If it matters, it has already been argued in Surabol.',
 		arc: 'Surabol is Silla’s capital — and then it is more than a city. To call a place Surabol is to say the center of a people’s attention lives there: fashion, rank, gyuku handicaps, the rumour that crowns queens. Other kingdoms have seats; Surabol has gravity. The map entry keeps the coordinates under Namsan; this phrase keeps the habit of facing one direction when you say “the capital.”',
 		events: [
-			{ year: -57, label: 'Founded as Seorabeol, the legend says.' },
+			{ year: -57, label: 'Founded as Surabol, the legend says.' },
 			{ label: 'Becomes the metonym for a country’s center.' }
 		],
 		// No bare "Surabol" alias — the place profile keeps geographic links.
@@ -184,24 +184,24 @@ export const PHRASES: Person[] = [
 	},
 	{
 		id: 'phrase-geunchogo',
-		name: 'Geunchogo',
+		name: 'Gunchogo',
 		korean: '근초고',
 		hanja: '近肖古',
 		entity: 'phrase',
 		kingdom: 'baekje',
 		title: 'Idiom — a golden age everyone is trying to go back to',
 		tagline: 'The reign people chant when the present is not enough.',
-		quote: 'Restore the reign of great Geunchogo.',
-		arc: 'King Geunchogo (#13) kills a Goguryeo king at Pyongyang and holds the Han, the west coast, and the sea lanes — Baekje’s high-water mark. Three centuries later the courtyard still chants his name at a clever king who has already decided a country is a story. Geunchogo becomes the word for any lost peak: Make Baekje great again; every restoration slogan; the hurricane people would rather remember than weather.',
+		quote: 'Restore the reign of great Gunchogo.',
+		arc: 'King Gunchogo (#13) kills a Goguryeo king at Pyongyang and holds the Han, the west coast, and the sea lanes — Baekje’s high-water mark. Three centuries later the courtyard still chants his name at a clever king who has already decided a country is a story. Gunchogo becomes the word for any lost peak: Make Baekje great again; every restoration slogan; the hurricane people would rather remember than weather.',
 		events: [
-			{ year: 371, label: 'Geunchogo’s high-water mark at Pyongyang.' },
+			{ year: 371, label: 'Gunchogo’s high-water mark at Pyongyang.' },
 			{ label: 'Becomes the proverb for a golden age to restore.' }
 		],
 		aliases: [
-			'another Geunchogo',
-			'back to Geunchogo',
-			'Geunchogo years',
-			'a Geunchogo'
+			'another Gunchogo',
+			'back to Gunchogo',
+			'Gunchogo years',
+			'a Gunchogo'
 		]
 	},
 	{
@@ -303,7 +303,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — one hand that stops everything',
 		tagline: 'Unanimity or nothing — a single objection freezes a kingdom.',
 		quote: 'One hand down stops a queen, an heir, or a war.',
-		arc: 'Silla’s Harmony Council of Councillors (대등) decides only when every sleeve agrees under the High Councillor (상대등). Bidam’s single withheld hand blocks Seungman in 645; the physics is why Chunchu builds the Royal Secretariat (집사부). Harmony Veto is any system where one holdout equals infinity — a filibuster with bone rank, the polite word for paralysis.',
+		arc: 'Silla’s Harmony Council of Councillors (대등) decides only when every sleeve agrees under the High Councillor (상대등). Bidam’s single withheld hand blocks Sungman in 645; the physics is why Chunchu builds the Royal Secretariat (집사부). Harmony Veto is any system where one holdout equals infinity — a filibuster with bone rank, the polite word for paralysis.',
 		events: [
 			{ year: 645, label: 'Bidam alone withholds his hand.' },
 			{ label: 'Named for any single-voice stoppage.' }
@@ -375,9 +375,9 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — where four fleets burn',
 		tagline: 'The naval catastrophe that ends a restoration.',
 		quote: 'Four hundred ships. One afternoon. No country left to sail home to.',
-		arc: 'In 663 Tang, Silla, Baekje and Yamato meet at the Baekgang — the first time all four share one battle — and the Baekje Restoration Army burns. Yung and Pung finish a succession quarrel on opposite banks. White River is any final water where alliances and fleets die together: the last throw, the harbour that becomes a grave.',
+		arc: 'In West 11, Silla, Baekje and the East meet at the Bekgang — the first time all four share one battle — and the Baekje Restoration Army burns. Yung and Pung finish a succession quarrel on opposite banks. White River is any final water where alliances and fleets die together: the last throw, the harbour that becomes a grave.',
 		events: [
-			{ year: 663, label: 'Four fleets at the Baekgang.' },
+			{ year: 663, label: 'Four fleets at the Bekgang.' },
 			{ label: 'Becomes the name for a terminal naval disaster.' }
 		],
 		aliases: ['a White River', 'another White River', 'White River disaster']

@@ -31,7 +31,6 @@
 	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { stageText } from '$lib/stageText';
-	import { arcLabel } from '$lib/tocTree';
 	import { buildBeats } from '$lib/beats';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
 	import {
@@ -59,6 +58,7 @@
 	import { stinger, whoosh, closeStingers } from '$lib/stingers';
 	import Blocks from './Blocks.svelte';
 	import SpeakerPlate from './SpeakerPlate.svelte';
+	import SpeakerName from './SpeakerName.svelte';
 	import { storyImg, optimizeSrc } from '$lib/img';
 	import { cueMenuTarget, openImageMenu } from '$lib/imageMenu.svelte';
 
@@ -579,12 +579,14 @@
 					in:fly={{ y: reduce ? 0 : -10, duration: reduce ? 0 : 360 }}
 					out:fade={{ duration: reduce ? 0 : 460 }}
 				>
-					<span class="season">{arcLabel(episode.arc)} · {episode.chapter.title}</span>
-					<span class="ep">
-						Episode {episode.episode}
-						<span class="of">/</span>
-						{episode.episodeCount}
-					</span>
+					<span class="season">{episode.season}</span>
+					{#if episode.episode}
+						<span class="ep">
+							Episode {episode.episode}
+							<span class="of">/</span>
+							{episode.episodeCount}
+						</span>
+					{/if}
 					<span class="bar" aria-hidden="true">
 						<span class="fill" style:transform="scaleX({reading.entryProgress})"></span>
 					</span>
@@ -613,7 +615,9 @@
 			<header class="script-head">
 				<span class="script-label">Script</span>
 				{#if episode}
-					<span class="script-ep">Ep {episode.episode} · {episode.entry.title}</span>
+					<span class="script-ep"
+						>{episode.episode ? `Ep ${episode.episode} · ` : ''}{episode.entry.title}</span
+					>
 				{/if}
 			</header>
 			<div class="script-list" bind:this={railEl} onclickcapture={onRailClickCapture}>
@@ -659,8 +663,8 @@
 						</button>
 					{/key}
 					<div class="char-meta">
-						<span class="char-name">{who}</span>
-						{#if ko}<span class="char-ko">{ko}</span>{/if}
+						<span class="char-name"><SpeakerName name={who} /></span>
+						{#if ko}<span class="char-ko"><SpeakerName name={ko} /></span>{/if}
 					</div>
 				{:else}
 					<div class="char-empty" aria-hidden="true">
@@ -738,13 +742,13 @@
 				in:fly={{ y: reduce ? 0 : 14, duration: reduce ? 0 : 380 }}
 				out:fade={cardOut}
 			>
-				<span class="end-eyebrow">End of episode {ep.episode}</span>
+				<span class="end-eyebrow">{ep.episode ? `End of episode ${ep.episode}` : `End of ${ep.season}`}</span>
 				<button type="button" class="end-next" onclick={jumpNext}>
 					<span class="end-arrow" aria-hidden="true">Next →</span>
 					<span class="end-title">{next.title}</span>
 					{#if next.subtitle}<span class="end-ko">{next.subtitle}</span>{/if}
 				</button>
-				<span class="end-run">{ep.episode} of {ep.episodeCount}</span>
+				{#if ep.episode}<span class="end-run">{ep.episode} of {ep.episodeCount}</span>{/if}
 			</div>
 		{/if}
 	</div>
@@ -765,10 +769,12 @@
 				/>
 			{/if}
 			<div class="cold-inner" in:fly={{ y: reduce ? 0 : 16, duration: reduce ? 0 : 520 }}>
-				<span class="cold-season">{arcLabel(episode.arc)} · {episode.chapter.title}</span>
+				<span class="cold-season">{episode.season}</span>
 				<h2 class="cold-title">
-					<span class="cold-num">Episode {episode.episode}</span>
-					<span class="cold-dot" aria-hidden="true">·</span>
+					{#if episode.episode}
+						<span class="cold-num">Episode {episode.episode}</span>
+						<span class="cold-dot" aria-hidden="true">·</span>
+					{/if}
 					<span class="cold-name">{episode.entry.title}</span>
 				</h2>
 				{#if episode.entry.subtitle}

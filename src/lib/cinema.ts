@@ -16,16 +16,9 @@ import { liveDisplayArt } from '$lib/stillEditUi.svelte';
 import { entryForReading, nsfwAllowed } from '$lib/nsfwUi.svelte';
 import { PLACES } from '$lib/places';
 import { episodes, resolveEpisodeIndex } from '$lib/reading.svelte';
-import {
-	arcNumber,
-	chapters,
-	entryId,
-	EPISODE_COUNT,
-	episodeOrdinal,
-	type Chapter,
-	type Entry
-} from '$lib/story';
+import { chapters, entryId, EPISODE_COUNT, episodeOrdinal, type Chapter, type Entry } from '$lib/story';
 import { staticAsset } from '$lib/staticAsset.svelte';
+import { arcLabelAt } from '$lib/tocTree';
 
 /* ————— where we are in the run ————— */
 
@@ -40,14 +33,20 @@ export interface EpisodeContext {
 	/** canonical entry id — `chapterId-slug`, the key the TOC and hashes use */
 	id: string;
 	chapter: Chapter;
-	/** Reader-facing Arc number; null for an epilogue. */
-	arc: number | null;
+	/** Arc label plus Arc title — `Arc 3 · Iron Will`; just `Prologue` when the title repeats the label. */
+	season: string;
 	entry: Entry;
-	/** running episode ordinal in the whole run, the same number the TOC shows */
+	/** running episode ordinal in the whole run, the same number the TOC shows; 0 for the unnumbered prologue */
 	episode: number;
 	episodeCount: number;
 	/** the episode this one hands off to, or null at the end of the run */
 	next: EpisodeCue | null;
+}
+
+function seasonOf(chapterIndex: number): string {
+	const label = arcLabelAt(chapterIndex);
+	const title = chapters[chapterIndex]?.title;
+	return title && title !== label ? `${label} · ${title}` : label;
 }
 
 function cueOf(chapter: Chapter, entryIndex: number): EpisodeCue | null {
@@ -81,7 +80,7 @@ export function episodeContextOf(id: string | null): EpisodeContext | null {
 	return {
 		id: entryId(chapter.id, entry.title),
 		chapter,
-		arc: arcNumber(ref.chapterIndex),
+		season: seasonOf(ref.chapterIndex),
 		entry,
 		episode: episodeOrdinal(ref.chapterIndex, ref.entryIndex),
 		episodeCount: EPISODE_COUNT,

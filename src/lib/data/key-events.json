@@ -1,0 +1,302 @@
+[
+	{
+		"id": "gwansan",
+		"year": 554,
+		"en": "The Gwansan road: King Seong dies",
+		"ko": "관산성 길에서 성왕이 죽다",
+		"covers": [
+			{ "ep": "Gwansan" },
+			{ "ep": "Muryuk", "flashback": 554 },
+			{ "ep": "Seohyun", "flashback": 554 },
+			{ "ep": "Seung (承)", "text": "Gwansan road" }
+		]
+	},
+	{
+		"id": "great-gaya",
+		"year": 562,
+		"en": "Great Gaya falls",
+		"ko": "대가야 멸망",
+		"covers": [
+			{ "ep": "Sadaham", "scene": ["The Battle of Great Gaya", "Great Gaya, the square"] },
+			{ "ep": "Muryuk", "scene": ["Great Gaya · 562", "The Cut Rope"] },
+			{ "ep": "Seohyun", "flashback": 562 }
+		]
+	},
+	{
+		"id": "cloud-king-dies",
+		"year": 576,
+		"en": "The Cloud King dies",
+		"ko": "진흥왕 승하",
+		"covers": [
+			{ "ep": "Bihyung", "scene": "the Cloud King’s last night" },
+			{ "ep": "Yongsu", "scene": "the Cloud King’s last night" }
+		]
+	},
+	{
+		"id": "jinji-deposed",
+		"year": 579,
+		"en": "The Council deposes King Jinji",
+		"ko": "화백회의가 진지왕을 폐위하다",
+		"covers": [
+			{ "ep": "Bihyung", "scene": "the night drum" },
+			{ "ep": "Yongsu", "scene": "the night drum" },
+			{ "ep": "Harmony Council", "flashback": 579 }
+		]
+	},
+	{
+		"id": "ghost-bridge",
+		"year": 602,
+		"en": "Bihyung's ghosts build the bridge in one night",
+		"ko": "비형의 귀신들이 하룻밤에 다리를 놓다",
+		"covers": [
+			{ "ep": "Bihyung", "scene": "The Ghost Bridge · the next night" },
+			{ "ep": "Yongsu", "scene": ["the night of the bridge", "The Ghost Bridge · the next night"] }
+		]
+	},
+	{
+		"id": "yushin-hwarang",
+		"year": 610,
+		"en": "Yushin's first day in the Hwarang",
+		"ko": "유신, 화랑 첫날",
+		"covers": [
+			{ "ep": "Seohyun", "scene": "Class 51’s first morning" },
+			{ "ep": "Gi (起)", "flashback": 610 },
+			{ "ep": "Jeon (轉)", "flashback": 610 },
+			{ "ep": "Gyul (結)", "flashback": 610 }
+		]
+	},
+	{
+		"id": "palace-stream",
+		"year": 612,
+		"en": "Yongsu takes Chunchu to the palace stream",
+		"ko": "용수가 춘추를 궁궐 개울로 데려가다",
+		"covers": [
+			{ "ep": "Harmony Council", "flashback": 612 },
+			{ "ep": "Bihyung", "scene": "The palace stream" },
+			{ "ep": "Yongsu", "scene": "The palace stream" }
+		]
+	},
+	{
+		"id": "salsu",
+		"year": 612,
+		"en": "The Sui army drowns at the Salsu",
+		"ko": "살수에서 수나라 군대가 무너지다",
+		"covers": [{ "ep": "Colossal River" }]
+	},
+	{
+		"id": "munhee-wedding",
+		"year": 625,
+		"en": "Chunchu marries Munhee",
+		"ko": "춘추와 문희의 혼인",
+		"covers": [
+			{ "ep": "Munhee", "scene": ["The Torn Coat", "The Pyre", "The Closed Months", "The Household"] },
+			{ "ep": "Seohyun", "scene": ["the torn coat", "Surabol · the wedding"] },
+			{ "ep": "Bihyung", "scene": "Chunchu’s wedding" },
+			{ "ep": "Yongsu", "scene": "Chunchu’s wedding" },
+			{ "ep": "Pumsuk", "flashback": 625 }
+		]
+	},
+	{
+		"id": "nangbi",
+		"year": 629,
+		"en": "The charge at Nangbi Fortress",
+		"ko": "낭비성 돌격",
+		"covers": [
+			{ "ep": "Nangbi" },
+			{ "ep": "Seohyun", "scene": "Nangbi · the rise" },
+			{ "ep": "Jeon (轉)", "text": "the charge at Nangbi" }
+		]
+	},
+	{
+		"id": "sunduk-crowned",
+		"year": 632,
+		"en": "Sunduk is crowned queen",
+		"ko": "선덕여왕 즉위",
+		"covers": [
+			{ "ep": "Queen Sunduk", "scene": ["Coronation Morning", "The Oaths", "The Kings Above", "The Last Oath"] },
+			{ "ep": "Bihyung", "scene": "the year of the crown" },
+			{ "ep": "Yongsu", "scene": "the year of the crown" },
+			{ "ep": "Kim Yushin†", "text": "on her coronation morning" }
+		]
+	},
+	{
+		"id": "gyebek-dives",
+		"year": 632,
+		"en": "Gyebek dives the White River for Euija",
+		"ko": "계백이 의자를 위해 백강에 뛰어들다",
+		"covers": [
+			{ "ep": "Prince Euija", "scene": ["The White River", "The Diving Boy", "Night on the Bank"] },
+			{ "ep": "Yellow Mountain", "flashback": 632 },
+			{ "ep": "Buyeo Euija†", "flashback": 632 }
+		]
+	},
+	{
+		"id": "euija-crowned",
+		"year": 641,
+		"sub": "March",
+		"en": "Euija becomes king",
+		"ko": "의자왕 즉위",
+		"covers": [{ "ep": "King Euija" }]
+	},
+	{
+		"id": "daeya-falls",
+		"year": 642,
+		"sub": "August",
+		"en": "Daeya falls",
+		"ko": "대야성 함락",
+		"covers": [
+			{ "ep": "Siege of Daeya" },
+			{ "ep": "Royal Secretariat", "flashback": 642 },
+			{ "ep": "Sunchung", "flashback": 642 },
+			{ "ep": "Kim Chunchu†", "text": "Daeya never left" }
+		]
+	},
+	{
+		"id": "yeon-massacre",
+		"year": 642,
+		"sub": "October",
+		"en": "Yeon's banquet massacre",
+		"ko": "연개소문의 연회 학살",
+		"covers": [
+			{ "ep": "Yeon’s Massacre" },
+			{ "ep": "The Eastern Star", "text": "The banquet hall has been scrubbed" },
+			{ "ep": "Ansi", "text": "Yeon shut the doors" }
+		]
+	},
+	{
+		"id": "chunchu-cell",
+		"year": 642,
+		"sub": "November",
+		"en": "Chunchu in Yeon's cell",
+		"ko": "연개소문의 감옥에 갇힌 춘추",
+		"covers": [
+			{ "ep": "Chunchu & Yeon", "scene": ["Pyongyang", "The Cell"] },
+			{ "ep": "Euija & Yeon", "flashback": 642 }
+		]
+	},
+	{
+		"id": "ansi",
+		"year": 645,
+		"sub": "September",
+		"en": "The siege of Ansi",
+		"ko": "안시성 전투",
+		"covers": [
+			{ "ep": "Ansi" },
+			{ "ep": "Yodong", "scene": "Below Ansi" },
+			{ "ep": "Gi (起)", "flashback": 645 }
+		]
+	},
+	{
+		"id": "bidam",
+		"year": 647,
+		"sub": "January",
+		"en": "Bidam's rebellion",
+		"ko": "비담의 난",
+		"covers": [
+			{ "ep": "Gi (起)" },
+			{ "ep": "Seung (承)" },
+			{ "ep": "Jeon (轉)" },
+			{ "ep": "Gyul (結)" },
+			{ "ep": "Rebellion", "flashback": 647 }
+		]
+	},
+	{
+		"id": "sunduk-dies",
+		"year": 647,
+		"sub": "January",
+		"en": "Queen Sunduk dies",
+		"ko": "선덕여왕 승하",
+		"covers": [{ "ep": "Gyul (結)", "scene": ["The Queen’s Bedside", "The Empty Pavilion"] }]
+	},
+	{
+		"id": "taizong-dies",
+		"year": 649,
+		"sub": "July",
+		"en": "The Second Emperor dies",
+		"ko": "당 태종 붕어",
+		"covers": [{ "ep": "Jiabeng (駕崩)" }]
+	},
+	{
+		"id": "chunchu-crowned",
+		"year": 654,
+		"sub": "March",
+		"en": "Chunchu is crowned",
+		"ko": "김춘추 즉위",
+		"covers": [
+			{ "ep": "King Muyeol" },
+			{ "ep": "Jahee", "scene": "the new king’s first council" }
+		]
+	},
+	{
+		"id": "hwangsan",
+		"year": 660,
+		"sub": "August",
+		"en": "Gyebek's last stand at the Yellow Mountain",
+		"ko": "황산벌 전투",
+		"covers": [
+			{ "ep": "Yellow Mountain" },
+			{ "ep": "Gyebek", "scene": "The March" }
+		]
+	},
+	{
+		"id": "sabi-falls",
+		"year": 660,
+		"sub": "August",
+		"en": "Sabi falls",
+		"ko": "사비성 함락",
+		"covers": [
+			{ "ep": "Sabi" },
+			{ "ep": "King Pungjang", "flashback": 660, "brief": true }
+		]
+	},
+	{
+		"id": "chunchu-dies",
+		"year": 661,
+		"sub": "June",
+		"en": "Chunchu dies",
+		"ko": "김춘추 승하",
+		"covers": [{ "ep": "Kim Chunchu†" }]
+	},
+	{
+		"id": "white-river",
+		"year": 663,
+		"sub": "August",
+		"en": "The battle of the White River",
+		"ko": "백강 전투",
+		"covers": [
+			{ "ep": "White River" },
+			{ "ep": "Betrayal", "scene": "The Throat of the River" }
+		]
+	},
+	{
+		"id": "gesomun-dies",
+		"year": 665,
+		"en": "Yeon Gesomun dies",
+		"ko": "연개소문 사망",
+		"covers": [{ "ep": "Yeon Gesomun†" }]
+	},
+	{
+		"id": "pyongyang-falls",
+		"year": 668,
+		"sub": "September",
+		"en": "Pyongyang falls",
+		"ko": "평양성 함락",
+		"covers": [{ "ep": "Pyongyang II" }]
+	},
+	{
+		"id": "yushin-dies",
+		"year": 673,
+		"sub": "July",
+		"en": "Kim Yushin dies",
+		"ko": "김유신 사망",
+		"covers": [{ "ep": "Kim Yushin†" }]
+	},
+	{
+		"id": "gibeolpo",
+		"year": 676,
+		"sub": "November",
+		"en": "The last battle at the Final Ford",
+		"ko": "기벌포 전투",
+		"covers": [{ "ep": "Final Ford" }]
+	}
+]

@@ -68,7 +68,7 @@ function serveResizedStatic(req: NodeReq, res: NodeRes, next: () => void) {
 			execFileSync('sips', args, { stdio: 'ignore' });
 		}
 		res.setHeader('Content-Type', jpeg ? 'image/jpeg' : 'image/png');
-		res.setHeader('Cache-Control', 'public, max-age=3600');
+		res.setHeader('Cache-Control', 'no-cache');
 		res.end(fs.readFileSync(out));
 	} catch {
 		next();

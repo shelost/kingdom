@@ -44,17 +44,21 @@ const SIDE_KO: Partial<Record<RouteSide, string>> = {
 	goguryeo: '고구려',
 	buyeo: '부여',
 	jolbon: '졸본',
-	tang: '당',
-	sui: '수',
+	tang: '서국',
+	sui: '서국',
 	gaya: '가야',
-	yamato: '왜',
+	yamato: '동국',
 	tamla: '탐라'
 };
 
-const SUI = { label: 'Sui', color: '#a16207' };
+const SUI = { label: 'the West', color: '#a16207' };
 
+/** Map legends use the book's conceit: the continent is the West, the islands the East. */
 export function routeSide(side: RouteSide): { label: string; ko: string; color: string } {
-	const k = side === 'sui' ? SUI : KINGDOMS[side];
+	if (side === 'sui') return { ...SUI, ko: SIDE_KO[side] ?? SUI.label };
+	const k = KINGDOMS[side];
+	if (side === 'tang') return { label: 'the West', ko: SIDE_KO[side] ?? 'the West', color: k.color };
+	if (side === 'yamato') return { label: 'the East', ko: SIDE_KO[side] ?? 'the East', color: k.color };
 	return { label: k.label, ko: SIDE_KO[side] ?? k.label, color: k.color };
 }
 
@@ -234,7 +238,7 @@ export const MAP_ROUTES: MapRoute[] = [
 	},
 	{
 		id: 'gog645-relief',
-		label: 'Go Yeonsu · 150,000',
+		label: 'Go Yunsu · 150,000',
 		ko: '고연수 15만',
 		year: 645,
 		side: 'goguryeo',
@@ -242,7 +246,7 @@ export const MAP_ROUTES: MapRoute[] = [
 		points: ['pyongyang', [228, 410], 'ogol', [160, 372], 'jupil'],
 		battle: 'jupil',
 		order: 2,
-		note: 'Go Yeonsu and Go Hyejin with Goguryeo and Mohe troops, marching to relieve Ansi.',
+		note: 'Go Yunsu and Go Hyejin with Goguryeo and Mohe troops, marching to relieve Ansi.',
 		source: `${ZZTJ} 198 (Zhenguan 19, 6th month); ${SGSG} 21 (Bojang 4)`
 	},
 	{
@@ -303,7 +307,7 @@ export const MAP_ROUTES: MapRoute[] = [
 		kind: 'attack',
 		points: ['geumdol', [340, 593], 'tanhyeon'],
 		order: 0,
-		note: 'Silla measures Charcoal Pass, the pass in Sungchung’s last page. Nobody is guarding it.',
+		note: 'Silla measures Charcoal Pass, the pass in Sunchung’s last page. Nobody is guarding it.',
 		source: `${SGSG} 28 (Uija 16: Seongchung’s memorial names Tanhyeon); the story`
 	},
 
@@ -352,7 +356,7 @@ export const MAP_ROUTES: MapRoute[] = [
 		points: ['surabol', 'geumdol', 'tanhyeon', 'hwangsan'],
 		battle: 'hwangsan',
 		order: 0,
-		note: 'Through Charcoal Pass, the door Seongchung begged them to hold.',
+		note: 'Through Charcoal Pass, the door Sunchung begged them to hold.',
 		source: `${SGSG} 5 (Muyeol 7, 7th month); ${SGSG} 47 (Gyebaek)`
 	},
 	{
@@ -393,7 +397,7 @@ export const MAP_ROUTES: MapRoute[] = [
 	// ———————————————— 661–662 · Pyongyang I, the Snake River ————————————————
 	{
 		id: 'tang661-sea',
-		label: 'The Red Fowl, up the Taedong',
+		label: 'The Red Fowl, up the Tedong',
 		ko: '주작, 대동강으로',
 		year: 661,
 		side: 'tang',
@@ -500,6 +504,31 @@ export const MAP_ROUTES: MapRoute[] = [
 		order: 2,
 		source: 'Nihon Shoki 27 (Tenji 2, 8th month); Jiu Tangshu 84 (Liu Rengui)'
 	},
+	{
+		id: 'baekje663-shore',
+		label: 'Baekje horse · south shore',
+		ko: '백제 기병',
+		year: 663,
+		side: 'baekje',
+		kind: 'counter',
+		points: ['juryu', [299, 620], 'baekgang'],
+		battle: 'baekgang',
+		order: 3,
+		note: 'Pung comes down from Juryu to meet the eastern fleet; his last horsemen guard the landing on the south shore.',
+		source: `${ZZTJ} 201 (Longshuo 3, 8th month)`
+	},
+	{
+		id: 'tamla663-boat',
+		label: 'Tamla barley boat',
+		ko: '탐라 보리배',
+		year: 663,
+		side: 'tamla',
+		kind: 'naval',
+		points: ['mugun', [296, 705], [300, 662], 'juryu'],
+		order: 4,
+		note: 'The north boat from the Two Boats: barley and oranges for the hill fort, on the same tide as the battle.',
+		source: 'Xin Tangshu 220 (Danluo: Yuri Dora sends envoys, Longshuo era)'
+	},
 
 	// ———————————————— 666–668 · the brothers, Pyongyang II ————————————————
 	{
@@ -515,7 +544,7 @@ export const MAP_ROUTES: MapRoute[] = [
 	},
 	{
 		id: 'namseng666-west',
-		label: 'Over to the Tang',
+		label: 'Over to the West',
 		ko: '당으로',
 		year: 666,
 		side: 'goguryeo',
@@ -668,7 +697,7 @@ export const MAP_ROUTES: MapRoute[] = [
 		...JUMONG,
 		points: ['buyeo_north', [288, 240], [272, 268]],
 		order: 0,
-		note: 'Daeso’s riders behind him, a river ahead.',
+		note: 'Deso’s riders behind him, a river ahead.',
 		source: `${SGSG} 13 (Dongmyeong); the story`
 	},
 	{
@@ -683,6 +712,66 @@ export const MAP_ROUTES: MapRoute[] = [
 		order: 1,
 		note: 'Over the river on turtles’ backs.',
 		source: `${SGSG} 13 (Dongmyeong); the story`
+	},
+	{
+		id: 'onjo-south',
+		label: 'The road south',
+		ko: '남쪽 길',
+		year: -18,
+		side: 'baekje',
+		kind: 'journey',
+		color: '#e8a04a',
+		who: 'Sosuno and her sons',
+		whoKo: '소서노와 아들들',
+		points: ['jolbon', [228, 383], [277, 405], [280, 449], [292, 477], [308, 505], [316, 531]],
+		order: 0,
+		note: 'Over the Amnok, through the Myohyang hills, around the commandery on the Taedong, down to the Imjin and the Han.',
+		source: `${SGSG} 23 (Onjo); the story`
+	},
+	{
+		id: 'onjo-deer',
+		label: 'Following the deer',
+		ko: '사슴을 따라',
+		year: -18,
+		side: 'baekje',
+		kind: 'journey',
+		color: '#e8a04a',
+		who: 'The white stag',
+		whoKo: '흰 사슴',
+		points: [[316, 531], [307, 525], 'michuhol'],
+		order: 1,
+		note: 'Across the Han, up Mount Buak, down to the salt flats.',
+		source: `${SGSG} 23 (Onjo); the story`
+	},
+	{
+		id: 'joseon-refugees-south',
+		label: 'The road south',
+		ko: '남쪽 길',
+		year: -108,
+		side: 'other',
+		kind: 'retreat',
+		color: '#9ca3af',
+		who: 'Refugees from the north',
+		whoKo: '북쪽에서 온 피난민',
+		points: ['asadal', [262, 500], [300, 520], [335, 548], [362, 578], [384, 602], 'surabol'],
+		order: 0,
+		note: 'Out of the fallen capital, over the mountains and down the east side of the peninsula, until the valleys run out at the plain where Surabol will be.',
+		source: 'the story'
+	},
+	{
+		id: 'yeon634-south',
+		label: 'Yeon goes to the Summit',
+		ko: '연, 제가회의로',
+		year: 634,
+		side: 'goguryeo',
+		kind: 'journey',
+		color: '#d0362f',
+		who: 'Yeon and the cart',
+		whoKo: '연과 수레',
+		points: ['chek_fort', [437, 256], [421, 278], [404, 293], [379, 314], [349, 330], [320, 339], [295, 344], 'gungnae', [289, 375], [280, 397], [264, 421], [265, 435], 'pyongyang'],
+		order: 0,
+		note: 'Across the frozen Duman, west under Mount Paektu, down to the old capital on the Amnok, across the breaking ice, through the hills and down the Salsu valley to the Taedong.',
+		source: 'the story'
 	},
 	{
 		id: 'chunchu642-north',

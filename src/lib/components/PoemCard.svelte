@@ -236,7 +236,7 @@
 		}
 	}
 
-	@media (max-width: 560px) {
+	@container prose (max-width: 560px) {
 		.sheet,
 		.right .sheet {
 			grid-template-columns: minmax(0, 1fr);

@@ -45,7 +45,7 @@ export const SWORD_DEFS: SwordDef[] = [
 		kingdom: 'silla',
 		swordImage: '/sword_fish.png',
 		tagline: 'Ring-pommel fish sword — Gaya fish on the pommel, Silla blue in the fuller.',
-		arc: 'Geumgwan Gaya’s ring-pommel — fish on the pommel, blue in the fuller. Kim Muryuk traded a kingdom so the line could keep it; Kim Seohyun made the surrender a household; Kim Yushin made it the Sword of Silla. Three generations, one blade.',
+		arc: 'Gumgwan Gaya’s ring-pommel — fish on the pommel, blue in the fuller. Kim Muryuk traded a kingdom so the line could keep it; Kim Seohyun made the surrender a household; Kim Yushin made it the Sword of Silla. Three generations, one blade.',
 		aliases: ['Fish sword', '어검', 'Sword of Silla']
 	},
 	{
@@ -114,8 +114,8 @@ export const SWORD_DEFS: SwordDef[] = [
 		owners: ['gesomun', 'northcmd'],
 		kingdom: 'goguryeo',
 		swordImage: '/sword_crow.png',
-		tagline: 'Ring-pommel Northern Crow Blade — Mohe-frost nicks in the edge; 북방 오도 of the northern 대가.',
-		arc: 'Go Ul’s Northern Crow Blade — Mohe-frost nicks in the edge. Taken at Yeon’s Banquet; worn on Gesomun’s back with the other cardinal crows.',
+		tagline: 'Ring-pommel Northern Crow Blade — nicks in the edge from Khitan bridles; 북방 오도 of the northern 대가.',
+		arc: 'Go Ul’s Northern Crow Blade — nicks in the edge from Khitan bridles. Taken at Yeon’s Banquet; worn on Gesomun’s back with the other cardinal crows.',
 		events: [{ year: 642, label: 'Taken by Yeon Gesomun — Northern Crow Blade.' }],
 		aliases: ['Northern Crow Blade', '북방 오도', '北方烏刀', 'Northern crow sabre', '북검']
 	},
@@ -128,7 +128,7 @@ export const SWORD_DEFS: SwordDef[] = [
 		kingdom: 'goguryeo',
 		swordImage: '/sword_crow.png',
 		tagline: 'Ring-pommel Southern Crow Blade — grip worn smooth against Yushin’s passes; 남방 오도 of the southern 대가.',
-		arc: 'Son Daeha’s Southern Crow Blade — grip worn smooth against Yushin’s passes. Taken at the banquet; the blade Yushin would have known from the marches.',
+		arc: 'Son Deha’s Southern Crow Blade — grip worn smooth against Yushin’s passes. Taken at the banquet; the blade Yushin would have known from the marches.',
 		events: [{ year: 642, label: 'Taken by Yeon Gesomun — Southern Crow Blade.' }],
 		aliases: ['Southern Crow Blade', '남방 오도', '南方烏刀', 'Southern crow sword', '남검']
 	},
@@ -141,7 +141,7 @@ export const SWORD_DEFS: SwordDef[] = [
 		kingdom: 'goguryeo',
 		swordImage: '/sword_crow.png',
 		tagline: 'Ring-pommel Western Crow Blade — Liao timber-oil in the scabbard; 서방 오도 of the western 대가.',
-		arc: 'Go Heumsong’s Western Crow Blade — Liao timber-oil in the scabbard. The western commandery’s stamp, strapped to Gesomun after 642.',
+		arc: 'Go Humsong’s Western Crow Blade — Liao timber-oil in the scabbard. The western commandery’s stamp, strapped to Gesomun after 642.',
 		events: [{ year: 642, label: 'Taken by Yeon Gesomun — Western Crow Blade.' }],
 		aliases: ['Western Crow Blade', '서방 오도', '西方烏刀', 'Western crow sword', '서검']
 	},
@@ -173,7 +173,7 @@ export const SWORD_DEFS: SwordDef[] = [
 		kingdom: 'baekje',
 		swordImage: '/sword_lotus.png',
 		tagline: 'Baekje court 환두대도 — hollow ring that hangs on a prison post after the belt is taken.',
-		arc: 'Seongchung’s office blade. In the hall it catches the lamp at his hip while he remonstrates the wine. In the cell it hangs on timber; the memorial is written underneath it.'
+		arc: 'Sunchung’s office blade. In the hall it catches the lamp at his hip while he remonstrates the wine. In the cell it hangs on timber; the memorial is written underneath it.'
 	},
 	{
 		id: 'sword-heungsu',
@@ -183,7 +183,7 @@ export const SWORD_DEFS: SwordDef[] = [
 		kingdom: 'baekje',
 		swordImage: '/sword_lotus.png',
 		tagline: 'Baekje court 환두대도 — hollow ring worn smooth on a posting road.',
-		arc: 'Heungsu’s belt-ring at Gomamiji. The courier sees it before he hears the answer. Same hollow circle Seongchung wore; a different road.'
+		arc: 'Hungsu’s belt-ring at Gomamiji. The courier sees it before he hears the answer. Same hollow circle Sunchung wore; a different road.'
 	},
 	{
 		id: 'sword-xuerengui',

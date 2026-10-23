@@ -1,5 +1,6 @@
 <script lang="ts">
 	import {
+		LANGS,
 		reading,
 		setLang,
 		setMode,
@@ -7,7 +8,6 @@
 		loadLang,
 		loadMode,
 		loadViewScope,
-		type Lang,
 		type ReadMode,
 		type ViewScope
 	} from '$lib/reading.svelte';
@@ -17,18 +17,13 @@
 	import { editUi } from '$lib/editUi.svelte';
 	import { tocUi, loadTocFloating, setTocFloating } from '$lib/tocUi.svelte';
 	import { toggleTheme } from '$lib/themeUi.svelte';
+	import { motionUi, setAnimated } from '$lib/motionUi.svelte';
 	import { dialogueUi, loadDialogueStyle, setDialogueStyle, type DialogueStyle } from '$lib/dialogueUi.svelte';
 	import ThemeIcon from './ThemeIcon.svelte';
 	import { onMount } from 'svelte';
 	import SpeakIcon from './SpeakIcon.svelte';
 	import SiteNav from './SiteNav.svelte';
 	import EpisodePicker from './EpisodePicker.svelte';
-
-	const LANGS: { id: Lang; label: string; hint: string }[] = [
-		{ id: 'both', label: 'A/한', hint: 'Show everything' },
-		{ id: 'en', label: 'EN', hint: 'English narration only' },
-		{ id: 'ko', label: '한', hint: 'Korean dialogue only' }
-	];
 
 	const MODES: { id: ReadMode; label: string; short: string; hint: string }[] = [
 		{ id: 'script', label: 'Script', short: 'Script', hint: 'Scroll layout without the speaker plate' },
@@ -43,6 +38,18 @@
 			label: 'Cinema',
 			short: 'Cine',
 			hint: 'Cinema layout — scene, script rail, character, active dialogue'
+		},
+		{
+			id: 'screenplay',
+			label: 'Screenplay',
+			short: 'Play',
+			hint: 'Print-ready text script'
+		},
+		{
+			id: 'storyboard',
+			label: 'Storyboard',
+			short: 'Board',
+			hint: 'Animation boards — each still with its description and dialogue'
 		}
 	];
 
@@ -215,6 +222,28 @@
 						{d.label}
 					</button>
 				{/each}
+			</div>
+		</div>
+
+		<div class="hud-cluster">
+			<span class="hud-kicker">Motion{#if showKo}<span class="hud-kicker-ko">움직임</span>{/if}</span>
+			<div class="scope" role="group" aria-label="Motion">
+				<button
+					class:active={motionUi.animated}
+					title="Stills move and the script arrives as you scroll, in the manner of each scene"
+					aria-pressed={motionUi.animated}
+					onclick={() => setAnimated(true)}
+				>
+					Animated
+				</button>
+				<button
+					class:active={!motionUi.animated}
+					title="Stills hold still and the script is simply there"
+					aria-pressed={!motionUi.animated}
+					onclick={() => setAnimated(false)}
+				>
+					Still
+				</button>
 			</div>
 		</div>
 
@@ -563,6 +592,7 @@
 	.scope,
 	.lang {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1px;
 		padding: 2px;
 		border: 1px solid var(--hairline);

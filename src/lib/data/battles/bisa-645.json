@@ -1,0 +1,1159 @@
+{
+	"id": "bisa-645",
+	"title": "Bisa",
+	"ko": "비사성 전투",
+	"hanja": "卑沙城之戰",
+	"year": 645,
+	"place": "bisa",
+	"geo": {
+		"lat": 39.06,
+		"lon": 121.86
+	},
+	"scale": {
+		"km": 4,
+		"px": 100
+	},
+	"terrain": [
+		{
+			"kind": "sea",
+			"points": [
+				[
+					887,
+					99
+				],
+				[
+					901,
+					98
+				],
+				[
+					911,
+					107
+				],
+				[
+					918,
+					138
+				],
+				[
+					935,
+					152
+				],
+				[
+					957,
+					151
+				],
+				[
+					986,
+					129
+				],
+				[
+					988,
+					124
+				],
+				[
+					977,
+					123
+				],
+				[
+					974,
+					111
+				],
+				[
+					1000,
+					109
+				],
+				[
+					1000,
+					560
+				],
+				[
+					547,
+					560
+				],
+				[
+					577,
+					544
+				],
+				[
+					572,
+					526
+				],
+				[
+					578,
+					501
+				],
+				[
+					566,
+					488
+				],
+				[
+					582,
+					448
+				],
+				[
+					572,
+					457
+				],
+				[
+					541,
+					439
+				],
+				[
+					496,
+					451
+				],
+				[
+					480,
+					449
+				],
+				[
+					476,
+					428
+				],
+				[
+					466,
+					413
+				],
+				[
+					471,
+					383
+				],
+				[
+					427,
+					347
+				],
+				[
+					424,
+					323
+				],
+				[
+					497,
+					351
+				],
+				[
+					520,
+					343
+				],
+				[
+					533,
+					325
+				],
+				[
+					544,
+					319
+				],
+				[
+					529,
+					301
+				],
+				[
+					522,
+					270
+				],
+				[
+					524,
+					254
+				],
+				[
+					542,
+					248
+				],
+				[
+					564,
+					249
+				],
+				[
+					570,
+					262
+				],
+				[
+					584,
+					240
+				],
+				[
+					588,
+					242
+				],
+				[
+					587,
+					250
+				],
+				[
+					605,
+					257
+				],
+				[
+					626,
+					285
+				],
+				[
+					623,
+					296
+				],
+				[
+					630,
+					312
+				],
+				[
+					655,
+					343
+				],
+				[
+					689,
+					354
+				],
+				[
+					733,
+					380
+				],
+				[
+					748,
+					372
+				],
+				[
+					753,
+					364
+				],
+				[
+					753,
+					321
+				],
+				[
+					743,
+					304
+				],
+				[
+					757,
+					305
+				],
+				[
+					768,
+					273
+				],
+				[
+					780,
+					254
+				],
+				[
+					801,
+					250
+				],
+				[
+					805,
+					242
+				],
+				[
+					826,
+					237
+				],
+				[
+					830,
+					230
+				],
+				[
+					843,
+					250
+				],
+				[
+					855,
+					256
+				],
+				[
+					864,
+					255
+				],
+				[
+					868,
+					262
+				],
+				[
+					905,
+					287
+				],
+				[
+					928,
+					289
+				],
+				[
+					936,
+					280
+				],
+				[
+					945,
+					281
+				],
+				[
+					957,
+					269
+				],
+				[
+					959,
+					246
+				],
+				[
+					951,
+					229
+				],
+				[
+					943,
+					229
+				],
+				[
+					936,
+					237
+				],
+				[
+					930,
+					226
+				],
+				[
+					912,
+					212
+				],
+				[
+					909,
+					178
+				],
+				[
+					891,
+					146
+				],
+				[
+					901,
+					124
+				],
+				[
+					872,
+					139
+				],
+				[
+					866,
+					133
+				],
+				[
+					868,
+					124
+				],
+				[
+					876,
+					119
+				]
+			],
+			"label": "Western Sea",
+			"ko": "서해",
+			"labelAt": [
+				880,
+				470
+			]
+		},
+		{
+			"kind": "sea",
+			"points": [
+				[
+					186,
+					273
+				],
+				[
+					195,
+					291
+				],
+				[
+					193,
+					312
+				],
+				[
+					211,
+					343
+				],
+				[
+					258,
+					349
+				],
+				[
+					270,
+					341
+				],
+				[
+					277,
+					352
+				],
+				[
+					274,
+					362
+				],
+				[
+					280,
+					381
+				],
+				[
+					286,
+					387
+				],
+				[
+					309,
+					388
+				],
+				[
+					334,
+					383
+				],
+				[
+					348,
+					387
+				],
+				[
+					347,
+					420
+				],
+				[
+					365,
+					439
+				],
+				[
+					366,
+					469
+				],
+				[
+					384,
+					501
+				],
+				[
+					374,
+					512
+				],
+				[
+					383,
+					527
+				],
+				[
+					399,
+					536
+				],
+				[
+					422,
+					532
+				],
+				[
+					436,
+					537
+				],
+				[
+					438,
+					543
+				],
+				[
+					428,
+					560
+				],
+				[
+					34,
+					560
+				],
+				[
+					55,
+					552
+				],
+				[
+					84,
+					507
+				],
+				[
+					78,
+					488
+				],
+				[
+					82,
+					460
+				],
+				[
+					55,
+					449
+				],
+				[
+					43,
+					437
+				],
+				[
+					49,
+					428
+				],
+				[
+					64,
+					424
+				],
+				[
+					76,
+					412
+				],
+				[
+					80,
+					385
+				],
+				[
+					88,
+					385
+				],
+				[
+					87,
+					405
+				],
+				[
+					104,
+					420
+				],
+				[
+					113,
+					418
+				],
+				[
+					122,
+					408
+				],
+				[
+					132,
+					411
+				],
+				[
+					145,
+					397
+				],
+				[
+					170,
+					422
+				],
+				[
+					174,
+					436
+				],
+				[
+					182,
+					441
+				],
+				[
+					193,
+					461
+				],
+				[
+					218,
+					474
+				],
+				[
+					239,
+					468
+				],
+				[
+					251,
+					455
+				],
+				[
+					257,
+					403
+				],
+				[
+					246,
+					396
+				],
+				[
+					224,
+					393
+				],
+				[
+					205,
+					375
+				],
+				[
+					198,
+					356
+				],
+				[
+					189,
+					347
+				],
+				[
+					175,
+					343
+				],
+				[
+					182,
+					334
+				],
+				[
+					178,
+					321
+				],
+				[
+					162,
+					303
+				]
+			]
+		},
+		{
+			"kind": "sea",
+			"points": [
+				[
+					0,
+					0
+				],
+				[
+					16,
+					0
+				],
+				[
+					20,
+					23
+				],
+				[
+					74,
+					70
+				],
+				[
+					96,
+					71
+				],
+				[
+					107,
+					62
+				],
+				[
+					111,
+					76
+				],
+				[
+					126,
+					92
+				],
+				[
+					126,
+					119
+				],
+				[
+					117,
+					135
+				],
+				[
+					102,
+					145
+				],
+				[
+					98,
+					152
+				],
+				[
+					107,
+					204
+				],
+				[
+					89,
+					231
+				],
+				[
+					75,
+					225
+				],
+				[
+					75,
+					217
+				],
+				[
+					71,
+					215
+				],
+				[
+					22,
+					215
+				],
+				[
+					0,
+					221
+				]
+			]
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				343,
+				186
+			],
+			"r": 42,
+			"label": "Bisa ridge",
+			"ko": "비사산",
+			"labelAt": [
+				250,
+				120
+			]
+		},
+		{
+			"kind": "fort",
+			"at": [
+				350,
+				196
+			],
+			"side": "goguryeo",
+			"label": "Bisa",
+			"ko": "비사성",
+			"hold": {
+				"fall": "tang"
+			},
+			"labelAt": [
+				400,
+				160
+			]
+		},
+		{
+			"kind": "gate",
+			"at": [
+				312,
+				204
+			],
+			"side": "goguryeo",
+			"label": "west gate",
+			"ko": "서문",
+			"hold": {
+				"night": "tang"
+			},
+			"labelAt": [
+				250,
+				232
+			]
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					318,
+					206
+				],
+				[
+					300,
+					240
+				],
+				[
+					330,
+					290
+				],
+				[
+					420,
+					310
+				],
+				[
+					500,
+					318
+				]
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				930,
+				540
+			],
+			"label": "from Laizhou",
+			"ko": "내주에서"
+		},
+		{
+			"kind": "label",
+			"at": [
+				60,
+				30
+			],
+			"label": "Geonan, by the west sea",
+			"ko": "서해로 건안"
+		}
+	],
+	"sides": [
+		{
+			"id": "tang",
+			"name": "Tang",
+			"ko": "당",
+			"kingdom": "tang"
+		},
+		{
+			"id": "goguryeo",
+			"name": "Goguryeo",
+			"ko": "고구려",
+			"kingdom": "goguryeo"
+		}
+	],
+	"units": [
+		{
+			"id": "fleet",
+			"side": "tang",
+			"label": "The fleet",
+			"ko": "함대"
+		},
+		{
+			"id": "night",
+			"side": "tang",
+			"label": "Night column",
+			"ko": "야습대",
+			"unrecorded": true
+		},
+		{
+			"id": "coast",
+			"side": "goguryeo",
+			"label": "Coast ships",
+			"ko": "연안 함선",
+			"unrecorded": true
+		},
+		{
+			"id": "garrison",
+			"side": "goguryeo",
+			"label": "Bisa garrison",
+			"ko": "비사성 수비군",
+			"unrecorded": true
+		}
+	],
+	"phases": [
+		{
+			"id": "crossing",
+			"label": "Five hundred hulls",
+			"ko": "배 오백 척",
+			"caption": "The fleet crosses from the West's coast with a year of grain in its holds. Bisa sits on its ridge above the bay, cliffs on every side. Goguryeo's coast ships wait in the inlet below it.",
+			"captionKo": "함대가 서쪽 해안에서 한 해 치 곡식을 싣고 건너온다. 비사성은 만 위의 능선에 앉아 있고, 사방이 벼랑이다. 고구려 연안 함선들이 그 아래 포구에서 기다린다.",
+			"units": {
+				"fleet": {
+					"at": [
+						860,
+						470
+					],
+					"men": 43000,
+					"shape": "fleet",
+					"facing": 215
+				},
+				"coast": {
+					"at": [
+						540,
+						295
+					],
+					"men": 2000,
+					"shape": "fleet",
+					"facing": 110
+				},
+				"garrison": {
+					"at": [
+						350,
+						196
+					],
+					"men": 5000,
+					"shape": "ring",
+					"r": 22,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "naval",
+					"points": [
+						[
+							990,
+							550
+						],
+						[
+							920,
+							500
+						],
+						[
+							860,
+							470
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "sea",
+			"label": "Out of the bay",
+			"ko": "만 밖으로",
+			"caption": "The coast ships row out to meet them at the bay mouth. A Goguryeo warship is a big ship until it comes alongside a Tang tower-ship. Then it is a small one, and the arrows come down from above.",
+			"captionKo": "연안 함선들이 만 어귀로 노를 저어 나가 맞선다. 고구려 전함은 큰 배다. 당의 누선 옆에 붙기 전까지는. 붙고 나면 작은 배가 되고, 화살이 위에서 쏟아진다.",
+			"units": {
+				"fleet": {
+					"at": [
+						720,
+						455
+					],
+					"men": 43000,
+					"shape": "fleet",
+					"facing": 210
+				},
+				"coast": {
+					"at": [
+						565,
+						445
+					],
+					"men": 2000,
+					"shape": "fleet",
+					"facing": 0
+				},
+				"garrison": {
+					"at": [
+						350,
+						196
+					],
+					"men": 5000,
+					"shape": "ring",
+					"r": 22,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "goguryeo",
+					"kind": "charge",
+					"points": [
+						[
+							540,
+							300
+						],
+						[
+							525,
+							390
+						],
+						[
+							565,
+							445
+						],
+						[
+							630,
+							458
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						648,
+						460
+					],
+					"label": "grapnels",
+					"ko": "갈고리"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						610,
+						462
+					]
+				}
+			]
+		},
+		{
+			"id": "landing",
+			"label": "The beach under the ridge",
+			"ko": "능선 아래 해변",
+			"caption": "The coast ships burn or run. The fleet beaches in the inlet and the army walks up under the ridge. From below, every side of Bisa is a cliff.",
+			"captionKo": "연안 함선들은 불타거나 달아난다. 함대가 포구에 배를 대고, 군대가 능선 아래로 걸어 올라간다. 아래에서 보면 비사성은 어느 쪽이나 벼랑이다.",
+			"units": {
+				"fleet": {
+					"at": [
+						540,
+						320
+					],
+					"men": 43000,
+					"shape": "fleet",
+					"facing": 200
+				},
+				"coast": {
+					"at": [
+						505,
+						410
+					],
+					"men": 2000,
+					"shape": "fleet",
+					"facing": 200,
+					"routed": true
+				},
+				"garrison": {
+					"at": [
+						350,
+						196
+					],
+					"men": 5000,
+					"shape": "ring",
+					"r": 22,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "advance",
+					"points": [
+						[
+							530,
+							315
+						],
+						[
+							470,
+							312
+						],
+						[
+							400,
+							300
+						],
+						[
+							365,
+							275
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "night",
+			"label": "The west gate",
+			"ko": "서문",
+			"caption": "Only the west gate can be climbed. A column goes round to it in the dark, and an officer named Wang Wendu is the first man over the wall.",
+			"captionKo": "올라갈 수 있는 곳은 서문뿐이다. 한 부대가 어둠 속에 그쪽으로 돌아가고, 왕문도라는 장교가 맨 먼저 성벽을 넘는다.",
+			"units": {
+				"fleet": {
+					"at": [
+						540,
+						320
+					],
+					"men": 39000,
+					"shape": "fleet",
+					"facing": 200
+				},
+				"night": {
+					"at": [
+						290,
+						215
+					],
+					"men": 4000,
+					"shape": "column",
+					"facing": 0
+				},
+				"garrison": {
+					"at": [
+						350,
+						196
+					],
+					"men": 5000,
+					"shape": "ring",
+					"r": 22,
+					"arc": [
+						0,
+						360
+					]
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "charge",
+					"points": [
+						[
+							400,
+							300
+						],
+						[
+							300,
+							260
+						],
+						[
+							290,
+							215
+						],
+						[
+							312,
+							204
+						]
+					],
+					"label": "by night",
+					"ko": "밤에"
+				}
+			],
+			"events": [
+				{
+					"kind": "gate",
+					"at": [
+						312,
+						204
+					],
+					"label": "Wang Wendu",
+					"ko": "왕문도"
+				}
+			]
+		},
+		{
+			"id": "fall",
+			"label": "Eight thousand",
+			"ko": "팔천",
+			"caption": "Bisa falls in the fifth month. The clerks count eight thousand people taken, men and women both, and the fleet sails north along the coast toward Geonan.",
+			"captionKo": "비사성은 오월에 떨어진다. 서기들은 사로잡은 사람을 남녀 합쳐 팔천으로 센다. 함대는 해안을 따라 건안 쪽 북으로 떠난다.",
+			"units": {
+				"fleet": {
+					"at": [
+						600,
+						460
+					],
+					"men": 43000,
+					"shape": "fleet",
+					"facing": 300
+				},
+				"garrison": {
+					"at": [
+						350,
+						196
+					],
+					"men": 5000,
+					"shape": "scatter",
+					"routed": true
+				}
+			},
+			"arrows": [
+				{
+					"side": "tang",
+					"kind": "naval",
+					"points": [
+						[
+							600,
+							460
+						],
+						[
+							640,
+							510
+						],
+						[
+							650,
+							555
+						]
+					],
+					"label": "round the cape",
+					"ko": "곶을 돌아"
+				}
+			],
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						350,
+						196
+					],
+					"label": "8,000 taken",
+					"ko": "팔천 포로"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Zizhi Tongjian 197, Zhenguan 19 (645), fourth and fifth months",
+		"Old Book of Tang 69, Biography of Zhang Liang",
+		"Samguk Sagi 21, Annals of Goguryeo, King Bojang year 4"
+	],
+	"note": "The records give the fleet as five hundred ships and forty-three thousand men under Zhang Liang, and say Bisa was sheer on all four sides except the west gate, which Cheng Mingzhen's column reached by night and Wang Wendu climbed first; eight thousand men and women were taken. No record mentions Goguryeo ships meeting the fleet: the coast-ship fight is the book's, drawn hollow and uncounted. The garrison's size is not recorded either. Bisa is placed on Dahei Mountain above Dalian Bay, the usual identification; the coastline is traced from real elevation.",
+	"noteKo": "기록은 함대를 장량이 이끈 배 오백 척, 군사 사만 삼천으로 적고, 비사성은 사방이 깎아지른 벼랑이며 서문만 오를 수 있었다고 한다. 정명진의 부대가 밤에 이르렀고 왕문도가 먼저 올랐으며, 남녀 팔천을 사로잡았다. 고구려 배가 함대를 맞았다는 기록은 없다. 연안 함선의 싸움은 이 책의 것이라 속이 빈 점으로, 세지 않고 그린다. 수비군의 수도 기록에 없다. 비사성은 통설대로 대련만 위 대흑산에 두었고, 해안선은 실제 고도에서 땄다.",
+	"winner": "tang"
+}

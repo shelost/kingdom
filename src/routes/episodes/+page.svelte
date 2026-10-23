@@ -6,10 +6,13 @@
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import RowThumb from '$lib/components/RowThumb.svelte';
 	import Toc from '$lib/components/Toc.svelte';
+	import VolumePreview from '$lib/components/books/VolumePreview.svelte';
+	import { volumeOf } from '$lib/books';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
 	import { EP_QUERY, reading } from '$lib/reading.svelte';
 	import { episodeThumbnail } from '$lib/thumbnail.svelte';
-	import { arcLabel, chapterLabel, partLabel } from '$lib/tocTree';
+	import { episodePosterSrc, episodeThumbSrc, posterSrc } from '$lib/posters.svelte';
+	import { arcLabelAt, chapterLabel, partLabel } from '$lib/tocTree';
 	import { partId } from '$lib/story';
 	import { EPISODE_TOTAL, PARTS, STORY_RANGE, type DirectoryEpisode } from '$lib/episodeDirectory';
 
@@ -52,11 +55,21 @@
 {/snippet}
 
 {#snippet row(ep: DirectoryEpisode)}
-	{@const thumb = episodeThumbnail(ep.entry, ep.id)}
+	{@const dedicated = episodeThumbSrc(ep.id)}
+	{@const poster = episodePosterSrc(ep.id)}
+	{@const cue = dedicated || poster ? null : episodeThumbnail(ep.entry, ep.id)}
+	{@const src = dedicated ?? poster ?? cue?.src}
+	{@const portrait = !dedicated && !!poster}
 	{@const href = hrefOf(ep)}
 	<li data-story-id={ep.id}>
-		<a class="row" {href}>
-			<RowThumb src={thumb?.src} sizes="(max-width: 480px) 8rem, 11rem" fallback={ep.title.charAt(0)} />
+		<a class="row" class:portrait {href}>
+			<RowThumb
+				{src}
+				{portrait}
+				kind={portrait ? 'hero' : 'cue'}
+				sizes={portrait ? '(max-width: 480px) 6.2rem, 7.6rem' : '(max-width: 480px) 8rem, 11rem'}
+				fallback={ep.title.charAt(0)}
+			/>
 			<span class="body">
 				<span class="title-line">
 					<span class="num">{ep.number}</span>
@@ -113,30 +126,51 @@
 		{#each PARTS as part (part.id)}
 			<section class="part" aria-labelledby={`part-${part.id}`} data-story-id={partId(part.id)}>
 				<h2 id={`part-${part.id}`}>
-					{@render heading(partLabel(part.label, ko), part.title, part.korean, part.range)}
+					{@render heading(
+						partLabel(part.label, ko),
+						ko && part.korean ? part.korean : part.title,
+						ko && part.korean ? part.title : part.korean,
+						part.range
+					)}
 				</h2>
 
 				{#each part.arcs as arc (arc.id)}
+					{@const poster = posterSrc(arc.id)}
+					{@const boxed = arc.chapters.flatMap((chapter) => {
+						const next = chapter.anchor ? volumeOf(chapter.anchor) : undefined;
+						return next ? [next] : [];
+					})}
 					<section class="arc" aria-labelledby={arc.anchor} data-story-id={arc.id}>
-						<h3 id={arc.anchor}>
-							{@render heading(
-								arcLabel(arc.number, ko),
-								arc.number ? arc.title : undefined,
-								arc.korean,
-								arc.range
-							)}
-						</h3>
+						<div class="arc-head">
+							{#if poster}
+								<VolumePreview size="arc" cover={poster} title={arc.title} volumes={boxed} />
+							{/if}
+							<h3 id={arc.anchor}>
+								{@render heading(
+									arcLabelAt(arc.index, ko),
+									arc.number ? arc.title : undefined,
+									arc.korean,
+									arc.range
+								)}
+							</h3>
+						</div>
 						{#each arc.chapters as chapter, s (chapter.anchor ?? `${arc.id}-${s}`)}
 							{#if chapter.anchor}
-								<h4 id={chapter.anchor}>
-									{#if chapter.number}<span class="chapter-num">{chapterLabel(chapter.number, ko)}</span>{/if}
-									<span class="chapter-line">
-										{ko ? chapter.ko : chapter.label}
-										{#if !ko && chapter.ko && chapter.ko !== chapter.label}<span class="chapter-ko"
-												>{chapter.ko}</span
-											>{/if}
-									</span>
-								</h4>
+								{@const volume = volumeOf(chapter.anchor)}
+								<div class="chapter-head">
+									{#if volume}
+										<VolumePreview {volume} size="chapter" />
+									{/if}
+									<h4 id={chapter.anchor}>
+										{#if chapter.number}<span class="chapter-num">{chapterLabel(chapter.number, ko)}</span>{/if}
+										<span class="chapter-line">
+											{ko ? chapter.ko : chapter.label}
+											{#if !ko && chapter.ko && chapter.ko !== chapter.label}<span class="chapter-ko"
+													>{chapter.ko}</span
+												>{/if}
+										</span>
+									</h4>
+								</div>
 							{/if}
 							<ol class="list">
 								{#each chapter.episodes as ep (ep.id)}
@@ -197,15 +231,15 @@
 	.intro {
 		display: grid;
 		gap: 0.4rem;
-		padding: 2.5rem 0 0.5rem;
+		padding: 3rem 0 2rem;
 	}
 
 	h1 {
 		margin: 0;
 		font-family: var(--serif);
-		font-size: clamp(1.8rem, 4vw, 2.4rem);
+		font-size: clamp(2.15rem, 5vw, 2.85rem);
 		font-weight: 600;
-		line-height: 1.05;
+		line-height: 1.02;
 		letter-spacing: var(--tracking-display);
 		color: var(--fg-strong);
 	}
@@ -237,59 +271,73 @@
 	}
 
 	.part {
-		margin-top: 2.75rem;
+		margin-top: 5.5rem;
 	}
 
-	/* Part and Arc headings: the label sits above, the title line below. */
+	/* Part / Arc / Chapter: eyebrow in Inter, title in serif, each step a clear jump. */
 	h2,
 	h3 {
 		display: grid;
-		gap: 0.2rem;
+		gap: 0.28rem;
 		margin: 0;
 		font-family: var(--serif);
 		font-weight: 600;
+		line-height: 1.08;
 	}
 
 	h2 {
-		font-size: 1.45rem;
+		font-size: 1rem;
+		margin-bottom: 2.5rem;
 	}
 
 	h3 {
-		padding-bottom: 0.55rem;
-		border-bottom: 1px solid var(--hairline);
-		font-size: 1.1rem;
+		font-size: 1rem;
 	}
 
 	.eyebrow {
-		font-size: 0.85rem;
+		font-family: var(--ui);
+		font-size: 0.68rem;
+		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
 		color: var(--gold);
 	}
 
 	h2 .eyebrow {
-		font-size: 0.95rem;
+		font-size: 0.74rem;
 	}
 
 	.head-line {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: baseline;
-		gap: 0.25rem 0.65rem;
+		gap: 0.28rem 0.7rem;
 	}
 
 	.head-title {
 		color: var(--fg-strong);
+		letter-spacing: var(--tracking-display);
+	}
+
+	h2 .head-title {
+		font-size: clamp(1.85rem, 3.4vw, 2.2rem);
+	}
+
+	h3 .head-title {
+		font-size: clamp(1.4rem, 2.6vw, 1.7rem);
 	}
 
 	.head-ko,
 	.head-range {
 		font-family: var(--ui);
-		font-size: 0.8rem;
+		font-size: 0.78rem;
 		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
 		color: var(--fg-faint);
 	}
 
 	h2 :is(.head-ko, .head-range) {
-		font-size: 0.85rem;
+		font-size: 0.88rem;
 	}
 
 	.head-range {
@@ -298,24 +346,46 @@
 	}
 
 	.arc {
-		margin-top: 2.5rem;
+		margin-top: 4.25rem;
+		padding-top: 0.75rem;
+	}
+
+	.arc-head,
+	.chapter-head {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		align-items: center;
+		gap: 1.15rem 1.85rem;
+		overflow: visible;
+	}
+
+	.arc-head {
+		padding-bottom: 1.75rem;
+		border-bottom: 1px solid var(--hairline);
+	}
+
+	.chapter-head {
+		margin: 3.25rem 0 0.85rem;
 	}
 
 	/* Chapter headings: the number is an eyebrow above the chapter's name, like Parts and Arcs. */
 	h4 {
 		display: grid;
-		gap: 0.15rem;
-		margin: 1.75rem 0 0.25rem;
+		gap: 0.22rem;
+		margin: 0;
 		font-family: var(--serif);
-		font-size: 0.95rem;
+		font-size: 1rem;
 		font-weight: 600;
-		color: var(--fg-dim);
+		line-height: 1.1;
+		color: var(--fg-strong);
 	}
 
 	.chapter-num {
 		font-family: var(--ui);
-		font-size: 0.72rem;
+		font-size: 0.64rem;
 		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
 		color: var(--gold);
 	}
 
@@ -323,13 +393,17 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: baseline;
-		gap: 0.25rem 0.5rem;
+		gap: 0.28rem 0.55rem;
+		font-size: clamp(1.18rem, 2vw, 1.32rem);
+		letter-spacing: var(--tracking-display);
+		color: var(--fg-strong);
 	}
 
 	.chapter-ko {
 		font-family: var(--ui);
 		font-size: 0.78rem;
 		font-weight: 500;
+		letter-spacing: var(--tracking-ui);
 		color: var(--fg-faint);
 	}
 
@@ -363,6 +437,10 @@
 		text-decoration: none;
 	}
 
+	.row.portrait {
+		grid-template-columns: 7.6rem minmax(0, 1fr);
+	}
+
 	.row:focus-visible {
 		outline: none;
 	}
@@ -391,9 +469,10 @@
 	.title {
 		min-width: 0;
 		font-family: var(--serif);
-		font-size: 1.05rem;
+		font-size: 1.02rem;
 		font-weight: 600;
 		line-height: 1.2;
+		letter-spacing: var(--tracking-display);
 		color: var(--fg-strong);
 		transition: color 0.2s var(--ease);
 	}
@@ -459,12 +538,17 @@
 		-webkit-line-clamp: 3;
 		line-clamp: 3;
 		overflow: hidden;
-		font-family: var(--serif);
-		font-size: 0.92rem;
+		font-family: var(--sans);
+		font-size: 0.9rem;
 		font-weight: 400;
-		letter-spacing: -0.01em;
-		line-height: 1.45;
+		letter-spacing: var(--tracking-body);
+		line-height: 1.5;
 		color: var(--fg-dim);
+		transition: color 0.25s var(--ease);
+	}
+
+	.row:is(:hover, :focus-visible) .synopsis {
+		color: var(--fg);
 	}
 
 	.visually-hidden {
@@ -482,7 +566,20 @@
 		}
 
 		.part {
-			margin-top: 2rem;
+			margin-top: 3.5rem;
+		}
+
+		.arc {
+			margin-top: 2.75rem;
+		}
+
+		.chapter-head {
+			margin: 2.25rem 0 0.6rem;
+		}
+
+		.arc-head,
+		.chapter-head {
+			gap: 0.85rem 1.15rem;
 		}
 	}
 
@@ -491,6 +588,10 @@
 			grid-template-columns: 8rem minmax(0, 1fr);
 			gap: 0.9rem;
 			padding: 1.1rem 0;
+		}
+
+		.row.portrait {
+			grid-template-columns: 6.2rem minmax(0, 1fr);
 		}
 
 		.title-ko {

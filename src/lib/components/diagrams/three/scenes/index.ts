@@ -8,6 +8,9 @@ import type { SceneEntry } from '../kit.svelte';
 export const SCENES: Record<string, SceneEntry> = {
 	'harmony-council': { load: () => import('./HarmonyScene.svelte'), aspect: 1.25, narrowAspect: 1 },
 	'bone-rank': { load: () => import('./BoneRankScene.svelte'), aspect: 0.95, narrowAspect: 0.8 },
+	/** Two Bone Rank layers zoomed (TierLadder): the royal house under Sacred Bone, and the True Bone. */
+	'royal-lines': { load: () => import('./TierScene.svelte'), aspect: 1.3, narrowAspect: 0.95 },
+	'true-bone-tiers': { load: () => import('./TierScene.svelte'), aspect: 1.3, narrowAspect: 0.95 },
 	'eight-clans': { load: () => import('./EightClansScene.svelte'), aspect: 1.2, narrowAspect: 0.95 },
 	'royal-secretariat': {
 		load: () => import('./RoyalSecretariatScene.svelte'),
@@ -51,7 +54,14 @@ export const SCENES: Record<string, SceneEntry> = {
 /** Every battle map: its real ground in 3D, the sheet's own 1000 × 560 frame. */
 export const BATTLE_SCENE: SceneEntry = {
 	load: () => import('./battle/BattleScene.svelte'),
-	aspect: 1000 / 560
+	aspect: 1.45,
+	narrowAspect: 1.15
+};
+
+/** The map page in 3D: the whole sheet on its real relief, tilted (taller than wide). */
+export const MAP_SCENE: SceneEntry = {
+	load: () => import('./map/MapScene.svelte'),
+	aspect: 0.92
 };
 
 /** The wiki org-chart scene; each chart passes its own aspect from its layout. */

@@ -12,7 +12,7 @@
 		return null;
 	}
 
-	/** Three Realms principals — Hwanin sits above, not as a peer column. */
+	/** Three Realms principals — Hannim sits above, not as a peer column. */
 	export const COLS = [
 		{
 			id: 'daebyeol' as const,
@@ -51,20 +51,20 @@
 
 	export const tamlaIII = [
 		{ ko: '설문', en: 'Sulmun', x: 80 },
-		{ ko: '자청비', en: 'Jacheongbi', x: 160 },
-		{ ko: '가믄장', en: 'Gameunjang', x: 240 },
+		{ ko: '자청비', en: 'Jachungbi', x: 160 },
+		{ ko: '가믄장', en: 'Gamunjang', x: 240 },
 		{ ko: '산방덕', en: 'Sanbangduk', x: 320 }
 	] as const;
 </script>
 
 <script lang="ts">
 	/**
-	 * Pantheon org-chart: Hwanin (Creator) above the Three Realms.
+	 * Pantheon org-chart: Hannim (Creator) above the Three Realms.
 	 * Steps:
 	 *   - 'realms' — Creator + three realm heads only
 	 *   - 'courts' — full tree under each head (default)
 	 * Optional `realm` prop filters to one column (centered at x=200).
-	 * `heaven` focuses Hwanin’s mandate line (Hwanung → Dangun).
+	 * `heaven` focuses Hannim’s mandate line (Hwanung → Dangun).
 	 * `tamla` focuses Tamla Class III shrine gods under Little Star’s living world.
 	 */
 	import type { DiagramProps } from './registry';
@@ -120,7 +120,7 @@
 							const c = COLS.find((col) => col.realm === focus)!;
 							return `${c.realmKo} · ${c.realmEn}`;
 						})()
-					: '삼계 · Three Realms under Hwanin'
+					: '삼계 · Three Realms under Hannim'
 	);
 
 	const hx = (base: number) => base + ox;
@@ -129,8 +129,8 @@
 	const showTamla = $derived(focus === 'tamla');
 	const aria = $derived(
 		showTamla
-			? 'Org chart of Tamla Class III gods under Little Star: Sulmun, Jacheongbi, Gameunjang, and Sanbangduk.'
-			: 'Org chart of the Three Realms under Hwanin the Creator: Big Star, Little Star, and Hallakgungi, with their courts below.'
+			? 'Org chart of Tamla Class III gods under Little Star: Sulmun, Jachungbi, Gamunjang, and Sanbangduk.'
+			: 'Org chart of the Three Realms under Hannim the Creator: Big Star, Little Star, and Hallakgungi, with their courts below.'
 	);
 </script>
 
@@ -149,7 +149,7 @@
 		<!-- Creator above the Three Realms -->
 		<g class="node head creator" style="--d: 40">
 			<rect class="plate" x={CENTER - 62} y={CREATOR_Y - 22} width="124" height="56" rx="6" />
-			<ChartLabel x={CENTER} y={CREATOR_Y + 6} ko="환인" en="Creator" w={110} size="lg" />
+			<ChartLabel x={CENTER} y={CREATOR_Y + 6} ko="한님" en="Creator" w={110} size="lg" />
 		</g>
 
 		{#if showRealms}

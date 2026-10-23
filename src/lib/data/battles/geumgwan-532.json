@@ -1,0 +1,651 @@
+{
+	"id": "geumgwan-532",
+	"title": "Golden Gaya",
+	"ko": "금관가야 전투",
+	"hanja": "金官伽倻之戰",
+	"year": 532,
+	"place": "geumgwan",
+	"geo": {
+		"lat": 35.234,
+		"lon": 128.873
+	},
+	"scale": {
+		"km": 2,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "sea",
+			"points": [
+				[
+					0,
+					470
+				],
+				[
+					1000,
+					450
+				],
+				[
+					1000,
+					560
+				],
+				[
+					0,
+					560
+				]
+			],
+			"label": "the sea",
+			"ko": "바다",
+			"labelAt": [
+				160,
+				520
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					760,
+					0
+				],
+				[
+					730,
+					90
+				],
+				[
+					690,
+					190
+				],
+				[
+					650,
+					300
+				],
+				[
+					640,
+					380
+				],
+				[
+					660,
+					470
+				]
+			],
+			"width": 22,
+			"label": "the river",
+			"ko": "강",
+			"labelAt": [
+				800,
+				120
+			]
+		},
+		{
+			"kind": "plain",
+			"points": [
+				[
+					230,
+					300
+				],
+				[
+					600,
+					280
+				],
+				[
+					620,
+					440
+				],
+				[
+					220,
+					450
+				]
+			]
+		},
+		{
+			"kind": "town",
+			"points": [
+				[
+					300,
+					330
+				],
+				[
+					420,
+					300
+				],
+				[
+					520,
+					330
+				],
+				[
+					540,
+					400
+				],
+				[
+					440,
+					440
+				],
+				[
+					320,
+					420
+				]
+			],
+			"side": "gaya",
+			"label": "Golden Gaya",
+			"ko": "금관",
+			"labelAt": [
+				400,
+				470
+			],
+			"hold": {
+				"surrender": "silla"
+			}
+		},
+		{
+			"kind": "forest",
+			"points": [
+				[
+					330,
+					140
+				],
+				[
+					470,
+					120
+				],
+				[
+					520,
+					190
+				],
+				[
+					440,
+					240
+				],
+				[
+					340,
+					220
+				]
+			],
+			"label": "the pines",
+			"ko": "소나무 숲",
+			"labelAt": [
+				300,
+				120
+			]
+		},
+		{
+			"kind": "hill",
+			"at": [
+				430,
+				180
+			],
+			"r": 70
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				150,
+				170
+			],
+			"r": 60
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					420,
+					340
+				],
+				[
+					560,
+					320
+				],
+				[
+					640,
+					310
+				],
+				[
+					760,
+					300
+				],
+				[
+					900,
+					260
+				]
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				630,
+				330
+			],
+			"label": "the ford",
+			"ko": "여울"
+		},
+		{
+			"kind": "label",
+			"at": [
+				880,
+				40
+			],
+			"label": "from Silla",
+			"ko": "신라에서"
+		}
+	],
+	"sides": [
+		{
+			"id": "gaya",
+			"name": "Golden Gaya",
+			"ko": "금관가야",
+			"kingdom": "gaya"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "sl-fleet",
+			"side": "silla",
+			"label": "Silla boats",
+			"ko": "신라 배",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-host",
+			"side": "silla",
+			"label": "Silla host",
+			"ko": "신라군",
+			"unrecorded": true
+		},
+		{
+			"id": "gy-line",
+			"side": "gaya",
+			"label": "Gaya line",
+			"ko": "가야 진",
+			"unrecorded": true
+		},
+		{
+			"id": "gy-ford",
+			"side": "gaya",
+			"label": "The cone at the ford",
+			"ko": "여울의 고깔",
+			"unrecorded": true,
+			"hero": "muryuk"
+		},
+		{
+			"id": "gy-king",
+			"side": "gaya",
+			"label": "The king",
+			"ko": "임금",
+			"unrecorded": true,
+			"hero": "guhae"
+		}
+	],
+	"phases": [
+		{
+			"id": "river",
+			"label": "Down the river",
+			"ko": "강을 따라",
+			"caption": "First light. Silla comes down the river in boats, more spears than Golden Gaya has people. The harbour bell starts ringing and does not stop.",
+			"captionKo": "새벽. 신라가 배를 타고 강을 내려온다. 금관 사람 수보다 창이 많다. 항구의 종이 울리기 시작하고, 멈추지 않는다.",
+			"units": {
+				"sl-fleet": {
+					"at": [
+						740,
+						60
+					],
+					"men": 4000,
+					"shape": "fleet",
+					"facing": 110
+				},
+				"sl-host": {
+					"at": [
+						880,
+						230
+					],
+					"men": 6000,
+					"shape": "column",
+					"facing": 200
+				},
+				"gy-line": {
+					"at": [
+						560,
+						330
+					],
+					"men": 3000,
+					"shape": "line",
+					"facing": 0,
+					"r": 1.4
+				},
+				"gy-ford": {
+					"at": [
+						610,
+						320
+					],
+					"men": 300,
+					"facing": 0
+				},
+				"gy-king": {
+					"at": [
+						440,
+						360
+					],
+					"men": 500,
+					"facing": 0
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "naval",
+					"points": [
+						[
+							760,
+							10
+						],
+						[
+							730,
+							90
+						],
+						[
+							700,
+							170
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							950,
+							200
+						],
+						[
+							880,
+							240
+						],
+						[
+							800,
+							280
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "ford",
+			"label": "The bank goes",
+			"ko": "강둑이 무너진다",
+			"caption": "By noon the Gaya line has broken on the bank. The iron sheds are burning. One tall cone helm still holds the ford, and Silla men start going round it.",
+			"captionKo": "한낮, 가야의 진이 강둑에서 무너진다. 쇠 창고들이 불탄다. 높은 고깔 투구 하나가 아직 여울을 지키고, 신라군은 그를 피해 돌아가기 시작한다.",
+			"units": {
+				"sl-fleet": {
+					"at": [
+						668,
+						250
+					],
+					"men": 4000,
+					"shape": "fleet",
+					"facing": 110
+				},
+				"sl-host": {
+					"at": [
+						700,
+						300
+					],
+					"men": 6000,
+					"shape": "line",
+					"facing": 180,
+					"r": 1.4
+				},
+				"gy-line": {
+					"at": [
+						560,
+						340
+					],
+					"men": 1000,
+					"routed": true
+				},
+				"gy-ford": {
+					"at": [
+						630,
+						320
+					],
+					"men": 300,
+					"facing": 0
+				},
+				"gy-king": {
+					"at": [
+						440,
+						360
+					],
+					"men": 500,
+					"facing": 0
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							740,
+							280
+						],
+						[
+							690,
+							300
+						],
+						[
+							650,
+							320
+						]
+					]
+				},
+				{
+					"side": "silla",
+					"kind": "flank",
+					"points": [
+						[
+							680,
+							380
+						],
+						[
+							600,
+							420
+						],
+						[
+							520,
+							410
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "fire",
+					"at": [
+						500,
+						380
+					],
+					"label": "the iron sheds",
+					"ko": "쇠 창고"
+				},
+				{
+					"kind": "clash",
+					"at": [
+						635,
+						320
+					],
+					"label": "the ford holds",
+					"ko": "여울이 버틴다"
+				}
+			]
+		},
+		{
+			"id": "pines",
+			"label": "Up to the pines",
+			"ko": "소나무 숲으로",
+			"caption": "Up the slope, the king's standard goes down. Silla leads him up to the pines. His youngest cuts his way after him, and arrives alone.",
+			"captionKo": "비탈 위에서 임금의 깃발이 쓰러진다. 신라는 그를 소나무 숲으로 데려간다. 막내가 칼로 길을 내며 뒤따르고, 혼자 도착한다.",
+			"units": {
+				"sl-fleet": {
+					"at": [
+						660,
+						330
+					],
+					"men": 3000,
+					"shape": "fleet",
+					"facing": 180
+				},
+				"sl-host": {
+					"at": [
+						560,
+						300
+					],
+					"men": 6000,
+					"shape": "line",
+					"facing": 270,
+					"r": 1.4
+				},
+				"gy-line": {
+					"at": [
+						400,
+						400
+					],
+					"men": 0,
+					"routed": true
+				},
+				"gy-ford": {
+					"at": [
+						470,
+						220
+					],
+					"men": 100,
+					"facing": 270
+				},
+				"gy-king": {
+					"at": [
+						430,
+						180
+					],
+					"men": 100,
+					"facing": 90
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							520,
+							320
+						],
+						[
+							470,
+							260
+						],
+						[
+							440,
+							200
+						]
+					],
+					"label": "the king taken up",
+					"ko": "끌려가는 임금"
+				},
+				{
+					"side": "gaya",
+					"kind": "charge",
+					"points": [
+						[
+							630,
+							320
+						],
+						[
+							540,
+							270
+						],
+						[
+							480,
+							225
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "death",
+					"at": [
+						520,
+						290
+					],
+					"label": "his father's guard",
+					"ko": "아버지의 호위"
+				}
+			]
+		},
+		{
+			"id": "surrender",
+			"label": "A kingdom for a seat",
+			"ko": "나라와 바꾼 자리",
+			"caption": "Under the canopy the old king kneels and talks. Silla takes the harbour without another arrow. What it paid, it writes down.",
+			"captionKo": "차일 아래에서 늙은 임금이 무릎을 꿇고 말한다. 신라는 화살 한 대 더 쏘지 않고 항구를 얻는다. 무엇을 치렀는지는 글로 남긴다.",
+			"units": {
+				"sl-fleet": {
+					"at": [
+						660,
+						420
+					],
+					"men": 3000,
+					"shape": "fleet",
+					"facing": 180
+				},
+				"sl-host": {
+					"at": [
+						440,
+						360
+					],
+					"men": 6000,
+					"shape": "block",
+					"facing": 270
+				},
+				"gy-ford": {
+					"at": [
+						470,
+						215
+					],
+					"men": 100,
+					"facing": 270
+				},
+				"gy-king": {
+					"at": [
+						430,
+						180
+					],
+					"men": 100,
+					"facing": 90
+				}
+			},
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						430,
+						170
+					],
+					"label": "the king kneels",
+					"ko": "임금이 무릎 꿇다"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 4, Annals of Silla, Beopheung year 19",
+		"Samguk Yusa 2, Garakguk-gi"
+	],
+	"note": "The records say only that King Guhae came over with his queen and three sons and the treasury, and that Silla made him True Bone and gave him his old country as a fief. No strengths or field are recorded. The river attack, the ford and the pines follow the story; the ground is the Gimhae bend of the river above the old harbour.",
+	"noteKo": "기록은 구해왕이 왕비와 세 아들, 보물을 가지고 항복했고, 신라가 그를 진골로 삼고 옛 나라를 식읍으로 주었다는 것만 전한다. 병력도 싸움터도 적혀 있지 않다. 강을 따라 내려온 공격, 여울, 소나무 숲은 이야기를 따랐고, 지형은 옛 항구 위 김해의 강굽이다.",
+	"winner": "silla"
+}

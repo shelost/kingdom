@@ -19,7 +19,9 @@
 	import { stageText } from '$lib/stageText';
 	import { activeUtterance } from '$lib/speech.svelte';
 	import SpeakButton from './SpeakButton.svelte';
+	import SpeakerName from './SpeakerName.svelte';
 	import { storyImg } from '$lib/img';
+	import type { Attachment } from 'svelte/attachments';
 
 	/**
 	 * `overlay` is the immersion plate — fixed to the foot of the page, bust
@@ -138,6 +140,56 @@
 	 * fades, and a plate on its way out must not offer to read anything.
 	 */
 	let spoken = $derived(person ? activeUtterance() : null);
+
+	/** Below this the reader is the phone feed and the plate spans the screen. */
+	const DESKTOP = 821;
+	/** The TOC slides the columns for this long (--toc-duration, plus slack). */
+	const SLIDE_MS = 480;
+
+	/**
+	 * Desktop immersion: hold the box (and the bust over it) to the script
+	 * column itself, wherever the side panels and the TOC have put it.
+	 */
+	const matchScript: Attachment<HTMLElement> = (stage) => {
+		let raf = 0;
+		let until = 0;
+		const measure = () => {
+			raf = 0;
+			const col = [...document.querySelectorAll<HTMLElement>('article.entry .content-col')].find(
+				(el) => el.offsetWidth > 0
+			);
+			if (!col || innerWidth < DESKTOP) {
+				stage.style.removeProperty('--box-x');
+				stage.style.removeProperty('--box-w');
+			} else {
+				const c = col.getBoundingClientRect();
+				const s = stage.getBoundingClientRect();
+				const pad = parseFloat(getComputedStyle(stage).paddingLeft) || 0;
+				stage.style.setProperty('--box-x', `${c.left - s.left - pad}px`);
+				stage.style.setProperty('--box-w', `${c.width}px`);
+			}
+			if (performance.now() < until) raf = requestAnimationFrame(measure);
+		};
+		const schedule = () => {
+			if (!raf) raf = requestAnimationFrame(measure);
+		};
+		/* Follow the TOC's slide frame by frame. */
+		const slide = () => {
+			until = performance.now() + SLIDE_MS;
+			schedule();
+		};
+		const mo = new MutationObserver(slide);
+		mo.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+		measure();
+		addEventListener('resize', schedule);
+		addEventListener('scroll', schedule, { passive: true });
+		return () => {
+			if (raf) cancelAnimationFrame(raf);
+			mo.disconnect();
+			removeEventListener('resize', schedule);
+			removeEventListener('scroll', schedule);
+		};
+	};
 </script>
 
 <!-- One bust, used by both the outgoing and the incoming layer. -->
@@ -175,6 +227,7 @@
 		aria-label="Dialogue"
 		in:fly={boxMotion}
 		out:fade={portraitOut}
+		{@attach variant === 'overlay' && matchScript}
 	>
 		{#if variant === 'overlay'}
 			<div class="portrait-slot">
@@ -219,9 +272,9 @@
 						in:fade={nameIn}
 						out:fade={nameOut}
 					>
-						<span class="name">{who}</span>
+						<span class="name"><SpeakerName name={who} /></span>
 						{#if ko}
-							<span class="korean">{ko}</span>
+							<span class="korean"><SpeakerName name={ko} /></span>
 						{/if}
 					</button>
 				{/key}
@@ -474,13 +527,15 @@
 		align-items: flex-start;
 		gap: 0.02rem;
 		margin: 0;
-		padding: 0.26rem 0.7rem 0.3rem;
-		border: 2px solid #e0c878;
-		border-radius: 3px;
-		background: var(--plate-ink);
+		padding: 0.3rem 0.85rem 0.34rem;
+		border: 1px solid var(--plate-glass-edge);
+		border-radius: var(--radius-pill);
+		background: var(--plate-glass);
+		-webkit-backdrop-filter: blur(18px) saturate(1.4);
+		backdrop-filter: blur(18px) saturate(1.4);
 		box-shadow:
-			inset 0 0 0 1px #a8893a,
-			0 2px 8px var(--plate-shadow);
+			inset 0 1px 0 var(--plate-glass-sheen),
+			0 4px 14px var(--plate-shadow);
 		cursor: pointer;
 		color: inherit;
 		font: inherit;
@@ -489,7 +544,7 @@
 	}
 
 	.name-tab:hover {
-		border-color: #f0d898;
+		border-color: color-mix(in srgb, var(--gold) 55%, var(--plate-glass-edge));
 	}
 
 	.name-tab:focus-visible {
@@ -509,17 +564,17 @@
 	}
 
 	.name {
-		font-family: var(--serif);
-		font-size: 0.92rem;
-		font-weight: 700;
-		letter-spacing: 0.02em;
+		font-family: var(--ui);
+		font-size: 0.8rem;
+		font-weight: 650;
+		letter-spacing: var(--tracking-ui);
 		line-height: 1.15;
 		color: var(--plate-fg-strong);
 	}
 
 	.korean {
-		font-family: 'Noto Serif KR', var(--serif);
-		font-size: 0.66rem;
+		font-family: var(--ui);
+		font-size: 0.62rem;
 		font-weight: 500;
 		line-height: 1.2;
 		color: color-mix(in srgb, var(--gold) 70%, var(--plate-fg-strong));
@@ -527,18 +582,29 @@
 
 	.frame {
 		position: relative;
-		height: 7rem;
-		min-height: 7rem;
-		max-height: 7rem;
-		padding: 1.1rem 1.35rem 1rem 1.15rem;
-		border: 3px solid #e0c878;
-		border-radius: var(--radius);
-		background: var(--plate-ink);
+		height: 6.25rem;
+		min-height: 6.25rem;
+		max-height: 6.25rem;
+		padding: 1.1rem 1.4rem 0.9rem 1.25rem;
+		border: 1px solid var(--plate-glass-edge);
+		border-radius: 14px;
+		background: var(--plate-glass);
+		-webkit-backdrop-filter: blur(22px) saturate(1.4);
+		backdrop-filter: blur(22px) saturate(1.4);
 		box-shadow:
-			inset 0 0 0 2px var(--plate-ink),
-			inset 0 0 0 4px #c9a84c,
-			0 8px 28px var(--plate-shadow);
+			inset 0 1px 0 var(--plate-glass-sheen),
+			0 12px 36px var(--plate-shadow);
 		box-sizing: border-box;
+	}
+
+	/* Desktop immersion: bust and box stand on the script column, measured by
+	   `matchScript` (unset on phones, where the plate spans the screen). */
+	@media (min-width: 821px) {
+		.stage:not(.panel) .portrait-slot,
+		.stage:not(.panel) .box {
+			width: var(--box-w, 100%);
+			margin-left: var(--box-x, 0px);
+		}
 	}
 
 	.text {
@@ -558,16 +624,12 @@
 
 	.line {
 		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.05rem;
-		font-weight: 500;
-		line-height: 1.38;
-		letter-spacing: 0.01em;
+		font-family: var(--sans);
+		font-size: 0.92rem;
+		font-weight: var(--weight-body);
+		line-height: 1.45;
+		letter-spacing: var(--tracking-body);
 		color: var(--plate-fg);
-	}
-
-	.line.ko {
-		font-family: 'Noto Serif KR', var(--serif);
 	}
 
 	/* The reader's language is the line; every other tongue is a gloss. */
@@ -576,7 +638,7 @@
 	}
 
 	.line.sub {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 		font-weight: 400;
 		opacity: 0.74;
 		color: var(--plate-fg-quiet);
@@ -726,11 +788,10 @@
 			min-height: 6.25rem;
 			max-height: min(26dvh, 9.75rem);
 			padding: 1rem 1rem 1.35rem 0.95rem;
-			border-width: 2px;
+			border-radius: 12px;
 			box-shadow:
-				inset 0 0 0 2px var(--plate-ink),
-				inset 0 0 0 3px #c9a84c,
-				0 -2px 26px rgba(0, 0, 0, 0.5);
+				inset 0 1px 0 var(--plate-glass-sheen),
+				0 -2px 26px var(--plate-shadow);
 		}
 
 		.text {
@@ -744,16 +805,15 @@
 		}
 
 		.line {
-			font-size: 1.02rem;
-			font-weight: 500;
-			line-height: 1.42;
+			font-size: 0.92rem;
+			line-height: 1.45;
 			color: var(--plate-fg-strong);
 			overflow-wrap: anywhere;
 			word-break: keep-all;
 		}
 
 		.line.sub {
-			font-size: 0.88rem;
+			font-size: 0.8rem;
 			color: var(--plate-fg-quiet);
 		}
 
@@ -787,7 +847,7 @@
 		}
 
 		.line {
-			font-size: 0.98rem;
+			font-size: 0.9rem;
 		}
 	}
 

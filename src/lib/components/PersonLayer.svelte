@@ -8,6 +8,8 @@
 		nameOf,
 		titleOf,
 		koreanOf,
+		titleKoOf,
+		kingdomName,
 		isPlaceholderArt,
 		KINGDOMS,
 		colorOf,
@@ -29,10 +31,13 @@
 		clanOf,
 		clanEntriesOf,
 		clanMembersOf,
-		swordOfPerson
+		swordOfPerson,
+		lifespanOf
 	} from '$lib/wiki';
+	import Lifespan from '$lib/components/Lifespan.svelte';
 	import { profiles, openProfile, closeProfile } from '$lib/profiles.svelte';
 	import { reading } from '$lib/reading.svelte';
+	import { ui } from '$lib/uiLang';
 	import { resolve } from '$app/paths';
 	import { storyImg } from '$lib/img';
 
@@ -116,21 +121,16 @@
 		};
 	});
 
-	function lifespan(p: Person) {
-		const f = (n?: number) => (n == null ? '?' : n < 0 ? `${-n} BCE` : `${n}`);
-		if (p.born == null && p.died == null) return '';
-		return `${p.bornApprox ? 'c. ' : ''}${f(p.born)} – ${f(p.died)}`;
-	}
-
 </script>
 
 <!-- ————— floating preview ————— -->
 {#if hovered}
 	{@const k = { ...KINGDOMS[hovered.kingdom], color: colorOf(hovered) }}
 	{@const art = avatarOf(hovered, undefined, hoverYear)}
-	{@const who = nameOf(hovered, hoverYear)}
-	{@const role = titleOf(hovered, hoverYear)}
 	{@const ko = koreanOf(hovered, hoverYear)}
+	{@const koMode = reading.lang !== 'en'}
+	{@const who = koMode ? (ko || nameOf(hovered, hoverYear)) : nameOf(hovered, hoverYear)}
+	{@const role = koMode ? titleKoOf(hovered, hoverYear) : titleOf(hovered, hoverYear)}
 	<div
 		class="card"
 		class:below
@@ -151,10 +151,10 @@
 			<div class="card-id">
 				<span class="card-name">{who}</span>
 				<span class="card-sub">
-					{#if ko}<span class="ko">{ko}</span>{/if}
+					{#if ko && !koMode}<span class="ko">{ko}</span>{/if}
 					<span class="k-dot"></span>
 					{#if kingdomFlag(hovered.kingdom)}<img class="card-flag" src={kingdomFlag(hovered.kingdom)} alt="" />{/if}
-					{k.label}
+					{kingdomName(hovered.kingdom, koMode ? 'ko' : 'en')}
 				</span>
 			</div>
 			{#if ageAt(hovered, hoverYear) != null}
@@ -167,7 +167,7 @@
 			{#if hovered.entity === 'place'}
 				Place · click to open
 			{:else}
-				{lifespan(hovered)} · click to open
+				<Lifespan person={hovered} />{#if lifespanOf(hovered)}&nbsp;·{/if} click to open
 			{/if}
 		</p>
 	</div>
@@ -190,9 +190,10 @@
 	{@const binyeoArt = binyeoArtOf(peeked)}
 	{@const swordArt = swordArtOf(peeked)}
 	{@const flag = kingdomFlag(peeked.kingdom)}
-	{@const who = nameOf(peeked, stageYear)}
-	{@const role = titleOf(peeked, stageYear)}
 	{@const ko = koreanOf(peeked, stageYear)}
+	{@const koMode = reading.lang !== 'en'}
+	{@const who = koMode ? (ko || nameOf(peeked, stageYear)) : nameOf(peeked, stageYear)}
+	{@const role = koMode ? titleKoOf(peeked, stageYear) : titleOf(peeked, stageYear)}
 	{@const memberships = isOrg || isGroup || isClan || isBond ? [] : orgsOf(peeked)}
 	{@const groupMemberships =
 		isOrg || isGroup || isClan || isBond ? [] : groupsOf(peeked)}
@@ -218,18 +219,18 @@
 	>
 		<header class="peek-head">
 			<button class="close" onclick={() => closeProfile()} aria-label="Close">✕</button>
-			{#if peeked.main}<span class="lead">Lead</span>{/if}
-			{#if peeked.entity === 'concept'}<span class="lead concept">Institution</span>{/if}
-			{#if peeked.entity === 'organization'}<span class="lead concept">Organization</span>{/if}
-			{#if peeked.entity === 'group'}<span class="lead concept">Group</span>{/if}
-			{#if peeked.entity === 'clan'}<span class="lead concept">Clan</span>{/if}
-			{#if peeked.entity === 'god'}<span class="lead god">God</span>{/if}
-			{#if isPlace}<span class="lead place">Place</span>{/if}
-			{#if isBond}<span class="lead bond">{peeked.bond ? BOND_LABEL[peeked.bond] : 'Bond'}</span>{/if}
+			{#if peeked.main}<span class="lead">{ui('Lead')}</span>{/if}
+			{#if peeked.entity === 'concept'}<span class="lead concept">{ui('Institution')}</span>{/if}
+			{#if peeked.entity === 'organization'}<span class="lead concept">{ui('Organization')}</span>{/if}
+			{#if peeked.entity === 'group'}<span class="lead concept">{ui('Group')}</span>{/if}
+			{#if peeked.entity === 'clan'}<span class="lead concept">{ui('Clan')}</span>{/if}
+			{#if peeked.entity === 'god'}<span class="lead god">{ui('God')}</span>{/if}
+			{#if isPlace}<span class="lead place">{ui('Place')}</span>{/if}
+			{#if isBond}<span class="lead bond">{peeked.bond ? BOND_LABEL[peeked.bond] : ui('Bond')}</span>{/if}
 			<a
 				class="wiki-link"
 				href={resolve(`/wiki?id=${encodeURIComponent(peeked.id)}`)}
-				title="Open in the wiki">Wiki</a
+				title={ui('Wiki')}>{ui('Wiki')}</a
 			>
 		</header>
 
@@ -256,7 +257,7 @@
 					<h2 class="peek-name">{who}</h2>
 					<p class="peek-native">
 						{#if peeked.hanja}<span class="hanja">{peeked.hanja}</span>{/if}
-						{#if ko}<span class="ko">{ko}</span>{/if}
+						{#if ko && !koMode}<span class="ko">{ko}</span>{/if}
 					</p>
 					{#if peeked.quote}
 						<figure class="defining">
@@ -269,13 +270,13 @@
 			<dl class="props">
 				{#if role}
 					<div>
-						<dt>{isBond ? 'Bond' : isPlace ? 'Type' : 'Role'}</dt>
+						<dt>{ui(isBond ? 'Bond' : isPlace ? 'Type' : 'Role')}</dt>
 						<dd>{role}</dd>
 					</div>
 				{/if}
 				{#if isBond && peeked.between}
 					<div>
-						<dt>Between</dt>
+						<dt>{ui('Between')}</dt>
 						<dd class="between">
 							{#each peeked.between as id, i (id)}
 								{@const other = byId.get(id)}
@@ -287,7 +288,7 @@
 										onclick={() => openProfile(other, stageYear)}
 									>
 										<span class="swatch" style:--sw={colorOf(other)} aria-hidden="true"></span>
-										{nameOf(other, stageYear)}
+										{koMode ? (koreanOf(other, stageYear) || nameOf(other, stageYear)) : nameOf(other, stageYear)}
 									</button>
 								{/if}
 							{/each}
@@ -295,7 +296,7 @@
 					</div>
 				{/if}
 				<div>
-					<dt>{isPlace ? 'Territory' : isBond ? 'Kingdoms' : 'Kingdom'}</dt>
+					<dt>{ui(isPlace ? 'Territory' : isBond ? 'Kingdoms' : 'Kingdom')}</dt>
 					<dd>
 						{#if isBond && peeked.between}
 							<span class="pill-row">
@@ -305,7 +306,7 @@
 										{@const pk = { ...KINGDOMS[other.kingdom], color: colorOf(other) }}
 										<span class="pill" style:--pill={pk.color}>
 											{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
-											{pk.label}
+											{kingdomName(other.kingdom, koMode ? 'ko' : 'en')}
 										</span>
 									{/if}
 								{/each}
@@ -313,17 +314,17 @@
 						{:else}
 							<span class="pill">
 								{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
-								{k.label}
+								{kingdomName(peeked.kingdom, koMode ? 'ko' : 'en')}
 							</span>
 						{/if}
 					</dd>
 				</div>
 				{#if peeked.entity === 'nation' && k.icons}
-					<div><dt>Signs</dt><dd class="icons">{k.icons}</dd></div>
+					<div><dt>{ui('Signs')}</dt><dd class="icons">{k.icons}</dd></div>
 				{/if}
 				{#if peeked.blade || swordArt || (isSword && peeked.tagline)}
 					<div class={{ 'prop-art': swordArt }}>
-						<dt>Blade</dt>
+						<dt>{ui('Blade')}</dt>
 						<dd class={{ 'prop-art-row': swordArt }}>
 							{#if swordArt}
 								<img
@@ -351,7 +352,7 @@
 				{/if}
 				{#if peeked.binyeo}
 					<div class="prop-art">
-						<dt>Binyeo</dt>
+						<dt>{ui('Binyeo')}</dt>
 						<dd class="prop-art-row">
 							{#if binyeoArt}
 								<img
@@ -363,19 +364,19 @@
 						</dd>
 					</div>
 				{/if}
-				{#if lifespan(peeked)}
+				{#if lifespanOf(peeked)}
 					<div>
-						<dt>{hasHumanAge(peeked) ? 'Lived' : 'Active'}</dt>
-						<dd>{lifespan(peeked)}</dd>
+						<dt>{ui(hasHumanAge(peeked) ? 'Lived' : 'Active')}</dt>
+						<dd><Lifespan person={peeked} /></dd>
 					</div>
 				{/if}
 				{#if hasHumanAge(peeked) && peeked.born != null && peeked.died != null}
-					<div><dt>Age at death</dt><dd>{peeked.died - peeked.born}</dd></div>
+					<div><dt>{ui('Age at death')}</dt><dd>{peeked.died - peeked.born}</dd></div>
 				{/if}
 				{#if peeked.hwarangClass}
 					{@const hwColor = hwarangClassColor(peeked)}
 					<div>
-						<dt>Hwarang class</dt>
+						<dt>{ui('Hwarang class')}</dt>
 						<dd>
 							<span
 								class="hwarang-class-chip"
@@ -389,7 +390,7 @@
 				{/if}
 				{#if clanLabel}
 					<div>
-						<dt>Clan</dt>
+						<dt>{ui('Clan')}</dt>
 						<dd class="between">
 							{#if clanEntries.length}
 								{#each clanEntries as c, i (c.id)}
@@ -398,8 +399,8 @@
 										type="button"
 										class="linkish"
 										onclick={() => openProfile(c, stageYear)}
-										>{nameOf(c)}{#if c.korean}
-											<span class="clan-ko"> ({c.korean})</span>{/if}</button
+										>{koMode ? (c.korean || nameOf(c)) : nameOf(c)}{#if c.korean && !koMode}
+											<span class="clan-ko"> ({c.korean})</span>{/if}</button>
 									>
 								{/each}
 							{:else}
@@ -410,14 +411,14 @@
 				{/if}
 				{#if memberships.length}
 					<div>
-						<dt>Organizations</dt>
+						<dt>{ui('Organizations')}</dt>
 						<dd class="between">
 							{#each memberships as org, i (org.id)}
 								{#if i > 0}<span class="amp">·</span>{/if}
 								<button
 									type="button"
 									class="linkish"
-									onclick={() => openProfile(org, stageYear)}>{nameOf(org)}</button
+									onclick={() => openProfile(org, stageYear)}>{koMode ? (org.korean || nameOf(org)) : nameOf(org)}</button>
 								>
 							{/each}
 						</dd>
@@ -425,21 +426,21 @@
 				{/if}
 				{#if groupMemberships.length}
 					<div>
-						<dt>Groups</dt>
+						<dt>{ui('Groups')}</dt>
 						<dd class="between">
 							{#each groupMemberships as g, i (g.id)}
 								{#if i > 0}<span class="amp">·</span>{/if}
 								<button
 									type="button"
 									class="linkish"
-									onclick={() => openProfile(g, stageYear)}>{nameOf(g)}</button
+									onclick={() => openProfile(g, stageYear)}>{koMode ? (g.korean || nameOf(g)) : nameOf(g)}</button>
 								>
 							{/each}
 						</dd>
 					</div>
 				{/if}
 				<div>
-					<dt>{isBond ? 'Colours' : 'Identifier'}</dt>
+					<dt>{ui(isBond ? 'Colours' : 'Identifier')}</dt>
 					<dd class="accent-row">
 						{#each accents as hex (hex)}
 							<code class="hex" style:--chip={hex}>{hex}</code>
@@ -448,22 +449,30 @@
 				</div>
 				{#if peeked.firstLine}
 					<div>
-						<dt>First line</dt>
+						<dt>{ui('First line')}</dt>
 						<dd class="spoken">
-							<span class="spoken-en">“{peeked.firstLine.en}”</span>
-							{#if peeked.firstLine.ko}
+							{#if koMode && peeked.firstLine.ko}
 								<span class="spoken-ko">{peeked.firstLine.ko}</span>
+							{:else}
+								<span class="spoken-en">“{peeked.firstLine.en}”</span>
+								{#if peeked.firstLine.ko}
+									<span class="spoken-ko">{peeked.firstLine.ko}</span>
+								{/if}
 							{/if}
 						</dd>
 					</div>
 				{/if}
 				{#if peeked.lastLine}
 					<div>
-						<dt>Last line</dt>
+						<dt>{ui('Last line')}</dt>
 						<dd class="spoken">
-							<span class="spoken-en">“{peeked.lastLine.en}”</span>
-							{#if peeked.lastLine.ko}
+							{#if koMode && peeked.lastLine.ko}
 								<span class="spoken-ko">{peeked.lastLine.ko}</span>
+							{:else}
+								<span class="spoken-en">“{peeked.lastLine.en}”</span>
+								{#if peeked.lastLine.ko}
+									<span class="spoken-ko">{peeked.lastLine.ko}</span>
+								{/if}
 							{/if}
 						</dd>
 					</div>
@@ -481,14 +490,14 @@
 			{/if}
 
 			{#if orgMembers.length}
-				<h3>Members</h3>
+				<h3>{ui('Members')}</h3>
 				<ul class="between" style="flex-direction: column; align-items: flex-start; gap: 0.2rem;">
 					{#each orgMembers as m (m.id)}
 						<li>
 							<button
 								type="button"
 								class="linkish"
-								onclick={() => openProfile(m, stageYear)}>{nameOf(m, stageYear)}</button
+								onclick={() => openProfile(m, stageYear)}>{koMode ? (koreanOf(m, stageYear) || nameOf(m, stageYear)) : nameOf(m, stageYear)}</button>
 							>
 						</li>
 					{/each}
@@ -496,40 +505,42 @@
 			{/if}
 
 			{#if peeked.nature}
-				<h3>Nature</h3>
+				<h3>{ui('Nature')}</h3>
 				<p class="arc nature">{peeked.nature}</p>
 			{/if}
 
 			{#if peeked.arc}
 				<h3>
-					{isBond
-						? 'Story of the bond'
-						: isPlace
-							? 'About this place'
-							: isOrg
-								? 'About this organization'
-								: isGroup
-									? 'About this group'
-									: peeked.entity === 'god'
-										? 'Myth'
-										: 'Character arc'}
+					{ui(
+						isBond
+							? 'Story of the bond'
+							: isPlace
+								? 'About this place'
+								: isOrg
+									? 'About this organization'
+									: isGroup
+										? 'About this group'
+										: peeked.entity === 'god'
+											? 'Myth'
+											: 'Character arc'
+					)}
 				</h3>
 				<p class="arc">{peeked.arc}</p>
 			{/if}
 
 			{#if peeked.events?.length}
-				<h3>Key events</h3>
+				<h3>{ui('Key events')}</h3>
 				<ol class="timeline">
 					{#each peeked.events as ev, i (i)}
 						<li>
 							<span class="tl-year"
-								>{ev.year == null ? '—' : ev.year < 0 ? `${-ev.year} BCE` : ev.year}</span
+								>{ev.year == null ? '—' : ev.year < 0 ? `${-ev.year} ${ui('BCE')}` : ev.year}</span>
 							>
 							<span class="tl-dot" aria-hidden="true"></span>
 							<span class="tl-text">
 								{ev.label}
 								{#if peeked.born != null && ev.year != null && ev.year >= peeked.born}
-									<span class="tl-age">age {ev.year - peeked.born}</span>
+									<span class="tl-age">{koMode ? `${ev.year - peeked.born}살` : `age ${ev.year - peeked.born}`}</span>
 								{/if}
 							</span>
 						</li>

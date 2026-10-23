@@ -49,7 +49,97 @@ export interface ImageSlot {
 	 * the still is anchored to (`$lib/comicSay`). `false`: never letter it.
 	 */
 	say?: { en?: string; ko?: string; person?: string } | false;
+	/** Camera move and overlay the still plays each time it scrolls into view (`$lib/stillMotion`). */
+	motion?: StillMotion;
+	/** Shown only inside an emotion card's gallery (`EmotionGallery`), never in the reading flow. */
+	gallery?: boolean;
+	/** Script mode: stands alone at the column's full width instead of pairing in the masonry. */
+	wide?: boolean;
+	/** Display shape (width / height) set by dragging the frame's edge; the picture fills it, cropped. */
+	crop?: number;
+	/**
+	 * Script mode: fraction of the column this still takes (WIDTH_MIN–1).
+	 * Omitted: full width alone, or half a pair. A side drag writes only this
+	 * still. The gutter between two side-by-side stills writes both.
+	 */
+	width?: number;
+	/** Where the crop window sits, in percent (0–100). Omitted: centred. */
+	focus?: { x: number; y: number };
+	/** The same beat from the other telling (song vs. truth), drawn small in the frame's corner. */
+	inset?: string;
+	/** Which telling a still belongs to, where both are shown side by side: a round corner tag. */
+	version?: 'myth' | 'reality';
+	/**
+	 * On a myth still: id of its reality twin, drawn on the exact same layout and placed right
+	 * after it. Script mode shows the two full width, or (Animated on) as one before/after slider.
+	 */
+	pair?: string;
+	/** Parallel set across episodes (same layout and poses, a different life): e.g. `hwarang-gate`, `coronation`. */
+	parallel?: string;
 }
+
+/** Narrowest and widest `crop` a dragged frame edge can reach (width / height). */
+export const CROP_MIN = 0.4;
+export const CROP_MAX = 5;
+
+/** Narrowest and widest `width` a dragged side can reach, as a fraction of the column. */
+export const WIDTH_MIN = 0.22;
+export const WIDTH_MAX = 1;
+
+/** The prologue's emotion beats: each one-word card and its still share a motion. */
+export type Emotion = 'love' | 'revenge' | 'betrayal' | 'greed' | 'loyalty' | 'pride' | 'rage';
+
+/** Emotions, the prologue's opening myth beats and its three founding stills, and the scene moods. */
+export type StillMotion =
+	| Emotion
+	| 'tigers'
+	| 'heaven'
+	| 'birch'
+	| 'wanggum'
+	| 'invasion'
+	| 'refugees'
+	| 'samhan'
+	| 'generation'
+	| 'goguryeo'
+	| 'silla'
+	| 'baekje'
+	| SceneMotion;
+
+/**
+ * The full-screen layer over the script while a scene is under the reading line
+ * (`SceneWeather`): set on an entry or a plate, or read off the scene's words.
+ * `love` is flirting (petals), `heat` is sex (pink haze), `beyond` is the
+ * reapers' world (pale mist and motes), `cavern` the goddesses' dark-blue steam.
+ */
+export type Weather =
+	| 'embers'
+	| 'rain'
+	| 'storm'
+	| 'snow'
+	| 'blood'
+	| 'love'
+	| 'heat'
+	| 'ash'
+	| 'mist'
+	| 'cavern'
+	| 'beyond';
+
+/** A weather tag in the data: a weather, or `clear` for none (no inferring either). */
+export type Sky = Weather | 'clear';
+
+/** A one-time full-screen beat when its line reaches the middle of the screen (`SceneWeather`). */
+export type Moment = 'first-sight' | 'death';
+
+/** Timing tags on a line of script: the sky changes here until the scene ends, or a moment fires. */
+type Cue = {
+	/** From this line to the end of its scene, the weather is this. */
+	weather?: Sky;
+	/** Fires once as this line reaches the middle of the screen. */
+	moment?: Moment;
+};
+
+/** Motions read off a still's words when it has no `motion` of its own (`$lib/sceneMood`). */
+export type SceneMotion = 'battle' | 'duel' | 'romance' | 'grief' | 'fire' | 'storm' | 'snow' | 'night' | 'drift';
 
 /** ImageSlot plus the beat index it was flattened against for sticky stacks. */
 export type StackImage = ImageSlot & { beatIndex?: number };
@@ -70,13 +160,13 @@ export type QuoteStyle = 'annal' | 'myth' | 'stele' | 'tomb' | 'sutra' | 'shaman
 export type Block = PanelNote &
 	(
 	// `ko` is the Korean rendering of English narration
-	| { kind: 'p'; html: string; ko?: string; nsfw?: boolean; /** Soundtrack cue while this paragraph is the latest one reached. */ music?: string }
+	| ({ kind: 'p'; html: string; ko?: string; nsfw?: boolean; /** Soundtrack cue while this paragraph is the latest one reached. */ music?: string; /** Drawn as the prologue's animated one-word card (`EmotionWord`). */ emotion?: Emotion; /** The emotion card's character (person id). */ focus?: string; /** Slot ids (any episode) in the emotion card's scrolling gallery. */ gallery?: string[] } & Cue)
 	// `en` is the English rendering of `lines`, index-for-index.
 	// Tang / Chinese speech may add `zh` + `zhLatn` (pinyin); Yamato / Japanese
 	// speech may add `ja` + `jaLatn` (Hepburn romaji); Mohe speech may add `mnc`
 	// (Manchu in Möllendorff romanization) — subtitle layers shown regardless of
 	// the reader's ko/en preference.
-	| {
+	| ({
 			kind: 'dialogue';
 			chip: string;
 			lines: string[];
@@ -99,16 +189,21 @@ export type Block = PanelNote &
 			 * marks this one line as a letter (an email), whatever the room around it is.
 			 */
 			chat?: 'message' | 'post' | 'mail';
-	  }
+	  } & Cue)
 	| { kind: 'cite'; html: string; ko?: string } // "• 👑 King Mu (51) of Baekje"
 	// `en` is the English rendering of `lines`, index-for-index.
-	| { kind: 'verse'; color: string; lines: string[]; en?: string[] }
+	// A sung verse. With `person` it is a dirge: the spirits' bier song (상엿소리) over that death,
+	// a lead singer's couplets answered by the chorus on the `refrain` lines.
+	| { kind: 'verse'; color: string; lines: string[]; en?: string[]; person?: string; refrain?: number[]; title?: string; titleKo?: string }
 	| { kind: 'table'; head: string[]; rows: string[][]; colors?: string[] }
 	// A name written out character by character, stroke order animated (HanjaName).
 	// `gloss` is the 훈음 ("섬돌 계"); `meaning` the English sense; `name`/`ko` caption the whole name.
+	// `tab: 'words'` brushes native Hangul words instead: each `char` is a whole word ("대가"),
+	// `gloss` its reading ("Deka"), `meaning`/`meaningKo` its sense.
 	| {
 			kind: 'hanja';
-			chars: { char: string; gloss: string; meaning?: string }[];
+			tab?: 'name' | 'words';
+			chars: { char: string; gloss: string; meaning?: string; meaningKo?: string }[];
 			name?: string;
 			ko?: string;
 			note?: string;
@@ -126,7 +221,8 @@ export type Block = PanelNote &
 			write?: string;
 			sub?: string;
 			role?: string;
-			tab?: 'intro' | 'profile' | 'coronation';
+			/** `epitaph`: the card that closes a death, with the years of the life beneath the name. */
+			tab?: 'intro' | 'profile' | 'coronation' | 'epitaph';
 			caption?: string;
 			ko?: string;
 			/** 2:1 intro still across the head of the card: the moment they walk in (`/intro/*.jpg`). */
@@ -174,7 +270,7 @@ export type Block = PanelNote &
 			to?: string;
 			/**
 			 * Footnotes on the translation (the original is never touched): a `mark` ("*", "†")
-			 * placed in `html`/`ko`, explained underneath — e.g. a record's 大對盧 where the story says Magniji.
+			 * placed in `html`/`ko`, explained underneath — e.g. a record's 大對盧 where the story says High Commander.
 			 */
 			notes?: RecordNote[];
 	  }
@@ -260,6 +356,8 @@ export type Block = PanelNote &
 			places: string[];
 			/** Journeys and troop movements drawn as animated dotted arrows — ids in `mapRoutes`. */
 			routes?: string[];
+			/** Name the rivers in the crop (off by default). */
+			riverNames?: boolean;
 			title?: string;
 			caption?: string;
 			ko?: string;
@@ -298,9 +396,13 @@ export type Block = PanelNote &
 			cast?: Record<string, string>;
 	  }
 	// A large chapter-within-an-entry header — "DAY 1" over a siege chronicle.
-	| { kind: 'day'; label: string; ko?: string }
-	// Scene break (same plate as `day`; used if a merge names the cut a scene).
-	| { kind: 'scene'; label: string; ko?: string }
+	| { kind: 'day'; label: string; ko?: string; /** Full-screen weather for this day (`SceneWeather`); a section's carries into its stories. */ weather?: Sky; jump?: TimeJump; /** Calendar year when no jump plate prints one (`plateYear`). */ year?: number; /** Hide from the Notion outline. */ outline?: boolean }
+	// A location-and-time cut (the pines, the yard, a dated house).
+	| { kind: 'scene'; label: string; ko?: string; /** Full-screen weather for this scene (`SceneWeather`); a story's carries into its scenes. */ weather?: Sky; jump?: TimeJump; /** Calendar year when no jump plate prints one (`plateYear`). */ year?: number; /** Hide from the Notion outline. */ outline?: boolean }
+	// A named story inside a section: Childhood, the battle, Surrender.
+	| { kind: 'story'; label: string; ko?: string; /** Full-screen weather for this story (`SceneWeather`); a story's carries into its scenes. */ weather?: Sky }
+	// A life-chapter inside a long episode: Prince, General, Father.
+	| { kind: 'section'; label: string; ko?: string; /** Full-screen weather for this section (`SceneWeather`); carries into its stories. */ weather?: Sky }
 	// A mini-flashback that interrupts an entry mid-scroll.
 	| { kind: 'flashback'; year?: string; title?: string; blocks: Block[] }
 	// A wedding, as the couple's relationship status (FacebookLifeEvent). Hybrid
@@ -326,6 +428,8 @@ export interface Entry {
 	thumbnailLayer?: 'temp';
 	badges?: string[]; // emoji / flag chips under the title (`flag:silla`, `flag:baekje`, …)
 	music?: string; // track name — shows in the player tag while this entry is read
+	/** Full-screen weather for the whole episode, unless a plate sets its own (`SceneWeather`). */
+	weather?: Sky;
 	/** Genre voice of this episode — e.g. "political thriller", "island folklore". */
 	tone?: string;
 	/** One-line director's brief expanding on `tone`. */
@@ -336,12 +440,18 @@ export interface Entry {
 	kinds?: EpisodeKind[];
 	/** 등장인물 tags under the title, in order. Omit to derive from dialogue and stills (`entryCast`). */
 	cast?: string[];
+	/**
+	 * Kept in `story.json`, left out of the book: reading order, table of contents,
+	 * episode numbers. Lift the flag to put it back.
+	 */
+	hidden?: boolean;
 	images: ImageSlot[];
 	blocks: Block[];
 }
 
 /** Episode categories that earn a TOC icon. `flashback` is derived from `flash`, never stored. */
 export type EpisodeKind =
+	| 'flashback'
 	| 'love'
 	| 'myth'
 	| 'founding'
@@ -371,7 +481,11 @@ export interface Chapter {
 
 import raw from './data/story.json';
 
-export const chapters = raw as unknown as Chapter[];
+/** Hidden entries stay in the file and drop out of the book until the flag is lifted. */
+export const chapters = (raw as unknown as Chapter[]).map((chapter) => ({
+	...chapter,
+	entries: chapter.entries.filter((entry) => !entry.hidden)
+}));
 
 /** Whole-entry memory band — `flash` or the explicit `flashback` alias. */
 export function isFlashEntry(entry: Pick<Entry, 'flash' | 'flashback'>) {
@@ -413,23 +527,28 @@ export function isEpilogue(chapter: Pick<Chapter, 'id'>): boolean {
 	return chapter.id.startsWith('epilogue');
 }
 
-/** Reader-facing Arc numbers (one per `chapters` record): epilogues are unnumbered and do not advance the count. */
+/** The trailer before Arc 1. Its id must not be the bare `prologue`, which is the foreword's episode id. */
+export function isPrologue(chapter: Pick<Chapter, 'id'>): boolean {
+	return chapter.id.startsWith('prologue-');
+}
+
+/** Reader-facing Arc numbers (one per `chapters` record): prologues and epilogues are unnumbered and do not advance the count. */
 const ARC_NUMBERS: (number | null)[] = (() => {
 	let n = 0;
-	return chapters.map((ch) => (isEpilogue(ch) ? null : ++n));
+	return chapters.map((ch) => (isEpilogue(ch) || isPrologue(ch) ? null : ++n));
 })();
 
 export function arcNumber(chapterIndex: number): number | null {
 	return ARC_NUMBERS[chapterIndex] ?? null;
 }
 
-/** Reader-facing episode ordinals: one running count over every entry in reading order, epilogues included. */
+/** Reader-facing episode ordinals: one running count over every entry in reading order, epilogues included; prologue entries are 0 (unnumbered). */
 const EPISODE_ORDINALS: number[][] = (() => {
 	let n = 0;
-	return chapters.map((ch) => ch.entries.map(() => ++n));
+	return chapters.map((ch) => ch.entries.map(() => (isPrologue(ch) ? 0 : ++n)));
 })();
 
-export const EPISODE_COUNT = EPISODE_ORDINALS.reduce((n, ch) => n + ch.length, 0);
+export const EPISODE_COUNT = Math.max(0, ...EPISODE_ORDINALS.flat());
 
 /** 1-based position of an entry in the whole run — `37`; 0 when out of range. */
 export function episodeOrdinal(chapterIndex: number, entryIndex: number): number {
@@ -447,18 +566,75 @@ export function partId(chapterId: string): string {
 	return `part-${chapterId}`;
 }
 
-/** A named cut inside an entry — day plate, scene plate, or titled flashback. */
+/** DOM id for an Arc's title page. */
+export function arcPageId(chapterId: string): string {
+	return `arc-${chapterId}`;
+}
+
+/**
+ * A large time jump on a scene or day plate: "Ten Years Later…" as a title card,
+ * the place in small type beneath it. `place` (a places.ts id) names the place
+ * when the plate's label is a scene title; otherwise the label's place line is used.
+ * `year` sets the year itself as the large title, with the jump text beneath it
+ * (for episodes that walk through decades).
+ */
+export type TimeJump = { en: string; ko?: string; place?: string; year?: number };
+
+/** A labelled header plate: a section, a story, a scene or a siege day. */
+export type Plate = Extract<Block, { kind: 'day' | 'scene' | 'story' | 'section' }>;
+
+export function isPlate(b: Block | undefined): b is Plate {
+	return b?.kind === 'day' || b?.kind === 'scene' || b?.kind === 'story' || b?.kind === 'section';
+}
+
+const MINOR_WORDS = new Set(['a', 'an', 'and', 'as', 'at', 'by', 'for', 'from', 'in', 'into', 'of', 'on', 'or', 'the', 'to', 'with']);
+
+/** Headline case for an English plate line: every word capitalised except minor words in the middle. */
+function headlineCase(line: string): string {
+	return line.replace(/[\p{L}\p{N}’']+/gu, (word: string, offset: number) =>
+		offset > 0 && offset + word.length < line.length && MINOR_WORDS.has(word.toLowerCase())
+			? word
+			: word.charAt(0).toUpperCase() + word.slice(1)
+	);
+}
+
+/** A plate label as stacked lines: place first, then the time (split at the first “·”). */
+export function plateLines(label: string | undefined, english = true): string[] {
+	if (!label) return [];
+	const at = label.indexOf('·');
+	const lines = at < 0 ? [label] : [label.slice(0, at), label.slice(at + 1)];
+	return lines.map((l) => l.trim()).filter(Boolean).map((l) => (english ? headlineCase(l) : l));
+}
+
+/** A named cut inside an entry — story, day plate, scene plate, or titled flashback. */
 export type SceneRef = {
 	id: string;
 	slug: string;
 	title: string;
 	ko?: string;
-	kind: 'day' | 'scene' | 'flashback';
+	kind: Plate['kind'] | 'flashback';
+	/** False = cinema plate only; omitted from the Notion outline. */
+	outline?: boolean;
 };
+
+/** A story header plus the location-and-time scenes that sit under it. */
+export type StoryOutline = SceneRef & { scenes: SceneRef[] };
+
+/** A section (Prince, General) plus its stories, and any loose scenes before the first story. */
+export type SectionOutline = SceneRef & { stories: StoryOutline[]; scenes: SceneRef[] };
 
 /** Top-level blocks that title a scene the reader can jump to. */
 export function isSceneHeader(b: Block): boolean {
-	return b.kind === 'day' || b.kind === 'scene' || (b.kind === 'flashback' && !!b.title);
+	return isPlate(b) || (b.kind === 'flashback' && !!b.title);
+}
+
+/** Section / story slugs are prefixed so they never shift a scene with the same name. */
+function slugTitle(b: Block): string {
+	if (b.kind === 'section') return `section ${b.label}`;
+	if (b.kind === 'story') return `story ${b.label}`;
+	if (isPlate(b)) return b.label;
+	if (b.kind === 'flashback') return b.title ?? '';
+	return '';
 }
 
 function uniqueSlug(used: Map<string, number>, title: string): string {
@@ -476,21 +652,89 @@ export function scenesOf(blocks: Block[] | undefined, episodeId: string): SceneR
 	const used = new Map<string, number>();
 	const out: SceneRef[] = [];
 	for (const b of blocks ?? []) {
-		if (b.kind === 'day' || b.kind === 'scene') {
-			const slug = uniqueSlug(used, b.label);
-			out.push({ id: `${episodeId}-${slug}`, slug, title: b.label, ko: b.ko, kind: b.kind });
+		if (isPlate(b)) {
+			const slug = uniqueSlug(used, slugTitle(b));
+			out.push({
+				id: `${episodeId}-${slug}`,
+				slug,
+				title: b.label,
+				ko: b.ko,
+				kind: b.kind,
+				outline: b.kind === 'section' || b.kind === 'story' ? true : b.outline
+			});
 		} else if (b.kind === 'flashback' && b.title) {
-			const slug = uniqueSlug(used, b.title);
+			const slug = uniqueSlug(used, slugTitle(b));
 			out.push({ id: `${episodeId}-${slug}`, slug, title: b.title, kind: 'flashback' });
 		}
 	}
 	return out;
 }
 
-function headerTitle(b: Block): string {
-	if (b.kind === 'day' || b.kind === 'scene') return b.label;
-	if (b.kind === 'flashback') return b.title ?? '';
-	return '';
+/** 1-based number of each section header in an entry, in reading order. */
+export function sectionNumbers(blocks: Block[] | undefined): Map<Block, number> {
+	const out = new Map<Block, number>();
+	for (const b of blocks ?? []) if (b.kind === 'section') out.set(b, out.size + 1);
+	return out;
+}
+
+/** 1-based number of each story header, restarting at every section. */
+export function storyNumbers(blocks: Block[] | undefined): Map<Block, number> {
+	const out = new Map<Block, number>();
+	let n = 0;
+	for (const b of blocks ?? []) {
+		if (b.kind === 'section') n = 0;
+		if (b.kind === 'story') out.set(b, ++n);
+	}
+	return out;
+}
+
+/**
+ * The year a scene or day plate moves its episode to: the printed jump year, or a silent
+ * `year` for a vague leap ("Some Years Later…") or a scene with no plate.
+ */
+export function plateYear(b: Block): number | undefined {
+	if (b.kind !== 'scene' && b.kind !== 'day') return undefined;
+	return b.jump?.year ?? b.year;
+}
+
+/** The entry's sections (with nested stories and scenes), and the section index every header id falls under. */
+export function outlineOf(
+	blocks: Block[] | undefined,
+	episodeId: string
+): { sections: SectionOutline[]; of: Map<string, number> } {
+	const sections: SectionOutline[] = [];
+	const of = new Map<string, number>();
+	let section: SectionOutline | undefined;
+	let story: StoryOutline | undefined;
+	for (const s of scenesOf(blocks, episodeId)) {
+		if (s.kind === 'section') {
+			section = { ...s, stories: [], scenes: [] };
+			story = undefined;
+			sections.push(section);
+			of.set(s.id, sections.length - 1);
+			continue;
+		}
+		if (!section) continue;
+		of.set(s.id, sections.length - 1);
+		if (s.kind === 'story') {
+			story = { ...s, scenes: [] };
+			section.stories.push(story);
+			continue;
+		}
+		if (s.kind === 'flashback' || s.outline === false) continue;
+		if (story) story.scenes.push(s);
+		else section.scenes.push(s);
+	}
+	return { sections, of };
+}
+
+/** Sections as the top outline row — year spans on the timeline, ticks on the rail. */
+export function storiesOf(
+	blocks: Block[] | undefined,
+	episodeId: string
+): { stories: SectionOutline[]; storyOf: Map<string, number> } {
+	const { sections, of } = outlineOf(blocks, episodeId);
+	return { stories: sections, storyOf: of };
 }
 
 /**
@@ -510,6 +754,6 @@ export function sceneIdForBlock(
 		const s = list[n++];
 		if (b === block) return s?.id;
 	}
-	const slug = entrySlug(headerTitle(block)) || 'scene';
+	const slug = entrySlug(slugTitle(block)) || 'scene';
 	return `${episodeId}-${slug}`;
 }

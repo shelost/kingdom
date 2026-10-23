@@ -29,6 +29,14 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			title: 'Bone Rank · 골품제',
 			caption: 'Six ranks of bone under one unreachable throne. The robe is the census.',
 			ko: '닿을 수 없는 왕좌 아래 여섯 뼈의 등급. 관복이 호적이다.'
+		},
+		{
+			diagram: 'silla-royal',
+			step: 'house',
+			title: 'The royal house · 신라 왕실',
+			caption:
+				'From King Buphung down to Munmu’s children, Gaya Kim on the right. Crowns and regnal numbers on kings and queen regnants only.',
+				ko: '법흥왕에서 문무의 아이들까지, 오른쪽이 금관가야 김씨. 왕관과 대수는 왕과 여왕만.'
 		}
 	],
 	'nation-baekje': [
@@ -97,8 +105,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 		{
 			diagram: 'joseon-mandate',
 			title: 'Old Joseon · 고조선',
-			caption: 'Heaven’s mandate made into a capital: Hwanin → Hwanung → Dangun → Asadal.',
-			ko: '하늘의 명을 수도로 만든 계보. 환인 → 환웅 → 단군 → 아사달.'
+			caption: 'Heaven’s mandate made into a capital: Hannim → Hwanung → Dangun → Asadal.',
+			ko: '하늘의 명을 수도로 만든 계보. 한님 → 환웅 → 단군 → 아사달.'
 		}
 	],
 	'nation-gaya': [
@@ -115,7 +123,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'tamla-princes',
 			title: 'Three Princes · 삼성혈',
 			caption:
-				'Three divine princes rise from Samseonghyeol and divide the orange island — myths that name the Three Realms.',
+				'Three divine princes rise from Samsunghyul and divide the orange island — myths that name the Three Realms.',
 			ko: '삼성혈에서 세 신인이 나와 탐라를 나눈다 — 삼계를 이름 붙이는 섬의 신화.'
 		},
 		{
@@ -124,7 +132,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'tamla',
 			title: 'Tamla Class III · 탐라 제신',
 			caption:
-				'Island particulars under Little Star’s living world: Sulmun piled Halla; Jacheongbi, Gameunjang, and Sanbangduk keep the shrine road.',
+				'Island particulars under Little Star’s living world: Sulmun piled Halla; Jachungbi, Gamunjang, and Sanbangduk keep the shrine road.',
 			ko: '소별왕의 이승 아래 탐라의 개별 신격. 설문이 한라를 쌓고, 자청비·가믄장·산방덕이 당길을 지킨다.'
 		}
 	],
@@ -146,8 +154,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'heaven',
 			title: 'Heaven · 하늘나라',
 			caption:
-				'Hwanin’s court above 삼계 — Creator, not a peer realm. Mandate descends Hwanung → Dangun.',
-			ko: '삼계 위 환인의 조정 — 창조주이지 네 번째 계가 아니다. 명이 환웅에서 단군으로 내려간다.'
+				'Hannim’s court above 삼계 — Creator, not a peer realm. Mandate descends Hwanung → Dangun.',
+			ko: '삼계 위 한님의 조정 — 창조주이지 네 번째 계가 아니다. 명이 환웅에서 단군으로 내려간다.'
 		}
 	],
 	living_world: [
@@ -168,7 +176,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'flower',
 			title: 'Western Flower Field · 서천꽃밭',
 			caption:
-				'Hallakgungi’s rows after Saradoryeong retired — resurrection and extinction in the same western field.',
+				'Hallakgungi’s rows after Saradoryung retired — resurrection and extinction in the same western field.',
 			ko: '사라도령이 은퇴한 뒤 할락궁이의 이랑. 서천꽃밭에 환생꽃과 멸망꽃이 같이 핀다.'
 		}
 	],
@@ -178,8 +186,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			step: 'courts',
 			title: 'The Three Realms · 삼계',
 			caption:
-				'Hwanin the Creator above; below — Living (Little Star), Dead (Big Star), Western Flower Field (Hallakgungi). Heaven is not a fourth peer realm.',
-			ko: '창조주 환인이 위에 있고, 아래에 이승(소별왕)·저승(대별왕)·서천꽃밭(할락궁이)이 있다. 하늘나라는 네 번째 계가 아니다.'
+				'Hannim the Creator above; below — Living (Little Star), Dead (Big Star), Western Flower Field (Hallakgungi). Heaven is not a fourth peer realm.',
+			ko: '창조주 한님이 위에 있고, 아래에 이승(소별왕)·저승(대별왕)·서천꽃밭(할락궁이)이 있다. 하늘나라는 네 번째 계가 아니다.'
 		}
 	],
 	tamlagods: [
@@ -189,7 +197,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'tamla',
 			title: 'Tamla Class III · 탐라 제신',
 			caption:
-				'Sulmun is Tamla Class III — island-maker under the living world, not a realm-head. Jacheongbi, Gameunjang, and Sanbangduk share the shrine road.',
+				'Sulmun is Tamla Class III — island-maker under the living world, not a realm-head. Jachungbi, Gamunjang, and Sanbangduk share the shrine road.',
 			ko: '설문은 탐라 3등급 — 이승 아래 섬을 만든 신이지 계의 주인이 아니다. 자청비·가믄장·산방덕이 같은 당길을 쓴다.'
 		}
 	],
@@ -221,8 +229,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			step: 'courts',
 			title: 'The Three Realms · 삼계',
 			caption:
-				'Yearly meeting-place: a small 정자 claimed by none of the three courts. Hwanin above; Living, Dead, and Western Flower Field below.',
-			ko: '연례 모임은 세 조정이 아무도 제 땅이라 하지 않는 작은 정자. 환인이 위에 있고, 이승·저승·서천꽃밭이 아래에 있다.'
+				'Yearly meeting-place: a small 정자 claimed by none of the three courts. Hannim above; Living, Dead, and Western Flower Field below.',
+			ko: '연례 모임은 세 조정이 아무도 제 땅이라 하지 않는 작은 정자. 한님이 위에 있고, 이승·저승·서천꽃밭이 아래에 있다.'
 		}
 	],
 	bari: [
@@ -342,8 +350,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'hwarang',
 			title: 'The Hwarang · 화랑',
 			caption:
-				'국선 (Marshal) at the apex — six 화랑, four 낭도 beneath each. One class a year (Class n = entry year − 559); the number is kept for life. Almost every Harmony Councillor first slept in the hall.',
-			ko: '국선 아래 여섯 화랑, 각 화랑 아래 낭도 넷. 기는 해마다 하나(기수 = 입문 연도 − 559)이고 평생 간다. 화백의 거의가 먼저 그 방에서 잤다.'
+				'국선 (Marshal) at the apex, then 화랑. A hwarang is the one the king names. Nangdo are whoever follows him — two, or forty. The schoolbook draws four under each; the yard never kept it. One class a year (Class n = entry year − 559); the number is kept for life.',
+			ko: '국선 아래 화랑. 화랑은 임금이 이름 붙인 사람. 낭도는 따라가는 사람 — 둘일 수도, 마흔일 수도 있다. 그림에는 넷이라고 적혀 있다. 연무장은 그걸 지킨 적이 없다. 기는 해마다 하나(기수 = 입문 연도 − 559)이고 평생 간다.'
 		}
 	],
 	restorationarmy: [
@@ -397,6 +405,60 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			title: 'Tang Eastern Expedition · 당 동정군',
 			caption: 'Expeditionary command stack — legislative, examination, executive east.',
 			ko: '동정군의 명령 줄 — 기안, 심사, 집행.'
+		}
+	],
+	jinheung: [
+		{
+			diagram: 'silla-royal',
+			step: 'house',
+			title: 'The Sukhuljong house · 숙흘종',
+			caption: 'Ipjong at the top, Gaya Kim on the right. Crowns on kings and queen regnants — not consorts.',
+			ko: '꼭대기의 입종, 오른쪽 금관가야 김씨. 왕관은 왕과 여왕만 — 왕후는 아니다.'
+		}
+	],
+	sobi: [
+		{
+			diagram: 'silla-royal',
+			step: 'house',
+			title: 'The Sukhuljong house · 숙흘종',
+			caption: 'Queen Buyeo sits beside Sumekbu. No child on the tree — the gift was the girl, not a line.',
+			ko: '부여씨가 심맥부 곁에 앉는다. 아이 없이 — 선물은 혈통이 아니라 그 사람이었다.'
+		}
+	],
+	yongsu: [
+		{
+			diagram: 'silla-royal',
+			step: 'bihyung',
+			title: 'Jinji’s line · 진지왕 혈통',
+			caption: 'The deposed king’s son drops to True Bone. Yongsu marries a Sacred Bone princess. Bidam is Biryun’s late boy, a cousin, not a brother.',
+			ko: '폐위된 왕의 아들은 진골로 내려앉는다. 용수는 성골 공주와 혼인하고, 비담은 비륜의 늦은 아들, 사촌이지 형제가 아니다.'
+		}
+	],
+	jinji: [
+		{
+			diagram: 'silla-royal',
+			step: 'bihyung',
+			title: 'Jinji’s line · 진지왕 혈통',
+			caption: 'Deposed in 579. Dies that autumn. One True Bone son: Yongsu, the ghost’s child. His brother’s late boy Bidam is born years later.',
+			ko: '579년에 폐위되고 그해 가을에 죽는다. 진골 아들은 용수, 귀신의 자식. 아우의 늦은 아들 비담은 그 뒤에 태어난다.'
+		}
+	],
+	bidam: [
+		{
+			diagram: 'silla-royal',
+			step: 'bihyung',
+			title: 'Biryun’s line · 비륜 혈통',
+			caption: 'Biryun’s late son, True Bone by his Park mother. Jinji’s nephew. The Sacred side is the father everyone can name.',
+			ko: '비륜의 늦은 아들. 박씨 어머니 쪽으로 진골. 진지왕의 조카. 성골 쪽은 누구나 이름 대는 아버지다.'
+		}
+	],
+	mishil: [
+		{
+			diagram: 'silla-royal',
+			step: 'house',
+			title: 'Biryun’s hall · 비륜',
+			caption: 'Park clan, True Bone. Married the unlisted brother. Their late son is Bidam.',
+			ko: '박씨 진골. 회의록에 없던 아우와 혼인한다. 늦은 아들이 비담이다.'
 		}
 	]
 };

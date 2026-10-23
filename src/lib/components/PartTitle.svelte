@@ -9,29 +9,28 @@
 	let { part, ko = false }: { part: DirectoryPart; ko?: boolean } = $props();
 
 	let stills = $derived(partStills(part, 12));
-	let firstIndex = $derived(
-		episodes.findIndex((e) => e.kind === 'entry' && e.chapterId === part.id)
-	);
+	let self = $derived(episodes.findIndex((e) => e.id === partId(part.id)));
+	let next = $derived(self >= 0 ? episodes[self + 1] : undefined);
 	let lead = $derived((ko && part.korean) || part.title);
 	let second = $derived(ko ? part.title : part.korean);
 </script>
 
 <StillWall {stills} storyId={partId(part.id)}>
 	<span class="part-eyebrow float-up" style:--i={0}>{partLabel(part.label, ko)}</span>
-	{#if lead}<h2 class="part-title float-up" style:--i={1}>{lead}</h2>{/if}
-	{#if second}<p class="part-second float-up" style:--i={2}>{second}</p>{/if}
-	{#if part.hanja}<p class="part-hanja float-up" style:--i={3}>{part.hanja}</p>{/if}
-	<p class="part-meta float-up" style:--i={4}>
+	{#if lead}<h2 class="part-title float-up" style:--i={2}>{lead}</h2>{/if}
+	{#if second}<p class="part-second float-up" style:--i={3}>{second}</p>{/if}
+	{#if part.hanja}<p class="part-hanja float-up" style:--i={4}>{part.hanja}</p>{/if}
+	<p class="part-meta float-up" style:--i={5}>
 		<span>{part.range}</span>
 		<span aria-hidden="true">·</span>
 		<span>{part.arcs.length} {ko ? '편' : 'arcs'}</span>
 		<span aria-hidden="true">·</span>
 		<span>{part.count} {ko ? '화' : 'episodes'}</span>
 	</p>
-	{#if firstIndex >= 0}
-		<button type="button" class="part-read float-up" style:--i={5} onclick={() => goToEpisode(firstIndex)}>
+	{#if next}
+		<button type="button" class="part-read float-up" style:--i={6} onclick={() => goToEpisode(self + 1)}>
 			<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
-			<span>{episodeNavLabel(episodes[firstIndex])}</span>
+			<span>{episodeNavLabel(next)}</span>
 		</button>
 	{/if}
 </StillWall>
@@ -69,6 +68,13 @@
 		margin-top: 0.9rem;
 		font-size: clamp(1.05rem, 1.9vw, 1.4rem);
 		color: var(--fg-strong);
+	}
+
+	:global(html:not([data-lang='ko'])) .part-second {
+		font-family: var(--display-ko);
+		font-weight: 400;
+		font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+		letter-spacing: 0;
 	}
 
 	.part-hanja {

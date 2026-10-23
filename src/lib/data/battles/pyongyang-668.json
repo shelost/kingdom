@@ -55,7 +55,7 @@
 				]
 			],
 			"width": 22,
-			"label": "Taedong river",
+			"label": "Tedong river",
 			"ko": "대동강",
 			"labelAt": [
 				150,
@@ -133,7 +133,7 @@
 				62
 			],
 			"r": 30,
-			"label": "Mount Yeongnyu",
+			"label": "Mount Yungnyu",
 			"ko": "영류산"
 		},
 		{
@@ -145,53 +145,13 @@
 			"r": 24
 		},
 		{
-			"kind": "wall",
-			"points": [
-				[
-					452,
-					236
-				],
-				[
-					492,
-					282
-				],
-				[
-					484,
-					350
-				],
-				[
-					438,
-					414
-				],
-				[
-					388,
-					432
-				],
-				[
-					352,
-					392
-				],
-				[
-					340,
-					322
-				],
-				[
-					376,
-					262
-				],
-				[
-					452,
-					236
-				]
-			],
-			"width": 5
-		},
-		{
-			"kind": "city",
+			"kind": "town",
+			"model": "pyongyang",
 			"at": [
-				416,
-				330
+				418,
+				334
 			],
+			"size": 80,
 			"side": "goguryeo",
 			"label": "Pyongyang",
 			"ko": "평양성",
@@ -202,8 +162,8 @@
 		{
 			"kind": "gate",
 			"at": [
-				366,
-				414
+				416,
+				395
 			],
 			"side": "goguryeo",
 			"hold": {
@@ -263,7 +223,7 @@
 				690,
 				546
 			],
-			"label": "from Hanseong",
+			"label": "from Hansung",
 			"ko": "한성에서"
 		}
 	],
@@ -955,5 +915,9 @@
 		"Zizhi Tongjian 201, Zongzhang 1"
 	],
 	"note": "The totals are the records’ own: five hundred thousand Tang (Old Book of Tang, Qibi Heli’s biography) and two hundred thousand Silla (Samguk Sagi, Kim Inmun’s biography), both almost certainly inflated. How the Tang total split between the vanguard, the Blue Dragon and the White Tiger II is not recorded. The records do not say which gate the monk opened; the map uses the south-west one because the Blue Dragon had moved his camp south of the city. The New Book of Tang stretches the siege to seven months, and the day of the fall differs between the Tang and Silla annals. Silla’s earlier victory on the Sacheon plain is off this map. Mount Yeongnyu follows the reading of Daeseong Mountain.",
-	"noteKo": "총수는 기록 그대로다. 당군 오십만(『구당서』 계필하력전), 신라군 이십만(『삼국사기』 김인문전). 둘 다 부풀려졌을 가능성이 크다. 당군이 선봉·청룡·백호 사이에 어떻게 나뉘었는지는 기록에 없다. 승려가 어느 문을 열었는지도 기록에 없어, 청룡이 진영을 성 남쪽으로 옮겼다는 기사를 따라 남서문으로 그렸다. 『신당서』는 포위를 일곱 달로 늘려 적고, 함락 날짜는 당과 신라의 기록이 서로 다르다. 북진 중에 신라가 사천원에서 거둔 승리는 이 지도 밖이다. 영류산은 대성산으로 보는 견해를 따랐다."
+	"noteKo": "총수는 기록 그대로다. 당군 오십만(『구당서』 계필하력전), 신라군 이십만(『삼국사기』 김인문전). 둘 다 부풀려졌을 가능성이 크다. 당군이 선봉·청룡·백호 사이에 어떻게 나뉘었는지는 기록에 없다. 승려가 어느 문을 열었는지도 기록에 없어, 청룡이 진영을 성 남쪽으로 옮겼다는 기사를 따라 남서문으로 그렸다. 『신당서』는 포위를 일곱 달로 늘려 적고, 함락 날짜는 당과 신라의 기록이 서로 다르다. 북진 중에 신라가 사천원에서 거둔 승리는 이 지도 밖이다. 영류산은 대성산으로 보는 견해를 따랐다.",
+	"winner": [
+		"tang",
+		"silla"
+	]
 }

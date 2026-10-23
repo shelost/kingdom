@@ -5,10 +5,10 @@
  */
 
 export const SILLA_RANKS: [ko: string, en: string][] = [
-	['이벌찬', 'Ibeolchan'], ['이찬', 'Ichan'], ['잡찬', 'Japchan'], ['파진찬', 'Pajinchan'], ['대아찬', 'Daeachan'],
-	['아찬', 'Achan'], ['일길찬', 'Ilgilchan'], ['사찬', 'Sachan'], ['급찬', 'Geupchan'],
-	['대나마', 'Daenama'], ['나마', 'Nama'],
-	['대사', 'Daesa'], ['사지', 'Saji'], ['길사', 'Gilsa'], ['대오', 'Daeo'], ['소오', 'Soo'], ['조위', 'Jowi']
+	['이벌찬', 'Ibulchan'], ['이찬', 'Ichan'], ['잡찬', 'Japchan'], ['파진찬', 'Pajinchan'], ['대아찬', 'Deachan'],
+	['아찬', 'Achan'], ['일길찬', 'Ilgilchan'], ['사찬', 'Sachan'], ['급찬', 'Gupchan'],
+	['대나마', 'Denama'], ['나마', 'Nama'],
+	['대사', 'Desa'], ['사지', 'Saji'], ['길사', 'Gilsa'], ['대오', 'Deo'], ['소오', 'Soo'], ['조위', 'Jowi']
 ];
 
 export const BAEKJE_RANKS = ['좌평', '달솔', '은솔', '덕솔', '한솔', '나솔', '장덕', '시덕', '고덕', '계덕', '대덕', '문독', '무독', '좌군', '진무', '극우'];

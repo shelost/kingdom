@@ -170,7 +170,7 @@
 		margin: 0 auto;
 	}
 
-	@media (max-width: 30rem) {
+	@container prose (max-width: 30rem) {
 		.has-image .head {
 			grid-template-columns: auto 1fr;
 		}

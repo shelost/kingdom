@@ -1,0 +1,708 @@
+{
+	"id": "daegaya-562",
+	"title": "Great Gaya",
+	"ko": "대가야 전투",
+	"hanja": "大伽倻之戰",
+	"year": 562,
+	"place": "daegaya",
+	"geo": {
+		"lat": 35.726,
+		"lon": 128.262
+	},
+	"scale": {
+		"km": 1,
+		"px": 200
+	},
+	"terrain": [
+		{
+			"kind": "ridge",
+			"points": [
+				[
+					200,
+					160
+				],
+				[
+					380,
+					110
+				],
+				[
+					560,
+					100
+				],
+				[
+					760,
+					140
+				]
+			],
+			"label": "Jusan ridge",
+			"ko": "주산",
+			"labelAt": [
+				760,
+				100
+			]
+		},
+		{
+			"kind": "mountain",
+			"at": [
+				480,
+				90
+			],
+			"r": 80
+		},
+		{
+			"kind": "town",
+			"points": [
+				[
+					360,
+					190
+				],
+				[
+					560,
+					170
+				],
+				[
+					640,
+					240
+				],
+				[
+					600,
+					320
+				],
+				[
+					420,
+					330
+				],
+				[
+					340,
+					270
+				]
+			],
+			"side": "gaya",
+			"label": "Great Gaya",
+			"ko": "대가야",
+			"labelAt": [
+				700,
+				220
+			],
+			"hold": {
+				"surrender": "silla"
+			}
+		},
+		{
+			"kind": "wall",
+			"points": [
+				[
+					350,
+					180
+				],
+				[
+					565,
+					158
+				],
+				[
+					652,
+					240
+				],
+				[
+					608,
+					332
+				],
+				[
+					415,
+					342
+				],
+				[
+					330,
+					272
+				],
+				[
+					350,
+					180
+				]
+			],
+			"width": 4
+		},
+		{
+			"kind": "gate",
+			"at": [
+				500,
+				338
+			],
+			"side": "gaya",
+			"label": "Jundan gate",
+			"ko": "전단문",
+			"labelAt": [
+				400,
+				372
+			],
+			"hold": {
+				"gate": "silla"
+			}
+		},
+		{
+			"kind": "road",
+			"points": [
+				[
+					520,
+					560
+				],
+				[
+					540,
+					470
+				],
+				[
+					515,
+					400
+				],
+				[
+					500,
+					345
+				]
+			],
+			"label": "the hill road",
+			"ko": "고갯길",
+			"labelAt": [
+				600,
+				500
+			]
+		},
+		{
+			"kind": "river",
+			"points": [
+				[
+					0,
+					470
+				],
+				[
+					300,
+					500
+				],
+				[
+					600,
+					520
+				],
+				[
+					1000,
+					500
+				]
+			],
+			"width": 12
+		},
+		{
+			"kind": "camp",
+			"at": [
+				620,
+				480
+			],
+			"side": "silla",
+			"label": "Silla camp",
+			"ko": "신라 진영",
+			"labelAt": [
+				720,
+				470
+			]
+		},
+		{
+			"kind": "label",
+			"at": [
+				880,
+				540
+			],
+			"label": "from Silla",
+			"ko": "신라에서"
+		}
+	],
+	"sides": [
+		{
+			"id": "gaya",
+			"name": "Great Gaya",
+			"ko": "대가야",
+			"kingdom": "gaya"
+		},
+		{
+			"id": "silla",
+			"name": "Silla",
+			"ko": "신라",
+			"kingdom": "silla"
+		}
+	],
+	"units": [
+		{
+			"id": "gy-roofs",
+			"side": "gaya",
+			"label": "Bows on the roofs",
+			"ko": "지붕 위 활",
+			"unrecorded": true
+		},
+		{
+			"id": "gy-gate",
+			"side": "gaya",
+			"label": "Gate guard",
+			"ko": "문 수비",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-main",
+			"side": "silla",
+			"label": "Silla main army",
+			"ko": "신라 본군",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-cone",
+			"side": "silla",
+			"label": "The bareheaded general",
+			"ko": "투구 벗은 장수",
+			"unrecorded": true
+		},
+		{
+			"id": "sl-van",
+			"side": "silla",
+			"label": "Sadaham",
+			"ko": "사다함",
+			"hero": "sadaham"
+		},
+		{
+			"id": "sl-mugwan",
+			"side": "silla",
+			"label": "Mugwan",
+			"ko": "무관",
+			"unrecorded": true,
+			"hero": "mugwan"
+		}
+	],
+	"phases": [
+		{
+			"id": "rain",
+			"label": "Rain on the hill road",
+			"ko": "고갯길의 비",
+			"caption": "The ninth month. Rain on the hill road, smoke on the hill. Every roof inside the wall has a bow on it. The Silla vanguard comes up the mud ahead of its own army.",
+			"captionKo": "구월. 고갯길엔 비, 언덕엔 연기. 성 안 지붕마다 활이 올라가 있다. 신라 선봉은 본군보다 앞서 진흙길을 오른다.",
+			"units": {
+				"gy-roofs": {
+					"at": [
+						490,
+						250
+					],
+					"men": 3000,
+					"shape": "scatter",
+					"facing": 90
+				},
+				"gy-gate": {
+					"at": [
+						500,
+						320
+					],
+					"men": 1000,
+					"shape": "line",
+					"facing": 90,
+					"r": 1.4
+				},
+				"sl-main": {
+					"at": [
+						760,
+						520
+					],
+					"men": 10000,
+					"shape": "column",
+					"facing": 180
+				},
+				"sl-cone": {
+					"at": [
+						520,
+						450
+					],
+					"men": 200,
+					"facing": 270
+				},
+				"sl-van": {
+					"at": [
+						545,
+						430
+					],
+					"men": 5000,
+					"shape": "column",
+					"facing": 270
+				},
+				"sl-mugwan": {
+					"at": [
+						560,
+						440
+					],
+					"men": 100,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							540,
+							550
+						],
+						[
+							540,
+							490
+						],
+						[
+							530,
+							450
+						]
+					]
+				}
+			]
+		},
+		{
+			"id": "bare",
+			"label": "A man walks up alone",
+			"ko": "홀로 오르는 사람",
+			"caption": "One Silla general takes his cone helm off, the same helm the men on the gate wear, and walks up the road alone. Every bow on every roof turns to watch him.",
+			"captionKo": "신라 장수 하나가 고깔 투구를 벗는다. 문 위의 군사들이 쓴 것과 같은 투구다. 그는 홀로 길을 오른다. 지붕마다 활이 모두 그를 향해 돈다.",
+			"units": {
+				"gy-roofs": {
+					"at": [
+						490,
+						260
+					],
+					"men": 3000,
+					"shape": "scatter",
+					"facing": 90
+				},
+				"gy-gate": {
+					"at": [
+						500,
+						320
+					],
+					"men": 1000,
+					"shape": "line",
+					"facing": 90,
+					"r": 1.4
+				},
+				"sl-main": {
+					"at": [
+						700,
+						500
+					],
+					"men": 10000,
+					"shape": "column",
+					"facing": 180
+				},
+				"sl-cone": {
+					"at": [
+						505,
+						375
+					],
+					"men": 200,
+					"facing": 270
+				},
+				"sl-van": {
+					"at": [
+						560,
+						420
+					],
+					"men": 5000,
+					"shape": "column",
+					"facing": 270
+				},
+				"sl-mugwan": {
+					"at": [
+						575,
+						430
+					],
+					"men": 100,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "advance",
+					"points": [
+						[
+							520,
+							440
+						],
+						[
+							512,
+							405
+						],
+						[
+							505,
+							380
+						]
+					],
+					"label": "bareheaded",
+					"ko": "맨머리로"
+				}
+			]
+		},
+		{
+			"id": "gate",
+			"label": "Through the Jundan gate",
+			"ko": "전단문을 뚫다",
+			"caption": "Nobody is looking at the boy. Sadaham takes five thousand horse at the gate while the men above it are still drawing, and goes through before they let go.",
+			"captionKo": "아무도 소년을 보고 있지 않다. 사다함이 기병 오천을 이끌고 문으로 달려든다. 위의 군사들이 아직 시위를 당기는 사이, 놓기도 전에 뚫고 들어간다.",
+			"units": {
+				"gy-roofs": {
+					"at": [
+						490,
+						250
+					],
+					"men": 2000,
+					"shape": "scatter",
+					"facing": 90
+				},
+				"gy-gate": {
+					"at": [
+						500,
+						320
+					],
+					"men": 0,
+					"routed": true
+				},
+				"sl-main": {
+					"at": [
+						620,
+						470
+					],
+					"men": 10000,
+					"shape": "column",
+					"facing": 250
+				},
+				"sl-cone": {
+					"at": [
+						505,
+						360
+					],
+					"men": 200,
+					"facing": 270
+				},
+				"sl-van": {
+					"at": [
+						500,
+						290
+					],
+					"men": 5000,
+					"shape": "wedge",
+					"facing": 270
+				},
+				"sl-mugwan": {
+					"at": [
+						515,
+						300
+					],
+					"men": 100,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							600,
+							420
+						],
+						[
+							530,
+							380
+						],
+						[
+							500,
+							300
+						]
+					],
+					"label": "five thousand horse",
+					"ko": "기병 오천"
+				}
+			],
+			"events": [
+				{
+					"kind": "gate",
+					"at": [
+						500,
+						338
+					],
+					"label": "the gate goes",
+					"ko": "문이 뚫리다"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						440,
+						250
+					]
+				}
+			]
+		},
+		{
+			"id": "street",
+			"label": "Two boys on one horse",
+			"ko": "말 한 필에 두 소년",
+			"caption": "Halfway up the street a spear takes Mugwan's horse. Sadaham rides back against his own charge to fetch him. They go on up together.",
+			"captionKo": "거리 한가운데서 창 하나가 무관의 말을 쓰러뜨린다. 사다함이 제 돌격을 거슬러 돌아와 그를 태운다. 둘이 함께 다시 오른다.",
+			"units": {
+				"gy-roofs": {
+					"at": [
+						470,
+						230
+					],
+					"men": 1500,
+					"shape": "scatter",
+					"facing": 90
+				},
+				"sl-main": {
+					"at": [
+						520,
+						380
+					],
+					"men": 10000,
+					"shape": "column",
+					"facing": 270
+				},
+				"sl-cone": {
+					"at": [
+						505,
+						350
+					],
+					"men": 200,
+					"facing": 270
+				},
+				"sl-van": {
+					"at": [
+						480,
+						230
+					],
+					"men": 5000,
+					"shape": "wedge",
+					"facing": 270
+				},
+				"sl-mugwan": {
+					"at": [
+						480,
+						240
+					],
+					"men": 100,
+					"facing": 270
+				}
+			},
+			"arrows": [
+				{
+					"side": "silla",
+					"kind": "charge",
+					"points": [
+						[
+							500,
+							300
+						],
+						[
+							490,
+							260
+						],
+						[
+							480,
+							220
+						]
+					]
+				}
+			],
+			"events": [
+				{
+					"kind": "clash",
+					"at": [
+						485,
+						255
+					],
+					"label": "Mugwan's horse",
+					"ko": "무관의 말"
+				},
+				{
+					"kind": "fire",
+					"at": [
+						560,
+						260
+					]
+				},
+				{
+					"kind": "fire",
+					"at": [
+						400,
+						280
+					]
+				}
+			]
+		},
+		{
+			"id": "surrender",
+			"label": "The white banner",
+			"ko": "흰 깃발",
+			"caption": "A white banner on the gate, held straight by two hands that are not the boy's. The main army walks in through a door that is already open. Great Gaya is the last.",
+			"captionKo": "문 위에 흰 깃발. 깃대를 곧게 붙든 손은 소년의 손이 아니다. 본군은 이미 열린 문으로 걸어 들어온다. 대가야가 마지막이다.",
+			"units": {
+				"gy-roofs": {
+					"at": [
+						470,
+						220
+					],
+					"men": 0,
+					"routed": true
+				},
+				"sl-main": {
+					"at": [
+						490,
+						260
+					],
+					"men": 10000,
+					"shape": "block",
+					"facing": 270
+				},
+				"sl-cone": {
+					"at": [
+						505,
+						345
+					],
+					"men": 200,
+					"facing": 270
+				},
+				"sl-van": {
+					"at": [
+						500,
+						200
+					],
+					"men": 5000,
+					"shape": "block",
+					"facing": 270
+				},
+				"sl-mugwan": {
+					"at": [
+						500,
+						212
+					],
+					"men": 100,
+					"facing": 270
+				}
+			},
+			"events": [
+				{
+					"kind": "surrender",
+					"at": [
+						490,
+						180
+					],
+					"label": "the city kneels",
+					"ko": "성이 무릎 꿇다"
+				}
+			]
+		}
+	],
+	"sources": [
+		"Samguk Sagi 4, Annals of Silla, Jinheung year 23",
+		"Samguk Sagi 44, Biography of Sadaham"
+	],
+	"note": "The Annals say Isabu was sent against Great Gaya and Sadaham, fifteen, asked to go as his second; Sadaham took five thousand horse into the Jundan gate first and the city fell. Strengths other than his five thousand are not recorded. The bareheaded general and the fall of Mugwan's horse follow the story.",
+	"noteKo": "신라본기는 이사부가 대가야를 치러 가고, 열다섯 살 사다함이 부장이 되기를 청했으며, 기병 오천을 이끌고 먼저 전단문으로 들어가 성이 무너졌다고 적는다. 그의 오천 말고는 병력이 기록되지 않았다. 투구 벗은 장수와 무관의 말이 쓰러지는 대목은 이야기를 따랐다.",
+	"winner": "silla"
+}

@@ -220,7 +220,7 @@
 		{
 			"id": "yeonsu",
 			"side": "goguryeo",
-			"label": "Go Yeonsu",
+			"label": "Go Yunsu",
 			"ko": "고연수",
 			"hero": "goyeonsu"
 		},
@@ -758,7 +758,7 @@
 			"id": "hill",
 			"label": "The burned bridges",
 			"ko": "불탄 다리",
-			"caption": "Go Yeonsu pulls what is left onto a hill to regroup. Behind the hill, the Black Dragon has already taken the bridges down and burned them. Nobody goes home the way they came. The emperor likes that trick.",
+			"caption": "Go Yunsu pulls what is left onto a hill to regroup. Behind the hill, the Black Dragon has already taken the bridges down and burned them. Nobody goes home the way they came. The emperor likes that trick.",
 			"captionKo": "고연수는 남은 군을 수습하려고 언덕 위로 물린다. 언덕 뒤의 다리는 흑룡이 이미 끊어 불태웠다. 왔던 길로 돌아가는 자는 없다. 황제가 아끼는 수법이다.",
 			"units": {
 				"redragon": {
@@ -995,5 +995,6 @@
 		"Samguk Sagi 21, Annals of Goguryeo, Bojang year 4"
 	],
 	"note": "Heads taken: twenty thousand in the Zizhi Tongjian and the New Book of Tang, ten thousand in the Old Book of Tang (the Samguk Sagi's figure is garbled). The split between Go Yeonsu and Go Hyejin is not recorded and is drawn nearly even; of the Mohe, only the 3,300 buried afterwards are counted. What became of the ninety-odd thousand who neither died nor surrendered is not said; they simply leave the map. The records say the bridges were pulled down; the story burns them. The battlefield is unidentified; the ground follows the order of battle, and the forty-li line is drawn shorter.",
-	"noteKo": "벤 머리는 『자치통감』과 『신당서』가 이만, 『구당서』가 만이다(『삼국사기』의 숫자는 글자가 흐트러져 있다). 고연수와 고혜진 사이의 몫은 기록에 없어 거의 반반으로 그렸다. 말갈은 뒤에 생매장된 삼천삼백만 셈해져 있다. 죽지도 항복하지도 않은 구만여 명이 어떻게 되었는지는 기록에 없어, 그냥 지도 밖으로 사라진다. 기록은 다리를 걷어냈다고 하고, 이야기는 불태운다. 싸움터의 위치는 확인되지 않았다. 지형은 전투 서열에 맞춰 그렸고, 사십 리 진은 짧게 그렸다."
+	"noteKo": "벤 머리는 『자치통감』과 『신당서』가 이만, 『구당서』가 만이다(『삼국사기』의 숫자는 글자가 흐트러져 있다). 고연수와 고혜진 사이의 몫은 기록에 없어 거의 반반으로 그렸다. 말갈은 뒤에 생매장된 삼천삼백만 셈해져 있다. 죽지도 항복하지도 않은 구만여 명이 어떻게 되었는지는 기록에 없어, 그냥 지도 밖으로 사라진다. 기록은 다리를 걷어냈다고 하고, 이야기는 불태운다. 싸움터의 위치는 확인되지 않았다. 지형은 전투 서열에 맞춰 그렸고, 사십 리 진은 짧게 그렸다.",
+	"winner": "tang"
 }

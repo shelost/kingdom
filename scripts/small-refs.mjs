@@ -6,6 +6,7 @@
  * under the limit, and prints its absolute path for `reference_image_paths`.
  * Name the faces by position in the prompt ("LEFT face of the sheet = …").
  * `--bust` crops each ch_* portrait to head and chest, so faces stay large enough to copy.
+ * Boards wider than 2:1 (swords) are fitted into a 2:1 tile so they don't shrink the faces.
  *
  *   node scripts/small-refs.mjs sadaham-rope-cut /ch_sadaham.png /ch_mugwan.png
  *   node scripts/small-refs.mjs --bust rel-yushin-sunduk /ch_kim_yushin.png /ch_sunduk.png
@@ -39,7 +40,14 @@ for ref in refs:
         if box:
             im = im.crop(box)
         im = im.crop((0, 0, im.width, round(im.height * bust)))
-    tiles.append(im.resize((round(im.width * H / im.height), H), Image.LANCZOS))
+    w = round(im.width * H / im.height)
+    if w > 2 * H:
+        board = Image.new('RGB', (2 * H, H), 'white')
+        thin = im.resize((2 * H, round(im.height * 2 * H / im.width)), Image.LANCZOS)
+        board.paste(thin, (0, (H - thin.height) // 2))
+        tiles.append(board)
+    else:
+        tiles.append(im.resize((w, H), Image.LANCZOS))
 sheet = Image.new('RGB', (sum(t.width for t in tiles) + 8 * (len(tiles) - 1), H), 'white')
 x = 0
 for t in tiles:

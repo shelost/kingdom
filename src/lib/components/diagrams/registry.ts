@@ -22,6 +22,8 @@ import FiveTribes from './FiveTribes.svelte';
 import TangImperial from './TangImperial.svelte';
 import TangMilitary from './TangMilitary.svelte';
 import TangExam from './TangExam.svelte';
+import SillaRoyal from './SillaRoyal.svelte';
+import TierLadder from './TierLadder.svelte';
 
 export interface DiagramProps {
 	step?: string;
@@ -33,6 +35,8 @@ export interface DiagramProps {
 	cast?: Record<string, string>;
 	/** The entry's year: the sitters' portraits and offices as they stand then. */
 	year?: number | null;
+	/** The block's diagram id, for components that draw several diagrams (`TierLadder`). */
+	diagram?: string;
 }
 
 export const DIAGRAMS: Record<string, Component<DiagramProps>> = {
@@ -57,5 +61,11 @@ export const DIAGRAMS: Record<string, Component<DiagramProps>> = {
 	/** steps: fubing · guards · expedition · protectorate */
 	'tang-military': TangMilitary,
 	/** steps: clans · exam · ranks */
-	'tang-exam': TangExam
+	'tang-exam': TangExam,
+	/** steps: full · bihyung (softens links off Jinji → Yongsu ═ Chunmyung → Chunchu; faces stay full) · house (full tree on /tree) */
+	'silla-royal': SillaRoyal,
+	/** The five rungs inside the True Bone, from half-sacred to assimilants (step: full) */
+	'true-bone-tiers': TierLadder,
+	/** King · primary · secondary · tertiary royal lines (steps: jinpyung · muyeol) */
+	'royal-lines': TierLadder
 };

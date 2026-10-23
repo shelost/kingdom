@@ -7,7 +7,14 @@
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import GlassSelect, { type GlassOption } from '$lib/components/GlassSelect.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
-	import { chapters, entryId } from '$lib/story';
+	import SceneWeather from '$lib/components/SceneWeather.svelte';
+	import EffectPreview from '$lib/components/EffectPreview.svelte';
+	import { EFFECTS, EFFECT_KINDS, effectSearchText, type Effect, type EffectKind } from '$lib/effects';
+	import { chapters, entryId, type Block } from '$lib/story';
+	import { sceneMoods, type SceneMood } from '$lib/sceneMood';
+	import { sceneReveal } from '$lib/sceneReveal';
+	import { weatherMark } from '$lib/sceneWeather.svelte';
+	import { chain } from '$lib/attachments/chain';
 	import { PARTS, type DirectoryEpisode } from '$lib/episodeDirectory';
 	import {
 		collectWidgets,
@@ -52,9 +59,13 @@
 
 	let ko = $derived(reading.lang === 'ko');
 
+	/** Story widgets by group, plus the cut ones (`hidden`) and the animation effects (`effects`). */
+	type GroupId = WidgetGroup | 'all' | 'hidden' | 'effects';
+	type KindId = WidgetKind | EffectKind | 'all';
+
 	const params = page.url.searchParams;
-	let group = $state<WidgetGroup | 'all' | 'hidden'>((params.get('group') as WidgetGroup | 'hidden') ?? 'all');
-	let kind = $state<WidgetKind | 'all'>((params.get('kind') as WidgetKind) ?? 'all');
+	let group = $state<GroupId>((params.get('group') as GroupId) ?? 'all');
+	let kind = $state<KindId>((params.get('kind') as KindId) ?? 'all');
 	let sort = $state<Sort>((params.get('sort') as Sort) ?? 'order');
 	/** What the box shows as you type; `query` follows it after a short pause. */
 	let draft = $state(params.get('q') ?? '');
@@ -70,6 +81,20 @@
 
 	function episodeOf(w: WidgetInstance) {
 		return EPISODES.get(entryId(w.chapterId, w.entryTitle));
+	}
+
+	const ENTRIES = chapters.flatMap((ch) => ch.entries);
+	/** Each episode's scene moods, read once the first of its widgets draws. */
+	const MOODS = new Map<number, Map<Block, SceneMood>>();
+
+	/** The scene a widget sits in, as the reader feels it: its weather and how it arrives. Cut widgets have none. */
+	function sceneOf(w: WidgetInstance): SceneMood | undefined {
+		const entry = ENTRIES[w.entryIndex];
+		const host = entry?.blocks[w.blockIndex];
+		if (!host) return undefined;
+		let moods = MOODS.get(w.entryIndex);
+		if (!moods) MOODS.set(w.entryIndex, (moods = sceneMoods(entry.blocks, entry.weather)));
+		return moods.get(host);
 	}
 
 	/** A person's every name — English, Korean, hanja, and the one they go by that year — or a plain label. */
@@ -100,26 +125,44 @@
 	let matched = $derived(found.filter((w) => !w.hidden));
 	let matchedHidden = $derived(found.filter((w) => w.hidden));
 
+	const EFFECT_HAY = new Map(EFFECTS.map((e) => [e, effectSearchText(e)]));
+	let effectsFound = $derived(tokens.length ? EFFECTS.filter((e) => tokens.every((t) => EFFECT_HAY.get(e)?.includes(t))) : EFFECTS);
+	let effectsVisible = $derived(effectsFound.filter((e) => kind === 'all' || e.kind === kind));
+	let effectSections = $derived(
+		EFFECT_KINDS.map((k) => ({ ...k, items: effectsVisible.filter((e) => e.kind === k.kind) })).filter((s) => s.items.length)
+	);
+	const effectKindLabel = (e: Effect) => {
+		const k = EFFECT_KINDS.find((x) => x.kind === e.kind);
+		return k ? (ko ? k.ko : k.label) : e.kind;
+	};
+
 	const count = (pred: (w: WidgetInstance) => boolean) => matched.filter(pred).length;
 
-	let groupOptions = $derived<{ id: WidgetGroup | 'all' | 'hidden'; label: string; n: number }[]>([
+	let groupOptions = $derived<{ id: GroupId; label: string; n: number }[]>([
 		{ id: 'all', label: ko ? '전체' : 'All', n: matched.length },
 		...GROUPS.map((g) => ({ id: g.id, label: ko ? g.ko : g.label, n: count((w) => w.group === g.id) })).filter(
 			(g) => g.n > 0
 		),
+		...(effectsFound.length ? [{ id: 'effects' as const, label: ko ? '효과' : 'Effects', n: effectsFound.length }] : []),
 		...(matchedHidden.length ? [{ id: 'hidden' as const, label: ko ? '숨김' : 'Hidden', n: matchedHidden.length }] : [])
 	]);
 
-	let kindOptions = $derived(
+	let kindOptions = $derived<{ id: KindId; label: string; n: number }[]>(
 		group === 'all'
 			? []
-			: WIDGET_TYPES.filter((t) => group === 'hidden' || t.group === group)
-					.map((t) => ({
-						id: t.kind,
-						label: ko ? t.ko : t.label,
-						n: (group === 'hidden' ? matchedHidden : matched).filter((w) => w.kind === t.kind).length
-					}))
-					.filter((t) => t.n > 0)
+			: group === 'effects'
+				? EFFECT_KINDS.map((k) => ({
+						id: k.kind,
+						label: ko ? k.ko : k.label,
+						n: effectsFound.filter((e) => e.kind === k.kind).length
+					})).filter((k) => k.n > 0)
+				: WIDGET_TYPES.filter((t) => group === 'hidden' || t.group === group)
+						.map((t) => ({
+							id: t.kind,
+							label: ko ? t.ko : t.label,
+							n: (group === 'hidden' ? matchedHidden : matched).filter((w) => w.kind === t.kind).length
+						}))
+						.filter((t) => t.n > 0)
 	);
 
 	/** Rank sorting needs people on the cards, so it is offered only where cards live. */
@@ -138,7 +181,8 @@
 			? matchedHidden.filter((w) => kind === 'all' || w.kind === kind)
 			: matched.filter((w) => (group === 'all' || w.group === group) && (kind === 'all' || w.kind === kind))
 	);
-	let total = $derived(group === 'hidden' ? HIDDEN.length : LIVE.length);
+	let total = $derived(group === 'hidden' ? HIDDEN.length : group === 'effects' ? EFFECTS.length : LIVE.length);
+	let shownCount = $derived(group === 'effects' ? effectsVisible.length : visible.length);
 
 	/** Filters set beyond the defaults, for the folded phone bar's badge. */
 	let activeFilters = $derived((group !== 'all' ? 1 : 0) + (kind !== 'all' ? 1 : 0) + (sort !== 'order' ? 1 : 0));
@@ -222,13 +266,13 @@
 		replaceState(resolve('/widgets') + url.search, page.state);
 	}
 
-	function pickGroup(id: WidgetGroup | 'all' | 'hidden') {
+	function pickGroup(id: GroupId) {
 		group = id;
 		kind = 'all';
 		syncUrl();
 	}
 
-	function pickKind(id: WidgetKind | 'all') {
+	function pickKind(id: KindId) {
 		kind = id;
 		syncUrl();
 	}
@@ -281,6 +325,8 @@
 	</button>
 {/snippet}
 
+<SceneWeather />
+
 <main class="widgets-page">
 	<header class="chrome">
 		<SiteNavSpace />
@@ -291,16 +337,20 @@
 			<h1>{ko ? '위젯' : 'Widgets'}</h1>
 			<p class="meta">
 				{ko
-					? `이야기 속 사료, 카드, 지도, 도해 ${LIVE.length}개`
-					: `${LIVE.length} records, cards, maps and diagrams from the story`}
+					? `이야기 속 사료, 카드, 지도, 도해 ${LIVE.length}개, 애니메이션 효과 ${EFFECTS.length}개`
+					: `${LIVE.length} records, cards, maps and diagrams from the story, and ${EFFECTS.length} animation effects`}
 			</p>
 		</header>
 
 		<aside class="controls" class:expanded={filtersOpen} aria-label={ko ? '찾기와 분류' : 'Search and filters'}>
 			<p class="tally" aria-live="polite">
-				<b>{visible.length}</b>
-				{#if visible.length !== total}<span class="of">/ {total}</span>{/if}
-				{ko ? '개 위젯' : visible.length === 1 ? 'widget' : 'widgets'}
+				<b>{shownCount}</b>
+				{#if shownCount !== total}<span class="of">/ {total}</span>{/if}
+				{#if group === 'effects'}
+					{ko ? '개 효과' : shownCount === 1 ? 'effect' : 'effects'}
+				{:else}
+					{ko ? '개 위젯' : shownCount === 1 ? 'widget' : 'widgets'}
+				{/if}
 			</p>
 			<div class="bar">
 				<label class="search">
@@ -352,13 +402,39 @@
 						{/each}
 					</div>
 				{/if}
-				<div class="sort">
-					<GlassSelect label={ko ? '정렬' : 'Sort'} bind:value={sort} options={sortOptions} onchange={syncUrl} />
-				</div>
+				{#if group !== 'effects'}
+					<div class="sort">
+						<GlassSelect label={ko ? '정렬' : 'Sort'} bind:value={sort} options={sortOptions} onchange={syncUrl} />
+					</div>
+				{/if}
 			</div>
 		</aside>
 
 		<div class="results">
+			{#if group === 'effects'}
+				{#each effectSections as section (section.kind)}
+					<section class="section">
+						<h2>
+							{ko ? section.ko : section.label}
+							<span class="n">{section.items.length}</span>
+						</h2>
+						<ol class="list">
+							{#each section.items as e (e.id)}
+								<li class="item">
+									<div class="label">
+										<span class="type">{effectKindLabel(e)}</span>
+									</div>
+									<EffectPreview effect={e} {ko} />
+								</li>
+							{/each}
+						</ol>
+					</section>
+				{:else}
+					<p class="empty">
+						{ko ? `“${query}”에 해당하는 효과가 없습니다.` : `No effects match “${query}”.`}
+					</p>
+				{/each}
+			{:else}
 			{#each sections as section, s (`${activeSort}-${section.key || section.title}-${s}`)}
 				<section class="section">
 					<h2>
@@ -392,7 +468,8 @@
 									<p class="was-after">{ko ? '원래 자리: ' : 'Cut from after: '}<q>{w.hidden.after}</q></p>
 								{/if}
 								{#if shown.has(key)}
-									<div class="stage">
+									{@const mood = sceneOf(w)}
+									<div class="stage" {@attach chain(weatherMark(mood), sceneReveal(mood?.text ?? 'calm'))}>
 										<Blocks blocks={[w.block]} year={w.year} idPrefix={`w${key}-`} />
 									</div>
 								{/if}
@@ -409,6 +486,7 @@
 					{/if}
 				</p>
 			{/each}
+			{/if}
 		</div>
 	</div>
 </main>
@@ -433,7 +511,10 @@
 			max(1rem, env(safe-area-inset-left));
 	}
 
+	/* Above the weather's back plane (z 0), as the reader's column is. */
 	.layout {
+		position: relative;
+		z-index: 1;
 		box-sizing: content-box;
 		max-width: var(--script-measure);
 		margin: 0 auto;

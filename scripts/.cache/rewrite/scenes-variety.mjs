@@ -249,6 +249,29 @@ const PATCHES = [
 			])
 	},
 
+	{
+		entry: 'Gyeol (結)',
+		done: '아비는 네가 정말, 정말',
+		run: (e) => {
+			const fb = e.blocks.find((b) => b.kind === 'flashback' && /ninth morning/.test(b.title ?? ''));
+			const line = fb?.blocks.find((b) => b.kind === 'dialogue' && b.person === 'seohyeon');
+			if (!line) throw new Error('Gyeol: ninth-morning flashback line not found');
+			line.en = ['No matter what you do…', 'Look at me.', 'I am so, so proud of you…!'];
+			line.lines = ['네가 무엇을 하든…', '나를 보아라.', '아비는 네가 정말, 정말 자랑스럽다…!'];
+		}
+	},
+	{
+		entry: 'Gyeol (結)',
+		label: 'water-mirror re-anchor',
+		done: (e) => e.images?.find((x) => x.id === 'scenes-variety-water-mirror')?.at === 'it is the face from the water',
+		run: (e) => {
+			const im = e.images?.find((x) => x.id === 'scenes-variety-water-mirror');
+			if (!im) throw new Error('Gyeol: water-mirror slot missing');
+			im.at = 'it is the face from the water';
+			im.alt = 'Waist-deep in the cavern water, Yushin turns to face an old soldier in a cone helm who has the face from the water';
+		}
+	},
+
 	// ── #51 Royal Secretariat ───────────────────────────────────────────────
 	{
 		entry: 'Royal Secretariat',
@@ -319,13 +342,15 @@ const out = editStory((story) => {
 	for (const p of PATCHES) {
 		const e = byTitle.get(p.entry);
 		if (!e) throw new Error(`no entry ${p.entry}`);
-		if (find(e, p.done).length) {
-			log.push(`skip  ${p.entry} :: ${p.done}`);
+		const label = p.label ?? p.done;
+		const isDone = () => (typeof p.done === 'function' ? p.done(e) : find(e, p.done).length > 0);
+		if (isDone()) {
+			log.push(`skip  ${p.entry} :: ${label}`);
 			continue;
 		}
 		p.run(e);
-		if (!find(e, p.done).length) throw new Error(`${p.entry}: marker missing after patch: ${p.done}`);
-		log.push(`apply ${p.entry} :: ${p.done}`);
+		if (!isDone()) throw new Error(`${p.entry}: marker missing after patch: ${label}`);
+		log.push(`apply ${p.entry} :: ${label}`);
 	}
 	console.log(log.join('\n'));
 	return process.env.DRY ? false : true;

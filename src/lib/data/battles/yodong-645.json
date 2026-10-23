@@ -221,7 +221,7 @@
 				273
 			],
 			"side": "goguryeo",
-			"label": "Gaemo",
+			"label": "Gemo",
 			"ko": "개모성",
 			"hold": {
 				"gaemo": "tang"
@@ -596,9 +596,9 @@
 		},
 		{
 			"id": "gaemo",
-			"label": "Gaemo, eleven days",
+			"label": "Gemo, eleven days",
 			"ko": "개모성, 열하루",
-			"caption": "Gaemo lasts a little over ten days. Inside are seven hundred men Yeon sent from Gasi to hold it, and they are taken in the gate. Twenty thousand people and the granary go with the fort.",
+			"caption": "Gemo lasts a little over ten days. Inside are seven hundred men Yeon sent from Gasi to hold it, and they are taken in the gate. Twenty thousand people and the granary go with the fort.",
 			"captionKo": "개모성은 열흘 남짓 버틴다. 그 안에는 연이 가시성에서 보내 지키게 한 칠백 명이 있었고, 그들은 성문에서 붙잡힌다. 사람 이만과 곳간도 성과 함께 넘어간다.",
 			"units": {
 				"shiji": {
@@ -1150,5 +1150,6 @@
 		"Samguk Sagi 21, Annals of Goguryeo, Bojang year 4"
 	],
 	"note": "The records give the Blue Dragon sixty thousand foot and horse, the emperor's cousin four thousand riders against the relief army (drawn here out of the sixty), and the emperor ten thousand armoured horse at the walls (Old Book of Tang). Gaemo's garrison beyond the seven hundred from Gasi is not recorded; the twenty thousand taken there are people, not soldiers (the Samguk Sagi's figure is garbled). Yodong's defenders are drawn at the ten thousand fighting men captured; the ten thousand dead included townspeople, many in the fire. The story turns the relief army into a sortie the Blue Dragon drives back; the map follows the records. Where the relief army was met is not recorded. Sites follow the usual identifications: Tongding near Xinmin on the Liao, the New Fortress at Fushun, Gaemo at the Tashan hill fort south of Shenyang (some put it nearer Fushun), Yodong at Liaoyang. Yodong is drawn several times larger than scale so the shrine can be seen.",
-	"noteKo": "기록은 청룡에게 보병과 기병 육만, 구원군을 맞은 황제의 사촌에게 기병 사천(지도에서는 육만 안에서 떼어 그렸다), 성 아래 황제에게 철갑 기병 만(『구당서』)을 준다. 개모성 수비군은 가시성의 칠백 말고는 기록이 없고, 거기서 잡힌 이만은 병사가 아니라 백성이다(『삼국사기』의 숫자는 글자가 흐트러져 있다). 요동성 수비군은 사로잡힌 병사 만으로 그렸다. 죽은 만여 명에는 불에 탄 성안 사람들이 섞여 있다. 이야기는 구원군을 청룡이 밀어낸 출격으로 줄였지만, 지도는 기록을 따랐다. 구원군을 맞은 자리는 기록에 없다. 위치는 통설을 따랐다. 통정진은 요하 가 신민 부근, 신성은 무순, 개모성은 심양 남쪽 탑산산성(무순 쪽으로 보는 견해도 있다), 요동성은 요양이다. 요동성은 사당이 보이도록 실제보다 몇 배 크게 그렸다."
+	"noteKo": "기록은 청룡에게 보병과 기병 육만, 구원군을 맞은 황제의 사촌에게 기병 사천(지도에서는 육만 안에서 떼어 그렸다), 성 아래 황제에게 철갑 기병 만(『구당서』)을 준다. 개모성 수비군은 가시성의 칠백 말고는 기록이 없고, 거기서 잡힌 이만은 병사가 아니라 백성이다(『삼국사기』의 숫자는 글자가 흐트러져 있다). 요동성 수비군은 사로잡힌 병사 만으로 그렸다. 죽은 만여 명에는 불에 탄 성안 사람들이 섞여 있다. 이야기는 구원군을 청룡이 밀어낸 출격으로 줄였지만, 지도는 기록을 따랐다. 구원군을 맞은 자리는 기록에 없다. 위치는 통설을 따랐다. 통정진은 요하 가 신민 부근, 신성은 무순, 개모성은 심양 남쪽 탑산산성(무순 쪽으로 보는 견해도 있다), 요동성은 요양이다. 요동성은 사당이 보이도록 실제보다 몇 배 크게 그렸다.",
+	"winner": "tang"
 }

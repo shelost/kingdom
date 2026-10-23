@@ -58,9 +58,10 @@
 				"board": "/ref_hanbok_silla.png",
 				"crown": [
 					"/ref_crown_silla.jpg",
-					"/ref_muyeol.png"
+					"/research/silla-cheonmachong-gold-crown.jpg",
+					"/research/silla-hwangnam-gold-crown.jpg"
 				],
-				"crownText": "Silla gold crown, as the attached crown: a gold band with three tree-shaped uprights stepped like the character 出 and two antler uprights at the back, hung with round gold spangles and curved green jade gogok, long gold pendants at the temples. ref_muyeol shows it worn with the king's red robe and gold-scroll collar (ignore its painted backdrop)."
+				"crownText": "Silla gold crown exactly as the attached museum photo (Cheonmachong / Hwangnamdaechong, 27 to 36 cm tall, as tall again as the face): an OPEN crown with no cap or lining, the hair and topknot showing through it. A NARROW flat gold headband (about a thumb wide) sits level on the forehead. Rising from it, THREE flat sheet-gold tree uprights, one at the centre front and one over each ear: each is a straight vertical stem whose short straight side-branches turn UP at right angles in three or four stacked tiers (like 出), every tip a small bud or heart. At the BACK, two shorter flat antler-shaped uprights angle outward with alternating branches, seen behind the tree uprights, never curling out like horns at the sides. Every upright and the band is hung on fine gold wires with hundreds of small round trembling gold spangles and many curved pale-green jade gogok. From the band at each temple, a long pendant chain of gold leaf-shapes falls past the cheek to the collarbone. Thin, bright, pale gold-silver sheet that trembles and catches light. NEVER a solid basket, never a castle battlement or fence, never horns or deer antlers curving at the sides, never a cap inside, never a European spiked crown or tiara."
 			},
 			"baekje": {
 				"name": "Baekje",
@@ -175,6 +176,22 @@
 				"katana, tsuba or curved blade (ignore the sword drawn on his portrait)",
 				"two swords at once",
 				"blue glow aura"
+			],
+			"armorNote": [
+				{
+					"until": 667,
+					"text": "Silla scale-and-lamellar armour with a rounded-pointed Silla helm and cheek-and-neck guards, topped by a SMALL THREE-PRONGED iron FORK finial (like the Yushin statue); Silla-blue #2A5FB8 cloth at the collar, sleeves, sash and plume-cord.",
+					"refs": [
+						"/research/silla-yushin-statue.jpg"
+					]
+				},
+				{
+					"from": 668,
+					"text": "SUPREME GENERAL armour (Taedaegakgan), after the standard portrait, matte painted: gilt-bronze scale shoulder cape and gilt scale skirt panels edged in red and white bands, dark iron fish-scale cuirass with a white centre seam, Silla-blue #2A5FB8 sash under a black belt with a gilt sunburst buckle, teal roundel-patterned apron, salmon-red riveted arm guards. It combines every family helm: dark iron bowl with a gilt brow band carrying Seohyeon's SMALL HORNS, Yushin's THREE-PRONGED FORK finial on top, Muryuk's Gaya flared neck flange and red horsehair plume, red-lined mail hood.",
+					"refs": [
+						"/research/silla-yushin-standard-portrait.jpg"
+					]
+				}
 			]
 		},
 		"gyebek": {
@@ -254,7 +271,26 @@
 				"gold-plated armor",
 				"beardless face (except a flashback to youth)"
 			],
-			"horse": "damul"
+			"horse": "damul",
+			"eras": [
+				{
+					"from": 660,
+					"text": "Last years (ch_yeon_gesomun_old): iron-grey hair in a tight topknot tied with red cord, grey-streaked beard, heavier jowls, same glare; still in red-wing Goguryeo lamellar and a red cape."
+				}
+			]
+		},
+		"yeonjayu": {
+			"look": "Bald crown with a white fringe at the temples, long white beard and heavy Yeon brows, the same hard jaw as Taejo and Gesomun; old, massive, still upright.",
+			"dress": "Goguryeo steel lamellar with red-edged plates and RED WING shoulder-flaps, a red cape, dark charcoal under-robe, one ring-pommel sword at the hip.",
+			"demeanor": "Silent first chair. Looks down the way Gesomun does, without the laugh.",
+			"armor": "goguryeo",
+			"carry": "ONE crow-ring sword at the hip. Never five on the back.",
+			"hat": false,
+			"never": [
+				"five swords on the back",
+				"a full head of dark hair",
+				"jougwan"
+			]
 		},
 		"yeontaejo": {
 			"look": "Gesomun's father and an old man in every still: snow-white hair in a tight topknot tied with dark red cord, long white beard and moustache, the same heavy straight Yeon brows and hard jaw as his sons, deep lines around tired, watchful eyes; shoulders once massive, now slightly stooped.",
@@ -271,7 +307,7 @@
 			]
 		},
 		"chunchu": {
-			"look": "Slim and elegant; shoulder-length loose black hair parted in the middle; thin moustache and goatee stubble; amused eyes, small knowing smile.",
+			"look": "Slim and elegant; shoulder-length loose black hair parted in the middle; amused eyes, small knowing smile. Unmistakably Korean face: BLACK eyes (never brown, blue or grey), a small straight Korean nose with a low bridge, smooth oval face.",
 			"dress": "Magenta-crimson silk po with a charcoal sash, dark layered collar. Silk even on campaign.",
 			"looks": {
 				"ambassador": {
@@ -279,8 +315,10 @@
 				},
 				"formal": {
 					"text": "Court dress (attached ch_chunchu_formal.png): crimson patterned silk po with a gold-brocade collar band down the front, a plain gold belt; purple silk cap ringed by the gilt Silla winged crown, and pinned upright at the front of the cap the Cheonmachong BUTTERFLY-SHAPED GOLD CAP ORNAMENT exactly as the attached photo (ignore its black backdrop): a thin sheet-gold ornament like a butterfly with two pairs of spread wings above a short tongue-shaped stem, pierced all over with tiny holes and hung with dozens of small round gold spangles on wire loops that shiver as he moves; long gold drop earrings. No jougwan.",
-				"refs": ["/research/silla-cheonmachong-butterfly-ornament.jpg"],
-				"hat": false
+					"refs": [
+						"/research/silla-cheonmachong-butterfly-ornament.jpg"
+					],
+					"hat": false
 				}
 			},
 			"demeanor": "Diplomat and strategist: talks with his hands, smiles while calculating, never shouts; half-lidded watchful eyes.",
@@ -291,7 +329,11 @@
 			"eras": [
 				{
 					"until": 631,
-					"text": "Young hwarang (stage portrait): beardless, eager."
+					"text": "Young hwarang (stage portrait): clean-shaven, no moustache, no goatee, a young man's face; eager."
+				},
+				{
+					"from": 632,
+					"text": "Thin moustache and goatee stubble."
 				},
 				{
 					"from": 654,
@@ -301,12 +343,15 @@
 			"never": [
 				"front-line armored warrior pose",
 				"shouting battle face",
-				"katana"
-			]
+				"katana",
+				"Never a Chinese-style hat: no futou, no winged samo, no brimmed black gat; out of battle he wears only the small black Silla jougwan feather cap or a bare topknot with a gold pin.",
+				"Never a large or high-bridged nose; never light-coloured eyes."
+			],
+			"hat": "jougwan"
 		},
 		"bidam": {
 			"look": "Tall, handsome, clean-shaven; short slicked-back black hair; warm brown eyes, faint self-amused smile.",
-			"dress": "Long white outer robe whose sleeves are embroidered with galloping horses, over a plum-magenta inner robe and white sash. Navy #141C2E lives in the room and on the beads, not on his clothes.",
+			"dress": "His signature hybrid coat: a long white outer robe whose wide sleeves are embroidered with galloping black horses, with deep navy #141C2E bands down the lapels and a navy yoke across the shoulders, over a plum-magenta inner robe and dark sash; the bead string looped on the right wrist. Navy lives only in those lapel and shoulder bands and on the beads — never a glow.",
 			"demeanor": "Buddhist: 108 beads wrapped on the wrist or rolling through his fingers, lotus seat, incense, a sutra under his breath; calm, ironic, never hurried. In anger the smile stays and the eyes go flat.",
 			"armor": "silla",
 			"sword": "sword-bidam",
@@ -361,7 +406,9 @@
 			"look": "Broad, bearded king; black hair in a topknot with a yellow-gold headband whose tails trail; heavy brows, cynical eyes.",
 			"dress": "Crimson robe with a dark charcoal collar and gold trim; a steel lamellar pauldron peeking at one shoulder.",
 			"crownNote": "On Euija the two side ornaments are King Muryeong's gold diadem ornaments exactly as the attached museum photo (ignore its backdrop): a pair of thin sheet-gold flame-and-honeysuckle sprays, each a central stem with curling leaf-flames fanning up and out, pierced openwork and hung with small round gold spangles, one pinned on each side of the black silk cap and rising well above it.",
-			"crownRefs": ["/research/baekje-muryeong-king-diadem.jpg"],
+			"crownRefs": [
+				"/research/baekje-muryeong-king-diadem.jpg"
+			],
 			"looks": {
 				"disguise": {
 					"text": "DISGUISE: the same face, beard and yellow-gold headband as the attached portrait, but dressed only in a plain undyed GREY hemp robe with a deep GREY hood pulled up over the topknot, a rope belt, straw sandals. No crimson, no gold trim, no armor, no jewelry. A prince badly pretending to be nobody.",
@@ -421,7 +468,10 @@
 		"munhee": {
 			"jewelry": {
 				"text": "Silla gold: thick-ring gold earrings hung with chains of tiny gold leaves and spangles that tremble when she turns her head; a necklace of gold beads and blue glass beads with one green jade comma (gogok) at the centre; a thin gold bracelet.",
-				"refs": ["/research/silla-bubuchong-earrings.jpg", "/research/silla-hwangnam-gold-necklace.jpg"]
+				"refs": [
+					"/research/silla-bubuchong-earrings.jpg",
+					"/research/silla-hwangnam-gold-necklace.jpg"
+				]
 			},
 			"demeanor": "Yushin's younger sister, Chunchu's wife; quick and warm, the one who bought the dream.",
 			"never": [
@@ -540,12 +590,77 @@
 		"seohyeon": {
 			"armor": "silla",
 			"sword": "sword-fish",
-			"demeanor": "Yushin's father; Gaya blood, Silla duty, quiet."
+			"demeanor": "Yushin's father; Gaya blood, Silla duty, quiet.",
+			"look": "Gentle long face, apologetic eyes, a careful mouth; a softer cousin of young Yushin's face, never the same man. Completely clean-shaven and long-haired when young (loose topknot, long strands past the jaw); a thin moustache and short beard from his forties.",
+			"eras": [
+				{
+					"until": 584,
+					"text": "A boy (Surabol lanes, the Gaya house): plain white child hanbok, hair in a boy's braid or small topknot, no cap."
+				},
+				{
+					"from": 585,
+					"until": 600,
+					"text": "Young official in his twenties, CLEAN-SHAVEN, no beard or moustache: steel-blue silk po, white collar, dark sash, jougwan cap over a loose topknot with long loose strands."
+				},
+				{
+					"from": 601,
+					"text": "Grey-templed provincial governor and general; Silla steel lamellar on campaign."
+				}
+			],
+			"armorNote": [
+				{
+					"from": 601,
+					"text": "Silla steel lamellar with a pointed Silla helm whose brow band carries a pair of SMALL curved iron HORNS rising at the temples (short, like the horned brow of Yushin's standard portrait, not Viking horns); sky-blue #3E8EF0 cloth at the collar, sash and plume-cord."
+				}
+			]
 		},
 		"muryuk": {
 			"armor": "gaya",
 			"sword": "sword-fish",
-			"demeanor": "Gaya prince turned Silla general; the egg-and-iron line."
+			"demeanor": "Gaya prince turned Silla general; the egg-and-iron line.",
+			"hat": false,
+			"look": "Square weathered Gaya face, heavy brows, long pauses in the eyes; grows grey, then white, but never bald under the helm.",
+			"dress": "Out of battle: plain dark Gaya-cut po with a purple sash; his Gaya helm (rounded iron bowl, wide flared brim, tall red horsehair cone) on his head or under his arm, ALWAYS, even indoors at home (it sits on a stand by the door at night).",
+			"eras": [
+				{
+					"until": 531,
+					"text": "Gumgwan boy-prince: child or teen, the cone helm too big for him, coming down over his eyes."
+				},
+				{
+					"from": 532,
+					"until": 560,
+					"text": "Clean-shaven at seventeen (the ford, the pines, the cart), lean and scowling in a cone helm a little too big; a short beard from his late twenties. Silla general in the Gaya cone helm, steel lamellar on campaign."
+				},
+				{
+					"from": 561,
+					"until": 589,
+					"text": "Greying, then grey-bearded; the cone helm still on."
+				},
+				{
+					"from": 590,
+					"text": "Very old: white beard, a stick, four blankets, the helm still on."
+				}
+			],
+			"never": [
+				"the jougwan feather cap",
+				"a Silla pointed helm in place of his Gaya helm"
+			],
+			"armorNote": [
+				{
+					"until": 549,
+					"text": "Original Gaya kit: his GAYA HELM: a rounded dark-iron bowl of riveted strips with a wide flared iron brim-and-neck flange all round, crowned by a tall cone of red horsehair; red leather cords knotted under the chin; a coat of small dark iron scales laced with red-brown leather so densely it reads as CHAIN MAIL, mail cape over the shoulders, mail sleeves and leggings; purple #8B5CF6 sash and cuffs.",
+					"refs": [
+						"/research/gaya-armour-reconstruction.jpg"
+					]
+				},
+				{
+					"from": 550,
+					"text": "Silla general's kit that keeps the Gaya bones: Silla steel lamellar cuirass and skirt, but STILL his GAYA HELM: a rounded dark-iron bowl of riveted strips with a wide flared iron brim-and-neck flange all round, crowned by a tall cone of red horsehair; red leather cords knotted under the chin, plus a Gaya laced-mail aventail, mail cape and mail sleeves under the Silla plates; purple #8B5CF6 sash, cuffs and plume-cord.",
+					"refs": [
+						"/research/gaya-armour-reconstruction.jpg"
+					]
+				}
+			]
 		},
 		"sadaham": {
 			"armor": "silla",
@@ -592,8 +707,8 @@
 			"hat": false
 		},
 		"manmyung": {
-			"look": "Young Sacred-Bone noblewoman, oval face, strong dark brows, amused knowing eyes, a stubborn chin; long black hair in a low coiled chignon with a plain gold pin.",
-			"dress": "Rich plum-violet silk chima with a pale ivory jeogori and a deep plum ribbon; good silk she will ruin in the rain.",
+			"look": "Young royal Kim noblewoman whose face runs in the family: mostly her granddaughter Gotaso's (oval face, bright almond eyes, small nose, cheerful sly mouth) with a touch of her daughter Munhee's long jaw and arched brows; one eyebrow up, a closed-mouth smirk. Black hair in a high round bun with loose strands at the temples, one gold binyeo with a red bead, small gold hoop earrings.",
+			"dress": "Short white silk jeogori with deep crimson collar ribbon and cuffs, long deep-crimson chima with a gold-embroidered waistband, a pale celadon-green shawl; good silk she will ruin in the rain.",
 			"demeanor": "Teasing, decisive, braver than the men around her; she makes the decisions and lets Seohyun think he did."
 		},
 		"saimei": {
@@ -622,6 +737,64 @@
 			"never": [
 				"samurai armor of a later century",
 				"katana"
+			]
+		},
+		"gildal": {
+			"look": "Lean young clerk with a fox mask pushed up on the brow; black hair in a wild topknot, a knowing half-smile, fox-blood streaks painted down the cheeks.",
+			"dress": "Orange-red wide robe over a magenta inner wrap, white bound forearms, a fox mask riding on the head like a cap.",
+			"demeanor": "Punctual, courteous, faintly too good at paperwork.",
+			"hat": false,
+			"looks": {
+				"song": {
+					"text": "SONG / GOBLIN: a fox-headed dokebi in the same orange robe, a tree-stump mallet over one shoulder, spirit-smoke around the feet; glowing fox eyes. This is the record’s fox, not the clerk."
+				}
+			},
+			"never": [
+				"a late arrival",
+				"eating on camera"
+			]
+		},
+		"gwija_elder": {
+			"look": "One-eyed old man, white beard to the chest, the empty socket under a black patch; a spotted cream robe whose hem roots into the ground like a tree.",
+			"dress": "Cream robe blotched rust-brown, a plain staff, bare weathered hands.",
+			"demeanor": "Slow, dry, unbothered by kings.",
+			"hat": false,
+			"looks": {
+				"song": {
+					"text": "SONG / TREE SPIRIT: a wood-grain head with one hollow knot-eye, a cloud-halo, an orange-brown robe whose hem is a tangle of roots. No human face."
+				}
+			}
+		},
+		"gwija_mother": {
+			"look": "Young mother, round solemn face, black hair piled with cloth knots and grey river-stones; a baby on her back in orange jeogori.",
+			"dress": "White jeogori, peach chima, teal sash, a long red ribbon, a collar of grey stones.",
+			"demeanor": "Flat and tired until her children come up, then sharp.",
+			"looks": {
+				"song": {
+					"text": "SONG / ROCK LADY: the same piled stones and baby, but a grey stone mask for a face and stone-grey hands; a cloud-halo. Not a human woman."
+				}
+			}
+		},
+		"gwija_redmask": {
+			"look": "Three small boys in brown and cream hemp, masks hanging from their necks (purple, white, red), running as a knot; the smallest is the red-mask boy.",
+			"dress": "Plain hemp jeogori and trousers, cloth sashes, hanging dokebi masks.",
+			"demeanor": "Twelve and furious. The other two laugh; he does not.",
+			"hat": false,
+			"looks": {
+				"song": {
+					"text": "SONG / RASCAL GOBLINS: the same three boys with the masks ON — purple, white, red — smoke and fire boiling out of the heads. No human faces."
+				}
+			}
+		},
+		"guhae": {
+			"look": "Last king of Golden Gaya: broad Gaya face, dark beard, gold Gaya crown, purple and gold court silk.",
+			"dress": "Gaya royal silk, gold belt, the Gaya crown (tall gilt openwork).",
+			"demeanor": "Warm and theatrical with his sons; on his knees he bargains plainly.",
+			"eras": [
+				{
+					"from": 532,
+					"text": "SURABOL COUNCILLOR (ch_guhae_councillor): older, grey hair and a long grey-blue beard, seated in a white Silla councillor’s robe with maroon-and-gold borders, a bead necklace, gold earrings; no Gaya crown."
+				}
 			]
 		},
 		"takutsu": {
@@ -772,10 +945,14 @@
 		"yeonwife": {
 			"look": "Composed Goguryeo noblewoman in her thirties: black hair braided and coiled up with a cluster of red silk flowers at the crown, loose strands at the cheeks, calm narrow eyes, small red mouth.",
 			"dress": "Cut after the tomb owner's wife in the Ssangyeongchong mural: a long wide-sleeved jacket to the hip, crossed left over right and belted, in cream-buff silk with a broad rust-red band (襈) at the collar, cuffs and hem, over a long full skirt to the floor; a rust-red shawl over the arms, a long black sash.",
-			"dressRefs": ["/research/goguryeo-ssangyeongchong-couple.jpg"],
+			"dressRefs": [
+				"/research/goguryeo-ssangyeongchong-couple.jpg"
+			],
 			"jewelry": {
 				"text": "Goguryeo gold earrings: a thick hollow gold ring at each lobe with a short chain and a single heart-shaped gold leaf; no necklace, no bracelets.",
-				"refs": ["/research/goguryeo-gold-earring.jpg"]
+				"refs": [
+					"/research/goguryeo-gold-earring.jpg"
+				]
 			},
 			"demeanor": "Quiet and precise; saves the hard questions for when the lamps are low."
 		},
@@ -783,7 +960,10 @@
 			"looks": {
 				"court": {
 					"text": "Out of armour, dressed after the noblewoman of the Susan-ri mural: hair gathered up into a tall looped topknot, a small red rouge dot on each cheek, a long jacket to the hip with dark contrasting bands at collar, cuffs and hem, belted at the waist, over a long finely PLEATED skirt striped in bands of red, white, ochre and green that swings when she walks; soft cloth shoes. Gold earrings like Yeon's wife's.",
-					"refs": ["/research/goguryeo-susan-ri-lady.jpg", "/research/goguryeo-gold-earring.jpg"]
+					"refs": [
+						"/research/goguryeo-susan-ri-lady.jpg",
+						"/research/goguryeo-gold-earring.jpg"
+					]
 				}
 			},
 			"demeanor": "Practical tenderness; corrects cruelty more than posture. Stands like a soldier even in silk."
@@ -791,21 +971,164 @@
 		"ungo": {
 			"jewelry": {
 				"text": "The Baekje queen's gold from King Muryeong's tomb: long chain earrings, each a small gold ring with a cluster of tiny leaf spangles and a long chain of gold links ending in a heart-shaped leaf; a necklace of nine and seven jointed gold segments; one gold hairpin with a spread-wing top in the coiled hair.",
-				"refs": ["/research/baekje-muryeong-queen-earrings.jpg", "/research/baekje-muryeong-hairpin.jpg"]
+				"refs": [
+					"/research/baekje-muryeong-queen-earrings.jpg",
+					"/research/baekje-muryeong-hairpin.jpg"
+				]
 			},
 			"demeanor": "Quiet where Queen Satek was faction; moves a court without a clan crest."
 		},
 		"wuzetian": {
 			"look": "Hair piled into a tall looped Tang chignon fixed with gold combs and flower pins, painted crescent brows, a red flower mark (huadian) between the brows, red lips.",
 			"dress": "Tang court dress: a short jacket over a long skirt tied high under the bust, a long translucent silk shawl (pibo) over the shoulders and trailing on the floor; vermilion and deep red silk with gold-thread borders.",
-			"dressRefs": ["/research/abroad-yongtai-court-ladies.jpg"],
-			"never": ["Korean hanbok", "Qing dynasty headdress", "Forbidden City"]
+			"dressRefs": [
+				"/research/abroad-yongtai-court-ladies.jpg"
+			],
+			"never": [
+				"Korean hanbok",
+				"Qing dynasty headdress",
+				"Forbidden City"
+			]
 		},
 		"sumyeongjangja": {
 			"look": "Smug old rich man: long loose black hair, a long grey-green beard, half-lidded blank contemptuous eyes, a sour turned-down mouth.",
 			"dress": "Wide-sleeved white robe with an olive-gold collar band, a gold cord sash with a hanging tassel, a dark red under-sleeve.",
 			"demeanor": "Rich the way a flood is wet; counts his storehouses the way other men pray.",
 			"hat": false
+		},
+		"suro": {
+			"look": "His portrait face: young, warm, a thin moustache and goatee, black hair under a little gold crown.",
+			"dress": "Purple silk robe with gold-ochre collar bands and sash, as on his portrait.",
+			"eras": [
+				{
+					"from": 600,
+					"text": "As a ghost in the steam cavern (647) he keeps his portrait's young face, purple silk and little gold crown — never an old white-bearded hermit; barefoot, feet in the water, delighted with himself."
+				}
+			],
+			"never": [
+				"white-bearded old hermit",
+				"grey peasant robe"
+			]
+		},
+		"pumsuk": {
+			"look": "Twenty-one, clean-shaven, smooth boyish handsome face, black hair in a topknot under the Hwarang crescent-moon headband; earnest wide eyes that go startled easily.",
+			"dress": "Ice-blue silk po belted with a brown sash, dark inner sleeves and wrapped forearms (portrait-true).",
+			"demeanor": "Shy, earnest, overwhelmed: a True Bone boy given a border fortress for his blood. In command he hesitates, looks to older men for the answer, gives an order and takes it back.",
+			"armor": "silla",
+			"carry": "Ring-pommel parade sword at the left hip, fox in the gilt ring; never blooded until the last night.",
+			"props": "THE GOLD BUTTERFLY (only when the scene names it): a thumb-sized hand-hammered Silla gold butterfly pendant, thin gold sheet with tiny punched dots and three trembling gold spangles, one wing visibly a little larger than the other, hung on a short pink silk cord. Gotaso made it herself."
+		},
+		"gotaso": {
+			"look": "Fourteen-fifteen, round young face, bright eyes, black hair up with her gilt butterfly binyeo. A girl, never sexualized.",
+			"dress": "White jeogori with a blue collar, red sash ribbon, pink chima (portrait-true).",
+			"demeanor": "Bold, impatient, loves loudly; asks the same question until it is answered.",
+			"props": "THE GOLD BUTTERFLY (only when the scene names it): a thumb-sized hand-hammered Silla gold butterfly pendant, thin gold sheet with tiny punched dots and three trembling gold spangles, one wing visibly a little larger than the other, hung on a short pink silk cord. Gotaso made it herself.",
+			"never": [
+				"sexualized pose or skin",
+				"adult woman body"
+			]
+		},
+		"gumil": {
+			"look": "Thirties, lean border officer, stubble and a thin moustache, orange-red head-wrap with trailing tails, tired angry eyes.",
+			"dress": "Rust-red border-officer coat over dark trousers, navy sash, leather bracers, a plain sword at the hip (portrait-true).",
+			"demeanor": "Grumbling, humiliated, counting: a yellow-sleeve clerk who knows every sack in the granary."
+		},
+		"gumilwife": {
+			"look": "Thirty-one, striking, knowing half-smile, heavy-lidded eyes, dark hair up with a wooden sprig binyeo, loose strands at the neck. The best figure of any woman in the chronicle: tight, curvy hourglass — a tiny waist, full bust and full hips — and she carries it like a weapon; every man in the frame is already looking at her.",
+			"dress": "Old mended green jeogori washed so thin it clings to her bust and waist, a frayed red sash cinched hard to show how small her waist is, ochre chima pulled snug over her hips (portrait-true). Commoner cloth, no gold — except the gold butterfly once Pumsuk gives it to her.",
+			"demeanor": "Frank, low-voiced, amused; a master of seduction and teasing — makes a man wait and makes him watch; never learned to look down.",
+			"props": "THE GOLD BUTTERFLY (only when the scene names it): a thumb-sized hand-hammered Silla gold butterfly pendant, thin gold sheet with tiny punched dots and three trembling gold spangles, one wing visibly a little larger than the other, hung on a short pink silk cord. Gotaso made it herself. THE PEACH (only when the scene names it): a ripe blush peach she sucks slowly instead of biting, juice running to her wrist; she sets it down half-eaten when she has decided."
+		},
+		"haewonmek": {
+			"look": "Face hidden under a wide black gat brim, only the mouth and jaw visible; younger and broader than Kangrim.",
+			"dress": "Black reaper robe over a blue sash and coral-red skirt layers, white gat strings; a long black iron death-blade held low (portrait-true).",
+			"demeanor": "Dead silent, grave, a little grumpy; asks only for last words.",
+			"style": "Keep his portrait's ink-brush dissolve at his edges.",
+			"never": [
+				"eyes clearly visible",
+				"gore",
+				"armor"
+			]
+		},
+		"heohwangok": {
+			"look": "South Indian princess from Ayuta: deep warm brown skin, clearly darker than every Gaya and Samhan face around her; large dark kohl-lined eyes, full lips, straight nose, blue-black hair coiled low with the purple-tiger binyeo, small gold hoop earrings.",
+			"dress": "Her portrait silk: violet-purple jeogori with magenta-gold patterned sleeves and cream cuffs, deep violet chima, pale gold sash with tassels. Cut close and tailored: the jacket fitted to the bust and waist, the sash cinched high, the skirt falling clean from the hips; elegant and expensive, never loose, never a sari dump, never pink.",
+			"demeanor": "Calm, forward, amused; takes the lead; a queen who already knows the answer.",
+			"never": [
+				"pale or East Asian skin tone",
+				"pink or rose hanbok",
+				"baggy shapeless robes",
+				"meek downcast pose"
+			]
+		},
+		"ongunhae": {
+			"look": "His portrait face: lean like Chunchu and the same height, only a little broader in the jaw and a few years older, with a short trimmed black beard. Never fat, never round-faced.",
+			"demeanor": "Quiet, steady, does not need a second instruction."
+		},
+		"yongsu": {
+			"look": "Young (as Bihyung, the madman of Surabol): lean, long loose black hair in a careless topknot with ONE stray strand of hair always poking straight up out of it, exactly as on the attached portrait; thin face, quick crooked half-smile.",
+			"demeanor": "When he talks to ghosts or goblins his EYES GO SOLID WHITE (whole eye white, no iris or pupil) — only in those moments, never as a glow or aura. With the living he is distracted, a beat late, half laughing.",
+			"never": [
+				"No glowing body, no halo; never neat hair without the stray strand."
+			]
+		},
+		"sukhuljong": {
+			"hat": "jougwan",
+			"look": "Tall, lean royal prince, long black hair (white by old age) in a Silla topknot, narrow cold face, thin beard.",
+			"dress": "Fine Silla court silk: white outer po over a deep red inner robe, gold-trimmed collar and sash. Headwear is ONLY the small black Silla jougwan feather cap (or bareheaded with a topknot and gold pin).",
+			"never": [
+				"Never a tall black Chinese official hat: no futou, no winged samo, no tall gauze gwan, no stiff black box hat."
+			]
+		},
+		"jinheung": {
+			"hat": false,
+			"look": "Young Sacred Bone king: a round boyish face that never quite hardens, dark eyes set a little too wide, a short neat topknot under the open Silla gold crown. As Dharma Cloud: the same face, shaved head, no crown.",
+			"dress": "Deep red Silla court silk, wide sleeves, a gold-trimmed sash. Out of battle he wears the kingdom crown. Late: a plain grey monk's robe, bare feet.",
+			"demeanor": "Practical until he is in love; then he stops looking at maps. At the ditch his mouth is wet and the order still comes out.",
+			"never": [
+				"Never a katana",
+				"never a closed basket crown",
+				"never old until the robe"
+			]
+		},
+		"sobi": {
+			"hat": false,
+			"look": "Baekje princess: warm oval face, dark eyes that hold a look, a full mouth, black hair in a high coiled bun.",
+			"dress": "Baekje court silk in warm yellow #d9b13a, close-fitted jeogori, a long chima, King Muryeong's queen's chain earrings and a gold hairpin. After Gwansan the same silk, no jewelry.",
+			"jewelry": "Muryeong queen's gold chain earrings and hairpin out of mourning.",
+			"demeanor": "She likes being looked at by one person. She goes still when the room gets political. After the ditch she keeps the lamp where he left it.",
+			"never": [
+				"Silla crown",
+				"jougwan",
+				"shy downcast extra"
+			]
+		},
+		"seongchung": {
+			"look": "Elderly Baekje councillor: long white hair falling past the shoulders from under a small black silk cap with a single gold openwork flame-and-phoenix ornament pinned at the FRONT of the cap; full white beard and white moustache; heavy-lidded tired eyes, a deep crease between the brows, sun-weathered skin.",
+			"dress": "Deep vermilion-red wide-sleeved court robe over a cream crossed inner collar, a dark indigo-blue sash, two carved jade toggles and a long red tassel hanging at the waist.",
+			"demeanor": "Tide-tables and unfinished sentences. Anxious, loyal, always asking the question the king will not want; never a young man, never smiling ease.",
+			"hat": false,
+			"never": [
+				"jougwan feather cap",
+				"black hair",
+				"a young face",
+				"a warrior topknot",
+				"smiling ease",
+				"Baekje king twin-flame side ornaments"
+			]
+		},
+		"heungsu": {
+			"look": "Lean Baekje councillor in late middle age: long silver-grey hair in two falling locks from under a tall dark-purple silk official cap with a silver openwork flame-phoenix plaque on the front and two strings of dark-red beads hanging from the brim with gold tassels; thin grey moustache and a pointed grey chin-beard; half-lidded amused eyes, a small knowing smile.",
+			"dress": "Deep wine-red / magenta wide-sleeved robe with a gold-brocade crossed collar and heavy gold-brocade cloud-scroll shoulder panels, a dark sash.",
+			"demeanor": "Dry, already tired of saying it twice. Half-sentences. Smiles when he says the ugly thing.",
+			"hat": false,
+			"never": [
+				"jougwan feather cap",
+				"black hair",
+				"a young warrior",
+				"a grim scowl",
+				"plain undyed hemp"
+			]
 		}
 	},
 	"animals": {
@@ -1030,7 +1353,7 @@
 			"dna": "Pyongyang: Goguryeo walled city on the Taedong, stone walls and red munru gate pavilions."
 		},
 		"steam_cavern": {
-			"dna": "Steam cavern hot spring: wet black stone, steam, motes in the element colors; magical anime-painterly atmosphere, not a photoreal cave."
+			"dna": "Golhwacheon (골화천), the steam cavern hot spring: a dark pond under wet black stone, steam, motes in the element colors; everyone bathes IN the black water like a Korean public bath, bare bathing bodies, nothing on but water; generally dark, magical anime-painterly atmosphere, not a photoreal cave."
 		},
 		"wirye": {
 			"dna": "Wirye: earthen walls on the Han river plain below the mountains."
@@ -1061,6 +1384,75 @@
 		"jumong_cave": {
 			"board": "/pl_jumong_cave.png",
 			"dna": "The cavern where Jumong prays after the crossing."
+		},
+		"wolji": {
+			"board": "/pl_wolji.png",
+			"dna": "Wolji (월지): a still palace pond by Wolseong, timber colonnade on stone footings, giwa reflected in black water, lotus, one lantern path; not a modern park reconstruction."
+		},
+		"hwarang_yard": {
+			"board": "/pl_hwarang_yard.png",
+			"dna": "Hwarang yard under the Moon Palace: packed earth, a long painted timber wall under its own roof, a timber practice fence, pale dust, one blue practice-line."
+		},
+		"hwarang_gate": {
+			"board": "/pl_hwarang_gate.png",
+			"dna": "Hwarang yard gate: heavy timber leaves with iron bosses, a giwa-roofed gatehouse, packed-earth road leading in, the painted wall starting just inside."
+		},
+		"ghost_bridge": {
+			"board": "/pl_ghost_bridge.png",
+			"dna": "귀교: a low bridge of dressed granite slabs over a dark ditch (Hwangcheon), west of Wolseong; no rail to speak of; pines and a temple roof dissolving; stones that look laid in one night."
+		},
+		"locked_room": {
+			"board": "/pl_locked_room.png",
+			"dna": "Suulbu's house-apart: a small timber annex, iron-barred door, one paper lattice, a drain-gap at the back wall; night, one lamp."
+		},
+		"mannogun": {
+			"board": "/pl_mannogun.png",
+			"dna": "Manno: a low wooden palisade, one granary, a leaking timber county office, hills that have changed hands."
+		},
+		"eastern_harbor": {
+			"board": "/pl_eastern_harbor.png",
+			"dna": "Silla eastern harbour: grass giving over to sand, a short timber quay, boats pulled up, the East Sea flat and silver, no cliff city."
+		},
+		"jolbon_well": {
+			"board": "/temp/jumong-set-well-day-empty.jpg",
+			"dna": "Jolbon well-yard: packed earth, a stone well rim, timber well-house, nobody stands in the shaft."
+		},
+		"gibeolpo": {
+			"board": "/pl_final_ford.png",
+			"dna": "Final Ford (기벌포): the Geum river mouth, a wide tidal ford, mudflats, a timber landing, the sea opening west."
+		}
+	},
+	"ships": {
+		"common": "SHIPS: copy the attached ship board for each kingdom exactly (hull shape, mast count, sail colour and battens) and keep that same ship in every still of the scene. Boards are design only: ignore their bright daylight sky and calm sea, repaint the ship in the scene light. 7th-century timber ships only, never European hulls, cannon or funnels. TRUE SCALE (real 7th-century measures; a man is 1.65 m): ships are drawn life-size against their crews and against each other, never toy boats with giant men. A man standing on deck is about 1/15 the length of a 24 m warship and 1/20 of a 35 m tower-ship; a deck bulwark reaches his chest; the waterline is two men's height below a warship deck. Dozens of men fit along one side of a warship, each one small against the hull, masts four or five men tall. When two kingdoms' ships share a frame, keep their real length ratio.",
+		"kingdoms": {
+			"goguryeo": {
+				"board": "/ship_goguryeo.png",
+				"text": "Goguryeo warship: long high-sided timber hull with an oar-port gallery along the side, raised stern castle, three masts with cream battened sails, red Goguryeo banners at the stern. Size: about 25 m long and 6 m wide, deck about 2.5 m above the water, stern castle two storeys, about sixty men aboard; a little shorter and lower than a Tang tower-ship, about the size of a Tang ordinary warship."
+			},
+			"silla": {
+				"board": "/ship_silla.png",
+				"text": "Silla ship: plain broad timber hull with a low deck cabin, two masts with cream battened square sails, small blue Silla pennant. Smaller and lighter than the Goguryeo and Tang warships. Size: about 20 m long and 5 m wide, forty to fifty men."
+			},
+			"baekje": {
+				"board": "/ship_baekje.png",
+				"text": "Baekje ship: elegant golden-timber hull with an upswept prow, one large cream battened sail and yellow pennant-sails, yellow Baekje banners. Size: about 18 m long and 4 m wide, about thirty men."
+			},
+			"tang": {
+				"board": "/ship_tang.png",
+				"text": "Tang louchuan tower-ship: huge dark timber hull with a multi-storey deck castle, two or three masts of deep red battened sails, the largest ship on any sea. Size: the flagship tower-ship is about 35 m long and 8–9 m wide, deck about 3 m above the water, its three-storey castle rising about 12 m (seven men tall), up to two hundred men aboard; the ordinary Tang warship is about 24 m long with forty to ninety men, its deck a man's height higher than any Yamato or Baekje boat. Its broadside looks like a city wall."
+			},
+			"yamato": {
+				"board": "/ship_yamato.png",
+				"text": "Yamato ship: long low white-and-red hull, two masts with pale yellow battened sails, open oared deck. Size: about 15 m long and 3 m wide, gunwale only knee-to-waist high above the water, ten to thirty men rowing standing up; a Tang hull towers over it like a wall."
+			},
+			"tamla": {
+				"board": "/ship_tamla.png",
+				"text": "Tamla boat: small single-mast golden-timber island boat with one cream lug sail. Size: about 10 m long, a dozen men."
+			},
+			"ayuta": {
+				"board": "/ship_ayuta.png",
+				"text": "Heo Hwangok's Ayuta ship: ornate red-and-gold lacquered hull with painted panels, one great crimson battened sail and a small red mizzen; the only red sail on the southern sea."
+			}
 		}
 	}
 }

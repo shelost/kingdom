@@ -82,9 +82,9 @@ export const TOPICS: Topic[] = [
 		title: 'Crowns',
 		ko: '관',
 		body: [
-			'Silla’s gold crowns are the best known: a headband with three uprights shaped like the character 出 (stylised trees) and two shaped like antlers, hung with comma-shaped jade (gogok) and hundreds of gold spangles that shiver when the head moves. Long pendants hang at the temples. Six have been excavated, all from great mound tombs in Gyeongju of the fifth and sixth centuries.',
+			'Silla’s gold crowns are the best known: a headband with three uprights shaped like the character 出 (stylised trees) and two shaped like antlers, hung with comma-shaped jade (gogok) and hundreds of gold spangles that shiver when the head moves. Long pendants hang at the temples. Six have been excavated, all from great mound tombs in Gyungju of the fifth and sixth centuries.',
 			'Whether they were worn in life is still argued. In the tombs they sit low, around the face, with the pendants on the chest, and the sheet gold is thin. Many scholars read them as funerary or ceremonial, worn over an inner cap of birch bark or silk.',
-			'Gaya’s gold crown (attributed to Goryeong) uses plant-shaped uprights instead. Baekje and Goguryeo crowns survive mostly in gilt bronze: Goguryeo openwork flame patterns, Baekje tall pointed caps from its Hanseong era, and the flame-shaped gold ornaments of King Muryeong that pinned to a black silk cap.'
+			'Gaya’s gold crown (attributed to Goryung) uses plant-shaped uprights instead. Baekje and Goguryeo crowns survive mostly in gilt bronze: Goguryeo openwork flame patterns, Baekje tall pointed caps from its Hansung era, and the flame-shaped gold ornaments of King Muryung that pinned to a black silk cap.'
 		],
 		bodyKo: [
 			'가장 잘 알려진 것은 신라 금관이다. 관테 위에 出자 모양(나무를 형상화)의 세움장식 셋과 사슴뿔 모양 둘을 세우고, 곱은옥과 수백 개의 달개를 달아 머리를 움직이면 떨린다. 관자놀이에는 긴 드리개가 늘어진다. 지금까지 여섯 점이 나왔고, 모두 5–6세기 경주의 대형 고분에서 출토되었다.',
@@ -154,7 +154,7 @@ export const TOPICS: Topic[] = [
 		ko: '몸의 금',
 		body: [
 			'A Silla aristocrat was buried dressed in gold: earrings with thick or thin rings and hanging leaves, necklaces of gold and glass beads, bracelets and finger rings on every finger, and a gold belt hung with pendants of tools and fish, jade and tweezers that probably once marked what the wearer commanded.',
-			'Baekje’s goldwork from King Muryeong’s tomb is finer and lighter: flame-shaped cap ornaments, hairpins, earrings with long chains, and gilt-bronze shoes with spiked soles meant for the grave.',
+			'Baekje’s goldwork from King Muryung’s tomb is finer and lighter: flame-shaped cap ornaments, hairpins, earrings with long chains, and gilt-bronze shoes with spiked soles meant for the grave.',
 			'Gaya earrings and crowns follow their own forms, and Buyeo men, a Chinese visitor wrote, decorated their hats with gold and silver when they went abroad.'
 		],
 		bodyKo: [
@@ -268,14 +268,14 @@ export const TOPICS: Topic[] = [
 			{
 				kingdom: 'silla',
 				hanja: '法興王制：自太大角干至大阿飡紫衣，阿飡至級飡緋衣，並牙笏；大奈麻、奈麻靑衣；大舍至先沮知黃衣。',
-				en: 'King Beopheung’s law: from Taedaegakgan to Daeachan, purple robes; from Achan to Geupchan, crimson robes, both with ivory tablets; Daenama and Nama, blue robes; Daesa down to Seonjeoji, yellow robes.',
+				en: 'King Buphung’s law: from Tedegakgan to Deachan, purple robes; from Achan to Gupchan, crimson robes, both with ivory tablets; Denama and Nama, blue robes; Desa down to Sunjuji, yellow robes.',
 				ko: '법흥왕이 제정하였다. 태대각간부터 대아찬까지는 자색 옷, 아찬부터 급찬까지는 비색 옷을 입되 모두 상아 홀을 들고, 대나마와 나마는 청색 옷, 대사부터 선저지까지는 황색 옷을 입는다.',
 				source: R.sagiDress
 			},
 			{
 				kingdom: 'silla',
 				hanja: '眞德王在位二年，金春秋入唐，請襲唐儀，太宗皇帝詔可之，兼賜衣帶。遂還來施行，以夷易華。文武王在位四年，又革婦人之服，自此已後，衣冠同於中國。',
-				en: 'In Queen Jindeok’s second year, Kim Chunchu went to Tang and asked to adopt Tang ceremony. Emperor Taizong granted it and gave him robes and belts. He came home and put it into practice, trading the native for the Chinese. In King Munmu’s fourth year the women’s dress was changed too, and from then on caps and robes were the same as China’s.',
+				en: 'In Queen Jinduk’s second year, Kim Chunchu went to Tang and asked to adopt Tang ceremony. Emperor Taizong granted it and gave him robes and belts. He came home and put it into practice, trading the native for the Chinese. In King Munmu’s fourth year the women’s dress was changed too, and from then on caps and robes were the same as China’s.',
 				ko: '진덕왕 2년 김춘추가 당에 들어가 당의 의례를 따르기를 청하니, 태종이 조서로 허락하고 옷과 띠를 내렸다. 돌아와 시행하여 오랑캐의 것을 중화의 것으로 바꾸었다. 문무왕 4년에는 부인의 옷도 고쳐, 이후로 의관이 중국과 같아졌다.',
 				source: R.sagiDress
 			},
@@ -302,7 +302,7 @@ export const TOPICS: Topic[] = [
 		body: [
 			'Two kinds of body armour meet on the peninsula. The older, made in Gaya and early Silla in the fourth and fifth centuries, is the plate cuirass: long iron strips or triangles riveted into a rigid shell, worn with a helmet of riveted vertical plates. Gaya’s iron made it the arsenal of the south.',
 			'Lamellar replaced it: hundreds of small iron plates laced in overlapping rows, flexible enough for a rider. Goguryeo murals show whole lines of cavalry in lamellar to the knee, with horses in lamellar barding and face plates, the armoured horse (gaema) the histories feared. Silla and Gaya tombs have yielded real horse armour.',
-			'Baekje lacquered its armour; a black-lacquered lamellar piece inscribed with a Tang date of 645 was dug out of Gongsanseong, and Baekje sent the Tang emperor gold-lacquered armour that year. The common sword of all three kingdoms was the straight ring-pommel dao.'
+			'Baekje lacquered its armour; a black-lacquered lamellar piece inscribed with a Tang date of 645 was dug out of Gongsansung, and Baekje sent the Tang emperor gold-lacquered armour that year. The common sword of all three kingdoms was the straight ring-pommel dao.'
 		],
 		bodyKo: [
 			'한반도에는 두 종류의 갑옷이 만난다. 오래된 쪽은 4–5세기 가야와 초기 신라에서 만든 판갑이다. 긴 철판이나 삼각형 철판을 못으로 이어 단단한 껍데기를 만들고, 세로판을 이은 투구를 쓴다. 가야의 철이 가야를 남쪽의 무기고로 만들었다.',
@@ -317,7 +317,7 @@ export const TOPICS: Topic[] = [
 		ko: '머리, 몸, 그 밖의 풍속',
 		body: [
 			'Men tied their hair in a topknot. When the Chinese defector Wiman crossed into Gojoseon, the record says, he tied his hair in a topknot and put on local dress, and the southern Han peoples went bare-headed with the knot showing.',
-			'In the south, the Mahan (whose lands became Baekje’s) valued strung beads more than gold or silk, sewing them onto clothes and hanging them from the neck and ears. Among the Jinhan and Byeonhan, ancestors of Silla and Gaya, a stone was pressed against a newborn’s head to flatten it, and men and women near the Wa coast tattooed their bodies.',
+			'In the south, the Mahan (whose lands became Baekje’s) valued strung beads more than gold or silk, sewing them onto clothes and hanging them from the neck and ears. Among the Jinhan and Byunhan, ancestors of Silla and Gaya, a stone was pressed against a newborn’s head to flatten it, and men and women near the Wa coast tattooed their bodies.',
 			'Gojoseon is known mostly through bronze: the lute-shaped Liaoning-type dagger, fine-lined mirrors with several knobs, and ornaments that were worn or carried for ritual. Buyeo, a visitor wrote, wore white at home.'
 		],
 		bodyKo: [
@@ -367,7 +367,7 @@ export const COMPARE: { feature: string; ko: string; cells: Record<Exclude<Resea
 		cells: {
 			gojoseon: ['Topknot', '상투'],
 			buyeo: ['Hats trimmed in gold and silver abroad', '나라 밖에선 금은으로 꾸민 모자'],
-			goguryeo: ['Jeolpung cap; two feathers for office', '절풍, 벼슬아치는 새 깃 둘'],
+			goguryeo: ['Julpung cap; two feathers for office', '절풍, 벼슬아치는 새 깃 둘'],
 			baekje: ['Black silk cap; silver flowers for officials, gold for the king', '검은 비단 관, 관리는 은꽃, 왕은 금꽃'],
 			silla: ['Silk or birch-bark cap with gold wings; Tang cap after 649', '비단·자작나무 껍질 관에 금 날개, 649년 뒤 당의 복두'],
 			gaya: ['Cap with feather-like metal ornaments', '깃 모양 금속 장식의 관']
@@ -394,7 +394,7 @@ export const COMPARE: { feature: string; ko: string; cells: Record<Exclude<Resea
 			goguryeo: ['Trimmed jacket, wide trousers, white belt, yellow shoes', '선 두른 저고리, 넓은 바지, 흰 띠, 누런 가죽신'],
 			baekje: ['Much like Goguryeo; king in purple and blue brocade', '고구려와 비슷, 왕은 자주 포에 푸른 비단 바지'],
 			silla: ['Jacket and trousers; Tang robes from 649', '저고리와 바지, 649년부터 당 관복'],
-			gaya: ['Clean clothes, long hair, fine broad cloth (Byeonhan)', '깨끗한 옷, 긴 머리, 넓고 고운 베(변한)']
+			gaya: ['Clean clothes, long hair, fine broad cloth (Byunhan)', '깨끗한 옷, 긴 머리, 넓고 고운 베(변한)']
 		}
 	},
 	{
@@ -429,7 +429,7 @@ export const COMPARE: { feature: string; ko: string; cells: Record<Exclude<Resea
 			buyeo: ['—', '—'],
 			goguryeo: ['Lamellar to the knee; armoured horses', '무릎까지 찰갑, 개마'],
 			baekje: ['Lacquered lamellar', '옻칠 찰갑'],
-			silla: ['Lamellar; horse armour (Jjoksaem)', '찰갑, 마갑(쪽샘)'],
+			silla: ['Lamellar; horse armour (Jjoksem)', '찰갑, 마갑(쪽샘)'],
 			gaya: ['Riveted plate cuirasses, then lamellar; horse armour', '판갑에서 찰갑으로, 마갑']
 		}
 	}

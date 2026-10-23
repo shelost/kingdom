@@ -31,6 +31,10 @@
 		// Hung jury: Bidam and two sleeves yes; three no.
 		if (step === 'split') return i === BIDAM || i === 0 || i === 2 ? 'yes' : 'no';
 		if (step === 'veto') return i === BIDAM ? 'no' : 'yes';
+		// Six pieces on the no side: the room unmakes a king.
+		if (step === 'depose') return 'no';
+		// Five have voted him out. The sixth piece is still in a hand.
+		if (step === 'holdout') return i === 5 ? 'none' : 'no';
 		return 'none';
 	}
 
@@ -41,7 +45,11 @@
 				? { ko: '가결', en: 'passed' }
 				: step === 'veto'
 					? { ko: '부결', en: 'vetoed' }
-					: step === 'session'
+					: step === 'depose'
+						? { ko: '폐위', en: 'deposed' }
+						: step === 'holdout'
+							? { ko: '한 표', en: 'one holds' }
+							: step === 'session'
 						? { ko: '만장일치', en: 'all or none' }
 						: step === 'rebellion'
 							? { ko: '화백', en: 'the Council' }
@@ -49,7 +57,7 @@
 	}
 
 	export const isVoting = (step: string) =>
-		step === 'unanimous' || step === 'veto' || step === 'split';
+		step === 'unanimous' || step === 'veto' || step === 'split' || step === 'depose' || step === 'holdout';
 
 	/** The three gates show while a vote runs, and on the bare session that explains them. */
 	export const showsGates = (step: string) => isVoting(step) || step === 'session';
@@ -70,6 +78,8 @@
 	 *   - 'split'      — initial hung vote, 3:3 (seats 0–2 yes; 3–5 no)
 	 *   - 'unanimous'  — seats pop in, every sleeve assents, the motion passes
 	 *   - 'veto'       — five assent, one (Bidam) objects; the motion dies
+	 *   - 'holdout'    — five vote a king out; the sixth piece is still in a hand
+	 *   - 'depose'     — six pieces on the no side; the king is unmade
 	 *   - 'rebellion'  — Bidam's seat goes dark and breaks away from the circle
 	 *   - 'ornamental' — after the Secretariat: chairs polished, room empty of power
 	 * In a scene, `cast` names each seat's sitter (s0–s5) and their faces sit on the seats.
@@ -114,6 +124,13 @@
 	role="img"
 	aria-label="Diagram of the Harmony Council: six Councillor seats around one motion"
 >
+	<defs>
+		{#each seats as s (s.i)}
+			<clipPath id="hc-face-{s.i}">
+				<circle cx={s.x} cy={s.y} r={s.i === high ? 22 : 19} />
+			</clipPath>
+		{/each}
+	</defs>
 	<!-- spokes: each Councillor's hand on the motion -->
 	{#each seats as s (s.i)}
 		<line
@@ -138,7 +155,8 @@
 	<!-- the six sleeves -->
 	{#each seats as s (s.i)}
 		{@const v = vote(s.i)}
-		{@const who = sitter(cast, seatId(s.i), year)}
+		{@const who = sitter(cast, seatId(s.i), year, { given: true })}
+		{@const r = s.i === high ? 22 : 19}
 		<g
 			class="seat-pos"
 			class:breakaway={step === 'rebellion' && s.i === BIDAM}
@@ -150,7 +168,21 @@
 				class:breakaway={step === 'rebellion' && s.i === BIDAM}
 				style="--d: {380 + s.i * 130}"
 			>
-				<circle cx={s.x} cy={s.y} r={s.i === high ? 22 : 19} />
+				{#if s.i === high}
+					<circle class="high-ring" cx={s.x} cy={s.y} r={r + 7} />
+				{/if}
+				<circle cx={s.x} cy={s.y} r={r} />
+				{#if who?.img}
+					<image
+						href={who.img}
+						x={s.x - r}
+						y={s.y - r}
+						width={r * 2}
+						height={r * 2}
+						preserveAspectRatio="xMidYMid slice"
+						clip-path="url(#hc-face-{s.i})"
+					/>
+				{/if}
 				{#if v === 'yes'}
 					<text class="mark yes" style="--d: {1450 + s.i * 90}" x={s.x} y={s.y - 5}>✓</text>
 				{:else if v === 'no'}
@@ -289,11 +321,18 @@
 		transition-delay: calc(var(--d) * 1ms);
 	}
 
-	.seat circle {
+	.seat circle:not(.high-ring) {
 		fill: var(--silla);
 		stroke: var(--node-stroke);
 		stroke-width: var(--stroke-w);
 		transition: fill 800ms var(--ease) 1800ms, stroke 800ms var(--ease) 1800ms;
+	}
+
+	.seat .high-ring {
+		fill: none;
+		stroke: var(--gold);
+		stroke-width: 1.8;
+		opacity: 0.9;
 	}
 
 	.play .seat {
@@ -301,19 +340,19 @@
 		transform: scale(1);
 	}
 
-	.play .seat.no circle,
-	.play .seat.breakaway circle {
+	.play .seat.no circle:not(.high-ring),
+	.play .seat.breakaway circle:not(.high-ring) {
 		fill: var(--nay);
 		stroke: color-mix(in srgb, var(--nay) 28%, #080604);
 	}
 
-	.play[data-step='rebellion'] .seat.breakaway circle {
+	.play[data-step='rebellion'] .seat.breakaway circle:not(.high-ring) {
 		fill: color-mix(in srgb, var(--nay) 82%, #4a1010);
 		stroke: color-mix(in srgb, var(--nay) 28%, #080604);
 		stroke-dasharray: 4 4;
 	}
 
-	.play[data-step='ornamental'] .seat circle {
+	.play[data-step='ornamental'] .seat circle:not(.high-ring) {
 		fill: color-mix(in srgb, var(--silla) 55%, #6b7280);
 		stroke: color-mix(in srgb, var(--ink-muted) 40%, #080604);
 		stroke-dasharray: 3 4;

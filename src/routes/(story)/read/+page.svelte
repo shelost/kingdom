@@ -1,24 +1,26 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import {
-		arcNumber,
-		chapters,
-		episodeNumber,
-		isFlashEntry,
-		entryId
-	} from '$lib/story';
-	import { arcLabel, episodeCrumbs } from '$lib/tocTree';
+	import { arcPageId, chapters, episodeNumber, isFlashEntry, isPlate, isPrologue, entryId } from '$lib/story';
+	import { chapterHeadedBy, episodeCrumbs, tocAnchor } from '$lib/tocTree';
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
 	import EpisodeThumbnail from '$lib/components/EpisodeThumbnail.svelte';
+	import MapExcerpt from '$lib/components/MapExcerpt.svelte';
+	import EpisodeTitleCard from '$lib/components/EpisodeTitleCard.svelte';
 	import PartTitle from '$lib/components/PartTitle.svelte';
+	import DivisionTitle from '$lib/components/DivisionTitle.svelte';
 	import AboutBlurb from '$lib/components/AboutBlurb.svelte';
 	import HiddenStills from '$lib/components/HiddenStills.svelte';
-	import PlaceBanner from '$lib/components/PlaceBanner.svelte';
-	import PlaceMapTile from '$lib/components/PlaceMapTile.svelte';
+	import ScenesPanel from '$lib/components/ScenesPanel.svelte';
+	import WidgetsPanel from '$lib/components/WidgetsPanel.svelte';
+	import { widgetsPinned } from '$lib/pinnedWidgets.svelte';
 	import Blocks from '$lib/components/Blocks.svelte';
-	import EpisodePicker from '$lib/components/EpisodePicker.svelte';
+	import Screenplay from '$lib/components/Screenplay.svelte';
+	import Storyboard from '$lib/components/Storyboard.svelte';
+	import EpisodeSwitch from '$lib/components/EpisodeSwitch.svelte';
 	import ScriptSelectionMenu from '$lib/components/ScriptSelectionMenu.svelte';
+	import SceneSummary from '$lib/components/SceneSummary.svelte';
+	import OutlineRail from '$lib/components/OutlineRail.svelte';
 	import { buildBeats, type Beat } from '$lib/beats';
 	import { chatForms } from '$lib/chat';
 	import { dialogueUi } from '$lib/dialogueUi.svelte';
@@ -26,34 +28,82 @@
 	import { editUi } from '$lib/editUi.svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import { entryForReading } from '$lib/nsfwUi.svelte';
+	import { cueDropZone, cueMove, withCueLayout } from '$lib/cueLayout.svelte';
 	import {
 		reading,
 		episodes,
 		PROLOGUE_EPISODE_ID,
 		findStoryHeading,
 		isInlineArt,
+		isStageMode,
+		isDocumentMode,
 		loadMode,
 		loadViewScope,
+		restoreReadingSpot,
 		scrollToStoryHeading,
-		stepEpisode,
 		storyRoot,
-		watchReading
+		watchReading,
+		pageTurn
 	} from '$lib/reading.svelte';
+	import { episodeContextOf } from '$lib/cinema';
+	import NextEpisode from '$lib/components/NextEpisode.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
-	import { entryCast, entryTags } from '$lib/entryHead';
+	import { entryCast } from '$lib/entryHead';
+	import { entryBullets } from '$lib/summary';
 	import { isWarEntry } from '$lib/episodeKinds';
 	import { PARTS } from '$lib/episodeDirectory';
 	import { onMount } from 'svelte';
+	import gsap from 'gsap';
 	import type { Chapter, StackImage } from '$lib/story';
+	import type { PageProps } from './$types';
 
+	let { data }: PageProps = $props();
+
+	/** Set once `loadViewScope` has synced the reading state from the URL. */
+	let mounted = $state(false);
 	let episodesMode = $derived(reading.viewScope === 'episodes');
-	let currentEp = $derived(episodes[reading.episodeIndex]);
+	/* Until mount the shared reading state still says episode 0 (the foreword);
+	   server and hydration both paint the URL's episode from `data` instead. */
+	let episodeIndex = $derived(
+		mounted || data.episodeIndex < 0 ? reading.episodeIndex : data.episodeIndex
+	);
+	let currentEp = $derived(episodes[episodeIndex]);
 	let onPrologue = $derived(episodesMode && currentEp?.kind === 'prologue');
-	let atFirstEpisode = $derived(reading.episodeIndex <= 0);
-	let atLastEpisode = $derived(reading.episodeIndex >= episodes.length - 1);
-	/** The bottom prev / next pill is up (and reachable by keyboard). */
+	/** The episode pill is up (and reachable by keyboard). */
 	let navLive = $derived(scriptUi.inScript && episodesMode);
+	let scriptEl = $state<HTMLElement>();
+	let turning = $state(false);
+
+	/** The page slides with the pill: forward comes from the right, back from the left. */
+	$effect(() => {
+		const gen = pageTurn.gen;
+		const dir = pageTurn.dir;
+		if (!gen || !scriptEl || !episodesMode || !dir) return;
+		if (reading.mode === 'screenplay' || reading.mode === 'storyboard') return;
+		if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		const node = scriptEl;
+		turning = true;
+		const tween = gsap.fromTo(
+			node,
+			{ x: dir * 56, autoAlpha: 0 },
+			{
+				x: 0,
+				autoAlpha: 1,
+				duration: 0.72,
+				ease: 'power3.out',
+				onComplete: () => {
+					turning = false;
+					gsap.set(node, { clearProps: 'transform,opacity,visibility' });
+				}
+			}
+		);
+		return () => {
+			tween.kill();
+			turning = false;
+			gsap.set(node, { clearProps: 'transform,opacity,visibility' });
+		};
+	});
 	/** Part title pages, keyed by the Arc that opens each Part. */
 	const PART_BY_ARC = new Map(
 		PARTS.filter((p) => chapters.find((ch) => ch.id === p.id)?.part).map((p) => [p.id, p])
@@ -98,13 +148,17 @@
 	   in the flow and no location cards at all; immersion and cinema keep the
 	   sticky stage column beside the text. */
 	let inlineImages = $derived(isInlineArt(reading.mode));
-	let sideImages = $derived(!inlineImages);
+	let stageImages = $derived(isStageMode(reading.mode));
+	let documentView = $derived(isDocumentMode(reading.mode));
 
 	onMount(() => {
 		/* Sync saved mode / view onto state before the watcher. */
 		loadMode();
 		loadViewScope();
+		mounted = true;
 		const stopReading = watchReading();
+		/* A refresh lands back where the reader was (the loader holds until then). */
+		const restoreRaf = requestAnimationFrame(() => requestAnimationFrame(() => restoreReadingSpot()));
 
 		/** In the full scroll, chrome waits until the prologue is behind the reader. */
 		const scriptEl = storyRoot();
@@ -155,6 +209,7 @@
 
 		return () => {
 			stopReading();
+			cancelAnimationFrame(restoreRaf);
 			if (syncRaf) cancelAnimationFrame(syncRaf);
 			if (pillRaf) cancelAnimationFrame(pillRaf);
 			window.removeEventListener('scroll', syncInScript);
@@ -193,8 +248,8 @@
 
 	/** Farthest an inline figure drifts from its place in the flow, in px. */
 	const PARALLAX_PX = 14;
-	/** Figures the drift applies to: script-mode art and solo-flashback art. */
-	const PARALLAX_TARGETS = '.inline-art, .fb-art';
+	/** Figures the drift applies to: script-mode art, solo-flashback art and the episode poster. */
+	const PARALLAX_TARGETS = '.inline-art, .fb-art, .entry-thumb';
 
 	/**
 	 * Inline figures float a little slower than the prose. Each wrapper is
@@ -214,9 +269,12 @@
 			const shifts = [...onScreen].map((el) => {
 				const r = el.getBoundingClientRect();
 				const t = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
-				return [el, -Math.max(-1, Math.min(1, t)) * PARALLAX_PX] as const;
+				return [el, Math.max(-1, Math.min(1, t))] as const;
 			});
-			for (const [el, y] of shifts) el.style.setProperty('--parallax-y', `${y.toFixed(1)}px`);
+			for (const [el, t] of shifts) {
+				el.style.setProperty('--parallax-y', `${(-t * PARALLAX_PX).toFixed(1)}px`);
+				el.style.setProperty('--parallax-t', t.toFixed(3));
+			}
 		};
 		const schedule = () => {
 			if (!raf && !motion.matches) raf = requestAnimationFrame(update);
@@ -260,7 +318,10 @@
 
 		const onMotion = () => {
 			if (!motion.matches) return schedule();
-			for (const el of observed) el.style.removeProperty('--parallax-y');
+			for (const el of observed) {
+				el.style.removeProperty('--parallax-y');
+				el.style.removeProperty('--parallax-t');
+			}
 		};
 
 		collect();
@@ -293,8 +354,8 @@
 	{#if !episodesMode || onPrologue}
 		<!-- ————— prologue: Heewon's note before the story. In episodes mode this is episode 0. ————— -->
 		<section class="prologue" data-story-id={PROLOGUE_EPISODE_ID}>
-			<p class="prologue-kicker">{koHead ? 'Prologue' : '프롤로그'}</p>
-			<h1 class="prologue-title">{koHead ? '프롤로그' : 'Prologue'}</h1>
+			<p class="prologue-kicker">{koHead ? 'Foreword' : '서문'}</p>
+			<h1 class="prologue-title">{koHead ? '서문' : 'Foreword'}</h1>
 			<AboutBlurb />
 		</section>
 	{/if}
@@ -302,50 +363,71 @@
 	<!-- Script: chapters after the prologue — fixed chrome waits on this region. -->
 	<div
 		data-story-root
+		bind:this={scriptEl}
 		class="script"
+		class:is-turning={turning}
 		class:episodes={episodesMode}
 		class:images-inline={inlineImages}
+		class:cue-picking={editUi.enabled && !!cueMove.slotId}
 		{@attach parallax}
+		{@attach cueDropZone}
 	>
+		{#if editUi.enabled && cueMove.slotId}
+			<div class="cue-move-bar" role="status">
+				Moving <b>{cueMove.slotId}</b>: click the block it should open above.
+				<button type="button" onclick={() => (cueMove.slotId = null)}>Cancel</button>
+			</div>
+		{/if}
 		{#each chapters as chapter, ci (chapter.id)}
 			{#if !episodesMode || chapter.id === currentEp?.chapterId}
 				{@const part = PART_BY_ARC.get(chapter.id)}
 				{#if part && (!episodesMode || currentEp?.kind === 'part')}
 					<PartTitle {part} ko={koHead} />
 				{/if}
+				{#if !isPrologue(chapter) && (!episodesMode || (currentEp?.kind === 'arc' && currentEp.chapterId === chapter.id))}
+					<DivisionTitle scale="arc" arcIndex={ci} storyId={arcPageId(chapter.id)} ko={koHead} />
+				{/if}
+				{#if episodesMode && currentEp?.kind === 'chapter' && currentEp.chapterId === chapter.id}
+					<DivisionTitle
+						scale="chapter"
+						arcIndex={ci}
+						storyId={currentEp.id}
+						section={chapter.entries[currentEp.entryIndex]?.title}
+						ko={koHead}
+					/>
+				{/if}
+				{#if !episodesMode || currentEp?.kind === 'entry'}
 				<section class="chapter" data-story-id={chapter.id}>
-						{#if !episodesMode}
-							<header class="chapter-head">
-								<div class="chapter-title">
-									<h1>
-										<span class="num">{arcLabel(arcNumber(ci), koHead)}</span>
-										<span class="en">{chapter.title}</span>
-										{#if chapter.hanja}<span class="hanja">{chapter.hanja}</span>{/if}
-										{#if chapter.korean}<span class="ko">{chapter.korean}</span>{/if}
-										<span class="range">{chapter.range}</span>
-									</h1>
-									<span class="rule" aria-hidden="true"></span>
-								</div>
-							</header>
-						{/if}
-
 					{#each chapter.entries as entry, i (chapter.id + i)}
 							{#if !episodesMode || (chapter.id === currentEp?.chapterId && i === currentEp?.entryIndex)}
+							{@const chapterHead = chapterHeadedBy(chapter.id, entry.title)}
 							{@const years = yearsByChapter.get(chapter.id) ?? []}
 							<!-- One sanitized copy of the entry per render: beats, the sticky
 							     stack and the scene-id source all read from it, so anchors and
 							     block indices can never be computed against the unfiltered
 							     blocks while the prose shows the filtered ones. -->
-							{@const shown = entryForReading(entry)}
+							{@const shown = entryForReading(withCueLayout(entry))}
 							{@const beats = withRealImages(buildBeats(shown), editUi.enabled)}
 							{@const images = stackImages(beats)}
 							{@const eid = entryId(chapter.id, entry.title)}
-							{@const tags = entryTags(entry)}
+							{@const next = episodeContextOf(eid)?.next ?? null}
 							{@const cast = entryCast(shown, years[i] ?? null)}
-							{@const forms = chatForms(shown.blocks, dialogueUi.style)}
+							{@const forms = chatForms(shown.blocks, dialogueUi.style, years[i] ?? null)}
+							{@const hoistMap = dialogueUi.style !== 'hybrid' || !isWarEntry(shown)}
+							{@const introMap = hoistMap ? shown.blocks.find((b) => b.kind === 'map') : undefined}
+							{#if !episodesMode && chapterHead}
+								<DivisionTitle
+									scale="chapter"
+									arcIndex={ci}
+									storyId={tocAnchor(chapter.id, chapterHead)}
+									section={entry.title}
+									ko={koHead}
+								/>
+							{/if}
 							<article
 								class="entry"
 								class:flash={isFlashEntry(entry)}
+								class:title-sequence={chapter.id === 'prologue-samhan'}
 								data-story-id={eid}
 								data-year={years[i]}
 								data-flash={isFlashEntry(entry) ? '1' : undefined}
@@ -356,7 +438,7 @@
 								<div class="content-col">
 									<header class="entry-head">
 										<div class="entry-head-main" use:reveal={{ y: 0 }}>
-											<nav class="crumbs" aria-label="Breadcrumb">
+											<nav class="crumbs arrive" style:--i={0} aria-label="Breadcrumb">
 												{#each episodeCrumbs(ci, i, koHead) as crumb, k (k)}
 													{#if k}<span class="crumb-caret material-symbols-outlined" aria-hidden="true"
 															>chevron_right</span
@@ -370,49 +452,58 @@
 													{/if}
 												{/each}
 											</nav>
-											<div class="episode">
-												<div class="year" class:long={entry.year.length > 4}>
-													{entry.year}
-													{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
-												</div>
-												<h2>{(koHead && entry.subtitle) || entry.title}</h2>
-												{#if entry.subtitle}
-													<p class="episode-ko">{koHead ? entry.title : entry.subtitle}</p>
-												{/if}
-											</div>
-										</div>
-										{#if tags.length || cast.length}
-											<dl class="props">
-												{#if tags.length}
-													<div class="prop">
-														<dt>
-															<span class="material-symbols-outlined" aria-hidden="true">sell</span>
-															{koHead ? '태그' : 'Tags'}
-														</dt>
-														<dd>
-															<ul class="tags">
-																{#each tags as tag, j (tag.key)}
-																	<li class="tag" style:--tag={tag.color} use:reveal={60 + j * 45}>
-																		{#if tag.flag}
-																			<img class="tag-flag" src={tag.flag} alt="" />
-																		{:else if tag.icon}
-																			<span class="tag-icon material-symbols-outlined" aria-hidden="true"
-																				>{tag.icon}</span
-																			>
-																		{/if}
-																		{#if koHead}
-																			<span class="tag-en">{tag.ko}</span>
-																		{:else}
-																			<span class="tag-en">{tag.label}</span>
-																			<span class="tag-ko">{tag.ko}</span>
-																		{/if}
-																	</li>
-																{/each}
-															</ul>
-														</dd>
+											<EpisodeTitleCard {entry} {eid}>
+												<div class="episode">
+													<div class="year arrive" style:--i={1} class:long={entry.year.length > 4}>
+														{entry.year}
+														{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
 													</div>
-												{/if}
-												{#if cast.length}
+													{#if episodeNumber(ci, i)}
+														<p class="ep-num arrive" style:--i={2}>{episodeNumber(ci, i)}</p>
+													{/if}
+													<h2 class="arrive" style:--i={3}>{(koHead && entry.subtitle) || entry.title}</h2>
+													{#if entry.subtitle}
+														<p class="episode-ko arrive" style:--i={4}>{koHead ? entry.title : entry.subtitle}</p>
+													{/if}
+												</div>
+											</EpisodeTitleCard>
+											{#if introMap?.kind === 'map'}
+												<div class="intro-map arrive" style:--i={5}>
+													<MapExcerpt
+														block={introMap}
+														focus={entry.place ?? introMap.places[0]}
+														startYear={Number.isFinite(parseInt(entry.year)) ? parseInt(entry.year) : undefined}
+													/>
+												</div>
+											{/if}
+										{#each [entryBullets(entry)] as bullets}
+											{#if bullets.length}
+												<details class="ai-summary arrive" style:--i={6}>
+													<summary>{koHead ? 'AI 요약' : 'AI Summary'}</summary>
+													<ul>
+														{#each bullets as bl}
+															<li>
+																{#if bl.label}
+																	<span class="sum-label"
+																		>{koHead && bl.koLabel ? bl.koLabel : bl.label}</span
+																	>
+																{/if}
+																{#if (koHead && bl.koText) || (!koHead && bl.text)}
+																	<span class="sum-text"
+																		>{koHead && bl.koText ? bl.koText : bl.text}</span
+																	>
+																{:else if bl.text || bl.koText}
+																	<span class="sum-text">{bl.text || bl.koText}</span>
+																{/if}
+															</li>
+														{/each}
+													</ul>
+												</details>
+											{/if}
+										{/each}
+										</div>
+										{#if cast.length}
+											<dl class="props arrive" style:--i={7}>
 													<div class="prop">
 														<dt>
 															<span class="material-symbols-outlined" aria-hidden="true">group</span>
@@ -453,10 +544,9 @@
 															</ul>
 														</dd>
 													</div>
-												{/if}
 											</dl>
 										{/if}
-										<div class="entry-thumb">
+										<div class="entry-thumb arrive" style:--i={8}>
 											<EpisodeThumbnail
 												entry={shown}
 												{eid}
@@ -468,16 +558,41 @@
 
 									<!-- Side: sticky reel swaps from scrollY. Inline: art immediately before the beat it illustrates.
 									     Solo flashback beats carry art inside the mini (via flashImages) so TOC jumps still see cues. -->
-									<div class="beats">
+									{#if documentView}
+										{#if reading.mode === 'screenplay'}
+											<Screenplay
+												blocks={shown.blocks}
+												year={years[i] ?? null}
+												title={(koHead && entry.subtitle) || entry.title}
+												second={entry.subtitle ? (koHead ? entry.title : entry.subtitle) : ''}
+												when={entry.year}
+												place={entry.sub ?? ''}
+											/>
+										{:else}
+											<Storyboard
+												entry={shown}
+												year={years[i] ?? null}
+												title={(koHead && entry.subtitle) || entry.title}
+												second={entry.subtitle ? (koHead ? entry.title : entry.subtitle) : ''}
+												when={entry.year}
+												place={entry.sub ?? ''}
+											/>
+										{/if}
+									{:else}
+									<div class="beats arrive" style:--i={9}>
 									{#each beats as beat, bi (bi)}
-										{@const soloFlash =
-											beat.blocks.length === 1 && beat.blocks[0]?.kind === 'flashback'}
+										{@const body = introMap
+											? beat.blocks.filter((b) => b !== introMap)
+											: beat.blocks}
+										{@const soloFlash = body[0]?.kind === 'flashback'}
 										{@const asMedia =
-											inlineImages && beat.images.length > 0 && forms.get(beat.blocks[0]) === 'post'}
-										{#if inlineImages && beat.images.length && !soloFlash && !asMedia}
+											inlineImages && beat.images.length > 0 && forms.get(body[0]) === 'post'}
+										{@const art = inlineImages && beat.images.length > 0 && !soloFlash && !asMedia}
+										{@const sceneStart = bi > 0 && isPlate(body[0])}
+										{#if art}
 											<!-- No reveal here: inline figures are part of the
 											     manuscript, so they are simply present. -->
-											<div class="inline-art">
+											<div class="inline-art" class:scene-start={sceneStart}>
 												<ImageStack
 													images={beat.images}
 													inline
@@ -485,59 +600,62 @@
 												/>
 											</div>
 										{/if}
+										{#if body.length}
 										<div
 											class="text"
 											class:first={bi === 0}
-											class:has-art={sideImages && beat.images.length > 0}
+											class:scene-start={sceneStart && !art}
+											class:has-art={stageImages && beat.images.length > 0}
 											data-beat={bi}
 											style:--art-n={Math.min(2, Math.max(1, beat.images.length))}
 											use:reveal={{ delay: 80, y: 0 }}
 										>
 											<Blocks
-												blocks={beat.blocks}
+												blocks={body}
 												year={years[i]}
 												idPrefix={eid}
 												sceneFrom={shown.blocks}
 												flashImages={inlineImages && soloFlash ? beat.images : undefined}
 												media={asMedia ? beat.images : undefined}
 												breaking={isWarEntry(shown)}
+												weather={shown.weather}
+												sky
 											/>
 										</div>
+										{/if}
 									{/each}
 								</div>
+									{/if}
+								{#if next}
+									<NextEpisode {next} ko={koHead} />
+								{/if}
 								</div>
 
 								<!-- The stage column belongs to the stage modes. The script
 								     has no place banner and no map tile — only its own
 								     figures, which ride inline with the prose. -->
-								{#if sideImages && (images.length || entry.place)}
+								{#if stageImages && (images.length || entry.place || shown.blocks.some((b) => b.kind === 'place'))}
 									<aside class="images-col">
-										<div class="images-sticky" class:has-banner={!!entry.place}>
-											{#if entry.place}
-												<div class="bento">
-													<div class="bento-place">
-														<PlaceBanner
-															placeId={entry.place}
-															priority={episodesMode || (ci === 0 && i === 0)}
-														/>
-													</div>
-													<div class="bento-map">
-														<PlaceMapTile placeId={entry.place} />
-													</div>
-												</div>
-											{/if}
-											{#if images.length}
-												<div class="reel">
-													<ImageStack {images} priority={episodesMode || (ci === 0 && i === 0)} />
-												</div>
-											{/if}
+										<div class="images-sticky">
+											<ScenesPanel
+												place={entry.place}
+												{images}
+												priority={episodesMode || (ci === 0 && i === 0)}
+											/>
 										</div>
+									</aside>
+								{/if}
+
+								{#if !documentView && widgetsPinned()}
+									<aside class="widgets-col">
+										<WidgetsPanel blocks={shown.blocks} year={years[i] ?? null} />
 									</aside>
 								{/if}
 							</article>
 							{/if}
 					{/each}
 				</section>
+				{/if}
 			{/if}
 		{/each}
 	</div>
@@ -555,53 +673,28 @@
 		</footer>
 	{/if}
 
-	<button
-		type="button"
-		class="title-pill liquid-glass"
-		class:in={!!pinnedId}
-		aria-hidden={!pinnedId}
-		tabindex={pinnedId ? 0 : -1}
-		onclick={backToHead}
-	>
-		{#if pill}
-			<span class="pill-num">{pill.num}</span>
-			<span class="pill-title">{(koHead && pill.ko) || pill.title}</span>
-		{/if}
-	</button>
-
-	<nav
-		class="ep-nav liquid-glass"
-		class:in={navLive}
-		aria-label="Episode navigation"
-		aria-hidden={!navLive}
-	>
+	<!-- Episodes: the pill is the episode switcher. It grows into the list.
+	     The full scroll keeps the old pill: it drops in once the head is gone. -->
+	{#if episodesMode}
+		<EpisodeSwitch live={navLive} />
+	{:else}
 		<button
 			type="button"
-			class="ep-step prev"
-			disabled={atFirstEpisode}
-			aria-label={koHead ? '이전 회차' : 'Previous episode'}
-			tabindex={navLive && !atFirstEpisode ? 0 : -1}
-			onclick={() => stepEpisode(-1)}
+			class="title-pill liquid-glass"
+			class:in={!!pinnedId}
+			aria-hidden={!pinnedId}
+			tabindex={pinnedId ? 0 : -1}
+			onclick={backToHead}
 		>
-			<span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-			<span class="step-label">{koHead ? '이전' : 'Prev'}</span>
+			{#if pill}
+				<span class="pill-num">{pill.num}</span>
+				<span class="pill-title">{(koHead && pill.ko) || pill.title}</span>
+			{/if}
 		</button>
-		<div class="ep-pick">
-			<EpisodePicker variant="inline" placement="above" align="center" tabindex={navLive ? 0 : -1} />
-		</div>
-		<button
-			type="button"
-			class="ep-step next"
-			disabled={atLastEpisode}
-			aria-label={koHead ? '다음 회차' : 'Next episode'}
-			tabindex={navLive && !atLastEpisode ? 0 : -1}
-			onclick={() => stepEpisode(1)}
-		>
-			<span class="step-label">{koHead ? '다음' : 'Next'}</span>
-			<span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-		</button>
-	</nav>
+	{/if}
 	<ScriptSelectionMenu />
+	<SceneSummary live={scriptUi.inScript} />
+	<OutlineRail live={scriptUi.inScript} />
 </main>
 
 <style>
@@ -634,58 +727,6 @@
 		color: var(--fg-strong);
 	}
 
-	/* ————— Chapter opener: scrolls with the page (sticky chrome lives in .entry-head) ————— */
-	.chapter-head {
-		padding: 1.35rem 3rem 1.1rem;
-	}
-
-	.chapter-title {
-		display: flex;
-		align-items: center;
-		gap: 1.5rem;
-	}
-
-	.chapter-title h1 {
-		margin: 0;
-		font-family: var(--serif);
-		font-weight: 500;
-		font-size: clamp(1.1rem, 2.1vw, 1.6rem);
-		letter-spacing: var(--tracking-display);
-		line-height: 1.1;
-		white-space: nowrap;
-		display: flex;
-		align-items: baseline;
-		gap: 0.55em;
-		color: var(--fg-strong);
-	}
-
-	.chapter-title .num {
-		font-variant-numeric: tabular-nums;
-		color: var(--gold);
-		font-weight: 500;
-	}
-
-	.chapter-title .num::after {
-		content: ' ·';
-		color: var(--fg-faint);
-		font-weight: 400;
-	}
-
-	.chapter-title .hanja,
-	.chapter-title .ko {
-		font-family: var(--serif);
-		font-weight: 400;
-		font-size: 0.8em;
-		color: var(--gold);
-		letter-spacing: 0;
-	}
-
-	.chapter-title .range {
-		font-weight: 500;
-		font-size: 0.78em;
-		color: var(--fg-faint);
-		letter-spacing: 0.02em;
-	}
 	/* ————— Entry: sticky header + text beats | sticky images ————— */
 	.entry {
 		position: relative;
@@ -698,14 +739,107 @@
 		overflow-anchor: none;
 	}
 
-	/* Immersion: no year/title/flag margin. Prose and the sticky stage only. */
-	:global(html.is-immersion) .entry {
-		grid-template-columns: minmax(0, 1fr) minmax(240px, 32%);
-		gap: 0 2.75rem;
+	/* Screenplay and storyboard are a single sheet. No stage column. */
+	:global(html.is-screenplay) .entry,
+	:global(html.is-storyboard) .entry {
+		grid-template-columns: minmax(0, 1fr);
+		justify-content: center;
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
 	}
 
-	:global(html.is-immersion) .entry-head {
+	:global(html.is-screenplay) .entry-head,
+	:global(html.is-storyboard) .entry-head,
+	:global(html.is-screenplay) .next-episode,
+	:global(html.is-storyboard) .next-episode {
 		display: none;
+	}
+
+	:global(html.is-screenplay) .entry,
+	:global(html.is-storyboard) .entry {
+		padding-top: 4.5rem;
+	}
+
+	/* A document is still. Storyboard stills may drift when animation mode is on. */
+	:global(html.is-screenplay) :global(*),
+	:global(html.is-screenplay) :global(*::before),
+	:global(html.is-screenplay) :global(*::after),
+	:global(html.is-storyboard) :global(*),
+	:global(html.is-storyboard) :global(*::before),
+	:global(html.is-storyboard) :global(*::after) {
+		animation: none !important;
+	}
+
+	:global(html.is-storyboard[data-animated='on']) :global(.frames img) {
+		animation: board-drift 18s ease-in-out infinite alternate !important;
+	}
+
+	@keyframes board-drift {
+		from {
+			transform: scale(1);
+		}
+		to {
+			transform: scale(1.06) translate3d(-1%, -1%, 0);
+		}
+	}
+
+	/* Immersion: the episode's title stays; summary, properties and thumbnail
+	   are dashboard furniture the stage columns already cover. */
+	:global(html.is-immersion) .ai-summary,
+	:global(html.is-immersion) .props,
+	:global(html.is-immersion) .entry-thumb {
+		display: none;
+	}
+
+	:global(html.is-immersion) .entry-head-main {
+		gap: 1.25rem;
+		padding: 2.6rem 0 2.75rem;
+	}
+
+	/* Immersion keeps the script's centred measure, the scenes panel on its
+	   left and (wide) the widgets panel on its right, centred as one block.
+	   Side columns hold their width even when empty, so the script never
+	   jumps sideways between entries. */
+	@media (min-width: 821px) {
+		:global(html.is-immersion) .entry {
+			grid-template-columns:
+				minmax(9rem, var(--imm-stage-w))
+				minmax(18rem, var(--script-measure));
+			justify-content: center;
+			gap: 0 var(--imm-gap);
+			padding: 0 2rem 7rem;
+		}
+
+		:global(html.is-immersion) .content-col {
+			grid-column: 2;
+		}
+
+		:global(html.is-immersion) .images-col {
+			grid-column: 1;
+		}
+	}
+
+	/* Width must match `widgetsPinned()` in $lib/pinnedWidgets.svelte.ts. */
+	@media (min-width: 1100px) {
+		:global(html.is-immersion) .entry {
+			grid-template-columns:
+				minmax(9rem, var(--imm-stage-w))
+				minmax(18rem, var(--script-measure))
+				minmax(9rem, var(--imm-stage-w));
+		}
+	}
+
+	.widgets-col {
+		grid-column: 3;
+		grid-row: 1 / -1;
+		align-self: stretch;
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.widgets-col > :global(*) {
+		align-self: stretch;
 	}
 
 	/* Script: no side column at all — one column at the script measure. */
@@ -725,14 +859,9 @@
 			);
 		}
 
-		.script.images-inline .entry,
-		.script.images-inline .chapter-head {
+		.script.images-inline .entry {
 			padding-left: var(--script-left);
 			transition: padding-left var(--toc-duration) var(--toc-ease);
-		}
-
-		.script.images-inline .chapter-head {
-			max-width: calc(var(--script-left) + var(--script-measure));
 		}
 	}
 
@@ -741,9 +870,22 @@
 		overflow-anchor: none;
 	}
 
-	/* Inline art and sticky frames stop at the column edge, never in the TOC gutter. */
+	/* Inline art stops at the column edge, never in the TOC gutter. The opening
+	   map is allowed to run nearly the width of the window. */
 	.chapter {
 		overflow-x: clip;
+	}
+
+	.chapter:has(:global(.bleed)) {
+		overflow-x: visible;
+	}
+
+	.intro-map {
+		margin: 0 0 1.5rem;
+	}
+
+	.intro-map :global(.excerpt) {
+		margin-top: 0;
 	}
 
 	/* ————— Cinema: one column over the panel —————
@@ -760,8 +902,7 @@
 
 	:global(html.is-cinema:not(.is-cinema-peek)) .entry-head,
 	:global(html.is-cinema:not(.is-cinema-peek)) .images-col,
-	:global(html.is-cinema:not(.is-cinema-peek)) .inline-art,
-	:global(html.is-cinema:not(.is-cinema-peek)) .chapter-head {
+	:global(html.is-cinema:not(.is-cinema-peek)) .inline-art {
 		display: none;
 	}
 
@@ -839,53 +980,6 @@
 		width: 100%;
 	}
 
-	.images-sticky .bento,
-	.images-sticky .reel {
-		width: var(--stage-w);
-		max-width: 100%;
-		flex-shrink: 0;
-	}
-
-	/* Place banner + mini map side by side; banner 16:9 sets the row height. */
-	.bento {
-		display: grid;
-		grid-template-columns: 1.55fr 1fr;
-		gap: var(--stage-gap);
-		align-items: stretch;
-	}
-
-	.bento-place,
-	.bento-map {
-		min-width: 0;
-		min-height: 0;
-	}
-
-	.bento-place :global(.banner) {
-		width: 100%;
-		height: auto;
-	}
-
-	.bento-map {
-		display: flex;
-	}
-
-	.bento-map :global(.tile) {
-		flex: 1 1 auto;
-		width: 100%;
-		height: 100%;
-	}
-
-	.images-sticky .reel {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.images-sticky .reel :global(.stack) {
-		width: 100%;
-		height: auto;
-	}
-
 	/* Immersion: size stage so bento + landscape 3:2 phone fit above the plate. */
 	:global(html.is-immersion) .images-sticky {
 		top: 1.1rem;
@@ -898,12 +992,25 @@
 		--stage-w: min(100%, calc((100dvh - var(--plate-h) - 1.35rem) * 3 / 2));
 	}
 
-	:global(html.is-immersion) .images-sticky.has-banner {
+	:global(html.is-immersion) .images-sticky:has(:global(.bento)) {
 		/* bento 9/16 + phone 2/3 = 59/48 of width, plus gap */
 		--stage-w: min(
 			100%,
 			calc((100dvh - var(--plate-h) - 1.35rem - var(--stage-gap)) * 48 / 59)
 		);
+	}
+
+	/* Desktop immersion: the plate only spans the script, so both side panels
+	   run the full height, and the scenes panel's stills fill it as a track. */
+	@media (min-width: 821px) {
+		:global(html.is-immersion) .images-sticky,
+		:global(html.is-immersion) .images-sticky:has(:global(.bento)) {
+			top: 1.1rem;
+			height: calc(100dvh - 2.2rem);
+			padding: 2.1rem 0 0;
+			justify-content: flex-start;
+			--stage-w: 100%;
+		}
 	}
 
 	/* The head scrolls with the page; once it is gone the title pill takes over. */
@@ -918,6 +1025,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
+		justify-content: center;
 		gap: 0.15rem 0.3rem;
 		font-family: var(--ui);
 		font-size: 0.8rem;
@@ -954,20 +1062,23 @@
 	.episode {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
+		text-align: center;
 	}
 
 	.year {
 		font-family: var(--serif);
 		font-weight: 400;
-		font-size: 0.92rem;
+		font-size: 1.05rem;
 		line-height: 1.3;
-		letter-spacing: 0.04em;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
 		display: flex;
 		flex-direction: row;
 		align-items: baseline;
+		justify-content: center;
 		gap: 0.4rem;
-		margin: 0 0 0.5rem;
+		margin: 0 0 0.7rem;
 		color: var(--fg-dim);
 	}
 
@@ -994,12 +1105,21 @@
 		color: var(--fg-faint);
 	}
 
+	.ep-num {
+		margin: 0 0 0.45rem;
+		font-family: var(--ui);
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.28em;
+		color: var(--gold);
+	}
+
 	.episode h2 {
 		margin: 0;
 		font-family: var(--serif);
 		font-weight: 500;
-		font-size: clamp(2.3rem, 3.6vw, 3.1rem);
-		line-height: 1.02;
+		font-size: clamp(3.1rem, 6.2vw, 4.8rem);
+		line-height: 0.98;
 		letter-spacing: var(--tracking-display);
 		max-width: none;
 		color: var(--fg-strong);
@@ -1007,10 +1127,70 @@
 	}
 
 	.episode-ko {
-		margin: 0.6rem 0 0;
+		margin: 0.7rem 0 0;
 		font-family: var(--serif);
 		font-size: 1.05rem;
 		letter-spacing: 0.06em;
+		color: var(--fg-dim);
+	}
+
+	/* English (and both): the Korean line under the title is display type. */
+	:global(html:not([data-lang='ko'])) .episode-ko {
+		font-family: var(--display-ko);
+		font-weight: 400;
+		font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+		letter-spacing: 0;
+		color: var(--fg-strong);
+	}
+
+	.script.episodes .arrive {
+		animation: float-up 0.85s calc(0.04s + var(--i, 0) * 0.07s) cubic-bezier(0.16, 1, 0.3, 1) both;
+	}
+
+	.script.is-turning {
+		will-change: transform;
+	}
+
+	/* AI Summary accordion: quiet by default, opens to scene-by-scene beats. */
+	.ai-summary {
+		margin: 1.1rem 0 0;
+		border: 1px solid var(--line-soft, rgba(127, 127, 127, 0.35));
+		border-radius: 0.75rem;
+		background: color-mix(in srgb, var(--fg) 4%, transparent);
+		font-size: 0.92rem;
+	}
+	.ai-summary > summary {
+		cursor: pointer;
+		padding: 0.6rem 0.9rem;
+		font-weight: 650;
+		letter-spacing: 0.04em;
+		color: var(--fg-dim);
+		list-style: none;
+	}
+	.ai-summary > summary::-webkit-details-marker {
+		display: none;
+	}
+	.ai-summary > summary::before {
+		content: '▸ ';
+	}
+	.ai-summary[open] > summary::before {
+		content: '▾ ';
+	}
+	.ai-summary > ul {
+		margin: 0;
+		padding: 0.2rem 1.1rem 0.9rem 1.9rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.45rem;
+	}
+	.ai-summary li {
+		line-height: 1.5;
+	}
+	.ai-summary .sum-label {
+		font-weight: 650;
+		margin-right: 0.45em;
+	}
+	.ai-summary .sum-text {
 		color: var(--fg-dim);
 	}
 
@@ -1056,54 +1236,16 @@
 		display: none;
 	}
 
-	.tags,
+	/* Notion person mentions: a round face and a name, no chip around them. */
 	.cast-list {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 0.4rem;
+		gap: 0.15rem 0.35rem;
 		min-height: 1.85rem;
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
-
-	.tag {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-		height: 1.6rem;
-		padding: 0 0.6rem 0 0.4rem;
-		font-size: 0.74rem;
-		line-height: 1;
-		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--tag, var(--fg)) 10%, transparent);
-		border: 1px solid color-mix(in srgb, var(--tag, var(--fg)) 28%, transparent);
-		border-radius: 999px;
-	}
-
-	.tag-flag {
-		width: 1.35rem;
-		height: 0.9rem;
-		object-fit: cover;
-		border-radius: 2px;
-		display: block;
-	}
-
-	.tag-icon {
-		font-size: 0.95rem;
-		color: var(--tag);
-		font-variation-settings: 'FILL' 1;
-	}
-
-	.tag-ko {
-		color: var(--fg-faint);
-		font-size: 0.92em;
-	}
-
-	/* Notion person mentions: a round face and a name, no chip around them. */
-	.cast-list {
-		gap: 0.15rem 0.35rem;
 	}
 
 	.cast-chip {
@@ -1158,8 +1300,18 @@
 		padding: 0;
 	}
 
+	/* The prologue is read like a title sequence: every line a size up. */
+	.entry.title-sequence .text {
+		font-size: 1.14em;
+	}
+
 	.text.first {
 		padding-top: 0.5rem;
+	}
+
+	.text.scene-start,
+	.inline-art.scene-start {
+		margin-top: 5.5rem;
 	}
 
 	.inline-art {
@@ -1173,12 +1325,64 @@
 		overflow-x: clip;
 	}
 
-	/* Scroll parallax: the wrapper holds its place in the flow, its figure drifts
-	   by --parallax-y (set by the `parallax` attachment). `translate` composes
-	   with any transform the figure already has. */
-	.inline-art > :global(*),
-	.beats :global(.fb-art > *) {
+	/* Scroll parallax, Animated mode only: the wrapper holds its place in the flow,
+	   its figure drifts by --parallax-y (set by the `parallax` attachment).
+	   `translate` composes with any transform the figure already has. */
+	:global(html[data-animated='on']) .inline-art > :global(*),
+	:global(html[data-animated='on']) .beats :global(.fb-art > *),
+	:global(html[data-animated='on']) .entry-thumb > :global(*) {
 		translate: 0 var(--parallax-y, 0px);
+	}
+
+	/* Inner parallax: the still sits a little zoomed inside its frame and trails it,
+	   so it reads as a window onto the picture. The 12% zoom leaves 6% each side,
+	   more than the 5% the picture travels; --parallax-t runs −1 (above) to 1 (below). */
+	:global(html[data-animated='on']) .inline-art :global(.frame img),
+	:global(html[data-animated='on']) .beats :global(.fb-art .frame img),
+	:global(html[data-animated='on']) .entry-thumb :global(img) {
+		scale: 1.12;
+		translate: 0 calc(var(--parallax-t, 0) * 5%);
+		will-change: translate;
+	}
+
+	/* Edit mode: a cue being dragged or moved lands above the block under the pointer. */
+	.script :global([data-cue-drop]) {
+		box-shadow: 0 -3px 0 0 var(--gold);
+		border-radius: 2px;
+	}
+
+	.script.cue-picking :global(.beats) {
+		cursor: copy;
+	}
+
+	.cue-move-bar {
+		position: fixed;
+		z-index: 60;
+		left: 50%;
+		bottom: 1.25rem;
+		translate: -50% 0;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0.45rem 0.5rem 0.45rem 0.9rem;
+		border-radius: var(--radius-pill);
+		background: color-mix(in srgb, var(--panel) 94%, transparent);
+		border: 1px solid var(--hairline);
+		box-shadow: var(--shadow-menu);
+		backdrop-filter: blur(14px);
+		font-family: var(--ui);
+		font-size: 0.78rem;
+		color: var(--fg);
+	}
+
+	.cue-move-bar button {
+		padding: 0.25rem 0.7rem;
+		border: 1px solid var(--hairline);
+		border-radius: var(--radius-pill);
+		background: transparent;
+		color: inherit;
+		font: inherit;
+		cursor: pointer;
 	}
 
 	/*
@@ -1239,25 +1443,6 @@
 			overflow-x: clip;
 		}
 
-		/* Chapter opener scrolls away; sticky chrome lives in the entry head on desktop.
-		   Extra top padding clears the fixed HUD when the opener is in view. */
-		.chapter-head {
-			padding: max(3.1rem, calc(env(safe-area-inset-top, 0px) + 2.6rem))
-				max(1.15rem, env(safe-area-inset-right, 0px)) 0.35rem
-				max(1.15rem, env(safe-area-inset-left, 0px));
-		}
-
-		.chapter-title h1 {
-			white-space: normal;
-			flex-wrap: wrap;
-			gap: 0.3em;
-			font-size: 0.95rem;
-		}
-
-		.chapter-title .rule {
-			display: none;
-		}
-
 		/* one entry = one card: compact art, then title, then text */
 		.entry {
 			display: flex;
@@ -1306,12 +1491,8 @@
 			--stage-w: min(100%, 22rem);
 		}
 
-		.images-sticky .reel {
-			flex: none;
-		}
-
 		:global(html.is-immersion) .images-sticky,
-		:global(html.is-immersion) .images-sticky.has-banner {
+		:global(html.is-immersion) .images-sticky:has(:global(.bento)) {
 			--stage-w: min(100%, 18rem);
 		}
 
@@ -1347,7 +1528,7 @@
 
 		.episode h2 {
 			max-width: none;
-			font-size: 2rem;
+			font-size: clamp(2.4rem, 11vw, 3.2rem);
 		}
 
 		.props {
@@ -1449,198 +1630,9 @@
 		}
 	}
 
-	/* ————— Episodes scope: floating prev / next —————
-	   Bottom-center chrome. In immersion, clear the dialogue *box*
-	   (--plate-box-h) — not --plate-h (bust reserve) — so the pill sits
-	   just above the plate instead of mid-prose. z-index stays under the
-	   plate (93) so the two never fight for hits. */
-	.ep-nav {
-		position: fixed;
-		z-index: 92;
-		left: 50%;
-		bottom: calc(max(1rem, env(safe-area-inset-bottom, 0px)) + 1rem);
-		transform: translate3d(-50%, 0.85rem, 0);
-		display: flex;
-		align-items: center;
-		gap: 0.3rem;
-		max-width: calc(100vw - 1.5rem);
-		padding: 0.3rem;
-		border-radius: var(--radius-pill);
-		opacity: 0;
-		pointer-events: none;
-		transition:
-			opacity 480ms var(--ease),
-			transform 520ms var(--ease),
-			bottom 420ms var(--ease);
-	}
-
-	.ep-nav.in {
-		opacity: 1;
-		transform: translate3d(-50%, 0, 0);
-		pointer-events: auto;
-	}
-
-	:global(html.is-immersion.is-in-script) .ep-nav {
-		bottom: calc(var(--plate-box-h, 9rem) + 1.1rem);
-	}
-
-	/* Cinema keeps the pill, lifted clear of the dialogue strip. */
-	:global(html.is-cinema.is-in-script) .ep-nav {
-		bottom: calc(var(--cin-strip-h) + 3.5rem);
-	}
-
-	/* Prev / Next: the pill's two real buttons — filled, arrowed, and obvious when spent. */
-	.ep-step {
-		flex: none;
-		display: inline-flex;
-		align-items: center;
-		gap: 0.35rem;
-		min-height: 2.75rem;
-		padding: 0 1.05rem;
-		border: 1px solid color-mix(in srgb, var(--fg) 14%, transparent);
-		border-radius: var(--radius-pill);
-		background: color-mix(in srgb, var(--fg) 9%, transparent);
-		color: var(--fg-strong);
-		font: inherit;
-		font-family: var(--ui);
-		font-size: 0.86rem;
-		font-weight: 600;
-		letter-spacing: var(--tracking-ui);
-		cursor: pointer;
-		-webkit-tap-highlight-color: transparent;
-		transition:
-			background 0.2s var(--ease),
-			border-color 0.2s var(--ease),
-			color 0.2s var(--ease),
-			transform 0.15s var(--ease),
-			opacity 0.2s var(--ease);
-	}
-
-	.ep-step.prev {
-		padding-left: 0.8rem;
-	}
-
-	.ep-step.next {
-		padding-right: 0.8rem;
-	}
-
-	/* The forward step is the one solid button: the page's ink on its paper. */
-	.ep-step.next:not(:disabled) {
-		color: var(--bg);
-		background: var(--fg-strong);
-		border-color: var(--fg-strong);
-	}
-
-	.ep-step .material-symbols-outlined {
-		font-size: 1.2rem;
-		font-variation-settings: 'wght' 600;
-		transition: translate 0.2s var(--ease);
-	}
-
-	.ep-step:hover:not(:disabled) {
-		color: var(--on-gold);
-		background: var(--gold);
-		border-color: var(--gold);
-	}
-
-	.ep-step.prev:hover:not(:disabled) .material-symbols-outlined {
-		translate: -2px 0;
-	}
-
-	.ep-step.next:hover:not(:disabled) .material-symbols-outlined {
-		translate: 2px 0;
-	}
-
-	.ep-step:active:not(:disabled) {
-		transform: scale(0.95);
-	}
-
-	.ep-step:focus-visible {
-		outline: 2px solid var(--gold);
-		outline-offset: 2px;
-	}
-
-	.ep-step:disabled {
-		opacity: 0.32;
-		background: transparent;
-		border-style: dashed;
-		cursor: not-allowed;
-	}
-
-	/* The episode switcher sits between them and gives way first when space runs out. */
-	.ep-pick {
-		flex: 0 1 auto;
-		min-width: 0;
-		max-width: min(18rem, 52vw);
-		display: flex;
-		font-size: 0.8rem;
-	}
-
-	.ep-pick :global(.trigger) {
-		width: 100%;
-		color: var(--fg);
-		font-size: 0.8rem;
-	}
-
-	/* Clear the bottom pill in script mode. Immersion already reserves
-	   --plate-h on body, which sits below the nav (--plate-box-h). */
-	.script.episodes .entry {
-		padding-bottom: 7rem;
-	}
-
-	@media (max-width: 700px) {
-		.ep-nav {
-			bottom: calc(max(0.75rem, env(safe-area-inset-bottom, 0px)) + 0.75rem);
-		}
-
-		:global(html.is-immersion.is-in-script) .ep-nav {
-			bottom: calc(var(--plate-box-h, 9rem) + 0.75rem);
-		}
-
-		.ep-step {
-			padding: 0 0.85rem;
-		}
-
-		.ep-step.prev {
-			padding-left: 0.7rem;
-		}
-
-		.ep-step.next {
-			padding-right: 0.7rem;
-		}
-	}
-
-	/* Phones: arrows only, so the episode title keeps the room. */
-	@media (max-width: 420px) {
-		.ep-step {
-			width: 2.75rem;
-			padding: 0;
-			justify-content: center;
-		}
-
-		.ep-step.prev,
-		.ep-step.next {
-			padding: 0;
-		}
-
-		.step-label {
-			display: none;
-		}
-
-		.ep-pick {
-			max-width: calc(100vw - 9rem);
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.ep-nav {
-			transition: opacity 200ms ease;
-			transform: translate3d(-50%, 0, 0);
-		}
-
-		.ep-step,
-		.ep-step .material-symbols-outlined {
-			transition: none;
+	@media (min-width: 821px) {
+		.script.episodes .entry-head-main {
+			padding-top: 4.5rem;
 		}
 	}
 

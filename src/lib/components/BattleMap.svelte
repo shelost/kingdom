@@ -11,11 +11,13 @@
 		sideColors,
 		strengths,
 		unitSpots,
+		winnersOf,
 		type ArrowKind,
 		type Battle,
 		type EventKind,
 		type Terrain
 	} from '$lib/battles';
+	import { paintTerritory } from '$lib/battleTerritory';
 	import { PLACES, MAP_SHEET_BOX, MAP_VIEW } from '$lib/places';
 	import { reading } from '$lib/reading.svelte';
 	import { formatYear } from '$lib/borders';
@@ -53,6 +55,22 @@
 	const colorOf = (sideId: string | undefined) => (sideId && palette.get(sideId)) || '#8a8a94';
 	const pct = ([x, y]: Pt) => ({ left: (x / FIELD.w) * 100, top: (y / FIELD.h) * 100 });
 
+	/** Each side's ground this phase, Risk-style; only read (and painted) by the flat map. */
+	let territory = $derived.by(() => {
+		if (!b || !live || typeof document === 'undefined') return '';
+		const sheet = document.createElement('canvas');
+		paintTerritory(sheet, b, index, palette, document.documentElement.dataset.theme === 'light');
+		return sheet.toDataURL();
+	});
+	/** The ground shown before this phase, so a phase change crossfades the front lines instead of painting them from nothing. */
+	let lastTerritory = '';
+	let territorySwap = $derived.by(() => {
+		const to = territory;
+		const from = lastTerritory === to ? '' : lastTerritory;
+		lastTerritory = to;
+		return { from, to };
+	});
+
 	let dots = $derived(b ? fieldDots(b, index).map((d) => ({ ...d, color: colorOf(d.side), on: d.on && live })) : []);
 
 	/** Every walled place, camp, gate and raised mound flies its holder's banner; a capture swaps it between phases. */
@@ -88,21 +106,11 @@
 			: []
 	);
 
-	/** Camera azimuth over the 3D ground; dragging the field turns it. 0 = looking north. */
-	let az = $state(0);
+	/** How far the reader has turned the round table (radians); dragging the field turns it. 0 = looking north. */
+	let turn = $state(0);
 	let flat = $state(false);
-	let drag: { x: number; az: number; w: number } | null = null;
-	function grab(e: PointerEvent) {
-		if (flat || e.button !== 0) return;
-		const el = e.currentTarget as HTMLElement;
-		drag = { x: e.clientX, az, w: el.clientWidth || 1 };
-		el.setPointerCapture(e.pointerId);
-	}
-	function turn(e: PointerEvent) {
-		if (!drag) return;
-		az = Math.max(-1.2, Math.min(1.2, drag.az - ((e.clientX - drag.x) / drag.w) * Math.PI));
-	}
-	const release = () => (drag = null);
+	/** Bumped by the replay button: the 3D scene snaps to the opening instead of marching back to it. */
+	let replays = $state(0);
 
 	const ARROW: Record<ArrowKind, { width: number; dash?: string }> = {
 		advance: { width: 3.2 },
@@ -218,6 +226,16 @@
 
 	let scaleBar = $derived(b?.scale ? { w: (b.scale.px / FIELD.w) * 100, km: b.scale.km } : null);
 
+	/** On the last phase, the side (or allies) left holding the field. */
+	let victors = $derived(
+		b && live && index === b.phases.length - 1
+			? winnersOf(b).flatMap((id) => {
+					const s = b.sides.find((x) => x.id === id);
+					return s ? [{ id, name: ko ? s.ko : s.name, color: colorOf(id) }] : [];
+				})
+			: []
+	);
+
 	function go(i: number) {
 		if (!b) return;
 		index = Math.max(0, Math.min(b.phases.length - 1, i));
@@ -249,6 +267,16 @@
 		return () => clearTimeout(timer);
 	}
 
+	/** From the top: the whole battle plays again, or a scene marches into its phase again. */
+	function replay() {
+		stop();
+		replays += 1;
+		if (full) {
+			index = 0;
+			play();
+		} else enter();
+	}
+
 	$effect(() => () => clearTimeout(timer));
 
 	const fmt = (n: number) => n.toLocaleString('en-US');
@@ -262,10 +290,9 @@
 				<span class="name">{ko ? b.ko : b.title}{#if b.hanja}<i>{b.hanja}</i>{/if}</span>
 			</header>
 		{/if}
-		<div class="field" {@attach onceInView(enter)}>
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<div class="ground" class:turning={!flat} onpointerdown={grab} onpointermove={turn} onpointerup={release} onpointercancel={release}>
-				<KitStage scene={BATTLE_SCENE} active={live} {flat} sceneProps={{ battle: b.id, index, ko, az, full }}>
+		<div class="field" class:round={!flat} {@attach onceInView(enter)}>
+			<div class="ground">
+				<KitStage scene={BATTLE_SCENE} active={live} {flat} turnable bind:turn sceneProps={{ battle: b.id, index, ko, full, replay: replays }}>
 					{#snippet fallback()}
 				<svg viewBox="0 0 {FIELD.w} {FIELD.h}" class="map" aria-hidden="true">
 					<defs>
@@ -339,6 +366,17 @@
 							</g>
 						{/if}
 					{/each}
+
+					{#if territorySwap.from && territorySwap.to}
+						{#key territorySwap.from}
+							<image href={territorySwap.from} width={FIELD.w} height={FIELD.h} preserveAspectRatio="none" class="territory out" />
+						{/key}
+					{/if}
+					{#if territorySwap.to}
+						{#key territorySwap.to}
+							<image href={territorySwap.to} width={FIELD.w} height={FIELD.h} preserveAspectRatio="none" class="territory" class:in={!!territorySwap.from} />
+						{/key}
+					{/if}
 
 					<g class="dots" class:live>
 						{#each dots as d (d.key)}
@@ -414,13 +452,22 @@
 				</KitStage>
 			</div>
 
-			<button type="button" class="compass" style:rotate="{flat ? 0 : az}rad" onclick={() => (az = 0)} aria-label={ko ? '북쪽으로' : 'Face north'}>N<i></i></button>
+			<button type="button" class="compass" style:rotate="{flat ? 0 : turn}rad" onclick={() => (turn = 0)} aria-label={ko ? '북쪽으로' : 'Face north'}>N<i></i></button>
+			{#if victors.length}
+				<div class="victory" aria-live="polite" style:--c={victors[0].color}>
+					<span class="material-symbols-outlined" aria-hidden="true">military_tech</span>
+					<span class="who">
+						{#each victors as v, i (v.id)}{#if i}<i>·</i>{/if}<b style:color={v.color}>{v.name}</b>{/each}
+					</span>
+					<span class="won">{ko ? '승리' : 'victory'}</span>
+				</div>
+			{/if}
 			{#if full}
 				<span class="stamp">{formatYear(b.year)}</span>
 				<button type="button" class="view" onclick={() => (flat = !flat)} aria-pressed={!flat} aria-label={flat ? (ko ? '입체 지도' : '3D ground') : ko ? '평면 지도' : 'Flat map'}>
 					<span class="material-symbols-outlined" aria-hidden="true">{flat ? 'landscape' : 'map'}</span>
 				</button>
-				{#if scaleBar && (flat || Math.abs(az) < 0.05)}
+				{#if scaleBar && (flat || Math.abs(turn) < 0.05)}
 					<span class="scalebar" style:width="{scaleBar.w}%" aria-hidden="true"><i></i>{scaleBar.km} km</span>
 				{/if}
 				{#if locator}
@@ -454,9 +501,12 @@
 				<div class="track">
 					{#if full}
 						<button type="button" class="play" onclick={play} aria-label={playing ? 'Pause' : 'Play the battle'}>
-							<span class="material-symbols-outlined" aria-hidden="true">{playing ? 'pause' : index === b.phases.length - 1 ? 'replay' : 'play_arrow'}</span>
+							<span class="material-symbols-outlined" aria-hidden="true">{playing ? 'pause' : 'play_arrow'}</span>
 						</button>
 					{/if}
+					<button type="button" class="play" onclick={replay} aria-label={ko ? '처음부터 다시' : 'Replay from the start'}>
+						<span class="material-symbols-outlined" aria-hidden="true">replay</span>
+					</button>
 					<ol class="bars">
 						{#each b.phases as p, i (p.id)}
 							<li>
@@ -522,13 +572,23 @@
 		aspect-ratio: 1000 / 560;
 	}
 
+	/* The 3D table is round: a taller frame so the whole disc fits once it turns. */
+	.field.round {
+		aspect-ratio: 1.45;
+	}
+
+	@container (max-width: 640px) {
+		.field.round {
+			aspect-ratio: 1.15;
+		}
+	}
+
 	.ground {
 		position: absolute;
 		inset: 0;
 	}
 
-	/* The drawing fades out in an ellipse instead of ending at a rectangle; the zoom controls stay sharp. */
-	.ground :global(.kit-gl),
+	/* The flat drawing fades out in an ellipse instead of ending at a rectangle; the 3D disc ends at its own rim. */
 	.map,
 	.labels {
 		-webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 42%, transparent 90%);
@@ -692,6 +752,13 @@
 		fill: none;
 		stroke: var(--c);
 		stroke-width: 1.4;
+	}
+
+	.territory.in {
+		animation: fade 1900ms ease-in-out 300ms both;
+	}
+	.territory.out {
+		animation: fade 1900ms ease-in-out 300ms reverse both;
 	}
 
 	.dot {
@@ -903,16 +970,60 @@
 		border: 0;
 		background: none;
 		cursor: pointer;
-		transition: rotate 260ms var(--ease, ease);
+		transition: rotate 120ms var(--ease, ease);
 	}
 
-	.ground.turning {
-		cursor: grab;
-		touch-action: pan-y;
+	/* The last phase: who held the field, stamped in their colour. */
+	.victory {
+		position: absolute;
+		top: 4%;
+		left: 50%;
+		translate: -50% 0;
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.35rem 0.8rem;
+		border: 1px solid var(--c);
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--bg) 82%, var(--c));
+		box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 25%, transparent);
+		font: 700 0.75rem/1 var(--ui);
+		letter-spacing: 0.04em;
+		pointer-events: none;
+		animation: stamp 520ms var(--ease, ease) both;
 	}
 
-	.ground.turning:active {
-		cursor: grabbing;
+	.victory .material-symbols-outlined {
+		font-size: 1.1rem;
+		color: var(--c);
+	}
+
+	.victory i {
+		margin: 0 0.25rem;
+		font-style: normal;
+		color: var(--fg-dim);
+	}
+
+	.victory .won {
+		text-transform: uppercase;
+		color: var(--fg);
+	}
+
+	@keyframes stamp {
+		from {
+			opacity: 0;
+			scale: 1.6;
+		}
+		to {
+			opacity: 1;
+			scale: 1;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.victory {
+			animation: none;
+		}
 	}
 
 	.compass i {

@@ -196,7 +196,7 @@
 				160
 			],
 			"side": "silla",
-			"label": "Gibeolpo",
+			"label": "Gibulpo",
 			"ko": "기벌포"
 		},
 		{
@@ -235,7 +235,7 @@
 		{
 			"id": "sl-fleet",
 			"side": "silla",
-			"label": "Sideuk",
+			"label": "Siduk",
 			"ko": "시득",
 			"unrecorded": true
 		}
@@ -245,7 +245,7 @@
 			"id": "arrive",
 			"label": "The last fleet",
 			"ko": "마지막 함대",
-			"caption": "Sixteen years ago the first Tang fleet came in through this mouth while Baekje watched from the high ground. Now Xue Rengui brings the last one. Sideuk, who has never won anything, has the Silla boats.",
+			"caption": "Sixteen years ago the first Tang fleet came in through this mouth while Baekje watched from the high ground. Now Xue Rengui brings the last one. Siduk, who has never won anything, has the Silla boats.",
 			"captionKo": "십육 년 전, 백제가 높은 땅에서 지켜보는 동안 첫 당 함대가 이 어귀로 들어왔다. 이제 설인귀가 마지막 함대를 끌고 온다. 한 번도 이겨 본 적 없는 시득이 신라의 배를 맡았다.",
 			"units": {
 				"tg-fleet": {
@@ -292,7 +292,7 @@
 			"id": "first",
 			"label": "Beaten, twice",
 			"ko": "두 번 진다",
-			"caption": "Sideuk goes out on the ebb and loses. When the tide comes round he goes out again, and loses again. The big ships learn that he runs.",
+			"caption": "Siduk goes out on the ebb and loses. When the tide comes round he goes out again, and loses again. The big ships learn that he runs.",
 			"captionKo": "시득이 썰물에 나가서 진다. 물때가 돌아오자 다시 나가서 또 진다. 큰 배들은 그가 도망친다는 걸 배운다.",
 			"units": {
 				"tg-fleet": {
@@ -667,9 +667,10 @@
 	],
 	"sources": [
 		"Samguk Sagi 7, Annals of Silla, Munmu year 16",
-		"Samguk Yusa 1, Taejong Chunchu-gong (Gibeolpo as the Baek river mouth)",
+		"Samguk Yusa 1, Tejong Chunchu-gong (Gibulpo as the Bek river mouth)",
 		"Old Book of Tang 83, Biography of Xue Rengui"
 	],
 	"note": "The Samguk Sagi says only that in the eleventh month Sideuk fought Xue Rengui at Gibeolpo, was defeated, then won twenty-two fights large and small and took more than four thousand heads. The story makes the one defeat two sorties and stages the win on a falling tide over the mudflats; the record mentions neither. Silla probably had fewer than a hundred ships; its losses are not recorded. No Chinese history mentions the battle, and the Old Book of Tang has Xue Rengui in exile in these years. Gibeolpo follows the usual reading at Janghang, on the north shore of the Geum mouth; one recent study puts it upriver.",
-	"noteKo": "『삼국사기』가 전하는 것은 십일월 시득이 기벌포에서 설인귀와 싸워 졌고, 다시 크고 작은 싸움 스물두 번을 이겨 사천여 급을 베었다는 것뿐이다. 이야기는 한 번의 패배를 두 번의 출격으로 늘리고, 승리를 썰물 때 갯벌 위에 올려놓는다. 물때와 갯벌은 기록에 없다. 신라의 배는 백 척이 안 되었으리라고 보며, 손실은 기록에 없다. 중국 사서에는 이 싸움이 없고, 『구당서』는 이 무렵 설인귀가 유배 중이었다고 적는다. 기벌포는 금강 하구 북쪽 장항으로 보는 통설을 따랐다. 더 상류로 보는 최근 연구도 있다."
+	"noteKo": "『삼국사기』가 전하는 것은 십일월 시득이 기벌포에서 설인귀와 싸워 졌고, 다시 크고 작은 싸움 스물두 번을 이겨 사천여 급을 베었다는 것뿐이다. 이야기는 한 번의 패배를 두 번의 출격으로 늘리고, 승리를 썰물 때 갯벌 위에 올려놓는다. 물때와 갯벌은 기록에 없다. 신라의 배는 백 척이 안 되었으리라고 보며, 손실은 기록에 없다. 중국 사서에는 이 싸움이 없고, 『구당서』는 이 무렵 설인귀가 유배 중이었다고 적는다. 기벌포는 금강 하구 북쪽 장항으로 보는 통설을 따랐다. 더 상류로 보는 최근 연구도 있다.",
+	"winner": "silla"
 }

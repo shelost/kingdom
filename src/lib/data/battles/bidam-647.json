@@ -537,8 +537,8 @@
 			"id": "works",
 			"label": "The outer works",
 			"ko": "외곽 보루",
-			"caption": "Day nine. The fight both sides spent eight days avoiding finally arrives: assault and counter-assault in the outer works. Yumjong goes down in the ditch with a Silla spear under his arm.",
-			"captionKo": "아흐레째. 양쪽이 여드레 동안 피해 온 싸움이 마침내 온다. 외곽 보루에서 공격과 반격. 염종이 신라 창을 옆구리에 맞고 도랑에 쓰러진다.",
+			"caption": "Day nine. The fight both sides spent eight days avoiding finally arrives: assault and counter-assault in the outer works, over the ditch where Yumjong fell the night before.",
+			"captionKo": "아흐레째. 양쪽이 여드레 동안 피해 온 싸움이 마침내 온다. 간밤에 염종이 쓰러진 도랑을 두고, 외곽 보루에서 공격과 반격.",
 			"units": {
 				"ry": {
 					"at": [
@@ -727,9 +727,10 @@
 	],
 	"sources": [
 		"Samguk Sagi 41, Biography of Kim Yushin, part 1",
-		"Samguk Sagi 5, Annals of Silla, Seondeok year 16",
-		"Samguk Sagi 5, Annals of Silla, Jindeok year 1"
+		"Samguk Sagi 5, Annals of Silla, Sunduk year 16",
+		"Samguk Sagi 5, Annals of Silla, Jinduk year 1"
 	],
 	"note": "No record numbers either side. The Biography of Kim Yushin gives the two camps (Myeonghwal Fortress and the Moon Palace), ten days of fighting without a break, the falling star, the burning kite, the white horse and the attack that routed the rebels; the order of those beats across the ten days is the story's. In the records Bidam flees and is executed on the seventeenth day of the first month with thirty of his kin; the duel between the camps, the tea pavilion and the outer works are the story's.",
-	"noteKo": "어느 기록도 양쪽 병력을 적지 않았다. 김유신 열전이 전하는 것은 두 진영(명활성과 월성), 승부 없이 이어진 열흘의 싸움, 떨어진 별, 불붙은 연, 흰 말, 그리고 반군을 무너뜨린 공격이고, 그 일들을 열흘에 어떻게 나눴는지는 이야기의 것이다. 기록에서 비담은 달아났다가 정월 열이렛날 일족 서른 명과 함께 처형된다. 두 진영 사이의 결투, 찻자리 정자, 외곽 보루는 이야기의 것이다."
+	"noteKo": "어느 기록도 양쪽 병력을 적지 않았다. 김유신 열전이 전하는 것은 두 진영(명활성과 월성), 승부 없이 이어진 열흘의 싸움, 떨어진 별, 불붙은 연, 흰 말, 그리고 반군을 무너뜨린 공격이고, 그 일들을 열흘에 어떻게 나눴는지는 이야기의 것이다. 기록에서 비담은 달아났다가 정월 열이렛날 일족 서른 명과 함께 처형된다. 두 진영 사이의 결투, 찻자리 정자, 외곽 보루는 이야기의 것이다.",
+	"winner": "royal"
 }

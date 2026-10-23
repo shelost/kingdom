@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { page } from '$app/state';
-	import { pushState, afterNavigate } from '$app/navigation';
+	import { pushState, replaceState, afterNavigate } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { onMount } from 'svelte';
 	import {
@@ -21,10 +21,11 @@
 		hangulInitial,
 		type Person
 	} from '$lib/people';
+	import { birthNameOf, profileNameOf } from '$lib/givenNames';
+	import { reading } from '$lib/reading.svelte';
 	import {
 		WIKI_KINDS,
 		WIKI_KINGDOMS,
-		WIKI_TOTAL,
 		kindOf,
 		kindLabel,
 		filterProfiles,
@@ -35,13 +36,21 @@
 		showsWikiAccent,
 		clanSpotlightOf,
 		groupMembersOf,
-		wikiWallStills,
+		hasCastFilter,
+		castChips,
+		withCast,
 		type WikiKind,
 		type WikiFilters
 	} from '$lib/wiki';
-	import WikiDetail from '$lib/components/WikiDetail.svelte';
-	import StillWall, { WALL_STILLS } from '$lib/components/StillWall.svelte';
+	import WikiPeek from '$lib/components/WikiPeek.svelte';
+	import CardTag from '$lib/components/CardTag.svelte';
+	import RelationHealth from '$lib/components/RelationHealth.svelte';
+	import { editUi, EDIT_QUERY } from '$lib/editUi.svelte';
+	import CastChips from '$lib/components/CastChips.svelte';
+	import { HISTORICAL_TAG, TIE_META, tieStages, tieStageLabel } from '$lib/relations';
+	import { bondStillOf } from '$lib/wikiScenes';
 	import GlassSelect, { type GlassOption } from '$lib/components/GlassSelect.svelte';
+	import WikiLibrary from '$lib/components/WikiLibrary.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
 	import { chartsForWikiEntry } from '$lib/components/diagrams/wikiCharts';
 	import { storyImg } from '$lib/img';
@@ -51,12 +60,50 @@
 	const DETAIL_SCROLL_KEY = 'wiki:detailScroll';
 	const FILTERS_KEY = 'wiki:filters';
 
-	let kind = $state<WikiFilters['kind']>('all');
-	let kingdom = $state<WikiFilters['kingdom']>('all');
-	let tag = $state<WikiFilters['tag']>('all');
-	let gender = $state<WikiFilters['gender']>('all');
-	let q = $state('');
-	let expanded = $state(false);
+	/** Query keys for the view, so a refresh or a shared link reopens it exactly. */
+	const PARAM = {
+		kind: 'type',
+		kingdom: 'kingdom',
+		tag: 'era',
+		gender: 'gender',
+		q: 'q',
+		cast: 'with',
+		id: 'id',
+		full: 'full'
+	} as const;
+
+	/** Person ids picked in the “with” chips; unknown ids are dropped. */
+	function castFromList(raw: unknown): string[] {
+		const ids = typeof raw === 'string' ? raw.split(',') : Array.isArray(raw) ? raw : [];
+		return ids.filter((id): id is string => typeof id === 'string' && byId.has(id));
+	}
+
+	/** The filters a URL names; unknown values are dropped. */
+	function filtersFromUrl(u: URL): Partial<WikiFilters> {
+		const get = (k: keyof typeof PARAM) => u.searchParams.get(PARAM[k]) ?? undefined;
+		const out: Partial<WikiFilters> = {};
+		const k = get('kind');
+		if (k && WIKI_KINDS.some((w) => w.id === k)) out.kind = k as WikiKind;
+		const kid = get('kingdom');
+		if (kid && kid in KINGDOMS) out.kingdom = kid as WikiFilters['kingdom'];
+		const t = get('tag');
+		if (t && ERA_TAG_IDS.includes(t)) out.tag = t;
+		const g = get('gender');
+		if (g === 'm' || g === 'f') out.gender = g;
+		const text = get('q');
+		if (text) out.q = text;
+		return out;
+	}
+
+	const fromUrl = filtersFromUrl(page.url);
+	let kind = $state<WikiFilters['kind']>(fromUrl.kind ?? 'all');
+	let kingdom = $state<WikiFilters['kingdom']>(fromUrl.kingdom ?? 'all');
+	let tag = $state<WikiFilters['tag']>(fromUrl.tag ?? 'all');
+	let gender = $state<WikiFilters['gender']>(fromUrl.gender ?? 'all');
+	let q = $state(fromUrl.q ?? '');
+	let cast = $state<string[]>(castFromList(page.url.searchParams.get(PARAM.cast)));
+	let expanded = $state(page.url.searchParams.get(PARAM.full) === '1' && !!page.url.searchParams.get(PARAM.id));
+	let mounted = $state(false);
 	let detailScrollEl = $state<HTMLElement | undefined>(undefined);
 	/** Per-entry detail scroll tops while hopping related links. */
 	let detailScrollById = $state<Record<string, number>>({});
@@ -65,11 +112,14 @@
 	 * Selection is local state so the overlay opens on click even if shallow
 	 * routing lags. URL `?id=` stays in sync for deep links / back-forward.
 	 */
-	let selectedId = $state<string | null>(page.url.searchParams.get('id'));
+	let selectedId = $state<string | null>(page.url.searchParams.get(PARAM.id));
 	let selected = $derived(selectedId ? (byId.get(selectedId) ?? null) : null);
-	let missing = $derived(!!selectedId && !selected);
 
-	let filtered = $derived(filterProfiles({ kind, kingdom, tag, gender, q }));
+	/** Everything the main filters keep, before the “with” chips narrow it. */
+	let base = $derived(filterProfiles({ kind, kingdom, tag, gender, q }));
+	let showCast = $derived(hasCastFilter(kind));
+	let castOptions = $derived(showCast ? castChips(base) : []);
+	let filtered = $derived(showCast ? withCast(base, cast) : base);
 	/** Gods filter → class sections; otherwise kind groups (All / Characters / …). */
 	let sections = $derived.by((): {
 		key: string;
@@ -97,6 +147,7 @@
 			(kingdom !== 'all' ? 1 : 0) +
 			(tag !== 'all' ? 1 : 0) +
 			(gender !== 'all' ? 1 : 0) +
+			(showCast && cast.length ? 1 : 0) +
 			(q.trim() ? 1 : 0)
 	);
 	let showGenderFilter = $derived(kind === 'character' || kind === 'god' || kind === 'all');
@@ -106,8 +157,9 @@
 		try {
 			const raw = sessionStorage.getItem(FILTERS_KEY);
 			if (!raw) return;
-			const v = JSON.parse(raw) as Partial<WikiFilters>;
+			const v = JSON.parse(raw) as Partial<WikiFilters> & { cast?: unknown };
 			if (v.kind) kind = v.kind;
+			cast = castFromList(v.cast);
 			if (v.kingdom === 'underworld') kingdom = 'all';
 			else if (v.kingdom) kingdom = v.kingdom;
 			if (v.tag) tag = v.tag;
@@ -121,12 +173,14 @@
 
 	function persistFilters() {
 		if (!browser) return;
-		// Persist type/kingdom/era/gender only — never the find query.
-		sessionStorage.setItem(FILTERS_KEY, JSON.stringify({ kind, kingdom, tag, gender }));
+		// Persist type/kingdom/era/gender/people only — never the find query.
+		sessionStorage.setItem(FILTERS_KEY, JSON.stringify({ kind, kingdom, tag, gender, cast }));
 	}
 
 	function onKindChange() {
 		if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
+		// People picked for one kind mean nothing to the next.
+		cast = [];
 		persistFilters();
 	}
 
@@ -168,18 +222,44 @@
 		sessionStorage.setItem(DETAIL_SCROLL_KEY, JSON.stringify(detailScrollById));
 	}
 
+	/** Scroll the entry back to where it was, retrying for a few frames while its body is still laying out. */
 	function restoreDetailScroll(id: string) {
 		if (!browser) return;
 		const y = detailScrollById[id] ?? 0;
-		requestAnimationFrame(() => {
+		let tries = 30;
+		const apply = () => {
+			if (selectedId !== id) return;
 			if (detailScrollEl) detailScrollEl.scrollTop = y;
-		});
+			if (detailScrollEl && Math.abs(detailScrollEl.scrollTop - y) < 2) return;
+			if (tries-- > 0) requestAnimationFrame(apply);
+		};
+		requestAnimationFrame(apply);
+	}
+
+	/** The query for the current view, with entry `id` open (or none), without its `?`. */
+	function queryFor(id: string | null): string {
+		const params = new URLSearchParams();
+		if (kind !== 'all') params.set(PARAM.kind, kind);
+		if (kingdom !== 'all') params.set(PARAM.kingdom, kingdom);
+		if (tag !== 'all') params.set(PARAM.tag, tag);
+		if (gender !== 'all') params.set(PARAM.gender, gender);
+		if (showCast && cast.length) params.set(PARAM.cast, cast.join(','));
+		if (q.trim()) params.set(PARAM.q, q.trim());
+		if (id) params.set(PARAM.id, id);
+		if (id && expanded) params.set(PARAM.full, '1');
+		if (editUi.enabled) params.set(EDIT_QUERY, 'true');
+		return params.toString();
+	}
+
+	/** On refresh the open entry keeps its place; the page behind it is restored by the router. */
+	function onPageHide() {
+		if (selectedId) saveDetailScroll(selectedId);
 	}
 
 	/** After hydrate — session filters must not diverge SSR HTML from the first client paint. */
 	onMount(() => {
-		readStoredFilters();
-		// Drop any legacy sticky `q` (e.g. "go") left in sessionStorage.
+		// A URL that names its filters wins; a bare /wiki falls back to the last session's.
+		if (!Object.keys(fromUrl).length && !cast.length) readStoredFilters();
 		persistFilters();
 		try {
 			const raw = sessionStorage.getItem(DETAIL_SCROLL_KEY);
@@ -187,6 +267,24 @@
 		} catch {
 			/* ignore */
 		}
+		if (selectedId) restoreDetailScroll(selectedId);
+		mounted = true;
+	});
+
+	/** Filters, search and full-screen ride in the address bar without adding history steps. */
+	$effect(() => {
+		const query = queryFor(selectedId);
+		if (!mounted) return;
+		const t = setTimeout(() => {
+			if (location.search.slice(1) === query) return;
+			try {
+				if (query) replaceState(resolve(`/wiki?${query}`), {});
+				else replaceState(resolve('/wiki'), {});
+			} catch {
+				/* history API unavailable */
+			}
+		}, 250);
+		return () => clearTimeout(t);
 	});
 
 	/**
@@ -238,7 +336,8 @@
 	function syncUrl(id: string | null) {
 		if (!browser) return;
 		try {
-			if (id) pushState(resolve(`/wiki?id=${encodeURIComponent(id)}`), {});
+			const query = queryFor(id);
+			if (query) pushState(resolve(`/wiki?${query}`), {});
 			else pushState(resolve('/wiki'), {});
 		} catch {
 			/* history API unavailable — overlay still works from local state */
@@ -290,7 +389,8 @@
 		return PROFILES.filter((p) => p.kingdom === kid).length;
 	}
 
-	const WALL = wikiWallStills(WALL_STILLS);
+	let koMode = $derived(reading.lang === 'ko');
+	let featured = $derived(filtered.slice(0, 6));
 
 	const KIND_OPTIONS: GlassOption<WikiFilters['kind']>[] = [
 		{ value: 'all', label: 'All', count: kindCount('all') },
@@ -328,6 +428,7 @@
 		tag: WikiFilters['tag'];
 		gender: WikiFilters['gender'];
 		q: string;
+		cast: string[];
 		indexScroll: number;
 		detailScrollById: Record<string, number>;
 		expanded: boolean;
@@ -344,6 +445,7 @@
 				tag,
 				gender,
 				q,
+				cast: [...cast],
 				indexScroll: browser ? window.scrollY : 0,
 				detailScrollById: { ...detailScrollById },
 				expanded
@@ -355,8 +457,8 @@
 			tag = value.tag ?? 'all';
 			gender = value.gender ?? 'all';
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
-			// Never restore search — sticky "go" made gods/nations look missing.
-			q = '';
+			q = value.q ?? '';
+			cast = castFromList(value.cast);
 			detailScrollById = value.detailScrollById ?? {};
 			expanded = !!value.expanded;
 			if (browser) {
@@ -377,7 +479,7 @@
 
 <svelte:head>
 	<title
-		>{selected ? `${nameOf(selected)} · Wiki` : 'Wiki · King for All'}</title
+		>{selected ? `${profileNameOf(selected)} · Wiki` : 'Wiki · King for All'}</title
 	>
 	<meta
 		name="description"
@@ -385,46 +487,30 @@
 	/>
 </svelte:head>
 
-<svelte:window onkeydown={onKey} onpopstate={onPopState} />
+<svelte:window onkeydown={onKey} onpopstate={onPopState} onpagehide={onPageHide} />
 
 <main class="wiki" class:dimmed={!!selectedId}>
-	<header class="hero">
-		<StillWall stills={WALL} fill>
-			<div class="finder">
-				<label class="search liquid-glass">
-					<span class="sr">Search the wiki</span>
-					<span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
-					<input
-						type="search"
-						placeholder="Search {WIKI_TOTAL} entries"
-						bind:value={q}
-						autocomplete="off"
-					/>
-				</label>
-
-				<div class="filters">
-					<GlassSelect label="Type" bind:value={kind} options={KIND_OPTIONS} onchange={onKindChange} />
-					<GlassSelect
-						label="Kingdom"
-						bind:value={kingdom}
-						options={KINGDOM_OPTIONS}
-						onchange={persistFilters}
-					/>
-					<GlassSelect label="Era" bind:value={tag} options={ERA_OPTIONS} onchange={persistFilters} />
-					{#if showGenderFilter}
-						<GlassSelect
-							label="Gender"
-							bind:value={gender}
-							options={genderOptions}
-							onchange={persistFilters}
-						/>
-					{/if}
-				</div>
-			</div>
-		</StillWall>
-	</header>
+	<WikiLibrary bind:kind bind:q {featured} onKind={onKindChange} onOpen={openEntry} />
 
 	<section class="browse" aria-label="Wiki results">
+		<div class="filters">
+			<GlassSelect label="Type" bind:value={kind} options={KIND_OPTIONS} onchange={onKindChange} />
+			<GlassSelect
+				label="Kingdom"
+				bind:value={kingdom}
+				options={KINGDOM_OPTIONS}
+				onchange={persistFilters}
+			/>
+			<GlassSelect label="Era" bind:value={tag} options={ERA_OPTIONS} onchange={persistFilters} />
+			{#if showGenderFilter}
+				<GlassSelect
+					label="Gender"
+					bind:value={gender}
+					options={genderOptions}
+					onchange={persistFilters}
+				/>
+			{/if}
+		</div>
 		<p class="count" aria-live="polite">
 			{filtered.length}
 			{filtered.length === 1 ? 'entry' : 'entries'}
@@ -440,6 +526,10 @@
 			>
 			<a class="grade-link" href={resolve('/grade')}>Grade</a>
 		</p>
+
+		{#if showCast && castOptions.length}
+			<CastChips chips={castOptions} bind:selected={cast} onchange={persistFilters} />
+		{/if}
 
 		{#if filtered.length === 0}
 			<p class="no-results">Nothing matches. Widen the filters or clear the search.</p>
@@ -460,18 +550,24 @@
 							{@const kc = { ...(KINGDOMS[p.kingdom] ?? KINGDOMS.other), color: colorOf(p) }}
 							{@const accents = accentColorsOf(p)}
 							{@const showAccent = showsWikiAccent(p)}
-							{@const art = avatarOf(p)}
 							{@const cardKind = kindOf(p)}
+							{@const bondStill =
+								cardKind === 'relationship' && !p.avatar ? bondStillOf(p) : undefined}
+							{@const art = bondStill ?? avatarOf(p)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
 							{@const isNationCard = cardKind === 'nation'}
 							{@const isObjectCard = cardKind === 'animal' || cardKind === 'instrument'}
-							{@const isBondCard = cardKind === 'relationship' && !!p.avatar}
+							{@const isBondCard = cardKind === 'relationship' && (!!p.avatar || !!bondStill)}
+							{@const isGroupStill =
+								(cardKind === 'group' || cardKind === 'organization') && !!p.avatar}
+							{@const stages = cardKind === 'relationship' ? tieStages(p) : []}
 							{@const isShowcase =
 								cardKind === 'place' ||
 								cardKind === 'city' ||
 								isNationCard ||
 								isObjectCard ||
-								isBondCard}
+								isBondCard ||
+								isGroupStill}
 							{@const flagArt = isNationCard ? kingdomFlag(p.kingdom) : undefined}
 							{@const showcaseArt = isNationCard ? flagArt : art}
 							{@const isOrgCard = cardKind === 'organization'}
@@ -488,9 +584,31 @@
 								!isShowcase && !hasOrgPreview && !roster.length && !isOrgCard && !isGroupCard}
 							{@const isFaceCard =
 								cardKind === 'character' || cardKind === 'god' || cardKind === 'clan'}
-							{@const koName = koreanOf(p)}
-							{@const hasNative = !!(koName || p.hanja)}
-							<li>
+							{@const born = birthNameOf(p)}
+							{@const koName = born?.korean ?? koreanOf(p)}
+							{@const cardHanja = born?.hanja ?? p.hanja}
+							{@const hasNative = !!(koName || cardHanja)}
+							<li class:tagged={stages.length > 0 || !!p.historical}>
+								{#if stages.length}
+									<span class="card-tags">
+										{#each stages as stage, step (step)}
+											{@const meaning = tieStageLabel(stage)}
+											<CardTag
+												icons={stage}
+												colors={stage.map((t) => TIE_META[t].color)}
+												label={`${meaning.label} · ${meaning.ko}`}
+											/>
+										{/each}
+									</span>
+								{:else if p.historical}
+									<span class="card-tags">
+										<CardTag
+											icons={['historical']}
+											colors={[HISTORICAL_TAG.color]}
+											label={`${HISTORICAL_TAG.label} · ${HISTORICAL_TAG.ko}`}
+										/>
+									</span>
+								{/if}
 								<button
 									type="button"
 									class="card"
@@ -499,7 +617,8 @@
 									class:card-place={cardKind === 'place' ||
 										cardKind === 'city' ||
 										isObjectCard ||
-										isBondCard}
+										isBondCard ||
+										isGroupStill}
 									class:card-org={isOrgCard || isGroupCard}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
@@ -509,7 +628,7 @@
 										<span
 											class="showcase"
 											class:showcase-flag={isNationCard}
-											class:showcase-bond={isBondCard}
+											class:showcase-bond={isBondCard || isGroupStill}
 											class:empty={!showcaseArt}
 											aria-hidden="true"
 										>
@@ -524,6 +643,9 @@
 												/>
 											{:else}
 												<span class="showcase-initial">{hangulInitial(p)}</span>
+											{/if}
+											{#if isGroupStill && hasOrgPreview}
+												<WikiOrgPreview entry={p} inset />
 											{/if}
 										</span>
 									{:else if hasOrgPreview}
@@ -587,14 +709,14 @@
 									{/if}
 									<span class="meta expo">
 										<span class="card-name">
-											{nameOf(p)}
+											{koMode ? (koName || profileNameOf(p)) : profileNameOf(p)}
 											{#if p.main}<em class="lead-dot" title="Lead">●</em>{/if}
 										</span>
 										<span class="card-sub">
-											{#if hasNative}
+											{#if hasNative && !(koMode && koName && !cardHanja)}
 												<span class="native">
-													{#if koName}<span class="ko">{koName}</span>{/if}
-													{#if p.hanja}<span class="hanja">{p.hanja}</span>{/if}
+													{#if koName && !koMode}<span class="ko">{koName}</span>{/if}
+													{#if cardHanja}<span class="hanja">{cardHanja}</span>{/if}
 												</span>
 											{/if}
 											{#if hasNative}<span class="sep">·</span>{/if}
@@ -630,6 +752,9 @@
 											<span class="card-line">{p.tagline}</span>
 										{/if}
 									</span>
+									{#if editUi.enabled && cardKind === 'relationship'}
+										<RelationHealth id={p.id} compact />
+									{/if}
 								</button>
 							</li>
 						{/each}
@@ -640,45 +765,15 @@
 	</section>
 </main>
 
-{#if selected}
-	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-	<div
-		class="scrim"
-		class:full={expanded}
-		onclick={clearEntry}
-	></div>
-	<div
-		class="peek"
-		class:full={expanded}
-		style:--k={colorOf(selected)}
-		role="dialog"
-		aria-modal="true"
-		aria-label="{nameOf(selected)} wiki entry"
-	>
-		<WikiDetail
-			entry={selected}
-			{expanded}
-			onBack={clearEntry}
-			onOpen={openEntry}
-			onExpand={expandEntry}
-			onCollapse={collapseEntry}
-			onScrollEl={(el) => (detailScrollEl = el ?? undefined)}
-		/>
-	</div>
-{:else if missing}
-	<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-	<div class="scrim" onclick={clearEntry}></div>
-	<div class="peek missing" role="dialog" aria-modal="true" aria-label="Entry not found">
-		<header class="missing-head">
-			<button type="button" class="missing-close" onclick={clearEntry} aria-label="Close">✕</button>
-			<a href={resolve('/read')}>Chronicle</a>
-		</header>
-		<div class="missing-body">
-			<h1>Not found</h1>
-			<p>No entry matches <code>{selectedId}</code> in the chronicle’s records.</p>
-		</div>
-	</div>
-{/if}
+<WikiPeek
+	{selectedId}
+	{expanded}
+	onBack={clearEntry}
+	onOpen={openEntry}
+	onExpand={expandEntry}
+	onCollapse={collapseEntry}
+	onScrollEl={(el) => (detailScrollEl = el ?? undefined)}
+/>
 
 <style>
 	.wiki {
@@ -702,81 +797,11 @@
 		filter: saturate(0.92);
 	}
 
-	/* Full-bleed band under the site nav: entry art drifts behind a glass search bar. */
-	.hero {
-		--wall-clear: 0.7;
-		position: relative;
-		height: clamp(22rem, 48svh, 31rem);
-		margin: 0 calc(-1 * var(--gutter-r)) 1.25rem calc(-1 * var(--gutter-l));
-	}
-
-	.finder {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-		width: min(38rem, calc(100vw - 2.5rem));
-	}
-
-	.search {
-		--glass-tint: 26%;
-		--glass-sheen: 14%;
-		position: relative;
-		display: block;
-		width: 100%;
-		border-radius: var(--radius-pill);
-		transition:
-			--glass-tint 0.3s var(--ease),
-			border-color 0.3s var(--ease);
-	}
-
-	.search:hover {
-		--glass-tint: 36%;
-	}
-
-	.search:focus-within {
-		--glass-tint: 46%;
-		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
-	}
-
-	.search-icon {
-		position: absolute;
-		left: 1.3rem;
-		top: 50%;
-		transform: translateY(-50%);
-		font-size: 1.35rem;
-		color: var(--fg-dim);
-		pointer-events: none;
-	}
-
-	.search input {
-		display: block;
-		width: 100%;
-		height: 3.6rem;
-		padding: 0 1.5rem 0 3.4rem;
-		border: 0;
-		background: transparent;
-		font-family: var(--ui);
-		font-size: 1.05rem;
-		letter-spacing: var(--tracking-ui);
-		color: var(--fg-strong);
-		outline: none;
-		appearance: none;
-	}
-
-	.search input::-webkit-search-decoration {
-		-webkit-appearance: none;
-	}
-
-	.search input::placeholder {
-		color: var(--fg-dim);
-	}
-
 	.filters {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
 		gap: 0.5rem;
+		margin: 0 0 1.15rem;
 	}
 
 	.browse {
@@ -903,6 +928,25 @@
 	/* No content-visibility here: its paint containment clips the hover shadow. */
 	.grid > li {
 		min-width: 0;
+	}
+
+	/* Room for the round tag that hangs off the top-left corner. */
+	.grid > li.tagged {
+		position: relative;
+	}
+
+	/* The tags hang off the card's top-left corner; each later stage overlaps the one before. */
+	.card-tags {
+		position: absolute;
+		top: -0.6rem;
+		left: -0.6rem;
+		z-index: 4;
+		display: flex;
+		pointer-events: none;
+	}
+
+	.card-tags > :global(* + *) {
+		margin-left: -0.4rem;
 	}
 
 	/* Cards rise into place as they scroll into view. */
@@ -1346,118 +1390,6 @@
 		border: 0;
 	}
 
-	/* ————— Notion-style peek overlay ————— */
-	.scrim {
-		position: fixed;
-		inset: 0;
-		z-index: 110;
-		background: rgba(0, 0, 0, 0.55);
-		backdrop-filter: blur(2px);
-		animation: fade-in 0.3s ease;
-		transition: background 0.45s var(--ease);
-	}
-
-	.scrim.full {
-		background: rgba(0, 0, 0, 0.72);
-	}
-
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-	}
-
-	.peek {
-		position: fixed;
-		top: 0.85rem;
-		right: 0.85rem;
-		bottom: 0.85rem;
-		z-index: 115;
-		width: min(36rem, calc(100vw - 1.7rem));
-		overflow: hidden;
-		border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
-		border-radius: 18px;
-		box-shadow:
-			0 28px 70px rgba(0, 0, 0, 0.55),
-			0 8px 24px rgba(0, 0, 0, 0.35);
-		animation: slide-in 0.42s cubic-bezier(0.22, 0.61, 0.36, 1);
-		transition:
-			top 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			right 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			bottom 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			left 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			width 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			border-radius 0.48s cubic-bezier(0.22, 0.61, 0.36, 1),
-			box-shadow 0.48s var(--ease);
-	}
-
-	.peek.full {
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		border-radius: 0;
-		border-color: transparent;
-		box-shadow: none;
-		animation: none;
-	}
-
-	.peek :global(.detail) {
-		height: 100%;
-	}
-
-	@keyframes slide-in {
-		from {
-			opacity: 0.85;
-			transform: translateX(calc(100% + 1rem));
-		}
-	}
-
-	.missing-head {
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		padding: 0.85rem 1rem;
-		border-bottom: 1px solid var(--hairline);
-	}
-
-	.missing-close {
-		width: 2.4rem;
-		height: 2.4rem;
-		display: grid;
-		place-items: center;
-		border: 1px solid var(--hairline);
-		border-radius: var(--radius);
-		background: transparent;
-		color: var(--fg-dim);
-		cursor: pointer;
-	}
-
-	.missing-head a {
-		margin-left: auto;
-		font-size: 0.72rem;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-		text-decoration: none;
-	}
-
-	.missing-body {
-		padding: 2rem 1.5rem;
-	}
-
-	.missing-body h1 {
-		margin: 0 0 0.6rem;
-		font-family: var(--serif);
-		color: var(--fg-strong);
-	}
-
-	.missing-body code {
-		color: var(--fg);
-		font-family: var(--ui);
-	}
-
 	@media (max-width: 960px) {
 		.wiki {
 			--gutter-l: max(1.05rem, env(safe-area-inset-left, 0px));
@@ -1500,23 +1432,6 @@
 		.card.card-character .meta {
 			padding: 0.9rem 1rem 0.95rem 0.9rem;
 		}
-
-		.peek {
-			top: max(0.25rem, env(safe-area-inset-top, 0px));
-			right: max(0.25rem, env(safe-area-inset-right, 0px));
-			bottom: max(0.25rem, env(safe-area-inset-bottom, 0px));
-			left: max(0.25rem, env(safe-area-inset-left, 0px));
-			width: auto;
-			border-radius: 14px;
-		}
-
-		.peek.full {
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			border-radius: 0;
-		}
 	}
 
 	@keyframes rule-draw {
@@ -1538,8 +1453,6 @@
 
 	@media (prefers-reduced-motion: reduce) {
 		.card,
-		.scrim,
-		.peek,
 		.wiki,
 		.grid > li,
 		.search,

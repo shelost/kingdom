@@ -136,7 +136,7 @@
 				]
 			],
 			"width": 11,
-			"label": "Yeonsan stream",
+			"label": "Yunsan stream",
 			"ko": "연산천",
 			"labelAt": [
 				470,
@@ -270,7 +270,7 @@
 				900,
 				372
 			],
-			"label": "from Tanhyeon pass",
+			"label": "from Tanhyun pass",
 			"ko": "탄현에서"
 		}
 	],
@@ -311,7 +311,7 @@
 		{
 			"id": "sl-l",
 			"side": "silla",
-			"label": "Heumsun",
+			"label": "Humsun",
 			"ko": "흠순"
 		},
 		{
@@ -1167,5 +1167,6 @@
 		"Samguk Sagi 28, Annals of Baekje, Uija year 20"
 	],
 	"note": "The records give the totals (five thousand against fifty thousand), the three camps, four Silla repulses, the two boys and the last charge, on the ninth day of the seventh month. How the five thousand split between the camps and how Silla divided its columns are not recorded; the map spreads them evenly. The camp sites follow the common identification with the hill forts east of Yeonsan.",
-	"noteKo": "기록이 전하는 것은 총수(오천 대 오만), 세 진영, 신라의 네 차례 패퇴, 두 소년, 마지막 돌격, 그리고 칠월 아흐렛날이라는 날짜다. 오천이 진영마다 어떻게 나뉘었는지, 신라가 세 갈래를 어떻게 나눴는지는 기록에 없어 지도에서는 고르게 나누었다. 진영 위치는 연산 동쪽 산성들로 보는 통설을 따랐다."
+	"noteKo": "기록이 전하는 것은 총수(오천 대 오만), 세 진영, 신라의 네 차례 패퇴, 두 소년, 마지막 돌격, 그리고 칠월 아흐렛날이라는 날짜다. 오천이 진영마다 어떻게 나뉘었는지, 신라가 세 갈래를 어떻게 나눴는지는 기록에 없어 지도에서는 고르게 나누었다. 진영 위치는 연산 동쪽 산성들로 보는 통설을 따랐다.",
+	"winner": "silla"
 }

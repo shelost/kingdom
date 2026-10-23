@@ -5,6 +5,7 @@
 	import KitStage from '$lib/components/diagrams/three/KitStage.svelte';
 	import { hasWebGL } from '$lib/components/diagrams/three/kit.svelte';
 	import { BAEKJE_RANKS, BONES, RANK_COLOR as COLOR, SILLA_RANKS, baekjeColor, sillaColor } from '$lib/researchRanks';
+	import { feather } from '$lib/feather';
 
 	let { id }: { id: DiagramId } = $props();
 	let ko = $derived(reading.lang === 'ko');
@@ -29,35 +30,13 @@
 
 	const caption = $derived(
 		({
-			jougwan: t('After the Goguryeo murals (Muyongchong), the Silla wing ornaments of Cheonmachong and the Baekje silver ornaments of Neungsan-ri. Simplified; not to scale.', '고구려 무용총 벽화, 신라 천마총 날개 장식, 백제 능산리 은제 관식을 바탕으로 단순화. 축척 아님.'),
-			crown: t('After the crowns of Hwangnam Daechong (north mound) and Cheonmachong. An inner cap, with its own gold wing ornament, was worn inside the band.', '황남대총 북분·천마총 금관을 바탕으로. 관테 안에는 금 날개 장식을 단 안쪽 모자를 따로 썼다.'),
+			jougwan: t('After the Goguryeo murals (Muyongchong), the Silla wing ornaments of Chunmachong and the Baekje silver ornaments of Neungsan-ri. Simplified; not to scale.', '고구려 무용총 벽화, 신라 천마총 날개 장식, 백제 능산리 은제 관식을 바탕으로 단순화. 축척 아님.'),
+			crown: t('After the crowns of Hwangnam Dechong (north mound) and Chunmachong. An inner cap, with its own gold wing ornament, was worn inside the band.', '황남대총 북분·천마총 금관을 바탕으로. 관테 안에는 금 날개 장식을 단 안쪽 모자를 따로 썼다.'),
 			layers: t('After the Goguryeo murals of Muyongchong, Susan-ri and Anak Tomb No. 3, and the Book of Zhou. Shared, with local variations, across all three kingdoms until Silla took up Tang dress.', '고구려 무용총·수산리·안악3호분 벽화와 《주서》를 바탕으로. 신라가 당의 옷을 받아들이기 전까지 세 나라가 지역 차이를 두고 함께 입던 옷.'),
-			armor: t('After excavated armour from Bokcheon-dong (Busan), Daeseong-dong (Gimhae) and Jjoksaem (Gyeongju), and the cavalry in the Goguryeo murals.', '부산 복천동, 김해 대성동, 경주 쪽샘 출토 갑옷과 고구려 벽화의 기병을 바탕으로.'),
+			armor: t('After excavated armour from Bokcheon-dong (Busan), Daeseong-dong (Gimhae) and Jjoksem (Gyungju), and the cavalry in the Goguryeo murals.', '부산 복천동, 김해 대성동, 경주 쪽샘 출토 갑옷과 고구려 벽화의 기병을 바탕으로.'),
 			ranks: t('From the Samguk Sagi treatise on dress, the Book of Zhou, the Northern Histories and the Old Book of Tang.', '《삼국사기》 색복지, 《주서》, 《북사》, 《구당서》를 바탕으로.')
 		}) as Record<DiagramId, string>
 	);
-
-	/** A barred pheasant feather from (x, y) along `angle` (degrees, 0 = up), `len` long. */
-	function feather(x: number, y: number, angle: number, len: number) {
-		const a = (angle * Math.PI) / 180;
-		const dx = Math.sin(a);
-		const dy = -Math.cos(a);
-		const nx = -dy;
-		const ny = dx;
-		const w = len * 0.09;
-		const tip = [x + dx * len, y + dy * len];
-		const at = (k: number, side: number) => [x + dx * len * k + nx * w * side * Math.sin(Math.PI * k) * 1.2, y + dy * len * k + ny * w * side * Math.sin(Math.PI * k) * 1.2];
-		const l = at(0.5, 1);
-		const r = at(0.5, -1);
-		const vane = `M${x},${y}Q${l[0]},${l[1]} ${tip[0]},${tip[1]}Q${r[0]},${r[1]} ${x},${y}Z`;
-		let bars = '';
-		for (let k = 0.2; k < 0.9; k += 0.1) {
-			const p = at(k, 1);
-			const q = at(k, -1);
-			bars += `M${p[0].toFixed(1)},${p[1].toFixed(1)}L${q[0].toFixed(1)},${q[1].toFixed(1)}`;
-		}
-		return { vane, quill: `M${x},${y}L${tip[0]},${tip[1]}`, bars };
-	}
 
 	/** One 出-shaped upright: a stem with three tiers of arms turned up at the ends. */
 	function chul(x: number, base: number, top: number) {

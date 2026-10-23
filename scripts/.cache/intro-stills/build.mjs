@@ -3,6 +3,7 @@
 //   node scripts/.cache/intro-stills/build.mjs <key…>            → refs sheet + prompt file per card
 //   node scripts/.cache/intro-stills/build.mjs --todo            → keys with a scene and no still yet
 //   node scripts/.cache/intro-stills/build.mjs --unwritten       → keys with no scene yet
+//   node scripts/.cache/intro-stills/build.mjs --style webtoon <key…> → the bold-webtoon trial: prompts/webtoon/<key>.txt, output wt-<key>.jpg
 //   node scripts/.cache/intro-stills/build.mjs --install <key…>  → assets/<key>.jpg → static/intro/<key>.jpg (2:1) + card.still
 // Scenes live in scenes*.json beside this file: { "<key>": { "scene": "…", "sword"?: true, "with"?: ["place:ansi"] } }.
 import fs from 'node:fs';
@@ -12,10 +13,22 @@ import { buildCanon } from '../../visual-canon.mjs';
 import { HOUSE_RATIO, cropArgs, imageSize } from '../../crop-ratio.mjs';
 import { ASSETS, RING_SWORD, brief, personBlocks } from '../rel-tenebrist.mjs';
 import { cardKey, eachCard, readStory, stillPath, writeStory } from './cards.mjs';
-import { INTRO_OPEN as OPEN, INTRO_TAIL as TAIL } from './style.mjs';
+import { INTRO_OPEN, INTRO_TAIL, WEBTOON_INTRO_OPEN, WEBTOON_INTRO_TAIL, groundOf } from './style.mjs';
 
 const DIR = 'scripts/.cache/intro-stills';
 const SHEET = 'scripts/.cache/posters/sheet.py';
+
+/** Each look: its open/tail, where prompts go, the output prefix, and an optional per-person design line. */
+const STYLES = {
+	house: { open: INTRO_OPEN, tail: INTRO_TAIL, dir: 'prompts', prefix: '', design: {} },
+	webtoon: {
+		open: WEBTOON_INTRO_OPEN,
+		tail: WEBTOON_INTRO_TAIL,
+		dir: 'prompts/webtoon',
+		prefix: 'wt-',
+		design: JSON.parse(fs.readFileSync(`${DIR}/webtoon/signatures.json`, 'utf8'))
+	}
+};
 
 const scenes = () =>
 	Object.assign(
@@ -30,7 +43,7 @@ const scenes = () =>
 const cards = () => new Map([...eachCard()].map((c) => [cardKey(c), c]));
 const hasStill = (key) => fs.existsSync(`static${stillPath(key)}`);
 
-function build(key, card, s) {
+function build(key, card, s, style = STYLES.house) {
 	const { block, year } = card;
 	const id = block.look ? `${block.person}:${block.look}` : block.person;
 	const canon = buildCanon([id, ...(s.with ?? [])], { year: year ?? undefined, sword: !!s.sword });
@@ -47,12 +60,14 @@ function build(key, card, s) {
 	const who = face
 		? `CHARACTER SHEET (copy this face, hair and clothes exactly): the sheet shows ${name}${s.sword ? '; its bottom row is the only sword design' : ''}.`
 		: `No character sheet: draw ${name} from the description below, in the same manhwa style.`;
-	const prompt = [OPEN, s.scene, who, person ? brief(person) : '', place?.replace(/^CANON — /, '') ?? '', s.sword ? RING_SWORD : '', TAIL]
+	const design = style.design[block.person] ? `DESIGN HOOKS for ${name}: ${style.design[block.person]}.` : '';
+	const prompt = [style.open, s.scene, who, person ? brief(person) : '', design, place?.replace(/^CANON — /, '') ?? '', s.sword ? RING_SWORD : '', style.tail, groundOf(s.time)]
 		.filter(Boolean)
 		.join(' ');
-	fs.mkdirSync(`${DIR}/prompts`, { recursive: true });
-	fs.writeFileSync(`${DIR}/prompts/${key}.txt`, prompt);
-	return { key, sheet, prompt: `${DIR}/prompts/${key}.txt`, output: `${key}.jpg`, chars: prompt.length };
+	const file = `${DIR}/${style.dir}/${key}.txt`;
+	fs.mkdirSync(path.dirname(file), { recursive: true });
+	fs.writeFileSync(file, prompt);
+	return { key, sheet, prompt: file, output: `${style.prefix}${key}.jpg`, chars: prompt.length };
 }
 
 /** GenerateImage output (assets/<key>.jpg) → centre-cropped 2:1 static/intro/<key>.jpg, and the card points at it. */
@@ -84,9 +99,12 @@ else if (args[0] === '--todo' || args[0] === '--unwritten') {
 } else {
 	const all = cards();
 	const s = scenes();
-	for (const key of args) {
+	const styled = args[0] === '--style';
+	const style = styled ? STYLES[args[1]] : STYLES.house;
+	if (!style) throw new Error(`unknown style ${args[1]}`);
+	for (const key of styled ? args.slice(2) : args) {
 		if (!all.has(key)) throw new Error(`unknown card ${key}`);
 		if (!s[key]) throw new Error(`no scene for ${key}`);
-		console.log(JSON.stringify(build(key, all.get(key), s[key])));
+		console.log(JSON.stringify(build(key, all.get(key), s[key], style)));
 	}
 }

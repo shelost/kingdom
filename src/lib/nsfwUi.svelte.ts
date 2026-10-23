@@ -82,15 +82,17 @@ export function filterScriptNsfw(blocks: Block[]): Block[] {
 }
 
 /**
- * Entry as the reader should see it under the current Intimate toggle.
+ * Entry as the reader should see it under the current Intimate toggle, minus
+ * gallery-only stills (they live in an emotion card's strip, not the flow).
  *
  * Beats, anchors and the cinema rail are all derived from whatever this
  * returns, so an entry with nothing to hide comes back untouched.
  */
 export function entryForReading(entry: Entry): Entry {
-	if (nsfwUi.showIntimate) return entry;
-	const blocks = filterScriptNsfw(entry.blocks ?? []);
-	const images = filterNsfw(entry.images ?? []);
+	const all = entry.images ?? [];
+	const flow = all.some((im) => im.gallery) ? all.filter((im) => !im.gallery) : all;
+	const blocks = nsfwUi.showIntimate ? entry.blocks : filterScriptNsfw(entry.blocks ?? []);
+	const images = nsfwUi.showIntimate ? flow : filterNsfw(flow);
 	if (blocks === entry.blocks && images === entry.images) return entry;
 	return { ...entry, blocks, images };
 }

@@ -3,9 +3,11 @@
 	import { arcNumber, chapters, entryId, partId } from '$lib/story';
 	import {
 		chapterEpisodes,
+		chapterHeadedBy,
 		partLabel,
 		spineEntries,
 		spineLabel,
+		tocAnchor,
 		tocEpisode,
 		type TocEpisode
 	} from '$lib/tocTree';
@@ -14,6 +16,7 @@
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
+	import { posterSrc } from '$lib/posters.svelte';
 	import { READ_PATH, SITE_LINKS } from '$lib/siteLinks';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
@@ -517,7 +520,10 @@
 					data-toc-id={partId(ch.id)}
 					onclick={() => jump(partId(ch.id))}
 				>
-					{partLabel(ch.part, ko)}
+					<span class="pp-kicker">{partLabel(ch.part, ko)}</span>
+					{#if ch.partTitle || ch.partKorean}
+						<span class="pp-title">{ko ? ch.partKorean || ch.partTitle : ch.partTitle || ch.partKorean}</span>
+					{/if}
 				</button>
 			{/if}
 			<button
@@ -541,16 +547,26 @@
 			<div class="sub">
 				{#each spineEntries(ch) as en (ch.id + en.title)}
 					{@const eid = entryId(ch.id, en.title)}
+					{@const head = chapterHeadedBy(ch.id, en.title)}
 					{@const group = chapterEpisodes(ch, en)}
+					{@const cover = head ? posterSrc(tocAnchor(ch.id, head)) : undefined}
 					{#if group.length}
 						<div class="ep-block">
 							<button
 								type="button"
 								class="sub-item group-head"
 								class:branch={group.some((ep) => ep.id === activeEntry)}
-								data-toc-id="{eid}~group"
-								onclick={() => jump(eid)}
+								data-toc-id={head ? tocAnchor(ch.id, head) : eid}
+								onclick={() => jump(head ? tocAnchor(ch.id, head) : eid)}
 							>
+								{#if cover}
+									<img
+										class="cover-thumb"
+										src={cover}
+										alt=""
+										onerror={(e) => ((e.currentTarget as HTMLImageElement).hidden = true)}
+									/>
+								{/if}
 								<span class="si-title">{spineLabel(ch, en, ko)}</span>
 							</button>
 							<div class="ep-group">
@@ -850,17 +866,16 @@
 	}
 
 	.panel-part {
-		display: block;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.1rem;
 		width: 100%;
 		font: inherit;
-		font-size: 14px;
-		font-weight: 600;
-		letter-spacing: var(--tracking-toc);
-		text-transform: none;
 		text-align: left;
 		color: var(--gold);
-		padding: 0.38rem 0.45rem;
-		margin: 0.17rem 0 0;
+		padding: 0.5rem 0.45rem 0.32rem;
+		margin: 0.28rem 0 0.08rem;
 		background: transparent;
 		border: none;
 		border-radius: 8px;
@@ -872,6 +887,20 @@
 			0 0 14px var(--bg);
 	}
 
+	.pp-kicker {
+		font-size: 10px;
+		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+	}
+
+	.pp-title {
+		font-size: 14px;
+		font-weight: 650;
+		letter-spacing: 0.02em;
+		line-height: 1.2;
+	}
+
 	.panel-part:hover {
 		color: color-mix(in srgb, var(--gold) 88%, white);
 	}
@@ -881,9 +910,20 @@
 		text-shadow: none;
 	}
 
+	.cover-thumb {
+		flex: none;
+		width: 1.7rem;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		object-position: center 18%;
+		border-radius: 3px;
+		align-self: center;
+		background: #14140f;
+	}
+
 	.panel-item {
 		display: flex;
-		align-items: baseline;
+		align-items: center;
 		gap: 0.45rem;
 		width: 100%;
 		font: inherit;
@@ -1014,8 +1054,20 @@
 		letter-spacing: var(--tracking-toc);
 	}
 
+	.group-head {
+		align-items: center;
+		gap: 0.45rem;
+		font-weight: 600;
+		font-size: 13px;
+		letter-spacing: var(--tracking-toc);
+		text-transform: none;
+		color: color-mix(in srgb, var(--fg) 82%, transparent);
+		padding: 0.32rem 0.4rem;
+	}
+
 	.group-head .si-title {
-		letter-spacing: -0.06em;
+		letter-spacing: var(--tracking-toc);
+		font-style: normal;
 	}
 
 	.ep-kinds {

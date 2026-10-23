@@ -47,7 +47,7 @@
 	const votes = $derived(seats.map((s) => voteOf(step, s.i)));
 	const high = $derived(highSeat(cast, year));
 	const seatH = (i: number) => (i === high ? 1.2 : 0.9);
-	const sitters = $derived(seats.map((s) => sitter(cast, seatId(s.i), year)));
+	const sitters = $derived(seats.map((s) => sitter(cast, seatId(s.i), year, { given: true })));
 
 	/** Where seat i sits now: Bidam steps out of the ring in rebellion. */
 	const seatAt = (i: number): Vec3 => {
@@ -81,7 +81,7 @@
 	});
 
 	const tableTone = $derived(
-		hollow || rebel ? 'ghost' : step === 'veto' ? 'red' : step === 'unanimous' ? 'accent' : 'base'
+		hollow || rebel ? 'ghost' : step === 'veto' || step === 'depose' || step === 'holdout' ? 'red' : step === 'unanimous' ? 'accent' : 'base'
 	);
 </script>
 
@@ -132,6 +132,16 @@
 		delay={380 + s.i * 130}
 		moveDelay={2000}
 	/>
+	{#if s.i === high}
+		<KitRing
+			at={[home[0], 0.02, home[2]]}
+			radius={0.68}
+			tube={0.028}
+			tone="accent"
+			color={HUE.gold}
+			delay={420 + s.i * 130}
+		/>
+	{/if}
 	{#if who}
 		<KitSitter
 			at={[home[0], h + 0.08, home[2]]}

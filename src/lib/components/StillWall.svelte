@@ -3,6 +3,8 @@
 	export const WALL_PER_ROW = 6;
 	/** Stills that fill every row with no repeats. */
 	export const WALL_STILLS = WALL_ROWS * WALL_PER_ROW;
+	/** The compact wall behind an episode title: a short band, not a screen. */
+	export const COMPACT_ROWS = 4;
 
 	/** A line floated over a still: who says it, in the reader's language. */
 	export type WallLine = { text: string; person?: string };
@@ -22,6 +24,7 @@
 		fill = false,
 		wide = false,
 		faded = false,
+		compact = false,
 		children
 	}: {
 		stills: WallStill[];
@@ -33,7 +36,9 @@
 		wide?: boolean;
 		/** Melt the wall away (slowly) to show what lies beneath it. */
 		faded?: boolean;
-		children: Snippet;
+		/** A short, quiet band of small stills behind a left-aligned title (implies `fill`). */
+		compact?: boolean;
+		children?: Snippet;
 	} = $props();
 
 	/** How far each row's run starts from the one above, so no two rows line up. */
@@ -47,13 +52,14 @@
 
 	/* Enough stills for every row: deal them out so each appears once and the
 	   first (the starred ones) land beside the title. Fewer: one run, staggered per row. */
+	let rowCount = $derived(compact ? COMPACT_ROWS : WALL_ROWS);
 	let rows = $derived(
-		stills.length >= WALL_STILLS
+		!compact && stills.length >= WALL_STILLS
 			? Array.from({ length: WALL_ROWS }, (_, r) =>
 					stills.filter((_, i) => DEAL[i % WALL_ROWS] === r).slice(0, WALL_PER_ROW)
 				)
 			: stills.length
-				? Array.from({ length: WALL_ROWS }, (_, r) =>
+				? Array.from({ length: rowCount }, (_, r) =>
 						Array.from(
 							{ length: WALL_PER_ROW },
 							(_, i) => stills[(r * ROW_OFFSET + i) % stills.length]
@@ -77,7 +83,15 @@
 	</figure>
 {/snippet}
 
-<section class="wall-page" class:fill class:wide class:faded data-story-id={storyId} {@attach inView()}>
+<section
+	class="wall-page"
+	class:fill={fill || compact}
+	class:compact
+	class:wide
+	class:faded
+	data-story-id={storyId}
+	{@attach inView()}
+>
 	{#if rows.length}
 		<div class="wall" aria-hidden="true">
 			<div class="plane">
@@ -117,9 +131,11 @@
 		</div>
 	{/if}
 
-	<div class="wall-copy">
-		{@render children()}
-	</div>
+	{#if children}
+		<div class="wall-copy">
+			{@render children()}
+		</div>
+	{/if}
 </section>
 
 <style>
@@ -320,6 +336,11 @@
 	/* One run is a third of the track plus a third of a gap. Sliding it from half
 	   a run right of centre to half a run left lands each copy where the next
 	   began, and the middle copy never leaves the window. */
+	:global(html:not([data-animated='on'])) .track,
+	:global(html:not([data-animated='on'])) .plane {
+		animation: none;
+	}
+
 	@keyframes drift {
 		from {
 			transform: translate3d(calc((100% + var(--still-gap)) / 6), 0, 0);
@@ -401,6 +422,45 @@
 				transparent 100%
 			);
 		}
+	}
+
+	/* ————— compact: the band behind an episode title ————— */
+	.wall-page.compact {
+		--still-w: clamp(11rem, 16vw, 15rem);
+		--still-gap: 0.7rem;
+		--row-gap: 1rem;
+		--tilt-x: 26deg;
+		--tilt-z: -7deg;
+	}
+
+	/* Edge to edge: only the top and bottom melt into the page. */
+	.compact .wall {
+		opacity: 0.88;
+		-webkit-mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+		mask-image: linear-gradient(to bottom, transparent, #000 16%, #000 84%, transparent);
+	}
+
+	/* The title sits on a level band of shade across the whole width, stills drifting above and below. */
+	.compact .wall::after {
+		background: linear-gradient(
+			to bottom,
+			transparent 0%,
+			color-mix(in srgb, var(--bg) 62%, transparent) 32%,
+			color-mix(in srgb, var(--bg) 62%, transparent) 68%,
+			transparent 100%
+		);
+	}
+
+	.compact .plane {
+		animation-duration: 1.6s;
+	}
+
+	.compact .row {
+		--run-time: calc(42s + var(--row) * 9s);
+	}
+
+	.compact .still {
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

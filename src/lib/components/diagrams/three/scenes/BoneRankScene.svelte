@@ -12,8 +12,9 @@
 	import KitLabel from '../KitLabel.svelte';
 	import KitRing from '../KitRing.svelte';
 	import KitLink from '../KitLink.svelte';
-	import { HUE, box, getKit, mix, stack, type Vec3 } from '../kit.svelte';
-	import { KING, LAYERS, enFor } from '../../BoneRank.svelte';
+	import KitKing from '../KitKing.svelte';
+	import { HUE, box, getKit, mix, stack } from '../kit.svelte';
+	import { LAYERS, enFor } from '../../BoneRank.svelte';
 
 	let { step = 'ranks' }: { step?: string } = $props();
 
@@ -45,36 +46,12 @@
 	const apex = $derived(placed[placed.length - 1]);
 	const trueBone = $derived(placed[placed.length - 2]);
 	const wait = (k: number) => 150 + k * 140;
-
-	/** 王 in plan: three bars across, one down, centred on the summit. */
-	const STROKE = 0.17;
-	const glyph = $derived.by(() => {
-		const s = apex.w * 0.33;
-		const bars: { at: Vec3; size: [number, number] }[] = [
-			{ at: [0, apex.top, -s], size: [s * 1.7, STROKE] },
-			{ at: [0, apex.top, 0], size: [s * 1.45, STROKE] },
-			{ at: [0, apex.top, s], size: [s * 2.0, STROKE] },
-			{ at: [0, apex.top, 0], size: [STROKE, s * 2 + STROKE] }
-		];
-		return bars;
-	});
 </script>
 
 <KitTier {levels} delay={150} stagger={140} />
 
 <!-- the King's 王, laid in gold on the summit -->
-{#each glyph as b, i (i)}
-	<KitNode at={b.at} size={b.size} height={0.09} corner={0.03} tone="accent" color={HUE.gold} glow={0.3} delay={1400 + i * 80} />
-{/each}
-<KitLabel
-	at={[0, apex.top + 0.75, -apex.d / 2]}
-	ko={KING.ko}
-	han={KING.han}
-	en={enFor(KING.en)}
-	size="sm"
-	tone="strong"
-	delay={1500}
-/>
+<KitKing at={[0, apex.top, 0]} w={apex.w} d={apex.d} delay={1400} />
 
 {#each placed as l, k (l.ko)}
 	<KitLabel

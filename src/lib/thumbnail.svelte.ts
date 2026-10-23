@@ -70,6 +70,15 @@ export function episodeThumbnail(entry: Entry, eid: string): EpisodeThumbnail | 
 	return thumbnailOf(entryStills(entry, pick), pick);
 }
 
+/** Up to `count` of one episode's own landscape stills, its thumbnail first: the title card's wall. */
+export function episodeStills(entry: Entry, eid: string, count: number): EpisodeThumbnail[] {
+	const pick = chosen(entry, eid);
+	const stills = entryStills(entry, pick).filter((t) => (t.slot.ratio ?? 2) >= 1.2);
+	const lead = thumbnailOf(stills, pick);
+	const rest = stills.filter((t) => t !== lead);
+	return [...(lead ? [lead] : []), ...spread(rest, Math.max(0, count - 1))];
+}
+
 /** `count` items picked evenly across the list, in order. */
 function spread<T>(list: T[], count: number): T[] {
 	if (list.length <= count) return list;
@@ -99,6 +108,16 @@ function notableStills(episodes: { entry: Entry; id: string }[], count: number):
 }
 
 /** Up to `count` notable stills from one Part. */
+/** Up to `count` notable stills from one arc, for its title page. */
+export function arcStills(arcId: string, count: number): EpisodeThumbnail[] {
+	const arc = chapters.find((ch) => ch.id === arcId);
+	if (!arc) return [];
+	return notableStills(
+		arc.entries.map((entry) => ({ entry, id: entryId(arc.id, entry.title) })),
+		count
+	);
+}
+
 export function partStills(part: DirectoryPart, count: number): EpisodeThumbnail[] {
 	return notableStills(
 		part.arcs.flatMap((arc) => arc.episodes),

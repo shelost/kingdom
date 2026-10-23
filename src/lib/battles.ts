@@ -4,6 +4,7 @@
  * fixed rate for the whole book, so the odds read at a glance from battle to battle.
  */
 import { KINGDOMS } from '$lib/people';
+import { expandModel } from '$lib/fortresses';
 import type { Pt } from '$lib/mapPaths';
 
 /** Men per dot, everywhere. */
@@ -146,6 +147,8 @@ export type Battle = {
 	sides: BattleSide[];
 	units: BattleUnit[];
 	phases: BattlePhase[];
+	/** The side (or allied sides) holding the field at the end; the last phase names them. */
+	winner?: string | string[];
 	/** Short citations, e.g. "Samguk Sagi 47, Biography of Gyebek". */
 	sources: string[];
 	/** What the records leave uncertain, said plainly. */
@@ -155,7 +158,16 @@ export type Battle = {
 
 const files = import.meta.glob<Battle>('./data/battles/*.json', { eager: true, import: 'default' });
 
-export const BATTLES: Record<string, Battle> = Object.fromEntries(Object.values(files).map((b) => [b.id, b]));
+/** Shared fortress models (`model` on a terrain item) expand into their town and wall here, so every view sees the same place. */
+export const BATTLES: Record<string, Battle> = Object.fromEntries(
+	Object.values(files).map((b) => [b.id, { ...b, terrain: b.terrain.flatMap((t) => expandModel(t)) }])
+);
+
+/** The winning side ids, in the order the battle lists its sides. */
+export const winnersOf = (b: Battle): string[] => {
+	const w = b.winner === undefined ? [] : Array.isArray(b.winner) ? b.winner : [b.winner];
+	return b.sides.filter((s) => w.includes(s.id)).map((s) => s.id);
+};
 
 export function sideColor(side: BattleSide | undefined): string {
 	return side?.color ?? (side?.kingdom ? KINGDOMS[side.kingdom as keyof typeof KINGDOMS]?.color : undefined) ?? '#8a8a94';
@@ -217,6 +229,14 @@ export type FieldDot = {
 	on: boolean;
 	routed: boolean;
 	unrecorded: boolean;
+	/** The unit sails in some phase: drawn as a ship. */
+	naval: boolean;
+	/** How the token is drawn: a ship, a rider, or a man on foot. */
+	arm: 'ship' | 'horse' | 'foot';
+	/** The unit stands on the field this phase (a dot can be off while its unit stays, as its losses). */
+	present: boolean;
+	/** Degrees the unit faces this phase (or last faced). */
+	facing: number;
 	delay: number;
 };
 
@@ -231,9 +251,14 @@ export function fieldDots(b: Battle, index: number): FieldDot[] {
 			const s = p.units[u.id];
 			return s ? { s, pts: layoutDots(u.id, dotsFor(s.men), s) } : null;
 		});
+		const naval = per.some((p) => p?.s.shape === 'fleet');
+		const mounted = /horse|cavalry|rider|기병|기마|마군/.test(`${u.label} ${u.ko ?? ''} ${u.id}`);
+		const arm: FieldDot['arm'] = naval ? 'ship' : mounted ? 'horse' : 'foot';
+		const here = per[index];
+		let facing = here?.s.facing;
+		for (let k = index - 1; k >= 0 && facing === undefined; k--) facing = per[k]?.s.facing;
 		const max = Math.max(0, ...per.map((p) => p?.pts.length ?? 0));
 		for (let i = 0; i < max; i++) {
-			const here = per[index];
 			let spot: Pt | undefined = here?.pts[i];
 			const on = !!spot;
 			if (!spot) {
@@ -250,6 +275,10 @@ export function fieldDots(b: Battle, index: number): FieldDot[] {
 				on,
 				routed: !!here?.s.routed,
 				unrecorded: !!u.unrecorded,
+				naval,
+				arm,
+				present: !!here && here.s.men > 0,
+				facing: facing ?? 0,
 				delay: (ui % 4) * 0.08 + (i % 17) * 0.018
 			});
 		}
@@ -339,7 +368,7 @@ export function layoutDots(id: string, count: number, s: UnitState): Pt[] {
 	const ratio = shape === 'line' ? 6 : shape === 'column' ? 0.22 : shape === 'fleet' ? 2.4 : 1.6;
 	const cols = Math.max(1, Math.min(count, Math.round(Math.sqrt(count * ratio))));
 	const rows = Math.ceil(count / cols);
-	const g = shape === 'fleet' ? gap * 1.35 : gap;
+	const g = shape === 'fleet' ? gap * 3.3 : gap;
 	for (let i = 0; i < count; i++) {
 		const row = Math.floor(i / cols);
 		const k = i % cols;

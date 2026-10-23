@@ -52,8 +52,8 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		title: 'Kim Yushin’s first horse',
 		coat: 'Plain dark chestnut hwarang mount — nothing grand.',
 		tagline: 'Yushin’s first horse; took a sleeping rider where he always went, and lost its head for it.',
-		arc: 'Seventeen, drunk, and asleep in the saddle, Yushin let Hanbyul find the way home — and a good horse takes a sleeping rider where he always goes. He woke at the courtesan Cheongwan’s gate with her lantern already lifted. He had sworn off that gate; the horse had not. He got down, drew, and took Hanbyul’s head off in one stroke, then walked home past the lantern. Cheongwan’s song about that night outlived them both.',
-		events: [{ year: 612, label: 'Carries a sleeping Yushin to Cheongwan’s gate; beheaded there.' }]
+		arc: 'Seventeen, drunk, and asleep in the saddle, Yushin let Hanbyul find the way home — and a good horse takes a sleeping rider where he always goes. He woke at the courtesan Chungwan’s gate with her lantern already lifted. He had sworn off that gate; the horse had not. He got down, drew, and took Hanbyul’s head off in one stroke, then walked home past the lantern. Chungwan’s song about that night outlived them both.',
+		events: [{ year: 612, label: 'Carries a sleeping Yushin to Chungwan’s gate; beheaded there.' }]
 	},
 	{
 		id: 'hangyul',
@@ -76,13 +76,13 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		title: 'Kim Yushin’s last horse',
 		cover: '/temp/hwangsan-white-horse-back.jpg',
 		coat: 'Pure white like Hangyul before him — younger, a hand lighter in the chest.',
-		tagline: 'The last horse Yushin names — white against Gyebek’s black, and the blood on the lips at Mount Gain.',
-		arc: 'Named on the tenth day after Hangyul, and the last horse Yushin ever names. He rides Hanseul out that day and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others. At Yellow Mountain the white horse against Gyebek’s black Gomanari is the picture the field remembers. In the snow of 662 the old horse carries rice to the Tang camp outside Pyongyang while Yushin walks beside him. In 665, grey at the muzzle, he is the white horse the Tang adjutant picks for the oath at Mount Gain, and Yushin leads him up the hill himself. Like Hanbyul and Hangyul before him, he does not die of age.',
+		tagline: 'The last horse Yushin names — white against Gyebek’s black, and the blood on the lips at Prosperity Mountain.',
+		arc: 'Named on the tenth day after Hangyul, and the last horse Yushin ever names. He rides Hansul out that day and across the Yellow Mountain fields thirteen years later, and never once lets a groom catch him brushing it longer than the others. At Yellow Mountain the white horse against Gyebek’s black Gomanari is the picture the field remembers. In the snow of 662 the old horse carries rice to the Western camp outside Pyongyang while Yushin walks beside him. In 665, grey at the muzzle, he is the white horse the Western adjutant picks for the oath at Prosperity Mountain, and Yushin leads him up the hill himself. Like Hanbyul and Hangyul before him, he does not die of age.',
 		events: [
 			{ year: 647, label: 'Named after Hangyul’s death.' },
 			{ year: 660, label: 'Carries Yushin across Yellow Mountain against Gomanari.' },
-			{ year: 662, label: 'Hauls rice through the snow to the Tang camp at Pyongyang.' },
-			{ year: 665, label: 'Sacrificed for the blood oath at Mount Gain.' }
+			{ year: 662, label: 'Hauls rice through the snow to the Western camp at Pyongyang.' },
+			{ year: 665, label: 'Sacrificed for the blood oath at Prosperity Mountain.' }
 		]
 	},
 	{
@@ -92,8 +92,8 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		title: 'Gyebek’s war horse',
 		cover: '/temp/gomanari-dawn-yard.jpg',
 		coat: 'Jet-black war horse, long black mane and tail; plain dark tack with a yellow cord at the bridle.',
-		tagline: 'The fastest horse in Samhan, and the one thing Gyebek owns that the Tang cannot sell in a slave market.',
-		arc: 'Named for the old bear ferry at Gomanaru (Ungjin) where Gyebek learned to ride. In the border years he is how Hundred-Victories kills a general: out of an empty field at a speed no Silla horse can match, one cut on the pass, gone over the ridge before the escort draws. On the last morning the yard is swept and nothing in it belongs to him any more except the black horse at the post. Gomanari carries him onto the Yellow Mountain field against the white Hanseul, and stands by its master’s planted sword after the field is quiet.',
+		tagline: 'The fastest horse in Samhan, and the one thing Gyebek owns that the West cannot sell in a slave market.',
+		arc: 'Named for the old bear ferry at Gomanaru (Ungjin) where Gyebek learned to ride. In the border years he is how Hundred-Victories kills a general: out of an empty field at a speed no Silla horse can match, one cut on the pass, gone over the ridge before the escort draws. On the last morning the yard is swept and nothing in it belongs to him any more except the black horse at the post. Gomanari carries him onto the Yellow Mountain field against the white Hansul, and stands by its master’s planted sword after the field is quiet.',
 		events: [
 			{ year: 648, label: 'The border years: carries Gyebek through Silla escorts to their generals, one cut on the pass.' },
 			{ year: 660, label: 'Carries Gyebek to Yellow Mountain; stands by the planted sword.' }
@@ -108,7 +108,7 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '毘沙門',
 		coat: 'Dark mahogany blood-bay, heavy black mane and long forelock, black legs; nine prayer beads knotted under the jaw.',
 		tagline: 'Named for the guardian king of the north; will not be led by anyone else.',
-		arc: 'Bisamun is named for Vaiśravaṇa, the guardian king who stands at the north of every temple with a pagoda in his hand. Through the Radiance siege Bidam goes down to the lines to stand beside him, saying nothing. Before the last gate opens he saddles the horse himself — which a Sangdaedeung does not do — and knots nine beads from his string to the bridle. When it is over, the horse stands riderless over him and lets no groom near, then walks north.',
+		arc: 'Bisamun is named for Vaiśravaṇa, the guardian king who stands at the north of every temple with a pagoda in his hand. Through the Radiance siege Bidam goes down to the lines to stand beside him, saying nothing. Before the last gate opens he saddles the horse himself — which a Sangdedung does not do — and knots nine beads from his string to the bridle. When it is over, the horse stands riderless over him and lets no groom near, then walks north.',
 		events: [{ year: 647, label: 'Carries Bidam out of Radiance Fortress; walks north riderless.' }]
 	},
 	{
@@ -135,8 +135,8 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '多勿',
 		coat: 'The biggest horse on any field: deep brown-red stallion with a thick black mane and tail; in battle, Goguryeo gaema barding with a steel chamfron and red plume.',
 		tagline: 'Gesomun’s war stallion — named for winning back the lost land.',
-		arc: 'Damul takes its name from the old Goguryeo word 다물 (多勿): to win back what was lost. Browner and darker than Hadong, redder and larger than Bisamun, it charges into water and spears without being asked and bites other horses. At the Sasu River it carries Gesomun, a crow sword in each hand, through the Tang riders in the winter shallows.',
-		events: [{ year: 662, label: 'Carries Gesomun into the Sasu shallows against the Tang.' }],
+		arc: 'Damul takes its name from the old Goguryeo word 다물 (多勿): to win back what was lost. Browner and darker than Hadong, redder and larger than Bisamun, it charges into water and spears without being asked and bites other horses. At the Sasu River it carries Gesomun, a crow sword in each hand, through the Western riders in the winter shallows.',
+		events: [{ year: 662, label: 'Carries Gesomun into the Sasu shallows against the West.' }],
 		formerNames: ['Bulgae'],
 		formerBoards: ['/obj_bulgae.png']
 	},
@@ -144,14 +144,14 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		id: 'chunma',
 		kingdom: 'silla',
 		color: '#F1E6C8',
-		title: 'Heavenly horse of Najeong',
+		title: 'Heavenly horse of Najung',
 		cover: '/temp/chunma-najeong-kneel.jpg',
 		hanja: '天馬',
 		mythic: true,
-		coat: 'Wingless white heavenly horse riding cloud-streamers, as on the Cheonmachong saddle-flap.',
-		tagline: 'Knelt and wept beside a purple egg at Najeong, then rose into the sky.',
-		arc: 'One morning at the Najeong well a white horse kneels and cries beside something in the grass. When it sees men coming it neighs and rises into the sky. Alpyung is the first to look down at what it was kneeling over: a purple egg, and in it Hyukgose. Much later, when the country has a name and a calendar and a clerk for everything, the horse is painted on a saddle-flap, buried with a king, and called Chunma, the heavenly horse.',
-		events: [{ year: -69, label: 'Kneels beside the purple egg at Najeong; rises into the sky.' }]
+		coat: 'Wingless white heavenly horse riding cloud-streamers, as on the Chunmachong saddle-flap.',
+		tagline: 'Knelt and wept beside a purple egg at Najung, then rose into the sky.',
+		arc: 'One morning at the Najung well a white horse kneels and cries beside something in the grass. When it sees men coming it neighs and rises into the sky. Alpyung is the first to look down at what it was kneeling over: a purple egg, and in it Hyukgosé. Much later, when the country has a name and a calendar and a clerk for everything, the horse is painted on a saddle-flap, buried with a king, and called Chunma, the heavenly horse.',
+		events: [{ year: -69, label: 'Kneels beside the purple egg at Najung; rises into the sky.' }]
 	},
 	{
 		id: 'sinrok',
@@ -186,11 +186,11 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		id: 'huanglong',
 		kingdom: 'tang',
 		color: '#D9A520',
-		title: 'Yellow dragon of the Tang throne',
+		title: 'Yellow dragon of the West throne',
 		cover: '/temp/guardian-taizong-huanglong.jpg',
 		hanja: '黃龍',
 		mythic: true,
-		coat: 'Lean gold Tang dragon in ink-brush — three claws, calligraphic mane, a body like a drawn bow.',
+		coat: 'Lean gold the West dragon in ink-brush — three claws, calligraphic mane, a body like a drawn bow.',
 		tagline: 'The beast at the centre of the five directions, and the only one the emperor wears.',
 		arc: 'In the old cosmology four beasts keep the four quarters — the Azure Dragon in the east, the White Tiger in the west, the Vermilion Bird in the south, the Black Tortoise in the north — and the fifth, the Yellow Dragon, keeps the centre. The centre is where the emperor sits, so the dragon sits there too. The Second Emperor wears it in gold thread on his yellow robe and lends its smaller cousins to his marshals as banner names. Nobody in Chang’an claims to have seen it. Everyone in Chang’an knows which way it faces.',
 		events: [{ year: 645, label: 'Rides over the Second Emperor’s banners toward Liaodong.' }]
@@ -205,8 +205,8 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		mythic: true,
 		coat: 'Stocky chocolate-brown steppe horse, shaggy mane, a small gold frog on the halter.',
 		tagline: 'The horse that wept at a boulder and found Buyeo a king underneath it.',
-		arc: 'King Haeburu of Buyeo had no son and prayed to every mountain and river that would listen. On the way home his horse stopped at the pond of Gonyeon, looked at a large boulder, and wept. The king had the stone rolled over, and under it lay a small child, gold-coloured and shaped like a frog. Haeburu called the boy Geumwa, Gold Frog, and made him heir. The horse is named for the pond. It has walked beside the gold-frog king ever since, which in a horse kingdom is better proof of a crown than any document.',
-		events: [{ label: 'Weeps at the boulder of Gonyeon; the gold-frog child Geumwa is found beneath it.' }]
+		arc: 'King Haeburu of Buyeo had no son and prayed to every mountain and river that would listen. On the way home his horse stopped at the pond of Gonyun, looked at a large boulder, and wept. The king had the stone rolled over, and under it lay a small child, gold-coloured and shaped like a frog. Haeburu called the boy Gumwa, Gold Frog, and made him heir. The horse is named for the pond. It has walked beside the gold-frog king ever since, which in a horse kingdom is better proof of a crown than any document.',
+		events: [{ label: 'Weeps at the boulder of Gonyun; the gold-frog child Gumwa is found beneath it.' }]
 	},
 	{
 		id: 'gom',
@@ -217,9 +217,9 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '熊',
 		mythic: true,
 		coat: 'Huge dark-brown bear with a heavy shoulder hump and lighter-tipped fur.',
-		tagline: 'The shape Ungnyeo left in the cave, and the beast that walked beside her son.',
-		arc: 'A bear and a tiger asked Hwanung to make them human. He gave them a bundle of mugwort and twenty cloves of garlic and a hundred days without sunlight. The tiger left on the twenty-first day. The bear stayed, and came out a woman, Ungnyeo, and her son was Dangun. The shape she walked out of did not go back into the mountain. It sits at the edge of Asadal’s firelight, enormous and patient, and lets exactly one person put a hand in its fur.',
-		events: [{ label: 'Keeps to the cave for a hundred days; the bear becomes Ungnyeo, mother of Dangun.' }]
+		tagline: 'The shape Ungnyu left in the cave, and the beast that walked beside her son.',
+		arc: 'A bear and a tiger asked Hwanung to make them human. He gave them a bundle of mugwort and twenty cloves of garlic and a hundred days without sunlight. The tiger left on the twenty-first day. The bear stayed, and came out a woman, Ungnyu, and her son was Dangun. The shape she walked out of did not go back into the mountain. It sits at the edge of Asadal’s firelight, enormous and patient, and lets exactly one person put a hand in its fur.',
+		events: [{ label: 'Keeps to the cave for a hundred days; the bear becomes Ungnyu, mother of Dangun.' }]
 	},
 	{
 		id: 'gwahama',
@@ -238,14 +238,14 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		id: 'kinshi',
 		kingdom: 'yamato',
 		color: '#D4A12A',
-		title: 'Golden kite of Yamato',
+		title: 'Golden kite of the East',
 		cover: '/temp/takutsu-kinshi-prow.jpg',
 		hanja: '金鵄',
 		mythic: true,
 		coat: 'Large golden kite with long fingered wings and a forked tail.',
 		tagline: 'The kite that landed on the first emperor’s bow, and flew ahead of the ships to the White River.',
-		arc: 'When Jimmu fought his way into Yamato and the battle would not turn, a golden kite came down out of the sky and landed on the tip of his bow, and its flash blinded the enemy. Yamato kept the bird. Centuries later it rides the wind ahead of the eight hundred ships that sail to restore Baekje, and Echi no Takutsu, who believes in omens the way some men believe in rope, takes it for a promise.',
-		events: [{ year: 663, label: 'Flies ahead of the Yamato fleet to the White River.' }]
+		arc: 'When Jimmu fought his way into the East and the battle would not turn, a golden kite came down out of the sky and landed on the tip of his bow, and its flash blinded the enemy. The East kept the bird. Centuries later it rides the wind ahead of the eight hundred ships that sail to restore Baekje, and Echi no Takutsu, who believes in omens the way some men believe in rope, takes it for a promise.',
+		events: [{ year: 663, label: 'Flies ahead of the Eastern fleet to the White River.' }]
 	},
 	{
 		id: 'sunfox',
@@ -256,7 +256,7 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		mythic: true,
 		coat: 'Large pale cream-white fox with long flowing fur and a full brush tail.',
 		tagline: 'Haemosu’s heat on foot — it walked Yuhwa down the exile road.',
-		arc: 'When Habek casts Yuhwa out and the sun-chariot cannot stop twice, Haemosu sends the heat that walks instead. The fox is already on the packed earth when she looks up — pale gold-white fur, the same heat that stopped the chariot. It looks back once, so she will not miss the joke, leads her through the pine shade and over the pass, and does not explain the map. At the Buyeo ridge it is gone, and Geumwa is coming down the path.',
+		arc: 'When Habek casts Yuhwa out and the sun-chariot cannot stop twice, Haemosu sends the heat that walks instead. The fox is already on the packed earth when she looks up — pale gold-white fur, the same heat that stopped the chariot. It looks back once, so she will not miss the joke, leads her through the pine shade and over the pass, and does not explain the map. At the Buyeo ridge it is gone, and Gumwa is coming down the path.',
 		events: [{ label: 'Leads Yuhwa from the Amnok to Buyeo.' }]
 	},
 	{
@@ -268,7 +268,7 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '白蹄烏',
 		coat: 'Black from ear to tail, white at all four feet.',
 		tagline: 'Ran two hundred li in one night and put a twenty-year-old prince at a warlord’s gate by dawn.',
-		arc: 'The first of the six stone horses in the gallery behind the Liangyi Hall. When the warlord who held the west broke at Qianshuiyuan before noon, the generals wanted rest; the prince did not. Baitiwu ran all night, two hundred li, and the warlord woke to find the Tang at his gate and simply surrendered. The emperor still calls it the most exhausted and the most pleased he has ever been.',
+		arc: 'The first of the six stone horses in the gallery behind the Liangyi Hall. When the warlord who held the west broke at Qianshuiyuan before noon, the generals wanted rest; the prince did not. Baitiwu ran all night, two hundred li, and the warlord woke to find the West at his gate and simply surrendered. The emperor still calls it the most exhausted and the most pleased he has ever been.',
 		events: [{ year: 618, label: 'Night ride from Qianshuiyuan; the west surrenders at dawn.' }]
 	},
 	{
@@ -280,7 +280,7 @@ const ANIMAL_DEFS: AnimalDef[] = [
 		hanja: '特勒驃',
 		coat: 'Yellow, with a pale muzzle — a steppe horse with a Turkic name.',
 		tagline: 'Eight engagements in one day, and not one complaint.',
-		arc: 'He came off the steppe with a Turkic name, and the prince had not the heart to take it from him. When a northern warlord seized Taiyuan — his father’s own city, the one the Tang marched out of — Telebiao carried him down the Queshu valley: eight engagements in a single day, two days without food, three without armour off. The horse never complained. The rider never stopped.',
+		arc: 'He came off the steppe with a Turkic name, and the prince had not the heart to take it from him. When a northern warlord seized Taiyuan — his father’s own city, the West 173 marched out of — Telebiao carried him down the Queshu valley: eight engagements in a single day, two days without food, three without armour off. The horse never complained. The rider never stopped.',
 		events: [{ year: 620, label: 'Queshu valley: eight engagements in a day; Taiyuan retaken.' }]
 	},
 	{

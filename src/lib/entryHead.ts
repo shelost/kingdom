@@ -87,6 +87,33 @@ function castIds(en: Entry, limit: number): string[] {
 		.map(([id]) => id);
 }
 
+const ensembleCache = new Map<string, CastMember[]>();
+
+/**
+ * Faces for an Arc or Chapter poster: a few people from each episode, in
+ * reading order, so one long episode cannot fill the cast by itself.
+ */
+export function ensembleOf(entries: Entry[], limit = 7): CastMember[] {
+	const key = `${limit}\n${entries.map((e) => e.title).join('\n')}`;
+	const hit = ensembleCache.get(key);
+	if (hit) return hit;
+	const seen = new Set<string>();
+	const out: CastMember[] = [];
+	for (const en of entries) {
+		for (const member of entryCast(en, null, 4)) {
+			if (seen.has(member.id) || member.silhouette) continue;
+			seen.add(member.id);
+			out.push(member);
+			if (out.length >= limit) {
+				ensembleCache.set(key, out);
+				return out;
+			}
+		}
+	}
+	ensembleCache.set(key, out);
+	return out;
+}
+
 /**
  * The few people an episode is about, named and painted as they first speak in
  * it: an heir under a living king is still the prince, a card's look holds.

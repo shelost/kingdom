@@ -3,6 +3,7 @@
  * a `people` id, and the chart puts that person's face over the seat. A chart that
  * introduces an institution leaves `cast` out and keeps its titles.
  */
+import { speakerName } from '$lib/chat';
 import { avatarOf, byId, koreanOf, nameOf, type Person } from '$lib/people';
 
 export type Cast = Record<string, string>;
@@ -15,11 +16,22 @@ export interface Sitter {
 }
 
 /** The person in `seat`, as they look in `year`; null for a seat the scene leaves unnamed. */
-export function sitter(cast: Cast | undefined, seat: string, year?: number | null): Sitter | null {
+export function sitter(
+	cast: Cast | undefined,
+	seat: string,
+	year?: number | null,
+	opts?: { given?: boolean }
+): Sitter | null {
 	const id = cast?.[seat];
 	const p = id ? byId.get(id) : undefined;
 	if (!p) return null;
-	return { person: p, img: avatarOf(p, undefined, year), ko: koreanOf(p, year), en: nameOf(p, year) };
+	const given = opts?.given;
+	return {
+		person: p,
+		img: avatarOf(p, undefined, year),
+		ko: given ? speakerName(p, year, undefined, 'ko') : koreanOf(p, year),
+		en: given ? speakerName(p, year, undefined, 'en') : nameOf(p, year)
+	};
 }
 
 /** True when `p` holds the office `korean` (상대등, 상좌평…) of `org` in `year`. */

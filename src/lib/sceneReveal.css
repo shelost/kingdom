@@ -1,0 +1,142 @@
+/*
+ * Script entrances by scene mood (`$lib/sceneReveal`). Global because the
+ * classes are set by an attachment. `.sr-pending` exists only while JS has
+ * armed the node, so without scripting the script simply renders.
+ */
+
+html[data-animated='on'] .sr-pending,
+html[data-animated='on'] .sr-in {
+	transition:
+		opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+		transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+		filter 0.6s ease-out;
+}
+
+html[data-animated='on'] .sr-pending {
+	opacity: 0;
+	transform: translateY(14px);
+}
+
+/* Battle: in fast from the side, slightly skewed, and a shout shakes once. */
+html[data-animated='on'] .sr-pending[data-reveal='battle'] {
+	transform: translateX(-22px) skewX(-6deg);
+	filter: blur(2px);
+}
+html[data-animated='on'] .sr-in[data-reveal='battle'] {
+	transition-duration: 0.32s;
+	transition-timing-function: cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+html[data-animated='on'] .sr-in[data-reveal='battle'][data-shout] {
+	animation: sr-quake 0.36s 0.3s steps(3) 1;
+}
+
+/* Romance: blooms up out of a blur, slowly. */
+html[data-animated='on'] .sr-pending[data-reveal='romance'] {
+	transform: translateY(8px) scale(0.985);
+	filter: blur(6px);
+}
+html[data-animated='on'] .sr-in[data-reveal='romance'] {
+	transition-duration: 1.2s;
+	transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Grief: barely moves; it just takes its time. */
+html[data-animated='on'] .sr-pending[data-reveal='grief'] {
+	transform: translateY(4px);
+	filter: brightness(0.6);
+}
+html[data-animated='on'] .sr-in[data-reveal='grief'] {
+	transition-duration: 1.6s;
+}
+
+/* Impact (a massacre): every line slams down out of a red smear and jolts the page. */
+html[data-animated='on'] .sr-pending[data-reveal='impact'] {
+	transform: scale(1.18);
+	filter: blur(3px);
+}
+html[data-animated='on'] .sr-in[data-reveal='impact'] {
+	transition-duration: 0.24s;
+	transition-timing-function: cubic-bezier(0.6, 0, 0.3, 1.3);
+	animation:
+		sr-blood 1.1s ease-out both,
+		sr-quake 0.3s 0.2s steps(3) 1;
+}
+
+/* Scene and story plates wipe in left to right, whatever the mood. A mask, not
+   clip-path: the observer counts a fully clipped node as never on screen. */
+html[data-animated='on'] header.sr-pending[data-reveal],
+html[data-animated='on'] header.sr-in[data-reveal] {
+	opacity: 1;
+	transform: none;
+	filter: none;
+	animation: none;
+	-webkit-mask-image: linear-gradient(to right, #000 50%, transparent 50%);
+	mask-image: linear-gradient(to right, #000 50%, transparent 50%);
+	-webkit-mask-size: 200% 100%;
+	mask-size: 200% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	transition:
+		-webkit-mask-position 0.9s cubic-bezier(0.7, 0, 0.2, 1),
+		mask-position 0.9s cubic-bezier(0.7, 0, 0.2, 1);
+}
+html[data-animated='on'] header.sr-pending[data-reveal] {
+	-webkit-mask-position: 100% 0;
+	mask-position: 100% 0;
+}
+html[data-animated='on'] header.sr-in[data-reveal] {
+	-webkit-mask-position: 0 0;
+	mask-position: 0 0;
+}
+
+/* Section plates: a slower ceremonial wipe, then the title settles. */
+html[data-animated='on'] header.section.sr-pending[data-reveal],
+html[data-animated='on'] header.section.sr-in[data-reveal] {
+	transition-duration: 1.15s;
+}
+html[data-animated='on'] header.section.sr-pending .section-n,
+html[data-animated='on'] header.story.sr-pending .story-n {
+	letter-spacing: 0.42em;
+	opacity: 0;
+}
+html[data-animated='on'] header.section.sr-in .section-n,
+html[data-animated='on'] header.story.sr-in .story-n {
+	letter-spacing: 0.16em;
+	opacity: 1;
+	transition:
+		letter-spacing 1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.18s,
+		opacity 0.55s ease 0.18s;
+}
+html[data-animated='on'] header.section.sr-pending .section-label {
+	transform: translateY(0.4em);
+	opacity: 0.35;
+}
+html[data-animated='on'] header.section.sr-in .section-label {
+	transform: none;
+	opacity: 1;
+	transition:
+		transform 0.95s cubic-bezier(0.22, 0.61, 0.36, 1) 0.22s,
+		opacity 0.7s ease 0.22s;
+}
+html[data-animated='on'] header.story.sr-pending .story-label {
+	transform: translateY(0.25em);
+	opacity: 0.45;
+}
+html[data-animated='on'] header.story.sr-in .story-label {
+	transform: none;
+	opacity: 1;
+	transition:
+		transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) 0.12s,
+		opacity 0.5s ease 0.12s;
+}
+
+@keyframes sr-blood {
+	0% { text-shadow: 0 0 14px rgba(200, 0, 30, 0.9), 3px 0 0 rgba(200, 0, 30, 0.6); }
+	100% { text-shadow: none; }
+}
+@keyframes sr-quake {
+	0% { transform: translate(-3px, 1px); }
+	33% { transform: translate(3px, -1px); }
+	66% { transform: translate(-1px, 2px); }
+	100% { transform: none; }
+}

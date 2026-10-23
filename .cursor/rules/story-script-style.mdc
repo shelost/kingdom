@@ -56,7 +56,7 @@ A chieftain **may** list suspects (Mohe, Khitan, Han commandery) because that is
 
 ## Narration: the omniscient storyteller
 
-The narrator is a **third-person omniscient storyteller talking to the reader**, conversational, warm, sly, a little amused. He knows how every life ends and teases it. He has favourites. He has watched this pattern before (a door opened from the inside, a king who trusts the wrong wall) and says so with a raised eyebrow. He is implied to be **Hwanin**, the old sky lord, grandfather of Dangun, looking down on the peninsula: he speaks of heaven, the gods and the myths as family gossip, never as scripture. **He is never named, never says “I am”, never explains who he is.** Readers should only half-suspect it by the time Dangun’s episode arrives.
+The narrator is a **third-person omniscient storyteller talking to the reader**, conversational, warm, sly, a little amused. He knows how every life ends and teases it. He has favourites. He has watched this pattern before (a door opened from the inside, a king who trusts the wrong wall) and says so with a raised eyebrow. He is implied to be **Hannim**, the old sky lord, grandfather of Dangun, looking down on the peninsula: he speaks of heaven, the gods and the myths as family gossip, never as scripture. **He is never named, never says “I am”, never explains who he is.** Readers should only half-suspect it by the time Dangun’s episode arrives.
 
 - Talk to the reader: “you”, “you’d think”, “you’ve seen this kind of party”, “let’s say it, since nobody on his side is allowed to”. Questions to the reader are fine. Not every block; enough that it is a voice.
 - Opinions, not records. “The Silla annals, which like round numbers, make it four hundred thousand” is the narrator. “Silla deploys 400,000 troops” is a textbook.
@@ -107,14 +107,14 @@ Every entry’s first line is a hook, not a date. Borrow the technique, never th
 | **Legend-teller with hindsight** | Le Guin, *A Wizard of Earthsea*: a mountain island “famous for wizards,” and the greatest of them was once a boy called Sparrowhawk. | Yushin, Gyebek, Gesomun before their fame. The narrator knows the legend; the scene shows the boy. |
 | **Simple sentence, impossible fact** | Orwell: “It was a bright cold day in April, and the clocks were striking thirteen.” / Barrie: “All children, except one, grow up.” | Myth entries and omens. Ordinary grammar, one wrong detail. |
 | **Plain object, then insistence** | Tolkien: “In a hole in the ground there lived a hobbit. Not a nasty, dirty, wet hole…” | Places. Say what it is, then what it is not. |
-| **Narrator who is a presence** | Zusak, *The Book Thief*, narrated by Death: “Here is a small fact: You are going to die.” | The Hwanin voice. He reveals himself only by what he notices: weather, the sky, which deaths he watched, an old fondness for this family. Never by name. |
+| **Narrator who is a presence** | Zusak, *The Book Thief*, narrated by Death: “Here is a small fact: You are going to die.” | The Hannim voice. He reveals himself only by what he notices: weather, the sky, which deaths he watched, an old fondness for this family. Never by name. |
 | **Talking to the listener** | Kipling, *Just So Stories*: “O Best Beloved”; Lewis’s asides to the reader. | Myth frames (ink episodes): a grandfather telling a bedtime tale he was present for. |
 
 **Plain narration between hooks.** Most sentences are simple: subject, verb, one concrete thing. Rowling and Lewis spend their wit on *one* adjective or one aside per paragraph, not every clause. A good paragraph is three plain sentences and one that bites. Nobody writes “He took the throne at seven and reigned thirty-six years”; they write “He was seven when they put the crown on him, and it was too big, and nobody mentioned it.”
 
 ## Suspense: plant, withhold, pay off
 
-- **Mystery box (Abrams).** Show the question, withhold the answer, open it in its own episode. The unnamed Gaya prince in a cone helm watches the Baekje king die in *The Severing*; only *Muryuk* tells us who he was. Speaker ids may stay `muryuk` but the English/Korean text and image `alt` must not name him before his reveal.
+- **Mystery box (Abrams).** Show the question, withhold the answer, open it in its own episode. The unnamed Gaya prince in a cone helm watches the Baekje king die in *Gwansan*; only *Muryuk* tells us who he was. Speaker ids may stay `muryuk` but the English/Korean text and image `alt` must not name him before his reveal.
 - **Founding myths are boxes.** Jumong, Onjo, Hyukgose, Dangun and the word *Joseon* are hinted at by insult, oath, relic and joke (“we’re both Buyeo blood”, “by the Holy King’s bow”) and **explained only in their own episode**. No genealogy summary or myth recap in an earlier entry, in narration or dialogue.
 - **Chekhov’s gun.** If a thing is shown (a half sword, a bell left on a floor, a go board, a plan written in a flashback), it fires later. If it never fires, cut it. If a payoff lands, find its plant; if there is none, add one earlier.
 - **Reputations are earned through other people.** Never have a character announce a hero’s title. Build it in enemies’ fear and rumour across entries: a sentry who doesn’t finish his rice when a white horse crests the ridge, a Goguryeo rider screaming “IT’S KIM YUSHIN!” and the pursuit breaking, a scout who says “there wasn’t a side, sir, there was a horse.” Gyebek’s name grows the same way, unnamed at first (“the Baekje captain who holds his sword backwards”).
@@ -139,7 +139,7 @@ These break the rules above on purpose. Audits and rewrite passes leave them as 
 ## Structure already in the file
 
 - Bidam’s Rebellion uses `kind: "day"` headers. Don’t flatten them into prose prefixes.
-- Flashbacks must use `kind: "flashback"`.
+- Flashbacks must use `kind: "flashback"`, except when most of an episode is the flashback (Bihyung): then the blocks stay top-level and each leap opens on a scene plate with `jump: { year, en: "X Years Later…", ko }` (the large year, the jump text beneath, the scene label as the place line), plus a `map` block when the place changes.
 - Dead characters must not speak in later years unless wrapped in flashback.
 - Ages in prose are derived from `people.ts` `born` + entry year.
 

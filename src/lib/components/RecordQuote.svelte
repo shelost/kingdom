@@ -662,7 +662,7 @@
 		}
 	}
 
-	@media (max-width: 560px) {
+	@container prose (max-width: 560px) {
 		.record.columns {
 			grid-template-columns: minmax(0, 1fr);
 		}

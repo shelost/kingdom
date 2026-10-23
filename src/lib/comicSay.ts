@@ -3,10 +3,12 @@
  * speaker: a white balloon over the picture. A still qualifies when its `at`
  * anchor falls inside a dialogue block, the speaker is in the picture, and the
  * picture is about that speaker (alone in it, or named for talking: a scream,
- * a whisper, a close-up). A slot's own `say` overrides the guess.
+ * a whisper, a close-up). Failing that, a still whose speaker talks within a
+ * few blocks of its anchor borrows that line. A slot's own `say` overrides both.
  */
 import { chapters, type Block, type ImageSlot } from './story';
 import { peopleOfSlot } from './imagePeople';
+import { byId } from './people';
 
 export interface Say {
 	en?: string;
@@ -16,20 +18,49 @@ export interface Say {
 
 /** Balloons are for short lines; a speech stays in the script. */
 const MAX_CHARS = 110;
+/** How many blocks either side of a still's anchor a nearby speaker may stand. */
+const REACH = 3;
 const SPEAKING =
 	/scream|shout|yell|laugh|whisper|mad|cry|weep|jealous|sneer|grin|smirk|plead|beg|roar|snap|tease|taunt|ecu|close|face|speak|say|talk|order|command|curse|accus|demand|ask|answer|retort|vow|swear/i;
 const NOT_A_SCENE = /map|crest|flag|chart|board/i;
 
 type Dialogue = Extract<Block, { kind: 'dialogue' }>;
 
-/** Plain text of a line, without markup or a leading stage direction. */
-function letter(lines: string[] | undefined): string | undefined {
-	const text = (lines ?? [])
-		.join(' ')
+/** Plain text of one line, without markup or a leading stage direction. */
+function plain(line: string): string {
+	return line
 		.replace(/<[^>]+>/g, '')
 		.replace(/^\s*\([^)]*\)\s*/, '')
 		.trim();
-	return text && text.length <= MAX_CHARS ? text : undefined;
+}
+
+/**
+ * The opening of a speech that fits a balloon: whole lines while they fit,
+ * else the first sentences of the first line. Each language is cut on its own,
+ * so a long English speech still letters in English.
+ */
+function letter(lines: string[] | undefined): string | undefined {
+	const parts = (lines ?? []).map(plain).filter(Boolean);
+	let text = '';
+	for (const line of parts) {
+		const next = text ? `${text} ${line}` : line;
+		if (next.length > MAX_CHARS) break;
+		text = next;
+	}
+	if (text || !parts.length) return text || undefined;
+	for (const sentence of parts[0].match(/[^.!?。…]+(?:[.!?。…]+|$)/g) ?? []) {
+		const next = `${text}${sentence}`.trim();
+		if (next.length > MAX_CHARS) break;
+		text = next;
+	}
+	return text || undefined;
+}
+
+function namesSpeaker(alt: string | undefined, person: string): boolean {
+	const p = byId.get(person);
+	if (!p || !alt) return false;
+	const first = p.name.split(' ').pop() ?? p.name;
+	return [p.name, first, p.korean].some((n) => n && alt.toLowerCase().includes(n.toLowerCase()));
 }
 
 function guess(slot: ImageSlot, block: Dialogue): Say | undefined {
@@ -37,7 +68,8 @@ function guess(slot: ImageSlot, block: Dialogue): Say | undefined {
 	if (!person || NOT_A_SCENE.test(slot.id)) return undefined;
 	const people = peopleOfSlot(slot.id, slot.people);
 	if (!people.includes(person)) return undefined;
-	if (people.length > 1 && !SPEAKING.test(`${slot.id} ${slot.alt ?? ''}`)) return undefined;
+	const hay = `${slot.id} ${slot.alt ?? ''}`;
+	if (people.length > 1 && !SPEAKING.test(hay) && !namesSpeaker(slot.alt, person)) return undefined;
 	const en = letter(block.en);
 	const ko = letter(block.lines);
 	return en || ko ? { en, ko, person } : undefined;
@@ -76,6 +108,32 @@ for (const chapter of chapters) {
 			}
 		};
 		walk(entry.blocks);
+		nearbySpeakers(images, flatten(entry.blocks), used);
+	}
+}
+
+/**
+ * A still anchored in narration still gets a balloon when someone in the
+ * picture speaks within a few blocks of its moment: the nearest such line,
+ * looking ahead first.
+ */
+function nearbySpeakers(images: ImageSlot[], blocks: Block[], used: Set<string>) {
+	for (const slot of images) {
+		if (!slot.at || used.has(slot.id) || NOT_A_SCENE.test(slot.id)) continue;
+		const at = blocks.findIndex((b) => blockText(b).includes(slot.at!));
+		if (at < 0) continue;
+		const people = peopleOfSlot(slot.id, slot.people);
+		if (!people.length) continue;
+		for (let d = 0; d <= REACH; d++) {
+			const b = [blocks[at + d], blocks[at - d]].find(
+				(x): x is Dialogue => x?.kind === 'dialogue' && !!x.person && people.includes(x.person)
+			);
+			const say = b && oneLine(b);
+			if (!say) continue;
+			SAYS.set(slot.id, say);
+			used.add(slot.id);
+			break;
+		}
 	}
 }
 
@@ -83,13 +141,13 @@ export function sayOf(slotId: string): Say | undefined {
 	return SAYS.get(slotId);
 }
 
-/** The shortest-fitting single spoken line of a block, skipping grunts. */
+/** The first spoken line of a block long enough to letter, skipping grunts. */
 function oneLine(b: Dialogue): Say | undefined {
 	if (!b.person) return undefined;
 	for (let i = 0; i < b.lines.length; i++) {
 		const en = letter(b.en?.[i] ? [b.en[i]] : undefined);
 		const ko = letter([b.lines[i]]);
-		if ((en ?? ko ?? '').length >= 12) return { en, ko, person: b.person };
+		if ((en ?? ko ?? '').length >= 12 && en && ko) return { en, ko, person: b.person };
 	}
 	return undefined;
 }

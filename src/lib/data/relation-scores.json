@@ -1,0 +1,4500 @@
+{
+	"generated": "2026-10-23 02:43",
+	"scores": {
+		"rel-gotaso-pumsuk": {
+			"score": 39,
+			"raw": 65,
+			"expected": 35,
+			"status": "appropriate",
+			"minEpisodes": 6,
+			"links": [
+				{
+					"title": "Gotaso",
+					"kind": "talk"
+				},
+				{
+					"title": "Pumsuk",
+					"kind": "talk"
+				},
+				{
+					"title": "Maehwa",
+					"kind": "talk"
+				},
+				{
+					"title": "Siege of Daeya",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 14,
+				"talk": 18,
+				"evolution": 9,
+				"grip": 24
+			},
+			"grip": 80,
+			"scenes": 7,
+			"exchanges": 24,
+			"words": 396,
+			"lines": 66,
+			"talkedIn": 4,
+			"episodes": [
+				"Gotaso",
+				"Pumsuk",
+				"Maehwa",
+				"Siege of Daeya"
+			],
+			"years": [
+				641,
+				642
+			],
+			"events": 2,
+			"interrupts": 21,
+			"questions": 8,
+			"shortLines": 44,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 4,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-chunchu-munhee": {
+			"score": 73,
+			"raw": 87,
+			"expected": 80,
+			"status": "strong",
+			"minEpisodes": 15,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Gotaso",
+					"kind": "talk"
+				},
+				{
+					"title": "Pumsuk",
+					"kind": "talk"
+				},
+				{
+					"title": "Munhee",
+					"kind": "talk"
+				},
+				{
+					"title": "Siege of Daeya",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "together"
+				},
+				{
+					"title": "Gi (起)",
+					"kind": "talk"
+				},
+				{
+					"title": "Seung (承)",
+					"kind": "talk"
+				},
+				{
+					"title": "Seohyun",
+					"kind": "together"
+				},
+				{
+					"title": "King Muyeol",
+					"kind": "talk"
+				},
+				{
+					"title": "Kim Chunchu†",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 19,
+				"talk": 21,
+				"evolution": 22,
+				"grip": 25
+			},
+			"grip": 83,
+			"scenes": 18,
+			"exchanges": 42,
+			"words": 555,
+			"lines": 94,
+			"talkedIn": 9,
+			"episodes": [
+				"Queen Sunduk",
+				"Gotaso",
+				"Pumsuk",
+				"Munhee",
+				"Siege of Daeya",
+				"The Eastern Star",
+				"Gi (起)",
+				"Seung (承)",
+				"Seohyun",
+				"King Muyeol",
+				"Kim Chunchu†"
+			],
+			"years": [
+				593,
+				661
+			],
+			"events": 2,
+			"interrupts": 33,
+			"questions": 9,
+			"shortLines": 61,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 3,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-munmu-jayi": {
+			"score": 24,
+			"raw": 52,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Jahee",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 17,
+				"evolution": 3,
+				"grip": 23
+			},
+			"grip": 77,
+			"scenes": 3,
+			"exchanges": 21,
+			"words": 220,
+			"lines": 31,
+			"talkedIn": 1,
+			"episodes": [
+				"Jahee"
+			],
+			"years": [
+				644,
+				644
+			],
+			"events": 3,
+			"interrupts": 7,
+			"questions": 4,
+			"shortLines": 17,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-yushin-sunduk": {
+			"score": 74,
+			"raw": 87,
+			"expected": 80,
+			"status": "strong",
+			"minEpisodes": 15,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Pumsuk",
+					"kind": "talk"
+				},
+				{
+					"title": "Munhee",
+					"kind": "talk"
+				},
+				{
+					"title": "Chunchu & Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "Yushin",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "together"
+				},
+				{
+					"title": "Gi (起)",
+					"kind": "talk"
+				},
+				{
+					"title": "Seung (承)",
+					"kind": "together"
+				},
+				{
+					"title": "Gyul (結)",
+					"kind": "talk"
+				},
+				{
+					"title": "Munmu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 18,
+				"talk": 23,
+				"evolution": 23,
+				"grip": 23
+			},
+			"grip": 78,
+			"scenes": 15,
+			"exchanges": 88,
+			"words": 733,
+			"lines": 125,
+			"talkedIn": 8,
+			"episodes": [
+				"Queen Sunduk",
+				"Pumsuk",
+				"Munhee",
+				"Chunchu & Yeon",
+				"Yushin",
+				"The Eastern Star",
+				"Gi (起)",
+				"Seung (承)",
+				"Gyul (結)",
+				"Munmu"
+			],
+			"years": [
+				625,
+				673
+			],
+			"events": 3,
+			"interrupts": 28,
+			"questions": 11,
+			"shortLines": 82,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 16:12"
+		},
+		"rel-pumsuk-gumilwife": {
+			"score": 24,
+			"raw": 52,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Maehwa",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 20,
+				"evolution": 0,
+				"grip": 23
+			},
+			"grip": 77,
+			"scenes": 3,
+			"exchanges": 38,
+			"words": 484,
+			"lines": 61,
+			"talkedIn": 1,
+			"episodes": [
+				"Maehwa"
+			],
+			"years": [
+				642,
+				642
+			],
+			"events": 0,
+			"interrupts": 14,
+			"questions": 9,
+			"shortLines": 32,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-euija-maids": {
+			"score": 57,
+			"raw": 78,
+			"expected": 40,
+			"status": "appropriate",
+			"minEpisodes": 7,
+			"links": [
+				{
+					"title": "Prince Euija",
+					"kind": "talk"
+				},
+				{
+					"title": "King Euija",
+					"kind": "talk"
+				},
+				{
+					"title": "Coup",
+					"kind": "talk"
+				},
+				{
+					"title": "Descent",
+					"kind": "talk"
+				},
+				{
+					"title": "Sunchung",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 15,
+				"talk": 20,
+				"evolution": 17,
+				"grip": 26
+			},
+			"grip": 86,
+			"scenes": 9,
+			"exchanges": 34,
+			"words": 586,
+			"lines": 79,
+			"talkedIn": 5,
+			"episodes": [
+				"Prince Euija",
+				"King Euija",
+				"Coup",
+				"Descent",
+				"Sunchung"
+			],
+			"years": [
+				632,
+				660
+			],
+			"events": 3,
+			"interrupts": 33,
+			"questions": 7,
+			"shortLines": 43,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-haemosu-yuhwa": {
+			"score": 33,
+			"raw": 60,
+			"expected": 19,
+			"status": "appropriate",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Haemosu",
+					"kind": "talk"
+				},
+				{
+					"title": "Jolbon",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 17,
+				"evolution": 9,
+				"grip": 25
+			},
+			"grip": 82,
+			"scenes": 3,
+			"exchanges": 19,
+			"words": 298,
+			"lines": 56,
+			"talkedIn": 2,
+			"episodes": [
+				"Haemosu",
+				"Jolbon"
+			],
+			"years": [
+				-59,
+				-37
+			],
+			"events": 2,
+			"interrupts": 19,
+			"questions": 2,
+			"shortLines": 41,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 2,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-jumong-sosuno": {
+			"score": 41,
+			"raw": 67,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Jolbon",
+					"kind": "talk"
+				},
+				{
+					"title": "Onjo",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 14,
+				"talk": 22,
+				"evolution": 9,
+				"grip": 22
+			},
+			"grip": 72,
+			"scenes": 8,
+			"exchanges": 52,
+			"words": 825,
+			"lines": 160,
+			"talkedIn": 2,
+			"episodes": [
+				"Jolbon",
+				"Onjo"
+			],
+			"years": [
+				-37,
+				-18
+			],
+			"events": 2,
+			"interrupts": 37,
+			"questions": 5,
+			"shortLines": 114,
+			"aiisms": 0,
+			"telegrams": 1,
+			"speeches": 10,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-suro-heo": {
+			"score": 37,
+			"raw": 64,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Suro",
+					"kind": "talk"
+				},
+				{
+					"title": "Munmu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 21,
+				"evolution": 9,
+				"grip": 27
+			},
+			"grip": 89,
+			"scenes": 2,
+			"exchanges": 51,
+			"words": 495,
+			"lines": 82,
+			"talkedIn": 2,
+			"episodes": [
+				"Suro",
+				"Munmu"
+			],
+			"years": [
+				42,
+				673
+			],
+			"events": 2,
+			"interrupts": 31,
+			"questions": 8,
+			"shortLines": 58,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-ibiga-jeonggyeon": {
+			"score": 16,
+			"raw": 43,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Suro",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 15,
+				"evolution": 0,
+				"grip": 24
+			},
+			"grip": 79,
+			"scenes": 1,
+			"exchanges": 11,
+			"words": 182,
+			"lines": 29,
+			"talkedIn": 1,
+			"episodes": [
+				"Suro"
+			],
+			"years": [
+				42,
+				42
+			],
+			"events": 0,
+			"interrupts": 6,
+			"questions": 5,
+			"shortLines": 18,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-hwanung-ungnyeo": {
+			"score": 17,
+			"raw": 44,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Dangun & Old Joseon",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 15,
+				"evolution": 0,
+				"grip": 25
+			},
+			"grip": 83,
+			"scenes": 1,
+			"exchanges": 12,
+			"words": 109,
+			"lines": 23,
+			"talkedIn": 1,
+			"episodes": [
+				"Dangun & Old Joseon"
+			],
+			"years": null,
+			"events": 0,
+			"interrupts": 7,
+			"questions": 1,
+			"shortLines": 17,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-gesomun-gulgul": {
+			"score": 57,
+			"raw": 77,
+			"expected": 46,
+			"status": "appropriate",
+			"minEpisodes": 8,
+			"links": [
+				{
+					"title": "Commander Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "Five Tribes",
+					"kind": "talk"
+				},
+				{
+					"title": "Stele",
+					"kind": "talk"
+				},
+				{
+					"title": "Dosuryu",
+					"kind": "talk"
+				},
+				{
+					"title": "Pyongyang I",
+					"kind": "talk"
+				},
+				{
+					"title": "Yeon Gesomun†",
+					"kind": "talk"
+				},
+				{
+					"title": "Balhae",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 17,
+				"talk": 19,
+				"evolution": 20,
+				"grip": 22
+			},
+			"grip": 73,
+			"scenes": 12,
+			"exchanges": 27,
+			"words": 385,
+			"lines": 56,
+			"talkedIn": 7,
+			"episodes": [
+				"Commander Yeon",
+				"Five Tribes",
+				"Stele",
+				"Dosuryu",
+				"Pyongyang I",
+				"Yeon Gesomun†",
+				"Balhae"
+			],
+			"years": [
+				634,
+				698
+			],
+			"events": 2,
+			"interrupts": 11,
+			"questions": 5,
+			"shortLines": 32,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-jacheongbi-mundoryeong": {
+			"score": 20,
+			"raw": 49,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Jachungbi",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 13,
+				"evolution": 0,
+				"grip": 29
+			},
+			"grip": 96,
+			"scenes": 2,
+			"exchanges": 6,
+			"words": 86,
+			"lines": 8,
+			"talkedIn": 1,
+			"episodes": [
+				"Jachungbi"
+			],
+			"years": null,
+			"events": 0,
+			"interrupts": 4,
+			"questions": 2,
+			"shortLines": 4,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-chunchu-euija": {
+			"score": 32,
+			"raw": 60,
+			"expected": 85,
+			"status": "underdeveloped",
+			"minEpisodes": 19,
+			"links": [
+				{
+					"title": "Euija & Yeon",
+					"kind": "together"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "together"
+				},
+				{
+					"title": "Nine Omens",
+					"kind": "talk"
+				},
+				{
+					"title": "Sabi",
+					"kind": "talk"
+				},
+				{
+					"title": "Buyeo Euija†",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 14,
+				"evolution": 11,
+				"grip": 23
+			},
+			"grip": 77,
+			"scenes": 5,
+			"exchanges": 8,
+			"words": 152,
+			"lines": 20,
+			"talkedIn": 3,
+			"episodes": [
+				"Euija & Yeon",
+				"The Eastern Star",
+				"Nine Omens",
+				"Sabi",
+				"Buyeo Euija†"
+			],
+			"years": [
+				642,
+				660
+			],
+			"events": 2,
+			"interrupts": 5,
+			"questions": 3,
+			"shortLines": 9,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-chunchu-yushin": {
+			"score": 76,
+			"raw": 88,
+			"expected": 85,
+			"status": "strong",
+			"minEpisodes": 29,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Harmony Council",
+					"kind": "together"
+				},
+				{
+					"title": "Gotaso",
+					"kind": "talk"
+				},
+				{
+					"title": "Munhee",
+					"kind": "talk"
+				},
+				{
+					"title": "Siege of Daeya",
+					"kind": "talk"
+				},
+				{
+					"title": "Chunchu & Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "Yushin",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				},
+				{
+					"title": "Seung (承)",
+					"kind": "together"
+				},
+				{
+					"title": "Jeon (轉)",
+					"kind": "talk"
+				},
+				{
+					"title": "Seohyun",
+					"kind": "together"
+				},
+				{
+					"title": "Gyul (結)",
+					"kind": "talk"
+				},
+				{
+					"title": "Queen Jinduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "talk"
+				},
+				{
+					"title": "Jahee",
+					"kind": "talk"
+				},
+				{
+					"title": "Nine Omens",
+					"kind": "talk"
+				},
+				{
+					"title": "Yellow Mountain",
+					"kind": "talk"
+				},
+				{
+					"title": "Kim Chunchu†",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 20,
+				"talk": 24,
+				"evolution": 23,
+				"grip": 21
+			},
+			"grip": 71,
+			"scenes": 31,
+			"exchanges": 131,
+			"words": 1788,
+			"lines": 228,
+			"talkedIn": 15,
+			"episodes": [
+				"Queen Sunduk",
+				"Harmony Council",
+				"Gotaso",
+				"Munhee",
+				"Siege of Daeya",
+				"Chunchu & Yeon",
+				"Yushin",
+				"The Eastern Star",
+				"Seung (承)",
+				"Jeon (轉)",
+				"Seohyun",
+				"Gyul (結)",
+				"Queen Jinduk",
+				"Royal Secretariat",
+				"Jahee",
+				"Nine Omens",
+				"Yellow Mountain",
+				"Kim Chunchu†"
+			],
+			"years": [
+				593,
+				661
+			],
+			"events": 3,
+			"interrupts": 43,
+			"questions": 25,
+			"shortLines": 102,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-21 18:23"
+		},
+		"rel-sunduk-chunmyung": {
+			"score": 42,
+			"raw": 68,
+			"expected": 56,
+			"status": "appropriate",
+			"minEpisodes": 10,
+			"links": [
+				{
+					"title": "Harmony Council",
+					"kind": "together"
+				},
+				{
+					"title": "Pumsuk",
+					"kind": "talk"
+				},
+				{
+					"title": "Yushin",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "together"
+				},
+				{
+					"title": "Bihyung",
+					"kind": "talk"
+				},
+				{
+					"title": "Yongsu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 15,
+				"talk": 15,
+				"evolution": 13,
+				"grip": 24
+			},
+			"grip": 79,
+			"scenes": 9,
+			"exchanges": 14,
+			"words": 145,
+			"lines": 29,
+			"talkedIn": 4,
+			"episodes": [
+				"Harmony Council",
+				"Pumsuk",
+				"Yushin",
+				"The Eastern Star",
+				"Bihyung",
+				"Yongsu"
+			],
+			"years": [
+				576,
+				642
+			],
+			"events": 2,
+			"interrupts": 4,
+			"questions": 6,
+			"shortLines": 21,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:10"
+		},
+		"rel-chunchu-gotaso": {
+			"score": 27,
+			"raw": 55,
+			"expected": 35,
+			"status": "appropriate",
+			"minEpisodes": 6,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Gotaso",
+					"kind": "talk"
+				},
+				{
+					"title": "Pumsuk",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 13,
+				"talk": 12,
+				"evolution": 4,
+				"grip": 26
+			},
+			"grip": 88,
+			"scenes": 6,
+			"exchanges": 5,
+			"words": 60,
+			"lines": 11,
+			"talkedIn": 2,
+			"episodes": [
+				"Queen Sunduk",
+				"Gotaso",
+				"Pumsuk"
+			],
+			"years": [
+				632,
+				641
+			],
+			"events": 0,
+			"interrupts": 4,
+			"questions": 1,
+			"shortLines": 8,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-munhee-bohee": {
+			"score": 24,
+			"raw": 52,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Munhee",
+					"kind": "talk"
+				},
+				{
+					"title": "Seohyun",
+					"kind": "about"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 12,
+				"evolution": 5,
+				"grip": 26
+			},
+			"grip": 88,
+			"scenes": 3,
+			"exchanges": 6,
+			"words": 54,
+			"lines": 8,
+			"talkedIn": 1,
+			"episodes": [
+				"Munhee",
+				"Seohyun"
+			],
+			"years": [
+				593,
+				625
+			],
+			"events": 0,
+			"interrupts": 3,
+			"questions": 1,
+			"shortLines": 5,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-euija-gyebek": {
+			"score": 71,
+			"raw": 86,
+			"expected": 85,
+			"status": "strong",
+			"minEpisodes": 19,
+			"links": [
+				{
+					"title": "Prince Euija",
+					"kind": "talk"
+				},
+				{
+					"title": "Eight Great Clans",
+					"kind": "talk"
+				},
+				{
+					"title": "Deer Rock",
+					"kind": "talk"
+				},
+				{
+					"title": "King Euija",
+					"kind": "talk"
+				},
+				{
+					"title": "Yunchung",
+					"kind": "talk"
+				},
+				{
+					"title": "Euija & Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "Yushin",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "talk"
+				},
+				{
+					"title": "Gyebek",
+					"kind": "talk"
+				},
+				{
+					"title": "Yellow Mountain",
+					"kind": "talk"
+				},
+				{
+					"title": "Buyeo Euija†",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 20,
+				"talk": 24,
+				"evolution": 20,
+				"grip": 21
+			},
+			"grip": 71,
+			"scenes": 20,
+			"exchanges": 143,
+			"words": 1873,
+			"lines": 242,
+			"talkedIn": 12,
+			"episodes": [
+				"Prince Euija",
+				"Eight Great Clans",
+				"Deer Rock",
+				"King Euija",
+				"Yunchung",
+				"Euija & Yeon",
+				"Yushin",
+				"The Eastern Star",
+				"Royal Secretariat",
+				"Gyebek",
+				"Yellow Mountain",
+				"Buyeo Euija†"
+			],
+			"years": [
+				632,
+				660
+			],
+			"events": 0,
+			"interrupts": 33,
+			"questions": 39,
+			"shortLines": 123,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 2,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-seongchung-heungsu": {
+			"score": 27,
+			"raw": 55,
+			"expected": 30,
+			"status": "appropriate",
+			"minEpisodes": 5,
+			"links": [
+				{
+					"title": "Eight Great Clans",
+					"kind": "talk"
+				},
+				{
+					"title": "King Euija",
+					"kind": "talk"
+				},
+				{
+					"title": "Sunchung",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 11,
+				"talk": 13,
+				"evolution": 11,
+				"grip": 20
+			},
+			"grip": 67,
+			"scenes": 4,
+			"exchanges": 6,
+			"words": 125,
+			"lines": 14,
+			"talkedIn": 3,
+			"episodes": [
+				"Eight Great Clans",
+				"King Euija",
+				"Sunchung"
+			],
+			"years": [
+				632,
+				660
+			],
+			"events": 2,
+			"interrupts": 3,
+			"questions": 0,
+			"shortLines": 5,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-23 02:33"
+		},
+		"rel-heungsu-gyebek": {
+			"score": 24,
+			"raw": 53,
+			"expected": 30,
+			"status": "appropriate",
+			"minEpisodes": 5,
+			"links": [
+				{
+					"title": "Eight Great Clans",
+					"kind": "together"
+				},
+				{
+					"title": "King Euija",
+					"kind": "together"
+				},
+				{
+					"title": "Hungsu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 13,
+				"evolution": 5,
+				"grip": 25
+			},
+			"grip": 84,
+			"scenes": 3,
+			"exchanges": 6,
+			"words": 150,
+			"lines": 15,
+			"talkedIn": 1,
+			"episodes": [
+				"Eight Great Clans",
+				"King Euija",
+				"Hungsu"
+			],
+			"years": [
+				632,
+				660
+			],
+			"events": 0,
+			"interrupts": 6,
+			"questions": 2,
+			"shortLines": 6,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-jumong-yuhwa": {
+			"score": 15,
+			"raw": 43,
+			"expected": 19,
+			"status": "appropriate",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Buyeo",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 11,
+				"evolution": 2,
+				"grip": 26
+			},
+			"grip": 85,
+			"scenes": 1,
+			"exchanges": 4,
+			"words": 52,
+			"lines": 10,
+			"talkedIn": 1,
+			"episodes": [
+				"Buyeo"
+			],
+			"years": [
+				-40,
+				-40
+			],
+			"events": 2,
+			"interrupts": 2,
+			"questions": 3,
+			"shortLines": 7,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-jumong-haemosu": {
+			"score": 20,
+			"raw": 48,
+			"expected": 19,
+			"status": "appropriate",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Buyeo",
+					"kind": "together"
+				},
+				{
+					"title": "Jolbon",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 10,
+				"evolution": 1,
+				"grip": 29
+			},
+			"grip": 95,
+			"scenes": 3,
+			"exchanges": 3,
+			"words": 46,
+			"lines": 6,
+			"talkedIn": 1,
+			"episodes": [
+				"Buyeo",
+				"Jolbon"
+			],
+			"years": [
+				-40,
+				-37
+			],
+			"events": 0,
+			"interrupts": 3,
+			"questions": 2,
+			"shortLines": 2,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 19:21"
+		},
+		"rel-onjo-sosuno": {
+			"score": 22,
+			"raw": 50,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Onjo",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 12,
+				"evolution": 0,
+				"grip": 27
+			},
+			"grip": 90,
+			"scenes": 5,
+			"exchanges": 4,
+			"words": 85,
+			"lines": 14,
+			"talkedIn": 1,
+			"episodes": [
+				"Onjo"
+			],
+			"years": [
+				-18,
+				-18
+			],
+			"events": 0,
+			"interrupts": 4,
+			"questions": 4,
+			"shortLines": 10,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-gesomun-chunchu": {
+			"score": 21,
+			"raw": 49,
+			"expected": 85,
+			"status": "underdeveloped",
+			"minEpisodes": 19,
+			"links": [
+				{
+					"title": "Chunchu & Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "Euija & Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 14,
+				"evolution": 4,
+				"grip": 23
+			},
+			"grip": 75,
+			"scenes": 3,
+			"exchanges": 6,
+			"words": 164,
+			"lines": 20,
+			"talkedIn": 3,
+			"episodes": [
+				"Chunchu & Yeon",
+				"Euija & Yeon",
+				"The Eastern Star"
+			],
+			"years": [
+				642,
+				642
+			],
+			"events": 0,
+			"interrupts": 9,
+			"questions": 1,
+			"shortLines": 5,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-euija-gesomun": {
+			"score": 24,
+			"raw": 52,
+			"expected": 85,
+			"status": "underdeveloped",
+			"minEpisodes": 19,
+			"links": [
+				{
+					"title": "Euija & Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 19,
+				"evolution": 4,
+				"grip": 22
+			},
+			"grip": 72,
+			"scenes": 2,
+			"exchanges": 27,
+			"words": 463,
+			"lines": 52,
+			"talkedIn": 2,
+			"episodes": [
+				"Euija & Yeon",
+				"The Eastern Star"
+			],
+			"years": [
+				642,
+				642
+			],
+			"events": 2,
+			"interrupts": 13,
+			"questions": 8,
+			"shortLines": 16,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-hwanung-dangun": {
+			"score": 0,
+			"raw": 0,
+			"expected": 7,
+			"status": "underdeveloped",
+			"minEpisodes": 1,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-yushin-munmu": {
+			"score": 68,
+			"raw": 84,
+			"expected": 85,
+			"status": "appropriate",
+			"minEpisodes": 27,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Bupmin",
+					"kind": "talk"
+				},
+				{
+					"title": "Seung (承)",
+					"kind": "together"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "together"
+				},
+				{
+					"title": "Jahee",
+					"kind": "talk"
+				},
+				{
+					"title": "Kim Chunchu†",
+					"kind": "together"
+				},
+				{
+					"title": "Ungjin Commandery",
+					"kind": "talk"
+				},
+				{
+					"title": "Pyongyang I",
+					"kind": "talk"
+				},
+				{
+					"title": "Rebellion",
+					"kind": "talk"
+				},
+				{
+					"title": "White River",
+					"kind": "talk"
+				},
+				{
+					"title": "Pyongyang II",
+					"kind": "talk"
+				},
+				{
+					"title": "Prosperity Mountain",
+					"kind": "talk"
+				},
+				{
+					"title": "Wonsul",
+					"kind": "talk"
+				},
+				{
+					"title": "Kim Yushin†",
+					"kind": "talk"
+				},
+				{
+					"title": "Munmu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 20,
+				"talk": 23,
+				"evolution": 20,
+				"grip": 21
+			},
+			"grip": 71,
+			"scenes": 26,
+			"exchanges": 62,
+			"words": 1011,
+			"lines": 135,
+			"talkedIn": 12,
+			"episodes": [
+				"Queen Sunduk",
+				"Bupmin",
+				"Seung (承)",
+				"Royal Secretariat",
+				"Jahee",
+				"Kim Chunchu†",
+				"Ungjin Commandery",
+				"Pyongyang I",
+				"Rebellion",
+				"White River",
+				"Pyongyang II",
+				"Prosperity Mountain",
+				"Wonsul",
+				"Kim Yushin†",
+				"Munmu"
+			],
+			"years": [
+				632,
+				673
+			],
+			"events": 0,
+			"interrupts": 24,
+			"questions": 13,
+			"shortLines": 69,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 2,
+			"flagged": [],
+			"updated": "2026-10-22 21:10"
+		},
+		"rel-yumla-kangrim": {
+			"score": 9,
+			"raw": 34,
+			"expected": 19,
+			"status": "thin",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Kangrim",
+					"kind": "talk"
+				},
+				{
+					"title": "Three Realms",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 9,
+				"evolution": 2,
+				"grip": 16
+			},
+			"grip": 53,
+			"scenes": 2,
+			"exchanges": 2,
+			"words": 36,
+			"lines": 6,
+			"talkedIn": 2,
+			"episodes": [
+				"Kangrim",
+				"Three Realms"
+			],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 2,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-kangrim-haewonmek": {
+			"score": 27,
+			"raw": 55,
+			"expected": 35,
+			"status": "appropriate",
+			"minEpisodes": 6,
+			"links": [
+				{
+					"title": "Siege of Daeya",
+					"kind": "together"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "talk"
+				},
+				{
+					"title": "King Muyeol",
+					"kind": "together"
+				},
+				{
+					"title": "Buyeo Euija†",
+					"kind": "together"
+				},
+				{
+					"title": "Snake River",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 10,
+				"evolution": 10,
+				"grip": 23
+			},
+			"grip": 77,
+			"scenes": 5,
+			"exchanges": 3,
+			"words": 57,
+			"lines": 9,
+			"talkedIn": 2,
+			"episodes": [
+				"Siege of Daeya",
+				"Royal Secretariat",
+				"King Muyeol",
+				"Buyeo Euija†",
+				"Snake River"
+			],
+			"years": [
+				642,
+				662
+			],
+			"events": 3,
+			"interrupts": 1,
+			"questions": 3,
+			"shortLines": 5,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-daebyeol-sobyeol": {
+			"score": 28,
+			"raw": 56,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Heaven–Earth King",
+					"kind": "talk"
+				},
+				{
+					"title": "Three Realms",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 11,
+				"talk": 17,
+				"evolution": 4,
+				"grip": 25
+			},
+			"grip": 83,
+			"scenes": 4,
+			"exchanges": 18,
+			"words": 193,
+			"lines": 34,
+			"talkedIn": 2,
+			"episodes": [
+				"Heaven–Earth King",
+				"Three Realms"
+			],
+			"years": null,
+			"events": 2,
+			"interrupts": 10,
+			"questions": 5,
+			"shortLines": 21,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-yumla-daebyeol": {
+			"score": 0,
+			"raw": 5,
+			"expected": 13,
+			"status": "underdeveloped",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Three Realms",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 1,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [
+				"Three Realms"
+			],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-sara-jacheongbi": {
+			"score": 9,
+			"raw": 34,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Jachungbi",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 10,
+				"evolution": 1,
+				"grip": 19
+			},
+			"grip": 62,
+			"scenes": 1,
+			"exchanges": 3,
+			"words": 50,
+			"lines": 9,
+			"talkedIn": 1,
+			"episodes": [
+				"Jachungbi"
+			],
+			"years": null,
+			"events": 1,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 6,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-heavenearthking-chongmyeong": {
+			"score": 20,
+			"raw": 48,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Heaven–Earth King",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 14,
+				"evolution": 1,
+				"grip": 24
+			},
+			"grip": 79,
+			"scenes": 3,
+			"exchanges": 11,
+			"words": 96,
+			"lines": 23,
+			"talkedIn": 1,
+			"episodes": [
+				"Heaven–Earth King"
+			],
+			"years": null,
+			"events": 1,
+			"interrupts": 6,
+			"questions": 0,
+			"shortLines": 19,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-go-yang": {
+			"score": 0,
+			"raw": 0,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-yang-bu": {
+			"score": 0,
+			"raw": 0,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-go-bu": {
+			"score": 0,
+			"raw": 0,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-sunduk-bidam": {
+			"score": 30,
+			"raw": 58,
+			"expected": 56,
+			"status": "thin",
+			"minEpisodes": 10,
+			"links": [
+				{
+					"title": "Gotaso",
+					"kind": "together"
+				},
+				{
+					"title": "Yushin",
+					"kind": "talk"
+				},
+				{
+					"title": "Gi (起)",
+					"kind": "talk"
+				},
+				{
+					"title": "Seung (承)",
+					"kind": "talk"
+				},
+				{
+					"title": "Gyul (結)",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 11,
+				"evolution": 9,
+				"grip": 26
+			},
+			"grip": 87,
+			"scenes": 5,
+			"exchanges": 4,
+			"words": 82,
+			"lines": 13,
+			"talkedIn": 3,
+			"episodes": [
+				"Gotaso",
+				"Yushin",
+				"Gi (起)",
+				"Seung (承)",
+				"Gyul (結)"
+			],
+			"years": [
+				641,
+				647
+			],
+			"events": 3,
+			"interrupts": 6,
+			"questions": 1,
+			"shortLines": 6,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:10"
+		},
+		"rel-xue-liu": {
+			"score": 14,
+			"raw": 41,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Emperor",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 16,
+				"evolution": 0,
+				"grip": 20
+			},
+			"grip": 68,
+			"scenes": 1,
+			"exchanges": 13,
+			"words": 213,
+			"lines": 29,
+			"talkedIn": 1,
+			"episodes": [
+				"Emperor"
+			],
+			"years": [
+				643,
+				643
+			],
+			"events": 0,
+			"interrupts": 5,
+			"questions": 0,
+			"shortLines": 15,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-taizong-xuerengui": {
+			"score": 14,
+			"raw": 40,
+			"expected": 40,
+			"status": "underdeveloped",
+			"minEpisodes": 7,
+			"links": [
+				{
+					"title": "Stallion Mountain",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 12,
+				"evolution": 0,
+				"grip": 21
+			},
+			"grip": 70,
+			"scenes": 2,
+			"exchanges": 5,
+			"words": 89,
+			"lines": 14,
+			"talkedIn": 1,
+			"episodes": [
+				"Stallion Mountain"
+			],
+			"years": [
+				645,
+				645
+			],
+			"events": 0,
+			"interrupts": 3,
+			"questions": 0,
+			"shortLines": 7,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-yushin-bidam": {
+			"score": 63,
+			"raw": 81,
+			"expected": 56,
+			"status": "appropriate",
+			"minEpisodes": 10,
+			"links": [
+				{
+					"title": "Harmony Council",
+					"kind": "talk"
+				},
+				{
+					"title": "Jade Gate Valley",
+					"kind": "talk"
+				},
+				{
+					"title": "Bupmin",
+					"kind": "talk"
+				},
+				{
+					"title": "Yushin",
+					"kind": "together"
+				},
+				{
+					"title": "Gi (起)",
+					"kind": "talk"
+				},
+				{
+					"title": "Seung (承)",
+					"kind": "talk"
+				},
+				{
+					"title": "Jeon (轉)",
+					"kind": "talk"
+				},
+				{
+					"title": "Gyul (結)",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 19,
+				"talk": 22,
+				"evolution": 19,
+				"grip": 22
+			},
+			"grip": 72,
+			"scenes": 16,
+			"exchanges": 54,
+			"words": 1016,
+			"lines": 135,
+			"talkedIn": 7,
+			"episodes": [
+				"Harmony Council",
+				"Jade Gate Valley",
+				"Bupmin",
+				"Yushin",
+				"Gi (起)",
+				"Seung (承)",
+				"Jeon (轉)",
+				"Gyul (結)"
+			],
+			"years": [
+				632,
+				647
+			],
+			"events": 2,
+			"interrupts": 34,
+			"questions": 12,
+			"shortLines": 66,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 6,
+			"flagged": [],
+			"updated": "2026-10-22 21:10"
+		},
+		"rel-sunduk-jinduk": {
+			"score": 22,
+			"raw": 50,
+			"expected": 30,
+			"status": "thin",
+			"minEpisodes": 5,
+			"links": [
+				{
+					"title": "Harmony Council",
+					"kind": "talk"
+				},
+				{
+					"title": "Gi (起)",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 13,
+				"evolution": 7,
+				"grip": 23
+			},
+			"grip": 75,
+			"scenes": 2,
+			"exchanges": 7,
+			"words": 89,
+			"lines": 14,
+			"talkedIn": 2,
+			"episodes": [
+				"Harmony Council",
+				"Gi (起)"
+			],
+			"years": [
+				632,
+				645
+			],
+			"events": 2,
+			"interrupts": 3,
+			"questions": 1,
+			"shortLines": 8,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 05:43"
+		},
+		"rel-yushin-munhee": {
+			"score": 37,
+			"raw": 64,
+			"expected": 80,
+			"status": "thin",
+			"minEpisodes": 15,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Gotaso",
+					"kind": "talk"
+				},
+				{
+					"title": "Munhee",
+					"kind": "talk"
+				},
+				{
+					"title": "Siege of Daeya",
+					"kind": "together"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "together"
+				},
+				{
+					"title": "Seohyun",
+					"kind": "together"
+				},
+				{
+					"title": "Kim Chunchu†",
+					"kind": "together"
+				},
+				{
+					"title": "Kim Yushin†",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 17,
+				"talk": 14,
+				"evolution": 11,
+				"grip": 22
+			},
+			"grip": 73,
+			"scenes": 12,
+			"exchanges": 7,
+			"words": 130,
+			"lines": 18,
+			"talkedIn": 4,
+			"episodes": [
+				"Queen Sunduk",
+				"Gotaso",
+				"Munhee",
+				"Siege of Daeya",
+				"The Eastern Star",
+				"Seohyun",
+				"Kim Chunchu†",
+				"Kim Yushin†"
+			],
+			"years": [
+				593,
+				673
+			],
+			"events": 0,
+			"interrupts": 5,
+			"questions": 1,
+			"shortLines": 7,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-chunchu-munmu": {
+			"score": 64,
+			"raw": 82,
+			"expected": 85,
+			"status": "appropriate",
+			"minEpisodes": 27,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Bupmin",
+					"kind": "talk"
+				},
+				{
+					"title": "Pumsuk",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				},
+				{
+					"title": "Seung (承)",
+					"kind": "talk"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "talk"
+				},
+				{
+					"title": "Sabi",
+					"kind": "talk"
+				},
+				{
+					"title": "Kim Chunchu†",
+					"kind": "talk"
+				},
+				{
+					"title": "Stone Gate",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 17,
+				"talk": 21,
+				"evolution": 22,
+				"grip": 22
+			},
+			"grip": 74,
+			"scenes": 12,
+			"exchanges": 39,
+			"words": 683,
+			"lines": 83,
+			"talkedIn": 9,
+			"episodes": [
+				"Queen Sunduk",
+				"Bupmin",
+				"Pumsuk",
+				"The Eastern Star",
+				"Seung (承)",
+				"Royal Secretariat",
+				"Sabi",
+				"Kim Chunchu†",
+				"Stone Gate"
+			],
+			"years": [
+				632,
+				672
+			],
+			"events": 2,
+			"interrupts": 22,
+			"questions": 8,
+			"shortLines": 43,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 4,
+			"flagged": [],
+			"updated": "2026-10-22 05:08"
+		},
+		"rel-gesomun-yeongnyu": {
+			"score": 23,
+			"raw": 51,
+			"expected": 24,
+			"status": "appropriate",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "High Summit",
+					"kind": "talk"
+				},
+				{
+					"title": "Yeon’s Massacre",
+					"kind": "talk"
+				},
+				{
+					"title": "Nangbi",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 15,
+				"evolution": 8,
+				"grip": 19
+			},
+			"grip": 64,
+			"scenes": 3,
+			"exchanges": 8,
+			"words": 265,
+			"lines": 27,
+			"talkedIn": 3,
+			"episodes": [
+				"High Summit",
+				"Yeon’s Massacre",
+				"Nangbi"
+			],
+			"years": [
+				629,
+				642
+			],
+			"events": 0,
+			"interrupts": 5,
+			"questions": 2,
+			"shortLines": 10,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-gesomun-bojang": {
+			"score": 1,
+			"raw": 12,
+			"expected": 19,
+			"status": "underdeveloped",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Yeon’s Massacre",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 8,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 1,
+			"exchanges": 2,
+			"words": 18,
+			"lines": 3,
+			"talkedIn": 1,
+			"episodes": [
+				"Yeon’s Massacre"
+			],
+			"years": [
+				642,
+				642
+			],
+			"events": 0,
+			"interrupts": 3,
+			"questions": 3,
+			"shortLines": 3,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-gesomun-namseng": {
+			"score": 46,
+			"raw": 70,
+			"expected": 46,
+			"status": "appropriate",
+			"minEpisodes": 8,
+			"links": [
+				{
+					"title": "Academy",
+					"kind": "talk"
+				},
+				{
+					"title": "Stele",
+					"kind": "talk"
+				},
+				{
+					"title": "Dosuryu",
+					"kind": "talk"
+				},
+				{
+					"title": "Pyongyang I",
+					"kind": "talk"
+				},
+				{
+					"title": "Yeon Gesomun†",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 13,
+				"talk": 19,
+				"evolution": 16,
+				"grip": 23
+			},
+			"grip": 77,
+			"scenes": 6,
+			"exchanges": 26,
+			"words": 365,
+			"lines": 47,
+			"talkedIn": 5,
+			"episodes": [
+				"Academy",
+				"Stele",
+				"Dosuryu",
+				"Pyongyang I",
+				"Yeon Gesomun†"
+			],
+			"years": [
+				641,
+				665
+			],
+			"events": 2,
+			"interrupts": 10,
+			"questions": 10,
+			"shortLines": 25,
+			"aiisms": 0,
+			"telegrams": 1,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-namseng-namgun": {
+			"score": 41,
+			"raw": 67,
+			"expected": 40,
+			"status": "appropriate",
+			"minEpisodes": 7,
+			"links": [
+				{
+					"title": "Academy",
+					"kind": "talk"
+				},
+				{
+					"title": "Stele",
+					"kind": "talk"
+				},
+				{
+					"title": "Stallion Mountain",
+					"kind": "talk"
+				},
+				{
+					"title": "Pyongyang I",
+					"kind": "together"
+				},
+				{
+					"title": "Brothers’ Coup",
+					"kind": "talk"
+				},
+				{
+					"title": "Pyongyang II",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 14,
+				"talk": 16,
+				"evolution": 12,
+				"grip": 24
+			},
+			"grip": 79,
+			"scenes": 8,
+			"exchanges": 17,
+			"words": 190,
+			"lines": 30,
+			"talkedIn": 4,
+			"episodes": [
+				"Academy",
+				"Stele",
+				"Stallion Mountain",
+				"Pyongyang I",
+				"Brothers’ Coup",
+				"Pyongyang II"
+			],
+			"years": [
+				641,
+				668
+			],
+			"events": 1,
+			"interrupts": 7,
+			"questions": 5,
+			"shortLines": 17,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-euija-yung": {
+			"score": 18,
+			"raw": 46,
+			"expected": 56,
+			"status": "underdeveloped",
+			"minEpisodes": 10,
+			"links": [
+				{
+					"title": "Prince Euija",
+					"kind": "about"
+				},
+				{
+					"title": "King Euija",
+					"kind": "about"
+				},
+				{
+					"title": "Coup",
+					"kind": "talk"
+				},
+				{
+					"title": "Descent",
+					"kind": "about"
+				},
+				{
+					"title": "Sabi",
+					"kind": "about"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 11,
+				"evolution": 7,
+				"grip": 16
+			},
+			"grip": 52,
+			"scenes": 5,
+			"exchanges": 4,
+			"words": 72,
+			"lines": 5,
+			"talkedIn": 1,
+			"episodes": [
+				"Prince Euija",
+				"King Euija",
+				"Coup",
+				"Descent",
+				"Sabi"
+			],
+			"years": [
+				632,
+				660
+			],
+			"events": 2,
+			"interrupts": 0,
+			"questions": 1,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-euija-tae": {
+			"score": 0,
+			"raw": 0,
+			"expected": 13,
+			"status": "underdeveloped",
+			"minEpisodes": 2,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-euija-hyo": {
+			"score": 0,
+			"raw": 5,
+			"expected": 19,
+			"status": "underdeveloped",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Coup",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 1,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [
+				"Coup"
+			],
+			"years": [
+				657,
+				657
+			],
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-euija-yun": {
+			"score": 0,
+			"raw": 0,
+			"expected": 7,
+			"status": "underdeveloped",
+			"minEpisodes": 1,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-euija-pung": {
+			"score": 19,
+			"raw": 46,
+			"expected": 46,
+			"status": "underdeveloped",
+			"minEpisodes": 8,
+			"links": [
+				{
+					"title": "Prince Euija",
+					"kind": "about"
+				},
+				{
+					"title": "Eight Great Clans",
+					"kind": "together"
+				},
+				{
+					"title": "King Euija",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 11,
+				"talk": 10,
+				"evolution": 4,
+				"grip": 22
+			},
+			"grip": 73,
+			"scenes": 4,
+			"exchanges": 2,
+			"words": 69,
+			"lines": 6,
+			"talkedIn": 1,
+			"episodes": [
+				"Prince Euija",
+				"Eight Great Clans",
+				"King Euija"
+			],
+			"years": [
+				632,
+				641
+			],
+			"events": 2,
+			"interrupts": 1,
+			"questions": 1,
+			"shortLines": 3,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-tae-yun": {
+			"score": 0,
+			"raw": 5,
+			"expected": 7,
+			"status": "underdeveloped",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Eight Great Clans",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 1,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [
+				"Eight Great Clans"
+			],
+			"years": [
+				632,
+				632
+			],
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-euija-queensatek": {
+			"score": 0,
+			"raw": 0,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-euija-ungo": {
+			"score": 21,
+			"raw": 49,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Coup",
+					"kind": "talk"
+				},
+				{
+					"title": "Descent",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 17,
+				"evolution": 2,
+				"grip": 21
+			},
+			"grip": 70,
+			"scenes": 3,
+			"exchanges": 22,
+			"words": 204,
+			"lines": 29,
+			"talkedIn": 2,
+			"episodes": [
+				"Coup",
+				"Descent"
+			],
+			"years": [
+				657,
+				657
+			],
+			"events": 0,
+			"interrupts": 3,
+			"questions": 3,
+			"shortLines": 18,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-yung-hyo": {
+			"score": 29,
+			"raw": 57,
+			"expected": 19,
+			"status": "appropriate",
+			"minEpisodes": 3,
+			"links": [
+				{
+					"title": "Eight Great Clans",
+					"kind": "together"
+				},
+				{
+					"title": "Coup",
+					"kind": "talk"
+				},
+				{
+					"title": "Descent",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 14,
+				"evolution": 7,
+				"grip": 24
+			},
+			"grip": 79,
+			"scenes": 5,
+			"exchanges": 10,
+			"words": 122,
+			"lines": 14,
+			"talkedIn": 2,
+			"episodes": [
+				"Eight Great Clans",
+				"Coup",
+				"Descent"
+			],
+			"years": [
+				632,
+				657
+			],
+			"events": 0,
+			"interrupts": 5,
+			"questions": 2,
+			"shortLines": 4,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-tae-hyo": {
+			"score": 17,
+			"raw": 45,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Eight Great Clans",
+					"kind": "talk"
+				},
+				{
+					"title": "Descent",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 10,
+				"evolution": 7,
+				"grip": 21
+			},
+			"grip": 69,
+			"scenes": 2,
+			"exchanges": 3,
+			"words": 51,
+			"lines": 5,
+			"talkedIn": 2,
+			"episodes": [
+				"Eight Great Clans",
+				"Descent"
+			],
+			"years": [
+				632,
+				657
+			],
+			"events": 0,
+			"interrupts": 1,
+			"questions": 1,
+			"shortLines": 1,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-yung-pung": {
+			"score": 2,
+			"raw": 17,
+			"expected": 46,
+			"status": "underdeveloped",
+			"minEpisodes": 8,
+			"links": [
+				{
+					"title": "Prince Euija",
+					"kind": "about"
+				},
+				{
+					"title": "Eight Great Clans",
+					"kind": "about"
+				},
+				{
+					"title": "King Euija",
+					"kind": "about"
+				},
+				{
+					"title": "White River",
+					"kind": "about"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 0,
+				"evolution": 5,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 5,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [
+				"Prince Euija",
+				"Eight Great Clans",
+				"King Euija",
+				"White River"
+			],
+			"years": [
+				632,
+				663
+			],
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-satek-yunbi": {
+			"score": 42,
+			"raw": 67,
+			"expected": 30,
+			"status": "appropriate",
+			"minEpisodes": 5,
+			"links": [
+				{
+					"title": "Prince Euija",
+					"kind": "talk"
+				},
+				{
+					"title": "Eight Great Clans",
+					"kind": "talk"
+				},
+				{
+					"title": "Deer Rock",
+					"kind": "talk"
+				},
+				{
+					"title": "Exile",
+					"kind": "talk"
+				},
+				{
+					"title": "Descent",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 13,
+				"talk": 19,
+				"evolution": 16,
+				"grip": 20
+			},
+			"grip": 66,
+			"scenes": 6,
+			"exchanges": 31,
+			"words": 412,
+			"lines": 57,
+			"talkedIn": 5,
+			"episodes": [
+				"Prince Euija",
+				"Eight Great Clans",
+				"Deer Rock",
+				"Exile",
+				"Descent"
+			],
+			"years": [
+				632,
+				657
+			],
+			"events": 2,
+			"interrupts": 6,
+			"questions": 5,
+			"shortLines": 26,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-jijeok-hana": {
+			"score": 0,
+			"raw": 0,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-jungto-sooyoung": {
+			"score": 0,
+			"raw": 0,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-gesomun-jungto": {
+			"score": 0,
+			"raw": 2,
+			"expected": 13,
+			"status": "underdeveloped",
+			"minEpisodes": 2,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 2,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 2,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-gesomun-sooyoung": {
+			"score": 0,
+			"raw": 1,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 1,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 1,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-jumong-yuri": {
+			"score": 0,
+			"raw": 0,
+			"expected": 7,
+			"status": "underdeveloped",
+			"minEpisodes": 1,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-haemosu-habek": {
+			"score": 0,
+			"raw": 5,
+			"expected": 7,
+			"status": "underdeveloped",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Haemosu",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 1,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [
+				"Haemosu"
+			],
+			"years": [
+				-59,
+				-59
+			],
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-haemosu-haewonmek": {
+			"score": 16,
+			"raw": 44,
+			"expected": 24,
+			"status": "thin",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "Buyeo",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 14,
+				"evolution": 0,
+				"grip": 23
+			},
+			"grip": 77,
+			"scenes": 2,
+			"exchanges": 7,
+			"words": 145,
+			"lines": 22,
+			"talkedIn": 1,
+			"episodes": [
+				"Buyeo"
+			],
+			"years": [
+				-40,
+				-40
+			],
+			"events": 0,
+			"interrupts": 9,
+			"questions": 1,
+			"shortLines": 13,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 2,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-habek-yuhwa": {
+			"score": 9,
+			"raw": 33,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Haemosu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 8,
+				"evolution": 0,
+				"grip": 20
+			},
+			"grip": 67,
+			"scenes": 1,
+			"exchanges": 2,
+			"words": 29,
+			"lines": 5,
+			"talkedIn": 1,
+			"episodes": [
+				"Haemosu"
+			],
+			"years": [
+				-59,
+				-59
+			],
+			"events": 0,
+			"interrupts": 1,
+			"questions": 0,
+			"shortLines": 2,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-hwanin-hwanung": {
+			"score": 0,
+			"raw": 0,
+			"expected": 0,
+			"status": "underdeveloped",
+			"minEpisodes": 0,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-suro-ijinasi": {
+			"score": 26,
+			"raw": 54,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Suro",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 9,
+				"talk": 18,
+				"evolution": 0,
+				"grip": 27
+			},
+			"grip": 91,
+			"scenes": 3,
+			"exchanges": 21,
+			"words": 266,
+			"lines": 38,
+			"talkedIn": 1,
+			"episodes": [
+				"Suro"
+			],
+			"years": [
+				42,
+				42
+			],
+			"events": 0,
+			"interrupts": 18,
+			"questions": 1,
+			"shortLines": 25,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-taizong-gaozong": {
+			"score": 15,
+			"raw": 43,
+			"expected": 40,
+			"status": "underdeveloped",
+			"minEpisodes": 7,
+			"links": [
+				{
+					"title": "Jiabeng (駕崩)",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 7,
+				"evolution": 2,
+				"grip": 29
+			},
+			"grip": 96,
+			"scenes": 1,
+			"exchanges": 1,
+			"words": 29,
+			"lines": 4,
+			"talkedIn": 1,
+			"episodes": [
+				"Jiabeng (駕崩)"
+			],
+			"years": [
+				649,
+				649
+			],
+			"events": 2,
+			"interrupts": 3,
+			"questions": 0,
+			"shortLines": 1,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-seonpum-jayi": {
+			"score": 10,
+			"raw": 35,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Jahee",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 9,
+				"evolution": 0,
+				"grip": 22
+			},
+			"grip": 74,
+			"scenes": 1,
+			"exchanges": 2,
+			"words": 35,
+			"lines": 5,
+			"talkedIn": 1,
+			"episodes": [
+				"Jahee"
+			],
+			"years": [
+				644,
+				644
+			],
+			"events": 0,
+			"interrupts": 1,
+			"questions": 1,
+			"shortLines": 2,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-yushin-gyebek": {
+			"score": 17,
+			"raw": 44,
+			"expected": 85,
+			"status": "underdeveloped",
+			"minEpisodes": 23,
+			"links": [
+				{
+					"title": "Yellow Mountain",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 17,
+				"evolution": 0,
+				"grip": 20
+			},
+			"grip": 68,
+			"scenes": 2,
+			"exchanges": 18,
+			"words": 205,
+			"lines": 29,
+			"talkedIn": 1,
+			"episodes": [
+				"Yellow Mountain"
+			],
+			"years": [
+				660,
+				660
+			],
+			"events": 0,
+			"interrupts": 3,
+			"questions": 3,
+			"shortLines": 15,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:18"
+		},
+		"rel-gesomun-yangmanchun": {
+			"score": 0,
+			"raw": 0,
+			"expected": 13,
+			"status": "underdeveloped",
+			"minEpisodes": 2,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-17 19:00"
+		},
+		"rel-chunchu-ongunhae": {
+			"score": 17,
+			"raw": 45,
+			"expected": 7,
+			"status": "appropriate",
+			"minEpisodes": 1,
+			"links": [
+				{
+					"title": "Huangdi (皇帝)",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 13,
+				"evolution": 0,
+				"grip": 27
+			},
+			"grip": 91,
+			"scenes": 1,
+			"exchanges": 7,
+			"words": 103,
+			"lines": 13,
+			"talkedIn": 1,
+			"episodes": [
+				"Huangdi (皇帝)"
+			],
+			"years": [
+				648,
+				648
+			],
+			"events": 0,
+			"interrupts": 6,
+			"questions": 1,
+			"shortLines": 8,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-kingmu-euija": {
+			"score": 30,
+			"raw": 58,
+			"expected": 24,
+			"status": "appropriate",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "Prince Euija",
+					"kind": "talk"
+				},
+				{
+					"title": "Eight Great Clans",
+					"kind": "talk"
+				},
+				{
+					"title": "Deer Rock",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 14,
+				"talk": 18,
+				"evolution": 6,
+				"grip": 20
+			},
+			"grip": 67,
+			"scenes": 7,
+			"exchanges": 19,
+			"words": 453,
+			"lines": 50,
+			"talkedIn": 3,
+			"episodes": [
+				"Prince Euija",
+				"Eight Great Clans",
+				"Deer Rock"
+			],
+			"years": [
+				632,
+				632
+			],
+			"events": 2,
+			"interrupts": 5,
+			"questions": 7,
+			"shortLines": 22,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-munmu-gotaso": {
+			"score": 35,
+			"raw": 62,
+			"expected": 35,
+			"status": "appropriate",
+			"minEpisodes": 6,
+			"links": [
+				{
+					"title": "Queen Sunduk",
+					"kind": "talk"
+				},
+				{
+					"title": "Bupmin",
+					"kind": "talk"
+				},
+				{
+					"title": "Gotaso",
+					"kind": "talk"
+				},
+				{
+					"title": "Pumsuk",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 13,
+				"talk": 16,
+				"evolution": 11,
+				"grip": 23
+			},
+			"grip": 75,
+			"scenes": 6,
+			"exchanges": 18,
+			"words": 172,
+			"lines": 31,
+			"talkedIn": 4,
+			"episodes": [
+				"Queen Sunduk",
+				"Bupmin",
+				"Gotaso",
+				"Pumsuk"
+			],
+			"years": [
+				632,
+				641
+			],
+			"events": 2,
+			"interrupts": 5,
+			"questions": 6,
+			"shortLines": 20,
+			"aiisms": 0,
+			"telegrams": 1,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-19 17:05"
+		},
+		"rel-seohyeon-yushin": {
+			"score": 52,
+			"raw": 75,
+			"expected": 35,
+			"status": "appropriate",
+			"minEpisodes": 6,
+			"links": [
+				{
+					"title": "Munhee",
+					"kind": "talk"
+				},
+				{
+					"title": "Nangbi",
+					"kind": "talk"
+				},
+				{
+					"title": "Jeon (轉)",
+					"kind": "talk"
+				},
+				{
+					"title": "Seohyun",
+					"kind": "talk"
+				},
+				{
+					"title": "Gyul (結)",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 15,
+				"talk": 21,
+				"evolution": 16,
+				"grip": 23
+			},
+			"grip": 76,
+			"scenes": 9,
+			"exchanges": 49,
+			"words": 588,
+			"lines": 89,
+			"talkedIn": 5,
+			"episodes": [
+				"Munhee",
+				"Nangbi",
+				"Jeon (轉)",
+				"Seohyun",
+				"Gyul (結)"
+			],
+			"years": [
+				593,
+				647
+			],
+			"events": 2,
+			"interrupts": 18,
+			"questions": 6,
+			"shortLines": 58,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-22 05:08"
+		},
+		"rel-seohyeon-manmyung": {
+			"score": 35,
+			"raw": 62,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Seohyun",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 14,
+				"talk": 22,
+				"evolution": 4,
+				"grip": 23
+			},
+			"grip": 76,
+			"scenes": 7,
+			"exchanges": 54,
+			"words": 686,
+			"lines": 94,
+			"talkedIn": 1,
+			"episodes": [
+				"Seohyun"
+			],
+			"years": [
+				593,
+				593
+			],
+			"events": 4,
+			"interrupts": 23,
+			"questions": 10,
+			"shortLines": 50,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-21 18:10"
+		},
+		"rel-sukwon-bidam": {
+			"score": 16,
+			"raw": 44,
+			"expected": 13,
+			"status": "appropriate",
+			"minEpisodes": 2,
+			"links": [
+				{
+					"title": "Gi (起)",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 5,
+				"talk": 13,
+				"evolution": 3,
+				"grip": 23
+			},
+			"grip": 76,
+			"scenes": 1,
+			"exchanges": 5,
+			"words": 178,
+			"lines": 16,
+			"talkedIn": 1,
+			"episodes": [
+				"Gi (起)"
+			],
+			"years": [
+				645,
+				645
+			],
+			"events": 3,
+			"interrupts": 9,
+			"questions": 0,
+			"shortLines": 6,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 2,
+			"flagged": [],
+			"updated": "2026-10-22 05:08"
+		},
+		"rel-yongsu-chunchu": {
+			"score": 58,
+			"raw": 78,
+			"expected": 46,
+			"status": "appropriate",
+			"minEpisodes": 8,
+			"links": [
+				{
+					"title": "Harmony Council",
+					"kind": "talk"
+				},
+				{
+					"title": "Munhee",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "talk"
+				},
+				{
+					"title": "Bihyung",
+					"kind": "talk"
+				},
+				{
+					"title": "Yongsu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 17,
+				"talk": 22,
+				"evolution": 19,
+				"grip": 20
+			},
+			"grip": 67,
+			"scenes": 13,
+			"exchanges": 47,
+			"words": 984,
+			"lines": 106,
+			"talkedIn": 6,
+			"episodes": [
+				"Harmony Council",
+				"Munhee",
+				"The Eastern Star",
+				"Royal Secretariat",
+				"Bihyung",
+				"Yongsu"
+			],
+			"years": [
+				576,
+				651
+			],
+			"events": 3,
+			"interrupts": 17,
+			"questions": 8,
+			"shortLines": 46,
+			"aiisms": 0,
+			"telegrams": 1,
+			"speeches": 1,
+			"flagged": [],
+			"updated": "2026-10-22 05:08"
+		},
+		"rel-sunduk-chunchu": {
+			"score": 34,
+			"raw": 61,
+			"expected": 80,
+			"status": "underdeveloped",
+			"minEpisodes": 15,
+			"links": [
+				{
+					"title": "Harmony Council",
+					"kind": "talk"
+				},
+				{
+					"title": "Gotaso",
+					"kind": "talk"
+				},
+				{
+					"title": "Munhee",
+					"kind": "together"
+				},
+				{
+					"title": "Chunchu & Yeon",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 14,
+				"evolution": 12,
+				"grip": 24
+			},
+			"grip": 79,
+			"scenes": 5,
+			"exchanges": 9,
+			"words": 141,
+			"lines": 19,
+			"talkedIn": 3,
+			"episodes": [
+				"Harmony Council",
+				"Gotaso",
+				"Munhee",
+				"Chunchu & Yeon",
+				"The Eastern Star"
+			],
+			"years": [
+				625,
+				642
+			],
+			"events": 3,
+			"interrupts": 6,
+			"questions": 2,
+			"shortLines": 9,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:10"
+		},
+		"rel-chunmyung-chunchu": {
+			"score": 29,
+			"raw": 57,
+			"expected": 56,
+			"status": "thin",
+			"minEpisodes": 10,
+			"links": [
+				{
+					"title": "Siege of Daeya",
+					"kind": "talk"
+				},
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "talk"
+				},
+				{
+					"title": "Bihyung",
+					"kind": "together"
+				},
+				{
+					"title": "Yongsu",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 12,
+				"talk": 14,
+				"evolution": 11,
+				"grip": 20
+			},
+			"grip": 68,
+			"scenes": 5,
+			"exchanges": 8,
+			"words": 129,
+			"lines": 18,
+			"talkedIn": 3,
+			"episodes": [
+				"Siege of Daeya",
+				"The Eastern Star",
+				"Royal Secretariat",
+				"Bihyung",
+				"Yongsu"
+			],
+			"years": [
+				576,
+				651
+			],
+			"events": 2,
+			"interrupts": 3,
+			"questions": 0,
+			"shortLines": 9,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-22 05:08"
+		},
+		"rel-jinheung-sukhuljong": {
+			"score": 14,
+			"raw": 41,
+			"expected": 24,
+			"status": "thin",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "Jinhung, the Cloud",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 9,
+				"evolution": 3,
+				"grip": 21
+			},
+			"grip": 70,
+			"scenes": 2,
+			"exchanges": 3,
+			"words": 33,
+			"lines": 10,
+			"talkedIn": 1,
+			"episodes": [
+				"Jinhung, the Cloud"
+			],
+			"years": [
+				540,
+				540
+			],
+			"events": 3,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 10,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:10"
+		},
+		"rel-jinheung-sadaham": {
+			"score": 25,
+			"raw": 54,
+			"expected": 24,
+			"status": "appropriate",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "Jinhung, the Cloud",
+					"kind": "talk"
+				},
+				{
+					"title": "Sadaham",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 11,
+				"talk": 13,
+				"evolution": 9,
+				"grip": 21
+			},
+			"grip": 70,
+			"scenes": 4,
+			"exchanges": 7,
+			"words": 84,
+			"lines": 16,
+			"talkedIn": 2,
+			"episodes": [
+				"Jinhung, the Cloud",
+				"Sadaham"
+			],
+			"years": [
+				540,
+				560
+			],
+			"events": 2,
+			"interrupts": 1,
+			"questions": 1,
+			"shortLines": 12,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:23"
+		},
+		"rel-chunmyung-yongsu": {
+			"score": 63,
+			"raw": 81,
+			"expected": 46,
+			"status": "appropriate",
+			"minEpisodes": 8,
+			"links": [
+				{
+					"title": "The Eastern Star",
+					"kind": "talk"
+				},
+				{
+					"title": "Royal Secretariat",
+					"kind": "talk"
+				},
+				{
+					"title": "Bihyung",
+					"kind": "talk"
+				},
+				{
+					"title": "Yongsu",
+					"kind": "talk"
+				},
+				{
+					"title": "King Muyeol",
+					"kind": "talk"
+				},
+				{
+					"title": "Munmu",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 18,
+				"talk": 23,
+				"evolution": 19,
+				"grip": 21
+			},
+			"grip": 70,
+			"scenes": 15,
+			"exchanges": 74,
+			"words": 999,
+			"lines": 138,
+			"talkedIn": 6,
+			"episodes": [
+				"The Eastern Star",
+				"Royal Secretariat",
+				"Bihyung",
+				"Yongsu",
+				"King Muyeol",
+				"Munmu"
+			],
+			"years": [
+				576,
+				673
+			],
+			"events": 3,
+			"interrupts": 25,
+			"questions": 3,
+			"shortLines": 76,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-22 05:08"
+		},
+		"rel-seohyeon-yongsu": {
+			"score": 0,
+			"raw": 0,
+			"expected": 35,
+			"status": "underdeveloped",
+			"minEpisodes": 6,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 0,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 0,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:10"
+		},
+		"rel-sukhuljong-seohyeon": {
+			"score": 2,
+			"raw": 16,
+			"expected": 24,
+			"status": "underdeveloped",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "Seohyun",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 7,
+				"evolution": 2,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 2,
+			"exchanges": 1,
+			"words": 23,
+			"lines": 2,
+			"talkedIn": 1,
+			"episodes": [
+				"Seohyun"
+			],
+			"years": [
+				593,
+				593
+			],
+			"events": 2,
+			"interrupts": 1,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:10"
+		},
+		"rel-jinheung-muryuk": {
+			"score": 2,
+			"raw": 17,
+			"expected": 24,
+			"status": "underdeveloped",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "Jinhung, the Cloud",
+					"kind": "talk"
+				},
+				{
+					"title": "Gwansan",
+					"kind": "together"
+				}
+			],
+			"parts": {
+				"presence": 7,
+				"talk": 5,
+				"evolution": 5,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 2,
+			"exchanges": 1,
+			"words": 5,
+			"lines": 3,
+			"talkedIn": 1,
+			"episodes": [
+				"Jinhung, the Cloud",
+				"Gwansan"
+			],
+			"years": [
+				540,
+				553
+			],
+			"events": 2,
+			"interrupts": 1,
+			"questions": 0,
+			"shortLines": 3,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:11"
+		},
+		"rel-sadaham-muryuk": {
+			"score": 38,
+			"raw": 64,
+			"expected": 24,
+			"status": "appropriate",
+			"minEpisodes": 4,
+			"links": [
+				{
+					"title": "Sadaham",
+					"kind": "talk"
+				},
+				{
+					"title": "Muryuk",
+					"kind": "talk"
+				},
+				{
+					"title": "Seohyun",
+					"kind": "talk"
+				}
+			],
+			"parts": {
+				"presence": 13,
+				"talk": 21,
+				"evolution": 9,
+				"grip": 21
+			},
+			"grip": 70,
+			"scenes": 6,
+			"exchanges": 54,
+			"words": 614,
+			"lines": 82,
+			"talkedIn": 3,
+			"episodes": [
+				"Sadaham",
+				"Muryuk",
+				"Seohyun"
+			],
+			"years": [
+				532,
+				593
+			],
+			"events": 0,
+			"interrupts": 6,
+			"questions": 14,
+			"shortLines": 48,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 19:06"
+		},
+		"rel-sadaham-mishil": {
+			"score": 0,
+			"raw": 2,
+			"expected": 7,
+			"status": "underdeveloped",
+			"minEpisodes": 1,
+			"links": [],
+			"parts": {
+				"presence": 0,
+				"talk": 0,
+				"evolution": 2,
+				"grip": 0
+			},
+			"grip": null,
+			"scenes": 0,
+			"exchanges": 0,
+			"words": 0,
+			"lines": 0,
+			"talkedIn": 0,
+			"episodes": [],
+			"years": null,
+			"events": 2,
+			"interrupts": 0,
+			"questions": 0,
+			"shortLines": 0,
+			"aiisms": 0,
+			"telegrams": 0,
+			"speeches": 0,
+			"flagged": [],
+			"updated": "2026-10-21 18:23"
+		}
+	}
+}

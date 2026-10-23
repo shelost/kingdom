@@ -142,17 +142,12 @@ export async function deleteGalleryItems(items: GalleryDeleteItem[]): Promise<Ga
 }
 
 /**
- * Confirm, then permanently delete one cue or orphan still.
+ * Permanently delete one cue (its slot and art files) or orphan still, no questions asked.
  * Returns true when the server accepted the delete.
  */
 export async function permanentlyDeleteImage(item: GalleryDeleteItem): Promise<boolean> {
 	const id = item.kind === 'cue' ? item.slotId : item.id;
 	if (!browser || !id || editUi.busyId) return false;
-	const what =
-		item.kind === 'cue'
-			? 'Removes the cue from story.json and deletes its art files on disk.'
-			: 'Deletes this unattached file from disk.';
-	if (!window.confirm(`Permanently delete “${id}”?\n\n${what}`)) return false;
 
 	editUi.busyId = id;
 	rememberReadingScroll();

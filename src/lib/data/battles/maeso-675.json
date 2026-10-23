@@ -203,7 +203,7 @@
 				120,
 				520
 			],
-			"label": "to Cheon Fortress",
+			"label": "to Chun Fortress",
 			"ko": "천성으로"
 		}
 	],
@@ -604,5 +604,6 @@
 		"New Book of Tang 220, Silla; 110, Biography of Li Jinxing"
 	],
 	"note": "Figures from the Samguk Sagi: two hundred thousand under Li Jinxing, and on the twenty-ninth day of the ninth month 30,380 war-horses and weapons to match. Historians read the two hundred thousand as Silla counting generously; forty thousand is a common modern estimate. The split between Li Jinxing and the Mohe camp is the map’s, and neither side’s losses are recorded. The raid on the picket lines is the story’s; the record only says Silla attacked and won. Dots count men, so the herd is an arrow. The Tang histories record three Tang victories here and a Silla apology, earlier in the year. The site follows Daejeon-ri fortress in Yeoncheon; others put Maeso at Daemo fortress in Yangju.",
-	"noteKo": "숫자는 『삼국사기』를 따랐다. 이근행의 이십만, 그리고 구월 스무아흐렛날 얻은 전마 30,380필과 그만한 병장기. 이십만은 신라가 후하게 센 숫자로 보는 것이 보통이고, 현대에는 사만 안팎으로 추정하기도 한다. 이근행과 말갈 진영을 둘로 나눈 것은 지도의 선택이고, 양쪽의 손실은 기록에 없다. 말뚝 줄 습격은 이야기의 것이고, 기록은 신라가 쳐서 이겼다고만 한다. 점은 사람을 세므로 말 떼는 화살표로 그렸다. 당의 사서는 그해 앞쪽에 당이 세 번 이기고 신라가 사죄했다고 적는다. 위치는 연천 대전리산성설을 따랐다. 양주 대모산성으로 보는 견해도 있다."
+	"noteKo": "숫자는 『삼국사기』를 따랐다. 이근행의 이십만, 그리고 구월 스무아흐렛날 얻은 전마 30,380필과 그만한 병장기. 이십만은 신라가 후하게 센 숫자로 보는 것이 보통이고, 현대에는 사만 안팎으로 추정하기도 한다. 이근행과 말갈 진영을 둘로 나눈 것은 지도의 선택이고, 양쪽의 손실은 기록에 없다. 말뚝 줄 습격은 이야기의 것이고, 기록은 신라가 쳐서 이겼다고만 한다. 점은 사람을 세므로 말 떼는 화살표로 그렸다. 당의 사서는 그해 앞쪽에 당이 세 번 이기고 신라가 사죄했다고 적는다. 위치는 연천 대전리산성설을 따랐다. 양주 대모산성으로 보는 견해도 있다.",
+	"winner": "silla"
 }

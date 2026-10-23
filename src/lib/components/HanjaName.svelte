@@ -15,6 +15,10 @@
 
 	let note = $derived(reading.lang === 'ko' ? (block.noteKo ?? block.note) : block.note);
 	let noteSub = $derived(reading.lang === 'both' ? block.noteKo : undefined);
+	/** Native words: whole Hangul words per cell, brushed smaller so a three-syllable word fits. */
+	let words = $derived(block.tab === 'words');
+	let tab = $derived(words ? ['우리말', 'Words'] : ['이름', 'Name']);
+	let glyphSize = $derived(words ? 'clamp(3.25rem, 10vw, 4.5rem)' : 'clamp(5rem, 16vw, 6.75rem)');
 
 	const start = onceInView(() => {
 		turn = 0;
@@ -28,19 +32,14 @@
 
 <figure class="hanja-name ink-plate" {@attach start}>
 	<Material kind="paper" />
-	<span class="plate-tab">{reading.lang === 'en' ? 'Name' : '이름 · Name'}</span>
+	<span class="plate-tab">{reading.lang === 'en' ? tab[1] : `${tab[0]} · ${tab[1]}`}</span>
 	<div class="chars">
 		{#each block.chars as c, i (i)}
-			<div class="cell" class:done={written[i]}>
-				<BrushGlyphs
-					text={c.char}
-					size="clamp(5rem, 16vw, 6.75rem)"
-					grid
-					play={turn >= i}
-					ondone={() => finished(i)}
-				/>
-				<span class="gloss" lang="ko">{c.gloss}</span>
+			<div class="cell" class:done={written[i]} class:word={words}>
+				<BrushGlyphs text={c.char} size={glyphSize} grid play={turn >= i} ondone={() => finished(i)} />
+				<span class="gloss" lang={words ? undefined : 'ko'}>{c.gloss}</span>
 				{#if c.meaning && reading.lang !== 'ko'}<span class="meaning">{c.meaning}</span>{/if}
+				{#if c.meaningKo && reading.lang !== 'en'}<span class="meaning" lang="ko">{c.meaningKo}</span>{/if}
 			</div>
 		{/each}
 	</div>
@@ -74,6 +73,10 @@
 		justify-items: center;
 		gap: 0.3rem;
 		max-width: 8rem;
+	}
+
+	.cell.word {
+		max-width: 16rem;
 	}
 
 	.gloss,

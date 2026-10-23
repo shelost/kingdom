@@ -64,7 +64,7 @@ export const WIDGET_TYPES: WidgetType[] = [
 	{ kind: 'place', label: 'Place card', ko: '장소 카드', group: 'places', describe: 'A location’s first appearance: its hanja brushed in a column beside its picture and name.' },
 	{ kind: 'map', label: 'Map excerpt', ko: '지도', group: 'maps', describe: 'A crop of the border map in a given year, with routes and an optional sweep through time.' },
 	{ kind: 'battle', label: 'Battle map', ko: '전투 지도', group: 'maps', describe: 'A battlefield phase by phase from the records: terrain, arrows, and troops as moving dots, one per thousand men.' },
-	{ kind: 'hanja', label: 'Name in hanja', ko: '한자 이름', group: 'classics', describe: 'A name written character by character, stroke order animated, with each gloss.' },
+	{ kind: 'hanja', label: 'Name in hanja', ko: '한자 이름', group: 'classics', describe: 'A name written character by character, stroke order animated, with each gloss. In words mode, native Hangul words with their readings and senses.' },
 	{ kind: 'term', label: 'Term', ko: '용어', group: 'classics', describe: 'A word the narrator stops to explain: brushed hanja, reading, gloss.' },
 	{ kind: 'chengyu', label: 'Idiom', ko: '고사성어', group: 'classics', describe: 'A four-character idiom brushed in ink, its readings, its source, and the story behind it.' },
 	{ kind: 'poem', label: 'Poem', ko: '시', group: 'classics', describe: 'A poem on xuan paper in vertical columns; an answering poem replies from the other side.' },
@@ -242,7 +242,7 @@ export function widgetSearchText(b: Block): string[] {
 		case 'card':
 			return some(b.write, b.sub, b.role, b.caption, b.ko);
 		case 'hanja':
-			return some(b.chars.map((c) => c.char).join(''), b.name, b.ko, b.note, b.noteKo, ...b.chars.flatMap((c) => [c.gloss, c.meaning]));
+			return some(b.chars.map((c) => c.char).join(''), b.name, b.ko, b.note, b.noteKo, ...b.chars.flatMap((c) => [c.gloss, c.meaning, c.meaningKo]));
 		case 'term':
 			return some(b.hanja, b.reading, b.term, b.html, b.ko);
 		case 'map':

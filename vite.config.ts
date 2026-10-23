@@ -1,13 +1,22 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { sveltekit } from '@sveltejs/kit/vite';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import { compactStoryJson } from './vite-plugin-story-json.ts';
 import { staticAssetHmr } from './vite-plugin-static-hmr.ts';
+
+const tweakpaneShim = fileURLToPath(new URL('./src/lib/shims/tweakpane.js', import.meta.url));
 
 export default defineConfig({
 	ssr: {
 		// Vercel Node treats gsap/Flip as CJS. A named import crashes every page.
 		noExternal: ['gsap']
+	},
+	resolve: {
+		alias: {
+			// tweakpane@3 is UMD; three-perf (via @threlte/extras) expects `export { Pane }`.
+			tweakpane: tweakpaneShim
+		}
 	},
 	optimizeDeps: {
 		// Threlte ships Svelte components; pre-bundled, it carries a second Svelte runtime and the canvas never mounts.

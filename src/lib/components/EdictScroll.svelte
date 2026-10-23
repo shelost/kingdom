@@ -376,7 +376,7 @@
 		}
 	}
 
-	@media (max-width: 560px) {
+	@container prose (max-width: 560px) {
 		.silk {
 			padding: 1.4rem 1rem;
 		}

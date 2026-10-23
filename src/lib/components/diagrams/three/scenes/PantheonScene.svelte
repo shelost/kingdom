@@ -1,9 +1,9 @@
 <script lang="ts">
 	/**
-	 * The pantheon as tiers: Hwanin's tall plinth at the back, the three realm
+	 * The pantheon as tiers: Hannim's tall plinth at the back, the three realm
 	 * heads a step lower, their courts lower still and nearer. Each realm
 	 * keeps its colour (Dead blue, Living red, West Field green). `realm`
-	 * narrows it to one column, Hwanin's mandate line, or Tamla's shrine gods;
+	 * narrows it to one column, Hannim's mandate line, or Tamla's shrine gods;
 	 * 'realms' shows the heads only.
 	 */
 	import KitTree from '../KitTree.svelte';
@@ -40,7 +40,7 @@
 	const items = $derived.by((): God[] => {
 		if (focus === 'heaven')
 			return [
-				{ id: 'hwanin', ko: '환인', en: 'Creator', realm: 'creator' },
+				{ id: 'hwanin', ko: '한님', en: 'Creator', realm: 'creator' },
 				{ id: 'hwanung', parent: 'hwanin', ko: '환웅', en: 'Hwanung', realm: 'heaven' },
 				{ id: 'dangun', parent: 'hwanung', ko: '단군', en: 'Dangun', realm: 'heaven' }
 			];
@@ -56,7 +56,7 @@
 				}))
 			];
 		const cols = focus ? COLS.filter((c) => c.realm === focus) : COLS;
-		const out: God[] = focus ? [] : [{ id: 'hwanin', ko: '환인', en: 'Creator', realm: 'creator' }];
+		const out: God[] = focus ? [] : [{ id: 'hwanin', ko: '한님', en: 'Creator', realm: 'creator' }];
 		for (const c of cols) {
 			out.push({ id: c.id, parent: focus ? null : 'hwanin', ko: c.ko, en: c.en, realm: c.realm });
 			if (!full) continue;
@@ -99,7 +99,7 @@
 			const c = COLS.find((col) => col.realm === focus)!;
 			return { ko: c.realmKo, en: c.realmEn };
 		}
-		return { ko: '삼계', en: 'Three Realms under Hwanin' };
+		return { ko: '삼계', en: 'Three Realms under Hannim' };
 	});
 </script>
 

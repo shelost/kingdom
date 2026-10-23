@@ -9,7 +9,8 @@
 <script lang="ts">
 	/**
 	 * Silla Hwarang order: 국선 (marshal) centered above six 화랑;
-	 * four 낭도 stacked vertically beneath each hwarang.
+	 * 낭도 stacked beneath each hwarang. The schoolbook draws four;
+	 * the yard lets a band be any size.
 	 */
 	import type { DiagramProps } from './registry';
 	import ChartLabel from './ChartLabel.svelte';
@@ -29,7 +30,7 @@
 	class="dg"
 	class:play={active}
 	role="img"
-	aria-label="Hwarang org chart: Marshal at the apex, six Hwarang in a row, four disciples stacked beneath each"
+	aria-label="Hwarang org chart: Marshal at the apex, six Hwarang in a row, nangdo stacked beneath each"
 >
 	<g class="node marshal" style="--d: 0">
 		<circle cx={MARSHAL.x} cy={MARSHAL.y} r="30" />
@@ -63,7 +64,7 @@
 		{/each}
 	{/each}
 
-	<text class="foot" style="--d: 1200" x={ROW_MID} y="348">6 화랑 · 24 낭도</text>
+	<text class="foot" style="--d: 1200" x={ROW_MID} y="348">6 화랑 · 낭도는 따르는 사람</text>
 </svg>
 	{/snippet}
 </KitStage>

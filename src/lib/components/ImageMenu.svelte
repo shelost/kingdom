@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import { editUi } from '$lib/editUi.svelte';
-	import { closeImageMenu, imageMenu, onEditImageContextMenu } from '$lib/imageMenu.svelte';
+	import { CUE_SHAPES, closeImageMenu, imageMenu, onEditImageContextMenu } from '$lib/imageMenu.svelte';
 	import { ensureStars, isStarred, starUi, toggleStar } from '$lib/imageStarsUi.svelte';
 
-	const MENU_W = 184;
-	const MENU_H = 190;
+	const MENU_W = 220;
+	const MENU_H = 520;
 
 	let vw = $state(0);
 	let vh = $state(0);
@@ -23,7 +23,7 @@
 		closeImageMenu();
 	}
 
-	/** Close first, then run — the action may confirm or alert. */
+	/** Close first, then run — the action may alert. */
 	function run(action: (() => unknown) | undefined) {
 		closeImageMenu();
 		void action?.();
@@ -79,7 +79,7 @@
 		style:top="{top}px"
 		style:right="auto"
 		style:bottom="auto"
-		style:width="11.5rem"
+		style:width="13.5rem"
 		style:height="max-content"
 		{@attach surface}
 		oncontextmenu={(e) => e.preventDefault()}
@@ -105,6 +105,111 @@
 			<span class="glyph" aria-hidden="true">{target.isThumbnail ? '✓' : '▭'}</span>
 			{target.isThumbnail ? 'Episode thumbnail' : 'Set as thumbnail'}
 		</button>
+		{#if target.poster}
+			<button
+				type="button"
+				role="menuitem"
+				class:current={target.isPoster}
+				disabled={target.isPoster || !!editUi.busyId}
+				onclick={() => run(target?.poster)}
+			>
+				<span class="glyph" aria-hidden="true">{target.isPoster ? '✓' : '▭'}</span>
+				{target.isPoster ? 'This poster' : 'Set as poster'}
+			</button>
+		{/if}
+		{#if target.setShape}
+			<p class="label">Shape</p>
+			<div class="shapes" role="group" aria-label="Shape">
+				{#each CUE_SHAPES as shape (shape.label)}
+					<button
+						type="button"
+						class="chip"
+						class:current={target.crop != null && Math.abs(target.crop - (shape.ratio ?? 0)) < 0.04}
+						disabled={!!editUi.busyId}
+						onclick={() => {
+							const set = target?.setShape;
+							const ratio = shape.ratio;
+							run(() => set?.(ratio));
+						}}
+					>
+						{shape.label}
+					</button>
+				{/each}
+			</div>
+		{/if}
+		<p class="label">Grid</p>
+		<button
+			type="button"
+			role="menuitem"
+			class:current={target.wide}
+			disabled={!target.toggleWide || !!editUi.busyId}
+			onclick={() => run(target?.toggleWide)}
+		>
+			<span class="glyph" aria-hidden="true">{target.wide ? '✓' : '↔'}</span>
+			Full width
+		</button>
+		{#if target.pair}
+			<button type="button" role="menuitem" disabled={!!editUi.busyId} onclick={() => run(target?.pair)}>
+				<span class="glyph" aria-hidden="true">⊞</span>
+				Back in the grid
+			</button>
+		{/if}
+		{#if target.setBalloon}
+			<p class="label">Balloon</p>
+			<button
+				type="button"
+				role="menuitem"
+				class:current={target.balloon === 'on'}
+				disabled={!!editUi.busyId}
+				onclick={() => {
+					const set = target?.setBalloon;
+					run(() => set?.('on'));
+				}}
+			>
+				<span class="glyph" aria-hidden="true">{target.balloon === 'on' ? '✓' : '💬'}</span>
+				Comic bubble
+			</button>
+			<button type="button" role="menuitem" disabled={!!editUi.busyId} onclick={() => {
+				const set = target?.setBalloon;
+				run(() => set?.('edit'));
+			}}>
+				<span class="glyph" aria-hidden="true">✎</span>
+				Edit bubble
+			</button>
+			<button
+				type="button"
+				role="menuitem"
+				class:current={target.balloon === 'off'}
+				disabled={!!editUi.busyId || target.balloon === 'off'}
+				onclick={() => {
+					const set = target?.setBalloon;
+					run(() => set?.('off'));
+				}}
+			>
+				<span class="glyph" aria-hidden="true">{target.balloon === 'off' ? '✓' : '◌'}</span>
+				No bubble
+			</button>
+		{/if}
+		<button
+			type="button"
+			role="menuitem"
+			disabled={!target.move || !!editUi.busyId}
+			onclick={() => run(target?.move)}
+		>
+			<span class="glyph" aria-hidden="true">↕</span>
+			Move…
+		</button>
+		{#if target.resetCrop}
+			<button
+				type="button"
+				role="menuitem"
+				disabled={!!editUi.busyId}
+				onclick={() => run(target?.resetCrop)}
+			>
+				<span class="glyph" aria-hidden="true">⤢</span>
+				Original shape
+			</button>
+		{/if}
 		<button
 			type="button"
 			role="menuitem"
@@ -218,5 +323,18 @@
 		padding: 0.15rem 0.5rem 0.3rem;
 		font-size: 0.6rem;
 		color: color-mix(in srgb, var(--fg) 45%, transparent);
+	}
+
+	.shapes {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		padding: 0 0.35rem 0.3rem;
+	}
+
+	.chip {
+		width: auto;
+		padding: 0.28rem 0.45rem;
+		font-size: 0.68rem;
 	}
 </style>

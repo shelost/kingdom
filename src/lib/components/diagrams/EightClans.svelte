@@ -3,7 +3,7 @@
 		{ ko: '사택', en: 'Satek', satek: true as const },
 		{ ko: '진모', en: 'Jinmo' },
 		{ ko: '해', en: 'Hae' },
-		{ ko: '백', en: 'Baek' }
+		{ ko: '백', en: 'Bek' }
 	];
 
 	export const RIGHT = [

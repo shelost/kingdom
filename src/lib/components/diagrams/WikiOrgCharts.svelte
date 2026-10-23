@@ -49,7 +49,7 @@
 	{#if Diagram}
 		<figure class="diagram" {@attach play}>
 			{#if chart.title}<figcaption class="dg-title">{chart.title}</figcaption>{/if}
-			<div class="dg-canvas">
+			<div class="dg-canvas" class:wide={chart.step === 'house'}>
 				<Diagram step={chart.step} realm={chart.realm} {active} />
 			</div>
 			{#if chart.ko || chart.caption}
@@ -95,10 +95,18 @@
 		margin: 0 auto;
 	}
 
+	.dg-canvas.wide {
+		max-width: 80rem;
+	}
+
 	.dg-canvas :global(svg) {
 		display: block;
 		width: 100%;
 		height: auto;
+	}
+
+	.dg-canvas.wide :global(svg) {
+		width: max(100%, 72rem);
 	}
 
 	.dg-caption {

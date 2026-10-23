@@ -1,6 +1,6 @@
 <script lang="ts">
 	/**
-	 * The mandate coming down: Hwanin's sky slab high at the back, Hwanung
+	 * The mandate coming down: Hannim's sky slab high at the back, Hwanung
 	 * lower, Dangun standing on the ground, Asadal laid flat at the front.
 	 * One gold beam carries it down, step by step.
 	 */

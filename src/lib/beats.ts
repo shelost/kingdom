@@ -1,4 +1,4 @@
-import type { Block, Entry, ImageSlot } from '$lib/story';
+import { isPlate, type Block, type Entry, type ImageSlot } from '$lib/story';
 import { widgetText } from '$lib/widgets';
 
 /**
@@ -9,9 +9,10 @@ import { widgetText } from '$lib/widgets';
  * the art, so text and image always start level and can never overlap. Several
  * images sharing an anchor simply stack inside that row.
  *
- * `day` / `scene` plates also force a cut: TOC jumps land on the plate, so it
- * must not trail the previous scene’s stacked art (same class of bug as
- * flashback art sitting above the mini-band).
+ * `story` / `day` / `scene` plates also force a cut: TOC jumps land on the plate,
+ * so it must not trail the previous scene’s stacked art (same class of bug as
+ * flashback art sitting above the mini-band). A scene right under a story
+ * header rides in the story’s beat, so the two headers read as one.
  */
 export interface Beat {
 	blocks: Block[];
@@ -30,7 +31,7 @@ function textOf(b: Block): string {
 		case 'dialogue':
 			return [...b.lines, ...(b.en ?? [])].join(' ');
 		case 'verse':
-			return b.lines.join(' ');
+			return [...b.lines, ...(b.en ?? [])].join(' ');
 		case 'hanja':
 			return b.chars.map((c) => c.char + c.gloss).join(' ') + ' ' + [b.name, b.note, b.after].filter(Boolean).join(' ');
 		case 'map':
@@ -53,12 +54,63 @@ function textOf(b: Block): string {
 			return [b.title, b.caption, b.ko].filter(Boolean).join(' ');
 		case 'day':
 		case 'scene':
+		case 'story':
 			return [b.label, b.ko].filter(Boolean).join(' ');
 		case 'formation':
 			return [b.title, b.note].filter(Boolean).join(' ');
 		default:
 			return widgetText(b);
 	}
+}
+
+/** Index of the first block an `at` fragment lands on, or -1. */
+function anchoredIndex(blocks: Block[], at: string): number {
+	const needle = at.trim().toLowerCase();
+	return blocks.findIndex((b) => textOf(b).toLowerCase().includes(needle));
+}
+
+/**
+ * Top-level index of `block` in `blocks`: the block itself, the flashback that
+ * holds it, or (for a filtered copy of the script) the first block with its text.
+ */
+export function blockIndexOf(blocks: Block[], block: Block): number {
+	const holds = (b: Block): boolean => b === block || (b.kind === 'flashback' && b.blocks.some(holds));
+	const i = blocks.findIndex(holds);
+	if (i >= 0) return i;
+	const text = textOf(block);
+	return blocks.findIndex((b) => b.kind === block.kind && textOf(b) === text);
+}
+
+/** Shortest anchor worth writing; shorter phrases drift onto other blocks as the script changes. */
+const MIN_ANCHOR = 14;
+/** Longest phrase tried from any one starting word. */
+const MAX_ANCHOR_WORDS = 14;
+
+/**
+ * An `at` fragment that lands on `blocks[index]` and nothing before it: the
+ * shortest tag-free run of the block's own words, from its opening outward.
+ * Null when every phrase also occurs earlier (a block that repeats one above it).
+ */
+export function anchorFor(blocks: Block[], index: number): string | null {
+	const block = blocks[index];
+	if (!block) return null;
+	const segments = textOf(block)
+		.split(/<[^>]*>/)
+		.map((s) => s.replace(/\s+/g, ' ').trim())
+		.filter((s) => s.length >= 4);
+	for (const seg of segments) {
+		const words = seg.split(' ');
+		for (let start = 0; start < words.length; start++) {
+			const last = Math.min(words.length, start + MAX_ANCHOR_WORDS);
+			for (let end = start + 1; end <= last; end++) {
+				const phrase = words.slice(start, end).join(' ');
+				if (phrase.length < Math.min(MIN_ANCHOR, seg.length)) continue;
+				if (anchoredIndex(blocks, phrase) === index) return phrase;
+			}
+		}
+	}
+	for (const seg of segments) if (anchoredIndex(blocks, seg) === index) return seg;
+	return null;
 }
 
 /** Accepts a full entry or a flashback slice (`blocks` + `images` only). */
@@ -80,8 +132,7 @@ export function buildBeats(entry: Pick<Entry, 'blocks' | 'images'>): Beat[] {
 			opening.push(im);
 			continue;
 		}
-		const needle = im.at.trim().toLowerCase();
-		const i = blocks.findIndex((b) => textOf(b).toLowerCase().includes(needle));
+		const i = anchoredIndex(blocks, im.at);
 		if (i < 0) opening.push(im); // anchor no longer present — keep the art
 		else {
 			const list = anchored.get(i);
@@ -90,11 +141,13 @@ export function buildBeats(entry: Pick<Entry, 'blocks' | 'images'>): Beat[] {
 		}
 	}
 
-	// Day/scene plates always begin a beat so prior-scene art cannot stack above them.
+	// Plates always begin a beat so prior-scene art cannot stack above them.
 	const cutSet = new Set<number>(anchored.keys());
 	for (let i = 0; i < blocks.length; i++) {
-		const b = blocks[i];
-		if (b?.kind === 'day' || b?.kind === 'scene') cutSet.add(i);
+		if (isPlate(blocks[i]) && blocks[i - 1]?.kind !== 'story' && blocks[i - 1]?.kind !== 'section')
+			cutSet.add(i);
+		// A flashback with art rides alone, so its stills interleave with its own blocks.
+		if (blocks[i].kind === 'flashback' && anchored.has(i) && i + 1 < blocks.length) cutSet.add(i + 1);
 	}
 
 	const starts = [...cutSet].sort((a, b) => a - b);

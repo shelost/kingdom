@@ -7,6 +7,7 @@
 	import SpeakerPlate from '$lib/components/SpeakerPlate.svelte';
 	import CinemaStage from '$lib/components/CinemaStage.svelte';
 	import StoryMap from '$lib/components/StoryMap.svelte';
+	import SceneWeather from '$lib/components/SceneWeather.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import {
@@ -63,6 +64,7 @@
      Only one stage is ever live: the plate answers to immersion, the cinema
      stage (Scene / Script / Character / Dialogue grid) to cinema, and script
      mode mounts neither. -->
+<SceneWeather />
 <SpeakerPlate />
 <CinemaStage />
 <StoryMap />

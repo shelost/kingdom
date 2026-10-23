@@ -48,7 +48,7 @@
 		<Material kind="paper" />
 		{#if block.title}<figcaption class="comic-caption">{block.title}</figcaption>{/if}
 		<div class="dg-canvas">
-			<Diagram step={block.step} realm={block.realm} cast={block.cast} {year} {active} />
+			<Diagram step={block.step} realm={block.realm} cast={block.cast} diagram={block.diagram} {year} {active} />
 		</div>
 		{#if showEn || showKo}
 			<p class="dg-caption">

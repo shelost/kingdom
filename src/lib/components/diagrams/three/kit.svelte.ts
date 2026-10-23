@@ -478,14 +478,18 @@ export function hasWebGL(): boolean {
 	return webgl;
 }
 
-/** Reader zoom on a diagram: `k` ≥ 1, pan `x`/`y` in fractions of the fitted half-frame (right / up). */
+/**
+ * Reader zoom on a diagram: `k` ≥ 1, pan `x`/`y` in fractions of the fitted half-frame
+ * (right / up), and `r` radians of spin about the vertical axis (orbit stages only).
+ */
 export interface Zoom {
 	k: number;
 	x: number;
 	y: number;
+	r: number;
 }
 
-export const NO_ZOOM: Zoom = { k: 1, x: 0, y: 0 };
+export const NO_ZOOM: Zoom = { k: 1, x: 0, y: 0, r: 0 };
 
 export interface CanvasProps {
 	scene: Component<SceneProps>;

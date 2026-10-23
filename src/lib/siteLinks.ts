@@ -10,6 +10,9 @@ export const SITE_LINKS = [
 	{ href: '/', label: 'Home', icon: 'home', tab: true },
 	{ href: READ_PATH, label: 'Read', icon: 'auto_stories', tab: true },
 	{ href: '/episodes', label: 'Episodes', icon: 'video_library', tab: true },
+	{ href: '/books', label: 'Books', icon: 'library_books', tab: false },
+	{ href: '/timeline', label: 'Timeline', icon: 'view_timeline', tab: false },
+	{ href: '/tree', label: 'Tree', icon: 'account_tree', tab: false },
 	{ href: '/wiki', label: 'Wiki', icon: 'menu_book', tab: true },
 	{ href: '/images', label: 'Images', icon: 'photo_library', tab: true },
 	{ href: '/about', label: 'About', icon: 'info', tab: false },
@@ -19,7 +22,8 @@ export const SITE_LINKS = [
 	{ href: '/music', label: 'Music', icon: 'music_note', tab: false },
 	{ href: '/scenes', label: 'Scenes', icon: 'album', tab: false },
 	{ href: '/widgets', label: 'Widgets', icon: 'widgets', tab: false },
-	{ href: '/grade', label: 'Grade', icon: 'grading', tab: false }
+	{ href: '/grade', label: 'Grade', icon: 'grading', tab: false },
+	{ href: '/dashboard', label: 'Dashboard', icon: 'monitoring', tab: false }
 ] as const;
 
 export type SiteLink = (typeof SITE_LINKS)[number];
@@ -29,6 +33,7 @@ export const PILL_LINKS = [
 	{ href: '/', label: 'Home' },
 	{ href: READ_PATH, label: 'Read' },
 	{ href: '/episodes', label: 'Episodes' },
+	{ href: '/books', label: 'Books' },
 	{ href: '/wiki', label: 'Wiki' },
 	{ href: '/images', label: 'Images' },
 	{ href: '/about', label: 'About' }

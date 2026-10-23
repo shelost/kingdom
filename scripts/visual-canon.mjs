@@ -74,18 +74,18 @@ function listField(entry, key) {
 
 /** Person facts parsed from the people.ts source (people.ts itself imports $lib and can't load in Node). */
 function personFacts(id) {
-	const i = PEOPLE_SRC.indexOf(`\n\t\tid: '${id}',`);
+	const i = [`'`, `"`].map((q) => PEOPLE_SRC.indexOf(`\n\t\tid: ${q}${id}${q},`)).find((n) => n >= 0) ?? -1;
 	if (i < 0) return null;
 	const b = PEOPLE_SRC.slice(i, PEOPLE_SRC.indexOf('\n\t},', i));
-	const field = (k) => b.match(new RegExp(`\\n\\t\\t${k}: '([^']+)'`))?.[1];
+	const field = (k) => b.match(new RegExp(`\\n\\t\\t${k}: (?:'([^']+)'|"([^"]+)")`))?.slice(1).find(Boolean);
 	const stages = listField(b, 'stages')
 		.map((s) => ({
-			id: s.match(/\bid: '([^']+)'/)?.[1],
+			id: s.match(/\bid: ['"]([^'"]+)['"]/)?.[1],
 			lookOnly: /lookOnly: true/.test(s),
 			from: Number(s.match(/from: (-?\d+)/)?.[1] ?? -Infinity),
 			until: Number(s.match(/until: (-?\d+)/)?.[1] ?? Infinity),
-			avatar: s.match(/avatar: '([^']+)'/)?.[1],
-			name: s.match(/\bname: '([^']+)'/)?.[1]
+			avatar: s.match(/avatar: ['"]([^'"]+)['"]/)?.[1],
+			name: s.match(/\bname: ['"]([^'"]+)['"]/)?.[1]
 		}));
 	const career = listField(b, 'career').map((s) => ({
 		title: s.match(/title: '([^']+)'/)?.[1] ?? '',
@@ -251,8 +251,10 @@ function personBlock(raw, opts, ctx) {
 	const armed = opts.battle || opts.sword;
 	if (opts.battle && c?.armor) {
 		const kit = CANON.armor[c.armor];
-		for (const r of [...kit.refs, ...(c.armorRefs ?? [])]) refs.add(r);
+		const notes = (c.armorNote ?? []).filter((n) => inYear(n, year));
+		for (const r of [...kit.refs, ...(c.armorRefs ?? []), ...notes.flatMap((n) => n.refs ?? [])]) refs.add(r);
 		out.push(`Armor: ${kit.text} ${CANON.armor.common}`);
+		for (const n of notes) out.push(`Armor signature: ${n.text}`);
 	}
 	if (armed) {
 		for (const sid of atYear(c?.sword, year)) {
@@ -282,18 +284,19 @@ function personBlock(raw, opts, ctx) {
 }
 
 /**
- * @param {string[]} ids people ids (or `<person>:<stage id>` to pin a look), animal ids, `place:<id>`, `flag:<kingdom>`, `dress:<kingdom>` (costume chart for extras), or `noble:<kingdom>` (chart + great-clan crown)
+ * @param {string[]} ids people ids (or `<person>:<stage id>` to pin a look), animal ids, `place:<id>`, `flag:<kingdom>`, `ship:<kingdom>` (ship board), `dress:<kingdom>` (costume chart for extras), or `noble:<kingdom>` (chart + great-clan crown)
  * @param {{ year?: number, battle?: boolean, sword?: boolean, mounted?: boolean, flags?: boolean, hat?: boolean }} opts
  * @returns {{ refs: string[], text: string }}
  */
 export function buildCanon(ids, opts = {}) {
-	const ctx = { refs: new Set(), kingdoms: new Set(), costumes: new Set(), nobles: new Set(), horse: false, hat: false, battle: Boolean(opts.battle) };
+	const ctx = { refs: new Set(), kingdoms: new Set(), costumes: new Set(), nobles: new Set(), ships: new Set(), horse: false, hat: false, battle: Boolean(opts.battle) };
 	const lines = [];
 	for (const raw of ids) {
 		if (raw.startsWith('place:')) lines.push(placeBlock(raw.slice(6), ctx));
 		else if (raw.startsWith('flag:')) ctx.kingdoms.add(raw.slice(5));
 		else if (raw.startsWith('dress:')) ctx.costumes.add(raw.slice(6));
 		else if (raw.startsWith('noble:')) ctx.costumes.add(raw.slice(6)), ctx.nobles.add(raw.slice(6));
+		else if (raw.startsWith('ship:')) ctx.ships.add(raw.slice(5));
 		else if (CANON.animals[raw]) lines.push(animalBlock(raw, ctx));
 		else lines.push(...personBlock(raw, opts, ctx));
 	}
@@ -309,6 +312,9 @@ export function buildCanon(ids, opts = {}) {
 	if (costumes.length) lines.push(`${CANON.costume.common} ${costumes.join(' ')}`);
 	const banners = [...ctx.kingdoms].map((k) => flagBlock(k, ctx)).filter(Boolean);
 	if (banners.length) lines.push(`${CANON.flags.common} ${banners.join(' ')}`);
+	const ships = [...ctx.ships].map((k) => CANON.ships.kingdoms[k]).filter(Boolean);
+	for (const s of ships) ctx.refs.add(s.board);
+	if (ships.length) lines.push(`${CANON.ships.common} ${ships.map((s) => s.text).join(' ')}`);
 	if (ctx.refs.has(SWORD_BLADE_REF)) lines.push(`SWORD ANATOMY: ${SWORD_STILL_ANATOMY}`);
 	const uniq = [...new Set(lines)];
 	return { refs: [...ctx.refs], text: uniq.length ? `CANON — ${uniq.join(' | ')}` : '' };

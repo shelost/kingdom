@@ -5,7 +5,7 @@
 		Period.
 	</p>
 	<p>
-		Inspired by the 2009 K-Drama series <em>The Great Queen Seondeok</em>, it was supposed to be a
+		Inspired by the 2009 K-Drama series <em>The Great Queen Sunduk</em>, it was supposed to be a
 		webcomic series originally, but I’m putting the text version on here first for now.
 	</p>
 	<p>

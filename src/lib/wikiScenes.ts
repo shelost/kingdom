@@ -1,8 +1,9 @@
 /**
- * Chronicle cue stills for wiki character / god / animal / instrument pages.
+ * Chronicle cue stills for wiki character / god / animal / instrument / place pages.
  * People: membership is the sidecar `image-people.json` — a still appears iff
  * its tags include that profile’s person id. Animals and instruments: the still
  * attaches the board in `refs` or names it (see `buildBoardSceneIndex`).
+ * Places: stills on a beat with a place card / jump / map, or whose slot names the place.
  */
 
 import { byId, nameOf, type Person } from '$lib/people';
@@ -136,9 +137,9 @@ function mentions(text: string, name: string): boolean {
  * it attaches that profile's board, or its slot id carries the name
  * (`yushin-hangyul-…`, `scene-bidam-wolgeum`). With `matchAlt`, a name in the
  * alt text also counts (ink frames that only describe the instrument).
- * Boards can be shared (Hanseul uses Hangyul's coat board), so when several
+ * Boards can be shared (Hansul uses Hangyul's coat board), so when several
  * profiles match, the ones named in the slot id, alt, or canon header
- * (`HANSEUL (한슬, …`) win; otherwise the first def keeps it.
+ * (`HANSUL (한슬, …`) win; otherwise the first def keeps it.
  */
 function buildBoardSceneIndex(
 	index: readonly BoardIndexEntry[],
@@ -190,11 +191,91 @@ function scenesForBond(bond: Person): WikiScene[] {
 	return list;
 }
 
-/** Tagged stills for a wiki character, god, animal, instrument, or relationship. Empty when none. Poster / cover stills pin first. */
+/** A relationship's cover still (its `still` slot), when that slot has art and is not NSFW. */
+export function bondStillOf(bond: Person): string | undefined {
+	if (bond.entity !== 'relationship' || !bond.still) return undefined;
+	return scenesForBond(bond).find((s) => s.id === bond.still && !s.nsfw)?.art;
+}
+
+function hyphenId(id: string): string {
+	return id.replace(/_/g, '-');
+}
+
+function slotNamesPlace(slot: { id: string; alt?: string; at?: string }, placeId: string): boolean {
+	const hy = hyphenId(placeId).toLowerCase();
+	const raw = placeId.toLowerCase();
+	if (hy.length < 5) {
+		const tokens = slot.id.toLowerCase().split(/[-_]/);
+		return tokens.includes(hy) || tokens.includes(raw);
+	}
+	const blob = `${slot.id} ${slot.alt ?? ''} ${slot.at ?? ''}`.toLowerCase();
+	return blob.includes(hy) || blob.includes(raw);
+}
+
+function pinPlaceCover(placeId: string, scenes: WikiScene[]): WikiScene[] {
+	const person = byId.get(placeId);
+	const cover = person?.avatar ? artAttachmentKey(person.avatar) : '';
+	if (!cover) return scenes;
+	const idx = scenes.findIndex((s) => artAttachmentKey(s.art) === cover);
+	if (idx > 0) scenes.unshift(...scenes.splice(idx, 1));
+	return scenes;
+}
+
+function buildPlaceSceneIndex(): Map<string, WikiScene[]> {
+	const buckets = new Map<string, WikiScene[]>();
+	const seen = new Map<string, Set<string>>();
+	const placeIds = [...byId.values()].filter((p) => p.entity === 'place').map((p) => p.id);
+
+	const push = (placeId: string, scene: WikiScene) => {
+		let set = seen.get(placeId);
+		if (!set) {
+			set = new Set();
+			seen.set(placeId, set);
+		}
+		if (set.has(scene.id)) return;
+		set.add(scene.id);
+		const list = buckets.get(placeId);
+		if (list) list.push(scene);
+		else buckets.set(placeId, [scene]);
+	};
+
+	for (const im of flattenStoryImages()) {
+		const scene = toWikiScene(im);
+		if (!scene) continue;
+		for (const id of im.placeIds) push(id, scene);
+		for (const pid of placeIds) {
+			if (slotNamesPlace(im.slot, pid)) push(pid, scene);
+		}
+	}
+	return buckets;
+}
+
+const SCENES_BY_PLACE = buildPlaceSceneIndex();
+
+/** Chronicle stills locked to a map place (place cards, jumps, map excerpts, or the place id in the slot). */
+export function scenesForPlace(placeId: string): WikiScene[] {
+	const list = [...(SCENES_BY_PLACE.get(placeId) ?? [])];
+	const hy = hyphenId(placeId).toLowerCase();
+	const seg = placeId.split('_').at(-1)?.toLowerCase() ?? '';
+	const named: WikiScene[] = [];
+	const rest: WikiScene[] = [];
+	for (const s of list) {
+		const tokens = s.id.toLowerCase().split(/[-_]/);
+		const hitsName =
+			s.id.toLowerCase().includes(hy) ||
+			(seg.length >= 4 && tokens.includes(seg));
+		if (hitsName) named.push(s);
+		else rest.push(s);
+	}
+	return pinPlaceCover(placeId, [...named, ...rest]);
+}
+
+/** Tagged stills for a wiki character, god, animal, instrument, place, or relationship. Empty when none. Poster / cover stills pin first. */
 export function scenesForWikiEntry(personId: string): WikiScene[] {
 	const person = byId.get(personId);
 	if (!person) return [];
 	if (person.entity === 'relationship') return scenesForBond(person);
+	if (person.entity === 'place') return scenesForPlace(person.id);
 	if (person.entity === 'animal' || person.entity === 'instrument') {
 		const list = [...(SCENES_BY_OBJECT.get(personId) ?? [])];
 		const cover = person.avatar ? artAttachmentKey(person.avatar) : '';

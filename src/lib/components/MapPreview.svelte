@@ -2,7 +2,8 @@
 	import { fade } from 'svelte/transition';
 	import { storyImg } from '$lib/img';
 	import { KINGDOMS } from '$lib/people';
-	import { PLACES, PLACE_KIND_LABEL, placeImages, type Place } from '$lib/places';
+	import { PLACES, PLACE_KIND_LABEL, PLACE_KIND_LABEL_KO, placeImages, type Place } from '$lib/places';
+	import { reading } from '$lib/reading.svelte';
 	import { placeStills } from '$lib/thumbnail.svelte';
 	import { openProfile } from '$lib/profiles.svelte';
 	import StillWall from '$lib/components/StillWall.svelte';
@@ -28,6 +29,22 @@
 			: []
 	);
 	let kingdom = $derived(place ? KINGDOMS[place.side] : null);
+	let ko = $derived(reading.lang === 'ko');
+
+	/** Kingdom names in Korean; the West and the East follow the book. */
+	const KINGDOM_KO: Record<string, string> = {
+		silla: '신라',
+		baekje: '백제',
+		goguryeo: '고구려',
+		buyeo: '부여',
+		jolbon: '졸본',
+		tang: '서국',
+		gaya: '가야',
+		yamato: '동국',
+		tamla: '탐라',
+		joseon: '고조선',
+		underworld: '저승'
+	};
 </script>
 
 <aside class="preview" aria-live="polite">
@@ -45,12 +62,12 @@
 				<header class="head">
 					<p class="kicker">
 						{#if kingdom.flag}<img class="flag" src={kingdom.flag} alt="" />{/if}
-						<span>{kingdom.label}</span>
+						<span>{ko ? (KINGDOM_KO[place.side] ?? kingdom.label) : kingdom.label}</span>
 						<span aria-hidden="true">·</span>
-						<span>{PLACE_KIND_LABEL[place.kind]}</span>
+						<span>{ko ? PLACE_KIND_LABEL_KO[place.kind] : PLACE_KIND_LABEL[place.kind]}</span>
 					</p>
-					<h2>{place.name}</h2>
-					{#if place.korean}<p class="ko">{place.korean}</p>{/if}
+					<h2>{ko ? (place.korean ?? place.name) : place.name}</h2>
+					{#if place.korean && !ko}<p class="ko">{place.korean}</p>{:else if ko}<p class="ko">{place.name}</p>{/if}
 				</header>
 
 				<p class="blurb">{place.blurb}</p>
@@ -63,15 +80,15 @@
 					</ul>
 				{/if}
 
-				<button type="button" class="open" onclick={() => openProfile(place.id)}>Open profile →</button>
+				<button type="button" class="open" onclick={() => openProfile(place.id)}>{ko ? '소개 보기 →' : 'Open profile →'}</button>
 			</article>
 		{/key}
 	{:else}
 		<div class="wall" in:fade={{ duration: 240 }}>
 			<StillWall stills={WALL} fill>
-				<p class="wall-kicker">Samhan</p>
-				<p class="wall-title">Hover a place</p>
-				<p class="wall-sub">{WALL.length} locations painted so far</p>
+				<p class="wall-kicker">{ko ? '삼한' : 'Samhan'}</p>
+				<p class="wall-title">{ko ? '장소를 골라 보세요' : 'Hover a place'}</p>
+				<p class="wall-sub">{ko ? `지금까지 그린 장소 ${WALL.length}곳` : `${WALL.length} locations painted so far`}</p>
 			</StillWall>
 		</div>
 	{/if}

@@ -293,7 +293,7 @@
 				395,
 				22
 			],
-			"label": "via Namgeoseong",
+			"label": "via Namgusung",
 			"ko": "남거성을 거쳐"
 		},
 		{
@@ -792,10 +792,14 @@
 		}
 	],
 	"sources": [
-		"Gwanggaeto Stele, Yeongnak years 9 and 10 (east face)",
-		"Samguk Sagi 3, Annals of Silla, Naemul and Silseong",
+		"Gwanggeto Stele, Yungnak years 9 and 10 (east face)",
+		"Samguk Sagi 3, Annals of Silla, Nemul and Silsung",
 		"Chungju (Jungwon) Goguryeo Stele, on the Goguryeo garrison in Silla"
 	],
-	"note": "The stele gives fifty thousand horse and foot, a march from Namgeoseong to the Silla city full of Wa, the Wa withdrawing as soon as the army arrived, a pursuit at their backs to Jongbal fortress in Imna-Gara, and the fortress yielding at once. Namgeoseong's site is unknown. Jongbal follows the common reading as a fortress of Geumgwan Gaya at Gimhae. The phrase after the surrender, read either as 'Anra garrison troops' or as 'Silla men were posted to guard it', is disputed, and much of the rest of the year's text is lost. The Samguk Sagi says nothing of this campaign; the Goguryeo garrison staying in Silla comes from later records and the Chungju stele. The story's fifty years and hostage princes compress that longer occupation.",
-	"noteKo": "비석이 전하는 것은 보병과 기병 오만, 남거성에서 왜가 가득한 신라성까지의 진군, 관군이 닿자마자 물러난 왜, 그 등 뒤를 쫓아 임나가라 종발성에 이른 추격, 그리고 곧 귀복한 성이다. 남거성의 위치는 알 수 없다. 종발성은 김해 금관가야의 성으로 보는 통설을 따랐다. 항복 뒤에 나오는 '安羅人戍兵'은 '안라의 수비병'으로도, '신라인을 두어 지키게 했다'로도 읽혀 논쟁 중이고, 그해 기사의 나머지는 대부분 지워졌다. 『삼국사기』는 이 원정을 적지 않는다. 고구려군이 신라에 머문 일은 뒷날의 기록과 충주 고구려비에서 나온다. 이야기 속 오십 년과 볼모 왕자들은 그 긴 주둔을 압축한 것이다."
+	"note": "The stele gives fifty thousand horse and foot, a march from Namgeoseong to the Silla city full of Wa, the Wa withdrawing as soon as the army arrived, a pursuit at their backs to Jongbal fortress in Imna-Gara, and the fortress yielding at once. Namgeoseong's site is unknown. Jongbal follows the common reading as a fortress of Golden Gaya at Gimhae. The phrase after the surrender, read either as 'Anra garrison troops' or as 'Silla men were posted to guard it', is disputed, and much of the rest of the year's text is lost. The Samguk Sagi says nothing of this campaign; the Goguryeo garrison staying in Silla comes from later records and the Chungju stele. The story's fifty years and hostage princes compress that longer occupation.",
+	"noteKo": "비석이 전하는 것은 보병과 기병 오만, 남거성에서 왜가 가득한 신라성까지의 진군, 관군이 닿자마자 물러난 왜, 그 등 뒤를 쫓아 임나가라 종발성에 이른 추격, 그리고 곧 귀복한 성이다. 남거성의 위치는 알 수 없다. 종발성은 김해 금관가야의 성으로 보는 통설을 따랐다. 항복 뒤에 나오는 '安羅人戍兵'은 '안라의 수비병'으로도, '신라인을 두어 지키게 했다'로도 읽혀 논쟁 중이고, 그해 기사의 나머지는 대부분 지워졌다. 『삼국사기』는 이 원정을 적지 않는다. 고구려군이 신라에 머문 일은 뒷날의 기록과 충주 고구려비에서 나온다. 이야기 속 오십 년과 볼모 왕자들은 그 긴 주둔을 압축한 것이다.",
+	"winner": [
+		"goguryeo",
+		"silla"
+	]
 }

@@ -5,6 +5,7 @@
 	import { handleOf } from '$lib/tweet';
 	import { recordBook } from '$lib/recordBooks';
 	import SocialFace from './SocialFace.svelte';
+	import SpeakerName from './SpeakerName.svelte';
 
 	/**
 	 * A letter as an email. The first of a thread carries the subject and the
@@ -61,7 +62,7 @@
 			<div class="mail-who">
 				<span class="mail-sender">
 					{#if from}
-						<span class="mail-name person" data-person={from.id}>{name(from)}</span>
+						<span class="mail-name person" data-person={from.id}><SpeakerName name={name(from)} /></span>
 						<span class="mail-address">&lt;{address}&gt;</span>
 					{:else if book}
 						<span class="mail-name">{book.name}</span>
@@ -69,7 +70,7 @@
 				</span>
 				<span class="mail-to">
 					{ko ? '받는 사람:' : 'to'}
-					{#if to}<span class="person" data-person={to.id}>{name(to)}</span>{:else}{ko ? '나' : 'me'}{/if}
+					{#if to}<span class="person" data-person={to.id}><SpeakerName name={name(to)} /></span>{:else}{ko ? '나' : 'me'}{/if}
 				</span>
 			</div>
 			<svg class="mail-star" viewBox="0 0 24 24" aria-hidden="true"

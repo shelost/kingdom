@@ -66,7 +66,7 @@
 		}
 	}
 
-	@media (max-width: 560px) {
+	@container prose (max-width: 560px) {
 		.columns {
 			justify-self: end;
 			padding-right: 0;

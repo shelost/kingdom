@@ -36,7 +36,8 @@ import {
 	type GodTier,
 	type Person
 } from '$lib/people';
-import { BOND_LABEL, CHART_NODES } from '$lib/relations';
+import { CHART_NODES, TIE_META, tieOf } from '$lib/relations';
+import { hasTerm } from '$lib/romanFold';
 import { chapters, type Block } from '$lib/story';
 import { widgetTexts } from '$lib/widgets';
 
@@ -102,15 +103,32 @@ export function kindOf(p: Person): WikiKind {
 
 export function kindLabel(p: Person): string {
 	const k = kindOf(p);
-	if (k === 'relationship' && p.bond) return BOND_LABEL[p.bond];
+	if (k === 'relationship') return TIE_META[tieOf(p)].label;
 	return WIKI_KINDS.find((w) => w.id === k)?.label ?? 'Entry';
+}
+
+export interface LifespanPart {
+	text: string;
+	/** The story's own year, not the record's. */
+	invented: boolean;
+}
+
+/** Born/died as two labelled halves, so invented years can be styled apart. Null when both are unknown. */
+export function lifespanParts(p: Person): { approx: boolean; born: LifespanPart; died: LifespanPart } | null {
+	if (p.born == null && p.died == null) return null;
+	const f = (n?: number) => (n == null ? '?' : n < 0 ? `${-n} BCE` : `${n}`);
+	return {
+		approx: !!p.bornApprox,
+		born: { text: f(p.born), invented: p.born != null && !!p.bornInvented },
+		died: { text: f(p.died), invented: p.died != null && !!p.diedInvented }
+	};
 }
 
 /** Format born/died as a year span, or empty when unknown. Nations/places: founding–fall. */
 export function lifespanOf(p: Person): string {
-	const f = (n?: number) => (n == null ? '?' : n < 0 ? `${-n} BCE` : `${n}`);
-	if (p.born == null && p.died == null) return '';
-	return `${p.bornApprox ? 'c. ' : ''}${f(p.born)} – ${f(p.died)}`;
+	const parts = lifespanParts(p);
+	if (!parts) return '';
+	return `${parts.approx ? 'c. ' : ''}${parts.born.text} – ${parts.died.text}`;
 }
 
 export function formatYear(year: number | undefined | null): string {
@@ -156,6 +174,24 @@ export function bondsFor(id: string): Person[] {
 	return PROFILES.filter(
 		(p) => p.entity === 'relationship' && p.between?.includes(id)
 	);
+}
+
+/** Place ids locked on a relationship (`placeId` may be one or many). */
+export function placeIdsOf(p: Person): string[] {
+	if (p.placeId == null) return [];
+	return Array.isArray(p.placeId) ? p.placeId : [p.placeId];
+}
+
+/** Place profiles a relationship is locked to. */
+export function bondPlacesOf(p: Person): Person[] {
+	return placeIdsOf(p)
+		.map((id) => byId.get(id))
+		.filter((x): x is Person => !!x && x.entity === 'place');
+}
+
+/** Relationships whose locked place is this id. */
+export function bondsAtPlace(placeId: string): Person[] {
+	return PROFILES.filter((p) => p.entity === 'relationship' && placeIdsOf(p).includes(placeId));
 }
 
 /** People on either end of a relationship profile. */
@@ -515,7 +551,7 @@ function chartRankOf(p: Person): number {
 	return CHART_RANK.get(p.id) ?? 0;
 }
 
-function hasRealAvatar(p: Person): boolean {
+export function hasRealAvatar(p: Person): boolean {
 	const art = avatarOf(p);
 	return !!art && !isPlaceholderArt(art);
 }
@@ -537,7 +573,7 @@ export function godTierRank(p: Person): number {
 export function godTierLabel(tier: GodTier): { short: string; en: string; hint: string } {
 	switch (tier) {
 		case 'S':
-			return { short: 'S', en: 'Class S', hint: 'Creator — Hwanin, above the Three Realms' };
+			return { short: 'S', en: 'Class S', hint: 'Creator — Hannim, above the Three Realms' };
 		case 'I':
 			return { short: 'I', en: 'Class I', hint: 'Sovereign of one of the Three Realms (삼계)' };
 		case 'II':
@@ -555,7 +591,7 @@ export const GOD_TIER_SECTIONS: {
 	title: string;
 	subtitle: string;
 }[] = [
-	{ id: 'S', title: 'Tier S', subtitle: 'The Creator · Hwanin' },
+	{ id: 'S', title: 'Tier S', subtitle: 'The Creator · Hannim' },
 	{ id: 'I', title: 'Tier I', subtitle: 'Three Realms' },
 	{ id: 'II', title: 'Tier II', subtitle: 'Domains' },
 	{ id: 'III', title: 'Tier III', subtitle: 'Particulars' },
@@ -662,7 +698,7 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 			.filter(Boolean)
 			.join(' ')
 			.toLowerCase();
-		return hay.includes(q);
+		return hasTerm(hay, q);
 	}).sort(filters.kind === 'clan' ? compareClanEntries : compareWikiEntries);
 }
 
@@ -789,6 +825,62 @@ export function groupMembersOf(groupId: string): Person[] {
 		if (ia !== ib) return ia - ib;
 		return compareWikiEntries(a, b);
 	});
+}
+
+/** Kinds whose index grows a row of people chips: entries that are about people. */
+export const CAST_KINDS: readonly WikiKind[] = ['relationship', 'group', 'organization'];
+
+export function hasCastFilter(kind: WikiKind | 'all'): boolean {
+	return kind !== 'all' && CAST_KINDS.includes(kind);
+}
+
+const CAST_CACHE = new Map<string, string[]>();
+
+/** The people an entry is about: a relationship's pair, a group's or organization's members. */
+export function castOf(p: Person): string[] {
+	const hit = CAST_CACHE.get(p.id);
+	if (hit) return hit;
+	const k = kindOf(p);
+	const ids =
+		k === 'relationship'
+			? [...(p.between ?? [])]
+			: k === 'group'
+				? groupMembersOf(p.id).map((m) => m.id)
+				: k === 'organization'
+					? membersOf(p.id).map((m) => m.id)
+					: [];
+	CAST_CACHE.set(p.id, ids);
+	return ids;
+}
+
+export type CastChip = { person: Person; count: number };
+
+/** Everyone the entries are about, with how many entries feature them; most entries first. */
+export function castChips(entries: Person[]): CastChip[] {
+	const counts = new Map<string, number>();
+	for (const e of entries) {
+		for (const id of castOf(e)) counts.set(id, (counts.get(id) ?? 0) + 1);
+	}
+	return [...counts]
+		.flatMap(([id, count]) => {
+			const person = byId.get(id);
+			return person ? [{ person, count }] : [];
+		})
+		.sort((a, b) => b.count - a.count || compareWikiEntries(a.person, b.person));
+}
+
+/**
+ * Entries featuring any of `ids`; those featuring more of them come first
+ * (Sunduk + Yushin puts their own bond ahead of each one's others). No ids keeps every entry.
+ */
+export function withCast(entries: Person[], ids: string[]): Person[] {
+	if (!ids.length) return entries;
+	const picked = new Set(ids);
+	return entries
+		.map((p) => ({ p, hits: castOf(p).filter((id) => picked.has(id)).length }))
+		.filter((r) => r.hits > 0)
+		.sort((a, b) => b.hits - a.hits)
+		.map((r) => r.p);
 }
 
 /** A labelled slice of a wiki roster — a Hwarang class, or one nation’s members. */

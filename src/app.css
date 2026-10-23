@@ -42,6 +42,10 @@
 	--plate-shadow: rgba(0, 0, 0, 0.55);
 	--plate-scrim: rgba(10, 10, 14, 0.94);
 	--plate-scrim-mid: rgba(10, 10, 14, 0.76);
+	/* Immersion dialogue box: frosted glass over the page. */
+	--plate-glass: rgba(24, 24, 30, 0.58);
+	--plate-glass-edge: rgba(255, 255, 255, 0.14);
+	--plate-glass-sheen: rgba(255, 255, 255, 0.07);
 
 	/* Scrollbars + text selection follow the theme */
 	--scroll-thumb: rgba(255, 255, 255, 0.18);
@@ -53,9 +57,9 @@
 	   under it. SpeakerPlate reads --bust-h; body padding reads --plate-h.
 	   --plate-box-h is just the dialogue box (frame + its breathing room), which
 	   is what the floating corner cards have to clear. */
-	--bust-h: 21rem;
-	--plate-h: 16rem;
-	--plate-box-h: 9rem;
+	--bust-h: 15rem;
+	--plate-h: 14rem;
+	--plate-box-h: 8.25rem;
 
 	/* Bottom-left corner cards. The map opens from the stage bento (not a
 	   corner stack), so --map-stack stays 0. */
@@ -193,6 +197,19 @@ html.is-immersion {
 	--corner-bottom: calc(var(--plate-box-h) + 0.9rem);
 	/* Tall enough to lead the column, short enough to sit above the plate. */
 	--reel-h: min(64dvh, 34rem);
+	/* The script's centred measure plus the stage column on its left; the
+	   plate is held to the same width so the whole page reads as one block. */
+	--imm-stage-w: clamp(10rem, 15vw, 15rem);
+	--imm-gap: 3rem;
+	--imm-w: calc(var(--imm-stage-w) + var(--imm-gap) + var(--script-measure));
+}
+
+/* Wide: the widgets panel joins on the right (`widgetsPinned`), so the block,
+   and the plate held to it, take a third column. */
+@media (min-width: 1100px) {
+	html.is-immersion {
+		--imm-w: calc(2 * var(--imm-stage-w) + 2 * var(--imm-gap) + var(--script-measure));
+	}
 }
 
 /* Reserve plate room only once the reader is in the script — cover/blurb stay full-bleed. */
@@ -239,13 +256,19 @@ html.is-cinema .text .prose > p {
 }
 
 /* The whole page drops into the past — set by watchReading().
-   Declared after the immersive block so a flashback always wins the mood. */
+   Declared after the immersive block so a flashback always wins the mood.
+   The dark arrives as a gradient over the real background, not a flat swap. */
 html.is-flash {
 	--bg: #060608;
 	--bg-raised: #0f0f12;
 	--panel: #0e0e12;
 	--panel-sunken: #040406;
 	--hairline: rgba(255, 255, 255, 0.08);
+}
+
+html.is-flash body {
+	background: linear-gradient(180deg, var(--bg-raised) 0, var(--bg) 24rem, #020204 100%);
+	background-attachment: fixed;
 }
 
 /* ————— Light mode: warm paper, dark ink —————
@@ -280,6 +303,9 @@ html[data-theme='light'] {
 	--plate-shadow: rgba(40, 30, 12, 0.14);
 	--plate-scrim: rgba(255, 254, 251, 0.95);
 	--plate-scrim-mid: rgba(255, 254, 251, 0.76);
+	--plate-glass: rgba(255, 254, 250, 0.62);
+	--plate-glass-edge: rgba(28, 22, 10, 0.12);
+	--plate-glass-sheen: rgba(255, 255, 255, 0.7);
 
 	--scroll-thumb: rgba(30, 24, 12, 0.18);
 	--scroll-thumb-hover: rgba(30, 24, 12, 0.32);
@@ -305,6 +331,11 @@ html[data-theme='light'].is-flash {
 	--panel-sunken: #f1eee6;
 	--plate-ink: #f3eee4;
 	--hairline: rgba(28, 22, 10, 0.1);
+}
+
+html[data-theme='light'].is-flash body {
+	background: linear-gradient(180deg, var(--bg-raised) 0, var(--bg) 24rem, #d9d4c4 100%);
+	background-attachment: fixed;
 }
 
 body {
@@ -713,6 +744,21 @@ html:not([data-theme='light']) {
 	--emperor-vermilion: #b3261e;
 }
 
+/* Korean mode: part and episode titles on the page are Black Han Sans. The face is already
+   black, so weight stays 400 — a heavier weight only synthesizes a muddy bold.
+   The contents list keeps the UI face. */
+html[data-lang='ko'] .part-title,
+html[data-lang='ko'] .division-title,
+html[data-lang='ko'] .episode h2,
+html[data-lang='ko'] .episodes-page h2 .head-title,
+html[data-lang='ko'] .episodes-page h3 .head-title,
+html[data-lang='ko'] .episodes-page h4 .chapter-line,
+html[data-lang='ko'] .episodes-page .row .title {
+	font-family: var(--display-ko);
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
 /* ————— Float-up: title-screen copy rises one element at a time —————
    Give each element `class="float-up"` and its place in line as `--i`.
    It moves `translate`, so the element's own `transform` hovers still work. */
@@ -725,5 +771,48 @@ html:not([data-theme='light']) {
 		opacity: 0;
 		translate: 0 18px;
 		filter: blur(4px);
+	}
+}
+
+/* Refresh loader: app.html sets .is-restoring before paint when the reader has a
+   saved spot; restoreReadingSpot() lifts it once the page has landed back there. */
+html.is-restoring body::before,
+html.is-restoring body::after {
+	content: '';
+	position: fixed;
+	z-index: 2147483000;
+	pointer-events: none;
+}
+
+html.is-restoring body::before {
+	inset: 0;
+	background: var(--bg);
+}
+
+html.is-restoring body::after {
+	top: 50%;
+	left: 50%;
+	width: 3rem;
+	height: 3rem;
+	margin: -1.5rem 0 0 -1.5rem;
+	background: url('/crown.png') center / contain no-repeat;
+	animation: restore-breathe 1.1s ease-in-out infinite alternate;
+}
+
+@keyframes restore-breathe {
+	from {
+		opacity: 0.35;
+		scale: 0.92;
+	}
+	to {
+		opacity: 0.9;
+		scale: 1;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html.is-restoring body::after {
+		animation: none;
+		opacity: 0.7;
 	}
 }

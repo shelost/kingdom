@@ -8,7 +8,7 @@
 	 */
 	import { T, useThrelte } from '@threlte/core';
 	import { onMount, untrack, type Snippet } from 'svelte';
-	import { Tween } from 'svelte/motion';
+	import { Spring, Tween } from 'svelte/motion';
 	import { cubicInOut } from 'svelte/easing';
 	import { DirectionalLight, OrthographicCamera, Vector3 } from 'three';
 	import {
@@ -51,6 +51,12 @@
 		easing: cubicInOut
 	});
 	let fitted = false;
+	/** The spin follows the reader's drag on a spring: quick to answer, never a jump. */
+	const spin = new Spring(0, { stiffness: 0.16, damping: 0.82, precision: 0.0005 });
+	$effect(() => {
+		const r = zoom.r;
+		spin.set(r, instant || reduced ? { instant: true } : undefined);
+	});
 	const frame = $derived.by(() => {
 		const f = framing.current;
 		return {
@@ -152,10 +158,18 @@
 		if (hw / hh > aspect) hh = hw / aspect;
 		else hw = hh * aspect;
 		const { k, x: px, y: py } = zoom;
+		const turn = spin.current;
 		const cx = (x0 + x1) / 2 + px * hw;
 		const cy = (y0 + y1) / 2 + py * hh;
 		hw /= k;
 		hh /= k;
+		// Spin after framing: the scene turns under a camera that keeps its scale.
+		if (turn) {
+			const turned = new Vector3(Math.cos(el) * Math.sin(az + turn), Math.sin(el), Math.cos(el) * Math.cos(az + turn));
+			cam.position.copy(center).addScaledVector(turned, 60);
+			cam.lookAt(center);
+			cam.updateMatrixWorld(true);
+		}
 		cam.left = cx - hw;
 		cam.right = cx + hw;
 		cam.top = cy + hh;

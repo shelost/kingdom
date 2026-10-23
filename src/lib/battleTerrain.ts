@@ -6,27 +6,45 @@
  *
  * World units: the 1000 × 560 sheet becomes 10 × 5.6 on the ground, x east, z south,
  * y up. Height is in the same units, exaggerated so every field shows its relief.
+ *
+ * The ground is a round table: a disc of DISC.r sheet units about the sheet centre, so it
+ * reads the same from every side as it turns. Beyond the drawn sheet (the disc's north and
+ * south caps) the real relief carries on, and drawn water and plains run on outward.
  */
 import { FIELD, type Battle, type Terrain } from '$lib/battles';
 import { curveThrough, type Pt } from '$lib/mapPaths';
 
-/** The mesh grid: coarse on purpose (a diorama reads as shape, not survey), ~3× lighter than the bake. */
-export const GRID = { nx: 97, ny: 55 } as const;
-/** The grid `scripts/bake-battle-terrain.mjs` writes; resampled onto GRID. */
-const BAKE = { nx: 161, ny: 91 } as const;
+/** The round table, in sheet units. */
+export const DISC = { cx: FIELD.w / 2, cy: FIELD.h / 2, r: 470 } as const;
+/** The mesh grid over the disc's square: coarse on purpose (a diorama reads as shape, not survey). */
+export const GRID = { nx: 97, ny: 97 } as const;
+const X0 = DISC.cx - DISC.r;
+const Y0 = DISC.cy - DISC.r;
+const CELL = (DISC.r * 2) / (GRID.nx - 1);
 
-/** Bilinear resample of the baked elevation onto the mesh grid. */
-function resample(dem: Int16Array): Float32Array {
+/**
+ * Grids `scripts/bake-battle-terrain.mjs` writes, by sample count: the square bake covers
+ * x 0…1000 and y −220…780 (the whole disc); older bakes cover the sheet alone.
+ */
+const BAKES = [
+	{ nx: 161, ny: 161, y0: FIELD.h / 2 - FIELD.w / 2, h: FIELD.w },
+	{ nx: 161, ny: 91, y0: 0, h: FIELD.h }
+] as const;
+
+/** Bilinear resample of the baked elevation onto the mesh grid (a sheet-only bake runs its edge rows outward). */
+function resample(dem: Int16Array): Float32Array | null {
+	const bake = BAKES.find((k) => k.nx * k.ny === dem.length);
+	if (!bake) return null;
 	const out = new Float32Array(GRID.nx * GRID.ny);
 	for (let j = 0; j < GRID.ny; j++) {
-		const gy = (j / (GRID.ny - 1)) * (BAKE.ny - 1);
-		const y0 = Math.min(BAKE.ny - 2, Math.floor(gy));
+		const gy = Math.max(0, Math.min(bake.ny - 1.001, ((Y0 + j * CELL - bake.y0) / bake.h) * (bake.ny - 1)));
+		const y0 = Math.floor(gy);
 		const fy = gy - y0;
 		for (let i = 0; i < GRID.nx; i++) {
-			const gx = (i / (GRID.nx - 1)) * (BAKE.nx - 1);
-			const x0 = Math.min(BAKE.nx - 2, Math.floor(gx));
+			const gx = Math.max(0, Math.min(bake.nx - 1.001, ((X0 + i * CELL) / FIELD.w) * (bake.nx - 1)));
+			const x0 = Math.floor(gx);
 			const fx = gx - x0;
-			const at = (x: number, y: number) => dem[y * BAKE.nx + x];
+			const at = (x: number, y: number) => dem[y * bake.nx + x];
 			out[j * GRID.nx + i] =
 				(at(x0, y0) * (1 - fx) + at(x0 + 1, y0) * fx) * (1 - fy) + (at(x0, y0 + 1) * (1 - fx) + at(x0 + 1, y0 + 1) * fx) * fy;
 		}
@@ -35,6 +53,19 @@ function resample(dem: Int16Array): Float32Array {
 }
 const UNIT = 100;
 export const WORLD = { w: FIELD.w / UNIT, d: FIELD.h / UNIT };
+/** The disc's radius on the ground. */
+export const DISC_WORLD = DISC.r / UNIT;
+/** The disc's square in sheet units: the frame its ground textures are painted in. */
+export const DISC_SHEET = { x: X0, y: Y0, w: DISC.r * 2, h: DISC.r * 2 } as const;
+
+/** A relief's vertex grid and its world footprint: battles use BATTLE_GRID, the 3D map its own. */
+export interface TerrainGrid {
+	nx: number;
+	ny: number;
+	w: number;
+	d: number;
+}
+export const BATTLE_GRID: TerrainGrid = { nx: GRID.nx, ny: GRID.ny, w: (DISC.r * 2) / UNIT, d: (DISC.r * 2) / UNIT };
 /** Drawn water sits this far under the water plane; land never dips below LAND_FLOOR. */
 const WATER_DEPTH = -0.07;
 const LAND_FLOOR = 0.02;
@@ -50,8 +81,7 @@ export interface Relief {
 	maxY: number;
 }
 
-const cellW = FIELD.w / (GRID.nx - 1);
-const cellH = FIELD.h / (GRID.ny - 1);
+const cellW = CELL;
 
 function inside([x, y]: Pt, poly: Pt[]): boolean {
 	let hit = false;
@@ -77,7 +107,9 @@ function distToPath([x, y]: Pt, path: Pt[]): number {
 }
 
 const smooth = (t: number) => (t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t));
-const vertexAt = (k: number): Pt => [(k % GRID.nx) * cellW, Math.floor(k / GRID.nx) * cellH];
+const vertexAt = (k: number): Pt => [X0 + (k % GRID.nx) * CELL, Y0 + Math.floor(k / GRID.nx) * CELL];
+/** Off the drawn sheet, a vertex reads the drawing at the nearest sheet point, so drawn ground runs on outward. */
+const onSheet = ([x, y]: Pt): Pt => [Math.max(0, Math.min(FIELD.w, x)), Math.max(0, Math.min(FIELD.h, y))];
 
 /** Closed area outlines, smoothed the way the 2D sheet draws them. */
 const outline = (pts: Pt[]) => curveThrough([...pts, pts[0]])?.samples ?? pts;
@@ -91,35 +123,36 @@ export function buildRelief(b: Battle, dem: Int16Array | null): Relief {
 	const widthM = FIELD.w * ((b.scale?.km ?? 10) / (b.scale?.px ?? 100)) * 1000;
 
 	// Real relief, lowest land at zero, exaggerated to a readable but honest height.
-	if (dem && dem.length === BAKE.nx * BAKE.ny) {
-		const real = resample(dem);
+	const real = dem ? resample(dem) : null;
+	if (real) {
 		const land = [...real].filter((v) => v > -5).sort((a, c) => a - c);
 		const lo = land[Math.floor(land.length * 0.02)] ?? 0;
 		const hi = land[Math.floor(land.length * 0.985)] ?? lo + 1;
 		const flat = ((hi - lo) / widthM) * WORLD.w;
-		const exag = flat > 0 ? Math.max(1.5, Math.min(9, 0.62 / flat)) : 1;
+		const exag = flat > 0 ? Math.max(1.2, Math.min(4.2, 0.38 / flat)) : 1;
 		const k = (WORLD.w / widthM) * exag;
 		for (let i = 0; i < n; i++) h[i] = Math.max(0, real[i] - lo) * k;
 	}
 
-	const add = (fn: (p: Pt, i: number) => void) => {
-		for (let i = 0; i < n; i++) fn(vertexAt(i), i);
+	/** Areas and water read the drawing at the nearest sheet point; `real` hands over the true spot, for shapes that end where they are drawn. */
+	const add = (fn: (p: Pt, i: number) => void, real = false) => {
+		for (let i = 0; i < n; i++) fn(real ? vertexAt(i) : onSheet(vertexAt(i)), i);
 	};
 	const bump = (at: Pt, r: number, amp: number) =>
 		add((p, i) => {
 			const d = Math.hypot(p[0] - at[0], (p[1] - at[1]) * 1.15) / r;
 			if (d < 2.6) h[i] += amp * Math.exp(-d * d * 1.6);
-		});
+		}, true);
 
 	for (const t of b.terrain) {
-		if (t.kind === 'hill') bump(t.at, t.r ?? 40, 0.16 * ((t.r ?? 40) / 40) ** 0.6);
-		else if (t.kind === 'mountain') bump(t.at, (t.r ?? 30) * 1.5, 0.42 * ((t.r ?? 30) / 30) ** 0.6);
+		if (t.kind === 'hill') bump(t.at, t.r ?? 40, 0.07 * ((t.r ?? 40) / 40) ** 0.6);
+		else if (t.kind === 'mountain') bump(t.at, (t.r ?? 30) * 1.5, 0.2 * ((t.r ?? 30) / 30) ** 0.6);
 		else if (t.kind === 'ridge') {
 			const line = lineOf(t.points);
 			add((p, i) => {
 				const d = distToPath(p, line) / 34;
-				if (d < 2.4) h[i] += 0.17 * Math.exp(-d * d * 1.4);
-			});
+				if (d < 2.4) h[i] += 0.08 * Math.exp(-d * d * 1.4);
+			}, true);
 		}
 	}
 
@@ -169,6 +202,11 @@ export function buildRelief(b: Battle, dem: Int16Array | null): Relief {
 		}
 	}
 
+	// A game board, not a relief model: hills stay, but low enough that troops read over them.
+	for (let i = 0; i < n; i++) {
+		if (h[i] <= WATER_DEPTH + 0.001) continue;
+		h[i] = LAND_FLOOR + (h[i] - LAND_FLOOR) * 0.55;
+	}
 	let maxY = 0;
 	for (let i = 0; i < n; i++) maxY = Math.max(maxY, h[i]);
 	return { h, cover, maxY };
@@ -176,8 +214,8 @@ export function buildRelief(b: Battle, dem: Int16Array | null): Relief {
 
 /** Ground height under a sheet point (bilinear). */
 export function groundAt(r: Relief, [x, y]: Pt): number {
-	const gx = Math.max(0, Math.min(GRID.nx - 1.001, x / cellW));
-	const gy = Math.max(0, Math.min(GRID.ny - 1.001, y / cellH));
+	const gx = Math.max(0, Math.min(GRID.nx - 1.001, (x - X0) / CELL));
+	const gy = Math.max(0, Math.min(GRID.ny - 1.001, (y - Y0) / CELL));
 	const i = Math.floor(gx);
 	const j = Math.floor(gy);
 	const fx = gx - i;

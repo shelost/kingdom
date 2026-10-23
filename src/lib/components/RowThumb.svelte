@@ -1,12 +1,14 @@
 <script lang="ts">
-	import { storyImg } from '$lib/img';
+	import { storyImg, type StoryImgKind } from '$lib/img';
 
 	let {
 		src,
 		sizes,
 		alt = '',
 		fallback = '',
-		priority = false
+		priority = false,
+		portrait = false,
+		kind = 'cue'
 	}: {
 		src?: string;
 		sizes: string;
@@ -14,12 +16,15 @@
 		/** Letter drawn when the episode has no still yet. */
 		fallback?: string;
 		priority?: boolean;
+		/** 3:4 movie poster instead of the 2:1 still. */
+		portrait?: boolean;
+		kind?: StoryImgKind;
 	} = $props();
 </script>
 
-<span class="thumb">
+<span class="thumb" class:portrait>
 	{#if src}
-		<img {...storyImg(src, { kind: 'cue', priority, sizes, alt })} />
+		<img {...storyImg(src, { kind, priority, sizes, alt })} />
 	{:else}
 		<span class="thumb-empty" aria-hidden="true">{fallback}</span>
 	{/if}
@@ -35,6 +40,10 @@
 		border-radius: var(--radius);
 		background: color-mix(in srgb, var(--fg) 7%, transparent);
 		box-shadow: 0 10px 22px -16px rgba(0, 0, 0, 0.7);
+	}
+
+	.thumb.portrait {
+		aspect-ratio: 3 / 4;
 	}
 
 	:global(:is(a, button):is(:hover, :focus-visible)) .thumb {

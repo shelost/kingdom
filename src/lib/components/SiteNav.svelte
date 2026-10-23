@@ -7,6 +7,7 @@
 	import { toggleTheme } from '$lib/themeUi.svelte';
 	import { PILL_LINKS, isSiteLinkActive } from '$lib/siteLinks';
 	import ThemeIcon from './ThemeIcon.svelte';
+	import LangSwitch from './LangSwitch.svelte';
 
 	/**
 	 * `inline` keeps the pill in the flow (the chronicle's settings panel). Otherwise
@@ -74,6 +75,7 @@
 		>
 	{/each}
 	{#if !inline}
+		<LangSwitch />
 		<button
 			type="button"
 			class="theme-toggle"
@@ -93,8 +95,8 @@
 		position: relative;
 		display: inline-flex;
 		align-items: center;
-		gap: 0.15rem;
-		padding: 0.25rem;
+		gap: 0.2rem;
+		padding: 0.45rem;
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
@@ -107,7 +109,7 @@
 		position: fixed;
 		z-index: 94;
 		inset: 0 0 auto;
-		height: calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 3.5rem);
+		height: calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 4.2rem);
 		backdrop-filter: blur(14px);
 		-webkit-backdrop-filter: blur(14px);
 		mask-image: linear-gradient(to bottom, black 55%, transparent);
@@ -170,7 +172,7 @@
 		text-decoration: none;
 		white-space: nowrap;
 		color: var(--fg-dim);
-		padding: 0.4rem 0.8rem;
+		padding: 0.55rem 1.05rem;
 		border-radius: var(--radius-pill);
 		-webkit-tap-highlight-color: transparent;
 		transition:
@@ -199,8 +201,8 @@
 		flex: 0 0 auto;
 		display: grid;
 		place-items: center;
-		width: 1.85rem;
-		height: 1.85rem;
+		width: 2.15rem;
+		height: 2.15rem;
 		margin-left: 0.1rem;
 		padding: 0;
 		color: var(--fg-dim);

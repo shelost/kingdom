@@ -1,13 +1,18 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { resolve } from '$app/paths';
+	import Lifespan from '$lib/components/Lifespan.svelte';
+	import { HISTORICAL_TAG, tieTrail } from '$lib/relations';
 	import {
 		byId,
 		avatarOf,
 		nameOf,
 		titleOf,
+		titleKoOf,
+		kingdomName,
 		koreanOf,
 		stageGalleryOf,
+		alternateImagesOf,
 		isPlaceholderArt,
 		KINGDOMS,
 		ERA_TAG_META,
@@ -27,6 +32,8 @@
 		type Person,
 		type CareerOffice
 	} from '$lib/people';
+	import { reading } from '$lib/reading.svelte';
+	import { ui } from '$lib/uiLang';
 	import {
 		kindOf,
 		kindLabel,
@@ -35,6 +42,8 @@
 		careerYearsOf,
 		careerAgesOf,
 		bondsFor,
+		bondPlacesOf,
+		bondsAtPlace,
 		betweenPeople,
 		appearanceCount,
 		godTierLabel,
@@ -62,6 +71,7 @@
 		type MemberBand
 	} from '$lib/wiki';
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
+	import { birthNameOf, royalNameOf } from '$lib/givenNames';
 	import { ensureStars, isStarred, starKey } from '$lib/imageStarsUi.svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import WikiText from '$lib/components/WikiText.svelte';
@@ -69,8 +79,10 @@
 	import OrgChart from './diagrams/OrgChart.svelte';
 	import { chartsForWikiEntry, hasDiagramChart } from './diagrams/wikiCharts';
 	import { storyImg } from '$lib/img';
-	import { scenesForWikiEntry, type WikiScene } from '$lib/wikiScenes';
+	import { bondStillOf, scenesForPlace, scenesForWikiEntry, type WikiScene } from '$lib/wikiScenes';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
+	import { editUi } from '$lib/editUi.svelte';
+	import RelationHealth from './RelationHealth.svelte';
 
 	let {
 		entry,
@@ -102,6 +114,8 @@
 	let previewLook = $state<string | null>(null);
 	let stageRows = $derived(stageGalleryOf(entry));
 	let hasStageGallery = $derived(stageRows.length > 1);
+	/** Every image of a character, one per look (portraits, stages, poster, unlinked `ch_*` files). */
+	let alternates = $derived(entry.entity === 'relationship' ? [] : alternateImagesOf(entry));
 	let art = $derived(avatarOf(entry, undefined, null, previewLook));
 	let photo = $derived(photoOf(entry));
 	let binyeoArt = $derived(binyeoArtOf(entry));
@@ -109,9 +123,22 @@
 	let objectArt = $derived(objectArtOf(entry));
 	let posterArt = $derived(posterArtOf(entry));
 	let flag = $derived(kingdomFlag(entry.kingdom));
-	let who = $derived(nameOf(entry, null, previewLook));
-	let role = $derived(titleOf(entry, null, previewLook));
-	let ko = $derived(koreanOf(entry, null, previewLook));
+	/** Profiles lead with the birth name; the temple / reign name sits small above. */
+	let birth = $derived(birthNameOf(entry));
+	let royal = $derived(royalNameOf(entry));
+	let koMode = $derived(reading.lang === 'ko');
+	let who = $derived(
+		koMode
+			? (birth?.korean ?? koreanOf(entry, null, previewLook) ?? birth?.english ?? nameOf(entry, null, previewLook))
+			: (birth?.english ?? nameOf(entry, null, previewLook))
+	);
+	let role = $derived(
+		koMode ? titleKoOf(entry, null, previewLook) : titleOf(entry, null, previewLook)
+	);
+	let ko = $derived(birth?.korean ?? koreanOf(entry, null, previewLook));
+	let hanja = $derived(birth?.hanja ?? entry.hanja);
+	let royalKo = $derived(royal?.korean);
+	let royalHanja = $derived(royal?.hanja);
 	let isBond = $derived(entry.entity === 'relationship');
 	let isPlace = $derived(entry.entity === 'place');
 	let isPhrase = $derived(entry.entity === 'phrase');
@@ -131,23 +158,29 @@
 			kind === 'god' ||
 			kind === 'animal' ||
 			kind === 'instrument' ||
-			kind === 'relationship'
+			kind === 'relationship' ||
+			kind === 'place' ||
+			kind === 'city'
 			? scenesForWikiEntry(entry.id)
 			: []
 	);
-	/** A relationship's cover still (its `still` slot), when that slot has art. */
-	let bondStill = $derived(
-		isBond && entry.still ? scenes.find((s) => s.id === entry.still && !s.nsfw)?.art : undefined
-	);
+	let bondStill = $derived(bondStillOf(entry));
 	/** A bond's painted 2:1 board (`avatar`) leads; otherwise its cover still. */
 	let bondBoard = $derived(isBond && entry.avatar ? art : null);
 	let bondArt = $derived(bondBoard ?? bondStill);
+	/** A group or organization with a painted group still leads with it, wide like a bond board. */
+	let groupBoard = $derived((isOrg || isGroup) && !!entry.avatar ? art : null);
+	let tie = $derived(isBond ? tieTrail(entry) : undefined);
 	/** Nation detail hero uses the kingdom flag when present (not portrait art); bonds lead with their board or still. */
 	let heroArt = $derived(isNation && flag ? flag : (bondArt ?? art));
 	let isNationFlagHero = $derived(isNation && !!flag);
 	/** Places, animals, and bonds / instruments with a cover still lead with a landscape still. */
 	let isLandscapeHero = $derived(
-		isPlace || isAnimal || (isInstrument && entry.avatar !== entry.objectImage) || !!bondArt
+		isPlace ||
+			isAnimal ||
+			(isInstrument && entry.avatar !== entry.objectImage) ||
+			!!bondArt ||
+			!!groupBoard
 	);
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
 	let isPortraitHero = $derived(!!heroArt && !isLandscapeHero && !isNationFlagHero);
@@ -222,7 +255,17 @@
 		isCity || entry.placeKind === 'realm' ? placesInCity(entry.id) : []
 	);
 	let kingdomCities = $derived(isNation ? citiesOfKingdom(entry.kingdom) : []);
-	let relatedBonds = $derived(isBond ? [] : bondsFor(entry.id));
+	let relatedBonds = $derived(isBond ? [] : isPlace ? bondsAtPlace(entry.id) : bondsFor(entry.id));
+	let bondPlaces = $derived(isBond ? bondPlacesOf(entry) : []);
+	const PLACE_SCENE_CAP = 8;
+	let bondPlaceRows = $derived(
+		bondPlaces.map((pl) => ({
+			place: pl,
+			scenes: scenesForPlace(pl.id)
+				.filter((s) => !s.nsfw)
+				.slice(0, PLACE_SCENE_CAP)
+		}))
+	);
 	let partners = $derived(isBond ? betweenPeople(entry) : []);
 	let bondA = $derived(accents[0] ?? k.color);
 	let bondB = $derived(accents[1] ?? accents[0] ?? k.color);
@@ -374,7 +417,7 @@
 				class="hero-art"
 				class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
 				class:place={isLandscapeHero}
-				class:bond={!!bondBoard}
+				class:bond={!!bondBoard || !!groupBoard}
 				class:nation={isNationFlagHero}
 				aria-hidden="true"
 			>
@@ -414,10 +457,17 @@
 							<span class="realm-chip" title="Realm / domain">{entry.realm.en}<span class="realm-ko">{entry.realm.ko}</span></span>
 						{/if}
 					{/if}
+					{#if royal}
+						<p class="royal-name">
+							{#if royalHanja}<span class="hanja">{royalHanja}</span>{/if}
+							{#if royalKo}<span class="ko">{royalKo}</span>{/if}
+							<span class="royal-en">{royal.english}</span>
+						</p>
+					{/if}
 					<h1 class="name">{who}</h1>
 					<p class="native">
-						{#if entry.hanja}<span class="hanja">{entry.hanja}</span>{/if}
-						{#if ko}
+						{#if hanja}<span class="hanja">{hanja}</span>{/if}
+						{#if ko && !koMode}
 							<span class="ko" class:modern-gloss={isClan} title={isClan ? 'Modern bon-gwan / surname' : undefined}
 								>{ko}</span
 							>
@@ -482,6 +532,30 @@
 			</section>
 		{/if}
 
+		{#if alternates.length > 1}
+			<section class="alt-images" aria-label="Alternate images">
+				<h2 class="stage-heading">Alternate images</h2>
+				<div class="alt-grid">
+					{#each alternates as alt, i (alt.art)}
+						<button
+							type="button"
+							class="alt-tile"
+							title={alt.label}
+							onclick={(e) =>
+								openLightbox(
+									alternates.map((a) => ({ src: a.art, alt: a.label, title: `${entry.name} · ${a.label}` })),
+									i,
+									e.currentTarget
+								)}
+						>
+							<img {...storyImg(alt.art, { kind: 'thumb', alt: alt.label, sizes: '8rem' })} />
+							<span class="alt-label">{alt.label}</span>
+						</button>
+					{/each}
+				</div>
+			</section>
+		{/if}
+
 		{#if isPhrase}
 			<p class="phrase-mark">Household idiom · say it the way others say Trojan horse</p>
 		{/if}
@@ -495,14 +569,37 @@
 		<dl class="props">
 			{#if role}
 				<div>
-					<dt>{isBond ? 'Bond' : isPlace ? 'Type' : 'Title'}</dt>
+					<dt>{ui(isBond ? 'Bond' : isPlace ? 'Type' : 'Title')}</dt>
 					<dd>{role}</dd>
+				</div>
+			{/if}
+			{#if tie}
+				<div>
+					<dt>Type</dt>
+					<dd>{tie.label}<span class="realm-ko"> · {tie.ko}</span></dd>
+				</div>
+			{/if}
+			{#if isGroup && entry.historical}
+				<div>
+					<dt>Type</dt>
+					<dd>{HISTORICAL_TAG.label}<span class="realm-ko"> · {HISTORICAL_TAG.ko}</span></dd>
 				</div>
 			{/if}
 			{#if isBond && entry.dynamic}
 				<div>
 					<dt>Dynamic</dt>
 					<dd>{entry.dynamic.en}<span class="realm-ko"> · {entry.dynamic.ko}</span></dd>
+				</div>
+			{/if}
+			{#if bondPlaces.length}
+				<div>
+					<dt>Place</dt>
+					<dd class="links">
+						{#each bondPlaces as pl, i (pl.id)}
+							{#if i > 0}<span class="sep">·</span>{/if}
+							<button type="button" class="linkish" onclick={() => onOpen(pl.id)}>{nameOf(pl)}</button>
+						{/each}
+					</dd>
 				</div>
 			{/if}
 			{#if entry.godTier}
@@ -561,7 +658,7 @@
 			{/if}
 			{#if showPolityRow}
 				<div>
-					<dt>{polityLabel}</dt>
+					<dt>{ui(polityLabel)}</dt>
 					<dd>
 						{#if isBond && partners.length}
 							<span class="pill-row">
@@ -577,7 +674,7 @@
 											onclick={() => onOpen(pn.id)}
 										>
 											{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
-											{pk.label}
+											{kingdomName(other.kingdom, koMode ? 'ko' : 'en')}
 										</button>
 									{:else if rp}
 										<button
@@ -586,12 +683,12 @@
 											style:--pill={pk.color}
 											onclick={() => onOpen(rp.id)}
 										>
-											{pk.label}
+											{kingdomName(other.kingdom, koMode ? 'ko' : 'en')}
 										</button>
 									{:else}
 										<span class="pill" style:--pill={pk.color}>
 											{#if kingdomFlag(other.kingdom)}<img class="pill-flag" src={kingdomFlag(other.kingdom)} alt="" />{/if}
-											{pk.label}
+											{kingdomName(other.kingdom, koMode ? 'ko' : 'en')}
 										</span>
 									{/if}
 								{/each}
@@ -599,16 +696,20 @@
 						{:else if nation && !isNation}
 							<button type="button" class="pill link-pill" onclick={() => onOpen(nation.id)}>
 								{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
-								{k.label}
+								{kingdomName(entry.kingdom, koMode ? 'ko' : 'en')}
 							</button>
 						{:else if realmPlace && realmPlace.id !== entry.id}
 							<button type="button" class="pill link-pill" onclick={() => onOpen(realmPlace.id)}>
-								{k.label === '—' ? nameOf(realmPlace) : k.label}
+								{k.label === '—'
+									? koMode
+										? realmPlace.korean || nameOf(realmPlace)
+										: nameOf(realmPlace)
+									: kingdomName(entry.kingdom, koMode ? 'ko' : 'en')}
 							</button>
 						{:else}
 							<span class="pill">
 								{#if flag}<img class="pill-flag" src={flag} alt="" />{/if}
-								{k.label}
+								{kingdomName(entry.kingdom, koMode ? 'ko' : 'en')}
 							</span>
 						{/if}
 					</dd>
@@ -693,12 +794,12 @@
 			{/if}
 			{#if life}
 				<div>
-					<dt>{hasHumanAge(entry) ? 'Lived' : 'Active'}</dt>
-					<dd>{life}</dd>
+					<dt>{ui(hasHumanAge(entry) ? 'Lived' : 'Active')}</dt>
+					<dd><Lifespan person={entry} note /></dd>
 				</div>
 			{/if}
 			{#if kind === 'character' && entry.born != null && entry.died != null}
-				<div><dt>Age at death</dt><dd>{entry.died - entry.born}</dd></div>
+				<div><dt>{ui('Age at death')}</dt><dd>{entry.died - entry.born}</dd></div>
 			{/if}
 			{#if entry.ideology}
 				<div>
@@ -708,7 +809,7 @@
 			{/if}
 			{#if clanLabel}
 				<div>
-					<dt>Clan</dt>
+					<dt>{ui('Clan')}</dt>
 					<dd class="links">
 						{#if clanEntries.length}
 							{#each clanEntries as c, i (c.id)}
@@ -807,6 +908,74 @@
 					<li title={ERA_TAG_META[t]?.hint ?? t}>{ERA_TAG_META[t]?.label ?? t}</li>
 				{/each}
 			</ul>
+		{/if}
+
+		{#if bondPlaceRows.length}
+			<section class="bond-places" aria-label="Places">
+				<h2>Places</h2>
+				{#each bondPlaceRows as row (row.place.id)}
+					{@const pl = row.place}
+					{@const placeArt = avatarOf(pl)}
+					<div class="bond-place">
+						<button
+							type="button"
+							class="member-card place-card"
+							style:--mk={colorOf(pl)}
+							onclick={() => onOpen(pl.id)}
+						>
+							<span
+								class="member-avatar place-thumb"
+								class:silhouette={isPlaceholderArt(placeArt)}
+								aria-hidden="true"
+							>
+								{#if placeArt}
+									<img
+										{...storyImg(placeArt, {
+											kind: 'place',
+											alt: '',
+											sizes: '7.25rem',
+											widths: [128, 256]
+										})}
+									/>
+								{:else}
+									{hangulInitial(pl)}
+								{/if}
+							</span>
+							<span class="member-meta">
+								<span class="member-name">{nameOf(pl)}</span>
+								{#if titleOf(pl)}
+									<span class="member-title">{titleOf(pl)}</span>
+								{:else}
+									<span class="member-title">{kindLabel(pl)}</span>
+								{/if}
+							</span>
+						</button>
+						{#if row.scenes.length}
+							<ul class="place-scenes">
+								{#each row.scenes as scene, i (scene.id)}
+									<li>
+										<button
+											type="button"
+											class="gallery-shot"
+											onclick={(e) => openWikiGallery(row.scenes, i, e.currentTarget)}
+											aria-label={scene.alt || scene.title}
+										>
+											<img
+												{...storyImg(scene.art, {
+													kind: 'cue',
+													alt: '',
+													sizes: '9rem',
+													widths: [256, 384]
+												})}
+											/>
+										</button>
+									</li>
+								{/each}
+							</ul>
+						{/if}
+					</div>
+				{/each}
+			</section>
 		{/if}
 
 		{#if galleryScenes.length}
@@ -1148,24 +1317,30 @@
 			</section>
 		{/if}
 
+		{#if isBond && editUi.enabled}
+			<RelationHealth id={entry.id} />
+		{/if}
+
 		{#if entry.arc}
 			<section>
 				<h2>
-					{isBond
-						? 'Story of the bond'
-						: isPlace
-							? 'About this place'
-							: isOrg
-								? 'About this organization'
-								: isGroup
-									? 'About this group'
-									: isClan
-										? 'About this clan'
-										: isInstrument
-											? 'About this instrument'
-											: isGod
-												? 'Myth'
-												: 'Character arc'}
+					{ui(
+						isBond
+							? 'Story of the bond'
+							: isPlace
+								? 'About this place'
+								: isOrg
+									? 'About this organization'
+									: isGroup
+										? 'About this group'
+										: isClan
+											? 'About this clan'
+											: isInstrument
+												? 'About this instrument'
+												: isGod
+													? 'Myth'
+													: 'Character arc'
+					)}
 				</h2>
 				<p class="prose"><WikiText text={entry.arc} selfId={entry.id} {onOpen} /></p>
 			</section>
@@ -1173,7 +1348,7 @@
 
 		{#if entry.events?.length}
 			<section>
-				<h2>Key events</h2>
+				<h2>{ui('Key events')}</h2>
 				<ol class="timeline">
 					{#each entry.events as ev, i (i)}
 						<li>
@@ -1204,7 +1379,7 @@
 
 		{#if relatedBonds.length}
 			<section>
-				<h2>Relationships</h2>
+				<h2>{isPlace ? 'Bonds here' : 'Relationships'}</h2>
 				<ul class="related">
 					{#each relatedBonds as bond (bond.id)}
 						{@const others = (bond.between ?? [])
@@ -1596,6 +1771,42 @@
 		padding-top: 2rem;
 	}
 
+	.alt-images {
+		margin: 1rem 0;
+	}
+
+	.alt-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
+		gap: 0.6rem;
+	}
+
+	.alt-tile {
+		display: grid;
+		gap: 0.3rem;
+		padding: 0;
+		border: 0;
+		background: none;
+		color: inherit;
+		font: inherit;
+		text-align: center;
+		cursor: zoom-in;
+	}
+
+	.alt-tile img {
+		width: 100%;
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		object-position: top center;
+		border-radius: 0.5rem;
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
+	}
+
+	.alt-label {
+		font-size: 0.72rem;
+		color: var(--fg-dim);
+	}
+
 	.stage-gallery {
 		margin: 0 0 1.1rem;
 		padding: 0.95rem 1rem 1rem;
@@ -1688,6 +1899,26 @@
 		font-weight: 700;
 		color: #fff;
 		background: color-mix(in srgb, var(--k) 72%, #000);
+	}
+
+	/* Temple / reign name above the birth name (眞智王 · 진지왕 · King Jinji). */
+	.royal-name {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.45rem;
+		margin: 0 0 0.2rem;
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 0.92rem;
+		letter-spacing: 0.03em;
+		line-height: 1.2;
+		color: var(--fg-dim);
+	}
+
+	.royal-name .royal-en {
+		font-family: var(--serif);
+		font-style: italic;
+		color: color-mix(in srgb, var(--k) 55%, var(--fg-dim));
 	}
 
 	/* Wikipedia-style title: serif, ruled off from the article. */
@@ -2407,6 +2638,51 @@
 	.member-avatar.place-thumb img {
 		object-fit: cover;
 		object-position: center;
+	}
+
+	.bond-places {
+		display: grid;
+		gap: 1rem;
+		margin: 0 0 1.6rem;
+	}
+
+	.bond-place {
+		display: grid;
+		grid-template-columns: 7.25rem minmax(0, 1fr);
+		gap: 0.75rem;
+		align-items: start;
+	}
+
+	.bond-place > .place-card {
+		width: 7.25rem;
+	}
+
+	.place-scenes {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(6.75rem, 1fr));
+		gap: 0.35rem;
+	}
+
+	.place-scenes .gallery-shot img {
+		aspect-ratio: 2 / 1;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 4px;
+	}
+
+	@media (max-width: 40rem) {
+		.bond-place {
+			grid-template-columns: 1fr;
+		}
+
+		.bond-place > .place-card {
+			width: 100%;
+			max-width: 11rem;
+		}
 	}
 
 	/* Chronicle stills — bare 3-col masonry, native aspect, no tile chrome. */

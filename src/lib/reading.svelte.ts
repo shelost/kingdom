@@ -9,9 +9,9 @@
 
 import { browser } from '$app/environment';
 import { goto, replaceState } from '$app/navigation';
-import { chapters, entryId, episodeNumber, partId } from '$lib/story';
+import { arcPageId, chapters, entryId, episodeNumber, isPrologue, partId } from '$lib/story';
 import { isLoveEpisode } from '$lib/loveEpisodes';
-import { partLabel } from '$lib/tocTree';
+import { arcLabelAt, chapterHeadedBy, chapterLabel, chapterNumberOf, partLabel, tocAnchor } from '$lib/tocTree';
 import { scriptUi } from '$lib/scriptUi.svelte';
 import { autoOpenToc, tocUi } from '$lib/tocUi.svelte';
 
@@ -63,14 +63,126 @@ export function restoreKeptReadingScroll(): boolean {
 	return true;
 }
 
-export type Lang = 'both' | 'en' | 'ko';
+/**
+ * Where the reader is, as "this entry, this far into it" — a raw Y lands wrong
+ * after a refresh because the chronicle above has not laid out yet. Per tab
+ * (sessionStorage); app.html reads the same key to show the loader before paint.
+ */
+const SPOT_KEY = 'kingdom:reading-spot';
+type ReadingSpot = { href: string; id: string; offset: number; t: number };
+const RESTORING_CLASS = 'is-restoring';
+let spotRestored = false;
+
+const currentHref = () => `${location.pathname}${location.search}`;
+
+function saveReadingSpot(entry: HTMLElement | null) {
+	const id = entry?.dataset.storyId;
+	if (!browser || !entry || !id) return;
+	if (document.documentElement.classList.contains(RESTORING_CLASS)) return;
+	try {
+		const spot: ReadingSpot = {
+			href: currentHref(),
+			id,
+			offset: Math.round(-entry.getBoundingClientRect().top),
+			t: Date.now()
+		};
+		sessionStorage.setItem(SPOT_KEY, JSON.stringify(spot));
+	} catch {
+		/* private mode */
+	}
+}
+
+/** The saved spot, only on a refresh (or a full-page back/forward) of the same address. */
+function reloadedSpot(): ReadingSpot | null {
+	if (!browser) return null;
+	try {
+		const nav = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+		if (nav?.type !== 'reload' && nav?.type !== 'back_forward') return null;
+		const spot = JSON.parse(sessionStorage.getItem(SPOT_KEY) ?? 'null') as ReadingSpot | null;
+		if (!spot || typeof spot.id !== 'string' || typeof spot.offset !== 'number') return null;
+		return spot.href === currentHref() ? spot : null;
+	} catch {
+		return null;
+	}
+}
+
+function endRestoring() {
+	document.documentElement.classList.remove(RESTORING_CLASS);
+}
 
 /**
- * script    = scroll layout without speaker plate
- * immersion = VN/game speaker plate over the reading column
- * cinema    = viewport grid: letterboxed scene, script rail, character, dialogue
+ * After a refresh, put the reader back on the entry they left, as deep into it
+ * as they were, re-landing while images and lazy art grow the page; the loader
+ * lifts once the layout has been still for a moment, after 2.5 s at most, or
+ * at the reader's first wheel / touch / key. Returns true once the spot owns
+ * the scroll, so heading jumps scheduled by the URL appliers stand down.
  */
-export type ReadMode = 'script' | 'immersion' | 'cinema';
+export function restoreReadingSpot(): boolean {
+	if (!browser) return false;
+	if (spotRestored) return true;
+	const spot = reloadedSpot();
+	const entry = spot
+		? document.querySelector<HTMLElement>(`article.entry[data-story-id="${CSS.escape(spot.id)}"]`)
+		: null;
+	if (!spot || !entry) {
+		endRestoring();
+		return false;
+	}
+	spotRestored = true;
+	let done = false;
+	let quiet: ReturnType<typeof setTimeout> | undefined;
+	const land = () => {
+		if (done || !entry.isConnected) return;
+		const y = entry.getBoundingClientRect().top + window.scrollY + spot.offset;
+		window.scrollTo(0, Math.max(0, y));
+	};
+	const settle = () => {
+		clearTimeout(quiet);
+		quiet = setTimeout(finish, 300);
+	};
+	const observer = new ResizeObserver(() => {
+		land();
+		settle();
+	});
+	const cap = setTimeout(() => finish(), 2500);
+	function finish() {
+		if (done) return;
+		done = true;
+		observer.disconnect();
+		clearTimeout(quiet);
+		clearTimeout(cap);
+		window.removeEventListener('wheel', finish);
+		window.removeEventListener('touchstart', finish);
+		window.removeEventListener('keydown', finish);
+		endRestoring();
+		window.dispatchEvent(new Event('scroll'));
+	}
+	observer.observe(storyRoot() ?? document.body);
+	window.addEventListener('wheel', finish, { passive: true });
+	window.addEventListener('touchstart', finish, { passive: true });
+	window.addEventListener('keydown', finish);
+	land();
+	settle();
+	return true;
+}
+
+export type Lang = 'both' | 'en' | 'ko';
+
+/** One language control, on every page. */
+export const LANGS: { id: Lang; label: string; hint: string }[] = [
+	{ id: 'both', label: 'A/한', hint: 'Show everything' },
+	{ id: 'en', label: 'EN', hint: 'English' },
+	{ id: 'ko', label: '한', hint: 'Korean' }
+];
+
+/**
+ * script     = scroll layout without speaker plate
+ * immersion  = VN/game speaker plate over the reading column
+ * cinema     = viewport grid: letterboxed scene, script rail, character, dialogue
+ * screenplay = print-ready courier script, text only
+ * storyboard = numbered animation boards: still, description, dialogue
+ */
+export type ReadMode = 'script' | 'immersion' | 'cinema' | 'screenplay' | 'storyboard';
 
 /** full = continuous story; episodes = one entry at a time (default) */
 export type ViewScope = 'full' | 'episodes';
@@ -79,8 +191,8 @@ export type ViewScope = 'full' | 'episodes';
 export const VIEW_QUERY = 'view';
 export const EP_QUERY = 'ep';
 
-/** `prologue` is Heewon's note before the story, `part` a Part's title page (its chapter is the one that opens it), `entry` a story episode. */
-export type EpisodeKind = 'prologue' | 'part' | 'entry';
+/** `prologue` is Heewon's note before the story, `part` / `arc` / `chapter` are title pages, `entry` a story episode. */
+export type EpisodeKind = 'prologue' | 'part' | 'arc' | 'chapter' | 'entry';
 
 export type EpisodeRef = {
 	kind: EpisodeKind;
@@ -101,7 +213,9 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'five-principles-chunchu-munhee': 'five-principles-munhee',
 	'iron-will-chunchu-gesomun': 'iron-will-chunchu-yeon',
 	'iron-will-euija-gesomun': 'iron-will-euija-yeon',
-	'iron-will-kim-yushin': 'iron-will-forty-fortresses',
+	'iron-will-kim-yushin': 'iron-will-yushin',
+	'iron-will-forty-fortresses': 'iron-will-yushin',
+	'five-principles-the-severing': 'five-principles-gwansan',
 	'jumong-onjo': 'fall-of-euija-onjo',
 	'onjo-onjo': 'fall-of-euija-onjo',
 	'chunchu-era-the-flower-youth': 'five-principles-bupmin',
@@ -109,19 +223,20 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'chunchu-era-gaya-the-lost-nations': 'chunchu-era-suro',
 	'chunchu-era-the-fall-of-gaya': 'chunchu-era-muryuk',
 	'final-stand-pyongyang-fortress': 'final-stand-pyongyang-i',
-	'epilogue-li-shimin-the-2nd-huangdi': 'epilogue-emperor',
-	'li-shimin-the-2nd-huangdi': 'epilogue-emperor',
+	'epilogue-li-shimin-the-2nd-huangdi': 'epilogue-four-dragons',
+	'li-shimin-the-2nd-huangdi': 'epilogue-four-dragons',
+	'epilogue-emperor': 'epilogue-four-dragons',
 	'final-stand-the-final-stand': 'final-stand-pyongyang-ii',
-	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-anseung',
-	'samhan-jinheung-the-crescent-moon': 'samhan-jinheung-the-cloud',
-	'samhan-jinheung-the-cloud-king': 'samhan-jinheung-the-cloud',
-	'jinheung-the-cloud-king': 'samhan-jinheung-the-cloud',
+	'silla-tang-war-goguryeo-revival-society': 'silla-tang-war-ansung',
+	'samhan-jinheung-the-crescent-moon': 'samhan-jinhung-the-cloud',
+	'samhan-jinheung-the-cloud-king': 'samhan-jinhung-the-cloud',
+	'jinheung-the-cloud-king': 'samhan-jinhung-the-cloud',
 	'samhan-the-eight-great-clans': 'samhan-prince-euija',
 	'samhan-gunchogo-the-hurricane': 'samhan-gunchogo-the-13th',
 	'samhan-ocean-trade': 'samhan-gunchogo-the-13th',
 	'samhan-the-summit': 'samhan-commander-yeon',
 	'samhan-birth-of-namseng': 'samhan-high-summit',
-	'samhan-gwanggaeto-the-conqueror': 'samhan-gwanggaeto-the-great-king',
+	'samhan-gwanggaeto-the-conqueror': 'samhan-gwanggeto-the-great-king',
 	'five-principles-gotasos-wedding': 'five-principles-gotaso',
 	'five-principles-yeons-three-sons': 'five-principles-academy',
 	'five-principles-grand-academy': 'five-principles-academy',
@@ -129,9 +244,10 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'iron-will-not-even-human': 'iron-will-gumil',
 	'jumong-jumong': 'seventh-invasion-haemosu',
 	'jumong-dongmyung': 'seventh-invasion-jolbon',
-	'seventh-invasion-emperor-of-the-west': 'seventh-invasion-four-dragons',
+	'seventh-invasion-emperor-of-the-west': 'seventh-invasion-emperor',
+	'seventh-invasion-four-dragons': 'seventh-invasion-emperor',
 	'seventh-invasion-great-river': 'seventh-invasion-colossal-river',
-	'seventh-invasion-longmen-field': 'seventh-invasion-four-dragons',
+	'seventh-invasion-longmen-field': 'seventh-invasion-emperor',
 	'seventh-invasion-eastern-fortress': 'seventh-invasion-yodong',
 	'chunchu-era-the-hwarang': 'five-principles-bupmin',
 	'chunchu-era-harbour-ledgers': 'chunchu-era-jahee',
@@ -148,7 +264,7 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'fall-of-euija-sulmuns-apron': 'fall-of-euija-sulmun',
 	'fall-of-euija-black-rock': 'fall-of-euija-exile',
 	'fall-of-euija-gameunjang': 'fall-of-euija-stone-lady',
-	'fall-of-euija-jacheongbi': 'fall-of-euija-gardener',
+	'fall-of-euija-jacheongbi': 'fall-of-euija-jachungbi',
 	'fall-of-euija-five-thousand': 'fall-of-euija-exile',
 	'fall-of-euija-baekjuto-and-socheon-guk': 'fall-of-euija-three-princes',
 	'fall-of-euija-sanbangduk': 'fall-of-euija-stone-lady',
@@ -169,7 +285,8 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'final-stand-pyongyang': 'final-stand-pyongyang-i',
 	'final-stand-the-surrender-of-tamla': 'final-stand-tamla-surrenders',
 	'final-stand-the-bear-ford-commandery': 'fall-of-baekje-ungjin-commandery',
-	'final-stand-mount-gain': 'silla-tang-war-mount-gain',
+	'final-stand-mount-gain': 'silla-tang-war-prosperity-mountain',
+	'silla-tang-war-mount-gain': 'silla-tang-war-prosperity-mountain',
 	'final-stand-the-death-of-yeon-gesomun': 'final-stand-yeon-gesomun',
 	'final-stand-the-brothers-coup': 'final-stand-brothers-coup',
 	'final-stand-pyongyang-a': 'final-stand-pyongyang-ii',
@@ -180,29 +297,63 @@ const EPISODE_HASH_ALIASES: Record<string, string> = {
 	'silla-tang-war-inmun': 'silla-tang-war-maeso',
 	'silla-tang-war-strike-harbor': 'silla-tang-war-final-ford',
 	'seventh-invasion-jumong': 'seventh-invasion-haemosu',
-	'silla-tang-war-the-protectorate': 'silla-tang-war-anseung',
+	'silla-tang-war-the-protectorate': 'silla-tang-war-ansung',
+	'samhan-jinheung-the-cloud': 'samhan-jinhung-the-cloud',
+	'samhan-gwanggaeto-the-great-king': 'samhan-gwanggeto-the-great-king',
+	'iron-will-mehwa': 'iron-will-maehwa',
+	'iron-will-siege-of-deya': 'iron-will-siege-of-daeya',
+	'chunchu-era-sung': 'chunchu-era-seung',
+	'chunchu-era-jun': 'chunchu-era-jeon',
+	'chunchu-era-jeon': 'chunchu-era-jeon',
+	'chunchu-era-gyeol': 'chunchu-era-gyul',
+	'chunchu-era-king-muyul': 'chunchu-era-king-muyeol',
+	'chunchu-era-king-muyeol': 'chunchu-era-king-muyeol',
+	'fall-of-euija-heungsu': 'fall-of-euija-hungsu',
+	'silla-tang-war-anseung': 'silla-tang-war-ansung',
+	'silla-tang-war-the-wanggeoms-guest': 'silla-tang-war-munmu',
+	'silla-tang-war-the-wanggums-guest': 'silla-tang-war-munmu',
+	'silla-tang-war-the-king-for-all': 'silla-tang-war-wanggum',
+	'silla-tang-war-meso': 'silla-tang-war-maeso',
 	jumong: 'seventh-invasion-haemosu'
 };
 
 /** Flat episode list — slug ids match TOC / URL hashes (`chapterId-title-slug`).
- * Index 0 is the prologue (the default with no `?ep=`), its own episode before the first entry;
- * each Part's title page (`part-chapterId`) is its own episode before that Part's first entry. */
+ * Index 0 is the prologue (the default with no `?ep=`), its own episode before the first entry.
+ * A Part title page opens the Part, then each Arc and each named Chapter has its own page
+ * before the episodes inside it. */
 export const PROLOGUE_EPISODE_ID = 'prologue';
 
 export const episodes: EpisodeRef[] = [
 	{ kind: 'prologue', chapterId: 'prologue', chapterIndex: -1, entryIndex: -1, id: PROLOGUE_EPISODE_ID },
-	...chapters.flatMap((ch, chapterIndex): EpisodeRef[] => [
-		...(ch.part
-			? [{ kind: 'part' as const, chapterId: ch.id, chapterIndex, entryIndex: -1, id: partId(ch.id) }]
-			: []),
-		...ch.entries.map((entry, entryIndex) => ({
-			kind: 'entry' as const,
-			chapterId: ch.id,
-			chapterIndex,
-			entryIndex,
-			id: entryId(ch.id, entry.title)
-		}))
-	])
+	...chapters.flatMap((ch, chapterIndex): EpisodeRef[] => {
+		const pages: EpisodeRef[] = [];
+		if (ch.part) {
+			pages.push({ kind: 'part', chapterId: ch.id, chapterIndex, entryIndex: -1, id: partId(ch.id) });
+		}
+		if (!isPrologue(ch)) {
+			pages.push({ kind: 'arc', chapterId: ch.id, chapterIndex, entryIndex: -1, id: arcPageId(ch.id) });
+		}
+		for (const [entryIndex, entry] of ch.entries.entries()) {
+			const head = chapterHeadedBy(ch.id, entry.title);
+			if (head) {
+				pages.push({
+					kind: 'chapter',
+					chapterId: ch.id,
+					chapterIndex,
+					entryIndex,
+					id: tocAnchor(ch.id, head)
+				});
+			}
+			pages.push({
+				kind: 'entry',
+				chapterId: ch.id,
+				chapterIndex,
+				entryIndex,
+				id: entryId(ch.id, entry.title)
+			});
+		}
+		return pages;
+	})
 ];
 
 /** Title slug only — `jumong` from `jumong-jumong`. The title and Part pages keep their whole id. */
@@ -258,14 +409,29 @@ export function lastEpisode(): EpisodeRef | null {
 	}
 }
 
-/** Episode picker label: `7.13 · Hyukgosé` (the prologue is plain `Prologue`); Korean titles when the reader picks Korean. */
+/** Episode picker label: `7.13 · Hyukgosé` (Heewon's note is plain `Foreword`); Korean titles when the reader picks Korean. */
 export function episodeNavLabel(ep: EpisodeRef): string {
 	const ko = reading.lang === 'ko';
-	if (ep.kind === 'prologue') return ko ? '프롤로그' : 'Prologue';
+	if (ep.kind === 'prologue') return ko ? '서문' : 'Foreword';
 	if (ep.kind === 'part') {
 		const ch = chapters[ep.chapterIndex];
 		const name = (ko ? ch.partKorean : ch.partTitle) ?? '';
 		const label = partLabel(ch.part ?? '', ko);
+		return name ? `${label} · ${name}` : label;
+	}
+	if (ep.kind === 'arc') {
+		const ch = chapters[ep.chapterIndex];
+		const name = (ko ? ch?.korean : ch?.title) ?? '';
+		const label = arcLabelAt(ep.chapterIndex, ko);
+		return name ? `${label} · ${name}` : label;
+	}
+	if (ep.kind === 'chapter') {
+		const ch = chapters[ep.chapterIndex];
+		const entry = ch?.entries[ep.entryIndex];
+		const c = entry ? chapterHeadedBy(ch.id, entry.title) : undefined;
+		const name = (ko ? c?.ko : c?.label) ?? '';
+		const n = c ? chapterNumberOf(c) : null;
+		const label = n ? chapterLabel(n, ko) : ko ? '장' : 'Chapter';
 		return name ? `${label} · ${name}` : label;
 	}
 	const entry = chapters[ep.chapterIndex]?.entries[ep.entryIndex];
@@ -354,13 +520,20 @@ function applyModeClasses(m: ReadMode) {
 	const root = document.documentElement.classList;
 	root.toggle('is-immersion', m === 'immersion');
 	root.toggle('is-cinema', m === 'cinema');
-	root.toggle('is-stage', m !== 'script');
+	root.toggle('is-screenplay', m === 'screenplay');
+	root.toggle('is-storyboard', m === 'storyboard');
+	root.toggle('is-stage', m === 'immersion' || m === 'cinema');
 	if (m !== 'cinema') root.remove('is-cinema-peek');
 }
 
 /** Modes that put the live line on a stage — immersion's plate, cinema's strip. */
 export function isStageMode(m: ReadMode = reading.mode) {
-	return m !== 'script';
+	return m === 'immersion' || m === 'cinema';
+}
+
+/** Print script and storyboard. Neither is a stage and neither uses the manuscript column. */
+export function isDocumentMode(m: ReadMode = reading.mode) {
+	return m === 'screenplay' || m === 'storyboard';
 }
 
 /**
@@ -384,8 +557,20 @@ export function leadLang(l: Lang = reading.lang): 'ko' | 'en' {
 /** Versioned so the switch to an English default reaches readers who had saved 'both'. */
 const LANG_KEY = 'kingdom:lang:v2';
 
-export function setLang(l: Lang) {
+function isLang(v: string | null): v is Lang {
+	return v === 'en' || v === 'ko' || v === 'both';
+}
+
+/** Paint the choice onto the document so titles and every page share it. */
+function paintLang(l: Lang) {
 	reading.lang = l;
+	if (!browser) return;
+	document.documentElement.dataset.lang = l;
+	document.documentElement.lang = l === 'en' ? 'en' : 'ko';
+}
+
+export function setLang(l: Lang) {
+	paintLang(l);
 	try {
 		localStorage.setItem(LANG_KEY, l);
 	} catch {
@@ -417,10 +602,21 @@ export function setMode(m: ReadMode) {
 export function loadLang() {
 	try {
 		const v = localStorage.getItem(LANG_KEY);
-		if (v === 'en' || v === 'ko' || v === 'both') reading.lang = v;
+		paintLang(isLang(v) ? v : reading.lang);
 	} catch {
 		/* ignore */
 	}
+}
+
+/** Other tabs write the same key. This tab follows. */
+export function bindLangSync() {
+	if (!browser) return () => {};
+	const onStorage = (e: StorageEvent) => {
+		if (e.key !== LANG_KEY || !isLang(e.newValue)) return;
+		paintLang(e.newValue);
+	};
+	window.addEventListener('storage', onStorage);
+	return () => window.removeEventListener('storage', onStorage);
 }
 
 export function loadMode() {
@@ -447,6 +643,12 @@ export function loadViewScope() {
 	/* Hydrate index FROM the URL before writing — otherwise episodeIndex 0
 	   (Queen Sunduk) overwrites a bookmarked `?ep=jumong` on every mount. */
 	const epParam = new URL(location.href).searchParams.get(EP_QUERY);
+	/* A refreshed bare `/read` reopens the episode the reader was on, not the foreword. */
+	if (!epParam && reading.viewScope === 'episodes') {
+		const spot = reloadedSpot();
+		const idx = spot ? resolveEpisodeIndex(spot.id) : -1;
+		if (idx >= 0) reading.episodeIndex = idx;
+	}
 	applyReadingFromUrl(new URL(location.href));
 	if (reading.viewScope === 'episodes') {
 		/* A bare visit (or the prologue) opens with the TOC shut. */
@@ -504,7 +706,7 @@ export function setViewScope(s: ViewScope) {
 			window.dispatchEvent(new Event('scroll'));
 			return;
 		}
-		if (ep.kind === 'prologue' || (s === 'episodes' && ep.kind === 'part')) {
+		if (ep.kind === 'prologue' || (s === 'episodes' && ep.kind !== 'entry')) {
 			scrollStoryToTop();
 			window.dispatchEvent(new Event('scroll'));
 			return;
@@ -619,7 +821,7 @@ export function applyReadingFromUrl(url: URL) {
 		const dest = epParam ? canonicalHashId(epParam) : episodes[reading.episodeIndex]?.id;
 		requestAnimationFrame(() =>
 			requestAnimationFrame(() => {
-				if (restoreKeptReadingScroll()) return;
+				if (restoreKeptReadingScroll() || restoreReadingSpot()) return;
 				if (!changed) {
 					window.dispatchEvent(new Event('scroll'));
 					return;
@@ -673,6 +875,8 @@ export function resolveStoryTarget(id: string): StoryTarget | null {
 	}
 
 	if (chapters.some((ch) => ch.id === id)) {
+		const arcIdx = episodes.findIndex((e) => e.kind === 'arc' && e.chapterId === id);
+		if (arcIdx >= 0) return { episodeIndex: arcIdx, hashId: episodes[arcIdx].id };
 		const idx = episodes.findIndex((e) => e.kind === 'entry' && e.chapterId === id);
 		return idx >= 0 ? { episodeIndex: idx, hashId: id } : null;
 	}
@@ -746,8 +950,8 @@ export function storyTitleElement(el: HTMLElement): HTMLElement {
 	if (el.matches('.part-page')) {
 		return firstPainted(el, ['.part-title', '.part-eyebrow']) ?? el;
 	}
-	if (el.matches('[data-scene], .day, .mini')) {
-		return firstPainted(el, ['.day-label', '.mini-title', 'h1', 'h2']) ?? el;
+	if (el.matches('[data-scene], .day, .story, .mini')) {
+		return firstPainted(el, ['.story-label', '.day-label', '.mini-title', 'h1', 'h2']) ?? el;
 	}
 	return firstPainted(el, ['h1', 'h2']) ?? el;
 }
@@ -756,6 +960,53 @@ export function storyTitleElement(el: HTMLElement): HTMLElement {
 export function storyRoot(): HTMLElement | null {
 	if (typeof document === 'undefined') return null;
 	return document.querySelector<HTMLElement>('[data-story-root]');
+}
+
+/**
+ * The header the reader is under at viewport Y `line`: the last `[data-scene]`
+ * above it, keyed like `summarySections` (the episode id before the first one).
+ * A titled flashback owns only its own box; past it, the outer scene resumes.
+ */
+export function sectionAt(line: number): { key: string; title: string } | null {
+	const root = storyRoot();
+	if (!root) return null;
+	for (const article of root.querySelectorAll<HTMLElement>('article.entry')) {
+		const r = article.getBoundingClientRect();
+		if (r.top > line || r.bottom < line || !article.dataset.storyId) continue;
+		let key = article.dataset.storyId;
+		let title = '';
+		for (const el of article.querySelectorAll<HTMLElement>('[data-scene]')) {
+			const box = el.getBoundingClientRect();
+			if (box.top > line) break;
+			const flash = el.classList.contains('mini');
+			if (flash && box.bottom < line) continue;
+			key = el.dataset.scene ?? key;
+			title =
+				el.querySelector(flash ? '.mini-title' : '.day-label, .story-label')?.textContent?.trim() ?? '';
+		}
+		return { key, title };
+	}
+	return null;
+}
+
+/** Report the section under the reading line (40% down) on every scroll and resize. Returns the cleanup. */
+export function watchSection(on: (section: { key: string; title: string } | null) => void): () => void {
+	let raf = 0;
+	const sync = () => {
+		if (raf) return;
+		raf = requestAnimationFrame(() => {
+			raf = 0;
+			on(sectionAt(window.innerHeight * 0.4));
+		});
+	};
+	sync();
+	window.addEventListener('scroll', sync, { passive: true });
+	window.addEventListener('resize', sync);
+	return () => {
+		if (raf) cancelAnimationFrame(raf);
+		window.removeEventListener('scroll', sync);
+		window.removeEventListener('resize', sync);
+	};
 }
 
 /**
@@ -987,6 +1238,9 @@ export function consumeLeftoverStoryHash() {
 	stripStoryHash();
 }
 
+/** Last episode change. `dir` is 1 forward and -1 back; `gen` ticks so the turn can replay. */
+export const pageTurn = $state({ dir: 0 as -1 | 0 | 1, gen: 0 });
+
 /**
  * Jump to an episode by flat index. Scrolls by measured Y only — never writes `#id`.
  * Does not close the TOC unless `closeToc: true` (hamburger / Escape still do).
@@ -998,6 +1252,10 @@ export function goToEpisode(
 ) {
 	if (!episodes.length) return;
 	const next = Math.max(0, Math.min(episodes.length - 1, index));
+	if (next !== reading.episodeIndex) {
+		pageTurn.dir = next > reading.episodeIndex ? 1 : -1;
+		pageTurn.gen++;
+	}
 	reading.episodeIndex = next;
 	reading.sceneId = opts.destId && opts.destId !== episodes[next]?.id ? opts.destId : null;
 	releaseDialogue();
@@ -1298,6 +1556,7 @@ export function watchReading() {
 		if (reading.place !== place) reading.place = place;
 		if (reading.year !== year) reading.year = year;
 		if (reading.entryId !== entryKey) reading.entryId = entryKey;
+		saveReadingSpot(entry);
 		/* Full scope: scroll advances the episode index.
 		   Episodes scope: URL / TOC / Prev-Next own the index — don't let the
 		   band watcher fight a bookmarked `?ep=` (or snap back to index 0). */
@@ -1377,6 +1636,8 @@ export function watchReading() {
 		document.documentElement.classList.remove('is-flash');
 		document.documentElement.classList.remove('is-immersion');
 		document.documentElement.classList.remove('is-cinema');
+		document.documentElement.classList.remove('is-screenplay');
+		document.documentElement.classList.remove('is-storyboard');
 		document.documentElement.classList.remove('is-stage');
 		document.documentElement.classList.remove('is-cinema-peek');
 	};

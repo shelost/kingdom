@@ -8,6 +8,7 @@ import {
 	entryId,
 	arcNumber,
 	EPISODE_COUNT,
+	isPrologue,
 	type Block,
 	type Entry
 } from '$lib/story';
@@ -25,6 +26,7 @@ export type DirectoryEpisode = {
 	title: string;
 	ko?: string;
 	year: string;
+	words: number;
 	minutes: number;
 	synopsis: { en: string; ko: string };
 	tags: EntryTag[];
@@ -45,6 +47,8 @@ export type DirectoryArc = {
 	id: string;
 	/** Element id of the Arc heading. */
 	anchor: string;
+	/** Index into `chapters`, for `arcLabelAt`. */
+	index: number;
 	number: number | null;
 	title: string;
 	korean?: string;
@@ -83,7 +87,7 @@ function plain(html: string): string {
 		.trim();
 }
 
-function wordsIn(blocks: Block[]): number {
+export function wordsIn(blocks: Block[]): number {
 	let n = 0;
 	const count = (s: string | undefined) => (s ? plain(s).split(' ').filter(Boolean).length : 0);
 	for (const b of blocks) {
@@ -127,6 +131,7 @@ function directoryEpisode(arcIndex: number, entryIndex: number): DirectoryEpisod
 	const arc = chapters[arcIndex];
 	const entry = arc.entries[entryIndex];
 	const id = entryId(arc.id, entry.title);
+	const words = wordsIn(entry.blocks);
 	return {
 		id,
 		queryId: queryIds.get(id) ?? id,
@@ -135,7 +140,8 @@ function directoryEpisode(arcIndex: number, entryIndex: number): DirectoryEpisod
 		title: entry.title,
 		ko: entry.subtitle,
 		year: entry.year,
-		minutes: Math.max(1, Math.round(wordsIn(entry.blocks) / WORDS_PER_MINUTE)),
+		words,
+		minutes: Math.max(1, Math.round(words / WORDS_PER_MINUTE)),
 		synopsis: entry.logline ?? synopsisOf(entry.blocks),
 		tags: entryTags(entry)
 	};
@@ -158,6 +164,7 @@ function directoryArc(arcIndex: number): DirectoryArc {
 	return {
 		id: arc.id,
 		anchor: tocAnchor(arc.id),
+		index: arcIndex,
 		number: arcNumber(arcIndex),
 		title: arc.title,
 		korean: arc.korean,
@@ -167,11 +174,19 @@ function directoryArc(arcIndex: number): DirectoryArc {
 	};
 }
 
-/** Arcs without a `part` belong to the Part opened before them. */
+/** Arcs without a `part` belong to the Part opened before them; a prologue before any Part opens the first one. */
 export const PARTS: DirectoryPart[] = (() => {
 	const parts: DirectoryPart[] = [];
 	chapters.forEach((arc, i) => {
-		if (arc.part || !parts.length) {
+		const leadIn = parts.length === 1 && parts[0].arcs.every((a) => isPrologue(chapters[a.index]));
+		if (arc.part && leadIn) {
+			const part = parts[0];
+			part.id = arc.id;
+			part.label = arc.part;
+			part.title = arc.partTitle;
+			part.korean = arc.partKorean;
+			part.hanja = arc.partHanja;
+		} else if (arc.part || !parts.length) {
 			parts.push({
 				id: arc.id,
 				label: arc.part ?? 'Part I',

@@ -5,6 +5,7 @@
 import { MOVIE_SEQUENCES } from '$lib/movieSequences';
 import { nsfwUi } from '$lib/nsfwUi.svelte';
 import { chapters, entryId, isSceneHeader, scenesOf, type Block, type Entry } from '$lib/story';
+import { hasTerm, termVariants } from '$lib/romanFold';
 import { plainText } from '$lib/speech';
 import { widgetTexts } from '$lib/widgets';
 
@@ -92,6 +93,7 @@ function walkBlocks(
 				break;
 			case 'day':
 			case 'scene':
+			case 'story':
 				onText('scene', b.label);
 				onText('scene', b.ko);
 				break;
@@ -217,7 +219,7 @@ function tokensOf(q: string): string[] {
 function snippetAround(text: string, tokens: string[]): string {
 	const lower = hayOf(text);
 	let at = -1;
-	for (const t of tokens) {
+	for (const t of tokens.flatMap(termVariants)) {
 		const i = lower.indexOf(t);
 		if (i >= 0) {
 			at = i;
@@ -237,11 +239,11 @@ function bestChunk(doc: SearchDoc, tokens: string[], intimate: boolean): Chunk |
 	const usable = intimate ? doc.chunks : doc.chunks.filter((c) => !c.nsfw);
 	for (const c of usable) {
 		const h = hayOf(c.text);
-		if (tokens.every((t) => h.includes(t))) return c;
+		if (tokens.every((t) => hasTerm(h, t))) return c;
 	}
 	for (const c of usable) {
 		const h = hayOf(c.text);
-		if (tokens.some((t) => h.includes(t))) return c;
+		if (tokens.some((t) => hasTerm(h, t))) return c;
 	}
 	return usable[0] ?? null;
 }
@@ -251,7 +253,7 @@ function score(doc: SearchDoc, tokens: string[], chunk: Chunk | null): number {
 		`${doc.episodeTitle} ${doc.episodeKo ?? ''} ${doc.sceneTitle ?? ''} ${doc.sceneKo ?? ''}`
 	);
 	let n = 0;
-	if (tokens.every((t) => titleHay.includes(t))) n += 80;
+	if (tokens.every((t) => hasTerm(titleHay, t))) n += 80;
 	if (chunk?.kind === 'title') n += 50;
 	else if (chunk?.kind === 'scene') n += 40;
 	else if (chunk?.kind === 'quote') n += 30;
@@ -269,7 +271,7 @@ export function searchStory(query: string, limit = MAX_HITS): StorySearchHit[] {
 
 	for (const doc of getDocs()) {
 		const field = intimate ? doc.hayAll : doc.hay;
-		if (!tokens.every((t) => field.includes(t))) continue;
+		if (!tokens.every((t) => hasTerm(field, t))) continue;
 		const chunk = bestChunk(doc, tokens, intimate);
 		ranked.push({
 			score: score(doc, tokens, chunk),

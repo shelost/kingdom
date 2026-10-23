@@ -5,11 +5,11 @@
 
 	/** The six great Gayas, each its own shade of purple: one league, no single crown. */
 	export const COURTS = [
-		{ ko: '고령가야', en: 'Goryeong', x: 196, y: 38, shade: '#c3a3ea' },
-		{ ko: '성산가야', en: 'Seongsan', x: 246, y: 84, shade: '#a983dc' },
-		{ ko: '대가야', en: 'Daegaya', x: 170, y: 104, shade: '#6a34a6' },
+		{ ko: '고령가야', en: 'Goryung', x: 196, y: 38, shade: '#c3a3ea' },
+		{ ko: '성산가야', en: 'Sungsan', x: 246, y: 84, shade: '#a983dc' },
+		{ ko: '대가야', en: 'Degaya', x: 170, y: 104, shade: '#6a34a6' },
 		{ ko: '아라가야', en: 'Ara', x: 182, y: 192, shade: '#7d4bbd' },
-		{ ko: '금관가야', en: 'Geumgwan', x: 270, y: 206, shade: '#4f2185' },
+		{ ko: '금관가야', en: 'Gumgwan', x: 270, y: 206, shade: '#4f2185' },
 		{ ko: '소가야', en: 'Sogaya', x: 106, y: 214, shade: '#9468cf' }
 	].map((c, i) => ({ ...c, i }));
 
@@ -19,14 +19,14 @@
 		{ ko: '졸마', en: 'Jolma', x: 96, y: 126, r: 7 },
 		{ ko: '다라', en: 'Dara', x: 128, y: 150, r: 10 },
 		{ ko: '산반하', en: 'Sanbanha', x: 150, y: 166, r: 6 },
-		{ ko: '걸찬', en: 'Geolchan', x: 82, y: 168, r: 6 },
+		{ ko: '걸찬', en: 'Gulchan', x: 82, y: 168, r: 6 },
 		{ ko: '자타', en: 'Jata', x: 128, y: 190, r: 8 },
 		{ ko: '사이기', en: 'Sai-gi', x: 156, y: 140, r: 6 },
 		{ ko: '대사', en: 'Dasa', x: 60, y: 226, r: 8 },
 		{ ko: '임례', en: 'Imrye', x: 214, y: 168, r: 6 },
 		{ ko: '비화', en: 'Bihwa', x: 236, y: 130, r: 9 },
 		{ ko: '탁기탄', en: 'Takgitan', x: 278, y: 156, r: 7 },
-		{ ko: '탁순', en: 'Takseun', x: 236, y: 196, r: 8 }
+		{ ko: '탁순', en: 'Taksun', x: 236, y: 196, r: 8 }
 	].map((s, i) => ({ ...s, i }));
 </script>
 

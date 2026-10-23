@@ -1,4 +1,12 @@
-import { chapters as arcs, entryId, episodeNumber, type Chapter as Arc, type Entry } from '$lib/story';
+import {
+	arcNumber,
+	chapters as arcs,
+	entryId,
+	episodeNumber,
+	isPrologue,
+	type Chapter as Arc,
+	type Entry
+} from '$lib/story';
 import { episodeKindsOf, type EpisodeKind } from '$lib/episodeKinds';
 
 /**
@@ -15,30 +23,30 @@ const chapter = (label: string, ko: string, ...titles: string[]): TocChapter => 
 /** Each Arc lists its Chapters. Episodes outside every Chapter stay on the spine by themselves. */
 export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 	samhan: [
-		chapter('Silla', '신라', 'Queen Sunduk', 'Harmony Council', 'Jinheung, the Cloud'),
-		chapter('Baekje', '백제', 'Prince Euija', 'Eight Great Clans', 'Gunchogo, the 13th'),
-		chapter('Goguryeo', '고구려', 'Commander Yeon', 'High Summit', 'Gwanggaeto, the Great King')
+		chapter('Silla', '신라', 'Queen Sunduk', 'Harmony Council', 'Jade Gate Valley', 'Jinhung, the Cloud'),
+		chapter('Baekje', '백제', 'Prince Euija', 'Eight Great Clans', 'Deer Rock', 'Gunchogo, the 13th'),
+		chapter('Goguryeo', '고구려', 'Commander Yeon', 'Five Tribes', 'High Summit', 'Gwanggeto, the Great King', 'Ondal')
 	],
 	'five-principles': [
 		chapter('Two Treasures', '두 보물', 'Bupmin', 'Sadaham', 'Gotaso', 'Pumsuk', 'Munhee'),
 		chapter('Three Sons', '세 아들', 'Academy', 'Stele', 'Dosuryu'),
-		chapter('Five Princes', '다섯 왕자', 'King Euija', 'Yunchung', 'The Severing')
+		chapter('Five Princes', '다섯 왕자', 'King Euija', 'Yunchung', 'Gwansan')
 	],
 	'iron-will': [
 		chapter('Daeya', '대야성', 'Gumil', 'Maehwa', 'Siege of Daeya'),
 		chapter('Supreme Commander', '대막리지', 'Yeon’s Massacre', 'Chunchu & Yeon', 'Euija & Yeon'),
-		chapter('Kim Yushin', '김유신', 'Nangbi', 'Forty Fortresses', 'The Eastern Star')
+		chapter('General', '대장군', 'Nangbi', 'Yushin', 'The Eastern Star')
 	],
 	'seventh-invasion': [
-		chapter('Emperor 황제', '황제', 'Four Dragons', 'Sima Yi', 'Yodong', 'Boiling River'),
+		chapter('Four Dragons', '사룡', 'Emperor', 'Sima Yi', 'Yodong', 'King Micheon'),
 		chapter('Guardian 성주', '성주', 'Stallion Mountain', 'Colossal River', 'Ansi'),
 		chapter('Jumong', '주몽', 'Haemosu', 'Buyeo', 'Jolbon')
 	],
 	'chunchu-era': [
-		chapter('Bidam', '비담', 'Gi (起)', 'Suro', 'Seung (承)', 'Muryuk', 'Jeon (轉)', 'Seohyun', 'Gyeol (結)'),
-		chapter('Seungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Jiabeng (駕崩)', 'Royal Secretariat'),
-		chapter('Chunchu', '춘추', 'King Muyeol', 'Jahee'),
-		chapter('Hyukgose', '혁거세', 'Hyukgose', 'Talhae', 'Alji')
+		chapter('Bidam', '비담', 'Gi (起)', 'Suro', 'Seung (承)', 'Muryuk', 'Jeon (轉)', 'Seohyun', 'Gyul (結)'),
+		chapter('Sungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Jiabeng (駕崩)', 'Royal Secretariat'),
+		chapter('Chunchu', '춘추', 'Bihyung', 'Yongsu', 'King Muyeol', 'Jahee'),
+		chapter('Hyukgosé', '박혁거세', 'Hyukgosé', 'Talhae', 'Alji')
 	],
 	'fall-of-euija': [
 		chapter(
@@ -50,11 +58,12 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 			'Three Princes',
 			'Stone Lady',
 			'Gardener',
+			'Jachungbi',
 			'Kangrim',
 			'Tribute'
 		),
 		chapter('Euija', '의자', 'Coup', 'Descent', 'Nine Omens', 'Onjo'),
-		chapter('Three Loyalists', '삼충신', 'Sungchung', 'Heungsu', 'Gyebek')
+		chapter('Three Loyalists', '삼충신', 'Sunchung', 'Hungsu', 'Gyebek')
 	],
 	'fall-of-baekje': [
 		chapter('Fall of Baekje', '백제 멸망', 'Yellow Mountain', 'Sabi', 'Buyeo Euija†', 'Kim Chunchu†'),
@@ -69,22 +78,13 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 		chapter(
 			'Protectorate-General',
 			'안동도호부',
-			'Mount Gain',
 			'Dangun & Old Joseon',
-			'Anseung',
-			'Letters',
-			'Stone Gate',
-			'Wonsul'
+			'Prosperity Mountain',
+			'Ansung',
+			'Letters'
 		),
-		chapter(
-			'Supreme Marshal',
-			'태대각간',
-			'Kim Yushin†',
-			"The Wanggeom's Guest",
-			'Maeso',
-			'Final Ford',
-			'The King for All'
-		)
+		chapter('Supreme Marshal', '태대각간', 'Stone Gate', 'Wonsul', 'Kim Yushin†'),
+		chapter('King for All', '삼한왕검', 'Munmu', 'Maeso', 'Final Ford', 'Wanggum')
 	]
 };
 
@@ -126,8 +126,19 @@ export function tocAnchor(arcId: string, c?: TocChapter): string {
 }
 
 /** The Chapter a spine row heads, if this episode opens one. */
-function chapterHeadedBy(arcId: string, title: string): TocChapter | undefined {
+export function chapterHeadedBy(arcId: string, title: string): TocChapter | undefined {
 	return ARC_CHAPTERS[arcId]?.find((c) => c.titles[0] === title);
+}
+
+/** The Part this Arc sits in, walking back to the Arc that opened it. */
+export function partContext(
+	arcIndex: number
+): { label: string; title: string; korean?: string } | undefined {
+	for (let i = arcIndex; i >= 0; i--) {
+		const arc = arcs[i];
+		if (arc?.part && arc.partTitle) return { label: arc.part, title: arc.partTitle, korean: arc.partKorean };
+	}
+	return undefined;
 }
 
 export function spineLabel(arc: Arc, en: Entry, ko = false): string {
@@ -149,6 +160,13 @@ export function partLabel(part: string, ko = false): string {
 export function arcLabel(n: number | null, ko = false): string {
 	if (n === null) return ko ? '에필로그' : 'Epilogue';
 	return ko ? `제${n}편` : `Arc ${n}`;
+}
+
+/** `Arc 3` for the Arc at this index; `Prologue` / `Epilogue` for the unnumbered ones. */
+export function arcLabelAt(arcIndex: number, ko = false): string {
+	const arc = arcs[arcIndex];
+	if (arc && isPrologue(arc)) return ko ? '프롤로그' : 'Prologue';
+	return arcLabel(arcNumber(arcIndex), ko);
 }
 
 /** `Chapter 7` / `제7장`. */

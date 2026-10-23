@@ -189,7 +189,7 @@ const CALLING_GLYPHS: [RegExp, RankGlyph][] = [
 	[/\b(?:monk|nun|abbot|priest)\b|승려|스님|법사/i, g('僧', 'Monk', '승려')],
 	[/hwarang|화랑/i, g('花', 'Hwarang', '화랑')],
 	[/envoy|ambassador|사신/i, g('使', 'Envoy', '사신')],
-	[/jwapyeong|좌평/i, g('佐', 'Jwapyeong', '좌평')],
+	[/jwapyeong|좌평/i, g('佐', 'Jwapyung', '좌평')],
 	[/supreme commander|mangniji|makriji|막리지|prime minister|chancellor|premier|sangdaedeung|상대등|great minister/i, g('相', 'First minister', '재상')],
 	[/\bka\b|고추가|대가/i, g('加', 'Ka', '가')],
 	[/general|commander|marshal|admiral|captain|guardian|warden|protector|dragon|tiger|fowl|tortoise|장군/i, g('將', 'General', '장수')],

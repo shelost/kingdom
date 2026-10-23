@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-10-09T04:51:17.196Z",
+	"updatedAt": "2026-10-18T07:15:06.387Z",
 	"lines": [
 		{
 			"id": "ln-odqyyi",
@@ -22,6 +22,60 @@
 			"entryTitle": "Muryuk",
 			"en": "They name him Seohyun. The first voice he hears is his mother’s, in a Surabol accent. His father says nothing until the boy is asleep. Then he leans over the cradle and says something very quietly, in the accent of a harbour that isn’t there any more.",
 			"createdAt": "2026-10-09T04:51:17.106Z"
+		},
+		{
+			"id": "ln-5wh8e3",
+			"episodeId": "iron-will-euija-yeon",
+			"entryTitle": "Euija & Yeon",
+			"person": "gyebek",
+			"en": "How many days. King Euija As long as it takes. Forever, if he’s charming. Gyebek Forever is not a number, Majesty.",
+			"createdAt": "2026-10-13T18:21:57.124Z"
+		},
+		{
+			"id": "ln-1wq3oxf",
+			"episodeId": "iron-will-euija-yeon",
+			"entryTitle": "Euija & Yeon",
+			"person": "euija",
+			"en": "Wait… wait. The Supreme Commander of a country — a grown man, a man who leads a kingdom —",
+			"createdAt": "2026-10-13T18:22:21.609Z"
+		},
+		{
+			"id": "ln-6r1blf",
+			"episodeId": "samhan-harmony-council",
+			"entryTitle": "Harmony Council",
+			"en": "그때 큰 호랑이가 자리 한가운데로 뛰어들었다. 여러 공이 놀라 일어났으나 알천공은 조금도 움직이지 않았다. 태연히 웃으며 이야기하다가 호랑이 꼬리를 잡아 땅에 메쳐 죽였다. 알천공의 완력이 이와 같아 윗자리에 앉았다. 그러나 여러 공은 모두 유신의 위엄에 복종하였다. Then a great tiger burst in among the seats. The lords leapt up. Lord Alchun36 barely moved. He went on talking and laughing, caught the tiger by the tail, dashed it to the ground and killed it. Such was Alchun36's strength that he t",
+			"ko": "그때 큰 호랑이가 자리 한가운데로 뛰어들었다. 여러 공이 놀라 일어났으나 알천공은 조금도 움직이지 않았다. 태연히 웃으며 이야기하다가 호랑이 꼬리를 잡아 땅에 메쳐 죽였다. 알천공의 완력이 이와 같아 윗자리에 앉았다. 그러나 여러 공은 모두 유신의 위엄에 복종하였다. Then a great tiger burst in among the seats. The lords leapt up. Lord Alchun36 barely moved. He went on talking and laughing, caught the tiger by the tail, dashed it to the ground and killed it. Such was Alchun36's strength that he t",
+			"createdAt": "2026-10-14T03:11:07.043Z"
+		},
+		{
+			"id": "ln-bz0x0f",
+			"episodeId": "five-principles-munhee",
+			"entryTitle": "Munhee",
+			"person": "yushin",
+			"en": "(laughing) Chunchu. You know exactly why not. Chunchu …I do. Neither of them says the word. It sits between them anyway, the way it always has: Gaya. His grandfather bought the family a rank. Ranks are not the same as bloo",
+			"createdAt": "2026-10-14T19:15:16.903Z"
+		},
+		{
+			"id": "ln-1leju6m",
+			"episodeId": "samhan-commander-yeon",
+			"entryTitle": "Commander Yeon",
+			"person": "gesomun",
+			"en": "…Aye. Me too, wee man. Me too. He rides out laughing. Dosuryu has to hold the boy back by the collar for the whole length of the road.",
+			"createdAt": "2026-10-15T16:19:42.430Z"
+		},
+		{
+			"id": "ln-10mxhqo",
+			"episodeId": "fall-of-euija-coup",
+			"entryTitle": "Coup",
+			"en": "THE ROCK OF POLITICS, BEFORE · 정사암, 그 전 의자왕 KING EUIJA 사택지적 MINISTER SATEK 달솔 達率 JUNIOR MINISTERS 좌평 佐平 SENIOR MINISTERS 좌평 佐平 SENIOR MINISTERS 달솔 達率 JUNIOR MINISTERS 사택천복 진모 해 백 연비지적 목리 안 국 정사암 政事巖 ROCK OF POLITICS 정사암회의 政事巖會議 · The Ministers’ Assembly · 대성팔족 under the senior seats",
+			"createdAt": "2026-10-17T19:36:12.515Z"
+		},
+		{
+			"id": "ln-1iw26d",
+			"episodeId": "chunchu-era-bihyung",
+			"entryTitle": "Bihyung",
+			"en": "Fourteen",
+			"createdAt": "2026-10-18T07:15:06.331Z"
 		}
 	]
 }

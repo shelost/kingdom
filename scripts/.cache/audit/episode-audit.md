@@ -1,38 +1,51 @@
 # Episode plot audit
 
-Each episode graded A (stands alone), B (works, one weak act) or C (fragment or exposition), with a concrete fix. Numbers are reading-order episode numbers.
+Each episode graded on **completeness**: a self-contained narrative with emotional investment and a beginning, middle, and end.
+- **A** — You leave having felt a story finish. Someone wants something, the middle costs them, an ending lands. Craft nits stay in Problem; they do not demote a finished story. Calibration: Queen Sunduk, Prince Euija, the Bidam four (Gi / Seung / Jeon / Gyul), Bihyung, Yongsu.
+- **B** — A protagonist and a turn, but an act is missing, bolted on, or the want never resolves.
+- **C** — Fragment, lecture, placeholder, or no one wants anything.
+
+Numbers are audit-file episode numbers (they can lag the live reading order).
 
 ## Part I · Arcs 1–3 (episodes 1–30)
+
+### 0. Back When Tigers Smoked (Long ago)
+- **Protagonist / want:** None. A trailer before the book.
+- **Conflict:** None.
+- **Shape:** Myth images, the fall, three kingdoms, the faces to come.
+- **Grade:** C
+- **Problem:** An overture, not a story. No one wants anything and nothing turns.
+- **Suggestion:** Keep it as the cold open. Don't ask it to stand as an episode.
 
 ### 1. Queen Sunduk (632)
 - **Protagonist / want:** Sunduk wants to prove she can rule ("I wonder whether I can do it at all"). Right now the episode keeps passing her to other people.
 - **Conflict:** A court and a foreign emperor who think a woman king is a joke.
 - **Shape:** Munhee's hair, the kids, a lecture on bone ranks / the east-star flashback, the coronation, "Yushin-ah" / envoys' reactions, the peony test.
-- **Grade:** B
+- **Grade:** A
 - **Problem:** Six points of view take turns before Sunduk gets a scene of her own. The real climax, reading the peonies' missing scent, comes after the envoy montage, so it plays like an afterthought.
 - **Suggestion:** Give the episode to Sunduk, with Munhee's "A Queen? Ridiculous" as the attitude she's up against. Plant Taizong's gift early (it arrives the morning she's crowned) and have the "Yushin-ah" goodbye cost her the one person allowed to see her doubt. Then the peonies are her first test with no one to lean on. Move the bone-rank lecture into the wiki. Keep the sleeve colours as one line.
 
 ### 2. Harmony Council (632)
 - **Protagonist / want:** Bidam, the newest Council member, wants to break the 3–3 tie for Dukman.
 - **Conflict:** Murim's "bone is the measure" and Suljong's refusal to move.
-- **Shape:** The flame turns blue, 3–3 / Chunchu rejected, the night-bridge flashback / Bidam's speech, Alchun's tiger line, 6–0.
-- **Grade:** B
+- **Shape:** Jinpyung dies (a line each to Dukman, Chunmyung, Sungman, and Yongsu the son-in-law; “your era now”; last look with Dukman) / the flame turns blue / the Three Counts flashback (council stills shared with Bihyung; child Jinpyung and Manho in the corridor) / 3–3, Chunchu rejected, the night-bridge flashback / Bidam's speech, Yushin answers from the wall (not a sleeve), Alchun's tiger line, 6–0.
+- **Grade:** A
 - **Problem:** It's a prequel to an outcome we've already seen, and Suljong changes his vote off-page. The night-bridge flashback interrupts the vote. A stray "High Councillor" fragment and a closing summary ("They argue past midnight…") retell a vote we just watched.
 - **Suggestion:** Put Chunchu outside the pavilion while the room turns him down. His father's line, "wherever the room has to come to you," then pays off on the spot, and it's why he never sits on the Council. Make Suljong the ticking clock: dawn is coming, and he names a price for his vote. Show him take it from Alchun. Cut the summary after the vote.
 
-### 3. Jinheung, the Cloud (554)
-- **Protagonist / want:** No one. This is a portrait of a dead king.
-- **Conflict:** None on the page.
-- **Shape:** Stones / Hwarang diagram / the elder's "a cloud never asks."
-- **Grade:** C
-- **Problem:** A lore dump about four boundary stones, the Hwarang system and a shaved head, with no scene in it.
-- **Suggestion:** Cut it as an episode. The stones and the "cloud" verdict make a strong two-paragraph cold open for *The Severing* (20), where Jinheung actually acts. The Hwarang founding already lives in *Sadaham* (11), where Jinheung says "Grow a beard."
+### 3. Jinhung, the Cloud (540–576)
+- **Protagonist / want:** Sumekbu wants the border, then the girl, then a lighter robe.
+- **Conflict:** King Sung’s gift and the march that follows it; the brother who keeps the house.
+- **Shape:** Too-big crown / Suulbu “I’ll keep the house” / Gaya as a pile of tribes / Bald Mountain and the daughter / the soft year / Baekje marches first, tearful order at Gwansan / Hwarang yard (Sadaham) / Great Gaya / stones and the robe.
+- **Grade:** A
+- **Problem:** The girls-into-the-river joke still sits after the ditch; some readers will feel the whiplash. Suulbu’s hunger is planted, not spent (that’s Bihyung’s job).
+- **Suggestion:** Keep the three-battle spine. Leave the cone helm unnamed. Don’t spend Suulbu here.
 
 ### 4. Prince Euija (632)
 - **Protagonist / want:** Euija, crown prince at last, wants one person the clans don't own.
 - **Conflict:** The clans have already bought his sons. In the river scene, Gyebek is opposing himself.
 - **Shape:** Fifteen sons / the river, nineteen dives / the naming, "do you like the name, or me?"
-- **Grade:** B
+- **Grade:** A
 - **Problem:** Gyebek's "I gave my word" is never explained, so the dives have no stakes and no payoff. The episode ends on narration about Yung instead of a turn.
 - **Suggestion:** Say what he's diving for, something from the burned house, and let dive twenty be the clock. Euija stops him by doing the job himself, with boatmen or a trick, which is our first look at the man who will fake a dragon. The name is Euija's first possession no clan picked for him. End with a clan tutor asking whose boy that is.
 
@@ -43,6 +56,14 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Grade:** C
 - **Problem:** The tourney decides nothing ("nobody has settled four generations of anything"), and the rest is two diagrams of how power works. Elder Satek's thumb-down is a good mystery that never pays off.
 - **Suggestion:** Put the nameless Gyebek into the chalk square as a fighter with no clan sleeve. He wins, and the elders refuse to score him. That's the drama behind "passed over every season" in 18. Euija watches from the steps and learns the names because of it. Pay off the thumb-down later, in 19's shipping-writ vote.
+
+### 99. Deer Rock (632)
+- **Protagonist / want:** Satek Jijuk, a junior Satek nobody rates, wants the Premier's chair that Elder Yunbi has already bought.
+- **Conflict:** Yunbi's four bought houses, a paid monk, and King Mu's revived sealed-box rite (Samguk Yusa), which every house means to rig.
+- **Shape:** The old Premier dies, Mu revives the rock / three names, the brine poured "since this afternoon" / the night: Sondung on the wall, the monk's one stamp, Gyebek's "Nobody asked me" / dawn: the rock sweats, Yunbi's fresh seal bleeds, Jijuk's dry one stands / the bottom step, the bet, the chant.
+- **Grade:** A
+- **Problem:** Jijuk is seen only from outside until the last scene. That is the design, but he has one real conversation.
+- **Suggestion:** If it needs more, give Jijuk one line with Elder Satek before sunset that sounds like modesty and is actually the plan.
 
 ### 6. Gunchogo, the 13th (371)
 - **Protagonist / want:** None.
@@ -60,6 +81,14 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Problem:** Three vignettes that don't touch. The traitor's "I have no name" copies Gyebek and goes nowhere, and the flash-forward to Pyongyang uses up Gulgul's ending.
 - **Suggestion:** Tie the traitor to the boy: the executed man came from the village whose doorway Gulgul is guarding. Yeon kills the father and takes the son, which gives "opposite us… that is why I am taking him" its real weight. Cut the "years later" wall scene down to one line. End on the seal being pushed across the table.
 
+### 101. Five Tribes (634)
+- **Protagonist / want:** Gesomun wants to get his pregnant wife to the old Pyongyang house before the Summit, at the pace of an ox.
+- **Conflict:** The road (singing ice, wall deserters, the breaking Amnok, a cracked axle) and a junior soldier, Eye, who is right every time Yeon gives an order.
+- **Shape:** The cart / the ice and "next time I'm wrong, have it" / adoring farms and shut doors / the king's amnesty undone / the five stones by the tombs and "whose are you?" / the raft and the map gossip / the pine axle and "will you say half?" / Pyongyang from the ridge.
+- **Grade:** A
+- **Problem:** The middle runs as a string of road stops, and the five-roof explanation leans on the wife to finish it.
+- **Suggestion:** Keep the stops short. The plant (Eye, the leaning stone, the unasked name) pays off in High Summit and Ansi.
+
 ### 8. High Summit (634)
 - **Protagonist / want:** Gesomun wants the Summit to prepare for Taizong.
 - **Conflict:** Four commanders, Gusesa, and the king's "King for All" budget.
@@ -76,13 +105,21 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Problem:** Exposition, and it duplicates *Stele* (16).
 - **Suggestion:** Merge 9 into 16. Yeon tells this story at the stone to sons who think it's "a big rock." The Silla-hostage irony becomes Namseng's question: "Then why did they hate us?"
 
+### 100. Jade Gate Valley (636)
+- **Protagonist / want:** Bidam and Alchun, two Hwarang of Class 51, want one clean war against a foreign enemy, and Class 77 wants to see the legends.
+- **Conflict:** Uso's five hundred hidden men in a valley nobody watches, a spy monk, and the two men's own rivalry.
+- **Shape:** The yard: Class 77 counts the Three Eternal's bones (Bidam's direct Son line, Alchun's younger branch, the Marshal nobody asks about), the bone-rank table / teasing Yushin about the queen, the war drums / the monk a bead short / Two of Class 51 in the camp, the boys watching / Uso on his rock / the queen's door.
+- **Grade:** A
+- **Problem:** The yard talks for a while before the drums; the bone-rank gossip and the rail banter are two warm-ups in a row.
+- **Suggestion:** Pay off the mended-sleeve boy: Bidam picks him, he rides for the army, and the queen or Alchun says his name at the door.
+
 ### 10. Bupmin (641)
-- **Protagonist / want:** Bupmin wants to become the "king for all."
-- **Conflict:** None. Yushin asks him a question.
-- **Shape:** Yard life, gyuku clubs / the Five Principles / "Retreat."
-- **Grade:** C
-- **Problem:** Mostly texture (club woods, rumours about the Marshal), and his answer turns on a habit we're told about, never shown.
-- **Suggestion:** Dramatize it. In a gyuku match Bupmin pulls up to avoid crashing into a rival (or Bidam's boy), loses the point, and gets laughed at. Yushin's question comes that night. Better still, fold this in as the opening frame of 11.
+- **Protagonist / want:** Bupmin wants the headband to mean something besides his father's name.
+- **Conflict:** The yard names him hwarang on day one and leaves him with no nangdo. Yushin will not be his uncle on the dust.
+- **Shape:** A Boy’s Dream at the Class 82 gate / the picking / the throat (fail, dusk redo) / Gotaso at the pine / gyuku two 편 / the Five Principles / the long wall into Sadaham.
+- **Grade:** B
+- **Problem:** The want is now on the page, but the episode still hands off to Sadaham before Bupmin's band is more than three boys. The wall walk is a history lesson in the last act.
+- **Suggestion:** Let the wall wait. End on the second gyuku game, Yushin moving the post, Bupmin looking at his three nangdo. Sadaham can open on the lamp without this episode delivering him.
 
 ### 11. Sadaham (641)
 - **Protagonist / want:** Sadaham wants to ride to war with Mugwan and keep their swear.
@@ -96,7 +133,7 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Protagonist / want:** First Chunchu, who wants his daughter back. Then Gotaso, who wants Pumsuk.
 - **Conflict:** Kidnappers, then rank and propriety.
 - **Shape:** Abduction, the ford / gyuku match / flowering trees, "four children."
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The protagonist switches halfway. The narrator slips into "I did not know, then…," which breaks the never-say-I rule. Her age jumps between 16 and fifteen.
 - **Suggestion:** Tell it all from Gotaso's side. Having been carried home nineteen li is *why* she chooses fast and out loud. Her want is to pick her own life before someone picks it for her. "There is something on your coat" stays as the plant that 23 pays off ("he said he would change it later"). Fix the ages and cut the "I" line.
 
@@ -112,15 +149,15 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Protagonist / want:** Munhee wants Chunchu and the dream she bought.
 - **Conflict:** Propriety, and her own brother staging a scandal.
 - **Shape:** Buying the dream, the torn coat / the pyre, "It's me!" / the closed months, Bupmin born, "let it just be a star."
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The pyre climax falls in the middle and is followed by a long, turnless "Closed Months." Two paragraphs ("He comes back the next day…", "On a later visit…") are pasted twice. The pregnancy that sets off the pyre is never planted.
 - **Suggestion:** Remove the duplicated paragraphs and cut the closed months to one beat. Plant the pregnancy in a single line before Yushin's outburst. End on the real change: Chunchu putting down the east star. That's the turn that 29 reverses. Consider moving the episode before 12 so the Gotaso/Pumsuk run isn't interrupted.
 
 ### 15. Grand Academy (641)
 - **Protagonist / want:** Gesomun wants a third leg for the pot that doesn't own a farm.
 - **Conflict:** The monasteries, and Gusesa.
-- **Shape:** Three sons / at the gate, "three legs" / complaint at supper.
-- **Grade:** C
+- **Shape:** Four seasons. Spring: the gate and the first term. Summer: the Daoist chair and the sutra class shrinking. Autumn: Namseng caught at Boduk's lesson, then the empty east room. Winter: Gusesa's supper and the county schools. Coda: the seal argument in the boys' room.
+- **Grade:** B
 - **Problem:** Good plants (Bodeok, Gulgul never sitting with his back to a door) but no event and no turn. It's a scene about enrolment.
 - **Suggestion:** Merge 15, 16 and 9 into one episode, "Schooling." Namseng wants his father's approval and gets it by reading the Daodejing, the one book Yeon never got past page one of. Bodeok's stare is the threat at the end.
 
@@ -144,7 +181,7 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Protagonist / want:** Euija wants to own his country through stories.
 - **Conflict:** Gyebek's refusal to lie, and Seongchung's conscience.
 - **Shape:** The fake dragon / miracles list, the Rock, the maids / Pung sent away.
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The Euija–Gyebek comic engine is great, but it repeats rather than escalates. "The sentence that kills him, nineteen years later" points at no particular sentence. The maid scene stalls the episode.
 - **Suggestion:** Build to one public crisis. At the Rock, Gyebek says "It is brine" within earshot of a minister, and Euija has to save the miracle live, which is where "how fortunate the rock has such good taste" goes. Pung's exile then reads as the price Euija pays for the theatre. Pin the fatal sentence to a specific line ("Nobody inspects the evidence…").
 
@@ -156,13 +193,13 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Problem:** He decides in the first scene, and nobody seriously opposes him after that. The Assembly scenes are a meeting followed by a speech.
 - **Suggestion:** Make the Rock the battlefield. Chunbok's clans plan to elect a Premier who will block the war, and the payoff of "always the same man" is that Euija rubs the brine on the stone himself the night before. The Rock sweats for war. Gyebek's "saving you" exchange works as the cost at the end.
 
-### 20. The Severing (553–554)
-- **Protagonist / want:** King Seong wants his river back.
-- **Conflict:** Jinheung's betrayal, the ambush, Dodo.
-- **Shape:** The alliance / the turn, the march / the stool, the neck.
+### 20. Gwansan (553–554)
+- **Protagonist / want:** King Sung wants not to be Gaya next.
+- **Conflict:** Silla flags on the Han, the daughter he gave, the stool.
+- **Shape:** Grandmother / the gift and the flags / he marches first / the ditch, the slave, the long walk under the cloud.
 - **Grade:** A
-- **Problem:** Three quotes of the same death break the one-quote rule and deflate the scene just dramatized.
-- **Suggestion:** Keep one quote, the Nihon Shoki line about the slave's hand. Open on the two banners side by side so the betrayal stings, using 3's stones as the cold open. Muryuk's unnamed cone helm is a working mystery box, so leave it.
+- **Problem:** The grandmother frame still carries a lot of the march. The cone helm must stay unnamed.
+- **Suggestion:** Keep the Baekje view: Sung struck first because he had watched Gaya go. Leave the tearful order to episode 3. Leave “I am Silla tonight” to episode 43.
 
 ### 21. Gumil (642)
 - **Protagonist / want:** Unclear. Yushin wants counsel, Seohyeon wants water, and Gumil gets about four lines.
@@ -176,7 +213,7 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Protagonist / want:** Maehwa wants to be the one in control, to ruin the boy a little.
 - **Conflict:** Pumsuk's self-control, then her own.
 - **Shape:** He can't sleep / the plum, the teaching / she loses control, they're "in love," he leaves without a word.
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The turn (teacher becomes undone) works, but then six or so escalating positions repeat it without changing anything. "In love" isn't earned, and it never pays off: Maehwa disappears from the story.
 - **Suggestion:** Cut the middle and add a consequence. Someone (Mochuk, or a wife behind the cheap screen) sees, and that witness is how Gumil already knows when he gets home, which gives his "from the start, all of it" its menace. Pay off her "in love" in 23 with a choice she makes when the gate opens.
 
@@ -220,13 +257,13 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Problem:** Four Samguk Sagi quotes retell the charge we've just seen, against the house rule.
 - **Suggestion:** Keep one quote, the collar and head-rope. The Taejo half is the real reason the episode exists, so give Gesomun one clear want to end on ("Then I'll kill him before they stop") and make that the episode's last line.
 
-### 28. Forty Fortresses (642)
-- **Protagonist / want:** Yushin, though he wants nothing new.
-- **Conflict:** Off-page.
-- **Shape:** Euija panics / montage, "after the twentieth" / cavern repeat.
-- **Grade:** C
-- **Problem:** A montage. The cavern scene repeats earlier counsel nearly word for word.
-- **Suggestion:** Dramatize one fortress where Yushin follows Narim's "slow, on her count" and it costs him: he holds back and a Silla post falls. Or fold the two good lines into 29 and cut the episode.
+### 28. Yushin (642)
+- **Protagonist / want:** Sunduk wants peace, then wants the forty back. Yushin fetches the means.
+- **Conflict:** Daeya's wound versus the road her father kept.
+- **Shape:** Euija panic / unrest / cavern bucket / life flashbacks / Forty, Yushin / one river fort / beacons.
+- **Grade:** B
+- **Problem:** The battle half is still montage after the water.
+- **Suggestion:** Keep the water as the turn. The river fort already pays Narim's cliff; the beacons can stay short.
 
 ### 29. The Eastern Star (642)
 - **Protagonist / want:** Chunchu, Euija and Gesomun each want to be the "King for All."
@@ -236,7 +273,7 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 - **Problem:** A thematic triptych with no event. Gyebek's burn scar and "I saw Gesomun again" is a good mystery, buried in the middle.
 - **Suggestion:** Treat it as the arc's coda and attach it to the end of 26 or 23. Give each vow a cost on the spot: Chunchu picks the star back up that 14 had him set down, Euija frees Gyebek from obedience, and Gesomun lays down a crow blade. End on Gyebek's scar as the hook.
 
-### 30. Emperor (643)
+### 30. Four Dragons (643)
 - **Protagonist / want:** Taizong.
 - **Conflict:** None yet.
 - **Shape:** Three lines.
@@ -246,9 +283,9 @@ Each episode graded A (stands alone), B (works, one weak act) or C (fragment or 
 
 ## Arc notes
 - **The King for All (1–9)** introduces the three courts but has no climax of its own. It ends on Gwanggaeto lore. The three flashbacks (3, 6, 9) are stubs: fold them into 20, 19 and 16 as cold opens. Episode 2 should either come first or be told as a cold-open flashback inside 1.
-- **The Five Principles (10–20)** has a strong throughline: vows (Sadaham, Pumsuk's vow, Gotaso's "forever"). But its payoff lands in the next arc, and Goguryeo and Baekje episodes (15–19) interrupt it. Merge 10 into 11, and 15/16/9 into one episode. Move 14 before 12. The arc could end on 13's vow, or on *The Severing* as the grudge that points at Daeya.
-- **Iron Will (21–29)** is the only arc with real climaxes: Daeya, the massacre, the hand. But 21 is three episodes in one and 23 summarizes its own siege. Split "Steam" out of 21, dramatize the gate night, and cut 28 or merge it into 29.
-- **The cavern scenes** repeat the same comedy-then-prophecy pattern four times (21, 23, 28 and Chunchu's visit). Keep two and make each prophecy pay off on the page (the latch matters in 25; "kneel in rooms you would burn" matters there too).
+- **The Five Principles (10–20)** has a strong throughline: vows (Sadaham, Pumsuk's vow, Gotaso's "forever"). But its payoff lands in the next arc, and Goguryeo and Baekje episodes (15–19) interrupt it. Merge 10 into 11, and 15/16/9 into one episode. Move 14 before 12. The arc could end on 13's vow, or on *Gwansan* as the grudge that points at Daeya.
+- **Iron Will (21–29)** is the only arc with real climaxes: Daeya, the massacre, the hand. But 21 is three episodes in one and 23 summarizes its own siege. Split "Steam" out of 21, dramatize the gate night. Episode 28 now turns on the bucket, not a counsel-repeat.
+- **The cavern scenes** used to repeat comedy-then-prophecy (21, 23, 28 and Chunchu's visit). 28 is now a fetch: Yushin takes water out to Sunduk. Keep the remaining two counsel visits and make each prophecy pay off on the page (the latch matters in 25; "kneel in rooms you would burn" matters there too).
 - **Epilogue (30)** is a teaser. Either build it into the Silla envoy and Taizong scene, or attach it as the next-episode card at the end of 29.
 - **Housekeeping:** remove the duplicated paragraphs in 14, the pasted Chunchu line in 21, the duplicate "what is your name" in 24, the stray "High Councillor" in 2, and the extra quotes in 20, 23 and 27.
 
@@ -300,7 +337,7 @@ Episode 26 (Euija & Yeon) gets a B. Two kings duel, there's a Hansung flashback,
 
 Episode 27 (Nangbi) is an A, clean and clear. The problem is four redundant Samguk Sagi quotes duplicating action already dramatized onscreen, though the Yeon household plot is strong. I'd cut the quotes to just one, and maybe shift the second half's protagonist to Gesomun, centered on his desire to kill Yushin.
 
-Episode 28 (Forty Fortresses) is a C, relying on montage.
+Episode 28 (Yushin) is a C, relying on montage.
 
 Episode 28 continued: there's an Euija gag and a repeated cavern council scene. I'd pick one fortress siege to dramatize properly, or merge this episode into 29 since the cavern scenes just repeat beats.
 
@@ -316,13 +353,21 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 
 ## Part II · Arcs 4–5 (episodes 31–55)
 
-### 31. Four Dragons (643)
+### 31. Emperor (643)
 - **Protagonist / want:** The Second Emperor wants to finish what the Sui couldn't and lead the conquest of Goguryeo himself.
 - **Conflict:** Almost none on the page. Wei Zheng dies, and Chu Suiliang's one objection is waved away.
 - **Shape:** Beginning: the name taboo and Wei Zheng's deathbed. Middle: a montage of foreign reports, the muster, the Daoists and Silla's three choices. End: Xue Rengui leaves his field.
 - **Grade:** C
 - **Problem:** This is five setups stitched together. The strongest idea is "there will be no one left to tell you no", and it never gets tested: nobody says no in a scene the emperor has to win. The Daoist and bell beat and the Silla envoy beat belong to other storylines, and Xue's mini-story sits in the coda.
 - **Suggestion:** Build the episode on Wei Zheng's line. After the funeral, let Chu Suiliang make a real case against the war in the council: the six failed invasions and the Sui. The emperor wins the argument by being charming, and the turn is that nobody else in the room will say his name, let alone tell him no. Move "Three Choices" to the Chunchu arc (it's Bidam's motive, and Chunchu's later embassy answers it). Move the Daoists and Shinsung's bell to a Gesomun episode where the bell pays off. Use Xue and Liu at the well as the cold open of ep 34, not this episode's tail.
+
+### 31b. Sima Yi (238)
+- **Protagonist / want:** A young Goguryeo king wants a teacher in the West. Sima Yi wants a friend who will not ask him to hurry.
+- **Conflict:** Distance, Zhuge Liang's legend, a friendship a hill king cannot keep.
+- **Shape:** Beginning: a horse trader's lie in Hwando. Middle: the thousand-li ride, the empty camp stool. End: a friend he cannot afford.
+- **Grade:** A
+- **Problem:** Some of the waiting is still rumour rather than a scene.
+- **Suggestion:** Keep the wait as the friendship. Let the cost land on Dongcheon, not on a caption.
 
 ### 32. Yodong (645)
 - **Protagonist / want:** The Second Emperor wants to break the fortress that held off the Sui.
@@ -360,7 +405,7 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 - **Protagonist / want:** The Guardian of Ansi (Yang Manchun) wants to hold the wall for a country whose dictator he defied.
 - **Conflict:** The Tang siege mound and the emperor himself.
 - **Shape:** Beginning: the unnamed chief, plus the flashback to Yeon. Middle: sixty days of the mound, the collapse, and seizing it. End: an arrow, the cold, the retreat, the silk.
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The mound collapse is a great turn, but the ending is weather, told in summary. The arrow at the helmet is vague, and Yang has no scene with the emperor at the end. The flashback with Gesomun is thin, and so is its later "Madman… he does what must be done."
 - **Suggestion:** Open with the face-off moved from ep 32, and end with its mirror. The record says the city lord climbed the wall and bowed farewell as the Tang marched off, and the emperor sent a hundred bolts of silk. Stage that: silk at the foot of the wall, the bow, the "crazier than we are" line. Let Yang himself order the sortie onto the slumped mound as his climactic decision, and present the arrow as Ansi's legend, not a coy ellipsis. A beat of Yeon's envoy arriving with no relief would sharpen his "one person to serve" line.
 
@@ -368,7 +413,7 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 - **Protagonist / want:** Yuhwa wants the sun god, and on her own terms.
 - **Conflict:** Her father, Habek.
 - **Shape:** Beginning: the chariot stops at the river. Middle: the copper-room seduction. End: Habek exiles her, the fox leads her to Geumwa, the egg.
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The middle is all desire and no opposition. Habek's court, the real conflict, is three lines. Haemosu then vanishes without any decision being shown.
 - **Suggestion:** Use the myth's own climax. Habek challenges Haemosu to a shapeshifting duel: carp against otter, deer against wolf, pheasant against hawk. Haemosu wins, then flees and leaves Yuhwa to the punishment. Her loss and his cowardice (or his duty to the hour) become the turn, and her "I looked up" plea carries weight. Keep the fox, but make it his guilty apology.
 
@@ -384,15 +429,15 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 - **Protagonist / want:** Sosuno wants Jumong and won't admit it. Jumong wants a roof of his own.
 - **Conflict:** Her pride, her father Tabal, the well girls, and then the five tribes and Song Yang.
 - **Shape:** Beginning: the scouts and Tabal's hall, where the bow won't bend. Middle: the slow-burn romance, the arrow at the well, the grain room. End: the pine shot, then a long montage (five tribes, kingship, Song Yang, the cavern, the sons, Yuhwa's death, his death).
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The romance is complete and climaxes on Tabal's pine shot. Everything after it is a second episode told as a list. Song Yang is beaten with one arrow, and the five tribes unite off-page.
 - **Suggestion:** Split it. Ep 39 ends on the vermilion cord. A new episode, "Dongmyung", makes Song Yang the real antagonist. In the myth he loses the archery contest and then sees through Jumong's trick of making new drums and horns look ancient, so it can be a con with a reveal. That episode can end with Yuhwa's ascension and the bow on the packed earth. Plant Yuri arriving with the broken sword in that episode, or cut "the year Yuri comes south".
 
 ### 40. Gi (起) (645)
 - **Protagonist / want:** Bidam wants the throne to go to the cleverest person, not to the last of the Sacred Bone.
 - **Conflict:** The unanimous Harmony Council, his brother Yushin, and Alchun's cynicism.
-- **Shape:** Beginning: Chunchu in Yamato, which is detached. Middle: the vote, the lone hand that stays down, his father's "righteous traitor" flashback. End: he is promoted, recruits Yumjong, and Yumjong says "Gaya".
-- **Grade:** B
+- **Shape:** Beginning: Chunchu in Yamato, which is detached. Middle: the vote, the lone hand that stays down, The Higher Teaching (Biryun at the Class 51 gate, watching Jinji). End: he is promoted, recruits Yumjong, and Yumjong says "Gaya".
+- **Grade:** A
 - **Problem:** The Yamato cold open belongs to another story. The scene with Princess Seungman has Bidam repeat Chunchu's Gesomun line, which makes no sense coming from him. The real twist, that the queen makes High Councillor the one man who told her council no, is a single narrated sentence.
 - **Suggestion:** Cut Yamato, or move it to ep 48 as Chunchu's first failed begging trip. Dramatize Queen Sunduk summoning Bidam after the vote and promoting him: she rewards the "no" because it's the same "no" that crowned her. Give Seungman a real confrontation at the gate, where she asks him to his face what is wrong with her. Keep Yumjong's "Gaya" as the end, a door Bidam pretends not to see open.
 
@@ -407,31 +452,31 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 ### 42. Seung (承) (647)
 - **Protagonist / want:** Bidam wants Yushin, and the country, to admit his ideas are right. Chunchu wants a weakness he can exploit.
 - **Conflict:** Yushin across the tea table, Alchun's neutrality, and the conscience water.
-- **Shape:** Beginning: the dying queen's hair and the Radiance banner. Middle: the nightly tea debates and the Jade Gate flashback. End: the conscience-water splash shows nothing, and Bidam's "simply terrible" rant.
-- **Grade:** B
+- **Shape:** Beginning: the first night at Radiance — a rebel cuts the pensive Maitreya, Bidam beheads him, rebels not animals. Middle: the nightly tea debates and the Jade Gate flashback. End: the conscience-water splash shows nothing, and Bidam's "simply terrible" rant.
+- **Grade:** A
 - **Problem:** Day 3 is summary, and Alchun's two speeches are position papers read aloud. It's never explained how Chunchu stands at the edge of a pavilion between enemy camps.
 - **Suggestion:** Make the splash a deliberate trap Yushin sets up over Days 3 and 4. He keeps Bidam talking about "the real Sillans" on purpose, so his "once more" line on Day 4 becomes dramatic irony. Cut Day 3 to the map and the "western colour" exchange. Give Alchun one choice instead of a speech, such as refusing both camps' wine on screen. Place Chunchu behind the post with Bupmin, so his silence is a hiding man's.
 
 ### 43. Muryuk (562) [flashback]
-- **Protagonist / want:** Muryuk wants his sons to live in Silla without shame.
-- **Conflict:** Silla's bone ranks.
-- **Shape:** Beginning: Sadaham's raid. Middle: none. End: the surrender bargain with King Jinheung.
-- **Grade:** C
-- **Problem:** It's a fragment, and it contradicts the record and ep 40. Geumgwan was surrendered in 532 by Kim Guhae, Muryuk's father, to King Beopheung, not by Muryuk to Jinheung. Ep 40 rightly says it was Yushin's great-grandfather. The episode also skips Muryuk's own story, the Baekje king he captured.
-- **Suggestion:** Make it the payoff of the mystery box planted in The Severing (the unnamed prince in the cone helm). Young Muryuk, the son of a surrendered king, wants to prove his family wasn't bought, and at Gwansanseong in 554 he takes the Baekje king. Guhae's bargain becomes the cold open, and the price of a True Bone place becomes the head of a king. End on his "Yushin…" only after the killing, so it means something.
+- **Protagonist / want:** Muryuk wants to prove he is Silla, so his sons will not have to.
+- **Conflict:** The cone that still says Gaya; Silla’s bone ranks.
+- **Shape:** Guhae’s surrender / the years as Sinju / Gwansan as loyalty (he names himself, says Dodo, does not look away) / Great Gaya and Sadaham’s ropes / the grandson.
+- **Grade:** A
+- **Problem:** The surrender half is still long for a payoff episode. The Gwansan night now does the job the audit asked for.
+- **Suggestion:** Keep the ditch as the identity proof. Don’t let Jinhung or Gwansan name him. Cut any leftover “he is Gaya tonight.”
 
 ### 44. Jeon (轉) (647)
 - **Protagonist / want:** Yushin wants to defeat Bidam without losing himself.
 - **Conflict:** Bidam's "Gaya wretch", the star omen, and the grain running out.
 - **Shape:** Beginning: the empty sixth night and the headband flashback. Middle: Bidam expelled from the cavern, then Yushin's cavern visit. End: the kite, Hangyul's sacrifice, Bidam's "because it is ours" speech.
-- **Grade:** B
+- **Grade:** A
 - **Problem:** Yushin's identity crisis is resolved by his dead father and grandfather giving a pep talk in the steam. That's an outside fix, and it comes before his real act. Bidam's beast expulsion is spectacle that touches neither his arc nor the plot.
 - **Suggestion:** Let Hangyul be the resolution. Killing the horse that saved him at Nangbi, and refusing Chunchu's offer to do it, is Yushin choosing Silla with his own hands. Cut the ancestors to a single line, or move Muryuk's "for your sake" into ep 43. Either cut the cavern expulsion or make it cost Bidam: he loses the beads that end up on Bisamun's bridle. Show Yumjong falling, since ep 40 set him up as the poison.
 
 ### 45. Seohyun (593) [flashback]
 - **Protagonist / want:** Seohyeon wants Manmyung, and the Gaya stain wants to be forgiven.
 - **Conflict:** Her father, Sukhuljong, a man who has never been left standing.
-- **Shape:** Beginning: the horse that keeps getting lost. Middle: the imprisonment, the lightning, the escape through the drain. End: the dreams, the twenty-month birth, the name, the prophecy at the spring.
+- **Shape:** Beginning: the horse that keeps getting lost. Middle: the imprisonment, the lightning, the escape through the drain. End: the dreams, the name; Assimilation (Muryuk at the wall); Just One Person (Seohyun at the Class 51 gate).
 - **Grade:** A
 - **Problem:** The best-built episode in either file, but it runs three codas past the climax (the spring, age fifteen, Daeyang). It also sits between Day 9 and Day 10 and stalls the rebellion's climax.
 - **Suggestion:** End on the steward's "mother's mouth" exchange, or on "it was a very good spring". Move the Daeyang wall material to the Daeya-fall episode, where "know whose hands the keys are in" pays off. Move the episode to before ep 40, or right after 43, so 44 runs straight into 46.
@@ -456,7 +501,7 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 - **Protagonist / want:** Chunchu wants a Tang army.
 - **Conflict:** The emperor's terms and his court. Later, Wu, and a Goguryeo patrol.
 - **Shape:** Beginning: the wards, the banners, the investiture. Middle: the name gift, Saluzi, the gyuku, the six steeds, the promise. End: the banquet, Gija and Wiman, Wu in the hallway, the Mingde Gate, On Gunhae.
-- **Grade:** B
+- **Grade:** A
 - **Problem:** The want is granted by a quote in the first act. The real climax, the dying emperor's promise at Saluzi's panel, is followed by five more endings. The Gija/Wiman flashback is a lore dump, and On Gunhae's sacrifice, the episode's true cost, is narrated by a man the reader has never met.
 - **Suggestion:** Plant On Gunhae early (carrying the court-dress chest, measuring the cap) so his death on the boat is the price of the alliance. Cut the banquet's ambassadors and keep Wu's hallway. Move Gija/Wiman to just before the Tang army lands (660), where "the refugee given the border" works as a warning. End on the boat.
 
@@ -475,6 +520,22 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 - **Grade:** C
 - **Problem:** A procession of events. The two real choices (Gaozong refusing the generals' suicide, Wu holding his gaze) get two lines each, and the Euija and Gyebek lines dangle.
 - **Suggestion:** Make it Wu's episode. Cast out to the temple with her head shaved, her want is clear and the odds are total. The midpoint is Gaozong's first act of will, sparing the two dragons, which shows her he can say no to the court. The climax is the anniversary incense. Cut Sabi. Keep Chunchu's "then it is mine" as the stinger.
+
+### 102. Yongsu (576–653)
+- **Protagonist / want:** Yongsu wants the Ghost Children back among the living without putting his cousin off the chair, and without handing his son the story.
+- **Conflict:** The Council’s purge-list; Gildal’s last night; a king who will not hear a confession; a queen who will.
+- **Shape:** B: Jinji’s parties and the street, Biryun ignored, Mishil refused, the side well. M: the hut, the culvert, Biryun recognising the clerk and keeping him off the list, the south-road knife. E: Sunduk’s decree, the name Yongsu; Madman at the Class 59 gate; Bidam named because Yongsu is taken.
+- **Grade:** A
+- **Problem:** It is still a life. Chunchu’s shame is told as a verdict before we watch him be ashamed.
+- **Suggestion:** Keep the south-road talk, the clerk test, and Biryun’s covert vouch; they are the turn. If it needs cutting, let the peach-blossom night stay in Bihyung and open this episode on the culvert.
+
+### 102b. Bihyung (576–654)
+- **Protagonist / want:** Surabol's madman — a prince — wants to stay useful after the living have used him.
+- **Conflict:** Jinji's fall, the Ghost Children, a court that needs a fool and will not keep one.
+- **Shape:** Beginning: the Cloud King's deathbed and the silent boat. Middle: the peach-blossom night, the hut, Gildal. End: the years he outlasts the people who made him.
+- **Grade:** A
+- **Problem:** A life, like Yongsu. A few nights could be one night.
+- **Suggestion:** Keep him useful. Don't explain the ghosts twice.
 
 ### 51. King Muyeol (654)
 - **Protagonist / want:** Chunchu wants the throne without seeming to want it.
@@ -652,6 +713,14 @@ The Hyukgose→Talhae→Alji sequence then leads into "Back to Baekje," forming 
 - **Problem:** Hallakgungi is a complete tale. Jacheongbi's tragedy ("They killed him for it") happens off-page, and her flower-field scene has the speaker "sara" saying "Father retired", which muddles who keeps the gate. Gyebek's "Can the dead be fetched back" is the most important plant in the arc (his family, 70) and it gets two lines.
 - **Suggestion:** Split Jacheongbi into its own episode, or cut her and give her flower field to 71. If she stays, put the killing on the page and fix the gatekeeper's speaker id. End Gardener on Gyebek's question and give Yuri Dora's "In stories" a beat of silence. Five years later he will choose not to leave anyone behind to fetch.
 
+### 61b. Jachungbi (태초)
+- **Protagonist / want:** Jachungbi wants the boy from the sky, then wants him back from the dead.
+- **Conflict:** Heaven, which kills him for sitting beside her.
+- **Shape:** Beginning: she cuts her hair to share a desk. Middle: three years, and he hasn't noticed. End: she walks west to fetch him.
+- **Grade:** A
+- **Problem:** Short. The walk is almost a sentence.
+- **Suggestion:** Give the west one obstacle. Keep the haircut as the beginning.
+
 ### 62. Kangrim (태초)
 - **Protagonist / want:** Kangrim wants to close the magistrate's case and get home to his wife.
 - **Conflict:** The magistrate and Yumla both claim him, and they split him in two.
@@ -700,21 +769,21 @@ The Hyukgose→Talhae→Alji sequence then leads into "Back to Baekje," forming 
 - **Problem:** Placement kills it. It lands right after "Summon Gyebek…!", the arc's biggest cliffhanger, and stalls the countdown for a story from 18 BC. Onjo is passive (the deer decides for him), and the real climax, "Who's Mother coming with?", is left unanswered.
 - **Suggestion:** Move it into the island cycle, told by Yuri Dora as the last mainland tale before Kangrim. Gyebek finally hears what Baekje is, and it fits "a door that let you in". Give Onjo the decision: Sosuno says "Don't ask me that", and Onjo is the one who asks her. She walks to him, or to Biryu, and the stag only confirms it. Cut Yuri's half-sword to two lines, since it belongs to Jumong's episode.
 
-### 68. Sungchung (660)
-- **Protagonist / want:** Euija wants troops for Gyebek.
-- **Conflict:** Chunbok stalls.
-- **Shape:** B: two armies coming. M: "Who is the Eraha?" E: Ye Sikjin does his sums.
-- **Grade:** C
-- **Problem:** A transition scene, not an episode. The Seongchung quote is cited for the third time, and the title spelling ("Sungchung") doesn't match Seongchung elsewhere.
-- **Suggestion:** Merge into 69 as its cold open. The question that drives it is whether Euija opens Seongchung's paper. He has it in his sleeve; Chunbok wants to wait for the Satek levies. "Send him NOW" sends the Heungsu courier. Fix the spelling.
+### 68. Sunchung (660)
+- **Protagonist / want:** Sunchung wants the king to hear one word before he dies: hold Chimhyun and Final Ford.
+- **Conflict:** The feast on the other side of the wall, and a wine jar on the paper.
+- **Shape:** B: the last lamp with Hungsu (Chimhyun / Final Ford split). M: the cell, one sheet, the footsteps that come back empty. E: four years later Euija finds the paper, names Hungsu, and a courier rides for Gomamiji. Ye Sikjin does his sums in the back of the hall.
+- **Grade:** B
+- **Problem:** The 660 market / Eraha frame is still Euija's, so Sunchung's want is carried in flashback. The dying memorial is read aloud in the letter scene (the widgets already hold the Sagi text).
+- **Suggestion:** Keep the 660 frame as the payoff. Don't restage Kangrim or the belt from Descent. The courier to Gomamiji is the handoff to 69.
 
-### 69. Heungsu (660)
-- **Protagonist / want:** Heungsu wants to be asked, and to be used.
+### 69. Hungsu (660)
+- **Protagonist / want:** Hungsu wants to be asked, and to be used.
 - **Conflict:** Distance, the ministers' contempt, and time.
-- **Shape:** B: the map in the dirt. M: Seongchung's death comes on a salt boat, the rumours. E: the courier, "same paper", dismissed, the rain, walking north.
+- **Shape:** B: the map in the dirt. M: the courier, same paper as Sunchung. E: Sabi — Euija holds both papers, "So it is", the sleeve; eleven mornings of no second letter; rain; walking north.
 - **Grade:** A
-- **Problem:** The opening "656 berth" flashback has Gyebek about to march "with so few men", but Gyebek has been on Tamla since 655. That's a continuity break. The ministers' dismissal and Euija's "So it is" happen as a quote, off-page, even though that is the decision that loses Baekje.
-- **Suggestion:** Re-date the flashback to 655, at the exile berth. Heungsu sees Gyebek off and gives him the river-mouth/Tanhyeon warning, which 72 can pay off. Put one scene in Sabi: Euija, freshly sober from the river, holds Heungsu's answer and Seongchung's paper side by side, and still says "So it is", because the ministers' plan lets him win big. Keep the Gomamiji ending exactly as it is.
+- **Problem:** The berth flashback is dated 655. The Yusa "chickens in a basket" quote still injects beside the dramatized Sabi scene.
+- **Suggestion:** Keep the Gomamiji ending. Don't add a second quote of "So it is".
 
 ### 70. Gyebek (660)
 - **Protagonist / want:** Gyebek wants to keep his promise.
@@ -990,13 +1059,13 @@ I should keep each entry concise and aim for roughly 3500 words total, skipping 
 - **Problem:** There are four codas after the climax ("I wanted in"), and one of them is a decoder essay that restates the answer he just gave. The cavern scene has no turn. Daeto's execution is wasted.
 - **Suggestion:** Bring Wonsul to the gate while Yushin is dying, so Yushin's last refusal comes right before "I wanted in." That makes the answer cost something. Cut the obituary to one paragraph, move Daeto out, and end on Lady Jiso's "How am I to be your mother?"
 
-### 94. The Wanggeom's Guest (673)
-- **Protagonist / want:** Munmu wants to know whether the west will stay taken.
-- **Conflict:** None on the page. The goddesses are flustered, not opposed.
-- **Shape:** Beginning: Munmu bathes in the lake. Middle: a long run of goddess lust comedy, then the oracle. End: Dangun appears and hands him a title.
-- **Grade:** C
-- **Problem:** Most of the episode repeats one joke ("He's both," "I can't sit"). Dangun arrives as a deus ex machina with no cost. The last paragraph spoils the end of the war and the King of Samhan title.
-- **Suggestion:** Give Munmu a real choice to bring into the water. Punghun is piloting the Tang fleet, and Daeto's faction wants peace, so he asks whether to sue for terms or fight. The oracle's "Keep a sea in the other hand" then has to pay off at Gibeolpo and in his sea burial (97). Let Dangun refuse Munmu something before giving the word *Wanggeom*. Cut the comedy by half and delete the spoiler sentence.
+### 94. Munmu (673)
+- **Protagonist / want:** Munmu, the day after Yushin's funeral, needs to decide whether to write the West a real apology (the council's wish, with his brother held in Chang'an as a spare king) or finish the war with no uncle and no father.
+- **Conflict:** Deto's treason and the peace party outside; inside the cave, every ancestor refuses to simply answer him. Sunduk asks who in the council has been hungry, Yushin says write it but don't chase, Heo says they already took his name, Suro asks "Whose dead?", and the man in white won't speak plainly.
+- **Shape:** Deto signs his own warrant / the cave, a trimmed goddess beat, the oracle / Sunduk on the ledge / Yushin returns (Hyullé, "Princess", "Is he eating?") / two hands on his shoulders, then the two lines of ancestors back to the founders / the four founders: names, "Whose dead?", "Who does a king serve?", "someone higher up" / the man in white in rhyme: the door riddle, "Ask your mother", "You know better than I" → "Ask them" / the faces in the water / Suro's mound and the Garak-guk gi edict, the turtle song's last line / Baekje ranks, the apology signed with the emperor's name, rice to Wonsul, Munhee at the well: "Both."
+- **Grade:** A
+- **Problem:** Long (about 3,900 words) and dense with cameos. The founders' scene leans on the reader recognising Suro from Gyul.
+- **Suggestion:** If it needs trimming, cut the Hyukgose egg joke before cutting anything in the Yushin or Munhee beats.
 
 ### 95. Maeso (675)
 - **Protagonist / want:** Munhun wants to stop the landing, a Silla commander wants the horses, and Wonsul wants to redeem Seokmun. Xue is the antagonist.
@@ -1014,7 +1083,7 @@ I should keep each entry concise and aim for roughly 3500 words total, skipping 
 - **Problem:** The three-tries structure is good, but the winning try is reported through a quote. Xue is missing from his own last battle.
 - **Suggestion:** Dramatize the third try. Sideuk watches the ebb while Tang hulls ground one by one, and pays off Liu Rengui's "A river mouth is a judge" from episode 83, now turned against the Tang. Give Xue a last line on a grounded deck ("Not a harvest day"), and fulfil Chunchu's "the sea is last."
 
-### 97. The King for All (676)
+### 97. Wanggum (676)
 - **Protagonist / want:** Munhee wants her son to hold still, and Munmu wants to be king of all Samhan.
 - **Conflict:** Almost none.
 - **Shape:** Beginning: Munhee straightens his collar. Middle: a summary jump to 681 and his sea burial. End: the 692 dispute over the name Taejong.

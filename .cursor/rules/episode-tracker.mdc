@@ -1,0 +1,12 @@
+---
+description: Attach the episode quality/length tracker to every response
+alwaysApply: true
+---
+
+# Episode tracker
+
+End **every** response with an `Episode tracker` section: run `node scripts/episode-tracker.mjs` and paste its five summary lines (episode count and words, grade counts, C list, short list, long list). Use `--full` only when the user asks for the whole table. After editing `story.json` or the audit, also run `node scripts/episode-tracker.mjs --canvas` to refresh the tracker canvas (`~/.cursor/projects/Users-heewon-Documents-GitHub-kingdom/canvases/episode-tracker.canvas.tsx`) and link it.
+
+The tracker also re-scores relationship health (`scripts/relation-scores.mjs` → `src/lib/data/relation-scores.json`), re-reading only scenes whose text changed; when a score moves it prints one `Relationships:` line, which goes in the section too. The wiki shows the scores as health bars in edit mode (`?edit=true`).
+
+Grades come from the plot audit `scripts/.cache/audit/episode-audit.md` (A stands alone, B one weak act, C fragment or exposition). Word counts are live from `src/lib/data/story.json`. When an episode is rewritten and re-graded, update its `**Grade:**` line in that file so the tracker stays true.

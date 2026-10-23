@@ -1,6 +1,6 @@
 <script module lang="ts">
 	export const NODES = [
-		{ ko: '환인', en: 'Hwanin', y: 36 },
+		{ ko: '한님', en: 'Hannim', y: 36 },
 		{ ko: '환웅', en: 'Hwanung', y: 96 },
 		{ ko: '단군', en: 'Dangun', y: 156 },
 		{ ko: '아사달', en: 'Asadal', y: 216 }
@@ -9,7 +9,7 @@
 
 <script lang="ts">
 	/**
-	 * Old Joseon mandate lineage: Hwanin → Hwanung → Dangun → Asadal.
+	 * Old Joseon mandate lineage: Hannim → Hwanung → Dangun → Asadal.
 	 * Compact vertical chain. Step unused beyond registry default.
 	 */
 	import type { DiagramProps } from './registry';
@@ -28,7 +28,7 @@
 	class:play={active}
 	data-step={step}
 	role="img"
-	aria-label="Vertical lineage of the Old Joseon mandate from Hwanin through Hwanung and Dangun to Asadal"
+	aria-label="Vertical lineage of the Old Joseon mandate from Hannim through Hwanung and Dangun to Asadal"
 >
 	{#each NODES as n, i (n.en)}
 		{#if i < NODES.length - 1}

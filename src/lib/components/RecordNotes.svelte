@@ -4,7 +4,7 @@
 	const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 	/**
-	 * Raise each note's mark where it first appears in a translation ("Magniji*").
+	 * Raise each note's mark where it first appears in a translation ("High Commander*").
 	 * Only text between tags is touched, so markup survives. Never used on the original.
 	 */
 	export function supMarks(html: string, notes: RecordNote[] | undefined): string {

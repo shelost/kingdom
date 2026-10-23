@@ -84,7 +84,7 @@
 				]
 			],
 			"width": 24,
-			"label": "Taedong river",
+			"label": "Tedong river",
 			"ko": "대동강",
 			"labelAt": [
 				870,
@@ -145,86 +145,17 @@
 		},
 		{
 			"kind": "town",
-			"points": [
-				[
-					430,
-					295
-				],
-				[
-					402,
-					220
-				],
-				[
-					432,
-					150
-				],
-				[
-					520,
-					115
-				],
-				[
-					612,
-					142
-				],
-				[
-					650,
-					220
-				],
-				[
-					618,
-					285
-				],
-				[
-					520,
-					302
-				]
+			"model": "pyongyang",
+			"at": [
+				528,
+				207
 			],
+			"size": 140,
 			"label": "Pyongyang",
 			"ko": "평양성",
 			"labelAt": [
 				525,
 				190
-			]
-		},
-		{
-			"kind": "wall",
-			"points": [
-				[
-					420,
-					308
-				],
-				[
-					388,
-					220
-				],
-				[
-					420,
-					140
-				],
-				[
-					520,
-					100
-				],
-				[
-					625,
-					130
-				],
-				[
-					668,
-					220
-				],
-				[
-					630,
-					296
-				],
-				[
-					520,
-					315
-				],
-				[
-					420,
-					308
-				]
 			]
 		},
 		{
@@ -294,7 +225,7 @@
 		{
 			"id": "bk-king",
 			"side": "baekje",
-			"label": "Geunchogo",
+			"label": "Gunchogo",
 			"ko": "근초고왕",
 			"hero": "gyeonggeunchogo"
 		},
@@ -618,10 +549,11 @@
 		}
 	],
 	"sources": [
-		"Samguk Sagi 24, Annals of Baekje, Geunchogo years 24 and 26",
+		"Samguk Sagi 24, Annals of Baekje, Gunchogo years 24 and 26",
 		"Samguk Sagi 18, Annals of Goguryeo, Gogugwon year 41",
-		"Samguk Sagi 25, Annals of Baekje, Gaero year 18 (the memorial to Northern Wei)"
+		"Samguk Sagi 25, Annals of Baekje, Gero year 18 (the memorial to Northern Wei)"
 	],
 	"note": "The records give thirty thousand picked men under the king and the crown prince, an attack on Pyongyang in winter (the Goguryeo annals say the tenth month), and a Goguryeo king killed by a stray arrow on the twenty-third day. The split of the thirty thousand between father and son is not recorded, so the map halves it. The records have the king lead his men out to meet the attack; the story keeps him on the wall. A Baekje letter a century later boasts that the crown prince took the king's head, which the annals do not say. The site follows the usual reading of Pyongyang on the Taedong; some place this Pyongyang further south. Goguryeo's capital was still Gungnae; Pyongyang was its southern stronghold. The earlier Baekje wins at Chiyang and the Pae river are left off because the story does not use them.",
-	"noteKo": "기록이 전하는 것은 왕과 태자가 이끈 정병 삼만, 겨울(고구려본기는 시월)의 평양성 공격, 그달 스무사흗날 날아온 화살에 맞아 죽은 고구려 왕이다. 삼만이 부자 사이에 어떻게 나뉘었는지도 없어 반씩 나누었다. 기록에서 왕은 군사를 이끌고 나가 막았지만, 이야기에서는 성벽 위에 남는다. 백 년 뒤 백제의 표문은 태자가 왕의 목을 베었다고 자랑하지만 본기에는 없는 말이다. 위치는 대동강가의 평양으로 보는 통설을 따랐고, 더 남쪽으로 보는 견해도 있다. 이때 고구려의 도읍은 아직 국내성이었고 평양은 남쪽의 거점이었다. 앞선 치양과 패하에서의 백제 승리는 이야기에 나오지 않아 지도에서 뺐다."
+	"noteKo": "기록이 전하는 것은 왕과 태자가 이끈 정병 삼만, 겨울(고구려본기는 시월)의 평양성 공격, 그달 스무사흗날 날아온 화살에 맞아 죽은 고구려 왕이다. 삼만이 부자 사이에 어떻게 나뉘었는지도 없어 반씩 나누었다. 기록에서 왕은 군사를 이끌고 나가 막았지만, 이야기에서는 성벽 위에 남는다. 백 년 뒤 백제의 표문은 태자가 왕의 목을 베었다고 자랑하지만 본기에는 없는 말이다. 위치는 대동강가의 평양으로 보는 통설을 따랐고, 더 남쪽으로 보는 견해도 있다. 이때 고구려의 도읍은 아직 국내성이었고 평양은 남쪽의 거점이었다. 앞선 치양과 패하에서의 백제 승리는 이야기에 나오지 않아 지도에서 뺐다.",
+	"winner": "baekje"
 }

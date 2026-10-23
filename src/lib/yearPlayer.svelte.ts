@@ -77,6 +77,12 @@ export class YearPlayer {
 		this.#hold = undefined;
 	}
 
+	/** Play within a narrower span (the timeline's chosen range). */
+	setRange(from: number, to: number) {
+		this.#from = from;
+		this.#to = to;
+	}
+
 	toggle() {
 		if (this.playing) this.stop();
 		else this.play();

@@ -8,8 +8,8 @@
  *   in their earlier stage for as long as the incumbent is still talking.
  * - Speakers go by their given name; the surname is for the wiki.
  */
-import { isSceneHeader, type Block } from './story';
-import { byId, nameOf, reignAt, stageOf, type Person } from './people';
+import { isPlate, isSceneHeader, type Block } from './story';
+import { byId, koreanOf, nameOf, reignAt, stageOf, type Person } from './people';
 import { relationOf } from './relations';
 import type { DialogueStyle } from './dialogueUi.svelte';
 
@@ -57,16 +57,23 @@ export function officialScore(room: Dialogue[], context: string): number {
 	return words.size + (people.length >= 3 ? 1 : 0) + (kingdoms.size > 1 ? 1 : 0);
 }
 
+/** The Harmony Council by name: only a council once Talhae takes the throne in 57. */
+const HARMONY_COUNCIL = /화백|hwabaek|harmony council/i;
+
 /**
  * Hybrid: posts are for the business of state, messages for everything else.
  * An exchange is official when the page forces it, or when its words, its
  * crowd and its borders add up. People close to each other stay in messages.
+ * Harmony Council debates stay talk until the council officially exists:
+ * before Talhae's year they letter as messages even when the words are
+ * official.
  */
-function roomForm(room: Dialogue[], context: string): ChatForm {
+function roomForm(room: Dialogue[], context: string, year?: number | null): ChatForm {
 	const forced = room.find((b) => b.chat && b.chat !== 'mail')?.chat;
 	if (forced) return forced;
 	const ids = peopleIn(room).map((p) => p.id);
 	if (ids.length > 1 && ids.every((a, i) => ids.slice(i + 1).every((b) => areClose(a, b)))) return 'message';
+	if (year != null && year < 57 && HARMONY_COUNCIL.test(context)) return 'message';
 	return officialScore(room, context) >= OFFICIAL_HITS ? 'post' : 'message';
 }
 
@@ -107,13 +114,13 @@ export function exchangesOf(blocks: Block[]): Exchange[] {
 }
 
 /** The form of every dialogue block in `blocks` under the reader's chosen style. */
-export function chatForms(blocks: Block[], style: DialogueStyle): Map<Block, ChatForm> {
+export function chatForms(blocks: Block[], style: DialogueStyle, year?: number | null): Map<Block, ChatForm> {
 	const forms = new Map<Block, ChatForm>();
 	const fixed: ChatForm | undefined =
 		style === 'script' ? 'script' : style === 'comic' ? 'message' : style === 'tweet' ? 'post' : undefined;
 	for (const { room, context } of exchangesOf(blocks)) {
 		const talk = room.filter((b) => b.chat !== 'mail');
-		const form = fixed ?? (talk.length ? roomForm(talk, context) : 'message');
+		const form = fixed ?? (talk.length ? roomForm(talk, context, year) : 'message');
 		for (const b of room) forms.set(b, !fixed && b.chat === 'mail' ? 'mail' : form);
 	}
 	return forms;
@@ -155,7 +162,7 @@ export function mailOf(blocks: Block[], forms: Map<Block, ChatForm>): Map<Block,
 	let lastVoice: string | undefined;
 	for (const b of blocks) {
 		if (isSceneHeader(b)) {
-			if (b.kind === 'scene' || b.kind === 'day') scene = { en: b.label, ko: b.ko };
+			if (isPlate(b)) scene = { en: b.label, ko: b.ko };
 			fresh = true;
 		}
 		const letter = b.kind === 'quote' && b.style === 'letter';
@@ -243,16 +250,72 @@ export function standings(blocks: Block[], year: number | null | undefined): Map
 }
 
 const SURNAMES =
-	/^(Kim|Yeon|Buyeo|Choi|Satek|Go|Park|Bak|Seok|Heukchi|Gwishil|Jang|Seol|Hae|Baek|Jin|Mok|Guk|Ahn|Yi|Lee|Gim|Wang|Eulji|Yang|Son|Ko)$/;
+	/^(Kim|Yeon|Buyeo|Choi|Satek|Go|Park|Bak|Suk|Hukchi|Gwishil|Jang|Sul|Hae|Bek|Jin|Mok|Guk|Ahn|Yi|Lee|Gim|Wang|Ulji|Yang|Son|Ko)$/;
+/** Clan-id tail → the Hangul the dialogue drops, the way English drops "Kim". */
+const SURNAME_KO: Record<string, string> = {
+	kim: '김',
+	gim: '김',
+	yeon: '연',
+	buyeo: '부여',
+	choi: '최',
+	satek: '사택',
+	go: '고',
+	ko: '고',
+	park: '박',
+	bak: '박',
+	suk: '석',
+	hukchi: '흑치',
+	gwishil: '귀실',
+	jang: '장',
+	sul: '설',
+	hae: '해',
+	bek: '백',
+	jin: '진',
+	mok: '목',
+	guk: '국',
+	ahn: '안',
+	yi: '이',
+	lee: '이',
+	wang: '왕',
+	ulji: '을지',
+	yang: '양',
+	son: '손'
+};
 /** The one speaker whose surname is half his name. */
 const FULL_NAME = new Set(['gesomun']);
 
-/** The name a speaker goes by in dialogue: given name only (Yushin, not Kim Yushin). */
-export function speakerName(p: Person, year?: number | null, look?: string | null): string {
-	const name = nameOf(p, year, look);
+function givenName(p: Person, name: string): string {
 	if (FULL_NAME.has(p.id)) return name;
 	const [first, ...rest] = name.split(' ');
 	if (!rest.length) return name;
 	const surname = p.clan?.split('-').at(-1);
 	return first.toLowerCase() === surname || SURNAMES.test(first) ? rest.join(' ') : name;
+}
+
+/** The name a speaker goes by in dialogue: given name only (Yushin, not Kim Yushin; 유신, not 김유신). */
+export function speakerName(p: Person, year?: number | null, look?: string | null, lang: 'en' | 'ko' = 'en'): string {
+	if (lang === 'ko') {
+		const ko = koreanOf(p, year, look);
+		if (ko) {
+			const en = nameOf(p, year, look);
+			if (FULL_NAME.has(p.id) || givenName(p, en) === en) return ko;
+			const prefix = SURNAME_KO[p.clan?.split('-').at(-1)?.toLowerCase() ?? ''];
+			if (prefix && ko.startsWith(prefix) && ko.length > prefix.length) return ko.slice(prefix.length).trim();
+			return ko;
+		}
+	}
+	return givenName(p, nameOf(p, year, look));
+}
+
+const RANK_PREFIX =
+	/^((?:(?:First|Second|Third|Fourth)\s+)?(?:Heavenly Sovereign|Emperor|Empress|Queen|King|Princess|Prince|Khagan))\s+(.+)$/;
+const RANK_SUFFIX = /^(.*?)(여왕|공주|대왕|황제|황후|가한|천황|왕)$/;
+
+/** Split a dialogue name so the rank sits fainter than the name. "Queen Sunduk" → Queen + Sunduk; 선덕여왕 → 선덕 + 여왕. */
+export function speakerParts(name: string): { title?: string; name: string; titleFirst: boolean } {
+	const en = name.match(RANK_PREFIX);
+	if (en) return { title: en[1], name: en[2], titleFirst: true };
+	const ko = name.match(RANK_SUFFIX);
+	if (ko && [...ko[1]].length >= 2) return { title: ko[2], name: ko[1], titleFirst: false };
+	return { name, titleFirst: true };
 }

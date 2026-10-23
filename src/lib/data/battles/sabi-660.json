@@ -272,7 +272,7 @@
 				760,
 				330
 			],
-			"label": "from Tanhyeon pass",
+			"label": "from Tanhyun pass",
 			"ko": "탄현에서"
 		}
 	],
@@ -1098,5 +1098,9 @@
 		"Epitaph of Ye Sikjin (Tang, 672)"
 	],
 	"note": "The records give the Tang host as 130,000 by land and sea (Samguk Sagi; the Zizhi Tongjian says 100,000) and Silla's as 50,000. How the Tang split between ships and shore is not recorded, so the map halves it, and Silla's losses at Yellow Mountain are not counted. Baekje's armies are recorded only by their losses: several thousand dead at the river mouth (drawn at the low reading, 3,000) and over ten thousand killed or taken outside the city (drawn at 10,000); the survivors are not drawn. The Old Book of Tang fights the field battle on the way upriver, before Silla comes; the map puts it on the twelfth with both armies, the Silla annals' 'four roads'. By the annals Silla was one day late, not two as the story says. The Tang books have Tae open the gate after Tang flags went up, with Yung and Chunbok surrendering; the story gives the gate to Chunbok. Final Ford follows the usual identification at Janghang on the Geum estuary; the field battle, 'some twenty li from the city', is placed approximately.",
-	"noteKo": "기록은 당군을 수륙 십삼만(삼국사기, 자치통감은 십만), 신라군을 오만으로 전한다. 당군이 배와 뭍에 어떻게 나뉘었는지는 기록에 없어 반씩 나누었고, 황산벌에서 신라가 잃은 병력도 셈하지 않았다. 백제군은 잃은 수로만 남아 있다. 강어귀에서 수천이 죽었고(낮게 잡아 삼천으로 그림), 도성 밖에서 만여 명이 죽거나 잡혔다(만으로 그림). 살아남은 자는 그리지 않았다. 구당서는 도성 밖 전투를 신라가 오기 전, 강을 오르는 길에 놓는다. 지도는 신라본기의 '네 길'을 따라 열이틀 두 군대가 함께 싸운 것으로 그렸다. 신라본기로는 신라가 하루 늦었고, 이야기처럼 이틀이 아니다. 당서는 당의 깃발이 오른 뒤 태가 성문을 열고 융과 천복이 항복했다고 하나, 이야기는 성문을 천복에게 준다. 기벌포는 금강 하구 장항으로 보는 통설을 따랐고, '도성에서 이십여 리'의 전투 자리는 대략이다."
+	"noteKo": "기록은 당군을 수륙 십삼만(삼국사기, 자치통감은 십만), 신라군을 오만으로 전한다. 당군이 배와 뭍에 어떻게 나뉘었는지는 기록에 없어 반씩 나누었고, 황산벌에서 신라가 잃은 병력도 셈하지 않았다. 백제군은 잃은 수로만 남아 있다. 강어귀에서 수천이 죽었고(낮게 잡아 삼천으로 그림), 도성 밖에서 만여 명이 죽거나 잡혔다(만으로 그림). 살아남은 자는 그리지 않았다. 구당서는 도성 밖 전투를 신라가 오기 전, 강을 오르는 길에 놓는다. 지도는 신라본기의 '네 길'을 따라 열이틀 두 군대가 함께 싸운 것으로 그렸다. 신라본기로는 신라가 하루 늦었고, 이야기처럼 이틀이 아니다. 당서는 당의 깃발이 오른 뒤 태가 성문을 열고 융과 천복이 항복했다고 하나, 이야기는 성문을 천복에게 준다. 기벌포는 금강 하구 장항으로 보는 통설을 따랐고, '도성에서 이십여 리'의 전투 자리는 대략이다.",
+	"winner": [
+		"tang",
+		"silla"
+	]
 }

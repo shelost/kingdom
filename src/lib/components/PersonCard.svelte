@@ -16,6 +16,7 @@
 		NAME_GAP
 	} from '$lib/names';
 	import { beingOf, cultureOf, nationFlag, toneOf } from '$lib/cardTheme';
+	import { givenName, type GivenName } from '$lib/givenNames';
 	import { onceInView, prefersReducedMotion } from '$lib/inView';
 	import { storyImg } from '$lib/img';
 	import { staticAsset } from '$lib/staticAsset.svelte';
@@ -93,10 +94,12 @@
 	});
 	let heroHan = $derived(plate.hanjaFirst && !!plate.han);
 	let sub = $derived(plate.subUsed ? undefined : block.sub);
+	/** A sovereign's plate writes the reign title; the name they were born with stands small beneath it. */
+	let given = $derived(person && monarch ? givenName(person, year, block.look, plate.ko) : undefined);
 	/** The other name they answer to: the birth name under a reign name, or the reign name under a birth name. */
 	let alias = $derived.by(() => {
 		if (!full || !plate.ko) return undefined;
-		if (sameName(plate.ko, full.korean) && full.birth?.korean) return full.birth;
+		if (sameName(plate.ko, full.korean) && full.birth?.korean) return given ? undefined : full.birth;
 		if (full.birth && sameName(plate.ko, full.birth.korean) && !sameName(full.korean, plate.ko))
 			return { korean: full.korean, hanja: full.hanja };
 		return undefined;
@@ -115,8 +118,15 @@
 		profile: { en: 'Profile', ko: '약력' },
 		coronation: { en: 'Coronation', ko: '즉위' },
 		promotion: { en: 'Promotion', ko: '승진' },
-		emperor: { en: 'Emperor', ko: '황제' }
+		emperor: { en: 'Emperor', ko: '황제' },
+		epitaph: { en: 'Here lies', ko: '묘지명' }
 	};
+	const lifeYear = (y: number | undefined, ko: boolean) =>
+		y == null ? '?' : y < 0 ? (ko ? `기원전 ${-y}` : `${-y} BCE`) : `${y}`;
+	/** The life in two years, for the card that closes a death. */
+	let lifespan = $derived(
+		block.tab === 'epitaph' && person ? `${lifeYear(person.born, reading.lang === 'ko')} – ${lifeYear(person.died, reading.lang === 'ko')}` : undefined
+	);
 	/** The black plate is for a sitting emperor; becoming one still plays as a coronation. */
 	let throne = $derived(emperor && !evolves);
 	let tab = $derived.by(() => {
@@ -183,6 +193,15 @@
 	{/if}
 {/snippet}
 
+<!-- Beneath a reign title: the name they were born with, in small type. -->
+{#snippet givenLine(g: GivenName, cls: string)}
+	<span class="given {cls}">
+		{#if g.korean}<span lang="ko">{g.korean}</span>{/if}
+		{#if g.hanja}<span class="given-han" lang="zh-Hant">{g.hanja}</span>{/if}
+		{#if g.english && reading.lang !== 'ko'}<span class="given-en">{g.english}</span>{/if}
+	</span>
+{/snippet}
+
 <!-- Under a face in a promotion: the name, then the title it held. -->
 {#snippet standing(at: { name?: string; title?: string } | undefined)}
 	<span class="standing" lang={reading.lang === 'ko' ? 'ko' : undefined}>
@@ -201,6 +220,7 @@
 <!-- The English name, the role, and the name they also answer to. -->
 {#snippet meta(cls: string)}
 	<div class="meta {cls}">
+		{#if lifespan}<span class="lifespan">{lifespan}</span>{/if}
 		{#if full}<span class="en-name">{full.english}</span>{/if}
 		{#if role && reading.lang !== 'ko'}<span class="role">{role}</span>{/if}
 		{#if alias?.korean}
@@ -261,6 +281,7 @@
 				<span class="em-rule" aria-hidden="true"></span>
 			{/if}
 			{@render koName(plate.ko, 'em-ko')}
+			{#if given}{@render givenLine(given, 'em-given')}{/if}
 			{@render meta('em-meta')}
 		</div>
 	</figure>
@@ -273,6 +294,7 @@
 		class:hero-han={heroHan}
 		class:has-mark={!!(flag || mark)}
 		class:has-still={!!still}
+		class:epitaph={!!lifespan}
 		style:--tone={being === 'mortal' ? colorOf(person) : realm}
 		style:--realm={realm}
 		style:--seal={realmInk(realm, 0.58)}
@@ -321,6 +343,7 @@
 			<div class="portrait" class:is-monarch={monarch} aria-hidden="true">
 				<span class="disk"></span>
 				{#if src}<img class="face solo" src={src} alt="" loading="lazy" decoding="async" />{/if}
+				{#if lifespan}<span class="ribbon left"></span><span class="ribbon right"></span>{/if}
 			</div>
 		{/if}
 		{#if !evolves}
@@ -328,10 +351,11 @@
 			<div class="title">
 				{#if heroHan && plate.han}
 					<span class="han-hero">
-						<BrushGlyphs text={plate.han} size="clamp(1.9rem, 6.5vw, 2.6rem)" play={done} ondone={() => (hanDone = true)} />
+						<BrushGlyphs text={plate.han} size="clamp(1.9rem, 6.5cqi, 2.6rem)" play={done} ondone={() => (hanDone = true)} />
 					</span>
 					{@render koName(plate.ko, 'ko-under')}
 				{:else}
+					{#if lifespan}<span class="late" lang="zh-Hant">故</span>{/if}
 					{#if plate.han}
 						<span class="han-over">
 							<BrushGlyphs text={plate.han} size="clamp(0.9rem, 2.4vw, 1.1rem)" play={done} ondone={() => (hanDone = true)} />
@@ -339,9 +363,22 @@
 					{/if}
 					{@render koName(plate.ko, 'ko-hero')}
 				{/if}
+				{#if given}{@render givenLine(given, '')}{/if}
 			</div>
 			{#if sub}<span class="sub-line" lang="ko">{sub}</span>{/if}
 			{@render meta('')}
+			{#if lifespan}
+				<span class="condolence">
+					<svg class="mum" viewBox="-12 -12 24 24" aria-hidden="true">
+						{#each Array.from({ length: 12 }, (_, k) => k * 30) as a (a)}
+							<ellipse cx="0" cy="-6.5" rx="2.1" ry="5" transform="rotate({a})" />
+						{/each}
+						<circle r="2.6" />
+					</svg>
+					<span lang="ko">삼가 고인의 명복을 빕니다</span>
+					{#if reading.lang !== 'ko'}<span class="condolence-en">May they rest in peace</span>{/if}
+				</span>
+			{/if}
 		</div>
 		{/if}
 	</figure>
@@ -629,11 +666,11 @@
 	}
 
 	.ko-hero {
-		font-size: clamp(1.9rem, 6.5vw, 2.6rem);
+		font-size: clamp(1.9rem, 6.5cqi, 2.6rem);
 	}
 
 	.ko-under {
-		font-size: clamp(1.35rem, 4.4vw, 1.75rem);
+		font-size: clamp(1.35rem, 4.4cqi, 1.75rem);
 		color: color-mix(in srgb, var(--realm) 30%, var(--sumi));
 	}
 
@@ -734,6 +771,41 @@
 		opacity: 0.8;
 	}
 
+	/* The name they were born with, small beneath the reign title; it surfaces after the title rises. */
+	.given {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.1rem 0.45rem;
+		font-family: 'Noto Serif KR', var(--serif);
+		font-size: 0.84rem;
+		font-weight: 600;
+		line-height: 1.25;
+		color: color-mix(in srgb, var(--realm) 30%, var(--sumi-dim));
+		opacity: 0;
+		transition: opacity 520ms var(--ease) 650ms;
+	}
+
+	.live .given {
+		opacity: 1;
+	}
+
+	.given-han {
+		font-size: 0.86em;
+		opacity: 0.75;
+	}
+
+	.given-en {
+		font-family: var(--serif);
+		font-size: 0.92em;
+		font-style: italic;
+		font-weight: 500;
+	}
+
+	.em-given {
+		color: color-mix(in srgb, var(--emperor-ink) 68%, transparent);
+	}
+
 	/* The blurb reads in the script's own type. */
 	.caption {
 		margin-top: 0.4rem;
@@ -748,6 +820,86 @@
 	.caption.sub {
 		margin-top: 0;
 		color: var(--sumi-dim);
+	}
+
+	/* ————— Epitaph: the card that closes a death ————— */
+	.lifespan {
+		font-family: var(--serif, var(--sans));
+		font-size: 1.05em;
+		font-variant-numeric: tabular-nums;
+		letter-spacing: 0.08em;
+		color: var(--sumi);
+	}
+
+	/* A Korean funeral card: the whole plate in greyscale, the portrait framed in black with mourning ribbons across its upper corners. */
+	.epitaph {
+		filter: grayscale(1);
+	}
+
+	.epitaph .portrait {
+		overflow: hidden;
+		border: 3px solid #141414;
+		background: linear-gradient(#d9d9d9, #f2f2f2);
+		box-shadow: 0 0 0 1px #f2f2f2, 0 0 0 2px #141414;
+	}
+
+	.epitaph .disk {
+		display: none;
+	}
+
+	.epitaph .face {
+		-webkit-mask-image: none;
+		mask-image: none;
+		object-fit: cover;
+		object-position: top center;
+	}
+
+	.ribbon {
+		position: absolute;
+		top: 7%;
+		width: 62%;
+		height: 9%;
+		background: #141414;
+		z-index: 2;
+	}
+
+	.ribbon.left {
+		left: -20%;
+		transform: rotate(-45deg);
+	}
+
+	.ribbon.right {
+		right: -20%;
+		transform: rotate(45deg);
+	}
+
+	.late {
+		font-size: clamp(0.9rem, 2.4vw, 1.1rem);
+		color: var(--sumi);
+	}
+
+	.condolence {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.15rem 0.45rem;
+		margin-top: 0.5rem;
+		padding-top: 0.45rem;
+		border-top: 1px solid color-mix(in srgb, var(--sumi) 30%, transparent);
+		font-size: 0.85em;
+		color: var(--sumi);
+	}
+
+	.condolence-en {
+		color: var(--sumi-dim);
+	}
+
+	.mum {
+		width: 1.2em;
+		height: 1.2em;
+		fill: #fafafa;
+		stroke: #6b6b6b;
+		stroke-width: 0.6;
 	}
 
 	/* ————— Coronation: before → after ————— */
@@ -1185,7 +1337,7 @@
 		color: color-mix(in srgb, var(--emperor-ink) 62%, transparent);
 	}
 
-	@media (max-width: 30rem) {
+	@container prose (max-width: 30rem) {
 		.person-card:not(.evolves):not(.emperor) {
 			grid-template-columns: 4.25rem 1fr;
 			gap: 0.75rem;
@@ -1214,6 +1366,7 @@
 		.solo,
 		.disk,
 		.syl,
+		.given,
 		.meta > *,
 		.before,
 		.arrow,

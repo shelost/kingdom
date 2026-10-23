@@ -5,7 +5,7 @@
 		사택: 'Satek',
 		진모: 'Jinmo',
 		해: 'Hae',
-		백: 'Baek',
+		백: 'Bek',
 		연비: 'Yunbi',
 		목리: 'Mokli',
 		안: 'Ahn',
@@ -138,8 +138,23 @@
 
 	<!-- King at the helm (top end) -->
 	<g class="node king" style="--d: 0">
+		<defs>
+			<clipPath id="ma-king"><circle cx="180" cy="24" r="12" /></clipPath>
+			<clipPath id="ma-pm"><circle cx="180" cy="88" r="22" /></clipPath>
+		</defs>
 		<rect class="dais" x="118" y="6" width="124" height="48" rx="8" />
 		<circle cx="180" cy="24" r="12" />
+		{#if king?.img}
+			<image
+				href={king.img}
+				x="168"
+				y="12"
+				width="24"
+				height="24"
+				preserveAspectRatio="xMidYMid slice"
+				clip-path="url(#ma-king)"
+			/>
+		{/if}
 		<polygon points="172,20 175,14 178,17 180,12 182,17 185,14 188,20" />
 		<ChartLabel x="180" y="42" {...king ? named(king) : titleLabel(TITLES.king)} w={56} size="sm" />
 	</g>
@@ -147,6 +162,17 @@
 	<!-- Prime Minister — just below the throne, on the aisle -->
 	<g class="node pm" class:prince={purged} style="--d: 160">
 		<circle cx="180" cy="88" r="22" />
+		{#if premier?.img}
+			<image
+				href={premier.img}
+				x="158"
+				y="66"
+				width="44"
+				height="44"
+				preserveAspectRatio="xMidYMid slice"
+				clip-path="url(#ma-pm)"
+			/>
+		{/if}
 		<ChartLabel
 			x="180"
 			y="88"

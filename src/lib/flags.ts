@@ -21,8 +21,8 @@ export const FLAG_LABEL: Record<FlagId, { label: string; ko: string }> = {
 	silla: { label: 'Silla', ko: '신라' },
 	baekje: { label: 'Baekje', ko: '백제' },
 	goguryeo: { label: 'Goguryeo', ko: '고구려' },
-	tang: { label: 'Tang', ko: '당' },
-	wa: { label: 'Wa', ko: '왜' },
+	tang: { label: 'the West', ko: '서국' },
+	wa: { label: 'the East', ko: '동국' },
 	gaya: { label: 'Gaya', ko: '가야' },
 	tamla: { label: 'Tamla', ko: '탐라' }
 };

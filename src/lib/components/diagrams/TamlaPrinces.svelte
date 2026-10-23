@@ -8,7 +8,7 @@
 
 <script lang="ts">
 	/**
-	 * Tamla three princes rising from Samseonghyeol (삼성혈).
+	 * Tamla three princes rising from Samsunghyul (삼성혈).
 	 * Compact island diagram — step unused beyond registry default.
 	 */
 	import type { DiagramProps } from './registry';
@@ -27,7 +27,7 @@
 	class:play={active}
 	data-step={step}
 	role="img"
-	aria-label="Diagram of the three Tamla princes rising from the Samseonghyeol well"
+	aria-label="Diagram of the three Tamla princes rising from the Samsunghyul well"
 >
 	<!-- island note -->
 	<text class="island" style="--d: 0" x="180" y="28">탐라 · Tamla</text>

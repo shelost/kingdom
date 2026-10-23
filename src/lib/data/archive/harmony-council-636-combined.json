@@ -1,0 +1,1864 @@
+{
+	"note": "Combined Harmony Council (636): Hwarang yard, the 632 council as a flashback, Jade Gate Valley, the queen’s door. Split into Harmony Council (632) and Jade Gate Valley (636). To restore: put `entry` back in chapter `samhan` after `after`, set Queen Sunduk’s last block to `queenSundukCard`, delete Jade Gate Valley and the split Harmony Council, and set Gwanggeto’s last block to `gwanggetoCard`.",
+	"archivedAt": "2026-10-15",
+	"chapter": "samhan",
+	"after": "Queen Sunduk",
+	"queenSundukCard": {
+		"kind": "p",
+		"html": "<b>Six men around a brazier argued over her crown all night. Four winters later, two of them are still arguing, until the war drums start…!</b>",
+		"ko": "<b>화로 앞의 사내 여섯이 밤새 그 왕관을 두고 다퉜다. 네 해 뒤, 그중 둘은 아직도 티격태격한다. 전고가 울리기 전까지는…!</b>"
+	},
+	"gwanggetoCard": {
+		"kind": "p",
+		"html": "<b>The prince who will beg has a son. Bupmin is fifteen now, and his uncle has one question: which rule will you break first…?</b>",
+		"ko": "<b>언젠가 빌러 갈 그 왕자에게는 아들이 있다. 법민이 열다섯이 되었고, 외숙에게는 질문이 하나 있다. 어느 계율을 제일 먼저 어기겠느냐…?</b>"
+	},
+	"entry": {
+		"year": "636",
+		"tone": "chamber deliberation drama",
+		"subtitle": "화백회의",
+		"logline": {
+			"en": "Four winters into the queen’s reign, war drums send two old Hwarang west, and the night they crowned her rides with them.",
+			"ko": "여왕 즉위 네 해째 겨울, 전고가 늙은 화랑 둘을 서쪽으로 내몬다. 그들이 여왕을 세운 그 밤도 함께 달린다."
+		},
+		"thumbnail": "council-seq-overhead",
+		"badges": [
+			"flag:silla"
+		],
+		"music": "The Harmony Council",
+		"title": "Harmony Council",
+		"images": [
+			{
+				"id": "harmony-council",
+				"ratio": 3.333,
+				"tone": "#3a3a3a",
+				"src": "/img_sunduk_02.png",
+				"alt": "The Harmony Council — Silla's nobles debate the succession around a smoking brazier deep into the night",
+				"at": "Three left, and all of them in skirts",
+				"prompt": "Cinematic historical illustration of sunduk 02, Three Kingdoms of Samhan / Tang era (632), scene: Queen Sunduk, painterly digital art, dramatic natural light, rich period costume, no modern elements, no text, no watermark, --ar 3:2 --stylize 250",
+				"refs": [
+					"/img_sunduk_02.png",
+					"/ch_munhee.png",
+					"/ch_kim_bupmin.png",
+					"/ch_chunchu.png"
+				],
+				"tempImage": "/temp/harmony-council.jpg"
+			},
+			{
+				"id": "council-flame-close",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "The Council decides by",
+				"alt": "Table-rim close: blue flame on the black disc, Bidam and Euljé in white dragon-coats over magenta",
+				"refs": [
+					"/img_sunduk_02.png",
+					"/ch_bidam.png",
+					"/ch_eulje.png"
+				],
+				"prompt": "Intimate cinematic 16:9 still. Camera at table-rim. Blue flame center. Council coats. No text. No watermark.",
+				"tempImage": "/temp/council-flame-close.jpg"
+			},
+			{
+				"id": "council-jury-lamp",
+				"ratio": 1.778,
+				"tone": "#1a1410",
+				"at": "hung jury in silk",
+				"alt": "Night Harmony Council: one lamp on a round table, six sleeves in smoke — a hung jury in silk",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_kim_yushin.png"
+				],
+				"tempImage": "/temp/council-jury-lamp.jpg",
+				"prompt": "Intimate cinematic still. Harmony Council night. One oil-lamp disc on a round table, six officials, extreme chiaroscuro. Faces match attached portraits. No text. No watermark."
+			},
+			{
+				"id": "council-split-light",
+				"ratio": 1.778,
+				"tone": "#141C2E",
+				"at": "The first count is three to three",
+				"alt": "Council table split by a lamp-seam: three faces in gold, three in navy — 3:3",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_kim_yushin.png"
+				],
+				"tempImage": "/temp/council-split-light.jpg",
+				"prompt": "Intimate cinematic still. Table split by one lamp-seam, hung 3:3. Faces match attached portraits. No text. No watermark."
+			},
+			{
+				"id": "council-bidam-rise",
+				"ratio": 0.5625,
+				"tone": "#141C2E",
+				"at": "The newest member of the Council",
+				"alt": "Bidam stands — the only man on his feet in the lamplit Harmony Council",
+				"refs": [
+					"/ch_bidam.png"
+				],
+				"tempImage": "/temp/council-bidam-rise.jpg",
+				"prompt": "Intimate cinematic close. Bidam standing in the council, lamp on his jaw. Face matches attached portrait. No text. No watermark."
+			},
+			{
+				"id": "council-bidam-coat",
+				"ratio": 0.5625,
+				"tone": "#141C2E",
+				"at": "I have known Princess Dukman",
+				"alt": "Bidam stands — magenta inner, white dragon overcoat, blue flame shaft behind him",
+				"refs": [
+					"/img_sunduk_02.png",
+					"/ch_bidam.png"
+				],
+				"prompt": "Minimal iconic 9:16 poster. Bidam standing, blue flame shaft. Council coat. No text. No watermark.",
+				"tempImage": "/temp/council-bidam-coat.jpg"
+			},
+			{
+				"id": "council-across-stare",
+				"ratio": 1.778,
+				"tone": "#1a1410",
+				"at": "catches the Second Blade",
+				"alt": "Bidam and Yushin across the dark council table, one lamp between them",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_kim_yushin.png"
+				],
+				"tempImage": "/temp/council-across-stare.jpg",
+				"prompt": "Intimate two-shot. Bidam and Yushin across a dark table, one lamp. Faces match attached portraits. No text. No watermark."
+			},
+			{
+				"id": "council-across-flame",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "Across the floor",
+				"alt": "Bidam and Yushin across the black table, blue flame between them, same white dragon-coats",
+				"refs": [
+					"/img_sunduk_02.png",
+					"/ch_bidam.png",
+					"/ch_kim_yushin.png"
+				],
+				"prompt": "Intimate 16:9 two-shot. Bidam and Yushin, blue flame divider. Council coats. No text. No watermark.",
+				"tempImage": "/temp/council-across-flame.jpg"
+			},
+			{
+				"id": "council-alchun-tiger",
+				"ratio": 1.778,
+				"tone": "#8fb3e0",
+				"at": "A tiger has no sex",
+				"alt": "Alchun raises his hand — grey hair, scar, white dragon-coat over magenta, blue flame low-left",
+				"refs": [
+					"/img_sunduk_02.png",
+					"/ch_alchun.png",
+					"/ch_bidam.png"
+				],
+				"prompt": "Intimate 16:9 still. Alchun hand raised. Council coat. Blue flame. No text. No watermark.",
+				"tempImage": "/temp/council-alchun-tiger.jpg"
+			},
+			{
+				"id": "council-yushin-coat",
+				"ratio": 0.5625,
+				"tone": "#2A5FB8",
+				"at": "Well stood.",
+				"alt": "Yushin seated in council dress — beard, white dragon-coat over magenta, blue flame at his shoulder",
+				"refs": [
+					"/img_sunduk_02.png",
+					"/ch_kim_yushin.png",
+					"/ch_bidam.png"
+				],
+				"prompt": "Minimal iconic 9:16 poster. Yushin in council coat, no armor. Blue flame. No text. No watermark.",
+				"tempImage": "/temp/council-yushin-coat.jpg"
+			},
+			{
+				"id": "council-tea-wide",
+				"ratio": 1.778,
+				"tone": "#0a0c12",
+				"at": "nobody stands up until they all agree",
+				"alt": "Night pavilion: six councillors on the floor around a low table, tea, blue flame, smoke",
+				"refs": [
+					"/pl_eastern_palace.png",
+					"/ch_bidam.png",
+					"/ch_eulje.png",
+					"/ch_alchun.png"
+				],
+				"prompt": "Intimate cinematic 16:9. Dark Korean pavilion, low table, tea, blue flame, chiaroscuro. No text. No watermark.",
+				"tempImage": "/temp/council-tea-wide.jpg"
+			},
+			{
+				"id": "council-tea-overhead",
+				"ratio": 1.778,
+				"tone": "#0a0c12",
+				"at": "Bone is the measure",
+				"alt": "Top-down: low wooden table, tea bowls in a ring, blue flame, white dragon-coat shoulders",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_alchun.png"
+				],
+				"prompt": "Intimate cinematic 16:9 top-down. Tea, blue flame, dark pavilion. No text. No watermark.",
+				"tempImage": "/temp/council-tea-overhead.jpg"
+			},
+			{
+				"id": "council-tea-worm",
+				"ratio": 1.778,
+				"tone": "#0a0c12",
+				"at": "The bone has run out",
+				"alt": "Worm’s-eye from the floor: table slab, towering blue flame, councillors looming",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_eulje.png"
+				],
+				"prompt": "Intimate cinematic 16:9 worm’s-eye. Blue flame, tea, dark pavilion. No text. No watermark.",
+				"tempImage": "/temp/council-tea-worm.jpg"
+			},
+			{
+				"id": "council-tea-cups",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "cannot raise my hand",
+				"alt": "Table close: tea bowls, a tense hand, blue flame, smoke on dark wood",
+				"refs": [
+					"/ch_bidam.png"
+				],
+				"prompt": "Intimate cinematic 16:9 table close. Tea bowls, blue flame. No text. No watermark.",
+				"tempImage": "/temp/council-tea-cups.jpg"
+			},
+			{
+				"id": "council-tea-bidam",
+				"ratio": 0.5625,
+				"tone": "#141C2E",
+				"at": "My lords have said one word",
+				"alt": "Bidam close — mid-speech, tea bowl, blue flame on his jaw, dark pavilion",
+				"refs": [
+					"/ch_bidam.png"
+				],
+				"prompt": "Intimate cinematic 9:16. Bidam speaking, tea, blue flame. No text. No watermark.",
+				"tempImage": "/temp/council-tea-bidam.jpg"
+			},
+			{
+				"id": "council-tea-rise",
+				"ratio": 1.778,
+				"tone": "#141C2E",
+				"at": "a Hwarang barely seated",
+				"alt": "Bidam half-rises from the floor; tea bowls, blue flame, the others look up",
+				"refs": [
+					"/ch_bidam.png"
+				],
+				"prompt": "Intimate cinematic 16:9. Bidam rising. Dark pavilion. No text. No watermark.",
+				"tempImage": "/temp/council-tea-rise.jpg"
+			},
+			{
+				"id": "council-tea-across",
+				"ratio": 1.778,
+				"tone": "#0a0c12",
+				"at": "Today is the country’s business",
+				"alt": "Bidam and Yushin across the low table, tea and blue flame between them",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_kim_yushin.png"
+				],
+				"prompt": "Intimate cinematic 16:9 two-shot. Tea, blue flame. No text. No watermark.",
+				"tempImage": "/temp/council-tea-across.jpg"
+			},
+			{
+				"id": "council-tea-alchun",
+				"ratio": 1.778,
+				"tone": "#8fb3e0",
+				"at": "You’ve wrestled worse than a woman",
+				"alt": "Alchun raises his hand in the dark pavilion — scar, tea, blue flame",
+				"refs": [
+					"/ch_alchun.png",
+					"/ch_bidam.png"
+				],
+				"prompt": "Intimate cinematic 16:9. Alchun hand raised. No text. No watermark.",
+				"tempImage": "/temp/council-tea-alchun.jpg"
+			},
+			{
+				"id": "council-tea-yushin",
+				"ratio": 0.5625,
+				"tone": "#2A5FB8",
+				"at": "That is what deliberation is for",
+				"alt": "Yushin seated on the floor — beard, clenched jaw, blue flame, council coat",
+				"refs": [
+					"/ch_kim_yushin.png",
+					"/ch_bidam.png"
+				],
+				"prompt": "Intimate cinematic 9:16. Yushin, no armor. No text. No watermark.",
+				"tempImage": "/temp/council-tea-yushin.jpg"
+			},
+			{
+				"id": "council-seq-light",
+				"ratio": 1.778,
+				"tone": "#C94040",
+				"at": "The flame is red first",
+				"alt": "Hands light the small brazier — the flame is red first",
+				"refs": [
+					"/ch_bidam.png"
+				],
+				"prompt": "Lighting the brazier, red flame. Locked pavilion. No text. No watermark.",
+				"tempImage": "/temp/council-seq-light.jpg"
+			},
+			{
+				"id": "council-seq-red-wide",
+				"ratio": 1.778,
+				"tone": "#C94040",
+				"at": "Someone lights the small brazier",
+				"alt": "Locked pavilion: six men, mats, tea, wooden pieces, red brazier",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_eulje.png",
+					"/ch_alchun.png"
+				],
+				"prompt": "Wide, red flame. Locked pavilion. No text. No watermark.",
+				"tempImage": "/temp/council-seq-red-wide.jpg"
+			},
+			{
+				"id": "council-seq-blue-birth",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "The flame turns blue",
+				"alt": "Brazier close: red coals, piercing blue tongue, tea and a wooden piece at the rim",
+				"refs": [],
+				"prompt": "Flame turns blue. No text. No watermark.",
+				"tempImage": "/temp/council-seq-blue-birth.jpg"
+			},
+			{
+				"id": "council-seq-session",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "Only then may the session start",
+				"alt": "Same pavilion, same seats: piercing blue flame, session begins, pieces not yet voted",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_eulje.png",
+					"/ch_alchun.png"
+				],
+				"prompt": "Session wide, blue flame. No text. No watermark.",
+				"tempImage": "/temp/council-seq-session.jpg"
+			},
+			{
+				"id": "council-seq-overhead",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "wooden piece on a personal mat",
+				"alt": "Top-down: octagonal table, six mats, tea, unused wooden pieces, blue flame",
+				"refs": [],
+				"prompt": "Top-down. No text. No watermark.",
+				"tempImage": "/temp/council-seq-overhead.jpg"
+			},
+			{
+				"id": "council-seq-worm",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "either side of the cup",
+				"alt": "Worm’s-eye: piercing blue shaft, same table, same cups and pieces",
+				"refs": [
+					"/ch_bidam.png"
+				],
+				"prompt": "Worm’s-eye, blue shaft. No text. No watermark.",
+				"tempImage": "/temp/council-seq-worm.jpg"
+			},
+			{
+				"id": "council-seq-split",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "Three go to the no side",
+				"alt": "Hung 3:3 — three wooden pieces yes of the cup, three no, same seats",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_alchun.png"
+				],
+				"prompt": "First count 3:3 pieces. No text. No watermark.",
+				"tempImage": "/temp/council-seq-split.jpg"
+			},
+			{
+				"id": "council-seq-bidam",
+				"ratio": 0.5625,
+				"tone": "#141C2E",
+				"at": "Not one of you has ever put a question",
+				"alt": "Bidam close in piercing blue light — tea, wooden piece on the yes side",
+				"refs": [
+					"/ch_bidam.png"
+				],
+				"prompt": "Bidam close. No text. No watermark.",
+				"tempImage": "/temp/council-seq-bidam.jpg"
+			},
+			{
+				"id": "council-seq-across",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "the hundred-and-ninth is mine",
+				"alt": "Bidam and Yushin across the same table, tea and pieces, piercing blue",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_kim_yushin.png"
+				],
+				"prompt": "Two-shot. No text. No watermark.",
+				"tempImage": "/temp/council-seq-across.jpg"
+			},
+			{
+				"id": "council-seq-alchun",
+				"ratio": 1.778,
+				"tone": "#8fb3e0",
+				"at": "…I raise it.",
+				"alt": "Alchun moves his wooden piece from no to yes beside his cup",
+				"refs": [
+					"/ch_alchun.png"
+				],
+				"prompt": "Alchun flips his piece. No text. No watermark.",
+				"tempImage": "/temp/council-seq-alchun.jpg"
+			},
+			{
+				"id": "council-seq-unanimous",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"at": "All six sit on the yes side",
+				"alt": "Same pavilion, same seats: every wooden piece on the yes side of the cup",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_alchun.png"
+				],
+				"prompt": "Unanimous pieces. No text. No watermark.",
+				"tempImage": "/temp/council-seq-unanimous.jpg"
+			},
+			{
+				"id": "yushin-sword-vertical",
+				"ratio": 0.5625,
+				"tone": "#3E79E4",
+				"at": "Across the floor, Yushin catches",
+				"alt": "Kim Yushin holding a hip-scale Sword of Silla — 환두대도, fish in the small pommel ring",
+				"src": "/temp/yushin_sword_vertical.png",
+				"refs": [
+					"/ch_kim_yushin.png",
+					"/sw_bidam.png"
+				],
+				"tempImage": "/temp/yushin-sword-vertical.jpg",
+				"prompt": "Minimal iconic 9:16 still. DUTCH mid-stride, crushed black. Kim Yushin FACE and lamellar from attached portrait — ignore the brown katana. Copy sw_bidam.png: when the sword hangs down, small hollow RING is UP at the heel of the fist, palm-length grip, thin gold BAND (not a disc), blade DOWN to mid-calf. Handle:blade 1:3. Only circle is the pommel ring. No tsuba. #2A5FB8 hard key. No glow. No text. No watermark."
+			},
+			{
+				"id": "bidam-cleverest",
+				"ratio": 1.778,
+				"tone": "#141C2E",
+				"at": "I choose the cleverest of the three.",
+				"alt": "Young Bidam fills the night council — black-robed, almost smiling, the room behind him a blur of sleeves",
+				"prompt": "Intimate cinematic CLOSE-UP still, 16:9. Young adult Bidam standing in a lamplit Harmony Council chamber, near-black robe, speaking for Princess Dukman. Painterly digital painting, cinematic chiaroscuro, stylized not photoreal not anime. Face and shoulders fill the frame. No text, no watermark.",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_dukman.png"
+				],
+				"tempImage": "/temp/bidam-cleverest.jpg"
+			},
+			{
+				"id": "empty-throne-blue-light",
+				"ratio": 1.778,
+				"tone": "#3E79E4",
+				"alt": "Empty throne room with shaft of blue light falling on vacant seat - power vacuum and succession crisis",
+				"at": "Three left, and all of them in skirts",
+				"src": "/temp/empty_throne_blue_light.png"
+			},
+			{
+				"id": "parody-coronation-dukman",
+				"ratio": 1.778,
+				"tone": "#E8552B",
+				"at": "All six sit on the yes side",
+				"alt": "The Coronation of Napoleon as a vast Neoclassical canvas: young Bidam raising the Silla gold crown over Dukman kneeling before him, True Bone elders watching",
+				"prompt": "A parody of Jacques-Louis David’s THE CORONATION OF NAPOLEON, painted exactly like the real enormous canvas: Neoclassical oil, smooth glazing, warm gold and crimson palette, old varnish, a packed ceremonial hall with a crowd of dignitaries in tiers. Same central action: a standing man on the dais raising a crown in both hands above a woman kneeling before him with hands folded, her long train spread behind her, onlookers crowding both sides. The man is young BIDAM (attached white-robed portrait: face and white horse-embroidered robe over plum hanbok); he lifts a SILLA GOLD CROWN with tree-shaped uprights and dangling jade over PRINCESS DUKMAN (attached portrait: face and garments, hair ornament matching the attached binyeo ref) in vermilion #E8552B silk. The hall is a Silla palace of red timber pillars and lattice; the crowd are True Bone nobles in court silk, several looking sour. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_dukman.png",
+					"/bn_sunduk.png"
+				],
+				"people": [
+					"bidam",
+					"sunduk"
+				],
+				"tempImage": "/temp/parody-coronation-dukman.jpg"
+			},
+			{
+				"id": "rel-yongsu-chunchu",
+				"ratio": 2,
+				"at": "laying flat stones across the water",
+				"alt": "Nine-year-old Chunchu holds up a paper lantern on the first stepping stone while his father Yongsu walks away across the black river",
+				"prompt": "Minimal iconic 2:1 still composed like a symbolic old-master history painting — the BRILLIANT, STRANGE FATHER AND THE CLEVER SON. FAR WIDE, high angle over a night river: still black water fills most of the canvas, a line of pale flat stepping stones runs as one diagonal from the lower-left corner toward the upper-right. Small in the lower-left nine-year-old Chunchu (small magenta jeogori, no headband) stands on the first stone holding up a Korean paper lantern; far along the stones, tiny, his father Yongsu walks away toward the far bank, his back turned. ONE DEVICE: the diagonal of stones and the widening gap between the boy’s lantern and the father’s back; the lantern’s gold reflection stretches across the water toward him. Far bank a black band with tiny lights. Faces drawn, matching the attached portraits. No text. CANON — KIM YONGSU. #6a7cb0 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. | KIM CHUNCHU — FACE and garments from attached /ch_chunchu_hwarang.png (face only; invent a new pose). Look: Slim and elegant; shoulder-length loose black hair parted in the middle; thin moustache and goatee stubble; amused eyes, small knowing smile. Dress: Magenta-crimson silk po with a charcoal sash, dark layered collar. Silk even on campaign. Now: Young hwarang (stage portrait): beardless, eager. Demeanor: Diplomat and strategist: talks with his hands, smiles while calculating, never shouts; half-lidded watchful eyes. #D8258C as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: front-line armored warrior pose; shouting battle face; katana. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+				"refs": [
+					"/ch_chunchu_hwarang.png",
+					"/ch_yongsu.png"
+				],
+				"people": [
+					"yongsu",
+					"chunchu"
+				],
+				"tempImage": "/temp/rel-yongsu-chunchu.jpg"
+			},
+			{
+				"id": "rel-bidam-yushin",
+				"ratio": 2,
+				"at": "the hundred-and-ninth is mine",
+				"alt": "Yushin and Bidam sit back to back against a tally post of even notches in the torchlit yard, each grinning over his shoulder at the other",
+				"prompt": "Minimal iconic 2:1 still composed like a symbolic old-master history painting — ETERNAL FRIENDS AND RIVALS, THE TWO GREATEST MEN IN SAMHAN. Night on the packed-earth Hwarang yard after the day’s bout, camera low at ground level. BLOCKING: Yushin and Bidam sit on the ground back to back, one on each side of a weathered wooden post, both leaning their backs against it so their shoulders touch behind it; Yushin faces frame-left, Bidam frame-right, a mirror image. Both are spent and grinning, each turning his head over his shoulder toward the other to trade a jab. Knees up, forearms resting on them, empty-handed; Bidam’s 108 dark beads looped around his wrist. No weapons in frame. ONE DEVICE: the post rises straight up the centre of the frame between them, scored with two even columns of plain knife-cut tally notches, one column per man — no characters, no writing. A single torch planted in the dirt at the side rakes up across both faces, the blue robe, the white robe, the beads and the notches. A giwa hall dissolving in navy haze behind. Foreground: drifting dust and ember bokeh. Faces drawn, matching the attached portraits. No text. CANON — BIDAM — FACE and garments from attached /ch_bidam.png (face only; invent a new pose). Look: Tall, handsome, clean-shaven; short slicked-back black hair; warm brown eyes, faint self-amused smile. Dress: Long white outer robe whose sleeves are embroidered with galloping horses, over a plum-magenta inner robe and white sash. Navy #141C2E lives in the room and on the beads, not on his clothes. Demeanor: Buddhist: 108 beads wrapped on the wrist or rolling through his fingers, lotus seat, incense, a sutra under his breath; calm, ironic, never hurried. In anger the smile stays and the eyes go flat. #141C2E as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: headband; Confucian rank tablet; navy glow aura; dual swords. | KIM YUSHIN — FACE and garments from attached /ch_kim_yushin.png (face only; invent a new pose). Look: Tall, broad-shouldered, long black hair in a high topknot-ponytail with trailing Silla-blue cloth tails; level hard brows, deep-set eyes. Dress: Silla-blue po and trousers, plum-violet sash knotted at the waist, white inner collar, dark wrapped forearms. Off duty: plain blue po, no jewelry. Now: Marshal: full black beard and moustache; a blue ribbon in the topknot instead of the headband. Demeanor: Confucian: he STANDS — never sits in lotus. Weighs, counts, frowns at sums; tight jaw, rare dry half-smile. Grief shows as stillness, not tears. The most feared warrior in all of Samhan: a line goes quiet when the tall Silla helm and the white horse appear. Massive, deliberate, terrifying at a walk; by Hwangsan (65) heavier and slower than Gyebek but still the man armies are built around. #2A5FB8 as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: sitting in lotus or holding prayer beads; katana, tsuba or curved blade (ignore the sword drawn on his portrait); two swords at once; blue glow aura. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, the face and hands keep that clean ink line, but the body and garments are PAINTED, never digitally shaded — broad loaded brushstrokes and dry-brush drag that follow each fold, the shading stepped in three or four painted value planes with soft broken edges, paper-and-canvas grain running right across the silk — no skin pores, no photographic detail, not photoreal, never a smooth airbrushed gradient, never a 3D render (2.5D, see FORM). THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS AND NIGHT SCENES are the webtoon figure painted into a European OLD-MASTER CANVAS — a Renaissance / Baroque TENEBRIST oil painting (Caravaggio, Georges de La Tour, Rembrandt): broken-colour brushwork, glazed umber-to-black darks, sfumato falloff, a touch of impasto on the brightest highlight, over faint watercolor blooms and paper grain; walls, timber, stone, drapery and tables pulled out of the darkness by the one lamp, window or shaft. The same oil-on-canvas texture covers EVERYTHING in the frame, the figures’ silk included — mottled plaster, gritty stone, brushed robes — so the webtoon figures sit INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. BLOCKING IS THE RELATIONSHIP: when two people share a frame, the still reads like a history painting with the faces covered — who stands higher and who kneels, the distance or contact between them, whose hand rests on whom, where each one looks (at each other, past each other, the same way), and how their cast shadows meet on the wall or floor; one gesture between them carries the whole bond. LIGHT is movie tenebrism at full strength: 70–85% of the frame sinks into deep painted shadow (oil-glazed umber, indigo, black), an extreme value range with near-white highlights right beside inky black and almost no middle grey; big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. FORM IS 2.5D — drawn webtoon line on the outside, sculpted painted volume on the inside (the interior benchmark: a bearded emperor in yellow silk standing at a stone relief, under-lit by an oil lamp set on the floor beside the lens, palm on the carved horse, his shadow climbing the wall): the key is a PRACTICAL light IN or just outside the frame, CLOSE to the subject, RAKING ACROSS the surfaces the camera sees from below or from the side — never from behind them. So every silk fold protrudes, built the way an oil painter builds it: the lit side of each fold laid in with one opaque loaded stroke, the turn into shadow a crisp painted edge, the shadow side a thin transparent umber glaze with a little warm floor-light dragged into it, brush direction following the fold; gold thread and the brightest ridges flicked in with impasto; cheekbones, beard, knuckles, armor plates and horse muscle are painted the same way. The subject is large in frame (medium or closer, worm’s-eye or low three-quarter) so the folds resolve, and the light falls off into black across the body — that falloff is the darkness. Never a garment filled with one flat colour; never a subject backlit into a flat silhouette with only an edge line (if the camera is behind someone, the key still comes from the side and models their back and shoulder); never a wall flat to the lens — walls and floors recede at an angle so cast shadows can climb them. A thin edge of the same real light may graze the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. TEXTURE IS TACTILE RELIEF — the raking key exists to reveal it: thick oil impasto that stands up off the canvas on the lit side of every surface, loaded-brush and palette-knife ridges the eye can almost touch. Cloth: heavy silk in deep ridged folds, raised gold embroidery and brocade threads catching pin-point specular, quilted collars, layered sleeves with real thickness, beads and pins as small sculpted volumes. Buildings and ground just as sculpted: carved, weathered timber grain on pillars and brackets, every giwa roof tile and end-cap a rounded relief with its own shadow, rough-cut stone blocks, cracked lime plaster, lattice in deep relief throwing crisp little shadows, packed earth with grit and footprints. Never a smooth flat wall, never a plain colour-fill robe. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — the lit subject sits in the one pool of light and everything behind it drops three or more steps to near-black (or, reversed, a dark figure against the single bright opening); foreground shapes almost black; the eye lands on the subject first. SHOT VARIETY AND NEGATIVE SPACE: across a set of stills alternate INTIMATE CLOSE-UPS (faces and hands filling the frame, the background a dark blur) with FAR WIDES (the figures small in a lower corner or third, 60% or more of the canvas left as quiet negative space — black hall, night sky, dark water, bare wall — that makes the small lit figures strike). RENAISSANCE CANVAS, CARTOON FIGURES: the world is composed and painted like a Renaissance / Baroque master (Leonardo’s sfumato, Titian’s glazes, Raphael’s pyramids, Caravaggio’s darkness), but every face stays a clean-lined webtoon / anime face — big expressive eyes, simple nose and mouth, smooth cel-like skin with one or two shadow tones — never photographic skin, pores or realistic facial anatomy. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2.5D painterly cinema — drawn webtoon faces, everything else brushed with visible strokes and canvas grain — not photoreal, not live-action, not a smooth digital airbrush or 3D render, not flat cel fill. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+				"refs": [
+					"/ch_bidam.png",
+					"/ch_kim_yushin.png"
+				],
+				"people": [
+					"bidam",
+					"yushin"
+				],
+				"tempImage": "/temp/rel-bidam-yushin.jpg"
+			},
+			{
+				"id": "ink-peony-no-butterflies-sunduk",
+				"ratio": 0.5625,
+				"tone": "#E8552B",
+				"at": "…There are no butterflies on these flowers.",
+				"alt": "Ink-and-color scroll: one tall peony stem in three blooms on vast empty silk, no butterflies anywhere, young Sunduk tiny at the bottom edge looking up",
+				"prompt": "A Korean ink-and-light-color hanging scroll in the manner of a Joseon flower painting (hwahwedo), aged cream silk, fine boneless brushwork. ICONIC MINIMAL LAYOUT: tall vertical scroll almost entirely EMPTY silk. ONE device: a single thin peony stem rising from the bottom-right corner in a long S-curve, three open blooms at the top in three colours — vermilion #E8552B, pale pink, white — leaves in soft green-grey washes. Conspicuously NO butterflies, NO bees, NO insects anywhere; the empty air around the blooms is the point. At the very bottom-left edge, tiny, the young queen SUNDUK (face and garments from the attached portrait, face barely suggested in a few strokes) kneels with her head tilted, looking up at the flowers, a thin opened packet of seeds beside her knee. Vast negative space, quiet, witty. One blank red seal square low on the right. PARODY RULES: always a hand-made PAINTING, never photoreal. Reproduce the original work’s composition, poses and signature look so it reads instantly as that exact work, with our characters swapped in. If the original is a painting, mural, print or scroll, match its medium, surface and brushwork. If the original is a photograph, film poster, album cover, anime frame or statue, PAINT it: a painterly illustration of that image with visible brushstrokes, simplified forms and anime-adjacent faces, NOT a photo, NOT photoreal skin or pores, NOT a 3D render, NOT a CGI statue. FACE AND GARMENTS from the attached portraits, recognizable but restyled into the medium; never the portrait’s standing clasped-hands stance. Character hex lives only as real color inside the work (pigment, cloth, light), never a glow aura, halo, emissive skin or neon outline. If a sword is visible it is the ring-pommel 환두대도 (small ring pommel at the heel of the fist, short grip, long straight blade, handle:blade 1:3), never a katana, never a tsuba. No readable text, no title, no credits, no legible inscriptions or signatures (red seal stamps only as blank red squares), no logos, no watermark.",
+				"refs": [
+					"/ch_sunduk.png"
+				],
+				"people": [
+					"sunduk"
+				],
+				"tempImage": "/temp/ink-peony-no-butterflies-sunduk.jpg"
+			},
+			{
+				"id": "sunduk-chunma-peony",
+				"ratio": 2,
+				"tone": "#E8552B",
+				"at": "He sends her a gift: a painting of peonies in three colours",
+				"alt": "Poster key art: Queen Sunduk laughs in her peony garden as the white heavenly horse eats one of the scentless the West peonies out of her hand",
+				"prompt": "HEEWON STYLE MOVIE POSTER key art, 2:1 letterbox, composed so nothing important touches the top or bottom edge; crowns, antlers, wings and heads stay well inside the central band; no title, no lettering. Dusk in a Silla palace garden after rain: a bed of red, purple and white peonies, a low tiled wall, a single gnarled pine. Close two-shot, low angle through the flowers. INTERACTION: Queen Sunduk crouches among the peonies in coral-red and white silk, gold crown, holding out a fat peony bloom in her palm; the wingless white heavenly horse Chunma bends its head down and takes the whole flower in its lips; she has thrown her head back laughing — no scent, no butterflies, and the horse does not care. A painted Tang scroll of peonies lies unrolled and forgotten on the wet stone beside her. CHUNMA HAS NO WINGS: a wingless white heavenly horse, bare white back and shoulders, nothing feathered anywhere; it rides the air on curling cloud-and-flame streamers trailing from its legs. One low sun-break (#E8552B) through the storm cloud rakes across the petals, her face and the horse’s white muzzle; the garden falls into wet umber and ink. Blurred peony heads in the near foreground. STYLE: HEEWON STYLE, more painterly, with hints of Korean ink painting — Korean webtoon figures (clean ink linework, simplified expressive faces matching the attached portrait, watercolor-washed) inside a hand-painted world of watercolor and oil with traditional sumukhwa ink: splashed-ink storm clouds, bold dry calligraphic brush strokes in manes, fur, feathers, robes and grass, ink bleeding into wet wash, small ink splatters and drips near the frame edges, patches of bare rice paper where the edges dissolve; oil glazes only deepen the darks, a touch of impasto on the brightest highlight. Movie-poster key art: bold iconic silhouette, the two subjects large and close, one dramatic low angle, one bright break of light behind them, big dark masses, few hues plus one accent, film-poster drama but NO text, NO title, NO credits, NO logo, NO seal stamp. Not photoreal, not 3D. No glow aura, no halo, no emissive outline — the accent colour is real light. One of each named person. No watermark. CANON — QUEEN SUNDUK — FACE and garments from attached /ch_sunduk.png (face only; invent a new pose). Hair ornament matches attached /bn_sunduk.png when the head is visible. Look: Pale oval face, dark calm eyes; black hair in a full coiled updo; when crowned, the gold Silla tree-and-antler crown hung with jade gogok. Dress: Crimson court robe with gold phoenix brocade, blue embroidered cape-collar, a red ribbon bow at the chest. Demeanor: Composed, faint smile, wit in the eyes; looks up at the sky (Cheomseongdae). Never weepy, never cowed. #E8552B as the hard key / specular / bounce in the dark — real light, never a glow aura or body halo. Never: Tang empress costume; fantasy tiara in place of the Silla gold crown. | CHUNMA (천마, hyukgose's heavenly horse, guardian of Silla) — attached board /obj_chunma.png: WINGLESS white heavenly horse in the Cheonmachong saddle-flap style: long arched neck, streaming white mane and tail, legs flung out in a flying gallop. It has NO WINGS — no feathers, no bird wings, nothing growing from the shoulders. It rides the sky on curling cloud-and-flame streamers trailing from its legs and chest, as on the painted birch-bark flap. Divine render: numinous through scale and atmosphere, never a glow outline. Kneels and cries beside the purple egg at Najeong, sees men approach, neighs and rises into the sky. | HORSE ANATOMY is a centrepiece: the whole horse body reads clearly and beautifully — arched neck, deep chest, sloping shoulder, round haunch, clean long legs in a correct gait, every muscle modelled by the one hard key with a bright edge along the topline and deep shadow under the belly; the horse is never cropped into a blob, never hidden behind dust, never stiff like a toy; mane and tail as flowing painted strokes; the coat colour exactly as the board. HEEWON STYLE: a Korean WEBTOON figure painted into a hand-painted WATERCOLOR-AND-OIL world, in a SIMPLE, MINIMAL, ICONIC layout — the benchmark is a lone man in magenta silk walking down a storm-lit grass ridge toward his tied horse with an empty saddle: one diagonal, two subjects, half the frame storm sky, one cloud-break. FIGURES are webtoon / anime: clean digital-ink linework, simplified webtoon faces with expressive eyes, shaded in soft watercolor washes and translucent oil glazes instead of flat cel fill — no skin pores, no photographic detail, not photoreal, not 3D. THE WORLD is WATERCOLOR FIRST, OIL SECOND: skies and ground in granulated wet-in-wet washes and short broken-colour dabs (Turner), dry-brush grass, dust and stone texture, soft bleeding edges, faint paper grain; the accent colour of the scene blooms into the wash near one frame edge and the frame edges dissolve into bare paper; oil only deepens the darks with rich umber-indigo glazes and adds a touch of impasto on the brightest highlight. INTERIORS are a Renaissance / Baroque TENEBRIST room (Caravaggio, Georges de La Tour, Rembrandt) painted in that same wash-and-glaze: a warm umber-to-black ground, walls, timber, drapery and tables pulled out of the darkness by the one lamp, window or shaft with soft sfumato falloff — the webtoon figures are set INTO that painted space, lit by the same key and sharing its shadows, never pasted onto a flat backdrop. LAYOUT is MINIMAL AND ICONIC, staged like a Romanticist painting (Friedrich, Turner, Delacroix, Géricault): ONE device carries the frame (a ridge diagonal, a road, a waterline, a hall axis, a table ring, a gate) with ONE or TWO subjects placed on the thirds; at least half the frame is quiet negative space (storm sky, empty field, dark floor, bare wall); distant detail stays tiny and dissolving (a line of banners or roofs in haze); no crowds, no clutter, nothing competing with the subject. Heroic diagonal or pyramid, small figures against a sublime sky or vast field, or a bold worm’s-eye / straight-down angle. LIGHT is movie tenebrism: big dark masses (storm cloud, shadowed slope, umber room, black floor) against ONE bright break — a single cloud-break, low sun shaft, lamp or window — that lands on the subject; inky darks right beside small near-white highlights, few middle greys in the subject; ONE hard directional key carves the subject out of the dark. Form is modelled: the key wraps around cheekbones, armor plates, horse muscle and silk folds, then falls off at a hard terminator; a thin edge of that same real light grazes the far side of the silhouette to lift it off the background (never a glow outline); long raking shadows. Default hour is dusk, night, storm or pre-dawn — never flat overcast, never even daylight, never a bright open sky filling the frame. DEPTH is three planes in every still: a dark out-of-focus FOREGROUND shape near the lens (shoulder, rein, post, grass, smoke) framing the shot; the subject razor-sharp in the MIDGROUND; the BACKGROUND melting into soft wash and atmospheric haze, with round painted BOKEH discs wherever small lights sit behind the subject (lamps, torches, embers, sparks, rain, wet highlights). Shallow depth of field, overlapping shapes and receding haze so the frame goes back in space — never flat, never every plane in equal focus. SEPARATION: subject and background never share a value — a lit figure against a background pushed two steps darker, or a near-black silhouette against the one bright break; foreground shapes almost black; the eye lands on the subject first. COLOR SYMBOLISM reads at a glance: each kingdom's colour lives in its banners and cloth (Silla blue, Baekje yellow, Goguryeo red, Tang vermilion and gold), each named person's hex in the key light on them, and the rest of the frame stays desaturated umber, slate and black so those few colours sing. FACES stay drawn: match the attached portrait's line weight, eye shape and simplification exactly — if a face starts to read as a photograph, flatten it back to ink line and wash; extras are drawn the same way, never photographic. HORSES are drawn to be admired: the whole body readable, arched neck, deep chest, round haunch, clean legs in a true gait, muscle modelled by the key with a bright edge along the topline. 2D animated cel-painterly cinema, not photoreal, not live-action, not 3D CGI. Same film stock every still: a CAMERA in a real Korean place — anamorphic 2:1 movie frame, shallow DOF, creamy bokeh, rack-focus, film grain, crushed blacks, ONE hard key, long shadows, tenebrism. MOVIE FRAME of the scene a DP could stand in — NEVER a graphic poster, split-screen collage, 3D architectural visualization, black-triangle overlay, spotlight cone deleting the landscape, or neon outline. NO halo, bloom, glow aura, rim-aura, emissive skin, or god-ray envelope around people — character hex is the color of REAL LIGHT in the dark (key bounce, specular on silk/armor/wet stone, a lamp, a shaft, a floor reflection), never a body halo, never magic outline, never neon-painting the figure. FACE ONLY from the attached portrait — silk/hanbok may match; NEVER copy the portrait stance, clasped hands, 3/4 fashion lineup, or a standing clone. Invent a new DRAMATIC body every still (mid-stride, kneel, full-draw, turn, tumble, lean, count, dutch, worm’s-eye, lower-third). CINEMATOGRAPHY: name the shot — dutch angle, worm’s-eye, crane, over-shoulder, rack focus, shallow DOF / bokeh, chiaroscuro, mise-en-scène, long-shadow key. HIGH CONTRAST: crushed blacks + one hard key / long shadows / tenebrism — not even daylight wash, not a flat tourist postcard. ICONIC MINIMAL means one architectural device a lens can see (road, column, waterline, gate, hall axis) plus empty negative space — not deleting the world. COLOR SYMBOLISM: hex tints the hard key / catchlight / bounce — NEVER a glow aura, NEVER recolor the attached portrait’s garments (Sosuno stays dusty-rose hanbok, Geumwa stays red-burgundy court silk, not gold paint). FACE AND CLOTHES match the attached ch_*.png. One of each named person — NEVER clone or duplicate a character. People stand on packed earth at a well RIM — NEVER inside the well shaft. Jumong is fun-loving and laid-back: grin, laugh, wink, easy eyes — not a grim founder mask. BATTLE ARMOR: metallic GRAY steel lamellar (attached steel-armor ref); cloth peeks in the character hex — not gold-painted plate, not glowing armor, not a standing armor catalog. RING-POMMEL SWORDS: one-handed hip 환두대도 from attached sw_bidam.png — handle:blade 1:3; order is RING (pommel at heel of fist) → short grip → thin gold collar → long blade → point. Never reverse handle and blade. Never a tsuba disc in the middle. Never taller than the person. sword_*.png is a pommel ECU only — do not attach it on full-blade stills. Ignore swords on face portraits. Two people = two garment-true figures against crushed black. Real Korean architecture or a locked dark room. No army. No readable text. No watermark. Copy: dynamic poses in a mythology-scale layout; dramatic poses in a mythology-scale one-device layout; one hard key / chiaroscuro; one gesture in empty space — iconic and simple. Never: white / pale studio void as a room; earth places stay real buildings, not color-plane furniture; no pasted portrait pose — new body every still; no floating logo — still must be a movie frame of the scene; unrealistic layout, reptitive; real bottle-shaped Cheomseongdae plus a story beat.",
+				"refs": [
+					"/ch_sunduk.png",
+					"/bn_sunduk.png",
+					"/obj_chunma.png"
+				],
+				"people": [
+					"sunduk"
+				],
+				"tempImage": "/temp/sunduk-chunma-peony.jpg"
+			}
+		],
+		"blocks": [
+			{
+				"kind": "p",
+				"html": "Four winters into the reign, nobody in Surabol says “ridiculous” out loud anymore. They say it in corridors.",
+				"ko": "즉위하고 네 해. 서라벌에서 이제 아무도 ‘웃기지도 않는다’는 말을 대놓고 하지 않는다. 복도에서만 한다."
+			},
+			{
+				"kind": "scene",
+				"label": "The Yard",
+				"ko": "연무장"
+			},
+			{
+				"kind": "p",
+				"html": "Midwinter. The Hwarang yard below the Moon Palace is frozen hard. Class 77 drills on it anyway, because nobody has told them they can stop.",
+				"ko": "한겨울. 월성 아래 화랑 연무장은 꽁꽁 얼었다. 칠십칠기는 그래도 그 위에서 훈련한다. 그만해도 된다고 일러 준 사람이 없으니까."
+			},
+			{
+				"kind": "p",
+				"html": "On the yard rail sit three men who drilled on the same ground more than twenty years ago. The boys keep glancing over. They have heard the stories. They are not sure which ones are true.",
+				"ko": "연무장 난간에 사내 셋이 앉아 있다. 스무 해도 더 전에 같은 땅에서 훈련하던 사내들이다. 아이들이 자꾸 그쪽을 흘끔거린다. 이야기는 들었다. 어느 게 참말인지는 모른다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"네 해다.",
+					"그 불 꺼지고 네 해가 지났는데, 내 엉덩이는 아직도 감각이 없데이."
+				],
+				"en": [
+					"Four winters.",
+					"Four winters since that fire went out, and I still can’t feel my backside."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"술종 공 얼굴 기억하지.",
+					"패가 옮겨 갈 때."
+				],
+				"en": [
+					"You remember Suljong’s face.",
+					"When the piece moved."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"잔을 통째로 삼킨 얼굴이었제."
+				],
+				"en": [
+					"Like he’d swallowed the cup."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "yushin",
+				"lines": [
+					"오늘 아침에도 했소. 동쪽 복도에서."
+				],
+				"en": [
+					"He said it again this morning. In the east corridor."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"당연하지. 네 해 동안 아침마다. 이제 그 양반 염불이 됐어."
+				],
+				"en": [
+					"Of course he did. Every morning for four years. It has become his prayer."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Yushin is not looking at either of them. He is looking up the hill at the palace roofs, the way he does when he thinks nobody is counting.",
+				"ko": "유신은 둘 중 누구도 보지 않는다. 언덕 위 궁 지붕을 보고 있다. 아무도 세지 않는다고 여길 때면 늘 그러듯이."
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"어이, 대장군. 어데 안 간다.",
+					"저 궁은 시조 때부터 그 자리에 있었다. 우리도 좀 봐 주라, 잠깐."
+				],
+				"en": [
+					"Oi. Marshal. She’s not going anywhere.",
+					"That palace has been in the same spot since the Founder. You can look at us for a minute."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "yushin",
+				"lines": [
+					"나는 명이 오는 쪽을 보오."
+				],
+				"en": [
+					"I face where my orders come from."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"명이라. 들었나, 알천? 저 사람은 그분을 명이라 부르네.",
+					"연꽃도 해를 향하오, 대장군. 그걸 충성이라 부르는 사람은 없소."
+				],
+				"en": [
+					"Orders. Did you hear that, Alchun? He calls her orders.",
+					"A lotus faces the sun too, Marshal. Nobody calls that duty."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "yushin",
+				"lines": [
+					"폐하께서—",
+					"…명은 여왕께서 내리시오. 내 말은 그뿐이오."
+				],
+				"en": [
+					"Her Majesty—",
+					"…The queen gives the orders. That is all I said."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"“폐하께서—”",
+					"스무 해째 저 말을 꺼내기만 하고, 한 번을 못 끝맺는다 아이가."
+				],
+				"en": [
+					"“Her Majesty—”",
+					"Twenty years he’s been starting that sentence. Never once finished it."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Down on the ice, a boy from Class 77 drops his practice sword. Nobody laughs at him. Everybody is listening to the Marshal not answer.",
+				"ko": "얼음판 위에서 칠십칠기 아이 하나가 목검을 떨어뜨린다. 아무도 웃지 않는다. 다들 대장군이 대답하지 않는 소리를 듣고 있다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"그날 밤 내가 먼저 일어섰지. 자네들 누구보다."
+				],
+				"en": [
+					"I stood first that night, you know. Before either of you."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "yushin",
+				"lines": [
+					"먼저 일어섰소."
+				],
+				"en": [
+					"You stood first."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"나는 호랑이 땜에 일어섰고. 둘 다 시작하지 마래이."
+				],
+				"en": [
+					"And I stood for a tiger. Don’t start, the pair of you."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Then a drum. Not the hour drum. It comes from the palace, slow, then again. The next hill picks it up, and the next, until the whole west is answering.",
+				"ko": "그때 북이 운다. 시각을 알리는 북이 아니다. 궁에서 느리게 한 번, 또 한 번. 옆 언덕이 받고, 그다음 언덕이 받아, 서쪽 전체가 대답한다."
+			},
+			{
+				"kind": "p",
+				"html": "On the ice, forty boys stop at once.",
+				"ko": "얼음판 위에서 아이 마흔이 한꺼번에 멈춘다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "yushin",
+				"lines": [
+					"소집이오."
+				],
+				"en": [
+					"That is a muster."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"한겨울에? 누가 이 날씨에 군사를 내노."
+				],
+				"en": [
+					"In midwinter? Who marches in this?"
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"아무도 안 낼 거라고 우리가 믿기를 바라는 누군가겠지."
+				],
+				"en": [
+					"Someone who wants us to believe nobody would."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Yushin is already off the rail and walking up the hill toward the palace. He does not run. He walks very fast.",
+				"ko": "유신은 벌써 난간에서 내려와 궁 쪽 언덕을 오르고 있다. 뛰지는 않는다. 아주 빨리 걷는다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"봐라. 명 오는 쪽."
+				],
+				"en": [
+					"See? Orders."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"가게 둬. 누군가는 그분이 뭘 들으셨는지 보러 가야지.",
+					"너. 너. 그리고 소매 기운 너. 시는 두고 말을 끌고 와. 지금."
+				],
+				"en": [
+					"Let him go to her. Somebody should go and see what she has heard.",
+					"You. You. And you, with the mended sleeve. Horses, not poems. Now."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Six boys run for the stables before he finishes. They have waited their whole lives for one of those three to point at them.",
+				"ko": "말이 끝나기도 전에 아이 여섯이 마구간으로 뛴다. 평생 저 셋 중 하나가 자기를 가리켜 주기를 기다려 온 아이들이다."
+			},
+			{
+				"kind": "p",
+				"html": "Riding west in the last of the light, Alchun laughs at nothing. Bidam knows what the nothing is. Four winters ago, the two of them sat all night by a brazier and made a queen.",
+				"ko": "마지막 햇빛 속에서 서쪽으로 달리다가, 알천이 아무것도 아닌 일에 웃는다. 비담은 그 아무것도 아닌 게 뭔지 안다. 네 해 전, 둘은 밤새 화로 곁에 앉아 여왕을 만들었다."
+			},
+			{
+				"kind": "flashback",
+				"year": "632",
+				"title": "The Harmony Council · 화백회의",
+				"blocks": [
+					{
+						"kind": "p",
+						"html": "The night before the crowning. Six nobles, one brazier, and nobody stands up until they all agree.",
+						"ko": "즉위 전날 밤. 귀족 여섯, 화로 하나. 뜻이 모두 같아질 때까지 아무도 일어서지 않는다."
+					},
+					{
+						"kind": "scene",
+						"label": "The Night Before",
+						"ko": "전날 밤"
+					},
+					{
+						"kind": "term",
+						"hanja": "和白",
+						"reading": "화백",
+						"term": "Harmony Council",
+						"html": "Hwabek. It means “speaking in harmony,” which is the polite way of saying nobody goes home. It is older than the bone ranks, older than the Buddha in Silla, and it still picks the kings.",
+						"ko": "화백. ‘어울려 말한다’는 뜻이다. 아무도 집에 못 간다는 말을 점잖게 한 것이다. 골품보다 오래됐고, 신라에 부처가 오기보다 오래됐고, 지금도 임금을 고른다."
+					},
+					{
+						"kind": "p",
+						"html": "Night in a small pavilion off the pond. Someone lights the small brazier. The flame is red first.",
+						"ko": "연못가 작은 정자다. 누가 화로에 불을 붙인다. 불꽃은 먼저 붉다."
+					},
+					{
+						"kind": "p",
+						"html": "It runs hotter. The flame turns blue. Only then may the session start.",
+						"ko": "불이 더 뜨거워진다. 불꽃이 푸르게 바뀐다. 그제야 회의가 시작된다."
+					},
+					{
+						"kind": "p",
+						"html": "Each sleeve has a cup of tea and a wooden piece on a personal mat. They vote by setting the piece on either side of the cup.",
+						"ko": "소매마다 차 한 잔과 개인 자리보 위의 나무패가 있다. 잔의 좌우에 패를 놓는 것이 표다."
+					},
+					{
+						"kind": "p",
+						"html": "The Council decides by <b>unanimity</b>. One voice against is enough to stop a name. That is why it takes all night.",
+						"ko": "화백은 <b>만장일치</b>로 정한다. 반대 하나면 이름이 멈춘다. 그래서 밤이 샌다."
+					},
+					{
+						"kind": "diagram",
+						"diagram": "harmony-council",
+						"step": "session",
+						"title": "Harmony Council · 화백회의",
+						"caption": "Six seats, one motion. Initial vote, deliberation, final vote: all six, or the name dies in the room.",
+						"ko": "자리 여섯, 안건 하나. 초투표, 숙고, 최종 투표. 여섯 모두가 아니면 그 이름은 방에서 죽는다."
+					},
+					{
+						"kind": "p",
+						"html": "Six seats. Yushin has none. He has a wall, and he is leaning on it, because the Marshal was invited to answer questions, not to ask them.",
+						"ko": "자리는 여섯. 유신의 자리는 없다. 벽이 있고, 그는 거기 기대어 있다. 대장군은 물음에 답하라고 부른 것이지, 물으라고 부른 게 아니다."
+					},
+					{
+						"kind": "p",
+						"html": "The first count is three to three. A hung jury in silk.",
+						"ko": "초투표는 셋 대 셋. 비단 옷 입은 배심이 갈렸다."
+					},
+					{
+						"kind": "p",
+						"html": "Three pieces go to the yes side of the cup. Three go to the no side.",
+						"ko": "패 셋은 잔의 찬성 쪽, 셋은 반대 쪽."
+					},
+					{
+						"kind": "diagram",
+						"diagram": "harmony-council",
+						"step": "split",
+						"title": "Initial vote · 초투표 3:3",
+						"caption": "Three sleeves for Dukman, three against a woman on the throne. Deliberation is the only door.",
+						"ko": "덕만을 드는 소매 셋, 여왕을 막는 소매 셋. 숙고만이 문이다.",
+						"cast": {
+							"s0": "imjong",
+							"s1": "bidam",
+							"s2": "yumjang",
+							"s3": "murim",
+							"s4": "alchun",
+							"s5": "suljong"
+						}
+					},
+					{
+						"kind": "p",
+						"html": "Then the names start. Somebody always tries a man first.",
+						"ko": "이제 이름들이 오간다. 누군가는 꼭 남자 이름부터 꺼낸다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "murim",
+						"en": [
+							"Prince Chunchu, then. His mother is royal."
+						],
+						"lines": [
+							"그럼 춘추 공은 어떻소. 어머니가 성골이오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "imjong",
+						"en": [
+							"And his father isn’t. Chunmyung’s boy is a Noble, Murim. By your own rule."
+						],
+						"lines": [
+							"아버지는 아니잖소. 천명 공주의 아들은 진골이오, 무림 공. 공의 규칙대로라면."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Chunchu is not in the room. He was nine when he learned why.",
+						"ko": "춘추는 그 방에 없다. 왜 없는지는 아홉 살 때 배웠다."
+					},
+					{
+						"kind": "p",
+						"html": "Tonight Chunchu is sitting on the rail of the little bridge over the pond. Every man who leaves the pavilion will have to pass him.",
+						"ko": "오늘 밤, 춘추는 연못 위 작은 다리 난간에 앉아 있다. 정자를 나서는 사내는 누구든 그 앞을 지나야 한다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "murim",
+						"en": [
+							"The Kim of Gaya, then. The Marshal’s blood is royal."
+						],
+						"lines": [
+							"그럼 가야 김씨는. 대장군의 피는 왕족이오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "imjong",
+						"en": [
+							"Royal in a country that no longer exists.",
+							"If we start counting kingdoms that no longer exist, half this room is royal."
+						],
+						"lines": [
+							"이제 없는 나라의 왕족이지.",
+							"없어진 나라까지 세기 시작하면, 이 방 절반이 왕족이오."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "By the wall, Yushin does not move. He has heard it before. He will hear it again.",
+						"ko": "벽 앞의 유신은 꿈쩍하지 않는다. 전에도 들은 말이다. 또 듣게 될 말이다."
+					},
+					{
+						"kind": "card",
+						"person": "alchun",
+						"caption": "Yushin’s old yardmate. Blunt, folksy, and the only man on the Council who has killed a tiger.",
+						"ko": "유신의 연무장 동기. 투박하고 구수하고, 화백에서 호랑이를 잡아 본 유일한 사내.",
+						"still": "/intro/alchun--harmony-council.jpg"
+					},
+					{
+						"kind": "dialogue",
+						"person": "alchun",
+						"en": [
+							"Three left, and all of them in skirts.",
+							"Well. Somebody say something new, or we’re here till the frost."
+						],
+						"lines": [
+							"남은 피는 셋, 셋 다 치마요.",
+							"자. 누가 새 말 좀 하시오. 아니면 서리 올 때까지 여기 있을 거요."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "The newest member of the Council — a Hwarang barely seated among them — stands up.",
+						"ko": "회의의 가장 새로운 일원 — 겨우 자리를 얻은 젊은 화랑 하나가 일어선다."
+					},
+					{
+						"kind": "card",
+						"person": "bidam",
+						"look": "young",
+						"caption": "The youngest sleeve in the room. He has never once waited his turn.",
+						"ko": "방에서 가장 어린 소매. 한 번도 제 차례를 기다린 적이 없다.",
+						"still": "/intro/bidam-young--harmony-council.jpg"
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#7b5cd6",
+						"person": "bidam",
+						"lines": [
+							"어른들께서 오늘 밤 한 마디만 마흔 번 하셨습니다. «여자».",
+							"저는 덕만공주를 어릴 적부터 뵈어 왔습니다.",
+							"이 방 어느 분도, 그분이 답하지 못할 물음을 던져 보신 적이 없습니다.",
+							"법화경에서는 용녀가, 비구들이 반대하기도 전에 성불합니다. 저도 읽었고, 어르신들도 읽으셨지요.",
+							"성골이 셋뿐이라면, 저는 그 셋 중 가장 총명한 분을 택하겠습니다."
+						],
+						"en": [
+							"My lords have said one word forty times tonight. “Woman.”",
+							"I have known Princess Dukman since I was a boy.",
+							"Not one of you has ever put a question to her that she could not answer.",
+							"In the Lotus Sutra a dragon girl becomes a Buddha faster than the monks can object. I’ve read it. So have you, my lords.",
+							"If only three of the Sacred Bone remain, then I choose the cleverest of the three."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "murim",
+						"chip": "#6b7280",
+						"lines": [
+							"…총명하다는 걸로 왕을 고르면, 내일은 누구 말을 듣소.",
+							"뼈가 기준이오. 뼈는 안 바뀌오."
+						],
+						"en": [
+							"…If cleverness picks a king, whose cleverness do we hear tomorrow.",
+							"Bone is the measure. Bone does not change."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "imjong",
+						"chip": "#78716c",
+						"lines": [
+							"뼈가 바닥났소.",
+							"바닥난 뼈로 나라를 버티는 게, 총명한 여왕보다 더 위험하지 않소."
+						],
+						"en": [
+							"The bone has run out.",
+							"Holding a country on empty bone is more dangerous than a clever woman."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Murim looks at the brazier for a long time. Then he moves his piece without a word, the way a man pays a debt he has decided not to argue about. Four to two.",
+						"ko": "무림은 한참 화로를 본다. 그러고는 말없이 패를 옮긴다. 따지지 않기로 한 빚을 갚는 사람처럼. 넷 대 둘."
+					},
+					{
+						"kind": "dialogue",
+						"person": "suljong",
+						"chip": "#57534e",
+						"lines": [
+							"나는 아직… 손을 못 올리겠소.",
+							"한 밤의 연설로 삼백 년을 뒤집기엔, 이 방이 너무 오래됐소."
+						],
+						"en": [
+							"I still… cannot raise my hand.",
+							"This room is too old to be turned by one night’s speech."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "yushin",
+						"chip": "#4a8fe0",
+						"lines": [
+							"나는 그분에게 질문을 던져 봤소.",
+							"답이 왔소. 이 방의 절반은 질문도 안 던져 보고 여자라는 단어만 반복했소.",
+							"숙고가 그래서 있는 거요. 초투표를 뒤집으라고."
+						],
+						"en": [
+							"I have put questions to her.",
+							"They were answered. Half this room never asked — they only repeated the word woman.",
+							"That is what deliberation is for. To overturn the first count."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "bidam",
+						"en": [
+							"Alchun. You’ve wrestled worse than a woman."
+						],
+						"lines": [
+							"알천. 자네는 여자보다 무서운 것과도 붙어 봤잖나."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "alchun",
+						"chip": "#8fb3e0",
+						"lines": [
+							"나는 호랑이를 잡아 본 사람이오.",
+							"호랑이는 암수가 없소. 이빨이 있지.",
+							"……올리겠소."
+						],
+						"en": [
+							"I have taken a tiger.",
+							"A tiger has no sex. It has teeth.",
+							"…I raise it."
+						]
+					},
+					{
+						"kind": "quote",
+						"html": "Then a great tiger burst in among the seats. The lords leapt up. Lord Alchun barely moved. He went on talking and laughing, caught the tiger by the tail, dashed it to the ground and killed it. Such was Alchun's strength that he took the head of the mat. Yet all the lords bowed to Yushin's authority.",
+						"ko": "그때 큰 호랑이가 자리 한가운데로 뛰어들었다. 여러 공이 놀라 일어났으나 알천공은 조금도 움직이지 않았다. 태연히 웃으며 이야기하다가 호랑이 꼬리를 잡아 땅에 메쳐 죽였다. 알천공의 완력이 이와 같아 윗자리에 앉았다. 그러나 여러 공은 모두 유신의 위엄에 복종하였다.",
+						"hanja": "時有大虎走入座間。諸公驚起。而閼川公略不移動。談笑自若。捉虎尾撲於地而殺之。閼川公膂力如此。處於席首。然諸公皆服庾信之威。",
+						"source": "Samguk Yusa (三國遺事) bk. 1, Marvels (紀異) — the lords' council on Namsan's Ujiam rock"
+					},
+					{
+						"kind": "p",
+						"html": "Five to one. Every face in the pavilion turns to the oldest sleeve in it. One voice against is still enough.",
+						"ko": "다섯 대 하나. 정자 안의 모든 얼굴이 가장 늙은 소매에게로 돌아간다. 반대 하나면 여전히 충분하다."
+					},
+					{
+						"kind": "p",
+						"html": "Suljong’s hand is on his piece. It stays there. The brazier, which was blue, is going red again.",
+						"ko": "술종의 손이 패 위에 있다. 그대로 있다. 푸르던 화롯불이 다시 붉어지고 있다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "suljong",
+						"en": [
+							"You want me to say she can do it. I don’t know that.",
+							"Nobody in this room knows that."
+						],
+						"lines": [
+							"그분이 해낼 수 있다고 말하라는 거요. 나는 그걸 모르오.",
+							"이 방 누구도 모르오."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "bidam",
+						"en": [
+							"No, my lord. Nobody does.",
+							"A raft isn’t ashamed of the river. You don’t have to believe in her. Just move the piece to the other side of the cup.",
+							"Then call it ridiculous all the way home. Nobody counts the grumbling. They count the pieces."
+						],
+						"lines": [
+							"예, 모르지요. 아무도 모릅니다.",
+							"뗏목은 강을 부끄러워하지 않습니다. 그분을 믿으실 필요는 없습니다. 패만 잔 건너편으로 옮기십시오.",
+							"그리고 댁에 가시는 내내 우습다고 하십시오. 투덜거림은 아무도 세지 않습니다. 세는 건 패입니다."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "suljong",
+						"en": [
+							"…Ridiculous."
+						],
+						"lines": [
+							"……웃기지도 않는군."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "He moves the piece. All six sit on the yes side. He will say the word again in the morning, in a corridor, not quite quietly enough.",
+						"ko": "그가 패를 옮긴다. 여섯이 모두 찬성 쪽에 앉는다. 아침에 그는 그 말을 한 번 더 한다. 어느 복도에서, 충분히 작지 않은 목소리로."
+					},
+					{
+						"kind": "diagram",
+						"diagram": "harmony-council",
+						"step": "unanimous",
+						"title": "Final vote · 최종 투표 6:0",
+						"caption": "Deliberation turns the hung room. Six sleeves. The gate opens.",
+						"ko": "숙고가 미결을 뒤집는다. 소매 여섯. 문이 열린다.",
+						"cast": {
+							"s0": "imjong",
+							"s1": "bidam",
+							"s2": "yumjang",
+							"s3": "murim",
+							"s4": "alchun",
+							"s5": "suljong"
+						}
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8fb3e0",
+						"person": "alchun",
+						"lines": [
+							"…비담이 저 자슥, 겁도 없데이."
+						],
+						"en": [
+							"…That boy Bidam hasn’t an ounce of fear in him."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "Across the floor, Yushin catches the Second Blade's eye. He and Bidam have been trading wins since they were boys in the yard. The count stands at one hundred and eight apiece. Neither lets the other stay ahead for long.",
+						"ko": "마루 건너, 유신이 제이검과 눈을 맞춘다. 그와 비담은 연무장 소년 시절부터 승패를 주고받아 왔다. 수는 백팔 대 백팔. 어느 쪽도 상대를 오래 앞서 두지 않는다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "yushin",
+						"en": [
+							"Well stood.",
+							"Tomorrow on the yard, the hundred-and-ninth is mine."
+						],
+						"lines": [
+							"잘 버텼소.",
+							"내일 연무장에서, 백아홉째는 내 거요."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "bidam",
+						"en": [
+							"Ha. Listen to him.",
+							"You still owe me a jar from the hundred-and-eighth, old boy. Pay that first.",
+							"Today is the country’s business. Tomorrow you can lose to me again."
+						],
+						"lines": [
+							"하. 이 사람 말하는 거 좀 보래이.",
+							"백여덟째 판 술 한 동이부터 갚아라.",
+							"오늘은 나라 일이고. 내일 또 지게 해 주꾸마."
+						]
+					},
+					{
+						"kind": "scene",
+						"label": "Dawn",
+						"ko": "새벽"
+					},
+					{
+						"kind": "p",
+						"html": "The brazier is out by the time Alchun carries the six pieces to the princess’s door. He carries them in his fist, because nobody told him there was a box.",
+						"ko": "알천이 여섯 개의 패를 공주의 문 앞까지 들고 갈 무렵, 화로는 꺼져 있다. 그는 패를 주먹에 쥐고 간다. 담는 함이 있다는 걸 아무도 일러 주지 않았으니까."
+					},
+					{
+						"kind": "dialogue",
+						"person": "sunduk",
+						"en": [
+							"All six?"
+						],
+						"lines": [
+							"여섯 다?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "alchun",
+						"en": [
+							"All six, Princess. Took till the fire went out.",
+							"There’ll be talk. The old men are already at it. “There hasn’t been a real king since the Cloud King.”"
+						],
+						"lines": [
+							"여섯 다요, 공주님. 불 꺼질 때까지 걸렸소.",
+							"말이 많을 끼요. 늙은이들은 벌써 그카고 있소. “구름왕 이후로 임금다운 임금이 없었다”고."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "sunduk",
+						"en": [
+							"My great-grandfather. They say that at every crowning.",
+							"…Four stones on four mountains, and a yard full of boys. And now me."
+						],
+						"lines": [
+							"증조부님 말이제. 즉위식마다 하는 소리다.",
+							"……네 산에 비석 넷, 사내아이로 가득한 마당. 그리고 이제 나."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "alchun",
+						"en": [
+							"We all came out of that yard. Every man who voted tonight."
+						],
+						"lines": [
+							"우리 다 그 마당에서 나왔소. 오늘 밤 패를 놓은 사내들 전부."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "sunduk",
+						"en": [
+							"Then find me someone who remembers him. Not the stones. The man.",
+							"If I’m going to be measured against him, I’d like to see the ruler."
+						],
+						"lines": [
+							"그라믄 그분을 기억하는 사람을 찾아 도. 비석 말고, 사람으로.",
+							"그분한테 재어질 거라면, 그 자부터 봐야겠어."
+						]
+					}
+				]
+			},
+			{
+				"kind": "scene",
+				"label": "Jade Gate Valley",
+				"ko": "옥문곡",
+				"weather": "snow"
+			},
+			{
+				"kind": "place",
+				"place": "jade_gate_valley",
+				"html": "A valley west of the capital with a polite name. Ask a scholar what a jade gate is and watch him find something interesting on the ceiling.",
+				"ko": "도성 서쪽, 이름만은 점잖은 골짜기. 학자에게 옥문이 무슨 뜻이냐고 물어보라. 그는 갑자기 천장에서 볼 게 생긴다."
+			},
+			{
+				"kind": "p",
+				"html": "Night is down by the time they reach the valley mouth, and a fog with it. Bidam stops the boys with one raised hand.",
+				"ko": "골짜기 어귀에 닿을 즈음엔 밤이 내렸고, 안개도 함께 내렸다. 비담이 손 하나를 들어 아이들을 세운다."
+			},
+			{
+				"kind": "p",
+				"html": "Smoke where there should be no smoke. Five hundred men can hide in a valley. They cannot hide their supper.",
+				"ko": "연기가 날 리 없는 데서 연기가 난다. 사내 오백은 골짜기에 숨을 수 있다. 저녁밥은 못 숨긴다."
+			},
+			{
+				"kind": "p",
+				"html": "Down the road out of the valley comes a monk with a bundle of firewood and a string of beads. He is walking toward the capital at an hour when monks are asleep.",
+				"ko": "골짜기에서 나오는 길로 중 하나가 장작 한 짐과 염주 한 줄을 들고 내려온다. 중들이 잠든 시각에 도성 쪽으로 걷고 있다."
+			},
+			{
+				"kind": "dialogue",
+				"chip": "#8a7f6a",
+				"speaker": "The Monk",
+				"gender": "m",
+				"lines": [
+					"나무아미타불. 말 타기엔 추운 밤이옵니다, 도령님들."
+				],
+				"en": [
+					"Amitabha. A cold night for riders, young lords."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"춥지요. 잠깐 앉으시오, 스님. 추위 쫓게 반야심경이나 같이 외웁시다."
+				],
+				"en": [
+					"It is. Sit a moment, brother. Say the Heart Sutra with me, for the cold."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "The monk begins. He is fluent for three lines. On the fourth, his thumb moves a bead his mouth has not reached.",
+				"ko": "중이 외기 시작한다. 세 줄까진 유창하다. 넷째 줄에서, 입이 닿지도 않은 염주알을 엄지가 넘긴다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"염주알이 하나 모자라오, 스님.",
+					"중은 세고, 간자는 들고 다닐 뿐이지."
+				],
+				"en": [
+					"You are a bead short, brother.",
+					"Monks count. Spies only carry."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "The firewood hits the snow. Alchun has him by the collar before he finishes turning. None of the boys saw Alchun get off his horse.",
+				"ko": "장작이 눈 위로 떨어진다. 몸을 다 돌리기도 전에 알천이 그의 멱살을 쥐고 있다. 알천이 말에서 내리는 걸 본 아이는 하나도 없다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"몇이고. 어데고. 대장은 누고.",
+					"빨리 말해라, 춥다."
+				],
+				"en": [
+					"How many. Where. Who’s in charge.",
+					"Quick, I’m freezing."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"chip": "#8a7f6a",
+				"speaker": "The Monk",
+				"gender": "m",
+				"lines": [
+					"…오백입니다. 우소 장군.",
+					"뒷산 성을. 뒤에서, 새벽에."
+				],
+				"en": [
+					"…Five hundred. General Uso.",
+					"The hill fort behind you. From the back, at dawn."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Bidam sends the boy with the mended sleeve back down the road at a gallop, to find whatever army the drums have raised. The other five lie on their bellies in the snow beside two men in their forties and look down into the valley.",
+				"ko": "비담은 소매 기운 아이를 왔던 길로 달려 보낸다. 북소리가 일으킨 군사가 어디 있든 찾아오라고. 나머지 다섯은 마흔 줄 사내 둘 곁에 눈밭에 엎드려 골짜기를 내려다본다."
+			},
+			{
+				"kind": "p",
+				"html": "Below, the Baekje camp. They have marched four nights in the dark. Now, at the bottom of a valley nobody watches, their captain lets them loosen their saddles.",
+				"ko": "아래에 백제 진이 있다. 나흘 밤을 어둠 속에 걸어왔다. 이제 아무도 지켜보지 않는 골짜기 바닥에서, 그들의 장수가 안장을 풀게 한다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"비담. 왼쪽 능선. 나는 마른 시내.",
+					"저짝이 안장 풀었다. 위원회 안 기다린데이."
+				],
+				"en": [
+					"Bidam. Left ridge. I take the dry creek.",
+					"They’ve loosed their saddles. We’re not waiting on a committee."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Alchun has opinions about committees. Every lord in Surabol does. They grew up on the one that unmade a king.",
+				"ko": "알천은 회의라면 할 말이 많다. 서라벌 귀족이라면 다 그렇다. 임금 하나를 무른 회의 얘기를 듣고 자랐으니까."
+			},
+			{
+				"kind": "flashback",
+				"year": "579",
+				"title": "The Three Counts · 세 번의 셈",
+				"blocks": [
+					{
+						"kind": "scene",
+						"label": "The Same Pavilion",
+						"ko": "그 정자"
+					},
+					{
+						"kind": "p",
+						"html": "Same pavilion. Same pond. Same brazier. Fifty-three winters before Dukman’s night, six sleeves sat here and did the opposite.",
+						"ko": "같은 정자, 같은 연못, 같은 화로. 덕만의 밤보다 쉰세 해 앞서, 여섯 소매가 여기 앉아 정반대의 일을 했다."
+					},
+					{
+						"kind": "p",
+						"html": "The king they are counting has had the throne four years, and he is one corridor away. Nobody invited him. In this room a king is not a guest. He is the question.",
+						"ko": "그들이 세는 왕은 왕좌에 앉은 지 네 해째이고, 복도 하나 건너에 있다. 아무도 그를 부르지 않았다. 이 방에서 왕은 손님이 아니다. 안건이다."
+					},
+					{
+						"kind": "p",
+						"html": "The charge has a woman in it. Dohwa, a married woman of the city, told the king that a wife does not serve two husbands. The king asked what would happen if her husband were dead. The city has been asking the same thing ever since.",
+						"ko": "죄목엔 여인이 하나 끼어 있다. 도성의 유부녀 도화는 왕에게, 계집은 두 지아비를 섬기지 않는다고 했다. 왕은 물었다. 그럼 지아비가 죽으면 어떠냐고. 도성은 그 뒤로 내내 같은 걸 묻고 있다."
+					},
+					{
+						"kind": "p",
+						"html": "Nobody in the pavilion says her name. They say “misconduct,” which is cheaper.",
+						"ko": "정자 안에서 그 이름을 입에 올리는 사람은 없다. 다들 ‘부덕’이라고 한다. 그쪽이 싸게 먹히니까."
+					},
+					{
+						"kind": "p",
+						"html": "The brazier goes red, then blue. The first count goes on the cups: six pieces on the no side. Nobody needs to argue, and nobody does.",
+						"ko": "화로가 붉었다가 푸르러진다. 첫 셈이 잔 옆에 놓인다. 여섯 말이 모두 아니오 쪽이다. 따질 필요가 없고, 아무도 따지지 않는다."
+					},
+					{
+						"kind": "p",
+						"html": "Then the door opens. The king has come to his own count, which is not done.",
+						"ko": "그때 문이 열린다. 왕이 제 셈을 보러 왔다. 그러는 법이 아니다."
+					},
+					{
+						"kind": "dialogue",
+						"person": "jinji",
+						"en": [
+							"You would unseat a Sacred Bone for a night’s rumor?",
+							"…Say her name, then. One of you."
+						],
+						"lines": [
+							"하룻밤 소문에 성골을 끌어내리겠다는 게냐?",
+							"…그럼 이름을 대 봐라. 누구라도."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a7f6a",
+						"speaker": "The High Councillor",
+						"gender": "m",
+						"en": [
+							"We are not here about the woman, Majesty.",
+							"We are here about the next one."
+						],
+						"lines": [
+							"그 여인 일로 모인 게 아니옵니다, 마마.",
+							"그다음 여인 일로 모였사옵니다."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "jinji",
+						"en": [
+							"Then I’ll sit. A king may sit in his own—"
+						],
+						"lines": [
+							"그럼 앉겠다. 제 나라 정자에 임금이—"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#8a7f6a",
+						"speaker": "The High Councillor",
+						"gender": "m",
+						"en": [
+							"Not on that mat, Majesty. That one votes."
+						],
+						"lines": [
+							"그 자리는 아니 되옵니다, 마마. 그 자리는 표를 던지는 자리옵니다."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "He stands through the deliberation, and through the final count. Six pieces stay where they are. The brazier stays blue. It is very quiet, for a thing that ends a reign.",
+						"ko": "그는 선 채로 의논을 듣고, 마지막 셈을 본다. 여섯 말은 제자리에 있다. 화로는 푸른 채다. 한 임금의 치세가 끝나는 일치고는 아주 조용하다."
+					},
+					{
+						"kind": "p",
+						"html": "In the corridor a boy of twelve waits in a robe hemmed that evening. The lords bow to him on the way out. By morning he is King Jinpyung. His eldest daughter will be the next name this room argues over all night.",
+						"ko": "복도엔 그날 저녁에 단을 접어 올린 두루마기를 입은 열두 살 소년이 기다린다. 나가던 대등들이 그에게 절한다. 아침이 되면 그는 진평왕이다. 그의 맏딸이 이 방이 밤새 다툴 다음 이름이 된다."
+					},
+					{
+						"kind": "p",
+						"html": "At the far end, a four-year-old has followed the lamps out of bed. Nobody sends him back. He watches the lords file past and counts them, the way small children count everything. Six. His house woke up Sacred Bone. It goes to bed True Bone.",
+						"ko": "복도 저 끝엔 등불을 따라 자리에서 빠져나온 네 살배기가 있다. 아무도 그를 돌려보내지 않는다. 아이는 줄지어 지나가는 대등들을 센다. 어린애들이 뭐든 세듯이. 여섯. 그 집은 성골로 눈을 떴다가 진골로 잠든다."
+					},
+					{
+						"kind": "quote",
+						"html": "He ruled the country four years. His government fell into disorder and he gave himself to debauchery, and the people of the country deposed him.",
+						"ko": "나라를 다스린 지 네 해, 정사가 어지럽고 음란에 빠지니 나라 사람들이 그를 폐하였다.",
+						"hanja": "御國四年。政亂荒婬。國人廢之。",
+						"source": "Samguk Yusa (三國遺事) bk. 1, Marvels (紀異) — Dohwa-nyeo and Bihyeong-rang"
+					},
+					{
+						"kind": "scene",
+						"label": "The Night Bridge · 612",
+						"ko": "밤의 다리 · 612"
+					},
+					{
+						"kind": "p",
+						"html": "Chunchu is nine. His father wakes him past midnight, which is normal, and walks him to the stream below the palace, which isn't. Kim Yongsu is the son of a king the Council threw out. The capital has a word for him that it only says after he leaves. He talks to the dark. He laughs a beat late. He adds a granary ledger faster than the clerk can read it.",
+						"ko": "춘추는 아홉 살이다. 자정 넘어 아버지가 그를 깨우는 건 흔한 일이고, 궁 아래 개울로 데려가는 건 흔치 않다. 김용수는 화백이 끌어내린 왕의 아들이다. 도성엔 그가 방을 나간 뒤에만 쓰는 말이 있다. 그는 어둠에 대고 말한다. 한 박자 늦게 웃는다. 곳간 장부는 서기가 읽는 것보다 빨리 머릿속으로 더한다."
+					},
+					{
+						"kind": "p",
+						"html": "Tonight he is laying flat stones across the water by lamplight, one at a time, as if someone on the far bank were waiting for the bridge to be finished before dawn.",
+						"ko": "오늘 밤 그는 등불 아래서 납작한 돌을 하나씩 물 위에 놓고 있다. 건너편 기슭의 누군가가 새벽 전에 다리가 끝나기를 기다리고 있기라도 한 것처럼."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6a7cb0",
+						"person": "yongsu",
+						"lines": [
+							"쉿. 일하는 중이데이.",
+							"……아니, 찾지 마라. 쳐다보는 거 싫어한다. 내맨치로."
+						],
+						"en": [
+							"Shh. They’re working.",
+							"…No, don’t look for them. They hate being looked at. Like me."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#D8258C",
+						"person": "chunchu",
+						"lines": [
+							"아버지… 누가요?"
+						],
+						"en": [
+							"Father… who is?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6a7cb0",
+						"person": "yongsu",
+						"lines": [
+							"니 할아버지가 그 큰 자리에 네 해 앉았다. 세 번 세고 나서, 방이 도로 가져갔제.",
+							"그 방은 자길 즐겁게 해 주는 사람을 먹어.",
+							"그러이까— 그 방엔 들어가지 마래이. 다른 데 앉아라. 다리 위에 앉든가."
+						],
+						"en": [
+							"Your grandfather sat in the big chair four years. Three counts, and the room took it back.",
+							"That room eats the men who amuse it.",
+							"So— stay out of that room. Sit anywhere else. Sit on the bridge."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#D8258C",
+						"person": "chunchu",
+						"lines": [
+							"……그 방 아이면, 사람은 어데 앉아요?"
+						],
+						"en": [
+							"…If not in the room, where does a person sit?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#6a7cb0",
+						"person": "yongsu",
+						"lines": [
+							"(한 박자 늦게 웃는다)",
+							"방이 니한테 오게 되는 데."
+						],
+						"en": [
+							"(laughs, a beat late)",
+							"Wherever the room has to come to you."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "By morning there is a bridge of flat stones across the stream that nobody in the palace remembers ordering. The servants say goblins. Chunchu, who carried the lamp, says nothing at all, and finds he is good at it.",
+						"ko": "아침이 되자 개울 위에 납작한 돌다리가 놓여 있다. 궁에서 그걸 시킨 기억이 있는 사람은 없다. 하인들은 도깨비라고 한다. 등불을 들었던 춘추는 아무 말도 하지 않는다. 그리고 자기가 그걸 잘한다는 걸 안다."
+					}
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"드디어 — 공공연히 미워해도 되는 적이다.",
+					"알천. 내 신호에."
+				],
+				"en": [
+					"Finally. An enemy I am allowed to hate in public.",
+					"Alchun. On my mark."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "The army comes up the road behind them, two thousand men breathing smoke, and does not stop to be told anything. Two men walk out in front of it. That is all the order there is.",
+				"ko": "뒤쪽 길로 군사가 올라온다. 입김을 연기처럼 뿜는 이천이다. 무엇을 들으려고 멈추지 않는다. 그 앞으로 사내 둘이 걸어 나간다. 명령은 그게 전부다."
+			},
+			{
+				"kind": "scene",
+				"label": "Two of Class 51",
+				"ko": "오십일기 둘",
+				"weather": "snow"
+			},
+			{
+				"kind": "p",
+				"html": "Bidam goes down the left ridge on foot, because horses are loud. His beads are looped on his sword wrist. They click once when he draws, and that is the last sound the first sentry hears.",
+				"ko": "비담은 왼쪽 능선을 걸어서 내려간다. 말은 시끄러우니까. 염주가 칼 쥔 손목에 감겨 있다. 칼을 뽑을 때 한 번 딸깍한다. 첫 보초가 듣는 마지막 소리다."
+			},
+			{
+				"kind": "p",
+				"html": "He does not hurry. He moves through the camp the way he walks through a temple, courteous to the furniture. Men stand up in front of him and do not stay standing.",
+				"ko": "그는 서두르지 않는다. 절집을 걷듯 진영을 지나간다. 세간에도 예의를 갖추면서. 그의 앞에서 일어선 사내들은 서 있지 못한다."
+			},
+			{
+				"kind": "p",
+				"html": "Alchun comes up the dry creek like a rockslide that has learned to swear. A Baekje captain sets a spear against him. Alchun takes the spear by the shaft, and then Alchun has a spear.",
+				"ko": "알천은 욕을 배운 산사태처럼 마른 시내를 치고 올라온다. 백제 장교 하나가 창을 겨눈다. 알천이 창 자루를 잡는다. 그러자 창은 알천의 것이 된다."
+			},
+			{
+				"kind": "p",
+				"html": "A loose horse comes at him out of the smoke. He catches it by the bridle with one arm and turns it, the way he once turned a tiger, and rides it straight into the next fire.",
+				"ko": "연기 속에서 고삐 풀린 말 한 마리가 그에게 달려든다. 그는 한 팔로 굴레를 잡아 말머리를 돌린다. 언젠가 호랑이를 돌리던 그 솜씨로. 그러고는 그 말을 타고 다음 모닥불로 곧장 들어간다."
+			},
+			{
+				"kind": "p",
+				"html": "On the ridge, the five boys have forgotten to draw. Behind them the nangdo of the army, farm sons with spears, have stopped at the valley lip in a long ragged line, the way people stop at a fire.",
+				"ko": "능선 위의 아이 다섯은 칼 뽑는 것도 잊었다. 그 뒤로 군대의 낭도들이, 창을 든 농가 아들들이, 골짜기 턱에 길고 들쭉날쭉한 줄로 멈춰 서 있다. 사람들이 불구경할 때 멈추듯이."
+			},
+			{
+				"kind": "dialogue",
+				"chip": "#7fa7c9",
+				"speaker": "A Hwarang of Class 77",
+				"gender": "m",
+				"lines": [
+					"저— 저게— 저분들 원래 저렇습니까?"
+				],
+				"en": [
+					"Are they— is that what— are they always like that?"
+				]
+			},
+			{
+				"kind": "dialogue",
+				"chip": "#9a8f7a",
+				"speaker": "A Nangdo",
+				"gender": "m",
+				"lines": [
+					"입 다물고 보이소, 도련님.",
+					"늙어서 이 얘기 하실 낍니다. 똑바로 보이소."
+				],
+				"en": [
+					"Shut up and watch, young lord.",
+					"You’ll be telling this when you’re old. Get it right."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Two thousand men find they have very little to do. Some will tell it for the rest of their lives. Most will get the numbers wrong. All of them will remember that it looked easy.",
+				"ko": "이천 군사는 할 일이 별로 없다는 걸 안다. 몇몇은 남은 평생 이 얘기를 할 것이다. 대부분은 숫자를 틀리게 말할 것이다. 모두가 그게 쉬워 보였다는 것만은 기억할 것이다."
+			},
+			{
+				"kind": "scene",
+				"label": "The Rock",
+				"ko": "큰 돌",
+				"weather": "snow"
+			},
+			{
+				"kind": "p",
+				"html": "Uso climbs the biggest rock in the valley with a bow and a full quiver, and holds it alone. He is good. Every arrow finds somebody. Then the quiver ends before the argument does.",
+				"ko": "우소는 활과 가득 찬 화살통을 들고 골짜기에서 제일 큰 바위에 올라가 혼자 버틴다. 솜씨가 좋다. 화살마다 누군가를 찾아간다. 그러다 화살이 먼저 바닥난다."
+			},
+			{
+				"kind": "dialogue",
+				"chip": "#b88a3a",
+				"speaker": "Uso",
+				"gender": "m",
+				"lines": [
+					"올라와 봐유. 하나만.",
+					"떼거리 말구, 사내 하나믄 내려가 줄 테니께."
+				],
+				"en": [
+					"Come up, then. One of you.",
+					"I’ll come down for a man. Not for a mob."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"니 가라. 니가 더 곱다."
+				],
+				"en": [
+					"Go on. You’re prettier."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"그렇지. 그러니 나는 깨끗이 있어야지."
+				],
+				"en": [
+					"I am. Which is why I am staying clean."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Alchun climbs the rock with nothing in his hands. Uso has one arrow left and spends it. It goes through Alchun’s sleeve, which is the closest anyone comes all night. Alchun takes the bow off him like a father taking a toy, and carries the general of Baekje down the rock under one arm.",
+				"ko": "알천은 빈손으로 바위를 오른다. 우소에게 화살이 하나 남았고, 그걸 쏜다. 화살은 알천의 소매를 뚫는다. 그 밤 누구라도 그에게 가장 가까이 간 것이 그것이다. 알천은 아비가 아이 장난감을 빼앗듯 활을 빼앗고, 백제의 장수를 한 팔에 끼고 바위를 내려온다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"과녁이 성 밖에 있으면, 우린 좋은 짝이제."
+				],
+				"en": [
+					"We make a good pair when the target is outside the wall."
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "bidam",
+				"lines": [
+					"성 안도 여전히 신국이지.",
+					"…어느 쪽이든, 나는 빗나가지 않네."
+				],
+				"en": [
+					"Inside the wall is still the sacred country.",
+					"…I do not miss, either way."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "The boys of Class 77 ride home behind them in silence, which for boys that age is a kind of prayer. Tomorrow on the ice they will try to move like that, and fall down, and try again.",
+				"ko": "칠십칠기 아이들은 그 뒤를 따라 말없이 돌아간다. 그 나이 사내아이에게 말없음은 일종의 기도다. 내일 얼음판 위에서 아이들은 저렇게 움직여 보려다 넘어지고, 또 해 볼 것이다."
+			},
+			{
+				"kind": "p",
+				"html": "In Surabol the queen is waiting for a number. She will not be surprised by it. Nobody has surprised her since the flowers.",
+				"ko": "서라벌에서 여왕은 숫자 하나를 기다린다. 그 숫자에 놀라지는 않을 것이다. 그 꽃 이후로 그녀를 놀라게 한 사람은 없다."
+			},
+			{
+				"kind": "flashback",
+				"year": "632",
+				"title": "The Peonies · 모란",
+				"blocks": [
+					{
+						"kind": "p",
+						"html": "A few weeks after the crowning, word reaches Chang’an too. The emperor of the West has opinions as well.",
+						"ko": "즉위 몇 주 뒤, 소식이 장안에도 닿는다. 서국의 황제에게도 할 말이 있다."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#c97a2e",
+						"lines": [
+							"여자 임금이라… 동이 오랑캐들이 또 시작이로구나.",
+							"꽃이나 보내 주어라. 그 여인에게 어울리는 것으로."
+						],
+						"en": [
+							"A woman king… those Samhan barbarians are at it again, aren’t they?",
+							"Send her flowers. Something that suits her."
+						],
+						"person": "taizong",
+						"zh": [
+							"女主……東夷又在胡鬧了，是不是？武！備袞龍袍。"
+						],
+						"zhLatn": [
+							"Nǚzhǔ… Dōngyí yòu zài húnào le, shì bu shì? Wǔ! Bèi gǔnlóngpáo."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "He sends her a gift: a painting of peonies in three colours, and a packet of their seeds.",
+						"ko": "그는 선물을 보낸다. 세 가지 빛깔의 모란을 그린 그림 한 폭과, 그 씨앗 한 봉지."
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#E8552B",
+						"person": "sunduk",
+						"lines": [
+							"…이 꽃에는 나비가 없구나."
+						],
+						"en": [
+							"…There are no butterflies on these flowers."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"en": [
+							"Lovely work. The Western brushwork, three colours of— Majesty?"
+						],
+						"lines": [
+							"훌륭한 솜씨입니다. 서국 붓놀림에, 세 가지 빛깔의— 폐하?"
+						]
+					},
+					{
+						"kind": "dialogue",
+						"chip": "#E8552B",
+						"person": "sunduk",
+						"lines": [
+							"향이 없다는 뜻이다.",
+							"…그리고 황제께서는, 내게 지아비가 없는 걸 알아채셨다고 내가 알아주기를 바라시는 게지."
+						],
+						"en": [
+							"It means no scent.",
+							"…And the Second Emperor would like me to know he has noticed I have no husband."
+						]
+					},
+					{
+						"kind": "dialogue",
+						"person": "chunchu",
+						"en": [
+							"…I’d have hung it in the hall.",
+							"Somebody remind me never to play go with Her Majesty."
+						],
+						"lines": [
+							"……저라면 대전에 걸어 놓았을 겁니다.",
+							"폐하와는 바둑을 두지 말라고, 누가 좀 일러 주십시오."
+						]
+					},
+					{
+						"kind": "p",
+						"html": "She has the seeds planted anyway. When they bloom, they have no scent. The court decides she is a sage. She knows she simply reads people.",
+						"ko": "그래도 씨앗은 심게 한다. 꽃이 피었을 때, 과연 향이 없었다. 조정은 그녀를 신령하다 여긴다. 그녀 자신은 그저 사람을 읽을 줄 아는 것뿐임을 안다."
+					}
+				]
+			},
+			{
+				"kind": "scene",
+				"label": "The Queen’s Door",
+				"ko": "여왕의 문"
+			},
+			{
+				"kind": "p",
+				"html": "Alchun carries something to the queen’s door again, in his fist again, because again nobody has told him there is a box. A string of a hundred and seven beads.",
+				"ko": "알천이 또 무언가를 여왕의 문 앞까지 들고 간다. 또 주먹에 쥐고. 또 아무도 함이 있다고 일러 주지 않았으니까. 백일곱 알짜리 염주 한 줄이다."
+			},
+			{
+				"kind": "dialogue",
+				"person": "sunduk",
+				"lines": [
+					"오백 다?"
+				],
+				"en": [
+					"All of them?"
+				]
+			},
+			{
+				"kind": "dialogue",
+				"person": "alchun",
+				"lines": [
+					"오백 다요, 폐하. 셈 못 하는 중 하나까지."
+				],
+				"en": [
+					"All five hundred, Majesty. And one monk who couldn’t count."
+				]
+			},
+			{
+				"kind": "p",
+				"html": "Yushin is at the door. He has been at the door since the drums. Bidam notices, and for once says nothing. Alchun will later call it the bravest thing he saw all night.",
+				"ko": "유신이 문 앞에 있다. 북이 울린 뒤로 줄곧 문 앞에 있었다. 비담은 그걸 보고도, 웬일로 아무 말도 하지 않는다. 알천은 나중에 그것이 그 밤 본 것 중 가장 용감한 일이었다고 말한다."
+			},
+			{
+				"kind": "p",
+				"html": "By spring the court has its own version. The queen heard frogs croaking in the palace pond in midwinter, and knew the valley, and the number. Ask the men who were there and they will tell you about a monk who was one bead short.",
+				"ko": "봄이 되자 조정엔 조정의 이야기가 생긴다. 여왕이 한겨울 궁 연못에서 개구리 우는 소리를 듣고 골짜기와 그 숫자를 알아맞혔다고. 거기 있던 사내들에게 물어보면, 염주알 하나가 모자랐던 중 이야기를 해 줄 것이다."
+			},
+			{
+				"kind": "p",
+				"html": "<b>Every man who voted that night grew up in her great-grandfather’s yard. Who was the Cloud King? Ask anyone in Surabol…!</b>",
+				"ko": "<b>그날 밤 패를 놓은 사내들은 모두 그녀의 증조부가 만든 마당에서 컸다. 구름왕은 누구였나? 서라벌 아무에게나 물어보라…!</b>"
+			}
+		],
+		"place": "surabol"
+	}
+}

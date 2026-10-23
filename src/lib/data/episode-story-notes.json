@@ -1,0 +1,816 @@
+{
+	"boxes": [
+		{ "id": "gaya", "head": "Gaya", "question": "What is this mysterious kingdom?", "nameKo": "가야", "about": "A cone helm, a surrender, a name Bidam will later use. The country is shown before it is explained." },
+		{ "id": "gwansan-betrayal", "head": "Gwansan", "question": "Why does Baekje call it a betrayal?", "nameKo": "관산성", "about": "An old wound named before the battle is told." },
+		{ "id": "unnamed-gaya-prince", "head": "The cone helm", "question": "Who is the unnamed Gaya prince?", "nameKo": "이름 없는 가야 왕자", "about": "A cone helm at Gwansan. The book will not say who until Muryuk." },
+		{ "id": "yongsu-streak", "head": "Yongsu", "question": "Who is the boy who talks to the dark?", "nameKo": "용수의 밤일", "about": "The identity box stays shut." },
+		{ "id": "ghost-bridge", "head": "Ghost Bridge", "question": "Who dressed the stones in one night?", "nameKo": "귀교", "about": "Servants say goblins. Yongsu answers." },
+		{ "id": "peonies", "head": "The peonies", "question": "Why do Taizong’s flowers have no scent?", "nameKo": "향 없는 모란", "about": "The gift arrives the morning she is crowned." },
+		{ "id": "yushin-ah", "head": "Yushin-ah", "question": "Why may he never say her name again?", "nameKo": "유신아", "about": "The last time he is allowed to say it." },
+		{ "id": "east-star", "head": "The east star", "question": "Will Chunchu pick the vow back up?", "nameKo": "동방의 별", "about": "He puts it down. He picks it up again." },
+		{ "id": "thumb-down", "head": "The thumb", "question": "Why does Elder Satek keep his thumb down?", "nameKo": "사택 장로의 엄지", "about": "A tourney that decides nothing." },
+		{ "id": "gyebek-word", "head": "Gyebek’s word", "question": "Who did he give his word to?", "nameKo": "계백의 말", "about": "The river does not say. Hwangsan spends it." },
+		{ "id": "gyebek-scar", "head": "The burn", "question": "Where did Gyebek see Gesomun?", "nameKo": "화상", "about": "I saw Gesomun again." },
+		{ "id": "eye", "head": "Eye", "question": "Who is the junior who is always right?", "nameKo": "눈", "about": "A soldier who is right every time Yeon gives an order." },
+		{ "id": "pumsuk-coat", "head": "The coat", "question": "What is on Pumsuk’s coat?", "nameKo": "옷에 묻은 것", "about": "Gotaso sees it. He said he would change it later." },
+		{ "id": "latch", "head": "The latch", "question": "Which room only opens from inside?", "nameKo": "빗장", "about": "Yushin will kneel in rooms he would burn." },
+		{ "id": "hangyul", "head": "Hangyul", "question": "What does the kite cost?", "nameKo": "한결", "about": "The horse that carries him three times. The kite needs a life." },
+		{ "id": "yumjong-gaya", "head": "Yumjong", "question": "Why does he say Gaya out loud?", "nameKo": "염종의 가야", "about": "A door Bidam pretends not to see open." },
+		{ "id": "heo-blood", "head": "Queen Heo", "question": "Whose blood will Bidam claim?", "nameKo": "허황옥의 피", "about": "Suro plants the line without knowing." },
+		{ "id": "night-bridge", "head": "The lamp", "question": "Why does the room come to Chunchu?", "nameKo": "밤의 다리", "about": "Wherever the room has to come to you." },
+		{ "id": "brine-rock", "head": "Deer Rock", "question": "Who poured the brine this afternoon?", "nameKo": "땀 흘리는 바위", "about": "Mu’s sealed-box rite." },
+		{ "id": "sunchung-pass", "head": "The pass", "question": "Who will hold Tanhyeon?", "nameKo": "탄현을 지켜라", "about": "Sunchung begs from prison. In 660 nobody is there." },
+		{ "id": "nine-omens", "head": "Nine omens", "question": "Does the country already know?", "nameKo": "아홉 가지 흉조", "about": "Toads in the pines." },
+		{ "id": "mended-sleeve", "head": "Class 77", "question": "Who is the mended-sleeve boy?", "nameKo": "기운 소매", "about": "Bidam should pick him." },
+		{ "id": "three-choices", "head": "Three choices", "question": "Which road will Silla take?", "nameKo": "신라의 세 갈래", "about": "The envoy in Chang’an. Chunchu’s later embassy answers it." },
+		{ "id": "broken-sword", "head": "The half sword", "question": "Who will come south with it?", "nameKo": "유리의 반쪽 칼", "about": "Lady Ye plants it." },
+		{ "id": "gusesa-traitor", "head": "Traitor", "question": "Who does Gusesa mean?", "nameKo": "역적", "about": "He drops it at the Summit. The massacre pays it." },
+		{ "id": "mae-witness", "head": "The screen", "question": "Who saw Maehwa?", "nameKo": "매화를 본 사람", "about": "A cheap screen. Gumil already knows when he gets home." },
+		{ "id": "suulbu-hunger", "head": "Suulbu", "question": "What does he keep the house for?", "nameKo": "수을부의 허기", "about": "I’ll keep the house. Bihyung spends what Jinhung plants." },
+		{ "id": "fox-bridge", "head": "The fox", "question": "Who built the bridge?", "nameKo": "다리를 놓은 여우", "about": "The bridge throws the fox off its own stones." },
+		{ "id": "seohyun-lightning", "head": "The locked door", "question": "How does she get out?", "nameKo": "잠긴 문", "about": "Heaven picks the house-apart. She goes out through the drain." },
+		{ "id": "bidam-beads", "head": "108", "question": "When does the count end?", "nameKo": "백팔", "about": "It starts in the yard. It ends when the head comes back." }
+	],
+	"episodes": {
+		"Back When Tigers Smoked": {
+			"aPlot": "A trailer before the book: tigers, the fall, three kingdoms, the faces to come.",
+			"themes": [{ "id": "overture", "label": "Overture", "note": "No one wants anything. Keep it as the cold open." }],
+			"concepts": ["Samhan", "The fall"]
+		},
+		"Queen Sunduk": {
+			"aPlot": "Dukman takes a throne nobody wants a woman to hold.",
+			"bPlot": "Yushin says her name one last time and walks to the wall.",
+			"conflict": "The court will not crown a woman.",
+			"development": "She reads the room. The kids play on the sand. A girl is missing.",
+			"climax": "The peonies have no scent. Taizong sent a joke.",
+			"resolution": "She keeps the crown anyway.",
+			"themes": [{ "id": "woman-king", "label": "A woman on the throne", "note": "The joke is the test." }],
+			"concepts": ["Bone ranks", "True Bone sleeves", "The east star"],
+			"plant": ["peonies", "yushin-ah", "east-star"],
+			"pay": ["peonies"],
+			"hold": ["yushin-ah", "east-star"]
+		},
+		"Harmony Council": {
+			"aPlot": "Bidam breaks a 3–3 tie for Dukman.",
+			"bPlot": "Chunchu waits outside. His father taught him the room comes to you.",
+			"conflict": "The vote is 3–3. Chunchu is rejected.",
+			"development": "The flame turns blue. The Three Counts stall.",
+			"climax": "Bidam speaks. Yushin answers from the wall. The vote is 6–0.",
+			"resolution": "Dukman is queen. Bidam is the man who said yes.",
+			"themes": [{ "id": "nativism", "label": "Who gets to choose a king", "note": "Bone is the measure, until it isn’t." }],
+			"concepts": ["Harmony Council", "The blue flame"],
+			"plant": ["night-bridge", "yongsu-streak"],
+			"hold": ["night-bridge", "yongsu-streak"]
+		},
+		"Jade Gate Valley": {
+			"aPlot": "Bidam and Alchun want one clean war against a foreign enemy.",
+			"bPlot": "Class 77 watches the legends.",
+			"conflict": "Silla wants a foreign war. The valley is empty.",
+			"development": "The yard. A monk is a bead short. Two of Class 51 ride in.",
+			"climax": "Five hundred men were hiding in the valley.",
+			"resolution": "The war they wanted is not the war they get.",
+			"themes": [{ "id": "rivalry", "label": "Class 51", "note": "Two men, one yard, a country that will pick between them." }],
+			"concepts": ["Jade Gate", "The Three Eternal"],
+			"plant": ["mended-sleeve", "bidam-beads"],
+			"hold": ["mended-sleeve", "bidam-beads"]
+		},
+		"Jinhung, the Cloud": {
+			"aPlot": "Sumekbu wants the border, then the girl, then a lighter robe.",
+			"bPlot": "Suulbu keeps the house. A cone helm watches a king die.",
+			"conflict": "Great Gaya still stands. Baekje is coming.",
+			"development": "Gaya surrenders. Guhae and his sons take up new jobs in Silla.",
+			"climax": "A slave takes King Sung’s head at Gwansan.",
+			"resolution": "Jinhung has too many stones and a robe that no longer fits.",
+			"themes": [{ "id": "soft-year", "label": "The soft year", "note": "A king who won too much and wanted less." }],
+			"concepts": ["Hwarang", "Great Gaya"],
+			"plant": ["gaya", "unnamed-gaya-prince", "suulbu-hunger"],
+			"hold": ["gaya", "unnamed-gaya-prince", "suulbu-hunger"]
+		},
+		"Prince Euija": {
+			"aPlot": "Euija wants one person the clans do not own.",
+			"bPlot": "Gyebek dives nineteen times for a word he will not explain.",
+			"conflict": "The eight clans already own his brothers.",
+			"development": "He dives with Gyebek. He gives him a name no clan picked.",
+			"climax": "Do you like the name, or me?",
+			"resolution": "Gyebek is his. The court still will not explain Gwansan.",
+			"themes": [{ "id": "possession", "label": "A name no clan picked", "note": "The first thing that is his." }],
+			"concepts": ["White River ford", "The eight clans"],
+			"plant": ["gyebek-word", "gwansan-betrayal"],
+			"hold": ["gyebek-word", "gwansan-betrayal"]
+		},
+		"Eight Great Clans": {
+			"aPlot": "Satek against Yunbi, frozen by design.",
+			"bPlot": "A tourney that decides nothing. A thumb stays down.",
+			"development": "Roll call · berth-talk · spies.",
+			"climax": "Elder Satek’s thumb.",
+			"resolution": "King Mu: learn their names. Nobody has settled four generations of anything.",
+			"themes": [{ "id": "classism", "label": "Clan over country", "note": "A diagram of how power sits still." }],
+			"concepts": ["The eight houses", "The tourney square"],
+			"plant": ["thumb-down"],
+			"hold": ["thumb-down"]
+		},
+		"Deer Rock": {
+			"aPlot": "Jijuk wants the Premier’s chair Yunbi has already bought.",
+			"bPlot": "Gyebek was not asked. A monk’s stamp, a rock that sweats.",
+			"development": "The old Premier dies · three names · brine poured since this afternoon · the night on the wall.",
+			"climax": "Dawn: Yunbi’s fresh seal bleeds. Jijuk’s dry one stands.",
+			"resolution": "The bottom step, the bet, the chant. A junior nobody rates takes the chair.",
+			"themes": [{ "id": "rigged-rite", "label": "A rite everyone means to rig", "note": "The rock still picks." }],
+			"concepts": ["Deer Rock", "The sealed-box rite"],
+			"plant": ["brine-rock"],
+			"pay": ["brine-rock", "thumb-down"]
+		},
+		"Gunchogo, the 13th": {
+			"aPlot": "A chant on a wall. A sentence that will get a fortress burned.",
+			"themes": [{ "id": "story-as-country", "label": "A country is a story", "note": "Planted here. Euija will spend it." }],
+			"concepts": ["The Pyongyang chant"],
+			"plant": ["brine-rock"],
+			"hold": ["brine-rock"]
+		},
+		"Commander Yeon": {
+			"aPlot": "Gesomun wants to hold the east and stay out of Pyongyang.",
+			"bPlot": "A traitor with no name. A boy in a doorway.",
+			"development": "Execution · the wall · Gulgul.",
+			"climax": "Half, son.",
+			"resolution": "The seal is pushed across the table. He will go.",
+			"themes": [{ "id": "father-son", "label": "Half", "note": "The father’s measure becomes the son’s." }],
+			"concepts": ["The thousand-li wall"],
+			"plant": ["eye"],
+			"hold": ["eye"]
+		},
+		"Five Tribes": {
+			"aPlot": "Gesomun wants his pregnant wife to the old house before the Summit, at the pace of an ox.",
+			"bPlot": "Eye is right every time Yeon gives an order.",
+			"development": "The cart · singing ice · shut doors · the five stones · the raft · the pine axle.",
+			"climax": "Will you say half?",
+			"resolution": "Pyongyang from the ridge. The unasked name waits.",
+			"themes": [{ "id": "whose-are-you", "label": "Whose are you?", "note": "Five roofs. One question he will not answer." }],
+			"concepts": ["The five tribes", "The Amnok in ice"],
+			"plant": ["eye"],
+			"hold": ["eye"]
+		},
+		"High Summit": {
+			"aPlot": "Gesomun wants the Summit to prepare for Taizong.",
+			"bPlot": "Namseng is born while the room calls his father a traitor.",
+			"development": "Arrival · each commander’s demand · walkout.",
+			"climax": "Gusesa drops the word traitor. The people cheer.",
+			"resolution": "You will have to keep it. A newborn, and a list.",
+			"themes": [{ "id": "king-for-all", "label": "King for All", "note": "The budget that will bury him." }],
+			"concepts": ["High Summit", "The Western Commander"],
+			"plant": ["gusesa-traitor"],
+			"pay": ["eye"],
+			"hold": ["gusesa-traitor"]
+		},
+		"Gwanggeto, the Great King": {
+			"aPlot": "A stele and a question: why are they still here?",
+			"themes": [{ "id": "myth-vs-record", "label": "The record on the stone", "note": "A stub that belongs with Stele." }],
+			"concepts": ["The Gwanggaeto stele"]
+		},
+		"Bupmin": {
+			"aPlot": "Bupmin wants the headband to mean something besides his father’s name.",
+			"bPlot": "Yushin will not be his uncle on the dust.",
+			"development": "The Class 82 gate · the picking · the throat · Gotaso at the pine · gyuku.",
+			"climax": "The Five Principles. Which will you break first?",
+			"resolution": "Three nangdo. The wall into Sadaham.",
+			"themes": [{ "id": "father-son", "label": "A borrowed name", "note": "The headband is not yet his." }],
+			"concepts": ["The Five Principles", "Hwarang Class 82"]
+		},
+		"Sadaham": {
+			"aPlot": "Sadaham wants to ride to war with Mugwan and keep their swear.",
+			"bPlot": "Bupmin asks which principle you break first.",
+			"conflict": "The king wants captives. Sadaham swore with Mugwan.",
+			"development": "He begs for the prisoners. Then he stops eating.",
+			"climax": "Seven days. Who would you stop eating for?",
+			"resolution": "He cuts the ropes. Friendship is the principle he will not break.",
+			"themes": [{ "id": "friendship", "label": "Friendship", "note": "The one principle he will starve for." }],
+			"concepts": ["The seven days", "Mugwan"],
+			"plant": ["hangyul"],
+			"hold": ["hangyul"]
+		},
+		"Gotaso": {
+			"aPlot": "Gotaso wants to pick her own life before someone picks it for her.",
+			"bPlot": "Chunchu wants his daughter back. Nineteen li.",
+			"development": "Abduction · the ford · gyuku · flowering trees.",
+			"climax": "Four children. There is something on your coat.",
+			"resolution": "She chooses Pumsuk out loud. The coat will wait.",
+			"themes": [{ "id": "choice", "label": "Picking her own life", "note": "Having been carried home is why she chooses fast." }],
+			"concepts": ["Gyuku", "The flowering trees"],
+			"plant": ["pumsuk-coat"],
+			"hold": ["pumsuk-coat"]
+		},
+		"Pumsuk": {
+			"aPlot": "Chunchu hands him Daeya as a wedding gift. He is too green for it.",
+			"bPlot": "Sunduk and Yushin miss each other in a lantern street.",
+			"development": "Munhee objects · the vow · the couple leaves · lantern-sellers.",
+			"climax": "The vow. A fortress as a dowry.",
+			"resolution": "They ride west. The near-miss stays a near-miss.",
+			"themes": [{ "id": "vow", "label": "A vow that is a trap", "note": "Kindness is not a want. The fortress is." }],
+			"concepts": ["Daeya as dowry"],
+			"hold": ["pumsuk-coat"]
+		},
+		"Munhee": {
+			"aPlot": "Munhee wants Chunchu and the dream she bought.",
+			"bPlot": "Her brother stages a scandal so the country has to say yes.",
+			"development": "Buying the dream · the torn coat · the closed months.",
+			"climax": "The pyre. It’s me.",
+			"resolution": "Bupmin is born. Let it just be a star. Chunchu puts the east star down.",
+			"themes": [{ "id": "scandal", "label": "A scandal as a door", "note": "She buys a dream and walks through fire for it." }],
+			"concepts": ["The bought dream", "The pyre"],
+			"pay": ["east-star"],
+			"plant": ["east-star"]
+		},
+		"Academy": {
+			"aPlot": "Gesomun wants a third leg for the pot that does not own a farm.",
+			"bPlot": "Namseng is caught at Boduk’s lesson. The east room empties.",
+			"development": "Spring gate · summer Daoist chair · autumn empty room · winter county schools.",
+			"climax": "Gusesa’s supper. The seal argument in the boys’ room.",
+			"resolution": "Enrolment as a campaign. No turn yet — the list is still being written.",
+			"themes": [{ "id": "schooling", "label": "Who the country teaches", "note": "A pot with three legs. The monasteries have two." }],
+			"concepts": ["Taehak", "County schools"]
+		},
+		"Stele": {
+			"aPlot": "A stone. Sons who think it is a big rock.",
+			"themes": [{ "id": "myth-vs-record", "label": "A big rock", "note": "The irony is Namseng’s later question." }],
+			"concepts": ["The stele"]
+		},
+		"Dosuryu": {
+			"aPlot": "Dosuryu wants to save Gesomun.",
+			"bPlot": "The king and Gusesa plot in secret.",
+			"development": "Boots on · the warning.",
+			"climax": "The laugh stops. I’ll make a list too.",
+			"resolution": "The guest list is a kill list. Summer will be bowing.",
+			"themes": [{ "id": "loyalty", "label": "A warning he will not take", "note": "The friend who puts his boots on." }],
+			"hold": ["gusesa-traitor"]
+		},
+		"King Euija": {
+			"aPlot": "Euija wants to own his country through stories.",
+			"bPlot": "Gyebek will not lie. Seongchung still has a conscience.",
+			"development": "The fake dragon · the miracles list · the Rock · the maids.",
+			"climax": "How fortunate the rock has such good taste.",
+			"resolution": "Pung is sent away. The theatre has a price.",
+			"themes": [{ "id": "story-as-country", "label": "A country is a story", "note": "He is the one licensed to say the book’s idea out loud." }],
+			"concepts": ["The fake dragon", "The sweating rock"],
+			"pay": ["brine-rock"],
+			"hold": ["gyebek-word"]
+		},
+		"Yunchung": {
+			"aPlot": "Euija wants a war abroad to win the court at home.",
+			"bPlot": "The Assembly, and a rock that can be made to sweat.",
+			"development": "Yunchung on the good cushion · the shipping writ.",
+			"climax": "A country is a story. Daeya by autumn.",
+			"resolution": "The war is decided. Gyebek’s saving-you is the cost.",
+			"themes": [{ "id": "story-as-country", "label": "A country is a story", "note": "He says it in a room that will die for it." }],
+			"concepts": ["The shipping writ"]
+		},
+		"Gwansan": {
+			"aPlot": "King Sung wants not to be Gaya next.",
+			"bPlot": "A cone helm watches. A slave walks home under a Silla cloud.",
+			"conflict": "Baekje sent gifts. Silla kept the Han flags.",
+			"development": "King Sung marches first. The ditch is already waiting.",
+			"climax": "A slave takes the head and walks it home.",
+			"resolution": "Baekje calls it a betrayal. Silla has the Han.",
+			"themes": [{ "id": "betrayal", "label": "I am Silla tonight", "note": "Leave that line to Muryuk." }],
+			"concepts": ["Gwansan", "The Han flags"],
+			"plant": ["unnamed-gaya-prince"],
+			"pay": ["gwansan-betrayal"],
+			"hold": ["unnamed-gaya-prince"]
+		},
+		"Gumil": {
+			"aPlot": "Gumil wants clothes for his wife, and a rank the True Bone boy just rode in on.",
+			"bPlot": "Yushin wants counsel. Seohyeon wants water.",
+			"conflict": "A True Bone boy rides into Gumil’s own yard.",
+			"development": "The cavern. Maehwa walks the cheap screen. The feast starts without him.",
+			"climax": "He is passed over in his own house.",
+			"resolution": "Class has already decided.",
+			"themes": [{ "id": "classism", "label": "Classism", "note": "A True Bone boy rides in. The local man is furniture." }],
+			"concepts": ["The steam cavern", "Daeya’s cheap screen"],
+			"plant": ["latch", "mae-witness"],
+			"hold": ["latch", "mae-witness"]
+		},
+		"Maehwa": {
+			"aPlot": "Maehwa wants to be the one in control, to ruin the boy a little.",
+			"bPlot": "Pumsuk keeps his self-control. Then he doesn’t.",
+			"conflict": "She reaches up. He is True Bone.",
+			"development": "He can’t sleep. She teaches him. They fall.",
+			"climax": "She loses control. He leaves without a word.",
+			"resolution": "A cheap screen has ears.",
+			"themes": [{ "id": "hypergamy", "label": "Hypergamy", "note": "She reaches up. The reaching undoes her." }],
+			"concepts": ["The plum", "The cheap screen"],
+			"plant": ["mae-witness"],
+			"hold": ["mae-witness", "pumsuk-coat"]
+		},
+		"Siege of Daeya": {
+			"aPlot": "Gumil wants revenge. The gate opens from the inside.",
+			"bPlot": "Gotaso wants her husband to face her. Kangrim will ask the question.",
+			"development": "The confession · three weeks · Mochuk’s question.",
+			"climax": "Everyone is trash. The men march out and are cut down.",
+			"resolution": "Grief in Surabol. Chunmyung’s knee. The coat is paid.",
+			"themes": [{ "id": "classism", "label": "Classism, spent", "note": "The local man opens the gate." }],
+			"concepts": ["The sun-oath"],
+			"pay": ["pumsuk-coat", "mae-witness"],
+			"hold": ["latch"]
+		},
+		"Yeon’s Massacre": {
+			"aPlot": "Gesomun wants the country. The Summit planned to bury him.",
+			"bPlot": "His wife’s promise. A king who will sit.",
+			"development": "Kneeling · doors shut · five blades.",
+			"climax": "The speech. Bojang. You there — what is your name?",
+			"resolution": "Tell them that too. The closed kingdom begins.",
+			"themes": [{ "id": "coup", "label": "The guest list was a kill list", "note": "Every Summit line pays off." }],
+			"pay": ["gusesa-traitor"]
+		},
+		"Chunchu & Yeon": {
+			"aPlot": "Chunchu wants Goguryeo’s troops and to make it home in sixty days.",
+			"bPlot": "Yeon’s price for the passes. A bleeding hand. A rabbit.",
+			"development": "Sixty days · Hadong · the cell · turtle-and-rabbit.",
+			"climax": "The letter. Yushin’s camp on the clock.",
+			"resolution": "Released on the king’s word. The empty saddle is the image he keeps.",
+			"themes": [{ "id": "king-for-all", "label": "King for All", "note": "He will pick the star back up." }],
+			"pay": ["latch"],
+			"plant": ["east-star"]
+		},
+		"Euija & Yeon": {
+			"aPlot": "Euija wants Goguryeo’s troops against Silla.",
+			"bPlot": "The same single price, and a blade on the table.",
+			"development": "Arrival · Hansung · politics is alchemy.",
+			"climax": "The Chunchu reveal. The hand.",
+			"resolution": "No troops. A warning about the man who just left.",
+			"themes": [{ "id": "story-as-country", "label": "Politics is alchemy", "note": "Two kings, one price." }],
+			"plant": ["gyebek-scar"],
+			"hold": ["gyebek-scar"]
+		},
+		"Nangbi": {
+			"aPlot": "Yushin wants to turn a lost battle and earn his father’s word.",
+			"bPlot": "Yeon Taejo reads the report three times.",
+			"development": "Helmet off · three charges.",
+			"climax": "Your helmet’s crooked. Hangyul is named.",
+			"resolution": "Then I’ll kill him before they stop. A horse for eighteen years.",
+			"themes": [{ "id": "duty", "label": "Duty", "note": "Three times. The horse is the witness." }],
+			"plant": ["hangyul"],
+			"hold": ["hangyul"]
+		},
+		"Yushin": {
+			"aPlot": "Sunduk wants peace, then wants the forty back.",
+			"bPlot": "Yushin fetches the means from a bucket in the hill.",
+			"development": "Euija panic · unrest · the cavern · life flashbacks.",
+			"climax": "Forty. One river fort. The water is the turn.",
+			"resolution": "Beacons. Narim’s cliff is paid.",
+			"themes": [{ "id": "duty", "label": "Duty", "note": "He stands. He does not sit in lotus." }],
+			"concepts": ["The forty"]
+		},
+		"The Eastern Star": {
+			"aPlot": "Chunchu, Euija and Gesomun each want to be the King for All.",
+			"bPlot": "Gyebek’s scar. I saw Gesomun again.",
+			"development": "Three parallel vows.",
+			"climax": "Chunchu picks the star back up.",
+			"resolution": "A thematic coda. The scar is the hook.",
+			"themes": [{ "id": "king-for-all", "label": "King for All", "note": "Three vows, no event. The box is the scar." }],
+			"pay": ["east-star"],
+			"plant": ["gyebek-scar"],
+			"hold": ["gyebek-scar"]
+		},
+		"Four Dragons": {
+			"aPlot": "Taizong hears a name he will mispronounce.",
+			"themes": [{ "id": "overture", "label": "Teaser", "note": "A card, not an episode." }],
+			"plant": ["three-choices"],
+			"hold": ["three-choices"]
+		},
+		"Emperor": {
+			"aPlot": "The Second Emperor wants to finish what the Sui could not.",
+			"bPlot": "There will be no one left to tell him no.",
+			"development": "The name taboo · Wei Zheng’s deathbed · foreign reports · the muster.",
+			"climax": "Xue Rengui leaves his field.",
+			"resolution": "The war is his. The room will not say his name.",
+			"themes": [{ "id": "no-one-left", "label": "No one left to tell you no", "note": "Charm as a weapon." }],
+			"concepts": ["The six failed invasions"],
+			"plant": ["three-choices"],
+			"hold": ["three-choices"]
+		},
+		"Sima Yi": {
+			"aPlot": "A young Goguryeo king wants a teacher in the West.",
+			"bPlot": "Sima Yi wants a friend who will not ask him to hurry.",
+			"development": "A horse trader’s lie · the thousand-li ride · the empty camp stool.",
+			"climax": "A friend he cannot afford.",
+			"resolution": "The cost lands on Dongcheon. The wait was the friendship.",
+			"themes": [{ "id": "friendship", "label": "Friendship", "note": "Distance is the conflict." }]
+		},
+		"Yodong": {
+			"aPlot": "The Second Emperor wants the fortress that held off the Sui.",
+			"bPlot": "A bride offered to Jumong. Twelve days.",
+			"development": "The Blue Dragon walks the wall · the marsh · he carries earth.",
+			"climax": "The south wind, the fire, the fall.",
+			"resolution": "A list of other forts. History? I am the one writing it.",
+			"themes": [{ "id": "siege", "label": "I am writing it", "note": "The showdown belongs at Ansi." }]
+		},
+		"Boiling River": {
+			"aPlot": "Dongcheon wants a third victory. He does not look at the ground.",
+			"themes": [{ "id": "hubris", "label": "The king who did not look at the ground", "note": "A caution for Stallion Mountain." }]
+		},
+		"Stallion Mountain": {
+			"aPlot": "Xue Rengui wants his hour. Sul Gedu wants the cap, the sash and the sword.",
+			"bPlot": "Namseng wants to save his brother.",
+			"development": "Wrong bones · the white armour.",
+			"climax": "The emperor praises Xue. Sul gets his lying down.",
+			"resolution": "Namseng takes the flogging. The boy who refused the Tang will one day go over.",
+			"themes": [{ "id": "outsiders", "label": "Wrong bones", "note": "Two outsiders at the same muster." }]
+		},
+		"Colossal River": {
+			"aPlot": "Ulchi Mundeok wants to lure a host to a river.",
+			"themes": [{ "id": "feint", "label": "Seven surrenders", "note": "The best trick in the record, told in a clause." }]
+		},
+		"Ansi": {
+			"aPlot": "The Guardian wants to hold the wall for a country whose dictator he defied.",
+			"bPlot": "The emperor himself, and a mound that slumps.",
+			"development": "The unnamed chief · sixty days · the collapse.",
+			"climax": "He seizes the slumped mound. An arrow at a helmet.",
+			"resolution": "Silk at the foot of the wall. A bow. Crazier than we are.",
+			"themes": [{ "id": "one-person", "label": "One person to serve", "note": "He defied Yeon and still held." }],
+			"pay": ["eye"]
+		},
+		"Haemosu": {
+			"aPlot": "Yuhwa wants the sun god, on her own terms.",
+			"bPlot": "Habek will not have a sky man in his river.",
+			"development": "The chariot stops · the copper room.",
+			"climax": "Exile. The fox leads her to Geumwa.",
+			"resolution": "The egg. He has already gone.",
+			"themes": [{ "id": "appetite", "label": "I looked up", "note": "A god who takes and a river girl who invites." }],
+			"plant": ["broken-sword"],
+			"hold": ["broken-sword"]
+		},
+		"Buyeo": {
+			"aPlot": "Jumong wants to survive Daeso and get out.",
+			"bPlot": "Haemosu stops a reaper. A horse starved then fattened.",
+			"development": "The unbreakable egg · the knife in the dark.",
+			"climax": "The turtle bridge. The three-legged crow.",
+			"resolution": "He crosses. The half sword is still in the north.",
+			"themes": [{ "id": "exile", "label": "Get out", "note": "A boy the house will not keep." }],
+			"hold": ["broken-sword"]
+		},
+		"Jolbon": {
+			"aPlot": "Sosuno wants Jumong and will not admit it.",
+			"bPlot": "Jumong wants a roof of his own. The well is where they count.",
+			"development": "Tabal’s hall · the bow that will not bend · the well · the grain room.",
+			"climax": "The pine shot. The vermilion cord.",
+			"resolution": "A kingdom from a yard. Everything after is a second episode told as a list.",
+			"themes": [{ "id": "tsundere", "label": "The well", "note": "She prices a kingdom. He cannot count grain." }],
+			"concepts": ["The Jolbon well", "Song Yang"]
+		},
+		"Gi (起)": {
+			"aPlot": "Bidam wants the throne to go to the cleverest person, not the last Sacred Bone.",
+			"bPlot": "Yumjong says Gaya. A door he pretends not to see.",
+			"development": "The vote · the lone hand · Biryun at the Class 51 gate · watching Jinji.",
+			"climax": "The queen promotes the man who told her council no.",
+			"resolution": "He recruits. The word Gaya sits on the table.",
+			"themes": [{ "id": "nativism", "label": "Cleverest, not last", "note": "The no that crowned her is the no that will unseat her." }],
+			"plant": ["yumjong-gaya", "bidam-beads"],
+			"hold": ["yumjong-gaya", "bidam-beads"]
+		},
+		"Suro": {
+			"aPlot": "Suro wants Queen Heo. Before that, Ibiga wants the mountain.",
+			"bPlot": "Six eggs and a Turtle Song.",
+			"conflict": "Six eggs on a shore. No country yet.",
+			"development": "Ibiga takes the mountain. The eggs hatch. Six brothers take the hills.",
+			"climax": "Queen Heo arrives from the south.",
+			"resolution": "Gaya has a name, a queen, and a bloodline Bidam will use.",
+			"themes": [{ "id": "arrival", "label": "A country that is only a name", "note": "My country is gone." }],
+			"plant": ["heo-blood"],
+			"pay": ["gaya"],
+			"hold": ["heo-blood"]
+		},
+		"Seung (承)": {
+			"aPlot": "Bidam wants Yushin, and the country, to admit his ideas are right.",
+			"bPlot": "Chunchu wants a weakness. The conscience water shows nothing.",
+			"development": "The cut Maitreya · nightly tea · Jade Gate flashback.",
+			"climax": "Have you ever considered the POSSIBILITY that your ideas are simply terrible?",
+			"resolution": "The splash is empty. The rant is the turn.",
+			"themes": [{ "id": "nativism", "label": "The real Sillans", "note": "Yushin keeps him talking on purpose." }],
+			"pay": ["heo-blood"]
+		},
+		"Muryuk": {
+			"aPlot": "Muryuk wants to prove he is Silla, so his sons will not have to.",
+			"bPlot": "The cone that still says Gaya.",
+			"conflict": "Gaya surrenders. Guhae and his sons take up new jobs in Silla.",
+			"development": "Muryuk rises as a Silla general. He meets Sadaham, a young hwarang who inspires new hope and makes him want a son.",
+			"climax": "He names himself. He says Dodo. He does not look away.",
+			"resolution": "His grandson will not have to prove it.",
+			"themes": [{ "id": "assimilation", "label": "Assimilation", "note": "He does the dying so the sons can be from here." }],
+			"concepts": ["Sinju", "The cone helm"],
+			"pay": ["unnamed-gaya-prince"]
+		},
+		"Jeon (轉)": {
+			"aPlot": "Yushin wants to defeat Bidam without losing himself.",
+			"bPlot": "Hangyul. The kite needs a life.",
+			"development": "The empty sixth night · the headband · Bidam expelled · the cavern.",
+			"climax": "He kills the horse that saved him. Because it is ours.",
+			"resolution": "The score breaks. The beads go on a bridle.",
+			"themes": [{ "id": "duty", "label": "Duty", "note": "Choosing Silla with his own hands." }],
+			"pay": ["hangyul", "yumjong-gaya", "bidam-beads"]
+		},
+		"Seohyun": {
+			"aPlot": "Seohyeon wants Manmyung. The Gaya stain wants to be forgiven.",
+			"bPlot": "Muryuk waits at the wall.",
+			"conflict": "Her father locks the door. Heaven has already picked the house.",
+			"development": "The horse keeps getting lost. She spends three days looking at a drain.",
+			"climax": "Lightning takes the door. She crawls out in good silk.",
+			"resolution": "They ride to Manno. The second generation will not have to ask.",
+			"themes": [{ "id": "second-generation", "label": "Second-generation assimilation", "note": "Muryuk did the dying. Seohyun does the living." }],
+			"concepts": ["The locked room", "Manno"],
+			"plant": ["seohyun-lightning"],
+			"pay": ["seohyun-lightning"]
+		},
+		"Gyul (結)": {
+			"aPlot": "The rebellion ends. A head comes back to the dirt.",
+			"bPlot": "Alchun goes pale. Blood is inevitable.",
+			"development": "The last morning · the yard · the count.",
+			"climax": "The head on the packed earth where they first met.",
+			"resolution": "108–108 is over. Yushin mounts. The order stands.",
+			"themes": [{ "id": "nativism", "label": "Because it is ours", "note": "The yard keeps the score until it is blood." }],
+			"pay": ["bidam-beads"]
+		},
+		"Queen Jinduk": {
+			"aPlot": "A sister takes a throne that was never meant to last.",
+			"themes": [{ "id": "woman-king", "label": "The second queen", "note": "A fragment between Bidam and the embassy." }]
+		},
+		"Huangdi (皇帝)": {
+			"aPlot": "Chunchu goes to Chang’an to buy a war with a country that does not need him.",
+			"bPlot": "Wu at the screen. Taizong mispronounces a name.",
+			"development": "The embassy · the hall · the three choices answered.",
+			"climax": "The emperor agrees. The price is Silla’s pride.",
+			"resolution": "A war is bought. The man who bought it will not live to spend it all.",
+			"themes": [{ "id": "king-for-all", "label": "Buying a war", "note": "The east star, spent in a foreign hall." }],
+			"pay": ["three-choices"]
+		},
+		"Jiabeng (駕崩)": {
+			"aPlot": "An emperor dies. The room changes owners.",
+			"themes": [{ "id": "succession", "label": "The death of an emperor", "note": "A hinge, not a story." }]
+		},
+		"Royal Secretariat": {
+			"aPlot": "The new hall learns who writes the country.",
+			"bPlot": "A chorus of clerks, and a man who will not sit.",
+			"themes": [{ "id": "bureaucracy", "label": "Who writes the country", "note": "Too many mouths. Not enough want." }]
+		},
+		"Bihyung": {
+			"aPlot": "A boy who talks to the dark is asked to put a bridge on a ditch.",
+			"bPlot": "Suulbu’s house. Chunmyung’s sums. The fox that built it.",
+			"development": "The night work · the dressed stones · the servants say goblins.",
+			"climax": "By morning the Ghost Bridge is there.",
+			"resolution": "The identity box stays shut. Yongsu walks the same stream.",
+			"themes": [{ "id": "yongsu-streak", "label": "The streak", "note": "Do not open the box." }],
+			"concepts": ["귀교", "Hwangcheon"],
+			"plant": ["ghost-bridge", "yongsu-streak", "fox-bridge"],
+			"pay": ["night-bridge"],
+			"hold": ["yongsu-streak", "ghost-bridge", "fox-bridge"]
+		},
+		"Yongsu": {
+			"aPlot": "Yongsu wants the night to stay useful, and Chunmyung to sit down beside the sums.",
+			"bPlot": "Chunchu is nine and learns to say nothing. Suulbu taps each stone.",
+			"development": "The goblins unmasked · rice cakes under the bridge · the madman’s arithmetic.",
+			"climax": "Yongsu is forced to kill Gildal, who reassures him.",
+			"resolution": "The fox is thrown off its own stones. The house keeps the weather.",
+			"themes": [{ "id": "ghost-bridge", "label": "A bridge nobody ordered", "note": "She married into that weather." }],
+			"pay": ["ghost-bridge", "fox-bridge"],
+			"hold": ["yongsu-streak"],
+			"events": [
+				{ "label": "Jinji drinks himself out of the Cloud King", "scene": "The palace · the Cloud King’s last night", "tension": 0, "start": true },
+				{ "label": "A son is born into a house that already knows the weather", "scene": "Saryang ward · the birth", "tension": 22 },
+				{ "label": "Yongsu takes the charcoal road into the city", "scene": "The edge of Surabol · the charcoal road", "tension": 0, "start": true },
+				{ "label": "Gildal presents himself and explains the Ghost Children", "scene": "Under the west wall · the Ghost Children", "tension": 44 },
+				{ "label": "Chunmyung sits down to supper in the king’s rooms", "scene": "The king’s rooms · supper", "tension": 0, "start": true, "last": true },
+				{ "label": "Chunmyung discovers the Ghost Children", "scene": "Under the west wall · the night the princess followed", "tension": 58 },
+				{ "label": "The Council unmasks the boys in the cellar", "scene": "The Harmony Council · the cellar", "tension": 76 },
+				{ "label": "Yongsu is forced to kill Gildal, who reassures him", "scene": "The south road · the reeds at dawn", "tension": 96, "climax": true },
+				{ "label": "Yongsu weeps so the riders will not see", "scene": "The king’s small room · that same morning", "tension": 70 },
+				{ "label": "Chunchu learns the weather of the house", "scene": "The House by the Stream · spring", "tension": 0, "start": true },
+				{ "label": "Old Yongsu tells Chunchu there are no goblins", "scene": "The bluff", "tension": 32, "last": true }
+			]
+		},
+		"King Muyeol": {
+			"aPlot": "Chunchu takes the name the east star promised.",
+			"themes": [{ "id": "king-for-all", "label": "The name", "note": "The vow, finally worn." }],
+			"pay": ["east-star"]
+		},
+		"Jahee": {
+			"aPlot": "Ocean-trade sums on an eastern quay.",
+			"themes": [{ "id": "hypergamy", "label": "The harbour marriage", "note": "Ledgers, then a wife." }]
+		},
+		"Hyukgosé": {
+			"aPlot": "An egg, a horse, six chiefs. The country invents itself.",
+			"themes": [{ "id": "myth-vs-record", "label": "Founding myth", "note": "Ink for the egg. Heewon for the crowning." }]
+		},
+		"Talhae": {
+			"aPlot": "A stranger walks in and demands the throne.",
+			"bPlot": "A hawk, an eagle, a falcon.",
+			"themes": [{ "id": "arrival", "label": "The man from the sea", "note": "Suro’s missing climax, told here." }]
+		},
+		"Alji": {
+			"aPlot": "A gold box in a wood. A cock that will not stop.",
+			"themes": [{ "id": "myth-vs-record", "label": "The box in Sirim", "note": "Ink in the wood. Heewon at court." }]
+		},
+		"Exile": {
+			"aPlot": "Pung is sent away. A prince learns what a story costs.",
+			"themes": [{ "id": "exile", "label": "Exile", "note": "The price of the theatre." }]
+		},
+		"Heaven–Earth King": {
+			"aPlot": "The sky splits. Two suns. A grandfather telling a tale he was present for.",
+			"themes": [{ "id": "myth-vs-record", "label": "Myth", "note": "Joseon ink, on purpose." }]
+		},
+		"Sulmun": {
+			"aPlot": "A giantess and a mountain that will not stay put.",
+			"themes": [{ "id": "myth-vs-record", "label": "Island myth", "note": "Tamla’s grandmother." }]
+		},
+		"Three Princes": {
+			"aPlot": "Three boys, one well, a country that is an island.",
+			"themes": [{ "id": "myth-vs-record", "label": "Tamla founding", "note": "A well as a womb." }]
+		},
+		"Stone Lady": {
+			"aPlot": "A woman waiting turns to stone.",
+			"themes": [{ "id": "waiting", "label": "Waiting as a fate", "note": "The island’s other grandmother." }]
+		},
+		"Gardener": {
+			"aPlot": "A man who tends what the gods left.",
+			"themes": [{ "id": "care", "label": "Tending", "note": "Small, finished, enough." }]
+		},
+		"Jachungbi": {
+			"aPlot": "A goddess who will not be a wife the way the story wants.",
+			"themes": [{ "id": "appetite", "label": "Refusal", "note": "Tamla’s own terms." }]
+		},
+		"Kangrim": {
+			"aPlot": "The psychopomp reads a name and asks the only question he is licensed to ask.",
+			"themes": [{ "id": "death", "label": "Were you X, or Y?", "note": "His ritual. Do not vary it." }]
+		},
+		"Tribute": {
+			"aPlot": "What a country sends when it cannot send men.",
+			"themes": [{ "id": "tribute", "label": "Tribute", "note": "A ledger, not a turn." }]
+		},
+		"Coup": {
+			"aPlot": "The room changes owners again. This time from the inside.",
+			"themes": [{ "id": "coup", "label": "From the inside", "note": "A door the narrator has watched before." }]
+		},
+		"Descent": {
+			"aPlot": "Gods come down. The three realms remember they are family.",
+			"themes": [{ "id": "myth-vs-record", "label": "Descent", "note": "Hannim’s gossip, not scripture." }]
+		},
+		"Nine Omens": {
+			"aPlot": "The country answers before the army does.",
+			"bPlot": "Toads in the pines. A guard with a lantern.",
+			"development": "One omen after another.",
+			"climax": "The ninth.",
+			"resolution": "Sabi already knows. The court will pretend it does not.",
+			"themes": [{ "id": "omen", "label": "The country knows first", "note": "Weather as plot." }],
+			"plant": ["nine-omens"],
+			"hold": ["nine-omens"]
+		},
+		"Onjo": {
+			"aPlot": "A second son wants a country that is not his brother’s.",
+			"bPlot": "Wirye. The south. A house from nothing.",
+			"themes": [{ "id": "second-son", "label": "The second house", "note": "Baekje begins as a refusal." }]
+		},
+		"Sunchung": {
+			"aPlot": "Sunchung wants the pass held. He is in prison.",
+			"bPlot": "Euija will not listen. The door is already open.",
+			"climax": "Hold Tanhyeon. Hold the ford.",
+			"resolution": "The ask is the plant. 660 will pay it with an empty pass.",
+			"themes": [{ "id": "unheeded", "label": "The man in prison", "note": "The last honest ask." }],
+			"plant": ["sunchung-pass"],
+			"hold": ["sunchung-pass"]
+		},
+		"Hungsu": {
+			"aPlot": "A man who already lost tries to save what is left.",
+			"themes": [{ "id": "unheeded", "label": "Too late", "note": "The other warning." }],
+			"hold": ["sunchung-pass"]
+		},
+		"Gyebek": {
+			"aPlot": "Gyebek wants five thousand to mean something.",
+			"bPlot": "He kills his family first so nothing can be used against him.",
+			"development": "The house · the road to Hwangsan.",
+			"climax": "The reverse grip. The last line.",
+			"resolution": "Kangrim will ask. The word is finally spent.",
+			"themes": [{ "id": "duty", "label": "Nothing to use against him", "note": "The captain who holds his sword backwards." }],
+			"pay": ["gyebek-word", "gyebek-scar"]
+		},
+		"Three Realms": {
+			"aPlot": "Living, Dead, and the Western Flower Field keep house.",
+			"themes": [{ "id": "myth-vs-record", "label": "삼계", "note": "A map of heaven, not a plot." }]
+		},
+		"Yellow Mountain": {
+			"aPlot": "Gyebek meets fifty thousand with five thousand.",
+			"bPlot": "Yushin wants the field. Gwanchang wants a name.",
+			"development": "The last line · the boys · the disputed blade.",
+			"climax": "The field is taken. The reverse grip ends.",
+			"resolution": "Kangrim’s question. Hwangsan is the grave of a word.",
+			"themes": [{ "id": "duty", "label": "Five thousand", "note": "A man measured by self-control, spent." }],
+			"pay": ["sunchung-pass"]
+		},
+		"Sabi": {
+			"aPlot": "The capital falls. Euija wants one more story.",
+			"bPlot": "The ford was empty. Sunchung was right.",
+			"themes": [{ "id": "story-as-country", "label": "The last story", "note": "A country is a territory governed by a single story." }],
+			"pay": ["sunchung-pass", "nine-omens"]
+		},
+		"Buyeo Euija†": {
+			"aPlot": "Kangrim reads the name. Were you a king, or a storyteller?",
+			"themes": [{ "id": "death", "label": "The question", "note": "His ritual." }]
+		},
+		"Kim Chunchu†": {
+			"aPlot": "Kangrim reads the name. Were you a king, or a man who bought a war?",
+			"themes": [{ "id": "death", "label": "The question", "note": "The east star, put down for good." }]
+		},
+		"Ungjin Commandery": {
+			"aPlot": "The Tang rename a country and call it administration.",
+			"themes": [{ "id": "occupation", "label": "A commandery", "note": "The story is being rewritten from the west." }]
+		},
+		"King Pungjang": {
+			"aPlot": "The exiled son comes back with Yamato ships.",
+			"bPlot": "A restoration that is already late.",
+			"themes": [{ "id": "exile", "label": "The returned son", "note": "Theatre, with other people’s boats." }]
+		},
+		"Pyongyang I": {
+			"aPlot": "The first try at the northern capital.",
+			"themes": [{ "id": "siege", "label": "Not yet", "note": "A wall that still holds." }]
+		},
+		"Snake River": {
+			"aPlot": "A river that will not stay a border.",
+			"themes": [{ "id": "border", "label": "The snake", "note": "Water as a plot." }]
+		},
+		"Tamla Surrenders": {
+			"aPlot": "The island sends a word instead of an army.",
+			"themes": [{ "id": "tribute", "label": "Surrender as weather", "note": "Tamla knows when a story is over." }]
+		},
+		"Rebellion": {
+			"aPlot": "A rising that already has its ending written.",
+			"themes": [{ "id": "rebellion", "label": "Do not announce the failure", "note": "Show the want. Withhold the fall." }]
+		},
+		"Betrayal": {
+			"aPlot": "The sad thing about betrayal is that it never comes from your enemies.",
+			"themes": [{ "id": "betrayal", "label": "Betrayal", "note": "A door opened from the inside." }]
+		},
+		"White River": {
+			"aPlot": "Four fleets in one mouth. Four hundred eastern ships burn.",
+			"bPlot": "Gyebek’s ford, reused by other men.",
+			"themes": [{ "id": "naval", "label": "The first time all four met", "note": "A river that keeps its name." }]
+		},
+		"Yeon Gesomun†": {
+			"aPlot": "Kangrim reads the name. Were you a guardian, or a dictator?",
+			"themes": [{ "id": "death", "label": "The question", "note": "Half, son." }]
+		},
+		"Brothers’ Coup": {
+			"aPlot": "Namseng’s brothers want the house. The boy who took a flogging goes west.",
+			"themes": [{ "id": "father-son", "label": "The sons", "note": "The flogging, paid." }]
+		},
+		"Pyongyang II": {
+			"aPlot": "The northern capital falls. The wall Yeon walked is someone else’s.",
+			"themes": [{ "id": "fall", "label": "The second try", "note": "This time the wall does not hold." }]
+		},
+		"Dangun & Old Joseon": {
+			"aPlot": "A bear, a tiger, a cave. A grandfather naming a country.",
+			"themes": [{ "id": "myth-vs-record", "label": "Joseon", "note": "The word the book has been withholding." }]
+		},
+		"Prosperity Mountain": {
+			"aPlot": "A field, a vow, a country that is now one story.",
+			"themes": [{ "id": "unification", "label": "One country", "note": "The east star, on a mountain." }]
+		},
+		"Ansung": {
+			"aPlot": "A name on a road. A fragment.",
+			"themes": [{ "id": "fragment", "label": "Fragment", "note": "Needs a want." }]
+		},
+		"Letters": {
+			"aPlot": "Munmu wants the war in writing before it is in blood.",
+			"themes": [{ "id": "letters", "label": "The war on paper", "note": "A king who writes." }]
+		},
+		"Stone Gate": {
+			"aPlot": "A gate. A stand. A list.",
+			"themes": [{ "id": "fragment", "label": "Fragment", "note": "A battle without a face." }]
+		},
+		"Wonsul": {
+			"aPlot": "A son who will not be his father’s duty.",
+			"themes": [{ "id": "father-son", "label": "The son who refuses", "note": "Yushin’s house, unfinished." }]
+		},
+		"Kim Yushin†": {
+			"aPlot": "Kangrim reads the name. Were you a marshal, or a brother?",
+			"themes": [{ "id": "death", "label": "The question", "note": "He stood." }]
+		},
+		"Munmu": {
+			"aPlot": "Bupmin wants the headband to have meant something. Now it is a crown.",
+			"bPlot": "The dragon. The east sea. A king who will not stay buried on land.",
+			"themes": [{ "id": "father-son", "label": "The name that was a headband", "note": "The Five Principles, spent." }]
+		},
+		"Maeso": {
+			"aPlot": "A fortress, a last Tang line.",
+			"themes": [{ "id": "siege", "label": "The last line", "note": "Silla-Tang, almost done." }]
+		},
+		"Final Ford": {
+			"aPlot": "The mouth of the Geum. Silla’s victory here ends the western war.",
+			"bPlot": "Sunchung died begging someone to hold it.",
+			"themes": [{ "id": "unheeded", "label": "The ford, paid", "note": "The prison ask, sixteen years late." }],
+			"pay": ["sunchung-pass"]
+		},
+		"Wanggum": {
+			"aPlot": "A guest in a western capital. The king for all is a title someone else wears.",
+			"themes": [{ "id": "king-for-all", "label": "The guest", "note": "The book’s title, spent as irony." }]
+		},
+		"Balhae": {
+			"aPlot": "A country rises where another fell. The story is not over.",
+			"themes": [{ "id": "after", "label": "After", "note": "The next episode card, as a country." }]
+		}
+	}
+}

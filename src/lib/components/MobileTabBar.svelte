@@ -7,6 +7,7 @@
 	import { toggleTheme } from '$lib/themeUi.svelte';
 	import { SITE_LINKS, hasTabBar, isSiteLinkActive } from '$lib/siteLinks';
 	import ThemeIcon from './ThemeIcon.svelte';
+	import LangSwitch from './LangSwitch.svelte';
 
 	const TABS = SITE_LINKS.filter((link) => link.tab);
 	const MORE = SITE_LINKS.filter((link) => !link.tab);
@@ -33,8 +34,8 @@
 
 <svelte:window onkeydown={onKey} />
 
-{#snippet linkIcon(icon: string, active: boolean)}
-	<span class="material-symbols-outlined" class:filled={active} aria-hidden="true">{icon}</span>
+{#snippet linkIcon(icon: string)}
+	<span class="material-symbols-outlined filled" aria-hidden="true">{icon}</span>
 {/snippet}
 
 {#if show}
@@ -51,10 +52,13 @@
 				{@const href = hrefWithNsfw(resolve(link.href), page.url)}
 				{@const active = isSiteLinkActive(link, path, href)}
 				<a {href} role="menuitem" class:active aria-current={active ? 'page' : undefined}>
-					{@render linkIcon(link.icon, active)}
+					{@render linkIcon(link.icon)}
 					{link.label}
 				</a>
 			{/each}
+			<div class="more-lang" role="none">
+				<LangSwitch compact />
+			</div>
 			<button type="button" role="menuitem" onclick={toggleTheme}>
 				<span class="theme-icon"><ThemeIcon /></span>
 				Light / dark
@@ -67,7 +71,7 @@
 			{@const href = hrefWithNsfw(resolve(link.href), page.url)}
 			{@const active = isSiteLinkActive(link, path, href)}
 			<a {href} class="tab" class:active aria-current={active ? 'page' : undefined}>
-				{@render linkIcon(link.icon, active)}
+				{@render linkIcon(link.icon)}
 				<span class="tab-label">{link.label}</span>
 			</a>
 		{/each}
@@ -79,7 +83,7 @@
 			aria-controls="tabbar-more"
 			onclick={() => (moreOpen = !moreOpen)}
 		>
-			{@render linkIcon('more_horiz', moreActive || moreOpen)}
+			{@render linkIcon('more_horiz')}
 			<span class="tab-label">More</span>
 		</button>
 	</nav>
@@ -133,7 +137,8 @@
 		}
 
 		.tab :global(.material-symbols-outlined) {
-			font-size: 1.45rem;
+			font-size: 1.2rem;
+			transform: translateY(0.15rem);
 		}
 
 		.tab-label {
@@ -151,7 +156,7 @@
 				'FILL' 1,
 				'wght' 400,
 				'GRAD' 0,
-				'opsz' 24;
+				'opsz' 20;
 		}
 
 		.scrim {
@@ -209,6 +214,19 @@
 
 		.theme-icon :global(.material-symbols-outlined) {
 			grid-area: 1 / 1;
+		}
+
+		.more-lang {
+			padding: 0.35rem 0.35rem 0.45rem;
+		}
+
+		.more .more-lang :global(button) {
+			display: block;
+			flex: 1;
+			min-height: 0;
+			justify-content: center;
+			text-align: center;
+			font-weight: 700;
 		}
 	}
 </style>

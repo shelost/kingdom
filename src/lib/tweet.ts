@@ -19,7 +19,7 @@ export function hash(text: string): number {
 const THRONE: Partial<Record<Person['kingdom'], string>> = {
 	silla: 'SillaKing',
 	baekje: 'Eraha',
-	goguryeo: 'Taewang',
+	goguryeo: 'Tewang',
 	tang: 'SonOfHeaven',
 	gaya: 'GayaKing',
 	buyeo: 'BuyeoKing',
@@ -114,6 +114,7 @@ const ORGS: Record<string, { glyph: string; color: string }> = {
 	ministersassembly: { glyph: '政', color: '#b8901c' },
 	eightclans: { glyph: '八', color: '#8a6418' },
 	restorationarmy: { glyph: '復', color: '#9c6b12' },
+	ghostchildren: { glyph: '鬼', color: '#3d3a4a' },
 	tangcourt: { glyph: '唐', color: '#a8231c' },
 	foundingsix: { glyph: '六', color: '#3a7a5a' },
 	fourdragons: { glyph: '龍', color: '#4a4a52' }

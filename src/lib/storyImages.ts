@@ -99,6 +99,8 @@ export interface StoryCueImage {
 	prompt?: string;
 	/** Input reference images used (or inferred) for generation. */
 	refs: StoryImageRef[];
+	/** Place ids locked on this beat (`kind: "place"`, scene jumps, map excerpts). */
+	placeIds: string[];
 }
 
 /** File under `static/temp/` with no story slot, person, place, or wiki-scene home. */
@@ -218,6 +220,56 @@ function refsFor(slot: ImageSlot, entry: Entry, beatBlocks: Block[], year: numbe
 	if (place?.avatar) push(place.avatar, place.name, place.id);
 
 	return out.slice(0, 6);
+}
+
+/** Place ids named on a beat: intro cards, jump plates, and map excerpts. */
+function placeIdsInBlocks(blocks: Block[]): string[] {
+	const ids: string[] = [];
+	const add = (id?: string) => {
+		if (id && !ids.includes(id)) ids.push(id);
+	};
+	for (const b of blocks) {
+		if (b.kind === 'place') add(b.place);
+		if ('jump' in b && b.jump?.place) add(b.jump.place);
+		if (b.kind === 'map') {
+			for (const p of b.places) add(p);
+		}
+		if (b.kind === 'flashback') {
+			for (const id of placeIdsInBlocks(b.blocks)) add(id);
+		}
+	}
+	return ids;
+}
+
+/** Last place card / jump still in force at `index` (stills and the card often sit in adjacent beats). */
+function placeContextAt(blocks: Block[], index: number): string[] {
+	const ids: string[] = [];
+	const add = (id?: string) => {
+		if (id && !ids.includes(id)) ids.push(id);
+	};
+	let last: string | undefined;
+	const lastI = Math.min(Math.max(index, 0), Math.max(blocks.length - 1, 0));
+	for (let i = 0; i <= lastI && i < blocks.length; i++) {
+		const b = blocks[i];
+		if (b.kind === 'place') last = b.place;
+		if ('jump' in b && b.jump?.place) last = b.jump.place;
+		if (b.kind === 'flashback') {
+			for (const id of placeIdsInBlocks(b.blocks)) add(id);
+		}
+	}
+	add(last);
+	const here = blocks[lastI];
+	if (here?.kind === 'map') {
+		for (const p of here.places) add(p);
+	}
+	return ids;
+}
+
+function blockIndexForSlot(blocks: Block[], at?: string): number {
+	if (!at?.trim()) return 0;
+	const needle = at.trim().toLowerCase();
+	const i = blocks.findIndex((b) => textOf(b).toLowerCase().includes(needle));
+	return i < 0 ? 0 : i;
 }
 
 function cueContextFrom(blocks: Block[], at?: string): string {
@@ -361,7 +413,13 @@ export function flattenStoryImages(source: Chapter[] = chapters): StoryCueImage[
 						cueContext: cueContextFrom(beat.blocks, slot.at),
 						at: slot.at,
 						prompt: slot.prompt?.trim() || undefined,
-						refs
+						refs,
+						placeIds: [
+							...new Set([
+								...placeIdsInBlocks(beat.blocks),
+								...placeContextAt(entry.blocks ?? [], blockIndexForSlot(entry.blocks ?? [], slot.at))
+							])
+						]
 					});
 				});
 			});

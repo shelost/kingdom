@@ -4,16 +4,37 @@
 	import { beforeNavigate, goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
-	import { untrack } from 'svelte';
+	import { onMount, untrack } from 'svelte';
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
 	import ImageMenu from '$lib/components/ImageMenu.svelte';
 	import MobileTabBar from '$lib/components/MobileTabBar.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import { applyNsfwFromUrl, NSFW_QUERY, nsfwQueryOn } from '$lib/nsfwUi.svelte';
 	import { applyEditFromUrl, EDIT_QUERY, editQueryOn } from '$lib/editUi.svelte';
-	import { applyReadingFromUrl, EP_QUERY, VIEW_QUERY, reading } from '$lib/reading.svelte';
+	import { applyReadingFromUrl, bindLangSync, EP_QUERY, loadLang, VIEW_QUERY, reading } from '$lib/reading.svelte';
+	import { loadAnimated } from '$lib/motionUi.svelte';
 
 	let { children } = $props();
+
+	/* Language is one setting for the whole site. Animated follows on pages that show the script. */
+	onMount(() => {
+		loadLang();
+		loadAnimated();
+		const idleId =
+			typeof window.requestIdleCallback === 'function'
+				? window.requestIdleCallback(() => {
+						void import('$lib/preloadBooks').then((m) => m.preloadBooks());
+					})
+				: window.setTimeout(() => {
+						void import('$lib/preloadBooks').then((m) => m.preloadBooks());
+					}, 1);
+		const unbind = bindLangSync();
+		return () => {
+			unbind();
+			if (typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(idleId);
+			else clearTimeout(idleId);
+		};
+	});
 
 	/** The chronicle keeps its own chrome (the site links live in its settings panel). */
 	let onChronicle = $derived(page.route.id?.startsWith('/(story)') ?? false);
