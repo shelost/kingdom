@@ -454,6 +454,18 @@
 				"a lecture about being a bridge"
 			]
 		},
+		"sunhwa": {
+			"look": "Young Silla princess: a long oval Korean face, quiet mouth, black hair in a low braid with a small gold floral pin (attached /ch_sunhwa.png).",
+			"dress": "Saffron-yellow jeogori, peach-orange chima, dark blue sash (attached /ch_sunhwa.png). No crown.",
+			"demeanor": "Already listening to a song that is not this table's. Teases, then looks away.",
+			"hat": false,
+			"never": [
+				"a gold tree-and-antler crown",
+				"Sunduk's crimson",
+				"Chunmyung's magenta",
+				"Baekje yellow metal"
+			]
+		},
 		"chunmyung": {
 			"look": "Late forties at her death: a long oval Korean face, dry unhurried eyes, silver-grey in the black hair, a full coiled updo under the gold amethyst binyeo. Young: the same bones, all black hair, sharper mouth (attached /ch_chunmyung_young.png).",
 			"dress": "Lavender-purple Silla silk jeogori and chima (attached /ch_chunmyung.png). A wax tablet tucked in the sleeve. In the cavern: that silk, feet in the water, NO crown.",
@@ -1824,7 +1836,21 @@
 			"demeanor": "Dry, amused, a little cruel when a man gets pious.",
 			"never": [
 				"jougwan",
-				"a pious face"
+				"a pious face",
+				"cloned onto Sado"
+			]
+		},
+		"sukwon": {
+			"look": "Silver swept-back hair, clean-shaven, grave Korean face; the same hall-bone as Bidam and Jinji but quieter, older in the mouth.",
+			"dress": "Black silk po over dark grey inner, white collar, white sash (attached /ch_bidam_old.png). No hat. Never Jinji’s red-and-gold drunk silk.",
+			"hat": false,
+			"demeanor": "Grave, kind, tired of his brother’s jokes. Teaches by asking. Does not sit when he should leave.",
+			"never": [
+				"jougwan",
+				"a drunk laugh",
+				"a wine cup",
+				"a Silla gold crown",
+				"cloned onto Bidam or Jinji"
 			]
 		},
 		"kingsung": {

@@ -2,7 +2,6 @@
 	import type { Entry } from '$lib/story';
 	import { storyImg } from '$lib/img';
 	import { episodeThumbnail } from '$lib/thumbnail.svelte';
-	import { episodePosterSrc } from '$lib/posters.svelte';
 	import { cueMenuTarget, openImageMenu } from '$lib/imageMenu.svelte';
 	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { isNsfwCueImage } from '$lib/nsfwCue';
@@ -19,26 +18,7 @@
 		priority?: boolean;
 	} = $props();
 
-	let poster = $derived(episodePosterSrc(eid));
-	let thumb = $derived(poster ? null : episodeThumbnail(entry, eid));
-
-	function openPoster(host: HTMLElement) {
-		if (!poster) return;
-		openLightbox(
-			[
-				{
-					src: poster,
-					alt: entry.title,
-					title: entry.title,
-					caption: entry.title,
-					nsfw: false,
-					episodeId: eid
-				}
-			],
-			0,
-			host
-		);
-	}
+	let thumb = $derived(episodeThumbnail(entry, eid));
 
 	function openThumb(host: HTMLElement) {
 		if (!thumb) return;
@@ -60,26 +40,8 @@
 	}
 </script>
 
-<!-- Movie poster (3:4) when one exists; otherwise the 2:1 thumbnail still. -->
-{#if poster}
-	<figure class="poster portrait">
-		<button
-			type="button"
-			class="open"
-			onclick={(e) => openPoster(e.currentTarget)}
-			aria-label={`Open ${entry.title} poster`}
-		>
-			<img
-				{...storyImg(poster, {
-					kind: 'hero',
-					priority,
-					sizes: '(max-width: 820px) 70vw, 22rem',
-					alt: entry.title
-				})}
-			/>
-		</button>
-	</figure>
-{:else if thumb}
+<!-- 2:1 episode thumbnail. The 3:4 ensemble poster sits under this. -->
+{#if thumb}
 	<figure
 		class="poster"
 		oncontextmenu={(e) => thumb && openImageMenu(e, cueMenuTarget(thumb.slot.id, thumb.src))}
@@ -114,11 +76,6 @@
 		box-shadow:
 			0 30px 60px -28px rgb(0 0 0 / 0.75),
 			0 0 0 1px color-mix(in srgb, var(--fg) 12%, transparent);
-	}
-
-	.poster.portrait {
-		max-width: 22rem;
-		aspect-ratio: 3 / 4;
 	}
 
 	.open {
@@ -156,11 +113,6 @@
 		.poster {
 			border-radius: 0;
 			margin-inline: -0.75rem;
-		}
-
-		.poster.portrait {
-			margin-inline: 0;
-			border-radius: var(--radius);
 		}
 	}
 

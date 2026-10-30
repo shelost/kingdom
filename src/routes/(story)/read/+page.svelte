@@ -14,6 +14,7 @@
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
 	import EpisodeThumbnail from '$lib/components/EpisodeThumbnail.svelte';
+	import EpisodeEnsemble from '$lib/components/EpisodeEnsemble.svelte';
 	import MapExcerpt from '$lib/components/MapExcerpt.svelte';
 	import EpisodeTitleCard from '$lib/components/EpisodeTitleCard.svelte';
 	import { titleCardBakesTagline, titleLogoSrc } from '$lib/titleLogos';
@@ -588,6 +589,12 @@
 												entry={shown}
 												{eid}
 												priority={episodesMode || (ci === 0 && i === 0)}
+											/>
+											<EpisodeEnsemble
+												entry={shown}
+												{eid}
+												year={years[i] ?? null}
+												ko={koHead}
 											/>
 											<HiddenStills entry={shown} />
 										</div>
@@ -1427,7 +1434,7 @@
 	   `translate` composes with any transform the figure already has. */
 	:global(html[data-animated='on']) .inline-art > :global(*),
 	:global(html[data-animated='on']) .beats :global(.fb-art > *),
-	:global(html[data-animated='on']) .entry-thumb > :global(*) {
+	:global(html[data-animated='on']) .entry-thumb > :global(.poster) {
 		translate: 0 var(--parallax-y, 0px);
 	}
 
@@ -1436,7 +1443,7 @@
 	   more than the 5% the picture travels; --parallax-t runs −1 (above) to 1 (below). */
 	:global(html[data-animated='on']) .inline-art :global(.frame img),
 	:global(html[data-animated='on']) .beats :global(.fb-art .frame img),
-	:global(html[data-animated='on']) .entry-thumb :global(img) {
+	:global(html[data-animated='on']) .entry-thumb :global(.poster img) {
 		scale: 1.12;
 		translate: 0 calc(var(--parallax-t, 0) * 5%);
 		will-change: translate;

@@ -4776,6 +4776,8 @@ export const PEOPLE: Person[] = [
 		family: [
 			{ id: 'jinpyung', role: 'Father' },
 			{ id: 'maya', role: 'Mother' },
+			{ id: 'sunhwa', role: 'Sister' },
+			{ id: 'sunduk', role: 'Sister' },
 			{ id: 'yongsu', role: 'Husband' },
 			{ id: 'chunchu', role: 'Son' }
 		],
@@ -4783,6 +4785,7 @@ export const PEOPLE: Person[] = [
 	},
 	{
 		id: 'sunhwa',
+		avatar: '/ch_sunhwa.png',
 		name: 'Princess Sunhwa',
 		korean: '선화공주',
 		hanja: '善花公主',
@@ -4797,6 +4800,8 @@ export const PEOPLE: Person[] = [
 		boneRank: 'Sacred Bone (성골)',
 		tagline: 'Married into Baekje — the legend Sudong sang into being.',
 		quote: "A princess can still be a rumor.",
+		voice:
+			'Eldest, already halfway out the door. Teases without raising her voice. Korean: 반말 to her sisters, 해요체 to her father that sounds like she has already left.',
 		arc: 'Daughter of Jinpyung; the Samguk yusa remembers her as the princess Sudong’s song fetched across the river — whether history or theatre, Baekje’s court still acts as if the marriage bought a decade of peace.',
 		events: [
 			{ year: 600, label: 'Legend: Sudong’s song reaches her at the well.' },
@@ -4804,7 +4809,9 @@ export const PEOPLE: Person[] = [
 		],
 		family: [
 			{ id: 'jinpyung', role: 'Father' },
-			{ id: 'maya', role: 'Mother' }
+			{ id: 'maya', role: 'Mother' },
+			{ id: 'chunmyung', role: 'Sister' },
+			{ id: 'sunduk', role: 'Sister' }
 		],
 		aliases: ['Princess Sunhwa', 'Princess Seonhwa', 'Sunhwa', 'Seonhwa', '善花公主']
 	},

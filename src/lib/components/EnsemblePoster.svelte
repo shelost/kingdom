@@ -56,7 +56,7 @@
 		position: relative;
 		width: var(--poster, 16rem);
 		flex: none;
-		aspect-ratio: 2 / 3;
+		aspect-ratio: 3 / 4;
 		margin: 0;
 		overflow: hidden;
 		border-radius: 8px;

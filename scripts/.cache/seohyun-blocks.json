@@ -1,0 +1,3613 @@
+[
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "You want the whole of it? …Then I’ll start at the beginning, sir. I was never any good at the short version.",
+    "ko": "다 들으시겠소? …그럼 처음부터 하겠소. 짧게 말하는 건 영 못했소."
+  },
+  {
+    "kind": "section",
+    "label": "Manmyung",
+    "ko": "만명"
+  },
+  {
+    "kind": "scene",
+    "label": "Surabol, the lane by the Gaya house",
+    "ko": "서라벌, 가야 집 앞 골목"
+  },
+  {
+    "kind": "p",
+    "html": "The children of Surabol have a game. One of them is the egg.",
+    "ko": "서라벌 아이들에게는 놀이가 하나 있다. 한 명이 알을 맡는다."
+  },
+  {
+    "kind": "p",
+    "html": "Today the egg is Seohyun. They sit him in a basket in the lane and tell him to hatch.",
+    "ko": "오늘 알은 서현이다. 아이들은 그를 골목의 바구니에 앉혀 놓고 깨어나 보라고 한다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "A boy in the lane",
+    "gender": "m",
+    "lines": [
+      "퍼뜩, 깨 봐라! 너거 집은 다 알에서 나왔다 카대.",
+      "알 말로 뭐라 캐 봐라. 너거 아부지맨치로— 해 보라 안 카나—"
+    ],
+    "en": [
+      "Go on, hatch! Your whole family hatched.",
+      "Say something in egg. Say it like your father— go on—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "Another boy",
+    "gender": "m",
+    "lines": [
+      "가야, 가야, 수레 타고 왔네, 포구 팔고, 남은 건—"
+    ],
+    "en": [
+      "Gaya, Gaya, came in a cart, sold the harbour, kept the—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "난 알 아니야.",
+      "…나 여기 사람이야. 이 골목에서 태어났어. 바로 저기서."
+    ],
+    "en": [
+      "I’m not an egg.",
+      "…I’m from here. I was born on this street. I was born right there."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He climbs out of the basket and goes home the long way, so that nobody sees his face until it is dry.",
+    "ko": "그는 바구니에서 기어 나와 먼 길로 집에 간다. 얼굴이 마를 때까지 아무도 못 보게."
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "I was seven before I understood Gaya was a place. Before that I thought it was something wrong with us.",
+    "ko": "일곱 살이 되어서야 가야가 땅 이름이라는 걸 알았소. 그전엔 우리 집에 뭔가 잘못된 게 있는 줄 알았지."
+  },
+  {
+    "kind": "scene",
+    "label": "The Gaya house · supper",
+    "ko": "가야 집 · 저녁상"
+  },
+  {
+    "kind": "p",
+    "html": "His father eats the way soldiers eat, fast and without talking. Every morning he still wears the helm out of the gate. Indoors it sits on a stand by the door and watches the room.",
+    "ko": "아버지는 군인처럼 먹는다. 빠르게, 말없이. 아침마다 여전히 그 투구를 쓰고 대문을 나선다. 집 안에선 문 옆 받침대에 올라앉아 방을 지켜본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "아버지. 가야가 뭐예요?"
+    ],
+    "en": [
+      "Father. What’s Gaya?"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "The chopsticks stop. His mother looks at his father. His father looks at the helm.",
+    "ko": "젓가락이 멈춘다. 어머니가 아버지를 본다. 아버지는 투구를 본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……포구다.",
+      "쇠. 배. 보랏빛 줄에 매달린 금 상자 속의 알 여섯.",
+      "우리 끼었다. 인자는 신라 끼고.",
+      "밥 무라."
+    ],
+    "en": [
+      "…A harbour.",
+      "Iron. Ships. Six eggs in a gold box on a purple rope.",
+      "Ours, it was. Silla’s now.",
+      "Eat your rice."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "우리도 알에서 나왔어요?"
+    ],
+    "en": [
+      "Did we hatch?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……누가 그카더노."
+    ],
+    "en": [
+      "…Who said that, then."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "다들요."
+    ],
+    "en": [
+      "Everybody."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "니는 뒷방에서 났다. 나는 밤새 갑옷 입고 마당에 서 있었고. 바보맨치로.",
+      "알에서 나온 놈은 없다. 무라."
+    ],
+    "en": [
+      "Born in the back room, you were. I stood in the yard all night in my armour, like a fool.",
+      "Nobody hatched. Eat."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "That is the whole history of Gaya that Seohyun ever gets from his father. He asks twice more, years apart. Both times the chopsticks stop.",
+    "ko": "서현이 아버지에게서 들은 가야의 역사는 그게 전부다. 몇 해 간격으로 두 번 더 묻는다. 두 번 다 젓가락이 멈춘다."
+  },
+  {
+    "kind": "p",
+    "html": "Later, through the paper door, he hears them.",
+    "ko": "나중에, 창호지 문 너머로 두 사람 목소리가 들린다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "애한테 말 좀 더 해 주소. 당신이.",
+      "……내 말은 다 포구에서 나온다 카이. 애가 도깨비바늘맨치로 묻혀 온단 말이요."
+    ],
+    "en": [
+      "Talk to him more. You.",
+      "…Everything I say comes out of a harbour. Picks it up like burrs, he does."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "Muryuk’s wife",
+    "gender": "f",
+    "lines": [
+      "당신 아들 아입니꺼. 당신 목소리 좀 닮으믄 어때서예."
+    ],
+    "en": [
+      "He’s your son. He can have your voice."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "내 품계는 가져가라 카소.",
+      "목소리는 당신 거 주고."
+    ],
+    "en": [
+      "My rank he can have.",
+      "Let him have your voice."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "So Seohyun grows up talking like Surabol. Every year his father says a little less at supper.",
+    "ko": "그래서 서현은 서라벌 말씨로 자란다. 아버지는 해마다 저녁상에서 말이 조금씩 준다."
+  },
+  {
+    "kind": "flashback",
+    "year": "554",
+    "title": "The Gwansan road",
+    "blocks": [
+      {
+        "kind": "place",
+        "place": "gwansan",
+        "html": "A fortress on a road. Kings should not ride it at night.",
+        "ko": "길 위의 성. 임금은 밤에 그 길을 달리면 안 된다."
+      },
+      {
+        "kind": "p",
+        "html": "Sixteen years before Seohyun is born, his father is already a Silla governor in a Gaya helm, because nobody has managed to make him take it off. One night on the Gwansan road, the King of Baekje rides into his ditch.",
+        "ko": "서현이 태어나기 열여섯 해 전, 아버지는 이미 가야 투구를 쓴 신라 군주다. 아무도 그 투구를 벗기지 못했다. 관산성 길의 어느 밤, 백제 임금이 그의 도랑으로 말을 몰아 들어온다."
+      },
+      {
+        "kind": "p",
+        "html": "You have seen that night from the king’s side. From the cone’s side it is shorter. A man who once knelt beside his father at a king’s feet sits another king on a camp stool and does not draw his sword. The slave does the rest.",
+        "ko": "그 밤은 임금 쪽에서 이미 보았다. 고깔 쪽에서 보면 더 짧다. 한때 아버지 곁에서 임금의 발치에 무릎 꿇었던 사내가 다른 임금을 호상에 앉히고, 칼을 뽑지 않는다. 나머지는 노비가 한다."
+      },
+      {
+        "kind": "quote",
+        "hanja": "祖武力，爲新州道行軍摠管，嘗領兵獲百濟王及其將四人，斬首一萬餘級。父舒玄，官至蘇判大梁州都督安撫大梁州諸軍事。",
+        "html": "His grandfather Muryuk was Commander of the Army of the Sinju Circuit; he once led troops that captured the king of Baekje and four of his generals and took more than ten thousand heads. His father Seohyun rose to the rank of Sopan, Governor-General of Daeyang Province and Pacifier of all the armies of Daeyang Province.",
+        "ko": "할아버지 무력은 신주도 행군총관이 되어, 일찍이 군사를 거느리고 백제 왕과 그 장수 넷을 사로잡고 1만여 급의 목을 베었다. 아버지 서현은 벼슬이 소판 대량주도독 안무대량주제군사에 이르렀다.",
+        "source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+      },
+      {
+        "kind": "p",
+        "html": "That night the slave who did the cutting comes to his tent with the king’s knife, because nobody else will take it.",
+        "ko": "그날 밤, 목을 벤 노비가 임금의 칼을 들고 그의 막사로 온다. 아무도 그 칼을 받으려 하지 않아서다."
+      },
+      {
+        "kind": "dialogue",
+        "chip": "#7f96b5",
+        "person": "dodo",
+        "lines": [
+          "나리. 가야 분한테 드리라 카던데예.",
+          "……나리 맞으시지예?"
+        ],
+        "en": [
+          "My lord. They said give it to the Gaya one.",
+          "…That’s you, isn’t it?"
+        ]
+      },
+      {
+        "kind": "dialogue",
+        "chip": "#8B5CF6",
+        "person": "muryuk",
+        "lines": [
+          "네가 가져라.",
+          "그런 일을 한 번 한 칼은 아들 볼 집에 가면 안 된다."
+        ],
+        "en": [
+          "Keep it.",
+          "A knife that’s done that once shouldn’t go home to a man who means to have sons."
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "scene",
+    "label": "The Gaya house · twenty years after Gwansan",
+    "ko": "가야 집 · 관산성 스무 해 뒤",
+    "jump": {
+      "year": 574,
+      "en": "Twenty Years Later…",
+      "ko": "스무 해 뒤…"
+    }
+  },
+  {
+    "kind": "p",
+    "html": "Ten thousand heads, says the record, and makes him a hero. Twenty years on, the lane is still saying it. The day it reaches the Gaya house, his father sets the helm on its stand and does not eat for two days.",
+    "ko": "만 급이라고 기록은 말하고, 그를 영웅으로 만든다. 스무 해가 지나도 골목은 여전히 그 얘기다. 그 얘기가 가야 집 대문까지 닿은 날, 아버지는 투구를 받침대에 올려놓고 이틀을 먹지 않는다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "아버지. 골목에서 아버지가 임금을 잡았대요."
+    ],
+    "en": [
+      "Father. They’re saying in the lane you caught a king."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……잡은 기 아이다. 지가 도랑에 빠진 기지.",
+      "니 나기 전 일이다."
+    ],
+    "en": [
+      "…Didn’t catch him. Rode into a ditch, he did.",
+      "Before you were born, that was."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "그 임금 목을 아버지가—"
+    ],
+    "en": [
+      "Did you cut his—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "아니."
+    ],
+    "en": [
+      "No."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "On the second night the boy brings him rice, sits with the bowl until it goes cold, and carries it out again. Nobody in the lane makes him the egg that winter.",
+    "ko": "둘째 날 밤, 아이가 밥을 들고 온다. 식을 때까지 그릇을 들고 앉아 있다가, 다시 들고 나간다. 그해 겨울, 골목에서 그를 알로 삼는 아이는 아무도 없다."
+  },
+  {
+    "kind": "scene",
+    "label": "Surabol, the palace gyuku field · by night",
+    "ko": "서라벌, 궁의 격구장 · 밤",
+    "year": 583
+  },
+  {
+    "kind": "p",
+    "html": "Then Seohyun discovers gyuku: horses, sticks, a ball, and nobody asking where your grandfather came from. Soon after, he discovers that the palace field is empty after dark.",
+    "ko": "그러다 서현은 격구를 알게 된다. 말, 막대, 공, 그리고 할아버지가 어디서 왔느냐고 묻는 사람이 없는 곳. 곧이어 궁의 격구장이 밤이면 텅 빈다는 것도 알게 된다."
+  },
+  {
+    "kind": "p",
+    "html": "He goes over the back wall when the house is asleep, borrows a horse from a stable that does not know it is lending one, and plays alone by moonlight against nobody. He wins every time.",
+    "ko": "집이 잠들면 그는 뒷담을 넘는다. 빌려주는 줄도 모르는 마구간에서 말을 빌리고, 달빛 아래 아무도 없는 상대와 혼자 격구를 한다. 매번 이긴다."
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "On a horse in the dark, nobody could tell whose son I was. For me that was the whole game.",
+    "ko": "어둠 속 말 위에선 아무도 내가 누구 아들인지 몰랐소. 나한텐 그게 놀이의 전부였소."
+  },
+  {
+    "kind": "scene",
+    "label": "The Gaya house · the gate",
+    "ko": "가야 집 · 대문"
+  },
+  {
+    "kind": "p",
+    "html": "The stable belongs to Prince Suulbu, the Cloud King’s younger brother. The records give him two names; the street uses the shorter one. He talks about people the way old men talk about furniture, and he has done it since he was young. He comes to the Gaya house in person. He has never done that before. He will do it once more.",
+    "ko": "마구간 주인은 수을부 왕자, 구름왕의 아우다. 기록에는 이름이 둘이다. 골목에선 짧은 쪽을 쓴다. 그는 늙은이들이 가구 얘기하듯 사람 얘기를 하는데, 젊을 때부터 그랬다. 그가 몸소 가야 집에 온다. 전에는 한 번도 없던 일이다. 한 번 더 있을 것이다."
+  },
+  {
+    "kind": "card",
+    "person": "sukhuljong",
+    "caption": "The young king’s brother. Royal on every side, and he will tell you which.",
+    "ko": "젊은 임금의 아우. 어느 쪽으로 따져도 왕족이고, 어느 쪽인지 일러 줄 사람이다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "네 아들놈이 어젯밤 궁 격구장에 있었다.",
+      "내 말을 타고."
+    ],
+    "en": [
+      "Your boy was on the palace field last night.",
+      "On my horse."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……타이르겠습니다, 나리."
+    ],
+    "en": [
+      "…I will speak to him, my lord."
+    ],
+    "speaker": "🙇"
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "무슨 말로 타이르게? 네 마당에나 가둬 둬라.",
+      "칙령 얘기는 꺼내지도 마라. 너희 같은 것들은 꼭 칙령 얘기를 하지. 숙부께서 오십 년 전에 소나무 밑에서 한 줄 쓰셨는데, 이제 이 도성 가야 놈들은 다 그게 내 마구간 문까지 열어 준다고 여긴다.",
+      "진골 자식은 제 자리를 벌어서 얻는다. 너희는 전쟁에 지고 거저 얻었고."
+    ],
+    "en": [
+      "Speak to him in what? Keep him in your yard.",
+      "And don’t bring up the edict. You people always bring up the edict. My uncle wrote one line under a pine tree fifty years ago, and now every Gaya boy in the city thinks it opens my stable.",
+      "A True Bone son earns his seat. Yours lost a war and got handed one."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "예, 나리."
+    ],
+    "en": [
+      "Yes, my lord."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Seohyun watches from behind the gatepost. His father caught a king on the Gwansan road. Now he bows to a man twenty years younger, and the bow is perfect.",
+    "ko": "서현은 대문 기둥 뒤에서 지켜본다. 아버지는 관산성 길에서 임금을 잡은 사람이다. 그런 아버지가 스무 살 어린 사내에게 절을 한다. 흠잡을 데 없는 절이다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "왜 아무 말도 안 했어요?"
+    ],
+    "en": [
+      "Why didn’t you say anything?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "‘예, 나리’ 했다 아이가. 할 말은 그기 전부다.",
+      "……배아 둬라. 격구보다 쓸 데가 많을 끼다."
+    ],
+    "en": [
+      "I said “yes, my lord.” Whole speech, that is.",
+      "…Learn it. You’ll need it more than gyuku."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "우리더러 ‘너희’라고 했잖아요."
+    ],
+    "en": [
+      "He called us “you people.”"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "누가 억수로 큰 값을 치렀다. 니가 저 대문 앞에 서가 왕자한테 욕이라도 들을 수 있구로.",
+      "말은 돌려조라."
+    ],
+    "en": [
+      "Somebody paid a great deal so you could stand at that gate and be insulted by a prince.",
+      "Give the horse back, now."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He gives the horse back. He goes on climbing the wall at night. He only gets better at it.",
+    "ko": "말은 돌려준다. 밤마다 담 넘기는 그만두지 않는다. 더 잘하게 될 뿐이다."
+  },
+  {
+    "kind": "scene",
+    "label": "The Gaya house · the yard wall, that night",
+    "ko": "가야 집 · 그날 밤, 마당 담장"
+  },
+  {
+    "kind": "p",
+    "html": "That night his father finds him on the yard wall, one leg already over, and does not pull him down. He climbs up beside him instead, which takes a while, and talks about a battle. He has never done that before.",
+    "ko": "그날 밤 아버지는 한쪽 다리를 벌써 담 너머로 넘긴 그를 찾아내고도 끌어내리지 않는다. 대신 그 옆으로 올라온다. 시간이 좀 걸린다. 그리고 싸움 얘기를 한다. 처음 있는 일이다."
+  },
+  {
+    "kind": "p",
+    "html": "Great Gaya fell eight years before Seohyun was born. The record gives it one line and a general’s name. His father gives it a boy.",
+    "ko": "대가야는 서현이 태어나기 여덟 해 전에 무너졌다. 기록은 거기에 한 줄과 장수 이름 하나를 준다. 아버지는 거기에 소년 하나를 준다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "chip": "#8B5CF6",
+    "lines": [
+      "대가야에 아이가 하나 있었다. 열다섯.",
+      "성 위 활이 전부 나한테 가 있는 동안, 기병 오천을 끌고 성문을 뚫었다.",
+      "끝나고는 광장 밧줄을 하나도 안 남기고 다 끊었다. 땅만 갖고, 사람은 보냈다."
+    ],
+    "en": [
+      "There was a boy at Great Gaya. Fifteen.",
+      "While every bow on the wall was busy with me, he took five thousand horse through the gate.",
+      "After, he cut every rope in the square. Kept the land. Let the people go."
+    ]
+  },
+  {
+    "kind": "flashback",
+    "year": "562",
+    "title": "Great Gaya, the square",
+    "blocks": [
+      {
+        "kind": "dialogue",
+        "chip": "#6fa8ff",
+        "person": "sadaham",
+        "lines": [
+          "전쟁에 졌죠. 그래서요?",
+          "하늘 아래 사람은 다 똑같아요. 저 사람들도 다 엄마 배 속에서 나왔잖아요, 안 그래요?"
+        ],
+        "en": [
+          "They lost a war. So what?",
+          "Everyone under the sky’s the same. They all came out of their mothers’ wombs too, didn’t they?"
+        ]
+      },
+      {
+        "kind": "p",
+        "html": "The last rope comes off near sunset.",
+        "ko": "마지막 밧줄은 해 질 녘에 풀린다."
+      }
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "lines": [
+      "사다함이요? 다 알아요, 사다함. 노래도 있어요."
+    ],
+    "en": [
+      "Sadaham? Everybody knows Sadaham. There’s a song."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "chip": "#8B5CF6",
+    "lines": [
+      "노래, 있다고?",
+      "……좋아하겠네. 노래가 중요하다 카더라."
+    ],
+    "en": [
+      "A song, is there?",
+      "…He’d like that. Said the singing was important."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Below them the lane is dark. Inside, the helm sits on its stand and watches the door.",
+    "ko": "발아래 골목은 캄캄하다. 집 안에서는 투구가 받침대 위에서 문을 지켜본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "chip": "#8B5CF6",
+    "lines": [
+      "그 아이한테 그랬다. 내 아들이 너처럼 컸으면 좋겠다고."
+    ],
+    "en": [
+      "I told him I hoped my son would turn out like him."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "lines": [
+      "……그땐 아들 없었잖아요."
+    ],
+    "en": [
+      "…You didn’t have a son then."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "chip": "#8B5CF6",
+    "lines": [
+      "없었지.",
+      "그래도 바랐다."
+    ],
+    "en": [
+      "Didn’t.",
+      "Hoped anyway."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "lines": [
+      "그 사람처럼 어떻게요? 말 타는 거요?"
+    ],
+    "en": [
+      "Like him how? The riding?"
+    ]
+  },
+  {
+    "kind": "story",
+    "label": "Assimilation",
+    "ko": "동화"
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#8B5CF6",
+    "person": "muryuk",
+    "en": [
+      "Not the riding.",
+      "Next spring you go to the yard. Hwarang. I’ve asked."
+    ],
+    "lines": [
+      "말 타는 거 말고.",
+      "내년 봄에 니 마당 간다. 화랑. 내가 부탁해 놨다."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#3E8EF0",
+    "person": "seohyeon",
+    "lines": [
+      "저를요? 거긴 우리 같은—"
+    ],
+    "en": [
+      "Me? They don’t take—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#8B5CF6",
+    "person": "muryuk",
+    "en": [
+      "They take True Bone. That’s what you are. It’s written down.",
+      "In there you talk like them. Not like me. You don’t yet. I hear it when you’re tired.",
+      "Make a man of yourself. This country doesn’t keep boys who remember another harbour.",
+      "Helm stays here. You go in Silla.",
+      "Don’t make me say it twice. I don’t talk so you won’t pick it up.",
+      "…Down you get. You’ll wake your mother."
+    ],
+    "lines": [
+      "진골은 받는다. 니가 진골이다. 적혀 있다.",
+      "거기선 그들처럼 말해. 나처럼 말고. 아직은 아니다. 피곤할 때 들린다.",
+      "사내 돼라. 이 나라는 다른 포구를 기억하는 아이를 안 둔다.",
+      "투구는 여기 두고. 너는 신라로 들어가.",
+      "두 번은 안 한다. 내가 말 안 하는 건, 니가 내 말투 배워 갈까 봐다.",
+      "…내려가라. 어매 깬다."
+    ]
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "He hoped I would turn out like a boy who died before I was born. I spent most of my life trying to work out which part he meant.",
+    "ko": "아버지는 내가 태어나기도 전에 죽은 소년처럼 크기를 바라셨소. 어느 쪽을 말씀하신 건지, 평생 알아내려 애썼소."
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "My father looked back for thirty years and stopped at Great Gaya, before I was born. I decided I would never start. …I looked at clouds instead. It isn’t the same thing. I know that now.",
+    "ko": "아버지는 서른 해를 뒤돌아보시다가, 내가 나기 전 대가야에서 그만두셨소. 나는 아예 시작하지 않기로 했소. …대신 구름을 봤지. 같은 게 아니라는 건, 이제 아오."
+  },
+  {
+    "kind": "scene",
+    "label": "Surabol · ten years later",
+    "ko": "서라벌 · 열 해 뒤",
+    "jump": {
+      "year": 593,
+      "en": "Ten Years Later…",
+      "ko": "열 해 뒤…"
+    }
+  },
+  {
+    "kind": "p",
+    "html": "Before there is a Yushin there is a road, and a man on it who should be looking where he is going.",
+    "ko": "유신이 있기 전에 길이 있다. 그리고 그 길 위에, 앞을 보고 다녀야 할 사내가 하나 있다."
+  },
+  {
+    "kind": "card",
+    "person": "seohyeon",
+    "caption": "Muryuk’s son. Polite, careful, and about to stop being careful.",
+    "ko": "무력의 아들. 예의 바르고 조심스럽고, 곧 조심을 그만둘 사내."
+  },
+  {
+    "kind": "p",
+    "html": "Kim Seohyun is the son of Gaya’s last prince. In the capital, that’s the kind of fact people bring up just after he leaves the room. The family is True Bone now. The rank opens most doors in the capital. It opens the best ones least.",
+    "ko": "김서현은 가야 마지막 왕자의 아들이다. 도읍에서 그건 그가 방을 나서자마자 사람들이 꺼내는 종류의 사실이다. 이제 그 집안은 진골이다. 그 신분은 도읍의 문 대부분을 연다. 가장 좋은 문은 가장 덜 연다."
+  },
+  {
+    "kind": "p",
+    "html": "He is polite, unmarried at an age when people have started to mention it, and so used to being the Gaya boy in the room that he apologises before anyone has accused him of anything. He sits a horse better than he sits a banquet.",
+    "ko": "그는 예의 바르고, 장가 안 간 걸 사람들이 입에 올리기 시작한 나이이며, 방 안의 가야 녀석 노릇에 너무 익숙해서 누가 뭐라 하기도 전에 먼저 사과부터 한다. 연회 자리보다 말 등에 더 잘 앉는다."
+  },
+  {
+    "kind": "p",
+    "html": "The best gate on the street still belongs to Prince Suulbu. He is older now, and no fonder of the Gaya house. His daughter Manmyung is standing in it when Seohyun rides past. He looks. The histories, which don’t usually notice such things, record exactly how.",
+    "ko": "그 거리에서 가장 좋은 대문은 여전히 수을부 왕자의 것이다. 그는 나이가 들었고, 가야 집을 좋아하게 되지도 않았다. 서현이 말을 타고 지날 때, 그의 딸 만명이 그 대문에 서 있다. 그가 쳐다본다. 이런 일을 좀처럼 적지 않는 사서가 그 눈길만은 정확히 적어 두었다."
+  },
+  {
+    "kind": "card",
+    "person": "manmyung",
+    "caption": "Suulbu’s daughter. She steps down off thresholds.",
+    "ko": "수을부의 딸. 문턱에서 내려서는 여자."
+  },
+  {
+    "kind": "quote",
+    "hanja": "初，舒玄路見葛文王立宗之子肅訖宗之女萬明，心悅而目挑之，不待媒妁而合。",
+    "html": "At first, Seohyun saw on the road Manmyung, daughter of Sukhuljong, son of Galmun-wang Ipjong. His heart was glad, and he courted her with his eyes; and without waiting for a go-between, they came together.",
+    "ko": "처음에 서현이 길에서 갈문왕 입종의 아들 숙흘종의 딸 만명을 보고, 마음에 기뻐하여 눈으로 꾀어, 중매를 기다리지 않고 맺어졌다.",
+    "source": "Samguk Sagi (三國史記) bk. 41, Biography of Kim Yushin, part 1"
+  },
+  {
+    "kind": "scene",
+    "label": "The Gate",
+    "ko": "그 문"
+  },
+  {
+    "kind": "p",
+    "html": "The first time, he looks and keeps riding and nearly puts his horse into a charcoal cart. The second time he has an errand ready at the far end of the street, which does not exist. By the third the errand has run out, and he is only a man on a horse going the wrong way slowly.",
+    "ko": "처음엔 보고, 계속 가다가, 하마터면 말을 숯 수레에 처박을 뻔한다. 두 번째엔 거리 저 끝에 볼일이 있다는 핑계를 준비해 온다. 그런 볼일은 없다. 세 번째쯤 되자 핑계도 바닥나서, 그는 그냥 엉뚱한 방향으로 천천히 가는 말 탄 사내일 뿐이다.",
+    "moment": "first-sight",
+    "weather": "love"
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "Manmyung’s maid",
+    "chip": "#7a7a82",
+    "en": [
+      "Agassi. It’s him again.",
+      "Same horse. Same— he’s pretending he isn’t looking."
+    ],
+    "lines": [
+      "아가씨. 또 그 사람입니더.",
+      "같은 말입니더. 같은— 안 보는 척하네예."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "He’s frightfully bad at it.",
+      "Don’t look. …No, look. I want to see what he does."
+    ],
+    "lines": [
+      "디게 못한다, 저거.",
+      "보지 마라. …아이다, 봐라. 뭐 하나 보구로."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Then she does something nobody on that street has seen a Sacred Bone daughter do. She steps down off the threshold into the dust.",
+    "ko": "그러고는 그 거리 누구도 성골 집 딸이 하는 걸 본 적 없는 일을 한다. 문턱에서 흙바닥으로 내려선다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "You’ve ridden past this gate three times today.",
+      "Is the road that bad, or are you lost?"
+    ],
+    "lines": [
+      "오늘만 이 문 앞을 세 번 지나가셨어요.",
+      "길이 그렇게 험해요, 아니면 길을 잃으셨어요?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "I— the horse—",
+      "…It’s lost. I’m only on it."
+    ],
+    "lines": [
+      "저, 그게, 말이—",
+      "…말이 길을 잃었소. 나는 타고 있을 뿐이고."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "It looked fine the first time.",
+      "Nearly ate a charcoal cart. But fine."
+    ],
+    "lines": [
+      "처음엔 멀쩡해 보이던데요.",
+      "숯 수레를 먹을 뻔하긴 했지만. 멀쩡했어요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "That was— the cart was in the wrong—",
+      "Kim Seohyun. That’s— I should have said that first. Is it rude? I don’t know the rule for this."
+    ],
+    "lines": [
+      "그건— 수레가 엉뚱한 데—",
+      "김서현이오. 그게— 그 말부터 했어야 했는데. 무례한 거요? 이럴 땐 법도를 모르겠소."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "There isn’t one. That’s why it’s fun.",
+      "And I know who you are. Everyone on this street knows who you are."
+    ],
+    "lines": [
+      "법도 같은 거 없어요. 그래서 재밌는 거고.",
+      "그리고 누군지 알아요. 이 거리 사람은 다 알아요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…Ah.",
+      "The Gaya one."
+    ],
+    "lines": [
+      "…아.",
+      "가야 사람."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "The one with the nice horse.",
+      "Then let it get lost again tomorrow. Same hour."
+    ],
+    "lines": [
+      "말 좋은 사람.",
+      "그럼 내일도 길 잃게 하세요. 같은 시각에."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "Manmyung’s maid",
+    "chip": "#7a7a82",
+    "en": [
+      "Agassi—!"
+    ],
+    "lines": [
+      "아가씨—!"
+    ]
+  },
+  {
+    "kind": "scene",
+    "label": "Getting Lost",
+    "ko": "길 잃기"
+  },
+  {
+    "kind": "p",
+    "html": "It gets lost every day for a season. The maid starts timing her errands by it. The charcoal man learns to pull over. Nobody sends a matchmaker, because a matchmaker would have to walk into Suulbu’s hall and say the word <i>Gaya</i> out loud.",
+    "ko": "말은 한 철 내내 날마다 길을 잃는다. 하녀는 심부름 시간을 거기에 맞추기 시작하고, 숯장수는 미리 비켜서는 법을 배운다. 아무도 중매쟁이를 보내지 않는다. 중매쟁이라면 수을부의 대청에 들어가 <i>가야</i>라는 말을 소리 내어 해야 할 테니까."
+  },
+  {
+    "kind": "p",
+    "html": "Some mornings the cart is pulled by a thin boy from Saryang ward instead, whose mother is too sick to walk it. He is very good-looking and laughs a beat after everybody else. He sees everything on that street and tells nobody, which makes him the only person on it who doesn’t.",
+    "ko": "어떤 아침엔 사량부에서 온 마른 소년이 대신 수레를 끈다. 어미가 앓아서 못 끄는 날이다. 아주 잘생겼고, 남들보다 한 박자 늦게 웃는다. 그 거리의 모든 걸 보고 아무한테도 말하지 않는다. 그 거리에서 그러는 사람은 그 아이 하나다."
+  },
+  {
+    "kind": "p",
+    "html": "By the end of summer they have stopped pretending about the horse. He leaves it at the bottom of the lane and walks up, and she talks to him through the side gate with the bar still down, because a gate with the bar down is technically closed.",
+    "ko": "여름이 끝날 무렵엔 둘 다 말 핑계를 그만둔다. 그는 말을 골목 아래에 매어 두고 걸어 올라오고, 그녀는 빗장을 지른 채로 쪽문 너머로 그와 이야기한다. 빗장이 걸려 있으면, 엄밀히 말해 문은 닫힌 것이니까."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "You’re late.",
+      "The horse?"
+    ],
+    "lines": [
+      "늦었어요.",
+      "말이요?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "The horse is fine. The horse is better than me.",
+      "They kept us at the Ministry. There’s talk of a posting."
+    ],
+    "lines": [
+      "말은 멀쩡하오. 나보다 낫소.",
+      "병부에서 붙잡았소. 임지 얘기가 있소."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Where?"
+    ],
+    "lines": [
+      "어디요?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "They haven’t said. North, probably. They send Gaya men north.",
+      "Somewhere with a lot of Goguryeo and not much—"
+    ],
+    "lines": [
+      "아직 말 안 했소. 아마 북쪽이겠지. 가야 사람은 북으로 보내니.",
+      "고구려는 많고, 별로 없는 데—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Not much me."
+    ],
+    "lines": [
+      "나는 별로 없고."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…I was going to say not much rice."
+    ],
+    "lines": [
+      "…쌀이 별로 없다고 하려 했소."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Liar."
+    ],
+    "lines": [
+      "거짓말."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "She reaches through the gap above the bar and takes hold of his collar, to make a point about lateness. Neither of them remembers the point afterwards.",
+    "ko": "그녀는 빗장 위 틈으로 손을 뻗어 그의 옷깃을 움켜쥔다. 늦은 걸 따지려고. 나중에 둘 다 뭘 따지려 했는지 기억하지 못한다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#3E8EF0",
+    "person": "seohyeon",
+    "lines": [
+      "아가씨— 빗장이 아직 걸려 있소."
+    ],
+    "en": [
+      "Agassi— the bar’s still down."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "알아요. 그거 하나 때문에 당신이 아직 거기 서 있는 거예요."
+    ],
+    "en": [
+      "I know. It’s the only reason you’re still on that side of it."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "They keep the bar down all summer. It is the hardest work either of them has ever done.",
+    "ko": "둘은 여름 내내 빗장을 걸어 둔다. 둘 다 평생 해 본 일 중에 제일 힘든 일이다."
+  },
+  {
+    "kind": "p",
+    "html": "The posting comes in the autumn: governor of <b>Manno</b>, a county far up the Goguryeo road, a wooden wall and a granary and a great many hills that change hands. He comes to the side gate with the seal still in his sleeve.",
+    "ko": "임지는 가을에 정해진다. 고구려로 가는 길 저 위쪽 고을 <b>만노</b>의 태수. 나무 성벽 하나, 곳간 하나, 그리고 주인이 자꾸 바뀌는 수많은 언덕. 그는 관인을 아직 소매에 넣은 채 쪽문으로 온다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "Manno.",
+      "It’s— a long way. Ten days if the passes are open. The house is small. I haven’t seen it, but they said small, and the way they said it—",
+      "I’m asking badly. I’m asking if you would—"
+    ],
+    "lines": [
+      "만노라 하오.",
+      "멀— 멀리 있소. 고개가 열려 있으면 열흘. 관사는 작소. 보진 못했지만 작다고 하더이다, 그 말투가 영—",
+      "말을 엉망으로 하고 있소. 내 말은, 혹시 그대가—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Yes."
+    ],
+    "lines": [
+      "네."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "—come with— I haven’t finished."
+    ],
+    "lines": [
+      "—같이— 아직 말 안 끝났소."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Then finish. It’s still yes."
+    ],
+    "lines": [
+      "그럼 끝내세요. 그래도 네예요."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "The maid tells nobody. The charcoal man tells everybody. Her father knows by the next morning.",
+    "ko": "하녀는 아무한테도 말하지 않는다. 숯장수는 모두에게 말한다. 이튿날 아침이면 그녀의 아버지가 안다."
+  },
+  {
+    "kind": "scene",
+    "label": "Prince Suulbu’s Hall",
+    "ko": "수을부 왕자의 대청"
+  },
+  {
+    "kind": "p",
+    "html": "Prince Suulbu takes the news sitting down, the way he takes most things, without looking up from his cup. He is a king’s son and the Cloud King’s brother, and he has never once in his life been the one left standing. Since the winter before last he has also been High Councillor, which means the Harmony Council meets in his hall, and he chooses the tea.",
+    "ko": "수을부 왕자는 대부분의 일을 받아들이듯 그 소식도 앉은 채로, 잔에서 눈도 떼지 않고 받는다. 그는 임금의 아들이고 구름왕의 아우이며, 평생 한 번도 서 있는 쪽이었던 적이 없다. 재작년 겨울부터는 상대등이기도 하다. 그러니 화백회의가 그의 대청에서 열리고, 차도 그가 고른다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "앉아라."
+    ],
+    "en": [
+      "Sit down."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "서 있을게요, 아버지. 금방 갈 거예요."
+    ],
+    "en": [
+      "I’d rather stand, Father. I won’t be long."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "숯장수가 온 동네에 떠들고 다닌다. 내 딸이 밤마다 쪽문 너머로 사내랑 얘기한다고.",
+      "나는 청지기한테 들었고, 청지기는 찬모한테, 찬모는 숯장수한테 들었다. 이제 내 집 일을 그렇게 알게 됐구나."
+    ],
+    "en": [
+      "The charcoal seller has been telling the whole street that my daughter talks to a man through the side gate every night.",
+      "I heard it from the steward, who heard it from the cook, who heard it from the charcoal seller. That is how I learn about my own house now."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "그럼 부엌에서 진지를 좀 더 드세요. 여름 내내였어요."
+    ],
+    "en": [
+      "Then you should eat in the kitchen more. It’s been all summer."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "무력의 아들.",
+      "이 도성 그 많은 집 중에. 숙부께서 칙령까지 써 주셔야 했던 그 집."
+    ],
+    "en": [
+      "Muryuk’s boy.",
+      "Of every house in this city. The one my uncle had to write an edict for."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "그 사람 북쪽 만노로 발령 났어요. 같이 가자 했고, 간다고 했어요.",
+      "아버지가 숯장수 말고 저한테서 들으셨으면 해서요."
+    ],
+    "en": [
+      "He’s been posted north, to Manno. He asked me to go with him, and I said yes.",
+      "I wanted you to hear it from me. Not from the charcoal."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "그럼 너도 내게서 들어라. 넌 아무 데도 안 간다.",
+      "뒤채로 데려가라. 그리고 그 쪽문에 더 무거운 빗장을 걸어라."
+    ],
+    "en": [
+      "Then hear this from me. You’re going nowhere.",
+      "Take her to the back house. And put a heavier bar on that side gate."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He shuts her in a house apart at the back of the compound and sets men on the door. For a few weeks the city talks about nothing else. All the two of them have actually done is talk through a gate. Nobody believes that.",
+    "ko": "그는 딸을 집 뒤편 별채에 가두고 문에 사람을 세운다. 몇 주 동안 도성은 그 이야기만 한다. 실은 두 사람이 한 거라곤 대문 너머로 얘기한 것뿐이다. 아무도 그 말을 믿지 않는다."
+  },
+  {
+    "kind": "scene",
+    "label": "The Gaya house · the gate, again",
+    "ko": "가야 집 · 다시 대문"
+  },
+  {
+    "kind": "p",
+    "html": "Then Suulbu does the thing he has done once before. He goes to the Gaya house himself. Muryuk is very old now. He comes to the gate on a stick, in the helm.",
+    "ko": "그러고는 수을부이 전에 한 번 했던 일을 한다. 직접 가야 집으로 간다. 무력은 이제 아주 늙었다. 지팡이를 짚고, 투구를 쓰고 대문으로 나온다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "네 아들.",
+      "열 해 전엔 내 말이더니. 이번엔 내 딸이다."
+    ],
+    "en": [
+      "Your boy.",
+      "Ten years ago it was my horse. Now it’s my daughter."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……예, 나리."
+    ],
+    "en": [
+      "…Yes, my lord."
+    ],
+    "speaker": "🙇"
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "그게 다냐? 네 아들이 내 집 담을 넘었는데 ‘예, 나리’?"
+    ],
+    "en": [
+      "That’s all? Your son climbed into my house, and you say “yes, my lord”?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……나리 댁에 예순 해를 해 온 말입니다.",
+      "말씨 없이 하는 말은 그것뿐이라서요."
+    ],
+    "en": [
+      "…I have said it to your family for sixty years, my lord.",
+      "It is the only thing I say without an accent."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "품계는 옷이다, 무력. 숙부께서 한 벌 빌려주신 거고.",
+      "칙령 들먹이지도 마라. 너희 피에 문을 닫지 말라 했지, 내 딸을 내주라고는 안 했다."
+    ],
+    "en": [
+      "Rank is a coat, Muryuk. My uncle lent you one.",
+      "And don’t quote me the edict. It says I mayn’t shut my door on your blood. It doesn’t say I have to hand it my daughter."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Muryuk bows. He holds it until the royal sedan chair has gone round the corner. Then he goes in and puts his hand on the helm on its stand, the way other men touch an altar.",
+    "ko": "무력은 절을 한다. 왕족의 가마가 모퉁이를 돌아 사라질 때까지 허리를 펴지 않는다. 그러고는 안으로 들어가, 다른 사내들이 제단을 만지듯 받침대 위의 투구에 손을 얹는다."
+  },
+  {
+    "kind": "scene",
+    "label": "The House Apart",
+    "ko": "별채"
+  },
+  {
+    "kind": "place",
+    "place": "locked_room",
+    "html": "The room her father locked.",
+    "ko": "아버지가 잠근 방."
+  },
+  {
+    "kind": "p",
+    "html": "The guards are two cousins off one of Suulbu’s farms, chosen because they cannot be bribed and cannot read, and by the fourth night they have run out of things to say to each other.",
+    "ko": "경비는 수을부네 농장에서 데려온 사촌 둘이다. 매수가 안 되고 글을 못 읽어서 뽑혔다. 나흘째 밤이 되자 서로 할 말이 바닥난다."
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "First guard",
+    "chip": "#7a7a82",
+    "en": [
+      "Think he’ll come, then?"
+    ],
+    "lines": [
+      "올 것 같나?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "Second guard",
+    "chip": "#7a7a82",
+    "en": [
+      "The Gaya one? He apologises to his own horse.",
+      "He’s not coming over a wall."
+    ],
+    "lines": [
+      "가야 놈? 그놈 지 말한테도 미안타 카는 놈이다.",
+      "담 넘어올 위인이 아이제."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "First guard",
+    "chip": "#7a7a82",
+    "en": [
+      "I heard he leaves for the north day after tomorrow. First light."
+    ],
+    "lines": [
+      "모레 새벽에 북으로 떠난다 카던데."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "Second guard",
+    "chip": "#7a7a82",
+    "en": [
+      "Good. Then we go home."
+    ],
+    "lines": [
+      "잘됐네. 그라믄 우리도 집에 가고."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Inside, Manmyung has stopped eating to make a point and started again because the point was only hurting her. She has counted the boards in the ceiling. At the foot of the back wall, where the drain runs out, there is a gap, and she has been looking at it for three days the way her father looks at furniture.",
+    "ko": "안에서 만명은 시위하느라 밥을 끊었다가, 그 시위가 저만 아프게 한다는 걸 알고 다시 먹기 시작했다. 천장 널빤지도 다 세어 보았다. 뒷담 아래, 도랑물이 빠져나가는 자리에 틈이 하나 있다. 그녀는 사흘째 그 틈을, 아버지가 가구를 보듯 쳐다보고 있다."
+  },
+  {
+    "kind": "p",
+    "html": "On the last night the sky comes down on the door. First the white — a sheet of it, no thunder yet, the whole house-apart printed on the inside of the eye. Then the sound arrives, late and huge, and the timber door splits down the iron bar as if someone had taken an axe to the lock. The smell is burned pine and wet dust. The two cousins do what men do when heaven picks the house they are guarding. They run.",
+    "ko": "마지막 밤, 하늘이 그 문 위로 내려온다. 먼저 하얗다. 천둥은 아직이다. 별채 안이 눈꺼풀 뒤에 그대로 찍힌다. 그다음에 소리가 온다. 늦고, 크다. 나무문이 쇠빗장 따라 갈라진다. 누가 자물쇠에 도끼를 댄 것처럼. 냄새는 탄 소나무와 젖은 먼지다. 하늘이 제가 지키는 집을 골라 내리치면 사람들이 하는 짓을, 사촌 둘도 한다. 도망친다."
+  },
+  {
+    "kind": "p",
+    "html": "In that noise Manmyung is already on her elbows in the drain. The gap is so low the good silk catches and tears. She stands up in the lane with mud to the wrists and walks toward the two horses as if she were going to market.",
+    "ko": "그 소란 속에 만명은 이미 팔꿈치로 도랑을 기고 있다. 틈이 너무 낮아 좋은 비단이 걸려 찢어진다. 그녀는 손목까지 진흙인 채로 골목에 일어서서, 장에 가는 여자처럼 말 두 마리 쪽으로 걸어간다."
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "Second guard",
+    "chip": "#7a7a82",
+    "en": [
+      "Heaven— it hit the door, it hit the DOOR—"
+    ],
+    "lines": [
+      "하늘이— 문을 쳤다, 문을 쳤다 안 카나—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "First guard",
+    "chip": "#7a7a82",
+    "en": [
+      "Leave it! It’s burning, leave the door, leave it—"
+    ],
+    "lines": [
+      "놔도라! 불붙었다, 문 놔도라, 놔두라꼬—"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He is at the bottom of the lane with two horses, because he has been there every one of the four nights, in case. He sees a shape come out of the drain on its elbows, stand up and walk toward him through the rain like a woman going to market.",
+    "ko": "그는 말 두 마리를 데리고 골목 아래에 있다. 나흘 밤 내내, 혹시나 해서 거기 있었다. 웬 형체 하나가 팔꿈치로 도랑을 기어 나와 일어서더니, 장에 가는 여자처럼 빗속을 걸어 그에게 온다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Don’t— don’t look at the dress.",
+      "Is the horse lost tonight?"
+    ],
+    "lines": [
+      "보지 마세요, 옷은—",
+      "오늘 밤에도 말이 길을 잃었어요?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "You— the lightning— are you hurt? Your hands—"
+    ],
+    "lines": [
+      "그대— 벼락이— 다쳤소? 손이—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "My hands are fine. Answer the question."
+    ],
+    "lines": [
+      "손 멀쩡해요. 물은 거나 대답해요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…No.",
+      "Tonight it knows exactly where it’s going."
+    ],
+    "lines": [
+      "…아니오.",
+      "오늘 밤엔 어디로 가는지 똑똑히 알고 있소."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "She kisses him before he can get her on the horse. Hard, in the rain, with drain-mud on her chin and both hands in his hair. The horses wait like men who have seen this before.",
+    "ko": "그가 그녀를 말에 올리기도 전에 그녀가 입을 맞춘다. 빗속에서, 세게, 턱에 도랑 진흙을 묻힌 채 두 손을 그의 머리칼에 넣고. 말 두 마리는 이런 걸 전에도 본 사내들처럼 기다린다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "en": [
+      "…There. Now we can go."
+    ],
+    "lines": [
+      "…됐어요. 이제 가요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "en": [
+      "Your father will send riders."
+    ],
+    "lines": [
+      "아버님이 사람을 보내실 거예요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "보내라 하세요. 만노 길부터 뒤질 거예요.",
+      "서문 너머 산에 숯 굽는 움막이 있어요. 숯장수가 알려 줬어요. 그 사람은 아무한테나 다 말해요."
+    ],
+    "en": [
+      "Let him. They’ll look on the Manno road first.",
+      "There’s a charcoal burner’s hut in the hills past the west gate. The charcoal man told me. He tells everybody everything."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#3E8EF0",
+    "person": "seohyeon",
+    "lines": [
+      "…다 계획했던 거요?"
+    ],
+    "en": [
+      "…You planned this."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "나흘 동안요. 달려요, 서현."
+    ],
+    "en": [
+      "For four days. Ride, Seohyun."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "They ride west in the rain, not north.",
+    "ko": "둘은 빗속을 북이 아니라 서쪽으로 달린다."
+  },
+  {
+    "kind": "p",
+    "html": "The hut has a roof, mostly, and a cold hearth, and a door that won’t shut. Nobody needs it to.",
+    "ko": "움막에는 지붕이 대충 있고, 식은 아궁이가 있고, 닫히지 않는 문이 있다. 닫을 필요도 없다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "사과 그만해요."
+    ],
+    "en": [
+      "Stop apologising."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#3E8EF0",
+    "person": "seohyeon",
+    "lines": [
+      "아무 말도 안 했소."
+    ],
+    "en": [
+      "I haven’t said anything."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "하려고 했잖아요."
+    ],
+    "en": [
+      "You were about to."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He gets the fire going with shaking hands. She has the wet silk off before it catches. This time there is no bar between them, and neither of them is careful at all.",
+    "ko": "그는 떨리는 손으로 불을 피운다. 불이 붙기도 전에 그녀는 젖은 비단을 벗어 던진다. 이번엔 둘 사이에 빗장이 없다. 둘 다 조금도 조심하지 않는다."
+  },
+  {
+    "kind": "p",
+    "html": "In the morning the rain has stopped, and they ride north. Behind them, two cousins are trying to explain a door to Prince Suulbu.",
+    "ko": "아침이 되자 비가 그치고, 둘은 북으로 달린다. 뒤에서는 사촌 둘이 수을부 왕자에게 문 이야기를 해명하느라 애쓰고 있다."
+  },
+  {
+    "kind": "scene",
+    "label": "Manno",
+    "ko": "만노",
+    "year": 594
+  },
+  {
+    "kind": "place",
+    "place": "mannogun",
+    "html": "A wooden wall, a granary, one door that shuts.",
+    "ko": "나무 성벽, 곳간, 닫히는 문 하나."
+  },
+  {
+    "kind": "p",
+    "html": "Manno is a wooden wall, a granary, a county office with a leaking roof, and hills that have changed hands more often than the clerks can keep up with. She learns the granary. He learns the hills. Neither of them learns to cook, and by the second month the clerk’s wife has taken pity on them.",
+    "ko": "만노는 나무 성벽 하나, 곳간 하나, 지붕 새는 관아 하나, 그리고 아전들이 따라잡지 못할 만큼 자주 주인이 바뀐 언덕들이다. 그녀는 곳간을 익히고, 그는 언덕을 익힌다. 둘 다 밥 짓는 법은 못 익혀서, 두 달째부터는 아전의 아내가 딱하게 여겨 챙겨 준다."
+  },
+  {
+    "kind": "p",
+    "html": "The county house has one room with a door that shuts. The clerks learn not to knock before noon.",
+    "ko": "관아에는 문이 닫히는 방이 하나 있다. 아전들은 정오 전에는 그 문을 두드리지 않는 법을 배운다."
+  },
+  {
+    "kind": "p",
+    "html": "He has a dream on a <i>gyeongjin</i> night and tells nobody for three weeks, because a Gaya man who dreams of stars coming down on him does not say so in a county office. Then, on a <i>sinchuk</i> night, she sits up in the dark and shakes him.",
+    "ko": "그는 <i>경진</i>일 밤에 꿈을 꾸고 삼 주 동안 아무에게도 말하지 않는다. 별이 제게 내려오는 꿈을 꾼 가야 사내는 관아에서 그런 말을 하지 않는 법이다. 그러다 <i>신축</i>일 밤, 그녀가 어둠 속에서 벌떡 일어나 그를 흔든다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Wake up. Wake up, I had— there was a boy.",
+      "In gold. Armour, all gold. He came in on a cloud, right into the hall, through the door like he owned the house. He looked at me."
+    ],
+    "lines": [
+      "일어나요. 일어나 봐요, 꿈에— 애가 있었어요.",
+      "금빛으로. 갑옷이 온통 금빛. 구름을 타고 들어왔어요, 대청으로, 제집인 것처럼 문으로 쑥. 날 쳐다봤어요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…I had one too. Three weeks ago.",
+      "Two stars. A red one and a yellow one. They came down on me. Not on the house. On me."
+    ],
+    "lines": [
+      "…나도 꿨소. 삼 주 전에.",
+      "별 둘이오. 붉은 놈 하나, 누런 놈 하나. 내게 내려왔소. 집이 아니라. 내게."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Three weeks.",
+      "Stars fell on you and you didn’t tell me for three weeks."
+    ],
+    "lines": [
+      "삼 주요.",
+      "별이 떨어졌는데 삼 주 동안 말을 안 했어요?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "I thought it might be the soup."
+    ],
+    "lines": [
+      "국 때문인 줄 알았소."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Pfft— the soup—",
+      "Come here, you. Come here."
+    ],
+    "lines": [
+      "푸핫— 국—",
+      "이리 와요, 당신. 이리 와."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "She was with child before they ever reached Manno. She is still with child the following spring, and the clerk’s wife, who has delivered half the county, stops coming to check and starts coming to stare.",
+    "ko": "만노에 닿기도 전에 그녀는 이미 아이를 가졌다. 그다음 봄에도 여전히 아이를 가진 채다. 고을 아이 절반을 받아 낸 아전의 아내는 살피러 오던 걸 그만두고 구경하러 오기 시작한다."
+  },
+  {
+    "kind": "p",
+    "html": "Word reaches Surabol before the spring rains do. A Sacred Bone daughter, with child, in a county house, and no wedding anyone was invited to. The city has been waiting for exactly this. Three banquets in a row talk about nothing else.",
+    "ko": "소문은 봄비보다 먼저 서라벌에 닿는다. 성골 집 딸이 아이를 뱄다. 시골 관아에서. 누구도 초대받은 적 없는 혼례로. 서라벌은 바로 이걸 기다리고 있었다. 연회 세 번이 내리 그 얘기뿐이다."
+  },
+  {
+    "kind": "p",
+    "html": "In Surabol, Prince Suulbu hears it at his own table.",
+    "ko": "서라벌에서 수을부 왕자는 그 소식을 제 밥상에서 듣는다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "누군지도 모를 사내의 아이를 배다니… 이 무슨 망신이냐!"
+    ],
+    "en": [
+      "Pregnant with an unknown man’s child… what a disgrace!"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7a7a82",
+    "speaker": "Suulbu’s steward",
+    "gender": "m",
+    "lines": [
+      "모를 사내라뇨, 나리? 여름 내내 온 동네가 그 사람이 대문 앞 지나가는 걸 봤는데요."
+    ],
+    "en": [
+      "Unknown, my lord? The whole street watched him ride past your gate all summer."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "sukhuljong",
+    "lines": [
+      "모르는 놈이다. 들어 본 적도 없다. 술이나 따라라."
+    ],
+    "en": [
+      "Unknown. I’ve never heard of him. Pour the wine."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "en": [
+      "They’re saying things in Surabol. About you. About— there was no wedding, and now—"
+    ],
+    "lines": [
+      "서라벌에서 말들이 많답니다. 당신에 대해. 그— 혼례도 없었는데, 이제—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "en": [
+      "Let them. They’re only saying what we did.",
+      "And we did it very well."
+    ],
+    "lines": [
+      "하라고 해요. 우리가 한 걸 말하는 것뿐인데.",
+      "그것도 아주 잘했고요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "The clerk’s wife",
+    "chip": "#7a7a82",
+    "en": [
+      "Twenty months, my lady.",
+      "I’ve had cows do it faster.",
+      "Either that child is something, or somebody counted wrong at the start, and I shan’t say which. You’re the governor’s."
+    ],
+    "lines": [
+      "스무 달입니더, 마님.",
+      "소도 이보다는 빠릅니더.",
+      "애가 보통이 아이거나, 처음부터 누가 셈을 틀렸거나. 어느 쪽인지는 말 안 할랍니더. 사또댁이시니까."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Say it. I want to hear you say it."
+    ],
+    "lines": [
+      "말해 봐요. 말하는 거 듣고 싶어요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "The clerk’s wife",
+    "chip": "#7a7a82",
+    "en": [
+      "…The child’s something."
+    ],
+    "lines": [
+      "…애가 보통이 아입니더."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "The boy is born in the county house at Manno. The clerk’s wife turns him over to wash him. She stops with the cloth in her hand.",
+    "ko": "아이는 만노의 관아 집에서 태어난다. 아전의 아내가 씻기려고 아이를 뒤집는다. 그리고 천을 든 채 멈춘다."
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "The clerk’s wife",
+    "chip": "#7a7a82",
+    "en": [
+      "My lady. His back.",
+      "Look— there. There’s seven. Like someone pressed them in with a thumb."
+    ],
+    "lines": [
+      "마님. 등이예.",
+      "보이소— 여기. 일곱 개라예. 누가 엄지로 꾹꾹 찍은 거맨치로."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "Seven what?"
+    ],
+    "lines": [
+      "일곱 개 뭐 말이오?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "The clerk’s wife",
+    "chip": "#7a7a82",
+    "en": [
+      "Stars, sir. The Dipper. On a baby.",
+      "I’m going to sit down."
+    ],
+    "lines": [
+      "별입니더, 나리. 북두칠성. 갓난애 등에.",
+      "저 좀 앉을랍니더."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#c98bb9",
+    "person": "manmyung",
+    "lines": [
+      "앉는다면서요. 앉아요.",
+      "눈은 먼 옛날 어느 할머니 눈이래요. 서현 말로는 배가 한 척 있었대요."
+    ],
+    "en": [
+      "Sit, then. Sit.",
+      "And his eyes are some grandmother’s, a long way back. Seohyun says there was a boat."
+    ]
+  },
+  {
+    "kind": "quote",
+    "hanja": "庾信公以眞平王十七年乙卯生，稟精七曜，故背有七星文，又多神異。",
+    "html": "Lord Yushin was born in the <i>eulmyo</i> year, the seventeenth of King Jinpyung. He was endowed with the essence of the Seven Luminaries, and so his back bore a pattern of seven stars; and there were many other wonders about him.",
+    "ko": "유신공은 진평왕 17년 을묘에 태어났다. 칠요의 정기를 타고났으므로 등에 일곱 별 무늬가 있었고, 또 신이한 일이 많았다.",
+    "source": "Samguk Yusa (三國遺事) bk. 1, Marvels — Kim Yushin"
+  },
+  {
+    "kind": "p",
+    "html": "Naming him takes longer than carrying him did.",
+    "ko": "이름 짓는 데는 품는 것보다 더 오래 걸린다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "Gyungjin.",
+      "I want to call him for the night I dreamed. That’s where he came from."
+    ],
+    "lines": [
+      "경진.",
+      "꿈꾼 그 밤 이름으로 부르고 싶소. 그 밤에서 왔으니."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "You can’t name a child after a day.",
+      "Even I know that, and I ran away from all my tutors."
+    ],
+    "lines": [
+      "날로 애 이름을 지을 순 없어요.",
+      "선생님들한테서 죄다 도망친 나도 그건 알아요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "I know. I know.",
+      "But <i>gyeong</i>, written down, looks like <i>yu</i>. And <i>jin</i>, said quickly, is nearly <i>sin</i>.",
+      "And there was a man in the old books. A scholar. Yu Xin. A good man, they say.",
+      "So it isn’t a day. It’s a scholar. Nobody can say anything."
+    ],
+    "lines": [
+      "아오. 아오.",
+      "그런데 <i>경</i>(庚)을 써 놓으면 <i>유</i>(庾)랑 닮았소. <i>진</i>(辰)은 빨리 말하면 <i>신</i>(信)이랑 거의 같고.",
+      "그리고 옛 책에 그런 사람이 있었소. 선비요. 유신. 어진 사람이었다 하더이다.",
+      "그러니 날이 아니라 선비 이름이오. 아무도 뭐라 못 하오."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "You’ve been working on this for months."
+    ],
+    "lines": [
+      "이거 몇 달을 궁리했죠."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…Twenty."
+    ],
+    "lines": [
+      "…스무 달."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "They bury the afterbirth on the high hill behind the county, the way you do with a child you mean to keep, and the hill keeps the name.",
+    "ko": "그들은 아이의 태를 고을 뒤 높은 산에 묻는다. 꼭 붙들어 두고 싶은 아이에게 하듯이. 그리고 산이 그 이름을 지닌다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Yushin.",
+      "Say it to my father, next time you’re in Surabol. Say it at his gate."
+    ],
+    "lines": [
+      "유신.",
+      "다음에 서라벌에 가시거든 우리 아버지께 말씀하세요. 그 문 앞에서."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…He won’t open it."
+    ],
+    "lines": [
+      "…열어 주지 않으실 거요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Then say it louder."
+    ],
+    "lines": [
+      "그럼 더 크게 하세요."
+    ]
+  },
+  {
+    "kind": "scene",
+    "label": "Manno · the cart from Surabol",
+    "ko": "만노 · 서라벌에서 온 수레",
+    "year": 595
+  },
+  {
+    "kind": "p",
+    "html": "A letter goes south with the name. The answer comes north in a cart. Under four blankets and the helm, the cart has Muryuk in it.",
+    "ko": "이름을 적은 편지가 남으로 간다. 답은 수레에 실려 북으로 온다. 담요 네 겹과 투구 아래, 수레 안에 무력이 있다."
+  },
+  {
+    "kind": "p",
+    "html": "The physicians told him not to travel. He told them he had come to Silla in a cart and could leave it in one. Ten days up the Goguryeo road, and he faces front the whole way.",
+    "ko": "의원들은 길을 나서지 말라 했다. 그는 수레 타고 신라에 왔으니 수레 타고 떠나도 된다고 했다. 고구려 가는 길로 열흘. 가는 내내 그는 앞만 본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "아버지— 이러시면— 고개가— 누가 보내 드렸습니까—"
+    ],
+    "en": [
+      "Father— you shouldn’t have— the passes— who let you—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……",
+      "이리 도."
+    ],
+    "en": [
+      "……",
+      "Give him here."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Manmyung lays the baby in his arms. The old man looks at him for a long time, the way he once looked at a boy who sat him in the mud with a rope and never quite said it right. His mouth moves. Seohyun leans in.",
+    "ko": "만명이 아기를 그의 품에 눕힌다. 노인은 오래도록 아기를 본다. 한때 밧줄로 자기를 진흙에 앉히고, 제대로 미안하단 소리를 못 했던 소년을 보던 그 눈으로. 입술이 움직인다. 서현이 몸을 숙인다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "muryuk",
+    "lines": [
+      "……유신아……"
+    ],
+    "en": [
+      "…Yushin…"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He says nothing else. The baby has hold of his finger, and keeps it.",
+    "ko": "그는 더 말하지 않는다. 아기가 그의 손가락을 쥐고, 놓지 않는다."
+  },
+  {
+    "kind": "p",
+    "html": "Someone is standing in the doorway who did not come in by it. A man in black with a red book, polite as a clerk. He says the name three times and cuts something nobody else in the room can see.",
+    "ko": "문간에 누군가 서 있다. 그 문으로 들어오지 않은 사람이다. 붉은 책을 든 검은 옷의 사내, 아전처럼 공손하다. 그는 이름을 세 번 부르고, 방 안의 누구도 볼 수 없는 무언가를 끊는다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "kangrim",
+    "lines": [
+      "김무력. 김무력. 김무력.",
+      "……저하. 질문 하나, 그리고 걷읍시다.",
+      "가야의 마지막 왕자였소, 신라의 첫 할아버지였소?"
+    ],
+    "en": [
+      "Kim Muryuk. Kim Muryuk. Kim Muryuk.",
+      "…Your Highness. One question, then we walk.",
+      "Were you the last prince of Gaya, or the first grandfather of Silla?"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Nobody has called him Highness in sixty years. He doesn’t answer. He looks back, once, at the baby in his son’s arms.",
+    "ko": "예순 해 동안 아무도 그를 저하라 부르지 않았다. 그는 대답하지 않는다. 아들 품의 아기를, 한 번, 돌아본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "kangrim",
+    "lines": [
+      "……둘 다로군. 둘 다 적겠소.",
+      "갑시다, 저하. 이제 앞을 보셔도 되오."
+    ],
+    "en": [
+      "…Both, then. I’ll write both.",
+      "Come, Highness. You can face front now."
+    ]
+  },
+  {
+    "kind": "verse",
+    "color": "#4a4a58",
+    "person": "muryuk",
+    "lines": [
+      "김무력, 바닷가 나라 왕자님",
+      "나라 잃고 신라 손을 잡았네",
+      "어허 어허, 잘 가거라",
+      "하얀 머리에 높은 고깔 쓰고",
+      "사라진 나라 쪽만 돌아봤네",
+      "어허 어허, 잘 가거라",
+      "손자를 안은 건 숨 한 번 동안",
+      "그 숨 한 번 안고 떠나가네",
+      "어허 어허, 잘 가거라"
+    ],
+    "en": [
+      "Kim Muryuk, prince of the sea-land,",
+      "lost his kingdom, took Silla’s hand.",
+      "Eo-heo, eo-heo, off you go",
+      "Tall cone hat on his old grey head,",
+      "looking back where his kingdom fled.",
+      "Eo-heo, eo-heo, off you go",
+      "He held his grandson for one breath,",
+      "and kept that breath all the way to death.",
+      "Eo-heo, eo-heo, off you go"
+    ],
+    "refrain": [
+      2,
+      5,
+      8
+    ],
+    "title": "Muryuk, the Last Prince",
+    "titleKo": "마지막 왕자 무력"
+  },
+  {
+    "kind": "card",
+    "person": "muryuk",
+    "tab": "epitaph",
+    "caption": "Kim Muryuk, the last prince of Gaya and the first grandfather of Silla.",
+    "ko": "가야의 마지막 왕자이자 신라의 첫 할아버지, 김무력."
+  },
+  {
+    "kind": "scene",
+    "label": "The Name at the Gate",
+    "ko": "문 앞의 이름"
+  },
+  {
+    "kind": "p",
+    "html": "He takes his father home to Surabol to bury him. On the way back from the grave he stops at Suulbu’s gate and says the name, loudly, to a street that has stopped to listen. The gate does not open. A steward comes out instead.",
+    "ko": "그는 아버지를 서라벌로 모셔 가 묻는다. 무덤에서 돌아오는 길에 수을부의 문 앞에 서서 그 이름을 크게 말한다. 거리가 걸음을 멈추고 듣는다. 문은 열리지 않는다. 대신 청지기가 나온다."
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "Suulbu’s steward",
+    "chip": "#7a7a82",
+    "en": [
+      "His lordship is unwell.",
+      "He expects to be unwell for some years. He asked me to say it in exactly those words."
+    ],
+    "lines": [
+      "나리께서 편찮으십니다.",
+      "앞으로 몇 해는 편찮으실 것 같다 하십니다. 꼭 이 말 그대로 전하라 하셨습니다."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "Tell him—",
+      "Tell him the boy has his mother’s mouth.",
+      "He’ll know what that means."
+    ],
+    "lines": [
+      "전해 주시오—",
+      "아이가 제 어미 입을 닮았다고.",
+      "무슨 뜻인지 아실 거요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "Suulbu’s steward",
+    "chip": "#7a7a82",
+    "en": [
+      "…I’ll tell him, sir.",
+      "He won’t like it."
+    ],
+    "lines": [
+      "…전하겠습니다, 나리.",
+      "좋아하시진 않을 겁니다."
+    ]
+  },
+  {
+    "kind": "section",
+    "label": "Cavern",
+    "ko": "동굴"
+  },
+  {
+    "kind": "scene",
+    "label": "The Spring",
+    "ko": "샘",
+    "weather": "cavern"
+  },
+  {
+    "kind": "p",
+    "html": "He rides home the long way because he does not want to arrive yet. The road goes over a ridge beyond the city that nobody uses, and by noon he wants water more than he has ever wanted a shrine. When heat breathes out of the hillside he calls it a spring and gets down.",
+    "ko": "그는 아직 도착하고 싶지 않아서 먼 길로 돌아간다. 길은 도성 너머 아무도 쓰지 않는 능선을 넘고, 한낮이 되자 그는 어느 사당보다도 물이 간절하다. 산허리에서 열기가 훅 뿜어져 나오자 그는 그것을 샘이라 부르고 말에서 내린다."
+  },
+  {
+    "kind": "p",
+    "html": "Under the hill three sisters keep the heat in the stone, the water in the dark and the moss on the roots: <b>Golhwa</b>, <b>Hyullé</b>, and <b>Narim</b>, the eldest, who also keeps the rules. They have gone centuries without a man coming down to them, and the hill has just told them about hooves on the road.",
+    "ko": "언덕 아래에서 세 자매가 돌 속의 열기와 어둠 속의 물과 뿌리 위의 이끼를 지킨다. <b>골화</b>, <b>혈례</b>, 그리고 규칙까지 지키는 맏이 <b>나림</b>. 몇백 년째 사내 하나 내려온 적이 없는데, 방금 언덕이 길 위의 말발굽 소리를 일러 주었다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Hooves! Unni. Unni, hooves. Someone stopped."
+    ],
+    "lines": [
+      "말발굽! 언니. 언니, 말발굽. 누가 멈췄어."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "narim",
+    "chip": "#5fad6e",
+    "en": [
+      "Someone always stops. They drink, they piss in the stream, they leave."
+    ],
+    "lines": [
+      "누군 늘 멈춰. 마시고, 개울에 오줌 누고, 가."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "hyulle",
+    "chip": "#2eb8c4",
+    "en": [
+      "…This one’s crying a little."
+    ],
+    "lines": [
+      "…이 사람, 조금 울어."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Crying? Let me see— move your elbow—"
+    ],
+    "lines": [
+      "운다고? 보자— 팔꿈치 좀 치워—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Fox. Let’s be a fox. Foxes are fun."
+    ],
+    "lines": [
+      "여우. 여우 하자. 여우 재밌어."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "hyulle",
+    "chip": "#2eb8c4",
+    "en": [
+      "A grandmother. Then he drinks and bows and goes, and nobody… nobody gets hurt."
+    ],
+    "lines": [
+      "할머니. 그럼 마시고 절하고 가고, 아무도… 아무도 안 다쳐."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "narim",
+    "chip": "#5fad6e",
+    "en": [
+      "Try both. Then I pick."
+    ],
+    "lines": [
+      "둘 다 해 봐. 그다음에 내가 골라."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "They try both. The fox frightens the horse. The grandmother makes him kneel and offer her his waterskin with both hands, which is so polite that Golhwa groans out loud through the rock. Narim picks the last face herself: three young women in white jeogori over moss-green and ember and pale water-blue, sitting on the far rock as if they had always been there.",
+    "ko": "둘 다 해 본다. 여우는 말을 놀라게 한다. 할머니에게는 그가 무릎을 꿇고 두 손으로 물주머니를 바치는데, 그게 하도 공손해서 골화가 바위 너머로 소리 내어 앓는다. 마지막 얼굴은 나림이 직접 고른다. 이끼빛과 불씨빛과 연한 물빛 치마 위에 흰 저고리를 입은 젊은 여자 셋이, 처음부터 거기 있었던 것처럼 건너편 바위에 앉아 있다."
+  },
+  {
+    "kind": "p",
+    "html": "He is still calling it a spring when the ground gives under his boot. He comes down through warm dark into a bowl of black water under stone and stands up coughing in a cloud of steam, soaked to the skin, his sword still somehow in his hand.",
+    "ko": "그가 아직 샘이라고 부르고 있을 때 발밑의 땅이 꺼진다. 따뜻한 어둠을 지나 돌 아래 검은 물웅덩이로 떨어진 그는, 김이 자욱한 속에서 기침을 하며 일어선다. 흠뻑 젖은 채로, 어째선지 칼은 아직 손에 쥐고."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "Who— forgive me— who lives here?",
+      "I was looking for water. There was an old woman just now, up there—"
+    ],
+    "lines": [
+      "누구— 실례하오— 여기 누가 사시오?",
+      "물을 찾고 있었소. 방금 위에 웬 노파가—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "hyulle",
+    "chip": "#2eb8c4",
+    "en": [
+      "…That was me. Sorry."
+    ],
+    "lines": [
+      "…그거 저예요. 죄송해요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "narim",
+    "chip": "#5fad6e",
+    "en": [
+      "You found your water. All of it at once.",
+      "Put the sword down, please. You’ll cut the steam."
+    ],
+    "lines": [
+      "물은 찾으셨네요. 한꺼번에 전부.",
+      "칼 내려놓으세요. 김 베겠어요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Hi. I’m Golhwa. That’s unni. That’s Hyullé, she won’t say hello unless you look at her first.",
+      "What’s your name? Say it slow."
+    ],
+    "lines": [
+      "안녕. 난 골화. 저긴 언니. 저긴 혈례, 먼저 쳐다봐 줘야 인사해.",
+      "이름이 뭐야? 천천히 말해 봐."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "Kim. Kim Seohyun.",
+      "Are you… I mean. People?"
+    ],
+    "lines": [
+      "김. 김서현이오.",
+      "당신들은… 그러니까. 사람이오?"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "At the surname all three of them go quiet. <i>Kim</i> is the sound their own steam makes coming off the water, and nobody has ever said it to them as a name.",
+    "ko": "성을 듣는 순간 셋 다 조용해진다. <i>김</i>은 그들의 물에서 피어오르는 김이 내는 바로 그 소리인데, 누구도 그것을 이름으로 그들에게 말해 준 적이 없다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Kim.",
+      "Say it again. No, I heard you. It just… sticks."
+    ],
+    "lines": [
+      "김.",
+      "다시 말해 봐. 아니, 들었어. 그냥… 자꾸 붙어."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "narim",
+    "chip": "#5fad6e",
+    "en": [
+      "Kim.",
+      "…Then the house rules apply. Golhwa. Chin."
+    ],
+    "lines": [
+      "김.",
+      "…그럼 집 규칙대로 해요. 골화. 턱."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Golhwa is across the pool before he can step back, a wet hand under his jaw, turning his face to the light like a horse trader.",
+    "ko": "그가 물러서기도 전에 골화가 웅덩이를 건너와, 젖은 손으로 그의 턱을 받치고 말 장수처럼 얼굴을 빛 쪽으로 돌린다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Smooth. Shaved this morning? For who— oh. For the gate. Poor thing.",
+      "Chin passes, unni."
+    ],
+    "lines": [
+      "매끈해. 아침에 밀었네? 누구 보라고— 아. 그 문. 불쌍해라.",
+      "턱 통과, 언니."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "narim",
+    "chip": "#5fad6e",
+    "en": [
+      "Second rule. Nobody stands in this water dressed.",
+      "The steam doesn’t talk to cloth."
+    ],
+    "lines": [
+      "두 번째 규칙. 이 물엔 옷 입고 서 있는 사람 없어요.",
+      "김은 옷이랑은 말 안 해요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "I— I have a wife. She’s— we have a son, he’s—",
+      "I’m sorry. I should have said that first."
+    ],
+    "lines": [
+      "나는— 아내가 있소. 그 사람이— 아들도 있소, 이제—",
+      "미안하오. 그 말부터 했어야 했는데."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "We didn’t ask about her."
+    ],
+    "lines": [
+      "그 사람 얘긴 안 물어봤는데."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "hyulle",
+    "chip": "#2eb8c4",
+    "en": [
+      "…You can turn around. We won’t— we won’t look."
+    ],
+    "lines": [
+      "…돌아서셔도 돼요. 저희— 안 볼게요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Speak for yourself."
+    ],
+    "lines": [
+      "너나 그래."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He turns his back, takes off the wet clothes and folds them badly on a rock, because he does not know what else to do with his hands. Hyullé does not look, mostly. Golhwa does not pretend. Narim waits until he is in the water to the chest and then lets out a breath, which nobody remarks on.",
+    "ko": "그는 등을 돌리고 젖은 옷을 벗어 바위 위에 서툴게 갠다. 손을 달리 어디 둘지 몰라서. 혈례는 대체로 안 본다. 골화는 안 보는 척도 안 한다. 나림은 그가 가슴께까지 물에 들어갈 때까지 기다렸다가 숨을 내쉬는데, 아무도 그 얘기는 하지 않는다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "narim",
+    "chip": "#5fad6e",
+    "en": [
+      "Today we are the mouths the hill uses when it gets tired of being stone.",
+      "Ask it one thing, Kim. From the water. Once."
+    ],
+    "lines": [
+      "오늘 저희는 언덕이 돌인 게 지겨울 때 쓰는 입이에요.",
+      "하나만 물으세요, 김. 물속에서. 한 번."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He thinks of the gate. He thinks of a girl crawling through a hole in a wall in her good silk.",
+    "ko": "그는 그 문을 생각한다. 좋은 비단옷을 입고 담장 구멍으로 기어 나오던 여자를 생각한다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "I have a son. A few weeks old.",
+      "My father said his name once, and died. My wife’s father won’t say it at all. I stood at his gate this morning and said it for him, and—",
+      "I don’t know what to ask for him. I don’t know what you ask for a boy like that."
+    ],
+    "lines": [
+      "아들이 있소. 몇 주 됐소.",
+      "내 아버지는 그 이름을 한 번 부르시고 돌아가셨소. 아내의 아버지는 아예 입에 올리지 않소. 오늘 아침 그 문 앞에서 내가 대신 불렀는데—",
+      "그 애를 위해 뭘 물어야 할지 모르겠소. 그런 아이를 위해선 뭘 묻는 거요."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Their eyes go solid, green and cyan and ember, and the cave stops being funny.",
+    "ko": "그들의 눈이 통째로 물든다. 초록, 청록, 불씨. 동굴은 더 이상 우습지 않다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#0e7490",
+    "speaker": "The Hill",
+    "en": [
+      "The child will be the measure two countries cannot share.",
+      "They will call him a blade and mean a border.",
+      "When they say he was never of them, the blade will still be Kim.",
+      "He will cut more than he is given. Don’t ask who bleeds."
+    ],
+    "lines": [
+      "그 아이는 두 나라가 나눠 갖지 못하는 자가 될 거예요.",
+      "칼이라 부르고, 국경을 뜻할 거예요.",
+      "그들이 자기네 사람이 아니라 할 때에도, 그 칼은 김으로 남을 거예요.",
+      "받은 것보다 더 자를 거예요. 누가 피를 흘리는지는 묻지 말아요."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Narim puts a river stone in his hand, ordinary and grey and too warm for the cave.",
+    "ko": "나림이 그의 손에 강돌 하나를 쥐여 준다. 평범한 회색 돌인데, 동굴에 있기엔 너무 따뜻하다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "narim",
+    "chip": "#5fad6e",
+    "en": [
+      "Keep it in your sleeve.",
+      "When it’s warm, come back. Same road, same water. One question.",
+      "When you’re too old to climb, send the boy."
+    ],
+    "lines": [
+      "소매에 넣어 두세요.",
+      "따뜻해지면 다시 오세요. 같은 길, 같은 물. 질문 하나.",
+      "오를 수 없을 만큼 늙으면, 그 아이를 보내세요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Shaved."
+    ],
+    "lines": [
+      "면도하고."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…Can I tell his mother?"
+    ],
+    "lines": [
+      "…그 애 엄마한테 말해도 되겠소?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "golhwa",
+    "chip": "#e86820",
+    "en": [
+      "Tell her it was a spring.",
+      "Everybody says that."
+    ],
+    "lines": [
+      "샘이었다고 해.",
+      "다들 그렇게 말해."
+    ]
+  },
+  {
+    "kind": "scene",
+    "label": "Home to Manno",
+    "ko": "다시 만노"
+  },
+  {
+    "kind": "p",
+    "html": "He rides north with a stone in his sleeve that will not cool. At Manno, Manmyung is sitting up with the baby in the lamplight, and she asks him why he is a day late, and he tells her he found a spring.",
+    "ko": "그는 식지 않는 돌을 소매에 넣고 북쪽으로 달린다. 만노에서는 만명이 등불 아래 아기를 안고 앉아 있다. 왜 하루 늦었느냐고 그녀가 묻자, 그는 샘을 찾았다고 말한다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "A spring.",
+      "…You’re smiling like a man who found three."
+    ],
+    "lines": [
+      "샘이요.",
+      "…샘을 세 개쯤 찾은 사람처럼 웃고 계시네요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…It was a very good spring."
+    ],
+    "lines": [
+      "…아주 좋은 샘이었소."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Mm.",
+      "Your hair’s wet. It hasn’t rained in a week."
+    ],
+    "lines": [
+      "흠.",
+      "머리가 젖었네요. 일주일째 비 한 방울 안 왔는데."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Fatherhood does to him what thirty years of being the Gaya boy never did. He still apologises first. Now he finishes the sentence afterwards.",
+    "ko": "아비가 된 일은 서른 해 가야 녀석 노릇이 못 한 일을 그에게 해 놓는다. 그는 여전히 사과부터 한다. 다만 이제는 그다음 말을 끝까지 한다."
+  },
+  {
+    "kind": "section",
+    "label": "Yushin",
+    "ko": "유신"
+  },
+  {
+    "kind": "scene",
+    "label": "Fifteen",
+    "ko": "열다섯",
+    "year": 609
+  },
+  {
+    "kind": "p",
+    "html": "The boy grows up at the edge of things, in county houses on the northern road. There’s a younger brother, and two little sisters the house calls by baby names. They’ll grow up to cause a great deal of trouble over a skirt. One of them is Munhee.",
+    "ko": "아이는 변두리에서 자란다. 북쪽 길가 고을 관아들을 옮겨 다니며. 남동생 하나, 그리고 집안에서 아명으로 부르는 어린 누이 둘이 있다. 둘은 자라서 치마 한 벌을 두고 큰 소동을 일으킬 것이다. 그중 하나가 문희다."
+  },
+  {
+    "kind": "p",
+    "html": "At fifteen he is made a hwarang, and the boys who follow him start calling themselves the Dragon-Flower Band. Seohyun hears it from a clerk before he hears it from his son.",
+    "ko": "열다섯에 그는 화랑이 되고, 그를 따르는 아이들은 스스로를 용화향도라 부르기 시작한다. 서현은 그 소식을 아들보다 아전에게서 먼저 듣는다."
+  },
+  {
+    "kind": "p",
+    "html": "The morning Yushin leaves for Surabol, his father stops him at the gate of the county house to look at his headband.",
+    "ko": "유신이 서라벌로 떠나는 아침, 아버지가 관사 문간에서 그를 세워 머리띠를 본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "You’ve got it on crooked."
+    ],
+    "lines": [
+      "삐뚤게 맸구나."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "chip": "#4a8fe0",
+    "en": [
+      "It’s fine, Father."
+    ],
+    "lines": [
+      "괜찮습니다, 아버님."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "It’s crooked. Hold still.",
+      "In Surabol they’ll look at the headband before they look at you. They’ll look for anything."
+    ],
+    "lines": [
+      "삐뚤다. 가만있어.",
+      "서라벌에선 너보다 띠부터 볼 거다. 뭐든 찾으려고 볼 거야."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "chip": "#4a8fe0",
+    "en": [
+      "Because we’re Gaya."
+    ],
+    "lines": [
+      "가야 집안이라서요."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "…Because you’re new.",
+      "Mostly because you’re new."
+    ],
+    "lines": [
+      "…새로 와서지.",
+      "대개는, 새로 와서."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He reties it with both hands, too tight, and then does it a third time. Manmyung watches from the doorway and lets him.",
+    "ko": "그는 두 손으로 다시 맨다. 너무 꽉. 그러고는 세 번째로 또 맨다. 만명은 문간에서 지켜보며 그냥 둔다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "Let him go. He’ll be late for his own band."
+    ],
+    "lines": [
+      "보내 주이소. 지 무리한테 늦겠어예."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "chip": "#4a8fe0",
+    "en": [
+      "Mother—"
+    ],
+    "lines": [
+      "어머님—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "chip": "#c98bb9",
+    "en": [
+      "And stop at your grandfather’s gate on the way.",
+      "Don’t knock. Just let them see you."
+    ],
+    "lines": [
+      "가는 길에 외할아버지 댁 문 앞에 들러.",
+      "두드리진 말고. 그냥 보여 줘."
+    ]
+  },
+  {
+    "kind": "scene",
+    "label": "Surabol, the hwarang yard gate · Class 51’s first morning",
+    "ko": "서라벌, 화랑 연무장 문 · 오십일기의 첫 아침",
+    "year": 610
+  },
+  {
+    "kind": "place",
+    "place": "hwarang_gate",
+    "html": "The gate lets them in. Fathers stop here.",
+    "ko": "그 문이 들여보낸다. 아비들은 여기까지다."
+  },
+  {
+    "kind": "p",
+    "html": "Seohyun rides with him as far as the city, then as far as the yard, then as far as the yard gate and no further. Fathers are not allowed further.",
+    "ko": "서현은 도성까지 같이 간다. 그다음엔 연무장까지, 그다음엔 연무장 문까지. 거기서 더는 안 간다. 아비들은 거기까지다."
+  },
+  {
+    "kind": "story",
+    "label": "Just One Person",
+    "ko": "단 한 사람"
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "유신아. 네 이름이 어디서 왔는지 아느냐."
+    ],
+    "en": [
+      "Yushin. Do you know where your name comes from."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "아버님이 꿈꾸신 밤입니다. 그리고 옛 책의 선비요.",
+      "어머님께서 설마다 하시는 이야기입니다."
+    ],
+    "en": [
+      "The night you dreamed. And a scholar in an old book.",
+      "Mother tells it every New Year, Father."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "유신. 제 것이 아닌 조정을 섬겼고, 잘 섬겼다.",
+      "네 이름은 그 사람한테서 왔다."
+    ],
+    "en": [
+      "Yu Xin. He served a court that wasn’t his own, and served it well.",
+      "That’s who you’re named for."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "밤에서 온 이름인 줄 알았습니다."
+    ],
+    "en": [
+      "I thought I was named for a night."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "……그것도 맞다.",
+      "저 안에선 네가 자기들 사람이 아니라고 할 거다. 대개는 점잖게. 안 그러는 놈들도 있고.",
+      "따지지 마라. 그건 말로 이길 싸움이 아니다—"
+    ],
+    "en": [
+      "…That too.",
+      "In there they’ll tell you you’re not one of them. Mostly politely. Some won’t bother.",
+      "Don’t argue it. You can’t win that one with talk—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "그럼 무엇으로 이깁니까?"
+    ],
+    "en": [
+      "Then with what?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "……충성은 흙이다. 서 있는 자리에 심고, 계속 심는 거다.",
+      "그러다 보면 어느 날, 그게 딴 데서 옮겨 온 흙이란 걸 아무도 모르게 된다.",
+      "네 할아버지는 네가 이 문 앞에 서라고 무릎을 꿇으셨다. 똑바로 서라."
+    ],
+    "en": [
+      "…Loyalty is soil. You plant it where you’re standing, and you keep planting.",
+      "One day nobody can tell it was ever carried in from somewhere else.",
+      "Your grandfather knelt so you could stand at this gate. Stand properly."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "I learned that as a husband before I learned it as an officer.",
+      "Your mother’s father still won’t say my name. The street learned it from him. That’s a room, Yushin. A whole palace of rooms like that.",
+      "You will not win that room. You find one person in it. Just one. Who looks at you when the rest look at the gate.",
+      "That’s enough. That’s… that’s the whole job, actually."
+    ],
+    "lines": [
+      "그건 무관으로 알기 전에, 남편으로 알았다.",
+      "네 외할아버지는 아직 내 이름을 안 부르신다. 거리도 그분한테 배웠고. 그게 방이다, 유신아. 그런 방이 궁 하나에 가득해.",
+      "그 방을 이기진 못한다. 그 안에서 한 사람만 찾아라. 단 한 사람. 나머지는 문을 볼 때, 너를 보는 사람.",
+      "그러면 된다. 그게… 그게 사실 일의 전부다."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "chip": "#4a8fe0",
+    "en": [
+      "Who was yours."
+    ],
+    "lines": [
+      "아버님 것은 누구였습니까."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "Your mother.",
+      "Then you."
+    ],
+    "lines": [
+      "네 어머니다.",
+      "그다음엔 너고."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "유신아. 나는—",
+      "……"
+    ],
+    "en": [
+      "Yushin. I—",
+      "……"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "His hands go up to the headband again. Yushin catches them.",
+    "ko": "그의 손이 또 머리띠로 올라간다. 유신이 그 손을 잡는다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "아버님. 똑바릅니다. 세 번이나 매셨잖습니까."
+    ],
+    "en": [
+      "Father. It’s straight. You did it three times."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "……그랬지.",
+      "가거라, 그럼. 우리를 자랑스럽게 해 다오, 아들아."
+    ],
+    "en": [
+      "…So I did.",
+      "Go on, then. Make us proud, son."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "At the same gate, a quiet man is leaving a boy in a black headband without looking back. The two fathers pass in the lane and nod, the way men do who have just done the same hard thing badly. Neither knows the other’s name. Their sons will see to it that all Samhan does.",
+    "ko": "같은 문 앞에서, 말수 적은 사내 하나가 검은 머리띠를 맨 소년을 두고 뒤도 안 돌아보고 떠난다. 두 아비는 골목에서 엇갈리며 고개를 끄덕인다. 똑같이 어려운 일을 똑같이 서툴게 막 끝낸 사내들끼리 하듯이. 서로 이름은 모른다. 그 아들들이 삼한 전체가 알게 해 줄 것이다."
+  },
+  {
+    "kind": "scene",
+    "label": "Daeyang",
+    "ko": "대량주"
+  },
+  {
+    "kind": "map",
+    "year": 620,
+    "places": [
+      "daeya",
+      "geumgwan",
+      "surabol"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Seohyun rises the way a Gaya man rises in the capital. One rank at a time, each signed by someone who remembers the box. He takes hill forts from Goguryeo the way he courted his wife: the same road every day, slowly, until the other side stops pretending. By the end he is third rank in the kingdom. He governs the march that faces the enemy, from the fortress at Daeya.",
+    "ko": "서현은 가야 사람이 도읍에서 오르는 방식으로 오른다. 한 계단씩, 매번 그 상자를 기억하는 누군가의 서명을 받으며. 고구려의 산성은 아내에게 구애하던 식으로 뺏는다. 날마다 같은 길로, 천천히, 저쪽이 시치미를 그만둘 때까지. 마지막엔 나라의 셋째 품계에 이른다. 그는 대야성에 앉아 적과 마주한 변경을 다스린다."
+  },
+  {
+    "kind": "p",
+    "html": "In the evenings he walks the wall at Daeya. Baekje is a line of hills to the west that the sun goes down behind.",
+    "ko": "저녁이면 그는 대야성 성벽을 걷는다. 백제는 서쪽으로 늘어선 언덕들이고, 해가 그 뒤로 진다."
+  },
+  {
+    "kind": "dialogue",
+    "speaker": "A Daeya officer",
+    "chip": "#7a7a82",
+    "en": [
+      "They say this wall can’t be taken, sir."
+    ],
+    "lines": [
+      "이 성은 몬 뺏는다 캅니더, 나리."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "chip": "#3E8EF0",
+    "en": [
+      "They say that about— every wall, I think. I’ve heard it about four.",
+      "Just— keep the granary dry. And know whose hands the keys are in.",
+      "My wife ran the granary at Manno. She’d tell you the same. She’d tell you better."
+    ],
+    "lines": [
+      "그런 말은— 성마다 다 하더이다. 내가 들은 것만 넷이오.",
+      "그냥— 곳간이나 마르게 두시오. 열쇠가 누구 손에 있는지 알고.",
+      "만노에선 아내가 곳간을 맡았소. 같은 말을 할 거요. 나보다 잘."
+    ]
+  },
+  {
+    "kind": "scene",
+    "label": "Surabol · the torn coat",
+    "ko": "서라벌 · 뜯긴 옷고름",
+    "year": 625
+  },
+  {
+    "kind": "p",
+    "html": "Granaries are why he is in Surabol that spring. The palace wants the Daeya stores counted out loud, in person, by the man who keeps them. It takes three days. He spends the first two in corridors.",
+    "ko": "그해 봄 그가 서라벌에 와 있는 것도 곳간 때문이다. 궁에서는 대야성 곳간을, 맡은 사람이 직접 와서 소리 내어 셈하라 한다. 사흘이 걸린다. 처음 이틀은 복도에서 보낸다."
+  },
+  {
+    "kind": "p",
+    "html": "On the third afternoon he rides up the lane to his own gate and finds a horse tied at it. A good horse, with a magenta saddlecloth. The groom says it was there yesterday too. And the day before.",
+    "ko": "사흘째 오후, 제 집 골목을 올라오니 대문에 말 한 필이 매여 있다. 좋은 말이다. 자홍 안장 깔개를 얹었다. 마부 말로는 어제도 있었다. 그제도."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "The groom",
+    "gender": "m",
+    "lines": [
+      "어느 나리 말입니더. 바느질 때문에 오십니더."
+    ],
+    "en": [
+      "A gentleman’s, sir. Comes for the sewing."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "무슨 바느질."
+    ],
+    "en": [
+      "What sewing."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "The groom",
+    "gender": "m",
+    "lines": [
+      "그 나리 옷이 뜯어진다 캅니더.",
+      "날마다 그렇심더. 같은 옷이요."
+    ],
+    "en": [
+      "His coat, sir. It tears.",
+      "Every day, like. Same coat."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Seohyun looks at the horse for a long while. A horse that goes somewhere every day for a reason it can’t give: he has ridden one of those.",
+    "ko": "서현은 한참 그 말을 본다. 댈 수 없는 이유로 날마다 같은 데를 다니는 말. 그도 그런 말을 타 봤다."
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "I knew that horse. Not that one. The kind. Mine nearly ate a charcoal cart.",
+    "ko": "그 말을 알았소. 그 말 말고, 그런 말. 내 말은 숯 수레를 먹을 뻔했지."
+  },
+  {
+    "kind": "p",
+    "html": "He goes in through his own door in his riding boots, and stops. There is a young man on his floor in an underrobe, trying to stand up and bow at the same time. There is Munhee behind him with a needle. There is Yushin, looking at the rafters as if he had paid for them.",
+    "ko": "그는 승마 신을 신은 채 제 집 문으로 들어가다, 멈춘다. 마루에 젊은 사내가 속적삼 바람으로, 일어서는 동시에 절을 하려 애쓰고 있다. 그 뒤에 바늘을 든 문희. 그리고 서까래를 제 돈으로 올린 양 올려다보는 유신."
+  },
+  {
+    "kind": "dialogue",
+    "person": "chunchu",
+    "lines": [
+      "어르신— 송구합니다— 김춘추라 하옵니다.",
+      "옷이— 그게, 반칙이 있어서—"
+    ],
+    "en": [
+      "My lord— forgive me— Kim Chunchu, my lord.",
+      "The coat, it— there was a foul—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "앉으시오, 앉으시오.",
+      "다른 데까지 뜯어지겠소."
+    ],
+    "en": [
+      "Sit, sit. Please.",
+      "You’ll tear something else."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "munhee",
+    "lines": [
+      "아버지. 일찍 오셨네요."
+    ],
+    "en": [
+      "Father. You’re early."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "그렇나."
+    ],
+    "en": [
+      "Am I."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He knows the face. Everyone in Surabol does: the grandson of the king the council took the crown off. He takes the coat from his daughter because his hands want something to do, and holds the hem to the window. Unpicked, not torn. Neat, patient, stitch by stitch. His daughter’s work. He would know it anywhere.",
+    "ko": "그 얼굴을 안다. 서라벌 사람이면 다 안다. 화백이 왕관을 벗겨 낸 임금의 손자다. 그는 손이 할 일을 찾느라 딸에게서 옷을 받아 들고, 밑단을 창에 대어 본다. 뜯어진 게 아니라 풀어 놓은 거다. 얌전하고 참을성 있게, 한 땀 한 땀. 딸의 솜씨다. 어디서 봐도 알아본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "또 뜯어졌나."
+    ],
+    "en": [
+      "Torn again, is it."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "munhee",
+    "lines": [
+      "옷이 시원찮아서요, 아버지."
+    ],
+    "en": [
+      "It’s a poor coat, Father."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "음.",
+      "시원찮은 옷이네."
+    ],
+    "en": [
+      "Mm.",
+      "Poor coat."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "격구입니다, 아버지. 반칙이었습니다."
+    ],
+    "en": [
+      "Gyuku, Father. It was a foul."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "내 대청에서."
+    ],
+    "en": [
+      "In my hall."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "……심한 반칙이었습니다."
+    ],
+    "en": [
+      "…It was a bad foul."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He could say a great deal. He thinks of a side gate with the bar down, and a charcoal burner’s hut in the rain, and a man who had no idea what the rules were. He waits for the coat instead.",
+    "ko": "할 말은 많다. 빗장 걸린 쪽문이 떠오르고, 빗속의 숯막이 떠오르고, 규칙이 뭔지 하나도 몰랐던 사내가 떠오른다. 그는 대신 옷을 기다린다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "마저 꿰매라, 그라면.",
+      "저래 갖고 나가믄— 골목이— 마저 꿰매라."
+    ],
+    "en": [
+      "Finish it, then.",
+      "He can’t go out like— the lane’s— finish it."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "When the coat is on, he fixes the young man’s collar with both hands. It is the only thing he can think of to do that is not a question.",
+    "ko": "옷이 다시 걸리자 그는 두 손으로 젊은이의 옷깃을 바로잡는다. 질문이 아닌 일로는 그것밖에 떠오르지 않는다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "삐뚤었소.",
+      "……내려가는 길 조심하시오. 이맘때 숯 수레가 올라오오."
+    ],
+    "en": [
+      "Crooked.",
+      "…Mind the lane going down, sir. There’s a charcoal cart comes up about this hour."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "chunchu",
+    "lines": [
+      "……감사합니다, 어르신?"
+    ],
+    "en": [
+      "…Thank you, my lord?"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He goes out to see to a horse that does not need seeing to. Behind him, through a side door, Bohee is saying he knows, and Munhee is saying he doesn’t.",
+    "ko": "그는 돌볼 필요도 없는 말을 돌보러 나간다. 등 뒤 옆문 너머에서 보희는 아버지가 아신다 하고, 문희는 모르신다 한다."
+  },
+  {
+    "kind": "p",
+    "html": "Yushin follows him into the yard.",
+    "ko": "유신이 그를 따라 마당으로 나온다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "아버지— 그 옷 말입니다."
+    ],
+    "en": [
+      "Father— about the coat."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "니 발이가."
+    ],
+    "en": [
+      "Your foot, was it."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "……제 발입니다."
+    ],
+    "en": [
+      "…My foot."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "일부러."
+    ],
+    "en": [
+      "On purpose."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "제 발로는 안 들어옵니다, 아버지. 할아버지 왕관을 빼앗긴 집안입니다. 반길 만한 집엔 발을 안 들입니다.",
+      "누군가는 뭘 밟아야 했습니다."
+    ],
+    "en": [
+      "He wouldn’t come in on his own, Father. They took the crown off his grandfather. He doesn’t go into houses where he might be wanted.",
+      "Somebody had to step on something."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "니 어무이는 아나?"
+    ],
+    "en": [
+      "Does your mother know?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "아셔야 합니까?"
+    ],
+    "en": [
+      "Does she need to?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "내가 집에 닿기도 전에 알 끼다. 그 사람은 늘— 나에 대해서도 나보다 먼저 알았다."
+    ],
+    "en": [
+      "She’ll know before I’m home. She always— she knew about me before I did."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "막으실 겁니까?"
+    ],
+    "en": [
+      "Will you stop it?"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Seohyun doesn’t answer. He walks to the gate. The gentleman comes out behind him with his collar straight and his face the colour of his coat, mounts, looks back once at the window over the yard, and very nearly rides into a charcoal cart.",
+    "ko": "서현은 답하지 않는다. 대문으로 걸어간다. 뒤따라 귀공자가 옷깃을 바로 하고 옷 빛깔만큼 붉은 얼굴로 나와 말에 오른다. 마당 위 창을 한 번 돌아보고, 숯 수레를 들이받을 뻔한다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "The charcoal man",
+    "gender": "m",
+    "lines": [
+      "앞 보이소, 나리! 앞!"
+    ],
+    "en": [
+      "Eyes front, sir! Eyes front!"
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "Seohyun laughs. Out loud, at his own gate. Yushin has never heard the sound, and looks at his father as if the wall had spoken.",
+    "ko": "서현이 웃는다. 제 집 대문 앞에서, 소리 내어. 유신은 그 소리를 처음 듣는다. 담벼락이 말을 한 것처럼 아버지를 본다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "yushin",
+    "lines": [
+      "……아버지?"
+    ],
+    "en": [
+      "…Father?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "아이다. 아무것도.",
+      "고마 놔둬라. 다 놔둬라."
+    ],
+    "en": [
+      "Nothing. Nothing.",
+      "Leave it. Leave all of it."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He rides back to Daeya the next morning and talks to his wife about the granary all summer.",
+    "ko": "이튿날 아침 그는 대야로 돌아가, 여름 내내 아내에게 곳간 이야기만 한다."
+  },
+  {
+    "kind": "scene",
+    "label": "Daeya · a letter from Surabol",
+    "ko": "대야성 · 서라벌에서 온 편지"
+  },
+  {
+    "kind": "p",
+    "html": "The letter comes in Yushin’s hand, which means it is short.",
+    "ko": "편지는 유신의 글씨로 온다. 짧다는 뜻이다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "‘문희가 아이를 가졌는데 아비를 대지 않습니다. 정오에 격구 마당에 장작을 쌓겠습니다. 오지 마십시오.’",
+      "……오지 말라고?"
+    ],
+    "en": [
+      "“Munhee is with child and will not name the father. I am building a pyre in the gyuku yard at noon. Do not come.”",
+      "…Do not come?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "lines": [
+      "이리 줘 봐요.",
+      "……격구 마당이래요. 봄 내내 누구랑 격구를 했죠, 그 애가?"
+    ],
+    "en": [
+      "Give me that.",
+      "…The gyuku yard. Who’s he been playing gyuku with all spring?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "……자홍.",
+      "자홍 옷이오. 자꾸 뜯어지더군."
+    ],
+    "en": [
+      "…Magenta.",
+      "A magenta coat. It kept tearing."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "lines": [
+      "알았군요.",
+      "봄에 그 집에 있었고, 알았고, 와서는 나한테 곡식 얘기만 했어요."
+    ],
+    "en": [
+      "You knew.",
+      "You were in that house in the spring, and you knew, and you came home and talked to me about grain."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "옷깃은 바로잡아 줬소."
+    ],
+    "en": [
+      "I straightened his collar."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "lines": [
+      "누구 옷깃을요?"
+    ],
+    "en": [
+      "Whose collar?"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "그— 춘추. 선왕의 손자.",
+      "폐위되신 분의— 여보, 그건 임금의—"
+    ],
+    "en": [
+      "The— Chunchu. The old king’s grandson.",
+      "The deposed one’s— Manmyung, that’s a king’s—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "lines": [
+      "누군지도 모를 사내의 아이를 배다니… 이 무슨 망신이냐!"
+    ],
+    "en": [
+      "Pregnant with an unknown man’s child… what a disgrace!"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "……장인어른 대사잖소."
+    ],
+    "en": [
+      "…That’s your father’s line."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "manmyung",
+    "lines": [
+      "이 말 해 보려고 서른 해를 기다렸어요. 말에 안장 얹어요."
+    ],
+    "en": [
+      "I’ve waited thirty years to say it. Saddle the horses."
+    ]
+  },
+  {
+    "kind": "scene",
+    "label": "Surabol · the wedding",
+    "ko": "서라벌 · 혼례",
+    "weather": "love"
+  },
+  {
+    "kind": "p",
+    "html": "They ride hard and still arrive after the smoke. What they arrive at is a wedding. The groom is the grandson of a king. The bride’s grandfather came to Surabol in a cart.",
+    "ko": "둘은 말을 몰아 달리지만 연기가 걷힌 뒤에야 닿는다. 닿은 곳은 혼례다. 신랑은 임금의 손자다. 신부의 할아버지는 수레 타고 서라벌에 왔다."
+  },
+  {
+    "kind": "p",
+    "html": "At the feast Seohyun sits where the bride’s father sits, close to the dais, with royal Kims on every side. All night nobody calls him the Gaya one. Not where he can hear.",
+    "ko": "잔치에서 서현은 신부 아버지 자리에 앉는다. 단 가까이, 사방이 왕족 김씨다. 밤새 아무도 그를 가야 사람이라 부르지 않는다. 적어도 그가 들리는 데서는."
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "My wife was a king’s niece. My daughter married a king’s grandson. Two generations running. Father, I thought. Look. It’s working.",
+    "ko": "내 아내는 임금의 조카였소. 내 딸은 임금의 손자에게 시집갔소. 두 대를 내리. 아버지, 하고 생각했소. 보십시오. 되고 있습니다."
+  },
+  {
+    "kind": "p",
+    "html": "Across the hall sits Suulbu, very old now, carried in on a chair. He has not spoken to his son-in-law in thirty years. Halfway through the feast he sends his steward over with a cup. Near the door the groom’s father is telling the doorpost about the weather. Once, Seohyun catches him watching the cup arrive, and the madman nods, very slightly, the way one man nods to another at a grave.",
+    "ko": "대청 건너편에 수을부이 앉아 있다. 이제 아주 늙어 의자에 실려 들어왔다. 사위와는 서른 해째 말을 섞지 않았다. 잔치가 한창일 때 그는 청지기를 시켜 잔 하나를 보낸다. 문 가까이에선 신랑 아버지가 문설주한테 날씨 얘기를 하고 있다. 한 번, 서현은 잔이 건너오는 걸 그가 지켜보는 걸 본다. 미친놈이 아주 살짝 고개를 끄덕인다. 무덤가에서 사내가 사내에게 하듯이."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "Suulbu’s steward",
+    "gender": "m",
+    "lines": [
+      "나리께서 신부가 제 어미 입을 닮았다 하십니다.",
+      "꼭 이 말 그대로 전하라 하셨습니다."
+    ],
+    "en": [
+      "His lordship says the bride has her mother’s mouth.",
+      "He asked me to say it in exactly those words."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "……고맙다고 전해 주시오.",
+      "아니— 닮았다고 전해 주시오. 꼭 그 말 그대로."
+    ],
+    "en": [
+      "…Tell him thank you.",
+      "No— tell him she does. Tell him exactly that."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He drinks half the cup. The other half he pours out at the edge of the step, the way you do for the dead, and says something under his breath in the accent he was raised not to have.",
+    "ko": "그는 잔을 반만 마신다. 남은 반은 섬돌 가장자리에 붓는다. 죽은 이에게 하듯. 그리고 입속으로 무언가 중얼거린다. 갖지 않도록 길러진 그 말씨로."
+  },
+  {
+    "kind": "p",
+    "html": "Out on the steps, past the place where he poured, his daughter and her husband are sharing one cup. The groom’s collar is crooked again. Seohyun lets it be.",
+    "ko": "그가 술을 부은 자리 너머 계단에서, 딸과 사위가 잔 하나를 나눠 마시고 있다. 사위의 옷깃이 또 삐뚤다. 서현은 그냥 둔다."
+  },
+  {
+    "kind": "scene",
+    "label": "Nangbi · the rise behind the trenches",
+    "ko": "낭비성 · 참호 뒤 언덕",
+    "year": 629
+  },
+  {
+    "kind": "p",
+    "html": "Four autumns later he is holding another cup he will not drink. It is barley tea, and it went cold an hour ago, on a rise above the trenches at Nangbi, where his army is losing politely.",
+    "ko": "네 번의 가을이 지나, 그는 또 마시지 않을 잔을 들고 있다. 보리차다. 한 시진 전에 식었다. 낭비성 참호 위 언덕, 그의 군대가 점잖게 지고 있는 자리다."
+  },
+  {
+    "kind": "p",
+    "html": "He is the commanding general. He is nearly sixty and his knees know it. His staff have been arguing for an hour about how to retreat without calling it one.",
+    "ko": "그는 총대장이다. 예순을 바라보고 무릎이 그걸 안다. 참모들은 한 시진째, 후퇴를 후퇴라 부르지 않고 하는 법을 두고 다투고 있다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "A staff officer",
+    "gender": "m",
+    "lines": [
+      "좌군을 개울까지 물리시이소, 장군. 진을 고쳐 친다 카면 됩니더."
+    ],
+    "en": [
+      "Pull the left back to the stream, sir. Call it reforming."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "Another officer",
+    "gender": "m",
+    "lines": [
+      "뭐라 카든 고구려 놈들은 도망이라 캅니더."
+    ],
+    "en": [
+      "Call it what you like. Goguryeo will call it running."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "저 누고. 흰 말 탄 거."
+    ],
+    "en": [
+      "Who’s that. On the white horse."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "A staff officer",
+    "gender": "m",
+    "lines": [
+      "……아드님이십니더, 장군."
+    ],
+    "en": [
+      "…Your son, sir."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "안다.",
+      "딴 사람이라 캐 주기를— 안다."
+    ],
+    "en": [
+      "I know.",
+      "I was hoping you’d say someone— I know."
+    ]
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "I asked who it was. I knew. I wanted one of them to be wrong for once.",
+    "ko": "누구냐고 물었소. 알고 있었지. 한 번쯤은 저것들이 틀려 주길 바랐소."
+  },
+  {
+    "kind": "p",
+    "html": "The boy rides up, gets down in front of the whole staff, and takes his helmet off. Seohyun taught him that. He regrets it at once.",
+    "ko": "아들이 말을 몰아 와서 참모들 앞에 내려 투구를 벗는다. 그건 서현이 가르친 거다. 그는 곧바로 후회한다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#4a8fe0",
+    "person": "yushin",
+    "lines": [
+      "아버님. 저희가 지고 있습니다.",
+      "옷깃을 쥐고 떨쳐야 갖옷이 바로 서고, 벼리를 들어야 그물이 펴진다고 했습니다.",
+      "……제가 그 깃이 되겠습니다."
+    ],
+    "en": [
+      "Father. We’re losing.",
+      "They say you shake a coat by the collar to make it hang straight, and lift the head-rope to open a net.",
+      "…Let me be the collar."
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#3E8EF0",
+    "person": "seohyeon",
+    "lines": [
+      "……투구 써라.",
+      "그라고 가라."
+    ],
+    "en": [
+      "…Put your helmet on.",
+      "Then go."
+    ]
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "Put your helmet on. I said that first so I wouldn’t say anything else.",
+    "ko": "투구 써라. 다른 말이 나올까 봐 그 말부터 했소."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#7f96b5",
+    "speaker": "A staff officer",
+    "gender": "m",
+    "lines": [
+      "장군— 당주 하나가 혼자서 저기를— 아드님이—"
+    ],
+    "en": [
+      "My lord— a banner captain, alone, into that— he’s your—"
+    ]
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "누 아들인지 안다.",
+      "옷깃이 되겠다 안 카나. 되라 캐라."
+    ],
+    "en": [
+      "I know whose he is.",
+      "He said collar. Let him be the collar."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He counts. He counted his father’s last breath at Manno and never told anyone. Now he counts charges. One. The line bends. Two. He cannot see the white horse at all. At three he puts the cup down, because his hands have started to shake and the cup is rattling in them.",
+    "ko": "그는 센다. 만노에서 아버지의 마지막 숨을 셌고, 아무한테도 말하지 않았다. 이제는 돌격을 센다. 하나. 적의 줄이 휜다. 둘. 흰 말이 아예 안 보인다. 셋에서 그는 잔을 내려놓는다. 손이 떨려 잔이 달그락거리기 시작해서다."
+  },
+  {
+    "kind": "p",
+    "html": "The boy comes back with something wrapped in a torn banner and sets it in the mud at his feet. The staff wait for a speech. Seohyun has one. It is about his father, and a cart, and a helm on a stand by a door, and it would take all night.",
+    "ko": "아들이 찢긴 깃발에 싼 것을 들고 돌아와 그의 발치 진흙에 내려놓는다. 참모들은 연설을 기다린다. 서현에게는 할 연설이 있다. 아버지와 수레와 문간 받침대 위의 투구에 관한 것이고, 밤새 걸릴 것이다."
+  },
+  {
+    "kind": "dialogue",
+    "chip": "#3E8EF0",
+    "person": "seohyeon",
+    "lines": [
+      "……투구 삐뚤어졌데이."
+    ],
+    "en": [
+      "…Your helmet’s crooked."
+    ]
+  },
+  {
+    "kind": "p",
+    "html": "He fixes it with both hands. Then he shouts for his officers, walks behind the horse lines where nobody is, and stands with his forehead against a saddle until it is dark enough. The saddle belongs to a white horse with no name. It stands still for him. It has had a long day too.",
+    "ko": "두 손으로 바로잡는다. 그리고 장교들을 부르고, 아무도 없는 말 대열 뒤로 걸어가, 충분히 어두워질 때까지 안장에 이마를 대고 서 있다. 그 안장은 이름 없는 흰 말의 것이다. 말은 가만히 서 준다. 녀석도 긴 하루였다."
+  },
+  {
+    "kind": "dialogue",
+    "person": "seohyeon",
+    "lines": [
+      "한결같데이, 니는.",
+      "세 번 다. 한결같다."
+    ],
+    "en": [
+      "Steady, you.",
+      "All three times. Steady."
+    ]
+  },
+  {
+    "kind": "monologue",
+    "person": "seohyeon",
+    "html": "That night the boy named the horse. He hadn’t heard me. He just had the same word.",
+    "ko": "그날 밤 아이가 말에 이름을 붙였소. 내 말을 들은 것도 아닌데. 그냥 같은 낱말을 가졌더이다."
+  },
+  {
+    "kind": "p",
+    "html": "The histories do not record the year he died, only how high he got. He climbs the ridge beyond the city whenever the stone in his sleeve is warm, shaved every time, until the climb is too much for him. Then the stone goes to his son. The boy with seven stars on his back finds the same water on his own and bathes in it for thirty years, and the stone in his sleeve stays cold the whole time, as if the hill were waiting for a better question.",
+    "ko": "사서는 그가 죽은 해를 적지 않았다. 얼마나 높이 올랐는지만 적었다. 그는 소매 속 돌이 따뜻해질 때마다 도성 너머 능선을 오른다. 매번 면도를 하고. 오르기 버거워질 때까지. 그 뒤 돌은 아들에게 간다. 등에 일곱 별을 지닌 아이는 혼자 힘으로 같은 물을 찾아내 서른 해를 거기서 씻는다. 그동안 소매 속 돌은 한 번도 따뜻해지지 않는다. 언덕이 더 나은 질문을 기다리기라도 하는 것처럼."
+  },
+  {
+    "kind": "day",
+    "label": "DAY 9",
+    "ko": "아홉째 날"
+  },
+  {
+    "kind": "p",
+    "html": "Before light, Yushin walks out of the palace alone and takes the ridge road his father used to take. He has shaved.",
+    "ko": "동트기 전, 유신은 홀로 궁을 나서 아버지가 다니던 능선 길로 접어든다. 면도는 하고 왔다."
+  },
+  {
+    "kind": "p",
+    "html": "<b>Ninth morning, before light. The stone in his son’s sleeve is warm at last. Down Yushin goes, to the water…!</b>",
+    "ko": "<b>아홉째 날, 동트기 전. 아들의 소매 속 돌이 마침내 따뜻하다. 유신은 물로 내려간다…!</b>"
+  }
+]

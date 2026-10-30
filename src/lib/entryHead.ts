@@ -43,6 +43,32 @@ export function episodeTagline(en: Entry, ko: boolean): string {
 	return (ko ? en.taglineKo || en.tagline : en.tagline) ?? '';
 }
 
+function plain(html: string): string {
+	return html
+		.replace(/<[^>]+>/g, '')
+		.replace(/&amp;/g, '&')
+		.replace(/&lt;/g, '<')
+		.replace(/&gt;/g, '>')
+		.replace(/&quot;/g, '"')
+		.replace(/&#39;/g, "'")
+		.replace(/&nbsp;/g, ' ')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+/** One-line plot for a poster: `logline`, else the first narration beat. */
+export function episodeLogline(en: Entry, ko: boolean): string {
+	if (en.logline) return ko ? en.logline.ko || en.logline.en : en.logline.en;
+	for (const b of en.blocks) {
+		if (b.kind === 'p' && !b.nsfw && b.html.trim()) {
+			const enLine = plain(b.html);
+			const koLine = b.ko ? plain(b.ko) : enLine;
+			return ko ? koLine : enLine;
+		}
+	}
+	return '';
+}
+
 const FOLKTALE = { key: 'folktale', label: 'Folktale', ko: '설화' };
 const MYTH_TAG = { key: 'myth', label: 'Myth', ko: '신화' };
 

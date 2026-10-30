@@ -24,6 +24,24 @@ const savedEpisodePosters = episodePicksFile as Record<string, string>;
 const episodeThumbCatalog = episodeThumbCatalogFile as Record<string, string[]>;
 const savedEpisodeThumbs = episodeThumbPicksFile as Record<string, string>;
 
+/** Painted posters still live under retired `samhan-*` folder names. */
+const LEGACY_POSTER_DIR: Record<string, string> = {
+	'three-kingdoms-queen-sunduk': 'samhan-queen-sunduk',
+	'three-kingdoms-harmony-council': 'samhan-harmony-council',
+	'three-kingdoms-jade-gate-valley': 'samhan-jade-gate-valley',
+	'three-kingdoms-king-jinheung': 'samhan-jinhung-the-cloud',
+	'three-kingdoms-prince-euija': 'samhan-prince-euija',
+	'three-kingdoms-eight-great-clans': 'samhan-eight-great-clans',
+	'three-kingdoms-deer-rock-council': 'samhan-deer-rock',
+	'three-kingdoms-king-geunchogo': 'samhan-gunchogo-the-13th',
+	'three-kingdoms-commander-yeon': 'samhan-commander-yeon'
+};
+
+function episodePosterDir(eid: string): string {
+	if (episodeCatalog[eid]) return eid;
+	return LEGACY_POSTER_DIR[eid] ?? eid;
+}
+
 /** Picks made this session. The imported JSON does not update until reload. */
 const session = $state<Record<string, string>>({});
 const sessionCovers = $state<Record<string, string>>({});
@@ -48,17 +66,35 @@ export function posterSrc(id: string): string | undefined {
 }
 
 export function episodePosterAlts(eid: string): string[] {
-	return episodeCatalog[eid] ?? [];
+	const dir = episodePosterDir(eid);
+	return episodeCatalog[eid] ?? episodeCatalog[dir] ?? [];
 }
 
 export function episodePosterPick(eid: string): string | undefined {
-	return sessionEpisodePosters[eid] ?? savedEpisodePosters[eid] ?? episodeCatalog[eid]?.[0];
+	const dir = episodePosterDir(eid);
+	return (
+		sessionEpisodePosters[eid] ??
+		sessionEpisodePosters[dir] ??
+		savedEpisodePosters[eid] ??
+		savedEpisodePosters[dir] ??
+		episodeCatalog[eid]?.[0] ??
+		episodeCatalog[dir]?.[0]
+	);
 }
 
-/** 3:4 movie poster under the episode title. Separate from the 2:1 thumbnail still. */
+/** 3:4 movie poster under the episode thumbnail. Separate from the 2:1 still. */
 export function episodePosterSrc(eid: string): string | undefined {
 	const file = episodePosterPick(eid);
-	return file ? `/posters/episodes/${eid}/${file}` : undefined;
+	if (!file) return undefined;
+	return `/posters/episodes/${episodePosterDir(eid)}/${file}`;
+}
+
+/** Ensemble key art prefers `poster.jpg` over a single-face portrait pick. */
+export function episodeEnsembleSrc(eid: string): string | undefined {
+	const dir = episodePosterDir(eid);
+	const alts = episodePosterAlts(eid);
+	const file = alts.includes('poster.jpg') ? 'poster.jpg' : episodePosterPick(eid);
+	return file ? `/posters/episodes/${dir}/${file}` : undefined;
 }
 
 export function episodeThumbAlts(eid: string): string[] {
