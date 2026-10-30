@@ -16,75 +16,78 @@ import { episodeKindsOf, type EpisodeKind } from '$lib/episodeKinds';
  */
 
 /** A named Chapter inside an Arc and the episode titles it holds, in story order. The first title anchors the row. */
-export type TocChapter = { label: string; ko: string; titles: string[] };
+export type TocChapter = {
+	label: string;
+	ko: string;
+	/** Official English title-card line (MCU subtitle). */
+	subtitle: string;
+	subtitleKo: string;
+	titles: string[];
+};
 
-const chapter = (label: string, ko: string, ...titles: string[]): TocChapter => ({ label, ko, titles });
+const chapter = (
+	label: string,
+	ko: string,
+	subtitle: string,
+	subtitleKo: string,
+	...titles: string[]
+): TocChapter => ({ label, ko, subtitle, subtitleKo, titles });
 
 /** Each Arc lists its Chapters. Episodes outside every Chapter stay on the spine by themselves. */
 export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
-	samhan: [
-		chapter('Silla', '신라', 'Queen Sunduk', 'Harmony Council', 'Jade Gate Valley', 'Jinhung, the Cloud'),
-		chapter('Baekje', '백제', 'Prince Euija', 'Eight Great Clans', 'Deer Rock', 'Gunchogo, the 13th'),
-		chapter('Goguryeo', '고구려', 'Commander Yeon', 'Five Tribes', 'High Summit', 'Gwanggeto, the Great King', 'Ondal')
+	'three-kingdoms': [
+		chapter('Silla', '신라', 'The First Crown', '첫 왕관', 'Queen Sunduk', 'Harmony Council', 'Jade Gate Valley', 'King Jinheung'),
+		chapter('Baekje', '백제', 'Eight Houses', '여덟 집', 'Prince Euija', 'Eight Great Clans', 'Deer Rock Council', 'King Geunchogo'),
+		chapter('Goguryeo', '고구려', 'The Eternal General', '영원대장군', 'Commander Yeon', 'Five Tribes', 'High Summit', 'King Gwanggaeto')
 	],
 	'five-principles': [
-		chapter('Two Treasures', '두 보물', 'Bupmin', 'Sadaham', 'Gotaso', 'Pumsuk', 'Munhee'),
-		chapter('Three Sons', '세 아들', 'Academy', 'Stele', 'Dosuryu'),
-		chapter('Five Princes', '다섯 왕자', 'King Euija', 'Yunchung', 'Gwansan')
+		chapter('Hwarang', '화랑', 'The First Yard', '첫 마당', 'Bupmin', 'Sadaham', 'Gotaso', 'Munhee', 'Park Jesang'),
+		chapter('Master of the Classics', '오경박사', 'A Single Story', '이야기 하나', 'King Euija', 'King Seong', 'Yunchung'),
+		chapter('Grand Academy', '태학', 'One Seal', '인장 하나', 'Yeon Namseng', 'The Stele', 'Ulbul')
 	],
 	'iron-will': [
-		chapter('Daeya', '대야성', 'Gumil', 'Maehwa', 'Siege of Daeya'),
-		chapter('Supreme Commander', '대막리지', 'Yeon’s Massacre', 'Chunchu & Yeon', 'Euija & Yeon'),
-		chapter('General', '대장군', 'Nangbi', 'Yushin', 'The Eastern Star')
+		chapter('Daeya', '대야성', 'The Inner Gate', '안쪽 문', 'Gumil', 'Maehwa', 'Jukjuk'),
+		chapter('Supreme Commander', '대막리지', 'The Banquet', '그 연회', 'The Revolt', 'The Cut', 'The Oath'),
+		chapter('Marshal', '대장군', 'A Name That Strikes', '이름만으로', 'Nangbi', 'Dragon Flower Order', 'The Morning Star')
 	],
-	'seventh-invasion': [
-		chapter('Four Dragons', '사룡', 'Emperor', 'Sima Yi', 'Yodong', 'King Micheon'),
-		chapter('Guardian 성주', '성주', 'Stallion Mountain', 'Colossal River', 'Ansi'),
-		chapter('Jumong', '주몽', 'Haemosu', 'Buyeo', 'Jolbon')
+	'goguryeo-tang-war': [
+		chapter('Four Dragons', '사룡', 'Half the World', '세상의 반', 'Emperor', 'Yodong', 'King Dongcheon'),
+		chapter('Ansi', '안시성', 'The Lazy Eye', '게으른 눈', 'Stallion Mountain', 'Lord of Ansi', 'Eulji Mundeok'),
+		chapter('Jumong', '주몽', 'The Holy Bow', '성왕의 활', 'Haemosu', 'Buyeo', 'Jolbon', 'Hodong')
 	],
 	'chunchu-era': [
-		chapter('Bidam', '비담', 'Gi (起)', 'Suro', 'Seung (承)', 'Muryuk', 'Jeon (轉)', 'Seohyun', 'Gyul (結)'),
-		chapter('Sungman', '승만', 'Queen Jinduk', 'Huangdi (皇帝)', 'Jiabeng (駕崩)', 'Royal Secretariat'),
-		chapter('Chunchu', '춘추', 'Bihyung', 'Yongsu', 'King Muyeol', 'Jahee'),
-		chapter('Hyukgosé', '박혁거세', 'Hyukgosé', 'Talhae', 'Alji')
+		chapter('Bidam', '비담', 'A Hundred and Eight', '백팔', 'Gi', 'Suro', 'Seung', 'Muryuk', 'Jeon', 'Seohyun', 'Gyul'),
+		chapter('Sungman', '승만', 'Padded Temples', '솜 넣은 관', 'Queen Jinduk', 'Li Shimin', 'Royal Secretariat'),
+		chapter('Chunchu', '춘추', 'The Other Name', '다른 이름', 'Bihyung', 'Kim Yongsu', 'King Muyeol', 'Jahee')
 	],
-	'fall-of-euija': [
+	'haedong-jeungja': [
+		chapter('Three Thousand Maids', '삼천궁녀', 'Forty-One Sons', '마흔한 아들', 'Cheonbok', 'Lady Ungo', 'The Fall'),
+		chapter('Three Loyalists', '삼충신', 'The Last Word', '마지막 한마디', 'Onjo', 'Sunchung', 'Hungsu', 'Gyebek')
+	],
+	'fall-of-baekje': [
 		chapter(
 			'Tamla',
 			'탐라',
-			'Exile',
+			'Two Suns',
+			'두 개의 해',
+			'Yuri Dora',
 			'Heaven–Earth King',
-			'Sulmun',
 			'Three Princes',
-			'Stone Lady',
-			'Gardener',
-			'Jachungbi',
+			'Hallakgungi',
 			'Kangrim',
-			'Tribute'
+			'Bonpuri'
 		),
-		chapter('Euija', '의자', 'Coup', 'Descent', 'Nine Omens', 'Onjo'),
-		chapter('Three Loyalists', '삼충신', 'Sunchung', 'Hungsu', 'Gyebek')
+		chapter('Yellow Mountain', '황산벌', 'Five Thousand', '오천', 'Hwangsan Field', 'Buyeo Euija', 'Kim Chunchu', 'King Pungjang'),
+		chapter('Four Beasts', '사수', 'The White Coat', '흰 옷', 'Echi', 'Pyongyang', 'Snake River')
 	],
-	'fall-of-baekje': [
-		chapter('Fall of Baekje', '백제 멸망', 'Yellow Mountain', 'Sabi', 'Buyeo Euija†', 'Kim Chunchu†'),
-		chapter('Baekje Restoration Army (BRA)', '백제 부흥군', 'Ungjin Commandery', 'King Pungjang')
-	],
-	'final-stand': [
-		chapter('Four Beasts', '사신', 'Pyongyang I', 'Snake River', 'Tamla Surrenders'),
-		chapter('Kudara', '구다라', 'Rebellion', 'Betrayal', 'White River'),
-		chapter('Brothers', '형제', 'Yeon Gesomun†', 'Brothers’ Coup', 'Pyongyang II')
+	'fall-of-goguryeo': [
+		chapter('Kudara', '쿠다라', 'Except Baekje', '백제만 빼고', 'Kim Jinju', 'Gwisil Boksin', 'White River'),
+		chapter('Grand Supreme Commander', '태대막리지', 'The Five Swords', '다섯 자루', 'Yeon Gesomun', 'Yeon Namgun', 'Yeon Namsan')
 	],
 	'silla-tang-war': [
-		chapter(
-			'Protectorate-General',
-			'안동도호부',
-			'Dangun & Old Joseon',
-			'Prosperity Mountain',
-			'Ansung',
-			'Letters'
-		),
-		chapter('Supreme Marshal', '태대각간', 'Stone Gate', 'Wonsul', 'Kim Yushin†'),
-		chapter('King for All', '삼한왕검', 'Munmu', 'Maeso', 'Final Ford', 'Wanggum')
+		chapter('Hyukgosé', '혁거세', 'The White Horse', '백마', 'Park Hyukgosé', 'Talhae', 'Alji', 'Sound Kingdom'),
+		chapter('Supreme Marshal', '태대각간', 'The Letter', '편지', 'Xue Rengui', 'Go Anseung', 'Stone Gate', 'Wonsul', 'Kim Yushin'),
+		chapter('Unified Silla', '통일신라', 'The Open Hall', '열린 대청', 'Dangun', 'Munmu', 'Maeso', 'Gibulpo', 'King of Samhan')
 	]
 };
 

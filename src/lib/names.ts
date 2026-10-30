@@ -37,8 +37,8 @@ const COMPOUND_SURNAMES: Record<string, string> = {
 	西門: '서문'
 };
 
-/** A reign name or a title stays whole: 善德女王, 義慈王, 德曼公主. */
-const TITLE_TAIL = /(皇帝|皇后|女王|大王|王后|王妃|公主|太子|夫人|母主|王|帝)$/u;
+/** A reign name or a title stays whole: 善德女王, 義慈王, 德曼公主, 婆娑尼師今. */
+const TITLE_TAIL = /(皇帝|皇后|女王|大王|王后|王妃|公主|太子|夫人|母主|尼師今|麻立干|居西干|이사금|마립간|거서간|王|帝)$/u;
 const ONLY_HAN = /^\p{Script=Han}+$/u;
 const ONLY_HANGUL = /^[\uAC00-\uD7A3]+$/u;
 
@@ -68,7 +68,13 @@ export function splitName(hanja: string | undefined, korean?: string): { hanja?:
 	const h = hanja ? bare(hanja) : undefined;
 	const k = korean ? bare(korean) : undefined;
 	const cut = h && ONLY_HAN.test(h) ? surnameLength(h) : 0;
-	if (!cut) return { hanja: hanja?.trim(), korean: korean?.trim() };
+	if (!cut) {
+		const ko = korean?.trim();
+		if (ko && !/\s/.test(ko) && /(이사금|마립간|거서간)$/.test(ko)) {
+			return { hanja: hanja?.trim(), korean: ko.replace(/(이사금|마립간|거서간)$/u, ' $1') };
+		}
+		return { hanja: hanja?.trim(), korean: ko };
+	}
 	const hc = Array.from(h!);
 	const kc = k ? Array.from(k) : [];
 	const koMatches = !!k && ONLY_HANGUL.test(k) && kc.length === hc.length;
@@ -239,6 +245,20 @@ export function rankGlyph(p: Person, year?: number | null, look?: string | null)
 /** The person's realm colour from the shared kingdom table. */
 export function realmColor(p: Person): string {
 	return KINGDOMS[p.kingdom]?.color ?? KINGDOMS.other.color;
+}
+
+/** Ink that stays readable on a realm-colour disc: dark on yellow, cream on the rest. */
+export function inkOn(hex: string): '#15120e' | '#fffaf0' {
+	const s = hex.replace('#', '');
+	const f = s.length === 3 ? [...s].map((c) => c + c).join('') : s.slice(0, 6);
+	const [r, g, b] = [0, 2, 4].map((i) => parseInt(f.slice(i, i + 2), 16) || 0);
+	return 0.2126 * r + 0.7152 * g + 0.0722 * b > 160 ? '#15120e' : '#fffaf0';
+}
+
+export function ordinalSuffix(n: number): string {
+	const v = n % 100;
+	if (v >= 11 && v <= 13) return 'th';
+	return ({ 1: 'st', 2: 'nd', 3: 'rd' } as const)[n % 10] ?? 'th';
 }
 
 /**

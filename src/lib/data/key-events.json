@@ -5,10 +5,25 @@
 		"en": "The Gwansan road: King Seong dies",
 		"ko": "관산성 길에서 성왕이 죽다",
 		"covers": [
-			{ "ep": "Gwansan" },
-			{ "ep": "Muryuk", "flashback": 554 },
-			{ "ep": "Seohyun", "flashback": 554 },
-			{ "ep": "Seung (承)", "text": "Gwansan road" }
+			{
+				"ep": "Gwansan"
+			},
+			{
+				"ep": "Muryuk",
+				"flashback": 554
+			},
+			{
+				"ep": "Seohyun",
+				"flashback": 554
+			},
+			{
+				"ep": "Seung (承)",
+				"text": "Gwansan road"
+			}
+		],
+		"people": [
+			"muryuk",
+			"kingsung"
 		]
 	},
 	{
@@ -17,9 +32,28 @@
 		"en": "Great Gaya falls",
 		"ko": "대가야 멸망",
 		"covers": [
-			{ "ep": "Sadaham", "scene": ["The Battle of Great Gaya", "Great Gaya, the square"] },
-			{ "ep": "Muryuk", "scene": ["Great Gaya · 562", "The Cut Rope"] },
-			{ "ep": "Seohyun", "flashback": 562 }
+			{
+				"ep": "Sadaham",
+				"scene": [
+					"The Battle of Great Gaya",
+					"Great Gaya, the square"
+				]
+			},
+			{
+				"ep": "Muryuk",
+				"scene": [
+					"Great Gaya · 562",
+					"The Cut Rope"
+				]
+			},
+			{
+				"ep": "Seohyun",
+				"flashback": 562
+			}
+		],
+		"people": [
+			"sadaham",
+			"muryuk"
 		]
 	},
 	{
@@ -28,8 +62,18 @@
 		"en": "The Cloud King dies",
 		"ko": "진흥왕 승하",
 		"covers": [
-			{ "ep": "Bihyung", "scene": "the Cloud King’s last night" },
-			{ "ep": "Yongsu", "scene": "the Cloud King’s last night" }
+			{
+				"ep": "Bihyung",
+				"scene": "the Cloud King’s last night"
+			},
+			{
+				"ep": "Kim Yongsu",
+				"scene": "the Cloud King’s last night"
+			}
+		],
+		"people": [
+			"jinheung",
+			"yongsu"
 		]
 	},
 	{
@@ -38,9 +82,22 @@
 		"en": "The Council deposes King Jinji",
 		"ko": "화백회의가 진지왕을 폐위하다",
 		"covers": [
-			{ "ep": "Bihyung", "scene": "the night drum" },
-			{ "ep": "Yongsu", "scene": "the night drum" },
-			{ "ep": "Harmony Council", "flashback": 579 }
+			{
+				"ep": "Bihyung",
+				"scene": "the night drum"
+			},
+			{
+				"ep": "Kim Yongsu",
+				"scene": "the night drum"
+			},
+			{
+				"ep": "Harmony Council",
+				"flashback": 579
+			}
+		],
+		"people": [
+			"jinji",
+			"yongsu"
 		]
 	},
 	{
@@ -49,8 +106,21 @@
 		"en": "Bihyung's ghosts build the bridge in one night",
 		"ko": "비형의 귀신들이 하룻밤에 다리를 놓다",
 		"covers": [
-			{ "ep": "Bihyung", "scene": "The Ghost Bridge · the next night" },
-			{ "ep": "Yongsu", "scene": ["the night of the bridge", "The Ghost Bridge · the next night"] }
+			{
+				"ep": "Bihyung",
+				"scene": "The Ghost Bridge · the next night"
+			},
+			{
+				"ep": "Kim Yongsu",
+				"scene": [
+					"the night of the bridge",
+					"The Ghost Bridge · the next night"
+				]
+			}
+		],
+		"people": [
+			"yongsu",
+			"gildal"
 		]
 	},
 	{
@@ -59,10 +129,26 @@
 		"en": "Yushin's first day in the Hwarang",
 		"ko": "유신, 화랑 첫날",
 		"covers": [
-			{ "ep": "Seohyun", "scene": "Class 51’s first morning" },
-			{ "ep": "Gi (起)", "flashback": 610 },
-			{ "ep": "Jeon (轉)", "flashback": 610 },
-			{ "ep": "Gyul (結)", "flashback": 610 }
+			{
+				"ep": "Seohyun",
+				"scene": "Class 51’s first morning"
+			},
+			{
+				"ep": "Gi (起)",
+				"flashback": 610
+			},
+			{
+				"ep": "Jeon (轉)",
+				"flashback": 610
+			},
+			{
+				"ep": "Gyul (結)",
+				"flashback": 610
+			}
+		],
+		"people": [
+			"yushin",
+			"seohyeon"
 		]
 	},
 	{
@@ -71,9 +157,22 @@
 		"en": "Yongsu takes Chunchu to the palace stream",
 		"ko": "용수가 춘추를 궁궐 개울로 데려가다",
 		"covers": [
-			{ "ep": "Harmony Council", "flashback": 612 },
-			{ "ep": "Bihyung", "scene": "The palace stream" },
-			{ "ep": "Yongsu", "scene": "The palace stream" }
+			{
+				"ep": "Harmony Council",
+				"flashback": 612
+			},
+			{
+				"ep": "Bihyung",
+				"scene": "The palace stream"
+			},
+			{
+				"ep": "Kim Yongsu",
+				"scene": "The palace stream"
+			}
+		],
+		"people": [
+			"yongsu",
+			"chunchu"
 		]
 	},
 	{
@@ -81,7 +180,14 @@
 		"year": 612,
 		"en": "The Sui army drowns at the Salsu",
 		"ko": "살수에서 수나라 군대가 무너지다",
-		"covers": [{ "ep": "Colossal River" }]
+		"covers": [
+			{
+				"ep": "Colossal River"
+			}
+		],
+		"people": [
+			"munduk"
+		]
 	},
 	{
 		"id": "munhee-wedding",
@@ -89,11 +195,41 @@
 		"en": "Chunchu marries Munhee",
 		"ko": "춘추와 문희의 혼인",
 		"covers": [
-			{ "ep": "Munhee", "scene": ["The Torn Coat", "The Pyre", "The Closed Months", "The Household"] },
-			{ "ep": "Seohyun", "scene": ["the torn coat", "Surabol · the wedding"] },
-			{ "ep": "Bihyung", "scene": "Chunchu’s wedding" },
-			{ "ep": "Yongsu", "scene": "Chunchu’s wedding" },
-			{ "ep": "Pumsuk", "flashback": 625 }
+			{
+				"ep": "Munhee",
+				"scene": [
+					"The Torn Coat",
+					"The Pyre",
+					"The Closed Months",
+					"The Household"
+				]
+			},
+			{
+				"ep": "Seohyun",
+				"scene": [
+					"the torn coat",
+					"Surabol · the wedding"
+				]
+			},
+			{
+				"ep": "Bihyung",
+				"scene": "Chunchu’s wedding"
+			},
+			{
+				"ep": "Kim Yongsu",
+				"scene": "Chunchu’s wedding"
+			},
+			{
+				"ep": "Pumsuk",
+				"flashback": 625
+			}
+		],
+		"people": [
+			"chunchu",
+			"munhee",
+			"yushin",
+			"seohyeon",
+			"yongsu"
 		]
 	},
 	{
@@ -102,9 +238,20 @@
 		"en": "The charge at Nangbi Fortress",
 		"ko": "낭비성 돌격",
 		"covers": [
-			{ "ep": "Nangbi" },
-			{ "ep": "Seohyun", "scene": "Nangbi · the rise" },
-			{ "ep": "Jeon (轉)", "text": "the charge at Nangbi" }
+			{
+				"ep": "Nangbi"
+			},
+			{
+				"ep": "Seohyun",
+				"scene": "Nangbi · the rise"
+			},
+			{
+				"ep": "Jeon (轉)",
+				"text": "the charge at Nangbi"
+			}
+		],
+		"people": [
+			"yushin"
 		]
 	},
 	{
@@ -113,10 +260,33 @@
 		"en": "Sunduk is crowned queen",
 		"ko": "선덕여왕 즉위",
 		"covers": [
-			{ "ep": "Queen Sunduk", "scene": ["Coronation Morning", "The Oaths", "The Kings Above", "The Last Oath"] },
-			{ "ep": "Bihyung", "scene": "the year of the crown" },
-			{ "ep": "Yongsu", "scene": "the year of the crown" },
-			{ "ep": "Kim Yushin†", "text": "on her coronation morning" }
+			{
+				"ep": "Queen Sunduk",
+				"scene": [
+					"Coronation Morning",
+					"The Oaths",
+					"The Kings Above",
+					"The Last Oath"
+				]
+			},
+			{
+				"ep": "Bihyung",
+				"scene": "the year of the crown"
+			},
+			{
+				"ep": "Kim Yongsu",
+				"scene": "the year of the crown"
+			},
+			{
+				"ep": "Kim Yushin†",
+				"text": "on her coronation morning"
+			}
+		],
+		"people": [
+			"sunduk",
+			"yushin",
+			"bidam",
+			"yongsu"
 		]
 	},
 	{
@@ -125,9 +295,26 @@
 		"en": "Gyebek dives the White River for Euija",
 		"ko": "계백이 의자를 위해 백강에 뛰어들다",
 		"covers": [
-			{ "ep": "Prince Euija", "scene": ["The White River", "The Diving Boy", "Night on the Bank"] },
-			{ "ep": "Yellow Mountain", "flashback": 632 },
-			{ "ep": "Buyeo Euija†", "flashback": 632 }
+			{
+				"ep": "Prince Euija",
+				"scene": [
+					"The White River",
+					"The Diving Boy",
+					"Night on the Bank"
+				]
+			},
+			{
+				"ep": "Yellow Mountain",
+				"flashback": 632
+			},
+			{
+				"ep": "Buyeo Euija†",
+				"flashback": 632
+			}
+		],
+		"people": [
+			"gyebek",
+			"euija"
 		]
 	},
 	{
@@ -136,7 +323,14 @@
 		"sub": "March",
 		"en": "Euija becomes king",
 		"ko": "의자왕 즉위",
-		"covers": [{ "ep": "King Euija" }]
+		"covers": [
+			{
+				"ep": "King Euija"
+			}
+		],
+		"people": [
+			"euija"
+		]
 	},
 	{
 		"id": "daeya-falls",
@@ -145,10 +339,33 @@
 		"en": "Daeya falls",
 		"ko": "대야성 함락",
 		"covers": [
-			{ "ep": "Siege of Daeya" },
-			{ "ep": "Royal Secretariat", "flashback": 642 },
-			{ "ep": "Sunchung", "flashback": 642 },
-			{ "ep": "Kim Chunchu†", "text": "Daeya never left" }
+			{
+				"ep": "Jukjuk"
+			},
+			{
+				"ep": "Gumil"
+			},
+			{
+				"ep": "Maehwa"
+			},
+			{
+				"ep": "Royal Secretariat",
+				"flashback": 642
+			},
+			{
+				"ep": "Sunchung",
+				"flashback": 642
+			},
+			{
+				"ep": "Kim Chunchu",
+				"text": "Daeya never left"
+			}
+		],
+		"people": [
+			"pumsuk",
+			"gotaso",
+			"gyebek",
+			"chunchu"
 		]
 	},
 	{
@@ -158,9 +375,21 @@
 		"en": "Yeon's banquet massacre",
 		"ko": "연개소문의 연회 학살",
 		"covers": [
-			{ "ep": "Yeon’s Massacre" },
-			{ "ep": "The Eastern Star", "text": "The banquet hall has been scrubbed" },
-			{ "ep": "Ansi", "text": "Yeon shut the doors" }
+			{
+				"ep": "Yeon’s Massacre"
+			},
+			{
+				"ep": "The Eastern Star",
+				"text": "The banquet hall has been scrubbed"
+			},
+			{
+				"ep": "Ansi",
+				"text": "Yeon shut the doors"
+			}
+		],
+		"people": [
+			"gesomun",
+			"yeongnyu"
 		]
 	},
 	{
@@ -170,8 +399,21 @@
 		"en": "Chunchu in Yeon's cell",
 		"ko": "연개소문의 감옥에 갇힌 춘추",
 		"covers": [
-			{ "ep": "Chunchu & Yeon", "scene": ["Pyongyang", "The Cell"] },
-			{ "ep": "Euija & Yeon", "flashback": 642 }
+			{
+				"ep": "Chunchu & Yeon",
+				"scene": [
+					"Pyongyang",
+					"The Cell"
+				]
+			},
+			{
+				"ep": "Euija & Yeon",
+				"flashback": 642
+			}
+		],
+		"people": [
+			"chunchu",
+			"gesomun"
 		]
 	},
 	{
@@ -181,9 +423,22 @@
 		"en": "The siege of Ansi",
 		"ko": "안시성 전투",
 		"covers": [
-			{ "ep": "Ansi" },
-			{ "ep": "Yodong", "scene": "Below Ansi" },
-			{ "ep": "Gi (起)", "flashback": 645 }
+			{
+				"ep": "Ansi"
+			},
+			{
+				"ep": "Yodong",
+				"scene": "Below Ansi"
+			},
+			{
+				"ep": "Gi (起)",
+				"flashback": 645
+			}
+		],
+		"people": [
+			"yangmanchun",
+			"taizong",
+			"gesomun"
 		]
 	},
 	{
@@ -193,11 +448,28 @@
 		"en": "Bidam's rebellion",
 		"ko": "비담의 난",
 		"covers": [
-			{ "ep": "Gi (起)" },
-			{ "ep": "Seung (承)" },
-			{ "ep": "Jeon (轉)" },
-			{ "ep": "Gyul (結)" },
-			{ "ep": "Rebellion", "flashback": 647 }
+			{
+				"ep": "Gi (起)"
+			},
+			{
+				"ep": "Seung (承)"
+			},
+			{
+				"ep": "Jeon (轉)"
+			},
+			{
+				"ep": "Gyul (結)"
+			},
+			{
+				"ep": "Rebellion",
+				"flashback": 647
+			}
+		],
+		"people": [
+			"bidam",
+			"yushin",
+			"sunduk",
+			"alchun"
 		]
 	},
 	{
@@ -206,7 +478,19 @@
 		"sub": "January",
 		"en": "Queen Sunduk dies",
 		"ko": "선덕여왕 승하",
-		"covers": [{ "ep": "Gyul (結)", "scene": ["The Queen’s Bedside", "The Empty Pavilion"] }]
+		"covers": [
+			{
+				"ep": "Gyul (結)",
+				"scene": [
+					"The Queen’s Bedside",
+					"The Empty Pavilion"
+				]
+			}
+		],
+		"people": [
+			"sunduk",
+			"yushin"
+		]
 	},
 	{
 		"id": "taizong-dies",
@@ -214,7 +498,15 @@
 		"sub": "July",
 		"en": "The Second Emperor dies",
 		"ko": "당 태종 붕어",
-		"covers": [{ "ep": "Jiabeng (駕崩)" }]
+		"covers": [
+			{
+				"ep": "Jiabeng (駕崩)"
+			}
+		],
+		"people": [
+			"taizong",
+			"wuzetian"
+		]
 	},
 	{
 		"id": "chunchu-crowned",
@@ -223,8 +515,17 @@
 		"en": "Chunchu is crowned",
 		"ko": "김춘추 즉위",
 		"covers": [
-			{ "ep": "King Muyeol" },
-			{ "ep": "Jahee", "scene": "the new king’s first council" }
+			{
+				"ep": "King Muyeol"
+			},
+			{
+				"ep": "Jahee",
+				"scene": "the new king’s first council"
+			}
+		],
+		"people": [
+			"chunchu",
+			"yushin"
 		]
 	},
 	{
@@ -234,8 +535,19 @@
 		"en": "Gyebek's last stand at the Yellow Mountain",
 		"ko": "황산벌 전투",
 		"covers": [
-			{ "ep": "Yellow Mountain" },
-			{ "ep": "Gyebek", "scene": "The March" }
+			{
+				"ep": "Yellow Mountain"
+			},
+			{
+				"ep": "Gyebek",
+				"scene": "The March"
+			}
+		],
+		"people": [
+			"gyebek",
+			"yushin",
+			"bangul",
+			"gwanchang"
 		]
 	},
 	{
@@ -245,8 +557,18 @@
 		"en": "Sabi falls",
 		"ko": "사비성 함락",
 		"covers": [
-			{ "ep": "Sabi" },
-			{ "ep": "King Pungjang", "flashback": 660, "brief": true }
+			{
+				"ep": "Sabi"
+			},
+			{
+				"ep": "King Pungjang",
+				"flashback": 660,
+				"brief": true
+			}
+		],
+		"people": [
+			"euija",
+			"sudingfang"
 		]
 	},
 	{
@@ -255,7 +577,14 @@
 		"sub": "June",
 		"en": "Chunchu dies",
 		"ko": "김춘추 승하",
-		"covers": [{ "ep": "Kim Chunchu†" }]
+		"covers": [
+			{
+				"ep": "Kim Chunchu†"
+			}
+		],
+		"people": [
+			"chunchu"
+		]
 	},
 	{
 		"id": "white-river",
@@ -264,8 +593,18 @@
 		"en": "The battle of the White River",
 		"ko": "백강 전투",
 		"covers": [
-			{ "ep": "White River" },
-			{ "ep": "Betrayal", "scene": "The Throat of the River" }
+			{
+				"ep": "White River"
+			},
+			{
+				"ep": "Betrayal",
+				"scene": "The Throat of the River"
+			}
+		],
+		"people": [
+			"pung",
+			"takutsu",
+			"liurengui"
 		]
 	},
 	{
@@ -273,7 +612,14 @@
 		"year": 665,
 		"en": "Yeon Gesomun dies",
 		"ko": "연개소문 사망",
-		"covers": [{ "ep": "Yeon Gesomun†" }]
+		"covers": [
+			{
+				"ep": "Yeon Gesomun†"
+			}
+		],
+		"people": [
+			"gesomun"
+		]
 	},
 	{
 		"id": "pyongyang-falls",
@@ -281,7 +627,16 @@
 		"sub": "September",
 		"en": "Pyongyang falls",
 		"ko": "평양성 함락",
-		"covers": [{ "ep": "Pyongyang II" }]
+		"covers": [
+			{
+				"ep": "Pyongyang II"
+			}
+		],
+		"people": [
+			"lishiji",
+			"namseng",
+			"bojang"
+		]
 	},
 	{
 		"id": "yushin-dies",
@@ -289,7 +644,14 @@
 		"sub": "July",
 		"en": "Kim Yushin dies",
 		"ko": "김유신 사망",
-		"covers": [{ "ep": "Kim Yushin†" }]
+		"covers": [
+			{
+				"ep": "Kim Yushin†"
+			}
+		],
+		"people": [
+			"yushin"
+		]
 	},
 	{
 		"id": "gibeolpo",
@@ -297,6 +659,13 @@
 		"sub": "November",
 		"en": "The last battle at the Final Ford",
 		"ko": "기벌포 전투",
-		"covers": [{ "ep": "Final Ford" }]
+		"covers": [
+			{
+				"ep": "Final Ford"
+			}
+		],
+		"people": [
+			"munmu"
+		]
 	}
 ]

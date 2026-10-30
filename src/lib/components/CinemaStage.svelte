@@ -515,7 +515,7 @@
 
 	function onEditPanelContextMenu(e: MouseEvent) {
 		if (!panel?.slotId) return;
-		openImageMenu(e, cueMenuTarget(panel.slotId));
+		openImageMenu(e, cueMenuTarget(panel.slotId, panel.src));
 	}
 </script>
 

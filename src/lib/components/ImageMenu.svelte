@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import { editUi } from '$lib/editUi.svelte';
-	import { CUE_SHAPES, closeImageMenu, imageMenu, onEditImageContextMenu } from '$lib/imageMenu.svelte';
+	import { CUE_SHAPES, closeImageMenu, downloadImage, imageMenu, onEditImageContextMenu } from '$lib/imageMenu.svelte';
 	import { ensureStars, isStarred, starUi, toggleStar } from '$lib/imageStarsUi.svelte';
 
 	const MENU_W = 220;
-	const MENU_H = 520;
+	const MENU_H = 560;
 
 	let vw = $state(0);
 	let vh = $state(0);
@@ -94,6 +94,18 @@
 		>
 			<span class="glyph" aria-hidden="true">{starred ? '★' : '☆'}</span>
 			{starred ? 'Unstar' : 'Star'}
+		</button>
+		<button
+			type="button"
+			role="menuitem"
+			disabled={!target.src}
+			onclick={() => {
+				const src = target?.src;
+				run(() => (src ? downloadImage(src) : undefined));
+			}}
+		>
+			<span class="glyph" aria-hidden="true">↓</span>
+			Download
 		</button>
 		<button
 			type="button"

@@ -82,9 +82,9 @@
 						<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
 						{ko ? '에피소드' : 'Episodes'}
 					</a>
-					<a class="cover-glass liquid-glass" href={resolve('/about')}>
-						<span class="material-symbols-outlined" aria-hidden="true">info</span>
-						{ko ? '소개' : 'About'}
+					<a class="cover-glass liquid-glass" href={resolve('/world')}>
+						<span class="material-symbols-outlined" aria-hidden="true">public</span>
+						{ko ? '세계' : 'World'}
 					</a>
 				</div>
 			</div>

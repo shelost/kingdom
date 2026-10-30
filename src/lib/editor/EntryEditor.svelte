@@ -134,6 +134,22 @@
 				class="esub"
 				oninput={(v) => set(() => (entry.subtitle = v || undefined))}
 			/>
+			<Editable
+				single
+				plain
+				value={entry.tagline ?? ''}
+				placeholder="English tagline…"
+				class="etagline"
+				oninput={(v) => set(() => (entry.tagline = v || undefined))}
+			/>
+			<Editable
+				single
+				plain
+				value={entry.taglineKo ?? ''}
+				placeholder="한글 태그라인…"
+				class="etagline-ko"
+				oninput={(v) => set(() => (entry.taglineKo = v || undefined))}
+			/>
 			<div class="accent-row">
 				<input
 					type="color"
@@ -366,6 +382,20 @@
 		font-weight: 700;
 		font-size: 0.9rem;
 		padding: 2px 4px;
+	}
+
+	:global(.editable.etagline) {
+		font-family: var(--serif);
+		font-style: italic;
+		font-size: 0.88rem;
+		padding: 2px 4px;
+		color: #787774;
+	}
+
+	:global(.editable.etagline-ko) {
+		font-size: 0.82rem;
+		padding: 2px 4px;
+		color: #9b9a97;
 	}
 
 	.badges {

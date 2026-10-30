@@ -1451,6 +1451,14 @@
 		font-style: italic;
 	}
 
+	/* A real line from the record, spoken in a mouth: heavier than ordinary emphasis. */
+	.line :global(b),
+	.line :global(strong) {
+		font-weight: 800;
+		color: var(--fg-strong);
+		letter-spacing: 0.01em;
+	}
+
 	/* Tang / Yamato native speech, and its transcription */
 	.line.zh,
 	.line.ja {

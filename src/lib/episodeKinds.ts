@@ -10,8 +10,8 @@ export function isWarEntry(en: Entry): boolean {
 	return !!en.kinds?.some((k) => WAR_KINDS.has(k));
 }
 
-/** Icons shown after an episode title: its stored kinds, or the flashback mark when it has none. */
+/** Icons after an episode title. Flashback is derived from `flash` / `flashback`, never stored. */
 export function episodeKindsOf(en: Entry): EpisodeKind[] {
-	if (en.kinds?.length) return en.kinds;
-	return isFlashEntry(en) ? ['flashback'] : [];
+	const stored = (en.kinds ?? []).filter((k) => k !== 'flashback');
+	return isFlashEntry(en) ? ['flashback', ...stored] : stored;
 }

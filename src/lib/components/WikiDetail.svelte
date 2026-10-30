@@ -59,6 +59,7 @@
 		realmPlaceOf,
 		parentPlaceOf,
 		placesInCity,
+		roomsInCity,
 		citiesOfKingdom,
 		showsWikiAccent,
 		ownersOf,
@@ -73,6 +74,7 @@
 	import { buildChatPrompt, isChatPersona } from '$lib/chatPrompt';
 	import { birthNameOf, royalNameOf } from '$lib/givenNames';
 	import { ensureStars, isStarred, starKey } from '$lib/imageStarsUi.svelte';
+	import StarBadge from './StarBadge.svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import WikiText from '$lib/components/WikiText.svelte';
 	import WikiOrgCharts from './diagrams/WikiOrgCharts.svelte';
@@ -83,6 +85,7 @@
 	import { openLightbox } from '$lib/imageLightbox.svelte';
 	import { editUi } from '$lib/editUi.svelte';
 	import RelationHealth from './RelationHealth.svelte';
+	import LifeArc from './LifeArc.svelte';
 
 	let {
 		entry,
@@ -160,7 +163,8 @@
 			kind === 'instrument' ||
 			kind === 'relationship' ||
 			kind === 'place' ||
-			kind === 'city'
+			kind === 'city' ||
+			kind === 'room'
 			? scenesForWikiEntry(entry.id)
 			: []
 	);
@@ -226,7 +230,7 @@
 		);
 	}
 	let isCity = $derived(kind === 'city');
-	let parentPlace = $derived(kind === 'place' ? parentPlaceOf(entry) : undefined);
+	let parentPlace = $derived(kind === 'place' || kind === 'room' ? parentPlaceOf(entry) : undefined);
 	let nation = $derived(nationOf(entry.kingdom));
 	let realmPlace = $derived(realmPlaceOf(entry));
 	/** Skip empty Territory/Kingdom rows for unrooted cosmological places. */
@@ -254,6 +258,7 @@
 	let childPlaces = $derived(
 		isCity || entry.placeKind === 'realm' ? placesInCity(entry.id) : []
 	);
+	let childRooms = $derived(isCity ? roomsInCity(entry.id) : []);
 	let kingdomCities = $derived(isNation ? citiesOfKingdom(entry.kingdom) : []);
 	let relatedBonds = $derived(isBond ? [] : isPlace ? bondsAtPlace(entry.id) : bondsFor(entry.id));
 	let bondPlaces = $derived(isBond ? bondPlacesOf(entry) : []);
@@ -648,7 +653,7 @@
 			{#if parentPlace}
 				{@const parent = parentPlace}
 				<div>
-					<dt>{parent.placeKind === 'realm' ? 'Realm' : 'City'}</dt>
+					<dt>{parent.placeKind === 'realm' ? 'Realm' : parent.placeKind === 'city' ? 'City' : 'Place'}</dt>
 					<dd class="links">
 						<button type="button" class="linkish" onclick={() => onOpen(parent.id)}
 							>{nameOf(parent)}</button
@@ -968,6 +973,7 @@
 													widths: [256, 384]
 												})}
 											/>
+											<StarBadge on={isStarred(starKey(scene.art, scene.id))} />
 										</button>
 									</li>
 								{/each}
@@ -1002,6 +1008,7 @@
 										widths: [384, 640, 828]
 									})}
 								/>
+								<StarBadge on={isStarred(starKey(scene.art, scene.id))} />
 							</button>
 						</li>
 					{/each}
@@ -1238,6 +1245,45 @@
 			</section>
 		{/if}
 
+		{#if childRooms.length}
+			<section>
+				<h2>Rooms</h2>
+				<ul class="member-grid">
+					{#each childRooms as room (room.id)}
+						{@const roomArt = avatarOf(room)}
+						<li>
+							<button
+								type="button"
+								class="member-card place-card"
+								style:--mk={colorOf(room)}
+								onclick={() => onOpen(room.id)}
+							>
+								<span
+									class="member-avatar place-thumb"
+									class:silhouette={isPlaceholderArt(roomArt)}
+									aria-hidden="true"
+								>
+									{#if roomArt}
+										<img {...storyImg(roomArt, { kind: 'place', alt: '', sizes: '7.25rem', widths: [128, 256] })} />
+									{:else}
+										{hangulInitial(room)}
+									{/if}
+								</span>
+								<span class="member-meta">
+									<span class="member-name">{nameOf(room)}</span>
+									{#if titleOf(room)}
+										<span class="member-title">{titleOf(room)}</span>
+									{:else}
+										<span class="member-title">{kindLabel(room)}</span>
+									{/if}
+								</span>
+							</button>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
+
 		{#if charts.length}
 			<section class="org-charts">
 				<h2>{orgSectionTitle}</h2>
@@ -1321,7 +1367,15 @@
 			<RelationHealth id={entry.id} />
 		{/if}
 
-		{#if entry.arc}
+		{#if entry.lifeArc?.length}
+			<section>
+				<h2>{ui('Character arc')}</h2>
+				{#if entry.arc}
+					<p class="arc-blurb">{koMode ? (entry.arcKo ?? entry.arc) : entry.arc}</p>
+				{/if}
+				<LifeArc personId={entry.id} steps={entry.lifeArc} />
+			</section>
+		{:else if entry.arc}
 			<section>
 				<h2>
 					{ui(
@@ -2405,6 +2459,16 @@
 		color: var(--fg);
 	}
 
+	.arc-blurb {
+		margin: 0 0 0.15rem;
+		font-family: var(--serif);
+		font-size: 1.02rem;
+		font-weight: 500;
+		letter-spacing: -0.015em;
+		line-height: 1.45;
+		color: var(--fg-strong);
+	}
+
 	.ideo-label {
 		font-family: var(--serif);
 		font-weight: 600;
@@ -2749,6 +2813,7 @@
 	}
 
 	.gallery-shot {
+		position: relative;
 		display: block;
 		width: 100%;
 		padding: 0;

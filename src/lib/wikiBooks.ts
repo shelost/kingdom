@@ -4,7 +4,7 @@
  */
 import { BOOK_RATIO } from '$lib/books';
 import { avatarOf, PROFILES } from '$lib/people';
-import { compareWikiEntries, hasRealAvatar, kindOf, type WikiKind } from '$lib/wiki';
+import { compareWikiEntries, filterProfiles, hasRealAvatar, kindOf, type WikiKind } from '$lib/wiki';
 
 export type WikiBookId = WikiKind | 'all';
 
@@ -43,6 +43,7 @@ export const WIKI_BOOKS: WikiBookSpec[] = [
 	book('animal', 'Animals', '짐승', '#6b8f6a', 7.4, 0.85, 0.13, '馬'),
 	book('city', 'Cities', '고을', '#c9a227', 7.8, 0.77, 0.12, '邑'),
 	book('place', 'Places', '땅', '#3d6b4a', 7.6, 0.86, 0.1, '地'),
+	book('room', 'Rooms', '방', '#8a5a3c', 6.2, 0.92, 0.08, '室'),
 	book('nation', 'Nations', '나라', '#C41E3A', 9.4, 0.62, 0.15, '國'),
 	book('phrase', 'Phrases', '말', '#ead8b0', 6.4, 0.65, 0.07, '言'),
 	book('organization', 'Organizations', '조직', '#5C4A8C', 8.2, 0.74, 0.125, '制'),
@@ -71,4 +72,16 @@ export function wikiBookCover(id: WikiBookId): string | undefined {
 export function wikiBookCount(id: WikiBookId): number {
 	if (id === 'all') return PROFILES.length;
 	return PROFILES.filter((p) => kindOf(p) === id).length;
+}
+
+/** How many entries in this volume match the live search. */
+export function wikiBookMatchCount(id: WikiBookId, q: string): number {
+	return filterProfiles({
+		kind: id === 'all' ? 'all' : id,
+		kingdom: 'all',
+		tag: 'all',
+		gender: 'all',
+		art: 'all',
+		q
+	}).length;
 }

@@ -129,6 +129,8 @@
 	}
 
 	function toggleKey(key: string) {
+		const cell = cells.find((c) => c.key === key);
+		if (cell && isStarred(cell.starKey)) return;
 		if (selected.has(key)) selected.delete(key);
 		else selected.add(key);
 	}
@@ -149,10 +151,13 @@
 
 	function onThumbMenu(e: MouseEvent, cell: GridCell) {
 		if (!cell.starKey) return;
+		const locked = isStarred(cell.starKey);
 		openImageMenu(e, {
 			label: cell.id,
+			src: cell.src,
 			starKey: cell.starKey,
-			remove: () => permanentlyDeleteImage(deleteItemOf(cell))
+			remove: locked ? undefined : () => permanentlyDeleteImage(deleteItemOf(cell)),
+			removeHint: locked ? 'Starred stills cannot be deleted' : undefined
 		});
 	}
 
@@ -266,7 +271,13 @@
 				{#if selecting}
 					<label class="pick">
 						<span class="sr-only">Select {im.title}</span>
-						<input type="checkbox" checked={selected.has(im.key)} onchange={() => toggleKey(im.key)} />
+						<input
+							type="checkbox"
+							checked={selected.has(im.key)}
+							disabled={isStarred(im.starKey)}
+							title={isStarred(im.starKey) ? 'Starred stills cannot be deleted' : undefined}
+							onchange={() => toggleKey(im.key)}
+						/>
 					</label>
 				{/if}
 				<button
@@ -306,7 +317,8 @@
 			<h2 id="delete-title">Delete {picked.length} still{picked.length === 1 ? '' : 's'}?</h2>
 			<p class="confirm-copy">
 				Permanent. Files under <code>static/</code> are removed, and chronicle slots are cleared
-				so they do not come back on reload. Portraits (<code>ch_*.png</code>) are never deleted.
+				so they do not come back on reload. Portraits (<code>ch_*.png</code>) and starred stills
+				are never deleted.
 			</p>
 			<ul class="confirm-files">
 				{#each picked.slice(0, 12) as cell (cell.key)}

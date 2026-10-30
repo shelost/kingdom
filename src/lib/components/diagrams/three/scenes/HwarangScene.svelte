@@ -1,7 +1,7 @@
 <script lang="ts">
 	/**
 	 * The Hwarang order as rings: the marshal at the centre, six hwarang
-	 * round him, nangdo fanned out behind each. The schoolbook draws four;
+	 * round him, disciples fanned out behind each. The schoolbook draws four;
 	 * a band can be any size.
 	 */
 	import KitNode from '../KitNode.svelte';
@@ -77,7 +77,7 @@
 <KitLabel
 	at={[0, 0.05, 4.35]}
 	ko="6 화랑 · 낭도는 따르는 사람"
-	en="a hwarang, and whoever follows"
+	en="each hwarang leads an Order"
 	size="xs"
 	tone="note"
 	accent={HUE.silla}

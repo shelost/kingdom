@@ -1,5 +1,5 @@
 {
-	"samhan": [
+	"three-kingdoms": [
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg"
@@ -14,7 +14,7 @@
 		"iconic.jpg",
 		"marvel.jpg"
 	],
-	"seventh-invasion": [
+	"goguryeo-tang-war": [
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg"
@@ -24,7 +24,7 @@
 		"iconic.jpg",
 		"marvel.jpg"
 	],
-	"fall-of-euija": [
+	"haedong-jeungja": [
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg"
@@ -34,7 +34,7 @@
 		"iconic.jpg",
 		"marvel.jpg"
 	],
-	"final-stand": [
+	"fall-of-goguryeo": [
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg"
@@ -44,7 +44,7 @@
 		"iconic.jpg",
 		"marvel.jpg"
 	],
-	"ch-samhan--silla": [
+	"ch-three-kingdoms--silla": [
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg",
@@ -57,9 +57,10 @@
 		"moon-v1.jpg",
 		"moon-v2.jpg",
 		"motifs.jpg",
-		"life.jpg"
+		"life.jpg",
+		"master.jpg"
 	],
-	"ch-samhan--baekje": [
+	"ch-three-kingdoms--baekje": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -72,9 +73,10 @@
 		"deer.jpg",
 		"life.jpg",
 		"onjo.jpg",
-		"yellow-hall.jpg"
+		"yellow-hall.jpg",
+		"master.jpg"
 	],
-	"ch-samhan--goguryeo": [
+	"ch-three-kingdoms--goguryeo": [
 		"current.jpg",
 		"iconic.jpg",
 		"marvel.jpg",
@@ -85,9 +87,10 @@
 		"snow-v1.jpg",
 		"snow-v2.jpg",
 		"commanders.jpg",
-		"life.jpg"
+		"life.jpg",
+		"master.jpg"
 	],
-	"ch-five-principles--two-treasures": [
+	"ch-five-principles--hwarang": [
 		"current.jpg",
 		"iconic.jpg",
 		"v2.jpg",
@@ -96,9 +99,10 @@
 		"story.jpg",
 		"well.jpg",
 		"life.jpg",
-		"life2.jpg"
+		"life2.jpg",
+		"master.jpg"
 	],
-	"ch-five-principles--three-sons": [
+	"ch-five-principles--grand-academy": [
 		"current.jpg",
 		"iconic.jpg",
 		"v2.jpg",
@@ -109,9 +113,10 @@
 		"life-wash.jpg",
 		"life-sons.jpg",
 		"life2.jpg",
-		"life3.jpg"
+		"life3.jpg",
+		"master.jpg"
 	],
-	"ch-five-principles--five-princes": [
+	"ch-five-principles--master-of-the-classics": [
 		"current.jpg",
 		"iconic.jpg",
 		"v2.jpg",
@@ -125,7 +130,8 @@
 		"life3.jpg",
 		"life4.jpg",
 		"five-row.jpg",
-		"rift.jpg"
+		"rift.jpg",
+		"master.jpg"
 	],
 	"ch-iron-will--daeya": [
 		"current.jpg",
@@ -136,7 +142,8 @@
 		"life.jpg",
 		"life-wash.jpg",
 		"life-siege.jpg",
-		"tenebrist.jpg"
+		"tenebrist.jpg",
+		"master.jpg"
 	],
 	"ch-iron-will--supreme-commander": [
 		"current.jpg",
@@ -148,9 +155,10 @@
 		"life.jpg",
 		"life-wash.jpg",
 		"life-summit.jpg",
-		"tenebrist.jpg"
+		"tenebrist.jpg",
+		"master.jpg"
 	],
-	"ch-seventh-invasion--guardian": [
+	"ch-goguryeo-tang-war--ansi": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -161,7 +169,7 @@
 		"xue-match.jpg",
 		"defiance.jpg"
 	],
-	"ch-seventh-invasion--jumong": [
+	"ch-goguryeo-tang-war--jumong": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -186,6 +194,7 @@
 		"life.jpg"
 	],
 	"ch-chunchu-era--sungman": [
+		"royal.jpg",
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -196,6 +205,7 @@
 		"huangdi.jpg"
 	],
 	"ch-chunchu-era--chunchu": [
+		"royal.jpg",
 		"current.jpg",
 		"iconic.jpg",
 		"v2.jpg",
@@ -214,7 +224,7 @@
 		"magenta.jpg",
 		"fox.jpg"
 	],
-	"ch-chunchu-era--hyukgos": [
+	"ch-silla-tang-war--hyukgos": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -225,7 +235,8 @@
 		"egg.jpg",
 		"crowning.jpg"
 	],
-	"ch-fall-of-euija--tamla": [
+	"ch-fall-of-baekje--tamla": [
+		"island.jpg",
 		"current.jpg",
 		"iconic.jpg",
 		"v2.jpg",
@@ -238,7 +249,7 @@
 		"life2.jpg",
 		"halla.jpg"
 	],
-	"ch-fall-of-euija--euija": [
+	"ch-haedong-jeungja--three-thousand-maids": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -249,7 +260,7 @@
 		"papers.jpg",
 		"empty-throne.jpg"
 	],
-	"ch-fall-of-euija--three-loyalists": [
+	"ch-haedong-jeungja--three-loyalists": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -266,25 +277,23 @@
 		"gomanari-stand.jpg",
 		"walk.jpg"
 	],
-	"ch-fall-of-baekje--fall-of-baekje": [
+	"ch-fall-of-baekje--yellow-mountain": [
+		"bra-current.jpg",
+		"bra-manga.jpg",
+		"bra-story.jpg",
 		"current.jpg",
-		"marvel.jpg",
-		"v2.jpg",
-		"v3.jpg",
-		"manga.jpg",
-		"story.jpg"
-	],
-	"ch-fall-of-baekje--baekje-restoration-army-bra": [
-		"current.jpg",
-		"iconic.jpg",
-		"manga.jpg",
-		"story.jpg",
-		"ginyu.jpg",
 		"ginyu-v2.jpg",
+		"ginyu.jpg",
+		"iconic.jpg",
 		"life-match.jpg",
-		"life-match2.jpg"
+		"life-match2.jpg",
+		"manga.jpg",
+		"marvel.jpg",
+		"story.jpg",
+		"v2.jpg",
+		"v3.jpg"
 	],
-	"ch-final-stand--four-beasts": [
+	"ch-fall-of-baekje--four-beasts": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -293,26 +302,34 @@
 		"shadow.jpg",
 		"shadow-v2.jpg"
 	],
-	"ch-final-stand--kudara": [
+	"ch-fall-of-goguryeo--kudara": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
 		"story.jpg",
 		"naval.jpg"
 	],
-	"ch-final-stand--brothers": [
+	"ch-fall-of-goguryeo--grand-supreme-commander": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
 		"story.jpg",
 		"life-match.jpg"
 	],
-	"ch-silla-tang-war--protectorate-general": [
+	"ch-silla-tang-war--unified-silla": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
 		"story.jpg",
-		"xue.jpg"
+		"xue.jpg",
+		"tenebrist.jpg",
+		"life.jpg",
+		"unity.jpg",
+		"lineage.jpg",
+		"court.jpg",
+		"triad.jpg",
+		"thirds.jpg",
+		"night-unity.jpg"
 	],
 	"ch-silla-tang-war--supreme-marshal": [
 		"current.jpg",
@@ -322,7 +339,7 @@
 		"shore.jpg",
 		"tenebrist.jpg"
 	],
-	"ch-iron-will--general": [
+	"ch-iron-will--marshal": [
 		"current.jpg",
 		"iconic.jpg",
 		"manga.jpg",
@@ -333,9 +350,10 @@
 		"life-wash.jpg",
 		"life-sunduk.jpg",
 		"life-star.jpg",
-		"tenebrist.jpg"
+		"tenebrist.jpg",
+		"master.jpg"
 	],
-	"ch-seventh-invasion--four-dragons": [
+	"ch-goguryeo-tang-war--four-dragons": [
 		"current.jpg",
 		"iconic.jpg",
 		"v2.jpg",
@@ -345,15 +363,5 @@
 		"lamp.jpg",
 		"resistance.jpg",
 		"hero.jpg"
-	],
-	"ch-silla-tang-war--king-for-all": [
-		"tenebrist.jpg",
-		"life.jpg",
-		"unity.jpg",
-		"lineage.jpg",
-		"court.jpg",
-		"triad.jpg",
-		"thirds.jpg",
-		"night-unity.jpg"
 	]
 }

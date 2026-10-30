@@ -77,6 +77,7 @@
 		const count = frameCount(sceneId);
 		openImageMenu(event, {
 			label: `Still ${index + 1} of ${count}`,
+			src,
 			starKey: starKey(src),
 			remove: count > 1 ? () => removeFrame(sceneId, index) : undefined,
 			removeHint: 'A song needs at least one still'

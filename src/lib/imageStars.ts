@@ -22,6 +22,11 @@ export function isReferenceImage(src: string | null | undefined): boolean {
 	return REFERENCE_FILE.test(path.split('/').pop() ?? '');
 }
 
+/** Slot id or orphan file stem — used to refuse deletes. */
+export function starLockKey(item: { kind: 'cue'; slotId: string } | { kind: 'orphan'; id: string }): string {
+	return item.kind === 'cue' ? item.slotId : item.id;
+}
+
 export function cleanStarStore(raw: unknown): ImageStarStore {
 	if (!raw || typeof raw !== 'object') return { ...EMPTY_STAR_STORE, stars: [] };
 	const v = raw as Partial<ImageStarStore>;

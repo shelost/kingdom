@@ -46,7 +46,7 @@
 	});
 	interactivity({ filter: (hits) => hits.slice(0, 1) });
 
-	const stiffness = $derived(reduced ? 1400 : 95);
+	const stiffness = $derived(reduced ? 1400 : 42);
 	const missMat = new MeshBasicMaterial({
 		transparent: true,
 		opacity: 0,
@@ -100,14 +100,17 @@
 			return;
 		}
 		const k = stiffness;
-		const c = 2 * Math.sqrt(k);
-		const dt = Math.min(delta, 1 / 30);
-		;[camPos.x, camVel.x] = spring(camPos.x, camVel.x, camGoal.x, k, c, dt);
-		;[camPos.y, camVel.y] = spring(camPos.y, camVel.y, camGoal.y, k, c, dt);
-		;[camPos.z, camVel.z] = spring(camPos.z, camVel.z, camGoal.z, k, c, dt);
-		;[look.x, lookVel.x] = spring(look.x, lookVel.x, lookGoal.x, k, c, dt);
-		;[look.y, lookVel.y] = spring(look.y, lookVel.y, lookGoal.y, k, c, dt);
-		;[look.z, lookVel.z] = spring(look.z, lookVel.z, lookGoal.z, k, c, dt);
+		const c = 2.35 * Math.sqrt(k);
+		const steps = Math.min(8, Math.ceil(delta / (1 / 120)));
+		const dt = Math.min(delta / steps, 1 / 60);
+		for (let i = 0; i < steps; i++) {
+			;[camPos.x, camVel.x] = spring(camPos.x, camVel.x, camGoal.x, k, c, dt);
+			;[camPos.y, camVel.y] = spring(camPos.y, camVel.y, camGoal.y, k, c, dt);
+			;[camPos.z, camVel.z] = spring(camPos.z, camVel.z, camGoal.z, k, c, dt);
+			;[look.x, lookVel.x] = spring(look.x, lookVel.x, lookGoal.x, k, c, dt);
+			;[look.y, lookVel.y] = spring(look.y, lookVel.y, lookGoal.y, k, c, dt);
+			;[look.z, lookVel.z] = spring(look.z, lookVel.z, lookGoal.z, k, c, dt);
+		}
 		live.position.copy(camPos);
 		live.lookAt(look);
 		renderer.render(scene, live);

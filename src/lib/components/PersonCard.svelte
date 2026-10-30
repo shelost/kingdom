@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Block } from '$lib/story';
 	import { reading } from '$lib/reading.svelte';
-	import { byId, avatarOf, titleOf, colorOf, isMonarch, stageById, resolveStage } from '$lib/people';
+	import { byId, avatarOf, titleOf, colorOf, isMonarch, stageById, resolveStage, regnalOf } from '$lib/people';
 	import { dialogueUi } from '$lib/dialogueUi.svelte';
 	import {
 		fullName,
@@ -10,6 +10,9 @@
 		isHanja,
 		isEmperor,
 		realmInk,
+		realmColor,
+		inkOn,
+		ordinalSuffix,
 		promotionSeal,
 		personName,
 		rankGlyph,
@@ -180,6 +183,19 @@
 	});
 
 	const glyphsOf = (s: string | undefined) => Array.from(s ?? '');
+
+	/** Seat in the kingdom's list, hung as a medal on monarch plates. */
+	let regnal = $derived(person ? (regnalOf(person, year, block.look) ?? null) : null);
+	let kingdom = $derived(person ? realmColor(person) : '#8a8a94');
+	let regnalInk = $derived(inkOn(kingdom));
+	let regnalSuf = $derived(regnal != null ? ordinalSuffix(regnal) : '');
+	let regnalLabel = $derived(
+		regnal == null
+			? ''
+			: reading.lang === 'ko'
+				? `제${regnal}대`
+				: `${regnal}${ordinalSuffix(regnal)} sovereign`
+	);
 </script>
 
 <!-- The Korean name, syllable by syllable, so it can rise in after the brush. -->
@@ -233,6 +249,19 @@
 	</div>
 {/snippet}
 
+<!-- A large medal hanging from the top of the plate: the kingdom's colour, the seat in its list. -->
+{#snippet regnalBadge()}
+	{#if regnal != null}
+		<span class="regnal" class:shown={done} style:--kingdom={kingdom} style:--regnal-ink={regnalInk} title={regnalLabel} aria-label={regnalLabel}>
+			<span class="regnal-cord" aria-hidden="true"></span>
+			<span class="regnal-disc" aria-hidden="true">
+				<span class="regnal-n">{regnal}</span>
+				<span class="regnal-suf">{regnalSuf}</span>
+			</span>
+		</span>
+	{/if}
+{/snippet}
+
 {#if person && full && social}
 	<LinkedInPost
 		{person}
@@ -254,11 +283,13 @@
 		class:seen={step >= 1}
 		class:inked={done && (hanDone || !plate.han)}
 		class:has-face={!!src}
+		class:has-regnal={regnal != null}
 		{@attach begin}
 	>
 		<Material kind="rubbing" />
 		<span class="plate-tab">{reading.lang === 'en' ? TABS[tab].en : `${TABS[tab].ko} · ${TABS[tab].en}`}</span>
 		<CornerMark {flag} glyph={mark?.glyph} label={markLabel} color="#b3261e" shown={done} />
+		{@render regnalBadge()}
 		{#if still}
 			{@render intro(still)}
 		{:else if src}
@@ -295,6 +326,7 @@
 		class:has-mark={!!(flag || mark)}
 		class:has-still={!!still}
 		class:epitaph={!!lifespan}
+		class:has-regnal={regnal != null}
 		style:--tone={being === 'mortal' ? colorOf(person) : realm}
 		style:--realm={realm}
 		style:--seal={realmInk(realm, 0.58)}
@@ -303,6 +335,7 @@
 		<Material kind={culture === 'tang' ? 'silk' : culture === 'yamato' ? 'cloth' : 'paper'} />
 		<span class="plate-tab">{reading.lang === 'en' ? TABS[tab].en : `${TABS[tab].ko} · ${TABS[tab].en}`}</span>
 		<CornerMark {flag} glyph={mark?.glyph} label={markLabel} color={realmInk(realm, 0.62)} shown={done} />
+		{@render regnalBadge()}
 		{#if still}{@render intro(still)}{/if}
 		{#if evolves && fromSrc}
 			<div
@@ -388,6 +421,7 @@
 	.person-card {
 		/* The hanja's ink: the realm's colour worked into the theme's sumi. */
 		--ink: color-mix(in srgb, var(--realm) 40%, var(--sumi));
+		position: relative;
 		isolation: isolate;
 		display: grid;
 		grid-template-columns: minmax(4.25rem, 18%) 1fr;
@@ -448,6 +482,111 @@
 		gap: 0.3rem;
 		min-width: 0;
 		max-width: 100%;
+	}
+
+	/* A large medal hanging from the top of the plate, in the kingdom's colour. */
+	.regnal {
+		position: absolute;
+		top: 0;
+		left: 1.15rem;
+		z-index: 4;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 4.1rem;
+		pointer-events: none;
+		filter: drop-shadow(0 8px 12px rgb(0 0 0 / 0.32));
+		opacity: 0;
+		transform: translateY(-0.6rem);
+	}
+
+	.regnal.shown {
+		animation: hang 640ms cubic-bezier(0.3, 1.2, 0.5, 1) 180ms both;
+	}
+
+	/* No still: hang it on the portrait, not over the name. */
+	.person-card:not(.has-still):not(.evolves):not(.emperor) .regnal {
+		left: 0.35rem;
+		top: 0.2rem;
+		width: 3.15rem;
+	}
+
+	.person-card:not(.has-still):not(.evolves):not(.emperor) .regnal-disc {
+		width: 3.15rem;
+		height: 3.15rem;
+	}
+
+	.person-card:not(.has-still):not(.evolves):not(.emperor) .regnal-n {
+		font-size: 1.45rem;
+	}
+
+	.emperor .regnal {
+		left: 1.35rem;
+		top: 0.15rem;
+	}
+
+	.evolves .regnal {
+		left: auto;
+		right: 1.15rem;
+	}
+
+	.regnal-cord {
+		width: 0.55rem;
+		height: 1.25rem;
+		background:
+			linear-gradient(90deg, rgb(0 0 0 / 0.18), transparent 40%, rgb(255 255 255 / 0.28) 50%, transparent 62%, rgb(0 0 0 / 0.14)),
+			linear-gradient(#c4a15a, #8a6a2c);
+		box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.2);
+	}
+
+	.regnal-disc {
+		display: grid;
+		justify-items: center;
+		align-content: center;
+		gap: 0.02rem;
+		width: 4.1rem;
+		height: 4.1rem;
+		margin-top: -0.12rem;
+		border-radius: 50%;
+		color: var(--regnal-ink);
+		background:
+			radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.28), transparent 42%),
+			var(--kingdom);
+		box-shadow:
+			inset 0 0 0 3px var(--kingdom),
+			inset 0 0 0 5px color-mix(in srgb, var(--regnal-ink) 55%, transparent),
+			0 2px 0 color-mix(in srgb, var(--kingdom) 70%, #000);
+		transform: rotate(-7deg);
+	}
+
+	.regnal-n {
+		font-family: var(--serif);
+		font-size: 1.85rem;
+		font-weight: 900;
+		font-variant-numeric: tabular-nums;
+		line-height: 0.88;
+		letter-spacing: -0.04em;
+	}
+
+	.regnal-suf {
+		font-family: var(--ui);
+		font-size: 0.62rem;
+		font-weight: 800;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		line-height: 1;
+		opacity: 0.88;
+	}
+
+	@keyframes hang {
+		from {
+			opacity: 0;
+			transform: translateY(-1.1rem);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
 	}
 
 	/* ————— Kinds of being: gods, the dead's officers, demigods, beasts ————— */
@@ -1357,6 +1496,24 @@
 
 		.emperor {
 			min-height: 18rem;
+		.regnal {
+			width: 2.85rem;
+			left: 0.7rem;
+		}
+
+		.regnal-disc {
+			width: 2.85rem;
+			height: 2.85rem;
+		}
+
+		.regnal-n {
+			font-size: 1.25rem;
+		}
+
+		.regnal-cord {
+			height: 0.95rem;
+		}
+
 		}
 	}
 
@@ -1392,7 +1549,8 @@
 			filter: none;
 		}
 
-		.seal {
+		.em-rule,
+		.regnal {
 			opacity: 1;
 			transform: rotate(-6deg);
 		}

@@ -7,6 +7,7 @@
 	import { onMount, untrack } from 'svelte';
 	import ImageLightbox from '$lib/components/ImageLightbox.svelte';
 	import ImageMenu from '$lib/components/ImageMenu.svelte';
+	import StoryAsk from '$lib/components/StoryAsk.svelte';
 	import MobileTabBar from '$lib/components/MobileTabBar.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import { applyNsfwFromUrl, NSFW_QUERY, nsfwQueryOn } from '$lib/nsfwUi.svelte';
@@ -114,3 +115,4 @@
 <MobileTabBar />
 <ImageLightbox />
 <ImageMenu />
+<StoryAsk />

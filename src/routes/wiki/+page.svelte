@@ -29,6 +29,7 @@
 		kindOf,
 		kindLabel,
 		filterProfiles,
+		hasRealAvatar,
 		groupByKind,
 		groupByGodTier,
 		godTierLabel,
@@ -66,6 +67,7 @@
 		kingdom: 'kingdom',
 		tag: 'era',
 		gender: 'gender',
+		art: 'image',
 		q: 'q',
 		cast: 'with',
 		id: 'id',
@@ -90,6 +92,8 @@
 		if (t && ERA_TAG_IDS.includes(t)) out.tag = t;
 		const g = get('gender');
 		if (g === 'm' || g === 'f') out.gender = g;
+		const art = get('art');
+		if (art === 'missing') out.art = art;
 		const text = get('q');
 		if (text) out.q = text;
 		return out;
@@ -100,6 +104,7 @@
 	let kingdom = $state<WikiFilters['kingdom']>(fromUrl.kingdom ?? 'all');
 	let tag = $state<WikiFilters['tag']>(fromUrl.tag ?? 'all');
 	let gender = $state<WikiFilters['gender']>(fromUrl.gender ?? 'all');
+	let art = $state<WikiFilters['art']>(fromUrl.art ?? 'all');
 	let q = $state(fromUrl.q ?? '');
 	let cast = $state<string[]>(castFromList(page.url.searchParams.get(PARAM.cast)));
 	let expanded = $state(page.url.searchParams.get(PARAM.full) === '1' && !!page.url.searchParams.get(PARAM.id));
@@ -116,7 +121,7 @@
 	let selected = $derived(selectedId ? (byId.get(selectedId) ?? null) : null);
 
 	/** Everything the main filters keep, before the “with” chips narrow it. */
-	let base = $derived(filterProfiles({ kind, kingdom, tag, gender, q }));
+	let base = $derived(filterProfiles({ kind, kingdom, tag, gender, art, q }));
 	let showCast = $derived(hasCastFilter(kind));
 	let castOptions = $derived(showCast ? castChips(base) : []);
 	let filtered = $derived(showCast ? withCast(base, cast) : base);
@@ -147,6 +152,7 @@
 			(kingdom !== 'all' ? 1 : 0) +
 			(tag !== 'all' ? 1 : 0) +
 			(gender !== 'all' ? 1 : 0) +
+			(art !== 'all' ? 1 : 0) +
 			(showCast && cast.length ? 1 : 0) +
 			(q.trim() ? 1 : 0)
 	);
@@ -164,6 +170,7 @@
 			else if (v.kingdom) kingdom = v.kingdom;
 			if (v.tag) tag = v.tag;
 			if (v.gender) gender = v.gender;
+			if (v.art === 'missing' || v.art === 'all') art = v.art;
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
 			// Do not restore `q` — sticky search (e.g. "go") hid most gods/nations.
 		} catch {
@@ -173,8 +180,8 @@
 
 	function persistFilters() {
 		if (!browser) return;
-		// Persist type/kingdom/era/gender/people only — never the find query.
-		sessionStorage.setItem(FILTERS_KEY, JSON.stringify({ kind, kingdom, tag, gender, cast }));
+		// Persist type/kingdom/era/gender/image/people only — never the find query.
+		sessionStorage.setItem(FILTERS_KEY, JSON.stringify({ kind, kingdom, tag, gender, art, cast }));
 	}
 
 	function onKindChange() {
@@ -200,6 +207,18 @@
 		});
 		if (g === 'all') return pool.length;
 		return pool.filter((p) => p.gender === g).length;
+	}
+
+	/** How many in the current type still lack a painted portrait / board. */
+	let missingCount = $derived(
+		(kind === 'all' ? PROFILES : PROFILES.filter((p) => kindOf(p) === kind)).filter(
+			(p) => !hasRealAvatar(p)
+		).length
+	);
+
+	function toggleArt() {
+		art = art === 'missing' ? 'all' : 'missing';
+		persistFilters();
 	}
 
 	function saveIndexScroll() {
@@ -243,6 +262,7 @@
 		if (kingdom !== 'all') params.set(PARAM.kingdom, kingdom);
 		if (tag !== 'all') params.set(PARAM.tag, tag);
 		if (gender !== 'all') params.set(PARAM.gender, gender);
+		if (art !== 'all') params.set(PARAM.art, art);
 		if (showCast && cast.length) params.set(PARAM.cast, cast.join(','));
 		if (q.trim()) params.set(PARAM.q, q.trim());
 		if (id) params.set(PARAM.id, id);
@@ -427,6 +447,7 @@
 		kingdom: WikiFilters['kingdom'];
 		tag: WikiFilters['tag'];
 		gender: WikiFilters['gender'];
+		art: WikiFilters['art'];
 		q: string;
 		cast: string[];
 		indexScroll: number;
@@ -444,6 +465,7 @@
 				kingdom,
 				tag,
 				gender,
+				art,
 				q,
 				cast: [...cast],
 				indexScroll: browser ? window.scrollY : 0,
@@ -456,6 +478,7 @@
 			kingdom = value.kingdom === 'underworld' ? 'all' : value.kingdom;
 			tag = value.tag ?? 'all';
 			gender = value.gender ?? 'all';
+			art = value.art ?? 'all';
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
 			q = value.q ?? '';
 			cast = castFromList(value.cast);
@@ -510,6 +533,16 @@
 					onchange={persistFilters}
 				/>
 			{/if}
+			<button
+				type="button"
+				class="art-toggle liquid-glass"
+				aria-pressed={art === 'missing'}
+				onclick={toggleArt}
+			>
+				<span class="field">Image</span>
+				<span class="value">No image</span>
+				<span class="n">{missingCount}</span>
+			</button>
 		</div>
 		<p class="count" aria-live="polite">
 			{filtered.length}
@@ -532,7 +565,11 @@
 		{/if}
 
 		{#if filtered.length === 0}
-			<p class="no-results">Nothing matches. Widen the filters or clear the search.</p>
+			<p class="no-results">
+				{art === 'missing'
+					? 'Nothing in this type is missing a portrait. Set Type to All.'
+					: 'Nothing matches. Widen the filters or clear the search.'}
+			</p>
 		{:else}
 			{#each sections as section, si (section.key)}
 				<section class="group" class:tier-group={kind === 'god'}>
@@ -802,6 +839,53 @@
 		flex-wrap: wrap;
 		gap: 0.5rem;
 		margin: 0 0 1.15rem;
+	}
+
+	.art-toggle {
+		--glass-tint: 30%;
+		--glass-sheen: 12%;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		height: 2.5rem;
+		padding: 0 1.05rem;
+		border-radius: var(--radius-pill);
+		font: inherit;
+		font-family: var(--ui);
+		font-size: 13px;
+		letter-spacing: var(--tracking-ui);
+		line-height: 1;
+		color: var(--fg);
+		cursor: pointer;
+	}
+
+	.art-toggle:hover {
+		--glass-tint: 48%;
+	}
+
+	.art-toggle[aria-pressed='true'] {
+		--glass-tint: 52%;
+		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+		color: var(--fg-strong);
+	}
+
+	.art-toggle .field {
+		font-size: 0.62rem;
+		font-weight: 600;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--fg-faint);
+	}
+
+	.art-toggle .value {
+		font-weight: 500;
+		color: var(--fg-strong);
+	}
+
+	.art-toggle .n {
+		font-size: 0.68rem;
+		color: var(--fg-faint);
+		font-variant-numeric: tabular-nums;
 	}
 
 	.browse {

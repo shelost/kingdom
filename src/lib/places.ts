@@ -18,7 +18,7 @@ import type { Pt } from '$lib/mapPaths';
 import { project } from './borders.ts';
 import riversNe from './data/rivers-ne.json' with { type: 'json' };
 
-export type PlaceKind = 'city' | 'mountain' | 'river' | 'harbor' | 'cave' | 'realm';
+export type PlaceKind = 'city' | 'mountain' | 'river' | 'harbor' | 'cave' | 'realm' | 'room';
 
 export const PLACE_KIND_LABEL: Record<PlaceKind, string> = {
 	city: 'City / Fortress',
@@ -26,7 +26,8 @@ export const PLACE_KIND_LABEL: Record<PlaceKind, string> = {
 	river: 'River',
 	harbor: 'Harbour',
 	cave: 'Cavern',
-	realm: 'Realm'
+	realm: 'Realm',
+	room: 'Room'
 };
 
 export const PLACE_KIND_LABEL_KO: Record<PlaceKind, string> = {
@@ -35,7 +36,8 @@ export const PLACE_KIND_LABEL_KO: Record<PlaceKind, string> = {
 	river: '강',
 	harbor: '항구',
 	cave: '동굴',
-	realm: '세계'
+	realm: '세계',
+	room: '방'
 };
 
 export interface Place {
@@ -50,9 +52,10 @@ export interface Place {
 	side: Person['kingdom'];
 	/**
 	 * Parent city / fortress when `kind !== 'city'`.
-	 * Wiki: Place → City → Kingdom. Cities themselves omit this.
+	 * Wiki: Place or Room → City → Kingdom. Cities themselves omit this.
 	 * Cosmological sites (저승, 하늘나라) leave it unset — no earthly city.
 	 * A site inside a realm (Flower Cliff in 서천꽃밭) may point at that realm.
+	 * Rooms (`kind: 'room'`) always sit inside a city and stay off the map.
 	 */
 	cityId?: string;
 	/** first year the city stands (negative = BCE); unset = always on the map */
@@ -91,7 +94,7 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'goguryeo',
 		capital: true,
-		avatar: '/pl_pyongyang_city.png',
+		avatar: '/pl_pyongyang_fortress.png',
 		gallery: ['/pl_pyongyang_fortress.png', '/pl_taehak.png'],
 		blurb:
 			'Red Sun’s capital — Goguryeo’s seat. Yeon Gesomun butchers the court here in 642; the walls hold every siege until they are opened from inside in 668.',
@@ -375,6 +378,7 @@ export const PLACES: Record<string, Place> = {
 		events: [
 			{ year: -37, label: 'Jumong founds Goguryeo at Jolbon after the river gives way.' },
 			{ year: -37, label: 'He prays in the cavern (국동대혈) for a kingdom of his own.' },
+			{ year: 300, label: 'A salt seller kneels here. The first king answers.' },
 			{ year: 642, label: 'Gesomun prays here after the Pyongyang massacre.' }
 		],
 		aliases: ['Jolbon', 'Jumong Cavern', '국동대혈', 'Jumong Cave', '졸본']
@@ -395,7 +399,16 @@ export const PLACES: Record<string, Place> = {
 			'Song Yang’s timber country beside Jolbon — pines, packed earth, one giwa hall. Jumong annexed the roof to get Oi, Mari, and Hyupbo back.',
 		arc: 'The ridge path after Jumong’s river split does not run to Tabal’s yard. It runs here. Song Yang holds the three as guests who do not leave until King Jumong — Queen Sosuno on the rail — takes a single shaft in this packed-earth yard and yields both the friends and the country. The ledgers may write 松國; mouths say 소나무 나라. The name is not the later son’s.',
 		events: [{ year: -37, label: 'Song Yang yields the pine roof; Jumong’s three friends return to Jolbon.' }],
-		aliases: ['Pine Kingdom', '소나무 나라', '松國', 'Song Yang’s pine roof']
+		aliases: [
+			'Pine Kingdom',
+			'소나무 나라',
+			'松國',
+			'Song Yang’s pine roof',
+			'비류국',
+			'沸流國',
+			'Biryu-guk',
+			'Biryuguk'
+		]
 	},
 	gungnae: {
 		id: 'gungnae',
@@ -408,6 +421,39 @@ export const PLACES: Record<string, Place> = {
 		kind: 'city',
 		side: 'goguryeo',
 		blurb: 'The second capital, and the site of the Gwanggeto Stele. Wei troops sacked it in 244.'
+	},
+	nakrang: {
+		id: 'nakrang',
+		founded: -108,
+		fell: 32,
+		name: 'Nakrang',
+		korean: '낙랑',
+		hanja: '樂浪',
+		x: 257,
+		y: 462,
+		kind: 'city',
+		side: 'goguryeo',
+		title: 'The commandery Hodong unseats',
+		blurb:
+			'樂浪 — music and waves. A Han commandery on the Daedong that still had a king when Prince Hodong married its princess. She smashed the self-sounding drum. Goguryeo rode in.',
+		arc: 'The name is two characters a reader can feel: 樂 joy/music, 浪 waves. The place is a roof between Han and Goguryeo. Hodong’s marriage opens it from inside. The princess dies for the drum. The country does not keep its name long after.',
+		events: [{ year: 32, label: 'Hodong’s princess smashes the drum; Goguryeo takes Nakrang.' }],
+		aliases: ['Nakrang', '낙랑', '樂浪', 'Lelang', 'Nangnang', 'Naklang']
+	},
+	okjeo: {
+		id: 'okjeo',
+		name: 'Wet Fields',
+		korean: '옥저',
+		hanja: '沃沮',
+		x: 332,
+		y: 409,
+		kind: 'city',
+		side: 'goguryeo',
+		title: 'East-sea pantry of Goguryeo',
+		blurb:
+			'沃沮 — wet, fertile marsh. Villages, not a great king. Fish, salt, cloth. Hodong’s Nakrang story starts here as a pleasure trip. Wei later walks through it to the sea.',
+		arc: 'Goguryeo treats the Wet Fields as a kitchen on the east sea. Headmen, not a throne. Girls sent young to the husband’s house. The dead sit in a hut until the bones can be boxed. When Wei chases King Dongcheon, the army walks this shore; the northern villages hide in caves.',
+		aliases: ['Wet Fields', 'Okjeo', '옥저', '沃沮', 'East Okjeo']
 	},
 
 	// ————————————————————————— Silla —————————————————————————
@@ -428,6 +474,113 @@ export const PLACES: Record<string, Place> = {
 			'Capital of the Divine Country. Queen Sunduk is crowned here in 632, Bidam rebels at its Fortress of Radiance in 647, and Munmu is proclaimed King of Samhan here in 676.',
 		sobriquets: ['Capital of the Divine Country'],
 		aliases: ['Surabol', '서라벌', 'Capital of the Divine Country']
+	},
+	sound_kingdom: {
+		id: 'sound_kingdom',
+		founded: -50,
+		fell: 102,
+		name: 'Sound Kingdom',
+		korean: '음즙벌',
+		hanja: '音汁伐',
+		x: 402,
+		y: 609,
+		kind: 'city',
+		side: 'silla',
+		title: '音 — the kingdom named for sound',
+		blurb:
+			'音汁伐. The first character is sound. A small Jinhan roof north of Surabol. It asks King Suro to judge a border, then Silla eats it anyway.',
+		arc: 'Sound Kingdom and Straight Vale fight over a strip. They ask Gaya’s Suro to settle it. Silla attacks the Sound Kingdom regardless. Siljik and Held Watch surrender rather than be next. The hanja is why the English is Sound, not the unreadable Eumjeupbeol.',
+		events: [{ year: 102, label: 'Asks Suro to judge; Silla takes the roof anyway.' }],
+		aliases: ['Sound Kingdom', '음즙벌', '音汁伐', 'Eumjeupbeol', 'Eumjeup']
+	},
+	siljik: {
+		id: 'siljik',
+		founded: -50,
+		fell: 104,
+		name: 'Straight Vale',
+		korean: '실직',
+		hanja: '悉直',
+		x: 398,
+		y: 534,
+		kind: 'city',
+		side: 'silla',
+		title: '悉直 — all-straight gorge, Gaya and Silla both',
+		blurb:
+			'悉直谷. 直 is straight. An east-coast vale that asks Suro to judge, then bows to Silla so it will not be next. Later a Silla district on the Samcheok shore.',
+		arc: 'Straight Vale sits between Gaya’s judgement and Silla’s appetite. It fights Sound Kingdom over a border, takes Suro’s word, and surrenders to Pasa when the word does not hold. Both kingdoms can claim it. The book has claimed neither yet.',
+		events: [{ year: 104, label: 'Surrenders to Silla after Sound Kingdom falls.' }],
+		aliases: ['Straight Vale', '실직', '悉直', '실직곡', '悉直谷', 'Siljik', 'Siljikgok']
+	},
+	apdok: {
+		id: 'apdok',
+		founded: -50,
+		fell: 146,
+		name: 'Held Watch',
+		korean: '압독',
+		hanja: '押督',
+		x: 380,
+		y: 619,
+		kind: 'city',
+		side: 'silla',
+		title: '押督 — a small roof Silla pins and keeps',
+		blurb:
+			'押 is to hold down, 督 to watch. A Jinhan roof west of Surabol that surrenders with Straight Vale, then rebels once as a county. Wonhyo is from here. Yushin later holds it as a circuit.',
+		arc: 'Held Watch surrenders so it will not be next after Sound Kingdom. Four years later Pasa rides out to feed the poor. Forty years after that it rebels. Silla puts it down and moves the survivors. After 146 it is a district that happens to produce a monk and a marshal’s command.',
+		events: [
+			{ year: 102, label: 'Surrenders with Straight Vale rather than be next.' },
+			{ year: 146, label: 'Rebels as a county; Silla puts it down.' }
+		],
+		aliases: ['Held Watch', '압독', '押督', 'Apdok', 'Apdok-ju']
+	},
+	dongye: {
+		id: 'dongye',
+		name: 'East Ye',
+		korean: '동예',
+		hanja: '東濊',
+		x: 386,
+		y: 519,
+		kind: 'city',
+		side: 'silla',
+		title: 'East Ye — tiger, ridge-fine, tenth-month heaven',
+		blurb:
+			'東濊. Same stock as Goguryeo, they say. They sacrifice to heaven in the tenth month (Mucheon), and to the tiger. Cross another village’s ridge and you pay in people or cattle — chaekhwa.',
+		arc: 'Not a kingdom with a king so much as a shore of villages that keep a fine for crossing a mountain. The Suro contest borrowed a sealskin and a tiger god from here. Yeono’s rock is this coast. The festival and the fine are not yet a scene.',
+		aliases: ['East Ye', '동예', '東濊', 'Dongye']
+	},
+	usan: {
+		id: 'usan',
+		founded: -50,
+		fell: 512,
+		name: 'Usan',
+		korean: '우산',
+		hanja: '于山',
+		x: 468,
+		y: 528,
+		kind: 'city',
+		side: 'silla',
+		offMap: true,
+		title: 'The island that bowed to wooden lions',
+		blurb:
+			'于山. Ulleung, out past the east sea. Trusts its cliffs until Isabu beaches wooden lions and says: surrender, or I set these loose.',
+		arc: 'Usan will not bow. Isabu says a siege will not work and a trick will. Wooden lions on the warships. Tribute every year after. The general is already in the book; the island is not.',
+		events: [{ year: 512, label: 'Isabu takes Usan with wooden lions.' }],
+		aliases: ['Usan', '우산', '于山', 'Ulleung', 'Usan-guk']
+	},
+	chisullyeong: {
+		id: 'chisullyeong',
+		name: 'Chisullyeong',
+		korean: '치술령',
+		hanja: '鵄述嶺',
+		x: 418,
+		y: 642,
+		kind: 'mountain',
+		side: 'silla',
+		title: 'The ridge that waited',
+		blurb:
+			'A shore ridge east of Surabol. Jesang’s wife climbs it looking toward Wa and does not come down.',
+		arc: 'After Jesang stays on the island, his wife takes the daughters up this ridge. The story keeps a stone, then a bird. The ridge keeps the looking.',
+		events: [{ year: 418, label: 'Lady Chisul dies waiting for Jesang.' }],
+		aliases: ['Chisullyeong', '치술령', '鵄述嶺', 'Chisul ridge', 'Mangbuseok']
 	},
 	jade_gate_valley: {
 		id: 'jade_gate_valley',
@@ -557,6 +710,20 @@ export const PLACES: Record<string, Place> = {
 		avatar: '/pl_daeya_fortress.png',
 		blurb:
 			'The border fortress lost in the eighth month of 642. Chunchu’s daughter Gotaso died here, and the war that ends three kingdoms starts from it.'
+	},
+	amak: {
+		id: 'amak',
+		name: 'Amak Fortress',
+		korean: '아막성',
+		hanja: '阿莫城',
+		aliases: ['Amak', 'Amak Fortress', '아막성', '모산성', 'Mother Mountain', 'Unbong'],
+		x: 328,
+		y: 628,
+		kind: 'city',
+		side: 'silla',
+		avatar: '/pl_mugun_fortress.png',
+		blurb:
+			'The pass-fort on the Unbong saddle. In 602 Silla thought it had won here, then the pines at Cheonsan pond shot back.'
 	},
 	gibeolpo: {
 		id: 'gibeolpo',
@@ -1123,7 +1290,7 @@ export const PLACES: Record<string, Place> = {
 	moon_palace: {
 		id: 'moon_palace',
 		name: 'Moon Palace',
-		korean: '월궁',
+		korean: '월성',
 		x: 395,
 		y: 625,
 		kind: 'cave',
@@ -1131,7 +1298,8 @@ export const PLACES: Record<string, Place> = {
 		cityId: 'surabol',
 		offMap: true,
 		avatar: '/pl_moon_palace.png',
-		blurb: 'Surabol’s moonlit court rooms in chronicle art — Eastern Palace’s night face.'
+		blurb:
+			'Surabol’s moonlit court rooms. Nulji names Jesang a traitor here, loud enough for the yard to hear.'
 	},
 	asuka: {
 		id: 'asuka',
@@ -1145,7 +1313,23 @@ export const PLACES: Record<string, Place> = {
 		offMap: true,
 		avatar: '/pl_asuka.png',
 		blurb:
-			'the East’s court. Chunchu came asking for troops in 647 and was refused; fifteen years later it sent forty thousand men to die for Baekje.'
+			'the East’s court. Jesang walks into it as a traitor and asks for a fleet. Two centuries later Chunchu asks for troops and is refused.'
+	},
+	tsushima: {
+		id: 'tsushima',
+		name: 'Mountain Island',
+		korean: '대마도',
+		hanja: '對馬島',
+		x: 458,
+		y: 688,
+		kind: 'city',
+		side: 'yamato',
+		title: 'The island in the strait',
+		blurb:
+			'對馬. A mountain in the water between Silla and Wa. Jesang puts a prince on a Silla ship in its lee and stays.',
+		arc: 'Wa’s fleet stops here on the way to Surabol. A Silla hull is already waiting in the cove. The hostage leaves. The man who brought him does not.',
+		events: [{ year: 418, label: 'Jesang sends Miseheun home from the lee. Wa takes Jesang.' }],
+		aliases: ['Mountain Island', 'Tsushima', '대마도', '對馬島', '對馬', 'Daemado']
 	},
 	realms_pavilion: {
 		id: 'realms_pavilion',
@@ -1252,7 +1436,7 @@ export const PLACES: Record<string, Place> = {
 		avatar: '/pl_western_flower_field.png',
 		title: 'Hallakgungi’s rows',
 		blurb: 'The Gardener’s realm — resurrection and extinction in the same western rows.',
-		arc: '서천꽃밭 is the third court of 삼계: travel west from 이승 far enough and living maps end. Hallakgungi (할락궁이) keeps the gate after Father Saradoryung retired. Resurrection blooms sit beside the extinction flower; Jachungbi’s chain runs through this gate. Flower Cliff is a drop at the field’s edge, not the field itself. Not a kingdom — a court among the Three Realms under Hannim.',
+		arc: '서천꽃밭 is the third court of 삼계: travel west from 이승 far enough and living maps end. Hallakgungi (할락궁이) keeps the gate after Father Sara retired. Resurrection blooms sit beside the extinction flower; Jachungbi’s chain runs through this gate. Flower Cliff is a drop at the field’s edge, not the field itself. Not a kingdom — a court among the Three Realms under Hannim.',
 		sobriquets: ['서천꽃밭', 'Hallakgungi’s rows', 'the western field'],
 		aliases: [
 			'Western Flower Field',
@@ -1290,7 +1474,7 @@ export const PLACES: Record<string, Place> = {
 		korean: '별채',
 		x: 393,
 		y: 627,
-		kind: 'cave',
+		kind: 'room',
 		side: 'silla',
 		cityId: 'surabol',
 		offMap: true,
@@ -1379,8 +1563,8 @@ export const PLACES: Record<string, Place> = {
 		side: 'silla',
 		cityId: 'surabol',
 		offMap: true,
-		avatar: '/pl_hwarang_yard.png',
-		gallery: ['/pl_hwarang_gate.png'],
+		avatar: '/pl_silla_mansion.png',
+		gallery: ['/pl_moon_palace.png', '/pl_eastern_palace.png'],
 		title: 'Dueling grounds under the Moon Palace',
 		blurb: 'Packed earth, a painted wall, a gate nobody’s father should walk them to. Yushin and Bidam meet here. The count ends here.',
 		arc: 'Class 51’s first morning starts at the gate. The yard keeps the score at 108–108 until Radiance makes it blood. Bidam’s head comes back to this dirt.',
@@ -1405,6 +1589,147 @@ export const PLACES: Record<string, Place> = {
 		title: 'The yard’s timber gate',
 		blurb: 'Biryun walks Bidam this far and no further. Chunchu asks three times not to be walked. The gate lets them in.',
 		aliases: ['Hwarang Gate', 'Hwarang yard gate', '화랑 연무장 문', '연무장 문']
+	},
+
+	// ————————————————————————— Rooms (interiors; off the map) —————————————————————————
+	harmony_council: {
+		id: 'harmony_council',
+		name: 'Harmony Council Chamber',
+		korean: '화백당',
+		hanja: '和白堂',
+		x: 395,
+		y: 625,
+		kind: 'room',
+		side: 'silla',
+		cityId: 'surabol',
+		offMap: true,
+		avatar: '/rm_harmony_council.png',
+		title: 'Six seats, one table, unanimity or nothing',
+		blurb:
+			'Silla’s council room: six Councillors around one round table. The good hall leaks in the early years, so they meet in a tent; this is the settled timber chamber.',
+		arc: 'The org is the Harmony Council; this is the room. Six seats, a lamp or brazier at the centre, paper lattice. One withheld hand is a Harmony Veto. After the Chunchu Reforms the Council still sits here; nothing of consequence waits for it.',
+		events: [
+			{ year: 579, label: 'Deposes King Jinji in this chamber.' },
+			{ year: 632, label: 'Initial 3:3 → final 6:0 — Dukman named queen.' },
+			{ year: 645, label: 'Bidam’s lone veto of Sungman.' },
+			{ year: 654, label: 'Enthrones Chunchu as Muyeol.' }
+		],
+		aliases: ['Harmony Council Chamber', 'Harmony Council room', '화백당', '和白堂']
+	},
+	chunchu_study: {
+		id: 'chunchu_study',
+		name: 'Chunchu’s Study',
+		korean: '춘추의 서재',
+		x: 395,
+		y: 625,
+		kind: 'room',
+		side: 'silla',
+		cityId: 'surabol',
+		offMap: true,
+		avatar: '/rm_chunchu_study.png',
+		title: 'One desk, magenta lamp, the kingdom in ledgers',
+		blurb:
+			'Kim Chunchu’s private study in Surabol — not the Revenue Office. A writing desk, a lattice, the work that later becomes the Secretariat.',
+		arc: 'He drafts here what the Council will later be told it already voted. Munhee finds him at the desk. The magenta is the lamp, not a glow.',
+		aliases: ['Chunchu’s Study', 'Chunchu’s study', '춘추의 서재']
+	},
+	revenue: {
+		id: 'revenue',
+		name: 'Revenue Office',
+		korean: '품주',
+		hanja: '稟主',
+		x: 395,
+		y: 625,
+		kind: 'room',
+		side: 'silla',
+		cityId: 'surabol',
+		offMap: true,
+		avatar: '/rm_revenue.png',
+		title: 'The clerk hall that becomes the Secretariat',
+		blurb:
+			'The Cloud King’s stipend-and-granary office (품주, 565). Chunchu takes it in 650; in 651 the same hall is renamed the Royal Secretariat (집사부). One room, two names.',
+		arc: 'A long clerk-bar of desks, two facing rows, a raised seat at the head. Early: messy rice ledgers. After 651: the same timber, cleaner, fourteen ministry plaques under one Premier. The org page is the machine; this is the floor it occupies.',
+		events: [
+			{ year: 565, label: 'The Cloud King sets up the Revenue Office.' },
+			{ year: 650, label: 'Chunchu takes the hall and staffs it from outside the great houses.' },
+			{ year: 651, label: 'Renamed 집사부; rice books go to the Granary Board.' }
+		],
+		aliases: ['Revenue Office', '품주', '稟主', 'Secretariat hall', '집사부 청사']
+	},
+	ministers_assembly: {
+		id: 'ministers_assembly',
+		name: 'Ministers’ Assembly Hall',
+		korean: '정사암당',
+		hanja: '政事巖堂',
+		x: 305,
+		y: 596,
+		kind: 'room',
+		side: 'baekje',
+		cityId: 'sabi',
+		offMap: true,
+		avatar: '/rm_ministers_assembly.png',
+		title: 'King at the helm, rock at the aisle foot',
+		blurb:
+			'Baekje’s Commons hall at Sabi: the King on the dais, the Prime Minister on the aisle, eight 좌평 and eight 달솔 four-and-four. The sweating Rock of Politics sits at the foot of the aisle even indoors.',
+		arc: 'The org is the Ministers’ Assembly; Deer Rock is the outdoor namesake. This is the indoor hall they keep when the rock is under weather or a purge. Euija later packs every seat with a son.',
+		events: [
+			{ year: 632, label: 'Minister Satek holds queen and Prime Minister.' },
+			{ year: 655, label: 'Euija purges the hall and seats his sons.' }
+		],
+		aliases: ['Ministers’ Assembly Hall', 'Ministers’ Assembly room', '정사암당', '政事巖堂']
+	},
+	high_summit: {
+		id: 'high_summit',
+		name: 'High Summit Chamber',
+		korean: '제가당',
+		hanja: '諸加堂',
+		x: 258,
+		y: 456,
+		kind: 'room',
+		side: 'goguryeo',
+		cityId: 'pyongyang',
+		offMap: true,
+		avatar: '/rm_high_summit.png',
+		title: 'Five at a pentagon table; the king just outside',
+		blurb:
+			'Goguryeo’s council room in Pyongyang: a pentagon table inlaid with the three-legged crow, five sword-stands, crimson banners, red pillars. Not the banquet hall of the massacre.',
+		arc: 'Commanders argue here. The High Commander holds the first sword; the king has the last word from a seat just off the table. After 642 the Supreme Commander makes that last word a formality.',
+		events: [{ year: 642, label: 'The old chairs sit here the morning of the banquet. They do not sit again.' }],
+		aliases: ['High Summit Chamber', 'High Summit room', '제가당', '諸加堂']
+	},
+	pyongyang_hall: {
+		id: 'pyongyang_hall',
+		name: 'Pyongyang Hall',
+		korean: '평양 연회당',
+		hanja: '平壤宴會堂',
+		x: 258,
+		y: 456,
+		kind: 'room',
+		side: 'goguryeo',
+		cityId: 'pyongyang',
+		offMap: true,
+		avatar: '/rm_pyongyang_hall.png',
+		title: 'The banquet hall Yeon clears in 642',
+		blurb:
+			'Goguryeo’s royal feast hall: red timber pillars, a long court, iron-bossed doors on the yard. Yeon Gesomun butchers the High Summit here at the banquet — not in the council chamber.',
+		arc: 'Same capital, different room from the High Summit table. The massacre stills keep this doorway and this pillar rhythm. Jangsu received envoys in an earlier dressing of the same hall.',
+		events: [{ year: 642, label: 'Yeon’s banquet. The court does not leave on its feet.' }],
+		aliases: ['Pyongyang Hall', 'Pyongyang banquet hall', '평양 연회당']
+	},
+	manmyung_room: {
+		id: 'manmyung_room',
+		name: 'Manmyung’s Room',
+		korean: '만명의 방',
+		x: 348,
+		y: 548,
+		kind: 'room',
+		side: 'silla',
+		cityId: 'mannogun',
+		offMap: true,
+		avatar: '/pl_manmyung_room.png',
+		title: 'The one room at Manno with a door that shuts',
+		blurb: 'Manmyung and Seohyun’s room in the county — timber, one lamp, a door. Yushin is born here.',
+		aliases: ['Manmyung’s Room', 'Manmyung’s room', '만명의 방']
 	}
 };
 
@@ -1412,7 +1737,7 @@ export const PLACES: Record<string, Place> = {
 /** Whether a place stands in `year` (always, for places without dates). */
 export const standsIn = (p: Place, year: number) => (p.founded ?? -Infinity) <= year && year <= (p.fell ?? Infinity);
 
-export const MAP_MARKERS = Object.values(PLACES).filter((p) => !p.offMap);
+export const MAP_MARKERS = Object.values(PLACES).filter((p) => !p.offMap && p.kind !== 'room');
 
 /** The whole sheet (`/map.svg`). */
 export const MAP_VIEWBOX = { w: 595, h: 842 };

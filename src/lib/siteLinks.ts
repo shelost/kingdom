@@ -11,10 +11,13 @@ export const SITE_LINKS = [
 	{ href: READ_PATH, label: 'Read', icon: 'auto_stories', tab: true },
 	{ href: '/episodes', label: 'Episodes', icon: 'video_library', tab: true },
 	{ href: '/books', label: 'Books', icon: 'library_books', tab: false },
+	{ href: '/world', label: 'World', icon: 'public', tab: false },
 	{ href: '/timeline', label: 'Timeline', icon: 'view_timeline', tab: false },
 	{ href: '/tree', label: 'Tree', icon: 'account_tree', tab: false },
 	{ href: '/wiki', label: 'Wiki', icon: 'menu_book', tab: true },
 	{ href: '/images', label: 'Images', icon: 'photo_library', tab: true },
+	{ href: '/comic', label: 'Comic', icon: 'view_quilt', tab: false },
+	{ href: '/quotes', label: 'Quotes', icon: 'format_quote', tab: false },
 	{ href: '/about', label: 'About', icon: 'info', tab: false },
 	{ href: '/research', label: 'Research', icon: 'museum', tab: false },
 	{ href: '/characters', label: 'Characters', icon: 'hub', tab: false },
@@ -34,9 +37,9 @@ export const PILL_LINKS = [
 	{ href: READ_PATH, label: 'Read' },
 	{ href: '/episodes', label: 'Episodes' },
 	{ href: '/books', label: 'Books' },
+	{ href: '/world', label: 'World' },
 	{ href: '/wiki', label: 'Wiki' },
-	{ href: '/images', label: 'Images' },
-	{ href: '/about', label: 'About' }
+	{ href: '/images', label: 'Images' }
 ] as const;
 
 /** `resolved` is the href after base path resolution, so a deployed base still matches. */

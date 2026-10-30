@@ -12,7 +12,7 @@
 
 	let hovered = $state<string | null>(null);
 	let selected = $state<string | null>(null);
-	/** Split layout (rail + stage). Held through the pane fade so the canvas does not resize mid-tween. */
+	/** Overlay is up. Held through the pane fade so the back control does not pop off. */
 	let spread = $state(false);
 	let pane = $state(false);
 	let mode = $state<BookMode>('shelf');
@@ -78,7 +78,7 @@
 
 <svelte:window onkeydown={onKey} />
 
-<main class="books" class:edit={editUi.enabled} class:open={spread} class:show={pane}>
+<main class="books" class:edit={editUi.enabled} class:open={spread}>
 	<SiteNavSpace />
 	{#if spread}
 		<button type="button" class="back" class:in={pane} aria-label={ui('Back')} onclick={back}>
@@ -92,7 +92,7 @@
 		<div class="stage-col">
 			<BooksStage bind:hovered bind:selected bind:mode onopen={pick} onback={back} />
 		</div>
-		<aside class="catalog-col" inert={!pane} aria-hidden={!pane ? 'true' : undefined}>
+		<aside class="catalog-col" class:in={pane} inert={!pane} aria-hidden={!pane ? 'true' : undefined}>
 			<div class="catalog-pane">
 				<BookCatalog {selected} {ko} />
 			</div>
@@ -152,11 +152,8 @@
 
 	.floor {
 		--pane: 20rem;
-		--rail: 0px;
 		position: relative;
 		flex: 1;
-		display: flex;
-		justify-content: center;
 		min-height: 0;
 		overflow: hidden;
 		padding: 0;
@@ -164,11 +161,6 @@
 
 	.books.edit .floor {
 		--pane: 24rem;
-	}
-
-	.books.open .floor {
-		--rail: var(--pane);
-		padding: 0 3.75rem 0 1.5rem;
 	}
 
 	.dismiss {
@@ -181,58 +173,60 @@
 		cursor: pointer;
 	}
 
-	.stage-col,
-	.catalog-col {
+	.stage-col {
 		position: relative;
 		z-index: 1;
+		width: 100%;
+		height: 100%;
 		min-width: 0;
 		min-height: 0;
-		height: 100%;
+		overflow: hidden;
 		background: transparent;
 	}
 
-	.stage-col {
-		flex: 1 1 auto;
-		overflow: hidden;
-	}
-
-	.books.open .stage-col {
-		flex: 0 1 30rem;
-		max-width: 32rem;
-	}
-
 	.catalog-col {
-		flex: 0 0 var(--rail);
-		width: var(--rail);
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 4;
+		width: min(var(--pane), 42vw);
 		overflow: hidden;
 		pointer-events: none;
-	}
-
-	.catalog-pane {
-		width: var(--pane);
-		height: 100%;
+		background: linear-gradient(
+			90deg,
+			transparent,
+			color-mix(in srgb, var(--bg) 78%, transparent) 14%,
+			color-mix(in srgb, var(--bg) 94%, transparent) 42%,
+			var(--bg) 72%
+		);
 		opacity: 0;
-		transform: translateX(0.85rem);
-		pointer-events: none;
+		transform: translateX(1.1rem);
 		transition:
 			opacity 420ms var(--ease),
 			transform 420ms var(--ease);
 	}
 
-	.books.show .catalog-col {
+	.catalog-pane {
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+	}
+
+	.catalog-col.in {
+		opacity: 1;
+		transform: none;
 		pointer-events: auto;
 		cursor: default;
 	}
 
-	.books.show .catalog-pane {
-		opacity: 1;
-		transform: none;
+	.catalog-col.in .catalog-pane {
 		pointer-events: auto;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
 		.back,
-		.catalog-pane {
+		.catalog-col {
 			transition: none;
 		}
 	}
@@ -245,38 +239,32 @@
 		}
 
 		.floor,
-		.books.edit .floor,
-		.books.open .floor {
-			flex-direction: column;
-			padding: 0 1.15rem 1.25rem;
+		.books.edit .floor {
+			--pane: min(48vh, 440px);
 			height: auto;
+			min-height: 28rem;
 			overflow: visible;
 		}
 
-		.stage-col,
-		.books.open .stage-col {
-			height: auto;
+		.stage-col {
+			height: min(62vh, 34rem);
 			min-height: 16rem;
-			max-width: none;
-			flex: 1 1 auto;
-		}
-
-		.floor,
-		.books.edit .floor {
-			--pane: min(48vh, 440px);
 		}
 
 		.catalog-col {
-			flex: 0 0 var(--rail);
-			width: 100%;
-			height: var(--rail);
-			max-height: none;
-		}
-
-		.catalog-pane {
+			top: auto;
+			left: 0;
+			right: 0;
+			bottom: 0;
 			width: 100%;
 			height: var(--pane);
 			transform: translateY(0.7rem);
+			background: linear-gradient(
+				180deg,
+				transparent,
+				color-mix(in srgb, var(--bg) 82%, transparent) 12%,
+				var(--bg) 38%
+			);
 		}
 
 		.back {

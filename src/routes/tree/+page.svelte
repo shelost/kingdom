@@ -3,14 +3,26 @@
 	import { page } from '$app/state';
 	import { pushState } from '$app/navigation';
 	import { resolve } from '$app/paths';
-	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import SillaRoyal from '$lib/components/diagrams/SillaRoyal.svelte';
 	import WikiPeek from '$lib/components/WikiPeek.svelte';
 	import { reading } from '$lib/reading.svelte';
+	import { SPINES, type Arrange } from '$lib/treeLayout';
 
 	const ko = $derived(reading.lang === 'ko');
 
 	let timeline = $state(false);
+	let arrange = $state<Arrange>('packed');
+
+	const PLACE_MODES: { id: Arrange; en: string; ko: string }[] = [
+		{ id: 'hand', en: 'Place', ko: '자리' },
+		{ id: 'packed', en: 'Packed', ko: '밀집' },
+		{ id: 'blood', en: 'Columns', ko: '열' }
+	];
+	const SPINE_MODES = (Object.keys(SPINES) as (keyof typeof SPINES)[]).map((id) => ({
+		id,
+		en: SPINES[id].en,
+		ko: SPINES[id].ko
+	}));
 	let selectedId = $state<string | null>(page.url.searchParams.get('id'));
 	let expanded = $state(page.url.searchParams.get('full') === '1' && !!page.url.searchParams.get('id'));
 
@@ -73,18 +85,13 @@
 	<title>The royal house · King for All</title>
 	<meta
 		name="description"
-		content="Silla’s royal house from King Buphung down to King Sinmun, with the Gaya Kim line: Sacred Bone gold, True Bone blue, Gaya purple."
+		content="Silla’s royal house from King Jijeung down to King Sinmun, with the Gaya Kim line: Sacred Bone gold, True Bone blue, Gaya purple."
 	/>
 </svelte:head>
 
 <main class="tree" class:dimmed={!!selectedId}>
-	<SiteNavSpace />
-	<header>
-		<div class="title-row">
-			<div>
-				<p class="kicker">{ko ? '숙흘종' : 'The Sukhuljong house'}</p>
-				<h1>{ko ? '신라 왕실' : 'The royal house'}</h1>
-			</div>
+	<div class="toolbar">
+		<div class="toggles">
 			<div class="modes" role="group" aria-label={ko ? '보기' : 'View'}>
 				<button type="button" class:active={!timeline} aria-pressed={!timeline} onclick={() => (timeline = false)}>
 					{ko ? '왕실' : 'House'}
@@ -93,15 +100,24 @@
 					{ko ? '수명' : 'Lifespan'}
 				</button>
 			</div>
+			<div class="modes" role="group" aria-label={ko ? '배치' : 'Layout'}>
+				{#each PLACE_MODES as m (m.id)}
+					<button type="button" class:active={arrange === m.id} aria-pressed={arrange === m.id} onclick={() => (arrange = m.id)}>
+						{ko ? m.ko : m.en}
+					</button>
+				{/each}
+			</div>
+			<div class="modes" role="group" aria-label={ko ? '중심 혈통' : 'Spine'}>
+				{#each SPINE_MODES as m (m.id)}
+					<button type="button" class:active={arrange === m.id} aria-pressed={arrange === m.id} onclick={() => (arrange = m.id)}>
+						{ko ? m.ko : m.en}
+					</button>
+				{/each}
+			</div>
 		</div>
-		<p class="lede">
-			{ko
-				? '법흥왕에서 문무의 아이들까지, 금관가야 김씨가 만명·문희로 붙는다. 금빛은 성골, 푸른 테는 진골, 보랏빛은 가야. 동화된 가야는 보랏빛 안에 푸른 고리, 혼혈은 둘 다. 얼굴을 누르면 위키가 옆에서 열린다.'
-				: 'From King Buphung down to Munmu’s children, with the Gaya Kim line joining at Manmyung and Munhee. Gold is Sacred Bone, blue True Bone, purple Gaya. Assimilated Gaya wears purple with a floating blue ring; mixed children wear both. Faces open the wiki peek.'}
-		</p>
-	</header>
+	</div>
 	<figure class="board" class:life={timeline}>
-		<SillaRoyal step="house" active {timeline} onPerson={openEntry} />
+		<SillaRoyal step="house" active {timeline} {arrange} onPerson={openEntry} />
 	</figure>
 </main>
 
@@ -116,62 +132,55 @@
 
 <style>
 	.tree {
-		max-width: 90rem;
-		margin: 0 auto;
-		padding: 1.5rem 1.25rem 4rem;
+		position: fixed;
+		inset: 0;
+		z-index: 1;
+		max-width: none;
+		margin: 0;
+		padding: 0;
 	}
 
 	.tree.dimmed {
 		filter: saturate(0.92);
 	}
 
-	header {
-		margin: 0 0 1.4rem;
+	.toolbar {
+		position: absolute;
+		top: 3.55rem;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: 4;
+		pointer-events: none;
+		padding: 0.35rem 0.5rem;
 	}
 
-	.title-row {
+	.toggles {
 		display: flex;
-		align-items: flex-end;
-		justify-content: space-between;
-		gap: 1rem;
 		flex-wrap: wrap;
-		margin: 0 0 0.55rem;
-	}
-
-	.kicker {
-		margin: 0 0 0.35rem;
-		font-size: 0.68rem;
-		font-weight: 600;
-		letter-spacing: 0.16em;
-		text-transform: uppercase;
-		color: var(--fg-faint);
-	}
-
-	h1 {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: 1.85rem;
-		font-weight: 700;
-		letter-spacing: -0.02em;
+		justify-content: center;
+		gap: 0.35rem;
+		pointer-events: auto;
 	}
 
 	.modes {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.05rem;
-		padding: 0.18rem;
+		padding: 0.14rem;
 		border-radius: var(--radius-pill);
-		background: color-mix(in srgb, var(--fg) 6%, transparent);
+		background: color-mix(in srgb, var(--bg) 82%, transparent);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 10%, transparent);
 	}
 
 	.modes button {
 		font: inherit;
-		font-size: 0.72rem;
+		font-size: 0.7rem;
 		font-weight: 700;
 		letter-spacing: 0.02em;
 		line-height: 1;
 		color: var(--fg-dim);
-		padding: 0.48rem 0.72rem;
+		padding: 0.42rem 0.64rem;
 		border: none;
 		border-radius: var(--radius-pill);
 		background: transparent;
@@ -189,38 +198,35 @@
 		outline-offset: 1px;
 	}
 
-	.lede {
-		margin: 0;
-		max-width: 44rem;
-		font-size: 0.95rem;
-		line-height: 1.55;
-		color: var(--fg-dim);
-	}
-
 	.board {
+		position: absolute;
+		inset: 0;
 		margin: 0;
-		padding: 1.1rem 0.6rem 0.4rem;
-		border: 1px solid color-mix(in srgb, var(--gold) 35%, var(--hairline));
-		border-radius: var(--radius, 12px);
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		overflow: hidden;
 		background:
-			radial-gradient(ellipse 90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 14%, transparent), transparent 65%),
-			color-mix(in srgb, var(--gold) 8%, rgba(255, 255, 255, 0.02));
-		overflow: visible;
+			radial-gradient(ellipse 90% 70% at 50% 0%, color-mix(in srgb, var(--gold) 10%, transparent), transparent 65%),
+			color-mix(in srgb, var(--gold) 5%, rgba(255, 255, 255, 0.015));
 	}
 
 	.board :global(svg) {
 		display: block;
-		width: max(100%, 80rem);
-		height: auto;
-	}
-
-	.board.life {
-		overflow: visible;
+		width: 100%;
+		height: 100%;
 	}
 
 	@media (max-width: 720px) {
-		h1 {
-			font-size: 1.45rem;
+		.toolbar {
+			top: 0.4rem;
+			left: 0.4rem;
+			right: 0.4rem;
+			transform: none;
+		}
+
+		.board {
+			padding-bottom: 4.6rem;
 		}
 	}
 </style>

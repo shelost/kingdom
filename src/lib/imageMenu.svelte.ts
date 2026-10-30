@@ -1,5 +1,5 @@
 /**
- * The one right-click menu on images in edit mode: Star, Set as thumbnail, Full width,
+ * The one right-click menu on images in edit mode: Star, Download, Set as thumbnail, Full width,
  * Move, Original shape, Hide and Remove.
  * Views that know more (cue id, sequence index, gallery cell) open it with
  * their own target; any other `storyImg` falls back to the window handler.
@@ -7,7 +7,7 @@
  */
 import { editUi, permanentlyDeleteImage } from '$lib/editUi.svelte';
 import { isReferenceImage } from '$lib/imageStars';
-import { cueSlotOf, starKey } from '$lib/imageStarsUi.svelte';
+import { cueSlotOf, isStarred, starKey } from '$lib/imageStarsUi.svelte';
 import { isThumbnail, setThumbnail } from '$lib/thumbnail.svelte';
 import { setCueHidden } from '$lib/hiddenCues.svelte';
 import { lineNear, sayOf, type Say } from '$lib/comicSay';
@@ -25,6 +25,8 @@ export const CUE_SHAPES: { label: string; ratio: number | null }[] = [
 export type ImageMenuTarget = {
 	/** Header line: slot id, file name, "Still 2 of 5". */
 	label: string;
+	/** Original site path (`data-src`). Empty disables Download. */
+	src?: string;
 	/** Empty disables Star. */
 	starKey: string;
 	/** Omit to disable Remove; `removeHint` says why. */
@@ -90,6 +92,48 @@ export function closeImageMenu() {
 	imageMenu.target = null;
 }
 
+function originalHref(src: string): string {
+	const path = src.split('?')[0] ?? src;
+	if (!path || path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:') || path.startsWith('blob:') || path.startsWith('/')) {
+		return path;
+	}
+	return `/${path}`;
+}
+
+function downloadName(src: string): string {
+	const base = (src.split('?')[0] ?? src).split('/').pop() ?? 'image';
+	return base.replace(/[^\w.-]+/g, '_') || 'image';
+}
+
+/** Save the original file, not the resized `?w=` / Vercel optimizer URL. */
+export async function downloadImage(src: string) {
+	const href = originalHref(src);
+	if (!href || href.startsWith('data:')) return;
+	const name = downloadName(href);
+	try {
+		const res = await fetch(href);
+		if (!res.ok) throw new Error(String(res.status));
+		const url = URL.createObjectURL(await res.blob());
+		const a = document.createElement('a');
+		a.href = url;
+		a.download = name;
+		a.rel = 'noopener';
+		document.body.appendChild(a);
+		a.click();
+		a.remove();
+		URL.revokeObjectURL(url);
+	} catch {
+		const a = document.createElement('a');
+		a.href = href;
+		a.download = name;
+		a.rel = 'noopener';
+		a.target = '_blank';
+		document.body.appendChild(a);
+		a.click();
+		a.remove();
+	}
+}
+
 /**
  * A chronicle cue: Remove deletes the slot and its art; it can front its episode.
  * `src` is the picture clicked, so a temp stand-in shown beside its final can be the thumbnail.
@@ -97,10 +141,13 @@ export function closeImageMenu() {
 export function cueMenuTarget(slotId: string, src?: string): ImageMenuTarget {
 	const { wide, crop, say } = cueLayoutOf(slotId);
 	const draft = (): Say | undefined => (say && typeof say === 'object' ? say : (sayOf(slotId) ?? lineNear(slotId)));
+	const locked = isStarred(slotId);
 	return {
 		label: slotId,
+		src,
 		starKey: slotId,
-		remove: () => permanentlyDeleteImage({ kind: 'cue', slotId }),
+		remove: locked ? undefined : () => permanentlyDeleteImage({ kind: 'cue', slotId }),
+		removeHint: locked ? 'Starred stills cannot be deleted' : undefined,
 		thumbnail: () => setThumbnail(slotId, src),
 		isThumbnail: isThumbnail(slotId, src),
 		hide: () => setCueHidden(slotId, true),
@@ -142,6 +189,7 @@ export function srcMenuTarget(src: string): ImageMenuTarget | null {
 	if (slotId && !editUi.removedCueIds.has(slotId)) return cueMenuTarget(slotId, src);
 	return {
 		label: fileLabel(src),
+		src,
 		starKey: starKey(src),
 		removeHint: 'Only chronicle cues can be removed here'
 	};

@@ -9,6 +9,7 @@ import { resolve } from '$app/paths';
 import { chapters } from '$lib/story';
 import { rememberReadingScroll } from '$lib/reading.svelte';
 import type { GalleryDeleteItem, GalleryDeleteResponse } from '$lib/galleryDelete';
+import { ensureStars, isStarred } from '$lib/imageStarsUi.svelte';
 
 export const EDIT_QUERY = 'edit';
 
@@ -128,6 +129,12 @@ export type GalleryDeleteResult =
  * Marks what the server confirmed as removed for this session.
  */
 export async function deleteGalleryItems(items: GalleryDeleteItem[]): Promise<GalleryDeleteResult> {
+	await ensureStars();
+	const locked = items.filter((item) => isStarred(item.kind === 'cue' ? item.slotId : item.id));
+	if (locked.length) {
+		const names = locked.map((item) => (item.kind === 'cue' ? item.slotId : item.id)).join(', ');
+		return { ok: false, message: `Starred stills cannot be deleted: ${names}` };
+	}
 	const result = await postEdit<GalleryDeleteResponse>(
 		resolve('/api/images'),
 		{ items },

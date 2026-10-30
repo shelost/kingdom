@@ -420,6 +420,9 @@ export interface Entry {
 	accent?: string; // episode title color — battle entries use red
 	title: string; // "Queen Sunduk"
 	subtitle?: string; // "선덕여왕"
+	/** English title-card line under the wordmark (MCU subtitle). Korean title stays `subtitle`. */
+	tagline?: string;
+	taglineKo?: string;
 	/** The episode's hook line on /episodes: one provocation, verdict, list or question. No outcomes. */
 	logline?: { en: string; ko: string };
 	/** `images[].id` of the representative still under the title. Omit to use the first landscape still. */

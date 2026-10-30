@@ -9,7 +9,7 @@
 <script lang="ts">
 	/**
 	 * Silla Hwarang order: 국선 (marshal) centered above six 화랑;
-	 * 낭도 stacked beneath each hwarang. The schoolbook draws four;
+	 * disciples stacked beneath each hwarang. The schoolbook draws four;
 	 * the yard lets a band be any size.
 	 */
 	import type { DiagramProps } from './registry';
@@ -30,7 +30,7 @@
 	class="dg"
 	class:play={active}
 	role="img"
-	aria-label="Hwarang org chart: Marshal at the apex, six Hwarang in a row, nangdo stacked beneath each"
+	aria-label="Hwarang org chart: Marshal at the apex, six Hwarang in a row, disciples stacked beneath each"
 >
 	<g class="node marshal" style="--d: 0">
 		<circle cx={MARSHAL.x} cy={MARSHAL.y} r="30" />
@@ -59,7 +59,7 @@
 		{#each DISC_YS as dy, d (d)}
 			<g class="node disc" style="--d: {520 + i * 90 + d * 40}">
 				<rect x={hx - 14} y={dy} width="28" height="18" rx="3" />
-				<ChartLabel x={hx} y={dy + 9} ko="낭도" w={26} size="sm" />
+				<ChartLabel x={hx} y={dy + 9} ko="낭도" en="Disciple" w={26} size="sm" />
 			</g>
 		{/each}
 	{/each}

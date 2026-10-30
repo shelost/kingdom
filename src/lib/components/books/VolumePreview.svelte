@@ -83,22 +83,19 @@
 		return ko ? v.ko || v.title : v.title;
 	}
 
-	function stage(node: HTMLDivElement) {
+	function restOf(kind: typeof pose) {
+		if (kind === 'spine') return { y: SPINE_REST_Y, x: SPINE_REST_X, hoverY: SPINE_HOVER_Y };
+		if (kind === 'stand') return { y: STAND_REST_Y, x: STAND_REST_X, hoverY: STAND_HOVER_Y };
+		return { y: REST_Y, x: REST_X, hoverY: HOVER_Y };
+	}
+
+	function stage(node: HTMLDivElement, kind: typeof pose) {
 		const box = node.querySelector('.box');
 		if (!(box instanceof HTMLElement)) return;
 
 		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		const fine = !reduce && matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-		function angles() {
-			if (node.classList.contains('pose-spine')) {
-				return { y: SPINE_REST_Y, x: SPINE_REST_X, hoverY: SPINE_HOVER_Y };
-			}
-			if (node.classList.contains('pose-stand')) {
-				return { y: STAND_REST_Y, x: STAND_REST_X, hoverY: STAND_HOVER_Y };
-			}
-			return { y: REST_Y, x: REST_X, hoverY: HOVER_Y };
-		}
+		let current = kind;
 
 		let rotY: ReturnType<typeof gsap.quickTo> | undefined;
 		let rotX: ReturnType<typeof gsap.quickTo> | undefined;
@@ -106,7 +103,7 @@
 		let scaleTo: ReturnType<typeof gsap.quickTo> | undefined;
 
 		const ctx = gsap.context(() => {
-			const rest = angles();
+			const rest = restOf(current);
 			gsap.set(box, {
 				transformOrigin: 'center center',
 				rotationY: rest.y,
@@ -115,51 +112,64 @@
 				scale: 1,
 				force3D: true
 			});
-			rotY = gsap.quickTo(box, 'rotationY', { duration: 0.48, ease: 'power3.out' });
-			rotX = gsap.quickTo(box, 'rotationX', { duration: 0.48, ease: 'power3.out' });
-			zTo = gsap.quickTo(box, 'z', { duration: 0.42, ease: 'power3.out' });
-			scaleTo = gsap.quickTo(box, 'scale', { duration: 0.42, ease: 'power3.out' });
+			rotY = gsap.quickTo(box, 'rotationY', { duration: 0.62, ease: 'power3.out' });
+			rotX = gsap.quickTo(box, 'rotationX', { duration: 0.62, ease: 'power3.out' });
+			zTo = gsap.quickTo(box, 'z', { duration: 0.5, ease: 'power3.out' });
+			scaleTo = gsap.quickTo(box, 'scale', { duration: 0.5, ease: 'power3.out' });
 		}, node);
 
-		function pose(clientX: number, clientY: number, hovering: boolean) {
+		function follow(clientX: number, clientY: number, hovering: boolean) {
 			if (!rotY || !rotX || !zTo || !scaleTo) return;
 			const r = node.getBoundingClientRect();
 			const px = (clientX - r.left) / r.width - 0.5;
 			const py = (clientY - r.top) / r.height - 0.5;
-			const rest = angles();
-			rotY((hovering ? rest.hoverY : rest.y) + px * 28);
-			rotX(rest.x + py * -14);
-			zTo(hovering ? 18 : 0);
-			scaleTo(hovering ? 1.04 : 1);
+			const rest = restOf(current);
+			rotY((hovering ? rest.hoverY : rest.y) + px * 22);
+			rotX(rest.x + py * -12);
+			zTo(hovering ? 22 : 0);
+			scaleTo(hovering ? 1.045 : 1);
 			node.style.setProperty('--sx', `${(px + 0.5) * 100}%`);
 			node.style.setProperty('--sy', `${(py + 0.5) * 100}%`);
 			node.style.setProperty('--pox', `${40 + px * 24}%`);
 			node.style.setProperty('--poy', `${38 + py * 18}%`);
 		}
 
+		function settle() {
+			const rest = restOf(current);
+			if (reduce) {
+				gsap.set(box, { rotationY: rest.y, rotationX: rest.x, z: 0, scale: 1 });
+				return;
+			}
+			gsap.to(box, {
+				rotationY: rest.y,
+				rotationX: rest.x,
+				z: 0,
+				scale: 1,
+				duration: 0.72,
+				ease: 'power3.inOut',
+				overwrite: 'auto'
+			});
+			node.style.setProperty('--sx', '28%');
+			node.style.setProperty('--sy', '16%');
+			node.style.setProperty('--pox', '32%');
+			node.style.setProperty('--poy', '40%');
+		}
+
 		function onEnter(e: PointerEvent) {
 			if (!fine) return;
 			node.classList.add('live');
-			pose(e.clientX, e.clientY, true);
+			follow(e.clientX, e.clientY, true);
 		}
 
 		function onMove(e: PointerEvent) {
 			if (!fine) return;
-			pose(e.clientX, e.clientY, true);
+			follow(e.clientX, e.clientY, true);
 		}
 
 		function onLeave() {
 			if (!fine) return;
 			node.classList.remove('live');
-			const rest = angles();
-			rotY?.(rest.y);
-			rotX?.(rest.x);
-			zTo?.(0);
-			scaleTo?.(1);
-			node.style.setProperty('--sx', '28%');
-			node.style.setProperty('--sy', '16%');
-			node.style.setProperty('--pox', '32%');
-			node.style.setProperty('--poy', '40%');
+			settle();
 		}
 
 		if (fine) {
@@ -175,9 +185,9 @@
 					if (!entry?.isIntersecting) return;
 					io?.disconnect();
 					gsap.from(box, {
-						y: 22,
-						autoAlpha: 0.35,
-						duration: 0.75,
+						y: 18,
+						autoAlpha: 0.4,
+						duration: 0.7,
 						ease: 'power3.out'
 					});
 				},
@@ -187,6 +197,11 @@
 		}
 
 		return {
+			update(next: typeof pose) {
+				if (next === current) return;
+				current = next;
+				settle();
+			},
 			destroy() {
 				io?.disconnect();
 				node.removeEventListener('pointerenter', onEnter);
@@ -212,7 +227,7 @@
 	style:--cloth={cloth}
 	style:--ink={ink}
 	aria-hidden="true"
-	use:stage
+	use:stage={pose}
 >
 	<div class="rig">
 		<div class="box">
@@ -269,6 +284,7 @@
 		height: var(--h);
 		padding-left: 0.35rem;
 		touch-action: pan-y;
+		transition: width 0.72s cubic-bezier(0.22, 0.61, 0.36, 1);
 	}
 
 	.rig {
@@ -286,19 +302,12 @@
 		height: 100%;
 		transform-style: preserve-3d;
 		transform-origin: center center;
+		will-change: transform;
 		transform: rotateY(-48deg) rotateX(6deg);
-	}
-
-	.preview.pose-stand .box {
-		transform: rotateY(-24deg) rotateX(6deg);
 	}
 
 	.preview.pose-spine {
 		width: calc(var(--d) + 0.55rem);
-	}
-
-	.preview.pose-spine .box {
-		transform: rotateY(-78deg) rotateX(4deg);
 	}
 
 	.mark {

@@ -193,6 +193,9 @@
 				<span class="material-symbols-outlined" class:filled={starred} aria-hidden="true">star</span>
 				{starred ? 'Starred' : 'Star'}
 			</button>
+			{#if starred}
+				<a href={resolve('/quotes#starred')}>Quotes</a>
+			{/if}
 			{#if dev}
 				<button type="button" onclick={openNote}>
 					<span class="material-symbols-outlined" aria-hidden="true">edit_note</span>
@@ -269,7 +272,8 @@
 		border-radius: var(--radius);
 	}
 
-	button {
+	button,
+	a {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.3rem;
@@ -281,10 +285,12 @@
 		font: inherit;
 		font-size: 0.8rem;
 		font-weight: 600;
+		text-decoration: none;
 		cursor: pointer;
 	}
 
-	button:hover:not(:disabled) {
+	button:hover:not(:disabled),
+	a:hover {
 		background: color-mix(in srgb, var(--fg) 8%, transparent);
 	}
 

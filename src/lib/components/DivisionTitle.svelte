@@ -98,10 +98,16 @@
 			<p class="eyebrow float-up" style:--i={1}>{eyebrow}</p>
 			{#if lead}<h2 class="division-title float-up" style:--i={2}>{lead}</h2>{/if}
 			{#if second && second !== lead}<p class="second float-up" style:--i={3}>{second}</p>{/if}
-			{#if hanja}<p class="hanja float-up" style:--i={4}>{hanja}</p>{/if}
-			<p class="meta float-up" style:--i={5}>{meta}</p>
+			{#if scale === 'chapter' && toc}
+				{@const line = ko ? toc.subtitleKo : toc.subtitle}
+				{#if line}
+					<p class="tagline float-up" style:--i={4}>{line}</p>
+				{/if}
+			{/if}
+			{#if hanja}<p class="hanja float-up" style:--i={5}>{hanja}</p>{/if}
+			<p class="meta float-up" style:--i={6}>{meta}</p>
 			{#if next}
-				<button type="button" class="read float-up" style:--i={6} onclick={() => goToEpisode(index + 1)}>
+				<button type="button" class="read float-up" style:--i={7} onclick={() => goToEpisode(index + 1)}>
 					<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
 					<span>{episodeNavLabel(next)}</span>
 				</button>
@@ -222,6 +228,17 @@
 	.second {
 		margin-top: 0.7rem;
 		font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+	}
+
+	.tagline {
+		margin: 0.55rem 0 0;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-style: italic;
+		font-size: clamp(0.95rem, 1.7vw, 1.2rem);
+		letter-spacing: 0.02em;
+		color: var(--gold);
+		text-wrap: balance;
 	}
 
 	:global(html:not([data-lang='ko'])) .second {

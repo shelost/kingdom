@@ -42,6 +42,8 @@
 	} = $props();
 
 	const uid = $props.id();
+	/** Unique CSS anchor so this menu pins to *this* pill, not another GlassSelect. */
+	const anchorName = `--gs-${uid}`;
 	/** Space between the pill and its menu, and the menu and the window edge. */
 	const GAP = 8;
 	/** Tallest the menu grows, as a share of the window. */
@@ -82,10 +84,17 @@
 		const want = Math.min(menu.scrollHeight + 2, innerHeight * MAX_SHARE);
 		const roomBelow = innerHeight - r.bottom - GAP * 2;
 		const roomAbove = r.top - GAP * 2;
-		const [prefer, other] = placement === 'above' ? [roomAbove, roomBelow] : [roomBelow, roomAbove];
-		const flip = prefer < Math.min(want, MIN_ROOM) && other > prefer;
-		const above = (placement === 'above') !== flip;
-		const maxHeight = Math.max(0, Math.min(want, above ? roomAbove : roomBelow));
+		/* `below` stays below the pill even when the window is short — the menu
+		   scrolls inside maxHeight. Only an explicit `above` placement may flip. */
+		const flipUp =
+			placement === 'above' && roomAbove < Math.min(want, MIN_ROOM) && roomBelow > roomAbove;
+		const above = placement === 'above' && !flipUp;
+		/* Always-below menus keep a real height even when the pill is near the
+		   window edge — they scroll inside the box instead of collapsing. */
+		const maxHeight = Math.max(
+			above ? 0 : Math.min(want, MIN_ROOM),
+			Math.min(want, above ? roomAbove : innerHeight * MAX_SHARE)
+		);
 		const w = Math.max(r.width, menu.offsetWidth);
 		const start = align === 'center' ? r.left + r.width / 2 - w / 2 : r.left;
 		pos = {
@@ -113,6 +122,7 @@
 		place();
 		/* `place` sets the height through state; centre once it has landed. */
 		requestAnimationFrame(() => {
+			place();
 			const items = optionEls();
 			const sel = items.find((b) => b.getAttribute('aria-selected') === 'true') ?? items[0];
 			if (!sel) return;
@@ -121,8 +131,13 @@
 		});
 	}
 
-	/* Closing with focus inside the menu (Esc, Tab) hands it back to the pill. */
+	/* Closing with focus inside the menu (Esc, Tab) hands it back to the pill.
+	   Place on the way open so the first paint is already under the trigger. */
 	function onbeforetoggle(e: ToggleEvent) {
+		if (e.newState === 'open') {
+			open = true;
+			place();
+		}
 		if (e.newState === 'closed' && menu?.contains(document.activeElement)) {
 			trigger?.focus({ preventScroll: true });
 		}
@@ -237,6 +252,7 @@
 	aria-controls="{uid}-menu"
 	aria-expanded={open}
 	{tabindex}
+	style:anchor-name={anchorName}
 	onkeydown={onTriggerKey}
 >
 	<span class="field">{label}</span>
@@ -255,6 +271,7 @@
 	role="listbox"
 	tabindex="-1"
 	aria-label={label}
+	style:position-anchor={anchorName}
 	style:top={asSheet ? null : `${pos.top}px`}
 	style:left={asSheet ? null : `${pos.left}px`}
 	style:min-width={asSheet ? null : `${pos.width}px`}
@@ -401,6 +418,22 @@
 
 	.menu.above {
 		transform-origin: bottom center;
+	}
+
+	/* Chrome 129+ implicitly anchors a popover to its invoker. Without
+	   position-area the UA box sits at the viewport origin (the wiki Type
+	   menu opening over the books). Pin every desktop menu under its pill. */
+	@supports (position-area: bottom) {
+		.menu:not(.sheet) {
+			position-area: bottom span-right;
+			position-try-fallbacks: none;
+			margin-top: 8px;
+			top: unset !important;
+			left: unset !important;
+			right: unset !important;
+			bottom: unset !important;
+			max-height: min(22rem, 70vh) !important;
+		}
 	}
 
 	.menu:not(:popover-open) {

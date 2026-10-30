@@ -176,8 +176,8 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			realm: 'flower',
 			title: 'Western Flower Field · 서천꽃밭',
 			caption:
-				'Hallakgungi’s rows after Saradoryung retired — resurrection and extinction in the same western field.',
-			ko: '사라도령이 은퇴한 뒤 할락궁이의 이랑. 서천꽃밭에 환생꽃과 멸망꽃이 같이 핀다.'
+				'Hallakgungi’s rows after Sara retired — resurrection and extinction in the same western field.',
+			ko: '사라가 은퇴한 뒤 할락궁이의 이랑. 서천꽃밭에 환생꽃과 멸망꽃이 같이 핀다.'
 		}
 	],
 	four_divisions: [
@@ -350,7 +350,7 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 			diagram: 'hwarang',
 			title: 'The Hwarang · 화랑',
 			caption:
-				'국선 (Marshal) at the apex, then 화랑. A hwarang is the one the king names. Nangdo are whoever follows him — two, or forty. The schoolbook draws four under each; the yard never kept it. One class a year (Class n = entry year − 559); the number is kept for life.',
+				'국선 (Marshal) at the apex, then 화랑. A hwarang is the one the king names. Disciples are whoever follows him — two, or forty. The schoolbook draws four under each; the yard never kept it. One class a year (Class n = entry year − 559); the number is kept for life.',
 			ko: '국선 아래 화랑. 화랑은 임금이 이름 붙인 사람. 낭도는 따라가는 사람 — 둘일 수도, 마흔일 수도 있다. 그림에는 넷이라고 적혀 있다. 연무장은 그걸 지킨 적이 없다. 기는 해마다 하나(기수 = 입문 연도 − 559)이고 평생 간다.'
 		}
 	],

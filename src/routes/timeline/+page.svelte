@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
-	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
+	import Avatar from '$lib/components/Avatar.svelte';
+	import PersonLayer from '$lib/components/PersonLayer.svelte';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
 	import { reading } from '$lib/reading.svelte';
+	import { storyImg } from '$lib/img';
 	import type { DirectoryEpisode } from '$lib/episodeDirectory';
 	import {
 		ARC_STRIP_W,
@@ -34,8 +36,24 @@
 	let board = $state<HTMLDivElement>();
 	/** Pointer height on the time axis, in board pixels; null when the pointer is off the board. */
 	let pointerY = $state<number | null>(null);
+	/** An event tick the pointer is on — holds the card even if the hairline moves. */
+	let pinned = $state<TimelineEvent | null>(null);
+	let panning = $state(false);
+	let pan = { x: 0, y: 0, sl: 0, st: 0 };
+	let scrollTop = $state(0);
+	let unpinTimer: ReturnType<typeof setTimeout> | undefined;
 
-	let snapped = $derived.by((): TimelineEvent | null => {
+	function pin(e: TimelineEvent) {
+		clearTimeout(unpinTimer);
+		pinned = e;
+	}
+
+	function scheduleUnpin() {
+		clearTimeout(unpinTimer);
+		unpinTimer = setTimeout(() => (pinned = null), 140);
+	}
+
+	let nearest = $derived.by((): TimelineEvent | null => {
 		if (pointerY === null) return null;
 		let best: TimelineEvent | null = null;
 		for (const e of TIMELINE.events) {
@@ -44,9 +62,15 @@
 		}
 		return best;
 	});
+	let snapped = $derived(pinned ?? nearest);
 	let cursorY = $derived(snapped ? snapped.top : pointerY);
 	/** Episode id → whether it tells the snapped event in full (false = a brief mention). */
 	let coverage = $derived(new Map(snapped?.covers.map((c) => [c.ep.id, c.full]) ?? []));
+	/** Flip the card above the hairline when the event sits in the lower half of the viewport. */
+	let flipCard = $derived.by(() => {
+		if (!snapped || !scroller) return false;
+		return HEAD_H + snapped.top - scrollTop > scroller.clientHeight * 0.52;
+	});
 
 	$effect(() => {
 		if (scroller) scroller.scrollTop = Math.max(0, TIMELINE.presentTop - 8);
@@ -89,13 +113,38 @@
 	}
 
 	function track(e: PointerEvent) {
-		if (!board || !scroller) return;
+		if (!board || !scroller || panning) return;
 		if (e.clientY - scroller.getBoundingClientRect().top < HEAD_H) {
 			pointerY = null;
 			return;
 		}
 		const y = e.clientY - board.getBoundingClientRect().top - HEAD_H;
 		pointerY = y >= 0 && y <= TIMELINE.height ? y : null;
+	}
+
+	function canPanFrom(el: EventTarget | null): boolean {
+		return !(el instanceof Element && el.closest('a, button, .event-card, .event-tick'));
+	}
+
+	function startPan(e: PointerEvent) {
+		if (e.button !== 0 || !scroller || !canPanFrom(e.target)) return;
+		panning = true;
+		pan = { x: e.clientX, y: e.clientY, sl: scroller.scrollLeft, st: scroller.scrollTop };
+		scroller.setPointerCapture(e.pointerId);
+	}
+
+	function movePan(e: PointerEvent) {
+		if (panning && scroller) {
+			scroller.scrollLeft = pan.sl - (e.clientX - pan.x);
+			scroller.scrollTop = pan.st - (e.clientY - pan.y);
+		}
+		track(e);
+	}
+
+	function endPan(e: PointerEvent) {
+		if (!panning) return;
+		panning = false;
+		if (scroller?.hasPointerCapture(e.pointerId)) scroller.releasePointerCapture(e.pointerId);
 	}
 
 	function eventDate(e: TimelineEvent): string {
@@ -115,36 +164,27 @@
 {/snippet}
 
 <main class="timeline-page">
-	<header class="chrome">
-		<SiteNavSpace />
-	</header>
-
-	<header class="intro">
-		<h1>{ko ? '연표' : 'Timeline'}</h1>
-		<p class="meta">
-			{ko
-				? '본편은 한 줄로 흐르고, 나란한 이야기와 회상과 신화는 옆 칸에 놓았다. 막대에 마우스를 올리면 같은 시기의 이야기가, 주요 사건에 커서를 맞추면 그 사건을 다루는 이야기가 드러난다.'
-				: 'The main story runs down one line; parallel tellings, flashbacks and myths sit beside it. Hover a bar to see what else is happening at the same time; move the cursor onto a key event to see which episodes tell it.'}
-		</p>
-		<p class="legend">
-			<span class="key"><i class="swatch present"></i>{ko ? '현재' : 'Present day'}</span>
-			<span class="key"><i class="swatch past"></i>{ko ? '회상 에피소드' : 'Flashback episode'}</span>
-			<span class="key"><i class="dot"></i>{ko ? '회상 속 연도' : 'Year recalled in a flashback'}</span>
-			<span class="key"><i class="squiggle">⋯</i>{ko ? '빈 시대 생략' : 'Empty years folded'}</span>
-			<span class="key"><i class="hit full"></i>{ko ? '사건을 직접 다룸' : 'Tells the event'}</span>
-			<span class="key"><i class="hit"></i>{ko ? '잠깐 언급' : 'Mentions it briefly'}</span>
-		</p>
-	</header>
-
-	<div class="scroller" bind:this={scroller}>
+	<div
+		class="scroller"
+		class:panning
+		bind:this={scroller}
+		onpointerdown={startPan}
+		onpointermove={movePan}
+		onpointerup={endPan}
+		onpointercancel={endPan}
+		onscroll={() => {
+			if (scroller) scrollTop = scroller.scrollTop;
+		}}
+	>
 		<div
 			class="board"
 			style:--head="{HEAD_H}px"
 			style:--timeless="{timelessH}px"
 			bind:this={board}
 			role="presentation"
-			onpointermove={track}
-			onpointerleave={() => (pointerY = null)}
+			onpointerleave={() => {
+				if (!panning) pointerY = null;
+			}}
 		>
 			{#if cursorY !== null}
 				<div class="cursor" class:snapped style:top="{HEAD_H + cursorY}px" aria-hidden="true">
@@ -152,8 +192,32 @@
 						{#if snapped}{eventDate(snapped)}{:else if yearAt(cursorY) !== null}{yearLabel(yearAt(cursorY)!, ko)}{/if}
 					</div>
 					{#if snapped}
-						<div class="event-card" style:left="{AXIS_W + 4}px">
+						<div
+							class="event-card"
+							class:crossover={snapped.crossover}
+							class:flip={flipCard}
+							style:left="{AXIS_W + 4}px"
+							onpointerenter={() => snapped && pin(snapped)}
+							onpointerleave={scheduleUnpin}
+						>
+							{#if snapped.crossover}
+								<span class="xover">{ko ? '교차' : 'Crossover'}</span>
+							{/if}
 							<strong>{ko ? snapped.title.ko : snapped.title.en}</strong>
+							{#if snapped.people.length}
+								<div class="faces" role="group" aria-label={ko ? '등장인물' : 'People'}>
+									{#each snapped.people as person (person.id)}
+										<Avatar {person} year={snapped.year} size="2rem" label />
+									{/each}
+								</div>
+							{/if}
+							{#if snapped.stills.length}
+								<div class="stills">
+									{#each snapped.stills as still (still.id)}
+										<img {...storyImg(still.src, { kind: 'place', alt: still.alt, sizes: '160px' })} />
+									{/each}
+								</div>
+							{/if}
 							<span class="covers">
 								{#each snapped.covers as c (c.ep.id)}
 									<span class="cover" class:full={c.full}>
@@ -178,12 +242,17 @@
 						</span>
 					{/each}
 					{#each TIMELINE.events as e (e.id)}
-						<span
+						<button
+							type="button"
 							class="event-tick"
 							class:on={snapped === e}
+							class:crossover={e.crossover}
 							style:top="{e.top}px"
-							title="{eventDate(e)} · {ko ? e.title.ko : e.title.en}"
-						></span>
+							title="{eventDate(e)} · {ko ? e.title.ko : e.title.en}{e.crossover ? (ko ? ' · 교차' : ' · crossover') : ''}"
+							aria-label="{eventDate(e)} · {ko ? e.title.ko : e.title.en}"
+							onpointerenter={() => pin(e)}
+							onpointerleave={scheduleUnpin}
+						></button>
 					{/each}
 					{@render band()}
 				</div>
@@ -308,57 +377,48 @@
 			{/each}
 		</div>
 	</div>
+
+	<p class="legend" aria-hidden="true">
+		<span class="key"><i class="swatch present"></i>{ko ? '현재' : 'Present'}</span>
+		<span class="key"><i class="swatch past"></i>{ko ? '회상' : 'Flashback'}</span>
+		<span class="key"><i class="hit full"></i>{ko ? '다룸' : 'Tells'}</span>
+		<span class="key"><i class="hit"></i>{ko ? '언급' : 'Mentions'}</span>
+		<span class="key"><i class="event-tick legend-tick crossover"></i>{ko ? '교차 사건' : 'Crossover'}</span>
+	</p>
 </main>
+<PersonLayer />
 
 <style>
 	.timeline-page {
 		display: flex;
 		flex-direction: column;
+		width: 100%;
 		height: 100dvh;
 		padding-bottom: var(--tabbar-space);
 		box-sizing: border-box;
+		overflow: hidden;
 		background: var(--bg);
 		color: var(--fg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 	}
 
-	.chrome {
-		padding: max(0.85rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) 0.5rem
-			max(1rem, env(safe-area-inset-left));
-	}
-
-	.intro {
-		display: grid;
-		gap: 0.3rem;
-		padding: 0.5rem max(1rem, env(safe-area-inset-left)) 0.6rem;
-	}
-
-	h1 {
-		margin: 0;
-		font-family: var(--serif);
-		font-size: clamp(1.4rem, 3vw, 1.8rem);
-		font-weight: 600;
-		line-height: 1.05;
-		letter-spacing: var(--tracking-display);
-		color: var(--fg-strong);
-	}
-
-	.meta {
-		margin: 0;
-		max-width: 46rem;
-		font-family: var(--serif);
-		font-size: 0.85rem;
-		color: var(--fg-dim);
-	}
-
 	.legend {
+		position: fixed;
+		left: max(0.55rem, env(safe-area-inset-left));
+		bottom: calc(var(--tabbar-space, 0px) + 0.55rem);
+		z-index: 8;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.4rem 1.1rem;
-		margin: 0.1rem 0 0;
-		font-size: 0.68rem;
+		gap: 0.35rem 0.85rem;
+		margin: 0;
+		padding: 0.35rem 0.6rem;
+		border: 1px solid var(--hairline);
+		border-radius: 6px;
+		background: color-mix(in srgb, var(--bg) 88%, transparent);
+		font-size: 0.62rem;
 		color: var(--fg-faint);
+		pointer-events: none;
 	}
 
 	.key {
@@ -397,8 +457,14 @@
 		flex: 1;
 		min-height: 0;
 		overflow: auto;
-		border-top: 1px solid var(--hairline);
+		cursor: grab;
 		overscroll-behavior: contain;
+		touch-action: none;
+	}
+
+	.scroller.panning {
+		cursor: grabbing;
+		user-select: none;
 	}
 
 	.board {
@@ -445,17 +511,63 @@
 	.event-card {
 		position: sticky;
 		left: 0;
+		z-index: 7;
 		display: grid;
-		gap: 0.25rem;
+		gap: 0.3rem;
 		width: max-content;
-		max-width: min(30rem, 70vw);
+		max-width: min(28rem, 72vw);
 		margin-top: 4px;
-		padding: 0.35rem 0.5rem;
+		padding: 0.4rem 0.55rem;
 		border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
 		border-radius: 4px;
-		background: color-mix(in srgb, var(--bg) 92%, transparent);
+		background: color-mix(in srgb, var(--bg) 94%, transparent);
 		box-shadow: 0 4px 14px rgb(0 0 0 / 0.35);
 		font-size: 0.66rem;
+		pointer-events: auto;
+	}
+
+	.event-card.crossover {
+		border-color: var(--gold);
+	}
+
+	.event-card.flip {
+		transform: translateY(calc(-100% - 10px));
+	}
+
+	.xover {
+		width: max-content;
+		padding: 0.05rem 0.35rem;
+		border: 1px solid color-mix(in srgb, var(--gold) 70%, transparent);
+		border-radius: 999px;
+		font-size: 0.52rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--gold);
+	}
+
+	.faces {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.2rem 0.55rem;
+	}
+
+	.faces :global(.name) {
+		font-size: 0.62rem;
+		color: var(--fg-strong);
+	}
+
+	.stills {
+		display: flex;
+		gap: 0.3rem;
+	}
+
+	.stills img {
+		width: 7.4rem;
+		height: 3.7rem;
+		object-fit: cover;
+		border-radius: 3px;
+		background: color-mix(in srgb, var(--fg) 8%, transparent);
 	}
 
 	.event-card strong {
@@ -483,15 +595,46 @@
 
 	.event-tick {
 		position: absolute;
-		left: 3px;
+		left: 0;
+		z-index: 5;
+		width: 16px;
+		height: 16px;
+		padding: 0;
+		border: none;
+		background: transparent;
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+
+	.event-tick::after {
+		content: '';
+		position: absolute;
+		left: 4px;
+		top: 50%;
 		width: 6px;
 		height: 6px;
-		transform: translate(0, -50%) rotate(45deg);
+		transform: translateY(-50%) rotate(45deg);
 		background: color-mix(in srgb, var(--gold) 55%, transparent);
 	}
 
-	.event-tick.on {
+	.event-tick.on::after {
 		background: var(--gold);
+	}
+
+	.event-tick.crossover::after {
+		width: 8px;
+		height: 8px;
+		background: var(--gold);
+		box-shadow: 0 0 0 1.5px var(--bg), 0 0 0 3px color-mix(in srgb, var(--gold) 75%, transparent);
+	}
+
+	.legend-tick {
+		position: relative;
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		transform: none;
+		vertical-align: middle;
 	}
 
 	/* A diamond: filled when the episode tells the event, hollow when it only mentions it. */
@@ -840,5 +983,9 @@
 		.link {
 			transition: none;
 		}
+	}
+
+	:global(body:has(.timeline-page) .nav-blur) {
+		display: none;
 	}
 </style>

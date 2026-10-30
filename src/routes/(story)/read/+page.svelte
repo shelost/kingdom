@@ -7,6 +7,8 @@
 	import EpisodeThumbnail from '$lib/components/EpisodeThumbnail.svelte';
 	import MapExcerpt from '$lib/components/MapExcerpt.svelte';
 	import EpisodeTitleCard from '$lib/components/EpisodeTitleCard.svelte';
+	import { titleLogoSrc } from '$lib/titleLogos';
+	import { staticAsset } from '$lib/staticAsset.svelte';
 	import PartTitle from '$lib/components/PartTitle.svelte';
 	import DivisionTitle from '$lib/components/DivisionTitle.svelte';
 	import AboutBlurb from '$lib/components/AboutBlurb.svelte';
@@ -452,7 +454,8 @@
 													{/if}
 												{/each}
 											</nav>
-											<EpisodeTitleCard {entry} {eid}>
+											<EpisodeTitleCard {entry} {eid} ko={koHead}>
+												{@const logo = titleLogoSrc(entry.title, koHead)}
 												<div class="episode">
 													<div class="year arrive" style:--i={1} class:long={entry.year.length > 4}>
 														{entry.year}
@@ -461,9 +464,28 @@
 													{#if episodeNumber(ci, i)}
 														<p class="ep-num arrive" style:--i={2}>{episodeNumber(ci, i)}</p>
 													{/if}
-													<h2 class="arrive" style:--i={3}>{(koHead && entry.subtitle) || entry.title}</h2>
-													{#if entry.subtitle}
-														<p class="episode-ko arrive" style:--i={4}>{koHead ? entry.title : entry.subtitle}</p>
+													{#if logo}
+														<img
+															class="title-logo arrive"
+															style:--i={3}
+															src={staticAsset(logo) ?? logo}
+															alt=""
+														/>
+														<h2 class="sr-only">{(koHead && entry.subtitle) || entry.title}</h2>
+													{:else}
+														<h2 class="arrive" style:--i={3}
+															>{(koHead && entry.subtitle) || entry.title}</h2
+														>
+														{#if entry.tagline}
+															<p class="episode-tagline arrive" style:--i={4}
+																>{koHead ? entry.taglineKo || entry.tagline : entry.tagline}</p
+															>
+														{/if}
+														{#if entry.subtitle}
+															<p class="episode-ko arrive" style:--i={5}
+																>{koHead ? entry.title : entry.subtitle}</p
+															>
+														{/if}
 													{/if}
 												</div>
 											</EpisodeTitleCard>
@@ -1126,6 +1148,37 @@
 		text-wrap: balance;
 	}
 
+	.title-logo {
+		display: block;
+		width: auto;
+		max-width: min(42rem, 100%);
+		max-height: min(13.5rem, 40vw);
+		height: auto;
+		margin: 0.2rem auto 0;
+		object-fit: contain;
+		filter: drop-shadow(0 3px 18px rgba(0, 0, 0, 0.75));
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+
+	.episode-tagline {
+		margin: 0.65rem 0 0;
+		font-family: var(--serif);
+		font-weight: 400;
+		font-style: italic;
+		font-size: clamp(1.05rem, 2vw, 1.35rem);
+		letter-spacing: 0.02em;
+		color: var(--gold);
+		text-wrap: balance;
+	}
+
 	.episode-ko {
 		margin: 0.7rem 0 0;
 		font-family: var(--serif);
@@ -1531,6 +1584,10 @@
 			font-size: clamp(2.4rem, 11vw, 3.2rem);
 		}
 
+		.title-logo {
+			max-height: min(9.5rem, 38vw);
+		}
+
 		.props {
 			padding: 0 0 1.75rem;
 		}
@@ -1567,6 +1624,10 @@
 
 		.episode h2 {
 			font-size: 1.75rem;
+		}
+
+		.title-logo {
+			max-height: 7.5rem;
 		}
 	}
 

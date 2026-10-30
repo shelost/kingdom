@@ -29,6 +29,8 @@
 	import ComicBalloon from './ComicBalloon.svelte';
 	import CardTag from './CardTag.svelte';
 	import MythRealityCompare, { VERSION_TAG } from './MythRealityCompare.svelte';
+	import StarBadge from './StarBadge.svelte';
+	import { ensureStars, isStarred } from '$lib/imageStarsUi.svelte';
 
 	let {
 		images,
@@ -57,6 +59,10 @@
 	let visible = $derived.by(() => {
 		const cues = filterVisibleCues(filterNsfw(images));
 		return editUi.enabled ? cues : cues.filter(hasRealImage);
+	});
+
+	$effect(() => {
+		void ensureStars();
 	});
 
 	/** Script frames of a slot, minus any that failed to load. */
@@ -792,6 +798,7 @@
 			<CardTag icons={[slot.version]} colors={[VERSION_TAG[slot.version].color]} label={VERSION_TAG[slot.version].label} />
 		</span>
 	{/if}
+	<StarBadge on={isStarred(slot.id)} />
 {/snippet}
 
 {#snippet inlineFigure(it: InlineItem, sizes: string)}

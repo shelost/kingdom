@@ -123,6 +123,7 @@ export const CHART_NODES: ChartNode[] = [
 	{ id: 'ungo', x: 920, y: 160, rank: 1, era: 'present', gender: 'f' },
 	{ id: 'gyebek', x: 720, y: 440, rank: 2, era: 'present', gender: 'm' },
 	{ id: 'seongchung', x: 900, y: 440, rank: 1, era: 'present', gender: 'm' },
+	{ id: 'yunchung', x: 820, y: 440, rank: 1, era: 'present', gender: 'm' },
 	{ id: 'heungsu', x: 980, y: 360, rank: 1, era: 'present', gender: 'm' },
 	{ id: 'chunbok', x: 1060, y: 440, rank: 1, era: 'present', gender: 'm' },
 	{ id: 'queensatek', x: 720, y: 600, rank: 1, era: 'present', gender: 'f' },
@@ -615,6 +616,26 @@ export const RELATIONSHIPS: Person[] = [
 		aliases: ['Seongchung & Heungsu']
 	},
 	{
+		id: 'rel-seongchung-yunchung',
+		placeId: 'sabi',
+		summary: { en: 'One Word', ko: '한 마디' },
+		name: 'Sunchung & Yunchung',
+		korean: '성충 · 윤충',
+		entity: 'relationship',
+		kingdom: 'baekje',
+		bond: 'kin',
+		tie: 'sibling',
+		between: ['seongchung', 'yunchung'],
+		title: 'The brother who would not go in',
+		tagline: 'One asked for a word in the yard. The other had already taken a fortress.',
+		arc: 'Yunchung brings Daeya home and wants well done like a person. Sunchung gives him a story instead, and a pass to remember. The night the king jails the elder, the younger is already in the yard. He does not go in. A salt boat will say so, a season late.',
+		events: [
+			{ year: 642, label: 'Daeya; the lacquer box; remember the pass.' },
+			{ year: 656, label: 'The yard. He will not go in.' }
+		],
+		aliases: ['Seongchung & Yunchung', 'Sunchung & Yunchung']
+	},
+	{
 		id: 'rel-heungsu-gyebek', avatar: '/rel_heungsu_gyebek.jpg',
 		placeId: 'gibeolpo',
 		summary: { en: 'Last Advice', ko: '마지막 조언' },
@@ -758,7 +779,7 @@ export const RELATIONSHIPS: Person[] = [
 		still: 'rel-yushin-bupmin',
 		title: 'Marshal and flower youth',
 		tagline: 'Uncle by marriage; head of the Hwarang by oath.',
-		arc: 'After Daeya, Yushin trains Bupmin among the Hwarang — horse, bow, the Five Principles — until “a king for all” starts to mean loyalty to a country, not only a childhood sentence. The boy who becomes Munmu still salutes the marshal who taught him the yard.',
+		arc: 'After Daeya, Yushin trains Bupmin among the Hwarang — horse, bow, the Five Precepts — until “a king for all” starts to mean loyalty to a country, not only a childhood sentence. The boy who becomes Munmu still salutes the marshal who taught him the yard.',
 		events: [{ year: 643, label: 'Bupmin trains under Marshal Yushin.' }],
 		aliases: ['Yushin & Bupmin', 'Yushin & Munmu', 'Bupmin & Yushin']
 	},
@@ -855,14 +876,12 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['sara', 'jacheongbi'],
 		title: 'Flower warden and the girl who walked west',
 		tagline: 'She borrowed resurrection — and later, ruin.',
-		arc: 'Jachungbi reaches 서천꽃밭 in man’s clothes; Hallakgungi (할락궁이 — active after Saradoryung retired) yields the five life-flowers for Mun Doryung, and later the extinction bloom against heaven’s rebels. The fourth realm opens for her because she asks correctly.',
+		arc: 'Jachungbi reaches 서천꽃밭 in man’s clothes; Hallakgungi (할락궁이 — active after Sara retired) yields the five life-flowers for Mun Doryung, and later the extinction bloom against heaven’s rebels. The fourth realm opens for her because she asks correctly.',
 		events: [{ label: 'Resurrection flowers; later the doom-flower.' }],
 		aliases: [
 			'Hallakgungi & Jachungbi',
 			'The Gardener & Jachungbi',
-			'Sara & Jachungbi',
-			'할락궁이 · 자청비',
-			'사라도령 · 자청비'
+			'할락궁이 · 자청비'
 		]
 	},
 	{
@@ -1486,8 +1505,11 @@ export const RELATIONSHIPS: Person[] = [
 		between: ['haemosu', 'haewonmek'],
 		title: 'Same 해, split roads',
 		tagline: 'One 해 drives the sun’s chariot; the younger took the night-road.',
-		arc: 'The names share a 해. One keeps Little Star’s day; the other fetches for Yumla under Big Star — 이승 and 저승, not one hall. At Jumong’s river the sun still outranks the fetch: one shove, a promise to let the boy finish, then the night-road again.',
-		events: [{ year: -37, label: 'The river; Haemosu sends Haewonmek off.' }],
+		arc: 'The names share a 해 because they were two suns. When the twins shoot the extra noon, the long-haired brother keeps the chariot; the shorter-haired one falls with a golden arrow in his chest. Big Star names him Haewonmek and sets him on the night-road. One keeps Little Star’s day; the other fetches for Yumla under Big Star — 이승 and 저승, not one hall. At Jumong’s river the sun still outranks the fetch: one shove, a promise to let the boy finish, then the night-road again.',
+		events: [
+			{ label: 'The extra sun falls; Big Star names him Haewonmek.' },
+			{ year: -37, label: 'The river; Haemosu sends Haewonmek off.' }
+		],
 		aliases: ['Haemosu & Haewonmek', 'Haewonmek & Haemosu']
 	},
 	{

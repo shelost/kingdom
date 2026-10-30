@@ -157,8 +157,6 @@
 <style>
 	.stage {
 		position: relative;
-		display: grid;
-		grid-template-columns: 10.5rem minmax(0, 1fr);
 		width: 100%;
 		height: 100%;
 		flex: 1 1 auto;
@@ -174,25 +172,24 @@
 		cursor: pointer;
 	}
 
-	.stage.open {
-		grid-template-columns: minmax(0, 1fr);
-	}
-
-	.stage.open .gl-cell {
-		grid-column: 1;
-	}
-
 	.parts {
-		grid-column: 1;
-		grid-row: 1;
+		position: absolute;
+		left: 0;
+		top: 50%;
 		z-index: 2;
-		display: grid;
-		grid-template-rows: repeat(3, 1fr);
-		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 44%;
 		margin: 0;
-		padding: 14% 1.15rem 18% 1.7rem;
+		padding: 0.15rem 1.15rem 0.15rem 1.7rem;
 		list-style: none;
 		pointer-events: none;
+		transform: translateY(-50%);
+	}
+
+	.stage.display .parts {
+		height: 56%;
 	}
 
 	.parts.solo {
@@ -211,14 +208,12 @@
 	}
 
 	.stage.open .chrome {
-		right: auto;
-		left: 1rem;
+		display: none;
 	}
 
 	.gl-cell {
-		grid-column: 2;
-		grid-row: 1;
-		position: relative;
+		position: absolute;
+		inset: 0;
 		z-index: 0;
 		min-width: 0;
 		min-height: 0;
@@ -234,8 +229,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.4rem;
-		margin: 0.55rem 0;
-		padding-block: 0.35rem;
+		margin: 0;
+		padding-block: 0.2rem;
 	}
 
 	.pk {
@@ -295,12 +290,13 @@
 	}
 
 	.fallback {
-		grid-column: 1 / -1;
-		grid-row: 1;
-		position: relative;
+		position: absolute;
+		inset: 0;
+		z-index: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 		gap: 0.7rem;
 		overflow: auto;
 		padding: 1.5rem 1rem 3rem;
@@ -313,19 +309,23 @@
 	}
 
 	.row {
-		display: grid;
-		grid-template-columns: 9.6rem 1fr;
-		align-items: end;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
 		gap: 0.6rem;
 		max-width: 92rem;
 		margin: 0 auto;
 		width: 100%;
 	}
 
+	.row-part {
+		flex: 0 0 9.6rem;
+	}
+
 	.line {
 		display: flex;
 		flex-wrap: nowrap;
-		justify-content: flex-start;
+		justify-content: center;
 		align-items: flex-end;
 		gap: 3px;
 		margin: 0;
@@ -417,12 +417,12 @@
 
 	@media (max-width: 860px) {
 		.stage {
-			grid-template-columns: 6.2rem minmax(0, 1fr);
 			min-height: 0;
 		}
 
 		.parts {
-			padding: 12% 0.45rem 22% 0.85rem;
+			height: 58%;
+			padding: 0.1rem 0.45rem 0.1rem 0.85rem;
 		}
 
 		.pk {
@@ -442,9 +442,12 @@
 		}
 
 		.row {
-			grid-template-columns: 4.4rem minmax(0, 1fr);
 			gap: 0.4rem;
 			max-width: none;
+		}
+
+		.row-part {
+			flex-basis: 4.4rem;
 		}
 
 		.line.faces button {
@@ -470,12 +473,13 @@
 	}
 
 	@media (max-width: 720px) {
-		.stage {
-			grid-template-columns: 5.6rem minmax(0, 1fr);
+		.parts {
+			height: 56%;
+			padding: 0.1rem 0.3rem 0.1rem max(0.7rem, env(safe-area-inset-left, 0px));
 		}
 
-		.parts {
-			padding: 10% 0.3rem 24% max(0.7rem, env(safe-area-inset-left, 0px));
+		.row-part {
+			flex-basis: 5.6rem;
 		}
 	}
 </style>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import VolumePreview from '$lib/components/books/VolumePreview.svelte';
 	import { profileNameOf } from '$lib/givenNames';
-	import { koreanOf, titleOf, type Person } from '$lib/people';
+	import { avatarOf, koreanOf, posterArtOf, titleOf, type Person } from '$lib/people';
 	import { reading } from '$lib/reading.svelte';
 	import { ui } from '$lib/uiLang';
 	import {
@@ -12,7 +12,7 @@
 		type WikiBookId,
 		type WikiBookSpec
 	} from '$lib/wikiBooks';
-	import type { WikiKind } from '$lib/wiki';
+	import { filterProfiles, kindOf, type WikiKind } from '$lib/wiki';
 
 	let {
 		kind = $bindable(),
@@ -32,11 +32,60 @@
 
 	let ko = $derived(reading.lang === 'ko');
 	let book = $derived(wikiBookOf(kind));
-	let cover = $derived(wikiBookCover(kind));
+	let searching = $derived(q.trim().length > 0);
+	let cover = $derived(
+		searching && featured[0]
+			? (posterArtOf(featured[0]) ?? avatarOf(featured[0]) ?? wikiBookCover(kind))
+			: wikiBookCover(kind)
+	);
 	let lead = $derived(featured[0] ?? null);
 	let rest = $derived(featured.slice(1, 6));
 	let shelf = $derived(WIKI_BOOKS.filter((b) => wikiBookCount(b.id) > 0));
 	let chips = $derived(shelf);
+	let matchCounts = $derived.by(() => {
+		const counts = {} as Record<WikiBookId, number>;
+		for (const spec of WIKI_BOOKS) counts[spec.id] = 0;
+		if (!q.trim()) {
+			for (const spec of WIKI_BOOKS) counts[spec.id] = wikiBookCount(spec.id);
+			return counts;
+		}
+		const hits = filterProfiles({
+			kind: 'all',
+			kingdom: 'all',
+			tag: 'all',
+			gender: 'all',
+			art: 'all',
+			q
+		});
+		counts.all = hits.length;
+		for (const p of hits) {
+			const k = kindOf(p);
+			counts[k] = (counts[k] ?? 0) + 1;
+		}
+		return counts;
+	});
+	let allHits = $derived(matchCounts.all ?? 0);
+	let kindHits = $derived(matchCounts[kind] ?? 0);
+	let hiddenHits = $derived(searching && kind !== 'all' ? Math.max(0, allHits - kindHits) : 0);
+
+	function chipCount(id: WikiBookId): number {
+		return matchCounts[id] ?? 0;
+	}
+
+	function onSearchKey(e: KeyboardEvent) {
+		if (e.key === 'Enter' && lead) {
+			e.preventDefault();
+			openLead();
+		}
+		if (e.key === 'Escape' && q) {
+			e.preventDefault();
+			q = '';
+		}
+	}
+
+	function clearSearch() {
+		q = '';
+	}
 
 	function labelOf(spec: WikiBookSpec): string {
 		return ko ? spec.ko : spec.title;
@@ -63,26 +112,50 @@
 			<p class="edition">{wikiBookCount('all').toLocaleString()} {ui('entries')}</p>
 			<h1>{ui('Wiki')}</h1>
 			<p class="lede">{ui('An open collection of every name in the chronicle.')}</p>
-			<label class="search liquid-glass">
-				<span class="sr">{ui('Search the wiki')}</span>
-				<span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
-				<input
-					type="search"
-					placeholder="{ui('Search the wiki')} — {wikiBookCount('all')}"
-					bind:value={q}
-					autocomplete="off"
-				/>
-			</label>
+			<div class="search liquid-glass">
+				<label class="search-field">
+					<span class="sr">{ui('Search the wiki')}</span>
+					<span class="search-icon material-symbols-outlined" aria-hidden="true">search</span>
+					<input
+						type="search"
+						placeholder={ui('Search the wiki')}
+						bind:value={q}
+						autocomplete="off"
+						spellcheck="false"
+						enterkeyhint="search"
+						onkeydown={onSearchKey}
+					/>
+				</label>
+				<span class="search-count" aria-live="polite">
+					{searching ? kindHits : wikiBookCount('all')}
+				</span>
+				{#if searching}
+					<button type="button" class="search-clear" onclick={clearSearch} aria-label={ui('Clear search')}>
+						<span class="material-symbols-outlined" aria-hidden="true">close</span>
+					</button>
+				{/if}
+			</div>
+			{#if hiddenHits > 0}
+				<button type="button" class="widen" onclick={() => pick('all')}>
+					{hiddenHits}
+					{ui('more outside this category')}
+					<span aria-hidden="true">·</span>
+					{ui('Search all')}
+				</button>
+			{/if}
 			<div class="trend" role="tablist" aria-label={ui('Categories')}>
 				{#each chips as spec (spec.id)}
+					{@const n = chipCount(spec.id)}
 					<button
 						type="button"
 						role="tab"
 						aria-selected={kind === spec.id}
 						class:on={kind === spec.id}
+						class:empty={searching && n === 0}
 						onclick={() => pick(spec.id)}
 					>
 						{labelOf(spec)}
+						<span class="chip-n">{n}</span>
 					</button>
 				{/each}
 			</div>
@@ -145,7 +218,6 @@
 					type="button"
 					class="vol"
 					class:on
-					style:--lift={on ? '1.35rem' : '0px'}
 					onclick={() => pick(spec.id)}
 					aria-pressed={on}
 					aria-label={labelOf(spec)}
@@ -167,6 +239,18 @@
 </section>
 
 <style>
+	.sr {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	.library {
 		display: flex;
 		flex-direction: column;
@@ -217,32 +301,45 @@
 	}
 
 	.search {
-		--glass-tint: 26%;
-		--glass-sheen: 14%;
-		position: relative;
-		display: block;
-		width: min(28rem, 100%);
+		--glass-tint: 42%;
+		--glass-sheen: 18%;
+		display: flex;
+		align-items: center;
+		width: min(32rem, 100%);
+		min-height: 3.25rem;
+		padding: 0 0.45rem 0 0;
 		border-radius: var(--radius-pill);
+		border-color: color-mix(in srgb, white 42%, transparent);
 		transition:
-			--glass-tint 0.3s var(--ease),
-			border-color 0.3s var(--ease);
+			--glass-tint 0.28s var(--ease),
+			border-color 0.28s var(--ease),
+			box-shadow 0.28s var(--ease);
 	}
 
 	.search:hover {
-		--glass-tint: 36%;
+		--glass-tint: 52%;
 	}
 
 	.search:focus-within {
-		--glass-tint: 46%;
-		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
+		--glass-tint: 58%;
+		border-color: color-mix(in srgb, var(--gold) 62%, transparent);
+		box-shadow:
+			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
+			0 0 0 3px color-mix(in srgb, var(--gold) 18%, transparent);
+	}
+
+	.search-field {
+		position: relative;
+		flex: 1 1 auto;
+		min-width: 0;
 	}
 
 	.search-icon {
 		position: absolute;
-		left: 1.15rem;
+		left: 1.1rem;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: 1.25rem;
+		font-size: 1.2rem;
 		color: var(--fg-dim);
 		pointer-events: none;
 	}
@@ -250,51 +347,128 @@
 	.search input {
 		display: block;
 		width: 100%;
-		height: 3.15rem;
-		padding: 0 1.3rem 0 3.1rem;
+		height: 3.25rem;
+		padding: 0 0.4rem 0 3rem;
 		border: 0;
 		background: transparent;
 		font-family: var(--ui);
-		font-size: 0.98rem;
+		font-size: 1rem;
 		letter-spacing: var(--tracking-ui);
 		color: var(--fg-strong);
 		outline: none;
 		appearance: none;
 	}
 
-	.search input::-webkit-search-decoration {
+	.search input::-webkit-search-decoration,
+	.search input::-webkit-search-cancel-button {
 		-webkit-appearance: none;
 	}
 
 	.search input::placeholder {
+		color: var(--fg-faint);
+	}
+
+	.search-count {
+		flex: 0 0 auto;
+		margin-right: 0.35rem;
+		padding: 0.18rem 0.55rem;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		font-family: var(--ui);
+		font-size: 0.68rem;
+		letter-spacing: 0.06em;
 		color: var(--fg-dim);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.search-clear {
+		flex: 0 0 auto;
+		display: grid;
+		place-items: center;
+		width: 2.1rem;
+		height: 2.1rem;
+		margin-right: 0.2rem;
+		border: 0;
+		border-radius: 50%;
+		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		color: var(--fg);
+		cursor: pointer;
+	}
+
+	.search-clear:hover {
+		background: color-mix(in srgb, var(--fg) 14%, transparent);
+	}
+
+	.search-clear .material-symbols-outlined {
+		font-size: 1.05rem;
+	}
+
+	.widen {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin: 0.55rem 0 0;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		font-family: var(--ui);
+		font-size: 0.78rem;
+		color: var(--gold);
+		cursor: pointer;
 	}
 
 	.trend {
 		display: flex;
-		flex-wrap: wrap;
-		gap: 0.4rem;
+		flex-wrap: nowrap;
+		gap: 0.35rem;
 		margin-top: 1rem;
+		padding-bottom: 0.2rem;
+		overflow-x: auto;
+		scrollbar-width: none;
+	}
+
+	.trend::-webkit-scrollbar {
+		display: none;
 	}
 
 	.trend button {
-		height: 1.85rem;
-		padding: 0 0.85rem;
+		flex: 0 0 auto;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		height: 1.95rem;
+		padding: 0 0.75rem 0 0.85rem;
 		border: 1px solid var(--hairline);
 		border-radius: 999px;
-		background: transparent;
+		background: color-mix(in srgb, var(--bg) 40%, transparent);
 		font-family: var(--ui);
 		font-size: 0.72rem;
 		letter-spacing: 0.04em;
 		color: var(--fg-dim);
 		cursor: pointer;
+		white-space: nowrap;
 	}
 
 	.trend button.on,
 	.trend button[aria-selected='true'] {
-		border-color: color-mix(in srgb, var(--fg) 28%, transparent);
-		background: color-mix(in srgb, var(--fg) 8%, transparent);
+		border-color: color-mix(in srgb, var(--fg) 32%, transparent);
+		background: color-mix(in srgb, var(--fg) 10%, transparent);
 		color: var(--fg-strong);
+	}
+
+	.trend button.empty {
+		opacity: 0.38;
+	}
+
+	.chip-n {
+		font-size: 0.62rem;
+		letter-spacing: 0.04em;
+		color: var(--fg-faint);
+		font-variant-numeric: tabular-nums;
+	}
+
+	.trend button.on .chip-n {
+		color: var(--fg-dim);
 	}
 
 	.stage {
@@ -445,15 +619,23 @@
 		padding: 0;
 		border: 0;
 		background: transparent;
-		transform: translateY(calc(-1 * var(--lift, 0px)));
-		transition: transform 0.35s var(--ease, cubic-bezier(0.22, 0.61, 0.36, 1));
+		transform: translateY(0);
+		transition:
+			transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+			padding 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
 		cursor: pointer;
 		z-index: 0;
+	}
+
+	.vol:hover {
+		transform: translateY(-0.55rem);
+		z-index: 1;
 	}
 
 	.vol.on {
 		z-index: 2;
 		padding-inline: 0.55rem;
+		transform: translateY(-1.35rem);
 	}
 
 	@media (max-width: 1080px) {

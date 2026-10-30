@@ -5,6 +5,7 @@ import path from 'node:path';
 import type { RequestHandler } from './$types';
 import type { GalleryDeleteItem, GalleryDeleteRequest } from '$lib/galleryDelete';
 import { armSkipChronicleHmr } from '$lib/server/chronicleHmr';
+import { cleanStarStore, starLockKey } from '$lib/imageStars';
 
 const ROOT = path.resolve('.');
 const STATIC_ROOT = path.resolve(ROOT, 'static');
@@ -12,6 +13,7 @@ const TEMP_DIR = path.resolve(STATIC_ROOT, 'temp');
 const STORY_FILE = path.resolve(ROOT, 'src/lib/data/story.json');
 const PEOPLE_FILE = path.resolve(ROOT, 'src/lib/data/image-people.json');
 const INVENTORY_FILE = path.resolve(ROOT, 'src/lib/tempArtInventory.ts');
+const STARS_FILE = path.resolve(ROOT, 'src/lib/data/image-stars.json');
 
 const MAX_ITEMS = 200;
 const PORTRAIT_FILE = /^(ch_|pl_|bn_|ar_|obj_|sword_|flag)/i;
@@ -167,10 +169,25 @@ async function pruneTempInventory(gonePublic: Set<string>) {
 	if (next !== text) await fs.writeFile(INVENTORY_FILE, next);
 }
 
+async function loadStarredKeys(): Promise<Set<string>> {
+	try {
+		const raw = JSON.parse(await fs.readFile(STARS_FILE, 'utf-8')) as unknown;
+		return new Set(cleanStarStore(raw).stars);
+	} catch (err) {
+		if ((err as NodeJS.ErrnoException).code === 'ENOENT') return new Set();
+		throw err;
+	}
+}
+
 async function handleDelete(request: Request) {
 	if (!dev) error(403, 'Image delete only runs in local dev, where files are on disk');
 
 	const items = asItems(await request.json());
+	const starred = await loadStarredKeys();
+	const locked = items.filter((item) => starred.has(starLockKey(item)));
+	if (locked.length) {
+		error(403, `Starred stills cannot be deleted: ${locked.map(starLockKey).join(', ')}`);
+	}
 	const rawStory = JSON.parse(await fs.readFile(STORY_FILE, 'utf-8')) as StoryChapter[];
 	if (!Array.isArray(rawStory)) error(500, 'story.json is not an array');
 

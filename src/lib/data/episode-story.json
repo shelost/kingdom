@@ -767,10 +767,10 @@
 			"id": "five-principles::Bupmin",
 			"title": "Bupmin",
 			"want": "Bupmin wants the headband to mean something besides his father's name.",
-			"conflict": "The yard names him hwarang on day one and leaves him with no nangdo. Yushin will not be his uncle on the dust.",
+			"conflict": "The yard names him hwarang on day one and leaves him with no disciples. Yushin will not be his uncle on the dust.",
 			"development": "The Class 82 gate · the picking · the throat · Gotaso at the pine · gyuku.",
-			"climax": "The Five Principles. Which will you break first?",
-			"resolution": "Three nangdo. The wall into Sadaham.",
+			"climax": "The Five Precepts. Which will you break first?",
+			"resolution": "Three disciples. The wall into Sadaham.",
 			"aPlot": "Bupmin wants the headband to mean something besides his father’s name.",
 			"bPlot": "Yushin will not be his uncle on the dust.",
 			"themes": [
@@ -781,7 +781,7 @@
 				}
 			],
 			"concepts": [
-				"The Five Principles",
+				"The Five Precepts",
 				"Hwarang Class 82"
 			],
 			"plant": [],
@@ -2204,150 +2204,6 @@
 			"problem": "A list of reforms with no one pushing back. It's also out of order: it's dated 651 but placed before ep 50 (649).",
 			"events": []
 		},
-		"chunchu-era::Bihyung": {
-			"n": 55,
-			"id": "chunchu-era::Bihyung",
-			"title": "Bihyung",
-			"want": "Surabol's madman — a prince — wants to stay useful after the living have used him.",
-			"conflict": "Jinji's fall, the Ghost Children, a court that needs a fool and will not keep one.",
-			"development": "The night work · the dressed stones · the servants say goblins.",
-			"climax": "By morning the Ghost Bridge is there.",
-			"resolution": "The identity box stays shut. Yongsu walks the same stream.",
-			"aPlot": "A boy who talks to the dark is asked to put a bridge on a ditch.",
-			"bPlot": "Suulbu’s house. Chunmyung’s sums. The fox that built it.",
-			"themes": [
-				{
-					"id": "yongsu-streak",
-					"label": "The streak",
-					"note": "Do not open the box."
-				}
-			],
-			"concepts": [
-				"귀교",
-				"Hwangcheon"
-			],
-			"plant": [
-				"ghost-bridge",
-				"yongsu-streak",
-				"fox-bridge"
-			],
-			"pay": [
-				"night-bridge"
-			],
-			"hold": [
-				"yongsu-streak",
-				"ghost-bridge",
-				"fox-bridge"
-			],
-			"introduced": [
-				"jinji",
-				"geochilbu",
-				"sado",
-				"eulje",
-				"dohwa",
-				"gildal"
-			],
-			"places": [],
-			"problem": "A life, like Yongsu. A few nights could be one night.",
-			"events": []
-		},
-		"chunchu-era::Yongsu": {
-			"n": 56,
-			"id": "chunchu-era::Yongsu",
-			"title": "Yongsu",
-			"want": "Yongsu wants the Ghost Children back among the living without putting his cousin off the chair, and without handing his son the story.",
-			"conflict": "The Council’s purge-list; Gildal’s last night; a king who will not hear a confession; a queen who will.",
-			"development": "The goblins unmasked · rice cakes under the bridge · the madman’s arithmetic.",
-			"climax": "Yongsu is forced to kill Gildal, who reassures him.",
-			"resolution": "The fox is thrown off its own stones. The house keeps the weather.",
-			"aPlot": "Yongsu wants the night to stay useful, and Chunmyung to sit down beside the sums.",
-			"bPlot": "Chunchu is nine and learns to say nothing. Suulbu taps each stone.",
-			"themes": [
-				{
-					"id": "ghost-bridge",
-					"label": "A bridge nobody ordered",
-					"note": "She married into that weather."
-				}
-			],
-			"concepts": [],
-			"plant": [],
-			"pay": [
-				"ghost-bridge",
-				"fox-bridge"
-			],
-			"hold": [
-				"yongsu-streak"
-			],
-			"introduced": [
-				"mishil"
-			],
-			"places": [],
-			"problem": "It is still a life. Chunchu’s shame is told as a verdict before we watch him be ashamed.",
-			"events": [
-				{
-					"label": "Jinji drinks himself out of the Cloud King",
-					"scene": "The palace · the Cloud King’s last night",
-					"tension": 0,
-					"start": true
-				},
-				{
-					"label": "A son is born into a house that already knows the weather",
-					"scene": "Saryang ward · the birth",
-					"tension": 22
-				},
-				{
-					"label": "Yongsu takes the charcoal road into the city",
-					"scene": "The edge of Surabol · the charcoal road",
-					"tension": 0,
-					"start": true
-				},
-				{
-					"label": "Gildal presents himself and explains the Ghost Children",
-					"scene": "Under the west wall · the Ghost Children",
-					"tension": 44
-				},
-				{
-					"label": "Chunmyung sits down to supper in the king’s rooms",
-					"scene": "The king’s rooms · supper",
-					"tension": 0,
-					"start": true,
-					"last": true
-				},
-				{
-					"label": "Chunmyung discovers the Ghost Children",
-					"scene": "Under the west wall · the night the princess followed",
-					"tension": 58
-				},
-				{
-					"label": "The Council unmasks the boys in the cellar",
-					"scene": "The Harmony Council · the cellar",
-					"tension": 76
-				},
-				{
-					"label": "Yongsu is forced to kill Gildal, who reassures him",
-					"scene": "The south road · the reeds at dawn",
-					"tension": 96,
-					"climax": true
-				},
-				{
-					"label": "Yongsu weeps so the riders will not see",
-					"scene": "The king’s small room · that same morning",
-					"tension": 70
-				},
-				{
-					"label": "Chunchu learns the weather of the house",
-					"scene": "The House by the Stream · spring",
-					"tension": 0,
-					"start": true
-				},
-				{
-					"label": "Old Yongsu tells Chunchu there are no goblins",
-					"scene": "The bluff",
-					"tension": 32,
-					"last": true
-				}
-			]
-		},
 		"chunchu-era::King Muyeol": {
 			"n": 57,
 			"id": "chunchu-era::King Muyeol",
@@ -3678,7 +3534,7 @@
 				{
 					"id": "father-son",
 					"label": "The name that was a headband",
-					"note": "The Five Principles, spent."
+					"note": "The Five Precepts, spent."
 				}
 			],
 			"concepts": [],
@@ -3803,6 +3659,150 @@
 			"places": [],
 			"problem": "The heading says 698 but the scene is the winter of 668. The opening line (\"the cold that Yeon once pulled a Mohe boy out of\") spoils the flashback before it arrives.",
 			"events": []
+		},
+		"chunchu-era::Bihyung": {
+			"n": 55,
+			"id": "chunchu-era::Bihyung",
+			"title": "Bihyung",
+			"want": "Surabol's madman — a prince — wants to stay useful after the living have used him.",
+			"conflict": "Jinji's fall, the Ghost Children, a court that needs a fool and will not keep one.",
+			"development": "The night work · the dressed stones · the servants say goblins.",
+			"climax": "By morning the Ghost Bridge is there.",
+			"resolution": "The identity box stays shut. Yongsu walks the same stream.",
+			"aPlot": "A boy who talks to the dark is asked to put a bridge on a ditch.",
+			"bPlot": "Suulbu’s house. Chunmyung’s sums. The fox that built it.",
+			"themes": [
+				{
+					"id": "yongsu-streak",
+					"label": "The streak",
+					"note": "Do not open the box."
+				}
+			],
+			"concepts": [
+				"귀교",
+				"Hwangcheon"
+			],
+			"plant": [
+				"ghost-bridge",
+				"yongsu-streak",
+				"fox-bridge"
+			],
+			"pay": [
+				"night-bridge"
+			],
+			"hold": [
+				"yongsu-streak",
+				"ghost-bridge",
+				"fox-bridge"
+			],
+			"introduced": [
+				"jinji",
+				"geochilbu",
+				"sado",
+				"eulje",
+				"dohwa",
+				"gildal"
+			],
+			"places": [],
+			"problem": "A life, like Yongsu. A few nights could be one night.",
+			"events": []
+		},
+		"chunchu-era::Kim Yongsu": {
+			"n": 56,
+			"id": "chunchu-era::Kim Yongsu",
+			"title": "Kim Yongsu",
+			"want": "Yongsu wants the Ghost Children back among the living without putting his cousin off the chair, and without handing his son the story.",
+			"conflict": "The Council’s purge-list; Gildal’s last night; a king who will not hear a confession; a queen who will.",
+			"development": "The goblins unmasked · rice cakes under the bridge · the madman’s arithmetic.",
+			"climax": "Yongsu is forced to kill Gildal, who reassures him.",
+			"resolution": "The fox is thrown off its own stones. The house keeps the weather.",
+			"aPlot": "Yongsu wants the night to stay useful, and Chunmyung to sit down beside the sums.",
+			"bPlot": "Chunchu is nine and learns to say nothing. Suulbu taps each stone.",
+			"themes": [
+				{
+					"id": "ghost-bridge",
+					"label": "A bridge nobody ordered",
+					"note": "She married into that weather."
+				}
+			],
+			"concepts": [],
+			"plant": [],
+			"pay": [
+				"ghost-bridge",
+				"fox-bridge"
+			],
+			"hold": [
+				"yongsu-streak"
+			],
+			"introduced": [
+				"mishil"
+			],
+			"places": [],
+			"problem": "It is still a life. Chunchu’s shame is told as a verdict before we watch him be ashamed.",
+			"events": [
+				{
+					"label": "Jinji drinks himself out of the Cloud King",
+					"scene": "The palace · the Cloud King’s last night",
+					"tension": 0,
+					"start": true
+				},
+				{
+					"label": "A son is born into a house that already knows the weather",
+					"scene": "Saryang ward · the birth",
+					"tension": 22
+				},
+				{
+					"label": "Yongsu takes the charcoal road into the city",
+					"scene": "The edge of Surabol · the charcoal road",
+					"tension": 0,
+					"start": true
+				},
+				{
+					"label": "Gildal presents himself and explains the Ghost Children",
+					"scene": "Under the west wall · the Ghost Children",
+					"tension": 44
+				},
+				{
+					"label": "Chunmyung sits down to supper in the king’s rooms",
+					"scene": "The king’s rooms · supper",
+					"tension": 0,
+					"start": true,
+					"last": true
+				},
+				{
+					"label": "Chunmyung discovers the Ghost Children",
+					"scene": "Under the west wall · the night the princess followed",
+					"tension": 58
+				},
+				{
+					"label": "The Council unmasks the boys in the cellar",
+					"scene": "The Harmony Council · the cellar",
+					"tension": 76
+				},
+				{
+					"label": "Yongsu is forced to kill Gildal, who reassures him",
+					"scene": "The south road · the reeds at dawn",
+					"tension": 96,
+					"climax": true
+				},
+				{
+					"label": "Yongsu weeps so the riders will not see",
+					"scene": "The king’s small room · that same morning",
+					"tension": 70
+				},
+				{
+					"label": "Chunchu learns the weather of the house",
+					"scene": "The House by the Stream · spring",
+					"tension": 0,
+					"start": true
+				},
+				{
+					"label": "Old Yongsu tells Chunchu there are no goblins",
+					"scene": "The bluff",
+					"tension": 32,
+					"last": true
+				}
+			]
 		}
 	}
 }

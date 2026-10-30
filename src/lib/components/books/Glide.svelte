@@ -8,7 +8,7 @@
 		position = [0, 0, 0],
 		rotation = [0, 0, 0],
 		scale = 1,
-		stiffness = 110,
+		stiffness = 46,
 		pose,
 		children
 	}: {
@@ -20,9 +20,10 @@
 		children?: Snippet;
 	} = $props();
 
-	const damping = $derived(2 * Math.sqrt(stiffness));
+	const damping = $derived(2.35 * Math.sqrt(stiffness));
 	const STEP = 1 / 120;
 	const MAX = 8;
+	const ROT_K = 9;
 
 	const pos = new Vector3();
 	const vel = new Vector3();
@@ -30,7 +31,6 @@
 	const qNow = new Quaternion();
 	const qGoal = new Quaternion();
 	const euler = new Euler(0, 0, 0, 'YXZ');
-	const qVel = { x: 0, y: 0, z: 0, w: 0 };
 	let sc = 1;
 	let scVel = 0;
 	let ready = false;
@@ -75,11 +75,7 @@
 		euler.set(rot[0], rot[1], rot[2]);
 		qGoal.setFromEuler(euler);
 		if (qNow.dot(qGoal) < 0) qGoal.set(-qGoal.x, -qGoal.y, -qGoal.z, -qGoal.w);
-		;[qNow.x, qVel.x] = spring(qNow.x, qVel.x, qGoal.x, k, c, dt);
-		;[qNow.y, qVel.y] = spring(qNow.y, qVel.y, qGoal.y, k, c, dt);
-		;[qNow.z, qVel.z] = spring(qNow.z, qVel.z, qGoal.z, k, c, dt);
-		;[qNow.w, qVel.w] = spring(qNow.w, qVel.w, qGoal.w, k, c, dt);
-		qNow.normalize();
+		qNow.slerp(qGoal, 1 - Math.exp(-ROT_K * dt));
 		group.quaternion.copy(qNow);
 
 		;[sc, scVel] = spring(sc, scVel, scGoal, k, c, dt);

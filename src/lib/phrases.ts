@@ -267,7 +267,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — going back when you already know you will die',
 		tagline: 'Released once. Rode back. That is the whole virtue — and the whole waste.',
 		quote: 'Youth is not an excuse. It is a deadline.',
-		arc: 'Sixteen-year-old Gwanchang charges the Baekje line, is captured, and is sent home by Gyebek for his age. He rides straight back. The second time, only his head returns — and Silla’s hesitation breaks. Gwanchang’s Second Ride is any return to certain death after a pardon: never retreat made flesh, the Five Principles spending a teenager.',
+		arc: 'Sixteen-year-old Gwanchang charges the Baekje line, is captured, and is sent home by Gyebek for his age. He rides straight back. The second time, only his head returns — and Silla’s hesitation breaks. Gwanchang’s Second Ride is any return to certain death after a pardon: never retreat made flesh, the Five Precepts spending a teenager.',
 		events: [
 			{ year: 660, label: 'Second charge at Yellow Mountain.' },
 			{ label: 'Named for every chosen return to death.' }
@@ -318,9 +318,9 @@ export const PHRASES: Person[] = [
 		entity: 'phrase',
 		kingdom: 'silla',
 		title: 'Idiom — the order that spends lives cleanly',
-		tagline: 'The Five Principles line that turns boys into deadlines.',
+		tagline: 'The Five Precepts line that turns boys into deadlines.',
 		quote: '임전무퇴.',
-		arc: 'One of Won’gwang’s Five Principles for the Hwarang: in battle, do not fall back. It is why Gwanchang rides twice, why Gyebek’s five thousand do not bargain for a road home, why the age keeps producing beautiful deaths. Never Retreat is praised at funerals and quietly cursed by anyone who still has to fill a muster roll.',
+		arc: 'One of Wongwang’s Five Precepts for the Hwarang: in battle, do not fall back. It is why Gwanchang rides twice, why Gyebek’s five thousand do not bargain for a road home, why the age keeps producing beautiful deaths. Never Retreat is praised at funerals and quietly cursed by anyone who still has to fill a muster roll.',
 		events: [
 			{ year: 576, label: 'Formalised under the Hwarang code.' },
 			{ year: 660, label: 'Paid in full at Yellow Mountain.' }

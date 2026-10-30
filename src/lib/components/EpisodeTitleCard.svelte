@@ -1,16 +1,24 @@
 <script lang="ts">
 	/**
 	 * The episode's title on a quiet, drifting band of its own stills: the Part
-	 * title wall in miniature, the full width of the window. The title keeps the
-	 * reader's typography; an episode with no art keeps its plain head.
+	 * title wall in miniature, the full width of the window. Person-life episodes
+	 * swap the serif title for a Marvel-style wordmark; everyone else keeps type.
 	 */
 	import type { Snippet } from 'svelte';
 	import type { Entry } from '$lib/story';
 	import { episodeStills } from '$lib/thumbnail.svelte';
 	import { fullBleed } from '$lib/attachments/fullBleed';
 	import StillWall, { type WallStill } from '$lib/components/StillWall.svelte';
+	import { titleLogoSrc } from '$lib/titleLogos';
 
-	let { entry, eid, children }: { entry: Entry; eid: string; children: Snippet } = $props();
+	let {
+		entry,
+		eid,
+		ko = false,
+		children
+	}: { entry: Entry; eid: string; ko?: boolean; children: Snippet } = $props();
+
+	let worded = $derived(!!titleLogoSrc(entry.title, ko));
 
 	let stills = $derived<WallStill[]>(
 		episodeStills(entry, eid, 8).map((t) => ({ src: t.src, ratio: t.slot.ratio ?? 2 }))
@@ -20,13 +28,13 @@
 {#if stills.length}
 	<div class="title-card bleed walled" {@attach fullBleed}>
 		<StillWall {stills} compact />
-		<div class="copy">
+		<div class={['copy', { worded }]}>
 			{@render children()}
 		</div>
 	</div>
 {:else}
 	<div class="title-card">
-		<div class="copy">
+		<div class={['copy', { worded }]}>
 			{@render children()}
 		</div>
 	</div>
@@ -57,6 +65,10 @@
 		width: min(42rem, 100%);
 		min-width: 0;
 		text-align: center;
+	}
+
+	.copy.worded {
+		width: min(54rem, 100%);
 	}
 
 	@media (max-width: 820px) {

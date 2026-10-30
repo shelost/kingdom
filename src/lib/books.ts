@@ -65,34 +65,31 @@ export type PointerNdc = { x: number; y: number };
 
 /** Cloth colour for each volume. Kingdom triad first; named people keep their hex; myths go pastel. */
 const SPINE: Record<string, string> = {
-	'ch-samhan--silla': '#2A5FB8',
-	'ch-samhan--baekje': '#d9b13a',
-	'ch-samhan--goguryeo': '#C30000',
-	'ch-samhan--gaya': '#8B5CF6',
-	'ch-five-principles--two-treasures': '#7EB8F0',
-	'ch-five-principles--three-sons': '#b43a32',
-	'ch-five-principles--five-princes': '#c9a227',
+	'ch-three-kingdoms--silla': '#2A5FB8',
+	'ch-three-kingdoms--baekje': '#d9b13a',
+	'ch-three-kingdoms--goguryeo': '#C30000',
+	'ch-five-principles--hwarang': '#7EB8F0',
+	'ch-five-principles--master-of-the-classics': '#c9a227',
+	'ch-five-principles--grand-academy': '#b43a32',
 	'ch-iron-will--daeya': '#8B1E3F',
 	'ch-iron-will--supreme-commander': '#d0362f',
-	'ch-iron-will--general': '#2A5FB8',
-	'ch-seventh-invasion--four-dragons': '#c45c2a',
-	'ch-seventh-invasion--guardian': '#a31f1a',
-	'ch-seventh-invasion--jumong': '#f3b49a',
+	'ch-iron-will--marshal': '#2A5FB8',
+	'ch-goguryeo-tang-war--four-dragons': '#c45c2a',
+	'ch-goguryeo-tang-war--ansi': '#a31f1a',
+	'ch-goguryeo-tang-war--jumong': '#f3b49a',
 	'ch-chunchu-era--bidam': '#5C4A8C',
 	'ch-chunchu-era--sungman': '#d4b86a',
 	'ch-chunchu-era--chunchu': '#D8258C',
-	'ch-chunchu-era--hyukgos': '#ead8b0',
-	'ch-fall-of-euija--tamla': '#E07030',
-	'ch-fall-of-euija--euija': '#c46a22',
-	'ch-fall-of-euija--three-loyalists': '#8a9a5b',
-	'ch-fall-of-baekje--fall-of-baekje': '#9a7b32',
-	'ch-fall-of-baekje--baekje-restoration-army-bra': '#c4b06a',
-	'ch-final-stand--four-beasts': '#c5b8d4',
-	'ch-final-stand--kudara': '#c47878',
-	'ch-final-stand--brothers': '#c45c54',
-	'ch-silla-tang-war--protectorate-general': '#c23b22',
+	'ch-haedong-jeungja--three-thousand-maids': '#c46a22',
+	'ch-haedong-jeungja--three-loyalists': '#8a9a5b',
+	'ch-fall-of-baekje--tamla': '#E07030',
+	'ch-fall-of-baekje--yellow-mountain': '#9a7b32',
+	'ch-fall-of-baekje--four-beasts': '#c5b8d4',
+	'ch-fall-of-goguryeo--kudara': '#c47878',
+	'ch-fall-of-goguryeo--grand-supreme-commander': '#c45c54',
+	'ch-silla-tang-war--hyukgos': '#ead8b0',
 	'ch-silla-tang-war--supreme-marshal': '#C41E3A',
-	'ch-silla-tang-war--king-for-all': '#1e4d8c'
+	'ch-silla-tang-war--unified-silla': '#1e4d8c'
 };
 
 export type BookMode = 'shelf' | 'display';
@@ -132,8 +129,8 @@ const BOARD_T = 0.028;
 /** Spine toward the lens, cover catching a three-quarter from camera-right. */
 const SPINE_YAW = 1.05;
 const FOV = 38 * (Math.PI / 180);
-/** Conservative canvas aspect (stage column). Narrower → camera sits further back. */
-const VIEW_ASPECT = 1.48;
+/** Canvas aspect used to frame the stack. Wider than the old split stage so the cluster sits in the middle of the full floor. */
+const VIEW_ASPECT = 1.72;
 /** Cover size is shared; spine thickness follows each volume's word count. */
 export const BOOK_W = 0.175;
 export const BOOK_H = 0.26;
@@ -352,7 +349,7 @@ export function volumesInArc(arcId: string): BookVolume[] {
 	return VOLUMES.filter((v) => v.id.startsWith(prefix));
 }
 
-/** Standing in the row. Hover lifts a little; the cover preview lives in the right rail, so the book does not spin. */
+/** Standing in the row. Hover lifts a little; the cover preview lives in the overlay, so the book does not spin. */
 export function shelfPose(volume: BookVolume, hovered: boolean, _pointer: PointerNdc): BookPose {
 	const rest = restPose(volume.id);
 	if (!hovered) return rest;
@@ -363,7 +360,7 @@ export function shelfPose(volume: BookVolume, hovered: boolean, _pointer: Pointe
 	};
 }
 
-/** Three-quarter cover, centred in the remaining stage (not under the rail). */
+/** Three-quarter cover. Desktop look-at sits to the right so the book stays in the open left, clear of the overlay. */
 export function showcasePose(volume: BookVolume, pointer: PointerNdc, narrow = false): BookPose {
 	return {
 		position: narrow ? [0, 0.1, 0.16] : [0, 0.02, 0.18],
@@ -403,7 +400,7 @@ export function bookPose(
 export function cameraPose(selected: boolean, narrow = false, mode: BookMode = 'shelf'): BookPose {
 	if (selected) {
 		return {
-			position: narrow ? [0.1, 0.16, 1.08] : [0.04, 0.04, 1.12],
+			position: narrow ? [0.1, 0.16, 1.08] : [0.2, 0.04, 1.12],
 			rotation: [0, 0, 0],
 			scale: 1
 		};
@@ -411,21 +408,22 @@ export function cameraPose(selected: boolean, narrow = false, mode: BookMode = '
 	const aspect = narrow ? 1.05 : VIEW_ASPECT;
 	if (mode === 'display') {
 		return {
-			position: [0.08, 0.02, frameDistance(DISPLAY_W, DISPLAY_STACK_H, aspect)],
+			position: [0, 0.02, frameDistance(DISPLAY_W, DISPLAY_STACK_H, aspect)],
 			rotation: [0, 0, 0],
 			scale: 1
 		};
 	}
 	return {
-		position: [0.1, 0.04, frameDistance(SHELF_W, STACK_H, aspect)],
+		position: [0.04, 0.02, frameDistance(SHELF_W, STACK_H, aspect)],
 		rotation: [0, 0, 0],
 		scale: 1
 	};
 }
 
 export function cameraTarget(selected: boolean, narrow = false, mode: BookMode = 'shelf'): [number, number, number] {
-	if (selected) return narrow ? [0, 0.08, 0.02] : [0, 0.02, 0.04];
-	return [0, CLUSTER_Y + (narrow ? 0.05 : 0.02), 0];
+	if (selected) return narrow ? [0, 0.08, 0.02] : [0.16, 0.02, 0.04];
+	const stackMid = mode === 'display' ? displayY(1) + (BOOK_H * DISPLAY_SCALE) / 2 : rowY(1) + BOOK_H / 2;
+	return [0, stackMid + (narrow ? 0.03 : 0), 0];
 }
 
 export { BOARD_T };

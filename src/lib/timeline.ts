@@ -8,11 +8,13 @@
  * something starts gets room for its labels, a year a long bar only passes through stays
  * thin, and a run of empty years collapses into one break.
  */
-import { plateYear, storiesOf, type Block, type Entry } from '$lib/story';
-import { KINGDOMS } from '$lib/people';
+import { plateYear, storiesOf, type Block, type Entry, type ImageSlot } from '$lib/story';
+import { byId, KINGDOMS, type Person } from '$lib/people';
 import { PARTS, wordsIn, type DirectoryEpisode } from '$lib/episodeDirectory';
 import KEY_EVENTS from '$lib/data/key-events.json';
 import { arcLabelAt } from '$lib/tocTree';
+import { displayArtOf } from '$lib/cueArt';
+import { entryCast } from '$lib/entryHead';
 
 export type TimelineStory = { id: string; title: string; ko?: string; start: number; end: number; top: number; height: number };
 export type TimelineMarker = { year: number; top: number };
@@ -49,14 +51,123 @@ export type TimelineBreak = { from: number; to: number; top: number; height: num
 export type TimelineArc = { id: string; label: Bilingual; title: Bilingual; top: number; height: number };
 /** An episode that tells a key event: `full` when it gives the event a real scene, otherwise a brief mention. */
 export type EventCover = { ep: DirectoryEpisode; full: boolean };
-export type TimelineEvent = { id: string; year: number; sub?: string; title: Bilingual; top: number; covers: EventCover[] };
+export type EventStill = { id: string; src: string; alt: string };
+export type TimelineEvent = {
+	id: string;
+	year: number;
+	sub?: string;
+	title: Bilingual;
+	top: number;
+	covers: EventCover[];
+	/** Told in more than one episode — a crossover between storylines. */
+	crossover: boolean;
+	people: Person[];
+	stills: EventStill[];
+};
 
 /**
  * Where an episode tells an event (`src/lib/data/key-events.json`): one or more scene labels,
  * an inline flashback by year, a line of text (always brief), or the whole episode.
  */
 type CoverSpec = { ep: string; scene?: string | string[]; flashback?: number; text?: string; brief?: boolean };
-type EventSpec = { id: string; year: number; sub?: string; en: string; ko: string; covers: CoverSpec[] };
+type EventSpec = {
+	id: string;
+	year: number;
+	sub?: string;
+	en: string;
+	ko: string;
+	covers: CoverSpec[];
+	people?: string[];
+	stills?: string[];
+};
+
+const MAX_STILLS = 3;
+
+/** Old cover titles from when episodes were renamed. Lookup also strips † and a trailing (hanja). */
+const COVER_ALIASES: Record<string, string> = {
+	gwansan: 'King Seong',
+	'colossal river': 'Eulji Mundeok',
+	'yellow mountain': 'Hwangsan Field',
+	'siege of daeya': 'Jukjuk',
+	"yeon's massacre": 'The Revolt',
+	'the eastern star': 'The Morning Star',
+	ansi: 'Lord of Ansi',
+	'chunchu & yeon': 'The Oath',
+	'euija & yeon': 'Yunchung',
+	rebellion: 'Gyul',
+	jiabeng: 'Li Shimin',
+	sabi: 'Buyeo Euija',
+	betrayal: 'White River',
+	'pyongyang ii': 'Pyongyang',
+	'final ford': 'Gibulpo'
+};
+
+function episodeOfCover(name: string, byTitle: Map<string, DirectoryEpisode>): DirectoryEpisode | undefined {
+	const exact = byTitle.get(name);
+	if (exact) return exact;
+	const stripped = name.replace(/†/g, '').replace(/\s*\([^)]*\)\s*$/, '').trim();
+	if (stripped !== name) {
+		const hit = byTitle.get(stripped);
+		if (hit) return hit;
+	}
+	const alias = COVER_ALIASES[stripped.toLowerCase().replace(/[’‘]/g, "'")];
+	if (alias) return byTitle.get(alias);
+	const lower = stripped.toLowerCase();
+	for (const [title, ep] of byTitle) {
+		if (title.toLowerCase() === lower) return ep;
+	}
+	return undefined;
+}
+
+function stillsOfEvent(spec: EventSpec, covers: EventCover[]): EventStill[] {
+	const seen = new Set<string>();
+	const out: EventStill[] = [];
+	const take = (slot: ImageSlot) => {
+		if (slot.hidden || slot.nsfw || slot.gallery) return;
+		const src = displayArtOf(slot, 'gallery');
+		if (!src || seen.has(slot.id)) return;
+		seen.add(slot.id);
+		out.push({ id: slot.id, src, alt: slot.alt ?? spec.en });
+	};
+	if (spec.stills?.length) {
+		for (const id of spec.stills) {
+			for (const c of covers) {
+				const slot = c.ep.entry.images.find((im) => im.id === id);
+				if (slot) take(slot);
+			}
+		}
+		return out.slice(0, MAX_STILLS);
+	}
+	const scenes = spec.covers.flatMap((c) => (c.scene ? ([] as string[]).concat(c.scene) : []));
+	const ranked: { slot: ImageSlot; score: number }[] = [];
+	for (const c of covers) {
+		for (const slot of c.ep.entry.images) {
+			if (slot.hidden || slot.nsfw || slot.gallery) continue;
+			if (!displayArtOf(slot, 'gallery')) continue;
+			let score = c.full ? 2 : 0;
+			if (c.ep.entry.thumbnail === slot.id) score += 5;
+			const at = `${slot.at ?? ''} ${slot.alt ?? ''} ${slot.id}`;
+			if (scenes.some((s) => at.toLowerCase().includes(s.toLowerCase()))) score += 8;
+			ranked.push({ slot, score });
+		}
+	}
+	ranked.sort((a, b) => b.score - a.score);
+	for (const r of ranked) {
+		take(r.slot);
+		if (out.length >= MAX_STILLS) break;
+	}
+	return out;
+}
+
+function peopleOfEvent(spec: EventSpec, covers: EventCover[], year: number): Person[] {
+	const ids = spec.people?.length
+		? spec.people
+		: [...new Set(covers.flatMap((c) => entryCast(c.ep.entry, year, c.full ? 4 : 2).map((m) => m.id)))];
+	return ids.flatMap((id) => {
+		const p = byId.get(id);
+		return p ? [p] : [];
+	});
+}
 
 /** A scene of at least this many words counts as telling the event, not mentioning it. */
 const FULL_WORDS = 300;
@@ -360,13 +471,23 @@ function eventsOf(scale: (t: number) => number): TimelineEvent[] {
 			const same = plain.get(e.year) ?? [e];
 			const at = month !== null ? e.year + (month + 0.5) / 12 : e.year + (same.indexOf(e) + 0.5) / same.length;
 			const covers = e.covers.flatMap((c): EventCover[] => {
-				const ep = byTitle.get(c.ep);
+				const ep = episodeOfCover(c.ep, byTitle);
 				if (!ep) return [];
 				const words = coverWords(ep.entry.blocks, c);
 				return [{ ep, full: !c.brief && words !== null && words >= FULL_WORDS }];
 			});
 			covers.sort((a, b) => Number(b.full) - Number(a.full));
-			return { id: e.id, year: e.year, sub: e.sub, title: { en: e.en, ko: e.ko }, top: scale(at), covers };
+			return {
+				id: e.id,
+				year: e.year,
+				sub: e.sub,
+				title: { en: e.en, ko: e.ko },
+				top: scale(at),
+				covers,
+				crossover: covers.length > 1,
+				people: peopleOfEvent(e, covers, e.year),
+				stills: stillsOfEvent(e, covers)
+			};
 		})
 		.sort((a, b) => a.top - b.top);
 }

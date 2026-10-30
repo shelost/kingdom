@@ -1,7 +1,7 @@
 /**
  * Starred lines of the script: a whole dialogue line or any highlighted passage.
  * Written in dev by the reader's selection menu → /api/line-stars into
- * `src/lib/data/line-stars.json`; the home page's dialogue reel shows them.
+ * `src/lib/data/line-stars.json`; `/quotes#starred` shows them.
  */
 
 export type StarredLine = {

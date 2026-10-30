@@ -46,6 +46,7 @@ export type WikiKind =
 	| 'god'
 	| 'city'
 	| 'place'
+	| 'room'
 	| 'nation'
 	| 'phrase'
 	| 'concept'
@@ -68,6 +69,7 @@ export const WIKI_KINDS: {
 	{ id: 'animal', label: 'Animal', plural: 'Animals' },
 	{ id: 'city', label: 'City', plural: 'Cities' },
 	{ id: 'place', label: 'Place', plural: 'Places' },
+	{ id: 'room', label: 'Room', plural: 'Rooms' },
 	{ id: 'nation', label: 'Nation', plural: 'Nations' },
 	{ id: 'phrase', label: 'Phrase', plural: 'Phrases' },
 	{ id: 'organization', label: 'Organization', plural: 'Organizations' },
@@ -84,8 +86,9 @@ export function kindOf(p: Person): WikiKind {
 	if (!p.entity) return 'character';
 	if (p.entity === 'god') return 'god';
 	if (p.entity === 'place') {
-		/** Capitals / fortress-cities vs rivers, mountains, caverns, harbours. */
+		/** Capitals / fortress-cities vs interiors vs rivers, mountains, caverns, harbours. */
 		if (p.placeKind === 'city') return 'city';
+		if (p.placeKind === 'room') return 'room';
 		return 'place';
 	}
 	if (p.entity === 'nation') return 'nation';
@@ -232,6 +235,7 @@ const REALM_PLACE_BY_KINGDOM: Partial<Record<Person['kingdom'], string>> = {
 const REALM_PLACE_BY_ID: Record<string, string> = {
 	sara: 'western_flower_field',
 	saradoryeong: 'western_flower_field',
+	wongang: 'living_world',
 	sobyeol: 'living_world',
 	hwanin: 'heaven'
 };
@@ -266,13 +270,21 @@ export function cityOf(p: Person): Person | undefined {
 	return parent;
 }
 
-/** Non-city places that list this id as `cityId` (city or containing realm). */
+/** Non-city, non-room places that list this id as `cityId` (city or containing realm). */
 export function placesInCity(cityId: string): Person[] {
 	return PROFILES.filter(
 		(p) =>
 			p.entity === 'place' &&
 			p.placeKind !== 'city' &&
+			p.placeKind !== 'room' &&
 			p.cityId === cityId
+	).sort(compareWikiEntries);
+}
+
+/** Interiors (`placeKind: 'room'`) nested under a city. */
+export function roomsInCity(cityId: string): Person[] {
+	return PROFILES.filter(
+		(p) => p.entity === 'place' && p.placeKind === 'room' && p.cityId === cityId
 	).sort(compareWikiEntries);
 }
 
@@ -413,6 +425,9 @@ export function compactEvents(
 
 export type WikiGenderFilter = 'all' | 'm' | 'f';
 
+/** Wiki portrait / board — painted `ch_*` / `pl_*` / org art, not the gendered stand-in. */
+export type WikiArtFilter = 'all' | 'missing';
+
 export type WikiFilters = {
 	kind: WikiKind | 'all';
 	kingdom: Person['kingdom'] | 'all';
@@ -420,6 +435,8 @@ export type WikiFilters = {
 	tag: string | 'all';
 	/** Mortal / divine gender chip — characters & gods only; unset gender stays in All. */
 	gender: WikiGenderFilter;
+	/** When `missing`, hide entries that already have a painted portrait / board. */
+	art: WikiArtFilter;
 	q: string;
 };
 
@@ -671,6 +688,7 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 				if (!p.gender || p.gender !== filters.gender) return false;
 			}
 		}
+		if (filters.art === 'missing' && hasRealAvatar(p)) return false;
 		if (!q) return true;
 		const ownerHay =
 			hasOwnerRoster(p)
@@ -971,7 +989,7 @@ export function wikiWallStills(count: number): { src: string; ratio: number; tin
 			.filter((p) => kinds.includes(kindOf(p)))
 			.map((p) => ({ src: avatarOf(p)!, ratio, tint: colorOf(p) }));
 	const faces = art(['character', 'god'], 2 / 3);
-	const boards = art(['place', 'city'], 2);
+	const boards = art(['place', 'city', 'room'], 2);
 	const out: { src: string; ratio: number; tint: string }[] = [];
 	for (let i = 0; out.length < count && (faces.length || boards.length); i++) {
 		const next = (i % 3 === 2 ? boards : faces).shift() ?? (faces.shift() || boards.shift());

@@ -80,7 +80,18 @@ export function buildChatPrompt(p: Person): string {
 		blocks.push('How you talk:', p.voice, '');
 	}
 
-	if (p.arc) {
+	if (p.lifeArc?.length) {
+		const chain = p.lifeArc
+			.map((step, i) => {
+				const next = p.lifeArc?.[i + 1];
+				const head = `${step.title}: ${step.summary}`;
+				if (!next || !step.turn) return head;
+				const where = step.episode ? ` · ${step.episode}` : '';
+				return `${head} → (${step.turn}${where})`;
+			})
+			.join(' → ');
+		blocks.push('Inner journey:', p.arc ? `${p.arc} ${chain}` : chain, '');
+	} else if (p.arc) {
 		blocks.push('Life arc and deeds (in-world knowledge you may draw on):', p.arc, '');
 	}
 
