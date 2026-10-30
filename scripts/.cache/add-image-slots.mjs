@@ -1,7 +1,7 @@
 // Upserts image slots from an install manifest, then the same manifest feeds install-temp-art.mjs.
 // Usage: node scripts/.cache/add-image-slots.mjs <manifest.json> [tail.txt]
 // Item: { id, entry, after?, ratio, tone?, at, alt, scene, refs?, people?, canon? }
-// `canon` (default on when `people` is set): { year?, battle?, sword?, mounted?, with?: ['gomanari', 'place:hwangsan'] } or false.
+// `canon` (default on when `people` is set): { year?, battle?, sword?, mounted?, with?: ['gomanari', 'place:hwangsan', 'room:chunchu_study'] } or false.
 // `prompt` is written back as `scene` + canon block + tail (default: the house suffix); canon refs are merged into `refs`.
 // `ratio` defaults to the house 2:1. Any scene that mentions steel gets sw_bidam.png + the sword anatomy.
 // `style: "battle"` adds HEEWON_BATTLE after the scene and the style_battle boards to `refs`.
@@ -25,7 +25,7 @@ const tail = tailPath
 const entries = story.flatMap((ch) => ch.entries ?? []);
 const slotsById = new Map(entries.flatMap((en) => (en.images ?? []).map((im) => [im.id, im])));
 
-const SLOT_KEYS = ['ratio', 'tone', 'at', 'alt', 'prompt', 'refs', 'people'];
+const SLOT_KEYS = ['ratio', 'tone', 'time', 'at', 'alt', 'prompt', 'refs', 'people'];
 
 function slotFields(item) {
 	const out = {};

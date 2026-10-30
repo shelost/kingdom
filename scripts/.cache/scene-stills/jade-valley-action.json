@@ -1,0 +1,93 @@
+[
+	{
+		"id": "jade-bidam-fog",
+		"entry": "Jade Gate Valley",
+		"at": "He uses the fog the spring makes",
+		"alt": "Bidam walks between Baekje tents in the spring fog, beads on his sword wrist, one sentry already past him",
+		"time": "night",
+		"battle": true,
+		"action": true,
+		"manga": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon, NOT 3D. LOW DUTCH through winter fog. ONE device: two dark tent mouths as a corridor, fog pouring between them like a river. LEFT of the sheet = Bidam, mid-stride, 108 beads looped on the sword wrist, courteous smile, steel lamellar with navy #141C2E cloth peek, already past a Baekje sentry who is still turning. The spring fog is the midground; a yellow Baekje tent in the bokeh. NIGHT GROUND on BLACK. One hooded lantern in a tent as the key. Navy specular on wet beads, never a glow aura. KOREAN FACES: white sclera, black iris. Keep the attached valley fold — pine ridges, fog-bowl. Composed for a 2:1 letterbox crop. No army catalog. No text. No watermark.",
+		"people": ["bidam"],
+		"with": ["place:jade_gate_valley"],
+		"year": 636
+	},
+	{
+		"id": "jade-bidam-ledge",
+		"entry": "Jade Gate Valley",
+		"at": "On the inner wall of the bowl",
+		"alt": "Bidam on a fog-hidden ledge of the valley bowl, one sentry gone, the camp a cup of fires below",
+		"time": "night",
+		"battle": true,
+		"action": true,
+		"manga": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. HIGH DUTCH from the inner rock wall. ONE device: a thin snow ledge as a hard diagonal across the bowl. Bidam in a crouch on the ledge, steel lamellar, navy #141C2E peek, beads on the sword wrist, looking down. Below him the camp is a cup of tiny yellow fires in fog. A Baekje helm already empty on the ledge in the sharp foreground. Keep the attached valley — two ridges, the throat, the never-freeze spring as a pale disc. NIGHT GROUND on BLACK. One torch far below as bokeh. No army catalog. No text. No watermark.",
+		"people": ["bidam"],
+		"with": ["place:jade_gate_valley"],
+		"year": 636
+	},
+	{
+		"id": "jade-alchun-wagon",
+		"entry": "Jade Gate Valley",
+		"at": "A wagon is in the dry creek",
+		"alt": "Alchun goes through a Baekje wagon in the dry creek like a rockslide, spear in one fist",
+		"time": "night",
+		"battle": true,
+		"action": true,
+		"manga": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. WORM’S-EYE from the dry creek stones, hard dutch. ONE device: a smashed wagon as a broken timber X. LEFT of the sheet = Alchun, huge, mid-charge, steel lamellar, ice-blue #8fb3e0 cloth peek, a taken Baekje spear in one fist, shouting, the wagon coming apart around him. Flung snow, speed lines, a yellow Baekje sleeve in the fog. Keep the attached valley creek between the two ridges. NIGHT GROUND on BLACK. One spilled brazier as the key. Full body, not a standing portrait. No army catalog. No text. No watermark.",
+		"people": ["alchun"],
+		"with": ["place:jade_gate_valley"],
+		"year": 636
+	},
+	{
+		"id": "jade-alchun-fog-throw",
+		"entry": "Jade Gate Valley",
+		"at": "He puts the next man into the spring fog",
+		"alt": "Alchun one-hands a Baekje soldier into the spring fog at the bottom of the valley bowl",
+		"time": "night",
+		"battle": true,
+		"action": true,
+		"manga": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. LOW THREE-QUARTER, extreme foreshortening. ONE device: the never-freeze spring as a pale oval of fog at the bottom of the bowl. Alchun fills the left third, huge, one arm out, a Baekje man leaving his feet toward the fog, yellow cloth, steel. Ice-blue #8fb3e0 on Alchun’s cloth peek. Keep the attached valley — the great rock beside the spring, two ridges. NIGHT GROUND on BLACK. One campfire as the key raking his plates. Full horse-less body, mid-throw. No army catalog. No text. No watermark.",
+		"people": ["alchun"],
+		"with": ["place:jade_gate_valley"],
+		"year": 636
+	},
+	{
+		"id": "jade-bowl-overhead",
+		"entry": "Jade Gate Valley",
+		"at": "Five hundred men are asleep at the bottom of a cup",
+		"alt": "Straight-down overhead of Jade Gate Valley as a fog cup: two ridges, a rock throat, a pale spring, tiny sleeping fires",
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "STRAIGHT-DOWN bird’s-eye of a REAL Korean mountain valley. ONE device: the ground as a cup. Two long pine ridges almost meet in a rock throat three men wide; inside, a bowl of fog; at the bottom a spring that never freezes as one pale disc; a dry creek as a dark scratch; a steep white back wall; a hill-fort smudge at the far lip. Tiny sleeping fires at the bottom. Keep the attached valley fold exactly — same ridges, same throat. NIGHT GROUND on BLACK. One moon-break on the snow. No readable faces. No army catalog. No text. No watermark.",
+		"with": ["place:jade_gate_valley"],
+		"year": 636
+	},
+	{
+		"id": "jade-disciples-rim",
+		"entry": "Jade Gate Valley",
+		"at": "The disciples on the rim have stopped",
+		"alt": "On the valley rim a hwarang tells his disciples to watch: Bidam a dark speck in the fog-bowl, Alchun a wrecking shape in the creek",
+		"time": "night",
+		"battle": true,
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. OVER-SHOULDER from the snow rim. ONE device: the valley bowl as a vast dark cup filling two thirds of the frame. Sharp FOREGROUND: a Class 77 hwarang’s shoulder and two young disciples on their bellies, mouths open, watching. Tiny in the midground cup: Bidam a navy speck in the fog, Alchun a larger wrecking shape in the dry creek. Keep the attached valley — ridges, throat, spring, back wall. NIGHT GROUND on BLACK. Torch-ring along both crests as small bokeh. No named faces in the foreground (extras, drawn, never cloned from Bidam). No army catalog. No text. No watermark.",
+		"people": ["bidam", "alchun"],
+		"with": ["place:jade_gate_valley"],
+		"year": 636
+	},
+	{
+		"id": "sadaham-golden-blossom",
+		"entry": "Sadaham",
+		"at": "The yard has never held an Order this large",
+		"alt": "The Hwarang yard packed with hundreds of boys; Sadaham small on the rail, Mugwan counting and giving up",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. HIGH WIDE of the Hwarang yard. ONE device: the packed-earth court as a pale bowl overflowing with boys. LEFT of the sheet = Sadaham, fifteen, ice-blue #6fa8ff, sitting on the rail grinning, not counting. RIGHT = Mugwan, standing, one hand up, having lost the count past two hundred. Hundreds of tiny hwarang-coated boys fill the yard — a mass, not a catalog of faces. Keep the attached Silla mansion gate and court. DAY GROUND on WHITE, high-key paper sky, the figures the dark inked things. One pale sun-break. No text. No watermark.",
+		"people": ["sadaham", "mugwan"],
+		"with": ["place:hwarang_yard"],
+		"year": 562
+	}
+]

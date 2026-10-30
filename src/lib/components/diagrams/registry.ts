@@ -23,6 +23,7 @@ import TangImperial from './TangImperial.svelte';
 import TangMilitary from './TangMilitary.svelte';
 import TangExam from './TangExam.svelte';
 import SillaRoyal from './SillaRoyal.svelte';
+import GoguryeoHouse from './GoguryeoHouse.svelte';
 import TierLadder from './TierLadder.svelte';
 
 export interface DiagramProps {
@@ -64,6 +65,8 @@ export const DIAGRAMS: Record<string, Component<DiagramProps>> = {
 	'tang-exam': TangExam,
 	/** steps: full · bihyung (softens links off Jinji → Yongsu ═ Chunmyung → Chunchu; faces stay full) · house (full tree on /tree) */
 	'silla-royal': SillaRoyal,
+	/** steps: house · banquet · suchun · dalga · dolgo · hunt */
+	'goguryeo-house': GoguryeoHouse,
 	/** The five rungs inside the True Bone, from half-sacred to assimilants (step: full) */
 	'true-bone-tiers': TierLadder,
 	/** King · primary · secondary · tertiary royal lines (steps: jinpyung · muyeol) */

@@ -1,0 +1,52 @@
+[
+	{
+		"id": "mu-well-shove",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "For a week, every evening, the ghost goes in.",
+		"alt": "At dusk on the Hwarang yard, eight boys shove fifteen-year-old Chunchu onto his back in the dirt circle they call the well.",
+		"people": ["chunchu"],
+		"time": "night",
+		"scene": "Cinematic night still, low worm's-eye from the dirt. FOREGROUND, huge and soft: a sandal and a crumpled scrap of paper almost touching the lens. MIDGROUND, razor-sharp: fifteen-year-old Chunchu (LEFT face; young, clean-shaven, ignore any beard on the portrait) has just hit his back in a packed-earth circle, magenta silk, crescent-moon hwarang headband, one arm flung, mouth still open on a joke that did not land. Around him only legs and hems of other boys, shoving, half out of the light. BACKGROUND dissolves to a long timber hall and a black pond, one paper lantern as creamy bokeh. HALF the frame is empty black sky. One lantern key, magenta #D8258C catching the silk. No crowd catalog. No text."
+	},
+	{
+		"id": "mu-gyuku-girth",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "He rides at the boy about to pass it",
+		"alt": "On a wide pale gyuku field, young Chunchu rides at another boy and talks, while Yushin takes the ball.",
+		"people": ["chunchu", "yushin"],
+		"time": "day",
+		"scene": "Cinematic day still, low tracking angle beside the horses. FOREGROUND, soft and huge: a wooden gyuku stick cutting across the lower left, dust hanging in it. MIDGROUND, sharp: two horses at full gallop, full readable bodies, muscle and dust. Fifteen-year-old Chunchu (LEFT face, magenta silk, crescent headband, clean-shaven, grinning as he talks) leans off his horse toward another rider who is looking down at his own girth. Young Kim Yushin (SECOND face, Silla-blue, crescent headband, no marshal beard yet) is already past them with the ball, looking back over his shoulder, almost smiling. BACKGROUND: an empty pale field dissolving to white paper, one distant goal post, no spectators. Half the frame is white sky and empty grass. Low sun, magenta #D8258C on Chunchu's silk, blue #2A5FB8 on Yushin's sleeve. No text."
+	},
+	{
+		"id": "mu-archery-sit",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "He waits for the lull, and he looses sitting down",
+		"alt": "Chunchu sits on the archery range and looses while the other boys' arrows have already missed in the wind.",
+		"people": ["chunchu"],
+		"time": "day",
+		"scene": "Cinematic day still, low three-quarter. FOREGROUND, soft: the feathered end of an arrow just leaving the bow, close to the lens. MIDGROUND, sharp: fifteen-year-old Chunchu (LEFT face, magenta silk, crescent headband, clean-shaven) sitting on the packed earth, bow drawn, a small rebellious smile, not standing like the others. Behind him, out of focus, two taller boys have already loosed and are cursing, their arrows stuck in a grassy berm. BACKGROUND: a pale pond and white sky, the straw man tiny at the right third with three arrows in it. Half the frame is empty white sky. Cool daylight, one hard sun from the side, magenta #D8258C on the sleeve. No text."
+	},
+	{
+		"id": "mu-well-stand",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "He is still standing when the supper bell goes",
+		"alt": "Chunchu stands alone in the dirt circle, brushing dust off his sleeve, while the two biggest boys grapple each other.",
+		"people": ["chunchu"],
+		"time": "day",
+		"scene": "Cinematic day still, slight dutch, eye-line of a seated boy. FOREGROUND, large and soft: two big boys tangled, grabbing each other's collars, their backs to us, filling the lower third. MIDGROUND, sharp and small on the right third: fifteen-year-old Chunchu (LEFT face, magenta, crescent headband, clean-shaven) still standing in the empty center of the packed-earth circle, brushing dust off one sleeve, eyebrows up, almost laughing. BACKGROUND: the timber hall and a supper bell under a wide white sky, dissolving. More than half the frame is pale empty ground and sky. Hard side sun, magenta #D8258C on his sleeve only. No text."
+	},
+	{
+		"id": "mu-wall-paint",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "The boys who threw his shoes in the pond hold the lamp.",
+		"alt": "At night under the long wall's little roof, boys hold a lamp while a painter puts Chunchu on the wall; Yushin watches with his arms folded.",
+		"people": ["chunchu", "yushin"],
+		"time": "night",
+		"scene": "Cinematic night still, wide and low, along a long plaster wall under its own small giwa roof. FOREGROUND, soft and close: an oil lamp in a boy's hands, flame sharp, fingers blurred. MIDGROUND: a painter on a low step putting the last of a panel on the wall — a thin boy in magenta sitting on a millstone, practice swords in a ring, lip split, smiling. The real fifteen-year-old Chunchu (LEFT face, same magenta, crescent headband, clean-shaven) stands small at the left third, watching, not posing. Young Yushin (SECOND face, Silla-blue, crescent headband, no later beard) stands at the right with arms folded, reading the wall. BACKGROUND: the wall runs away into black, older panels dissolving, half the frame empty dark plaster and night. The lamp is the only key; magenta #D8258C in the wet paint, blue #2A5FB8 on Yushin's sleeve. No readable writing. No text."
+	}
+]

@@ -1,0 +1,89 @@
+[
+	{
+		"id": "momal-peasant",
+		"entry": "Momal",
+		"at": "A peasant sits in the packed earth",
+		"alt": "A peasant in undyed white sits against a post; the song moves his mouth",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Dusk Surabol lane. WIDE, figure small in the lower third. ONE device: a timber post as a hard vertical. A peasant in SIMPLE UNDYED WHITE hemp, bare feet, back to the post, mouth moving with a song, counting nothing. Faded red Goguryeo banner hanging in the lane. Pale paper sky, packed earth, giwa dissolving. #8B5A2B nowhere — this is the country’s white. No named faces. No crowd catalog. No text. No watermark.",
+		"with": ["dress:silla", "place:surabol"],
+		"year": 418
+	},
+	{
+		"id": "momal-council-tent",
+		"entry": "Momal",
+		"at": "The Harmony Council meets in a tent",
+		"alt": "Half-ripped council tent; Nulji on a low stool; wind through the tear",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Day, a half-ripped canvas tent in a Surabol yard. LOW THREE-QUARTER. ONE device: the tear as a hard diagonal of sky. LEFT of the sheet = Nulji, vermilion silk, Silla open gold crown, sitting on a LOW STOOL that is not a throne, overwhelmed, looking at the rip, no smile. A white sash tying the canvas. Two unnamed councillors as dark shapes only. #9a3060 as cool sun on red silk. Pale paper sky through the tear. No text. No watermark.",
+		"people": ["nulji"],
+		"with": ["place:surabol"],
+		"year": 418
+	},
+	{
+		"id": "momal-embrace-bohae",
+		"entry": "Momal",
+		"at": "He takes his brother by the back of the neck",
+		"alt": "Nulji holds Bohae; purple silk still wet from the Han; the king’s mouth in his brother’s hair",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Night Moon Palace. INTIMATE two-shot, FACE LARGE. ONE device: two bodies as one dark knot. LEFT of the sheet = Nulji, vermilion silk, long black hair, crown, both arms around his brother, mouth in the hair, not a court pose. RIGHT = Bohae, lilac-purple silk WET, long black hair, older-brother tired, held, eyes shut. One floor lamp the key. #9a3060 and #8a6a8a in the same pool. NEVER clone the faces. No text. No watermark.",
+		"people": ["nulji", "bokho"],
+		"with": ["place:moon_palace"],
+		"year": 418
+	},
+	{
+		"id": "momal-embrace-mihae",
+		"entry": "Momal",
+		"at": "He takes Mihae the way he took Bohae",
+		"alt": "Nulji holds Mihae in the packed earth; blue silk crushed against vermilion",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Day Moon Palace yard. INTIMATE two-shot. ONE device: two silks crushed together, blue into vermilion. LEFT of the sheet = Nulji, vermilion, crown, both arms, no crown-between-them, hand on the back of the boy’s head. RIGHT = Mihae, Silla-blue silk, long loose black hair, younger face, speaking into the shoulder. Pale paper sky. Packed earth. #9a3060 and #c07090. NEVER clone. No text. No watermark.",
+		"people": ["nulji", "miseheun"],
+		"with": ["place:moon_palace"],
+		"year": 418
+	},
+	{
+		"id": "momal-stake",
+		"entry": "Momal",
+		"at": "A stake in packed earth",
+		"alt": "Silhouette on a stake: arms spread, rope, a ring of Wa faces, fire waiting",
+		"time": "night",
+		"silhouette": true,
+		"style": "still-life",
+		"scene": "PAINTED STILL — no faces and no recognisable person: the only figure is one anonymous dark silhouette, a shadow-shape against the light. Night Wa yard. ONE device: a stake as a hard vertical. A man-shaped silhouette tied, arms spread, rope. Flames starting at the hem. A ring of unnamed Wa heads as dark stamps only. Fire the one key. Magenta-plum #8B5A2B in the fire, not on a face. No readable features. No text. No watermark.",
+		"with": ["place:asuka"],
+		"year": 418
+	},
+	{
+		"id": "momal-flames-sky",
+		"entry": "Momal",
+		"at": "The flames go up. Not a hearth. A column",
+		"alt": "A column of fire into the sky; a man-shaped hole in the sheet of flame",
+		"time": "night",
+		"silhouette": true,
+		"style": "still-life",
+		"scene": "PAINTED STILL — no faces. Night. WIDE, worm’s-eye. ONE device: a column of fire as a hard vertical into the sky. A man-shaped hole inside the sheet of flame, magenta silk become a dark cutout. Embers as bokeh. The rest crushed black. #8B5A2B in the fire only. No features. No text. No watermark.",
+		"year": 418
+	},
+	{
+		"id": "momal-hope-well",
+		"entry": "Momal",
+		"at": "The well-woman puts the bucket down",
+		"alt": "The well-woman sets the bucket down; no stone in her hand; a boy starting a new song",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Day Surabol well-yard. LOW THREE-QUARTER. ONE device: the well rim as a dark circle. A woman in UNDYED WHITE hemp putting a bucket down, no stone, mouth open on a laugh that is almost a song. A boy in white at the rim starting a different tune. Pale paper sky. Packed earth. No named faces. No crowd. No text. No watermark.",
+		"with": ["dress:silla", "place:surabol"],
+		"year": 418
+	},
+	{
+		"id": "momal-king-out",
+		"entry": "Momal",
+		"at": "Nulji comes out of the gate. Not a funeral walk",
+		"alt": "Nulji walks the lane; the crown is on; people stand and shout the name full",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Day Surabol lane. LOW THREE-QUARTER, Nulji walking mid-stride, FACE LARGE enough. ONE device: the lane as a receding road, a faded red banner smaller now. LEFT of the sheet = Nulji, vermilion silk, Silla open gold crown ON, chin up, not hiding, a tired mouth that has decided to be a king. Tiny white-hemp figures standing, one bowing. Pale paper sky. #9a3060 as hard sun on red silk. No army. No text. No watermark.",
+		"people": ["nulji"],
+		"with": ["place:surabol"],
+		"year": 418
+	}
+]

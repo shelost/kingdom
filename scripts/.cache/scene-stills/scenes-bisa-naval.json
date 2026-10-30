@@ -1,0 +1,88 @@
+[
+	{
+		"entry": "Yodong",
+		"year": 645,
+		"battle": true,
+		"action": false,
+		"with": [
+			"flag:tang",
+			"flag:goguryeo",
+			"ship:tang",
+			"ship:goguryeo"
+		],
+		"id": "bisa-fleet-dawn",
+		"at": "Five hundred hulls leave the West’s coast",
+		"alt": "Dawn: the Tang fleet comes up out of the sea haze toward the cliffs of Bisa",
+		"time": "day",
+		"scene": "Dawn, wide, the camera low on the bow of a Tang tower-ship: its dark carved prow and a soldier’s back in steel lamellar sharp in the foreground, spray bursting over the bow. Ahead and on every side, the fleet: dozens of red-sailed tower-ships and warships at true size, hulls lined with tiny soldiers, oars beating, receding into gold haze. On the horizon the dark cliff-ridge of Bisa with its fortress wall along the crest. Wind, spray and banners in motion; awe on the soldier’s half-turned face. PLACE (match the battle map): the end of the Liaodong cape in early summer — a steep dark ridge with grey cliffs on every side and a Goguryeo stone fortress wall along its crest, a narrow inlet under it, a wide grey bay opening south to the sea. The Tang fleet of five hundred hulls comes up from the south out of the sea haze; a handful of Goguryeo warships row out of the inlet to meet it. Alongside, the Tang deck stands two men higher than the Goguryeo deck. BANNERS BY SIDE: vermilion Tang banners fly ONLY on the dark Tang hulls; red three-legged-crow banners ONLY on the Goguryeo ships; Tang sails are plain deep red, no emblem; the Tang sun disc holds an abstract black smudge, never a readable character. Goguryeo men in steel lamellar with red shoulder-wings and pheasant-feather helm plumes; Tang men in steel lamellar with vermilion cloth and round chest discs."
+	},
+	{
+		"entry": "Yodong",
+		"year": 645,
+		"battle": true,
+		"action": true,
+		"with": [
+			"flag:tang",
+			"flag:goguryeo",
+			"ship:tang",
+			"ship:goguryeo"
+		],
+		"id": "bisa-coast-ships",
+		"at": "Below it, in the inlet, Goguryeo keeps a few warships",
+		"alt": "A Goguryeo captain drives his warships out of the inlet at the Tang fleet",
+		"sword": true,
+		"time": "day",
+		"scene": "Low and close on the bow of a Goguryeo warship as it surges out of the inlet: a Goguryeo captain in steel lamellar with red shoulder-wings, one boot on the bow rail, sword pointing forward, screaming the order; behind him sixty men heave at the oars, archers stringing bows, red banners whipping. Ahead, out of the sea haze, the endless line of Tang tower-ships, each hull bigger than his. Spray, wind, the Bisa cliffs and fortress wall rising behind. PLACE (match the battle map): the end of the Liaodong cape in early summer — a steep dark ridge with grey cliffs on every side and a Goguryeo stone fortress wall along its crest, a narrow inlet under it, a wide grey bay opening south to the sea. The Tang fleet of five hundred hulls comes up from the south out of the sea haze; a handful of Goguryeo warships row out of the inlet to meet it. Alongside, the Tang deck stands two men higher than the Goguryeo deck. BANNERS BY SIDE: vermilion Tang banners fly ONLY on the dark Tang hulls; red three-legged-crow banners ONLY on the Goguryeo ships; Tang sails are plain deep red, no emblem; the Tang sun disc holds an abstract black smudge, never a readable character. Goguryeo men in steel lamellar with red shoulder-wings and pheasant-feather helm plumes; Tang men in steel lamellar with vermilion cloth and round chest discs."
+	},
+	{
+		"entry": "Yodong",
+		"year": 645,
+		"battle": true,
+		"action": true,
+		"with": [
+			"flag:tang",
+			"flag:goguryeo",
+			"ship:tang",
+			"ship:goguryeo"
+		],
+		"id": "bisa-tower-wall",
+		"at": "two men above its own",
+		"alt": "A Goguryeo warship grinds alongside a Tang tower-ship; the arrows come down from above",
+		"time": "day",
+		"scene": "Worm’s-eye from the deck of the Goguryeo warship crushed alongside a Tang tower-ship: the Tang hull rises like a wooden wall filling the top half of the frame, its deck two men above, lined with Tang crossbowmen shooting straight down. Goguryeo marines hurl grapnels and climb the hull, one falling back, shields bristling with bolts, a fire pot shattering in flame on the Tang bulwark. The two hulls grind, oars snapping between them, water churning white. PLACE (match the battle map): the end of the Liaodong cape in early summer — a steep dark ridge with grey cliffs on every side and a Goguryeo stone fortress wall along its crest, a narrow inlet under it, a wide grey bay opening south to the sea. The Tang fleet of five hundred hulls comes up from the south out of the sea haze; a handful of Goguryeo warships row out of the inlet to meet it. Alongside, the Tang deck stands two men higher than the Goguryeo deck. BANNERS BY SIDE: vermilion Tang banners fly ONLY on the dark Tang hulls; red three-legged-crow banners ONLY on the Goguryeo ships; Tang sails are plain deep red, no emblem; the Tang sun disc holds an abstract black smudge, never a readable character. Goguryeo men in steel lamellar with red shoulder-wings and pheasant-feather helm plumes; Tang men in steel lamellar with vermilion cloth and round chest discs."
+	},
+	{
+		"entry": "Yodong",
+		"year": 645,
+		"battle": true,
+		"action": true,
+		"with": [
+			"flag:tang",
+			"flag:goguryeo",
+			"ship:tang",
+			"ship:goguryeo"
+		],
+		"id": "bisa-coast-burning",
+		"at": "The coast ships burn or run",
+		"alt": "A Goguryeo warship burns under the Tang hulls as its men leap into the bay",
+		"time": "day",
+		"scene": "Low over the water: a Goguryeo warship burning from bow to stern, its cream battened sails on fire, red banners curling in the flames; its men leap into the bay, a wounded officer on the burning stern castle refusing to leave, face lit by fire, teeth gritted. Two Tang tower-ships tower beyond, untouched, crossbowmen at their rails. Black smoke drifts across the Bisa cliffs. PLACE (match the battle map): the end of the Liaodong cape in early summer — a steep dark ridge with grey cliffs on every side and a Goguryeo stone fortress wall along its crest, a narrow inlet under it, a wide grey bay opening south to the sea. The Tang fleet of five hundred hulls comes up from the south out of the sea haze; a handful of Goguryeo warships row out of the inlet to meet it. Alongside, the Tang deck stands two men higher than the Goguryeo deck. BANNERS BY SIDE: vermilion Tang banners fly ONLY on the dark Tang hulls; red three-legged-crow banners ONLY on the Goguryeo ships; Tang sails are plain deep red, no emblem; the Tang sun disc holds an abstract black smudge, never a readable character. Goguryeo men in steel lamellar with red shoulder-wings and pheasant-feather helm plumes; Tang men in steel lamellar with vermilion cloth and round chest discs."
+	},
+	{
+		"entry": "Yodong",
+		"year": 645,
+		"battle": true,
+		"action": true,
+		"with": [
+			"flag:tang",
+			"flag:goguryeo",
+			"dress:goguryeo"
+		],
+		"id": "bisa-west-gate",
+		"at": "first over the wall",
+		"alt": "Night: Wang Wendu is the first man over the west gate of Bisa",
+		"sword": true,
+		"time": "night",
+		"scene": "Night, worm’s-eye up the cliff at the west gate of Bisa: Tang soldiers climb a steep rock path and ladders against the stone wall under torchlight; at the top, a young Tang officer in steel lamellar heaves himself over the parapet, sword in hand, face fierce and terrified, a Goguryeo defender swinging a spear at him against the night sky. Torches, sparks, falling stones, men falling from ladders; far below, the dark bay with the Tang fleet’s lanterns. PLACE (match the battle map): the end of the Liaodong cape in early summer — a steep dark ridge with grey cliffs on every side and a Goguryeo stone fortress wall along its crest, a narrow inlet under it, a wide grey bay opening south to the sea. The Tang fleet of five hundred hulls comes up from the south out of the sea haze; a handful of Goguryeo warships row out of the inlet to meet it. Alongside, the Tang deck stands two men higher than the Goguryeo deck. BANNERS BY SIDE: vermilion Tang banners fly ONLY on the dark Tang hulls; red three-legged-crow banners ONLY on the Goguryeo ships; Tang sails are plain deep red, no emblem; the Tang sun disc holds an abstract black smudge, never a readable character. Goguryeo men in steel lamellar with red shoulder-wings and pheasant-feather helm plumes; Tang men in steel lamellar with vermilion cloth and round chest discs."
+	}
+]

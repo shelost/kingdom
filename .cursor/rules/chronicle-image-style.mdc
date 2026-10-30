@@ -46,6 +46,8 @@ Per-character and per-place visual facts live in **`src/lib/data/visual-canon.js
 
 **Same place, every still.** If the entry has a place avatar (`static/pl_*.png` — e.g. `pl_pyongyang_fortress.png`, `pl_daeya_fortress.png`, `pl_ansi.png`), **attach that file** as a location ref and keep the architecture: the same red two-tier munru, the same stone ridge, the same pond-and-pavilion, not a cousin fortress or an abstract wall. New scenes open with a **wide exposition** of that place image before closer beats. Do not invent a different capital.
 
+**Rooms** (`static/rm_*.png`, wiki kind Room): interiors smaller than a map place — Chunchu’s study, the Revenue Office / Secretariat hall, Harmony Council chamber, Ministers’ Assembly hall, High Summit chamber, Pyongyang banquet hall. Attach with `room:<id>` (or `place:<id>`). Empty-set boards: architecture and furniture only, no people. Same room, every still.
+
 Canon Earth-location DNA (prompt-style only — **never attach as a GenerateImage ref**): `fortress-gate-red-omen` / `fortress_gate_red_omen` — real Daeya *seongmun* (weathered stone, crenellations, curved *giwa* pavilion, heavy wooden doors), real snow/earth, two tiny spear-guards, **one** symbolic accent (the red seam). Iconic because of symmetry and the single accent — not because the building became a slab.
 
 **Forbidden on Earth location beats** (these are the bad examples — never remake them this way):
@@ -304,5 +306,6 @@ No readable text, no watermarks, no Latin captions on the image.
 2. Cursor `GenerateImage` (`aspect_ratio: "16:9"`, composed for 2:1) → `{slot-id}.jpg` in the conversation assets folder, attaching every canon ref — and `sw_bidam.png` whenever a sword can appear. GenerateImage accepts only **one** reference image, under ~45 KB ("Unable to generate an image from this description" otherwise): `node scripts/small-refs.mjs <slot-id> <refs…>` puts every ref side by side on one compressed sheet and prints its path. Attach only that sheet, and name faces by position ("LEFT face of the sheet = Sadaham"). Two look-alike portraits on one sheet still need distinct dress and expression in the prompt, or the model clones one face.
 3. `node scripts/install-temp-art.mjs <manifest.json>` → centre-cropped 2:1 `static/temp/{id}.jpg` + `tempImage` + `ratio`. The script **deletes** the source file.
 4. `scripts/sync-temp-art-inventory.mjs` if you skip the installer.
+5. **Embed every new still in the chat reply.** After install (or after GenerateImage if not yet installed), show each image in the user-facing message: markdown `![alt](static/temp/{id}.jpg)` and/or a Read of that file so it actually renders. Caption with the slot id and the beat. Do this for every still going forward — do not leave new art only in the tool trace.
 
 Manifest item: `{ "id", "alt", "prompt", "ratio"? }` (`ratio` defaults to 2).

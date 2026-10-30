@@ -1,0 +1,187 @@
+[
+	{
+		"id": "jesang-court-ask",
+		"entry": "Park Jesang",
+		"at": "Who talks best",
+		"alt": "Nulji in the Moon Palace asks the court who talks best; an officer names Park Jesang",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal, NOT 3D. Night Moon Palace timber hall. MEDIUM two-shot, FACES LARGE, low three-quarter. ONE device: the hall axis as a dark timber wedge, one floor lamp. LEFT of the sheet = Nulji, vermilion-red silk, white collar, standing on the dais, leaning forward, asking. RIGHT = an unnamed Silla officer in dark blue, bowing, mouth open on the name. #9a3060 as the lamp on red silk. Packed earth, giwa in bokeh. No crowd. No text. No watermark.",
+		"people": ["nulji"],
+		"with": ["place:moon_palace", "dress:silla"],
+		"year": 418
+	},
+	{
+		"id": "jesang-thief-line",
+		"entry": "Park Jesang",
+		"at": "Robbing a thief is no thievery",
+		"alt": "Nulji leans across one lamp and tells Jesang that robbing a thief is no thievery",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Intimate close two-shot, dutch, FACES LARGE. Night Moon Palace, one floor lamp raking from below. ONE device: the lamp as a gold stamp between them. LEFT = Nulji, vermilion silk, leaning in, jaw set, selling the job. RIGHT = Jesang, magenta-plum po, grey-white beard, fifties, listening, not smiling. #9a3060 and #8B5A2B as real lamp light, never a glow. No text. No watermark.",
+		"people": ["nulji", "jesang"],
+		"with": ["place:moon_palace"],
+		"year": 418
+	},
+	{
+		"id": "jesang-wa-silhouette",
+		"entry": "Park Jesang",
+		"at": "Jesang does not bow",
+		"alt": "Iconic silhouette: a tiny magenta figure walking onto a Wa hull at night, the East a dark coast",
+		"time": "night",
+		"scene": "ICONIC MINIMAL EPIC 2:1 still. NOT photoreal, NOT a character close-up. Night East Sea. WIDE, figures TINY in the lower third. ONE device: a black waterline cutting the frame. A single magenta-plum silhouette of Park Jesang mid-stride onto a dark Wa hull, no face readable, only the topknot and the po. Vast crushed-black water and a far cypress coast. ONE hard moon-break on the wake. #8B5A2B as the only cloth accent. Monumental emptiness. No army. No text. No watermark.",
+		"people": ["jesang"],
+		"with": ["ship:yamato"],
+		"year": 418
+	},
+	{
+		"id": "jesang-asuka",
+		"entry": "Park Jesang",
+		"at": "I did not come to sit",
+		"alt": "Jesang in Asuka, wet magenta silk, face full of hate, refusing the chair",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal, NOT 3D archviz, NOT a pale empty courtyard. Night Asuka cypress court, packed earth, raised floors. MEDIUM CLOSE, FACE LARGE, worm’s-eye. ONE device: an empty chair as a pale rectangle he will not take. LEFT of the sheet = Jesang, magenta-plum po, grey-white beard, FACE from the portrait, mouth a snarl, eyes hating, mid-stride, not bowing. SECOND = Nintoku seated in white sokutai, dry, amused. A floor brazier the one key. #8B5A2B on wet silk. No text. No watermark.",
+		"people": ["jesang", "nintoku"],
+		"with": ["place:asuka"],
+		"year": 418
+	},
+	{
+		"id": "jesang-burn-silhouette",
+		"entry": "Park Jesang",
+		"at": "The fire takes the skirt",
+		"alt": "Iconic silhouette: Jesang burning at the post, a black-magenta figure against one gold fire",
+		"time": "night",
+		"scene": "ICONIC MINIMAL EPIC 2:1 still. NOT photoreal. Night Wa yard. WIDE, one isolated poster-scale body in the lower third. ONE device: a vertical post as a hard black line, fire as the only gold plane. Park Jesang tied, head back, screaming, the BODY a near-silhouette of magenta-plum silk #8B5A2B catching fire at the hem — face a drawn webtoon scream if readable, otherwise the mouth a dark hole. Vast empty packed earth, cypress halls dissolving to black. ONE hard fire key. Monumental emptiness. No torture catalog. No text. No watermark.",
+		"people": ["jesang"],
+		"with": ["place:asuka"],
+		"year": 418
+	},
+	{
+		"id": "jesang-scream",
+		"entry": "Park Jesang",
+		"at": "A dog of Silla!",
+		"alt": "Jesang at the post, fire at the hem, head back, screaming his loyalties",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. INTIMATE CLOSE, FACE LARGE, worm’s-eye. NOT photoreal, NOT smooth digital. Night Wa yard. ONE device: the post as a black vertical behind his head. LEFT of the sheet = Jesang, magenta-plum po burning at the hem, grey-white beard, mouth WIDE, screaming, eyes determined not begging, tears from smoke. Floor fire the practical key raking up. #8B5A2B on silk. Thick ink face, oil-glazed darks. No text. No watermark.",
+		"people": ["jesang"],
+		"year": 418
+	},
+	{
+		"id": "jesang-sand",
+		"entry": "Park Jesang",
+		"at": "You didn’t even turn",
+		"alt": "Lady Chisul’s face in the foreground, watching Jesang’s boat already small",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Intimate OVER-SHOULDER from in front of Chisul so her FACE is the picture, not her back. Night south-shore wet sand. ONE device: a small boat as a dark stamp on the horizon. LEFT of the sheet = Lady Chisul, FIFTIES, lined Korean face, tired wanting eyes, black hair with GREY at the temples, plain wooden binyeo, white jeogori, black sash, dark chima — FACE from /ch_chisul.png, three-quarter, reaching, wrecked, not a young girl, NOT a Rückenfigur. Tiny magenta figure at the boat far away. Moon-break on wet sand. #c9a070 as cool moon on her cheek. Two small daughters only as dark shapes at her hip. No text. No watermark.",
+		"people": ["chisul", "jesang"],
+		"year": 418
+	},
+	{
+		"id": "jesang-seize",
+		"entry": "Park Jesang",
+		"at": "Royal troops come through the yard gate",
+		"alt": "Royal troops drag Lady Chisul and the girls across the packed earth; Jesang does not turn",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Dynamic dutch, FACES LARGE. Night Moon Palace yard. ONE device: a spear as a hard diagonal across the frame. LEFT of the sheet = Lady Chisul, FIFTIES, FACE from /ch_chisul.png, lined Korean face, grey at the temples, white jeogori black sash dark chima, mouth open screaming, arm grabbed by an unnamed Silla soldier, a small daughter lifted off the ground. Jesang a dark magenta back at the far third, NOT turning. One yard lamp. #c9a070 on her cheek. No young-girl Chisul. No text. No watermark.",
+		"people": ["chisul", "jesang"],
+		"with": ["place:moon_palace", "dress:silla"],
+		"year": 418
+	},
+	{
+		"id": "jesang-prison",
+		"entry": "Park Jesang",
+		"at": "They put her in a room with no window that faces the sea",
+		"alt": "Lady Chisul and her daughters in a windowless cell",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal, NOT a live-action photo. Intimate close, FACE LARGE. Windowless timber cell, one barred slit, packed earth. ONE device: the slit as a thin white knife of light. LEFT of the sheet = Lady Chisul, FIFTIES, FACE from /ch_chisul.png, lined Korean face, grey temples, wooden binyeo, white jeogori black sash dark chima, holding two small daughters, crying, wrecked, not a young woman. #c9a070 as the slit-light on her cheek. Thick ink, umber cell. No text. No watermark.",
+		"people": ["chisul"],
+		"year": 418
+	},
+	{
+		"id": "chisul-ridge",
+		"entry": "Park Jesang",
+		"at": "She looks east until looking is all",
+		"alt": "Lady Chisul’s face on Chisullyeong, looking east; two small daughters beside her",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal, NOT a Friedrich postcard. THREE-QUARTER of Chisul so her FACE reads, not a back-view. Shore ridge, pale storm-haze sky, empty East Sea. ONE device: the ridge diagonal. LEFT of the sheet = Lady Chisul, FIFTIES, FACE from /ch_chisul.png, lined Korean face, grey temples, wooden binyeo, white jeogori black sash dark chima, looking east, tired wanting eyes, wind in the chima. Two small daughters at her hip. #c9a070 as cool cloud-break on her cheek. Painted watercolor world. No text. No watermark.",
+		"people": ["chisul"],
+		"year": 418
+	},
+	{
+		"id": "chisul-stone",
+		"entry": "Park Jesang",
+		"at": "Later they will say stone",
+		"alt": "Myth ink: Lady Chisul’s body becoming the waiting-husband stone on the ridge",
+		"style": "ink",
+		"scene": "Myth beat. Chisullyeong ridge. ONE device: a woman’s standing body turning into a dark stone upright against bare paper. FACE from the attached Chisul portrait translated into a few ink strokes — fifties, lined, wooden binyeo, looking east — the lower body already stone, the looking still a woman’s. Two tiny daughters as ink specks. At most ONE translucent grey wash on the stone. FULL-BLEED, no paper margin. No text. No seal.",
+		"people": ["chisul"],
+		"canon": false,
+		"year": 418
+	},
+	{
+		"id": "jesang-han-swim",
+		"entry": "Park Jesang",
+		"at": "They hit the water so hard",
+		"alt": "Jesang and Bokho swim the east Han; horses scream; arrows stitch the near bank",
+		"time": "day",
+		"manga": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER. NOT photoreal. WORM’S-EYE from the brown Han water, hard dutch. ONE device: the waterline as a violent diagonal. LEFT = Jesang, magenta-plum po soaked, grey-white beard, grabbing Bokho’s sash mid-current. SECOND = Bokho, lilac po, black hair, going under. Full readable horses swimming, muscle, terror. Blunt arrows stitching the near bank. Speed lines, flung spray. #8B5A2B on wet silk. East ford, mountains southeast, NOT a west-coast Baekje shore. No text. No watermark.",
+		"people": ["jesang", "bokho"],
+		"canon": { "mounted": true },
+		"year": 418
+	},
+	{
+		"id": "jesang-three-yard",
+		"entry": "Park Jesang",
+		"at": "Three brothers stand in the packed earth",
+		"alt": "Nulji, Bokho and Miseheun stand in the yard; the street stares; the songs stop",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. WIDE-ish three-shot, faces readable, low three-quarter. Day Moon Palace yard, pale paper sky. ONE device: the three brothers as a dark inked rank on packed earth. LEFT to RIGHT of the sheet = Nulji vermilion silk, Bokho lilac po, Miseheun blue-pink, all standing, not smiling yet, the street a painted mass of white commoner cloth in bokeh. #9a3060 as cool sun on Nulji. No army. No text. No watermark.",
+		"people": ["nulji", "bokho", "miseheun"],
+		"with": ["place:moon_palace", "dress:silla"],
+		"year": 418
+	},
+	{
+		"id": "jesang-nulji-sky",
+		"entry": "Park Jesang",
+		"at": "Nulji looks at the sky",
+		"alt": "Nulji looks up past the crowd and thanks Jesang; the name will last",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. WORM’S-EYE from the packed earth, FACE LARGE. Day yard. ONE device: Nulji’s look straight up, the sky a pale paper field taking half the frame. LEFT of the sheet = Nulji, vermilion silk, head tipped back, mouth a little open, grateful, not posing. The three-brother rank tiny and out of focus behind him. #9a3060 as the cloud-break on his throat. No text. No watermark.",
+		"people": ["nulji"],
+		"with": ["place:moon_palace"],
+		"year": 418
+	},
+	{
+		"id": "jesang-jangsu-guest",
+		"entry": "Park Jesang",
+		"at": "Jesang does not kneel first",
+		"alt": "Goguryeo hall: Jesang seated, not kneeling; Jangsu at a window",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal, NOT a white empty room. Night Pyongyang red-timber hall, real Goguryeo architecture. MEDIUM two-shot. ONE device: the window as a red rectangle Jangsu owns. LEFT = Jesang seated in magenta-plum po, grey-white beard, not kneeling, already decided. RIGHT = Jangsu, Goguryeo crown, red silk, hand on the window-frame, the start of a smile. One floor lamp. #a03030 as the key on red silk. No text. No watermark.",
+		"people": ["jesang", "jangsu"],
+		"with": ["place:pyongyang"],
+		"year": 418
+	},
+	{
+		"id": "jesang-pyongyang",
+		"entry": "Park Jesang",
+		"at": "Pyongyang sits on the river like a red roof",
+		"alt": "Pyongyang’s red munru on the Taedong, Jesang a small figure on the approach",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal, NOT 3D archviz, NOT even daylight postcard. Dusk Taedong, storm-haze sky. WIDE, figure SMALL in the lower third. ONE device: the red two-tier munru as the architecture of the attached Pyongyang board — keep that exact gate. Jesang a tiny magenta-plum walker on the packed approach. Granulated watercolor river, crushed dark water. #8B5A2B as a small cloth accent. No text. No watermark.",
+		"people": ["jesang"],
+		"with": ["place:pyongyang"],
+		"year": 418
+	},
+	{
+		"id": "jesang-island-wide",
+		"entry": "Park Jesang",
+		"at": "The island is a mountain in the water",
+		"alt": "Mountain Island: a peak in the strait, Wa hulls on the open side, a Silla hull in the lee",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. WIDE exposition of Mountain Island (Tsushima): a dark mountain rising from the strait, cliffs, a lee cove. ONE device: the island as a black triangle in pale water. Tiny Wa hulls on the open side, one smaller cream Silla hull tucked under the cliff. Storm-haze, granulated watercolor sea. No readable flags. No text. No watermark.",
+		"people": [],
+		"with": ["ship:yamato", "ship:silla"],
+		"style": "still-life",
+		"year": 418
+	}
+]

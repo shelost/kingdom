@@ -8,8 +8,11 @@
 //      "people"?: ["muryuk", "gulgul:young"], "with"?: ["place:daegaya", "dress:silla"], "sword"?: true, "battle"?: true,
 //      "time"?: "night" | "day",      (time sets the ground: black at night, white by day)
 //      "action"?: true,               (battle beat: BATTLE_ACTION — fire, armies, motion, faces acting, real sea)
+//      "manga"?: true,                (hunt/duel beat: MANGA_ACTION — speed lines, faces acting; not fleet grammar)
+//      "style"?: "moment",            (white-void hwarang ECU: MOMENT_OPEN/TAIL, face only, no place boards)
 //      "hat"?: false,                 (no jougwan: indoors undressed, bathing, sleeping)
 //      "style"?: "ink",               (myth beat: scene + faces + HEEWON_MYTH_INK, no webtoon frame)
+//      "style"?: "webtoon",          (intro-card webtoon: identity from the sheet, NEVER photoreal skin)
 //      "style"?: "still-life",        (no people: a place or object as metaphor, painted watercolor-and-oil)
 //      "silhouette"?: true,           (still-life that allows one faceless shadow-figure as part of the place)
 //      "erotic"?: true,               (still-life whose metaphor reads openly as sex, still no nudity or anatomy)
@@ -25,7 +28,7 @@ import { execFileSync } from 'node:child_process';
 import { buildCanon } from '../../visual-canon.mjs';
 import { HOUSE_RATIO, cropArgs, imageSize } from '../../crop-ratio.mjs';
 import { ASSETS, RING_SWORD, brief, personBlocks } from '../rel-tenebrist.mjs';
-import { BATTLE_ACTION, SCENE_OPEN, SCENE_TAIL, groundOf } from '../intro-stills/style.mjs';
+import { BATTLE_ACTION, MANGA_ACTION, MOMENT_OPEN, MOMENT_TAIL, SCENE_OPEN, SCENE_TAIL, WEBTOON_SCENE_OPEN, WEBTOON_SCENE_TAIL, groundOf } from '../intro-stills/style.mjs';
 import { editStory, loadStory } from '../story-ops.mjs';
 import { HEEWON_MYTH_INK } from '../../../src/lib/promptHouse.ts';
 
@@ -89,7 +92,7 @@ function prompt(item, year) {
 	const ships = canon.refs.filter((r) => r.startsWith('/ship_'));
 	const objects = [...(item.refs ?? []), ...ships];
 	const sheetBoards = BOARD_KINDS.flatMap(({ test, max = 1 }) => canon.refs.filter((r) => test.test(r)).slice(0, max));
-	const boards = [...objects, ...sheetBoards];
+	const boards = item.style === 'moment' || item.style === 'webtoon' ? [...(item.refs ?? [])] : [...objects, ...sheetBoards];
 	const boardNote = boards
 		.map((b) => (objects.includes(b) ? `${b.replace(/^\/|\.\w+$/g, '')} (${item.refsNote ?? 'copy its exact shape'})` : BOARD_KINDS.find(({ test }) => test.test(b)).note(b)))
 		.join(', ');
@@ -99,7 +102,7 @@ function prompt(item, year) {
 		...shown.map((f) => `face = ${f.id.split(':')[0]}${f.spirit ? ' (an ancestral spirit in the frame)' : ''}`)
 	];
 	const who = [
-		top.length ? `REFERENCE SHEET. TOP ROW, left to right: ${top.map((t, i) => `${order[i] ?? `#${i + 1}`} ${t}`).join(', ')}.${shown.length ? ' Copy each face exactly; give each person the dress the scene names.' : ''}` : 'REFERENCE SHEET.',
+		top.length ? `REFERENCE SHEET. TOP ROW, left to right: ${top.map((t, i) => `${order[i] ?? `#${i + 1}`} ${t}`).join(', ')}.${shown.length ? (item.style === 'webtoon' ? ' Identity only (hair, clothes, bones); REDRAW as webtoon, never photographic skin.' : ' Copy each face exactly; give each person the dress the scene names.') : ''}` : 'REFERENCE SHEET.',
 		boards.length ? `${shown.length ? 'SMALLER SECOND ROW' : 'TOP ROW'}, left to right: ${boardNote}.` : '',
 		item.sword ? 'BOTTOM ROW: the only sword design.' : ''
 	]
@@ -108,9 +111,13 @@ function prompt(item, year) {
 	const text = (
 		item.style === 'ink'
 			? [item.scene, who, HEEWON_MYTH_INK]
+			: item.style === 'webtoon'
+				? [WEBTOON_SCENE_OPEN, item.scene, who, WEBTOON_SCENE_TAIL, groundOf(item.time)]
 			: item.style === 'still-life'
 				? [item.scene, STILL_LIFE_SUBJECT[item.silhouette ? 'silhouette' : 'empty'], STILL_LIFE_TONE[item.erotic ? 'erotic' : 'suggestive'], STILL_LIFE, groundOf(item.time)]
-				: [SCENE_OPEN, layout ? PARALLEL_FRAME : '', item.scene, item.action ? BATTLE_ACTION : '', who, ...briefs, place ?? '', ...canonLines, item.sword ? RING_SWORD : '', SCENE_TAIL, groundOf(item.time)]
+				: item.style === 'moment'
+					? [MOMENT_OPEN, item.scene, who, MOMENT_TAIL]
+					: [SCENE_OPEN, layout ? PARALLEL_FRAME : '', item.scene, item.manga ? MANGA_ACTION : '', item.action ? BATTLE_ACTION : '', who, ...briefs, place ?? '', ...canonLines, item.sword ? RING_SWORD : '', SCENE_TAIL, groundOf(item.time)]
 	)
 		.filter(Boolean)
 		.join(' ');

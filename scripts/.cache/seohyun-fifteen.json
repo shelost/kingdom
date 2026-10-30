@@ -1,0 +1,275 @@
+[
+	{
+		"kind": "section",
+		"label": "Yushin",
+		"ko": "유신"
+	},
+	{
+		"kind": "scene",
+		"label": "Fifteen",
+		"ko": "열다섯",
+		"year": 609
+	},
+	{
+		"kind": "p",
+		"html": "The boy grows up at the edge of things, in county houses on the northern road. There’s a younger brother, and two little sisters the house calls by baby names. They’ll grow up to cause a great deal of trouble over a skirt. One of them is Munhee.",
+		"ko": "아이는 변두리에서 자란다. 북쪽 길가 고을 관아들을 옮겨 다니며. 남동생 하나, 그리고 집안에서 아명으로 부르는 어린 누이 둘이 있다. 둘은 자라서 치마 한 벌을 두고 큰 소동을 일으킬 것이다. 그중 하나가 문희다."
+	},
+	{
+		"kind": "p",
+		"html": "At fifteen he is made a hwarang, and the boys who follow him start calling themselves the Dragon-Flower Band. Seohyun hears it from a clerk before he hears it from his son.",
+		"ko": "열다섯에 그는 화랑이 되고, 그를 따르는 아이들은 스스로를 용화향도라 부르기 시작한다. 서현은 그 소식을 아들보다 아전에게서 먼저 듣는다."
+	},
+	{
+		"kind": "p",
+		"html": "The morning Yushin leaves for Surabol, his father stops him at the gate of the county house to look at his headband.",
+		"ko": "유신이 서라벌로 떠나는 아침, 아버지가 관사 문간에서 그를 세워 머리띠를 본다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"You’ve got it on crooked."
+		],
+		"lines": [
+			"삐뚤게 맸구나."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "yushin",
+		"chip": "#4a8fe0",
+		"en": [
+			"It’s fine, Father."
+		],
+		"lines": [
+			"괜찮습니다, 아버님."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"It’s crooked. Hold still.",
+			"In Surabol they’ll look at the headband before they look at you. They’ll look for anything."
+		],
+		"lines": [
+			"삐뚤다. 가만있어.",
+			"서라벌에선 너보다 띠부터 볼 거다. 뭐든 찾으려고 볼 거야."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "yushin",
+		"chip": "#4a8fe0",
+		"en": [
+			"Because we’re Gaya."
+		],
+		"lines": [
+			"가야 집안이라서요."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"en": [
+			"…Because you’re new.",
+			"Mostly because you’re new."
+		],
+		"lines": [
+			"…새로 와서지.",
+			"대개는, 새로 와서."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "He reties it with both hands, too tight, and then does it a third time. Manmyung watches from the doorway and lets him.",
+		"ko": "그는 두 손으로 다시 맨다. 너무 꽉. 그러고는 세 번째로 또 맨다. 만명은 문간에서 지켜보며 그냥 둔다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"Let him go. He’ll be late for his own band."
+		],
+		"lines": [
+			"보내 주이소. 지 무리한테 늦겠어예."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "yushin",
+		"chip": "#4a8fe0",
+		"en": [
+			"Mother—"
+		],
+		"lines": [
+			"어머님—"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "manmyung",
+		"chip": "#c98bb9",
+		"en": [
+			"And stop at your grandfather’s gate on the way.",
+			"Don’t knock. Just let them see you."
+		],
+		"lines": [
+			"가는 길에 외할아버지 댁 문 앞에 들러.",
+			"두드리진 말고. 그냥 보여 줘."
+		]
+	},
+	{
+		"kind": "scene",
+		"label": "Surabol, the hwarang yard gate · Class 51’s first morning",
+		"ko": "서라벌, 화랑 연무장 문 · 오십일기의 첫 아침",
+		"year": 610
+	},
+	{
+		"kind": "place",
+		"place": "hwarang_gate",
+		"html": "The gate lets them in. Fathers stop here.",
+		"ko": "그 문이 들여보낸다. 아비들은 여기까지다."
+	},
+	{
+		"kind": "p",
+		"html": "Seohyun rides with him as far as the city, then as far as the yard, then as far as the yard gate and no further. Fathers are not allowed further.",
+		"ko": "서현은 도성까지 같이 간다. 그다음엔 연무장까지, 그다음엔 연무장 문까지. 거기서 더는 안 간다. 아비들은 거기까지다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"lines": [
+			"유신아. 네 이름이 어디서 왔는지 아느냐."
+		],
+		"en": [
+			"Yushin. Do you know where your name comes from."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "yushin",
+		"lines": [
+			"아버님이 꿈꾸신 밤입니다. 그리고 옛 책의 선비요.",
+			"어머님께서 설마다 하시는 이야기입니다."
+		],
+		"en": [
+			"The night you dreamed. And a scholar in an old book.",
+			"Mother tells it every New Year, Father."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"lines": [
+			"유신. 제 것이 아닌 조정을 섬겼고, 잘 섬겼다.",
+			"네 이름은 그 사람한테서 왔다."
+		],
+		"en": [
+			"Yu Xin. He served a court that wasn’t his own, and served it well.",
+			"That’s who you’re named for."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "yushin",
+		"lines": [
+			"밤에서 온 이름인 줄 알았습니다."
+		],
+		"en": [
+			"I thought I was named for a night."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"lines": [
+			"……그것도 맞다.",
+			"저 안에선 네가 자기들 사람이 아니라고 할 거다. 대개는 점잖게. 안 그러는 놈들도 있고.",
+			"따지지 마라. 그건 말로 이길 싸움이 아니다—"
+		],
+		"en": [
+			"…That too.",
+			"In there they’ll tell you you’re not one of them. Mostly politely. Some won’t bother.",
+			"Don’t argue it. You can’t win that one with talk—"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "yushin",
+		"lines": [
+			"그럼 무엇으로 이깁니까?"
+		],
+		"en": [
+			"Then with what?"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"lines": [
+			"……충성은 흙이다. 서 있는 자리에 심고, 계속 심는 거다.",
+			"그러다 보면 어느 날, 그게 딴 데서 옮겨 온 흙이란 걸 아무도 모르게 된다.",
+			"네 할아버지는 네가 이 문 앞에 서라고 무릎을 꿇으셨다. 똑바로 서라."
+		],
+		"en": [
+			"…Loyalty is soil. You plant it where you’re standing, and you keep planting.",
+			"One day nobody can tell it was ever carried in from somewhere else.",
+			"Your grandfather knelt so you could stand at this gate. Stand properly."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"lines": [
+			"유신아. 나는—",
+			"……"
+		],
+		"en": [
+			"Yushin. I—",
+			"……"
+		]
+	},
+	{
+		"kind": "p",
+		"html": "His hands go up to the headband again. Yushin catches them.",
+		"ko": "그의 손이 또 머리띠로 올라간다. 유신이 그 손을 잡는다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "yushin",
+		"lines": [
+			"아버님. 똑바릅니다. 세 번이나 매셨잖습니까."
+		],
+		"en": [
+			"Father. It’s straight. You did it three times."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"lines": [
+			"……그랬지.",
+			"가거라, 그럼. 우리를 자랑스럽게 해 다오, 아들아."
+		],
+		"en": [
+			"…So I did.",
+			"Go on, then. Make us proud, son."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "At the same gate, a quiet man is leaving a boy in a black headband without looking back. The two fathers pass in the lane and nod, the way men do who have just done the same hard thing badly. Neither knows the other’s name. Their sons will see to it that all Samhan does.",
+		"ko": "같은 문 앞에서, 말수 적은 사내 하나가 검은 머리띠를 맨 소년을 두고 뒤도 안 돌아보고 떠난다. 두 아비는 골목에서 엇갈리며 고개를 끄덕인다. 똑같이 어려운 일을 똑같이 서툴게 막 끝낸 사내들끼리 하듯이. 서로 이름은 모른다. 그 아들들이 삼한 전체가 알게 해 줄 것이다."
+	},
+	{
+		"kind": "scene",
+		"label": "Daeyang",
+		"ko": "대량주"
+	}
+]

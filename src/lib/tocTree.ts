@@ -42,7 +42,7 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 	],
 	'five-principles': [
 		chapter('Hwarang', '화랑', 'The First Yard', '첫 마당', 'Bupmin', 'Sadaham', 'Gotaso', 'Munhee', 'Park Jesang'),
-		chapter('Master of the Classics', '오경박사', 'A Single Story', '이야기 하나', 'King Euija', 'King Seong', 'Yunchung'),
+		chapter('Master of the Classics', '오경박사', 'A Single Story', '이야기 하나', 'King Euija', 'King Seong', 'Gaero', 'Yunchung'),
 		chapter('Grand Academy', '태학', 'One Seal', '인장 하나', 'Yeon Namseng', 'The Stele', 'Ulbul')
 	],
 	'iron-will': [

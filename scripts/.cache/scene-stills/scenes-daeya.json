@@ -1,0 +1,283 @@
+[
+	{
+		"id": "scenes-daeya-goldsmith",
+		"entry": "Gotaso",
+		"at": "It takes her nine days.",
+		"alt": "In a bright goldsmith's workshop, Gotaso bends over a tiny anvil, tongue between her teeth, tapping a thumb-sized gold butterfly with a small hammer.",
+		"scene": "Low three-quarter close shot across a goldsmith's anvil in a whitewashed workshop in Surabol, bright morning. Gotaso, sixteen, sleeves tied back with a pink cord, leans over the anvil with her tongue between her teeth, tapping the gold butterfly (canon) with a small hammer, one wing already a little larger; a soot smudge on her cheek, two fingertips bandaged. The old smith's weathered hands at the frame edge, out of focus, hovering politely. Sharp foreground: tongs and a tiny crucible glowing. One hard key: white daylight through the open door raking across her face and the gold; pink #F0A3C0 lives in the cord and her silk. Wholesome, girl not woman.",
+		"people": ["gotaso"],
+		"year": 641,
+		"time": "day"
+	},
+	{
+		"id": "scenes-daeya-wedding-butterfly",
+		"entry": "Pumsuk",
+		"at": "She puts it in his palm",
+		"alt": "On the wedding night, Gotaso ties a pink cord with a small gold butterfly to Pumsuk's belt while he looks down at her, astonished.",
+		"scene": "Close two-shot from a low angle at waist height, the bridal room at night, one lamp on the floor. Gotaso, in her wedding hanbok, kneels and knots a pink silk cord to Pumsuk's belt, the gold butterfly (canon) swinging from it, her face lifted to him, proud and shy. Pumsuk, in his wedding robe, looks down at the butterfly with his mouth open, astonished, one hand hovering. Faces large, hands and gold razor-sharp in the middle. Sharp foreground: the lamp flame and a fold of red silk. The lamp rakes up from below; ice-blue #7EB8F0 catches his silk, pink #F0A3C0 hers. Tender, fully clothed, never sensual.",
+		"people": ["gotaso", "pumsuk"],
+		"year": 641,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-establish",
+		"entry": "Gumil",
+		"at": "DAEYA FORTRESS",
+		"alt": "Daeya Fortress on its hill in daylight, the river wrapping three sides of it, white haze over the valley.",
+		"scene": "Wide establishing shot from a low riverbank, bright clear morning. Daeya Fortress on its hill: weathered stone walls with crenellations following the ridge, a curved giwa munru pavilion over the arched north gate, timber storehouse roofs inside the ring, blue Silla banners with a white crescent stirring on the towers. The Hwang river curls around three sides of the hill. Sharp foreground: reeds and a moored flat boat. Tiny figures of porters on the road. Pale white sky and river mist dissolving into bare paper at the edges; one hard low sun from the left carving the wall's stones; the frame is calm and quiet before anything happens.",
+		"with": ["place:daeya"],
+		"time": "day"
+	},
+	{
+		"id": "scenes-daeya-banquet-wide",
+		"entry": "Maehwa",
+		"at": "The long hall is lit end to end.",
+		"alt": "The banquet hall at night: lamps hung in a line, Maehwa walking under them with a jug, and Pumsuk at the top table turning to watch.",
+		"scene": "Wide low shot down the long banquet hall of Daeya at night, the axis of the hall as a dark wedge. A line of cheap hanging lamps runs toward the far top table. Maehwa walks under the lamps in her old mended green and red sash, a wine jug on her hip, mid-stride, chin up, not looking at anyone. At the far top table Pumsuk, in ice-blue silk, has turned in his seat and is watching her, the last head to turn. The guests as soft painted silhouettes along low tables. Sharp foreground: a lamp and the rim of a wine bowl. Each lamp a warm key; magenta-rose #c98fb0 catches her silk, ice-blue #7EB8F0 his.",
+		"people": ["gumilwife", "pumsuk"],
+		"with": ["dress:silla"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-gotaso-hand",
+		"entry": "Maehwa",
+		"at": "Lady Gotaso sits beside him for the first cup",
+		"alt": "Under the banquet table, Gotaso squeezes Pumsuk's hand as she rises to leave, and the gold butterfly on his belt swings.",
+		"scene": "Tight shot at table height at the banquet, night. Under the edge of a low lacquer table, Gotaso's hand squeezes Pumsuk's as she rises to go up to bed, her sleepy smile above, half out of frame. The gold butterfly (canon) on its pink cord at his belt swings between them, razor-sharp. Pumsuk smiles up at her, a little drunk on being toasted. Sharp foreground: a cup and a plate of plums. Background: the lit hall in warm bokeh. One lamp on the table rakes across the hands and the gold; pink #F0A3C0 and ice-blue #7EB8F0 in the silk. Wholesome, a young married couple.",
+		"people": ["gotaso", "pumsuk"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-wine-guardian",
+		"entry": "Maehwa",
+		"at": "Wine, Guardian?",
+		"alt": "Maehwa leans over the top table to pour Pumsuk half a cup, amused; he holds the cup up, flustered.",
+		"scene": "Over-the-shoulder two-shot from behind Pumsuk's shoulder at the top table, night. Maehwa leans in to pour from her jug into the cup he holds up, her mouth curved in a teasing half-smile, eyes on his face not the cup. Pumsuk, flushed, holds the cup stiffly at arm's length, caught between politeness and staring. Wine mid-pour, a thin bright line. Sharp foreground: his ice-blue shoulder and the cup. Background: the hall lamps in soft bokeh. One lamp at table level rakes across her face and the wine; magenta-rose #c98fb0 in her catchlight. Flirtation in the eyes, fully clothed.",
+		"people": ["gumilwife", "pumsuk"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-gumil-watches",
+		"entry": "Maehwa",
+		"at": "On his way out he passes Maehwa.",
+		"alt": "At the back of the hall Gumil passes his wife without a word on his way out to count the stores.",
+		"scene": "Medium two-shot in the doorway at the back of the banquet hall, night. Gumil, in his rust-red officer's coat and orange head-wrap, walks out toward the dark yard with a tally board under his arm, jaw tight, not looking at his wife. Maehwa, leaning on a post with a plum in her hand, does not look at him either; both faces in profile, a pace apart, passing. Behind them, out of focus, the lit hall and a purple-and-blue figure at the top table. Sharp foreground: a door post and a torch bracket. The torch rakes across their profiles; umber #9a7b5f in his coat, rose #c98fb0 in hers.",
+		"people": ["gumil", "gumilwife"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-sleepless",
+		"entry": "Maehwa",
+		"at": "One dying lamp on dark timber.",
+		"alt": "Pumsuk lies awake on a narrow pallet in a small dark room, one lamp guttering, staring at the ceiling.",
+		"scene": "Top-down shot straight over a narrow pallet in a small timber room at night. Pumsuk lies on his back in ice-blue, eyes wide open, one forearm across his brow, the other hand pressed flat on his chest; the gold butterfly (canon) on his belt catches a spark. One dying oil lamp on the floor beside him throws his shadow long across the boards. Sharp foreground: the lamp's flame. The room falls away into black. Ice-blue #7EB8F0 as the specular on his silk.",
+		"people": ["pumsuk"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-wall-waiting",
+		"entry": "Maehwa",
+		"at": "The wall-walk above the river is the only place",
+		"alt": "Moonlight on the river below the wall-walk; Maehwa sits on the parapet steps with a shawl around her knees, and Pumsuk stops at the top of the stair.",
+		"scene": "Wide high shot along the wall-walk of Daeya at night, the crenellated parapet as one long diagonal, the river far below holding the moon. Maehwa sits on the parapet steps in her old green with a shawl around her knees, head turned up toward the stair, a knowing half-smile. At the top of the stair, small, Pumsuk has stopped mid-step, startled. Sharp foreground: a crenel stone and a dead torch. Background: far towers with tiny sentry torches as bokeh. Moonlight is the cold key; rose #c98fb0 is the only warm catch in her silk.",
+		"people": ["gumilwife", "pumsuk"],
+		"with": ["place:daeya"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-wall-talk",
+		"entry": "Maehwa",
+		"at": "Do you know how I got this fortress?",
+		"alt": "Pumsuk and Maehwa sit an arm's length apart on the moonlit parapet steps, talking, the river below them.",
+		"scene": "Low two-shot from the step below them, night, on the wall-walk above the river. Pumsuk and Maehwa sit an arm's length apart on the stone steps. He leans forward with his elbows on his knees, talking, hands open, earnest and unhappy; she sits sideways with her chin on her shawled knees, watching him, amused and a little sad. The moon on the river behind them. Sharp foreground: the edge of a stone step. Background: river and moon in soft bokeh. Moonlight rakes across both faces; ice-blue #7EB8F0 on his silk, rose #c98fb0 on hers. Two grown people talking, fully clothed.",
+		"people": ["pumsuk", "gumilwife"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-butterfly-hand",
+		"entry": "Maehwa",
+		"at": "She closes her hand over it.",
+		"alt": "Close on Maehwa's open palm holding the gold butterfly in the moonlight, Pumsuk's hand above it, letting go.",
+		"scene": "Extreme close-up of hands in moonlight on the wall-walk, night. Maehwa's open palm, a working woman's hand, holds the gold butterfly (canon) on its loose pink cord; Pumsuk's clean hand is just letting go of the cord above it. Her fingers starting to close. Behind and above, soft-focus, the lower halves of both faces: her parted lips, his clenched jaw. Sharp foreground: the gold. Background: black river with the moon broken on it as bokeh. One cold moon key on the gold; rose #c98fb0 in her sleeve.",
+		"people": ["gumilwife", "pumsuk"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-gold-in-hand",
+		"entry": "Maehwa",
+		"at": "Grey in the door-slit.",
+		"alt": "In grey dawn light Gumil stands in the doorway; on the bed, Maehwa turns a small gold butterfly over in her fingers.",
+		"scene": "Medium shot from inside a poor one-room house at grey dawn. Pale light pours through the open door slit, white and flat. Gumil stands in the doorway in his rust-red coat, a silhouette edged in white, tally board hanging from one hand. On the low bed, Maehwa in her open old green sits turning the gold butterfly (canon) over and over in her fingers, not looking up. Sharp foreground: the bed's edge and a crumpled red sash. Pale dawn white is the key, cool grey shadows; the gold the only warm note.",
+		"people": ["gumil", "gumilwife"],
+		"time": "day"
+	},
+	{
+		"id": "scenes-daeya-torch-road",
+		"entry": "Siege of Daeya",
+		"at": "They come at night, three weeks after the drums",
+		"alt": "At night a river of Baekje torches climbs the north road toward Daeya Fortress on its hill.",
+		"scene": "Wide high shot from Daeya's north wall at night. Below, the north road climbs the hill, and up it comes a river of Baekje torches, line after line, so many they flow like water running the wrong way; yellow Baekje banners above them as painted shapes. The Hwang river shines black around the hill. Sharp foreground: a crenellated parapet stone and the edge of a Silla blue banner snapping in the wind. Background: the torch river dissolving into smoke and haze. The torches are the key: a warm gold #c9932a flood rising against crushed black.",
+		"with": ["place:daeya", "flag:baekje", "flag:silla"],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-gate-panic",
+		"entry": "Siege of Daeya",
+		"at": "The villages under the wall get in first.",
+		"alt": "Villagers in white jam the north gate at night, carts and goats wedged in the arch, a woman screaming for her child.",
+		"scene": "Worm's-eye dutch shot inside the arched north gate of Daeya at night. Villagers in plain white hemp jam the arch: an overturned cart, goats, a grandmother carried on a back, hands reaching, mouths open. In the centre, a woman twists back against the press, screaming a name, arm stretched toward the dark outside. Torches overhead on the gatehouse. Sharp foreground: a cart wheel and a goat's horn. Background: the iron-bossed timber gate leaf and the dark road beyond, torchlit. Torchlight from above is the hard key; the white clothes catch it like a field of cloth.",
+		"with": ["place:daeya", "dress:silla"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-pumsuk-gatehouse",
+		"entry": "Siege of Daeya",
+		"at": "Up on the gatehouse the Guardian of Daeya",
+		"alt": "Pumsuk in new Silla armour on the gatehouse at night, torchlit, his face young and uncertain under the tall helm.",
+		"scene": "Low worm's-eye medium shot on the gatehouse of Daeya at night. Pumsuk in brand-new Silla steel lamellar and the tall pointed helm, too clean, the fox-ring parade sword at his hip; he grips the parapet with both hands and looks down at the jammed gate, mouth half open on an order he is about to take back, eyes wide and young. Sparks and smoke drift past. Sharp foreground: a torch on the parapet. Background: the torch-river of the Baekje host as bokeh. Torchlight rakes up from below; ice-blue #7EB8F0 cloth peeks at his collar and sleeves.",
+		"people": ["pumsuk"],
+		"with": ["place:daeya"],
+		"battle": true,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-yunchung-bowl",
+		"entry": "Siege of Daeya",
+		"at": "Below the wall, Yunchung eats standing up.",
+		"alt": "Yunchung eats from a bowl standing in his armour by a camp fire, not looking at the kneeling villagers dragged before him.",
+		"scene": "Low three-quarter medium shot at the Baekje camp at night. Yunchung in grey steel lamellar and his dented helm stands eating from a wooden bowl with chopsticks, chewing, face utterly flat, eyes on the food. At the frame edge, out of focus, villagers in white kneel with their hands bound and Baekje soldiers behind them. Behind him, far off, the torchlit wall of Daeya on its hill. Sharp foreground: the cook fire and a pot. The cook fire is the low hard key; gold #c9932a catches his bracers and the bowl's rim. Cold, unhurried, emotionless.",
+		"people": ["yunchung"],
+		"with": ["place:daeya"],
+		"battle": true,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-granary-glow",
+		"entry": "Siege of Daeya",
+		"at": "Everyone on the gatehouse turns south.",
+		"alt": "On the gatehouse at night, Pumsuk turns to see the sky over the granary roof glowing orange behind him.",
+		"scene": "Over-the-shoulder shot from behind Pumsuk on the gatehouse at night. In the foreground, his armoured shoulder and the side of his face turning, eyes going wide. Beyond, over the dark tiled roofs inside the fortress, the granary roof is a black silhouette against a sky gone orange, smoke rising in a column, sparks. A breathless levy boy in white on the stair below, out of focus, an empty sack. The fire glow is the key, washing his cheek orange; ice-blue #7EB8F0 cloth at his collar.",
+		"people": ["pumsuk"],
+		"with": ["place:daeya"],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-gumil-face",
+		"entry": "Siege of Daeya",
+		"at": "Close on his face in the torchlight.",
+		"alt": "Extreme close-up of Gumil's face in torchlight in the dark granary, calm as a man finishing a sum.",
+		"scene": "Extreme close-up of Gumil's face in the dark granary at night, a torch just below frame. Half his face lit hot orange, half lost in black; eyes calm, unblinking, lips moving as he counts aloud, a man finishing a sum. Sweat on his brow, the orange head-wrap's tail across his cheek. Sharp foreground: the torch flame's edge. Background: rows of rice sacks dissolving into black with tiny embers floating. The torch is the only key; umber #9a7b5f in the shadows of his skin. Dramatic cinematic close-up.",
+		"people": ["gumil"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-granary-fire",
+		"entry": "Siege of Daeya",
+		"at": "He puts the torch to the first sack.",
+		"alt": "Gumil walks down a row of rice sacks in the granary setting them alight one after another.",
+		"scene": "Low dutch shot along a long row of straw rice sacks in Daeya's timber granary at night. Gumil walks away from camera down the row, torch held out, setting each sack alight in turn; behind him the first sacks already burn, flames climbing the posts toward the roof beams. His figure a dark silhouette rimmed in fire. Sharp foreground: a burning sack and flying sparks. Background: the far granary doors and black. Firelight is the key; umber #9a7b5f in the smoke.",
+		"people": ["gumil"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-gumil-kneels",
+		"entry": "Siege of Daeya",
+		"at": "Gumil kneels in the mud.",
+		"alt": "Gumil kneels in the mud before Yunchung on horseback; a torch is held to his face, and behind them the fortress sky glows orange.",
+		"scene": "Low wide shot from the mud at the Baekje lines at night. Gumil kneels in the mud in his rust-red coat, head bowed, a Baekje soldier's torch held close to his face. Above him Yunchung sits his horse, looking down without any expression at all, one hand resting on the saddle. Behind them, across the river, Daeya on its hill with an orange glow beginning over the walls. Sharp foreground: mud, a hoof, reeds. The torch is the hard key; gold #c9932a on Yunchung's armour edges.",
+		"people": ["gumil", "yunchung"],
+		"with": ["place:daeya"],
+		"battle": true,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-burning",
+		"entry": "Siege of Daeya",
+		"at": "Without the granary, Daeya is a stone ring around a bonfire.",
+		"alt": "Daeya Fortress burns on its hill at night, a ring of stone walls around a column of fire, reflected in the river.",
+		"scene": "Wide shot from across the river at night. Daeya on its hill is a ring of dark stone walls around a roaring column of fire: the granary, barracks and stable roofs burning, a pillar of smoke lit orange from below curling into the black sky, sparks raining. The river reflects it in broken strokes. Tiny silhouettes of Baekje riders along the near bank. Sharp foreground: reeds and a spear-tip with a yellow pennant. The fire is the only key; crushed black everywhere else.",
+		"with": ["place:daeya", "flag:baekje"],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-yunchung-fingers",
+		"entry": "Siege of Daeya",
+		"at": "Don’t waste arrows on the ones who jump.",
+		"alt": "Yunchung on his horse on a rise points two fingers at men dropping from the burning wall, his face blank.",
+		"scene": "Low three-quarter shot from below the horse's shoulder on a rise at night. Yunchung in grey steel lamellar sits his horse, arm out, pointing two fingers lazily at the burning wall in the distance where tiny figures drop from the parapet; his face is blank, bored, eyes half-lidded. His riders are blurred shapes surging past below. Behind him the burning fortress as an orange column. Sharp foreground: the horse's mane and bridle. Fire glow is the key from behind and side; gold #c9932a in the bracers.",
+		"people": ["yunchung"],
+		"with": ["place:daeya"],
+		"battle": true,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-terms",
+		"entry": "Siege of Daeya",
+		"at": "Just before dawn, a purple sleeve stands on the wall",
+		"alt": "Before dawn, Pumsuk calls down from the smoking wall; below, Yunchung points east at a sky where the sun has not risen.",
+		"scene": "High-angle shot from behind Pumsuk on the smoking wall, the hour before dawn. In the foreground Pumsuk, helm off, hair loose, leans over the parapet calling down, smoke curling past his face. Far below on the road, Yunchung on horseback raises one arm and points east, to a sky that is only beginning to pale behind the hills: no sun yet. Ash drifting. The grey pre-dawn and the dying fires are the key; ice-blue #7EB8F0 at Pumsuk's collar, gold #c9932a at Yunchung's.",
+		"people": ["pumsuk", "yunchung"],
+		"with": ["place:daeya"],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-slaughter",
+		"entry": "Siege of Daeya",
+		"at": "Then the killing starts.",
+		"alt": "On the road outside the gate, the disarmed garrison is cut down in the dark while Yunchung watches from his horse without expression.",
+		"scene": "Wide low shot on the north road outside Daeya's gate in the last dark before dawn. Silla soldiers with their shields laid down on the road are overrun by Baekje troops pouring out of the west, a chaos of painted silhouettes, spears, torches, smoke; no gore, only motion and falling shapes. In the near ground, still and sharp, Yunchung sits his horse in profile and watches with no expression at all. Behind, the open gate of the burning fortress. Torch and fire are the key; gold #c9932a on his armour, Silla blue on the fallen shields.",
+		"people": ["yunchung"],
+		"with": ["place:daeya", "flag:silla", "flag:baekje"],
+		"battle": true,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-empty-cord",
+		"entry": "Siege of Daeya",
+		"at": "She looks at his belt.",
+		"alt": "In the smoky inner room Gotaso looks down at Pumsuk's belt, where only an empty pink cord hangs.",
+		"scene": "Close shot at belt height in the inner room at night, smoke seeping through a paper lattice lit orange from outside. In the foreground, Pumsuk's armoured belt with only an empty pink cord dangling, no butterfly. Above it, Gotaso's face, lifted from looking at the cord to looking at him, eyes very still. Pumsuk's face at the frame edge, turned away. Sharp foreground: the empty cord. Background: the burning yard as orange bokeh through the lattice. Fire through the lattice is the key; pink #F0A3C0 in her silk and the cord.",
+		"people": ["gotaso", "pumsuk"],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-look-at-me",
+		"entry": "Siege of Daeya",
+		"at": "He draws the parade sword with the fox in its ring.",
+		"alt": "In the inner room Gotaso lifts her face to Pumsuk; he has drawn his sword and is looking at her, both of them steady.",
+		"scene": "Low two-shot from the floor of the inner room at night, smoke and orange lattice light. Gotaso stands with her chin lifted, eyes on his, steady and wet, hands folded at her waist. Pumsuk faces her, his straight fox-ring parade sword drawn and held low at his side, blade pointing at the floor, looking at her the whole time, face breaking. No blood, no wound, no contact: the moment before. Sharp foreground: the sword's ring pommel and his gauntleted fist. Fire through the lattice is the key; pink #F0A3C0 and ice-blue #7EB8F0 in their silk.",
+		"people": ["gotaso", "pumsuk"],
+		"battle": true,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-haewonmek",
+		"entry": "Siege of Daeya",
+		"at": "a second man in a black gat is standing over him",
+		"alt": "Pumsuk kneels on the floor of the inner room; a reaper in a black gat stands over him with a red book open.",
+		"scene": "Worm's-eye shot from the floorboards of the inner room at night, time stopped: smoke hangs motionless, embers frozen in the air. Pumsuk kneels, unarmoured now, clean ice-blue robe, no blood, hands on his knees, looking up. Over him stands Haewonmek, the second reaper, tall in his black robe and wide black gat, face hidden except the mouth, a red-covered register open in one hand, the other resting on a sheathed black blade. Sharp foreground: a frozen ember. Background: the lattice glowing orange through the stopped smoke. Cold grey light from nowhere against the fire; plum #6b5b6e in the reaper's shadows. No gore.",
+		"people": ["pumsuk", "haewonmek"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-rope",
+		"entry": "Siege of Daeya",
+		"at": "In the morning a thousand of Daeya’s people walk west on one long rope.",
+		"alt": "In white morning haze a long line of captives walks west on one rope, and Gumil walks beside it, not looking at them.",
+		"scene": "Wide side shot on the west road in pale morning. A long line of captives in white hemp walks on one rope that runs out of frame both ways, heads down, Baekje guards as grey shapes. In the near ground Gumil walks beside the rope, not on it, in his rust-red coat, eyes forward, jaw tight; one captive's face turned toward him, mouth open. Behind them, small, the blackened walls of Daeya still smoking on the hill. White sky and haze, crisp cool shadows; umber #9a7b5f in his coat the only strong colour.",
+		"people": ["gumil"],
+		"with": ["place:daeya", "dress:silla"],
+		"time": "day"
+	}
+]

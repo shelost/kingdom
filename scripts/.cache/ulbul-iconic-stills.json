@@ -1,0 +1,140 @@
+[
+	{
+		"id": "ulbul-house-est",
+		"entry": "Ulbul",
+		"at": "This is the house. Keep it.",
+		"alt": "Wide dusk: Gungnae palace a tiny red-pillared hall under a vast paper-white sky",
+		"time": "day",
+		"canon": false,
+		"people": [],
+		"refs": [],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash as a movie still. FAR WIDE establishing. DAY GROUND, 70% paper-white sky. ONE device: a Goguryeo timber hall with red pillars and giwa as a SMALL dark stamp in the lower third, packed-earth yard dissolving to bare paper. Tiny figures like ink specks. No faces. Iconic emptiness. NOT photoreal, NOT oil. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash as a movie still. FAR WIDE establishing. DAY GROUND, 70% paper-white sky. ONE device: a Goguryeo timber hall with red pillars and giwa as a SMALL dark stamp in the lower third, packed-earth yard dissolving to bare paper. Tiny figures like ink specks. No faces. Iconic emptiness. NOT photoreal, NOT oil. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "dolgo-back-door",
+		"entry": "Ulbul",
+		"at": "Now. The back door.",
+		"alt": "Night doorway: Dolgo holds his son and points him at the dark back door; the cup is on the threshold",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"dolgo",
+			"micheon"
+		],
+		"refs": [
+			"/ch_dolgo.png",
+			"/ch_ulbul.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash as a movie still. NIGHT GROUND, crushed black. LOW THREE-QUARTER. ONE device: the timber back door as a hard dark rectangle, one lamp in the doorway. LEFT of sheet = Dolgo (long black hair, short beard, tall black cap, red court robe) holding the boy by the shoulders, pushing him toward the door, mouth open mid-order, wet eyes. RIGHT = young Ulbul (long braid, white hemp, NO satgat, NO crown) twisting back, crying, one shoe almost off. Bronze cup on the threshold as a small dark dot. 50% black empty yard. BOLD THICK ink. NOT photoreal. One of each face. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash as a movie still. NIGHT GROUND, crushed black. LOW THREE-QUARTER. ONE device: the timber back door as a hard dark rectangle, one lamp in the doorway. LEFT of sheet = Dolgo (long black hair, short beard, tall black cap, red court robe) holding the boy by the shoulders, pushing him toward the door, mouth open mid-order, wet eyes. RIGHT = young Ulbul (long braid, white hemp, NO satgat, NO crown) twisting back, crying, one shoe almost off. Bronze cup on the threshold as a small dark dot. 50% black empty yard. BOLD THICK ink. NOT photoreal. One of each face. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "dolgo-poison-white",
+		"entry": "Ulbul",
+		"at": "The room goes white.",
+		"alt": "White void: Dolgo small in the lower third drinks the cup; a faint boy running at the far edge",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"dolgo"
+		],
+		"refs": [
+			"/ch_dolgo.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. WHITE VOID like a One Piece death splash (Hiluluk): 75% blinding paper-white, faint paper grain, no room, no furniture. FAR WIDE. Dolgo (FACE from the sheet: long black hair, short beard, tall black cap, red court robe) a SMALL figure in the LOWER THIRD, sitting on nothing, mid-drink of a bronze cup, eyes wet, thinking of his son. At the FAR RIGHT EDGE a tiny cream-and-white boy running away, only a memory, already dissolving into paper. ONE device: the cup as a dark bronze dot. #9a5348 as the only colour. BOLD THICK ink. NOT photoreal. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. WHITE VOID like a One Piece death splash (Hiluluk): 75% blinding paper-white, faint paper grain, no room, no furniture. FAR WIDE. Dolgo (FACE from the sheet: long black hair, short beard, tall black cap, red court robe) a SMALL figure in the LOWER THIRD, sitting on nothing, mid-drink of a bronze cup, eyes wet, thinking of his son. At the FAR RIGHT EDGE a tiny cream-and-white boy running away, only a memory, already dissolving into paper. ONE device: the cup as a dark bronze dot. #9a5348 as the only colour. BOLD THICK ink. NOT photoreal. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-sticks",
+		"entry": "Ulbul",
+		"at": "Commoners hold the sticks.",
+		"alt": "Worm’s-eye: a stick comes at the lens; Ulbul on packed earth takes the blow, grimacing",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"micheon"
+		],
+		"refs": [
+			"/ch_ulbul.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. MANGA ACTION. WORM’S-EYE from the dirt. A wooden stick foreshortened coming AT THE LENS. Ulbul (FACE from the sheet: long braid, white hemp, red sash, NO satgat, NO crown) on his back in packed earth, grimacing, taking the blow, blood at the lip. ONE device: the stick as a hard dark diagonal. Dry-brush speed lines, flung dirt. DAY GROUND, pale yard dissolving to paper at the edges. Tiny dark legs of two commoners at the top edge only. BOLD THICK ink. NOT photoreal. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. MANGA ACTION. WORM’S-EYE from the dirt. A wooden stick foreshortened coming AT THE LENS. Ulbul (FACE from the sheet: long braid, white hemp, red sash, NO satgat, NO crown) on his back in packed earth, grimacing, taking the blow, blood at the lip. ONE device: the stick as a hard dark diagonal. Dry-brush speed lines, flung dirt. DAY GROUND, pale yard dissolving to paper at the edges. Tiny dark legs of two commoners at the top edge only. BOLD THICK ink. NOT photoreal. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-crater",
+		"entry": "Ulbul",
+		"at": "a dark mark in a hole they made of him",
+		"alt": "Bird’s-eye: Ulbul a tiny beaten body in a circular crater of packed earth; satgat and shoe at the rim",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"micheon"
+		],
+		"refs": [
+			"/ch_ulbul.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. BIRD’S-EYE STRAIGHT DOWN. DAY GROUND, pale packed earth dissolving to paper-white at the edges. ONE device: a CIRCULAR CRATER of beaten dirt filling the frame, like a body-shaped hole. At the CENTER a TINY Ulbul (FACE from the sheet: long black braid, white hemp, red sash, NO satgat, NO crown) face-down, beaten, blood on the dirt, one arm out, not a rest pose. At the rim: a straw satgat, one shoe, spilled salt. 60% empty crater wall. Iconic, visceral, negative space. BOLD THICK ink. NOT photoreal. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. BIRD’S-EYE STRAIGHT DOWN. DAY GROUND, pale packed earth dissolving to paper-white at the edges. ONE device: a CIRCULAR CRATER of beaten dirt filling the frame, like a body-shaped hole. At the CENTER a TINY Ulbul (FACE from the sheet: long black braid, white hemp, red sash, NO satgat, NO crown) face-down, beaten, blood on the dirt, one arm out, not a rest pose. At the rim: a straw satgat, one shoe, spilled salt. 60% empty crater wall. Iconic, visceral, negative space. BOLD THICK ink. NOT photoreal. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-ignore-walk",
+		"entry": "Ulbul",
+		"at": "Walks past him. Does not stop.",
+		"alt": "Iconic bank: Ulbul walks past Changjori without stopping; huge paper-white sky",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"micheon",
+			"changjori"
+		],
+		"refs": [
+			"/ch_ulbul.png",
+			"/ch_changjori.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. FAR WIDE. DAY GROUND, 65% paper-white sky. ONE device: the riverbank as a hard dark slope. LEFT of sheet = Ulbul mid-stride PAST the other man, satgat, white hemp, red sash, salt sack, looking AWAY, deciding not to stop. RIGHT = Changjori frozen mid-reach, red po, black cap with two thin red feathers, mouth open. They have just recognised each other. Distance between them is the picture. Tiny figures, huge empty sky. BOLD THICK ink. NOT photoreal. One of each face. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. FAR WIDE. DAY GROUND, 65% paper-white sky. ONE device: the riverbank as a hard dark slope. LEFT of sheet = Ulbul mid-stride PAST the other man, satgat, white hemp, red sash, salt sack, looking AWAY, deciding not to stop. RIGHT = Changjori frozen mid-reach, red po, black cap with two thin red feathers, mouth open. They have just recognised each other. Distance between them is the picture. Tiny figures, huge empty sky. BOLD THICK ink. NOT photoreal. One of each face. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-chang-kneel-void",
+		"entry": "Ulbul",
+		"at": "I am asking a salt seller to be king.",
+		"alt": "Worm’s-eye empty bank: Changjori on both knees in mud; Ulbul a dark standing mark against white sky",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"changjori",
+			"micheon"
+		],
+		"refs": [
+			"/ch_changjori.png",
+			"/ch_ulbul.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. WORM’S-EYE from the mud. DAY GROUND, huge paper-white sky. ONE device: the kneel as a dark pyramid in the lower left. LEFT of sheet = Changjori on BOTH KNEES in river mud, ruined red silk, black cap with two thin red feathers, looking up, pleading. RIGHT = Ulbul STANDING small against the white, satgat, salt sack, looking away. Height difference is the plot. 60% empty sky. BOLD THICK ink. NOT photoreal. One of each face. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. WORM’S-EYE from the mud. DAY GROUND, huge paper-white sky. ONE device: the kneel as a dark pyramid in the lower left. LEFT of sheet = Changjori on BOTH KNEES in river mud, ruined red silk, black cap with two thin red feathers, looking up, pleading. RIGHT = Ulbul STANDING small against the white, satgat, salt sack, looking away. Height difference is the plot. 60% empty sky. BOLD THICK ink. NOT photoreal. One of each face. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-destiny",
+		"entry": "Ulbul",
+		"at": "He puts it on like a man who has decided what the next sack is.",
+		"alt": "Iconic: Ulbul stands in a paper-white cave-mouth and puts the satgat on, decided",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"micheon"
+		],
+		"refs": [
+			"/ch_ulbul.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. LOW THREE-QUARTER. DAY GROUND, paper-white cave-mouth light as a hard bright plane behind him. Ulbul (FACE from the sheet: long braid, white hemp, red sash) mid-gesture PUTTING ON the straw satgat, jaw set, the sly look gone, decided. ONE device: the satgat brim as a dark disc rising onto the head. He is the dark inked thing in a bright frame. 50% empty white. BOLD THICK ink. NOT photoreal. No crown. No king-silk. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. LOW THREE-QUARTER. DAY GROUND, paper-white cave-mouth light as a hard bright plane behind him. Ulbul (FACE from the sheet: long braid, white hemp, red sash) mid-gesture PUTTING ON the straw satgat, jaw set, the sly look gone, decided. ONE device: the satgat brim as a dark disc rising onto the head. He is the dark inked thing in a bright frame. 50% empty white. BOLD THICK ink. NOT photoreal. No crown. No king-silk. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	}
+]

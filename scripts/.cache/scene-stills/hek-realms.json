@@ -1,0 +1,79 @@
+[
+	{
+		"id": "hek-living-hill",
+		"entry": "Heaven–Earth King",
+		"at": "He sits on a hill like a king",
+		"alt": "Little Star sits a hill; Haemosu still flies the remaining sun above him",
+		"people": ["sobyeol", "haemosu"],
+		"hat": false,
+		"time": "day",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON two-shot, faces LARGE in the central band. PRIMORDIAL ink-brush aura: splashed sumi at the frame edges, dry-brush flying-white, paper grain. DAY. Worm’s-eye from the hill. ONE DEVICE: a dark hill pyramid, one gold sun-disc. LEFT of the sheet = Little Star, sitting one knee up, petty grin, white po, maroon-gold collar, maroon sash, silver-grey hair with a wine-red streak — REDRAW as webtoon, the sheet is a photograph so copy clothes and hair ONLY, never pores. SECOND = Haemosu in a gold chariot in the upper third, LONG white hair streaming, white open po, easy grin, looking down at the hill — FACE from the illustrated Haemosu, KEEP the long tail. One of each. Never clone. Never jougwan. #C94040 on Little Star’s sash; #f0b429 as the sun-disc key, not a body halo. No photoreal landscape."
+	},
+	{
+		"id": "hek-rice-pass",
+		"entry": "Heaven–Earth King",
+		"at": "The rice is still on",
+		"alt": "Big Star’s webtoon face large as he walks past the rice-steam, not looking",
+		"people": ["daebyeol"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON, MEDIUM CLOSE of ONE man, face LARGE off-centre. PRIMORDIAL ink-brush aura at the edges. NIGHT. Slight dutch, low three-quarter so we SEE his face as he passes. ONE DEVICE: a small timber house as a dark rectangle, a cream seam of rice-steam. Big Star mid-stride past it, not turning his eyes to the steam, black po, ice-blue collar, silver-grey topknot, grey moustache — LEFT of the sheet is a photograph: REDRAW as Korean webtoon, thick ink, cel shadow, manhwa eyes, copy hair and clothes only. NEVER photographic skin. #3B6FBF on the sash. No photoreal house catalog."
+	},
+	{
+		"id": "hek-fallen-sun",
+		"entry": "Heaven–Earth King",
+		"at": "A golden arrow is in him",
+		"alt": "Intro-card: the short-haired fallen sun, golden arrow in the chest, webtoon face large",
+		"people": ["haemosu"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON, MEDIUM CLOSE, face LARGE. PRIMORDIAL ink-brush aura. NIGHT otherworld. Low three-quarter, slight dutch. ONE DEVICE: a golden arrow as a hard gold line through the chest. Fallen sun sitting against a black rock: SAME FACE as LEFT = Haemosu but SHORT silver-white hair in a tight bun, nape BARE, NO long tail, white po torn, pain and grump, manhwa eyes. IGNORE the portrait’s long hair. Never gat, never reaper robe, never a glow aura — gold is the arrow. Thick ink, cel shadow. Not photoreal."
+	},
+	{
+		"id": "hek-sun-offer",
+		"entry": "Heaven–Earth King",
+		"at": "And now I’m offering you a job",
+		"alt": "Webtoon two-shot: Big Star offers the night-road to the short-haired fallen sun",
+		"people": ["daebyeol", "haemosu"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON two-shot, BOTH faces LARGE in the central band. PRIMORDIAL ink-brush aura. NIGHT. Worm’s-eye. ONE DEVICE: a pale ink road between them. LEFT = Big Star standing, looking down, black po, ice-blue collar — photograph on the sheet: REDRAW as webtoon, copy hair and clothes only. SECOND = Haemosu face bones on the fallen sun SITTING, SHORT hair tight bun, NO long tail, white po torn, golden arrow in the chest, looking up, grumpy. One of each, never clone. Blocking: Big Star higher, fallen sun lower. #3B6FBF on Big Star; gold on the arrow. Thick ink, cel shadow. Not photoreal."
+	},
+	{
+		"id": "hek-haewonmek-named",
+		"entry": "Heaven–Earth King",
+		"at": "I’ll call you Haewonmek",
+		"alt": "Intro-card: Haewonmek’s first step, gat and ink-dissolve, webtoon splash",
+		"people": ["haewonmek"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON, MEDIUM CLOSE, figure LARGE. PRIMORDIAL ink-brush: the figure dissolving into sumi at the edges. NIGHT. Dutch, mid-stride. ONE DEVICE: the night-road as a pale seam. LEFT = Haewonmek, face hidden under a wide black gat, only mouth and jaw, black robe, blue sash, coral-red skirt, ink dissolve — copy the illustrated sheet. NEVER show eyes. NEVER long white hair. #6b5b6e on the robe. Thick ink. Not photoreal."
+	},
+	{
+		"id": "hek-dead-bench",
+		"entry": "Heaven–Earth King",
+		"at": "Big Star hangs an empty bench in the dark",
+		"alt": "Webtoon two-shot: Big Star on the empty bench, Haewonmek already walking the hall",
+		"people": ["daebyeol", "haewonmek"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON two-shot, faces LARGE. PRIMORDIAL ink-brush aura. NIGHT, Land of the Dead as graphic black, not a photographed valley. Worm’s-eye. ONE DEVICE: an empty timber bench with an ice-blue seam. LEFT = Big Star sitting on the bench, testing it, black po, ice-blue collar — photograph: REDRAW as webtoon. SECOND = Haewonmek mid-stride at the right third, gat brim, black robe, blue sash, walking away down the hall, mouth only. One of each, never clone. #3B6FBF on the bench; #6b5b6e on the robe. Thick ink, cel shadow. Not photoreal."
+	},
+	{
+		"id": "hek-four-realms",
+		"entry": "Heaven–Earth King",
+		"at": "Four of them, if you're counting",
+		"alt": "All four: Little Star and Haemosu on the warm side, Big Star and Haewonmek on the dark road",
+		"people": ["sobyeol", "haemosu", "daebyeol", "haewonmek"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON four-shot, all FOUR faces LARGE enough to read in the central band, not tiny in a landscape. PRIMORDIAL ink-brush aura, splashed sumi at the edges. SPLIT DEVICE: a hard vertical seam. LEFT HALF the warm side, paper-white and gold: Little Star sitting the hill (white po, maroon sash, wine-red streak) and Haemosu above him in the chariot (LONG white hair, white open po, easy grin). RIGHT HALF the dead road, crushed black and ice-blue: Big Star standing (black po, ice-blue collar, grey moustache) and Haewonmek mid-stride (gat, black robe, blue sash, mouth only). SHEET left to right: LEFT Little Star, SECOND Haemosu, THIRD Big Star, FOURTH Haewonmek. One of each. NEVER clone Haemosu onto Haewonmek. Little Star and Big Star sheets are photographs: REDRAW as webtoon, clothes and hair only. Thick ink, cel shadow, manhwa eyes. Not photoreal, not a lineup, not a catalogue."
+	}
+]

@@ -1,0 +1,43 @@
+[
+	{
+		"id": "kr-wife-shrine",
+		"entry": "Kangrim",
+		"at": "The shrine is fed.",
+		"alt": "Kangrim’s wife feeds the gate-shrine at dusk. He is already turning toward the road.",
+		"people": ["kangrim"],
+		"hat": false,
+		"time": "night",
+		"scene": "NIGHT. INTIMATE two-shot, low three-quarter. A small Korean gate-shrine, one oil lamp. ONE DEVICE: the lamp as a gold ellipse on packed earth. Kangrim tall, thin, wide black gat, face hidden under the brim — only mouth and jaw, black robe over blue and vermilion layers — FACE AND GARMENTS from attached /ch_kangrim.png, ink-brush dissolve at his edges, NEVER eyes clearly visible. His wife is a dark out-of-focus shape at the shrine, undyed hemp, offering rice, no portrait face invented as a named person. He is mid-turn toward the road. #4a4a58 as lamp on the gat brim. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "kr-pond-jump",
+		"entry": "Kangrim",
+		"at": "At the last pond he shut his eyes and jumped.",
+		"alt": "Kangrim shuts his eyes and jumps the last pond. The water has no moon.",
+		"people": ["kangrim"],
+		"hat": false,
+		"time": "night",
+		"manga": true,
+		"scene": "NIGHT. MANGA ACTION, worm’s-eye from the black pond. ONE DEVICE: the water as a hard black plane. Kangrim mid-jump, black robe, wide gat, eyes shut under the brim — FACE from /ch_kangrim.png, no eyes, ink dissolve at edges. Speed lines into the water. No moon. #4a4a58 as a thin real-light edge on the robe, never a glow. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "kr-split",
+		"entry": "Kangrim",
+		"at": "So they split him.",
+		"alt": "In a crushed-black hall Kangrim is pulled in two: a body toward the living desk, a soul toward Yumla’s sleeve.",
+		"people": ["kangrim", "yumla"],
+		"hat": false,
+		"time": "night",
+		"scene": "NIGHT underworld-and-hall. DUTCH, medium. ONE DEVICE: Kangrim as two overlapping silhouettes splitting down a hard vertical, one toward a living timber desk, one toward a purple sleeve. LEFT face of the sheet = Kangrim, gat, hidden eyes, black robe — /ch_kangrim.png. RIGHT = Yumla, purple judge’s robe, orange-red sleeves — FACE from /ch_yumla.png. The magistrate is a faceless bulk at the desk. No gore. The split is a graphic tear in the paint. #7c3aed as the one lamp on Yumla’s sleeve, #4a4a58 on the gat. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "kr-charcoal",
+		"entry": "Kangrim",
+		"at": "Kangrim sat in a stream washing charcoal.",
+		"alt": "Kangrim washes charcoal in a stream. An old man has already stopped to laugh.",
+		"people": ["kangrim"],
+		"hat": false,
+		"time": "day",
+		"scene": "DAY ground, pale stream. MEDIUM, low three-quarter. ONE DEVICE: the stream as a bright band, black charcoal in his hands. Kangrim kneeling, gat brim hiding the eyes, black robe, washing — FACE from /ch_kangrim.png. The old man is a small laughing silhouette on the far bank, no invented portrait. #4a4a58 as cool shade on the gat. Pale paper-white sky. Composed for a 2:1 letterbox crop. No text. No watermark."
+	}
+]

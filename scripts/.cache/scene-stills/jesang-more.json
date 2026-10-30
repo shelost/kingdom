@@ -1,0 +1,56 @@
+[
+	{
+		"id": "jesang-window-song",
+		"entry": "Park Jesang",
+		"at": "Nulji hears it from the window",
+		"alt": "Nulji opens the window he is not supposed to open; the street songs reach the chair first",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Night Moon Palace. MEDIUM CLOSE, FACE LARGE, low three-quarter. ONE device: a paper lattice as a hard vertical, night blue beyond. LEFT of the sheet = Nulji, vermilion silk, Silla open gold crown, one hand on the lattice, opening it anyway, tired mouth, listening. Street lamps as tiny gold bokeh in the blue. #9a3060 as the room lamp on red silk. No crowd. No text. No watermark.",
+		"people": ["nulji"],
+		"with": ["place:moon_palace"],
+		"year": 418
+	},
+	{
+		"id": "jesang-jangsu-window",
+		"entry": "Park Jesang",
+		"at": "Jangsu’s hand is on the window-frame",
+		"alt": "Jangsu at the window; the start of the smile is gone; he has been bitten by his own wording",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Night Pyongyang hall. MEDIUM CLOSE, FACE LARGE, dutch. ONE device: the window-frame as a dark rectangle, night city beyond. LEFT of the sheet = Jangsu, red Goguryeo court silk, kingdom crown, one hand on the timber, grim, the smile gone, already sending horses in his head. A floor lamp the one key. #a03030 on red silk. No text. No watermark.",
+		"people": ["jangsu"],
+		"with": ["place:pyongyang"],
+		"year": 418
+	},
+	{
+		"id": "jesang-dust",
+		"entry": "Park Jesang",
+		"at": "the dust behind them is not weather",
+		"alt": "Jesang shortens the reins; the dust behind is horses",
+		"time": "day",
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER. NOT photoreal. WORM’S-EYE from the dirt under the hooves, hard dutch. ONE device: a dust-ridge diagonal cutting the frame. LEFT = Jesang, magenta-plum po, grey-white beard, shortening the reins mid-gallop, not swearing. SECOND = Bokho, lilac po, looking back. A line of horses dissolving in the dust behind. Speed lines, flung dirt. #8B5A2B on wet silk. East road, mountains southeast. No text. No watermark.",
+		"people": ["jesang", "bokho"],
+		"manga": true,
+		"year": 418
+	},
+	{
+		"id": "jesang-tub",
+		"entry": "Park Jesang",
+		"at": "Water next. A tub",
+		"alt": "They hold Jesang under; he comes up with the same sentence",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. INTIMATE CLOSE, FACE LARGE, worm’s-eye from the water. NOT photoreal. Night Wa yard. ONE device: the tub rim as a black circle, his head breaking it. LEFT of the sheet = Jesang, magenta-plum po soaked, grey-white beard streaming, mouth WIDE on the same sentence, eyes determined not begging. Floor fire the practical key raking up. #8B5A2B on wet silk. Unnamed Wa hands at the frame edge only. No text. No watermark.",
+		"people": ["jesang"],
+		"with": ["place:asuka"],
+		"year": 418
+	},
+	{
+		"id": "jesang-kangrim",
+		"entry": "Park Jesang",
+		"at": "Eraha. Servant",
+		"alt": "Kangrim reads the name; Jesang answers the one question",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. Night after the fire. Intimate two-shot, dutch, FACES LARGE. ONE device: a dark road as a hard line, the post still smoking behind. LEFT of the sheet = Kangrim, the psychopomp, dark coat, reading a name. RIGHT = Jesang, magenta silk burned at the hem, grey-white beard, mouth the last of the sentence, not afraid. One remaining fire the key. #8B5A2B on wet silk. No text. No watermark.",
+		"people": ["kangrim", "jesang"],
+		"year": 418
+	}
+]

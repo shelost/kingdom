@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-30 04:52",
+	"generated": "2026-10-30 15:53",
 	"metrics": [
 		"pacing",
 		"entertainment",
@@ -25,15 +25,15 @@
 	"curve": 2.2,
 	"book": {
 		"episodes": 100,
-		"composite": 57,
+		"composite": 56,
 		"median": 56,
 		"spread": [
 			24,
 			85
 		],
 		"metrics": {
-			"pacing": 62,
-			"entertainment": 62,
+			"pacing": 61,
+			"entertainment": 61,
 			"balance": 58,
 			"completeness": 48,
 			"human": 44,
@@ -47,17 +47,17 @@
 			"ungraded": 42
 		},
 		"totals": {
-			"words": 225992,
-			"narration": 142175,
-			"dialogue": 83817,
-			"koChars": 455199,
-			"lines": 11631,
-			"images": 3825,
-			"widgets": 691,
+			"words": 226579,
+			"narration": 142456,
+			"dialogue": 84123,
+			"koChars": 456357,
+			"lines": 11698,
+			"images": 3882,
+			"widgets": 694,
 			"quotes": 105,
 			"flashbacks": 53,
-			"scenes": 960,
-			"speakers": 764,
+			"scenes": 965,
+			"speakers": 765,
 			"aiHits": 106
 		},
 		"arcs": [
@@ -79,8 +79,8 @@
 				"id": "five-principles",
 				"title": "The Five Precepts",
 				"episodes": 11,
-				"words": 34551,
-				"composite": 59
+				"words": 34661,
+				"composite": 58
 			},
 			{
 				"id": "iron-will",
@@ -142,8 +142,8 @@
 				"id": "silla-tang-war",
 				"title": "Silla-Tang War",
 				"episodes": 14,
-				"words": 18739,
-				"composite": 60
+				"words": 19216,
+				"composite": 59
 			},
 			{
 				"id": "epilogue-2",
@@ -277,7 +277,7 @@
 				"entertainment": 100,
 				"balance": 98,
 				"completeness": 93,
-				"human": 78,
+				"human": 79,
 				"accuracy": 64
 			}
 		},
@@ -758,7 +758,7 @@
 				"composite": 61,
 				"pacing": 88,
 				"entertainment": 90,
-				"balance": 75,
+				"balance": 74,
 				"completeness": 25,
 				"human": 65,
 				"accuracy": 24
@@ -982,11 +982,11 @@
 			"updated": "2026-10-28 03:54",
 			"ranks": {
 				"composite": 9,
-				"pacing": 47,
+				"pacing": 46,
 				"entertainment": 23,
 				"balance": 1,
 				"completeness": 28,
-				"human": 39,
+				"human": 38,
 				"accuracy": 65
 			}
 		},
@@ -1289,9 +1289,9 @@
 			"composite": 48,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 77,
-				"pacing": 56,
-				"entertainment": 51,
+				"composite": 76,
+				"pacing": 55,
+				"entertainment": 50,
 				"balance": 49,
 				"completeness": 65,
 				"human": 13,
@@ -1607,7 +1607,7 @@
 			"ranks": {
 				"composite": 29,
 				"pacing": 74,
-				"entertainment": 54,
+				"entertainment": 52,
 				"balance": 47,
 				"completeness": 7,
 				"human": 57,
@@ -1974,7 +1974,7 @@
 				"composite": 30,
 				"pacing": 21,
 				"entertainment": 16,
-				"balance": 25,
+				"balance": 23,
 				"completeness": 85,
 				"human": 7,
 				"accuracy": 28
@@ -2106,7 +2106,7 @@
 			"composite": 41,
 			"updated": "2026-10-29 02:18",
 			"ranks": {
-				"composite": 92,
+				"composite": 91,
 				"pacing": 9,
 				"entertainment": 93,
 				"balance": 93,
@@ -2264,7 +2264,7 @@
 			"ranks": {
 				"composite": 54,
 				"pacing": 27,
-				"entertainment": 72,
+				"entertainment": 71,
 				"balance": 86,
 				"completeness": 31,
 				"human": 61,
@@ -2504,9 +2504,9 @@
 			"updated": "2026-10-23 02:42",
 			"ranks": {
 				"composite": 5,
-				"pacing": 49,
+				"pacing": 48,
 				"entertainment": 3,
-				"balance": 23,
+				"balance": 21,
 				"completeness": 26,
 				"human": 54,
 				"accuracy": 31
@@ -2753,10 +2753,10 @@
 			"composite": 67,
 			"updated": "2026-10-23 02:42",
 			"ranks": {
-				"composite": 18,
+				"composite": 17,
 				"pacing": 60,
-				"entertainment": 13,
-				"balance": 26,
+				"entertainment": 12,
+				"balance": 24,
 				"completeness": 45,
 				"human": 58,
 				"accuracy": 32
@@ -3059,7 +3059,7 @@
 				"composite": 84,
 				"pacing": 28,
 				"entertainment": 77,
-				"balance": 78,
+				"balance": 77,
 				"completeness": 86,
 				"human": 9,
 				"accuracy": 12
@@ -3337,7 +3337,7 @@
 			"composite": 49,
 			"updated": "2026-10-29 03:42",
 			"ranks": {
-				"composite": 70,
+				"composite": 69,
 				"pacing": 98,
 				"entertainment": 78,
 				"balance": 37,
@@ -3384,7 +3384,7 @@
 				"days": 0,
 				"places": 4,
 				"speakers": 5,
-				"images": 33,
+				"images": 34,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 16,
@@ -3392,7 +3392,7 @@
 				"switches": 88,
 				"dialoguePct": 27,
 				"narrationPct": 73,
-				"stillsPerK": 8.2,
+				"stillsPerK": 8.4,
 				"widgetsPerK": 2.5,
 				"wordsPerScene": 288,
 				"aiPerK": 2.4,
@@ -3641,7 +3641,7 @@
 				"composite": 11,
 				"pacing": 70,
 				"entertainment": 24,
-				"balance": 19,
+				"balance": 17,
 				"completeness": 10,
 				"human": 36,
 				"accuracy": 2
@@ -3923,9 +3923,9 @@
 			"composite": 67,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 19,
+				"composite": 18,
 				"pacing": 42,
-				"entertainment": 52,
+				"entertainment": 51,
 				"balance": 50,
 				"completeness": 3,
 				"human": 55,
@@ -4216,7 +4216,7 @@
 			"ranks": {
 				"composite": 31,
 				"pacing": 81,
-				"entertainment": 43,
+				"entertainment": 42,
 				"balance": 70,
 				"completeness": 8,
 				"human": 45,
@@ -4233,19 +4233,19 @@
 			"year": "408–418",
 			"grade": null,
 			"stats": {
-				"words": 4686,
-				"narration": 2815,
-				"dialogue": 1871,
-				"koChars": 8655,
-				"paragraphs": 125,
-				"dialogueBlocks": 200,
-				"lines": 420,
+				"words": 4796,
+				"narration": 2879,
+				"dialogue": 1917,
+				"koChars": 8866,
+				"paragraphs": 129,
+				"dialogueBlocks": 207,
+				"lines": 432,
 				"questions": 4,
-				"interrupts": 39,
-				"shortLines": 335,
-				"speeches": 4,
+				"interrupts": 37,
+				"shortLines": 346,
+				"speeches": 5,
 				"telegrams": 0,
-				"sentences": 398,
+				"sentences": 407,
 				"sentenceCv": 0.6,
 				"longSentences": 0,
 				"emDashes": 2,
@@ -4255,26 +4255,26 @@
 				"kingNos": 0,
 				"glosses": 0,
 				"quotes": 7,
-				"widgets": 27,
+				"widgets": 28,
 				"flashbacks": 1,
 				"scenes": 23,
 				"days": 0,
-				"places": 9,
+				"places": 10,
 				"speakers": 10,
-				"images": 64,
+				"images": 72,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 11,
 				"boldCloser": true,
-				"switches": 132,
+				"switches": 136,
 				"dialoguePct": 40,
 				"narrationPct": 60,
-				"stillsPerK": 13.7,
+				"stillsPerK": 15,
 				"widgetsPerK": 5.8,
-				"wordsPerScene": 204,
-				"aiPerK": 2.3,
-				"grip": 65,
-				"minutes": 20
+				"wordsPerScene": 209,
+				"aiPerK": 2.6,
+				"grip": 64,
+				"minutes": 21
 			},
 			"outline": [
 				{
@@ -4455,14 +4455,14 @@
 				{
 					"kind": "section",
 					"label": "Wa",
-					"words": 1365,
+					"words": 1475,
 					"at": 3321,
 					"ko": "왜",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "Wa",
-							"words": 1365,
+							"words": 1475,
 							"at": 3321,
 							"ko": "왜",
 							"implicit": true,
@@ -4492,7 +4492,7 @@
 								{
 									"kind": "scene",
 									"label": "The Fire",
-									"words": 286,
+									"words": 396,
 									"at": 3955,
 									"ko": "불"
 								},
@@ -4500,21 +4500,21 @@
 									"kind": "scene",
 									"label": "Chisullyeong",
 									"words": 108,
-									"at": 4241,
+									"at": 4351,
 									"ko": "치술령"
 								},
 								{
 									"kind": "scene",
 									"label": "The Three",
 									"words": 142,
-									"at": 4349,
+									"at": 4459,
 									"ko": "셋"
 								},
 								{
 									"kind": "scene",
 									"label": "The Streets Again",
 									"words": 195,
-									"at": 4491,
+									"at": 4601,
 									"ko": "다시, 거리"
 								}
 							]
@@ -4571,7 +4571,7 @@
 				{
 					"label": "The Fire",
 					"kind": "event",
-					"words": 286,
+					"words": 396,
 					"at": 3955,
 					"tension": 52,
 					"climax": false,
@@ -4581,7 +4581,7 @@
 					"label": "The Streets Again",
 					"kind": "event",
 					"words": 195,
-					"at": 4491,
+					"at": 4601,
 					"tension": 18,
 					"climax": false,
 					"start": false
@@ -4606,21 +4606,21 @@
 			],
 			"metrics": {
 				"pacing": 43,
-				"entertainment": 64,
-				"balance": 45,
-				"completeness": 27,
-				"human": 48,
+				"entertainment": 59,
+				"balance": 37,
+				"completeness": 26,
+				"human": 44,
 				"accuracy": 89
 			},
-			"composite": 44,
-			"updated": "2026-10-30 04:35",
+			"composite": 41,
+			"updated": "2026-10-30 05:53",
 			"ranks": {
-				"composite": 86,
+				"composite": 92,
 				"pacing": 89,
-				"entertainment": 44,
-				"balance": 71,
-				"completeness": 87,
-				"human": 37,
+				"entertainment": 53,
+				"balance": 81,
+				"completeness": 89,
+				"human": 43,
 				"accuracy": 3
 			}
 		},
@@ -4839,10 +4839,10 @@
 			"ranks": {
 				"composite": 22,
 				"pacing": 23,
-				"entertainment": 69,
+				"entertainment": 68,
 				"balance": 52,
 				"completeness": 20,
-				"human": 66,
+				"human": 67,
 				"accuracy": 67
 			}
 		},
@@ -5084,7 +5084,7 @@
 				"composite": 37,
 				"pacing": 64,
 				"entertainment": 17,
-				"balance": 45,
+				"balance": 44,
 				"completeness": 47,
 				"human": 99,
 				"accuracy": 69
@@ -5375,7 +5375,7 @@
 				"composite": 55,
 				"pacing": 99,
 				"entertainment": 4,
-				"balance": 20,
+				"balance": 19,
 				"completeness": 91,
 				"human": 44,
 				"accuracy": 35
@@ -5419,7 +5419,7 @@
 				"days": 0,
 				"places": 2,
 				"speakers": 14,
-				"images": 54,
+				"images": 56,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 5,
@@ -5427,7 +5427,7 @@
 				"switches": 114,
 				"dialoguePct": 39,
 				"narrationPct": 61,
-				"stillsPerK": 10.1,
+				"stillsPerK": 10.5,
 				"widgetsPerK": 2.1,
 				"wordsPerScene": 140,
 				"aiPerK": 3.9,
@@ -5821,21 +5821,21 @@
 			],
 			"metrics": {
 				"pacing": 77,
-				"entertainment": 64,
-				"balance": 91,
+				"entertainment": 63,
+				"balance": 88,
 				"completeness": 72,
 				"human": 29,
 				"accuracy": 61
 			},
-			"composite": 74,
-			"updated": "2026-10-30 04:52",
+			"composite": 73,
+			"updated": "2026-10-30 15:53",
 			"ranks": {
 				"composite": 12,
 				"pacing": 17,
-				"entertainment": 45,
+				"entertainment": 46,
 				"balance": 22,
 				"completeness": 27,
-				"human": 75,
+				"human": 76,
 				"accuracy": 71
 			}
 		},
@@ -6813,9 +6813,9 @@
 				"composite": 94,
 				"pacing": 94,
 				"entertainment": 95,
-				"balance": 76,
+				"balance": 75,
 				"completeness": 52,
-				"human": 76,
+				"human": 77,
 				"accuracy": 4
 			}
 		},
@@ -7033,10 +7033,10 @@
 			"ranks": {
 				"composite": 47,
 				"pacing": 29,
-				"entertainment": 46,
+				"entertainment": 43,
 				"balance": 51,
 				"completeness": 51,
-				"human": 67,
+				"human": 68,
 				"accuracy": 38
 			}
 		},
@@ -7175,12 +7175,12 @@
 			"composite": 48,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 78,
+				"composite": 77,
 				"pacing": 95,
 				"entertainment": 25,
 				"balance": 38,
 				"completeness": 81,
-				"human": 77,
+				"human": 78,
 				"accuracy": 39
 			}
 		},
@@ -7305,7 +7305,7 @@
 			"ranks": {
 				"composite": 27,
 				"pacing": 65,
-				"entertainment": 55,
+				"entertainment": 54,
 				"balance": 48,
 				"completeness": 11,
 				"human": 27,
@@ -7564,8 +7564,8 @@
 			"composite": 49,
 			"updated": "2026-10-30 00:35",
 			"ranks": {
-				"composite": 71,
-				"pacing": 54,
+				"composite": 70,
+				"pacing": 53,
 				"entertainment": 73,
 				"balance": 46,
 				"completeness": 55,
@@ -7755,12 +7755,12 @@
 			"composite": 44,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 87,
+				"composite": 86,
 				"pacing": 97,
 				"entertainment": 59,
 				"balance": 31,
 				"completeness": 97,
-				"human": 79,
+				"human": 80,
 				"accuracy": 41
 			}
 		},
@@ -7881,7 +7881,7 @@
 			"composite": 43,
 			"updated": "2026-10-23 02:42",
 			"ranks": {
-				"composite": 90,
+				"composite": 89,
 				"pacing": 3,
 				"entertainment": 80,
 				"balance": 95,
@@ -8145,11 +8145,11 @@
 			"updated": "2026-10-28 03:54",
 			"ranks": {
 				"composite": 32,
-				"pacing": 57,
+				"pacing": 56,
 				"entertainment": 61,
 				"balance": 54,
 				"completeness": 16,
-				"human": 41,
+				"human": 40,
 				"accuracy": 42
 			}
 		},
@@ -8302,10 +8302,10 @@
 			"ranks": {
 				"composite": 45,
 				"pacing": 39,
-				"entertainment": 47,
-				"balance": 72,
+				"entertainment": 44,
+				"balance": 71,
 				"completeness": 48,
-				"human": 80,
+				"human": 81,
 				"accuracy": 5
 			}
 		},
@@ -8579,7 +8579,7 @@
 				"composite": 40,
 				"pacing": 82,
 				"entertainment": 7,
-				"balance": 15,
+				"balance": 13,
 				"completeness": 95,
 				"human": 31,
 				"accuracy": 74
@@ -8793,7 +8793,7 @@
 			"composite": 69,
 			"updated": "2026-10-23 02:42",
 			"ranks": {
-				"composite": 15,
+				"composite": 14,
 				"pacing": 72,
 				"entertainment": 8,
 				"balance": 9,
@@ -9210,7 +9210,7 @@
 			"updated": "2026-10-28 03:54",
 			"ranks": {
 				"composite": 96,
-				"pacing": 59,
+				"pacing": 58,
 				"entertainment": 91,
 				"balance": 99,
 				"completeness": 62,
@@ -9256,7 +9256,7 @@
 				"days": 0,
 				"places": 3,
 				"speakers": 6,
-				"images": 303,
+				"images": 304,
 				"nsfwImages": 16,
 				"sequences": 0,
 				"openerWords": 15,
@@ -9264,7 +9264,7 @@
 				"switches": 24,
 				"dialoguePct": 26,
 				"narrationPct": 74,
-				"stillsPerK": 198,
+				"stillsPerK": 198.7,
 				"widgetsPerK": 5.9,
 				"wordsPerScene": 510,
 				"aiPerK": 4.6,
@@ -9599,7 +9599,7 @@
 				"entertainment": 88,
 				"balance": 87,
 				"completeness": 6,
-				"human": 73,
+				"human": 74,
 				"accuracy": 14
 			}
 		},
@@ -9641,7 +9641,7 @@
 				"days": 0,
 				"places": 3,
 				"speakers": 7,
-				"images": 366,
+				"images": 367,
 				"nsfwImages": 63,
 				"sequences": 0,
 				"openerWords": 49,
@@ -9649,7 +9649,7 @@
 				"switches": 80,
 				"dialoguePct": 41,
 				"narrationPct": 59,
-				"stillsPerK": 108.8,
+				"stillsPerK": 109.1,
 				"widgetsPerK": 2.1,
 				"wordsPerScene": 259,
 				"aiPerK": 6.2,
@@ -10029,9 +10029,9 @@
 			"composite": 49,
 			"updated": "2026-10-25 05:29",
 			"ranks": {
-				"composite": 72,
-				"pacing": 55,
-				"entertainment": 41,
+				"composite": 71,
+				"pacing": 54,
+				"entertainment": 40,
 				"balance": 56,
 				"completeness": 77,
 				"human": 11,
@@ -10318,7 +10318,7 @@
 				"entertainment": 57,
 				"balance": 28,
 				"completeness": 82,
-				"human": 69,
+				"human": 70,
 				"accuracy": 6
 			}
 		},
@@ -10360,7 +10360,7 @@
 				"days": 1,
 				"places": 6,
 				"speakers": 5,
-				"images": 96,
+				"images": 99,
 				"nsfwImages": 14,
 				"sequences": 0,
 				"openerWords": 19,
@@ -10368,7 +10368,7 @@
 				"switches": 80,
 				"dialoguePct": 30,
 				"narrationPct": 70,
-				"stillsPerK": 18.2,
+				"stillsPerK": 18.8,
 				"widgetsPerK": 2.7,
 				"wordsPerScene": 880,
 				"aiPerK": 2.9,
@@ -10810,10 +10810,10 @@
 			"composite": 44,
 			"updated": "2026-10-27 16:35",
 			"ranks": {
-				"composite": 88,
+				"composite": 87,
 				"pacing": 66,
 				"entertainment": 60,
-				"balance": 73,
+				"balance": 72,
 				"completeness": 83,
 				"human": 100,
 				"accuracy": 78
@@ -10857,7 +10857,7 @@
 				"days": 1,
 				"places": 5,
 				"speakers": 8,
-				"images": 37,
+				"images": 40,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 16,
@@ -10865,7 +10865,7 @@
 				"switches": 70,
 				"dialoguePct": 37,
 				"narrationPct": 63,
-				"stillsPerK": 9.2,
+				"stillsPerK": 9.9,
 				"widgetsPerK": 2.5,
 				"wordsPerScene": 161,
 				"aiPerK": 1.7,
@@ -11233,18 +11233,18 @@
 			"metrics": {
 				"pacing": 64,
 				"entertainment": 87,
-				"balance": 98,
+				"balance": 93,
 				"completeness": 78,
 				"human": 58,
 				"accuracy": 79
 			},
-			"composite": 81,
-			"updated": "2026-10-23 02:42",
+			"composite": 80,
+			"updated": "2026-10-30 15:53",
 			"ranks": {
 				"composite": 3,
-				"pacing": 50,
+				"pacing": 49,
 				"entertainment": 6,
-				"balance": 10,
+				"balance": 18,
 				"completeness": 12,
 				"human": 24,
 				"accuracy": 16
@@ -11530,11 +11530,11 @@
 			"updated": "2026-10-30 00:35",
 			"ranks": {
 				"composite": 66,
-				"pacing": 58,
+				"pacing": 57,
 				"entertainment": 67,
 				"balance": 40,
 				"completeness": 58,
-				"human": 72,
+				"human": 73,
 				"accuracy": 17
 			}
 		},
@@ -11576,7 +11576,7 @@
 				"days": 1,
 				"places": 5,
 				"speakers": 13,
-				"images": 61,
+				"images": 64,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 13,
@@ -11584,7 +11584,7 @@
 				"switches": 124,
 				"dialoguePct": 40,
 				"narrationPct": 60,
-				"stillsPerK": 8.7,
+				"stillsPerK": 9.1,
 				"widgetsPerK": 1.9,
 				"wordsPerScene": 251,
 				"aiPerK": 3.3,
@@ -11956,18 +11956,18 @@
 			"metrics": {
 				"pacing": 69,
 				"entertainment": 67,
-				"balance": 100,
+				"balance": 99,
 				"completeness": 78,
 				"human": 35,
 				"accuracy": 89
 			},
-			"composite": 77,
-			"updated": "2026-10-23 02:42",
+			"composite": 76,
+			"updated": "2026-10-30 15:53",
 			"ranks": {
 				"composite": 6,
 				"pacing": 41,
 				"entertainment": 36,
-				"balance": 3,
+				"balance": 7,
 				"completeness": 13,
 				"human": 63,
 				"accuracy": 7
@@ -12246,7 +12246,7 @@
 				"entertainment": 84,
 				"balance": 58,
 				"completeness": 56,
-				"human": 70,
+				"human": 71,
 				"accuracy": 18
 			}
 		},
@@ -12354,7 +12354,7 @@
 				"composite": 59,
 				"pacing": 96,
 				"entertainment": 27,
-				"balance": 12,
+				"balance": 11,
 				"completeness": 78,
 				"human": 8,
 				"accuracy": 19
@@ -12398,7 +12398,7 @@
 				"days": 0,
 				"places": 2,
 				"speakers": 7,
-				"images": 129,
+				"images": 130,
 				"nsfwImages": 1,
 				"sequences": 0,
 				"openerWords": 19,
@@ -12406,7 +12406,7 @@
 				"switches": 114,
 				"dialoguePct": 42,
 				"narrationPct": 58,
-				"stillsPerK": 19.5,
+				"stillsPerK": 19.6,
 				"widgetsPerK": 2,
 				"wordsPerScene": 368,
 				"aiPerK": 2.9,
@@ -12688,7 +12688,7 @@
 			"composite": 44,
 			"updated": "2026-10-28 01:47",
 			"ranks": {
-				"composite": 89,
+				"composite": 88,
 				"pacing": 77,
 				"entertainment": 62,
 				"balance": 59,
@@ -13071,8 +13071,8 @@
 			"ranks": {
 				"composite": 28,
 				"pacing": 61,
-				"entertainment": 56,
-				"balance": 4,
+				"entertainment": 55,
+				"balance": 3,
 				"completeness": 41,
 				"human": 29,
 				"accuracy": 79
@@ -13116,7 +13116,7 @@
 				"days": 0,
 				"places": 1,
 				"speakers": 15,
-				"images": 55,
+				"images": 56,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 11,
@@ -13124,7 +13124,7 @@
 				"switches": 144,
 				"dialoguePct": 30,
 				"narrationPct": 70,
-				"stillsPerK": 6.8,
+				"stillsPerK": 6.9,
 				"widgetsPerK": 0.5,
 				"wordsPerScene": 239,
 				"aiPerK": 2.2,
@@ -13559,7 +13559,7 @@
 				"composite": 38,
 				"pacing": 34,
 				"entertainment": 37,
-				"balance": 16,
+				"balance": 14,
 				"completeness": 68,
 				"human": 33,
 				"accuracy": 47
@@ -13603,7 +13603,7 @@
 				"days": 0,
 				"places": 1,
 				"speakers": 14,
-				"images": 112,
+				"images": 113,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 5,
@@ -13611,7 +13611,7 @@
 				"switches": 198,
 				"dialoguePct": 37,
 				"narrationPct": 63,
-				"stillsPerK": 9,
+				"stillsPerK": 9.1,
 				"widgetsPerK": 0.6,
 				"wordsPerScene": 203,
 				"aiPerK": 2.1,
@@ -14252,18 +14252,18 @@
 			"metrics": {
 				"pacing": 71,
 				"entertainment": 71,
-				"balance": 96,
+				"balance": 95,
 				"completeness": 75,
 				"human": 52,
 				"accuracy": 70
 			},
-			"composite": 77,
-			"updated": "2026-10-25 04:35",
+			"composite": 76,
+			"updated": "2026-10-30 07:14",
 			"ranks": {
 				"composite": 7,
 				"pacing": 35,
 				"entertainment": 28,
-				"balance": 14,
+				"balance": 15,
 				"completeness": 21,
 				"human": 30,
 				"accuracy": 48
@@ -14404,7 +14404,7 @@
 			"composite": 69,
 			"updated": "2026-10-23 02:42",
 			"ranks": {
-				"composite": 16,
+				"composite": 15,
 				"pacing": 4,
 				"entertainment": 21,
 				"balance": 33,
@@ -14569,7 +14569,7 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 41,
-				"pacing": 51,
+				"pacing": 50,
 				"entertainment": 11,
 				"balance": 35,
 				"completeness": 73,
@@ -15095,7 +15095,7 @@
 			"composite": 49,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 73,
+				"composite": 72,
 				"pacing": 18,
 				"entertainment": 92,
 				"balance": 61,
@@ -15226,7 +15226,7 @@
 			"composite": 48,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 79,
+				"composite": 78,
 				"pacing": 73,
 				"entertainment": 63,
 				"balance": 42,
@@ -15273,7 +15273,7 @@
 				"days": 0,
 				"places": 4,
 				"speakers": 7,
-				"images": 41,
+				"images": 42,
 				"nsfwImages": 11,
 				"sequences": 0,
 				"openerWords": 16,
@@ -15281,7 +15281,7 @@
 				"switches": 52,
 				"dialoguePct": 31,
 				"narrationPct": 69,
-				"stillsPerK": 14.4,
+				"stillsPerK": 14.7,
 				"widgetsPerK": 1.8,
 				"wordsPerScene": 204,
 				"aiPerK": 5.4,
@@ -15511,8 +15511,8 @@
 			"flagged": [],
 			"metrics": {
 				"pacing": 73,
-				"entertainment": 60,
-				"balance": 61,
+				"entertainment": 59,
+				"balance": 59,
 				"completeness": 55,
 				"human": 18,
 				"accuracy": 61
@@ -15522,8 +15522,8 @@
 			"ranks": {
 				"composite": 34,
 				"pacing": 30,
-				"entertainment": 53,
-				"balance": 44,
+				"entertainment": 56,
+				"balance": 43,
 				"completeness": 38,
 				"human": 93,
 				"accuracy": 82
@@ -15685,7 +15685,7 @@
 				"composite": 1,
 				"pacing": 14,
 				"entertainment": 2,
-				"balance": 11,
+				"balance": 10,
 				"completeness": 22,
 				"human": 62,
 				"accuracy": 83
@@ -15834,7 +15834,7 @@
 			"updated": "2026-10-23 03:39",
 			"ranks": {
 				"composite": 4,
-				"pacing": 48,
+				"pacing": 47,
 				"entertainment": 18,
 				"balance": 8,
 				"completeness": 9,
@@ -15991,10 +15991,10 @@
 			"ranks": {
 				"composite": 8,
 				"pacing": 10,
-				"entertainment": 14,
+				"entertainment": 13,
 				"balance": 34,
 				"completeness": 29,
-				"human": 42,
+				"human": 41,
 				"accuracy": 85
 			}
 		},
@@ -16262,9 +16262,9 @@
 				"composite": 42,
 				"pacing": 45,
 				"entertainment": 38,
-				"balance": 79,
+				"balance": 78,
 				"completeness": 34,
-				"human": 68,
+				"human": 69,
 				"accuracy": 51
 			}
 		},
@@ -16448,7 +16448,7 @@
 				"days": 0,
 				"places": 0,
 				"speakers": 9,
-				"images": 47,
+				"images": 48,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 17,
@@ -16456,7 +16456,7 @@
 				"switches": 66,
 				"dialoguePct": 33,
 				"narrationPct": 67,
-				"stillsPerK": 20.6,
+				"stillsPerK": 21,
 				"widgetsPerK": 2.2,
 				"wordsPerScene": 254,
 				"aiPerK": 4.4,
@@ -16632,7 +16632,7 @@
 				"days": 0,
 				"places": 1,
 				"speakers": 5,
-				"images": 28,
+				"images": 29,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 27,
@@ -16640,7 +16640,7 @@
 				"switches": 26,
 				"dialoguePct": 34,
 				"narrationPct": 66,
-				"stillsPerK": 22.2,
+				"stillsPerK": 23,
 				"widgetsPerK": 4.8,
 				"wordsPerScene": 140,
 				"aiPerK": 2.4,
@@ -16766,12 +16766,12 @@
 			"composite": 48,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 80,
+				"composite": 79,
 				"pacing": 19,
 				"entertainment": 76,
-				"balance": 80,
+				"balance": 79,
 				"completeness": 70,
-				"human": 38,
+				"human": 37,
 				"accuracy": 52
 			}
 		},
@@ -16813,7 +16813,7 @@
 				"days": 0,
 				"places": 0,
 				"speakers": 5,
-				"images": 15,
+				"images": 16,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 14,
@@ -16821,7 +16821,7 @@
 				"switches": 30,
 				"dialoguePct": 25,
 				"narrationPct": 75,
-				"stillsPerK": 12.6,
+				"stillsPerK": 13.4,
 				"widgetsPerK": 0.8,
 				"wordsPerScene": 170,
 				"aiPerK": 1.3,
@@ -16902,25 +16902,25 @@
 				{
 					"lean": "up",
 					"by": "A later class",
-					"text": "Questions get answers. That is rarer than it should be."
+					"text": "People cut each other off. That is a scene."
 				}
 			],
 			"flagged": [],
 			"metrics": {
 				"pacing": 62,
-				"entertainment": 55,
-				"balance": 63,
+				"entertainment": 52,
+				"balance": 57,
 				"completeness": 32,
 				"human": 64,
 				"accuracy": 61
 			},
-			"composite": 50,
-			"updated": "2026-10-29 00:37",
+			"composite": 48,
+			"updated": "2026-10-30 07:14",
 			"ranks": {
-				"composite": 68,
-				"pacing": 52,
-				"entertainment": 68,
-				"balance": 43,
+				"composite": 80,
+				"pacing": 51,
+				"entertainment": 72,
+				"balance": 45,
 				"completeness": 63,
 				"human": 19,
 				"accuracy": 88
@@ -17299,11 +17299,11 @@
 			"composite": 49,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 74,
+				"composite": 73,
 				"pacing": 24,
 				"entertainment": 64,
 				"balance": 65,
-				"completeness": 88,
+				"completeness": 87,
 				"human": 23,
 				"accuracy": 21
 			}
@@ -17855,9 +17855,9 @@
 				"composite": 23,
 				"pacing": 71,
 				"entertainment": 30,
-				"balance": 27,
+				"balance": 26,
 				"completeness": 35,
-				"human": 43,
+				"human": 42,
 				"accuracy": 8
 			}
 		},
@@ -17975,7 +17975,7 @@
 			"ranks": {
 				"composite": 62,
 				"pacing": 25,
-				"entertainment": 70,
+				"entertainment": 69,
 				"balance": 92,
 				"completeness": 43,
 				"human": 32,
@@ -18123,9 +18123,9 @@
 			"composite": 50,
 			"updated": "2026-10-23 02:11",
 			"ranks": {
-				"composite": 69,
+				"composite": 68,
 				"pacing": 90,
-				"entertainment": 42,
+				"entertainment": 41,
 				"balance": 88,
 				"completeness": 44,
 				"human": 60,
@@ -18350,7 +18350,7 @@
 				"composite": 44,
 				"pacing": 26,
 				"entertainment": 20,
-				"balance": 5,
+				"balance": 4,
 				"completeness": 99,
 				"human": 28,
 				"accuracy": 91
@@ -18587,7 +18587,7 @@
 			"ranks": {
 				"composite": 82,
 				"pacing": 31,
-				"entertainment": 48,
+				"entertainment": 47,
 				"balance": 85,
 				"completeness": 96,
 				"human": 14,
@@ -18847,9 +18847,9 @@
 			"updated": "2026-10-24 06:00",
 			"ranks": {
 				"composite": 49,
-				"pacing": 53,
+				"pacing": 52,
 				"entertainment": 39,
-				"balance": 74,
+				"balance": 73,
 				"completeness": 49,
 				"human": 53,
 				"accuracy": 55
@@ -19006,7 +19006,7 @@
 				"composite": 24,
 				"pacing": 36,
 				"entertainment": 19,
-				"balance": 6,
+				"balance": 5,
 				"completeness": 74,
 				"human": 64,
 				"accuracy": 93
@@ -19233,9 +19233,9 @@
 				"composite": 35,
 				"pacing": 16,
 				"entertainment": 31,
-				"balance": 17,
-				"completeness": 89,
-				"human": 74,
+				"balance": 16,
+				"completeness": 88,
+				"human": 75,
 				"accuracy": 22
 			}
 		},
@@ -19765,9 +19765,9 @@
 			"composite": 67,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 20,
+				"composite": 19,
 				"pacing": 5,
-				"entertainment": 15,
+				"entertainment": 14,
 				"balance": 29,
 				"completeness": 53,
 				"human": 47,
@@ -20019,7 +20019,7 @@
 			"composite": 42,
 			"updated": "2026-10-30 00:20",
 			"ranks": {
-				"composite": 91,
+				"composite": 90,
 				"pacing": 20,
 				"entertainment": 82,
 				"balance": 96,
@@ -20066,7 +20066,7 @@
 				"days": 0,
 				"places": 1,
 				"speakers": 6,
-				"images": 16,
+				"images": 17,
 				"nsfwImages": 1,
 				"sequences": 0,
 				"openerWords": 19,
@@ -20074,7 +20074,7 @@
 				"switches": 24,
 				"dialoguePct": 30,
 				"narrationPct": 70,
-				"stillsPerK": 10.2,
+				"stillsPerK": 10.8,
 				"widgetsPerK": 2.5,
 				"wordsPerScene": 224,
 				"aiPerK": 4.1,
@@ -20173,19 +20173,19 @@
 			],
 			"metrics": {
 				"pacing": 85,
-				"entertainment": 82,
-				"balance": 90,
+				"entertainment": 80,
+				"balance": 86,
 				"completeness": 33,
 				"human": 27,
 				"accuracy": 70
 			},
-			"composite": 68,
-			"updated": "2026-10-24 06:00",
+			"composite": 66,
+			"updated": "2026-10-30 07:14",
 			"ranks": {
-				"composite": 17,
+				"composite": 20,
 				"pacing": 2,
-				"entertainment": 12,
-				"balance": 24,
+				"entertainment": 15,
+				"balance": 25,
 				"completeness": 59,
 				"human": 82,
 				"accuracy": 57
@@ -20201,20 +20201,20 @@
 			"year": "-19",
 			"grade": "A",
 			"stats": {
-				"words": 2570,
-				"narration": 1862,
-				"dialogue": 708,
-				"koChars": 5276,
-				"paragraphs": 53,
-				"dialogueBlocks": 62,
-				"lines": 97,
-				"questions": 12,
-				"interrupts": 17,
-				"shortLines": 49,
+				"words": 3047,
+				"narration": 2079,
+				"dialogue": 968,
+				"koChars": 6223,
+				"paragraphs": 67,
+				"dialogueBlocks": 95,
+				"lines": 152,
+				"questions": 15,
+				"interrupts": 20,
+				"shortLines": 91,
 				"speeches": 0,
 				"telegrams": 0,
-				"sentences": 145,
-				"sentenceCv": 0.6,
+				"sentences": 187,
+				"sentenceCv": 0.7,
 				"longSentences": 5,
 				"emDashes": 0,
 				"aiCost": 10.5,
@@ -20223,26 +20223,26 @@
 				"kingNos": 0,
 				"glosses": 0,
 				"quotes": 3,
-				"widgets": 8,
+				"widgets": 10,
 				"flashbacks": 0,
-				"scenes": 9,
+				"scenes": 14,
 				"days": 0,
 				"places": 1,
-				"speakers": 6,
-				"images": 9,
+				"speakers": 7,
+				"images": 35,
 				"nsfwImages": 0,
 				"sequences": 0,
 				"openerWords": 23,
 				"boldCloser": true,
-				"switches": 44,
-				"dialoguePct": 28,
-				"narrationPct": 72,
-				"stillsPerK": 3.5,
-				"widgetsPerK": 3.1,
-				"wordsPerScene": 286,
-				"aiPerK": 4.1,
-				"grip": 69,
-				"minutes": 11
+				"switches": 66,
+				"dialoguePct": 32,
+				"narrationPct": 68,
+				"stillsPerK": 11.5,
+				"widgetsPerK": 3.3,
+				"wordsPerScene": 218,
+				"aiPerK": 3.4,
+				"grip": 67,
+				"minutes": 13
 			},
 			"outline": [
 				{
@@ -20254,14 +20254,14 @@
 				{
 					"kind": "section",
 					"label": "The Chest",
-					"words": 817,
+					"words": 1226,
 					"at": 23,
 					"ko": "궤짝",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The Chest",
-							"words": 817,
+							"words": 1226,
 							"at": 23,
 							"ko": "궤짝",
 							"implicit": true,
@@ -20276,15 +20276,29 @@
 								{
 									"kind": "scene",
 									"label": "Golden Gaya",
-									"words": 422,
+									"words": 99,
 									"at": 208,
 									"ko": "금관가야"
 								},
 								{
 									"kind": "scene",
+									"label": "Geumgwan · the yards",
+									"words": 218,
+									"at": 307,
+									"ko": "금관 · 쇠 마당"
+								},
+								{
+									"kind": "scene",
+									"label": "Suro’s hall",
+									"words": 397,
+									"at": 525,
+									"ko": "수로의 전각"
+								},
+								{
+									"kind": "scene",
 									"label": "Ajinpo",
-									"words": 210,
-									"at": 630,
+									"words": 327,
+									"at": 922,
 									"ko": "아진포"
 								}
 							]
@@ -20294,15 +20308,15 @@
 				{
 					"kind": "section",
 					"label": "The Whetstone",
-					"words": 925,
-					"at": 840,
+					"words": 959,
+					"at": 1249,
 					"ko": "숫돌",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "The Whetstone",
-							"words": 925,
-							"at": 840,
+							"words": 959,
+							"at": 1249,
 							"ko": "숫돌",
 							"implicit": true,
 							"kids": [
@@ -20310,22 +20324,43 @@
 									"kind": "scene",
 									"label": "Mount Toham",
 									"words": 218,
-									"at": 840,
+									"at": 1249,
 									"ko": "토함산"
 								},
 								{
 									"kind": "scene",
 									"label": "The Crescent House",
-									"words": 160,
-									"at": 1058,
+									"words": 170,
+									"at": 1467,
 									"ko": "반월의 집"
 								},
 								{
 									"kind": "scene",
+									"label": "The stolen yard",
+									"words": 35,
+									"at": 1637,
+									"ko": "훔친 마당"
+								},
+								{
+									"kind": "scene",
 									"label": "King Namhae’s hall",
-									"words": 547,
-									"at": 1218,
+									"words": 383,
+									"at": 1672,
 									"ko": "남해왕의 궁"
+								},
+								{
+									"kind": "scene",
+									"label": "The six valleys",
+									"words": 85,
+									"at": 2055,
+									"ko": "여섯 골짜기"
+								},
+								{
+									"kind": "scene",
+									"label": "Eighth-month moon",
+									"words": 68,
+									"at": 2140,
+									"ko": "여덟째 달 보름"
 								}
 							]
 						}
@@ -20334,30 +20369,30 @@
 				{
 					"kind": "section",
 					"label": "King",
-					"words": 805,
-					"at": 1765,
+					"words": 839,
+					"at": 2208,
 					"ko": "왕",
 					"kids": [
 						{
 							"kind": "story",
 							"label": "King",
-							"words": 805,
-							"at": 1765,
+							"words": 839,
+							"at": 2208,
 							"ko": "왕",
 							"implicit": true,
 							"kids": [
 								{
 									"kind": "scene",
 									"label": "Surabol · 57",
-									"words": 714,
-									"at": 1765,
+									"words": 748,
+									"at": 2208,
 									"ko": "서라벌 · 57년"
 								},
 								{
 									"kind": "scene",
 									"label": "The First Night",
 									"words": 91,
-									"at": 2479,
+									"at": 2956,
 									"ko": "첫날 밤"
 								}
 							]
@@ -20388,7 +20423,7 @@
 					"label": "Mount Toham",
 					"kind": "event",
 					"words": 218,
-					"at": 840,
+					"at": 1249,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -20396,8 +20431,8 @@
 				{
 					"label": "Surabol · 57",
 					"kind": "event",
-					"words": 714,
-					"at": 1765,
+					"words": 748,
+					"at": 2208,
 					"tension": 0,
 					"climax": false,
 					"start": true
@@ -20406,7 +20441,7 @@
 					"label": "The First Night",
 					"kind": "event",
 					"words": 91,
-					"at": 2479,
+					"at": 2956,
 					"tension": 37,
 					"climax": false,
 					"start": false
@@ -20421,7 +20456,7 @@
 				{
 					"lean": "up",
 					"by": "Someone in the cheap seats",
-					"text": "The life splits cleanly: The Chest 32%, The Whetstone 36%, King 31%. You can feel the years change register."
+					"text": "The life splits cleanly: The Chest 40%, The Whetstone 31%, King 28%. You can feel the years change register."
 				},
 				{
 					"lean": "down",
@@ -20430,25 +20465,25 @@
 				}
 			],
 			"flagged": [
-				"Yuri looks at him for a long moment, and doesn’t either."
+				"Nuri looks at him for a long moment, and doesn’t either."
 			],
 			"metrics": {
-				"pacing": 66,
-				"entertainment": 66,
-				"balance": 94,
+				"pacing": 57,
+				"entertainment": 64,
+				"balance": 81,
 				"completeness": 76,
-				"human": 28,
+				"human": 34,
 				"accuracy": 89
 			},
-			"composite": 74,
-			"updated": "2026-10-24 06:00",
+			"composite": 69,
+			"updated": "2026-10-30 15:53",
 			"ranks": {
-				"composite": 13,
-				"pacing": 46,
-				"entertainment": 40,
-				"balance": 18,
+				"composite": 16,
+				"pacing": 59,
+				"entertainment": 45,
+				"balance": 27,
 				"completeness": 18,
-				"human": 81,
+				"human": 66,
 				"accuracy": 10
 			}
 		},
@@ -20602,7 +20637,7 @@
 				"composite": 2,
 				"pacing": 6,
 				"entertainment": 22,
-				"balance": 13,
+				"balance": 12,
 				"completeness": 4,
 				"human": 83,
 				"accuracy": 23
@@ -20884,7 +20919,7 @@
 			"composite": 49,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 75,
+				"composite": 74,
 				"pacing": 11,
 				"entertainment": 65,
 				"balance": 36,
@@ -21138,7 +21173,7 @@
 				"composite": 39,
 				"pacing": 22,
 				"entertainment": 29,
-				"balance": 21,
+				"balance": 20,
 				"completeness": 92,
 				"human": 12,
 				"accuracy": 58
@@ -21413,7 +21448,7 @@
 				"composite": 10,
 				"pacing": 37,
 				"entertainment": 5,
-				"balance": 7,
+				"balance": 6,
 				"completeness": 39,
 				"human": 17,
 				"accuracy": 97
@@ -21548,7 +21583,7 @@
 			"ranks": {
 				"composite": 36,
 				"pacing": 12,
-				"entertainment": 71,
+				"entertainment": 70,
 				"balance": 68,
 				"completeness": 30,
 				"human": 96,
@@ -21593,7 +21628,7 @@
 				"days": 0,
 				"places": 1,
 				"speakers": 6,
-				"images": 51,
+				"images": 52,
 				"nsfwImages": 2,
 				"sequences": 0,
 				"openerWords": 50,
@@ -21601,7 +21636,7 @@
 				"switches": 12,
 				"dialoguePct": 19,
 				"narrationPct": 81,
-				"stillsPerK": 49.2,
+				"stillsPerK": 50.2,
 				"widgetsPerK": 6.8,
 				"wordsPerScene": 207,
 				"aiPerK": 5.8,
@@ -21922,12 +21957,12 @@
 			"composite": 70,
 			"updated": "2026-10-29 06:46",
 			"ranks": {
-				"composite": 14,
+				"composite": 13,
 				"pacing": 68,
 				"entertainment": 32,
 				"balance": 30,
 				"completeness": 19,
-				"human": 40,
+				"human": 39,
 				"accuracy": 62
 			}
 		},
@@ -22062,8 +22097,8 @@
 			"ranks": {
 				"composite": 64,
 				"pacing": 91,
-				"entertainment": 49,
-				"balance": 77,
+				"entertainment": 48,
+				"balance": 76,
 				"completeness": 36,
 				"human": 18,
 				"accuracy": 98
@@ -22209,12 +22244,12 @@
 			"composite": 49,
 			"updated": "2026-10-24 06:00",
 			"ranks": {
-				"composite": 76,
+				"composite": 75,
 				"pacing": 32,
-				"entertainment": 50,
+				"entertainment": 49,
 				"balance": 84,
 				"completeness": 76,
-				"human": 71,
+				"human": 72,
 				"accuracy": 99
 			}
 		},
@@ -22573,7 +22608,7 @@
 				"composite": 57,
 				"pacing": 69,
 				"entertainment": 99,
-				"balance": 81,
+				"balance": 80,
 				"completeness": 1,
 				"human": 94,
 				"accuracy": 100

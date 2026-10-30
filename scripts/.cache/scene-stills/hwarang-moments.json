@@ -1,0 +1,127 @@
+[
+	{
+		"id": "geomgun-moment",
+		"entry": "Bupmin",
+		"at": "The storehouse goes.",
+		"alt": "Hwarang moment: Geomgun’s face fills a paper-white void, the poisoned cup at his lips, stoic mid-swallow",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume on the face, one hard key raking the cheek, crushed shadow on the far side, visceral, emotionally revealing. Intimate ECU, slight dutch, face filling the central band. Geomgun, young storehouse clerk: spare Korean face from the attached portrait, stubborn mouth. Living eyes: WHITE sclera, a catchlight, BLACK ink-black iris and pupil — never the whole eyeball solid black. Low Korean nose. Black crescent-moon headband, charcoal-grey po, small jougwan. A NEW expression — not the portrait’s small smile: STOIC, KNOWING, the cup already AT HIS LIPS, mid-swallow, no tremble of the mouth, sweat on the temple, jaw locked, he drinks the poison on purpose. Lower edge of frame, sharp in the foreground: a dark clay cup against his mouth, knuckles white. Charcoal as the only accent. Radial focus lines in the white converging on his eyes. Hair a little out of place. ONE person. No storehouse. No clerks. No text. No watermark.",
+		"people": ["geomgun"],
+		"year": 562,
+		"time": "day"
+	},
+	{
+		"id": "gwisan-moment",
+		"entry": "Bupmin",
+		"at": "The hills go.",
+		"alt": "Hwarang moment: wounded Gwisan’s face fills a paper-white void — bloodied, arrow in him, life slamming back into living eyes, 임전무퇴",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow, visceral. Intimate ECU, hard dutch, the FACE filling almost the whole central band. Gwisan, young Hwarang: FACE ONLY from the attached portrait (smooth Korean face, red liner at the outer eye, cyan crescent-moon headband, leaf-green po, small jougwan). He is BLOODIED and INJURED: dirt and sweat, blood at the lip and down the chin, the green po dark with a wound at the side. An arrow shaft cropped hard at the left edge, fletching sharp in the foreground, still in him. He is on one knee — a shoulder and the knee cropped. A NEW expression: the eyes were going GLASSY from the wound, then LIFE SLAMS BACK. Living eyes: WHITE sclera, catchlight, BLACK pupil — never solid-black eyeballs. Brows slammed down. Jaw locked. A determined snarl that is NOT crying. 임전무퇴. Leaf-green #3d8c4a as the only cloth accent. Radial focus lines in the white slamming into those eyes. Hair messy, headband tails whipping. ONE person. No hills. No fort. No army. No text. No watermark.",
+		"people": ["gwisan"],
+		"year": 612,
+		"time": "day"
+	},
+	{
+		"id": "chuhang-moment",
+		"entry": "Bupmin",
+		"at": "The gap goes.",
+		"alt": "Hwarang moment: Chuhang’s face fills a paper-white void, dust and blood, deciding to stay and die with Gwisan",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, slight dutch, face filling the central band. Chuhang, young Hwarang: FACE ONLY from the attached portrait (longer wavy brown-black hair, teal crescent-moon headband with a dark swirl, slate-blue po, small jougwan). Dust and a graze of blood on the cheek. A NEW expression — the lazy half-smile is GONE: mouth set, living eyes WHITE sclera BLACK pupil LOCKING, a dry decided look of a man who has just chosen to die with his friend. He is about to say he is not going either. Low Korean nose. Hair whipping as if he has just turned. Slate-blue as the only cloth accent. Radial focus lines on the eyes. ONE person. No gap. No wall. No army. No text. No watermark.",
+		"people": ["chuhang"],
+		"year": 612,
+		"time": "day"
+	},
+	{
+		"id": "alchun-moment",
+		"entry": "Bupmin",
+		"at": "The mountain goes.",
+		"alt": "Hwarang moment: skinny frightened Alchun’s face fills a paper-white void — fear turning into the lunge",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow, emotionally revealing. Intimate ECU, hard dutch, face filling the central band, as if he is already leaving the pine. Alchun as a BOY of FIFTEEN, the SKINNIEST, no grey, no scar: FACE ONLY from the attached hwarang portrait (rounder Korean face, teal crescent-moon headband, teal po over a crimson collar, small jougwan) but OVERRIDE the confident body — thin, a boy’s neck, frightened. A NEW expression: fear then the decision to go in empty-handed — mouth opening on a shout that is still scared, living eyes WHITE sclera BLACK pupil bright and wet, not a feral catalog grin yet. Hair and pheasant feathers in motion. Teal and one crimson flash at the collar. Radial focus lines. Speed streaks in the white behind him. ONE person. No mountain. No tiger. No text. No watermark.",
+		"people": ["alchun"],
+		"year": 611,
+		"time": "day"
+	},
+	{
+		"id": "yushin-moment",
+		"entry": "Bupmin",
+		"at": "The sword goes still.",
+		"alt": "Hwarang moment: boy Yushin’s face fills a paper-white void, standing tall inside himself, deciding not to draw",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, slight dutch from below so he still READS TALL, face filling the central band. Yushin as a BOY, beardless: FACE ONLY from the attached hwarang portrait (Korean face, blue crescent-moon headband, Silla-blue po, small jougwan). IGNORE any sword or armour on that portrait — no blade in this frame, no katana, no tsuba. A NEW expression: DEFENDANT stillness, the drawn frown unlocking into TRUST, living eyes WHITE sclera BLACK pupil locking, jaw still hard. He could draw. He does not. The stillness IS the action. Sweat at the temple. Confucian marshal blue #2A5FB8 as the only cloth accent. Faint radial focus lines. ONE person. No mountain. No sword. No text. No watermark.",
+		"people": ["yushin"],
+		"year": 611,
+		"time": "day"
+	},
+	{
+		"id": "bidam-moment",
+		"entry": "Bupmin",
+		"at": "The beads go still.",
+		"alt": "Hwarang moment: boy Bidam’s face fills a paper-white void, beads stopped in the fist, the count interrupted",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, slight dutch, face filling the central band. Bidam as a BOY: FACE ONLY from the attached hwarang portrait (long black hair, purple crescent-moon headband, purple outer robe over black inner, small jougwan). A NEW expression — not a serene monk: living eyes WHITE sclera BLACK pupil WIDE, mouth slightly open, the count interrupted by something huge. Lower edge: 108 prayer beads STOPPED in a fist, sharp in the foreground, one bead still between two fingers. Navy #141C2E as specular on the beads, never a glow. Hair a little undone. Radial focus lines on the eyes. ONE person. No mountain. No tiger. No text. No watermark.",
+		"people": ["bidam"],
+		"year": 611,
+		"time": "day"
+	},
+	{
+		"id": "chunchu-moment",
+		"entry": "Bupmin",
+		"at": "The pines go.",
+		"alt": "Hwarang moment: young Chunchu’s face fills a paper-white void, knife hanging, deciding not to kill",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, hard dutch, face filling the central band, NOT static — a turn of the head, the knife dropping. Young Chunchu: FACE ONLY from the attached hwarang portrait (Korean face, magenta crescent-moon headband with a gold crescent, magenta-crimson po). IGNORE the portrait’s crossed arms. A NEW expression — the knowing smile going STILL, living eyes WHITE sclera BLACK pupil choosing, not a smug smirk: he could take the head, and he will not. Lower edge: a knife hanging in a loose fist, a plum blossom sharp beside it as if about to be tied. Magenta #D8258C as the only cloth accent. Radial focus lines. ONE person. No pines. No deer. No text. No watermark.",
+		"people": ["chunchu"],
+		"year": 618,
+		"time": "day"
+	},
+	{
+		"id": "sadaham-moment",
+		"entry": "Bupmin",
+		"at": "The river goes.",
+		"alt": "Hwarang moment: Sadaham’s face fills a paper-white void, chin up, locking on the swear",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, slight dutch from below, face filling the central band, chin already UP. SAME AGE as the young hwarang in the river-stone still: long black hair, defined jaw, teen-to-young-adult — NOT a child, NOT chubby cheeks. FACE from the attached portrait. Ice-blue po, magenta sash, black crescent-moon headband. A NEW expression — a Luffy-loud determined grin that is also serious, living eyes WHITE sclera BLACK pupil locking on the swear. Lower edge: a knife, a flat grey stone. Ice-blue #6fa8ff as the only cloth accent. Radial focus lines. Hair in a little wind. ONE person. No river. No other boy. No text. No watermark.",
+		"people": ["sadaham"],
+		"year": 561,
+		"refs": ["/temp/sadaham-stone-cut.jpg"],
+		"refsNote": "AGE AND FACE ONLY: same young-hwarang age — long hair, defined jaw, already tall, NOT a child; IGNORE the river, the stone, the poses and the clothes",
+		"time": "day"
+	},
+	{
+		"id": "mugwan-moment",
+		"entry": "Bupmin",
+		"at": "He does not take the knife.",
+		"alt": "Hwarang moment: Mugwan’s face fills a paper-white void, quiet and decided, not taking the knife",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, slight dutch, face filling the central band. SAME AGE as the young hwarang in the river-stone still: long black hair, quieter defined face, teen-to-young-adult — NOT a child, NOT chubby cheeks. FACE from the attached portrait. Black crescent-moon headband, cream po with a dusty-rose collar and sash. A NEW expression — quiet, dry, decided, not a smile: living eyes WHITE sclera BLACK pupil looking at his friend, not at the knife. Loyalty as stillness. Dusty-rose as the only cloth accent. Faint radial focus lines. ONE person. No river. No knife in his hand. No text. No watermark.",
+		"people": ["mugwan"],
+		"year": 561,
+		"refs": ["/temp/sadaham-stone-cut.jpg"],
+		"refsNote": "AGE AND FACE ONLY: same young-hwarang age — long hair, defined jaw, already tall, NOT a child; IGNORE the river, the stone, the poses and the clothes",
+		"time": "day"
+	},
+	{
+		"id": "bangul-moment",
+		"entry": "Hwangsan Field",
+		"at": "The field goes.",
+		"alt": "Hwarang moment: Bangul’s face fills a paper-white void, young and in a hurry, deciding to ride first",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, hard dutch, face filling the central band, as if already riding. Bangul, fifteen: FACE ONLY from the attached portrait (square Korean face, crimson crescent-moon headband with long red tails, white po over a sky-blue inner collar, small jougwan). IGNORE the portrait’s crossed arms. A NEW expression — young, brave, in a hurry: jaw set, a reckless almost-grin that is not a smile, living eyes WHITE sclera BLACK pupil on a field that is no longer there. 임전무퇴. Hair and long red headband tails whipping hard. No helm. Crimson as the only cloth accent. Radial focus lines. Speed streaks in the white. ONE person. No yellow field. No army. No horse. No text. No watermark.",
+		"people": ["bangul"],
+		"year": 660,
+		"time": "day"
+	},
+	{
+		"id": "gwanchang-moment",
+		"entry": "Hwangsan Field",
+		"at": "The well goes.",
+		"alt": "Hwarang moment: Gwanchang’s wet face fills a paper-white void, furious at being alive, locking into the ride-back",
+		"style": "moment",
+		"scene": "HWARANG MOMENT painted like bidam-defiance: oil-glazed volume, one hard key, crushed shadow. Intimate ECU, slight dutch, face filling the central band. Gwanchang, sixteen: FACE ONLY from the attached portrait (smooth Korean face, Silla-blue crescent-moon headband, white po with a crimson collar and crimson sash). A NEW expression — not the portrait’s easy smile: wet hair plastered to the brow, well-water dripping off the chin, FURIOUS at being sent home alive, then the fury LOCKING into riding back. 임전무퇴. Living eyes WHITE sclera BLACK pupil (never purple), burning. No helm. Lower edge: wet hands, well-water dripping, sharp in the foreground. Crimson as the only cloth accent. Radial focus lines. Water droplets catching light. ONE person. No well. No army. No field. No text. No watermark.",
+		"people": ["gwanchang"],
+		"year": 660,
+		"time": "day"
+	}
+]

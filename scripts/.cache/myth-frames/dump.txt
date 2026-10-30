@@ -1,0 +1,783 @@
+
+######## [0] Exile / 유배 | logline: [object Object]
+
+0 P: <b>Queen Satek</b> dies, and the king, her son, loses the right to say no.
+   KO: <b>사택왕후</b>가 승하한다. 그리고 그 아들인 왕은 ‘안 된다’고 말할 권리를 잃는다.
+1 map: {"kind":"map","year":655,"places":["mugun","danghang"]}
+2 P: Three years of mourning, by the rite. The king may not judge, may not sign, may not overturn. Everyone in Sabi knows exactly how long three years is, and exactly what can be done inside them.
+   KO: 예법대로 삼년상이다. 그동안 왕은 판결할 수 없고, 서명할 수 없고, 뒤집을 수 없다. 사비의 누구나 삼 년이 얼마나 긴지 정확히 알고, 그 안에서 무엇을 할 수 있는지도 정확히 안다.
+3 quote: {"kind":"quote","html":"Ninth day of the first month, year of the Wood Tiger. Satek Jijuk of Naji Fortress, grieving that the body’s days go so easily and its months come back so hard, cut gold to build a precious hall and carved jade to raise a treasure pagoda.","ko":"갑인년 정월 초아흐레, 나지성의 사택지적은 몸의 날이 
+4 P: Minister Satek carved that last year, grieving his own short days. He knows what mourning is good for.
+   KO: 사택지적이 지난해 제 짧은 날을 서러워하며 새긴 글이다. 그는 슬픔이 어디에 쓸모 있는지 안다.
+5 P: The Queen was Satek. Her death removes the clan’s hand from the king’s sleeve, and the clan understands, before the funeral rites are finished, that the sleeve is now free.
+   KO: 왕후는 사택이었다. 그의 죽음으로 왕의 소매에서 가문의 손이 떨어져 나간다. 그리고 가문은 장례가 끝나기도 전에, 그 소매가 이제 자유롭다는 것을 알아차린다.
+6 P: With her gone, the clan has one worry left. The king owns a man who cannot be bought: Hundred-Victories <b>Gyebek</b>. And Gyebek owns a horse.
+   KO: 왕후가 없으니 가문에 남은 걱정은 하나다. 왕에게는 돈으로 살 수 없는 사내가 있다. 백승 <b>계백</b>. 그리고 계백에게는 말이 있다.
+7 P: They have watched him work. On the border, Gyebek earned his nickname mostly one way. He leaves the line to other men and goes looking for the general. His black horse, Gomanari, is the fastest thing on four legs in Samhan. Gyebek rides him flat along the neck like a thrown knife, the blade reversed along his forearm. The general sees a black shape where the field was empty. He starts to turn his horse, and does not finish turning. One cut on the pass. By the time the escort draws, the black horse is a speck on the far ridge. An army stands in a field with nobody left to tell it what to do.
+   KO: 그들은 그가 일하는 걸 본 적이 있다. 국경에서 계백이 그 별명을 얻은 방식은 대개 하나였다. 진은 남들에게 맡기고, 그는 장수를 찾아간다. 검은 말 고마나리는 삼한에서 네 발 달린 것 중 가장 빠르다. 계백은 던진 칼처럼 그 목에 납작 엎드려 달린다. 칼날은 거꾸로 쥐어 팔뚝을 따라 눕혔다. 장수는 비어 있던 들판에 검은 것이 나타난 걸 본다. 말머리를 돌리기 시작하고, 끝내 다 돌리지 못한다. 스치며 한 번 벤다. 호위들이 칼을 뽑을 즈음 검은 말은 먼 능선 위의 점이다. 한 군대가, 무엇을 하라고 말해 줄 사람 하나 없이 들판에 서 있다.
+8 D[eldersatek]: He doesn’t ride at armies. / He rides at one man. / When the mourning’s over, whose house do you reckon that horse turns toward.
+   KO: 그 자는 군대한테 달려드는 게 아니오. / 한 사람한테 달려들지. / 상이 끝나믄, 그 말머리가 어느 집 쪽으루 돌 것 같슈.
+9 P: Gyebek has no clan. That is the whole problem. He has a wife the king found for him, and a boy and a girl who carry the name the king made up. He took the wife and the name the way he takes orders, and has kept both. A man with a clan can be bargained with: you find out what his family wants and give them some of it. A man with no clan wants only what the king wants, and there is nothing to buy.
+   KO: 계백에게는 가문이 없다. 그게 문제의 전부다. 왕이 짝지어 준 아내가 있고, 왕이 지어 준 이름을 단 아들 하나, 딸 하나가 있다. 그는 아내도 이름도 명령 받듯 받았고, 둘 다 지켜 왔다. 가문이 있는 사내와는 흥정이 된다. 그 집안이 뭘 원하는지 알아내서 조금 쥐여 주면 된다. 가문이 없는 사내는 왕이 원하는 것만 원한다. 살 게 없다.
+10 scene: {"kind":"scene","label":"The Monastery","ko":"산사"}
+11 P: So the two largest houses in Baekje meet, which has not happened in living memory except across a body.
+   KO: 그리하여 백제에서 가장 큰 두 집안이 마주 앉는다. 살아 있는 사람의 기억으로는, 주검을 사이에 두지 않고 그런 일이 있었던 적이 없다.
+12 P: They meet at night, at a monastery that belongs to neither of them, and each brings the same number of men, counted twice at the gate by both sides.
+   KO: 밤에, 어느 쪽 것도 아닌 절에서 만난다. 양쪽 다 같은 수의 사람을 데려오고, 그 수는 문간에서 양쪽이 두 번씩 센다.
+13 D[eldersatek]: Lord Yunbi. How many generations have we been at this?
+   KO: 연비 공. 우리가 이러고 지낸 지 몇 대째요?
+14 D[elderyunbi]: Four. / Two of the three who died at the lantern festival last year were my nephews.
+   KO: 사대유. / 작년 등절에 죽은 셋 중 둘이 내 조카였소.
+15 D[eldersatek]: One of them was my grandson.
+   KO: 하나는 내 손자였고.
+16 P: Neither of them apologises. Nobody expected it and it would have ended the meeting.
+   KO: 어느 쪽도 사과하지 않는다. 아무도 기대하지 않았고, 했다면 그 자리로 끝났을 것이다.
+17 P: Halfway through the wine, a servant finds a second set of footprints behind the monastery screen — too small for the counted guards, too careful for a pilgrim. Yunbi’s man and Satek’s man look at each other and, for once, do not accuse. Someone is listening for a third house. Or for the king.
+   KO: 술이 반도 안 갔을 때, 종이 사찰 병풍 뒤에서 발자국 한 벌을 더 찾는다 — 세어 둔 호위치고는 너무 작고, 순례치고는 너무 조심스럽다. 연비의 사람과 사택의 사람이 서로를 보고, 이번만큼은 서로를 탓하지 않는다. 누군가 세 번째 집을 듣고 있다. 아니면 임금을.
+18 D[eldersatek]: Spill the cups. / Tonight the doors matter more than the words.
+   KO: 잔을 엎으시오. / 오늘 밤은 말보다 문이 중요하오.
+19 D[elderyunbi]: So why did you send for me tonight.
+   KO: 그런데 오늘은 왜 부르셨소.
+20 D[eldersatek]: His Majesty has more than forty sons. / Where do you imagine he means to seat them.
+   KO: 폐하께서 아드님이 마흔이 넘습니다. / 그 애들을 어디에 앉히실 생각이겠소.
+21 D[elderyunbi]: …In our chairs.
+   KO: …우리 의자에.
+22 D[eldersatek]: In the chairs of all eight houses.
+   KO: 여덟 집 전부의 의자에.
+23 P: It goes quiet. Outside, the two sets of men are standing apart in the courtyard, arranged by habit into the shape of a fight.
+   KO: 조용해진다. 밖에서는 두 편의 사람들이 마당에 떨어져 서 있다. 버릇대로, 싸움의 모양으로.
+24 D[elderyunbi]: We will destroy each other and lose everything, I reckon. / …For how long.
+   KO: 우리끼리 싸우다 다 망하겄구려. / …얼마 동안이오.
+25 D[eldersatek]: As long as it takes. / After that we go back to the way we were.
+   KO: 필요한 만큼. / 그 뒤엔 다시 하던 대로 하십시다.
+26 D[elderyunbi]: Agreed. / What gets removed first.
+   KO: 좋소. / 먼저 무엇을 치우겠소.
+27 D[eldersatek]: The one with no house.
+   KO: 가문 없는 것부터.
+28 P: They do not say his name at the table. Two houses that have not agreed on anything since before the capital moved agree, in under an hour, on one soldier with no family — and the agreement is written down nowhere, because agreements like that never are.
+   KO: 그들은 상 위에서 그의 이름을 부르지 않는다. 도읍을 옮기기 전부터 어떤 것에도 합의한 적 없는 두 집안이, 한 시진도 안 되어 가문 없는 군인 하나를 두고 합의한다. 그 합의는 어디에도 적히지 않는다. 그런 합의는 원래 적히지 않는다.
+29 D[eldersatek]: There is no price on that man.
+   KO: 저 사내는 값이 안 붙습니다.
+30 D[eldersatek]: Things without a price get removed.
+   KO: 값이 안 붙는 물건은 치웁니다.
+31 scene: {"kind":"scene","label":"The Offer","ko":"제안"}
+32 P: They try the ordinary way first: they offer him a name. A real one, an old one, the eighth branch of a minor house, papers and a grave-line and ancestors, and a clan chair at the end of it for his son. It is a serious offer, and it is the only thing he has ever wanted.
+   KO: 먼저 통상적인 방법을 쓴다. 이름을 준다. 진짜 이름을, 오래된 이름을. 작은 집안의 여덟째 갈래, 문서와 산소와 조상, 그리고 그 끝에 아들이 앉을 가문의 의자까지. 진지한 제안이고, 그가 평생 원해 온 단 하나의 것이다.
+33 D[eldersatek]: Think of the boy, son. / He grows up with a name the king invented. Every door in Sabi will know it.
+   KO: 아이를 생각허게. / 임금이 지어낸 이름 달구 클 걸세. 사비 문이란 문은 다 그걸 알 테구.
+34 D[gyebek]: I have thought of him. / …I already have one.
+   KO: 생각했습니다. / …이름은 이미 하나 있습니다.
+35 D[eldersatek]: The king made that one up.
+   KO: 그건 임금이 지어 준 것 아닌가.
+36 D[gyebek]: Yes. Which is why it is owed to someone.
+   KO: 예. 그래서 갚아야 할 데가 있는 겁니다.
+37 scene: {"kind":"scene","label":"The Drill Ground","ko":"연병장"}
+38 P: The arrow comes through a tent wall at the Ungjin drill ground and takes the man standing next to him, who was taller. Nobody is ever charged. The fletching is Baekje army issue, which narrows it to about nine thousand people, which is the point of using it.
+   KO: 웅진 훈련장에서 화살이 장막을 뚫고 들어와, 그의 옆에 서 있던 더 키 큰 사내를 데려간다. 아무도 처벌받지 않는다. 화살깃은 백제 관군의 것이고, 그러면 범위가 구천 명쯤으로 좁혀지는데, 그것을 쓴 이유가 바로 그것이다.
+39 P: He stops eating food he has not watched being cooked. He sleeps in a different room each night, which the ministers immediately report to the regency as the behaviour of a man planning something.
+   KO: 그는 만드는 것을 보지 않은 음식은 먹지 않는다. 매일 밤 다른 방에서 잔다. 재상들은 그것을 즉시 무언가를 꾸미는 자의 행실이라고 섭정에 고한다.
+40 P: One minister comes to see him: Sunchung, the man at court who asks the questions nobody else will.
+   KO: 찾아오는 대신은 하나다. 성충. 조정에서 아무도 묻지 않는 것을 묻는 사람이다.
+41 D[seongchung]: General. You should be away from here. / Half a year. Until His Majesty is out of mourning.
+   KO: 장군. 나가 계시는 게 낫습니다. / 반년만. 폐하께서 상을 마치실 때까지.
+42 D[gyebek]: …I don’t run.
+   KO: …도망은 안 합니다.
+43 D[seongchung]: Which is exactly how they win.
+   KO: 그러니까 저들이 이기는 겁니다.
+44 P: The truce holds exactly as long as it needs to. Four generations of blood, suspended for the length of one signature, and both houses will go back to burning each other’s carts before the year is out.
+   KO: 휴전은 필요한 만큼만 간다. 사대에 걸친 피가 서명 하나의 길이만큼 멈춘다. 두 집안은 해가 가기 전에 다시 서로의 수레를 태울 것이다.
+45 scene: {"kind":"scene","label":"The Sealed Order","ko":"봉인된 교서"}
+46 P: Gyebek is summoned to the hall and told to kneel, and the order is read out over his head.
+   KO: 계백은 대전으로 불려 나와 무릎을 꿇으라는 말을 듣고, 명이 그의 머리 위로 읽혀 내려간다.
+47 P: The order is genuine. That is the craftsmanship of it. It bears the royal seal, because a king in mourning leaves his seal with the Assembly so that the country does not stop, and the Assembly has had it for four months.
+   KO: 명은 진짜다. 그 점이 이 일의 솜씨다. 옥새가 찍혀 있다. 상중의 왕은 나라가 멈추지 않도록 옥새를 정사암 회의에 맡기고, 회의는 그것을 넉 달째 쥐고 있었다.
+48 P: It is read with the king’s formula and the king’s seal, but not in the king’s voice. <b>Minister Satek</b> holds the Assembly’s borrowed stamp.
+   KO: 왕의 문구로, 왕의 옥새로 읽힌다. 다만 왕의 목소리는 아니다. 정사암에 맡겨 둔 옥새는 <b>사택지적</b>의 손에 있다.
+49 D[ministersatek]: The seal is set. / I read this in the Assembly’s name. / Gyebek is hereby sent into exile!
+   KO: 옥새가 찍혔다. / 정사암 회의의 이름으로 읽는다. / 계백을 유배에 처한다!
+50 D[chunbok]: …It is His Majesty’s will.
+   KO: …폐하의 뜻입니다.
+51 P: Remember the young Satek who just called it His Majesty’s will. He has small feet, and he walks very carefully. He will say worse things in His Majesty’s name, later, to a much bigger king.
+   KO: 방금 ‘전하의 뜻’이라 말한 사택 집안 젊은이를 기억해 두라. 발이 작고, 아주 조심스럽게 걷는 사내다. 그는 나중에, 훨씬 큰 임금 앞에서, 전하의 이름으로 더한 말을 한다.
+52 D[gyebek]: His Majesty is in mourning. / He cannot will anything.
+   KO: 폐하께서는 상중이십니다. / 아무것도 뜻하실 수 없습니다.
+53 P: Nobody answers him. He is correct, and it is not the kind of correct that helps.
+   KO: 아무도 대답하지 않는다. 그의 말이 맞다. 다만 도움이 되는 종류의 맞음은 아니다.
+54 P: He is put on the boat the same afternoon. Satek water at the berth; a Yunbi winter contract in the captain’s sleeve. Even exile borrows a clan harbour.
+   KO: 그날 오후 바로 배에 오른다. 선석은 사택의 물이고, 선장의 소매에는 윤비의 겨울 계약이 있다. 유배조차 가문의 항구를 빌린다.
+55 P: His wife is at the berth with a bundle and both children. Nobody sent for her. In Sabi, news of a sealed order travels faster than the order.
+   KO: 부두에 아내가 보따리와 두 아이를 데리고 와 있다. 아무도 부르지 않았다. 사비에서는 봉인된 교서의 소식이 교서보다 빨리 돈다.
+56 D[undefined]: How long.
+   KO: 얼마나유.
+57 D[gyebek]: I do not know.
+   KO: 모르오.
+58 D[undefined]: Guess. For the children. / Say any number.
+   KO: 아무 거라두유. 애들한테 해 줄 말. / 아무 숫자나 말해 봐유.
+59 D[gyebek]: I do not know the number. / I will not give them a wrong one.
+   KO: 숫자를 모르오. / 틀린 걸 줄 수는 없소.
+60 D[undefined]: …No. You wouldn’t.
+   KO: …그렇쥬. 당신은 안 그러지.
+61 P: The boy asks if Father is going to war. Gyebek says no, because it is not a war. It is the only question all day he can answer exactly.
+   KO: 아들이 아버지 전쟁 가느냐고 묻는다. 계백은 아니라고 한다. 전쟁이 아니니까. 그날 정확히 대답할 수 있었던 질문은 그것 하나뿐이다.
+62 scene: {"kind":"scene","label":"Sabi","ko":"사비"}
+63 P: In Sabi, the order comes back to the king that evening, to be filed. That is the insult. His own seal sits at the bottom, a little crooked.
+   KO: 사비에서는 그날 저녁, 교서가 정리하라고 왕에게 돌아온다. 그게 모욕이다. 맨 아래에 그의 옥새가 조금 비뚤게 찍혀 있다.
+64 D[euija]: Who. / Who used my seal — / Who took my man —
+   KO: 누가. / 누가 내 옥새로 — / 누가 내 사람을 —
+65 D[ministersatek]: Your Majesty… the Assembly— / In mourning the council—
+   KO: 폐하… 정사암이— / 상중에는 회의가—
+66 D[euija]: Minister Satek! / I swear I’ll just— overturn the whole lot of them like Gesomun did!! / You put my man on a boat? You used my mourning as a gap?
+   KO: 사택지적! / 내가 아주 그냥! 개소문처럼 확~~~ 엎어버려야지!! / 내 사람을 배에 실어? 내 상을 틈으로 쓰고?
+67 D[euija]: Minister. How many days are left of my rite?
+   KO: 지적. 내 상이 며칠 남았느냐.
+68 D[ministersatek]: …Nine hundred and seventy-two, Majesty.
+   KO: …구백일흔이틀이옵니다, 폐하.
+69 D[euija]: Good. Count them. Out loud, at my door, every morning, so I never lose one. / The morning it reaches nothing, I call the Assembly. All eight houses. Every chair. / Then I send a boat. Well? What are you waiting on? Start.
+   KO: 좋다. 세거라. 매일 아침 내 문 앞에서, 소리 내어. 하루도 잃지 않게. / 그게 바닥나는 아침에 정사암을 부른다. 여덟 가문 전부. 의자란 의자 다. / 그다음에 배를 보낸다. 뭐 혀? 시작혀.
+70 D[ministersatek]: …Nine hundred and seventy-two.
+   KO: …구백일흔이틀.
+71 P: Euija laughs first, the way he always does. Then he makes the minister say it again.
+   KO: 의자가 먼저 웃는다. 늘 그렇듯이. 그러고는 지적에게 한 번 더 말하게 한다.
+72 scene: {"kind":"scene","label":"Tamla","ko":"탐라"}
+73 P: He wakes on a beach with sand in his teeth and no idea how many days it has been. The not-knowing is worse than the beach.
+   KO: 입 안에 모래를 문 채 바닷가에서 깨어난다. 며칠이 지났는지 알 수 없다. 모른다는 것이 바닷가보다 더 나쁘다.
+74 place: {"kind":"place","place":"mugun","html":"The island where Baekje sends men it can’t afford to kill.","ko":"백제가 죽이기엔 아까운 사내들을 보내는 섬."}
+75 card: {"kind":"card","person":"yuridora","caption":"Yuri Dora, king of Tamla. He tells stories to men nobody else will talk to.","ko":"탐라의 임금 유리도라. 아무도 말을 걸지 않는 사내들에게 이야기를 들려준다.","still":"/intro/yuridora--exile.jpg"}
+76 D[gyebek]: How many days.
+   KO: 며칠입니까.
+77 D[yuridora]: Ah. It’s no man for greetings you are.
+   KO: 아이고, 인사부터 허는 사름은 아니로구나.
+78 D[gyebek]: …How many days.
+   KO: …며칠입니까.
+79 D[yuridora]: Eleven, so. Better?
+   KO: 열하루. 이젠 됐주?
+80 P: It is better. Visibly. The islanders will spend five years noticing that this man is calmed by numbers and unsettled by almost everything else.
+   KO: 나아진다. 눈에 보이게. 섬사람들은 다섯 해에 걸쳐 알게 된다. 이 사내는 숫자로 가라앉고, 그 밖의 거의 모든 것으로 흔들린다는 것을.
+81 P: He takes eleven from a number he has carried since the hall.
+   KO: 그는 교서가 읽힌 대전에서부터 지니고 온 숫자에서 열하루를 뺀다.
+82 D[gyebek]: Nine hundred and sixty-one.
+   KO: 구백예순하루.
+83 D[yuridora]: Until what?
+   KO: 무신 날꺼지 말이냐?
+84 D[gyebek]: Until His Majesty can sign again. / Then he sends for me.
+   KO: 폐하께서 다시 서명하실 수 있을 때까지입니다. / 그때 저를 부르십니다.
+85 D[yuridora]: Ha. A man that carries his own calendar about with him. / And what is it they call you?
+   KO: 허. 달력을 품엉 댕기는 놈이로구나. / 이름은 뭐고?
+86 D[gyebek]: I am called Gyebek.
+   KO: 계백입니다.
+87 D[yuridora]: Gyebek? Like geobuk? Sure you’re never called Turtle?
+   KO: 뭐? 계백? 거북이엔?
+88 D[gyebek]: No. <em>Gye</em> is the stone step, and <em>baek</em> is the eldest.
+   KO: 아닙니다. 계(階)는 섬돌이고 백(伯)은 맏이입니다.
+89 D[yuridora]: …It was a joke I was making.
+   KO: …농담이주.
+90 D[gyebek]: …Ah.
+   KO: …아.
+91 P: He says <em>ah</em> the way another man would say <em>I will write that down</em>. It would be a mistake to read the pause as slowness; somewhere behind those eyes, a ledger has just gained a line.
+   KO: 그는 <em>아</em>라고 말한다. 다른 사람이 <em>적어 두겠습니다</em>라고 말할 때의 그 말투로. 그 뜸을 둔함으로 읽으면 곤란하다. 저 눈 뒤 어딘가에서, 장부에 방금 한 줄이 늘었다.
+92 P: <b>First night on the island. A fire, two cups, and a storyteller who never asks permission. “Sit or don’t. Once there were two suns…”</b>
+   KO: <b>섬의 첫날 밤. 불 하나, 잔 둘, 그리고 허락 따윈 구하지 않는 이야기꾼. “앉든 말든. 옛날에 해가 둘이었지…”</b>
+IMAGES: ["satek-clan-2 |  | ","yunbi-clan-2 | Spill the cups. | ","gyebek-sig-ridge | goes looking for the general | ","gyebek-sig-eye | He leaves the line to other men | ","gyebek-sig-hooves | the fastest thing on four legs in Samhan | ","gyebek-sig-tuck | rides him flat along the neck like a thrown knife | ","gyebek-sig-turn | starts to turn his horse | ","gyebek-sig-impact | does not finish turning | ","gyebek-sig-cut | One cut on the pass. | ","gyebek-sig-riderless | a speck on the far ridge | ","gyebek-sig-frozen | nobody left to tell it what to do | ","tamla-comics | The islanders will spend five years noticing | ","gyebek-sunset | Things without a price get removed. | ","scene-gyebek-who-am-i-27 | Things without a price get removed. | ","gyebek-well | a mistake to read the pause as slowness | ","scene-gyebek-who-am-i-3 | a mistake to read the pause as slowness | ","tamla-map | He wakes on a beach | ","exile-order-hall | Gyebek is summoned to the hall and told to kneel | ","turtle-beach | sand in his teeth | ","euija-mourning-fury | His own seal sits at the bottom | ","ma-gyebek-kneels | Gyebek is summoned to the hall and told to kneel | ","exile-queen-bier | loses the right to say no | ","exile-gate-count | counted twice at the gate by both sides | ","exile-lantern-festival | died at the lantern festival | ","exile-footprints | a second set of footprints behind the monastery screen | ","exile-shape-of-fight | arranged by habit into the shape of a fight | ","exile-name-offer | 
+
+######## [1] Heaven–Earth King / 천지왕 | logline: [object Object]
+
+0 P: Every family has one relative who never comes home for dinner. In ours, it was Heaven–Earth King.
+   KO: 어느 집안에나 저녁 먹으러 안 들어오는 친척이 하나쯤 있다. 우리 집안에선 천지왕이 그랬다.
+1 scene: {"kind":"scene","label":"Two Suns","ko":"두 개의 해"}
+2 P: In the beginning there were two suns and two moons. By day people dropped in the fields with their hoes still in their hands; by night they froze in their own doorways. Nobody ever had a decent night’s sleep or a decent harvest, and the old died faster than anyone could bury them.
+   KO: 처음에 해는 둘, 달도 둘이었다. 낮에는 사람들이 호미를 쥔 채 밭고랑에 쓰러졌고, 밤에는 제 집 문간에서 얼어 죽었다. 누구도 제대로 자 본 적이 없고 제대로 거둬 본 적도 없었으며, 늙은이들은 묻어 줄 손보다 빨리 죽어 나갔다.
+3 P: Above all of it sat <b>Heaven–Earth King</b>, who ran the living and the dead out of one office and therefore never went home. One night he fell asleep at the desk anyway, and dreamed he was eating: one sun, one moon, swallowed whole, one of each.
+   KO: 그 모든 것 위에 <b>천지왕</b>이 있었다. 산 자와 죽은 자를 한 관청에서 다스렸으니 집에 갈 일이 없었다. 어느 밤 그는 기어이 책상에서 잠이 들었고, 꿈에서 무언가를 먹었다. 해 하나, 달 하나, 통째로, 하나씩.
+4 card: {"kind":"card","person":"heavenearthking","caption":"The god with two jobs and one desk. He dreams about breakfast.","ko":"일 두 개에 책상 하나인 신. 꿈에서 아침을 먹는다.","still":"/intro/heavenearthking--heaven-earth-king.jpg"}
+5 D[heavenearthking]: ……Huh. / One each. / I ate one of each. / Ha— that’s a son. Someone’s going to shoot those down.
+   KO: ……어. / 하나씩. / 하나씩 먹었다. / 하하— 아들이다. 저걸 쏘아 떨굴 놈.
+6 P: He comes down to the world to find the mother of that dream, and finds her in the poorest house on the road: a girl the village calls <b>the Lady of Wisdom</b>, a hearth with no fire in it, and a rice jar she does not open in front of guests.
+   KO: 그는 그 꿈의 어미를 찾으러 세상에 내려왔고, 길가에서 가장 가난한 집에서 그를 찾았다. <b>총명아기</b>라는 처녀, 불 없는 아궁이, 손님 앞에서는 열지 않는 쌀독.
+7 D[chongmyeong]: Who are you.
+   KO: 누구세요.
+8 D[heavenearthking]: Someone passing. / A hungry one.
+   KO: 지나가던 사람. / 배고픈.
+9 D[chongmyeong]: ……Sit, then.
+   KO: ……앉아 계세요.
+10 P: She goes round the back and lifts the lid of the jar. The bottom of it looks up at her. She puts the lid back as if that might help, ties up her hair, and walks across the road.
+   KO: 그는 뒤꼍으로 돌아가 쌀독 뚜껑을 연다. 독 바닥이 그를 올려다본다. 그러면 나아지기라도 할 것처럼 뚜껑을 도로 덮고, 머리를 묶고, 길 건너로 간다.
+11 P: Across the road lives <b>Sumyung Jangja</b>, who is rich the way a flood is wet. He has nine storehouses, a horse that kicks beggars, a dog that bites whatever the horse misses, and a rice measure that comes out a little smaller when he lends and a little larger when he collects.
+   KO: 길 건너에는 <b>수명장자</b>가 산다. 홍수가 젖은 것처럼 부자인 사내다. 곳간이 아홉, 거지를 걷어차는 말 한 마리, 말이 놓친 것을 무는 개 한 마리, 그리고 꿔 줄 때는 조금 작아지고 받을 때는 조금 커지는 됫박이 하나 있다.
+12 D[chongmyeong]: Lend me one measure of rice. / I have a guest.
+   KO: 쌀 한 되만 꿔 주세요. / 손님이 왔어요.
+13 card: {"kind":"card","person":"sumyeongjangja","caption":"The richest man under two suns. He lends one measure and collects two.","ko":"두 해 아래 가장 부자. 한 되를 꾸어 주고 두 되를 받는다.","still":"/intro/sumyeongjangja--heaven-earth-king.jpg"}
+14 D[sumyeongjangja]: One measure. / Two when you pay it back. / A guest? Anyone who’d come to your house, I can guess.
+   KO: 한 되. / 갚을 땐 두 되. / 손님? 네 집에 올 손님이면 뻔하지.
+15 D[chongmyeong]: Two, then.
+   KO: 두 되요.
+16 P: He fills the measure himself, with his back to her.
+   KO: 그는 등을 돌린 채, 제 손으로 됫박을 채운다.
+17 P: She washes it nine times at the well and spends the last of her firewood on it. The king takes the first spoonful. Something in his mouth grinds.
+   KO: 그는 우물가에서 아홉 번을 씻고, 남은 장작을 다 때서 밥을 짓는다. 왕이 첫 숟가락을 뜬다. 입안에서 무언가 서걱거린다.
+18 D[heavenearthking]: …… / Your rice has a bit of bite to it.
+   KO: …… / 이 집 쌀은 씹는 맛이 있네.
+19 D[chongmyeong]: ……It’s sand. / I washed it nine times.
+   KO: ……모래예요. / 아홉 번 씻었는데.
+20 D[heavenearthking]: Who gave it to you.
+   KO: 누가 줬어.
+21 D[chongmyeong]: The house across the road. / I said I’d pay back two.
+   KO: 건너 집이요. / 두 되로 갚기로 했어요.
+22 D[heavenearthking]: Two. / One measure with sand in it, for two. / ……Eat. Eat all of it. I’m stepping out for a minute.
+   KO: 두 되. / 모래 섞은 한 되에, 두 되. / ……먹어. 다 먹어. 나 잠깐 나갔다 올게.
+23 P: Sumyung Jangja is counting his storehouses, which is how he prays, when the sky over the ninth one goes black at noon. The horse will not kick. The dog gets under the porch.
+   KO: 수명장자는 곳간을 세고 있다. 그것이 그의 기도다. 그때 아홉째 곳간 위 하늘이 한낮에 까맣게 내려앉는다. 말은 차지 않는다. 개는 마루 밑으로 기어든다.
+24 D[sumyeongjangja]: Who’s there. / There’s nobody under heaven who can touch me.
+   KO: 누구냐. / 하늘 아래 나 건드릴 놈은 없다.
+25 D[heavenearthking]: That’s why I came from above.
+   KO: 그래서 위에서 왔지.
+26 D[sumyeongjangja]: ……W-what is it you want. / Rice? If it’s rice— two measures, no, ten, the whole storehouse—
+   KO: ……뭐, 뭘 원하시오. / 쌀이오? 쌀이면— 두 되, 아니, 열 되, 곳간째로—
+27 D[heavenearthking]: Without the sand?
+   KO: 모래는 빼고?
+28 P: The floor of the ninth storehouse opens. The richest man in the world goes down through it, past the dirt and past the dark, into the place under everything where the measures are honest. He is the first one there. He will not be lonely for long.
+   KO: 아홉째 곳간 바닥이 열린다. 세상에서 가장 부자인 사내가 그리로 떨어진다. 흙을 지나고 어둠을 지나, 모든 것의 밑, 됫박이 정직한 곳으로. 그가 처음 도착한 자다. 오래 외롭지는 않을 것이다.
+29 P: He goes back across the road. He stays until the day the calendar allows, and the morning after, he is already tying his sleeves.
+   KO: 그는 길을 건너 돌아온다. 날을 받은 그날까지 머물고, 그다음 날 아침에는 벌써 소매를 묶고 있다.
+30 D[chongmyeong]: You’re going?
+   KO: 가세요?
+31 D[heavenearthking]: Lots of work upstairs. / There are two suns, remember.
+   KO: 위에 일이 많아. / 해가 둘이잖아.
+32 D[heavenearthking]: Two sons. The first one out is Big Star, the second one Little Star. / When they turn fifteen, have them plant these.
+   KO: 아들 둘이다. 먼저 나온 놈은 대별, 나중 놈은 소별. / 열다섯 되면 이거 심으라 해.
+33 P: Two gourd seeds in her palm, and half of a wooden comb. The other half goes into his sleeve.
+   KO: 그의 손바닥에 박씨 두 알, 그리고 얼레빗 반쪽. 나머지 반쪽은 왕의 소매 속으로 들어간다.
+34 D[chongmyeong]: ……Fifteen years.
+   KO: ……열다섯 해요.
+35 D[heavenearthking]: …… / Thanks for the rice.
+   KO: …… / 밥 잘 먹었다.
+36 P: She has twins. The elder comes out quiet and looks at everything. The younger comes out already complaining. They grow up under two suns and two moons, and get asked whose sons they are in every yard in the village.
+   KO: 그는 쌍둥이를 낳는다. 형은 조용히 나와 모든 것을 둘러보고, 아우는 나오면서부터 투덜댄다. 둘은 해 둘, 달 둘 아래서 자라고, 마을 마당마다 누구네 아들이냐는 소리를 듣는다.
+37 card: {"kind":"card","person":"daebyeol","look":"young","caption":"Big Star, the elder twin. He would rather be right than first.","ko":"대별, 맏이. 먼저인 쪽보다 옳은 쪽을 고른다.","still":"/intro/daebyeol-young--heaven-earth-king.jpg"}
+38 card: {"kind":"card","person":"sobyeol","look":"young","caption":"Little Star, the younger twin. He would rather be first.","ko":"소별, 동생. 먼저인 쪽을 고른다.","still":"/intro/sobyeol-young--heaven-earth-king.jpg"}
+39 D[sobyeol]: Mom. Who’s our father. / The other kids are at it again.
+   KO: 엄마. 우리 아버지 누구야. / 애들이 또 놀려.
+40 D[daebyeol]: Leave it. Mom’s tired.
+   KO: 그만해. 엄마 피곤하셔.
+41 D[chongmyeong]: ……When you’re fifteen.
+   KO: ……열다섯 되면.
+42 scene: {"kind":"scene","label":"The Gourd Vine","ko":"박 넝쿨"}
+43 P: At fifteen she puts the seeds in their hands and the half comb in the elder’s. They plant them by the wall at dusk. By morning the vine has gone past the roof, past the clouds, and out of sight.
+   KO: 열다섯이 되자 그는 두 아들 손에 박씨를 쥐여 주고, 형의 손에는 빗 반쪽을 쥐여 준다. 둘은 해 질 녘 담 밑에 씨를 심는다. 아침이 되자 넝쿨은 지붕을 넘고 구름을 넘어 보이지 않는 데까지 올라가 있다.
+44 D[chongmyeong]: Climb. / All the way up.
+   KO: 올라가. / 끝까지.
+45 D[sobyeol]: What about you?
+   KO: 엄마는?
+46 D[chongmyeong]: I’ll be here. I’ll have rice on.
+   KO: 난 여기 있어. 밥 해 놓을게.
+47 P: Little Star gets to the top first and pretends he wasn’t racing. The man at the top of the vine holds out his hand without getting up.
+   KO: 소별이 먼저 꼭대기에 닿고는 내기한 적 없는 척한다. 넝쿨 끝에 있던 사내는 일어나지도 않고 손을 내민다.
+48 D[heavenearthking]: The comb.
+   KO: 빗.
+49 P: Big Star puts the half in his palm. The king takes the other half out of his sleeve, where it has been for fifteen years, and fits them. The teeth close.
+   KO: 대별이 반쪽을 그 손바닥에 올린다. 왕은 열다섯 해 동안 소매 속에 있던 나머지 반쪽을 꺼내 맞춘다. 빗살이 맞물린다.
+50 D[heavenearthking]: ……Fits.
+   KO: ……맞네.
+51 D[sobyeol]: You never came down. Not once.
+   KO: 한 번도 안 내려왔잖아요.
+52 D[heavenearthking]: ……There were two suns.
+   KO: ……해가 둘이었어.
+53 P: He has a thousand geun of iron melted down into two bows and two arrows, heavy enough that nobody but a son of his could draw them, and walks the boys to the edge of the sky.
+   KO: 그는 무쇠 천 근을 녹여 활 둘과 살 둘을 만들게 한다. 그의 아들이 아니면 아무도 당기지 못할 무게다. 그리고 두 아들을 하늘 끝까지 데리고 간다.
+54 D[heavenearthking]: Two suns, two moons. / Two of each over your mother’s roof for fifteen years. / One each.
+   KO: 해 둘, 달 둘. / 열다섯 해 동안 네 엄마 지붕 위에 둘씩 떴다. / 하나씩.
+55 P: Big Star takes the sun at noon. He breathes out once and lets go, and the second sun breaks like a plate. Its pieces scatter east and stay there as stars. At midnight Little Star draws on the second moon and hits it square, and its pieces go west.
+   KO: 대별은 한낮에 해를 맡는다. 숨을 한 번 내쉬고 놓자, 두 번째 해가 접시처럼 깨진다. 그 조각들은 동쪽으로 흩어져 별로 남는다. 한밤중에 소별이 두 번째 달을 겨누어 정통으로 맞히고, 그 조각들은 서쪽으로 흩어진다.
+56 D[sobyeol]: Brother. Got it in one. / You saw?
+   KO: 형. 한 번에 맞혔다. / 봤지?
+57 D[daebyeol]: I saw.
+   KO: 봤다.
+58 P: In the morning people go out to the fields and do not fall down. That night they sleep. Nobody thanks anyone, because nobody knows who to thank.
+   KO: 아침에 사람들은 밭에 나가서도 쓰러지지 않는다. 그날 밤에는 잠을 잔다. 아무도 누구에게 고맙다고 하지 않는다. 누구에게 해야 할지 아무도 모르니까.
+59 D[heavenearthking]: Done. The world’s yours. / The living side and the dead side. You two decide who takes which. / I’m not deciding. Whoever I pick always comes back to argue. / I’m resting.
+   KO: 됐다. 세상은 너희 거다. / 산 쪽이랑 죽은 쪽. 누가 어디 갈지는 둘이 정해. / 나는 안 정한다. 내가 정하면 꼭 나중에 따지더라. / 나는 쉰다.
+60 scene: {"kind":"scene","label":"The Contest","ko":"내기"}
+61 P: They decide it the way brothers decide things. Big Star proposes riddles, which suits the one who knows the answers.
+   KO: 둘은 형제들이 일을 정하는 식으로 정한다. 대별이 수수께끼를 내자고 한다. 답을 아는 쪽에게 어울리는 방법이다.
+62 D[daebyeol]: Which trees keep their leaves all their lives, and which ones drop them?
+   KO: 어떤 나무는 평생 잎이 안 지고, 어떤 나무는 잎이 지느냐.
+63 D[sobyeol]: Solid ones keep them. Hollow ones drop them.
+   KO: 속이 꽉 찬 나무는 안 지고, 속 빈 나무는 지지.
+64 D[daebyeol]: Poor little brother, don’t talk about what you don’t know. / Bamboo and reeds are hollow at every joint, and they keep their leaves.
+   KO: 설운 동생아, 모르는 말 마라. / 청대랑 갈대는 마디마디 비었어도 잎이 안 진다.
+65 D[sobyeol]: ……Another.
+   KO: ……하나 더.
+66 D[daebyeol]: Why is the grass short on the hill and long down in the hollow?
+   KO: 어째서 동산 풀은 짧고, 구렁 풀은 기냐.
+67 D[sobyeol]: Spring rain washes the hill’s dirt down into the hollow.
+   KO: 봄비 오면 동산 흙이 구렁으로 쓸려 내려가니까.
+68 D[daebyeol]: Then why is the hair on your head long and the hair on your feet short?
+   KO: 그럼 사람 머리털은 왜 길고, 발등 털은 짧으냐.
+69 D[sobyeol]: …… / That one’s cheating.
+   KO: …… / 그건 반칙이지.
+70 P: Two for two. Their father, who said he would not decide anything, leans over the edge of his rest and drops two flower seeds between them.
+   KO: 둘에 둘. 아무것도 정하지 않겠다던 아버지가 쉬던 자리에서 몸을 기울여, 둘 사이에 꽃씨 두 알을 떨어뜨린다.
+71 D[heavenearthking]: Flowers. / Whoever grows the better one gets the living side. / ……That’s me done interfering.
+   KO: 꽃. / 잘 피우는 놈이 이승. / ……더는 안 끼어든다.
+72 P: They plant them in two silver basins and sit up with them. Big Star’s flower comes up green and keeps coming, and by the third evening it has opened. Little Star’s comes up yellow and leans.
+   KO: 둘은 은동이 두 개에 씨를 심고 곁을 지킨다. 대별의 꽃은 푸르게 올라와 멈추지 않고, 사흘째 저녁에는 활짝 핀다. 소별의 꽃은 누렇게 올라와 기운다.
+73 D[sobyeol]: Let’s sleep, Brother. / We’ll look in the morning. See whose did better.
+   KO: 형. 자자. / 아침에 보자. 누가 잘 피웠는지.
+74 D[daebyeol]: All right.
+   KO: 그래.
+75 P: Big Star sleeps the way honest men sleep, all the way down. Little Star lies on his side and counts his brother’s breathing up to a hundred. Then he gets up, trades the basins, and lies down again in the same shape, so his brother will wake first.
+   KO: 대별은 정직한 사람이 자듯 잔다. 바닥까지. 소별은 모로 누워 형의 숨을 백까지 센다. 그러고는 일어나 은동이를 바꿔 놓고, 똑같은 모양으로 다시 눕는다. 형이 먼저 깨도록.
+76 D[sobyeol]: ……Brother! Wake up! / Look, it’s mine!
+   KO: ……형! 일어나 봐! / 이거 봐, 내 거!
+77 P: Big Star looks at the open flower in front of his brother, the one he watered for three days. He looks at the yellow one by his own hand.
+   KO: 대별은 아우 앞의 활짝 핀 꽃을 본다. 사흘 동안 제가 물을 준 꽃이다. 그리고 제 손 옆의 누런 꽃을 본다.
+78 D[daebyeol]: …… / Yes. Your flower did well.
+   KO: …… / 그래. 네 꽃이 잘 피었구나.
+79 P: He gets up and brushes the soil off his knees.
+   KO: 그는 일어나 무릎의 흙을 턴다.
+80 D[daebyeol]: Brother, countless people live in the mortal world. Among them are thieves and swindlers. To govern them well you need strength and wisdom — but above all, a true heart. So govern them, and make a beautiful, peaceful world.
+   KO: 아우야, 이승에는 수많은 사람들이 산다. 그중에는 도둑놈도 있으며 사기꾼도 있지. 그들을 잘 다스리려면 힘과 슬기도 필요하지만 무엇보다도 참된 마음이 있어야 한다. 그러니 그들을 다스려서 아름답고 평화로운 세상을 만들기 바란다.
+81 P: He is already walking toward the dark edge when he says the rest, and he does not turn round.
+   KO: 나머지 말은 이미 어두운 끝 쪽으로 걸어가면서 한다. 돌아보지는 않는다.
+82 D[daebyeol]: But, little brother. You took it with a stolen flower. / The living world will have plenty of murder, plenty of treason, plenty of thieves, and plenty of people reaching for other people’s wives and husbands. / The law down below will run clear.
+   KO: 그런데 아우야. 훔친 꽃으로 받은 세상이다. / 이승엔 살인이 많고, 역적이 많고, 도둑이 많고, 남의 계집 남의 사내 넘보는 일이 많을 거다. / 저승법은 맑을 거고.
+83 D[sobyeol]: ……Brother! / Brother, that’s—
+   KO: ……형! / 형, 그건—
+84 P: <b>Big Star</b> goes down. <b>Little Star</b> keeps the warm side.
+   KO: <b>대별왕</b>은 내려간다. <b>소별왕</b>은 따뜻한 쪽을 갖는다.
+85 P: It goes the way his brother said, and worse, because Little Star had never thought about the parts he didn’t want. The trees still talk. So do the birds, the cattle and the stones, mostly about him. When a mother calls her son’s name at dusk a ghost answers too, and the living and the dead walk the same roads in the same clothes, and nobody can tell which is which.
+   KO: 형이 말한 대로 된다. 더 나쁘게. 소별은 갖고 싶지 않은 쪽은 생각해 본 적이 없었으니까. 나무가 아직 말을 한다. 새도, 소도, 돌도 말을 한다. 대개 그의 이야기다. 해 질 녘 어미가 아들 이름을 부르면 귀신도 대답을 하고, 산 자와 죽은 자가 같은 옷을 입고 같은 길을 걸어, 누가 누군지 아무도 모른다.
+86 D[sobyeol]: Brother. / Brother, help me, just this once. / The trees talk. The ghosts answer. I can’t tell who’s a man and who’s a ghost.
+   KO: 형님. / 형님, 한 번만 도와주오. / 나무가 말을 하오. 귀신이 대답을 하오. 누가 사람이고 누가 귀신인지 모르겠소.
+87 P: Big Star comes up. He scatters five measures of pine-bark powder over the world, and the trees and the birds and the cattle go quiet and have stayed quiet since. Then he hangs a scale from the sky.
+   KO: 대별왕이 올라온다. 송피 가루 닷 말을 세상에 뿌리자 나무와 새와 짐승이 입을 다물고, 그 뒤로 다시는 말하지 않는다. 그러고는 하늘에 저울을 건다.
+88 D[daebyeol]: Line up. / A hundred geun or more, you stay up here. / Less, you come with me.
+   KO: 줄 서. / 백 근 넘으면 이승에 남아라. / 못 넘으면, 따라와.
+89 D[sobyeol]: ……And the thieves? The ones who kill people?
+   KO: ……그럼 도둑은? 사람 죽이는 놈들은?
+90 D[daebyeol]: Those are your flower.
+   KO: 그건 네 꽃이다.
+91 P: He goes back down with the light ones following him in a long quiet line. Since then the dead weigh less than the living, the law below runs clear, and the law up here belongs to Little Star. Under Big Star, <b>Yumla</b> judges, and the measures are honest.
+   KO: 그는 가벼운 자들을 긴 침묵의 줄로 거느리고 다시 내려간다. 그 뒤로 죽은 자는 산 자보다 가볍고, 아래의 법은 맑고, 위의 법은 소별왕의 것이다. 대별왕 아래서는 <b>염라</b>가 판결하고, 됫박이 정직하다.
+92 P: So the house was divided, and it has stayed divided. Downstairs, the dead, and a judge with honest measures. Upstairs, the living, and a king who got there with a stolen flower. Out at the far western end there is a flower field. That is a story for another night.
+   KO: 그렇게 집이 나뉘었고, 지금까지 나뉜 채다. 아래층엔 죽은 자들과 됫박이 정직한 판관. 위층엔 산 자들과, 훔친 꽃으로 그 자리에 오른 임금. 서쪽 맨 끝에는 꽃밭이 하나 있다. 그건 다른 날 밤의 이야기다.
+93 P: Above all of it sits the oldest lord of the sky. He will tell you he never interferes. He says it with a straight face. He has had a great deal of practice.
+   KO: 그 모든 것 위에 하늘의 가장 늙은 어른이 앉아 있다. 그는 자기가 절대 끼어들지 않는다고 말할 것이다. 얼굴색 하나 안 바꾸고 말한다. 연습을 아주 많이 했다.
+94 P: As for the Lady of Wisdom, she kept the rice on, the way she said she would. Nobody in this story remembers to go back down and tell her how it went. Somebody should have.
+   KO: 총명아기는 말한 대로 밥을 안쳐 두었다. 이 이야기에서 다시 내려가 어떻게 됐는지 일러 준 이는 아무도 없다. 누군가는 그랬어야 했다.
+95 P: <b>Down on the living side, somebody still has to make the ground. One woman makes an island, and she is enormous…!</b>
+   KO: <b>이승 쪽에선 아직 누군가 땅을 빚어야 한다. 한 여인이 섬 하나를 만든다. 어마어마하게 큰 여인이…!</b>
+IMAGES: ["poster_heavenearthking |  | ","poster_sobyeol |  | ","poster_daebyeol |  | ","stars-wide |  | ","big_little_stars |  | ","flower-wager |  | ","little-star-swap |  | ","sobyeol-living-heat |  | ","heaven-earth-seam | 천지왕이 있었다 | ","daebyeol-disc | 산 자와 죽은 자를 | ","sobyeol-ribbon | 산 자와 죽은 자를 | ","daebyeol-blue-star-palm | 산 자와 죽은 자를 | ","sobyeol-red-star-palm | 산 자와 죽은 자를 | ","hek-ink-two-suns | two suns and two moons. By day | ","hek-ink-dream | one sun, one moon, swallowed whole | ","hek-ink-doorway | the poorest house on the road | ","hek-ink-jar | a rice jar she does not open in front of guests | ","hek-ink-measure | He fills the measure himself | ","hek-ink-sand | Your rice has a bit of bite to it. | ","hek-ink-noon | goes black at noon | ","hek-ink-fall | The floor of the ninth storehouse opens. | ","hek-ink-comb | Two gourd seeds in her palm | ","hek-ink-yard | whose sons they are in every yard | ","hek-ink-vine | the vine has gone past the roof | ","hek-ink-teeth | The teeth close. | ","hek-ink-forge | a thousand geun of iron melted down | ","hek-ink-sun | breaks like a plate | ","hek-ink-moon | At midnight Little Star draws | ","hek-ink-riddle | Big Star proposes riddles | ","hek-ink-seeds | drops two flower seeds between them | ","hek-ink-swap | counts his brother | ","hek-ink-yield | Your flower did well. | ","hek-ink-walk | already walking toward the dark edge | ","hek-ink-haunted | a ghost answers too | ","hek-ink-pine | pine-bark powder | ","hek-ink-scale | Then 
+
+######## [2] Sulmun / 설문대할망 | logline: [object Object]
+
+0 P: Before the island there is a woman, and she is enormous. <b>Sulmun</b>, the Great Lady. The sea comes to her knee. She scoops the seabed up in her apron and piles it in one place until it stands high enough to lean on, and that is <b>Mount Halla</b>.
+   KO: 섬보다 먼저 한 여자가 있었고, 그 여자는 어마어마했다. <b>설문대할망</b>. 바다가 무릎에 찼다. 치마폭으로 바다 밑을 퍼 올려 한자리에 쌓아 기대설 만큼 높아진 것, 그것이 <b>한라산</b>이다.
+1 P: Her apron had a hole in it. Nobody mentioned it, because nobody mentions things to a woman that size. Every handful that fell through became a hill, and the island counts three hundred and sixty-eight of them.
+   KO: 치마에는 구멍이 나 있었다. 아무도 말하지 않았다. 그만한 덩치의 여자에게는 원래 아무도 뭘 말하지 않는다. 구멍으로 흘린 흙 한 줌 한 줌이 오름이 되었고, 섬은 그것을 삼백예순여덟 개로 센다.
+2 card: {"kind":"card","person":"sulmun","caption":"Grandmother Sulmun. The sea comes to her knee, and she has opinions about the view.","ko":"설문대할망. 바다가 무릎까지밖에 안 오고, 경치에 대해 할 말이 많다.","still":"/intro/sulmun--sulmun.jpg"}
+3 place: {"kind":"place","place":"halla","html":"The island’s spine, and a giantess’s favourite chair.","ko":"섬의 등뼈이자, 거인 할망이 즐겨 앉던 의자."}
+4 scene: {"kind":"scene","label":"The Bridge","ko":"다리"}
+5 P: She liked the island. She did not like that you could not walk off it. So one morning she sat down on the shore with her feet in the sea and made the islanders an offer.
+   KO: 할망은 섬이 마음에 들었다. 걸어서 나갈 수 없다는 것만 빼고. 그래서 어느 아침 바닷가에 앉아 발을 바다에 담그고 섬사람들에게 흥정을 걸었다.
+6 D[sulmun]: Make me a jacket and a skirt. My size. / Do that, and I’ll lay you a road to the mainland. You’ll walk to market.
+   KO: 나 몸에 맞는 저고리영 치마 혼 벌 지어 도라. / 경허민 뭍까지 길 놔 주크라. 장에 걸엉 가게.
+7 D[undefined]: Your size, Halmang? / …And how much silk would that be, now?
+   KO: 할망 몸에 맞게마씸? / …게민 명주가 얼마나 들어 마씸?
+8 D[sulmun]: A hundred rolls.
+   KO: 백 동.
+9 D[undefined]: A hundred. / Would ninety do you? With a bit of a stretch in the seams?
+   KO: 백 동… / 아흔 동이민 안 되쿠과? 솔기를 호꼼 늘령?
+10 D[sulmun]: Do I look like a woman you stretch things around?
+   KO: 나가 늘령 둘러질 몸으로 뵈여?
+11 P: They looked under every roof on the island. They found ninety-nine. The collar was never finished. Neither was the bridge.
+   KO: 섬사람들은 집집마다 지붕 밑을 다 뒤졌다. 아흔아홉 동이 나왔다. 옷깃은 끝내 짓지 못했다. 다리도 끝내 놓이지 않았다.
+12 P: One roll short is the worst amount to be short by. You can still see where she started: a line of black rocks walking out from the north shore into the sea, and stopping.
+   KO: 한 동 모자란 게 제일 억울한 법이다. 할망이 놓기 시작한 자리는 지금도 보인다. 북쪽 바닷가에서 검은 바위들이 줄지어 바다로 걸어 나가다가, 멈춘다.
+13 scene: {"kind":"scene","label":"The Cauldron","ko":"죽솥"}
+14 P: Then came a famine, the kind the island still gets. She had five hundred sons, and every one of them came home hungry.
+   KO: 그러다 흉년이 들었다. 섬에 지금도 드는 그런 흉년이다. 할망에게는 아들이 오백이었고, 하나같이 배를 곯고 돌아왔다.
+15 P: She set a cauldron of porridge on to boil for them, climbed up on the rim to stir it, and slipped, and did not come out.
+   KO: 할망은 아들들을 먹이려 큰 솥에 죽을 끓였다. 솥전에 올라서서 젓다가 미끄러졌고, 나오지 못했다.
+16 D[undefined]: Smell that? Mother’s made porridge. / Where’s she got to, then? / Who cares, eat it before the little one’s back— / Another bowl! Sure it’s the best she ever made—
+   KO: 냄새 맡아 보라. 어멍이 죽 쒀 놨저. / 어멍은 어디 갔댄? / 몰라, 막내 오기 전에 먹으라— / 혼 그릇 더! 이추룩 맛좋은 건 처음이여—
+17 P: The youngest gets home last, the way youngest sons do. What is left for him is the bottom of the pot.
+   KO: 막내는 막내들이 늘 그렇듯 맨 나중에 돌아온다. 그에게 남은 건 솥 바닥이다.
+18 D[undefined]: Hyung. There’s something down here. / …Hyung. / That’s her hairpin.
+   KO: 성님. 바닥에 뭐 있저. / …성님. / 이거 어멍 비녀여.
+19 P: Nobody blames the sons. They blame themselves, which takes longer.
+   KO: 아무도 아들들을 탓하지 않는다. 아들들이 제 탓을 한다. 그쪽이 더 오래 걸린다.
+20 P: The youngest walked into the sea and would not turn round, and stands there yet as a single rock off the shore. The other four hundred and ninety-nine went up the mountain and wept until they were stone. You can go and count them. Nobody has ever got the same number twice.
+   KO: 막내는 바다로 걸어 들어가 끝내 돌아보지 않았고, 지금도 바닷가에 홀로 선 바위로 서 있다. 나머지 사백구십아홉은 산으로 올라가 돌이 될 때까지 울었다. 가서 세어 보아도 좋다. 두 번 같은 수를 센 사람은 아직 없다.
+21 quote: {"kind":"quote","html":"Five hundred shrines before that mountain, five hundred temples before this one. Five hundred generals, five hundred teachers. One valley short, so it is an island that could raise no king, no tiger, no bear.","ko":"저 산 앞에는 당이 오백, 이 산 앞에는 절이 오백. 오백 장군에 오백 선생. 골짜기 하나가 모자라서, 왕도
+22 P: <b>Three princes climb out of the ground. “Not from an egg,” the island insists. Then a box drifts in from the sea…!</b>
+   KO: <b>땅에서 왕자 셋이 솟아난다. “알에서 나온 게 아이다,” 섬은 힘주어 말한다. 그리고 바다에서 궤짝 하나가 떠밀려 온다…!</b>
+IMAGES: ["tamla-oreum | Her apron had a hole in it. | ","seolmundae-ninety-nine | They found ninety-nine | ","great-lady-apron | She scoops the seabed up in her apron | ","seolmundae-cauldron | cauldron of porridge | ","youngest-sea-rock | The youngest walked into the sea | ","sulmun-seq-scoop | piles it in one place | ","sulmun-seq-cauldron | slipped, and did not come out | ","halla-goddess |  | ","sulmun-seq-hills | three hundred and sixty-eight | ","sulmun-seq-silk | A hundred rolls. | ","scene-tamla-birds-42 | Before the island there is a woman | ","scene-tamla-birds-44 | Before the island there is a woman | ","scene-tamla-birds-41 | Her apron had a hole in it. | ","scene-tamla-birds-43 | One roll short is the worst amount | "]
+
+######## [3] Three Princes / 삼성혈 | logline: [object Object]
+
+0 P: Half the kingdoms on the mainland have a first king who hatched from an egg. Tamla is proud to say its kings climbed out of a hole.
+   KO: 육지 나라 절반은 첫 임금이 알에서 나왔다. 탐라는 제 임금들이 구멍에서 기어 나왔다는 게 자랑이다.
+1 diagram: {"kind":"diagram","diagram":"tamla-princes","title":"Three Princes · 삼성혈","caption":"Three divine princes rise from Samsunghyul and divide the orange island.","ko":"삼성혈에서 세 신인이 나와 탐라를 나눈다."}
+2 scene: {"kind":"scene","label":"The Three Holes","ko":"삼성혈"}
+3 P: Long after the Great Lady’s stone sons, three divine princes climb out of a hole in the ground. Nobody hatches. They come up one after another, blinking, dirt in their hair. They look at the island, and then at each other.
+   KO: 설문대할망의 돌 아들들이 생기고 한참 뒤, 신령한 왕자 셋이 땅구멍에서 기어 나온다. 알에서 깨어난 이는 없다. 하나씩 차례로 올라와 눈을 끔뻑인다. 머리엔 흙이 묻어 있다. 셋은 섬을 둘러보고, 그다음 서로를 본다.
+4 D[undefined]: Who came out first?
+   KO: 누게가 몬저 나와시니?
+5 D[undefined]: Me.
+   KO: 나.
+6 D[undefined]: You did not. I had my hand on the edge before you—
+   KO: 아니주. 나가 몬저 손 걸쳤는디—
+7 D[undefined]: Hands don’t count.
+   KO: 손은 안 쳐.
+8 D[undefined]: …Is this how it’s going to be? Forever?
+   KO: …영 허멍 살 거라? 영영?
+9 D[undefined]: Shoot for it. Wherever your arrow comes down, that’s yours. No arguing after.
+   KO: 활로 정허게. 화살 떨어진 디가 지 땅. 뒷말 엇이.
+10 D[undefined]: No arguing after.
+   KO: 뒷말 엇이.
+11 D[undefined]: …He’s going to argue after.
+   KO: …쟈는 뒷말 헐 거여.
+12 P: They each shoot an arrow and rule wherever it lands. Nobody argues after. Well. Not much.
+   KO: 셋은 저마다 활을 쏘아, 화살이 떨어진 땅을 다스린다. 뒷말은 없었다. 뭐. 많지는 않았다.
+13 scene: {"kind":"scene","label":"The Box","ko":"상자"}
+14 P: One day a box drifts from the East Sea and grounds on their beach. It is sealed with purple clay. Inside are a messenger and three princesses, and behind them, packed in straw, calves, foals and the five grains.
+   KO: 어느 날 동쪽 바다에서 상자 하나가 떠밀려 와 그들의 바닷가에 얹힌다. 자줏빛 진흙으로 봉해져 있다. 안에는 사자 하나와 공주 셋, 그 뒤로 짚에 싸인 송아지와 망아지와 오곡이 있다.
+15 D[undefined]: My king in the east saw three princes with no wives and no seed grain. He sends both. / …Take a moment, my lords.
+   KO: 동쪽 저희 임금께서 아내도 씨앗도 없는 왕자 셋을 보셨습니다. 둘 다 보내셨습니다. / …잠시 숨을 고르십시오.
+16 D[undefined]: The calves are ours too?
+   KO: 송아지도 우리 거라?
+17 D[undefined]: Everything in the box.
+   KO: 상자 안의 것은 전부입니다.
+18 P: They marry the three princesses at a pond. That is how Tamla learns to farm, and how it learns that anything worth having arrives by sea in a container.
+   KO: 왕자들은 연못가에서 세 공주와 혼인한다. 그렇게 탐라는 농사를 배운다. 그리고 쓸 만한 것은 죄다 바다 건너 상자에 담겨 온다는 것도 배운다.
+19 scene: {"kind":"scene","label":"Bekjuto and Socheon-guk","ko":"백주또와 소천국"}
+20 P: Years later, the hunting god married the farming goddess. She had crossed the sea to find a husband, and she brought a dowry with a purpose: an ox to plough with.
+   KO: 여러 해 뒤, 사냥의 신 소천국이 농사의 신 백주또와 혼인했다. 백주또는 남편을 찾아 바다를 건너왔고, 쓸모 있는 혼수를 가져왔다. 밭 갈 소 한 마리.
+21 card: {"kind":"card","person":"baekjuto","caption":"A farming goddess who crossed the sea to find a husband. She is about to find one.","ko":"남편을 찾아 바다를 건너온 농사의 여신. 곧 찾게 된다.","still":"/intro/baekjuto--three-princes.jpg"}
+22 P: He went out with it in the morning. He came back in the evening without it, and with a very full stomach.
+   KO: 아침에 그는 소를 몰고 나갔다. 저녁에 소 없이, 배가 아주 부른 채 돌아왔다.
+23 D[baekjuto]: You ate the ox. The one I gave you to plough with. The <em>whole</em> ox?
+   KO: 밭 갈라고 준 소를 먹었어? 통째로?
+24 card: {"kind":"card","person":"socheonguk","caption":"The hunt god. A big appetite. Bigger than you’re thinking.","ko":"사냥의 신. 먹성이 좋다. 생각하는 것보다 더.","still":"/intro/socheonguk--three-princes.jpg"}
+25 D[socheonguk]: …I also ate someone else’s.
+   KO: …남의 소도 한 마리 먹었소.
+26 P: They separated. It is the first divorce in the record, the grounds are livestock, and the islanders tell it as a comedy because it is one.
+   KO: 둘은 갈라섰다. 기록에 남은 첫 이혼이고 사유는 가축이며, 섬사람들은 우스개로 들려주는데 실제로 우습다.
+27 P: Their son kicked his father in the chest at three years old.
+   KO: 그 아들이 세 살에 아비의 가슴을 걷어찼다.
+28 D[socheonguk]: He kicked me. In the chest. He’s three.
+   KO: 저게 나를 찼저. 가슴팍을. 세 살짜리가.
+29 D[baekjuto]: He takes after you.
+   KO: 지 아방 닮았주.
+30 P: So they put the boy in an iron chest, locked it, and set it on the water.
+   KO: 그래서 사람들은 아이를 무쇠 궤에 넣고 자물쇠를 채워 물에 띄웠다.
+31 P: It drifted for years and washed up in a foreign country, and the boy came out of it a warrior, and won that country’s wars, and married its princess. And then he came home.
+   KO: 궤는 여러 해를 떠돌다 낯선 나라에 닿았고, 아이는 그 안에서 장수가 되어 나와 그 나라의 전쟁을 이기고 그 나라의 공주와 혼인했다. 그리고 돌아왔다.
+32 P: He came home and became the god of his own land: the god the ones who threw him out have to bow to. How many years was he in the chest? The story doesn’t say. Exiles always want to know, and it never does.
+   KO: 그는 돌아와 제 땅의 신이 되었다. 자기를 내다 버린 이들이 절해야 하는 신. 궤 속에서 몇 해를 보냈느냐고? 이야기는 말해 주지 않는다. 귀양 간 사람들은 늘 그걸 묻고, 이야기는 늘 말해 주지 않는다.
+33 P: <b>A serpent in a cave. A woman who steps out of a rock. A man told not to look back…!</b>
+   KO: <b>동굴 속의 뱀. 바위에서 걸어 나온 여인. 돌아보지 말라는 말을 들은 사내…!</b>
+IMAGES: ["tamla-well | three divine princes climb out | ","east-sea-box | a box drifts from the East Sea | ","tamla-island | Half the kingdoms on the mainland | ","princes-seq-rise | three divine princes climb out | ","princes-seq-arrows | They each shoot an arrow | ","princes-seq-box | a messenger and three princesses | ","princes-seq-pond | They marry the three princesses at a pond. | ","ox-chest-wide |  | ","ox-iron-tale | an ox to plough with | ","iron-chest-cast | put the boy in an iron chest | ","ox-iron-chest-journey | It drifted for years | ","tp-ink-arrows | They each shoot an arrow | ","iron-chest | set it on the water | "]
+
+######## [4] Stone Lady / 산방덕 | logline: [object Object]
+
+0 P: Tamla is made of stone. Sooner or later, so is everybody in its stories.
+   KO: 탐라는 돌로 되어 있다. 조만간 그 이야기 속 사람들도 다 돌이 된다.
+1 scene: {"kind":"scene","label":"Gimnyung Cave","ko":"김녕굴"}
+2 P: There is the serpent in the cave at Gimnyung, and every year the village gives it a girl. One year a young magistrate comes over from the mainland and refuses to.
+   KO: 김녕굴에는 뱀이 산다. 마을은 해마다 그것에게 처녀를 하나씩 바친다. 어느 해, 뭍에서 건너온 젊은 판관이 그러기를 거부한다.
+3 D[undefined]: It’s always been fed, sir. Every year. / Don’t go in there.
+   KO: 해마다 먹여 왔수다, 나리. / 그디 들어가지 맙서.
+4 D[undefined]: Then it’s had plenty.
+   KO: 그럼 실컷 먹었군.
+5 P: He goes in with a spear and a great deal of smoke, and comes out with the serpent dead behind him. At the cave mouth the old shaman catches his sleeve.
+   KO: 그는 창과 연기를 잔뜩 가지고 들어가, 등 뒤에 죽은 뱀을 두고 나온다. 굴 어귀에서 늙은 심방이 그의 소매를 잡는다.
+6 D[undefined]: Ride for the town, sir. Don’t look back. / Whatever you hear behind you. Don’t.
+   KO: 읍내까지 내쳐 갑서, 나리. 뒤돌아보지 맙서. / 뒤에서 뭔 소리가 나도, 돌아보지 맙서.
+7 P: Halfway to town he hears something behind him. He wants to see whether he has won. He looks back. By evening he is dead in his bed, and nobody in the village is surprised, which is the saddest part.
+   KO: 읍내까지 반쯤 갔을 때 등 뒤에서 소리가 난다. 그는 자기가 이겼는지 보고 싶다. 돌아본다. 저녁이 되자 그는 제 자리에서 죽어 있고, 마을의 누구도 놀라지 않는다. 그게 제일 슬픈 대목이다.
+8 scene: {"kind":"scene","label":"Sanbangduk","ko":"산방덕"}
+9 P: There is <b>Sanbangduk</b>, who came down out of the rock to love a poor man.
+   KO: 가난한 사내를 사랑하여 바위에서 내려온 <b>산방덕</b>이 있다.
+10 card: {"kind":"card","person":"sanbangdeok","caption":"A goddess who stepped out of the Sanbang cliff to see the world. The world noticed.","ko":"세상 구경을 하러 산방 절벽에서 나온 여신. 세상이 알아챘다.","still":"/intro/sanbangdeok--stone-lady.jpg"}
+11 D[sanbangdeok]: I came out of the rock… / and when I hold your hand I don’t feel like stone.
+   KO: 바위에서 나왔는데… / 당신 손만 잡으면 돌이 아닌 것 같아요.
+12 D[undefined]: Then don’t let go. / Whatever the official says.
+   KO: 그럼 놓지 마시오. / 관리가 뭐라고 하든.
+13 P: Then an official on a tax round sees her at the spring.
+   KO: 그러다 세금 걷으러 돌던 관리가 샘가에서 그녀를 본다.
+14 D[undefined]: A woman out of the rock belongs to the government. / Like the rock.
+   KO: 바위에서 나온 여자는 관아 것이다. / 바위처럼.
+15 D[undefined]: She belongs to nobody. She picked a hut.
+   KO: 이 사람은 누구 것도 아니오. 오두막을 고른 거요.
+16 P: Poor men always owe something somewhere, and the official finds it. Then the official has the husband killed to take her.
+   KO: 가난한 사내는 어딘가에 늘 빚이 있고, 관리는 그걸 찾아낸다. 그러고는 관리가 남편을 죽여 그녀를 차지하려 한다.
+17 D[sanbangdeok]: You wanted me because I wasn’t stone. / Look again.
+   KO: 내가 돌이 아니라서 탐냈지. / 다시 봐.
+18 P: She walks back into the cliff. The spring inside it has not stopped since.
+   KO: 그녀는 절벽 속으로 돌아간다. 그 안의 샘물은 그 뒤로 마른 적이 없다.
+19 P: The island says its stories don’t end badly. They end in stone, which is different. Stone stays.
+   KO: 섬사람들은 자기네 이야기가 나쁘게 끝나는 게 아니라고 한다. 돌로 끝난다고. 그건 다르다. 돌은 남는다.
+20 scene: {"kind":"scene","label":"Gamunjang","ko":"가믄장아기"}
+21 P: Not every story here ends in stone. Some end in gold, which is worse news for somebody. A rich man had three daughters, and one evening he asked them whose luck they lived on.
+   KO: 여기 이야기가 다 돌로 끝나는 건 아니다. 금으로 끝나는 것도 있는데, 그건 누군가에게 더 나쁜 소식이다. 부자에게 딸이 셋 있었다. 어느 저녁 그는 딸들에게 누구 덕에 사느냐고 물었다.
+22 D[undefined]: Heaven’s, Father. And earth’s. And yours, and Mother’s.
+   KO: 하늘님 덕, 땅님 덕, 아방 덕, 어멍 덕이우다.
+23 D[undefined]: What she said. / …Mostly yours, Father.
+   KO: 성님 말 그대로우다. / …거의 아방 덕이우다.
+24 P: The father beams. Then he turns to the youngest.
+   KO: 아버지 얼굴이 환해진다. 그러고는 막내를 돌아본다.
+25 quote: {"kind":"quote","html":"“By whose grace did you come into the world?” “First, heaven’s. Second, earth’s. Third, Father’s. Fourth, Mother’s — but really, the line drawn under Mother’s navel.”","ko":"“너는 누구 덕으로 태어났느냐?” “첫째는 하늘님 덕이요, 둘째는 땅님 덕이요, 셋째는 아버님 덕이요, 넷째는 어머님 덕입니다마는, 어머님 배꼽 아래 그어진 금 덕입니다.”","sou
+26 D[undefined]: Out. / Tonight. Take nothing my luck paid for.
+   KO: 나가라. / 오늘 밤. 나 덕으로 산 건 하나도 가져가지 말라.
+27 D[gameunjang]: Then I’ll take the black cow. She was born before you were rich.
+   KO: 게민 검은 암소나 데령 가쿠다. 아방 부자 되기 전에 난 소우다.
+28 P: She walked until she found three brothers digging yams and married the youngest, the only one who greeted her. In the spoil he had been throwing away as stones, she found gold.
+   KO: 그는 마를 캐는 삼 형제를 만날 때까지 걸었고, 자기에게 인사한 유일한 사람인 막내와 혼인했다. 그가 돌이라며 내던지던 흙 속에서 금을 찾아냈다.
+29 P: Her parents lost everything and went blind. Years later she held a beggars’ feast that lasted three days. On the third day two old blind beggars came to the gate, and she served them herself.
+   KO: 부모는 모든 것을 잃고 눈이 멀었다. 여러 해 뒤 그는 사흘 동안 거지 잔치를 열었다. 사흘째 되는 날 눈먼 늙은 거지 둘이 문에 왔고, 그는 손수 상을 올렸다.
+30 D[gameunjang]: Eat, both of you. There’s more. / …It’s me. The youngest. The one who lived on her own luck.
+   KO: 두 분 다 드십서. 더 있수다. / …나우다. 막내. 지 덕으로 살던 그 딸.
+31 P: Their eyes opened. The first thing they saw was the daughter they had thrown out, holding the ladle.
+   KO: 두 사람의 눈이 뜨였다. 처음 본 것은 자기들이 내쫓은 딸이 국자를 든 모습이었다.
+32 P: <b>Heaven sends for a man to keep its flower field. He leaves his pregnant wife to wait. He forgets to say how long…!</b>
+   KO: <b>하늘이 제 꽃밭을 맡길 사내를 부른다. 그는 아이 밴 아내를 남겨 두고 떠난다. 얼마나 기다리라는 말은 하지 않는다…!</b>
+IMAGES: ["sanbangdeok-cliff | She walks back into the cliff | ","dolhareubang-monuments |  | ","sanbang-seq-out | who came down out of the rock | ","sanbang-seq-hand | feel like stone | ","sanbang-seq-return | the official has the husband killed | ","sanbang-seq-spring | The spring inside it has not stopped | ","gameunjang | She walked until she found three brothers digging yams a | ","beggars-feast | held a beggars | ","navel-string-life | she found gold | ","sl-ink-serpent | the serpent in the cave at Gimnyung | "]
+
+######## [5] Gardener / 할락궁이 | logline: [object Object]
+
+0 P: Heaven has trouble keeping gardeners. The first one left a wife behind and forgot to say how long.
+   KO: 하늘은 꽃감관을 오래 붙잡아 두지 못한다. 첫 번째 감관은 아내를 두고 떠나면서 얼마나 걸릴지 말하는 걸 잊었다.
+1 scene: {"kind":"scene","label":"The Rich Man’s House","ko":"부잣집"}
+2 P: His name was Sara Doryung, and heaven sent for him to keep its flower field in the west. His wife was carrying. She could not walk as fast as heaven wanted, so he left her at a rich man’s house to wait.
+   KO: 그 이름은 사라도령. 하늘은 서쪽 꽃밭을 지키라고 그를 불렀다. 아내는 아이를 배고 있었다. 하늘이 바라는 만큼 빨리 걷지 못했다. 그래서 그는 아내를 어느 부잣집에 맡겨 두고 기다리라 했다.
+3 D[undefined]: Wait for me here.
+   KO: 이디서 기다리라.
+4 D[undefined]: When?
+   KO: 언제마씸?
+5 D[undefined]: …I’ll come back.
+   KO: …돌아오마.
+6 P: The rich man wanted her. She said no, and went on saying no for fifteen years, through every kind of work a rich man can find for a servant who says no. Her son was born in that house and grew up a servant in it. His name was <b>Hallakgungi</b>.
+   KO: 부자는 그녀를 원했다. 그녀는 싫다 했고, 열다섯 해 동안 계속 싫다 했다. 싫다는 종에게 부자가 찾아낼 수 있는 온갖 일을 다 겪으면서. 그 집에서 태어난 아들은 그 집 종으로 자랐다. 그 이름이 <b>할락궁이</b>다.
+7 card: {"kind":"card","person":"sara","caption":"Hallakgungi. Born a servant, and he means to find his father.","ko":"할락궁이. 종으로 태어났고, 아버지를 찾아갈 작정이다.","still":"/intro/sara--gardener.jpg"}
+8 P: When he was old enough, his mother told him where his father was.
+   KO: 아이가 클 만큼 크자, 어머니는 아버지가 어디 있는지 일러 주었다.
+9 D[undefined]: West. Past where the roads stop. / Go tonight. Don’t come back for me.
+   KO: 서쪽. 길 끝나는 디 너머. / 오늘 밤 가라. 나 데리러 오지 말라.
+10 D[sara]: Come with me.
+   KO: 같이 가.
+11 D[undefined]: I’d slow you down. I slowed him down too.
+   KO: 나가 느 발 잡을 거라. 느 아방 발도 잡았주.
+12 P: He went west that night. In the morning the rich man found the boy gone, killed the mother instead, and threw her into a bamboo grove. She had known he would. She told the boy anyway.
+   KO: 아이는 그날 밤 서쪽으로 떠났다. 아침에 부자는 아이가 없어진 걸 알고 대신 어머니를 죽여 대숲에 던졌다. 그녀는 그럴 줄 알았다. 그래도 아이에게 말해 주었다.
+13 scene: {"kind":"scene","label":"The Flower Field","ko":"서천꽃밭"}
+14 P: Hallakgungi found the flower field at the far end of the west, where the living maps run out, and his father at the gate of it. Sara Doryung took him down the rows. Here, the flowers that put back bone, and flesh, and blood, and breath, and the soul last of all. Over there, the flowers that laugh a man to death, and the ones that make a house fight itself, and at the end of the row the one that ends a line altogether.
+   KO: 할락궁이는 산 사람의 지도가 끝나는 서쪽 맨 끝에서 꽃밭을 찾았고, 그 문간에서 아버지를 찾았다. 사라도령은 그를 데리고 꽃밭 고랑을 걸었다. 여기는 뼈를, 살을, 피를, 숨을, 맨 마지막으로 넋을 되살리는 꽃. 저쪽은 사람을 웃다 죽게 하는 꽃, 한 집안이 저희끼리 싸우게 하는 꽃, 고랑 맨 끝에는 한 핏줄을 아주 끊어 버리는 꽃.
+15 D[undefined]: You have her chin.
+   KO: 느 어멍 턱을 닮았구나.
+16 D[sara]: She waited fifteen years. / You didn’t say how long.
+   KO: 어멍은 열다섯 해를 기다렸어. / 얼마나 걸린다고 말을 안 했잖아.
+17 D[undefined]: …No. / Mind the end of the row. Don’t touch that one.
+   KO: …그래. / 고랑 끝은 조심해라. 그건 만지지 마라.
+18 P: He took from both rows. He went back to the rich man’s house and held a little party: the laughing flower, the fighting flower, and the last one. Then he went to the bamboo grove, found his mother’s bones, and put her back together in order. Bone, flesh, blood, breath, soul.
+   KO: 아들은 두 고랑에서 다 꺾었다. 그 부잣집으로 돌아가 작은 잔치를 열었다. 웃음꽃, 싸움꽃, 그리고 마지막 꽃. 그다음 대숲에 가서 어머니의 뼈를 찾아, 순서대로 맞추었다. 뼈, 살, 피, 숨, 넋.
+19 P: Afterwards the son took the flower field over from his father and keeps it still. The island calls him the Gardener when it does not want to say his name, which is most of the time. The flowers that bring you back and the flowers that end you grow in the same rows, and he is the only one who knows which is which in the dark.
+   KO: 그 뒤로 아들이 아버지에게서 꽃밭을 물려받아 지금도 지킨다. 섬은 그 이름을 입에 올리기 싫을 때 그를 꽃감관이라 부르는데, 대개 그렇다. 되살리는 꽃과 끝장내는 꽃이 같은 고랑에서 자라고, 어둠 속에서 어느 게 어느 것인지 아는 이는 그 하나뿐이다.
+20 P: The father did not go home with them. He kept the gate until the boy was ready for it, and then he retired, which in heaven is the same as vanishing.
+   KO: 아버지는 함께 돌아가지 않았다. 아들이 문을 맡을 만해질 때까지 지키다가 물러났다. 하늘에서 물러난다는 건 사라지는 것과 같다.
+21 scene: {"kind":"scene","label":"Jachungbi","ko":"자청비"}
+22 P: The gardener’s flowers come back into the story, the way borrowed tools do. This time they are wanted by a girl with no patience at all.
+   KO: 꽃감관의 꽃은 빌려 간 연장처럼 이야기에 다시 돌아온다. 이번에 그 꽃을 찾는 건 참을성이라곤 없는 처녀다.
+23 P: Jachungbi wanted to study beside a boy from the sky. Women were not allowed in the room, so she cut her hair and put on a man’s clothes.
+   KO: 자청비는 하늘에서 온 도령을 따라 글을 배우고 싶었다. 여자는 그 방에 들 수 없었다. 그래서 머리를 자르고 남자 옷을 입었다.
+24 card: {"kind":"card","person":"jacheongbi","caption":"Jachungbi. Disguise, scholarship, and not one ounce of patience.","ko":"자청비. 변장, 학문, 그리고 인내심은 한 톨도 없음.","still":"/intro/jacheongbi--gardener.jpg"}
+25 P: Nobody had ever written a rule against it. Nobody had imagined they would need one.
+   KO: 그걸 막는 규칙은 아무도 써 둔 적이 없었다. 그런 규칙이 필요할 줄 아무도 몰랐다.
+26 P: Three years at the same desk. She beat him at everything and let him believe it was close. On the last night at the parting stream she washed upstream of him and told him to look.
+   KO: 한 책상에서 삼 년. 그는 도령을 모든 것에서 이기고도 아슬아슬했다고 믿게 두었다. 헤어지던 마지막 밤 냇가에서, 그는 도령보다 위쪽에서 몸을 씻으며 보라고 말했다.
+27 D[jacheongbi]: Three years at the same table — eating, sleeping, reading — and you notice <em>now</em>?
+   KO: 삼 년을 같은 상에서 먹고 자고 글을 읽었는데, 이제야 아느냐?
+28 card: {"kind":"card","person":"mundoryeong","caption":"A boy from the sky, sent down to study. Very good at books, very bad at noticing things.","ko":"공부하러 내려온 하늘의 도령. 책은 아주 잘 보고, 눈치는 아주 없다.","still":"/intro/mundoryeong--gardener.jpg"}
+29 D[mundoryeong]: …I had no eyes.
+   KO: …내가 눈이 없었소.
+30 D[jacheongbi]: You have them now. / …Will you only look? / After three years of holding back.
+   KO: 이제 있으니까. / …보고만 있을 거예요? / 삼 년을 참았는데.
+31 D[mundoryeong]: I was not holding back. / I did not know. / Now that I do… my breath is rough.
+   KO: 참은 게 아니오. / 몰랐소. / 이제 알고 나니… 숨이 거칠어지오.
+32 D[jacheongbi]: Then stay rough. / Touch my hair. / The hair I cut short for you.
+   KO: 그럼 거친 채로. / 내 머리를 만져 봐요. / 짧게 잘랐던 그 머리.
+33 P: Heaven does not care for that sort of marriage. They kill him for it, and send his body down the parting stream, past her.
+   KO: 하늘은 그런 혼인을 좋아하지 않는다. 사람들은 그 일로 도령을 죽이고, 그 몸을 이별의 냇물에 띄워 그녀 앞으로 흘려보낸다.
+34 D[jacheongbi]: You noticed me late. / You don’t get to leave early.
+   KO: 늦게 알아봤으면서. / 먼저 가는 건 안 돼.
+35 P: So she walks west, past every gate, into the Western Flower Field.
+   KO: 그래서 그녀는 서쪽으로 걷는다. 있는 문이란 문을 다 지나, 서천꽃밭으로.
+36 place: {"kind":"place","place":"western_flower_field","html":"Every flower here does something. Ask before you pick.","ko":"여기 꽃은 다 하는 일이 있다. 꺾기 전에 물어보라."}
+37 D[sara]: Father retired. / This gate answers to Hallakgungi now. / What are you looking for.
+   KO: 아버지는 은퇴하셨다. / 여기는 이제 할락궁이 문이다. / 무엇을 찾느냐.
+38 D[jacheongbi]: The resurrection flower. / The one that puts bones back together.
+   KO: 환생꽃. / 뼈를 다시 맞출 꽃.
+39 D[sara]: Don’t touch the stem wrong. / Five — bone, flesh, blood, breath, soul. / Pick them out of order and even the living wilt.
+   KO: 줄기에 손대지 마라. / 다섯 — 뼈, 살, 피, 숨, 넋. / 잘못된 순서로 꺾으면 산 것도 시든다.
+40 D[jacheongbi]: I’ll pick them in order.
+   KO: 순서대로 꺾겠습니다.
+41 P: She picks the five flowers in order and puts him back together bone by bone. Bone, flesh, blood, breath, soul. He sits up on the bank like a man woken too early.
+   KO: 그녀는 다섯 꽃을 차례대로 꺾어 그를 뼈 하나하나 다시 맞춘다. 뼈, 살, 피, 숨, 혼. 그는 너무 일찍 깨운 사람처럼 냇가에 일어나 앉는다.
+42 D[mundoryeong]: …How long was I gone.
+   KO: …내가 얼마나 없었소.
+43 D[jacheongbi]: Long enough. Don’t do it again.
+   KO: 충분히. 다시는 그러지 마.
+44 P: Then she brings the five grains down to Tamla, because a woman who has been to the end of the west does not come home empty-handed.
+   KO: 그러고는 오곡을 탐라로 가지고 내려온다. 서쪽 끝까지 다녀온 여자는 빈손으로 돌아오지 않는 법이다.
+45 P: <b>The island keeps one story for last. It is about the one who comes for you, and the crow that lost his book…!</b>
+   KO: <b>섬은 이야기 하나를 맨 끝까지 아껴 둔다. 당신을 데리러 오는 자, 그리고 그의 책을 잃어버린 까마귀 이야기다…!</b>
+IMAGES: ["poster_hallakgungi |  | ","jacheongbi-wide |  | ","jacheongbi-hair | 머리를 자르고 | ","jacheongbi-flower-field | Western Flower Field | ","scene-gardener-sing | Western Flower Field | ","jacheongbi-bones | bone by bone | ","jacheongbi-five | five flowers in order | ","hallakgungi-gate | This gate answers to Hallakgungi now. | ","scene-gardener-homage-4 | This gate answers to Hallakgungi now. | ","hallakgungi-rows | 자청비는 하늘에서 온 도령을 | ","scene-gardener-homage-5 | 자청비는 하늘에서 온 도령을 | ","hallakgungi-green-bloom | The gardener’s flowers come back into the story | ","scene-gardener-homage-21 | The gardener’s flowers come back into the story | ","gd-ink-flower-field | found the flower field at the far end of the west | ","gd-ink-mother-bones | found his mother’s bones | ","scene-gardener-homage-2 | When he was old enough | ","scene-gardener-homage-36 | When he was old enough | ","scene-gardener-homage-3 | Afterwards the son took the | "]
+
+######## [6] Kangrim / 강림 | logline: [object Object]
+
+0 P: Every death you’ve watched so far has had a visitor: a man with a red book and one question. Here is where he came from.
+   KO: 지금까지 당신이 지켜본 죽음마다 손님이 하나 있었다. 붉은 책 한 권과 질문 하나를 든 사내. 그가 어디서 왔는지 이야기할 차례다.
+1 scene: {"kind":"scene","label":"The Magistrate’s Hall","ko":"원님 동헌"}
+2 P: A rich couple killed three brothers for their silk and sank them in a pond. The brothers came back, and died again, and no living court could try a case like that. So the magistrate, a man called Gimchi, sent his strongest man down to fetch the judge of the dead.
+   KO: 부잣집 내외가 비단 때문에 삼형제를 죽여 못에 가라앉혔다. 삼형제는 돌아왔다가 또 죽었고, 산 사람의 관아로는 그런 사건을 심리할 수가 없었다. 그래서 김치라는 원님이 제일 힘센 부하를 저승으로 보내 죽은 자의 판관을 데려오게 했다.
+3 P: How did they come back? Three flowers on the water, three beads, three sons. That part is a night’s work by itself. And yes, the magistrate was called Gimchi. He was a serious man. Please don’t laugh.
+   KO: 어떻게 돌아왔느냐고? 물 위에 꽃 셋, 구슬 셋, 아들 셋. 그 대목만 해도 하룻밤 걸린다. 그리고 그렇다, 원님 이름이 김치였다. 진지한 양반이었다. 웃지 마시라.
+4 D[undefined]: Kangrim. Go down and bring me King Yumla.
+   KO: 강림아. 저승에 내려가 염라대왕을 잡아 오너라.
+5 D[kangrim]: …Down, sir.
+   KO: …내려가라 하셨습니까, 사또.
+6 D[undefined]: Down. The hearing is in three days.
+   KO: 내려가라. 공초는 사흘 뒤다.
+7 D[kangrim]: Sir. Does he know he’s coming?
+   KO: 사또. 그분도 오실 줄 아십니까.
+8 D[undefined]: He will when you tell him.
+   KO: 네가 말하면 알겠지.
+9 scene: {"kind":"scene","label":"The Road Down","ko":"저승길"}
+10 P: His wife kept the gate-god and the kitchen-god fed, so they put him on the road. At the last pond he shut his eyes and jumped, and stood up at the underworld gate. Someone was already walking that road with a red book. Haewonmek, the oldest fetch there is. Kangrim asked the way. Haewonmek pointed, and kept walking. Kangrim waited, and addressed King Yumla with court courtesy.
+   KO: 아내가 문신과 조왕을 잘 먹인 덕에, 신들이 그를 길에 올려 주었다. 마지막 연못에서 그는 눈을 감고 뛰어들었고, 저승문 앞에 서 있었다. 그 길엔 이미 붉은 책을 든 이가 걷고 있었다. 해원맥. 세상에서 제일 오래된 차사다. 강림이 길을 물었다. 해원맥은 손으로 가리키고, 계속 걸었다. 강림은 기다렸다가 염라대왕을 조정의 예로 불렀다.
+11 D[kangrim]: Your Majesty. The living court requests you. / There is a case. Living law cannot close it.
+   KO: 폐하. 이승 관아가 폐하를 청합니다. / 사건이 하나 있습니다. 산 자의 법으로는 못 닫습니다.
+12 card: {"kind":"card","person":"yumla","caption":"The judge of the dead. Every ledger in the dark ends on his desk.","ko":"죽은 자의 재판관. 어둠 속 모든 장부는 그의 책상에서 끝난다.","still":"/intro/yumla--kangrim.jpg"}
+13 D[yumla]: Go home. / I will come at the hour I name.
+   KO: 가 있어라. / 내가 말한 시각에, 내가 가겠다.
+14 P: He came. The pond dried. The bones came up. The three brothers went home to their parents. The couple who had killed them did not. <b>Yumla</b> keeps the sentence. Then he turned to the magistrate and asked to borrow the man who had fetched him.
+   KO: 그가 왔다. 연못이 말랐다. 뼈가 드러났다. 형제 셋은 부모에게 돌아갔다. 그들을 죽인 부부는 돌아가지 못했다. <b>염라</b>가 판결을 지킨다. 그런 다음 그는 원님에게, 자기를 데려온 그 사내를 빌려 달라고 했다.
+15 D[yumla]: Lend me that man. I still have errands.
+   KO: 그 사내를 빌려 다오. 심부름이 남았다.
+16 P: The magistrate refused. He did not believe in souls, and he was not about to lend his best man to one. So they split him. The magistrate kept the body. Yumla took the soul.
+   KO: 원님은 거절했다. 혼 같은 건 믿지 않았고, 제일 쓸 만한 부하를 그런 것에 빌려줄 생각도 없었다. 그래서 둘로 갈랐다. 원님은 몸을 가졌다. 염라는 혼을 가져갔다.
+17 P: That is how Kangrim died upstairs and woke as a fetch of the dead. The living official kept the half he could see. Death kept the other half.
+   KO: 그렇게 강림은 이승에서 죽고 저승차사로 깨어났다. 산 자의 관리는 눈에 보이는 쪽을 가졌고, 죽음은 나머지 쪽을 가졌다.
+18 P: Yumla then put in his hands a ledger that told each living person their hour — eighty, and in order, the old before the young. On the way down Kangrim trusted it to a crow. The crow set the book on a wall to eat at a slaughter-field. A snake swallowed the writing. Caught, the crow cried a new rule so the blame would not sit on one bird: parents after children, children after parents. Since then the hour does not come in a just order.
+   KO: 염라는 그 손에 명부를 쥐여 주었다. 산 사람마다 죽을 시각을 적은 장부 — 여든에, 차례대로, 늙은이가 젊은이보다 먼저. 내려오는 길에 강림은 그것을 까마귀에게 맡겼다. 까마귀는 푸줏간 밭에서 먹으려고 책을 담 위에 내려놓았다. 구렁이가 글씨를 삼켰다. 들킨 까마귀는 죄가 새 한 마리에게 남지 않도록 새 규칙을 울었다. 부모는 자식 뒤에, 자식은 부모 뒤에. 그 뒤로 죽을 시각은 옳은 순서로 오지 않는다.
+19 quote: {"kind":"quote","html":"“Give me the red writ. When it’s the old one’s turn, let the child come. When it’s the child’s turn, let the old one come. I’ll bring them back like water running uphill, out of order.”","ko":"“적배지를 나한테 주십시오. 어른 올 때 아이 오고, 아이 올 때 어른 오게 하여, 거꾸로 흐르는 물처럼 순서를 뒤집어 데려오겠습니다.”","sour
+20 P: One errand was left: a man who had dodged death for three thousand years. Kangrim sat in a stream washing charcoal until the old man stopped to laugh at him, and took him by the sleeve. Only then did Yumla seat him as the one who comes for everyone else. That is why he asks a question at the threshold. Not for the sentence — Yumla keeps the sentence. A scrambled list still deserves accurate last words.
+   KO: 심부름이 하나 남았다. 삼천 년을 죽음에서 빠져나간 사내였다. 강림은 냇가에 앉아 숯을 씻었고, 늙은이가 비웃으려고 걸음을 멈추자 그 소매를 잡았다. 그제야 염라는 그를, 나머지 모두를 데리러 가는 자로 앉혔다. 그래서 그는 문턱에서 질문을 한다. 판결을 위해서가 아니다. 판결은 염라가 내린다. 뒤섞인 명부에도 정확한 마지막 말은 필요하니까.
+21 D[kangrim]: I do not punish. / I collect — for His Majesty. / Since the list was scrambled, nobody knows the hour until I am already in the room.
+   KO: 나는 벌하지 않는다. / 거둬 갈 뿐 — 폐하를 위해. / 명부가 뒤섞인 뒤로는, 내가 방에 들어서기 전엔 누구도 시각을 모른다.
+22 P: He still asks it, the question. You have heard him. You will hear him again.
+   KO: 그는 지금도 그 질문을 한다. 당신도 들었다. 또 듣게 될 것이다.
+23 P: <b>Back in the world of counted days, a tribute boat sails home from Sabi. On the beach, Gyebek has been waiting for it…!</b>
+   KO: <b>세는 날들의 세상으로 돌아가자. 조공선 한 척이 사비에서 돌아온다. 바닷가에서 계백이 그 배를 기다려 왔다…!</b>
+IMAGES: ["poster_haewonmek |  | ","poster_kangrim |  | ","kangrim-ledger | That is why he asks a question at the threshold. Not for | ","yumla-judgment | Yumla keeps the sentence | ","kangrim-red-book | I collect — for His Majesty. | ","yumla-judge | Yumla keeps the sentence | ","kangrim-blind-book | I collect — for His Majesty. | ","haewonmek-mouth | I collect — for His Majesty. | ","yumla-bench | King Yumla | ","kangrim-redbook | 강림 | ","kangrim-ledger-glow | a ledger that told each living person their hour | ","scene-kangrim-reaper-scroll | a ledger that told each living person their hour | ","kangrim-sword-redbook | I do not punish. | ","haewonmek-sword-redbook | accurate last words | ","scene-grim-reapers-killmonger-37 | accurate last words | ","yumla-judgment-seal | with court courtesy | ","kr-folk-jump | he shut his eyes and jumped | ","kr-folk-gate | stood up at the underworld gate | ","kr-folk-split | So they split him. | ","kr-folk-crow | trusted it to a crow | ","kr-folk-charcoal | washing charcoal | ","kr-ink-three-flowers | Three flowers on the water | ","kr-ink-pond-bones | The pond dried. The bones came up. | ","scene-grim-reapers-killmonger-2 | the hour does not come in a just order | ","scene-grim-reapers-killmonger-3 | That is how Kangrim died | ","scene-grim-reapers-killmonger-4 | Your Majesty. The living court | "]
+
+######## [7] Tribute / 탐라와 백제 | logline: [object Object]
+
+0 P: The tribute boat comes home light. The oranges stayed in Sabi. The news did not.
+   KO: 조공선이 가볍게 돌아온다. 귤은 사비에 두고 왔다. 소식은 두고 오지 않았다.
+1 P: Gyebek has been waiting for this boat for nine hundred and sixty-one days. He knows, because he has cut a notch for every one of them in the beam by Yuri Dora’s door. They are the days left on the king’s mourning, counted down from the morning he washed up. When they run out, the king can sign again.
+   KO: 계백은 이 배를 구백육십하루 동안 기다렸다. 그걸 아는 건, 유리도라의 집 문 옆 들보에 하루에 하나씩 금을 그어 왔기 때문이다. 왕의 상이 끝날 때까지 남은 날들이다. 바닷가에서 깨어난 아침부터 거꾸로 세어 왔다. 그게 다 떨어지면 왕은 다시 어보를 찍을 수 있다.
+2 P: Every one of those nights, Yuri Dora poured two cups and told him one of the island’s stories. Gyebek heard all of them standing by the door. The second cup always went cold there.
+   KO: 그 밤마다 유리도라는 잔 둘을 채우고 섬의 이야기를 하나씩 들려주었다. 계백은 그 이야기를 전부 문간에 선 채로 들었다. 두 번째 잔은 늘 거기서 식었다.
+3 P: Gyebek is on the sand before the sail has a shape. The captain holds a Yunbi contract and has been told not to talk to him. He talks anyway. It is a long way to sail with a thing like that in your mouth.
+   KO: 돛이 모양을 갖추기도 전에 계백은 모래밭에 나와 있다. 선장은 윤비의 계약을 쥐고 있고, 그와 말을 섞지 말라는 당부를 들었다. 그래도 말한다. 그런 걸 입에 물고 오기엔 먼 뱃길이다.
+4 D[undefined]: The rite is over, General. Done at the new year, sir. / His Majesty calls the Assembly on the first of the month. All eight houses.
+   KO: 상은 끝났습니다, 장군. 설에 마치셨지유. / 폐하께서 초하루에 정사암을 부르십니다. 여덟 가문 전부.
+5 D[gyebek]: Did he send for me.
+   KO: 저를 부르셨습니까.
+6 D[undefined]: …… / Nobody said your name, General.
+   KO: …… / 장군 이름은 아무도 안 꺼냈습니다.
+7 D[gyebek]: Did anyone say it.
+   KO: 누구라도 꺼냈습니까.
+8 D[undefined]: No, sir. / …Your wife came to the berth when we docked. She said to tell you— / the boy counts too.
+   KO: 아니유. / …배 댈 때 부인께서 부두에 나오셨습니다. 전해 달라구— / 아드님도 센다고.
+9 P: Gyebek thanks him exactly once. He walks up the beach to the beam by the door, where the notches have run out. Nothing. He has never had a number end on him before.
+   KO: 계백은 꼭 한 번 고맙다고 한다. 그러고는 해변을 걸어 올라가 문 옆 들보 앞에 선다. 금이 다 그어져 있다. 영. 숫자가 그보다 먼저 끝나 버린 건 처음이다.
+10 scene: {"kind":"scene","label":"Two Cups","ko":"잔 둘"}
+11 P: That night Yuri Dora pours two cups, as usual. Gyebek stands by the door, as usual. Nobody mentions the beam.
+   KO: 그날 밤에도 유리도라는 잔 둘을 채운다. 계백은 여느 때처럼 문간에 선다. 들보 얘기는 아무도 꺼내지 않는다.
+12 D[yuridora]: That’s the lot, Turtle. There’s not a story left on this island you haven’t had off me.
+   KO: 거북아, 이젠 다 했저. 이 섬에 이녁이 안 들은 이야기는 하나도 엇다.
+13 D[gyebek]: The fetch. / Tell that one again.
+   KO: 차사 이야기. / 그것을 한 번 더 해 주십시오.
+14 D[yuridora]: Kangrim, is it? / A magistrate sent a living man down to arrest the judge of the dead. And the judge kept him.
+   KO: 강림이? / 원님이 산 사람을 저승에 보내 염라를 잡아 오렌 했주. 경헌디 염라가 그 사람을 붙잡아 둬 불었저.
+15 D[gyebek]: The magistrate let him go.
+   KO: 원님은 보내 주었습니까.
+16 D[yuridora]: He did not. They split him between them. Sure it’s the both of them wanted him.
+   KO: 아니. 둘이 갈라 가졌주. 둘 다 그 사람을 원했으난.
+17 D[gyebek]: …Someone sent for him.
+   KO: …누군가는 그를 불렀군요.
+18 P: Yuri Dora looks at him over the cup for a long time. Gyebek changes the subject, which he has never done before. It comes out as a question about debts.
+   KO: 유리도라는 잔 너머로 오래 그를 바라본다. 계백이 말을 돌린다. 처음 있는 일이다. 빚에 관한 물음으로 나온다.
+19 D[gyebek]: Why does your island keep Baekje’s men. / You owe Baekje nothing.
+   KO: 왜 이 섬은 백제의 사람들을 맡아 줍니까. / 백제에 빚진 것도 없는데.
+20 D[yuridora]: Owe nothing, is it? Ha. Once, long ago, we forgot the oranges.
+   KO: 빚이 엇어? 하. 옛날에 우리가 귤을 깜빡헌 적이 있주.
+21 flashback: {"kind":"flashback","year":"498","title":"The Forgotten Oranges · 잊어버린 귤","blocks":[{"kind":"p","html":"One year, long ago, Tamla stops sending tribute. Rebellion would at least have been legible. This is closer to forgetting, which a large kingdom finds harder to forgive.","ko":"옛날 어느 해, 탐라가 조공을 끊는
+22 P: So when Baekje needs somewhere to put a man it cannot kill, there is an island, and the island owes it a favour.
+   KO: 그러니 백제가 죽일 수 없는 사람을 어딘가에 두어야 할 때, 섬이 하나 있고, 그 섬은 신세를 지고 있다.
+23 D[yuridora]: See what he did? He marched to the harbour, and stopped. / It wasn’t crossing he wanted. He wanted us to know he could.
+   KO: 봔? 항구까지 왕 멈췄저. / 건너고 싶었던 게 아니여. 건널 수 있덴 걸 알리고 싶었던 거주.
+24 D[gyebek]: His Majesty will cross. / After the Assembly.
+   KO: 폐하께서는 건너오십니다. / 회의가 끝나면.
+25 D[yuridora]: Turtle. A king who marches to the harbour and stops is telling you something.
+   KO: 거북아. 항구까지 왕 멈추는 임금은 뭔가를 말하는 거라.
+26 D[gyebek]: His Majesty has not marched to the harbour. / So he has not stopped.
+   KO: 폐하께서는 항구에 오시지 않았습니다. / 그러니 멈추신 것도 아닙니다.
+27 P: Yuri Dora opens his mouth, and shuts it. There is no answer to that. There is only the next morning.
+   KO: 유리도라가 입을 열었다가 다문다. 거기엔 대답이 없다. 다음 날 아침이 있을 뿐이다.
+28 P: He has run out of days to count. So at dawn he goes down to the black rock and starts counting something else.
+   KO: 셀 날이 다 떨어졌다. 그래서 새벽에 그는 검은 바위로 내려가 다른 것을 세기 시작한다.
+29 scene: {"kind":"scene","label":"Black Rock","ko":"검은 돌"}
+30 P: He trains at the same hour on the same slab of lava on the eastern shore, and when the tide takes that slab he waits for the tide rather than use another one.
+   KO: 동쪽 갯가의 같은 현무암 너럭바위에서, 같은 시각에 훈련한다. 물이 그 바위를 덮으면 다른 바위를 쓰지 않고 물이 빠지기를 기다린다.
+31 D[yuridora]: Sure the next rock is the same.
+   KO: 옆 바위도 똑같은디.
+32 D[gyebek]: It is not the same.
+   KO: 똑같지 않습니다.
+33 P: The rock is porous and cruel and nothing like a drill ground. You cannot plant a foot on it twice in the same place. Two seasons of it and he no longer needs to know where his feet are.
+   KO: 그 바위는 구멍이 많고 모질며, 훈련장과는 조금도 같지 않다. 같은 자리에 두 번 발을 디딜 수 없다. 두 철을 그러고 나자, 그는 제 발이 어디 있는지 알 필요가 없어진다.
+34 D[haenyeo]: It’s not holding the breath you do. You push it out with singing.
+   KO: 숨은 참는 게 아니여, 노래로 미는 거라.
+35 D[gyebek]: …I cannot sing.
+   KO: …노래를 못 합니다.
+36 D[haenyeo]: Sure nobody cannot. There’s only them that don’t.
+   KO: 못 허는 사람이 어디 이시니. 안 허는 사람만 있주.
+37 P: The village children learn the count of his drills before they learn his name, and stand on the rocks doing it badly behind him, and he does not once turn round to stop them, because stopping would be an interruption and he does not interrupt.
+   KO: 마을 아이들은 그의 이름보다 그의 훈련 횟수를 먼저 익힌다. 바위에 서서 뒤에서 서툴게 따라 하는데, 그는 한 번도 돌아서서 말리지 않는다. 멈추는 것은 중단이고, 그는 중단하지 않는다.
+38 moral: {"kind":"moral","label":"the warning","html":"A man who cannot vary anything will be unbeatable on the ground he chose, and helpless on any other. Give him the choosing.","ko":"아무것도 바꾸지 못하는 사람은 제가 고른 땅에서는 무적이고 다른 땅에서는 속수무책이다. 그에게 고르게 하라."}
+39 scene: {"kind":"scene","label":"Five Thousand","ko":"오천"}
+40 P: He is asked, once, why he counts everything, and he answers honestly, which is the only way he has ever answered anything.
+   KO: 어째서 모든 것을 세느냐는 물음을 한 번 받는다. 그는 정직하게 답한다. 그가 무엇에든 답해 온 유일한 방식으로.
+41 D[gyebek]: Numbers do not lie to me.
+   KO: 숫자는 저를 속이지 않습니다.
+42 D[yuridora]: And people do?
+   KO: 사람은 속이고?
+43 D[gyebek]: People are not trying to. / I simply do not follow them. / I have never learned to read a face.
+   KO: 사람은 속이려는 게 아니라, / 제가 못 알아듣습니다. / 얼굴을 읽는 법을 모릅니다.
+44 D[yuridora]: Then how is it you survived twenty years at a court?
+   KO: 게민 이십 년을 조정에서 어떵 살안?
+45 D[gyebek]: I trusted one man.
+   KO: 한 사람만 믿었습니다.
+46 P: The island considers this the saddest sentence anybody has said on it, and nobody explains to him why they have all gone quiet, and he does not ask, because he has not noticed.
+   KO: 섬은 그것을 여태 이 섬에서 나온 가장 슬픈 문장으로 여긴다. 아무도 그에게 왜들 조용해졌는지 설명해 주지 않고, 그는 묻지 않는다. 알아차리지 못했기 때문이다.
+47 D[undefined]: (Tamla fisher, laughing) / Hundred-Victories, they call him on the mainland — and he here counting oranges like they might desert.
+   KO: (탐라 어부, 웃으며) / 육지선 백승이렌 부르주 — 이디선 귤이 도망갈까 봐 세엄서.
+48 P: He drills in units of five hundred. One day he will take ten of those units to a field and leave the rest behind. The count is already in his mouth.
+   KO: 그는 오백을 한 단위로 훈련한다. 언젠가 그는 그것 열 개를 벌판으로 데려가고 나머지는 남겨 둘 것이다. 숫자는 이미 입에 있다.
+49 P: That night he cuts a new notch at the other end of the beam. One. If the king sends, he will be ready. If the king does not send, he will be ready.
+   KO: 그날 밤 그는 들보 반대쪽 끝에 새 금을 하나 긋는다. 하나. 왕이 부르면, 준비가 되어 있을 것이다. 왕이 부르지 않아도, 준비가 되어 있을 것이다.
+50 P: <b>Meanwhile, in Sabi, Euija calls the Assembly. He has a smile, a speech, and a proclamation printed before anyone sat down…!</b>
+   KO: <b>그 무렵 사비. 의자가 회의를 소집한다. 미소 하나, 연설 하나, 그리고 다들 앉기도 전에 찍어 둔 포고문 한 장…!</b>
+IMAGES: ["orange-tribute | and the oranges resume | ","tribute-oranges-minimal |  | ","black-rock-wide |  | ","black-rock-lava | same slab of lava | ","black-rock-monolith |  | ","jacheongbi | Then how is it you survived twenty years at a court? | ","five-thousand-formation |  | ","parody-sehando-gyebek | I trusted one man. | ","scene-gyebek-ocean-back | He trains at the same | ","scene-gyebek-who-am-i-15 | He trains at the same | "]

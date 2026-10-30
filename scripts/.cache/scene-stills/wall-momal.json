@@ -1,0 +1,84 @@
+[
+	{
+		"id": "geomgun-famine",
+		"entry": "Bupmin",
+		"at": "People sit with empty bowls at the storehouse door",
+		"alt": "Drought storehouse: empty bowls at the door, ribs on a dog in the lane, Geomgun small in the threshold",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. WIDE, figures small in the lower third. ONE device: the storehouse door as a dark rectangle in a wall of timber. Day, a Silla granary yard after drought: packed earth cracked, pale paper sky, giwa eave dissolving. People in undyed white sit with EMPTY BOWLS at the door; a thin dog in the lane, ribs countable. In the threshold, small, Geomgun — spare Korean face, black crescent headband, charcoal-grey po — standing, looking at the bowls, not yet moving. #6b6458 as cool dust-sun on the timber, never a glow. DAY GROUND. Composed for a 2:1 letterbox crop. No army. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 562
+	},
+	{
+		"id": "geomgun-sleeves",
+		"entry": "Bupmin",
+		"at": "They fill two sleeves. They put a third sleeve in his hands",
+		"alt": "Two clerks fill grain sleeves at the counting board; a third sleeve is put in Geomgun’s hands",
+		"time": "night",
+		"hat": false,
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER, intimate. ONE device: three grain-sleeves as dark hanging weights across the centre. Night storehouse, one oil lamp on the counting board the practical key from the side. LEFT of the sheet = Geomgun, FACE from the attached portrait (spare Korean face, small stubborn mouth, black crescent headband), charcoal-grey po, holding a third filled sleeve the way you hold a cup you did not ask for, eyes open, not yet accusing. Two unnamed clerks as dark shapes filling sleeves from an open bin, faces turned away — do not invent named faces. Timber bins, one emptied. #6b6458 as lamp bounce on cheek and hemp. Composed for a 2:1 letterbox crop. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 562
+	},
+	{
+		"id": "guriji-hand",
+		"entry": "Bupmin",
+		"at": "The boy does not sit. The hand finds his head anyway",
+		"alt": "Night yard: an old captain’s hand on a standing boy’s head; a packed gate; one lamp burned down",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. INTIMATE two-shot, LOW THREE-QUARTER. ONE device: the old hand as a dark stamp on the boy’s black hair. Night packed-earth yard, a timber gate already open behind them, one burned-down oil lamp on the ground the practical key from below. An OLD Korean captain, sixties, lined face, no crown, no horse in frame, charcoal po, one hand finding the standing boy’s head. The boy sixteen, pack already tied, does NOT sit, looking up, mouth set. Invent both faces — no named portraits. #6b6458 as lamp gold on knuckles and cheek. Keep a real Korean timber gate and packed earth. Composed for a 2:1 letterbox crop. No army. No readable text. No watermark.",
+		"with": ["place:hwarang_yard", "dress:silla"],
+		"year": 561
+	},
+	{
+		"id": "wall-after-hand",
+		"entry": "Bupmin",
+		"at": "He lifts the lamp to the second bay",
+		"alt": "Yushin lifts the lamp to the second mural: a night yard, an old man, one hand on a boy’s head",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW WIDE along the roofed Korean gallery at night. ONE device: the lamp as a gold coin lifting a painted night-yard out of black plaster. LEFT of the sheet = Marshal Yushin, bearded, Silla-blue po, mid-lift, oil lamp toward the second painted bay — a naive mural of a gate and a hand on a boy’s head. Teenage hwarang boys behind him, small. Keep the attached mansion compound's timber and giwa. NIGHT, crushed black, one lamp. Composed for a 2:1 letterbox crop. No readable text on the murals. No army. No watermark.",
+		"people": ["yushin"],
+		"with": ["place:hwarang_yard"],
+		"year": 641
+	},
+	{
+		"id": "wine-jar",
+		"entry": "Bupmin",
+		"at": "He sits. He pours. He does not reach for anything else",
+		"alt": "Young Chunchu sits cross-legged at a raider campfire, pouring wine; swords on the ground; they are starting to laugh",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER at a single campfire. ONE device: the wine jar as a dark circle being tipped. LEFT of the sheet = young Chunchu as hwarang, FACE from the attached hwarang portrait (slim, loose black hair, no full beard), magenta-crimson silk, sitting CROSS-LEGGED, pouring, a small knowing almost-smile, NO sword in his hand. Around him a ring of unnamed Baekje raiders as dark shapes, swords already on the packed earth, starting to laugh — do not invent a second named face. One fire the practical key from below. #D8258C in the silk catch. NIGHT, crushed black. Composed for a 2:1 letterbox crop. No army catalog. No readable text. No watermark.",
+		"people": ["chunchu:hwarang"],
+		"year": 628
+	},
+	{
+		"id": "momal-green-boat",
+		"entry": "Momal",
+		"at": "They left it untied",
+		"alt": "Eight-year-old Momal mid-oar in a green pine boat; a Kim boy on the far thwart; the landing already emptying",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER from the gunwale of a GREEN pine boat on black river water. ONE device: the oar as a hard diagonal. LEFT of the sheet = Park Momal as a CHILD of EIGHT, FACE from the attached child portrait — same long oval face as the adult Park, BLACK hair, NO beard, NO silver, magenta-plum boy's jeogori, mid-oar, a small knowing almost-smile. On the far thwart a SECOND boy of about eight in a vermilion scrap, long loose black hair, NO crown, NO beard — invent this Kim-boy face, NEVER attach an adult king. A timber landing sliding away in the bokeh. Hard cool river-sun as the key. #8B5A2B on the child’s cheek. DAY GROUND, pale paper sky. Composed for a 2:1 letterbox crop. NEVER the grey-bearded adult. No readable text. No watermark.",
+		"people": ["jesang:child"],
+		"year": 394
+	},
+	{
+		"id": "momal-sky-shout",
+		"entry": "Momal",
+		"at": "A man comes out in his indoor socks",
+		"alt": "A Kim lord in indoor socks shouts at the sky; the green boat is already a dot on the river",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. WORM’S-EYE from the packed landing looking UP. ONE device: the man’s two fists and open mouth against a huge pale paper sky. An unnamed Kim lord, forties, indoor WHITE SOCKS on timber, both fists, shouting at heaven — invent the face, NEVER a named king portrait, NEVER a crown. Behind him the GREEN boat is already a DOT on the black river, two small child-shapes, dissolving. A timber post out of focus in the foreground. Hard cool sun. #8B5A2B nowhere on a beard — this is the shout, not the boy. DAY GROUND. Composed for a 2:1 letterbox crop. No readable text, no letters in the sky. No watermark.",
+		"with": ["dress:silla"],
+		"year": 394
+	},
+	{
+		"id": "momal-empty-chair",
+		"entry": "Momal",
+		"at": "The chair is already empty. The green boat is already a dot",
+		"alt": "An empty landing chair; the green boat a stamp on the river; socks still on the boards",
+		"time": "day",
+		"style": "still-life",
+		"scene": "PAINTED STILL — no faces. Day on a south-shore landing. WIDE. ONE device: an empty wooden chair as a hard dark stamp against pale river-light. Indoor socks left on the boards. Far out, a green boat already a dot. Pale paper sky, black water, reed bank dissolving. No people. No text. No watermark.",
+		"year": 394
+	}
+]

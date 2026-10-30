@@ -1,0 +1,236 @@
+[
+	{
+		"id": "scenes-ditch-star-falls",
+		"entry": "Jeon (轉)",
+		"at": "On the eighth night the eastern star falls.",
+		"alt": "A great star falls out of the eastern sky over Surabol with a long torn tail, between the palace wall and the rebel fortress on its hill, both walls lined with tiny torches.",
+		"scene": "Vast iconic night wide over Surabol. Left third: the long dark stone wall of the Moon Palace with giwa gate pavilions and a thin line of tiny torches. Right third: the Radiance fortress on a black hill, its wall lined with tiny torches and black banners. Between them an empty dark field. Across the upper two-thirds, a huge night sky: ONE great star plunges down from the UPPER RIGHT toward the LOWER LEFT in a long luminous diagonal, its blazing head about to vanish behind the PALACE roofs on the left (away from the fortress), its tail like a torn white sleeve stretching back over the fortress on the right. Tiny figures on both walls are all looking up. ONE device: the falling star's diagonal across the black sky. Ink-black ground, cold white star light, warm torch dots.",
+		"with": [
+			"place:radiance",
+			"place:moon_palace"
+		],
+		"year": 647,
+		"time": "night"
+	},
+	{
+		"id": "scenes-ditch-star-wall-two",
+		"entry": "Jeon (轉)",
+		"at": "Then a planet has just fallen on my aunt’s palace.",
+		"alt": "On the palace wall at night Chunchu and Yushin stand side by side looking up at the empty place in the eastern sky where their star used to be.",
+		"scene": "DRY CLEAR NIGHT, NO RAIN, NO DRIZZLE, NO WET STREAKS. Low angle from behind the stone parapet of the palace wall at night: Chunchu in magenta silk and Yushin, bearded, in a plain dark-blue robe with NO armour, stand side by side, both looking up, faces lit cold white by the last of the falling star's light. Chunchu has a BLANK wooden tally slip forgotten in his hand (no writing on it), mouth half open; Yushin's jaw is set. Above them an enormous dark sky with a pale smear where the star fell. A single palace torch in the foreground out of focus as orange bokeh. ONE device: the two upturned profiles against the empty sky. Old-master night tenebrism.",
+		"people": [
+			"chunchu",
+			"yushin"
+		],
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:moon_palace"
+		]
+	},
+	{
+		"id": "scenes-ditch-kite-doors",
+		"entry": "Jeon (轉)",
+		"at": "She says she can do a little draught.",
+		"alt": "By torchlight in the queen's yard, young Hwarang strip the oiled paper from the palace's lattice doors and lash bamboo into an enormous kite.",
+		"scene": "Night, high three-quarter view of a palace courtyard lit by torches. Young beardless hwarang in simple cloth headbands and plain tunics kneel around an enormous half-built kite frame of lashed bamboo laid on the paving, pasting on sheets of glowing oiled paper. Behind them the timber lattice doors of a royal hall have had their paper torn off: the empty bare wooden grids letting warm lamplight spill out from inside onto the yard. A maid in white stands in the doorway with her hands folded, delivering a message. Straw and an oil jar beside a stuffed straw scarecrow in a ragged hemp coat with a bare round straw head and NO helmet or hat. ONE device: the bare lattice grid of the doors throwing a pattern of light across the kite. Warm torch gold, black night. The kite paper is PLAIN BLANK oiled paper, no writing or marks anywhere; the scarecrow's straw head has no face.",
+		"with": [
+			"place:moon_palace",
+			"dress:silla"
+		],
+		"year": 647,
+		"time": "night"
+	},
+	{
+		"id": "scenes-ditch-kite-launch",
+		"entry": "Jeon (轉)",
+		"at": "It climbs. One spool of line runs out",
+		"alt": "Worm's-eye view: Yushin braces against the kite line as an enormous kite with a burning scarecrow climbs into the black sky above the palace roofs.",
+		"scene": "Extreme worm's-eye angle from the paving stones looking up. In the foreground Yushin, bearded, in dark blue, braces with both hands on a taut kite line that runs straight up out of frame, his face lit orange from above; four young hwarang behind him clutch a big wooden reel. High above, climbing into the black sky over dark giwa palace roofs, an enormous paper kite with a blazing straw scarecrow hanging beneath it, trailing sparks and smoke. ONE device: the taut line as a single bright vertical from his fists to the fire. Embers drifting down as bokeh.",
+		"people": [
+			"yushin"
+		],
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:moon_palace"
+		]
+	},
+	{
+		"id": "scenes-ditch-kite-star-high",
+		"entry": "Jeon (轉)",
+		"at": "Exactly where the old star used to hang.",
+		"alt": "From behind the rebel wall, soldiers in black headbands stare up at a single tiny point of fire hanging high in the east where the star used to be.",
+		"scene": "Night, wide shot over the shoulders of rebel soldiers standing on a rough stone fortress parapet (we are ON their wall; their own fortress is behind the camera and NOT in frame): in the dark foreground the backs and shoulders of soldiers in plain black cloth headbands and padded white hemp coats, no armour, spears, one pointing up. Far across the dark field, small, the low palace of the attached place board with tiny torches. Above, a vast black sky with real faint stars, and LOW IN THE EAST one single small hard point of orange-white fire hanging perfectly still, brighter than any star, no kite visible. ONE device: the tiny point of fire as the only bright thing in a huge black sky. Silent awe.",
+		"with": [
+			"place:moon_palace",
+			"dress:silla"
+		],
+		"year": 647,
+		"time": "night"
+	},
+	{
+		"id": "scenes-ditch-rebel-boy",
+		"entry": "Jeon (轉)",
+		"at": "Can people put a star back?",
+		"alt": "A teenage rebel sentry on the Radiance wall gapes at the sky, the light of the hanging fire on his face, while older soldiers beside him lower their spears.",
+		"scene": "Night, close medium shot on the Radiance fortress wall. A teenage Silla rebel sentry in a black headband and padded hemp coat stares straight up, mouth open, eyes wide and wet, a tiny orange point of light reflected in each eye; beside him two older soldiers in black headbands have let their spears droop, one making a small prayer gesture. Behind them the parapet and black banners out of focus. ONE device: the faces tilted up in a diagonal row. Key: faint cold starlight plus warm torch from below.",
+		"with": [
+			"dress:silla",
+			"place:radiance"
+		],
+		"year": 647,
+		"time": "night"
+	},
+	{
+		"id": "scenes-ditch-pact",
+		"entry": "Jeon (轉)",
+		"at": "Whoever falls, the other sends him home.",
+		"alt": "At the torch-lit ditch Yumjong, leaning on his spear, offers Yushin a gentleman's bargain; Yushin stands on foot by his grey horse, refusing.",
+		"scene": "Night, medium two-shot across a muddy ditch crossing, torches behind. Left: Yumjong, the mild grey-haired nobleman of his sheet portrait, in his white robe with the crimson collar exactly as on his sheet portrait, a black rebel headband, leaning on a long spear, one open hand held out palm up, courteous, a sad little smile. Right: Yushin, bearded, in dark blue with a torn sleeve, standing beside a young grey horse, his ring-pommel sword still sheathed at the hip, face like stone. Between them the black water of the ditch reflecting torches. ONE device: the ditch as a dark vertical gap dividing the two men. Torchlight from behind Yumjong, rim on Yushin.",
+		"people": [
+			"yumjong",
+			"yushin"
+		],
+		"sword": true,
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:radiance"
+		]
+	},
+	{
+		"id": "scenes-ditch-chase",
+		"entry": "Jeon (轉)",
+		"at": "Once more. Up on the wall the sentries",
+		"alt": "Bird's-eye view of the long ditch under the Radiance wall at night: Yumjong running along it with his spear, Yushin walking after him, torches crowding the wall above.",
+		"scene": "Overhead aerial shot looking STRAIGHT DOWN from high above at night, like a hawk. A long dark ditch runs in an OPEN curve along the foot of a fortress wall (an arc, not a closed ring); the wall runs along the top edge of the frame crowded with tiny torches and leaning soldiers, black water shining in the ditch bottom. The two men are SMALL in the frame and FAR APART: near the front of the curve, Yumjong (grey hair as on his sheet, a black rebel headband, his white robe with the crimson collar exactly as on his sheet portrait) RUNS flat out along the ditch bank carrying a long WOODEN SPEAR with a small iron point, looking back over his shoulder; a long way behind him on the same curve, Yushin (dark blue robe) WALKS steadily after him, sword low in one hand, long torchlit shadow. Dropped torches hissing in the water. ONE device: the long empty arc of ditch between hunter and hunted. Ink-black ground, orange torch points. The ground between them is bare earth and grass: no objects, tiles, boards or markings on it.",
+		"people": [
+			"yumjong",
+			"yushin"
+		],
+		"sword": true,
+		"with": [
+			"place:radiance"
+		],
+		"year": 647,
+		"time": "night",
+		"faces": {
+			"yushin": "scripts/.cache/refs-small/head_kim_yushin.jpg"
+		}
+	},
+	{
+		"id": "scenes-ditch-turn",
+		"entry": "Jeon (轉)",
+		"at": "At the third turn Yumjong stops.",
+		"alt": "Worm's-eye view: Yumjong stops, turns and levels his spear at the lens, the Radiance wall and its torches towering behind him.",
+		"scene": "Extreme worm's-eye angle from the mud of the ditch: Yumjong, GREY hair as on his sheet, a black rebel headband, his white robe with the crimson collar exactly as on his sheet portrait, splashed with mud, has stopped and turned, levelling a long spear straight at the lens, the spearhead huge in the foreground. His mild face has become resolved and proud, breathing hard. Behind and above him the dark fortress wall towers into the night with torches all along it and plain unmarked black cloth banners with no symbols. ONE device: the spear shaft foreshortened straight at the viewer. Torchlight rim on his shoulders, crushed black.",
+		"people": [
+			"yumjong"
+		],
+		"with": [
+			"place:radiance"
+		],
+		"year": 647,
+		"time": "night"
+	},
+	{
+		"id": "scenes-ditch-clash",
+		"entry": "Jeon (轉)",
+		"at": "Spear against ring-pommel sword, in the mud",
+		"alt": "Spear and ring-pommel sword meet in a burst of sparks in the ditch mud, Yumjong and Yushin face to face, blood on Yushin's cheek.",
+		"scene": "Manga action frame with a hard 30-degree dutch tilt, medium-close at night in a muddy ditch. Yumjong (grey hair as on his sheet, a black rebel headband, his white robe with the crimson collar exactly as on his sheet portrait) thrusts a long WOODEN-SHAFTED SPEAR (a long pole with a small leaf-shaped iron head) and Yushin (bearded, dark blue robe), in the PLAIN blue robe from canon (no armour, no vest, no straps), holding his sword in ONE hand only with his other arm flung back for balance, beats the spear shaft aside: sparks burst where the straight blade bites the wooden shaft between their faces. Yumjong teeth bared; Yushin a fresh cut on his cheek, eyes cold. Mud flying, bold dry-brush sumi-ink speed lines along the spear and the blade, radial focus lines on the sparks, ink-splatter dirt. Torches on the wall above as orange bokeh. No lettering. ONE device: the X of wooden spear shaft and steel blade. FRAMING: the RIGHT frame edge cuts through Yushin's sword forearm, so his sword hand and the hilt are OUTSIDE the frame; only the long STRAIGHT blade enters from the right edge and meets the spear. Yushin's bearded face and shoulder are visible above his arm.",
+		"people": [
+			"yumjong",
+			"yushin"
+		],
+		"sword": true,
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:radiance"
+		],
+		"faces": {
+			"yushin": "scripts/.cache/refs-small/head_kim_yushin.jpg"
+		}
+	},
+	{
+		"id": "scenes-ditch-chest",
+		"entry": "Jeon (轉)",
+		"at": "puts the blade into his chest",
+		"alt": "Impact frame: Yushin steps inside the spear and drives his sword into Yumjong's chest, the two cut out white against black.",
+		"scene": "Manga IMPACT FRAME, near-monochrome inverted flash: two figures cut out as WHITE shapes against pure BLACK, outlined in bold ink. Yumjong's long wooden spear has gone past, over Yushin's shoulder; Yushin, low and inside the spear, holding his straight sword in ONE hand, has run the blade into Yumjong's chest, under the ribs; Yumjong (grey hair, white robe with crimson collar) has his head thrown back in shock, mouth open, hands opening, the spear tumbling away. Radial dry-brush ink lines converge on the point where the blade enters. Ink splatter. ONE gold accent only: a thin line of torch-gold along the blade. No gore detail, no lettering. FRAMING: the left frame edge cuts through Yushin's forearm, so his sword hand and the hilt are OUTSIDE the frame; only the long STRAIGHT blade enters from the left edge and goes into Yumjong's chest. Yushin's bearded face and shoulder are visible above his arm.",
+		"people": [
+			"yushin",
+			"yumjong"
+		],
+		"sword": true,
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:radiance"
+		],
+		"faces": {
+			"yushin": "scripts/.cache/refs-small/head_kim_yushin.jpg"
+		}
+	},
+	{
+		"id": "scenes-ditch-eyes",
+		"entry": "Jeon (轉)",
+		"at": "with the same hand, he closes Yumjong’s eyes",
+		"alt": "Kneeling in the ditch, Yushin closes the dead Yumjong's eyes with the same hand that holds the grey stone.",
+		"scene": "Night, intimate close shot at the bottom of a muddy ditch with steep earth banks behind. Yumjong lies on his back in the mud, dead, grey hair, black headband on his brow, in his white robe with the crimson collar exactly as on his sheet portrait, stained with mud. Yushin, bearded, kneels over him, a small smooth grey stone clenched in his fist, and with the two fingertips of that same fist gently draws down Yumjong's still-half-open eyelids. Yushin's face is wet and blank with grief. A dropped wooden pine torch (a plain stick with burning pitch-soaked rag, an open flame) lies in the mud beside them as the one low warm key, raking across both faces. ONE device: the hand with the stone at the centre of the frame. Old-master tenebrism, no gore.",
+		"people": [
+			"yushin",
+			"yumjong"
+		],
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:radiance"
+		]
+	},
+	{
+		"id": "scenes-ditch-horse-home",
+		"entry": "Jeon (轉)",
+		"at": "The horse walks up the slope alone",
+		"alt": "A lone horse walks up the dark slope toward the Radiance gate with a dead man folded over its saddle, the torches on the wall gone silent.",
+		"scene": "Iconic wide at pre-dawn: a long dark grassy slope rising to the stone gate of the Radiance fortress, its wall lined with motionless torches. Small in the lower third, a single riderless brown horse walks slowly up the slope with a body folded over its saddle, a black headband hanging down. Far behind at the foot of the slope, tiny, a rider on a grey horse turning away. ONE device: the long diagonal of the slope from the lone horse up to the gate. Huge cold blue pre-dawn sky, torchlight as small warm points, vast emptiness.",
+		"with": [
+			"place:radiance"
+		],
+		"year": 647,
+		"time": "night"
+	},
+	{
+		"id": "scenes-ditch-gate-lift",
+		"entry": "Jeon (轉)",
+		"at": "He lifts Yumjong’s face from the saddle with both hands.",
+		"alt": "At the open Radiance gate, Bidam in his white-and-navy coat lifts the dead Yumjong's face from the saddle with both hands.",
+		"scene": "Night, medium close at the open timber gate of the fortress, torches on either side. Bidam with the slicked-back GREY hair and clean-shaven face of his sheet portrait, no headband, in his hybrid coat (white outer robe with galloping horses on the sleeves, deep navy lapel bands and navy shoulder yoke, plum inner robe), prayer beads on his wrist, no sword, lifts with both hands the face of the dead Yumjong (grey hair, his white robe with the crimson collar exactly as on his sheet portrait), who lies folded over a horse's saddle, eyes closed, black headband. Bidam's face: disbelief turning to grief, the smile gone. The horse's neck and mane fill the left foreground out of focus. Torch from the right as the hard key; navy #141C2E specular on the beads. ONE device: his two hands framing the dead face.",
+		"people": [
+			"bidam",
+			"yumjong"
+		],
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:radiance"
+		]
+	},
+	{
+		"id": "scenes-ditch-bidam-scream",
+		"entry": "Jeon (轉)",
+		"at": "the noise a man makes at the sky",
+		"alt": "Alone on the open slope below the fortress, Bidam throws his head back and screams into an empty black sky.",
+		"scene": "Extreme worm's-eye angle from the grass of an open slope at pre-dawn: Bidam with the slicked-back GREY hair and clean-shaven face of his sheet portrait, NOTHING tied on his head, in his hybrid coat (white outer robe with galloping horses embroidered on the sleeves, deep navy lapel bands and navy shoulder yoke, plum inner robe), stands with his head thrown back and mouth wide open in a raw scream at the sky, fists clenched at his sides, a black cloth headband wound tightly round his RIGHT WRIST under his prayer beads (not on his head), his robe whipping in the wind. Above him an enormous empty black sky with one scorched faint smudge low in the east where a light used to be. The fortress wall and its torches small and tilted far behind. ONE device: his upturned body as a single vertical against the empty sky. Hard cold dawn key from the side carving his face and the white robe; storm-dark masses around.",
+		"people": [
+			"bidam"
+		],
+		"year": 647,
+		"time": "night",
+		"with": [
+			"place:radiance"
+		]
+	}
+]

@@ -1,0 +1,65 @@
+[
+	{
+		"id": "sadaham-roof-sea",
+		"at": "One of them is not in a row. He is on the roof.",
+		"time": "day",
+		"people": [
+			"sadaham",
+			"mugwan"
+		],
+		"alt": "Thirteen-year-old Sadaham stands on the hall roof pointing at a sea nobody can see; Mugwan looks up from the rows",
+		"scene": "Worm's-eye from the packed-earth yard of the new hwarang hall in Surabol, morning, high storm-break sky: in the blurred foreground, the back of a boy's shoulder and head in a row of powdered noble boys (Mugwan, SECOND face, thirteen, looking up despite himself). Midground, high up on the curved giwa roof ridge, thirteen-year-old Sadaham (LEFT face), crescent-moon headband, silk jeogori, one foot on the ridge tile, arm flung out pointing far away, grinning. Behind him a vast pale sky with one cloud-break shaft. Ice-blue #6fa8ff as the silk catch.",
+		"entry": "Sadaham"
+	},
+	{
+		"id": "sadaham-ford-rescue",
+		"at": "A hand finds his collar and drags him up",
+		"time": "day",
+		"battle": true,
+		"sword": true,
+		"people": [
+			"sadaham",
+			"mugwan"
+		],
+		"alt": "At the border ford, Sadaham hauls Mugwan out of the river by the collar while cutting down a raider",
+		"scene": "Low at the waterline of a river ford, storm light, spray and arrows: foreground, blurred churning water and a horse's thrashing legs. Midground: fourteen-year-old Sadaham (LEFT face) on a rearing horse mid-river, one fist gripping the collar of Mugwan (SECOND face) and hauling him half out of the water, the other arm swinging a straight ring-pommel sword at a Gaya hill raider in rough furs. Mugwan gasping, soaked. Background: a patrol on the far bank in haze. Kinetic, spray flying.",
+		"entry": "Sadaham"
+	},
+	{
+		"id": "sadaham-cliff-belt",
+		"at": "Then there is a fist in his belt.",
+		"time": "day",
+		"people": [
+			"sadaham",
+			"mugwan"
+		],
+		"alt": "On a snowy mountain ledge, Sadaham lies flat on the ice holding Mugwan over the drop by his belt, laughing",
+		"scene": "Straight down from above a snowy mountain cliff edge in winter: Sadaham (LEFT face) lies flat on the ice, one arm hooked round a twisted pine root, the other fist clenched in the belt of Mugwan (SECOND face) who hangs over a white void, looking up. Sadaham's face is full of snow and he is laughing. Far below, tiny mountain ridges in mist. One low sun break rakes the ice.",
+		"entry": "Sadaham"
+	},
+	{
+		"id": "sadaham-banner-one-horse",
+		"at": "They take the gate together, two boys on one horse.",
+		"time": "day",
+		"battle": true,
+		"people": [
+			"sadaham",
+			"mugwan"
+		],
+		"alt": "Two boys on one horse at the Jundan gate: Sadaham plants the white banner while Mugwan holds the pole straight",
+		"scene": "Worm's-eye up at the timber Jundan gate of Great Gaya in rain and smoke: on one horse, Sadaham (LEFT face, fifteen, Silla steel lamellar, crescent headband) rises in the stirrups driving a tall plain white banner into the gatehouse beam, and Mugwan (SECOND face) behind him on the same horse, both hands steadying the pole. Silla riders streaming through below as dark shapes. The white banner is the one bright thing in the frame against smoke.",
+		"entry": "Sadaham"
+	},
+	{
+		"id": "sadaham-roof-dawn",
+		"at": "There is nothing past the hills but more hills",
+		"time": "night",
+		"people": [
+			"sadaham",
+			"mugwan"
+		],
+		"alt": "At dawn on the same hall roof, Sadaham holds the dying Mugwan and points past the hills at the sea",
+		"scene": "Pre-dawn, wide and quiet, from the roof ridge of the hwarang hall: Sadaham (LEFT face, sixteen) sits on the giwa tiles holding the thin, dying Mugwan (SECOND face, pale, wrapped in a blanket) against his chest, one arm pointing past the dark hills. Beyond, layered hills fading to the first grey-blue of morning, nothing else. Most of the frame dark sky and roof. One cold first light on their faces.",
+		"entry": "Sadaham"
+	}
+]

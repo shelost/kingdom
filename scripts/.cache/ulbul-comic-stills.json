@@ -1,0 +1,245 @@
+[
+	{
+		"id": "ulbul-yamcha-ink",
+		"entry": "Ulbul",
+		"at": "a dark mark in a hole they made of him",
+		"alt": "Ink-brush Yamcha: Ulbul wrecked in a crater, blood running in black and red strokes",
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"people": [
+			"micheon"
+		],
+		"refs": [
+			"/ch_ulbul.png"
+		],
+		"scene": "MYTH INK — Joseon sumi on raw paper, FULL-BLEED. BIRD’S-EYE straight down. ONE device: a circular crater of packed earth as a black ink bowl. At the centre Ulbul in the Yamcha death-pose: on his BACK, one arm flung over the head, one knee bent, FACE from the sheet (long braid, white hemp, red sash, NO satgat, NO crown), eyes half-shut, mouth open, WRECKED. BLOOD EVERYWHERE: thick black-ink and one translucent cinnabar-red wash running in streams from the mouth, the brow, the crater floor, flung dry-brush spatters to the rim. Satgat and one shoe at the rim as small ink marks. Monumental emptiness. Splashed ink, flying white. NOT photoreal. NOT a clean pale crater. No text.",
+		"ratio": 2,
+		"prompt": "MYTH INK — Joseon sumi on raw paper, FULL-BLEED. BIRD’S-EYE straight down. ONE device: a circular crater of packed earth as a black ink bowl. At the centre Ulbul in the Yamcha death-pose: on his BACK, one arm flung over the head, one knee bent, FACE from the sheet (long braid, white hemp, red sash, NO satgat, NO crown), eyes half-shut, mouth open, WRECKED. BLOOD EVERYWHERE: thick black-ink and one translucent cinnabar-red wash running in streams from the mouth, the brow, the crater floor, flung dry-brush spatters to the rim. Satgat and one shoe at the rim as small ink marks. Monumental emptiness. Splashed ink, flying white. NOT photoreal. NOT a clean pale crater. No text. MYTH INK — this beat is myth, not history, so it is painted as a STRIKING Korean ink painting (sumukhwa), not the house colour style. Joseon sumi ink on raw hanji paper with EXTREME LIGHT AGAINST DARK: huge saturated masses of black ink set against blinding bare paper; light is always the unpainted paper itself, never painted white; almost no mid-grey; hard edges where light meets dark, wet bleeding edges everywhere else. Splashed ink (pomuk), dry-brush flying white, ink spatter, mist left as untouched paper. Monumental emptiness and ONE graphic device carrying the frame; a dramatic angle (worm’s-eye, bird’s-eye, dutch). Gods, giants, beasts and wonders may fill the frame; mortals stay small inside the wonder. Figures in confident calligraphic brush line; named faces match the attached portraits, translated into a few ink strokes. Black ink and paper only, except at most ONE small translucent wash of a single colour on the one symbolic object the scene names. Not photoreal, not webtoon shading, not watercolor landscape, not oil, no glow, no halo. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text, no calligraphy, no seal stamp, no watermark."
+	},
+	{
+		"id": "ulbul-run-night",
+		"entry": "Ulbul",
+		"at": "He runs. Then he looks back",
+		"alt": "Night: Ulbul mid-sprint from the palace back door, looking back, crying",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"micheon"
+		],
+		"refs": [
+			"/ch_ulbul.png"
+		],
+		"scene": "CLEAN manhwa. DUTCH, low three-quarter. NIGHT. Ulbul (LEFT of sheet: long braid, white hemp, red sash, NO satgat yet, NO crown) MID-SPRINT away from a timber palace back-door with iron bosses, looking BACK over his shoulder, FACE WRECKED, crying, mouth open. ONE device: the road as a hard dark diagonal. Tiny father-shape in the lit doorway behind, a cup. #C30000 as a thin lamp bounce. Dynamic, speed in the cloth. Expression: grief, not a sly smile.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. DUTCH, low three-quarter. NIGHT. Ulbul (LEFT of sheet: long braid, white hemp, red sash, NO satgat yet, NO crown) MID-SPRINT away from a timber palace back-door with iron bosses, looking BACK over his shoulder, FACE WRECKED, crying, mouth open. ONE device: the road as a hard dark diagonal. Tiny father-shape in the lit doorway behind, a cup. #C30000 as a thin lamp bounce. Dynamic, speed in the cloth. Expression: grief, not a sly smile. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-ummo-hire",
+		"entry": "Ulbul",
+		"at": "When my nephew comes, you lose.",
+		"alt": "Shed morning: Ummo slaps a bowl down; the boy eats and does not give a name",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"eummo",
+			"micheon"
+		],
+		"refs": [
+			"/ch_ummo.png",
+			"/ch_ulbul.png"
+		],
+		"scene": "CLEAN manhwa. INTIMATE two-shot, low. A timber salt-shed, one open door. LEFT of sheet = Ummo: older round face, WHITE hair, thin moustache, red dotted po, slapping a bowl down, not smiling, decided. RIGHT = Ulbul as a thinner boy: FACE from sheet, long braid, white hemp, NO satgat, eating, eyes down, almost crying, not the sly look. ONE device: the bowl as a hard circle between them. Packed earth, wood. Expression: Ummo gruff care; Ulbul swallowed grief.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. INTIMATE two-shot, low. A timber salt-shed, one open door. LEFT of sheet = Ummo: older round face, WHITE hair, thin moustache, red dotted po, slapping a bowl down, not smiling, decided. RIGHT = Ulbul as a thinner boy: FACE from sheet, long braid, white hemp, NO satgat, eating, eyes down, almost crying, not the sly look. ONE device: the bowl as a hard circle between them. Packed earth, wood. Expression: Ummo gruff care; Ulbul swallowed grief. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-jaemo-boat",
+		"entry": "Ulbul",
+		"at": "They eat on the boat that first night",
+		"alt": "First night on the boat: Jaemo talks; Ulbul almost laughs, then puts it back",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"jaemo",
+			"micheon"
+		],
+		"refs": [
+			"/ch_jaemo.png",
+			"/ch_ulbul.png"
+		],
+		"scene": "CLEAN manhwa. INTIMATE two-shot on a small salt boat. LEFT of sheet = Jaemo: square face, satgat with red tail-cord, rust vest, talking with his mouth open, warm. RIGHT = Ulbul: FACE from sheet, braid, white hemp, red sash, a HELD-BACK laugh, eyes wet, the sly look almost becoming real. ONE device: the boat gunwale as a hard bar, river dark behind, one lamp. Expression: friendship, not a pose. Night steam on the water.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. INTIMATE two-shot on a small salt boat. LEFT of sheet = Jaemo: square face, satgat with red tail-cord, rust vest, talking with his mouth open, warm. RIGHT = Ulbul: FACE from sheet, braid, white hemp, red sash, a HELD-BACK laugh, eyes wet, the sly look almost becoming real. ONE device: the boat gunwale as a hard bar, river dark behind, one lamp. Expression: friendship, not a pose. Night steam on the water. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-market-full",
+		"entry": "Ulbul",
+		"at": "From above, this market is a living thing.",
+		"alt": "Bird’s-eye: the same market alive — aisles, elbows, salt, a child, red munru on the ridge",
+		"time": "day",
+		"canon": false,
+		"people": [],
+		"refs": [],
+		"scene": "CLEAN manhwa. BIRD’S-EYE. ONE device: the market as a clear grid of timber stalls and packed-earth aisles, easy to read. Living: tiny figures, a child reaching for a persimmon, white salt on boards, elbows. Far top: a red munru on a grey stone ridge, small. Generous sky. Goguryeo town, not a Japanese market. Same angle that the famine still will copy. NOT crowded into mush. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. BIRD’S-EYE. ONE device: the market as a clear grid of timber stalls and packed-earth aisles, easy to read. Living: tiny figures, a child reaching for a persimmon, white salt on boards, elbows. Far top: a red munru on a grey stone ridge, small. Generous sky. Goguryeo town, not a Japanese market. Same angle that the famine still will copy. NOT crowded into mush. NOT photoreal. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-market-famine",
+		"entry": "Ulbul",
+		"at": "Same posts. Same ridge.",
+		"alt": "Same bird’s-eye, same posts: the market empty, a body in the ditch, a dog, the munru still watching",
+		"time": "day",
+		"canon": false,
+		"people": [],
+		"refs": [],
+		"scene": "CLEAN manhwa. BIRD’S-EYE. THE SAME ANGLE AND THE SAME STALL GRID as a living market, now EMPTY. Same timber posts, same red munru on the same ridge. Aisles bare. A dog at a ditch that holds a person-shape. A persimmon stall that is only a board. One tiny gray-haired official with a ledger in the aisle (Changjori, small, iron-gray hair, red po). Visceral famine. Generous empty space. NOT a pleasant village walk. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. BIRD’S-EYE. THE SAME ANGLE AND THE SAME STALL GRID as a living market, now EMPTY. Same timber posts, same red munru on the same ridge. Aisles bare. A dog at a ditch that holds a person-shape. A persimmon stall that is only a board. One tiny gray-haired official with a ledger in the aisle (Changjori, small, iron-gray hair, red po). Visceral famine. Generous empty space. NOT a pleasant village walk. NOT photoreal. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-chang-beg-bird",
+		"entry": "Ulbul",
+		"at": "From the roof the hall is a dark rectangle",
+		"alt": "Bird’s-eye inner court: Changjori a gray head on the floor; Bongsang a red stamp laughing with a cup",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"changjori",
+			"bongsang"
+		],
+		"refs": [
+			"/ch_changjori.png",
+			"/ch_bongsang.png"
+		],
+		"scene": "CLEAN manhwa. BIRD’S-EYE from the roof. ONE device: the Goguryeo inner hall as a dark timber rectangle, easy to read — dais at one end, empty floor. Tiny Changjori FACE-DOWN bowing, IRON-GRAY long hair (IGNORE portrait black hair), red po, on the floor. Tiny King Bongsang on the dais, gold crown, deep red silk, cup up, LAUGHING, villainous. 60% empty dark floor. You know where you are. Night, one lamp. Not a crowd.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. BIRD’S-EYE from the roof. ONE device: the Goguryeo inner hall as a dark timber rectangle, easy to read — dais at one end, empty floor. Tiny Changjori FACE-DOWN bowing, IRON-GRAY long hair (IGNORE portrait black hair), red po, on the floor. Tiny King Bongsang on the dais, gold crown, deep red silk, cup up, LAUGHING, villainous. 60% empty dark floor. You know where you are. Night, one lamp. Not a crowd. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-chang-beg-face",
+		"entry": "Ulbul",
+		"at": "Once. Just walk the market.",
+		"alt": "Close: gray-haired Changjori begging, face broken; Bongsang’s cup out of focus",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"changjori",
+			"bongsang"
+		],
+		"refs": [
+			"/ch_changjori.png",
+			"/ch_bongsang.png"
+		],
+		"scene": "CLEAN manhwa. INTIMATE CLOSE, dutch. LEFT of sheet = Changjori: IRON-GRAY long hair and gray goatee (IGNORE black hair on the portrait), lean face BROKEN, mouth open mid-beg, eyes wet, desperate, NOT smiling, red po, small black cap with two thin red antenna-feathers. RIGHT edge = Bongsang’s cup and a sneering mouth only, gold crown edge, deep red. ONE device: the floor line. Expression is the whole picture. Night lamp. #6e2a2a wine bounce.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. INTIMATE CLOSE, dutch. LEFT of sheet = Changjori: IRON-GRAY long hair and gray goatee (IGNORE black hair on the portrait), lean face BROKEN, mouth open mid-beg, eyes wet, desperate, NOT smiling, red po, small black cap with two thin red antenna-feathers. RIGHT edge = Bongsang’s cup and a sneering mouth only, gold crown edge, deep red. ONE device: the floor line. Expression is the whole picture. Night lamp. #6e2a2a wine bounce. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-bongsang-sneer",
+		"entry": "Ulbul",
+		"at": "I have a cup.",
+		"alt": "Villain close-up: Bongsang sneers over a cup, gold crown, no kindness",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"bongsang"
+		],
+		"refs": [
+			"/ch_bongsang.png"
+		],
+		"scene": "CLEAN manhwa. ECU. King Bongsang FACE from the sheet: short black beard, gold openwork crown, deep burgundy silk. Expression: CRUEL sneer, one eye half-lidded, no kindness, a villain enjoying the no. Cup in the lower third. ONE device: the cup rim as a hard gold circle. Night, one lamp, crushed black. #6e2a2a. NOT a buddy laugh. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. ECU. King Bongsang FACE from the sheet: short black beard, gold openwork crown, deep burgundy silk. Expression: CRUEL sneer, one eye half-lidded, no kindness, a villain enjoying the no. Cup in the lower third. ONE device: the cup rim as a hard gold circle. Night, one lamp, crushed black. #6e2a2a. NOT a buddy laugh. NOT photoreal. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-bongsang-party",
+		"entry": "Ulbul",
+		"at": "He drinks until the floor is a second table.",
+		"alt": "Bongsang’s hall: cup, hiked silk, a king who will not hear hunger",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"bongsang"
+		],
+		"refs": [
+			"/ch_bongsang.png"
+		],
+		"scene": "CLEAN manhwa. LOW THREE-QUARTER. Inner Goguryeo hall, one lamp. Bongsang FACE from the sheet, gold crown tipped, deep red silk open, cup up, LAUGHING with his mouth too wide, villainous, drunk. A court lady in mural dress as a dark shape on his knee, not the subject. Floor sticky with wine. ONE device: the cup as a hard circle. Empty hall around him. Expression: depraved, not charming. Night.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. LOW THREE-QUARTER. Inner Goguryeo hall, one lamp. Bongsang FACE from the sheet, gold crown tipped, deep red silk open, cup up, LAUGHING with his mouth too wide, villainous, drunk. A court lady in mural dress as a dark shape on his knee, not the subject. Floor sticky with wine. ONE device: the cup as a hard circle. Empty hall around him. Expression: depraved, not charming. Night. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-find-close",
+		"entry": "Ulbul",
+		"at": "The old man’s face does something",
+		"alt": "Bank close: gray Changjori’s face breaks; Ulbul’s does not",
+		"time": "dusk",
+		"canon": false,
+		"people": [
+			"changjori",
+			"micheon"
+		],
+		"refs": [
+			"/ch_changjori.png",
+			"/ch_ulbul.png"
+		],
+		"scene": "CLEAN manhwa. INTIMATE two-shot, river bank. LEFT of sheet = Changjori: IRON-GRAY hair (IGNORE black), face BREAKING, tears, mouth open on the name, red po in the mud. RIGHT = Ulbul: FACE from sheet, satgat, braid, white hemp, red sash, a HARD closed face, the sly look gone cold, looking past him. ONE device: the wet bank as a hard diagonal. Mud, boat edge. Expressions OPPOSITE: beg vs refuse. Dusk.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. INTIMATE two-shot, river bank. LEFT of sheet = Changjori: IRON-GRAY hair (IGNORE black), face BREAKING, tears, mouth open on the name, red po in the mud. RIGHT = Ulbul: FACE from sheet, satgat, braid, white hemp, red sash, a HARD closed face, the sly look gone cold, looking past him. ONE device: the wet bank as a hard diagonal. Mud, boat edge. Expressions OPPOSITE: beg vs refuse. Dusk. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-bongsang-locked",
+		"entry": "Ulbul",
+		"at": "Blood on the mouth from the path.",
+		"alt": "Locked side room: Bongsang bloodied, half-conscious, crown tipped, belt in his hands",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"bongsang"
+		],
+		"refs": [
+			"/ch_bongsang.png"
+		],
+		"scene": "CLEAN manhwa. LOW THREE-QUARTER. A small locked timber room. Bongsang FACE from the sheet: gold crown TIPPED, blood on the mouth and brow, eyes HALF-SHUT, half-conscious, not regal, a ruined villain. Deep red silk dirty. A silk belt in loose hands. Two small boy-backs against the barred door, no faces. ONE device: the barred door as a hard vertical. One floor lamp. Expression: spent, not stern. Night. Like a king already gone.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. LOW THREE-QUARTER. A small locked timber room. Bongsang FACE from the sheet: gold crown TIPPED, blood on the mouth and brow, eyes HALF-SHUT, half-conscious, not regal, a ruined villain. Deep red silk dirty. A silk belt in loose hands. Two small boy-backs against the barred door, no faces. ONE device: the barred door as a hard vertical. One floor lamp. Expression: spent, not stern. Night. Like a king already gone. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-coup-lamp",
+		"entry": "Ulbul",
+		"at": "One lamp. A branch on the table",
+		"alt": "South house: one lamp, a green branch, Changjori drawing the hunt for Ulbul",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"changjori",
+			"micheon"
+		],
+		"refs": [
+			"/ch_changjori.png",
+			"/ch_ulbul.png"
+		],
+		"scene": "CLEAN manhwa. OVERHEAD of a small timber table. ONE device: a green branch on the boards, one lamp. LEFT of sheet = Changjori: IRON-GRAY hair, red po, drawing with a wet finger, intent, frightened-brave. RIGHT = Ulbul: FACE from sheet, satgat off, braid, white hemp, watching, jaw set. Empty room around the table. Night. You can read the plan. Not a crowd of conspirators.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. OVERHEAD of a small timber table. ONE device: a green branch on the boards, one lamp. LEFT of sheet = Changjori: IRON-GRAY hair, red po, drawing with a wet finger, intent, frightened-brave. RIGHT = Ulbul: FACE from sheet, satgat off, braid, white hemp, watching, jaw set. Empty room around the table. Night. You can read the plan. Not a crowd of conspirators. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "ulbul-crown-close",
+		"entry": "Ulbul",
+		"at": "They put the seal in the salt seller’s hands",
+		"alt": "Emotional close: the salt seller’s hands take the seal; the satgat is still on",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"micheon"
+		],
+		"refs": [
+			"/ch_ulbul.png"
+		],
+		"scene": "CLEAN manhwa. ECU of hands and face. Ulbul FACE from the sheet: satgat still on, braid, white hemp, red sash — NOT king silk, NOT a gold crown yet. Expression: stunned, wet eyes, the sly look gone, a man who has decided. A gold seal being set into his dirty hands. ONE device: the seal as a hard gold square. Pale hall dissolving. Emotional. NOT a triumph grin.",
+		"ratio": 2,
+		"prompt": "CLEAN manhwa. ECU of hands and face. Ulbul FACE from the sheet: satgat still on, braid, white hemp, red sash — NOT king silk, NOT a gold crown yet. Expression: stunned, wet eyes, the sly look gone, a man who has decided. A gold seal being set into his dirty hands. ONE device: the seal as a hard gold square. Pale hall dissolving. Emotional. NOT a triumph grin. COMIC PANEL: ONE locked Korean place, ONE beat, TWO figures max. Generous empty space — at least half the frame quiet so you know where you are. Faces LARGE enough to read the expression; the expression is LOUD and CORRECT for the beat. NOT a crowd catalog. NOT a jumble. NOT a collage. CLEAN Korean WEBTOON / manhwa character-intro splash: BOLD THICK black ink contour, FLAT saturated colour, simple 2-3 value shading, simple webtoon faces. NOT photoreal. NOT oil. NOT watercolor wash. NOT ukiyo-e. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	}
+]

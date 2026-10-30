@@ -1,0 +1,183 @@
+[
+	{
+		"id": "gsc-dying-room",
+		"entry": "Yeon Gesomun",
+		"at": "The Eternal General is dying.",
+		"alt": "A small warm Pyongyang room at night: old Yeon sits dying in the chair, three sons standing in the lamp, five crow swords on the wall behind him.",
+		"people": ["gesomun", "namseng", "namgun", "namsan"],
+		"hat": false,
+		"sword": true,
+		"time": "night",
+		"scene": "INTIMATE night interior, low three-quarter from the packed-earth floor. ONE DEVICE: a heavy timber chair on axis, FIVE straight Korean ring-pommel swords hung on the wall behind it like a dark comb. SMALL warm Pyongyang timber room — red pillars, lime plaster, one iron lamp on the floor at the LEFT of the lens raking up. OLD Yeon Gesomun (LEFT of the sheet, iron-grey hair, grey beard, NEVER the young black-haired face) sits the chair in a charcoal inner robe and red sash, NO armor, NO five swords on his back, sitting UP, glaring, dying and refusing to lie down. Three sons standing in the midground, ONE OF EACH, never cloned: SECOND = Namseng closest to the chair (tight bun, two short temple-strands, neat goatee, rigid, charcoal court po, red scarf knot, NO helm, NO long hair). THIRD = Namgun (LONG loose black hair past the shoulders, fuller beard, louder stance). FOURTH = Namsan (rounder younger face, looking aside, NO helm). #d0362f as the lamp key on old Yeon's cheek, not a glow. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "gsc-do-not-fight",
+		"entry": "Yeon Gesomun",
+		"at": "Do not… fight amongst yourselves…",
+		"alt": "Intro-card close: dying Yeon Gesomun's webtoon face fills the frame as he tells his sons not to fight.",
+		"people": ["gesomun"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON, MEDIUM CLOSE, face LARGE off-centre. NIGHT. Low three-quarter, slight dutch. ONE DEVICE: the iron lamp as a hard red-amber seam under his jaw. LEFT = old Yeon Gesomun, iron-grey hair in a tight topknot with a red cord, grey-streaked beard, heavy brows, GLARE failing into breath — REDRAW as webtoon from the sheet, charcoal inner robe, red sash, NO armor, NO five swords on his back. Mouth open on the line. Two dark out-of-focus sons at the far edge only. #d0362f in the lamp, never a body halo. Thick ink, cel shadow, manhwa eyes. Not photoreal."
+	},
+	{
+		"id": "gsc-chair-five",
+		"entry": "Yeon Gesomun",
+		"at": "Gulgul carries him across the room",
+		"alt": "Gulgul carries dying Yeon to the chair; five crow swords wait on the wall behind it.",
+		"people": ["gulgul", "gesomun"],
+		"hat": false,
+		"sword": true,
+		"time": "night",
+		"scene": "NIGHT interior, worm's-eye from the floorboards. ONE DEVICE: the empty timber chair and the five ring-pommel swords on the wall as a dark vertical comb. LEFT of the sheet = Gulgul, a grown Mohe warden, white fur collar, NO helm indoors, grim, carrying OLD Yeon across the room like a sack of grain he is fond of — mid-stride, Yeon's grey head against his chest. SECOND = old Yeon Gesomun, iron-grey hair, grey beard, charcoal robe, red sash, one arm hanging, still glaring, NO armor. Practical lamp on the floor in the foreground, raking the fur and the grey beard; #d0362f on the red sash. One of each, never clone. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "gsc-yumla-stands",
+		"entry": "Yeon Gesomun",
+		"at": "himself stands in the room.",
+		"alt": "King Yumla, photoreal and numinous, stands in the small room; webtoon Yeon Gesomun sits the chair and grins up at him.",
+		"people": ["yumla", "gesomun"],
+		"hat": false,
+		"time": "night",
+		"scene": "MORTAL / DIVINE SPLIT in one frame. NIGHT, small Pyongyang timber room. Low three-quarter two-shot. ONE DEVICE: a purple-violet seam of otherworld light cutting the packed-earth floor. LEFT of the sheet = King Yumla, DIVINE: photoreal-leaning, numinous, grey hair and full grey beard, small white animal-skull on the crown, heavy wood-bead necklace, black robe, orange-red lower silk, shy-stern eyes, standing, one palm open as if to walk him out — NEVER jougwan, NEVER a grin. SECOND = old Yeon Gesomun, MORTAL: webtoon ink, iron-grey hair, grey beard, sitting the chair in charcoal robe and red sash, a tired LAUGH, looking up at the boss not the clerks. Five swords on the wall behind the chair. Purple #7c3aed as the hard key on Yumla; #d0362f as lamp bounce on Yeon — real light, never a glow aura, never a body halo. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "gsc-dies-sitting",
+		"entry": "Yeon Gesomun",
+		"at": "Then he dies in his sleep, sitting up",
+		"alt": "Yeon Gesomun has died sitting up in the chair; five crow swords on the wall, the lamp still burning.",
+		"people": ["gesomun"],
+		"hat": false,
+		"sword": true,
+		"time": "night",
+		"scene": "NIGHT interior, slightly high three-quarter. ONE DEVICE: the chair as a dark throne, five straight ring-pommel swords on the wall behind it. OLD Yeon Gesomun sits UP, head tipped a degree, eyes closed, grey beard, charcoal robe, red sash, NO armor, NO swords on his back — he has died sitting, which is not how anyone expected it. Empty floor. One iron lamp still burning at the LEFT of the lens. #d0362f as the last key on the red sash. No Yumla, no sons in frame. Quiet, monumental. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "gsc-too-big-chair",
+		"entry": "Yeon Gesomun",
+		"at": "Namseng sits in the chair the next morning.",
+		"alt": "Morning after: Namseng sits in his father's chair; it is too big; five swords still on the wall.",
+		"people": ["namseng"],
+		"hat": false,
+		"sword": true,
+		"time": "day",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON, MEDIUM of ONE man in a too-big chair. DAY. Slight worm's-eye so the chair reads huge. ONE DEVICE: the timber chair as a dark throne too wide for his shoulders; five swords a dark comb on the wall. LEFT = Namseng, thirty-one, tight bun, two short temple-strands, neat goatee, rigid jaw, charcoal court po, red scarf knot, sitting very straight, pretending the chair fits — NEVER Namgun's long hair, NEVER a helm. Pale morning through a lattice. #c25a4e on the scarf. Thick ink, cel shadow. Not photoreal."
+	},
+	{
+		"id": "gsc-supper-hall",
+		"entry": "Yeon Namgun",
+		"at": "two younger brothers eat supper",
+		"alt": "Namgun and Namsan eat supper in their father's hall without their father; his empty chair is the third place.",
+		"people": ["namgun", "namsan"],
+		"hat": false,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON two-shot, BOTH faces LARGE. NIGHT. Low three-quarter along a long timber table. ONE DEVICE: the EMPTY third chair at the head, a dark gap. LEFT = Namgun (LONG loose black hair, fuller beard, leaning in, mouth mid-accusation). SECOND = Namsan (rounder younger face, looking down at his bowl, NO helm). Charcoal court po, red sashes, NO armor. One hanging lamp. A household man a dark blur at the far edge. One of each, never clone, never put Namseng in this frame. #9e3b32 on Namgun; #d4776a on Namsan. Thick ink. Not photoreal."
+	},
+	{
+		"id": "gsc-shut-gate-wide",
+		"entry": "Yeon Namgun",
+		"at": "finds the gate shut.",
+		"alt": "Grand exposition: Pyongyang's red two-tier munru gate is shut; Namseng is a small rider in the mud below; Namgun is a small figure on the wall.",
+		"people": ["namseng", "namgun"],
+		"with": ["place:pyongyang_fortress", "dress:goguryeo"],
+		"sword": true,
+		"time": "day",
+		"scene": "GRAND EXPOSITION, FAR WIDE, iconic. DAY storm-light. Crane three-quarter from the packed-earth road. ONE DEVICE: Pyongyang's red two-tier munru on the stone ridge as a locked stamp — SAME architecture as the attached fortress board: grey stone blocks, the red two-tier pavilion, the small side kiosk, heavy timber leaves SHUT, iron bosses. Namseng a SMALL rider in the lower third on a dark horse, looking up (tight bun, temple-strands, Goguryeo steel lamellar, red scarf). Namgun a SMALL figure on the wall-walk above the shut doors (long hair, no helm). 60% of the frame is pale storm sky and stone. One hard cloud-break shaft on the red pavilion. #c25a4e as bounce on Namseng's scarf. Tiny figures, monumental emptiness. No army catalog. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "gsc-open-the-gate",
+		"entry": "Yeon Namgun",
+		"at": "Open the gate, Namgun.",
+		"alt": "Worm's-eye from the horse: Namseng shouts up; Namgun on the wall will not open; Namsan looks at the ground.",
+		"people": ["namseng", "namgun", "namsan"],
+		"hat": false,
+		"sword": true,
+		"time": "day",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON three-shot, faces LARGE in the central band. DAY. Worm's-eye from the horse's shoulder. ONE DEVICE: the shut timber gate as a hard vertical. LEFT = Namseng looking UP, shouting, tight bun, temple-strands, neat goatee, red scarf, steel lamellar. SECOND = Namgun on the wall looking DOWN, LONG hair, fuller beard, mouth a snarl, will not open. THIRD = Namsan beside him, rounder face, eyes on the GROUND, NO shout. One of each. NEVER clone. NEVER swap hair. #c25a4e / #9e3b32 / #d4776a as real light, not auras. Thick ink, cel shadow. Not photoreal."
+	},
+	{
+		"id": "gsc-gold-ring",
+		"entry": "Yeon Namgun",
+		"at": "A gold ring, a child",
+		"alt": "Namseng kneels in the mud and picks a child's gold ring out of the puddle; he does not look at the wall.",
+		"people": ["namseng"],
+		"hat": false,
+		"time": "day",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON, MEDIUM CLOSE. DAY. High three-quarter looking down with him. ONE DEVICE: a child's gold ring in a mud puddle as a small hard circle. LEFT = Namseng kneeling, tight bun, temple-strands, neat goatee, red scarf, reaching, wiping the ring on his sleeve, eyes on the ring NOT the wall. Horse's dark shoulder in the foreground bokeh. The shut gate a graphic red stamp out of focus. #c25a4e on the scarf; gold only on the ring. Thick ink. Not photoreal."
+	},
+	{
+		"id": "gsc-three-beasts-wide",
+		"entry": "Yeon Namsan",
+		"at": "four beasts come for the city at once",
+		"alt": "Grand siege exposition: Pyongyang's red munru on the Taedong; three Tang columns close the ring under a storm sky.",
+		"people": ["xuerengui"],
+		"with": ["place:pyongyang_fortress", "flag:tang", "flag:goguryeo", "dress:tang"],
+		"battle": true,
+		"action": true,
+		"time": "day",
+		"scene": "GRAND EXPOSITION of the last siege. LAND SIEGE — no ships, no sea, no oars. Crane / slight aerial, FAR WIDE. ONE DEVICE: Pyongyang fortress as the attached board — grey stone ridge, red two-tier munru, Taedong river a silver band at the left, packed-earth roads. Three Tang columns as tiny painted masses closing the ring from the north-west road (from the Amnok), camp-smoke, vermilion banners on poles. Goguryeo red three-legged-crow banners ONLY on the wall. LEFT of the sheet = Xue Rengui a SMALL white-coated figure in the lower third on a pale horse, cream lamellar, red sash, fangtian ji, NEVER a ring sword. Storm sky, one cloud-break shaft on the red pavilion. Fire not yet on the towers. Armies at true human size, dissolving in haze. BANNERS BY SIDE: vermilion Tang ONLY in the camps; red crow ONLY on the wall; Tang cloth plain, no readable character. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "gsc-western-coat",
+		"entry": "Yeon Namsan",
+		"at": "wearing their coat.",
+		"alt": "From the wall: Namsan whispers; Namgun stares; Namseng rides the north-west road in a Tang coat.",
+		"people": ["namsan", "namgun", "namseng"],
+		"with": ["place:pyongyang_fortress"],
+		"battle": true,
+		"time": "day",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON three-shot, faces LARGE. DAY. Over-shoulder from the wall-walk. ONE DEVICE: the stone parapet as a hard horizontal; the north-west road a pale diagonal below. LEFT = Namsan in the helm with the RED plume and gold brow-disc, leaning to whisper, wrecked eyes. SECOND = Namgun, LONG hair, no helm, staring down, mouth already opening on a shout. THIRD = Namseng SMALL on a horse on the road in a TANG VERMILION court coat — NOT Goguryeo red-wing lamellar, NOT the red scarf, the Western coat is the point. One of each. NEVER clone. NEVER put the Tang coat on Namgun. Pyongyang's red munru a graphic stamp. #d4776a / #9e3b32 / #c25a4e as real light. Thick ink. Not photoreal."
+	},
+	{
+		"id": "gsc-never-dies",
+		"entry": "Yeon Namsan",
+		"at": "Goguryeo… never dies….!",
+		"alt": "Intro-card: Namgun on the wall, mouth wide, shouting that Goguryeo never dies.",
+		"people": ["namgun"],
+		"hat": false,
+		"time": "day",
+		"style": "webtoon",
+		"battle": true,
+		"scene": "INTRO-CARD WEBTOON, MEDIUM CLOSE of ONE man, face LARGE. DAY storm. Worm's-eye from the wall stones. ONE DEVICE: a red Goguryeo crow-banner as a hard vertical behind him. LEFT = Namgun, LONG loose black hair whipping, fuller beard, steel lamellar, red laces, gold belt-plate, mouth WIDE on the shout, eyes feral — NEVER Namseng's temple-strands, NEVER Namsan's helm. Smoke and a pale river behind. #9e3b32 in the cloth. Thick ink, cel shadow, manhwa shout. Not photoreal. No lettering."
+	},
+	{
+		"id": "gsc-white-banner",
+		"entry": "Yeon Namsan",
+		"at": "carrying a white banner",
+		"alt": "Namsan walks the king out the south-west gate under a white banner; the Blue Dragon waits in the road.",
+		"people": ["namsan", "bojang"],
+		"with": ["place:pyongyang_fortress", "flag:tang", "flag:goguryeo"],
+		"battle": true,
+		"time": "day",
+		"scene": "LAND SIEGE, quiet beat, no melee. Low three-quarter from the south-west road. ONE DEVICE: a WHITE banner on a pole as a hard pale vertical. LEFT of the sheet = Namsan walking first, rounder face, NO helm now, Goguryeo lamellar, red cloak, eyes down, holding the white banner. SECOND = King Bojang in red silk court robe and the black gold-ornamented cap with red bead strings, frightened eyes looking up, not sure whom to kneel to. Pyongyang's red two-tier munru behind them, the gate leaves standing open. A dark Tang marshal a faceless silhouette in the road ahead. Tiny officials dissolving. One pale overcast break. #d4776a on Namsan's cloak. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "gsc-hall-sword",
+		"entry": "Yeon Namsan",
+		"at": "Namgun turns his sword on himself.",
+		"alt": "In his own hall Namgun turns the crow-ring sword on himself as the gate towers burn beyond the pillars.",
+		"people": ["namgun"],
+		"hat": false,
+		"sword": true,
+		"time": "night",
+		"style": "webtoon",
+		"scene": "INTRO-CARD WEBTOON, MEDIUM of ONE man. NIGHT. Slight dutch, low three-quarter. ONE DEVICE: the straight Korean ring-pommel sword as a hard black line against his chest, RING at the heel of the fist, blade toward himself. LEFT = Namgun, LONG hair come down, fuller beard, steel lamellar half-unlaced, red wrap, mouth a grimace, doing it badly — NEVER a katana, NEVER a tsuba. Red pillars of the Pyongyang hall; firelight through the doors. #9e3b32 as the fire key. Thick ink. Not photoreal. No gore catalog: the decision is the picture. No lettering."
+	},
+	{
+		"id": "gsc-towers-lamps",
+		"entry": "Yeon Namsan",
+		"at": "The gate towers catch one after another, like lamps",
+		"alt": "Pyongyang's red munru towers catch fire one after another, like lamps being lit for a feast.",
+		"with": ["place:pyongyang_fortress"],
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "NIGHT still of a city dying. FAR WIDE. ONE DEVICE: Pyongyang's red two-tier munru on the stone ridge — SAME architecture as the attached fortress board — catching fire pavilion by pavilion, like lamps being lit along a feast table. Taedong a black mirror. One anonymous dark silhouette of a man on the wall-walk, no face. Vermilion and gold fire as the one accent; the rest crushed indigo. No army catalog. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	}
+]

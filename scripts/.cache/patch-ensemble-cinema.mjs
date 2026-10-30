@@ -1,0 +1,35 @@
+import fs from 'node:fs';
+import { editStory } from './story-ops.mjs';
+
+const scenes = {
+	'wg-walk-out-full':
+		'HEEWON STYLE. NIGHT steam cavern. SYMMETRICAL CINEMA, not a class photo. LEVEL camera, ONE-POINT PERSPECTIVE: the cave mouth is a perfect oval of first light dead on the center axis. A processional aisle of black water runs straight to it. BILATERAL MIRROR: named spirits stand in depth along the LEFT bank and the RIGHT bank, equal numbers, facing inward toward the aisle, watching. NEVER a yearbook row facing the lens. NEVER a bench lineup. CINEMATOGRAPHY: low crane / worm’s-eye from the water, anamorphic 2:1, shallow DOF, crushed blacks. ONE DEVICE: the nave axis. Twin practical lamps on wet rocks, equal left and right, raking faces from the side. Composed for a 2:1 letterbox crop; all heads and the mouth inside the central band. Munmu (sheet row 4 last face) small, DEAD-CENTER, mid-stride toward the mouth, winter coat, WET hair, NO crown, back three-quarter. LEFT bank near-to-far, real faces from the grid: Sunduk rust, Sungman salmon-peach, Chunmyung lavender, Yongsu white hair black eyes, Jesang brown, Gildal HUMAN rust silk never an animal, On Gunhae lean, Muryuk cone helm, Seohyeon, old Yushin, Chunchu magenta, adult Gotaso ~40 pink. RIGHT bank near-to-far: Sadaham ice-blue, Mugwan, Gwisan green, Chuhang, Bangul, Gwanchang, Suro purple, photoreal Hyukgose, photoreal Alyoung, Heo purple, Dangun, Narim green, Golhwa orange, Hyullé cyan. ONE of each. They watch. They do not follow. Magical cavern steam, no body halo. #C41E3A on the coat. No text. No watermark.',
+	'wg-walk-out-watch':
+		'HEEWON STYLE. NIGHT steam cavern. SYMMETRICAL CINEMA, not a class photo. LEVEL camera on the center axis, looking OUT from among the dead toward the mouth. ONE-POINT PERSPECTIVE: the mouth is a perfect oval of light in the exact middle; Munmu is a small winter-coat figure inside that oval, walking away, wet hair, NO crown. The named dead form a HORSESHOE around the aisle, left wing mirroring the right wing, faces turned toward HIM not toward the lens. NEVER extras, NEVER a crowd of clones, NEVER a yearbook wall. ONE DEVICE: the horseshoe and the mouth. Twin lamps equal left and right. Composed for a 2:1 letterbox crop. Nearest left doorpost: old Sunduk. Nearest right doorpost: King Chunchu magenta, hand on adult Gotaso. Left wing real faces: Sungman, Chunmyung, Yongsu white hair, Jesang, Gildal HUMAN man, On Gunhae, Muryuk cone helm, Seohyeon, old Yushin. Right wing: Sadaham, Mugwan, Gwisan, Chuhang, Bangul, Gwanchang, Suro, Hyukgose photoreal, Alyoung photoreal, Heo, Dangun, Narim, Golhwa, Hyullé. SHEET 7 across R1 Sunduk Sungman Chunmyung Yongsu Jesang Gildal OnGunhae; R2 Muryuk Seohyeon Yushin Chunchu Gotaso Sadaham Mugwan; R3 Gwisan Chuhang Bangul Gwanchang Suro Hyukgose Alyoung; R4 Heo Dangun Narim Golhwa Hyullé Munmu. ONE of each. They do not follow. They watch. Magical cavern steam, no body halo. No text. No watermark.',
+	'wg-watch-house':
+		'HEEWON STYLE. NIGHT steam cavern. SYMMETRICAL CINEMA. Raphael PYRAMID, LEVEL camera, no dutch, no bench lineup. ONE DEVICE: the cave mouth as a tiny oval of light at the exact top-center, Munmu a speck walking out. Composed for a 2:1 letterbox crop; all seven heads in the central band. APEX standing: old Queen Sunduk rust silk gold crescent. Mid rank standing, mirrored: Queen Sungman salmon-peach LEFT, grandmother Chunmyung lavender RIGHT. Center: old Yongsu WHITE/GREY hair cream-and-blue living BLACK eyes. Base triad standing, facing slightly inward: Jesang weathered brown LEFT, Gildal HUMAN MAN rust silk CENTER (never an animal, never a mask), On Gunhae lean brown RIGHT. Twin floor lamps equal left and right. They look toward the mouth, not the camera. Faces from the attached sheet LEFT TO RIGHT: Sunduk, Sungman, Chunmyung, Yongsu, Jesang, Gildal, On Gunhae. ONE of each. Magical cavern steam, no body halo. Webtoon ink faces, old-master night canvas, movie tenebrism. No text. No watermark.',
+	'wg-watch-kims':
+		'HEEWON STYLE. NIGHT steam cavern. SYMMETRICAL CINEMA. Raphael PYRAMID, LEVEL camera. ONE DEVICE: the mouth as a centered oval of light behind the apex. Composed for a 2:1 letterbox crop. APEX: old marshal Yushin #2A5FB8, face from sheet cell 3. Mid rank mirrored: Muryuk Gaya cone helm purple LEFT (sheet cell 1), Seohyeon blue RIGHT (sheet cell 2). Base: King Chunchu magenta LEFT-of-center, hand on the shoulder of ADULT Gotaso ~40 pink butterfly binyeo RIGHT-of-center (same face bones GROWN, never a girl). They look toward the mouth, where Munmu is a tiny winter-coat figure. Twin lamps at their feet. Faces match the attached sheet. ONE of each. Magical cavern steam, no body halo. Webtoon ink faces, old-master night canvas, movie tenebrism. No text. No watermark.',
+	'wg-watch-yard':
+		'HEEWON STYLE. NIGHT steam cavern. SYMMETRICAL CINEMA. HONOR GUARD, not a class line. LEVEL camera, ONE-POINT PERSPECTIVE: a black-water aisle down the exact center to the cave mouth; Munmu small, walking the aisle toward the light. THREE hwarang on the LEFT bank, THREE on the RIGHT, mirrored, bodies turned INWARD watching him pass. NEVER a front-facing lineup. ONE DEVICE: the aisle. Twin lamps. Composed for a 2:1 letterbox crop. LEFT near-to-far, faces from the sheet: Sadaham ice-blue, Mugwan steel-blue, Gwisan green. RIGHT near-to-far: Chuhang slate, Bangul, Gwanchang. Crescent-moon headbands, jougwan feathers, Silla silk — six different men, NEVER clones. Magical cavern steam, no body halo. Webtoon ink faces, old-master night canvas, movie tenebrism. No text. No watermark.',
+	'wg-watch-founders':
+		'HEEWON STYLE. NIGHT steam cavern. SYMMETRICAL CINEMA. Formal pyramid over a mirror-still waterline. LEVEL camera. ONE DEVICE: the waterline and the centered mouth. Composed for a 2:1 letterbox crop. APEX on the far ledge: Dangun numinous. Mid pair, perfectly mirrored: photoreal Hyukgose LEFT, photoreal Alyoung RIGHT. Outer pair: King Suro purple-gold far LEFT, Heo Hwangok purple far RIGHT (painterly webtoon). Foreground triad in the water, facing the mouth: Narim green LEFT, Golhwa orange CENTER, Hyullé cyan RIGHT. Munmu a speck in the mouth. Twin lamps on twin rocks. Faces from the attached sheet LEFT TO RIGHT: Suro, Hyukgose, Alyoung, Heo, Dangun, Narim, Golhwa, Hyullé. Gods photoreal; Suro and Heo painterly. ONE of each. Magical cavern steam and motes, no body halo. Movie tenebrism. No text. No watermark.'
+};
+
+const man = JSON.parse(fs.readFileSync(new URL('./munmu-face-ensembles.json', import.meta.url), 'utf8'));
+for (const item of man) {
+	if (scenes[item.id]) item.scene = scenes[item.id];
+}
+fs.writeFileSync(new URL('./munmu-face-ensembles.json', import.meta.url), JSON.stringify(man, null, '\t') + '\n');
+
+editStory((story) => {
+	const en = story.flatMap((ch) => ch.entries ?? []).find((e) => e.title === 'Munmu');
+	if (!en) throw new Error('Munmu missing');
+	for (const im of en.images ?? []) {
+		if (!scenes[im.id]) continue;
+		im.alt = man.find((m) => m.id === im.id)?.alt ?? im.alt;
+	}
+	return true;
+});
+
+console.log('scenes rewritten', Object.keys(scenes).join(', '));

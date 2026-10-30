@@ -66,7 +66,9 @@ const ALIASES = {
 	gyeol結: 'gyul結',
 	mountgain: 'prosperitymountain',
 	sungchung: 'sunchung',
-	grandacademy: 'academy'
+	grandacademy: 'academy',
+	bihyung: 'bihyungnang',
+	yongsu: 'kimyongsu'
 };
 
 /** Raw (pre-curve) quality points per audit grade. */

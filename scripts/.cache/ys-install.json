@@ -1,0 +1,10 @@
+[
+  { "id": "ys-silla-establish", "ratio": 2 },
+  { "id": "ys-goguryeo-establish", "ratio": 2 },
+  { "id": "ys-chase", "ratio": 2 },
+  { "id": "ys-commander-rail", "ratio": 2 },
+  { "id": "ys-goguryeo-volley", "ratio": 2 },
+  { "id": "ys-boarding", "ratio": 2 },
+  { "id": "ys-helm-off", "ratio": 2 },
+  { "id": "ys-capsize", "ratio": 2 }
+]

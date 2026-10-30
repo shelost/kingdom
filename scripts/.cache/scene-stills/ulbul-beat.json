@@ -1,0 +1,58 @@
+[
+	{
+		"id": "ulbul-beaten",
+		"entry": "Ulbul",
+		"at": "A prince of Goguryeo, blood in the packed earth",
+		"alt": "White empty sky: Ulbul bloodied on packed earth, a prince beaten by commoners; the old woman small, holding the shoe.",
+		"people": ["micheon:exile"],
+		"time": "day",
+		"scene": "PAINTERLY character-intro-card movie still, understated and instantly iconic like a man walking a dark bank under a huge empty sky — ONE PIECE white-background splash. 2:1 letterbox. DAY GROUND on WHITE. WIDE. ONE DEVICE: the packed-earth yard as a hard dark slab in the lower third, the rest blinding paper-white sky. LOWER THIRD: ULBUL on the ground, FACE from the sheet, straw satgat knocked aside, white hemp dark with dirt and a little blood at the mouth and brow, one arm up, looking at nothing. A dropped salt sack. Two anonymous commoners in undyed WHITE hemp receding, sticks down, already walking away — extras, not named faces, never cloned from the sheet. FAR RIGHT, small: an OLD KOREAN WOMAN, white hair, undyed white jeogori, arms folded, ONE SHOE in her hand, watching, not smiling. Huge quiet white. #C30000 a thin red in the sash and the blood only, never a glow. Webtoon figure, painted world. No crowd catalog. No text."
+	},
+	{
+		"id": "ulbul-old-woman",
+		"entry": "Ulbul",
+		"at": "In the dark she sits up. One shoe.",
+		"alt": "Night in a fish-smelling room: the old woman works a dry shoe into Ulbul's salt sack while he sleeps.",
+		"people": ["micheon:exile"],
+		"time": "night",
+		"scene": "PAINTERLY character-intro-card movie still. NIGHT. LOW THREE-QUARTER. ONE DEVICE: an open salt sack as a dark mouth. LEFT: an OLD KOREAN WOMAN, white hair in a knot, undyed white hemp, sitting up, putting a DRY SHOE into white salt, mouth flat, not a cartoon witch. RIGHT, small, sleeping: ULBUL, FACE from the sheet, satgat off, white hemp, sack under his head. One oil lamp on the floor at LEFT of the lens rakes the shoe and her knuckles. Umber room, fish-drying rack dissolving. #C30000 a thin red on his sash in the dark. Webtoon faces, old-master canvas. No text."
+	},
+	{
+		"id": "bongsang-long-night",
+		"entry": "Ulbul",
+		"at": "The cups do not go back to the kitchen",
+		"alt": "Night in the inner hall: King Bongsang laughing with a cup, gold screens, wine, a woman not leaving.",
+		"people": ["bongsang"],
+		"time": "night",
+		"scene": "PAINTERLY character-intro-card movie still. NIGHT interior. LOW THREE-QUARTER. ONE DEVICE: a low table ringed with cups, none empty. LEFT of the sheet = KING BONGSANG, gold Goguryeo openwork crown, burgundy-red silk, mouth open laughing, cup raised, offended even in pleasure. A woman in Goguryeo court silk at the frame edge, back half-turned, not a nude, not a portrait clone — one extra, undyed-to-red silk, looking at the door. Gold-thread screens, lamp smoke, wine. Floor lamp at LEFT rakes the silk in #6e2a2a. Umber hall, huge quiet wall. Webtoon face, old-master canvas. No palace clutter dump. No text."
+	},
+	{
+		"id": "bongsang-new-roof",
+		"entry": "Ulbul",
+		"at": "A pavilion on a pavilion",
+		"alt": "Huge pale sky: a new red pavilion going up; tiny hungry figures in a ditch below; the king a speck on the scaffold.",
+		"people": ["bongsang"],
+		"time": "day",
+		"scene": "PAINTERLY character-intro-card movie still, understated and instantly iconic like two small figures on a dark slope under a huge sky. 2:1 letterbox. DAY GROUND on WHITE. WIDE. ONE DEVICE: a new two-tier giwa pavilion as a red stamp on a scaffold, rising. Tiny KING BONGSANG in burgundy and gold crown on the platform, pointing higher. LOWER THIRD: a dark ditch, two tiny undyed-white figures, a child who has stopped asking. Half the frame empty paper-white sky. #6e2a2a a thin red on the pillars. Webtoon specks, painted world. Real Korean timber and giwa, not a brutalist slab. No army. No text."
+	},
+	{
+		"id": "hunt-branch-cap",
+		"entry": "Ulbul",
+		"at": "A branch in the cap.",
+		"alt": "On the Husan slope under a huge pale sky: Changjori puts a green branch in his cap; other hats follow.",
+		"people": ["changjori", "bongsang"],
+		"time": "day",
+		"scene": "PAINTERLY character-intro-card movie still, understated iconic: huge paper-white sky, small figures on a dark grass slope. DAY GROUND on WHITE. WIDE. ONE DEVICE: the ridge as a hard dark diagonal. LEFT of the sheet = CHANGJORI mid-gesture, lean goatee, small black cap, putting a GREEN BRANCH into the cap, red po, frightened of his own courage. Other tiny officials copying, green twigs in black caps — extras, not clones of the sheet. FAR RIGHT, isolated, tiny: KING BONGSANG on a horse, gold crown, burgundy, not yet seeing. Half the frame empty white sky. #8a7048 in the ruined light on silk. Webtoon figures, painted world. No army catalog. No text."
+	},
+	{
+		"id": "hunt-ambush-reins",
+		"entry": "Ulbul",
+		"at": "A follower takes the whip. Another takes the reins.",
+		"alt": "Ambush on the Husan slope: Changjori's men seize the king's reins, swords out, the whip caught mid-air.",
+		"people": ["changjori", "bongsang"],
+		"sword": true,
+		"manga": true,
+		"time": "day",
+		"scene": "PAINTERLY character-intro-card movie still PLUS manga action. HARD DUTCH. WORM'S-EYE from the dirt under the hooves. ONE DEVICE: the king's horse as a dark mass, reins yanked toward the lens. LEFT = CHANGJORI, lean goatee, GREEN BRANCH in the black cap, red po, shouting, one hand on the reins. RIGHT = KING BONGSANG, gold crown, burgundy silk, whip caught mid-air, mouth open offended. A follower's fist and a STRAIGHT Korean ring-pommel sword (attached sw_bidam: small ring pommel at the heel of the fist, short grip, NO tsuba, straight blade) coming at the lower edge. Speed lines, flung dirt, extreme foreshortening. #6e2a2a hard key on the silk. Faces acting, not a catalogue. No text. No sound-effect lettering."
+	}
+]

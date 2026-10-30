@@ -1,0 +1,97 @@
+[
+	{
+		"id": "ulbul-beaten",
+		"entry": "Ulbul",
+		"at": "A prince of Goguryeo, blood in the packed earth",
+		"alt": "Yamcha-pose parody: Ulbul bloodied on his back in a village yard, one arm flung over his head, salt sack spilled; the old woman holds the shoe.",
+		"people": ["micheon:exile"],
+		"time": "day",
+		"scene": "INTRO-CARD movie still, same film stock as the character cards: webtoon face, painterly world, 2.5D painted volume, quasi-sculpted folds, NOT a white studio void, NOT photoreal, NOT flat cel. WIDE-ISH, worm's-eye from the packed earth. ONE DEVICE: Ulbul's body as a hard diagonal across the lower third — a YAMCHA DEATH-POSE parody (Dragon Ball): lying on his BACK, one arm flung BACK over his head, the other limp at his side, one knee bent, eyes half-shut, blood at the mouth and brow, straw satgat knocked off, white hemp dirty, spilled salt sack. FACE from the sheet. Tiny in the midground: two unnamed commoners in undyed white walking AWAY, sticks down. FAR RIGHT small: OLD WOMAN, white hair, undyed hemp, ONE SHOE in her hand, watching. BACKGROUND is a REAL Korean village yard: timber hut, thatch, packed earth, pale dusk sky — the place is painted, not empty paper. #C30000 a thin red in the sash and the blood only, never a glow. No crowd catalog. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-est-pyongyang",
+		"entry": "Ulbul",
+		"at": "Downriver, under a fortress that is not his",
+		"alt": "Dusk establishing: Pyongyang’s red two-tier munru on grey stone, a tiny salt-market below, the fortress not yet his.",
+		"with": ["place:pyongyang"],
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "ESTABLISHING STILL of Pyongyang, intro-card painted world, same film stock as the character cards: watercolor-and-oil, 2.5D architecture, quasi-sculpted giwa and stone, manga-adjacent ink line on the pavilion, NOT photoreal, NOT a 3D city render, NOT a Ghibli crowd catalog. FAR WIDE, slight dutch, dusk. ONE DEVICE: the red two-tier munru of the attached fortress board sitting on a grey stone ridge — KEEP this exact architecture (red pavilion, grey block wall, hongye). A tiny dark silhouette of a salt stall at the foot. Crushed dusk, one hard key from the west, long shadows. #C30000 as a thin red in the pavilion, never a glow. No cars. No modern city. No army. No text."
+	},
+	{
+		"id": "ulbul-est-cave",
+		"entry": "Ulbul",
+		"at": "The first village is a cave.",
+		"alt": "Establishing: Jumong Cavern mouth, trees in the opening, leaf-light, empty stone waiting.",
+		"with": ["place:jolbon"],
+		"time": "day",
+		"style": "still-life",
+		"scene": "ESTABLISHING STILL of Jumong Cavern, intro-card painted world, same film stock: watercolor-and-oil, 2.5D stone volume, manga ink on the trees, NOT photoreal. FAR WIDE from inside looking out. ONE DEVICE: the cave mouth as a dark stone arch — KEEP the attached board exactly (wide mouth, tree trunks in the opening, forest and a far ridge through the light, packed earth). Empty of people. Leaf-light as the one hard key. Pale paper-white beyond. No text."
+	},
+	{
+		"id": "suro-est-palace",
+		"entry": "Suro",
+		"at": "Suro has a palace, a harbour and a market.",
+		"alt": "Establishing: Golden Gaya palace courtyard at dusk — the same timber halls and giwa as the place board, no cars.",
+		"with": ["place:geumgwan"],
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "ESTABLISHING STILL of Golden Gaya, intro-card painted world, same film stock: watercolor-and-oil, 2.5D timber and giwa, manga ink on the roofs, NOT photoreal, NOT a 3D architectural visualization. FAR WIDE, slight bird's-eye. ONE DEVICE: the palace courtyard of the attached board — KEEP this exact layout (central hall, two-tier giwa, flanking pavilions, packed-earth court, stone wall). IGNORE cars, vans, streetlights, modern people on the board. Dusk, one hard key, long shadows, crushed darks. Tiny anonymous silhouette on the court. Purple #8B5CF6 a thin cloth accent on a banner, never a glow. No text."
+	},
+	{
+		"id": "suro-est-huts",
+		"entry": "Suro",
+		"at": "So this is your palace. From the outside.",
+		"alt": "Establishing: Gaya stilt granaries on the water, thatch and timber posts, dusk mist.",
+		"refs": ["/pl_gaya_huts.png"],
+		"refsNote": "Gaya stilt houses: thatch, timber posts in water, ignore modern rail and lamp",
+		"time": "day",
+		"style": "still-life",
+		"scene": "ESTABLISHING STILL of Gaya harbour huts, intro-card painted world, same film stock: watercolor-and-oil, 2.5D timber posts, manga ink on thatch, NOT photoreal. WIDE. ONE DEVICE: three stilt granaries on still water from the attached board — KEEP thatch roofs, timber posts, stairs, waterline. IGNORE the modern railing, streetlamp, white box. Mist, pale paper sky, one hard key raking the posts. Empty of people. No text."
+	},
+	{
+		"id": "muryuk-est-hall",
+		"entry": "Muryuk",
+		"at": "walks them down the long hall in their sleeping clothes",
+		"alt": "Establishing: a long painted Gaya hall at night, east doors about to take the sun, three small sleeping-clothes silhouettes.",
+		"with": ["place:geumgwan"],
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "ESTABLISHING STILL of the Gaya palace hall, intro-card painted world, same film stock: old-master canvas interior, 2.5D timber columns, manga ink on the painted walls, NOT photoreal. WIDE, dutch. ONE DEVICE: a long timber hall axis receding to east doors that are just opening, a pale seam of dawn. Walls painted floor to rafters as dark shapes. Three tiny anonymous silhouettes in sleeping clothes, one being carried. One lamp. Umber-to-black. Ignore cars on any place board. No text."
+	},
+	{
+		"id": "muryuk-est-harbour",
+		"entry": "Muryuk",
+		"at": "Everything the sun touches from here.",
+		"alt": "Establishing: dawn over Golden Gaya harbour and iron hills, seen from a palace ridge.",
+		"with": ["place:geumgwan"],
+		"time": "day",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "ESTABLISHING STILL from a palace ridge looking down on Golden Gaya, intro-card painted world, same film stock: watercolor-and-oil, 2.5D giwa and water, manga ink, NOT photoreal, NOT a map. FAR WIDE. ONE DEVICE: the harbour as a dark waterline, iron-smoke hills, the attached palace a small stamp in the lower third. One tiny silhouette of a king holding a child. Dawn key from the east. Ignore cars. No army. No text."
+	},
+	{
+		"id": "seohyun-est-daeya",
+		"entry": "Seohyun",
+		"at": "In the evenings he walks the wall at Daeya.",
+		"alt": "Establishing: Daeya seongmun at dusk — stone, giwa pavilion, hongye arch, Baekje hills a dark line west.",
+		"with": ["place:daeya"],
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "ESTABLISHING STILL of Daeya Fortress, intro-card painted world, same film stock: watercolor-and-oil, 2.5D stone and giwa, manga ink on the trees, NOT photoreal, NOT a flat cartoon gate. FAR WIDE, slight worm's-eye. ONE DEVICE: the attached seongmun exactly — weathered stone, crenellations, curved giwa pavilion, hongye arch, heavy timber doors, Silla-blue banners. KEEP this architecture. One tiny silhouette on the wall walk. Dusk, Baekje hills a dark line west, one hard key. No army catalog. No text."
+	},
+	{
+		"id": "seohyun-est-gaya-house",
+		"entry": "Seohyun",
+		"at": "He goes to the Gaya house himself.",
+		"alt": "Establishing: the Gaya house gate in a Surabol lane at night, one lamp, the helm a dark triangle inside.",
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "ESTABLISHING STILL of the Gaya house in Surabol, intro-card painted world, same film stock: watercolor-and-oil interior-yard, 2.5D timber gate, manga ink, NOT photoreal, NOT Ghibli cute. WIDE. ONE DEVICE: a timber gate on a packed-earth lane, paper lattice, one lamp. Through the open leaf, a tall Gaya cone helm on its stand as a dark triangle. One tiny silhouette with a stick at the threshold. Umber night. Purple #8B5CF6 a thin cloth peek on the helm only. No crowd. No text."
+	}
+]

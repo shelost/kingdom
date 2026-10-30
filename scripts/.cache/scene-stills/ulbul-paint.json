@@ -1,0 +1,62 @@
+[
+	{
+		"id": "ulbul-cave-spirits",
+		"entry": "Ulbul",
+		"at": "Three figures in it. One close. Two farther, paler.",
+		"alt": "Jumong Cavern in spirit-steam: Ulbul kneeling small, Jumong sitting close, two paler ancestors farther in the mist.",
+		"people": ["micheon:exile", "jumong:exile"],
+		"spirits": ["suchun", "dolgo"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth: trees in the opening, leaf-light, packed earth",
+		"time": "night",
+		"scene": "PAINTERLY character-intro-card movie still, understated and instantly iconic like a man walking away up a dark bank under a huge empty sky. 2:1 letterbox, nothing important at top or bottom. NIGHT. WIDE. ONE DEVICE: the cave mouth as a dark stone arch, the attached architecture exactly. Spirit-steam fills the hollow — magical cavern atmosphere, steam and red-ember motes #e8563f, anime-painterly cavern spirit, not photoreal, no body halo. FOUR figures, one of each, never cloned. LOWER LEFT, small: ULBUL kneeling, satgat, white hemp, salt sack, looking up. MIDGROUND, larger: JUMONG sitting on a rock in the steam, RED headband, RED po, CLEAN-SHAVEN, SERIOUS, looking at the boy. FARTHER, paler translucent watercolor ancestor-spirits: THIRD of the sheet = King SUCHUN, gold Goguryeo crown, deep red silk, stern, a pale king in the steam. FOURTH = Prince DOLGO, tall black cap, red court robe, warm face, no crown, paler still. The two spirits dissolve into the steam the way the Silla cavern goddesses appear in mist — present, not a lineup. Huge quiet negative space. #e8563f as the hard key on Jumong's silk, never a glow. Faces drawn webtoon, world painted watercolor-and-oil. No text."
+	},
+	{
+		"id": "ulbul-chang-down",
+		"entry": "Ulbul",
+		"at": "Changjori comes down the bank",
+		"alt": "Changjori comes down the riverbank toward the boat, court silk already in the mud, Ulbul a small figure tying a sack.",
+		"people": ["changjori", "micheon:exile"],
+		"time": "day",
+		"scene": "PAINTERLY character-intro-card movie still, understated and instantly iconic: huge paper-white sky, two small figures on a dark slope. 2:1 letterbox. DAY GROUND on WHITE. WIDE. ONE DEVICE: the riverbank as a hard dark diagonal descending left. LEFT of the sheet = CHANGJORI mid-step DOWN the bank, lean face, short goatee, small black cap with two thin red feathers, ruined red silk, frightened of his own courage, NOT looking back up. SECOND = ULBUL small at the water, satgat, white po, tying a sack on a dark boat-stroke. Half the frame empty white sky. #C30000 a thin red on the sash. Webtoon figures, painted world, not cel, not photoreal. No text."
+	},
+	{
+		"id": "ulbul-house-wine",
+		"entry": "Ulbul",
+		"at": "the first roof in seven years that is not a joke",
+		"alt": "Night in the prime minister's house: Changjori pours wine and does not drink it; Ulbul sits with the satgat still on.",
+		"people": ["changjori", "micheon:exile"],
+		"time": "night",
+		"scene": "PAINTERLY character-intro-card movie still, understated, iconic. NIGHT interior. LOW THREE-QUARTER. ONE DEVICE: a low table as a dark rectangle, two cups, one poured, neither drunk. LEFT = CHANGJORI pouring, lean face, short goatee, red po, looking at the cups not the boy. SECOND = ULBUL sitting, satgat still on, white hemp, salt sack on the floor, looking at the wine. One floor lamp at the LEFT of the lens rakes the silk in #C30000 and #8a7048. Umber room, crushed black, huge quiet wall. Webtoon faces, old-master canvas world. No palace clutter. No text."
+	},
+	{
+		"id": "momal-park-line",
+		"entry": "Momal",
+		"at": "Park. Straight from the first king.",
+		"alt": "Night in the Moon Palace: Jesang stands and names the first king; a pale Hyukgose watches from the steam of the lamp.",
+		"people": ["jesang"],
+		"spirits": ["hyukgose:king"],
+		"time": "night",
+		"scene": "PAINTERLY character-intro-card movie still, understated, instantly iconic. NIGHT in a Silla timber hall. LOW THREE-QUARTER. ONE DEVICE: a floor lamp's gold ellipse on packed earth. LEFT of the sheet = PARK JESANG, fifties, long grey-white beard, magenta-plum silk, standing, looking past the camera at the boy-king off-frame, calm half-lidded mouth on the line. SECOND of the sheet = PARK HYUKGOSE as a pale translucent ancestor-spirit in the lamp-steam behind him, gold Silla open crown, pale court silk, photoreal-leaning and numinous beside the painterly mortal, looking at the same king, not a glow aura — steam and pale wash only. #8B5A2B in the lamp on plum silk. Huge quiet dark hall. Webtoon Jesang, numinous Hyukgose. No text."
+	},
+	{
+		"id": "ulbul-empty-cave",
+		"entry": "Ulbul",
+		"at": "When Ulbul looks up the cave is empty",
+		"alt": "Dawn at the cave mouth: Ulbul small under the satgat, the steam gone, the stone empty.",
+		"people": ["micheon:exile"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth: trees in the opening, leaf-light, packed earth",
+		"time": "day",
+		"scene": "PAINTERLY character-intro-card movie still, understated and instantly iconic like a man walking a dark bank under a huge empty sky. 2:1 letterbox. DAY GROUND on WHITE. WIDE. ONE DEVICE: the cave mouth as an empty dark arch. The steam is gone. ONE small figure: ULBUL standing just inside the mouth, satgat, white hemp, looking up into nothing, the satgat still on. Pale paper-white dawn sky through the trees. Huge quiet stone. #C30000 a thin red on the sash only. Webtoon figure, painted world. No spirits left. No text."
+	},
+	{
+		"id": "ulbul-hunt-green",
+		"entry": "Ulbul",
+		"at": "The king takes his ministers into the hills",
+		"alt": "On a grass ridge under a huge pale sky: the king in burgundy, Changjori a step behind.",
+		"people": ["bongsang", "changjori"],
+		"time": "day",
+		"scene": "PAINTERLY character-intro-card movie still, understated, instantly iconic. DAY. HIGH OVERHEAD looking straight down. ONE DEVICE: a dark slope as a triangle of grass, then a clearing. Tiny figures: a field of green reed hats, one then another. LEFT small = KING BONGSANG in burgundy-red, gold crown, looking at the hats, mouth wrong. SECOND tiny = CHANGJORI standing aside, lean, small black cap with two red feathers, red po, not looking at the king. Half the frame pale paper-white sky at the top edge. #6e2a2a a thin red in the silk. Webtoon specks, painted world, not an army catalog. No text."
+	}
+]

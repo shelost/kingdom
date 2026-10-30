@@ -1,0 +1,102 @@
+[
+	{
+		"id": "three-loyalists",
+		"entry": "Sunchung",
+		"at": "Who is the Eraha of this country?!",
+		"alt": "Sabi colonnade at dusk: Sunchung walks the lamp-line with a memorial in his sleeve; Hungsu turns in a doorway with that tired smile; Gyebek is already a small armoured figure at the far end walking out",
+		"scene": "Night interior of the Sabi palace colonnade, looking DOWN the long timber hall axis. DUTCH low three-quarter. Foreground, large: Councillor Sunchung mid-stride toward the lens in his vermilion-red court robe and black silk cap with the gold flame ornament, white hair and white beard, a folded memorial clenched in one fist, mouth open remonstrating, not the portrait's clasped-hands stance. Midground, in a side doorway to the right: Councillor Hungsu in his wine-red robe and tall purple cap with the silver flame plaque, half-turned, that small knowing smile, already leaving. Far end of the colonnade, tiny: General Gyebek in ochre-gold and a crimson scarf, steel lamellar, walking out the open doors toward the river, reverse-grip ring-pommel at his hip, back half to us. ONE device: the receding colonnade as a dark timber tunnel. One hanging bronze lamp just outside the left edge of frame rakes across Sunchung's red silk and white beard; gold #c9a24d as the lamp bounce, not a glow. Wine-red #b98f33 catch on Hungsu. Crushed blacks, long shadows climbing the pillars. EXACTLY THREE named people, one of each, never cloned. Ignore any curved sword on Gyebek's portrait.",
+		"people": ["seongchung", "heungsu", "gyebek"],
+		"with": ["place:sabi"],
+		"hat": false,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-open",
+		"entry": "Sunchung",
+		"at": "The war reaches",
+		"alt": "Dawn at the Sabi fish stalls: two fishwives in undyed white stop mid-gutting as the rumour of two armies hits the market first",
+		"scene": "Wide establishing, worm's-eye from wet cobbles at the Sabi river market at first light. Sharp foreground: a dark out-of-focus fish basket and a glinting knife. Midground: two fishwives in SIMPLE UNDYED WHITE hemp, sleeves rolled, stopped mid-work, looking inland toward the palace ridge. Behind them the Baengma river and a few moored boats dissolving into white morning haze; above the ridge, the giwa roofs of Sabi palace as a small dark stamp. ONE device: the wet market street running uphill toward the palace. High-key paper-white sky, cool grey shadows, a thin gold break on the wet stone. No named faces. No army. No crowd catalog — two women and the street.",
+		"with": ["place:sabi", "dress:baekje"],
+		"time": "day"
+	},
+	{
+		"id": "sunchung-wharf",
+		"entry": "Sunchung",
+		"at": "Whose is that? The lacquer box.",
+		"alt": "Sabi wharf, the autumn Daeya fell: old Sunchung in red silk stares at a lacquer box coming off the boat; his brother Yunchung in cracked armour stands proud beside him",
+		"scene": "Sabi wharf at dusk, autumn. Low two-shot from the wet planks. Councillor Sunchung in vermilion-red court robe, white hair, black cap with the gold flame, standing at the edge of the dock looking DOWN at a small black lacquer box being lifted from a boat — face tight, not proud. Beside him, a step closer to the boat: General Yunchung in grey steel lamellar with a cracked helm, red war-paint across both eyes, full black beard, grinning, one hand on the boat's gunwale as if the heads were a harvest. ONE device: the lacquer box as a dark rectangle between them. Low sun from the river raking their faces; gold #c9a24d on Sunchung's silk, ochre on Yunchung's plates. A dark out-of-focus rope in the foreground. Giwa warehouse eaves behind dissolving into dusk. EXACTLY two named people. New poses, never the portrait stance.",
+		"people": ["seongchung", "yunchung"],
+		"with": ["place:sabi"],
+		"hat": false,
+		"time": "day",
+		"year": 642
+	},
+	{
+		"id": "sunchung-letter",
+		"entry": "Sunchung",
+		"at": "He goes looking for a piece of paper.",
+		"alt": "Night in the empty banquet hall: King Euija lifts a wine jar and the starved councillor's letter is still under it, a red ring on the paper where the jar stood",
+		"scene": "Night. The Sabi banquet hall after everyone has gone. Worm's-eye from the floor beside a bronze wine jar. King Euija in crimson court silk, yellow-gold headband, heavy and bearded, kneeling awkwardly, lifting the jar with both hands; under it a single folded page with a dark red ring-stain. A maid in pale silk is a blurred shoulder in the foreground, watching. ONE device: the red ring on the paper. One standing lamp at the end of the table is the key, raking up across the king's face and the stained page; orange #e08a2e as real lamp bounce, not a glow. The rest of the long hall falls into umber-black, empty benches receding. Euija's expression is not a laugh — he has found the thing he put a jar on.",
+		"people": ["euija:king"],
+		"with": ["place:sabi"],
+		"time": "night",
+		"year": 659
+	},
+	{
+		"id": "sunchung-close",
+		"entry": "Sunchung",
+		"at": "Euija laughs, because",
+		"alt": "Morning in the Sabi hall: Euija throws his head back laughing on the dais; at the back, the lord of Bear Fortress bows exactly as low as the man beside him",
+		"scene": "Morning, the Sabi ministers' hall. Over-the-shoulder from behind a dark bowing back in the lower left. King Euija on the far dais, small in the upper third, throwing his head back laughing, crimson silk, gold headband, one hand on his knee. At the back of the hall, two provincial lords bowing identically, their faces hidden — the joke is the identical bow. ONE device: the hall axis, the two matching bows as a rhyme. A shaft of pale morning from a high lattice lands on the king; orange #e08a2e in that shaft. Most of the hall in cool shadow. No army of extras — the king, two bows, empty benches.",
+		"people": ["euija:king"],
+		"with": ["place:sabi"],
+		"time": "day",
+		"year": 659
+	},
+	{
+		"id": "hungsu-open",
+		"entry": "Hungsu",
+		"at": "Hungsu has drawn",
+		"alt": "Bird's-eye of a packed-earth posting yard: Hungsu on his knees scratching the White River mouth too wide into the dirt with a broom handle; a worn ring-pommel hangs on the doorpost",
+		"scene": "Gomamiji, a rammed-earth county posting hut a day's ride from the sea. STRAIGHT DOWN from above, bird's-eye. The packed-earth yard fills the frame. Councillor Hungsu in his wine-red robe and tall purple cap, on his knees, scratching a map into the dirt with the end of a broom handle: a coastline, one river mouth drawn twice as wide as it is, one notch in the hills. The worn ring-pommel sword hangs on the timber doorpost at the top of the frame, the only bright steel. ONE device: the dirt map as a pale drawing on dark earth. Early morning, one low sun-shaft from the left raking the grooves in the dirt and the gold brocade on his shoulders; #b98f33 as real bounce, not a glow. Chickens tiny at the edge. That small knowing smile while he draws. New pose — kneeling, working — never the portrait's folded-hands stance.",
+		"people": ["heungsu"],
+		"hat": false,
+		"sword": true,
+		"time": "day"
+	},
+	{
+		"id": "heungsu-messenger",
+		"entry": "Hungsu",
+		"at": "The matter is urgent. What then.",
+		"alt": "Over-shoulder from the dusty courier: Hungsu turns in the packed-earth yard, pointing down at the notch the man is standing on; the worn ring-pommel on the doorpost between them",
+		"scene": "Gomamiji packed-earth yard, late afternoon. Over-the-shoulder from behind a dusty unnamed courier in a dark travel robe, his shoulder huge and out of focus in the left foreground. Councillor Hungsu in the midground in wine-red robe and tall purple cap with silver flame plaque, long grey hair, that tired smile, turning, one hand pointing DOWN at the dirt by the courier's boots — the notch for Tanhyun. The worn ring-pommel sword on the doorpost is a bright circle between them. ONE device: the pointing hand and the notch in the dirt. Low sun from the right raking his gold shoulders; #b98f33 bounce, not a glow. Giwa eave of the rammed-earth hut behind. New pose, mid-turn, never clasped hands.",
+		"people": ["heungsu"],
+		"hat": false,
+		"sword": true,
+		"time": "day"
+	},
+	{
+		"id": "heungsu-gyebek-listen",
+		"entry": "Hungsu",
+		"at": "You… you truly mean to go?",
+		"alt": "Dusk at a Satek berth: Hungsu in court magenta asks; Gyebek, already on the boat, does not look back, reverse-grip ring-pommel along his forearm",
+		"scene": "A timber berth on Satek water at dusk. DUTCH two-shot. Councillor Hungsu on the dock in wine-red robe and purple cap, leaning forward, one hand half-raised, the smile gone, asking if he truly means to go. On the boat, a step down: General Gyebek in ochre-gold and crimson scarf, steel lamellar, back three-quarter to us, packing a bag in order, reverse-grip ring-pommel lying back along his forearm, not looking at Hungsu. ONE device: the gunwale as a dark horizontal that divides dock from boat. Low dusk sun from the water raking both; #b98f33 on Hungsu's gold shoulders, yellow #d9b13a peeking at Gyebek's cloth. Dark water, a single moored boat, no crowd. EXACTLY two named people. Ignore the curved katana on Gyebek's portrait — the blade is the straight ring-pommel of the sword board. New poses.",
+		"people": ["heungsu", "gyebek"],
+		"hat": false,
+		"sword": true,
+		"time": "day",
+		"year": 655
+	},
+	{
+		"id": "hungsu-close",
+		"entry": "Hungsu",
+		"at": "The histories do not mention him again.",
+		"alt": "Rain: a small figure in wine-red walks north away from a rammed-earth hut, the office sword at his hip, the dirt map already a brown puddle",
+		"scene": "Gomamiji in rain. Far wide, the rammed-earth posting hut small in the lower left, its eave dripping. A packed-earth yard already a brown puddle where a map used to be. Walking away from us up a muddy north road, small in the right third: Councillor Hungsu in his wine-red robe, purple cap dark with rain, the office ring-pommel sword now at his hip, not looking back. ONE device: the empty road receding into rain-haze. Storm sky, one pale break far ahead. #b98f33 blooming into the wash at the lower edge. Half the frame quiet rain. The histories do not mention him again — leave space around the subject. Composed for a 2:1 letterbox crop.",
+		"people": ["heungsu"],
+		"hat": false,
+		"sword": true,
+		"time": "day"
+	}
+]

@@ -1,0 +1,94 @@
+[
+	{
+		"id": "sunchung-last-lamp",
+		"entry": "Sunchung",
+		"year": 656,
+		"at": "Don’t— don’t go yet",
+		"alt": "Night on the Sabi colonnade: Sunchung reaches after Hungsu at the last hanging lamp; beyond it the road is just a road",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night. Sabi palace colonnade. MEDIUM TWO-SHOT, low three-quarter along the lamp-line. ONE device: the last hanging bronze lamp as a hard gold disc between them. Councillor Sunchung in the left third, vermilion-red court robe, white hair, black silk cap with the front gold flame, leaning after his friend, one unfinished hand in the air, anxious, not the portrait's clasped-hands stance. Councillor Hungsu in the right third, already half out of the light, wine-red robe and tall purple cap with the silver flame plaque, posting paper in his sleeve, that small tired smile, mid-turn away. Past the lamp the colonnade goes black. The bronze lamp hangs just outside the top of frame and rakes down across Sunchung's white beard and Hungsu's gold-brocade shoulder; gold #c9a24d as the lamp bounce on Sunchung, wine-red #b98f33 catch on Hungsu — not a glow. Dark out-of-focus pillar in the foreground. Timber floor receding. EXACTLY two named people. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge.",
+		"people": ["seongchung", "heungsu"],
+		"with": ["place:sabi"],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-wine",
+		"entry": "Sunchung",
+		"year": 656,
+		"at": "Who sent you. The Satek.",
+		"alt": "Drunk night in the Sabi hall: Euija on the dais points a cup at the door; Sunchung stands small in it, sleeves dry, unfinished",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night interior, Sabi banquet hall. HARD DUTCH, worm's-eye from the floor beside a spilled bronze cup. ONE device: the dais as a dark wedge; the open door a thin gold rectangle behind the councillor. King Euija LARGE in the upper-right third, heavy, bearded, crimson silk, yellow-gold headband, drunk and loud, one knee up on the dais, pointing a wine cup at the door, mouth open mid-accusation, not a standing portrait. Tiny in the door at the far left: Councillor Sunchung, vermilion robe, white hair, black cap with the front gold flame, sleeves hanging, mouth unfinished. Empty benches recede. A low oil lamp set on the floor beside the lens rakes UP across the king's silk and the wet cup; orange #e08a2e as real lamp bounce, not a glow; gold #c9a24d a thin catch on Sunchung in the door. Walls at an angle, his cast shadow climbing the plaster. No crowd — the king, the door, the cup. EXACTLY two named people. Composed for a 2:1 letterbox crop.",
+		"people": ["euija:king", "seongchung"],
+		"with": ["place:sabi"],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-yard",
+		"entry": "Sunchung",
+		"year": 656,
+		"at": "Yun-ah. One word.",
+		"alt": "Night in the Sabi yard: Yunchung stands with his helm under his arm looking at the lit door; his brother is already being taken the other way",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night. Packed-earth palace yard outside the hall. WIDE, slightly dutch, from behind General Yunchung. ONE device: the open hall door as a single gold rectangle in a black wall. Yunchung LARGE in the lower-left third, Rückenfigur, helm tucked under his left arm (dented round steel, cracked crown, red-black plume), red war-paint still across both eyes when he turns a fraction, full black beard, ochre-yellow robe and grey lamellar, looking at the door he will not go through. Far right, small: Councillor Sunchung in vermilion, white hair, being walked the other way by a dark unnamed watch, already leaving the lamp. Giwa eave of the palace as a dark stamp. One lamp inside the door is the key, spilling orange #e08a2e onto the threshold; ochre #c9932a as bounce on Yunchung's plates, gold #c9a24d a last catch on the brother's robe. Dark grass out of focus in the foreground. EXACTLY two named people. No army. Composed for a 2:1 letterbox crop.",
+		"people": ["yunchung", "seongchung"],
+		"with": ["place:sabi"],
+		"hat": false,
+		"sword": true,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-thin",
+		"entry": "Sunchung",
+		"year": 656,
+		"at": "The hemp shows the ribs",
+		"alt": "Webtoon close in the cell: gaunt Sunchung in undyed white hemp, ribs showing in the lamp, fever sweat, no court robe",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night. A timber prison cell under the palace, packed earth, one high barred window. INTIMATE CLOSE, worm's-eye from the dirt beside an oil lamp set down on the floor. ONE device: the hanging white hemp as a vertical pale plane. Councillor Sunchung sits against the wall, VERY THIN and fever-sick. FACE, HAIR AND BEARD ONLY from the attached portrait (elderly: long white hair, full white beard, heavy-lidded tired eyes, sun-weathered skin, a deep crease between the brows). DO NOT wear the portrait's vermilion court robe, the black silk cap, or the gold flame ornament. No hat. Hair loose and damp with fever. Body: a gaunt prisoner in PLAIN UNDYED WHITE commoner hemp, hanging off the shoulders, collarbone and ribs showing through the thin cloth, fever-sweat darkening the white, a pink stain on one sleeve. One hand on his own ribs in the lamp. Not the healthy portrait body. The lamp on the floor just outside the left of frame rakes UP across the ribs, the beard, the white hemp; gold #c9a24d as real lamp bounce, not a glow. The rest of the cell ink-black. A slit of warmer light under the door. No readable writing. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. EXACTLY one named person.",
+		"people": ["seongchung"],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-ink",
+		"entry": "Sunchung",
+		"year": 656,
+		"at": "from the clerk’s room. And ink.",
+		"alt": "The night watch, back to the door, offers a sheet and a small dish of ink to gaunt Sunchung in undyed white hemp",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night. The same timber cell. OVER-SHOULDER from behind the unnamed night watch. ONE device: the pale sheet and the small ink dish as two bright objects in the dark. Sharp foreground: the watch's dark shoulder and the back of a young extra's head (NO named face — a nameless boy in a plain dark hemp jacket, looking at the door). Midground, razor-sharp: gaunt Councillor Sunchung sitting up despite the fever, FACE AND BEARD ONLY from the portrait, DO NOT wear the vermilion court robe or the black cap or gold flame; PLAIN UNDYED WHITE commoner hemp hanging off a thin frame, no hat, loose white hair; both shaking hands reaching for the paper, still managing to write. A small dish of black ink. The watch's other hand still on the door. A single oil lamp on the floor rakes sideways across the sheet, the dish, Sunchung's gaunt knuckles; gold #c9a24d on the paper, not a glow. Bokeh of the lamp behind. EXACTLY one named person. No readable letters on the sheet. Composed for a 2:1 letterbox crop.",
+		"people": ["seongchung"],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-blood",
+		"entry": "Sunchung",
+		"year": 656,
+		"at": "The last two names go down red.",
+		"alt": "ECU in the cell: Sunchung's split thumb, the last strokes going down red on the page, his gaunt face in the lamp, white hemp",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night. The timber cell. EXTREME CLOSE-UP, dutch, rack-focus. ONE device: the pale page as a tilted plane filling the lower two-thirds. Sharp foreground: Councillor Sunchung's thin left hand, the skin split at the base of the thumb, two last unreadable brush-marks going down RED-DARKER than the dried black ink above them — marks only, NO legible letters, NO text. Midground, slightly soft: his gaunt webtoon face from the attached portrait (white hair, white beard, heavy-lidded), looking down, mouth unfinished, still loyal, still speaking to a king who is not in the room. DO NOT wear the vermilion robe or the black cap or gold flame; a fold of PLAIN UNDYED WHITE hemp at the wrist. The empty ink dish tipped in the corner. The unnamed watch is only a dark back at the door, out of focus. The oil lamp on the floor just outside the left of frame rakes across the wet red on the page and the knuckles; gold #c9a24d catching the beard, the red is dark on paper, not a glow aura. Crushed black around. No readable writing anywhere. Intimate. Composed for a 2:1 letterbox crop.",
+		"people": ["seongchung"],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-death",
+		"entry": "Sunchung",
+		"year": 656,
+		"at": "He lies down in the white.",
+		"alt": "The cell after the letter leaves: Sunchung lying in undyed white hemp, still, the lamp burning down",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night. The same timber cell. WIDE, slightly high angle, the figure small in the lower third. ONE device: the dying oil lamp as a single gold disc in a vast ink-black cell. Councillor Sunchung lies on packed earth in PLAIN UNDYED WHITE commoner hemp, very thin, ribs a faint ridge under the cloth, one arm fallen open, eyes half-closed, mouth unfinished — still, not a gore shot, not a standing portrait. FACE AND BEARD ONLY from the attached portrait (elderly white hair, white beard, heavy-lidded). DO NOT wear the vermilion court robe, the black silk cap, or the gold flame. No hat. Hair loose on the dirt. The letter is already gone; the cell is empty except for him and the lamp. The lamp burns down just outside the left of frame and rakes a last gold #c9a24d across the white hemp and the beard — not a glow. A slit of feast-light under the door. Monumental emptiness. Loyal even in stillness. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. EXACTLY one named person. No readable writing.",
+		"people": ["seongchung"],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "sunchung-colour",
+		"entry": "Sunchung",
+		"year": 659,
+		"at": "They’re a different colour.",
+		"alt": "Night in the hall: a maid holds the letter up to a lamp; the last two names are darker; Euija has already turned away",
+		"scene": "BOLD KOREAN WEBTOON movie still — thick black ink contours, hard cel-shade, glossy graphic highlights. NOT photoreal, NOT oil painting, NOT 3D, NOT Caravaggio. Night. Empty Sabi banquet hall. MEDIUM TWO-SHOT, over-the-shoulder from behind King Euija. ONE device: the page held up to a standing lamp, the last strokes a different darker red. Sharp midground: a court maid in pale dusty-rose silk, both hands lifting the stained sheet toward the lamp, looking at the king not the page, unfinished mouth. King Euija LARGE in the left foreground as a dark crimson shoulder and a turned-away bearded profile, yellow-gold headband, refusing the colour — he will not look. The bronze wine jar sits empty on the table behind, a red ring on the wood. The standing lamp is the key, raking the page and the maid's hands; orange #e08a2e bounce on his silk, dusty rose #c9a0a8 on hers. The last marks on the page are darker red than the rest — unreadable, no letters. Long hall falling to black. Composed for a 2:1 letterbox crop.",
+		"people": ["euija:king", "courtmaid"],
+		"with": ["place:sabi"],
+		"time": "night"
+	}
+]

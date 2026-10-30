@@ -1,0 +1,447 @@
+[
+	{
+		"id": "km-cellar-redmask",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "The smallest of the three boys is twelve now",
+		"alt": "In the Council’s cellar a guard rips the red mask off the smallest orphan; Suulbu listens.",
+		"scene": "Extreme close-up in a stone cellar under the Council hall. FG: a guard’s blurred fist yanking a red wooden dokkaebi mask off a boy’s face. The boy, twelve, the smallest of the three orphans on the board, face bared, furious and terrified, tears and snot, screaming. Behind him, sharp in the one torch, old Prince Suulbu leans in to listen, cold and pleased. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"sukhuljong"
+		],
+		"refs": [
+			"/ch_rascals.png"
+		],
+		"refsNote": "character boards: copy each exactly",
+		"time": "night"
+	},
+	{
+		"id": "km-gildal-drain",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "Gildal hears by the second watch",
+		"alt": "Gildal carries the red-mask boy out of the Council’s cellar through a drain.",
+		"scene": "Low tight shot in a black stone drain tunnel, knee-deep water. FG: blurred dripping stone. Gildal (orange robe soaked dark, red hood, fox mask pushed up on his head) wades toward the lens with the twelve-year-old boy clinging to his back, the boy’s red mask clutched in his fist; Gildal’s face set, breathing hard, eyes on the way out. One torch behind them throws their shadows huge on the wet vault. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"gildal"
+		],
+		"refs": [
+			"/ch_rascals.png"
+		],
+		"refsNote": "character boards: copy each exactly",
+		"time": "night"
+	},
+	{
+		"id": "km-council-demand",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "Send the madman to fetch him back",
+		"alt": "The Council asks for something cleverer than a hanging: send the madman, with riders.",
+		"scene": "Close three-way staging in a lamp-lit throne room at night. FG: the blurred edge of Suulbu’s shoulder and sleeve. Prince Suulbu, old and cold, bows a fraction with a thin smile; King Jinpyung on his dais, crowned, stricken, looking past him; in the shadows between them Bihyung (one stray strand of hair) kneels, his face caught half in lamplight, the madman act slipping. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"sukhuljong",
+			"jinpyung",
+			"yongsu"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "km-riders-night",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "Forty of Imjong’s riders",
+		"alt": "Forty riders and the madman gallop down the south road through the night.",
+		"scene": "Dynamic low worm’s-eye from the road as horses thunder past at night. FG: a blurred hoof and flung mud right at the lens. At the front of a torch-lit column of riders, Bihyung (stray strand of hair, hair flying) rides hard, face rigid, eyes wet in the wind, a knife in his belt. Torches stream into long motion trails; the column dissolves behind him into smoke and ember bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat. MOTION: speed blur, flying mane, sparks.",
+		"people": [
+			"yongsu"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "km-arrow-reeds",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "They find Gildal at dawn where the south road meets the river",
+		"alt": "Gildal waits in the reeds at dawn with an arrow in his leg.",
+		"scene": "Close shot low in the river reeds at blue pre-dawn. FG: blurred reed heads. Gildal sits in the mud, an arrow through his thigh, his orange robe folded neatly over his knees, fox mask on his head, pale, calm, waiting, the faintest smile as he sees someone coming. Behind him the river and a line of torches on the road dissolve into cold mist bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"gildal"
+		],
+		"time": "night"
+	},
+	{
+		"id": "km-knife-wrist",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "He takes Yongsu’s wrist, very gently",
+		"alt": "Gildal takes Yongsu’s wrist and sets the knife himself.",
+		"scene": "Extreme close-up on hands at dawn in the reeds. FG: blurred reed. Gildal’s hand closes very gently around Bihyung’s trembling wrist and guides a short knife up to his own throat. Above the hands, half in frame, Bihyung’s face crumpling, tears running, and Gildal’s face serene, eyes on his young lord. One low grey-gold light from the river. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"gildal",
+			"yongsu"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "day"
+	},
+	{
+		"id": "km-bloodline-shout",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "THE BLOODLINE OF KIM YONGSU WILL BE RESTORED",
+		"alt": "Gildal shouts to the riders: the bloodline of Kim Yongsu will be restored!",
+		"scene": "Extreme close-up, worm’s-eye, dutch tilt. Gildal, kneeling in the reeds with the knife at his throat, throws his head back and SHOUTS with everything he has left, veins standing out, eyes blazing, tears, fox mask askew. FG: the blurred shoulder of Bihyung. Behind: the blurred line of mounted riders and their torches against the dawn sky. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"gildal",
+			"yongsu"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "day"
+	},
+	{
+		"id": "km-weeps",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "Yongsu weeps without a sound",
+		"alt": "Yongsu weeps without a sound, so nobody behind him can see his shoulders move.",
+		"scene": "Extreme close-up on Bihyung’s face at dawn, filling the frame, turned away from the riders. Tears pour silently, mouth locked shut, jaw trembling, the one stray strand of hair lifting in the wind; spattered red on his cheek. FG: a blurred reed. Background: the riders out of focus, tiny and indifferent, torch bokeh going pale in the dawn. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"yongsu"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "day"
+	},
+	{
+		"id": "km-ride-city",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "LONG LIVE KING JINPYUNG",
+		"alt": "The madman rides Gildal’s body through every ward of Surabol screaming the king’s name.",
+		"scene": "Dynamic low three-quarter in a Surabol street. FG: a blurred jeering townsman’s arm. Bihyung on a galloping horse, Gildal’s body in the orange robe slung over the saddle before him, one hand on it; he screams to the sky, mouth wide, eyes streaming, face wild. Behind, giwa roofs, thrown objects in the air, shocked faces dissolving into dust and lamp bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. MOTION: speed blur, dust, flying hair.",
+		"people": [
+			"yongsu",
+			"gildal"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "day"
+	},
+	{
+		"id": "km-parallel-elder",
+		"entry": "King Muyeol",
+		"year": 596,
+		"at": "We didn’t love your father, Majesty",
+		"alt": "Old Man Tree, and the truth: a door guard whose eye Suulbu’s men put out on the night of the purge.",
+		"scene": "PARALLEL DIPTYCH in one frame, split down the middle by a vertical reed stalk in the foreground: LEFT half is the LEGEND (cool moon-blue mist, the dokkaebi as the city believes it, truly supernatural), RIGHT half is the TRUTH (warm torchlight, the real person behind the mask, raw and human). Mirror the two poses so the reader sees they are the same figure. LEFT: Old Man Tree, the hollow-faced wooden tree goblin from the spirit board, root hands raised in the reeds. RIGHT: the real man from the human board, an old white-bearded man with ONE eye, the other a puckered scar, speaking by the fire, and in the flame behind him a ghostly memory of torch-bearing guards dragging a young door guard down. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"refs": [
+			"/ch_old_man_tree_spirit.png",
+			"/ch_old_man_tree.png"
+		],
+		"refsNote": "character boards: copy each exactly",
+		"time": "night"
+	},
+	{
+		"id": "km-parallel-mother",
+		"entry": "King Muyeol",
+		"year": 596,
+		"at": "She’s the last. My littlest.",
+		"alt": "The Rock Lady, and the truth: a mother whose three elder children were killed on Suulbu’s list.",
+		"scene": "PARALLEL DIPTYCH in one frame, split down the middle by a vertical reed stalk in the foreground: LEFT half is the LEGEND (cool moon-blue mist, the dokkaebi as the city believes it, truly supernatural), RIGHT half is the TRUTH (warm torchlight, the real person behind the mask, raw and human). Mirror the two poses so the reader sees they are the same figure. LEFT: the Rock Lady from the spirit board, stone-faced with her boulder crown, sitting immovable on the bridge stone. RIGHT: the real woman from the human board, a baby asleep on her back, kneeling by three small earth mounds with no markers, one hand flat on the nearest, face dry and terrible. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"refs": [
+			"/ch_rock_lady_spirit.png",
+			"/ch_rock_lady.png"
+		],
+		"refsNote": "character boards: copy each exactly",
+		"time": "night"
+	},
+	{
+		"id": "km-parallel-boys",
+		"entry": "King Muyeol",
+		"year": 596,
+		"at": "The three boys don’t say anything.",
+		"alt": "The rascal goblins, and the truth: three orphans whose parents were exiled or killed; the smallest never takes off his red mask.",
+		"scene": "PARALLEL DIPTYCH in one frame, split down the middle by a vertical reed stalk in the foreground: LEFT half is the LEGEND (cool moon-blue mist, the dokkaebi as the city believes it, truly supernatural), RIGHT half is the TRUTH (warm torchlight, the real person behind the mask, raw and human). Mirror the two poses so the reader sees they are the same figure. LEFT: the three smoke-haired masked rascal goblins from the spirit board, leaping and stealing shoes. RIGHT: the three real orphan boys from the human board sitting close together on the floor of a storehouse, silent, hollow-eyed; the smallest still wears his red mask. Behind them in the torch smoke, faint memories: a man in chains led to a boat, a rope at a gate, a woman walking away into a hall. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"refs": [
+			"/ch_rascals_spirit.png",
+			"/ch_rascals.png"
+		],
+		"refsNote": "character boards: copy each exactly",
+		"time": "night"
+	},
+	{
+		"id": "km-fake-bridge",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "Here is how a miracle is done.",
+		"alt": "How the Ghost Bridge was really built: forty masked people, stone cut in a storehouse, the madman shouting to cover the hammers.",
+		"scene": "Wide-to-mid night shot at a stream below a temple. FG: a blurred stone block on a rope sling. Masked men and women in plain white hemp, dokkaebi masks pushed up, haul and set dressed stone by torchlight in the water, Gildal (orange robe, fox mask up) checking a line with a plumb bob. On the bank in the left third, Bihyung (stray strand) stands shouting at the stream with his arms flung wide. Temple roof dark above, torch bokeh on the water. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"yongsu",
+			"gildal"
+		],
+		"refs": [
+			"/ch_rascals.png",
+			"/ch_old_man_tree.png",
+			"/ch_rock_lady.png"
+		],
+		"refsNote": "the real people behind the goblin legend: copy each exactly",
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "km-fake-seal",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "After the bridge, a miracle a season",
+		"alt": "The steward’s lost seal under his pillow: a girl in a fox mask put it there.",
+		"scene": "Close low shot in a dark bedroom. FG: the blurred snoring bulk of a sleeping steward. A small girl of about six in a red-and-white fox mask kneels at the pillow and slides a heavy bronze seal under it, holding her breath, one finger to the mask’s lips. A single moonbeam through lattice rakes her hand and the seal; the room falls into black. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"time": "night"
+	},
+	{
+		"id": "km-fake-reeds",
+		"entry": "King Muyeol",
+		"year": 602,
+		"at": "I have waited a long time to say it to the right face.",
+		"alt": "Why the reeds bowed: masked children crouched in them, bowing to the young lord.",
+		"scene": "Night in the Hwangchun reeds, low behind them. FG: the blurred backs of masked children crouched in the reeds. Before them all, Gildal (orange robe, fox mask pushed up) kneels and bows his forehead to the mud; the masked children around him bow too, rippling the reeds. Bihyung (stray strand) stands among them stunned. On the far bank, two tiny palace guards with a lantern stare, terrified. Moon mist and lantern bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"gildal",
+			"yongsu"
+		],
+		"refs": [
+			"/ch_rascals.png",
+			"/ch_old_man_tree.png",
+			"/ch_rock_lady.png"
+		],
+		"refsNote": "the real people behind the goblin legend: copy each exactly",
+		"faces": {
+			"yongsu": "static/ch_bihyung.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "bh-myth-spirit-market",
+		"entry": "Bihyung",
+		"year": 601,
+		"at": "There is a market of the dead under the moon.",
+		"alt": "Legend: Bihyung walks Chunmyung into the reeds, and the goblins open a market of the dead under the moon.",
+		"scene": "LEGEND VARIANT (the story as the city believes it, told as real): same painted webtoon look, but a slightly heightened folk-tale register, cooler moon-blue palette, drifting silver mist and floating lantern motes. The dokkaebi are truly supernatural, not costumes. Night in the reeds, which part like a door onto a glowing market of the dead under a huge moon. Bihyung (stray strand of hair) leads Princess Chunmyung by the hand, looking back at her with a delighted grin; she stares around her, open-mouthed, enchanted, tears of wonder. Around them the dokkaebi from the boards: the Rock Lady holding up a humming stone, Old Man Tree reading a palm, the three masked rascals offering her shoes brimming with fireflies. Paper lanterns and fireflies swirl up into the sky. FG: a blurred lantern and reeds. Romantic, magical, wondrous. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"yongsu",
+			"chunmyung"
+		],
+		"refs": [
+			"/ch_rascals_spirit.png",
+			"/ch_old_man_tree_spirit.png",
+			"/ch_rock_lady_spirit.png"
+		],
+		"refsNote": "character boards: copy each exactly",
+		"faces": {
+			"yongsu": "static/ch_bihyung.png",
+			"chunmyung": "static/ch_chunmyung_young.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "bh-myth-roof-lamps",
+		"entry": "Bihyung",
+		"year": 601,
+		"at": "Before dawn he lifts her onto the roof of the gate tower",
+		"alt": "Legend: on the gate-tower roof the whole city is lamps, and half of them belong to the dead.",
+		"scene": "LEGEND VARIANT (the story as the city believes it, told as real): same painted webtoon look, but a slightly heightened folk-tale register, cooler moon-blue palette, drifting silver mist and floating lantern motes. The dokkaebi are truly supernatural, not costumes. Wide romantic night shot on the curved tiled roof of a gate tower. Bihyung (stray strand of hair) and Princess Chunmyung sit close together on the ridge, her head on his shoulder, his arm round her, both looking out. Below and around them the whole city of Surabol glows with lamps, and half the lights are floating spirit lanterns rising into a star-filled sky like a river of fireflies. FG: a blurred roof-ridge ornament. Tender, sweeping, a love song. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"yongsu",
+			"chunmyung"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png",
+			"chunmyung": "static/ch_chunmyung_young.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "km-truth-world-below",
+		"entry": "King Muyeol",
+		"year": 601,
+		"at": "The old man shows her where his eye was.",
+		"alt": "The truth: every night he takes her down the culvert, and the old man shows her where his eye was.",
+		"scene": "Torchlit storehouse under the wall at night. FG: the blurred shoulder of Bihyung (stray strand of hair) holding the torch. Princess Chunmyung, seventeen, in a maid’s coat wet to the knees, stands frozen, hand over her mouth, eyes wet with horror and shame, as the old white-bearded one-eyed man from the board shows her the puckered scar where his eye was; behind him, soft, the woman with a baby on her back and the three orphan boys, the smallest in a red mask, watching her. Faces carry it. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"yongsu",
+			"chunmyung"
+		],
+		"refs": [
+			"/ch_rascals.png",
+			"/ch_old_man_tree.png",
+			"/ch_rock_lady.png"
+		],
+		"refsNote": "the real people behind the goblin legend: copy each exactly",
+		"faces": {
+			"yongsu": "static/ch_bihyung.png",
+			"chunmyung": "static/ch_chunmyung_young.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "km-truth-dawn-climb",
+		"entry": "King Muyeol",
+		"year": 601,
+		"at": "She comes back up each dawn with mud to the knee",
+		"alt": "She comes back up each dawn with mud to the knee, the Moon Palace above her.",
+		"scene": "Low worm’s-eye at the mouth of the culvert at grey dawn. FG: blurred running water over stone. Princess Chunmyung climbs out, muddy to the knee, maid’s coat soaked, and looks UP at the walls and golden roofs of the Moon Palace above her, face hard and changed, jaw set, no longer a girl. Bihyung (stray strand) a step below her in the water, watching her, not her face but his. Dawn light hits the palace roofs; she is in shadow. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"chunmyung",
+			"yongsu"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png",
+			"chunmyung": "static/ch_chunmyung_young.png"
+		},
+		"time": "day"
+	},
+	{
+		"id": "km-cliff-lotuses",
+		"entry": "King Muyeol",
+		"year": 642,
+		"at": "The palace ends at the bluff.",
+		"alt": "Father and son on the bluff above the black river, paper lotuses going by below.",
+		"scene": "Wide iconic night shot from behind. FG: blurred pine branch. Old Kim Yongsu (white hair, the one stray strand still up) and his grown son Kim Chunchu stand on the edge of a rocky bluff, small in the lower third, looking down. Far below, the black river carries tiny glowing paper lotus lanterns one by one toward the sea. Half the frame is moonlit cloud and mist. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"yongsu",
+			"chunchu"
+		],
+		"time": "night"
+	},
+	{
+		"id": "km-cliff-no-goblins",
+		"entry": "King Muyeol",
+		"year": 642,
+		"at": "Chunchu, there are no goblins.",
+		"alt": "Chunchu, there are no goblins.",
+		"scene": "Close two-shot on the bluff at night, lantern light from below. FG: Chunchu’s blurred shoulder. Old Yongsu turns from the river to his son, face naked, no madness in it at all, eyes clear and wet. Chunchu, in profile, stares at him, the ground going out from under him. The river of tiny lotus lights blurs to bokeh far below. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"yongsu",
+			"chunchu"
+		],
+		"time": "night"
+	},
+	{
+		"id": "km-cliff-arm",
+		"entry": "King Muyeol",
+		"year": 642,
+		"at": "…You’ve been saying that your whole life.",
+		"alt": "At the end of the night, the old man puts his arm over his son’s shoulders.",
+		"scene": "Medium shot from behind and slightly below, pre-dawn. Old Yongsu puts his arm over Chunchu’s shoulders; Chunchu, taller, lets him, head bowed, then laughs wetly. Both look out over the river. FG: blurred bluff grass. The first pale break of dawn over the far hills; the last paper lotuses as tiny bokeh on the water. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"yongsu",
+			"chunchu"
+		],
+		"time": "day"
+	},
+	{
+		"id": "bh-chunchu-born",
+		"entry": "Bihyung",
+		"year": 603,
+		"at": "Yongsu holds his son the way you hold something borrowed from a temple",
+		"alt": "Yongsu holds his newborn son the way you hold something borrowed from a temple.",
+		"scene": "Tender close-up at dawn in the house by the stream. FG: blurred plum blossoms in the window. Bihyung (stray strand of hair) holds a newborn swaddled in white cloth very carefully in both hands, as if it might break, staring at it in awe, tears standing in his eyes; behind him, soft, exhausted Chunmyung on the mat, hair loose, smiling. Lamp and dawn light mix; warm bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"yongsu",
+			"chunmyung"
+		],
+		"faces": {
+			"yongsu": "static/ch_bihyung.png",
+			"chunmyung": "static/ch_chunmyung_young.png"
+		},
+		"time": "day"
+	},
+	{
+		"id": "bh-chunchu-stream",
+		"entry": "Bihyung",
+		"year": 612,
+		"at": "Chunchu is nine and mortified.",
+		"alt": "Nine-year-old Chunchu, mortified, watches his father talk to the stream.",
+		"scene": "Low shot at the stream at dusk. FG: blurred stepping stones. Bihyung, thirties now (stray strand of hair), crouches in the water laying stones and chatting to the current. On the bank, a nine-year-old boy in a small silk coat (the young Chunchu, delicate face, big dark eyes) stands with fists clenched, red with shame, glancing back at two laughing watchmen. Warm low sun, reflections, bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"yongsu"
+		],
+		"time": "day"
+	},
+	{
+		"id": "bh-sunduk-lamp",
+		"entry": "Bihyung",
+		"year": 632,
+		"at": "Sit down, brother-in-law.",
+		"alt": "In the small room with one lamp, the new queen tells Yongsu: Father told me. All of it.",
+		"scene": "Intimate close two-shot across a low table in a small room with one lamp. FG: the blurred lamp flame. Queen Sunduk, newly crowned, in mourning-white silk with her gold crown, leans forward, eyes red, steady. Across from her Yongsu, fifties, the one stray strand of hair, his madman grin dying on his face as he understands. The room falls to umber black; their shadows on the angled wall. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"sunduk",
+			"yongsu"
+		],
+		"time": "night"
+	},
+	{
+		"id": "bh-sunduk-tears",
+		"entry": "Bihyung",
+		"year": 632,
+		"at": "When I was small I wanted to be her.",
+		"alt": "Sunduk: when I was small I wanted to be her. I got to be queen instead.",
+		"scene": "Emotional close-up of Queen Sunduk in lamp light, one tear running, a small rueful smile. FG: Yongsu’s blurred shoulder and stray hair strand, his hand reaching to cover hers on the table. The lamp guttering; warm ember bokeh in the dark behind. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces. TENEBRISM AND EMOTION: Caravaggio darkness, nine-tenths of the frame crushed ink-black, one torch or lamp carving the faces in hard chiaroscuro, sweat and tears catching the light, extreme close framing, dutch tilt, motion blur on the edges. The faces carry the whole beat.",
+		"people": [
+			"sunduk",
+			"yongsu"
+		],
+		"time": "night"
+	},
+	{
+		"id": "mu-gate-father",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "has asked his father three times not to walk him to the gate",
+		"alt": "Fifteen-year-old Chunchu asked his father three times not to walk him to the hwarang gate. His father walks him to the gate.",
+		"scene": "Morning at the Hwarang yard gate. FG: the blurred shoulder of another recruit. Chunchu, fifteen, in hwarang dress, walking stiffly ahead, mortified, eyes rolling; a step behind, his father Yongsu (stray strand of hair) waving cheerfully at the other boys. At the gate, recruits staring and smirking. Morning haze, dust bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"chunchu",
+			"yongsu"
+		],
+		"time": "day"
+	},
+	{
+		"id": "mu-roll-call",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "The roll clerk reads each name with its bone.",
+		"alt": "At roll call the clerk stops at Chunchu’s name and runs his finger back.",
+		"scene": "Low close shot down a line of hwarang recruits standing in the yard. FG: the clerk’s blurred finger on a bamboo roll. Chunchu, fifteen, at the end of the line, chin up, face burning, as the whole class turns to look at him. Background: the yard wall and pavilion roofs dissolving into bright haze. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"chunchu"
+		],
+		"time": "day"
+	},
+	{
+		"id": "mu-autumn-verse",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "At the autumn moon-viewing every class must give a verse.",
+		"alt": "At the autumn moon-viewing Class 59 has nothing, until they look at the boy at the drain end of the hall.",
+		"scene": "Night hall at the moon-viewing. FG: blurred wine cups and a lantern. Chunchu, fifteen, rises at the far end of the hall by the drain, the whole class turned to him, and begins to speak a verse, eyes on the full moon through the open doors, calm for the first time. Moonlight and lanterns; warm bokeh. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+		"people": [
+			"chunchu"
+		],
+		"time": "night"
+	}
+]

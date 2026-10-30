@@ -1,0 +1,53 @@
+{
+	"jesang-child--momal": {
+		"time": "day",
+		"scene": "INTRODUCING PARK MOMAL, eight years old, the boy the roofs already shout at the sky. Day on a neighbour's landing on the south shore. Low three-quarter from the gunwale of a GREEN pine boat that still smells of fresh caulk: the boy sits mid-oar, magenta-plum boy's jeogori, BLACK hair, NO beard, and looks back over his shoulder at the empty landing with a small knowing almost-smile: \"They left it untied. That's a gift.\" A hard cool river-sun rakes his cheek from the side in #8B5A2B. Behind him, painted loosely: pale paper sky, black water, a reed bank, a timber landing dissolving into haze, one small boat as a stamp. At the frame edge only an out-of-focus vermilion scrap of another boy on the far thwart. NEVER the grey-bearded adult. NEVER a crown."
+	},
+	"jesang-lord--momal": {
+		"time": "night",
+		"scene": "INTRODUCING PARK JESANG, formerly known as Momal. Night in the Moon Palace hall, they have just announced the formal name. Low three-quarter from the packed earth beside an empty chair: he stands in magenta-plum silk, grey-white beard, silver at the temples, and looks past the camera at the boy-king off-frame with a calm half-lidded mouth that already knows the rest: \"The rest was Momal.\" One floor lamp at his knee lights him from below in hard lamp-warm #8B5A2B. Behind him, painted loosely: dark timber pillars, a paper lattice with blue night beyond, lamp smoke, the soft gold bokeh of one flame. At the frame edge only an out-of-focus vermilion sleeve of the king who still says the old name. ONLY the adult Park. NEVER a child."
+	},
+	"jesang--park-jesang": {
+		"time": "night",
+		"scene": "INTRODUCING PARK JESANG, the south-shore Park who talks like a hall and rows like a boat. Dusk on a wet Silla skiff at the south shore, the oar still in his hands. Low three-quarter from the gunwale: he rows mid-stroke, magenta-plum silk dark with spray, grey-white beard beaded, and looks back over his shoulder at a boy-king just off-frame with a calm half-lidded gift of a smile: \"They left it untied. That's a gift.\" A last cloud-break on the water rakes his face from the side in hard lamp-warm #8B5A2B. Behind him, painted loosely: black water, a reed bank, a far timber landing dissolving into dusk haze, one small boat-lamp as warm bokeh. At the frame edge only an out-of-focus vermilion sleeve of the boy on the other oar."
+	},
+	"nulji--park-jesang": {
+		"time": "night",
+		"scene": "INTRODUCING NULJI, the boy on the boat, now kan, who still has only one man. Night in the Moon Palace, the songs still coming through the window. Low three-quarter from the packed earth beside his chair: he sits forward on the edge of it, vermilion-red silk, Silla open gold crown, one hand flat on the arm, and looks past the camera at the empty hall with a tired unsmiling mouth: \"I have a chair.\" One floor lamp at his knee lights him from below in hard #9a3060. Behind him, painted loosely: dark timber pillars, a paper lattice with blue night beyond, lamp smoke, the soft gold bokeh of one flame. At the frame edge only an out-of-focus magenta-plum sleeve of the man he sent for."
+	},
+	"chisul--park-jesang": {
+		"time": "night",
+		"scene": "INTRODUCING LADY CHISUL, his wife. Unfinished sentences. Holds the children and the door. Night at the south-shore gate, the road already taking him. Low three-quarter from just inside the threshold: she stands in the doorway in white jeogori, black sash, dark chima, grey at the temples, one hand on the post, the other reaching after him, mouth open on a word that will not finish: \"When. When. When is the north.\" A yard lamp rakes her face from the side in cool #c9a070. Behind her, painted loosely: the dark timber gate, packed earth, a far road dissolving into night, one lamp as warm bokeh. At the frame edge only two small dark shapes of daughters at her hip, and an out-of-focus magenta back already going."
+	},
+	"jangsu--park-jesang": {
+		"time": "night",
+		"scene": "INTRODUCING KING JANGSU, Gwanggaeto's son, who grants a favour the way weather grants rain. Night in the northern hall at Pyongyang, a Silla guest who has not knelt. Low three-quarter from the floor below the dais: he sits in red Goguryeo court silk and the kingdom crown, one forearm along the armrest, and looks DOWN at the guest off-frame with a grim unhurried mouth, not yet a smile: \"Another Silla man.\" A bronze floor lamp lights him from below in hard #a03030. Behind him, painted loosely: red pillars, a dark painted screen, lamp smoke, the soft bokeh of more flames. At the frame edge only an out-of-focus magenta-plum shoulder of the man who will not kneel first."
+	},
+	"nintoku--park-jesang": {
+		"time": "night",
+		"scene": "INTRODUCING NINTOKU, King of Wa, who likes a man already ruined. Night in the Asuka court, a Silla traitor wet from a different crossing. Low three-quarter from the packed earth: he sits on his heels in white sokutai and burgundy sleeves, a brown sash, and looks DOWN at the standing guest with a dry appraising scowl, one hand lifting a little toward an empty chair: \"Sit.\" A floor brazier lights him from below in warm ivory #c4b08a. Behind him, painted loosely: raised timber floors, cypress dark, a gravel yard, brazier smoke, the soft bokeh of the one fire. At the frame edge only an out-of-focus empty chair and a wet magenta sleeve that will not take it."
+	},
+	"katsuragi--park-jesang": {
+		"sword": true,
+		"time": "night",
+		"scene": "INTRODUCING KATSURAGI NO SOTSUHIKO, the Wa captain who counts distances and does not enjoy being used. Night in the Asuka yard, the king has just named him. Low three-quarter: he stands in dark steel lamellar under a vermilion-red coat, two ring-pommel swords at the hip, and looks past the camera at the Silla man with a fierce short scowl, already counting: \"How many hulls. How many men.\" A brazier at the side lights him from below in hard #c8463c. Behind him, painted loosely: cypress halls, packed earth, brazier smoke, the dark of a gravel yard. At the frame edge only an out-of-focus white sokutai sleeve of the seated king."
+	},
+	"miseheun--park-jesang": {
+		"time": "day",
+		"with": ["ship:yamato"],
+		"scene": "INTRODUCING MISEHEUN, the Wa hostage, who wants to stay with the man who came for him. Day on a Wa deck at Mountain Island, a cream Silla sail already in the lee. Low three-quarter from the gunwale: he stands in Silla-blue silk, long loose black hair, younger Kim-brother face, and leans toward the man off-frame with too-bright eyes, a little too loud: \"We take their ships. We go back with an army.\" A hard sea-sun rakes his face from the side in #c07090. Behind him, painted loosely: a pale paper sky, the dark mountain of the island, Wa hulls as soft shapes, one cream sail under the cliff as a stamp. At the frame edge only an out-of-focus magenta-plum sleeve of the man who will not go with him."
+	},
+	"gwanggaeto--park-jesang": {
+		"time": "day",
+		"with": ["place:surabol"],
+		"scene": "INTRODUCING GWANGGAETO, the Great King, who does not get off a horse unless he means the boot. Day in the Silla king's own packed-earth yard. Worm's-eye from the dirt beside a kneeling crown: he STANDS over it, just off the horse, steel lamellar with red wing shoulder-flaps, the Goguryeo kingdom crown, one boot planted on the thin king's head, looking DOWN past the camera with unhurried counted eyes, short dark beard, no kindness: \"You wrote it. Then stay there.\" A hard cool sun rakes him from the side in #e0442e. Behind him, painted loosely: a pale paper sky, timber palace, a red-bay horse's shoulder dissolving, one line of red banners in haze. At the frame edge only an out-of-focus vermilion crown of the man in the dirt. NEVER kneeling. NEVER a kind smile."
+	},
+	"kangrim--park-jesang": {
+		"time": "night",
+		"scene": "INTRODUCING KANGRIM, the underworld's fetch — he asks one question at the door, and he waits. Night on the island road after the post has gone. Low three-quarter: tall and thin in a crow-black robe over blue and vermilion layers, the WIDE BLACK GAT brim hiding his eyes ENTIRELY — only the mouth and jaw visible, NO beard, NO eyes — the whole tall gat inside the frame with space above it — a red-covered register open in one hand, reading a name, calm, about to ask. The pages show no writing. One remaining fire rakes his jaw from the side in cold grey #4a4a58. The edges of his robe dissolve into ink-brush strokes. Behind him, painted loosely: a smoking post, dark road, drifting embers as bokeh. NEVER show his eyes. NEVER give him a grey beard. NEVER clone the burned man."
+	},
+	"bokho--park-jesang": {
+		"time": "day",
+		"scene": "INTRODUCING BOKHO, the Goguryeo hostage, who came home first. Day on the southeast road to the east Han, the dust behind them no longer weather. Low three-quarter from beside the horse's shoulder: he rides in lilac-purple silk, long black hair, older-brother tired, and turns in the saddle toward the man off-frame with a careful unsettled mouth: \"They said I could leave.\" A hard cool sun rakes his face from the side in #8a6a8a. Behind him, painted loosely: a pale paper sky, a river-bend, a line of dust and horses dissolving into haze. At the frame edge only an out-of-focus magenta sleeve shortening the reins, and one blunt arrow already standing in a saddle."
+	}
+}

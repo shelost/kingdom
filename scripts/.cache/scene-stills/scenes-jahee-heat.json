@@ -1,0 +1,53 @@
+[
+	{
+		"id": "heat-jahee-brush-hand",
+		"entry": "Jahee",
+		"at": "Wet it properly. All the way down",
+		"alt": "At the quay office table Jahee stands behind young Bupmin's stool with her hand over his on the brush, her mouth at his ear, while he stares at the ledger and goes red.",
+		"scene": "Romance still, intimate medium-close two-shot, low three-quarter angle from across the table edge. Morning in a timber harbour office on the quay, a paper window behind them glowing white with sea haze, distant masts as soft bokeh. Young Bupmin (eighteen, beardless) sits stiffly on a stool at a low table over an open ledger, his red silk coat, his brush hand caught under Jahee's hand. Jahee stands bent close behind his shoulder, her cheek almost at his ear, her pale-pink jeogori sleeve falling over his wrist, guiding the small brush down into a wet black inkstone; a sly, unimpressed half-smile, eyes on his face, not the page. He is flushed red to the ears, lips parted, not breathing. ONE device: the bright window as a white plane behind them; pink #e8a0bf catch on her silk, red #C41E3A on his sleeve.",
+		"people": ["munmu", "jayi"],
+		"year": 644,
+		"time": "day"
+	},
+	{
+		"id": "heat-jahee-loft-tie",
+		"entry": "Jahee",
+		"at": "does it with him slowly, the way she did the brush",
+		"alt": "In a grain loft at night, by one lamp on the floor, Jahee guides Bupmin's hands as they untie her jacket together, laughing at him, his red coat already off.",
+		"scene": "Romance still, intimate medium-close two-shot, worm's-eye from the plank floor beside an oil lamp set down on the boards, its flame sharp in the foreground. A timber grain loft at night above a harbour, rice sacks stacked in the dark, rafters disappearing into black, gaps between the floorboards glinting with tide water below. Jahee kneels on the sacks, her pale-pink jeogori tie half-undone, one shoulder of the jacket slipping to bare her collarbone, laughing at him with her hands over his on the ribbon. Bupmin (eighteen, beardless, bare-headed, topknot) kneels facing her with his red coat gone, his white inner jacket open on his chest, flushed, grinning helplessly at being corrected. Lamp rakes up across both faces and her bare shoulder; long shadows climb the sacks behind. Erotic by charge, not exposure; no nudity.",
+		"people": ["munmu", "jayi"],
+		"hat": false,
+		"year": 644,
+		"time": "night"
+	},
+	{
+		"id": "innuendo-jahee-brush-ink",
+		"entry": "Jahee",
+		"at": "Is this still about the brush?",
+		"alt": "Close on a quay office table: a slim brush with a red lacquer handle sinks deep into a pool of wet black ink in a pink-stone inkstone.",
+		"scene": "Extreme close-up macro still life, shallow depth of field, morning. A slim calligraphy brush with a glossy red #C41E3A lacquer handle plunged deep into the round wet well of a smooth rose-pink #e8a0bf inkstone, its soft hairs swollen and buried to the ferrule in glistening black ink, a slow ring of ink welling up around the entry and running over the rim in a single bead. Beside it an open ledger of tide figures, out of focus. A bright paper window just out of frame rakes across the wet stone; creamy white bokeh of sea haze behind. Slow, deep, suggestive.",
+		"style": "still-life",
+		"time": "day",
+		"erotic": true
+	},
+	{
+		"id": "innuendo-jahee-spring-tide",
+		"entry": "Jahee",
+		"at": "The tide climbs the pilings under the floor",
+		"alt": "Under a dark quay at new moon, the spring tide surges up between two thick wooden pilings, foaming, as one lamp glows through the floorboards above.",
+		"scene": "Painted night view from low under an ancient Korean timber quay at new moon. Two thick, dark, wet wooden pilings stand close together, and the spring tide surges up hard between them, swelling, foaming white, climbing the slick wood far past the old tide marks, spray flung up against the underside of the floor. Above, warm amber lamplight leaks down through the gaps in the floorboards in thin pink-gold #e8a0bf bars that land on the heaving black water. Everything else crushed ink-black. Rising, pounding, unstoppable.",
+		"style": "still-life",
+		"time": "night",
+		"erotic": true
+	},
+	{
+		"id": "innuendo-jahee-split-sack",
+		"entry": "Jahee",
+		"at": "Rice pours out over red silk",
+		"alt": "By a guttering lamp in a grain loft, a split rice sack spills white grain over a crumpled red silk coat and down between the floorboards.",
+		"scene": "Painted still life at night on the plank floor of a timber grain loft. A fat straw rice sack has burst open along its seam, and a flood of white rice pours out of the split in a thick spilling stream over a crumpled red #C41E3A silk coat and a tangled pale-pink #e8a0bf silk jacket tie, grains bouncing and running down between the boards. An oil lamp beside it is guttering, its flame bent, raking warm light across the heaped grain and the silk folds; deep umber dark all around, soft bokeh of more sacks behind. Burst, spilling, spent.",
+		"style": "still-life",
+		"time": "night",
+		"erotic": true
+	}
+]

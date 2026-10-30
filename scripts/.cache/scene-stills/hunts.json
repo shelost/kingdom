@@ -1,0 +1,250 @@
+[
+	{
+		"id": "hunt-yard-aerial",
+		"entry": "Bupmin",
+		"at": "From above, the yard is a pale square",
+		"alt": "Bird’s-eye: the hwarang yard as a pale square under the Moon Palace, the Silla mansion gate holding the court",
+		"scene": "Character intro-card 2:1 still. BIRD’S-EYE straight down, far wide. Mise-en-scène: the hwarang yard as the attached Silla mansion compound — red timber gate in a stone wall, packed-earth court, grey giwa roofs receding in mist, Moon Palace roofs tiny beyond. ONE device: the pale packed-earth square as a geometric court. Tiny hwarang as dark ink specks on the dirt, one magenta speck, one blue, one teal, already walking toward the forest gate. Living eyes too small to read. Dusk, crushed blacks, one cloud-break shaft raking the court. Keep this exact gate and court. No army catalog. No text. No watermark.",
+		"with": ["place:hwarang_yard", "place:moon_palace"],
+		"year": 611,
+		"time": "day"
+	},
+	{
+		"id": "hunt-moon-palace",
+		"entry": "Bupmin",
+		"at": "The Moon Palace roofs sit",
+		"alt": "Overhead: Moon Palace roofs and the yard as a pale square below",
+		"scene": "Character intro-card 2:1 still. HIGH OVERHEAD, crane, far wide. Mise-en-scène: the attached Moon Palace — aerial Surabol, giwa roofs, stone ramparts, the compound as a dark ring. ONE device: the palace roofs as a receding geometry, the hwarang yard a pale square tucked against the wall. Tiny figures dissolving. Dusk haze, one shaft. Keep this exact palace. No army. No text. No watermark.",
+		"with": ["place:moon_palace"],
+		"year": 611,
+		"time": "day"
+	},
+	{
+		"id": "hunt-surabol-wide",
+		"entry": "Bupmin",
+		"at": "Surabol is all giwa from up here",
+		"alt": "Bird’s-eye Surabol: giwa halls, pond pavilions, the capital as a painted map",
+		"scene": "Character intro-card 2:1 still. BIRD’S-EYE, far wide. Mise-en-scène: attached Surabol — Silla giwa halls, packed-earth yards, timber verandas, a pond with pavilions. ONE device: the waterline of the palace pond cutting the frame. Tiny dark figures on a path toward Nam. Dusk, crushed blacks, one shaft, roofs dissolving into wash. Keep this exact architecture. No army catalog. No text. No watermark.",
+		"with": ["place:surabol"],
+		"year": 611,
+		"time": "day"
+	},
+	{
+		"id": "hunt-forest-overhead",
+		"entry": "Bupmin",
+		"at": "Nam is all pines from above",
+		"alt": "Straight down through Nam pines: three tiny boys on a dry creek, a goat, the tiger not yet",
+		"scene": "Character intro-card 2:1 still. STRAIGHT DOWN from above the canopy, far wide. Mise-en-scène: Mount Nam, a sea of pine crowns, one dry creek as a pale scar. ONE device: the creek as a thin diagonal. Three tiny hwarang — purple, blue, teal — and a goat the size of a grain. No faces. Dusk shaft through the pines, crushed black under-canopy. No army. No text. No watermark.",
+		"year": 611,
+		"time": "day"
+	},
+	{
+		"id": "hunt-yard-sendoff",
+		"entry": "Bupmin",
+		"at": "Each hyangdo goes into the forest",
+		"alt": "Class 51’s hunt: Bidam, Yushin and skinny Alchun last through the Silla mansion gate, already arguing",
+		"scene": "Character intro-card 2:1 still. MEDIUM, slight dutch, low three-quarter from packed earth, faces LARGE. Mise-en-scène: the hwarang yard as the attached Silla mansion — red timber gate, stone wall, packed-earth court, Moon Palace giwa tiny beyond. ONE device: the open gate as a dark vertical. THREE boys of Class 51 mid-stride through it: Bidam in purple already talking with a stick, mouth open; Yushin in Silla-blue checking the ring-pommel at his hip, jaw set, not looking at the camera; Alchun in teal, FIFTEEN, the SKINNIEST, smaller than the other two, eating a rice cake while walking, a frightened laugh covering it. Crescent headbands, jougwan. Living eyes: WHITE sclera, catchlight, BLACK pupil. FACES from the sheet, NEW poses. No even daylight postcard. No army catalog. No text. No watermark.",
+		"people": ["bidam", "yushin", "alchun"],
+		"with": ["place:hwarang_yard"],
+		"year": 611,
+		"sword": true,
+		"time": "day"
+	},
+	{
+		"id": "hunt-bidam-plan",
+		"entry": "Bupmin",
+		"at": "a goat on a rope, and a strip of blood",
+		"alt": "Bidam draws the tiger lure in the dirt; skinny Alchun is already frightened on the pine",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE, slight dutch. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, undergrowth, almost no sky, one thin shaft through the canopy. NO nets. ONE device: Bidam’s stick-scratches in dirt between the grass. Bidam kneeling, purple po, beads on the wrist, pointing HARD, FACE large. Yushin standing in the grass, blue po, listening. Alchun in the grass behind a trunk, FIFTEEN, lean but NORMAL proportions matching the attached portrait — broad teal sleeves, arms the right length, NOT noodle-thin, NOT extra-long — fear on the face. Living eyes WHITE sclera BLACK pupil. Navy #141C2E as specular on the beads. Crushed blacks. No text. No watermark.",
+		"people": ["bidam", "yushin", "alchun"],
+		"year": 611
+	},
+	{
+		"id": "hunt-yushin-bait",
+		"entry": "Bupmin",
+		"at": "The tiger leaves the ground",
+		"alt": "Yushin stands TALL and defiant in the path as a tiger lunges at him, sword undrawn",
+		"manga": true,
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Worm’s-eye from waist-high grass under Yushin’s boots, hard dutch. DARK HEAVILY GRASSY FOREST like a survival test: dense trunks, undergrowth, almost no sky, one shaft. NO nets. Yushin STANDING TALL AND DEFIANT, FACE toward a leaping tiger, Silla-blue po, NORMAL athletic proportions from the sheet, living eyes WHITE sclera BLACK pupil, jaw set, he does NOT flinch. Sword SHEATHED at the hip — small iron ring pommel only, no blade, NO tsuba, NO katana. ONE device: the tiger as a dark diagonal through the grass. Speed lines, flung grass. FACE from the sheet. Crushed blacks. No army. No text. No watermark.",
+		"people": ["yushin"],
+		"year": 611,
+		"sword": true
+	},
+	{
+		"id": "hunt-alchun-afraid",
+		"entry": "Bupmin",
+		"at": "Alchun’s hands will not close on the pine. Then they do.",
+		"alt": "Alchun in the dark grass, hands locking on a trunk, the decision arriving",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Intimate medium, slight dutch, Alchun’s FACE large. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, one shaft. NO nets. ONE device: his two hands locking on bark in the foreground — NORMAL teenage hands from the attached portrait, NOT stick-thin, NOT extra-long. Alchun FIFTEEN, lean, frightened, teal po over crimson with the SAME shoulder-and-sleeve volume as the portrait. A NEW expression: fear then the decision. Living eyes WHITE sclera BLACK pupil. Teal and one crimson flash. No tiger yet. No text. No watermark.",
+		"people": ["alchun"],
+		"year": 611
+	},
+	{
+		"id": "hunt-alchun-catch",
+		"entry": "Bupmin",
+		"at": "Alchun’s arms find the neck",
+		"alt": "Alchun comes out of the grass empty-handed and catches the tiger around the neck",
+		"manga": true,
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Low three-quarter, hard dutch. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, almost no sky, one shaft. NO nets. Alchun LUNGING from the grass, arms locking the tiger’s neck. BODY from the attached hwarang portrait: NORMAL teenage Korean proportions, broad shoulders under teal sleeves, arms the RIGHT length (fingertips mid-thigh), NOT noodle-thin, NOT extra-long, NOT a stick figure. FIFTEEN, lean and frightened into a shout, mouth open, living eyes WHITE sclera BLACK pupil, teal po over crimson, hair whipping. FACE from the sheet. ONE device: his two arms around the tiger’s throat — short, thick, portrait-true, not stretched. The tiger huge, mid-twist. Yushin a dark still shape in the grass behind, sword sheathed, no tsuba. Speed lines, flung grass. Crushed blacks. No text. No watermark.",
+		"people": ["alchun", "yushin"],
+		"year": 611,
+		"sword": true
+	},
+	{
+		"id": "hunt-geomgun-door",
+		"entry": "Bupmin",
+		"at": "The storehouse door is the only light",
+		"alt": "Famine storehouse: Geomgun in the threshold, stoic, the poisoned cup already at his lips",
+		"scene": "Character intro-card 2:1 still. MEDIUM, worm’s-eye from the dark storehouse floor toward the open door, Geomgun’s FACE large in the light. Mise-en-scène: timber grain-store, bins, a famine year. ONE device: the door as a hard vertical of late light, the rest crushed black. Two clerks in the midground stuffing sleeves, grain flying. Geomgun in the threshold, spare Korean face, charcoal-grey po, crescent headband, KNOWINGLY DRINKING: dark clay cup AT HIS LIPS, mid-swallow, STOIC, no tremble of the mouth, living eyes WHITE sclera BLACK pupil that already know. FACE from the sheet, acting. Grain dust in the shaft. No even daylight. No text. No watermark.",
+		"people": ["geomgun"],
+		"year": 562
+	},
+	{
+		"id": "hunt-gwisan-ambush",
+		"entry": "Bupmin",
+		"at": "Then the trees shoot",
+		"alt": "Western hills: arrows from the pines, Gwisan takes one in the side and stays up, 임전무퇴 already on his face",
+		"manga": true,
+		"scene": "Character intro-card action still. Hard dutch, low three-quarter, camera INSIDE the ambush. A pine draw in the western hills, a packed path. ONE device: arrows as black lines stitching down from the trees, one of them punching into Gwisan’s side IN THIS FRAME. Gwisan LARGE in the foreground, cyan headband, leaf-green po, on the screaming horse that stays up, FACE filling the left-center: pain then LIFE slamming back into living eyes WHITE sclera BLACK pupil, jaw locking, 임전무퇴, he will not run. Blood at the lip, the arrow in him. FACE from the sheet, grimace not smirk, red liner at the outer eye. Chuhang a dark reaching shape behind. A gap opening in a stone wall at the far end, tiny men already running. Speed lines, flung dirt, radial focus on Gwisan’s eyes. Dusk, crushed blacks, one shaft. No clean cavalry charge. No army catalog. No text. No watermark.",
+		"people": ["gwisan", "chuhang"],
+		"year": 612,
+		"sword": true
+	},
+	{
+		"id": "hunt-chunchu-left",
+		"entry": "Munhee",
+		"at": "Nobody wants the ghost boy in their hyangdo",
+		"alt": "Class 59 hunt: bands walk out; Chunchu stands alone in magenta, covering it, body mid-turn",
+		"scene": "Character intro-card 2:1 still. MEDIUM CLOSE, hard dutch. Mise-en-scène: hwarang yard as the attached Silla mansion, packed earth, red gate. ONE device: an empty ring of packed earth around a single magenta figure. Hyangdo bands already walking toward the gate as dark motion-blur clumps, their backs to him. Chunchu LARGE, magenta-crimson po, magenta crescent headband, DYNAMIC: caught mid-turn, one sleeve flying, FACE from the sheet filling the frame — watching the yard watch him, covering it, not pleading, living eyes WHITE sclera BLACK pupil, a knowing mouth gone still. Magenta #D8258C as the one cloth accent. Late haze, long shadows. No standing fashion plate. No text. No watermark.",
+		"people": ["chunchu"],
+		"with": ["place:hwarang_yard"],
+		"year": 618,
+		"time": "day"
+	},
+	{
+		"id": "hunt-marshal-volunteers",
+		"entry": "Munhee",
+		"at": "Alchun does not usually walk out with a group",
+		"alt": "Old adult Alchun — grey, temple scar, teal over rust — takes Chunchu out himself",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Medium two-shot, low three-quarter, over Chunchu’s magenta shoulder, FACES large. Mise-en-scène: hwarang yard as the attached Silla mansion gate, timber, packed earth. ONE device: Alchun’s pointing hand in the sharp foreground, pointing out the gate. LEFT face = young Chunchu in magenta, crescent headband, surprised then covering it. SECOND face = OLD ADULT Alchun from the attached councillor portrait: grey hair tied back, red scar at the left temple, thin goatee, teal po over a rust-red inner robe, dark headband, NO crescent moon, NO jougwan feathers, NOT the teal hwarang boy, NOT twenty-two. Blunt mouth already saying he is going. Heum a dark blur at the edge. Living eyes WHITE sclera BLACK pupil. Dusk-gold shaft through the gate. No readable letters. No text. No watermark.",
+		"people": ["chunchu", "alchun:councillor"],
+		"with": ["place:hwarang_yard"],
+		"year": 618,
+		"hat": false
+	},
+	{
+		"id": "hunt-chunchu-plan",
+		"entry": "Munhee",
+		"at": "I have an idea. It’s a bit— ugly",
+		"alt": "Chunchu in the pines, mid-gesture, selling old Alchun an ugly idea",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM, hard dutch, Chunchu DYNAMIC. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, one shaft. NO nets. ONE device: Chunchu’s magenta sleeve as a bright diagonal as he leans in, reaching for a fallen branch, mouth mid-sentence. LEFT face = young Chunchu, FACE LARGE, living eyes WHITE sclera BLACK pupil. SECOND face = OLD ADULT Alchun from the councillor portrait: grey hair, red temple scar, thin goatee, teal over rust-red, dark headband, NO crescent, NO jougwan, sitting in the grass listening, NOT the teal hwarang boy. Magenta #D8258C. Crushed blacks. No fashion plate. No text. No watermark.",
+		"people": ["chunchu", "alchun:councillor"],
+		"year": 618,
+		"hat": false
+	},
+	{
+		"id": "hunt-wooden-doe",
+		"entry": "Munhee",
+		"at": "A wooden doe with a coat of moss",
+		"alt": "Chunchu carves a moss-coated WOODEN doe while old Alchun watches from a root",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Intimate medium, slight dutch, Chunchu’s FACE large, kneeling, knife moving. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, one shaft. NO nets. ONE device: an unfinished WOODEN doe in the sharp foreground — carved WOOD, knife cuts, timber grain, moss tied on, NOT a living animal, NOT fur, NOT cartoon. LEFT face = young Chunchu in magenta, concentrating. SECOND face = OLD ADULT Alchun from the councillor portrait: grey, temple scar, goatee, teal over rust-red, dark headband, NO crescent, NO jougwan, on a root behind, watching, NOT the teal hwarang boy. Magenta #D8258C. Crushed blacks. No live deer. No text. No watermark.",
+		"people": ["chunchu", "alchun:councillor"],
+		"year": 618,
+		"hat": false
+	},
+	{
+		"id": "hunt-deer-comes",
+		"entry": "Munhee",
+		"at": "The deer that comes is huge",
+		"alt": "A huge real stag steps out of dark grass toward Chunchu; old Alchun watches from behind",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM, slight dutch, Chunchu’s FACE large in the grass. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, almost no sky, one shaft. NO nets. ONE device: a REAL Korean sika stag stepping out of the grass — painterly oil-and-ink animal, modelled muscle and fur, living dark eye with a catchlight, shoulder as high as the boy’s chest, wide antler rack. NOT a cartoon mascot, NOT white cartoon eyes, NOT a toy. LEFT face = young Chunchu kneeling in magenta, holding his breath. SECOND face = OLD ADULT Alchun from the councillor portrait: grey, temple scar, goatee, teal over rust-red, dark headband, NO crescent, NO jougwan, a dark shape in the grass behind, NOT the teal hwarang boy. Magenta #D8258C. Crushed blacks. No text. No watermark.",
+		"people": ["chunchu", "alchun:councillor"],
+		"year": 618,
+		"hat": false
+	},
+	{
+		"id": "hunt-leaf-sleep",
+		"entry": "Munhee",
+		"at": "These put a horse to sleep",
+		"alt": "Chunchu crushes sleep-leaves against a stone and paints the wooden doe’s mouth",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. ECU insert, slight dutch, Chunchu’s FACE large. DARK HEAVILY GRASSY FOREST: waist-high grass, a flat stone in the dirt, one shaft. NO nets. ONE device: sweet-wrong juice on a WOODEN doe’s mouth. Chunchu’s magenta sleeve, concentrating, living eyes WHITE sclera BLACK pupil. Magenta as bounce on the wet stone. Crushed blacks. No text. No watermark.",
+		"people": ["chunchu"],
+		"year": 618
+	},
+	{
+		"id": "hunt-deer-gate",
+		"entry": "Munhee",
+		"at": "Last through the gate: a magenta sleeve, and a deer still walking",
+		"alt": "Last through the trees: Chunchu in magenta, a huge living deer, old Alchun a step behind",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM, low three-quarter, Chunchu’s FACE large, mid-stride. DARK HEAVILY GRASSY FOREST path: waist-high wet grass, dense trunks, one shaft. NO nets. ONE device: a walking REAL Korean sika stag beside him — painterly oil-and-ink animal, modelled muscle and fur, living dark eye with a catchlight, shoulder as high as his chest, wide antler rack. NOT a cartoon mascot, NOT white cartoon eyes, NOT a toy. LEFT face = young Chunchu in magenta, antlers in one hand, a plum blossom on the cut. SECOND face = OLD ADULT Alchun from the councillor portrait: grey hair, red temple scar, thin goatee, teal po over rust-red, dark headband, NO crescent, NO jougwan, a step behind, empty hands, NOT the teal hwarang boy, NOT twenty-two. Living eyes WHITE sclera BLACK pupil. Magenta #D8258C. Crushed blacks. No text. No watermark.",
+		"people": ["chunchu", "alchun:councillor"],
+		"year": 618,
+		"hat": false
+	},
+	{
+		"id": "hunt-isabu-dirt",
+		"entry": "Sadaham",
+		"at": "He draws the plan in dirt",
+		"alt": "Isabu draws the bear-hunt plan in dirt; Sadaham is already not listening",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM, slight dutch, FACES large. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, undergrowth, almost no sky, one shaft. NO nets, NO hunting nets, NO mesh. ONE device: Isabu’s dirt-scratches in the grass — wind arrow, a bear-mark, rough. Isabu is an old Silla general, weathered Korean face, living eyes WHITE sclera BLACK pupil, grey, dark military po, jougwan, pointing with a stick. Sadaham and Mugwan SAME AGE as the river-stone still: long black hair, defined jaws, young hwarang, already tall — NOT children. Sadaham LARGE in ice-blue po, magenta sash, chin up, grinning PAST the plan. Mugwan dry beside him, cream po. Ice-blue #6fa8ff. Crushed blacks. No text. No watermark.",
+		"people": ["sadaham", "mugwan"],
+		"year": 560,
+		"refs": ["/temp/sadaham-stone-cut.jpg"],
+		"refsNote": "AGE AND FACE ONLY: same young-hwarang age as these two — long hair, defined jaws, already tall, NOT children; IGNORE the river, the stone, the poses and the clothes"
+	},
+	{
+		"id": "hunt-sadaham-charge",
+		"entry": "Sadaham",
+		"at": "Sadaham does not wait",
+		"alt": "Sadaham charges the bear head-on, FACE large, Luffy-loud grin",
+		"manga": true,
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Worm’s-eye from waist-high grass under the bear, hard dutch. DARK HEAVILY GRASSY FOREST like a survival test: dense trunks, undergrowth, almost no sky, one shaft. NO nets. ONE Sadaham only, lunging AT the bear, FACE LARGE. SAME AGE as the river-stone still: long black hair, defined jaw, young hwarang, already tall — NOT a child. Ice-blue po, magenta sash, EMPTY HANDS, no sword. Luffy-loud grin, living eyes WHITE sclera BLACK pupil. ONE device: his body as a bright diagonal into the bear through the grass. Do not clone him. Speed lines, flung grass. Ice-blue #6fa8ff. Crushed blacks. No text. No watermark.",
+		"people": ["sadaham"],
+		"year": 560,
+		"refs": ["/temp/sadaham-stone-cut.jpg"],
+		"refsNote": "AGE AND FACE ONLY: same young-hwarang age — long hair, defined jaw, already tall, NOT a child. ONE Sadaham only; ignore the second person, the river, the stone, the poses and the clothes"
+	},
+	{
+		"id": "hunt-sadaham-third",
+		"entry": "Sadaham",
+		"at": "The bear knocks him down a third time",
+		"alt": "Bloodied Sadaham gets up a third time, still grinning at the bear",
+		"manga": true,
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Worm’s-eye from waist-high grass, hard dutch. DARK HEAVILY GRASSY FOREST like a survival test: dense trunks, one shaft. NO nets. Sadaham on one knee GETTING UP, FACE filling the frame. SAME AGE as the river-stone still: long black hair, defined jaw, young hwarang, already tall — NOT a child. Ice-blue po torn, magenta sash, dirt on the teeth, still grinning, living eyes WHITE sclera BLACK pupil. EMPTY HANDS. ONE device: the bear’s dark bulk filling the upper half, a paw still coming down through the grass. Speed lines. Ice-blue #6fa8ff. Crushed blacks. No text. No watermark.",
+		"people": ["sadaham"],
+		"year": 560,
+		"refs": ["/temp/sadaham-stone-cut.jpg"],
+		"refsNote": "AGE AND FACE ONLY: same young-hwarang age — long hair, defined jaw, already tall, NOT a child; IGNORE the river, the stone, the poses and the clothes. ONE person only."
+	},
+	{
+		"id": "hunt-sadaham-passout",
+		"entry": "Sadaham",
+		"at": "Then he does not get up",
+		"alt": "Sadaham wins and passes out still smiling; Mugwan catches him before the dirt does",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. Low three-quarter, intimate, BOTH FACES large. DARK HEAVILY GRASSY FOREST like a survival test: waist-high wet grass, dense trunks, one shaft. NO nets. ONE device: Mugwan’s arms catching Sadaham’s dropping weight in the grass. SAME AGE as the river-stone still: long black hair, defined jaws, young hwarang, already tall — NOT children. Sadaham still smiling, ice-blue torn. Mugwan dry, holding him. Living eyes WHITE sclera BLACK pupil. Ice-blue #6fa8ff. Crushed blacks. Not a romance still. No text. No watermark.",
+		"people": ["sadaham", "mugwan"],
+		"year": 560,
+		"refs": ["/temp/sadaham-stone-cut.jpg"],
+		"refsNote": "AGE AND FACE ONLY: same young-hwarang age as these two — long hair, defined jaws, already tall, NOT children; IGNORE the river, the stone, the poses and the clothes"
+	},
+	{
+		"id": "samhwarang-turn",
+		"entry": "Gi",
+		"at": "The old song is about three hwarang",
+		"alt": "Pungak road: Bidam, Yushin and Alchun turn because a star is sitting on the roofs",
+		"scene": "Character intro-card 2:1 still. MEDIUM, slight dutch, three FACES turning. Mise-en-scène: a pine mountain road, three young hwarang on horseback turning toward a distant capital. ONE device: a white smear of a star sitting low on tiny southern roofs. Bidam in purple, Yushin in blue, Alchun in teal, crescent headbands, FACES from the sheet, reacting — mouths opening, looking up, late for a mountain and going the other way. Living eyes WHITE sclera BLACK pupil. Navy / blue / teal as three small cloth notes in a vast pine dusk. Hair and feathers in a little wind. No text. No watermark.",
+		"people": ["bidam", "yushin", "alchun"],
+		"year": 616,
+		"time": "day"
+	},
+	{
+		"id": "samhwarang-put-back",
+		"entry": "Jeon",
+		"at": "He finally put it back",
+		"alt": "Bidam on the Radiance wall watches Yushin’s fire-kite climb — the Pungak star put back",
+		"scene": "Character intro-card 2:1 still. Over-shoulder into Bidam’s FACE, night. Mise-en-scène: dark palisade, crushed ink-black, one fire-point climbing the east. ONE device: the kite-star as a hard white-gold point exactly where a star used to hang, Bidam’s beads stopped in the sharp foreground. Bidam as High Councillor, FACE from the sheet LARGE, a private almost-smile, living eyes WHITE sclera BLACK pupil, navy #141C2E as specular on the beads, never a glow. He is not shouting. He is remembering Pungak. Night ground, one lamp on the wall, bokeh. No text. No watermark.",
+		"people": ["bidam"],
+		"year": 647,
+		"time": "night"
+	}
+]

@@ -1,0 +1,190 @@
+[
+	{
+		"id": "sadaham-roof-weep",
+		"entry": "Sadaham",
+		"at": "Sadaham doesn’t shout. He sits on the roof with him",
+		"alt": "Sadaham weeps on the hall roof holding dying Mugwan; huge white sky, two small inked figures.",
+		"people": ["sadaham", "mugwan"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. Tiny figures. Huge paper-white sky taking 70% of the frame. ONE DEVICE: the tiled giwa roof-ridge as a hard black diagonal climbing left to right. LOWER-LEFT: SADAHAM seventeen, ice-blue #6fa8ff hwarang headband, pale silk, kneeling on the ridge, face buried in his dying friend's chest, shoulders shaking, weeping — not a shout, a silent wreck. MUGWAN lying in his arms, thinner, eyes almost shut, still looking past the hills. Faces LARGE enough to read when the crop hits the central band; the rest is empty paper. Thick ink silhouettes, cel shadow, manhwa. DAY GROUND. No army. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "jesang-mast-flame",
+		"entry": "Momal",
+		"at": "The record names it Wood Island",
+		"alt": "Park Jesang tied to a mast in silhouette, burning in blue and red flame on empty paper sea.",
+		"people": ["jesang:lord"],
+		"time": "night",
+		"hat": false,
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. FAR WIDE. Monumental emptiness. ONE DEVICE: a single ship's MAST as a hard black vertical in the left third, a tiny man tied to it. PARK JESANG mostly SILHOUETTE — grey beard a dark stamp, magenta-plum silk a dark cutout, chin up, unbowed, not a torture catalog. Around him TWO flames only: BLUE-WHITE superhot sheet on one side, RED-ORANGE on the other, painted as ink-brush flame ribbons, not a body halo, not neon outline, not emissive skin. The rest of the frame is crushed ink-black water and bare paper-white smoke. NIGHT GROUND. Tiny figure, vast empty sea. Thick ink. No extras. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "hlk-bone-flowers",
+		"entry": "Hallakgungi",
+		"at": "He finds the bones in the grove and puts her back together",
+		"alt": "Young Hallakgungi kneels in a grove rebuilding his mother; each resurrection flower a different coloured steam.",
+		"people": ["sara:young", "wongang"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. Huge paper-white grove, bamboo as a few ink strokes. ONE DEVICE: five flowers in a rising arc, each a different COLOURED STEAM / mote-cloud (not a body halo, not neon outline): bone-white, flesh-rose, blood-red, breath-cyan, soul-gold. LOWER-LEFT: young HALLAKGUNGI kneeling, FACE from the gardener sheet redrawn as a boy, putting his mother back together in order — bones first, then flesh. WONGANGHAMI half-formed, sitting up from the grove floor, eyes opening. The coloured flower-steam is the only saturated colour; the figures are thick black ink. DAY GROUND. Half the frame empty paper. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "haemosu-chariot-stop",
+		"entry": "Haemosu",
+		"at": "Stop. Stop the chariot.",
+		"alt": "Haemosu's sun-chariot brakes in a vast white sky; he looks down at one girl in the river.",
+		"people": ["haemosu", "yuhwa"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. Huge paper-white sky. ONE DEVICE: the sun-chariot as a hard black-and-gold disc stalled in the upper-left, horses rearing mid-stop. HAEMOSU a dark silhouette leaning over the rail looking DOWN, one hand flung out — Stop. LOWER-RIGHT tiny: YUHWA in the river, wet silk, looking up, the only figure in the water. Vast empty paper between them. #d4b86a as the one gold on the wheel. Thick ink. DAY GROUND. No army. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "jolbon-bow-knows",
+		"entry": "Jolbon",
+		"at": "They put Jumong’s bow in Tabal’s hands",
+		"alt": "Jumong's bow refuses Tabal; the string will not bend in a huge empty hall of white paper.",
+		"people": ["jumong"],
+		"time": "day",
+		"style": "webtoon",
+		"canon": { "hat": false },
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. Empty packed-earth hall dissolving into paper-white. ONE DEVICE: Jumong's long bow as a hard black arc that will not bend. A nameless chieftain (not cloned as Jumong) strains at it, small, the limb unmoved. JUMONG stands aside in the left third, CLEAN-SHAVEN, red silk #e8563f, red headband, easy grin, not a grim founder. Thick ink silhouettes. DAY GROUND. Half the frame empty paper. No army. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "onjo-ten-south",
+		"entry": "Onjo",
+		"at": "Ten carts. Counted twice.",
+		"alt": "Onjo and ten small vassals walk south along a white tidal flat; one gold path, huge empty sky.",
+		"people": ["onjo"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. FAR WIDE. Huge paper-white sky and wet sand. ONE DEVICE: a single dark path walking south along the tidal flat. ONJO a small inked figure at the head, yellow-gold Baekje cloth #e2b23c a thin accent. Behind him TEN tiny vassal silhouettes in a file, each a different load (cart, spear, jar, child), all walking the same way, nobody looking back. Reflections in wet sand. DAY GROUND. 70% empty paper. Thick ink. No army catalog. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "bihyung-ghost-king",
+		"entry": "Bihyung",
+		"at": "It is the king. Not a ghost-shaped smoke.",
+		"alt": "A dead king in his good robe holds his hat in a huge white lane; a small boy stares.",
+		"people": ["yongsu:bihyung", "jinji"],
+		"time": "night",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. A packed-earth lane dissolving into paper-white night haze. ONE DEVICE: a standing dead king as a hard black-and-cream stamp in the right third, good robe, holding his hat, a little embarrassed, not smoke. LEFT of the sheet = boy BIHYUNG (yongsu:bihyung), tiny, staring up. SECOND = JINJI the dead king, good robe, holding his hat, a little embarrassed, not smoke. Coloured cloud a thin wash only. NIGHT GROUND with a pale paper moon. Thick ink. Half the frame empty. No army. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "yongsu-no-goblins",
+		"entry": "Kim Yongsu",
+		"at": "Chunchu, there are no goblins.",
+		"alt": "Yongsu on a palace bluff tells Chunchu there are no goblins; paper lotuses drift a black river under white sky.",
+		"people": ["yongsu"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. Palace bluff as a hard dark ledge. ONE DEVICE: a black river below with a few tiny paper lotuses drifting. YONGSU a small inked clerk on the ledge, white hair, cream-and-blue silk, looking down, mouth on the line there are no goblins. A much smaller boy at his hip, not cloned as Yongsu. Huge paper-white sky. DAY GROUND. Thick ink. No ghosts in frame. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "suro-red-sail",
+		"entry": "Suro",
+		"at": "a red sail comes round the headland",
+		"alt": "A single red sail rounds a white headland; Suro a tiny figure on the shore already speechless.",
+		"people": ["suro", "heohwangok"],
+		"time": "day",
+		"style": "webtoon",
+		"canon": { "with": ["ship:ayuta"] },
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. FAR WIDE. Huge paper-white sea and sky. ONE DEVICE: one RED sail rounding a black headland, the only saturated plane. HEO a tiny figure at the prow. SURO a tinier figure on the left shore, gold-branch crown a small stamp, already still. DAY GROUND. 70% empty paper. Thick ink. No fleet. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "muryuk-helm-boy",
+		"entry": "Muryuk",
+		"at": "sets it on the boy’s head. It comes down ov",
+		"alt": "A Gaya king sets the tall cone helm on small Muryuk; the helm swallows the boy against empty paper.",
+		"people": ["guhae", "muryuk"],
+		"time": "night",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. MEDIUM-WIDE. Empty packed-earth hall dissolving into paper. ONE DEVICE: the tall Gaya CONE HELM (고깔) as a huge dark triangle being lowered onto a small boy. LEFT of the sheet = KING GUHAE, grey-bearded last king of Gaya, lowering the helm. SECOND = MURYUK redrawn as a SMALL BOY, not the adult portrait, the helm coming down over his ears. Purple #8B5CF6 only as a cloth peek on the helm. NIGHT GROUND with one lamp. Thick ink. Half the frame empty. No army. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "seohyun-not-egg",
+		"entry": "Seohyun",
+		"at": "I’m not an egg.",
+		"alt": "Boy Seohyun climbs out of a basket in an empty white lane; the other children are already gone.",
+		"people": ["seohyeon:young"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. Empty Surabol lane, paper-white. ONE DEVICE: a round wicker basket as a hard dark circle in the lower-left. LEFT of the sheet = boy SEOHYUN (young look), climbing out of it, mouth set on I’m not an egg, eyes wet, going home the long way. No other children in frame — already gone. DAY GROUND. 70% empty paper. Thick ink. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "lishimin-xuanwu",
+		"entry": "Li Shimin",
+		"at": "The Xuanwu Gate. The north one.",
+		"alt": "Prince of Qin a tiny inked figure under the vast north gate; one blood-red accent on white paper stone.",
+		"people": ["taizong"],
+		"time": "day",
+		"style": "webtoon",
+		"canon": { "with": ["place:changan"] },
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. FAR WIDE, worm's-eye. ONE DEVICE: the Xuanwu Gate as a monumental black stone mouth filling the upper two-thirds, Tang timber doors, no Forbidden City, no yellow roofs. Tiny in the lower third: LI SHIMIN / Prince of Qin, yellow silk a thin plane, standing alone after the north gate, looking up, not triumphant, just finished. One vermilion accent. DAY GROUND paper-white haze. Thick ink. No army. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "hek-two-suns",
+		"entry": "Heaven–Earth King",
+		"at": "In the beginning there were two suns and two moons",
+		"alt": "Two suns burn as paper holes in a black sky; a tiny Heaven–Earth King looks up from empty furrows.",
+		"people": ["heavenearthking"],
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"scene": "FAR WIDE ICONIC MYTH INK STILL like ulbul-chang-walks emptiness plus Joseon sumi: 60–70% empty paper, figures SMALL, One Piece splash scale. FAR WIDE. ONE DEVICE: TWO SUNS as blinding bare-paper holes in a huge black-ink sky, equal, unbearable. Tiny in the lower third: HEAVEN–EARTH KING a calligraphic ink figure looking up, dual accent red #C30000 and blue #3E79E4 only as two thin cloth stamps. Furrows of fallen farmers as small ink ticks. Monumental emptiness. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "princes-from-hole",
+		"entry": "Three Princes",
+		"at": "its kings climbed out of a hole",
+		"alt": "Three princes climb out of one dark hole in white paper earth; nobody agrees who came first.",
+		"people": ["yang_tamla", "go_tamla", "bu_tamla"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. WIDE. White earth and sky. ONE DEVICE: a single dark HOLE in the ground, Samsunghyul, as a hard black mouth. THREE princes climbing out of the SAME hole — Yang, Go, Bu, three distinct faces from the sheet, arguing with their hands on the rim, nobody agreeing who was first. Tiny figures, huge empty paper field. DAY GROUND. Thick ink. No eggs. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "kangrim-red-book",
+		"entry": "Kangrim",
+		"at": "a man with a red book and one question",
+		"alt": "Kangrim a tiny black-gat silhouette on white paper; the red book is the only colour.",
+		"people": ["kangrim"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "OVERRIDE WEBTOON_SCENE_OPEN: this is NOT a medium-close intro card. FAR WIDE ICONIC COMIC STILL like ulbul-chang-walks (a lone red-silk silhouette walking a black riverbank under huge empty paper): 60–70% empty paper-white sky, figures SMALL on a third, ONE hard dark geometric device, One Piece splash-page, Joseon ink-brush, instantly iconic poster. FAR WIDE. Huge paper-white. ONE DEVICE: an open RED BOOK as the only saturated object, held at chest height. KANGRIM a small inked figure in a black gat and dark robe, orange sleeves a thin stamp, standing politely as a clerk, the book open. Vast empty paper around him. DAY GROUND. Thick ink. No crowd of dead. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "hyuk-egg-horse",
+		"entry": "Park Hyukgosé",
+		"at": "Why’s a horse kneeling? Who to?",
+		"alt": "A white heavenly horse kneels to a glowing egg on empty paper grass; six tiny elders at the edge.",
+		"people": ["hyukgose"],
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"scene": "FAR WIDE ICONIC MYTH INK STILL like ulbul-chang-walks emptiness plus Joseon sumi: 60–70% empty paper, figures SMALL, One Piece splash scale. WIDE. Paper-white grass. ONE DEVICE: a white horse kneeling, head down, to a single pale-gold egg on the mound — at most ONE translucent gold wash on the egg. Tiny HYUKGOSE not yet a boy, still the egg. Six tiny elder silhouettes at the far left edge, creeping up. Winged horse allowed as myth. Monumental emptiness. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "talhae-magpie-chest",
+		"entry": "Talhae",
+		"at": "A magpie flies over it, crying.",
+		"alt": "A chest on an empty white beach; one magpie crying above it; the sea a hard black line.",
+		"people": ["talhae"],
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"scene": "FAR WIDE ICONIC MYTH INK STILL like ulbul-chang-walks emptiness plus Joseon sumi: 60–70% empty paper, figures SMALL, One Piece splash scale. FAR WIDE. ONE DEVICE: a closed chest on wet sand as a hard dark rectangle, a single magpie above it crying, wings a calligraphic M. The sea a thin black waterline. TALHAE not yet visible — still inside. Huge empty paper beach. Monumental emptiness. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "dangun-bear-birch",
+		"entry": "Dangun",
+		"at": "The bear stays.",
+		"alt": "A bear waits under a sacred birch on empty white mountain; the tiger already gone.",
+		"people": ["ungnyeo", "dangun"],
+		"time": "day",
+		"style": "ink",
+		"canon": false,
+		"scene": "FAR WIDE ICONIC MYTH INK STILL like ulbul-chang-walks emptiness plus Joseon sumi: 60–70% empty paper, figures SMALL, One Piece splash scale. WIDE. ONE DEVICE: a single sacred birch as a hard vertical ink tree. Under it a BEAR sitting, waiting, garlic and mugwort a tiny stamp at her paws. No tiger — already gone. Tiny Hwanung path as a pale scratch. Dangun not yet born. Huge empty paper mountain. Monumental emptiness. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	}
+]

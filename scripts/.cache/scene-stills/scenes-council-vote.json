@@ -1,0 +1,30 @@
+[
+	{
+		"id": "bh-council-whose",
+		"entry": "Bihyung",
+		"hat": false,
+		"year": 579,
+		"at": "She came home at dawn.",
+		"alt": "At the round council table a councillor in the white horse-sleeve coat speaks to the blue flame about the dawn his wife came home, while twenty-one-year-old Eulje holds his brush and does not write.",
+		"people": ["eulje"],
+		"refs": ["/ch_bidam.png", "/img_sunduk_02.png"],
+		"refsNote": "SECOND board is CLOTHING ONLY (ignore that face): long white outer robe, sleeves embroidered with galloping black horses, plum-magenta inner robe. THIRD board is the ROOM ONLY: low ROUND black table, pale blue flame in a bowl at the center. Do not copy its faces.",
+		"hat": false,
+		"time": "night",
+		"scene": "Intimate dutch-tilt two-shot across a low ROUND black council table. At the center, one pale BLUE flame in a small bowl, the only light. Both councillors wear the Harmony Council coat: long white outer robe, wide sleeves embroidered with galloping black horses, plum-magenta inner robe at collar and cuffs, bare topknots, no hats. One, middle-aged, hollow-eyed, speaks with his gaze locked on the blue flame. Across the table an older white-bearded councillor has turned his face away, the last wooden vote piece closed in his fist. At the rim, Eulje, twenty-one, holds a brush and does not write: FACE STRUCTURE from the LEFT portrait only, but YOUNG — black hair, clean-shaven, smooth skin, NO grey, NO beard, do not copy the portrait's age. Plain dark clerk robe. Crushed black beyond the flame. Shame and anger. No crowds."
+	},
+	{
+		"id": "ys-council-pieces",
+		"entry": "Yongsu",
+		"hat": false,
+		"year": 579,
+		"at": "Six pieces go to the no side.",
+		"alt": "Straight down on the round council table: six vote pieces on the no side of the cups, a blue flame at the center, white horse-sleeve coats at the rim, and twenty-one-year-old Eulje’s brush.",
+		"people": ["eulje"],
+		"refs": ["/ch_bidam.png", "/img_sunduk_02.png"],
+		"refsNote": "SECOND board is CLOTHING ONLY (ignore that face): the white sleeves at the table edge are embroidered with galloping black horses, plum-magenta inner cuffs. THIRD board is the ROOM ONLY: the table is a low ROUND black disc with a pale blue flame in a bowl at the center. Do not copy its faces.",
+		"hat": false,
+		"time": "night",
+		"scene": "High overhead shot straight down onto a low ROUND black council table. At the exact center, a small bowl with one pale BLUE flame. Six lacquered cups in a ring, six wooden vote pieces gathered on ONE side, none on the other. Around the rim, the sleeves of the Harmony Council coat: white silk embroidered with galloping black horses, plum-magenta inner cuffs. At the bottom edge, Eulje’s young hand and a writing brush, and just beyond the table a spilled wine cup and a gold dancer’s hairpin on the threshold. His face, if it shows, is twenty-one: FACE STRUCTURE from the LEFT portrait only, YOUNG, black hair, clean-shaven, NO grey, NO beard. Crushed black around the blue flame. Quiet, final. No text."
+	}
+]

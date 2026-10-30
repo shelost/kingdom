@@ -3,7 +3,7 @@
  * 등장인물 cast list under the title.
  */
 
-import type { Block, Entry } from '$lib/story';
+import { isFlashEntry, type Block, type Entry } from '$lib/story';
 import { EPISODE_KIND_META, episodeKindsOf } from '$lib/episodeKinds';
 import { FLAG_LABEL, flagOf, flagSrc } from '$lib/flags';
 import { peopleOfSlot } from '$lib/imagePeople';
@@ -32,6 +32,40 @@ export type CastMember = {
 	square: boolean;
 	color: string;
 };
+
+/** Title in the active reading language. Korean uses `subtitle`, never the other tongue. */
+export function episodeHeading(en: Entry, ko: boolean): string {
+	return ko ? en.subtitle || en.title : en.title;
+}
+
+/** Tagline in the active reading language. Empty when the episode has none. */
+export function episodeTagline(en: Entry, ko: boolean): string {
+	return (ko ? en.taglineKo || en.tagline : en.tagline) ?? '';
+}
+
+const FOLKTALE = { key: 'folktale', label: 'Folktale', ko: '설화' };
+const MYTH_TAG = { key: 'myth', label: 'Myth', ko: '신화' };
+
+/**
+ * Tags under the episode title: flashback, myth, folktale. Tamla island
+ * folklore counts as folktale; founding / myth kinds as myth.
+ */
+export function titlePageTags(en: Entry): { key: string; label: string; ko: string }[] {
+	const tags: { key: string; label: string; ko: string }[] = [];
+	if (isFlashEntry(en)) {
+		const meta = EPISODE_KIND_META.flashback;
+		tags.push({ key: 'flashback', label: meta.label, ko: meta.ko });
+	}
+	const folklore =
+		/\bfolklore\b/i.test(en.tone ?? '') ||
+		en.tagline === 'A Tamla Tale' ||
+		en.taglineKo === '탐라 이야기';
+	const mythish = (en.kinds ?? []).some((k) => k === 'myth' || k === 'founding');
+	const tamla = (en.badges ?? []).includes('flag:tamla');
+	if (folklore || (tamla && mythish)) tags.push(FOLKTALE);
+	else if (mythish) tags.push(MYTH_TAG);
+	return tags;
+}
 
 /** Kingdom flags from `badges` (emoji badges drop out), then the episode's kinds. */
 export function entryTags(en: Entry): EntryTag[] {

@@ -1,0 +1,150 @@
+[
+	{
+		"id": "ansi-overhead-ring",
+		"entry": "Lord of Ansi",
+		"at": "The Second Emperor tries the wall",
+		"alt": "Bird’s-eye: Ansi’s stone ring on the ridge, a brown earthen mountain against the wall, the Tang camp tiny yellow specks in a huge sky.",
+		"with": ["place:ansi"],
+		"time": "day",
+		"battle": true,
+		"scene": "ESTABLISHING OVERHEAD, bird’s-eye from high above, One Piece manga negative space. Ansi fortress from the attached place board: grey stone ring on a ridge, red two-tier hall inside, mountains of cloud around it. Against the south wall a raw BROWN EARTHEN SIEGE MOUNTAIN, half-built, baskets as specks. In the valley a Tang camp of tiny yellow tents and vermilion dots. The host is ants. At least 60% of the frame is pale storm sky and cloud as quiet negative space. ONE device: the stone ring as a hard oval. Painted intro-card, watercolor-and-oil, 2.5D, NOT photoreal, NOT a map, NOT a red rectangle on a wall, NOT a tourist postcard. No readable text. No named faces."
+	},
+	{
+		"id": "ansi-taizong-shadow",
+		"entry": "Lord of Ansi",
+		"at": "The Second Emperor tries the wall first",
+		"alt": "Li Shimin in crushed shadow on horseback at the foot of Ansi, yellow parasol, the host behind him, the wall filling the sky.",
+		"people": ["taizong"],
+		"with": ["place:ansi"],
+		"battle": true,
+		"time": "day",
+		"scene": "CHARACTER INTRO-CARD, LOW THREE-QUARTER, Li Shimin LEADING from SHADOW. He fills the left third on horseback, Tang steel lamellar (NOT the yellow court robe), a yellow imperial PARASOL over him as the only bright thing. FACE from the sheet but MOSTLY IN CRUSHED SHADOW — one yellow #c97a2e rim on the beard and visor, the rest falloff into black; still clearly the emperor: pointing forward with one gloved hand, the host of steel helmets and vermilion cloth packed behind his horse following him. Ansi’s stone wall from the place board fills the right sky as a hard cliff. Device: the parasol as a yellow disc in dark. He is HIGHER than anyone near him. NEVER a glow aura. NEVER a full-face portrait. Painted intro-card, thick ink, 2.5D. No text."
+	},
+	{
+		"id": "ansi-mound-fire",
+		"entry": "Lord of Ansi",
+		"at": "Then it’s ours.",
+		"alt": "Action: Goguryeo seizes the slumped Tang mound, timber burning, the Guardian slamming a stone, blood and rain.",
+		"people": ["yangmanchun"],
+		"with": ["place:ansi"],
+		"battle": true,
+		"action": true,
+		"sword": true,
+		"time": "day",
+		"scene": "OVERRIDE: LAND SIEGE, not a naval battle. NO ships, NO sea, NO oars. BATTLE ACTION on the slumped earthen mountain. WORM’S-EYE from the wet slope: the Guardian of Ansi, FACE from the sheet, one eye on the work and the other wandering, NO helm, steel lamellar, RED WING flaps, both hands on a millstone, mouth tight mid-shout. Around him Goguryeo men pile timber and SET IT ALIGHT — lots of painted fire, heat shimmer, sparks, rain. Tang men in vermilion falling, bloody, slipping in mud. The stone wall of Ansi a cliff behind. Device: the burning mound as a dark triangle. Colour #e05a3c as fire on the red wings. Intro-card paint, thick ink faces acting, NOT photoreal, NOT cel. ONE Guardian, never cloned. No text."
+	},
+	{
+		"id": "ansi-fu-cut",
+		"entry": "Lord of Ansi",
+		"at": "The emperor has Fu Fuai beheaded, very courteously",
+		"alt": "Courteous death: Li Shimin a dark shape on a campaign stool, the officer who left the mound kneeling, one stroke, packed earth.",
+		"people": ["taizong"],
+		"with": ["place:ansi"],
+		"battle": true,
+		"manga": true,
+		"time": "day",
+		"scene": "MANGA ACTION EXECUTION, story-accurate: courteous, bloody, fast. LOW THREE-QUARTER from packed earth. LEFT: Li Shimin seated on a campaign stool in crushed SHADOW, Tang steel lamellar, yellow parasol behind him, FACE mostly dark, one #c97a2e rim on the beard, one hand raised a finger’s width — the order. He is still LEADING. RIGHT: an unnamed Tang officer kneeling, steel helm off, vermilion cloth, a DIFFERENT face, never clone Taizong. A headsman as a dark plane, one stroke mid-arc, blood as a thin hard line, not a gore catalog. Ansi’s wall a stamp in pale haze. Device: the stool and the kneeling man on one diagonal. Speed lines on the stroke. Intro-card paint. No text."
+	},
+	{
+		"id": "ansi-arrow-helm",
+		"entry": "Lord of Ansi",
+		"at": "The arrow takes the helmet clean off",
+		"alt": "Manga close-up: the Guardian’s arrow takes Li Shimin’s helmet; yellow parasol, helm flying, a cut opening over the eye.",
+		"people": ["yangmanchun", "taizong"],
+		"with": ["place:ansi"],
+		"battle": true,
+		"manga": true,
+		"time": "day",
+		"scene": "MANGA ACTION, hard DUTCH, extreme foreshortening. LEFT face of the sheet = the Guardian, NO helm so the wandering eye shows, FACE LARGE, mouth on Hold still, full-draw just released, red wings. RIGHT = Li Shimin on the near slope under a yellow PARASOL, Tang steel, FACE in shadow of the flying helm, a cut opening over the eye, blood into the beard. The LACQUERED HELM is the hard geometry: flying off, ringing, filling the upper third. Speed lines, radial focus on the helm. Packed earth. Ansi wall a stamp. #e05a3c on the Guardian, #c97a2e on the parasol. NEVER clone faces. Intro-card paint, NOT photoreal. No text."
+	},
+	{
+		"id": "ansi-helm-roll",
+		"entry": "Lord of Ansi",
+		"at": "The lacquered bowl leaves his head and rings once on packed earth",
+		"alt": "One Piece negative space: a lacquered Tang helmet rolling on packed earth, the yellow parasol tiny in a vast empty yard.",
+		"time": "day",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "ONE PIECE manga poster LAYOUT. WHITE-PALE DAY GROUND, huge negative space, at least 70% empty packed earth and pale sky. FOREGROUND: a single lacquered black Tang helmet on its rim, rolling, one gold rim-catch, sharp. Far in the lower-right third, tiny: a yellow parasol and a dark horseback silhouette. No faces. Device: the rolling helm as the only large object in a vast empty siege-yard. Hand-painted watercolor-and-oil, dry-brush dust. Painterly, not cartoon cel, not photoreal. No text."
+	},
+	{
+		"id": "ansi-eye-blood",
+		"entry": "Lord of Ansi",
+		"at": "A cut over the emperor’s eye bleeds into his beard",
+		"alt": "Intro-card ECU: Li Shimin’s face in shadow, a cut over the eye, still pointing, still leading.",
+		"people": ["taizong"],
+		"battle": true,
+		"time": "day",
+		"scene": "CHARACTER INTRO-CARD ECU. LOW THREE-QUARTER, FACE LARGE from the sheet: thick beard, fierce scowl, a CUT over the left eye, blood running into the beard. MOST of the face still in crushed SHADOW — one hard #c97a2e key from the side. He is STILL LEADING: mouth on That man, one gloved hand pointing past the lens. Tang steel collar, not the yellow court robe. Background a dark blur of Ansi’s wall. NEVER a glow. Painted 2.5D, thick ink. NOT photoreal. No text."
+	},
+	{
+		"id": "ansi-bow-silk",
+		"entry": "Lord of Ansi",
+		"at": "A proper bow, from the waist",
+		"alt": "Li Shimin a dark bowing shape at the foot of Ansi’s wall; silk bolts; the Guardian a tiny figure on the crown.",
+		"people": ["taizong", "yangmanchun"],
+		"with": ["place:ansi"],
+		"battle": true,
+		"time": "day",
+		"scene": "ICONIC INTRO-CARD, One Piece negative space. WORM’S-EYE from the packed earth at the FOOT of Ansi’s wall: the wall from the place board is a vast stone cliff filling two-thirds of the frame. LOWER THIRD: Li Shimin a dark bowing shape, Tang steel, yellow parasol furled, FACE in shadow, a proper bow from the waist, a pile of silk bolts at his boots. On the thin crown of the wall, tiny: the Guardian, red wings, one wandering eye. Device: the wall as one hard vertical plane. Pale winter sky as negative space. #c97a2e as the one key on the silk. Painted intro-card. NEVER a glow. No army catalog. No text."
+	},
+	{
+		"id": "salsu-overhead-ford",
+		"entry": "Eulji Mundeok",
+		"at": "The Colossal River is low that summer",
+		"alt": "Bird’s-eye: the Colossal River a vast pale gravel ford, the Western host a thin gold-and-black column midstream, Munduk a tiny red speck on the bank.",
+		"people": ["munduk"],
+		"with": ["place:salsu"],
+		"battle": true,
+		"time": "day",
+		"scene": "ESTABLISHING OVERHEAD, bird’s-eye, One Piece manga negative space. The Colossal River (Salsu): a BROAD SHALLOW gravel-bar river between low pine hills, pale summer water, a wide ford. A thin GOLD-AND-BLACK column of the Western host is already waist-deep midstream, tiny as ants, banners sagging. On the near bank, a TINY red figure = Ulchi Munduk on horseback, red scarf. At least 60% of the frame is pale water and paper sky as quiet negative space. Device: the ford as a silver-white band, the host as one thin dark ribbon. NOT abstract gold tape. NOT a black void. NOT ships. NOT a sea. Painted intro-card watercolor-and-oil. Sui banners dull gold and black only, never Tang vermilion. Goguryeo red on the bank only. No text."
+	},
+	{
+		"id": "salsu-now-shout",
+		"entry": "Eulji Mundeok",
+		"at": "Now. While their feet are wet.",
+		"alt": "Manga: Munduk on the bank, mouth open on Now, spear at the lens, the Western ranks waist-deep in the low river.",
+		"people": ["munduk"],
+		"with": ["place:salsu"],
+		"battle": true,
+		"manga": true,
+		"sword": true,
+		"time": "day",
+		"scene": "MANGA ACTION, hard DUTCH, worm’s-eye from the gravel. Ulchi Munduk fills the left third on horseback, FACE LARGE from the sheet, mouth OPEN on Now, red scarf cracking, spear-point extreme foreshortening at the lens. Speed lines. Midground: the Colossal River still LOW and wide, Western ranks waist-deep, gold-and-black banners sagging, men looking down at their wet belts. Device: Munduk huge, the river a pale band, the host tiny in it. PLACE: gravel-bar ford, pine hills, NO ships, NO sea. Colour #e0503f as storm-break on the scarf. Intro-card paint, thick ink, NOT photoreal. No text."
+	},
+	{
+		"id": "salsu-water-wall",
+		"entry": "Eulji Mundeok",
+		"at": "The river stands up.",
+		"alt": "The Colossal River stands up as a wall of brown water; Western men and horses caught midstream; Munduk small on the bank.",
+		"people": ["munduk"],
+		"with": ["place:salsu"],
+		"battle": true,
+		"action": true,
+		"sword": true,
+		"time": "day",
+		"scene": "OVERRIDE: RIVER FORD, not a naval battle. NO ships, NO oars, NO decks, NO sea. THE COLOSSAL RIVER STANDS UP. Battle action, worm’s-eye from midstream: a dark out-of-focus Western shield-rim in the foreground already going under. A WALL OF BROWN FLOOD-WATER across the midground — not a Hokusai claw, a standing wall — timber stakes and rope tearing inside it, horses rolling, men grabbing men, gold-and-black banners snapping under, BLOOD in the foam. On the near bank, small in the upper third, Ulchi Munduk on horseback, red scarf, spear down, watching, not shouting. Storm sky, one pale cloud-break. Device: the water as a hard vertical plane that bisects the host. Painted intro-card like a manhwa cover, thick ink nearest faces, watercolor-and-oil water. NOT photoreal, NOT 3D horses, NOT woodblock. Colour #e0503f on the scarf. No text."
+	},
+	{
+		"id": "salsu-drown-close",
+		"entry": "Eulji Mundeok",
+		"at": "It was knee-deep! It was knee-deep on the way down—",
+		"alt": "Bloody close-up: a Western soldier’s face going under the brown wall, mouth open, a gold-and-black banner sinking.",
+		"with": ["place:salsu"],
+		"battle": true,
+		"manga": true,
+		"time": "day",
+		"scene": "MANGA ACTION ECU of a bloody death. HARD DUTCH, worm’s-eye from underwater looking up: ONE unnamed Western soldier, Korean/Chinese period face, steel helm tearing off, mouth OPEN on It was knee-deep, eyes wide, brown flood-water a hard plane across his chest, BLOOD as a thin ribbon in the foam, a gold-and-black banner sinking behind him. Extreme foreshortening — a horse’s rolling eye and a hoof in the upper corner. Speed lines in the water. No named hero. No Munduk. Device: the waterline as a hard diagonal across the face. Intro-card paint, thick ink, NOT photoreal porn-gore, cinematic blood only. NO ships. No text."
+	},
+	{
+		"id": "salsu-gravel-dead",
+		"entry": "Eulji Mundeok",
+		"at": "Munduk is honored with the title",
+		"alt": "Aftermath: a gravel bar of the Colossal River strewn with the host, huge pale sky, Munduk a small red figure on the ridge.",
+		"people": ["munduk"],
+		"with": ["place:salsu"],
+		"battle": true,
+		"time": "day",
+		"scene": "ICONIC INTRO-CARD aftermath, One Piece negative space. WIDE, slightly dutch, at least 60% pale paper sky. A gravel bar of the Colossal River: bodies and horses as dark inked shapes in the lower third, gold-and-black banners limp in the shallows, pale water. On a pine ridge in the far third, SMALL: Ulchi Munduk on horseback, red scarf, spear down, FACE a suggestion of the sheet, counting, not celebrating. Device: the gravel bar as a dark horizontal, the sky as emptiness. Painted intro-card watercolor-and-oil. NOT a gore catalog — distance, mass, stillness. NO ships. Colour #e0503f as the one late shaft on the scarf. No text."
+	}
+]

@@ -1,0 +1,41 @@
+[
+	{
+		"id": "bh-council-holdout",
+		"entry": "Bihyung",
+		"canon": { "hat": false },
+		"year": 579,
+		"at": "The old councillor holds his piece a long time.",
+		"alt": "At the round council table, an old councillor in the white horse-sleeve coat holds the last vote piece, while twenty-one-year-old Eulje kneels at the blue flame with his brush.",
+		"people": ["eulje"],
+		"refs": ["/ch_bidam.png", "/img_sunduk_02.png"],
+		"refsNote": "SECOND board is CLOTHING ONLY (ignore that face): every councillor wears this long white outer robe, wide sleeves embroidered with galloping black horses, plum-magenta inner robe at collar and cuffs. THIRD board is the ROOM ONLY: a low ROUND black table and one pale blue flame in a bowl at its center. Do not copy its faces.",
+		"hat": false,
+		"time": "night",
+		"scene": "Intimate low worm's-eye across a low ROUND black council table, six cushions in a circle, one pale BLUE flame in a small bowl at the exact center, blue-white smoke. That flame is the only light. Every councillor wears the Harmony Council coat: long white outer robe, wide sleeves embroidered with galloping black horses, plum-magenta inner robe at the collar and cuffs, dark sash, bare topknot, no hat, no armor. MIDGROUND: an old white-bearded councillor in that coat holds the last wooden vote piece above the cups, hesitating. At the near edge, Eulje, twenty-one, kneels with a brush: FACE STRUCTURE from the LEFT portrait only, but YOUNG — smooth skin, black hair, clean-shaven, NO grey, NO beard, do not copy the portrait's age. He wears a plain dark clerk robe, not a voting coat. One ancient man on a litter, same white coat, coughing into a cloth. Crushed black beyond the blue flame. No crowds."
+	},
+	{
+		"id": "ys-feast-gate",
+		"entry": "Yongsu",
+		"canon": { "hat": false },
+		"year": 578,
+		"at": "The parties don’t stay inside the palace.",
+		"alt": "King Jinji stands on a table at the open palace gate at night, pouring wine for a cheering crowd of commoners eating the Council’s rice.",
+		"people": ["jinji"],
+		"time": "night",
+		"scene": "Low worm's-eye shot at the open timber gate of the Moon Palace at night, torches and red lanterns everywhere. King Jinji (young king, flushed and laughing, silk robe open at the throat, crown askew) stands ON a long banquet table, one foot on a rice tub, holding a big wine jar high and pouring it into the raised bowls of the crowd below. The crowd are commoners of the city in plain undyed white hemp, charcoal-blackened hands, children on shoulders, cheering, eating rice with their fingers from silver bowls; a pig roasts on a spit, sparks flying. FOREGROUND blurred: a sack of rice split open, grain spilling. BACKGROUND soft: the palace gate pavilion with giwa roof, and on the terrace above, two dark-robed councillors watching, unsmiling. Warm torchlight is the key; joyful, rowdy, populist; topknots, no brimmed hats."
+	},
+	{
+		"id": "ys-council-ledger",
+		"entry": "Yongsu",
+		"canon": { "hat": false },
+		"year": 579,
+		"at": "The song will say they deposed him for wine and women.",
+		"alt": "At the round council table a councillor in the white horse-sleeve coat reads the king’s levy, while twenty-one-year-old Eulje writes by the blue flame.",
+		"people": ["eulje"],
+		"refs": ["/ch_bidam.png", "/img_sunduk_02.png"],
+		"refsNote": "SECOND board is CLOTHING ONLY (ignore that face): long white outer robe, sleeves embroidered with galloping black horses, plum-magenta inner robe. THIRD board is the ROOM ONLY: low ROUND black table, pale blue flame in a bowl at the center. Do not copy its faces.",
+		"hat": false,
+		"time": "night",
+		"scene": "Over-the-shoulder past a veiled older queen in dark silk, soft in the FOREGROUND, toward a dry old councillor kneeling at a low ROUND black table. He wears the Harmony Council coat: long white outer robe, wide sleeves embroidered with galloping black horses, plum-magenta inner robe, bare topknot, no hat. He holds a cord-tied ledger and taps one column, unimpressed. At the center of the round table a small bowl holds one pale BLUE flame, the only light. At the near rim, Eulje, twenty-one, writes: FACE STRUCTURE from the LEFT portrait only, but YOUNG — black hair, clean-shaven, smooth skin, NO grey, NO beard, do not copy the portrait's age. Plain dark clerk robe, not a voting coat. Other councillors in the same white horse-sleeve coats lean in. Crushed black beyond the flame. No crowds."
+	}
+]

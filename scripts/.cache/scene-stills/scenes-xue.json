@@ -1,0 +1,82 @@
+[
+	{
+		"id": "scenes-xue-three-fingers",
+		"entry": "Four Dragons",
+		"at": "Yes. I have read the list.",
+		"alt": "In a night hall of the Tang palace, the Second Emperor on his dais holds up fingers at a Silla envoy who has stopped mid-sentence, kneeling on the dark floor",
+		"scene": "Low three-quarter worm's-eye from the polished dark floor of a Tang audience hall at blue hour. Sharp in the foreground: a bronze oil lamp standing on the floor, raking gold light up and across. Midground right, the Second Emperor leans forward on a low dais before a lacquer screen, yellow imperial robe, one hand lazily raised with two fingers up, amused and bored. Lower left, small and kneeling on the reflective floor, a Silla envoy in a dark-blue court robe and black cap freezes mid-sentence, mouth still open, sleeves raised. Red columns and white balustrades melt into incense haze and lantern bokeh behind. Orange #c97a2e lives in the lamp glow on the emperor's silk and the floor reflection, never a glow.",
+		"people": [
+			"taizong"
+		],
+		"with": [
+			"place:changan",
+			"dress:silla"
+		],
+		"year": 643
+	},
+	{
+		"id": "scenes-xue-bidam-brazier",
+		"entry": "Four Dragons",
+		"at": "has read it once. He folds it in half",
+		"alt": "In the Harmony Council hall in winter, Bidam folds the Tang letter small beside a brazier while Alchun glares down the room at an old councillor",
+		"scene": "Medium close, low three-quarter angle inside a dim Silla timber council hall in the twelfth month, frost at the lattice. A bronze brazier in the sharp foreground throws warm upward light across the faces. Bidam, cool and sardonic, half a smile, folds a small paper letter in half again between long fingers, prayer beads looped at his wrist, his white horse-embroidered robe over plum-magenta. Behind him and to the right Alchun, broad and blunt, leans forward on one fist, glaring down the room. Far background: a blurred old councillor in a feathered cap looking down at the floor. Timber posts angle away, cast shadows climbing the plastered wall. Navy #141C2E lives in the dark of the room and the specular on his beads, not a glow.",
+		"people": [
+			"bidam",
+			"alchun"
+		],
+		"with": [
+			"place:surabol",
+			"dress:silla"
+		],
+		"year": 643
+	},
+	{
+		"id": "scenes-xue-mud-palm",
+		"entry": "Four Dragons",
+		"at": "scrapes a cake of southern mud off his heel",
+		"alt": "In the Pyongyang palace hall, Gesomun, standing with a leg of mutton set aside, presses a cake of mud into the open palm of a stiff Tang envoy",
+		"scene": "Tight two-shot, slight dutch angle, inside a Goguryeo palace hall in Pyongyang on a grey winter afternoon. A single shaft of cold window light cuts across from the left. Gesomun, huge, unshaven, still in mud-spattered riding boots and red-winged lamellar half-unlaced, grins crookedly as he presses a dark cake of mud into the open palm of a Tang envoy. The envoy, stiff in a pale green Tang official robe and black futou cap, stares down at his own hand in horror. A half-eaten leg of mutton rests on a low table in the blurred foreground. Behind them a Goguryeo officer in a feathered cap smothers a laugh. Red #d0362f in the window light on Gesomun's sleeve, not a glow.",
+		"people": [
+			"gesomun:supreme"
+		],
+		"with": [
+			"place:pyongyang",
+			"dress:goguryeo"
+		],
+		"year": 644
+	},
+	{
+		"id": "scenes-xue-muster-wide",
+		"entry": "Four Dragons",
+		"at": "The plain outside the city has been shouting since before dawn",
+		"alt": "Dawn over the Tang muster at Youzhou: endless ranks in dust and haze under four dragon banners, a lone yellow tent in a pocket of quiet",
+		"scene": "Wide establishing shot from a low earthen rise at dawn, the Tang muster on the plain outside Youzhou. Dark foreground: the backs of two Tang foot soldiers with spears and red-brown jackets, out of focus. Below, tens of thousands of tiny soldiers in ranks dissolve into gold dust and watercolour haze, wooden carts, horses, smoke from cookfires. Four tall dragon banners on poles, white, red, blue and black, stand over the ranks, and a fifth plain banner without device. In the middle distance one yellow tent sits in an empty ring of ground where nobody stands. Half the frame is granulated pre-dawn sky with one pale break. Tang vermilion and black banner colours only. No European armour, no Japanese armour.",
+		"people": [],
+		"with": [
+			"flag:tang"
+		],
+		"year": 645
+	},
+	{
+		"id": "scenes-xue-well-edict",
+		"entry": "Four Dragons",
+		"at": "reading the small characters twice",
+		"alt": "At the Longmen well-house, villagers crowd a red edict on the wall while Xue Rengui stands at the back with a hoe on his shoulder",
+		"scene": "Over-the-shoulder from behind a crowd of Tang villagers at a rammed-earth well-house in Longmen, late afternoon, long raking sun. Sharp foreground: the shoulder and hemp sleeve of an old neighbour pointing at a red paper sheet pasted on the mud wall at eye height; the sheet is only blurred dark smudges, no characters or glyphs of any kind. Midground, at the back of the crowd, Xue Rengui, young, broad-shouldered, in plain yellow peasant hemp, a hoe resting on his shoulder, squints at the sheet with a worried set mouth. A small barefoot boy tugs his sleeve and looks up at him. Wooden well-sweep and millet fields dissolve into wash behind. Warm low sun as the one key, long shadows across packed earth.",
+		"people": [
+			"xuerengui"
+		],
+		"year": 644
+	},
+	{
+		"id": "scenes-xue-test-stone",
+		"entry": "Four Dragons",
+		"at": "he carries it to the melon seller and back",
+		"alt": "In the Jiangzhou market, Xue Rengui walks a huge test stone over his head past the recruiting table while a general stops eating his melon",
+		"scene": "Worm's-eye from the dusty market ground, Jiangzhou, midday haze. Sharp foreground: an old Chinese ji polearm laid on oiled hemp in the dirt: a long straight wooden shaft taller than a man ending in a narrow spear point, with one small crescent side blade set just below the point, dark iron, new cord over old wood; NOT an axe. Midground: Xue Rengui in plain hemp, straining but calm, carries a huge round grey test stone over his head with both arms, mid-stride. Behind a plain wooden recruiting table a Tang clerk keeps his head down over a brush, and a Tang general on a camp stool holds a melon slice frozen halfway to his mouth. A line of farmers gapes. A melon stall and blank red cloth strips blur into bokeh. One hard sun shaft through the haze lands on the stone and Xue's forearms.",
+		"people": [
+			"xuerengui"
+		],
+		"year": 644
+	}
+]

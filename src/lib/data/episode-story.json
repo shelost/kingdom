@@ -2301,18 +2301,23 @@
 			"n": 60,
 			"id": "chunchu-era::Talhae",
 			"title": "Talhae",
-			"want": "Talhae wants the best ground in the city.",
-			"conflict": "Hogong, the gourd-lord who lives there.",
-			"development": "Beginning: the chest on the tide and the Suro duel. Middle: the whetstone-and-charcoal trick. End: \"Prove it\", then he makes Hogong his chief minister.",
-			"climax": "",
-			"resolution": "",
-			"aPlot": "A stranger walks in and demands the throne.",
-			"bPlot": "A hawk, an eagle, a falcon.",
+			"want": "Talhae wants a house, then a country — and the fire that makes both hold.",
+			"conflict": "Suro already has the throne; Hogong lives on the best ground; Nuri has more teeth.",
+			"development": "Beginning: the chest, seven silent days, a season in Gaya’s forges, the challenge with Heo watching. Middle: Toham, the whetstone as Gaya iron, marriage to Ahyo. End: Nuri names him, the elders vote, the yards of Surabol smell of charcoal.",
+			"climax": "The first vote of the six houses.",
+			"resolution": "Talhae bows to the floor that lent him the crown, and lights the forges.",
+			"aPlot": "A boy from a box learns Gaya’s fire, talks his way to a stolen house, then a throne.",
+			"bPlot": "Nuri wins the rice cake and spends thirty years being kind enough to give it back.",
 			"themes": [
 				{
 					"id": "arrival",
 					"label": "The man from the sea",
 					"note": "Suro’s missing climax, told here."
+				},
+				{
+					"id": "iron",
+					"label": "Gaya’s fire",
+					"note": "He loses the chair and takes the forges north."
 				}
 			],
 			"concepts": [],
@@ -2324,10 +2329,11 @@
 				"aejin",
 				"hogong",
 				"namhae",
-				"yuri_isageum"
+				"yuri_isageum",
+				"heohwangok"
 			],
-			"places": [],
-			"problem": "The Suro digression splits the opening, and the magistrate's dig, the climax, is a sentence.",
+			"places": ["ajinpo", "geumgwan", "surabol", "moon_palace"],
+			"problem": "",
 			"events": []
 		},
 		"chunchu-era::Alji": {

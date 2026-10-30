@@ -1,0 +1,141 @@
+[
+	{
+		"id": "tamla-robe-offer",
+		"entry": "Yuri Dora",
+		"at": "Dora holds the robe out",
+		"alt": "Barefoot Dora holds out an undyed island robe; Gyebek in salt-stiff yellow will not take it yet",
+		"scene": "KOREAN WEBTOON character-introduction splash PAINTED like a premium digital painting, dramatic manhwa COVER. FACES LARGE, waist-up two-shot, low three-quarter. NOT photoreal, NOT live-action, NOT 3D. Dusk Tamla shore. ONE device: the folded undyed robe as a pale rectangle between them. LEFT face of the sheet = Yuri Dora, orange robe, huge white sleeves, laughing mouth, holding the cloth out, barefoot. RIGHT = Gyebek in salt-stiff Baekje yellow, topknot, not taking it, looking at the cloth as an order. Visible brushwork, thick ink contours, watercolor-and-oil world dissolving at the edges. #ff9a3d as the sun on silk. Keep Halla loosely painted in haze. No jougwan on Dora. No text. No watermark.",
+		"people": ["yuridora", "gyebek"],
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "tamla-orange-walk",
+		"entry": "Yuri Dora",
+		"at": "Dora names things as if the names",
+		"alt": "Gyebek in the new orange Tamla robe walks behind Dora through tangerine trees, still looking north",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE two-shot, faces LARGE, low three-quarter. NOT photoreal, NOT a landscape postcard. Dusk Tamla orchard. ONE device: a dirt path as a pale diagonal. LEFT face of the sheet = Gyebek Tamla exile: long LOOSE black hair, goatee, FULL ORANGE robe, rust-red sash, mid-stride, head turned NORTH. SECOND = Dora ahead, orange robe, lazy point at the mountain. Painted loosely: orange trees, Halla in wet-in-wet wash. Thick ink faces, watercolor world. #d9b13a sun-break on silk. No jougwan. No text. No watermark.",
+		"people": ["gyebek:tamla", "yuridora"],
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "tamla-staff-dirt",
+		"entry": "Yuri Dora",
+		"at": "The first morning the rock does not move",
+		"alt": "Skinny first-year Gyebek hits a horse-sized volcanic boulder with a wooden staff; the rock does not move",
+		"manga": true,
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. FACE LARGE, worm’s-eye, hard dutch, waist-up. NOT photoreal. Dusk volcanic yard. ONE device: a HORSE-SIZED intact black volcanic BOULDER filling the right third, uncracked, immovable. LEFT face of the sheet = YEAR-ONE Gyebek: FACE from the attached head only. BODY SKINNY, lean, slight muscle, visible ribs, thin shoulders and thin arms — NOT the bulky training portrait, NOT a six-pack, NOT thick biceps. Long loose hair, goatee, orange wrap-skirt, rust-red sash, wooden staff mid-strike against the boulder, grimace of work, the rock does not move. Living trees behind, no stumps. Thick ink, watercolor dirt. Halla a wet wash cone. #d9b13a cloud-break on skin. Speed lines. No sword. No jougwan. No text. No watermark.",
+		"people": ["gyebek:training-early"],
+		"faces": { "gyebek:training-early": "scripts/.cache/refs-small/head_gyebek_training.jpg" },
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "tamla-looks-north",
+		"entry": "Yuri Dora",
+		"at": "Between sets he looks north",
+		"alt": "Skinny Gyebek between sets, staff planted, looking north; the horse-sized boulder still whole behind him",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE profile, FACE LARGE, from slightly below. NOT photoreal. Dusk Tamla cliff. ONE device: the sea horizon as a painted wash-line. LEFT face of the sheet = YEAR-ONE Gyebek: FACE from the attached head only. BODY SKINNY, lean, slight muscle, visible ribs, thin arms — NOT bulky. Long loose hair, goatee, orange wrap, staff planted, LOOKS NORTH, mouth a line. The horse-sized boulder still WHOLE in the painted bokeh behind him. Living trees. Thick ink face, watercolor storm sky dissolving to paper. #d9b13a shaft on the thin shoulder. Halla a small painted stamp. No sword. No jougwan. No text. No watermark.",
+		"people": ["gyebek:training-early"],
+		"faces": { "gyebek:training-early": "scripts/.cache/refs-small/head_gyebek_training.jpg" },
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "tamla-staff-or-story",
+		"entry": "Yuri Dora",
+		"at": "The staff, or the story",
+		"alt": "Dora on a wall peeling an orange while skinny Gyebek trains against the intact boulder and living trees",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE two-shot, BOTH FACES LARGE, low three-quarter. NOT photoreal. Dusk Tamla wind-wall. ONE device: the wall as a dark painted band. LEFT face of the sheet = YEAR-ONE Gyebek: FACE from the attached head only. BODY SKINNY, lean, slight muscle, ribs, thin arms — NOT the bulky portrait. Shirtless, orange wrap, staff across thin shoulders, panting, looking at Dora. SECOND = Dora sitting ON the wall, orange robe, peeling an orange, amused. Intact boulder and living trees in the wash behind. Thick ink, watercolor Halla dissolving. #ff9a3d on Dora, #d9b13a on Gyebek’s skin. No jougwan. No sword. No text. No watermark.",
+		"people": ["gyebek:training-early", "yuridora"],
+		"faces": { "gyebek:training-early": "scripts/.cache/refs-small/head_gyebek_training.jpg" },
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "tamla-firelight-edge",
+		"entry": "Yuri Dora",
+		"at": "He stands at the edge of the firelight",
+		"alt": "Gyebek in the orange robe stands at the edge of Dora’s fire, filing stories, not sitting",
+		"time": "night",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE two-shot, FACES LARGE. NIGHT. NOT photoreal, NOT a live-action campfire photo. ONE device: the fire as a round painted gold stamp. LEFT face of the sheet = Gyebek Tamla exile: long LOOSE hair, goatee, FULL ORANGE robe, standing outside the fire-ring, arms folded, listening. SECOND = Dora sitting, orange robe, talking with both hands, two cups. Thick ink faces, watercolor-and-oil night, fire as the one key. #ff9a3d on silk, #d9b13a on Gyebek’s cheek. No jougwan. No text. No watermark.",
+		"people": ["gyebek:tamla", "yuridora"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "tamla-boulder-crack",
+		"entry": "Yuri Dora",
+		"at": "He can put two fingers in the crack",
+		"alt": "A year later Gyebek’s shoulders have filled out; he puts two fingers into a crack in the boulder",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE, FACE LARGE, low three-quarter, waist-up. NOT photoreal. Dusk volcanic yard. ONE device: a dark CRACK down the horse-sized boulder as a hard black line. LEFT face of the sheet = YEAR-TWO Gyebek: FACE from the attached head only. BODY filling out: shoulders wider, real muscle starting, still lean — not skinny-ribbed, not the finished bodybuilder. Long loose hair, goatee, orange wrap, rust-red sash, TWO FINGERS in the crack, staff planted, grim. A few felled trunks at the edge, most trees still standing. Thick ink, watercolor dirt. #d9b13a on the knuckles. Halla in haze. No sword. No jougwan. No text. No watermark.",
+		"people": ["gyebek:training-mid"],
+		"faces": { "gyebek:training-mid": "scripts/.cache/refs-small/head_gyebek_training.jpg" },
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 656
+	},
+	{
+		"id": "tamla-trees-down",
+		"entry": "Yuri Dora",
+		"at": "He takes the trees down with the staff",
+		"alt": "Gyebek fells a Tamla tree with the wooden staff; stumps already ring the slope",
+		"manga": true,
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. FACE LARGE, worm’s-eye, hard dutch. NOT photoreal. Dusk Tamla slope. ONE device: a tree mid-fall as a painted diagonal. LEFT face of the sheet = YEAR-THREE Gyebek: FACE from the attached head only. BODY more muscular than year one, athlete filling out, not yet the finished portrait bulk. Long loose hair, goatee, BARE CHEST, orange wrap, wooden staff striking a trunk, grimace of work. Other STUMPS already on the slope, the cracked boulder smaller in the wash. Thick ink, watercolor flying chips, speed lines. #d9b13a on wet skin. Halla a wet wash cone. No sword. No jougwan. No text. No watermark.",
+		"people": ["gyebek:training-mid"],
+		"faces": { "gyebek:training-mid": "scripts/.cache/refs-small/head_gyebek_training.jpg" },
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 657
+	},
+	{
+		"id": "tamla-pebbles-back",
+		"entry": "Yuri Dora",
+		"at": "The boulder is pebbles",
+		"alt": "Five years later: Gyebek’s fully muscular back, the boulder reduced to a ring of pebbles, the slope a field of stumps",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE from behind and three-quarter, FACE in PROFILE so he is still recognisable, the TONED MUSCULAR BACK is the picture. NOT photoreal. Dusk Tamla yard he has remade. ONE device: a RING of pebbles on black dirt where a horse-sized boulder sat. LEFT face of the sheet = FIVE-YEAR Gyebek: FACE AND BODY from the training portrait — fully muscular, thick arms, carved back, orange wrap, rust-red sash, staff planted, looking north. The slope is STUMPS as far as the dirt goes, wood chips, no living trunks in the near ground. Halla watching in wet-in-wet wash. Thick ink, watercolor-and-oil. #d9b13a raking the back and the pebble-ring. No sword. No jougwan. No army. No text. No watermark.",
+		"people": ["gyebek:training"],
+		"with": ["place:halla"],
+		"hat": false,
+		"year": 659
+	},
+	{
+		"id": "tamla-this-world",
+		"entry": "Yuri Dora",
+		"at": "‘This world’….",
+		"alt": "Gyebek’s face close: he has finally asked if there are other worlds",
+		"time": "night",
+		"scene": "KOREAN WEBTOON character-introduction splash PAINTED like bidam-defiance: oil volume on the face, one hard key, intro-card splash. INTIMATE ECU, FACE FILLS the frame. NIGHT. NOT photoreal. LEFT face of the sheet = Gyebek Tamla exile: long LOOSE hair, goatee, orange robe, mouth slightly open on the question, living eyes WHITE sclera BLACK pupil. Fire key from below-right. #d9b13a on the cheekbone. Dora a painted bokeh laugh behind. Thick ink, watercolor night. No jougwan. No text. No watermark.",
+		"people": ["gyebek:tamla", "yuridora"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "tamla-two-cups",
+		"entry": "Yuri Dora",
+		"at": "Night. A fire. Two cups.",
+		"alt": "Night fire, two cups; Gyebek still standing while Dora begins Once there were two suns",
+		"time": "night",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM two-shot, FACES LARGE in the lower two-thirds, not tiny. NIGHT Tamla. NOT photoreal, NOT a wide postcard. ONE device: two cups as bright painted stamps by the fire. SECOND face of the sheet = Dora sitting, orange robe, already talking. LEFT = Gyebek Tamla exile standing, long loose hair, goatee, orange robe, not sitting yet. Thick ink, watercolor-and-oil black sea dissolving to paper. Fire rakes #ff9a3d. No jougwan. No text. No watermark.",
+		"people": ["gyebek:tamla", "yuridora"],
+		"hat": false,
+		"year": 655
+	},
+	{
+		"id": "gyebek-lands-armour",
+		"entry": "Gyebek",
+		"at": "He lands at the White River mouth",
+		"alt": "Gyebek comes off the recall boat in Baekje armour, island cloth still under the lamellar",
+		"scene": "KOREAN WEBTOON character-introduction splash, dramatic manhwa COVER. MEDIUM CLOSE, FACE LARGE, low three-quarter, waist-up. NOT photoreal, NOT 3D armour render. Dusk White River mouth. ONE device: the gangplank as a dark painted diagonal. LEFT face of the sheet = Gyebek in armour: rounded Baekje helm, steel gray lamellar painted in brush planes, crimson sleeves, red sash, grim, no smile, stepping onto mud. Orange island cloth at the collar. Thick ink face, watercolor mud and reeds. If a sword: straight ring-pommel, small iron ring, NO tsuba, NO katana. #d9b13a on wet steel. No army. No text. No watermark.",
+		"people": ["gyebek:armour"],
+		"sword": true,
+		"hat": false,
+		"year": 660
+	}
+]

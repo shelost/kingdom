@@ -1,0 +1,99 @@
+[
+	{
+		"id": "momal-hall-enter",
+		"entry": "Momal",
+		"at": "They announce him. The hall uses the formal name",
+		"alt": "Wide northern hall: Jangsu on the dais, Momal a small magenta figure walking in, not kneeling",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card painted splash. NOT photoreal, NOT cartoon, NOT 3D. HIGH OVERHEAD, slight dutch. WIDE. ONE device: the hall axis as a dark wedge of red pillars receding. Tiny magenta-plum figure in the lower third walking in, not kneeling. Jangsu a small red block on the far dais. Night Pyongyang hall, red Goguryeo pillars, one bronze floor lamp. Keep the attached fortress architecture. #a03030 lamp on red silk, #8B5A2B a speck on the guest. Monumental emptiness. No army catalog. No text. No watermark.",
+		"people": ["jangsu", "jesang"],
+		"with": ["place:pyongyang_fortress"],
+		"year": 418
+	},
+	{
+		"id": "momal-jangsu-down",
+		"entry": "Momal",
+		"at": "Another Silla man.",
+		"alt": "Jangsu looks down from the dais: another Silla man, unhurried, not standing",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. INTIMATE CLOSE, FACE LARGE, worm’s-eye from below the dais. ONE device: the dais edge as a hard horizontal. LEFT of the sheet = Jangsu, square Korean face, heavy brows, short dark goatee, red Goguryeo court silk, kingdom crown, looking DOWN past the camera, grim, unhurried, mouth on “Another Silla man.” A bronze floor lamp rakes him from below in #a03030. ONLY Jangsu is the subject. At the frame edge only an out-of-focus magenta sleeve. KOREAN FACE: white sclera, black iris. No kind grandfather smile. No text. No watermark.",
+		"people": ["jangsu"],
+		"with": ["place:pyongyang_fortress"],
+		"year": 418
+	},
+	{
+		"id": "momal-sits",
+		"entry": "Momal",
+		"at": "Momal does not kneel first",
+		"alt": "Momal sits in Jangsu’s hall the way a man sits when he has already decided the ending",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. LOW THREE-QUARTER, MEDIUM, FACE LARGE. ONE device: a low seat as a dark rectangle; he is already on it. LEFT of the sheet = Momal, fifties, grey-white beard, magenta-plum po, SITTING not kneeling, hands decided, calm half-lidded eyes. A floor lamp the key from the side in #8B5A2B. Red pillars in creamy bokeh. ONLY Momal. NEVER kneeling. KOREAN FACE: white sclera, black iris. No text. No watermark.",
+		"people": ["jesang"],
+		"with": ["place:pyongyang_fortress"],
+		"year": 418
+	},
+	{
+		"id": "momal-jangsu-smile",
+		"entry": "Momal",
+		"at": "Jangsu’s mouth moves. Not a smile. The start of one",
+		"alt": "ECU: Jangsu’s mouth, the start of a smile that is not kind",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. INTIMATE ECU, FACE FILLS the frame, slight dutch. ONE device: a hard shadow cutting the face in half. LEFT of the sheet = Jangsu, square Korean face, heavy brows, short dark goatee, the START of a smile that is not kind, eyes still counting. A floor lamp rakes from below in #a03030. ONLY Jangsu. NEVER a kind grandfather smile. KOREAN FACE: white sclera, black iris. No text. No watermark.",
+		"people": ["jangsu"],
+		"year": 418
+	},
+	{
+		"id": "momal-jangsu-fingers",
+		"entry": "Momal",
+		"at": "He lifts two fingers. The yard below the window fills with horses",
+		"alt": "Jangsu at the window lifts two fingers; the yard below fills with horses",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. OVER-SHOULDER from behind Jangsu, dutch. ONE device: two fingers as a dark V against the night window. LEFT of the sheet = Jangsu, red Goguryeo silk, crown, back and jaw, two fingers lifted, grim, the smile gone. Below the window, tiny horses filling a packed-earth yard as painted mass. #a03030 lamp on the fingers. Pyongyang red munru in bokeh. No army catalog — a line of horses dissolving. No text. No watermark.",
+		"people": ["jangsu"],
+		"with": ["place:pyongyang_fortress"],
+		"year": 418
+	},
+	{
+		"id": "momal-dodge",
+		"entry": "Momal",
+		"at": "One rider does come down. Spear first",
+		"alt": "Worm’s-eye: Momal turns the horse into a Goguryeo rider’s shoulder",
+		"time": "day",
+		"manga": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER, character-intro-card painted look. NOT photoreal, NOT cartoon. WORM’S-EYE from the dirt under the hooves, hard dutch. ONE device: a spear shaft as a hard diagonal coming at the lens. LEFT of the sheet = Momal, grey-white beard, magenta-plum po, turning the horse INTO a Goguryeo rider’s shoulder, grim, not swearing. Unnamed Goguryeo rider in steel lamellar, red wing flaps, falling toward the grass. Full readable horses, muscle, edge light on the topline. Bold dry-brush SPEED LINES, flung dirt. #8B5A2B on wet silk. Pale paper sky. DAY GROUND on WHITE. KOREAN FACES: white sclera, black iris. No text. No watermark. No panel borders.",
+		"people": ["jesang"],
+		"with": ["dress:goguryeo"],
+		"year": 418
+	},
+	{
+		"id": "momal-pommel",
+		"entry": "Momal",
+		"at": "The ring-pommel comes out only long enough to knock the spear aside",
+		"alt": "Dutch close: Momal’s ring-pommel knocks a Goguryeo spear aside; he does not stay",
+		"time": "day",
+		"manga": true,
+		"sword": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER, character-intro-card painted look. NOT photoreal, NOT cartoon. HARD DUTCH, extreme foreshortening, the RING-POMMEL coming toward the lens. ONE device: the straight Korean ring-pommel dao as a hard black line knocking a spear aside. LEFT of the sheet = Momal, grey-white beard, magenta-plum po, one-handed hip sword, orthodox forward grip, mid-cut, not staying to finish. Unnamed Goguryeo spear at the frame edge only. Bold SPEED LINES, flung dust. #8B5A2B on silk. Pale paper sky. Attach sw_bidam: handle:blade 1:3, ring at the butt, NO tsuba. KOREAN FACE: white sclera, black iris. No text. No watermark.",
+		"people": ["jesang"],
+		"year": 418
+	},
+	{
+		"id": "momal-han-overhead",
+		"entry": "Momal",
+		"at": "The Han is brown and wide",
+		"alt": "Bird’s-eye: two horses hit the brown Han; the east current is the road",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. BIRD’S-EYE straight down. WIDE. ONE device: the brown river as a hard diagonal road. Two tiny horses entering the water, magenta-plum and lilac-purple specks, white spray. The near bank stitched with blunt shafts as small dark ticks. Far Silla bank pale. Pale paper sky at the corners dissolving. #8B5A2B and #8a6a8a as two cloth notes only. No faces readable. No army catalog. No text. No watermark.",
+		"year": 418
+	},
+	{
+		"id": "momal-han-faces",
+		"entry": "Momal",
+		"at": "They hit the water so hard the horses scream",
+		"alt": "Close in the spray: Momal grim, Bohae looking back, horses screaming in the brown Han",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER, character-intro-card splash. NOT photoreal, NOT cartoon. INTIMATE CLOSE, FACES LARGE, low from the water. ONE device: a horse’s wet neck as a dark diagonal between two men. LEFT of the sheet = Momal, grey-white beard streaming, magenta-plum soaked, grim, not swearing. RIGHT = Bohae, lilac-purple wet, long black hair, looking back, older-brother tired. Full horse muscle, spray as painted bokeh. #8B5A2B and #8a6a8a in wet silk. TWO DIFFERENT faces, NEVER clones. KOREAN FACES: white sclera, black iris. No text. No watermark.",
+		"people": ["jesang", "bokho"],
+		"year": 418
+	}
+]

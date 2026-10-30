@@ -1,0 +1,176 @@
+[
+	{
+		"id": "jade-yard-rail",
+		"entry": "Jade Gate Valley",
+		"at": "On the yard rail sit three men",
+		"alt": "Bidam, Alchun and Yushin sit on the rail of the frozen Hwarang yard while two boys of Class 77 stop drilling to stare",
+		"scene": "Low worm's-eye wide from the frozen yard, a midwinter afternoon below the Moon Palace. ONE device: the long weathered timber rail of the Hwarang yard running as a hard diagonal from lower left to the upper right third. On it sit three men in their forties in winter hanbok and fur-lined jackets: Bidam on the left, 108 beads looped on his wrist, amused, mid-sentence; Alchun in the middle, huge, slouched, rubbing his backside on the cold timber and laughing; Yushin on the right, upright, not looking at either of them, eyes turned up the hill toward the palace roofs. Dark out-of-focus FOREGROUND: the backs of two teenage boys who have stopped drilling with wooden practice swords, one with a purple sleeve, the other with a scarlet sleeve mended twice, staring up at the rail. Behind the rail, the giwa roofs of the Moon Palace on its hill dissolve into pale winter haze; breath smoke from every mouth. Pale low winter sun raking across the ice from the side.",
+		"people": [
+			"bidam",
+			"alchun",
+			"yushin"
+		],
+		"with": [
+			"place:moon_palace",
+			"dress:silla"
+		],
+		"time": "day"
+	},
+	{
+		"id": "jade-muster-walk",
+		"entry": "Jade Gate Valley",
+		"at": "Yushin is already off the rail",
+		"alt": "Yushin walks fast up the hill toward the palace as the muster drum rolls and forty boys stand frozen on the ice",
+		"scene": "High crane shot looking down from behind the palace gate at the last light of a midwinter day. ONE device: a long stone stair-road climbing the hill straight up the centre of the frame to the Moon Palace gate. Yushin alone on it, mid-stride, walking very fast, not running, winter coat snapping behind him, face set, eyes on the gate. Far below at the foot of the hill, the frozen Hwarang yard as a pale oval with forty tiny boys standing stock-still, and two small seated figures left on the rail. A great war drum in the gate tower in the foreground, out of focus, its skin still trembling, a torch beside it throwing round bokeh. Dusk sky of indigo and a single orange break low on the western hills.",
+		"people": [
+			"yushin"
+		],
+		"with": [
+			"place:moon_palace",
+			"dress:silla"
+		],
+		"time": "night"
+	},
+	{
+		"id": "jade-bead-short",
+		"entry": "Jade Gate Valley",
+		"at": "On the fourth, his thumb moves a bead his mouth has not reached",
+		"alt": "On the foggy valley road, Bidam watches a monk's thumb move a bead his mouth has not reached",
+		"scene": "Extreme close two-shot at night in fog at the mouth of Jade Gate Valley, snow on the road. ONE device: a string of prayer beads hanging between two hands in the exact centre of the frame. LEFT, sharp: a fake monk in a grey patched robe with a bundle of firewood on his back, chanting, his thumb pushing one bead ahead of his lips, eyes sliding sideways, sweat on his lip despite the cold. RIGHT, slightly lower, mounted, leaning down over the horse's neck: Bidam, a light smile, eyes on the monk's thumb, not his face, his own 108 beads looped on his sword wrist. One hard key: a hooded lantern on the monk's staff lighting both faces from below; fog swallows everything else. Behind them, soft out of focus, five young riders and Alchun's huge silhouette on horseback, and far down the valley a faint smudge of campfire smoke.",
+		"people": [
+			"bidam"
+		],
+		"with": [
+			"place:jade_gate_valley",
+			"dress:silla"
+		],
+		"time": "night",
+		"sword": true
+	},
+	{
+		"id": "jade-bidam-camp",
+		"entry": "Jade Gate Valley",
+		"at": "Bidam goes down the left ridge on foot",
+		"alt": "Bidam walks through the sleeping Baekje camp like a temple, beads on his sword wrist, men falling as they stand",
+		"scene": "Low dutch-angle tracking shot at night inside a Baekje camp in a snowy valley bottom. ONE device: a line of dying campfires running diagonally into the fog. Bidam on foot in the middle of it, unhurried, almost courteous, in a dark Silla coat over steel lamellar, ring-pommel sword drawn low in one hand, the 108 beads looped on that sword wrist swinging. Baekje soldiers in yellow-cloth lamellar half rising from their bedrolls around him with loosened saddles beside them; one just falling away at the edge of frame, motion-smeared. Sparks and embers whipping up in the wind as round bokeh. Firelight rakes up across Bidam's calm face from the low fires. Far up the left ridge, five tiny boys on their bellies in the snow, watching.",
+		"people": [
+			"bidam"
+		],
+		"with": [
+			"place:jade_gate_valley"
+		],
+		"time": "night",
+		"battle": true,
+		"action": true,
+		"sword": true
+	},
+	{
+		"id": "jade-alchun-horse",
+		"entry": "Jade Gate Valley",
+		"at": "A loose horse comes at him out of the smoke",
+		"alt": "Alchun catches a loose Baekje horse by the bridle with one arm and turns it into the next fire",
+		"scene": "Worm's-eye from the snow at night, smoke everywhere. ONE device: a rearing loose horse filling the upper half of the frame, front hooves above the lens, its bridle hauled sideways. Alchun, huge, in steel lamellar with blue Silla cloth at the collar, one arm locked on the bridle, the captured Baekje spear in his other fist, roaring with laughter, turning the horse's head by sheer strength. Burning tents and a toppled cooking pot behind him; sparks and smoke-lit fire glowing orange as bokeh. Firelight rakes the horse's muscle and Alchun's grinning face from below.",
+		"people": [
+			"alchun"
+		],
+		"with": [
+			"place:jade_gate_valley"
+		],
+		"time": "night",
+		"battle": true,
+		"action": true
+	},
+	{
+		"id": "jade-uso-rock",
+		"entry": "Jade Gate Valley",
+		"at": "Alchun climbs the rock with nothing in his hands",
+		"alt": "Alchun climbs the great rock empty-handed toward the Baekje general Uso, who draws his last arrow",
+		"scene": "Low wide from the valley floor at the first grey of dawn. ONE device: one huge dark boulder rising as a pyramid in the centre of the frame against a pale fog sky. On its summit a Baekje general in yellow-cloth lamellar and a plumed helm, bow at full draw with his last arrow, an empty quiver on his hip, arrows stuck in the snow all round the rock. Halfway up the rock face Alchun climbs bare-handed, no weapon, looking up at him and grinning, an arrow-tear in his sleeve. At the foot of the rock, small and dark, Bidam stands back with his arms folded and his sword sheathed, clean. Behind, the long ragged line of Silla spearmen stopped at the valley lip, tiny in the fog. Cold dawn key from one side, long shadows on the snow.",
+		"people": [
+			"alchun",
+			"bidam"
+		],
+		"with": [
+			"place:jade_gate_valley"
+		],
+		"time": "day",
+		"battle": true
+	},
+	{
+		"id": "jade-queen-door",
+		"entry": "Jade Gate Valley",
+		"at": "All five hundred, Majesty.",
+		"alt": "Alchun holds out a fist of beads at the queen's door; Yushin, hair still damp, stands at the door behind her",
+		"scene": "Tenebrist interior at night at the queen's door inside the Moon Palace. ONE device: a tall lattice door half open, one oil lamp on the floor beside it raking up across all three figures. Queen Sunduk stands in the doorway in her court silk and crown, looking down at Alchun's huge open fist, in which lies a string of prayer beads, one short. Alchun on one knee before her, still grimy from the valley, grinning. To one side, against the door frame, Yushin stands at attention, hair still damp, eyes on the queen, not the beads. Shadows of the lattice climb the receding plaster wall. Everything else falls to black.",
+		"people": [
+			"sunduk",
+			"alchun",
+			"yushin"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"time": "night"
+	},
+	{
+		"id": "jade-gate-valley-close",
+		"entry": "Jade Gate Valley",
+		"at": "By spring the court has its own version",
+		"alt": "By spring, the queen at the palace pond at dusk, the frogs loud, a string of beads in her hand",
+		"scene": "Far wide at dusk in early spring in the Moon Palace garden. ONE device: the long still palace pond running as a dark horizontal waterline across the lower third, reflecting one pale break in the clouds. Queen Sunduk small on the stone edge in the lower right third, in court silk, a string of prayer beads hanging from her fingers, head tilted as if listening. Frogs on lily pads in the dark foreground, out of focus. Across the water a giwa pavilion dissolves into haze; one lantern lit in it, its reflection a soft bokeh disc on the water. At least two thirds of the frame quiet sky and water.",
+		"people": [
+			"sunduk"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"time": "night"
+	},
+	{
+		"id": "jade-torch-ring",
+		"entry": "Jade Gate Valley",
+		"at": "The mark is one bell.",
+		"alt": "Torches race along both ridges of Jade Gate Valley while five hundred Baekje men wake in the fog at the bottom of the bowl",
+		"scene": "Extreme high bird’s-eye wide at night straight down over a narrow Korean mountain valley in snow. ONE device: two long dark ridges converging toward a narrow rock throat at the bottom of the frame, and along both crests a running line of torches igniting one after another like a lit fuse, so the bowl is ringed in fire. At the bottom of the bowl a pale fog pours off a steaming spring, and inside it a Baekje camp of dying fires and tiny men in grey lamellar with mustard-yellow cloth scrambling up from bedrolls, faces upturned. Far end of the valley: a steep white snow wall rising to a dark hill fort. In the foreground on the left ridge, dark and out of focus, five teenage boys lie on their bellies in the snow, and one strikes a small bronze bell. Torchlight as warm round bokeh, the rest crushed to blue-black. No named face needed; all figures small.",
+		"people": [],
+		"with": [
+			"place:jade_gate_valley",
+			"dress:silla",
+			"dress:baekje"
+		],
+		"time": "night",
+		"battle": true
+	},
+	{
+		"id": "jade-throat-spears",
+		"entry": "Jade Gate Valley",
+		"at": "The boy with the mended sleeve is in the front rank.",
+		"alt": "In the rock throat of the valley, the boy with the mended sleeve holds the front of a spear wall of farm sons as Baekje soldiers burst out of the fog",
+		"scene": "Low over-the-shoulder shot from behind a Silla spear wall at night, inside a narrow throat of rock only three men wide, cliff walls of black wet stone on both sides. ONE device: the long spear shafts converging forward into the fog like a funnel. FRONT RANK, sharp, seen in three-quarter: a teenage Hwarang boy of about fifteen in a scarlet jacket whose sleeve is visibly mended twice with uneven stitches, jaw clenched, eyes wide, both fists locked on a spear braced butt-in-the-dirt, a Baekje soldier in grey lamellar and mustard-yellow cloth impaled at the far end, three more Baekje soldiers bursting out of the rolling fog behind him three abreast. Around the boy, farm sons in plain undyed white hemp with crude steel caps holding spears like hoes, terrified, holding. Behind them an old one-eared nangdo shouting, mouth wide. Torches jammed in the rock cracks throw orange light raking across the faces; fog lit from within. Battle mid-moment, snow and sparks flying, motion blur on the charging men. The boy is a child-soldier, fully clothed, fierce, not glamorised.",
+		"people": [],
+		"with": [
+			"place:jade_gate_valley",
+			"dress:silla",
+			"dress:baekje"
+		],
+		"time": "night",
+		"battle": true,
+		"action": true
+	},
+	{
+		"id": "jade-cornice",
+		"entry": "Jade Gate Valley",
+		"at": "Five boys and a line of farm sons kick the rim",
+		"alt": "The purple-sleeved boy kicks the snow cornice off the back wall of the valley onto the climbing Baekje men",
+		"scene": "Dutch-angle worm’s-eye from just below a long overhanging snow cornice on the lip of a steep valley wall at night. ONE device: the curling white lip of the cornice breaking away as a diagonal wave across the frame. On top of it, silhouetted against a ring of torchlight, a teenage Hwarang boy in a purple jacket mid-kick, one leg high, mouth open shouting, and beside him four other boys and a line of farm sons in white hemp kicking and stamping together. Below, the snow avalanche pouring down the slope in one long white sheet, sweeping away Baekje soldiers in grey lamellar with mustard-yellow cloth who were clawing up through thigh-deep snow, arms flung up. Spray of powder snow catching torchlight as glittering bokeh; the bottom of the valley lost in black and fog. Children fully clothed, fierce, not glamorised.",
+		"people": [],
+		"with": [
+			"place:jade_gate_valley",
+			"dress:silla",
+			"dress:baekje"
+		],
+		"time": "night",
+		"battle": true,
+		"action": true
+	}
+]

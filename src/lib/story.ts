@@ -564,6 +564,12 @@ export function episodeNumber(chapterIndex: number, entryIndex: number): string 
 	return n ? String(n) : '';
 }
 
+/** `Chapter 37` / `제37화`. Empty when `num` is empty. */
+export function episodeChapterLabel(num: string, ko: boolean): string {
+	if (!num) return '';
+	return ko ? `제${num}화` : `Chapter ${num}`;
+}
+
 /** DOM id for a chapter's part title page — distinct from episode slugs. */
 export function partId(chapterId: string): string {
 	return `part-${chapterId}`;

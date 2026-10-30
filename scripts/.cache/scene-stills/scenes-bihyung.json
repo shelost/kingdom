@@ -1,0 +1,320 @@
+[
+	{
+		"id": "bh-cloud-king-deathbed",
+		"entry": "Bihyung",
+		"year": 576,
+		"at": "His eldest son died four years ago.",
+		"alt": "The Cloud King dies in a monk's robe; his second son Saryun kneels by the bed, a sleeping boy across his knees.",
+		"scene": "Low three-quarter close shot across a deathbed on the palace floor, one oil lamp set on the boards beside the lens. King Jinhung, old and shaved bald, in a plain grey monk's robe, lies propped on a bolster, one hand gripping his son's wrist. Kneeling beside him, Saryun, a handsome prince of twenty-five in rumpled court silk, flushed with plum wine, tries to smile and can't. Asleep across Saryun's knees, an eight-year-old boy in a white sleeping robe. The lamp rakes up across the three faces; the room behind falls into umber black, a folding screen and a cold window dissolving. One quiet, intimate frame of a dynasty passing hands.",
+		"people": [
+			"jinheung",
+			"jinji"
+		],
+		"hat": false,
+		"time": "night",
+		"faces": {
+			"jinji": "static/ch_saryun.png"
+		}
+	},
+	{
+		"id": "bh-wine-boat",
+		"entry": "Bihyung",
+		"year": 577,
+		"at": "He dances without a sound, very badly, standing up in a boat",
+		"alt": "King Jinji dances in silence standing up in a lantern boat on the palace pond while a hundred guests hold their breath.",
+		"scene": "Wide night frame over the Moon Palace pond: one small lantern boat in the lower third, King Jinji standing up in it in his crown and loose red silk, arms out, dancing without a sound and badly, the boat tipping. Lantern boats and paper lamps scattered across black water as bokeh, their reflections broken by ripples; on the bank a long line of guests, Gaya dancers and courtiers frozen mid-laugh, hands over mouths. Behind them, the dark giwa roofs of the palace pavilions. One warm lantern key on the king, everything else ink and water. Gorgeous, drunk, doomed.",
+		"people": [
+			"jinji"
+		],
+		"with": [
+			"place:surabol"
+		],
+		"time": "night"
+	},
+	{
+		"id": "bh-throne-boy",
+		"entry": "Bihyung",
+		"year": 578,
+		"at": "He lifts the boy onto the throne.",
+		"alt": "After midnight the drunk king lifts his ten-year-old nephew onto the throne; the musicians stop.",
+		"scene": "Worm's-eye from the floor of an empty throne hall after midnight. King Jinji, crown askew, red silk open at the collar, lifts a ten-year-old boy in a white sleeping robe up onto the throne with both hands, laughing. The boy, small and very serious, is the young Jinpyung: the same stern brows as the attached portrait but a child's round face, no moustache, bare feet dangling. The throne is far too big for him. Behind them, musicians with their instruments lowered, half in shadow. Lamps along the dais throw both shadows up the red pillars. Tender and dangerous at once.",
+		"people": [
+			"jinji",
+			"jinpyung"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "bh-dohwa-refuses",
+		"entry": "Bihyung",
+		"year": 579,
+		"at": "The hall goes very quiet. The musicians look at the floor.",
+		"alt": "Dohwa, still in her apron, refuses the king in his own hall: then kill me.",
+		"scene": "Two-shot across a lamp-lit hall, low and close. Dohwa, a strikingly beautiful commoner of Saryang ward in plain undyed white hanbok and a rough work apron, stands very straight with her hands folded, chin level, refusing. King Jinji leans forward on his throne toward her, cup in hand, astonished, the first honest expression he has worn in a year. Between them the polished floor reflects one lamp; at the edges, out of focus, musicians staring at their knees and one tipped wine cup spilling. Her stillness is the whole picture.",
+		"people": [
+			"dohwa",
+			"jinji"
+		],
+		"time": "night"
+	},
+	{
+		"id": "bh-sleeve-sign",
+		"entry": "Bihyung",
+		"year": 579,
+		"at": "Saryun lifts one hand and makes a small motion at his own wrist",
+		"alt": "At the back of the hall the deposed king ties back an invisible sleeve for the boy crowned in his place.",
+		"scene": "Long over-the-shoulder shot down a crowded throne hall in grey morning light. Foreground, out of focus: the shoulder of a guard in lamellar. Midground at the back of the hall, between two guards, Saryun in a plain undyed robe, washed and sober, lifting one hand to make a small sleeve-tying motion at his own wrist. Far down the hall on the dais, tiny and sharp, an eleven-year-old boy in a Silla gold crown that is too big for him, looking straight back. The lords between them are a dark blur of black jougwan caps. One shaft from a high window cuts down the aisle and joins the two of them.",
+		"people": [
+			"jinji",
+			"jinpyung"
+		],
+		"time": "day"
+	},
+	{
+		"id": "bh-tenth-night",
+		"entry": "Bihyung",
+		"year": 579,
+		"at": "It is the king. Not a ghost-shaped smoke.",
+		"alt": "On the tenth night the dead king stands at the widow's door, hat in hand.",
+		"scene": "LEGEND VARIANT of the intro-card look (the story as the city believes it, told as real): same painted webtoon figures and painted world, but a slightly heightened folk-tale register: cooler moon-blue palette, drifting silver mist and floating lantern motes, slightly larger-than-life staging. The dokkaebi are truly supernatural here, not costumes. A poor thatched hut in Saryang ward at night, its plank door open. On the threshold, King Jinji exactly as he was alive, in his good robe, a little embarrassed, holding his hat in both hands. Inside, Dohwa in mourning white, one hand on the doorframe, unafraid. Accent: a faint peach-blossom pink on one branch over the door.",
+		"people": [
+			"jinji",
+			"dohwa"
+		],
+		"time": "night",
+		"refs": [
+			"/pl_hut.png"
+		],
+		"refsNote": "the hut (location)"
+	},
+	{
+		"id": "bh-seven-days-cloud",
+		"entry": "Bihyung",
+		"year": 579,
+		"at": "For seven days the house is wrapped in coloured cloud.",
+		"alt": "For seven days coloured cloud wraps a hut in Saryang ward while the neighbours argue in the lane.",
+		"scene": "LEGEND VARIANT of the intro-card look (the story as the city believes it, told as real): same painted webtoon figures and painted world, but a slightly heightened folk-tale register: cooler moon-blue palette, drifting silver mist and floating lantern motes, slightly larger-than-life staging. The dokkaebi are truly supernatural here, not costumes. wide: a small thatched hut in a narrow lane, swallowed by billowing coloured cloud that spills over the eaves and down the lane. Tiny neighbours in white stand in the street with their hands up, arguing. Incense smoke threads up out of the cloud. Topknots, no brimmed hats.",
+		"time": "day",
+		"refs": [
+			"/pl_hut.png"
+		],
+		"refsNote": "the hut (location)"
+	},
+	{
+		"id": "bh-river-bridle",
+		"entry": "Bihyung",
+		"year": 594,
+		"at": "Tonight he takes the river road below Saryang ward.",
+		"alt": "A thin boy grabs the bridle of a stranger's horse on a crumbling river bank: not that way, they say no.",
+		"scene": "Dusk on a high river road below Saryang ward, low from the mud. King Jinpyung, twenty-six, crown off, in a borrowed brown groom's coat over his silk, reins in a dark horse that rears slightly. A thin boy of fourteen in a patched coat has hold of the bridle with both hands, looking not at the king but at an empty space beside the horse's head, and nodding at it. In front of them the bank has just slumped into the river, clods of earth breaking off into brown water. Low red sun behind them, long shadows up the road, reeds in the foreground blurred.",
+		"people": [
+			"jinpyung",
+			"yongsu"
+		],
+		"hat": false,
+		"time": "day"
+	},
+	{
+		"id": "bh-myth-reeds",
+		"entry": "Bihyung",
+		"year": 596,
+		"at": "He gets past fifty men.",
+		"alt": "Myth: Bihyung drops over the palace's west wall into the reeds, where the goblins of Surabol are waiting for him.",
+		"scene": "LEGEND VARIANT of the intro-card look (the story as the city believes it, told as real): same painted webtoon figures and painted world, but a slightly heightened folk-tale register: cooler moon-blue palette, drifting silver mist and floating lantern motes, slightly larger-than-life staging. The dokkaebi are truly supernatural here, not costumes. Night on the bank of the Hwangchun below the west wall of the Moon Palace. A young man in a white sleeping robe lands in the reeds like a bird, sleeves still flying. Waiting for him: the dokkaebi of the attached spirit boards, each copied exactly. Three small rascal goblins in purple, white and red grinning masks with plumes of grey, brown and orange smoke for hair, leaping. A tall Old Man Tree with a hollow wooden face, white beard and a robe of rust-red roots, leaning on a staff. The Rock Lady with a stone face, a crown of rags and boulders and a stone baby on her back. Accent: the orange of the smallest goblin's smoke hair. Bihyung talks to the goblins with his eyes gone solid white.",
+		"people": [
+			"yongsu"
+		],
+		"refs": [
+			"/ch_rascals_spirit.png",
+			"/ch_old_man_tree_spirit.png",
+			"/ch_rock_lady_spirit.png"
+		],
+		"refsNote": "dokkaebi spirit designs: copy each spirit's exact look",
+		"time": "night"
+	},
+	{
+		"id": "bh-myth-bow",
+		"entry": "Bihyung",
+		"year": 596,
+		"at": "The guards swear the things in the reeds bowed to him.",
+		"alt": "Myth: the goblins in the reeds bow to the boy and call him young lord.",
+		"scene": "LEGEND VARIANT of the intro-card look (the story as the city believes it, told as real): same painted webtoon figures and painted world, but a slightly heightened folk-tale register: cooler moon-blue palette, drifting silver mist and floating lantern motes, slightly larger-than-life staging. The dokkaebi are truly supernatural here, not costumes. seen from the top of the palace wall past the blurred spear of a guard in the foreground: far below in the moonlit reeds the dokkaebi of the attached spirit boards bow deeply to a young man in white. The three masked rascals are bent double and grinning, the Old Man Tree bows over his staff with his root robe spreading on the mud, and the Rock Lady lowers her stone-crowned head. Accent: a thin teal wash on the Rock Lady's sash. Bihyung talks to the goblins with his eyes gone solid white.",
+		"people": [
+			"yongsu"
+		],
+		"refs": [
+			"/ch_rascals_spirit.png",
+			"/ch_old_man_tree_spirit.png",
+			"/ch_rock_lady_spirit.png"
+		],
+		"refsNote": "dokkaebi spirit designs: copy each spirit's exact look",
+		"time": "night"
+	},
+	{
+		"id": "bh-myth-bridge-night",
+		"entry": "Bihyung",
+		"year": 602,
+		"at": "In the morning there is a bridge.",
+		"alt": "Myth: in one night the goblins lay a stone bridge across the ditch north of Sinwon temple.",
+		"scene": "LEGEND VARIANT of the intro-card look (the story as the city believes it, told as real): same painted webtoon figures and painted world, but a slightly heightened folk-tale register: cooler moon-blue palette, drifting silver mist and floating lantern motes, slightly larger-than-life staging. The dokkaebi are truly supernatural here, not costumes. wide and low over black water: the dokkaebi of the attached spirit boards build a bridge of flat stones across a ditch by night. The three masked rascals pass stones hand to hand with their smoke hair streaming, the Old Man Tree sets each stone with root fingers, and the Rock Lady carries a slab on her boulder crown. On the far bank, the dark tiled roof of a temple gate. A young man in white sits on the finished half of the bridge with his chin in his hand, supervising. Accent: dawn breaking pale gold at the right edge, the moment before the bell. Bihyung talks to the goblins with his eyes gone solid white.",
+		"people": [
+			"yongsu"
+		],
+		"refs": [
+			"/ch_rascals_spirit.png",
+			"/ch_old_man_tree_spirit.png",
+			"/ch_rock_lady_spirit.png"
+		],
+		"refsNote": "dokkaebi spirit designs: copy each spirit's exact look",
+		"time": "night"
+	},
+	{
+		"id": "bh-bridge-reveal",
+		"entry": "Bihyung",
+		"year": 597,
+		"at": "Nobody asks why forty men nobody can name",
+		"alt": "The goblins of Surabol unmasked: three orphan boys, a one-eyed old stonecutter and a mother with a baby, paid in rice cakes under the Ghost Bridge.",
+		"scene": "The reality behind the myth, the reveal shot. Under the new crooked stone bridge at night, one lantern hanging from the bridge's underside. The 'goblins' are real people, copied exactly from the attached human boards. Three grinning orphan boys in patched brown and white clothes with their purple, white and red goblin masks pushed back on cords round their necks, mouths full of rice cakes. A one-eyed old stonecutter with a long white beard and a mud-stained robe hems frayed to strips, leaning on his staff. A young mother with a heap of rags and stones bound on her head and a real baby on her back, wiping her hands. In the middle, the young madman Yongsu, sleeves tied back, counting silver into their palms from a wax tablet of sums. Warm lantern key from above, stone and water dropping to black around them, wet highlights as bokeh. A secret family, caught.",
+		"people": [
+			"yongsu"
+		],
+		"refs": [
+			"/ch_rascals.png",
+			"/ch_old_man_tree.png",
+			"/ch_rock_lady.png"
+		],
+		"refsNote": "the real people behind the goblin legend: copy each person's exact face, costume and props",
+		"time": "night"
+	},
+	{
+		"id": "bh-chunmyung-bridge",
+		"entry": "Bihyung",
+		"year": 597,
+		"at": "She sits down on the bridge beside him, takes the stylus out of his hand",
+		"alt": "Princess Chunmyung sits down on the Ghost Bridge beside the madman and corrects his sums.",
+		"scene": "Medium two-shot on the crooked stone Ghost Bridge at night, the camera low at the water's edge. Princess Chunmyung, seventeen, in Sacred Bone silk with her binyeo, sits down beside Yongsu without asking and takes the stylus out of his hand, frowning at his wax tablet. He sits with his knees up, a clerk's ink-stained hands, half laughing a beat late. At the far end of the bridge, small and blurred, three boy-shaped silhouettes with masks round their necks peek over the parapet. One lamp she brought sits on the stones between them and lights both faces from below; black water and reflections of it all around.",
+		"people": [
+			"chunmyung",
+			"yongsu"
+		],
+		"refs": [
+			"/ch_rascals.png"
+		],
+		"refsNote": "the three boys (distant silhouettes only)",
+		"time": "night"
+	},
+	{
+		"id": "bh-royal-supper",
+		"entry": "Bihyung",
+		"year": 593,
+		"at": "The king eats with his family when he can",
+		"alt": "Supper in the king's rooms: a furious thirteen-year-old princess, a little sister eating radish, and the madman with the soup.",
+		"scene": "Interior, shut door, one low lamp on a lacquered table. King Jinpyung at the head pretending to read a scroll, his queen beside him watching. Across the table, Princess Chunmyung at thirteen, glaring, arms folded; her little sister Dukman, six, cheerfully eating radish. Kneeling at the end of the table, a thin servant boy carrying a bowl of soup very steadily, eyes on something nobody else can see. Old-master tenebrist room, the lamp raking across the faces and the fish on its plate.",
+		"people": [
+			"jinpyung",
+			"chunmyung",
+			"yongsu"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "bh-gildal-clerk",
+		"entry": "Bihyung",
+		"year": 602,
+		"at": "The next morning there is a new clerk in the palace.",
+		"alt": "The goblin clerk Gildal bows to the king, a fox mask pushed up on his head.",
+		"scene": "Morning in the king's audience room, low three-quarter. Gildal, copied exactly from his portrait, a lean smiling man in an orange robe with a red hood and a fox mask pushed up on his head, bows from the waist with impossible precision, one scroll held out. King Jinpyung leans forward on his seat studying him, amused and wary. Courtiers along the wall pretend not to stare. A shaft of morning light from the lattice falls exactly on Gildal and nowhere else; dust motes in it.",
+		"people": [
+			"gildal",
+			"jinpyung"
+		],
+		"time": "day"
+	},
+	{
+		"id": "bh-myth-gildal-fox",
+		"entry": "Bihyung",
+		"year": 603,
+		"at": "One morning the gate is empty",
+		"alt": "Myth: Gildal turns into a fox-goblin and flees south with a log club over his shoulder.",
+		"scene": "LEGEND VARIANT of the intro-card look (the story as the city believes it, told as real): same painted webtoon figures and painted world, but a slightly heightened folk-tale register: cooler moon-blue palette, drifting silver mist and floating lantern motes, slightly larger-than-life staging. The dokkaebi are truly supernatural here, not costumes. Gildal in his dokkaebi form, copied exactly from the attached fox-goblin board: fox face, wild black mane, orange robe, a log club raised, bare feet, running hard down an empty southern road away from a tall gate tower. Behind him, over the gate roof, the three rascal goblins and the Old Man Tree rising in pursuit as black ink shapes. Accent: the orange of his robe.",
+		"refs": [
+			"/ch_gildal_dokebi.png",
+			"/ch_rascals_spirit.png",
+			"/ch_old_man_tree_spirit.png"
+		],
+		"refsNote": "dokkaebi designs: copy each exactly",
+		"time": "day"
+	},
+	{
+		"id": "mur-guhae-pines",
+		"entry": "Muryuk",
+		"year": 532,
+		"at": "His father is not in chains. His father is on his knees, and talking.",
+		"alt": "Under the canopy in the pines, the king of Golden Gaya kneels before the king of Silla; his son listens behind a pine.",
+		"scene": "Over-the-shoulder from behind a pine trunk, the bark sharp and dark in the foreground. In a clearing of pines on a hill, under a white canopy, King Beopheung of Silla sits on a camp chair, crowned, calm, a buyer. Kneeling on the needles before him, King Guhae of Golden Gaya in his crown, hands open, talking. Silla guards in steel lamellar stand at the edge of the clearing. At the frame's left edge, half hidden behind the pine, Muryuk, a grown man and seasoned commander in a blood-spattered tall Gaya cone helm, red to the elbow, frozen. Smoke from the burning harbour drifts through the trunks behind; one low gold shaft falls on the two kings.",
+		"people": [
+			"beopheung",
+			"guhae",
+			"muryuk"
+		],
+		"with": [
+			"place:geumgwan",
+			"dress:gaya"
+		],
+		"sword": true,
+		"time": "day"
+	},
+	{
+		"id": "mur-guhae-council",
+		"entry": "Muryuk",
+		"year": 537,
+		"at": "Shall we vote, my lords?",
+		"alt": "The bought king of Golden Gaya, now a Silla councillor, smiles down the council table: shall we vote, my lords?",
+		"scene": "Low angle down the length of the Harmony Council table at night, braziers along it. Kim Guhae, once king of Golden Gaya, now in the plain dark robe and black jougwan of a Silla councillor, copied from the attached councillor portrait, leans back in the chair by the draught with an easy, dangerous smile, one finger tapping the table. The great lords of Silla along both sides turn to him in sour silence. Brazier light rakes up their faces; the room recedes into black.",
+		"people": [
+			"guhae"
+		],
+		"faces": {
+			"guhae": "static/ch_guhae_councillor.png"
+		},
+		"time": "night"
+	},
+	{
+		"id": "seo-sukhuljong-gate",
+		"entry": "Seohyun",
+		"year": 595,
+		"at": "Seohyun watches from behind the gatepost.",
+		"alt": "Prince Sukhuljong scolds old Muryuk at the Gaya house gate while the boy Seohyun watches from behind the gatepost.",
+		"scene": "At the timber gate of a modest Gaya house in a Surabol lane. Prince Sukhuljong, copied from his portrait, a haughty royal prince in fine court silk, stands in the gateway talking down. Muryuk, grey and broad, bows low with his hands together. Foreground right, sharp: the boy Seohyun peeking out from behind the gatepost, young face from the attached portrait, fists clenched. Late sun down the lane, long shadows of the three across packed earth.",
+		"people": [
+			"sukhuljong",
+			"muryuk",
+			"seohyeon"
+		],
+		"faces": {
+			"seohyeon": "static/ch_kim_seohyun_young.png"
+		},
+		"with": [
+			"place:surabol"
+		],
+		"time": "day"
+	},
+	{
+		"id": "seo-again-gate",
+		"entry": "Seohyun",
+		"year": 605,
+		"at": "Muryuk bows. He holds it until the royal sedan chair has gone round the corner.",
+		"alt": "Ten years later the prince comes back to the same gate: now it's my daughter.",
+		"scene": "The same Gaya house gate, ten years on, in storm light. Prince Sukhuljong, older, steps down from a royal sedan chair carried by four bearers, finger raised. Muryuk, very old now, bows to him holding the bow. Behind Muryuk in the yard, out of focus, the helm on its stand. Wind in the lane, dust flying, a single break in the cloud lighting the prince's silk and the old man's bent back.",
+		"people": [
+			"sukhuljong",
+			"muryuk"
+		],
+		"with": [
+			"place:surabol"
+		],
+		"time": "day"
+	}
+]

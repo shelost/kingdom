@@ -1,5 +1,5 @@
 {
-	"generated": "2026-10-30 04:52",
+	"generated": "2026-10-30 15:53",
 	"scores": {
 		"rel-gotaso-pumsuk": {
 			"score": 36,
@@ -470,14 +470,18 @@
 			"updated": "2026-10-25 05:13"
 		},
 		"rel-suro-heo": {
-			"score": 37,
-			"raw": 64,
-			"expected": 13,
+			"score": 45,
+			"raw": 69,
+			"expected": 19,
 			"status": "appropriate",
-			"minEpisodes": 2,
+			"minEpisodes": 3,
 			"links": [
 				{
 					"title": "Suro",
+					"kind": "talk"
+				},
+				{
+					"title": "Talhae",
 					"kind": "talk"
 				},
 				{
@@ -486,34 +490,35 @@
 				}
 			],
 			"parts": {
-				"presence": 7,
+				"presence": 11,
 				"talk": 21,
-				"evolution": 9,
-				"grip": 27
+				"evolution": 11,
+				"grip": 26
 			},
-			"grip": 89,
-			"scenes": 2,
-			"exchanges": 51,
-			"words": 495,
-			"lines": 82,
-			"talkedIn": 2,
+			"grip": 87,
+			"scenes": 4,
+			"exchanges": 56,
+			"words": 558,
+			"lines": 95,
+			"talkedIn": 3,
 			"episodes": [
 				"Suro",
+				"Talhae",
 				"Munmu"
 			],
 			"years": [
-				42,
+				-19,
 				673
 			],
 			"events": 2,
-			"interrupts": 31,
-			"questions": 8,
-			"shortLines": 58,
+			"interrupts": 33,
+			"questions": 9,
+			"shortLines": 67,
 			"aiisms": 0,
 			"telegrams": 0,
 			"speeches": 0,
 			"flagged": [],
-			"updated": "2026-10-19 17:05"
+			"updated": "2026-10-30 15:53"
 		},
 		"rel-ibiga-jeonggyeon": {
 			"score": 16,

@@ -1,0 +1,142 @@
+[
+	{
+		"id": "ys-goguryeo-volley",
+		"entry": "Huangdi (皇帝)",
+		"at": "Fire arrows come over the water in sheets",
+		"alt": "Goguryeo warships loose fire arrows at the Silla embassy ship on the Yellow Sea",
+		"scene": "Night, over-the-shoulder from the Goguryeo deck. Foreground left, dark and soft: the steel-lamellar shoulder and red shoulder-wing of a Goguryeo archer at full draw, his arrowhead burning. Midground: a curtain of fire arrows arcing across black sky in long orange streaks, dropping onto the Silla ship's battened sails, one sail catching flame. Background: the full moon smeared behind smoke. Orange fire against blue-black night, nothing else lit. The Silla embassy ship is exactly the attached ship_silla board (broad plain hull, low deck cabin, two masts of cream battened square sails, small blue pennant); the Goguryeo warship is exactly the attached ship_goguryeo board (long high-sided hull, oar gallery, raised stern castle, three cream battened sails, red banners). Same two ships in every frame. Armour is real worn steel lamellar: hundreds of small dull iron plates laced in rows, scuffed and wet, leather and cord showing, weight and dents; never shiny, never toy-like, never cartoon plate. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"with": [
+			"flag:goguryeo",
+			"flag:silla",
+			"ship:silla",
+			"ship:goguryeo"
+		],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "ys-commander-rail",
+		"entry": "Huangdi (皇帝)",
+		"at": "The lead ship carries the commander",
+		"alt": "The Goguryeo commander at the stern rail, helm under her arm, giving the order to fire",
+		"scene": "Red dawn, low three-quarter from the Goguryeo deck. Foreground left: a dark blurred red banner snapping in the wind. Midground right third: the woman commander of the attached portrait at the bow rail, one boot up on the rail, leaning forward, staring at the wreck; her face and armour exactly the portrait: high topknot with long black hair blowing, grey fur collar, steel lamellar over red cloth. No sword in hand. Background: the burning, heeled-over Silla ship small in the haze, and behind it the red sun breaking the horizon, lighting her face from the front in hard red-gold. Most of the frame is dark sea and smoke. The Silla embassy ship is exactly the attached ship_silla board (broad plain hull, low deck cabin, two masts of cream battened square sails, small blue pennant); the Goguryeo warship is exactly the attached ship_goguryeo board (long high-sided hull, oar gallery, raised stern castle, three cream battened sails, red banners). Same two ships in every frame. Armour is real worn steel lamellar: hundreds of small dull iron plates laced in rows, scuffed and wet, leather and cord showing, weight and dents; never shiny, never toy-like, never cartoon plate. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"with": [
+			"flag:goguryeo",
+			"ship:silla",
+			"ship:goguryeo"
+		],
+		"battle": true,
+		"sword": true,
+		"time": "night",
+		"people": [
+			"sooyoung"
+		]
+	},
+	{
+		"id": "ys-capsize",
+		"entry": "Huangdi (皇帝)",
+		"at": "the ship rolls, slowly",
+		"alt": "The burning embassy ship rolls over under the Goguryeo ram",
+		"scene": "Red dawn, very wide and minimal. The horizon is a low line; the sun is just breaking, blood-red, behind the Goguryeo warship's three sails on the right, its bow rammed into the Silla ship. On the left the Silla ship heels over, masts tilting toward the water, sails burning, a last pale moon fading in the dark upper-left sky. Foreground: dark swell and floating timber, out of focus. Two thirds of the frame is sky: black at the top bleeding into red at the waterline. Silla is the setting moon, Goguryeo the rising sun. The Silla embassy ship is exactly the attached ship_silla board (broad plain hull, low deck cabin, two masts of cream battened square sails, small blue pennant); the Goguryeo warship is exactly the attached ship_goguryeo board (long high-sided hull, oar gallery, raised stern castle, three cream battened sails, red banners). Same two ships in every frame. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"with": [
+			"flag:goguryeo",
+			"flag:silla",
+			"ship:silla",
+			"ship:goguryeo"
+		],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "ys-wrong-face",
+		"entry": "Huangdi (皇帝)",
+		"at": "She kneels in the water and turns him over",
+		"alt": "Kneeling in the wreck, the Goguryeo commander turns over the man in the envoy's coat; it is not Chunchu",
+		"scene": "Red dawn, close and low at the waterline among floating wreckage. Foreground: black water and a blurred broken plank. Midground: the woman commander of the attached portrait (high topknot, fur collar, steel lamellar over red) kneeling waist-deep, turning over a drowned man in a white ambassador robe with purple bands and a feathered cap; his face, slightly broader, older, with a short trimmed beard, catches the red light. Her expression: shock curdling into fury. Background: the Goguryeo warship's dark hull and the red sun low behind it. Armour is real worn steel lamellar: hundreds of small dull iron plates laced in rows, scuffed and wet, leather and cord showing, weight and dents; never shiny, never toy-like, never cartoon plate. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"battle": true,
+		"time": "night",
+		"with": [],
+		"people": [
+			"sooyoung"
+		]
+	},
+	{
+		"id": "ys-small-boat",
+		"entry": "Huangdi (皇帝)",
+		"at": "a fishing boat with a patched sail runs for home",
+		"alt": "Chunchu, in plain hemp, rows a small fishing boat home and looks back at the smoke",
+		"scene": "Pre-dawn, extreme wide, almost empty. A huge dark sea fills the frame; far on the left horizon a faint red glow and smoke where the battle burns. In the right third, tiny, a small fishing boat with one patched lug sail runs east; in it Kim Chunchu of the attached portrait in a plain rough rower's coat, looking back over his shoulder. The pale moon hangs above him over Silla. Foreground: a dark out-of-focus wave crest. Magenta catch on the wet sail edge. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"people": [
+			"chunchu"
+		],
+		"time": "night",
+		"with": []
+	},
+	{
+		"id": "ys-cap-handover",
+		"entry": "Huangdi (皇帝)",
+		"at": "sets it on On Gunhae",
+		"alt": "In the hold by lamplight, Chunchu ties his own feathered cap onto On Gunhae, both weeping",
+		"scene": "Night, the evening before, inside the Silla ship's low deck cabin. One oil lamp set on the plank floor between them lights both faces from below. Kim Chunchu (LEFT face) in his white-and-purple ambassador robe, kneeling, is lifting his own tall feathered cap off his head with both hands; On Gunhae (SECOND face), lean, short trimmed beard, in a plain dark attendant's robe, kneels before him with head bowed, ready to receive it. Chunchu's eyes are wet. Foreground: the blurred lamp flame. Background: timber ribs of the hull falling to black. Magenta silk catch on Chunchu's sleeve. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"people": [
+			"chunchu",
+			"ongunhae"
+		],
+		"time": "night",
+		"with": []
+	},
+	{
+		"id": "ys-lookout",
+		"entry": "Huangdi (皇帝)",
+		"at": "the boy at the masthead stops singing",
+		"alt": "Under a full moon, the Silla lookout sees a red banner astern",
+		"scene": "Night, full moon over the Yellow Sea. Worm's-eye from the deck of the Silla ship up the mast: foreground, a dark blurred coil of rope and the curved edge of a battened sail; midground, a skinny Silla ship's boy at the masthead clinging to the mast, mouth wide shouting, arm flung out pointing; background, far across a black sea striped with moonlight, one tiny dark three-masted silhouette with red banners sliding out of the haze. The pale full moon hangs huge and cold behind the boy. The Silla embassy ship is exactly the attached ship_silla board (broad plain hull, low deck cabin, two masts of cream battened square sails, small blue pennant); the Goguryeo warship is exactly the attached ship_goguryeo board (long high-sided hull, oar gallery, raised stern castle, three cream battened sails, red banners). Same two ships in every frame. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"battle": true,
+		"time": "night",
+		"with": [
+			"ship:silla",
+			"ship:goguryeo"
+		]
+	},
+	{
+		"id": "ys-chase",
+		"entry": "Huangdi (皇帝)",
+		"at": "The chase runs into the small hours",
+		"alt": "The Goguryeo warship gains on the embassy ship under the moon",
+		"scene": "Night chase, dutch angle low over black water. Foreground right, out of focus: the high dark stern of the Goguryeo warship and its oar blades smashing the swell into white spray. Midground, sharp, far ahead across moonlit water: the smaller Silla ship running with both sails full, wake streaming. Its stern lantern is the only warm point. Sky mostly black with the full moon low behind the fleeing ship. Speed in the spray and the leaning masts. The Silla embassy ship is exactly the attached ship_silla board (broad plain hull, low deck cabin, two masts of cream battened square sails, small blue pennant); the Goguryeo warship is exactly the attached ship_goguryeo board (long high-sided hull, oar gallery, raised stern castle, three cream battened sails, red banners). Same two ships in every frame. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"battle": true,
+		"time": "night",
+		"with": [
+			"ship:silla",
+			"ship:goguryeo"
+		]
+	},
+	{
+		"id": "ys-boarding",
+		"entry": "Huangdi (皇帝)",
+		"at": "Iron hooks bite the embassy rail",
+		"alt": "Goguryeo marines board; Silla soldiers meet them at the burning rail",
+		"scene": "Night boarding, extreme low angle along the Silla ship's rail. Foreground, huge and blurred: an iron grappling hook biting into the timber rail, its rope taut up out of frame. Midground: Goguryeo soldiers in steel lamellar with red shoulder-wings swinging over the gap, one leaping with a ring-pommel sword raised, Silla soldiers in steel lamellar with blue cloth at the collar and tall pointed helms bracing with spears. Background: the high Goguryeo hull towering black, burning sail-cloth falling in sparks. One hard key of firelight from the right. The Silla embassy ship is exactly the attached ship_silla board (broad plain hull, low deck cabin, two masts of cream battened square sails, small blue pennant); the Goguryeo warship is exactly the attached ship_goguryeo board (long high-sided hull, oar gallery, raised stern castle, three cream battened sails, red banners). Same two ships in every frame. Armour is real worn steel lamellar: hundreds of small dull iron plates laced in rows, scuffed and wet, leather and cord showing, weight and dents; never shiny, never toy-like, never cartoon plate. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"battle": true,
+		"sword": true,
+		"time": "night",
+		"with": [
+			"ship:silla",
+			"ship:goguryeo"
+		]
+	},
+	{
+		"id": "ys-stern-ladder",
+		"entry": "Huangdi (皇帝)",
+		"at": "They hold the stern ladder",
+		"alt": "Silla soldiers hold the stern ladder while the envoy sits above",
+		"scene": "Night, top-down three-quarter onto the narrow stern ladder of the Silla ship. Foreground: a blurred burning spar crossing the bottom of the frame. Midground: four Silla soldiers in steel lamellar and tall pointed helms locked shoulder to shoulder on the ladder, spears down, holding against Goguryeo soldiers in steel lamellar with red wings pressing up from the deck below, blades and spear-shafts tangled. The deck around them is black; only firelight from a burning sail rakes across the helms. The Silla embassy ship is exactly the attached ship_silla board (broad plain hull, low deck cabin, two masts of cream battened square sails, small blue pennant); the Goguryeo warship is exactly the attached ship_goguryeo board (long high-sided hull, oar gallery, raised stern castle, three cream battened sails, red banners). Same two ships in every frame. Armour is real worn steel lamellar: hundreds of small dull iron plates laced in rows, scuffed and wet, leather and cord showing, weight and dents; never shiny, never toy-like, never cartoon plate. Three planes: a dark out-of-focus foreground shape near the lens, the beat razor-sharp in the midground, the background dissolving into sea haze and smoke; more than half the frame quiet negative space (black sea, dark sky) so the one lit point carries the eye.",
+		"battle": true,
+		"sword": true,
+		"time": "night",
+		"with": [
+			"ship:silla",
+			"ship:goguryeo"
+		]
+	}
+]

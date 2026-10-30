@@ -1,0 +1,37 @@
+[
+	{
+		"id": "ulbul-house-brothers",
+		"alt": "Suchun pours for Ilu; the house still eats in one room",
+		"ratio": 2
+	},
+	{
+		"id": "ulbul-house-boys",
+		"alt": "Boy Saburu watches the cups; Dolgo smiles at nothing",
+		"ratio": 2
+	},
+	{
+		"id": "ulbul-bongsang-dalga",
+		"alt": "New king Bongsang and uncle Dalga on the first step",
+		"ratio": 2
+	},
+	{
+		"id": "ulbul-bongsang-dolgo",
+		"alt": "Dolgo leaves a cup where his brother can reach",
+		"ratio": 2
+	},
+	{
+		"id": "ulbul-bongsang-locked",
+		"alt": "Locked room: Bongsang bloodied, crown already off",
+		"ratio": 2
+	},
+	{
+		"id": "ulbul-market-full",
+		"alt": "Bird’s-eye: the market alive",
+		"ratio": 2
+	},
+	{
+		"id": "ulbul-market-famine",
+		"alt": "Same bird’s-eye: the market empty",
+		"ratio": 2
+	}
+]

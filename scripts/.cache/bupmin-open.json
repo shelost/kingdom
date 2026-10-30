@@ -1,0 +1,83 @@
+[
+	{
+		"kind": "scene",
+		"label": "Flowering Youth",
+		"ko": "화랑의 꽃"
+	},
+	{
+		"kind": "p",
+		"html": "Fifteen is old enough for the headband. It is not old enough to invent a country, though Bupmin keeps trying.",
+		"ko": "열다섯이면 머리띠를 맬 나이다. 나라를 발명할 나이는 아니다. 법민은 그래도 자꾸 해 본다."
+	},
+	{
+		"kind": "map",
+		"year": 641,
+		"places": [
+			"surabol",
+			"pyongyang"
+		]
+	},
+	{
+		"kind": "p",
+		"html": "The Hwarang train under the Marshal: horse, bow, verse, and above all gyuku, a horse-ball game a lazier age will call polo.",
+		"ko": "화랑은 장군 밑에서 배운다. 말, 활, 노래, 그리고 무엇보다 격구. 훗날 게으른 시대가 폴로라 부를, 말 위의 공놀이다."
+	},
+	{
+		"kind": "p",
+		"html": "His father is in the Council chamber, collecting votes. His uncle keeps the yard, and the yard is where Bupmin lives now.",
+		"ko": "아버지는 화백 회의실에서 표를 모으고 있다. 연무장은 외숙이 지킨다. 법민은 이제 그 연무장에서 산다."
+	},
+	{
+		"kind": "diagram",
+		"diagram": "hwarang",
+		"title": "Yard as state · 화랑",
+		"caption": "Class 51 still sits together — Bidam, Yushin, Alchun.",
+		"ko": "51기는 아직도 같이 앉는다 — 비담, 유신, 알천."
+	},
+	{
+		"kind": "p",
+		"html": "Yushin does not soften the yard because the boy is royal. He softens nothing. The new boys sleep six to a hall and learn each other's snores before each other's ranks. They trade rumours about the Marshal like relics. He sleeps in his armour. He bathes in a haunted lake. He can hear a lie drop a shoulder at fifty paces.",
+		"ko": "유신은 소년이 왕손이라고 연무장을 무르게 두지 않는다. 무엇 하나 무르게 두지 않는다. 새로 온 소년들은 한 방에 여섯씩 자며, 서로의 골품보다 코 고는 소리를 먼저 익힌다. 장군 소문은 성물처럼 오간다. 갑옷을 입은 채 잔다더라. 귀신 나오는 호수에서 목욕한다더라. 오십 보 밖에서도 거짓말에 어깨 처지는 소리를 듣는다더라."
+	},
+	{
+		"kind": "scene",
+		"label": "First Morning",
+		"ko": "첫날 아침"
+	},
+	{
+		"kind": "p",
+		"html": "On a new boy’s first morning, the yard gives him a senior to show him round. Somebody always gets the prince. This year it is the most nervous man in the hall.",
+		"ko": "새로 들어온 아이의 첫날 아침, 연무장은 선배 하나를 붙여 준다. 왕자는 누군가 꼭 맡게 된다. 올해는 숙소에서 제일 긴장 잘하는 사람이 걸렸다."
+	},
+	{
+		"kind": "p",
+		"html": "Kim Pumsuk is five years older, True Bone, very handsome, and so polite he apologises to doors.",
+		"ko": "김품석은 다섯 살 위의 진골이고, 아주 잘생겼고, 문에다 대고도 사과할 만큼 예의가 바르다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "pumsuk",
+		"chip": "#7aa8d8",
+		"lines": [
+			"마마. 김품석입니더. 제가— 마마를 모시고— 여기가 숙소입니다.",
+			"저기서 주무십니다. 한 방에 여섯이고요. 송구합니더.",
+			"그리고 저기가 뒷간입니다. 저기도 뒷간입니다. 둘입니다. 송구합니더."
+		],
+		"en": [
+			"Your Highness. Kim Pumsuk. I’ve been— I’m to show you— this is the hall.",
+			"You sleep there. Six to a room. Forgive me.",
+			"And that’s the latrine. That’s also the latrine. There are two. Forgive me."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "munmu",
+		"chip": "#3fa9c9",
+		"lines": [
+			"뒷간이 와 송구하신데예?"
+		],
+		"en": [
+			"Why are you sorry about the latrines?"
+		]
+	}
+]

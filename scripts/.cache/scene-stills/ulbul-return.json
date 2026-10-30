@@ -1,0 +1,88 @@
+[
+	{
+		"id": "ulbul-chang-please",
+		"entry": "Ulbul",
+		"at": "Please. My knees hurt.",
+		"alt": "Changjori on both knees in river mud, face huge, begging a salt seller to be king.",
+		"people": ["changjori", "micheon:exile"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL, like a somber shonen splash: WORM'S-EYE from the wet packed-earth, faces HUGE in the central band. DAY GROUND, paper-white haze sky. ONE DEVICE: the riverbank as a rising diagonal. LEFT of the sheet = CHANGJORI, lean Korean face, short goatee, long black hair, small black cap with TWO thin red antenna-feathers (NOT a full jougwan), red po over white inner, black shoulder boards, court silk WRECKED with mud, BOTH KNEES in the mud, looking UP, mouth open on a plea, eyes wet, frightened of his own courage — REDRAW as bold webtoon from the sheet, never the clasped-hands portrait stance. SECOND = ULBUL the salt seller, FACE from /ch_ulbul.png: young dry Korean face, long black braid, straw satgat with a red cloth tail, white hemp po, brown inner, red sash, salt sack on the back, standing above Changjori, looking down, the sly look GONE, somber. #C30000 as the hard key on the red sash and the ruined silk, never a glow. Thick ink, cel shadow, manhwa eyes, white sclera black iris. No text. No watermark. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-chang-walks",
+		"entry": "Ulbul",
+		"at": "Changjori walks up the bank.",
+		"alt": "Changjori's silhouette walks up the riverbank away from Ulbul; the salt seller watches the empty mud.",
+		"people": ["changjori", "micheon:exile"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL, somber Rückenfigur splash: WIDE, tiny figures, huge paper-white sky. ONE DEVICE: the riverbank climbing left to right as a hard dark slope. LEFT of the sheet = CHANGJORI seen FROM BEHIND, a black-red silhouette mid-stride UP the bank, small black cap with two thin red feathers, ruined red silk, mud on the hem, he does NOT look back. SECOND = ULBUL small in the lower-left, satgat, white po, salt sack, standing in the mud watching. Fallen empty space. DAY GROUND, high-key white haze, crushed ink on the two figures. #C30000 only as a thin red on the sash and the ruined silk. Bold thick ink, graphic color planes, manhwa, not photoreal. No army. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-ditch-brook",
+		"entry": "Ulbul",
+		"at": "A boy still holding a hand.",
+		"alt": "Ulbul stands in silhouette over a famine ditch of fallen villagers; a boy still holding a hand.",
+		"people": ["micheon:exile"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL, somber: WORM'S-EYE then a slight dutch. DAY GROUND, vast paper-white sky taking half the frame. ONE DEVICE: a dark famine ditch cutting the lower third. LEFT = ULBUL standing in the midground as a tall dark silhouette, satgat brim a hard black disc, white po a pale plane, salt sack, looking down — FACE from /ch_ulbul.png when the light catches the cheek, somber, the sly look gone. In the ditch: a few unnamed Korean villagers in undyed white hemp, fallen, a SMALL BOY still holding an adult hand. No named extras. Graphic emptiness, thick ink, cel shadow. #C30000 only as a red cloth-tail on the satgat. Not photoreal. No text. No watermark. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-ummo-thanks",
+		"entry": "Ulbul",
+		"at": "Seven years. You never asked my name.",
+		"alt": "Worm's-eye of Ummo's salt stall: Ulbul bows his thanks, Ummo tying a sack, Jaemo watching, a crowd around the trestle.",
+		"people": ["micheon:exile", "eummo", "jaemo"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL, worm's-eye splash of a working stall: camera LOW on packed earth looking UP at a timber trestle of salt sacks as if the stall were a ship. DAY GROUND, paper-white sky behind. ONE DEVICE: the trestle as a dark mouth-shape filling the upper third. LEFT of the sheet = ULBUL, satgat with red tail, white hemp, red sash, salt sack, standing in the stall, head slightly bowed, somber thanks, FACE from /ch_ulbul.png. SECOND = UMMO, older round Korean face, WHITE hair in a topknot, thin white moustache and goatee, brick-red po with white sleeves and dotted hem, navy-black sash, stocky, tying a sack, not looking at him, FACE from /ch_ummo.png. THIRD = JAEMO, square Korean face, no beard, satgat with a long red tail-cord, white hemp, rust-red vest, watching from the side. A few unnamed stall extras in undyed white at the edges, small. Faces LARGE in the central band. #C30000 on Ulbul's sash, never a glow. Thick ink, cel, manhwa. No text. No sound-effect lettering. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-cave-kneel",
+		"entry": "Ulbul",
+		"at": "He kneels in a cave older than his name.",
+		"alt": "Ulbul kneels alone in Jumong Cavern, satgat on, salt sack beside him, leaf-light from the cave mouth.",
+		"people": ["micheon:exile"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth: trees in the opening, leaf-light, packed earth, dark stone overhead",
+		"time": "night",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL. NIGHT inside the attached cave. LOW THREE-QUARTER. ONE DEVICE: the bright cave-mouth as a hard leaf-green stamp in the dark. LEFT = ULBUL kneeling on packed earth in the midground, satgat with red tail, white hemp po, red sash, salt sack set down beside him, head bowed, waiting the way a salt seller waits — FACE from /ch_ulbul.png, somber. Keep the EXACT cave architecture of the attached place board: wide stone mouth, tree trunks in the opening, forest and a far ridge through the light. #C30000 as a lamp-red on the sash from a small practical flame at the left of the lens, never a glow. Thick ink, crushed black, manhwa face. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-jumong-hey",
+		"entry": "Ulbul",
+		"at": "Hey. You. Salt.",
+		"alt": "Jumong sits in the dark of the cavern and names the kneeling salt seller; first time the book shows his face.",
+		"people": ["jumong:exile", "micheon:exile"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth",
+		"time": "night",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL, INTIMATE two-shot. NIGHT cavern. LOW THREE-QUARTER, slight dutch. ONE DEVICE: a shaft of leaf-light from the cave mouth cutting the dark in a hard diagonal. LEFT of the sheet = JUMONG, FACE from /ch_jumong.png: lean archer, black hair half-bound under a knotted RED headband with long tails, RED silk po over charcoal inner, rope sash, bow across his back, CLEAN-SHAVEN (ignore the portrait moustache and goatee), sitting already in the dark on a rock, looking at the boy, SERIOUS — the grin is gone, not a grim founder statue, a young man who has decided. SECOND = ULBUL kneeling, satgat, white hemp, salt sack, looking up startled. ONE of each, never clone. Same cave as the attached board. #e8563f as the hard key on Jumong's red silk, #C30000 as a smaller bounce on Ulbul's sash, real light, never a glow. Thick ink, manhwa eyes, white sclera black iris. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-jumong-satgat",
+		"entry": "Ulbul",
+		"at": "Jumong puts a hand on the satgat.",
+		"alt": "White-ground two-shot: Jumong sets his hand on Ulbul's satgat as if handing a crown back.",
+		"people": ["jumong:exile", "micheon:exile"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL, white-ground two-shot like a quiet hat-pass splash. DAY GROUND, blinding paper-white, almost no place, faint cave-stone dissolving at the edges. MEDIUM, slight low angle. ONE DEVICE: the satgat brim as a hard straw disc between them. LEFT of the sheet = JUMONG standing, taller, RED headband, RED po, charcoal inner, CLEAN-SHAVEN, FACE from /ch_jumong.png, SERIOUS, one hand set gently on the younger man's satgat as if handing it back, as if making it a crown for a minute. SECOND = ULBUL standing still, smaller, white hemp, red sash, long braid, FACE from /ch_ulbul.png, eyes down, mouth tight. Bare feet on faint packed earth. #e8563f in Jumong's silk as the only saturated plane, #C30000 on Ulbul's sash. Thick ink, cel, manhwa, not photoreal. No text. No watermark. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-second-yes",
+		"entry": "Ulbul",
+		"at": "Mud again.",
+		"alt": "Dawn at the cavern mouth: Changjori on his knees in the mud again; Ulbul in the mouth of the cave says yes.",
+		"people": ["changjori", "micheon:exile"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth behind them",
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ICONIC COMIC STILL. DAWN, paper-white sky through the cave mouth. WORM'S-EYE from the mud. ONE DEVICE: the cave mouth as a dark stone arch, the attached architecture exactly — trees in the opening, leaf-light, packed earth. LEFT of the sheet = CHANGJORI on BOTH KNEES in the foreground mud, lean face, short goatee, small black cap with two thin red feathers, ruined red silk, looking up, exhausted and sure. SECOND = ULBUL standing in the cave mouth, satgat, white hemp, red sash, salt sack, looking down, the yes already on his face. Faces LARGE. #C30000 on the sash and the ruined silk. Thick ink, manhwa, somber. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	}
+]

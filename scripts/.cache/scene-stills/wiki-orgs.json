@@ -1,0 +1,128 @@
+[
+	{
+		"id": "org_ghostchildren",
+		"entry": "Yongsu",
+		"year": 602,
+		"time": "night",
+		"alt": "The Ghost Children in the storehouse under the west wall, masks turned toward one lamp",
+		"people": ["yongsu", "gildal", "gwija_elder", "gwija_redmask"],
+		"faces": { "gwija_elder": "static/ch_old_man_tree.png", "gwija_redmask": "static/ch_rascals.png" },
+		"scene": "Low three-quarter wide from the wet stone floor inside an old stone storehouse under the west wall of Surabol, reached through a reed-choked culvert where the stream goes in. ONE device: a clay oil lamp set down on the floor beside a hand-drawn plan of the palace spread on the stone, the only light; everything else falls off into black. Yongsu crouches over the plan, wet to the knees, one finger on the palace wall. Gildal kneels across from him with a mason's knotted cord over his wrist, explaining. Behind them the one-eyed old man (one eye a puckered scar) leans on a staff. Three orphan boys who are not brothers stand together; the smallest wears a red painted wooden mask and will not take it off. A small girl in a white fox mask sits on the culvert step. A woman with a baby on her back is half in shadow. Deep behind them, rows of carved wooden masks on dozens of dark shapes all turned toward the lamp, faces hidden. Everyone in the reeds wears plain undyed white hemp, patched and muddy. Water runs across the culvert mouth catching the lamplight as round painted bokeh. Fully clothed; children read as children."
+	},
+	{
+		"id": "org_hwarang",
+		"entry": "Academy",
+		"year": 612,
+		"time": "day",
+		"alt": "Young Hwarang mid-drill with wooden swords in the yard at dawn",
+		"people": ["yushin", "bidam", "alchun"],
+		"scene": "Worm's-eye from the packed earth of the Hwarang training yard in Surabol at first light, a giwa-roofed boarding hall behind. ONE device: the long diagonal of a timber veranda edge cutting the frame. Three teenage Hwarang in white training jeogori with crescent-moon headbands, mid-drill with plain wooden practice swords (mokgeom, no metal, no guard): the one in front lunging toward the lens, the second parrying, the third watching with arms crossed and a grin. Behind them a row of younger boys in white repeat the form as massed painted shapes in the dawn haze. Dust kicked up in the low sun. Boys, sweat and breath, not a parade."
+	},
+	{
+		"id": "org_harmonycouncil",
+		"entry": "Harmony Council",
+		"year": 632,
+		"time": "night",
+		"alt": "Six councillors around one lamp, three sleeves raised and three down",
+		"people": ["euljae", "bidam", "alchun"],
+		"scene": "Low angle from the floor beside one clay lamp in the centre of a dark timber council hall in Surabol. ONE device: a ring of six councillors kneeling on mats around the lamp, the circle read from above-left. Initial vote, split three to three: three wide purple court sleeves raised into the light, three sleeves resting on knees. The old High Councillor sits at the head of the ring, eyes closed. Bidam, sleeve down, leans forward with prayer beads on his wrist, already arguing; Alchun, sleeve up, frowns at him. Their faces lit from below by the lamp, the rafters lost in black. Purple silk catches the key in loaded strokes."
+	},
+	{
+		"id": "org_ministersassembly",
+		"entry": "Deer Rock",
+		"year": 632,
+		"time": "day",
+		"alt": "Baekje ministers on two facing benches on Deer Rock, counting sleeves",
+		"people": ["ministersatek", "eldersatek"],
+		"refs": ["/pl_deer_rock.png"],
+		"refsNote": "the Deer Rock place board: keep this rock and river",
+		"scene": "High three-quarter wide over the flat top of Deer Rock above the river near Sabi, the rock wet as if it sweats. ONE device: the open aisle between two facing rows of low benches, a straight line toward the river. Baekje ministers in red and purple court robes with jougwan caps sit on both sides, some sleeves raised, some folded; a majority is being counted. The Prime Minister stands in the aisle with one hand up, mid-count, a sly half-smile. The old clan elder sits closest to camera, chin on his fist, unimpressed. River mist and a pale morning sun behind; the far benches dissolve into haze."
+	},
+	{
+		"id": "org_royalsecretariat",
+		"entry": "Royal Secretariat",
+		"year": 651,
+		"time": "night",
+		"alt": "Chunchu reads a petition at the head of the Secretariat's lamp-lit hall of clerks",
+		"people": ["chunchu", "jukji"],
+		"scene": "Long receding one-point shot down a narrow timber hall in Surabol at night. ONE device: two converging rows of low writing desks lit by small lamps, a corridor of light pointing at the far end. Clerks in plain blue and yellow robes bend over scrolls, brushes moving, seals and stacks of folded petitions beside them. At the head of the hall, large in the foreground, Chunchu stands reading a petition held up to a lamp, the paper glowing; beside him Jukji presses the Secretariat's seal into red paste. The rows of clerks and lamps melt into bokeh behind them. Ink, paper and lamp smoke."
+	},
+	{
+		"id": "org_fivetribes",
+		"entry": "Jolbon",
+		"year": -37,
+		"time": "night",
+		"alt": "Five tribal chiefs around a packed-earth ring at Jolbon, voting the young archer king",
+		"people": ["jumong", "yeontabal"],
+		"refs": ["/pl_jolbon.png"],
+		"refsNote": "the Jolbon place board: keep this valley and its roofs",
+		"scene": "Overhead three-quarter shot of a packed-earth ring in Tabal's yard at Jolbon at dusk, a bonfire at its centre. ONE device: the circle of the ring with five standards planted around it: a black crow, a horse skull, a cow's horns, a boar's head, a dog pelt on a pole. Five chiefs in furs and undyed white sit under their standards; the old crow chief raises his hand first. Young Jumong, clean-shaven, bow on his back, stands in the ring by the fire, grinning as if he can't believe it. Smoke and sparks drift up into a granulated dusk sky over the mountains."
+	},
+	{
+		"id": "org_highsummit",
+		"entry": "Yeon’s Massacre",
+		"year": 642,
+		"time": "night",
+		"alt": "Gesomun standing before the young king Bojang, four commander chairs empty",
+		"people": ["gesomun", "bojang", "dosuryu"],
+		"sword": true,
+		"scene": "Worm's-eye from the floor of the High Summit hall in Pyongyang at night, a brazier on the floor in the foreground. ONE device: a row of four empty lacquered commander chairs receding in a diagonal line, each with a crow-stamped sword laid across its seat. Gesomun stands in the aisle with his crow swords fanned on his back, looking straight up at the dais. On the dais the new young king Bojang sits very still, hands on his knees. Dosuryu stands a step below with an unrolled scroll, already writing the minutes. Firelight from the brazier rakes up their faces; the red columns behind dissolve into black."
+	},
+	{
+		"id": "org_bonerank",
+		"entry": "Queen Sunduk",
+		"year": 642,
+		"time": "night",
+		"alt": "A Surabol palace stair where robe colour decides who stands on which step",
+		"people": ["chunchu", "yushin"],
+		"scene": "Low angle up a long stone palace stair in Surabol at dusk. ONE device: the stair itself as a stepped pyramid of colour bands climbing toward a single lit doorway at the top. On the lowest steps a crowd of officials in yellow robes, above them blue, above them scarlet; each band stops at its own step. Near the top, in purple, Chunchu and Yushin stand side by side, one step below the doorway; Chunchu looks up at the empty threshold, Yushin looks back down at the yellow sleeves. Through the doorway, a throne behind a screen, nobody in it. Lamplight from the door falls down the stair and dies in the lower bands."
+	},
+	{
+		"id": "org_eightclans",
+		"entry": "Eight Great Clans",
+		"year": 632,
+		"time": "night",
+		"alt": "Eight clan banners behind eight seated patriarchs in a Sabi hall",
+		"people": ["eldersatek", "elderyunbi"],
+		"refs": ["/pl_sabi_palace.png"],
+		"refsNote": "the Sabi palace place board: keep this architecture",
+		"scene": "Low three-quarter wide inside a lacquered hall of the Sabi palace at night. ONE device: a straight row of eight tall clan banners hanging from the rafters behind eight low seats, each a different dark colour. The patriarchs of the eight houses sit beneath them on cushions with wine tables; the Satek elder in front leans in to pour for the elder of the Yunbi house, smiling like a man who owns the room; the Yunbi elder accepts the cup without drinking. An empty royal seat sits small and far at the end of the hall. Lamps on the floor between the tables; the banners lose their tops in shadow."
+	},
+	{
+		"id": "org_four_divisions",
+		"entry": "Three Realms",
+		"style": "ink",
+		"alt": "Hannim above the clouds; below him the world divides into three realms",
+		"people": ["hwanin", "sobyeol", "daebyeol"],
+		"scene": "Joseon sumi ink, vertical layering in a 2:1 frame composed for a 2:1 letterbox crop. ONE device: three horizontal bands divided by flying-white dry-brush strokes. At the top centre, huge and calm above the clouds, the old Creator Hannim, robes splashed in black ink. Below him on the left the land of the living: tiny mountains and a river, Little Star standing over it. On the right the land of the dead: a black mass of ink with a faint gate, Big Star standing over it. Between and beyond them to the west, a field of flowers in one translucent pale-red wash, the only colour. Mortals nowhere; gods may fill the frame. FULL-BLEED, no paper margin."
+	},
+	{
+		"id": "org_restorationarmy",
+		"entry": "King Pungjang",
+		"year": 661,
+		"time": "day",
+		"alt": "Pungjang, Boksin and Dochim on the Juryu wall above a host of farmers with spears",
+		"people": ["pung", "boksin", "dochim"],
+		"scene": "Worm's-eye from the slope below the stone wall of Juryu fortress at dawn. ONE device: a single huge yellow banner on a pole on the wall, cracking in the wind, splitting a granulated storm sky. On the wall beneath it: newly crowned Pung in the middle, uncertain; the shaven-headed general with the long red shaft on his left, scowling down at the slope; the monk-general with black prayer beads on his right, calm. Below them the restoration host climbs toward the wall: farmers and fishermen in undyed white with sickles, hoes and bamboo spears, a few in mismatched lamellar, as massed painted shapes in the haze. One break in the cloud lights the three on the wall."
+	},
+	{
+		"id": "org_tangcourt",
+		"entry": "Huangdi (皇帝)",
+		"year": 655,
+		"time": "night",
+		"alt": "The Western court in Daming Palace at night, officials in two lines, a consort behind the screen",
+		"people": ["gaozong", "wuzetian"],
+		"with": ["place:changan"],
+		"scene": "Symmetric one-point shot down the length of Hanyuan Hall at night, lit like a Chinese historical drama. ONE device: two inward-facing lines of officials in dark robes with tablets, receding toward the dais on a reflective black floor. On the dais the emperor sits in yellow before a tall painted screen. Behind the screen, lit from behind by one lamp so she reads through the silk, the consort Wu stands, her head turned toward the officials. Red lanterns and many practical flames spill gold onto the floor; incense haze; cool blue-green shadows between the columns."
+	},
+	{
+		"id": "org_tangexpedition",
+		"entry": "Sabi",
+		"year": 660,
+		"time": "day",
+		"alt": "Tang tower-ships coming up the river at dawn, Su Dingfang and Xue Rengui on the prow",
+		"people": ["sudingfang", "xuerengui"],
+		"with": ["ship:tang"],
+		"scene": "Low over the river water at dawn, a Tang tower-ship's prow towering into frame from the left. ONE device: a line of tower-ships receding up the river in a long diagonal into mist, completely PLAIN deep red sails, no emblem. On the prow platform, three metres above the water, the old marshal Su Dingfang points upriver; beside him Xue Rengui in a white war coat over steel lamellar holds his halberd upright. Oars dip in unison along the hull; spray, mist, a pale low sun behind the fleet. Quiet before the landing, not a battle."
+	}
+]

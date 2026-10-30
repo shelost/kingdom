@@ -1,0 +1,123 @@
+[
+	{
+		"id": "suro-far-sight",
+		"entry": "Suro",
+		"at": "From four rows back she is a long way off",
+		"alt": "Across a hundred heads on the beach, Suro sees Heo at the waterline in fitted purple silk",
+		"scene": "Long-lens over-the-shoulder from behind King Suro's head and plain coat collar (sharp dark foreground shape at frame left), looking across a crowded Gaya beach: a hundred heads of commoners in white and chiefs in plain robes as soft painted shapes. Far off at the bright waterline, in a gap in the crowd, Queen Heo stands in the shallows below a red-sailed ship, wringing seawater from her hem, talking to her brother — small in frame but razor-sharp, deep brown skin catching the sun, her violet-purple silk cut close to the bust, waist and hip, the cloth wet at the hem and clinging. Suro's one visible cheek and ear burn red, his eye wide, lips parted: love and lust at first sight. Low afternoon sun, sea glitter bokeh, rack focus from his ear to her.",
+		"people": ["suro", "heohwangok"],
+		"time": "day"
+	},
+	{
+		"id": "suro-peak-race",
+		"entry": "Suro",
+		"at": "First to touch it gets the king",
+		"alt": "Turtle Peak: the Goguryeo rider and the Tamla diver touch the rock at once while Suro holds the cup",
+		"scene": "Worm's-eye from the grass at the summit rock of Turtle Peak above the sea. Two women slam into the great rock at the same instant: a Goguryeo horsewoman in a spotted pleated skirt and riding boots, boot planted on the stone, bow on her back, panting and grinning; and a Tamla sea-diver in a soaked white cotton diving shift clinging to her strong body, bare feet and wet hair, palm flat on the rock. Between them, King Suro in a plain hemp coat over his purple silk, holding up a small cup, face stunned and blushing. Far below in haze, the beach and other contestants climbing as tiny shapes. Wind, sea light, dynamic diagonal.",
+		"people": ["suro"],
+		"time": "day"
+	},
+	{
+		"id": "suro-chest-shallows",
+		"entry": "Suro",
+		"at": "water sheets off his back",
+		"alt": "Suro carries the chest out of the shallows, bare-backed; Heo blushes at the rail",
+		"scene": "Low angle from the waterline. King Suro waist-deep in bright shallows, coat off, bare wet muscular back and broad shoulders to the camera, a heavy dark lacquered chest hoisted on one shoulder, seawater sheeting off his back and arms, the low sun raking across every muscle; his ears flushed red. Above him at the rail of the red-sailed ship, Queen Heo leans on folded arms: deep brown skin, violet-purple silk jeogori fitted close to her bust and waist, a heavy blush, lip bitten, eyes caught on his back. Foreground: out-of-focus wet rope coil, glitter bokeh on the water.",
+		"people": ["suro", "heohwangok"],
+		"time": "day"
+	},
+	{
+		"id": "suro-wet-silk-look",
+		"entry": "Suro",
+		"at": "wet silk does what wet silk does",
+		"alt": "Heo, hair wet, catches Suro staring; his ears are red",
+		"scene": "Intimate two-shot on the beach in late gold sun. Queen Heo steps off the plank wringing her long wet blue-black hair over one shoulder: deep brown skin glistening, her violet-purple silk jeogori and chima soaked and clinging to bust, waist and hips, one collarbone bare where the collar has slipped; a slow amused half-smile, heavy-lidded eyes sliding to him, flushed. King Suro, bare-chested and wet, broad chest and arms, hand on the dark chest set on the sand, turning his face away too late, ears and cheeks bright red, a sweat drop. Blurred red sail edge in the foreground; giwa hut and sea haze behind.",
+		"people": ["suro", "heohwangok"],
+		"time": "day"
+	},
+	{
+		"id": "onjo-yard-announce",
+		"entry": "Onjo",
+		"at": "Then the yard finds out whose people are whose",
+		"alt": "The Jolbon yard at dawn: the ten and the old Jolbon people stand up behind Sosuno and her sons",
+		"scene": "Low three-quarter wide of the packed-earth Jolbon yard at sunrise, the timber hall with giwa roof behind. Sosuno in her dusty-rose hanbok stands with her two sons, young Onjo earnest and young Biryu proud, their backs half to the hall door where a seated man in red is only a dark shape. Behind them, ten men rising to their feet one by one, and a small crowd of old Jolbon people: an old nurse, a storekeeper with a bundle of tally-sticks, a dozen households. All wear GOGURYEO COURT DRESS from the research mural: long jackets with a contrasting band at collar, cuffs and hem, wide trousers, cloth belts, and the officials wear the small peaked jeolpung cap with two upright bird feathers. Long dawn shadows across the yard, ox carts loaded at the edge.",
+		"people": ["sosuno", "onjo", "biryu"],
+		"refs": ["/research/goguryeo-deokheung-ri-procession.jpg", "/ref_hanbok_goguryeo.png"],
+		"refsNote": "Goguryeo official dress and feathered caps from tomb murals and the costume chart — copy the clothes, ignore their faces and poses",
+		"time": "day"
+	},
+	{
+		"id": "onjo-gate-last-kiss",
+		"entry": "Onjo",
+		"at": "kisses him in front of the whole yard",
+		"alt": "At the Jolbon gate, Sosuno grabs Jumong by the collar and kisses him",
+		"scene": "Intimate close two-shot at the timber Jolbon gate at dawn, low sun raking from the side. Sosuno has turned back and seized Jumong by the collar of his red silk with one fist, pulling him down into a deep hungry kiss, eyes shut, brows furious, cheeks flushed; his red jacket pulled open at the chest by her grip, his hand buried in her hair beside her gold binyeo, his other arm hauling her waist against him, her dusty-rose silk pressed tight along her body. Older, hungrier lovers. Out-of-focus in the background: carts, a crowd looking at their feet. Breath visible in the cold air.",
+		"people": ["jumong", "sosuno"],
+		"time": "day"
+	},
+	{
+		"id": "onjo-amnok-rafts",
+		"entry": "Onjo",
+		"at": "There are no turtles",
+		"alt": "Rafts on the high green Amnok; Yeon Ga lies on the grain sacks with a cormorant on his chest",
+		"scene": "High wide over the Amnok in late spring, a broad green river swollen with snowmelt between forested ridges. Three log rafts laden with grain sacks and an ox cart push across, poled by men in white. Sosuno stands on the lead raft in dusty-rose silk, bow on her back, looking ahead; young Onjo peers over the edge into the water looking for turtles. On a rear raft a man lies flat on the sacks with eyes squeezed shut and a black cormorant standing on his chest. Spray, current lines, mist off the water.",
+		"people": ["sosuno", "onjo"],
+		"time": "day"
+	},
+	{
+		"id": "onjo-myohyang-tiger",
+		"entry": "Onjo",
+		"at": "something big walks past the fires",
+		"alt": "Night in the Myohyang firs: a tiger walks past the campfires",
+		"scene": "Night in the Myohyang mountains: fir trunks and granite boulders, fog. A huge Amur tiger walks unhurried through the frame between two small campfires, firelight on its striped flank, eyes catching the flame. Foreground: the dark shape of an old woman asleep in a bedroll. Midground: Biryu half-risen with a bow, Sosuno's hand on his wrist stopping him, both lit from below by the fire. Frost on the ground, embers rising.",
+		"people": ["sosuno", "biryu"],
+		"time": "night"
+	},
+	{
+		"id": "onjo-taedong-night",
+		"entry": "Onjo",
+		"at": "They cross upstream in the dark",
+		"alt": "Crossing the Taedong at night upstream of the commandery's watchfires",
+		"scene": "Night, upstream on the Taedong. Ox carts with straw-wrapped wheels ford the black river in a silent line, men leading oxen by the nose. Far downstream on the horizon, the walls of a Han commandery city with a line of tiny watchfires and a red Han banner. In the foreground on the far bank, young Onjo crouches looking back at the fires, counting them on his fingers, lit only by moon on the water.",
+		"people": ["onjo"],
+		"time": "night"
+	},
+	{
+		"id": "onjo-imjin-cranes",
+		"entry": "Onjo",
+		"at": "cliffs of basalt columns standing in rows",
+		"alt": "The Imjin's black basalt cliffs; red-crowned cranes watch the carts",
+		"scene": "Wide along the Imjin River: a trench of black basalt columnar cliffs in rows above pale water. In the shallows below, five red-crowned cranes, white with red caps and black necks, stand watching. On the cliff-top path, the tiny line of ten carts and walkers; in the midground on a rock, young Onjo points at the cliffs, young Biryu beside him arms folded, smirking. Soft spring light, river mist.",
+		"people": ["onjo", "biryu"],
+		"time": "day"
+	},
+	{
+		"id": "onjo-mahan-hall",
+		"entry": "Onjo",
+		"at": "looks at Onjo very hard and then at nothing at all",
+		"alt": "In a Mahan headman's pit-house, the headman's daughter looks at Onjo; he goes red",
+		"scene": "Inside a smoky Mahan pit-house at night: earthen walls, timber posts, grass roof with a smoke hole, a hearth fire. A tattooed Mahan headman with jade-bead necklaces sits on the earth, spearmen in the shadows. Young Onjo kneels before him, blushing to the ears, glancing sideways. At the headman's shoulder his daughter holds a clay lamp that lights her face from below: Mahan girl with beads in her hair, looking hard at Onjo. Behind Onjo, Sosuno hides a laugh in her sleeve. Hearth light and smoke.",
+		"people": ["onjo", "sosuno"],
+		"time": "night"
+	},
+	{
+		"id": "onjo-hogong-steps",
+		"entry": "Onjo",
+		"at": "a small bald foreigner being shown out much faster",
+		"alt": "On the high king's steps, Maryeo passes a small bald envoy with a gourd at his waist",
+		"scene": "Steps of the Mahan high king's timber hall by day. A small wiry old foreigner, bald crown with a grey fringe tied back, thin white beard, faded indigo minister's robe, a dried calabash gourd tied at his waist, is being hustled down the steps by two tattooed spearmen, glaring back indignantly with one finger raised. Going up the other way, a Goguryeo-dressed envoy in a banded jacket and feathered peaked cap carrying a bundle of iron and a salt basket, trying very hard not to laugh. Dynamic diagonal of the steps.",
+		"people": [],
+		"refs": ["/ref_hanbok_goguryeo.png"],
+		"refsNote": "Goguryeo dress chart for the envoy's clothes",
+		"time": "day"
+	},
+	{
+		"id": "onjo-deer-michuhol",
+		"entry": "Onjo",
+		"at": "it walks them all the way to Michuhol",
+		"alt": "The white stag stops at the edge of the sea at Michuhol and looks back toward the river",
+		"scene": "Wide at the salt flats of Michuhol at golden hour: wet mudflats reflecting the sky, the sea beyond. A pale white stag with gold-touched antlers stands at the very edge of the water, head turned back over its shoulder toward the land. Behind it, the travellers' carts and people strung out across the flats as small shapes; young Biryu in front, arms thrown wide at the sea, laughing; young Onjo a step behind, looking only at the deer.",
+		"people": ["biryu", "onjo"],
+		"time": "day"
+	}
+]

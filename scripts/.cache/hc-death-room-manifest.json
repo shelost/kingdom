@@ -1,0 +1,284 @@
+[
+	{
+		"id": "hc-death-wide",
+		"entry": "Harmony Council",
+		"after": "hc-council-holdout",
+		"at": "One lamp. An old king in the bed.",
+		"alt": "Wide of the dark king’s room: one floor lamp, Jinpyung small in the bed, three women around it, Yongsu standing by the screen.",
+		"people": [
+			"jinpyung",
+			"sunduk",
+			"chunmyung",
+			"jinduk",
+			"yongsu"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. FAR WIDE, worm’s-eye from the dark floor. Mise-en-scène: the king’s timber bedchamber at midnight, one oil lamp set on the floor beside the bed (practical key in frame, raking from below). ONE device: the lamp’s small pool of light; 70% of the room umber-black. Tiny figures: old King Jinpyung in the bed, no crown, no jougwan, grey loose hair on the pillow. Three women kneeling around the bed — Princess Dukman (crimson silk, NO crown, binyeo only), Princess Chunmyung, Princess Sungman — and by the folding screen a quiet man, Yongsu the clerk, hands at his sides, not talking. Night interior old-master tenebrism. Real Korean timber, lattice, giwa in bokeh. No crowds. No text. No watermark. LEFT of the sheet = Jinpyung. Then Dukman. Then Chunmyung. Then Sungman. RIGHT = Yongsu. Faces ONLY from the sheet; invent new bodies. One of each named person. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. FAR WIDE, worm’s-eye from the dark floor. Mise-en-scène: the king’s timber bedchamber at midnight, one oil lamp set on the floor beside the bed (practical key in frame, raking from below). ONE device: the lamp’s small pool of light; 70% of the room umber-black. Tiny figures: old King Jinpyung in the bed, no crown, no jougwan, grey loose hair on the pillow. Three women kneeling around the bed — Princess Dukman (crimson silk, NO crown, binyeo only), Princess Chunmyung, Princess Sungman — and by the folding screen a quiet man, Yongsu the clerk, hands at his sides, not talking. Night interior old-master tenebrism. Real Korean timber, lattice, giwa in bokeh. No crowds. No text. No watermark. LEFT of the sheet = Jinpyung. Then Dukman. Then Chunmyung. Then Sungman. RIGHT = Yongsu. Faces ONLY from the sheet; invent new bodies. One of each named person. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_jinpyung.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/ch_sunduk.png",
+			"/bn_sunduk.png",
+			"/ch_chunmyung.png",
+			"/bn_chunmyung.png",
+			"/ch_seungman.png",
+			"/bn_jinduk.png",
+			"/ch_yongsu.png",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	},
+	{
+		"id": "hc-death-three",
+		"entry": "Harmony Council",
+		"after": "hc-death-wide",
+		"at": "They come. He looks at them",
+		"alt": "Jinpyung in the bed looks at his three women the way a man closes a ledger: Dukman, Chunmyung, Sungman kneeling in the lamp.",
+		"people": [
+			"jinpyung",
+			"sunduk",
+			"chunmyung",
+			"jinduk"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate low three-quarter, dutch, shallow DOF. Mise-en-scène: the same dark king’s bedchamber, one oil lamp on the floor raking from below. ONE device: the three kneeling women as a low pyramid, the old king the apex in the bed. Dying Jinpyung, no crown, looking at them the way a man looks at a ledger he is closing — dry, fond, not theatrical. Princess Dukman (crimson, NO crown), Princess Chunmyung, Princess Sungman kneeling close, one of each, faces wanting to hold it together. Night tenebrism. LEFT of the sheet = Jinpyung. Then Dukman. Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate low three-quarter, dutch, shallow DOF. Mise-en-scène: the same dark king’s bedchamber, one oil lamp on the floor raking from below. ONE device: the three kneeling women as a low pyramid, the old king the apex in the bed. Dying Jinpyung, no crown, looking at them the way a man looks at a ledger he is closing — dry, fond, not theatrical. Princess Dukman (crimson, NO crown), Princess Chunmyung, Princess Sungman kneeling close, one of each, faces wanting to hold it together. Night tenebrism. LEFT of the sheet = Jinpyung. Then Dukman. Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_jinpyung.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/ch_sunduk.png",
+			"/bn_sunduk.png",
+			"/ch_chunmyung.png",
+			"/bn_chunmyung.png",
+			"/ch_seungman.png",
+			"/bn_jinduk.png",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	},
+	{
+		"id": "hc-yongsu-look",
+		"entry": "Harmony Council",
+		"after": "hc-death-three",
+		"at": "They look at each other. That is the conversation.",
+		"alt": "Intimate two-shot: Yongsu kneeling at the bed holding Jinpyung’s hand; they look at each other and nobody else is in that look.",
+		"people": [
+			"yongsu",
+			"jinpyung"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate CLOSE two-shot, dutch, shallow DOF, rack-focus. Mise-en-scène: the king’s dark bedchamber, one oil lamp on the floor beside the bed, raking from below. ONE device: the joined hands as the bright hinge between the two faces. Yongsu the clerk kneeling, no jougwan, one stray strand of hair up, LIVING eyes (iris and pupil, NOT white, he is not talking to ghosts), mouth a little open, wrecked, holding the old king’s hand with both of his. Dying Jinpyung in the bed, no crown, looking back at him a long time — the look of a cousin and a father-in-law who already said the hard thing once. Nobody else in frame. Faces fill the frame. Night old-master oil. LEFT face of the sheet = Yongsu. RIGHT face of the sheet = Jinpyung. Faces ONLY from the sheet; invent new bodies. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate CLOSE two-shot, dutch, shallow DOF, rack-focus. Mise-en-scène: the king’s dark bedchamber, one oil lamp on the floor beside the bed, raking from below. ONE device: the joined hands as the bright hinge between the two faces. Yongsu the clerk kneeling, no jougwan, one stray strand of hair up, LIVING eyes (iris and pupil, NOT white, he is not talking to ghosts), mouth a little open, wrecked, holding the old king’s hand with both of his. Dying Jinpyung in the bed, no crown, looking back at him a long time — the look of a cousin and a father-in-law who already said the hard thing once. Nobody else in frame. Faces fill the frame. Night old-master oil. LEFT face of the sheet = Yongsu. RIGHT face of the sheet = Jinpyung. Faces ONLY from the sheet; invent new bodies. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_yongsu.png",
+			"/ch_jinpyung.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	},
+	{
+		"id": "hc-yongsu-hand",
+		"entry": "Harmony Council",
+		"after": "hc-death-look",
+		"at": "Yongsu is still holding the hand.",
+		"alt": "After the king has gone still, Yongsu remains kneeling at the bed holding the hand; the lamp burns; the women have left.",
+		"people": [
+			"yongsu",
+			"jinpyung"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate low three-quarter, shallow DOF. Mise-en-scène: the same dark bedchamber, the oil lamp still on the floor, now the only company. ONE device: Yongsu’s two hands closed on the king’s still hand, the lamp lighting the knuckles. Jinpyung has gone still in the bed, eyes closed, no crown. Yongsu kneeling, no jougwan, stray strand up, LIVING eyes wet, mouth open a little, has not noticed the room emptied. Empty folding screen behind him in umber dark. Night tenebrism. LEFT of the sheet = Yongsu. RIGHT = Jinpyung. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate low three-quarter, shallow DOF. Mise-en-scène: the same dark bedchamber, the oil lamp still on the floor, now the only company. ONE device: Yongsu’s two hands closed on the king’s still hand, the lamp lighting the knuckles. Jinpyung has gone still in the bed, eyes closed, no crown. Yongsu kneeling, no jougwan, stray strand up, LIVING eyes wet, mouth open a little, has not noticed the room emptied. Empty folding screen behind him in umber dark. Night tenebrism. LEFT of the sheet = Yongsu. RIGHT = Jinpyung. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_yongsu.png",
+			"/ch_jinpyung.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	},
+	{
+		"id": "hc-next-room",
+		"entry": "Harmony Council",
+		"after": "hc-yongsu-hand",
+		"at": "The three of them sit down.",
+		"alt": "Next room: Dukman, Chunmyung and Sungman sit on the floor around a lamp still warm from the death room, talking the way aunts talk.",
+		"people": [
+			"sunduk",
+			"chunmyung",
+			"jinduk"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate three-shot, low three-quarter from the floor, shallow DOF. Mise-en-scène: a smaller timber side-room of the Silla palace, one oil lamp on the floor between three seated women (practical key, raking). ONE device: the three of them in a loose ring around the lamp, the death-room’s light still in it. Princess Dukman (crimson silk, NO crown, composed, faint dry mouth), Princess Chunmyung (older sister-energy, dry), Princess Sungman (softer, talking). They sit the way aunts sit when the men have left — close, unceremonial, silk pooling. Night tenebrism, umber walls, lattice in bokeh. LEFT of the sheet = Dukman. MIDDLE = Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet; one of each. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate three-shot, low three-quarter from the floor, shallow DOF. Mise-en-scène: a smaller timber side-room of the Silla palace, one oil lamp on the floor between three seated women (practical key, raking). ONE device: the three of them in a loose ring around the lamp, the death-room’s light still in it. Princess Dukman (crimson silk, NO crown, composed, faint dry mouth), Princess Chunmyung (older sister-energy, dry), Princess Sungman (softer, talking). They sit the way aunts sit when the men have left — close, unceremonial, silk pooling. Night tenebrism, umber walls, lattice in bokeh. LEFT of the sheet = Dukman. MIDDLE = Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet; one of each. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_sunduk.png",
+			"/bn_sunduk.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/ch_chunmyung.png",
+			"/bn_chunmyung.png",
+			"/ch_seungman.png",
+			"/bn_jinduk.png",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	},
+	{
+		"id": "hc-chunchu-door",
+		"entry": "Harmony Council",
+		"after": "hc-next-room",
+		"at": "A shadow stops at the screen door.",
+		"alt": "From inside the next room: a magenta-sleeved shadow stops at the lattice screen; the three women look up from the lamp.",
+		"people": [
+			"chunchu",
+			"sunduk",
+			"chunmyung",
+			"jinduk"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Over-shoulder from inside the side-room, shallow DOF, rack-focus. Mise-en-scène: the same timber room, lamp on the floor in the foreground near the lens (bokeh). ONE device: the lattice screen-door as a dark frame; a magenta-crimson silk sleeve and a slim man’s silhouette stopped on the far side, not yet in. The three women on the floor have started to turn toward the door — Dukman first, then Chunmyung, Sungman already smiling. Night tenebrism. LEFT of the sheet = Chunchu (adult, 29, thin moustache, magenta silk, NO jougwan, NO crown). Then Dukman (NO crown). Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Over-shoulder from inside the side-room, shallow DOF, rack-focus. Mise-en-scène: the same timber room, lamp on the floor in the foreground near the lens (bokeh). ONE device: the lattice screen-door as a dark frame; a magenta-crimson silk sleeve and a slim man’s silhouette stopped on the far side, not yet in. The three women on the floor have started to turn toward the door — Dukman first, then Chunmyung, Sungman already smiling. Night tenebrism. LEFT of the sheet = Chunchu (adult, 29, thin moustache, magenta silk, NO jougwan, NO crown). Then Dukman (NO crown). Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_chunchu.png",
+			"/ch_sunduk.png",
+			"/bn_sunduk.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/ch_chunmyung.png",
+			"/bn_chunmyung.png",
+			"/ch_seungman.png",
+			"/bn_jinduk.png",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	},
+	{
+		"id": "hc-chunchu-in",
+		"entry": "Harmony Council",
+		"after": "hc-chunchu-door",
+		"at": "He comes in the way he always comes in.",
+		"alt": "Chunchu steps through the screen into the lamp: three women turning as one, already talking as if he were still in the cradle.",
+		"people": [
+			"chunchu",
+			"sunduk",
+			"chunmyung",
+			"jinduk"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate low three-quarter, mid-stride, shallow DOF. Mise-en-scène: Chunchu coming through the timber screen-door into the side-room, magenta-crimson silk po, charcoal sash, adult 29 with thin moustache, NO jougwan, NO crown, one hand on the door frame, a little late, dressed for it, half-embarrassed already. The three women on the floor turning as one toward him — Chunmyung (mother) lifting her chin, Sungman already cooing, Dukman dry and fond. ONE device: the open screen as a vertical cut; he on one third, they on the other. Floor lamp the practical key from below. Night tenebrism. LEFT of the sheet = Chunchu. Then Dukman (NO crown). Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet; one of each. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate low three-quarter, mid-stride, shallow DOF. Mise-en-scène: Chunchu coming through the timber screen-door into the side-room, magenta-crimson silk po, charcoal sash, adult 29 with thin moustache, NO jougwan, NO crown, one hand on the door frame, a little late, dressed for it, half-embarrassed already. The three women on the floor turning as one toward him — Chunmyung (mother) lifting her chin, Sungman already cooing, Dukman dry and fond. ONE device: the open screen as a vertical cut; he on one third, they on the other. Floor lamp the practical key from below. Night tenebrism. LEFT of the sheet = Chunchu. Then Dukman (NO crown). Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet; one of each. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_chunchu.png",
+			"/ch_sunduk.png",
+			"/bn_sunduk.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/ch_chunmyung.png",
+			"/bn_chunmyung.png",
+			"/ch_seungman.png",
+			"/bn_jinduk.png",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	},
+	{
+		"id": "hc-chunchu-tea",
+		"entry": "Harmony Council",
+		"after": "hc-chunchu-in",
+		"at": "He sits. He drinks the tea.",
+		"alt": "Chunchu sits smaller than his age with a tea bowl; Dukman, Chunmyung and Sungman hem him in with the lamp, still treating him as the favorite boy.",
+		"people": [
+			"chunchu",
+			"sunduk",
+			"chunmyung",
+			"jinduk"
+		],
+		"time": "night",
+		"canon": {
+			"hat": false,
+			"with": [
+				"place:surabol"
+			]
+		},
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate close four-shot, low from the tea, shallow DOF. Mise-en-scène: the same side-room floor, one oil lamp and two tea bowls. Chunchu sitting, magenta silk, adult face looking younger because the room has made him twelve again — shoulders slightly hunched, tea bowl in both hands, not mentioning the crown. Princess Chunmyung at his shoulder telling him without words to straighten up. Princess Sungman leaning in, fond. Princess Dukman across the lamp, composed, a faint smile. ONE device: the tea bowl as the bright disc they all lean toward. Night tenebrism. LEFT of the sheet = Chunchu (NO jougwan, NO crown). Then Dukman (NO crown). Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still, composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Intimate close four-shot, low from the tea, shallow DOF. Mise-en-scène: the same side-room floor, one oil lamp and two tea bowls. Chunchu sitting, magenta silk, adult face looking younger because the room has made him twelve again — shoulders slightly hunched, tea bowl in both hands, not mentioning the crown. Princess Chunmyung at his shoulder telling him without words to straighten up. Princess Sungman leaning in, fond. Princess Dukman across the lamp, composed, a faint smile. ONE device: the tea bowl as the bright disc they all lean toward. Night tenebrism. LEFT of the sheet = Chunchu (NO jougwan, NO crown). Then Dukman (NO crown). Then Chunmyung. RIGHT = Sungman. Faces ONLY from the sheet. No text. No watermark. INTRO-CARD LOOK. COLOR LOCK: Dukman orange-red silk #E8552B; Chunmyung lavender-purple silk #d8a0e8, silver-grey hair, NO gold crown; Sungman salmon-orange peach silk. Women SAD, grieving, tears. NOT photoreal. ",
+		"refs": [
+			"/ch_chunchu.png",
+			"/ch_sunduk.png",
+			"/bn_sunduk.png",
+			"/ref_crown_silla.jpg",
+			"/research/silla-cheonmachong-gold-crown.jpg",
+			"/research/silla-hwangnam-gold-crown.jpg",
+			"/ch_chunmyung.png",
+			"/bn_chunmyung.png",
+			"/ch_seungman.png",
+			"/bn_jinduk.png",
+			"/pl_eastern_palace.png",
+			"/ref_hanbok_silla.png"
+		]
+	}
+]

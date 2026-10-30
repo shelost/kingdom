@@ -5349,11 +5349,11 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		died: 292,
 		clan: 'clan-go',
-		tagline: 'He accepted his brothers’ supper. Then he took their heads.',
-		quote: 'You invited me. That was the mistake.',
+		tagline: 'He offered his brothers a chair. Then he took their heads to the spring.',
+		quote: 'This is what a plot looks like. Drink.',
 		voice:
 			'Quiet until the cup is down. Then one short royal order, no speech, no explaining to the dead. Korean: royal 하라체 to the hall, 반말 to his brothers once, and never again.',
-		arc: 'Thirteenth king. His brothers Ilu and Sobal invite him to a banquet to kill him. He comes, turns the screens, and has them beheaded. His son Saburu watches from a pillar and never forgets.',
+		arc: 'Thirteenth king, second son of Jungcheon. In 286 his younger brothers Ilu and Sobal feign illness, feast at the hot spring, and talk treason. He summons them with a fake chancellorship, has hidden strong men seize them, and walks their heads back out to the party. His son Saburu watches the whole thing and never forgets.',
 		family: [
 			{ id: 'ilu', role: 'Brother' },
 			{ id: 'sobal', role: 'Brother' },
@@ -5363,7 +5363,7 @@ export const PEOPLE: Person[] = [
 		],
 		events: [
 			{ year: 270, label: 'Becomes king.' },
-			{ year: 286, label: 'Beheads Princes Ilu and Sobal at their own banquet.' },
+			{ year: 286, label: 'Lures brothers Ilu and Sobal from the hot spring with a fake chancellorship. Kills them. Shows the heads to the feast.' },
 			{ year: 292, label: 'Dies. Saburu takes the crown.' }
 		],
 		career: [
@@ -5382,17 +5382,17 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		died: 286,
 		clan: 'clan-go',
-		tagline: 'He poured the wine. His brother had already counted the room.',
-		quote: 'Hyung. Sit. We waited.',
+		tagline: 'He said he was sick. The spring was loud. The chair was a lie.',
+		quote: 'If hyung is gone. It’s us.',
 		voice:
-			'Smooth, older-brother manners over a plot. He talks like a host. Korean: 반말 to Sobal, 해요체 slipping to 반말 with the king.',
-		arc: 'Younger brother of King Suchun. With Sobal he invites the king to a banquet to take the crown. The screens on the other side drop first.',
+			'Smooth, a host even in the steam. He talks like a man who has already counted the room. Korean: 반말 to Sobal, 해요체 slipping to 반말 with the king.',
+		arc: 'Younger brother of King Suchun — 王弟, not a son. With Sobal he feigns illness, gathers men at the hot spring, and talks a coup. The king calls them in as chancellors. Hidden strong men are waiting.',
 		family: [
 			{ id: 'suchun', role: 'Brother' },
 			{ id: 'sobal', role: 'Brother' },
 			{ id: 'dalga', role: 'Brother' }
 		],
-		events: [{ year: 286, label: 'Beheaded at his own banquet.' }],
+		events: [{ year: 286, label: 'Killed in the hall after the hot-spring feast. Head shown to the party.' }],
 		aliases: ['Ilu', '일우', '逸友']
 	},
 	{
@@ -5406,17 +5406,17 @@ export const PEOPLE: Person[] = [
 		kingdom: 'goguryeo',
 		died: 286,
 		clan: 'clan-go',
-		tagline: 'One eye, one cup, and the wrong side of the screen.',
-		quote: 'The wine is the good one.',
+		tagline: 'One eye, a loud spring, and a chair that was never empty.',
+		quote: 'The spring has to be loud. Inside has to be quiet.',
 		voice:
 			'Rougher than Ilu, a little too loud when he is nervous. Korean: 반말, short.',
-		arc: 'Brother of King Suchun and Ilu. He smiles with the eye that still works, and dies in the same hall.',
+		arc: 'Younger brother of King Suchun — 王弟, not a son. With Ilu he feigns illness and feasts at the 溫湯. He walks into the hall for a promotion and does not walk out.',
 		family: [
 			{ id: 'suchun', role: 'Brother' },
 			{ id: 'ilu', role: 'Brother' },
 			{ id: 'dalga', role: 'Brother' }
 		],
-		events: [{ year: 286, label: 'Beheaded at the banquet with Ilu.' }],
+		events: [{ year: 286, label: 'Killed in the hall with Ilu. Head shown to the spring.' }],
 		aliases: ['Sobal', '소발', '素勃']
 	},
 	{
@@ -5508,14 +5508,14 @@ export const PEOPLE: Person[] = [
 				avatar: '/ch_bongsang.png'
 			}
 		],
-		arc: 'Son of King Suchun. As a boy he watches Ilu and Sobal beheaded at their own banquet. Crowned, he kills every popular relative — uncle Dalga, then brother Dolgo and Dolgo’s house — then hides in wine and women and a second, taller roof while the country starves. In the autumn of 300 Changjori and the officials of one mind put a green branch in their caps on the Husan hunt, ambush him on the slope, and leave him in the lodge. His sons stay with him. Eulbul is crowned the next morning.',
+		arc: 'Son of King Suchun. As a boy he watches the hot-spring feast, the fake promotions, and his father walk two heads back out to the party. Crowned, he kills every popular relative — uncle Dalga, then brother Dolgo and Dolgo’s house — then hides in wine and women and a second, taller roof while the country starves. In the autumn of 300 Changjori and the officials of one mind put a green branch in their caps on the Husan hunt, ambush him on the slope, and leave him in the lodge. His sons stay with him. Eulbul is crowned the next morning.',
 		family: [
 			{ id: 'suchun', role: 'Father' },
 			{ id: 'dolgo', role: 'Brother' },
 			{ id: 'dalga', role: 'Uncle' }
 		],
 		events: [
-			{ year: 286, label: 'Watches Ilu and Sobal beheaded.' },
+			{ year: 286, label: 'Watches the hot-spring feast and the heads come back out.' },
 			{ year: 292, label: 'Becomes king. Kills uncle Dalga.' },
 			{ year: 293, label: 'Forces brother Dolgo and his house to drink.' },
 			{ year: 300, label: 'Ambushed on the Husan hunt. Dies in the lodge with his sons.' }
@@ -5576,7 +5576,9 @@ export const PEOPLE: Person[] = [
 			{ id: 'dolgo', role: 'Father' },
 			{ id: 'bongsang', role: 'Uncle' },
 			{ id: 'suchun', role: 'Grandfather' },
-			{ id: 'jumong', role: 'Ancestor' }
+			{ id: 'jumong', role: 'Ancestor' },
+			{ id: 'eummo', role: 'Foster father' },
+			{ id: 'jaemo', role: 'Friend' }
 		],
 		arc: 'Grandson of King Suchun, son of Prince Dolgo. He runs when his father is told to drink, works a year for Ummo, sells salt with Jaemo, and is beaten in a village yard for a shoe an old woman hid in his sack — a prince in the dirt, as low as he goes. In 300 Changjori kneels in the Biryu mud; Ulbul refuses. Famine walks him to the first cave. Jumong meets him there. The second kneel is the yes. He cuts the road under the last Chinese commanderies and takes Lelang in 313 and Daifang in 314. The families who want the west are allowed to walk.',
 		events: [
@@ -5625,7 +5627,8 @@ export const PEOPLE: Person[] = [
 		quote: 'Salt is honest. People aren’t.',
 		voice:
 			'Warm, talks too much, protective, teases when he is scared. He is the only person who never asked Eulbul to be smaller. Korean: 반말.',
-		arc: 'A salt seller from the village east of the river. He takes Eulbul on his boat, swears through the shoe affair, and is still selling in the commandery market the day the seals come down. He calls the king by the old name.',
+		family: [{ id: 'eummo', role: 'Uncle' }],
+		arc: 'Ummo’s nephew, a salt seller from the village east of the river. He takes Eulbul on his uncle’s boat, swears through the shoe affair, and is still selling in the commandery market the day the seals come down. He calls the king by the old name.',
 		aliases: ['Jaemo', '재모', '再牟']
 	},
 	{
@@ -5640,7 +5643,8 @@ export const PEOPLE: Person[] = [
 		quote: 'I said full. The mouth can wait.',
 		voice:
 			'A stall boss who thinks rest is theft and talk is theft. Short orders, no curiosity that costs him. Korean: rough 반말 to the boys.',
-		arc: 'A man of the water-house village who runs the salt. He takes Ulbul as hired labour, works him, puts him on the boat with Jaemo, and does not learn who slept in his shed. After seven years the boy thanks him and leaves. Ummo tells him to tie the sack and shut his mouth.',
+		family: [{ id: 'jaemo', role: 'Nephew' }],
+		arc: 'A man of the water-house village who runs the salt. He takes Ulbul as hired labour, works him, and puts him on the boat with his nephew Jaemo. He does not learn who slept in his shed. After seven years the boy thanks him and leaves. Ummo tells him to tie the sack and shut his mouth.',
 		aliases: ['Ummo', 'Eummo', '음모', '陰牟']
 	},
 	{
@@ -5842,7 +5846,7 @@ export const PEOPLE: Person[] = [
 		quote: 'Sit. As a minister. We will even give you a chair.',
 		voice:
 			'Dry, transactional, a little amused at the catch. Offers a chair the way other men offer a knife. Korean: 하오체, unhurried, never raises his voice.',
-		arc: 'The Wa king Jesang walks onto, wearing a traitor’s name. Jesang asks for a fleet to take Surabol and free his family. Nintoku likes the story and sends Katsuragi no Sotsuhiko with the ships. At Mountain Island the story turns. He offers a minister’s seat. Jesang would rather be a dog of Silla. The island hears it.',
+		arc: 'The Wa king Jesang walks onto, wearing a traitor’s name. Jesang asks for a fleet to take Surabol and free his family. Nintoku likes the story and sends Katsuragi no Sotsuhiko with the ships. At Mountain Island the story turns. He offers a minister’s seat. Jesang would rather be a dog of Silla. They take the soles, the reeds, the iron. On Wood Island the fire goes blue. The island hears it.',
 		events: [{ year: 418, label: 'Lends Jesang a fleet. Burns him when the island turns.' }],
 		career: [{ title: 'King of Wa', korean: '천황', hanja: '天皇', org: 'nation-yamato' }],
 		aliases: [
@@ -5870,7 +5874,7 @@ export const PEOPLE: Person[] = [
 		quote: 'The lee was never empty.',
 		voice:
 			'A soldier who talks in distances and counts. Short. Does not enjoy being used. Korean: clipped 하오체.',
-		arc: 'Nintoku sends him with Jesang’s borrowed fleet to take Surabol. At Mountain Island he finds a Silla hull in the lee and a prince already gone. He takes Jesang instead of a capital.',
+		arc: 'Nintoku sends him with Jesang’s borrowed fleet to take Surabol. At Mountain Island he finds a Silla hull in the lee and a prince already gone. He takes Jesang instead of a capital. He is the one who cuts the reeds. He does not look at the feet.',
 		events: [{ year: 418, label: 'Takes Park Jesang on Mountain Island.' }],
 		career: [{ title: 'Captain', korean: '장수', org: 'nation-yamato' }],
 		aliases: [
@@ -7212,20 +7216,24 @@ export const PEOPLE: Person[] = [
 		id: 'talhae',
 		gender: 'm',
 		avatar: '/ch_talhae.png',
+		stages: [
+			{ id: 'young', until: 57, label: 'The boy from the chest', avatar: '/ch_talhae.png' },
+			{ id: 'king', from: 57, label: 'As king', avatar: '/ch_talhae_king.png' }
+		],
 		name: 'Suk Talhae',
 		korean: '석탈해',
 		hanja: '昔脫解',
 		title: '4th sovereign of Silla',
 		kingdom: 'silla',
 		died: 80,
-		tagline: 'The boy from the egg in the box who talked his way to a throne.',
+		tagline: 'He lost a throne in Gaya and took the iron instead.',
 		quote: 'Prove it.',
 		voice:
 			'Cheerful and shameless, a con man with perfect manners; he states outrageous claims politely and dares you to disprove them. Korean: 하오체, dropping to 반말 when he is pleased with himself.',
-		arc: 'Laid as an egg by the queen of Dapana, a country a thousand li beyond the East, and set adrift in a chest. A magpie follows the chest to Ajinpo, where an old woman opens it and names him for the bird (鵲 → 昔, Suk) and for slipping the box (脫解, Talhae). He loses a shapeshifting contest to King Suro of Golden Gaya, cons Hogong out of his house with buried whetstones and charcoal, marries the daughter of King Namhae, and takes the throne in 57. In his ninth year a white rooster crows in the Sirim wood over a golden box with a boy inside.',
+		arc: 'Laid as an egg by the queen of Dapana, a country a thousand li beyond the East, and set adrift in a chest. A magpie follows the chest to Ajinpo, where Grandma Ajin opens it. He is silent seven days, then tells her he came from a dragon castle, and she names him for the bird (鵲 → 昔, Suk) and for slipping the box (脫解, Talhae). In Gaya he works a season at Suro’s forges, learns the fire, challenges the throne with Queen Heo watching, and leaves with the smith-craft. He cons Hogong out of his house with buried whetstones and charcoal — Gaya tools, this time — marries Namhae’s daughter Ahyo, and takes the throne in 57. The yards of Surabol start to smell of charcoal. In his ninth year a white rooster crows in the Sirim wood over a golden box with a boy inside.',
 		events: [
-			{ year: -19, label: 'The chest washes up at Ajinpo; a magpie names him.' },
-			{ label: 'Loses the shapeshift contest to Suro of Golden Gaya.' },
+			{ year: -19, label: 'The chest washes up at Ajinpo; Grandma Ajin names him.' },
+			{ label: 'Works Suro’s forges; loses the shapeshift; takes Gaya iron north.' },
 			{ label: 'The whetstone trick — takes Hogong’s house on the half-moon hill (the Moon Palace).' },
 			{ year: 57, label: 'Becomes king; names Hogong Grand Minister.' },
 			{ year: 65, label: 'Finds Kim Alji in the golden box at Sirim; renames the wood Gyerim.' }
@@ -7235,6 +7243,7 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'hogong',
 		gender: 'm',
+		avatar: '/ch_hogong.png',
 		name: 'Hogong',
 		korean: '호공',
 		kingdom: 'silla',
@@ -7273,7 +7282,8 @@ export const PEOPLE: Person[] = [
 	{
 		id: 'aejin',
 		gender: 'f',
-		name: 'Ejin',
+		avatar: '/ch_aejin.png',
+		name: 'Grandma Ajin',
 		korean: '아진의선',
 		hanja: '阿珍義先',
 		kingdom: 'silla',
@@ -7281,13 +7291,14 @@ export const PEOPLE: Person[] = [
 		quote: 'Fish don’t leave you a house.',
 		voice:
 			'Dry, practical fishwife; talks to the boy like a catch she has not yet decided to keep, and is soft only when nobody is watching. Korean: 반말 and 해라체.',
-		arc: 'Mother of the first king’s fisherman, living alone on the shore at Ajinpo. She sees magpies circling a rock that was never in the sea, rows out, and drags in a chest with a boy inside. She names him Suk Talhae, feeds him until he feeds her, and tells him to study because his bones are too good for nets.',
+		arc: 'Mother of the first king’s fisherman, living alone on the shore at Ajinpo. She sees magpies circling a rock that was never in the sea, rows out, and drags in a chest with a boy inside. He is silent seven days. Then he talks, and she names him Suk Talhae, feeds him until he feeds her, and tells him to study because his bones are too good for nets.',
 		events: [{ year: -19, label: 'Hauls in the chest at Ajinpo and names the boy inside.' }],
-		aliases: ['Aejin', 'Aejin-uiseon', '아진의선']
+		aliases: ['Ajinisun', 'Grandma Ajin', 'Ajin', '아진의선', '아진', 'Aejin', 'Aejin-uiseon']
 	},
 	{
 		id: 'namhae',
 		gender: 'm',
+		avatar: '/ch_namhae.png',
 		name: 'King Namhae',
 		korean: '남해 차차웅',
 		hanja: '南解次次雄',
@@ -7298,15 +7309,16 @@ export const PEOPLE: Person[] = [
 		quote: 'Better inside the family than outside the gate.',
 		voice:
 			'A shaman-king: mild, superstitious, worried aloud, reading an omen in every bird; shrewd once he stops fretting. Korean: 하오체 at court, 반말 to his children.',
-		arc: 'Son of Hyukgosé and Alyoung, styled Chachaung, the shaman. He hears of the clever young man in the crescent house, marries him to his daughter, and on his deathbed tells his son Yuri and his son-in-law Talhae that the elder of them should rule, which leaves the six houses to count teeth.',
-		events: [{ year: 24, label: 'Dies; tells Yuri and Talhae that the elder should succeed.' }],
-		aliases: ['Namhae', 'King Namhae', '남해왕', '남해 차차웅']
+		arc: 'Son of Hyukgosé and Alyoung, styled Chachaung, the shaman. He hears of the clever young man in the crescent house, marries him to his daughter Ahyo, and on his deathbed tells his son Nuri and his son-in-law Talhae that the elder of them should rule, which leaves the six houses to count teeth.',
+		events: [{ year: 24, label: 'Dies; tells Nuri and Talhae that the elder should succeed.' }],
+		aliases: ['Namhae', 'King Namhae', '남해왕', '남해 차차웅', 'Namhé']
 	},
 	{
 		id: 'yuri_isageum',
 		gender: 'm',
-		name: 'Yuri Isagum',
-		korean: '유리 이사금',
+		avatar: '/ch_nuri.png',
+		name: 'Nuri Isageum',
+		korean: '누리 이사금',
 		hanja: '儒理尼師今',
 		title: '3rd sovereign of Silla',
 		kingdom: 'silla',
@@ -7315,13 +7327,13 @@ export const PEOPLE: Person[] = [
 		quote: 'You bit soft. Didn’t you.',
 		voice:
 			'Gentle, honest and a little shy; yields first, laughs at himself, sees more than he lets on. Korean: 하오체 with his brother-in-law, slipping into 반말 when he teases.',
-		arc: 'Son of Namhae. When his father dies he and his brother-in-law Talhae bite a rice cake and the elders count the marks; Yuri has more teeth, so the kings of Silla are called Isagum, tooth-marks, ever after. He gives the six old villages surnames. Dying, he passes over his own sons and names Talhae, and the six houses gather to decide whether a dead king’s word is enough.',
+		arc: 'Son of Namhae. When his father dies he and his brother-in-law Talhae bite a rice cake and the elders count the marks; Nuri has more teeth, so the kings of Silla are called Isageum, tooth-marks, ever after. He gives the six old villages surnames and invents the eighth-month weaving wager the country still keeps. Dying, he passes over his own sons and names Talhae, and the six houses gather to decide whether a dead king’s word is enough.',
 		events: [
-			{ year: 24, label: 'Wins the tooth-count against Talhae; becomes the first Isagum.' },
+			{ year: 24, label: 'Wins the tooth-count against Talhae; becomes the first Isageum.' },
 			{ year: 32, label: 'Gives the six villages their surnames.' },
 			{ year: 57, label: 'Dies naming Talhae; the elders’ first vote.' }
 		],
-		aliases: ['Yuri Isageum', 'King Yuri of Silla', '유리 이사금']
+		aliases: ['Nuri', 'Nuri Isageum', 'Yuri Isageum', 'King Nuri of Silla', '누리 이사금', '유리 이사금']
 	},
 	{
 		id: 'michu',
@@ -7559,7 +7571,7 @@ export const PEOPLE: Person[] = [
 		nature: 'A retainer who does not require a second instruction. Speaks in boats, gates, and who takes which one. As a boy he stole them; whole roofs shouted MOMAL at the sky. Asks the king to ruin him in public so a foreign hall will believe him. The hall says Jesang. The boats were Momal.',
 		voice:
 			'Well-spoken and charismatic — a south-shore Park who can fill a foreign hall the way a prince does: questions, a laugh, a metaphor that lands. Objects first with his own people (the boat, the gate). Korean: elegant 하오체 to foreign kings, 반말 to his wife and to Nulji in private, crisp 하오체 to the princes. Only Nulji and the house may say Momal.',
-		arc: 'Park of Hyukgosé’s line, True Bone, posted on the south shore. As a boy he was Momal — boats, gates, other people’s shoes — and the victims shouted his name at the sky. After adulthood he took the formal name Jesang, the characters for that Korean name, and that is the name the court uses. Nulji still says Momal. The court names Park Jesang the best talker in Silla. In the hall Nulji asks who he is sending; Momal says the tricks stopped for a wife and girls, and that the songs break his heart. Nulji tells him that is why he wants the brothers back: they were taken, not asked for, and robbing a thief is no thievery. Momal talks Jangsu into a guest and a sentence that sounds like surrender, then rides the east Han with the riders behind him. He asks one night with his wife, does not get it, and has the king name Park Jesang a traitor so Wa will believe the rest. The yard takes his family. He walks into Asuka already hunting. He borrows a fleet, puts Mihae on a Silla ship in the lee of Mountain Island, and stays. Wa offers him a chair. He says he would rather be a Silla dog. They beat him, drown him, burn him at a stake. Nulji stands the three brothers in the yard and promises both names will last. His wife waits on Chisullyeong until she is a stone, then a bird. One of Silla’s Three Loyalists (신라 삼충신) with On Gunhae and Gildal — the three who stayed so someone else could go.',
+		arc: 'Park of Hyukgosé’s line, True Bone, posted on the south shore. As a boy he was Momal — boats, gates, other people’s shoes — and the victims shouted his name at the sky. After adulthood he took the formal name Jesang, the characters for that Korean name, and that is the name the court uses. Nulji still says Momal. The court names Park Jesang the best talker in Silla. In the hall Nulji asks who he is sending; Momal says the tricks stopped for a wife and girls, and that the songs break his heart. Nulji tells him that is why he wants the brothers back: they were taken, not asked for, and robbing a thief is no thievery. Momal talks Jangsu into a guest and a sentence that sounds like surrender, then rides the east Han with the riders behind him. He asks one night with his wife, does not get it, and has the king name Park Jesang a traitor so Wa will believe the rest. The yard takes his family. He walks into Asuka already hunting. He borrows a fleet, puts Mihae on a Silla ship in the lee of Mountain Island, and stays. Wa offers him a chair. He says he would rather be a Silla dog, a Silla pig, than sit. They take the skin off his soles, walk him on cut reeds, stand him on hot iron. On Wood Island they burn him. The fire goes blue. Then they take the head. Nulji stands the three brothers in the yard and promises both names will last. His wife waits on Chisullyeong until she is a stone, then a bird. One of Silla’s Three Loyalists (신라 삼충신) with On Gunhae and Gildal — the three who stayed so someone else could go.',
 		events: [
 			{ year: 394, label: 'Steals a green boat. Whole roofs shout Momal at the sky.' },
 			{ year: 418, label: 'Brings Bohae out of Goguryeo. Asks to be named a traitor.' },
@@ -7612,10 +7624,34 @@ export const PEOPLE: Person[] = [
 		voice: 'Slow Goguryeo king. Few words. Korean: 하게체.',
 		arc: 'Holds Bohae as hostage when Nulji sends Park Jesang. Jesang talks him into calling the boy a guest and calling Silla “the younger of the two who asked.” Jangsu thinks he has kept face. An officer unpacks both sentences. He sends riders. They stop at the Han.',
 		events: [
-			{ year: 418, label: 'Releases Bokho. Realises the wording. Sends riders to the Han.' }
+			{ year: 418, label: 'Releases Bokho. Realises the wording. Sends riders to the Han.' },
+			{ year: 475, label: 'Takes Hansung. Kills King Gaero at the foot of the mountain.' }
 		],
 		career: [{ title: 'King of Goryeo', korean: '왕', hanja: '王', org: 'nation-goguryeo', from: 413, to: 491 }],
 		aliases: ['Jangsu', 'King Jangsu', '장수왕', '長壽王']
+	},
+	{
+		id: 'gaero',
+		gender: 'm',
+		name: 'King Gaero',
+		korean: '개로왕',
+		hanja: '蓋鹵王',
+		title: 'King of Baekje',
+		kingdom: 'baekje',
+		clan: 'clan-buyeo',
+		died: 475,
+		tagline: 'The king who ran from Hansung, and died at the foot of his own mountain.',
+		quote: 'I am the king of—',
+		nature: 'A king who still thinks the old capital will hold because it always has. It doesn’t.',
+		voice:
+			'Royal 하오체 that frays when the gate goes. Short, unfinished, then nothing. Korean: 하오체 to officers, breaking into fragments on the mountain.',
+		arc: 'Twenty-first king of Baekje. Holds Hansung until Jangsu comes south for a head Goguryeo has been owed since Pyongyang. Sends his brother for Silla. Silla is late. He runs. They catch him below the mountain. The court moves south because it has to call somewhere home.',
+		events: [
+			{ year: 455, label: 'Takes the Baekje throne at Hansung.' },
+			{ year: 475, label: 'Hansung falls. Killed at the foot of the mountain.' }
+		],
+		career: [{ title: 'King', korean: '개로왕', hanja: '蓋鹵王', org: 'nation-baekje', from: 455, to: 475 }],
+		aliases: ['Gaero', 'King Gaero', '개로왕', '蓋鹵王', '근개루왕']
 	},
 	{
 		id: 'jinheung',
@@ -11234,6 +11270,7 @@ const COLOR: Record<string, string> = {
 	nintoku: '#c4b08a',
 	shotoku: '#e07a3a',
 	jangsu: '#a03030',
+	gaero: '#d9b13a',
 	buyeojashin: '#9b2d2d',
 	weizheng: '#9a7b4f',
 	xuerengui: '#e8e3d5',
@@ -11414,6 +11451,9 @@ const COLOR: Record<string, string> = {
 	sukhuljong: '#6b5b4b',
 	talhae: '#5a7fa8',
 	hogong: '#a8894a',
+	aejin: '#c4a07a',
+	namhae: '#7f9c8a',
+	yuri_isageum: '#7aa6d6',
 	alji: '#d4b86a',
 	daejoyoung: '#c45a4a',
 	jukji: '#6a9e7a',
@@ -11684,6 +11724,7 @@ const TAGS_BY_ID: Record<string, string[]> = {
 	isabu: ['legends'],
 	usanchief: ['founders'],
 	jangsu: ['legends'],
+	gaero: ['legends'],
 	// —— Legends (famous earlier kings / heroes — characters only) ——
 	gyeonggeunchogo: ['legends'],
 	gwanggaeto: ['legends'],
@@ -12271,6 +12312,7 @@ const REGNAL: Record<string, number> = {
 	micheon: 15,
 	gwanggaeto: 19,
 	jangsu: 20,
+	gaero: 21,
 	yeongnyu: 27,
 	bojang: 28,
 	suro: 1,

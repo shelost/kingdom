@@ -1,13 +1,22 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import { arcPageId, chapters, episodeNumber, isFlashEntry, isPlate, isPrologue, entryId } from '$lib/story';
+	import {
+		arcPageId,
+		chapters,
+		episodeChapterLabel,
+		episodeNumber,
+		isFlashEntry,
+		isPlate,
+		isPrologue,
+		entryId
+	} from '$lib/story';
 	import { chapterHeadedBy, episodeCrumbs, tocAnchor } from '$lib/tocTree';
 	import { reveal } from '$lib/reveal';
 	import ImageStack from '$lib/components/ImageStack.svelte';
 	import EpisodeThumbnail from '$lib/components/EpisodeThumbnail.svelte';
 	import MapExcerpt from '$lib/components/MapExcerpt.svelte';
 	import EpisodeTitleCard from '$lib/components/EpisodeTitleCard.svelte';
-	import { titleLogoSrc } from '$lib/titleLogos';
+	import { titleCardBakesTagline, titleLogoSrc } from '$lib/titleLogos';
 	import { staticAsset } from '$lib/staticAsset.svelte';
 	import PartTitle from '$lib/components/PartTitle.svelte';
 	import DivisionTitle from '$lib/components/DivisionTitle.svelte';
@@ -51,7 +60,7 @@
 	import NextEpisode from '$lib/components/NextEpisode.svelte';
 	import { scriptUi } from '$lib/scriptUi.svelte';
 	import { tocUi } from '$lib/tocUi.svelte';
-	import { entryCast } from '$lib/entryHead';
+	import { entryCast, episodeHeading, episodeTagline, titlePageTags } from '$lib/entryHead';
 	import { entryBullets } from '$lib/summary';
 	import { isWarEntry } from '$lib/episodeKinds';
 	import { PARTS } from '$lib/episodeDirectory';
@@ -456,37 +465,43 @@
 											</nav>
 											<EpisodeTitleCard {entry} {eid} ko={koHead}>
 												{@const logo = titleLogoSrc(entry.title, koHead)}
+												{@const heading = episodeHeading(entry, koHead)}
+												{@const line = episodeTagline(entry, koHead)}
+												{@const chapter = episodeChapterLabel(episodeNumber(ci, i), koHead)}
+												{@const kindTags = titlePageTags(entry)}
 												<div class="episode">
-													<div class="year arrive" style:--i={1} class:long={entry.year.length > 4}>
-														{entry.year}
-														{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
-													</div>
-													{#if episodeNumber(ci, i)}
-														<p class="ep-num arrive" style:--i={2}>{episodeNumber(ci, i)}</p>
+													{#if chapter}
+														<p class="ep-chapter arrive" style:--i={1}>
+															<span class="ep-chapter-pill liquid-glass">{chapter}</span>
+														</p>
 													{/if}
 													{#if logo}
 														<img
 															class="title-logo arrive"
-															style:--i={3}
+															style:--i={2}
 															src={staticAsset(logo) ?? logo}
 															alt=""
 														/>
-														<h2 class="sr-only">{(koHead && entry.subtitle) || entry.title}</h2>
+														<h2 class="sr-only">{heading}</h2>
 													{:else}
-														<h2 class="arrive" style:--i={3}
-															>{(koHead && entry.subtitle) || entry.title}</h2
-														>
-														{#if entry.tagline}
-															<p class="episode-tagline arrive" style:--i={4}
-																>{koHead ? entry.taglineKo || entry.tagline : entry.tagline}</p
-															>
-														{/if}
-														{#if entry.subtitle}
-															<p class="episode-ko arrive" style:--i={5}
-																>{koHead ? entry.title : entry.subtitle}</p
-															>
-														{/if}
+														<h2 class="arrive" style:--i={2}>{heading}</h2>
 													{/if}
+													{#if line && !titleCardBakesTagline(entry.title, koHead)}
+														<p class="episode-tagline arrive" style:--i={3}>{line}</p>
+													{/if}
+													{#if kindTags.length}
+														<ul class="title-kind-tags arrive" style:--i={4}>
+															{#each kindTags as tag (tag.key)}
+																<li class="title-kind-tag" data-kind={tag.key}
+																	>{koHead ? tag.ko : tag.label}</li
+																>
+															{/each}
+														</ul>
+													{/if}
+													<div class="year arrive" style:--i={5} class:long={entry.year.length > 4}>
+														{entry.year}
+														{#if entry.sub}<span class="year-sub">{entry.sub}</span>{/if}
+													</div>
 												</div>
 											</EpisodeTitleCard>
 											{#if introMap?.kind === 'map'}
@@ -585,8 +600,8 @@
 											<Screenplay
 												blocks={shown.blocks}
 												year={years[i] ?? null}
-												title={(koHead && entry.subtitle) || entry.title}
-												second={entry.subtitle ? (koHead ? entry.title : entry.subtitle) : ''}
+												title={episodeHeading(entry, koHead)}
+												second={episodeTagline(entry, koHead)}
 												when={entry.year}
 												place={entry.sub ?? ''}
 											/>
@@ -594,8 +609,8 @@
 											<Storyboard
 												entry={shown}
 												year={years[i] ?? null}
-												title={(koHead && entry.subtitle) || entry.title}
-												second={entry.subtitle ? (koHead ? entry.title : entry.subtitle) : ''}
+												title={episodeHeading(entry, koHead)}
+												second={episodeTagline(entry, koHead)}
 												when={entry.year}
 												place={entry.sub ?? ''}
 											/>
@@ -709,7 +724,7 @@
 			onclick={backToHead}
 		>
 			{#if pill}
-				<span class="pill-num">{pill.num}</span>
+				<span class="pill-num">{episodeChapterLabel(pill.num, koHead)}</span>
 				<span class="pill-title">{(koHead && pill.ko) || pill.title}</span>
 			{/if}
 		</button>
@@ -1100,7 +1115,7 @@
 		align-items: baseline;
 		justify-content: center;
 		gap: 0.4rem;
-		margin: 0 0 0.7rem;
+		margin: 0.95rem 0 0;
 		color: var(--fg-dim);
 	}
 
@@ -1127,13 +1142,59 @@
 		color: var(--fg-faint);
 	}
 
-	.ep-num {
-		margin: 0 0 0.45rem;
+	.ep-chapter {
+		margin: 0 0 0.85rem;
+	}
+
+	.ep-chapter-pill {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.32rem 0.9rem;
+		border-radius: var(--radius-pill);
 		font-family: var(--ui);
-		font-size: 0.78rem;
+		font-size: 0.72rem;
 		font-weight: 600;
-		letter-spacing: 0.28em;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--fg-strong);
+	}
+
+	.title-kind-tags {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.4rem;
+		margin: 0.75rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.title-kind-tag {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.22rem 0.65rem;
+		border-radius: var(--radius-pill);
+		border: 1px solid color-mix(in srgb, var(--fg) 22%, transparent);
+		font-family: var(--ui);
+		font-size: 0.64rem;
+		font-weight: 650;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--fg-dim);
+	}
+
+	.title-kind-tag[data-kind='flashback'] {
+		color: var(--fg-strong);
+	}
+
+	.title-kind-tag[data-kind='myth'] {
+		color: #8b5cf6;
+		border-color: color-mix(in srgb, #8b5cf6 45%, transparent);
+	}
+
+	.title-kind-tag[data-kind='folktale'] {
 		color: var(--gold);
+		border-color: color-mix(in srgb, var(--gold) 45%, transparent);
 	}
 
 	.episode h2 {
@@ -1151,8 +1212,8 @@
 	.title-logo {
 		display: block;
 		width: auto;
-		max-width: min(42rem, 100%);
-		max-height: min(13.5rem, 40vw);
+		max-width: min(48rem, 100%);
+		max-height: min(16rem, 46vw);
 		height: auto;
 		margin: 0.2rem auto 0;
 		object-fit: contain;
@@ -1177,23 +1238,6 @@
 		letter-spacing: 0.02em;
 		color: var(--gold);
 		text-wrap: balance;
-	}
-
-	.episode-ko {
-		margin: 0.7rem 0 0;
-		font-family: var(--serif);
-		font-size: 1.05rem;
-		letter-spacing: 0.06em;
-		color: var(--fg-dim);
-	}
-
-	/* English (and both): the Korean line under the title is display type. */
-	:global(html:not([data-lang='ko'])) .episode-ko {
-		font-family: var(--display-ko);
-		font-weight: 400;
-		font-size: clamp(1.4rem, 2.6vw, 1.8rem);
-		letter-spacing: 0;
-		color: var(--fg-strong);
 	}
 
 	.script.episodes .arrive {

@@ -1,0 +1,181 @@
+[
+	{
+		"kind": "scene",
+		"label": "The Gaya house · the yard wall, that night",
+		"ko": "가야 집 · 그날 밤, 마당 담장"
+	},
+	{
+		"kind": "p",
+		"html": "That night his father finds him on the yard wall, one leg already over, and does not pull him down. He climbs up beside him instead, which takes a while, and talks about a battle. He has never done that before.",
+		"ko": "그날 밤 아버지는 한쪽 다리를 벌써 담 너머로 넘긴 그를 찾아내고도 끌어내리지 않는다. 대신 그 옆으로 올라온다. 시간이 좀 걸린다. 그리고 싸움 얘기를 한다. 처음 있는 일이다."
+	},
+	{
+		"kind": "p",
+		"html": "Great Gaya fell eight years before Seohyun was born. The record gives it one line and a general’s name. His father gives it a boy.",
+		"ko": "대가야는 서현이 태어나기 여덟 해 전에 무너졌다. 기록은 거기에 한 줄과 장수 이름 하나를 준다. 아버지는 거기에 소년 하나를 준다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "muryuk",
+		"chip": "#8B5CF6",
+		"lines": [
+			"대가야에 아이가 하나 있었다. 열다섯.",
+			"성 위 활이 전부 나한테 가 있는 동안, 기병 오천을 끌고 성문을 뚫었다.",
+			"끝나고는 광장 밧줄을 하나도 안 남기고 다 끊었다. 땅만 갖고, 사람은 보냈다."
+		],
+		"en": [
+			"There was a boy at Great Gaya. Fifteen.",
+			"While every bow on the wall was busy with me, he took five thousand horse through the gate.",
+			"After, he cut every rope in the square. Kept the land. Let the people go."
+		]
+	},
+	{
+		"kind": "flashback",
+		"year": "562",
+		"title": "Great Gaya, the square",
+		"blocks": [
+			{
+				"kind": "dialogue",
+				"chip": "#6fa8ff",
+				"person": "sadaham",
+				"lines": [
+					"전쟁에 졌죠. 그래서요?",
+					"하늘 아래 사람은 다 똑같아요. 저 사람들도 다 엄마 배 속에서 나왔잖아요, 안 그래요?"
+				],
+				"en": [
+					"They lost a war. So what?",
+					"Everyone under the sky’s the same. They all came out of their mothers’ wombs too, didn’t they?"
+				]
+			},
+			{
+				"kind": "p",
+				"html": "The last rope comes off near sunset.",
+				"ko": "마지막 밧줄은 해 질 녘에 풀린다."
+			}
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"lines": [
+			"사다함이요? 다 알아요, 사다함. 노래도 있어요."
+		],
+		"en": [
+			"Sadaham? Everybody knows Sadaham. There’s a song."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "muryuk",
+		"chip": "#8B5CF6",
+		"lines": [
+			"노래, 있다고?",
+			"……좋아하겠네. 노래가 중요하다 카더라."
+		],
+		"en": [
+			"A song, is there?",
+			"…He’d like that. Said the singing was important."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "Below them the lane is dark. Inside, the helm sits on its stand and watches the door.",
+		"ko": "발아래 골목은 캄캄하다. 집 안에서는 투구가 받침대 위에서 문을 지켜본다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "muryuk",
+		"chip": "#8B5CF6",
+		"lines": [
+			"그 아이한테 그랬다. 내 아들이 너처럼 컸으면 좋겠다고."
+		],
+		"en": [
+			"I told him I hoped my son would turn out like him."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"lines": [
+			"……그땐 아들 없었잖아요."
+		],
+		"en": [
+			"…You didn’t have a son then."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "muryuk",
+		"chip": "#8B5CF6",
+		"lines": [
+			"없었지.",
+			"그래도 바랐다."
+		],
+		"en": [
+			"Didn’t.",
+			"Hoped anyway."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "seohyeon",
+		"chip": "#3E8EF0",
+		"lines": [
+			"그 사람처럼 어떻게요? 말 타는 거요?"
+		],
+		"en": [
+			"Like him how? The riding?"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"chip": "#8B5CF6",
+		"person": "muryuk",
+		"lines": [
+			"말 타는 거 말고.",
+			"내년 봄에 니 마당 간다. 화랑. 내가 부탁해 놨다."
+		],
+		"en": [
+			"Not the riding.",
+			"Next spring you go to the yard. Hwarang. I’ve asked."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"chip": "#3E8EF0",
+		"person": "seohyeon",
+		"lines": [
+			"저를요? 거긴 우리 같은—"
+		],
+		"en": [
+			"Me? They don’t take—"
+		]
+	},
+	{
+		"kind": "dialogue",
+		"chip": "#8B5CF6",
+		"person": "muryuk",
+		"lines": [
+			"진골은 받는다. 니가 진골이다. 적혀 있다.",
+			"…내려가라. 어매 깬다."
+		],
+		"en": [
+			"They take True Bone. That’s what you are. It’s written down.",
+			"…Down you get. You’ll wake your mother."
+		]
+	},
+	{
+		"kind": "monologue",
+		"person": "seohyeon",
+		"html": "He hoped I would turn out like a boy who died before I was born. I spent most of my life trying to work out which part he meant.",
+		"ko": "아버지는 내가 태어나기도 전에 죽은 소년처럼 크기를 바라셨소. 어느 쪽을 말씀하신 건지, 평생 알아내려 애썼소."
+	},
+	{
+		"kind": "monologue",
+		"person": "seohyeon",
+		"html": "My father looked back for thirty years and stopped at Great Gaya, before I was born. I decided I would never start. …I looked at clouds instead. It isn’t the same thing. I know that now.",
+		"ko": "아버지는 서른 해를 뒤돌아보시다가, 내가 나기 전 대가야에서 그만두셨소. 나는 아예 시작하지 않기로 했소. …대신 구름을 봤지. 같은 게 아니라는 건, 이제 아오."
+	}
+]

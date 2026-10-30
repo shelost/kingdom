@@ -51,6 +51,14 @@ const WIKI_CHARTS: Record<string, WikiChartSpec[]> = {
 	],
 	'nation-goguryeo': [
 		{
+			diagram: 'goguryeo-house',
+			step: 'hunt',
+			title: 'The royal house · 고구려 왕실',
+			caption:
+				'Suchun and his brothers. The spring takes Ilu and Sobal. The corridor takes Dalga. The cup takes Dolgo. The hunt takes the king. Ulbul comes back as Micheon.',
+			ko: '서천과 아우들. 온탕이 일우와 소발을 가져가고, 복도가 달가를, 잔이 돌고를, 사냥이 임금을. 을불이 미천으로 돌아온다.'
+		},
+		{
 			diagram: 'five-tribes',
 			step: 'league',
 			title: 'The Five Tribes · 오부족',

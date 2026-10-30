@@ -475,6 +475,22 @@ export const PLACES: Record<string, Place> = {
 		sobriquets: ['Capital of the Divine Country'],
 		aliases: ['Surabol', '서라벌', 'Capital of the Divine Country']
 	},
+	ajinpo: {
+		id: 'ajinpo',
+		name: 'Ajinpo',
+		korean: '아진포',
+		hanja: '阿珍浦',
+		x: 418,
+		y: 638,
+		kind: 'harbor',
+		side: 'silla',
+		cityId: 'surabol',
+		offMap: true,
+		avatar: '/pl_ulsan_harbor.png',
+		blurb:
+			'The fishing cove east of Surabol. Grandma Ajin rows out here and hauls in a chest with a boy inside.',
+		aliases: ['Ajinpo', '아진포', 'Ajin harbour', 'Ulsan harbour']
+	},
 	sound_kingdom: {
 		id: 'sound_kingdom',
 		founded: -50,
@@ -1326,10 +1342,13 @@ export const PLACES: Record<string, Place> = {
 		side: 'yamato',
 		title: 'The island in the strait',
 		blurb:
-			'對馬. A mountain in the water between Silla and Wa. Jesang puts a prince on a Silla ship in its lee and stays.',
-		arc: 'Wa’s fleet stops here on the way to Surabol. A Silla hull is already waiting in the cove. The hostage leaves. The man who brought him does not.',
-		events: [{ year: 418, label: 'Jesang sends Miseheun home from the lee. Wa takes Jesang.' }],
-		aliases: ['Mountain Island', 'Tsushima', '대마도', '對馬島', '對馬', 'Daemado']
+			'對馬. A mountain in the water between Silla and Wa. Jesang puts a prince on a Silla ship in its lee and stays. A rock off it is Wood Island, where they light him.',
+		arc: 'Wa’s fleet stops here on the way to Surabol. A Silla hull is already waiting in the cove. The hostage leaves. The man who brought him does not. On a wood-island rock they pile the fire. The fire goes blue. Then they take the head.',
+		events: [
+			{ year: 418, label: 'Jesang sends Mihae home from the lee. Wa takes Jesang.' },
+			{ year: 418, label: 'Park Jesang burned on Wood Island. The fire goes blue.' }
+		],
+		aliases: ['Mountain Island', 'Tsushima', '대마도', '對馬島', '對馬', 'Daemado', 'Mokdo', 'Wood Island', '목도', '木島']
 	},
 	realms_pavilion: {
 		id: 'realms_pavilion',

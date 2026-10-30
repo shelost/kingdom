@@ -1,0 +1,202 @@
+[
+	{
+		"id": "gw-north-birds",
+		"entry": "King Gwanggaeto",
+		"at": "Khitan tents on a frozen river",
+		"alt": "Bird’s-eye of Khitan tents on a frozen river, a white horse tiny on the far bank",
+		"people": [],
+		"time": "day",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "DAY. BIRD’S-EYE exposition, high overhead looking straight down then slightly dutch. ONE DEVICE: the frozen river as a pale hard diagonal across a 2:1 frame. Khitan felt tents as dark stamps on white ice, a thin line of hoof-tracks, one white horse and rider tiny on the far bank. Pale paper-white sky, ice glare, granulated snow-wash, dry-brush ice cracks. No faces. No hanbok. Felt, fur, round tents. High-key day ground. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "gw-khitan-intro",
+		"entry": "King Gwanggaeto",
+		"at": "The khan has a name the ice",
+		"alt": "The Khitan Khan on a white horse at the far ice-bank, counting Goguryeo as weather",
+		"people": [],
+		"time": "day",
+		"scene": "INTRO SPLASH of the Khitan Khan. MEDIUM CLOSE, waist-up, worm’s-eye from just below the horse’s shoulder. ONE DEVICE: the white horse’s neck as a pale diagonal. A northern steppe khan, NOT Korean: weathered square face, thin moustache, fur hat with ear-flaps, heavy felt coat, a bow-case at the hip, sitting a white horse on river ice. He is COUNTING, chin slightly raised, unhurried contempt. Pale ice bokeh behind him. NOT hanbok, NOT a jougwan, NOT a Korean crown, NOT Gwanggaeto’s face. ONLY THIS ONE PERSON. Day ground, paper-white ice haze. #6a5a4a as cool shade on the fur. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-boot-khitan",
+		"entry": "King Gwanggaeto",
+		"year": 395,
+		"at": "The boot finds the head. North learns it first.",
+		"alt": "Worm’s-eye: Gwanggaeto’s boot on the Khitan khan’s head on the ice",
+		"people": ["gwanggaeto"],
+		"battle": true,
+		"time": "day",
+		"scene": "WORM’S-EYE from the ice beside the khan’s cheek. ONE DEVICE: the boot as a dark stamp filling the upper third. ONE Gwanggaeto only — NEVER clone him, NEVER a second body wearing his boot. He stands huge above the lens in steel lamellar with red wing shoulder-flaps and a peaked helm, FACE from the attached portrait, grim, not smiling. IGNORE the portrait’s curved guarded sword and gold gauntlets — NO sword in this frame; the boot is the weapon. The Khitan khan is a different man on his knees on the ice, fur hat knocked aside, face turned into packed snow, not Gwanggaeto’s face. Pale ice, one hard low sun shaft raking the red wings. #e0442e as the key on steel and red cloth, never a glow. Day ground. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-west-birds",
+		"entry": "King Gwanggaeto",
+		"at": "The west is a wall you can see from a horse",
+		"alt": "Bird’s-eye of a Later Yan rammed-earth fortress at dusk, one vermilion gate",
+		"people": [],
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "NIGHT. BIRD’S-EYE exposition of a northern Chinese fortress, not Korea, not the Forbidden City. ONE DEVICE: the rammed-earth wall as a dark square, one vermilion timber gate. Grey-tile roofs, white plaster, ochre rammed-earth terraces, NEVER yellow glazed roofs, NEVER the Forbidden City. Tiny horsemen as dark stamps on three sides of the gate. Dusk going to night, one lamp over the gate. Night ground on black. Composed for a 2:1 letterbox crop. No faces. No text. No watermark."
+	},
+	{
+		"id": "gw-yan-intro",
+		"entry": "King Gwanggaeto",
+		"at": "The Yan Emperor. China",
+		"alt": "The Yan Emperor in a vermilion sleeve, a letter in his fist, the gate behind him",
+		"people": [],
+		"time": "night",
+		"scene": "INTRO SPLASH of the Yan Emperor, Later Yan, northern Chinese court. MEDIUM CLOSE, waist-up, low three-quarter. ONE DEVICE: a rolled letter as a pale vertical in his fist. A Chinese northern-dynasty emperor: long face, thin beard, vermilion-and-black court robe, a dark gauze cap (NOT a Korean crown, NOT a jougwan, NOT a Tang futou with wings). He holds a letter like a weapon. Behind him a rammed-earth gate, grey tiles, white plaster, one lamp. NEVER Forbidden City, NEVER yellow roofs. NOT Gwanggaeto’s face. ONLY THIS ONE PERSON. #c45c4a as lamp on the vermilion sleeve. Night ground. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-boot-yan",
+		"entry": "King Gwanggaeto",
+		"year": 396,
+		"at": "The boot finds the head. West learns it second.",
+		"alt": "Worm’s-eye: Gwanggaeto’s boot on the Yan emperor’s head at the gate threshold",
+		"people": ["gwanggaeto"],
+		"battle": true,
+		"time": "day",
+		"scene": "WORM’S-EYE from the packed earth of a gate threshold. ONE DEVICE: the boot as a dark stamp. ONE Gwanggaeto only — NEVER clone him. He stands huge in steel lamellar, red wings, peaked helm, FACE from the attached portrait. IGNORE the portrait’s curved sword — NO sword in frame. The Yan emperor is a different man on his knees, vermilion sleeve in the dirt, dark gauze cap knocked aside, a letter crushed under a palm, NOT Gwanggaeto’s face. Rammed-earth wall, grey tiles, white plaster behind, NEVER Forbidden City, NEVER yellow roofs. #e0442e as morning key on the red wings. Day ground. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-south-birds",
+		"entry": "King Gwanggaeto",
+		"at": "The southern king still thinks the river is a gift",
+		"alt": "Bird’s-eye of Wirye’s yellow hall and the river bank, tiny figures on packed earth",
+		"people": [],
+		"with": ["place:wirye"],
+		"time": "day",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "DAY. BIRD’S-EYE exposition of Wirye. ONE DEVICE: the Han river as a pale band, the yellow hall a small giwa stamp on the near bank. Keep the attached place board’s earthen walls and river plain. Tiny figures on packed earth. High-key paper-white sky, pale water. No faces. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-baekje-intro",
+		"entry": "King Gwanggaeto",
+		"at": "He has a yellow hall and a brother",
+		"alt": "The southern king in Baekje yellow, a hall behind him he still thinks is his",
+		"people": [],
+		"with": ["dress:baekje", "place:wirye"],
+		"time": "day",
+		"scene": "INTRO SPLASH of the southern king of Baekje. MEDIUM CLOSE, waist-up, low three-quarter. ONE DEVICE: a yellow hall pillar as a vertical behind his shoulder. A Baekje king: Korean face, dark beard, yellow-gold court silk (#eec052) with a black silk cap and twin openwork gold flame ornaments (Baekje king crown — copy the crown language, not Gunchogo’s face). He looks as if the river is still a gift. NOT Gwanggaeto’s face, NOT Gunchogo’s face. ONLY THIS ONE PERSON. Wirye packed earth and giwa in soft bokeh. #eec052 as sun on the yellow silk. Day ground. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-boot-baekje",
+		"entry": "King Gwanggaeto",
+		"year": 396,
+		"at": "The boot finds the head. South learns it third.",
+		"alt": "Worm’s-eye: Gwanggaeto’s boot on the southern king’s head on the river bank",
+		"people": ["gwanggaeto"],
+		"battle": true,
+		"with": ["place:wirye"],
+		"time": "day",
+		"scene": "WORM’S-EYE from packed earth at a river bank. ONE DEVICE: the boot as a dark stamp. ONE Gwanggaeto only — NEVER clone him. Steel lamellar, red wings, peaked helm, FACE from the attached portrait. IGNORE the portrait’s curved sword — NO sword in frame. The southern king is a different man on his knees, yellow court silk in the dirt, Baekje black-silk cap with gold flame ornaments knocked sideways, NOT Gwanggaeto’s face. River as a pale band in bokeh. Keep Wirye’s earthen walls from the place board. #e0442e as the key on the red wings. Day ground. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-east-birds",
+		"entry": "King Gwanggaeto",
+		"at": "The Silla king has a thin country and one letter left",
+		"alt": "Bird’s-eye of Surabol burning: giwa halls, sea-raiders’ fires, a thin wall",
+		"people": [],
+		"with": ["place:surabol"],
+		"time": "night",
+		"style": "still-life",
+		"silhouette": true,
+		"scene": "NIGHT. BIRD’S-EYE exposition of Surabol. ONE DEVICE: the palace compound as a dark giwa stamp, sea-raiders’ fires as small orange points on three roads. Keep the attached Seorabeol palace architecture. Tiny figure on a wall. Night ground on black, fire bokeh. No faces. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-silla-intro",
+		"entry": "King Gwanggaeto",
+		"at": "He has not yet written the word. He will.",
+		"alt": "The Silla king on his own wall, counting fires that are not his",
+		"people": [],
+		"with": ["dress:silla", "place:surabol"],
+		"time": "night",
+		"scene": "INTRO SPLASH of the Silla king. MEDIUM CLOSE, waist-up, low three-quarter from the wall-walk. ONE DEVICE: a burning fire as a small orange disc over his shoulder. A thin Silla king: Korean face, anxious eyes, white-and-blue court silk, Silla open crown (three flat tree uprights on a narrow band, antler uprights at the BACK, jade gogok, temple pendants — never a solid basket, never horns at the sides). He is counting. NOT Gwanggaeto’s face. ONLY THIS ONE PERSON. Surabol giwa and fire bokeh. #2A5FB8 as lamp on the blue silk. Night ground. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gw-boot-silla",
+		"entry": "King Gwanggaeto",
+		"year": 400,
+		"at": "You’ll remember this more.",
+		"alt": "Worm’s-eye: Gwanggaeto’s boot on the Silla king’s head in his own yard",
+		"people": ["gwanggaeto"],
+		"battle": true,
+		"with": ["place:surabol"],
+		"time": "day",
+		"scene": "WORM’S-EYE from packed earth of a Silla palace yard. ONE DEVICE: the boot as a dark stamp filling the upper third. ONE Gwanggaeto only — NEVER clone him, NEVER a second body wearing his boot. Steel lamellar, red wings, peaked helm, FACE from the attached portrait, unhurried. IGNORE the portrait’s curved sword — NO sword in frame. The Silla king is a different thin man on his knees, white-and-blue silk in the dirt, Silla open crown knocked forward, NOT Gwanggaeto’s face. Keep Surabol’s giwa halls from the place board, dissolving in haze. #e0442e as the key on the red wings. Day ground. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gc-behead",
+		"entry": "King Geunchogo",
+		"year": 371,
+		"at": "They meet on the stones.",
+		"alt": "Geunchogo on Pyongyang’s parapet, the wet ring-pommel sword at the Goguryeo king’s neck",
+		"people": ["gyeonggeunchogo"],
+		"sword": true,
+		"manga": true,
+		"with": ["place:pyongyang"],
+		"time": "day",
+		"scene": "MANGA ACTION, hard DUTCH, medium close on the parapet. ONE DEVICE: the straight ring-pommel sword as a hard steel line across the Goguryeo king’s throat. LEFT face of the sheet = King Geunchogo: FACE AND GARMENTS from /ch_gunchogo.png — square Korean face, full dark beard, vermilion-red court po, gold dragon shoulders, black silk cap with twin gold flame ornaments. He is mid-stroke, mouth set, a little cruel, not a standing portrait. The Goguryeo king is a DIFFERENT older man — grey at the temples, red Goguryeo court silk and steel lamellar, peaked helm knocked back — NEVER clone Geunchogo’s face onto him. Extreme foreshortening: the blade comes across the lens. Blood as a thin dark ribbon on frozen stone, not a gore catalog. Keep Pyongyang’s red two-tier munru and stone walls from the place board in bokeh. IGNORE any curved sword on any portrait. The weapon is the attached sw_bidam board: small iron ring pommel at the heel of the fist, short grip, thin metal band, NO hand guard, perfectly STRAIGHT narrow blade. #eec052 as cold morning on Geunchogo’s gold ornaments. Day ground, storm-pale. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gc-head",
+		"entry": "King Geunchogo",
+		"year": 371,
+		"at": "The head lies by itself.",
+		"alt": "The Goguryeo king’s severed head lies on its side in frozen mud on Pyongyang’s wall",
+		"people": [],
+		"with": ["place:pyongyang"],
+		"time": "day",
+		"scene": "ECU still-life, slightly DUTCH, on frozen parapet mud. ONE DEVICE: the severed head as the only subject, lying on its side. An older Goguryeo king’s head — grey at the temples, peaked helm a foot away, eyes still open, blood on the giwa and on the packed ice, not a gore catalog: cinematic, one dark pool, breath gone. NEVER Geunchogo’s face. NEVER a second head. Keep a sliver of Pyongyang’s red munru in creamy bokeh at the far edge. Pale winter day, one hard raking key. Composed for a 2:1 letterbox crop. No text. No watermark. No other people."
+	},
+	{
+		"id": "gs-stroke-worm",
+		"entry": "King Seong",
+		"year": 554,
+		"at": "The knife is not long.",
+		"alt": "Worm’s-eye from the ditch: Dodo’s knife is the whole sky over King Seong’s throat",
+		"people": ["kingsung", "dodo"],
+		"hat": false,
+		"manga": true,
+		"time": "night",
+		"scene": "MANGA ACTION, WORM’S-EYE from the frozen ditch under the stool. ONE DEVICE: the short knife as the whole sky, extreme foreshortening, coming at the lens. LEFT face of the sheet = King Seong: FACE AND GARMENTS from /ch_sung.png — grey beard, long grey hair, vermilion court robe, gold dragon shoulders, black silk cap with twin gold flame ornaments, neck out, eyes open, not serene. RIGHT = Dodo: FACE AND GARMENTS from /ch_dodo.png — young, topknot, white inner, grey vest, no hat, kneeling close, both hands on a SHORT knife (not a ring-pommel sword, not a long blade), mouth tight, not proud. Night road that was not there at dusk, packed earth, timber posts. #e5b83a as one torch on Seong’s gold, #7f96b5 as cold on Dodo’s grey. Night ground on black. NEVER clone either face. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gs-stroke-dutch",
+		"entry": "King Seong",
+		"year": 554,
+		"at": "One stroke.",
+		"alt": "Dutch mid-stroke: Dodo close over King Seong on the stool, the short knife a hard line",
+		"people": ["kingsung", "dodo"],
+		"hat": false,
+		"manga": true,
+		"time": "night",
+		"scene": "MANGA ACTION, hard DUTCH, medium two-shot at stool height. ONE DEVICE: the short knife as a hard horizontal line at the neck. LEFT = King Seong from /ch_sung.png, grey beard, vermilion, gold flame cap, neck out, a grimace starting. RIGHT = Dodo from /ch_dodo.png, topknot, grey vest, leaning in, doing the work, not a hero pose. Motion smear on the stroke. Blood as a dark ribbon, cinematic, not a gore catalog. Frozen ditch below. One torch just out of frame. #e5b83a on the gold ornaments. Night ground. NEVER clone. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gs-head",
+		"entry": "King Seong",
+		"year": 554,
+		"at": "The head lands on its side",
+		"alt": "King Seong’s head on its side in the packed earth, grey hair in the mud, gold flame ornaments still in the cap",
+		"people": ["kingsung"],
+		"hat": false,
+		"time": "night",
+		"scene": "ECU, slightly DUTCH, packed earth of a winter ditch. ONE DEVICE: the head on its side as the whole subject. FACE from /ch_sung.png — grey beard, long grey hair, black silk cap with twin gold flame ornaments STILL IN THE CAP, eyes open, blood finding the freeze-line in the dirt. Cinematic, not a gore catalog: one dark pool, grit, frost. No other people. No Dodo in frame. Night ground on black, one torch bokeh far off. #e5b83a as the last light on the gold ornaments. Composed for a 2:1 letterbox crop. No text. No watermark."
+	},
+	{
+		"id": "gs-dodo-after",
+		"entry": "King Seong",
+		"year": 554,
+		"at": "…I’m sorry.",
+		"alt": "Dodo kneeling after the stroke, looking at his own hands, not proud",
+		"people": ["dodo"],
+		"hat": false,
+		"time": "night",
+		"scene": "INTIMATE medium, low three-quarter. ONE DEVICE: Dodo’s empty hands in the foreground, out of focus, the stool a dark shape behind. FACE AND GARMENTS from /ch_dodo.png — young, topknot, white inner, grey vest, kneeling, looking down at his hands, mouth open on an apology, not proud, not a hero. King Seong is not in this frame. Night road, packed earth, one torch. #7f96b5 as cold key on the grey vest. Night ground on black. Composed for a 2:1 letterbox crop. No text. No watermark."
+	}
+]

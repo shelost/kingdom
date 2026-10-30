@@ -1,0 +1,560 @@
+[
+	{
+		"id": "par-gate-yushin",
+		"parallel": "hwarang-gate",
+		"entry": "Seohyun",
+		"year": 609,
+		"at": "Seohyun rides with him as far as the city, then as far as the yard",
+		"alt": "The yard gate. Fathers are not allowed further.",
+		"time": "day",
+		"people": [
+			"seohyeon",
+			"yushin"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "LAYOUT (master of the set): two-shot at the Hwarang yard gate at dawn, low three-quarter camera at the son's shoulder height. The FATHER on the LEFT third, three-quarter to camera, both hands raised to straighten the crescent-moon headband on his son's brow, mouth open on a sentence he can't finish. The SON on the RIGHT third, fifteen, chin up, eyes past his father toward the open gate, a cloth bundle on his back, his hands catching his father's wrists. Between them, the open timber gate of the yard under a curved giwa roof, and through it, small in white dawn haze, a row of new boys on the packed earth. The low sun comes through the gate and rims both faces. Far down the lane, tiny, a quiet man walks away from a boy in a black headband. Seohyun is the father, greying, in a governor's plain court silk; Yushin is the son in new Hwarang dress."
+	},
+	{
+		"id": "par-gate-chunchu",
+		"parallel": "hwarang-gate",
+		"layout": "par-gate-yushin",
+		"entry": "Munhee",
+		"at": "Kim Yongsu stops at the gate, clears his throat",
+		"alt": "Other fathers clap a shoulder and leave. This one has prepared a speech.",
+		"time": "day",
+		"people": [
+			"yongsu",
+			"chunchu"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same gate, ten years on. Kim Yongsu is the father on the LEFT, long loose hair with the stray strand, hands raised to the boy's headband, mid-speech, very serious; fifteen-year-old Chunchu on the RIGHT, mortified, catching his father's wrists, glancing sideways at the other boys who are watching. Through the gate the new class of Class 59 in a row, some of them smirking."
+	},
+	{
+		"id": "par-gate-bupmin",
+		"parallel": "hwarang-gate",
+		"layout": "par-gate-yushin",
+		"entry": "Bupmin",
+		"at": "His uncle keeps the yard, and the yard is where Bupmin lives now.",
+		"alt": "His father is collecting votes. His uncle fixes the headband.",
+		"time": "day",
+		"people": [
+			"yushin",
+			"munmu"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same gate, thirty years after his own. Kim Yushin, now the Marshal in his forties, stands where his father stood on the LEFT, hands raised to his nephew's crescent headband, stern and almost smiling; fifteen-year-old Bupmin on the RIGHT, eager, chin up, too big a grin, catching his uncle's wrists. Through the gate the yard and a row of new boys."
+	},
+	{
+		"id": "par-gate-seohyun",
+		"parallel": "hwarang-gate",
+		"layout": "par-gate-yushin",
+		"entry": "Seohyun",
+		"at": "Next spring you go to the yard. Hwarang. I’ve asked.",
+		"alt": "Muryuk asked. He would never say how much it cost.",
+		"time": "day",
+		"people": [
+			"muryuk",
+			"seohyeon"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same gate, a generation earlier. Kim Muryuk, the old Gaya prince, grey, in plain Silla court dress, his tall Gaya cone helm under one arm, is the father on the LEFT, one hand raised to the crescent headband on his son's brow, mouth shut, eyes wet and refusing to be; young Seohyun on the RIGHT, fifteen, catching his father's wrist, looking at the gate like a door that might not open for a Gaya boy."
+	},
+	{
+		"id": "par-gate-mugwan",
+		"parallel": "hwarang-gate",
+		"layout": "par-gate-yushin",
+		"entry": "Sadaham",
+		"at": "His father told him to keep his head down, his sword clean and his mouth shut",
+		"alt": "Head down, sword clean, mouth shut. He means to do all three.",
+		"time": "day",
+		"people": [
+			"mugwan"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same gate, the first year there ever was a yard. Mugwan's father, a stern greying swordsman of a minor house with a plain topknot and a scarred hand (an unnamed man, his face half turned away), is the father on the LEFT, hands raised to tug his son's new headband straight, giving three short orders; young Mugwan on the RIGHT, fourteen, careful, sword clean at his hip, deciding to be unimpressed. Through the gate a hundred noble sons in powder and silk standing in rows."
+	},
+	{
+		"id": "par-gate-namseng",
+		"parallel": "hwarang-gate",
+		"layout": "par-gate-yushin",
+		"entry": "Academy",
+		"at": "Yeon brings Namseng to the gate himself, in riding boots",
+		"alt": "The Goguryeo version: the Grand Academy, and a father who won't take his boots off.",
+		"time": "day",
+		"people": [
+			"gesomun",
+			"namseng"
+		],
+		"with": [
+			"place:taehak"
+		],
+		"scene": "The same layout in Goguryeo: the gate of the Grand Academy in Pyongyang, red timber and grey giwa, monks sweeping the swept stone beyond. Yeon Gesomun is the father on the LEFT, in riding boots and Goguryeo dress, hands raised to straighten his small son's collar the way you check a saddle girth; young Namseng on the RIGHT, about nine, catching his father's wrists, looking past him at a monk in the courtyard."
+	},
+	{
+		"id": "par-line-chunchu",
+		"parallel": "hwarang-line",
+		"entry": "Munhee",
+		"at": "On the tenth morning he stands the new class in a line",
+		"alt": "Every boy gets the same question. Only one gets the stone.",
+		"time": "day",
+		"people": [
+			"chunchu"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "LAYOUT (master of the set): low camera at knee height, looking along a line of new Hwarang boys standing shoulder to shoulder across the frame on the packed-earth yard, the line receding from the left foreground into the right distance. The YARD MARSHAL, a scarred True Bone veteran in worn lamellar with two fingers left on his sword hand (an unnamed man), has stopped mid-stride on the RIGHT third and leans down into the face of the boy at the centre. The boy at the CENTRE, sharp and alone in focus, chin up, answering. The other boys soft and smirking. Behind, the yard hall's giwa eaves in white morning haze. Chunchu is the boy at the centre, fifteen, too thin, Hwarang dress."
+	},
+	{
+		"id": "par-line-sadaham",
+		"parallel": "hwarang-line",
+		"layout": "par-line-chunchu",
+		"entry": "Sadaham",
+		"at": "One of them is not in a row. He is on the roof.",
+		"alt": "A hundred noble sons in rows. One gap.",
+		"time": "day",
+		"people": [
+			"mugwan",
+			"sadaham"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same line, the first year of the yard. The yard master has stopped on the RIGHT third in front of an EMPTY place in the line at the centre, glaring at the gap. Next to the gap stands young Mugwan, rigid, eyes sliding upward. Up on the low giwa roof of the yard hall behind the line, small in the upper middle of the frame (not at the top edge), young Sadaham sits with his knees up, grinning down."
+	},
+	{
+		"id": "par-line-bupmin",
+		"parallel": "hwarang-line",
+		"layout": "par-line-chunchu",
+		"entry": "Bupmin",
+		"at": "On the first night of every class, the Marshal walks the new boys down it with one lamp.",
+		"alt": "He starts at the gate and walks backwards through time.",
+		"time": "night",
+		"people": [
+			"yushin",
+			"munmu"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same line at night. The new class stands along the painted gallery wall under its little roof, the faded painted figures of old classes on the wall behind them. Marshal Kim Yushin has stopped on the RIGHT third holding up one oil lamp toward the boy at the centre; the lamp is the one key light. Bupmin at the CENTRE, fifteen, eyes not on his uncle but on the painted wall, where the lamp has found two young men under a fallen horse."
+	},
+	{
+		"id": "par-mourn-gildal",
+		"parallel": "friend-death",
+		"entry": "Yongsu",
+		"at": "Yongsu weeps without a sound",
+		"alt": "Nobody behind him can see his shoulders move.",
+		"time": "day",
+		"people": [
+			"yongsu",
+			"gildal"
+		],
+		"scene": "LAYOUT (master of the set): wide low shot, camera on the ground. In the lower centre the MOURNER kneels in the mud with his dead friend across his lap, one arm under the friend's shoulders, the friend's head fallen back against his chest; the mourner bends down until his forehead rests on the dead man's brow, eyes shut, one hand cradling the back of the head, the other fist knotted in the friend's collar. Nobody else near. The world around them vast and empty: here a flat sea of grey dawn reeds by the river, and far behind, tiny and out of focus, forty riders on horseback waiting. Yongsu (long loose hair, stray strand) is the mourner; Gildal, in his torn orange robe and crimson scarf with the fox mask fallen beside him, is the dead friend. No blood shown on the face; a knife lies in the mud.",
+		"year": 602
+	},
+	{
+		"id": "par-mourn-mugwan",
+		"parallel": "friend-death",
+		"layout": "par-mourn-gildal",
+		"entry": "Sadaham",
+		"at": "Mugwan dies of illness not long after the campaign",
+		"alt": "Before dawn, so as not to wake anyone.",
+		"time": "night",
+		"hat": false,
+		"people": [
+			"sadaham",
+			"mugwan"
+		],
+		"scene": "The same pose, years earlier. Sadaham, seventeen, kneels on a floor mat in a bare dark room before dawn with Mugwan's body across his lap, forehead on his friend's brow, one hand cradling his head; Mugwan thin from illness, in a plain white sleeping robe, eyes closed. The room is huge and empty around them: a paper door glowing faintly blue with first light, one guttering lamp on the floor, and on the floor beside them a flat grey river stone with bad characters cut into it."
+	},
+	{
+		"id": "par-mourn-gunhae",
+		"parallel": "friend-death",
+		"layout": "par-mourn-gildal",
+		"entry": "Huangdi (皇帝)",
+		"at": "On Gunhae is wherever the patrol left him.",
+		"alt": "Chunchu was not there. He sees it anyway, every time he shuts his eyes.",
+		"time": "day",
+		"people": [
+			"chunchu",
+			"ongunhae"
+		],
+		"scene": "The same pose, in the sea. Chunchu, in plain borrowed hemp, kneels waist-deep in the shallows at red dawn with On Gunhae's body across his lap, forehead on the young man's brow, one hand cradling his head. Gunhae wears Chunchu's own white-and-purple envoy coat, soaked, the high feathered envoy cap still tied under his chin. Around them only flat water, floating spars and smoke, and far behind a burnt embassy ship listing on the horizon. Red dawn light."
+	},
+	{
+		"id": "par-coro-sunduk",
+		"parallel": "coronation",
+		"entry": "Queen Sunduk",
+		"at": "He sets it on her head. It fits.",
+		"alt": "It fitted last night too. Nobody mentions it.",
+		"time": "day",
+		"people": [
+			"sunduk"
+		],
+		"spirits": [
+			"jinpyung",
+			"jinji",
+			"jinheung"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "LAYOUT (master of the set): low worm's-eye three-quarter shot from below the dais. The NEW MONARCH sits upright on the throne in the lower-left third, chin lifted, as an old councillor's hands (only hands and sleeves in frame) lower the gold crown onto the head. Behind and above the throne, a line of ANCESTRAL SPIRITS of the previous rulers of this kingdom stands in a single receding diagonal row from the upper right down toward the throne, shoulder to shoulder, each crowned and robed, all looking down at the new head: pale and translucent, painted in thin mist-white and grey washes so the hall shows through them, solemn, one of them very slightly bowing. No glow outline, no halo: they are faint like breath on cold air. Below, the court face-down on the floor as dark shapes. Queen Sunduk is the new monarch; the spirits, nearest first, are King Jinpyung, King Jinji and King Jinhung."
+	},
+	{
+		"id": "par-coro-jinheung",
+		"parallel": "coronation",
+		"layout": "par-coro-sunduk",
+		"entry": "Jinhung, the Cloud",
+		"at": "He was seven when they put the crown on him.",
+		"alt": "It was too big, and nobody mentioned it.",
+		"time": "day",
+		"people": [
+			"jinheung"
+		],
+		"spirits": [
+			"beopheung"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same shot. Jinhung, seven years old, small on the huge throne, chin up, the crown far too big and sliding toward his eyebrows as the hands lower it. The spirit line behind him: King Beopheung nearest, then older Silla kings fading into the haze."
+	},
+	{
+		"id": "par-coro-jinji",
+		"parallel": "coronation",
+		"layout": "par-coro-sunduk",
+		"entry": "Yongsu",
+		"at": "Saryun is crowned Jinji.",
+		"alt": "Remember the boy's face.",
+		"time": "day",
+		"people": [
+			"jinji"
+		],
+		"spirits": [
+			"jinheung",
+			"beopheung"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same shot. Saryun, a handsome man in his thirties smelling faintly of plum wine, takes the crown. The spirit line behind him: King Jinhung nearest, newly dead, looking down not at his son but at a ten-year-old boy in the court below; then King Beopheung."
+	},
+	{
+		"id": "par-coro-jinpyung",
+		"parallel": "coronation",
+		"entry": "Yongsu",
+		"at": "Three days later they bring him back to watch his nephew crowned",
+		"alt": "For a moment it is only a boy and his uncle.",
+		"time": "day",
+		"people": [
+			"jinpyung"
+		],
+		"spirits": [
+			"jinheung",
+			"beopheung"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same shot. Jinpyung, an eleven-year-old boy in a robe hemmed in a hurry, takes the crown, staring past the hands at something across the hall. The spirit line behind him: King Jinhung nearest, then King Beopheung. Below at the side, among the dark kneeling court, one living man is not kneeling: his deposed uncle under guard."
+	},
+	{
+		"id": "par-coro-euija",
+		"parallel": "coronation",
+		"entry": "King Euija",
+		"at": "Euija takes the throne at forty-one.",
+		"alt": "Righteous and Merciful. He has a sense of humour about that.",
+		"time": "day",
+		"people": [
+			"euija"
+		],
+		"spirits": [
+			"kingmu"
+		],
+		"with": [
+			"place:sabi"
+		],
+		"scene": "The same shot in the Baekje palace at Sabi. King Euija, forty-one, broad and grinning, takes the black silk crown with its gold flame ornaments. The spirit line behind him: King Mu nearest, his father, then older Baekje kings fading into river haze. Far beyond the open doors, over the Sabi river, a dragon shape in the clouds."
+	},
+	{
+		"id": "par-coro-bojang",
+		"parallel": "coronation",
+		"entry": "Yeon’s Massacre",
+		"at": "Yeon enthrones the king’s nephew as King Bojang",
+		"alt": "The new king is crowned by the man who killed the last one.",
+		"time": "night",
+		"people": [
+			"bojang"
+		],
+		"spirits": [
+			"yeongnyu"
+		],
+		"with": [
+			"place:pyongyang_fortress"
+		],
+		"scene": "The same shot, at night in the Goguryeo palace at Pyongyang, torchlight. King Bojang, pale and frightened, takes the Goguryeo crown; the hands lowering it are armoured and bloody at the cuff. The spirit line behind him: King Yeongnyu nearest, murdered tonight, still in his feast robe, looking down at his nephew; then older Goguryeo kings fading into smoke."
+	},
+	{
+		"id": "par-coro-jinduk",
+		"parallel": "coronation",
+		"entry": "Queen Jinduk",
+		"at": "Sungman is crowned Queen Jinduk before the blood on the yard dries.",
+		"alt": "The crown was made for her cousin and had to be padded at the temples.",
+		"time": "day",
+		"people": [
+			"jinduk"
+		],
+		"spirits": [
+			"sunduk",
+			"jinpyung"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same shot. Queen Jinduk, a mild woman in her forties, sits very still and does not fidget as the crown, padded at the temples, comes down. The spirit line behind her: Queen Sunduk nearest, newly dead, then King Jinpyung, then older kings."
+	},
+	{
+		"id": "par-coro-muyeol",
+		"parallel": "coronation",
+		"layout": "par-coro-sunduk",
+		"entry": "King Muyeol",
+		"at": "Within the hour the crown will sit on his head",
+		"alt": "The side branch becomes the trunk. Everyone who looked down on it now has to look up.",
+		"time": "day",
+		"people": [
+			"chunchu"
+		],
+		"spirits": [
+			"jinduk",
+			"sunduk"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same shot. Kim Chunchu, fifty-one, takes the crown in purple-crimson silk, the queen's ties still tight at his wrists. The spirit line behind him: Queen Jinduk nearest, then Queen Sunduk, then the Sacred Bone kings fading into haze, and last of all, at the far end of the line, small, a deposed king with a wine cup (his grandfather Jinji), finally included."
+	},
+	{
+		"id": "par-coro-munmu",
+		"parallel": "coronation",
+		"layout": "par-coro-sunduk",
+		"entry": "Kim Chunchu†",
+		"at": "Bupmin takes the throne.",
+		"alt": "They will call him Munmu.",
+		"time": "day",
+		"people": [
+			"munmu"
+		],
+		"spirits": [
+			"chunchu",
+			"jinduk"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"scene": "The same shot. King Munmu, Bupmin grown, thirty-five, takes the crown with a soldier's set jaw. The spirit line behind him: King Muyeol (his father Chunchu) nearest, faintly smiling, then Queen Jinduk, then Queen Sunduk and the older kings fading into haze."
+	},
+	{
+		"id": "par-coro-pung",
+		"parallel": "coronation",
+		"entry": "King Pungjang",
+		"at": "Pung was the only prince left, so they crowned him the next day",
+		"alt": "The crown is Pung's. The army is Boksin's.",
+		"time": "day",
+		"people": [
+			"pung"
+		],
+		"spirits": [
+			"kingmu"
+		],
+		"with": [
+			"dress:baekje"
+		],
+		"scene": "The same shot in a bare timber fortress hall, not a palace. Pung, a thin prince back from years in the East, in a cap an Eastern tailor made, takes the crown from a general's scarred hands. The spirit line behind him is short and broken: King Mu, his grandfather, nearest, and a gap where his living, captive father should stand, then a few older Baekje kings fading into mountain mist."
+	},
+	{
+		"id": "par-kiss-seohyun",
+		"parallel": "first-kiss",
+		"entry": "Seohyun",
+		"at": "She kisses him before he can get her on the horse.",
+		"alt": "Hard, in the rain, with drain-mud on her chin.",
+		"time": "night",
+		"hat": false,
+		"people": [
+			"seohyeon",
+			"manmyung"
+		],
+		"scene": "LAYOUT (master of the set): close two-shot in strict profile, the two faces meeting at the exact centre of the frame. The MAN on the LEFT, head bowed to her, one hand flat at the small of her back; the WOMAN on the RIGHT, up on her toes, both hands in his hair, pulling him down into the kiss. Their bodies make one shape; behind them the place dissolves into soft painted bokeh. One key light from the side rakes both faces. Here: night rain outside a back wall, two horses waiting in the dark behind, drain-mud on her chin, rain on both faces, Manmyung in a soaked noble hanbok, Seohyun in a dark travel coat."
+	},
+	{
+		"id": "par-kiss-haemosu",
+		"parallel": "first-kiss",
+		"layout": "par-kiss-seohyun",
+		"entry": "Haemosu",
+		"at": "She kisses him with river still on her mouth.",
+		"alt": "The kiss tastes like the shallows.",
+		"time": "day",
+		"hat": false,
+		"people": [
+			"haemosu",
+			"yuhwa"
+		],
+		"scene": "The same profile kiss in the shallows of the Amnok. Haemosu on the LEFT, bare-chested sky god, head bowed to her; Yuhwa on the RIGHT, up out of the water, wet silk clinging, both hands in his hair; river light flickering on their faces, the far bank and reeds in bokeh."
+	},
+	{
+		"id": "par-kiss-jumong",
+		"parallel": "first-kiss",
+		"layout": "par-kiss-seohyun",
+		"entry": "Jolbon",
+		"year": -40,
+		"at": "kisses her at the well-beam",
+		"alt": "He stops pretending the rope is the problem.",
+		"time": "day",
+		"hat": false,
+		"people": [
+			"jumong",
+			"sosuno"
+		],
+		"scene": "The same profile kiss at the Jolbon well-beam in the morning. Jumong on the LEFT, clean-shaven, red jacket, grinning into the kiss; Sosuno on the RIGHT in dusty-rose, both hands fisted in his hair as if she is still angry about it, the well rope and bucket in the foreground blur."
+	},
+	{
+		"id": "par-kiss-suro",
+		"parallel": "first-kiss",
+		"layout": "par-kiss-seohyun",
+		"entry": "Suro",
+		"at": "He is kissing the throat he will marry",
+		"alt": "It is the first thing the wall has ever been for.",
+		"time": "night",
+		"hat": false,
+		"people": [
+			"suro",
+			"heohwangok"
+		],
+		"scene": "The same profile kiss at the darkest corner of the palace wall of Golden Gaya at night. Suro on the LEFT bowed to her, undone; Heo on the RIGHT in close-fitted purple silk, her back to the wall, both hands in his hair, composed and amused; lamps of the palace in bokeh."
+	},
+	{
+		"id": "par-kiss-chunchu",
+		"parallel": "first-kiss",
+		"layout": "par-kiss-seohyun",
+		"entry": "Munhee",
+		"at": "He kisses her before she can put it down.",
+		"alt": "The fifth night, she bites off the thread.",
+		"time": "night",
+		"hat": false,
+		"people": [
+			"chunchu",
+			"munhee"
+		],
+		"scene": "The same profile kiss in a lamplit sewing room. Chunchu on the LEFT in a magenta underrobe, his coat with its unpicked hem half on the floor; Munhee on the RIGHT in pink silk, the needle and thread still in one hand tangled in his hair; one oil lamp the key."
+	},
+	{
+		"id": "par-kiss-bupmin",
+		"parallel": "first-kiss",
+		"layout": "par-kiss-seohyun",
+		"entry": "Jahee",
+		"at": "until there is a stolen brush between their mouths, and then they do",
+		"alt": "A prince learning the harbour by kissing the girl who can count.",
+		"time": "night",
+		"hat": false,
+		"people": [
+			"munmu",
+			"jayi"
+		],
+		"scene": "The same profile kiss under a warehouse eave in hard night rain at the harbour. Bupmin on the LEFT, young prince, bowed to her; Jahee on the RIGHT, a sharp quay girl, both hands in his hair, a wet ledger crushed between them and a writing brush fallen at their feet; a hard curtain of rain off the eave in the foreground, warehouse lamp the key."
+	},
+	{
+		"id": "par-wed-chunchu",
+		"parallel": "wedding",
+		"entry": "Munhee",
+		"at": "Magenta silk and pink silk share a cup.",
+		"alt": "Two adults who have already learned each other's breath.",
+		"time": "night",
+		"people": [
+			"chunchu",
+			"munhee"
+		],
+		"scene": "LAYOUT (master of the set): two-shot across a low lacquered wedding table, camera low at table height. The GROOM kneels on the LEFT and the BRIDE on the RIGHT, facing each other in profile, each holding up one half of a split gourd cup toward the other, their eyes meeting over it. On the table between them a pair of tall candles, one red and one blue, and a pair of carved wooden wedding geese, all in the foreground blur. One candle flame is the key. Here: a quiet room, no guests, Chunchu in magenta silk, Munhee in pink silk with her binyeo."
+	},
+	{
+		"id": "par-wed-hyukgose",
+		"parallel": "wedding",
+		"layout": "par-wed-chunchu",
+		"entry": "Hyukgosé",
+		"at": "The boy king does not laugh. He looks at his bride",
+		"alt": "As if somebody had finally said something interesting.",
+		"time": "night",
+		"people": [
+			"hyukgose",
+			"alyoung"
+		],
+		"scene": "The same wedding table at the first wedding Silla ever had, a feast hall of timber and thatch, torchlit, the six chiefs standing up in the blur behind. Hyukgose, thirteen, the boy king, on the LEFT; Alyoung on the RIGHT; both holding up their halves of the gourd, the boy king staring at his bride, not laughing."
+	},
+	{
+		"id": "par-wed-suro",
+		"parallel": "wedding",
+		"layout": "par-wed-chunchu",
+		"entry": "Suro",
+		"at": "She becomes the first queen of Golden Gaya.",
+		"alt": "Married a hundred and fifty years. The record is firm about this.",
+		"time": "night",
+		"people": [
+			"suro",
+			"heohwangok"
+		],
+		"scene": "The same wedding table in a tent on the beach at Golden Gaya, the open flap showing the sea and her red-sailed ship in the night. Suro on the LEFT in Gaya king's robes and crown; Heo on the RIGHT in close-fitted purple silk; each holding up their half of the gourd, Heo amused, Suro undone."
+	},
+	{
+		"id": "par-wed-yongsu",
+		"parallel": "wedding",
+		"layout": "par-wed-chunchu",
+		"entry": "Yongsu",
+		"at": "Now he has done it to make a point.",
+		"alt": "She has not decided which of the two men she is angrier with.",
+		"time": "night",
+		"people": [
+			"yongsu",
+			"chunmyung"
+		],
+		"scene": "The same wedding table in a small palace side hall, a handful of stiff guests in the blur. Bihyung on the LEFT, the madman, long loose hair with the stray strand, holding his half of the gourd too carefully; Chunmyung on the RIGHT in magenta bridal silk with her amethyst binyeo, holding hers up like a challenge, furious and not looking away."
+	},
+	{
+		"id": "par-wed-bupmin",
+		"parallel": "wedding",
+		"layout": "par-wed-chunchu",
+		"entry": "Jahee",
+		"at": "He has had wedding silk folded in a chest since the night of the forty sacks.",
+		"alt": "In the Marshal's family this is practically a proposal.",
+		"time": "night",
+		"people": [
+			"munmu",
+			"jayi"
+		],
+		"scene": "The same wedding table in a palace hall. Bupmin on the LEFT in the wedding silk he kept in a chest; Jahee on the RIGHT, the quay girl now in court silk with her binyeo, holding her half of the gourd as if she were checking its weight; a ledger peeking from under the table."
+	},
+	{
+		"id": "par-wed-seohyun",
+		"parallel": "wedding",
+		"layout": "par-wed-chunchu",
+		"entry": "Seohyun",
+		"at": "The hut has a roof, mostly, and a cold hearth",
+		"alt": "No wedding anyone was invited to.",
+		"time": "night",
+		"hat": false,
+		"people": [
+			"seohyeon",
+			"manmyung"
+		],
+		"scene": "The same wedding, with nothing: a charcoal burner's hut in the hills, the door that won't shut. The table is an upturned crate; the two candles are one stub of tallow; the geese are two pine cones. Seohyun on the LEFT and Manmyung on the RIGHT kneel in their travel clothes, still damp from the rain, each holding up half of a cracked gourd dipper, grinning at each other."
+	}
+]

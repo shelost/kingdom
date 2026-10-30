@@ -1,0 +1,330 @@
+[
+	{
+		"id": "scenes-star-wolji-wide",
+		"entry": "The Eastern Star",
+		"at": "The queen has had the pond lit",
+		"alt": "The palace pond at night, covered in small floating lamps, a giwa pavilion on its bank with two tiny men sitting on its steps and two women at the water's edge.",
+		"scene": "Wide establishing shot, high three-quarter angle over the royal pond of the old palace in Surabol at night: a long dark pond with an irregular stone-edged shore, a two-storey giwa-roofed timber pavilion on a stone terrace at its edge with a short flight of granite steps down to the water. Hundreds of small paper lotus lamps float on the black water, each a warm dot, their reflections doubling them. Two tiny seated men on the pavilion steps, backs to the water; two tiny women in court hanbok crouched at the water's edge setting lamps afloat. Old pines and dark garden shrubs along a low wall. One bright star low in the eastern sky above the pavilion roof. ONE device: the curve of the shoreline sweeping from the lamps to the steps. Sharp foreground: a pine bough and one lamp drifting close to the lens. Few hues: ink black, warm lamp gold, pale stone.",
+		"with": [
+			"place:moon_palace",
+			"dress:silla"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-munhee-lamp",
+		"entry": "The Eastern Star",
+		"at": "Sunduk sets them on the water herself.",
+		"alt": "At the water's edge Queen Sunduk sets a floating lamp on the pond while Munhee stands beside her holding a single lamp in both hands, not letting go.",
+		"scene": "Low angle from the waterline, close two-shot at the stone edge of the palace pond at night. Sunduk, the queen, crouches and sets a small paper lotus lamp on the black water with both hands, her face calm and sad, lit from below by the lamp. Beside and slightly behind her Munhee stands upright holding one unlit-looking lamp close against her chest in both hands, knuckles tight, eyes fixed on the water, mouth pressed shut; she will not put it down. Floating lamps drift between the lens and the women as warm bokeh. One hard key: lamplight from below on both faces. Grief, restraint, no tears falling.",
+		"people": [
+			"sunduk",
+			"munhee"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-bupmin-azaleas",
+		"entry": "The Eastern Star",
+		"at": "And under the azaleas by the wall",
+		"alt": "A sixteen-year-old boy lies flat in the dirt under dark garden bushes, chin on his fists, eyes wide, watching the pavilion through the leaves.",
+		"scene": "Ground-level extreme low shot, the lens in the dirt under a dense dark garden shrub by a low palace wall at night. Bupmin, sixteen, lies flat on his stomach in the soil under the branches, chin on his stacked fists, eyes wide and unblinking, listening; leaves in his hair, a smear of earth on his cheek, plain white undercoat as if he got out of bed. Through a gap in the leaves, far off and soft, the warm lamplit pavilion steps with two small seated men. Sharp foreground: out-of-focus leaves framing his face. One key: a sliver of lamp-gold through the leaves across his eyes. Boyish, wholesome, secret.",
+		"people": [
+			"munmu"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-steps-two",
+		"entry": "The Eastern Star",
+		"at": "Do you remember what I was, the first time you saw me?",
+		"alt": "Chunchu and Yushin sit side by side on the pavilion's granite steps at night, their backs to the lamp-lit pond, Chunchu's left arm in a sling.",
+		"scene": "Low three-quarter two-shot from below the granite steps of the pond pavilion at night, the lamp-covered pond behind them as a field of warm bokeh. Chunchu sits two steps above Yushin, leaning forward, elbow on his knee, left arm in a cloth sling, mid-sentence with a wry half-smile that doesn't reach his eyes, magenta #D8258C catching the silk of his court robe. Yushin sits lower, broad back half to the lens, forearms on his knees, mud on his boots, face turned up to Chunchu, listening, dry. A small oil lamp set on the step between them is the hard key, raking across both faces from below. Two old friends, close, unhurried.",
+		"people": [
+			"chunchu",
+			"yushin"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-salt-merchant",
+		"entry": "The Eastern Star",
+		"at": "I heard about my daughter from a salt merchant.",
+		"alt": "Close on Chunchu's face at night, lamp-lit from below, the charm gone out of it, staring at nothing.",
+		"scene": "Extreme close-up, slight dutch tilt, Chunchu's face filling the right two-thirds of the frame at night, the sling strap across his shoulder. The charm is gone: jaw set, eyes dry and fixed on nothing, mouth flat, a muscle in his cheek. One hard key from a lamp below and left carving the cheekbone, the rest falling into black; magenta #D8258C only as a specular on the collar silk. Background: the lamp-covered pond melted into soft gold bokeh discs. Cold, quiet fury.",
+		"people": [
+			"chunchu"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-reflection",
+		"entry": "The Eastern Star",
+		"at": "Chunchu looks up. The eastern star is out over the pond",
+		"alt": "The black pond seen from the steps: floating lamps, and among them the reflection of one bright star, with the dark reflections of two men looking up.",
+		"scene": "High angle looking straight down past the edge of the pavilion steps into the black pond at night. Floating paper lamps scatter warm dots across the water; among them the reflection of one bright star, sharp and white, and the dark rippling reflections of two seated men tilting their heads up toward it. Only the lowest granite step and the toes of two pairs of boots (one pair muddy) in sharp foreground at the top edge. ONE device: the star's reflection at the exact centre, the lamps circling it. Iconic, almost abstract, ink-black water and gold.",
+		"with": [
+			"place:moon_palace",
+			"dress:silla"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-deer-rock",
+		"entry": "The Eastern Star",
+		"at": "Tonight the rock has a king on it",
+		"alt": "King Euija sits sprawled on top of a great flat rock above the river at night with a wine jar, while young Gyebek stands one step below him, straight-backed.",
+		"scene": "Romantic worm's-eye from the slope below the great flat assembly rock above the river at Sabi at night. Euija sprawls on the crown of the rock, one knee up, a squat wine jar in the crook of his arm, laughing at the sky, royal orange #e08a2e catching his silk from a small brazier beside him. Gyebek stands one step below on the rock face, straight as a post, hands at his sides, face blank, waiting for an order, a ring-pommel sword at his hip. Beyond them the dark river and far hills, one bright star in the east. ONE device: the rock's diagonal edge cutting the frame from lower left to upper right. Brazier sparks as bokeh.",
+		"people": [
+			"euija",
+			"gyebek"
+		],
+		"with": [
+			"place:deer_rock"
+		],
+		"sword": true,
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-cup-across",
+		"entry": "The Eastern Star",
+		"at": "Euija opens his mouth to laugh, and for once does not.",
+		"alt": "Close on the rock's surface: Euija's ringed hand pushing a small wine cup across the stone toward Gyebek's still hand.",
+		"scene": "Tabletop-level extreme close-up across the flat stone surface of the rock at night. Euija's heavy ringed hand, sleeve of orange #e08a2e silk, pushes a small celadon wine cup across the gritty stone toward Gyebek's hand, which rests flat and still on his knee at the far side, not yet reaching. The second cup and the wine jar in soft focus behind. Above the hands, out of focus at the top of frame, Euija's face unsmiling for once. One brazier at frame left raking across the stone grain and the cup's glaze. Hushed.",
+		"people": [
+			"euija",
+			"gyebek"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-euija-toast",
+		"entry": "The Eastern Star",
+		"at": "Then he goes to the edge of the rock with his own cup.",
+		"alt": "Euija stands at the very edge of the rock above the black river, a little drunk, raising his cup to one bright star in the east.",
+		"scene": "Over-the-shoulder from behind and below, Euija standing at the very lip of the great rock above the dark river at night, robe stirring in the wind, a little unsteady, raising a small cup high toward one bright star low in the east. Gyebek a small upright figure seated behind him on the rock, out of focus. The river below catches the star in a long white streak. ONE device: the raised arm and cup on a line to the star. Brazier light from behind warms the orange #e08a2e silk at his shoulder; everything else crushed blue-black. A man toasting a rival he hasn't met.",
+		"people": [
+			"euija",
+			"gyebek"
+		],
+		"with": [
+			"place:deer_rock"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-cave-climb",
+		"entry": "The Eastern Star",
+		"at": "Gesomun climbs with the five blades still on his back.",
+		"alt": "Gesomun climbs a steep rocky path toward a black cave mouth at night, four swords fanned on his back, alone.",
+		"scene": "Worm's-eye from far down a steep rocky hillside path at night. Gesomun climbs alone toward a black cave mouth in a cliff of pale stone near the top of the frame, mid-stride, bent forward under the weight, four ring-pommel swords fanned across his back and one at his hip, a single torch in his fist trailing sparks. Red #d0362f catching the wing-like shoulder silk in the torchlight. Far below, tiny, two horses and a waiting figure at the foot of the hill. ONE device: the path as a zigzag of torchlit stone leading the eye up to the black mouth. Wind, cold, stars.",
+		"people": [
+			"gesomun"
+		],
+		"with": [
+			"place:jolbon"
+		],
+		"sword": true,
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-cave-kneel",
+		"entry": "The Eastern Star",
+		"at": "He kneels at the mouth and lays a crow-stamped ring-pommel on the stone.",
+		"alt": "Inside the mouth of the cave, Gesomun kneels on bare rock and lays a ring-pommel sword flat on the stone before him, torch planted beside him.",
+		"scene": "Low side angle at floor level inside the mouth of a natural limestone cave at night. Gesomun kneels on the bare rock, back straight, both hands laying a ring-pommel sword flat on the stone in front of him, the small pommel ring nearest the lens with a tiny three-legged crow in its openwork. His torch is wedged in a crack beside him, the only light, raking across his face, the fanned swords on his back and the wet cave wall behind, his shadow climbing the curved rock. The cave's black depth swallows the right half of the frame. Not asking forgiveness. Asking for witnesses.",
+		"people": [
+			"gesomun"
+		],
+		"with": [
+			"place:jolbon"
+		],
+		"sword": true,
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-gesomun-pray",
+		"entry": "The Eastern Star",
+		"at": "Nobody’s coming, Holy King.",
+		"alt": "Deep in the cave, Gesomun alone on his knees speaks hard into the darkness, torchlight on half his face.",
+		"scene": "Medium close-up from inside the cave's darkness looking back at Gesomun, so he faces the lens with the faint night-blue cave mouth far behind him. He kneels alone, fists on his thighs, chin up, speaking hard into the dark as if to a man standing there: teeth bared on a word, eyes wet but furious, sweat on the brow. Half his face lit by the torch on the floor beside him, the other half black; red #d0362f only in the silk at his collar. His breath smokes in the cold. Utterly alone, defiant, devout.",
+		"people": [
+			"gesomun"
+		],
+		"with": [
+			"place:jolbon"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-one-star",
+		"entry": "The Eastern Star",
+		"at": "Same star. Same minute. Three places.",
+		"alt": "One bright star above a vast dark land of ridges and rivers; far apart below it, three tiny lights: a pond of lamps, a brazier on a rock, a torch in a cave mouth.",
+		"scene": "Minimal iconic wide: a vast night landscape of the peninsula seen from very high and far, layered dark mountain ridges and a pale winding river dissolving into haze, two thirds of the frame a deep night sky. One bright star low in the east, sharp and white. Far apart across the dark land, three tiny warm lights only: a cluster of lamp-dots on a pond in the south-east, a single brazier spark on a rock above a river in the south-west, a single torch in a cave mouth in the far north. No people visible. ONE device: three tiny lights forming a wide triangle under the one star.",
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-chunchu-vow",
+		"entry": "The Eastern Star",
+		"at": "The eastern star shines especially bright tonight",
+		"alt": "Chunchu stands on the pavilion steps with his face lifted to the star, Yushin rising beside him, lamps on the pond behind.",
+		"scene": "Worm's-eye from the bottom of the granite pavilion steps at night. Chunchu has stood up on the top step, face lifted to the star out of frame above, eyes bright, a fierce small smile, arm in its sling, magenta #D8258C catching his robe. Yushin is rising beside him a step lower, one hand on his knee, looking at Chunchu not the star. Behind and below them the pond of floating lamps as a sea of gold bokeh. ONE device: the steps as a rising stair diagonal. A vow, not a speech.",
+		"people": [
+			"chunchu",
+			"yushin"
+		],
+		"with": [
+			"place:moon_palace"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-euija-vow",
+		"entry": "The Eastern Star",
+		"at": "a man ought to hold a larger dream",
+		"alt": "Euija on top of the rock with one arm flung out toward the star, grinning, while Gyebek watches him from below.",
+		"scene": "Dutch low angle on the crown of the great rock at night. Euija, on his feet now, one arm flung out wide toward the eastern star, cup still in his hand, head back, grinning like a man who has decided to be dangerous; orange #e08a2e silk catching the brazier light. Gyebek below and behind him at the frame edge, face lifted, for once not blank, something like belief. The river and the night sky behind. ONE device: Euija's outstretched arm as a diagonal across the sky.",
+		"people": [
+			"euija",
+			"gyebek"
+		],
+		"with": [
+			"place:deer_rock"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-gesomun-vow",
+		"entry": "The Eastern Star",
+		"at": "Even the one who would be—",
+		"alt": "Extreme close-up of Gesomun in the cave, torch below his face, snarling the last words.",
+		"scene": "Extreme close-up, hard dutch tilt, Gesomun's face filling the frame in the cave at night, lit from directly below by his torch: eyes blazing, teeth bared, a vein at the temple, sweat and soot. The torch flame in sharp foreground at the bottom edge throwing sparks across the frame as bokeh. Behind him only black rock. Red #d0362f as a specular on the collar silk. Defiance against anyone, even a king of everyone.",
+		"people": [
+			"gesomun"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-family",
+		"entry": "The Eastern Star",
+		"at": "The whole house has come.",
+		"alt": "Silla’s royal family gathered around the lotus-lit pond at night: the queen and Munhee at the water, Chunchu’s mother near him, Princess Seungman a little apart, Yushin on the pavilion steps.",
+		"scene": "Medium-wide, low three-quarter angle across the lotus-lit palace pond at night. A loose ring of people around one grieving man: Chunchu stands at the center of the frame on the stone shore, arm in a sling, staring at the water; close beside him, his elderly mother Chunmyung, small and upright in purple silk; at the water's edge to the left, Queen Sunduk in her gold crown and red robe crouches beside Munhee, who holds a single paper lotus in both hands; in the background on the granite pavilion steps, a broad man in blue (Yushin) sits waiting; a little apart by the garden wall, a quiet princess in pale green with her hands folded (Seungman). Hundreds of paper lotus lamps on the black water as warm bokeh; a giwa pavilion behind. ONE device: the ring of figures around Chunchu. Crowded with love, everybody near him. One key: the candlelight from the water lighting faces from below.",
+		"people": [
+			"chunchu",
+			"sunduk",
+			"munhee",
+			"chunmyung"
+		],
+		"refs": [
+			"/research/silla-cheonmachong-gold-crown.jpg"
+		],
+		"refsNote": "the Silla gold crown Queen Sunduk wears: copy this exact crown onto Sunduk's head — broad sheet-gold band, three tall tree-shaped uprights stepped like 出 with heart-shaped tips, two antler uprights at the sides, round gold spangles, pale-green jade gogok, two long gold pendant chains at the temples. Never a tiara, never a European crown",
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-sunduk-tease",
+		"entry": "The Eastern Star",
+		"at": "You looked. Just now. Three times.",
+		"alt": "At the water’s edge Munhee grins sideways at Queen Sunduk, who keeps her eyes firmly on the pond with a stern mouth and pink ears.",
+		"scene": "Close two-shot at the stone edge of the lotus-lit pond at night, low angle from the water. Munhee, in pink silk, leans in toward the queen with a sly sideways grin, eyebrows up, the paper lotus still in her hands, tear tracks dry on her cheeks. Queen Sunduk, in her gold Silla crown and red phoenix robe, keeps her eyes fixed on the water with a firmly stern mouth — but her ears and cheeks are pink and the corner of her mouth is losing the fight. Far behind them, out of focus at the top of the steps, a broad man in blue (just a soft shape). Candle lotuses below light both faces. Warm, funny, grieving.",
+		"people": [
+			"sunduk",
+			"munhee"
+		],
+		"refs": [
+			"/research/silla-cheonmachong-gold-crown.jpg"
+		],
+		"refsNote": "the Silla gold crown Queen Sunduk wears: copy this exact crown onto Sunduk's head — broad sheet-gold band, three tall tree-shaped uprights stepped like 出 with heart-shaped tips, two antler uprights at the sides, round gold spangles, pale-green jade gogok, two long gold pendant chains at the temples. Never a tiara, never a European crown",
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-lotus-outlet",
+		"entry": "The Eastern Star",
+		"at": "Munhee laughs, for the first time in a month.",
+		"alt": "Munhee’s single paper lotus drifts away down the stone outlet channel of the pond while, behind it, Munhee laughs with her hands open and Queen Sunduk watches the flower go.",
+		"scene": "Low shot at water level at the narrow stone outlet channel where the palace pond drains away into the night. In sharp foreground one paper lotus with a candle in it slides into the channel, leaving. Behind it, soft in the midground on the shore, Munhee laughing with her empty hands still open in front of her, surprised at herself; Queen Sunduk beside her in her gold crown, not laughing, watching the flower go with a small satisfied sadness. Other lotuses drift behind as bokeh. ONE device: the dark channel pulling the light out of frame.",
+		"people": [
+			"munhee",
+			"sunduk"
+		],
+		"refs": [
+			"/research/silla-cheonmachong-gold-crown.jpg"
+		],
+		"refsNote": "the Silla gold crown Queen Sunduk wears: copy this exact crown onto Sunduk's head — broad sheet-gold band, three tall tree-shaped uprights stepped like 出 with heart-shaped tips, two antler uprights at the sides, round gold spangles, pale-green jade gogok, two long gold pendant chains at the temples. Never a tiara, never a European crown",
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-chunmyung",
+		"entry": "The Eastern Star",
+		"at": "Sit down before you fall down.",
+		"alt": "Chunchu’s elderly mother stands at his shoulder by the pond, looking not at the lotuses but at him.",
+		"scene": "Over-the-shoulder from behind Chunchu at the pond's edge at night: his shoulder and sling sharp in the foreground, the field of candle lotuses on the black water ahead of him. His mother Chunmyung, elderly, small, upright, in purple silk with an amethyst binyeo, has come to stand at his elbow and looks up at his face, not at the water — dry, patient, unimpressed, one hand about to take his good arm. One key: lotus candlelight from below on her face. Mother and son, nobody else in frame.",
+		"people": [
+			"chunmyung",
+			"chunchu"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-seungman-heel",
+		"entry": "The Eastern Star",
+		"at": "Princess Seungman, who notices everything",
+		"alt": "By the garden wall a quiet princess stands with her skirt carefully covering a boy’s heel sticking out from under the azaleas.",
+		"scene": "Low ground-level shot along a dark garden wall at night. Princess Seungman, quiet and gentle, in pale green silk with a gold crescent binyeo, stands looking innocently toward the pond, hands folded — while her long skirt hem is placed exactly over a boy's bare heel sticking out of the dense azalea bushes at the bottom of the frame. Inside the leaves, barely visible, the boy Bupmin's wide eye. Lamp-gold from the pond grazing her skirt. Quietly funny, conspiratorial.",
+		"people": [
+			"jinduk",
+			"munmu"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-gyebek-finger",
+		"entry": "The Eastern Star",
+		"at": "He holds my finger. He does not let go.",
+		"alt": "On the rock at night, young Gyebek looks at his own forefinger as he talks about his son, and King Euija beside him has stopped laughing.",
+		"scene": "Close two-shot on the flat rock at night, brazier at frame edge. Gyebek, young and lean, sits stiffly and looks down at his own raised right forefinger as if a baby's hand were still around it, face plain but softened for once. King Euija beside him, heavier, bearded, in orange royal silk and his gold crown, the wine cup forgotten halfway to his mouth, has stopped laughing and is staring at Gyebek. River and night behind. One brazier key from the side raking both faces. Only the two of them.",
+		"people": [
+			"euija",
+			"gyebek"
+		],
+		"year": 642,
+		"time": "night"
+	},
+	{
+		"id": "scenes-star-dosuryu-cloak",
+		"entry": "The Eastern Star",
+		"at": "Daft boy. Take a cloak, then.",
+		"alt": "At the foot of a dark hill, the old retainer Dosuryu holds out a cloak to Gesomun, who takes it without a word, the cave path climbing into the dark behind him.",
+		"scene": "Medium two-shot at the foot of a steep rocky hill at night, two horses held behind. Old Dosuryu, grizzled, scowling with love, thrusts a heavy fur-lined cloak at Gesomun with one hand while holding the reins with the other. Gesomun, armoured with swords fanned on his back, takes the cloak without looking at him, already turned toward the torch-lit path that zigzags up into the black toward a cave mouth. One torch in Gesomun's fist is the key. Red #d0362f in his shoulder silk. The last person who will be near him tonight.",
+		"people": [
+			"gesomun",
+			"dosuryu"
+		],
+		"sword": true,
+		"year": 642,
+		"time": "night"
+	}
+]

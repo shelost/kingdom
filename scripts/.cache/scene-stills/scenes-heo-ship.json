@@ -1,0 +1,58 @@
+[
+	{
+		"id": "expo-suro-red-sail",
+		"time": "day",
+		"people": [],
+		"with": [
+			"ship:ayuta",
+			"place:geumgwan"
+		],
+		"scene": "Wide establishing, high three-quarter from the palace hill of Golden Gaya at late-afternoon storm light: foreground, dark blurred giwa roof eaves and a timber post; midground, a young harbour town of thatch and tile and an iron-stacked quay; background, a vast pale sea and, tiny on the far horizon under one cloud-break shaft, a single red sail. Heo's ship is exactly the attached ship_ayuta board: ornate red-and-gold lacquered hull with painted panels, one great crimson battened sail and a small red mizzen. Ignore the board's bright daylight; repaint it in the scene light. Three planes: dark out-of-focus foreground near the lens, the beat sharp in the midground, the background dissolving into sea haze; more than half the frame quiet negative space.",
+		"entry": "Suro",
+		"at": "The Red Sail",
+		"alt": "Six years on: Golden Gaya has a timber palace on its hill, a harbour stacked with iron, a market, and on the far horizon one small red speck"
+	},
+	{
+		"id": "heo-red-sail",
+		"time": "day",
+		"people": [
+			"heohwangok"
+		],
+		"with": [
+			"ship:ayuta"
+		],
+		"scene": "Low worm's-eye from the surf of the Gaya coast at golden storm-break: foreground, blurred dark wave spray; midground, the red-and-gold ship looming, its crimson sail filling the upper right; at the prow rail, Princess Heo Hwangok of the attached portrait, deep warm brown skin, kohl-lined eyes, purple-tiger binyeo, in a fitted violet-purple jeogori with patterned sleeves tailored close to bust and waist, one hand on the rail, wind in her hair, looking down at the land with a small proud smile. Background: one cloud-break shaft, gulls, haze. Heo's ship is exactly the attached ship_ayuta board: ornate red-and-gold lacquered hull with painted panels, one great crimson battened sail and a small red mizzen. Ignore the board's bright daylight; repaint it in the scene light. Three planes: dark out-of-focus foreground near the lens, the beat sharp in the midground, the background dissolving into sea haze; more than half the frame quiet negative space.",
+		"entry": "Suro",
+		"at": "She arrives on a red-sailed ship",
+		"alt": "Princess Hu Hwangok arrives at twenty-one on a red-sailed ship from Ayuta"
+	},
+	{
+		"id": "scene-suro-heo-goodbye-22",
+		"time": "day",
+		"people": [
+			"heohwangok"
+		],
+		"with": [
+			"ship:ayuta"
+		],
+		"scene": "Minimal iconic. The great crimson battened sail of the ship rounding the headland fills the right half as one flat shape, lit from behind by a low sun; the left half is pale empty sky over a thin strip of sea and a dark headland rock. Small at the bottom of the frame, Heo Hwangok of the attached portrait in fitted violet-purple silk stands at the bow, deep brown skin catching the light. Heo's ship is exactly the attached ship_ayuta board: ornate red-and-gold lacquered hull with painted panels, one great crimson battened sail and a small red mizzen. Ignore the board's bright daylight; repaint it in the scene light.",
+		"entry": "Suro",
+		"at": "a red sail comes round the headland",
+		"alt": "A huge red sail is one flat shape filling the right half."
+	},
+	{
+		"id": "suro-chest-shallows",
+		"time": "day",
+		"people": [
+			"suro",
+			"heohwangok"
+		],
+		"with": [
+			"ship:ayuta"
+		],
+		"scene": "Low angle from the waterline at golden hour. Foreground: blurred spray. Midground: King Suro (LEFT face) waist-deep in bright shallows, coat off, bare wet muscular back and shoulders to the camera, a heavy dark lacquered chest hoisted on one shoulder, seawater sheeting off him. Background, above him at the rail of the red-and-gold ship: Heo Hwangok (SECOND face), deep warm brown skin, fitted violet-purple jeogori, leaning on the rail, blushing, biting her lip, unable to look away. Heo's ship is exactly the attached ship_ayuta board: ornate red-and-gold lacquered hull with painted panels, one great crimson battened sail and a small red mizzen. Ignore the board's bright daylight; repaint it in the scene light. Three planes: dark out-of-focus foreground near the lens, the beat sharp in the midground, the background dissolving into sea haze; more than half the frame quiet negative space.",
+		"entry": "Suro",
+		"at": "water sheets off his back",
+		"alt": "Suro carries the chest out of the shallows, bare-backed; Heo blushes at the rail"
+	}
+]

@@ -1,0 +1,70 @@
+[
+	{
+		"id": "meet-chunchu-yushin-pear",
+		"entry": "Queen Sunduk",
+		"year": 618,
+		"at": "He tosses the core. The boy’s hands are full of rope.",
+		"alt": "Class 59’s first week: Yushin on the yard wall tosses a pear core; it hits Chunchu, whose hands are full of millstone rope.",
+		"people": ["chunchu", "yushin"],
+		"time": "day",
+		"scene": "CHARACTER-INTRODUCTION splash, a dramatic manhwa cover two-shot. MEDIUM CLOSE. BOTH FACES LARGE, waist-up, filling the frame, low three-quarter from the millstone. SAME packed-earth Hwarang yard as the wall-paint still: pale plaster hall, curved giwa, a worn millstone in the yard, paper-white day sky. FOREGROUND, huge and soft: millstone rim and a thick hemp rope almost touching the lens. MIDGROUND, razor-sharp: young Chunchu (LEFT face — magenta-crimson silk po, charcoal sash, crescent-moon headband, two thin jougwan pins, clean-shaven) just sat down on the millstone, rope slung on his shoulder, mouth open, hit in the chest by a small brown pear CORE frozen mid-air (never a bone). Behind him on the low giwa yard wall, Yushin (SECOND face — Silla-blue po and trousers, plum-violet sash, crescent-moon headband, BEARDLESS) sits sideways eating a pear, already turning away, one hand flicking the core; he is only passing through, NOT a marshal, NO armour, NO sword. ONE device: the pear core between their two large faces. Magenta #D8258C on Chunchu's silk, blue #2A5FB8 on Yushin's sleeve. Faces from the sheet. No text."
+	},
+	{
+		"id": "meet-chunchu-yushin-pear-class59",
+		"entry": "Munhee",
+		"year": 618,
+		"at": "He tosses the core without looking",
+		"alt": "Class 59’s first week: Yushin on the yard wall tosses a pear core; it hits Chunchu, whose hands are full of millstone rope.",
+		"people": ["chunchu", "yushin"],
+		"time": "day",
+		"scene": "The SAME millstone hour, Class 59's first week. CHARACTER-INTRODUCTION splash. MEDIUM CLOSE, BOTH FACES LARGE. Worm's-eye from the millstone. FOREGROUND: millstone rim and hemp rope. MIDGROUND: young Chunchu (LEFT face, magenta silk, crescent headband, jougwan pins, clean-shaven) sat down on the stone, rope on his shoulder, pear core mid-air at his chest. On the giwa wall, Yushin (SECOND face, Silla-blue po, crescent headband, beardless, no armour, no sword) already turning away with the rest of the pear. BACKGROUND: timber hall dissolving into white sky. Magenta #D8258C and blue #2A5FB8 as real light. Faces from the sheet. No text."
+	},
+	{
+		"id": "meet-jinhung-cup",
+		"entry": "Jinhung, the Cloud",
+		"year": 562,
+		"at": "The king throws a lacquer cup at him.",
+		"alt": "The Cloud King throws a lacquer cup at an unnamed kneeling hwarang; it hits the headband, comes back, and sits the king on his own step.",
+		"people": ["jinheung", "sadaham"],
+		"hat": false,
+		"time": "night",
+		"scene": "CHARACTER-INTRODUCTION splash, a dramatic manhwa cover two-shot. MEDIUM CLOSE. BOTH FACES LARGE, chest-up, filling the frame — the look of Sadaham's own intro card. SAME night Silla timber hall as that intro: crushed-black room, one oil lamp set down on the boards, paper lattice, timber pillars receding. Dutch low three-quarter. FOREGROUND, soft: the floor lamp flame, the king's red sleeve falling into the light. MIDGROUND: King Jinhung (LEFT face from the sheet — keep that bearded house face) mid-sit on his own timber step, thrown backward by his own throw, mouth open, comedy not dignity; deep red court silk, wide sleeves; on his head the OPEN Silla gold crown (narrow band, three flat 出 tree uprights front and over the ears, two shorter antler uprights at the BACK only, jade gogok, temple pendants) — NEVER a European spiked crown, NEVER a closed basket, NEVER horns at the sides, NEVER a black gat. The unnamed hwarang (SECOND face = Sadaham — ice-blue #6fa8ff silk, black crescent-moon headband, long hair, no jougwan, no helm) still on one knee, not looking up, the cup having just kissed the band. ONE device: a red-lacquer cup frozen mid-air on the way BACK toward the king, between their two large faces. #2f6fd4 as lamp bounce on the king; #6fa8ff as specular on the boy's band. Painted webtoon splash, NEVER photoreal. Faces from the sheet. No text."
+	},
+	{
+		"id": "meet-sadaham-cup",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "The king throws a cup at his head.",
+		"alt": "Sadaham’s view: still on one knee, the Cloud King’s cup hits his headband and flies back; a Park girl on the porch covers a laugh.",
+		"people": ["sadaham", "jinheung"],
+		"hat": false,
+		"time": "night",
+		"scene": "CHARACTER-INTRODUCTION splash. MEDIUM CLOSE. Sadaham's FACE LARGE and razor-sharp like his intro card — ice-blue silk, black crescent-moon headband, long hair, a small smile just starting, still on one knee. SAME night timber hall as his intro: one oil lamp on the floor, crushed black, paper lattice. Over-the-shoulder from his kneeling left: his ice-blue sleeve huge in the near left, his face turned three-quarter so we see the LEFT face from the sheet. MIDGROUND: a red-lacquer cup as a bright disc heading BACK at the Cloud King (SECOND face from the sheet), who is mid-sit on his timber step, crown slipping, comedy; deep red silk; OPEN Silla gold crown (three 出 trees, antlers at the BACK only — never a European spiked crown). Far porch, tiny and out of focus: an unnamed Park girl covering her mouth, no invented face. One floor lamp the only key, creamy bokeh. #6fa8ff on the headband; #2f6fd4 on the king's sleeve. Painted webtoon splash, NEVER photoreal, NEVER a glowing crescent. Faces from the sheet. No text."
+	},
+	{
+		"id": "meet-sadaham-rope",
+		"entry": "Sadaham",
+		"year": 562,
+		"at": "Those are the king’s, boy.",
+		"alt": "Sadaham cuts a captive’s rope in the wet square; the unnamed general in the cone helm watches and does not stop him.",
+		"people": ["sadaham", "muryuk:unnamed"],
+		"with": ["dress:gaya"],
+		"refs": ["/ar_lamellar_steel.png", "/research/gaya-armour-reconstruction.jpg"],
+		"refsNote": "steel lamellar plates; Gaya cone helm (rounded iron bowl, flared brim, tall red horsehair) — copy those shapes, ignore labels",
+		"time": "day",
+		"scene": "CHARACTER-INTRODUCTION splash, a dramatic manhwa cover two-shot. MEDIUM CLOSE. BOTH FACES LARGE, waist-up. SAME wet square as the rope-line still after rain: packed wet stone, puddles, a long line of captives in undyed white kneeling, smoking curved giwa roofs, a timber gate with a two-tier munru dissolving behind. FOREGROUND, huge and soft: a thick hemp rope and Sadaham's knife cutting the knot, almost touching the lens. MIDGROUND, razor-sharp: Sadaham (LEFT face — steel lamellar, ice-blue #6fa8ff cloth at the collar and sleeves, black crescent-moon headband, helm off, long hair, belt knife in his fist) kneeling, cutting the captive rope, not looking up, the face of a boy who felt like it. The unnamed general (SECOND face, helm-shadow) STANDING over him watching, not sitting, not in the mud: steel lamellar, purple #8B5CF6 peek at collar and plume-cord ONLY (NO purple cape), and his TALL GAYA CONE HELM ON HIS HEAD — rounded dark-iron bowl, wide flared iron brim-and-neck flange, crowned by a tall cone of RED horsehair, red chin cords. NEVER a Japanese kabuto, NEVER a jingasa hat, NEVER a pointed purple spike, NEVER a Silla pointed helm. They meet here, over the knot. Low sun through smoke. Faces from the sheet. No army catalog. No text."
+	},
+	{
+		"id": "meet-muryuk-rope",
+		"entry": "Muryuk",
+		"year": 562,
+		"at": "Those are the king’s, boy.",
+		"alt": "Muryuk watches the boy cut the last knots; they meet over the rope, not in the mud.",
+		"people": ["muryuk", "sadaham"],
+		"with": ["dress:gaya"],
+		"refs": ["/ar_lamellar_steel.png", "/research/gaya-armour-reconstruction.jpg"],
+		"refsNote": "steel lamellar plates; Gaya cone helm (rounded iron bowl, flared brim, tall red horsehair) — copy those shapes, ignore labels",
+		"time": "day",
+		"scene": "CHARACTER-INTRODUCTION splash. MEDIUM CLOSE. BOTH FACES LARGE, waist-up. SAME wet square of fallen Great Gaya as the rope-line still: packed wet stone, puddles, captives in undyed white kneeling, smoking giwa, timber gate. Low three-quarter from beside the rope. FOREGROUND, huge: Muryuk's TALL GAYA CONE HELM and weathered face filling the near left — rounded dark-iron bowl, wide flared brim, tall RED horsehair cone, wet plates catching the key; Muryuk (LEFT face from the sheet — square Gaya face, grey-streaked, goatee) STANDING, looking DOWN at the boy, steel lamellar, purple #8B5CF6 peek only, NO purple cape. ONE device: the hemp rope and the knot between them. MIDGROUND: the young hwarang (SECOND face = Sadaham — steel lamellar, ice-blue #6fa8ff at the collar, crescent headband, knife in the knot) kneeling, cutting, not looking up. BACKGROUND: timber gate and smoking giwa dissolving, a few white-clothed captives as haze. Low sun through smoke. NEVER a Japanese helm, NEVER a jingasa, NEVER a torii. They meet while he frees the captives. Faces from the sheet. No army catalog. No text."
+	}
+]

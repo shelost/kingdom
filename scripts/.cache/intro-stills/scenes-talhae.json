@@ -1,0 +1,28 @@
+{
+	"talhae--talhae": {
+		"time": "day",
+		"scene": "INTRODUCING SEOK TALHAE. FACE AND CLOTHES from the attached sheet ONLY: one BLACK EYEPATCH over the right eye, a shameless grin, black hair in a high topknot with a long tail, cream po over a blue inner, blue sash, maroon undersleeves, grey stone-texture shoulder pads, a short knife in the fist. NEVER two good eyes. NEVER white hemp. NEVER a solemn handsome founder. Afternoon in King Suro’s timber hall; he has just walked in off the sand. Low three-quarter: he leans one shoulder on a pillar, chin tipped toward the throne (Suro only a dark out-of-focus purple shape at the far edge), polite and shameless. DAY GROUND: paper-white sea glare through the open doors. #5a7fa8 as cool noon on the cream silk."
+	},
+	"aejin--talhae": {
+		"time": "day",
+		"with": ["place:ajinpo"],
+		"scene": "INTRODUCING GRANDMA AJIN. FACE AND CLOTHES from the attached sheet ONLY: weathered sun-brown face, sharp dry eyes, grey-streaked bun, undyed white hemp, a rope over the shoulder. Ajinpo shore, rope in her fist, looking down at an open chest. DAY GROUND: paper-white sky, pale harbour. #c4a07a as warm noon on hemp."
+	},
+	"hogong--talhae": {
+		"time": "day",
+		"with": ["place:moon_palace"],
+		"scene": "INTRODUCING HOGONG. FACE AND CLOTHES from the attached sheet ONLY: small wiry old man, bald crown, grey fringe, thin white beard, faded indigo robe, a dried calabash GOURD at the waist. At his own timber gate on the crescent hill, already pointing, outraged. DAY GROUND: paper-white sky, pale giwa. #a8894a as noon on the gourd."
+	},
+	"namhae--talhae": {
+		"time": "day",
+		"scene": "INTRODUCING KING NAMHAE. FACE AND CLOTHES from the attached sheet ONLY: mild shaman-king, short goatee, deep plum-burgundy po, simple open gold Silla crown. In his hall doorway looking at one magpie on the threshold. DAY GROUND: paper-white hall light. #7f9c8a as cool noon on plum silk."
+	},
+	"heohwangok--talhae": {
+		"time": "day",
+		"scene": "INTRODUCING QUEEN HEO. FACE AND CLOTHES from the attached sheet ONLY: violet-purple jeogori with magenta-gold patterned sleeves and cream cuffs, deep violet chima, pale gold sash, blue-black hair coiled low with the purple-tiger binyeo, small gold hoop earrings, calm amused eyes. At Suro’s forge-yard, she has just found the one-eyed stranger at the bellows (he is only a dark cream-and-blue shape at the far edge). Low three-quarter, she names what she sees. DAY GROUND: paper-white heat-haze, pale packed earth. #d98fa8 as noon on violet silk."
+	},
+	"yuri_isageum--talhae": {
+		"time": "day",
+		"scene": "INTRODUCING NURI ISAGEUM. FACE AND CLOTHES from the attached sheet ONLY: young, gentle, clean-shaven, deep burgundy po, simple open gold Silla crown. He holds a bitten white rice cake up to a paper lamp, shy, already counting. DAY GROUND: pale hall. #7aa6d6 as cool bounce on burgundy."
+	}
+}

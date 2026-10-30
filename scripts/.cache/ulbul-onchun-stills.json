@@ -1,0 +1,108 @@
+[
+	{
+		"id": "ulbul-onchun-wide",
+		"entry": "Ulbul",
+		"at": "the party is already a country.",
+		"alt": "Far wide dusk: a Goguryeo hot spring feast, steam and tiny laughing bodies, silk and bare shoulders",
+		"time": "day",
+		"canon": false,
+		"people": [],
+		"refs": [],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. FAR WIDE establishing. DUSK GROUND, pale steam dissolving to paper-white. ONE device: a stone-lined Goguryeo hot spring as a pale oval in the lower third, timber changing-halls and giwa tiny at the edge. Festival: many SMALL figures in the water and on the bank, men and women, bare backs and shoulders, silk at the hips, laughing, cups, one drum. Happy, loud, not a massacre. No named faces. Iconic emptiness above the steam. NOT photoreal, NOT oil, NOT porn. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. FAR WIDE establishing. DUSK GROUND, pale steam dissolving to paper-white. ONE device: a stone-lined Goguryeo hot spring as a pale oval in the lower third, timber changing-halls and giwa tiny at the edge. Festival: many SMALL figures in the water and on the bank, men and women, bare backs and shoulders, silk at the hips, laughing, cups, one drum. Happy, loud, not a massacre. No named faces. Iconic emptiness above the steam. NOT photoreal, NOT oil, NOT porn. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-onchun-plan",
+		"entry": "Ulbul",
+		"at": "If hyung is gone.",
+		"alt": "Side pool in steam: Ilu and Sobal lean in, plotting, the loud feast a blur behind them",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"ilu",
+			"sobal"
+		],
+		"refs": [
+			"/ch_ilu.png",
+			"/ch_sobal.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. INTIMATE two-shot, dutch, shallow DOF. A quieter stone side-pool, steam. LEFT of sheet = Ilu: thin moustache, white headband, NO eyepatch, wet black hair, bare shoulders, scarlet silk around the hips only, leaning in, host smile gone tight. RIGHT = Sobal: BLACK EYEPATCH on the left eye, white headband, wet hair, bare shoulders, orange-red silk at the hips, one good eye wide, listening. ONE device: the steam as a pale plane between them and a blurred loud feast in the bokeh behind. Skin-forward, cinematic, not porn. BOLD THICK ink. NOT photoreal. One of each face. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. INTIMATE two-shot, dutch, shallow DOF. A quieter stone side-pool, steam. LEFT of sheet = Ilu: thin moustache, white headband, NO eyepatch, wet black hair, bare shoulders, scarlet silk around the hips only, leaning in, host smile gone tight. RIGHT = Sobal: BLACK EYEPATCH on the left eye, white headband, wet hair, bare shoulders, orange-red silk at the hips, one good eye wide, listening. ONE device: the steam as a pale plane between them and a blurred loud feast in the bokeh behind. Skin-forward, cinematic, not porn. BOLD THICK ink. NOT photoreal. One of each face. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-onchun-call",
+		"entry": "Ulbul",
+		"at": "His Majesty will seat you.",
+		"alt": "Wet stone: a hall runner bows; Ilu and Sobal still half-dressed, laughing at a promotion",
+		"time": "day",
+		"canon": false,
+		"people": [
+			"ilu",
+			"sobal"
+		],
+		"refs": [
+			"/ch_ilu.png",
+			"/ch_sobal.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. LOW THREE-QUARTER. Wet stone path beside the spring. A small hall runner in dry red silk bowing, looking at the ground. LEFT of sheet = Ilu mid-laugh, pulling a scarlet robe over wet bare shoulders, white headband, thin moustache, NO eyepatch. RIGHT = Sobal, BLACK EYEPATCH, orange-red robe half on, grinning, one shoe in his hand. ONE device: the dry runner as a dark vertical against pale steam. Festival bokeh behind. BOLD THICK ink. NOT photoreal. One of each named face. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. LOW THREE-QUARTER. Wet stone path beside the spring. A small hall runner in dry red silk bowing, looking at the ground. LEFT of sheet = Ilu mid-laugh, pulling a scarlet robe over wet bare shoulders, white headband, thin moustache, NO eyepatch. RIGHT = Sobal, BLACK EYEPATCH, orange-red robe half on, grinning, one shoe in his hand. ONE device: the dry runner as a dark vertical against pale steam. Festival bokeh behind. BOLD THICK ink. NOT photoreal. One of each named face. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-onchun-seize",
+		"entry": "Ulbul",
+		"at": "The strong men step out of the dark",
+		"alt": "Night hall: hidden strong men seize Ilu and Sobal; Suchun stands and does not sit",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"suchun",
+			"ilu",
+			"sobal"
+		],
+		"refs": [
+			"/ch_suchun.png",
+			"/ch_ilu.png",
+			"/ch_sobal.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. NIGHT GROUND, crushed black. ACTION, dutch. ONE device: two unnamed strong men in steel lamellar stepping from the dark, hands on the princes. LEFT of sheet = King Suchun standing, gold openwork crown, deep red silk, one open hand giving the order, not sitting. CENTER = Ilu recoiling, wet scarlet robe, white headband, thin moustache, NO eyepatch. RIGHT = Sobal, BLACK EYEPATCH, orange-red, the one eye wide. No falling screens. Hall timber, one floor lamp. BOLD THICK ink. NOT photoreal. One of each face. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. NIGHT GROUND, crushed black. ACTION, dutch. ONE device: two unnamed strong men in steel lamellar stepping from the dark, hands on the princes. LEFT of sheet = King Suchun standing, gold openwork crown, deep red silk, one open hand giving the order, not sitting. CENTER = Ilu recoiling, wet scarlet robe, white headband, thin moustache, NO eyepatch. RIGHT = Sobal, BLACK EYEPATCH, orange-red, the one eye wide. No falling screens. Hall timber, one floor lamp. BOLD THICK ink. NOT photoreal. One of each face. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-onchun-heads",
+		"entry": "Ulbul",
+		"at": "He walks back out to the steam with both heads.",
+		"alt": "Iconic: Suchun at the spring’s edge, two dark heads; the feast a silent pale field",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"suchun"
+		],
+		"refs": [
+			"/ch_suchun.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. FAR WIDE. NIGHT, steam gone pale. ONE device: King Suchun a SMALL dark figure at the spring’s rim in the lower third, gold crown, deep red silk, holding two dark head-shapes low, not a gore catalog. The feast is a silent field of tiny frozen bodies and leftover cups. 60% empty steam-white sky. FACE from the sheet. Warning, not a slaughter painting. BOLD THICK ink. NOT photoreal. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. FAR WIDE. NIGHT, steam gone pale. ONE device: King Suchun a SMALL dark figure at the spring’s rim in the lower third, gold crown, deep red silk, holding two dark head-shapes low, not a gore catalog. The feast is a silent field of tiny frozen bodies and leftover cups. 60% empty steam-white sky. FACE from the sheet. Warning, not a slaughter painting. BOLD THICK ink. NOT photoreal. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	},
+	{
+		"id": "ulbul-saburu-watch",
+		"entry": "Ulbul",
+		"at": "The boy is still on the bank.",
+		"alt": "Young Saburu on the wet bank, one eye catching the steam, watching the heads come back",
+		"time": "night",
+		"canon": false,
+		"people": [
+			"bongsang"
+		],
+		"refs": [
+			"/ch_bongsang.png"
+		],
+		"scene": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. INTIMATE CLOSE. NIGHT. ONE device: the wet bank as a hard dark diagonal. A BOY of fourteen — FACE STRUCTURE from the sheet only, IGNORE the beard, IGNORE the gold crown, IGNORE the adult body — black hair in a topknot, red silk po, sitting on wet stone, one eye and a small fist visible, watching something terrible in the steam (out of frame). No adult beard. No crown. Steam as pale bokeh. #6e2a2a as a thin wine bounce, never a glow. BOLD THICK ink. NOT photoreal. No text.",
+		"ratio": 2,
+		"prompt": "HEEWON STYLE — KOREAN WEBTOON character-intro splash. INTIMATE CLOSE. NIGHT. ONE device: the wet bank as a hard dark diagonal. A BOY of fourteen — FACE STRUCTURE from the sheet only, IGNORE the beard, IGNORE the gold crown, IGNORE the adult body — black hair in a topknot, red silk po, sitting on wet stone, one eye and a small fist visible, watching something terrible in the steam (out of frame). No adult beard. No crown. Steam as pale bokeh. #6e2a2a as a thin wine bounce, never a glow. BOLD THICK ink. NOT photoreal. No text. HEEWON STYLE — a KOREAN WEBTOON character-introduction splash used as a movie still, the look of a dramatic manhwa cover. BOLD THICK digital-ink faces with real line weight, painted splash, visible brush, paper grain. DAY GROUND unless the scene says night: high-key paper-white sky and pale stone, the figure the dark inked thing. NOT photoreal, NOT a European oil portrait, NOT live-action, NOT 3D, NOT Caravaggio, NOT pores. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. Face and clothes from the attached sheet; a new verb pose, never the sheet stance. No text. No watermark."
+	}
+]

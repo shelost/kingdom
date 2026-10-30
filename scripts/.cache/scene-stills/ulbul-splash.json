@@ -1,0 +1,91 @@
+[
+	{
+		"id": "ulbul-chang-please",
+		"entry": "Ulbul",
+		"at": "Please. My knees hurt.",
+		"alt": "Changjori forehead in the river mud, full bow; Ulbul the salt seller stands above him and will not be king.",
+		"people": ["changjori", "micheon:exile"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR (no text, no bubbles): the plot is ONE readable BODY GESTURE on empty paper — mute the still and you still know: a court minister is begging a salt seller to be king. FAR WIDE. 60% paper-white sky. ONE DEVICE: the riverbank as a hard dark slope. CHANGJORI in a FULL SANJI KOWTOW: both knees, both palms AND forehead in the wet mud, ruined red silk (NO armor, NO scale, NO shoulder boards), small black cap with two thin red feathers, short goatee, looking UP from the dirt, wrecked and pleading. ULBUL STANDS above him in the right third, straw satgat with red tail, white hemp, salt sack, looking AWAY / down past him, the sly look gone, refusing. Height difference is the picture: the minister is on the ground, the salt seller is standing. TWO people only. Thick ink, cel. DAY GROUND. No lineup. Not both looking at camera. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-ummo-thanks",
+		"entry": "Ulbul",
+		"at": "Seven years. You never asked my name.",
+		"alt": "Ulbul full-bows at Ummo’s stall after seven years; Ummo ties a sack and does not look at him.",
+		"people": ["micheon:exile", "eummo", "jaemo"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR like Sanji kowtowing at Baratie: mute the still and you know — goodbye, thanks, I’m leaving. FAR WIDE. Huge paper-white. ONE DEVICE: the timber salt-stall trestle as a dark mouth in the upper third (the restaurant of this still). ULBUL in a FULL FOREHEAD-TO-EARTH BOW in the lower-left, satgat, white hemp, red sash, salt sack on his back, both palms on packed earth. UMMO stands at the trestle, older white hair, brick-red po, tying a sack, NOT looking at Ulbul — the kindness of never asking his name. JAEMO a tiny figure at the far right edge, watching, not a third talking head. TWO named poses, one extra. No standing lineup. No crowd. Thick ink. DAY GROUND. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-second-yes",
+		"entry": "Ulbul",
+		"at": "Mud again.",
+		"alt": "Changjori forehead in the mud again; Ulbul in the cave mouth looks down and this time the yes is on his face.",
+		"people": ["changjori", "micheon:exile"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth behind them",
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR: mute the still and you know — the second bow, and this time the standing man says yes. FAR WIDE. Paper-white dawn through a cave mouth. ONE DEVICE: the cave mouth as a dark stone arch (attached architecture). CHANGJORI in a FULL KOWTOW in the foreground mud: forehead and palms down, ruined red silk (NO armor), two thin red feathers, looking UP exhausted and sure. ULBUL STANDS in the cave mouth, satgat, white hemp, looking DOWN at him, the yes already on a small tired face — one hand slightly offered, not a smug grin, not looking at camera. TWO people. Height difference is the plot. Thick ink. DAY GROUND. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-ditch-brook",
+		"entry": "Ulbul",
+		"at": "A boy still holding a hand.",
+		"alt": "Ulbul seen from behind, looking down into a famine ditch; a small boy still holding a fallen adult’s hand.",
+		"people": ["micheon:exile"],
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR like Brook standing over the fallen: mute the still and you know — famine, a salt seller who has stopped counting. FAR WIDE. 60% paper-white sky. ONE DEVICE: a dark famine ditch cutting the lower third. ULBUL a Rückenfigur in the left third, seen FROM BEHIND, satgat brim a hard black disc, white po, salt sack, looking DOWN into the ditch — he does not look at camera. In the ditch: unnamed Korean villagers fallen in undyed white, a SMALL BOY still holding an adult hand. No named extras. Graphic emptiness. Thick ink. DAY GROUND. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-empty-cave",
+		"entry": "Ulbul",
+		"at": "When Ulbul looks up the cave is empty",
+		"alt": "Ulbul small in an empty cave mouth, looking up; the spirits are gone, the satgat still on.",
+		"people": ["micheon:exile"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth: trees in the opening, leaf-light, packed earth",
+		"time": "day",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR: mute the still and you know — whoever was here has left. FAR WIDE. Paper-white dawn. ONE DEVICE: the cave mouth as an EMPTY dark arch (attached architecture). ONE small figure: ULBUL standing just inside, satgat still on, white hemp, looking UP into empty stone, not a standing portrait, not facing camera — a three-quarter from behind/below, head tipped up. The steam is gone. Huge quiet stone. #C30000 a thin red on the sash only. Thick ink. DAY GROUND. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-cave-spirits",
+		"entry": "Ulbul",
+		"at": "Three figures in it. One close. Two farther, paler.",
+		"alt": "Ulbul kneeling small; Jumong sitting close in the steam; two paler ancestor silhouettes farther back — not a lineup.",
+		"people": ["micheon:exile", "jumong:exile"],
+		"spirits": ["suchun", "dolgo"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth",
+		"time": "night",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR: mute the still and you know — a living boy kneels to the dead house. NIGHT cavern. WIDE. Huge crushed-black stone, one leaf-light mouth. ONE DEVICE: depth — close / mid / far. LOWER-LEFT small: ULBUL kneeling, satgat, white hemp, looking up. MIDGROUND: JUMONG sitting on a rock CLOSE to him, RED headband, RED po, CLEAN-SHAVEN, SERIOUS, looking at the boy (not a founder statue). FARTHER, much smaller, paler ink-wash silhouettes dissolving into steam: a gold-crown king and a father with no crown — NOT a four-person sitting lineup, NOT equally sized, NOT glow auras, NOT neon outlines. Steam and motes are the cave, never body halo. #e8563f as real light on Jumong’s silk. Thick ink. NIGHT GROUND. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-jumong-hey",
+		"entry": "Ulbul",
+		"at": "Hey. You. Salt.",
+		"alt": "Jumong already sitting in the dark names the kneeling salt seller; Ulbul looks up startled.",
+		"people": ["jumong:exile", "micheon:exile"],
+		"refs": ["/pl_jumong_cave.png"],
+		"refsNote": "the same Jumong Cavern mouth",
+		"time": "night",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR: mute the still and you know — the founder names a kneeling boy. NIGHT cavern. LOW. ONE DEVICE: a shaft of leaf-light as a hard diagonal. JUMONG sits already on a rock, higher, RED headband, RED po, CLEAN-SHAVEN, SERIOUS, looking DOWN, mouth on Hey you Salt. ULBUL KNEELS (not sitting equal), satgat, white hemp, looking UP startled. Height difference is the plot. ONE of each, never clone. Not a talking-heads two-shot of two people sitting the same way. #e8563f on Jumong’s silk as real light. Thick ink. NIGHT GROUND. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	},
+	{
+		"id": "ulbul-old-woman",
+		"entry": "Ulbul",
+		"at": "In the dark she sits up. One shoe.",
+		"alt": "Night: the old woman slides one dry shoe into Ulbul’s open salt sack while he sleeps.",
+		"people": ["micheon:exile"],
+		"time": "night",
+		"style": "webtoon",
+		"scene": "ONE PIECE SPLASH GRAMMAR: mute the still and you know — she is planting evidence in his sack. NIGHT. LOW THREE-QUARTER. ONE DEVICE: an open salt sack as a dark mouth. The OLD WOMAN, white hair, undyed hemp, sitting up, sliding ONE DRY SHOE (not a scoop of salt, not a ladle) into the white salt with both hands. ULBUL sleeps small on the right, satgat off, white hemp, sack under his head, FACE from the sheet. One oil lamp on the floor at LEFT rakes the shoe and her knuckles. The shoe is the subject. Umber room. Thick ink. NIGHT GROUND. No text. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge."
+	}
+]

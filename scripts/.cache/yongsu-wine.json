@@ -1,0 +1,54 @@
+[
+	{
+		"kind": "scene",
+		"label": "The Moon Palace · the wine years",
+		"ko": "월성 · 술의 해들",
+		"jump": {
+			"year": 577,
+			"en": "The Next Year…",
+			"ko": "이듬해…"
+		}
+	},
+	{
+		"kind": "p",
+		"html": "He tries, for one winter. Then the forts start falling, the Moon Palace fills with lantern boats and dancers, and the Council’s reports wait outside a shut door.",
+		"ko": "그는 한 해 겨울은 애쓴다. 그러다 성들이 떨어지기 시작하고, 월성은 등불 띄운 배와 춤꾼들로 가득 차고, 화백의 보고는 닫힌 문 밖에서 기다린다."
+	},
+	{
+		"kind": "p",
+		"html": "The parties don’t stay inside the palace. Twice a month he opens the Moon Palace gate and feeds the city: rice, wine, a pig on a spit, Saryang ward eating off silver it will never see again.",
+		"ko": "잔치는 궁 안에만 머물지 않는다. 한 달에 두 번 그는 월성 문을 열고 도성을 먹인다. 쌀, 술, 꼬챙이에 꿴 돼지 한 마리. 사량부 사람들이 다시는 구경도 못 할 은그릇에 밥을 먹는다."
+	},
+	{
+		"kind": "p",
+		"html": "The rice is the Council’s, more or less. One feast night he climbs onto a table and announces a new levy on the True Bone estates, one sack in ten, for the city. He hasn’t asked anyone. The applause is enormous.",
+		"ko": "쌀은 대충 화백의 것이다. 어느 잔칫날 밤 그는 상 위에 올라서서 진골 장원에 새 세를 매긴다고 외친다. 열 섬에 한 섬, 도성 몫으로. 아무에게도 묻지 않았다. 박수 소리가 어마어마하다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "jinji",
+		"en": [
+			"Eat! It’s the Council’s rice.",
+			"Don’t worry about them. Look at them. They’ve never missed a meal in their lives."
+		],
+		"lines": [
+			"먹어라! 화백 어르신들 쌀이다.",
+			"그 양반들 걱정은 마. 봐라. 평생 끼니 한 번 거른 적 없는 얼굴들이다."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "He is a bad king and a generous drunk, and a city can love both. Saryang ward loves him. Saryang ward also writes the songs.",
+		"ko": "그는 형편없는 임금이고 인심 좋은 술꾼이다. 도성은 둘 다 사랑할 수 있다. 사량부는 그를 사랑한다. 노래를 짓는 것도 사량부다."
+	},
+	{
+		"kind": "scene",
+		"label": "The throne hall · after midnight",
+		"ko": "정전 · 자정 넘어",
+		"jump": {
+			"year": 578,
+			"en": "The Next Year…",
+			"ko": "이듬해…"
+		}
+	}
+]

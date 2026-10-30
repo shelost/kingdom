@@ -1,0 +1,81 @@
+[
+	{
+		"id": "wall-lamp-first",
+		"entry": "Bupmin",
+		"at": "He lifts the lamp to the first bay",
+		"alt": "Night under the painted gallery: Yushin lifts one oil lamp to the first mural, a storehouse door and a bowl coming out of the black; the new boys trail him",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW WIDE along a long roofed Korean gallery at night, packed-earth floor, timber posts, a plaster wall of murals receding into black. ONE device: the gallery axis as a dark tunnel, one lamp as the only key. LEFT of the sheet = Marshal Yushin, bearded, Silla-blue po, mid-stride, LIFTING an oil lamp in his right hand toward the first painted bay — a naive mural of a storehouse door and a bowl — his face under-lit, shadow climbing the plaster. Behind him a short line of teenage hwarang boys in crescent headbands, small, following the light. Keep the attached mansion compound's timber and giwa as the gallery's architecture. Composed for a 2:1 letterbox crop. No readable text on the murals. No army. No watermark.",
+		"people": ["yushin"],
+		"with": ["place:hwarang_yard"],
+		"year": 641
+	},
+	{
+		"id": "wall-after-bowl",
+		"entry": "Bupmin",
+		"at": "Their shadows climb the wall ahead of them",
+		"alt": "Yushin walks on with the lamp at his hip; sixty shadows climb the mural wall, stepping over a painted bowl; a boy still staring back",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. SIDE VIEW along the roofed gallery, slight dutch. ONE device: long shadows of the walking line climbing the painted plaster, stepping over a painted bowl. LEFT of the sheet = Marshal Yushin walking AWAY from camera, lamp swinging LOW at his hip, Silla-blue po, eyes forward. Midground: teenage hwarang boys following, one still looking BACK at the bowl mural, mouth open. Their shadows larger than the boys, thrown up the wall by the one lamp. Keep the attached timber posts and giwa eave. NIGHT, crushed black, lamp gold. Composed for a 2:1 letterbox crop. No readable text. No army. No watermark.",
+		"people": ["yushin"],
+		"with": ["place:hwarang_yard"],
+		"year": 641
+	},
+	{
+		"id": "geomgun-lotus",
+		"entry": "Bupmin",
+		"at": "Cross-legged, the way a monk sits when the count is done",
+		"alt": "Geomgun sits cross-legged on the storehouse floor, both hands on the dark cup, eyes open, drinking in complete peace",
+		"time": "night",
+		"hat": false,
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER, intimate close. ONE device: the dark cup as a small circle in both hands at the centre. LEFT of the sheet = Geomgun, young storehouse clerk, FACE from the attached portrait (spare Korean face, small stubborn mouth, black crescent headband), charcoal-grey po, sitting CROSS-LEGGED on packed earth like a monk when the count is done, both hands on a dark warm cup, eyes OPEN, face at peace — not collapsing, not grimacing. A single oil lamp on the counting board rakes him from the side. The storehouse is crushed black around him: timber bins, one grain sleeve emptied. #6b6458 as the hard key on cheek and cup, never a glow. Composed for a 2:1 letterbox crop. No second person. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 562
+	},
+	{
+		"id": "wall-after-arrows",
+		"entry": "Bupmin",
+		"at": "Nobody talks. The lamp makes a small sound",
+		"alt": "After the arrows mural: Bupmin still staring; Yushin already walking, lamp low; the boys silent",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. OVER-SHOULDER from behind a teenage boy, looking along the gallery. ONE device: the lamp as a small gold point walking away down a black colonnade of timber posts. LEFT of the sheet = Marshal Yushin, mid-stride, already leaving, lamp LOW. SECOND face = Bupmin as hwarang boy, fifteen, crescent headband, still facing the mural of two running painted warriors full of arrows, not following yet. The rest of the boys a dark mass. Keep the attached timber and giwa. NIGHT, crushed black, one lamp. Composed for a 2:1 letterbox crop. No readable text. No army. No watermark.",
+		"people": ["yushin", "munmu:hwarang"],
+		"with": ["place:hwarang_yard"],
+		"year": 641
+	},
+	{
+		"id": "amak-last-charge",
+		"entry": "Bupmin",
+		"at": "They are still running when the road comes up to meet them",
+		"alt": "Gwisan and Chuhang charge the yellow line together, arrows already in them, still going forward",
+		"time": "day",
+		"battle": true,
+		"manga": true,
+		"sword": true,
+		"scene": "KOREAN WEBTOON action still, dramatic manhwa COVER. NOT photoreal. HARD DUTCH, worm's-eye from the packed road, two bodies rushing AT the lens. ONE device: the charge as a rising diagonal. LEFT of the sheet = Gwisan, young Hwarang, FACE from the portrait (smooth Korean face, red liner, cyan headband under a Silla jonghyeongju helm), steel lamellar, leaf-green #3d8c4a cloth peek — mid-sprint, arrows in his side, a blade already in, still going forward, living eyes WHITE sclera BLACK pupil, teeth set. SECOND face = Chuhang, longer wavy hair, teal headband, slate-blue cloth peek, two shafts in his back, not turning, matching stride. Baekje yellow a dark wall ahead. Blood as small real wet, not a spray catalog. Keep the Cheonsan pines and saddle in the bokeh. One low sun shaft. DAY GROUND. Composed for a 2:1 letterbox crop. No ships. No army catalog. No text. No watermark.",
+		"people": ["gwisan", "chuhang"],
+		"with": ["place:amak"],
+		"year": 602
+	},
+	{
+		"id": "deer-walk-home",
+		"entry": "Bupmin",
+		"at": "He carries the antlers across both arms",
+		"alt": "Young Chunchu walks the pine road carrying the antlers; the living deer walks beside him; Alchun a step behind",
+		"time": "day",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER along a packed-earth pine road at late dusk. ONE device: the road as a receding ribbon, two subjects on the thirds — a magenta boy and a living deer. LEFT of the sheet = young Chunchu as hwarang, FACE from the attached hwarang portrait (slim, loose black hair, no full beard), magenta-crimson silk, walking, antlers laid across BOTH arms the way another boy would carry a head, a small knowing almost-smile. A living spotted deer walks BESIDE him, calm, a plum blossom on the cut horn. A step behind, a grey-templed man in councillor dress, empty hands — do not invent a third named face; keep him small and turned. Full deer body, modelled. One last sun shaft as the key. #D8258C in the silk catch. DAY GROUND dissolving to paper. Composed for a 2:1 letterbox crop. No judges. No yard crowd. No text. No watermark.",
+		"people": ["chunchu:hwarang"],
+		"year": 618
+	},
+	{
+		"id": "wall-walk-back",
+		"entry": "Bupmin",
+		"at": "He turns and walks them back the way they came",
+		"alt": "Yushin walks the boys back down the gallery, lamp lower; shadows go the other way over the deer, the arrows, the tiger he would not look at",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. WORM'S-EYE from the packed earth looking UP the receding gallery. ONE device: the colonnade as a dark tunnel going the other way. LEFT of the sheet = Marshal Yushin walking toward camera now, lamp LOWER than before, Silla-blue po, face half in black, unhurried. Behind him a line of small hwarang boys. Murals slide past in the dark: a painted deer, painted arrows, a painted tiger he does not look at. Shadows climb the opposite direction. Keep the attached timber posts. NIGHT, crushed black, one lamp gold. Composed for a 2:1 letterbox crop. No readable text. No army. No watermark.",
+		"people": ["yushin"],
+		"with": ["place:hwarang_yard"],
+		"year": 641
+	}
+]

@@ -19,7 +19,9 @@ const ALIASES = {
 	grandacademy: 'academy',
 	thewanggeomsguest: 'munmu',
 	thewanggumsguest: 'munmu',
-	thekingforall: 'wanggum'
+	thekingforall: 'wanggum',
+	bihyung: 'bihyungnang',
+	yongsu: 'kimyongsu'
 };
 
 const norm = (s) =>

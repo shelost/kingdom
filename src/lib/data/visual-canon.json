@@ -873,19 +873,59 @@
 		"talhae": {
 			"look": "Young: tanned, one black eyepatch over the right eye, a shameless grin, black hair in a high topknot with a long tail. Not photoreal.",
 			"dress": "Cream po over a blue inner, blue sash flying, maroon undersleeves, grey stone-texture shoulder pads, blue trousers, black boots; a short knife in the right fist (attached /ch_talhae.png).",
+			"looks": {
+				"king": {
+					"text": "King (attached /ch_talhae_king.png): same face, one black eyepatch over the right eye, a short black goatee, hair tied low; a purple po over a magenta inner robe, white collar, gold-patterned cream front panels, a simple open gold Silla crown (three 出 tree uprights). FACE AND GARMENTS from that portrait. Never two good eyes. Never the young running cream-and-blue kit.",
+					"hat": false
+				}
+			},
 			"demeanor": "A con man who became a king and never stopped enjoying the joke. Deadpan when caught, delighted when he wins.",
 			"hat": false,
 			"never": [
 				"jougwan",
 				"two good eyes",
-				"a solemn founder face"
+				"a solemn founder face",
+				"sea-green king robe (the king portrait is purple and magenta)"
 			]
 		},
 		"hogong": {
-			"look": "Small, wiry old man from Wa, bald crown with a grey fringe tied back, thin white beard, quick indignant eyes.",
+			"look": "Small, wiry old man from Wa, bald crown with a grey fringe tied back, thin white beard, quick indignant eyes (attached /ch_hogong.png).",
 			"dress": "Faded indigo minister’s robe; a dried calabash gourd always tied at his waist on a cord.",
 			"demeanor": "Perpetually outraged and perpetually loyal; the straight man to Talhae’s joke for forty years.",
 			"hat": false
+		},
+		"aejin": {
+			"look": "Old Korean fisherwoman, weathered sun-brown face, sharp dry eyes, grey-streaked black hair in a low bun, a few loose strands (attached /ch_aejin.png).",
+			"dress": "Undyed white hemp jeogori and chima, frayed cuffs, a rope coil or fish-basket; commoner white, no silk, no jewelry, no crown.",
+			"demeanor": "Dry and practical; talks to a boy the way she talks to a catch she has not yet decided to keep.",
+			"hat": false,
+			"never": [
+				"jougwan",
+				"crown",
+				"court silk",
+				"crone-witch stereotype"
+			]
+		},
+		"namhae": {
+			"look": "Mild shaman-king in his forties: oval face, a short neat goatee, black hair in a low tie, worried kind eyes (attached /ch_namhae.png).",
+			"dress": "Deep plum-burgundy court po over a white inner, gold-trimmed black collar band, a simple open gold Silla crown (three 出 tree uprights). FACE AND GARMENTS from that portrait.",
+			"demeanor": "Reads an omen in every bird; shrewd once he stops fretting.",
+			"hat": false,
+			"never": [
+				"jougwan",
+				"solemn founder statue"
+			]
+		},
+		"yuri_isageum": {
+			"look": "Young, gentle, a little shy: rounder face than his father, clean-shaven, straight black hair, honest dark eyes (attached /ch_nuri.png).",
+			"dress": "Deep burgundy court po over a white inner, gold-trimmed black collar band, a simple open gold Silla crown (three 出 tree uprights). FACE AND GARMENTS from that portrait.",
+			"demeanor": "Yields first, laughs at himself, sees more than he lets on.",
+			"hat": false,
+			"never": [
+				"jougwan",
+				"grim founder face",
+				"Jumong’s son Yuri — this is Nuri of Silla, a different man"
+			]
 		},
 		"alji": {
 			"look": "A small boy of about four, round solemn face, bright wide-awake black eyes, short black hair tied in a tiny tuft.",
@@ -1270,7 +1310,8 @@
 			"never": [
 				"a grey beard or silver temples on the boy",
 				"kneeling first in Jangsu's hall",
-				"smiling at the traitor charge"
+				"smiling at the traitor charge",
+				"a blue body halo or neon outline when the fire goes blue — the FIRE is blue, not the man"
 			]
 		},
 		"chisul": {
@@ -1339,6 +1380,18 @@
 				"armor",
 				"a proud smile",
 				"a general’s cloak"
+			]
+		},
+		"gaero": {
+			"look": "No portrait: invent a Korean Baekje king’s face, never copy Jangsu, Geunchogo or King Sung. Forties, long dark hair going grey at the temples, a thin moustache, frightened measured eyes.",
+			"dress": "Baekje king out of battle: ochre-yellow silk po #d9b13a, white inner collar, dark sash, black silk cap with twin openwork gold flame ornaments. In the flight: the cap knocked, yellow silk dirty.",
+			"hat": false,
+			"demeanor": "Royal until the gate goes. Then he runs.",
+			"never": [
+				"jougwan",
+				"a Silla crown",
+				"Jangsu’s face",
+				"King Sung’s grey beard"
 			]
 		},
 		"jangsu": {
@@ -1662,12 +1715,18 @@
 					"until": 292,
 					"redress": true,
 					"text": "PRINCE SABURU as a youth (face structure from attached /ch_bongsang.png): NO beard, NO crown, a boy of fourteen, black hair in a topknot, red silk po, hiding. Same brow and eye as the portrait, younger."
+				},
+				{
+					"from": 300,
+					"redress": true,
+					"text": "EXILE / LODGE after the hunt (FACE from attached /ch_bongsang.png): IGNORE the gold crown, IGNORE the clean court silk. Bare head, loose topknot, dirty open red silk, blood on the mouth. The crown is on the floor or gone. Never a crown on this head again."
 				}
 			],
 			"demeanor": "Offended, precise, then loose when the wine has sat too long.",
 			"never": [
 				"jougwan",
-				"a kind mouth"
+				"a kind mouth",
+				"a crown after the hunt / in the lodge"
 			]
 		},
 		"dolgo": {
@@ -1703,21 +1762,27 @@
 			]
 		},
 		"changjori": {
-			"look": "Changjori: lean Korean face, short goatee, long black hair, a small black cap with two thin red antenna-feathers (attached /ch_changjori.png).",
+			"look": "Changjori: lean Korean face, short gray goatee, long IRON-GRAY hair, a small black cap with two thin red antenna-feathers (FACE from attached /ch_changjori.png — IGNORE the portrait’s black hair; the hair is GRAY).",
 			"dress": "Red po over white inner, black shoulder boards, no crown (attached /ch_changjori.png).",
 			"hat": false,
 			"eras": [
 				{
 					"until": 296,
 					"redress": true,
-					"text": "YOUNG CHANGJORI (FACE ONLY from attached /ch_changjori.png): same lean Korean face, short goatee, long black hair, NO grey. Junior official — thinner red po over white, small black cap with two thin red antenna-feathers, a ledger, less weight in the shoulders. Keep the goatee. Invent a new pose."
+					"text": "YOUNG CHANGJORI (FACE ONLY from attached /ch_changjori.png): same lean Korean face, short goatee, long BLACK hair, NO grey yet. Junior official — thinner red po over white, small black cap with two thin red antenna-feathers, a ledger, less weight in the shoulders. Keep the goatee. Invent a new pose."
+				},
+				{
+					"from": 297,
+					"text": "FAMINE-YEARS CHANGJORI: FACE from the sheet but IRON-GRAY long hair and a gray goatee. Same red po, same small black cap with two thin red antenna-feathers. IGNORE the portrait’s black hair. Older, thinner, grain on the shoulders. He looks like a man who has been counting ditches."
 				}
 			],
-			"demeanor": "Dry, frightened of his own courage. Counts grain out loud.",
+			"demeanor": "Dry, frightened of his own courage. Counts grain out loud. When he begs, the face BREAKS — not a polite smile.",
 			"never": [
 				"jougwan",
 				"a gold crown",
-				"a young unbearded face"
+				"a young unbearded face",
+				"black hair after the famine starts",
+				"a smile while remonstrating"
 			]
 		},
 		"nulji": {
@@ -2061,7 +2126,7 @@
 			"dna": "Moon Palace (월성): Silla night court — timber halls, giwa roofs, packed-earth yards under moonlight, red pillars, a dark inner room with one lamp."
 		},
 		"tsushima": {
-			"dna": "Mountain Island (대마도): a steep green volcanic island in the strait, black rock lee, a hidden cove, pine on the ridge, grey water, Wa ships on one side and a smaller Silla hull tucked in the shadow of the cliff."
+			"dna": "Mountain Island (대마도): a steep green volcanic island in the strait, black rock lee, a hidden cove, pine on the ridge, grey water, Wa ships on one side and a smaller Silla hull tucked in the shadow of the cliff. Wood Island (목도): a bare black-rock outcrop off that shore, no hall, a piled wood pyre, pine on the far ridge, grey water."
 		},
 		"steam_cavern": {
 			"dna": "Golhwacheon (골화천), the steam cavern hot spring: a dark pond under wet black stone, steam, motes in the element colors; everyone bathes IN the black water like a Korean public bath, bare bathing bodies, nothing on but water; generally dark, magical anime-painterly atmosphere, not a photoreal cave."

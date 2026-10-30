@@ -170,13 +170,18 @@ function animalBlock(id, ctx) {
 }
 
 function placeBlock(id, ctx) {
-	const c = CANON.places[id] ?? {};
+	const c = CANON.rooms?.[id] ?? CANON.places[id] ?? {};
 	const p = Array.isArray(PLACES) ? PLACES.find((x) => x.id === id) : PLACES[id];
 	const board = c.board ?? p?.avatar;
-	if (!board && !c.dna) throw new Error(`unknown place ${id}`);
+	const isRoom = p?.kind === 'room' || Boolean(CANON.rooms?.[id]);
+	const word = isRoom ? 'ROOM' : 'PLACE';
+	if (!board && !c.dna) throw new Error(`unknown ${word.toLowerCase()} ${id}`);
 	if (board) ctx.refs.add(board);
 	const name = p ? `${p.name}${p.korean ? ` (${p.korean})` : ''}` : id;
-	return `PLACE ${name}${board ? ` — attached board ${board}; keep this exact architecture and ground` : ''}. ${c.dna ?? ''}${c.mood ? ` Mood: ${c.mood}` : ''}`.trim();
+	const keep = isRoom
+		? `keep this exact interior — posts, floor, furniture, lattice — empty-set architecture, no people`
+		: `keep this exact architecture and ground`;
+	return `${word} ${name}${board ? ` — attached board ${board}; ${keep}` : ''}. ${c.dna ?? ''}${c.mood ? ` Mood: ${c.mood}` : ''}`.trim();
 }
 
 function flagBlock(kingdom, ctx) {
@@ -216,7 +221,10 @@ function personBlock(raw, opts, ctx) {
 		refs.add(f.binyeo);
 		out.push(`Hair ornament matches attached ${f.binyeo} when the head is visible.`);
 	}
-	if (c?.look && !redress) out.push(`Look: ${c.look}`);
+	if (c?.look && !redress) {
+		const looks = atYear(c.look, year);
+		if (looks.length) out.push(`Look: ${looks.join(' ')}`);
+	}
 	for (const r of outfit?.refs ?? []) refs.add(r);
 	if (outfit?.text) out.push(`Dress: ${outfit.text}`);
 	else if (c?.dress && !redress) {
@@ -284,7 +292,7 @@ function personBlock(raw, opts, ctx) {
 }
 
 /**
- * @param {string[]} ids people ids (or `<person>:<stage id>` to pin a look), animal ids, `place:<id>`, `flag:<kingdom>`, `ship:<kingdom>` (ship board), `dress:<kingdom>` (costume chart for extras), or `noble:<kingdom>` (chart + great-clan crown)
+ * @param {string[]} ids people ids (or `<person>:<stage id>` to pin a look), animal ids, `place:<id>`, `room:<id>`, `flag:<kingdom>`, `ship:<kingdom>` (ship board), `dress:<kingdom>` (costume chart for extras), or `noble:<kingdom>` (chart + great-clan crown)
  * @param {{ year?: number, battle?: boolean, sword?: boolean, mounted?: boolean, flags?: boolean, hat?: boolean }} opts
  * @returns {{ refs: string[], text: string }}
  */
@@ -293,6 +301,7 @@ export function buildCanon(ids, opts = {}) {
 	const lines = [];
 	for (const raw of ids) {
 		if (raw.startsWith('place:')) lines.push(placeBlock(raw.slice(6), ctx));
+		else if (raw.startsWith('room:')) lines.push(placeBlock(raw.slice(5), ctx));
 		else if (raw.startsWith('flag:')) ctx.kingdoms.add(raw.slice(5));
 		else if (raw.startsWith('dress:')) ctx.costumes.add(raw.slice(6));
 		else if (raw.startsWith('noble:')) ctx.costumes.add(raw.slice(6)), ctx.nobles.add(raw.slice(6));
@@ -300,6 +309,7 @@ export function buildCanon(ids, opts = {}) {
 		else if (CANON.animals[raw]) lines.push(animalBlock(raw, ctx));
 		else lines.push(...personBlock(raw, opts, ctx));
 	}
+	if (CANON.faces?.common) lines.unshift(CANON.faces.common);
 	if (ctx.horse && CANON.horses?.common) lines.push(CANON.horses.common);
 	if (ctx.hat) lines.push(`HEADWEAR: ${CANON.hats.jougwan.text}`);
 	for (const k of ctx.nobles) {
@@ -335,7 +345,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
 		else ids.push(a);
 	}
 	if (!ids.length) {
-		console.error('usage: node scripts/visual-canon.mjs --year <Y> [--battle|--sword|--mounted|--flags|--no-hat] <ids…|person:look> [place:<id>] [flag:<kingdom>] [dress:<kingdom>] [noble:<kingdom>]');
+		console.error('usage: node scripts/visual-canon.mjs --year <Y> [--battle|--sword|--mounted|--flags|--no-hat] <ids…|person:look> [place:<id>] [room:<id>] [flag:<kingdom>] [dress:<kingdom>] [noble:<kingdom>]');
 		process.exit(1);
 	}
 	const { refs, text } = buildCanon(ids, opts);

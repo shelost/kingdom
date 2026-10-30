@@ -1,0 +1,154 @@
+[
+ {
+  "id": "bh-myth-cloth-fox",
+  "entry": "Bihyung",
+  "year": 602,
+  "at": "The song is very exact about how.",
+  "alt": "Legend: in the throne hall Bihyung whips a red cloth off a fox, and Gildal kneels there as a man.",
+  "scene": "LEGEND VARIANT (the story as the city believes it, told as real): heightened folk-tale register, cool moon-blue palette, silver mist, floating lantern motes; the magic is truly supernatural. Throne hall at night. FOREGROUND: Bihyung (stray strand of hair) mid-whirl, whipping a billowing red cloth up and away, sparks of moon-blue magic and silver motes streaming off it; beneath it Gildal (orange robe, red hood) kneels, blinking at the lamps, the last wisp of a fox tail dissolving into mist. Behind, out of focus, King Jinpyung on his dais leaning forward, and courtiers as dim gasping shapes. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "yongsu",
+   "gildal",
+   "jinpyung"
+  ],
+  "time": "night",
+  "faces": {
+   "yongsu": "static/ch_bihyung.png"
+  }
+ },
+ {
+  "id": "km-fox-swap",
+  "entry": "King Muyeol",
+  "year": 602,
+  "at": "Here is how a goblin is turned into a man.",
+  "alt": "The truth: the same moment from below the dais. The fox goes into a sleeve-sack and Gildal comes up through a loose floorboard.",
+  "scene": "The SAME moment as the legend, seen from the other side: a low worm-eye angle from beside the dais floor. FOREGROUND, sharp: under the hanging red cloth, a loosened floorboard lifted, Gildal (orange robe, red hood) climbing up through the gap with a grin; Bihyung (stray strand) crouched, stuffing a real struggling red fox into a sack in his wide sleeve, teeth gritted. One lamp from the side. Behind, out of focus, the court faces as dim shapes. A magician’s trick revealed. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "yongsu",
+   "gildal"
+  ],
+  "time": "night",
+  "faces": {
+   "yongsu": "static/ch_bihyung.png"
+  }
+ },
+ {
+  "id": "bh-myth-fox-hunt",
+  "entry": "Bihyung",
+  "year": 602,
+  "at": "The song gives the hunt a whole verse.",
+  "alt": "Legend: the goblins pour out of every culvert with lanterns; the madman runs barefoot at their head calling the fox.",
+  "scene": "LEGEND VARIANT (the story as the city believes it, told as real): heightened folk-tale register, cool moon-blue palette, silver mist, floating lantern motes; the magic is truly supernatural. Night road out of Surabol. FOREGROUND: Bihyung (stray strand, eyes gone SOLID WHITE) running barefoot toward the lens, calling out, hair flying; around and behind him the dokkaebi from the boards streaming out of culverts with lanterns; far ahead, small, an orange fox fleeing; the reeds bend flat pointing its way. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "yongsu"
+  ],
+  "time": "night",
+  "faces": {
+   "yongsu": "static/ch_bihyung.png"
+  },
+  "refs": [
+   "/ch_rascals_spirit.png",
+   "/ch_old_man_tree_spirit.png",
+   "/ch_rock_lady_spirit.png"
+  ],
+  "refsNote": "dokkaebi designs: copy each exactly"
+ },
+ {
+  "id": "bh-myth-ride-weeping",
+  "entry": "Bihyung",
+  "year": 602,
+  "at": "And the song remembers the part the city does not.",
+  "alt": "Legend: he carries the fox through every ward of Surabol and weeps the whole way.",
+  "scene": "LEGEND VARIANT (the story as the city believes it, told as real): heightened folk-tale register, cool moon-blue palette, silver mist, floating lantern motes; the magic is truly supernatural. Extreme close-up on Bihyung on horseback in a moonlit street, face filling the frame, weeping profusely, mouth open in a sob, tears streaming and flying in the wind, the one stray strand of hair whipping. FOREGROUND bottom: his hand clutching the limp orange fur of a dead fox across the saddle. Behind, out of focus, lanterned doorways and pale faces. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "yongsu"
+  ],
+  "time": "night",
+  "faces": {
+   "yongsu": "static/ch_bihyung.png"
+  }
+ },
+ {
+  "id": "km-ride-city",
+  "entry": "King Muyeol",
+  "year": 602,
+  "at": "From the palace wall he is very small",
+  "alt": "The truth: from the palace wall the rider is tiny; nobody sees his face. Suulbu stands so fast his chair goes over.",
+  "scene": "High angle from the Council balcony on the palace wall, morning. FOREGROUND, big and sharp: old Prince Suulbu (white topknot with gold pin, NO hat, white and red silk) half-risen, his chair toppling, face grey and shocked, gripping the balustrade; beside him two councillors staring, mouths open. Far below and far away, TINY: one horse and rider going through the streets of giwa roofs with something orange over the saddle, his face not visible at all; doors closing, a child pulled indoors. Background pale haze. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "sukhuljong"
+  ],
+  "time": "day"
+ },
+ {
+  "id": "bh-suulbu-cane",
+  "entry": "Bihyung",
+  "year": 601,
+  "at": "taps each stone with his cane",
+  "alt": "Suulbu walks the Ghost Bridge once, tapping each stone with his cane.",
+  "scene": "Low close shot on the Ghost Bridge at grey dawn. FOREGROUND, big and sharp: the tip of a carved cane tapping a wet flat stone, and Prince Suulbu (old, narrow cold face, white topknot with gold pin, NO hat) bent over it, eyes narrowed, counting. Behind, out of focus, the crooked bridge and temple roof in mist. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "sukhuljong"
+  ],
+  "time": "day"
+ },
+ {
+  "id": "bh-suulbu-screen",
+  "entry": "Bihyung",
+  "year": 602,
+  "at": "puts a servant behind the screen",
+  "alt": "Suulbu puts a servant behind the screen; the madman talks to the rafters about wages.",
+  "scene": "Night corridor. FOREGROUND, big and sharp: a frightened servant’s eye and cheek pressed to a gap in a painted folding screen, sweating. Beyond the screen, mid-ground and sharp in one lamp, Bihyung (stray strand of hair) sits on the floor talking up to the rafters, pausing as if listening, fingers counting. Crushed black around. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "yongsu"
+  ],
+  "time": "night",
+  "faces": {
+   "yongsu": "static/ch_bihyung.png"
+  }
+ },
+ {
+  "id": "km-suulbu-counting",
+  "entry": "King Muyeol",
+  "year": 602,
+  "at": "Suulbu has been counting the madman",
+  "alt": "Suulbu has been counting the madman for years.",
+  "scene": "Night study. FOREGROUND, big and sharp: old Prince Suulbu (white topknot with gold pin, NO hat) close to the lens, one lamp below his face, an abacus and a ledger under his long fingers, eyes lifted toward a lattice window. Through the window, tiny and out of focus far below, a figure on a crooked bridge talking to the stream. Crushed black. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "sukhuljong"
+  ],
+  "time": "night"
+ },
+ {
+  "id": "bh-myth-gildal-bow",
+  "entry": "Bihyung",
+  "year": 621,
+  "at": "Instead a fox comes out of the reeds",
+  "alt": "Legend: on a night walk in the reeds, a fox spirit stands up as a young man and kneels to Bihyung.",
+  "scene": "LEGEND VARIANT (the story as the city believes it, told as real): heightened folk-tale register, cool moon-blue palette, silver mist, floating lantern motes; the magic is truly supernatural. Night in tall reeds on the river bank below the palace west wall, moon behind cloud. Low three-quarter angle from the mud. FOREGROUND: Gildal half fox, half man, mid-transformation, going down on both knees in the mud, fox ears and a great red-orange fox tail still curling into silver mist, fox-gold eyes lifted to the young lord, orange robe forming out of the fur. Bihyung (barefoot, white sleeping robe, ONE stray strand of hair) frozen mid-step, startled, one hand up. Behind them, out of focus in the reeds, small glowing goblin eyes. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "yongsu",
+   "gildal"
+  ],
+  "time": "night",
+  "faces": {
+   "yongsu": "static/ch_bihyung.png"
+  }
+ },
+ {
+  "id": "km-gildal-kneel",
+  "entry": "King Muyeol",
+  "year": 621,
+  "at": "Instead a man steps out of the reeds",
+  "alt": "The same night from behind the reeds: a thin young man with a wooden goblin mask pushed up on his forehead kneels in the mud.",
+  "scene": "The SAME moment as the legend, seen from the other side: from BEHIND Gildal, over his shoulder, low among the reeds. FOREGROUND, sharp: Gildal, a thin human young man in a patched orange coat, no ears, no tail, kneeling in the mud, a carved wooden grinning dokkaebi mask pushed up on his forehead, his back and shoulder big in frame. Facing him, Bihyung (barefoot, white sleeping robe, ONE stray strand of hair) startled, one hand up. Behind Bihyung in the reeds, out of focus, two small ragged children in wooden masks crouching and watching, holding a covered lantern. Cold moonlight from the side. Plain, human, poor. DEPTH: the subject big and close, razor-sharp, a dark soft out-of-focus foreground shape at the lens, the background the real place painted loosely with colour, weather and haze, big creamy bokeh discs; one hard key carves the faces.",
+  "people": [
+   "yongsu",
+   "gildal"
+  ],
+  "time": "night",
+  "faces": {
+   "yongsu": "static/ch_bihyung.png"
+  }
+ }
+]

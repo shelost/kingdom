@@ -1,0 +1,209 @@
+[
+	{
+		"id": "wg-sunduk-ledge",
+		"entry": "The Wanggum's Guest",
+		"at": "There is no sky in here.",
+		"alt": "Over Munmu's bare wet shoulder in the black spring: Queen Sunduk sits on the rock ledge with her feet in the water, looking up at a cave roof with no stars.",
+		"scene": "Over-the-shoulder shot from water level inside a dark steam cavern at night. Sharp dark foreground: Munmu's bare wet shoulder and the back of his head, chest-deep in black water, unclothed, wet hair loose. Midground on a wet rock ledge: Queen Sunduk, a dead queen returned, sits with her bare feet in the water and her red-orange silk skirt gathered at her knees, head tipped back, gazing up at the black cave roof as if reading stars that are not there, a small wry smile. One small oil lamp set on the ledge beside her rakes up across her face, her gold hairpin and the silk folds; steam curls through her hem. ONE device: the ledge as a hard diagonal splitting the frame, queen above, king below. Ember-orange #E8552B as the lamp catch on her silk. Steam motes as bokeh. She is a ghost but solid and warm, painted like a living woman, no glow, no transparency. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"sunduk",
+			"munmu"
+		],
+		"with": [
+			"place:steam_cavern"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-yushin-arrives",
+		"entry": "The Wanggum's Guest",
+		"at": "He is in the blue robe they buried him in",
+		"alt": "Old Yushin, white-haired in the blue burial robe, stops at the edge of the steam; in the foreground Hyullé sinks into the water as if her knees went.",
+		"scene": "Low wide shot across black water in a steam cavern at night. Far side of the pool, midground: Kim Yushin as an old man of seventy-nine, white hair and white beard, back straight again, standing at the edge of the steam in a plain deep-blue burial robe, hands at his sides, like a guest who arrived early, the water at his shins. Foreground right, large and soft-focused: the water goddess Hyullé, in a white silk jeogori and soaked cyan chima, sinking down into the water with her hand at her mouth, wet hair, eyes wide and wet. On a rock far left, a small out-of-focus figure of a woman in orange turned to face the cave wall. ONE device: a long pale streak of lamplight on the water running from Hyullé to Yushin like a path. Marshal blue #2A5FB8 as the catch on his robe; cyan #2eb8c4 in the drip off Hyullé. Yushin is painterly webtoon; Hyullé is the divine one, more realistic skin. No glow, no halo.",
+		"people": [
+			"yushin",
+			"hyulle"
+		],
+		"with": [
+			"place:steam_cavern"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-yushin-sunduk",
+		"entry": "The Wanggum's Guest",
+		"at": "Forty years he loved her",
+		"alt": "Yushin and Sunduk stand a little closer than a subject should, not touching, in the steam; Munmu, out of focus in the water, has just worked it out.",
+		"scene": "Intimate medium two-shot in profile, rack focus, steam cavern at night. Sharp midground: old Kim Yushin (white hair and beard, deep-blue robe) and Queen Sunduk (older, red-orange silk, gold hairpin) standing on the wet rock facing each other, a hand's breadth apart, not touching; he looks down at her, she looks up at him with a small amused smile; years of unsaid love in the space between their faces. Soft blurred foreground lower-left: Munmu's bare wet head and shoulder in the water, turned toward them. ONE device: the narrow gap of lamplight between their two faces, the only bright vertical in the frame. A lamp on the rock behind them, painted bokeh discs in the steam. Ember #E8552B on her silk, marshal blue #2A5FB8 on his sleeve. Tender, restrained, not a kiss. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"yushin",
+			"sunduk",
+			"munmu"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-two-hands",
+		"entry": "The Wanggum's Guest",
+		"at": "Sunduk sets her hand on his left shoulder.",
+		"alt": "From behind: Munmu chest-deep in the black spring, a queen's hand on his left shoulder and the marshal's on his right.",
+		"scene": "Close shot from behind and slightly above, steam cavern at night. Munmu, unclothed, broad bare wet back and shoulders, wet hair loose, chest-deep in black water, head bowed. On his left shoulder rests a woman's slim hand with a red-orange silk sleeve (Queen Sunduk, her face half-visible at the left edge, eyes closed). On his right shoulder rests an old man's big scarred hand with a deep-blue sleeve (old Kim Yushin, white beard at the right edge). Both hands are warm and solid, fingers pressing into the wet skin. ONE device: the two arms forming a dark arch over his bowed head. A single lamp low on the rock ahead of him rakes light across his shoulders and the two hands; steam and motes as bokeh. Emotion in the bowed head and the press of the fingers. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"munmu",
+			"sunduk",
+			"yushin"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-chunchu-finger",
+		"entry": "The Wanggum's Guest",
+		"at": "puts one finger to his lips",
+		"alt": "Behind the queen, Chunchu in magenta lays a hand on her shoulder and puts one finger to his lips, smiling: not at me, ahead.",
+		"scene": "Medium close-up, steam cavern at night, shallow depth of field. King Muyeol (Kim Chunchu) as a ghost, in his royal magenta silk robe and crown, stands behind Queen Sunduk, one hand resting on her red-orange silk shoulder (her shoulder and gold hairpin soft in the foreground), the other hand raising one finger to his lips, a sly fox smile, eyes glinting toward the camera, head tipped forward as if saying: look ahead. A lamp below lights his face from beneath; dark steam behind. ONE device: the raised finger as a sharp vertical against the dark. Magenta #D8258C as the catch on his sleeve. Painterly webtoon, solid, no glow.",
+		"people": [
+			"chunchu",
+			"sunduk"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-lineage-chain",
+		"entry": "The Wanggum's Guest",
+		"at": "The two lines bend away into the steam",
+		"alt": "Two lines of the dead bend away into the steam like the banks of a river, each with a hand on the next one's shoulder: gold crowns of Silla on the left, Gaya iron on the right, and at the far ends two founding couples.",
+		"scene": "Minimal iconic wide, worm's-eye from water level, steam cavern at night. Munmu, unclothed, small, chest-deep in black mirror water in the lower centre, seen from behind. From his two shoulders, two long lines of standing figures recede into the steam like the two banks of one river, curving apart and away: each figure has one hand on the shoulder of the figure in front. LEFT line: Silla queens and kings in gold crowns with shivering gold leaves, then older gold, then bronze, then topknots with no crowns. RIGHT line: Gaya kings with iron swords at their belts, conical helms, purple-dyed silks. Both lines dissolve into bright white steam at the far end, where a couple stands side by side at the end of each line, tiny. ONE device: the two converging lines like a V of hands. The figures are dark silhouettes edge-lit by a pale shaft from high above; reflections of both lines in the still black water. Monumental, quiet, reverent. No glow auras. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"munmu"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-four-founders",
+		"entry": "The Wanggum's Guest",
+		"at": "On his left, a young man too beautiful",
+		"alt": "Munmu in the black water between the two founding couples: Hyukgose and Alyoung on his left, Suro and Queen Heo on his right.",
+		"scene": "Wide-medium shot, low angle from water level, steam cavern at night. Centre: Munmu, unclothed, wet hair loose, chest-deep in black water, looking from side to side, overwhelmed. LEFT, standing on the water: Park Hyukgose, a radiantly beautiful young king in white and pale-blue silk with a gold crown, a farmer's calm, and beside him Lady Alyoung in pale ice-blue silk with her jade hairpin, sharp-eyed. RIGHT, standing on the water: King Suro in purple silk with a small gold crown, grinning, and beside him Queen Heo in close-fitted rose-pink silk with her gold hairpin, composed and amused. ONE device: the two couples as two pillars framing the king, mirrored in the still water. The four founders are numinous demigods painted photoreal-leaning, real skin; Munmu is painterly webtoon. Steam drifts at their hems; one pale shaft from above. Pale blue #6f9fe8 catch on the left, amber-gold #e0a33c catch on the right. Each of the five is a different person; do not clone faces. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"munmu",
+			"hyukgose",
+			"alyoung",
+			"suro",
+			"heohwangok"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-suro-whose-dead",
+		"entry": "The Wanggum's Guest",
+		"at": "Whose dead are they, now?",
+		"alt": "Suro leans in close with a grin and a question; behind him Queen Heo watches, amused.",
+		"scene": "Close-up, slight dutch angle, steam cavern at night. King Suro in purple silk and a small gold crown leans in toward the camera, grinning, eyebrows up, one wet finger raised as if asking a riddle, steam beading on his crown. Behind him, soft-focus, Queen Heo in rose-pink silk with her gold hairpin watches with folded hands and a composed, amused half-smile. ONE device: Suro's raised finger and grin filling the left third, the queen's calm face in the right third. A lamp below rakes his cheekbones; bokeh motes in the dark. Amber-gold #e0a33c as the catch on his crown. Numinous, photoreal-leaning skin, playful.",
+		"people": [
+			"suro",
+			"heohwangok"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-hyukgose-smile",
+		"entry": "The Wanggum's Guest",
+		"at": "Hyukgose smiles.",
+		"alt": "Hyukgose gives the farmer's smile, takes Alyoung's hand, and the two of them dissolve into the steam.",
+		"scene": "Medium shot, steam cavern at night. Park Hyukgose, radiant young king in white and pale-blue silk with a gold crown, turns his head back toward the camera with a slow, knowing farmer's smile, holding Lady Alyoung's hand; she in pale ice-blue silk, jade hairpin, already turning away. The edges of their robes and their far sides are dissolving into bright white steam, as if walking into a cloud. Foreground lower-right, out of focus: the back of Munmu's wet head, watching. ONE device: their two joined hands at the centre, the sharpest thing in the frame. One pale shaft from above, steam motes. Pale blue #6f9fe8 in the light. Photoreal-leaning demigods, real skin, no halo. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"hyukgose",
+			"alyoung",
+			"munmu"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-man-in-white",
+		"entry": "The Wanggum's Guest",
+		"at": "Plain is for kings. I retired.",
+		"alt": "The man in white stands on the water, amused; Munmu, chest-deep and exasperated, asks him to say it plainly just once.",
+		"scene": "Worm's-eye two-shot from just above the water, steam cavern at night. Right two-thirds: an ancient man in plain white hemp robes standing ON the black water, long white hair and beard, a birch-bark-coloured cord at his waist, a face older than every kingdom, eyes crinkled with private amusement, one hand behind his back. Left third, foreground, lower: Munmu, unclothed, wet hair, chest-deep, palms up in exasperation, mouth open mid-plea. ONE device: the man's long reflection on the still water like a white pillar. Warm sandalwood-gold #b8956a light from a low unseen source rakes the white robe; the rest is crushed black and thin steam. The old man is numinous, photoreal-leaning; Munmu painterly webtoon. No halo, no glow. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"dangun",
+			"munmu"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-lacquer-faces",
+		"entry": "The Wanggum's Guest",
+		"at": "The water has gone still as lacquer.",
+		"alt": "Munmu looks down into the black water; instead of his face it shows the faces of commoners: a Baekje woman at a well, a Goguryeo boy walking south, a Gaya fisherman, a Silla soldier asleep.",
+		"scene": "Top-down shot over Munmu's bare wet shoulders as he looks down into lacquer-still black water in a steam cavern at night. The water does not reflect him: in its surface, like a painting in black lacquer, many small faces and figures of common people float and overlap — a woman in undyed white at a well, a boy walking south with a clay pot on his back, a fisherman mending a net, a young soldier with no rank asleep against a wall, and behind them hundreds more fading into the dark. ONE device: the circle of the pool as a disc of faces, his dark head and shoulders cutting into its top edge. A lamp off-frame lays a warm crescent on the water. Painterly, dreamlike, quiet. Munmu in the spring: take ONLY his FACE from the sheet — no crown, no robe, no cap, no headband; bare-headed, wet hair loose, unclothed, nothing on but water.",
+		"people": [
+			"munmu"
+		],
+		"hat": false,
+		"time": "night"
+	},
+	{
+		"id": "wg-dawn-coat",
+		"entry": "The Wanggum's Guest",
+		"at": "wearing the winter coat his mother packed",
+		"alt": "First light at the cave mouth: Munmu steps out with wet hair, wearing the winter coat his mother packed.",
+		"scene": "Wide shot from inside a dark cave mouth looking out at first light. Silhouetted in the bright opening, mid-stride on wet stone, King Munmu steps out, wet hair loose on his shoulders, wearing a heavy quilted winter coat over his crimson robe, breath steaming. Outside: frosted autumn hills, bare birches, a tethered horse, pale cold sky with one low gold band of sunrise. ONE device: the ragged black frame of the cave mouth around a pale world. Crimson #C41E3A in the edge of the robe under the coat where the dawn catches it. High-key white sky, inky cave.",
+		"people": [
+			"munmu"
+		],
+		"time": "day"
+	},
+	{
+		"id": "wg-suro-mound",
+		"entry": "The Wanggum's Guest",
+		"at": "puts his forehead on the grass of a Gaya grave",
+		"alt": "At Suro's overgrown mound by the river, a king of Silla kneels with his forehead on the grass, his escort and a stiff True Bone minister behind him.",
+		"scene": "Low wide shot across long autumn grass at a royal burial mound beside a river town. A low round green earth mound fills the right half, long uncut grass, a cracked stone offering table at its foot with moss in the crack and a handful of barley on it. King Munmu in crimson royal robe and gold crown kneels in the grass before it, forehead pressed to the ground, sleeves spread. Behind him, small: a line of escort soldiers in steel lamellar with Silla blue banners, and one True Bone minister in a dark official robe standing stiffly, appalled. ONE device: the curve of the mound against a pale wide sky. High-key white morning sky with haze, crisp shadows; crimson #C41E3A the only strong colour.",
+		"people": [
+			"munmu"
+		],
+		"with": [
+			"dress:silla"
+		],
+		"time": "day"
+	},
+	{
+		"id": "wg-turtle-song",
+		"entry": "The Wanggum's Guest",
+		"at": "Turtle, turtle, show your head.",
+		"alt": "An old woman in undyed white sings the turtle song over the barley at the mound; behind her the king laughs on his knees.",
+		"scene": "Medium close-up, low angle, at the foot of a grassy royal mound in morning light. Foreground sharp: an old village woman in plain undyed white hemp, hair in a simple knot, eyes closed, singing low, her weathered hands laying barley on a cracked mossy stone table. Midground soft: King Munmu in crimson robe and gold crown, still on his knees in the long grass, laughing with wet eyes; behind him blurred escort soldiers. ONE device: the cracked stone table as a hard horizontal across the lower frame. White high-key sky, haze, crisp cool-grey shadows.",
+		"people": [
+			"munmu"
+		],
+		"with": [
+			"dress:silla"
+		],
+		"time": "day"
+	},
+	{
+		"id": "wg-munhee-well",
+		"entry": "The Wanggum's Guest",
+		"at": "cries like one",
+		"alt": "By the well at night, old Munhee puts her face in her son's wet hair and cries.",
+		"scene": "Intimate close two-shot at night by a stone well in a palace courtyard. Munhee, sixty-seven, grey hair under her gold hairpin, in a pale pink jeogori and rose chima, presses her face into the wet hair of her son King Munmu, who bends down to her in a winter coat over crimson, his eyes closed, holding her. She is crying; one hand grips his coat. A single lantern hung on the well's wooden frame rakes warm light across their faces from the side; the courtyard behind is crushed black with tiled roofs barely visible. ONE device: the round stone rim of the well as a dark arc under them. Pink #e07fa8 as the lantern catch on her silk. Tender, painterly, no glow.",
+		"people": [
+			"munhee",
+			"munmu"
+		],
+		"with": [
+			"dress:silla"
+		],
+		"time": "night"
+	}
+]

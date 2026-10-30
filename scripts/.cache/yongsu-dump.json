@@ -1,0 +1,456 @@
+{
+  "year": "576–653",
+  "title": "Yongsu",
+  "subtitle": "용수",
+  "images": [
+    {
+      "id": "km-cellar-redmask",
+      "at": "The smallest of the three boys is twelve now"
+    },
+    {
+      "id": "km-council-demand",
+      "at": "Send the madman to fetch him back"
+    },
+    {
+      "id": "km-arrow-reeds",
+      "at": "They find Gildal at dawn where the south road meets the river"
+    },
+    {
+      "id": "km-bloodline-shout",
+      "at": "THE BLOODLINE OF KIM YONGSU WILL BE RESTORED"
+    },
+    {
+      "id": "km-weeps",
+      "at": "Yongsu weeps without a sound"
+    },
+    {
+      "id": "km-parallel-elder",
+      "at": "We didn’t love your father, Majesty"
+    },
+    {
+      "id": "km-parallel-mother",
+      "at": "She’s the last. My littlest."
+    },
+    {
+      "id": "km-parallel-boys",
+      "at": "The three boys don’t say anything."
+    },
+    {
+      "id": "km-fake-seal",
+      "at": "After the bridge, a miracle a season"
+    },
+    {
+      "id": "km-truth-world-below",
+      "at": "The old man shows her where his eye was."
+    },
+    {
+      "id": "km-truth-dawn-climb",
+      "at": "She comes back up each dawn with mud to the knee"
+    },
+    {
+      "id": "km-cliff-lotuses",
+      "at": "The palace ends at the bluff."
+    },
+    {
+      "id": "km-cliff-no-goblins",
+      "at": "Chunchu, there are no goblins."
+    },
+    {
+      "id": "km-cliff-arm",
+      "at": "…You’ve been saying that your whole life."
+    },
+    {
+      "id": "ys-m-fox-kneel",
+      "at": "Something in the reeds says Majesty."
+    },
+    {
+      "id": "km-gildal-kneel",
+      "at": "Something in the reeds says Majesty."
+    },
+    {
+      "id": "km-m-bh-myth-bow",
+      "at": "By morning the guards swear he went over the wall like a bird"
+    },
+    {
+      "id": "km-fake-reeds",
+      "at": "By morning the guards swear he went over the wall like a bird"
+    },
+    {
+      "id": "km-m-bh-myth-bridge-night",
+      "at": "Here is how a miracle is done."
+    },
+    {
+      "id": "km-fake-bridge",
+      "at": "Here is how a miracle is done."
+    },
+    {
+      "id": "km-m-bh-myth-lantern-bridge",
+      "at": "The song will say he showed her a world of ghosts"
+    },
+    {
+      "id": "km-m-bh-myth-cloth-fox",
+      "at": "So he does. The court is very impressed"
+    },
+    {
+      "id": "km-fox-swap",
+      "at": "So he does. The court is very impressed"
+    },
+    {
+      "id": "km-m-bh-suulbu-cane",
+      "at": "Suulbu has been counting the madman"
+    },
+    {
+      "id": "km-m-bh-suulbu-screen",
+      "at": "Suulbu has been counting the madman"
+    },
+    {
+      "id": "km-suulbu-counting",
+      "at": "Suulbu has been counting the madman"
+    },
+    {
+      "id": "km-m-bh-myth-gildal-fox",
+      "at": "Gildal hears by the second watch"
+    },
+    {
+      "id": "km-gildal-drain",
+      "at": "Gildal hears by the second watch"
+    },
+    {
+      "id": "km-m-bh-myth-fox-hunt",
+      "at": "Forty of Imjong’s riders"
+    },
+    {
+      "id": "km-riders-night",
+      "at": "Forty of Imjong’s riders"
+    },
+    {
+      "id": "km-m-bh-myth-gildal-death",
+      "at": "He takes Yongsu’s wrist, very gently"
+    },
+    {
+      "id": "km-knife-wrist",
+      "at": "He takes Yongsu’s wrist, very gently"
+    },
+    {
+      "id": "km-m-bh-myth-ride-city",
+      "at": "From the palace wall he is very small"
+    },
+    {
+      "id": "km-ride-city-weeping",
+      "at": "Nobody up there can see his face."
+    },
+    {
+      "id": "ys-ride-gildal-body",
+      "at": "Nobody up there can see his face."
+    },
+    {
+      "id": "ys-cloud-king-deathbed",
+      "at": "The Cloud King dies in a"
+    },
+    {
+      "id": "ys-wine-boat",
+      "at": "He tries, for one winter. Then"
+    },
+    {
+      "id": "ys-throne-boy",
+      "at": "One night after midnight the drunk"
+    },
+    {
+      "id": "ys-dohwa-refuses",
+      "at": "The hall goes very quiet. The musicians look at the floor."
+    },
+    {
+      "id": "ys-sleeve-sign",
+      "at": "Three days later they bring him"
+    },
+    {
+      "id": "ys-bridge-reveal",
+      "at": "King Jinpyung tests his ghost in"
+    },
+    {
+      "id": "ys-chunmyung-bridge",
+      "at": "She sits down on the bridge beside him, takes the stylus out of his hand"
+    },
+    {
+      "id": "ys-royal-supper",
+      "at": "The king eats with his family when he can"
+    },
+    {
+      "id": "ys-garden-meet",
+      "at": "The king introduces them in the"
+    },
+    {
+      "id": "ys-cold-feet",
+      "at": "Then it’s unanimous. Say yes."
+    },
+    {
+      "id": "ys-stream-wedding",
+      "at": "The wedding is small, at the house by the stream."
+    },
+    {
+      "id": "ys-hand-mouth",
+      "at": "She puts her hand over his mouth."
+    },
+    {
+      "id": "ys-deathbed-hands",
+      "at": "They are buried on the same day, on the hill west of the stream"
+    },
+    {
+      "id": "ys-myth-wedding-wall",
+      "at": "It is the only room in Surabol where he never once performs."
+    },
+    {
+      "id": "ys-myth-parents-bridge",
+      "at": "He stands on it for a long time."
+    },
+    {
+      "id": "ys-suulbu-garden",
+      "at": "Nobody at those banquets could ever make the months add up."
+    },
+    {
+      "id": "ys-suulbu-chair",
+      "at": "Thirteen years later the goblin’s whelp"
+    },
+    {
+      "id": "ys-chunchu-born",
+      "at": "Spring comes early. Chunmyung labours all"
+    },
+    {
+      "id": "ys-chunchu-stream",
+      "at": "Chunchu is nine and mortified."
+    },
+    {
+      "id": "ys-sunduk-lamp",
+      "at": "Sit down, brother-in-law."
+    },
+    {
+      "id": "ys-sunduk-tears",
+      "at": "When I was small I wanted to be her."
+    },
+    {
+      "id": "ys-jinheung-funeral",
+      "at": "They bury him under a hill"
+    },
+    {
+      "id": "ys-screen-shadows",
+      "at": "From the yard you can see the paper door."
+    },
+    {
+      "id": "ys-dohwa-birth",
+      "at": "The boy comes in spring, small and loud"
+    },
+    {
+      "id": "ys-periphery-boy",
+      "at": "Surabol has an edge"
+    },
+    {
+      "id": "ys-cousins-baduk",
+      "at": "Some nights the king sends for the madman to play baduk."
+    },
+    {
+      "id": "ys-cousins-roof",
+      "at": "The other place they talk is the roof of the east hall"
+    },
+    {
+      "id": "ys-chunmyung-disgust",
+      "at": "The smell reaches her first."
+    },
+    {
+      "id": "ys-chunmyung-sympathy",
+      "at": "The first night she can’t look at the eye."
+    },
+    {
+      "id": "ys-handwidth",
+      "at": "They are very proper about it."
+    },
+    {
+      "id": "ys-culvert-collar",
+      "at": "At the top of the culvert, wet to the knees"
+    },
+    {
+      "id": "ys-wedding-cameo",
+      "at": "At the gate, uninvited"
+    },
+    {
+      "id": "ys-dukman-spy",
+      "at": "Behind the plum tree at the end of the bridge"
+    },
+    {
+      "id": "ys-m-tenth-night",
+      "at": "On the tenth night nobody knocks."
+    },
+    {
+      "id": "ys-tenth-night-empty",
+      "at": "On the tenth night nobody knocks."
+    },
+    {
+      "id": "ys-m-seven-days-cloud",
+      "at": "So the lane gets its story"
+    },
+    {
+      "id": "ys-no-cloud",
+      "at": "So the lane gets its story"
+    },
+    {
+      "id": "ys-m-river-bridle",
+      "at": "He comes at dusk in a groom’s borrowed coat"
+    },
+    {
+      "id": "ys-hut-summons",
+      "at": "He comes at dusk in a groom’s borrowed coat"
+    },
+    {
+      "id": "ys-m-myth-reeds",
+      "at": "He goes back through the culvert before the temple bell."
+    },
+    {
+      "id": "ys-reeds-real",
+      "at": "He goes back through the culvert before the temple bell."
+    },
+    {
+      "id": "ys-m-myth-spirit-market",
+      "at": "The song will say he showed her a world of ghosts"
+    },
+    {
+      "id": "ys-chunmyung-children",
+      "at": "The song will say he showed her a world of ghosts"
+    },
+    {
+      "id": "ys-m-myth-roof-lamps",
+      "at": "The song will say he showed her a world of ghosts"
+    },
+    {
+      "id": "ys-roof-lamps-real",
+      "at": "The song will say he showed her a world of ghosts"
+    },
+    {
+      "id": "ys-dohwa-packing",
+      "at": "She folds her apron and wraps her shoes in it"
+    },
+    {
+      "id": "ys-dohwa-dawn-walk",
+      "at": "At first light they let her go home, as promised."
+    },
+    {
+      "id": "ys-m-myth-oldman-palm",
+      "at": "The old man shows her where his eye was."
+    },
+    {
+      "id": "ys-oldman-palm-real",
+      "at": "The old man shows her where his eye was."
+    },
+    {
+      "id": "ys-m-myth-rock-stones",
+      "at": "The woman shows her three small mounds"
+    },
+    {
+      "id": "ys-rock-mounds-real",
+      "at": "The woman shows her three small mounds"
+    },
+    {
+      "id": "ys-m-myth-rascals-fireflies",
+      "at": "bring them back the next night, mended"
+    },
+    {
+      "id": "ys-rascals-shoes-real",
+      "at": "bring them back the next night, mended"
+    },
+    {
+      "id": "ys-origin-eyes",
+      "at": "He had their eyes put out"
+    },
+    {
+      "id": "ys-origin-river",
+      "at": "The small ones were tied in rice sacks"
+    },
+    {
+      "id": "ys-origin-orphans",
+      "at": "One hanged at the west gate."
+    },
+    {
+      "id": "ys-feast-gate",
+      "at": "The parties don’t stay inside the palace."
+    },
+    {
+      "id": "ys-council-ledger",
+      "at": "The song will say they deposed him for wine and women."
+    },
+    {
+      "id": "ys-gildal-mound",
+      "at": "He ties it to a pole himself and drives the pole into the top of the mound"
+    },
+    {
+      "id": "ys-sunduk-uncross",
+      "at": "She takes up her brush and uncrosses them."
+    },
+    {
+      "id": "ys-door-voice",
+      "at": "He was seven. He woke in the dark"
+    },
+    {
+      "id": "ys-bluff-wide",
+      "at": "…I heard you once. Through the door."
+    },
+    {
+      "id": "ys-six-vote",
+      "at": "Three days later six old men vote"
+    },
+    {
+      "id": "ys-dawn-guards",
+      "at": "Before dawn forty guards knock three times"
+    },
+    {
+      "id": "ys-cup-death",
+      "at": "His mother comes once."
+    },
+    {
+      "id": "ys-one-lamp",
+      "at": "The first night, once the servants are asleep"
+    },
+    {
+      "id": "ys-salt-shoes",
+      "at": "A palace servant who talks to the air"
+    },
+    {
+      "id": "ys-same-table",
+      "at": "Four years later, the same table."
+    },
+    {
+      "id": "ys-pillow",
+      "at": "That night Chunmyung cries into her pillow"
+    },
+    {
+      "id": "ys-slush",
+      "at": "He was eleven, and there were five of them"
+    },
+    {
+      "id": "ys-tower-wide",
+      "at": "The queen wants a tower."
+    },
+    {
+      "id": "ys-wives-brush",
+      "at": "Eulje writes down the wives."
+    },
+    {
+      "id": "ys-councillor-stands",
+      "at": "The High Councillor comes to see the king that afternoon."
+    },
+    {
+      "id": "par-mourn-gildal",
+      "at": "Yongsu weeps without a sound"
+    },
+    {
+      "id": "par-coro-jinji",
+      "at": "Saryun is crowned Jinji."
+    },
+    {
+      "id": "par-coro-jinpyung",
+      "at": "Three days later they bring him back to watch his nephew crowned"
+    },
+    {
+      "id": "par-wed-yongsu",
+      "at": "Now he has done it to make a point."
+    }
+  ],
+  "n": 581
+}

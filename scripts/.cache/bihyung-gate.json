@@ -1,0 +1,99 @@
+[
+	{
+		"kind": "dialogue",
+		"person": "yongsu",
+		"lines": [
+			"돌들이랑.",
+			"…대개는 너랑. 넌 아직 모를 뿐이지.",
+			"궁에 의자 여섯 개 놓인 방이 있다. 그 방은 저를 즐겁게 해 주는 사내들을 잡아먹어. 그 방엔 들어가지 마라."
+		],
+		"en": [
+			"The stones.",
+			"…You, mostly. You just don’t know it yet.",
+			"There’s a room in the palace with six chairs in it. That room eats the men who amuse it. Stay out of that room."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "Chunchu decides his father is the strangest man in Silla. He will go on thinking so for thirty years. He will be wrong for all thirty.",
+		"ko": "춘추는 아버지가 신라에서 제일 이상한 사람이라고 결론 내린다. 그 생각은 서른 해 동안 이어진다. 서른 해 내내 틀린 생각이다."
+	},
+	{
+		"kind": "scene",
+		"label": "The Hwarang yard gate · Class 59’s first morning",
+		"ko": "화랑 마당 문 · 오십구기 첫 아침",
+		"jump": {
+			"year": 618,
+			"en": "Six Years Later…",
+			"ko": "여섯 해 뒤…"
+		}
+	},
+	{
+		"kind": "place",
+		"place": "hwarang_gate",
+		"html": "The gate lets them in. Fathers stop here.",
+		"ko": "그 문이 들여보낸다. 아비들은 여기까지다."
+	},
+	{
+		"kind": "p",
+		"html": "At fifteen the goblin’s whelp goes into the Hwarang yard. His father walks him to the gate, though he has been asked three times not to, and delivers a speech he has been practising on the stream all week.",
+		"ko": "열다섯에 도깨비 새끼는 화랑 마당에 든다. 아버지는 세 번이나 오지 말라는 부탁을 듣고도 문까지 따라와, 한 주 내내 개울에 대고 연습한 연설을 한다."
+	},
+	{
+		"kind": "p",
+		"html": "Halfway through, his son tells forty boys that the man at the gate is the family steward. He gets confused, poor thing.",
+		"ko": "연설 중간에 아들은 마흔 명 앞에서, 문 앞의 저 사람은 집 청지기라고 한다. 가끔 정신이 오락가락하는 불쌍한 양반이라고."
+	},
+	{
+		"kind": "p",
+		"html": "The steward walks home grinning the whole way. Chunmyung wants to know what’s funny.",
+		"ko": "청지기는 집까지 내내 싱글거리며 걸어간다. 천명이 뭐가 그렇게 웃기냐고 묻는다."
+	},
+	{
+		"kind": "dialogue",
+		"person": "yongsu",
+		"lines": [
+			"온 마당 앞에서 날 내쳤어.",
+			"첫날 아침에! 난 그거 배우는 데 서른 해 걸렸는데."
+		],
+		"en": [
+			"He disowned me in front of the whole yard.",
+			"First morning! Took me thirty years to learn that."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "chunmyung",
+		"lines": [
+			"…자랑스럽구나, 그 애가."
+		],
+		"en": [
+			"…You’re proud of him."
+		]
+	},
+	{
+		"kind": "dialogue",
+		"person": "yongsu",
+		"lines": [
+			"청지기 옷을 더 좋은 비단으로 맞춰야겠어."
+		],
+		"en": [
+			"I’m going to have the steward’s coat made in better silk."
+		]
+	},
+	{
+		"kind": "p",
+		"html": "That autumn the watch reports that the goblin’s whelp gave the moon verse for his whole class and made the Yard Marshal laugh. The steward has the watchman repeat it four times, then tells it to the stream.",
+		"ko": "그해 가을 순라꾼이 소식을 전한다. 도깨비 새끼가 제 기수 몫으로 달맞이 시를 읊었는데, 마당 대장이 웃더라고. 청지기는 순라꾼한테 네 번을 다시 말하게 하고, 그걸 개울한테 들려준다."
+	},
+	{
+		"kind": "scene",
+		"label": "Surabol · Chunchu’s wedding",
+		"ko": "서라벌 · 춘추의 혼례",
+		"jump": {
+			"year": 625,
+			"en": "Thirteen Years Later…",
+			"ko": "열세 해 뒤…"
+		}
+	}
+]

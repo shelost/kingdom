@@ -1,0 +1,32 @@
+[
+	{
+		"id": "scenes-daeya-half-gate",
+		"entry": "Siege of Daeya",
+		"at": "Pumsuk looks at him the way he used to look at his tutors",
+		"alt": "On the gatehouse, Pumsuk turns to Jukjuk for the answer; Jukjuk stands silent and does not give it.",
+		"scene": "Two-shot on the gatehouse at night. Pumsuk in new Silla armour turns to the older officer beside him, eyes pleading for the answer. Jukjuk, weathered, steady, plain yellow-sleeved officer under lamellar, looks back and says nothing. Torchlight between them.",
+		"people": ["pumsuk", "jukjuk"],
+		"battle": true,
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-postern",
+		"entry": "Siege of Daeya",
+		"at": "Mochuk is at the river postern with the bar already lifted.",
+		"alt": "Mochuk holds the river postern open as Gumil comes toward him out of the burning granary.",
+		"scene": "Low shot at the river postern at night. Mochuk holds the lifted bar, face turned to Gumil, who walks toward him out of the orange glow of the burning granary.",
+		"people": ["mochuk", "gumil"],
+		"time": "night"
+	},
+	{
+		"id": "scenes-daeya-bamboo",
+		"entry": "Siege of Daeya",
+		"at": "My father named me for the bamboo.",
+		"alt": "Jukjuk holds the inner gate at sunrise with the last of the garrison.",
+		"scene": "Worm's-eye at the inner gate as the sun comes up through smoke. Jukjuk stands in the gate with the last men, sword up, unbent.",
+		"people": ["jukjuk"],
+		"battle": true,
+		"sword": true,
+		"time": "day"
+	}
+]

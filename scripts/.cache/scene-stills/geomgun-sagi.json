@@ -1,0 +1,73 @@
+[
+	{
+		"id": "geomgun-granary-night",
+		"entry": "Bupmin",
+		"at": "Night, in the palace storehouse",
+		"alt": "Night granary: four palace men at the open bins, one door the only light, sleeves waiting",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. WIDE, LOW THREE-QUARTER into a timber Silla granary at night. ONE device: the open door as a hard gold rectangle, the only light. Four unnamed palace officials in dark Silla court po at the open grain bins, filling sleeves, a counting board already a lie. Packed earth, giwa eave, timber posts. No named faces — invent Korean officials, forties, no crowns, no jougwan copies of Geomgun. #6b6458 as lamp-dust on hemp and timber. NIGHT GROUND on BLACK. Composed for a 2:1 letterbox crop. No army. No readable text. No watermark.",
+		"with": ["dress:silla"],
+		"year": 628
+	},
+	{
+		"id": "geomgun-offer",
+		"entry": "Bupmin",
+		"at": "If it’s small, say so",
+		"alt": "Palace men hold out more grain; Geomgun does not close his fingers on the sleeve",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. INTIMATE two-shot, LOW THREE-QUARTER. ONE device: a filled grain-sleeve held out between two pairs of hands, not yet taken. LEFT of the sheet = Geomgun, FACE from the attached portrait, spare Korean face, black crescent headband, charcoal-grey po, looking at the sleeve, fingers open, not closing. An unnamed palace official opposite, dark court po, offering MORE, mouth mid-bargain. One oil lamp on the counting board the practical key from the side. #6b6458 as lamp bounce on cheek and hemp. NIGHT GROUND on BLACK. Composed for a 2:1 letterbox crop. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 628
+	},
+	{
+		"id": "geomgun-laugh",
+		"entry": "Bupmin",
+		"at": "He laughs. Once",
+		"alt": "Geomgun laughs once in the granary, the refused sleeve on the board, the officials staring",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. CLOSE, slight dutch. ONE device: the laugh as the only open mouth in a dark room. LEFT of the sheet = Geomgun, FACE from the attached portrait, spare Korean face, black crescent headband, charcoal-grey po, a SMALL unexpected laugh, eyes open, not cruel. Behind him two unnamed officials as dark shapes, staring. The refused sleeve on the counting board. One lamp the key from below. #6b6458 as lamp gold on teeth and cheek. NIGHT GROUND on BLACK. Composed for a 2:1 letterbox crop. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 628
+	},
+	{
+		"id": "geomgun-plot",
+		"entry": "Bupmin",
+		"at": "If we leave him, it leaks",
+		"alt": "Four palace men confer over a lamp; a dark cup already warming on the board",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER over a counting board. ONE device: four heads leaning into one lamp as a gold coin. Unnamed Silla palace officials in dark court po, conferring, one mouth open on a plot, one hand already near a DARK CUP warming on the board. No named faces — invent Korean officials, never copy Geomgun. Timber bins receding into black. #6b6458 as lamp on knuckles and cup. NIGHT GROUND on BLACK. Composed for a 2:1 letterbox crop. No readable text. No watermark.",
+		"with": ["dress:silla"],
+		"year": 628
+	},
+	{
+		"id": "geunrang-goodbye",
+		"entry": "Bupmin",
+		"at": "After today I won’t see you",
+		"alt": "Geomgun stands in Geunrang’s packed-earth gate and does not come in; a lamp waiting on the step",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER from inside the threshold looking OUT. ONE device: the timber gate as a dark frame, Geomgun small in the packed earth beyond. LEFT of the sheet = Geomgun, FACE from the attached portrait, charcoal-grey po, black crescent headband, standing, not coming in, mouth just closed on a goodbye. On the near step, out of focus, a young Hwarang in Silla-blue — invent this face, broader, no beard, gold crescent headband, NEVER Yushin NEVER Alchun NEVER Bidam. One lamp on the step the practical key. #6b6458 on Geomgun, #8a7a52 as a thin catch on the blue sleeve. NIGHT GROUND on BLACK. Composed for a 2:1 letterbox crop. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 628
+	},
+	{
+		"id": "geunrang-doubt",
+		"entry": "Bupmin",
+		"at": "Then tell the hall",
+		"alt": "Geunrang leans in at the gate: tell the king; Geomgun looks at the step and does not",
+		"time": "night",
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. INTIMATE two-shot, LOW THREE-QUARTER. ONE device: the step between them as a hard dark line. LEFT of the sheet = Geomgun, FACE from the attached portrait, looking DOWN at the step, mouth closed, the almost-yes still on him. RIGHT: a young Hwarang in Silla-blue, gold crescent headband, leaning in, mouth open on tell the king — invent this face, broader, scared for him, NEVER Yushin NEVER Alchun NEVER Bidam. One lamp on the step raking both from below. #6b6458 and #8a7a52 in the same pool. NIGHT GROUND on BLACK. Composed for a 2:1 letterbox crop. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 628
+	},
+	{
+		"id": "geomgun-feast",
+		"entry": "Bupmin",
+		"at": "They have set wine in the storehouse, as if to apologize",
+		"alt": "Thank-you wine in the granary: four cups, a fifth already dark; Geomgun sitting down to it",
+		"time": "night",
+		"hat": false,
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NOT photoreal. LOW THREE-QUARTER at a low wine table in the timber granary. ONE device: five cups, the fifth darker, already poured. LEFT of the sheet = Geomgun, FACE from the attached portrait, charcoal-grey po, sitting down CROSS-LEGGED, both hands not yet on the dark cup, eyes open, knowing. Three unnamed officials as dark shapes pouring, smiling the wrong smile. Grain bins in the black. One lamp the practical key from the side. #6b6458 as lamp gold on the dark cup. NIGHT GROUND on BLACK. Composed for a 2:1 letterbox crop. No readable text. No watermark.",
+		"people": ["geomgun"],
+		"year": 628
+	}
+]
