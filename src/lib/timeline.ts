@@ -565,6 +565,17 @@ export function yearAt(px: number): number | null {
 	return r && !r.gap ? r.from : null;
 }
 
+/** Pixel on the time axis for a calendar year (or a fractional year). Lives that fall in a fold sit in that fold. */
+export function yearScale(t: number): number {
+	const { rows, height } = TIMELINE;
+	if (!rows.length) return 0;
+	if (t <= rows[0].from) return 0;
+	for (const r of rows) {
+		if (t < r.to) return r.top + ((t - r.from) / Math.max(r.to - r.from, 1e-9)) * r.height;
+	}
+	return height;
+}
+
 /** True when two items share any stretch of time. */
 export function concurrent(a: Pick<TimelineItem, 'start' | 'end'>, b: Pick<TimelineItem, 'start' | 'end'>): boolean {
 	return a.start < b.end && b.start < a.end;

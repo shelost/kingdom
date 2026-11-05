@@ -430,20 +430,18 @@
 	}
 
 	.settings-dialog::backdrop {
-		background: color-mix(in srgb, var(--bg) 55%, transparent);
-		backdrop-filter: blur(10px);
+		background: color-mix(in srgb, var(--bg) 72%, transparent);
 	}
 
 	.settings-sheet {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
-		padding: 1.1rem 1.15rem 1.25rem;
+		padding: 1.25rem 1.35rem 1.4rem;
 		border: 1px solid var(--hairline);
-		border-radius: 1rem;
-		background: var(--glass);
-		backdrop-filter: blur(22px);
-		box-shadow: 0 22px 50px color-mix(in srgb, var(--bg) 70%, transparent);
+		border-radius: var(--radius-panel);
+		background: var(--panel);
+		box-shadow: var(--shadow-lift);
 	}
 
 	.settings-head {
@@ -707,16 +705,15 @@
 		.scope button,
 		.lang button,
 		.music,
-		/* Same glass pill as the menu button, so prose never reads through it. */
+		/* Opaque pill so prose never reads through it. */
 		.settings-text,
 		.theme-text {
 			min-height: 2.75rem;
 			padding: 0 0.85rem;
 			border: 1px solid var(--hairline);
 			border-radius: var(--radius-pill);
-			background: var(--glass);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
+			background: var(--panel);
+			box-shadow: var(--shadow-soft);
 		}
 	}
 </style>

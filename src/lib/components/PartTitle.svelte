@@ -98,26 +98,26 @@
 		align-items: center;
 		gap: 0.5rem;
 		margin-top: 1.6rem;
-		padding: 0.6rem 1.1rem 0.6rem 0.9rem;
+		padding: 0.65rem 1.2rem 0.65rem 1rem;
 		font: inherit;
 		font-size: 0.85rem;
 		font-weight: var(--weight-strong);
 		color: var(--fg-strong);
-		background: color-mix(in srgb, var(--bg) 62%, transparent);
-		backdrop-filter: blur(14px) saturate(170%);
-		-webkit-backdrop-filter: blur(14px) saturate(170%);
+		background: var(--panel);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
-		box-shadow: var(--shadow-pill);
+		border-radius: var(--radius-pill);
+		box-shadow: var(--shadow-soft);
 		cursor: pointer;
 		transition:
-			transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
-			background 0.3s;
+			transform var(--duration-normal) var(--ease-out),
+			background var(--duration-normal) var(--ease),
+			box-shadow var(--duration-normal) var(--ease);
 	}
 
 	.part-read:hover {
 		transform: translateY(-2px);
-		background: color-mix(in srgb, var(--bg) 82%, transparent);
+		background: var(--bg-raised);
+		box-shadow: var(--shadow-lift);
 	}
 
 	.part-read:focus-visible {

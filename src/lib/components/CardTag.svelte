@@ -101,14 +101,11 @@
 		white-space: nowrap;
 	}
 
+	/* Opaque dark chip over art (replaces frosted glass). */
 	.glass {
-		background: rgb(20 18 24 / 0.28);
-		backdrop-filter: blur(14px) saturate(1.4);
-		-webkit-backdrop-filter: blur(14px) saturate(1.4);
-		box-shadow:
-			inset 0 0 0 1px rgb(255 255 255 / 0.28),
-			inset 0 1px 0 rgb(255 255 255 / 0.35),
-			0 8px 22px -8px rgb(0 0 0 / 0.65);
+		background: #1c1c1f;
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		box-shadow: var(--shadow-soft);
 	}
 
 	.glass .segment {

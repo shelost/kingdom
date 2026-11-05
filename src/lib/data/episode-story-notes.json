@@ -1083,41 +1083,6 @@
 				"broken-sword"
 			]
 		},
-		"Buyeo": {
-			"aPlot": "Jumong wants to survive Daeso and get out.",
-			"bPlot": "Haemosu stops a reaper. A horse starved then fattened.",
-			"development": "The unbreakable egg · the knife in the dark.",
-			"climax": "The turtle bridge. The three-legged crow.",
-			"resolution": "He crosses. The half sword is still in the north.",
-			"themes": [
-				{
-					"id": "exile",
-					"label": "Get out",
-					"note": "A boy the house will not keep."
-				}
-			],
-			"hold": [
-				"broken-sword"
-			]
-		},
-		"Jolbon": {
-			"aPlot": "Sosuno wants Jumong and will not admit it.",
-			"bPlot": "Jumong wants a roof of his own. The well is where they count.",
-			"development": "Tabal’s hall · the bow that will not bend · the well · the grain room.",
-			"climax": "The pine shot. The vermilion cord.",
-			"resolution": "A kingdom from a yard. Everything after is a second episode told as a list.",
-			"themes": [
-				{
-					"id": "tsundere",
-					"label": "The well",
-					"note": "She prices a kingdom. He cannot count grain."
-				}
-			],
-			"concepts": [
-				"The Jolbon well",
-				"Song Yang"
-			]
-		},
 		"Gi (起)": {
 			"aPlot": "Bidam wants the throne to go to the cleverest person, not the last Sacred Bone.",
 			"bPlot": "Yumjong says Gaya. A door he pretends not to see.",
@@ -1970,6 +1935,24 @@
 					"tension": 32,
 					"last": true
 				}
+			]
+		},
+		"Jumong": {
+			"aPlot": "Sosuno wants Jumong and will not admit it.",
+			"bPlot": "Jumong wants a roof of his own. The well is where they count.",
+			"development": "Tabal’s hall · the bow that will not bend · the well · the grain room.",
+			"climax": "The pine shot. The vermilion cord.",
+			"resolution": "A kingdom from a yard. Everything after is a second episode told as a list.",
+			"themes": [
+				{
+					"id": "tsundere",
+					"label": "The well",
+					"note": "She prices a kingdom. He cannot count grain."
+				}
+			],
+			"concepts": [
+				"The Jolbon well",
+				"Song Yang"
 			]
 		}
 	}

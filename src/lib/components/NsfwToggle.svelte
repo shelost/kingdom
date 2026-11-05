@@ -49,17 +49,17 @@
 		font-size: 0.72rem;
 		letter-spacing: 0.04em;
 		color: var(--fg-faint);
-		background: var(--glass);
+		background: var(--panel);
 		border: 1px solid var(--hairline);
-		border-radius: 999px;
-		padding: 0.28rem 0.85rem;
+		border-radius: var(--radius-pill);
+		padding: 0.35rem 0.95rem;
 		cursor: pointer;
-		backdrop-filter: blur(14px);
+		box-shadow: var(--shadow-soft);
 		white-space: nowrap;
 		transition:
-			background 0.25s var(--ease),
-			color 0.25s var(--ease),
-			border-color 0.25s var(--ease);
+			background var(--duration-fast) var(--ease),
+			color var(--duration-fast) var(--ease),
+			border-color var(--duration-fast) var(--ease);
 	}
 
 	.nsfw-toggle:hover {

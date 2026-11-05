@@ -99,12 +99,15 @@
 		<span class="material-symbols-outlined" aria-hidden="true">search</span>
 		<input
 			type="search"
+			role="combobox"
 			placeholder="Search"
 			autocomplete="off"
 			spellcheck="false"
 			aria-label="Search scenes and script quotes"
 			aria-expanded={showPanel}
 			aria-controls="hud-search-results"
+			aria-autocomplete="list"
+			aria-activedescendant={showPanel && flat[active] ? `hud-hit-${active}` : undefined}
 			tabindex={scriptUi.inScript ? 0 : -1}
 			value={draft}
 			onfocus={() => (open = true)}
@@ -129,6 +132,7 @@
 						{@const i = flat.indexOf(hit)}
 						<button
 							type="button"
+							id="hud-hit-{i}"
 							role="option"
 							class="hit"
 							class:on={i === active}
@@ -167,11 +171,11 @@
 		align-items: center;
 		gap: 0.35rem;
 		min-height: 1.85rem;
-		padding: 0.18rem 0.65rem 0.18rem 0.5rem;
+		padding: 0.28rem 0.75rem 0.28rem 0.55rem;
 		border: 1px solid var(--hairline);
 		border-radius: var(--radius-pill);
-		background: var(--glass);
-		backdrop-filter: blur(14px);
+		background: var(--panel);
+		box-shadow: var(--shadow-soft);
 	}
 
 	.field .material-symbols-outlined {
@@ -207,12 +211,11 @@
 		width: min(26rem, 88vw);
 		max-height: min(22rem, 55vh);
 		overflow: auto;
-		padding: 0.45rem 0.35rem;
+		padding: 0.55rem 0.45rem;
 		border: 1px solid var(--hairline);
-		border-radius: 0.85rem;
-		background: var(--glass);
-		backdrop-filter: blur(18px);
-		box-shadow: 0 18px 40px color-mix(in srgb, var(--bg) 70%, transparent);
+		border-radius: var(--radius-panel);
+		background: var(--panel);
+		box-shadow: var(--shadow-menu);
 		z-index: 4;
 		text-align: left;
 	}

@@ -473,7 +473,7 @@
 												<div class="episode">
 													{#if chapter}
 														<p class="ep-chapter arrive" style:--i={1}>
-															<span class="ep-chapter-pill liquid-glass">{chapter}</span>
+															<span class="ep-chapter-pill surface">{chapter}</span>
 														</p>
 													{/if}
 													{#if logo}
@@ -724,7 +724,7 @@
 	{:else}
 		<button
 			type="button"
-			class="title-pill liquid-glass"
+			class="title-pill surface"
 			class:in={!!pinnedId}
 			aria-hidden={!pinnedId}
 			tabindex={pinnedId ? 0 : -1}
@@ -794,8 +794,8 @@
 
 	:global(html.is-screenplay) .entry-head,
 	:global(html.is-storyboard) .entry-head,
-	:global(html.is-screenplay) .next-episode,
-	:global(html.is-storyboard) .next-episode {
+	:global(html.is-screenplay) :global(.next-episode),
+	:global(html.is-storyboard) :global(.next-episode) {
 		display: none;
 	}
 
@@ -1156,7 +1156,7 @@
 	.ep-chapter-pill {
 		display: inline-flex;
 		align-items: center;
-		padding: 0.32rem 0.9rem;
+		padding: 0.4rem 1rem;
 		border-radius: var(--radius-pill);
 		font-family: var(--ui);
 		font-size: 0.72rem;
@@ -1468,12 +1468,11 @@
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
-		padding: 0.45rem 0.5rem 0.45rem 0.9rem;
+		padding: 0.55rem 0.6rem 0.55rem 1rem;
 		border-radius: var(--radius-pill);
-		background: color-mix(in srgb, var(--panel) 94%, transparent);
+		background: var(--panel);
 		border: 1px solid var(--hairline);
 		box-shadow: var(--shadow-menu);
-		backdrop-filter: blur(14px);
 		font-family: var(--ui);
 		font-size: 0.78rem;
 		color: var(--fg);
@@ -1686,13 +1685,13 @@
 	.title-pill {
 		position: fixed;
 		z-index: 91;
-		top: max(0.75rem, env(safe-area-inset-top, 0px));
+		top: max(1rem, env(safe-area-inset-top, 0px));
 		left: 50%;
 		display: inline-flex;
 		align-items: center;
 		gap: 0.55rem;
 		max-width: min(28rem, calc(100vw - 8rem));
-		padding: 0.55rem 1.1rem;
+		padding: 0.6rem 1.2rem;
 		border-radius: var(--radius-pill);
 		color: var(--fg-strong);
 		font-family: var(--ui);

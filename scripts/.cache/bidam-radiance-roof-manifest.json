@@ -1,0 +1,30 @@
+{
+	"place": "Radiance Fortress roof → Moon Palace (Wolseong)",
+	"camera": "high three-quarter from the moon-stage radiance view",
+	"stills": [
+		{
+			"id": "bidam-radiance-roof-wide",
+			"at": "The Fortress of Radiance",
+			"alt": "High three-quarter: Bidam on the Radiance munru roof, looking west at the crescent Moon Palace",
+			"tone": "#d8ddd0",
+			"role": "Radiance roof wide",
+			"angle": "high three-quarter"
+		},
+		{
+			"id": "bidam-radiance-roof-look",
+			"at": "Bidam walks the rampart",
+			"alt": "Closer: Bidam on the Radiance roof ridge, face readable, Wolseong in the haze",
+			"tone": "#c9d0c4",
+			"role": "Radiance roof look",
+			"angle": "crane-in three-quarter"
+		},
+		{
+			"id": "bidam-radiance-roof-ots",
+			"at": "Look at them come down the valley road",
+			"alt": "Over-shoulder from Bidam on the Radiance roof, looking at the crescent Moon Palace",
+			"tone": "#d4d8cc",
+			"role": "Radiance roof OTS",
+			"angle": "over-shoulder"
+		}
+	]
+}

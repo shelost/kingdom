@@ -59,13 +59,12 @@
 		['biryun', 'bidam'],
 		['gukban', 'jinduk'],
 		['jinpyung', 'sunduk'],
-		['jinpyung', 'chunmyung'],
-		['chunchu', 'gotaso']
+		['jinpyung', 'chunmyung']
 	];
 	/** marriages, each with the children drawn from its middle */
 	const MARRIAGES: { a: string; b: string; children: string[] }[] = [
 		{ a: 'chunmyung', b: 'yongsu', children: ['chunchu'] },
-		{ a: 'chunchu', b: 'munhee', children: ['munmu'] }
+		{ a: 'chunchu', b: 'munhee', children: ['gotaso', 'munmu'] }
 	];
 	/** The line the Bihyung story follows. */
 	const BIHYUNG = new Set(['jinji', 'yongsu', 'chunmyung', 'sunduk', 'chunchu', 'jinpyung']);
@@ -506,7 +505,7 @@
 	const lineOf = (a: string, b: string) => linePack.edge.get(pairKey(a, b)) ?? null;
 	const marriageLines = (m: { a: string; b: string; children: string[] }) =>
 		LINE_RANK.filter((kind) =>
-			m.children.some((c) => lineOf(m.a, c) === kind || lineOf(m.b, c) === kind)
+			m.children.some((c) => at.has(c) && (lineOf(m.a, c) === kind || lineOf(m.b, c) === kind))
 		);
 
 	/** Recorded years print bare; reconstructed ones get "c." */
@@ -616,20 +615,23 @@
 		close: boolean;
 		bus: number;
 		mx: number;
+		kidKeys: string[];
 		kidPts: Pt[];
 		fallen: boolean;
 		busLo: number;
 		busHi: number;
 		id: string;
 	};
-	function marriageDraw(m: { a: string; b: string; children: string[] }): Wed {
-		const a = at.get(m.a)!;
-		const b = at.get(m.b)!;
+	function marriageDraw(m: { a: string; b: string; children: string[] }): Wed | null {
+		const a = at.get(m.a);
+		const b = at.get(m.b);
+		if (!a || !b) return null;
+		const kidKeys = m.children.filter((c) => at.has(c));
+		const kidPts = kidKeys.map((c) => at.get(c)!);
 		const left = a.x <= b.x ? a : b;
 		const right = a.x <= b.x ? b : a;
-		const skip = new Set([m.a, m.b, ...m.children]);
+		const skip = new Set([m.a, m.b, ...kidKeys]);
 		const close = coupleClose(a, b, skip);
-		const kidPts = m.children.map((c) => at.get(c)!);
 		const kidXs = kidPts.map((p) => p.x);
 		const mx = (a.x + b.x) / 2;
 		const xs = [left.x, right.x, mx, ...kidXs];
@@ -649,6 +651,7 @@
 			close,
 			bus,
 			mx: stem,
+			kidKeys,
 			kidPts,
 			fallen: m.a === 'jinji' || m.b === 'jinji',
 			busLo,
@@ -1076,6 +1079,7 @@
 	{#each marriages as m, i (m.a + m.b)}
 		{@const w = marriageDraw(m)}
 		{@const thru = marriageLines(m)}
+		{#if w}
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<g
 			class="wed"
@@ -1111,13 +1115,14 @@
 				{/if}
 				<path class:fallen={w.fallen} d="M {w.busLo} {w.bus} H {w.busHi}" />
 				<path class="hit" d="M {w.busLo} {w.bus} H {w.busHi}" />
-				{#each m.children as ck (`${m.a}-${m.b}-${ck}`)}
+				{#each w.kidKeys as ck (`${m.a}-${m.b}-${ck}`)}
 					{@const p = at.get(ck)!}
 					<path class:fallen={w.fallen} d="M {p.x} {w.bus} V {p.y - R}" />
 					<path class="hit" d="M {p.x} {w.bus} V {p.y - R}" />
 				{/each}
 				{#each thru as kind (`${m.a}-${m.b}-${kind}`)}
-					{@const heirs = m.children.filter((ck) => lineOf(m.a, ck) === kind || lineOf(m.b, ck) === kind)}
+					{@const heirs = w.kidKeys.filter((ck) => lineOf(m.a, ck) === kind || lineOf(m.b, ck) === kind)}
+					{#if heirs.length}
 					{@const heirXs = heirs.map((ck) => at.get(ck)!.x)}
 					{@const lo = Math.min(w.mx, ...heirXs)}
 					{@const hi = Math.max(w.mx, ...heirXs)}
@@ -1160,9 +1165,11 @@
 							d="M {p.x} {w.bus} V {p.y - R}"
 						/>
 					{/each}
+					{/if}
 				{/each}
 			{/if}
 		</g>
+		{/if}
 	{/each}
 
 	{#each nodes as n, i (n.key)}

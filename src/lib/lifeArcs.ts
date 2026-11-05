@@ -1053,7 +1053,7 @@ export const LIFE_ARCS: Record<string, LifeArcDef> = {
 			summaryKo: '대청이 그를 굽히지 못한다. 다발. 소서노의 장부.',
 			turn: 'Tabal; Sosuno’s Ledger',
 			turnKo: '다발, 소서노의 장부',
-			episode: 'Buyeo'
+			episode: 'Jumong'
 		}),
 		s({
 			title: 'Unnamed Man',
@@ -1062,7 +1062,7 @@ export const LIFE_ARCS: Record<string, LifeArcDef> = {
 			summaryKo: '그녀는 이름을 안 부른다. 다섯 부족이 왕으로 뽑는다.',
 			turn: 'The Five Tribes Vote Him King',
 			turnKo: '다섯 부족이 왕으로 뽑다',
-			episode: 'Jolbon'
+			episode: 'Jumong'
 		}),
 		s({
 			title: 'Founder',
@@ -1089,7 +1089,7 @@ export const LIFE_ARCS: Record<string, LifeArcDef> = {
 			summaryKo: '그 말을 안 한다. 우물 마당. 도랑.',
 			turn: 'The Well Yard',
 			turnKo: '우물 마당',
-			episode: 'Buyeo'
+			episode: 'Jumong'
 		}),
 		s({
 			title: 'Country-Building Wife',
@@ -1098,7 +1098,7 @@ export const LIFE_ARCS: Record<string, LifeArcDef> = {
 			summaryKo: '나라를 짓는다. 졸본의 투표.',
 			turn: 'The Vote at Jolbon',
 			turnKo: '졸본의 투표',
-			episode: 'Jolbon'
+			episode: 'Jumong'
 		}),
 		s({
 			title: 'Mother on the Southern Road',
@@ -1134,7 +1134,7 @@ export const LIFE_ARCS: Record<string, LifeArcDef> = {
 			summaryKo: '아들을 낳는다. 주몽이 태어난다.',
 			turn: 'Jumong Hatches',
 			turnKo: '주몽이 태어나다',
-			episode: 'Buyeo'
+			episode: 'Jumong'
 		}),
 		s({
 			title: 'Moon',

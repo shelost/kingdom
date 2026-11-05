@@ -180,7 +180,7 @@
 
 {#if picked}
 	<div
-		class="sel-menu liquid-glass"
+		class="sel-menu surface"
 		class:wide={mode !== 'bar'}
 		style:left="{picked.x}px"
 		style:top="{picked.y}px"
@@ -252,17 +252,16 @@
 <style>
 	/* Floats just above the highlighted words, centred on them. */
 	.sel-menu {
-		--glass-tint: 88%;
 		position: fixed;
 		z-index: 120;
 		display: flex;
 		gap: 0.15rem;
-		padding: 0.25rem;
+		padding: 0.35rem;
 		border-radius: var(--radius-pill);
 		translate: -50% calc(-100% - 0.6rem);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
-		animation: pop 0.18s var(--ease) both;
+		animation: pop var(--duration-fast) var(--ease-out) both;
 	}
 
 	.sel-menu.wide {

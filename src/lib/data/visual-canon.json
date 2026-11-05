@@ -536,11 +536,27 @@
 			"sword": "sword-kangrim",
 			"fighting": "Draws only a hand's width of black iron; the reaper cuts once — a cord, not flesh.",
 			"style": "Keep his portrait's ink-brush dissolve at his edges.",
+			"hat": false,
 			"never": [
 				"eyes clearly visible",
 				"gore",
 				"armor"
-			]
+			],
+			"looks": {
+				"mortal": {
+					"keepGarments": true,
+					"hat": false,
+					"text": "Living magistrate's man from attached /ch_kangrim_mortal.png: a visible Korean face, one LEFT eye showing, strong square jaw, short black goatee, black topknot. WHITE cloth headband; his RIGHT eye bound with a RED silk wrap (a bandage, not a gat). Bright ORANGE-RED po with huge WHITE balloon sleeves, dark blue-black sash, white inner collar, white trousers, straw sandals. A ring-pommel sword at the left hip. Thick-shouldered, living, mid-stride.",
+					"demeanor": "Living, stubborn, keeps a date. Dry courtesy to the magistrate, warmth at the shrine.",
+					"never": [
+						"wide black gat",
+						"black reaper robe",
+						"both eyes hidden",
+						"ink-brush dissolve at the edges",
+						"psychopomp silhouette"
+					]
+				}
+			}
 		},
 		"bangul": {
 			"look": "Boy of fifteen at the Yellow Mountain: square Korean face, a bright reckless half-grin, red liner at the outer eye, long black hair; crimson crescent-moon headband with long red tails.",
@@ -643,6 +659,46 @@
 				"gold robes",
 				"meek downcast pose"
 			]
+		},
+		"hodong": {
+			"look": "Young Goguryeo prince: fair Korean face, dark styled hair with slight volume, confident determined eyes, clean-shaven. FACE from /ch_hodong.png.",
+			"dress": "As the portrait: vibrant blue robe under grey steel lamellar breastplate and pauldrons, dark bracers, long crimson sash draped over the right shoulder across the chest, brown belt, ring-pommel sword at the hip. Hunting / soft beats may drop the plates but keep blue silk + red sash language.",
+			"hat": false,
+			"armor": "goguryeo",
+			"demeanor": "Grins first, wrecks second. Falls in love mid-stride. Makes love a condition and hates himself for it.",
+			"carry": "Ring-pommel sword at the hip; bow when hunting.",
+			"never": [
+				"slate-grey Choi Ri face",
+				"full beard",
+				"king’s crown",
+				"glow aura",
+				"fantasy plate"
+			]
+		},
+		"nakrangso": {
+			"look": "Young Nakrang princess: soft oval Korean face, living dark eyes, elaborate braided updo with gold floral ornaments, long hanging gold earrings. FACE from /ch_nakrangso.png. Never invent a given name — she is the Princess.",
+			"dress": "Peach / light-orange court po with maroon patterned borders, white pleated under-chima, white collar, dark blue chest band, red cord — as the portrait.",
+			"demeanor": "Forward then wrecked. Goes home when love becomes a knife. Cries with open face.",
+			"never": [
+				"call her Nakso on the image",
+				"Silla open crown",
+				"fantasy tiara",
+				"stoic dry eyes on grief",
+				"glow aura"
+			]
+		},
+		"choiri": {
+			"look": "Mature Nakrang king: sharp almond eyes, well-groomed black goatee and moustache, dark topknot under a dark headband. FACE from /ch_choi_ri.png.",
+			"dress": "Wide-sleeved red outer robe, cream chest overlay with small red dots, dark cuffs, dark brown sash, blue lower garment — as the portrait.",
+			"hat": false,
+			"demeanor": "Composed until the silence names his daughter. Softens for her. Terrible for the house. Weeps after the knife.",
+			"never": [
+				"slate-grey monk robe as default",
+				"Tang yellow",
+				"jougwan",
+				"glow aura"
+			],
+			"props": "Jamyeonggo matches /pl_magic_drum.png exactly whenever the drum is in frame — solid deep-red barrel, glowing orange-yellow hide, riveted rim, low wooden stand; ignore any figure painted on that place board."
 		},
 		"haemosu": {
 			"demeanor": "Feral, greedy, easy sun-god — wants first. Divine render: photoreal-leaning and numinous beside painterly mortals.",
@@ -857,6 +913,34 @@
 			"never": [
 				"a child's face",
 				"chubby cheeks"
+			]
+		},
+		"begun": {
+			"look": "Young Silla hwarang from /ch_begun.png: messy black hair, defined jaw, Silla-blue po with black collar trim, dusty-rose scarf knotted at the throat, purple crescent-moon headband under a small jougwan with two barred pheasant feathers. Before 565 the eyes are living BLACK. From 565 the eyes are clouded white / pale-grey with burnt amber scarring around both sockets (match the portrait); a wet cloth may cover them while it is being tied, then comes off — the white eyes are the blindness.",
+			"fighting": "Bow loosed by count, never by sight after fifteen. At close range the bow is a stave. Face grimace, not a standing catalog.",
+			"never": [
+				"living black pupils after 565",
+				"pity-face",
+				"Cheon as the shooter",
+				"Yushin-blue marshal robe"
+			]
+		},
+		"jehu": {
+			"look": "Silla girl from /ch_jehu.png: oval face, soft mouth that can bite, black hair in a coiled updo with gold pins and long dangling gold earrings, teal outer robe over cream sleeves, bright orange-red sash at the waist. BLACK eyes (never the portrait’s brown). Wedding silk she pulls at when forced; running shoes underneath.",
+			"never": [
+				"a smiling bride",
+				"brown / hazel eyes",
+				"the prefect as a named portrait"
+			]
+		},
+		"cheon": {
+			"look": "Young Silla hwarang from /ch_kim_chun.png: messy black hair, warm smirk, living BLACK eyes, teal-cyan po with dark collar, teal crescent-moon headband under a jougwan with two barred pheasant feathers, dark wrapped forearms with tan cross-ties, a ring-pommel sword at the hip. Mouth often close to Begun’s ear. Bow on his back more than in his hand.",
+			"fighting": "He sees. He cannot shoot. His arrows live in the dirt. The beat is the count at Begun’s shoulder, not a hero full-draw.",
+			"never": [
+				"Yushin-blue marshal po",
+				"hero full-draw as the subject",
+				"a second Begun",
+				"clouded white eyes"
 			]
 		},
 		"narim": {
@@ -1460,8 +1544,8 @@
 			]
 		},
 		"geomgun": {
-			"look": "Young palace attendant: spare Korean face, a small stubborn mouth, almost no colour on him. Black crescent-moon headband.",
-			"dress": "Charcoal-grey po over black inner sleeves, black sash, small jougwan with two tan pheasant feathers (attached /ch_gumgun.png). The mural remembers him in the yard's clothes.",
+			"look": "Young palace attendant Gumgun: spare Korean face, a small stubborn mouth, almost no colour on him. Black crescent-moon headband (attached /ch_gumgun.png).",
+			"dress": "Charcoal-grey po over black inner sleeves, black sash, small jougwan with two tan pheasant feathers. The mural remembers him in the yard's clothes.",
 			"demeanor": "One sentence, then the same sentence again. He laughs once. He sits cross-legged. He drinks. He does not fall.",
 			"never": [
 				"a bright court colour",
@@ -1470,7 +1554,7 @@
 			]
 		},
 		"geunrang": {
-			"look": "Young Hwarang, early twenties: a broader, opener Korean face than Geomgun, no beard, dark brows that go up when he is scared for someone. No portrait: invent this face, NEVER copy Yushin, Alchun or Bidam.",
+			"look": "Young Hwarang Gunrang, early twenties: a broader, opener Korean face than Gumgun, no beard, dark brows that go up when he is scared for someone (attached /ch_gunrang.png).",
 			"dress": "Silla-blue po, a gold crescent-moon headband, small jougwan. A Hwarang's clothes, not a clerk's.",
 			"demeanor": "Asks three times. Gets loud at the gate. Does not follow him back to the wine.",
 			"never": [
@@ -1503,6 +1587,117 @@
 			},
 			"never": [
 				"sexualized pose or skin"
+			]
+		},
+		"inmun": {
+			"look": "Twenty-two to thirty-two, slim long Korean face, careful eyes, no beard; black hair in a neat middle part like his father’s, shorter. A listener’s mouth.",
+			"dress": "Ice-blue #6fb0d8 silk po over a white inner collar, charcoal sash — western-cut Silla court silk, cleaner than home dress.",
+			"demeanor": "Still, bilingual, rarely first to speak. Looks past the camera as if counting a room in another language.",
+			"never": [
+				"Bupmin’s square jaw or goatee",
+				"adult bulk",
+				"a loud grin"
+			]
+		},
+		"munwang": {
+			"look": "Late twenties, longer oval face than Bupmin, soft mouth, thin brows; black hair a little long, clean-shaven. The handsome spare brother.",
+			"dress": "Antique-gold #C9A14A silk po, dark charcoal collar and sash, Silla cut. A diplomat’s cloth, not a soldier’s.",
+			"demeanor": "Softer than Bupmin, quicker than Inmun. A small tired smile.",
+			"never": [
+				"Bupmin’s square jaw or folded arms",
+				"a beard",
+				"armor"
+			]
+		},
+		"nocha": {
+			"look": "Mid-twenties, rounder Korean face, thicker straight brows, a short solid neck; black hair in a plain topknot. Built like a rider, not a clerk.",
+			"dress": "Moss-green #4E8B62 silk po, cream inner collar, dark sash, simple Silla trousers.",
+			"demeanor": "Blunt, present, not much to say. Stands like a gate.",
+			"never": [
+				"Bupmin’s face",
+				"a scholar’s slouch",
+				"gold embroidery catalog"
+			]
+		},
+		"intae": {
+			"look": "Mid-twenties, lean angular face, a sharp jaw without a beard, intense level eyes, a small nick at one brow; black hair pulled tight.",
+			"dress": "Burnt-copper #C45A32 silk po with a dark wrap belt, campaign-plain, no gold.",
+			"demeanor": "Sore and upright. Held a city and was not counted.",
+			"never": [
+				"Bupmin’s grin",
+				"a beard",
+				"Tang vermilion"
+			]
+		},
+		"jigyeong": {
+			"look": "Early twenties, narrow face, long quiet eyes, a thoughtful mouth; black hair neat, a few strands loose. The clerk of the brothers.",
+			"dress": "Sea-slate #3D7A8C silk po, white collar, thin dark sash; a rolled slip in the sash when the scene allows.",
+			"demeanor": "Watching, remembering who stood where.",
+			"never": [
+				"Bupmin’s square jaw",
+				"a loud expression",
+				"armor"
+			]
+		},
+		"gaewon": {
+			"look": "Twenty-two, open younger face, large dark eyes, a boy’s mouth not yet set; black hair softer, still a little long. The last named son.",
+			"dress": "Iris-violet #7A4E9C silk po, pale inner collar, a simple sash. Youthful court silk.",
+			"demeanor": "Earnest, a little lost in a room of older brothers.",
+			"never": [
+				"adult bulk",
+				"a beard",
+				"Bupmin’s folded-arms pose"
+			]
+		},
+		"gaejimun": {
+			"look": "Nineteen, plainer oval face, shy eyes, a small closed mouth; black hair in a modest topknot. Not dressed as a prince.",
+			"dress": "Dry-wheat #9A7B4F po, plainer weave than the named sons, cream collar, hemp-dark sash.",
+			"demeanor": "Unsure of the room. Came anyway.",
+			"never": [
+				"royal gold",
+				"Bupmin’s face",
+				"a crown"
+			]
+		},
+		"geodeuk": {
+			"look": "Seventeen, watchful long face, dark under-lashes, a quiet closed mouth; black hair slightly unkempt.",
+			"dress": "Teal #2E8B7A po, travel-plain, a darker sash, dust at the hem as if he walked here.",
+			"demeanor": "Counting the room the way he will later count villages.",
+			"never": [
+				"court gold",
+				"a smile for the camera",
+				"armor"
+			]
+		},
+		"madeuk": {
+			"look": "Fifteen, the smallest brother: round boy’s face, large ink-black eyes, short black hair, a child’s mouth. Obviously younger than every other son.",
+			"dress": "Persimmon #D4783C jeogori and trousers, white belt, a boy’s cut — the same language as child Bupmin’s blue, in his own colour.",
+			"demeanor": "Holding the latch. Looking at his father, not at the brothers.",
+			"never": [
+				"adult proportions",
+				"a beard",
+				"Bupmin’s adult face"
+			]
+		},
+		"yoseok": {
+			"look": "Twenty-three, oval Korean face, even eyes, a dry almost-smile; black hair coiled with a gold pebble-and-leaf pin. A widow, not a girl.",
+			"dress": "Jewel-gold #E6C04A chima, white jeogori with a gold-thread collar, a widow’s quieter silk — no loud ornaments.",
+			"demeanor": "Already learned how a room ends. Came anyway.",
+			"never": [
+				"Gotaso’s child face or pink chima",
+				"sexualized pose",
+				"a big smile"
+			]
+		},
+		"kimjiso": {
+			"look": "Twenty-one, steadier oval face than Yoseok, level brows, a married girl’s gravity; black hair coiled with a small dark plum-jade pin.",
+			"dress": "Deep plum #6A3D6E chima, white jeogori, indigo collar, a plain sash. Home silk, not the marshal’s house gold.",
+			"demeanor": "Can stand a door. Taught by this one.",
+			"never": [
+				"the older Queen Jiso / 지소태후",
+				"Gotaso’s pink",
+				"sexualized pose",
+				"Yushin’s armor on her"
 			]
 		},
 		"gumil": {
@@ -1576,14 +1771,73 @@
 		},
 		"jinheung": {
 			"hat": false,
-			"look": "Young Sacred Bone king: a round boyish face that never quite hardens, dark eyes set a little too wide, a short neat topknot under the open Silla gold crown. As Dharma Cloud: the same face, shaved head, no crown.",
-			"dress": "Deep red Silla court silk, wide sleeves, a gold-trimmed sash. Out of battle he wears the kingdom crown. Late: a plain grey monk's robe, bare feet.",
+			"look": "Young Sacred Bone king: a round boyish face that never quite hardens, dark eyes set a little too wide, a short neat topknot under the open Silla gold crown. After Gwansan: a short black beard, the same eyes, harder. As Dharma Cloud: the same bones, shaved head, grey-white beard, no crown.",
+			"dress": "Deep red Silla court silk, wide sleeves, a gold-trimmed sash. Out of battle he wears the kingdom crown. Late: a white monk's robe under a Silla-blue kashaya, wooden beads.",
 			"demeanor": "Practical until he is in love; then he stops looking at maps. At the ditch his mouth is wet and the order still comes out.",
 			"never": [
 				"Never a katana",
 				"never a closed basket crown",
-				"never old until the robe"
-			]
+				"never old until the robe",
+				"never calling him Dharma Cloud before the robe"
+			],
+			"looks": {
+				"boy": {
+					"keepGarments": true,
+					"hat": false,
+					"text": "FACE from attached /ch_jinheung_young.png as a SIX-YEAR-OLD: round boyish face, beardless, too-small for the open Silla gold crown. Out of battle: red court silk that does not fit, the crown sliding toward the eyebrows. A child, not a teen warrior, not the portrait's helm.",
+					"demeanor": "Six. The crown slides. He asks why. He does not want the chair.",
+					"never": [
+						"beard",
+						"lamellar",
+						"pheasant-feather helm",
+						"monk robe",
+						"a teenager's height"
+					]
+				},
+				"young": {
+					"keepGarments": true,
+					"hat": false,
+					"text": "FACE AND GARMENTS from attached /ch_jinheung_young.png: beardless, a round boyish face, crescent-moon helm with two pheasant feathers, blue silk, grey lamellar. A boy who has not yet ordered a friend killed. Out of battle: the same young face, red court silk, the open Silla gold crown too big for him.",
+					"demeanor": "Six, then seventeen. The crown slides. He asks why. He means the alliance.",
+					"never": [
+						"beard",
+						"monk robe",
+						"shaved head",
+						"an old king"
+					]
+				},
+				"king": {
+					"keepGarments": true,
+					"hat": false,
+					"text": "FACE AND GARMENTS from attached /ch_jinheung.png: short black beard, crescent-moon helm, gilt-edged lamellar, blue silk. The face after Gwansan.",
+					"demeanor": "He does not trust a friend again. He fills yards and mountains instead.",
+					"never": [
+						"beardless boy",
+						"monk robe"
+					]
+				},
+				"court": {
+					"keepGarments": true,
+					"hat": false,
+					"text": "FACE AND GARMENTS from attached /ch_jinheung_king.png: older, full beard, the open Silla gold crown (出 tree uprights), red dragon-brocade robe, fur collar. Court silk, not armour.",
+					"demeanor": "The stones, the chair, the son. He has run out of maps.",
+					"never": [
+						"boy face",
+						"pheasant-feather helm"
+					]
+				},
+				"cloud": {
+					"keepGarments": true,
+					"hat": false,
+					"text": "FACE AND GARMENTS from attached /ch_jinheung_monk.png: shaved head, grey-white beard, white inner robe, Silla-blue kashaya, a long strand of wooden beads, palms together. No crown. No armour.",
+					"demeanor": "The robe is lighter. He still stamps things. He still laughs at a boy who drops his shoulder.",
+					"never": [
+						"gold crown",
+						"lamellar",
+						"the name Sumekbu on a caption as if it were the robe"
+					]
+				}
+			}
 		},
 		"sobi": {
 			"hat": false,
@@ -1666,15 +1920,23 @@
 			"hat": false,
 			"eras": [
 				{
+					"until": 293,
+					"redress": true,
+					"text": "PRINCE EULBUL (attached /ch_ulbul_prince.png): a young sly Korean face, long black braid, red-and-gold dragon-brocade po, black-and-gold sash, patterned red headband with a long gold-stamped tail, white inner, hands in the pockets. NO satgat, NO straw, NO hemp, NO crown. Court silk of a grandson, not a king."
+				},
+				{
+					"from": 294,
 					"until": 300,
 					"redress": true,
-					"text": "EULBUL the salt seller (attached /ch_ulbul.png): a young dry Korean face, long black braid, straw satgat with a red cloth tail, white hemp po, brown inner, red sash, salt sack on the back, a sly look. No jougwan, no crown, no king-silk."
+					"text": "EULBUL the salt seller (attached /ch_ulbul.png): a young dry Korean face, long black braid, straw satgat with a red cloth tail, white hemp po, brown inner, red sash, salt sack on the back, a sly look. No jougwan, no crown, no king-silk, no prince-brocade."
 				}
 			],
 			"demeanor": "Quiet, dry, a little funny. Talks like a man still waiting to be told to carry the wood.",
 			"never": [
 				"jougwan on the salt-seller",
-				"king silk before the crown"
+				"king silk before the crown",
+				"satgat or hemp while he is still a prince",
+				"prince-brocade after the back door"
 			]
 		},
 		"suchun": {
@@ -1766,11 +2028,34 @@
 			"look": "Ummo: older round Korean face, white hair in a topknot, thin white moustache and goatee (attached /ch_ummo.png).",
 			"dress": "Red po with white sleeves, black sash, a dotted hem (attached /ch_ummo.png).",
 			"hat": false,
-			"demeanor": "A stall boss. Rest is theft. Talk is theft.",
+			"demeanor": "A tyrant landlord. Rest is theft. Talk is theft. He does not know who he hired.",
 			"never": [
 				"jougwan",
 				"court silk",
-				"a young face"
+				"a young face",
+				"a kind mouth"
+			]
+		},
+		"nopa": {
+			"look": "Nopa: an old Korean village woman, white hair under a black-and-white padded hood, small sly eyes, a closed-mouth smile (attached /ch_nopa.png).",
+			"dress": "Blue-grey po, cream sleeves, pink inner collar, red sash, undyed hemp underneath (attached /ch_nopa.png).",
+			"hat": false,
+			"demeanor": "Smiles with the mouth only. Arms folded. She has a winter too.",
+			"never": [
+				"court silk",
+				"a young face",
+				"pity in the eyes"
+			]
+		},
+		"mayor": {
+			"look": "The river magistrate: stern Korean face, thin goatee, black hair, a small black cap with two pheasant feathers (attached /ch_mayor.png).",
+			"dress": "Blue-grey official po, cream sleeves with red cuffs, red inner collar, black sash, red hanging ties (attached /ch_mayor.png).",
+			"hat": false,
+			"demeanor": "A small official who is never wrong in his own yard. Offended. Precise.",
+			"never": [
+				"a gold crown",
+				"pity",
+				"undyed commoner hemp"
 			]
 		},
 		"changjori": {
@@ -1908,6 +2193,17 @@
 				"jougwan",
 				"a grin",
 				"cloned onto Kangrim"
+			]
+		},
+		"queenwon": {
+			"look": "Young Goguryeo queen: soft oval Korean face, calm cutting eyes, elaborate updo with gold floral ornaments, long black hair down the back, dangling gold leaf earrings.",
+			"dress": "Burnt-orange / terracotta court po over white collar, dark otgoreum bow, wide sleeves with white hansam extensions — FACE and garments from /ch_queen_won.png.",
+			"demeanor": "First-hall soft. Soft voice, hard rooms. Never raises her voice; the room lowers for her.",
+			"never": [
+				"Silla open crown",
+				"fantasy tiara",
+				"glow aura",
+				"meek servant posture"
 			]
 		}
 	},
@@ -2304,6 +2600,21 @@
 				"board": "/ship_ayuta.png",
 				"text": "Heo Hwangok's Ayuta ship: ornate red-and-gold lacquered hull with painted panels, one great crimson battened sail and a small red mizzen; the only red sail on the southern sea."
 			}
+		}
+	},
+	"objects": {
+		"jamyeonggo": {
+			"refs": [
+				"/pl_magic_drum.png"
+			],
+			"text": "JAMYEONGGO (자명고): copy the DRUM ONLY from the attached /pl_magic_drum.png place board — it is HUGE, twice a person’s height, standing alone in the MIDDLE of the open Nakrang palace YARD (packed earth, giwa eaves only at the far edges — never indoors, never a hall interior). Solid deep-saturated RED barrel body (NOT black-and-crimson stripes), taut glowing orange-yellow hide edged with dark metal studs/rivets, low dark wooden stand, one mallet. When it sounds alone: a swirling ring of fiery orange-white energy from the hide. Ignore any painted figure on that board. The house’s throat."
+		},
+		"gaemamusa": {
+			"refs": [
+				"/ref_gaemamusa.png",
+				"/obj_damul_gaema.png"
+			],
+			"text": "GAEMAMUSA (개마무사): Goguryeo cataphracts as the Anak-tomb mural /ref_gaemamusa — horses fully skirted in red-and-black lamellar barding with chamfron and fringed red lower edge; riders in matching scale, conical helms with long black plumes, long spears upright. Horse anatomy also from /obj_damul_gaema when a single mount is readable. Not Japanese cavalry, not bare horses."
 		}
 	}
 }

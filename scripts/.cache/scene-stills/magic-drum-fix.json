@@ -1,0 +1,126 @@
+[
+	{
+		"id": "hodong-drum-wakes",
+		"entry": "Hodong",
+		"at": "the self-sounding drum wakes by itself",
+		"alt": "Jamyeonggo screaming alone \u2014 solid red barrel, orange hide, fire-ring from pl_magic_drum",
+		"time": "night",
+		"year": 32,
+		"people": [
+			"choiri"
+		],
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"refsNote": "DRUM ONLY from pl_magic_drum: solid deep-red barrel, glowing orange-yellow hide, riveted rim, low stand \u2014 NOT striped obj_jamyeonggo; ignore figure on the place board",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT GROUND. Worm\u2019s-eye. ONE device: LARGE drum (twice human height) alone in the MIDDLE of the open Nakrang PALACE YARD \u2014 packed earth under it, giwa palace eaves only at the far edges, open night sky above. NEVER indoors, NEVER a timber yard interior. Match pl_magic_drum staging. Jamyeonggo as the monumental subject \u2014 MUST copy the DRUM from the attached pl_magic_drum board EXACTLY: solid deep saturated RED barrel body (no black stripes), taut glowing orange-yellow hide, dark studs on the rim, low wooden stand. A swirling ring of fiery orange-white energy erupting from the hide as it sounds alone. Choi Ri small in a dark doorway LEFT of sheet, red-cream court robe, hearing it. One lamp. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "hodong-before-cut",
+		"entry": "Hodong",
+		"at": "Tonight\u2026 I\u2019ll scream",
+		"alt": "The Princess before intact red Jamyeonggo \u2014 letter and knife",
+		"time": "night",
+		"year": 32,
+		"people": [
+			"nakrangso"
+		],
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"refsNote": "DRUM ONLY from pl_magic_drum \u2014 solid red barrel, orange-yellow hide still WHOLE; ignore figure on board",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Worm\u2019s-eye. ONE device: LARGE drum (twice human height) alone in the MIDDLE of the open Nakrang PALACE YARD \u2014 packed earth under it, giwa palace eaves only at the far edges, open night sky above. NEVER indoors, NEVER a timber yard interior. Match pl_magic_drum staging. intact Jamyeonggo filling the right half \u2014 MUST match attached pl_magic_drum drum EXACTLY: solid deep-red barrel, glowing orange-yellow taut hide WHOLE, riveted rim, low stand. The Princess small at left, peach silk, letter and knife, FACE crying. One lamp. Ignore any figure painted on the place board. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "hodong-drum-cut",
+		"entry": "Hodong",
+		"at": "She cuts the skin",
+		"alt": "Knife through the orange hide of the red Jamyeonggo \u2014 pl_magic_drum shape",
+		"time": "night",
+		"year": 32,
+		"people": [
+			"nakrangso"
+		],
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"refsNote": "pl_magic_drum drum mid-cut \u2014 solid red body, orange hide slit; ignore board figure",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. OPEN Nakrang PALACE YARD \u2014 packed earth, huge drum CENTER.  Medium. Jamyeonggo MUST match pl_magic_drum (solid deep-red barrel, orange-yellow hide, riveted rim, low stand) \u2014 hide MID-CUT, sagging. The Princess mid-cut, knife in the hide, tears. Energy gone. One lamp. Ignore figure on the place board. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "hodong-jamyeonggo-hall",
+		"entry": "Hodong",
+		"at": "the self-sounding drum in the yard",
+		"alt": "Wide palace yard: monumental red Jamyeonggo centered \u2014 pl_magic_drum",
+		"time": "night",
+		"year": 32,
+		"people": [],
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"refsNote": "DRUM ONLY from pl_magic_drum \u2014 solid red, orange hide, low stand",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Wide iconic. ONE device: Jamyeonggo alone in a open Nakrang palace YARD \u2014 copy pl_magic_drum drum EXACTLY: solid deep-red barrel, glowing orange-yellow hide, riveted rim, low wooden stand, mallet. Monumental emptiness. One lamp. No people, or a tiny silhouette only. Ignore any figure on the place board \u2014 paint the drum as the subject. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "hodong-drum-named",
+		"entry": "Hodong",
+		"at": "Jamyeonggo",
+		"alt": "Close: the red Jamyeonggo named \u2014 orange hide catching lamp",
+		"time": "night",
+		"year": 32,
+		"people": [],
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"refsNote": "pl_magic_drum drum ECU \u2014 solid red body, orange hide",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Medium-close on the drum. ONE device: LARGE drum (twice human height) alone in the MIDDLE of the open Nakrang PALACE YARD \u2014 packed earth under it, giwa palace eaves only at the far edges, open night sky above. NEVER indoors, NEVER a timber yard interior. Match pl_magic_drum staging. Jamyeonggo filling the frame \u2014 MUST match pl_magic_drum: solid deep-red barrel, taut orange-yellow hide, dark rivets, low stand. One hard lamp key raking the hide. No people. Ignore board figure. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "hodong-cut-drum-hangs",
+		"entry": "Hodong",
+		"at": "the hide hangs",
+		"alt": "Cut red Jamyeonggo \u2014 orange hide hanging slack",
+		"time": "night",
+		"year": 32,
+		"people": [],
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"refsNote": "pl_magic_drum drum after the cut \u2014 solid red body, hide slit and hanging",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Worm\u2019s-eye. ONE device: ruined Jamyeonggo \u2014 same solid deep-red barrel and riveted rim as pl_magic_drum, but the orange-yellow hide slit and hanging slack, silence. open Nakrang palace YARD. One dying lamp. Ignore board figure. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "hodong-floor",
+		"entry": "Hodong",
+		"at": "He goes to his knees in a conquered hall",
+		"alt": "Hodong on his knees holding the Princess \u2014 cut red drum behind",
+		"time": "dawn",
+		"year": 32,
+		"people": [
+			"hodong",
+			"nakrangso",
+			"daemusin"
+		],
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"refsNote": "cut pl_magic_drum behind them \u2014 solid red barrel, slack orange hide",
+		"scene": "HEEWON STYLE. Minimal iconic 2:1 still. open Nakrang palace YARD. Worm\u2019s-eye. Hodong (blue/red) on knees cradling the Princess, screaming without sound. Behind them the cut Jamyeonggo matching pl_magic_drum: solid deep-red barrel, slack cut orange hide. Daemusin doorway silhouette. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark."
+	},
+	{
+		"id": "hodong-princess-overhead",
+		"entry": "Hodong",
+		"at": "He kills her. Not as a king",
+		"alt": "Overhead manga negative-space: The Princess bleeding out, father\u2019s sword beside her",
+		"time": "night",
+		"year": 32,
+		"people": [
+			"nakrangso"
+		],
+		"manga": true,
+		"refs": [
+			"/pl_magic_drum.png"
+		],
+		"scene": "HEEWON STYLE. MANGA overhead still, bird\u2019s-eye straight down. MASSIVE negative space: crushed black / bare paper void around a small center. The Princess (peach silk, gold ornaments) lying on packed-earth floor, bleeding out, father\u2019s ring-pommel sword on the floor beside her \u2014 not in her. Cut Jamyeonggo a dark red broken circle at the frame edge only \u2014 solid red body from pl_magic_drum, not stripes. High contrast, sparse, emotional not gore catalog. Bold ink. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark. No panel borders."
+	}
+]

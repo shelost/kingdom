@@ -1,0 +1,50 @@
+[
+	{
+		"id": "hodong-drum-named",
+		"alt": "Yard center: monumental red Jamyeonggo — pl_magic_drum",
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Medium-close on the drum. ONE device: LARGE drum (twice human height) alone in the MIDDLE of the open Nakrang PALACE YARD — packed earth under it, giwa palace eaves only at the far edges, open night sky above. NEVER indoors, NEVER a timber hall interior. Match pl_magic_drum staging. Jamyeonggo filling the frame — MUST match pl_magic_drum: solid deep-red barrel, taut orange-yellow hide, dark rivets, low stand. One hard lamp key raking the hide. No people. Ignore board figure. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark.",
+		"ratio": 2
+	},
+	{
+		"id": "hodong-jamyeonggo-hall",
+		"alt": "Wide palace yard: huge red Jamyeonggo centered",
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Wide iconic. ONE device: Jamyeonggo alone in a open Nakrang palace YARD — copy pl_magic_drum drum EXACTLY: solid deep-red barrel, glowing orange-yellow hide, riveted rim, low wooden stand, mallet. Monumental emptiness. One lamp. No people, or a tiny silhouette only. Ignore any figure on the place board — paint the drum as the subject. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark.",
+		"ratio": 2
+	},
+	{
+		"id": "hodong-drum-wakes",
+		"alt": "Yard: huge Jamyeonggo screams alone — fire-ring; Choi Ri tiny at doorway",
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT GROUND. Worm’s-eye. ONE device: LARGE drum (twice human height) alone in the MIDDLE of the open Nakrang PALACE YARD — packed earth under it, giwa palace eaves only at the far edges, open night sky above. NEVER indoors, NEVER a timber hall interior. Match pl_magic_drum staging. Jamyeonggo as the monumental subject — MUST copy the DRUM from the attached pl_magic_drum board EXACTLY: solid deep saturated RED barrel body (no black stripes), taut glowing orange-yellow hide, dark studs on the rim, low wooden stand. A swirling ring of fiery orange-white energy erupting from the hide as it sounds alone. Choi Ri small in a dark doorway LEFT of sheet, red-cream court robe, hearing it. One lamp. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark.",
+		"ratio": 2
+	},
+	{
+		"id": "hodong-before-cut",
+		"alt": "Yard: The Princess before intact huge red Jamyeonggo — letter and knife",
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Worm’s-eye. ONE device: LARGE drum (twice human height) alone in the MIDDLE of the open Nakrang PALACE YARD — packed earth under it, giwa palace eaves only at the far edges, open night sky above. NEVER indoors, NEVER a timber hall interior. Match pl_magic_drum staging. intact Jamyeonggo filling the right half — MUST match attached pl_magic_drum drum EXACTLY: solid deep-red barrel, glowing orange-yellow taut hide WHOLE, riveted rim, low stand. The Princess small at left, peach silk, letter and knife, FACE crying. One lamp. Ignore any figure painted on the place board. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark.",
+		"ratio": 2
+	},
+	{
+		"id": "hodong-drum-cut",
+		"alt": "Yard: knife through the orange hide of the huge red Jamyeonggo",
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Medium. Jamyeonggo MUST match pl_magic_drum (solid deep-red barrel, orange-yellow hide, riveted rim, low stand) — hide MID-CUT, sagging. The Princess mid-cut, knife in the hide, tears. Energy gone. One lamp. Ignore figure on the place board. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark.",
+		"ratio": 2
+	},
+	{
+		"id": "hodong-cut-drum-hangs",
+		"alt": "Yard center: cut red Jamyeonggo — hide hanging slack",
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still. NIGHT. Worm’s-eye. ONE device: ruined Jamyeonggo — same solid deep-red barrel and riveted rim as pl_magic_drum, but the orange-yellow hide slit and hanging slack, silence. open Nakrang palace YARD. One dying lamp. Ignore board figure. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark.",
+		"ratio": 2
+	},
+	{
+		"id": "hodong-floor",
+		"alt": "Yard: Hodong on knees with the Princess — cut huge drum behind",
+		"prompt": "HEEWON STYLE. Minimal iconic 2:1 still. open Nakrang palace YARD. Worm’s-eye. Hodong (blue/red) on knees cradling the Princess, screaming without sound. Behind them the cut Jamyeonggo matching pl_magic_drum: solid deep-red barrel, slack cut orange hide. Daemusin doorway silhouette. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark.",
+		"ratio": 2
+	},
+	{
+		"id": "hodong-princess-overhead",
+		"alt": "Overhead yard: The Princess bleeding out, father’s sword; cut red drum at edge",
+		"prompt": "HEEWON STYLE. MANGA overhead still, bird’s-eye straight down. MASSIVE negative space: crushed black / bare paper void around a small center. The Princess (peach silk, gold ornaments) lying on packed-earth floor, bleeding out, father’s ring-pommel sword on the floor beside her — not in her. Cut Jamyeonggo a dark red broken circle at the frame edge only — solid red body from pl_magic_drum, not stripes. High contrast, sparse, emotional not gore catalog. Bold ink. Composed for a 2:1 letterbox crop; nothing important at the top or bottom edge. No text. No watermark. No panel borders.",
+		"ratio": 2
+	}
+]

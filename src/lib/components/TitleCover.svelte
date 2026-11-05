@@ -78,13 +78,13 @@
 					>
 				{/if}
 				<div class="cover-secondary float-up" style:--i={7}>
-					<a class="cover-glass liquid-glass" href={resolve('/episodes')}>
+					<a class="cover-glass surface" href={resolve('/episodes')}>
 						<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
-						{ko ? '에피소드' : 'Episodes'}
+						{ko ? '편' : 'Chapters'}
 					</a>
-					<a class="cover-glass liquid-glass" href={resolve('/world')}>
-						<span class="material-symbols-outlined" aria-hidden="true">public</span>
-						{ko ? '세계' : 'World'}
+					<a class="cover-glass surface" href={resolve('/books')}>
+						<span class="material-symbols-outlined" aria-hidden="true">library_books</span>
+						{ko ? '권' : 'Volumes'}
 					</a>
 				</div>
 			</div>
@@ -214,14 +214,14 @@
 		gap: 0.6rem;
 	}
 
-	/* Liquid glass (app.css); the shape and type are the button's own. */
+	/* Opaque surface (app.css); the shape and type are the button's own. */
 	.cover-glass {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 0.45rem;
-		padding: 0.7rem 1rem;
-		border-radius: var(--radius);
+		padding: 0.8rem 1.15rem;
+		border-radius: var(--radius-control);
 		color: var(--fg-strong);
 		font-family: var(--ui);
 		font-size: 0.9rem;
@@ -230,12 +230,12 @@
 		text-decoration: none;
 		cursor: pointer;
 		transition:
-			transform 0.25s var(--ease),
-			--glass-tint 0.25s var(--ease);
+			transform var(--duration-fast) var(--ease),
+			background var(--duration-fast) var(--ease);
 	}
 
 	.cover-glass:hover {
-		--glass-tint: 72%;
+		background: var(--bg-raised);
 	}
 
 	.cover-glass:active {

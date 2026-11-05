@@ -9,6 +9,7 @@
 	import ImageMenu from '$lib/components/ImageMenu.svelte';
 	import StoryAsk from '$lib/components/StoryAsk.svelte';
 	import MobileTabBar from '$lib/components/MobileTabBar.svelte';
+	import SiteChrome from '$lib/components/SiteChrome.svelte';
 	import SiteNav from '$lib/components/SiteNav.svelte';
 	import { applyNsfwFromUrl, NSFW_QUERY, nsfwQueryOn } from '$lib/nsfwUi.svelte';
 	import { applyEditFromUrl, EDIT_QUERY, editQueryOn } from '$lib/editUi.svelte';
@@ -110,7 +111,10 @@
 
 <div class="rail" aria-hidden="true"></div>
 
-{#if !onChronicle}<SiteNav />{/if}
+{#if !onChronicle}
+	<SiteNav />
+	<SiteChrome />
+{/if}
 {@render children()}
 <MobileTabBar />
 <ImageLightbox />

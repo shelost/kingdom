@@ -38,8 +38,9 @@ import {
 } from '$lib/people';
 import { CHART_NODES, TIE_META, tieOf } from '$lib/relations';
 import { hasTerm } from '$lib/romanFold';
+import { peopleOfSlot } from '$lib/imagePeople';
 import { chapters, type Block } from '$lib/story';
-import { widgetTexts } from '$lib/widgets';
+import { widgetPeople, widgetTexts } from '$lib/widgets';
 
 export type WikiKind =
 	| 'character'
@@ -433,6 +434,11 @@ export type WikiFilters = {
 	kingdom: Person['kingdom'] | 'all';
 	/** Era tag slug (`gen-i`, `joseon`, …) or `all`. */
 	tag: string | 'all';
+	/**
+	 * Chronicle episode `title` from `story.json` / `$lib/story` chapters, or `all`.
+	 * Character-only: when set, keeps people who appear in that entry.
+	 */
+	story: string | 'all';
 	/** Mortal / divine gender chip — characters & gods only; unset gender stays in All. */
 	gender: WikiGenderFilter;
 	/** When `missing`, hide entries that already have a painted portrait / board. */
@@ -564,6 +570,102 @@ export function appearanceCount(id: string): number {
 	return APPEARANCES.get(id) ?? 0;
 }
 
+/** Stock chorus voices — speak often, not anyone's story. Same set as `entryCast`. */
+const STORY_STOCK = new Set(['courtmaid', 'herald', 'haenyeo', 'narrator', 'messenger']);
+
+/**
+ * Entry title → person ids who appear in that episode (speakers, PersonCards,
+ * still `people`, explicit `cast`, and alias hits in prose). Built once at
+ * module load in chronicle reading order.
+ */
+function buildStoryCastIndex(): Map<string, Set<string>> {
+	const index = new Map<string, Set<string>>();
+
+	const add = (set: Set<string>, id: string | undefined | null) => {
+		if (!id || !byId.has(id) || STORY_STOCK.has(id)) return;
+		set.add(id);
+	};
+
+	function countText(text: string | undefined | null, set: Set<string>) {
+		if (!text) return;
+		for (const hit of aliasHits(text)) add(set, hit.id);
+	}
+
+	function walkBlocks(blocks: Block[], set: Set<string>) {
+		for (const b of blocks) {
+			if (b.kind === 'dialogue' || b.kind === 'monologue') {
+				if (b.person) add(set, b.person);
+			}
+			for (const id of widgetPeople(b)) add(set, id);
+			if (b.kind === 'dialogue') {
+				for (const line of b.lines ?? []) countText(line, set);
+				for (const line of b.en ?? []) countText(line, set);
+			} else if (b.kind === 'p' || b.kind === 'cite' || b.kind === 'quote' || b.kind === 'moral') {
+				countText(b.html, set);
+				countText(b.ko, set);
+			} else if (b.kind === 'monologue') {
+				countText(b.html, set);
+				countText(b.ko, set);
+			} else if (b.kind === 'hanja') {
+				countText(b.after, set);
+			} else if (b.kind === 'flashback') {
+				countText(b.title, set);
+				walkBlocks(b.blocks, set);
+			} else {
+				const t = widgetTexts(b);
+				for (const s of [...(t?.ko ?? []), ...(t?.en ?? [])]) countText(s, set);
+			}
+		}
+	}
+
+	for (const ch of chapters) {
+		for (const entry of ch.entries) {
+			const set = new Set<string>();
+			for (const id of entry.cast ?? []) add(set, id);
+			walkBlocks(entry.blocks, set);
+			for (const slot of entry.images ?? []) {
+				for (const id of peopleOfSlot(slot.id, slot.people)) add(set, id);
+			}
+			if (set.size) index.set(entry.title, set);
+		}
+	}
+
+	return index;
+}
+
+const STORY_CAST = buildStoryCastIndex();
+const EMPTY_STORY_CAST: ReadonlySet<string> = new Set();
+
+/** Person ids who appear in the named episode, or empty when unknown. */
+export function storyCastOf(title: string): ReadonlySet<string> {
+	return STORY_CAST.get(title) ?? EMPTY_STORY_CAST;
+}
+
+export type StoryFilterOption = { id: string; label: string; count: number };
+
+/** Episodes with at least one character, in chronicle reading order. */
+export const STORY_FILTER_OPTIONS: StoryFilterOption[] = (() => {
+	const opts: StoryFilterOption[] = [];
+	for (const ch of chapters) {
+		for (const entry of ch.entries) {
+			const set = STORY_CAST.get(entry.title);
+			if (!set?.size) continue;
+			let count = 0;
+			for (const id of set) {
+				const p = byId.get(id);
+				if (p && kindOf(p) === 'character') count++;
+			}
+			if (!count) continue;
+			opts.push({ id: entry.title, label: entry.title, count });
+		}
+	}
+	return opts;
+})();
+
+export function storyFilterOptions(): StoryFilterOption[] {
+	return STORY_FILTER_OPTIONS;
+}
+
 function chartRankOf(p: Person): number {
 	return CHART_RANK.get(p.id) ?? 0;
 }
@@ -680,6 +782,10 @@ export function filterProfiles(filters: WikiFilters): Person[] {
 		if (filters.tag !== 'all' && kindOf(p) === 'character') {
 			if (!(p.tags ?? []).includes(filters.tag)) return false;
 		}
+		// Story is character-only: keep non-characters when kind is All.
+		if (filters.story !== 'all' && kindOf(p) === 'character') {
+			if (!STORY_CAST.get(filters.story)?.has(p.id)) return false;
+		}
 		// Gender applies to mortal characters and gendered gods. Entries without
 		// `gender` appear only when the chip is All — never inferred.
 		if (filters.gender !== 'all') {
@@ -756,6 +862,51 @@ export function orgsOf(p: Person): Person[] {
 export function hasOwnerRoster(p: Person): boolean {
 	return p.entity === 'sword' || p.entity === 'animal' || p.entity === 'instrument';
 }
+
+/**
+ * Index thumbnail width÷height by kind — matches the house boards
+ * (portraits 2:3, place / bond boards 2:1, sword pommels square, animal boards &
+ * flags ~3:2). Used for wiki cards so compressed tiles don’t force one ratio.
+ */
+export function wikiThumbRatio(p: Person): number {
+	switch (kindOf(p)) {
+		case 'character':
+		case 'god':
+			return 2 / 3;
+		case 'place':
+		case 'city':
+		case 'room':
+		case 'relationship':
+			return 2;
+		case 'sword':
+			return 1;
+		case 'clan':
+		case 'animal':
+		case 'instrument':
+		case 'nation':
+			return 3 / 2;
+		case 'organization':
+		case 'group':
+			return 16 / 10;
+		default:
+			return 2 / 3;
+	}
+}
+
+/** Dense wiki index — these kinds use wide boards, so the grid stays ~3 columns. */
+export const WIKI_WIDE_THUMB_KINDS: WikiKind[] = [
+	'place',
+	'city',
+	'room',
+	'relationship',
+	'organization',
+	'group',
+	'clan',
+	'nation',
+	'animal',
+	'instrument',
+	'sword'
+];
 
 /** People listed in a profile's `owners` — a sword's wielders, an animal's rider or guided, an instrument's players. */
 export function ownersOf(profileId: string): Person[] {

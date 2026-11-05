@@ -40,9 +40,15 @@
 		hasCastFilter,
 		castChips,
 		withCast,
+		ownersOf,
+		wikiThumbRatio,
+		WIKI_WIDE_THUMB_KINDS,
+		STORY_FILTER_OPTIONS,
 		type WikiKind,
 		type WikiFilters
 	} from '$lib/wiki';
+
+	const WIDE_THUMB_KIND = new Set<string>(WIKI_WIDE_THUMB_KINDS);
 	import WikiPeek from '$lib/components/WikiPeek.svelte';
 	import CardTag from '$lib/components/CardTag.svelte';
 	import RelationHealth from '$lib/components/RelationHealth.svelte';
@@ -54,18 +60,22 @@
 	import WikiLibrary from '$lib/components/WikiLibrary.svelte';
 	import WikiOrgPreview from '$lib/components/diagrams/WikiOrgPreview.svelte';
 	import { chartsForWikiEntry } from '$lib/components/diagrams/wikiCharts';
+	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import { storyImg } from '$lib/img';
+	import { ui } from '$lib/uiLang';
 	import type { Snapshot } from './$types';
 
 	const INDEX_SCROLL_KEY = 'wiki:indexScroll';
 	const DETAIL_SCROLL_KEY = 'wiki:detailScroll';
 	const FILTERS_KEY = 'wiki:filters';
+	const DENSITY_KEY = 'wiki:density';
 
 	/** Query keys for the view, so a refresh or a shared link reopens it exactly. */
 	const PARAM = {
 		kind: 'type',
 		kingdom: 'kingdom',
 		tag: 'era',
+		story: 'story',
 		gender: 'gender',
 		art: 'image',
 		q: 'q',
@@ -73,6 +83,8 @@
 		id: 'id',
 		full: 'full'
 	} as const;
+
+	const STORY_TITLES = new Set(STORY_FILTER_OPTIONS.map((o) => o.id));
 
 	/** Person ids picked in the “with” chips; unknown ids are dropped. */
 	function castFromList(raw: unknown): string[] {
@@ -90,6 +102,8 @@
 		if (kid && kid in KINGDOMS) out.kingdom = kid as WikiFilters['kingdom'];
 		const t = get('tag');
 		if (t && ERA_TAG_IDS.includes(t)) out.tag = t;
+		const st = get('story');
+		if (st && STORY_TITLES.has(st)) out.story = st;
 		const g = get('gender');
 		if (g === 'm' || g === 'f') out.gender = g;
 		const art = get('art');
@@ -103,11 +117,14 @@
 	let kind = $state<WikiFilters['kind']>(fromUrl.kind ?? 'all');
 	let kingdom = $state<WikiFilters['kingdom']>(fromUrl.kingdom ?? 'all');
 	let tag = $state<WikiFilters['tag']>(fromUrl.tag ?? 'all');
+	let story = $state<WikiFilters['story']>(fromUrl.story ?? 'all');
 	let gender = $state<WikiFilters['gender']>(fromUrl.gender ?? 'all');
 	let art = $state<WikiFilters['art']>(fromUrl.art ?? 'all');
 	let q = $state(fromUrl.q ?? '');
 	let cast = $state<string[]>(castFromList(page.url.searchParams.get(PARAM.cast)));
 	let expanded = $state(page.url.searchParams.get(PARAM.full) === '1' && !!page.url.searchParams.get(PARAM.id));
+	/** Compressed tiles by default; localStorage can still override on mount. */
+	let compressed = $state(true);
 	let mounted = $state(false);
 	let detailScrollEl = $state<HTMLElement | undefined>(undefined);
 	/** Per-entry detail scroll tops while hopping related links. */
@@ -121,7 +138,7 @@
 	let selected = $derived(selectedId ? (byId.get(selectedId) ?? null) : null);
 
 	/** Everything the main filters keep, before the “with” chips narrow it. */
-	let base = $derived(filterProfiles({ kind, kingdom, tag, gender, art, q }));
+	let base = $derived(filterProfiles({ kind, kingdom, tag, story, gender, art, q }));
 	let showCast = $derived(hasCastFilter(kind));
 	let castOptions = $derived(showCast ? castChips(base) : []);
 	let filtered = $derived(showCast ? withCast(base, cast) : base);
@@ -151,12 +168,15 @@
 		(kind !== 'all' ? 1 : 0) +
 			(kingdom !== 'all' ? 1 : 0) +
 			(tag !== 'all' ? 1 : 0) +
+			(story !== 'all' ? 1 : 0) +
 			(gender !== 'all' ? 1 : 0) +
 			(art !== 'all' ? 1 : 0) +
 			(showCast && cast.length ? 1 : 0) +
 			(q.trim() ? 1 : 0)
 	);
 	let showGenderFilter = $derived(kind === 'character' || kind === 'god' || kind === 'all');
+	/** Story cast is character metadata — show beside Era when browsing characters or All. */
+	let showStoryFilter = $derived(kind === 'character' || kind === 'all');
 
 	function readStoredFilters() {
 		if (!browser) return;
@@ -169,6 +189,9 @@
 			if (v.kingdom === 'underworld') kingdom = 'all';
 			else if (v.kingdom) kingdom = v.kingdom;
 			if (v.tag) tag = v.tag;
+			if (typeof v.story === 'string' && (v.story === 'all' || STORY_TITLES.has(v.story))) {
+				story = v.story;
+			}
 			if (v.gender) gender = v.gender;
 			if (v.art === 'missing' || v.art === 'all') art = v.art;
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
@@ -180,8 +203,11 @@
 
 	function persistFilters() {
 		if (!browser) return;
-		// Persist type/kingdom/era/gender/image/people only — never the find query.
-		sessionStorage.setItem(FILTERS_KEY, JSON.stringify({ kind, kingdom, tag, gender, art, cast }));
+		// Persist type/kingdom/era/story/gender/image/people only — never the find query.
+		sessionStorage.setItem(
+			FILTERS_KEY,
+			JSON.stringify({ kind, kingdom, tag, story, gender, art, cast })
+		);
 	}
 
 	function onKindChange() {
@@ -261,6 +287,7 @@
 		if (kind !== 'all') params.set(PARAM.kind, kind);
 		if (kingdom !== 'all') params.set(PARAM.kingdom, kingdom);
 		if (tag !== 'all') params.set(PARAM.tag, tag);
+		if (story !== 'all') params.set(PARAM.story, story);
 		if (gender !== 'all') params.set(PARAM.gender, gender);
 		if (art !== 'all') params.set(PARAM.art, art);
 		if (showCast && cast.length) params.set(PARAM.cast, cast.join(','));
@@ -277,10 +304,26 @@
 	}
 
 	/** After hydrate — session filters must not diverge SSR HTML from the first client paint. */
+	function persistDensity() {
+		if (!browser) return;
+		try {
+			localStorage.setItem(DENSITY_KEY, compressed ? 'compressed' : 'comfortable');
+		} catch {
+			/* ignore */
+		}
+	}
+
 	onMount(() => {
 		// A URL that names its filters wins; a bare /wiki falls back to the last session's.
 		if (!Object.keys(fromUrl).length && !cast.length) readStoredFilters();
 		persistFilters();
+		try {
+			const dens = localStorage.getItem(DENSITY_KEY);
+			if (dens === 'comfortable') compressed = false;
+			else if (dens === 'compressed') compressed = true;
+		} catch {
+			/* ignore */
+		}
 		try {
 			const raw = sessionStorage.getItem(DETAIL_SCROLL_KEY);
 			if (raw) detailScrollById = JSON.parse(raw) as Record<string, number>;
@@ -410,7 +453,6 @@
 	}
 
 	let koMode = $derived(reading.lang === 'ko');
-	let featured = $derived(filtered.slice(0, 6));
 
 	const KIND_OPTIONS: GlassOption<WikiFilters['kind']>[] = [
 		{ value: 'all', label: 'All', count: kindCount('all') },
@@ -436,6 +478,19 @@
 		}))
 	];
 
+	const STORY_OPTIONS: GlassOption<WikiFilters['story']>[] = [
+		{
+			value: 'all',
+			label: 'Any story',
+			count: PROFILES.filter((p) => kindOf(p) === 'character').length
+		},
+		...STORY_FILTER_OPTIONS.map((o) => ({
+			value: o.id,
+			label: o.label,
+			count: o.count
+		}))
+	];
+
 	let genderOptions = $derived<GlassOption<WikiFilters['gender']>[]>([
 		{ value: 'all', label: 'All', count: genderCount('all') },
 		{ value: 'm', label: 'Men', count: genderCount('m') },
@@ -446,6 +501,7 @@
 		kind: WikiFilters['kind'];
 		kingdom: WikiFilters['kingdom'];
 		tag: WikiFilters['tag'];
+		story: WikiFilters['story'];
 		gender: WikiFilters['gender'];
 		art: WikiFilters['art'];
 		q: string;
@@ -464,6 +520,7 @@
 				kind,
 				kingdom,
 				tag,
+				story,
 				gender,
 				art,
 				q,
@@ -477,6 +534,11 @@
 			kind = value.kind;
 			kingdom = value.kingdom === 'underworld' ? 'all' : value.kingdom;
 			tag = value.tag ?? 'all';
+			story =
+				typeof value.story === 'string' &&
+				(value.story === 'all' || STORY_TITLES.has(value.story))
+					? value.story
+					: 'all';
 			gender = value.gender ?? 'all';
 			art = value.art ?? 'all';
 			if (kind !== 'character' && kind !== 'god' && kind !== 'all') gender = 'all';
@@ -513,7 +575,8 @@
 <svelte:window onkeydown={onKey} onpopstate={onPopState} onpagehide={onPageHide} />
 
 <main class="wiki" class:dimmed={!!selectedId}>
-	<WikiLibrary bind:kind bind:q {featured} onKind={onKindChange} onOpen={openEntry} />
+	<SiteNavSpace />
+	<WikiLibrary bind:kind bind:q onKind={onKindChange} />
 
 	<section class="browse" aria-label="Wiki results">
 		<div class="filters">
@@ -525,6 +588,14 @@
 				onchange={persistFilters}
 			/>
 			<GlassSelect label="Era" bind:value={tag} options={ERA_OPTIONS} onchange={persistFilters} />
+			{#if showStoryFilter}
+				<GlassSelect
+					label="Story"
+					bind:value={story}
+					options={STORY_OPTIONS}
+					onchange={persistFilters}
+				/>
+			{/if}
 			{#if showGenderFilter}
 				<GlassSelect
 					label="Gender"
@@ -535,7 +606,7 @@
 			{/if}
 			<button
 				type="button"
-				class="art-toggle liquid-glass"
+				class="art-toggle surface"
 				aria-pressed={art === 'missing'}
 				onclick={toggleArt}
 			>
@@ -544,21 +615,41 @@
 				<span class="n">{missingCount}</span>
 			</button>
 		</div>
-		<p class="count" aria-live="polite">
-			{filtered.length}
-			{filtered.length === 1 ? 'entry' : 'entries'}
-			{#if activeFilterCount > 0}
-				<span>matched</span>
-			{/if}
-			<span class="sort-hint"
-				>{kind === 'god'
-					? '· by class'
-					: kind === 'clan'
-						? '· by members'
-						: '· by importance'}</span
-			>
-			<a class="grade-link" href={resolve('/grade')}>Grade</a>
-		</p>
+		<div class="count-row">
+			<p class="count" aria-live="polite">
+				{filtered.length}
+				{filtered.length === 1 ? 'entry' : 'entries'}
+				{#if activeFilterCount > 0}
+					<span>matched</span>
+				{/if}
+				<span class="sort-hint"
+					>{kind === 'god'
+						? '· by class'
+						: kind === 'clan'
+							? '· by members'
+							: '· by importance'}</span
+				>
+				<a class="grade-link" href={resolve('/grade')}>Grade</a>
+			</p>
+			<span class="density-mode" role="group" aria-label={ui('Card density')}>
+				<button
+					type="button"
+					aria-pressed={!compressed}
+					onclick={() => {
+						compressed = false;
+						persistDensity();
+					}}>{ui('Comfortable')}</button
+				>
+				<button
+					type="button"
+					aria-pressed={compressed}
+					onclick={() => {
+						compressed = true;
+						persistDensity();
+					}}>{ui('Compressed')}</button
+				>
+			</span>
+		</div>
 
 		{#if showCast && castOptions.length}
 			<CastChips chips={castOptions} bind:selected={cast} onchange={persistFilters} />
@@ -582,7 +673,11 @@
 							<p class="group-sub">{section.subtitle}</p>
 						{/if}
 					</header>
-					<ul class="grid">
+					<ul
+						class="grid"
+						class:dense={compressed}
+						class:thumbs-wide={compressed && WIDE_THUMB_KIND.has(section.key)}
+					>
 						{#each section.items as p, i (p.id)}
 							{@const kc = { ...(KINGDOMS[p.kingdom] ?? KINGDOMS.other), color: colorOf(p) }}
 							{@const accents = accentColorsOf(p)}
@@ -593,10 +688,17 @@
 							{@const art = bondStill ?? avatarOf(p)}
 							{@const parentPlace = cardKind === 'place' ? parentPlaceOf(p) : undefined}
 							{@const isNationCard = cardKind === 'nation'}
-							{@const isObjectCard = cardKind === 'animal' || cardKind === 'instrument'}
+							{@const isObjectCard =
+								cardKind === 'animal' || cardKind === 'instrument' || cardKind === 'sword'}
 							{@const isBondCard = cardKind === 'relationship' && (!!p.avatar || !!bondStill)}
-							{@const isGroupStill =
-								(cardKind === 'group' || cardKind === 'organization') && !!p.avatar}
+							{@const isOrgCard = cardKind === 'organization'}
+							{@const isGroupCard = cardKind === 'group'}
+							{@const isClanCard = cardKind === 'clan'}
+							{@const groupStillArt =
+								(isOrgCard || isGroupCard || isClanCard) && art && !isPlaceholderArt(art)
+									? art
+									: undefined}
+							{@const isGroupStill = !!groupStillArt}
 							{@const stages = cardKind === 'relationship' ? tieStages(p) : []}
 							{@const isShowcase =
 								cardKind === 'place' ||
@@ -606,26 +708,32 @@
 								isBondCard ||
 								isGroupStill}
 							{@const flagArt = isNationCard ? kingdomFlag(p.kingdom) : undefined}
-							{@const showcaseArt = isNationCard ? flagArt : art}
-							{@const isOrgCard = cardKind === 'organization'}
-							{@const isGroupCard = cardKind === 'group'}
-							{@const isClanCard = cardKind === 'clan'}
+							{@const showcaseArt = isNationCard ? flagArt : isGroupStill ? groupStillArt : art}
 							{@const hasOrgPreview =
 								(isOrgCard || isGroupCard) &&
 								(!!chartsForWikiEntry(p.id).length || !!(p.orgChart && p.orgChart.length))}
 							{@const roster =
-								isGroupCard && !hasOrgPreview ? groupMembersOf(p.id).slice(0, 4) : []}
-							{@const spotlight = isClanCard ? clanSpotlightOf(p.id) : undefined}
+								isGroupCard && !isGroupStill && !hasOrgPreview
+									? groupMembersOf(p.id).slice(0, 4)
+									: []}
+							{@const spotlight =
+								isClanCard && !isGroupStill ? clanSpotlightOf(p.id) : undefined}
 							{@const clanArt = spotlight ? avatarOf(spotlight) : undefined}
 							{@const isPortraitCard =
-								!isShowcase && !hasOrgPreview && !roster.length && !isOrgCard && !isGroupCard}
+								!isShowcase && !roster.length && !isOrgCard && !isGroupCard && !isClanCard}
 							{@const isFaceCard =
 								cardKind === 'character' || cardKind === 'god' || cardKind === 'clan'}
+							{@const thumbRatio = wikiThumbRatio(p)}
+							{@const ownerPeople =
+								cardKind === 'animal' || cardKind === 'sword' ? ownersOf(p.id) : []}
 							{@const born = birthNameOf(p)}
 							{@const koName = born?.korean ?? koreanOf(p)}
 							{@const cardHanja = born?.hanja ?? p.hanja}
 							{@const hasNative = !!(koName || cardHanja)}
-							<li class:tagged={stages.length > 0 || !!p.historical}>
+							<li
+								class:tagged={stages.length > 0 || !!p.historical}
+								class:owned={ownerPeople.length > 0}
+							>
 								{#if stages.length}
 									<span class="card-tags">
 										{#each stages as stage, step (step)}
@@ -646,6 +754,30 @@
 										/>
 									</span>
 								{/if}
+								{#if ownerPeople.length}
+									<span class="owner-avatars" aria-hidden="true">
+										{#each ownerPeople as owner (owner.id)}
+											{@const ownerArt = avatarOf(owner)}
+											<span
+												class="owner-avatar"
+												class:silhouette={ownerArt ? isPlaceholderArt(ownerArt) : false}
+												title={nameOf(owner)}
+											>
+												{#if ownerArt}
+													<img
+														{...storyImg(ownerArt, {
+															kind: 'thumb',
+															alt: '',
+															sizes: '40px'
+														})}
+													/>
+												{:else}
+													{hangulInitial(owner)}
+												{/if}
+											</span>
+										{/each}
+									</span>
+								{/if}
 								<button
 									type="button"
 									class="card"
@@ -655,10 +787,13 @@
 										cardKind === 'city' ||
 										isObjectCard ||
 										isBondCard ||
-										isGroupStill}
+										isGroupStill ||
+										isClanCard}
 									class:card-org={isOrgCard || isGroupCard}
+									class:card-dense={compressed}
 									style:--k={kc.color}
 									style:--k2={p.colorSecondary ?? kc.color}
+									style:--thumb-ratio={thumbRatio}
 									onclick={() => openEntry(p.id)}
 								>
 									{#if isShowcase}
@@ -666,6 +801,7 @@
 											class="showcase"
 											class:showcase-flag={isNationCard}
 											class:showcase-bond={isBondCard || isGroupStill}
+											class:showcase-sword={cardKind === 'sword'}
 											class:empty={!showcaseArt}
 											aria-hidden="true"
 										>
@@ -685,8 +821,6 @@
 												<WikiOrgPreview entry={p} inset />
 											{/if}
 										</span>
-									{:else if hasOrgPreview}
-										<WikiOrgPreview entry={p} />
 									{:else if roster.length}
 										<span class="avatar-roster" data-n={roster.length} aria-hidden="true">
 											{#each roster as m (m.id)}
@@ -814,10 +948,10 @@
 
 <style>
 	.wiki {
-		--card-radius: 8px;
-		--plate: color-mix(in srgb, var(--panel) 96%, var(--fg) 4%);
-		--gutter-l: max(1.5rem, env(safe-area-inset-left, 0px));
-		--gutter-r: max(1.5rem, env(safe-area-inset-right, 0px));
+		--card-radius: var(--radius-panel);
+		--plate: var(--panel);
+		--gutter-l: max(2rem, env(safe-area-inset-left, 0px) + 0.5rem);
+		--gutter-r: max(2rem, env(safe-area-inset-right, 0px) + 0.5rem);
 		position: relative;
 		min-height: 100dvh;
 		display: flex;
@@ -826,8 +960,8 @@
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
-		transition: filter 0.35s var(--ease);
-		padding: 0 var(--gutter-r) max(4rem, env(safe-area-inset-bottom, 0px) + 2rem) var(--gutter-l);
+		transition: filter var(--duration-normal) var(--ease);
+		padding: 0 var(--gutter-r) max(4.5rem, env(safe-area-inset-bottom, 0px) + 2.5rem) var(--gutter-l);
 	}
 
 	.wiki.dimmed {
@@ -842,13 +976,11 @@
 	}
 
 	.art-toggle {
-		--glass-tint: 30%;
-		--glass-sheen: 12%;
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
 		height: 2.5rem;
-		padding: 0 1.05rem;
+		padding: 0 1.15rem;
 		border-radius: var(--radius-pill);
 		font: inherit;
 		font-family: var(--ui);
@@ -857,16 +989,19 @@
 		line-height: 1;
 		color: var(--fg);
 		cursor: pointer;
+		transition:
+			background var(--duration-fast) var(--ease),
+			border-color var(--duration-fast) var(--ease);
 	}
 
 	.art-toggle:hover {
-		--glass-tint: 48%;
+		background: var(--bg-raised);
 	}
 
 	.art-toggle[aria-pressed='true'] {
-		--glass-tint: 52%;
 		border-color: color-mix(in srgb, var(--gold) 55%, transparent);
 		color: var(--fg-strong);
+		background: var(--bg-raised);
 	}
 
 	.art-toggle .field {
@@ -896,8 +1031,17 @@
 		padding-top: 0.35rem;
 	}
 
-	.count {
+	.count-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.65rem 1rem;
 		margin: 0 0 1.75rem;
+	}
+
+	.count {
+		margin: 0;
 		font-family: var(--ui);
 		font-size: 0.66rem;
 		letter-spacing: 0.16em;
@@ -916,7 +1060,7 @@
 	}
 
 	.grade-link {
-		float: right;
+		margin-left: 0.65rem;
 		color: inherit;
 		text-decoration: none;
 		transition: color 0.2s var(--ease);
@@ -924,6 +1068,42 @@
 
 	.grade-link:hover {
 		color: var(--fg);
+	}
+
+	.density-mode {
+		display: inline-flex;
+		flex: 0 0 auto;
+		padding: 2px;
+		border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+		border-radius: 999px;
+		font-family: var(--ui);
+	}
+
+	.density-mode button {
+		padding: 0.14rem 0.65rem;
+		border: 0;
+		border-radius: 999px;
+		background: transparent;
+		font: inherit;
+		font-size: 0.62rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--fg-faint);
+		cursor: pointer;
+		transition:
+			color 0.2s var(--ease),
+			background 0.2s var(--ease);
+	}
+
+	.density-mode button[aria-pressed='true'] {
+		color: var(--bg);
+		background: var(--fg-strong);
+	}
+
+	.density-mode button:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
 	}
 
 	.no-results {
@@ -1014,8 +1194,9 @@
 		min-width: 0;
 	}
 
-	/* Room for the round tag that hangs off the top-left corner. */
-	.grid > li.tagged {
+	/* Room for tags / owner circles that hang off the card corners. */
+	.grid > li.tagged,
+	.grid > li.owned {
 		position: relative;
 	}
 
@@ -1031,6 +1212,65 @@
 
 	.card-tags > :global(* + *) {
 		margin-left: -0.4rem;
+	}
+
+	/* Owner portraits hang off the thumbnail’s top-right (animals / swords). */
+	.owner-avatars {
+		position: absolute;
+		top: -0.55rem;
+		right: -0.45rem;
+		z-index: 4;
+		display: flex;
+		flex-direction: row-reverse;
+		pointer-events: none;
+	}
+
+	.owner-avatar {
+		display: grid;
+		place-items: center;
+		width: 1.85rem;
+		height: 1.85rem;
+		overflow: hidden;
+		border-radius: 50%;
+		background: color-mix(in srgb, var(--panel) 88%, var(--fg) 12%);
+		box-shadow:
+			0 0 0 2px var(--bg, #15120e),
+			0 4px 10px -4px rgb(0 0 0 / 0.55);
+		font-family: var(--serif);
+		font-size: 0.72rem;
+		font-weight: 700;
+		color: var(--fg-dim);
+	}
+
+	.owner-avatars > .owner-avatar + .owner-avatar {
+		margin-right: -0.45rem;
+	}
+
+	.owner-avatar img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 18%;
+	}
+
+	.owner-avatar.silhouette img {
+		opacity: 0.62;
+	}
+
+	.grid.dense .owner-avatar {
+		width: 1.45rem;
+		height: 1.45rem;
+		font-size: 0.58rem;
+	}
+
+	.grid.dense .owner-avatars {
+		top: -0.4rem;
+		right: -0.35rem;
+	}
+
+	.grid.dense .owner-avatars > .owner-avatar + .owner-avatar {
+		margin-right: -0.38rem;
 	}
 
 	/* Cards rise into place as they scroll into view. */
@@ -1058,18 +1298,18 @@
 		height: 100%;
 		min-height: 11.25rem;
 		text-align: left;
-		padding: 1.25rem 1.35rem;
-		border: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
+		padding: 1.35rem 1.45rem;
+		border: 1px solid var(--hairline);
 		border-radius: var(--card-radius);
 		background: var(--plate);
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+		box-shadow: var(--shadow-soft);
 		cursor: pointer;
 		font: inherit;
 		color: inherit;
 		isolation: isolate;
 		transition:
-			border-color 0.35s var(--ease),
-			box-shadow 0.35s var(--ease);
+			border-color var(--duration-normal) var(--ease),
+			box-shadow var(--duration-normal) var(--ease);
 	}
 
 	.card.card-showcase {
@@ -1104,8 +1344,8 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		object-position: center bottom;
-		transform-origin: 50% 100%;
+		object-position: center 18%;
+		transform-origin: 50% 20%;
 	}
 
 	.card .avatar img,
@@ -1128,13 +1368,116 @@
 		justify-content: start;
 	}
 
+	/* Compressed — image tiles with title / kingdom overlay. */
+	.grid.dense {
+		grid-template-columns: repeat(auto-fill, minmax(8.75rem, 1fr));
+		gap: 0.55rem;
+	}
+
+	/* Horizontal boards (places, bonds, orgs, clans…) — three columns, not six. */
+	.grid.dense.thumbs-wide {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 0.65rem;
+	}
+
+	.grid.dense .card.card-dense {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		min-height: 0;
+		aspect-ratio: var(--thumb-ratio, 2 / 3);
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.grid.dense .card.card-dense.card-character .avatar,
+	.grid.dense .card.card-dense.card-character .avatar.avatar-clan,
+	.grid.dense .card.card-dense .showcase,
+	.grid.dense .card.card-dense .avatar-roster,
+	.grid.dense .card.card-dense :global(.org-preview) {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		min-height: 0;
+		aspect-ratio: auto;
+		border-radius: 0;
+		z-index: 0;
+	}
+
+	.grid.dense .card.card-dense.card-character .avatar img,
+	.grid.dense .card.card-dense .showcase img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center 16%;
+	}
+
+	.grid.dense .card.card-dense .meta {
+		position: absolute;
+		inset: auto 0 0 0;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
+		padding: 1.65rem 0.5rem 0.45rem;
+		background: linear-gradient(
+			to top,
+			color-mix(in srgb, #0a0908 72%, transparent) 0%,
+			color-mix(in srgb, #0a0908 28%, transparent) 62%,
+			transparent 100%
+		);
+		color: #f4f1e8;
+		pointer-events: none;
+	}
+
+	.grid.dense .card.card-dense .card-name {
+		font-size: 0.82rem;
+		line-height: 1.15;
+		color: #faf8f2;
+		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+	}
+
+	.grid.dense .card.card-dense .card-sub {
+		font-size: 0.58rem;
+		letter-spacing: 0.04em;
+		color: color-mix(in srgb, #f4f1e8 78%, transparent);
+	}
+
+	.grid.dense .card.card-dense .card-sub .native,
+	.grid.dense .card.card-dense .card-sub .sep,
+	.grid.dense .card.card-dense .card-tier,
+	.grid.dense .card.card-dense .card-realm,
+	.grid.dense .card.card-dense .card-summary,
+	.grid.dense .card.card-dense .card-hexes,
+	.grid.dense .card.card-dense .card-line,
+	.grid.dense .card.card-dense .lead-dot {
+		display: none;
+	}
+
+	.grid.dense .card.card-dense .card-title {
+		font-size: 0.58rem;
+		line-height: 1.2;
+		color: color-mix(in srgb, #f4f1e8 70%, transparent);
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.grid.dense .card.card-dense .flag {
+		width: 0.85rem;
+		height: 0.55rem;
+	}
+
 	.card.card-org {
 		align-items: flex-start;
 	}
 
 	.card:hover {
-		border-color: color-mix(in srgb, var(--k) 40%, transparent);
-		box-shadow: 0 14px 30px -20px rgba(0, 0, 0, 0.55);
+		border-color: color-mix(in srgb, var(--k) 35%, var(--hairline));
+		box-shadow: var(--shadow-soft);
 	}
 
 	.card:focus-visible {
@@ -1147,14 +1490,14 @@
 		position: relative;
 		display: block;
 		width: 100%;
-		aspect-ratio: 16 / 10;
+		aspect-ratio: var(--thumb-ratio, 16 / 10);
 		overflow: hidden;
 		background: color-mix(in srgb, var(--k) 12%, var(--panel-sunken));
 	}
 
 	/* Relationship boards are 2:1 tenebrist two-shots; keep both faces and the gesture between them. */
 	.showcase.showcase-bond {
-		aspect-ratio: 2 / 1;
+		aspect-ratio: var(--thumb-ratio, 2 / 1);
 		background: #0b0907;
 	}
 
@@ -1176,6 +1519,18 @@
 		object-fit: contain;
 		object-position: center;
 		padding: 1rem 1.25rem;
+		box-sizing: border-box;
+	}
+
+	/* Sword pommel boards — square tile, full blade in frame. */
+	.showcase.showcase-sword {
+		background: #0b0907;
+	}
+
+	.showcase.showcase-sword img {
+		object-fit: contain;
+		object-position: center;
+		padding: 0.55rem;
 		box-sizing: border-box;
 	}
 
@@ -1495,6 +1850,15 @@
 			gap: 1rem;
 		}
 
+		.grid.dense {
+			grid-template-columns: repeat(auto-fill, minmax(7.25rem, 1fr));
+			gap: 0.45rem;
+		}
+
+		.grid.dense.thumbs-wide {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
 		.avatar {
 			width: 5rem;
 		}
@@ -1505,8 +1869,19 @@
 			min-height: 9.6rem;
 		}
 
+		.grid.dense .card.card-dense.card-character .avatar,
+		.grid.dense .card.card-dense.card-character .avatar.avatar-clan {
+			width: 100%;
+			min-height: 0;
+		}
+
 		.card {
 			min-height: 9.6rem;
+		}
+
+		.grid.dense .card.card-dense {
+			min-height: 0;
+			padding: 0;
 		}
 
 		.card {
@@ -1515,6 +1890,10 @@
 
 		.card.card-character .meta {
 			padding: 0.9rem 1rem 0.95rem 0.9rem;
+		}
+
+		.grid.dense .card.card-dense .meta {
+			padding: 2rem 0.45rem 0.4rem;
 		}
 	}
 

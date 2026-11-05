@@ -577,13 +577,13 @@
 			"n": 8,
 			"id": "samhan::Gunchogo, the 13th",
 			"title": "Gunchogo, the 13th",
-			"want": "None.",
-			"conflict": "None.",
-			"development": "Six lines of chant and narration.",
-			"climax": "",
-			"resolution": "",
-			"aPlot": "A chant on a wall. A sentence that will get a fortress burned.",
-			"bPlot": "",
+			"want": "Buyeo Jogo wants the north’s capital. King Gogugwon wants Baekje, the part of his father Micheon’s map still unfinished.",
+			"conflict": "Gogugwon comes south to Chiyang. Jogo’s son hits first. Two winters later Jogo marches on Pyongyang, and Gogugwon comes out of the gate.",
+			"development": "Wirye and the docks. Micheon’s seven years among ordinary people. Chiyang. The camp. The wall.",
+			"climax": "A stray arrow takes Gogugwon in the shoulder. He sits down in the mud and dies.",
+			"resolution": "The south sings a sword. Jogo dies in a bed. The chant outlives both.",
+			"aPlot": "Buyeo Jogo rides a rich kingdom north, and a stray arrow kills the king on the wall.",
+			"bPlot": "Gogugwon is finishing Micheon’s conquests. The salt years are the reason, not the story.",
 			"themes": [
 				{
 					"id": "story-as-country",
@@ -603,13 +603,15 @@
 			],
 			"introduced": [
 				"gyeonggeunchogo",
+				"gogugwon",
 				"nation-baekje",
 				"gunchogo"
 			],
 			"places": [
+				"wirye",
 				"pyongyang"
 			],
-			"problem": "A placeholder that also gives away a future beat (\"the sentence that gets Daeya burned\").",
+			"problem": "The Daeya sentence still points at a later fire. Gogugwon has no portrait, so he stays a name and a voice.",
 			"events": []
 		},
 		"samhan::Commander Yeon": {
@@ -1715,13 +1717,13 @@
 			"n": 41,
 			"id": "seventh-invasion::Haemosu",
 			"title": "Haemosu",
-			"want": "Yuhwa wants the sun god, and on her own terms.",
-			"conflict": "Her father, Habek.",
-			"development": "The chariot stops · the copper room.",
-			"climax": "Exile. The fox leads her to Geumwa.",
-			"resolution": "The egg. He has already gone.",
-			"aPlot": "Yuhwa wants the sun god, on her own terms.",
-			"bPlot": "Habek will not have a sky man in his river.",
+			"want": "Haemosu wants the river girl. Jumong wants out of Northern Buyeo alive.",
+			"conflict": "Habek’s sentence; then Daeso’s knives; then Haewonmek on the Amnok.",
+			"development": "Copper room · exile · unbreakable egg · the needle horse · the flight.",
+			"climax": "The Amnok turtle bridge beside the copper wreck. Haemosu watches his son go.",
+			"resolution": "Jumong crosses. The half sword stays in the north. The pine waits.",
+			"aPlot": "Haemosu stops for Yuhwa.",
+			"bPlot": "Jumong flees Northern Buyeo. His father borrows a day from the reaper.",
 			"themes": [
 				{
 					"id": "appetite",
@@ -1752,85 +1754,6 @@
 				"buyeo_north"
 			],
 			"problem": "The middle is all desire and no opposition. Habek's court, the real conflict, is three lines. Haemosu then vanishes without any decision being shown.",
-			"events": []
-		},
-		"seventh-invasion::Buyeo": {
-			"n": 42,
-			"id": "seventh-invasion::Buyeo",
-			"title": "Buyeo",
-			"want": "Jumong wants to survive his brother Daeso and get out of Buyeo.",
-			"conflict": "Daeso's knives and nets, and then Haewonmek, the reaper.",
-			"development": "The unbreakable egg · the knife in the dark.",
-			"climax": "The turtle bridge. The three-legged crow.",
-			"resolution": "He crosses. The half sword is still in the north.",
-			"aPlot": "Jumong wants to survive Daeso and get out.",
-			"bPlot": "Haemosu stops a reaper. A horse starved then fattened.",
-			"themes": [
-				{
-					"id": "exile",
-					"label": "Get out",
-					"note": "A boy the house will not keep."
-				}
-			],
-			"concepts": [],
-			"plant": [],
-			"pay": [],
-			"hold": [
-				"broken-sword"
-			],
-			"introduced": [
-				"daeso",
-				"galsa",
-				"oi",
-				"ladyye",
-				"yuri"
-			],
-			"places": [],
-			"problem": "The needle trick, the best plant in the episode, is wasted. Jumong gives the fast horse to Oi and crosses the river on foot. The boyhood section is montage, and Lady Ye is a single beat.",
-			"events": []
-		},
-		"seventh-invasion::Jolbon": {
-			"n": 43,
-			"id": "seventh-invasion::Jolbon",
-			"title": "Jolbon",
-			"want": "Sosuno wants Jumong and won't admit it. Jumong wants a roof of his own.",
-			"conflict": "Her pride, her father Tabal, the well girls, and then the five tribes and Song Yang.",
-			"development": "Tabal’s hall · the bow that will not bend · the well · the grain room.",
-			"climax": "The pine shot. The vermilion cord.",
-			"resolution": "A kingdom from a yard. Everything after is a second episode told as a list.",
-			"aPlot": "Sosuno wants Jumong and will not admit it.",
-			"bPlot": "Jumong wants a roof of his own. The well is where they count.",
-			"themes": [
-				{
-					"id": "tsundere",
-					"label": "The well",
-					"note": "She prices a kingdom. He cannot count grain."
-				}
-			],
-			"concepts": [
-				"The Jolbon well",
-				"Song Yang"
-			],
-			"plant": [],
-			"pay": [],
-			"hold": [],
-			"introduced": [
-				"mari",
-				"horsechief",
-				"cowchief",
-				"pigchief",
-				"dogchief",
-				"songyang",
-				"biryu",
-				"bearchief",
-				"boarchief",
-				"tigerchief",
-				"wolfchief"
-			],
-			"places": [
-				"jolbon_well"
-			],
-			"problem": "The romance is complete and climaxes on Tabal's pine shot. Everything after it is a second episode told as a list. Song Yang is beaten with one arrow, and the five tribes unite off-page.",
 			"events": []
 		},
 		"chunchu-era::Gi (起)": {
@@ -2332,7 +2255,12 @@
 				"yuri_isageum",
 				"heohwangok"
 			],
-			"places": ["ajinpo", "geumgwan", "surabol", "moon_palace"],
+			"places": [
+				"ajinpo",
+				"geumgwan",
+				"surabol",
+				"moon_palace"
+			],
 			"problem": "",
 			"events": []
 		},
@@ -3809,6 +3737,50 @@
 					"last": true
 				}
 			]
+		},
+		"seventh-invasion::Jumong": {
+			"n": 43,
+			"id": "seventh-invasion::Jumong",
+			"title": "Jumong",
+			"want": "Sosuno wants Jumong and won't admit it. Jumong wants a roof of his own.",
+			"conflict": "Her pride, her father Tabal, the well girls, and then the five tribes and Song Yang.",
+			"development": "Tabal’s hall · the bow that will not bend · the well · the grain room.",
+			"climax": "The pine shot. The vermilion cord.",
+			"resolution": "A kingdom from a yard. Everything after is a second episode told as a list.",
+			"aPlot": "Sosuno wants Jumong and will not admit it.",
+			"bPlot": "Jumong wants a roof of his own. The well is where they count.",
+			"themes": [
+				{
+					"id": "tsundere",
+					"label": "The well",
+					"note": "She prices a kingdom. He cannot count grain."
+				}
+			],
+			"concepts": [
+				"The Jolbon well",
+				"Song Yang"
+			],
+			"plant": [],
+			"pay": [],
+			"hold": [],
+			"introduced": [
+				"mari",
+				"horsechief",
+				"cowchief",
+				"pigchief",
+				"dogchief",
+				"songyang",
+				"biryu",
+				"bearchief",
+				"boarchief",
+				"tigerchief",
+				"wolfchief"
+			],
+			"places": [
+				"jolbon_well"
+			],
+			"problem": "The romance is complete and climaxes on Tabal's pine shot. Everything after it is a second episode told as a list. Song Yang is beaten with one arrow, and the five tribes unite off-page.",
+			"events": []
 		}
 	}
 }

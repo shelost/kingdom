@@ -3,23 +3,29 @@
 :root {
 	color-scheme: dark;
 
-	/* Corners: one small radius for cards / thumbs / inputs / panels.
-	   Pills and chips stay fully round. Portrait circles stay 50%. */
-	--radius: 4px;
-	/* Widget panels: cards, records, maps, diagrams. */
-	--widget-radius: 8px;
-	--widget-gap: 2.8rem;
+	/* Corners — chrome a touch more open (macOS/Ovid); pills stay round. */
+	--radius: 6px;
+	--control-radius: 8px;
+	--widget-radius: 12px;
+	--radius-control: var(--control-radius);
+	--radius-panel: var(--widget-radius);
+	--widget-gap: 3.25rem;
 	--radius-pill: 999px;
+	--space-1: 0.35rem;
+	--space-2: 0.65rem;
+	--space-3: 1rem;
+	--space-4: 1.5rem;
+	--space-5: 2.25rem;
+	--space-6: 3.25rem;
 
-	/* Reading surface — a soft dark gray, so a flashback can drop to near-black
-	   beneath it; immersive mode steps a shade deeper. */
-	--bg: #1e1e22;
-	--bg-raised: #28282e;
-	--fg: #f3f1ec;
-	--fg-dim: #b4b2ac;
-	--fg-faint: #8a8882;
-	--fg-strong: #fbfaf8;
-	--hairline: rgba(255, 255, 255, 0.1);
+	/* Flat matte reading surface — no frosted chrome. */
+	--bg: #141416;
+	--bg-raised: #1c1c1f;
+	--fg: #f2f2f3;
+	--fg-dim: #a8a8ae;
+	--fg-faint: #7c7c84;
+	--fg-strong: #fafafa;
+	--hairline: rgba(255, 255, 255, 0.08);
 	--gold: #d8b26a;
 	/* text sitting on a solid gold fill (active pills, chips) */
 	--on-gold: #14140f;
@@ -29,27 +35,28 @@
 	/* Wiki cross-reference links: the page's strongest ink, set apart by weight. */
 	--wiki-link: var(--fg-strong);
 
-	/* Chrome surfaces, a step above the page so a card reads as a card */
-	--panel: #26262c;
-	--panel-sunken: #18181c;
-	--glass: rgba(34, 34, 40, 0.88);
-	--plate-ink: #141218;
+	/* Opaque chrome surfaces */
+	--panel: #1e1e22;
+	--panel-sunken: #121214;
+	/* Legacy alias — was frosted; now solid panel (call sites keep working). */
+	--glass: var(--panel);
+	--plate-ink: #161618;
 	/* Dialogue plate type — cream on charcoal; light theme remaps to ink. */
 	--plate-fg: #f4efe4;
 	--plate-fg-strong: #fff8e8;
 	--plate-fg-quiet: color-mix(in srgb, #f4efe4 72%, #8a8478);
 	--plate-fg-faint: color-mix(in srgb, #f4efe4 55%, #8a8478);
-	--plate-shadow: rgba(0, 0, 0, 0.55);
-	--plate-scrim: rgba(10, 10, 14, 0.94);
-	--plate-scrim-mid: rgba(10, 10, 14, 0.76);
-	/* Immersion dialogue box: frosted glass over the page. */
-	--plate-glass: rgba(24, 24, 30, 0.58);
-	--plate-glass-edge: rgba(255, 255, 255, 0.14);
-	--plate-glass-sheen: rgba(255, 255, 255, 0.07);
+	--plate-shadow: rgba(0, 0, 0, 0.35);
+	--plate-scrim: rgba(10, 10, 14, 0.96);
+	--plate-scrim-mid: rgba(10, 10, 14, 0.82);
+	/* Immersion dialogue box — opaque panel, not frost. */
+	--plate-glass: var(--panel);
+	--plate-glass-edge: var(--hairline);
+	--plate-glass-sheen: transparent;
 
 	/* Scrollbars + text selection follow the theme */
-	--scroll-thumb: rgba(255, 255, 255, 0.18);
-	--scroll-thumb-hover: rgba(255, 255, 255, 0.3);
+	--scroll-thumb: rgba(255, 255, 255, 0.16);
+	--scroll-thumb-hover: rgba(255, 255, 255, 0.28);
 	--selection-bg: rgba(216, 178, 106, 0.28);
 	--selection-fg: #fff;
 
@@ -68,13 +75,12 @@
 	--map-w: 9.5rem;
 	--map-stack: 0;
 
-	/* Floating chrome (TOC panel, menus). Light theme softens these to a
-	   warm haze; black shadows read as smudges on paper. */
-	--shadow-float:
-		0 1px 0 color-mix(in srgb, white 7%, transparent), 0 18px 44px rgba(0, 0, 0, 0.48),
-		0 4px 14px rgba(0, 0, 0, 0.28);
-	--shadow-menu: 0 14px 36px rgba(0, 0, 0, 0.55);
-	--shadow-pill: 0 1px 6px rgba(0, 0, 0, 0.22);
+	/* Soft low shadows — macOS/Ovid, not multi-layer black haze. */
+	--shadow-float: 0 1px 2px rgba(0, 0, 0, 0.28), 0 10px 28px rgba(0, 0, 0, 0.32);
+	--shadow-menu: 0 4px 16px rgba(0, 0, 0, 0.38), 0 1px 3px rgba(0, 0, 0, 0.22);
+	--shadow-pill: 0 1px 2px rgba(0, 0, 0, 0.22);
+	--shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.18), 0 4px 14px rgba(0, 0, 0, 0.16);
+	--shadow-lift: 0 1px 2px rgba(0, 0, 0, 0.22), 0 12px 32px rgba(0, 0, 0, 0.28);
 	--danger: #ff8a8a;
 
 	/* Immersive image reel: how tall one landscape phone frame stands. */
@@ -118,31 +124,35 @@
 	--chronicle-size: 14px;
 	--chronicle-font: normal var(--weight-body) var(--chronicle-size) / 1.5 var(--sans);
 
-	/* Tight, editorial tracking */
+	/* Tight UI tracking (Ovid ~-0.03) */
 	--tracking-body: -0.026em;
-	--tracking-display: -0.045em;
+	--tracking-display: -0.04em;
 	--tracking-micro: 0;
-	--tracking-ui: -0.042em;
-	--leading-ui: 1.25;
+	--tracking-ui: -0.03em;
+	--leading-ui: 1.3;
 
-	--toc-w: 19rem;
+	--toc-w: 20rem;
 	/* Floating TOC card: one gap on every side, the reading column included. */
-	--toc-gap: 1rem;
+	--toc-gap: 1.25rem;
 	/* Script mode: the prose column, centred. */
 	--script-measure: 640px;
 	/* samhan_logo.png is black ink; dark pages flip it to white. */
 	--logo-filter: invert(1);
 	/* Shared TOC open/close timing — keep jump settle in Toc.svelte in sync. */
-	--toc-duration: 380ms;
-	--toc-ease: cubic-bezier(0.16, 1, 0.3, 1);
+	--toc-duration: 320ms;
+	--toc-ease: cubic-bezier(0.22, 1, 0.36, 1);
 	/* Immersive plate inset; layout toggles this with the TOC. */
 	--shell-shift: 0px;
 	/* Left padding of the reading column: the rail, or the open TOC. */
-	--reading-inset: 22px;
+	--reading-inset: 28px;
 	/* Phone tab bar height (MobileTabBar). Zero wherever the bar is not drawn. */
 	--tabbar-space: 0px;
 
+	--duration-fast: 150ms;
+	--duration-normal: 250ms;
+	--duration-slow: 350ms;
 	--ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+	--ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* Desktop TOC open: push plate + corner cards with the reading column,
@@ -278,63 +288,65 @@ html.is-flash body {
 html[data-theme='light'] {
 	color-scheme: light;
 
-	--bg: #fffefb;
+	--bg: #fafafa;
 	--bg-raised: #ffffff;
-	--fg: #1c1a16;
-	--fg-dim: #4a463e;
-	--fg-faint: #7a7468;
-	--fg-strong: #0e0c08;
-	--hairline: rgba(28, 22, 10, 0.12);
+	--fg: #18181b;
+	--fg-dim: #52525b;
+	--fg-faint: #71717a;
+	--fg-strong: #09090b;
+	--hairline: rgba(15, 15, 17, 0.08);
 	--gold: #9c7a2c;
 	--on-gold: #fdfbf3;
-	--highlight: #0e0c08;
-	--on-highlight: #fffefb;
+	--highlight: #09090b;
+	--on-highlight: #ffffff;
 	--quote: #8a6b1d;
 
-	--panel: #fbfaf7;
-	--panel-sunken: #f4f1ea;
-	--glass: rgba(255, 254, 251, 0.9);
-	/* Speaker plate / speak button: parchment, not charcoal. */
-	--plate-ink: #f7f3ea;
-	--plate-fg: #1c1a16;
-	--plate-fg-strong: #0e0c08;
-	--plate-fg-quiet: color-mix(in srgb, #1c1a16 68%, #7a7468);
-	--plate-fg-faint: color-mix(in srgb, #1c1a16 48%, #7a7468);
-	--plate-shadow: rgba(40, 30, 12, 0.14);
-	--plate-scrim: rgba(255, 254, 251, 0.95);
-	--plate-scrim-mid: rgba(255, 254, 251, 0.76);
-	--plate-glass: rgba(255, 254, 250, 0.62);
-	--plate-glass-edge: rgba(28, 22, 10, 0.12);
-	--plate-glass-sheen: rgba(255, 255, 255, 0.7);
+	--panel: #ffffff;
+	--panel-sunken: #f4f4f5;
+	--glass: var(--panel);
+	/* Speaker plate / speak button: clean white. */
+	--plate-ink: #ffffff;
+	--plate-fg: #18181b;
+	--plate-fg-strong: #09090b;
+	--plate-fg-quiet: color-mix(in srgb, #18181b 68%, #71717a);
+	--plate-fg-faint: color-mix(in srgb, #18181b 48%, #71717a);
+	--plate-shadow: rgba(15, 15, 17, 0.1);
+	--plate-scrim: rgba(255, 255, 255, 0.96);
+	--plate-scrim-mid: rgba(255, 255, 255, 0.82);
+	--plate-glass: var(--panel);
+	--plate-glass-edge: var(--hairline);
+	--plate-glass-sheen: transparent;
 
-	--scroll-thumb: rgba(30, 24, 12, 0.18);
-	--scroll-thumb-hover: rgba(30, 24, 12, 0.32);
+	--scroll-thumb: rgba(15, 15, 17, 0.16);
+	--scroll-thumb-hover: rgba(15, 15, 17, 0.28);
 	--selection-bg: rgba(156, 122, 44, 0.24);
-	--selection-fg: #0e0c08;
+	--selection-fg: #09090b;
 
-	--shadow-float: 0 10px 28px rgba(40, 30, 12, 0.07), 0 2px 6px rgba(40, 30, 12, 0.05);
-	--shadow-menu: 0 8px 24px rgba(40, 30, 12, 0.1), 0 1px 3px rgba(40, 30, 12, 0.08);
-	--shadow-pill: 0 1px 3px rgba(40, 30, 12, 0.12);
+	--shadow-float: 0 1px 2px rgba(15, 15, 17, 0.04), 0 8px 24px rgba(15, 15, 17, 0.06);
+	--shadow-menu: 0 4px 16px rgba(15, 15, 17, 0.08), 0 1px 3px rgba(15, 15, 17, 0.05);
+	--shadow-pill: 0 1px 2px rgba(15, 15, 17, 0.06);
+	--shadow-soft: 0 1px 2px rgba(15, 15, 17, 0.04), 0 4px 14px rgba(15, 15, 17, 0.05);
+	--shadow-lift: 0 1px 2px rgba(15, 15, 17, 0.04), 0 12px 32px rgba(15, 15, 17, 0.08);
 	--danger: #b4232a;
 	--logo-filter: none;
 }
 
-/* Light immersion / flashback: step the paper a shade warmer instead of darker. */
+/* Light immersion / flashback: quiet grey step, not parchment wash. */
 html[data-theme='light'].is-immersion {
-	--bg: #fbf9f4;
+	--bg: #f4f4f5;
 }
 
 html[data-theme='light'].is-flash {
-	--bg: #e9e6de;
+	--bg: #e4e4e7;
 	--bg-raised: #ffffff;
-	--panel: #faf8f2;
-	--panel-sunken: #f1eee6;
-	--plate-ink: #f3eee4;
-	--hairline: rgba(28, 22, 10, 0.1);
+	--panel: #ffffff;
+	--panel-sunken: #f4f4f5;
+	--plate-ink: #ffffff;
+	--hairline: rgba(15, 15, 17, 0.1);
 }
 
 html[data-theme='light'].is-flash body {
-	background: linear-gradient(180deg, var(--bg-raised) 0, var(--bg) 24rem, #d9d4c4 100%);
+	background: linear-gradient(180deg, var(--bg-raised) 0, var(--bg) 24rem, #d4d4d8 100%);
 	background-attachment: fixed;
 }
 
@@ -527,41 +539,29 @@ em {
 }
 
 /*
- * Liquid glass — the one recipe for floating chrome: the site nav, the title
- * and episode pills, the TOC card, glass buttons and sheets. Components keep
- * their own shape and size; `--glass-tint` sets how much page colour backs the
- * glass (raise it where small text has to stay legible over prose) and
- * `--glass-sheen` how bright the top-down highlight runs (lower it on big
- * surfaces, where a strong gradient reads as a stripe).
- * Registered so a hover can ease the tint instead of snapping it.
+ * Surface — opaque floating chrome (nav, TOC, pills, menus).
+ * Replaces frosted liquid-glass: solid panel fill, hairline, soft shadow.
+ * Legacy `--glass-tint` / `--glass-sheen` are no-ops so old call sites don't break.
  */
 @property --glass-tint {
 	syntax: '<percentage>';
 	inherits: true;
-	initial-value: 52%;
+	initial-value: 100%;
 }
 
 @property --glass-sheen {
 	syntax: '<percentage>';
 	inherits: true;
-	initial-value: 24%;
+	initial-value: 0%;
 }
 
+.surface,
 .liquid-glass {
-	border: 1px solid color-mix(in srgb, white 32%, transparent);
-	background:
-		linear-gradient(
-			180deg,
-			color-mix(in srgb, white var(--glass-sheen), transparent),
-			color-mix(in srgb, white calc(var(--glass-sheen) / 6), transparent) 60%
-		),
-		color-mix(in srgb, var(--bg) var(--glass-tint), transparent);
-	backdrop-filter: blur(32px) saturate(180%);
-	-webkit-backdrop-filter: blur(32px) saturate(180%);
-	box-shadow:
-		inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
-		inset 0 -1px 0 color-mix(in srgb, white 12%, transparent),
-		var(--shadow-float);
+	border: 1px solid var(--hairline);
+	background: var(--panel);
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+	box-shadow: var(--shadow-float);
 }
 
 /*
@@ -611,8 +611,7 @@ html.vt-episode-open::view-transition-new(episode) {
 @keyframes vt-sink {
 	to {
 		opacity: 0;
-		transform: translateY(-14px) scale(0.975);
-		filter: blur(6px);
+		transform: translateY(-10px) scale(0.985);
 	}
 }
 
@@ -625,11 +624,15 @@ html.vt-episode-open::view-transition-new(episode) {
 @keyframes vt-float-up {
 	from {
 		opacity: 0;
-		transform: translateY(72px) scale(0.985);
-		filter: blur(8px);
+		transform: translateY(40px) scale(0.99);
 	}
-	55% {
-		filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html.vt-episode-open::view-transition-old(root),
+	html.vt-episode-open::view-transition-new(root),
+	html.vt-episode-open::view-transition-new(episode) {
+		animation: none !important;
 	}
 }
 
@@ -770,7 +773,6 @@ html[data-lang='ko'] .episodes-page .row .title {
 	from {
 		opacity: 0;
 		translate: 0 18px;
-		filter: blur(4px);
 	}
 }
 

@@ -30,7 +30,7 @@
 
 	type BattleBlock = Extract<Block, { kind: 'battle' }>;
 
-	let { block }: { block: BattleBlock } = $props();
+	let { block, fit = false }: { block: BattleBlock; fit?: boolean } = $props();
 
 	const uid = $props.id();
 	/** Seconds per phase when playing straight through. */
@@ -283,7 +283,7 @@
 </script>
 
 {#if b && phase}
-	<figure class="battle" class:full aria-label={`${ko ? b.ko : b.title}, ${phase.label}`}>
+	<figure class={['battle', { full, fit }]} aria-label={`${ko ? b.ko : b.title}, ${phase.label}`}>
 		{#if full}
 			<header class="whole">
 				<span class="kicker">{ko ? '전투 전체' : 'The whole battle'}</span>
@@ -565,6 +565,15 @@
 		width: var(--wide);
 		margin: var(--widget-gap) 0 var(--widget-gap) calc(50% - var(--wide) / 2);
 		container-type: inline-size;
+	}
+
+	/* Fills the stage pane instead of the story column. */
+	.battle.fit {
+		--wide: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0.35rem 0.45rem 1rem;
+		box-sizing: border-box;
 	}
 
 	.field {

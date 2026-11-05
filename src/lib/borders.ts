@@ -44,7 +44,7 @@ export const POLITIES: Record<PolityId, { label: string; korean: string; color: 
 	jin: { label: 'Jin', korean: '진국', color: '#c9a25f' },
 	china: { label: 'the West', korean: '서국', color: '#b45309' },
 	buyeo: { label: 'Buyeo', korean: '부여', color: '#9b4a5a' },
-	jolbon: { label: 'Jolbon', korean: '졸본', color: '#4a6741' },
+	jolbon: { label: 'Buyeo', korean: '졸본부여', color: '#4a6741' },
 	dongbuyeo: { label: 'Eastern Buyeo', korean: '동부여', color: '#5f7d4f' },
 	galsa: { label: 'Galsa Buyeo', korean: '갈사부여', color: '#7a9363' },
 	goguryeo: { label: 'Goguryeo', korean: '고구려', color: '#e94949' },
@@ -260,7 +260,7 @@ const SITE_DEFS: SiteDef[] = [
 	// ——— the Goguryeo heartland ———
 	{
 		id: 'jolbon',
-		name: 'Jolbon (Huanren)',
+		name: 'Buyeo (Jolbon / Huanren)',
 		lon: 125.36,
 		lat: 41.27,
 		groups: [[-75, 'Xuantu']], h: [[-999, null], [-100, 'jolbon', '?'], [-75, 'china', '?'], [-37, 'goguryeo'], [668, 'china'], [676, null], [720, 'balhae', '?']]
@@ -704,7 +704,7 @@ export const BORDER_EVENTS: BorderEvent[] = [
 	{ year: -75, en: 'Xuantu is pushed out of Okjeo, west over the mountains.', ko: '현도군이 옥저에서 서쪽으로 밀려난다.' },
 	{ year: -59, en: 'Haeburu moves his court east to Gaseopwon: Eastern Buyeo.', ko: '해부루가 가섭원으로 옮겨 동부여를 세운다.' },
 	{ year: -57, en: 'Saro, the later Silla, is founded (by its own count).', ko: '사로국, 훗날의 신라가 선다.' },
-	{ year: -37, en: 'Jumong founds Goguryeo at Jolbon.', ko: '주몽이 졸본에서 고구려를 세운다.' },
+	{ year: -37, en: 'Jumong founds Goguryeo at Buyeo.', ko: '주몽이 졸본부여에서 고구려를 세운다.' },
 	{ year: -18, en: 'Onjo founds Baekje at Wirye.', ko: '온조가 위례에서 백제를 세운다.' },
 	{ year: 22, en: 'Goguryeo kills King Daeso. His brother founds Galsa Buyeo.', ko: '고구려가 대소왕을 죽이고, 그 아우가 갈사부여를 세운다.' },
 	{ year: 42, en: 'Suro founds Gumgwan Gaya; Byunhan becomes the Gaya league.', ko: '수로가 금관가야를 세운다.' },
@@ -752,7 +752,7 @@ export interface BorderPeak {
 export const BORDER_PEAKS: BorderPeak[] = [
 	{ polity: 'gojoseon', year: -120, en: 'Old Joseon at its height: Ugu bars the southern states from the Han.', ko: '고조선의 전성기: 우거왕이 남쪽 나라들과 한의 길을 막는다.' },
 	{ polity: 'buyeo', year: 49, en: 'Buyeo at its height: the Han’s favoured ally in the north.', ko: '부여의 전성기: 한의 총애를 받는 북방의 동맹.' },
-	{ polity: 'baekje', year: 371, en: 'Baekje at its height: Gunchogo kills Goguryeo’s king at Pyongyang.', ko: '백제의 전성기: 근초고왕이 평양에서 고구려 왕을 죽인다.' },
+	{ polity: 'baekje', year: 371, en: 'Baekje at its height: at Pyongyang, Goguryeo’s king dies by a stray arrow.', ko: '백제의 전성기: 평양에서 고구려 왕이 흐르는 화살에 맞는다.' },
 	{ polity: 'gaya', year: 399, en: 'Gaya at its height: the iron league, a year before Gwanggeto marches south.', ko: '가야의 전성기: 광개토왕이 남하하기 한 해 전의 철의 연맹.' },
 	{ polity: 'goguryeo', year: 475, en: 'Goguryeo at its height: Jangsu takes the River Palace.', ko: '고구려의 전성기: 장수왕이 한성을 빼앗는다.' },
 	{ polity: 'silla', year: 568, en: 'Silla at its height under Jinhung: the Han river and the east coast to Maun Pass.', ko: '신라의 전성기: 진흥왕이 한강 유역과 마운령까지의 동해안을 차지한다.' },

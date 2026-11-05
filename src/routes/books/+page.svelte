@@ -1,10 +1,11 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import { page } from '$app/state';
 	import BookCatalog from '$lib/components/books/BookCatalog.svelte';
 	import BooksStage from '$lib/components/BooksStage.svelte';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import { editUi } from '$lib/editUi.svelte';
-	import type { BookMode } from '$lib/books';
+	import { volumeOf, type BookMode } from '$lib/books';
 	import { reading } from '$lib/reading.svelte';
 	import { ui } from '$lib/uiLang';
 
@@ -70,10 +71,15 @@
 	function onKey(e: KeyboardEvent) {
 		if (e.key === 'Escape' && (selected || spread)) back();
 	}
+
+	onMount(() => {
+		const id = page.url.searchParams.get('v');
+		if (id && volumeOf(id)) pick(id);
+	});
 </script>
 
 <svelte:head>
-	<title>{ko ? '책' : 'Books'} — Kingdom</title>
+	<title>{ko ? '권' : 'Volumes'} — King for All</title>
 </svelte:head>
 
 <svelte:window onkeydown={onKey} />

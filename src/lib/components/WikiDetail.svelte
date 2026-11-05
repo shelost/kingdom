@@ -172,8 +172,10 @@
 	/** A bond's painted 2:1 board (`avatar`) leads; otherwise its cover still. */
 	let bondBoard = $derived(isBond && entry.avatar ? art : null);
 	let bondArt = $derived(bondBoard ?? bondStill);
-	/** A group or organization with a painted group still leads with it, wide like a bond board. */
-	let groupBoard = $derived((isOrg || isGroup) && !!entry.avatar ? art : null);
+	/** A group, organization, or clan with a painted board leads with it, wide like a bond board. */
+	let groupBoard = $derived(
+		(isOrg || isGroup || isClan) && !!entry.avatar ? art : null
+	);
 	let tie = $derived(isBond ? tieTrail(entry) : undefined);
 	/** Nation detail hero uses the kingdom flag when present (not portrait art); bonds lead with their board or still. */
 	let heroArt = $derived(isNation && flag ? flag : (bondArt ?? art));
@@ -186,8 +188,12 @@
 			!!bondArt ||
 			!!groupBoard
 	);
+	/** Weapons — square pommel / blade board, not a portrait bust. */
+	let isSquareHero = $derived(isSword && !!heroArt);
 	/** People / gods / clans — 2:3 bust beside identity, not a stacked landscape. */
-	let isPortraitHero = $derived(!!heroArt && !isLandscapeHero && !isNationFlagHero);
+	let isPortraitHero = $derived(
+		!!heroArt && !isLandscapeHero && !isNationFlagHero && !isSquareHero
+	);
 	/** SFW stills tagged with this person. NSFW stays on /images + the modal, not the grid. */
 	let galleryScenes = $derived.by(() => {
 		const rest = scenes.filter((s) => !s.nsfw);
@@ -312,6 +318,10 @@
 				? membersByKingdom(orgMembers)
 				: []
 	);
+	/** Flat grid vs banded roster (Hwarang classes, kingdom bands, …). */
+	let memberLayout = $state<'grid' | 'segmented'>('segmented');
+	let canSegmentMembers = $derived(memberBands.length > 0);
+	let showMemberBands = $derived(canSegmentMembers && memberLayout === 'segmented');
 	let clanLabel = $derived(isOrg || isGroup || isClan || isBond || isPlace || hasOwners ? undefined : clanOf(entry));
 	let clanEntries = $derived(
 		isOrg || isGroup || isClan || isBond || isPlace || hasOwners ? [] : clanEntriesOf(entry)
@@ -417,12 +427,12 @@
 			</figure>
 		{/if}
 
-		{#if heroArt && !isPortraitHero}
+		{#if heroArt && !isPortraitHero && !isSquareHero}
 			<figure
 				class="hero-art"
 				class:stand-in={!isNationFlagHero && isPlaceholderArt(art)}
 				class:place={isLandscapeHero}
-				class:bond={!!bondBoard || !!groupBoard}
+				class:bond={!!bondBoard || ((isOrg || isGroup) && !!groupBoard)}
 				class:nation={isNationFlagHero}
 				aria-hidden="true"
 			>
@@ -491,8 +501,8 @@
 				</div>
 			{/snippet}
 
-			{#if isPortraitHero && heroArt}
-				<div class="hero portrait">
+			{#if (isPortraitHero || isSquareHero) && heroArt}
+				<div class="hero portrait" class:square={isSquareHero}>
 					{@render identity()}
 					<figure
 						class="hero-art"
@@ -501,10 +511,12 @@
 					>
 						<img
 							{...storyImg(heroArt, {
-								kind: 'portrait',
+								kind: isSquareHero ? 'hero' : 'portrait',
 								priority: true,
 								alt: '',
-								sizes: '(max-width: 820px) 8.25rem, 16rem'
+								sizes: isSquareHero
+									? '(max-width: 820px) 10rem, 14rem'
+									: '(max-width: 820px) 8.25rem, 16rem'
 							})}
 						/>
 					</figure>
@@ -1091,7 +1103,23 @@
 
 		{#if orgRoster.length}
 			<section>
-				<h2>{orgRosterTitle}</h2>
+				<div class="roster-head">
+					<h2>{orgRosterTitle}</h2>
+					{#if canSegmentMembers}
+						<span class="roster-mode" role="group" aria-label={ui('Member layout')}>
+							<button
+								type="button"
+								aria-pressed={memberLayout === 'grid'}
+								onclick={() => (memberLayout = 'grid')}>{ui('Grid')}</button
+							>
+							<button
+								type="button"
+								aria-pressed={memberLayout === 'segmented'}
+								onclick={() => (memberLayout = 'segmented')}>{ui('Segmented')}</button
+							>
+						</span>
+					{/if}
+				</div>
 				{#snippet memberCard(m: Person)}
 					{@const portrait = avatarOf(m)}
 					{@const clanAff = isClan ? clanAffiliationOf(m, entry.id) : null}
@@ -1137,7 +1165,7 @@
 						</button>
 					</li>
 				{/snippet}
-				{#if memberBands.length}
+				{#if showMemberBands}
 					<div class="class-bands">
 						{#each memberBands as g (g.id)}
 							<section class="class-band">
@@ -1406,14 +1434,20 @@
 				<ol class="timeline">
 					{#each entry.events as ev, i (i)}
 						<li>
-							<span class="tl-year">{formatYear(ev.year)}</span>
 							<span class="tl-dot" aria-hidden="true"></span>
-							<span class="tl-text">
-								<WikiText text={ev.label} selfId={entry.id} {onOpen} />
-								{#if entry.born != null && ev.year != null && ev.year >= entry.born}
-									<span class="tl-age">age {ev.year - entry.born}</span>
-								{/if}
-							</span>
+							<div class="tl-body">
+								<div class="tl-head">
+									{#if ev.year != null}
+										<span class="tl-year">{formatYear(ev.year)}</span>
+									{/if}
+									{#if entry.born != null && ev.year != null && ev.year >= entry.born}
+										<span class="tl-age">age {ev.year - entry.born}</span>
+									{/if}
+								</div>
+								<span class="tl-text">
+									<WikiText text={ev.label} selfId={entry.id} {onOpen} />
+								</span>
+							</div>
 						</li>
 					{/each}
 				</ol>
@@ -1464,14 +1498,14 @@
 
 <style>
 	.detail {
-		--card-radius: 8px;
-		--plate: color-mix(in srgb, var(--panel) 96%, var(--fg) 4%);
+		--card-radius: var(--radius-panel);
+		--plate: var(--panel);
 		/* Tinted chip: light wash of the entry colour, text in that colour. */
 		--chip-fg: color-mix(in srgb, var(--k) 72%, var(--fg-strong));
 		--chip-bg: color-mix(in srgb, var(--k) 13%, transparent);
 		--chip-line: color-mix(in srgb, var(--k) 24%, transparent);
 		/* Expanded: the chronicle's centred measure; peek: the panel's own width. */
-		--column-pad: 1.9rem;
+		--column-pad: 2.25rem;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
@@ -1480,7 +1514,7 @@
 	}
 
 	.detail.expanded {
-		--column-pad: max(1.5rem, calc((100% - var(--script-measure)) / 2));
+		--column-pad: max(2rem, calc((100% - var(--script-measure)) / 2));
 		background: var(--bg);
 	}
 
@@ -1489,8 +1523,8 @@
 		align-items: center;
 		flex-shrink: 0;
 		gap: 0.55rem;
-		padding: 0.8rem 1.1rem;
-		border-bottom: 1px solid color-mix(in srgb, var(--fg) 7%, transparent);
+		padding: 0.95rem 1.25rem;
+		border-bottom: 1px solid var(--hairline);
 		background: transparent;
 	}
 
@@ -1698,6 +1732,10 @@
 			width: 10.5rem;
 		}
 
+		.detail.expanded .body.split .hero.portrait.square .hero-art {
+			width: 11.5rem;
+		}
+
 		.body.split .photo,
 		.body.split .hero-art.place,
 		.body.split .hero-art.nation {
@@ -1800,6 +1838,14 @@
 		mask-image: linear-gradient(to bottom, #000 80%, transparent);
 	}
 
+	.hero.portrait.square .hero-art {
+		width: 12rem;
+		aspect-ratio: 1;
+		mask-image: none;
+		background: color-mix(in srgb, var(--fg) 4%, transparent);
+		border-radius: 4px;
+	}
+
 	.hero.portrait .hero-art img {
 		display: block;
 		width: 100%;
@@ -1808,8 +1854,17 @@
 		object-position: center top;
 	}
 
+	.hero.portrait.square .hero-art img {
+		object-fit: contain;
+		object-position: center;
+	}
+
 	.detail.expanded .hero.portrait .hero-art {
 		width: 13rem;
+	}
+
+	.detail.expanded .hero.portrait.square .hero-art {
+		width: 14rem;
 	}
 
 	.hero.portrait .hero-art.stand-in {
@@ -2114,6 +2169,15 @@
 		width: 100%;
 		height: auto;
 		object-fit: contain;
+	}
+
+	.prop-art .prop-art-fig {
+		aspect-ratio: 1;
+		width: min(100%, 18rem);
+		margin-inline: auto;
+		object-fit: contain;
+		background: color-mix(in srgb, var(--fg) 4%, transparent);
+		border-radius: 4px;
 	}
 
 	.prop-art-cap {
@@ -2476,21 +2540,21 @@
 	}
 
 	.timeline {
-		--tl-year: 4.2rem;
-		--tl-gap: 0.55rem;
+		--tl-rail: 0.7rem;
+		--tl-gap: 0.85rem;
 		position: relative;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 
-	/* Spine through the dots. */
+	/* Spine through the dots — left rail, so the copy can use the full panel width. */
 	.timeline::before {
 		content: '';
 		position: absolute;
-		top: 0.9rem;
-		bottom: 0.9rem;
-		left: calc(var(--tl-year) + var(--tl-gap) + 3px);
+		top: 0.75rem;
+		bottom: 0.75rem;
+		left: calc(var(--tl-rail) / 2);
 		width: 1px;
 		background: color-mix(in srgb, var(--k) 30%, transparent);
 	}
@@ -2498,36 +2562,54 @@
 	.timeline li {
 		position: relative;
 		display: grid;
-		grid-template-columns: var(--tl-year) 0.7rem 1fr;
+		grid-template-columns: var(--tl-rail) minmax(0, 1fr);
 		gap: var(--tl-gap);
 		align-items: start;
-		padding: 0.5rem 0;
-	}
-
-	.tl-year {
-		font-family: var(--serif);
-		font-size: 0.82rem;
-		color: var(--k);
-		text-align: right;
+		padding: 0.55rem 0;
 	}
 
 	.tl-dot {
 		width: 7px;
 		height: 7px;
-		margin-top: 0.45rem;
+		margin-top: 0.4rem;
+		justify-self: center;
 		border-radius: 50%;
 		background: var(--k);
 		box-shadow: 0 0 0 3px color-mix(in srgb, var(--k) 18%, transparent);
 	}
 
+	.tl-body {
+		min-width: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.tl-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.25rem 0.55rem;
+	}
+
+	.tl-year {
+		font-family: var(--serif);
+		font-size: 0.82rem;
+		line-height: 1.25;
+		color: var(--k);
+		text-align: left;
+		white-space: nowrap;
+	}
+
 	.tl-text {
+		display: block;
+		min-width: 0;
 		color: var(--fg);
 		line-height: 1.5;
+		overflow-wrap: break-word;
 	}
 
 	.tl-age {
-		display: inline-block;
-		margin-left: 0.35rem;
 		font-size: 0.72rem;
 		color: var(--fg-faint);
 	}
@@ -2568,8 +2650,8 @@
 		gap: 0.2rem;
 		width: 100%;
 		text-align: left;
-		padding: 0.95rem 1.05rem;
-		border: 1px solid color-mix(in srgb, var(--fg) 8%, transparent);
+		padding: 1.05rem 1.15rem;
+		border: 1px solid var(--hairline);
 		border-radius: var(--card-radius);
 		background: var(--plate);
 		cursor: pointer;
@@ -2577,13 +2659,13 @@
 		color: inherit;
 		position: relative;
 		transition:
-			border-color 0.3s var(--ease),
-			box-shadow 0.3s var(--ease);
+			border-color var(--duration-normal) var(--ease),
+			box-shadow var(--duration-normal) var(--ease);
 	}
 
 	.rel-card:hover {
-		border-color: color-mix(in srgb, var(--k) 45%, transparent);
-		box-shadow: 0 10px 24px -18px rgba(0, 0, 0, 0.6);
+		border-color: color-mix(in srgb, var(--k) 35%, var(--hairline));
+		box-shadow: var(--shadow-soft);
 	}
 
 	.rel-name {
@@ -2605,6 +2687,58 @@
 		font-size: 0.86rem;
 		color: var(--fg-dim);
 		line-height: 1.4;
+	}
+
+	.roster-head {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 0.75rem;
+		margin-bottom: 0.85rem;
+		padding-bottom: 0.3rem;
+		border-bottom: 1px solid var(--hairline);
+	}
+
+	.roster-head h2 {
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
+
+	.roster-mode {
+		display: inline-flex;
+		flex: 0 0 auto;
+		padding: 2px;
+		border: 1px solid color-mix(in srgb, var(--fg) 18%, transparent);
+		border-radius: 999px;
+		font-family: var(--ui);
+	}
+
+	.roster-mode button {
+		padding: 0.14rem 0.65rem;
+		border: 0;
+		border-radius: 999px;
+		background: transparent;
+		font: inherit;
+		font-size: 0.62rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--fg-faint);
+		cursor: pointer;
+		transition:
+			color 0.2s var(--ease),
+			background 0.2s var(--ease);
+	}
+
+	.roster-mode button[aria-pressed='true'] {
+		color: var(--bg);
+		background: var(--fg-strong);
+	}
+
+	.roster-mode button:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
 	}
 
 	/* Character roster — compact portrait tiles for org members. */
@@ -2726,7 +2860,7 @@
 		margin: 0;
 		padding: 0;
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(6.75rem, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 0.35rem;
 	}
 
@@ -2736,6 +2870,12 @@
 		height: auto;
 		object-fit: cover;
 		border-radius: 4px;
+	}
+
+	@media (max-width: 28rem) {
+		.place-scenes {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
 	}
 
 	@media (max-width: 40rem) {
@@ -3098,7 +3238,7 @@
 
 		.detail,
 		.detail.expanded {
-			--column-pad: 1.15rem;
+			--column-pad: 1.35rem;
 		}
 
 		.hero-id {
@@ -3135,11 +3275,8 @@
 		}
 
 		.timeline {
-			--tl-year: 3.4rem;
-		}
-
-		.timeline li {
-			grid-template-columns: var(--tl-year) 0.55rem 1fr;
+			--tl-rail: 0.65rem;
+			--tl-gap: 0.7rem;
 		}
 
 		.text-btn {

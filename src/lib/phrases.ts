@@ -192,7 +192,7 @@ export const PHRASES: Person[] = [
 		title: 'Idiom — a golden age everyone is trying to go back to',
 		tagline: 'The reign people chant when the present is not enough.',
 		quote: 'Restore the reign of great Gunchogo.',
-		arc: 'King Gunchogo (#13) kills a Goguryeo king at Pyongyang and holds the Han, the west coast, and the sea lanes — Baekje’s high-water mark. Three centuries later the courtyard still chants his name at a clever king who has already decided a country is a story. Gunchogo becomes the word for any lost peak: Make Baekje great again; every restoration slogan; the hurricane people would rather remember than weather.',
+		arc: 'Buyeo Jogo, remembered as Gunchogo, holds the Han, the west coast, and the sea lanes. At Pyongyang the north’s king dies by a stray arrow, and the south sings a sword. That is Baekje’s high-water mark. Three centuries later the courtyard still chants his name at a clever king who has already decided a country is a story. Gunchogo becomes the word for any lost peak: Make Baekje great again; every restoration slogan; the hurricane people would rather remember than weather.',
 		events: [
 			{ year: 371, label: 'Gunchogo’s high-water mark at Pyongyang.' },
 			{ label: 'Becomes the proverb for a golden age to restore.' }

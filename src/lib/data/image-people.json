@@ -5916,6 +5916,15 @@
   "bidam-radiance-muster": [
     "bidam"
   ],
+  "bidam-radiance-roof-wide": [
+    "bidam"
+  ],
+  "bidam-radiance-roof-look": [
+    "bidam"
+  ],
+  "bidam-radiance-roof-ots": [
+    "bidam"
+  ],
   "bidam-defiance-upward": [
     "bidam"
   ],
@@ -6029,9 +6038,6 @@
     "heohwangok",
     "suro"
   ],
-  "scene-suro-heo-goodbye-22": [
-    "suro"
-  ],
   "ibiga-sky-notice": [
     "ibiga",
     "jeonggyeon"
@@ -6125,10 +6131,6 @@
     "suro"
   ],
   "nsfw-suro-heo-hungry": [
-    "heohwangok",
-    "suro"
-  ],
-  "nsfw-suro-heo-obsession": [
     "heohwangok",
     "suro"
   ],
@@ -6266,9 +6268,6 @@
     "suro"
   ],
   "suro-far-sight": [
-    "suro"
-  ],
-  "suro-peak-race": [
     "suro"
   ],
   "newborn-gudung": [
@@ -6495,9 +6494,6 @@
   ],
   "scenes-gaya-old-lords": [
     "muryuk"
-  ],
-  "sadaham-seq-vanguard": [
-    "sadaham"
   ],
   "sadaham-seq-keepup": [
     "mugwan",

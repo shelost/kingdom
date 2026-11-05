@@ -9287,7 +9287,7 @@
 				},
 				{
 					"kind": "scene",
-					"label": "Buyeo",
+					"label": "Jumong",
 					"words": 149,
 					"at": 1381,
 					"ko": "부여"
@@ -9304,7 +9304,7 @@
 					"start": true
 				},
 				{
-					"label": "Buyeo",
+					"label": "Jumong",
 					"kind": "event",
 					"words": 149,
 					"at": 1381,
@@ -9354,262 +9354,13 @@
 				"accuracy": 75
 			}
 		},
-		"goguryeo-tang-war::Buyeo": {
-			"n": 41,
-			"id": "goguryeo-tang-war::Buyeo",
-			"arc": "Goguryeo–Tang War",
-			"chapter": "goguryeo-tang-war",
-			"title": "Buyeo",
-			"ko": "부여",
-			"year": "-40",
-			"grade": "A",
-			"stats": {
-				"words": 1981,
-				"narration": 1542,
-				"dialogue": 439,
-				"koChars": 4135,
-				"paragraphs": 50,
-				"dialogueBlocks": 37,
-				"lines": 74,
-				"questions": 10,
-				"interrupts": 15,
-				"shortLines": 49,
-				"speeches": 1,
-				"telegrams": 0,
-				"sentences": 125,
-				"sentenceCv": 0.6,
-				"longSentences": 2,
-				"emDashes": 2,
-				"aiCost": 6,
-				"aiHits": 2,
-				"adInMouth": 0,
-				"kingNos": 0,
-				"glosses": 0,
-				"quotes": 2,
-				"widgets": 9,
-				"flashbacks": 0,
-				"scenes": 8,
-				"days": 0,
-				"places": 2,
-				"speakers": 9,
-				"images": 147,
-				"nsfwImages": 5,
-				"sequences": 0,
-				"openerWords": 13,
-				"boldCloser": true,
-				"switches": 30,
-				"dialoguePct": 22,
-				"narrationPct": 78,
-				"stillsPerK": 74.2,
-				"widgetsPerK": 4.5,
-				"wordsPerScene": 248,
-				"aiPerK": 3.8,
-				"grip": 74,
-				"minutes": 9
-			},
-			"outline": [
-				{
-					"kind": "section",
-					"label": "The Boy",
-					"words": 577,
-					"at": 0,
-					"ko": "아이",
-					"kids": [
-						{
-							"kind": "story",
-							"label": "The Boy",
-							"words": 577,
-							"at": 0,
-							"ko": "아이",
-							"implicit": true,
-							"kids": [
-								{
-									"kind": "scene",
-									"label": "The Egg",
-									"words": 446,
-									"at": 0,
-									"ko": "알"
-								},
-								{
-									"kind": "scene",
-									"label": "The Mark-Stake",
-									"words": 131,
-									"at": 446,
-									"ko": "과녁 말뚝"
-								}
-							]
-						}
-					]
-				},
-				{
-					"kind": "section",
-					"label": "The Plot",
-					"words": 578,
-					"at": 577,
-					"ko": "음모",
-					"kids": [
-						{
-							"kind": "story",
-							"label": "The Plot",
-							"words": 578,
-							"at": 577,
-							"ko": "음모",
-							"implicit": true,
-							"kids": [
-								{
-									"kind": "scene",
-									"label": "The Side Room",
-									"words": 191,
-									"at": 577,
-									"ko": "곁방"
-								},
-								{
-									"kind": "scene",
-									"label": "The Stable",
-									"words": 192,
-									"at": 768,
-									"ko": "마구간"
-								},
-								{
-									"kind": "scene",
-									"label": "The Knife",
-									"words": 195,
-									"at": 960,
-									"ko": "칼"
-								}
-							]
-						}
-					]
-				},
-				{
-					"kind": "section",
-					"label": "The River",
-					"words": 826,
-					"at": 1155,
-					"ko": "강",
-					"kids": [
-						{
-							"kind": "story",
-							"label": "The River",
-							"words": 826,
-							"at": 1155,
-							"ko": "강",
-							"implicit": true,
-							"kids": [
-								{
-									"kind": "scene",
-									"label": "The Flight",
-									"words": 428,
-									"at": 1155,
-									"ko": "달아남"
-								},
-								{
-									"kind": "scene",
-									"label": "The Crossing",
-									"words": 398,
-									"at": 1583,
-									"ko": "건넌 강"
-								}
-							]
-						}
-					]
-				}
-			],
-			"beats": [
-				{
-					"label": "The Egg",
-					"kind": "event",
-					"words": 446,
-					"at": 0,
-					"tension": 0,
-					"climax": false,
-					"start": true
-				},
-				{
-					"label": "The Side Room",
-					"kind": "event",
-					"words": 191,
-					"at": 577,
-					"tension": 0,
-					"climax": false,
-					"start": true
-				},
-				{
-					"label": "The Knife",
-					"kind": "event",
-					"words": 195,
-					"at": 960,
-					"tension": 96,
-					"climax": true,
-					"start": false
-				},
-				{
-					"label": "The Flight",
-					"kind": "event",
-					"words": 428,
-					"at": 1155,
-					"tension": 0,
-					"climax": false,
-					"start": true
-				},
-				{
-					"label": "The Crossing",
-					"kind": "event",
-					"words": 398,
-					"at": 1583,
-					"tension": 38,
-					"climax": false,
-					"start": false
-				}
-			],
-			"reviews": [
-				{
-					"lean": "up",
-					"by": "A later class",
-					"text": "It finishes. Beginning, middle, end — and you actually care who walks out."
-				},
-				{
-					"lean": "up",
-					"by": "Someone in the cheap seats",
-					"text": "The life splits cleanly: The Boy 29%, The Plot 29%, The River 42%. You can feel the years change register."
-				},
-				{
-					"lean": "down",
-					"by": "The desk",
-					"text": "The sentences know they're being watched."
-				}
-			],
-			"flagged": [
-				"He looks up as if the room had owed him an explanation.",
-				"Behind him, in a dark hood, the sun god is holding his wrist and laughing, as if the night had grabbed the wrong man."
-			],
-			"metrics": {
-				"pacing": 82,
-				"entertainment": 43,
-				"balance": 29,
-				"completeness": 80,
-				"human": 30,
-				"accuracy": 79
-			},
-			"composite": 61,
-			"updated": "2026-10-23 02:42",
-			"ranks": {
-				"composite": 33,
-				"pacing": 7,
-				"entertainment": 88,
-				"balance": 87,
-				"completeness": 6,
-				"human": 74,
-				"accuracy": 14
-			}
-		},
 		"goguryeo-tang-war::Jolbon": {
 			"n": 42,
 			"id": "goguryeo-tang-war::Jolbon",
 			"arc": "Goguryeo–Tang War",
 			"chapter": "goguryeo-tang-war",
-			"title": "Jolbon",
-			"ko": "졸본",
+			"title": "Jumong",
+			"ko": "졸본부여",
 			"year": "-37",
 			"grade": "A",
 			"stats": {
@@ -15312,7 +15063,7 @@
 							"kids": [
 								{
 									"kind": "scene",
-									"label": "Buyeo",
+									"label": "Jumong",
 									"words": 148,
 									"at": 31,
 									"ko": "부여"
@@ -15455,7 +15206,7 @@
 					"start": true
 				},
 				{
-					"label": "Buyeo",
+					"label": "Jumong",
 					"kind": "event",
 					"words": 148,
 					"at": 31,

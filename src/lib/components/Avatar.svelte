@@ -13,7 +13,8 @@
 		look,
 		size = '2.7rem',
 		crop = 'head',
-		label = false
+		label = false,
+		interactive = true
 	}: {
 		person: Person;
 		year?: number | null;
@@ -24,6 +25,8 @@
 		crop?: 'head' | 'bust';
 		/** Print the name beside the face. */
 		label?: boolean;
+		/** False when nested in another button: render a span, no person-layer click. */
+		interactive?: boolean;
 	} = $props();
 
 	let art = $derived(avatarOf(person, undefined, year, look));
@@ -32,15 +35,15 @@
 	let ring = $derived(godRingOf(person));
 </script>
 
-<button
-	type="button"
-	class="avatar person"
-	class:labelled={label}
-	data-person={person.id}
+<svelte:element
+	this={interactive ? 'button' : 'span'}
+	type={interactive ? 'button' : undefined}
+	class={['avatar', { person: interactive, labelled: label }]}
+	data-person={interactive ? person.id : undefined}
 	style:--c={colorOf(person)}
 	style:--size={size}
 	title={who}
-	aria-label={label ? undefined : who}
+	aria-label={label || !interactive ? undefined : who}
 >
 	<span class="face {crop}" class:monarch class:god-ring={!!ring} style:--god-ring={ring}>
 		{#if art}
@@ -50,10 +53,10 @@
 		{/if}
 	</span>
 	{#if label}<span class="name">{who}</span>{/if}
-</button>
+</svelte:element>
 
 <style>
-	.avatar.person {
+	.avatar {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.45rem;
@@ -62,6 +65,10 @@
 		color: inherit;
 		background: none;
 		border: none;
+		cursor: inherit;
+	}
+
+	.avatar.person {
 		cursor: pointer;
 	}
 

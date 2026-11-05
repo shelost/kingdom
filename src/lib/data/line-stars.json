@@ -1,5 +1,5 @@
 {
-	"updatedAt": "2026-10-27T22:02:06.370Z",
+	"updatedAt": "2026-10-31T17:11:52.005Z",
 	"lines": [
 		{
 			"id": "ln-odqyyi",
@@ -84,6 +84,13 @@
 			"person": "yushin",
 			"en": "There are a thousand different ways to be wrong... but only one way to be right.",
 			"createdAt": "2026-10-27T16:33:54.261Z"
+		},
+		{
+			"id": "ln-15rh36u",
+			"episodeId": "five-principles-ulbul",
+			"entryTitle": "Ulbul",
+			"en": "Thirteen Years Later… location_on WESTERN GATE There is a city on that river that has been Chinese longer than anyo",
+			"createdAt": "2026-10-31T17:11:51.970Z"
 		}
 	]
 }

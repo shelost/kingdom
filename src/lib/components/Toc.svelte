@@ -460,7 +460,7 @@
 	aria-label="Table of contents"
 	aria-hidden={!open || !shown}
 >
-	<div class="card" class:liquid-glass={tocUi.floating}>
+	<div class="card" class:surface={tocUi.floating}>
 	<div class="toc-head">
 		<button
 			type="button"
@@ -707,20 +707,17 @@
 		padding: 0;
 	}
 
-	/* Liquid glass (app.css): a faint sheen and a light tint, so the blur carries the legibility. */
 	.toc.floating .card {
-		--glass-tint: 40%;
-		--glass-sheen: 7%;
 		overflow: hidden;
-		border-radius: 14px;
+		border-radius: var(--radius-panel);
 	}
 
 	.toc.floating .toc-head {
-		padding: 0.55rem 0.5rem 0.35rem 0.6rem;
+		padding: 0.75rem 0.75rem 0.45rem 0.85rem;
 	}
 
 	.toc.floating .panel {
-		padding: 0.2rem 0.5rem 1rem;
+		padding: 0.35rem 0.75rem 1.15rem;
 	}
 
 	.card {
@@ -1223,9 +1220,9 @@
 			left: max(0.35rem, env(safe-area-inset-left, 0px));
 			width: 2.75rem;
 			height: 2.75rem;
-			background: var(--glass);
-			backdrop-filter: blur(10px);
+			background: var(--panel);
 			border: 1px solid var(--hairline);
+			box-shadow: var(--shadow-soft);
 		}
 
 		.toc {

@@ -384,7 +384,7 @@
 					"kind": "talk"
 				},
 				{
-					"title": "Jolbon",
+					"title": "Jumong",
 					"kind": "talk"
 				}
 			],
@@ -402,7 +402,7 @@
 			"talkedIn": 2,
 			"episodes": [
 				"Haemosu",
-				"Jolbon"
+				"Jumong"
 			],
 			"years": [
 				-59,
@@ -426,7 +426,7 @@
 			"minEpisodes": 3,
 			"links": [
 				{
-					"title": "Jolbon",
+					"title": "Jumong",
 					"kind": "talk"
 				},
 				{
@@ -451,7 +451,7 @@
 			"lines": 165,
 			"talkedIn": 3,
 			"episodes": [
-				"Jolbon",
+				"Jumong",
 				"Hodong",
 				"Onjo"
 			],
@@ -1310,7 +1310,7 @@
 			"minEpisodes": 3,
 			"links": [
 				{
-					"title": "Buyeo",
+					"title": "Jumong",
 					"kind": "talk"
 				}
 			],
@@ -1327,7 +1327,7 @@
 			"lines": 10,
 			"talkedIn": 1,
 			"episodes": [
-				"Buyeo"
+				"Jumong"
 			],
 			"years": [
 				-40,
@@ -1351,11 +1351,11 @@
 			"minEpisodes": 5,
 			"links": [
 				{
-					"title": "Buyeo",
+					"title": "Jumong",
 					"kind": "together"
 				},
 				{
-					"title": "Jolbon",
+					"title": "Jumong",
 					"kind": "talk"
 				}
 			],
@@ -1372,8 +1372,8 @@
 			"lines": 6,
 			"talkedIn": 1,
 			"episodes": [
-				"Buyeo",
-				"Jolbon"
+				"Jumong",
+				"Jumong"
 			],
 			"years": [
 				-40,
@@ -3443,7 +3443,7 @@
 			"minEpisodes": 5,
 			"links": [
 				{
-					"title": "Buyeo",
+					"title": "Jumong",
 					"kind": "talk"
 				},
 				{
@@ -3464,7 +3464,7 @@
 			"lines": 25,
 			"talkedIn": 2,
 			"episodes": [
-				"Buyeo",
+				"Jumong",
 				"Three Realms"
 			],
 			"years": [

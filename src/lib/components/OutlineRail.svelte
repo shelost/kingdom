@@ -370,12 +370,11 @@
 		flex-direction: column;
 		width: 16.5rem;
 		max-height: 72vh;
-		padding: 0.5rem;
+		padding: 0.65rem;
 		border: 1px solid var(--hairline);
-		border-radius: 10px;
-		background: color-mix(in srgb, var(--panel) 92%, transparent);
-		backdrop-filter: blur(12px);
-		box-shadow: 0 10px 34px rgb(0 0 0 / 0.32);
+		border-radius: var(--radius-panel);
+		background: var(--panel);
+		box-shadow: var(--shadow-menu);
 		opacity: 0;
 		visibility: hidden;
 		pointer-events: none;

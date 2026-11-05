@@ -36,14 +36,18 @@
 				"ep": "Sadaham",
 				"scene": [
 					"The Battle of Great Gaya",
-					"Great Gaya, the square"
+					"Great Gaya, the square",
+					"The Square",
+					"Cut Ropes",
+					"The Road Home"
 				]
 			},
 			{
 				"ep": "Muryuk",
 				"scene": [
 					"Great Gaya · 562",
-					"The Cut Rope"
+					"The Cut Rope",
+					"The Road Home"
 				]
 			},
 			{
@@ -54,6 +58,11 @@
 		"people": [
 			"sadaham",
 			"muryuk"
+		],
+		"stills": [
+			"sda-gaya-brim",
+			"mrk-gaya-face",
+			"sda-gaya-back"
 		]
 	},
 	{
@@ -121,6 +130,28 @@
 		"people": [
 			"yongsu",
 			"gildal"
+		]
+	},
+	{
+		"id": "amak",
+		"year": 602,
+		"en": "Amak Fortress: King Mu feigns a rout",
+		"ko": "아막성, 무왕이 거짓 패주를 하다",
+		"covers": [
+			{
+				"ep": "Bupmin",
+				"flashback": 602
+			}
+		],
+		"people": [
+			"kingmu",
+			"gwisan",
+			"chuhang"
+		],
+		"stills": [
+			"amak-mu-leads",
+			"amak-arrow",
+			"amak-last-charge"
 		]
 	},
 	{
@@ -583,7 +614,21 @@
 			}
 		],
 		"people": [
-			"chunchu"
+			"chunchu",
+			"munhee",
+			"munmu",
+			"gotaso",
+			"inmun",
+			"munwang",
+			"nocha",
+			"intae",
+			"jigyeong",
+			"yoseok",
+			"gaewon",
+			"kimjiso",
+			"gaejimun",
+			"geodeuk",
+			"madeuk"
 		]
 	},
 	{

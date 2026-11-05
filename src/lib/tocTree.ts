@@ -53,7 +53,7 @@ export const ARC_CHAPTERS: Record<string, TocChapter[]> = {
 	'goguryeo-tang-war': [
 		chapter('Four Dragons', '사룡', 'Half the World', '세상의 반', 'Emperor', 'Yodong', 'King Dongcheon'),
 		chapter('Ansi', '안시성', 'The Lazy Eye', '게으른 눈', 'Stallion Mountain', 'Lord of Ansi', 'Eulji Mundeok'),
-		chapter('Jumong', '주몽', 'The Holy Bow', '성왕의 활', 'Haemosu', 'Buyeo', 'Jolbon', 'Hodong')
+		chapter('Jumong', '주몽', 'The Holy Bow', '성왕의 활', 'Haemosu', 'Jumong', 'Hodong')
 	],
 	'chunchu-era': [
 		chapter('Bidam', '비담', 'A Hundred and Eight', '백팔', 'Gi', 'Suro', 'Seung', 'Muryuk', 'Jeon', 'Seohyun', 'Gyul'),

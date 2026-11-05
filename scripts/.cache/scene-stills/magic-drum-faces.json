@@ -1,0 +1,42 @@
+[
+	{
+		"id": "hodong-feast-drum",
+		"entry": "Hodong",
+		"at": "Once you are son-in-law, stop talking about the drum.",
+		"alt": "Nakrang wedding feast: Choi Ri between Hodong and Nakso; Jamyeonggo huge behind the table",
+		"time": "night",
+		"year": 32,
+		"people": ["choiri", "hodong", "nakrangso"],
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NIGHT GROUND. Medium three-shot across a banquet table, low three-quarter. ONE device: Jamyeonggo as a vast dark circle behind the diners. LEFT of sheet = Choi Ri — FACE and red-cream court robe from /ch_choi_ri.png (goatee, dark headband, red po with cream dotted overlay, blue lower), tired father-king warning. SECOND = Hodong CLEAN-SHAVEN vermilion-russet. THIRD = Nakso dusty-gold. One table lamp. No crowd. Bold THICK ink. No text. No watermark."
+	},
+	{
+		"id": "hodong-father-knife",
+		"entry": "Hodong",
+		"at": "Pick the house.",
+		"alt": "Greek tragedy: Choi Ri holds Nakso as he kills her — father tears, cut drum behind",
+		"time": "night",
+		"year": 32,
+		"people": ["choiri", "nakrangso"],
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. Greek tragedy. NIGHT GROUND. Intimate two-shot, faces LARGE. ONE device: cut drum as a dark broken circle behind them. LEFT of sheet = Choi Ri FACE from /ch_choi_ri.png (goatee, dark headband, red court silk muted in night), holding his daughter, knife between them, FACE wrecked with tears. RIGHT = Nakso dusty-gold, looking up crying Father—. One lamp. Minimal blood. Bold THICK ink. No text. No watermark."
+	},
+	{
+		"id": "hodong-two-courts",
+		"entry": "Hodong",
+		"at": "Two nations on the wet east",
+		"alt": "Split: Goguryeo hunt hall left (Daemusin red), Nakrang drum hall right (Choi Ri + Jamyeonggo)",
+		"time": "night",
+		"year": 32,
+		"people": ["daemusin", "choiri"],
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NIGHT GROUND. ONE device: hard vertical seam splitting two courts. LEFT = Goguryeo hall, King Daemusin crowned #C30000. RIGHT = Nakrang hall, Choi Ri FACE from /ch_choi_ri.png (goatee, red-cream court robe) before huge Jamyeonggo, dusty-gold lamp. Faces: LEFT daemusin, SECOND choiri. Monumental. No text. No watermark."
+	},
+	{
+		"id": "hodong-queen-door",
+		"entry": "Hodong",
+		"at": "That boy came to my door.",
+		"alt": "Queen Won at the first-hall door — soft face, hard accusation; Daemusin listens in the dark",
+		"time": "night",
+		"year": 32,
+		"people": ["queenwon", "daemusin"],
+		"scene": "KOREAN WEBTOON movie still, dramatic manhwa COVER. NIGHT GROUND. Intimate medium two-shot, low three-quarter. ONE device: the queen’s door as a hard vertical timber line. LEFT of sheet = Queen Won FACE and burnt-orange court po from /ch_queen_won.png (gold floral updo, dangling gold earrings, white hansam), soft mouth delivering the hard line. SECOND = King Daemusin crowned, half in shadow, listening. One lamp. #b86b3c as warm bounce on her silk. Bold THICK ink. No text. No watermark."
+	}
+]

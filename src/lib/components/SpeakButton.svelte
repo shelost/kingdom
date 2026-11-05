@@ -54,13 +54,13 @@
 		color: var(--fg-faint);
 		border: 1px solid var(--hairline);
 		border-radius: 50%;
-		background: var(--glass);
-		backdrop-filter: blur(10px);
+		background: var(--panel);
+		box-shadow: var(--shadow-soft);
 		cursor: pointer;
 		-webkit-tap-highlight-color: transparent;
 		transition:
-			color 0.25s var(--ease),
-			border-color 0.25s var(--ease);
+			color var(--duration-fast) var(--ease),
+			border-color var(--duration-fast) var(--ease);
 	}
 
 	.speak:hover,

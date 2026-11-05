@@ -4,10 +4,7 @@
 	import { untrack } from 'svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
-	import { toggleTheme } from '$lib/themeUi.svelte';
 	import { PILL_LINKS, isSiteLinkActive } from '$lib/siteLinks';
-	import ThemeIcon from './ThemeIcon.svelte';
-	import LangSwitch from './LangSwitch.svelte';
 
 	/**
 	 * `inline` keeps the pill in the flow (the chronicle's settings panel). Otherwise
@@ -53,10 +50,7 @@
 	};
 </script>
 
-{#if !inline}
-	<div class="nav-blur" aria-hidden="true"></div>
-{/if}
-<nav class="site-nav liquid-glass" class:inline aria-label="Site" {@attach track}>
+<nav class="site-nav surface" class:inline aria-label="Site" {@attach track}>
 	<span
 		class="indicator"
 		class:shown
@@ -74,29 +68,17 @@
 			aria-current={link.active ? 'page' : undefined}>{link.label}</a
 		>
 	{/each}
-	{#if !inline}
-		<LangSwitch />
-		<button
-			type="button"
-			class="theme-toggle"
-			onclick={toggleTheme}
-			aria-label="Toggle light and dark mode"
-			title="Toggle light and dark mode"
-		>
-			<ThemeIcon />
-		</button>
-	{/if}
 </nav>
 
 <style>
-	/* ————— Liquid glass (app.css): one pill, the links as segments inside it ————— */
+	/* Opaque floating pill — segments glide under a solid highlight. */
 	.site-nav {
-		--glide: 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+		--glide: var(--duration-slow) var(--ease-out);
 		position: relative;
 		display: inline-flex;
 		align-items: center;
-		gap: 0.2rem;
-		padding: 0.45rem;
+		gap: 0.25rem;
+		padding: 0.5rem;
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
 		line-height: var(--leading-ui);
@@ -104,29 +86,13 @@
 		contain: layout style;
 	}
 
-	/* Content scrolling under the floating nav blurs out instead of colliding with it. */
-	.nav-blur {
-		position: fixed;
-		z-index: 94;
-		inset: 0 0 auto;
-		height: calc(max(0.75rem, env(safe-area-inset-top, 0px)) + 4.2rem);
-		backdrop-filter: blur(14px);
-		-webkit-backdrop-filter: blur(14px);
-		mask-image: linear-gradient(to bottom, black 55%, transparent);
-		pointer-events: none;
-	}
-
 	.site-nav:not(.inline) {
-		--glass-tint: 34%;
-		box-shadow:
-			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
-			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent);
 		position: fixed;
 		z-index: 95;
-		top: max(0.75rem, env(safe-area-inset-top, 0px));
+		top: max(1rem, env(safe-area-inset-top, 0px));
 		left: 50%;
 		transform: translateX(-50%);
-		max-width: calc(100vw - 1.5rem);
+		max-width: calc(100vw - 2rem);
 		overflow-x: auto;
 		scrollbar-width: none;
 	}
@@ -166,18 +132,18 @@
 		position: relative;
 		z-index: 1;
 		flex: 0 0 auto;
-		font-size: 0.82rem;
+		font-size: 0.84rem;
 		font-weight: 600;
 		letter-spacing: var(--tracking-ui);
 		text-decoration: none;
 		white-space: nowrap;
 		color: var(--fg-dim);
-		padding: 0.55rem 1.05rem;
+		padding: 0.6rem 1.15rem;
 		border-radius: var(--radius-pill);
 		-webkit-tap-highlight-color: transparent;
 		transition:
-			color 0.3s var(--ease),
-			background-color 0.2s var(--ease);
+			color var(--duration-normal) var(--ease),
+			background-color var(--duration-fast) var(--ease);
 	}
 
 	.site-nav a:not(.active):hover {
@@ -189,42 +155,9 @@
 		color: var(--on-highlight);
 	}
 
-	.site-nav a:focus-visible,
-	.theme-toggle:focus-visible {
+	.site-nav a:focus-visible {
 		outline: 2px solid var(--gold);
 		outline-offset: 1px;
-	}
-
-	.theme-toggle {
-		position: relative;
-		z-index: 1;
-		flex: 0 0 auto;
-		display: grid;
-		place-items: center;
-		width: 2.15rem;
-		height: 2.15rem;
-		margin-left: 0.1rem;
-		padding: 0;
-		color: var(--fg-dim);
-		border: none;
-		border-radius: var(--radius-pill);
-		background: transparent;
-		cursor: pointer;
-		-webkit-tap-highlight-color: transparent;
-		transition:
-			color 0.25s var(--ease),
-			background-color 0.25s var(--ease);
-	}
-
-	.theme-toggle:hover {
-		color: var(--fg-strong);
-		background-color: color-mix(in srgb, var(--fg) 7%, transparent);
-	}
-
-	.theme-toggle :global(.material-symbols-outlined) {
-		grid-area: 1 / 1;
-		font-size: 1rem;
-		font-variation-settings: 'wght' 500;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -235,8 +168,7 @@
 
 	/* Phones navigate from the tab bar; the pill would only crowd the top. */
 	@media (max-width: 720px) {
-		:global(html.has-tabbar) .site-nav:not(.inline),
-		:global(html.has-tabbar) .nav-blur {
+		:global(html.has-tabbar) .site-nav:not(.inline) {
 			display: none;
 		}
 	}

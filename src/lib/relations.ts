@@ -2002,6 +2002,49 @@ export const RELATIONSHIPS: Person[] = [
 			{ year: 564, label: 'He dies. She is sixteen.' }
 		],
 		aliases: ['Sadaham & Mishil', 'Mishil & Sadaham']
+	},
+	{
+		id: 'rel-begun-jehu',
+		placeId: 'hwarang_yard',
+		summary: { en: 'The Pebble', ko: '조약돌' },
+		name: 'Begun & Jehu',
+		korean: '백운 · 제후',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'love',
+		ties: [['friend'], ['romance']],
+		between: ['begun', 'jehu'],
+		dynamic: { en: 'The boy who kept the cup · the girl who named the bind', ko: '잔을 지킨 아이 · 묶인 걸 먼저 말한 아이' },
+		title: 'If you lose it I don’t have to',
+		tagline: 'A pebble in a cup. Wedding silk she had not agreed to wear.',
+		arc: 'Promised as children while the parents were still talking grain. After the hall takes his eyes her house writes to a prefect with both eyes. She stalls the lucky day. Bandits with new knives take her in the pines. He and Kim Cheon go get her. The king raises all three. The pebble is still in the cup.',
+		events: [
+			{ year: 560, label: 'A river pebble. A cup. The parents have not noticed.' },
+			{ year: 566, label: 'Mujin. The valley. Three ranks.' }
+		],
+		aliases: ['Begun & Jehu', 'Jehu & Begun', '백운과 제후']
+	},
+	{
+		id: 'rel-begun-cheon',
+		placeId: 'hwarang_yard',
+		summary: { en: 'Inside', ko: '안쪽' },
+		name: 'Begun & Kim Cheon',
+		korean: '백운 · 김천',
+		entity: 'relationship',
+		kingdom: 'silla',
+		bond: 'sworn',
+		tie: 'ally',
+		between: ['begun', 'cheon'],
+		dynamic: { en: 'The bow that listens · the mouth that counts', ko: '듣는 활 · 세는 입' },
+		title: 'Left. Right. How many. Now.',
+		tagline: 'He can see. He cannot shoot. They made a language out of that.',
+		arc: 'Cheon holds the cup at nine because someone told him not to shoot. After the fire he tries to paint the world in sentences; Begun cuts him to a count. In the valley the count is faster than a picture. Cheon panics once. He does not do it twice.',
+		events: [
+			{ year: 560, label: 'Holds the cup.' },
+			{ year: 565, label: 'Left. Right. How many. Now.' },
+			{ year: 566, label: 'Three. High. Now.' }
+		],
+		aliases: ['Begun & Kim Cheon', 'Kim Cheon & Begun', '백운과 김천']
 	}
 ];
 

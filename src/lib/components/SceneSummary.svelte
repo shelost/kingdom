@@ -54,11 +54,11 @@
 			left: var(--ss-left);
 			display: block;
 			width: min(16rem, calc(100vw - var(--ss-left) - 1.5rem));
-			padding: 0.85rem 1rem 0.95rem;
-			border: 1px solid color-mix(in srgb, var(--fg) 12%, transparent);
-			border-radius: 8px;
-			background: rgb(0 0 0 / 0.1);
-			backdrop-filter: blur(10px);
+			padding: 1rem 1.15rem 1.1rem;
+			border: 1px solid var(--hairline);
+			border-radius: var(--radius-panel);
+			background: var(--panel);
+			box-shadow: var(--shadow-soft);
 			font-family: var(--ui);
 			transition: left var(--toc-duration) var(--toc-ease);
 		}

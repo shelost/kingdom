@@ -244,7 +244,7 @@
 	bind:this={trigger}
 	type="button"
 	class="trigger"
-	class:liquid-glass={variant === 'glass'}
+	class:surface={variant === 'glass'}
 	class:inline={variant === 'inline'}
 	class:open
 	popovertarget="{uid}-menu"
@@ -263,7 +263,7 @@
 <div
 	bind:this={menu}
 	id="{uid}-menu"
-	class="menu liquid-glass"
+	class="menu surface"
 	class:above={pos.above}
 	class:sheet={asSheet}
 	class:grouped={sections.some((s) => s.group)}
@@ -300,13 +300,11 @@
 <style>
 	/* ————— the pill ————— */
 	.trigger {
-		--glass-tint: 30%;
-		--glass-sheen: 12%;
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
 		height: 2.5rem;
-		padding: 0 0.7rem 0 1.05rem;
+		padding: 0 0.75rem 0 1.1rem;
 		border-radius: var(--radius-pill);
 		font: inherit;
 		font-family: var(--ui);
@@ -316,14 +314,15 @@
 		color: var(--fg);
 		cursor: pointer;
 		transition:
-			--glass-tint 0.25s var(--ease),
-			background 0.25s var(--ease),
-			transform 0.25s var(--ease);
+			background var(--duration-fast) var(--ease),
+			border-color var(--duration-fast) var(--ease),
+			box-shadow var(--duration-fast) var(--ease),
+			transform var(--duration-fast) var(--ease);
 	}
 
 	.trigger:hover,
 	.trigger.open {
-		--glass-tint: 48%;
+		background: var(--bg-raised);
 	}
 
 	.trigger:active {
@@ -389,18 +388,16 @@
 
 	/* ————— the menu ————— */
 	.menu {
-		--glass-tint: 72%;
-		--glass-sheen: 10%;
 		position: fixed;
 		inset: auto;
 		box-sizing: border-box;
 		margin: 0;
 		max-width: calc(100vw - 16px);
 		max-height: min(22rem, 60vh);
-		padding: 0.35rem;
+		padding: 0.45rem;
 		overflow-y: auto;
 		overscroll-behavior: contain;
-		border-radius: 16px;
+		border-radius: var(--radius-panel);
 		color: var(--fg);
 		font-family: var(--ui);
 		font-size: 13px;
@@ -410,10 +407,10 @@
 		transform: none;
 		transform-origin: top center;
 		transition:
-			opacity 0.18s var(--ease),
-			transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
-			overlay 0.24s allow-discrete,
-			display 0.24s allow-discrete;
+			opacity var(--duration-fast) var(--ease-out),
+			transform var(--duration-normal) var(--ease-out),
+			overlay var(--duration-normal) allow-discrete,
+			display var(--duration-normal) allow-discrete;
 	}
 
 	.menu.above {
@@ -458,7 +455,6 @@
 
 	/* Phones: a bottom sheet over a dimmed page, thumb-high and tall. */
 	.menu.sheet {
-		--glass-tint: 86%;
 		top: auto;
 		left: max(0.5rem, env(safe-area-inset-left, 0px));
 		right: max(0.5rem, env(safe-area-inset-right, 0px));
@@ -466,8 +462,8 @@
 		width: auto;
 		max-width: none;
 		max-height: 72dvh;
-		padding: 0.5rem;
-		border-radius: 22px;
+		padding: 0.65rem;
+		border-radius: calc(var(--radius-panel) + 6px);
 		transform-origin: bottom center;
 	}
 
@@ -505,9 +501,7 @@
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--fg-faint);
-		background: color-mix(in srgb, var(--bg) 88%, transparent);
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
+		background: var(--panel);
 	}
 
 	.menu.sheet .group-label {

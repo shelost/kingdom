@@ -433,7 +433,7 @@ I'm also flagging that episode 14, a 625 flashback placed in the middle, works f
 - **Problem:** The needle trick, the best plant in the episode, is wasted. Jumong gives the fast horse to Oi and crosses the river on foot. The boyhood section is montage, and Lady Ye is a single beat.
 - **Suggestion:** Let the starved-then-fattened horse carry him to the river and stop at the water. That pays off Yuhwa's "until Daeso's done sharpening", and the horse's refusal at the bank sets up the turtles. Cut the boyhood to the fly-wing shot and the "put the mark farther" exchange. Give Lady Ye one more line that plants Yuri's broken sword, so the dangling thread points somewhere.
 
-### 39. Jolbon (-37) [flashback]
+### 39. Jumong (-37) [flashback]
 - **Protagonist / want:** Sosuno wants Jumong and won't admit it. Jumong wants a roof of his own.
 - **Conflict:** Her pride, her father Tabal, the well girls, and then the five tribes and Song Yang.
 - **Shape:** Beginning: the scouts and Tabal's hall, where the bow won't bend. Middle: the slow-burn romance, the arrow at the well, the grain room. End: the pine shot, then a long montage (five tribes, kingship, Song Yang, the cavern, the sons, Yuhwa's death, his death).

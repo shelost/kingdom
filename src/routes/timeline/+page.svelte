@@ -1,12 +1,16 @@
 <script lang="ts">
-	import { page } from '$app/state';
+	import { replaceState } from '$app/navigation';
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 	import Avatar from '$lib/components/Avatar.svelte';
+	import LivesBoard from '$lib/components/LivesBoard.svelte';
 	import PersonLayer from '$lib/components/PersonLayer.svelte';
+	import type { DirectoryEpisode } from '$lib/episodeDirectory';
+	import { storyImg } from '$lib/img';
+	import { DEFAULT_LIVES, LIVES_Y, layoutLives, livesAxis, parseWho, sameWho } from '$lib/lifeIntersects';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
 	import { reading } from '$lib/reading.svelte';
-	import { storyImg } from '$lib/img';
-	import type { DirectoryEpisode } from '$lib/episodeDirectory';
+	import { untrack } from 'svelte';
 	import {
 		ARC_STRIP_W,
 		LANE_W,
@@ -20,7 +24,11 @@
 	} from '$lib/timeline';
 
 	const AXIS_W = 50;
-	const HEAD_H = 44;
+	const EPISODE_HEAD_H = 44;
+	const LIVES_HEAD_H = 64;
+	let view = $derived(page.url.searchParams.get('view') === 'lives' ? 'lives' : 'episodes');
+	let ids = $state(parseWho(page.url.searchParams.get('who')));
+	let HEAD_H = $derived(view === 'lives' ? LIVES_HEAD_H : EPISODE_HEAD_H);
 	const TIMELESS_ROW_H = 20;
 	const PAD = 4;
 	/** A story stretch inside a bar needs this much height to print its name (the first sits under the episode label). */
@@ -43,10 +51,44 @@
 	let scrollTop = $state(0);
 	let unpinTimer: ReturnType<typeof setTimeout> | undefined;
 
-	function pin(e: TimelineEvent) {
+	function pin(e: TimelineEvent | null) {
 		clearTimeout(unpinTimer);
 		pinned = e;
 	}
+
+	function writeUrl(nextView: 'episodes' | 'lives', nextIds: string[]) {
+		const url = new URL(page.url);
+		if (nextView === 'episodes') url.searchParams.delete('view');
+		else url.searchParams.set('view', 'lives');
+		if (sameWho(nextIds, DEFAULT_LIVES)) url.searchParams.delete('who');
+		else url.searchParams.set('who', nextIds.join(','));
+		const href = `${url.pathname}${url.search}${url.hash}`;
+		try {
+			replaceState(href, untrack(() => page.state));
+		} catch {
+			history.replaceState(history.state, '', url);
+		}
+	}
+
+	function setView(next: 'episodes' | 'lives') {
+		writeUrl(next, ids);
+	}
+
+	function setIds(next: string[]) {
+		ids = next.length ? next : DEFAULT_LIVES.slice();
+		writeUrl(view, ids);
+	}
+
+	let axis = $derived(
+		view === 'lives'
+			? livesAxis()
+			: {
+					height: TIMELINE.height,
+					ticks: TIMELINE.ticks,
+					breaks: TIMELINE.breaks,
+					events: TIMELINE.events
+				}
+	);
 
 	function scheduleUnpin() {
 		clearTimeout(unpinTimer);
@@ -56,13 +98,15 @@
 	let nearest = $derived.by((): TimelineEvent | null => {
 		if (pointerY === null) return null;
 		let best: TimelineEvent | null = null;
-		for (const e of TIMELINE.events) {
+		for (const e of axis.events) {
 			const d = Math.abs(e.top - pointerY);
 			if (d <= SNAP_PX && (!best || d < Math.abs(best.top - pointerY))) best = e;
 		}
 		return best;
 	});
-	let snapped = $derived(pinned ?? nearest);
+	let snapped = $derived(
+		axis.events.find((e) => e.id === (pinned ?? nearest)?.id) ?? nearest
+	);
 	let cursorY = $derived(snapped ? snapped.top : pointerY);
 	/** Episode id → whether it tells the snapped event in full (false = a brief mention). */
 	let coverage = $derived(new Map(snapped?.covers.map((c) => [c.ep.id, c.full]) ?? []));
@@ -73,7 +117,14 @@
 	});
 
 	$effect(() => {
-		if (scroller) scroller.scrollTop = Math.max(0, TIMELINE.presentTop - 8);
+		if (!scroller) return;
+		if (view === 'lives') {
+			const lives = layoutLives(ids);
+			const meet = lives.meets.find((m) => m.year >= 550) ?? lives.meets[0];
+			scroller.scrollTop = Math.max(0, (meet?.top ?? TIMELINE.presentTop * LIVES_Y) - 64);
+			return;
+		}
+		scroller.scrollTop = Math.max(0, TIMELINE.presentTop - 8);
 	});
 
 	const timelessH = TIMELINE.timelessRows ? TIMELINE.timelessRows * TIMELESS_ROW_H + 12 : 0;
@@ -95,6 +146,11 @@
 
 	function show(item: TimelineItem | null) {
 		hovered = item;
+	}
+
+	function yearUnder(px: number | null): number | null {
+		if (px === null) return null;
+		return yearAt(view === 'lives' ? px / LIVES_Y : px);
 	}
 
 	/** Left edge of a column's first lane: the primary column keeps a strip for its Arcs. */
@@ -119,11 +175,11 @@
 			return;
 		}
 		const y = e.clientY - board.getBoundingClientRect().top - HEAD_H;
-		pointerY = y >= 0 && y <= TIMELINE.height ? y : null;
+		pointerY = y >= 0 && y <= axis.height ? y : null;
 	}
 
 	function canPanFrom(el: EventTarget | null): boolean {
-		return !(el instanceof Element && el.closest('a, button, .event-card, .event-tick'));
+		return !(el instanceof Element && el.closest('a, button, input, .event-card, .event-tick, .lives-picker, .meet'));
 	}
 
 	function startPan(e: PointerEvent) {
@@ -154,7 +210,17 @@
 
 <svelte:head>
 	<title>Timeline · King for All</title>
-	<meta name="description" content="Every episode of King for All on one time axis, so you can see which stories happen at the same time." />
+	{#if view === 'lives'}
+		<meta
+			name="description"
+			content="Every dated life on one year axis: how figures meet, cross, and part — King Mu, Gwisan and Chuhang at Amak, and everyone else."
+		/>
+	{:else}
+		<meta
+			name="description"
+			content="Every episode of King for All on one time axis, so you can see which stories happen at the same time."
+		/>
+	{/if}
 </svelte:head>
 
 {#snippet band()}
@@ -164,9 +230,24 @@
 {/snippet}
 
 <main class="timeline-page">
+	<div class="view-toggle surface" role="tablist" aria-label={ko ? '보기' : 'View'}>
+		<button
+			type="button"
+			role="tab"
+			aria-selected={view === 'episodes'}
+			onclick={() => setView('episodes')}
+		>
+			{ko ? '에피소드' : 'Episodes'}
+		</button>
+		<button type="button" role="tab" aria-selected={view === 'lives'} onclick={() => setView('lives')}>
+			{ko ? '삶' : 'Lives'}
+		</button>
+	</div>
 	<div
 		class="scroller"
 		class:panning
+		role="region"
+		aria-label={ko ? '연표' : 'Timeline'}
 		bind:this={scroller}
 		onpointerdown={startPan}
 		onpointermove={movePan}
@@ -189,7 +270,7 @@
 			{#if cursorY !== null}
 				<div class="cursor" class:snapped style:top="{HEAD_H + cursorY}px" aria-hidden="true">
 					<div class="cursor-tag" style:width="{AXIS_W}px">
-						{#if snapped}{eventDate(snapped)}{:else if yearAt(cursorY) !== null}{yearLabel(yearAt(cursorY)!, ko)}{/if}
+						{#if snapped}{eventDate(snapped)}{:else if yearUnder(cursorY) !== null}{yearLabel(yearUnder(cursorY)!, ko)}{/if}
 					</div>
 					{#if snapped}
 						<div
@@ -197,6 +278,7 @@
 							class:crossover={snapped.crossover}
 							class:flip={flipCard}
 							style:left="{AXIS_W + 4}px"
+							role="status"
 							onpointerenter={() => snapped && pin(snapped)}
 							onpointerleave={scheduleUnpin}
 						>
@@ -231,17 +313,17 @@
 			{/if}
 			<div class="axis" style:width="{AXIS_W}px">
 				<div class="corner"></div>
-				<div class="body" style:height="{TIMELINE.height}px">
-					{#each TIMELINE.ticks as t (t.year)}
+				<div class="body" style:height="{axis.height}px">
+					{#each axis.ticks as t (t.year)}
 						<span class="tick" class:major={t.major} style:top="{t.top}px">{yearLabel(t.year, ko)}</span>
 					{/each}
-					{#each TIMELINE.breaks as g (g.from)}
+					{#each axis.breaks as g (g.from)}
 						<span class="fold" style:top="{g.top}px" style:height="{g.height}px">
 							<span>⋯</span>
 							<small>{g.to - g.from}{ko ? '년' : ' yrs'}</small>
 						</span>
 					{/each}
-					{#each TIMELINE.events as e (e.id)}
+					{#each axis.events as e (e.id)}
 						<button
 							type="button"
 							class="event-tick"
@@ -256,9 +338,12 @@
 					{/each}
 					{@render band()}
 				</div>
-				{#if timelessH}<div class="timeless-label">{ko ? '태초' : 'Timeless'}</div>{/if}
+				{#if timelessH && view === 'episodes'}<div class="timeless-label">{ko ? '태초' : 'Timeless'}</div>{/if}
 			</div>
 
+			{#if view === 'lives'}
+				<LivesBoard {ids} {ko} onids={setIds} pinned={snapped} onpin={pin} {pointerY} {scroller} />
+			{:else}
 			{#each TIMELINE.columns as col (col.id)}
 				<section
 					class="column"
@@ -375,12 +460,20 @@
 					{/if}
 				</section>
 			{/each}
+			{/if}
 		</div>
 	</div>
 
 	<p class="legend" aria-hidden="true">
-		<span class="key"><i class="swatch present"></i>{ko ? '현재' : 'Present'}</span>
-		<span class="key"><i class="swatch past"></i>{ko ? '회상' : 'Flashback'}</span>
+		{#if view === 'lives'}
+			<span class="key"><i class="shape cross"></i>{ko ? '한 번의 만남' : 'One meeting'}</span>
+			<span class="key"><i class="shape loop"></i>{ko ? '두 번의 만남' : 'Two meetings'}</span>
+			<span class="key"><i class="shape blood"></i>{ko ? '혈연' : 'Blood'}</span>
+			<span class="key"><i class="shape parallel"></i>{ko ? '같은 시대' : 'Same years'}</span>
+		{:else}
+			<span class="key"><i class="swatch present"></i>{ko ? '현재' : 'Present'}</span>
+			<span class="key"><i class="swatch past"></i>{ko ? '회상' : 'Flashback'}</span>
+		{/if}
 		<span class="key"><i class="hit full"></i>{ko ? '다룸' : 'Tells'}</span>
 		<span class="key"><i class="hit"></i>{ko ? '언급' : 'Mentions'}</span>
 		<span class="key"><i class="event-tick legend-tick crossover"></i>{ko ? '교차 사건' : 'Crossover'}</span>
@@ -401,6 +494,43 @@
 		color: var(--fg);
 		font-family: var(--ui);
 		letter-spacing: var(--tracking-ui);
+	}
+
+	.view-toggle {
+		position: fixed;
+		top: max(3.45rem, calc(env(safe-area-inset-top) + 2.95rem));
+		left: 50%;
+		z-index: 9;
+		display: inline-flex;
+		gap: 0.05rem;
+		padding: 0.14rem;
+		border-radius: var(--radius-pill);
+		transform: translateX(-50%);
+	}
+
+	.view-toggle button {
+		padding: 0.38rem 0.7rem;
+		border: none;
+		border-radius: var(--radius-pill);
+		background: transparent;
+		color: var(--fg-dim);
+		font: inherit;
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.view-toggle button[aria-selected='true'] {
+		color: var(--gold);
+		box-shadow: 0 0 0 1px var(--gold);
+		background: color-mix(in srgb, var(--bg) 70%, transparent);
+	}
+
+	.view-toggle button:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 1px;
 	}
 
 	.legend {
@@ -438,6 +568,68 @@
 	.swatch.past {
 		border-left: 3px dashed #8a8a94;
 		background: repeating-linear-gradient(135deg, color-mix(in srgb, #8a8a94 22%, transparent) 0 3px, transparent 3px 6px);
+	}
+
+	.shape {
+		position: relative;
+		display: inline-block;
+		width: 1.05rem;
+		height: 0.7rem;
+	}
+
+	.shape::before,
+	.shape::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 0;
+		border-top: 1.4px solid var(--gold);
+	}
+
+	.shape.cross::before {
+		top: 1px;
+		transform: rotate(28deg);
+	}
+
+	.shape.cross::after {
+		bottom: 1px;
+		transform: rotate(-28deg);
+	}
+
+	.shape.loop::before {
+		top: 2px;
+		border-radius: 40%;
+		transform: rotate(18deg);
+	}
+
+	.shape.loop::after {
+		bottom: 2px;
+		border-radius: 40%;
+		transform: rotate(-18deg);
+	}
+
+	.shape.blood::before {
+		top: 50%;
+		width: 55%;
+		border-top-color: color-mix(in srgb, var(--gold) 55%, transparent);
+	}
+
+	.shape.blood::after {
+		top: 1px;
+		left: 45%;
+		right: 0;
+		height: 8px;
+		border: 1.4px solid var(--gold);
+		border-radius: 50%;
+	}
+
+	.shape.parallel::before {
+		top: 2px;
+	}
+
+	.shape.parallel::after {
+		bottom: 2px;
 	}
 
 	.dot {
@@ -985,7 +1177,4 @@
 		}
 	}
 
-	:global(body:has(.timeline-page) .nav-blur) {
-		display: none;
-	}
 </style>

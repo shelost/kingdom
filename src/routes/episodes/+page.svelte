@@ -1,22 +1,141 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
 	import { onNavigate } from '$app/navigation';
+	import { MediaQuery } from 'svelte/reactivity';
 	import { withViewTransition } from '$lib/viewTransition';
 	import SiteNavSpace from '$lib/components/SiteNavSpace.svelte';
 	import RowThumb from '$lib/components/RowThumb.svelte';
+	import EnsemblePoster, { type PosterMood } from '$lib/components/EnsemblePoster.svelte';
 	import Toc from '$lib/components/Toc.svelte';
 	import VolumePreview from '$lib/components/books/VolumePreview.svelte';
 	import { volumeOf } from '$lib/books';
+	import { entryCast } from '$lib/entryHead';
+	import { isWarEntry } from '$lib/episodeKinds';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
 	import { EP_QUERY, reading } from '$lib/reading.svelte';
 	import { episodeThumbnail } from '$lib/thumbnail.svelte';
 	import { episodePosterSrc, episodeThumbSrc, posterSrc } from '$lib/posters.svelte';
+	import { staticAsset } from '$lib/staticAsset.svelte';
+	import { hasTitleCard, titleLogoSrc } from '$lib/titleLogos';
 	import { arcLabelAt, chapterLabel, partLabel } from '$lib/tocTree';
 	import { partId } from '$lib/story';
-	import { EPISODE_TOTAL, PARTS, STORY_RANGE, type DirectoryEpisode } from '$lib/episodeDirectory';
+	import {
+		EPISODE_TOTAL,
+		PARTS,
+		STORY_RANGE,
+		type DirectoryEpisode
+	} from '$lib/episodeDirectory';
+	import {
+		groupStoriesByArc,
+		groupStoriesByCountry,
+		type StoryGroupMode
+	} from '$lib/storyGroups';
 
 	let ko = $derived(reading.lang === 'ko');
+
+	const LAYOUT_KEY = 'kingdom:episodes-layout';
+	const STORIES_KEY = 'kingdom:episodes-stories';
+	const GROUP_KEY = 'kingdom:episodes-group';
+	type Layout = 'list' | 'grid';
+	const desktop = new MediaQuery('min-width: 1001px');
+
+	function readLayout(): Layout {
+		if (!browser) return 'list';
+		const query = page.url.searchParams.get('layout');
+		if (query === 'grid' || query === 'list') return query;
+		const stored = localStorage.getItem(LAYOUT_KEY);
+		return stored === 'grid' || stored === 'list' ? stored : 'list';
+	}
+
+	function readStories(): boolean {
+		const query = page.url.searchParams.get('stories');
+		if (query === '1') return true;
+		if (query === '0') return false;
+		if (!browser) return false;
+		return localStorage.getItem(STORIES_KEY) === '1';
+	}
+
+	function readGroup(): StoryGroupMode {
+		const query = page.url.searchParams.get('group');
+		if (query === 'arc' || query === 'country' || query === 'default') return query;
+		if (!browser) return 'default';
+		const stored = localStorage.getItem(GROUP_KEY);
+		return stored === 'arc' || stored === 'country' ? stored : 'default';
+	}
+
+	let layout = $state<Layout>(readLayout());
+	let stories = $state(readStories());
+	let groupMode = $state<StoryGroupMode>(readGroup());
+	let grid = $derived(stories || (layout === 'grid' && desktop.current));
+
+	function writeUrl() {
+		if (!browser) return;
+		const url = new URL(page.url);
+		if (layout === 'list') url.searchParams.delete('layout');
+		else url.searchParams.set('layout', layout);
+		if (stories) url.searchParams.set('stories', '1');
+		else url.searchParams.delete('stories');
+		if (groupMode === 'default') url.searchParams.delete('group');
+		else url.searchParams.set('group', groupMode);
+		history.replaceState(history.state, '', url);
+	}
+
+	function setLayout(next: Layout) {
+		layout = next;
+		if (browser) localStorage.setItem(LAYOUT_KEY, next);
+		writeUrl();
+	}
+
+	function setStories(next: boolean) {
+		stories = next;
+		if (next) layout = 'grid';
+		if (browser) {
+			localStorage.setItem(STORIES_KEY, next ? '1' : '0');
+			if (next) localStorage.setItem(LAYOUT_KEY, 'grid');
+		}
+		writeUrl();
+	}
+
+	function setGroup(next: StoryGroupMode) {
+		groupMode = next;
+		if (browser) {
+			if (next === 'default') localStorage.removeItem(GROUP_KEY);
+			else localStorage.setItem(GROUP_KEY, next);
+		}
+		writeUrl();
+	}
+
+	function logoOf(ep: DirectoryEpisode): string | null {
+		return titleLogoSrc(ep.title, ko) ?? titleLogoSrc(ep.title, !ko);
+	}
+
+	let shownParts = $derived(PARTS);
+
+	const storyEpisodes = PARTS.flatMap((part) =>
+		part.arcs.flatMap((arc) => arc.chapters.flatMap((chapter) => chapter.episodes))
+	).filter((ep) => hasTitleCard(ep.title));
+
+	const STORY_TOTAL = storyEpisodes.length;
+
+	let storyGroups = $derived(
+		groupMode === 'arc'
+			? groupStoriesByArc(storyEpisodes)
+			: groupMode === 'country'
+				? groupStoriesByCountry(storyEpisodes)
+				: null
+	);
+
+	function yearNum(ep: DirectoryEpisode): number | null {
+		const n = Number.parseInt(ep.year, 10);
+		return Number.isFinite(n) ? n : null;
+	}
+
+	function posterMood(ep: DirectoryEpisode): PosterMood {
+		if (isWarEntry(ep.entry)) return 'war';
+		return (ep.entry.kinds ?? []).some((k) => k === 'myth' || k === 'founding') ? 'folk' : 'court';
+	}
 
 	/** The side TOC: open on arrival at desktop widths (Toc closes itself on a phone). */
 	let tocOpen = $state(true);
@@ -38,7 +157,7 @@
 </script>
 
 <svelte:head>
-	<title>Episodes · King for All</title>
+	<title>Chapters · King for All</title>
 	<meta
 		name="description"
 		content="Every episode of King for All, by Part, Arc and Chapter — open any one to start reading."
@@ -54,6 +173,26 @@
 	</span>
 {/snippet}
 
+{#snippet titleBlock(ep: DirectoryEpisode)}
+	{@const logo = logoOf(ep)}
+	{@const heading = ko && ep.ko ? ep.ko : ep.title}
+	<span class={['title-line', { worded: !!logo }]}>
+		<span class="num">{ep.number}</span>
+		{#if logo}
+			<span class="title-mark">
+				<img class="title-logo" src={staticAsset(logo) ?? logo} alt="" />
+				<span class="visually-hidden">{heading}</span>
+				{#if ep.ko && !ko}<span class="title-ko">{ep.ko}</span>{/if}
+			</span>
+		{:else}
+			<span class="title">
+				{heading}
+				{#if ep.ko && !ko}<span class="title-ko">{ep.ko}</span>{/if}
+			</span>
+		{/if}
+	</span>
+{/snippet}
+
 {#snippet row(ep: DirectoryEpisode)}
 	{@const dedicated = episodeThumbSrc(ep.id)}
 	{@const poster = episodePosterSrc(ep.id)}
@@ -62,7 +201,7 @@
 	{@const portrait = !dedicated && !!poster}
 	{@const href = hrefOf(ep)}
 	<li data-story-id={ep.id}>
-		<a class="row" class:portrait {href}>
+		<a class={['row', { portrait }]} {href}>
 			<RowThumb
 				{src}
 				{portrait}
@@ -71,13 +210,57 @@
 				fallback={ep.title.charAt(0)}
 			/>
 			<span class="body">
-				<span class="title-line">
-					<span class="num">{ep.number}</span>
-					<span class="title">
-						{ko && ep.ko ? ep.ko : ep.title}
-						{#if ep.ko && !ko}<span class="title-ko">{ep.ko}</span>{/if}
+				{@render titleBlock(ep)}
+				<span class="sub-line">
+					{#each ep.tags as tag (tag.key)}
+						{#if tag.flag}
+							<img class="flag" src={tag.flag} alt={tag.label} title={tag.label} />
+						{:else if tag.icon}
+							<span class="kind" style:color={tag.color} title={ko ? tag.ko : tag.label}>
+								<span class="material-symbols-outlined" aria-hidden="true">{tag.icon}</span>
+								<span class="visually-hidden">{ko ? tag.ko : tag.label}</span>
+							</span>
+						{/if}
+					{/each}
+					<span class="aside">
+						{#if ep.year}<span class="year">{ep.year}</span>{/if}
+						<span class="dur">{ep.minutes}{ko ? '분' : ' min'}</span>
 					</span>
 				</span>
+				{#if synopsis(ep)}<span class="synopsis">{synopsis(ep)}</span>{/if}
+			</span>
+		</a>
+	</li>
+{/snippet}
+
+{#snippet card(ep: DirectoryEpisode)}
+	{@const dedicated = episodeThumbSrc(ep.id)}
+	{@const poster = episodePosterSrc(ep.id)}
+	{@const cue = dedicated || poster ? null : episodeThumbnail(ep.entry, ep.id)}
+	{@const src = dedicated ?? poster ?? cue?.src}
+	{@const cast = src ? [] : entryCast(ep.entry, yearNum(ep), 7)}
+	{@const href = hrefOf(ep)}
+	<li data-story-id={ep.id}>
+		<a class="card" {href}>
+			{#if src}
+				<RowThumb
+					{src}
+					portrait
+					kind={poster && !dedicated ? 'hero' : 'cue'}
+					sizes="(max-width: 1280px) 28vw, 18rem"
+					fallback={ep.title.charAt(0)}
+				/>
+			{:else if cast.length}
+				<EnsemblePoster people={cast} mood={posterMood(ep)} />
+			{:else}
+				<RowThumb
+					portrait
+					sizes="(max-width: 1280px) 28vw, 18rem"
+					fallback={ep.title.charAt(0)}
+				/>
+			{/if}
+			<span class="body">
+				{@render titleBlock(ep)}
 				<span class="sub-line">
 					{#each ep.tags as tag (tag.key)}
 						{#if tag.flag}
@@ -104,26 +287,122 @@
 	<Toc bind:open={tocOpen} directory />
 </div>
 
-<main class="episodes-page" class:toc-open={tocOpen}>
+<main class={['episodes-page', { 'toc-open': tocOpen, 'grid-layout': grid, 'stories-only': stories }]}>
 	<header class="chrome">
 		<SiteNavSpace />
 	</header>
 
 	<div class="column">
 		<header class="intro">
-			<h1>{ko ? '에피소드' : 'Episodes'}</h1>
-			<p class="meta">
-				<span>King for All · 삼한왕검</span>
-				<span class="sep" aria-hidden="true">·</span>
-				<span>{STORY_RANGE}</span>
-				<span class="sep" aria-hidden="true">·</span>
-				<span>{PARTS.length} {ko ? '부' : 'Parts'}</span>
-				<span class="sep" aria-hidden="true">·</span>
-				<span>{EPISODE_TOTAL} {ko ? '화' : 'episodes'}</span>
-			</p>
+			<div class="intro-copy">
+				<h1>{ko ? '편' : 'Chapters'}</h1>
+				<p class="meta">
+					<span>King for All · 삼한왕검</span>
+					<span class="sep" aria-hidden="true">·</span>
+					<span>{STORY_RANGE}</span>
+					<span class="sep" aria-hidden="true">·</span>
+					<span>{PARTS.length} {ko ? '부' : 'Parts'}</span>
+					<span class="sep" aria-hidden="true">·</span>
+					{#if stories}
+						<span>{STORY_TOTAL} {ko ? '이야기' : 'stories'}</span>
+					{:else}
+						<span>{EPISODE_TOTAL} {ko ? '화' : 'episodes'}</span>
+					{/if}
+				</p>
+			</div>
+			<div class="view-tools">
+				{#if !stories}
+					<div class="layout-toggle" role="group" aria-label={ko ? '보기' : 'Layout'}>
+						<button
+							type="button"
+							class={['chip', { on: layout === 'list' }]}
+							onclick={() => setLayout('list')}
+						>
+							<span class="material-symbols-outlined" aria-hidden="true">view_agenda</span>
+							{ko ? '목록' : 'List'}
+						</button>
+						<button
+							type="button"
+							class={['chip', { on: layout === 'grid' }]}
+							onclick={() => setLayout('grid')}
+						>
+							<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
+							{ko ? '격자' : 'Grid'}
+						</button>
+					</div>
+				{/if}
+				<div class="filter-toggle" role="group" aria-label={ko ? '필터' : 'Filter'}>
+					<button
+						type="button"
+						class={['chip', { on: stories }]}
+						aria-pressed={stories}
+						onclick={() => setStories(!stories)}
+					>
+						<span class="material-symbols-outlined" aria-hidden="true">auto_stories</span>
+						{ko ? '이야기' : 'Stories'}
+					</button>
+				</div>
+				{#if stories}
+					<div class="group-toggle" role="group" aria-label={ko ? '묶기' : 'Group'}>
+						<button
+							type="button"
+							class={['chip', { on: groupMode === 'default' }]}
+							aria-pressed={groupMode === 'default'}
+							onclick={() => setGroup('default')}
+						>
+							<span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
+							{ko ? '전체' : 'All'}
+						</button>
+						<button
+							type="button"
+							class={['chip', { on: groupMode === 'arc' }]}
+							aria-pressed={groupMode === 'arc'}
+							onclick={() => setGroup('arc')}
+						>
+							<span class="material-symbols-outlined" aria-hidden="true">account_tree</span>
+							{ko ? '이야기 묶음' : 'Arc'}
+						</button>
+						<button
+							type="button"
+							class={['chip', { on: groupMode === 'country' }]}
+							aria-pressed={groupMode === 'country'}
+							onclick={() => setGroup('country')}
+						>
+							<span class="material-symbols-outlined" aria-hidden="true">public</span>
+							{ko ? '나라' : 'Country'}
+						</button>
+					</div>
+				{/if}
+			</div>
 		</header>
 
-		{#each PARTS as part (part.id)}
+		{#if stories}
+			{#if storyGroups}
+				{#each storyGroups as group (group.id)}
+					<section class="story-group" aria-labelledby={`story-group-${group.id}`}>
+						<h2 id={`story-group-${group.id}`}>
+							{@render heading(
+								groupMode === 'country' ? (ko ? '나라' : 'Country') : ko ? '이야기 묶음' : 'Arc',
+								ko ? group.ko : group.label,
+								ko ? group.label : group.ko
+							)}
+						</h2>
+						<ol class="list stories-grid">
+							{#each group.episodes as ep (ep.id)}
+								{@render card(ep)}
+							{/each}
+						</ol>
+					</section>
+				{/each}
+			{:else}
+				<ol class="list stories-grid">
+					{#each storyEpisodes as ep (ep.id)}
+						{@render card(ep)}
+					{/each}
+				</ol>
+			{/if}
+		{:else}
+		{#each shownParts as part (part.id)}
 			<section class="part" aria-labelledby={`part-${part.id}`} data-story-id={partId(part.id)}>
 				<h2 id={`part-${part.id}`}>
 					{@render heading(
@@ -157,31 +436,48 @@
 						{#each arc.chapters as chapter, s (chapter.anchor ?? `${arc.id}-${s}`)}
 							{#if chapter.anchor}
 								{@const volume = volumeOf(chapter.anchor)}
-								<div class="chapter-head">
-									{#if volume}
-										<VolumePreview {volume} size="chapter" />
-									{/if}
-									<h4 id={chapter.anchor}>
-										{#if chapter.number}<span class="chapter-num">{chapterLabel(chapter.number, ko)}</span>{/if}
-										<span class="chapter-line">
-											{ko ? chapter.ko : chapter.label}
-											{#if !ko && chapter.ko && chapter.ko !== chapter.label}<span class="chapter-ko"
-													>{chapter.ko}</span
-												>{/if}
-										</span>
-									</h4>
-								</div>
+								<section class="volume" aria-labelledby={chapter.anchor}>
+									<div class="chapter-head">
+										{#if volume}
+											<VolumePreview {volume} size="chapter" />
+										{/if}
+										<h4 id={chapter.anchor}>
+											{#if chapter.number}<span class="chapter-num">{chapterLabel(chapter.number, ko)}</span>{/if}
+											<span class="chapter-line">
+												{ko ? chapter.ko : chapter.label}
+												{#if !ko && chapter.ko && chapter.ko !== chapter.label}<span class="chapter-ko"
+														>{chapter.ko}</span
+													>{/if}
+											</span>
+										</h4>
+									</div>
+									<ol class="list">
+										{#each chapter.episodes as ep (ep.id)}
+											{#if grid}
+												{@render card(ep)}
+											{:else}
+												{@render row(ep)}
+											{/if}
+										{/each}
+									</ol>
+								</section>
+							{:else}
+								<ol class="list">
+									{#each chapter.episodes as ep (ep.id)}
+										{#if grid}
+											{@render card(ep)}
+										{:else}
+											{@render row(ep)}
+										{/if}
+									{/each}
+								</ol>
 							{/if}
-							<ol class="list">
-								{#each chapter.episodes as ep (ep.id)}
-									{@render row(ep)}
-								{/each}
-							</ol>
 						{/each}
 					</section>
 				{/each}
 			</section>
 		{/each}
+		{/if}
 	</div>
 </main>
 
@@ -229,9 +525,81 @@
 	}
 
 	.intro {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 1rem 1.5rem;
+		padding: 3rem 0 2rem;
+	}
+
+	.intro-copy {
 		display: grid;
 		gap: 0.4rem;
-		padding: 3rem 0 2rem;
+		min-width: 0;
+	}
+
+	.view-tools {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.45rem;
+	}
+
+	.layout-toggle,
+	.filter-toggle,
+	.group-toggle {
+		display: inline-flex;
+		gap: 0.35rem;
+		padding: 0.22rem;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--fg) 6%, transparent);
+	}
+
+	.story-group {
+		margin-top: 3.5rem;
+	}
+
+	.story-group:first-of-type {
+		margin-top: 0;
+	}
+
+	.story-group h2 {
+		margin-bottom: 1.5rem;
+	}
+
+	.layout-toggle {
+		display: none;
+	}
+
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		margin: 0;
+		padding: 0.38rem 0.72rem;
+		border: 0;
+		border-radius: 999px;
+		background: transparent;
+		color: var(--fg-dim);
+		font: 600 0.72rem/1 var(--ui);
+		letter-spacing: 0.04em;
+		cursor: pointer;
+	}
+
+	.chip .material-symbols-outlined {
+		font-size: 1rem;
+	}
+
+	.chip.on {
+		background: color-mix(in srgb, var(--fg) 10%, var(--bg));
+		color: var(--fg-strong);
+		box-shadow: 0 0 0 1px color-mix(in srgb, var(--fg) 12%, transparent);
+	}
+
+	.chip:focus-visible {
+		outline: 2px solid var(--gold);
+		outline-offset: 2px;
 	}
 
 	h1 {
@@ -368,6 +736,13 @@
 		margin: 3.25rem 0 0.85rem;
 	}
 
+	.volume {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: none;
+	}
+
 	/* Chapter headings: the number is an eyebrow above the chapter's name, like Parts and Arcs. */
 	h4 {
 		display: grid;
@@ -425,6 +800,12 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
+	}
+
+	.list > li,
+	.card,
+	.row {
+		min-width: 0;
 	}
 
 	.row {
@@ -551,6 +932,96 @@
 		color: var(--fg);
 	}
 
+	.card {
+		display: grid;
+		grid-template-columns: minmax(6.4rem, 36%) minmax(0, 1fr);
+		gap: 0.7rem 0.9rem;
+		align-items: start;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.card:focus-visible {
+		outline: none;
+	}
+
+	.card :global(.thumb),
+	.card :global(.poster) {
+		width: 100%;
+		--poster: 100%;
+	}
+
+	.card .title {
+		font-size: 1.02rem;
+	}
+
+	.card .synopsis {
+		-webkit-line-clamp: 3;
+		line-clamp: 3;
+	}
+
+	.card .aside {
+		margin-left: 0;
+	}
+
+	.card:is(:hover, :focus-visible) .title {
+		color: var(--gold);
+	}
+
+	.card:is(:hover, :focus-visible) .synopsis {
+		color: var(--fg);
+	}
+
+	.title-line.worded {
+		align-items: center;
+	}
+
+	.title-mark {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.12rem;
+		min-width: 0;
+	}
+
+	.title-logo {
+		display: block;
+		width: auto;
+		max-width: min(100%, 22rem);
+		max-height: 4.4rem;
+		height: auto;
+		object-fit: contain;
+		object-position: left center;
+		filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.55));
+	}
+
+	.card .title-logo {
+		max-width: 100%;
+		max-height: 6.4rem;
+	}
+
+	.stories-only .title-logo {
+		max-height: 6.2rem;
+	}
+
+	.stories-only .card .title-logo {
+		max-width: 100%;
+		max-height: 9.2rem;
+	}
+
+	.stories-only .list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.5rem 1.1rem;
+	}
+
+	@media (min-width: 720px) {
+		.stories-only .list {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1.85rem 1.35rem;
+		}
+	}
+
 	.visually-hidden {
 		position: absolute;
 		width: 1px;
@@ -558,6 +1029,57 @@
 		overflow: hidden;
 		clip-path: inset(50%);
 		white-space: nowrap;
+	}
+
+	@media (min-width: 1001px) {
+		.layout-toggle {
+			display: inline-flex;
+		}
+
+		.grid-layout .column {
+			max-width: 72rem;
+		}
+
+		.grid-layout .volume {
+			margin-top: 2.75rem;
+			padding: 1.55rem 1.4rem 1.7rem;
+			border: 1px solid var(--hairline);
+			border-radius: 20px;
+			background: color-mix(in srgb, var(--fg) 3.5%, var(--bg));
+		}
+
+		.grid-layout .arc > .volume:first-of-type {
+			margin-top: 1.75rem;
+		}
+
+		.grid-layout .chapter-head {
+			margin: 0 0 1.35rem;
+		}
+
+		.grid-layout .list {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 1.85rem 1.25rem;
+		}
+
+		.stories-only.grid-layout .column {
+			max-width: 80rem;
+		}
+
+		.stories-only.grid-layout .list {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 2.2rem 1.6rem;
+		}
+
+		.stories-only.grid-layout .card {
+			grid-template-columns: minmax(7.2rem, 32%) minmax(0, 1fr);
+			gap: 0.85rem 1.1rem;
+			align-items: center;
+		}
+
+		.stories-only.grid-layout .card .title-line.worded {
+			align-items: center;
+		}
 	}
 
 	@media (max-width: 720px) {

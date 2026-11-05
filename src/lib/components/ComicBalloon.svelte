@@ -19,7 +19,7 @@
 </script>
 
 {#if on && text}
-	<p class="balloon liquid-glass" class:right={hash(id) % 2 === 1} lang={ko ? 'ko' : 'en'}>{text}</p>
+	<p class="balloon surface" class:right={hash(id) % 2 === 1} lang={ko ? 'ko' : 'en'}>{text}</p>
 {/if}
 
 <style>

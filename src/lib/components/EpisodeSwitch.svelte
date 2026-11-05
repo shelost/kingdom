@@ -296,7 +296,7 @@
 
 <nav
 	{@attach stage}
-	class="title-pill switch liquid-glass"
+	class="title-pill switch surface"
 	class:in={live}
 	class:open
 	aria-label={ko ? '회차' : 'Episode navigation'}
@@ -462,26 +462,22 @@
 		inset: 0;
 		border: 0;
 		padding: 0;
-		background: rgb(0 0 0 / 0.32);
-		backdrop-filter: blur(8px);
-		-webkit-backdrop-filter: blur(8px);
+		background: rgb(0 0 0 / 0.4);
 		opacity: 0;
 		visibility: hidden;
 		cursor: pointer;
 	}
 
 	.switch {
-		--glass-tint: 34%;
-		--glass-sheen: 14%;
 		position: fixed;
 		z-index: 102;
-		top: max(0.75rem, env(safe-area-inset-top, 0px));
+		top: max(1rem, env(safe-area-inset-top, 0px));
 		left: 50%;
 		display: flex;
 		flex-direction: column;
 		width: max-content;
 		max-width: min(30rem, calc(100vw - 7rem));
-		padding: 0.32rem;
+		padding: 0.4rem;
 		border-radius: var(--radius-pill);
 		color: var(--fg-strong);
 		font-family: var(--ui);
@@ -493,13 +489,9 @@
 		overflow: hidden;
 		pointer-events: none;
 		transform: translate3d(-50%, calc(-100% - 1.5rem), 0);
-		box-shadow:
-			inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
-			inset 0 -1px 0 color-mix(in srgb, white 12%, transparent);
 		transition:
-			transform 560ms cubic-bezier(0.32, 0.72, 0, 1),
-			opacity 280ms var(--ease),
-			--glass-tint 0.45s var(--ease);
+			transform var(--duration-slow) var(--ease-out),
+			opacity var(--duration-normal) var(--ease);
 	}
 
 	.switch.in {
@@ -509,8 +501,6 @@
 	}
 
 	.switch.open {
-		--glass-tint: 78%;
-		--glass-sheen: 8%;
 		max-width: 19rem;
 	}
 

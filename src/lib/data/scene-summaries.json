@@ -70,19 +70,19 @@
 		"h": "d7f01142f4c6"
 	},
 	"three-kingdoms-king-geunchogo": {
-		"en": "King Gunchogo of Baekje leads his army north to attack Pyongyang, hoping to take the capital from Goguryeo. Baekje is rich and strong, but the king wants more power.",
-		"ko": "백제의 근초고왕이 군대를 이끌고 북쪽 평양을 공격하려 한다. 백제는 부유하고 강하지만, 왕은 더 큰 힘을 원한다.",
-		"h": "f95ac1a5617b"
+		"en": "Buyeo Jogo is the king of a rich southern kingdom. He treats that wealth like weather, and his city pays him from its docks.",
+		"ko": "부여초고는 부유한 남쪽 나라의 임금이다. 그는 그 부를 날씨처럼 다루고, 도시는 부두에서 나온 몫을 그에게 바친다.",
+		"h": "d5491f99846e"
 	},
 	"three-kingdoms-king-geunchogo-the-camp": {
-		"en": "The night before the attack, King Gunchogo and his son talk by the river. The prince is nervous about the big city and its strong wall, but his father wants to be the first from the south to take it.",
-		"ko": "공격 전날 밤, 근초고왕과 왕세자가 강가에서 대화한다. 왕세자는 큰 성과 성벽에 긴장하지만, 왕은 남쪽 사람 중 처음으로 그곳을 차지하고 싶어 한다.",
-		"h": "12f9893345ad"
+		"en": "The night before the attack, Jogo and his son sit by a fire across from Pyongyang. The prince is nervous about the wall. Jogo wants someone from the south to stand on it.",
+		"ko": "공격 전날 밤, 초고와 아들이 평양 건너편 불 곁에 앉는다. 왕세자는 성벽이 긴장된다. 초고는 남쪽 사람이 그 위에 서길 바란다.",
+		"h": "77fa80dcd4e4"
 	},
 	"three-kingdoms-king-geunchogo-the-wall": {
-		"en": "At sunrise, Baekje attacks the wall. The Goguryeo king is killed by a stray arrow, but his people keep fighting. King Gunchogo hears the mourning and decides to leave, knowing he has won something important.",
-		"ko": "해 뜨자 백제가 성벽을 공격한다. 고구려 왕이 화살에 맞아 죽지만, 고구려 사람들은 계속 싸운다. 근초고왕은 성 안의 울음소리를 듣고 중요한 것을 얻었다고 생각하며 돌아가기로 한다.",
-		"h": "9e1e8271cad6"
+		"en": "At dawn the south attacks the wall. Gogugwon comes out of the gate and a stray arrow hits him. He dies. Jogo hears his men singing and turns for home.",
+		"ko": "동이 트자 남쪽이 성벽을 친다. 고국원왕이 성문 밖으로 나오다 흐르는 화살에 맞는다. 그는 죽는다. 초고는 병사들의 노래를 듣고 돌아선다.",
+		"h": "eefc1e9fa9ee"
 	},
 	"three-kingdoms-harmony-council": {
 		"en": "Six nobles sit around a fire at night. They are talking and will not leave until they all agree on something important.",
@@ -3308,5 +3308,25 @@
 		"en": "The Baekje officer returns and tells King Euija what happened. King Euija realizes Kim Yushin is sending a warning, and asks General Gyebek if he can beat him. Gyebek says he has not faced Kim Yushin yet.",
 		"ko": "백제 장교가 돌아와 의자왕에게 있었던 일을 말한다. 의자왕은 김유신이 경고를 보낸 것임을 깨닫고, 계백 장군에게 김유신을 이길 수 있냐고 묻는다. 계백은 아직 김유신을 만나지 않았다고 답한다.",
 		"h": "aeb45a4d5888"
+	},
+	"three-kingdoms-king-geunchogo-the-river": {
+		"en": "Jogo walks the docks himself. He has a son who wants to be first at everything, and he is hungry for the north.",
+		"ko": "초고는 부두를 직접 걷는다. 뭐든 먼저 하고 싶어 하는 아들이 있고, 그는 북쪽이 배고프다.",
+		"h": "45c4dd7f5a31"
+	},
+	"three-kingdoms-king-geunchogo-the-salt-kings-son": {
+		"en": "King Gogugwon’s father, Micheon, spent seven years wandering among ordinary people and selling salt. Gogugwon wants Baekje, the part of that conquest his father never finished.",
+		"ko": "고국원왕의 아비 미천왕은 칠 년을 보통 사람들 속에서 떠돌며 소금을 팔았다. 고국원왕은 아비가 끝내지 못한 정복인 백제를 원한다.",
+		"h": "b89016ed281e"
+	},
+	"three-kingdoms-king-geunchogo-chiyang": {
+		"en": "Gogugwon camps at Chiyang and starts taking houses. Jogo’s son hits the camp with a few horse and the north breaks. Jogo lets the king go home.",
+		"ko": "고국원왕이 치양에 진을 치고 집을 가져가기 시작한다. 초고의 아들이 말 한 줌으로 진영을 치자 북쪽은 깨진다. 초고는 그 임금을 돌려보낸다.",
+		"h": "a2507a6c200c"
+	},
+	"three-kingdoms-king-geunchogo-the-song": {
+		"en": "The south’s song gives Jogo a sword instead of an arrow. He dies later in his own bed. The chant of his reign outlives him, and the boy from the wall lives to tell the other version.",
+		"ko": "남쪽의 노래는 화살 대신 초고에게 칼을 쥐여 준다. 그는 나중에 제 침상에서 죽는다. 치세를 부르는 구호는 그보다 오래 살고, 성벽의 소년도 다른 이야기를 전할 만큼 오래 산다.",
+		"h": "3b8a4726f599"
 	}
 }

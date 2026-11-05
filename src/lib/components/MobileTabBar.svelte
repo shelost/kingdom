@@ -4,10 +4,7 @@
 	import { resolve } from '$app/paths';
 	import { afterNavigate } from '$app/navigation';
 	import { hrefWithNsfw } from '$lib/nsfwUi.svelte';
-	import { toggleTheme } from '$lib/themeUi.svelte';
 	import { SITE_LINKS, hasTabBar, isSiteLinkActive } from '$lib/siteLinks';
-	import ThemeIcon from './ThemeIcon.svelte';
-	import LangSwitch from './LangSwitch.svelte';
 
 	const TABS = SITE_LINKS.filter((link) => link.tab);
 	const MORE = SITE_LINKS.filter((link) => !link.tab);
@@ -56,13 +53,6 @@
 					{link.label}
 				</a>
 			{/each}
-			<div class="more-lang" role="none">
-				<LangSwitch compact />
-			</div>
-			<button type="button" role="menuitem" onclick={toggleTheme}>
-				<span class="theme-icon"><ThemeIcon /></span>
-				Light / dark
-			</button>
 		</div>
 	{/if}
 
@@ -110,9 +100,8 @@
 			padding: 0 max(0.25rem, env(safe-area-inset-right, 0px))
 				env(safe-area-inset-bottom, 0px) max(0.25rem, env(safe-area-inset-left, 0px));
 			border-top: 1px solid var(--hairline);
-			background: color-mix(in srgb, var(--bg) 84%, transparent);
-			backdrop-filter: blur(22px) saturate(1.4);
-			-webkit-backdrop-filter: blur(22px) saturate(1.4);
+			background: var(--panel);
+			box-shadow: 0 -1px 0 var(--hairline), var(--shadow-soft);
 			font-family: var(--ui);
 		}
 
@@ -184,8 +173,7 @@
 			font-family: var(--ui);
 		}
 
-		.more a,
-		.more button {
+		.more a {
 			display: flex;
 			align-items: center;
 			gap: 0.7rem;
@@ -206,27 +194,6 @@
 		.more a.active {
 			background: color-mix(in srgb, var(--fg) 8%, transparent);
 			color: var(--fg-strong);
-		}
-
-		.theme-icon {
-			display: grid;
-		}
-
-		.theme-icon :global(.material-symbols-outlined) {
-			grid-area: 1 / 1;
-		}
-
-		.more-lang {
-			padding: 0.35rem 0.35rem 0.45rem;
-		}
-
-		.more .more-lang :global(button) {
-			display: block;
-			flex: 1;
-			min-height: 0;
-			justify-content: center;
-			text-align: center;
-			font-weight: 700;
 		}
 	}
 </style>

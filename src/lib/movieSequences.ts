@@ -542,7 +542,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'jumong-buyeo-north',
 		title: 'Jumong — Northern Buyeo, egg to the four',
-		entryTitles: ['Haemosu', 'Buyeo'],
+		entryTitles: ['Haemosu', 'Jumong'],
 		place: 'Northern Buyeo — pl_buyeo_palace is the hillside complex (path, stone terraces, giwa halls, lower thatched hut). Camera stands on the path or inside that hut; the plate is not a backdrop. City-wide cuts may still use pl_northern_buyeo daylight',
 		why: 'Open on 16:9 exposition wides of the same timber capital so Buyeo is a place, then hatch and brothers live inside that geography.',
 		canon: 'LOCK to pl_northern_buyeo every Earth cut. SAME mountain, giwa city, river, blue sky and white clouds — daylight, not dusk crushed black. Yard is sun on packed earth. All exposition 16:9 (1.778) — not 3:4 posters, not ECU-only. Gumwa red-burgundy from ch_geumwa (not gold-plated). Jumong red #e8563f, grin until the knife. CLEAN-SHAVEN — NO mustache, NO goatee; ignore facial hair on ch_jumong. Deso #9b8f6a too close. Galsa sage #6b8f4a delayed smile. Yuhwa ice-blue court silk, FACE from ch_yuhwa, not the bathing wrap. Hatch is a WET NEWBORN plus a WIDE of room+yard through the door. Do not remake jumong-buyeo-egg. Friends anonymous silks, never clone Jumong. They split in the pines; friends do NOT ride the fish/turtles and do NOT walk into Jolbon here — reunion is the Pine Kingdom sequence. Chronology: capital → yard → roof → dutch yard → gate → river-edge → hall interior → sun-shaft → egg → hatch-room wide → hatch → hatch worm → hatch hold → childhood tiny → boys → youths → fly-wing → mark → knife → night palisade → four → pine net → split. No army. No glow-halo.',
@@ -606,7 +606,7 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 	{
 		id: 'haemosu-haewonmek-night',
 		title: 'Jumong — Haemosu stops Haewonmek, living ford',
-		entryTitles: ['Buyeo'],
+		entryTitles: ['Jumong'],
 		place: 'Night rain Amnok (pl_white_river) — reed banks, moon-haze, SAME five-dragon gold chariot; living 자라 ford',
 		why: 'Beat-by-beat film: run → army net → trip/pass-out → encounter over an unseen Jumong → wrist-stop → whisper from behind → inspiration looking at water → shout at the ford → spaced turtles → that’s-my-boy. Jumong never sees the gods.',
 		canon: 'LOCK pl_white_river banks/reeds/hills only — NO boats, NO pier. Haemosu = sun: gold #f0b429 as a LIGHT-PLANE, never a body-halo. SAME chariot (two spoked wheels, rail, floor, yoke; dragons gold/crimson/azure/jade/white). Haewonmek: black gat, cobalt sash, black mouth-band, FACE ch_haewonmek. Jumong CLEAN-SHAVEN, red #e8563f, FACE ch_jumong (ignore facial hair). HARD RULE: Jumong cannot see either god — no look, reach, talk-to-face, or eye contact; eyeline is river / dirt / empty dark. Whisper is at the ear from behind. Army = tiny anonymous silhouettes, no catalog, no named faces. LOCKED FORD: Korean 자라 — flattened olive-brown leathery oval discs, same species every still; dark carp backs; ONE-SHELL-WIDTH water gaps (a run, not a pile). No giant leatherback. No gold-ring path. Chronology: run → spears in the dark → trip → face-in-grit → pass-out → reaper over unconscious → gold plane → wrist → god talk → whisper-behind → idea looking at water → shout at ford → turtles rise → night ford → dutch run → gods watch → jolly → boy ECU → ledger ECU → that’s-my-boy.',
@@ -886,6 +886,9 @@ export const MOVIE_SEQUENCES: MovieSequence[] = [
 		canon: 'Yushin CLEAN-SHAVEN from ch_kim_yushin. Father ch_kim_seohyun, grandfather ch_kim_muryuk. Bidam navy #141C2E + BLACK HEADBAND. Yushin #2A5FB8. Place refs drive 3D layout. High contrast. One device. No army carpet.',
 		shots: [
 			{ id: 'radiance-exposition-wide', role: 'Radiance wide', angle: 'exposition', at: 'Fortress of Radiance' },
+			{ id: 'bidam-radiance-roof-wide', role: 'Radiance roof wide', angle: 'high three-quarter', at: 'The Fortress of Radiance' },
+			{ id: 'bidam-radiance-roof-look', role: 'Radiance roof look', angle: 'crane-in three-quarter', at: 'Bidam walks the rampart' },
+			{ id: 'bidam-radiance-roof-ots', role: 'Radiance roof OTS', angle: 'over-shoulder', at: 'Look at them come down the valley road' },
 			{ id: 'bidam-yumjong-gate', role: 'open gate', angle: 'dutch', at: 'Open the Radiance gate.' },
 			{ id: 'rebel-black-headband-army', role: 'black bands', angle: 'iconic lower-third', at: 'Bidam and Yumjong raise men' },
 			{ id: 'silla-blue-camp', role: 'Silla camp', angle: 'iconic opposite', at: 'Between the camps a small pavilion goes up' },

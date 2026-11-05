@@ -80,6 +80,7 @@ export function wikiBookMatchCount(id: WikiBookId, q: string): number {
 		kind: id === 'all' ? 'all' : id,
 		kingdom: 'all',
 		tag: 'all',
+		story: 'all',
 		gender: 'all',
 		art: 'all',
 		q
