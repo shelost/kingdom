@@ -1952,9 +1952,9 @@
 	.stage-gallery {
 		margin: 0 0 1.1rem;
 		padding: 0.95rem 1rem 1rem;
-		border: 1px solid color-mix(in srgb, var(--k) 28%, var(--line));
+		border: 1px solid color-mix(in srgb, var(--k) 32%, var(--line));
 		border-radius: var(--card-radius);
-		background: color-mix(in srgb, var(--panel) 92%, var(--k) 8%);
+		background: color-mix(in srgb, var(--panel) 88%, var(--k) 12%);
 	}
 
 	.stage-heading {

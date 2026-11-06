@@ -132,7 +132,7 @@ export function buildYodong(_opts: BuildOptions): SiteBuild {
 			c.labels.push({ id: 'taizi', en: 'The Taizi', ko: '태자하', at: [600, YD.water + 18, 640], status: 'survey', note: 'A braided river of channels and sandbars; the Liao crossing lies west' });
 		},
 		views: (c) => [
-			{ id: 'board', en: 'Over the braided river', ko: '갈래 강 위에서', pos: [700, YD.water + 30, 900], target: [200, YD.plain + 14, 190], fov: 42 },
+			{ id: 'board', en: 'Over the braided river', ko: '갈래 강 위에서', pos: [420, YD.water + 24, 600], target: [200, YD.plain + 12, 190], fov: 42 },
 			{ id: 'city', en: 'Inside the walls', ko: '성안', pos: [260, YD.plain + 70, 60], target: [YD_PALACE.x, YD.plain, YD_PALACE.z], fov: 46 },
 			{ id: 'camp', en: 'From the Tang camp', ko: '당군 진영에서', pos: [-1260, YD.plain + 24, -180], target: [-550, YD.plain + 10, -220], fov: 40 },
 			{ id: 'plan', en: 'Plan', ko: '평면', pos: [0, 3600, 600], target: [0, 0, 0], fov: 40 },

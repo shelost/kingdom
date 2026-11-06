@@ -261,6 +261,23 @@
 		scrollbar-width: none;
 	}
 
+	/* Too narrow to centre the pill clear of the language/theme chrome on the right:
+	   start it at the left edge and stop short of the chrome; ⋯ stays pinned at its end. */
+	@media (max-width: 1040px) {
+		.site-nav:not(.inline) {
+			left: max(1rem, env(safe-area-inset-left, 0px));
+			transform: none;
+			max-width: calc(100vw - 13rem);
+		}
+	}
+
+	@media (max-width: 720px) {
+		.site-nav:not(.inline) {
+			left: max(0.65rem, env(safe-area-inset-left, 0px));
+			max-width: calc(100vw - 11.75rem);
+		}
+	}
+
 	.site-nav.inline {
 		flex-wrap: wrap;
 	}
